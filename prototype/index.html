@@ -84,6 +84,8 @@ h1 span { font-style: normal; font-size: 0.95rem; font-family: var(--body); colo
 .fix { background: var(--fix); border: 1px dashed var(--fix-line); border-radius: 8px; padding: 6px 10px; font-size: 0.85rem; max-width: 100%; }
 .fix s { color: var(--muted); }
 .fix b { color: var(--ink); }
+.heard { font-size: 0.8rem; color: var(--muted); }
+.heard i { color: var(--accent); font-style: normal; font-weight: 600; }
 .hint { font-size: 0.85rem; color: var(--muted); }
 .hint em { color: var(--accent); font-style: normal; font-weight: 600; }
 .thinking { color: var(--muted); font-style: italic; }
@@ -281,6 +283,7 @@ function msgEl(m) {
     d.append(tools);
     if (m.hint) { const h = document.createElement("div"); h.className = "hint"; h.innerHTML = "Try: <em></em>"; h.querySelector("em").textContent = m.hint; d.append(h); }
   }
+  if (m.heard) { const h = document.createElement("div"); h.className = "heard"; h.innerHTML = "Understood as <i lang='it'></i>"; h.querySelector("i").textContent = m.heard; d.append(h); }
   if (m.fix) {
     const f = document.createElement("div"); f.className = "fix";
     f.innerHTML = `<s></s> → <b lang="it"></b><div></div>`;
@@ -313,7 +316,8 @@ function speak(m) {
 /* ---------- voice in ---------- */
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 let rec = null, listening = false, finalText = "", micBlocked = false;
-const DICTATE_TIP = "Your browser blocked the mic here. Use your keyboard's dictation instead: tap the field, then the mic on your phone keyboard, or press fn twice (Globe key) on a Mac. Set dictation to Italian.";
+const DICTATE_TIP = "The mic is blocked here, so use your keyboard's dictation, switched to Italian. iPhone: add an Italian keyboard (Settings > General > Keyboard > Keyboards), tap the globe to switch to it, then tap the mic. Mac: add Italiano under System Settings > Keyboard > Dictation > Languages, press fn twice, then pick Italiano in the language menu under the mic. English dictation still works; Fuori will try to work out the Italian you meant.";
+const norm = (t) => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z ]/g, "").replace(/\s+/g, " ").trim();
 if (!SR) { $("mic").disabled = true; $("mic").title = "Speech recognition isn't supported in this browser"; setStatus("This browser can't listen. " + DICTATE_TIP.split(". ").slice(1).join(". "), true); }
 $("mic").onclick = () => {
   if (!SR || busy) return;
@@ -341,6 +345,7 @@ Steps already completed: ${JSON.stringify(c.done)}
 How to play:
 - Stay in character. Speak simple, natural, everyday Italian: 1-3 short sentences, common words, mostly present tense. Sound like a real ${s.role}, not a teacher.
 - The learner speaks into a microphone and their words reach you through speech recognition. Be forgiving: ignore punctuation, capital letters, missing accents and spellings that sound right. Read near-misses as the word they most plausibly meant (e.g. "cornetta" is "cornetto", "quando costa" is "quanto costa"). If you can understand what they want, respond to it.
+- The speech recognizer is often set to English, so Italian speech can arrive as English words that merely sound alike: "bone journal" is "buongiorno", "pair fervor ray" is "per favore", "grot see eh" is "grazie", "Kwan toe costa" is "quanto costa", "un cappuccino eh un core netto" is "un cappuccino e un cornetto". Always read the transcript aloud in your head and reconstruct the Italian the learner most likely said. Never treat these as English or as mistakes. Put your reconstruction in "understood".
 - When something is genuinely wrong (wrong word, an English word, wrong verb form, wrong article or gender, an unnatural phrase), correct it the way a friendly Italian would, inside the conversation: naturally repeat the right form back in your reply (for example "Un cappuccino? Certo!"). Never lecture in character. Also report it in "correction". At most one correction per turn, skip tiny slips, and never correct something that is only a transcription artefact.
 - If the learner is stuck, uses English, or asks for help, stay in character, simplify, and put a phrase they could say in "hint".
 - Steer gently toward the goal. Don't end the scene before all steps are done; once they are, wrap up warmly.
@@ -350,7 +355,7 @@ ${transcript}
 Learner (just now, via speech recognition): "${said.replace(/"/g, "'")}"
 
 Reply with only a JSON object of this shape:
-{"it": "your reply in Italian", "en": "English translation of your reply", "correction": null or {"said": "the learner's words that were off", "better": "the natural Italian", "why": "plain English, under 15 words"}, "words": [{"it": "useful word or phrase from this turn", "en": "meaning"}], "steps_done": [indices of all steps completed so far, cumulative], "hint": null or "a short Italian phrase they could say next (English in brackets)"}
+{"understood": "the Italian you took the learner to have said, cleaned up (reconstruct it if the transcript was English-sounding gibberish)", "it": "your reply in Italian", "en": "English translation of your reply", "correction": null or {"said": "the learner's words that were off", "better": "the natural Italian", "why": "plain English, under 15 words"}, "words": [{"it": "useful word or phrase from this turn", "en": "meaning"}], "steps_done": [indices of all steps completed so far, cumulative], "hint": null or "a short Italian phrase they could say next (English in brackets)"}
 "words" holds 0-2 items a beginner may not know. Give "hint" only when it would help.`;
 }
 
@@ -366,6 +371,7 @@ async function send() {
     const r = await sample.json(buildPrompt(said), { modelTier: "quick", cache: false, signal: ctl.signal });
     if (!r || typeof r.it !== "string") throw { code: "invalid_json" };
     const reply = { who: "npc", it: r.it, en: typeof r.en === "string" ? r.en : "", hint: typeof r.hint === "string" && r.hint ? r.hint : null };
+    if (typeof r.understood === "string" && r.understood.trim() && norm(r.understood) !== norm(said)) mine.heard = r.understood.trim();
     if (r.correction && r.correction.better) mine.fix = { said: String(r.correction.said || said), better: String(r.correction.better), why: String(r.correction.why || "") };
     c.msgs.push(reply);
     if (Array.isArray(r.steps_done)) { const s = SCENES.find((x) => x.id === sceneId); c.done = [...new Set([...c.done, ...r.steps_done.map(Number).filter((i) => i >= 0 && i < s.steps.length)])]; if (c.done.length === s.steps.length && !state.completed.includes(sceneId)) { state.completed.push(sceneId); store.set("completed", state.completed); } }
