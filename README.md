@@ -18,3 +18,5 @@ Read them in order:
 5. [Architecture](docs/05-architecture.md): web app stack, voice, data model, API use
 6. [Roadmap](docs/06-roadmap.md): milestones, starting with the first build session
 7. [Visuals](docs/07-visuals.md): character portraits, moods and places
+
+Undecided ideas are parked in [docs/ideas.md](docs/ideas.md).
