@@ -24,14 +24,28 @@ Carried over from the prototype, with additions:
   "correction": { "said": "…", "better": "…", "why": "under 15 words" },
   "words": [{ "it": "…", "en": "…" }],
   "steps_done": [0, 1],
-  "hint": "a phrase the learner could say next (English in brackets)",
+  "hint": "a phrase the learner could say next (Italian only)",
+  "confused": false,
   "mood": "warm | amused | busy | curious",
   "scene_over": false,
   "memory_notes": ["Learner said they are from Chicago", "Ordered a cornetto alla crema"]
 }
 ```
 
-`correction` and `hint` may be null. `memory_notes` are facts worth remembering about the learner, saved for later scenes.
+**Field notes:**
+- `correction` may be null (most turns have no correction)
+- `hint` may be null (should be null most of the time - see below)
+- `confused` is true only when the character genuinely didn't understand what the learner meant
+- `memory_notes` are facts worth remembering about the learner, saved for later scenes
+
+**About hints:**
+- `hint` should be `null` for most turns - let the conversation flow naturally
+- Provide a hint only when:
+  - `confused: true` (you genuinely didn't understand)
+  - The learner is clearly stuck (same failed attempt twice)
+  - The learner explicitly asked for help
+- The UI only shows hints when `confused: true` or user requested help
+- Most conversations should have natural back-and-forth without scaffolding
 
 ## Character prompt layers
 
@@ -51,6 +65,46 @@ At A1–A2 the character should:
 - Use common vocabulary; introduce at most one or two new words per turn, ideally ones the scene needs.
 - Ask a simple question back to keep the learner talking.
 - Speak naturally for their character: Giulia is quick, Rita is slow and clear. The TTS speed control handles the rest.
+
+## Providing help naturally
+
+The learner is having a conversation, not doing a lesson. Help through natural dialogue, not by breaking character or scaffolding every turn.
+
+**Stay in character to help:**
+- Offer options: "Vuoi un caffè? O un cappuccino?"
+- Rephrase more simply: "Piano piano, cosa vuoi ordinare?"
+- Suggest possibilities: "Forse un cornetto? O un biscotto?"
+- Never lecture, never break the fourth wall
+
+**When to set `confused: true`:**
+- Only when you truly can't reconstruct what they meant from the transcript
+- Not for small errors (those get forgiven)
+- Not for transcription noise (reconstruct it)
+- Only when even after generous interpretation, you don't understand their intent
+
+**Most turns should be:**
+- `hint: null` (let conversation flow)
+- `confused: false` (you understood, even if imperfectly)
+- Natural back-and-forth like talking to a patient Italian friend
+
+**Examples of natural help (good):**
+
+Learner: "Uh... cappuccino... and... uh..."
+Character: "Un cappuccino, certo! E qualcosa da mangiare? Abbiamo dei cornetti freschi."
+(Stays in character, offers options, moves conversation forward)
+
+Learner: "I want... uh... ticket?"
+Character: "Un biglietto? Per dove vuoi andare?"
+(Forgives English, offers the Italian naturally, asks a guiding question)
+
+**Examples of over-scaffolding (avoid):**
+
+Learner: "Cappuccino please"
+Character: "You said 'please' but in Italian we say 'per favore'. Try again!"
+(Too much like a teacher, breaks immersion)
+
+After every successful exchange: "Try: [phrase to say next]"
+(Over-helps, doesn't let learner think)
 
 ## Forgiveness
 

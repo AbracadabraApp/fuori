@@ -6,29 +6,36 @@ The prototype runs inside a claude.ai artifact, where the microphone can be bloc
 
 | Part | Choice | Why |
 |---|---|---|
-| App | **Next.js** (App Router) + TypeScript | One project for UI and server routes; deploys to Vercel in minutes |
-| Hosting | **Vercel** (free tier to start) | Zero-config deploys from GitHub, environment variables for secrets |
+| App | **Next.js** (App Router) + TypeScript | One project for UI and server routes; frontend and API together |
+| Hosting | **Railway** | Auto-deploys from GitHub, integrated Postgres, environment variables for secrets, automatic HTTPS (required for microphone access) |
+| Database | **Railway Postgres** (M4) | Integrated with Railway hosting, easy provisioning |
 | Claude | **Anthropic TypeScript SDK** (`@anthropic-ai/sdk`) in server routes only | The API key never reaches the browser |
-| Speech in | Browser **Web Speech API**, `lang = "it-IT"` (M1); a hosted speech-to-text service with Italian locked (later) | Free and instant to start; upgrade when accuracy or Firefox support matters |
-| Speech out | Browser **speechSynthesis** with an Italian voice (M1); a hosted text-to-speech service with distinct voices per character (later) | Character voices are a big part of the feel, but not needed on day one |
-| Storage | **localStorage** (M1); **Postgres** (e.g. Supabase or Neon) once memory and multi-device matter | Keep M1 simple |
-| Auth | None for M1; Supabase Auth or similar when there's more than one player | |
+| Speech in | **OpenAI Whisper API** (`whisper-1`) from M1 | Browser STT transcribes Italian as English gibberish; Whisper solves this. ~$0.12/day per learner. See [Language Services](08-language-services.md) |
+| Speech out | Browser **speechSynthesis** with an Italian voice (M1); **hosted TTS** (ElevenLabs or Azure) with distinct character voices (M2) | Character voices are a big part of the feel; browser voices for M1, upgrade in M2 |
+| Storage | **localStorage** (M1); **Railway Postgres** (M4) once memory and multi-device matter | Keep M1 simple |
+| Auth | None for M1; add when there's more than one player (M4) | |
 
 ## Request flow
 
 ```
-Browser                               Server route (/api/turn)                 Claude API
--------                               ------------------------                 ----------
-mic → SpeechRecognition(it-IT)
-transcript + scene id + state  ─────▶ build prompt layers
+Browser                               Server routes                            APIs
+-------                               -------------                            ----
+mic → MediaRecorder → audio blob
+                               ─────▶ /api/transcribe                   ────▶ Whisper
+                               ◀───── Italian transcript                ◀──── (audio → text)
+
+transcript + scene + state     ─────▶ /api/turn
+                                      build prompt layers
                                       (house rules, character, memory,
-                                       scene, transcript)                ────▶ messages.create / parse
+                                       scene, transcript)                ────▶ Claude
                                                                          ◀──── JSON turn output
                                       validate, update state
 render reply, speechSynthesis  ◀───── turn output
 ```
 
 End-of-day: `/api/diario` takes the day's transcripts and returns the diario plus updated character memories.
+
+**M2 with hosted TTS:** `/api/turn` also generates TTS audio for the character's response and returns audio URL or streams bytes.
 
 ## Claude API usage
 
@@ -78,6 +85,218 @@ prototype/index.html       the original artifact demo
 
 At A1–A2, a turn is a few thousand input tokens (mostly cached) and a short output. A 20-minute day is roughly 30–50 turns plus one diario call. Measure real usage in M1 and set a per-day budget before inviting other players.
 
+## Deployment (Railway)
+
+**Why Railway:**
+- Automatic HTTPS (required for browser microphone access)
+- Integrated Postgres for M4
+- Preview environments for feature branches
+- Simple Git-based deploys
+- Environment variables management
+
+**M1 Setup:**
+
+```bash
+# Install Railway CLI
+npm i -g @railway/cli
+
+# Login
+railway login
+
+# Initialize in project root
+cd ~/fuori
+railway init
+
+# Link to GitHub repo (enables auto-deploys)
+railway link
+
+# Deploy
+git push origin main
+# Railway auto-deploys from main branch
+```
+
+**Environment variables:**
+
+Set in Railway dashboard (Project → Variables):
+- `ANTHROPIC_API_KEY` - Claude API for conversations
+- `OPENAI_API_KEY` - Whisper for speech-to-text
+- (M2) `ELEVENLABS_API_KEY` or `AZURE_SPEECH_KEY` - for character TTS
+
+Never commit `.env*` files; keep in `.gitignore`.
+
+**Deployment workflow:**
+
+```
+Development:
+├── Local: .env.local for secrets
+├── Run: npm run dev
+└── Test: http://localhost:3000
+
+Production:
+├── Push: git push origin main
+├── Railway: auto-builds and deploys (~30 seconds)
+├── URL: fuori.railway.app (automatic HTTPS)
+└── Test on phone: open URL, test voice features
+
+Preview branches:
+├── Create: git checkout -b feature/new-character
+├── Push: git push origin feature/new-character
+├── Railway: creates fuori-pr-123.railway.app
+└── Merge when tests pass
+```
+
+**Monitoring:**
+
+```bash
+# View logs
+railway logs
+
+# Check deployment status
+railway status
+
+# Open in browser
+railway open
+```
+
+## Mobile Testing Strategy
+
+Fuori is **mobile-first** - the primary experience is on a phone. Desktop is secondary.
+
+**Primary target:** iPhone Safari (iOS 15+)
+**Secondary target:** Chrome on Android
+
+**Why mobile matters:**
+- Voice is the primary interaction
+- Browser microphone requires HTTPS (Railway provides this)
+- Touch targets must be large enough
+- Real-world testing catches audio issues
+
+**Testing workflow:**
+
+1. **Deploy to Railway** (from laptop)
+   ```bash
+   git add .
+   git commit -m "Test new feature"
+   git push
+   # Wait 30 seconds
+   ```
+
+2. **Test on phone**
+   - Open fuori.railway.app on phone
+   - Test voice interaction end-to-end
+   - Check console logs via remote debugging
+
+3. **Debug remotely** (if issues found)
+
+   **iOS Safari:**
+   ```
+   On iPhone:
+   - Settings → Safari → Advanced → Web Inspector (enable)
+   - Connect iPhone to Mac via USB
+
+   On Mac:
+   - Safari → Develop → [Your iPhone] → fuori.railway.app
+   - See phone's console logs, network requests, errors
+   ```
+
+   **Chrome Android:**
+   ```
+   On phone:
+   - Chrome → Settings → Developer options → USB debugging
+
+   On laptop:
+   - Open chrome://inspect
+   - See phone's Chrome tabs
+   - Click "inspect" to debug
+   ```
+
+4. **Check Railway logs** (for API errors)
+   ```bash
+   railway logs
+   # See Whisper/Claude API errors from phone requests
+   ```
+
+**Mobile-specific checks before M1 completion:**
+
+- [ ] Mic permission prompt appears on first use
+- [ ] Recording starts when mic button pressed
+- [ ] Whisper returns Italian text (not English gibberish)
+- [ ] Text-to-speech plays without buffering
+- [ ] Touch targets are 44px minimum (mic button, "Come si dice?")
+- [ ] Conversation log scrolls smoothly
+- [ ] Text input fallback works if mic blocked
+- [ ] Works in portrait orientation
+- [ ] Works in landscape orientation
+- [ ] App continues after phone lock/unlock
+- [ ] Works on mobile data (not just WiFi)
+
+**Add mobile logging:**
+
+```typescript
+// lib/mobile-logger.ts
+export function logMobile(event: string, data: any = {}) {
+  const log = {
+    event,
+    timestamp: new Date().toISOString(),
+    userAgent: navigator.userAgent,
+    ...data,
+  };
+
+  console.log('[MOBILE]', log);
+
+  // Also send critical events to server for debugging
+  if (event.includes('error') || event.includes('failed')) {
+    fetch('/api/log', {
+      method: 'POST',
+      body: JSON.stringify(log),
+    }).catch(() => {}); // Don't let logging break the app
+  }
+}
+
+// Usage in components
+logMobile('mic-started');
+logMobile('whisper-response', { text, latency: Date.now() - start });
+logMobile('whisper-error', { error: error.message });
+```
+
 ## Secrets
 
-- `ANTHROPIC_API_KEY` set in `.env.local` locally and in Vercel project settings. Never committed; `.env*` stays in `.gitignore`.
+Environment variables:
+- `ANTHROPIC_API_KEY` - Claude API for conversations
+- `OPENAI_API_KEY` - Whisper for speech-to-text
+- (M2) `ELEVENLABS_API_KEY` or `AZURE_SPEECH_KEY` - for character TTS
+
+Stored in:
+- `.env.local` for local development
+- Railway dashboard for production
+- Never committed; `.env*` stays in `.gitignore`
+
+## Language validation for Italian
+
+Before starting M1 implementation, validate that Claude works well for Italian conversations:
+
+**Pre-M1 tests:**
+1. Run 20-30 Italian conversations with the prototype using Claude Opus 5.5
+2. Have a native Italian speaker (ideally an A1-A2 teacher) review for:
+   - Naturalness at beginner level
+   - Regional authenticity (does Giulia sound Roman?)
+   - Grammar accuracy (no systematic errors)
+   - Correction quality (natural recasts like "Un cappuccino? Certo!" vs textbook corrections)
+   - Character stays in Italian (never switches to English)
+3. Test at low effort setting (needed for latency in voice conversations)
+4. Document any systematic issues
+
+**What to look for:**
+- Characters should sound like real Italians, not language teachers
+- Corrections should feel natural, embedded in conversation
+- Regional expressions should match character backgrounds
+- Vocabulary should be appropriate for A1-A2 (not too advanced)
+- Grammar should be correct (model shouldn't make errors while teaching)
+
+**If issues are found:**
+- Test GPT-4o as an alternative
+- Adjust prompts to compensate for systematic errors
+- Consider medium effort if low effort degrades Italian quality
+- Document workarounds in house rules prompt
+
+See [Language Services](08-language-services.md) for more on STT/TTS choices and Italian-specific considerations.

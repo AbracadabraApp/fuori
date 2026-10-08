@@ -72,10 +72,30 @@ No streak guilt, no hearts, no lives. Rewards are recognition: a character remem
 
 ## Help and safety nets
 
-- **"Come si dice…?"** button: say it in English, get the Italian to repeat, without leaving the scene.
-- **Ripeti / Piano**: replay the last line, slower.
-- **English toggle** for translations under each line, on by default at A1 and off by default from A2.
-- **Graceful exits**: any scene can be ended; the character closes naturally.
+The game is dialogue-focused with minimal typing. Help comes in layers, starting with natural conversation:
+
+**Level 1: Natural character help** (always available, in character)
+- Characters offer options: "Vuoi un caffè? O un cappuccino?"
+- They rephrase: "Piano piano, cosa vuoi ordinare?"
+- They simplify questions when the learner struggles
+
+**Level 2: "Come si dice…?" button** (user-triggered)
+- Press the button, say what you want in English
+- Get the Italian phrase back
+- Repeat it to continue the conversation
+- The character waits patiently, stays in character
+
+**Level 3: UI hints** (only when genuinely stuck)
+- Appear only when the character is confused OR after repeated failed attempts
+- Most turns have no hints - the conversation flows naturally
+- Trust Claude's reconstruction of imperfect transcription silently
+
+**Always available:**
+- **Ripeti / Piano**: replay the last line, slower
+- **English toggle** for translations under each line, on by default at A1 and off by default from A2
+- **Graceful exits**: any scene can be ended; the character closes naturally
+
+The goal is immersion: you're talking to someone, not doing a drill.
 
 ## Out of scope for now
 

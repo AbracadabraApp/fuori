@@ -16,7 +16,10 @@ Read them in order:
 3. [The journey](docs/03-journey.md): the route, places and recurring characters
 4. [Conversation engine](docs/04-conversation-engine.md): how characters talk, forgive, correct and remember
 5. [Architecture](docs/05-architecture.md): web app stack, voice, data model, API use
-6. [Roadmap](docs/06-roadmap.md): milestones, starting with the first build session
+6. [Roadmap](docs/06-roadmap.md): milestones, starting with pre-M1 validation
 7. [Visuals](docs/07-visuals.md): character portraits, moods and places
+8. [Language services](docs/08-language-services.md): STT/TTS choices for Italian, model validation
+9. [Data model](docs/09-data-model.md): TypeScript interfaces for all content and learner data
+10. [Testing](docs/10-testing.md): testing strategy, conversation tests, validation protocols
 
 Undecided ideas are parked in [docs/ideas.md](docs/ideas.md).
