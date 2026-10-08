@@ -70,7 +70,7 @@ The learner's words arrive through speech recognition, so:
 
 ## Encounters
 
-The open-ended evening conversation needs scaffolding to work at A1–A2:
+Each evening brings a different person (never repeated within a stay). The open-ended evening conversation needs scaffolding to work at A1–A2:
 - Each encounter character has a **hidden agenda**: a topic they want to talk about, an opinion, something they want to learn about the learner. The character leads with questions, so the learner reacts rather than carries the conversation.
 - **No goal checklist**, but the server tracks a soft arc: greeting → their topic → your story → a natural goodbye.
 - **Length**: about 8–12 exchanges or 5 minutes. After that the character finds a natural reason to leave ("Devo andare, mio nipote mi aspetta!") and sets `scene_over`.

@@ -6,9 +6,9 @@ The game is a season in Italy told as a sequence of **days**. Each day is a shor
 
 ```
 Choose today (continue stay / day trip / travel on)
-  → Mattina: an errand with a clear goal
-  → Pomeriggio: a task tied to the place
-  → Sera: an unscripted encounter
+  → Colazione: the anchor character (your barista)
+  → One or two errands with rotating shopkeepers and neighbours
+  → Sera: an unscripted conversation with someone new
   → Diario: review the day, plan tomorrow
 ```
 
@@ -20,25 +20,44 @@ Days are **game days, not calendar days**. A player can do one a night or three 
 - **Day trips** (1 day) leave from a stay and return the same evening. They bring novelty: a new town, new vocabulary, a little time pressure (the last train back).
 - **Travel days** move you between stays and are themselves scenes: buying a ticket, a conversation on the train, arriving and finding your lodging.
 
+## Who you meet
+
+### The cast of a stay
+Each stay has a cast of **4–8 named characters**, counting the evening conversations. That is enough variety to keep days fresh and few enough that you really get to know them. Day trips have 2–3 characters of their own.
+
+### At most four conversations a day
+A day has **up to four conversations** and never the same four twice:
+
+| Slot | Who | Changes day to day? |
+|---|---|---|
+| Colazione | The **anchor**: your barista, every morning of the stay | Same person, new conversation each day |
+| Errand 1 | A shopkeeper or neighbour from the cast | Rotates |
+| Errand 2 (optional) | Another cast member, or a one-off (pharmacist, tabaccaio) | Rotates; some days skip it |
+| Sera | An **open-ended** conversation with someone new | A different person every evening |
+
+Rules for building a day:
+- The anchor appears every day of a stay. Their conversation grows with familiarity (sconosciuto → cliente → habitué → amico), so they are the clearest measure of progress.
+- Errand characters return every 1–2 days, not every day, so each return feels like a reunion and recycles that character's vocabulary.
+- The evening person is never repeated within a stay. A few may reappear in a later city.
+- Shorter days are fine: three conversations on a travel day, two on a day trip's return evening.
+
 ## The daily rhythm
 
-### Mattina: errand (structured)
-A concrete goal with 2–4 checkable steps, like the prototype scenes. Example: "Buy breakfast at your bar: greet Giulia, order, pay at the cassa." On repeat visits the steps shift (order something new, ask Giulia how her weekend was).
+### Colazione: the anchor (structured, light)
+A short conversation with your barista, with 1–3 checkable steps. Day 1 is ordering and paying. By day 3 it's "il solito?", small talk, and news about the neighbourhood that sets up the day ("Enzo has the first artichokes today").
 
-### Pomeriggio: place task (structured, looser)
-Something specific to the place and the season: book a table, buy a museum ticket, ask the pharmacist about a headache, collect a package, buy a gift. One clear outcome, more freedom in how to get there.
+### Errands: shopkeepers and neighbours (structured)
+A concrete goal with 2–4 steps, like the prototype scenes: buy food at the market, a bus ticket at the tabaccheria, something at the pharmacy, book a table, help your host with something. Steps change on repeat visits (Enzo asks how you cooked his tomatoes).
 
-### Sera: the encounter (unscripted)
-Once a day you meet someone for an open conversation: a nonna on a bench, a student on the train, the owner of the wine bar, another regular. No goal checklist. See [Conversation engine → Encounters](04-conversation-engine.md#encounters) for how this stays workable at A1–A2.
-
-Some encounter characters can return later in the journey (the woman from the train turns up in Firenze), which makes the world feel continuous.
+### Sera: open conversation (unscripted)
+Each evening you meet someone new for an open conversation: a nonna on a bench, the owner of a wine bar, a student sketching in the piazza. No goal checklist. See [Conversation engine → Encounters](04-conversation-engine.md#encounters) for how this stays workable at A1–A2.
 
 ### Diario: end-of-day review
 A short screen, also voiced, that closes the day:
 - The 2–3 corrections that mattered most today, with the better phrasing to say aloud.
 - New words and phrases, added to the quaderno.
 - One or two "try tomorrow" goals pulled from your mistakes (e.g. "Use *vorrei* instead of *voglio*").
-- A one-line note from the day's encounter character, in Italian.
+- A one-line note from the evening's character, in Italian, with their portrait.
 
 The diario feeds the next day: the next morning's characters are told what to recycle.
 

@@ -21,35 +21,38 @@ A first season of about 18 days. Only Roma (days 1–4) needs to be fully built 
 
 **Your base:** a rented room above a courtyard in Trastevere. Your host is **Signora Rita**, 70, widowed, kind, nosy, uses *Lei* at first and switches to *tu* on day 3.
 
-### Recurring characters
+### The cast (8 people)
 
-| Character | Who | Where | Speech |
+| Character | Role | Who | Speech |
 |---|---|---|---|
-| Signora Rita | Your host | The flat | Slow, clear, warm, a few Roman expressions |
-| Giulia | Barista, 30s, quick and funny | Bar on your street | Fast, informal, *tu* from the start |
-| Enzo | Fruit and veg stall, 60s, theatrical | Mercato di San Cosimato | *Lei*, compliments, haggling for fun |
-| Davide | Rita's grandson, 25, a student | Appears in the evenings | Casual, curious about where you're from |
+| **Giulia** | Anchor, every morning | Barista on your street, 30s, quick and funny | Fast, informal, *tu* from the start |
+| Signora Rita | Errands | Your host | Slow, clear, warm, a few Roman expressions |
+| Enzo | Errands | Fruit and veg stall at the Mercato di San Cosimato, 60s, theatrical | *Lei*, compliments, haggles for fun |
+| Franco | Errands | Tabaccaio, 50s, gruff but helpful | Short sentences, Roman accent, warms up slowly |
+| Nonna Franca | Evening, day 1 | Neighbour on the courtyard bench | Slow, lots of questions about your family |
+| Davide | Evening, day 2 | Rita's grandson, 25, a student | Casual, curious about where you're from and why Italy |
+| Matteo | Evening, day 3 | Owns a tiny wine bar | Enthusiastic, insists you taste and give an opinion |
+| Sofia | Evening, day 4 | Art student sketching in Piazza di Santa Maria | Thoughtful, asks what you find beautiful |
 
 ### Days
 
-| Day | Mattina | Pomeriggio | Sera (encounter) |
+At most four conversations a day; Giulia every morning, the others rotating.
+
+| Day | Colazione | Errands | Sera (open) |
 |---|---|---|---|
-| 1 | Arrive; Rita shows you the room (keys, wifi, *colazione*) | First visit to Giulia's bar | A neighbour on the stairs |
-| 2 | Bar: order and pay at the cassa | Market with Enzo: fruit, prices, quantities | Davide at dinner: where you're from, why Italy |
-| 3 | Bar: Giulia remembers you; order something new | Buy a SIM card or a bus ticket at the tabaccheria | Someone at the next table in a trattoria |
-| 4 | Market: Enzo asks how you're cooking his tomatoes | Plan the Orvieto trip with Rita (times, the train) | *Aperitivo* with Davide and a friend |
+| 1 | Giulia: first visit, order and pay at the cassa | Rita: arrival, keys, the room, wifi | Nonna Franca |
+| 2 | Giulia: she half-remembers you | Enzo: fruit, prices, quantities · Franco: a bus ticket | Davide, at dinner at Rita's |
+| 3 | Giulia: "il solito?", neighbourhood news | Rita: ask for a trattoria recommendation | Matteo |
+| 4 | Giulia: you tell her about your week | Enzo: how did you cook his tomatoes? · Franco: train tickets for Orvieto | Sofia |
 
-Recycling across days is intentional: greetings, ordering, prices, *quanto costa*, *vorrei*, numbers, times.
+Appearances: Giulia 4, Rita 2, Enzo 2, Franco 2, each evening character once. Greetings, ordering, prices, *quanto costa*, *vorrei*, numbers and times recur across different people.
 
-## Encounter character pool
+## Later cities
 
-Encounters draw from a pool so they don't repeat too soon. Each has a hidden topic and a reason to talk:
+Each stay gets its own anchor and a cast of 4–8 in the same pattern. Day trips have 2–3 characters. Candidates already sketched:
 
-- **Nonna Franca** on a bench, feeding pigeons; wants to talk about her grandchildren and how the neighbourhood has changed.
-- **Luca**, a train conductor on a break; football and the best *supplì* in Roma.
-- **Sofia**, art student sketching in a piazza; wants to know what you find beautiful.
-- **Don Paolo**, a parish priest; history of the church, gently curious about your family.
-- **Matteo**, owns a tiny wine bar; insists you taste something and give an opinion.
-- **Chiara**, nurse coming off a night shift; tired, funny, wants a coffee and small talk.
+- **Luca**, a train conductor on a break; football and the best *supplì*. Travel day, Roma → Firenze.
+- **Don Paolo**, a parish priest in Firenze; the history of his church, curious about your family.
+- **Chiara**, a nurse in Bologna coming off a night shift; tired, funny, wants a coffee and small talk.
 
-Any of these may reappear in a later city.
+A few Roma characters can reappear later (Davide visits Bologna for a concert), which makes the world feel continuous.

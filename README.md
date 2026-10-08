@@ -17,3 +17,4 @@ Read them in order:
 4. [Conversation engine](docs/04-conversation-engine.md): how characters talk, forgive, correct and remember
 5. [Architecture](docs/05-architecture.md): web app stack, voice, data model, API use
 6. [Roadmap](docs/06-roadmap.md): milestones, starting with the first build session
+7. [Visuals](docs/07-visuals.md): character portraits, moods and places

@@ -18,21 +18,24 @@ Checklist:
 
 **Done when:** you can hold a spoken conversation in each of the four scenes on your phone, and what you say shows up in Italian.
 
+Optional: simple SVG avatars per character, with a few expressions driven by the `mood` field.
+
 ## M2 — Roma, days 1–4
 
-- [ ] Content files for Roma: Signora Rita, Giulia, Enzo, Davide; the 12 scenes in [the journey](03-journey.md)
+- [ ] Content files for Roma: the cast of 8 and the 14 conversations in [the journey](03-journey.md)
+- [ ] Day builder: Giulia every morning, rotating errands, a new evening character, at most four conversations a day
 - [ ] Onboarding: name, where you're from, why Italy (spoken, to Rita on arrival)
-- [ ] Day structure: mattina → pomeriggio → sera → diario, with a "today" screen
+- [ ] Day structure: colazione → errands → sera → diario, with a "today" screen
 - [ ] Character memory across days (familiarity, remembered facts)
 - [ ] Diario at the end of each day; "try tomorrow" goals fed into the next day's prompts
 - [ ] Quaderno with last-used dates; recycle stale words into scenes
+- [ ] Character portraits (see [Visuals](07-visuals.md)): SVG placeholders first, then generated portraits with moods
 
 **Done when:** on day 3 Giulia greets you by name and remembers your usual order, and the diario points out a mistake you made twice.
 
 ## M3 — Evening encounters and the first day trip
 
-- [ ] Encounter engine: hidden agendas, soft arc, natural ending, diario note
-- [ ] Encounter pool (six characters) with no-repeat rules
+- [ ] Evening conversation engine: hidden agendas, soft arc, natural ending, diario note
 - [ ] "Come si dice…?" help button
 - [ ] Day 5: Orvieto day trip, including the train there and back
 - [ ] A small set of saved test conversations to rerun when prompts change
