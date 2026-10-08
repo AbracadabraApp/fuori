@@ -39,6 +39,8 @@ Started: 2026-10-08
 - [ ] Need to test Whisper accuracy with recorded phrases
 - [ ] Need OpenAI API key for Whisper
 - [ ] Need to decide: ElevenLabs vs Azure for TTS
+- [ ] Make `main` the GitHub default branch (Settings → General). It is currently `claude/voice-prototype`, and Railway deploys from `main`
+- [ ] The prototype runs on claude.ai's fast model tier, not Opus 5.5 via the API; test the production model with a small API script
 
 ### Content Status
 **Characters:** 0/8 Roma characters created
@@ -62,7 +64,7 @@ Started: 2026-10-08
 5. Create validate-content skill before M1 implementation
 
 ### References
-- Planning docs: /Users/josh.petersen/fuori/docs/
+- Planning docs: `docs/`
 - Data model: docs/09-data-model.md
 - Roadmap: docs/06-roadmap.md
 - Language services: docs/08-language-services.md

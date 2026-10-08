@@ -29,15 +29,19 @@ import OpenAI from 'openai';
 
 export async function POST(request: Request) {
   const formData = await request.formData();
-  const audio = formData.get('audio') as Blob;
+  // Must be a File with a filename whose extension matches the audio format
+  // (Whisper detects the format from it). See "Browser side" below.
+  const audio = formData.get('audio') as File;
+  // 'it' for normal turns; 'en' for the "Come si dice?" button, where the learner speaks English
+  const language = formData.get('language') === 'en' ? 'en' : 'it';
 
   const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
   const transcription = await openai.audio.transcriptions.create({
     file: audio,
     model: 'whisper-1',
-    language: 'it',
-    prompt: 'Trascrizione in italiano di una conversazione naturale.',
+    language,
+    ...(language === 'it' && { prompt: 'Trascrizione in italiano di una conversazione naturale.' }),
   });
 
   return Response.json({ text: transcription.text });
@@ -46,7 +50,8 @@ export async function POST(request: Request) {
 
 **Browser side:**
 - Use MediaRecorder to capture audio while mic button is pressed
-- Send audio blob to `/api/transcribe`
+- iPhone Safari records `audio/mp4`; Chrome records `audio/webm`. Read `recorder.mimeType` and append the blob with a matching filename, e.g. `formData.append('audio', blob, mime.includes('mp4') ? 'turn.mp4' : 'turn.webm')`. A bare blob has no filename and Whisper rejects it as an unrecognized format
+- Send audio blob to `/api/transcribe` with `language` set to `it` (or `en` for "Come si dice?")
 - Show Italian text in input field
 - Loading states: "Ascolto..." → "Trascrivo..." → show result
 
@@ -200,7 +205,7 @@ Required API keys:
 
 Stored in:
 - `.env.local` for local development
-- Vercel project settings for production
+- Railway dashboard (Project → Variables) for production
 - Never committed (`.env*` in `.gitignore`)
 
 ## Pre-M1 Action Items

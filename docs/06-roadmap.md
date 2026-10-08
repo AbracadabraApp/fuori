@@ -7,7 +7,8 @@ Each milestone ends with something playable.
 **Goal:** Validate that Claude, Whisper, and the conversation design work well for Italian before building.
 
 Checklist:
-- [ ] Test Claude Opus 5.5 with 20-30 Italian conversations using the prototype
+- [ ] Test Claude Opus 5.5 with 20-30 Italian conversations
+  - Note: the prototype runs on claude.ai's fast model tier, not on Opus 5.5 through the API. Use it for a feel of the design, but test the production model with a small script against the API (same prompt, `claude-opus-5-5`, low effort) before deciding
 - [ ] Native Italian speaker (ideally A1-A2 teacher) reviews for naturalness, corrections, regional authenticity
 - [ ] Test Whisper: record yourself saying 20 common Italian phrases, measure accuracy
 - [ ] Measure Whisper latency (should be <2s for short phrases)
@@ -33,7 +34,8 @@ Checklist:
 
 **Backend:**
 - [ ] `/api/transcribe` route: MediaRecorder audio blob → Whisper API → Italian text
-  - Handle audio/webm, audio/mp4 formats
+  - Handle audio/webm (Chrome) and audio/mp4 (iPhone Safari); send the blob with a matching filename
+  - Accept a `language` field: `it` for turns, `en` for "Come si dice?"
   - Return clear errors for debugging
 - [ ] `/api/turn` route: port the prototype's prompt into layered form ([conversation engine](04-conversation-engine.md)), structured JSON output with Zod schema
   - Include new `confused` field in turn schema
@@ -54,6 +56,7 @@ Checklist:
 - [ ] Persist progress in localStorage
 
 **Deployment & Testing:**
+- [ ] Make `main` the GitHub default branch and work on it (Railway deploys from `main`)
 - [ ] Deploy to Railway: `git push origin main`
 - [ ] Verify HTTPS works (required for microphone)
 - [ ] Test on iPhone Safari: full voice conversation flow
@@ -85,7 +88,6 @@ Optional: simple SVG avatars per character, with a few expressions driven by the
 ## M3 — Evening encounters and the first day trip
 
 - [ ] Evening conversation engine: hidden agendas, soft arc, natural ending, diario note
-- [ ] "Come si dice…?" help button
 - [ ] Day 5: Orvieto day trip, including the train there and back
 - [ ] A small set of saved test conversations to rerun when prompts change
 

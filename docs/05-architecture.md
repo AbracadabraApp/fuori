@@ -1,6 +1,6 @@
 # Architecture
 
-The prototype runs inside a claude.ai artifact, where the microphone can be blocked and dictation tends to come through in English. The web app removes both problems by running on its own domain, where the browser can listen with speech recognition locked to Italian.
+The prototype runs inside a claude.ai artifact, where the microphone can be blocked and dictation tends to come through in English. The web app removes both problems: it runs on its own HTTPS domain, so it can record from the microphone, and it sends the audio to Whisper with the language set to Italian.
 
 ## Stack (recommended)
 
@@ -45,19 +45,9 @@ End-of-day: `/api/diario` takes the day's transcripts and returns the diario plu
 - **Refusals and errors.** Check `stop_reason` before reading content, and handle rate limits and transient errors with a friendly in-character fallback ("Scusa, non ho capito, puoi ripetere?").
 - Before writing the API code, check the current SDK docs for exact parameter names; these details change.
 
-## Data model (sketch)
+## Data model
 
-```ts
-Learner        { id, name, homeTown, whyItaly, level, settings }
-Journey        { learnerId, day, location, stayId }
-Character      { id, name, sheet, city, recurring }        // static content
-Relationship   { learnerId, characterId, familiarity, memory: string[] }
-Scene          { id, characterId, type: "errand"|"task"|"encounter", goal?: string[] }
-SceneRun       { id, learnerId, sceneId, day, transcript, stepsDone, corrections }
-Word           { learnerId, it, en, firstSeen, lastUsed, timesUsed }
-Mistake        { learnerId, pattern, example, count, lastSeen }
-Diario         { learnerId, day, summary, corrections, newWords, tryTomorrow }
-```
+The full TypeScript interfaces are in [Data model](09-data-model.md), which is the source of truth.
 
 Static content (characters, places, scenes, the route) lives in the repo as TypeScript or JSON files under `content/`, so it's versioned and easy to edit.
 
@@ -68,11 +58,13 @@ app/
   page.tsx                 journey map / today
   play/[sceneId]/page.tsx  conversation screen
   diario/page.tsx
+  api/transcribe/route.ts  audio → Whisper → Italian (or English for "Come si dice?")
   api/turn/route.ts
+  api/translate/route.ts   "Come si dice?" English → Italian
   api/diario/route.ts
 lib/
   claude.ts                SDK client, prompt builder, schemas
-  speech.ts                recognition + synthesis wrappers
+  speech.ts                MediaRecorder capture + speechSynthesis (M1) wrappers
   state.ts                 local state (M1), DB later
 content/
   characters/*.ts
