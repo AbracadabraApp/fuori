@@ -1,0 +1,394 @@
+<title>Fuori</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a street-sign rail of places on top, the conversation in the middle, a notebook beside it (stacks on phones). */
+:root {
+  --bg: #f3f4f1;
+  --surface: #ffffff;
+  --ink: #1c2430;
+  --muted: #5d6673;
+  --line: #d9ddd7;
+  --accent: #1f5c4a;        /* verde bottiglia */
+  --accent-ink: #ffffff;
+  --sign: #e8a317;          /* tram yellow */
+  --sign-ink: #1c2430;
+  --me: #e5ece8;
+  --fix: #fff4d9;
+  --fix-line: #e8c56a;
+  --done: #2f7a4f;
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12171d; --surface: #1a2129; --ink: #e8ebe6; --muted: #9aa3ad; --line: #2c3540;
+    --accent: #5fb394; --accent-ink: #0d1a15; --sign: #f0b43a; --sign-ink: #12171d;
+    --me: #20302a; --fix: #2e2715; --fix-line: #7a6326; --done: #6cc08e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12171d; --surface: #1a2129; --ink: #e8ebe6; --muted: #9aa3ad; --line: #2c3540;
+  --accent: #5fb394; --accent-ink: #0d1a15; --sign: #f0b43a; --sign-ink: #12171d;
+  --me: #20302a; --fix: #2e2715; --fix-line: #7a6326; --done: #6cc08e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 32px; display: grid; gap: 18px; }
+
+header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+h1 { font: italic 500 2.4rem/1 var(--display); margin: 0; letter-spacing: -0.01em; }
+h1 span { font-style: normal; font-size: 0.95rem; font-family: var(--body); color: var(--muted); margin-left: 10px; letter-spacing: 0; }
+.level { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+
+/* place picker styled like street signs */
+.places { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.place { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; cursor: pointer; color: inherit; font: inherit; display: grid; gap: 2px; position: relative; }
+.place:hover { border-color: var(--accent); }
+.place:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--sign); outline-offset: 2px; }
+.place[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.place .nm { font: 700 1.15rem/1.2 var(--display); }
+.place .city { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.75; }
+.place .tick { position: absolute; top: 8px; right: 10px; font-size: 0.75rem; font-weight: 600; background: var(--sign); color: var(--sign-ink); border-radius: 3px; padding: 0 6px; }
+
+.main { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 18px; align-items: start; }
+@media (max-width: 820px) { .main { grid-template-columns: minmax(0, 1fr); } }
+
+.scene { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; display: grid; grid-template-rows: auto 1fr auto; min-height: 520px; min-width: 0; }
+.scene-head { display: flex; gap: 12px; align-items: center; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+.avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--sign); color: var(--sign-ink); display: grid; place-items: center; font: 700 1.2rem var(--display); flex: none; }
+.who { min-width: 0; }
+.who b { font: 700 1.1rem var(--display); }
+.who div { color: var(--muted); font-size: 0.88rem; }
+.scene-head .spacer { flex: 1; }
+.chip-btn { background: transparent; border: 1px solid var(--line); color: var(--ink); border-radius: 999px; padding: 4px 10px; font: 500 0.8rem var(--body); cursor: pointer; }
+.chip-btn[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.log { padding: 16px; display: flex; flex-direction: column; gap: 12px; overflow-y: auto; max-height: 56vh; min-height: 280px; }
+.msg { max-width: 85%; display: grid; gap: 4px; }
+.msg.npc { align-self: flex-start; }
+.msg.me { align-self: flex-end; justify-items: end; }
+.bubble { padding: 9px 13px; border-radius: 14px; background: var(--bg); border: 1px solid var(--line); }
+.msg.npc .bubble { border-top-left-radius: 4px; }
+.msg.me .bubble { background: var(--me); border-color: transparent; border-top-right-radius: 4px; }
+.it { font-size: 1.05rem; }
+.en { color: var(--muted); font-size: 0.86rem; }
+.tools { display: flex; gap: 6px; }
+.tiny { background: none; border: none; color: var(--muted); font: 500 0.78rem var(--body); cursor: pointer; padding: 2px 4px; border-radius: 4px; }
+.tiny:hover { color: var(--accent); }
+.fix { background: var(--fix); border: 1px dashed var(--fix-line); border-radius: 8px; padding: 6px 10px; font-size: 0.85rem; max-width: 100%; }
+.fix s { color: var(--muted); }
+.fix b { color: var(--ink); }
+.hint { font-size: 0.85rem; color: var(--muted); }
+.hint em { color: var(--accent); font-style: normal; font-weight: 600; }
+.thinking { color: var(--muted); font-style: italic; }
+
+.composer { border-top: 1px solid var(--line); padding: 12px 16px 14px; display: grid; gap: 8px; }
+.row { display: flex; gap: 8px; align-items: center; }
+.mic { width: 56px; height: 56px; border-radius: 50%; border: none; background: var(--accent); color: var(--accent-ink); cursor: pointer; display: grid; place-items: center; flex: none; }
+.mic svg { width: 24px; height: 24px; }
+.mic.live { background: #c0392b; color: #fff; animation: pulse 1.2s ease-in-out infinite; }
+.mic:disabled { opacity: 0.45; cursor: not-allowed; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 8px rgba(192,57,43,0.18); } }
+@media (prefers-reduced-motion: reduce) { .mic.live { animation: none; } }
+#say { flex: 1; min-width: 0; font: 1rem var(--body); padding: 12px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); color: var(--ink); }
+.send { border: none; background: var(--ink); color: var(--bg); border-radius: 999px; padding: 12px 18px; font: 600 0.9rem var(--body); cursor: pointer; }
+.send:disabled { opacity: 0.4; cursor: default; }
+.status { font-size: 0.82rem; color: var(--muted); min-height: 1.2em; }
+.status.warn { color: var(--ink); background: var(--fix); border-radius: 6px; padding: 6px 10px; }
+
+aside { display: grid; gap: 14px; min-width: 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 8px; }
+.card h2 { margin: 0; font: 700 1.1rem var(--display); text-wrap: balance; }
+.eyebrow { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.steps li { display: grid; grid-template-columns: 20px 1fr; gap: 8px; font-size: 0.92rem; }
+.steps li::before { content: ""; width: 14px; height: 14px; margin-top: 4px; border: 2px solid var(--line); border-radius: 3px; }
+.steps li.done { color: var(--muted); text-decoration: line-through; }
+.steps li.done::before { background: var(--done); border-color: var(--done); }
+.banner { background: var(--sign); color: var(--sign-ink); border-radius: 6px; padding: 8px 10px; font-weight: 600; font-size: 0.9rem; }
+.words { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; max-height: 260px; overflow-y: auto; }
+.words li { display: flex; justify-content: space-between; gap: 10px; font-size: 0.9rem; border-bottom: 1px dotted var(--line); padding-bottom: 3px; }
+.words li b { font-weight: 600; }
+.words li span { color: var(--muted); text-align: right; }
+.empty { color: var(--muted); font-size: 0.88rem; }
+.foot { font-size: 0.78rem; color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Fuori <span>Italian, out in the street</span></h1>
+    <div class="level">Livello A1–A2 · voce</div>
+  </header>
+
+  <nav class="places" id="places" aria-label="Places"></nav>
+
+  <div class="main">
+    <section class="scene" aria-label="Conversation">
+      <div class="scene-head">
+        <div class="avatar" id="avatar">G</div>
+        <div class="who"><b id="npcName">Giulia</b><div id="npcRole">barista · Roma</div></div>
+        <div class="spacer"></div>
+        <button class="chip-btn" id="slowBtn" aria-pressed="false" title="Speak more slowly">Piano</button>
+        <button class="chip-btn" id="enBtn" aria-pressed="true" title="Show English under each line">English</button>
+      </div>
+      <div class="log" id="log" aria-live="polite"></div>
+      <div class="composer">
+        <div class="row">
+          <button class="mic" id="mic" aria-label="Speak Italian">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg>
+          </button>
+          <input id="say" type="text" placeholder="Parla o scrivi in italiano…" autocomplete="off" lang="it">
+          <button class="send" id="send">Invia</button>
+        </div>
+        <div class="status" id="status">Tap the mic and speak, or type. Mistakes are fine.</div>
+      </div>
+    </section>
+
+    <aside>
+      <div class="card">
+        <div class="eyebrow">Obiettivo</div>
+        <h2 id="goalTitle">Breakfast at the bar</h2>
+        <ul class="steps" id="steps"></ul>
+        <div class="banner" id="doneBanner" hidden>Fatto! Scene complete.</div>
+        <button class="chip-btn" id="restart" style="justify-self:start">Start this scene again</button>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Quaderno</div>
+        <h2>Words you've met</h2>
+        <ul class="words" id="words"></ul>
+        <div class="empty" id="wordsEmpty">New words land here as you talk.</div>
+      </div>
+      <div class="foot">Characters are played by Claude using your Claude account. Voices come from your browser.</div>
+    </aside>
+  </div>
+</div>
+
+<script>
+const SCENES = [
+  { id: "bar", place: "Il bar", city: "Roma", npc: "Giulia", role: "barista", initial: "G",
+    setting: "a busy neighbourhood coffee bar in Rome at 8am; you stand at the counter",
+    title: "Breakfast at the bar",
+    steps: ["Order a cornetto and a cappuccino", "Ask how much it is", "Pay and say goodbye"],
+    open: { it: "Buongiorno! Cosa ti preparo?", en: "Good morning! What can I make you?" } },
+  { id: "mercato", place: "Il mercato", city: "Napoli", npc: "Enzo", role: "fruttivendolo", initial: "E",
+    setting: "a lively street market stall in Naples selling fruit and vegetables; you are a polite, warm, slightly theatrical vendor who uses 'Lei'",
+    title: "Shopping at the market",
+    steps: ["Ask for a kilo of tomatoes", "Ask for some basil", "Ask for the total and pay"],
+    open: { it: "Buongiorno! Pomodori freschissimi oggi. Cosa desidera?", en: "Good morning! Very fresh tomatoes today. What would you like?" } },
+  { id: "stazione", place: "La stazione", city: "Firenze", npc: "Chiara", role: "biglietteria", initial: "C",
+    setting: "the ticket window at Firenze Santa Maria Novella station; you are efficient but kind and use 'Lei'",
+    title: "A train to Bologna",
+    steps: ["Ask for a ticket to Bologna", "Ask what time the train leaves", "Find out which platform (binario)"],
+    open: { it: "Buongiorno. Dove deve andare?", en: "Good morning. Where do you need to go?" } },
+  { id: "piazza", place: "La piazza", city: "Bologna", npc: "Marco", role: "studente", initial: "M",
+    setting: "Piazza Maggiore in Bologna; you are a friendly university student who notices the learner looks lost; you use 'tu'",
+    title: "Finding the Due Torri",
+    steps: ["Ask where the Due Torri are", "Ask if it's far", "Thank him and say goodbye"],
+    open: { it: "Ciao! Tutto bene? Sembri un po' perso.", en: "Hi! All good? You look a bit lost." } },
+];
+
+const store = {
+  get(k, d) { try { const v = localStorage.getItem("fuori:" + k); return v ? JSON.parse(v) : d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem("fuori:" + k, JSON.stringify(v)); } catch {} },
+};
+
+let state;
+const $ = (id) => document.getElementById(id);
+let sample = null, busy = false, ctl = null;
+
+function freshScene(id) {
+  const s = SCENES.find((x) => x.id === id);
+  return { msgs: [{ who: "npc", it: s.open.it, en: s.open.en }], done: [] };
+}
+
+function start(data) {
+  state = {
+    scene: data.scene || store.get("scene", "bar"),
+    convos: data.convos || {},
+    completed: store.get("completed", []),
+    words: store.get("words", []),
+    slow: store.get("slow", false),
+    showEn: store.get("showEn", true),
+  };
+  if (!state.convos[state.scene]) state.convos[state.scene] = freshScene(state.scene);
+  renderPlaces(); renderScene(); renderWords();
+  $("slowBtn").setAttribute("aria-pressed", state.slow);
+  $("enBtn").setAttribute("aria-pressed", state.showEn);
+}
+window.claude?.hot?.snapshot?.(() => ({ scene: state.scene, convos: state.convos }));
+window.claude?.hot?.ready ? window.claude.hot.ready(start) : start(window.claude?.hot?.data ?? {});
+
+(async () => { try { sample = await window.claude?.use?.("sample"); } catch { sample = null; }
+  if (!sample) setStatus("Claude isn't available in this view, so the characters can't answer. Open the page on claude.ai while signed in.", true);
+})();
+
+const scene = () => SCENES.find((x) => x.id === state.scene);
+const convo = () => state.convos[state.scene];
+
+function renderPlaces() {
+  const nav = $("places"); nav.textContent = "";
+  for (const s of SCENES) {
+    const b = document.createElement("button");
+    b.className = "place"; b.setAttribute("aria-pressed", s.id === state.scene);
+    b.innerHTML = `<span class="city"></span><span class="nm"></span><span class="role"></span>`;
+    b.querySelector(".city").textContent = s.city;
+    b.querySelector(".nm").textContent = s.place;
+    b.querySelector(".role").textContent = s.title;
+    if (state.completed.includes(s.id)) { const t = document.createElement("span"); t.className = "tick"; t.textContent = "fatto"; b.append(t); }
+    b.onclick = () => { if (busy) return; state.scene = s.id; store.set("scene", s.id);
+      if (!state.convos[s.id]) state.convos[s.id] = freshScene(s.id);
+      renderPlaces(); renderScene(); speak(convo().msgs.at(-1)); };
+    nav.append(b);
+  }
+}
+
+function renderScene() {
+  const s = scene(), c = convo();
+  $("avatar").textContent = s.initial;
+  $("npcName").textContent = s.npc;
+  $("npcRole").textContent = `${s.role} · ${s.city}`;
+  $("goalTitle").textContent = s.title;
+  const ul = $("steps"); ul.textContent = "";
+  s.steps.forEach((t, i) => { const li = document.createElement("li"); li.textContent = t; if (c.done.includes(i)) li.className = "done"; ul.append(li); });
+  $("doneBanner").hidden = !s.steps.every((_, i) => c.done.includes(i));
+  renderLog();
+}
+
+function renderLog() {
+  const log = $("log"); log.textContent = "";
+  for (const m of convo().msgs) log.append(msgEl(m));
+  if (busy) { const t = document.createElement("div"); t.className = "msg npc"; t.innerHTML = `<div class="bubble thinking">…</div>`; t.firstChild.textContent = `${scene().npc} is thinking…`; log.append(t); }
+  log.scrollTop = log.scrollHeight;
+}
+
+function msgEl(m) {
+  const d = document.createElement("div"); d.className = "msg " + m.who;
+  const b = document.createElement("div"); b.className = "bubble";
+  const it = document.createElement("div"); it.className = "it"; it.lang = "it"; it.textContent = m.it; b.append(it);
+  if (m.en && state.showEn) { const en = document.createElement("div"); en.className = "en"; en.textContent = m.en; b.append(en); }
+  d.append(b);
+  if (m.who === "npc") {
+    const tools = document.createElement("div"); tools.className = "tools";
+    const r = document.createElement("button"); r.className = "tiny"; r.textContent = "▶ Ascolta"; r.onclick = () => speak(m);
+    tools.append(r);
+    if (m.en && !state.showEn) { const e = document.createElement("button"); e.className = "tiny"; e.textContent = "English?"; e.onclick = () => { e.replaceWith(Object.assign(document.createElement("span"), { className: "en", textContent: m.en })); }; tools.append(e); }
+    d.append(tools);
+    if (m.hint) { const h = document.createElement("div"); h.className = "hint"; h.innerHTML = "Try: <em></em>"; h.querySelector("em").textContent = m.hint; d.append(h); }
+  }
+  if (m.fix) {
+    const f = document.createElement("div"); f.className = "fix";
+    f.innerHTML = `<s></s> → <b lang="it"></b><div></div>`;
+    f.querySelector("s").textContent = m.fix.said; f.querySelector("b").textContent = m.fix.better; f.querySelector("div").textContent = m.fix.why;
+    d.append(f);
+  }
+  return d;
+}
+
+function renderWords() {
+  const ul = $("words"); ul.textContent = "";
+  for (const w of [...state.words].reverse()) { const li = document.createElement("li"); li.innerHTML = "<b lang='it'></b><span></span>"; li.firstChild.textContent = w.it; li.lastChild.textContent = w.en; ul.append(li); }
+  $("wordsEmpty").hidden = state.words.length > 0;
+}
+
+function setStatus(t, warn) { const s = $("status"); s.textContent = t; s.classList.toggle("warn", !!warn); }
+
+/* ---------- voice out ---------- */
+let itVoice = null;
+function pickVoice() { const vs = window.speechSynthesis?.getVoices() || []; itVoice = vs.find((v) => v.lang === "it-IT" && /natural|premium|enhanced|alice|federica|luca/i.test(v.name)) || vs.find((v) => v.lang?.toLowerCase().startsWith("it")) || null; }
+if ("speechSynthesis" in window) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+function speak(m) {
+  if (!m || m.who !== "npc" || !("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(m.it);
+  u.lang = "it-IT"; if (itVoice) u.voice = itVoice; u.rate = state.slow ? 0.72 : 0.95;
+  speechSynthesis.speak(u);
+}
+
+/* ---------- voice in ---------- */
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+let rec = null, listening = false, finalText = "", micBlocked = false;
+const DICTATE_TIP = "Your browser blocked the mic here. Use your keyboard's dictation instead: tap the field, then the mic on your phone keyboard, or press fn twice (Globe key) on a Mac. Set dictation to Italian.";
+if (!SR) { $("mic").disabled = true; $("mic").title = "Speech recognition isn't supported in this browser"; setStatus("This browser can't listen. " + DICTATE_TIP.split(". ").slice(1).join(". "), true); }
+$("mic").onclick = () => {
+  if (!SR || busy) return;
+  if (listening) { rec?.stop(); return; }
+  speechSynthesis?.cancel();
+  rec = new SR(); rec.lang = "it-IT"; rec.interimResults = true; rec.maxAlternatives = 1;
+  finalText = "";
+  rec.onstart = () => { listening = true; $("mic").classList.add("live"); setStatus("Sto ascoltando… speak, then pause."); };
+  rec.onresult = (e) => { let interim = ""; finalText = ""; for (const r of e.results) (r.isFinal ? (finalText += r[0].transcript) : (interim += r[0].transcript)); $("say").value = (finalText + interim).trim(); };
+  rec.onerror = (e) => { if (e.error === "not-allowed" || e.error === "service-not-allowed" || e.error === "audio-capture") { micBlocked = true; $("mic").disabled = true; setStatus(DICTATE_TIP, true); } else if (e.error === "no-speech") setStatus("I didn't hear anything. Tap the mic and try again."); else setStatus("Listening stopped (" + e.error + "). Tap the mic to try again."); };
+  rec.onend = () => { listening = false; $("mic").classList.remove("live"); if ($("say").value.trim() && !micBlocked) send(); else if (!$("status").classList.contains("warn")) setStatus("Tap the mic and speak, or type. Mistakes are fine."); };
+  try { rec.start(); } catch { micBlocked = true; setStatus(DICTATE_TIP, true); $("mic").disabled = true; }
+};
+
+/* ---------- talking to the character ---------- */
+function buildPrompt(said) {
+  const s = scene(), c = convo();
+  const transcript = c.msgs.map((m) => (m.who === "npc" ? s.npc : "Learner") + ": " + m.it).join("\n");
+  return `You are role-playing ${s.npc}, a ${s.role} in ${s.city}, inside a language-learning game. Setting: ${s.setting}.
+The learner is an English speaker whose Italian is between beginner and advanced beginner (A1-A2).
+Their goal in this scene, with numbered steps:
+${s.steps.map((t, i) => `${i}) ${t}`).join("\n")}
+Steps already completed: ${JSON.stringify(c.done)}
+
+How to play:
+- Stay in character. Speak simple, natural, everyday Italian: 1-3 short sentences, common words, mostly present tense. Sound like a real ${s.role}, not a teacher.
+- The learner speaks into a microphone and their words reach you through speech recognition. Be forgiving: ignore punctuation, capital letters, missing accents and spellings that sound right. Read near-misses as the word they most plausibly meant (e.g. "cornetta" is "cornetto", "quando costa" is "quanto costa"). If you can understand what they want, respond to it.
+- When something is genuinely wrong (wrong word, an English word, wrong verb form, wrong article or gender, an unnatural phrase), correct it the way a friendly Italian would, inside the conversation: naturally repeat the right form back in your reply (for example "Un cappuccino? Certo!"). Never lecture in character. Also report it in "correction". At most one correction per turn, skip tiny slips, and never correct something that is only a transcription artefact.
+- If the learner is stuck, uses English, or asks for help, stay in character, simplify, and put a phrase they could say in "hint".
+- Steer gently toward the goal. Don't end the scene before all steps are done; once they are, wrap up warmly.
+
+Conversation so far:
+${transcript}
+Learner (just now, via speech recognition): "${said.replace(/"/g, "'")}"
+
+Reply with only a JSON object of this shape:
+{"it": "your reply in Italian", "en": "English translation of your reply", "correction": null or {"said": "the learner's words that were off", "better": "the natural Italian", "why": "plain English, under 15 words"}, "words": [{"it": "useful word or phrase from this turn", "en": "meaning"}], "steps_done": [indices of all steps completed so far, cumulative], "hint": null or "a short Italian phrase they could say next (English in brackets)"}
+"words" holds 0-2 items a beginner may not know. Give "hint" only when it would help.`;
+}
+
+async function send() {
+  const said = $("say").value.trim();
+  if (!said || busy) return;
+  if (!sample) { setStatus("Claude isn't available in this view, so the characters can't answer. Open the page on claude.ai while signed in.", true); return; }
+  const c = convo(); const sceneId = state.scene;
+  const mine = { who: "me", it: said }; c.msgs.push(mine);
+  $("say").value = ""; busy = true; toggleInputs(); renderLog(); setStatus("");
+  ctl = new AbortController();
+  try {
+    const r = await sample.json(buildPrompt(said), { modelTier: "quick", cache: false, signal: ctl.signal });
+    if (!r || typeof r.it !== "string") throw { code: "invalid_json" };
+    const reply = { who: "npc", it: r.it, en: typeof r.en === "string" ? r.en : "", hint: typeof r.hint === "string" && r.hint ? r.hint : null };
+    if (r.correction && r.correction.better) mine.fix = { said: String(r.correction.said || said), better: String(r.correction.better), why: String(r.correction.why || "") };
+    c.msgs.push(reply);
+    if (Array.isArray(r.steps_done)) { const s = SCENES.find((x) => x.id === sceneId); c.done = [...new Set([...c.done, ...r.steps_done.map(Number).filter((i) => i >= 0 && i < s.steps.length)])]; if (c.done.length === s.steps.length && !state.completed.includes(sceneId)) { state.completed.push(sceneId); store.set("completed", state.completed); } }
+    if (Array.isArray(r.words)) { for (const w of r.words.slice(0, 2)) { if (w && w.it && !state.words.some((x) => x.it.toLowerCase() === String(w.it).toLowerCase())) state.words.push({ it: String(w.it), en: String(w.en || "") }); } store.set("words", state.words); }
+    busy = false;
+    if (state.scene === sceneId) { renderScene(); renderPlaces(); speak(reply); }
+    renderWords(); setStatus("Your turn. Tap the mic or type.");
+  } catch (e) {
+    busy = false; c.msgs.pop(); $("say").value = said; renderScene();
+    const code = e?.code;
+    if (code === "cancelled") setStatus("Stopped.");
+    else if (code === "not_granted" || code === "sampling_disabled") { setStatus("Claude wasn't allowed for this page, so the characters can't answer. You can allow it from the artifact's Permissions menu.", true); }
+    else if (code === "rate_limited") setStatus("Too many messages for now. Wait a minute, then press Invia.", true);
+    else if (code === "session_expired") setStatus("Your session expired. Sign in again, then press Invia.", true);
+    else setStatus(`${scene().npc} didn't catch that. Press Invia to try again.`, true);
+  } finally { toggleInputs(); }
+}
+
+function toggleInputs() { $("send").disabled = busy; $("say").disabled = busy; $("mic").disabled = !SR || micBlocked || busy; }
+
+$("send").onclick = send;
+$("say").addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); send(); } });
+$("slowBtn").onclick = () => { state.slow = !state.slow; store.set("slow", state.slow); $("slowBtn").setAttribute("aria-pressed", state.slow); };
+$("enBtn").onclick = () => { state.showEn = !state.showEn; store.set("showEn", state.showEn); $("enBtn").setAttribute("aria-pressed", state.showEn); renderLog(); };
+$("restart").onclick = () => { if (busy) return; state.convos[state.scene] = freshScene(state.scene); renderScene(); speak(convo().msgs[0]); };
+</script>
