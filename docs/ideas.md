@@ -99,7 +99,13 @@ Where it breaks from Instagram:
 - **The conversation screen is closer to a video call than a chat**: large portrait, big mic button, transcript and corrections small underneath.
 - **No engagement mechanics**: no likes, no infinite feed, no streak guilt. The day ends with the diario card.
 
-Bottom tabs: Oggi · Mappa · Diario · Tu. Mockups: [Fuori mockups](https://claude.ai/artifact/1zVpF11bWHivP3RxVruKyx) (Oggi, conversation, diario, journal).
+Refinements from the mockup review:
+- **Oggi is a grid of large square place tiles** (photos), not a feed of detailed cards. No people bar, goal chips or descriptions on this screen.
+- **Places stay in order.** The current place has a highlight ring; later ones are greyed out with a lock until the one before is done. The diario unlocks at the end of the day.
+- **One level up, Viaggio:** the same tile pattern for cities. The current city is a large tile with day progress; later stays and day trips (tagged "Gita") are locked tiles.
+- The conversation screen (portrait, transcript, big mic) works as drawn.
+
+Bottom tabs: Oggi · Viaggio · Diario · Tu. Mockups: [Fuori mockups](https://claude.ai/artifact/1zVpF11bWHivP3RxVruKyx) (Oggi, conversation, diario, journal).
 
 ## Other ideas from the conversation so far
 
