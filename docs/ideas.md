@@ -37,6 +37,26 @@ The numbered docs describe a scripted season (fixed route, cast, day plans). Thi
 
 **Effect on the plan:** probably makes M1 simpler (one conversation engine plus a scene generator instead of authored content). The numbered docs get rewritten once this direction is confirmed.
 
+## Magda, the tutor
+
+Inspired by the creator's real Italian teacher, Magda, whom they meet weekly on Zoom. In the game she is the one character allowed to *teach*: every other character is a local who corrects by recasting and never lectures.
+
+**Who she is in the game**
+- An Italian teacher from the Veneto who coaches you remotely while you live in Italy. Warm, precise, interested in why mistakes happen. Her Venetian background also gives the game a northern voice alongside Roman and Neapolitan characters.
+- Speaks Italian at your level, switches to English to explain when it helps, and gives short spoken exercises.
+- Use her first name only. Don't use the real Magda's surname, her school's name or her contact details in the game, and check she's happy with a character named after her before Fuori is shown to anyone else.
+
+**When she messages you** (as a text on your in-game phone)
+- **Mistakes pile up:** "Ho notato che dici sempre *la vino*… facciamo cinque minuti?"
+- **You're close to the next level:** "Sei quasi A2. Impariamo il passato prossimo, così puoi raccontare il weekend a Giulia."
+- **Before something harder:** a move to Napoli, a doctor's visit, a phone call.
+
+**Weekly lesson**, mirroring the real Zoom rhythm: review the week's mistakes from the diario, learn one new thing, and get a "try this" for the coming days. What she teaches feeds Claude's next suggestions, so it gets practised with real characters straight away.
+
+**Bridge to the real Magda:** before a real lesson, Fuori prepares a one-page summary (recurring mistakes, new words, what was practised, transcripts worth looking at) to share on Zoom, so real lessons start from what the learner actually struggled with.
+
+**Levels:** her lessons follow CEFR steps, with specific content from the *Profilo della lingua italiana* (see the level rules in [Testing](10-testing.md)).
+
 ## Groundhog Day loops
 
 Stay in the same day until you succeed, or choose to move on.
