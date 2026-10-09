@@ -2,13 +2,15 @@
 
 Testing a voice-first language game means validating not just code, but conversation quality, language accuracy, and the learner experience. This document covers automated tests, manual test protocols, and quality checks.
 
+**For a one-person prototype, what matters now is section 4 (level rules and the simulated learner) and testing on your phone (section 9).** The rest is reference for later milestones.
+
 ## Testing Layers
 
 ```
 1. Unit tests (code correctness)
 2. Integration tests (API flows)
 3. Conversation tests (Claude behavior)
-4. Language validation (Italian quality)
+4. Language validation (level rules + simulated learner)
 5. User testing (real learners)
 ```
 
@@ -343,60 +345,52 @@ npm run test:conversations:record -- new-scenario
 - Run affected tests on prompt changes
 - Cache results when prompt/character hasn't changed
 
-## 4. Language Validation
+## 4. Language Validation (automated)
 
-Manual review by native Italian speakers.
+The creator is an A1–A2 learner, so Italian quality can't depend on anyone's personal judgement. Two automated pieces replace manual review:
 
-### Pre-M1 validation checklist:
+### 4a. Level rules from published standards
 
-Run 20-30 conversations with prototype, then have native speaker review:
+A single rules file, `content/levels/a1-a2.ts`, built once by Claude from public sources:
 
-- [ ] **Naturalness**: Do characters sound like real Italians?
-- [ ] **Level appropriateness**: Is vocabulary/grammar at A1-A2 level?
-- [ ] **Regional authenticity**: Does Giulia sound Roman? (anvedi, daje)
-- [ ] **Corrections**: Are corrections natural, not pedantic?
-- [ ] **Grammar**: Does Claude make systematic errors in Italian?
-- [ ] **Character voice**: Does each character have distinct personality?
+- **CEFR descriptors** for A1 and A2 (the official "can-do" statements: ordering, asking prices, talking about yourself)
+- **A frequency word list**: De Mauro's *Nuovo vocabolario di base* (the standard list of the most common Italian words), trimmed to the most frequent bands for A1–A2
+- **Typical A1–A2 grammar coverage**: which tenses and structures are in scope (present, *passato prossimo*, articles, *vorrei*) and which are out (subjunctive, conditional beyond *vorrei*/*potrei*, *passato remoto*)
 
-### Review form template:
+Use frameworks and word lists, not copied textbook pages.
 
-```markdown
-## Character: Giulia (Roma, barista)
-
-### Naturalness (1-5): ___
-- Do responses sound like a real Italian barista?
-- Any unnatural constructions or word choices?
-- Notes:
-
-### Level Appropriateness (1-5): ___
-- Is language at beginner (A1-A2) level?
-- Too simple? Too complex?
-- Notes:
-
-### Regional Authenticity (1-5): ___
-- Does character sound Roman?
-- Regional expressions used correctly?
-- Notes:
-
-### Correction Quality (1-5): ___
-- Are errors corrected naturally in conversation?
-- Or do corrections feel like a teacher?
-- Examples:
-
-### Grammar Accuracy (1-5): ___
-- Any systematic Italian grammar errors?
-- List any mistakes:
-
-### Overall (1-5): ___
-Would this help someone learn conversational Italian?
+```typescript
+// content/levels/a1-a2.ts
+export interface LevelRules {
+  id: 'A1' | 'A2';
+  canDo: string[];             // CEFR can-do statements, summarised
+  maxWordsPerSentence: number;
+  maxSentencesPerTurn: number;
+  newWordsPerTurn: number;     // words allowed outside the vocabulary list
+  tensesAllowed: string[];
+  tensesAvoid: string[];
+  vocabulary: string[];        // lemmas, from the frequency list
+}
 ```
 
-### Ongoing validation:
+The rules feed two places: the house-rules layer of every character prompt ([Conversation engine](04-conversation-engine.md)), and the judge rubric below.
 
-- Review 5-10 random conversations per week
-- Check for systematic issues
-- Update prompts when patterns emerge
-- Document common problems and solutions
+### 4b. Simulated learner
+
+A script (`npm run test:learner`) where Claude plays a beginner and another Claude call judges the result.
+
+1. **Learner personas**: e.g. "A1, English speaker, uses *voglio* instead of *vorrei*, mixes up article genders, sometimes answers in English". Each persona also adds transcription noise ("bone journal", "quando costa").
+2. **Run**: each persona plays each scene against the real `/api/turn` prompts, about 20 conversations per run.
+3. **Judge**: a separate call scores every conversation against the level rules and the [priority scenarios](#priority-test-scenarios) above:
+   - Stayed within the level (length, tenses, vocabulary)
+   - Recast real mistakes; ignored transcription noise
+   - Stayed in Italian and in character (*tu*/*Lei* as the sheet says)
+   - Scene goals ticked correctly; `confused` and `hint` used sparingly
+4. **Report**: a score per criterion and per character, with the worst examples quoted, saved to `tests/reports/<date>.md`.
+
+Run it whenever prompts or character sheets change, and compare against the previous report. It costs a little per run (real API calls), so run it on changes, not on every commit.
+
+Not independent of Claude, but it is systematic and repeatable, which manual review by a beginner can't be. A native speaker reading a few transcripts later remains a nice-to-have, never a gate.
 
 ## 5. User Testing
 

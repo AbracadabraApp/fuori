@@ -25,8 +25,15 @@ Stay in the same day until you succeed, or choose to move on.
 
 **Open question:** should this be the core rule, or an opt-in "replay this day" mode on top of the normal journey?
 
+## Automatic per-reply checks
+
+Deterministic checks on every character reply in `/api/turn`: too long for the level, words outside the vocabulary list, English slipping in, *tu*/*Lei* mismatching the character sheet. Parked because the simulated-learner judge covers most of this for a one-person prototype.
+
+## Learning from play
+
+Log friction moments (silence or abandoned scenes, "Come si dice?" presses, `confused: true`, repeated corrections) and analyse them by character and phrase to find where conversations stall. Only useful once there's real play from more than one person.
+
 ## Other ideas from the conversation so far
 
-- **Hosted speech-to-text and text-to-speech** with a distinct voice per character (in the roadmap as M4; listed here as a reminder that the choice of service is open).
 - **Pronunciation scoring**: deliberately out of scope for now.
 - **Characters who reappear in later cities** (Davide visits Bologna): partly in [The journey](03-journey.md); worth expanding into a thread that runs through the whole season.

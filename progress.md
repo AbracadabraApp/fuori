@@ -17,6 +17,10 @@ Started: 2026-10-08
 - **TTS:** Move hosted TTS to M2 (was M4)
   - Reason: Character voices are core to experience
   - Service: ElevenLabs (~$8/learner/season) or Azure (~$0.72/learner/season)
+- **Language validation is automated** (2026-10-09): no native-speaker gate.
+  - Level rules from published standards (CEFR, frequency word list, A1–A2 grammar) in `content/levels/a1-a2.ts`
+  - Simulated-learner test with a judge from M2 (`npm run test:learner`)
+  - Not doing: per-reply rule checks in code, friction logging/analytics (parked in docs/ideas.md)
 - **Help system:** Natural character help first, UI hints only when confused
   - Added `confused` field to turn schema
   - Hints should be `null` most of the time
@@ -34,13 +38,11 @@ Started: 2026-10-08
   - Deploy to Railway → test on phone → iterate
 
 ### Open Issues
-- [ ] Need to test Claude's Italian quality with 20-30 conversations
-- [ ] Need native Italian speaker (A1-A2 teacher) to review naturalness
+- [ ] Build A1–A2 level rules file (`content/levels/a1-a2.ts`)
 - [ ] Need to test Whisper accuracy with recorded phrases
 - [ ] Need OpenAI API key for Whisper
 - [ ] Need to decide: ElevenLabs vs Azure for TTS
 - [ ] Make `main` the GitHub default branch (Settings → General). It is currently `claude/voice-prototype`, and Railway deploys from `main`
-- [ ] The prototype runs on claude.ai's fast model tier, not Opus 5.5 via the API; test the production model with a small API script
 
 ### Content Status
 **Characters:** 0/8 Roma characters created
@@ -49,10 +51,9 @@ Started: 2026-10-08
 
 ### Next Actions
 1. Run Pre-M1 validation (docs/06-roadmap.md):
-   - Test Claude with prototype conversations (use prototype/index.html)
-   - Get native Italian speaker review
-   - Record 20 Italian phrases, test Whisper accuracy
    - Get API keys: Anthropic (have) + OpenAI (need)
+   - Have Claude build the level rules file from CEFR descriptors + De Mauro's vocabolario di base
+   - Record 20 Italian phrases; script reports Whisper accuracy and latency
 2. Set up Railway:
    - Create Railway account
    - Install Railway CLI: `npm i -g @railway/cli`
@@ -70,4 +71,4 @@ Started: 2026-10-08
 - Language services: docs/08-language-services.md
 
 ---
-Last updated: 2026-10-08
+Last updated: 2026-10-09

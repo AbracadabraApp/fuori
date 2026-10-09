@@ -265,30 +265,11 @@ Stored in:
 
 ## Language validation for Italian
 
-Before starting M1 implementation, validate that Claude works well for Italian conversations:
+Italian quality is checked automatically rather than by manual review (the creator is an A1–A2 learner):
 
-**Pre-M1 tests:**
-1. Run 20-30 Italian conversations with the prototype using Claude Opus 5.5
-2. Have a native Italian speaker (ideally an A1-A2 teacher) review for:
-   - Naturalness at beginner level
-   - Regional authenticity (does Giulia sound Roman?)
-   - Grammar accuracy (no systematic errors)
-   - Correction quality (natural recasts like "Un cappuccino? Certo!" vs textbook corrections)
-   - Character stays in Italian (never switches to English)
-3. Test at low effort setting (needed for latency in voice conversations)
-4. Document any systematic issues
+1. **Level rules** (`content/levels/a1-a2.ts`), built once from CEFR descriptors, a frequency word list and typical A1–A2 grammar coverage. They feed the house-rules prompt layer.
+2. **Simulated learner** (`npm run test:learner`, from M2): Claude plays beginners with typical mistakes and transcription noise; a judge call scores each conversation against the level rules and the expected behaviours.
 
-**What to look for:**
-- Characters should sound like real Italians, not language teachers
-- Corrections should feel natural, embedded in conversation
-- Regional expressions should match character backgrounds
-- Vocabulary should be appropriate for A1-A2 (not too advanced)
-- Grammar should be correct (model shouldn't make errors while teaching)
-
-**If issues are found:**
-- Test GPT-4o as an alternative
-- Adjust prompts to compensate for systematic errors
-- Consider medium effort if low effort degrades Italian quality
-- Document workarounds in house rules prompt
+Details in [Testing → Language validation](10-testing.md#4-language-validation-automated). If the reports show systematic problems: adjust the house rules or character sheets first, then try a higher effort setting, and only then consider another model.
 
 See [Language Services](08-language-services.md) for more on STT/TTS choices and Italian-specific considerations.

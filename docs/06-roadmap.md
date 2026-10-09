@@ -4,20 +4,17 @@ Each milestone ends with something playable.
 
 ## Pre-M1 — Italian Language Validation
 
-**Goal:** Validate that Claude, Whisper, and the conversation design work well for Italian before building.
+**Goal:** Know what "A1–A2 Italian" means for the characters, and confirm Whisper hears your Italian, before building. One evening, mostly automated.
 
 Checklist:
-- [ ] Test Claude Opus 5.5 with 20-30 Italian conversations
-  - Note: the prototype runs on claude.ai's fast model tier, not on Opus 5.5 through the API. Use it for a feel of the design, but test the production model with a small script against the API (same prompt, `claude-opus-5-5`, low effort) before deciding
-- [ ] Native Italian speaker (ideally A1-A2 teacher) reviews for naturalness, corrections, regional authenticity
-- [ ] Test Whisper: record yourself saying 20 common Italian phrases, measure accuracy
-- [ ] Measure Whisper latency (should be <2s for short phrases)
-- [ ] Calculate realistic per-learner costs with actual usage
-- [ ] Document any systematic Claude issues (e.g., error patterns, unnatural constructions)
-- [ ] Decision: continue with Claude or test GPT-4o; continue with Whisper or try alternative
-- [ ] Get OpenAI API key for Whisper (in addition to Anthropic key)
+- [ ] Get API keys: Anthropic (have) and OpenAI (for Whisper)
+- [ ] Level rules: have Claude build `content/levels/a1-a2.ts` from CEFR descriptors, De Mauro's *vocabolario di base* and typical A1–A2 grammar coverage (see [Testing → 4a](10-testing.md#4a-level-rules-from-published-standards))
+- [ ] Whisper check: record 20 everyday phrases on your phone; a small script sends them to Whisper and reports what came back and how long it took (target: Italian text, under 2 seconds)
+- [ ] Note the cost of those runs to sanity-check the per-learner estimate
 
-**Done when:** Native speaker confirms Italian is natural for A1-A2 level, Whisper accuracy is good for your voice, costs are acceptable, and you have both API keys ready.
+**Done when:** the level rules file exists and Whisper returns your phrases as Italian, fast enough to feel conversational.
+
+The simulated-learner test ([Testing → 4b](10-testing.md#4b-simulated-learner)) comes in M2, once there are real character prompts to test. No native-speaker review is required.
 
 ## M1 — Web app with Italian voice (first build session)
 
@@ -78,6 +75,7 @@ Optional: simple SVG avatars per character, with a few expressions driven by the
 - [ ] Diario at the end of each day; "try tomorrow" goals fed into the next day's prompts
 - [ ] Quaderno with last-used dates; recycle stale words into scenes
 - [ ] Character portraits (see [Visuals](07-visuals.md)): SVG placeholders first, then generated portraits with moods
+- [ ] Simulated-learner test (`npm run test:learner`): learner personas, judge, report ([Testing → 4b](10-testing.md#4b-simulated-learner))
 - [ ] Hosted TTS (ElevenLabs or Azure): generate 8 distinct character voices with different ages/genders/personalities
   - Pre-generate voice profiles, test with sample lines
   - Integrate server-side TTS generation
@@ -89,7 +87,7 @@ Optional: simple SVG avatars per character, with a few expressions driven by the
 
 - [ ] Evening conversation engine: hidden agendas, soft arc, natural ending, diario note
 - [ ] Day 5: Orvieto day trip, including the train there and back
-- [ ] A small set of saved test conversations to rerun when prompts change
+- [ ] Rerun the simulated-learner test after every prompt change; compare reports
 
 ## M4 — Real accounts and multi-device
 

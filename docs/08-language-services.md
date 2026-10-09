@@ -119,31 +119,17 @@ Character voices are core to the experience. Move hosted TTS from M4 to M2.
 
 ## Conversation Model (Claude)
 
-### Language Validation Required
+### Language validation
 
-The docs assume Claude will work well for Italian, but this needs testing before M1.
+Italian quality is validated automatically: level rules built from published standards, plus a simulated-learner test with a judge. See [Testing → Language validation](10-testing.md#4-language-validation-automated).
 
-**Pre-M1 validation:**
-1. Test Claude Opus 5.5 with 20-30 Italian conversations
-2. Native Italian speaker (ideally A1-A2 teacher) reviews for:
-   - Naturalness at beginner level
-   - Regional authenticity (does Giulia sound Roman?)
-   - Grammar accuracy (no systematic errors)
-   - Correction quality (natural recasts vs textbook corrections)
-3. Test at low effort setting (latency-sensitive in-scene turns)
-4. Document any systematic issues
-
-**What to test specifically:**
+What the judge looks for:
 - Character staying in Italian (never switches to English unprompted)
 - Natural corrections: "Un cappuccino? Certo!" not "You should say un cappuccino"
-- Regional expressions (Roman: "anvedi", "daje", Neapolitan: different)
-- Appropriate vocabulary for A1-A2 (not too advanced)
-- Staying in character while simplifying for learner level
+- Vocabulary, sentence length and tenses within the A1–A2 level rules
+- Staying in character while simplifying for the learner's level
 
-**If issues found:**
-- Test GPT-4o as alternative
-- Adjust prompts to compensate
-- Consider higher effort setting if quality matters more than latency
+If reports show systematic issues: adjust prompts first, then raise effort, then consider another model.
 
 ### Model Settings
 
@@ -212,12 +198,11 @@ Stored in:
 
 Before starting implementation:
 
-- [ ] Test Claude with 20 Italian conversations, get native speaker review
+- [ ] Build the A1–A2 level rules file (see [Testing → 4a](10-testing.md#4a-level-rules-from-published-standards))
 - [ ] Test Whisper accuracy with your voice (record 20 phrases, measure accuracy)
 - [ ] Measure Whisper latency (should be <2s for short phrases)
-- [ ] Document systematic Claude issues (if any)
 - [ ] Set up OpenAI account and get Whisper API key
 - [ ] Calculate realistic cost per learner with actual usage
 - [ ] Decision: continue with Claude or test GPT-4o
 
-**Done when:** Italian quality is validated, Whisper is accurate for your voice, costs are acceptable, and you have API keys ready.
+**Done when:** the level rules file exists, Whisper is accurate and fast for your voice, costs look acceptable, and you have both API keys.
