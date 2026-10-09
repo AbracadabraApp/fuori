@@ -1,6 +1,34 @@
 # Conversation engine
 
-Every line a character says comes from Claude. This document describes what each call receives, what it must return, and the rules that make the characters forgiving, helpful and consistent.
+Every place, person and line in Fuori comes from Claude. This document describes the calls that make the world (suggestions, scenes, characters), the call that runs each conversation turn, and the rules that make characters forgiving, helpful and consistent.
+
+## Making the world
+
+Three generation calls run before any conversation. All return structured JSON and are stored, so nothing is generated twice.
+
+### The director: daily suggestions (`/api/suggest`)
+
+Runs once at the start of each in-game day. Input: the city pantry ([Cities and people](03-journey.md)), the learner profile and level, recurring mistakes, stale quaderno words, yesterday's "try tomorrow" goals, Magda's latest lesson, and the people the learner knows (with familiarity and memories).
+
+Output: 3–4 suggestions plus one "cambia aria" option. Each suggestion names:
+- **a place** (from the pantry, or a plausible new one),
+- **who is there** (a known character's id, or a short brief for a new person),
+- **a light goal** (0–4 steps; none for evening conversations),
+- **why** (which learning need it serves; shown nowhere, used for testing),
+- **a tile caption** in Italian ("Il bar di Giulia", "Un pomeriggio a Monti").
+
+Rules: mix known people and new ones; recycle what the learner needs without saying so; match situations to the level; put the evening conversation last; offer moving on when the learner has stayed a while or conversations are getting easy.
+
+### Scenes (`/api/scene`)
+
+Runs when the learner picks a suggestion or says "vai dove vuoi" ("voglio andare in una libreria"). Turns it into a scene: setting, time of day, goal steps, an **opening guide** (see below), words to recycle, and for evening conversations a hidden agenda. If the person is new, it calls character generation first.
+
+### Characters
+
+- **Anchors** (Rita, Giulia in Roma) are hand-written in `content/it/`.
+- **Everyone else is generated** on first meeting from the city, place and role: name, age, personality, what they care about, a secret or opinion, how they speak (Lei/tu, pace, a regional touch), and an appearance description for their avatar. Same shape as a hand-written sheet ([Data model](09-data-model.md)).
+- **Saved immediately**, so they persist and remember the learner. Avoid repeating names or personalities already in the learner's world.
+- **Magda** is special: a fixed character sheet with tutor rules (see [Magda](#magda-tutor-mode)).
 
 ## One turn
 
@@ -52,27 +80,29 @@ Carried over from the prototype, with additions:
 The character speaks first, and that line is generated too, never read from a script. Each scene has an opening **guide** (what the line should do, e.g. "greet them as a regular, mention yesterday, offer the usual") and a written **fallback** line used only if the call fails.
 
 The opening call gets the same prompt layers as a normal turn, with no learner line yet, so the greeting can draw on familiarity and memory ("Allora, ti è piaciuto il supplì?"). Two results:
-- Replaying a day, or a long stay, never repeats the same greeting word for word.
-- Days beyond the ones written in [The journey](03-journey.md) work without new content: a guide like "an ordinary morning; pick up on something from recent days" is enough.
+- Returning to the same person never repeats the same greeting word for word.
+- No greeting needs writing in advance: a guide like "an ordinary morning; pick up on something from recent days" is enough.
 
 ## Character prompt layers
 
 Build the prompt from stable layers first so it caches well:
 
-1. **House rules** (same for every call): how to speak to an A1–A2 learner, forgiveness, correction style, JSON format.
-2. **Character sheet** (stable per character): name, age, job, personality, how they speak (formal/informal, regionalisms, pace), what they care about, a secret or opinion.
-3. **Relationship** (changes slowly): familiarity level, what they remember about the learner.
-4. **Scene** (per scene): place, time of day, goal steps, steps already done, words to recycle today.
-5. **Transcript** (per turn): the conversation so far and the learner's latest line.
+1. **House rules** (same for every call): forgiveness, correction style, JSON format.
+2. **Level rules** (changes rarely): the learner's current CEFR step from `content/it/levels/`, including how much dialect is allowed.
+3. **Character sheet** (stable per character): name, age, job, personality, how they speak (formal/informal, regionalisms, pace), what they care about, a secret or opinion.
+4. **Relationship** (changes slowly): familiarity level, what they remember about the learner.
+5. **Scene** (per scene): place, time of day, goal steps, steps already done, words to recycle today.
+6. **Transcript** (per turn): the conversation so far and the learner's latest line.
 
 ## Speaking at the learner's level
 
-At A1–A2 the character should:
+The level rules set the limits; at A1–A2 the character should:
 - Use 1–3 short sentences per turn.
 - Prefer present tense, *passato prossimo* sparingly, no subjunctive.
 - Use common vocabulary; introduce at most one or two new words per turn, ideally ones the scene needs.
 - Ask a simple question back to keep the learner talking.
 - Speak naturally for their character: Giulia is quick, Rita is slow and clear. The TTS speed control handles the rest.
+- Keep regional dialect to at most one touch per conversation (*daje*, *aò*). More comes with higher levels.
 
 ## Providing help naturally
 
@@ -130,23 +160,32 @@ The learner's words arrive through speech recognition, so:
 - Report the correction separately in `correction` so the UI can show a quiet note and the diario can collect it.
 - Track repeat errors per learner; a mistake that keeps coming back becomes a "try tomorrow" goal.
 
-## Encounters
+## Open conversations
 
-Each evening brings a different person (never repeated within a stay). The open-ended evening conversation needs scaffolding to work at A1–A2:
+The evening suggestion is usually someone new with no goal checklist. To keep it workable at A1–A2:
 - Each encounter character has a **hidden agenda**: a topic they want to talk about, an opinion, something they want to learn about the learner. The character leads with questions, so the learner reacts rather than carries the conversation.
 - **No goal checklist**, but the server tracks a soft arc: greeting → their topic → your story → a natural goodbye.
 - **Length**: about 8–12 exchanges or 5 minutes. After that the character finds a natural reason to leave ("Devo andare, mio nipote mi aspetta!") and sets `scene_over`.
 - **Help** is always available through the "Come si dice…?" button. The character may also simplify or switch topic if the learner is stuck twice in a row.
 - At the end, the character produces a one-line note for the diario.
 
+## Magda (tutor mode)
+
+Magda runs with different rules from every other character:
+- She **may teach**: explain grammar briefly, in English when it helps, and run short spoken exercises ("Dimmi tre cose che hai fatto ieri").
+- Her input is the learner's mistakes, quaderno and level profile, not a place.
+- **Triggers** (checked at the end of each day): a mistake repeated three or more times, evidence the learner is near the next level step, or a hard situation coming up (moving city, a doctor). She sends a short message; tapping it opens a lesson.
+- **Weekly lesson:** the week's top mistakes, one new structure, and a "try this" that the director then works into the next days' suggestions.
+- **Summary for real lessons:** a one-page export of recurring mistakes, new words and transcripts worth discussing.
+
 ## Memory
 
 Two kinds, both stored per learner:
 
 - **Character memory**: what each recurring character knows about the learner (name, where they're from, what they ordered, what they talked about, promises like "come back Friday"). Built from `memory_notes`, deduplicated and summarised at the end of each day.
-- **Learner profile**: level estimate, known words with last-used dates, recurring mistakes, preferred help settings.
+- **Learner profile**: CEFR level step with the evidence behind it, known words with last-used dates, recurring mistakes, preferred help settings.
 
-The end-of-day summary runs once per day and is not latency-sensitive, so it can use a stronger model and more thinking than the in-scene turns.
+The end-of-day call (diario, memory summaries, level evidence, Magda triggers) runs once per day and is not latency-sensitive, so it can use more effort than the in-scene turns.
 
 ## Quality checks to build early
 
@@ -156,3 +195,7 @@ Keep a small set of recorded learner turns (with transcription noise) and expect
 - The character never switches to English unprompted.
 - Goal steps are ticked only when actually done.
 - Replies stay within 1–3 sentences at A1.
+- Daily suggestions work in the learner's recurring mistakes and include one change of scenery.
+- Generated characters don't repeat names or personalities already in the learner's world.
+
+These become the simulated-learner test ([Testing → 4b](10-testing.md#4b-simulated-learner)).

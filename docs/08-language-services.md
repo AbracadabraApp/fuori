@@ -12,20 +12,22 @@ The prototype uses the browser's Web Speech API with `lang = "it-IT"`, but in pr
 - Language lock is unreliable, especially when system language is English
 - Quality varies by device/browser (Safari vs Chrome, iOS vs Android)
 
-### Decision: OpenAI Whisper for M1
+### Decision: Whisper on Groq for M1
 
-Skip browser STT entirely. Use OpenAI Whisper from the start because:
+Skip browser STT entirely. Use Whisper, locked to Italian, from the start, hosted by **Groq**:
 
-1. **Better experience** - No English gibberish, accurate Italian transcription
-2. **Language lock works** - Can enforce Italian-only transcription
-3. **Handles noise and accents** - Robust to background noise, regional variations
-4. **Affordable** - ~$0.006/minute = ~$0.12 per 20-minute day
-5. **Inevitable** - Would end up here eventually; start here
+1. **Better experience:** no English gibberish, accurate Italian transcription
+2. **Language lock works:** Italian-only transcription for turns, English for "Come si dice?"
+3. **Handles noise and accents**
+4. **Free at prototype scale:** Groq's free tier allows several hours of audio a day, with no card. OpenAI's hosted Whisper (about $0.006 a minute) is the fallback if Groq's terms change.
+5. **Swappable:** it sits behind one route, `/api/transcribe`, so changing provider touches one file
 
-**Implementation:**
+Note: **Groq** (with a q) hosts open models such as Whisper. It is unrelated to **Grok** (with a k), xAI's model.
+
+**Implementation sketch** (check Groq's current docs for exact model names and SDK details):
 ```typescript
 // app/api/transcribe/route.ts
-import OpenAI from 'openai';
+import Groq from 'groq-sdk';
 
 export async function POST(request: Request) {
   const formData = await request.formData();
@@ -35,11 +37,11 @@ export async function POST(request: Request) {
   // 'it' for normal turns; 'en' for the "Come si dice?" button, where the learner speaks English
   const language = formData.get('language') === 'en' ? 'en' : 'it';
 
-  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-  const transcription = await openai.audio.transcriptions.create({
+  const transcription = await groq.audio.transcriptions.create({
     file: audio,
-    model: 'whisper-1',
+    model: 'whisper-large-v3-turbo',
     language,
     ...(language === 'it' && { prompt: 'Trascrizione in italiano di una conversazione naturale.' }),
   });
@@ -55,23 +57,10 @@ export async function POST(request: Request) {
 - Show Italian text in input field
 - Loading states: "Ascolto..." → "Trascrivo..." → show result
 
-**Cost controls:**
-- Set max recording length (60 seconds per turn)
-- Budget: ~$2-3 per learner for full 18-day season
-- Log usage per learner to track costs
-
-**Error handling:**
+**Limits and errors:**
+- Max recording length 60 seconds per turn
 - Network timeout: allow retry
-- API failure: fall back to text input
-- Rate limit: show wait time
-
-### Testing Before M1
-
-Record 20 common Italian phrases and test:
-- Whisper accuracy with your voice
-- Response latency (should be <2s for short phrases)
-- Error rates with background noise
-- Cost per phrase
+- API failure or rate limit: fall back to text input
 
 ## Text-to-Speech (TTS)
 
@@ -83,9 +72,9 @@ Browser `speechSynthesis` works but:
 - No emotional control (all characters sound similar)
 - Can't tune for character personality
 
-### Decision: Hosted TTS for M2 (not M4)
+### Decision: Hosted TTS in M3
 
-Character voices are core to the experience. Move hosted TTS from M4 to M2.
+Character voices are core to the experience, but browser voices are enough to start. Hosted TTS comes in M3, first for the anchors and Magda.
 
 **Service comparison:**
 
@@ -106,12 +95,12 @@ Character voices are core to the experience. Move hosted TTS from M4 to M2.
 - Azure: ~$0.72 per learner for full season
 
 **Implementation approach:**
-1. Pre-generate character voice profiles (8 voices for Roma)
+1. Pick voice profiles for the anchors and Magda; generated characters share a small pool of voices matched by age and gender
 2. Server-side TTS generation for each NPC response
 3. Stream audio to browser or return URL
 4. Cache frequent phrases ("Buongiorno!", "Prego", "Ciao!") to reduce costs
 
-**M1 compromise:**
+**Until M3:**
 - Use best available browser Italian voices
 - Pick distinct voices where possible (different genders, speeds)
 - Accept that character distinction is limited
@@ -155,7 +144,7 @@ If reports show systematic issues: adjust prompts first, then raise effort, then
 ### Per-Learner Season Estimate (18 days)
 
 **Claude API:**
-- ~40 turns/day × 18 days = 720 turns
+- ~40 turns/day plus suggestion, scene and diario calls × 18 days = 720 turns
 - Input: ~3k tokens/turn (mostly cached)
 - Output: ~100 tokens/turn
 - Cached: ~2.8k tokens/turn after first scene
@@ -163,17 +152,17 @@ If reports show systematic issues: adjust prompts first, then raise effort, then
 
 **Whisper STT:**
 - ~20 minutes/day × 18 days = 360 minutes
-- $0.006/minute
-- $2.16/learner for full season
+- Groq free tier: $0 at prototype scale
+- (OpenAI fallback: $0.006/minute ≈ $2.16/learner)
 
 **TTS (if using ElevenLabs):**
 - 45,000 characters
 - $0.00018/char
 - $8.10/learner for full season
 
-**Total: ~$13-15 per learner for full season**
+**Total: ~$11-13 per learner for a full season** (mostly TTS)
 
-With Azure TTS instead: ~$6-7 per learner
+With Azure TTS instead: ~$4-6 per learner
 
 ### Budget Controls
 
@@ -186,23 +175,10 @@ With Azure TTS instead: ~$6-7 per learner
 
 Required API keys:
 - `ANTHROPIC_API_KEY` - Claude API
-- `OPENAI_API_KEY` - Whisper STT
-- `ELEVENLABS_API_KEY` or `AZURE_SPEECH_KEY` - TTS (M2)
+- `GROQ_API_KEY` - Whisper STT on Groq
+- `ELEVENLABS_API_KEY` or `AZURE_SPEECH_KEY` - TTS (M3)
 
 Stored in:
 - `.env.local` for local development
 - Railway dashboard (Project → Variables) for production
 - Never committed (`.env*` in `.gitignore`)
-
-## Pre-M1 Action Items
-
-Before starting implementation:
-
-- [ ] Build the A1–A2 level rules file (see [Testing → 4a](10-testing.md#4a-level-rules-from-published-standards))
-- [ ] Test Whisper accuracy with your voice (record 20 phrases, measure accuracy)
-- [ ] Measure Whisper latency (should be <2s for short phrases)
-- [ ] Set up OpenAI account and get Whisper API key
-- [ ] Calculate realistic cost per learner with actual usage
-- [ ] Decision: continue with Claude or test GPT-4o
-
-**Done when:** the level rules file exists, Whisper is accurate and fast for your voice, costs look acceptable, and you have both API keys.

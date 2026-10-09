@@ -1,102 +1,125 @@
 # Game design
 
+## Core idea
+
+You are living in Italy for a while. You can go almost anywhere and meet whoever is there; Claude creates the places, the people and what happens. Nothing is scripted, but you are never left without an idea of what to do: every day Claude suggests a few things, and one of them is always a change of scenery.
+
 ## Core loop
 
-The game is a season in Italy told as a sequence of **days**. Each day is a short play session in one place.
-
 ```
-Choose today (continue stay / day trip / travel on)
-  → Colazione: the anchor character (your barista)
-  → One or two errands with rotating shopkeepers and neighbours
-  → Sera: an unscripted conversation with someone new
+Viaggio: pick a city (or stay where you are)
+  → Oggi: Claude suggests 3–4 things to do today
+          + one "cambia aria" option (new neighbourhood, day trip, new city)
+          + "vai dove vuoi" (say where you want to go)
+  → each choice opens a conversation with someone at that place
   → Diario: review the day, plan tomorrow
 ```
 
-Days are **game days, not calendar days**. A player can do one a night or three on a Sunday. The game may suggest "Giulia is expecting you tomorrow" but never locks content behind real time.
+Days are **game days, not calendar days**. A player can do one a night or three on a Sunday. Characters may say "ci vediamo domani", but nothing is locked behind real time.
 
-## Stays and day trips
+## Suggestions
 
-- **Stays** (2–5 days) are the backbone. You have lodging, a local bar, a market, neighbours. The same characters recur and remember you, so vocabulary and phrases repeat naturally in a story rather than in drills.
-- **Day trips** (1 day) leave from a stay and return the same evening. They bring novelty: a new town, new vocabulary, a little time pressure (the last train back).
-- **Travel days** move you between stays and are themselves scenes: buying a ticket, a conversation on the train, arriving and finding your lodging.
+Each morning Claude, acting as the director, proposes **3–4 things to do**, built from:
 
-## Who you meet
+- **What you need to practise:** recurring mistakes and stale words from the quaderno. If you keep saying *voglio*, today includes situations that call for *vorrei*.
+- **People you know:** "Enzo said the artichokes arrive today", "Rita wants help carrying the shopping".
+- **The city:** its neighbourhoods, food, customs and landmarks ("you still haven't tried *cacio e pepe*").
+- **Your level:** harder situations as you improve (see [Levelling up](#levelling-up)).
 
-### The cast of a stay
-Each stay has a cast of **4–8 named characters**, counting the evening conversations. That is enough variety to keep days fresh and few enough that you really get to know them. Day trips have 2–3 characters of their own.
+Plus, always:
+- **Cambia aria:** a new neighbourhood, a day trip, or moving to a new city.
+- **Vai dove vuoi:** you say where you want to go ("voglio andare in una libreria") and Claude creates it.
 
-### At most four conversations a day
-A day has **up to four conversations** and never the same four twice:
+Suggestions come in the order Claude thinks fits the day (morning bar first, evening conversation last), but you may pick any of them. Each has a light goal (2–4 steps) where it makes sense; evening conversations have none.
 
-| Slot | Who | Changes day to day? |
-|---|---|---|
-| Colazione | The **anchor**: your barista, every morning of the stay | Same person, new conversation each day |
-| Errand 1 | A shopkeeper or neighbour from the cast | Rotates |
-| Errand 2 (optional) | Another cast member, or a one-off (pharmacist, tabaccaio) | Rotates; some days skip it |
-| Sera | An **open-ended** conversation with someone new | A different person every evening |
+## People
 
-Rules for building a day:
-- The anchor appears every day of a stay. Their conversation grows with familiarity (sconosciuto → cliente → habitué → amico), so they are the clearest measure of progress.
-- Errand characters return every 1–2 days, not every day, so each return feels like a reunion and recycles that character's vocabulary.
-- The evening person is never repeated within a stay. A few may reappear in a later city.
-- Shorter days are fine: three conversations on a travel day, two on a day trip's return evening.
+- **A few anchors per city:** where you're staying (your host) and maybe your local bar. They give each city a home base and continuity.
+- **Everyone else is generated** the first time you meet them, from the city, the place and a role, and then **saved**. Go back and they remember you.
+- **Your regulars are whoever you keep going back to.** If you return to the same bar every morning, that barista becomes your Giulia.
+- **Familiarity grows** with each meeting (sconosciuto → cliente → habitué → amico), changing greetings, topics and how informally they speak (Lei → tu).
+- **People stay where you met them.** Return to Roma after Firenze and Giulia says "Sei tornato!".
+- **People you've left keep in touch:** postcards and short messages from Rita or Matteo, which double as light reading practice.
 
-## The daily rhythm
+## Changing scenery
 
-### Colazione: the anchor (structured, light)
-A short conversation with your barista, with 1–3 checkable steps. Day 1 is ordering and paying. By day 3 it's "il solito?", small talk, and news about the neighbourhood that sets up the day ("Enzo has the first artichokes today").
+At three sizes, always one of the day's options:
 
-### Errands: shopkeepers and neighbours (structured)
-A concrete goal with 2–4 steps, like the prototype scenes: buy food at the market, a bus ticket at the tabaccheria, something at the pharmacy, book a table, help your host with something. Steps change on repeat visits (Enzo asks how you cooked his tomatoes).
+1. **Same city, new neighbourhood:** Monti instead of Trastevere. Offered when you've stayed in the same few spots a while.
+2. **Day trip:** out in the morning, back at night. Getting there is part of it (the ticket, the train, a stranger on board).
+3. **Moving on:** you ask ("voglio andare a Napoli"); Claude suggests it when the timing feels right (time spent, conversations getting easy); or it comes through a person ("Davide va a Bologna per un concerto, vieni?").
 
-### Sera: open conversation (unscripted)
-Each evening you meet someone new for an open conversation: a nonna on a bench, the owner of a wine bar, a student sketching in the piazza. No goal checklist. See [Conversation engine → Encounters](04-conversation-engine.md#encounters) for how this stays workable at A1–A2.
+No city is locked. [Cities and people](03-journey.md) suggests a route as inspiration only.
 
-### Diario: end-of-day review
+## Evening conversations
+
+The last suggestion of the day is usually an open conversation with someone new: a nonna on a bench, a wine bar owner, a student sketching in the piazza. No checklist; the character has a hidden topic and leads with questions so a beginner can keep up. See [Conversation engine → Open conversations](04-conversation-engine.md#open-conversations).
+
+## Magda, the tutor
+
+Magda is the one character allowed to *teach*. Everyone else is a local who corrects by recasting and never lectures.
+
+- A teacher from the Veneto who coaches you remotely while you live in Italy. Warm, precise, interested in why mistakes happen.
+- Speaks Italian at your level, explains in English when it helps, gives short spoken exercises.
+- **Messages you** (on your in-game phone) when mistakes pile up, when you're close to the next level, or before something harder (a move, a doctor's visit, a phone call).
+- **Weekly lesson:** the week's mistakes, one new thing, and a "try this" that feeds the next days' suggestions.
+- **Bridge to real lessons:** a one-page summary (recurring mistakes, new words, transcripts worth discussing) to bring to a real Zoom lesson.
+
+Inspired by the creator's real teacher. Use her first name only, and check she's happy with it before Fuori is shown to anyone else.
+
+## Diario: end of day
+
 A short screen, also voiced, that closes the day:
-- The 2–3 corrections that mattered most today, with the better phrasing to say aloud.
+- The 2–3 corrections that mattered most, with the better phrasing to say aloud.
 - New words and phrases, added to the quaderno.
-- One or two "try tomorrow" goals pulled from your mistakes (e.g. "Use *vorrei* instead of *voglio*").
-- A one-line note from the evening's character, in Italian, with their portrait.
+- One or two "try tomorrow" goals pulled from your mistakes. These feed tomorrow's suggestions.
+- A one-line note from the evening's character, in Italian.
 
-The diario feeds the next day: the next morning's characters are told what to recycle.
+## Levelling up
 
-## Progression
+Levels follow the **CEFR** (A1, A2, B1…), with Italian specifics from the *Profilo della lingua italiana*. Two dials move separately:
 
-- **Language level** rises slowly from evidence in conversations (vocabulary used, accuracy, how often hints are needed). Characters' speech constraints follow the level.
-- **Relationships**: each recurring character has a familiarity level (sconosciuto → cliente → habitué → amico). It changes greetings, topics and how informally they speak (Lei → tu).
-- **Quaderno**: every word and phrase met, with when you last used it. Words not used for a while are deliberately worked into future scenes (spaced repetition by story).
-- **The map**: places visited, stays completed, people met.
+- **What you hear:** speed, sentence length, vocabulary, tenses, how much regional dialect.
+- **What situations ask of you:** ordering → describing → telling what happened → giving opinions → handling problems.
 
-No streak guilt, no hearts, no lives. Rewards are recognition: a character remembering you, a new friend, a stamp in the passport-style journal.
+**How the game knows you're ready** (from conversations, no tests): how often you need hints, "Come si dice?", slow replay or English; how many corrections; whether old mistakes stop recurring; the words and tenses you actually use. The diario updates your profile; changes need consistent evidence across several days, so one good or bad day doesn't move you.
+
+**Small steps:**
+
+| Step | You can… | Characters… |
+|---|---|---|
+| A1 | Order, ask prices, introduce yourself | Present tense, short sentences, slow, English support on |
+| A1+ | Say what you did ("Ieri ho mangiato…") | Add *passato prossimo* |
+| A2 | Describe people and places, how things were | Add *imperfetto*, normal speed, English off by default |
+| A2+ | Give opinions, handle small problems | Add future and conditional, complications |
+| B1 | Tell stories, explain, persuade | Regional speech, group conversations |
+
+**Harder situations** are where levelling up shows: the shop is out of what you want, the train is cancelled, a phone call with no picture, a fast talker, a debate about football.
+
+**Dialect grows with level:** at A1–A2 at most one local touch per conversation (*daje*, *aò*); more at higher levels, with Magda explaining it.
+
+**What you see:** no XP or level numbers on screen. Characters notice ("Ma parli molto meglio!"), the diario marks firsts ("Prima volta: hai raccontato una storia al passato"), and new kinds of people and places start appearing. A manual "più facile / più difficile" control is available.
 
 ## Help and safety nets
 
-The game is dialogue-focused with minimal typing. Help comes in layers, starting with natural conversation:
+Help comes in layers, starting with the conversation itself:
 
-**Level 1: Natural character help** (always available, in character)
-- Characters offer options: "Vuoi un caffè? O un cappuccino?"
-- They rephrase: "Piano piano, cosa vuoi ordinare?"
-- They simplify questions when the learner struggles
+1. **Natural character help** (always): characters offer options ("Un caffè? O un cappuccino?"), rephrase, simplify.
+2. **"Come si dice…?"** (you ask): say it in English, get the Italian to repeat, without leaving the scene.
+3. **Hints** (rare): only when the character is genuinely confused or you're stuck twice in a row.
 
-**Level 2: "Come si dice…?" button** (user-triggered)
-- Press the button, say what you want in English
-- Get the Italian phrase back
-- Repeat it to continue the conversation
-- The character waits patiently, stays in character
+Always available: **Ripeti / Piano** (replay slower), an **English toggle** (on by default at A1), and **graceful exits** (any scene can end; the character closes naturally).
 
-**Level 3: UI hints** (only when genuinely stuck)
-- Appear only when the character is confused OR after repeated failed attempts
-- Most turns have no hints - the conversation flows naturally
-- Trust Claude's reconstruction of imperfect transcription silently
+## Interface
 
-**Always available:**
-- **Ripeti / Piano**: replay the last line, slower
-- **English toggle** for translations under each line, on by default at A1 and off by default from A2
-- **Graceful exits**: any scene can be ended; the character closes naturally
+Instagram-like and phone-first. Mockups: [Fuori mockups](https://claude.ai/artifact/1zVpF11bWHivP3RxVruKyx).
 
-The goal is immersion: you're talking to someone, not doing a drill.
+- **Viaggio:** cities as large square photo tiles; the current city is highlighted with your days there and the people you know.
+- **Oggi:** today's suggestions as large square place tiles (photos), plus "cambia aria" and "vai dove vuoi". Tap one to go there.
+- **Conversazione:** like a video call. Large portrait with the character's mood, transcript and quiet correction notes below, a big mic button, "Come si dice?" and "Piano · Ripeti".
+- **Diario** and **Tu** (your journal: places, food and people as a photo grid).
+- Bottom tabs: Oggi · Viaggio · Diario · Tu. No likes, no infinite feed, no streaks.
 
 ## Out of scope for now
 
-Pronunciation scoring, multiplayer, grammar lessons, non-Italian languages.
+Pronunciation scoring, multiplayer, other languages. See [Ideas](ideas.md) for parked ideas.

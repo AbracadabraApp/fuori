@@ -1,58 +1,67 @@
-# The journey
+# Cities and people
 
-A first season of about 18 days. Only Roma (days 1–4) needs to be fully built for the first playable version; the rest is a sketch to keep the design honest.
+Fuori is open-ended: Claude creates places and people as you go. This document holds the **ingredients** Claude cooks with, not scripts. Each city gets a pantry (neighbourhoods, places, food, customs, expressions) and a few hand-written anchor characters. Everything else is generated during play.
 
-## Route
+## Suggested route (inspiration only)
 
-| Days | Type | Where | Theme |
-|---|---|---|---|
-| 1–4 | Stay | **Roma**, Trastevere | Settling in: your bar, your market, your neighbours |
-| 5 | Day trip | Orvieto (from Roma) | The train, a hill town, lunch with a view |
-| 6 | Travel | Roma → Firenze | Tickets, the train, finding your room |
-| 7–9 | Stay | **Firenze**, Oltrarno | Artisans, art, opinions |
-| 10 | Day trip | Siena (from Firenze) | The Palio, contrade, pride of place |
-| 11 | Travel | Firenze → Bologna | |
-| 12–14 | Stay | **Bologna** | Food, the university, the portici |
-| 15 | Travel | Bologna → Napoli | A long train, a long conversation |
-| 16–17 | Stay | **Napoli** | Noise, warmth, gesture, coffee culture |
-| 18 | Day trip | Pompei or Procida | |
+Nothing is locked; the learner can go anywhere. This is the route Claude leans on when suggesting where to go next.
 
-## Roma (days 1–4) in detail
+| Where | Kind | Feel |
+|---|---|---|
+| **Roma**, Trastevere | Stay (start here) | Settling in: your bar, your market, your neighbours |
+| Orvieto | Day trip from Roma | The train, a hill town, lunch with a view |
+| **Firenze**, Oltrarno | Stay | Artisans, art, opinions |
+| Siena | Day trip from Firenze | The Palio, contrade, pride of place |
+| **Bologna** | Stay | Food, the university, the portici |
+| **Napoli** | Stay | Noise, warmth, gesture, coffee culture |
+| Pompei or Procida | Day trip from Napoli | |
 
-**Your base:** a rented room above a courtyard in Trastevere. Your host is **Signora Rita**, 70, widowed, kind, nosy, uses *Lei* at first and switches to *tu* on day 3.
+## Roma (first city)
 
-### The cast (8 people)
+### Anchors (hand-written)
 
-| Character | Role | Who | Speech |
-|---|---|---|---|
-| **Giulia** | Anchor, every morning | Barista on your street, 30s, quick and funny | Fast, informal, *tu* from the start |
-| Signora Rita | Errands | Your host | Slow, clear, warm, a few Roman expressions |
-| Enzo | Errands | Fruit and veg stall at the Mercato di San Cosimato, 60s, theatrical | *Lei*, compliments, haggles for fun |
-| Franco | Errands | Tabaccaio, 50s, gruff but helpful | Short sentences, Roman accent, warms up slowly |
-| Nonna Franca | Evening, day 1 | Neighbour on the courtyard bench | Slow, lots of questions about your family |
-| Davide | Evening, day 2 | Rita's grandson, 25, a student | Casual, curious about where you're from and why Italy |
-| Matteo | Evening, day 3 | Owns a tiny wine bar | Enthusiastic, insists you taste and give an opinion |
-| Sofia | Evening, day 4 | Art student sketching in Piazza di Santa Maria | Thoughtful, asks what you find beautiful |
+| Character | Who | Speech |
+|---|---|---|
+| **Signora Rita** | Your host: rented room above a courtyard in Trastevere. 70, widowed, kind, nosy | Slow, clear, warm; *Lei* at first, *tu* once she knows you |
+| **Giulia** | Barista at the bar on your street, 30s, quick and funny | Fast, informal, *tu* from the start, the odd Roman word |
 
-### Days
+These two exist from day one. Everyone else is generated when you meet them.
 
-At most four conversations a day; Giulia every morning, the others rotating.
+### Seed characters (examples, not scripts)
 
-| Day | Colazione | Errands | Sera (open) |
-|---|---|---|---|
-| 1 | Giulia: first visit, order and pay at the cassa | Rita: arrival, keys, the room, wifi | Nonna Franca |
-| 2 | Giulia: she half-remembers you | Enzo: fruit, prices, quantities · Franco: a bus ticket | Davide, at dinner at Rita's |
-| 3 | Giulia: "il solito?", neighbourhood news | Rita: ask for a trattoria recommendation | Matteo |
-| 4 | Giulia: you tell her about your week | Enzo: how did you cook his tomatoes? · Franco: train tickets for Orvieto | Sofia |
+Sketched during design; Claude may use them as templates or generate others like them:
 
-Appearances: Giulia 4, Rita 2, Enzo 2, Franco 2, each evening character once. Greetings, ordering, prices, *quanto costa*, *vorrei*, numbers and times recur across different people.
+- **Enzo**, 60s, fruit and veg stall at the Mercato di San Cosimato; theatrical, compliments, haggles for fun, *Lei*.
+- **Franco**, 50s, tabaccaio; gruff but helpful, warms up slowly.
+- **Davide**, 25, Rita's grandson, a student; curious about where you're from and why Italy.
+- **Nonna Franca**, a neighbour on the courtyard bench; lots of questions about your family.
+- **Matteo**, owns a tiny wine bar; insists you taste and give an opinion.
+- **Sofia**, art student sketching in Piazza di Santa Maria; asks what you find beautiful.
+
+### Pantry
+
+- **Neighbourhoods:** Trastevere (home), Monti, Testaccio, the Ghetto, Prati.
+- **Everyday places:** the bar, Mercato di San Cosimato, tabaccheria, farmacia, forno, trattoria, wine bar, the bus stop, the courtyard.
+- **Landmarks** (well-known only, for reading moments): Santa Maria in Trastevere, Ponte Sisto, Piazza Trilussa, the Gianicolo.
+- **Food:** cornetto, maritozzo, supplì, cacio e pepe, carbonara, carciofi alla romana, pizza al taglio.
+- **Customs:** pay at the cassa first, then order at the bar; standing vs sitting prices; the passeggiata; lunch closures.
+- **Local touches** (sparingly at A1–A2): *daje*, *aò*, *anvedi*.
+
+### A first week, for reference
+
+How a Roma week might go, to sanity-check the director's suggestions. Not a script.
+
+- **Day 1:** arrive at Rita's (keys, the room) · first coffee at Giulia's · a neighbour on the courtyard bench in the evening.
+- **Day 2:** Giulia half-remembers you · the market (fruit, prices, quantities) · a bus ticket at the tabaccheria · dinner with Rita and Davide.
+- **Day 3:** "il solito?" · ask Rita for a trattoria · a reading moment at Santa Maria · an evening at a wine bar.
+- **Day 4:** tell Giulia about your week · Enzo asks how you cooked his tomatoes · "cambia aria": Davide suggests Orvieto.
 
 ## Later cities
 
-Each stay gets its own anchor and a cast of 4–8 in the same pattern. Day trips have 2–3 characters. Candidates already sketched:
+Each city gets the same shape: 1–2 anchors (host, maybe a bar), a pantry, a few seed characters. Seeds already sketched:
 
-- **Luca**, a train conductor on a break; football and the best *supplì*. Travel day, Roma → Firenze.
+- **Luca**, a train conductor on a break; football and the best supplì. On the way to Firenze.
 - **Don Paolo**, a parish priest in Firenze; the history of his church, curious about your family.
 - **Chiara**, a nurse in Bologna coming off a night shift; tired, funny, wants a coffee and small talk.
 
-A few Roma characters can reappear later (Davide visits Bologna for a concert), which makes the world feel continuous.
+People from earlier cities can reappear (Davide visits Bologna for a concert).

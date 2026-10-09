@@ -1,6 +1,6 @@
 # Architecture
 
-The prototype runs inside a claude.ai artifact, where the microphone can be blocked and dictation tends to come through in English. The web app removes both problems: it runs on its own HTTPS domain, so it can record from the microphone, and it sends the audio to Whisper with the language set to Italian.
+The prototype runs inside a claude.ai artifact, where the microphone can be blocked and dictation tends to come through in English. The web app removes both problems: it runs on its own HTTPS domain, so it can record from the microphone, and it sends the audio to Whisper (hosted by Groq) with the language set to Italian.
 
 ## Stack (recommended)
 
@@ -10,8 +10,8 @@ The prototype runs inside a claude.ai artifact, where the microphone can be bloc
 | Hosting | **Railway** | Auto-deploys from GitHub, integrated Postgres, environment variables for secrets, automatic HTTPS (required for microphone access) |
 | Database | **Railway Postgres** (M4) | Integrated with Railway hosting, easy provisioning |
 | Claude | **Anthropic TypeScript SDK** (`@anthropic-ai/sdk`) in server routes only | The API key never reaches the browser |
-| Speech in | **OpenAI Whisper API** (`whisper-1`) from M1 | Browser STT transcribes Italian as English gibberish; Whisper solves this. ~$0.12/day per learner. See [Language Services](08-language-services.md) |
-| Speech out | Browser **speechSynthesis** with an Italian voice (M1); **hosted TTS** (ElevenLabs or Azure) with distinct character voices (M2) | Character voices are a big part of the feel; browser voices for M1, upgrade in M2 |
+| Speech in | **Whisper on Groq** (`whisper-large-v3-turbo`) from M1 | Browser STT transcribes Italian as English gibberish; Whisper locked to Italian solves this. Groq's free tier covers a prototype. See [Language Services](08-language-services.md) |
+| Speech out | Browser **speechSynthesis** with an Italian voice (M1); **hosted TTS** (ElevenLabs or Azure) with distinct character voices (M3) | Character voices are a big part of the feel; browser voices first, upgrade in M3 |
 | Storage | **localStorage** (M1); **Railway Postgres** (M4) once memory and multi-device matter | Keep M1 simple |
 | Auth | None for M1; add when there's more than one player (M4) | |
 
@@ -20,8 +20,11 @@ The prototype runs inside a claude.ai artifact, where the microphone can be bloc
 ```
 Browser                               Server routes                            APIs
 -------                               -------------                            ----
+start of day                   ─────▶ /api/suggest  (the director)      ────▶ Claude
+tap a tile / "vai dove vuoi"   ─────▶ /api/scene    (+ new character)   ────▶ Claude
+
 mic → MediaRecorder → audio blob
-                               ─────▶ /api/transcribe                   ────▶ Whisper
+                               ─────▶ /api/transcribe                   ────▶ Whisper (Groq)
                                ◀───── Italian transcript                ◀──── (audio → text)
 
 transcript + scene + state     ─────▶ /api/turn
@@ -33,9 +36,9 @@ transcript + scene + state     ─────▶ /api/turn
 render reply, speechSynthesis  ◀───── turn output
 ```
 
-End-of-day: `/api/diario` takes the day's transcripts and returns the diario plus updated character memories.
+End-of-day: `/api/diario` takes the day's transcripts and returns the diario, updated character memories, level evidence and any Magda message. `/api/magda` runs her lessons. See [Conversation engine](04-conversation-engine.md).
 
-**M2 with hosted TTS:** `/api/turn` also generates TTS audio for the character's response and returns audio URL or streams bytes.
+**M3 with hosted TTS:** `/api/turn` also generates TTS audio for the character's response and returns audio URL or streams bytes.
 
 ## Claude API usage
 
@@ -49,19 +52,24 @@ End-of-day: `/api/diario` takes the day's transcripts and returns the diario plu
 
 The full TypeScript interfaces are in [Data model](09-data-model.md), which is the source of truth.
 
-Static content (characters, places, scenes, the route) lives in the repo as TypeScript or JSON files under `content/it/`, so it's versioned and easy to edit.
+Hand-written content (city pantries, anchor characters, Magda, level rules) lives in the repo as TypeScript files under `content/it/`. Generated characters and scenes are learner data, stored with the learner's progress.
 
 ## Suggested layout
 
 ```
 app/
-  page.tsx                 journey map / today
+  page.tsx                 Oggi: today's suggestion tiles
+  viaggio/page.tsx         cities
   play/[sceneId]/page.tsx  conversation screen
   diario/page.tsx
-  api/transcribe/route.ts  audio → Whisper → Italian (or English for "Come si dice?")
+  tu/page.tsx              your journal
+  api/suggest/route.ts     the director: today's suggestions
+  api/scene/route.ts       scene (and new character) from a suggestion or free request
+  api/transcribe/route.ts  audio → Whisper on Groq → Italian (or English for "Come si dice?")
   api/turn/route.ts
   api/translate/route.ts   "Come si dice?" English → Italian
-  api/diario/route.ts
+  api/diario/route.ts      end of day: diario, memories, level evidence, Magda triggers
+  api/magda/route.ts       tutor lessons
 lib/
   claude.ts                SDK client, prompt builder, schemas
   speech.ts                MediaRecorder capture + speechSynthesis (M1) wrappers
@@ -69,10 +77,10 @@ lib/
 content/
   it/                      everything specific to Italian
     language.ts            language config (see below)
-    levels/a1-a2.ts
-    characters/*.ts
-    scenes/roma/*.ts
-    route.ts
+    levels/*.ts            CEFR steps (A1, A1+, A2…)
+    cities/*.ts            pantry per city: neighbourhoods, places, food, customs
+    characters/*.ts        anchors (Rita, Giulia) and Magda
+    route.ts               suggested route (inspiration only)
 prototype/index.html       the original artifact demo
 ```
 
@@ -80,8 +88,8 @@ prototype/index.html       the original artifact demo
 
 Fuori is Italian-only, but four cheap rules keep a second language from being a rewrite later:
 
-1. **Language content in its own folder.** Everything Italian-specific lives under `content/it/`: characters, scenes, route, level rules.
-2. **One language config.** `content/it/language.ts` holds the Whisper language code (`it`), TTS voice choices, which level rules file to use, the language's name for prompts ("Italian"), and the UI words ("Come si dice?", diario, quaderno, "Ascolto…").
+1. **Language content in its own folder.** Everything Italian-specific lives under `content/it/`: city pantries, anchor characters, Magda, level rules.
+2. **One language config.** `content/it/language.ts` holds the speech-to-text language code (`it`), TTS voice choices, which level rules file to use, the language's name for prompts ("Italian"), and the UI words ("Come si dice?", diario, quaderno, "Ascolto…").
 3. **Nothing language-specific hard-coded.** Prompts and components read the language name, examples and UI words from the config. The house-rules prompt takes its forgiveness and correction examples ("bone journal" → buongiorno, *vorrei* vs *voglio*) from the config, not from the template.
 4. **All model calls in one module.** Every Claude call goes through `lib/claude.ts`, so swapping or adding a model provider touches one place.
 
@@ -89,7 +97,7 @@ Not building: a language picker, translated UI, or a second language. See [Ideas
 
 ## Costs
 
-At A1–A2, a turn is a few thousand input tokens (mostly cached) and a short output. A 20-minute day is roughly 30–50 turns plus one diario call. Measure real usage in M1 and set a per-day budget before inviting other players.
+At A1–A2, a turn is a few thousand input tokens (mostly cached) and a short output. A 20-minute day is roughly 30–50 turns plus one suggestion call, a few scene calls and one diario call. Measure real usage in M1 and set a per-day budget before inviting other players.
 
 ## Deployment (Railway)
 
@@ -125,8 +133,8 @@ git push origin main
 
 Set in Railway dashboard (Project → Variables):
 - `ANTHROPIC_API_KEY` - Claude API for conversations
-- `OPENAI_API_KEY` - Whisper for speech-to-text
-- (M2) `ELEVENLABS_API_KEY` or `AZURE_SPEECH_KEY` - for character TTS
+- `GROQ_API_KEY` - Whisper on Groq for speech-to-text
+- (M3) `ELEVENLABS_API_KEY` or `AZURE_SPEECH_KEY` - for character TTS
 
 Never commit `.env*` files; keep in `.gitignore`.
 
@@ -219,7 +227,7 @@ Fuori is **mobile-first** - the primary experience is on a phone. Desktop is sec
 4. **Check Railway logs** (for API errors)
    ```bash
    railway logs
-   # See Whisper/Claude API errors from phone requests
+   # See Whisper (Groq) / Claude API errors from phone requests
    ```
 
 **Mobile-specific checks before M1 completion:**
@@ -269,8 +277,8 @@ logMobile('whisper-error', { error: error.message });
 
 Environment variables:
 - `ANTHROPIC_API_KEY` - Claude API for conversations
-- `OPENAI_API_KEY` - Whisper for speech-to-text
-- (M2) `ELEVENLABS_API_KEY` or `AZURE_SPEECH_KEY` - for character TTS
+- `GROQ_API_KEY` - Whisper on Groq for speech-to-text
+- (M3) `ELEVENLABS_API_KEY` or `AZURE_SPEECH_KEY` - for character TTS
 
 Stored in:
 - `.env.local` for local development
