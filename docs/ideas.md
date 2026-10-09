@@ -60,6 +60,9 @@ Museums, churches and landmarks you pass while travelling become reading moments
 - **How it works:** Claude writes the text at A1–A2 from the level rules, with real facts about the place. A few questions follow, asked aloud by a character rather than as a quiz (a custode, a guide, a friend who came along).
 - **Why:** it adds reading, which the game otherwise lacks, and the facts give conversations something to talk about ("Hai visto i mosaici?").
 - **Risk:** facts must be right; keep to well-known places and check generated texts once before they ship.
+- **Real photos:** cultural sites and dishes can use actual photographs instead of illustrations. People stay illustrated; real places and food are shown like photos you took or postcards you picked up, which also suits a travel journal.
+  - Sources: Wikimedia Commons (huge coverage of Italian churches, museums and landmarks; mostly CC BY / CC BY-SA, so attribution is required), Unsplash and Pexels (free to use, attribution appreciated).
+  - Download and store the images with the app rather than linking to the source sites, and record source URL, author and licence next to each one in the content files. Show a small credit line under each photo.
 
 ## Food culture conversations
 
@@ -67,6 +70,7 @@ Food as a topic, not only a transaction: talk with someone about why a dish is t
 
 - Roma: *cacio e pepe* and *carbonara* with a trattoria owner who has strong opinions. Bologna: *tortellini* and why it's never "spaghetti alla bolognese". Firenze: *ribollita* and cucina povera. Napoli: what makes real pizza.
 - Natural partners: market vendors, a nonna, a cook, the evening conversation slot.
+- Real photos of the dishes (same sources and credit rules as cultural places) make the conversation concrete: "Questa è la vera carbonara. Niente panna!"
 - Fits the persona: someone who loves Italy wants to understand the food, not just order it.
 
 ## Generated characters for longer stays
