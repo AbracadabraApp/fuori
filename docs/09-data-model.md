@@ -101,8 +101,12 @@ interface Scene {
   };
 
   opening: {
-    it: string;                  // "Buongiorno! Cosa ti preparo?"
-    en: string;                  // "Good morning! What can I make you?"
+    guide: string;               // What the first line should do, not the words:
+                                 // "Greet them as a regular, mention yesterday, offer the usual"
+    fallback: {                  // Used only if generating the opening fails
+      it: string;                // "Buongiorno! Cosa ti preparo?"
+      en: string;                // "Good morning! What can I make you?"
+    };
   };
 
   recycleWords?: string[];       // Words/phrases to work into conversation (from quaderno)

@@ -47,6 +47,14 @@ Carried over from the prototype, with additions:
 - The UI only shows hints when `confused: true` or user requested help
 - Most conversations should have natural back-and-forth without scaffolding
 
+### Opening lines
+
+The character speaks first, and that line is generated too, never read from a script. Each scene has an opening **guide** (what the line should do, e.g. "greet them as a regular, mention yesterday, offer the usual") and a written **fallback** line used only if the call fails.
+
+The opening call gets the same prompt layers as a normal turn, with no learner line yet, so the greeting can draw on familiarity and memory ("Allora, ti è piaciuto il supplì?"). Two results:
+- Replaying a day, or a long stay, never repeats the same greeting word for word.
+- Days beyond the ones written in [The journey](03-journey.md) work without new content: a guide like "an ordinary morning; pick up on something from recent days" is enough.
+
 ## Character prompt layers
 
 Build the prompt from stable layers first so it caches well:
