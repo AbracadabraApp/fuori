@@ -2,6 +2,41 @@
 
 Ideas worth keeping that are **not part of the current plan**. Nothing here is scheduled or implemented. Move an idea into the numbered docs and the roadmap only once it's decided.
 
+## Open-ended world (leading direction)
+
+The numbered docs describe a scripted season (fixed route, cast, day plans). This direction replaces most of that: Claude creates places and people on the fly, and the learner goes where they like. If adopted, it supersedes much of [The journey](03-journey.md), the day builder and the fixed casts.
+
+**Principles**
+- **Go almost anywhere, meet whoever Claude creates.** "Voglio andare in una libreria" produces the bookshop, the bookseller and the situation.
+- **Always suggestions.** A beginner can freeze at "go anywhere", so each day Claude offers 3–4 things to do, plus "vai dove vuoi".
+- **Always a way to change scenery** (see below).
+- **Claude directs; nothing is scripted.** Suggestions come from the learner's weak spots, the people they've met and the city ("Enzo said the artichokes arrive today", "you still haven't tried cacio e pepe").
+- **Goals come from learning needs.** If the learner keeps saying *voglio*, today's situations call for *vorrei*. Repetition is built into the situations rather than written into scripts.
+- **Cities hold ingredients, not scripts:** neighbourhoods, real places, food, customs, local expressions. Claude builds scenes from them.
+- **A few fixed anchors per city:** where you're staying, maybe your local bar. Everyone else is generated and saved, so they can be met again and remember you. Your regulars are whoever you keep going back to.
+- **Quality stays automatic:** level rules and the simulated learner (see [Testing](10-testing.md)).
+
+**Changing scenery, at three sizes**
+1. **Same city, new neighbourhood:** Monti instead of Trastevere. Claude offers it when you've stayed in the same few spots a while.
+2. **Day trip:** out in the morning, back at night. The journey is part of it (ticket, train, a stranger on board).
+3. **Moving on:** you ask ("voglio andare a Napoli"); Claude suggests it when the timing feels right (time spent, conversations getting easy); or it comes through people ("Davide va a Bologna per un concerto, vieni?").
+
+**Leaving without losing**
+- People stay where you met them; come back and they remember you ("Sei tornato!").
+- People you've left send postcards and messages (Rita, Matteo): light reading practice that keeps the world alive.
+- No locked cities. A suggested route can exist as inspiration only.
+
+**Interface**
+- **Oggi:** Claude's 3–4 suggestions as tiles, always including one "cambia aria" tile (new neighbourhood, day trip or new city), plus "vai dove vuoi".
+- **Viaggio:** your travel map: cities you've lived in and the people you know there, and places you could go next, all open.
+
+**Gaps to solve**
+- Visuals: generated people get SVG avatars; places need real photos found per place; cultural texts stick to well-known landmarks.
+- Progression: something must notice when the learner is ready for harder conversations.
+- Cost and latency of generating scenes on the fly.
+
+**Effect on the plan:** probably makes M1 simpler (one conversation engine plus a scene generator instead of authored content). The numbered docs get rewritten once this direction is confirmed.
+
 ## Groundhog Day loops
 
 Stay in the same day until you succeed, or choose to move on.
