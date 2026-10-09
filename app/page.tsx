@@ -13,6 +13,7 @@ export default function Home() {
   const [isRecording, setIsRecording] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [status, setStatus] = useState<string>('');
+  const [recordMode, setRecordMode] = useState<'hold' | 'tap'>('tap'); // default to tap
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
 
@@ -96,6 +97,14 @@ export default function Home() {
       mediaRecorderRef.current.stop();
       setIsRecording(false);
       setStatus('Processing...');
+    }
+  };
+
+  const toggleRecording = () => {
+    if (isRecording) {
+      stopRecording();
+    } else {
+      startRecording();
     }
   };
 
@@ -213,11 +222,41 @@ export default function Home() {
           </div>
 
           <div style={{ textAlign: 'center' }}>
+            {/* Mode toggle */}
+            <div style={{ marginBottom: '12px', fontSize: '14px' }}>
+              <label>
+                <input
+                  type="radio"
+                  value="tap"
+                  checked={recordMode === 'tap'}
+                  onChange={() => setRecordMode('tap')}
+                  style={{ marginRight: '4px' }}
+                />
+                Tap to start/stop
+              </label>
+              <label style={{ marginLeft: '16px' }}>
+                <input
+                  type="radio"
+                  value="hold"
+                  checked={recordMode === 'hold'}
+                  onChange={() => setRecordMode('hold')}
+                  style={{ marginRight: '4px' }}
+                />
+                Hold to record
+              </label>
+            </div>
+
             <button
-              onMouseDown={startRecording}
-              onMouseUp={stopRecording}
-              onTouchStart={startRecording}
-              onTouchEnd={stopRecording}
+              {...(recordMode === 'hold'
+                ? {
+                    onMouseDown: startRecording,
+                    onMouseUp: stopRecording,
+                    onTouchStart: startRecording,
+                    onTouchEnd: stopRecording,
+                  }
+                : {
+                    onClick: toggleRecording,
+                  })}
               disabled={isProcessing}
               style={{
                 width: '80px',
@@ -235,7 +274,11 @@ export default function Home() {
             </button>
             <p style={{ marginTop: '12px', color: '#666' }}>{status}</p>
             <p style={{ fontSize: '14px', color: '#999' }}>
-              Hold to record, release to send
+              {recordMode === 'hold'
+                ? 'Hold to record, release to send'
+                : isRecording
+                ? 'Tap again to stop'
+                : 'Tap to start recording'}
             </p>
           </div>
         </>
