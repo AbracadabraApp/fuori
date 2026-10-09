@@ -99,7 +99,7 @@ Where it breaks from Instagram:
 - **The conversation screen is closer to a video call than a chat**: large portrait, big mic button, transcript and corrections small underneath.
 - **No engagement mechanics**: no likes, no infinite feed, no streak guilt. The day ends with the diario card.
 
-Bottom tabs: Oggi · Mappa · Diario · Tu. Mockups: see the "Fuori mockups" design artifact.
+Bottom tabs: Oggi · Mappa · Diario · Tu. Mockups: [Fuori mockups](https://claude.ai/artifact/1zVpF11bWHivP3RxVruKyx) (Oggi, conversation, diario, journal).
 
 ## Other ideas from the conversation so far
 
