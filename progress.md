@@ -18,7 +18,7 @@ Started: 2026-10-08
   - Reason: Character voices are core to experience
   - Service: ElevenLabs (~$8/learner/season) or Azure (~$0.72/learner/season)
 - **Language validation is automated** (2026-10-09): no native-speaker gate.
-  - Level rules from published standards (CEFR, frequency word list, A1–A2 grammar) in `content/levels/a1-a2.ts`
+  - Level rules from published standards (CEFR, frequency word list, A1–A2 grammar) in `content/it/levels/a1-a2.ts`
   - Simulated-learner test with a judge from M2 (`npm run test:learner`)
   - Not doing: per-reply rule checks in code, friction logging/analytics (parked in docs/ideas.md)
 - **Help system:** Natural character help first, UI hints only when confused
@@ -38,7 +38,7 @@ Started: 2026-10-08
   - Deploy to Railway → test on phone → iterate
 
 ### Open Issues
-- [ ] Build A1–A2 level rules file (`content/levels/a1-a2.ts`)
+- [ ] Build A1–A2 level rules file (`content/it/levels/a1-a2.ts`)
 - [ ] Need to test Whisper accuracy with recorded phrases
 - [ ] Need OpenAI API key for Whisper
 - [ ] Need to decide: ElevenLabs vs Azure for TTS

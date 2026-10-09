@@ -9,4 +9,5 @@ Voice-first Italian learning game. Read `README.md` and the numbered files in `d
 - Speech in is Whisper (`/api/transcribe`), not browser speech recognition. Speech out is browser `speechSynthesis` in M1, hosted TTS from M2.
 - Mobile-first: iPhone Safari is the primary target. Hosting is Railway, which deploys from `main`; work and push on `main`.
 - Keep `progress.md` current at the end of each session: what was done, decisions, open issues, next actions.
-- Game content (characters, scenes, route) lives in `content/` as data, not inside components.
+- Game content (characters, scenes, route, level rules) lives in `content/it/` as data, not inside components.
+- Keep other languages possible without building them: nothing Italian-specific hard-coded in code or prompt templates (language name, Whisper code, voices, UI words and prompt examples come from `content/it/language.ts`), and all Claude calls go through `lib/claude.ts`. See "Keeping other languages possible" in `docs/05-architecture.md`.

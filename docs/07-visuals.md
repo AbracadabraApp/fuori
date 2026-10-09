@@ -29,7 +29,7 @@ Each character gets four expressions, matching the `mood` field the conversation
 
 ## Pipeline
 
-1. **Write the character sheet** in `content/characters/<id>.ts` (already needed for the conversation engine).
+1. **Write the character sheet** in `content/it/characters/<id>.ts` (already needed for the conversation engine).
 2. **Claude writes the portrait prompt** from the sheet: one base description plus a line per mood, using the style guide above. Store it in the character file as `portrait.prompt`.
 3. **Generate the base portrait** (the `warm` mood) with an image model. Generate a few candidates and pick one.
 4. **Generate the other moods from the base image**, using the model's image-editing or reference-image feature ("same person, same clothes, now laughing"), so the face stays the same.

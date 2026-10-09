@@ -1,10 +1,10 @@
 # Data Model
 
-Static game content (characters, scenes, the route) lives in the repo as TypeScript files under `content/`, versioned and easy to edit. Dynamic learner data (progress, memories, words) is stored in localStorage (M1) then migrated to Postgres (M4).
+Static game content (characters, scenes, the route) lives in the repo as TypeScript files under `content/it/` (one folder per language), versioned and easy to edit. Dynamic learner data (progress, memories, words) is stored in localStorage (M1) then migrated to Postgres (M4).
 
 ## Content Types (Static)
 
-These live in `content/` as `.ts` files, committed to the repo.
+These live in `content/it/` as `.ts` files, committed to the repo.
 
 ### Character Sheet
 
@@ -47,7 +47,7 @@ interface CharacterSheet {
 }
 ```
 
-**Example:** `content/characters/giulia.ts`
+**Example:** `content/it/characters/giulia.ts`
 
 ```typescript
 import { CharacterSheet } from '@/lib/types';
@@ -135,7 +135,7 @@ interface Route {
 }
 ```
 
-**Example:** `content/route.ts`
+**Example:** `content/it/route.ts`
 
 ```typescript
 export const route: Route = {
@@ -452,7 +452,7 @@ const response = await anthropic.messages.parse({
 
 For testing and development, create sample data files:
 
-- `content/characters/__fixtures__/giulia-day1.json` - Sample conversation transcript
+- `content/it/characters/__fixtures__/giulia-day1.json` - Sample conversation transcript
 - `content/learners/__fixtures__/josh.json` - Sample learner profile
 - `content/relationships/__fixtures__/josh-giulia.json` - Sample relationship after 3 days
 

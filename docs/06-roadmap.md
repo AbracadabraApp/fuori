@@ -8,7 +8,7 @@ Each milestone ends with something playable.
 
 Checklist:
 - [ ] Get API keys: Anthropic (have) and OpenAI (for Whisper)
-- [ ] Level rules: have Claude build `content/levels/a1-a2.ts` from CEFR descriptors, De Mauro's *vocabolario di base* and typical A1–A2 grammar coverage (see [Testing → 4a](10-testing.md#4a-level-rules-from-published-standards))
+- [ ] Level rules: have Claude build `content/it/levels/a1-a2.ts` from CEFR descriptors, De Mauro's *vocabolario di base* and typical A1–A2 grammar coverage (see [Testing → 4a](10-testing.md#4a-level-rules-from-published-standards))
 - [ ] Whisper check: record 20 everyday phrases on your phone; a small script sends them to Whisper and reports what came back and how long it took (target: Italian text, under 2 seconds)
 - [ ] Note the cost of those runs to sanity-check the per-learner estimate
 

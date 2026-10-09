@@ -351,7 +351,7 @@ The creator is an A1–A2 learner, so Italian quality can't depend on anyone's p
 
 ### 4a. Level rules from published standards
 
-A single rules file, `content/levels/a1-a2.ts`, built once by Claude from public sources:
+A single rules file, `content/it/levels/a1-a2.ts`, built once by Claude from public sources:
 
 - **CEFR descriptors** for A1 and A2 (the official "can-do" statements: ordering, asking prices, talking about yourself)
 - **A frequency word list**: De Mauro's *Nuovo vocabolario di base* (the standard list of the most common Italian words), trimmed to the most frequent bands for A1–A2
@@ -360,7 +360,7 @@ A single rules file, `content/levels/a1-a2.ts`, built once by Claude from public
 Use frameworks and word lists, not copied textbook pages.
 
 ```typescript
-// content/levels/a1-a2.ts
+// content/it/levels/a1-a2.ts
 export interface LevelRules {
   id: 'A1' | 'A2';
   canDo: string[];             // CEFR can-do statements, summarised

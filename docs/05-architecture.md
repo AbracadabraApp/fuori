@@ -49,7 +49,7 @@ End-of-day: `/api/diario` takes the day's transcripts and returns the diario plu
 
 The full TypeScript interfaces are in [Data model](09-data-model.md), which is the source of truth.
 
-Static content (characters, places, scenes, the route) lives in the repo as TypeScript or JSON files under `content/`, so it's versioned and easy to edit.
+Static content (characters, places, scenes, the route) lives in the repo as TypeScript or JSON files under `content/it/`, so it's versioned and easy to edit.
 
 ## Suggested layout
 
@@ -67,11 +67,25 @@ lib/
   speech.ts                MediaRecorder capture + speechSynthesis (M1) wrappers
   state.ts                 local state (M1), DB later
 content/
-  characters/*.ts
-  scenes/roma/*.ts
-  route.ts
+  it/                      everything specific to Italian
+    language.ts            language config (see below)
+    levels/a1-a2.ts
+    characters/*.ts
+    scenes/roma/*.ts
+    route.ts
 prototype/index.html       the original artifact demo
 ```
+
+## Keeping other languages possible
+
+Fuori is Italian-only, but four cheap rules keep a second language from being a rewrite later:
+
+1. **Language content in its own folder.** Everything Italian-specific lives under `content/it/`: characters, scenes, route, level rules.
+2. **One language config.** `content/it/language.ts` holds the Whisper language code (`it`), TTS voice choices, which level rules file to use, the language's name for prompts ("Italian"), and the UI words ("Come si dice?", diario, quaderno, "Ascolto…").
+3. **Nothing language-specific hard-coded.** Prompts and components read the language name, examples and UI words from the config. The house-rules prompt takes its forgiveness and correction examples ("bone journal" → buongiorno, *vorrei* vs *voglio*) from the config, not from the template.
+4. **All model calls in one module.** Every Claude call goes through `lib/claude.ts`, so swapping or adding a model provider touches one place.
+
+Not building: a language picker, translated UI, or a second language. See [Ideas](ideas.md#other-languages).
 
 ## Costs
 
@@ -267,7 +281,7 @@ Stored in:
 
 Italian quality is checked automatically rather than by manual review (the creator is an A1–A2 learner):
 
-1. **Level rules** (`content/levels/a1-a2.ts`), built once from CEFR descriptors, a frequency word list and typical A1–A2 grammar coverage. They feed the house-rules prompt layer.
+1. **Level rules** (`content/it/levels/a1-a2.ts`), built once from CEFR descriptors, a frequency word list and typical A1–A2 grammar coverage. They feed the house-rules prompt layer.
 2. **Simulated learner** (`npm run test:learner`, from M2): Claude plays beginners with typical mistakes and transcription noise; a judge call scores each conversation against the level rules and the expected behaviours.
 
 Details in [Testing → Language validation](10-testing.md#4-language-validation-automated). If the reports show systematic problems: adjust the house rules or character sheets first, then try a higher effort setting, and only then consider another model.
