@@ -57,6 +57,23 @@ Inspired by the creator's real Italian teacher, Magda, whom they meet weekly on 
 
 **Levels:** her lessons follow CEFR steps, with specific content from the *Profilo della lingua italiana* (see the level rules in [Testing](10-testing.md)).
 
+## Regional dialect that grows with your level
+
+Characters speak standard Italian with a pinch of local colour, and the dialect increases as the learner levels up.
+
+- **A1–A2:** standard Italian, at most one local word or expression per conversation (*daje*, *aò* in Roma).
+- **Higher levels:** more dialect features (Roman *er* for *il*, *nun* for *non*, *de* for *di*), so regional speech becomes a listening challenge rather than a source of wrong forms.
+- **Magda explains:** a natural tutor moment ("*nun* è romano per *non*").
+- Test clip: a 16-second Enzo video calling out in full Romanesco ("Aò, belli, avvicinatevi! … Er prezzo è da amico, nun ve fate pregà!") — great flavour, too dense for a beginner.
+
+## Animated clips for the core cast
+
+Short talking or moving clips of main characters, matching their portraits (a test clip of Enzo at his stall worked well).
+
+- **Not for every reply:** characters improvise, so live video per line is too slow and costly.
+- **Pre-made moments instead:** a greeting, a laugh, an idle loop per core character, played at key moments; still mood portraits plus voice for everything else.
+- Later than M2; stills and voice come first.
+
 ## Groundhog Day loops
 
 Stay in the same day until you succeed, or choose to move on.
