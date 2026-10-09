@@ -76,7 +76,8 @@ The more time you spend in a place, the more people you should meet. Hand-writin
 - **Mix:** a hand-written core cast per city (the anchor and the key regulars) plus generated people for everyone else.
 - **How:** Claude writes a character sheet on demand from the city, a role ("a florist near the Duomo") and constraints (the level rules, no repeats of existing personalities). It's one call that returns the same structure as a hand-written sheet.
 - **Persistence:** save every generated character, so they can be met again and remember you, just like the core cast.
-- **Code cost:** low; it's a single generation call and storing the result. The harder parts are quality (avoiding clichéd, samey characters) and portraits, where a pool of pre-made portraits matched by age and role, or SVG avatars, is cheaper than generating an image per person.
+- **Code cost:** low; it's a single generation call and storing the result. The harder part is quality (avoiding clichéd, samey characters).
+- **Portraits:** generated and minor characters get a single SVG avatar, with no mood variants. It's drawn in code from the character sheet (age, hair, skin tone, clothing colours), so the same person always looks the same and it costs nothing. Full illustrated portraits with moods stay for the hand-written core cast.
 
 ## Other ideas from the conversation so far
 
