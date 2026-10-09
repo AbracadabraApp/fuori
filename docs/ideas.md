@@ -83,6 +83,24 @@ The more time you spend in a place, the more people you should meet. Hand-writin
 - **Code cost:** low; it's a single generation call and storing the result. The harder part is quality (avoiding clichéd, samey characters).
 - **Portraits:** generated and minor characters get a single SVG avatar, with no mood variants. It's drawn in code from the character sheet (age, hair, skin tone, clothing colours), so the same person always looks the same and it costs nothing. Full illustrated portraits with moods stay for the hand-written core cast.
 
+## Instagram as the interface model
+
+Use the phone layout everyone already knows, mapped onto Fuori:
+
+| Instagram | Fuori |
+|---|---|
+| Feed of cards | **Oggi**: one card per conversation (colazione, errands, the evening stranger), plus reading cards and the diario card to close the day |
+| Stories bar | **People you know**: Giulia, Rita, Enzo… with a ring when someone has news ("Enzo has the first artichokes") |
+| Profile grid | **Your journal**: places visited, dishes eaten, people met; real photos and portraits |
+| DMs | Past conversations with each person, to reread |
+
+Where it breaks from Instagram:
+- **Cards are invitations, not content.** Each day is short (4–6 cards); tapping opens a full-screen conversation.
+- **The conversation screen is closer to a video call than a chat**: large portrait, big mic button, transcript and corrections small underneath.
+- **No engagement mechanics**: no likes, no infinite feed, no streak guilt. The day ends with the diario card.
+
+Bottom tabs: Oggi · Mappa · Diario · Tu. Mockups: see the "Fuori mockups" design artifact.
+
 ## Other ideas from the conversation so far
 
 - **Pronunciation scoring**: deliberately out of scope for now.
