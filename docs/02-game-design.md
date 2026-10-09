@@ -112,12 +112,12 @@ Always available: **Ripeti / Piano** (replay slower), an **English toggle** (on 
 
 ## Interface
 
-Instagram-like and phone-first. Mockups: [Fuori mockups](https://claude.ai/artifact/1zVpF11bWHivP3RxVruKyx).
+Instagram-like and phone-first. Original mockups: [Fuori mockups](https://claude.ai/artifact/1zVpF11bWHivP3RxVruKyx) (note: mockups predate the scrolling card interface and show a 2x2 tile grid).
 
-- **Viaggio:** cities as large square photo tiles; the current city is highlighted with your days there and the people you know.
-- **Oggi:** today's suggestions as large square place tiles (photos), plus "cambia aria" and "vai dove vuoi". Tap one to go there.
+- **Viaggio:** cities as large square tiles; the current city is highlighted with your days there and the people you know.
+- **Oggi:** today's suggestions as **vertically scrolling full-width image cards** (watercolour illustrations), with captions overlaid on the bottom. Plus "cambia aria" and "vai dove vuoi" cards. Tap one to go there.
 - **Conversazione:** like a video call. Large portrait with the character's mood, transcript and quiet correction notes below, a big mic button, "Come si dice?" and "Piano · Ripeti".
-- **Diario** and **Tu** (your journal: places, food and people as a photo grid).
+- **Diario** and **Tu** (your journal: places, food and people as a grid).
 - Bottom tabs: Oggi · Viaggio · Diario · Tu. No likes, no infinite feed, no streaks.
 
 ## Out of scope for now

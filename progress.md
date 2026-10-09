@@ -13,11 +13,11 @@ Planning started 2026-10-08. Docs rewritten for the open-ended direction on 2026
 - **Open-ended world** (2026-10-09): Claude generates places, people and scenes. Every day: 3–4 suggestions from the director, plus "cambia aria" and "vai dove vuoi". Hand-written content is limited to city pantries, a few anchors per city (Roma: Rita, Giulia), Magda and level rules. Replaces the scripted 18-day season.
 - **Magda, the tutor:** the only character who teaches; messages, weekly lessons, summary for real Zoom lessons. First name only; check with the real Magda before sharing Fuori.
 - **Levels:** CEFR steps (A1 → A1+ → A2 …) with the *Profilo della lingua italiana*; evidence from conversations, no tests; dialect grows with level.
-- **Interface:** Instagram-like square tiles; conversation screen like a video call.
+- **Interface:** Instagram-like; **scrolling full-width image cards** for Oggi suggestions (not 2x2 tiles); conversation screen like a video call.
 - **Speech in:** Whisper on **Groq** (free tier) instead of OpenAI. No separate Whisper check; the real test is M1.
 - **Speech out:** browser voices until hosted TTS (ElevenLabs or Azure) in M3.
 - **Language validation is automated:** level rules from published standards; simulated-learner test with a judge from M2. No native-speaker gate.
-- **Visuals:** illustrated portraits only for anchors and Magda; SVG avatars for generated people; real photos with credits for landmarks and food.
+- **Visuals:** all illustrated (watercolour and ink, travel-sketchbook style). Illustrated portraits for anchors and Magda; SVG avatars for generated people; illustrated place cards for suggestions.
 - **Hosting:** Railway, deploys from `main`. Mobile-first, iPhone Safari.
 - **Help:** natural character help first; hints only when the character is confused or the learner asks.
 
@@ -26,7 +26,7 @@ Planning started 2026-10-08. Docs rewritten for the open-ended direction on 2026
 - [ ] Get a Groq API key
 - [ ] Decide ElevenLabs vs Azure for voices (M3)
 - [ ] Enzo's `warm` portrait needs one masked edit to match his other moods (not urgent)
-- [ ] Mockups predate the open-ended direction: Oggi tiles should become suggestions (no locks)
+- [ ] M1 placeholder approach: solid color cards or simple watercolour washes (no icons)
 
 ### Next actions (M1, see docs/06-roadmap.md)
 1. Default branch → `main`; Groq key; Railway setup
