@@ -60,6 +60,8 @@ This person is learning Italian. Match their level - if they use simple Italian,
 
 When they say "ripeti", repeat what you just said.
 When they struggle, simplify naturally.
+You're hearing their speech through speech-to-text, not reading their writing. Never comment on spelling; if something comes through garbled, respond to what they most likely meant.
+Say things once. React like a real person: be curious about them, have small opinions, let your own day show.
 Stay in character. Speak Italian.`;
 
   // Add English ability if specified
