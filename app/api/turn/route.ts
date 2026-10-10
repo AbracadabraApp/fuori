@@ -1,19 +1,8 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL } from '@/lib/claude';
-import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
-import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
+import { runTurn } from '@/lib/turn';
 import { CharacterSheet, Turn } from '@/lib/types';
-
-
-// M1 uses radically simple output - just Italian and English
-const TurnOutputSchema = z.object({
-  it: z.string().describe("The character's reply in Italian"),
-  en: z.string().describe('English translation of the reply'),
-});
-
-type TurnOutputType = z.infer<typeof TurnOutputSchema>;
 
 
 export async function POST(request: NextRequest) {
@@ -46,51 +35,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Build the prompt using the prompt builder
-    const prompt = buildTurnPrompt({
+    const turnOutput = await runTurn({
       character: character as CharacterSheet,
       transcript: (transcript || []) as Turn[],
       learnerSaid,
     });
-
-    // Call Claude with structured output
-    const response = await anthropic.messages.create({
-      model: CLAUDE_MODEL,
-      max_tokens: 2048,
-      temperature: 1.0,
-      system: prompt.system,
-      messages: [
-        {
-          role: 'user',
-          content: prompt.user,
-        },
-      ],
-      // Enable structured output with our JSON schema
-      output_config: {
-        format: {
-          type: 'json_schema',
-          schema: turnOutputJsonSchema,
-        },
-      },
-    });
-
-    // Extract the content
-    const content = response.content[0];
-    if (content.type !== 'text') {
-      throw new Error('Unexpected response type from Claude');
-    }
-
-    // Parse JSON response
-    let parsedOutput: unknown;
-    try {
-      parsedOutput = JSON.parse(content.text);
-    } catch (parseError) {
-      console.error('Failed to parse Claude response as JSON:', content.text);
-      throw new Error('Claude returned invalid JSON');
-    }
-
-    // Validate with Zod schema
-    const turnOutput = TurnOutputSchema.parse(parsedOutput);
 
     // Return the validated output
     return NextResponse.json(turnOutput);

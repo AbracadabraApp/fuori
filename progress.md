@@ -266,3 +266,12 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 
 ---
 
+
+## 2026-10-10: Simple conversation test (cloud session)
+
+- Archived the old simulated-learner suite and automated improvement loop to `tests/archive/` (it tested its own copy of the prompt, could edit its own rubric, and predated the simple conversation model). Removed `test:learner` and `improve:loop*` scripts.
+- New `npm run test:conversations`: samples Giulia, Rita and random city characters, simulates conversations with 3 learner types, grades 4 things (Italian, understands imperfect speech, matches the learner, feels real), writes a report with up to 3 recommendations. Never edits files. `--dry` shows the sample without API calls.
+- `lib/turn.ts` (`runTurn`) now holds the Claude call; `/api/turn` and the test share it.
+- `lib/characters/for-place.ts`: places now get their own city character (name, role, personality) instead of falling back to Giulia. The page uses it.
+
+**Next:** run `npm run test:conversations` on the laptop (needs `.env.local`) and read the first report.
