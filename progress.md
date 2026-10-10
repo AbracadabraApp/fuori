@@ -183,3 +183,38 @@ Roma pantry already has good balance - emphasizes daily life vocabulary (bars, m
 - iPhone audio unlock: the Start and mic taps play a silent sound first, and ElevenLabs audio reuses that unlocked element, so Safari lets Giulia speak after the network call.
 
 **Open:** Railway must deploy from `main` (Service → Settings → Source → Branch).
+
+## 2026-10-10: Conversation Model Simplified - Back to Basics
+
+**Major design decision:** The initial M1 implementation (commit 4541dca) over-engineered the conversation system. Stripping it back to the true M1 vision: radically minimal, pure voice immersion.
+
+**What was built (but wrong):**
+- 400-line prompt builder with 6 layers
+- Rigid level rules (A1: "3-5 words per sentence", max 2 new words)
+- Complex structured output (10+ fields: correction, words, steps_done, hint, confused, mood, scene_over, memory_notes)
+- Explicit goal tracking
+- Word counting and vocabulary limits
+
+**What M1 actually is:**
+- Simple ~20-line prompt: character basics + "match their level" + natural help
+- Output: just `{it, en}` 
+- No rigid structures, no counting, no explicit scaffolding
+- Everything through voice: "ripeti" to repeat, "più lento" for slower, "parla inglese?" for English
+- UI: Portrait + Mic button. That's it.
+
+**The hypothesis:** Can natural conversation alone drive language learning?
+
+**Documented in:** `docs/M1-CONVERSATION-MODEL.md`
+
+**Why the mismatch happened:**
+- `docs/04-conversation-engine.md` contradicts itself: natural philosophy but complex schema
+- Discussion about simple approach wasn't written down
+- Lost between sessions due to inadequate documentation
+- Defaulted to implementing what was specified vs questioning complexity
+
+**Lesson:** Write down design decisions immediately. When docs contradict philosophy, ask first.
+
+**Next:** Rebuild `/api/turn` with the simple model before testing on iPhone.
+
+---
+
