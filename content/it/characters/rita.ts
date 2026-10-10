@@ -27,6 +27,8 @@ export const rita: CharacterSheet = {
     description: 'Warm and patient, naturally simplifies for learners, uses gestures, repeats important things, gives practical advice about the neighborhood',
   },
 
+  englishAbility: 'basic',
+
   appearance: {
     description: 'Italian woman in her late 50s, salt-and-pepper hair in a practical bob, warm brown eyes, laugh lines, simple gold necklace, comfortable clothes (linen shirts, dark trousers), hands that gesture while talking',
     setting: 'In her Trastevere apartment, natural light from tall windows, family photos on the sideboard, well-used kitchen visible in the background, comfortable lived-in feeling',

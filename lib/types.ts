@@ -30,6 +30,8 @@ export interface CharacterSheet {
     description: string;
   };
 
+  englishAbility?: 'fluent' | 'basic' | 'none';
+
   appearance: {
     description: string;
     setting: string;
@@ -251,29 +253,8 @@ export interface DiarioEntry {
 }
 
 // API Response Schemas
+// M1 uses radically simple output - just Italian and English
 export interface TurnOutput {
-  understood: string;
   it: string;
   en: string;
-
-  correction: {
-    said: string;
-    better: string;
-    why: string;
-  } | null;
-
-  words: Array<{
-    it: string;
-    en: string;
-  }>;
-
-  steps_done: number[];
-
-  hint: string | null;
-  confused: boolean;
-  mood: 'warm' | 'amused' | 'busy' | 'curious';
-
-  scene_over: boolean;
-
-  memory_notes: string[];
 }

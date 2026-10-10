@@ -4,48 +4,13 @@ import { z } from 'zod';
 import { anthropic, CLAUDE_MODEL } from '@/lib/claude';
 import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
-import { CharacterSheet, Scene, Turn, Relationship, Level } from '@/lib/types';
+import { CharacterSheet, Turn } from '@/lib/types';
 
 
-// Zod schema for Claude's structured output
+// M1 uses radically simple output - just Italian and English
 const TurnOutputSchema = z.object({
-  understood: z.string().describe('The Italian the character understood the learner to mean'),
   it: z.string().describe("The character's reply in Italian"),
   en: z.string().describe('English translation of the reply'),
-  correction: z
-    .object({
-      said: z.string().describe('What the learner said incorrectly'),
-      better: z.string().describe('The correct way to say it'),
-      why: z.string().max(100).describe('Brief explanation (under 100 chars)'),
-    })
-    .nullable()
-    .describe('Correction if there was a real error worth noting'),
-  words: z
-    .array(
-      z.object({
-        it: z.string().describe('Italian word'),
-        en: z.string().describe('English translation'),
-      })
-    )
-    .max(2)
-    .describe('New vocabulary words introduced (max 2)'),
-  steps_done: z.array(z.number()).describe('Goal step indices completed in this turn'),
-  hint: z
-    .string()
-    .nullable()
-    .describe('Suggested phrase the learner could say next (only when confused or stuck)'),
-  confused: z
-    .boolean()
-    .describe('True only if you genuinely cannot understand what they meant'),
-  mood: z
-    .enum(['warm', 'amused', 'busy', 'curious'])
-    .describe('Your emotional tone in this reply'),
-  scene_over: z
-    .boolean()
-    .describe('True if this is a natural ending point for the conversation'),
-  memory_notes: z
-    .array(z.string())
-    .describe('Facts about the learner worth remembering for future conversations'),
 });
 
 type TurnOutputType = z.infer<typeof TurnOutputSchema>;
@@ -63,12 +28,12 @@ export async function POST(request: NextRequest) {
 
     // Parse and validate request body
     const body = await request.json();
-    const { learnerSaid, character, scene, transcript, level, relationship } = body;
+    const { learnerSaid, character, transcript } = body;
 
     // Basic validation
-    if (!character || !scene || !level) {
+    if (!character) {
       return NextResponse.json(
-        { error: 'Missing required fields: character, scene, level' },
+        { error: 'Missing required field: character' },
         { status: 400 }
       );
     }
@@ -84,10 +49,7 @@ export async function POST(request: NextRequest) {
     // Build the prompt using the prompt builder
     const prompt = buildTurnPrompt({
       character: character as CharacterSheet,
-      scene: scene as Scene,
       transcript: (transcript || []) as Turn[],
-      level: level as Level,
-      relationship: relationship as Relationship | undefined,
       learnerSaid,
     });
 
@@ -128,13 +90,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate with Zod schema
-    // The API schema can't express length limits, so enforce them here
-    const raw = parsedOutput as Record<string, unknown>;
-    if (Array.isArray(raw.words)) raw.words = raw.words.slice(0, 2);
-    const corr = raw.correction as { why?: unknown } | null | undefined;
-    if (corr && typeof corr.why === 'string') corr.why = corr.why.slice(0, 100);
-
-    const turnOutput = TurnOutputSchema.parse(raw);
+    const turnOutput = TurnOutputSchema.parse(parsedOutput);
 
     // Return the validated output
     return NextResponse.json(turnOutput);

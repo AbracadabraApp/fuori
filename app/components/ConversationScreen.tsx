@@ -47,10 +47,8 @@ export function ConversationScreen({
   const [transcript, setTranscript] = useState<Turn[]>([]);
   const [currentTranscription, setCurrentTranscription] = useState<string | null>(null);
   const [currentResponse, setCurrentResponse] = useState<string | null>(null);
-  const [currentCorrection, setCurrentCorrection] = useState<TurnOutput['correction'] | null>(null);
   const [lastAudioUrl, setLastAudioUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [stepsDone, setStepsDone] = useState<number[]>([]);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
@@ -222,7 +220,6 @@ export function ConversationScreen({
   const startRecording = async () => {
     setError(null);
     setCurrentTranscription(null);
-    setCurrentCorrection(null);
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -302,8 +299,6 @@ export function ConversationScreen({
         body: JSON.stringify({
           learnerSaid: transcription,
           character: testCharacter,
-          scene: testScene,
-          level,
           transcript,
         }),
       });
@@ -318,7 +313,6 @@ export function ConversationScreen({
       const learnerTurn: Turn = {
         who: 'learner',
         transcript: transcription,
-        understood: turnOutput.understood,
       };
       const npcTurn: Turn = {
         who: 'npc',
@@ -328,12 +322,6 @@ export function ConversationScreen({
 
       setTranscript((prev) => [...prev, learnerTurn, npcTurn]);
       setCurrentResponse(turnOutput.it);
-      setCurrentCorrection(turnOutput.correction);
-
-      // Track goal completion
-      if (turnOutput.steps_done.length > 0) {
-        setStepsDone((prev) => [...new Set([...prev, ...turnOutput.steps_done])]);
-      }
 
       // Step 3: Play character's response
       await playResponse(turnOutput.it, testCharacter.id);
@@ -467,26 +455,6 @@ export function ConversationScreen({
             }}
           >
             <strong>You said:</strong> {currentTranscription}
-          </div>
-        )}
-
-        {/* Correction display */}
-        {currentCorrection && (
-          <div
-            style={{
-              marginTop: '8px',
-              padding: '12px',
-              backgroundColor: '#fff3cd',
-              borderRadius: '8px',
-              fontSize: '14px',
-              color: '#856404',
-              maxWidth: '100%',
-            }}
-          >
-            <div><strong>Try:</strong> {currentCorrection.better}</div>
-            <div style={{ fontSize: '12px', marginTop: '4px', opacity: 0.8 }}>
-              {currentCorrection.why}
-            </div>
           </div>
         )}
 

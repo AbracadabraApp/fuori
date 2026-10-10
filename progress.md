@@ -218,3 +218,51 @@ Roma pantry already has good balance - emphasizes daily life vocabulary (bars, m
 
 ---
 
+## 2026-10-10 (continued): M1 Conversation System Rebuilt - Simple and Working
+
+**What was done:**
+The conversation system was completely rebuilt to match the true M1 vision documented in M1-CONVERSATION-MODEL.md.
+
+**Files changed:**
+
+1. **lib/prompts/turn-output-schema.ts** - Simplified from 110 lines to 18 lines
+   - Output now just `{it: string, en: string}`
+   - Removed: correction, words, steps_done, hint, confused, mood, scene_over, memory_notes
+
+2. **lib/prompts/build-turn-prompt.ts** - Simplified from 400 lines to 113 lines
+   - Removed 6-layer system (house rules, level rules, relationship, scene, goals)
+   - Now just: character info + "match their level" + natural help guidance
+   - Added support for character.englishAbility (fluent, basic, none)
+   - No word counting, no rigid structures, no explicit scaffolding
+
+3. **lib/types.ts**
+   - Added `englishAbility?: 'fluent' | 'basic' | 'none'` to CharacterSheet
+   - Simplified TurnOutput to just `{it: string, en: string}`
+
+4. **app/api/turn/route.ts** - Simplified API endpoint
+   - Removed scene, level, relationship parameters (no longer needed)
+   - Now just needs: character, transcript, learnerSaid
+   - Simplified Zod validation to match new output schema
+
+5. **app/components/ConversationScreen.tsx**
+   - Removed correction display
+   - Removed steps tracking
+   - Removed scene and level from API call
+   - No longer shows understood text or goal completion
+
+6. **content/it/characters/giulia.ts** and **rita.ts**
+   - Added `englishAbility: 'basic'` to both characters
+
+**Result:**
+- Type checking passes (`npx tsc --noEmit` ✓)
+- Conversation system now matches M1 philosophy: radically simple, natural adaptation
+- Ready for testing on iPhone
+
+**The transformation:**
+- **Before**: 400-line prompt builder, 10+ output fields, rigid level rules, word counting
+- **After**: ~50-line prompt builder, 2 output fields, natural conversation
+
+**Next:** Test full flow on iPhone (city feed → places → conversation with Giulia)
+
+---
+

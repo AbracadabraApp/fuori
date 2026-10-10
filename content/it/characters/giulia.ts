@@ -27,6 +27,8 @@ export const giulia: CharacterSheet = {
     description: 'Fast-talking, informal, uses Roman slang sparingly at A1-A2, asks lots of questions, remembers details about regulars',
   },
 
+  englishAbility: 'basic',
+
   appearance: {
     description: 'Italian woman in her early 30s, dark curly hair tied up messily, small silver hoop earrings, black barista apron over a striped shirt, quick lively eyes, expressive hands',
     setting: 'Behind the counter of a small Roman coffee bar in Trastevere, morning light through the doorway, espresso machine hissing, neighborhood regulars at the bar',
