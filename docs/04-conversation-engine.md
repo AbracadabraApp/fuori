@@ -152,13 +152,28 @@ The learner's words arrive through speech recognition, so:
 - If the recognizer produced English-sounding words, reconstruct the Italian phonetically ("bone journal" → buongiorno). Show it as "Understood as …".
 - Transcription artefacts are never counted as mistakes.
 
-## Correction style
+## Correction style: Never break character
 
-- Correct only errors that matter: wrong word, English word, wrong verb form, wrong article or gender, an unnatural phrase.
-- In character, correct by **recasting**: use the right form naturally in the reply. Never lecture.
-- At most one correction per turn; let small slips go.
-- Report the correction separately in `correction` so the UI can show a quiet note and the diario can collect it.
-- Track repeat errors per learner; a mistake that keeps coming back becomes a "try tomorrow" goal.
+**Characters never teach.** They're real people living their lives, not language instructors.
+
+**How characters handle errors:**
+1. **Recast naturally** - "Ah, *vorrei* un caffè! Certo!" (not "You should say vorrei")
+2. **Simplify when struggling** - Shorter sentences, slower speech, more familiar words
+3. **Ask for clarification** - "Scusa, non ho capito. Cosa vuoi?" (when genuinely confused)
+4. **Stay in the scene** - Never break the fourth wall, never lecture
+
+**Report corrections quietly:**
+- The `correction` field in the JSON is for the diario, not for interrupting the conversation
+- UI shows corrections as quiet notes after the turn, not blocking dialogue
+- Track repeat errors → become "try tomorrow" goals
+
+**Magda handles explicit teaching:**
+- She's the only character who can teach or explain
+- Messages you when mistakes pile up: "Ho notato che dici 'voglio' invece di 'vorrei'..."
+- Weekly lessons that synthesize patterns
+- Bridge to real lessons with your actual teacher
+
+**The rule: Immersion during conversation, reflection afterward.**
 
 ## Open conversations
 

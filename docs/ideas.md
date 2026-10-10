@@ -83,6 +83,35 @@ Food as a topic, not only a transaction: talk with someone about why a dish is t
 - Real photos of the dishes (same sources and credit rules as cultural places) make the conversation concrete: "Questa è la vera carbonara. Niente panna!"
 - Fits the persona: someone who loves Italy wants to understand the food, not just order it.
 
+## Streaming voice mode (like Claude app)
+
+**Current M1 approach:** Request/response cycle with explicit corrections and word tracking
+- Record → transcribe → Claude generates response with structured output → speak it
+- Each turn is discrete and processed
+- Returns corrections, new words, memory notes as structured data
+- Higher latency but full control over learning mechanics
+
+**Alternative: Streaming conversation flow**
+- Real-time STT as you speak
+- Claude streams response as it generates
+- TTS starts before response is complete
+- Much lower latency, feels like natural conversation
+- More like the Claude app's voice mode
+
+**The open question (added 2026-10-09):**
+Does explicit language learning scaffolding (corrections displayed, words tracked, goals checked) actually help? Or does **natural flowing dialogue** where you just talk and Claude stays in character work better?
+
+**Tradeoffs:**
+- Flowing dialogue: More immersive, less "gamey", builds confidence through success not feedback
+- Structured feedback: Makes progress visible, catches fossilized errors, systematic vocabulary building
+
+**Test in M1/M2:** Ship both and see which one you prefer. The structured approach is easier to build first, but streaming might be the better experience.
+
+**If streaming wins:**
+- M3+: Add streaming STT (Groq supports it), streaming Claude responses, streaming TTS
+- Keep corrections/words subtle or optional (don't interrupt flow)
+- Let immersion do the teaching
+
 ## Other ideas from the conversation so far
 
 - **Pronunciation scoring**: deliberately out of scope for now.

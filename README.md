@@ -4,9 +4,17 @@
 
 ## Status
 
-- `prototype/index.html` is a single-page demo of one "day" with four scenes (Roma bar, Napoli market, Firenze station, Bologna piazza). It runs as a claude.ai artifact and uses Claude through the artifact runtime.
-- The real web app has not been started. The plan is in `docs/`; the next step is M1 in the [Roadmap](docs/06-roadmap.md).
-- Interface mockups: [Fuori mockups](https://claude.ai/artifact/1zVpF11bWHivP3RxVruKyx). They predate the open-ended direction: Oggi tiles become daily suggestions, with no locks.
+**M1 in progress** — City feed and navigation complete, conversation engine built, ready for deployment testing.
+
+- `prototype/index.html` is a single-page demo of one "day" with four scenes (Roma bar, Napoli market, Firenze station, Bologna piazza). It runs as a claude.ai artifact and uses Claude through the artifact runtime. Still works; kept as reference.
+- **The web app is running locally at http://localhost:3000** with:
+  - 20 Italian cities with distinctive watercolor card images
+  - Full navigation: Cities → Places → Conversation
+  - Conversation engine with Whisper (Groq) and Claude
+  - Settings UI (toggles not yet functional)
+  - Next step: deploy to Railway and test on iPhone
+- Interface mockups: [Fuori mockups](https://claude.ai/artifact/1zVpF11bWHivP3RxVruKyx). They predate the open-ended direction; adapted for current implementation.
+- See [progress.md](progress.md) for detailed status and [Roadmap](docs/06-roadmap.md) for what's next.
 
 ## Planning documents
 

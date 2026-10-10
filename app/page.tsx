@@ -1,287 +1,516 @@
 'use client';
 
-import { useState, useRef } from 'react';
-import { giulia } from '@/content/it/characters/giulia';
-
-interface Turn {
-  who: 'learner' | 'npc';
-  transcript: string;
-}
+import { useState } from 'react';
+import { PlaceCard } from './components/PlaceCard';
+import { ConversationScreen } from './components/ConversationScreen';
 
 export default function Home() {
-  const [conversation, setConversation] = useState<Turn[]>([]);
-  const [isRecording, setIsRecording] = useState(false);
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [status, setStatus] = useState<string>('');
-  const [recordMode, setRecordMode] = useState<'hold' | 'tap'>('tap'); // default to tap
-  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
-  const audioChunksRef = useRef<Blob[]>([]);
+  const [selectedCity, setSelectedCity] = useState<string | null>(null);
+  const [selectedPlace, setSelectedPlace] = useState<string | null>(null);
+  const [showSettings, setShowSettings] = useState(false);
 
-  const startConversation = async () => {
-    setStatus('Starting conversation...');
-    setIsProcessing(true);
+  const cities = [
+    // Big cities
+    { id: 'roma', name: 'Roma', region: 'Lazio', image: '/images/cities/roma.jpg' },
+    { id: 'firenze', name: 'Firenze', region: 'Toscana', image: '/images/cities/firenze.jpg' },
+    { id: 'venezia', name: 'Venezia', region: 'Veneto', image: '/images/cities/venezia.jpg' },
+    { id: 'milano', name: 'Milano', region: 'Lombardia', image: '/images/cities/milano.jpg' },
+    { id: 'napoli', name: 'Napoli', region: 'Campania', image: '/images/cities/napoli.jpg' },
+    { id: 'bologna', name: 'Bologna', region: 'Emilia-Romagna', image: '/images/cities/bologna.jpg' },
+    { id: 'torino', name: 'Torino', region: 'Piemonte', image: '/images/cities/torino.jpg' },
+    { id: 'palermo', name: 'Palermo', region: 'Sicilia', image: '/images/cities/palermo.jpg' },
+    { id: 'genova', name: 'Genova', region: 'Liguria', image: '/images/cities/genova.jpg' },
 
-    try {
-      // Get opening line from character
-      const response = await fetch('/api/turn', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          learnerSaid: '',
-          character: giulia,
-          conversationHistory: [],
-          learnerLevel: 'A1',
-          showEnglish: true,
-        }),
-      });
+    // Smaller cities and towns
+    { id: 'siena', name: 'Siena', region: 'Toscana', image: '/images/cities/siena.jpg' },
+    { id: 'lucca', name: 'Lucca', region: 'Toscana', image: '/images/cities/lucca.jpg' },
+    { id: 'verona', name: 'Verona', region: 'Veneto', image: '/images/cities/verona.jpg' },
+    { id: 'bergamo', name: 'Bergamo', region: 'Lombardia', image: '/images/cities/bergamo.jpg' },
+    { id: 'mantova', name: 'Mantova', region: 'Lombardia', image: '/images/cities/mantova.jpg' },
+    { id: 'matera', name: 'Matera', region: 'Basilicata', image: '/images/cities/matera.jpg' },
+    { id: 'lecce', name: 'Lecce', region: 'Puglia', image: '/images/cities/lecce.jpg' },
+    { id: 'orvieto', name: 'Orvieto', region: 'Umbria', image: '/images/cities/orvieto.jpg' },
+    { id: 'assisi', name: 'Assisi', region: 'Umbria', image: '/images/cities/assisi.jpg' },
+    { id: 'siracusa', name: 'Siracusa', region: 'Sicilia', image: '/images/cities/siracusa.jpg' },
+    { id: 'taormina', name: 'Taormina', region: 'Sicilia', image: '/images/cities/taormina.jpg' },
+  ];
 
-      const data = await response.json();
+  // Places in selected city (mock for now)
+  const places = {
+    roma: [
+      {
+        id: 'bar-giulia',
+        placeName: 'Il bar di Giulia',
+        characterName: 'Giulia',
+        neighborhood: 'Trastevere',
+      },
+      {
+        id: 'mercato',
+        placeName: 'Mercato di San Cosimato',
+        characterName: 'Enzo',
+        neighborhood: 'Trastevere',
+      },
+      {
+        id: 'colosseo',
+        placeName: 'Colosseo',
+        characterName: '',
+        neighborhood: 'Centro Storico',
+      },
+    ],
+  } as Record<string, typeof places.roma>;
 
-      setConversation([
-        {
-          who: 'npc',
-          transcript: data.it,
-        },
-      ]);
+  // Show conversation if place selected
+  if (selectedPlace && selectedCity) {
+    const cityPlaces = places[selectedCity] || [];
+    const place = cityPlaces.find((p) => p.id === selectedPlace);
+    return (
+      <ConversationScreen
+        characterName={place?.characterName || ''}
+        onBack={() => setSelectedPlace(null)}
+      />
+    );
+  }
 
-      // Speak it (browser TTS)
-      const utterance = new SpeechSynthesisUtterance(data.it);
-      utterance.lang = 'it-IT';
-      window.speechSynthesis.speak(utterance);
-
-      setStatus('Listening...');
-    } catch (error) {
-      console.error('Error starting conversation:', error);
-      setStatus('Error starting conversation');
-    } finally {
-      setIsProcessing(false);
-    }
-  };
-
-  const startRecording = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const mimeType = MediaRecorder.isTypeSupported('audio/webm')
-        ? 'audio/webm'
-        : 'audio/mp4';
-
-      const mediaRecorder = new MediaRecorder(stream, { mimeType });
-      mediaRecorderRef.current = mediaRecorder;
-      audioChunksRef.current = [];
-
-      mediaRecorder.ondataavailable = (event) => {
-        if (event.data.size > 0) {
-          audioChunksRef.current.push(event.data);
-        }
-      };
-
-      mediaRecorder.onstop = async () => {
-        const audioBlob = new Blob(audioChunksRef.current, { type: mimeType });
-        await processAudio(audioBlob, mimeType);
-
-        // Stop all tracks
-        stream.getTracks().forEach(track => track.stop());
-      };
-
-      mediaRecorder.start();
-      setIsRecording(true);
-      setStatus('Recording...');
-    } catch (error) {
-      console.error('Error accessing microphone:', error);
-      setStatus('Microphone access denied');
-    }
-  };
-
-  const stopRecording = () => {
-    if (mediaRecorderRef.current && isRecording) {
-      mediaRecorderRef.current.stop();
-      setIsRecording(false);
-      setStatus('Processing...');
-    }
-  };
-
-  const toggleRecording = () => {
-    if (isRecording) {
-      stopRecording();
-    } else {
-      startRecording();
-    }
-  };
-
-  const processAudio = async (audioBlob: Blob, mimeType: string) => {
-    setIsProcessing(true);
-
-    try {
-      // Transcribe
-      const formData = new FormData();
-      const extension = mimeType.includes('mp4') ? 'mp4' : 'webm';
-      formData.append('audio', audioBlob, `turn.${extension}`);
-      formData.append('language', 'it');
-
-      const transcribeResponse = await fetch('/api/transcribe', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const { text } = await transcribeResponse.json();
-
-      // Add learner's turn to conversation
-      const newConversation = [
-        ...conversation,
-        { who: 'learner' as const, transcript: text },
-      ];
-      setConversation(newConversation);
-      setStatus('Getting response...');
-
-      // Get character response
-      const turnResponse = await fetch('/api/turn', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          learnerSaid: text,
-          character: giulia,
-          conversationHistory: newConversation,
-          learnerLevel: 'A1',
-          showEnglish: true,
-        }),
-      });
-
-      const data = await turnResponse.json();
-
-      // Add character's response
-      const finalConversation = [
-        ...newConversation,
-        { who: 'npc' as const, transcript: data.it },
-      ];
-      setConversation(finalConversation);
-
-      // Speak response
-      const utterance = new SpeechSynthesisUtterance(data.it);
-      utterance.lang = 'it-IT';
-      window.speechSynthesis.speak(utterance);
-
-      setStatus('Listening...');
-    } catch (error) {
-      console.error('Error processing audio:', error);
-      setStatus('Error - try again');
-    } finally {
-      setIsProcessing(false);
-    }
-  };
-
-  return (
-    <div style={{
-      padding: '20px',
-      maxWidth: '600px',
-      margin: '0 auto',
-      fontFamily: 'system-ui, sans-serif',
-    }}>
-      <h1>Fuori - M1 Test</h1>
-
-      {conversation.length === 0 ? (
-        <button
-          onClick={startConversation}
-          disabled={isProcessing}
+  // Show places if city selected
+  if (selectedCity) {
+    const cityPlaces = places[selectedCity] || [];
+    return (
+      <div
+        style={{
+          minHeight: '100vh',
+          backgroundColor: '#f5f1ed',
+          padding: '20px',
+          maxWidth: '600px',
+          margin: '0 auto',
+        }}
+      >
+        <div
           style={{
-            padding: '12px 24px',
-            fontSize: '16px',
-            backgroundColor: '#007bff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: isProcessing ? 'not-allowed' : 'pointer',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '24px',
           }}
         >
-          Start conversation with Giulia
-        </button>
-      ) : (
-        <>
-          <div style={{
-            marginBottom: '20px',
+          <h1
+            style={{
+              fontSize: '28px',
+              fontWeight: '500',
+              color: '#2c5f4f',
+              margin: 0,
+            }}
+          >
+            {cities.find((c) => c.id === selectedCity)?.name}
+          </h1>
+          <button
+            onClick={() => setShowSettings(true)}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              background: 'none',
+              border: '1.5px solid #2c5f4f',
+              borderRadius: '20px',
+              cursor: 'pointer',
+              color: '#2c5f4f',
+              padding: '8px 14px',
+            }}
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="3" />
+              <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
+            </svg>
+            <span style={{ fontSize: '15px', fontWeight: '600' }}>Settings</span>
+          </button>
+        </div>
+
+        {/* Scrolling place cards */}
+        <div>
+          {cityPlaces.map((place) => (
+            <PlaceCard
+              key={place.id}
+              placeName={place.placeName}
+              characterName={place.characterName}
+              neighborhood={place.neighborhood}
+              onTap={() => setSelectedPlace(place.id)}
+            />
+          ))}
+        </div>
+
+        {/* Change city card */}
+        <button
+          onClick={() => setSelectedCity(null)}
+          style={{
+            width: '100%',
             padding: '16px',
-            backgroundColor: '#f5f5f5',
-            borderRadius: '8px',
-            maxHeight: '400px',
-            overflowY: 'auto',
-          }}>
-            {conversation.map((turn, i) => (
+            fontSize: '16px',
+            backgroundColor: 'white',
+            color: '#2c5f4f',
+            border: '2px solid #2c5f4f',
+            borderRadius: '12px',
+            cursor: 'pointer',
+            marginTop: '8px',
+          }}
+        >
+          🚂 Cambia città
+        </button>
+
+        {/* Settings sheet overlay */}
+        {showSettings && (
+          <div
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'center',
+              zIndex: 1000,
+            }}
+            onClick={() => setShowSettings(false)}
+          >
+            <div
+              style={{
+                backgroundColor: 'white',
+                borderRadius: '0 0 16px 16px',
+                padding: '24px',
+                maxWidth: '600px',
+                width: '100%',
+                position: 'relative',
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
               <div
-                key={i}
                 style={{
-                  marginBottom: '12px',
-                  padding: '8px 12px',
-                  backgroundColor: turn.who === 'learner' ? '#e3f2fd' : '#fff',
-                  borderRadius: '6px',
-                  borderLeft: turn.who === 'npc' ? '3px solid #007bff' : 'none',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: '24px',
                 }}
               >
-                <strong>{turn.who === 'learner' ? 'You' : 'Giulia'}:</strong>{' '}
-                {turn.transcript}
+                <h2
+                  style={{
+                    fontSize: '24px',
+                    fontWeight: '600',
+                    color: '#2c5f4f',
+                    margin: 0,
+                  }}
+                >
+                  Settings
+                </h2>
+                <button
+                  onClick={() => setShowSettings(false)}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: '4px',
+                    color: '#666',
+                  }}
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
               </div>
-            ))}
-          </div>
 
-          <div style={{ textAlign: 'center' }}>
-            {/* Mode toggle */}
-            <div style={{ marginBottom: '12px', fontSize: '14px' }}>
-              <label>
+              <label
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '20px',
+                  fontSize: '18px',
+                  cursor: 'pointer',
+                }}
+              >
                 <input
-                  type="radio"
-                  value="tap"
-                  checked={recordMode === 'tap'}
-                  onChange={() => setRecordMode('tap')}
-                  style={{ marginRight: '4px' }}
+                  type="checkbox"
+                  style={{
+                    width: '24px',
+                    height: '24px',
+                    marginRight: '16px',
+                    cursor: 'pointer',
+                    accentColor: '#2c5f4f',
+                  }}
                 />
-                Tap to start/stop
+                Show transcripts
               </label>
-              <label style={{ marginLeft: '16px' }}>
+
+              <label
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '32px',
+                  fontSize: '18px',
+                  cursor: 'pointer',
+                }}
+              >
                 <input
-                  type="radio"
-                  value="hold"
-                  checked={recordMode === 'hold'}
-                  onChange={() => setRecordMode('hold')}
-                  style={{ marginRight: '4px' }}
+                  type="checkbox"
+                  style={{
+                    width: '24px',
+                    height: '24px',
+                    marginRight: '16px',
+                    cursor: 'pointer',
+                    accentColor: '#2c5f4f',
+                  }}
                 />
-                Hold to record
+                Allow dialect
               </label>
+
+              <button
+                onClick={() => setShowSettings(false)}
+                style={{
+                  width: '100%',
+                  padding: '16px',
+                  fontSize: '16px',
+                  backgroundColor: '#2c5f4f',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  fontWeight: '500',
+                }}
+              >
+                Save
+              </button>
             </div>
+          </div>
+        )}
+      </div>
+    );
+  }
 
-            <button
-              {...(recordMode === 'hold'
-                ? {
-                    onMouseDown: startRecording,
-                    onMouseUp: stopRecording,
-                    onTouchStart: startRecording,
-                    onTouchEnd: stopRecording,
-                  }
-                : {
-                    onClick: toggleRecording,
-                  })}
-              disabled={isProcessing}
+  // Show cities (entry screen)
+  return (
+    <div
+      style={{
+        minHeight: '100vh',
+        backgroundColor: '#f5f1ed',
+        padding: '20px',
+        maxWidth: '600px',
+        margin: '0 auto',
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: '24px',
+        }}
+      >
+        <h1
+          style={{
+            fontSize: '28px',
+            fontWeight: '500',
+            color: '#2c5f4f',
+            margin: 0,
+          }}
+        >
+          Fuori
+        </h1>
+        <button
+          onClick={() => setShowSettings(true)}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            background: 'none',
+            border: '1.5px solid #2c5f4f',
+            borderRadius: '20px',
+            cursor: 'pointer',
+            color: '#2c5f4f',
+            padding: '8px 14px',
+          }}
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
+          </svg>
+          <span style={{ fontSize: '15px', fontWeight: '600' }}>Settings</span>
+        </button>
+      </div>
+
+      {/* City cards */}
+      <div>
+        {cities.map((city) => (
+          <PlaceCard
+            key={city.id}
+            placeName={city.name}
+            characterName=""
+            neighborhood={city.region}
+            imageUrl={city.image}
+            onTap={() => setSelectedCity(city.id)}
+          />
+        ))}
+      </div>
+
+      {/* Settings sheet overlay */}
+      {showSettings && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            zIndex: 1000,
+          }}
+          onClick={() => setShowSettings(false)}
+        >
+          <div
+            style={{
+              backgroundColor: 'white',
+              borderRadius: '0 0 16px 16px',
+              padding: '24px',
+              maxWidth: '600px',
+              width: '100%',
+              position: 'relative',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
               style={{
-                width: '80px',
-                height: '80px',
-                borderRadius: '50%',
-                backgroundColor: isRecording ? '#dc3545' : '#007bff',
-                border: 'none',
-                color: 'white',
-                fontSize: '32px',
-                cursor: isProcessing ? 'not-allowed' : 'pointer',
-                opacity: isProcessing ? 0.6 : 1,
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: '24px',
               }}
             >
-              🎤
+              <h2
+                style={{
+                  fontSize: '24px',
+                  fontWeight: '600',
+                  color: '#2c5f4f',
+                  margin: 0,
+                }}
+              >
+                Settings
+              </h2>
+              <button
+                onClick={() => setShowSettings(false)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '4px',
+                  color: '#666',
+                }}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
+
+            <label
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '20px',
+                fontSize: '18px',
+                cursor: 'pointer',
+              }}
+            >
+              <input
+                type="checkbox"
+                style={{
+                  width: '24px',
+                  height: '24px',
+                  marginRight: '16px',
+                  cursor: 'pointer',
+                  accentColor: '#2c5f4f',
+                }}
+              />
+              Show transcripts
+            </label>
+
+            <label
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '32px',
+                fontSize: '18px',
+                cursor: 'pointer',
+              }}
+            >
+              <input
+                type="checkbox"
+                style={{
+                  width: '24px',
+                  height: '24px',
+                  marginRight: '16px',
+                  cursor: 'pointer',
+                  accentColor: '#2c5f4f',
+                }}
+              />
+              Allow dialect
+            </label>
+
+            <button
+              onClick={() => setShowSettings(false)}
+              style={{
+                width: '100%',
+                padding: '16px',
+                fontSize: '16px',
+                backgroundColor: '#2c5f4f',
+                color: 'white',
+                border: 'none',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                fontWeight: '500',
+              }}
+            >
+              Save
             </button>
-            <p style={{ marginTop: '12px', color: '#666' }}>{status}</p>
-            <p style={{ fontSize: '14px', color: '#999' }}>
-              {recordMode === 'hold'
-                ? 'Hold to record, release to send'
-                : isRecording
-                ? 'Tap again to stop'
-                : 'Tap to start recording'}
-            </p>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
