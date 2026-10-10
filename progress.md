@@ -40,8 +40,8 @@ Planning started 2026-10-08. Docs rewritten for the open-ended direction on 2026
 - **Help:** natural character help first; hints only when the character is confused or the learner asks.
 
 ### Open issues
-- [ ] Make `main` the GitHub default branch (Settings → General); it is currently `claude/voice-prototype`
-- [ ] Deploy to Railway with environment variables (ANTHROPIC_API_KEY, GROQ_API_KEY)
+- [x] Make `main` the GitHub default branch - now using main
+- [ ] Deploy to Railway with environment variables (ANTHROPIC_API_KEY, GROQ_API_KEY, XAI_API_KEY)
 - [ ] Test on iPhone Safari to validate microphone access over HTTPS
 - [ ] Decide ElevenLabs vs Azure for voices (M3)
 - [ ] Enzo's `warm` portrait needs one masked edit to match his other moods (not urgent)
