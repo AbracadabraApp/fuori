@@ -1,5 +1,7 @@
 # Testing Strategy
 
+> **M1 note:** The conversation test in use today is `npm run test:conversations` (see `tests/README.md` and [M1-CONVERSATION-MODEL.md](M1-CONVERSATION-MODEL.md#testing)). The simulated-learner suite and judge rubric described below were archived to `tests/archive/` on 2026-10-10.
+
 Testing a voice-first language game means validating not just code, but conversation quality, language accuracy, and the learner experience. This document covers automated tests, manual test protocols, and quality checks.
 
 **For a one-person prototype, what matters now is section 4 (level rules and the simulated learner) and testing on your phone (section 9).** The rest is reference for later milestones.

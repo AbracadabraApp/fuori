@@ -2,6 +2,10 @@
 
 **The hypothesis:** Can natural conversation alone drive language learning?
 
+This is the source of truth for how M1 conversations work. Where it disagrees with `04-conversation-engine.md` (the fuller, older design), this document wins for M1.
+
+**In the code:** prompt in `lib/prompts/build-turn-prompt.ts`, the Claude call in `lib/turn.ts` (used by `/api/turn` and the tests), which character is at which place in `lib/characters/for-place.ts`.
+
 ## M1 Scope: Radically Minimal
 
 **What's in M1:**
@@ -100,24 +104,26 @@ Track only what matters for natural conversation:
 
 ## The Conversation API
 
+`POST /api/turn`
+
 **Input:**
 ```typescript
 {
-  character: CharacterSheet,  // Basic info: name, age, role, personality
-  transcript: string[],       // Previous turns (simple strings)
-  learnerSaid: string        // What they just said
+  character: CharacterSheet,  // from lib/characters/for-place.ts
+  transcript: Turn[],         // previous turns: { who: 'npc' | 'learner', transcript }
+  learnerSaid?: string        // what they just said; omit on the first turn (the character opens)
 }
 ```
 
 **Output:**
 ```typescript
 {
-  it: string,  // Italian reply
-  en: string   // English translation
+  it: string,  // Italian reply (spoken aloud)
+  en: string   // English translation (not shown in M1)
 }
 ```
 
-**That's it. No 10-field structured output. No validation. Just conversation.**
+Two fields only. Claude's structured output guarantees the shape, and Zod checks it. Nothing else (corrections, hints, goals, mood) is extracted. All of that happens inside the conversation.
 
 ## Why This Works
 
@@ -144,29 +150,31 @@ But test the simple version first.
 
 ## Implementation Notes
 
-**Character sheets stay simple:**
-```typescript
-{
-  name: string,
-  age: number,
-  role: string,
-  personality: string[],  // ["quick", "warm", "curious"]
-  useTu: boolean,
-  speaksEnglish: boolean,
-  description: string
-}
-```
+**Who you talk to.** Each place has one character.
+- **Anchors** (Giulia, Rita in Roma) have hand-written sheets in `content/it/characters/`.
+- **City characters** (about 600, one per place, in `content/it/cities/*.ts`) have a name, age, role, personality and portrait. `for-place.ts` turns them into a sheet: formal *Lei* (you're a stranger), setting = place and neighbourhood, English ability unspecified.
 
-**No complex schemas. No rigid structures. Just enough info for Claude to be the character.**
+**The prompt uses only:** name, age, role, city, setting, personality traits, tu/Lei and English ability. Other sheet fields (speech description, cares about, secret, regionalisms) exist for later and are not sent in M1.
 
-**Conversation prompt built from:**
-1. Character basics (5 lines)
-2. Learner level hint (1 line: "learning Italian, match their level")
-3. Help guidance (3 lines: repeat, simplify, stay in character)
-4. Output format (1 line: JSON with it/en)
-5. Previous conversation (if any)
+**English ability** (`englishAbility` on the sheet):
+- `fluent`: can briefly explain in English when asked, then back to Italian
+- `basic`: a few simple English words if the learner is really stuck
+- `none`: no English; simpler Italian, slower, with gestures
+- unspecified: no instruction; the character just speaks Italian
 
-**Total system prompt: ~20-30 lines, not 400.**
+**Memory is not built yet.** The "Character Memory" section above is the plan. Today each conversation starts fresh.
+
+**Prompt built from:**
+1. Character basics and where they are
+2. "Learning Italian, match their level"
+3. Natural help: ripeti, simplify when they struggle, hearing speech not writing, say things once, react like a person
+4. English ability (if set)
+5. Output format: JSON with it/en
+6. The conversation so far, then what they just said
+
+## Testing
+
+`npm run test:conversations` runs simulated conversations with Giulia, Rita and a random sample of city characters, using the real prompt. A simulated learner makes realistic mistakes and says when they don't understand. A grader scores each character on four things: speaks Italian, understands imperfect speech, adapts when the learner is lost, feels like a real person. The report suggests up to 3 changes and never edits files. Complex, natural Italian is not penalized; what counts is how the character responds to confusion. See `tests/README.md`.
 
 ## The Radical Bet
 

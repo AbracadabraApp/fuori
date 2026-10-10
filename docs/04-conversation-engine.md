@@ -1,5 +1,7 @@
 # Conversation engine
 
+> **M1 note:** M1 uses the much simpler model in [M1-CONVERSATION-MODEL.md](M1-CONVERSATION-MODEL.md): a short prompt and a two-field reply (`it`, `en`). This document is the fuller design for M2 and later; where they disagree, the M1 doc wins for now.
+
 Every place, person and line in Fuori comes from Claude. This document describes the calls that make the world (suggestions, scenes, characters), the call that runs each conversation turn, and the rules that make characters forgiving, helpful and consistent.
 
 ## Making the world
