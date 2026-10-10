@@ -108,6 +108,28 @@ The level rules set the limits; at A1–A2 the character should:
 
 The learner is having a conversation, not doing a lesson. Help through natural dialogue, not by breaking character or scaffolding every turn.
 
+**Learners control difficulty through natural language (M1):**
+Learners don't need UI buttons - they naturally express when they need help, and characters respond appropriately:
+
+**When learners need repetition:**
+- "Ripeti per favore", "Ancora una volta", "Come?", "Cosa?", "non capito"
+- Even imperfect requests: "uh... again?", "sorry what"
+- Character repeats naturally: "Certo. Vuoi. Un. Caffè?"
+- Claude recognizes intent across all variations
+
+**When learners need simplification:**
+- "Più lentamente", "Piano piano", repeated confusion
+- Character simplifies: "Piano piano... cosa vuoi?"
+- Uses shorter sentences, common words, stays patient
+- Backend can adjust TTS speed
+
+**When learners request English:**
+- "Scusi, parla inglese?", "English?", code-switching to English
+- Character responds based on personality and setting (character sheet includes English ability)
+- If yes: brief help, then guide back to Italian - "Yes! You want coffee? Ok, in italiano: vuoi un caffè?"
+- If no: apologize warmly, simplify Italian further - "Mi dispiace, solo italiano. Ma piano piano..."
+- Most characters return conversation to Italian after one exchange
+
 **Stay in character to help:**
 - Offer options: "Vuoi un caffè? O un cappuccino?"
 - Rephrase more simply: "Piano piano, cosa vuoi ordinare?"
@@ -162,16 +184,20 @@ The learner's words arrive through speech recognition, so:
 3. **Ask for clarification** - "Scusa, non ho capito. Cosa vuoi?" (when genuinely confused)
 4. **Stay in the scene** - Never break the fourth wall, never lecture
 
-**Report corrections quietly:**
-- The `correction` field in the JSON is for the diario, not for interrupting the conversation
-- UI shows corrections as quiet notes after the turn, not blocking dialogue
-- Track repeat errors → become "try tomorrow" goals
+**M1: Pure immersion**
+- Corrections tracked in backend but not displayed
+- No UI interrupts conversation flow
+- Characters recast naturally during conversation
+- All reflection/teaching moves to M2
 
-**Magda handles explicit teaching:**
-- She's the only character who can teach or explain
-- Messages you when mistakes pile up: "Ho notato che dici 'voglio' invece di 'vorrei'..."
-- Weekly lessons that synthesize patterns
-- Bridge to real lessons with your actual teacher
+**M2: Adds reflection layer**
+- **Diario:** UI shows corrections as quiet notes after conversations
+- **Magda:** Explicit teaching mode
+  - She's the only character who can teach or explain
+  - Messages you when mistakes pile up: "Ho notato che dici 'voglio' invece di 'vorrei'..."
+  - Weekly lessons that synthesize patterns
+  - Bridge to real lessons with your actual teacher
+- **"Try tomorrow" goals:** Track repeat errors → integrated into future scenes
 
 **The rule: Immersion during conversation, reflection afterward.**
 
@@ -184,7 +210,9 @@ The evening suggestion is usually someone new with no goal checklist. To keep it
 - **Help** is always available through the "Come si dice…?" button. The character may also simplify or switch topic if the learner is stuck twice in a row.
 - At the end, the character produces a one-line note for the diario.
 
-## Magda (tutor mode)
+## Magda (tutor mode) - M2
+
+**Not included in M1.** Magda is part of the M2 reflection layer.
 
 Magda runs with different rules from every other character:
 - She **may teach**: explain grammar briefly, in English when it helps, and run short spoken exercises ("Dimmi tre cose che hai fatto ieri").
@@ -214,3 +242,117 @@ Keep a small set of recorded learner turns (with transcription noise) and expect
 - Generated characters don't repeat names or personalities already in the learner's world.
 
 These become the simulated-learner test ([Testing → 4b](10-testing.md#4b-simulated-learner)).
+
+## Pedagogical foundations
+
+Fuori's teaching model draws on established second language acquisition research, particularly communicative language teaching (CLT) and inductive learning approaches used in successful textbooks like Progetto Italiano. This section documents the theoretical grounding that informs Claude's behavior as a conversational partner.
+
+### Communicative Language Teaching (CLT)
+
+**Core principle:** Language is learned through meaningful communication, not explicit grammar instruction.
+
+**How Fuori implements this:**
+- Characters never "teach" - they're real people having conversations
+- Goal is communication success, not grammatical perfection
+- Learners acquire language by using it in authentic contexts (ordering coffee, meeting neighbors, exploring markets)
+- Errors are addressed through natural conversation repair, not overt correction
+
+**Research basis:** CLT recognizes that recasting (reformulating a learner's utterance while maintaining focus on meaning) is effective corrective feedback that doesn't disrupt communication. Characters in Fuori recast naturally: "Ah, *vorrei* un caffè! Certo!" rather than "You should say vorrei."
+
+### Fluency and Accuracy Balance
+
+**The tension:** Pure fluency focus can lead to fossilized errors; pure accuracy focus kills spontaneity.
+
+**How Fuori balances:**
+- **During conversation:** Fluency first. Characters keep conversation flowing, forgive errors, stay in character
+- **After conversation:** Accuracy reflection. The diario shows corrections as quiet notes, tracks patterns
+- **With Magda:** Explicit accuracy work. Weekly lessons address recurring mistakes systematically
+- **Through scaffolding:** Characters adjust their speech complexity based on learner struggle without breaking immersion
+
+**Design insight:** Separating the immersive conversation from the reflective correction prevents the "teacher constantly interrupting" problem while still supporting accuracy development over time.
+
+### Inductive Learning and Guided Discovery
+
+**Progetto Italiano approach:** Present language in context, let learners notice patterns, then provide explicit rules.
+
+**How Fuori adapts this for conversation:**
+- Characters use target structures naturally in context (subjunctive, conditional, past tenses)
+- Learners encounter patterns repeatedly across different situations
+- Magda's role is to highlight patterns the learner has already encountered: "Ho notato che dici 'voglio' invece di 'vorrei'..." - the learner has heard *vorrei* many times in context before the explicit lesson
+- The quaderno tracks new words and structures encountered organically
+
+**Why this works:** Adults learning languages benefit from both implicit exposure and explicit pattern recognition. Fuori provides exposure through conversation, pattern recognition through Magda and the diario.
+
+### Zone of Proximal Development (ZPD) and Scaffolding
+
+**Vygotsky's ZPD:** The space between what a learner can do alone and what they can do with support.
+
+**How characters scaffold naturally:**
+- Offer options when learner is stuck: "Vuoi un caffè? O un cappuccino?"
+- Simplify language when sensing struggle: shorter sentences, slower speech
+- Ask guiding questions: "Per dove vuoi andare?"
+- Provide contextual hints without breaking character
+- The `confused` flag triggers more explicit help only when genuinely needed
+
+**Implementation guideline:** Most turns should have `hint: null`. Scaffolding should feel like a helpful Italian friend, not a patient teacher running drills.
+
+### Forgiveness and Comprehensible Input
+
+**Krashen's Input Hypothesis:** Language acquisition happens when learners receive comprehensible input slightly above their current level (i+1).
+
+**How Fuori implements:**
+- Level rules constrain character speech to appropriate complexity (A1: present tense, short sentences; A2: some past tense, compound sentences)
+- Characters introduce 1-2 new words per turn, ideally ones the scene makes useful
+- Speech recognition forgiveness means transcription noise never becomes a learning obstacle
+- Characters reconstruct intent generously, allowing focus on meaning over form
+
+**The forgiveness rule:** "cornetta" → cornetto, "bone journal" → buongiorno. Transcription artefacts are never treated as mistakes.
+
+### Cultural Learning Through Authentic Material
+
+**Progetto Italiano approach:** Integrate Italian civilization and culture throughout, use authentic materials, represent modern Italy.
+
+**How Fuori extends this:**
+- Every place is culturally grounded (markets work differently than cafés, neighborhoods have distinct characters)
+- Characters have authentic personalities, opinions, regional touches
+- Evening conversations explore topics that matter to Italians (food, family, local identity)
+- City pantries represent real Italian urban life, not tourist stereotypes
+
+**Open questions for M2+:**
+- Food culture conversations (why is carbonara made this way?)
+- Reading authentic materials (museum plaques, menus, train announcements)
+- Dialect progression with level (more regionalisms as competence grows)
+
+### Error Correction Without Breaking Immersion
+
+**Research consensus:** Corrective feedback helps, but delivery matters. Implicit correction (recasts) preserves flow; explicit correction can inhibit output.
+
+**Fuori's hybrid model:**
+- **In conversation:** Implicit correction through natural recasts. Characters never say "that's wrong, say it like this"
+- **In the diario:** Explicit but non-intrusive. Corrections appear as notes after the scene, learner reviews when ready
+- **With Magda:** Explicit teaching in a dedicated learning mode, clearly separate from immersive conversations
+- **Through repetition:** Mistakes become "try tomorrow" goals, naturally integrated into future scenes
+
+**The rule:** Immersion during conversation, reflection afterward.
+
+### Implications for Prompt Engineering
+
+These pedagogical principles directly inform the character prompt layers:
+
+1. **House rules:** Forgiveness, natural recasting, staying in character → implements CLT principles
+2. **Level rules:** Vocabulary and grammar constraints → provides appropriate ZPD and comprehensible input
+3. **Character sheet:** Personality, speaking style, regional touches → creates authentic communication partners
+4. **Relationship:** Familiarity and memory → enables natural conversations that build over time
+5. **Scene goals:** Light structure without drilling → balances task and communication naturally
+6. **Magda's rules:** Explicit teaching permission → provides the accuracy reflection that complements communicative practice
+
+### Sources and Further Reading
+
+Research frameworks informing this design:
+- Communicative Language Teaching: Implicit recasting, fluency/accuracy balance
+- Zone of Proximal Development (Vygotsky): Scaffolding within learner capability
+- Comprehensible Input (Krashen): i+1 exposure through level-appropriate speech
+- Progetto Italiano methodology: Inductive learning, cultural integration, authentic materials
+- Task-Based Language Teaching: Goals provide structure without prescribing language
+
+**Design philosophy:** Don't implement pedagogy deterministically (rigid rules, explicit drills). Instead, inform Claude's conversational behavior so characters naturally act like effective language partners - patient, helpful, authentic, and most importantly, real people you want to talk to.

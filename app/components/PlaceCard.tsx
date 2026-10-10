@@ -60,14 +60,14 @@ export function PlaceCard({
             fontSize: '32px',
             fontWeight: '700',
             color: '#000',
-            marginBottom: characterName ? '4px' : 0,
+            marginBottom: neighborhood ? '4px' : 0,
           }}
         >
           {placeName}
         </div>
-        {(characterName || neighborhood) && (
-          <div style={{ fontSize: '14px', color: '#666' }}>
-            {[characterName, neighborhood].filter(Boolean).join(' · ')}
+        {neighborhood && (
+          <div style={{ fontSize: '17px', color: '#666' }}>
+            {neighborhood}
           </div>
         )}
       </div>

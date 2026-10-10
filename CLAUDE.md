@@ -12,3 +12,10 @@ Voice-first Italian learning game. Read `README.md` and the numbered files in `d
 - Keep `progress.md` current at the end of each session: what was done, decisions, open issues, next actions.
 - Hand-written content (city pantries, anchors, Magda, level rules) lives in `content/it/` as data, not inside components. Generated characters and scenes are stored with learner data.
 - Keep other languages possible without building them: nothing Italian-specific hard-coded in code or prompt templates (language name, speech-to-text code, voices, UI words and prompt examples come from `content/it/language.ts`), and all Claude calls go through `lib/claude.ts`. See "Keeping other languages possible" in `docs/05-architecture.md`.
+
+## Testing
+- Run `npx tsc --noEmit` after editing TypeScript or content files. Never claim a task is done until type checking passes.
+- Check the dev server compiles without errors before showing work.
+- For UI changes, verify the page loads correctly with `curl http://localhost:3000` or browser check.
+- Don't modify or weaken existing tests to make them pass without approval.
+- When fixing bugs, add a test that would have caught it.

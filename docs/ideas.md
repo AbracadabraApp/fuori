@@ -112,6 +112,107 @@ Does explicit language learning scaffolding (corrections displayed, words tracke
 - Keep corrections/words subtle or optional (don't interrupt flow)
 - Let immersion do the teaching
 
+## People, Places, Things: Multiple entry paths
+
+**Not M1.** Future exploration of expanding from place-based navigation to three distinct pathways into Italian conversation practice.
+
+**Current structure:** Places (cities → neighborhoods → places → people)
+**Expanded structure:** Three parallel paths with different organizing principles
+
+**Places path** (current implementation)
+- Geographic organization: cities → neighborhoods → places
+- Context: cafés, markets, bakeries, restaurants
+- Natural for travelers exploring a city
+
+**People path**
+- Conversation partners organized by type or interest
+- Historical figures: Dante, Michelangelo, Garibaldi, Renaissance artists
+- Literary characters from Italian novels and poetry
+- Contemporary types: chef, fashion designer, architect, winemaker
+- Cultural icons: filmmakers (Fellini, Rossellini), composers (Verdi, Puccini), writers
+- Allows practice around specific topics and cultural depth without geographic constraint
+
+**Things path**
+- Object-centered conversations exploring Italian culture through material culture
+- Art pieces: talk with a guide about a specific painting or sculpture
+- Food culture: conversation with a tomato farmer, cheesemaker, olive oil producer about their craft
+- Cultural objects: a Vespa, an espresso machine, a Renaissance fountain, traditional tools
+- Each "thing" becomes a doorway to conversation about process, history, significance
+
+**Cross-references and integration**
+- A filmmaker character might recommend visiting certain places in their films' locations
+- A place might introduce you to a local artisan (thing) or historical figure who lived there
+- A dish (thing) connects to the chef who makes it (person) and the restaurant where you eat it (place)
+
+**Architecture implications**
+- Current `city → place → person` flow generalizes to `category → subcategory → character`
+- Entry screen could show three sections or tabs instead of just city cards
+- Same conversation engine and learning mechanics work across all three paths
+- Character data structure already supports this (role, description, conversation style)
+
+**Content generation**
+- Places: already building this with city pantries
+- People: Can generate character sheets for historical/cultural figures with appropriate personality and knowledge
+- Things: Similar to places but organized around objects rather than locations
+
+**Open questions**
+- Should all three paths be available from M1, or introduce people/things later?
+- How do we prevent the catalog from becoming overwhelming with too many entry points?
+- Does this dilute the "season in Italy" narrative, or enrich it with more ways to engage?
+
+## Learner-controlled difficulty through natural language (M1)
+
+**Adopted for M1:** Instead of UI help buttons, learners control conversation difficulty by speaking naturally in Italian (or English when desperate).
+
+**The principle:** Give learners agency through language itself, not meta-UI. This stays immersive while reducing anxiety.
+
+**How learners naturally express needs:**
+
+**For repetition:**
+- "Ripeti per favore" / "Ancora una volta" / "Come?" / "Cosa?"
+- Even imperfect: "non capito", "uh... again?"
+- Claude recognizes intent across all variations
+
+**For simplification:**
+- "Più lentamente" / "Piano piano"
+- "Non capisco" (repeated)
+- Claude responds by simplifying language and speaking more clearly
+
+**For English help (last resort):**
+- "Scusi, parla inglese?" / "English?"
+- Character responds based on who they are and where you are
+- Hotel receptionist in Milan: probably yes
+- Old market vendor in small town: probably no, but very patient
+- After brief English help, character guides back to Italian
+
+**Why this works:**
+
+1. **Learner agency** - You're in control, not waiting to be rescued
+2. **Stays immersive** - Using Italian to control the conversation IS practicing Italian
+3. **Teaches useful phrases** - These are exactly what travelers need
+4. **Culturally authentic** - Real Italians respond to these naturally
+5. **Reduces anxiety** - You always have an escape hatch
+
+**Implementation:**
+
+Claude doesn't need explicit rules for every phrase - it naturally understands intent. Prompt guidance focuses on:
+- **Character behavior:** Respond helpfully while staying in character
+- **Character knowledge:** Does Rita speak English? (in character sheet)
+- **Conversation flow:** Return to Italian after brief English help
+- **System coordination:** Flag when TTS speed should adjust
+
+**Test with simulated learner:** Various ways of expressing "I don't understand" should all get appropriate help without breaking character.
+
+**M1 help system:**
+- No UI buttons that break immersion
+- No "Come si dice?" button
+- Just natural conversational repair, the way real people help each other
+
+**M2 additions:**
+- Diario shows corrections after conversations
+- Magda provides explicit teaching
+- Structured reflection complements immersive practice
+
 ## Other ideas from the conversation so far
 
 - **Pronunciation scoring**: deliberately out of scope for now.

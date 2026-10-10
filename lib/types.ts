@@ -49,6 +49,18 @@ export interface Place {
   kind: string;
   neighbourhood: string;
   real: boolean;
+  characterId?: string;
+  imagePrompt?: string;
+}
+
+export interface CityCharacter {
+  id: string;
+  name: string;
+  age: number;
+  role: string;
+  placeId: string;
+  personality: string[];
+  portraitPrompt: string;
 }
 
 export interface CityPantry {
@@ -56,12 +68,13 @@ export interface CityPantry {
   name: string;
   neighbourhoods: string[];
   places: Place[];
+  characters?: CityCharacter[];
   food: string[];
   customs: string[];
   localTouches: string[];
-  anchorIds: string[];
-  seedCharacters: string[];
-  dayTrips: string[];
+  anchorIds?: string[];
+  seedCharacters?: string[];
+  dayTrips?: string[];
 }
 
 // Suggestion

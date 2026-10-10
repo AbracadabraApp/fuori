@@ -4,13 +4,17 @@ import { useState, useRef } from 'react';
 
 interface ConversationScreenProps {
   characterName: string;
+  characterRole?: string;
   characterPortrait?: string;
+  cityName: string;
   onBack: () => void;
 }
 
 export function ConversationScreen({
   characterName,
+  characterRole,
   characterPortrait,
+  cityName,
   onBack,
 }: ConversationScreenProps) {
   const [isRecording, setIsRecording] = useState(false);
@@ -91,37 +95,30 @@ export function ConversationScreen({
     >
       {/* Back button */}
       <div
+        onClick={onBack}
         style={{
           padding: '16px',
           display: 'flex',
           alignItems: 'center',
+          cursor: 'pointer',
         }}
       >
-        <button
-          onClick={onBack}
-          style={{
-            background: 'none',
-            border: 'none',
-            fontSize: '24px',
-            cursor: 'pointer',
-            padding: '8px',
-          }}
-        >
-          ←
-        </button>
-        <span style={{ marginLeft: '8px', fontSize: '16px', color: '#666' }}>
-          {characterName}
+        <span style={{ fontSize: '28px' }}>←</span>
+        <span style={{ marginLeft: '12px', fontSize: '24px', color: '#2c5f4f', fontWeight: '500' }}>
+          {cityName}
         </span>
       </div>
 
-      {/* Portrait area */}
+      {/* Portrait and name area */}
       <div
         style={{
           flex: 1,
           display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          justifyContent: 'flex-start',
           padding: '20px',
+          gap: '16px',
         }}
       >
         {characterPortrait ? (
@@ -130,7 +127,7 @@ export function ConversationScreen({
             alt={characterName}
             style={{
               maxWidth: '100%',
-              maxHeight: '100%',
+              maxHeight: '60vh',
               objectFit: 'contain',
             }}
           />
@@ -150,6 +147,12 @@ export function ConversationScreen({
             👤
           </div>
         )}
+        <div style={{ fontSize: '24px', color: '#000' }}>
+          <span style={{ fontWeight: '600' }}>{characterName}</span>
+          {characterRole && (
+            <span style={{ fontWeight: '300' }}>, {characterRole.charAt(0).toUpperCase() + characterRole.slice(1)}</span>
+          )}
+        </div>
       </div>
 
       {/* Mic button area */}
