@@ -2,6 +2,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { anthropic, CLAUDE_MODEL } from '@/lib/claude';
+import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import { CharacterSheet, Scene, Turn, Relationship, Level } from '@/lib/types';
 
@@ -49,108 +50,6 @@ const TurnOutputSchema = z.object({
 
 type TurnOutputType = z.infer<typeof TurnOutputSchema>;
 
-// Define the JSON schema for Claude's output_config
-// This maps the Zod schema to Anthropic's format
-const turnOutputJsonSchema = {
-  type: 'object',
-  properties: {
-    understood: {
-      type: 'string',
-      description: 'The Italian the character understood the learner to mean',
-    },
-    it: {
-      type: 'string',
-      description: "The character's reply in Italian",
-    },
-    en: {
-      type: 'string',
-      description: 'English translation of the reply',
-    },
-    correction: {
-      type: ['object', 'null'],
-      properties: {
-        said: {
-          type: 'string',
-          description: 'What the learner said incorrectly',
-        },
-        better: {
-          type: 'string',
-          description: 'The correct way to say it',
-        },
-        why: {
-          type: 'string',
-          maxLength: 100,
-          description: 'Brief explanation (under 100 chars)',
-        },
-      },
-      required: ['said', 'better', 'why'],
-      description: 'Correction if there was a real error worth noting',
-    },
-    words: {
-      type: 'array',
-      items: {
-        type: 'object',
-        properties: {
-          it: {
-            type: 'string',
-            description: 'Italian word',
-          },
-          en: {
-            type: 'string',
-            description: 'English translation',
-          },
-        },
-        required: ['it', 'en'],
-      },
-      maxItems: 2,
-      description: 'New vocabulary words introduced (max 2)',
-    },
-    steps_done: {
-      type: 'array',
-      items: {
-        type: 'number',
-      },
-      description: 'Goal step indices completed in this turn',
-    },
-    hint: {
-      type: ['string', 'null'],
-      description: 'Suggested phrase the learner could say next (only when confused or stuck)',
-    },
-    confused: {
-      type: 'boolean',
-      description: 'True only if you genuinely cannot understand what they meant',
-    },
-    mood: {
-      type: 'string',
-      enum: ['warm', 'amused', 'busy', 'curious'],
-      description: 'Your emotional tone in this reply',
-    },
-    scene_over: {
-      type: 'boolean',
-      description: 'True if this is a natural ending point for the conversation',
-    },
-    memory_notes: {
-      type: 'array',
-      items: {
-        type: 'string',
-      },
-      description: 'Facts about the learner worth remembering for future conversations',
-    },
-  },
-  required: [
-    'understood',
-    'it',
-    'en',
-    'correction',
-    'words',
-    'steps_done',
-    'hint',
-    'confused',
-    'mood',
-    'scene_over',
-    'memory_notes',
-  ],
-};
 
 export async function POST(request: NextRequest) {
   try {
@@ -229,7 +128,13 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate with Zod schema
-    const turnOutput = TurnOutputSchema.parse(parsedOutput);
+    // The API schema can't express length limits, so enforce them here
+    const raw = parsedOutput as Record<string, unknown>;
+    if (Array.isArray(raw.words)) raw.words = raw.words.slice(0, 2);
+    const corr = raw.correction as { why?: unknown } | null | undefined;
+    if (corr && typeof corr.why === 'string') corr.why = corr.why.slice(0, 100);
+
+    const turnOutput = TurnOutputSchema.parse(raw);
 
     // Return the validated output
     return NextResponse.json(turnOutput);

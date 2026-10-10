@@ -11,7 +11,8 @@
     "improve:loop": "node --env-file=.env.local tests/improve/run-improvement-loop.mjs",
     "improve:loop:auto": "node --env-file=.env.local tests/improve/run-improvement-loop.mjs --auto",
     "improve:loop:verbose": "node --env-file=.env.local tests/improve/run-improvement-loop.mjs --verbose",
-    "test:models": "node tests/check-model-ids.mjs"
+    "test:models": "node tests/check-model-ids.mjs",
+    "test:schema": "node --experimental-strip-types tests/check-turn-schema.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
