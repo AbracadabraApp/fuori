@@ -4,7 +4,7 @@
  */
 
 import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL } from '@/lib/claude';
+import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import type { CharacterSheet, Turn } from '@/lib/types';
@@ -34,16 +34,13 @@ export async function runTurn(params: {
     },
   });
 
-  const content = response.content[0];
-  if (content.type !== 'text') {
-    throw new Error('Unexpected response type from Claude');
-  }
+  const text = replyText(response);
 
   let parsed: unknown;
   try {
-    parsed = JSON.parse(content.text);
+    parsed = JSON.parse(text);
   } catch {
-    console.error('Failed to parse Claude response as JSON:', content.text);
+    console.error('Failed to parse Claude response as JSON:', text);
     throw new Error('Claude returned invalid JSON');
   }
 

@@ -12,7 +12,7 @@
 
 import { mkdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
-import { anthropic, CLAUDE_MODEL } from '@/lib/claude';
+import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { runTurn } from '@/lib/turn';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import { characterForPlace } from '@/lib/characters/for-place';
@@ -93,8 +93,7 @@ async function ask(system: string, user: string, maxTokens = 400): Promise<strin
     system,
     messages: [{ role: 'user', content: user }],
   });
-  const block = res.content[0];
-  return block.type === 'text' ? block.text.trim() : '';
+  return replyText(res).trim();
 }
 
 async function askJson<T>(system: string, user: string, schema: Record<string, unknown>, maxTokens = 1500): Promise<T> {
@@ -105,9 +104,7 @@ async function askJson<T>(system: string, user: string, schema: Record<string, u
     messages: [{ role: 'user', content: user }],
     output_config: { format: { type: 'json_schema', schema } },
   });
-  const block = res.content[0];
-  if (block.type !== 'text') throw new Error('No text in response');
-  return JSON.parse(block.text) as T;
+  return JSON.parse(replyText(res)) as T;
 }
 
 const show = (t: Turn[], c: CharacterSheet) =>

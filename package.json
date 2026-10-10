@@ -10,7 +10,8 @@
     "test:models": "node tests/check-model-ids.mjs",
     "test:schema": "node --experimental-strip-types tests/check-turn-schema.mjs",
     "test:conversations": "tsx --env-file-if-exists=.env.local tests/conversations/run.ts",
-    "test:prompt": "tsx tests/check-prompt.ts"
+    "test:prompt": "tsx tests/check-prompt.ts",
+    "test:reply": "tsx tests/check-reply-text.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
