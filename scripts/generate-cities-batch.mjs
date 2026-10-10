@@ -132,7 +132,7 @@ export const ${city.id}: CityPantry = {
 Generate 25-30 places following the formula. Be creative but authentic.`;
 
   const message = await anthropic.messages.create({
-    model: 'claude-sonnet-4-5-20250929',
+    model: process.env.CLAUDE_MODEL || 'claude-sonnet-5-5',
     max_tokens: 16000,
     messages: [{
       role: 'user',

@@ -1,13 +1,10 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { anthropic, CLAUDE_MODEL } from '@/lib/claude';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import { CharacterSheet, Scene, Turn, Relationship, Level } from '@/lib/types';
 
-// Initialize Anthropic client
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
 
 // Zod schema for Claude's structured output
 const TurnOutputSchema = z.object({
@@ -197,7 +194,7 @@ export async function POST(request: NextRequest) {
 
     // Call Claude with structured output
     const response = await anthropic.messages.create({
-      model: 'claude-sonnet-4-5-20250929',
+      model: CLAUDE_MODEL,
       max_tokens: 2048,
       temperature: 1.0,
       system: prompt.system,

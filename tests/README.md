@@ -106,7 +106,7 @@ Example report structure:
 # Simulated Learner Test Report
 
 Generated: 2024-01-15T10:30:00.000Z
-Model: claude-sonnet-4-5-20250929
+Model: claude-sonnet-5-5
 Conversations: 6
 
 ## Summary

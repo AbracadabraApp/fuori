@@ -10,7 +10,8 @@
     "test:learner": "node --env-file=.env.local tests/run-simulated-learner.mjs",
     "improve:loop": "node --env-file=.env.local tests/improve/run-improvement-loop.mjs",
     "improve:loop:auto": "node --env-file=.env.local tests/improve/run-improvement-loop.mjs --auto",
-    "improve:loop:verbose": "node --env-file=.env.local tests/improve/run-improvement-loop.mjs --verbose"
+    "improve:loop:verbose": "node --env-file=.env.local tests/improve/run-improvement-loop.mjs --verbose",
+    "test:models": "node tests/check-model-ids.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

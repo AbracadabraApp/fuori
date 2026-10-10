@@ -171,3 +171,15 @@ This ensures vocabulary consistency across cities while allowing unique characte
 
 **Key insight:**
 Roma pantry already has good balance - emphasizes daily life vocabulary (bars, markets, shops) over tourist checklist, which is correct for language learning.
+
+## 2026-10-10: Fix silent Giulia on iPhone
+
+**Problem:** On the phone, Giulia's bubble was empty and nothing played. Railway was serving an old commit from `claude/voice-prototype`, whose `/api/turn` used the retired model `claude-opus-4-20250514`, so every turn failed and the page hid the error.
+
+**Fixed on `main`:**
+- `lib/claude.ts` now holds the Anthropic client and `CLAUDE_MODEL` (default `claude-sonnet-5-5`, override with the `CLAUDE_MODEL` env var). `/api/turn`, the content scripts and the test runners use it.
+- `npm run test:models` fails if a model ID is hard-coded anywhere else.
+- ConversationScreen shows the server's actual error message instead of a generic one.
+- iPhone audio unlock: the Start and mic taps play a silent sound first, and ElevenLabs audio reuses that unlocked element, so Safari lets Giulia speak after the network call.
+
+**Open:** Railway must deploy from `main` (Service → Settings → Source → Branch).

@@ -29,7 +29,7 @@ const CONFIG = {
   verbose: process.argv.includes('--verbose'),
   outputDir: resolve(__dirname, 'reports'),
   anthropicApiKey: process.env.ANTHROPIC_API_KEY,
-  model: 'claude-sonnet-4-5-20250929',
+  model: process.env.CLAUDE_MODEL || 'claude-sonnet-5-5',
 };
 
 if (!CONFIG.anthropicApiKey) {

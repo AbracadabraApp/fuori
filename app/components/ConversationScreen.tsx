@@ -3,6 +3,23 @@
 import { useState, useRef } from 'react';
 import { CharacterSheet, Scene, Turn, Level, TurnOutput } from '@/lib/types';
 
+// A zero-length WAV. Playing it during a tap "unlocks" audio on iPhone Safari,
+// which otherwise blocks sound that starts after a network request.
+const SILENT_WAV =
+  'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
+
+// Turn a failed API response into a readable message instead of a blank screen.
+async function describeFailure(response: Response, what: string): Promise<string> {
+  try {
+    const body = await response.json();
+    const detail = body.details ?? body.error;
+    const text = typeof detail === 'string' ? detail : JSON.stringify(detail);
+    return `${what} (${response.status}): ${text}`;
+  } catch {
+    return `${what} (${response.status})`;
+  }
+}
+
 interface ConversationScreenProps {
   characterName: string;
   characterRole?: string;
@@ -85,7 +102,25 @@ export function ConversationScreen({
     },
   };
 
+  // Must run synchronously inside a tap handler, before any await.
+  const unlockAudio = () => {
+    try {
+      const warmup = new SpeechSynthesisUtterance(' ');
+      warmup.volume = 0;
+      speechSynthesis.speak(warmup);
+    } catch {
+      // speechSynthesis not available
+    }
+    if (!audioRef.current) {
+      const audio = new Audio();
+      audio.src = SILENT_WAV;
+      audio.play().catch(() => {});
+      audioRef.current = audio;
+    }
+  };
+
   const startConversation = async () => {
+    unlockAudio();
     setHasStarted(true);
     setError(null);
 
@@ -103,7 +138,7 @@ export function ConversationScreen({
       });
 
       if (!response.ok) {
-        throw new Error('Failed to get opening line');
+        throw new Error(await describeFailure(response, 'Giulia could not answer'));
       }
 
       const turnOutput: TurnOutput = await response.json();
@@ -121,7 +156,7 @@ export function ConversationScreen({
       await playResponse(turnOutput.it, testCharacter.id);
     } catch (err) {
       console.error('Error starting conversation:', err);
-      setError('Failed to start conversation. Please try again.');
+      setError(err instanceof Error ? err.message : 'Failed to start conversation.');
     }
   };
 
@@ -158,8 +193,9 @@ export function ConversationScreen({
         const audioUrl = URL.createObjectURL(audioBlob);
         setLastAudioUrl(audioUrl);
 
-        // Play audio
-        const audio = new Audio(audioUrl);
+        // Reuse the element unlocked during the tap so iPhone Safari allows playback
+        const audio = audioRef.current ?? new Audio();
+        audio.src = audioUrl;
         audioRef.current = audio;
         await audio.play();
       }
@@ -226,6 +262,7 @@ export function ConversationScreen({
   };
 
   const toggleRecording = () => {
+    unlockAudio();
     if (isRecording) {
       stopRecording();
     } else {
@@ -249,7 +286,7 @@ export function ConversationScreen({
       });
 
       if (!transcribeResponse.ok) {
-        throw new Error('Failed to transcribe audio');
+        throw new Error(await describeFailure(transcribeResponse, 'Transcription failed'));
       }
 
       const transcribeData = await transcribeResponse.json();
@@ -272,7 +309,7 @@ export function ConversationScreen({
       });
 
       if (!turnResponse.ok) {
-        throw new Error('Failed to get character response');
+        throw new Error(await describeFailure(turnResponse, 'Giulia could not answer'));
       }
 
       const turnOutput: TurnOutput = await turnResponse.json();
@@ -302,7 +339,7 @@ export function ConversationScreen({
       await playResponse(turnOutput.it, testCharacter.id);
     } catch (err) {
       console.error('Error processing audio:', err);
-      setError('Failed to process your message. Please try again.');
+      setError(err instanceof Error ? err.message : 'Failed to process your message.');
     } finally {
       setIsProcessing(false);
     }

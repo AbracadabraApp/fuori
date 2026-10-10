@@ -50,7 +50,7 @@ export async function generateImprovements(failureAnalysis, options = {}) {
 
   // Call Claude to generate improvements
   const response = await anthropic.messages.create({
-    model: 'claude-sonnet-4-5-20250929',
+    model: process.env.CLAUDE_MODEL || 'claude-sonnet-5-5',
     max_tokens: 8192,
     temperature: 0.3, // Lower temperature for more focused, practical suggestions
     system: IMPROVEMENT_SYSTEM_PROMPT,

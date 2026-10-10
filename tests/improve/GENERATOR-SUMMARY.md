@@ -220,7 +220,7 @@ The generator is working well if:
 
 ## Notes
 
-- Uses `claude-sonnet-4-5-20250929` model
+- Uses `claude-sonnet-5-5` model
 - Temperature 0.3 for practical suggestions
 - Loads 6 key source files for context
 - Maintains character personality in changes
