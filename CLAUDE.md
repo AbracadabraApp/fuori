@@ -19,3 +19,9 @@ Voice-first Italian learning game. Read `README.md` and the numbered files in `d
 - For UI changes, verify the page loads correctly with `curl http://localhost:3000` or browser check.
 - Don't modify or weaken existing tests to make them pass without approval.
 - When fixing bugs, add a test that would have caught it.
+
+## Working across sessions
+- Two Claude sessions work on this repo: Claude Code on Josh's laptop and a cloud session in the Claude app's "Fuori" project. Neither can see the other's uncommitted work.
+- Start every session with `git pull --rebase origin main`. End every session by committing and pushing to `main`, and update `progress.md`.
+- Never leave work unpushed overnight. If it isn't on GitHub, the other session and Railway can't see it.
+- Model IDs live only in `lib/claude.ts`. Don't hard-code them elsewhere.
