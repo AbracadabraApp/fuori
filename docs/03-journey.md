@@ -40,12 +40,37 @@ Sketched during design; Claude may use them as templates or generate others like
 
 ### Pantry
 
-- **Neighbourhoods:** Trastevere (home), Monti, Testaccio, the Ghetto, Prati.
-- **Everyday places:** the bar, Mercato di San Cosimato, tabaccheria, farmacia, forno, trattoria, wine bar, the bus stop, the courtyard.
-- **Landmarks** (well-known only, for reading moments): Santa Maria in Trastevere, Ponte Sisto, Piazza Trilussa, the Gianicolo.
-- **Food:** cornetto, maritozzo, supplì, cacio e pepe, carbonara, carciofi alla romana, pizza al taglio.
-- **Customs:** pay at the cassa first, then order at the bar; standing vs sitting prices; the passeggiata; lunch closures.
-- **Local touches** (sparingly at A1–A2): *daje*, *aò*, *anvedi*.
+Full pantry in `content/it/cities/roma.ts` with 24 places, regional food, customs, and local expressions.
+
+**City Pantry Formula** (applied to all cities, 25-30 places each):
+
+**Daily Routine (repeat across neighborhoods):**
+- 3 bars/cafés - morning coffee, daily touchpoint
+- 2 bakeries - bread, pastries, morning routine
+
+**Food & Shopping (vocabulary contexts):**
+- 2-3 markets - produce, local food, vendors
+- 2 restaurants - sit-down, regional dishes
+- 1-2 specialty food - city-specific (pizzeria in Naples, piadina in Bologna, etc.)
+
+**Cultural/Landmark (2-4 places):**
+- 1 major landmark (iconic)
+- 1-2 churches/cultural sites
+- 1 park or public garden
+- 1-2 piazzas (social gathering)
+
+**Social/Evening (1-2 each):**
+- Wine bars or aperitivo spots (regional: enoteca, bacaro, osteria)
+- Bookshop or cultural shop
+
+**Practical (1-2 total):**
+- Pharmacy, market, neighborhood shop
+- Transportation hub
+
+**City Character (2-3 unique):**
+Examples - Milan: design shop, fashion atelier, Navigli aperitivo | Venice: gondola workshop, mask shop, bacaro | Naples: sfogliatella shop, pizzeria fritta | Florence: leather workshop, Oltrarno artisan | Bologna: tortellini shop, university bookshop | Palermo: street food stand, Arab market
+
+This formula ensures vocabulary consistency while giving each city unique character.
 
 ### A first week, for reference
 

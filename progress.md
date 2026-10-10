@@ -145,3 +145,29 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 - Settings UI (toggles don't do anything yet)
 
 **Next step:** Deploy to Railway and test full flow on iPhone
+
+---
+
+## 2026-10-10 (continued): Art Style Progression & City Pantry Formula
+
+**Art style progression established:**
+Three distinct styles for visual hierarchy and increasing fidelity:
+1. **Cities**: Loose watercolor with ink lines (atmospheric, flowing)
+2. **Places**: Soft pastel sketch (warm, colorful, textured)
+3. **People**: Pen and ink portrait with minimal wash (crisp, detailed, personal)
+
+Tested with Giulia's bar (pastel) and portrait (pen/ink) - progression works well for travel journal aesthetic.
+
+**City Pantry Formula documented:**
+Established systematic structure for all city pantries (25-30 places):
+- Daily routine: 3 bars, 2 bakeries
+- Food/shopping: 2-3 markets, 2 restaurants, 1-2 specialty
+- Cultural: 1 landmark, 1-2 churches, 1 park, 1-2 piazzas
+- Social: wine bars, bookshop
+- Practical: pharmacy, transport
+- City character: 2-3 unique places
+
+This ensures vocabulary consistency across cities while allowing unique character. Documented in `docs/03-journey.md`.
+
+**Key insight:**
+Roma pantry already has good balance - emphasizes daily life vocabulary (bars, markets, shops) over tourist checklist, which is correct for language learning.
