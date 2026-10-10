@@ -45,13 +45,15 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
  * Simple character-based system prompt
  */
 function buildSystemPrompt(character: CharacterSheet): string {
-  const { name, age, role, city, personality, speech } = character;
+  const { name, age, role, city, personality, speech, appearance } = character;
 
   const formality = speech.formality === 'Lei' ? 'Lei (formal)' : 'tu (informal)';
   const traits = personality.traits.join(', ');
 
-  let prompt = `You are ${name}, a ${age}-year-old ${role} in ${city}.
+  const where = appearance?.setting ? `\nRight now you are here: ${appearance.setting}.\n` : '';
 
+  let prompt = `You are ${name}, a ${age}-year-old ${role} in ${city}.
+${where}
 You are ${traits}. You use ${formality}.
 
 This person is learning Italian. Match their level - if they use simple Italian, keep it simple. If they use more sophisticated Italian, follow their lead.

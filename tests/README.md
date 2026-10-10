@@ -5,6 +5,7 @@
 - `npx tsc --noEmit`: type check
 - `npm run test:models`: no Claude model IDs hard-coded outside `lib/claude.ts`
 - `npm run test:schema`: the `/api/turn` output schema follows structured-output rules
+- `npm run test:prompt`: every character prompt says where the character is
 
 ## Conversation test: grade and recommend
 
