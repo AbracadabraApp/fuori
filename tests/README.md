@@ -18,7 +18,7 @@ npm run test:conversations -- --dry     # show the sample and a prompt, no API c
 
 1. **Sample** existing characters: Giulia and Rita always, plus random characters from the city files (one per city).
 2. **Simulate** a conversation with a learner type from `conversations/learners.ts` (beginner with speech-to-text noise, hesitant beginner, improving A2). Character replies go through `lib/turn.ts`, the same code as `/api/turn`.
-3. **Grade** the character 1–10 on four things: speaks Italian, understands imperfect speech, matches the learner, feels like a real person.
+3. **Grade** the character 1–10 on four things: speaks Italian, understands imperfect speech, adapts when the learner is lost, feels like a real person. Characters may talk as fast and complex as real Italians; the simulated learner says when they don't understand, and the grade is about how the character responds.
 4. **Recommend** up to 3 changes in a report at `tests/conversations/reports/<date>.md`, with every transcript.
 
 It never edits files. Read the report, decide, change the prompt or character data, rerun.

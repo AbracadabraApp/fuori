@@ -29,7 +29,7 @@ const DRY = process.argv.includes('--dry');
 const CRITERIA = {
   italian: 'Speaks Italian. Uses English only when the learner asks for it, and only as much as the character\'s English allows, then returns to Italian.',
   understands: 'Understands imperfect speech. Reads garbled speech-to-text ("bone journal" = buongiorno) and learner errors as what they meant, without commenting on them.',
-  level: 'Matches the learner. Simplifies when they struggle or ask (ripeti, più lentamente); follows their lead when they use richer Italian.',
+  adapts: 'Adapts when the learner is lost. Talking fast or in complex Italian is fine (real people do); what matters is that when the learner signals confusion (non capisco, come?, più piano, English) the character slows down and rephrases, and when they say ripeti, repeats.',
   alive: 'Feels like a real person in that place. Distinct personality, reacts to what was said, recasts mistakes naturally instead of teaching.',
 } as const;
 type Criterion = keyof typeof CRITERIA;
@@ -116,6 +116,7 @@ async function learnerLine(c: Case, transcript: Turn[]): Promise<string> {
   return ask(
     `You are role-playing an Italian learner in a test. ${c.learner.description}
 You are at ${c.place.name} in ${c.cityName}, talking to ${c.character.name} (${c.character.role}).
+Be honest about comprehension: understand only what someone at your level really would. If the character's last line was too fast, long or complex for you, say so the way a real learner would ("Scusi, non capisco", "Come?", "Più piano, per favore", "Ripeti?", or in English). Don't pretend to follow.
 Write ONLY what the learner says next, as speech-to-text would capture it. One or two short sentences. No quotes, no stage directions.`,
     `Conversation so far:\n${show(transcript, c.character)}\n\nWhat do you say next?`,
     150
@@ -157,7 +158,7 @@ async function grade(c: Case, transcript: Turn[]): Promise<Omit<Graded, keyof Ca
     `Character: ${c.character.name}, ${c.character.role} at ${c.place.name}, ${c.cityName}. ${english}
 Learner type: ${c.learner.description}
 
-Grade the CHARACTER (not the learner) from 1 to 10 on:
+Grade the CHARACTER (not the learner) from 1 to 10 on the criteria below. Don't penalize the character for speaking naturally complex Italian; judge how it responds when the learner shows confusion.
 ${Object.entries(CRITERIA).map(([k, v]) => `- ${k}: ${v}`).join('\n')}
 
 Transcript:
@@ -183,7 +184,7 @@ async function recommend(results: Graded[]): Promise<string> {
     )
     .join('\n');
   return ask(
-    `You advise the builder of Fuori, a voice-first Italian conversation app. The character prompt is deliberately minimal ("match their level, simplify naturally, stay in character, speak Italian"); the product direction is natural conversation, not rules. Recommend small, high-leverage changes in that spirit. Plain language, no preamble.`,
+    `You advise the builder of Fuori, a voice-first Italian conversation app. The character prompt is deliberately minimal ("match their level, simplify naturally, stay in character, speak Italian"); the product direction is natural conversation, not rules. Characters may speak as fast and complex as real Italians; don't recommend simplifying by default or beginner constraints, only better responses when the learner shows they're lost. Recommend small, high-leverage changes in that spirit. Plain language, no preamble.`,
     `Graded test conversations:\n${summary}\n\nWrite markdown with exactly two sections:
 ## Top problems
 Up to 3, most common first. One line each, with a short real quote from above.

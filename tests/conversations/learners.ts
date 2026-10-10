@@ -1,6 +1,7 @@
 /**
  * Simulated learners. Each one makes the kinds of mistakes real learners make,
- * including speech-to-text noise (Whisper mishearing accented Italian).
+ * including speech-to-text noise (Whisper mishearing accented Italian),
+and they say so when they don't understand (the runner tells them to be honest).
  */
 
 export interface Learner {
