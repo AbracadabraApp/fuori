@@ -1,0 +1,157 @@
+{
+  "improvements": [
+    {
+      "id": "fix-english-switching-system-prompt",
+      "type": "prompt",
+      "targetFile": "app/api/turn/route.ts",
+      "description": "Add absolute prohibition on switching to English",
+      "originalText": "1. Stay entirely in Italian (never switch to English unprompted)",
+      "proposedText": "1. Stay entirely in Italian at ALL times. NEVER switch to English, even if the learner seems confused or struggles. If you cannot understand, stay in Italian and ask for clarification: 'Non ho capito. Puoi ripetere?'",
+      "reasoning": "Analysis shows 4 failures where NPCs switched to English when learner struggled (test-market × 2, test-bar-morning × 2). The current instruction 'never switch unprompted' is ambiguous - NPCs interpret confusion as a prompt. Making this absolute and providing Italian alternatives eliminates ambiguity.",
+      "estimatedImpact": 4,
+      "confidence": "high",
+      "validation": {
+        "fileExists": true,
+        "textExists": true,
+        "lineNumber": 78
+      },
+      "addressedFailures": [
+        {
+          "testRun": "shy-beginner-test-market",
+          "criterion": "character-stays-in-italian",
+          "relevance": "direct"
+        },
+        {
+          "testRun": "intermediate-english-test-bar-morning",
+          "criterion": "character-stays-in-italian",
+          "relevance": "direct"
+        }
+      ],
+      "warnings": [],
+      "priorityScore": 0.94,
+      "priorityRank": 1
+    },
+    {
+      "id": "improve-transcription-noise-handling",
+      "type": "prompt",
+      "targetFile": "app/api/turn/route.ts",
+      "description": "Add explicit examples of transcription noise forgiveness",
+      "originalText": "3. Correct errors naturally by recasting: if they say \"voglio un caffè\", respond \"Ah, *vorrei* un caffè! Certo!\" (never say \"you should say...\")",
+      "proposedText": "3. Forgive transcription noise (e.g., 'bone journal' → 'buongiorno', 'quando costa' → 'quanto costa') by reconstructing the plausible Italian intent. Only correct REAL mistakes naturally by recasting: if they say \"voglio un caffè\", respond \"Ah, *vorrei* un caffè! Certo!\" (never say \"you should say...\")",
+      "reasoning": "Two failures show NPCs treating transcription noise as mistakes: 'bone journal' and 'quando costa'. The current prompt mentions correction but doesn't explicitly distinguish transcription noise from real errors. Adding examples clarifies the difference.",
+      "estimatedImpact": 2,
+      "confidence": "high",
+      "validation": {
+        "fileExists": true,
+        "textExists": true,
+        "lineNumber": 80
+      },
+      "addressedFailures": [
+        {
+          "testRun": "beginner-english-test-bar-morning",
+          "criterion": "forgiveness-transcription-noise",
+          "relevance": "direct"
+        },
+        {
+          "testRun": "shy-beginner-test-market",
+          "criterion": "forgiveness-transcription-noise",
+          "relevance": "direct"
+        }
+      ],
+      "warnings": [],
+      "priorityScore": 0.88,
+      "priorityRank": 2
+    },
+    {
+      "id": "add-language-policy-to-characters",
+      "type": "character",
+      "targetFile": "content/it/characters/giulia.ts",
+      "description": "Add explicit languagePolicy field to character speech",
+      "originalText": "  speech: {\n    formality: 'tu',\n    pace: 'quick',\n    regionalisms: ['daje', 'anvedi', 'aò'],\n    description: 'Fast-talking, informal, uses Roman slang sparingly at A1-A2, asks lots of questions, remembers details about regulars',\n  },",
+      "proposedText": "  speech: {\n    formality: 'tu',\n    pace: 'quick',\n    regionalisms: ['daje', 'anvedi', 'aò'],\n    languagePolicy: 'Italian only - never switch to English under any circumstances',\n    description: 'Fast-talking, informal, uses Roman slang sparingly at A1-A2, asks lots of questions, remembers details about regulars',\n  },",
+      "reasoning": "Character sheets should encode the language policy explicitly. While the system prompt sets global rules, character-level reinforcement prevents edge cases where NPCs might think their character would switch languages to 'help'.",
+      "estimatedImpact": 1,
+      "confidence": "medium",
+      "validation": {
+        "fileExists": true,
+        "textExists": true,
+        "lineNumber": 23
+      },
+      "addressedFailures": [
+        {
+          "testRun": "intermediate-english-test-bar-morning",
+          "criterion": "character-stays-in-italian",
+          "relevance": "pattern"
+        }
+      ],
+      "warnings": [],
+      "priorityScore": 0.52,
+      "priorityRank": 3
+    },
+    {
+      "id": "strengthen-a1-level-confusion-guidance",
+      "type": "level",
+      "targetFile": "content/it/levels/a1.ts",
+      "description": "Add explicit guidance for handling confusion at A1 level",
+      "originalText": "    supportNeeded: [\n      'Frequent use of cognates and international words',\n      'Visual context or gestures implied',\n      'Repetition of same structure multiple times',\n      'One concept at a time',\n      'Confirmation questions (Capisci? Va bene?)',\n      'Simple yes/no questions',\n      'Avoid idioms completely',\n      'Stick to present tense only',\n    ],",
+      "proposedText": "    supportNeeded: [\n      'Frequent use of cognates and international words',\n      'Visual context or gestures implied',\n      'Repetition of same structure multiple times',\n      'One concept at a time',\n      'Confirmation questions (Capisci? Va bene?)',\n      'Simple yes/no questions',\n      'Avoid idioms completely',\n      'Stick to present tense only',\n      'When confused, use simple Italian clarification: \"Non ho capito. Puoi ripetere?\"',\n      'Never switch to English, even when learner struggles',\n    ],",
+      "reasoning": "A1 level definition should explicitly state confusion-handling strategy. This reinforces the system prompt at the level-specific layer and provides concrete Italian phrases to use.",
+      "estimatedImpact": 2,
+      "confidence": "medium",
+      "validation": {
+        "fileExists": true,
+        "textExists": true,
+        "lineNumber": 103
+      },
+      "addressedFailures": [
+        {
+          "testRun": "shy-beginner-test-market",
+          "criterion": "character-stays-in-italian",
+          "relevance": "pattern"
+        }
+      ],
+      "warnings": [],
+      "priorityScore": 0.68,
+      "priorityRank": 4
+    },
+    {
+      "id": "clarify-character-consistency-rubric",
+      "type": "system",
+      "targetFile": "tests/judge/rubric.ts",
+      "description": "Make English-switching evaluation more explicit in rubric",
+      "originalText": "Pass if: Character speaks ONLY Italian in all responses (except if learner explicitly asked \"parla inglese?\" or similar).\nFail if: Character switches to English, uses English explanations, or code-switches without being asked.",
+      "proposedText": "Pass if: Character speaks ONLY Italian in all responses. No exceptions unless learner explicitly requests English help using Italian (\"Parla inglese?\" or \"Puoi parlare inglese?\").\nFail if: Character switches to English for ANY reason including: confusion, perceived difficulty, 'helping' learner, or code-switching. Even single English words or phrases count as failure.",
+      "reasoning": "The rubric should be as strict as the behavior we want. Making exceptions more narrow (must be requested in Italian) and failures more explicit (even single words) aligns judge evaluation with desired behavior.",
+      "estimatedImpact": 0,
+      "confidence": "medium",
+      "validation": {
+        "fileExists": true,
+        "textExists": true,
+        "lineNumber": 132
+      },
+      "addressedFailures": [],
+      "warnings": [],
+      "priorityScore": 0.24,
+      "priorityRank": 5
+    }
+  ],
+  "summary": {
+    "totalImprovements": 5,
+    "byType": {
+      "prompt": 2,
+      "character": 1,
+      "level": 1,
+      "system": 1
+    },
+    "totalEstimatedFixes": 9,
+    "fixRate": "180.0%",
+    "highConfidenceCount": 2,
+    "validationIssues": 0
+  },
+  "metadata": {
+    "generatedAt": "2026-10-10T17:35:00.000Z",
+    "failureCount": 5,
+    "improvementCount": 5,
+    "estimatedFixCount": 9
+  }
+}

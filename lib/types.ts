@@ -271,6 +271,7 @@ export interface TurnOutput {
 
   hint: string | null;
   confused: boolean;
+  mood: 'warm' | 'amused' | 'busy' | 'curious';
 
   scene_over: boolean;
 

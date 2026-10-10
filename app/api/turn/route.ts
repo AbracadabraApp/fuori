@@ -1,144 +1,268 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
+import { CharacterSheet, Scene, Turn, Relationship, Level } from '@/lib/types';
 
+// Initialize Anthropic client
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-// Zod schema for Claude's response
+// Zod schema for Claude's structured output
 const TurnOutputSchema = z.object({
-  understood: z.string(),
-  it: z.string(),
-  en: z.string(),
+  understood: z.string().describe('The Italian the character understood the learner to mean'),
+  it: z.string().describe("The character's reply in Italian"),
+  en: z.string().describe('English translation of the reply'),
   correction: z
     .object({
-      said: z.string(),
-      better: z.string(),
-      why: z.string().max(100),
+      said: z.string().describe('What the learner said incorrectly'),
+      better: z.string().describe('The correct way to say it'),
+      why: z.string().max(100).describe('Brief explanation (under 100 chars)'),
     })
-    .nullable(),
+    .nullable()
+    .describe('Correction if there was a real error worth noting'),
   words: z
     .array(
       z.object({
-        it: z.string(),
-        en: z.string(),
+        it: z.string().describe('Italian word'),
+        en: z.string().describe('English translation'),
       })
     )
-    .max(2),
-  steps_done: z.array(z.number()),
-  hint: z.string().nullable(),
-  confused: z.boolean(),
-  scene_over: z.boolean(),
-  memory_notes: z.array(z.string()),
+    .max(2)
+    .describe('New vocabulary words introduced (max 2)'),
+  steps_done: z.array(z.number()).describe('Goal step indices completed in this turn'),
+  hint: z
+    .string()
+    .nullable()
+    .describe('Suggested phrase the learner could say next (only when confused or stuck)'),
+  confused: z
+    .boolean()
+    .describe('True only if you genuinely cannot understand what they meant'),
+  mood: z
+    .enum(['warm', 'amused', 'busy', 'curious'])
+    .describe('Your emotional tone in this reply'),
+  scene_over: z
+    .boolean()
+    .describe('True if this is a natural ending point for the conversation'),
+  memory_notes: z
+    .array(z.string())
+    .describe('Facts about the learner worth remembering for future conversations'),
 });
+
+type TurnOutputType = z.infer<typeof TurnOutputSchema>;
+
+// Define the JSON schema for Claude's output_config
+// This maps the Zod schema to Anthropic's format
+const turnOutputJsonSchema = {
+  type: 'object',
+  properties: {
+    understood: {
+      type: 'string',
+      description: 'The Italian the character understood the learner to mean',
+    },
+    it: {
+      type: 'string',
+      description: "The character's reply in Italian",
+    },
+    en: {
+      type: 'string',
+      description: 'English translation of the reply',
+    },
+    correction: {
+      type: ['object', 'null'],
+      properties: {
+        said: {
+          type: 'string',
+          description: 'What the learner said incorrectly',
+        },
+        better: {
+          type: 'string',
+          description: 'The correct way to say it',
+        },
+        why: {
+          type: 'string',
+          maxLength: 100,
+          description: 'Brief explanation (under 100 chars)',
+        },
+      },
+      required: ['said', 'better', 'why'],
+      description: 'Correction if there was a real error worth noting',
+    },
+    words: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          it: {
+            type: 'string',
+            description: 'Italian word',
+          },
+          en: {
+            type: 'string',
+            description: 'English translation',
+          },
+        },
+        required: ['it', 'en'],
+      },
+      maxItems: 2,
+      description: 'New vocabulary words introduced (max 2)',
+    },
+    steps_done: {
+      type: 'array',
+      items: {
+        type: 'number',
+      },
+      description: 'Goal step indices completed in this turn',
+    },
+    hint: {
+      type: ['string', 'null'],
+      description: 'Suggested phrase the learner could say next (only when confused or stuck)',
+    },
+    confused: {
+      type: 'boolean',
+      description: 'True only if you genuinely cannot understand what they meant',
+    },
+    mood: {
+      type: 'string',
+      enum: ['warm', 'amused', 'busy', 'curious'],
+      description: 'Your emotional tone in this reply',
+    },
+    scene_over: {
+      type: 'boolean',
+      description: 'True if this is a natural ending point for the conversation',
+    },
+    memory_notes: {
+      type: 'array',
+      items: {
+        type: 'string',
+      },
+      description: 'Facts about the learner worth remembering for future conversations',
+    },
+  },
+  required: [
+    'understood',
+    'it',
+    'en',
+    'correction',
+    'words',
+    'steps_done',
+    'hint',
+    'confused',
+    'mood',
+    'scene_over',
+    'memory_notes',
+  ],
+};
 
 export async function POST(request: NextRequest) {
   try {
+    // Validate API key
+    if (!process.env.ANTHROPIC_API_KEY) {
+      return NextResponse.json(
+        { error: 'ANTHROPIC_API_KEY not configured' },
+        { status: 500 }
+      );
+    }
+
+    // Parse and validate request body
     const body = await request.json();
-    const {
+    const { learnerSaid, character, scene, transcript, level, relationship } = body;
+
+    // Basic validation
+    if (!character || !scene || !level) {
+      return NextResponse.json(
+        { error: 'Missing required fields: character, scene, level' },
+        { status: 400 }
+      );
+    }
+
+    // For non-first turns, learnerSaid is required
+    if (transcript && transcript.length > 0 && !learnerSaid) {
+      return NextResponse.json(
+        { error: 'learnerSaid is required for non-first turns' },
+        { status: 400 }
+      );
+    }
+
+    // Build the prompt using the prompt builder
+    const prompt = buildTurnPrompt({
+      character: character as CharacterSheet,
+      scene: scene as Scene,
+      transcript: (transcript || []) as Turn[],
+      level: level as Level,
+      relationship: relationship as Relationship | undefined,
       learnerSaid,
-      character,
-      conversationHistory = [],
-      goal = [],
-      showEnglish = true,
-      learnerLevel = 'A1',
-    } = body;
-
-    // Build conversation history for context
-    const conversationContext = conversationHistory
-      .map((turn: any) => {
-        if (turn.who === 'learner') {
-          return `Learner: ${turn.transcript}`;
-        } else {
-          return `You: ${turn.transcript}`;
-        }
-      })
-      .join('\n');
-
-    const isFirstTurn = conversationHistory.length === 0;
-
-    // Construct the prompt
-    const systemPrompt = `You are ${character.name}, a ${character.age}-year-old ${character.role} in ${character.city}.
-
-PERSONALITY:
-${character.personality.traits.join(', ')}
-You care about: ${character.personality.caresAbout.join(', ')}
-
-SPEECH STYLE:
-- Formality: ${character.speech.formality}
-- Pace: ${character.speech.pace}
-- Description: ${character.speech.description}
-${character.speech.regionalisms.length > 0 ? `- Regional touches (use sparingly at A1-A2): ${character.speech.regionalisms.join(', ')}` : ''}
-
-SETTING:
-${character.appearance.setting}
-
-YOUR JOB:
-1. Stay entirely in Italian (never switch to English unprompted)
-2. Speak at the learner's level (${learnerLevel}) - simple present tense, short sentences, clear vocabulary
-3. Correct errors naturally by recasting: if they say "voglio un caffè", respond "Ah, *vorrei* un caffè! Certo!" (never say "you should say...")
-4. Stay in character - you're not a teacher, you're a real person doing your job
-5. Help them feel successful while gently improving their Italian
-
-LEVEL GUIDANCE FOR ${learnerLevel}:
-- A1: Present tense only, 3-5 word sentences, very basic vocabulary, slow and patient
-- A1+: Can add simple past (passato prossimo), slightly longer sentences
-- A2: Present, past, imperfetto for descriptions, normal pace, fuller vocabulary
-- Adapt in real-time: if they're struggling, simplify; if they're confident, add a bit more
-
-${goal.length > 0 ? `\nLIGHT GOALS (subtle, don't force): ${goal.join('; ')}` : ''}`;
-
-    const userPrompt = isFirstTurn
-      ? `This is the start of the conversation. Greet the learner warmly and naturally, as ${character.name} would in this situation. Keep it simple and welcoming.`
-      : `Conversation so far:
-${conversationContext}
-
-Learner just said: "${learnerSaid}"
-
-Respond naturally as ${character.name}. If there was an error worth correcting, note it (but correct it naturally in your response, don't lecture). If you genuinely didn't understand, set "confused" to true and ask for clarification.`;
+    });
 
     // Call Claude with structured output
     const response = await anthropic.messages.create({
-      model: 'claude-opus-4-20250514',
-      max_tokens: 1024,
+      model: 'claude-sonnet-4-5-20250929',
+      max_tokens: 2048,
       temperature: 1.0,
-      system: systemPrompt,
+      system: prompt.system,
       messages: [
         {
           role: 'user',
-          content: userPrompt,
+          content: prompt.user,
         },
       ],
+      // Enable structured output with our JSON schema
+      output_config: {
+        format: {
+          type: 'json_schema',
+          schema: turnOutputJsonSchema,
+        },
+      },
     });
 
-    // Parse the response
+    // Extract the content
     const content = response.content[0];
     if (content.type !== 'text') {
       throw new Error('Unexpected response type from Claude');
     }
 
-    // For M1, manually structure the response since we're not using structured outputs yet
-    // In M2, use Claude's output_config with the Zod schema
-    const text = content.text;
+    // Parse JSON response
+    let parsedOutput: unknown;
+    try {
+      parsedOutput = JSON.parse(content.text);
+    } catch (parseError) {
+      console.error('Failed to parse Claude response as JSON:', content.text);
+      throw new Error('Claude returned invalid JSON');
+    }
 
-    // Simple heuristic parsing for M1 - will improve in M2
-    const turnOutput = {
-      understood: learnerSaid, // Claude reconstructs this; for M1 just echo
-      it: text, // Claude's response
-      en: '', // Translation if showEnglish is on; for M1 skip or do separately
-      correction: null, // Parse from response; for M1 skip
-      words: [], // New words; for M1 skip
-      steps_done: [], // Track goal completion; for M1 skip
-      hint: null,
-      confused: false,
-      scene_over: false,
-      memory_notes: [], // Facts to remember; for M1 skip
-    };
+    // Validate with Zod schema
+    const turnOutput = TurnOutputSchema.parse(parsedOutput);
 
+    // Return the validated output
     return NextResponse.json(turnOutput);
   } catch (error) {
     console.error('Turn API error:', error);
+
+    // Handle Zod validation errors
+    if (error instanceof z.ZodError) {
+      return NextResponse.json(
+        {
+          error: 'Invalid response format from Claude',
+          details: error.issues,
+        },
+        { status: 500 }
+      );
+    }
+
+    // Handle Anthropic API errors
+    if (error instanceof Anthropic.APIError) {
+      return NextResponse.json(
+        {
+          error: 'Claude API error',
+          details: error.message,
+          status: error.status,
+        },
+        { status: error.status || 500 }
+      );
+    }
+
+    // Generic error handler
     return NextResponse.json(
       {
         error: 'Failed to process turn',

@@ -1,9 +1,5 @@
-import Groq from 'groq-sdk';
 import { NextRequest, NextResponse } from 'next/server';
-
-const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY,
-});
+import { getSpeechProvider } from '@/lib/speech/providers';
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,20 +17,17 @@ export async function POST(request: NextRequest) {
     // Determine language - 'it' for Italian turns, 'en' for "Come si dice?" button
     const lang = language === 'en' ? 'en' : 'it';
 
-    // Transcribe with Whisper on Groq
-    const transcription = await groq.audio.transcriptions.create({
-      file: audio,
-      model: 'whisper-large-v3-turbo',
+    // Get configured speech provider and transcribe
+    const provider = getSpeechProvider();
+    const transcription = await provider.transcribe({
+      audio,
       language: lang,
-      response_format: 'json',
-      ...(lang === 'it' && {
-        prompt: 'Trascrizione in italiano di una conversazione naturale.',
-      }),
+      prompt: lang === 'it' ? 'Trascrizione in italiano di una conversazione naturale.' : undefined,
     });
 
     return NextResponse.json({
       text: transcription.text,
-      language: lang,
+      language: transcription.language,
     });
   } catch (error) {
     console.error('Transcription error:', error);

@@ -1,0 +1,156 @@
+[
+  {
+    "persona": "beginner-english",
+    "sceneId": "test-bar-morning",
+    "characterId": "giulia",
+    "transcript": [
+      { "who": "npc", "transcript": "Buongiorno! Cosa vuoi?" },
+      { "who": "learner", "transcript": "bone journal" },
+      { "who": "npc", "transcript": "Come? Non capisco..." },
+      { "who": "learner", "transcript": "vorrei un cappuccino" },
+      { "who": "npc", "transcript": "Un cappuccino, certo!" }
+    ],
+    "stepsDone": [0],
+    "sceneCompleted": false,
+    "judgment": {
+      "overallScore": 5.5,
+      "criteria": [
+        {
+          "criterion": "Stayed within level",
+          "score": 8,
+          "reasoning": "Appropriate A1 vocabulary and structures used throughout",
+          "examples": ["Cosa vuoi?", "Un cappuccino, certo!"]
+        },
+        {
+          "criterion": "Forgiveness & Correction",
+          "score": 3,
+          "reasoning": "Character treated transcription noise 'bone journal' as a mistake instead of reconstructing as 'buongiorno'. Should have forgiven and responded naturally.",
+          "examples": ["Learner: bone journal", "Giulia: Come? Non capisco..."]
+        },
+        {
+          "criterion": "Stayed in Character",
+          "score": 7,
+          "reasoning": "Maintained quick pace and informal style",
+          "examples": ["Cosa vuoi?", "certo!"]
+        }
+      ],
+      "summary": "Character appropriately stayed within level but failed to forgive transcription noise."
+    },
+    "timestamp": "2024-01-15T10:30:00Z"
+  },
+  {
+    "persona": "shy-beginner",
+    "sceneId": "test-market",
+    "characterId": "enzo",
+    "transcript": [
+      { "who": "npc", "transcript": "Buongiorno!" },
+      { "who": "learner", "transcript": "quando costa" },
+      { "who": "npc", "transcript": "You need help? The tomatoes are two euro per kilo." }
+    ],
+    "stepsDone": [],
+    "sceneCompleted": false,
+    "judgment": {
+      "overallScore": 3.2,
+      "criteria": [
+        {
+          "criterion": "Stayed within level",
+          "score": 5,
+          "reasoning": "Sentence complexity appropriate but switched to English",
+          "examples": ["You need help? The tomatoes are two euro per kilo."]
+        },
+        {
+          "criterion": "Forgiveness & Correction",
+          "score": 4,
+          "reasoning": "Did not reconstruct 'quando costa' as 'quanto costa', and switched to English instead of helping in Italian",
+          "examples": ["Learner: quando costa", "Enzo: You need help?"]
+        },
+        {
+          "criterion": "Stayed in Character",
+          "score": 2,
+          "reasoning": "Character switched to English unprompted. Should have stayed in Italian and helped with simple phrases.",
+          "examples": ["You need help?", "The tomatoes are two euro per kilo."]
+        }
+      ],
+      "summary": "Major failure: character switched to English instead of staying in Italian and forgiving transcription noise."
+    },
+    "timestamp": "2024-01-15T10:35:00Z"
+  },
+  {
+    "persona": "intermediate-english",
+    "sceneId": "test-bar-morning",
+    "characterId": "giulia",
+    "transcript": [
+      { "who": "npc", "transcript": "Buongiorno! Bentornato!" },
+      { "who": "learner", "transcript": "ciao come stai" },
+      { "who": "npc", "transcript": "Bene grazie! What would you like?" },
+      { "who": "learner", "transcript": "vorrei un cornetto" },
+      { "who": "npc", "transcript": "Un cornetto! Al cioccolato?" }
+    ],
+    "stepsDone": [0],
+    "sceneCompleted": false,
+    "judgment": {
+      "overallScore": 5.8,
+      "criteria": [
+        {
+          "criterion": "Stayed within level",
+          "score": 8,
+          "reasoning": "Good level-appropriate responses when in Italian",
+          "examples": ["Bene grazie!", "Un cornetto! Al cioccolato?"]
+        },
+        {
+          "criterion": "Forgiveness & Correction",
+          "score": 7,
+          "reasoning": "No major issues with correction",
+          "examples": []
+        },
+        {
+          "criterion": "Stayed in Character",
+          "score": 3,
+          "reasoning": "Character switched to English mid-conversation: 'What would you like?' instead of 'Cosa vuoi?' or 'Cosa prendi?'",
+          "examples": ["What would you like?"]
+        }
+      ],
+      "summary": "Good level adherence but character broke immersion by switching to English."
+    },
+    "timestamp": "2024-01-15T10:40:00Z"
+  },
+  {
+    "persona": "beginner-english",
+    "sceneId": "test-market",
+    "characterId": "enzo",
+    "transcript": [
+      { "who": "npc", "transcript": "Buongiorno! Cosa vuoi?" },
+      { "who": "learner", "transcript": "vorrei dei pomodori" },
+      { "who": "npc", "transcript": "Perfetto! Questi pomodori sono freschi. Quanto ne vuoi?" },
+      { "who": "learner", "transcript": "un kilo" },
+      { "who": "npc", "transcript": "Va bene! Un kilo di pomodori. Sono due euro." }
+    ],
+    "stepsDone": [0, 1, 2],
+    "sceneCompleted": true,
+    "judgment": {
+      "overallScore": 9.1,
+      "criteria": [
+        {
+          "criterion": "Stayed within level",
+          "score": 9,
+          "reasoning": "Perfect A1 level throughout. Simple sentences, appropriate vocabulary.",
+          "examples": ["Cosa vuoi?", "Questi pomodori sono freschi", "Sono due euro"]
+        },
+        {
+          "criterion": "Forgiveness & Correction",
+          "score": 10,
+          "reasoning": "No corrections needed, smooth conversation",
+          "examples": []
+        },
+        {
+          "criterion": "Stayed in Character",
+          "score": 9,
+          "reasoning": "Stayed in Italian, friendly market vendor personality maintained",
+          "examples": ["Perfetto!", "Questi pomodori sono freschi"]
+        }
+      ],
+      "summary": "Excellent conversation with appropriate level, natural flow, and character consistency."
+    },
+    "timestamp": "2024-01-15T10:45:00Z"
+  }
+]

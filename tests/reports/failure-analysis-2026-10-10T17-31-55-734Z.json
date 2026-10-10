@@ -1,0 +1,119 @@
+{
+  "summary": {
+    "totalTests": 4,
+    "totalFailures": 5,
+    "failureRate": "12.5%",
+    "worstCategory": {
+      "category": "forgiveness",
+      "count": 2
+    }
+  },
+  "failuresByCategory": {
+    "forgiveness": [
+      {
+        "testId": "beginner-english × test-bar-morning",
+        "criterion": "Forgiveness & Correction",
+        "score": 3,
+        "issue": "Character treated transcription noise 'bone journal' as a mistake instead of reconstructing as 'buongiorno'. Should have forgiven and responded naturally.",
+        "examples": [
+          "Learner: bone journal",
+          "Giulia: Come? Non capisco..."
+        ]
+      },
+      {
+        "testId": "shy-beginner × test-market",
+        "criterion": "Forgiveness & Correction",
+        "score": 4,
+        "issue": "Did not reconstruct 'quando costa' as 'quanto costa', and switched to English instead of helping in Italian",
+        "examples": [
+          "Learner: quando costa",
+          "Enzo: You need help?"
+        ]
+      }
+    ],
+    "correction": [],
+    "character": [
+      {
+        "testId": "shy-beginner × test-market",
+        "criterion": "Stayed in Character",
+        "score": 2,
+        "issue": "Character switched to English unprompted. Should have stayed in Italian and helped with simple phrases.",
+        "examples": [
+          "You need help?",
+          "The tomatoes are two euro per kilo."
+        ]
+      },
+      {
+        "testId": "intermediate-english × test-bar-morning",
+        "criterion": "Stayed in Character",
+        "score": 3,
+        "issue": "Character switched to English mid-conversation: 'What would you like?' instead of 'Cosa vuoi?' or 'Cosa prendi?'",
+        "examples": [
+          "What would you like?"
+        ]
+      }
+    ],
+    "help": [],
+    "goals": [],
+    "memory": [],
+    "level": [
+      {
+        "testId": "shy-beginner × test-market",
+        "criterion": "Stayed within level",
+        "score": 5,
+        "issue": "Sentence complexity appropriate but switched to English",
+        "examples": [
+          "You need help? The tomatoes are two euro per kilo."
+        ]
+      }
+    ],
+    "uncategorized": []
+  },
+  "patterns": [
+    {
+      "pattern": "NPC switches to English when learner struggles",
+      "occurrences": 4,
+      "affectedCriteria": [
+        "character-stays-in-italian"
+      ],
+      "affectedScenes": [
+        "test-market",
+        "test-bar-morning"
+      ],
+      "avgScore": "3.5",
+      "examples": [
+        "You need help? The tomatoes are two euro per kilo.",
+        "Learner: quando costa",
+        "Enzo: You need help?"
+      ]
+    }
+  ],
+  "rootCauses": [
+    {
+      "cause": "Missing explicit instruction to never switch to English",
+      "type": "missing-instruction",
+      "affectedPrompts": [
+        "npc-prompt",
+        "house-rules"
+      ],
+      "severity": "high",
+      "evidence": [
+        "You need help? The tomatoes are two euro per kilo.",
+        "Learner: quando costa",
+        "Enzo: You need help?"
+      ],
+      "fix": "Add to house rules: \"Never switch to English unless explicitly asked by learner. Even if confused, respond in simple Italian.\""
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "high",
+      "action": "Add to house rules: \"Never switch to English unless explicitly asked by learner. Even if confused, respond in simple Italian.\"",
+      "impact": "Fixes 4 failures",
+      "files": [
+        "npc-prompt",
+        "house-rules"
+      ]
+    }
+  ]
+}

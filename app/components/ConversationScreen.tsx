@@ -1,12 +1,16 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { CharacterSheet, Scene, Turn, Level, TurnOutput } from '@/lib/types';
 
 interface ConversationScreenProps {
   characterName: string;
   characterRole?: string;
   characterPortrait?: string;
   cityName: string;
+  character?: CharacterSheet;
+  scene?: Scene;
+  level?: Level;
   onBack: () => void;
 }
 
@@ -15,21 +19,175 @@ export function ConversationScreen({
   characterRole,
   characterPortrait,
   cityName,
+  character,
+  scene,
+  level = 'A1',
   onBack,
 }: ConversationScreenProps) {
   const [isRecording, setIsRecording] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
+  const [transcript, setTranscript] = useState<Turn[]>([]);
+  const [currentTranscription, setCurrentTranscription] = useState<string | null>(null);
+  const [currentResponse, setCurrentResponse] = useState<string | null>(null);
+  const [currentCorrection, setCurrentCorrection] = useState<TurnOutput['correction'] | null>(null);
+  const [lastAudioUrl, setLastAudioUrl] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [stepsDone, setStepsDone] = useState<number[]>([]);
+
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // Test scene and character - TODO: Replace with actual data passed via props
+  const testCharacter: CharacterSheet = character || {
+    id: 'giulia',
+    name: 'Giulia',
+    age: 32,
+    role: 'barista',
+    city: 'Roma',
+    origin: 'anchor',
+    placeId: 'bar-trastevere-giulia',
+    personality: {
+      traits: ['quick', 'funny', 'warm', 'curious'],
+      caresAbout: ['making perfect coffee', 'neighborhood gossip'],
+    },
+    speech: {
+      formality: 'tu',
+      pace: 'quick',
+      regionalisms: ['daje'],
+      description: 'Fast-talking, informal Roman barista',
+    },
+    appearance: {
+      description: 'Italian woman in her early 30s, dark curly hair',
+      setting: 'Behind the counter of a small Roman coffee bar',
+    },
+    portrait: {
+      kind: 'placeholder',
+    },
+  };
+
+  const testScene: Scene = scene || {
+    id: 'test-scene-1',
+    characterId: 'giulia',
+    setting: {
+      place: 'Bar in Trastevere',
+      timeOfDay: 'morning',
+      description: 'A cozy neighborhood coffee bar with morning light streaming through the windows',
+    },
+    goal: ['Greet Giulia', 'Order a coffee', 'Try a cornetto'],
+    opening: {
+      guide: 'Greet the learner warmly as a new customer, ask what they would like',
+      fallback: {
+        it: 'Ciao! Benvenuto! Cosa vuoi?',
+        en: 'Hi! Welcome! What would you like?',
+      },
+    },
+  };
 
   const startConversation = async () => {
     setHasStarted(true);
-    // TODO: Get opening line from character
-    // TODO: Play audio
+    setError(null);
+
+    try {
+      // Get opening line from character
+      const response = await fetch('/api/turn', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          character: testCharacter,
+          scene: testScene,
+          level,
+          transcript: [],
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to get opening line');
+      }
+
+      const turnOutput: TurnOutput = await response.json();
+
+      // Add to transcript
+      const npcTurn: Turn = {
+        who: 'npc',
+        transcript: turnOutput.it,
+        translation: turnOutput.en,
+      };
+      setTranscript([npcTurn]);
+      setCurrentResponse(turnOutput.it);
+
+      // Play audio
+      await playResponse(turnOutput.it, testCharacter.id);
+    } catch (err) {
+      console.error('Error starting conversation:', err);
+      setError('Failed to start conversation. Please try again.');
+    }
+  };
+
+  const playResponse = async (text: string, characterId: string) => {
+    try {
+      const response = await fetch('/api/speak', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          text,
+          language: 'it',
+          characterId,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to synthesize speech');
+      }
+
+      const contentType = response.headers.get('Content-Type');
+
+      if (contentType?.includes('application/json')) {
+        // Browser speech fallback
+        const data = await response.json();
+        if (data.useBrowserSpeech) {
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = 'it-IT';
+          utterance.rate = data.speed || 1.0;
+          speechSynthesis.speak(utterance);
+        }
+      } else {
+        // Audio stream
+        const audioBlob = await response.blob();
+        const audioUrl = URL.createObjectURL(audioBlob);
+        setLastAudioUrl(audioUrl);
+
+        // Play audio
+        const audio = new Audio(audioUrl);
+        audioRef.current = audio;
+        await audio.play();
+      }
+    } catch (err) {
+      console.error('Error playing audio:', err);
+      // Fall back to browser speech
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'it-IT';
+      speechSynthesis.speak(utterance);
+    }
+  };
+
+  const replayLastAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+    } else if (lastAudioUrl) {
+      const audio = new Audio(lastAudioUrl);
+      audioRef.current = audio;
+      audio.play();
+    }
   };
 
   const startRecording = async () => {
+    setError(null);
+    setCurrentTranscription(null);
+    setCurrentCorrection(null);
+
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const mimeType = MediaRecorder.isTypeSupported('audio/webm')
@@ -48,7 +206,7 @@ export function ConversationScreen({
 
       mediaRecorder.onstop = async () => {
         const audioBlob = new Blob(audioChunksRef.current, { type: mimeType });
-        await processAudio(audioBlob, mimeType);
+        await processAudio(audioBlob);
         stream.getTracks().forEach((track) => track.stop());
       };
 
@@ -56,6 +214,7 @@ export function ConversationScreen({
       setIsRecording(true);
     } catch (error) {
       console.error('Error accessing microphone:', error);
+      setError('Could not access microphone. Please check permissions.');
     }
   };
 
@@ -74,10 +233,79 @@ export function ConversationScreen({
     }
   };
 
-  const processAudio = async (audioBlob: Blob, mimeType: string) => {
+  const processAudio = async (audioBlob: Blob) => {
     setIsProcessing(true);
-    // TODO: Send to API, get response, play audio
-    setIsProcessing(false);
+    setError(null);
+
+    try {
+      // Step 1: Transcribe audio
+      const transcribeFormData = new FormData();
+      transcribeFormData.append('audio', audioBlob);
+      transcribeFormData.append('language', 'it');
+
+      const transcribeResponse = await fetch('/api/transcribe', {
+        method: 'POST',
+        body: transcribeFormData,
+      });
+
+      if (!transcribeResponse.ok) {
+        throw new Error('Failed to transcribe audio');
+      }
+
+      const transcribeData = await transcribeResponse.json();
+      const transcription = transcribeData.text;
+
+      // Show transcription to user
+      setCurrentTranscription(transcription);
+
+      // Step 2: Get character response
+      const turnResponse = await fetch('/api/turn', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          learnerSaid: transcription,
+          character: testCharacter,
+          scene: testScene,
+          level,
+          transcript,
+        }),
+      });
+
+      if (!turnResponse.ok) {
+        throw new Error('Failed to get character response');
+      }
+
+      const turnOutput: TurnOutput = await turnResponse.json();
+
+      // Add turns to transcript
+      const learnerTurn: Turn = {
+        who: 'learner',
+        transcript: transcription,
+        understood: turnOutput.understood,
+      };
+      const npcTurn: Turn = {
+        who: 'npc',
+        transcript: turnOutput.it,
+        translation: turnOutput.en,
+      };
+
+      setTranscript((prev) => [...prev, learnerTurn, npcTurn]);
+      setCurrentResponse(turnOutput.it);
+      setCurrentCorrection(turnOutput.correction);
+
+      // Track goal completion
+      if (turnOutput.steps_done.length > 0) {
+        setStepsDone((prev) => [...new Set([...prev, ...turnOutput.steps_done])]);
+      }
+
+      // Step 3: Play character's response
+      await playResponse(turnOutput.it, testCharacter.id);
+    } catch (err) {
+      console.error('Error processing audio:', err);
+      setError('Failed to process your message. Please try again.');
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   return (
@@ -119,6 +347,7 @@ export function ConversationScreen({
           justifyContent: 'flex-start',
           padding: '20px',
           gap: '16px',
+          overflowY: 'auto',
         }}
       >
         {characterPortrait ? (
@@ -153,6 +382,93 @@ export function ConversationScreen({
             <span style={{ fontWeight: '300' }}>, {characterRole.charAt(0).toUpperCase() + characterRole.slice(1)}</span>
           )}
         </div>
+
+        {/* Current response text */}
+        {currentResponse && (
+          <div
+            style={{
+              marginTop: '16px',
+              padding: '16px',
+              backgroundColor: '#fff',
+              borderRadius: '12px',
+              fontSize: '18px',
+              color: '#333',
+              maxWidth: '100%',
+            }}
+          >
+            <div style={{ fontStyle: 'italic', marginBottom: '8px' }}>{currentResponse}</div>
+            {lastAudioUrl && (
+              <button
+                onClick={replayLastAudio}
+                style={{
+                  marginTop: '8px',
+                  padding: '8px 16px',
+                  fontSize: '14px',
+                  backgroundColor: '#e8d5c4',
+                  border: 'none',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                }}
+              >
+                Ascolta di nuovo
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* Current transcription */}
+        {currentTranscription && (
+          <div
+            style={{
+              marginTop: '8px',
+              padding: '12px',
+              backgroundColor: '#e8f4f0',
+              borderRadius: '8px',
+              fontSize: '14px',
+              color: '#2c5f4f',
+              maxWidth: '100%',
+            }}
+          >
+            <strong>You said:</strong> {currentTranscription}
+          </div>
+        )}
+
+        {/* Correction display */}
+        {currentCorrection && (
+          <div
+            style={{
+              marginTop: '8px',
+              padding: '12px',
+              backgroundColor: '#fff3cd',
+              borderRadius: '8px',
+              fontSize: '14px',
+              color: '#856404',
+              maxWidth: '100%',
+            }}
+          >
+            <div><strong>Try:</strong> {currentCorrection.better}</div>
+            <div style={{ fontSize: '12px', marginTop: '4px', opacity: 0.8 }}>
+              {currentCorrection.why}
+            </div>
+          </div>
+        )}
+
+        {/* Error display */}
+        {error && (
+          <div
+            style={{
+              marginTop: '8px',
+              padding: '12px',
+              backgroundColor: '#f8d7da',
+              borderRadius: '8px',
+              fontSize: '14px',
+              color: '#721c24',
+              maxWidth: '100%',
+            }}
+          >
+            {error}
+          </div>
+        )}
       </div>
 
       {/* Mic button area */}

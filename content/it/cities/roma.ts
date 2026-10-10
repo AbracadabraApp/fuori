@@ -14,6 +14,16 @@ export const roma: CityPantry = {
   ],
 
   places: [
+    // Apartment - where you're staying
+    {
+      id: 'apartment-trastevere-rita',
+      name: 'Your Apartment',
+      kind: 'apartment',
+      neighbourhood: 'Trastevere',
+      real: false,
+      characterId: 'rita',
+    },
+
     // Bars - multiple across neighborhoods
     {
       id: 'bar-trastevere-giulia',
@@ -21,6 +31,7 @@ export const roma: CityPantry = {
       kind: 'bar',
       neighbourhood: 'Trastevere',
       real: false,
+      characterId: 'giulia',
     },
     {
       id: 'bar-monti-corner',

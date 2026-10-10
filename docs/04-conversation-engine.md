@@ -184,22 +184,37 @@ The learner's words arrive through speech recognition, so:
 3. **Ask for clarification** - "Scusa, non ho capito. Cosa vuoi?" (when genuinely confused)
 4. **Stay in the scene** - Never break the fourth wall, never lecture
 
-**M1: Pure immersion**
-- Corrections tracked in backend but not displayed
-- No UI interrupts conversation flow
-- Characters recast naturally during conversation
-- All reflection/teaching moves to M2
+**M1: Pure immersion** - Test the core hypothesis: can conversation alone drive language learning?
 
-**M2: Adds reflection layer**
-- **Diario:** UI shows corrections as quiet notes after conversations
-- **Magda:** Explicit teaching mode
-  - She's the only character who can teach or explain
-  - Messages you when mistakes pile up: "Ho notato che dici 'voglio' invece di 'vorrei'..."
-  - Weekly lessons that synthesize patterns
-  - Bridge to real lessons with your actual teacher
-- **"Try tomorrow" goals:** Track repeat errors → integrated into future scenes
+What's in M1:
+- Cities → Places → People → Voice conversations
+- Character memory (they remember you across visits)
+- Natural help through Italian (ripeti, lentamente, parla inglese)
+- Settings button (exists, minimal functionality)
+- No transcript visible by default (optional setting to show Whisper output)
+- No corrections display during or after conversations
+- No vocabulary tracking UI
+- No goals checklist
+- No Diario
+- No Magda
 
-**The rule: Immersion during conversation, reflection afterward.**
+Backend still tracks:
+- All transcripts (for M2/debugging)
+- Corrections (stored, not shown)
+- Words encountered (tracked, not displayed)
+- Patterns and mistakes (analyzed, not surfaced)
+- Character memory (used in conversation)
+
+**M2: Adds reflection/teaching layer** - If pure immersion needs support
+
+Possible M2 additions (to be evaluated based on M1 learnings):
+- **Magda:** Omniscient tutor who reviews your practice (see Magda section below)
+- **Transcript review:** See past conversations with corrections
+- **Export:** Send transcripts + corrections to your real teacher
+- **Settings expansion:** Show transcripts, allow more dialect, etc.
+- **Diario:** Questionable - backend logs may be sufficient
+
+**The rule: Immersion during conversation, reflection afterward (if needed).**
 
 ## Open conversations
 
@@ -210,16 +225,132 @@ The evening suggestion is usually someone new with no goal checklist. To keep it
 - **Help** is always available through the "Come si dice…?" button. The character may also simplify or switch topic if the learner is stuck twice in a row.
 - At the end, the character produces a one-line note for the diario.
 
-## Magda (tutor mode) - M2
+## Magda (tutor mode) - M2+
 
-**Not included in M1.** Magda is part of the M2 reflection layer.
+**Not included in M1.** Magda is part of the M2 reflection layer, added only if M1 immersion needs pedagogical support.
 
-Magda runs with different rules from every other character:
-- She **may teach**: explain grammar briefly, in English when it helps, and run short spoken exercises ("Dimmi tre cose che hai fatto ieri").
-- Her input is the learner's mistakes, quaderno and level profile, not a place.
-- **Triggers** (checked at the end of each day): a mistake repeated three or more times, evidence the learner is near the next level step, or a hard situation coming up (moving city, a doctor). She sends a short message; tapping it opens a lesson.
-- **Weekly lesson:** the week's top mistakes, one new structure, and a "try this" that the director then works into the next days' suggestions.
-- **Summary for real lessons:** a one-page export of recurring mistakes, new words and transcripts worth discussing.
+### Who Magda Is
+
+**Your omniscient Italian tutor** who reviews all your conversations with characters and reaches out when you need teaching.
+
+**Not:**
+- A character in Italy
+- Available on-demand as a help button
+- Part of the immersive world
+
+**Instead:**
+- Your personal tutor who has access to all your backend logs
+- Proactive: she messages you when she spots teaching opportunities
+- Explicit: can teach grammar, explain in English, run drills
+- Separate: clear boundary between immersion (characters) and teaching (Magda)
+
+### How She Works
+
+**Outbound only** - She messages you, you don't message her.
+
+**She reaches out when:**
+- Pattern detected: same mistake 3+ times
+- Milestone reached: "Hai usato il passato prossimo 10 volte oggi!"
+- Pre-emptive help: "Domani vai a Firenze? Let's practice buying train tickets."
+- Weekly check-in: Reviews the week's conversations
+- Level progression: "Sei pronto per subjunctive?"
+
+**UI experience:**
+- Notification badge appears: "Magda ha un messaggio"
+- Tap to hear her voice lesson
+- After lesson: she's done, notification cleared
+- Back to immersion
+
+**You cannot:**
+- Message her during conversations
+- Use her as on-demand help ("come si dice...?")
+- Interrupt immersion to ask Magda
+
+**Why:** Keeps you practicing with characters, prevents Magda from becoming a crutch, maintains separation between immersion and teaching.
+
+### Pedagogical Modes She Can Deploy
+
+Magda adapts her teaching approach to what you need:
+
+**1. Explanation (English + Italian)**
+- Explains concept in English: "In polite requests, Italians use *vorrei* (I would like), not *voglio* (I want)..."
+- Examples in Italian: "Vorrei un caffè. Vorrei andare al mercato."
+- Asks for practice: "Dimmi tre cose che vorresti fare oggi"
+
+**2. Vocabulary Review (Flashcard-style)**
+- "Hai imparato cinque parole nuove al mercato. Rivediamole!"
+- Shows/says word in Italian, you respond
+- Spaced repetition based on performance
+- Uses words in sentences
+
+**3. Targeted Practice Scenarios**
+- Short role-play for specific situations
+- Magda plays ticket clerk, waiter, etc.
+- More structured than immersive conversations
+- Prepares you for real encounters
+
+**4. Pronunciation Practice**
+- "Let's work on double consonants. Listen: *anno* vs *ano*"
+- Listen-and-repeat exercises
+- Minimal pairs
+- Feedback on specific sounds
+
+**5. Grammar Mini-Lessons**
+- Brief explanation of new structure
+- Example sentences
+- Guided practice
+- "Try using this with Rita tomorrow!"
+
+**6. Conversation Review**
+- "Ho sentito la tua conversazione con Marco. Hai fatto benissimo!"
+- Reviews what went well
+- Suggests one thing to try next time
+- Like a coach debrief
+
+### What She Has Access To
+
+**Omniscient tutor perspective:**
+- All conversation transcripts with all characters
+- Pattern detection (recurring mistakes across conversations)
+- Vocabulary tracking (encountered, retained, forgotten)
+- CEFR level estimation
+- Your goals and preferences
+
+**Can see:**
+- "You've said 'voglio' instead of 'vorrei' 8 times this week"
+- "You used passato prossimo successfully with Giulia but struggled with Marco"
+- "You've encountered 'cornetto' 5 times but never used it yourself"
+
+**Uses this to:**
+- Target lessons to actual patterns, not generic curriculum
+- Time interventions when pedagogically useful
+- Adapt difficulty and approach
+- Celebrate progress authentically
+
+### Future Expansions (M3+)
+
+Additional modes Magda could deploy:
+- **Written exercises:** "Scrivi tre frasi usando *vorrei*"
+- **Reading practice:** Provides texts at your level with questions
+- **Cultural explanations:** Why Italians say things certain ways
+- **Progress insights:** "You've learned 50 words this month!"
+- **Export for real teachers:** Send data to your actual tutor
+
+### Design Principles
+
+**Clean separation:**
+- Characters = immersion, never teach
+- Magda = teaching, never pretends to be immersive
+
+**Learner control:**
+- Can ignore Magda's messages
+- Can focus purely on immersion if preferred
+- Magda is supplementary, not required
+
+**Evidence-based:**
+- Only add Magda if M1 testing shows need
+- Her interventions based on actual patterns, not guesses
+- Frequency tunable (daily vs weekly)
 
 ## Memory
 
