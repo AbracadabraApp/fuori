@@ -318,6 +318,7 @@ export const bologna: CityPantry = {
     {
       id: 'marco-terzi',
       name: 'Marco Terzi',
+      gender: 'm',
       age: 52,
       role: 'coffee roaster',
       placeId: 'caffe-terzi',
@@ -327,6 +328,7 @@ export const bologna: CityPantry = {
     {
       id: 'giulia-morandi',
       name: 'Giulia Morandi',
+      gender: 'f',
       age: 28,
       role: 'barista',
       placeId: 'bar-senza-nome',
@@ -336,6 +338,7 @@ export const bologna: CityPantry = {
     {
       id: 'elena-quadri',
       name: 'Elena Quadri',
+      gender: 'f',
       age: 45,
       role: 'pastry chef',
       placeId: 'pasticceria-regina',
@@ -345,6 +348,7 @@ export const bologna: CityPantry = {
     {
       id: 'roberto-brisa',
       name: 'Roberto Brisa',
+      gender: 'm',
       age: 58,
       role: 'baker',
       placeId: 'forno-brisa',
@@ -354,6 +358,7 @@ export const bologna: CityPantry = {
     {
       id: 'simona-atti',
       name: 'Simona Atti',
+      gender: 'f',
       age: 36,
       role: 'baker',
       placeId: 'panificio-atti',
@@ -363,6 +368,7 @@ export const bologna: CityPantry = {
     {
       id: 'paolo-venturi',
       name: 'Paolo Venturi',
+      gender: 'm',
       age: 62,
       role: 'mortadella vendor',
       placeId: 'mercato-mezzo',
@@ -372,6 +378,7 @@ export const bologna: CityPantry = {
     {
       id: 'franca-colombi',
       name: 'Franca Colombi',
+      gender: 'f',
       age: 55,
       role: 'produce vendor',
       placeId: 'mercato-erbe',
@@ -381,6 +388,7 @@ export const bologna: CityPantry = {
     {
       id: 'antonio-bassi',
       name: 'Antonio Bassi',
+      gender: 'm',
       age: 48,
       role: 'cheese maker',
       placeId: 'mercatino-santo-stefano',
@@ -390,15 +398,17 @@ export const bologna: CityPantry = {
     {
       id: 'chef-matteo-ricci',
       name: 'Matteo Ricci',
+      gender: 'm',
       age: 44,
       role: 'chef',
       placeId: 'ristorante-pappagallo',
       personality: ['refined', 'demanding', 'creative'],
-      portraitPrompt: 'Pen and ink portrait on white paper of distinguished chef with sharp features, chef whites impeccable, tasting spoon in hand, intense focused expression, minimal burgundy watercolor accent, fine detailed work, capturing excellence of high-end chef',
+      portraitPrompt: 'Pen and ink portrait on white paper of distinguished chef with sharp features, chef whites impeccable, tasting spoon in hand, intense focused expression, minimal burgundy watercolor accent, fine detailed work, capturing excellence of high-end chef. The subject is a man.',
     },
     {
       id: 'nello-ferrari',
       name: 'Nello Ferrari',
+      gender: 'm',
       age: 71,
       role: 'owner',
       placeId: 'ristorante-da-nello',
@@ -408,6 +418,7 @@ export const bologna: CityPantry = {
     {
       id: 'margherita-rossi',
       name: 'Margherita Rossi',
+      gender: 'f',
       age: 67,
       role: 'cook',
       placeId: 'trattoria-meloncello',
@@ -417,6 +428,7 @@ export const bologna: CityPantry = {
     {
       id: 'luca-montanari',
       name: 'Luca Montanari',
+      gender: 'm',
       age: 39,
       role: 'owner',
       placeId: 'osteria-bottega',
@@ -426,6 +438,7 @@ export const bologna: CityPantry = {
     {
       id: 'professor-alberti',
       name: 'Professor Alberti',
+      gender: 'm',
       age: 68,
       role: 'historian',
       placeId: 'due-torri',
@@ -435,6 +448,7 @@ export const bologna: CityPantry = {
     {
       id: 'don-giuseppe',
       name: 'Don Giuseppe',
+      gender: 'm',
       age: 59,
       role: 'priest',
       placeId: 'santo-stefano',
@@ -444,6 +458,7 @@ export const bologna: CityPantry = {
     {
       id: 'maria-custode',
       name: 'Maria Custode',
+      gender: 'f',
       age: 64,
       role: 'church custodian',
       placeId: 'san-petronio',
@@ -453,6 +468,7 @@ export const bologna: CityPantry = {
     {
       id: 'giorgio-giardiniere',
       name: 'Giorgio Bellini',
+      gender: 'm',
       age: 53,
       role: 'gardener',
       placeId: 'giardini-margherita',
@@ -462,6 +478,7 @@ export const bologna: CityPantry = {
     {
       id: 'street-musician-franco',
       name: 'Franco Melodia',
+      gender: 'm',
       age: 42,
       role: 'street musician',
       placeId: 'piazza-maggiore',
@@ -471,6 +488,7 @@ export const bologna: CityPantry = {
     {
       id: 'student-clara',
       name: 'Clara Martinelli',
+      gender: 'f',
       age: 22,
       role: 'student',
       placeId: 'piazza-verdi',
@@ -480,6 +498,7 @@ export const bologna: CityPantry = {
     {
       id: 'sommelier-andrea',
       name: 'Andrea Sarti',
+      gender: 'm',
       age: 37,
       role: 'sommelier',
       placeId: 'enoteca-italiana',
@@ -489,6 +508,7 @@ export const bologna: CityPantry = {
     {
       id: 'jazz-owner-stefano',
       name: 'Stefano Bentivoglio',
+      gender: 'm',
       age: 56,
       role: 'owner',
       placeId: 'cantina-bentivoglio',
@@ -498,6 +518,7 @@ export const bologna: CityPantry = {
     {
       id: 'anna-nanni',
       name: 'Anna Nanni',
+      gender: 'f',
       age: 33,
       role: 'bookseller',
       placeId: 'libreria-nanni',
@@ -507,6 +528,7 @@ export const bologna: CityPantry = {
     {
       id: 'bruno-simoni',
       name: 'Bruno Simoni',
+      gender: 'm',
       age: 61,
       role: 'salumiere',
       placeId: 'salumeria-simoni',
@@ -516,6 +538,7 @@ export const bologna: CityPantry = {
     {
       id: 'carla-gentile',
       name: 'Carla Gentile',
+      gender: 'f',
       age: 50,
       role: 'shop keeper',
       placeId: 'bottega-portici',
@@ -525,6 +548,7 @@ export const bologna: CityPantry = {
     {
       id: 'michele-gelataio',
       name: 'Michele Vestrucci',
+      gender: 'm',
       age: 31,
       role: 'gelato maker',
       placeId: 'cremeria-funivia',
@@ -534,6 +558,7 @@ export const bologna: CityPantry = {
     {
       id: 'dottoressa-lombardi',
       name: 'Dottoressa Lombardi',
+      gender: 'f',
       age: 47,
       role: 'pharmacist',
       placeId: 'farmacia-comunale',
@@ -543,6 +568,7 @@ export const bologna: CityPantry = {
     {
       id: 'conductor-davide',
       name: 'Davide Treni',
+      gender: 'm',
       age: 44,
       role: 'train conductor',
       placeId: 'stazione-centrale',
@@ -552,6 +578,7 @@ export const bologna: CityPantry = {
     {
       id: 'pilgrim-angela',
       name: 'Angela Peregrino',
+      gender: 'f',
       age: 58,
       role: 'pilgrim guide',
       placeId: 'portici-san-luca',
@@ -561,6 +588,7 @@ export const bologna: CityPantry = {
     {
       id: 'nonna-rina',
       name: 'Nonna Rina',
+      gender: 'f',
       age: 74,
       role: 'sfoglina',
       placeId: 'sfoglia-rina',
@@ -570,15 +598,17 @@ export const bologna: CityPantry = {
     {
       id: 'librarian-dottore-bianchi',
       name: 'Dottore Bianchi',
+      gender: 'm',
       age: 65,
       role: 'librarian',
       placeId: 'archiginnasio',
       personality: ['erudite', 'meticulous', 'dignified'],
-      portraitPrompt: 'Pen and ink portrait on white paper of distinguished scholar with gray hair, glasses, formal academic attire, holding ancient book, intellectual authoritative expression, minimal sepia watercolor wash, refined scholarly line work, capturing academic tradition',
+      portraitPrompt: 'Pen and ink portrait on white paper of distinguished scholar with gray hair, glasses, formal academic attire, holding ancient book, intellectual authoritative expression, minimal sepia watercolor wash, refined scholarly line work, capturing academic tradition. The subject is a man.',
     },
     {
       id: 'curator-valentina',
       name: 'Valentina Morandi',
+      gender: 'f',
       age: 40,
       role: 'curator',
       placeId: 'museo-morandi',

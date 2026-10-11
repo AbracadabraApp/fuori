@@ -8,6 +8,7 @@
  *   text: string;
  *   language?: string; // defaults to 'it'
  *   characterId?: string; // for voice mapping
+ *   gender?: 'f' | 'm'; // picks a male or female voice when the character has no fixed one
  *   voice?: string; // explicit voice ID override
  *   speed?: number; // 0.5 to 2.0
  * }
@@ -19,12 +20,13 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getVoiceProvider } from '@/lib/voice/providers';
+import { elevenLabsVoiceFor } from '@/content/it/voices';
 import { logServerError } from '@/lib/server-log';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { text, language = 'it', characterId, voice, speed = 1.0 } = body;
+    const { text, language = 'it', characterId, gender, voice, speed = 1.0 } = body;
 
     // Validate input
     if (!text || typeof text !== 'string') {
@@ -39,11 +41,15 @@ export async function POST(request: NextRequest) {
     const provider = getVoiceProvider();
 
     // Synthesize
+    // Voice: explicit override, else the character's fixed or gender-matched voice
+    const chosenVoice =
+      voice ?? (provider.name === 'elevenlabs' ? elevenLabsVoiceFor(characterId, gender) : undefined);
+
     const result = await provider.synthesize({
       text,
       language,
       characterId,
-      voice,
+      voice: chosenVoice,
       speed,
     });
 

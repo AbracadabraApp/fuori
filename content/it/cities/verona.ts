@@ -289,6 +289,7 @@ export const verona: CityPantry = {
     {
       id: 'stefano-wallner',
       name: 'Stefano Wallner',
+      gender: 'm',
       age: 52,
       role: 'proprietario',
       placeId: 'caffe-wallner',
@@ -298,6 +299,7 @@ export const verona: CityPantry = {
     {
       id: 'lucia-scalzi',
       name: 'Lucia Scalzi',
+      gender: 'f',
       age: 38,
       role: 'barista',
       placeId: 'bar-ai-scalzi',
@@ -307,6 +309,7 @@ export const verona: CityPantry = {
     {
       id: 'giovanni-dante',
       name: 'Giovanni Dante',
+      gender: 'm',
       age: 61,
       role: 'proprietario',
       placeId: 'caffe-dante',
@@ -316,6 +319,7 @@ export const verona: CityPantry = {
     {
       id: 'alberta-mariga',
       name: 'Alberta Mariga',
+      gender: 'f',
       age: 45,
       role: 'fornaia',
       placeId: 'panificio-mariga',
@@ -325,6 +329,7 @@ export const verona: CityPantry = {
     {
       id: 'fabio-cordioli',
       name: 'Fabio Cordioli',
+      gender: 'm',
       age: 34,
       role: 'pasticciere',
       placeId: 'pasticceria-cordioli',
@@ -334,6 +339,7 @@ export const verona: CityPantry = {
     {
       id: 'marco-verdure',
       name: 'Marco Verdure',
+      gender: 'm',
       age: 48,
       role: 'fruttivendolo',
       placeId: 'mercato-piazza-erbe',
@@ -343,6 +349,7 @@ export const verona: CityPantry = {
     {
       id: 'rosa-mercato',
       name: 'Rosa Mercato',
+      gender: 'f',
       age: 67,
       role: 'venditrice',
       placeId: 'mercato-stadio',
@@ -352,6 +359,7 @@ export const verona: CityPantry = {
     {
       id: 'enrico-saporiti',
       name: 'Enrico Saporiti',
+      gender: 'm',
       age: 56,
       role: 'proprietario',
       placeId: 'bottega-saporiti',
@@ -361,6 +369,7 @@ export const verona: CityPantry = {
     {
       id: 'pietro-apostoli',
       name: 'Pietro Apostoli',
+      gender: 'm',
       age: 43,
       role: 'sommelier',
       placeId: 'ristorante-dodici-apostoli',
@@ -370,6 +379,7 @@ export const verona: CityPantry = {
     {
       id: 'angela-ponte',
       name: 'Angela Ponte',
+      gender: 'f',
       age: 58,
       role: 'cuoca',
       placeId: 'trattoria-ponte-pietra',
@@ -379,6 +389,7 @@ export const verona: CityPantry = {
     {
       id: 'massimo-sottoriva',
       name: 'Massimo Sottoriva',
+      gender: 'm',
       age: 39,
       role: 'oste',
       placeId: 'osteria-sottoriva',
@@ -388,6 +399,7 @@ export const verona: CityPantry = {
     {
       id: 'tommaso-vesuvio',
       name: 'Tommaso Vesuvio',
+      gender: 'm',
       age: 31,
       role: 'pizzaiolo',
       placeId: 'pizzeria-vesuvio',
@@ -397,6 +409,7 @@ export const verona: CityPantry = {
     {
       id: 'silvia-arena',
       name: 'Silvia Arena',
+      gender: 'f',
       age: 29,
       role: 'guida turistica',
       placeId: 'arena-verona',
@@ -406,6 +419,7 @@ export const verona: CityPantry = {
     {
       id: 'padre-matteo',
       name: 'Padre Matteo',
+      gender: 'm',
       age: 64,
       role: 'sacerdote',
       placeId: 'basilica-san-zeno',
@@ -415,6 +429,7 @@ export const verona: CityPantry = {
     {
       id: 'valentina-giulietta',
       name: 'Valentina Giulietta',
+      gender: 'f',
       age: 26,
       role: 'custode',
       placeId: 'casa-giulietta',
@@ -424,6 +439,7 @@ export const verona: CityPantry = {
     {
       id: 'carlo-giusti',
       name: 'Carlo Giusti',
+      gender: 'm',
       age: 71,
       role: 'giardiniere',
       placeId: 'giardino-giusti',
@@ -433,6 +449,7 @@ export const verona: CityPantry = {
     {
       id: 'francesco-bra',
       name: 'Francesco Bra',
+      gender: 'm',
       age: 42,
       role: 'musicista di strada',
       placeId: 'piazza-bra',
@@ -442,6 +459,7 @@ export const verona: CityPantry = {
     {
       id: 'alessandra-signori',
       name: 'Alessandra Signori',
+      gender: 'f',
       age: 36,
       role: 'architetta',
       placeId: 'piazza-signori',
@@ -451,6 +469,7 @@ export const verona: CityPantry = {
     {
       id: 'riccardo-cangrande',
       name: 'Riccardo Cangrande',
+      gender: 'm',
       age: 49,
       role: 'sommelier',
       placeId: 'enoteca-cangrande',
@@ -460,6 +479,7 @@ export const verona: CityPantry = {
     {
       id: 'greta-vino',
       name: 'Greta Vino',
+      gender: 'f',
       age: 33,
       role: 'proprietaria',
       placeId: 'osteria-vino-vino',
@@ -469,6 +489,7 @@ export const verona: CityPantry = {
     {
       id: 'beatrice-libri',
       name: 'Beatrice Libri',
+      gender: 'f',
       age: 54,
       role: 'librai',
       placeId: 'libreria-rinascimento',
@@ -478,6 +499,7 @@ export const verona: CityPantry = {
     {
       id: 'dottoressa-marta',
       name: 'Dottoressa Marta Fontana',
+      gender: 'f',
       age: 41,
       role: 'farmacista',
       placeId: 'farmacia-centrale',
@@ -487,6 +509,7 @@ export const verona: CityPantry = {
     {
       id: 'bruno-albertini',
       name: 'Bruno Albertini',
+      gender: 'm',
       age: 63,
       role: 'salumiere',
       placeId: 'salumeria-albertini',
@@ -496,6 +519,7 @@ export const verona: CityPantry = {
     {
       id: 'irene-perlini',
       name: 'Irene Perlini',
+      gender: 'f',
       age: 28,
       role: 'pasticciera',
       placeId: 'pasticceria-perlini',
@@ -505,6 +529,7 @@ export const verona: CityPantry = {
     {
       id: 'luca-gelato',
       name: 'Luca Gelato',
+      gender: 'm',
       age: 37,
       role: 'gelatiere',
       placeId: 'gelateria-ponte-pietra',
@@ -514,6 +539,7 @@ export const verona: CityPantry = {
     {
       id: 'paolo-stazione',
       name: 'Paolo Stazione',
+      gender: 'm',
       age: 55,
       role: 'capostazione',
       placeId: 'stazione-porta-nuova',
@@ -523,6 +549,7 @@ export const verona: CityPantry = {
     {
       id: 'emilia-teatro',
       name: 'Emilia Teatro',
+      gender: 'f',
       age: 44,
       role: 'regista',
       placeId: 'teatro-romano',
@@ -532,6 +559,7 @@ export const verona: CityPantry = {
     {
       id: 'davide-ponte',
       name: 'Davide Ponte',
+      gender: 'm',
       age: 69,
       role: 'storico locale',
       placeId: 'ponte-pietra',
@@ -541,6 +569,7 @@ export const verona: CityPantry = {
     {
       id: 'ornella-acetaia',
       name: 'Ornella Acetaia',
+      gender: 'f',
       age: 51,
       role: 'proprietaria',
       placeId: 'acetaia-veneta',

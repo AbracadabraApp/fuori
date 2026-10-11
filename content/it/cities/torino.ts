@@ -322,6 +322,7 @@ export const torino: CityPantry = {
     {
       id: 'michele-barista',
       name: 'Michele Ferrero',
+      gender: 'm',
       age: 42,
       role: 'barista',
       placeId: 'caffe-san-carlo',
@@ -331,6 +332,7 @@ export const torino: CityPantry = {
     {
       id: 'franca-proprietaria',
       name: 'Franca Cavallo',
+      gender: 'f',
       age: 68,
       role: 'proprietaria',
       placeId: 'bicerin-dal-1763',
@@ -340,6 +342,7 @@ export const torino: CityPantry = {
     {
       id: 'roberto-cameriere',
       name: 'Roberto Allemandi',
+      gender: 'm',
       age: 35,
       role: 'cameriere',
       placeId: 'caffe-mulassano',
@@ -349,6 +352,7 @@ export const torino: CityPantry = {
     {
       id: 'giuseppe-fornaio',
       name: 'Giuseppe Rosso',
+      gender: 'm',
       age: 51,
       role: 'fornaio',
       placeId: 'panetteria-borgo-antico',
@@ -358,15 +362,17 @@ export const torino: CityPantry = {
     {
       id: 'claudia-pasticciera',
       name: 'Claudia Stratta',
+      gender: 'f',
       age: 29,
       role: 'pasticciera',
       placeId: 'pasticceria-stratta',
       personality: ['artistic', 'perfectionist', 'sweet'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young pastry chef with hair pulled back, wearing a pristine white chef coat. Focused expression, gentle features. Minimal pink watercolor wash on cheeks. Delicate lines, refined presence.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a young pastry chef with hair pulled back, wearing a pristine white chef coat. Focused expression, gentle features. Minimal pink watercolor wash on cheeks. Delicate lines, refined presence. The subject is a woman.',
     },
     {
       id: 'anna-fruttivendola',
       name: 'Anna Bianchi',
+      gender: 'f',
       age: 45,
       role: 'fruttivendola',
       placeId: 'mercato-porta-palazzo',
@@ -376,6 +382,7 @@ export const torino: CityPantry = {
     {
       id: 'paolo-venditore',
       name: 'Paolo Marchetti',
+      gender: 'm',
       age: 58,
       role: 'cheese vendor',
       placeId: 'mercato-crocetta',
@@ -385,6 +392,7 @@ export const torino: CityPantry = {
     {
       id: 'davide-commesso',
       name: 'Davide Olivetti',
+      gender: 'm',
       age: 26,
       role: 'commesso',
       placeId: 'eataly-torino',
@@ -394,6 +402,7 @@ export const torino: CityPantry = {
     {
       id: 'stefano-maitre',
       name: 'Stefano Del Cambio',
+      gender: 'm',
       age: 52,
       role: 'maître',
       placeId: 'ristorante-del-cambio',
@@ -403,6 +412,7 @@ export const torino: CityPantry = {
     {
       id: 'giulia-chef',
       name: 'Giulia Bergamasco',
+      gender: 'f',
       age: 38,
       role: 'chef',
       placeId: 'ristorante-consorzio',
@@ -412,6 +422,7 @@ export const torino: CityPantry = {
     {
       id: 'mario-oste',
       name: 'Mario Gastaldi',
+      gender: 'm',
       age: 62,
       role: 'oste',
       placeId: 'trattoria-valenza',
@@ -421,6 +432,7 @@ export const torino: CityPantry = {
     {
       id: 'bruno-cuoco',
       name: 'Bruno Malvezzi',
+      gender: 'm',
       age: 47,
       role: 'cuoco',
       placeId: 'osteria-antiche-sere',
@@ -430,6 +442,7 @@ export const torino: CityPantry = {
     {
       id: 'elena-guida',
       name: 'Elena Agnelli',
+      gender: 'f',
       age: 31,
       role: 'tour guide',
       placeId: 'mole-antonelliana',
@@ -439,6 +452,7 @@ export const torino: CityPantry = {
     {
       id: 'padre-luca',
       name: 'Padre Luca Molinari',
+      gender: 'm',
       age: 55,
       role: 'priest',
       placeId: 'duomo-torino',
@@ -448,6 +462,7 @@ export const torino: CityPantry = {
     {
       id: 'isabella-curatrice',
       name: 'Isabella Savoia',
+      gender: 'f',
       age: 44,
       role: 'curator',
       placeId: 'palazzo-reale',
@@ -457,6 +472,7 @@ export const torino: CityPantry = {
     {
       id: 'giacomo-giardiniere',
       name: 'Giacomo Valentino',
+      gender: 'm',
       age: 59,
       role: 'gardener',
       placeId: 'parco-valentino',
@@ -466,6 +482,7 @@ export const torino: CityPantry = {
     {
       id: 'luca-musicista',
       name: 'Luca Monferrato',
+      gender: 'm',
       age: 33,
       role: 'street musician',
       placeId: 'piazza-castello',
@@ -475,15 +492,17 @@ export const torino: CityPantry = {
     {
       id: 'martina-artista',
       name: 'Martina Fenoglio',
+      gender: 'f',
       age: 27,
       role: 'street artist',
       placeId: 'piazza-vittorio-veneto',
       personality: ['creative', 'independent', 'observant'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young artist with paint-stained fingers and creative style, wearing casual layers. Observant eyes, artistic expression. Minimal colorful watercolor splashes. Loose lines, creative energy.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a young artist with paint-stained fingers and creative style, wearing casual layers. Observant eyes, artistic expression. Minimal colorful watercolor splashes. Loose lines, creative energy. The subject is a woman.',
     },
     {
       id: 'simone-sommelier',
       name: 'Simone Barolo',
+      gender: 'm',
       age: 41,
       role: 'sommelier',
       placeId: 'enoteca-bacco',
@@ -493,15 +512,17 @@ export const torino: CityPantry = {
     {
       id: 'valeria-bartender',
       name: 'Valeria Morra',
+      gender: 'f',
       age: 29,
       role: 'bartender',
       placeId: 'aperitivo-cult',
       personality: ['social', 'trendy', 'mixology-skilled'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a stylish young bartender with modern haircut, wearing fashionable attire and bar apron. Friendly smile, confident presence. Minimal orange watercolor accent. Contemporary lines, urban energy.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a stylish young bartender with modern haircut, wearing fashionable attire and bar apron. Friendly smile, confident presence. Minimal orange watercolor accent. Contemporary lines, urban energy. The subject is a woman.',
     },
     {
       id: 'teresa-libraio',
       name: 'Teresa Pavese',
+      gender: 'f',
       age: 48,
       role: 'bookseller',
       placeId: 'libreria-luxemburg',
@@ -511,6 +532,7 @@ export const torino: CityPantry = {
     {
       id: 'dottoressa-carla',
       name: 'Dott.ssa Carla Boero',
+      gender: 'f',
       age: 56,
       role: 'pharmacist',
       placeId: 'farmacia-centrale',
@@ -520,6 +542,7 @@ export const torino: CityPantry = {
     {
       id: 'federico-bigliettaio',
       name: 'Federico Costa',
+      gender: 'm',
       age: 39,
       role: 'ticket agent',
       placeId: 'porta-nuova',
@@ -529,6 +552,7 @@ export const torino: CityPantry = {
     {
       id: 'marco-cioccolataio',
       name: 'Marco Gobino',
+      gender: 'm',
       age: 36,
       role: 'chocolatier',
       placeId: 'guido-gobino',
@@ -538,6 +562,7 @@ export const torino: CityPantry = {
     {
       id: 'antonio-esperto',
       name: 'Antonio Carpano',
+      gender: 'm',
       age: 64,
       role: 'vermouth expert',
       placeId: 'casa-del-vermouth',
@@ -547,6 +572,7 @@ export const torino: CityPantry = {
     {
       id: 'lorenzo-curatore',
       name: 'Lorenzo Bertone',
+      gender: 'm',
       age: 43,
       role: 'automotive curator',
       placeId: 'museo-automobile',
@@ -556,15 +582,17 @@ export const torino: CityPantry = {
     {
       id: 'sofia-gelataia',
       name: 'Sofia Pepino',
+      gender: 'f',
       age: 24,
       role: 'gelataia',
       placeId: 'gelateria-pepino',
       personality: ['cheerful', 'sweet', 'traditional'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a bright young gelato maker with a sunny smile, wearing vintage-style uniform and cap. Cheerful expression, welcoming energy. Minimal pastel watercolor wash. Light lines, joyful presence.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a bright young gelato maker with a sunny smile, wearing vintage-style uniform and cap. Cheerful expression, welcoming energy. Minimal pastel watercolor wash. Light lines, joyful presence. The subject is a woman.',
     },
     {
       id: 'alessandro-venditore',
       name: 'Alessandro Gallo',
+      gender: 'm',
       age: 32,
       role: 'food vendor',
       placeId: 'mercato-centrale-torino',
@@ -574,6 +602,7 @@ export const torino: CityPantry = {
     {
       id: 'benedetta-barista',
       name: 'Benedetta Fiorio',
+      gender: 'f',
       age: 37,
       role: 'barista',
       placeId: 'caffe-fiorio',
@@ -583,6 +612,7 @@ export const torino: CityPantry = {
     {
       id: 'riccardo-antiquario',
       name: 'Riccardo Balon',
+      gender: 'm',
       age: 61,
       role: 'antique dealer',
       placeId: 'balon-flea-market',
@@ -592,6 +622,7 @@ export const torino: CityPantry = {
     {
       id: 'matteo-proprietario',
       name: 'Matteo Rabezzana',
+      gender: 'm',
       age: 50,
       role: 'owner',
       placeId: 'osteria-rabezzana',

@@ -20,6 +20,7 @@ export function cityCharacterToSheet(
   return {
     id: person.id,
     name: person.name,
+    gender: person.gender,
     age: person.age,
     role: person.role,
     city: city.name,

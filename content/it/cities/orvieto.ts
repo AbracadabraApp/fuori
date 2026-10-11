@@ -352,6 +352,7 @@ export const orvieto: CityPantry = {
     {
       id: 'paolo-montanucci',
       name: 'Paolo Montanucci',
+      gender: 'm',
       age: 58,
       role: 'barista',
       placeId: 'caffe-montanucci',
@@ -361,6 +362,7 @@ export const orvieto: CityPantry = {
     {
       id: 'giulia-ferretti',
       name: 'Giulia Ferretti',
+      gender: 'f',
       age: 29,
       role: 'barista',
       placeId: 'bar-duomo',
@@ -370,6 +372,7 @@ export const orvieto: CityPantry = {
     {
       id: 'marco-bianchi',
       name: 'Marco Bianchi',
+      gender: 'm',
       age: 67,
       role: 'proprietor',
       placeId: 'caffe-sant-angelo',
@@ -379,6 +382,7 @@ export const orvieto: CityPantry = {
     {
       id: 'alessia-romani',
       name: 'Alessia Romani',
+      gender: 'f',
       age: 35,
       role: 'barista',
       placeId: 'bar-centrale',
@@ -388,6 +392,7 @@ export const orvieto: CityPantry = {
     {
       id: 'roberto-tosi',
       name: 'Roberto Tosi',
+      gender: 'm',
       age: 42,
       role: 'owner',
       placeId: 'caffe-della-piazza',
@@ -397,6 +402,7 @@ export const orvieto: CityPantry = {
     {
       id: 'anna-grossi',
       name: 'Anna Grossi',
+      gender: 'f',
       age: 51,
       role: 'barista',
       placeId: 'bar-del-corso',
@@ -406,6 +412,7 @@ export const orvieto: CityPantry = {
     {
       id: 'stefano-marini',
       name: 'Stefano Marini',
+      gender: 'm',
       age: 33,
       role: 'barista',
       placeId: 'caffe-cavour',
@@ -415,6 +422,7 @@ export const orvieto: CityPantry = {
     {
       id: 'lorenzo-sabbatini',
       name: 'Lorenzo Sabbatini',
+      gender: 'm',
       age: 44,
       role: 'owner',
       placeId: 'bar-della-rupe',
@@ -424,6 +432,7 @@ export const orvieto: CityPantry = {
     {
       id: 'francesca-mieli',
       name: 'Francesca Mieli',
+      gender: 'f',
       age: 38,
       role: 'owner',
       placeId: 'bar-sant-antonio',
@@ -433,15 +442,17 @@ export const orvieto: CityPantry = {
     {
       id: 'adriano-conti',
       name: 'Adriano Conti',
+      gender: 'm',
       age: 55,
       role: 'pastry chef',
       placeId: 'pasticceria-adriano',
       personality: ['precise', 'artistic', 'demanding'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished pastry chef with serious expression, chef whites, focused intense eyes, minimal vanilla watercolor wash, artistic temperament visible, detailed precise features showing concentration',
+      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished pastry chef with serious expression, chef whites, focused intense eyes, minimal vanilla watercolor wash, artistic temperament visible, detailed precise features showing concentration. The subject is a man.',
     },
     {
       id: 'elena-puccini',
       name: 'Elena Puccini',
+      gender: 'f',
       age: 47,
       role: 'baker',
       placeId: 'forno-del-duomo',
@@ -451,6 +462,7 @@ export const orvieto: CityPantry = {
     {
       id: 'simone-neri',
       name: 'Simone Neri',
+      gender: 'm',
       age: 31,
       role: 'baker',
       placeId: 'panificio-moderna',
@@ -460,6 +472,7 @@ export const orvieto: CityPantry = {
     {
       id: 'carla-montanari',
       name: 'Carla Montanari',
+      gender: 'f',
       age: 63,
       role: 'pastry maker',
       placeId: 'pasticceria-montanari',
@@ -469,6 +482,7 @@ export const orvieto: CityPantry = {
     {
       id: 'giovanni-perugini',
       name: 'Giovanni Perugini',
+      gender: 'm',
       age: 59,
       role: 'master baker',
       placeId: 'forno-san-giovenale',
@@ -478,6 +492,7 @@ export const orvieto: CityPantry = {
     {
       id: 'valentina-rossi',
       name: 'Valentina Rossi',
+      gender: 'f',
       age: 27,
       role: 'pastry chef',
       placeId: 'dolci-tentazioni',
@@ -487,6 +502,7 @@ export const orvieto: CityPantry = {
     {
       id: 'mario-benedetti',
       name: 'Mario Benedetti',
+      gender: 'm',
       age: 71,
       role: 'produce vendor',
       placeId: 'mercato-coperto',
@@ -496,6 +512,7 @@ export const orvieto: CityPantry = {
     {
       id: 'teresa-campagnoli',
       name: 'Teresa Campagnoli',
+      gender: 'f',
       age: 54,
       role: 'farmer',
       placeId: 'mercato-contadino',
@@ -505,6 +522,7 @@ export const orvieto: CityPantry = {
     {
       id: 'federico-lunardi',
       name: 'Federico Lunardi',
+      gender: 'm',
       age: 45,
       role: 'shop owner',
       placeId: 'bottega-sapori-umbri',
@@ -514,15 +532,17 @@ export const orvieto: CityPantry = {
     {
       id: 'alberto-santini',
       name: 'Alberto Santini',
+      gender: 'm',
       age: 52,
       role: 'chef',
       placeId: 'ristorante-la-grotta',
       personality: ['refined', 'creative', 'ambitious'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with chef whites, salt-and-pepper hair, intense creative gaze, minimal gray watercolor wash, culinary mastery suggested, detailed refined features',
+      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with chef whites, salt-and-pepper hair, intense creative gaze, minimal gray watercolor wash, culinary mastery suggested, detailed refined features. The subject is a man.',
     },
     {
       id: 'claudia-tiberi',
       name: 'Claudia Tiberi',
+      gender: 'f',
       age: 39,
       role: 'restaurant owner',
       placeId: 'ristorante-zeppelin',
@@ -532,6 +552,7 @@ export const orvieto: CityPantry = {
     {
       id: 'bruno-matteini',
       name: 'Bruno Matteini',
+      gender: 'm',
       age: 68,
       role: 'chef-owner',
       placeId: 'trattoria-del-orso',
@@ -541,6 +562,7 @@ export const orvieto: CityPantry = {
     {
       id: 'luca-salvatori',
       name: 'Luca Salvatori',
+      gender: 'm',
       age: 41,
       role: 'chef',
       placeId: 'osteria-la-madia',
@@ -550,6 +572,7 @@ export const orvieto: CityPantry = {
     {
       id: 'carlo-fabrizi',
       name: 'Carlo Fabrizi',
+      gender: 'm',
       age: 36,
       role: 'pizzaiolo',
       placeId: 'pizzeria-charlie',
@@ -559,6 +582,7 @@ export const orvieto: CityPantry = {
     {
       id: 'don-michele-volpi',
       name: 'Don Michele Volpi',
+      gender: 'm',
       age: 64,
       role: 'priest',
       placeId: 'duomo-orvieto',
@@ -568,6 +592,7 @@ export const orvieto: CityPantry = {
     {
       id: 'matteo-galeotti',
       name: 'Matteo Galeotti',
+      gender: 'm',
       age: 28,
       role: 'tour guide',
       placeId: 'pozzo-san-patrizio',
@@ -577,6 +602,7 @@ export const orvieto: CityPantry = {
     {
       id: 'suor-beatrice',
       name: 'Suor Beatrice',
+      gender: 'f',
       age: 72,
       role: 'nun',
       placeId: 'chiesa-san-giovenale',
@@ -586,6 +612,7 @@ export const orvieto: CityPantry = {
     {
       id: 'gino-marziani',
       name: 'Gino Marziani',
+      gender: 'm',
       age: 76,
       role: 'gardener',
       placeId: 'giardini-pubblici',
@@ -595,6 +622,7 @@ export const orvieto: CityPantry = {
     {
       id: 'lucia-moretti',
       name: 'Lucia Moretti',
+      gender: 'f',
       age: 43,
       role: 'street artist',
       placeId: 'piazza-del-popolo',
@@ -604,6 +632,7 @@ export const orvieto: CityPantry = {
     {
       id: 'davide-piccioni',
       name: 'Davide Piccioni',
+      gender: 'm',
       age: 37,
       role: 'sommelier',
       placeId: 'enoteca-al-pozzo',
@@ -613,6 +642,7 @@ export const orvieto: CityPantry = {
     {
       id: 'elisa-bruni',
       name: 'Elisa Bruni',
+      gender: 'f',
       age: 32,
       role: 'bookseller',
       placeId: 'libreria-del-duomo',
@@ -622,6 +652,7 @@ export const orvieto: CityPantry = {
     {
       id: 'tommaso-fiorentini',
       name: 'Tommaso Fiorentini',
+      gender: 'm',
       age: 49,
       role: 'wine bar owner',
       placeId: 'vineria-del-corso',
@@ -631,6 +662,7 @@ export const orvieto: CityPantry = {
     {
       id: 'dottoressa-martini',
       name: 'Dottoressa Martini',
+      gender: 'f',
       age: 56,
       role: 'pharmacist',
       placeId: 'farmacia-centrale',
@@ -640,6 +672,7 @@ export const orvieto: CityPantry = {
     {
       id: 'giuseppe-roscini',
       name: 'Giuseppe Roscini',
+      gender: 'm',
       age: 61,
       role: 'funicular operator',
       placeId: 'funicolare',
@@ -649,15 +682,17 @@ export const orvieto: CityPantry = {
     {
       id: 'pietro-michelangeli',
       name: 'Pietro Michelangeli',
+      gender: 'm',
       age: 58,
       role: 'master ceramist',
       placeId: 'bottega-michelangeli',
       personality: ['artistic', 'traditional', 'meticulous'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an artisan with clay on hands, focused intense expression, artist smock, minimal cobalt watercolor wash, centuries of tradition, detailed skilled craftsman features',
+      portraitPrompt: 'Pen and ink portrait on white paper of an artisan with clay on hands, focused intense expression, artist smock, minimal cobalt watercolor wash, centuries of tradition, detailed skilled craftsman features. The subject is a man.',
     },
     {
       id: 'maurizio-foresi',
       name: 'Maurizio Foresi',
+      gender: 'm',
       age: 53,
       role: 'winemaker',
       placeId: 'cantina-foresi',
@@ -667,6 +702,7 @@ export const orvieto: CityPantry = {
     {
       id: 'irene-vitali',
       name: 'Irene Vitali',
+      gender: 'f',
       age: 34,
       role: 'theater director',
       placeId: 'teatro-mancinelli',

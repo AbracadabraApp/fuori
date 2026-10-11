@@ -357,6 +357,7 @@ export const napoli: CityPantry = {
     {
       id: 'carmine-russo',
       name: 'Carmine Russo',
+      gender: 'm',
       age: 58,
       role: 'barista',
       placeId: 'bar-nilo',
@@ -366,6 +367,7 @@ export const napoli: CityPantry = {
     {
       id: 'sofia-esposito',
       name: 'Sofia Esposito',
+      gender: 'f',
       age: 32,
       role: 'waitress',
       placeId: 'caffe-gambrinus',
@@ -375,6 +377,7 @@ export const napoli: CityPantry = {
     {
       id: 'gennaro-de-luca',
       name: 'Gennaro De Luca',
+      gender: 'm',
       age: 45,
       role: 'barista',
       placeId: 'bar-mexico',
@@ -384,6 +387,7 @@ export const napoli: CityPantry = {
     {
       id: 'mimmo-verde',
       name: 'Mimmo Verde',
+      gender: 'm',
       age: 67,
       role: 'owner',
       placeId: 'caffe-del-professore',
@@ -393,6 +397,7 @@ export const napoli: CityPantry = {
     {
       id: 'lucia-romano',
       name: 'Lucia Romano',
+      gender: 'f',
       age: 29,
       role: 'barista',
       placeId: 'bar-vomero-alto',
@@ -402,6 +407,7 @@ export const napoli: CityPantry = {
     {
       id: 'antonio-casale',
       name: 'Antonio Casale',
+      gender: 'm',
       age: 52,
       role: 'barista',
       placeId: 'bar-epoca',
@@ -411,6 +417,7 @@ export const napoli: CityPantry = {
     {
       id: 'rosa-marino',
       name: 'Rosa Marino',
+      gender: 'f',
       age: 41,
       role: 'owner',
       placeId: 'caffe-toledo',
@@ -420,6 +427,7 @@ export const napoli: CityPantry = {
     {
       id: 'francesco-sorrentino',
       name: 'Francesco Sorrentino',
+      gender: 'm',
       age: 35,
       role: 'bartender',
       placeId: 'bar-chiaia-sera',
@@ -429,6 +437,7 @@ export const napoli: CityPantry = {
     {
       id: 'elena-vitale',
       name: 'Elena Vitale',
+      gender: 'f',
       age: 27,
       role: 'barista',
       placeId: 'bar-piedigrotta',
@@ -438,6 +447,7 @@ export const napoli: CityPantry = {
     {
       id: 'ciro-poppella',
       name: 'Ciro Poppella',
+      gender: 'm',
       age: 44,
       role: 'pastry chef',
       placeId: 'pasticceria-poppella',
@@ -447,6 +457,7 @@ export const napoli: CityPantry = {
     {
       id: 'maria-attanasio',
       name: 'Maria Attanasio',
+      gender: 'f',
       age: 39,
       role: 'baker',
       placeId: 'forno-attanasio',
@@ -456,6 +467,7 @@ export const napoli: CityPantry = {
     {
       id: 'giuseppe-capparelli',
       name: 'Giuseppe Capparelli',
+      gender: 'm',
       age: 55,
       role: 'pastry master',
       placeId: 'pasticceria-capparelli',
@@ -465,6 +477,7 @@ export const napoli: CityPantry = {
     {
       id: 'anna-greco',
       name: 'Anna Greco',
+      gender: 'f',
       age: 48,
       role: 'baker',
       placeId: 'panificio-vico',
@@ -474,6 +487,7 @@ export const napoli: CityPantry = {
     {
       id: 'salvatore-di-maio',
       name: 'Salvatore Di Maio',
+      gender: 'm',
       age: 61,
       role: 'produce vendor',
       placeId: 'mercato-pignasecca',
@@ -483,6 +497,7 @@ export const napoli: CityPantry = {
     {
       id: 'raffaele-bruno',
       name: 'Raffaele Bruno',
+      gender: 'm',
       age: 53,
       role: 'fish vendor',
       placeId: 'mercato-antignano',
@@ -492,6 +507,7 @@ export const napoli: CityPantry = {
     {
       id: 'teresa-gargiulo',
       name: 'Teresa Gargiulo',
+      gender: 'f',
       age: 57,
       role: 'market vendor',
       placeId: 'mercato-porta-nolana',
@@ -501,6 +517,7 @@ export const napoli: CityPantry = {
     {
       id: 'gino-sorbillo',
       name: 'Gino Sorbillo',
+      gender: 'm',
       age: 49,
       role: 'pizzaiolo',
       placeId: 'pizzeria-sorbillo',
@@ -510,6 +527,7 @@ export const napoli: CityPantry = {
     {
       id: 'paolo-condurro',
       name: 'Paolo Condurro',
+      gender: 'm',
       age: 42,
       role: 'pizzaiolo',
       placeId: 'pizzeria-michele',
@@ -519,6 +537,7 @@ export const napoli: CityPantry = {
     {
       id: 'antonio-starita',
       name: 'Antonio Starita',
+      gender: 'm',
       age: 68,
       role: 'master pizzaiolo',
       placeId: 'pizzeria-starita',
@@ -528,6 +547,7 @@ export const napoli: CityPantry = {
     {
       id: 'nennella-russo',
       name: 'Nennella Russo',
+      gender: 'f',
       age: 73,
       role: 'owner',
       placeId: 'trattoria-nennella',
@@ -537,15 +557,17 @@ export const napoli: CityPantry = {
     {
       id: 'luca-petrucci',
       name: 'Luca Petrucci',
+      gender: 'm',
       age: 41,
       role: 'chef',
       placeId: 'ristorante-palazzo-petrucci',
       personality: ['innovative', 'precise', 'respectful of tradition'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a refined chef with intense gaze, clean chef whites, and artistic sensibility. Minimal watercolor wash in sophisticated grey. Contemporary, elegant linework.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a refined chef with intense gaze, clean chef whites, and artistic sensibility. Minimal watercolor wash in sophisticated grey. Contemporary, elegant linework. The subject is a man.',
     },
     {
       id: 'vincenzo-ricci',
       name: 'Vincenzo Ricci',
+      gender: 'm',
       age: 56,
       role: 'salumiere',
       placeId: 'salumeria-upnea',
@@ -555,6 +577,7 @@ export const napoli: CityPantry = {
     {
       id: 'peppe-conte',
       name: 'Peppe Conte',
+      gender: 'm',
       age: 34,
       role: 'friggitore',
       placeId: 'friggitoria-vico',
@@ -564,6 +587,7 @@ export const napoli: CityPantry = {
     {
       id: 'padre-domenico',
       name: 'Padre Domenico',
+      gender: 'm',
       age: 64,
       role: 'priest',
       placeId: 'duomo-napoli',
@@ -573,6 +597,7 @@ export const napoli: CityPantry = {
     {
       id: 'marco-ferri',
       name: 'Marco Ferri',
+      gender: 'm',
       age: 38,
       role: 'tour guide',
       placeId: 'castel-ovo',
@@ -582,6 +607,7 @@ export const napoli: CityPantry = {
     {
       id: 'giulia-martino',
       name: 'Giulia Martino',
+      gender: 'f',
       age: 31,
       role: 'gardener',
       placeId: 'villa-floridiana',
@@ -591,6 +617,7 @@ export const napoli: CityPantry = {
     {
       id: 'davide-amato',
       name: 'Davide Amato',
+      gender: 'm',
       age: 26,
       role: 'street musician',
       placeId: 'piazza-bellini',
@@ -600,6 +627,7 @@ export const napoli: CityPantry = {
     {
       id: 'suor-caterina',
       name: 'Suor Caterina',
+      gender: 'f',
       age: 47,
       role: 'nun',
       placeId: 'certosa-san-martino',
@@ -609,6 +637,7 @@ export const napoli: CityPantry = {
     {
       id: 'michele-improta',
       name: 'Michele Improta',
+      gender: 'm',
       age: 43,
       role: 'sommelier',
       placeId: 'enoteca-belledonne',
@@ -618,6 +647,7 @@ export const napoli: CityPantry = {
     {
       id: 'claudia-cammarota',
       name: 'Claudia Cammarota',
+      gender: 'f',
       age: 33,
       role: 'owner',
       placeId: 'cammarota-spritz',
@@ -627,6 +657,7 @@ export const napoli: CityPantry = {
     {
       id: 'beatrice-longo',
       name: 'Beatrice Longo',
+      gender: 'f',
       age: 37,
       role: 'bookseller',
       placeId: 'libreria-dante-descartes',
@@ -636,6 +667,7 @@ export const napoli: CityPantry = {
     {
       id: 'dottoressa-capasso',
       name: 'Dott.ssa Capasso',
+      gender: 'f',
       age: 44,
       role: 'pharmacist',
       placeId: 'farmacia-centrale',
@@ -645,6 +677,7 @@ export const napoli: CityPantry = {
     {
       id: 'roberto-albano',
       name: 'Roberto Albano',
+      gender: 'm',
       age: 50,
       role: 'station master',
       placeId: 'stazione-centrale',
@@ -654,6 +687,7 @@ export const napoli: CityPantry = {
     {
       id: 'nonna-assunta',
       name: 'Nonna Assunta',
+      gender: 'f',
       age: 81,
       role: 'resident',
       placeId: 'spaccanapoli-street',
@@ -663,6 +697,7 @@ export const napoli: CityPantry = {
     {
       id: 'mario-magliulo',
       name: 'Mario Magliulo',
+      gender: 'm',
       age: 59,
       role: 'chocolatier',
       placeId: 'gay-odin',
@@ -672,11 +707,12 @@ export const napoli: CityPantry = {
     {
       id: 'maestro-ferrigno',
       name: 'Maestro Ferrigno',
+      gender: 'm',
       age: 70,
       role: 'presepe artisan',
       placeId: 'presepi-san-gregorio',
       personality: ['masterful', 'patient', 'keeper of tradition'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly master craftsman with magnifying glasses, wise eyes, and delicate hands holding tiny figures. Minimal watercolor wash in warm Christmas tones. Intricate, reverent linework.',
+      portraitPrompt: 'Pen and ink portrait on white paper of an elderly master craftsman with magnifying glasses, wise eyes, and delicate hands holding tiny figures. Minimal watercolor wash in warm Christmas tones. Intricate, reverent linework. The subject is a man.',
     },
   ],
   food: [

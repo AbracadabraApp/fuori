@@ -342,6 +342,7 @@ export const venezia: CityPantry = {
     {
       id: 'marco-timon',
       name: 'Marco Zanon',
+      gender: 'm',
       age: 42,
       role: 'bar owner',
       placeId: 'bar-al-timon',
@@ -351,6 +352,7 @@ export const venezia: CityPantry = {
     {
       id: 'antonio-florian',
       name: 'Antonio Bianchi',
+      gender: 'm',
       age: 38,
       role: 'head waiter',
       placeId: 'caffe-florian',
@@ -360,6 +362,7 @@ export const venezia: CityPantry = {
     {
       id: 'giulia-leoni',
       name: 'Giulia Leoni',
+      gender: 'f',
       age: 29,
       role: 'barista',
       placeId: 'bar-ai-do-leoni',
@@ -369,6 +372,7 @@ export const venezia: CityPantry = {
     {
       id: 'stefano-rosso',
       name: 'Stefano Rosso',
+      gender: 'm',
       age: 35,
       role: 'bartender',
       placeId: 'caffe-rosso',
@@ -378,6 +382,7 @@ export const venezia: CityPantry = {
     {
       id: 'elena-toletta',
       name: 'Elena Vidal',
+      gender: 'f',
       age: 52,
       role: 'bar owner',
       placeId: 'bar-alla-toletta',
@@ -387,6 +392,7 @@ export const venezia: CityPantry = {
     {
       id: 'roberto-doge',
       name: 'Roberto Martini',
+      gender: 'm',
       age: 45,
       role: 'coffee roaster',
       placeId: 'caffe-del-doge',
@@ -396,6 +402,7 @@ export const venezia: CityPantry = {
     {
       id: 'chiara-ormesini',
       name: 'Chiara Ormesini',
+      gender: 'f',
       age: 31,
       role: 'barista',
       placeId: 'bar-ai-ormesini',
@@ -405,6 +412,7 @@ export const venezia: CityPantry = {
     {
       id: 'gino-battaglia',
       name: 'Gino Battaglia',
+      gender: 'm',
       age: 68,
       role: 'bar owner',
       placeId: 'bar-da-gino',
@@ -414,6 +422,7 @@ export const venezia: CityPantry = {
     {
       id: 'luciana-caffe',
       name: 'Luciana Ferro',
+      gender: 'f',
       age: 39,
       role: 'coffee specialist',
       placeId: 'torrefazione-cannaregio',
@@ -423,6 +432,7 @@ export const venezia: CityPantry = {
     {
       id: 'angela-volpe',
       name: 'Angela Volpe',
+      gender: 'f',
       age: 56,
       role: 'baker',
       placeId: 'panificio-volpe',
@@ -432,15 +442,17 @@ export const venezia: CityPantry = {
     {
       id: 'tommaso-dalmas',
       name: 'Tommaso Dal Mas',
+      gender: 'm',
       age: 33,
       role: 'pastry chef',
       placeId: 'pasticceria-dal-mas',
       personality: ['creative', 'meticulous', 'proud'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young chef with neat appearance, chef\'s whites, focused eyes, minimal pink watercolor wash, precise delicate lines, artistic concentration',
+      portraitPrompt: 'Pen and ink portrait on white paper of a young chef with neat appearance, chef\'s whites, focused eyes, minimal pink watercolor wash, precise delicate lines, artistic concentration. The subject is a man.',
     },
     {
       id: 'francesca-pane',
       name: 'Francesca Pane',
+      gender: 'f',
       age: 44,
       role: 'baker',
       placeId: 'panificio-san-marco',
@@ -450,6 +462,7 @@ export const venezia: CityPantry = {
     {
       id: 'paolo-rizzardini',
       name: 'Paolo Rizzardini',
+      gender: 'm',
       age: 61,
       role: 'master pastry chef',
       placeId: 'pasticceria-rizzardini',
@@ -459,6 +472,7 @@ export const venezia: CityPantry = {
     {
       id: 'sergio-rialto',
       name: 'Sergio Foscarini',
+      gender: 'm',
       age: 55,
       role: 'fish vendor',
       placeId: 'mercato-rialto',
@@ -468,6 +482,7 @@ export const venezia: CityPantry = {
     {
       id: 'maria-mercato',
       name: 'Maria Cadore',
+      gender: 'f',
       age: 48,
       role: 'produce vendor',
       placeId: 'mercato-cannaregio',
@@ -477,6 +492,7 @@ export const venezia: CityPantry = {
     {
       id: 'vittorio-pesce',
       name: 'Vittorio Scarpa',
+      gender: 'm',
       age: 59,
       role: 'fishmonger',
       placeId: 'pescheria-castello',
@@ -486,6 +502,7 @@ export const venezia: CityPantry = {
     {
       id: 'lorenzo-carampane',
       name: 'Lorenzo Carampane',
+      gender: 'm',
       age: 47,
       role: 'chef-owner',
       placeId: 'ristorante-antiche-carampane',
@@ -495,6 +512,7 @@ export const venezia: CityPantry = {
     {
       id: 'alvise-costa',
       name: 'Alvise Costa',
+      gender: 'm',
       age: 52,
       role: 'restaurant owner',
       placeId: 'ristorante-da-alvise',
@@ -504,6 +522,7 @@ export const venezia: CityPantry = {
     {
       id: 'michele-squero',
       name: 'Michele Squero',
+      gender: 'm',
       age: 36,
       role: 'osteria owner',
       placeId: 'osteria-al-squero',
@@ -513,6 +532,7 @@ export const venezia: CityPantry = {
     {
       id: 'isabella-madonna',
       name: 'Isabella Trevisan',
+      gender: 'f',
       age: 41,
       role: 'head waitress',
       placeId: 'trattoria-alla-madonna',
@@ -522,6 +542,7 @@ export const venezia: CityPantry = {
     {
       id: 'nicolo-bacaro',
       name: 'Nicolò Bacaro',
+      gender: 'm',
       age: 28,
       role: 'wine bar owner',
       placeId: 'bacaro-del-vin',
@@ -531,6 +552,7 @@ export const venezia: CityPantry = {
     {
       id: 'padre-giovanni',
       name: 'Padre Giovanni Mocenigo',
+      gender: 'm',
       age: 64,
       role: 'priest',
       placeId: 'basilica-san-marco',
@@ -540,6 +562,7 @@ export const venezia: CityPantry = {
     {
       id: 'carlo-gondoliere',
       name: 'Carlo Dandolo',
+      gender: 'm',
       age: 43,
       role: 'gondolier',
       placeId: 'ponte-rialto',
@@ -549,6 +572,7 @@ export const venezia: CityPantry = {
     {
       id: 'beatrice-giardini',
       name: 'Beatrice Giardini',
+      gender: 'f',
       age: 37,
       role: 'gardener',
       placeId: 'giardini-pubblici',
@@ -558,6 +582,7 @@ export const venezia: CityPantry = {
     {
       id: 'giovanna-campo',
       name: 'Giovanna Rizzo',
+      gender: 'f',
       age: 26,
       role: 'student',
       placeId: 'campo-santa-margherita',
@@ -567,6 +592,7 @@ export const venezia: CityPantry = {
     {
       id: 'suora-teresa',
       name: 'Suora Teresa Venier',
+      gender: 'f',
       age: 58,
       role: 'nun',
       placeId: 'chiesa-madonna-orto',
@@ -576,6 +602,7 @@ export const venezia: CityPantry = {
     {
       id: 'dante-mori',
       name: 'Dante Mori',
+      gender: 'm',
       age: 72,
       role: 'local historian',
       placeId: 'campo-dei-mori',
@@ -585,6 +612,7 @@ export const venezia: CityPantry = {
     {
       id: 'matteo-vino',
       name: 'Matteo Vino',
+      gender: 'm',
       age: 34,
       role: 'sommelier',
       placeId: 'enoteca-mascareta',
@@ -594,6 +622,7 @@ export const venezia: CityPantry = {
     {
       id: 'sandra-spade',
       name: 'Sandra Spade',
+      gender: 'f',
       age: 50,
       role: 'cantina owner',
       placeId: 'cantina-do-spade',
@@ -603,6 +632,7 @@ export const venezia: CityPantry = {
     {
       id: 'luigi-libri',
       name: 'Luigi Frizzo',
+      gender: 'm',
       age: 66,
       role: 'bookseller',
       placeId: 'libreria-acqua-alta',
@@ -612,6 +642,7 @@ export const venezia: CityPantry = {
     {
       id: 'dottoressa-morelli',
       name: 'Dottoressa Clara Morelli',
+      gender: 'f',
       age: 45,
       role: 'pharmacist',
       placeId: 'farmacia-morelli',
@@ -621,6 +652,7 @@ export const venezia: CityPantry = {
     {
       id: 'pietro-stazione',
       name: 'Pietro Bellini',
+      gender: 'm',
       age: 53,
       role: 'station master',
       placeId: 'stazione-santa-lucia',
@@ -630,6 +662,7 @@ export const venezia: CityPantry = {
     {
       id: 'andrea-gondola',
       name: 'Andrea Tramontin',
+      gender: 'm',
       age: 58,
       role: 'master gondola builder',
       placeId: 'squero-san-trovaso',
@@ -639,6 +672,7 @@ export const venezia: CityPantry = {
     {
       id: 'valentina-maschera',
       name: 'Valentina Maschera',
+      gender: 'f',
       age: 32,
       role: 'mask artisan',
       placeId: 'atelier-maschera',
@@ -648,6 +682,7 @@ export const venezia: CityPantry = {
     {
       id: 'emilia-spezie',
       name: 'Emilia Spezie',
+      gender: 'f',
       age: 40,
       role: 'spice merchant',
       placeId: 'fondaco-spezie',

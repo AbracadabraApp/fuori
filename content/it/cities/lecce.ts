@@ -308,6 +308,7 @@ export const lecce: CityPantry = {
     {
       id: 'michele-alvino',
       name: 'Michele Alvino',
+      gender: 'm',
       age: 58,
       role: 'proprietario',
       placeId: 'caffe-alvino',
@@ -317,6 +318,7 @@ export const lecce: CityPantry = {
     {
       id: 'rosa-martino',
       name: 'Rosa Martino',
+      gender: 'f',
       age: 42,
       role: 'barista',
       placeId: 'bar-della-vittoria',
@@ -326,6 +328,7 @@ export const lecce: CityPantry = {
     {
       id: 'antonio-greco',
       name: 'Antonio Greco',
+      gender: 'm',
       age: 35,
       role: 'barista e poeta',
       placeId: 'caffe-letterario',
@@ -335,6 +338,7 @@ export const lecce: CityPantry = {
     {
       id: 'angela-fiore',
       name: 'Angela Fiore',
+      gender: 'f',
       age: 51,
       role: 'fornaia',
       placeId: 'panificio-fiore',
@@ -344,6 +348,7 @@ export const lecce: CityPantry = {
     {
       id: 'donato-natale',
       name: 'Donato Natale',
+      gender: 'm',
       age: 67,
       role: 'pasticciere',
       placeId: 'pasticceria-natale',
@@ -353,6 +358,7 @@ export const lecce: CityPantry = {
     {
       id: 'salvatore-leone',
       name: 'Salvatore Leone',
+      gender: 'm',
       age: 54,
       role: 'venditore',
       placeId: 'mercato-comunale',
@@ -362,6 +368,7 @@ export const lecce: CityPantry = {
     {
       id: 'teresa-maggio',
       name: 'Teresa Maggio',
+      gender: 'f',
       age: 46,
       role: 'contadina',
       placeId: 'mercato-contadino',
@@ -371,6 +378,7 @@ export const lecce: CityPantry = {
     {
       id: 'paolo-marino',
       name: 'Paolo Marino',
+      gender: 'm',
       age: 39,
       role: 'pescivendolo',
       placeId: 'pescheria-del-porto',
@@ -380,6 +388,7 @@ export const lecce: CityPantry = {
     {
       id: 'leonardo-rizzo',
       name: 'Leonardo Rizzo',
+      gender: 'm',
       age: 44,
       role: 'chef e proprietario',
       placeId: 'alle-due-corti',
@@ -389,6 +398,7 @@ export const lecce: CityPantry = {
     {
       id: 'francesca-de-carlo',
       name: 'Francesca De Carlo',
+      gender: 'f',
       age: 38,
       role: 'chef',
       placeId: 'osteria-degli-spiriti',
@@ -398,6 +408,7 @@ export const lecce: CityPantry = {
     {
       id: 'marietta-pellegrino',
       name: 'Marietta Pellegrino',
+      gender: 'f',
       age: 71,
       role: 'cuoca',
       placeId: 'trattoria-nonna-tetti',
@@ -407,6 +418,7 @@ export const lecce: CityPantry = {
     {
       id: 'giuseppe-taurino',
       name: 'Giuseppe Taurino',
+      gender: 'm',
       age: 33,
       role: 'friggitore',
       placeId: 'rusticceria-santa-croce',
@@ -416,6 +428,7 @@ export const lecce: CityPantry = {
     {
       id: 'padre-roberto',
       name: 'Padre Roberto',
+      gender: 'm',
       age: 56,
       role: 'sacerdote',
       placeId: 'basilica-santa-croce',
@@ -425,6 +438,7 @@ export const lecce: CityPantry = {
     {
       id: 'suor-clara',
       name: 'Suor Clara',
+      gender: 'f',
       age: 48,
       role: 'suora',
       placeId: 'duomo-lecce',
@@ -434,6 +448,7 @@ export const lecce: CityPantry = {
     {
       id: 'lucio-faggiano',
       name: 'Lucio Faggiano',
+      gender: 'm',
       age: 62,
       role: 'proprietario e guida',
       placeId: 'museo-faggiano',
@@ -443,15 +458,17 @@ export const lecce: CityPantry = {
     {
       id: 'enzo-palmieri',
       name: 'Enzo Palmieri',
+      gender: 'm',
       age: 68,
       role: 'giardiniere',
       placeId: 'villa-comunale',
       personality: ['tranquillo', 'paziente', 'saggio'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly gardener with weathered kind face, sun hat, soil-stained hands, peaceful expression, connection to nature in eyes, wearing practical work clothes, minimal watercolor wash in soft green and brown, detailed gentle line work, keeper of gardens',
+      portraitPrompt: 'Pen and ink portrait on white paper of an elderly gardener with weathered kind face, sun hat, soil-stained hands, peaceful expression, connection to nature in eyes, wearing practical work clothes, minimal watercolor wash in soft green and brown, detailed gentle line work, keeper of gardens. The subject is a man.',
     },
     {
       id: 'mario-santoro',
       name: 'Mario Santoro',
+      gender: 'm',
       age: 45,
       role: 'musicista di strada',
       placeId: 'piazza-santoronzo',
@@ -461,6 +478,7 @@ export const lecce: CityPantry = {
     {
       id: 'giulia-moretti',
       name: 'Giulia Moretti',
+      gender: 'f',
       age: 29,
       role: 'artista',
       placeId: 'piazzetta-falconieri',
@@ -470,6 +488,7 @@ export const lecce: CityPantry = {
     {
       id: 'elvira-convertini',
       name: 'Elvira Convertini',
+      gender: 'f',
       age: 59,
       role: 'proprietaria',
       placeId: 'enoteca-mamma-elvira',
@@ -479,6 +498,7 @@ export const lecce: CityPantry = {
     {
       id: 'stefano-bianchi',
       name: 'Stefano Bianchi',
+      gender: 'm',
       age: 31,
       role: 'barman',
       placeId: 'lounge-bar-matteotti',
@@ -488,6 +508,7 @@ export const lecce: CityPantry = {
     {
       id: 'anna-palmieri',
       name: 'Anna Palmieri',
+      gender: 'f',
       age: 52,
       role: 'libraia',
       placeId: 'libreria-palmieri',
@@ -497,6 +518,7 @@ export const lecce: CityPantry = {
     {
       id: 'dottoressa-valente',
       name: 'Dottoressa Valente',
+      gender: 'f',
       age: 43,
       role: 'farmacista',
       placeId: 'farmacia-centrale',
@@ -506,6 +528,7 @@ export const lecce: CityPantry = {
     {
       id: 'carlo-ferraro',
       name: 'Carlo Ferraro',
+      gender: 'm',
       age: 55,
       role: 'capostazione',
       placeId: 'stazione-lecce',
@@ -515,6 +538,7 @@ export const lecce: CityPantry = {
     {
       id: 'maestro-orlando',
       name: 'Maestro Orlando',
+      gender: 'm',
       age: 64,
       role: 'artigiano di cartapesta',
       placeId: 'bottega-cartapesta',
@@ -524,6 +548,7 @@ export const lecce: CityPantry = {
     {
       id: 'luisa-de-marco',
       name: 'Luisa De Marco',
+      gender: 'f',
       age: 37,
       role: 'ceramista',
       placeId: 'scuola-ceramica',
@@ -533,6 +558,7 @@ export const lecce: CityPantry = {
     {
       id: 'guida-alessandra',
       name: 'Alessandra Ricci',
+      gender: 'f',
       age: 34,
       role: 'guida turistica',
       placeId: 'anfiteatro-romano',
@@ -542,6 +568,7 @@ export const lecce: CityPantry = {
     {
       id: 'vincenzo-longo',
       name: 'Vincenzo Longo',
+      gender: 'm',
       age: 61,
       role: 'tabaccaio',
       placeId: 'tabaccheria-moderna',
@@ -551,6 +578,7 @@ export const lecce: CityPantry = {
     {
       id: 'simona-bianco',
       name: 'Simona Bianco',
+      gender: 'f',
       age: 28,
       role: 'gelataia',
       placeId: 'gelateria-natale',
@@ -560,6 +588,7 @@ export const lecce: CityPantry = {
     {
       id: 'pino-grassi',
       name: 'Pino Grassi',
+      gender: 'm',
       age: 57,
       role: 'salumiere',
       placeId: 'salumeria-del-corso',
@@ -569,6 +598,7 @@ export const lecce: CityPantry = {
     {
       id: 'carmela-russo',
       name: 'Carmela Russo',
+      gender: 'f',
       age: 49,
       role: 'fornaia',
       placeId: 'forno-santa-lucia',

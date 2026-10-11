@@ -360,6 +360,7 @@ export const milano: CityPantry = {
     {
       id: 'giulia-marchesi',
       name: 'Giulia Marchesi',
+      gender: 'f',
       age: 42,
       role: 'pasticciera',
       placeId: 'pasticceria-marchesi',
@@ -369,6 +370,7 @@ export const milano: CityPantry = {
     {
       id: 'roberto-costa',
       name: 'Roberto Costa',
+      gender: 'm',
       age: 55,
       role: 'barista',
       placeId: 'bar-rita',
@@ -378,6 +380,7 @@ export const milano: CityPantry = {
     {
       id: 'vincenzo-romano',
       name: 'Vincenzo Romano',
+      gender: 'm',
       age: 68,
       role: 'proprietor',
       placeId: 'caffe-napoli',
@@ -387,6 +390,7 @@ export const milano: CityPantry = {
     {
       id: 'chiara-fontana',
       name: 'Chiara Fontana',
+      gender: 'f',
       age: 28,
       role: 'barista',
       placeId: 'bar-quadronno',
@@ -396,6 +400,7 @@ export const milano: CityPantry = {
     {
       id: 'marco-bellini',
       name: 'Marco Bellini',
+      gender: 'm',
       age: 35,
       role: 'pasticciere',
       placeId: 'pasticceria-sant-ambrogio',
@@ -405,6 +410,7 @@ export const milano: CityPantry = {
     {
       id: 'elena-grassi',
       name: 'Elena Grassi',
+      gender: 'f',
       age: 31,
       role: 'proprietor',
       placeId: 'bar-della-darsena',
@@ -414,6 +420,7 @@ export const milano: CityPantry = {
     {
       id: 'alessandro-gatti',
       name: 'Alessandro Gatti',
+      gender: 'm',
       age: 26,
       role: 'barista',
       placeId: 'caffe-design',
@@ -423,6 +430,7 @@ export const milano: CityPantry = {
     {
       id: 'francesca-moretti',
       name: 'Francesca Moretti',
+      gender: 'f',
       age: 49,
       role: 'barista',
       placeId: 'bar-isola',
@@ -432,6 +440,7 @@ export const milano: CityPantry = {
     {
       id: 'sofia-cucchi',
       name: 'Sofia Cucchi',
+      gender: 'f',
       age: 38,
       role: 'manager',
       placeId: 'pasticceria-cucchi',
@@ -441,6 +450,7 @@ export const milano: CityPantry = {
     {
       id: 'davide-longoni',
       name: 'Davide Longoni',
+      gender: 'm',
       age: 45,
       role: 'baker',
       placeId: 'panificio-davide-longoni',
@@ -450,6 +460,7 @@ export const milano: CityPantry = {
     {
       id: 'giuseppe-mancini',
       name: 'Giuseppe Mancini',
+      gender: 'm',
       age: 60,
       role: 'baker',
       placeId: 'forno-navigli',
@@ -459,6 +470,7 @@ export const milano: CityPantry = {
     {
       id: 'laura-conti',
       name: 'Laura Conti',
+      gender: 'f',
       age: 33,
       role: 'baker',
       placeId: 'panetteria-brera',
@@ -468,6 +480,7 @@ export const milano: CityPantry = {
     {
       id: 'andrea-colombo',
       name: 'Andrea Colombo',
+      gender: 'm',
       age: 52,
       role: 'baker',
       placeId: 'forno-sant-eustorgio',
@@ -477,6 +490,7 @@ export const milano: CityPantry = {
     {
       id: 'mario-esposito',
       name: 'Mario Esposito',
+      gender: 'm',
       age: 58,
       role: 'vendor',
       placeId: 'mercato-di-porta-romana',
@@ -486,6 +500,7 @@ export const milano: CityPantry = {
     {
       id: 'rosa-ferrari',
       name: 'Rosa Ferrari',
+      gender: 'f',
       age: 47,
       role: 'vendor',
       placeId: 'mercato-comunale-isola',
@@ -495,6 +510,7 @@ export const milano: CityPantry = {
     {
       id: 'carlo-brambilla',
       name: 'Carlo Brambilla',
+      gender: 'm',
       age: 63,
       role: 'vendor',
       placeId: 'mercatino-navigli',
@@ -504,6 +520,7 @@ export const milano: CityPantry = {
     {
       id: 'anna-masuelli',
       name: 'Anna Masuelli',
+      gender: 'f',
       age: 56,
       role: 'owner',
       placeId: 'trattoria-masuelli',
@@ -513,6 +530,7 @@ export const milano: CityPantry = {
     {
       id: 'giacomo-villa',
       name: 'Giacomo Villa',
+      gender: 'm',
       age: 44,
       role: 'chef',
       placeId: 'ristorante-brera',
@@ -522,6 +540,7 @@ export const milano: CityPantry = {
     {
       id: 'paolo-russo',
       name: 'Paolo Russo',
+      gender: 'm',
       age: 39,
       role: 'owner',
       placeId: 'osteria-navigli',
@@ -531,6 +550,7 @@ export const milano: CityPantry = {
     {
       id: 'beatrice-galli',
       name: 'Beatrice Galli',
+      gender: 'f',
       age: 71,
       role: 'cook',
       placeId: 'trattoria-isola',
@@ -540,6 +560,7 @@ export const milano: CityPantry = {
     {
       id: 'lorenzo-peck',
       name: 'Lorenzo Peck',
+      gender: 'm',
       age: 51,
       role: 'department manager',
       placeId: 'peck',
@@ -549,6 +570,7 @@ export const milano: CityPantry = {
     {
       id: 'luca-spontini',
       name: 'Luca Spontini',
+      gender: 'm',
       age: 29,
       role: 'pizzaiolo',
       placeId: 'pizzeria-spontini',
@@ -558,6 +580,7 @@ export const milano: CityPantry = {
     {
       id: 'valentina-renzi',
       name: 'Valentina Renzi',
+      gender: 'f',
       age: 24,
       role: 'gelataia',
       placeId: 'gelateria-navigli',
@@ -567,6 +590,7 @@ export const milano: CityPantry = {
     {
       id: 'padre-stefano',
       name: 'Padre Stefano',
+      gender: 'm',
       age: 67,
       role: 'priest',
       placeId: 'duomo-milano',
@@ -576,6 +600,7 @@ export const milano: CityPantry = {
     {
       id: 'dottoressa-martini',
       name: 'Dottoressa Martini',
+      gender: 'f',
       age: 43,
       role: 'curator',
       placeId: 'pinacoteca-brera',
@@ -585,6 +610,7 @@ export const milano: CityPantry = {
     {
       id: 'suor-teresa',
       name: 'Suor Teresa',
+      gender: 'f',
       age: 54,
       role: 'nun',
       placeId: 'basilica-sant-eustorgio',
@@ -594,6 +620,7 @@ export const milano: CityPantry = {
     {
       id: 'matteo-verdi',
       name: 'Matteo Verdi',
+      gender: 'm',
       age: 36,
       role: 'gardener',
       placeId: 'parco-sempione',
@@ -603,6 +630,7 @@ export const milano: CityPantry = {
     {
       id: 'giovanna-sartori',
       name: 'Giovanna Sartori',
+      gender: 'f',
       age: 41,
       role: 'florist',
       placeId: 'piazza-santo-stefano',
@@ -612,6 +640,7 @@ export const milano: CityPantry = {
     {
       id: 'fabio-cattaneo',
       name: 'Fabio Cattaneo',
+      gender: 'm',
       age: 32,
       role: 'street musician',
       placeId: 'piazza-xxv-aprile',
@@ -621,6 +650,7 @@ export const milano: CityPantry = {
     {
       id: 'isabella-rizzi',
       name: 'Isabella Rizzi',
+      gender: 'f',
       age: 37,
       role: 'librarian',
       placeId: 'biblioteca-isola',
@@ -630,6 +660,7 @@ export const milano: CityPantry = {
     {
       id: 'massimo-riva',
       name: 'Massimo Riva',
+      gender: 'm',
       age: 48,
       role: 'sommelier',
       placeId: 'enoteca-brera',
@@ -639,6 +670,7 @@ export const milano: CityPantry = {
     {
       id: 'silvia-neri',
       name: 'Silvia Neri',
+      gender: 'f',
       age: 27,
       role: 'bartender',
       placeId: 'mag-cafe',
@@ -648,6 +680,7 @@ export const milano: CityPantry = {
     {
       id: 'tommaso-berti',
       name: 'Tommaso Berti',
+      gender: 'm',
       age: 53,
       role: 'bookseller',
       placeId: 'libreria-brera',
@@ -657,6 +690,7 @@ export const milano: CityPantry = {
     {
       id: 'dottore-lombardi',
       name: 'Dottore Lombardi',
+      gender: 'm',
       age: 59,
       role: 'pharmacist',
       placeId: 'farmacia-centrale',
@@ -666,6 +700,7 @@ export const milano: CityPantry = {
     {
       id: 'michele-franco',
       name: 'Michele Franco',
+      gender: 'm',
       age: 34,
       role: 'station worker',
       placeId: 'stazione-porta-garibaldi',
@@ -675,6 +710,7 @@ export const milano: CityPantry = {
     {
       id: 'emanuele-rossini',
       name: 'Emanuele Rossini',
+      gender: 'm',
       age: 46,
       role: 'gallery guide',
       placeId: 'galleria-vittorio-emanuele',
@@ -684,6 +720,7 @@ export const milano: CityPantry = {
     {
       id: 'federica-bianchi',
       name: 'Federica Bianchi',
+      gender: 'f',
       age: 40,
       role: 'fashion designer',
       placeId: 'atelier-moda',

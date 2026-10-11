@@ -8,6 +8,7 @@
 - `npm run test:prompt`: every character prompt says where the character is
 - `npm run test:reply`: reading Claude replies works when the reply starts with a non-text block
 - `npm run test:images`: every city, place and city character has an image file (generate missing ones with `npm run images -- --city <id>`)
+- `npm run test:voices`: every character has a voice matching their gender (`npm run voices` lists Italian voices on the ElevenLabs account)
 
 ## Conversation test: grade and recommend
 

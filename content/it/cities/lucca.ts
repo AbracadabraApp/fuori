@@ -335,6 +335,7 @@ export const lucca: CityPantry = {
     {
       id: 'sergio-di-simo',
       name: 'Sergio Di Simo',
+      gender: 'm',
       age: 58,
       role: 'proprietario',
       placeId: 'caffe-di-simo',
@@ -344,6 +345,7 @@ export const lucca: CityPantry = {
     {
       id: 'giulia-fortino',
       name: 'Giulia Fortino',
+      gender: 'f',
       age: 32,
       role: 'barista',
       placeId: 'bar-il-fortino',
@@ -353,6 +355,7 @@ export const lucca: CityPantry = {
     {
       id: 'marco-traversi',
       name: 'Marco Traversi',
+      gender: 'm',
       age: 45,
       role: 'proprietario',
       placeId: 'caffe-delle-mura',
@@ -362,6 +365,7 @@ export const lucca: CityPantry = {
     {
       id: 'anna-benedetti',
       name: 'Anna Benedetti',
+      gender: 'f',
       age: 50,
       role: 'barista',
       placeId: 'bar-duomo',
@@ -371,6 +375,7 @@ export const lucca: CityPantry = {
     {
       id: 'roberto-nannini',
       name: 'Roberto Nannini',
+      gender: 'm',
       age: 38,
       role: 'barista',
       placeId: 'bar-nannini',
@@ -380,6 +385,7 @@ export const lucca: CityPantry = {
     {
       id: 'elena-marchetti',
       name: 'Elena Marchetti',
+      gender: 'f',
       age: 62,
       role: 'proprietaria',
       placeId: 'caffe-santa-zita',
@@ -389,6 +395,7 @@ export const lucca: CityPantry = {
     {
       id: 'davide-russo',
       name: 'Davide Russo',
+      gender: 'm',
       age: 29,
       role: 'barista',
       placeId: 'bar-anfiteatro',
@@ -398,6 +405,7 @@ export const lucca: CityPantry = {
     {
       id: 'chiara-carli',
       name: 'Chiara Carli',
+      gender: 'f',
       age: 34,
       role: 'proprietaria',
       placeId: 'caffe-carli',
@@ -407,6 +415,7 @@ export const lucca: CityPantry = {
     {
       id: 'francesco-colombini',
       name: 'Francesco Colombini',
+      gender: 'm',
       age: 71,
       role: 'proprietario',
       placeId: 'bar-colombini',
@@ -416,6 +425,7 @@ export const lucca: CityPantry = {
     {
       id: 'amedeo-giusti',
       name: 'Amedeo Giusti',
+      gender: 'm',
       age: 55,
       role: 'fornaio',
       placeId: 'forno-amedeo-giusti',
@@ -425,6 +435,7 @@ export const lucca: CityPantry = {
     {
       id: 'lucia-guidi',
       name: 'Lucia Guidi',
+      gender: 'f',
       age: 42,
       role: 'fornaia',
       placeId: 'panificio-guidi',
@@ -434,6 +445,7 @@ export const lucca: CityPantry = {
     {
       id: 'paolo-bernardi',
       name: 'Paolo Bernardi',
+      gender: 'm',
       age: 48,
       role: 'fornaio',
       placeId: 'forno-bernardi',
@@ -443,6 +455,7 @@ export const lucca: CityPantry = {
     {
       id: 'stefania-mancini',
       name: 'Stefania Mancini',
+      gender: 'f',
       age: 36,
       role: 'fornaia',
       placeId: 'panificio-del-corso',
@@ -452,6 +465,7 @@ export const lucca: CityPantry = {
     {
       id: 'giovanni-lippi',
       name: 'Giovanni Lippi',
+      gender: 'm',
       age: 67,
       role: 'fornaio',
       placeId: 'forno-sant-anna',
@@ -461,6 +475,7 @@ export const lucca: CityPantry = {
     {
       id: 'mariella-pinelli',
       name: 'Mariella Pinelli',
+      gender: 'f',
       age: 44,
       role: 'pasticciera',
       placeId: 'pasticceria-pinelli',
@@ -470,15 +485,17 @@ export const lucca: CityPantry = {
     {
       id: 'tommaso-venturi',
       name: 'Tommaso Venturi',
+      gender: 'm',
       age: 53,
       role: 'venditore',
       placeId: 'mercato-del-carmine',
       personality: ['loud', 'jovial', 'generous with samples'],
-      portraitPrompt: 'Pen and ink portrait on white paper of robust market vendor in early fifties with weathered face, broad smile, wearing work vest, minimal warm watercolor wash, expressive animated features, welcoming energy, detailed laugh lines',
+      portraitPrompt: 'Pen and ink portrait on white paper of robust market vendor in early fifties with weathered face, broad smile, wearing work vest, minimal warm watercolor wash, expressive animated features, welcoming energy, detailed laugh lines. The subject is a man.',
     },
     {
       id: 'alberta-rossi',
       name: 'Alberta Rossi',
+      gender: 'f',
       age: 59,
       role: 'venditrice',
       placeId: 'mercato-ortofrutticolo',
@@ -488,6 +505,7 @@ export const lucca: CityPantry = {
     {
       id: 'renzo-fontana',
       name: 'Renzo Fontana',
+      gender: 'm',
       age: 65,
       role: 'antiquario',
       placeId: 'mercato-antiquario',
@@ -497,6 +515,7 @@ export const lucca: CityPantry = {
     {
       id: 'claudia-stefani',
       name: 'Claudia Stefani',
+      gender: 'f',
       age: 41,
       role: 'chef',
       placeId: 'ristorante-giglio',
@@ -506,6 +525,7 @@ export const lucca: CityPantry = {
     {
       id: 'lorenzo-bianchi',
       name: 'Lorenzo Bianchi',
+      gender: 'm',
       age: 39,
       role: 'chef',
       placeId: 'ristorante-mecenate',
@@ -515,6 +535,7 @@ export const lucca: CityPantry = {
     {
       id: 'leo-buralli',
       name: 'Leo Buralli',
+      gender: 'm',
       age: 63,
       role: 'oste',
       placeId: 'trattoria-da-leo',
@@ -524,6 +545,7 @@ export const lucca: CityPantry = {
     {
       id: 'simone-pieri',
       name: 'Simone Pieri',
+      gender: 'm',
       age: 47,
       role: 'oste',
       placeId: 'osteria-via-fillungo',
@@ -533,6 +555,7 @@ export const lucca: CityPantry = {
     {
       id: 'federico-moretti',
       name: 'Federico Moretti',
+      gender: 'm',
       age: 35,
       role: 'pizzaiolo',
       placeId: 'pizzeria-santa-lucia',
@@ -542,6 +565,7 @@ export const lucca: CityPantry = {
     {
       id: 'beatrice-angeli',
       name: 'Beatrice Angeli',
+      gender: 'f',
       age: 52,
       role: 'proprietaria',
       placeId: 'gastronomia-angeli',
@@ -551,6 +575,7 @@ export const lucca: CityPantry = {
     {
       id: 'padre-augusto',
       name: 'Padre Augusto',
+      gender: 'm',
       age: 68,
       role: 'parroco',
       placeId: 'duomo-san-martino',
@@ -560,6 +585,7 @@ export const lucca: CityPantry = {
     {
       id: 'suor-margherita',
       name: 'Suor Margherita',
+      gender: 'f',
       age: 56,
       role: 'suora',
       placeId: 'basilica-san-frediano',
@@ -569,6 +595,7 @@ export const lucca: CityPantry = {
     {
       id: 'alessio-martinelli',
       name: 'Alessio Martinelli',
+      gender: 'm',
       age: 26,
       role: 'guida turistica',
       placeId: 'torre-guinigi',
@@ -578,6 +605,7 @@ export const lucca: CityPantry = {
     {
       id: 'isabella-galli',
       name: 'Isabella Galli',
+      gender: 'f',
       age: 61,
       role: 'botanica',
       placeId: 'orto-botanico',
@@ -587,6 +615,7 @@ export const lucca: CityPantry = {
     {
       id: 'matteo-fabbri',
       name: 'Matteo Fabbri',
+      gender: 'm',
       age: 33,
       role: 'musicista di strada',
       placeId: 'piazza-anfiteatro',
@@ -596,6 +625,7 @@ export const lucca: CityPantry = {
     {
       id: 'carla-innocenti',
       name: 'Carla Innocenti',
+      gender: 'f',
       age: 46,
       role: 'fioraia',
       placeId: 'piazza-san-michele',
@@ -605,6 +635,7 @@ export const lucca: CityPantry = {
     {
       id: 'vanni-ceccarelli',
       name: 'Vanni Ceccarelli',
+      gender: 'm',
       age: 57,
       role: 'sommelier',
       placeId: 'enoteca-vanni',
@@ -614,6 +645,7 @@ export const lucca: CityPantry = {
     {
       id: 'andrea-lombardi',
       name: 'Andrea Lombardi',
+      gender: 'm',
       age: 37,
       role: 'proprietario enoteca',
       placeId: 'wine-bar-delle-mura',
@@ -623,6 +655,7 @@ export const lucca: CityPantry = {
     {
       id: 'silvia-baroni',
       name: 'Silvia Baroni',
+      gender: 'f',
       age: 43,
       role: 'libraia',
       placeId: 'libreria-baroni',
@@ -632,6 +665,7 @@ export const lucca: CityPantry = {
     {
       id: 'dottoressa-massei',
       name: 'Dott.ssa Massei',
+      gender: 'f',
       age: 54,
       role: 'farmacista',
       placeId: 'farmacia-massei',

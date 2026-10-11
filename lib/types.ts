@@ -32,6 +32,8 @@ export interface CharacterSheet {
 
   englishAbility?: 'fluent' | 'basic' | 'none';
 
+  gender?: Gender; // picks a male or female voice
+
   appearance: {
     description: string;
     setting: string;
@@ -55,9 +57,12 @@ export interface Place {
   imagePrompt?: string;
 }
 
+export type Gender = 'f' | 'm';
+
 export interface CityCharacter {
   id: string;
   name: string;
+  gender: Gender;
   age: number;
   role: string;
   placeId: string;

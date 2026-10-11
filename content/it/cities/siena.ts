@@ -271,6 +271,7 @@ export const siena: CityPantry = {
     {
       id: 'marco-fiorella',
       name: 'Marco Fiorella',
+      gender: 'm',
       age: 42,
       role: 'proprietario',
       placeId: 'caffe-fiorella',
@@ -280,6 +281,7 @@ export const siena: CityPantry = {
     {
       id: 'giulia-neri',
       name: 'Giulia Neri',
+      gender: 'f',
       age: 28,
       role: 'barista',
       placeId: 'bar-il-palio',
@@ -289,6 +291,7 @@ export const siena: CityPantry = {
     {
       id: 'alessandro-nannini',
       name: 'Alessandro Nannini',
+      gender: 'm',
       age: 55,
       role: 'maestro caffettiere',
       placeId: 'caffe-nannini',
@@ -298,6 +301,7 @@ export const siena: CityPantry = {
     {
       id: 'lucia-bini',
       name: 'Lucia Bini',
+      gender: 'f',
       age: 38,
       role: 'pasticciera',
       placeId: 'pasticceria-bini',
@@ -307,6 +311,7 @@ export const siena: CityPantry = {
     {
       id: 'roberto-galli',
       name: 'Roberto Galli',
+      gender: 'm',
       age: 61,
       role: 'fornaio',
       placeId: 'forno-dei-galli',
@@ -316,6 +321,7 @@ export const siena: CityPantry = {
     {
       id: 'paolo-rossi',
       name: 'Paolo Rossi',
+      gender: 'm',
       age: 47,
       role: 'venditore',
       placeId: 'mercato-della-terra',
@@ -325,6 +331,7 @@ export const siena: CityPantry = {
     {
       id: 'anna-mercanti',
       name: 'Anna Mercanti',
+      gender: 'f',
       age: 52,
       role: 'venditrice di formaggi',
       placeId: 'mercato-coperto',
@@ -334,6 +341,7 @@ export const siena: CityPantry = {
     {
       id: 'simone-guidi',
       name: 'Simone Guidi',
+      gender: 'm',
       age: 44,
       role: 'proprietario',
       placeId: 'bottega-del-gusto',
@@ -343,6 +351,7 @@ export const siena: CityPantry = {
     {
       id: 'chiara-castellani',
       name: 'Chiara Castellani',
+      gender: 'f',
       age: 35,
       role: 'chef',
       placeId: 'osteria-le-logge',
@@ -352,6 +361,7 @@ export const siena: CityPantry = {
     {
       id: 'franco-papei',
       name: 'Franco Papei',
+      gender: 'm',
       age: 68,
       role: 'proprietario',
       placeId: 'trattoria-papei',
@@ -361,6 +371,7 @@ export const siena: CityPantry = {
     {
       id: 'vittorio-brunelli',
       name: 'Vittorio Brunelli',
+      gender: 'm',
       age: 41,
       role: 'sommelier',
       placeId: 'ristorante-mugolone',
@@ -370,6 +381,7 @@ export const siena: CityPantry = {
     {
       id: 'davide-marino',
       name: 'Davide Marino',
+      gender: 'm',
       age: 29,
       role: 'pizzaiolo',
       placeId: 'pizzeria-del-campo',
@@ -379,6 +391,7 @@ export const siena: CityPantry = {
     {
       id: 'padre-giuseppe',
       name: 'Padre Giuseppe',
+      gender: 'm',
       age: 71,
       role: 'sacerdote',
       placeId: 'duomo-siena',
@@ -388,6 +401,7 @@ export const siena: CityPantry = {
     {
       id: 'sister-maria',
       name: 'Suor Maria Caterina',
+      gender: 'f',
       age: 58,
       role: 'suora',
       placeId: 'basilica-san-domenico',
@@ -397,6 +411,7 @@ export const siena: CityPantry = {
     {
       id: 'leonardo-conti',
       name: 'Leonardo Conti',
+      gender: 'm',
       age: 33,
       role: 'guida turistica',
       placeId: 'piazza-del-campo',
@@ -406,6 +421,7 @@ export const siena: CityPantry = {
     {
       id: 'beatrice-salvi',
       name: 'Beatrice Salvi',
+      gender: 'f',
       age: 26,
       role: 'studentessa',
       placeId: 'piazza-salimbeni',
@@ -415,6 +431,7 @@ export const siena: CityPantry = {
     {
       id: 'matteo-torre',
       name: 'Matteo Torre',
+      gender: 'm',
       age: 45,
       role: 'custode',
       placeId: 'torre-del-mangia',
@@ -424,6 +441,7 @@ export const siena: CityPantry = {
     {
       id: 'carla-nesti',
       name: 'Carla Nesti',
+      gender: 'f',
       age: 64,
       role: 'giardiniera',
       placeId: 'orto-de-pecci',
@@ -433,6 +451,7 @@ export const siena: CityPantry = {
     {
       id: 'stefano-vini',
       name: 'Stefano Vini',
+      gender: 'm',
       age: 50,
       role: 'sommelier',
       placeId: 'enoteca-italiana',
@@ -442,6 +461,7 @@ export const siena: CityPantry = {
     {
       id: 'michele-vanni',
       name: 'Michele Vanni',
+      gender: 'm',
       age: 39,
       role: 'proprietario',
       placeId: 'enoteca-san-domenico',
@@ -451,6 +471,7 @@ export const siena: CityPantry = {
     {
       id: 'elisabetta-libri',
       name: 'Elisabetta Libri',
+      gender: 'f',
       age: 43,
       role: 'libraia',
       placeId: 'libreria-senese',
@@ -460,15 +481,17 @@ export const siena: CityPantry = {
     {
       id: 'giovanni-bacci',
       name: 'Giovanni Bacci',
+      gender: 'm',
       age: 56,
       role: 'artigiano',
       placeId: 'bottega-del-palio',
       personality: ['traditional', 'proud', 'meticulous'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a craftsman with skillful hands, concentrated expression, wearing contrada scarf, graying hair, minimal watercolor wash in silk banner colors, dedicated and authentic.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a craftsman with skillful hands, concentrated expression, wearing contrada scarf, graying hair, minimal watercolor wash in silk banner colors, dedicated and authentic. The subject is a man.',
     },
     {
       id: 'dottoressa-ricci',
       name: 'Dottoressa Ricci',
+      gender: 'f',
       age: 48,
       role: 'farmacista',
       placeId: 'farmacia-centrale',
@@ -478,6 +501,7 @@ export const siena: CityPantry = {
     {
       id: 'alberto-fattori',
       name: 'Alberto Fattori',
+      gender: 'm',
       age: 59,
       role: 'commesso',
       placeId: 'consorzio-agrario',
@@ -487,6 +511,7 @@ export const siena: CityPantry = {
     {
       id: 'claudia-manganelli',
       name: 'Claudia Manganelli',
+      gender: 'f',
       age: 36,
       role: 'proprietaria',
       placeId: 'antica-drogheria-manganelli',
@@ -496,6 +521,7 @@ export const siena: CityPantry = {
     {
       id: 'andrea-brivido',
       name: 'Andrea Brivido',
+      gender: 'm',
       age: 31,
       role: 'gelatiere',
       placeId: 'gelateria-brivido',
@@ -505,6 +531,7 @@ export const siena: CityPantry = {
     {
       id: 'lorenzo-forti',
       name: 'Lorenzo Forti',
+      gender: 'm',
       age: 37,
       role: 'custode',
       placeId: 'fortezza-medicea',
@@ -514,6 +541,7 @@ export const siena: CityPantry = {
     {
       id: 'fabio-rosso',
       name: 'Fabio Rosso',
+      gender: 'm',
       age: 25,
       role: 'barista',
       placeId: 'caffe-del-corso',
@@ -523,6 +551,7 @@ export const siena: CityPantry = {
     {
       id: 'teresa-morbidi',
       name: 'Teresa Morbidi',
+      gender: 'f',
       age: 67,
       role: 'proprietaria',
       placeId: 'alimentari-morbidi',

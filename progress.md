@@ -302,3 +302,13 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 - Tested in a browser: opening failure, mic blocked, transcription failing twice, reply failing with debug on. All logged with matching codes.
 - `tsconfig.tsbuildinfo` is now gitignored (it was causing noise in every commit).
 - Noticed: Giulia's portrait has "Caffè a Firenze" written in it, but she works in Roma.
+
+## 2026-10-10 night: Gender and voices (cloud session)
+
+- Every city character now has `gender` ('f'/'m'): read from the portrait description where it said so (499), otherwise from the first name (96). The two methods agreed on all 499 where both applied. Giulia and Rita are 'f'.
+- Voices are picked in `content/it/voices.ts`: Giulia (Lily) and Rita (Matilda) are fixed; everyone else gets a voice from a female or male pool, chosen by a hash of their id so it never changes between visits. The browser fallback also picks a male or female Italian system voice.
+- Found: where a portrait description had no gender, the image generator drew a man. 10 women had men's portraits (Benedetta, Simona, Valentina, Claudia the bookseller, Elisabetta, Grazia, Maria, Isabella, Valeria, Sofia). Removed those images and added "The subject is a woman/man." to all 96 descriptions.
+- New: `npm run test:voices`, `npm run voices` (lists ElevenLabs voices verified for Italian, with preview links).
+- Noticed: 15 character ids appear in two cities (e.g. padre-giovanni), so those pairs share one portrait file.
+
+**Next (laptop):** `npm run images` to regenerate the 10 portraits (plus Roma places and Rita), `npm run voices` and listen; swap any pool voice that sounds wrong in Italian.

@@ -3,6 +3,7 @@ import { CharacterSheet } from '@/lib/types';
 export const giulia: CharacterSheet = {
   id: 'giulia',
   name: 'Giulia',
+  gender: 'f',
   age: 32,
   role: 'barista',
   city: 'Roma',

@@ -271,6 +271,7 @@ export const genova: CityPantry = {
     {
       id: 'marco-venturi',
       name: 'Marco Venturi',
+      gender: 'm',
       age: 42,
       role: 'proprietario',
       placeId: 'caffe-degli-specchi',
@@ -280,6 +281,7 @@ export const genova: CityPantry = {
     {
       id: 'giulia-costa',
       name: 'Giulia Costa',
+      gender: 'f',
       age: 29,
       role: 'barista',
       placeId: 'bar-boccadasse',
@@ -289,6 +291,7 @@ export const genova: CityPantry = {
     {
       id: 'roberto-grimaldi',
       name: 'Roberto Grimaldi',
+      gender: 'm',
       age: 56,
       role: 'barista',
       placeId: 'caffe-caruggi',
@@ -298,6 +301,7 @@ export const genova: CityPantry = {
     {
       id: 'anna-nervi',
       name: 'Anna Nervi',
+      gender: 'f',
       age: 38,
       role: 'pasticciera',
       placeId: 'pasticceria-liquorosa',
@@ -307,6 +311,7 @@ export const genova: CityPantry = {
     {
       id: 'francesco-parodi',
       name: 'Francesco Parodi',
+      gender: 'm',
       age: 51,
       role: 'fornaio',
       placeId: 'panificio-castelletto',
@@ -316,6 +321,7 @@ export const genova: CityPantry = {
     {
       id: 'paolo-doria',
       name: 'Paolo Doria',
+      gender: 'm',
       age: 63,
       role: 'venditore',
       placeId: 'mercato-orientale',
@@ -325,6 +331,7 @@ export const genova: CityPantry = {
     {
       id: 'lucia-ferraro',
       name: 'Lucia Ferraro',
+      gender: 'f',
       age: 45,
       role: 'pescatrice',
       placeId: 'mercato-boccadasse',
@@ -334,6 +341,7 @@ export const genova: CityPantry = {
     {
       id: 'teresa-brignole',
       name: 'Teresa Brignole',
+      gender: 'f',
       age: 67,
       role: 'proprietaria',
       placeId: 'bottega-caruggi',
@@ -343,15 +351,17 @@ export const genova: CityPantry = {
     {
       id: 'giovanni-repetto',
       name: 'Giovanni Repetto',
+      gender: 'm',
       age: 58,
       role: 'cuoco',
       placeId: 'trattoria-rosmarino',
       personality: ['passionate', 'perfectionist', 'nostalgic'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a heavyset chef with expressive face, chef\'s whites, wooden spoon in hand, minimal watercolor in warm reds, intense eyes, bold pen work',
+      portraitPrompt: 'Pen and ink portrait on white paper of a heavyset chef with expressive face, chef\'s whites, wooden spoon in hand, minimal watercolor in warm reds, intense eyes, bold pen work. The subject is a man.',
     },
     {
       id: 'elena-spinola',
       name: 'Elena Spinola',
+      gender: 'f',
       age: 41,
       role: 'sommelier',
       placeId: 'ristorante-vista',
@@ -361,6 +371,7 @@ export const genova: CityPantry = {
     {
       id: 'matteo-ghiglione',
       name: 'Matteo Ghiglione',
+      gender: 'm',
       age: 49,
       role: 'oste',
       placeId: 'antica-osteria',
@@ -370,6 +381,7 @@ export const genova: CityPantry = {
     {
       id: 'silvia-castagna',
       name: 'Silvia Castagna',
+      gender: 'f',
       age: 34,
       role: 'fornaia',
       placeId: 'focacceria-recco',
@@ -379,6 +391,7 @@ export const genova: CityPantry = {
     {
       id: 'chiara-grimaldi',
       name: 'Chiara Grimaldi',
+      gender: 'f',
       age: 31,
       role: 'guida turistica',
       placeId: 'palazzo-ducale',
@@ -388,6 +401,7 @@ export const genova: CityPantry = {
     {
       id: 'andrea-colombo',
       name: 'Andrea Colombo',
+      gender: 'm',
       age: 55,
       role: 'guardiano',
       placeId: 'lanterna',
@@ -397,6 +411,7 @@ export const genova: CityPantry = {
     {
       id: 'padre-tommaso',
       name: 'Padre Tommaso Ravasco',
+      gender: 'm',
       age: 68,
       role: 'sacerdote',
       placeId: 'san-lorenzo',
@@ -406,6 +421,7 @@ export const genova: CityPantry = {
     {
       id: 'suor-margherita',
       name: 'Suor Margherita Doria',
+      gender: 'f',
       age: 72,
       role: 'suora',
       placeId: 'santa-maria-castello',
@@ -415,6 +431,7 @@ export const genova: CityPantry = {
     {
       id: 'luca-traverso',
       name: 'Luca Traverso',
+      gender: 'm',
       age: 44,
       role: 'giardiniere',
       placeId: 'villetta-dinegro',
@@ -424,6 +441,7 @@ export const genova: CityPantry = {
     {
       id: 'beatrice-ravenna',
       name: 'Beatrice Ravenna',
+      gender: 'f',
       age: 26,
       role: 'artista di strada',
       placeId: 'piazza-ferrari',
@@ -433,15 +451,17 @@ export const genova: CityPantry = {
     {
       id: 'diego-vento',
       name: 'Diego Vento',
+      gender: 'm',
       age: 71,
       role: 'pescatore',
       placeId: 'piazza-boccadasse',
       personality: ['taciturn', 'traditional', 'weather-wise'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an old fisherman with deeply lined face, captain\'s cap, thick sweater, rope-scarred hands, minimal watercolor in faded blues, distant gaze, heavy crosshatching',
+      portraitPrompt: 'Pen and ink portrait on white paper of an old fisherman with deeply lined face, captain\'s cap, thick sweater, rope-scarred hands, minimal watercolor in faded blues, distant gaze, heavy crosshatching. The subject is a man.',
     },
     {
       id: 'alberto-molinari',
       name: 'Alberto Molinari',
+      gender: 'm',
       age: 47,
       role: 'enotecario',
       placeId: 'enoteca-sola',
@@ -451,6 +471,7 @@ export const genova: CityPantry = {
     {
       id: 'valeria-fieschi',
       name: 'Valeria Fieschi',
+      gender: 'f',
       age: 36,
       role: 'proprietaria',
       placeId: 'wine-bar-castelletto',
@@ -460,6 +481,7 @@ export const genova: CityPantry = {
     {
       id: 'michele-barbieri',
       name: 'Michele Barbieri',
+      gender: 'm',
       age: 59,
       role: 'libraio',
       placeId: 'libreria-bozzi',
@@ -469,6 +491,7 @@ export const genova: CityPantry = {
     {
       id: 'dottoressa-carla',
       name: 'Dott.ssa Carla Olivieri',
+      gender: 'f',
       age: 43,
       role: 'farmacista',
       placeId: 'farmacia-europa',
@@ -478,15 +501,17 @@ export const genova: CityPantry = {
     {
       id: 'stefano-raggi',
       name: 'Stefano Raggi',
+      gender: 'm',
       age: 52,
       role: 'capostazione',
       placeId: 'stazione-principe',
       personality: ['punctual', 'authoritative', 'helpful'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a uniformed station master with cap, whistle on chain, clipboard, minimal watercolor in railway blues, alert expression, precise hatching',
+      portraitPrompt: 'Pen and ink portrait on white paper of a uniformed station master with cap, whistle on chain, clipboard, minimal watercolor in railway blues, alert expression, precise hatching. The subject is a man.',
     },
     {
       id: 'marina-danese',
       name: 'Marina Danese',
+      gender: 'f',
       age: 39,
       role: 'guida museo',
       placeId: 'porto-antico',
@@ -496,6 +521,7 @@ export const genova: CityPantry = {
     {
       id: 'daniela-moretti',
       name: 'Daniela Moretti',
+      gender: 'f',
       age: 28,
       role: 'gelataia',
       placeId: 'gelateria-profumo',
@@ -505,6 +531,7 @@ export const genova: CityPantry = {
     {
       id: 'ezio-ruffini',
       name: 'Ezio Ruffini',
+      gender: 'm',
       age: 64,
       role: 'salumiere',
       placeId: 'salumeria-fontana',
@@ -514,15 +541,17 @@ export const genova: CityPantry = {
     {
       id: 'professor-casella',
       name: 'Prof. Vittorio Casella',
+      gender: 'm',
       age: 66,
       role: 'storico',
       placeId: 'via-garibaldi',
       personality: ['erudite', 'passionate', 'distinguished'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly professor with white hair, bow tie, tweed jacket, architectural drawings visible, minimal watercolor in stone grays, animated expression, scholarly detail',
+      portraitPrompt: 'Pen and ink portrait on white paper of an elderly professor with white hair, bow tie, tweed jacket, architectural drawings visible, minimal watercolor in stone grays, animated expression, scholarly detail. The subject is a man.',
     },
     {
       id: 'tommaso-sacco',
       name: 'Tommaso Sacco',
+      gender: 'm',
       age: 37,
       role: 'cantiniere',
       placeId: 'cantina-squarciafico',

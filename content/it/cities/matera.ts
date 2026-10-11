@@ -290,6 +290,7 @@ export const matera: CityPantry = {
     {
       id: 'antonio-russo',
       name: 'Antonio Russo',
+      gender: 'm',
       age: 52,
       role: 'proprietario',
       placeId: 'caffe-schiuma',
@@ -299,6 +300,7 @@ export const matera: CityPantry = {
     {
       id: 'lucia-dimatteo',
       name: 'Lucia Di Matteo',
+      gender: 'f',
       age: 28,
       role: 'barista',
       placeId: 'bar-vitantonio',
@@ -308,6 +310,7 @@ export const matera: CityPantry = {
     {
       id: 'michele-lorusso',
       name: 'Michele Lorusso',
+      gender: 'm',
       age: 45,
       role: 'barista',
       placeId: 'caffe-degli-archi',
@@ -317,6 +320,7 @@ export const matera: CityPantry = {
     {
       id: 'rosa-palmieri',
       name: 'Rosa Palmieri',
+      gender: 'f',
       age: 61,
       role: 'fornaia',
       placeId: 'panificio-del-sasso',
@@ -326,6 +330,7 @@ export const matera: CityPantry = {
     {
       id: 'giuseppe-bruno',
       name: 'Giuseppe Bruno',
+      gender: 'm',
       age: 38,
       role: 'fornaio',
       placeId: 'forno-antico',
@@ -335,6 +340,7 @@ export const matera: CityPantry = {
     {
       id: 'carmela-gentile',
       name: 'Carmela Gentile',
+      gender: 'f',
       age: 55,
       role: 'venditrice',
       placeId: 'mercato-piccianello',
@@ -344,6 +350,7 @@ export const matera: CityPantry = {
     {
       id: 'pietro-volpe',
       name: 'Pietro Volpe',
+      gender: 'm',
       age: 67,
       role: 'negoziante',
       placeId: 'bottega-sassi',
@@ -353,6 +360,7 @@ export const matera: CityPantry = {
     {
       id: 'anna-lagrotta',
       name: 'Anna La Grotta',
+      gender: 'f',
       age: 49,
       role: 'contadina',
       placeId: 'mercato-contadino',
@@ -362,6 +370,7 @@ export const matera: CityPantry = {
     {
       id: 'francesca-clemente',
       name: 'Francesca Clemente',
+      gender: 'f',
       age: 43,
       role: 'chef proprietaria',
       placeId: 'ristorante-francesca',
@@ -371,6 +380,7 @@ export const matera: CityPantry = {
     {
       id: 'marco-dibari',
       name: 'Marco Di Bari',
+      gender: 'm',
       age: 34,
       role: 'chef',
       placeId: 'ristorante-soul',
@@ -380,6 +390,7 @@ export const matera: CityPantry = {
     {
       id: 'donato-santoro',
       name: 'Donato Santoro',
+      gender: 'm',
       age: 58,
       role: 'proprietario',
       placeId: 'trattoria-lucana',
@@ -389,6 +400,7 @@ export const matera: CityPantry = {
     {
       id: 'isabella-greco',
       name: 'Isabella Greco',
+      gender: 'f',
       age: 31,
       role: 'proprietaria',
       placeId: 'osteria-purgatorio',
@@ -398,6 +410,7 @@ export const matera: CityPantry = {
     {
       id: 'giovanni-montemurro',
       name: 'Giovanni Montemurro',
+      gender: 'm',
       age: 71,
       role: 'guida turistica',
       placeId: 'sassi-belvedere',
@@ -407,6 +420,7 @@ export const matera: CityPantry = {
     {
       id: 'padre-leonardo',
       name: 'Padre Leonardo',
+      gender: 'm',
       age: 56,
       role: 'parroco',
       placeId: 'cattedrale',
@@ -416,6 +430,7 @@ export const matera: CityPantry = {
     {
       id: 'teresa-morelli',
       name: 'Teresa Morelli',
+      gender: 'f',
       age: 47,
       role: 'guida museale',
       placeId: 'casa-grotta',
@@ -425,6 +440,7 @@ export const matera: CityPantry = {
     {
       id: 'saverio-gattini',
       name: 'Saverio Gattini',
+      gender: 'm',
       age: 39,
       role: 'guardiaparco',
       placeId: 'parco-murgia',
@@ -434,6 +450,7 @@ export const matera: CityPantry = {
     {
       id: 'elena-laterza',
       name: 'Elena Laterza',
+      gender: 'f',
       age: 26,
       role: 'studente e musicista',
       placeId: 'piazza-vittorio',
@@ -443,6 +460,7 @@ export const matera: CityPantry = {
     {
       id: 'alberto-rizzi',
       name: 'Alberto Rizzi',
+      gender: 'm',
       age: 64,
       role: 'pensionato',
       placeId: 'piazza-duomo',
@@ -452,6 +470,7 @@ export const matera: CityPantry = {
     {
       id: 'vincenzo-pace',
       name: 'Vincenzo Pace',
+      gender: 'm',
       age: 41,
       role: 'sommelier',
       placeId: 'enoteca-lucania',
@@ -461,6 +480,7 @@ export const matera: CityPantry = {
     {
       id: 'claudia-mastrangelo',
       name: 'Claudia Mastrangelo',
+      gender: 'f',
       age: 29,
       role: 'bartender',
       placeId: 'alle-fornaci',
@@ -470,6 +490,7 @@ export const matera: CityPantry = {
     {
       id: 'beatrice-loperfido',
       name: 'Beatrice Loperfido',
+      gender: 'f',
       age: 36,
       role: 'libraia',
       placeId: 'libreria-matera',
@@ -479,6 +500,7 @@ export const matera: CityPantry = {
     {
       id: 'dottoressa-mancini',
       name: 'Dott.ssa Elena Mancini',
+      gender: 'f',
       age: 44,
       role: 'farmacista',
       placeId: 'farmacia-centrale',
@@ -488,6 +510,7 @@ export const matera: CityPantry = {
     {
       id: 'roberto-nardella',
       name: 'Roberto Nardella',
+      gender: 'm',
       age: 51,
       role: 'capostazione',
       placeId: 'stazione-fal',
@@ -497,6 +520,7 @@ export const matera: CityPantry = {
     {
       id: 'simone-lasorella',
       name: 'Simone Lasorella',
+      gender: 'm',
       age: 37,
       role: 'direttore',
       placeId: 'hotel-sassi',
@@ -506,6 +530,7 @@ export const matera: CityPantry = {
     {
       id: 'suor-margherita',
       name: 'Suor Margherita',
+      gender: 'f',
       age: 69,
       role: 'suora',
       placeId: 'san-pietro-caveoso',
@@ -515,15 +540,17 @@ export const matera: CityPantry = {
     {
       id: 'maurizio-stigliano',
       name: 'Maurizio Stigliano',
+      gender: 'm',
       age: 53,
       role: 'artigiano',
       placeId: 'bottega-artigiana',
       personality: ['creative', 'patient', 'master craftsman'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an Italian artisan with work apron, clay on hands, focused eyes, minimal terracotta watercolor wash, white background, concentrated artistic expression, textured pen strokes',
+      portraitPrompt: 'Pen and ink portrait on white paper of an Italian artisan with work apron, clay on hands, focused eyes, minimal terracotta watercolor wash, white background, concentrated artistic expression, textured pen strokes. The subject is a man.',
     },
     {
       id: 'caterina-gallo',
       name: 'Caterina Gallo',
+      gender: 'f',
       age: 42,
       role: 'salumiera',
       placeId: 'salumeria-peperoni',
@@ -533,6 +560,7 @@ export const matera: CityPantry = {
     {
       id: 'filippo-fortunato',
       name: 'Filippo Fortunato',
+      gender: 'm',
       age: 32,
       role: 'gelataio',
       placeId: 'gelateria-artigiana',
@@ -542,6 +570,7 @@ export const matera: CityPantry = {
     {
       id: 'daniela-tataranni',
       name: 'Daniela Tataranni',
+      gender: 'f',
       age: 40,
       role: 'ceramista',
       placeId: 'ceramiche-sassi',

@@ -19,12 +19,9 @@ export class ElevenLabsProvider implements VoiceProvider {
   private apiKey: string;
   private baseUrl = 'https://api.elevenlabs.io/v1';
 
-  // Default voice mappings for characters
-  // Using voices with verified Italian support for best quality
-  // Can be overridden via environment or character sheet
+  // Fallback only. /api/speak picks per-character voices from content/it/voices.ts
   private voiceMap: Record<string, string> = {
     default: 'pFZP5JQG7iQjIQuC4Bku', // Lily - Velvety Actress (female, verified Italian)
-    giulia: 'pFZP5JQG7iQjIQuC4Bku', // Lily - warm, expressive, perfect for a barista
   };
 
   constructor(apiKey?: string) {

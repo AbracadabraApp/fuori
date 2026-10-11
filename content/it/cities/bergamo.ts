@@ -336,6 +336,7 @@ export const bergamo: CityPantry = {
     {
       id: 'marco-villa',
       name: 'Marco Villa',
+      gender: 'm',
       age: 52,
       role: 'proprietario',
       placeId: 'caffe-del-tasso',
@@ -345,6 +346,7 @@ export const bergamo: CityPantry = {
     {
       id: 'lucia-ferri',
       name: 'Lucia Ferri',
+      gender: 'f',
       age: 28,
       role: 'barista',
       placeId: 'bar-donizetti',
@@ -354,15 +356,17 @@ export const bergamo: CityPantry = {
     {
       id: 'giuseppe-carrara',
       name: 'Giuseppe Carrara',
+      gender: 'm',
       age: 67,
       role: 'cameriere storico',
       placeId: 'caffe-balzer',
       personality: ['elegante', 'discreto', 'memorabile'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly refined waiter with white hair, impeccable posture, bow tie, minimal gray watercolor wash, detailed dignified features, knowing eyes, old-school service excellence',
+      portraitPrompt: 'Pen and ink portrait on white paper of an elderly refined waiter with white hair, impeccable posture, bow tie, minimal gray watercolor wash, detailed dignified features, knowing eyes, old-school service excellence. The subject is a man.',
     },
     {
       id: 'angela-rossi',
       name: 'Angela Rossi',
+      gender: 'f',
       age: 45,
       role: 'proprietaria',
       placeId: 'bar-milano',
@@ -372,6 +376,7 @@ export const bergamo: CityPantry = {
     {
       id: 'stefano-moretti',
       name: 'Stefano Moretti',
+      gender: 'm',
       age: 38,
       role: 'pasticciere',
       placeId: 'pasticceria-caffe-nessi',
@@ -381,6 +386,7 @@ export const bergamo: CityPantry = {
     {
       id: 'rosa-colombo',
       name: 'Rosa Colombo',
+      gender: 'f',
       age: 59,
       role: 'barista',
       placeId: 'bar-centrale',
@@ -390,6 +396,7 @@ export const bergamo: CityPantry = {
     {
       id: 'alberto-bergamini',
       name: 'Alberto Bergamini',
+      gender: 'm',
       age: 31,
       role: 'barista',
       placeId: 'caffe-della-funicolare',
@@ -399,6 +406,7 @@ export const bergamo: CityPantry = {
     {
       id: 'chiara-galli',
       name: 'Chiara Galli',
+      gender: 'f',
       age: 26,
       role: 'barista',
       placeId: 'bar-sant-alessandro',
@@ -408,6 +416,7 @@ export const bergamo: CityPantry = {
     {
       id: 'mario-biffi',
       name: 'Mario Biffi',
+      gender: 'm',
       age: 55,
       role: 'proprietario',
       placeId: 'bar-polo',
@@ -417,6 +426,7 @@ export const bergamo: CityPantry = {
     {
       id: 'elena-tresoldi',
       name: 'Elena Tresoldi',
+      gender: 'f',
       age: 42,
       role: 'fornaia',
       placeId: 'panificio-tresoldi',
@@ -426,6 +436,7 @@ export const bergamo: CityPantry = {
     {
       id: 'franco-locatelli',
       name: 'Franco Locatelli',
+      gender: 'm',
       age: 61,
       role: 'fornaio',
       placeId: 'forno-san-lorenzo',
@@ -435,6 +446,7 @@ export const bergamo: CityPantry = {
     {
       id: 'silvia-pesenti',
       name: 'Silvia Pesenti',
+      gender: 'f',
       age: 34,
       role: 'fornaia',
       placeId: 'panificio-moderno',
@@ -444,6 +456,7 @@ export const bergamo: CityPantry = {
     {
       id: 'paolo-cavalli',
       name: 'Paolo Cavalli',
+      gender: 'm',
       age: 49,
       role: 'pasticciere maestro',
       placeId: 'pasticceria-cavour',
@@ -453,6 +466,7 @@ export const bergamo: CityPantry = {
     {
       id: 'giovanni-rota',
       name: 'Giovanni Rota',
+      gender: 'm',
       age: 58,
       role: 'fruttivendolo',
       placeId: 'mercato-citta-alta',
@@ -462,6 +476,7 @@ export const bergamo: CityPantry = {
     {
       id: 'carla-ghisleni',
       name: 'Carla Ghisleni',
+      gender: 'f',
       age: 52,
       role: 'commerciante',
       placeId: 'mercato-borgo-palazzo',
@@ -471,24 +486,27 @@ export const bergamo: CityPantry = {
     {
       id: 'donato-zonca',
       name: 'Donato Zonca',
+      gender: 'm',
       age: 71,
       role: 'negoziante',
       placeId: 'alimentari-donato',
       personality: ['saggio', 'paziente', 'narratore'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly shopkeeper with kind eyes, apron over cardigan, gentle smile, minimal warm watercolor wash, detailed wise weathered face, neighborhood historian presence',
+      portraitPrompt: 'Pen and ink portrait on white paper of an elderly shopkeeper with kind eyes, apron over cardigan, gentle smile, minimal warm watercolor wash, detailed wise weathered face, neighborhood historian presence. The subject is a man.',
     },
     {
       id: 'vittorio-cerea',
       name: 'Vittorio Cerea',
+      gender: 'm',
       age: 56,
       role: 'chef stellato',
       placeId: 'ristorante-da-vittorio',
       personality: ['visionario', 'appassionato', 'esigente'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with penetrating gaze, chef whites, confident bearing, minimal burgundy watercolor wash, detailed intense features, Michelin-starred excellence',
+      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with penetrating gaze, chef whites, confident bearing, minimal burgundy watercolor wash, detailed intense features, Michelin-starred excellence. The subject is a man.',
     },
     {
       id: 'massimo-villa',
       name: 'Massimo Villa',
+      gender: 'm',
       age: 47,
       role: 'chef proprietario',
       placeId: 'ristorante-colleoni',
@@ -498,6 +516,7 @@ export const bergamo: CityPantry = {
     {
       id: 'ornella-togni',
       name: 'Ornella Togni',
+      gender: 'f',
       age: 63,
       role: 'cuoca e proprietaria',
       placeId: 'trattoria-del-teatro',
@@ -507,6 +526,7 @@ export const bergamo: CityPantry = {
     {
       id: 'fabio-previtali',
       name: 'Fabio Previtali',
+      gender: 'm',
       age: 44,
       role: 'oste',
       placeId: 'osteria-del-borgo',
@@ -516,6 +536,7 @@ export const bergamo: CityPantry = {
     {
       id: 'bruno-arrigoni',
       name: 'Bruno Arrigoni',
+      gender: 'm',
       age: 66,
       role: 'cuoco specializzato',
       placeId: 'polenteria-valtellina',
@@ -525,6 +546,7 @@ export const bergamo: CityPantry = {
     {
       id: 'leonardo-marchesi',
       name: 'Leonardo Marchesi',
+      gender: 'm',
       age: 35,
       role: 'guida turistica',
       placeId: 'piazza-vecchia',
@@ -534,6 +556,7 @@ export const bergamo: CityPantry = {
     {
       id: 'padre-francesco',
       name: 'Padre Francesco',
+      gender: 'm',
       age: 69,
       role: 'sacerdote',
       placeId: 'basilica-santa-maria-maggiore',
@@ -543,6 +566,7 @@ export const bergamo: CityPantry = {
     {
       id: 'anna-santoro',
       name: 'Anna Santoro',
+      gender: 'f',
       age: 41,
       role: 'storica dell\'arte',
       placeId: 'cappella-colleoni',
@@ -552,6 +576,7 @@ export const bergamo: CityPantry = {
     {
       id: 'pietro-conti',
       name: 'Pietro Conti',
+      gender: 'm',
       age: 57,
       role: 'custode',
       placeId: 'rocca-di-bergamo',
@@ -561,6 +586,7 @@ export const bergamo: CityPantry = {
     {
       id: 'giulia-mazzoleni',
       name: 'Giulia Mazzoleni',
+      gender: 'f',
       age: 29,
       role: 'giardiniera comunale',
       placeId: 'parco-della-trucca',
@@ -570,6 +596,7 @@ export const bergamo: CityPantry = {
     {
       id: 'federico-ruggeri',
       name: 'Federico Ruggeri',
+      gender: 'm',
       age: 33,
       role: 'musicista di strada',
       placeId: 'sentierone',
@@ -579,6 +606,7 @@ export const bergamo: CityPantry = {
     {
       id: 'luca-belotti',
       name: 'Luca Belotti',
+      gender: 'm',
       age: 39,
       role: 'sommelier',
       placeId: 'enoteca-del-malpaga',
@@ -588,15 +616,17 @@ export const bergamo: CityPantry = {
     {
       id: 'antonio-cozzi',
       name: 'Antonio Cozzi',
+      gender: 'm',
       age: 68,
       role: 'proprietario storico',
       placeId: 'vineria-cozzi',
       personality: ['tradizionale', 'esperto', 'nostalgico'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly wine merchant with gentle features, vest and rolled sleeves, lifetime of wine knowledge in eyes, minimal wine-red watercolor wash, detailed venerable face',
+      portraitPrompt: 'Pen and ink portrait on white paper of an elderly wine merchant with gentle features, vest and rolled sleeves, lifetime of wine knowledge in eyes, minimal wine-red watercolor wash, detailed venerable face. The subject is a man.',
     },
     {
       id: 'beatrice-castelli',
       name: 'Beatrice Castelli',
+      gender: 'f',
       age: 36,
       role: 'libraia',
       placeId: 'libreria-sant-agostino',
@@ -606,6 +636,7 @@ export const bergamo: CityPantry = {
     {
       id: 'dottoressa-marini',
       name: 'Dottoressa Marini',
+      gender: 'f',
       age: 48,
       role: 'farmacista',
       placeId: 'farmacia-centrale',
@@ -615,6 +646,7 @@ export const bergamo: CityPantry = {
     {
       id: 'michele-pezzotta',
       name: 'Michele Pezzotta',
+      gender: 'm',
       age: 51,
       role: 'macchinista della funicolare',
       placeId: 'funicolare-bergamo-alta',
@@ -624,15 +656,17 @@ export const bergamo: CityPantry = {
     {
       id: 'maestro-grassi',
       name: 'Maestro Grassi',
+      gender: 'm',
       age: 64,
       role: 'direttore d\'orchestra',
       placeId: 'teatro-donizetti',
       personality: ['drammatico', 'esigente', 'appassionato'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished conductor with expressive hands mid-gesture, formal concert attire, intense musical gaze, minimal gold watercolor wash, detailed dramatic features, operatic passion',
+      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished conductor with expressive hands mid-gesture, formal concert attire, intense musical gaze, minimal gold watercolor wash, detailed dramatic features, operatic passion. The subject is a man.',
     },
     {
       id: 'clara-bellini',
       name: 'Clara Bellini',
+      gender: 'f',
       age: 43,
       role: 'curatrice museale',
       placeId: 'accademia-carrara',

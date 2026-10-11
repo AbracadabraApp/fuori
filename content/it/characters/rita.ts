@@ -3,6 +3,7 @@ import { CharacterSheet } from '@/lib/types';
 export const rita: CharacterSheet = {
   id: 'rita',
   name: 'Rita',
+  gender: 'f',
   age: 58,
   role: 'host',
   city: 'Roma',

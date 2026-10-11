@@ -292,6 +292,7 @@ export const siracusa: CityPantry = {
     {
       id: 'salvatore-bar',
       name: 'Salvatore Greco',
+      gender: 'm',
       age: 52,
       role: 'proprietario',
       placeId: 'bar-dolce-vita',
@@ -301,6 +302,7 @@ export const siracusa: CityPantry = {
     {
       id: 'rosa-caffe',
       name: 'Rosa Battaglia',
+      gender: 'f',
       age: 38,
       role: 'barista',
       placeId: 'caffe-archimede',
@@ -310,6 +312,7 @@ export const siracusa: CityPantry = {
     {
       id: 'giuseppe-apollo',
       name: 'Giuseppe Marino',
+      gender: 'm',
       age: 67,
       role: 'barista',
       placeId: 'bar-apollo',
@@ -319,6 +322,7 @@ export const siracusa: CityPantry = {
     {
       id: 'angela-panificio',
       name: 'Angela Fontana',
+      gender: 'f',
       age: 45,
       role: 'fornaia',
       placeId: 'panificio-regina',
@@ -328,6 +332,7 @@ export const siracusa: CityPantry = {
     {
       id: 'carmelo-pasticceria',
       name: 'Carmelo Russo',
+      gender: 'm',
       age: 41,
       role: 'pasticciere',
       placeId: 'pasticceria-santa-lucia',
@@ -337,6 +342,7 @@ export const siracusa: CityPantry = {
     {
       id: 'pietro-mercato',
       name: 'Pietro D\'Amico',
+      gender: 'm',
       age: 58,
       role: 'venditore',
       placeId: 'mercato-ortigia',
@@ -346,6 +352,7 @@ export const siracusa: CityPantry = {
     {
       id: 'francesca-verdura',
       name: 'Francesca Vitale',
+      gender: 'f',
       age: 35,
       role: 'venditrice',
       placeId: 'mercato-acradina',
@@ -355,6 +362,7 @@ export const siracusa: CityPantry = {
     {
       id: 'tonino-pesce',
       name: 'Tonino Sciacca',
+      gender: 'm',
       age: 49,
       role: 'pescivendolo',
       placeId: 'pescheria-mare',
@@ -364,6 +372,7 @@ export const siracusa: CityPantry = {
     {
       id: 'lorenzo-dioniso',
       name: 'Lorenzo Greco',
+      gender: 'm',
       age: 44,
       role: 'chef',
       placeId: 'ristorante-dioniso',
@@ -373,6 +382,7 @@ export const siracusa: CityPantry = {
     {
       id: 'isabella-luna',
       name: 'Isabella Caruso',
+      gender: 'f',
       age: 36,
       role: 'proprietaria',
       placeId: 'ristorante-luna',
@@ -382,6 +392,7 @@ export const siracusa: CityPantry = {
     {
       id: 'maria-trattoria',
       name: 'Maria Lombardo',
+      gender: 'f',
       age: 61,
       role: 'cuoca',
       placeId: 'trattoria-aretusa',
@@ -391,6 +402,7 @@ export const siracusa: CityPantry = {
     {
       id: 'vincenzo-osteria',
       name: 'Vincenzo Catalano',
+      gender: 'm',
       age: 55,
       role: 'oste',
       placeId: 'osteria-siciliana',
@@ -400,6 +412,7 @@ export const siracusa: CityPantry = {
     {
       id: 'padre-antonio',
       name: 'Padre Antonio Serra',
+      gender: 'm',
       age: 68,
       role: 'sacerdote',
       placeId: 'duomo-siracusa',
@@ -409,6 +422,7 @@ export const siracusa: CityPantry = {
     {
       id: 'elena-guide',
       name: 'Elena Ragusa',
+      gender: 'f',
       age: 29,
       role: 'guida turistica',
       placeId: 'fonte-aretusa',
@@ -418,15 +432,17 @@ export const siracusa: CityPantry = {
     {
       id: 'marco-archeologo',
       name: 'Marco Alberti',
+      gender: 'm',
       age: 53,
       role: 'archeologo',
       placeId: 'parco-archeologico',
       personality: ['passionate', 'academic', 'patient'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished scholar with sun hat suggested, weathered face from outdoor work, thoughtful expression, minimal watercolor wash of tanned skin and gray-streaked hair, dedicated and knowledgeable, white background',
+      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished scholar with sun hat suggested, weathered face from outdoor work, thoughtful expression, minimal watercolor wash of tanned skin and gray-streaked hair, dedicated and knowledgeable, white background. The subject is a man.',
     },
     {
       id: 'alberto-piazza',
       name: 'Alberto Messina',
+      gender: 'm',
       age: 72,
       role: 'pensionato',
       placeId: 'piazza-archimede',
@@ -436,6 +452,7 @@ export const siracusa: CityPantry = {
     {
       id: 'suor-gabriella',
       name: 'Suor Gabriella',
+      gender: 'f',
       age: 43,
       role: 'suora',
       placeId: 'santuario-madonna',
@@ -445,6 +462,7 @@ export const siracusa: CityPantry = {
     {
       id: 'stefano-vino',
       name: 'Stefano Nicolosi',
+      gender: 'm',
       age: 39,
       role: 'enotecario',
       placeId: 'enoteca-bacco',
@@ -454,6 +472,7 @@ export const siracusa: CityPantry = {
     {
       id: 'claudia-sommelier',
       name: 'Claudia Romano',
+      gender: 'f',
       age: 33,
       role: 'sommelier',
       placeId: 'wine-bar-etna',
@@ -463,6 +482,7 @@ export const siracusa: CityPantry = {
     {
       id: 'beatrice-libri',
       name: 'Beatrice Moretti',
+      gender: 'f',
       age: 47,
       role: 'libraia',
       placeId: 'libreria-papiro',
@@ -472,6 +492,7 @@ export const siracusa: CityPantry = {
     {
       id: 'dottore-ricci',
       name: 'Dott. Francesco Ricci',
+      gender: 'm',
       age: 56,
       role: 'farmacista',
       placeId: 'farmacia-apollo',
@@ -481,15 +502,17 @@ export const siracusa: CityPantry = {
     {
       id: 'roberto-stazione',
       name: 'Roberto Bianchi',
+      gender: 'm',
       age: 50,
       role: 'capostazione',
       placeId: 'stazione-siracusa',
       personality: ['punctual', 'helpful', 'efficient'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a uniformed station worker with official cap, whistle suggested, organized expression, minimal watercolor wash of professional bearing, dependable face, railway authority, white background',
+      portraitPrompt: 'Pen and ink portrait on white paper of a uniformed station worker with official cap, whistle suggested, organized expression, minimal watercolor wash of professional bearing, dependable face, railway authority, white background. The subject is a man.',
     },
     {
       id: 'davide-storia',
       name: 'Davide Levi',
+      gender: 'm',
       age: 64,
       role: 'storico',
       placeId: 'antica-giudecca',
@@ -499,15 +522,17 @@ export const siracusa: CityPantry = {
     {
       id: 'arturo-papiro',
       name: 'Arturo Pappalardo',
+      gender: 'm',
       age: 58,
       role: 'artigiano',
       placeId: 'laboratorio-papiro',
       personality: ['traditional', 'skilled', 'patient teacher'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a craftsman with work-worn hands, concentration in eyes, artisan apron, minimal watercolor wash of weathered face, ancient craft in expression, dedicated and masterful, white background',
+      portraitPrompt: 'Pen and ink portrait on white paper of a craftsman with work-worn hands, concentration in eyes, artisan apron, minimal watercolor wash of weathered face, ancient craft in expression, dedicated and masterful, white background. The subject is a man.',
     },
     {
       id: 'lucia-gelato',
       name: 'Lucia Bellini',
+      gender: 'f',
       age: 27,
       role: 'gelataia',
       placeId: 'gelateria-nettuno',
@@ -517,33 +542,37 @@ export const siracusa: CityPantry = {
     {
       id: 'giulia-ceramica',
       name: 'Giulia Terrana',
+      gender: 'f',
       age: 42,
       role: 'ceramista',
       placeId: 'bottega-ceramica',
       personality: ['artistic', 'traditional', 'colorful'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an artist with paint-stained fingers, creative eyes, colorful scarf, minimal watercolor wash of expressive face and paint smudges, Sicilian patterns suggested, vibrant and skilled, white background',
+      portraitPrompt: 'Pen and ink portrait on white paper of an artist with paint-stained fingers, creative eyes, colorful scarf, minimal watercolor wash of expressive face and paint smudges, Sicilian patterns suggested, vibrant and skilled, white background. The subject is a woman.',
     },
     {
       id: 'salvatore-pesce',
       name: 'Salvatore Costa',
+      gender: 'm',
       age: 46,
       role: 'chef',
       placeId: 'pescheria-antica',
       personality: ['seafood expert', 'straightforward', 'quality-focused'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a chef with maritime background, strong features, white chef jacket, minimal watercolor wash of sea-loving eyes and capable hands, fresh fish expertise, authentic and direct, white background',
+      portraitPrompt: 'Pen and ink portrait on white paper of a chef with maritime background, strong features, white chef jacket, minimal watercolor wash of sea-loving eyes and capable hands, fresh fish expertise, authentic and direct, white background. The subject is a man.',
     },
     {
       id: 'filippo-minerva',
       name: 'Filippo Salerno',
+      gender: 'm',
       age: 63,
       role: 'barista',
       placeId: 'bar-minerva',
       personality: ['neighborhood fixture', 'card player', 'gossipy'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a local character with expressive face, vest and shirtsleeves, cards suggested, minimal watercolor wash of animated features, community hub personality, talkative and familiar, white background',
+      portraitPrompt: 'Pen and ink portrait on white paper of a local character with expressive face, vest and shirtsleeves, cards suggested, minimal watercolor wash of animated features, community hub personality, talkative and familiar, white background. The subject is a man.',
     },
     {
       id: 'gino-giardiniere',
       name: 'Gino Palmieri',
+      gender: 'm',
       age: 59,
       role: 'giardiniere',
       placeId: 'orto-botanico',
@@ -553,6 +582,7 @@ export const siracusa: CityPantry = {
     {
       id: 'antonio-macellaio',
       name: 'Antonio Greco',
+      gender: 'm',
       age: 51,
       role: 'macellaio',
       placeId: 'macelleria-tradizionale',

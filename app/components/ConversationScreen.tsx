@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
 import { language } from '@/content/it/language';
+import { browserVoiceFor } from '@/content/it/voices';
 import {
   fetchWithRetry,
   micError,
@@ -99,6 +100,9 @@ export function ConversationScreen({
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = language.speechLang;
       utterance.rate = rate;
+      // A male or female Italian system voice to match the character
+      const voice = browserVoiceFor(speechSynthesis.getVoices(), language.speechLang, character.id, character.gender);
+      if (voice) utterance.voice = voice;
       speechSynthesis.speak(utterance);
     } catch {
       // no speech available
@@ -173,7 +177,7 @@ export function ConversationScreen({
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text, language: language.code, characterId, speed }),
+            body: JSON.stringify({ text, language: language.code, characterId, gender: character.gender, speed }),
           },
           'voice'
         )

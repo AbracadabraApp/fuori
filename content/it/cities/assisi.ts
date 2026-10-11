@@ -296,6 +296,7 @@ export const assisi: CityPantry = {
     {
       id: 'marco-bartoli',
       name: 'Marco Bartoli',
+      gender: 'm',
       age: 42,
       role: 'barista',
       placeId: 'caffe-duomo',
@@ -305,6 +306,7 @@ export const assisi: CityPantry = {
     {
       id: 'giulia-rossi',
       name: 'Giulia Rossi',
+      gender: 'f',
       age: 29,
       role: 'barista',
       placeId: 'bar-senso',
@@ -314,6 +316,7 @@ export const assisi: CityPantry = {
     {
       id: 'alessandro-bianchi',
       name: 'Alessandro Bianchi',
+      gender: 'm',
       age: 55,
       role: 'proprietor',
       placeId: 'caffe-santa-chiara',
@@ -323,6 +326,7 @@ export const assisi: CityPantry = {
     {
       id: 'teresa-mancini',
       name: 'Teresa Mancini',
+      gender: 'f',
       age: 38,
       role: 'baker',
       placeId: 'forno-santa-maria',
@@ -332,6 +336,7 @@ export const assisi: CityPantry = {
     {
       id: 'roberto-falchi',
       name: 'Roberto Falchi',
+      gender: 'm',
       age: 46,
       role: 'pastry chef',
       placeId: 'pasticceria-san-francesco',
@@ -341,6 +346,7 @@ export const assisi: CityPantry = {
     {
       id: 'vincenzo-monti',
       name: 'Vincenzo Monti',
+      gender: 'm',
       age: 62,
       role: 'produce vendor',
       placeId: 'mercato-coperto',
@@ -350,6 +356,7 @@ export const assisi: CityPantry = {
     {
       id: 'anna-sabatini',
       name: 'Anna Sabatini',
+      gender: 'f',
       age: 51,
       role: 'market vendor',
       placeId: 'mercato-piazza',
@@ -359,6 +366,7 @@ export const assisi: CityPantry = {
     {
       id: 'franco-neri',
       name: 'Franco Neri',
+      gender: 'm',
       age: 58,
       role: 'shopkeeper',
       placeId: 'bottega-umbra',
@@ -368,6 +376,7 @@ export const assisi: CityPantry = {
     {
       id: 'lucia-greco',
       name: 'Lucia Greco',
+      gender: 'f',
       age: 44,
       role: 'chef',
       placeId: 'ristorante-metastasio',
@@ -377,6 +386,7 @@ export const assisi: CityPantry = {
     {
       id: 'paolo-moretti',
       name: 'Paolo Moretti',
+      gender: 'm',
       age: 50,
       role: 'chef-owner',
       placeId: 'ristorante-fortezza',
@@ -386,6 +396,7 @@ export const assisi: CityPantry = {
     {
       id: 'erminio-bruschi',
       name: 'Erminio Bruschi',
+      gender: 'm',
       age: 71,
       role: 'owner',
       placeId: 'trattoria-erminio',
@@ -395,6 +406,7 @@ export const assisi: CityPantry = {
     {
       id: 'silvia-fontana',
       name: 'Silvia Fontana',
+      gender: 'f',
       age: 36,
       role: 'chef',
       placeId: 'osteria-fontemaggiore',
@@ -404,6 +416,7 @@ export const assisi: CityPantry = {
     {
       id: 'padre-giovanni',
       name: 'Padre Giovanni',
+      gender: 'm',
       age: 67,
       role: 'friar',
       placeId: 'basilica-san-francesco',
@@ -413,6 +426,7 @@ export const assisi: CityPantry = {
     {
       id: 'suor-maria',
       name: 'Suor Maria Chiara',
+      gender: 'f',
       age: 45,
       role: 'nun',
       placeId: 'basilica-santa-chiara',
@@ -422,6 +436,7 @@ export const assisi: CityPantry = {
     {
       id: 'dottore-alberti',
       name: 'Dott. Stefano Alberti',
+      gender: 'm',
       age: 53,
       role: 'historian',
       placeId: 'tempio-minerva',
@@ -431,6 +446,7 @@ export const assisi: CityPantry = {
     {
       id: 'giorgio-benedetti',
       name: 'Giorgio Benedetti',
+      gender: 'm',
       age: 60,
       role: 'gardener',
       placeId: 'giardini-santa-chiara',
@@ -440,6 +456,7 @@ export const assisi: CityPantry = {
     {
       id: 'isabella-conti',
       name: 'Isabella Conti',
+      gender: 'f',
       age: 33,
       role: 'street performer',
       placeId: 'piazza-comune',
@@ -449,6 +466,7 @@ export const assisi: CityPantry = {
     {
       id: 'matteo-galli',
       name: 'Matteo Galli',
+      gender: 'm',
       age: 28,
       role: 'local guide',
       placeId: 'piazza-san-rufino',
@@ -458,6 +476,7 @@ export const assisi: CityPantry = {
     {
       id: 'andrea-carli',
       name: 'Andrea Carli',
+      gender: 'm',
       age: 41,
       role: 'sommelier',
       placeId: 'enoteca-properzio',
@@ -467,6 +486,7 @@ export const assisi: CityPantry = {
     {
       id: 'valentina-toscano',
       name: 'Valentina Toscano',
+      gender: 'f',
       age: 31,
       role: 'wine bar manager',
       placeId: 'wine-bar-bibendum',
@@ -476,6 +496,7 @@ export const assisi: CityPantry = {
     {
       id: 'elena-marchetti',
       name: 'Elena Marchetti',
+      gender: 'f',
       age: 56,
       role: 'bookseller',
       placeId: 'libreria-san-francesco',
@@ -485,6 +506,7 @@ export const assisi: CityPantry = {
     {
       id: 'dottoressa-martini',
       name: 'Dott.ssa Carla Martini',
+      gender: 'f',
       age: 48,
       role: 'pharmacist',
       placeId: 'farmacia-centrale',
@@ -494,6 +516,7 @@ export const assisi: CityPantry = {
     {
       id: 'giuseppe-ricci',
       name: 'Giuseppe Ricci',
+      gender: 'm',
       age: 65,
       role: 'shopkeeper',
       placeId: 'tabaccheria-assisi',
@@ -503,6 +526,7 @@ export const assisi: CityPantry = {
     {
       id: 'alberto-ferretti',
       name: 'Alberto Ferretti',
+      gender: 'm',
       age: 39,
       role: 'castle guide',
       placeId: 'rocca-maggiore',
@@ -512,6 +536,7 @@ export const assisi: CityPantry = {
     {
       id: 'fra-antonio',
       name: 'Fra Antonio',
+      gender: 'm',
       age: 52,
       role: 'hermit friar',
       placeId: 'eremo-carceri',
@@ -521,6 +546,7 @@ export const assisi: CityPantry = {
     {
       id: 'clara-russo',
       name: 'Clara Russo',
+      gender: 'f',
       age: 43,
       role: 'museum curator',
       placeId: 'museo-diocesano',
@@ -530,6 +556,7 @@ export const assisi: CityPantry = {
     {
       id: 'marco-angelini',
       name: 'Marco Angelini',
+      gender: 'm',
       age: 37,
       role: 'ceramicist',
       placeId: 'laboratorio-ceramiche',
@@ -539,6 +566,7 @@ export const assisi: CityPantry = {
     {
       id: 'domenico-petrucci',
       name: 'Domenico Petrucci',
+      gender: 'm',
       age: 59,
       role: 'olive oil producer',
       placeId: 'frantoi-assisi',
@@ -548,6 +576,7 @@ export const assisi: CityPantry = {
     {
       id: 'federica-lenti',
       name: 'Federica Lenti',
+      gender: 'f',
       age: 26,
       role: 'gelato maker',
       placeId: 'gelateria-santa-maria',
