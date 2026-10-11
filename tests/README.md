@@ -11,6 +11,7 @@
 - `npm run test:voices`: every character has a voice matching their gender (`npm run voices` lists Italian voices on the ElevenLabs account)
 - `npm run test:feed`: place feeds mix neighbourhoods and kinds, and include every place once
 - `npm run test:audio`: phone recordings get a file name with the right extension (Whisper rejects "blob")
+- `npm run test:roles`: character roles are in Italian (they show on screen and go into the prompt)
 
 ## Conversation test: grade and recommend
 

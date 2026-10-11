@@ -491,7 +491,7 @@ export const verona: CityPantry = {
       name: 'Beatrice Libri',
       gender: 'f',
       age: 54,
-      role: 'librai',
+      role: 'libraia',
       placeId: 'libreria-rinascimento',
       personality: ['literary', 'thoughtful', 'cultured'],
       portraitPrompt: 'Pen and ink portrait on white paper of an intellectual woman in her fifties with gray-streaked dark hair in loose bun, intelligent eyes behind stylish glasses, wearing elegant simple clothes, holding vintage book tenderly, contemplative smile, detailed crosshatching with watercolor in sepia and cream',

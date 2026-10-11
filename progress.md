@@ -339,3 +339,12 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 
 - Roma was hand-written before the other cities were generated, so 23 of its 25 places had nobody ("nobody to talk to here yet"). Added 23 characters in the same format as other cities (name, gender, age, role, personality, portrait description) and linked each to its place: e.g. Sandro at Bar Angolo, Nonna Gina in Piazza Santa Maria, Don Paolo at the basilica.
 - **Next (laptop):** `npm run images -- --city roma` to generate their 23 portraits (place images already exist), then `npm run test:images` should pass.
+
+## 2026-10-11: Conversation screen from phone notes (cloud session)
+
+Notes from the first real phone use are in `docs/ideas.md` → "Coda". Acted on the interface ones:
+- Compact header ("‹ Firenze" at 17px) and a one-line name · role under it.
+- Portrait shown full at the start; the reply text floats over it from 50% down the screen and scrolls inside itself if long. The page never scrolls, so the face stays visible (Rosa's portrait used to scroll off, leaving her apron).
+- Mic states: Tap to speak / Listening… tap to send (pulsing red) / Rosa is thinking… (dots) / Rosa is speaking · tap to interrupt. The opening line now shows "thinking" too.
+- 234 English character roles translated to Italian, matching gender (fruit vendor → fruttivendola). `npm run test:roles`.
+- Checked at 390×844 and 375×667. The "speaking" state couldn't be seen in the headless browser (no audio); check it on the phone.

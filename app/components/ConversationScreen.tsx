@@ -69,6 +69,7 @@ export function ConversationScreen({
 }: ConversationScreenProps) {
   const [isRecording, setIsRecording] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const [transcript, setTranscript] = useState<Turn[]>([]);
   const [currentResponse, setCurrentResponse] = useState<string | null>(null);
@@ -111,6 +112,9 @@ export function ConversationScreen({
       // A male or female Italian system voice to match the character
       const voice = browserVoiceFor(speechSynthesis.getVoices(), language.speechLang, character.id, character.gender);
       if (voice) utterance.voice = voice;
+      utterance.onstart = () => setIsSpeaking(true);
+      utterance.onend = () => setIsSpeaking(false);
+      utterance.onerror = () => setIsSpeaking(false);
       speechSynthesis.speak(utterance);
     } catch {
       // no speech available
@@ -138,6 +142,10 @@ export function ConversationScreen({
     if (!audioRef.current) {
       const audio = new Audio();
       audio.src = SILENT_WAV;
+      // Speaking state for the mic label; the silent unlock clip doesn't count
+      audio.onplaying = () => setIsSpeaking(!audio.src.startsWith('data:'));
+      audio.onended = () => setIsSpeaking(false);
+      audio.onpause = () => setIsSpeaking(false);
       audio.play().catch(() => {});
       audioRef.current = audio;
     }
@@ -146,6 +154,7 @@ export function ConversationScreen({
   const startConversation = async () => {
     unlockAudio();
     setHasStarted(true);
+    setIsProcessing(true);
     setError(null);
 
     try {
@@ -174,6 +183,8 @@ export function ConversationScreen({
       // Nothing has been said yet, so show the Start button again
       handleError(err, 'opening line');
       setHasStarted(false);
+    } finally {
+      setIsProcessing(false);
     }
   };
 
@@ -238,6 +249,7 @@ export function ConversationScreen({
       speakingAtStartRef.current = (!!audio && !audio.paused && !audio.ended) || speechSynthesis.speaking;
       audio?.pause();
       speechSynthesis.cancel();
+      setIsSpeaking(false);
 
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
 
@@ -385,16 +397,41 @@ export function ConversationScreen({
     }
   };
 
+  const role = characterRole ? characterRole.charAt(0).toUpperCase() + characterRole.slice(1) : '';
+  const state: 'idle' | 'listening' | 'thinking' | 'speaking' = isRecording
+    ? 'listening'
+    : isProcessing
+      ? 'thinking'
+      : isSpeaking
+        ? 'speaking'
+        : 'idle';
+  // First name for status lines; skip titles like "Dott.ssa", "Don", "Padre"
+  const firstName =
+    characterName.split(' ').find((w) => !/^(dott|dottor|dottoressa|dott\.ssa|prof|don|padre|suor|fra|nonna|nonno|maestro|signor|signora)\.?$/i.test(w)) ??
+    characterName;
+  const statusText = {
+    idle: 'Tap to speak',
+    listening: 'Listening… tap to send',
+    thinking: `${firstName} is thinking…`,
+    speaking: `${firstName} is speaking · tap to interrupt`,
+  }[state];
+  const showReply = (showTranscripts && currentResponse) || (showEnglish && currentTranslation);
+
   return (
     <div className={styles.screen}>
-      {/* Back button */}
-      <div onClick={onBack} className={styles.back}>
-        <span className={styles.backArrow}>←</span>
+      {/* Compact header */}
+      <button type="button" onClick={onBack} className={styles.back}>
+        <span className={styles.backArrow} aria-hidden="true">‹</span>
         <span className={styles.backCity}>{cityName}</span>
+      </button>
+
+      <div className={styles.nameLine}>
+        <span className={styles.name}>{characterName}</span>
+        {role && <span className={styles.role}> · {role}</span>}
       </div>
 
-      {/* Portrait and name area */}
-      <div className={styles.body}>
+      {/* Portrait fills the stage; text floats over it from mid-screen */}
+      <div className={styles.stage}>
         {characterPortrait && !portraitFailed ? (
           <img
             src={characterPortrait}
@@ -405,47 +442,41 @@ export function ConversationScreen({
         ) : (
           <div className={styles.portraitPlaceholder}>👤</div>
         )}
-        <div className={styles.nameLine}>
-          <span className={styles.name}>{characterName}</span>
-          {characterRole && (
-            <span className={styles.role}>
-              , {characterRole.charAt(0).toUpperCase() + characterRole.slice(1)}
-            </span>
+      </div>
+
+      {(showReply || error || debug) && (
+        <div className={styles.overlay}>
+          {/* Character's reply as text, if turned on in Settings */}
+          {showReply && (
+            <div className={styles.reply}>
+              {showTranscripts && currentResponse && (
+                <div className={showEnglish ? styles.italianWithEnglish : styles.italian}>
+                  {currentResponse}
+                </div>
+              )}
+              {showEnglish && currentTranslation && <div className={styles.english}>{currentTranslation}</div>}
+            </div>
+          )}
+
+          {/* Error display: plain language, with a code to look up in the logs */}
+          {error && <div className={styles.error}>{error}</div>}
+
+          {/* Debug panel: open the app once with ?debug=1 (off with ?debug=0) */}
+          {debug && (
+            <div className={styles.debug}>
+              <div><b>Recording:</b> {debugInfo.recording ?? '—'}</div>
+              <div><b>Heard:</b> {debugInfo.heard ?? '—'}</div>
+              <div><b>Voice:</b> {debugInfo.voice ?? '—'}</div>
+              <div>
+                <b>Timings:</b>{' '}
+                {Object.entries(debugInfo.timings).map(([k, v]) => `${k} ${v}ms`).join(' · ') || '—'}
+              </div>
+              <div><b>Speed:</b> {getSpeechSpeed()}</div>
+              {debugInfo.lastError && <div className={styles.debugError}>{debugInfo.lastError}</div>}
+            </div>
           )}
         </div>
-
-        {/* Character's reply as text, if turned on in Settings */}
-        {(showTranscripts && currentResponse) || (showEnglish && currentTranslation) ? (
-          <div className={styles.reply}>
-            {showTranscripts && currentResponse && (
-              <div className={showEnglish ? styles.italianWithEnglish : styles.italian}>
-                {currentResponse}
-              </div>
-            )}
-            {showEnglish && currentTranslation && (
-              <div className={styles.english}>{currentTranslation}</div>
-            )}
-          </div>
-        ) : null}
-
-        {/* Error display: plain language, with a code to look up in the logs */}
-        {error && <div className={styles.error}>{error}</div>}
-
-        {/* Debug panel: open the app once with ?debug=1 (off with ?debug=0) */}
-        {debug && (
-          <div className={styles.debug}>
-            <div><b>Recording:</b> {debugInfo.recording ?? '—'}</div>
-            <div><b>Heard:</b> {debugInfo.heard ?? '—'}</div>
-            <div><b>Voice:</b> {debugInfo.voice ?? '—'}</div>
-            <div>
-              <b>Timings:</b>{' '}
-              {Object.entries(debugInfo.timings).map(([k, v]) => `${k} ${v}ms`).join(' · ') || '—'}
-            </div>
-            <div><b>Speed:</b> {getSpeechSpeed()}</div>
-            {debugInfo.lastError && <div className={styles.debugError}>{debugInfo.lastError}</div>}
-          </div>
-        )}
-      </div>
+      )}
 
       {/* Mic button area */}
       <div className={styles.controls}>
@@ -458,13 +489,20 @@ export function ConversationScreen({
             <button
               onClick={toggleRecording}
               disabled={isProcessing}
-              className={`${styles.mic} ${isRecording ? styles.recording : ''}`}
+              aria-label={statusText}
+              className={`${styles.mic} ${styles[state]}`}
             >
-              🎤
+              {state === 'thinking' ? (
+                <span className={styles.dots} aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                </span>
+              ) : (
+                '🎤'
+              )}
             </button>
-            <div className={styles.status}>
-              {isProcessing ? 'Processing...' : isRecording ? 'Tap to stop' : 'Tap to speak'}
-            </div>
+            <div className={styles.status}>{statusText}</div>
           </>
         )}
       </div>

@@ -1,59 +1,45 @@
+/* Layout: compact header, name line, portrait stage filling the screen,
+   reply text floating over the portrait from mid-screen, mic at the bottom.
+   Nothing scrolls the page, so the portrait never slides away. */
+
 .screen {
+  --controls-height: 148px;
   position: fixed;
   inset: 0;
   background-color: var(--paper);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
+/* Header */
 .back {
-  padding: 16px;
   display: flex;
   align-items: center;
+  gap: 6px;
+  padding: 10px 16px 4px;
+  background: none;
+  border: none;
+  font: inherit;
+  color: var(--green);
   cursor: pointer;
+  align-self: flex-start;
 }
 
 .backArrow {
   font-size: 28px;
+  line-height: 1;
+  margin-top: -3px;
 }
 
 .backCity {
-  margin-left: 12px;
-  font-size: 24px;
-  color: var(--green);
+  font-size: 17px;
   font-weight: 500;
 }
 
-.body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 20px;
-  gap: 16px;
-  overflow-y: auto;
-}
-
-.portrait {
-  max-width: 100%;
-  max-height: 60vh;
-  object-fit: contain;
-}
-
-.portraitPlaceholder {
-  width: 300px;
-  height: 300px;
-  background-color: var(--sand);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-}
-
 .nameLine {
-  font-size: 24px;
+  padding: 0 16px 8px;
+  font-size: 19px;
   color: var(--ink);
 }
 
@@ -63,16 +49,62 @@
 
 .role {
   font-weight: 300;
+  color: var(--muted);
+}
+
+/* Portrait */
+.stage {
+  flex: 1;
+  min-height: 0;
+  padding: 0 16px var(--controls-height);
+  display: flex;
+  justify-content: center;
+}
+
+.portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+}
+
+.portraitPlaceholder {
+  width: 100%;
+  height: 100%;
+  max-height: 360px;
+  background-color: var(--sand);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+/* Text overlay: starts at mid-screen, never runs into the mic area,
+   scrolls inside itself if a reply is long */
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  right: 16px;
+  max-height: calc(50% - var(--controls-height) - 8px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1;
 }
 
 .reply {
-  margin-top: 16px;
-  padding: 16px;
-  background-color: var(--card);
-  border-radius: 12px;
+  padding: 14px 16px;
+  background-color: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
   font-size: 18px;
+  line-height: 1.4;
   color: var(--text);
-  max-width: 100%;
 }
 
 .italian {
@@ -90,21 +122,27 @@
 }
 
 .error {
-  margin-top: 8px;
   padding: 12px;
   background-color: var(--error-bg);
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 14px;
   color: var(--error-ink);
-  max-width: 100%;
 }
 
+/* Mic area */
 .controls {
-  padding: 32px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--controls-height);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: linear-gradient(to bottom, rgba(245, 241, 237, 0), var(--paper) 30%);
 }
 
 .startButton {
@@ -118,27 +156,87 @@
 }
 
 .mic {
-  width: 80px;
-  height: 80px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
-  background-color: var(--green);
   border: none;
   color: white;
-  font-size: 32px;
+  font-size: 30px;
   cursor: pointer;
+  background-color: var(--green);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s;
-}
-
-.recording {
-  background-color: var(--record);
-  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.3);
+  transition: background-color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .startButton:disabled,
 .mic:disabled {
   cursor: not-allowed;
-  opacity: 0.6;
+}
+
+/* States */
+.idle {
+  background-color: var(--green);
+}
+
+.listening {
+  background-color: var(--record);
+  animation: pulse 1.4s ease-out infinite;
+}
+
+.thinking {
+  background-color: var(--green);
+  opacity: 0.75;
+}
+
+.speaking {
+  background-color: var(--green);
+  box-shadow: 0 0 0 4px rgba(44, 95, 79, 0.18);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 18px rgba(220, 53, 69, 0);
+  }
+}
+
+.dots {
+  display: flex;
+  gap: 5px;
+}
+
+.dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: white;
+  animation: dot 1.2s infinite ease-in-out;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes dot {
+  0%,
+  80%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
 }
 
 .status {
@@ -149,8 +247,8 @@
 
 /* Debug mode (?debug=1) */
 .debug {
-  width: 100%;
   padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.92);
   border: 1px dashed var(--muted);
   border-radius: 8px;
   font-family: ui-monospace, Menlo, monospace;
@@ -163,4 +261,11 @@
 .debugError {
   margin-top: 4px;
   color: var(--error-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listening,
+  .dots span {
+    animation: none;
+  }
 }
