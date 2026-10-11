@@ -213,6 +213,26 @@ Claude doesn't need explicit rules for every phrase - it naturally understands i
 - Magda provides explicit teaching
 - Structured reflection complements immersive practice
 
+## Visit marks on place cards
+
+*Raised 2026-10-10. Not built.*
+
+As you visit a place, its Polaroid card gets a mark, and the mark darkens as you keep coming back. The feed becomes a quiet record of your time in Italy, with no points or game mechanics.
+
+**What the mark could be** (it should feel like part of a sketchbook Polaroid):
+- **Ink stamp** in a corner, like a passport stamp, getting darker and more saturated with each visit. Fits the travel theme and reads at a glance. *Preferred.*
+- **Coffee ring** that deepens with repeat visits. Charming for bars and cafés, odd on a church.
+- **Pencil tally marks** in the white caption area. Clear, but starts to feel like a scorecard.
+
+**Keep it small and capped.** Three or four levels (first visit, a few visits, regular), then it stays put. The point is a sense of belonging, not a count.
+
+**Related: names appear once you've met someone.** Before your first visit, the card shows only the place. Afterwards, the person's name appears handwritten on it, like "*Giulia*" penciled under "Bar in Trastevere." Strangers become people you know, which is the core of Fuori. It pairs with character memory: the card shows you know her, and she shows she knows you.
+
+**Decisions to make:**
+- **What counts as a visit:** a real exchange (say three or more back-and-forths), not just opening the card, so tapping around doesn't mark everything.
+- **City cards:** a quieter roll-up, like "3 places" in small type, so you can see where you've spent time.
+- **Where it's stored:** on the phone (localStorage) is fine at first, but it should move into learner data once memory is built. It's the same information: who you've met and how often.
+
 ## Other ideas from the conversation so far
 
 - **Pronunciation scoring**: deliberately out of scope for now.
