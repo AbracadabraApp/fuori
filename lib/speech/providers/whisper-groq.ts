@@ -24,7 +24,7 @@ export class WhisperGroqProvider implements SpeechProvider {
     const getExtensionFromMimeType = (mimeType: string): string => {
       const mimeMap: Record<string, string> = {
         'audio/webm': 'webm',
-        'audio/mp4': 'mp4',
+        'audio/mp4': 'm4a', // mp4 audio is typically m4a
         'audio/mpeg': 'mp3',
         'audio/m4a': 'm4a',
         'audio/ogg': 'ogg',
@@ -37,13 +37,24 @@ export class WhisperGroqProvider implements SpeechProvider {
     // Groq expects a File object
     let audioFile: File;
     if (audio instanceof File) {
+      console.log('Groq transcribe - File input:', {
+        name: audio.name,
+        type: audio.type,
+        size: audio.size,
+      });
       audioFile = audio;
     } else if (audio instanceof Blob) {
       const extension = getExtensionFromMimeType(audio.type);
+      console.log('Groq transcribe - Blob input:', {
+        type: audio.type,
+        size: audio.size,
+        extension,
+      });
       audioFile = new File([audio], `audio.${extension}`, { type: audio.type });
     } else {
       // Buffer - cast to any to work around Node.js Buffer type incompatibilities
       // Buffer is compatible with BlobPart at runtime, but TypeScript doesn't recognize it
+      console.log('Groq transcribe - Buffer input');
       audioFile = new File([audio as any], 'audio.webm', { type: 'audio/webm' });
     }
 

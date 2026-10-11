@@ -221,9 +221,18 @@ export function ConversationScreen({
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const mimeType = MediaRecorder.isTypeSupported('audio/webm')
-        ? 'audio/webm'
-        : 'audio/mp4';
+
+      // Try formats in order of Groq compatibility
+      // iPhone Safari typically supports mp4 with AAC codec
+      let mimeType = 'audio/mp4';
+      if (!MediaRecorder.isTypeSupported(mimeType)) {
+        mimeType = 'audio/webm';
+      }
+      if (!MediaRecorder.isTypeSupported(mimeType)) {
+        mimeType = 'audio/wav';
+      }
+
+      console.log('Recording with mimeType:', mimeType);
 
       const mediaRecorder = new MediaRecorder(stream, { mimeType });
       mediaRecorderRef.current = mediaRecorder;
@@ -237,6 +246,10 @@ export function ConversationScreen({
 
       mediaRecorder.onstop = async () => {
         const audioBlob = new Blob(audioChunksRef.current, { type: mimeType });
+        console.log('Audio blob created:', {
+          type: audioBlob.type,
+          size: audioBlob.size,
+        });
         await processAudio(audioBlob);
         stream.getTracks().forEach((track) => track.stop());
       };
