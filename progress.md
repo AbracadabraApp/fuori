@@ -275,3 +275,11 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 - `lib/characters/for-place.ts`: places now get their own city character (name, role, personality) instead of falling back to Giulia. The page uses it.
 
 **Next:** run `npm run test:conversations` on the laptop (needs `.env.local`) and read the first report.
+
+## 2026-10-10 evening: ConversationScreen matches the M1 doc (cloud session)
+
+- Removed the hard-coded Giulia fallback (`testCharacter`, `testScene`) and the unused `scene` and `level` props. The screen now requires the place's character.
+- Removed leftover replay state and the learner-transcription state (the learner's words are never shown, per the M1 doc).
+- Errors name the actual character instead of "Giulia".
+- Places with no character (most of Roma besides Giulia's bar and Rita's apartment) show "nobody to talk to here yet" instead of silently becoming Giulia.
+- Text stays as the doc says: Italian on by default, English off, both in Settings.

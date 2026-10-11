@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { CharacterSheet, Scene, Turn, Level, TurnOutput } from '@/lib/types';
+import { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
 
 // A zero-length WAV. Playing it during a tap "unlocks" audio on iPhone Safari,
 // which otherwise blocks sound that starts after a network request.
@@ -21,26 +21,18 @@ async function describeFailure(response: Response, what: string): Promise<string
 }
 
 interface ConversationScreenProps {
-  characterName: string;
-  characterRole?: string;
+  character: CharacterSheet;
   characterPortrait?: string;
   cityName: string;
-  character?: CharacterSheet;
-  scene?: Scene;
-  level?: Level;
   onBack: () => void;
   showTranscripts?: boolean;
   showEnglish?: boolean;
 }
 
 export function ConversationScreen({
-  characterName,
-  characterRole,
+  character,
   characterPortrait,
   cityName,
-  character,
-  scene,
-  level = 'A1',
   onBack,
   showTranscripts = true,
   showEnglish = false,
@@ -49,61 +41,16 @@ export function ConversationScreen({
   const [isProcessing, setIsProcessing] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const [transcript, setTranscript] = useState<Turn[]>([]);
-  const [currentTranscription, setCurrentTranscription] = useState<string | null>(null);
   const [currentResponse, setCurrentResponse] = useState<string | null>(null);
   const [currentTranslation, setCurrentTranslation] = useState<string | null>(null);
-  const [lastAudioUrl, setLastAudioUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Test scene and character - TODO: Replace with actual data passed via props
-  const testCharacter: CharacterSheet = character || {
-    id: 'giulia',
-    name: 'Giulia',
-    age: 32,
-    role: 'barista',
-    city: 'Roma',
-    origin: 'anchor',
-    placeId: 'bar-trastevere-giulia',
-    personality: {
-      traits: ['quick', 'funny', 'warm', 'curious'],
-      caresAbout: ['making perfect coffee', 'neighborhood gossip'],
-    },
-    speech: {
-      formality: 'tu',
-      pace: 'quick',
-      regionalisms: ['daje'],
-      description: 'Fast-talking, informal Roman barista',
-    },
-    appearance: {
-      description: 'Italian woman in her early 30s, dark curly hair',
-      setting: 'Behind the counter of a small Roman coffee bar',
-    },
-    portrait: {
-      kind: 'placeholder',
-    },
-  };
-
-  const testScene: Scene = scene || {
-    id: 'test-scene-1',
-    characterId: 'giulia',
-    setting: {
-      place: 'Bar in Trastevere',
-      timeOfDay: 'morning',
-      description: 'A cozy neighborhood coffee bar with morning light streaming through the windows',
-    },
-    goal: ['Greet Giulia', 'Order a coffee', 'Try a cornetto'],
-    opening: {
-      guide: 'Greet the learner warmly as a new customer, ask what they would like',
-      fallback: {
-        it: 'Ciao! Benvenuto! Cosa vuoi?',
-        en: 'Hi! Welcome! What would you like?',
-      },
-    },
-  };
+  const characterName = character.name;
+  const characterRole = character.role;
 
   // Must run synchronously inside a tap handler, before any await.
   const unlockAudio = () => {
@@ -133,15 +80,13 @@ export function ConversationScreen({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          character: testCharacter,
-          scene: testScene,
-          level,
+          character,
           transcript: [],
         }),
       });
 
       if (!response.ok) {
-        throw new Error(await describeFailure(response, 'Giulia could not answer'));
+        throw new Error(await describeFailure(response, `${characterName} could not answer`));
       }
 
       const turnOutput: TurnOutput = await response.json();
@@ -157,7 +102,7 @@ export function ConversationScreen({
       setCurrentTranslation(turnOutput.en);
 
       // Play audio
-      await playResponse(turnOutput.it, testCharacter.id);
+      await playResponse(turnOutput.it, character.id);
     } catch (err) {
       console.error('Error starting conversation:', err);
       setError(err instanceof Error ? err.message : 'Failed to start conversation.');
@@ -195,7 +140,6 @@ export function ConversationScreen({
         // Audio stream
         const audioBlob = await response.blob();
         const audioUrl = URL.createObjectURL(audioBlob);
-        setLastAudioUrl(audioUrl);
 
         // Reuse the element unlocked during the tap so iPhone Safari allows playback
         const audio = audioRef.current ?? new Audio();
@@ -212,20 +156,8 @@ export function ConversationScreen({
     }
   };
 
-  const replayLastAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play();
-    } else if (lastAudioUrl) {
-      const audio = new Audio(lastAudioUrl);
-      audioRef.current = audio;
-      audio.play();
-    }
-  };
-
   const startRecording = async () => {
     setError(null);
-    setCurrentTranscription(null);
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -295,8 +227,7 @@ export function ConversationScreen({
       const transcribeData = await transcribeResponse.json();
       const transcription = transcribeData.text;
 
-      // Show transcription to user
-      setCurrentTranscription(transcription);
+      // The learner's own words are never shown (M1: preserves immersion)
 
       // Step 2: Get character response
       const turnResponse = await fetch('/api/turn', {
@@ -304,13 +235,13 @@ export function ConversationScreen({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           learnerSaid: transcription,
-          character: testCharacter,
+          character,
           transcript,
         }),
       });
 
       if (!turnResponse.ok) {
-        throw new Error(await describeFailure(turnResponse, 'Giulia could not answer'));
+        throw new Error(await describeFailure(turnResponse, `${characterName} could not answer`));
       }
 
       const turnOutput: TurnOutput = await turnResponse.json();
@@ -331,7 +262,7 @@ export function ConversationScreen({
       setCurrentTranslation(turnOutput.en);
 
       // Step 3: Play character's response
-      await playResponse(turnOutput.it, testCharacter.id);
+      await playResponse(turnOutput.it, character.id);
     } catch (err) {
       console.error('Error processing audio:', err);
       setError(err instanceof Error ? err.message : 'Failed to process your message.');
