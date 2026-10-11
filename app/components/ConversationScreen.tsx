@@ -45,6 +45,7 @@ export function ConversationScreen({
   const [currentResponse, setCurrentResponse] = useState<string | null>(null);
   const [currentTranslation, setCurrentTranslation] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [portraitFailed, setPortraitFailed] = useState(false);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
@@ -283,8 +284,13 @@ export function ConversationScreen({
 
       {/* Portrait and name area */}
       <div className={styles.body}>
-        {characterPortrait ? (
-          <img src={characterPortrait} alt={characterName} className={styles.portrait} />
+        {characterPortrait && !portraitFailed ? (
+          <img
+            src={characterPortrait}
+            alt={characterName}
+            className={styles.portrait}
+            onError={() => setPortraitFailed(true)}
+          />
         ) : (
           <div className={styles.portraitPlaceholder}>👤</div>
         )}

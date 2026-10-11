@@ -73,7 +73,7 @@ function parseCityContent(filePath) {
   const images = [];
 
   // Extract place images
-  const placeRegex = /{\s*id:\s*['"]([^'"]+)['"],[^}]*imagePrompt:\s*['"]([^'"]+)['"]/g;
+  const placeRegex = /{\s*id:\s*['"]([^'"]+)['"],[^{}\[]*imagePrompt:\s*['"]([^'"]+)['"]/g;
   let match;
   while ((match = placeRegex.exec(content)) !== null) {
     images.push({

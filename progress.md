@@ -284,4 +284,11 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 - Places with no character (most of Roma besides Giulia's bar and Rita's apartment) show "nobody to talk to here yet" instead of silently becoming Giulia.
 - Text stays as the doc says: Italian on by default, English off, both in Settings.
 - Styles moved from inline to CSS modules (`page.module.css`, `PlaceCard.module.css`, `ConversationScreen.module.css`) with shared color tokens in `globals.css` (`--green`, `--paper`, `--sand`, …). Screens verified pixel-identical with before/after screenshots. The app is now light-only (dark mode previously made unstyled text near-invisible on white). Removed unused `AudioPlayer.tsx`.
-- Open: many Roma places have no image file in `public/images/places/` (shows a broken-image icon).
+
+## 2026-10-10 evening: Images (cloud session)
+
+- Bug: the image script's pattern matched each city block before its first place, so 18 cities' first place (e.g. Caffè Schiuma) was saved as `<city>.jpg`. Renamed the 18 files and fixed the pattern in `scripts/generate-images*.mjs`.
+- Roma's 24 places had no `imagePrompt`; added them in the same pastel style.
+- Missing images now show the sand placeholder instead of a broken icon (place cards and portraits).
+- `npm run test:images` lists missing images. `npm run images -- --city roma` generates them (needs `XAI_API_KEY`).
+- **Next (laptop):** run `npm run images -- --city roma` (24 images), generate `portraits/rita.jpg` from the prompt in `content/it/characters/rita.ts`, then `npm run test:images` should pass. Commit the images and push.

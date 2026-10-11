@@ -7,6 +7,7 @@
 - `npm run test:schema`: the `/api/turn` output schema follows structured-output rules
 - `npm run test:prompt`: every character prompt says where the character is
 - `npm run test:reply`: reading Claude replies works when the reply starts with a non-text block
+- `npm run test:images`: every city, place and city character has an image file (generate missing ones with `npm run images -- --city <id>`)
 
 ## Conversation test: grade and recommend
 
