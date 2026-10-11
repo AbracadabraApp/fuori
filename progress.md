@@ -358,3 +358,10 @@ Notes from the first real phone use are in `docs/ideas.md` → "Coda". Acted on 
 - Prompt moved to `content/it/prompts/character.md` (version + changelog), filled in by `lib/prompts/build-turn-prompt.ts`. The version is logged with every turn (`event: turn`, `promptVersion`), sent in an `x-prompt-version` header, shown in debug mode, and printed in conversation-test reports. Verified the file produces the same prompt text as the old code for all 1,272 character/turn combinations.
 - 2026-10-11b: "They're new to the neighbourhood" → `{relationship}` slot ("You haven't met them before." until memory fills it).
 - CLAUDE.md: prompt-change process and commit-message standard.
+
+## 2026-10-11: Mic and text card, round 3 (from iPhone screenshot)
+
+- Removed the "Not hearing you" warning: on iPhone the voice meter read zero even while speech was going through, so the warning was a false alarm (and stayed up).
+- Voice meter: fresh AudioContext per recording, created after the mic is live (a context created earlier can stay silent on iOS once recording starts). Until real sound reaches the meter, the dots pulse gently instead of sitting still. Debug mode shows "Meter: state, sample rate, peak (no signal)" to confirm on the phone. **Not verified on iPhone** (only Chromium here).
+- Text card: removed backdrop blur and mask-based fade (Safari showed square, sliced edges); soft edges now come from plain gradient overlays.
+- Controls: no hint text, smaller pill (96×46), anchored near the bottom; controls area 148px → 84px, so long replies fit without scrolling on 390×844 and 375×667.

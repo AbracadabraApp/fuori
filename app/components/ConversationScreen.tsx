@@ -42,6 +42,7 @@ async function measure<T>(fn: () => Promise<T>, done: (ms: number) => void): Pro
 
 interface DebugInfo {
   prompt?: string;
+  meter?: string;
   heard?: string;
   recording?: string;
   voice?: string;
@@ -89,7 +90,8 @@ export function ConversationScreen({
   const audioCtxRef = useRef<AudioContext | null>(null);
   const meterRef = useRef<{ stop: () => void } | null>(null);
   const dotsRef = useRef<HTMLSpanElement | null>(null);
-  const [heardSomething, setHeardSomething] = useState(true);
+  // True once the meter has picked up real sound in this recording
+  const [meterLive, setMeterLive] = useState(false);
   const speakingAtStartRef = useRef(false);
 
   const characterName = character.name;
@@ -138,15 +140,6 @@ export function ConversationScreen({
 
   // Must run synchronously inside a tap handler, before any await.
   const unlockAudio = () => {
-    try {
-      const Ctx = window.AudioContext ?? (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-      if (Ctx) {
-        audioCtxRef.current ??= new Ctx();
-        void audioCtxRef.current.resume();
-      }
-    } catch {
-      // no Web Audio: the dots just won't move
-    }
     try {
       const warmup = new SpeechSynthesisUtterance(' ');
       warmup.volume = 0;
@@ -256,10 +249,20 @@ export function ConversationScreen({
   };
 
   // Reads the microphone level and moves the dots directly (no re-render per
-  // frame). If nothing above a whisper arrives within 2 seconds, show a hint.
+  // frame). A fresh AudioContext per recording, created after the mic is live:
+  // on iPhone a context made earlier can stay silent once recording starts.
+  // Until real sound arrives the dots just pulse (CSS), so nothing looks frozen.
   const startLevelMeter = (stream: MediaStream) => {
-    const ctx = audioCtxRef.current;
-    if (!ctx) return null;
+    let ctx: AudioContext;
+    try {
+      const Ctx = window.AudioContext ?? (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      ctx = new Ctx();
+      void ctx.resume();
+    } catch {
+      setDebugInfo((d) => ({ ...d, meter: 'no Web Audio' }));
+      return null;
+    }
+    audioCtxRef.current = ctx;
     const source = ctx.createMediaStreamSource(stream);
     const analyser = ctx.createAnalyser();
     analyser.fftSize = 512;
@@ -268,8 +271,8 @@ export function ConversationScreen({
     const shape = [0.55, 0.85, 1, 0.85, 0.55];
     let frame = 0;
     let loudest = 0;
-    const started = now();
-    setHeardSomething(true);
+    let live = false;
+    setMeterLive(false);
 
     const tick = () => {
       analyser.getByteTimeDomainData(data);
@@ -280,15 +283,16 @@ export function ConversationScreen({
       }
       const level = Math.min(1, Math.sqrt(sum / data.length) * 6); // 0..1
       loudest = Math.max(loudest, level);
+      if (!live && level > 0.03) {
+        live = true;
+        setMeterLive(true);
+      }
       const dots = dotsRef.current?.children;
-      if (dots) {
+      if (live && dots) {
         for (let i = 0; i < dots.length; i++) {
-          const el = dots[i] as HTMLElement;
-          el.style.transform = `scaleY(${1 + level * 3.2 * shape[i]})`;
+          (dots[i] as HTMLElement).style.transform = `scaleY(${1 + level * 3.2 * shape[i]})`;
         }
       }
-      if (now() - started > 2000 && loudest < 0.08) setHeardSomething(false);
-      if (loudest >= 0.08) setHeardSomething(true);
       frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
@@ -298,6 +302,11 @@ export function ConversationScreen({
         cancelAnimationFrame(frame);
         source.disconnect();
         analyser.disconnect();
+        setDebugInfo((d) => ({
+          ...d,
+          meter: `${ctx.state}, ${ctx.sampleRate} Hz, peak ${loudest.toFixed(2)}${live ? '' : ' (no signal)'}`,
+        }));
+        void ctx.close();
       },
     };
   };
@@ -472,15 +481,6 @@ export function ConversationScreen({
       : isSpeaking
         ? 'speaking'
         : 'idle';
-  // Short hint under the mic: only what you need to do next
-  const hint =
-    state === 'listening'
-      ? heardSomething
-        ? 'Tap to send'
-        : "Not hearing you. Check the mic isn't covered or muted."
-      : state === 'idle'
-        ? 'Tap to speak'
-        : '';
   const showReply = (showTranscripts && currentResponse) || (showEnglish && currentTranslation);
 
   return (
@@ -535,6 +535,7 @@ export function ConversationScreen({
             <div className={styles.debug}>
               <div><b>Prompt:</b> {debugInfo.prompt ?? '—'}</div>
               <div><b>Recording:</b> {debugInfo.recording ?? '—'}</div>
+              <div><b>Meter:</b> {debugInfo.meter ?? '—'}</div>
               <div><b>Heard:</b> {debugInfo.heard ?? '—'}</div>
               <div><b>Voice:</b> {debugInfo.voice ?? '—'}</div>
               <div>
@@ -564,7 +565,7 @@ export function ConversationScreen({
             >
               {state === 'listening' ? (
                 // Green dots that move with your voice: proof it's being captured
-                <span className={styles.voice} ref={dotsRef} aria-hidden="true">
+                <span className={`${styles.voice} ${meterLive ? '' : styles.waiting}`} ref={dotsRef} aria-hidden="true">
                   <span />
                   <span />
                   <span />
@@ -582,9 +583,6 @@ export function ConversationScreen({
                 <span className={styles.micIcon} aria-hidden="true">🎤</span>
               )}
             </button>
-            <div className={`${styles.status} ${!heardSomething && state === 'listening' ? styles.warn : ''}`}>
-              {hint}
-            </div>
           </>
         )}
       </div>

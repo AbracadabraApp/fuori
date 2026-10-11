@@ -3,7 +3,7 @@
    Nothing scrolls the page, so the portrait never slides away. */
 
 .screen {
-  --controls-height: 148px;
+  --controls-height: 84px;
   position: fixed;
   inset: 0;
   background-color: var(--paper);
@@ -98,15 +98,37 @@
 }
 
 .reply {
+  position: relative;
   flex: 0 1 auto;
   min-height: 0;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.94);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.96);
   border-radius: 14px;
   box-shadow: var(--shadow);
   overflow: hidden;
+}
+
+/* Soft top and bottom edges so scrolled text never looks sliced.
+   Plain gradients (no mask or backdrop blur, which Safari mishandles here). */
+.reply::before,
+.reply::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 14px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.reply::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0));
+}
+
+.reply::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0));
 }
 
 .replyText {
@@ -117,9 +139,6 @@
   font-size: 18px;
   line-height: 1.4;
   color: var(--text);
-  /* soft fade at the edges so scrolled text never looks sliced */
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12px, #000 calc(100% - 18px), transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 12px, #000 calc(100% - 18px), transparent 100%);
 }
 
 .italian {
@@ -151,14 +170,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: var(--controls-height);
+  height: calc(var(--controls-height) + env(safe-area-inset-bottom));
+  padding-bottom: calc(14px + env(safe-area-inset-bottom));
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  gap: 10px;
-  padding-bottom: env(safe-area-inset-bottom);
-  background: linear-gradient(to bottom, rgba(245, 241, 237, 0), var(--paper) 30%);
+  background: linear-gradient(to bottom, rgba(245, 241, 237, 0), var(--paper) 40%);
 }
 
 .startButton {
@@ -172,9 +189,9 @@
 }
 
 .mic {
-  width: 112px;
-  height: 52px;
-  border-radius: 26px; /* pill */
+  width: 96px;
+  height: 46px;
+  border-radius: 23px; /* pill */
   border: none;
   cursor: pointer;
   background-color: var(--green);
@@ -192,7 +209,7 @@
 }
 
 .micIcon {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 /* States */
@@ -217,7 +234,22 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  height: 32px;
+  height: 30px;
+}
+
+/* Recording, before any sound has reached the meter: a gentle pulse */
+.waiting span {
+  animation: breathe 1.4s ease-in-out infinite;
+}
+
+.waiting span:nth-child(2) { animation-delay: 0.1s; }
+.waiting span:nth-child(3) { animation-delay: 0.2s; }
+.waiting span:nth-child(4) { animation-delay: 0.3s; }
+.waiting span:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
 }
 
 .voice span {
@@ -262,18 +294,6 @@
   }
 }
 
-.status {
-  min-height: 18px;
-  font-size: 14px;
-  color: var(--muted);
-  text-align: center;
-  padding: 0 24px;
-}
-
-.warn {
-  color: var(--error-ink);
-}
-
 /* Debug mode (?debug=1) */
 .debug {
   flex: 0 1 auto;
@@ -296,6 +316,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .waiting span,
   .dots span {
     animation: none;
   }
