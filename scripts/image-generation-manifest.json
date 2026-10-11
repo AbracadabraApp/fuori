@@ -1131,11 +1131,6 @@
       "path": "/Users/josh.petersen/fuori/public/images/portraits/mario-trattore.jpg",
       "type": "portrait"
     },
-    "firenze/benedetta-cuoca": {
-      "timestamp": "2026-10-10T05:18:53.394Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/benedetta-cuoca.jpg",
-      "type": "portrait"
-    },
     "firenze/vincenzo-trippaio": {
       "timestamp": "2026-10-10T05:19:11.916Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/vincenzo-trippaio.jpg",
@@ -2436,11 +2431,6 @@
       "path": "/Users/josh.petersen/fuori/public/images/portraits/federico-salumiere.jpg",
       "type": "portrait"
     },
-    "mantova/simona-gastronoma": {
-      "timestamp": "2026-10-10T06:41:11.042Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/simona-gastronoma.jpg",
-      "type": "portrait"
-    },
     "mantova/marcello-guida": {
       "timestamp": "2026-10-10T06:41:31.838Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/marcello-guida.jpg",
@@ -2476,16 +2466,6 @@
       "path": "/Users/josh.petersen/fuori/public/images/portraits/tommaso-sommelier.jpg",
       "type": "portrait"
     },
-    "mantova/valentina-enotecaia": {
-      "timestamp": "2026-10-10T06:43:12.831Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/valentina-enotecaia.jpg",
-      "type": "portrait"
-    },
-    "mantova/claudia-libraia": {
-      "timestamp": "2026-10-10T06:43:32.049Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/claudia-libraia.jpg",
-      "type": "portrait"
-    },
     "mantova/dottoressa-ferrari": {
       "timestamp": "2026-10-10T06:43:48.560Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/dottoressa-ferrari.jpg",
@@ -2494,11 +2474,6 @@
     "mantova/marco-bigliettaio": {
       "timestamp": "2026-10-10T06:44:08.050Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/marco-bigliettaio.jpg",
-      "type": "portrait"
-    },
-    "mantova/elisabetta-artigiana": {
-      "timestamp": "2026-10-10T06:44:29.314Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/elisabetta-artigiana.jpg",
       "type": "portrait"
     },
     "mantova/antonio-gelataio": {
@@ -4181,11 +4156,6 @@
       "path": "/Users/josh.petersen/fuori/public/images/portraits/nunzio-palmeri.jpg",
       "type": "portrait"
     },
-    "palermo/grazia-salamone": {
-      "timestamp": "2026-10-10T08:24:31.909Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/grazia-salamone.jpg",
-      "type": "portrait"
-    },
     "palermo/alberto-marino": {
       "timestamp": "2026-10-10T08:24:49.616Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/alberto-marino.jpg",
@@ -5056,11 +5026,6 @@
       "path": "/Users/josh.petersen/fuori/public/images/portraits/giuseppe-greco.jpg",
       "type": "portrait"
     },
-    "taormina/maria-costa": {
-      "timestamp": "2026-10-10T09:16:35.564Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/maria-costa.jpg",
-      "type": "portrait"
-    },
     "taormina/filippo-verde": {
       "timestamp": "2026-10-10T09:16:51.507Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/filippo-verde.jpg",
@@ -5099,11 +5064,6 @@
     "taormina/luca-forno": {
       "timestamp": "2026-10-10T09:18:54.356Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/luca-forno.jpg",
-      "type": "portrait"
-    },
-    "taormina/isabella-dolce": {
-      "timestamp": "2026-10-10T09:19:11.128Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/isabella-dolce.jpg",
       "type": "portrait"
     },
     "taormina/roberto-salvo": {
@@ -5421,11 +5381,6 @@
       "path": "/Users/josh.petersen/fuori/public/images/portraits/simone-sommelier.jpg",
       "type": "portrait"
     },
-    "torino/valeria-bartender": {
-      "timestamp": "2026-10-10T09:37:45.087Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/valeria-bartender.jpg",
-      "type": "portrait"
-    },
     "torino/teresa-libraio": {
       "timestamp": "2026-10-10T09:38:06.142Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/teresa-libraio.jpg",
@@ -5454,11 +5409,6 @@
     "torino/lorenzo-curatore": {
       "timestamp": "2026-10-10T09:39:18.580Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/lorenzo-curatore.jpg",
-      "type": "portrait"
-    },
-    "torino/sofia-gelataia": {
-      "timestamp": "2026-10-10T09:39:37.842Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/sofia-gelataia.jpg",
       "type": "portrait"
     },
     "torino/alessandro-venditore": {
@@ -6335,6 +6285,56 @@
       "timestamp": "2026-10-11T04:05:57.626Z",
       "path": "/Users/josh.petersen/fuori/public/images/places/caffe-wallner.jpg",
       "skipped": true
+    },
+    "firenze/benedetta-cuoca": {
+      "timestamp": "2026-10-11T04:23:02.873Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/benedetta-cuoca.jpg",
+      "type": "portrait"
+    },
+    "mantova/simona-gastronoma": {
+      "timestamp": "2026-10-11T04:23:24.994Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/simona-gastronoma.jpg",
+      "type": "portrait"
+    },
+    "mantova/valentina-enotecaia": {
+      "timestamp": "2026-10-11T04:23:49.556Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/valentina-enotecaia.jpg",
+      "type": "portrait"
+    },
+    "mantova/claudia-libraia": {
+      "timestamp": "2026-10-11T04:24:10.924Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/claudia-libraia.jpg",
+      "type": "portrait"
+    },
+    "mantova/elisabetta-artigiana": {
+      "timestamp": "2026-10-11T04:24:35.357Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/elisabetta-artigiana.jpg",
+      "type": "portrait"
+    },
+    "palermo/grazia-salamone": {
+      "timestamp": "2026-10-11T04:24:59.968Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/grazia-salamone.jpg",
+      "type": "portrait"
+    },
+    "taormina/maria-costa": {
+      "timestamp": "2026-10-11T04:25:17.120Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/maria-costa.jpg",
+      "type": "portrait"
+    },
+    "taormina/isabella-dolce": {
+      "timestamp": "2026-10-11T04:25:33.734Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/isabella-dolce.jpg",
+      "type": "portrait"
+    },
+    "torino/valeria-bartender": {
+      "timestamp": "2026-10-11T04:25:54.668Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/valeria-bartender.jpg",
+      "type": "portrait"
+    },
+    "torino/sofia-gelataia": {
+      "timestamp": "2026-10-11T04:26:12.501Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/sofia-gelataia.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
@@ -6342,6 +6342,6 @@
     "total": 1267,
     "completed": 1267,
     "failed": 0,
-    "lastRun": "2026-10-11T04:05:57.627Z"
+    "lastRun": "2026-10-11T04:26:15.509Z"
   }
 }

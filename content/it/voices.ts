@@ -17,16 +17,16 @@ export const voices = {
       rita: 'XrExE9yKIg1WjnnlVkGX', // Matilda: warm, mature
     } as Record<string, string>,
     f: [
-      'pFZP5JQG7iQjIQuC4Bku', // Lily
-      'XrExE9yKIg1WjnnlVkGX', // Matilda
-      'Xb7hH8MSUJpSbSDYk0k2', // Alice
-      'cgSgspJ2msm6clMCkdW9', // Jessica
+      'pFZP5JQG7iQjIQuC4Bku', // Lily (verified Italian)
+      'XrExE9yKIg1WjnnlVkGX', // Matilda (verified Italian)
+      'Xb7hH8MSUJpSbSDYk0k2', // Alice (verified Italian)
+      'SAz9YHcvj6GT2YYXdXww', // River (verified Italian, neutral)
     ],
     m: [
-      'JBFqnCBsd6RMkjVDRZzb', // George
-      'onwK4e9ZLuTAKqWW03F9', // Daniel
-      'nPczCjzI2devNBz1zQrb', // Brian
-      'pNInz6obpgDQGcFmaJgB', // Adam
+      'JBFqnCBsd6RMkjVDRZzb', // George (not verified Italian - Flash v2.5 multilingual)
+      'onwK4e9ZLuTAKqWW03F9', // Daniel (not verified Italian - Flash v2.5 multilingual)
+      'nPczCjzI2devNBz1zQrb', // Brian (not verified Italian - Flash v2.5 multilingual)
+      'pNInz6obpgDQGcFmaJgB', // Adam (not verified Italian - Flash v2.5 multilingual)
     ],
   },
 
