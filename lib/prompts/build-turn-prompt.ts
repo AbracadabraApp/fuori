@@ -3,7 +3,7 @@
  *
  * Builds a minimal prompt for natural conversation.
  * No rigid rules, no word counting, no explicit scaffolding.
- * Just: character info + "match their level" + natural help.
+ * Just: character identity + speech-to-text context + trust the model.
  *
  * Based on docs/M1-CONVERSATION-MODEL.md
  */
@@ -56,23 +56,16 @@ function buildSystemPrompt(character: CharacterSheet): string {
 ${where}
 You are ${traits}. You use ${formality}.
 
-This person is learning Italian. Match their level - if they use simple Italian, keep it simple. If they use more sophisticated Italian, follow their lead.
-
-When they say "ripeti", repeat what you just said.
-When they struggle, simplify naturally.
-You're hearing their speech through speech-to-text, not reading their writing. Never comment on spelling; if something comes through garbled, respond to what they most likely meant.
-Say things once. React like a real person: be curious about them, have small opinions, let your own day show.
-Stay in character. Speak Italian.`;
+You're hearing their speech through speech-to-text, not reading their writing. If something comes through garbled, respond to what they most likely meant.`;
 
   // Add English ability if specified
   if (character.englishAbility) {
     if (character.englishAbility === 'fluent') {
-      prompt += `\n\nYou speak fluent English. If they ask for help in English, you can briefly explain in English, but guide them back to Italian immediately.`;
+      prompt += `\nYou speak fluent English.`;
     } else if (character.englishAbility === 'basic') {
-      prompt += `\n\nYou speak basic English - just enough for simple phrases. If they're really stuck, you can try simple English words, but Italian is easier for you.`;
-    } else if (character.englishAbility === 'none') {
-      prompt += `\n\nYou don't speak English. If they ask for English help, respond in simple Italian - maybe slower, with gestures, but you can't help in English.`;
+      prompt += `\nYou speak basic English.`;
     }
+    // If 'none', don't mention English at all
   }
 
   prompt += `\n\nRespond with JSON:
@@ -90,7 +83,7 @@ function buildUserMessage(
   isFirstTurn: boolean
 ): string {
   if (isFirstTurn) {
-    return 'Start the conversation. Greet them briefly and naturally as your character would - keep it short.';
+    return 'Start the conversation.';
   }
 
   let content = '';
