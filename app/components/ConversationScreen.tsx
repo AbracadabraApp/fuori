@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import Image from 'next/image';
 import { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
 import { language } from '@/content/it/language';
 import { browserVoiceFor } from '@/content/it/voices';
@@ -499,12 +500,18 @@ export function ConversationScreen({
       {/* Portrait fills the stage; text floats over it from mid-screen */}
       <div className={styles.stage}>
         {characterPortrait && !portraitFailed ? (
-          <img
-            src={characterPortrait}
-            alt={characterName}
-            className={styles.portrait}
-            onError={() => setPortraitFailed(true)}
-          />
+          // next/image serves a resized, modern-format copy sized to the screen
+          <div className={styles.portraitFrame}>
+            <Image
+              src={characterPortrait}
+              alt={characterName}
+              fill
+              priority
+              sizes="(max-width: 600px) 100vw, 600px"
+              className={styles.portrait}
+              onError={() => setPortraitFailed(true)}
+            />
+          </div>
         ) : (
           <div className={styles.portraitPlaceholder}>👤</div>
         )}

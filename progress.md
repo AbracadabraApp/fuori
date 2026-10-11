@@ -365,3 +365,10 @@ Notes from the first real phone use are in `docs/ideas.md` → "Coda". Acted on 
 - Voice meter: fresh AudioContext per recording, created after the mic is live (a context created earlier can stay silent on iOS once recording starts). Until real sound reaches the meter, the dots pulse gently instead of sitting still. Debug mode shows "Meter: state, sample rate, peak (no signal)" to confirm on the phone. **Not verified on iPhone** (only Chromium here).
 - Text card: removed backdrop blur and mask-based fade (Safari showed square, sliced edges); soft edges now come from plain gradient overlays.
 - Controls: no hint text, smaller pill (96×46), anchored near the bottom; controls area 148px → 84px, so long replies fit without scrolling on 390×844 and 375×667.
+
+## 2026-10-11: Dialogue model, mic size, image optimisation
+
+- **Dialogue model (decided):** subtitles. The reply card is anchored just above the mic and grows upward over the portrait as needed, up to just below the name line; it scrolls only past that. Short replies leave the face visible; it never covers the mic. Replaces the fixed "starts at 50%" card.
+- Mic pill back to 112×52; controls area 72px with tighter padding.
+- Portraits, city and place images use next/image: resized WebP served to fit the screen (~100–120 KB vs ~570 KB originals). No change to dimensions or cropping.
+- Checked at 390×844 and 375×667 with short, long and triple-length replies.

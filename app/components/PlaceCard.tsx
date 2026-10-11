@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import styles from './PlaceCard.module.css';
 
 interface PlaceCardProps {
@@ -21,7 +22,15 @@ export function PlaceCard({ placeName, neighborhood, imageUrl, onTap }: PlaceCar
       {/* Image area - square like Polaroid/Instagram */}
       <div className={`${styles.imageArea} ${showImage ? '' : styles.noImage}`}>
         {showImage && (
-          <img src={imageUrl} alt={placeName} className={styles.image} onError={() => setFailed(true)} />
+          // next/image serves a resized, modern-format copy sized to the card
+          <Image
+            src={imageUrl}
+            alt={placeName}
+            fill
+            sizes="(max-width: 600px) 100vw, 600px"
+            className={styles.image}
+            onError={() => setFailed(true)}
+          />
         )}
       </div>
 
