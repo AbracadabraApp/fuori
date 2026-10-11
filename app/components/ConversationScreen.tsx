@@ -29,6 +29,8 @@ interface ConversationScreenProps {
   scene?: Scene;
   level?: Level;
   onBack: () => void;
+  showTranscripts?: boolean;
+  showEnglish?: boolean;
 }
 
 export function ConversationScreen({
@@ -40,6 +42,8 @@ export function ConversationScreen({
   scene,
   level = 'A1',
   onBack,
+  showTranscripts = true,
+  showEnglish = false,
 }: ConversationScreenProps) {
   const [isRecording, setIsRecording] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -47,6 +51,7 @@ export function ConversationScreen({
   const [transcript, setTranscript] = useState<Turn[]>([]);
   const [currentTranscription, setCurrentTranscription] = useState<string | null>(null);
   const [currentResponse, setCurrentResponse] = useState<string | null>(null);
+  const [currentTranslation, setCurrentTranslation] = useState<string | null>(null);
   const [lastAudioUrl, setLastAudioUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -149,6 +154,7 @@ export function ConversationScreen({
       };
       setTranscript([npcTurn]);
       setCurrentResponse(turnOutput.it);
+      setCurrentTranslation(turnOutput.en);
 
       // Play audio
       await playResponse(turnOutput.it, testCharacter.id);
@@ -322,6 +328,7 @@ export function ConversationScreen({
 
       setTranscript((prev) => [...prev, learnerTurn, npcTurn]);
       setCurrentResponse(turnOutput.it);
+      setCurrentTranslation(turnOutput.en);
 
       // Step 3: Play character's response
       await playResponse(turnOutput.it, testCharacter.id);
@@ -409,7 +416,7 @@ export function ConversationScreen({
         </div>
 
         {/* Current response text */}
-        {currentResponse && (
+        {(showTranscripts && currentResponse) || (showEnglish && currentTranslation) ? (
           <div
             style={{
               marginTop: '16px',
@@ -421,42 +428,18 @@ export function ConversationScreen({
               maxWidth: '100%',
             }}
           >
-            <div style={{ fontStyle: 'italic', marginBottom: '8px' }}>{currentResponse}</div>
-            {lastAudioUrl && (
-              <button
-                onClick={replayLastAudio}
-                style={{
-                  marginTop: '8px',
-                  padding: '8px 16px',
-                  fontSize: '14px',
-                  backgroundColor: '#e8d5c4',
-                  border: 'none',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                }}
-              >
-                Ascolta di nuovo
-              </button>
+            {showTranscripts && currentResponse && (
+              <div style={{ fontStyle: 'italic', marginBottom: showEnglish ? '8px' : '0' }}>
+                {currentResponse}
+              </div>
+            )}
+            {showEnglish && currentTranslation && (
+              <div style={{ color: '#666', fontSize: '16px' }}>
+                {currentTranslation}
+              </div>
             )}
           </div>
-        )}
-
-        {/* Current transcription */}
-        {currentTranscription && (
-          <div
-            style={{
-              marginTop: '8px',
-              padding: '12px',
-              backgroundColor: '#e8f4f0',
-              borderRadius: '8px',
-              fontSize: '14px',
-              color: '#2c5f4f',
-              maxWidth: '100%',
-            }}
-          >
-            <strong>You said:</strong> {currentTranscription}
-          </div>
-        )}
+        ) : null}
 
         {/* Error display */}
         {error && (

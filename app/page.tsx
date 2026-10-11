@@ -11,6 +11,9 @@ export default function Home() {
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [selectedPlace, setSelectedPlace] = useState<string | null>(null);
   const [showSettings, setShowSettings] = useState(false);
+  const [showTranscripts, setShowTranscripts] = useState(true);
+  const [showEnglish, setShowEnglish] = useState(false);
+  const [allowDialect, setAllowDialect] = useState(false);
 
   // Get region from first neighbourhood for display
   const getRegion = (cityId: string) => {
@@ -81,6 +84,8 @@ export default function Home() {
         scene={scene}
         level={level}
         onBack={() => setSelectedPlace(null)}
+        showTranscripts={showTranscripts}
+        showEnglish={showEnglish}
       />
     );
   }
@@ -293,6 +298,8 @@ export default function Home() {
             >
               <input
                 type="checkbox"
+                checked={showTranscripts}
+                onChange={(e) => setShowTranscripts(e.target.checked)}
                 style={{
                   width: '24px',
                   height: '24px',
@@ -301,7 +308,31 @@ export default function Home() {
                   accentColor: '#2c5f4f',
                 }}
               />
-              Show transcripts
+              Show Italian transcripts
+            </label>
+
+            <label
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '20px',
+                fontSize: '18px',
+                cursor: 'pointer',
+              }}
+            >
+              <input
+                type="checkbox"
+                checked={showEnglish}
+                onChange={(e) => setShowEnglish(e.target.checked)}
+                style={{
+                  width: '24px',
+                  height: '24px',
+                  marginRight: '16px',
+                  cursor: 'pointer',
+                  accentColor: '#2c5f4f',
+                }}
+              />
+              Show English translation
             </label>
 
             <label
@@ -310,20 +341,24 @@ export default function Home() {
                 alignItems: 'center',
                 marginBottom: '32px',
                 fontSize: '18px',
-                cursor: 'pointer',
+                cursor: 'not-allowed',
+                opacity: 0.5,
               }}
             >
               <input
                 type="checkbox"
+                checked={allowDialect}
+                onChange={(e) => setAllowDialect(e.target.checked)}
+                disabled={true}
                 style={{
                   width: '24px',
                   height: '24px',
                   marginRight: '16px',
-                  cursor: 'pointer',
+                  cursor: 'not-allowed',
                   accentColor: '#2c5f4f',
                 }}
               />
-              Allow dialect
+              Allow dialect (coming soon)
             </label>
 
             <button
