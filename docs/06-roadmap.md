@@ -9,14 +9,15 @@ This file is the one place for **what's in each milestone** and **what to do nex
 Updated 2026-10-11. Top of the list first; strike items off here as they're done.
 
 1. **Measure level and length in `npm run test:conversations`.** Add a level-fit score and a turn-length score (separate from naturalness), level before and after "non capisco", and a simulated learner who never says they're learning. The grader currently says not to penalize complex Italian, so nothing catches the main problem from phone play; changing that line needs Josh's OK. Gives a baseline before any prompt change.
-2. **Prompt experiments, each compared with the test above** (version bump + changelog each time):
+2. **Score the learner, without using it.** A scorer that reads a conversation and estimates the learner's level from what they said, with the evidence. Not sent to characters. Tested the same way as the characters: simulated learners of known levels (A1, A2, B1) talk to characters, and the scorer should recover each one's level. Caution: the same model writing and judging the learners is circular, so also check it on Josh's real conversations (known A1–A2) once they're saved. Short conversations give little evidence, so it should say when it can't tell. Becomes the starting point for the learner level in M2.
+3. **Prompt experiments, each compared with the test above** (version bump + changelog each time):
    - a factual line that characters only receive text and can't hear accent or pronunciation (Salvatore "corrected" *grazie* and "Grigianto")
    - who the learner is: someone who lives here now, not a tourist (Salvatore asked how many days you're staying)
    - traits as manner, not expertise, on 5–10 characters ("local historian" → a history lecture; ~150 of 634 characters have traits like knowledgeable, storyteller, expert, chatty)
    - the "noticed" reply field, if Josh decides yes ([open question](open-design-questions.md#11-level-and-speaking-2026-10-11))
-3. **Postgres in Railway** (Josh): unblocks memory, saved transcripts and the review log.
-4. **Memory, saved transcripts and the review log** (M1, below).
-5. **ElevenLabs quota** (Josh): check usage; likely cause of the voice dropping mid-conversation on 2026-10-11.
+4. **Postgres in Railway** (Josh): unblocks memory, saved transcripts and the review log.
+5. **Memory, saved transcripts and the review log** (M1, below).
+6. **ElevenLabs quota** (Josh): check usage; likely cause of the voice dropping mid-conversation on 2026-10-11.
 
 ## M1: Navigate cities and hold a conversation that's remembered
 
@@ -34,7 +35,8 @@ Updated 2026-10-11. Top of the list first; strike items off here as they're done
 
 **To do**
 - [ ] Level and length in the conversation test ([Now #1](#now-ranked))
-- [ ] Prompt experiments ([Now #2](#now-ranked))
+- [ ] Learner-level scorer, observe only ([Now #2](#now-ranked))
+- [ ] Prompt experiments ([Now #3](#now-ranked))
 - [ ] Postgres: `learners`, `character_memories`, `conversations` ([Data model](09-data-model.md#storage-strategy)); anonymous learner id in a server-set cookie
 - [ ] Save each conversation: character, place, times, prompt version, and turns (who, text, English, time). No audio.
 - [ ] When a conversation ends, one Claude call writes:
