@@ -14,7 +14,7 @@ import { mkdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { runTurn } from '@/lib/turn';
-import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
+import { buildTurnPrompt, promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { cities } from '@/content/it/cities';
 import type { CharacterSheet, Place, Turn } from '@/lib/types';
@@ -203,7 +203,7 @@ function report(results: Graded[], recs: string): string {
   const lines = [
     `# Conversation test`,
     ``,
-    `${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC · model ${CLAUDE_MODEL} · ${ok.length} conversations · ${TURNS} learner turns each`,
+    `${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC · model ${CLAUDE_MODEL} · prompt ${promptVersion()} · ${ok.length} conversations · ${TURNS} learner turns each`,
     ``,
     `## Grade: ${avg((r) => r.overall).toFixed(1)} / 10`,
     ``,
@@ -263,6 +263,7 @@ function report(results: Graded[], recs: string): string {
 
 async function main() {
   const sample = pickSample();
+  console.log(`Prompt version: ${promptVersion()} (content/it/prompts/character.md)`);
   console.log(`Sample (${sample.length}):`);
   sample.forEach((c) =>
     console.log(`  ${c.character.name} — ${c.character.role}, ${c.place.name}, ${c.cityName} · learner: ${c.learner.id}`)

@@ -355,4 +355,6 @@ Notes from the first real phone use are in `docs/ideas.md` → "Coda". Acted on 
 
 - Long, lecture-like openers (Marco the archaeologist introducing himself with his CV) came from what the prompt didn't say: that this is spoken, face to face, and who the person is. Added: "This is a real, face-to-face moment. Your words are spoken aloud and heard, not read." and "They're new to the neighbourhood." First turn is now "Someone has just walked up to you." instead of "Start the conversation."
 - Deliberately no "learning Italian" (teacher mode) or "foreigner" (tour-guide mode), and no length rules (Josh: wary of prescriptive dialogue).
-- Open: move the prompt into its own file (`content/it/prompts/character.md`) with a version label logged per turn and in test reports, so code and docs can't drift.
+- Prompt moved to `content/it/prompts/character.md` (version + changelog), filled in by `lib/prompts/build-turn-prompt.ts`. The version is logged with every turn (`event: turn`, `promptVersion`), sent in an `x-prompt-version` header, shown in debug mode, and printed in conversation-test reports. Verified the file produces the same prompt text as the old code for all 1,272 character/turn combinations.
+- 2026-10-11b: "They're new to the neighbourhood" → `{relationship}` slot ("You haven't met them before." until memory fills it).
+- CLAUDE.md: prompt-change process and commit-message standard.

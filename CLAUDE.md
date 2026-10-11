@@ -25,3 +25,5 @@ Voice-first Italian learning game. Read `README.md` and the numbered files in `d
 - Start every session with `git pull --rebase origin main`. End every session by committing and pushing to `main`, and update `progress.md`.
 - Never leave work unpushed overnight. If it isn't on GitHub, the other session and Railway can't see it.
 - Model IDs live only in `lib/claude.ts`. Don't hard-code them elsewhere.
+- The character prompt lives in `content/it/prompts/character.md`, not in code. To change it: edit it, bump its `version`, and add a changelog entry at the bottom saying what changed, why, and what prompted it. `npm run test:prompt` enforces the changelog. Compare with `npm run test:conversations`.
+- Commit messages explain the change for someone who wasn't there: what changed, why, what prompted it (bug, test result, Josh's feedback), and anything deliberately not done. A one-line message is only for trivial changes.

@@ -1,13 +1,13 @@
 /**
- * M1 Conversation Prompt Builder - Radically Simple
+ * Builds the prompt for one conversation turn from the template in
+ * content/it/prompts/character.md (the source of truth, with its own version
+ * and changelog). This file only fills in the placeholders.
  *
- * Builds a minimal prompt for natural conversation.
- * No rigid rules, no word counting, no explicit scaffolding.
- * Just: character identity + speech-to-text context + trust the model.
- *
- * Based on docs/M1-CONVERSATION-MODEL.md
+ * Server-side only (reads the template from disk).
  */
 
+import { readFileSync } from 'fs';
+import { join } from 'path';
 import type { CharacterSheet, Turn } from '../types';
 
 interface BuildTurnPromptParams {
@@ -19,95 +19,82 @@ interface BuildTurnPromptParams {
 interface TurnPrompt {
   system: string;
   user: string;
+  version: string;
 }
 
-/**
- * Builds the complete prompt for a conversation turn
- */
+interface Template {
+  version: string;
+  system: string;
+  firstTurn: string;
+  laterTurns: string;
+}
+
+const TEMPLATE_PATH = join(process.cwd(), 'content', 'it', 'prompts', 'character.md');
+
+let cached: Template | null = null;
+
+/** Parse the markdown template: version line plus the fenced block under each heading. */
+export function loadTemplate(): Template {
+  if (cached) return cached;
+  const md = readFileSync(TEMPLATE_PATH, 'utf8');
+  const version = md.match(/^version:\s*(\S+)/m)?.[1];
+  const block = (heading: string) => {
+    const re = new RegExp(`^## ${heading}\\s*\\n+\`\`\`\\n([\\s\\S]*?)\\n\`\`\``, 'm');
+    const m = md.match(re);
+    if (!m) throw new Error(`character.md: missing "## ${heading}" block`);
+    return m[1];
+  };
+  if (!version) throw new Error('character.md: missing "version:" line');
+  cached = { version, system: block('System prompt'), firstTurn: block('First turn'), laterTurns: block('Later turns') };
+  return cached;
+}
+
+/** Replace {placeholders}; drop lines whose placeholders were all empty; tidy blank lines. */
+function fill(template: string, values: Record<string, string>): string {
+  const lines = template.split('\n').flatMap((line) => {
+    const keys = [...line.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).filter((k) => k in values);
+    if (keys.length && keys.every((k) => !values[k])) return []; // optional line with nothing to say
+    return [line.replace(/\{(\w+)\}/g, (whole, k) => (k in values ? values[k] : whole))];
+  });
+  return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
+/** Version of the character prompt in use (from character.md). */
+export function promptVersion(): string {
+  return loadTemplate().version;
+}
+
 export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
   const { character, transcript, learnerSaid } = params;
+  const t = loadTemplate();
 
-  const isFirstTurn = transcript.length === 0;
+  const english =
+    character.englishAbility === 'fluent'
+      ? 'You speak fluent English.'
+      : character.englishAbility === 'basic'
+        ? 'You speak basic English.'
+        : '';
 
-  // Build simple system prompt
-  const system = buildSystemPrompt(character);
+  const system = fill(t.system, {
+    name: character.name,
+    age: String(character.age),
+    role: character.role,
+    city: character.city,
+    setting: character.appearance?.setting ?? '',
+    traits: character.personality.traits.join(', '),
+    formality: character.speech.formality === 'Lei' ? 'Lei (formal)' : 'tu (informal)',
+    english,
+    // Filled by character memory once it exists (see character.md)
+    relationship: "You haven't met them before.",
+  });
 
-  // Build user message with transcript
-  const user = buildUserMessage(transcript, learnerSaid, isFirstTurn);
+  const user =
+    transcript.length === 0
+      ? t.firstTurn.trim()
+      : fill(t.laterTurns, {
+          transcript: transcript.map((turn) => `${turn.who === 'npc' ? 'You' : 'Them'}: ${turn.transcript}`).join('\n'),
+          learnerSaid: learnerSaid ?? '',
+        });
 
-  return {
-    system,
-    user,
-  };
-}
-
-/**
- * Simple character-based system prompt
- */
-function buildSystemPrompt(character: CharacterSheet): string {
-  const { name, age, role, city, personality, speech, appearance } = character;
-
-  const formality = speech.formality === 'Lei' ? 'Lei (formal)' : 'tu (informal)';
-  const traits = personality.traits.join(', ');
-
-  const where = appearance?.setting ? `\nRight now you are here: ${appearance.setting}.\n` : '';
-
-  let prompt = `You are ${name}, a ${age}-year-old ${role} in ${city}.
-${where}
-You are ${traits}. You use ${formality}.
-
-This is a real, face-to-face moment. Your words are spoken aloud and heard, not read.
-
-They're new to the neighbourhood.
-
-You hear them through speech-to-text, not their writing. If something comes through garbled, respond to what they most likely meant.`;
-
-  // Add English ability if specified
-  if (character.englishAbility) {
-    if (character.englishAbility === 'fluent') {
-      prompt += `\nYou speak fluent English.`;
-    } else if (character.englishAbility === 'basic') {
-      prompt += `\nYou speak basic English.`;
-    }
-    // If 'none', don't mention English at all
-  }
-
-  prompt += `\n\nRespond with JSON:
-{ "it": "what you say, in Italian", "en": "English translation" }`;
-
-  return prompt;
-}
-
-/**
- * User message with transcript and current turn
- */
-function buildUserMessage(
-  transcript: Turn[],
-  learnerSaid: string | undefined,
-  isFirstTurn: boolean
-): string {
-  if (isFirstTurn) {
-    return 'Someone has just walked up to you.';
-  }
-
-  let content = '';
-
-  // Show previous conversation if there is any
-  if (transcript.length > 0) {
-    content += 'Previous conversation:\n\n';
-    transcript.forEach((turn) => {
-      if (turn.who === 'npc') {
-        content += `You: ${turn.transcript}\n`;
-      } else {
-        content += `Them: ${turn.transcript}\n`;
-      }
-    });
-    content += '\n';
-  }
-
-  // Current turn
-  content += `They just said: "${learnerSaid}"\n\n`;
-  content += 'Respond naturally as your character would.';
-
-  return content;
+  return { system, user, version: t.version };
 }

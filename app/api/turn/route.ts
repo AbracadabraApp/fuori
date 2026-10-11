@@ -2,6 +2,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { runTurn } from '@/lib/turn';
+import { promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { CharacterSheet, Turn } from '@/lib/types';
 import { logServerError } from '@/lib/server-log';
 
@@ -42,8 +43,21 @@ export async function POST(request: NextRequest) {
       learnerSaid,
     });
 
-    // Return the validated output
-    return NextResponse.json(turnOutput);
+    // One line per turn so any reply can be traced to the prompt version that produced it
+    const version = promptVersion();
+    console.log(
+      JSON.stringify({
+        level: 'info',
+        event: 'turn',
+        id: request.headers.get('x-fuori-id') ?? undefined,
+        character: (character as CharacterSheet).id,
+        turn: (transcript || []).length === 0 ? 'opening' : 'reply',
+        promptVersion: version,
+      })
+    );
+
+    // Return the validated output; the prompt version travels in a header
+    return NextResponse.json(turnOutput, { headers: { 'x-prompt-version': version } });
   } catch (error) {
     logServerError(request, 'turn', error);
 

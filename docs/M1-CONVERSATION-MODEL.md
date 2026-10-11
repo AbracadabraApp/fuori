@@ -30,30 +30,9 @@ This is the source of truth for how M1 conversations work. Where it disagrees wi
 
 ## The Prompt: Keep It Simple
 
-The prompt describes the situation, not how to talk (decided 2026-10-11). It deliberately does **not** say the person is "learning Italian" (that turns characters into teachers) or "a foreigner" (that turns them into tour guides). Characters hear the learner's level in their actual Italian and adjust the way real people do.
+**Source of truth: [`content/it/prompts/character.md`](../content/it/prompts/character.md)**, with its version and a changelog explaining every change. Don't copy the prompt here; it drifts.
 
-```
-You are [Name], a [age]-year-old [role] in [city].
-Right now you are here: [place and setting].
-
-You are [personality traits]. You use [tu/Lei].
-
-This is a real, face-to-face moment. Your words are spoken aloud and heard, not read.
-
-They're new to the neighbourhood.
-
-You hear them through speech-to-text, not their writing. If something comes through garbled, respond to what they most likely meant.
-
-[You speak fluent English. / You speak basic English. / nothing]
-
-Respond with JSON:
-{ "it": "what you say, in Italian", "en": "English translation" }
-```
-
-First turn (user message): `Someone has just walked up to you.`
-Later turns: the conversation so far, then `They just said: "…"`.
-
-Source of truth: `lib/prompts/build-turn-prompt.ts`.
+The principle: describe the situation, not how to talk (decided 2026-10-11). The prompt says who the character is, where they are, that this is a spoken face-to-face moment, and what they know about the person. It deliberately does **not** say the person is "learning Italian" (turns characters into teachers) or "a foreigner" (turns them into tour guides), and sets no length rules. Characters hear the learner's level in their actual Italian and adjust the way real people do.
 
 **That's the entire system prompt. Everything else emerges naturally.**
 
@@ -133,7 +112,7 @@ Track only what matters for natural conversation:
 **How it works (decided 2026-10-10, part of M1):**
 - Stored in **Railway Postgres** (`character_memories`), keyed by an anonymous learner id kept in a server-set cookie. Not on the phone: Safari erases site storage after about a week without a visit. See [Architecture](05-architecture.md#where-learner-data-lives-decided-2026-10-10).
 - **When a conversation ends,** one Claude call turns the transcript into a few short notes (at most ~10 lines), merged with what the character already remembered.
-- **Next conversation,** the notes and visit count go into the character's prompt, e.g. "You've met them 3 times. You remember: their name is Josh; from Seattle; always orders a cappuccino." The character uses them naturally, the way a real barista would, not by reciting them.
+- **Next conversation,** the notes and visit count fill the `{relationship}` line of the character prompt (`content/it/prompts/character.md`), e.g. "You've met them 3 times. You remember: their name is Josh; from Seattle; always orders a cappuccino." The character uses them naturally, the way a real barista would, not by reciting them.
 - Familiarity levels (stranger → friend, *Lei* → *tu*) are M2.
 
 ## The Conversation API

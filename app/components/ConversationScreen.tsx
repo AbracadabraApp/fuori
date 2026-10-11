@@ -41,6 +41,7 @@ async function measure<T>(fn: () => Promise<T>, done: (ms: number) => void): Pro
 }
 
 interface DebugInfo {
+  prompt?: string;
   heard?: string;
   recording?: string;
   voice?: string;
@@ -185,6 +186,7 @@ export function ConversationScreen({
         )
       );
       const turnOutput: TurnOutput = await response.json();
+      setDebugInfo((d) => ({ ...d, prompt: response.headers.get('x-prompt-version') ?? undefined }));
 
       const npcTurn: Turn = { who: 'npc', transcript: turnOutput.it, translation: turnOutput.en };
       setTranscript([npcTurn]);
@@ -445,6 +447,7 @@ export function ConversationScreen({
         )
       );
       const turnOutput: TurnOutput = await res.json();
+      setDebugInfo((d) => ({ ...d, prompt: res.headers.get('x-prompt-version') ?? undefined }));
 
       const learnerTurn: Turn = { who: 'learner', transcript: transcription };
       const npcTurn: Turn = { who: 'npc', transcript: turnOutput.it, translation: turnOutput.en };
@@ -530,6 +533,7 @@ export function ConversationScreen({
           {/* Debug panel: open the app once with ?debug=1 (off with ?debug=0) */}
           {debug && (
             <div className={styles.debug}>
+              <div><b>Prompt:</b> {debugInfo.prompt ?? '—'}</div>
               <div><b>Recording:</b> {debugInfo.recording ?? '—'}</div>
               <div><b>Heard:</b> {debugInfo.heard ?? '—'}</div>
               <div><b>Voice:</b> {debugInfo.voice ?? '—'}</div>
