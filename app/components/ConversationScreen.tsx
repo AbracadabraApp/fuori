@@ -5,6 +5,8 @@ import { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
 import { language } from '@/content/it/language';
 import { browserVoiceFor } from '@/content/it/voices';
 import {
+  FuoriError,
+  newErrorId,
   fetchWithRetry,
   micError,
   reportError,
@@ -24,6 +26,11 @@ const SILENT_WAV =
 const MIN_RECORDING_BYTES = 1500;
 const NOTHING_HEARD = "Didn't catch anything. Tap the mic, speak, then tap again to send.";
 
+/** Current time in ms (module-level so the React linter doesn't flag it). */
+function now(): number {
+  return performance.now();
+}
+
 async function measure<T>(fn: () => Promise<T>, done: (ms: number) => void): Promise<T> {
   const start = performance.now();
   try {
@@ -35,6 +42,7 @@ async function measure<T>(fn: () => Promise<T>, done: (ms: number) => void): Pro
 
 interface DebugInfo {
   heard?: string;
+  recording?: string;
   voice?: string;
   timings: Record<string, number>;
   lastError?: string;
@@ -74,6 +82,8 @@ export function ConversationScreen({
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const recordStartRef = useRef(0);
+  const speakingAtStartRef = useRef(false);
 
   const characterName = character.name;
 
@@ -222,6 +232,13 @@ export function ConversationScreen({
     setError(null);
 
     try {
+      // If the character is still talking, stop them: you're interrupting, and
+      // iPhone can record silence while it is playing audio
+      const audio = audioRef.current;
+      speakingAtStartRef.current = (!!audio && !audio.paused && !audio.ended) || speechSynthesis.speaking;
+      audio?.pause();
+      speechSynthesis.cancel();
+
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
 
       // Try formats in order of Groq compatibility
@@ -252,11 +269,13 @@ export function ConversationScreen({
           type: audioBlob.type,
           size: audioBlob.size,
         });
-        await processAudio(audioBlob);
+        const ms = Math.round(now() - recordStartRef.current);
         stream.getTracks().forEach((track) => track.stop());
+        await processAudio(audioBlob, ms);
       };
 
       mediaRecorder.start();
+      recordStartRef.current = now();
       setIsRecording(true);
     } catch (err) {
       handleError(micError(err), 'microphone');
@@ -279,14 +298,35 @@ export function ConversationScreen({
     }
   };
 
-  const processAudio = async (audioBlob: Blob) => {
+  // Nothing usable was heard: tell the learner, and log the details with a code
+  // (recording length and size, what Whisper returned) so the cause can be found
+  const nothingHeard = (reason: string, audioBlob: Blob, ms: number, heard?: string) => {
+    const e = new FuoriError(`nothing heard: ${reason}`, newErrorId(), 'server', 'nothing heard');
+    reportError(e, {
+      character: character.id,
+      reason,
+      ms,
+      bytes: audioBlob.size,
+      type: audioBlob.type,
+      heard,
+      characterWasSpeaking: speakingAtStartRef.current,
+    });
+    setDebugInfo((d) => ({ ...d, lastError: `[${e.id}] nothing heard (${reason})` }));
+    setError(`${NOTHING_HEARD} (${e.id})`);
+    setIsProcessing(false);
+  };
+
+  const processAudio = async (audioBlob: Blob, ms: number) => {
     setIsProcessing(true);
     setError(null);
+    setDebugInfo((d) => ({
+      ...d,
+      recording: `${(ms / 1000).toFixed(1)}s, ${Math.round(audioBlob.size / 1024)} KB, ${audioBlob.type}${speakingAtStartRef.current ? ', interrupted the character' : ''}`,
+    }));
 
     // Nothing recorded (a very short tap): say so instead of sending silence
     if (audioBlob.size < MIN_RECORDING_BYTES) {
-      setError(NOTHING_HEARD);
-      setIsProcessing(false);
+      nothingHeard('recording too short', audioBlob, ms);
       return;
     }
 
@@ -311,8 +351,7 @@ export function ConversationScreen({
 
     // Whisper heard no words
     if (!transcription?.trim()) {
-      setError(NOTHING_HEARD);
-      setIsProcessing(false);
+      nothingHeard('no words in transcript', audioBlob, ms, transcription);
       return;
     }
 
@@ -395,6 +434,7 @@ export function ConversationScreen({
         {/* Debug panel: open the app once with ?debug=1 (off with ?debug=0) */}
         {debug && (
           <div className={styles.debug}>
+            <div><b>Recording:</b> {debugInfo.recording ?? '—'}</div>
             <div><b>Heard:</b> {debugInfo.heard ?? '—'}</div>
             <div><b>Voice:</b> {debugInfo.voice ?? '—'}</div>
             <div>

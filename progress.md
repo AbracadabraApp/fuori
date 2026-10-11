@@ -332,3 +332,5 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 - Fix: `lib/speech/audio-file.ts` names the file by type (`speech.m4a` on iPhone) on the phone and again on the server; strips codec parameters ("audio/mp4;codecs=…"). `npm run test:audio`.
 - After two failures in a row, the error code is shown under the in-character recovery line, so a persistent problem isn't hidden.
 - Decision (Josh): no in-character cover for system errors. Hard-coded "Scusa… puoi ripetere?" lines removed; a failing system now gets a plain message saying what failed, with the code. Garbled-but-transcribed speech is still handled by Claude in character. An empty recording or empty transcript shows "Didn't catch anything" without calling Claude.
+- "Didn't catch anything" now has a code and is logged with the recording's length, size, type, what Whisper returned, and whether the character was still speaking. Debug mode shows the last recording's details.
+- Tapping the mic while the character is talking now stops them (you're interrupting; iPhone can also record silence while playing audio).
