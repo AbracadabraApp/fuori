@@ -7,6 +7,11 @@ export const language = {
   name: 'Italian',
   speechLang: 'it-IT',
 
+  /** Interface words */
+  ui: {
+    showMore: 'Mostra altro', // under the city and place feeds
+  },
+
   /**
    * What a character says when something fails behind the scenes, so the
    * learner stays in the conversation instead of seeing an error screen.

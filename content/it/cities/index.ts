@@ -19,25 +19,29 @@ import { torino } from './torino';
 import { venezia } from './venezia';
 import { verona } from './verona';
 
+// Feed order: big cities first (Roma has the anchors), then smaller towns.
+// The feed shows 10 at a time, so the first 10 are what people see first.
 export const cities = [
-  assisi,
-  bergamo,
-  bologna,
+  // Big cities
+  roma,
   firenze,
-  genova,
-  lecce,
-  lucca,
-  mantova,
-  matera,
+  venezia,
   milano,
   napoli,
-  orvieto,
+  bologna,
+  torino,
   palermo,
-  roma,
+  genova,
+  // Smaller cities and towns
   siena,
+  lucca,
+  verona,
+  bergamo,
+  mantova,
+  matera,
+  lecce,
+  orvieto,
+  assisi,
   siracusa,
   taormina,
-  torino,
-  venezia,
-  verona,
 ];

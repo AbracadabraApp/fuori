@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { PlaceCard } from './components/PlaceCard';
+import { ShowMore } from './components/ShowMore';
+import { language } from '@/content/it/language';
 import { ConversationScreen } from './components/ConversationScreen';
 import { cities as cityPantries } from '@/content/it/cities';
 import { characterForPlace } from '@/lib/characters/for-place';
@@ -15,6 +17,11 @@ export default function Home() {
   const [showTranscripts, setShowTranscripts] = useState(true);
   const [showEnglish, setShowEnglish] = useState(false);
   const [allowDialect, setAllowDialect] = useState(false);
+
+  // Feeds show 10 cards at a time; "show more" adds the next 10 below
+  const PAGE = 10;
+  const [cityCount, setCityCount] = useState(PAGE);
+  const [placeCount, setPlaceCount] = useState(PAGE);
 
   // Get region from first neighbourhood for display
   const getRegion = (cityId: string) => {
@@ -85,25 +92,33 @@ export default function Home() {
       <div className={styles.screen}>
         <h1 className={styles.cityTitle}>{cityData.name}</h1>
 
-        {/* Scrolling place cards */}
+        {/* Scrolling place cards, grouped by neighbourhood */}
         <div>
-          {cityData.neighbourhoods.flatMap((neighbourhood) =>
-            cityData.places
-              .filter((place) => place.neighbourhood === neighbourhood)
-              .map((place) => {
-                const character = cityData.characters?.find((ch) => ch.id === place.characterId);
-                return (
-                  <PlaceCard
-                    key={place.id}
-                    placeName={place.name}
-                    characterName={character?.name || ''}
-                    neighborhood={place.neighbourhood}
-                    imageUrl={`/images/places/${place.id}.jpg`}
-                    onTap={() => setSelectedPlace(place.id)}
-                  />
-                );
-              })
-          )}
+          {(() => {
+            const ordered = cityData.neighbourhoods.flatMap((neighbourhood) =>
+              cityData.places.filter((place) => place.neighbourhood === neighbourhood)
+            );
+            return (
+              <>
+                {ordered.slice(0, placeCount).map((place) => {
+                  const character = cityData.characters?.find((ch) => ch.id === place.characterId);
+                  return (
+                    <PlaceCard
+                      key={place.id}
+                      placeName={place.name}
+                      characterName={character?.name || ''}
+                      neighborhood={place.neighbourhood}
+                      imageUrl={`/images/places/${place.id}.jpg`}
+                      onTap={() => setSelectedPlace(place.id)}
+                    />
+                  );
+                })}
+                {placeCount < ordered.length && (
+                  <ShowMore label={language.ui.showMore} onClick={() => setPlaceCount((n) => n + PAGE)} />
+                )}
+              </>
+            );
+          })()}
         </div>
       </div>
     );
@@ -134,16 +149,22 @@ export default function Home() {
 
       {/* City cards */}
       <div>
-        {cityPantries.map((city) => (
+        {cityPantries.slice(0, cityCount).map((city) => (
           <PlaceCard
             key={city.id}
             placeName={city.name}
             characterName=""
             neighborhood={getRegion(city.id)}
             imageUrl={`/images/cities/${city.id}.jpg`}
-            onTap={() => setSelectedCity(city.id)}
+            onTap={() => {
+              setSelectedCity(city.id);
+              setPlaceCount(PAGE); // each city starts with its first 10 places
+            }}
           />
         ))}
+        {cityCount < cityPantries.length && (
+          <ShowMore label={language.ui.showMore} onClick={() => setCityCount((n) => n + PAGE)} />
+        )}
       </div>
 
       {/* Settings sheet overlay */}
