@@ -122,6 +122,12 @@ Track only what matters for natural conversation:
 
 **Store as simple notes, not structured data.**
 
+**How it works (decided 2026-10-10, part of M1):**
+- Stored in **Railway Postgres** (`character_memories`), keyed by an anonymous learner id kept in a server-set cookie. Not on the phone: Safari erases site storage after about a week without a visit. See [Architecture](05-architecture.md#where-learner-data-lives-decided-2026-10-10).
+- **When a conversation ends,** one Claude call turns the transcript into a few short notes (at most ~10 lines), merged with what the character already remembered.
+- **Next conversation,** the notes and visit count go into the character's prompt, e.g. "You've met them 3 times. You remember: their name is Josh; from Seattle; always orders a cappuccino." The character uses them naturally, the way a real barista would, not by reciting them.
+- Familiarity levels (stranger → friend, *Lei* → *tu*) are M2.
+
 ## The Conversation API
 
 `POST /api/turn`
@@ -182,7 +188,7 @@ But test the simple version first.
 - `none`: no English; simpler Italian, slower, with gestures
 - unspecified: no instruction; the character just speaks Italian
 
-**Memory is not built yet.** The "Character Memory" section above is the plan. Today each conversation starts fresh.
+**Memory is not built yet.** It is planned for M1 (see "Character Memory" above). Until it's built, each conversation starts fresh.
 
 **Prompt built from:**
 1. Character basics and where they are

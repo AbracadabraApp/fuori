@@ -8,12 +8,12 @@ The prototype runs inside a claude.ai artifact, where the microphone can be bloc
 |---|---|---|
 | App | **Next.js** (App Router) + TypeScript | One project for UI and server routes; frontend and API together |
 | Hosting | **Railway** | Auto-deploys from GitHub, integrated Postgres, environment variables for secrets, automatic HTTPS (required for microphone access) |
-| Database | **Railway Postgres** (M4) | Integrated with Railway hosting, easy provisioning |
+| Database | **Railway Postgres** from M1 (character memory) | Integrated with Railway hosting, easy provisioning. See "Where learner data lives" below |
 | Claude | **Anthropic TypeScript SDK** (`@anthropic-ai/sdk`) in server routes only | The API key never reaches the browser |
 | Speech in | **Whisper on Groq** (`whisper-large-v3-turbo`) from M1 | Browser STT transcribes Italian as English gibberish; Whisper locked to Italian solves this. Groq's free tier covers a prototype. See [Language Services](08-language-services.md) |
 | Speech out | Browser **speechSynthesis** with an Italian voice (M1); **hosted TTS** (ElevenLabs or Azure) with distinct character voices (M3) | Character voices are a big part of the feel; browser voices first, upgrade in M3 |
-| Storage | **localStorage** (M1); **Railway Postgres** (M4) once memory and multi-device matter | Keep M1 simple |
-| Auth | None for M1; add when there's more than one player (M4) | |
+| Storage | **Railway Postgres** for learner data from M1; localStorage only for per-device conveniences (debug mode) | Memory must survive and be visible to the server (decided 2026-10-10) |
+| Auth | None for M1: an anonymous learner id in a server-set cookie. Email sign-in link later (M4) for other devices and recovery | |
 
 ## Request flow
 
@@ -53,6 +53,19 @@ End-of-day: `/api/diario` takes the day's transcripts and returns the diario, up
 The full TypeScript interfaces are in [Data model](09-data-model.md), which is the source of truth.
 
 Hand-written content (city pantries, anchor characters, Magda, level rules) lives in the repo as TypeScript files under `content/it/`. Generated characters and scenes are learner data, stored with the learner's progress.
+
+### Where learner data lives (decided 2026-10-10)
+
+Learner data, starting with character memory in M1, lives in **Railway Postgres**, not on the phone. Reasons:
+
+- **Safari erases site storage** (localStorage, IndexedDB) after about 7 days without a visit unless the site is added to the home screen. Characters would forget you after a short trip.
+- **The server needs it.** Messages from characters (see `docs/ideas.md`) require the server to know who you've met and what you talked about.
+- **It can be inspected.** Tests, debugging and both Claude sessions can see what a character remembers and why.
+- **No migration later.** Starting on the phone would mean building storage twice and moving data between them.
+
+**Identity in M1:** on first visit the server creates an anonymous learner id and sets it in an HTTP-only cookie. Server-set cookies are not subject to Safari's 7-day storage wipe. No login. Clearing Safari or switching phones starts fresh until email sign-in (M4).
+
+**Minimal memory in M1:** when a conversation ends, Claude writes a few short notes about the learner (name, where they're from, what they ordered or planned, promises). Next time, those notes and the visit count go into that character's prompt. Tables and details: [Data model → Storage](09-data-model.md#storage-strategy).
 
 ## Suggested layout
 
@@ -103,7 +116,7 @@ At A1–A2, a turn is a few thousand input tokens (mostly cached) and a short ou
 
 **Why Railway:**
 - Automatic HTTPS (required for browser microphone access)
-- Integrated Postgres for M4
+- Integrated Postgres (used from M1 for learner data)
 - Preview environments for feature branches
 - Simple Git-based deploys
 - Environment variables management

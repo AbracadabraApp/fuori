@@ -318,3 +318,10 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 - City and place feeds show 10 cards, then a centred "Mostra altro" link with an olive sprig on each side adds the next 10 below (`app/components/ShowMore.tsx`; text in `content/it/language.ts` → `ui.showMore`). Each city starts at its first 10 places.
 - City order alternates big city / smaller town, spread across regions, Roma first (`content/it/cities/index.ts`).
 - Place feeds are ordered by `lib/places/feed-order.ts`: rotate through neighbourhoods and avoid repeating a kind within 3 cards (was: all of one neighbourhood first). Replaces the 2026-10-10 "group by neighbourhood" ordering. `npm run test:feed` checks it.
+
+## 2026-10-10 night: Decision: minimal memory in M1, in Railway Postgres
+
+- Character memory moves from M2 into M1, in its minimal form: visit count plus a few short notes per character, written by Claude when a conversation ends and added to the prompt next time.
+- Stored in Railway Postgres from M1 (`learners`, `character_memories`), not localStorage: Safari wipes site storage after ~7 days without a visit, the server needs memory for future messages, and it can be inspected. Anonymous learner id in a server-set HTTP-only cookie; no login until M4.
+- Updated: `docs/05-architecture.md`, `docs/09-data-model.md`, `docs/06-roadmap.md`, `docs/M1-CONVERSATION-MODEL.md`.
+- **Next:** add a Postgres service in Railway (sets `DATABASE_URL`), then build the memory flow.

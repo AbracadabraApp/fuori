@@ -39,14 +39,14 @@ Each milestone ends with something playable on your phone. There is no separate 
 - [ ] Speech out: best available Italian browser voice; slow mode
 - [ ] Transcript display during conversation (when "Show transcripts" enabled)
 - [ ] Simple SVG avatars for every character, with mood expressions
-- [ ] Save progress and generated characters in localStorage
+- [ ] **Minimal character memory** (decided 2026-10-10): Railway Postgres (`learners`, `character_memories`), anonymous learner id in a server-set cookie, Claude writes short notes when a conversation ends and they go into the character's prompt next time. See [Data model → Storage](09-data-model.md#storage-strategy)
 - [ ] Oggi: suggestion tiles plus "cambia aria" and "vai dove vuoi" (deferred to M2)
 
 **Deploy and test**
 - [ ] `git push origin main` → Railway; check HTTPS and the mic on iPhone Safari
 - [ ] Safari Web Inspector for phone debugging; `railway logs` for API errors
 
-**Done when:** on your phone, you can browse 20 Italian cities, select Roma, pick a place (Giulia's bar), and hold a voice conversation in Italian.
+**Done when:** on your phone, you can browse 20 Italian cities, select Roma, pick a place (Giulia's bar), and hold a voice conversation in Italian; and when you come back another day, Giulia remembers your name and something you talked about.
 
 **Status:** City feed and navigation complete. Conversation engine built but needs wiring to the UI. Ready for deployment and phone testing.
 
@@ -66,14 +66,14 @@ Each milestone ends with something playable on your phone. There is no separate 
 - [ ] "Vai dove vuoi" free request flow
 
 **Memory and progression:**
-- [ ] Character memory and familiarity across days (sconosciuto → amico, Lei → tu)
+- [ ] Fuller relationships on top of M1's minimal memory: familiarity across days (sconosciuto → amico, Lei → tu), structured facts and promises
 - [ ] Day flow: suggestions → conversations → diario; "try tomorrow" goals feed the next day's suggestions
 - [ ] Quaderno with last-used dates; stale words worked into suggestions
 - [ ] Changing scenery: new neighbourhood, day trip, moving to a new city; people stay where you met them
 - [ ] Viaggio and Tu screens
 - [ ] Simulated-learner test (`npm run test:learner`) ([Testing → 4b](10-testing.md#4b-simulated-learner)); rerun after prompt changes
 - [ ] Illustrated portraits for the anchors (see [Visuals](07-visuals.md)); generated people keep SVG avatars
-- [ ] Save progress and generated characters in localStorage
+- [ ] Store progress and generated characters in Postgres
 
 **Done when:** you come back to the same bar on day 3 and the barista greets you by name and remembers your usual order, and the diario points out a mistake you made twice.
 
@@ -86,7 +86,7 @@ Each milestone ends with something playable on your phone. There is no separate 
 
 ## M4 — Accounts and costs
 
-- [ ] Postgres + auth; progress syncs across devices
+- [ ] Email sign-in link; progress follows you across devices (Postgres is already in place from M1)
 - [ ] Usage tracking and per-learner daily budgets
 
 ## Later

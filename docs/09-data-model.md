@@ -1,6 +1,6 @@
 # Data Model
 
-Hand-written content (city pantries, anchor characters, Magda, level rules, the suggested route) lives in the repo as TypeScript files under `content/it/` (one folder per language). Everything generated during play (characters, scenes, suggestions) and all learner progress is learner data, stored in localStorage (M1) then Postgres (M4).
+Hand-written content (city pantries, anchor characters, Magda, level rules, the suggested route) lives in the repo as TypeScript files under `content/it/` (one folder per language). Everything generated during play (characters, scenes, suggestions) and all learner progress is learner data, stored in Railway Postgres (from M1; see [Storage Strategy](#storage-strategy)).
 
 ## Content Types
 
@@ -157,7 +157,7 @@ interface Scene {
 
 ## Learner Data (Dynamic)
 
-These are stored per learner, initially in localStorage, later in Postgres.
+These are stored per learner in Postgres. M1 builds only `learners` and `character_memories` (see [Storage Strategy](#storage-strategy)); the rest arrive with the milestones that need them.
 
 ### Learner Profile
 
@@ -197,6 +197,8 @@ interface JourneyState {
 ```
 
 ### Relationship Memory
+
+*The fuller M2 version.* M1 uses the minimal `character_memories` table below (visit count and short notes); M2 adds familiarity levels (sconosciuto → amico, Lei → tu) and structured facts, promises and topics.
 
 Per learner, per character. Tracks what each character knows about you.
 
@@ -375,48 +377,53 @@ interface TurnOutput {
 
 ## Storage Strategy
 
-### M1: localStorage
+Decided 2026-10-10: learner data lives in **Railway Postgres from M1**, not localStorage. Why: Safari erases site storage after ~7 days without a visit, the server needs memory for messages, and a database can be inspected. See [Architecture → Where learner data lives](05-architecture.md#where-learner-data-lives-decided-2026-10-10).
 
-```typescript
-// Keys in localStorage
-const KEYS = {
-  profile: 'fuori:profile',
-  journey: 'fuori:journey',
-  characters: 'fuori:characters',   // generated characters
-  magda: 'fuori:magda',
-  relationships: 'fuori:relationships',
-  scenes: 'fuori:scenes',
-  quaderno: 'fuori:quaderno',
-  mistakes: 'fuori:mistakes',
-  diario: 'fuori:diario',
-};
-
-// Each stored as JSON
-localStorage.setItem(KEYS.profile, JSON.stringify(learnerProfile));
-```
-
-### M4: Postgres
+### M1: minimal memory
 
 ```sql
--- Tables
-learners (id, name, home_town, why_italy, level, settings, created_at)
-journey_state (learner_id, day, current_city, neighbourhood, days_in_city, cities_visited)
-characters (id, learner_id, sheet, origin, created_at)
-scenes (id, learner_id, character_id, scene, created_at)
-magda_messages (id, learner_id, reason, text, lesson_focus, opened, created_at)
-relationships (learner_id, character_id, familiarity, memory, last_seen)
-scene_runs (id, learner_id, scene_id, day, transcript, corrections, completed_at)
-words (learner_id, it, en, first_seen, last_used, times_used, scene_ids)
-mistakes (learner_id, pattern, category, examples, count, last_seen, resolved)
-diario_entries (learner_id, day, summary, corrections, new_words, try_tomorrow, character_note)
+-- One row per learner. The id is created on first visit and kept in an
+-- HTTP-only cookie set by the server (no login in M1).
+learners (
+  id          uuid primary key,
+  created_at  timestamptz not null default now()
+)
+
+-- What each character remembers about each learner.
+character_memories (
+  learner_id    uuid references learners(id),
+  character_id  text,            -- 'giulia', 'antonio-russo', ...
+  visits        int not null default 0,
+  last_visit    timestamptz,
+  notes         text[] not null default '{}',  -- short, written by Claude after each conversation
+  primary key (learner_id, character_id)
+)
 ```
 
-**Migration path:**
-- Read from localStorage
-- POST to `/api/migrate` endpoint
-- Write to Postgres
-- Clear localStorage
-- Future reads/writes go to DB
+**Flow:**
+1. Opening a conversation loads that character's row (if any). The visit count and notes go into the character's prompt ("You've met them 3 times. You remember: their name is Josh; from Seattle; always orders a cappuccino").
+2. When the conversation ends (leaving the screen after at least a few exchanges), one Claude call turns the transcript into updated notes: keep what matters, drop what doesn't, at most ~10 short lines. `visits` goes up by one.
+
+Only `learners` and `character_memories` are built in M1.
+
+### Later milestones
+
+Added when the features that need them are built:
+
+```sql
+learners            -- + name, home_town, level, settings; email for sign-in (M4)
+journey_state       (learner_id, day, current_city, neighbourhood, days_in_city, cities_visited)
+characters          (id, learner_id, sheet, origin, created_at)       -- generated characters
+scenes              (id, learner_id, character_id, scene, created_at)
+character_memories  -- + familiarity, structured facts / promises / topics (M2)
+magda_messages      (id, learner_id, reason, text, lesson_focus, opened, created_at)
+scene_runs          (id, learner_id, scene_id, day, transcript, completed_at)
+words               (learner_id, it, en, first_seen, last_used, times_used, scene_ids)
+mistakes            (learner_id, pattern, category, examples, count, last_seen, resolved)
+diario_entries      (learner_id, day, summary, corrections, new_words, try_tomorrow, character_note)
+```
+
+**localStorage** is used only for per-device conveniences that don't matter if lost (debug mode).
 
 ## Validation
 
