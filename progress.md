@@ -348,3 +348,5 @@ Notes from the first real phone use are in `docs/ideas.md` → "Coda". Acted on 
 - Mic states: Tap to speak / Listening… tap to send (pulsing red) / Rosa is thinking… (dots) / Rosa is speaking · tap to interrupt. The opening line now shows "thinking" too.
 - 234 English character roles translated to Italian, matching gender (fruit vendor → fruttivendola). `npm run test:roles`.
 - Checked at 390×844 and 375×667. The "speaking" state couldn't be seen in the headless browser (no audio); check it on the phone.
+- Mic, revised after Josh's feedback: compact olive pill. While you talk, five olive bars move with your actual microphone level (proof your voice is being captured; not a transcription). While the character prepares a reply, terracotta dots (red reads as an error). If no sound arrives within 2 seconds: "Not hearing you. Check the mic isn't covered or muted." Dropped the "is thinking / is speaking" text; hints are only "Tap to speak" / "Tap to send".
+- Brand green is now olive (`--green: #566330`, was #2c5f4f), new `--terracotta: #c0603a`. Both pass contrast; states also differ by shape (bars vs bouncing dots), not color alone.

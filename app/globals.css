@@ -2,12 +2,13 @@
 :root {
   --paper: #f5f1ed;       /* screen background */
   --card: #ffffff;
-  --green: #2c5f4f;       /* brand: headings, buttons, accents */
+  --green: #566330;       /* brand olive: headings, buttons, accents (was #2c5f4f) */
   --sand: #e8d5c4;        /* placeholders */
   --ink: #000000;
   --text: #333333;
   --muted: #666666;
-  --record: #dc3545;      /* mic while recording */
+  --record: #dc3545;      /* reserved for errors / alerts */
+  --terracotta: #c0603a;  /* character preparing a reply */
   --error-bg: #f8d7da;
   --error-ink: #721c24;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);

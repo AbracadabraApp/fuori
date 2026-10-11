@@ -156,16 +156,15 @@
 }
 
 .mic {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
+  width: 112px;
+  height: 52px;
+  border-radius: 26px; /* pill */
   border: none;
-  color: white;
-  font-size: 30px;
   cursor: pointer;
   background-color: var(--green);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.2s, transform 0.2s;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  transition: background-color 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,45 +175,53 @@
   cursor: not-allowed;
 }
 
+.micIcon {
+  font-size: 24px;
+}
+
 /* States */
-.idle {
-  background-color: var(--green);
-}
-
-.listening {
-  background-color: var(--record);
-  animation: pulse 1.4s ease-out infinite;
-}
-
-.thinking {
-  background-color: var(--green);
-  opacity: 0.75;
-}
-
+.idle,
 .speaking {
   background-color: var(--green);
-  box-shadow: 0 0 0 4px rgba(44, 95, 79, 0.18);
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.45);
-  }
-  100% {
-    box-shadow: 0 0 0 18px rgba(220, 53, 69, 0);
-  }
+/* Listening: light pill, green dots driven by the mic level */
+.listening {
+  background-color: white;
+  box-shadow: 0 0 0 2px var(--green), 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Thinking: light pill, terracotta dots (red reads as an error) */
+.thinking {
+  background-color: white;
+  box-shadow: 0 0 0 2px var(--terracotta), 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.voice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+}
+
+.voice span {
+  width: 7px;
+  height: 7px;
+  border-radius: 4px;
+  background: var(--green);
+  transition: transform 60ms linear;
 }
 
 .dots {
   display: flex;
-  gap: 5px;
+  gap: 6px;
 }
 
 .dots span {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: white;
+  background: var(--terracotta);
   animation: dot 1.2s infinite ease-in-out;
 }
 
@@ -240,9 +247,15 @@
 }
 
 .status {
+  min-height: 18px;
   font-size: 14px;
   color: var(--muted);
   text-align: center;
+  padding: 0 24px;
+}
+
+.warn {
+  color: var(--error-ink);
 }
 
 /* Debug mode (?debug=1) */
@@ -264,7 +277,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .listening,
   .dots span {
     animation: none;
   }

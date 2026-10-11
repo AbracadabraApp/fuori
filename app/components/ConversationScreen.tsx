@@ -84,6 +84,11 @@ export function ConversationScreen({
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const recordStartRef = useRef(0);
+  // Live voice level while recording (dots move with your voice)
+  const audioCtxRef = useRef<AudioContext | null>(null);
+  const meterRef = useRef<{ stop: () => void } | null>(null);
+  const dotsRef = useRef<HTMLSpanElement | null>(null);
+  const [heardSomething, setHeardSomething] = useState(true);
   const speakingAtStartRef = useRef(false);
 
   const characterName = character.name;
@@ -132,6 +137,15 @@ export function ConversationScreen({
 
   // Must run synchronously inside a tap handler, before any await.
   const unlockAudio = () => {
+    try {
+      const Ctx = window.AudioContext ?? (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      if (Ctx) {
+        audioCtxRef.current ??= new Ctx();
+        void audioCtxRef.current.resume();
+      }
+    } catch {
+      // no Web Audio: the dots just won't move
+    }
     try {
       const warmup = new SpeechSynthesisUtterance(' ');
       warmup.volume = 0;
@@ -239,6 +253,53 @@ export function ConversationScreen({
     }
   };
 
+  // Reads the microphone level and moves the dots directly (no re-render per
+  // frame). If nothing above a whisper arrives within 2 seconds, show a hint.
+  const startLevelMeter = (stream: MediaStream) => {
+    const ctx = audioCtxRef.current;
+    if (!ctx) return null;
+    const source = ctx.createMediaStreamSource(stream);
+    const analyser = ctx.createAnalyser();
+    analyser.fftSize = 512;
+    source.connect(analyser);
+    const data = new Uint8Array(analyser.fftSize);
+    const shape = [0.55, 0.85, 1, 0.85, 0.55];
+    let frame = 0;
+    let loudest = 0;
+    const started = now();
+    setHeardSomething(true);
+
+    const tick = () => {
+      analyser.getByteTimeDomainData(data);
+      let sum = 0;
+      for (let i = 0; i < data.length; i++) {
+        const v = (data[i] - 128) / 128;
+        sum += v * v;
+      }
+      const level = Math.min(1, Math.sqrt(sum / data.length) * 6); // 0..1
+      loudest = Math.max(loudest, level);
+      const dots = dotsRef.current?.children;
+      if (dots) {
+        for (let i = 0; i < dots.length; i++) {
+          const el = dots[i] as HTMLElement;
+          el.style.transform = `scaleY(${1 + level * 3.2 * shape[i]})`;
+        }
+      }
+      if (now() - started > 2000 && loudest < 0.08) setHeardSomething(false);
+      if (loudest >= 0.08) setHeardSomething(true);
+      frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+
+    return {
+      stop: () => {
+        cancelAnimationFrame(frame);
+        source.disconnect();
+        analyser.disconnect();
+      },
+    };
+  };
+
   const startRecording = async () => {
     setError(null);
 
@@ -252,6 +313,7 @@ export function ConversationScreen({
       setIsSpeaking(false);
 
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      meterRef.current = startLevelMeter(stream);
 
       // Try formats in order of Groq compatibility
       // iPhone Safari typically supports mp4 with AAC codec
@@ -282,6 +344,8 @@ export function ConversationScreen({
           size: audioBlob.size,
         });
         const ms = Math.round(now() - recordStartRef.current);
+        meterRef.current?.stop();
+        meterRef.current = null;
         stream.getTracks().forEach((track) => track.stop());
         await processAudio(audioBlob, ms);
       };
@@ -405,16 +469,15 @@ export function ConversationScreen({
       : isSpeaking
         ? 'speaking'
         : 'idle';
-  // First name for status lines; skip titles like "Dott.ssa", "Don", "Padre"
-  const firstName =
-    characterName.split(' ').find((w) => !/^(dott|dottor|dottoressa|dott\.ssa|prof|don|padre|suor|fra|nonna|nonno|maestro|signor|signora)\.?$/i.test(w)) ??
-    characterName;
-  const statusText = {
-    idle: 'Tap to speak',
-    listening: 'Listening… tap to send',
-    thinking: `${firstName} is thinking…`,
-    speaking: `${firstName} is speaking · tap to interrupt`,
-  }[state];
+  // Short hint under the mic: only what you need to do next
+  const hint =
+    state === 'listening'
+      ? heardSomething
+        ? 'Tap to send'
+        : "Not hearing you. Check the mic isn't covered or muted."
+      : state === 'idle'
+        ? 'Tap to speak'
+        : '';
   const showReply = (showTranscripts && currentResponse) || (showEnglish && currentTranslation);
 
   return (
@@ -489,20 +552,32 @@ export function ConversationScreen({
             <button
               onClick={toggleRecording}
               disabled={isProcessing}
-              aria-label={statusText}
+              aria-label={state === 'listening' ? 'Send' : state === 'thinking' ? `${characterName} is replying` : 'Speak'}
               className={`${styles.mic} ${styles[state]}`}
             >
-              {state === 'thinking' ? (
+              {state === 'listening' ? (
+                // Green dots that move with your voice: proof it's being captured
+                <span className={styles.voice} ref={dotsRef} aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                  <span />
+                  <span />
+                </span>
+              ) : state === 'thinking' ? (
+                // Terracotta dots while the character prepares a reply
                 <span className={styles.dots} aria-hidden="true">
                   <span />
                   <span />
                   <span />
                 </span>
               ) : (
-                '🎤'
+                <span className={styles.micIcon} aria-hidden="true">🎤</span>
               )}
             </button>
-            <div className={styles.status}>{statusText}</div>
+            <div className={`${styles.status} ${!heardSomething && state === 'listening' ? styles.warn : ''}`}>
+              {hint}
+            </div>
           </>
         )}
       </div>

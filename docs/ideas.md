@@ -285,7 +285,7 @@ The one character who messages because it's her job: weekly check-ins on how you
 2. **Nav header too large:** "← Firenze" takes too much space. *(Done: smaller.)*
 3. **Text area:** the reply text should sit at a fixed point, about 50% down the screen, overlaying the portrait, instead of pushing the page so the portrait scrolls away. Rosa's face scrolled off and only her apron showed. *(Done.)*
 4. **Roles in English:** some generated characters had English roles ("Fruit vendor"). Should be Italian (*fruttivendola*). *(Done.)*
-5. **Mic states:** "Tap to speak" alone isn't enough. Show listening, thinking and speaking clearly. *(Done.)*
+5. **Mic states:** the real uncertainty was whether your words were being captured, not which state the app was in. *(Done: compact pill; olive bars that move with your actual voice while recording; terracotta dots while the character prepares a reply, since red reads as an error; a warning if no sound arrives.)* Also: brand green changed to olive.
 
 ### Conversation
 
