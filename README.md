@@ -33,3 +33,10 @@ Read them in order:
 10. [Testing](docs/10-testing.md): testing strategy, conversation tests, validation protocols
 
 Undecided ideas are parked in [docs/ideas.md](docs/ideas.md).
+
+## Debugging on the phone
+
+- **Error codes.** When something fails, the learner sees a plain message with a code like `E-7K2F`. The phone sends the details to `/api/log`, and the server routes tag their own errors with the same code. Find both with `railway logs | grep E-7K2F`.
+- **Automatic recovery.** Temporary failures are retried once. If Claude or transcription still fails, the character asks the learner to repeat in Italian instead of showing an error. A failed hosted voice falls back to the browser voice. All of these are logged.
+- **Debug mode.** Open the app once with `?debug=1` (turn off with `?debug=0`; remembered on that phone). The conversation screen then shows what Whisper heard, which voice played, step timings, the speech speed and the full last error. Scroll down below the mic area if the portrait is large.
+

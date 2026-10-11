@@ -292,3 +292,13 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 - Missing images now show the sand placeholder instead of a broken icon (place cards and portraits).
 - `npm run test:images` lists missing images. `npm run images -- --city roma` generates them (needs `XAI_API_KEY`).
 - **Next (laptop):** run `npm run images -- --city roma` (24 images), generate `portraits/rita.jpg` from the prompt in `content/it/characters/rita.ts`, then `npm run test:images` should pass. Commit the images and push.
+
+## 2026-10-10 evening: Errors, logging, debug mode (cloud session)
+
+- Phone errors now reach Railway logs via `/api/log`, with a code (`E-XXXX`) shown to the learner; server routes log the same code (`x-fuori-id` header). `railway logs | grep E-XXXX`.
+- One automatic retry for temporary failures (network, 429, 5xx). If transcription or the reply still fails, the character says "Scusa… puoi ripetere?" (from `content/it/language.ts`, tu/Lei) instead of an error. Hosted voice failures fall back to the browser voice silently (logged).
+- Plain-language messages: microphone blocked (with the iPhone setting), no connection, or "Something went wrong (code)". No raw technical text.
+- Debug mode: `?debug=1` shows heard text, voice path, timings, speed and full last error.
+- Tested in a browser: opening failure, mic blocked, transcription failing twice, reply failing with debug on. All logged with matching codes.
+- `tsconfig.tsbuildinfo` is now gitignored (it was causing noise in every commit).
+- Noticed: Giulia's portrait has "Caffè a Firenze" written in it, but she works in Roma.

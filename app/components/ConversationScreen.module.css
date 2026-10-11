@@ -146,3 +146,21 @@
   color: var(--muted);
   text-align: center;
 }
+
+/* Debug mode (?debug=1) */
+.debug {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px dashed var(--muted);
+  border-radius: 8px;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text);
+  word-break: break-word;
+}
+
+.debugError {
+  margin-top: 4px;
+  color: var(--error-ink);
+}

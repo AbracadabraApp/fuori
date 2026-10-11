@@ -19,6 +19,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getVoiceProvider } from '@/lib/voice/providers';
+import { logServerError } from '@/lib/server-log';
 
 export async function POST(request: NextRequest) {
   try {
@@ -80,7 +81,7 @@ export async function POST(request: NextRequest) {
     // Should not reach here
     return NextResponse.json({ error: 'Provider returned no audio' }, { status: 500 });
   } catch (error) {
-    console.error('Error in /api/speak:', error);
+    logServerError(request, 'speak', error);
 
     const message = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json(

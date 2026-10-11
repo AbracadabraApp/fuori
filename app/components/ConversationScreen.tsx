@@ -2,6 +2,15 @@
 
 import { useState, useRef } from 'react';
 import { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
+import { language } from '@/content/it/language';
+import {
+  fetchWithRetry,
+  micError,
+  reportError,
+  toFuoriError,
+  userMessage,
+} from '@/lib/errors';
+import { isDebugMode } from '@/lib/debug';
 import styles from './ConversationScreen.module.css';
 
 // A zero-length WAV. Playing it during a tap "unlocks" audio on iPhone Safari,
@@ -9,16 +18,20 @@ import styles from './ConversationScreen.module.css';
 const SILENT_WAV =
   'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
 
-// Turn a failed API response into a readable message instead of a blank screen.
-async function describeFailure(response: Response, what: string): Promise<string> {
+async function measure<T>(fn: () => Promise<T>, done: (ms: number) => void): Promise<T> {
+  const start = performance.now();
   try {
-    const body = await response.json();
-    const detail = body.details ?? body.error;
-    const text = typeof detail === 'string' ? detail : JSON.stringify(detail);
-    return `${what} (${response.status}): ${text}`;
-  } catch {
-    return `${what} (${response.status})`;
+    return await fn();
+  } finally {
+    done(Math.round(performance.now() - start));
   }
+}
+
+interface DebugInfo {
+  heard?: string;
+  voice?: string;
+  timings: Record<string, number>;
+  lastError?: string;
 }
 
 interface ConversationScreenProps {
@@ -47,6 +60,9 @@ export function ConversationScreen({
   const [currentResponse, setCurrentResponse] = useState<string | null>(null);
   const [currentTranslation, setCurrentTranslation] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  // Only ever rendered in the browser (after a place is tapped), so window is available
+  const [debug] = useState(() => typeof window !== 'undefined' && isDebugMode());
+  const [debugInfo, setDebugInfo] = useState<DebugInfo>({ timings: {} });
   const [portraitFailed, setPortraitFailed] = useState(false);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -54,6 +70,40 @@ export function ConversationScreen({
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const characterName = character.name;
+  const recovery = language.recovery[character.speech.formality === 'Lei' ? 'Lei' : 'tu'];
+
+  // Time a step for the debug panel
+  const timed = <T,>(label: string, fn: () => Promise<T>): Promise<T> =>
+    measure(fn, (ms) => setDebugInfo((d) => ({ ...d, timings: { ...d.timings, [label]: ms } })));
+
+  // Log the error, show a plain message (or recover in character), keep details for debug mode
+  const handleError = (err: unknown, step: string, recoverWith?: string) => {
+    const e = toFuoriError(err, step);
+    reportError(e, { character: character.id, turns: transcript.length });
+    setDebugInfo((d) => ({ ...d, lastError: `[${e.id}] ${e.step} (${e.kind}): ${e.message}` }));
+
+    if (recoverWith && e.kind === 'server') {
+      // Stay in the conversation: the character asks you to say it again
+      setCurrentResponse(recoverWith);
+      setCurrentTranslation(null);
+      speakWithBrowser(recoverWith, getSpeechSpeed());
+      setError(debug ? userMessage(e) : null);
+    } else {
+      setError(userMessage(e));
+    }
+    return e;
+  };
+
+  const speakWithBrowser = (text: string, rate: number) => {
+    try {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = language.speechLang;
+      utterance.rate = rate;
+      speechSynthesis.speak(utterance);
+    } catch {
+      // no speech available
+    }
+  };
   const characterRole = character.role;
 
   // Calculate speech speed based on settings (hidden difficulty adjustment)
@@ -88,27 +138,20 @@ export function ConversationScreen({
 
     try {
       // Get opening line from character
-      const response = await fetch('/api/turn', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          character,
-          transcript: [],
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(await describeFailure(response, `${characterName} could not answer`));
-      }
-
+      const response = await timed('turn', () =>
+        fetchWithRetry(
+          '/api/turn',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ character, transcript: [] }),
+          },
+          'opening line'
+        )
+      );
       const turnOutput: TurnOutput = await response.json();
 
-      // Add to transcript
-      const npcTurn: Turn = {
-        who: 'npc',
-        transcript: turnOutput.it,
-        translation: turnOutput.en,
-      };
+      const npcTurn: Turn = { who: 'npc', transcript: turnOutput.it, translation: turnOutput.en };
       setTranscript([npcTurn]);
       setCurrentResponse(turnOutput.it);
       setCurrentTranslation(turnOutput.en);
@@ -116,27 +159,25 @@ export function ConversationScreen({
       // Play audio at appropriate speed for learner level
       await playResponse(turnOutput.it, character.id, getSpeechSpeed());
     } catch (err) {
-      console.error('Error starting conversation:', err);
-      setError(err instanceof Error ? err.message : 'Failed to start conversation.');
+      // Nothing has been said yet, so show the Start button again
+      handleError(err, 'opening line');
+      setHasStarted(false);
     }
   };
 
   const playResponse = async (text: string, characterId: string, speed: number = 1.0) => {
     try {
-      const response = await fetch('/api/speak', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          text,
-          language: 'it',
-          characterId,
-          speed, // For future TTS providers that support it
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to synthesize speech');
-      }
+      const response = await timed('speak', () =>
+        fetchWithRetry(
+          '/api/speak',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text, language: language.code, characterId, speed }),
+          },
+          'voice'
+        )
+      );
 
       const contentType = response.headers.get('Content-Type');
 
@@ -144,15 +185,14 @@ export function ConversationScreen({
         // Browser speech fallback
         const data = await response.json();
         if (data.useBrowserSpeech) {
-          const utterance = new SpeechSynthesisUtterance(text);
-          utterance.lang = 'it-IT';
-          utterance.rate = data.speed || 1.0;
-          speechSynthesis.speak(utterance);
+          setDebugInfo((d) => ({ ...d, voice: 'browser (no hosted voice configured)' }));
+          speakWithBrowser(text, data.speed || speed);
         }
       } else {
         // Audio stream
         const audioBlob = await response.blob();
         const audioUrl = URL.createObjectURL(audioBlob);
+        setDebugInfo((d) => ({ ...d, voice: `hosted (${Math.round(audioBlob.size / 1024)} KB)` }));
 
         // Reuse the element unlocked during the tap so iPhone Safari allows playback
         const audio = audioRef.current ?? new Audio();
@@ -160,14 +200,19 @@ export function ConversationScreen({
         audio.playbackRate = speed; // Control playback speed (0.5 = half speed, 2.0 = double speed)
         audioRef.current = audio;
         // Don't await - just start playback and return control immediately
-        audio.play().catch((err) => console.error('Audio playback error:', err));
+        audio.play().catch((err) => {
+          const e = toFuoriError(err, 'audio playback');
+          reportError(e, { character: characterId });
+          setDebugInfo((d) => ({ ...d, lastError: `[${e.id}] audio playback: ${e.message}` }));
+          speakWithBrowser(text, speed);
+        });
       }
     } catch (err) {
-      console.error('Error playing audio:', err);
-      // Fall back to browser speech
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'it-IT';
-      speechSynthesis.speak(utterance);
+      // The hosted voice failed: log it, fall back to the browser voice, no message needed
+      const e = toFuoriError(err, 'voice');
+      reportError(e, { character: characterId });
+      setDebugInfo((d) => ({ ...d, voice: 'browser (hosted voice failed)', lastError: `[${e.id}] voice: ${e.message}` }));
+      speakWithBrowser(text, speed);
     }
   };
 
@@ -198,9 +243,8 @@ export function ConversationScreen({
 
       mediaRecorder.start();
       setIsRecording(true);
-    } catch (error) {
-      console.error('Error accessing microphone:', error);
-      setError('Could not access microphone. Please check permissions.');
+    } catch (err) {
+      handleError(micError(err), 'microphone');
     }
   };
 
@@ -224,54 +268,41 @@ export function ConversationScreen({
     setIsProcessing(true);
     setError(null);
 
+    // Step 1: Transcribe audio
+    let transcription: string;
     try {
-      // Step 1: Transcribe audio
-      const transcribeFormData = new FormData();
-      transcribeFormData.append('audio', audioBlob);
-      transcribeFormData.append('language', 'it');
+      const form = new FormData();
+      form.append('audio', audioBlob);
+      form.append('language', language.code);
+      const res = await timed('transcribe', () =>
+        fetchWithRetry('/api/transcribe', { method: 'POST', body: form }, 'transcribe')
+      );
+      transcription = (await res.json()).text;
+      // The learner's own words are never shown (M1: preserves immersion), except in debug mode
+      setDebugInfo((d) => ({ ...d, heard: transcription }));
+    } catch (err) {
+      handleError(err, 'transcribe', recovery.didntHear);
+      setIsProcessing(false);
+      return;
+    }
 
-      const transcribeResponse = await fetch('/api/transcribe', {
-        method: 'POST',
-        body: transcribeFormData,
-      });
-
-      if (!transcribeResponse.ok) {
-        throw new Error(await describeFailure(transcribeResponse, 'Transcription failed'));
-      }
-
-      const transcribeData = await transcribeResponse.json();
-      const transcription = transcribeData.text;
-
-      // The learner's own words are never shown (M1: preserves immersion)
-
+    try {
       // Step 2: Get character response
-      const turnResponse = await fetch('/api/turn', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          learnerSaid: transcription,
-          character,
-          transcript,
-        }),
-      });
+      const res = await timed('turn', () =>
+        fetchWithRetry(
+          '/api/turn',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ learnerSaid: transcription, character, transcript }),
+          },
+          'reply'
+        )
+      );
+      const turnOutput: TurnOutput = await res.json();
 
-      if (!turnResponse.ok) {
-        throw new Error(await describeFailure(turnResponse, `${characterName} could not answer`));
-      }
-
-      const turnOutput: TurnOutput = await turnResponse.json();
-
-      // Add turns to transcript
-      const learnerTurn: Turn = {
-        who: 'learner',
-        transcript: transcription,
-      };
-      const npcTurn: Turn = {
-        who: 'npc',
-        transcript: turnOutput.it,
-        translation: turnOutput.en,
-      };
-
+      const learnerTurn: Turn = { who: 'learner', transcript: transcription };
+      const npcTurn: Turn = { who: 'npc', transcript: turnOutput.it, translation: turnOutput.en };
       setTranscript((prev) => [...prev, learnerTurn, npcTurn]);
       setCurrentResponse(turnOutput.it);
       setCurrentTranslation(turnOutput.en);
@@ -279,8 +310,7 @@ export function ConversationScreen({
       // Step 3: Play character's response at appropriate speed for learner level
       await playResponse(turnOutput.it, character.id, getSpeechSpeed());
     } catch (err) {
-      console.error('Error processing audio:', err);
-      setError(err instanceof Error ? err.message : 'Failed to process your message.');
+      handleError(err, 'reply', recovery.lostTrack);
     } finally {
       setIsProcessing(false);
     }
@@ -329,8 +359,22 @@ export function ConversationScreen({
           </div>
         ) : null}
 
-        {/* Error display */}
+        {/* Error display: plain language, with a code to look up in the logs */}
         {error && <div className={styles.error}>{error}</div>}
+
+        {/* Debug panel: open the app once with ?debug=1 (off with ?debug=0) */}
+        {debug && (
+          <div className={styles.debug}>
+            <div><b>Heard:</b> {debugInfo.heard ?? '—'}</div>
+            <div><b>Voice:</b> {debugInfo.voice ?? '—'}</div>
+            <div>
+              <b>Timings:</b>{' '}
+              {Object.entries(debugInfo.timings).map(([k, v]) => `${k} ${v}ms`).join(' · ') || '—'}
+            </div>
+            <div><b>Speed:</b> {getSpeechSpeed()}</div>
+            {debugInfo.lastError && <div className={styles.debugError}>{debugInfo.lastError}</div>}
+          </div>
+        )}
       </div>
 
       {/* Mic button area */}

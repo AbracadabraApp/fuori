@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { runTurn } from '@/lib/turn';
 import { CharacterSheet, Turn } from '@/lib/types';
+import { logServerError } from '@/lib/server-log';
 
 
 export async function POST(request: NextRequest) {
@@ -44,7 +45,7 @@ export async function POST(request: NextRequest) {
     // Return the validated output
     return NextResponse.json(turnOutput);
   } catch (error) {
-    console.error('Turn API error:', error);
+    logServerError(request, 'turn', error);
 
     // Handle Zod validation errors
     if (error instanceof z.ZodError) {

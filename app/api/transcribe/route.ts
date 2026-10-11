@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSpeechProvider } from '@/lib/speech/providers';
+import { logServerError } from '@/lib/server-log';
 
 export async function POST(request: NextRequest) {
   try {
@@ -30,7 +31,7 @@ export async function POST(request: NextRequest) {
       language: transcription.language,
     });
   } catch (error) {
-    console.error('Transcription error:', error);
+    logServerError(request, 'transcribe', error);
     return NextResponse.json(
       {
         error: 'Transcription failed',
