@@ -12,15 +12,15 @@ This is the source of truth for how M1 conversations work. Where it disagrees wi
 - City cards → Place cards → Voice conversation
 - Portrait + Mic button
 - Pure voice interaction
+- Settings: optional text support (Italian transcripts, English translation)
 - That's it
 
 **What's NOT in M1:**
 - No Magda (tutor)
 - No Diario (journal)
 - No help buttons
-- No transcript display
-- No speech bubbles
-- No replay button
+- No speech bubbles (learner's garbled input is never shown)
+- No replay button (say "ripeti" instead)
 - No corrections shown
 - No vocabulary tracking
 - No goals checklist
@@ -64,6 +64,26 @@ Respond with JSON:
 - No grammar rule enforcement
 
 **Just: Real person talking to learner, naturally adjusting.**
+
+## Optional Text Support
+
+M1 is voice-first, but learners can enable text in Settings:
+
+**Show Italian transcripts** (on by default):
+- Character's Italian is shown as text
+- Helps with reading comprehension and spelling
+- Learner's garbled speech-to-text input is never shown (preserves immersion)
+
+**Show English translation** (off by default):
+- English translation appears below the Italian
+- Off by default to encourage immersion
+- Useful for complete beginners or when stuck
+
+**Allow dialect** (coming soon):
+- When enabled, characters may use regional words and pronunciations
+- Off by default (standard Italian only)
+
+These are learner preferences, not teaching tools. The conversation itself remains unchanged - everything happens through speaking.
 
 ## Natural Help - All Voice
 
@@ -119,7 +139,7 @@ Track only what matters for natural conversation:
 ```typescript
 {
   it: string,  // Italian reply (spoken aloud)
-  en: string   // English translation (not shown in M1)
+  en: string   // English translation (shown if enabled in Settings)
 }
 ```
 
