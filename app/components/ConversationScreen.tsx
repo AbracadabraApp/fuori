@@ -512,12 +512,15 @@ export function ConversationScreen({
           {/* Character's reply as text, if turned on in Settings */}
           {showReply && (
             <div className={styles.reply}>
-              {showTranscripts && currentResponse && (
-                <div className={showEnglish ? styles.italianWithEnglish : styles.italian}>
-                  {currentResponse}
-                </div>
-              )}
-              {showEnglish && currentTranslation && <div className={styles.english}>{currentTranslation}</div>}
+              {/* Text scrolls inside the card; key resets the scroll for each new reply */}
+              <div className={styles.replyText} key={currentResponse ?? ''}>
+                {showTranscripts && currentResponse && (
+                  <div className={showEnglish ? styles.italianWithEnglish : styles.italian}>
+                    {currentResponse}
+                  </div>
+                )}
+                {showEnglish && currentTranslation && <div className={styles.english}>{currentTranslation}</div>}
+              </div>
             </div>
           )}
 
