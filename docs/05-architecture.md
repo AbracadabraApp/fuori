@@ -45,7 +45,7 @@ End-of-day: `/api/diario` takes the day's transcripts and returns the diario, up
 - **Models.** Use **Claude Opus 5.5** (`claude-opus-5-5`) as the default. In-scene turns are latency-sensitive (voice conversation), so run them at a **low effort** setting and stream. If replies still feel slow, test **Claude Haiku 5.5** (`claude-haiku-5-5`) on the in-scene route and compare quality before switching. The end-of-day diario is not latency-sensitive and can run at higher effort.
 - **Reliable JSON.** Use **structured outputs**: define the turn schema (Zod) and call the SDK's `messages.parse()` with `output_config.format`, so responses are validated against the schema. Don't rely on "reply with only JSON" prompting as the prototype does.
 - **Prompt caching.** Put the stable layers (house rules, character sheet) first and mark a cache breakpoint after them; the transcript and latest line go last. Check `usage.cache_read_input_tokens` to confirm hits.
-- **Refusals and errors.** Check `stop_reason` before reading content, and handle rate limits and transient errors with a friendly in-character fallback ("Scusa, non ho capito, puoi ripetere?").
+- **Refusals and errors.** Check `stop_reason` before reading content. Retry transient errors once; if it still fails, tell the learner plainly what failed, with an error code, rather than an in-character "puoi ripetere?" that would hide the bug (decided 2026-10-11).
 - Before writing the API code, check the current SDK docs for exact parameter names; these details change.
 
 ## Data model
