@@ -334,3 +334,8 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 - Decision (Josh): no in-character cover for system errors. Hard-coded "Scusa… puoi ripetere?" lines removed; a failing system now gets a plain message saying what failed, with the code. Garbled-but-transcribed speech is still handled by Claude in character. An empty recording or empty transcript shows "Didn't catch anything" without calling Claude.
 - "Didn't catch anything" now has a code and is logged with the recording's length, size, type, what Whisper returned, and whether the character was still speaking. Debug mode shows the last recording's details.
 - Tapping the mic while the character is talking now stops them (you're interrupting; iPhone can also record silence while playing audio).
+
+## 2026-10-11: Roma gets its people (cloud session)
+
+- Roma was hand-written before the other cities were generated, so 23 of its 25 places had nobody ("nobody to talk to here yet"). Added 23 characters in the same format as other cities (name, gender, age, role, personality, portrait description) and linked each to its place: e.g. Sandro at Bar Angolo, Nonna Gina in Piazza Santa Maria, Don Paolo at the basilica.
+- **Next (laptop):** `npm run images -- --city roma` to generate their 23 portraits (place images already exist), then `npm run test:images` should pass.
