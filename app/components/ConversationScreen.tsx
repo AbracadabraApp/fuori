@@ -28,6 +28,7 @@ interface ConversationScreenProps {
   onBack: () => void;
   showTranscripts?: boolean;
   showEnglish?: boolean;
+  allowDialect?: boolean;
 }
 
 export function ConversationScreen({
@@ -37,6 +38,7 @@ export function ConversationScreen({
   onBack,
   showTranscripts = true,
   showEnglish = false,
+  allowDialect = false,
 }: ConversationScreenProps) {
   const [isRecording, setIsRecording] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -53,6 +55,14 @@ export function ConversationScreen({
 
   const characterName = character.name;
   const characterRole = character.role;
+
+  // Calculate speech speed based on settings (hidden difficulty adjustment)
+  // English subtitles = beginner (slowest), Default = intermediate, Dialect = advanced (natural speed)
+  const getSpeechSpeed = (): number => {
+    if (showEnglish) return 0.5; // Beginner: very slow for max comprehension
+    if (allowDialect) return 1.0; // Advanced: natural speed with regional variations
+    return 0.7; // Intermediate: comfortably slower for learning
+  };
 
   // Must run synchronously inside a tap handler, before any await.
   const unlockAudio = () => {
@@ -103,15 +113,15 @@ export function ConversationScreen({
       setCurrentResponse(turnOutput.it);
       setCurrentTranslation(turnOutput.en);
 
-      // Play audio
-      await playResponse(turnOutput.it, character.id);
+      // Play audio at appropriate speed for learner level
+      await playResponse(turnOutput.it, character.id, getSpeechSpeed());
     } catch (err) {
       console.error('Error starting conversation:', err);
       setError(err instanceof Error ? err.message : 'Failed to start conversation.');
     }
   };
 
-  const playResponse = async (text: string, characterId: string) => {
+  const playResponse = async (text: string, characterId: string, speed: number = 1.0) => {
     try {
       const response = await fetch('/api/speak', {
         method: 'POST',
@@ -120,6 +130,7 @@ export function ConversationScreen({
           text,
           language: 'it',
           characterId,
+          speed, // For future TTS providers that support it
         }),
       });
 
@@ -146,6 +157,7 @@ export function ConversationScreen({
         // Reuse the element unlocked during the tap so iPhone Safari allows playback
         const audio = audioRef.current ?? new Audio();
         audio.src = audioUrl;
+        audio.playbackRate = speed; // Control playback speed (0.5 = half speed, 2.0 = double speed)
         audioRef.current = audio;
         // Don't await - just start playback and return control immediately
         audio.play().catch((err) => console.error('Audio playback error:', err));
@@ -264,8 +276,8 @@ export function ConversationScreen({
       setCurrentResponse(turnOutput.it);
       setCurrentTranslation(turnOutput.en);
 
-      // Step 3: Play character's response
-      await playResponse(turnOutput.it, character.id);
+      // Step 3: Play character's response at appropriate speed for learner level
+      await playResponse(turnOutput.it, character.id, getSpeechSpeed());
     } catch (err) {
       console.error('Error processing audio:', err);
       setError(err instanceof Error ? err.message : 'Failed to process your message.');

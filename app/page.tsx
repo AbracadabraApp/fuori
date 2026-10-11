@@ -71,6 +71,7 @@ export default function Home() {
         onBack={() => setSelectedPlace(null)}
         showTranscripts={showTranscripts}
         showEnglish={showEnglish}
+        allowDialect={allowDialect}
       />
     );
   }
