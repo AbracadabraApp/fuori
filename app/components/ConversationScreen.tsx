@@ -13,6 +13,7 @@ import {
   reportError,
   toFuoriError,
   userMessage,
+  voiceNote,
 } from '@/lib/errors';
 import { isDebugMode } from '@/lib/debug';
 import { audioFileName } from '@/lib/speech/audio-file';
@@ -78,6 +79,8 @@ export function ConversationScreen({
   const [currentResponse, setCurrentResponse] = useState<string | null>(null);
   const [currentTranslation, setCurrentTranslation] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  // Shown when the hosted voice fails and the phone's voice takes over
+  const [voiceFallback, setVoiceFallback] = useState<string | null>(null);
   // Only ever rendered in the browser (after a place is tapped), so window is available
   const [debug] = useState(() => typeof window !== 'undefined' && isDebugMode());
   const [debugInfo, setDebugInfo] = useState<DebugInfo>({ timings: {} });
@@ -113,14 +116,17 @@ export function ConversationScreen({
     return e;
   };
 
-  const speakWithBrowser = (text: string, rate: number) => {
+  // err is the hosted-voice failure, if any (null when no hosted voice is configured)
+  const speakWithBrowser = (text: string, rate: number, err: FuoriError | null = null) => {
     try {
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = language.speechLang;
       utterance.rate = rate;
       // A male or female Italian system voice to match the character
-      const voice = browserVoiceFor(speechSynthesis.getVoices(), language.speechLang, character.id, character.gender);
+      const { voice, matchesGender } = browserVoiceFor(speechSynthesis.getVoices(), language.speechLang, character.id, character.gender);
       if (voice) utterance.voice = voice;
+      setVoiceFallback(voiceNote(err, matchesGender, character.gender));
+      setDebugInfo((d) => ({ ...d, voice: `${d.voice ?? 'browser'} · ${voice?.name ?? 'default'}${matchesGender ? '' : ' (wrong gender)'}` }));
       utterance.onstart = () => setIsSpeaking(true);
       utterance.onend = () => setIsSpeaking(false);
       utterance.onerror = () => setIsSpeaking(false);
@@ -225,6 +231,7 @@ export function ConversationScreen({
         // Audio stream
         const audioBlob = await response.blob();
         const audioUrl = URL.createObjectURL(audioBlob);
+        setVoiceFallback(null);
         setDebugInfo((d) => ({ ...d, voice: `hosted (${Math.round(audioBlob.size / 1024)} KB)` }));
 
         // Reuse the element unlocked during the tap so iPhone Safari allows playback
@@ -236,8 +243,8 @@ export function ConversationScreen({
         audio.play().catch((err) => {
           const e = toFuoriError(err, 'audio playback');
           reportError(e, { character: characterId });
-          setDebugInfo((d) => ({ ...d, lastError: `[${e.id}] audio playback: ${e.message}` }));
-          speakWithBrowser(text, speed);
+          setDebugInfo((d) => ({ ...d, voice: 'browser (playback refused)', lastError: `[${e.id}] audio playback: ${e.message}` }));
+          speakWithBrowser(text, speed, e);
         });
       }
     } catch (err) {
@@ -245,7 +252,7 @@ export function ConversationScreen({
       const e = toFuoriError(err, 'voice');
       reportError(e, { character: characterId });
       setDebugInfo((d) => ({ ...d, voice: 'browser (hosted voice failed)', lastError: `[${e.id}] voice: ${e.message}` }));
-      speakWithBrowser(text, speed);
+      speakWithBrowser(text, speed, e);
     }
   };
 
@@ -517,7 +524,7 @@ export function ConversationScreen({
         )}
       </div>
 
-      {(showReply || error || debug) && (
+      {(showReply || error || voiceFallback || debug) && (
         <div className={styles.overlay}>
           {/* Character's reply as text, if turned on in Settings */}
           {showReply && (
@@ -536,6 +543,9 @@ export function ConversationScreen({
 
           {/* Error display: plain language, with a code to look up in the logs */}
           {error && <div className={styles.error}>{error}</div>}
+
+          {/* The phone's voice took over: say so rather than switching silently */}
+          {voiceFallback && !error && <div className={styles.note}>{voiceFallback}</div>}
 
           {/* Debug panel: open the app once with ?debug=1 (off with ?debug=0) */}
           {debug && (

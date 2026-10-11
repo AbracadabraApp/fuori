@@ -4,6 +4,40 @@
 
 import { VoiceProvider, SynthesisParams, SynthesisResult, Voice } from './types';
 
+/** Why the hosted voice failed, so logs and the learner's note can say so plainly. */
+export type VoiceFailure = 'quota' | 'rate-limit' | 'auth' | 'other';
+
+export class VoiceError extends Error {
+  constructor(message: string, public reason: VoiceFailure, public status: number) {
+    super(message);
+  }
+}
+
+/**
+ * Turn an ElevenLabs error response into a VoiceError. ElevenLabs reports an
+ * exhausted character quota as 401 with detail.status "quota_exceeded", which
+ * would otherwise look like a bad API key.
+ */
+export function elevenLabsError(status: number, body: string): VoiceError {
+  let detail = '';
+  try {
+    const parsed = JSON.parse(body);
+    detail = parsed?.detail?.status ?? parsed?.detail?.code ?? '';
+  } catch {
+    // not JSON
+  }
+  const text = `${detail} ${body}`.toLowerCase();
+  const reason: VoiceFailure = text.includes('quota')
+    ? 'quota'
+    : status === 429
+      ? 'rate-limit'
+      : status === 401 || status === 403
+        ? 'auth'
+        : 'other';
+  const label = { quota: 'character quota used up', 'rate-limit': 'rate limited', auth: 'API key rejected', other: 'request failed' }[reason];
+  return new VoiceError(`ElevenLabs ${label} (${status}): ${body.slice(0, 300)}`, reason, status);
+}
+
 interface ElevenLabsVoice {
   voice_id: string;
   name: string;
@@ -61,8 +95,7 @@ export class ElevenLabsProvider implements VoiceProvider {
     });
 
     if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`ElevenLabs API error: ${response.status} ${errorText}`);
+      throw elevenLabsError(response.status, await response.text());
     }
 
     // Get audio data as buffer

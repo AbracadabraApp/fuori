@@ -372,3 +372,12 @@ Notes from the first real phone use are in `docs/ideas.md` → "Coda". Acted on 
 - Mic pill back to 112×52; controls area 72px with tighter padding.
 - Portraits, city and place images use next/image: resized WebP served to fit the screen (~100–120 KB vs ~570 KB originals). No change to dimensions or cropping.
 - Checked at 390×844 and 375×667 with short, long and triple-length replies.
+
+## 2026-10-11: Honest voice fallback (from Salvatore turning into a woman)
+
+- Mid-conversation the ElevenLabs voice stopped and Salvatore (a man) spoke with the iPhone's female voice. Two silent failures: the hosted voice failed and the app fell back without saying so, and a stock iPhone has only Alice (female), so the "male voice" lookup quietly used her.
+- ElevenLabs errors are now classified (`elevenLabsError` in `lib/voice/providers/elevenlabs.ts`): quota used up (ElevenLabs sends 401 `quota_exceeded`, which looked like a bad key), rate limit, rejected key, other. The server log says which. `/api/speak` answers 402 for quota/key (not retried; retrying can't help) and 429 for rate limits (retried once).
+- When the phone's voice takes over, a small note appears above the mic: "Voice service quota used up, so using the phone's voice. (E-XXXX)" and/or "No male Italian voice on this phone (Settings → … → Italian)". Not a red error box: the conversation keeps working. Cleared when the hosted voice works again. Debug panel shows which phone voice was used and "(wrong gender)".
+- `browserVoiceFor` returns `{ voice, matchesGender }`; still speaks with the wrong gender rather than going silent. Tests added to `npm run test:voices`.
+- **Open:** cause of this failure not confirmed. Likeliest is the ElevenLabs character quota (long replies today). Check elevenlabs.io usage, or `curl https://api.elevenlabs.io/v1/user/subscription -H "xi-api-key: $ELEVENLABS_API_KEY"` on the laptop. The cloud session can't reach ElevenLabs or Railway.
+- **Open (prompt, not changed):** Salvatore "corrected" Josh's pronunciation of *grazie* and "Grigianto" → Agrigento. He only gets Whisper's text, so these corrections are invented or are Whisper's misspellings. Proposed adding a factual line: "You only receive their words as text. You can't hear their accent, pronunciation or tone." Awaiting Josh.

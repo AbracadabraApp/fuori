@@ -22,6 +22,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getVoiceProvider } from '@/lib/voice/providers';
 import { elevenLabsVoiceFor } from '@/content/it/voices';
 import { logServerError } from '@/lib/server-log';
+import { VoiceError } from '@/lib/voice/providers/elevenlabs';
 
 export async function POST(request: NextRequest) {
   try {
@@ -90,10 +91,11 @@ export async function POST(request: NextRequest) {
     logServerError(request, 'speak', error);
 
     const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json(
-      { error: 'Failed to synthesize speech', details: message },
-      { status: 500 }
-    );
+    // A used-up quota or rejected key won't fix itself on retry, so answer 402
+    // (not retried by the client) and say why; rate limits stay 429 (retried once).
+    const reason = error instanceof VoiceError ? error.reason : 'other';
+    const status = reason === 'quota' || reason === 'auth' ? 402 : reason === 'rate-limit' ? 429 : 500;
+    return NextResponse.json({ error: 'Failed to synthesize speech', reason, details: message }, { status });
   }
 }
 

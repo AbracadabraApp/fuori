@@ -167,6 +167,16 @@
   color: var(--error-ink);
 }
 
+.note {
+  flex: none;
+  padding: 8px 12px;
+  background-color: var(--card);
+  border-left: 3px solid var(--terracotta);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
 /* Mic area */
 .controls {
   position: absolute;

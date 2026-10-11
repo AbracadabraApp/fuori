@@ -52,19 +52,24 @@ export function elevenLabsVoiceFor(characterId?: string, gender?: Gender): strin
   return pool[hash(characterId ?? '') % pool.length];
 }
 
-/** Pick an installed Italian browser voice matching the gender, if any. */
+/**
+ * Pick an installed Italian browser voice matching the gender. If none of the
+ * right gender is installed (a stock iPhone has only Alice, a woman), it still
+ * returns an Italian voice so the character is heard, and says so with
+ * matchesGender: false so the app can tell the learner.
+ */
 export function browserVoiceFor(
   available: SpeechSynthesisVoice[],
   speechLang: string,
   characterId?: string,
   gender?: Gender
-): SpeechSynthesisVoice | undefined {
+): { voice?: SpeechSynthesisVoice; matchesGender: boolean } {
   const lang = speechLang.slice(0, 2);
   const italian = available.filter((v) => v.lang.replace('_', '-').toLowerCase().startsWith(lang));
-  if (!italian.length) return undefined;
-  if (!gender) return italian[0];
+  if (!italian.length) return { voice: undefined, matchesGender: false };
+  if (!gender) return { voice: italian[0], matchesGender: true };
   const names = voices.browser[gender];
   const matching = italian.filter((v) => names.some((n) => v.name.includes(n)));
-  if (!matching.length) return italian[0];
-  return matching[hash(characterId ?? '') % matching.length];
+  if (!matching.length) return { voice: italian[0], matchesGender: false };
+  return { voice: matching[hash(characterId ?? '') % matching.length], matchesGender: true };
 }

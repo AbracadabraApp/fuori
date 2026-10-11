@@ -121,6 +121,23 @@ export function userMessage(err: FuoriError, characterName = 'They'): string {
   }
 }
 
+/**
+ * Short note shown when the character falls back to the phone's own voice.
+ * The conversation keeps going, so this is a note, not an error box, but it
+ * says what happened instead of switching voices silently.
+ */
+export function voiceNote(err: FuoriError | null, matchesGender: boolean, gender?: 'f' | 'm'): string | null {
+  const parts: string[] = [];
+  if (err) {
+    const quota = /quota/i.test(err.message);
+    parts.push(quota ? `Voice service quota used up, so using the phone's voice. (${err.id})` : `Voice service failed, so using the phone's voice. (${err.id})`);
+  }
+  if (!matchesGender && gender) {
+    parts.push(`No ${gender === 'm' ? 'male' : 'female'} Italian voice on this phone (Settings → Accessibility → Spoken Content → Voices → Italian).`);
+  }
+  return parts.length ? parts.join(' ') : null;
+}
+
 /** Send the error to the server log. Never throws. */
 export function reportError(err: FuoriError, context: Record<string, unknown> = {}): void {
   console.error(`[${err.id}] ${err.step}: ${err.message}`, context);
