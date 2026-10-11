@@ -317,3 +317,4 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 
 - City and place feeds show 10 cards, then a centred "Mostra altro" link with an olive sprig on each side adds the next 10 below (`app/components/ShowMore.tsx`; text in `content/it/language.ts` → `ui.showMore`). Each city starts at its first 10 places.
 - City order alternates big city / smaller town, spread across regions, Roma first (`content/it/cities/index.ts`).
+- Place feeds are ordered by `lib/places/feed-order.ts`: rotate through neighbourhoods and avoid repeating a kind within 3 cards (was: all of one neighbourhood first). Replaces the 2026-10-10 "group by neighbourhood" ordering. `npm run test:feed` checks it.

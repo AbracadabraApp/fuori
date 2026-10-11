@@ -7,6 +7,7 @@ import { language } from '@/content/it/language';
 import { ConversationScreen } from './components/ConversationScreen';
 import { cities as cityPantries } from '@/content/it/cities';
 import { characterForPlace } from '@/lib/characters/for-place';
+import { feedOrder } from '@/lib/places/feed-order';
 import { CharacterSheet } from '@/lib/types';
 import styles from './page.module.css';
 
@@ -92,12 +93,11 @@ export default function Home() {
       <div className={styles.screen}>
         <h1 className={styles.cityTitle}>{cityData.name}</h1>
 
-        {/* Scrolling place cards, grouped by neighbourhood */}
+        {/* Scrolling place cards */}
         <div>
           {(() => {
-            const ordered = cityData.neighbourhoods.flatMap((neighbourhood) =>
-              cityData.places.filter((place) => place.neighbourhood === neighbourhood)
-            );
+            // Mixed across neighbourhoods and kinds (lib/places/feed-order.ts)
+            const ordered = feedOrder(cityData);
             return (
               <>
                 {ordered.slice(0, placeCount).map((place) => {
