@@ -233,6 +233,41 @@ As you visit a place, its Polaroid card gets a mark, and the mark darkens as you
 - **City cards:** a quieter roll-up, like "3 places" in small type, so you can see where you've spent time.
 - **Where it's stored:** on the phone (localStorage) is fine at first, but it should move into learner data once memory is built. It's the same information: who you've met and how often.
 
+## Messages: how characters get back to you
+
+*Raised 2026-10-10. Not built. Depends on character memory.*
+
+Characters (and Magda, in M2) reach out between conversations, so the world keeps going when the app is closed and gives you a reason to come back. The challenge is realism: a barista would never write you a letter. The answer is to use the channels Italians actually use.
+
+### Realistic channels
+
+- **Rita as the hub.** Your host would plausibly text you, and Italians love passing news along: "*Giulia mi ha chiesto di te, non ti vede da giorni!*" Characters who would never message you directly can still reach you secondhand, through her.
+- **Invitations made in conversation.** Giulia says "*Torna venerdì, c'è la partita*" during a chat. Afterwards it becomes an entry in your own *agenda*: "Friday, Giulia's bar, the match." Nobody messaged you; you made a plan, the way a real person would.
+- **A note left for you.** Next time you visit the bar: "*Giulia ti ha lasciato un biglietto.*" Old-fashioned but plausible for a regular, and it rewards going back.
+- **Earned WhatsApp contacts.** Only people whose number you got in conversation can message you directly. Asking "*Mi dai il tuo numero?*" becomes a real friendship milestone. Pairs with "Visit marks on place cards": the card gets their name, your phone gets their number.
+
+### Voice notes (the standout)
+
+Italians send voice messages constantly. In a voice-first app, a 20-second voice note from Rita is natural listening practice, and you reply with a voice note of your own. Messaging becomes part of learning, not just a way to bring you back.
+
+### Magda (M2)
+
+The one character who messages because it's her job: weekly check-ins on how you're doing, and a summary before real Zoom lessons. See Magda in [Game design](02-game-design.md).
+
+### Guardrails
+
+- **Every message comes from something that happened in a conversation** ("Giulia asked about your trip to Naples"). Never generic ("We miss you!"), which is the nagging-app pattern people resent.
+- **Sparing, opt-in notifications** with in-world reasons only.
+- **Messages are in Italian**, at the learner's level, like the conversations.
+- **Memory comes first.** Without memory, characters have nothing real to follow up on.
+
+### Suggested order
+
+1. Character memory
+2. Invitations from conversations and the *agenda*
+3. Rita's messages and earned contacts, with voice notes both ways
+4. Magda's check-ins (M2)
+
 ## Other ideas from the conversation so far
 
 - **Pronunciation scoring**: deliberately out of scope for now.
