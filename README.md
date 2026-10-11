@@ -37,6 +37,6 @@ Undecided ideas are parked in [docs/ideas.md](docs/ideas.md).
 ## Debugging on the phone
 
 - **Error codes.** When something fails, the learner sees a plain message with a code like `E-7K2F`. The phone sends the details to `/api/log`, and the server routes tag their own errors with the same code. Find both with `railway logs | grep E-7K2F`.
-- **Automatic recovery.** Temporary failures are retried once. If Claude or transcription still fails, the character asks the learner to repeat in Italian instead of showing an error. A failed hosted voice falls back to the browser voice. All of these are logged.
+- **Honest failures.** Temporary failures are retried once. If something still fails, the screen says plainly what failed ("Speech recognition failed…", "Giulia couldn't reply…") with the code. Characters don't cover for system errors by asking you to repeat; that only hides bugs. When your speech comes through garbled, Claude gets the text and asks you to repeat in the character's own words. A failed hosted voice falls back to the browser voice. All failures are logged.
 - **Debug mode.** Open the app once with `?debug=1` (turn off with `?debug=0`; remembered on that phone). The conversation screen then shows what Whisper heard, which voice played, step timings, the speech speed and the full last error. Scroll down below the mic area if the portrait is large.
 

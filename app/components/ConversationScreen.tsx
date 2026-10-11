@@ -20,6 +20,10 @@ import styles from './ConversationScreen.module.css';
 const SILENT_WAV =
   'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
 
+// Below this size a recording is just a tap with no speech
+const MIN_RECORDING_BYTES = 1500;
+const NOTHING_HEARD = "Didn't catch anything. Tap the mic, speak, then tap again to send.";
+
 async function measure<T>(fn: () => Promise<T>, done: (ms: number) => void): Promise<T> {
   const start = performance.now();
   try {
@@ -70,34 +74,22 @@ export function ConversationScreen({
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  // Failures in a row: recover in character once, then also show the code
-  const failuresInARow = useRef(0);
 
   const characterName = character.name;
-  const recovery = language.recovery[character.speech.formality === 'Lei' ? 'Lei' : 'tu'];
 
   // Time a step for the debug panel
   const timed = <T,>(label: string, fn: () => Promise<T>): Promise<T> =>
     measure(fn, (ms) => setDebugInfo((d) => ({ ...d, timings: { ...d.timings, [label]: ms } })));
 
-  // Log the error, show a plain message (or recover in character), keep details for debug mode
-  const handleError = (err: unknown, step: string, recoverWith?: string) => {
+  // Log the error and say plainly what failed, with a code to look up.
+  // No in-character cover: if the system is broken, asking the learner to
+  // repeat only hides the bug. (Garbled speech is different: Claude gets the
+  // text and asks to repeat in its own words.)
+  const handleError = (err: unknown, step: string) => {
     const e = toFuoriError(err, step);
     reportError(e, { character: character.id, turns: transcript.length });
     setDebugInfo((d) => ({ ...d, lastError: `[${e.id}] ${e.step} (${e.kind}): ${e.message}` }));
-
-    failuresInARow.current += 1;
-
-    if (recoverWith && e.kind === 'server') {
-      // Stay in the conversation: the character asks you to say it again.
-      // If it keeps failing, also show the code so the problem isn't hidden.
-      setCurrentResponse(recoverWith);
-      setCurrentTranslation(null);
-      speakWithBrowser(recoverWith, getSpeechSpeed());
-      setError(debug || failuresInARow.current >= 2 ? userMessage(e) : null);
-    } else {
-      setError(userMessage(e));
-    }
+    setError(userMessage(e, characterName));
     return e;
   };
 
@@ -291,6 +283,13 @@ export function ConversationScreen({
     setIsProcessing(true);
     setError(null);
 
+    // Nothing recorded (a very short tap): say so instead of sending silence
+    if (audioBlob.size < MIN_RECORDING_BYTES) {
+      setError(NOTHING_HEARD);
+      setIsProcessing(false);
+      return;
+    }
+
     // Step 1: Transcribe audio
     let transcription: string;
     try {
@@ -305,7 +304,14 @@ export function ConversationScreen({
       // The learner's own words are never shown (M1: preserves immersion), except in debug mode
       setDebugInfo((d) => ({ ...d, heard: transcription }));
     } catch (err) {
-      handleError(err, 'transcribe', recovery.didntHear);
+      handleError(err, 'transcribe');
+      setIsProcessing(false);
+      return;
+    }
+
+    // Whisper heard no words
+    if (!transcription?.trim()) {
+      setError(NOTHING_HEARD);
       setIsProcessing(false);
       return;
     }
@@ -327,7 +333,6 @@ export function ConversationScreen({
 
       const learnerTurn: Turn = { who: 'learner', transcript: transcription };
       const npcTurn: Turn = { who: 'npc', transcript: turnOutput.it, translation: turnOutput.en };
-      failuresInARow.current = 0;
       setTranscript((prev) => [...prev, learnerTurn, npcTurn]);
       setCurrentResponse(turnOutput.it);
       setCurrentTranslation(turnOutput.en);
@@ -335,7 +340,7 @@ export function ConversationScreen({
       // Step 3: Play character's response at appropriate speed for learner level
       await playResponse(turnOutput.it, character.id, getSpeechSpeed());
     } catch (err) {
-      handleError(err, 'reply', recovery.lostTrack);
+      handleError(err, 'reply');
     } finally {
       setIsProcessing(false);
     }

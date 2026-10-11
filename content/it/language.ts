@@ -11,19 +11,4 @@ export const language = {
   ui: {
     showMore: 'Mostra altro', // under the city and place feeds
   },
-
-  /**
-   * What a character says when something fails behind the scenes, so the
-   * learner stays in the conversation instead of seeing an error screen.
-   */
-  recovery: {
-    tu: {
-      didntHear: 'Scusa, non ho sentito bene. Puoi ripetere?',
-      lostTrack: 'Scusa, un attimo… puoi ripetere?',
-    },
-    Lei: {
-      didntHear: 'Scusi, non ho sentito bene. Può ripetere?',
-      lostTrack: 'Scusi, un attimo… può ripetere?',
-    },
-  },
 };

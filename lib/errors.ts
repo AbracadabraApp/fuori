@@ -101,13 +101,21 @@ export function toFuoriError(err: unknown, step: string): FuoriError {
   return new FuoriError(err instanceof Error ? err.message : String(err), newErrorId(), 'server', step);
 }
 
-/** What the learner sees. Never raw technical text. */
-export function userMessage(err: FuoriError): string {
+/** What the learner sees: what failed, plainly, with a code. Never raw technical text. */
+export function userMessage(err: FuoriError, characterName = 'They'): string {
   switch (err.kind) {
     case 'mic':
       return 'Fuori needs the microphone. On iPhone: Settings → Safari → Microphone → Allow, then try again.';
     case 'network':
       return `No connection. Check your signal and try again. (${err.id})`;
+  }
+  switch (err.step) {
+    case 'transcribe':
+      return `Speech recognition failed, so your words didn't get through. Not your Italian: try again. (${err.id})`;
+    case 'reply':
+      return `${characterName} couldn't reply. Try again. (${err.id})`;
+    case 'opening line':
+      return `${characterName} couldn't start the conversation. Tap Start to try again. (${err.id})`;
     default:
       return `Something went wrong. Try again. (${err.id})`;
   }
