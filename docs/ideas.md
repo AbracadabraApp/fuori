@@ -287,6 +287,8 @@ The one character who messages because it's her job: weekly check-ins on how you
 4. **Roles in English:** some generated characters had English roles ("Fruit vendor"). Should be Italian (*fruttivendola*). *(Done.)*
 5. **Mic states:** the real uncertainty was whether your words were being captured, not which state the app was in. *(Done: compact pill; olive bars that move with your actual voice while recording; terracotta dots while the character prepares a reply, since red reads as an error; a warning if no sound arrives.)* Also: brand green changed to olive.
 
+- **Name as a Polaroid caption (parked):** move "Name · role" from above the portrait to a strip attached below it, freeing space at the top and matching the place cards. Trade-off: the reply card (starting mid-screen) would cover a caption under a full portrait; cropping the portrait to a square with the name strip attached avoids that but loses the full-length drawing. Decide by looking at real screenshots after a few days of use, not by description, and after the cold-start/where-next work, which will change this screen anyway.
+
 ### Conversation
 
 6. **Length:** replies run 4–6 sentences. Good quality, but long to follow by ear, slower, and fewer turns for the learner. Candidate prompt line: "This is a spoken conversation. Say one or two things, then let them answer, the way people do when they talk." No sentence limits.
