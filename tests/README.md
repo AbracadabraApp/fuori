@@ -10,6 +10,7 @@
 - `npm run test:images`: every city, place and city character has an image file (generate missing ones with `npm run images -- --city <id>`)
 - `npm run test:voices`: every character has a voice matching their gender (`npm run voices` lists Italian voices on the ElevenLabs account)
 - `npm run test:feed`: place feeds mix neighbourhoods and kinds, and include every place once
+- `npm run test:audio`: phone recordings get a file name with the right extension (Whisper rejects "blob")
 
 ## Conversation test: grade and recommend
 

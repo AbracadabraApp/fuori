@@ -4,6 +4,7 @@
 
 import Groq from 'groq-sdk';
 import { SpeechProvider, TranscriptionParams, TranscriptionResult } from './types';
+import { audioFileName } from '../audio-file';
 
 export class WhisperGroqProvider implements SpeechProvider {
   name = 'whisper-groq';
@@ -20,42 +21,19 @@ export class WhisperGroqProvider implements SpeechProvider {
   async transcribe(params: TranscriptionParams): Promise<TranscriptionResult> {
     const { audio, language, prompt } = params;
 
-    // Helper to get file extension from mime type
-    const getExtensionFromMimeType = (mimeType: string): string => {
-      const mimeMap: Record<string, string> = {
-        'audio/webm': 'webm',
-        'audio/mp4': 'm4a', // mp4 audio is typically m4a
-        'audio/mpeg': 'mp3',
-        'audio/m4a': 'm4a',
-        'audio/ogg': 'ogg',
-        'audio/wav': 'wav',
-        'audio/flac': 'flac',
-      };
-      return mimeMap[mimeType] || 'webm';
-    };
-
-    // Groq expects a File object
+    // Groq expects a File whose name has the right extension. Uploads from the
+    // phone arrive named "blob", so always make sure the name matches the type.
     let audioFile: File;
-    if (audio instanceof File) {
-      console.log('Groq transcribe - File input:', {
-        name: audio.name,
-        type: audio.type,
-        size: audio.size,
-      });
-      audioFile = audio;
-    } else if (audio instanceof Blob) {
-      const extension = getExtensionFromMimeType(audio.type);
-      console.log('Groq transcribe - Blob input:', {
-        type: audio.type,
-        size: audio.size,
-        extension,
-      });
-      audioFile = new File([audio], `audio.${extension}`, { type: audio.type });
+    if (audio instanceof Blob) {
+      const type = audio.type || 'audio/webm';
+      const name = audioFileName(type, audio instanceof File ? audio.name : undefined);
+      console.log('Groq transcribe:', { received: audio instanceof File ? audio.name : '(blob)', name, type, size: audio.size });
+      audioFile = audio instanceof File && audio.name === name ? audio : new File([audio], name, { type });
     } else {
       // Buffer - cast to any to work around Node.js Buffer type incompatibilities
       // Buffer is compatible with BlobPart at runtime, but TypeScript doesn't recognize it
       console.log('Groq transcribe - Buffer input');
-      audioFile = new File([audio as any], 'audio.webm', { type: 'audio/webm' });
+      audioFile = new File([audio as any], 'speech.webm', { type: 'audio/webm' });
     }
 
     // Build transcription options

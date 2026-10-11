@@ -12,6 +12,7 @@ import {
   userMessage,
 } from '@/lib/errors';
 import { isDebugMode } from '@/lib/debug';
+import { audioFileName } from '@/lib/speech/audio-file';
 import styles from './ConversationScreen.module.css';
 
 // A zero-length WAV. Playing it during a tap "unlocks" audio on iPhone Safari,
@@ -69,6 +70,8 @@ export function ConversationScreen({
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  // Failures in a row: recover in character once, then also show the code
+  const failuresInARow = useRef(0);
 
   const characterName = character.name;
   const recovery = language.recovery[character.speech.formality === 'Lei' ? 'Lei' : 'tu'];
@@ -83,12 +86,15 @@ export function ConversationScreen({
     reportError(e, { character: character.id, turns: transcript.length });
     setDebugInfo((d) => ({ ...d, lastError: `[${e.id}] ${e.step} (${e.kind}): ${e.message}` }));
 
+    failuresInARow.current += 1;
+
     if (recoverWith && e.kind === 'server') {
-      // Stay in the conversation: the character asks you to say it again
+      // Stay in the conversation: the character asks you to say it again.
+      // If it keeps failing, also show the code so the problem isn't hidden.
       setCurrentResponse(recoverWith);
       setCurrentTranslation(null);
       speakWithBrowser(recoverWith, getSpeechSpeed());
-      setError(debug ? userMessage(e) : null);
+      setError(debug || failuresInARow.current >= 2 ? userMessage(e) : null);
     } else {
       setError(userMessage(e));
     }
@@ -289,7 +295,8 @@ export function ConversationScreen({
     let transcription: string;
     try {
       const form = new FormData();
-      form.append('audio', audioBlob);
+      // Name the file so Whisper knows the format (a bare Blob uploads as "blob")
+      form.append('audio', audioBlob, audioFileName(audioBlob.type));
       form.append('language', language.code);
       const res = await timed('transcribe', () =>
         fetchWithRetry('/api/transcribe', { method: 'POST', body: form }, 'transcribe')
@@ -320,6 +327,7 @@ export function ConversationScreen({
 
       const learnerTurn: Turn = { who: 'learner', transcript: transcription };
       const npcTurn: Turn = { who: 'npc', transcript: turnOutput.it, translation: turnOutput.en };
+      failuresInARow.current = 0;
       setTranscript((prev) => [...prev, learnerTurn, npcTurn]);
       setCurrentResponse(turnOutput.it);
       setCurrentTranslation(turnOutput.en);

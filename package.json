@@ -16,7 +16,8 @@
     "images": "node --env-file-if-exists=.env.local scripts/generate-images.mjs",
     "voices": "node --env-file-if-exists=.env.local scripts/list-voices.mjs",
     "test:voices": "tsx tests/check-voices.ts",
-    "test:feed": "tsx tests/check-feed-order.ts"
+    "test:feed": "tsx tests/check-feed-order.ts",
+    "test:audio": "tsx tests/check-audio-file.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

@@ -325,3 +325,9 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 - Stored in Railway Postgres from M1 (`learners`, `character_memories`), not localStorage: Safari wipes site storage after ~7 days without a visit, the server needs memory for future messages, and it can be inspected. Anonymous learner id in a server-set HTTP-only cookie; no login until M4.
 - Updated: `docs/05-architecture.md`, `docs/09-data-model.md`, `docs/06-roadmap.md`, `docs/M1-CONVERSATION-MODEL.md`.
 - **Next:** add a Postgres service in Railway (sets `DATABASE_URL`), then build the memory flow.
+
+## 2026-10-11: Fix: Giulia never heard the learner (cloud session)
+
+- Every turn failed transcription, so Giulia always said "Scusa, non ho sentito bene". Cause: the phone uploaded the recording as a file named "blob" (no extension) and Groq picks the format from the extension. The extension mapping added on 2026-10-10 only ran for raw Blobs, never for uploads.
+- Fix: `lib/speech/audio-file.ts` names the file by type (`speech.m4a` on iPhone) on the phone and again on the server; strips codec parameters ("audio/mp4;codecs=…"). `npm run test:audio`.
+- After two failures in a row, the error code is shown under the in-character recovery line, so a persistent problem isn't hidden.
