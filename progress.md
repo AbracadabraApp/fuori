@@ -350,3 +350,9 @@ Notes from the first real phone use are in `docs/ideas.md` → "Coda". Acted on 
 - Checked at 390×844 and 375×667. The "speaking" state couldn't be seen in the headless browser (no audio); check it on the phone.
 - Mic, revised after Josh's feedback: compact olive pill. While you talk, five olive bars move with your actual microphone level (proof your voice is being captured; not a transcription). While the character prepares a reply, terracotta dots (red reads as an error). If no sound arrives within 2 seconds: "Not hearing you. Check the mic isn't covered or muted." Dropped the "is thinking / is speaking" text; hints are only "Tap to speak" / "Tap to send".
 - Brand green is now olive (`--green: #566330`, was #2c5f4f), new `--terracotta: #c0603a`. Both pass contrast; states also differ by shape (bars vs bouncing dots), not color alone.
+
+## 2026-10-11: Character prompt describes the situation, not the behaviour
+
+- Long, lecture-like openers (Marco the archaeologist introducing himself with his CV) came from what the prompt didn't say: that this is spoken, face to face, and who the person is. Added: "This is a real, face-to-face moment. Your words are spoken aloud and heard, not read." and "They're new to the neighbourhood." First turn is now "Someone has just walked up to you." instead of "Start the conversation."
+- Deliberately no "learning Italian" (teacher mode) or "foreigner" (tour-guide mode), and no length rules (Josh: wary of prescriptive dialogue).
+- Open: move the prompt into its own file (`content/it/prompts/character.md`) with a version label logged per turn and in test reports, so code and docs can't drift.

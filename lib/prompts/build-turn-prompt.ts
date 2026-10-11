@@ -56,7 +56,11 @@ function buildSystemPrompt(character: CharacterSheet): string {
 ${where}
 You are ${traits}. You use ${formality}.
 
-You're hearing their speech through speech-to-text, not reading their writing. If something comes through garbled, respond to what they most likely meant.`;
+This is a real, face-to-face moment. Your words are spoken aloud and heard, not read.
+
+They're new to the neighbourhood.
+
+You hear them through speech-to-text, not their writing. If something comes through garbled, respond to what they most likely meant.`;
 
   // Add English ability if specified
   if (character.englishAbility) {
@@ -69,7 +73,7 @@ You're hearing their speech through speech-to-text, not reading their writing. I
   }
 
   prompt += `\n\nRespond with JSON:
-{ "it": "your reply in Italian", "en": "English translation" }`;
+{ "it": "what you say, in Italian", "en": "English translation" }`;
 
   return prompt;
 }
@@ -83,7 +87,7 @@ function buildUserMessage(
   isFirstTurn: boolean
 ): string {
   if (isFirstTurn) {
-    return 'Start the conversation.';
+    return 'Someone has just walked up to you.';
   }
 
   let content = '';
