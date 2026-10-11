@@ -398,13 +398,29 @@ character_memories (
   notes         text[] not null default '{}',  -- short, written by Claude after each conversation
   primary key (learner_id, character_id)
 )
+
+-- Each conversation, kept so it can be reviewed (by Magda later, and by us
+-- to judge conversation quality). No audio. Added 2026-10-11.
+conversations (
+  id              uuid primary key,
+  learner_id      uuid references learners(id),
+  character_id    text,
+  place_id        text,
+  city_id         text,
+  prompt_version  text,
+  started_at      timestamptz not null,
+  ended_at        timestamptz,
+  turns           jsonb not null,  -- [{ who, text, en?, at }]
+  review          jsonb            -- review-log entry written when it ends (2–3 items, real mistakes)
+)
 ```
 
 **Flow:**
 1. Opening a conversation loads that character's row (if any). The visit count and notes go into the character's prompt ("You've met them 3 times. You remember: their name is Josh; from Seattle; always orders a cappuccino").
-2. When the conversation ends (leaving the screen after at least a few exchanges), one Claude call turns the transcript into updated notes: keep what matters, drop what doesn't, at most ~10 short lines. `visits` goes up by one.
+2. Each turn is saved to the conversation's row as it happens, so nothing is lost if the screen closes.
+3. When the conversation ends (leaving the screen after at least a few exchanges), one Claude call reads the transcript and writes two things: updated notes for the character (keep what matters, drop what doesn't, at most ~10 short lines; `visits` goes up by one) and the review-log entry. The review log is shown only in debug mode in M1.
 
-Only `learners` and `character_memories` are built in M1.
+Only `learners`, `character_memories` and `conversations` are built in M1.
 
 ### Later milestones
 

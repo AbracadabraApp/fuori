@@ -22,7 +22,13 @@ Characters should treat the player as a welcome newcomer who is making an effort
 
 ## Level
 
-Designed first for **A1–A2** (beginner to advanced beginner), the creator's own level. The engine should scale up to B1 and beyond by following CEFR levels, not by rewriting content (see [Levelling up](02-game-design.md#levelling-up)).
+Built around the creator's own level (A1–A2 by the book), but the real requirement is an attitude, not a level: **tolerance for not understanding** (decided 2026-10-11).
+
+- **Immersion, not full understanding.** Understanding 20% of what the barista says and still getting your coffee and a recommendation is what being in Italy is like, and it's the experience. Characters speaking above your level is a feature, not a bug.
+- **Each conversation adds a little.** The goal isn't to explain everything that went by; it's to catch the two or three things most worth having (see the review log in [Roadmap → M1](06-roadmap.md#m1-navigate-cities-and-hold-a-conversation-thats-remembered)).
+- **Not a beginner course.** A Duolingo-style path (five-word sentences, drills, reviews) would be a different product. If Fuori is ever productised for true beginners, that's a separate decision.
+
+The engine scales up by following CEFR levels, not by rewriting content (see [Levelling up](02-game-design.md#levelling-up)).
 
 ## Principles
 
@@ -32,7 +38,7 @@ Designed first for **A1–A2** (beginner to advanced beginner), the creator's ow
 4. **Real Italy.** Real places, real customs (standing at the bar, paying at the cassa first, the passeggiata), regional colour where it helps. No postcard clichés.
 5. **Open world, never lost.** Go almost anywhere and meet whoever Claude creates; nothing is scripted. Every day still comes with a few suggestions, including a change of scenery, so a beginner always has an easy next step.
 6. **Short sessions.** One in-game day should take 15–25 minutes.
-7. **One teacher, everyone else a local.** Magda, the tutor, explains and drills. Everyone else just talks to you like a person.
+7. **One teacher, everyone else a local.** Magda, the tutor, explains and drills. Everyone else talks to you like a person. A local may help the way kind Italians do with a newcomer ("si dice *il* caffè, eh", slowing down, repeating a word), but never steps out of character to lecture.
 
 ## What success looks like
 

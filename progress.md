@@ -1,27 +1,11 @@
 # Fuori Development Progress
 
-## Current phase: M1 MVP with city feed complete
-Planning started 2026-10-08. Docs rewritten for the open-ended direction on 2026-10-09. M1 conversation engine completed 2026-10-09. M1 city feed and navigation completed 2026-10-10.
+## Current phase: M1, conversations working on the phone; memory next
 
-### Done so far
-- [x] Prototype artifact (`prototype/index.html`): four scenes, Claude characters, forgiving corrections
-- [x] Planning docs 01–10, plus `docs/ideas.md` for parked ideas
-- [x] Interface mockups: [Fuori mockups](https://claude.ai/artifact/1zVpF11bWHivP3RxVruKyx) (Viaggio, Oggi, Conversazione, Diario, Tu)
-- [x] Portrait style tested with Giulia and Enzo (watercolour and ink, square, masked edits for moods)
-- [x] **M1 MVP**: Next.js app with complete navigation flow
-  - `/api/transcribe`: Whisper on Groq for Italian speech-to-text
-  - `/api/turn`: Claude conversation engine with character context
-  - `/api/generate-image`: xAI Grok for watercolor city images
-  - **City feed**: 20 Italian cities with distinctive watercolor sketches (Roma, Firenze, Venezia, Milano, Napoli, Bologna, Torino, Palermo, Genova, Siena, Lucca, Verona, Bergamo, Mantova, Matera, Lecce, Orvieto, Assisi, Siracusa, Taormina)
-  - **Navigation**: Cities → Places → Conversation (Modified Option C)
-  - **PlaceCard component**: Polaroid-style cards with prominent city names, square images, white caption area
-  - **Settings UI**: Gear icon with "Show transcripts" and "Allow dialect" toggles (UI only, not functional yet)
-  - Roma pantry with multiple places per type across neighborhoods
-  - Giulia and Rita anchor characters
-  - Simple conversation UI with mic button
-  - Running at http://localhost:3000
+**What to do next lives in [docs/06-roadmap.md → Now](docs/06-roadmap.md#now-ranked)** (ranked). Open decisions: [docs/open-design-questions.md](docs/open-design-questions.md). Parked ideas: [docs/ideas.md](docs/ideas.md). This file is the session log; the dated entries below say what happened and why.
 
 ### Decisions
+- **Immersion, not full understanding** (2026-10-11): for learners who tolerate not understanding; characters above your level and teaching in character are fine; breaking character isn't. See `docs/01-vision.md` → Level.
 - **Open-ended world** (2026-10-09): Claude generates places, people and scenes. Every day: 3–4 suggestions from the director, plus "cambia aria" and "vai dove vuoi". Hand-written content is limited to city pantries, a few anchors per city (Roma: Rita, Giulia), Magda and level rules. Replaces the scripted 18-day season.
 - **Vocabulary emerges from context** (2026-10-09): No vocabulary lists or tracking in M1. Market vocabulary appears when you visit markets, bar vocabulary at bars. Multiple instances of each place type (many bars, not one scripted bar).
 - **Daily rituals are good** (2026-10-09): The bar can be your daily stop. Relationships deepen and characters level up with you naturally. Director offers variety but never forces it.
@@ -39,37 +23,13 @@ Planning started 2026-10-08. Docs rewritten for the open-ended direction on 2026
 - **Hosting:** Railway, deploys from `main`. Mobile-first, iPhone Safari.
 - **Help:** natural character help first; hints only when the character is confused or the learner asks.
 
-### Open issues
-- [x] Make `main` the GitHub default branch - now using main
-- [ ] Deploy to Railway with environment variables (ANTHROPIC_API_KEY, GROQ_API_KEY, XAI_API_KEY)
-- [ ] Test on iPhone Safari to validate microphone access over HTTPS
-- [ ] Decide ElevenLabs vs Azure for voices (M3)
-- [ ] Enzo's `warm` portrait needs one masked edit to match his other moods (not urgent)
-
-### Next actions (finish M1 deployment)
-1. Add XAI_API_KEY to environment variables
-2. `railway login` and `railway init` to set up project
-3. Add environment variables via Railway dashboard or CLI (ANTHROPIC_API_KEY, GROQ_API_KEY, XAI_API_KEY)
-4. Deploy: `railway up` or push to GitHub and link Railway to repo
-5. Test on iPhone: open Railway URL, navigate city feed, select Roma, try conversation
-6. Validate: Italian transcription quality, Claude's character responses, browser TTS
-
-### Next actions (M2, after M1 works on phone)
-1. Wire up actual conversation functionality (connect ConversationScreen to APIs)
-2. Implement Settings toggles ("Show transcripts", "Allow dialect")
-3. Add place data for other cities beyond Roma
-4. `/api/suggest` - director generates 3-4 daily suggestions
-5. Character memory and relationship tracking
-6. Day flow: suggestions → conversations → diario
-7. Illustrated portraits for Giulia and Rita
-
 ### References
 - Planning docs: `docs/`
 - Roadmap: `docs/06-roadmap.md`
 - Data model: `docs/09-data-model.md`
 
 ---
-Last updated: 2026-10-09
+Top section last updated: 2026-10-11 (older decisions above kept for history; the roadmap is current).
 
 ## M1 Implementation Notes
 
@@ -381,3 +341,13 @@ Notes from the first real phone use are in `docs/ideas.md` → "Coda". Acted on 
 - `browserVoiceFor` returns `{ voice, matchesGender }`; still speaks with the wrong gender rather than going silent. Tests added to `npm run test:voices`.
 - **Open:** cause of this failure not confirmed. Likeliest is the ElevenLabs character quota (long replies today). Check elevenlabs.io usage, or `curl https://api.elevenlabs.io/v1/user/subscription -H "xi-api-key: $ELEVENLABS_API_KEY"` on the laptop. The cloud session can't reach ElevenLabs or Railway.
 - **Open (prompt, not changed):** Salvatore "corrected" Josh's pronunciation of *grazie* and "Grigianto" → Agrigento. He only gets Whisper's text, so these corrections are invented or are Whisper's misspellings. Proposed adding a factual line: "You only receive their words as text. You can't hear their accent, pronunciation or tone." Awaiting Josh.
+
+## 2026-10-11: Level, speaking and where things live (docs only)
+
+Discussion with Josh after Salvatore and Suor Agata. No code or prompt changes.
+- **Decided:** Fuori is immersion for learners who tolerate not understanding, not a beginner course; characters speaking above your level is fine; teaching in character is fine, breaking character isn't. In `docs/01-vision.md` (Level, principle 7) and `docs/M1-CONVERSATION-MODEL.md`.
+- **Roadmap rewritten** to match what's built (it still listed conversation wiring and Railway as to-do). Now has a ranked **Now** list (test level and length first, then prompt experiments, Postgres, memory + saved conversations + review log, ElevenLabs quota) and clear M1/M2/M3 scope. M1 now includes saving conversations and a review-log entry (debug only); learner profile, success scoring and Magda are M2; interactive transcript M3.
+- `docs/09-data-model.md`: `conversations` table (turns as JSON, review entry, prompt version; no audio).
+- `docs/open-design-questions.md` #11: six open decisions (noticed field, trait reframing, learner level reaching characters, starting level, where the review shows, pace/pauses).
+- `docs/ideas.md`: the long section from earlier today cut to four parked ideas with links.
+- The stale "Next actions" and "Open issues" lists at the top of this file are removed; the roadmap replaces them.

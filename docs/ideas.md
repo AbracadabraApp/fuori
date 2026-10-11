@@ -318,21 +318,9 @@ The one character who messages because it's her job: weekly check-ins on how you
 
 ## Level, speaking and review (discussion 2026-10-11)
 
-From talking with Salvatore (barista, Taormina) and Suor Agata. Josh is A1–A2 by the book; their Italian was B1–B2 and long.
+The stance (immersion; characters above your level are fine; teaching in character is fine) is now in [Vision → Level](01-vision.md#level). Saving conversations and the review log are in [Roadmap → M1](06-roadmap.md#m1-navigate-cities-and-hold-a-conversation-thats-remembered); decisions waiting on Josh are in [Open design questions → 11](open-design-questions.md#11-level-and-speaking-2026-10-11). Parked here:
 
-**Decided (product stance):**
-- Fuori is immersion, not full understanding. Understanding ~20% and still getting by is what being in Italy is like, and what makes the game interesting. It's for learners who tolerate not understanding (roughly intermediate in attitude, not a CEFR gate). Not a Duolingo-style beginner course; that would be a different product.
-- Characters speaking above the learner's level is fine. Teaching in character is fine too ("si dice *il* caffè, eh"); what's not fine is breaking character (lectures, tour-guide mode).
-- Asking for repeats, saying "non capisco", and in-character corrections already work well.
-
-**The main problems right now:**
-1. Many characters talk long, without an opening for the learner to reply (Salvatore: nine sentences, two topics). Length matters for turn-taking even if level doesn't: a real barista says two things and waits.
-2. Complicated vocabulary and grammar go by, and there's no way to go back and learn from them.
-
-**Ideas:**
-- **Review log (strongest).** Save each conversation's transcript (who, text, English, times, character, place, prompt version; not audio). When a conversation ends, the same Claude call that writes memory notes also writes a log entry: the 2–3 things most worth catching, judged by comparing the character's Italian with the learner's level (words and structures likely beyond them, favouring ones that are useful or recur), plus real mistakes in what the learner said. Each conversation adds a few percent; it doesn't have to explain everything. Raw material for Magda (M2) and a possible end-of-day "Today" page (diary idea). Show it only in debug mode at first to check it's accurate. Caution: don't log speech-to-text noise as the learner's mistakes ("Grigianto", Salvatore's *grazie* correction).
-- **Score success, let the character judge it.** Did the exchange work: did they understand what you wanted, did they repeat or simplify, did you get what you came for, did anyone fall back on English. Concrete questions, not a 1–10 score (characters are generous). Success says you're getting by; the review items are what stretch you.
-- **A learner level that travels with you.** Kept, but not for making every character speak to it. Starts from what the learner says (e.g. A2, or a textbook finished), then updates from how they actually speak. Used by the review to judge what was likely new, and maybe lightly by characters. Avoids stumbling at every first meeting.
-- **"Noticed" field.** Reply becomes `{ noticed, it, en }`: the character first notes in a few words how the person is speaking. Makes the character attend to the learner without a rule. Changes the M1 `{ it, en }` format, so Josh's call.
-- **Measure level fit in `test:conversations`.** The grader is currently told not to penalize complex Italian, so nothing catches this. Add a separate level-fit score, level before/after "non capisco", and a learner who never says they're learning.
-- **Later (too much interface for now):** interact with the transcript: tap a word for its meaning, translate the whole thing, save words.
+- **A learner level that travels with you.** Not for making every character speak to it. Starts from what the learner says, updates from how they speak; used by the review log to judge what was likely new, maybe lightly by characters. (M2 in the roadmap.)
+- **Character-judged success.** Did the exchange work? Concrete questions, not a 1–10 score, because characters are generous. Success says you're getting by; review items are what stretch you. (M2.)
+- **Scene pace.** What's happening at the place right now ("a few people waiting at the counter") shortens turns without a length rule. Ties into length and the cold-start scene card (Coda #6–7).
+- **Interact with the transcript.** Tap a word for its meaning, translate the whole reply, save words. Deferred as too much interface for now. (M3.)

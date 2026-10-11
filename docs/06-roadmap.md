@@ -2,98 +2,74 @@
 
 Each milestone ends with something playable on your phone. There is no separate validation phase: the first real test is talking to a character in the app.
 
-## M1 — Navigate cities and hold a conversation
+This file is the one place for **what's in each milestone** and **what to do next**. Parked ideas live in [Ideas](ideas.md); questions waiting on a decision live in [Open design questions](open-design-questions.md); what happened each session lives in `progress.md`.
 
-**Goal:** open the app on your phone, browse Italian cities, select a place in Roma, and hold a spoken conversation that transcribes as Italian.
+## Now (ranked)
 
-**Setup**
-- [ ] Make `main` the GitHub default branch and work on it (Railway deploys from `main`)
-- [x] `npx create-next-app@latest` in the repo root (TypeScript, App Router, ESLint); keep `prototype/` as is
-- [x] API keys: Anthropic (have), Groq (free tier, for Whisper), xAI (for image generation). Put them in `.env.local` as `ANTHROPIC_API_KEY`, `GROQ_API_KEY`, and `XAI_API_KEY`
-- [ ] Railway: `npm i -g @railway/cli`, `railway init`, link the GitHub repo, add the same variables in the dashboard
+Updated 2026-10-11. Top of the list first; strike items off here as they're done.
 
-**Content**
-- [ ] Level rules: have Claude build `content/it/levels/` (A1 and A2 steps) from CEFR descriptors, the *Profilo della lingua italiana*, De Mauro's *vocabolario di base* and typical A1–A2 grammar (see [Testing → 4a](10-testing.md#4a-level-rules-from-published-standards))
-- [x] Roma pantry in `content/it/cities/roma.ts` and the two anchors (Rita, Giulia) from [Cities and people](03-journey.md)
-- [x] `content/it/language.ts` (language name, speech code, UI words, prompt examples)
-- [x] 20 city images: watercolor sketches with distinctive scenes showing life and activity
+1. **Measure level and length in `npm run test:conversations`.** Add a level-fit score and a turn-length score (separate from naturalness), level before and after "non capisco", and a simulated learner who never says they're learning. The grader currently says not to penalize complex Italian, so nothing catches the main problem from phone play; changing that line needs Josh's OK. Gives a baseline before any prompt change.
+2. **Prompt experiments, each compared with the test above** (version bump + changelog each time):
+   - a factual line that characters only receive text and can't hear accent or pronunciation (Salvatore "corrected" *grazie* and "Grigianto")
+   - who the learner is: someone who lives here now, not a tourist (Salvatore asked how many days you're staying)
+   - traits as manner, not expertise, on 5–10 characters ("local historian" → a history lecture; ~150 of 634 characters have traits like knowledgeable, storyteller, expert, chatty)
+   - the "noticed" reply field, if Josh decides yes ([open question](open-design-questions.md#11-level-and-speaking-2026-10-11))
+3. **Postgres in Railway** (Josh): unblocks memory, saved transcripts and the review log.
+4. **Memory, saved transcripts and the review log** (M1, below).
+5. **ElevenLabs quota** (Josh): check usage; likely cause of the voice dropping mid-conversation on 2026-10-11.
 
-**Backend**
-- [x] `/api/generate-image`: xAI Grok for watercolor city/place images
-- [x] `/api/transcribe`: MediaRecorder audio → Whisper on Groq → Italian text (basic implementation)
-  - Handles audio/webm (Chrome) and audio/mp4 (iPhone Safari)
-  - Accepts `language` field: `it` for turns, `en` for "Come si dice?"
-- [x] `/api/turn`: Claude conversation with character context (basic implementation, needs structured output with Zod)
-- [ ] `/api/suggest`: the director's 3–4 suggestions plus "cambia aria" (deferred to M2)
-- [ ] `/api/scene`: scene from a suggestion or a free request (deferred to M2)
-- [ ] `/api/translate`: "Come si dice?" (English → Italian) (deferred to M2)
+## M1: Navigate cities and hold a conversation that's remembered
 
-**Frontend** (adapted from [mockups](https://claude.ai/artifact/1zVpF11bWHivP3RxVruKyx))
-- [x] **Cities feed**: scrolling cards (Polaroid-style) for 20 Italian cities with watercolor images
-- [x] **Places feed**: shows places within selected city (only Roma has place data)
-- [x] **Navigation**: Cities → Places → Conversation (Modified Option C)
-- [x] **PlaceCard component**: square image on top, prominent city/place name below, region/neighborhood
-- [x] **Settings UI**: gear icon in header, sheet with "Show transcripts" and "Allow dialect" toggles (UI only)
-- [x] Conversazione: portrait area, mic button (from 2026-10-09 work, needs wiring to APIs)
-- [ ] Speech in: hold or tap the mic → `/api/transcribe` → text (partially done, needs full integration)
-- [ ] Speech out: best available Italian browser voice; slow mode
-- [ ] Transcript display during conversation (when "Show transcripts" enabled)
-- [ ] Simple SVG avatars for every character, with mood expressions
-- [ ] **Minimal character memory** (decided 2026-10-10): Railway Postgres (`learners`, `character_memories`), anonymous learner id in a server-set cookie, Claude writes short notes when a conversation ends and they go into the character's prompt next time. See [Data model → Storage](09-data-model.md#storage-strategy)
-- [ ] Oggi: suggestion tiles plus "cambia aria" and "vai dove vuoi" (deferred to M2)
+**Goal:** on your phone, browse Italian cities, pick a place, and hold a spoken conversation in Italian; come back another day and the character remembers you. Learn whether immersion alone works ([M1 conversation model](M1-CONVERSATION-MODEL.md)).
 
-**Deploy and test**
-- [ ] `git push origin main` → Railway; check HTTPS and the mic on iPhone Safari
-- [ ] Safari Web Inspector for phone debugging; `railway logs` for API errors
+**Done**
+- [x] Next.js app on Railway, deploying from `main`; API keys server-side only
+- [x] 20 cities, each with places and one character per place (~636), watercolour city/place images and character portraits
+- [x] Feeds: Polaroid cards, 10 at a time with "Mostra altro", big city / town alternating, stable order
+- [x] Conversation: Whisper on Groq in, ElevenLabs out (gender-matched voices; phone voice as a stated fallback), Claude reply as `{ it, en }`
+- [x] Subtitle-style text over the portrait, optional English, compact mic with live voice level
+- [x] Prompt in `content/it/prompts/character.md` with version and changelog; version logged per turn
+- [x] Honest errors with codes, phone errors in Railway logs, `?debug=1` panel
+- [x] Tests: models, schema, prompt, reply, voices, feed, audio, roles, images, and graded simulated conversations
 
-**Done when:** on your phone, you can browse 20 Italian cities, select Roma, pick a place (Giulia's bar), and hold a voice conversation in Italian; and when you come back another day, Giulia remembers your name and something you talked about.
+**To do**
+- [ ] Level and length in the conversation test ([Now #1](#now-ranked))
+- [ ] Prompt experiments ([Now #2](#now-ranked))
+- [ ] Postgres: `learners`, `character_memories`, `conversations` ([Data model](09-data-model.md#storage-strategy)); anonymous learner id in a server-set cookie
+- [ ] Save each conversation: character, place, times, prompt version, and turns (who, text, English, time). No audio.
+- [ ] When a conversation ends, one Claude call writes:
+  - the character's notes about you (fills `{relationship}` next visit)
+  - a **review-log entry**: the 2–3 things most worth catching, judged by comparing the character's Italian with the learner's level (useful or recurring words and structures likely beyond them), plus real mistakes the learner made. Skips anything that could be speech-to-text noise.
+- [ ] Show the review log in debug mode only, to check it's accurate before anyone else sees it
 
-**Status:** City feed and navigation complete. Conversation engine built but needs wiring to the UI. Ready for deployment and phone testing.
+**Done when:** you come back to a character another day and they remember your name and something you talked about; and the review log for a conversation picks things you'd agree were worth learning.
 
-## M2 — Daily suggestions and people who remember you
+## M2: Magda, the day, and people who know you
 
-**Complete M1 conversation integration:**
-- [ ] Wire ConversationScreen to `/api/transcribe` and `/api/turn`
-- [ ] Implement "Show transcripts" toggle functionality
-- [ ] Implement "Allow dialect" toggle functionality
-- [ ] Add structured output (Zod schemas) to `/api/turn`
-- [ ] Add place data for cities beyond Roma
+- [ ] Magda reads the review log: picks a few things to work on, messages when something keeps coming up
+- [ ] End-of-day "Today" page (the diario), drawn from the review log
+- [ ] Learner profile that travels across characters, starting from the learner's stated level and updated from how they speak ([idea](ideas.md#level-speaking-and-review-2026-10-11))
+- [ ] Character-judged success after each conversation, from concrete questions (understood what you wanted? had to repeat? fell back on English?)
+- [ ] Familiarity over visits (stranger → regular → friend, *Lei* → *tu*); structured facts and promises
+- [ ] Where next: characters suggest places, "cambia aria", "vai dove vuoi" (`/api/suggest`, `/api/scene`)
+- [ ] Reasons to return: what's new in a character's life since your last visit, generated when you come back
+- [ ] Fewer, deeper cities with places and people generated as you explore
 
-**Suggestion system (originally planned for M1):**
-- [ ] `/api/suggest`: the director's 3–4 suggestions plus "cambia aria"
-- [ ] `/api/scene`: scene from a suggestion or a free request; generates and saves a new character
-- [ ] Oggi screen with scrolling suggestion cards
-- [ ] "Vai dove vuoi" free request flow
+**Done when:** you come back to the same bar on day 3, the barista greets you by name and remembers your usual, and Magda points out something you've been missing.
 
-**Memory and progression:**
-- [ ] Fuller relationships on top of M1's minimal memory: familiarity across days (sconosciuto → amico, Lei → tu), structured facts and promises
-- [ ] Day flow: suggestions → conversations → diario; "try tomorrow" goals feed the next day's suggestions
-- [ ] Quaderno with last-used dates; stale words worked into suggestions
-- [ ] Changing scenery: new neighbourhood, day trip, moving to a new city; people stay where you met them
-- [ ] Viaggio and Tu screens
-- [ ] Simulated-learner test (`npm run test:learner`) ([Testing → 4b](10-testing.md#4b-simulated-learner)); rerun after prompt changes
-- [ ] Illustrated portraits for the anchors (see [Visuals](07-visuals.md)); generated people keep SVG avatars
-- [ ] Store progress and generated characters in Postgres
+## M3: Levels, interaction and polish
 
-**Done when:** you come back to the same bar on day 3 and the barista greets you by name and remembers your usual order, and the diario points out a mistake you made twice.
+- [ ] Interact with the transcript: tap a word for its meaning, translate the whole reply, save words (deferred from M1: too much interface for now)
+- [ ] Level steps (A1 → A1+ → A2 …) from evidence in conversations; level rules exist in `content/it/levels/`
+- [ ] More dialect as you level up ("Allow dialect" setting)
+- [ ] Voice notes and messages from characters; postcards from cities you've left
+- [ ] Hosted voices for every character; Magda's voice
 
-## M3 — Magda, levels and voices
-
-- [ ] Magda: messages when mistakes pile up or a level step is near; weekly lesson; one-page summary for real lessons
-- [ ] Level evidence and steps (A1 → A1+ → A2 …); harder situations and more dialect as you level up
-- [ ] Hosted TTS (ElevenLabs or Azure) with distinct voices for the anchors and Magda
-- [ ] Postcards and messages from people in cities you've left
-
-## M4 — Accounts and costs
+## M4: Accounts and costs
 
 - [ ] Email sign-in link; progress follows you across devices (Postgres is already in place from M1)
-- [ ] Usage tracking and per-learner daily budgets
+- [ ] Usage tracking and per-learner daily budgets (Claude, Whisper, ElevenLabs)
 
 ## Later
 
-See [Ideas](ideas.md): reading moments at real landmarks, food culture conversations, animated clips for the core cast, Groundhog Day replays, other languages.
-
-## Open questions
-
-- Hosted voices: browser voices are free but robotic. When is it worth paying for better TTS?
-- How much English should characters ever use? (Current answer: none, except in hints and side notes. Magda may explain in English.)
+See [Ideas](ideas.md): reading moments at real landmarks, food culture conversations, animated clips for the core cast, other languages.
