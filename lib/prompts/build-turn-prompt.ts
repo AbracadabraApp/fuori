@@ -90,7 +90,7 @@ function buildUserMessage(
   isFirstTurn: boolean
 ): string {
   if (isFirstTurn) {
-    return 'Start the conversation. Greet them naturally for your character.';
+    return 'Start the conversation. Greet them briefly and naturally as your character would - keep it short.';
   }
 
   let content = '';
