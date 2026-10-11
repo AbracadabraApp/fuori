@@ -146,7 +146,8 @@ export function ConversationScreen({
         const audio = audioRef.current ?? new Audio();
         audio.src = audioUrl;
         audioRef.current = audio;
-        await audio.play();
+        // Don't await - just start playback and return control immediately
+        audio.play().catch((err) => console.error('Audio playback error:', err));
       }
     } catch (err) {
       console.error('Error playing audio:', err);
