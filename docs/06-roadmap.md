@@ -18,6 +18,7 @@ Updated 2026-10-11. Top of the list first; strike items off here as they're done
 4. **Postgres in Railway** (Josh): unblocks memory, saved transcripts and the review log.
 5. **Memory, saved transcripts and the review log** (M1, below).
 6. **ElevenLabs quota** (Josh): check usage; likely cause of the voice dropping mid-conversation on 2026-10-11.
+7. **Image sizes and settings (low priority).** The image request sets no size, so the generator picks one: cities are all square (49), places are mostly wide 3:2 (537 wide, 62 tall, 7 square), portraits are mostly tall 2:3 (596, though `07-visuals.md` says square). Place cards show a square crop, so wide images lose their sides and signs can be cut off. Steps: decide the size for each kind of image; set it in the request (`aspect_ratio`, check xAI accepts it with one test); give every place prompt its location and a sign rule (Caffè Toledo came out as Paris's Café de Flore because its prompt never says Napoli, and about 350 of 594 place prompts don't name Italy or the city); then regenerate only the ones that are off. Tested wording: "…a busy café on a main shopping street in the Centro Storico of Napoli, Italy… The café's sign reads "Caffè Toledo". Any other lettering is everyday Italian street detail, like a chalkboard menu or a street name; no banners, emblems or signs naming the neighbourhood or city."
 
 ## M1: Navigate cities and hold a conversation that's remembered
 
