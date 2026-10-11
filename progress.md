@@ -283,3 +283,5 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 - Errors name the actual character instead of "Giulia".
 - Places with no character (most of Roma besides Giulia's bar and Rita's apartment) show "nobody to talk to here yet" instead of silently becoming Giulia.
 - Text stays as the doc says: Italian on by default, English off, both in Settings.
+- Styles moved from inline to CSS modules (`page.module.css`, `PlaceCard.module.css`, `ConversationScreen.module.css`) with shared color tokens in `globals.css` (`--green`, `--paper`, `--sand`, …). Screens verified pixel-identical with before/after screenshots. The app is now light-only (dark mode previously made unstyled text near-invisible on white). Removed unused `AudioPlayer.tsx`.
+- Open: many Roma places have no image file in `public/images/places/` (shows a broken-image icon).

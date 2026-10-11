@@ -1,0 +1,148 @@
+.screen {
+  position: fixed;
+  inset: 0;
+  background-color: var(--paper);
+  display: flex;
+  flex-direction: column;
+}
+
+.back {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.backArrow {
+  font-size: 28px;
+}
+
+.backCity {
+  margin-left: 12px;
+  font-size: 24px;
+  color: var(--green);
+  font-weight: 500;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.portrait {
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+}
+
+.portraitPlaceholder {
+  width: 300px;
+  height: 300px;
+  background-color: var(--sand);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.nameLine {
+  font-size: 24px;
+  color: var(--ink);
+}
+
+.name {
+  font-weight: 600;
+}
+
+.role {
+  font-weight: 300;
+}
+
+.reply {
+  margin-top: 16px;
+  padding: 16px;
+  background-color: var(--card);
+  border-radius: 12px;
+  font-size: 18px;
+  color: var(--text);
+  max-width: 100%;
+}
+
+.italian {
+  font-style: italic;
+}
+
+.italianWithEnglish {
+  composes: italian;
+  margin-bottom: 8px;
+}
+
+.english {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.error {
+  margin-top: 8px;
+  padding: 12px;
+  background-color: var(--error-bg);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--error-ink);
+  max-width: 100%;
+}
+
+.controls {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.startButton {
+  padding: 16px 32px;
+  font-size: 18px;
+  background-color: var(--green);
+  color: white;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.mic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--green);
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.recording {
+  background-color: var(--record);
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.3);
+}
+
+.startButton:disabled,
+.mic:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.status {
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}

@@ -6,6 +6,7 @@ import { ConversationScreen } from './components/ConversationScreen';
 import { cities as cityPantries } from '@/content/it/cities';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { CharacterSheet } from '@/lib/types';
+import styles from './page.module.css';
 
 export default function Home() {
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
@@ -53,13 +54,11 @@ export default function Home() {
 
     if (!characterSheet) {
       return (
-        <div style={{ minHeight: '100vh', backgroundColor: '#f5f1ed', padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-          <div onClick={() => setSelectedPlace(null)} style={{ cursor: 'pointer', fontSize: '24px', color: '#2c5f4f' }}>
+        <div className={styles.screen}>
+          <div onClick={() => setSelectedPlace(null)} className={styles.back}>
             ← {cityData?.name}
           </div>
-          <p style={{ marginTop: '40px', fontSize: '20px', color: '#333' }}>
-            {place?.name}: nobody to talk to here yet.
-          </p>
+          <p className={styles.emptyNote}>{place?.name}: nobody to talk to here yet.</p>
         </div>
       );
     }
@@ -82,26 +81,8 @@ export default function Home() {
     if (!cityData) return null;
 
     return (
-      <div
-        style={{
-          minHeight: '100vh',
-          backgroundColor: '#f5f1ed',
-          padding: '20px',
-          maxWidth: '600px',
-          margin: '0 auto',
-        }}
-      >
-        <h1
-          style={{
-            fontSize: '28px',
-            fontWeight: '500',
-            color: '#2c5f4f',
-            margin: 0,
-            marginBottom: '24px',
-          }}
-        >
-          {cityData.name}
-        </h1>
+      <div className={styles.screen}>
+        <h1 className={styles.cityTitle}>{cityData.name}</h1>
 
         {/* Scrolling place cards */}
         <div>
@@ -129,47 +110,10 @@ export default function Home() {
 
   // Show cities (entry screen)
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        backgroundColor: '#f5f1ed',
-        padding: '20px',
-        maxWidth: '600px',
-        margin: '0 auto',
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: '24px',
-        }}
-      >
-        <h1
-          style={{
-            fontSize: '28px',
-            fontWeight: '500',
-            color: '#2c5f4f',
-            margin: 0,
-          }}
-        >
-          Fuori
-        </h1>
-        <button
-          onClick={() => setShowSettings(true)}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            background: 'none',
-            border: '1.5px solid #2c5f4f',
-            borderRadius: '20px',
-            cursor: 'pointer',
-            color: '#2c5f4f',
-            padding: '8px 14px',
-          }}
-        >
+    <div className={styles.screen}>
+      <div className={styles.header}>
+        <h1 className={styles.title}>Fuori</h1>
+        <button onClick={() => setShowSettings(true)} className={styles.settingsButton}>
           <svg
             width="20"
             height="20"
@@ -183,7 +127,7 @@ export default function Home() {
             <circle cx="12" cy="12" r="3" />
             <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
           </svg>
-          <span style={{ fontSize: '15px', fontWeight: '600' }}>Settings</span>
+          <span>Settings</span>
         </button>
       </div>
 
@@ -203,60 +147,11 @@ export default function Home() {
 
       {/* Settings sheet overlay */}
       {showSettings && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(0,0,0,0.5)',
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-            zIndex: 1000,
-          }}
-          onClick={() => setShowSettings(false)}
-        >
-          <div
-            style={{
-              backgroundColor: 'white',
-              borderRadius: '0 0 16px 16px',
-              padding: '24px',
-              maxWidth: '600px',
-              width: '100%',
-              position: 'relative',
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginBottom: '24px',
-              }}
-            >
-              <h2
-                style={{
-                  fontSize: '24px',
-                  fontWeight: '600',
-                  color: '#2c5f4f',
-                  margin: 0,
-                }}
-              >
-                Settings
-              </h2>
-              <button
-                onClick={() => setShowSettings(false)}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  cursor: 'pointer',
-                  padding: '4px',
-                  color: '#666',
-                }}
-              >
+        <div className={styles.overlay} onClick={() => setShowSettings(false)}>
+          <div className={styles.sheet} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.sheetHeader}>
+              <h2 className={styles.sheetTitle}>Settings</h2>
+              <button onClick={() => setShowSettings(false)} className={styles.close}>
                 <svg
                   width="24"
                   height="24"
@@ -273,94 +168,35 @@ export default function Home() {
               </button>
             </div>
 
-            <label
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                marginBottom: '20px',
-                fontSize: '18px',
-                cursor: 'pointer',
-              }}
-            >
+            <label className={styles.option}>
               <input
                 type="checkbox"
                 checked={showTranscripts}
                 onChange={(e) => setShowTranscripts(e.target.checked)}
-                style={{
-                  width: '24px',
-                  height: '24px',
-                  marginRight: '16px',
-                  cursor: 'pointer',
-                  accentColor: '#2c5f4f',
-                }}
               />
               Show Italian transcripts
             </label>
 
-            <label
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                marginBottom: '20px',
-                fontSize: '18px',
-                cursor: 'pointer',
-              }}
-            >
+            <label className={styles.option}>
               <input
                 type="checkbox"
                 checked={showEnglish}
                 onChange={(e) => setShowEnglish(e.target.checked)}
-                style={{
-                  width: '24px',
-                  height: '24px',
-                  marginRight: '16px',
-                  cursor: 'pointer',
-                  accentColor: '#2c5f4f',
-                }}
               />
               Show English translation
             </label>
 
-            <label
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                marginBottom: '32px',
-                fontSize: '18px',
-                cursor: 'not-allowed',
-                opacity: 0.5,
-              }}
-            >
+            <label className={styles.optionDisabled}>
               <input
                 type="checkbox"
                 checked={allowDialect}
                 onChange={(e) => setAllowDialect(e.target.checked)}
                 disabled={true}
-                style={{
-                  width: '24px',
-                  height: '24px',
-                  marginRight: '16px',
-                  cursor: 'not-allowed',
-                  accentColor: '#2c5f4f',
-                }}
               />
               Allow dialect (coming soon)
             </label>
 
-            <button
-              onClick={() => setShowSettings(false)}
-              style={{
-                width: '100%',
-                padding: '16px',
-                fontSize: '16px',
-                backgroundColor: '#2c5f4f',
-                color: 'white',
-                border: 'none',
-                borderRadius: '8px',
-                cursor: 'pointer',
-                fontWeight: '500',
-              }}
-            >
+            <button onClick={() => setShowSettings(false)} className={styles.primaryButton}>
               Save
             </button>
           </div>

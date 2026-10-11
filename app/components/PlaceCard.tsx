@@ -1,3 +1,5 @@
+import styles from './PlaceCard.module.css';
+
 interface PlaceCardProps {
   placeName: string;
   characterName: string;
@@ -6,70 +8,18 @@ interface PlaceCardProps {
   onTap: () => void;
 }
 
-export function PlaceCard({
-  placeName,
-  characterName,
-  neighborhood,
-  imageUrl,
-  onTap,
-}: PlaceCardProps) {
+export function PlaceCard({ placeName, neighborhood, imageUrl, onTap }: PlaceCardProps) {
   return (
-    <div
-      onClick={onTap}
-      style={{
-        width: '100%',
-        backgroundColor: 'white',
-        borderRadius: '8px',
-        overflow: 'hidden',
-        cursor: 'pointer',
-        marginBottom: '20px',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-      }}
-    >
+    <div onClick={onTap} className={styles.card}>
       {/* Image area - square like Polaroid/Instagram */}
-      <div
-        style={{
-          width: '100%',
-          aspectRatio: '1',
-          backgroundColor: imageUrl ? 'transparent' : '#e8d5c4',
-          overflow: 'hidden',
-        }}
-      >
-        {imageUrl && (
-          <img
-            src={imageUrl}
-            alt={placeName}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          />
-        )}
+      <div className={`${styles.imageArea} ${imageUrl ? '' : styles.noImage}`}>
+        {imageUrl && <img src={imageUrl} alt={placeName} className={styles.image} />}
       </div>
 
       {/* Caption below like Polaroid - white space with black text */}
-      <div
-        style={{
-          padding: '16px',
-          backgroundColor: 'white',
-        }}
-      >
-        <div
-          style={{
-            fontSize: '32px',
-            fontWeight: '700',
-            color: '#000',
-            marginBottom: neighborhood ? '4px' : 0,
-          }}
-        >
-          {placeName}
-        </div>
-        {neighborhood && (
-          <div style={{ fontSize: '17px', color: '#666' }}>
-            {neighborhood}
-          </div>
-        )}
+      <div className={styles.caption}>
+        <div className={`${styles.name} ${neighborhood ? styles.withSubtitle : ''}`}>{placeName}</div>
+        {neighborhood && <div className={styles.subtitle}>{neighborhood}</div>}
       </div>
     </div>
   );

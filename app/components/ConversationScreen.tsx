@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
+import styles from './ConversationScreen.module.css';
 
 // A zero-length WAV. Playing it during a tap "unlocks" audio on iPhone Safari,
 // which otherwise blocks sound that starts after a network request.
@@ -272,149 +273,51 @@ export function ConversationScreen({
   };
 
   return (
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: '#f5f1ed',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+    <div className={styles.screen}>
       {/* Back button */}
-      <div
-        onClick={onBack}
-        style={{
-          padding: '16px',
-          display: 'flex',
-          alignItems: 'center',
-          cursor: 'pointer',
-        }}
-      >
-        <span style={{ fontSize: '28px' }}>←</span>
-        <span style={{ marginLeft: '12px', fontSize: '24px', color: '#2c5f4f', fontWeight: '500' }}>
-          {cityName}
-        </span>
+      <div onClick={onBack} className={styles.back}>
+        <span className={styles.backArrow}>←</span>
+        <span className={styles.backCity}>{cityName}</span>
       </div>
 
       {/* Portrait and name area */}
-      <div
-        style={{
-          flex: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          justifyContent: 'flex-start',
-          padding: '20px',
-          gap: '16px',
-          overflowY: 'auto',
-        }}
-      >
+      <div className={styles.body}>
         {characterPortrait ? (
-          <img
-            src={characterPortrait}
-            alt={characterName}
-            style={{
-              maxWidth: '100%',
-              maxHeight: '60vh',
-              objectFit: 'contain',
-            }}
-          />
+          <img src={characterPortrait} alt={characterName} className={styles.portrait} />
         ) : (
-          <div
-            style={{
-              width: '300px',
-              height: '300px',
-              backgroundColor: '#e8d5c4',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '48px',
-            }}
-          >
-            👤
-          </div>
+          <div className={styles.portraitPlaceholder}>👤</div>
         )}
-        <div style={{ fontSize: '24px', color: '#000' }}>
-          <span style={{ fontWeight: '600' }}>{characterName}</span>
+        <div className={styles.nameLine}>
+          <span className={styles.name}>{characterName}</span>
           {characterRole && (
-            <span style={{ fontWeight: '300' }}>, {characterRole.charAt(0).toUpperCase() + characterRole.slice(1)}</span>
+            <span className={styles.role}>
+              , {characterRole.charAt(0).toUpperCase() + characterRole.slice(1)}
+            </span>
           )}
         </div>
 
-        {/* Current response text */}
+        {/* Character's reply as text, if turned on in Settings */}
         {(showTranscripts && currentResponse) || (showEnglish && currentTranslation) ? (
-          <div
-            style={{
-              marginTop: '16px',
-              padding: '16px',
-              backgroundColor: '#fff',
-              borderRadius: '12px',
-              fontSize: '18px',
-              color: '#333',
-              maxWidth: '100%',
-            }}
-          >
+          <div className={styles.reply}>
             {showTranscripts && currentResponse && (
-              <div style={{ fontStyle: 'italic', marginBottom: showEnglish ? '8px' : '0' }}>
+              <div className={showEnglish ? styles.italianWithEnglish : styles.italian}>
                 {currentResponse}
               </div>
             )}
             {showEnglish && currentTranslation && (
-              <div style={{ color: '#666', fontSize: '16px' }}>
-                {currentTranslation}
-              </div>
+              <div className={styles.english}>{currentTranslation}</div>
             )}
           </div>
         ) : null}
 
         {/* Error display */}
-        {error && (
-          <div
-            style={{
-              marginTop: '8px',
-              padding: '12px',
-              backgroundColor: '#f8d7da',
-              borderRadius: '8px',
-              fontSize: '14px',
-              color: '#721c24',
-              maxWidth: '100%',
-            }}
-          >
-            {error}
-          </div>
-        )}
+        {error && <div className={styles.error}>{error}</div>}
       </div>
 
       {/* Mic button area */}
-      <div
-        style={{
-          padding: '32px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '16px',
-        }}
-      >
+      <div className={styles.controls}>
         {!hasStarted ? (
-          <button
-            onClick={startConversation}
-            disabled={isProcessing}
-            style={{
-              padding: '16px 32px',
-              fontSize: '18px',
-              backgroundColor: '#2c5f4f',
-              color: 'white',
-              border: 'none',
-              borderRadius: '24px',
-              cursor: isProcessing ? 'not-allowed' : 'pointer',
-              opacity: isProcessing ? 0.6 : 1,
-            }}
-          >
+          <button onClick={startConversation} disabled={isProcessing} className={styles.startButton}>
             Start conversation
           </button>
         ) : (
@@ -422,30 +325,12 @@ export function ConversationScreen({
             <button
               onClick={toggleRecording}
               disabled={isProcessing}
-              style={{
-                width: '80px',
-                height: '80px',
-                borderRadius: '50%',
-                backgroundColor: isRecording ? '#dc3545' : '#2c5f4f',
-                border: 'none',
-                color: 'white',
-                fontSize: '32px',
-                cursor: isProcessing ? 'not-allowed' : 'pointer',
-                opacity: isProcessing ? 0.6 : 1,
-                boxShadow: isRecording
-                  ? '0 0 0 4px rgba(220, 53, 69, 0.3)'
-                  : '0 2px 8px rgba(0,0,0,0.2)',
-                transition: 'all 0.2s',
-              }}
+              className={`${styles.mic} ${isRecording ? styles.recording : ''}`}
             >
               🎤
             </button>
-            <div style={{ fontSize: '14px', color: '#666', textAlign: 'center' }}>
-              {isProcessing
-                ? 'Processing...'
-                : isRecording
-                ? 'Tap to stop'
-                : 'Tap to speak'}
+            <div className={styles.status}>
+              {isProcessing ? 'Processing...' : isRecording ? 'Tap to stop' : 'Tap to speak'}
             </div>
           </>
         )}
