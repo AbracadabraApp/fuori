@@ -316,4 +316,4 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 ## 2026-10-10 night: "Mostra altro" (cloud session)
 
 - City and place feeds show 10 cards, then a centred "Mostra altro" link with an olive sprig on each side adds the next 10 below (`app/components/ShowMore.tsx`; text in `content/it/language.ts` → `ui.showMore`). Each city starts at its first 10 places.
-- City order is now big cities first, Roma first (`content/it/cities/index.ts`); alphabetical order would have hidden Roma behind the link.
+- City order alternates big city / smaller town, spread across regions, Roma first (`content/it/cities/index.ts`).
