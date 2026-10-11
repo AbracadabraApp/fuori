@@ -272,3 +272,44 @@ The one character who messages because it's her job: weekly check-ins on how you
 
 - **Pronunciation scoring**: deliberately out of scope for now.
 - **Characters who reappear in later cities** (Davide visits Bologna): partly in [The journey](03-journey.md); worth expanding into a thread that runs through the whole season.
+
+---
+
+## Coda: notes from the first real phone use (2026-10-11)
+
+*Working notes, not decisions. Captured while using the app on an iPhone: a long conversation with Rita, then Rosa at the Florence market. Items 1–5 were acted on the same day (see `progress.md`); the rest are open.*
+
+### Interface
+
+1. **Portrait:** keep the full portrait at the start of a conversation. *(Done: unchanged.)*
+2. **Nav header too large:** "← Firenze" takes too much space. *(Done: smaller.)*
+3. **Text area:** the reply text should sit at a fixed point, about 50% down the screen, overlaying the portrait, instead of pushing the page so the portrait scrolls away. Rosa's face scrolled off and only her apron showed. *(Done.)*
+4. **Roles in English:** some generated characters had English roles ("Fruit vendor"). Should be Italian (*fruttivendola*). *(Done.)*
+5. **Mic states:** "Tap to speak" alone isn't enough. Show listening, thinking and speaking clearly. *(Done.)*
+
+### Conversation
+
+6. **Length:** replies run 4–6 sentences. Good quality, but long to follow by ear, slower, and fewer turns for the learner. Candidate prompt line: "This is a spoken conversation. Say one or two things, then let them answer, the way people do when they talk." No sentence limits.
+7. **Cold start:** you tap into a place without having thought about what to say. In real life you always walk up for a reason. Ideas:
+   - a short scene card before Start ("*Mercato di Sant'Ambrogio, mattina.* Rosa is calling out about her peaches")
+   - two or three things you could do there, by place type ("buy fruit for breakfast", "ask what's in season"): a reason to walk up, not a script; from data, no extra Claude call; gone once the conversation starts
+   - an opening line that is easy to answer ("*Cosa le serve?*"), not buried under three other sentences
+8. **Where next:** ending a conversation is easy (say goodbye); knowing where to go next isn't. Rita got tired and suggested wrapping up, and there was no obvious next step. Ideas:
+   - places a character mentions in conversation appear as a small card on their screen ("Rita mentioned: Mercato di San Cosimato →")
+   - a quiet line of *wants* at the top of the places feed: *Un caffè? · Il mercato · Qualcosa da vedere*, each leading to a fitting place nearby. Framed as wants, not quests or missions.
+
+### Scope and the world
+
+9. **Fewer cities, generated on the fly:** 20 cities is a lot. Prefer 3–5 deep cities (e.g. Roma, Napoli, Firenze, Bologna) and put energy into generating places and people as you explore:
+   - generate once, then keep (needs the database); shared across players so the world is consistent and paid for once
+   - start the conversation immediately with a placeholder or a stock sketch of the place type; the portrait arrives when ready
+   - run today's checks (gender, voice, portrait, prompt) on each new character at creation time
+   - keep hand-tuned anchors (Rita, Giulia) and a few places per neighbourhood; generate the rest on "*vai dove vuoi*" or when you wander somewhere new
+   - makes new languages cheaper still: a playable Mexico could take ~48 hours with mostly anchors, not a pre-built map
+10. **Reasons to return (emergent, not scripted):** fewer places only works if they're interesting to revisit; the same market or bakery gets dull. What changes between visits should come from life moving on, *not* an authored season (which was dropped on 2026-10-09):
+    - when you come back, one Claude call generates what's new in the character's life from their personality, past conversations and the time elapsed, and saves it to memory; nothing written in advance
+    - real dates, not game days: Sunday at the bar means the match; a week away means they noticed
+    - no arc you must follow: skip someone for a month and their life simply went on
+    - new people appear at familiar places (a regular, a cousin helping at the stall)
+    - relationships deepen, so conversations get richer
+    - builds on memory (M1), messages and where-next. The pattern is closer to neighbours you check in on (Animal Crossing) than a story you play through.
