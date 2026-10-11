@@ -6120,13 +6120,228 @@
       "timestamp": "2026-10-10T10:19:37.639Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/ornella-acetaia.jpg",
       "type": "portrait"
+    },
+    "roma/apartment-trastevere-rita": {
+      "timestamp": "2026-10-11T03:58:09.202Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/apartment-trastevere-rita.jpg",
+      "type": "place"
+    },
+    "roma/bar-monti-corner": {
+      "timestamp": "2026-10-11T03:58:24.680Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/bar-monti-corner.jpg",
+      "type": "place"
+    },
+    "roma/bar-testaccio-morning": {
+      "timestamp": "2026-10-11T03:58:44.735Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/bar-testaccio-morning.jpg",
+      "type": "place"
+    },
+    "roma/mercato-san-cosimato": {
+      "timestamp": "2026-10-11T03:59:05.099Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/mercato-san-cosimato.jpg",
+      "type": "place"
+    },
+    "roma/mercato-testaccio": {
+      "timestamp": "2026-10-11T03:59:26.900Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/mercato-testaccio.jpg",
+      "type": "place"
+    },
+    "roma/mercato-campo-fiori": {
+      "timestamp": "2026-10-11T03:59:49.090Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/mercato-campo-fiori.jpg",
+      "type": "place"
+    },
+    "roma/forno-trastevere": {
+      "timestamp": "2026-10-11T04:00:11.412Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/forno-trastevere.jpg",
+      "type": "place"
+    },
+    "roma/forno-monti": {
+      "timestamp": "2026-10-11T04:00:30.052Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/forno-monti.jpg",
+      "type": "place"
+    },
+    "roma/trattoria-trastevere": {
+      "timestamp": "2026-10-11T04:00:47.990Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/trattoria-trastevere.jpg",
+      "type": "place"
+    },
+    "roma/trattoria-testaccio": {
+      "timestamp": "2026-10-11T04:01:05.494Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/trattoria-testaccio.jpg",
+      "type": "place"
+    },
+    "roma/basilica-santa-maria": {
+      "timestamp": "2026-10-11T04:01:25.121Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/basilica-santa-maria.jpg",
+      "type": "place"
+    },
+    "roma/colosseo": {
+      "timestamp": "2026-10-11T04:01:42.461Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/colosseo.jpg",
+      "type": "place"
+    },
+    "roma/fontana-trevi": {
+      "timestamp": "2026-10-11T04:02:03.652Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/fontana-trevi.jpg",
+      "type": "place"
+    },
+    "roma/villa-borghese": {
+      "timestamp": "2026-10-11T04:02:27.810Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/villa-borghese.jpg",
+      "type": "place"
+    },
+    "roma/piazza-santa-maria-trastevere": {
+      "timestamp": "2026-10-11T04:02:47.011Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/piazza-santa-maria-trastevere.jpg",
+      "type": "place"
+    },
+    "roma/piazza-navona": {
+      "timestamp": "2026-10-11T04:03:05.130Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/piazza-navona.jpg",
+      "type": "place"
+    },
+    "roma/libreria-trastevere": {
+      "timestamp": "2026-10-11T04:03:25.416Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/libreria-trastevere.jpg",
+      "type": "place"
+    },
+    "roma/libreria-monti": {
+      "timestamp": "2026-10-11T04:03:45.043Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/libreria-monti.jpg",
+      "type": "place"
+    },
+    "roma/enoteca-trastevere": {
+      "timestamp": "2026-10-11T04:04:06.444Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/enoteca-trastevere.jpg",
+      "type": "place"
+    },
+    "roma/enoteca-monti": {
+      "timestamp": "2026-10-11T04:04:23.726Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/enoteca-monti.jpg",
+      "type": "place"
+    },
+    "roma/farmacia-trastevere": {
+      "timestamp": "2026-10-11T04:04:43.281Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/farmacia-trastevere.jpg",
+      "type": "place"
+    },
+    "roma/negozio-abbigliamento": {
+      "timestamp": "2026-10-11T04:05:00.323Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/negozio-abbigliamento.jpg",
+      "type": "place"
+    },
+    "roma/stazione-termini": {
+      "timestamp": "2026-10-11T04:05:22.534Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/stazione-termini.jpg",
+      "type": "place"
+    },
+    "roma/stazione-trastevere": {
+      "timestamp": "2026-10-11T04:05:46.397Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/stazione-trastevere.jpg",
+      "type": "place"
+    },
+    "assisi/caffe-duomo": {
+      "timestamp": "2026-10-11T04:05:57.598Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-duomo.jpg",
+      "skipped": true
+    },
+    "bergamo/caffe-del-tasso": {
+      "timestamp": "2026-10-11T04:05:57.602Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-del-tasso.jpg",
+      "skipped": true
+    },
+    "bologna/caffe-terzi": {
+      "timestamp": "2026-10-11T04:05:57.603Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-terzi.jpg",
+      "skipped": true
+    },
+    "firenze/caffe-rivoire": {
+      "timestamp": "2026-10-11T04:05:57.605Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-rivoire.jpg",
+      "skipped": true
+    },
+    "genova/caffe-degli-specchi": {
+      "timestamp": "2026-10-11T04:05:57.607Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-degli-specchi.jpg",
+      "skipped": true
+    },
+    "lecce/caffe-alvino": {
+      "timestamp": "2026-10-11T04:05:57.608Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-alvino.jpg",
+      "skipped": true
+    },
+    "lucca/caffe-di-simo": {
+      "timestamp": "2026-10-11T04:05:57.610Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-di-simo.jpg",
+      "skipped": true
+    },
+    "mantova/caffe-modi": {
+      "timestamp": "2026-10-11T04:05:57.612Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-modi.jpg",
+      "skipped": true
+    },
+    "matera/caffe-schiuma": {
+      "timestamp": "2026-10-11T04:05:57.613Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-schiuma.jpg",
+      "skipped": true
+    },
+    "milano/pasticceria-marchesi": {
+      "timestamp": "2026-10-11T04:05:57.615Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/pasticceria-marchesi.jpg",
+      "skipped": true
+    },
+    "napoli/bar-nilo": {
+      "timestamp": "2026-10-11T04:05:57.616Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/bar-nilo.jpg",
+      "skipped": true
+    },
+    "orvieto/caffe-montanucci": {
+      "timestamp": "2026-10-11T04:05:57.617Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-montanucci.jpg",
+      "skipped": true
+    },
+    "palermo/bar-alba": {
+      "timestamp": "2026-10-11T04:05:57.618Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/bar-alba.jpg",
+      "skipped": true
+    },
+    "siena/caffe-fiorella": {
+      "timestamp": "2026-10-11T04:05:57.620Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-fiorella.jpg",
+      "skipped": true
+    },
+    "siracusa/bar-dolce-vita": {
+      "timestamp": "2026-10-11T04:05:57.621Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/bar-dolce-vita.jpg",
+      "skipped": true
+    },
+    "taormina/bar-turrisi": {
+      "timestamp": "2026-10-11T04:05:57.623Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/bar-turrisi.jpg",
+      "skipped": true
+    },
+    "torino/caffe-san-carlo": {
+      "timestamp": "2026-10-11T04:05:57.624Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-san-carlo.jpg",
+      "skipped": true
+    },
+    "venezia/bar-al-timon": {
+      "timestamp": "2026-10-11T04:05:57.625Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/bar-al-timon.jpg",
+      "skipped": true
+    },
+    "verona/caffe-wallner": {
+      "timestamp": "2026-10-11T04:05:57.626Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-wallner.jpg",
+      "skipped": true
     }
   },
   "failed": {},
   "stats": {
-    "total": 1224,
-    "completed": 1224,
+    "total": 1267,
+    "completed": 1267,
     "failed": 0,
-    "lastRun": "2026-10-10T10:19:40.645Z"
+    "lastRun": "2026-10-11T04:05:57.627Z"
   }
 }
