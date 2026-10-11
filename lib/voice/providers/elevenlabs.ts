@@ -19,10 +19,12 @@ export class ElevenLabsProvider implements VoiceProvider {
   private apiKey: string;
   private baseUrl = 'https://api.elevenlabs.io/v1';
 
-  // Default Italian voice mappings for characters
+  // Default voice mappings for characters
+  // Flash v2.5 is multilingual - these English voices work great with Italian
   // Can be overridden via environment or character sheet
   private voiceMap: Record<string, string> = {
-    default: 'pNInz6obpgDQGcFmaJgB', // Example: Adam voice
+    default: 'cgSgspJ2msm6clMCkdW9', // Jessica - Playful, Bright, Warm (female)
+    giulia: 'cgSgspJ2msm6clMCkdW9', // Jessica - perfect for a warm Roman barista
   };
 
   constructor(apiKey?: string) {
