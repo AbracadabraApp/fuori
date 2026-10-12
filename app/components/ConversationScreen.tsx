@@ -18,6 +18,7 @@ import {
 import { isDebugMode } from '@/lib/debug';
 import { audioFileName } from '@/lib/speech/audio-file';
 import { silenceAll } from '@/lib/speech/silence';
+import { revealCount, estimateSeconds } from '@/lib/speech/reveal';
 import styles from './ConversationScreen.module.css';
 
 // A zero-length WAV. Playing it during a tap "unlocks" audio on iPhone Safari,
@@ -79,6 +80,9 @@ export function ConversationScreen({
   const [transcript, setTranscript] = useState<Turn[]>([]);
   const [currentResponse, setCurrentResponse] = useState<string | null>(null);
   const [currentTranslation, setCurrentTranslation] = useState<string | null>(null);
+  // Typewriter subtitles: characters of the reply shown so far (null = all of it)
+  const [shown, setShown] = useState<number | null>(null);
+  const revealFrameRef = useRef<number | null>(null);
   const [error, setError] = useState<string | null>(null);
   // Shown when the hosted voice fails and the phone's voice takes over
   const [voiceFallback, setVoiceFallback] = useState<string | null>(null);
@@ -121,6 +125,10 @@ export function ConversationScreen({
       meterRef.current = null;
       setIsRecording(false);
       setIsSpeaking(false);
+      // Stop typing and show the whole reply, since nothing will finish speaking it
+      if (revealFrameRef.current !== null) cancelAnimationFrame(revealFrameRef.current);
+      revealFrameRef.current = null;
+      setShown(null);
     };
     const onVisibility = () => {
       if (document.hidden) silence();
@@ -153,9 +161,36 @@ export function ConversationScreen({
     return e;
   };
 
+  // Typewriter subtitles: show the reply as it's spoken so you listen rather than
+  // read ahead. progress() says how far through the speech we are (0–1).
+  const startReveal = (text: string, progress: () => number) => {
+    if (revealFrameRef.current !== null) cancelAnimationFrame(revealFrameRef.current);
+    const tick = () => {
+      const f = progress();
+      if (f >= 1) return finishReveal();
+      const n = revealCount(text, f);
+      setShown((prev) => (prev === null || n > prev ? n : prev));
+      revealFrameRef.current = requestAnimationFrame(tick);
+    };
+    revealFrameRef.current = requestAnimationFrame(tick);
+  };
+  // Show the whole reply: speech ended, was interrupted, or failed
+  const finishReveal = () => {
+    if (revealFrameRef.current !== null) cancelAnimationFrame(revealFrameRef.current);
+    revealFrameRef.current = null;
+    setShown(null);
+  };
+  // A new reply: hidden until the voice starts, then typed out as it speaks
+  const presentReply = (it: string, en: string) => {
+    finishReveal();
+    setShown(0);
+    setCurrentResponse(it);
+    setCurrentTranslation(en);
+  };
+
   // err is the hosted-voice failure, if any (null when no hosted voice is configured)
   const speakWithBrowser = (text: string, rate: number, err: FuoriError | null = null) => {
-    if (!activeRef.current) return; // left the screen or the app
+    if (!activeRef.current) return finishReveal(); // left the screen or the app
     try {
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = language.speechLang;
@@ -165,12 +200,23 @@ export function ConversationScreen({
       if (voice) utterance.voice = voice;
       setVoiceFallback(voiceNote(err, matchesGender, character.gender));
       setDebugInfo((d) => ({ ...d, voice: `${d.voice ?? 'browser'} · ${voice?.name ?? 'default'}${matchesGender ? '' : ' (wrong gender)'}` }));
-      utterance.onstart = () => setIsSpeaking(true);
-      utterance.onend = () => setIsSpeaking(false);
-      utterance.onerror = () => setIsSpeaking(false);
+      // Pace the subtitles: word boundaries where the phone reports them, else an estimate
+      let boundary = 0;
+      utterance.onboundary = (e) => { boundary = e.charIndex; };
+      utterance.onstart = () => {
+        setIsSpeaking(true);
+        const t0 = performance.now();
+        const est = estimateSeconds(text, rate) * 1000;
+        startReveal(text, () =>
+          Math.max(boundary / text.length, Math.min(0.97, (performance.now() - t0) / est))
+        );
+      };
+      utterance.onend = () => { setIsSpeaking(false); finishReveal(); };
+      utterance.onerror = () => { setIsSpeaking(false); finishReveal(); };
       speechSynthesis.speak(utterance);
     } catch {
-      // no speech available
+      // no speech available: show the text
+      finishReveal();
     }
   };
   const characterRole = character.role;
@@ -229,8 +275,7 @@ export function ConversationScreen({
 
       const npcTurn: Turn = { who: 'npc', transcript: turnOutput.it, translation: turnOutput.en };
       setTranscript([npcTurn]);
-      setCurrentResponse(turnOutput.it);
-      setCurrentTranslation(turnOutput.en);
+      presentReply(turnOutput.it, turnOutput.en);
 
       // Play audio at appropriate speed for learner level
       await playResponse(turnOutput.it, character.id, getSpeechSpeed());
@@ -265,6 +310,8 @@ export function ConversationScreen({
         if (data.useBrowserSpeech) {
           setDebugInfo((d) => ({ ...d, voice: 'browser (no hosted voice configured)' }));
           speakWithBrowser(text, data.speed || speed);
+        } else {
+          finishReveal(); // no voice at all: show the text
         }
       } else {
         // Audio stream
@@ -274,7 +321,7 @@ export function ConversationScreen({
         setDebugInfo((d) => ({ ...d, voice: `hosted (${Math.round(audioBlob.size / 1024)} KB)` }));
 
         // The reply arrived after the learner left: don't start talking
-        if (!activeRef.current) return;
+        if (!activeRef.current) return finishReveal();
 
         // Reuse the element unlocked during the tap so iPhone Safari allows playback
         const audio = audioRef.current ?? new Audio();
@@ -284,6 +331,10 @@ export function ConversationScreen({
         audio.src = audioUrl;
         audio.playbackRate = speed; // Control playback speed (0.5 = half speed, 2.0 = double speed)
         audioRef.current = audio;
+        // Type the subtitles out as the audio plays
+        startReveal(text, () =>
+          audio.ended ? 1 : audio.duration > 0 && isFinite(audio.duration) ? audio.currentTime / audio.duration : 0
+        );
         // Don't await - just start playback and return control immediately
         audio.play().catch((err) => {
           if (!activeRef.current) return; // paused because the learner left
@@ -375,6 +426,7 @@ export function ConversationScreen({
       speakingAtStartRef.current = (!!audio && !audio.paused && !audio.ended) || speechSynthesis.speaking;
       audio?.pause();
       speechSynthesis.cancel();
+      finishReveal(); // interrupted: show the rest of what they were saying
       setIsSpeaking(false);
 
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -519,8 +571,7 @@ export function ConversationScreen({
       const learnerTurn: Turn = { who: 'learner', transcript: transcription };
       const npcTurn: Turn = { who: 'npc', transcript: turnOutput.it, translation: turnOutput.en };
       setTranscript((prev) => [...prev, learnerTurn, npcTurn]);
-      setCurrentResponse(turnOutput.it);
-      setCurrentTranslation(turnOutput.en);
+      presentReply(turnOutput.it, turnOutput.en);
 
       // Step 3: Play character's response at appropriate speed for learner level
       await playResponse(turnOutput.it, character.id, getSpeechSpeed());
@@ -583,10 +634,21 @@ export function ConversationScreen({
               <div className={styles.replyText} key={currentResponse ?? ''}>
                 {showTranscripts && currentResponse && (
                   <div className={showEnglish ? styles.italianWithEnglish : styles.italian}>
-                    {currentResponse}
+                    {shown === null ? (
+                      currentResponse
+                    ) : (
+                      <>
+                        {currentResponse.slice(0, shown)}
+                        {/* The rest is laid out but invisible, so the card doesn't grow as it types */}
+                        <span className={styles.unspoken} aria-hidden>{currentResponse.slice(shown)}</span>
+                      </>
+                    )}
                   </div>
                 )}
-                {showEnglish && currentTranslation && <div className={styles.english}>{currentTranslation}</div>}
+                {/* English appears once the Italian has been spoken */}
+                {showEnglish && currentTranslation && shown === null && (
+                  <div className={styles.english}>{currentTranslation}</div>
+                )}
               </div>
             </div>
           )}

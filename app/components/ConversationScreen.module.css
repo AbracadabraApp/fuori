@@ -177,6 +177,10 @@
   color: var(--muted);
 }
 
+.unspoken {
+  visibility: hidden;
+}
+
 /* Mic area */
 .controls {
   position: absolute;

@@ -412,3 +412,12 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 - Test: `npm run test:silence`.
 - **Not verified on iPhone** (no audio in the headless browser here).
 - For the memory work: leaving the screen is also "conversation ends", so the end-of-conversation call can hang off the same cleanup effect.
+
+## 2026-10-11 evening: Typewriter subtitles (cloud session)
+
+- Josh: with the whole reply on screen he reads ahead instead of listening. Subtitles now type out word by word as the reply is spoken.
+- Pacing follows progress through the audio (hosted voice: current time ÷ duration; phone voice: its word boundaries where reported, else an estimate), not each word's real timing, so it can drift a word or two in pauses. Exact timing via ElevenLabs `with-timestamps` is the upgrade if the drift bothers.
+- The card is sized for the whole reply from the start (unspoken words laid out but invisible), so it doesn't grow as it types. Whole words only.
+- Shows everything at once when speech ends, when you interrupt with the mic, when you leave or switch apps, or if there's no voice at all. English (if on) appears after the Italian has been spoken.
+- `lib/speech/reveal.ts`, `npm run test:reveal`. Checked in Chromium with a fake reply and 4-second clip (screenshots at 0.7/2.2/3.7/6.2s). **Not verified on iPhone.**
+- Also tonight: default speech speed 0.7 → 0.9, beginner (English on) 0.5 → 0.7.
