@@ -6335,13 +6335,128 @@
       "timestamp": "2026-10-11T04:26:12.501Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/sofia-gelataia.jpg",
       "type": "portrait"
+    },
+    "roma/sandro-bar-angolo": {
+      "timestamp": "2026-10-12T19:49:10.478Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/sandro-bar-angolo.jpg",
+      "type": "portrait"
+    },
+    "roma/luisa-bar-mattina": {
+      "timestamp": "2026-10-12T20:18:53.383Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/luisa-bar-mattina.jpg",
+      "type": "portrait"
+    },
+    "roma/franco-ortolano": {
+      "timestamp": "2026-10-12T20:19:20.687Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/franco-ortolano.jpg",
+      "type": "portrait"
+    },
+    "roma/paola-formaggi": {
+      "timestamp": "2026-10-12T20:19:46.423Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/paola-formaggi.jpg",
+      "type": "portrait"
+    },
+    "roma/teresa-fiori": {
+      "timestamp": "2026-10-12T20:20:09.334Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/teresa-fiori.jpg",
+      "type": "portrait"
+    },
+    "roma/dario-fornaio": {
+      "timestamp": "2026-10-12T20:20:30.971Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/dario-fornaio.jpg",
+      "type": "portrait"
+    },
+    "roma/agnese-forno": {
+      "timestamp": "2026-10-12T20:20:54.036Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/agnese-forno.jpg",
+      "type": "portrait"
+    },
+    "roma/gigi-oste": {
+      "timestamp": "2026-10-12T20:21:13.117Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/gigi-oste.jpg",
+      "type": "portrait"
+    },
+    "roma/marisa-cuoca": {
+      "timestamp": "2026-10-12T20:21:36.604Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/marisa-cuoca.jpg",
+      "type": "portrait"
+    },
+    "roma/don-paolo": {
+      "timestamp": "2026-10-12T20:21:55.297Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/don-paolo.jpg",
+      "type": "portrait"
+    },
+    "roma/valerio-guida": {
+      "timestamp": "2026-10-12T20:22:19.588Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/valerio-guida.jpg",
+      "type": "portrait"
+    },
+    "roma/chiara-gelato": {
+      "timestamp": "2026-10-12T20:22:45.848Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/chiara-gelato.jpg",
+      "type": "portrait"
+    },
+    "roma/nonno-ettore": {
+      "timestamp": "2026-10-12T20:23:06.450Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/nonno-ettore.jpg",
+      "type": "portrait"
+    },
+    "roma/nonna-gina": {
+      "timestamp": "2026-10-12T20:23:26.322Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/nonna-gina.jpg",
+      "type": "portrait"
+    },
+    "roma/tommaso-pittore": {
+      "timestamp": "2026-10-12T20:23:49.381Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/tommaso-pittore.jpg",
+      "type": "portrait"
+    },
+    "roma/elena-libraia": {
+      "timestamp": "2026-10-12T20:24:14.097Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/elena-libraia.jpg",
+      "type": "portrait"
+    },
+    "roma/matteo-libraio": {
+      "timestamp": "2026-10-12T20:24:33.684Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/matteo-libraio.jpg",
+      "type": "portrait"
+    },
+    "roma/roberta-enoteca": {
+      "timestamp": "2026-10-12T20:24:51.205Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/roberta-enoteca.jpg",
+      "type": "portrait"
+    },
+    "roma/claudio-vinaio": {
+      "timestamp": "2026-10-12T20:25:10.725Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/claudio-vinaio.jpg",
+      "type": "portrait"
+    },
+    "roma/dottoressa-bruni": {
+      "timestamp": "2026-10-12T20:25:29.815Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/dottoressa-bruni.jpg",
+      "type": "portrait"
+    },
+    "roma/alessia-negozio": {
+      "timestamp": "2026-10-12T20:25:55.861Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/alessia-negozio.jpg",
+      "type": "portrait"
+    },
+    "roma/pietro-biglietteria": {
+      "timestamp": "2026-10-12T20:26:14.795Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/pietro-biglietteria.jpg",
+      "type": "portrait"
+    },
+    "roma/rosa-edicola": {
+      "timestamp": "2026-10-12T20:26:40.918Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/rosa-edicola.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 1267,
-    "completed": 1267,
+    "total": 1290,
+    "completed": 1290,
     "failed": 0,
-    "lastRun": "2026-10-11T04:26:15.509Z"
+    "lastRun": "2026-10-12T20:26:43.923Z"
   }
 }
