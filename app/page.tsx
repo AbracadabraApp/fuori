@@ -76,6 +76,7 @@ export default function Home() {
         character={characterSheet}
         characterPortrait={`/images/portraits/${characterSheet.id}.jpg`}
         cityName={cityData?.name || ''}
+        cityId={cityData?.id}
         onBack={() => setSelectedPlace(null)}
         showTranscripts={showTranscripts}
         showEnglish={showEnglish}

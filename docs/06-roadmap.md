@@ -9,9 +9,15 @@ This file is the one place for **what's in each milestone** and **what to do nex
 Updated 2026-10-12. Top of the list first; strike items off here as they're done.
 
 1. ~~**Postgres in Railway**~~ Done 2026-10-11: tables created on Railway (learners, character_memories, conversations).
-2. **Memory, saved transcripts and the review log** (M1, below): core M1 completion. Started 2026-10-11 by the laptop: `lib/db.ts`, `lib/learner.ts` (anonymous learner cookie), `lib/memory.ts` (load memory, start/save/end conversation). **Not wired in yet:** `/api/turn` and the conversation screen don't call it, and the end-of-conversation Claude call (notes + review log) isn't written. Leaving the screen is the "conversation ends" moment; hook it to the cleanup effect in `ConversationScreen`.
+2. **Memory, saved transcripts and the review log** (M1, below): core M1 completion.
+   - **Recording: done 2026-10-12.** Every turn is saved (`lib/recording.ts`); leaving marks the conversation ended. Read them at `/api/admin/conversations?key=…&format=text` once `ADMIN_KEY` is set in Railway.
+   - **Still to do:** the end-of-conversation Claude call that writes the character's notes and the review log (hook: `/api/conversation/end`), and loading notes into `{relationship}` on the next visit.
+   - **Then:** read real transcripts to judge reply length and the prompt audit fixes (below).
 3. **Roma portraits** (laptop, needs the xAI key): 23 Roma city characters have no portrait. `npm run images -- --city roma`, then `npm run test:images` should report 0 missing.
-4. **Prompt experiments** (version bump + changelog each time):
+4. **Prompt experiments** (version bump + changelog each time). Audit 2026-10-12, most likely causes of long turns first:
+   - the character always speaks first, into a void ("Someone has just walked up to you"): try letting the learner open by tapping the mic first
+   - the history is sent as one document ("Previous conversation: … Respond naturally as your character would"), not as alternating chat messages: try real dialogue messages
+   - "as your character would" invites performing the character; anchors' `setting` is an image description, which becomes talking points
    - a factual line that characters only receive text and can't hear accent or pronunciation (Salvatore "corrected" *grazie* and "Grigianto")
    - who the learner is: someone who lives here now, not a tourist (Salvatore asked how many days you're staying)
    - traits as manner, not expertise, on 5–10 characters ("local historian" → a history lecture; ~150 of 634 characters have traits like knowledgeable, storyteller, expert, chatty)

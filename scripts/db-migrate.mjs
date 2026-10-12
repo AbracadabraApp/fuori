@@ -62,7 +62,8 @@ async function migrate() {
 
   const pool = new Pool({
     connectionString,
-    ssl: connectionString.includes('railway.internal') ? false : { rejectUnauthorized: false },
+    // No SSL inside Railway's private network or for a local database (tests, dev)
+    ssl: /railway\.internal|localhost|127\.0\.0\.1|sslmode=disable/.test(connectionString) ? false : { rejectUnauthorized: false },
   });
 
   try {

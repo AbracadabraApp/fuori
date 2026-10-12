@@ -20,7 +20,8 @@
     "test:audio": "tsx tests/check-audio-file.ts",
     "test:roles": "tsx tests/check-roles.ts",
     "test:silence": "tsx tests/check-silence.ts",
-    "test:reveal": "tsx tests/check-reveal.ts"
+    "test:reveal": "tsx tests/check-reveal.ts",
+    "test:recording": "tsx tests/check-recording.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

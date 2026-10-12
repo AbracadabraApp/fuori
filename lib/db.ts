@@ -23,8 +23,8 @@ export function getPool(): Pool {
 
     pool = new Pool({
       connectionString,
-      // Railway Postgres is internal, no SSL needed
-      ssl: connectionString.includes('railway.internal') ? false : { rejectUnauthorized: false },
+      // No SSL inside Railway's private network or for a local database (tests, dev)
+      ssl: /railway\.internal|localhost|127\.0\.0\.1|sslmode=disable/.test(connectionString) ? false : { rejectUnauthorized: false },
       max: 20, // maximum pool size
       idleTimeoutMillis: 30000,
       connectionTimeoutMillis: 2000,
@@ -53,7 +53,7 @@ export async function closePool(): Promise<void> {
  * Execute a query with parameters.
  * Returns the full result object from pg.
  */
-export async function query<T extends QueryResultRow = any>(text: string, params?: any[]) {
+export async function query<T extends QueryResultRow = QueryResultRow>(text: string, params?: unknown[]) {
   const pool = getPool();
   return pool.query<T>(text, params);
 }

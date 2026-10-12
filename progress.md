@@ -425,3 +425,13 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 ## 2026-10-12: Voice dropout cause confirmed
 
 - Josh checked ElevenLabs: the character quota was used up. That's why the voice dropped mid-conversation on 2026-10-11 and the phone's voice took over. The fallback note now says "Voice service quota used up" when it happens. Josh upgraded the ElevenLabs plan.
+
+## 2026-10-12: Recording conversations; prompt audit (cloud session)
+
+- **Recording.** Josh wants real transcripts to analyse after the fact. Every turn is now saved to Postgres via `/api/turn` (`lib/recording.ts`, built on the laptop's `lib/memory.ts` and `lib/learner.ts`): the opening line starts a conversation (anonymous learner cookie), each reply appends the learner's line and the character's, in order. The conversation id travels in an `x-conversation-id` header; the screen sends it back with each turn and, on leaving, a beacon to `/api/conversation/end` marks it ended (a new turn reopens it). Debug mode shows "Saved: yes (id)".
+- Safety: recording never blocks or breaks a reply (errors logged, conversation carries on); does nothing without `DATABASE_URL`; a learner can only add to their own conversations.
+- **Reading them:** `GET /api/admin/conversations?key=…&format=text` (plain transcripts, phone-friendly) or JSON without `format`. Locked by `ADMIN_KEY` in Railway; 404 if it isn't set. **Josh: add `ADMIN_KEY` in Railway** to use it.
+- Fixed: `lib/db.ts` and `scripts/db-migrate.mjs` forced SSL for anything not inside Railway, so a local database couldn't connect; now off for localhost too. `query()` no longer uses `any`. `addConversationTurn` now takes the learner id (ownership) and reopens an ended conversation.
+- Test: `npm run test:recording` (needs a local `DATABASE_URL`; skips otherwise; refuses Railway). Checked end to end locally: admin route 404 without key, text output, end beacon.
+- **Not done:** the end-of-conversation notes + review log call, and loading notes into the prompt.
+- **Prompt audit** (no changes made): most likely causes of long turns are structural, not wording: the character speaks first with nothing to respond to, and history is sent as a document rather than alternating messages. Details in roadmap Now #4.

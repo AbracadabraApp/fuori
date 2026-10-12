@@ -100,14 +100,19 @@ export async function startConversation(
  */
 export async function addConversationTurn(
   conversationId: string,
+  learnerId: string,
   turn: ConversationTurn
-): Promise<void> {
-  await query(
+): Promise<boolean> {
+  // Only the learner who owns the conversation can add to it (the id comes from
+  // the browser). A new turn also reopens a conversation marked ended, e.g. after
+  // the phone briefly left the page. Returns false if nothing was updated.
+  const result = await query(
     `UPDATE conversations
-     SET turns = turns || $1::jsonb
-     WHERE id = $2`,
-    [JSON.stringify(turn), conversationId]
+     SET turns = turns || $1::jsonb, ended_at = NULL
+     WHERE id = $2 AND learner_id = $3`,
+    [JSON.stringify([turn]), conversationId, learnerId]
   );
+  return (result.rowCount ?? 0) > 0;
 }
 
 /**

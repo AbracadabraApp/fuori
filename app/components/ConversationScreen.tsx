@@ -46,6 +46,8 @@ async function measure<T>(fn: () => Promise<T>, done: (ms: number) => void): Pro
 
 interface DebugInfo {
   prompt?: string;
+  /** Whether this conversation is being saved, with the start of its id */
+  saved?: string;
   meter?: string;
   heard?: string;
   recording?: string;
@@ -58,6 +60,8 @@ interface ConversationScreenProps {
   character: CharacterSheet;
   characterPortrait?: string;
   cityName: string;
+  /** City id (e.g. 'napoli'), saved with the recorded conversation */
+  cityId?: string;
   onBack: () => void;
   showTranscripts?: boolean;
   showEnglish?: boolean;
@@ -68,6 +72,7 @@ export function ConversationScreen({
   character,
   characterPortrait,
   cityName,
+  cityId,
   onBack,
   showTranscripts = true,
   showEnglish = false,
@@ -107,6 +112,8 @@ export function ConversationScreen({
   // False once the learner has left the screen or switched apps: nothing may
   // start speaking after that, and a recording in progress is thrown away
   const activeRef = useRef(true);
+  // Id of this conversation in the database (set by the server on the opening line)
+  const conversationIdRef = useRef<string | null>(null);
 
   // Leaving the screen or switching apps silences the character and the mic.
   // Before this, characters kept talking after you went back or opened another app.
@@ -140,6 +147,11 @@ export function ConversationScreen({
       document.removeEventListener('visibilitychange', onVisibility);
       window.removeEventListener('pagehide', silence);
       silence();
+      // Leaving the screen ends the recorded conversation (a beacon survives navigation)
+      const id = conversationIdRef.current;
+      if (id && typeof navigator !== 'undefined' && navigator.sendBeacon) {
+        navigator.sendBeacon('/api/conversation/end', JSON.stringify({ conversationId: id }));
+      }
     };
   }, []);
 
@@ -265,13 +277,15 @@ export function ConversationScreen({
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ character, transcript: [] }),
+            body: JSON.stringify({ character, transcript: [], cityId }),
           },
           'opening line'
         )
       );
       const turnOutput: TurnOutput = await response.json();
       setDebugInfo((d) => ({ ...d, prompt: response.headers.get('x-prompt-version') ?? undefined }));
+      conversationIdRef.current = response.headers.get('x-conversation-id');
+      setDebugInfo((d) => ({ ...d, saved: conversationIdRef.current ? `yes (${conversationIdRef.current.slice(0, 8)})` : 'no' }));
 
       const npcTurn: Turn = { who: 'npc', transcript: turnOutput.it, translation: turnOutput.en };
       setTranscript([npcTurn]);
@@ -560,13 +574,15 @@ export function ConversationScreen({
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ learnerSaid: transcription, character, transcript }),
+            body: JSON.stringify({ learnerSaid: transcription, character, transcript, cityId, conversationId: conversationIdRef.current }),
           },
           'reply'
         )
       );
       const turnOutput: TurnOutput = await res.json();
       setDebugInfo((d) => ({ ...d, prompt: res.headers.get('x-prompt-version') ?? undefined }));
+      conversationIdRef.current = res.headers.get('x-conversation-id') ?? conversationIdRef.current;
+      setDebugInfo((d) => ({ ...d, saved: conversationIdRef.current ? `yes (${conversationIdRef.current.slice(0, 8)})` : 'no' }));
 
       const learnerTurn: Turn = { who: 'learner', transcript: transcription };
       const npcTurn: Turn = { who: 'npc', transcript: turnOutput.it, translation: turnOutput.en };
@@ -663,6 +679,7 @@ export function ConversationScreen({
           {debug && (
             <div className={styles.debug}>
               <div><b>Prompt:</b> {debugInfo.prompt ?? '—'}</div>
+              <div><b>Saved:</b> {debugInfo.saved ?? '—'}</div>
               <div><b>Recording:</b> {debugInfo.recording ?? '—'}</div>
               <div><b>Meter:</b> {debugInfo.meter ?? '—'}</div>
               <div><b>Heard:</b> {debugInfo.heard ?? '—'}</div>

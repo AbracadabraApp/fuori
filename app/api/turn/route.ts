@@ -5,6 +5,8 @@ import { runTurn } from '@/lib/turn';
 import { promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { CharacterSheet, Turn } from '@/lib/types';
 import { logServerError } from '@/lib/server-log';
+import { getOrCreateLearnerId } from '@/lib/learner';
+import { recordTurn, recordingEnabled } from '@/lib/recording';
 
 
 export async function POST(request: NextRequest) {
@@ -19,7 +21,7 @@ export async function POST(request: NextRequest) {
 
     // Parse and validate request body
     const body = await request.json();
-    const { learnerSaid, character, transcript } = body;
+    const { learnerSaid, character, transcript, conversationId, cityId } = body;
 
     // Basic validation
     if (!character) {
@@ -56,8 +58,30 @@ export async function POST(request: NextRequest) {
       })
     );
 
-    // Return the validated output; the prompt version travels in a header
-    return NextResponse.json(turnOutput, { headers: { 'x-prompt-version': version } });
+    // Save the exchange so conversations can be reviewed later. Never blocks the
+    // reply: recording problems are logged and the conversation carries on.
+    let savedId: string | null = null;
+    if (recordingEnabled()) {
+      try {
+        const learnerId = await getOrCreateLearnerId();
+        savedId = await recordTurn({
+          learnerId,
+          conversationId: typeof conversationId === 'string' ? conversationId : null,
+          character: character as CharacterSheet,
+          cityId: typeof cityId === 'string' ? cityId : (character as CharacterSheet).city.toLowerCase(),
+          promptVersion: version,
+          learnerSaid: (transcript || []).length ? learnerSaid : undefined,
+          reply: turnOutput,
+        });
+      } catch (err) {
+        logServerError(request, 'recording', err);
+      }
+    }
+
+    // Return the validated output; the prompt version and conversation id travel in headers
+    const headers: Record<string, string> = { 'x-prompt-version': version };
+    if (savedId) headers['x-conversation-id'] = savedId;
+    return NextResponse.json(turnOutput, { headers });
   } catch (error) {
     logServerError(request, 'turn', error);
 
