@@ -8,17 +8,15 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 Updated 2026-10-11. Top of the list first; strike items off here as they're done.
 
-1. **Measure level and length in `npm run test:conversations`.** Add a level-fit score and a turn-length score (separate from naturalness), level before and after "non capisco", and a simulated learner who never says they're learning. The grader currently says not to penalize complex Italian, so nothing catches the main problem from phone play; changing that line needs Josh's OK. Gives a baseline before any prompt change.
-2. **Score the learner, without using it.** A scorer that reads a conversation and estimates the learner's level from what they said, with the evidence. Not sent to characters. Tested the same way as the characters: simulated learners of known levels (A1, A2, B1) talk to characters, and the scorer should recover each one's level. Caution: the same model writing and judging the learners is circular, so also check it on Josh's real conversations once they're saved, against Josh's own sense of his level (not a measured one). Short conversations give little evidence, so it should say when it can't tell. Becomes the starting point for the learner level in M2.
-3. **Prompt experiments, each compared with the test above** (version bump + changelog each time):
+1. **Postgres in Railway** (Josh): unblocks memory, saved transcripts and the review log.
+2. **Memory, saved transcripts and the review log** (M1, below): core M1 completion.
+3. **Prompt experiments** (version bump + changelog each time):
    - a factual line that characters only receive text and can't hear accent or pronunciation (Salvatore "corrected" *grazie* and "Grigianto")
    - who the learner is: someone who lives here now, not a tourist (Salvatore asked how many days you're staying)
    - traits as manner, not expertise, on 5–10 characters ("local historian" → a history lecture; ~150 of 634 characters have traits like knowledgeable, storyteller, expert, chatty)
    - the "noticed" reply field, if Josh decides yes ([open question](open-design-questions.md#11-level-and-speaking-2026-10-11))
-4. **Postgres in Railway** (Josh): unblocks memory, saved transcripts and the review log.
-5. **Memory, saved transcripts and the review log** (M1, below).
-6. **ElevenLabs quota** (Josh): check usage; likely cause of the voice dropping mid-conversation on 2026-10-11.
-7. **Image sizes and settings (low priority).** The image request sets no size, so the generator picks one: cities are all square (49), places are mostly wide 3:2 (537 wide, 62 tall, 7 square), portraits are mostly tall 2:3 (596, though `07-visuals.md` says square). Place cards show a square crop, so wide images lose their sides and signs can be cut off. Steps: decide the size for each kind of image; set it in the request (`aspect_ratio`, check xAI accepts it with one test); give every place prompt its location and a sign rule (Caffè Toledo came out as Paris's Café de Flore because its prompt never says Napoli, and about 350 of 594 place prompts don't name Italy or the city); then regenerate only the ones that are off. Tested wording: "…a busy café on a main shopping street in the Centro Storico of Napoli, Italy… The café's sign reads "Caffè Toledo". Any other lettering is everyday Italian street detail, like a chalkboard menu or a street name; no banners, emblems or signs naming the neighbourhood or city."
+4. **ElevenLabs quota** (Josh): check usage; likely cause of the voice dropping mid-conversation on 2026-10-11.
+5. **Image sizes and settings (low priority).** The image request sets no size, so the generator picks one: cities are all square (49), places are mostly wide 3:2 (537 wide, 62 tall, 7 square), portraits are mostly tall 2:3 (596, though `07-visuals.md` says square). Place cards show a square crop, so wide images lose their sides and signs can be cut off. Steps: decide the size for each kind of image; set it in the request (`aspect_ratio`, check xAI accepts it with one test); give every place prompt its location and a sign rule (Caffè Toledo came out as Paris's Café de Flore because its prompt never says Napoli, and about 350 of 594 place prompts don't name Italy or the city); then regenerate only the ones that are off. Tested wording: "…a busy café on a main shopping street in the Centro Storico of Napoli, Italy… The café's sign reads "Caffè Toledo". Any other lettering is everyday Italian street detail, like a chalkboard menu or a street name; no banners, emblems or signs naming the neighbourhood or city."
 
 ## M1: Navigate cities and hold a conversation that's remembered
 
@@ -35,9 +33,7 @@ Updated 2026-10-11. Top of the list first; strike items off here as they're done
 - [x] Tests: models, schema, prompt, reply, voices, feed, audio, roles, images, and graded simulated conversations
 
 **To do**
-- [ ] Level and length in the conversation test ([Now #1](#now-ranked))
-- [ ] Learner-level scorer, observe only ([Now #2](#now-ranked))
-- [ ] Prompt experiments ([Now #3](#now-ranked))
+- [ ] Prompt experiments ([Now #3](#now-ranked)): text-only clarification, "lives here" context, manner traits
 - [ ] Postgres: `learners`, `character_memories`, `conversations` ([Data model](09-data-model.md#storage-strategy)); anonymous learner id in a server-set cookie
 - [ ] Save each conversation: character, place, times, prompt version, and turns (who, text, English, time). No audio.
 - [ ] When a conversation ends, one Claude call writes:
@@ -57,6 +53,23 @@ Updated 2026-10-11. Top of the list first; strike items off here as they're done
 - [ ] Where next: characters suggest places, "cambia aria", "vai dove vuoi" (`/api/suggest`, `/api/scene`)
 - [ ] Reasons to return: what's new in a character's life since your last visit, generated when you come back
 - [ ] Fewer, deeper cities with places and people generated as you explore
+
+### Level-aware dialogue (deferred from M1)
+
+**Context:** Phone testing shows characters speak too complex. M1 tests whether immersion + memory + review log work without level tuning. If dialogue needs adjustment in M2, this infrastructure becomes relevant.
+
+**Approach:** Characters receive explicit level information ("They speak Italian at A2 level") and naturally adjust, not rigid vocabulary gating. Before trusting this in production, validate that Claude has a consistent, accurate model of CEFR levels.
+
+**Validation steps:**
+1. **Build level detection**: scorer that classifies Italian text as A1/A2/B1 with evidence
+2. **Test on known examples**: validate scorer accuracy on reference materials, not just Claude-generated text
+3. **Test in conversations**: simulated learners speak at specified levels, measure if:
+   - Learners actually produce level-appropriate Italian (validates the simulation)
+   - Characters adjust their complexity appropriately (validates level-aware prompting)
+4. **Validate on real data**: check scorer against saved conversations from M1, compare with self-assessed level
+5. **Iterate prompts**: use measurements to guide character prompt improvements
+
+**Only then:** add level to production character prompts and trust it works.
 
 **Done when:** you come back to the same bar on day 3, the barista greets you by name and remembers your usual, and Magda points out something you've been missing.
 
