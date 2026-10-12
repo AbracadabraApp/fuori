@@ -424,4 +424,4 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 
 ## 2026-10-12: Voice dropout cause confirmed
 
-- Josh checked ElevenLabs: the character quota was used up. That's why the voice dropped mid-conversation on 2026-10-11 and the phone's voice took over. The fallback note now says "Voice service quota used up" when it happens.
+- Josh checked ElevenLabs: the character quota was used up. That's why the voice dropped mid-conversation on 2026-10-11 and the phone's voice took over. The fallback note now says "Voice service quota used up" when it happens. Josh upgraded the ElevenLabs plan.
