@@ -178,7 +178,7 @@ export function ConversationScreen({
   // Calculate speech speed based on settings (hidden difficulty adjustment)
   // English subtitles = beginner (slowest), Default = intermediate, Dialect = advanced (natural speed)
   const getSpeechSpeed = (): number => {
-    if (showEnglish) return 0.5; // Beginner: very slow for max comprehension
+    if (showEnglish) return 0.7; // Beginner: slower (was 0.5; raised 2026-10-11 with the default)
     if (allowDialect) return 1.0; // Advanced: natural speed with regional variations
     // Default: just under natural. Was 0.7; Josh found that too slow on the phone (2026-10-11)
     return 0.9;
