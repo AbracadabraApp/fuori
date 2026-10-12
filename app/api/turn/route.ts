@@ -2,7 +2,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { runTurn } from '@/lib/turn';
-import { promptVersion } from '@/lib/prompts/build-turn-prompt';
+import { promptVersion, historyModeFromEnv } from '@/lib/prompts/build-turn-prompt';
 import { CharacterSheet, Turn } from '@/lib/types';
 import { logServerError } from '@/lib/server-log';
 import { getOrCreateLearnerId } from '@/lib/learner';
@@ -74,6 +74,7 @@ export async function POST(request: NextRequest) {
         character: (character as CharacterSheet).id,
         turn: (transcript || []).length === 0 ? 'opening' : 'reply',
         promptVersion: version,
+        history: historyModeFromEnv(),
       })
     );
 

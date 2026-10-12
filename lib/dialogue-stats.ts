@@ -2,7 +2,7 @@
  * Numbers about how long and how loaded the characters' turns are, so dialogue
  * changes can be compared by measurement rather than by single examples.
  * Used by the conversation test (breadth) and on recorded conversations (depth).
- * See docs/10-testing.md → "How dialogue quality is judged".
+ * See docs/10-testing.md → "Dialogue quality".
  *
  * These are measurements, not rules: nothing here is sent to the characters.
  */

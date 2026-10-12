@@ -2,6 +2,7 @@
 // Catches the bug where a missing additionalProperties: false made every turn return 400.
 import { turnOutputJsonSchema } from '../lib/prompts/turn-output-schema.ts';
 import { memoryOutputJsonSchema } from '../lib/prompts/memory-output-schema.ts';
+import { qualityOutputJsonSchema } from '../lib/prompts/quality-output-schema.ts';
 
 const UNSUPPORTED = ['maxLength', 'minLength', 'maxItems', 'minimum', 'maximum', 'pattern'];
 const problems = [];
@@ -24,8 +25,9 @@ function walk(node, path) {
 
 walk(turnOutputJsonSchema, 'turn schema');
 walk(memoryOutputJsonSchema, 'memory schema');
+walk(qualityOutputJsonSchema, 'quality schema');
 if (problems.length) {
   console.error('Turn output schema problems:\n' + problems.join('\n'));
   process.exit(1);
 }
-console.log('OK: turn and memory output schemas follow structured-output rules');
+console.log('OK: turn, memory and quality output schemas follow structured-output rules');

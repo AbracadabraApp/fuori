@@ -1,19 +1,55 @@
 # Testing Strategy
 
-> **M1 note:** The conversation test in use today is `npm run test:conversations` (see `tests/README.md` and [M1-CONVERSATION-MODEL.md](M1-CONVERSATION-MODEL.md#testing)). The simulated-learner suite and judge rubric described below were archived to `tests/archive/` on 2026-10-10.
+> **M1 note:** Dialogue quality is judged by the scorecard and the replay test ("Dialogue quality" below, and `tests/README.md`). `npm run test:conversations` remains for exploring. The simulated-learner suite and judge rubric described below were archived to `tests/archive/` on 2026-10-10.
 
 Testing a voice-first language game means validating not just code, but conversation quality, language accuracy, and the learner experience. This document covers automated tests, manual test protocols, and quality checks.
 
 **For a one-person prototype, what matters now is section 4 (level rules and the simulated learner) and testing on your phone (section 9).** The rest is reference for later milestones.
 
-## How dialogue quality is judged (decided 2026-10-12)
+## Dialogue quality (decided 2026-10-12)
 
-Josh will never test at scale himself, so dialogue quality comes from two sources, each covering what the other can't:
+Josh will never test at scale himself, and he doesn't read transcripts: automated review does, and he asks for a transcript when he wants one. One loop covers measuring, grading, testing and prompt changes, so prompts are never adjusted ad hoc.
 
-1. **Breadth: Claude tests the world.** Simulated conversations across many places and characters (`npm run test:conversations`), run as a fixed before-and-after comparison when the prompt changes: the same characters and the same learner lines, a few runs each, one change at a time. Scored on numbers where they exist (reply length in words, opener length, questions per reply; real turns run about 1–2 seconds, 5–10 words) and on naturalness, so shorter-but-stilted shows up as a loss. A second model (Grok) as a second grader is a planned check on Claude grading Claude.
-2. **Depth: Claude analyses Josh's real transcripts.** Every conversation is recorded with its prompt version (`lib/recording.ts`). A daily scheduled task reads the new ones, analyses them (length, openers, level, speech-to-text errors, character slips) and writes a dated report to `docs/reports/`. Josh's own lines later become the scripted learner lines for the fixed test.
+### 1. One scorecard
 
-Josh's role: notice problems in play, and make the final call on whether a change feels better. He doesn't run tests or edit prompts. Small factual fixes (e.g. "characters can't hear pronunciation") can go in with a quick check; matters of taste go through the before-and-after test.
+Every recorded conversation is scored when it ends (`lib/quality.ts`, after the memory call), and every score carries the prompt version that produced the conversation. The scorecard (`lib/scorecard.ts`) adds scores up:
+
+| Measure | Target | How |
+|---|---|---|
+| Reply length (median words) | ≤ 20 for now, heading toward 10 | Code |
+| Opener length (words) | ≤ 25 | Code |
+| Replies with 2+ questions | ≤ 10% | Code |
+| Pulls back when you're lost | ≥ 80%: the next reply is shorter (code) and simpler (judge) | Code + judge |
+| Pronunciation corrections | 0 (characters only see text) | Judge |
+| Unprompted corrections | ≤ 2 per conversation, not every turn | Judge |
+| Understands garbled speech | ≥ 90% | Judge |
+| English nobody asked for | 0 | Judge |
+| Memory on return | Remembers name, facts and corrections | Checked by hand for now |
+| Feels alive | Josh's call | Josh |
+
+The judge is one Claude call with its own versioned prompt (`content/it/prompts/quality.md`). It only counts; it doesn't grade taste.
+
+**Not failures** (Josh, 2026-10-12): being asked "are you a tourist?" (realistic for an American ordering coffee; correcting it is a memory test), teaching when the learner asks about a word, and one or two unprompted corrections a conversation (an explicit correction teaches more than an echo). Rita correcting on every turn is the problem, not correcting.
+
+**Reading it:** `/api/admin/conversations?format=scorecard` (one block per prompt version; `limit=200` for more history). Each transcript in `format=text` ends with its SCORE line.
+
+### 2. Real transcripts are the main source; simulation has one job
+
+Real play is what's measured. Simulation is only the **gate** for a prompt change: the replay test (`npm run test:replay`) replays Josh's real learner lines against the prompt, with the characters he talked to plus a seeded sample he hasn't met (breadth across the ~634 characters), and scores them with the same scorer. Two runs on the same lines are a fair before-and-after. `npm run test:conversations` (simulated learners, 1–10 grades) stays for exploring, not for decisions.
+
+### 3. How measurements become changes
+
+1. **Problem list.** Scorecard misses, ranked by how often and how much they hurt. Prompt changes come only from the top of the list (roadmap → Now).
+2. **One change at a time, stated as a prediction** in the prompt changelog: "fewer turns of history should cut median reply length from ~60 to under 30 without hurting understanding."
+3. **Gate.** The replay test must move the target measure and leave no other measure worse beyond its tolerance (`gate()` in `lib/scorecard.ts`).
+4. **Two kinds of change.** Factual fixes ("characters can't hear pronunciation") go in directly. Taste changes pass the gate and then need Josh's OK.
+5. **Confirm in real play.** The next ~10 real conversations on the new version confirm the gain on the scorecard, or it's rolled back.
+
+### 4. Rhythm
+
+- **Each conversation:** scored when it ends (built, M1).
+- **Digest:** every few hours or every N new conversations, refreshes the problem list and the scorecard by version, and catches conversations that never sent an end signal (M2). Until then, Claude runs the same analysis when Josh asks.
+- **Josh hears about it** only when something gets worse or a taste change waits for his call.
 
 Not doing: A/B testing on real users (one user; it would be noise).
 

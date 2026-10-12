@@ -10,6 +10,7 @@ import { characterForPlace } from '@/lib/characters/for-place';
 import { cities } from '@/content/it/cities';
 import type { CharacterSheet } from '@/lib/types';
 import type { MemoryOutput, Summarizer } from '@/lib/remember';
+import type { Judge } from '@/lib/quality';
 
 const problems: string[] = [];
 const check = (ok: boolean, msg: string) => { if (!ok) problems.push(msg); };
@@ -63,14 +64,17 @@ async function dbChecks() {
     const calls: Parameters<Summarizer>[0][] = [];
     const out: MemoryOutput = { notes: ['Their name is Josh', 'Lives in Trastevere'], review: { items: [{ it: 'magari', en: 'if only', why: 'used twice' }], mistakes: [] } };
     const fake: Summarizer = async (input) => { calls.push(input); await new Promise((r) => setTimeout(r, 50)); return out; };
+    // Scoring runs after memory (lib/quality.ts); a fake so this test never calls Claude
+    const judged: string[] = [];
+    const fakeJudge: Judge = async () => { judged.push('x'); return { pronunciationCorrections: 0, correctionsAsked: 0, correctionsUnprompted: 1, garbled: 0, garbledMissed: 0, lost: [], englishUnasked: 0, note: 'None' }; };
 
     const id = (await recordTurn({ ...base, conversationId: null, reply: { it: 'Buongiorno!', en: 'Morning!' }, memory: { visits: 0, lastVisit: null, notes: [] } }))!;
     await recordTurn({ ...base, conversationId: id, learnerSaid: 'Mi chiamo Josh', reply: { it: 'Piacere!', en: 'Nice to meet you!' } });
-    check((await rememberConversation(id, me, fake)) === 'nothing new' && calls.length === 0, 'one learner line should not be remembered yet');
+    check((await rememberConversation(id, me, fake, fakeJudge)) === 'nothing new' && calls.length === 0, 'one learner line should not be remembered yet');
 
     await recordTurn({ ...base, conversationId: id, learnerSaid: 'Abito a Trastevere', reply: { it: 'Che bello!', en: 'Lovely!' } });
     // Leaving sends two signals at once (background + close): only one writes
-    const both = await Promise.all([rememberConversation(id, me, fake), rememberConversation(id, me, fake)]);
+    const both = await Promise.all([rememberConversation(id, me, fake, fakeJudge), rememberConversation(id, me, fake, fakeJudge)]);
     check(both.sort().join(',') === 'nothing new,saved', `two end signals at once: ${both.join(', ')}`);
     check(calls.length === 1, `memory call ran ${calls.length} times for one ending`);
     check(calls[0]?.turns.length === 5 && calls[0]?.notes.length === 0, 'memory call got the wrong transcript or notes');
@@ -80,7 +84,7 @@ async function dbChecks() {
     const [row] = (await query<{ review: { items: unknown[]; promptVersion?: string } }>('SELECT review FROM conversations WHERE id = $1', [id])).rows;
     check(row.review?.items.length === 1 && !!row.review.promptVersion, 'review log not saved with its prompt version');
 
-    check((await rememberConversation(id, me, fake)) === 'nothing new' && calls.length === 1, 'ending again with no new turns rewrote memory');
+    check((await rememberConversation(id, me, fake, fakeJudge)) === 'nothing new' && calls.length === 1, 'ending again with no new turns rewrote memory');
 
     // The rest of this conversation still sees what they knew when it started
     const atStart = await loadMemoryAtStart(id, me);
@@ -90,8 +94,8 @@ async function dbChecks() {
     // Coming back from the background reopens it; a failed call leaves it to retry
     await recordTurn({ ...base, conversationId: id, learnerSaid: 'Ci vediamo domani', reply: { it: 'A domani!', en: 'See you tomorrow!' } });
     const failing: Summarizer = async () => { throw new Error('Claude down'); };
-    check((await rememberConversation(id, me, failing)) === 'failed', 'failing call should report failed');
-    check((await rememberConversation(id, me, fake)) === 'saved', 'after a failure the next ending should retry');
+    check((await rememberConversation(id, me, failing, fakeJudge)) === 'failed', 'failing call should report failed');
+    check((await rememberConversation(id, me, fake, fakeJudge)) === 'saved', 'after a failure the next ending should retry');
     check(calls.at(-1)?.turns.length === 7 && calls.at(-1)?.notes.length === 2, 'rewrite should get the full transcript and the existing notes');
     mem = await loadCharacterMemory(me, person.id);
     check(mem.visits === 1, `one conversation counted as ${mem.visits} visits`);
@@ -100,7 +104,7 @@ async function dbChecks() {
     const id2 = (await recordTurn({ ...base, conversationId: null, reply: { it: 'Ciao Josh!', en: 'Hi Josh!' }, memory: mem }))!;
     await recordTurn({ ...base, conversationId: id2, learnerSaid: 'Un caffè', reply: { it: 'Subito', en: 'Right away' } });
     await recordTurn({ ...base, conversationId: id2, learnerSaid: 'Grazie', reply: { it: 'Prego', en: 'Welcome' } });
-    await rememberConversation(id2, me, fake);
+    await rememberConversation(id2, me, fake, fakeJudge);
     check((await loadCharacterMemory(me, person.id)).visits === 2, 'second conversation did not count as a second visit');
     check((await loadMemoryAtStart(id2, me))?.visits === 1, 'second conversation should start knowing one visit');
   } finally {

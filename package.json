@@ -10,6 +10,7 @@
     "test:models": "node tests/check-model-ids.mjs",
     "test:schema": "node --experimental-strip-types tests/check-turn-schema.mjs",
     "test:conversations": "tsx --env-file-if-exists=.env.local tests/conversations/run.ts",
+    "test:replay": "tsx --env-file-if-exists=.env.local tests/conversations/replay.ts",
     "test:prompt": "tsx tests/check-prompt.ts",
     "test:reply": "tsx tests/check-reply-text.ts",
     "test:images": "tsx tests/check-images.ts",
@@ -25,6 +26,8 @@
     "test:stats": "tsx tests/check-dialogue-stats.ts",
     "test:memory": "tsx tests/check-memory.ts",
     "test:transcribe": "tsx tests/check-transcribe.ts",
+    "test:quality": "tsx tests/check-quality.ts",
+    "test:history": "tsx tests/check-history.ts",
     "smoke:memory": "tsx scripts/smoke-memory.ts"
   },
   "dependencies": {

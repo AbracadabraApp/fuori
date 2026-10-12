@@ -6,25 +6,20 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now (ranked)
 
-Updated 2026-10-12. Top of the list first; strike items off here as they're done.
+Updated 2026-10-12 (evening). Top of the list first; strike items off here as they're done. How prompt changes are decided: [10-testing.md → Dialogue quality](10-testing.md#dialogue-quality-decided-2026-10-12).
 
-1. ~~**Postgres in Railway**~~ Done 2026-10-11: tables created on Railway (learners, character_memories, conversations).
-2. **Memory, saved transcripts and the review log** (M1, below): core M1 completion.
-   - **Recording: done 2026-10-12.** Every turn is saved (`lib/recording.ts`); leaving marks the conversation ended. Read them at `/api/admin/conversations?key=…&format=text` once `ADMIN_KEY` is set in Railway.
-   - **Memory: done 2026-10-12.** Leaving (or backgrounding the app) after 2+ learner lines writes the character's notes and the review log (`lib/remember.ts`, prompt `content/it/prompts/memory.md`); next visit the notes fill `{relationship}`. Review log and notes show in the admin transcripts.
-   - **To check on the phone:** come back to a character another day; do they remember your name and something you talked about? Is the review log worth learning from?
-   - **Then:** read real transcripts to judge reply length and the prompt audit fixes (below).
-3. **Roma portraits** (laptop, needs the xAI key): 23 Roma city characters have no portrait. `npm run images -- --city roma`, then `npm run test:images` should report 0 missing.
-4. **Prompt experiments** (version bump + changelog each time). Measure first: `npm run test:conversations -- --seed=7` on the laptop gives the baseline (length numbers added 2026-10-12), then the same seed after each change. Audit 2026-10-12, most likely causes of long turns first:
+1. ~~**Postgres, recording, memory, Roma portraits, ElevenLabs quota**~~ Done 2026-10-11/12. `ADMIN_KEY` set in Railway 2026-10-12. Josh's first remembered conversations (Rita, Giulia) were saved well; a true return visit is still to test.
+2. ~~**Pronunciation fact line**~~ Done 2026-10-12 (character prompt 2026-10-12b): characters only see the transcription, so they stop drilling "ca-cio e pe-pe". Factual fix, no gate.
+3. ~~**Score each conversation when it ends**~~ Built 2026-10-12 (`lib/quality.ts`, judge prompt `content/it/prompts/quality.md`, scorecard `lib/scorecard.ts`). Read at `/api/admin/conversations?format=scorecard`.
+4. ~~**Replay test**~~ Built 2026-10-12: `npm run test:replay` (Josh's real lines, his characters plus a seeded sample, same scorer, `gate()`).
+5. **First prompt change through the gate: less history per turn, as real messages.** Built behind `TURN_HISTORY=recent` (off). Prediction: median reply falls from ~60 words (Rita, Rosa on 2026-10-12) to under 30, with nothing else worse. On the laptop: `npm run test:replay -- --refresh`, then `npm run test:replay -- --ab=history`. If the gate passes and Josh agrees, set `TURN_HISTORY=recent` in Railway; confirm on the next ~10 real conversations.
+6. **Next candidates from the problem list** (after #5, one at a time, through the gate): the opener and too many questions per reply. Earlier audit notes, still relevant:
    - the opener has nothing to respond to ("Someone has just walked up to you"), so the character fills the silence with several things at once. Letting the learner speak first was considered and dropped (Josh: he'll only ever say "buongiorno", so the character still has to give him something to answer). What's wanted: an opener that hands the learner one clear thing to respond to. Levers: what the character is doing right now (the scene), and the cold-start scene card with things to do there (ideas.md Coda #7), so the learner arrives with a reason
-   - the history is sent as one document ("Previous conversation: … Respond naturally as your character would"), not as alternating chat messages: try real dialogue messages
    - "as your character would" invites performing the character; anchors' `setting` is an image description, which becomes talking points
-   - a factual line that characters only receive text and can't hear accent or pronunciation (Salvatore "corrected" *grazie* and "Grigianto")
-   - who the learner is: someone who lives here now, not a tourist (Salvatore asked how many days you're staying)
    - traits as manner, not expertise, on 5–10 characters ("local historian" → a history lecture; ~150 of 634 characters have traits like knowledgeable, storyteller, expert, chatty)
    - the "noticed" reply field, if Josh decides yes ([open question](open-design-questions.md#11-level-and-speaking-2026-10-11))
-5. ~~**ElevenLabs quota**~~ Checked by Josh 2026-10-12: the quota was used up, which caused the voice dropping mid-conversation on 2026-10-11. Long replies (~500 characters each) use it fast. Josh upgraded the ElevenLabs plan the same day.
-6. **Image sizes and settings (low priority).** The image request sets no size, so the generator picks one: cities are all square (49), places are mostly wide 3:2 (537 wide, 62 tall, 7 square), portraits are mostly tall 2:3 (596, though `07-visuals.md` says square). Place cards show a square crop, so wide images lose their sides and signs can be cut off. Steps: decide the size for each kind of image; set it in the request (`aspect_ratio`, check xAI accepts it with one test); give every place prompt its location and a sign rule (Caffè Toledo came out as Paris's Café de Flore because its prompt never says Napoli, and about 350 of 594 place prompts don't name Italy or the city); then regenerate only the ones that are off. Tested wording: "…a busy café on a main shopping street in the Centro Storico of Napoli, Italy… The café's sign reads "Caffè Toledo". Any other lettering is everyday Italian street detail, like a chalkboard menu or a street name; no banners, emblems or signs naming the neighbourhood or city."
+7. **Return-visit memory checks** (by hand until the M2 digest): does a character use your name and something you said; does a correction you give ("vivo qui adesso") change how they treat you next time?
+8. **Image sizes and settings (low priority).** The image request sets no size, so the generator picks one: cities are all square (49), places are mostly wide 3:2 (537 wide, 62 tall, 7 square), portraits are mostly tall 2:3 (596, though `07-visuals.md` says square). Place cards show a square crop, so wide images lose their sides and signs can be cut off. Steps: decide the size for each kind of image; set it in the request (`aspect_ratio`, check xAI accepts it with one test); give every place prompt its location and a sign rule (Caffè Toledo came out as Paris's Café de Flore because its prompt never says Napoli, and about 350 of 594 place prompts don't name Italy or the city); then regenerate only the ones that are off. Tested wording: "…a busy café on a main shopping street in the Centro Storico of Napoli, Italy… The café's sign reads "Caffè Toledo". Any other lettering is everyday Italian street detail, like a chalkboard menu or a street name; no banners, emblems or signs naming the neighbourhood or city."
 
 ## M1: Navigate cities and hold a conversation that's remembered
 
@@ -53,6 +48,8 @@ Updated 2026-10-12. Top of the list first; strike items off here as they're done
 
 ## M2: Magda, the day, and people who know you
 
+- [ ] Dialogue digest: every few hours or N new conversations, refresh the problem list and scorecard by prompt version, catch conversations that never sent an end signal, notify Josh only on a regression or a taste change to approve ([plan](10-testing.md#dialogue-quality-decided-2026-10-12)); then a second grader (Grok) on the judge
+- [ ] Name field in settings, sent to Whisper as a hint so names aren't misheard ("Josh" came through as "Josué")
 - [ ] Magda reads the review log: picks a few things to work on, messages when something keeps coming up
 - [ ] End-of-day "Today" page (the diario), drawn from the review log
 - [ ] Learner profile that travels across characters, starting from the learner's stated level and updated from how they speak ([idea](ideas.md#level-speaking-and-review-2026-10-11))

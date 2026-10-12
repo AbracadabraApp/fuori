@@ -20,6 +20,12 @@ const memoryVersion = memoryMd.match(/^version:\s*(\S+)/m)?.[1];
 const memoryNewest = (memoryMd.split('## Changelog')[1] ?? '').match(/^### ([^\s:]+)/m)?.[1];
 if (memoryNewest !== memoryVersion) failures.push(`memory.md: version is ${memoryVersion} but the newest changelog entry is ${memoryNewest ?? 'missing'}. Add a changelog entry.`);
 
+// And for the conversation quality prompt (lib/quality.ts)
+const qualityMd = readFileSync('content/it/prompts/quality.md', 'utf8');
+const qualityVersion = qualityMd.match(/^version:\s*(\S+)/m)?.[1];
+const qualityNewest = (qualityMd.split('## Changelog')[1] ?? '').match(/^### ([^\s:]+)/m)?.[1];
+if (qualityNewest !== qualityVersion) failures.push(`quality.md: version is ${qualityVersion} but the newest changelog entry is ${qualityNewest ?? 'missing'}. Add a changelog entry.`);
+
 for (const city of cities) {
   for (const place of city.places) {
     const c = characterForPlace(city, place);

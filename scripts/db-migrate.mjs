@@ -54,6 +54,9 @@ ALTER TABLE conversations ADD COLUMN IF NOT EXISTS memory_turns int NOT NULL DEF
 -- visit, notes), so every turn of it gets the same {relationship} line
 ALTER TABLE conversations ADD COLUMN IF NOT EXISTS memory_at_start jsonb;
 
+-- Dialogue scorecard numbers for the conversation (lib/quality.ts), written when it ends
+ALTER TABLE conversations ADD COLUMN IF NOT EXISTS quality jsonb;
+
 -- Indexes for common queries
 CREATE INDEX IF NOT EXISTS idx_conversations_learner ON conversations(learner_id);
 CREATE INDEX IF NOT EXISTS idx_conversations_character ON conversations(character_id);

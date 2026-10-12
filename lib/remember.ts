@@ -20,6 +20,7 @@ import { recordingEnabled } from './recording';
 import { characterForPlace } from './characters/for-place';
 import { cities } from '@/content/it/cities';
 import type { CharacterSheet } from './types';
+import { scoreConversation, saveConversationScore, judgeWithClaude, type Judge } from './quality';
 
 /** "A few exchanges": shorter conversations aren't worth remembering */
 export const MIN_LEARNER_LINES = 2;
@@ -66,7 +67,8 @@ export type RememberResult = 'saved' | 'nothing new' | 'failed';
 export async function rememberConversation(
   conversationId: string,
   learnerId: string,
-  summarize: Summarizer = summarizeWithClaude
+  summarize: Summarizer = summarizeWithClaude,
+  judge: Judge = judgeWithClaude
 ): Promise<RememberResult> {
   if (!recordingEnabled()) return 'nothing new';
   let claim: Awaited<ReturnType<typeof claimForMemory>> = null;
@@ -88,6 +90,16 @@ export async function rememberConversation(
       firstTime: claim.firstTime,
     });
     console.log(JSON.stringify({ level: 'info', event: 'memory', conversationId, character: claim.characterId, notes: out.notes.length, firstTime: claim.firstTime }));
+
+    // Score it for the dialogue scorecard (lib/quality.ts). Separate from memory:
+    // a scoring problem is logged and memory stays saved.
+    try {
+      const score = await scoreConversation(character, claim.turns, judge);
+      await saveConversationScore(conversationId, score);
+      console.log(JSON.stringify({ level: 'info', event: 'quality', conversationId, character: claim.characterId, median: score.stats.wordsMedian, unprompted: score.judge.correctionsUnprompted, pronunciation: score.judge.pronunciationCorrections }));
+    } catch (err) {
+      logError('quality', err, conversationId);
+    }
     return 'saved';
   } catch (err) {
     logError('memory', err, conversationId);

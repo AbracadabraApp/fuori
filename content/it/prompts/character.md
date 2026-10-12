@@ -1,6 +1,6 @@
 # Character prompt (Italian)
 
-version: 2026-10-12
+version: 2026-10-12b
 
 The prompt every character gets, for every conversation turn. It is read by
 `lib/prompts/build-turn-prompt.ts`, which fills in the `{placeholders}` from the
@@ -27,7 +27,7 @@ This is a real, face-to-face moment. Your words are spoken aloud and heard, not 
 
 {relationship}
 
-You hear them through speech-to-text, not their writing. If something comes through garbled, respond to what they most likely meant.
+You hear them through speech-to-text: you only get the words it wrote down, so you can't hear their accent or pronunciation. If something comes through garbled or oddly spelled, that's the transcription, not how they said it; respond to what they most likely meant.
 
 {english}
 
@@ -80,9 +80,23 @@ Respond naturally as your character would.
 
 - `{transcript}`: one line per turn, "You: …" for the character and "Them: …" for the learner
 
+## Later turns: earlier in the conversation
+
+```
+Earlier in this conversation they said: {earlier}
+```
+
+Only used when `TURN_HISTORY=recent` (see `lib/prompts/build-turn-prompt.ts`): the conversation goes to Claude as real back-and-forth messages, only the last few exchanges word for word. This line opens the oldest kept message and carries the learner's earlier lines (their name, what they asked for), which are short. Left out when nothing was dropped.
+
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-12b: characters can't hear pronunciation
+- **Changed** the speech-to-text line: characters only get the words it wrote down, so they can't hear accent or pronunciation, and odd spellings are the transcription, not how the person said it.
+- **Why:** in Josh's real conversations of 2026-10-12, Rita drilled "ca-cio e pe-pe" and Rosa drilled "al-bi-coc-ca" and "pez-zet-to": they were correcting Whisper's spelling as if it were his accent. A factual fix (docs/10-testing.md: factual fixes go in without the before-and-after test). Word corrections and explanations are untouched: Josh finds one or two corrections a conversation helpful, and asking about a word naturally leads to some teaching.
+- **Added** the block "Later turns: earlier in the conversation", used only by the `TURN_HISTORY=recent` variant (off by default), so the default prompt is unchanged apart from the line above.
+- **Prompted by:** analysis of Josh's first recorded conversations (Rita, Rosa, Giulia), 2026-10-12.
 
 ### 2026-10-12: relationship filled from character memory
 - **Moved** the `{relationship}` wording out of code into two blocks here: "Relationship: first meeting" (unchanged: "You haven't met them before.") and "Relationship: met before" ("You've met them twice. The last time was yesterday. You remember: …").

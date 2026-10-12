@@ -15,6 +15,7 @@ import { query } from './db';
 import { startConversation, addConversationTurn, type CharacterMemory, type ReviewLog } from './memory';
 import type { CharacterSheet } from './types';
 import { turnStats, wordCount } from './dialogue-stats';
+import type { ConversationScore } from './quality';
 
 export function recordingEnabled(): boolean {
   return !!process.env.DATABASE_URL;
@@ -90,6 +91,8 @@ export interface RecordedConversation {
   review: ReviewLog | null;
   /** The character's notes about this learner now (after their latest conversation) */
   notes: string[] | null;
+  /** Dialogue scorecard numbers (lib/quality.ts), written when it ended; null until then */
+  quality: ConversationScore | null;
 }
 
 /**
@@ -99,7 +102,7 @@ export interface RecordedConversation {
 export async function recentConversations(limit = 20, since?: Date): Promise<RecordedConversation[]> {
   const result = await query<RecordedConversation>(
     `SELECT c.id, c.character_id, c.place_id, c.city_id, c.prompt_version, c.started_at, c.ended_at, c.turns,
-            c.review, m.notes
+            c.review, m.notes, to_jsonb(c)->'quality' AS quality
      FROM conversations c
      LEFT JOIN character_memories m ON m.learner_id = c.learner_id AND m.character_id = c.character_id
      WHERE ($2::timestamptz IS NULL OR c.started_at > $2)
@@ -133,5 +136,13 @@ export function conversationAsText(c: RecordedConversation): string {
       ]
     : [];
   const notes = c.notes?.length ? ['', 'THEY REMEMBER NOW:', ...c.notes.map((n) => `  ${n}`)] : [];
-  return [head, ...lines, ...review, ...notes].join('\n');
+  const q = c.quality;
+  const quality = q
+    ? [
+        '',
+        `SCORE: median reply ${q.stats.wordsMedian} words · opener ${q.stats.openerWords} · corrections ${q.judge.correctionsUnprompted} unprompted, ${q.judge.correctionsAsked} asked · pronunciation ${q.judge.pronunciationCorrections} · lost ${q.lost.length} (pulled back ${q.lost.filter((l) => l.pulledBack && l.shorter).length})`,
+        ...(q.judge.note && q.judge.note !== 'None' ? [`  ${q.judge.note}`] : []),
+      ]
+    : [];
+  return [head, ...lines, ...review, ...notes, ...quality].join('\n');
 }

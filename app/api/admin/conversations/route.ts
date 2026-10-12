@@ -6,11 +6,14 @@
  * reply length, what Whisper heard). Locked by the ADMIN_KEY variable in
  * Railway: without it set, this route doesn't exist (404). format=text gives
  * plain transcripts that are easy to read on a phone and paste into a chat;
- * the default is JSON.
+ * the default is JSON. format=scorecard gives the dialogue scorecard
+ * (lib/scorecard.ts) for the scored conversations, one block per prompt version.
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
 import { recentConversations, conversationAsText, conversationStats, recordingEnabled } from '@/lib/recording';
+import { scorecard, scorecardAsText } from '@/lib/scorecard';
+import type { ConversationScore } from '@/lib/quality';
 
 function allowed(given: string | null): boolean {
   const key = process.env.ADMIN_KEY;
@@ -30,6 +33,16 @@ export async function GET(request: NextRequest) {
   const sinceParam = url.searchParams.get('since');
   const since = sinceParam && !isNaN(Date.parse(sinceParam)) ? new Date(sinceParam) : undefined;
   const conversations = await recentConversations(limit, since);
+  if (url.searchParams.get('format') === 'scorecard') {
+    const scored = conversations.filter((c) => c.quality);
+    const versions = [...new Set(scored.map((c) => c.prompt_version))];
+    const text = versions
+      .map((v) => scorecardAsText(`Prompt ${v}`, scorecard(scored.filter((c) => c.prompt_version === v).map((c) => c.quality as ConversationScore))))
+      .join('\n\n');
+    return new NextResponse(text || 'No scored conversations yet.', {
+      headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
+    });
+  }
   if (url.searchParams.get('format') === 'text') {
     return new NextResponse(conversations.map(conversationAsText).join('\n\n----\n\n') || 'No conversations yet.', {
       headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
