@@ -10,7 +10,7 @@ import { buildTurnPrompt, type HistoryMode, type RememberedLearner } from '@/lib
 import type { CharacterSheet, Turn } from '@/lib/types';
 
 export const TurnOutputSchema = z.object({
-  it: z.string().describe("The character's reply in Italian"),
+  it: z.string().describe('What the character says, in the language the person is learning'),
   en: z.string().describe('English translation of the reply'),
 });
 

@@ -4,6 +4,7 @@
 
 - `npx tsc --noEmit`: type check
 - `npm run test:models`: no Claude model IDs hard-coded outside `lib/claude.ts`
+- `npm run test:language`: no language names or codes hard-coded in `app/` or `lib/` (they come from `content/it/language.ts`), and prompt templates say `{language}`
 - `npm run test:schema`: the `/api/turn` output schema follows structured-output rules
 - `npm run test:prompt`: every character prompt says where the character is
 - `npm run test:reply`: reading Claude replies works when the reply starts with a non-text block

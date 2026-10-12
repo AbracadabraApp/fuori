@@ -144,12 +144,12 @@
   color: var(--text);
 }
 
-.italian {
+.spoken {
   font-style: italic;
 }
 
-.italianWithEnglish {
-  composes: italian;
+.spokenWithEnglish {
+  composes: spoken;
   margin-bottom: 8px;
 }
 

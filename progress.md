@@ -498,3 +498,10 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 - Tests: `test:quality`, `test:history` new; `test:schema` and `test:prompt` cover the quality prompt; `test:memory` uses a fake judge. All database parts run against a local Postgres here.
 - **Next (laptop, needs the API key):** `npm run test:replay -- --refresh`, then `--ab=history`. If the gate passes and Josh agrees, set `TURN_HISTORY=recent` in Railway. Josh: a return visit to Rita to check recall.
 - **Not done:** the digest (M2), second grader, name hint for Whisper (M2). The Whisper echo ("Trascrizione in italiano") was fixed on the laptop; silence turning into "Grazie a tutti" is still open there. The "one-turn lag" in Giulia's replies was a shaky thumb (short accidental recordings), not a bug.
+
+## 2026-10-12: "Keeping other languages possible" enforced (cloud session)
+
+- **Check:** `npm run test:language` (`tests/check-language.mjs`, like `test:models`) fails on a language name, the bare code `'it'` or a locale code like `it-IT` in `app/` or `lib/` outside comments, and on a prompt template that names the language instead of `{language}`. It only looks for the language's own markers, never for phrases. It catches the old Whisper hint.
+- **Fixed what it found:** `/api/speak` and ElevenLabs voice-list defaults; "Show Italian transcripts"; two error messages; the reply schema's description of `it`; `content/it` paths in `lib/prompts/template.ts` and `lib/characters/load-character.ts`; CSS classes `.italian*` → `.spoken*`; character prompt 2026-10-12c ("in {language}", same system prompt text as 12b).
+- **New rule in CLAUDE.md and docs/05-architecture.md:** don't build on predicting what people will say; no phrase lists or keyword filters; prefer language-independent signals. Relevant to the open "Grazie a tutti" silence problem: fix it with recording length or silence, not a blocklist.
+- Not changed: the dynamic import path `@/content/it/characters/…` in `load-character.ts` (the bundler needs a literal path).

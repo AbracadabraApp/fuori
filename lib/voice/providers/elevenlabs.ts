@@ -112,7 +112,7 @@ export class ElevenLabsProvider implements VoiceProvider {
     };
   }
 
-  async listVoices(language: string = 'it'): Promise<Voice[]> {
+  async listVoices(language: string): Promise<Voice[]> {
     const url = `${this.baseUrl}/voices`;
 
     const response = await fetch(url, {

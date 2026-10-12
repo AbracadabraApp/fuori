@@ -1,6 +1,7 @@
 /**
  * JSON schema for Claude's structured output in /api/turn.
- * M1 uses a radically simple output: just Italian and English.
+ * M1 uses a radically simple output: what the character says (`it`, named for
+ * the language code) and its English translation.
  * Everything else (corrections, help, mood) happens naturally in conversation.
  */
 export const turnOutputJsonSchema = {
@@ -9,7 +10,7 @@ export const turnOutputJsonSchema = {
   properties: {
     it: {
       type: 'string',
-      description: "The character's reply in Italian",
+      description: "What the character says, in the language the person is learning",
     },
     en: {
       type: 'string',

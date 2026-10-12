@@ -659,7 +659,7 @@ export function ConversationScreen({
               {/* Text scrolls inside the card; key resets the scroll for each new reply */}
               <div className={styles.replyText} key={currentResponse ?? ''}>
                 {showTranscripts && currentResponse && (
-                  <div className={showEnglish ? styles.italianWithEnglish : styles.italian}>
+                  <div className={showEnglish ? styles.spokenWithEnglish : styles.spoken}>
                     {shown === null ? (
                       currentResponse
                     ) : (

@@ -11,7 +11,8 @@ Voice-first Italian learning game. Read `README.md` and the numbered files in `d
 - Mobile-first: iPhone Safari is the primary target. Follow the interface mockups linked in `README.md`. Hosting is Railway, which deploys from `main`; work and push on `main`.
 - Keep `progress.md` current at the end of each session: what was done, decisions, open issues, next actions.
 - Hand-written content (city pantries, anchors, Magda, level rules) lives in `content/it/` as data, not inside components. Generated characters and scenes are stored with learner data.
-- Keep other languages possible without building them: nothing Italian-specific hard-coded in code or prompt templates (language name, speech-to-text code, voices, UI words and prompt examples come from `content/it/language.ts`), and all Claude calls go through `lib/claude.ts`. See "Keeping other languages possible" in `docs/05-architecture.md`.
+- Keep other languages possible without building them: nothing Italian-specific hard-coded in code or prompt templates (language name, speech-to-text code, voices, UI words and prompt examples come from `content/it/language.ts`), and all Claude calls go through `lib/claude.ts`. See "Keeping other languages possible" in `docs/05-architecture.md`; `npm run test:language` enforces it.
+- Don't build on predicting what learners or characters will say: no phrase lists or keyword filters; prefer signals that work in any language (recording length, silence, a judge call).
 
 ## Testing
 - Run `npx tsc --noEmit` after editing TypeScript or content files. Never claim a task is done until type checking passes.

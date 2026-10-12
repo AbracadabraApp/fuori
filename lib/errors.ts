@@ -7,6 +7,8 @@
  * so `railway logs | grep E-7K2F` finds both sides.
  */
 
+import { language } from '@/content/it/language';
+
 export type ErrorKind = 'mic' | 'network' | 'server';
 
 const ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
@@ -111,7 +113,7 @@ export function userMessage(err: FuoriError, characterName = 'They'): string {
   }
   switch (err.step) {
     case 'transcribe':
-      return `Speech recognition failed, so your words didn't get through. Not your Italian: try again. (${err.id})`;
+      return `Speech recognition failed, so your words didn't get through. Not your ${language.name}: try again. (${err.id})`;
     case 'reply':
       return `${characterName} couldn't reply. Try again. (${err.id})`;
     case 'opening line':
@@ -133,7 +135,7 @@ export function voiceNote(err: FuoriError | null, matchesGender: boolean, gender
     parts.push(quota ? `Voice service quota used up, so using the phone's voice. (${err.id})` : `Voice service failed, so using the phone's voice. (${err.id})`);
   }
   if (!matchesGender && gender) {
-    parts.push(`No ${gender === 'm' ? 'male' : 'female'} Italian voice on this phone (Settings → Accessibility → Spoken Content → Voices → Italian).`);
+    parts.push(`No ${gender === 'm' ? 'male' : 'female'} ${language.name} voice on this phone (Settings → Accessibility → Spoken Content → Voices → ${language.name}).`);
   }
   return parts.length ? parts.join(' ') : null;
 }

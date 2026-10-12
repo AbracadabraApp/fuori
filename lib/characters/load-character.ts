@@ -22,6 +22,7 @@
 import { CharacterSheet } from '@/lib/types';
 import { readdir } from 'fs/promises';
 import { join } from 'path';
+import { language } from '@/content/it/language';
 
 /**
  * Load a character sheet by ID.
@@ -76,7 +77,7 @@ export function getAnchorCharacters(): string[] {
  * @returns Promise resolving to array of character IDs
  */
 export async function getAnchorCharactersAsync(): Promise<string[]> {
-  const charactersDir = join(process.cwd(), 'content', 'it', 'characters');
+  const charactersDir = join(process.cwd(), 'content', language.code, 'characters');
 
   try {
     const files = await readdir(charactersDir);

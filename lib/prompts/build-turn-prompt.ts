@@ -7,6 +7,7 @@
  */
 
 import { readPromptFile, fill } from './template';
+import { language } from '@/content/it/language';
 import type { CharacterSheet, Turn } from '../types';
 
 /** What the character remembers about this learner (from character_memories) */
@@ -128,6 +129,7 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
     age: String(character.age),
     role: character.role,
     city: character.city,
+    language: language.name,
     setting: character.appearance?.setting ?? '',
     traits: character.personality.traits.join(', '),
     formality: character.speech.formality === 'Lei' ? 'Lei (formal)' : 'tu (informal)',

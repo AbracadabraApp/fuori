@@ -1,6 +1,6 @@
 # Character prompt (Italian)
 
-version: 2026-10-12b
+version: 2026-10-12c
 
 The prompt every character gets, for every conversation turn. It is read by
 `lib/prompts/build-turn-prompt.ts`, which fills in the `{placeholders}` from the
@@ -32,7 +32,7 @@ You hear them through speech-to-text: you only get the words it wrote down, so y
 {english}
 
 Respond with JSON:
-{ "it": "what you say, in Italian", "en": "English translation" }
+{ "it": "what you say, in {language}", "en": "English translation" }
 ```
 
 Placeholders:
@@ -41,6 +41,7 @@ Placeholders:
 - `{traits}`: personality traits, comma-separated
 - `{formality}`: "tu (informal)" or "Lei (formal)"
 - `{english}`: "You speak fluent English." / "You speak basic English." / empty (line left out)
+- `{language}`: the language's name, from `content/it/language.ts`
 - `{relationship}`: what this character knows about the person, from character memory (one of the two blocks below)
 
 ## Relationship: first meeting
@@ -91,6 +92,11 @@ Only used when `TURN_HISTORY=recent` (see `lib/prompts/build-turn-prompt.ts`): t
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-12c: language name from content, not the template
+- **Changed** "what you say, in Italian" to "in {language}", filled from `content/it/language.ts`. The system prompt Claude gets is word-for-word the same as 2026-10-12b. The reply schema's description of `it` no longer names the language ("what the character says, in the language the person is learning").
+- **Why:** templates must not name the language ("Keeping other languages possible"); the new `npm run test:language` check found this one.
+- **Prompted by:** Josh asking for the rule to be enforced after the Whisper hint slipped through.
 
 ### 2026-10-12b: characters can't hear pronunciation
 - **Changed** the speech-to-text line: characters only get the words it wrote down, so they can't hear accent or pronunciation, and odd spellings are the transcription, not how the person said it.

@@ -197,7 +197,7 @@ export default function Home() {
                 checked={showTranscripts}
                 onChange={(e) => setShowTranscripts(e.target.checked)}
               />
-              Show Italian transcripts
+              Show {language.name} transcripts
             </label>
 
             <label className={styles.option}>

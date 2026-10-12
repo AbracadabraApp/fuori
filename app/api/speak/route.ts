@@ -22,12 +22,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getVoiceProvider } from '@/lib/voice/providers';
 import { elevenLabsVoiceFor } from '@/content/it/voices';
 import { logServerError } from '@/lib/server-log';
+import { language as appLanguage } from '@/content/it/language';
 import { VoiceError } from '@/lib/voice/providers/elevenlabs';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { text, language = 'it', characterId, gender, voice, speed = 1.0 } = body;
+    const { text, language = appLanguage.code, characterId, gender, voice, speed = 1.0 } = body;
 
     // Validate input
     if (!text || typeof text !== 'string') {
@@ -107,7 +108,7 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const language = searchParams.get('language') || 'it';
+    const language = searchParams.get('language') || appLanguage.code;
 
     const provider = getVoiceProvider();
 
