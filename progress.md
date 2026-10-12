@@ -479,3 +479,9 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 - Tests: `npm run test:memory` (prompt part always; database part with a local `DATABASE_URL`: `createdb fuori_test`). `test:schema` also checks the memory schema; `test:prompt` checks memory.md's changelog.
 - **Railway:** columns `memory_turns` and `memory_at_start` added via `railway ssh` before the push; deploy `c158992` succeeded.
 - **Not done:** conversations that never send an end signal (page killed without a background event) aren't remembered; catching up on stale ones at the next opening would fix that if it shows up. Not verified on iPhone.
+
+## 2026-10-12: Whisper echo fixed (laptop session)
+
+- **Found in recorded transcripts:** learners' lines contained "Trascrizione in italiano…", the hint we sent Whisper. Whisper echoes its prompt into short or quiet recordings, and characters answered words nobody said.
+- **Fix:** `/api/transcribe` sends no prompt; the language code comes from `content/it/language.ts`. `npm run test:transcribe` calls the route with a fake Whisper and fails if a prompt is sent (fails on the old code).
+- **Seen, not fixed:** Whisper turns 3 s of silence into "Grazie a tutti." (likely Josh's first line to Giulia today). Whisper's scores can't tell silence from speech. Decided not to filter phrases: the code must work for any language, and nobody can predict what learners or characters will say. If it keeps showing up in transcripts, the language-neutral fix is checking on the phone whether the recording has any sound.

@@ -24,6 +24,7 @@
     "test:recording": "tsx tests/check-recording.ts",
     "test:stats": "tsx tests/check-dialogue-stats.ts",
     "test:memory": "tsx tests/check-memory.ts",
+    "test:transcribe": "tsx tests/check-transcribe.ts",
     "smoke:memory": "tsx scripts/smoke-memory.ts"
   },
   "dependencies": {

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSpeechProvider } from '@/lib/speech/providers';
 import { logServerError } from '@/lib/server-log';
+import { language as learning } from '@/content/it/language';
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,15 +16,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Determine language - 'it' for Italian turns, 'en' for "Come si dice?" button
-    const lang = language === 'en' ? 'en' : 'it';
+    // The language being learned, or 'en' for "Come si dice?" button
+    const lang = language === 'en' ? 'en' : learning.code;
 
-    // Get configured speech provider and transcribe
+    // Get configured speech provider and transcribe. No prompt: Whisper echoes
+    // it into short or quiet recordings (tests/check-transcribe.ts)
     const provider = getSpeechProvider();
     const transcription = await provider.transcribe({
       audio,
       language: lang,
-      prompt: lang === 'it' ? 'Trascrizione in italiano di una conversazione naturale.' : undefined,
     });
 
     return NextResponse.json({
