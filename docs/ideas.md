@@ -318,6 +318,14 @@ The one character who messages because it's her job: weekly check-ins on how you
     - relationships deepen, so conversations get richer
     - builds on memory (M1), messages and where-next. The pattern is closer to neighbours you check in on (Animal Crossing) than a story you play through.
 
+## Recommendations, where next, words at the end (brainstorm 2026-10-11)
+
+Josh, thinking aloud. Feedback in the session; notes here so they aren't lost.
+
+- **Characters recommend real places in the game.** "Try my cousin's trattoria, Da Enzo" with a card to go there. The in-world version of where next (Coda #8). The character's prompt would carry a few nearby places they know, as background, not a script; a card appears only when they actually mention one. Keep it occasional and personal (a favourite, a cousin, a grudge), never every conversation, or it reads as an ad.
+- **Hints for where to go next.** The fallback when nobody recommended anything: the quiet line of wants (Coda #8).
+- **Words at the end of a conversation.** When a conversation ends, a small page of the 3–5 words or phrases most worth keeping from it, tap to hear each one. Natural, not didactic: no quiz, no score. It's the review log shown to the learner, so check the log's choices in debug mode first. End of conversation is the right moment (a pause), unlike mid-conversation.
+
 ## Level, speaking and review (discussion 2026-10-11)
 
 The stance (immersion; characters above your level are fine; teaching in character is fine) is now in [Vision → Level](01-vision.md#level). Saving conversations and the review log are in [Roadmap → M1](06-roadmap.md#m1-navigate-cities-and-hold-a-conversation-thats-remembered); decisions waiting on Josh are in [Open design questions → 11](open-design-questions.md#11-level-and-speaking-2026-10-11). Parked here:
