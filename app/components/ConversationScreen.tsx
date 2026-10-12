@@ -48,8 +48,6 @@ interface DebugInfo {
   prompt?: string;
   /** Whether this conversation is being saved, with the start of its id */
   saved?: string;
-  /** What the character remembers: visits and number of notes */
-  memory?: string;
   meter?: string;
   heard?: string;
   recording?: string;
@@ -295,7 +293,7 @@ export function ConversationScreen({
         )
       );
       const turnOutput: TurnOutput = await response.json();
-      setDebugInfo((d) => ({ ...d, prompt: response.headers.get('x-prompt-version') ?? undefined, memory: response.headers.get('x-memory') ?? 'not loaded' }));
+      setDebugInfo((d) => ({ ...d, prompt: response.headers.get('x-prompt-version') ?? undefined }));
       conversationIdRef.current = response.headers.get('x-conversation-id');
       setDebugInfo((d) => ({ ...d, saved: conversationIdRef.current ? `yes (${conversationIdRef.current.slice(0, 8)})` : 'no' }));
 
@@ -692,7 +690,6 @@ export function ConversationScreen({
             <div className={styles.debug}>
               <div><b>Prompt:</b> {debugInfo.prompt ?? '—'}</div>
               <div><b>Saved:</b> {debugInfo.saved ?? '—'}</div>
-              <div><b>Memory:</b> {debugInfo.memory ?? '—'}</div>
               <div><b>Recording:</b> {debugInfo.recording ?? '—'}</div>
               <div><b>Meter:</b> {debugInfo.meter ?? '—'}</div>
               <div><b>Heard:</b> {debugInfo.heard ?? '—'}</div>

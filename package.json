@@ -23,7 +23,8 @@
     "test:reveal": "tsx tests/check-reveal.ts",
     "test:recording": "tsx tests/check-recording.ts",
     "test:stats": "tsx tests/check-dialogue-stats.ts",
-    "test:memory": "tsx tests/check-memory.ts"
+    "test:memory": "tsx tests/check-memory.ts",
+    "smoke:memory": "tsx scripts/smoke-memory.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

@@ -100,7 +100,7 @@ export async function POST(request: NextRequest) {
     // Return the validated output; the prompt version and conversation id travel in headers
     const headers: Record<string, string> = { 'x-prompt-version': version };
     if (savedId) headers['x-conversation-id'] = savedId;
-    if (memory) headers['x-memory'] = `${memory.visits} visits, ${memory.notes.length} notes`; // debug panel
+    if (memory) headers['x-memory'] = `${memory.visits} visits, ${memory.notes.length} notes`; // read by scripts/smoke-memory.ts
     return NextResponse.json(turnOutput, { headers });
   } catch (error) {
     logServerError(request, 'turn', error);
