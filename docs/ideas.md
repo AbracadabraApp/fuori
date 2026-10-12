@@ -51,6 +51,8 @@ Use the same engine for Spanish, French and so on.
 - **The content is the real cost.** Each language needs its own route, cast, customs, portraits and voices, roughly the work of building Roma again per city. Claude can draft much of it; someone who knows the culture should shape it.
 - **Other AI models** are possible but not worth abstracting now, since the plan relies on Claude features like structured outputs and prompt caching. Keeping all model calls in `lib/claude.ts` keeps a swap to one file.
 
+- **Mexico:** a costed estimate for a 5-city prototype is in [Mexico version](mexico-version.md) (2026-10-11).
+
 Revisit once the Italian version is fun to play.
 
 ## A scene generator for any language

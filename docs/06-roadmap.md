@@ -88,4 +88,4 @@ Updated 2026-10-11. Top of the list first; strike items off here as they're done
 
 ## Later
 
-See [Ideas](ideas.md): reading moments at real landmarks, food culture conversations, animated clips for the core cast, other languages.
+See [Ideas](ideas.md): reading moments at real landmarks, food culture conversations, animated clips for the core cast, other languages (a costed estimate for Mexico: [Mexico version](mexico-version.md)).
