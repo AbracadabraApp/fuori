@@ -85,14 +85,34 @@ export interface RecordedConversation {
   turns: { who: 'npc' | 'learner'; text: string; en?: string; at: string }[];
 }
 
-/** Most recent conversations, newest first (for review). */
-export async function recentConversations(limit = 20): Promise<RecordedConversation[]> {
+/**
+ * Most recent conversations, newest first (for review). `since` limits it to
+ * conversations started after that time, so a daily job only reads new ones.
+ */
+export async function recentConversations(limit = 20, since?: Date): Promise<RecordedConversation[]> {
   const result = await query<RecordedConversation>(
     `SELECT id, character_id, place_id, city_id, prompt_version, started_at, ended_at, turns
-     FROM conversations ORDER BY started_at DESC LIMIT $1`,
-    [Math.min(Math.max(limit, 1), 200)]
+     FROM conversations
+     WHERE ($2::timestamptz IS NULL OR started_at > $2)
+     ORDER BY started_at DESC LIMIT $1`,
+    [Math.min(Math.max(limit, 1), 200), since ?? null]
   );
   return result.rows;
+}
+
+/** Simple numbers per conversation, so length can be tracked without reading every line. */
+export function conversationStats(c: RecordedConversation) {
+  const words = (t: string) => t.split(/\s+/).filter(Boolean).length;
+  const npc = c.turns.filter((t) => t.who === 'npc').map((t) => words(t.text));
+  const learner = c.turns.filter((t) => t.who === 'learner').map((t) => words(t.text));
+  const avg = (xs: number[]) => (xs.length ? Math.round((xs.reduce((a, b) => a + b, 0) / xs.length) * 10) / 10 : 0);
+  return {
+    exchanges: learner.length,
+    openerWords: npc[0] ?? 0,
+    characterWordsAvg: avg(npc),
+    characterWordsMax: npc.length ? Math.max(...npc) : 0,
+    learnerWordsAvg: avg(learner),
+  };
 }
 
 /** Plain-text transcript, easy to read on a phone or paste into a chat. */

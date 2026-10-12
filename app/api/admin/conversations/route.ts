@@ -1,5 +1,6 @@
 /**
- * GET /api/admin/conversations?key=…&limit=20&format=text
+ * GET /api/admin/conversations?key=…&limit=20&since=2026-10-12T00:00Z&format=text
+ * (or send the key in an x-admin-key header)
  *
  * Recent recorded conversations, for reviewing real play (prompt quality,
  * reply length, what Whisper heard). Locked by the ADMIN_KEY variable in
@@ -9,7 +10,7 @@
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
-import { recentConversations, conversationAsText, recordingEnabled } from '@/lib/recording';
+import { recentConversations, conversationAsText, conversationStats, recordingEnabled } from '@/lib/recording';
 
 function allowed(given: string | null): boolean {
   const key = process.env.ADMIN_KEY;
@@ -26,11 +27,16 @@ export async function GET(request: NextRequest) {
     return new NextResponse('Not found', { status: 404 });
   }
   const limit = Number(url.searchParams.get('limit') ?? 20) || 20;
-  const conversations = await recentConversations(limit);
+  const sinceParam = url.searchParams.get('since');
+  const since = sinceParam && !isNaN(Date.parse(sinceParam)) ? new Date(sinceParam) : undefined;
+  const conversations = await recentConversations(limit, since);
   if (url.searchParams.get('format') === 'text') {
     return new NextResponse(conversations.map(conversationAsText).join('\n\n----\n\n') || 'No conversations yet.', {
       headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
     });
   }
-  return NextResponse.json(conversations, { headers: { 'Cache-Control': 'no-store' } });
+  return NextResponse.json(
+    conversations.map((c) => ({ ...c, stats: conversationStats(c) })),
+    { headers: { 'Cache-Control': 'no-store' } }
+  );
 }
