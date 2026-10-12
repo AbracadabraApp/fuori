@@ -180,7 +180,8 @@ export function ConversationScreen({
   const getSpeechSpeed = (): number => {
     if (showEnglish) return 0.5; // Beginner: very slow for max comprehension
     if (allowDialect) return 1.0; // Advanced: natural speed with regional variations
-    return 0.7; // Intermediate: comfortably slower for learning
+    // Default: just under natural. Was 0.7; Josh found that too slow on the phone (2026-10-11)
+    return 0.9;
   };
 
   // Must run synchronously inside a tap handler, before any await.
