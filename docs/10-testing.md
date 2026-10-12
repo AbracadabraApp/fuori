@@ -6,6 +6,17 @@ Testing a voice-first language game means validating not just code, but conversa
 
 **For a one-person prototype, what matters now is section 4 (level rules and the simulated learner) and testing on your phone (section 9).** The rest is reference for later milestones.
 
+## How dialogue quality is judged (decided 2026-10-12)
+
+Josh will never test at scale himself, so dialogue quality comes from two sources, each covering what the other can't:
+
+1. **Breadth: Claude tests the world.** Simulated conversations across many places and characters (`npm run test:conversations`), run as a fixed before-and-after comparison when the prompt changes: the same characters and the same learner lines, a few runs each, one change at a time. Scored on numbers where they exist (reply length in words, opener length, questions per reply; real turns run about 1–2 seconds, 5–10 words) and on naturalness, so shorter-but-stilted shows up as a loss. A second model (Grok) as a second grader is a planned check on Claude grading Claude.
+2. **Depth: Claude analyses Josh's real transcripts.** Every conversation is recorded with its prompt version (`lib/recording.ts`). A daily scheduled task reads the new ones, analyses them (length, openers, level, speech-to-text errors, character slips) and writes a dated report to `docs/reports/`. Josh's own lines later become the scripted learner lines for the fixed test.
+
+Josh's role: notice problems in play, and make the final call on whether a change feels better. He doesn't run tests or edit prompts. Small factual fixes (e.g. "characters can't hear pronunciation") can go in with a quick check; matters of taste go through the before-and-after test.
+
+Not doing: A/B testing on real users (one user; it would be noise).
+
 ## Testing Layers
 
 ```
