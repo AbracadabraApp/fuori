@@ -6,17 +6,18 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now (ranked)
 
-Updated 2026-10-11. Top of the list first; strike items off here as they're done.
+Updated 2026-10-12. Top of the list first; strike items off here as they're done.
 
-1. **Postgres in Railway** (Josh): unblocks memory, saved transcripts and the review log.
-2. **Memory, saved transcripts and the review log** (M1, below): core M1 completion.
-3. **Prompt experiments** (version bump + changelog each time):
+1. ~~**Postgres in Railway**~~ Done 2026-10-11: tables created on Railway (learners, character_memories, conversations).
+2. **Memory, saved transcripts and the review log** (M1, below): core M1 completion. Started 2026-10-11 by the laptop: `lib/db.ts`, `lib/learner.ts` (anonymous learner cookie), `lib/memory.ts` (load memory, start/save/end conversation). **Not wired in yet:** `/api/turn` and the conversation screen don't call it, and the end-of-conversation Claude call (notes + review log) isn't written. Leaving the screen is the "conversation ends" moment; hook it to the cleanup effect in `ConversationScreen`.
+3. **Roma portraits** (laptop, needs the xAI key): 23 Roma city characters have no portrait. `npm run images -- --city roma`, then `npm run test:images` should report 0 missing.
+4. **Prompt experiments** (version bump + changelog each time):
    - a factual line that characters only receive text and can't hear accent or pronunciation (Salvatore "corrected" *grazie* and "Grigianto")
    - who the learner is: someone who lives here now, not a tourist (Salvatore asked how many days you're staying)
    - traits as manner, not expertise, on 5–10 characters ("local historian" → a history lecture; ~150 of 634 characters have traits like knowledgeable, storyteller, expert, chatty)
    - the "noticed" reply field, if Josh decides yes ([open question](open-design-questions.md#11-level-and-speaking-2026-10-11))
-4. **ElevenLabs quota** (Josh): check usage; likely cause of the voice dropping mid-conversation on 2026-10-11.
-5. **Image sizes and settings (low priority).** The image request sets no size, so the generator picks one: cities are all square (49), places are mostly wide 3:2 (537 wide, 62 tall, 7 square), portraits are mostly tall 2:3 (596, though `07-visuals.md` says square). Place cards show a square crop, so wide images lose their sides and signs can be cut off. Steps: decide the size for each kind of image; set it in the request (`aspect_ratio`, check xAI accepts it with one test); give every place prompt its location and a sign rule (Caffè Toledo came out as Paris's Café de Flore because its prompt never says Napoli, and about 350 of 594 place prompts don't name Italy or the city); then regenerate only the ones that are off. Tested wording: "…a busy café on a main shopping street in the Centro Storico of Napoli, Italy… The café's sign reads "Caffè Toledo". Any other lettering is everyday Italian street detail, like a chalkboard menu or a street name; no banners, emblems or signs naming the neighbourhood or city."
+5. **ElevenLabs quota** (Josh): check usage; likely cause of the voice dropping mid-conversation on 2026-10-11.
+6. **Image sizes and settings (low priority).** The image request sets no size, so the generator picks one: cities are all square (49), places are mostly wide 3:2 (537 wide, 62 tall, 7 square), portraits are mostly tall 2:3 (596, though `07-visuals.md` says square). Place cards show a square crop, so wide images lose their sides and signs can be cut off. Steps: decide the size for each kind of image; set it in the request (`aspect_ratio`, check xAI accepts it with one test); give every place prompt its location and a sign rule (Caffè Toledo came out as Paris's Café de Flore because its prompt never says Napoli, and about 350 of 594 place prompts don't name Italy or the city); then regenerate only the ones that are off. Tested wording: "…a busy café on a main shopping street in the Centro Storico of Napoli, Italy… The café's sign reads "Caffè Toledo". Any other lettering is everyday Italian street detail, like a chalkboard menu or a street name; no banners, emblems or signs naming the neighbourhood or city."
 
 ## M1: Navigate cities and hold a conversation that's remembered
 
