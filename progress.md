@@ -351,3 +351,55 @@ Discussion with Josh after Salvatore and Suor Agata. No code or prompt changes.
 - `docs/open-design-questions.md` #11: six open decisions (noticed field, trait reframing, learner level reaching characters, starting level, where the review shows, pace/pauses).
 - `docs/ideas.md`: the long section from earlier today cut to four parked ideas with links.
 - The stale "Next actions" and "Open issues" lists at the top of this file are removed; the roadmap replaces them.
+
+---
+
+## 2026-10-11: Database and memory system built
+
+**What was built:**
+Complete M1 memory infrastructure for character memories, learner identification, and conversation storage.
+
+**Files created:**
+1. **lib/db.ts** - Postgres connection pool utility
+   - Safe connection pooling (max 20, 30s idle timeout)
+   - SSL detection for Railway internal vs external connections
+   - Generic query function with TypeScript types
+
+2. **scripts/db-migrate.mjs** - M1 schema migration
+   - Creates 3 tables: `learners`, `character_memories`, `conversations`
+   - Idempotent (safe to run multiple times)
+   - Verifies tables after creation
+
+3. **lib/learner.ts** - Anonymous learner identification
+   - HTTP-only cookie (`fuori_learner_id`, 1 year)
+   - `getOrCreateLearnerId()`: creates learner record and sets cookie
+   - `getLearnerId()`: reads existing cookie without creating
+
+4. **lib/memory.ts** - Character memory and conversation storage
+   - `loadCharacterMemory()`: gets visit count, last visit, notes for a character
+   - `startConversation()`: creates conversation record with metadata
+   - `addConversationTurn()`: saves turns incrementally as JSONB
+   - `endConversation()`: saves character notes + review log, updates memory
+   - TypeScript interfaces: `CharacterMemory`, `ConversationTurn`, `ReviewLog`
+
+**Schema:**
+```sql
+learners (id uuid, created_at timestamptz)
+character_memories (learner_id, character_id, visits, last_visit, notes text[])
+conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
+               started_at, ended_at, turns jsonb, review jsonb)
+```
+
+**Deployed:**
+- Migration run successfully on Railway via `railway ssh`
+- All 3 tables created and verified in production Postgres
+- Ready for integration into conversation flow
+
+**Next:**
+- Integrate memory functions into `/api/turn` route
+- Load character memory at conversation start for `{relationship}` prompt slot
+- Save conversation turns as they happen
+- Generate review log on conversation end (Claude call to extract learning moments)
+
+**Dependencies added:**
+`pg` and `@types/pg` for Postgres client
