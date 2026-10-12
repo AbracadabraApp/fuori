@@ -403,3 +403,12 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 
 **Dependencies added:**
 `pg` and `@types/pg` for Postgres client
+
+## 2026-10-11 evening: Characters stop talking when you leave (cloud session)
+
+- Bug (Josh, iPhone): characters kept talking after going back to the places list, and even after switching to another app.
+- Cause: nothing stopped the audio when the conversation screen closed or the page went to the background, and a reply still on its way would start speaking after you'd left.
+- Fix: `lib/speech/silenceAll()` stops the hosted voice, the phone's voice, the recorder, the mic and the level meter. `ConversationScreen` calls it when the screen closes, when the app goes to the background (`visibilitychange`) and on `pagehide`. A reply or recording that finishes after you've left is dropped instead of spoken or sent. Coming back to the app doesn't replay anything; the text is still there.
+- Test: `npm run test:silence`.
+- **Not verified on iPhone** (no audio in the headless browser here).
+- For the memory work: leaving the screen is also "conversation ends", so the end-of-conversation call can hang off the same cleanup effect.

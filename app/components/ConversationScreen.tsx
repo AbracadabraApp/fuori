@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
 import { language } from '@/content/it/language';
@@ -17,6 +17,7 @@ import {
 } from '@/lib/errors';
 import { isDebugMode } from '@/lib/debug';
 import { audioFileName } from '@/lib/speech/audio-file';
+import { silenceAll } from '@/lib/speech/silence';
 import styles from './ConversationScreen.module.css';
 
 // A zero-length WAV. Playing it during a tap "unlocks" audio on iPhone Safari,
@@ -97,6 +98,42 @@ export function ConversationScreen({
   // True once the meter has picked up real sound in this recording
   const [meterLive, setMeterLive] = useState(false);
   const speakingAtStartRef = useRef(false);
+  // The live microphone stream, so leaving can turn the mic off
+  const streamRef = useRef<MediaStream | null>(null);
+  // False once the learner has left the screen or switched apps: nothing may
+  // start speaking after that, and a recording in progress is thrown away
+  const activeRef = useRef(true);
+
+  // Leaving the screen or switching apps silences the character and the mic.
+  // Before this, characters kept talking after you went back or opened another app.
+  useEffect(() => {
+    activeRef.current = true;
+    const silence = () => {
+      activeRef.current = false;
+      silenceAll({
+        audio: audioRef.current,
+        synth: typeof speechSynthesis !== 'undefined' ? speechSynthesis : null,
+        recorder: mediaRecorderRef.current,
+        stream: streamRef.current,
+        meter: meterRef.current,
+      });
+      streamRef.current = null;
+      meterRef.current = null;
+      setIsRecording(false);
+      setIsSpeaking(false);
+    };
+    const onVisibility = () => {
+      if (document.hidden) silence();
+      else activeRef.current = true; // back in the app: ready again (nothing replays)
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    window.addEventListener('pagehide', silence);
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener('pagehide', silence);
+      silence();
+    };
+  }, []);
 
   const characterName = character.name;
 
@@ -118,6 +155,7 @@ export function ConversationScreen({
 
   // err is the hosted-voice failure, if any (null when no hosted voice is configured)
   const speakWithBrowser = (text: string, rate: number, err: FuoriError | null = null) => {
+    if (!activeRef.current) return; // left the screen or the app
     try {
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = language.speechLang;
@@ -234,13 +272,20 @@ export function ConversationScreen({
         setVoiceFallback(null);
         setDebugInfo((d) => ({ ...d, voice: `hosted (${Math.round(audioBlob.size / 1024)} KB)` }));
 
+        // The reply arrived after the learner left: don't start talking
+        if (!activeRef.current) return;
+
         // Reuse the element unlocked during the tap so iPhone Safari allows playback
         const audio = audioRef.current ?? new Audio();
+        // A media element held in a ref is meant to be changed; the leave/background
+        // effect above only pauses it, so the React Compiler's warning doesn't apply
+        // eslint-disable-next-line react-hooks/immutability
         audio.src = audioUrl;
         audio.playbackRate = speed; // Control playback speed (0.5 = half speed, 2.0 = double speed)
         audioRef.current = audio;
         // Don't await - just start playback and return control immediately
         audio.play().catch((err) => {
+          if (!activeRef.current) return; // paused because the learner left
           const e = toFuoriError(err, 'audio playback');
           reportError(e, { character: characterId });
           setDebugInfo((d) => ({ ...d, voice: 'browser (playback refused)', lastError: `[${e.id}] audio playback: ${e.message}` }));
@@ -332,6 +377,7 @@ export function ConversationScreen({
       setIsSpeaking(false);
 
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      streamRef.current = stream;
       meterRef.current = startLevelMeter(stream);
 
       // Try formats in order of Groq compatibility
@@ -366,6 +412,9 @@ export function ConversationScreen({
         meterRef.current?.stop();
         meterRef.current = null;
         stream.getTracks().forEach((track) => track.stop());
+        streamRef.current = null;
+        // Stopped because the learner left mid-recording: don't send it
+        if (!activeRef.current) return;
         await processAudio(audioBlob, ms);
       };
 

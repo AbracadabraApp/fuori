@@ -18,7 +18,8 @@
     "test:voices": "tsx tests/check-voices.ts",
     "test:feed": "tsx tests/check-feed-order.ts",
     "test:audio": "tsx tests/check-audio-file.ts",
-    "test:roles": "tsx tests/check-roles.ts"
+    "test:roles": "tsx tests/check-roles.ts",
+    "test:silence": "tsx tests/check-silence.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
