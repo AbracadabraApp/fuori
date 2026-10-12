@@ -7,6 +7,7 @@ import { CharacterSheet, Turn } from '@/lib/types';
 import { logServerError } from '@/lib/server-log';
 import { getOrCreateLearnerId } from '@/lib/learner';
 import { recordTurn, recordingEnabled } from '@/lib/recording';
+import { loadCharacterMemory, loadMemoryAtStart, type CharacterMemory } from '@/lib/memory';
 
 
 export async function POST(request: NextRequest) {
@@ -39,10 +40,28 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Who's talking, and what this character remembers about them (fills the
+    // prompt's {relationship} line). Never blocks the reply: without it the
+    // character just hasn't met them.
+    let learnerId: string | null = null;
+    let memory: CharacterMemory | undefined;
+    if (recordingEnabled()) {
+      try {
+        learnerId = await getOrCreateLearnerId();
+        // Mid-conversation: what they remembered when it started
+        memory =
+          (typeof conversationId === 'string' ? await loadMemoryAtStart(conversationId, learnerId) : null) ??
+          (await loadCharacterMemory(learnerId, (character as CharacterSheet).id));
+      } catch (err) {
+        logServerError(request, 'memory load', err);
+      }
+    }
+
     const turnOutput = await runTurn({
       character: character as CharacterSheet,
       transcript: (transcript || []) as Turn[],
       learnerSaid,
+      memory,
     });
 
     // One line per turn so any reply can be traced to the prompt version that produced it
@@ -61,9 +80,8 @@ export async function POST(request: NextRequest) {
     // Save the exchange so conversations can be reviewed later. Never blocks the
     // reply: recording problems are logged and the conversation carries on.
     let savedId: string | null = null;
-    if (recordingEnabled()) {
+    if (learnerId) {
       try {
-        const learnerId = await getOrCreateLearnerId();
         savedId = await recordTurn({
           learnerId,
           conversationId: typeof conversationId === 'string' ? conversationId : null,
@@ -72,6 +90,7 @@ export async function POST(request: NextRequest) {
           promptVersion: version,
           learnerSaid: (transcript || []).length ? learnerSaid : undefined,
           reply: turnOutput,
+          memory,
         });
       } catch (err) {
         logServerError(request, 'recording', err);
@@ -81,6 +100,7 @@ export async function POST(request: NextRequest) {
     // Return the validated output; the prompt version and conversation id travel in headers
     const headers: Record<string, string> = { 'x-prompt-version': version };
     if (savedId) headers['x-conversation-id'] = savedId;
+    if (memory) headers['x-memory'] = `${memory.visits} visits, ${memory.notes.length} notes`; // debug panel
     return NextResponse.json(turnOutput, { headers });
   } catch (error) {
     logServerError(request, 'turn', error);

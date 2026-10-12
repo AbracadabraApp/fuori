@@ -1,7 +1,8 @@
 /**
  * Character memory and conversation storage
  *
- * M1 memory system: characters remember learners across visits
+ * M1 memory system: characters remember learners across visits.
+ * Writing the notes and review log at the end of a conversation: lib/remember.ts
  */
 
 import { randomUUID } from 'crypto';
@@ -40,6 +41,8 @@ export interface ReviewLog {
     better: string;
     why: string;
   }>;
+  /** Version of content/it/prompts/memory.md that wrote it */
+  promptVersion?: string;
 }
 
 /**
@@ -72,6 +75,22 @@ export async function loadCharacterMemory(
 }
 
 /**
+ * What the character remembered when this conversation started, so every turn
+ * of one conversation gets the same {relationship} line. (Memory can be
+ * written mid-conversation when the phone goes to the background; without
+ * this the character would then "remember" meeting them earlier today.)
+ * Null if the conversation isn't this learner's or predates the snapshot.
+ */
+export async function loadMemoryAtStart(conversationId: string, learnerId: string): Promise<CharacterMemory | null> {
+  const result = await query<{ memory_at_start: { visits: number; lastVisit: string | null; notes: string[] } | null }>(
+    'SELECT memory_at_start FROM conversations WHERE id = $1 AND learner_id = $2',
+    [conversationId, learnerId]
+  );
+  const m = result.rows[0]?.memory_at_start;
+  return m ? { visits: m.visits, lastVisit: m.lastVisit ? new Date(m.lastVisit) : null, notes: m.notes } : null;
+}
+
+/**
  * Start a new conversation and return its ID.
  * The conversation row is created immediately so turns can be saved incrementally.
  */
@@ -80,15 +99,17 @@ export async function startConversation(
   characterId: string,
   placeId: string,
   cityId: string,
-  promptVersion: string
+  promptVersion: string,
+  /** What the character remembered when it started; used for the rest of the conversation */
+  memoryAtStart?: CharacterMemory
 ): Promise<string> {
   const conversationId = randomUUID();
 
   await query(
     `INSERT INTO conversations
-     (id, learner_id, character_id, place_id, city_id, prompt_version, started_at, turns)
-     VALUES ($1, $2, $3, $4, $5, $6, now(), '[]'::jsonb)`,
-    [conversationId, learnerId, characterId, placeId, cityId, promptVersion]
+     (id, learner_id, character_id, place_id, city_id, prompt_version, started_at, turns, memory_at_start)
+     VALUES ($1, $2, $3, $4, $5, $6, now(), '[]'::jsonb, $7)`,
+    [conversationId, learnerId, characterId, placeId, cityId, promptVersion, memoryAtStart ? JSON.stringify(memoryAtStart) : null]
   );
 
   return conversationId;
@@ -116,34 +137,62 @@ export async function addConversationTurn(
 }
 
 /**
- * Mark conversation as ended and save character notes + review log.
- * This is called when the learner leaves the conversation screen.
+ * Claim a conversation for writing memory, so it's done once per new stretch
+ * of talk even when several "left the screen" signals arrive at once.
+ * Succeeds only if the conversation has turns not yet written into memory and
+ * at least `minLearnerLines` lines from the learner. Returns null otherwise.
+ * `firstTime` is true the first time this conversation is written (that's
+ * when the visit counts); a conversation reopened and ended again is
+ * re-written from its full transcript without counting another visit.
  */
-export async function endConversation(
+export async function claimForMemory(
   conversationId: string,
-  characterId: string,
   learnerId: string,
-  updatedNotes: string[],
-  reviewLog: ReviewLog
-): Promise<void> {
-  // Update conversation with end time and review log
-  await query(
-    `UPDATE conversations
-     SET ended_at = now(), review = $1
-     WHERE id = $2`,
-    [JSON.stringify(reviewLog), conversationId]
+  minLearnerLines: number
+): Promise<{ firstTime: boolean; before: number; claimed: number; characterId: string; cityId: string; turns: ConversationTurn[] } | null> {
+  const result = await query<{ before: number; claimed: number; character_id: string; city_id: string; turns: ConversationTurn[] }>(
+    `UPDATE conversations c
+     SET memory_turns = jsonb_array_length(c.turns)
+     FROM (SELECT id, memory_turns AS before FROM conversations WHERE id = $1) old
+     WHERE c.id = old.id AND c.learner_id = $2
+       AND jsonb_array_length(c.turns) > c.memory_turns
+       AND (SELECT count(*) FROM jsonb_array_elements(c.turns) t WHERE t->>'who' = 'learner') >= $3
+     RETURNING old.before, c.memory_turns AS claimed, c.character_id, c.city_id, c.turns`,
+    [conversationId, learnerId, minLearnerLines]
   );
+  const row = result.rows[0];
+  if (!row) return null;
+  return { firstTime: row.before === 0, before: row.before, claimed: row.claimed, characterId: row.character_id, cityId: row.city_id ?? '', turns: row.turns };
+}
 
-  // Update character memory: increment visits, update notes
+/** Undo a claim when writing memory failed, so the next end signal tries again. */
+export async function releaseMemoryClaim(conversationId: string, before: number, claimed: number): Promise<void> {
+  await query('UPDATE conversations SET memory_turns = $2 WHERE id = $1 AND memory_turns = $3', [conversationId, before, claimed]);
+}
+
+/**
+ * Save what the end-of-conversation call wrote: the review log on the
+ * conversation, and the character's notes (replacing the old ones, which the
+ * call already merged in). The visit counts only when `firstTime`.
+ */
+export async function saveConversationMemory(p: {
+  conversationId: string;
+  learnerId: string;
+  characterId: string;
+  notes: string[];
+  review: ReviewLog;
+  firstTime: boolean;
+}): Promise<void> {
   await query(
-    `INSERT INTO character_memories (learner_id, character_id, visits, last_visit, notes)
-     VALUES ($1, $2, 1, now(), $3)
+    `WITH r AS (UPDATE conversations SET review = $1 WHERE id = $2)
+     INSERT INTO character_memories (learner_id, character_id, visits, last_visit, notes)
+     VALUES ($3, $4, $5, now(), $6)
      ON CONFLICT (learner_id, character_id)
      DO UPDATE SET
-       visits = character_memories.visits + 1,
+       visits = character_memories.visits + $5,
        last_visit = now(),
-       notes = $3`,
-    [learnerId, characterId, updatedNotes]
+       notes = $6`,
+    [JSON.stringify(p.review), p.conversationId, p.learnerId, p.characterId, p.firstTime ? 1 : 0, p.notes]
   );
 }
 

@@ -466,3 +466,14 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 - Test full Roma experience on iPhone via network URL
 - Generate portraits for other cities if needed
 - Continue with memory integration and conversation recording features
+
+## 2026-10-12: Character memory (laptop session)
+
+- **Built:** when a conversation ends, one Claude call (`lib/remember.ts`, prompt `content/it/prompts/memory.md` with version + changelog) writes the character's notes about you (at most 10 short lines, merged with what they already remembered) and the review log (2–3 things worth learning from their Italian, real mistakes, speech-to-text noise skipped). Next visit, the notes and visit count fill `{relationship}`: "You've met them twice. The last time was yesterday. You remember: …". Character prompt 2026-10-12: the wording moved from code into `character.md`; a first meeting is word-for-word unchanged.
+- **When it runs:** the end beacon now also goes out when the app goes to the background (on iPhone, locking or switching apps never closes the screen, and Safari may drop the page later). Needs at least 2 learner lines. Safe to receive repeatedly: `conversations.memory_turns` makes it run once per new stretch of talk (two signals at once write once); a visit counts once per conversation; a failed call is released so the next signal retries.
+- **Snapshot:** each conversation stores `memory_at_start`, and every turn of it uses that, so memory written mid-conversation (backgrounding) doesn't make the character "remember meeting you earlier today".
+- **Where to see it:** admin transcripts (`format=text`) show REVIEW and THEY REMEMBER NOW under each conversation. Debug panel shows "Memory: N visits, N notes".
+- **Tried for real** on a sample Sandro conversation: good notes (name, Seattle, Trastevere, promised to try the maritozzo), caught *due settimana*, ignored "marito zoo" as noise; merges without duplicates; ~6 s (the phone doesn't wait).
+- Tests: `npm run test:memory` (prompt part always; database part with a local `DATABASE_URL`: `createdb fuori_test`). `test:schema` also checks the memory schema; `test:prompt` checks memory.md's changelog.
+- **Railway:** needs `node scripts/db-migrate.mjs` (adds `memory_turns`, `memory_at_start`) before this deploys, or new conversations won't record.
+- **Not done:** conversations that never send an end signal (page killed without a background event) aren't remembered; catching up on stale ones at the next opening would fix that if it shows up. Not verified on iPhone.

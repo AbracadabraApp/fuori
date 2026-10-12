@@ -12,7 +12,7 @@
  */
 
 import { query } from './db';
-import { startConversation, addConversationTurn } from './memory';
+import { startConversation, addConversationTurn, type CharacterMemory, type ReviewLog } from './memory';
 import type { CharacterSheet } from './types';
 import { turnStats, wordCount } from './dialogue-stats';
 
@@ -30,6 +30,8 @@ interface RecordTurnParams {
   /** What Whisper heard; absent on the opening line */
   learnerSaid?: string;
   reply: { it: string; en: string };
+  /** What the character remembered at the start, kept with a new conversation */
+  memory?: CharacterMemory;
 }
 
 /**
@@ -56,7 +58,7 @@ export async function recordTurn(p: RecordTurnParams): Promise<string | null> {
       }
     }
 
-    id = await startConversation(p.learnerId, p.character.id, p.character.placeId ?? '', p.cityId, p.promptVersion);
+    id = await startConversation(p.learnerId, p.character.id, p.character.placeId ?? '', p.cityId, p.promptVersion, p.memory);
     for (const t of turns) await addConversationTurn(id, p.learnerId, t);
     return id;
   } catch (err) {
@@ -84,6 +86,10 @@ export interface RecordedConversation {
   started_at: Date;
   ended_at: Date | null;
   turns: { who: 'npc' | 'learner'; text: string; en?: string; at: string }[];
+  /** Written when the conversation ended (lib/remember.ts); null until then */
+  review: ReviewLog | null;
+  /** The character's notes about this learner now (after their latest conversation) */
+  notes: string[] | null;
 }
 
 /**
@@ -92,10 +98,12 @@ export interface RecordedConversation {
  */
 export async function recentConversations(limit = 20, since?: Date): Promise<RecordedConversation[]> {
   const result = await query<RecordedConversation>(
-    `SELECT id, character_id, place_id, city_id, prompt_version, started_at, ended_at, turns
-     FROM conversations
-     WHERE ($2::timestamptz IS NULL OR started_at > $2)
-     ORDER BY started_at DESC LIMIT $1`,
+    `SELECT c.id, c.character_id, c.place_id, c.city_id, c.prompt_version, c.started_at, c.ended_at, c.turns,
+            c.review, m.notes
+     FROM conversations c
+     LEFT JOIN character_memories m ON m.learner_id = c.learner_id AND m.character_id = c.character_id
+     WHERE ($2::timestamptz IS NULL OR c.started_at > $2)
+     ORDER BY c.started_at DESC LIMIT $1`,
     [Math.min(Math.max(limit, 1), 200), since ?? null]
   );
   return result.rows;
@@ -116,5 +124,14 @@ export function conversationStats(c: RecordedConversation) {
 export function conversationAsText(c: RecordedConversation): string {
   const head = `${c.character_id} · ${c.place_id || '?'}, ${c.city_id} · ${new Date(c.started_at).toISOString().slice(0, 16).replace('T', ' ')} UTC · prompt ${c.prompt_version}${c.ended_at ? '' : ' · not ended'}`;
   const lines = c.turns.map((t) => `${t.who === 'npc' ? 'THEM' : 'YOU '}: ${t.text}`);
-  return [head, ...lines].join('\n');
+  const review = c.review
+    ? [
+        '',
+        'REVIEW:',
+        ...c.review.items.map((i) => `  ${i.it} = ${i.en} (${i.why})`),
+        ...c.review.mistakes.map((m) => `  you said "${m.said}" → "${m.better}" (${m.why})`),
+      ]
+    : [];
+  const notes = c.notes?.length ? ['', 'THEY REMEMBER NOW:', ...c.notes.map((n) => `  ${n}`)] : [];
+  return [head, ...lines, ...review, ...notes].join('\n');
 }

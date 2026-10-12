@@ -48,6 +48,8 @@ interface DebugInfo {
   prompt?: string;
   /** Whether this conversation is being saved, with the start of its id */
   saved?: string;
+  /** What the character remembers: visits and number of notes */
+  memory?: string;
   meter?: string;
   heard?: string;
   recording?: string;
@@ -137,9 +139,23 @@ export function ConversationScreen({
       revealFrameRef.current = null;
       setShown(null);
     };
+    // Ends the recorded conversation, which is when the character writes their
+    // notes (a beacon survives navigation). Also sent when the app goes to the
+    // background: on iPhone, locking the phone or switching apps never closes
+    // this screen, and Safari may drop the page later without warning. Talking
+    // again reopens the conversation; the server only rewrites memory if there
+    // are new turns.
+    const endConversation = () => {
+      const id = conversationIdRef.current;
+      if (id && typeof navigator !== 'undefined' && navigator.sendBeacon) {
+        navigator.sendBeacon('/api/conversation/end', JSON.stringify({ conversationId: id }));
+      }
+    };
     const onVisibility = () => {
-      if (document.hidden) silence();
-      else activeRef.current = true; // back in the app: ready again (nothing replays)
+      if (document.hidden) {
+        silence();
+        endConversation();
+      } else activeRef.current = true; // back in the app: ready again (nothing replays)
     };
     document.addEventListener('visibilitychange', onVisibility);
     window.addEventListener('pagehide', silence);
@@ -147,11 +163,7 @@ export function ConversationScreen({
       document.removeEventListener('visibilitychange', onVisibility);
       window.removeEventListener('pagehide', silence);
       silence();
-      // Leaving the screen ends the recorded conversation (a beacon survives navigation)
-      const id = conversationIdRef.current;
-      if (id && typeof navigator !== 'undefined' && navigator.sendBeacon) {
-        navigator.sendBeacon('/api/conversation/end', JSON.stringify({ conversationId: id }));
-      }
+      endConversation();
     };
   }, []);
 
@@ -283,7 +295,7 @@ export function ConversationScreen({
         )
       );
       const turnOutput: TurnOutput = await response.json();
-      setDebugInfo((d) => ({ ...d, prompt: response.headers.get('x-prompt-version') ?? undefined }));
+      setDebugInfo((d) => ({ ...d, prompt: response.headers.get('x-prompt-version') ?? undefined, memory: response.headers.get('x-memory') ?? 'not loaded' }));
       conversationIdRef.current = response.headers.get('x-conversation-id');
       setDebugInfo((d) => ({ ...d, saved: conversationIdRef.current ? `yes (${conversationIdRef.current.slice(0, 8)})` : 'no' }));
 
@@ -680,6 +692,7 @@ export function ConversationScreen({
             <div className={styles.debug}>
               <div><b>Prompt:</b> {debugInfo.prompt ?? '—'}</div>
               <div><b>Saved:</b> {debugInfo.saved ?? '—'}</div>
+              <div><b>Memory:</b> {debugInfo.memory ?? '—'}</div>
               <div><b>Recording:</b> {debugInfo.recording ?? '—'}</div>
               <div><b>Meter:</b> {debugInfo.meter ?? '—'}</div>
               <div><b>Heard:</b> {debugInfo.heard ?? '—'}</div>

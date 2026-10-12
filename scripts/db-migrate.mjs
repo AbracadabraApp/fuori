@@ -46,6 +46,14 @@ CREATE TABLE IF NOT EXISTS conversations (
   review          jsonb
 );
 
+-- How many of a conversation's turns have been written into character memory
+-- (notes + review log), so memory is written once per new stretch of talk
+-- (added 2026-10-12)
+ALTER TABLE conversations ADD COLUMN IF NOT EXISTS memory_turns int NOT NULL DEFAULT 0;
+-- What the character remembered when the conversation started (visits, last
+-- visit, notes), so every turn of it gets the same {relationship} line
+ALTER TABLE conversations ADD COLUMN IF NOT EXISTS memory_at_start jsonb;
+
 -- Indexes for common queries
 CREATE INDEX IF NOT EXISTS idx_conversations_learner ON conversations(learner_id);
 CREATE INDEX IF NOT EXISTS idx_conversations_character ON conversations(character_id);

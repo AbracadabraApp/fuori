@@ -14,6 +14,12 @@ const changelog = md.split('## Changelog')[1] ?? '';
 const newest = changelog.match(/^### ([^\s:]+)/m)?.[1];
 if (newest !== version) failures.push(`character.md: version is ${version} but the newest changelog entry is ${newest ?? 'missing'}. Add a changelog entry (what changed, why, what prompted it).`);
 
+// Same rule for the end-of-conversation memory prompt
+const memoryMd = readFileSync('content/it/prompts/memory.md', 'utf8');
+const memoryVersion = memoryMd.match(/^version:\s*(\S+)/m)?.[1];
+const memoryNewest = (memoryMd.split('## Changelog')[1] ?? '').match(/^### ([^\s:]+)/m)?.[1];
+if (memoryNewest !== memoryVersion) failures.push(`memory.md: version is ${memoryVersion} but the newest changelog entry is ${memoryNewest ?? 'missing'}. Add a changelog entry.`);
+
 for (const city of cities) {
   for (const place of city.places) {
     const c = characterForPlace(city, place);

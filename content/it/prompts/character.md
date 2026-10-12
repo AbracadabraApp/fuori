@@ -1,6 +1,6 @@
 # Character prompt (Italian)
 
-version: 2026-10-11b
+version: 2026-10-12
 
 The prompt every character gets, for every conversation turn. It is read by
 `lib/prompts/build-turn-prompt.ts`, which fills in the `{placeholders}` from the
@@ -41,7 +41,24 @@ Placeholders:
 - `{traits}`: personality traits, comma-separated
 - `{formality}`: "tu (informal)" or "Lei (formal)"
 - `{english}`: "You speak fluent English." / "You speak basic English." / empty (line left out)
-- `{relationship}`: what this character knows about the person. Until character memory is built, always "You haven't met them before." With memory it becomes e.g. "You've met them 3 times. You remember: their name is Josh; from Seattle; always orders a cappuccino." 
+- `{relationship}`: what this character knows about the person, from character memory (one of the two blocks below)
+
+## Relationship: first meeting
+
+```
+You haven't met them before.
+```
+
+## Relationship: met before
+
+```
+You've met them {visits}. The last time was {lastSeen}.
+You remember: {notes}
+```
+
+- `{visits}`: "once", "twice", "3 times" (conversations that reached a few exchanges)
+- `{lastSeen}`: "earlier today", "yesterday", "5 days ago", "about 3 weeks ago"
+- `{notes}`: the character's notes about the person, joined with "; ". Written by the end-of-conversation call (`content/it/prompts/memory.md`). Line left out if there are none.
 
 ## First turn
 
@@ -66,6 +83,12 @@ Respond naturally as your character would.
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-12: relationship filled from character memory
+- **Moved** the `{relationship}` wording out of code into two blocks here: "Relationship: first meeting" (unchanged: "You haven't met them before.") and "Relationship: met before" ("You've met them twice. The last time was yesterday. You remember: …").
+- **Why:** character memory is built (M1). Notes are written when a conversation ends (`content/it/prompts/memory.md`) and come back here on the next visit. The prompt for a first meeting is word-for-word the same as 2026-10-11b, so conversation-test baselines still compare.
+- **Deliberately not added:** any instruction on how to use the memories ("greet them by name", "mention last time"). Same principle as the rest: describe what the character knows and let them act like a real barista would.
+- **Prompted by:** roadmap Now #2, finishing M1 memory.
 
 ### 2026-10-11b: relationship slot instead of "new to the neighbourhood"
 - **Replaced** "They're new to the neighbourhood." with a `{relationship}` line, currently always "You haven't met them before."

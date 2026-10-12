@@ -11,7 +11,8 @@ Updated 2026-10-12. Top of the list first; strike items off here as they're done
 1. ~~**Postgres in Railway**~~ Done 2026-10-11: tables created on Railway (learners, character_memories, conversations).
 2. **Memory, saved transcripts and the review log** (M1, below): core M1 completion.
    - **Recording: done 2026-10-12.** Every turn is saved (`lib/recording.ts`); leaving marks the conversation ended. Read them at `/api/admin/conversations?key=…&format=text` once `ADMIN_KEY` is set in Railway.
-   - **Still to do:** the end-of-conversation Claude call that writes the character's notes and the review log (hook: `/api/conversation/end`), and loading notes into `{relationship}` on the next visit.
+   - **Memory: done 2026-10-12.** Leaving (or backgrounding the app) after 2+ learner lines writes the character's notes and the review log (`lib/remember.ts`, prompt `content/it/prompts/memory.md`); next visit the notes fill `{relationship}`. Review log and notes show in the admin transcripts.
+   - **To check on the phone:** come back to a character another day; do they remember your name and something you talked about? Is the review log worth learning from?
    - **Then:** read real transcripts to judge reply length and the prompt audit fixes (below).
 3. **Roma portraits** (laptop, needs the xAI key): 23 Roma city characters have no portrait. `npm run images -- --city roma`, then `npm run test:images` should report 0 missing.
 4. **Prompt experiments** (version bump + changelog each time). Measure first: `npm run test:conversations -- --seed=7` on the laptop gives the baseline (length numbers added 2026-10-12), then the same seed after each change. Audit 2026-10-12, most likely causes of long turns first:
@@ -41,12 +42,12 @@ Updated 2026-10-12. Top of the list first; strike items off here as they're done
 
 **To do**
 - [ ] Prompt experiments ([Now #3](#now-ranked)): text-only clarification, "lives here" context, manner traits
-- [ ] Postgres: `learners`, `character_memories`, `conversations` ([Data model](09-data-model.md#storage-strategy)); anonymous learner id in a server-set cookie
-- [ ] Save each conversation: character, place, times, prompt version, and turns (who, text, English, time). No audio.
-- [ ] When a conversation ends, one Claude call writes:
+- [x] Postgres: `learners`, `character_memories`, `conversations` ([Data model](09-data-model.md#storage-strategy)); anonymous learner id in a server-set cookie
+- [x] Save each conversation: character, place, times, prompt version, and turns (who, text, English, time). No audio.
+- [x] When a conversation ends, one Claude call writes:
   - the character's notes about you (fills `{relationship}` next visit)
   - a **review-log entry**: the 2–3 things most worth catching, judged by comparing the character's Italian with the learner's level (useful or recurring words and structures likely beyond them), plus real mistakes the learner made. Skips anything that could be speech-to-text noise.
-- [ ] Show the review log in debug mode only, to check it's accurate before anyone else sees it
+- [x] Show the review log in debug mode only (in the admin transcripts, not to learners), to check it's accurate before anyone else sees it
 
 **Done when:** you come back to a character another day and they remember your name and something you talked about; and the review log for a conversation picks things you'd agree were worth learning.
 

@@ -1,6 +1,7 @@
 // Checks the /api/turn output schema against structured-output rules.
 // Catches the bug where a missing additionalProperties: false made every turn return 400.
 import { turnOutputJsonSchema } from '../lib/prompts/turn-output-schema.ts';
+import { memoryOutputJsonSchema } from '../lib/prompts/memory-output-schema.ts';
 
 const UNSUPPORTED = ['maxLength', 'minLength', 'maxItems', 'minimum', 'maximum', 'pattern'];
 const problems = [];
@@ -21,9 +22,10 @@ function walk(node, path) {
   for (const [k, v] of Object.entries(node)) walk(v, `${path}.${k}`);
 }
 
-walk(turnOutputJsonSchema, 'schema');
+walk(turnOutputJsonSchema, 'turn schema');
+walk(memoryOutputJsonSchema, 'memory schema');
 if (problems.length) {
   console.error('Turn output schema problems:\n' + problems.join('\n'));
   process.exit(1);
 }
-console.log('OK: turn output schema follows structured-output rules');
+console.log('OK: turn and memory output schemas follow structured-output rules');

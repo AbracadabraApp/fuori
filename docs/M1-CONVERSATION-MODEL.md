@@ -179,7 +179,7 @@ But test the simple version first.
 - `none`: no English; simpler Italian, slower, with gestures
 - unspecified: no instruction; the character just speaks Italian
 
-**Memory is not built yet.** It is planned for M1 (see "Character Memory" above). Until it's built, each conversation starts fresh.
+**Memory is built (2026-10-12).** When a conversation ends (leaving the screen or the app going to the background, after at least 2 learner lines), `lib/remember.ts` makes one Claude call (`content/it/prompts/memory.md`) that writes the character's notes and the review log. Next visit, the notes and visit count fill `{relationship}`. Each conversation keeps the memory it started with, so writing memory mid-conversation doesn't change what the character knows until the next visit.
 
 **Prompt built from:** see `content/it/prompts/character.md` (filled in by `lib/prompts/build-turn-prompt.ts`). It doesn't currently mention learning Italian or matching a level.
 

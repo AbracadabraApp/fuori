@@ -411,7 +411,9 @@ conversations (
   started_at      timestamptz not null,
   ended_at        timestamptz,
   turns           jsonb not null,  -- [{ who, text, en?, at }]
-  review          jsonb            -- review-log entry written when it ends (2–3 items, real mistakes)
+  review          jsonb,           -- review-log entry written when it ends (2–3 items, real mistakes)
+  memory_turns    int not null default 0,  -- turns already written into memory (written once per new stretch of talk)
+  memory_at_start jsonb            -- what the character remembered when it started (same {relationship} for every turn)
 )
 ```
 

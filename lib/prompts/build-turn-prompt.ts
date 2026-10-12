@@ -6,14 +6,24 @@
  * Server-side only (reads the template from disk).
  */
 
-import { readFileSync } from 'fs';
-import { join } from 'path';
+import { readPromptFile, fill } from './template';
 import type { CharacterSheet, Turn } from '../types';
+
+/** What the character remembers about this learner (from character_memories) */
+export interface RememberedLearner {
+  visits: number;
+  lastVisit: Date | null;
+  notes: string[];
+}
 
 interface BuildTurnPromptParams {
   character: CharacterSheet;
   transcript: Turn[];
   learnerSaid?: string;
+  /** Absent or 0 visits: they haven't met */
+  memory?: RememberedLearner;
+  /** For "last time was yesterday"; defaults to now (tests pass a fixed date) */
+  now?: Date;
 }
 
 interface TurnPrompt {
@@ -27,36 +37,20 @@ interface Template {
   system: string;
   firstTurn: string;
   laterTurns: string;
+  firstMeeting: string;
+  metBefore: string;
 }
 
-const TEMPLATE_PATH = join(process.cwd(), 'content', 'it', 'prompts', 'character.md');
-
-let cached: Template | null = null;
-
-/** Parse the markdown template: version line plus the fenced block under each heading. */
 export function loadTemplate(): Template {
-  if (cached) return cached;
-  const md = readFileSync(TEMPLATE_PATH, 'utf8');
-  const version = md.match(/^version:\s*(\S+)/m)?.[1];
-  const block = (heading: string) => {
-    const re = new RegExp(`^## ${heading}\\s*\\n+\`\`\`\\n([\\s\\S]*?)\\n\`\`\``, 'm');
-    const m = md.match(re);
-    if (!m) throw new Error(`character.md: missing "## ${heading}" block`);
-    return m[1];
+  const f = readPromptFile('character.md');
+  return {
+    version: f.version,
+    system: f.block('System prompt'),
+    firstTurn: f.block('First turn'),
+    laterTurns: f.block('Later turns'),
+    firstMeeting: f.block('Relationship: first meeting'),
+    metBefore: f.block('Relationship: met before'),
   };
-  if (!version) throw new Error('character.md: missing "version:" line');
-  cached = { version, system: block('System prompt'), firstTurn: block('First turn'), laterTurns: block('Later turns') };
-  return cached;
-}
-
-/** Replace {placeholders}; drop lines whose placeholders were all empty; tidy blank lines. */
-function fill(template: string, values: Record<string, string>): string {
-  const lines = template.split('\n').flatMap((line) => {
-    const keys = [...line.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).filter((k) => k in values);
-    if (keys.length && keys.every((k) => !values[k])) return []; // optional line with nothing to say
-    return [line.replace(/\{(\w+)\}/g, (whole, k) => (k in values ? values[k] : whole))];
-  });
-  return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
 }
 
 /** Version of the character prompt in use (from character.md). */
@@ -64,8 +58,33 @@ export function promptVersion(): string {
   return loadTemplate().version;
 }
 
+function timesMet(visits: number): string {
+  return visits === 1 ? 'once' : visits === 2 ? 'twice' : `${visits} times`;
+}
+
+/** "earlier today", "yesterday", "5 days ago", "about 3 weeks ago" */
+export function howLongAgo(then: Date, now: Date): string {
+  const day = (d: Date) => Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86_400_000);
+  const days = day(now) - day(then);
+  if (days <= 0) return 'earlier today';
+  if (days === 1) return 'yesterday';
+  if (days < 14) return `${days} days ago`;
+  if (days < 60) return `about ${Math.round(days / 7)} weeks ago`;
+  return `about ${Math.round(days / 30)} months ago`;
+}
+
+/** The {relationship} line: what this character knows about the person. */
+export function relationshipLine(t: Template, memory: RememberedLearner | undefined, now: Date): string {
+  if (!memory || memory.visits < 1) return fill(t.firstMeeting, {});
+  return fill(t.metBefore, {
+    visits: timesMet(memory.visits),
+    lastSeen: memory.lastVisit ? howLongAgo(new Date(memory.lastVisit), now) : '',
+    notes: memory.notes.join('; '),
+  });
+}
+
 export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
-  const { character, transcript, learnerSaid } = params;
+  const { character, transcript, learnerSaid, memory, now = new Date() } = params;
   const t = loadTemplate();
 
   const english =
@@ -84,8 +103,7 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
     traits: character.personality.traits.join(', '),
     formality: character.speech.formality === 'Lei' ? 'Lei (formal)' : 'tu (informal)',
     english,
-    // Filled by character memory once it exists (see character.md)
-    relationship: "You haven't met them before.",
+    relationship: relationshipLine(t, memory, now),
   });
 
   const user =
