@@ -443,3 +443,26 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 - `test:conversations`: a **Length** section in every report and per-character opener/median columns; a `.json` summary beside each report for comparing runs; `--seed=N` gives the same sample every time for before-and-after. The grader text is unchanged (still told not to penalize complex Italian; changing that needs Josh's OK); length is counted, not graded. Fixed a stale path in the recommender (prompt lives in `content/it/prompts/character.md`).
 - Recorded conversations use the same measurements (`conversationStats` in `lib/recording.ts`).
 - Rehearsed the whole test with a fake Claude here (no API key in the cloud session); the real baseline run is for the laptop: `npm run test:conversations -- --seed=7`.
+
+## 2026-10-12: Roma character portraits generated for phone testing
+
+**What was done:**
+- Generated all 23 Roma character portraits using xAI Grok imagine-image-2.0
+- Updated image generation manifest with completed portraits
+- Committed and pushed portrait files to enable testing on phone
+
+**Why:**
+- Only anchor characters (Giulia, Rita) had portraits before; other Roma characters showed placeholder icons
+- Complete portrait coverage needed for full Roma experience testing on iPhone
+- Remote testing setup requested: dev server already accessible at http://192.168.4.182:3000 on local network
+
+**Technical:**
+- Used `npm run images -- --city roma` via `/api/generate-image` endpoint
+- 22 new portraits generated (sandro-bar-angolo was already done)
+- All portraits use pen and ink style with minimal watercolor wash per character portraitPrompt
+- Total: 23 Roma character portraits + 2 anchors (Giulia, Rita) = 25 characters with portraits
+
+**Next:**
+- Test full Roma experience on iPhone via network URL
+- Generate portraits for other cities if needed
+- Continue with memory integration and conversation recording features
