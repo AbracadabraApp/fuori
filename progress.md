@@ -421,3 +421,7 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 - Shows everything at once when speech ends, when you interrupt with the mic, when you leave or switch apps, or if there's no voice at all. English (if on) appears after the Italian has been spoken.
 - `lib/speech/reveal.ts`, `npm run test:reveal`. Checked in Chromium with a fake reply and 4-second clip (screenshots at 0.7/2.2/3.7/6.2s). **Not verified on iPhone.**
 - Also tonight: default speech speed 0.7 → 0.9, beginner (English on) 0.5 → 0.7.
+
+## 2026-10-12: Voice dropout cause confirmed
+
+- Josh checked ElevenLabs: the character quota was used up. That's why the voice dropped mid-conversation on 2026-10-11 and the phone's voice took over. The fallback note now says "Voice service quota used up" when it happens.
