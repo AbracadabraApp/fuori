@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSpeechProvider } from '@/lib/speech/providers';
 import { logServerError } from '@/lib/server-log';
-import { language as learning } from '@/content/it/language';
+import { language as learning } from '@/content';
 
 export async function POST(request: NextRequest) {
   try {

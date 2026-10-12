@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const torino: CityPantry = {
   id: 'torino',
   name: 'Torino',
+  region: 'Piemonte',
   neighbourhoods: ['Centro', 'Quadrilatero Romano', 'San Salvario', 'Crocetta'],
   places: [
     // BARS/CAFÉS (3)

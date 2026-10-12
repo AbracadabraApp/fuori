@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const siracusa: CityPantry = {
   id: 'siracusa',
   name: 'Siracusa',
+  region: 'Sicilia',
   neighbourhoods: ['Ortigia', 'Neapolis', 'Acradina', 'Tyche'],
   places: [
     // DAILY ROUTINE - BARS/CAFÉS (3)

@@ -3,8 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
-import { language } from '@/content/it/language';
-import { browserVoiceFor } from '@/content/it/voices';
+import { language, browserVoiceFor } from '@/content';
 import {
   FuoriError,
   newErrorId,
@@ -203,10 +202,10 @@ export function ConversationScreen({
     setShown(null);
   };
   // A new reply: hidden until the voice starts, then typed out as it speaks
-  const presentReply = (it: string, en: string) => {
+  const presentReply = (line: string, en: string) => {
     finishReveal();
     setShown(0);
-    setCurrentResponse(it);
+    setCurrentResponse(line);
     setCurrentTranslation(en);
   };
 
@@ -297,12 +296,12 @@ export function ConversationScreen({
       conversationIdRef.current = response.headers.get('x-conversation-id');
       setDebugInfo((d) => ({ ...d, saved: conversationIdRef.current ? `yes (${conversationIdRef.current.slice(0, 8)})` : 'no' }));
 
-      const npcTurn: Turn = { who: 'npc', transcript: turnOutput.it, translation: turnOutput.en };
+      const npcTurn: Turn = { who: 'npc', transcript: turnOutput.line, translation: turnOutput.en };
       setTranscript([npcTurn]);
-      presentReply(turnOutput.it, turnOutput.en);
+      presentReply(turnOutput.line, turnOutput.en);
 
       // Play audio at appropriate speed for learner level
-      await playResponse(turnOutput.it, character.id, getSpeechSpeed());
+      await playResponse(turnOutput.line, character.id, getSpeechSpeed());
     } catch (err) {
       // Nothing has been said yet, so show the Start button again
       handleError(err, 'opening line');
@@ -595,12 +594,12 @@ export function ConversationScreen({
       setDebugInfo((d) => ({ ...d, saved: conversationIdRef.current ? `yes (${conversationIdRef.current.slice(0, 8)})` : 'no' }));
 
       const learnerTurn: Turn = { who: 'learner', transcript: transcription };
-      const npcTurn: Turn = { who: 'npc', transcript: turnOutput.it, translation: turnOutput.en };
+      const npcTurn: Turn = { who: 'npc', transcript: turnOutput.line, translation: turnOutput.en };
       setTranscript((prev) => [...prev, learnerTurn, npcTurn]);
-      presentReply(turnOutput.it, turnOutput.en);
+      presentReply(turnOutput.line, turnOutput.en);
 
       // Step 3: Play character's response at appropriate speed for learner level
-      await playResponse(turnOutput.it, character.id, getSpeechSpeed());
+      await playResponse(turnOutput.line, character.id, getSpeechSpeed());
     } catch (err) {
       handleError(err, 'reply');
     } finally {

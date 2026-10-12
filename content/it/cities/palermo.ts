@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const palermo: CityPantry = {
   id: 'palermo',
   name: 'Palermo',
+  region: 'Sicilia',
   neighbourhoods: ['Kalsa', 'Vucciria', 'Ballarò', 'Politeama'],
   places: [
     // BARS/CAFÉS (9 total - 3 per major neighborhood + extras)

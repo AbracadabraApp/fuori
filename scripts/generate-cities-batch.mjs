@@ -161,7 +161,7 @@ async function generateCities() {
       continue;
     }
 
-    const outputPath = path.join(__dirname, '..', 'content', 'it', 'cities', `${city.id}.ts`);
+    const outputPath = path.join(__dirname, '..', 'content', process.env.COUNTRY || 'it', 'cities', `${city.id}.ts`);
 
     // Check if already exists
     if (fs.existsSync(outputPath)) {

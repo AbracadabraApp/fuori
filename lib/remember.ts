@@ -18,7 +18,7 @@ import { memoryOutputJsonSchema } from './prompts/memory-output-schema';
 import { claimForMemory, releaseMemoryClaim, saveConversationMemory, loadCharacterMemory } from './memory';
 import { recordingEnabled } from './recording';
 import { characterForPlace } from './characters/for-place';
-import { cities } from '@/content/it/cities';
+import { cities } from '@/content';
 import type { CharacterSheet } from './types';
 import { scoreConversation, saveConversationScore, judgeWithClaude, type Judge } from './quality';
 
@@ -28,7 +28,7 @@ export const MIN_LEARNER_LINES = 2;
 const MemoryOutputSchema = z.object({
   notes: z.array(z.string()),
   review: z.object({
-    items: z.array(z.object({ it: z.string(), en: z.string(), why: z.string() })),
+    items: z.array(z.object({ phrase: z.string(), en: z.string(), why: z.string() })),
     mistakes: z.array(z.object({ said: z.string(), better: z.string(), why: z.string() })),
   }),
 });

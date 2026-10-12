@@ -30,7 +30,7 @@ interface RecordTurnParams {
   promptVersion: string;
   /** What Whisper heard; absent on the opening line */
   learnerSaid?: string;
-  reply: { it: string; en: string };
+  reply: { line: string; en: string };
   /** What the character remembered at the start, kept with a new conversation */
   memory?: CharacterMemory;
 }
@@ -47,7 +47,7 @@ export async function recordTurn(p: RecordTurnParams): Promise<string | null> {
     let id = p.conversationId;
     const turns = [
       ...(p.learnerSaid ? [{ who: 'learner' as const, text: p.learnerSaid, at }] : []),
-      { who: 'npc' as const, text: p.reply.it, en: p.reply.en, at },
+      { who: 'npc' as const, text: p.reply.line, en: p.reply.en, at },
     ];
 
     if (id) {
@@ -131,7 +131,7 @@ export function conversationAsText(c: RecordedConversation): string {
     ? [
         '',
         'REVIEW:',
-        ...c.review.items.map((i) => `  ${i.it} = ${i.en} (${i.why})`),
+        ...c.review.items.map((i) => `  ${i.phrase ?? (i as { it?: string }).it} = ${i.en} (${i.why})`),
         ...c.review.mistakes.map((m) => `  you said "${m.said}" → "${m.better}" (${m.why})`),
       ]
     : [];

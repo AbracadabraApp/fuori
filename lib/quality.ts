@@ -20,7 +20,7 @@ import { readPromptFile, fill } from './prompts/template';
 import { qualityOutputJsonSchema } from './prompts/quality-output-schema';
 import { turnStats, wordCount, type TurnStats } from './dialogue-stats';
 import { query } from './db';
-import { language } from '@/content/it/language';
+import { language } from '@/content';
 
 export interface ScoredTurn {
   who: 'npc' | 'learner';

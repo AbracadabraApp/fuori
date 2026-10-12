@@ -6,7 +6,7 @@
 
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { language } from '@/content/it/language';
+import { pack } from '@/content';
 
 export interface PromptFile {
   version: string;
@@ -18,7 +18,7 @@ const cache = new Map<string, PromptFile>();
 export function readPromptFile(name: string): PromptFile {
   const hit = cache.get(name);
   if (hit) return hit;
-  const md = readFileSync(join(process.cwd(), 'content', language.code, 'prompts', name), 'utf8');
+  const md = readFileSync(join(process.cwd(), 'content', pack.id, 'prompts', name), 'utf8');
   const version = md.match(/^version:\s*(\S+)/m)?.[1];
   if (!version) throw new Error(`${name}: missing "version:" line`);
   const block = (heading: string) => {

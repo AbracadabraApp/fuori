@@ -19,8 +19,8 @@ export const memoryOutputJsonSchema = {
           items: {
             additionalProperties: false,
             type: 'object',
-            properties: { it: string, en: string, why: string },
-            required: ['it', 'en', 'why'],
+            properties: { phrase: string, en: string, why: string },
+            required: ['phrase', 'en', 'why'],
           },
         },
         mistakes: {

@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const venezia: CityPantry = {
   id: 'venezia',
   name: 'Venezia',
+  region: 'Veneto',
   neighbourhoods: ['Cannaregio', 'Castello', 'Dorsoduro', 'San Marco'],
   places: [
     // DAILY ROUTINE - Bars/Cafés (9)

@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const orvieto: CityPantry = {
   id: 'orvieto',
   name: 'Orvieto',
+  region: 'Umbria',
   neighbourhoods: ['Centro Storico', 'Duomo', 'Quartiere Medievale', 'Porta Maggiore'],
   places: [
     // BARS/CAFÉS (9 across neighborhoods)

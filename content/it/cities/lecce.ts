@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const lecce: CityPantry = {
   id: 'lecce',
   name: 'Lecce',
+  region: 'Puglia',
   neighbourhoods: ['Centro Storico', "Piazza Sant'Oronzo", 'Porta Napoli', 'Santa Croce'],
   places: [
     // BARS & CAFÉS (3)

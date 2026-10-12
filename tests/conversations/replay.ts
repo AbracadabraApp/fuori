@@ -28,7 +28,7 @@ import { CLAUDE_MODEL } from '@/lib/claude';
 import { runTurn } from '@/lib/turn';
 import { promptVersion, type HistoryMode } from '@/lib/prompts/build-turn-prompt';
 import { characterForPlace } from '@/lib/characters/for-place';
-import { cities } from '@/content/it/cities';
+import { cities } from '@/content';
 import { scoreConversation, qualityPromptVersion, type ConversationScore, type ScoredTurn } from '@/lib/quality';
 import { scorecard, gate, scorecardAsText, MEASURES, type Scorecard } from '@/lib/scorecard';
 import type { CharacterSheet, Turn } from '@/lib/types';
@@ -140,11 +140,11 @@ async function replay(c: Case, history: HistoryMode): Promise<Result> {
   const transcript: Turn[] = [];
   try {
     const opening = await runTurn({ character: c.character, transcript: [], history });
-    transcript.push({ who: 'npc', transcript: opening.it, translation: opening.en });
+    transcript.push({ who: 'npc', transcript: opening.line, translation: opening.en });
     for (const said of c.script.lines.slice(0, TURNS)) {
       const reply = await runTurn({ character: c.character, transcript, learnerSaid: said, history });
       transcript.push({ who: 'learner', transcript: said });
-      transcript.push({ who: 'npc', transcript: reply.it, translation: reply.en });
+      transcript.push({ who: 'npc', transcript: reply.line, translation: reply.en });
     }
     const turns = transcript.map((t) => ({ who: t.who, text: t.transcript }));
     return { case: c, turns, score: await scoreConversation(c.character, turns) };

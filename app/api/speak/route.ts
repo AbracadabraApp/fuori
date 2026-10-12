@@ -20,9 +20,8 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getVoiceProvider } from '@/lib/voice/providers';
-import { elevenLabsVoiceFor } from '@/content/it/voices';
+import { elevenLabsVoiceFor, language as appLanguage } from '@/content';
 import { logServerError } from '@/lib/server-log';
-import { language as appLanguage } from '@/content/it/language';
 import { VoiceError } from '@/lib/voice/providers/elevenlabs';
 
 export async function POST(request: NextRequest) {

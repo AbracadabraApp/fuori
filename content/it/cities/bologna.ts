@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const bologna: CityPantry = {
   id: 'bologna',
   name: 'Bologna',
+  region: 'Emilia-Romagna',
   neighbourhoods: ['Centro Storico', 'Quartiere Universitario', 'Santo Stefano', 'Saragozza'],
   places: [
     // BARS & CAFÉS (3)

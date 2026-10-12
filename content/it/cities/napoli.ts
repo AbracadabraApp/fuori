@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const napoli: CityPantry = {
   id: 'napoli',
   name: 'Napoli',
+  region: 'Campania',
   neighbourhoods: ['Centro Storico', 'Vomero', 'Chiaia', 'Spaccanapoli'],
   places: [
     // BARS/CAFÉS (9)

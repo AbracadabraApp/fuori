@@ -22,7 +22,7 @@ export const giulia: CharacterSheet = {
   },
 
   speech: {
-    formality: 'tu',
+    formality: 'informal',
     pace: 'quick',
     regionalisms: ['daje', 'anvedi', 'aò'],
     description: 'Fast-talking, informal, uses Roman slang sparingly at A1-A2, asks lots of questions, remembers details about regulars',

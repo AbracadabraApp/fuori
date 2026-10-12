@@ -21,7 +21,7 @@ import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { runTurn } from '@/lib/turn';
 import { buildTurnPrompt, promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { characterForPlace } from '@/lib/characters/for-place';
-import { cities } from '@/content/it/cities';
+import { cities } from '@/content';
 import type { CharacterSheet, Place, Turn } from '@/lib/types';
 import { learners, type Learner } from './learners';
 import { turnStats, summarize, LONG_TURN_WORDS, TYPICAL_TURN_WORDS, type TurnStats } from '@/lib/dialogue-stats';
@@ -146,13 +146,13 @@ Write ONLY what the learner says next, as speech-to-text would capture it. One o
 async function simulate(c: Case): Promise<Turn[]> {
   const transcript: Turn[] = [];
   const opening = await runTurn({ character: c.character, transcript: [] });
-  transcript.push({ who: 'npc', transcript: opening.it, translation: opening.en });
+  transcript.push({ who: 'npc', transcript: opening.line, translation: opening.en });
 
   for (let i = 0; i < TURNS; i++) {
     const said = await learnerLine(c, transcript);
     const reply = await runTurn({ character: c.character, transcript, learnerSaid: said });
     transcript.push({ who: 'learner', transcript: said });
-    transcript.push({ who: 'npc', transcript: reply.it, translation: reply.en });
+    transcript.push({ who: 'npc', transcript: reply.line, translation: reply.en });
   }
   return transcript;
 }

@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const verona: CityPantry = {
   id: 'verona',
   name: 'Verona',
+  region: 'Veneto',
   neighbourhoods: ['Centro Storico', 'Veronetta', 'Borgo Trento', 'San Zeno'],
   places: [
     // BARS & CAFÉS (3)

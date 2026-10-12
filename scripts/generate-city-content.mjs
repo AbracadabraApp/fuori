@@ -143,7 +143,7 @@ async function generateAllCities() {
   console.log(`Generating content for ${cities.length} cities using Claude...\n`);
 
   for (const city of cities) {
-    const outputPath = path.join(__dirname, '..', 'content', 'it', 'cities', `${city.id}.ts`);
+    const outputPath = path.join(__dirname, '..', 'content', process.env.COUNTRY || 'it', 'cities', `${city.id}.ts`);
 
     // Check if already exists
     if (fs.existsSync(outputPath)) {
@@ -168,7 +168,7 @@ async function generateAllCities() {
   }
 
   console.log('\n=== Content Generation Complete ===');
-  console.log('Review the generated files in content/it/cities/');
+  console.log(`Review the generated files in content/${process.env.COUNTRY || 'it'}/cities/`);
   console.log('Then run: node scripts/generate-images.mjs');
 }
 

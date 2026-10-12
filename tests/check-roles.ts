@@ -1,6 +1,6 @@
 // Roles are shown on screen and used in the prompt, so they should be Italian.
 // Some generated characters had English roles ("Fruit vendor").
-import { cities } from '@/content/it/cities';
+import { cities } from '@/content';
 
 const ENGLISH = /\b(vendor|owner|keeper|maker|seller|guide|baker|gardener|waiter|waitress|server|student|priest|nun|pharmacist|bartender|curator|historian|librarian|bookseller|florist|farmer|cook|master|manager|merchant|operator|conductor|agent|worker|musician|artist|performer|director|jeweler|goldsmith|photographer|roaster|specialist|expert|proprietor|fishmonger|friar|monk|resident|winemaker|producer|shopkeeper|chocolatier|dealer|artisan|ceramicist|gondolier)\b/i;
 

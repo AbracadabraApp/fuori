@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const siena: CityPantry = {
   id: 'siena',
   name: 'Siena',
+  region: 'Toscana',
   neighbourhoods: ['Piazza del Campo', 'Terzo di Città', 'Terzo di San Martino', 'Terzo di Camollia'],
   places: [
     {

@@ -3,7 +3,7 @@
 import { replyText } from '@/lib/claude';
 
 const cases: Array<[string, () => boolean]> = [
-  ['text first', () => replyText({ content: [{ type: 'text', text: '{"it":"Ciao"}' }] }) === '{"it":"Ciao"}'],
+  ['text first', () => replyText({ content: [{ type: 'text', text: '{"line":"Ciao"}' }] }) === '{"line":"Ciao"}'],
   ['thinking first', () => replyText({ content: [{ type: 'thinking' }, { type: 'text', text: 'Ciao' }] }) === 'Ciao'],
   ['no text throws with details', () => {
     try { replyText({ content: [{ type: 'thinking' }], stop_reason: 'max_tokens' }); return false; }

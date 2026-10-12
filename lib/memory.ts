@@ -32,7 +32,8 @@ export interface ConversationTurn {
  */
 export interface ReviewLog {
   items: Array<{
-    it: string;
+    /** The word or phrase as the character used it (reviews written before 2026-10-12 call it `it`) */
+    phrase: string;
     en: string;
     why: string;
   }>;

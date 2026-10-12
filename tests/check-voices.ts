@@ -1,8 +1,7 @@
 // Every character gets a voice that matches their gender, anchors keep their
 // fixed voice, and characters in the same city don't all share one voice.
-import { cities } from '@/content/it/cities';
+import { cities, voices, elevenLabsVoiceFor, browserVoiceFor } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
-import { voices, elevenLabsVoiceFor, browserVoiceFor } from '@/content/it/voices';
 import { elevenLabsError } from '@/lib/voice/providers/elevenlabs';
 import { voiceNote, FuoriError } from '@/lib/errors';
 

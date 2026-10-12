@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const genova: CityPantry = {
   id: 'genova',
   name: 'Genova',
+  region: 'Liguria',
   neighbourhoods: ['Centro Storico', 'Caruggi', 'Boccadasse', 'Castelletto'],
   places: [
     {

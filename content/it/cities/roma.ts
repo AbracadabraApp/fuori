@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const roma: CityPantry = {
   id: 'roma',
   name: 'Roma',
+  region: 'Lazio',
 
   neighbourhoods: [
     'Trastevere',

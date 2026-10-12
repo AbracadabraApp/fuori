@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const firenze: CityPantry = {
   id: 'firenze',
   name: 'Firenze',
+  region: 'Toscana',
   neighbourhoods: ['Oltrarno', 'San Lorenzo', 'Santa Croce', 'Santo Spirito'],
   places: [
     // DAILY ROUTINE - Bars/Cafés

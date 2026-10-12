@@ -7,7 +7,7 @@ import { randomUUID } from 'crypto';
 import { buildTurnPrompt, howLongAgo } from '@/lib/prompts/build-turn-prompt';
 import { buildMemoryPrompt } from '@/lib/prompts/build-memory-prompt';
 import { characterForPlace } from '@/lib/characters/for-place';
-import { cities } from '@/content/it/cities';
+import { cities } from '@/content';
 import type { CharacterSheet } from '@/lib/types';
 import type { MemoryOutput, Summarizer } from '@/lib/remember';
 import type { Judge } from '@/lib/quality';
@@ -62,17 +62,17 @@ async function dbChecks() {
   try {
     const base = { learnerId: me, character: person, cityId: city.id, promptVersion: 'test' };
     const calls: Parameters<Summarizer>[0][] = [];
-    const out: MemoryOutput = { notes: ['Their name is Josh', 'Lives in Trastevere'], review: { items: [{ it: 'magari', en: 'if only', why: 'used twice' }], mistakes: [] } };
+    const out: MemoryOutput = { notes: ['Their name is Josh', 'Lives in Trastevere'], review: { items: [{ phrase: 'magari', en: 'if only', why: 'used twice' }], mistakes: [] } };
     const fake: Summarizer = async (input) => { calls.push(input); await new Promise((r) => setTimeout(r, 50)); return out; };
     // Scoring runs after memory (lib/quality.ts); a fake so this test never calls Claude
     const judged: string[] = [];
     const fakeJudge: Judge = async () => { judged.push('x'); return { pronunciationCorrections: 0, correctionsAsked: 0, correctionsUnprompted: 1, garbled: 0, garbledMissed: 0, lost: [], englishUnasked: 0, note: 'None' }; };
 
-    const id = (await recordTurn({ ...base, conversationId: null, reply: { it: 'Buongiorno!', en: 'Morning!' }, memory: { visits: 0, lastVisit: null, notes: [] } }))!;
-    await recordTurn({ ...base, conversationId: id, learnerSaid: 'Mi chiamo Josh', reply: { it: 'Piacere!', en: 'Nice to meet you!' } });
+    const id = (await recordTurn({ ...base, conversationId: null, reply: { line: 'Buongiorno!', en: 'Morning!' }, memory: { visits: 0, lastVisit: null, notes: [] } }))!;
+    await recordTurn({ ...base, conversationId: id, learnerSaid: 'Mi chiamo Josh', reply: { line: 'Piacere!', en: 'Nice to meet you!' } });
     check((await rememberConversation(id, me, fake, fakeJudge)) === 'nothing new' && calls.length === 0, 'one learner line should not be remembered yet');
 
-    await recordTurn({ ...base, conversationId: id, learnerSaid: 'Abito a Trastevere', reply: { it: 'Che bello!', en: 'Lovely!' } });
+    await recordTurn({ ...base, conversationId: id, learnerSaid: 'Abito a Trastevere', reply: { line: 'Che bello!', en: 'Lovely!' } });
     // Leaving sends two signals at once (background + close): only one writes
     const both = await Promise.all([rememberConversation(id, me, fake, fakeJudge), rememberConversation(id, me, fake, fakeJudge)]);
     check(both.sort().join(',') === 'nothing new,saved', `two end signals at once: ${both.join(', ')}`);
@@ -92,7 +92,7 @@ async function dbChecks() {
     check((await loadMemoryAtStart(id, randomUUID())) === null, "another learner read this conversation's memory");
 
     // Coming back from the background reopens it; a failed call leaves it to retry
-    await recordTurn({ ...base, conversationId: id, learnerSaid: 'Ci vediamo domani', reply: { it: 'A domani!', en: 'See you tomorrow!' } });
+    await recordTurn({ ...base, conversationId: id, learnerSaid: 'Ci vediamo domani', reply: { line: 'A domani!', en: 'See you tomorrow!' } });
     const failing: Summarizer = async () => { throw new Error('Claude down'); };
     check((await rememberConversation(id, me, failing, fakeJudge)) === 'failed', 'failing call should report failed');
     check((await rememberConversation(id, me, fake, fakeJudge)) === 'saved', 'after a failure the next ending should retry');
@@ -101,9 +101,9 @@ async function dbChecks() {
     check(mem.visits === 1, `one conversation counted as ${mem.visits} visits`);
 
     // A new conversation is a second visit
-    const id2 = (await recordTurn({ ...base, conversationId: null, reply: { it: 'Ciao Josh!', en: 'Hi Josh!' }, memory: mem }))!;
-    await recordTurn({ ...base, conversationId: id2, learnerSaid: 'Un caffè', reply: { it: 'Subito', en: 'Right away' } });
-    await recordTurn({ ...base, conversationId: id2, learnerSaid: 'Grazie', reply: { it: 'Prego', en: 'Welcome' } });
+    const id2 = (await recordTurn({ ...base, conversationId: null, reply: { line: 'Ciao Josh!', en: 'Hi Josh!' }, memory: mem }))!;
+    await recordTurn({ ...base, conversationId: id2, learnerSaid: 'Un caffè', reply: { line: 'Subito', en: 'Right away' } });
+    await recordTurn({ ...base, conversationId: id2, learnerSaid: 'Grazie', reply: { line: 'Prego', en: 'Welcome' } });
     await rememberConversation(id2, me, fake, fakeJudge);
     check((await loadCharacterMemory(me, person.id)).visits === 2, 'second conversation did not count as a second visit');
     check((await loadMemoryAtStart(id2, me))?.visits === 1, 'second conversation should start knowing one visit');

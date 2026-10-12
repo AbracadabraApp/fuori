@@ -2,9 +2,7 @@
 // under the wrong name (18 first-of-city places were saved as <city>.jpg) and
 // places with no image description (Roma). Fix: npm run images -- --city <id>
 import { existsSync } from 'fs';
-import { cities } from '@/content/it/cities';
-import { giulia } from '@/content/it/characters/giulia';
-import { rita } from '@/content/it/characters/rita';
+import { cities, anchors, pack } from '@/content';
 
 const missing: string[] = [];
 for (const city of cities) {
@@ -19,8 +17,8 @@ for (const city of cities) {
   }
 }
 
-for (const anchor of [giulia, rita]) {
-  if (!existsSync(`public/images/portraits/${anchor.id}.jpg`)) missing.push(`portraits/${anchor.id}.jpg (anchor; prompt in content/it/characters/${anchor.id}.ts)`);
+for (const anchor of Object.values(anchors)) {
+  if (!existsSync(`public/images/portraits/${anchor.id}.jpg`)) missing.push(`portraits/${anchor.id}.jpg (anchor; prompt in content/${pack.id}/characters/${anchor.id}.ts)`);
 }
 
 if (missing.length) {

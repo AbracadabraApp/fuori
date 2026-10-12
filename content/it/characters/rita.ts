@@ -22,7 +22,7 @@ export const rita: CharacterSheet = {
   },
 
   speech: {
-    formality: 'tu', // Quickly switches to tu with guests
+    formality: 'informal', // Quickly switches to tu with guests
     pace: 'normal',
     regionalisms: ['daje', 'anvedi'],
     description: 'Warm and patient, naturally simplifies for learners, uses gestures, repeats important things, gives practical advice about the neighborhood',

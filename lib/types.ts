@@ -2,7 +2,8 @@
 // Based on docs/09-data-model.md
 // Simplified for M1 - moods removed, will add in M2/M3 with illustrated portraits
 
-export type Formality = 'Lei' | 'tu';
+/** Formal or informal address; each language's words for them are in its language.ts (Lei / tu, usted / tú) */
+export type Formality = 'formal' | 'informal';
 export type Pace = 'slow' | 'normal' | 'quick';
 export type Familiarity = 'sconosciuto' | 'cliente' | 'habitue' | 'amico';
 export type Level = 'A1' | 'A1+' | 'A2' | 'A2+' | 'B1';
@@ -73,6 +74,8 @@ export interface CityCharacter {
 export interface CityPantry {
   id: string;
   name: string;
+  /** Region or state, shown under the city name in the feed */
+  region?: string;
   neighbourhoods: string[];
   places: Place[];
   characters?: CityCharacter[];
@@ -124,7 +127,7 @@ export interface LearnerProfile {
   id: string;
   name: string;
   homeTown: string;
-  whyItaly: string;
+  whyHere: string;
   level: Level;
   levelEvidence: string[];
   createdAt: Date;
@@ -260,6 +263,7 @@ export interface DiarioEntry {
 // API Response Schemas
 // M1 uses radically simple output - just Italian and English
 export interface TurnOutput {
-  it: string;
+  /** What the character says, in the language being learned */
+  line: string;
   en: string;
 }

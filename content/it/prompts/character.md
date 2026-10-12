@@ -1,6 +1,6 @@
 # Character prompt (Italian)
 
-version: 2026-10-12c
+version: 2026-10-12d
 
 The prompt every character gets, for every conversation turn. It is read by
 `lib/prompts/build-turn-prompt.ts`, which fills in the `{placeholders}` from the
@@ -32,7 +32,7 @@ You hear them through speech-to-text: you only get the words it wrote down, so y
 {english}
 
 Respond with JSON:
-{ "it": "what you say, in {language}", "en": "English translation" }
+{ "line": "what you say, in {language}", "en": "English translation" }
 ```
 
 Placeholders:
@@ -92,6 +92,12 @@ Only used when `TURN_HISTORY=recent` (see `lib/prompts/build-turn-prompt.ts`): t
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-12d: reply field `line`, formality words from the language
+- **Renamed** the reply's JSON field from `"it"` to `"line"` (the `{ line, en }` reply). The field was named after the Italian language code; `line` works for every country pack.
+- **Formality** now comes from the character's formal / informal setting plus the pack's words (`language.formality`), so the prompt still reads "Lei (formal)" or "tu (informal)" for Italy.
+- **Why:** Mexico phase 1, get Italian out of the code (docs/mexico-version.md). Only the field name changed for Italy; replies should not change.
+- **Prompted by:** Josh, starting the Mexico plan with "Italian out of the code".
 
 ### 2026-10-12c: language name from content, not the template
 - **Changed** "what you say, in Italian" to "in {language}", filled from `content/it/language.ts`. The system prompt Claude gets is word-for-word the same as 2026-10-12b. The reply schema's description of `it` no longer names the language ("what the character says, in the language the person is learning").

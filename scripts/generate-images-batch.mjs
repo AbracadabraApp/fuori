@@ -58,7 +58,7 @@ function saveBatchState(state) {
 
 // Get all city content files
 function getCityFiles() {
-  const citiesDir = path.join(__dirname, '..', 'content', 'it', 'cities');
+  const citiesDir = path.join(__dirname, '..', 'content', process.env.COUNTRY || 'it', 'cities');
   return fs.readdirSync(citiesDir)
     .filter(f => f.endsWith('.ts') && f !== 'index.ts')
     .map(f => ({

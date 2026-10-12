@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const lucca: CityPantry = {
   id: 'lucca',
   name: 'Lucca',
+  region: 'Toscana',
   neighbourhoods: ['Centro Storico', 'San Michele', 'San Martino', 'San Frediano'],
   places: [
     // BARS & CAFÉS (9)

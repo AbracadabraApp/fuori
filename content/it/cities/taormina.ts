@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const taormina: CityPantry = {
   id: 'taormina',
   name: 'Taormina',
+  region: 'Sicilia',
   neighbourhoods: ['Centro Storico', 'Corso Umberto', 'Teatro Greco', 'Castelmola'],
   places: [
     // BARS/CAFÉS (9)

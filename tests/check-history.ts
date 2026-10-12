@@ -3,7 +3,7 @@
 // messages that keep the learner's earlier lines (their name) when old turns drop.
 import { buildTurnPrompt, RECENT_TURNS } from '@/lib/prompts/build-turn-prompt';
 import { characterForPlace } from '@/lib/characters/for-place';
-import { cities } from '@/content/it/cities';
+import { cities } from '@/content';
 import type { Turn } from '@/lib/types';
 
 const failures: string[] = [];
@@ -37,7 +37,7 @@ check(rec.messages[rec.messages.length - 1].content === 'ultima', 'recent mode s
 check(rec.messages[0].content.includes('Earlier in this conversation they said') && rec.messages[0].content.includes('"Mi chiamo Josh"'), 'recent mode should keep the learner\'s earlier lines (their name)');
 check(!rec.messages.some((m) => m.content.includes('risposta 1"')), 'recent mode should drop the character\'s old lines');
 const assistant = rec.messages.find((m) => m.role === 'assistant');
-check(!!assistant && JSON.parse(assistant.content).it.startsWith('risposta'), 'character lines go as the same JSON it answers in');
+check(!!assistant && JSON.parse(assistant.content).line.startsWith('risposta'), 'character lines go as the same JSON it answers in');
 
 // Short conversation: nothing dropped, no "earlier" line
 const short = buildTurnPrompt({ character, transcript: lines.slice(0, 3), learnerSaid: 'ciao', history: 'recent' });

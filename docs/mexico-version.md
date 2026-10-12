@@ -1,4 +1,19 @@
-# Future: a Mexico version
+# Mexico version
+
+**Spec and plan (2026-10-12):** [Fuori México: specification and project plan](https://claude.ai/code/artifact/2f9709ff-39b3-4935-bcc5-616681f703d0): 5 cities × 10 places × 10 personas, one codebase, about 6 days in four phases: (1) Italian out of the code, (2) content and visuals, (3) voices and deployment, (4) language quality through the test loop. No human review steps (Josh). Name: *Afuera* is the lead candidate.
+
+**Phase 1 done (2026-10-12):**
+- `content/index.ts` exports the active country pack by `COUNTRY` (Railway variable; `next.config.ts` passes it to the browser). Code imports `@/content`, never `content/<country>/`; `npm run test:language` fails on a direct import, on language or country names (Italian or Spanish) and on locale codes.
+- Each pack (`content/<country>/pack.ts`): id, `language` (code, name, speechLang, `appName`, formality words), cities (with `region`), anchors, voices.
+- Formality is `formal` / `informal`; the pack supplies the words (Lei / tu). Reply field `{ line, en }` (was `it`); review items use `phrase`. Character prompt 2026-10-12d, memory prompt 2026-10-12b.
+- `npm run test:pack` checks every pack is complete and ids are unique across packs. Generation scripts write to `content/$COUNTRY/`.
+- Italy runs unchanged with the default `COUNTRY=it`.
+
+**Next (phase 2):** `content/es-mx/` with `language.ts` and `pack.ts`, the 10 place kinds per city in the generation script, then 5 cities, 50 places, 50 personas and 105 images.
+
+---
+
+Earlier estimate (2026-10-11, 5 × 5), kept for history:
 
 An estimate of what it would take to prototype a Mexican Spanish version: **5 cities, 5 places each**. Written 2026-10-11 from a read of the code; nothing built. Revisit once the Italian version is fun to play (see [Ideas → Other languages](ideas.md#other-languages)).
 

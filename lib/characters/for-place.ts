@@ -5,11 +5,9 @@
  * Client-safe (no fs), so the page and the conversation tests share it.
  */
 
-import { giulia } from '@/content/it/characters/giulia';
-import { rita } from '@/content/it/characters/rita';
+import { anchors } from '@/content';
 import type { CharacterSheet, CityCharacter, CityPantry, Place } from '@/lib/types';
 
-const anchors: Record<string, CharacterSheet> = { giulia, rita };
 
 export function cityCharacterToSheet(
   person: CityCharacter,
@@ -28,7 +26,7 @@ export function cityCharacterToSheet(
     placeId: person.placeId,
     personality: { traits: person.personality, caresAbout: [] },
     speech: {
-      formality: 'Lei', // a newcomer is a stranger at first
+      formality: 'formal', // a newcomer is a stranger at first
       pace: 'normal',
       regionalisms: [],
       description: `${person.role} at ${where}`,

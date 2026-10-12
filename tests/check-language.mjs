@@ -5,17 +5,19 @@
 // Prompted by the Whisper hint ("Trascrizione in italiano…") that slipped into
 // /api/transcribe and was echoed into learners' lines (2026-10-12).
 //
-// It only looks for the language's own markers, never for phrases learners or
-// characters might say: language names, the bare code 'it', locale codes like
-// it-IT. Comments are ignored, and so are the reply's { it, en } field names.
+// It only looks for the languages' own markers, never for phrases learners or
+// characters might say: language and country names, bare codes like 'it' and
+// 'es', locale codes like it-IT and es-MX. Comments are ignored. It also fails
+// when app/ or lib/ imports a country folder (content/it/…) instead of the
+// active pack (@/content), which is what lets one codebase serve each country.
 import { execSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 
-const LANGUAGE_NAMES = /\b(Italian|Italiano|Italiana|Italiani|Italiane|Italia|Italy)\b/i;
-const BARE_CODE = /(['"`])it\1/;
-const LOCALE = /\bit[-_]IT\b/;
-// The reply's field names: ['it', 'en'], { 'it': …, 'en': … }
-const FIELD_NAMES = /(['"])it\1\s*,\s*(['"])en\2|(['"])it\3\s*:/g;
+const LANGUAGE_NAMES = /\b(Italian|Italiano|Italiana|Italiani|Italiane|Italia|Italy|Spanish|Espa\u00f1ol|Espa\u00f1ola|M\u00e9xico|Mexico|Mexican|Mexicano|Mexicana)\b/i;
+const BARE_CODE = /(['"`])(it|es|es-mx)\1/;
+const LOCALE = /\b(it|es)[-_](IT|MX|ES)\b/i;
+// A country folder imported directly instead of the active pack
+const PACK_IMPORT = /from\s+['"]@\/content\/[^'"]+['"]|import\(\s*[`'"]@\/content\//;
 
 /** Code with comments blanked out (line numbers kept). Good enough for our files. */
 function stripComments(src) {
@@ -33,8 +35,8 @@ const problems = [];
 for (const file of files) {
   const lines = stripComments(readFileSync(file, 'utf8')).split('\n');
   lines.forEach((raw, i) => {
-    const line = raw.replace(FIELD_NAMES, '');
-    for (const [what, re] of [['language name', LANGUAGE_NAMES], ["language code 'it'", BARE_CODE], ['locale code', LOCALE]]) {
+    const line = raw;
+    for (const [what, re] of [['language or country name', LANGUAGE_NAMES], ['language code', BARE_CODE], ['locale code', LOCALE], ['country folder import (use @/content)', PACK_IMPORT]]) {
       const m = line.match(re);
       if (m) problems.push(`${file}:${i + 1}: ${what} "${m[0]}": ${raw.trim().slice(0, 100)}`);
     }

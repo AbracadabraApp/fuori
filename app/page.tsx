@@ -3,9 +3,8 @@
 import { useState } from 'react';
 import { PlaceCard } from './components/PlaceCard';
 import { ShowMore } from './components/ShowMore';
-import { language } from '@/content/it/language';
+import { language, cities as cityPantries } from '@/content';
 import { ConversationScreen } from './components/ConversationScreen';
-import { cities as cityPantries } from '@/content/it/cities';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
 import { CharacterSheet } from '@/lib/types';
@@ -24,32 +23,8 @@ export default function Home() {
   const [cityCount, setCityCount] = useState(PAGE);
   const [placeCount, setPlaceCount] = useState(PAGE);
 
-  // Get region from first neighbourhood for display
-  const getRegion = (cityId: string) => {
-    const regions: Record<string, string> = {
-      roma: 'Lazio',
-      firenze: 'Toscana',
-      venezia: 'Veneto',
-      milano: 'Lombardia',
-      napoli: 'Campania',
-      bologna: 'Emilia-Romagna',
-      torino: 'Piemonte',
-      palermo: 'Sicilia',
-      genova: 'Liguria',
-      siena: 'Toscana',
-      lucca: 'Toscana',
-      verona: 'Veneto',
-      bergamo: 'Lombardia',
-      mantova: 'Lombardia',
-      matera: 'Basilicata',
-      lecce: 'Puglia',
-      orvieto: 'Umbria',
-      assisi: 'Umbria',
-      siracusa: 'Sicilia',
-      taormina: 'Sicilia',
-    };
-    return regions[cityId] || '';
-  };
+  // Region (or state) shown under the city name, from the city's data
+  const getRegion = (cityId: string) => cityPantries.find((c) => c.id === cityId)?.region ?? '';
 
   // Show conversation if place selected
   if (selectedPlace && selectedCity) {
@@ -129,7 +104,7 @@ export default function Home() {
   return (
     <div className={styles.screen}>
       <div className={styles.header}>
-        <h1 className={styles.title}>Fuori</h1>
+        <h1 className={styles.title}>{language.appName}</h1>
         <button onClick={() => setShowSettings(true)} className={styles.settingsButton}>
           <svg
             width="20"

@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const mantova: CityPantry = {
   id: 'mantova',
   name: 'Mantova',
+  region: 'Lombardia',
   neighbourhoods: ['Centro Storico', 'Te', 'Cittadella', 'Lunetta'],
   places: [
     // BARS/CAFÉS (9)

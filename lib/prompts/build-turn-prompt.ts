@@ -7,7 +7,7 @@
  */
 
 import { readPromptFile, fill } from './template';
-import { language } from '@/content/it/language';
+import { language } from '@/content';
 import type { CharacterSheet, Turn } from '../types';
 
 /** What the character remembers about this learner (from character_memories) */
@@ -132,7 +132,7 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
     language: language.name,
     setting: character.appearance?.setting ?? '',
     traits: character.personality.traits.join(', '),
-    formality: character.speech.formality === 'Lei' ? 'Lei (formal)' : 'tu (informal)',
+    formality: `${language.formality[character.speech.formality]} (${character.speech.formality})`,
     english,
     relationship: relationshipLine(t, memory, now),
   });
@@ -166,7 +166,7 @@ export function recentMessages(t: Template, transcript: Turn[], learnerSaid: str
     { role: 'user', content: t.firstTurn.trim() },
     ...transcript.map((turn): PromptMessage =>
       turn.who === 'npc'
-        ? { role: 'assistant', content: JSON.stringify({ it: turn.transcript, en: turn.translation ?? '' }) }
+        ? { role: 'assistant', content: JSON.stringify({ line: turn.transcript, en: turn.translation ?? '' }) }
         : { role: 'user', content: turn.transcript }
     ),
     { role: 'user', content: learnerSaid },

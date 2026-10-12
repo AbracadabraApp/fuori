@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const matera: CityPantry = {
   id: 'matera',
   name: 'Matera',
+  region: 'Basilicata',
   neighbourhoods: ['Sassi Barisano', 'Sassi Caveoso', 'Civita', 'Piano'],
   places: [
     // BARS/CAFÉS (3)

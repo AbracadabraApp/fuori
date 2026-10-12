@@ -7,7 +7,7 @@
  * so `railway logs | grep E-7K2F` finds both sides.
  */
 
-import { language } from '@/content/it/language';
+import { language } from '@/content';
 
 export type ErrorKind = 'mic' | 'network' | 'server';
 
@@ -107,7 +107,7 @@ export function toFuoriError(err: unknown, step: string): FuoriError {
 export function userMessage(err: FuoriError, characterName = 'They'): string {
   switch (err.kind) {
     case 'mic':
-      return 'Fuori needs the microphone. On iPhone: Settings → Safari → Microphone → Allow, then try again.';
+      return `${language.appName} needs the microphone. On iPhone: Settings → Safari → Microphone → Allow, then try again.`;
     case 'network':
       return `No connection. Check your signal and try again. (${err.id})`;
   }

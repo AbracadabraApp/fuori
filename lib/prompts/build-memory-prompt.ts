@@ -4,7 +4,7 @@
  */
 
 import { readPromptFile, fill } from './template';
-import { language } from '@/content/it/language';
+import { language } from '@/content';
 
 export interface MemoryPromptInput {
   character: { name: string; age: number; role: string; city: string };

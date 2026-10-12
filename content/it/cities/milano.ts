@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const milano: CityPantry = {
   id: 'milano',
   name: 'Milano',
+  region: 'Lombardia',
   neighbourhoods: ['Navigli', 'Brera', 'Porta Romana', 'Isola'],
   places: [
     // BARS/CAFÉS (9 places - 2-3 per neighborhood)

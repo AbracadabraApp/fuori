@@ -1,6 +1,6 @@
 # Memory prompt (end of conversation)
 
-version: 2026-10-12
+version: 2026-10-12b
 
 When a conversation ends, one Claude call reads the transcript and writes two
 things: the character's notes about the person (they come back in the
@@ -26,7 +26,7 @@ Write two things.
 notes: what {name} will remember about this person next time they meet, as short lines in English. The kind of thing a real {role} would remember: their name if they gave it, where they're from, what they ordered, bought or asked about, plans they mentioned, anything promised on either side, something personal they shared. Start from what {name} already remembers: keep what still matters, update what changed, drop small talk. At most 10 lines, each under 15 words. Only what was actually said. Not their mistakes or their level.
 
 review: for the learner, afterwards.
-- items: the 2 or 3 things from {name}'s {language} most worth learning for this person: useful or recurring words, phrases or structures that look just beyond what they can say, judging by their own lines. "it" is the word or short phrase as {name} used it, "en" its meaning, "why" one short line on why it's worth having. Fewer if nothing stands out.
+- items: the 2 or 3 things from {name}'s {language} most worth learning for this person: useful or recurring words, phrases or structures that look just beyond what they can say, judging by their own lines. "phrase" is the word or short phrase as {name} used it, "en" its meaning, "why" one short line on why it's worth having. Fewer if nothing stands out.
 - mistakes: real errors in the person's {language}, up to 3, each with a better way to say it and one short line on why. Skip anything that could be speech-to-text noise: misheard or missing words, accents, punctuation, spellings of names. Empty if there are none.
 ```
 
@@ -47,6 +47,10 @@ The conversation:
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-12b: review item field `phrase`
+- **Renamed** the review item's field from `"it"` to `"phrase"`, which was named after the Italian language code. Reviews saved before this still show (the admin text reads either name).
+- **Prompted by:** Mexico phase 1, get Italian out of the code.
 
 ### 2026-10-12: first version
 - Notes and review log in one call, as planned in `docs/09-data-model.md` → Storage. Notes are capped at 10 lines and merged with what the character already remembered, so memory stays short as visits add up.

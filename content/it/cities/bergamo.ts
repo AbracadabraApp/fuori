@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const bergamo: CityPantry = {
   id: 'bergamo',
   name: 'Bergamo',
+  region: 'Lombardia',
   neighbourhoods: ['Città Alta', 'Città Bassa', 'Borgo Palazzo', 'Longuelo'],
   places: [
     // BARS & CAFÉS (9)

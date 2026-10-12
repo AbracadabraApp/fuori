@@ -106,7 +106,9 @@ Fuori is Italian-only, but four cheap rules keep a second language from being a 
 3. **Nothing language-specific hard-coded.** Prompts and components read the language name, examples and UI words from the config. The house-rules prompt takes its forgiveness and correction examples ("bone journal" → buongiorno, *vorrei* vs *voglio*) from the config, not from the template.
 4. **All model calls in one module.** Every Claude call goes through `lib/claude.ts`, so swapping or adding a model provider touches one place.
 
-**Enforced** by `npm run test:language` (2026-10-12): it fails when a language name, the bare code `'it'` or a locale code like `it-IT` appears in `app/` or `lib/` outside comments (the reply's `{ it, en }` field names are allowed), or when a prompt template in `content/*/prompts/` names the language instead of using `{language}`. Added after a Whisper hint in Italian slipped into `/api/transcribe` and was echoed into learners' lines.
+**Country packs (2026-10-12):** `content/index.ts` exports the active pack, chosen by the `COUNTRY` setting of each deployment; each pack (`content/<country>/pack.ts`) holds its language config, cities, anchors and voices. Code imports `@/content`, never a country folder.
+
+**Enforced** by `npm run test:language` (2026-10-12): it fails when a language name, the bare code `'it'` or a locale code like `it-IT` appears in `app/` or `lib/` outside comments (the reply's `{ it, en }` field names are allowed), or when a prompt template in `content/*/prompts/` names the language instead of using `{language}`, or when code imports a country folder directly. `npm run test:pack` checks each pack is complete. Added after a Whisper hint in Italian slipped into `/api/transcribe` and was echoed into learners' lines.
 
 **Related rule: don't build on predicting what people will say.** No phrase lists or keyword filters for what learners or characters say (or what Whisper invents); prefer signals that work in any language, such as recording length, silence, or a judge call that reads the whole conversation.
 

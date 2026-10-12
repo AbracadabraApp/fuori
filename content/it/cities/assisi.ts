@@ -3,6 +3,7 @@ import { CityPantry } from '@/lib/types';
 export const assisi: CityPantry = {
   id: 'assisi',
   name: 'Assisi',
+  region: 'Umbria',
   neighbourhoods: ['Centro Storico', 'San Francesco', 'Santa Chiara', 'Rocca Maggiore'],
   places: [
     // BARS/CAFÉS (3)

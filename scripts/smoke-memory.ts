@@ -11,7 +11,7 @@
  * rows can be deleted afterwards (deleting the learner cascades).
  */
 import { characterForPlace } from '@/lib/characters/for-place';
-import { cities } from '@/content/it/cities';
+import { cities } from '@/content';
 import type { Turn } from '@/lib/types';
 
 const base = (process.argv.find((a) => a.startsWith('--url='))?.slice(6) ?? 'http://localhost:3000').replace(/\/$/, '');
@@ -34,8 +34,8 @@ async function post(path: string, body: unknown) {
 
 async function turn(transcript: Turn[], learnerSaid?: string, conversationId?: string | null) {
   const res = await post('/api/turn', { character, transcript, cityId: 'roma', learnerSaid, conversationId });
-  const reply = (await res.json()) as { it: string };
-  return { reply: reply.it, id: res.headers.get('x-conversation-id'), memory: res.headers.get('x-memory') };
+  const reply = (await res.json()) as { line: string };
+  return { reply: reply.line, id: res.headers.get('x-conversation-id'), memory: res.headers.get('x-memory') };
 }
 
 function fail(msg: string): never {
