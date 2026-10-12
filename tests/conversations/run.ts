@@ -5,6 +5,11 @@
  *   npm run test:conversations -- --count=10   # characters in the sample (Giulia and Rita always included)
  *   npm run test:conversations -- --turns=8    # learner turns per conversation
  *   npm run test:conversations -- --dry        # show the sample and prompts, no API calls
+ *   npm run test:conversations -- --seed=7     # same sample every time: use for before-and-after
+ *
+ * Reports reply length as numbers (opener words, median and longest reply, share
+ * of long replies, questions per reply) next to the grades, and saves a .json
+ * summary beside each .md report so runs can be compared.
  *
  * Character replies go through lib/turn.ts, the same code /api/turn uses.
  * Nothing is edited automatically: the report recommends, you decide.
@@ -19,12 +24,26 @@ import { characterForPlace } from '@/lib/characters/for-place';
 import { cities } from '@/content/it/cities';
 import type { CharacterSheet, Place, Turn } from '@/lib/types';
 import { learners, type Learner } from './learners';
+import { turnStats, summarize, LONG_TURN_WORDS, TYPICAL_TURN_WORDS, type TurnStats } from '@/lib/dialogue-stats';
 
 const arg = (name: string, fallback: number) =>
   Number(process.argv.find((a) => a.startsWith(`--${name}=`))?.split('=')[1] ?? fallback);
 const COUNT = arg('count', 6);
 const TURNS = arg('turns', 6);
 const DRY = process.argv.includes('--dry');
+const SEED = process.argv.find((a) => a.startsWith('--seed='))?.split('=')[1];
+
+// Seeded random numbers, so --seed gives the same sample on every run
+function seeded(seed: number) {
+  let t = seed >>> 0;
+  return () => {
+    t += 0x6d2b79f5;
+    let r = Math.imul(t ^ (t >>> 15), 1 | t);
+    r ^= r + Math.imul(r ^ (r >>> 7), 61 | r);
+    return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+  };
+}
+const random = SEED !== undefined ? seeded(Number(SEED) || 0) : Math.random;
 
 const CRITERIA = {
   italian: 'Speaks Italian. Uses English only when the learner asks for it, and only as much as the character\'s English allows, then returns to Italian.',
@@ -47,6 +66,7 @@ interface Graded extends Case {
   overall: number;
   problem: string;
   quote: string;
+  stats?: TurnStats;
   error?: string;
 }
 
@@ -55,7 +75,7 @@ interface Graded extends Case {
 function shuffle<T>(items: T[]): T[] {
   const a = [...items];
   for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
@@ -180,21 +200,43 @@ async function recommend(results: Graded[]): Promise<string> {
     .map(
       (r) =>
         `${r.character.name} (${r.character.role}, ${r.cityName}) with ${r.learner.id}: ` +
-        `${Object.entries(r.scores).map(([k, v]) => `${k} ${v}`).join(', ')}. Problem: ${r.problem}${r.quote ? ` Quote: "${r.quote}"` : ''}`
+        `${Object.entries(r.scores).map(([k, v]) => `${k} ${v}`).join(', ')}. ` +
+        (r.stats ? `Length: opener ${r.stats.openerWords} words, median reply ${r.stats.wordsMedian}, longest ${r.stats.wordsMax}, ${Math.round(r.stats.longShare * 100)}% over ${LONG_TURN_WORDS}. ` : '') +
+        `Problem: ${r.problem}${r.quote ? ` Quote: "${r.quote}"` : ''}`
     )
     .join('\n');
   return ask(
-    `You advise the builder of Fuori, a voice-first Italian conversation app. The character prompt is deliberately minimal ("match their level, simplify naturally, stay in character, speak Italian"); the product direction is natural conversation, not rules. Characters may speak as fast and complex as real Italians; don't recommend simplifying by default or beginner constraints, only better responses when the learner shows they're lost. Recommend small, high-leverage changes in that spirit. Plain language, no preamble.`,
+    `You advise the builder of Fuori, a voice-first Italian conversation app. The character prompt (content/it/prompts/character.md) is deliberately minimal: it describes the situation, not how to talk, and sets no length rules. The product direction is natural conversation, not rules. For reference, real conversational turns run about ${TYPICAL_TURN_WORDS} words or fewer; replies far longer than that leave the learner no room to answer. Characters may speak as fast and complex as real Italians; don't recommend simplifying by default or beginner constraints, only better responses when the learner shows they're lost. Recommend small, high-leverage changes in that spirit. Plain language, no preamble.`,
     `Graded test conversations:\n${summary}\n\nWrite markdown with exactly two sections:
 ## Top problems
 Up to 3, most common first. One line each, with a short real quote from above.
 ## Recommendations
-Up to 3 specific changes (to the character prompt in lib/prompts/build-turn-prompt.ts, or to character data). Say what to change and why, one or two lines each. If things look good, say so and recommend fewer.`,
+Up to 3 specific changes (to the character prompt in content/it/prompts/character.md, to how turns are sent in lib/prompts/build-turn-prompt.ts, or to character data). Say what to change and why, one or two lines each. If things look good, say so and recommend fewer.`,
     900
   );
 }
 
 // ---------- Report ----------
+
+function lengthSection(ok: Graded[]): string[] {
+  const sum = summarize(ok.flatMap((r) => (r.stats ? [r.stats] : [])));
+  const pct = (x: number) => `${Math.round(x * 100)}%`;
+  return [
+    `## Length`,
+    ``,
+    `| Measure | Value |`,
+    `|---|---|`,
+    `| Opener (median words) | ${sum.openerWords} |`,
+    `| Reply (median words) | ${sum.wordsMedian} |`,
+    `| Reply (average words) | ${sum.wordsAvg} |`,
+    `| Longest reply (words) | ${sum.wordsMax} |`,
+    `| Replies over ${LONG_TURN_WORDS} words | ${pct(sum.longShare)} |`,
+    `| Questions per reply | ${sum.questionsAvg} |`,
+    `| Replies asking 2+ questions | ${pct(sum.multiQuestionShare)} |`,
+    ``,
+    `_Yardstick: a typical conversational turn is about 5–${TYPICAL_TURN_WORDS} words._`,
+  ];
+}
 
 function report(results: Graded[], recs: string): string {
   const ok = results.filter((r) => !r.error);
@@ -211,17 +253,19 @@ function report(results: Graded[], recs: string): string {
     `|---|---|`,
     ...crit.map((k) => `| ${k} | ${avg((r) => r.scores[k]).toFixed(1)} |`),
     ``,
+    ...lengthSection(ok),
+    ``,
     recs,
     ``,
     `## By character (weakest first)`,
     ``,
-    `| Character | Place | Learner | ${crit.join(' | ')} | Overall |`,
-    `|---|---|---|${crit.map(() => '---').join('|')}|---|`,
+    `| Character | Place | Learner | ${crit.join(' | ')} | Overall | Opener words | Median reply |`,
+    `|---|---|---|${crit.map(() => '---').join('|')}|---|---|---|`,
     ...[...ok]
       .sort((a, b) => a.overall - b.overall)
       .map(
         (r) =>
-          `| ${r.character.name} (${r.character.role}) | ${r.place.name}, ${r.cityName} | ${r.learner.id} | ${crit.map((k) => r.scores[k]).join(' | ')} | ${r.overall.toFixed(1)} |`
+          `| ${r.character.name} (${r.character.role}) | ${r.place.name}, ${r.cityName} | ${r.learner.id} | ${crit.map((k) => r.scores[k]).join(' | ')} | ${r.overall.toFixed(1)} | ${r.stats?.openerWords ?? ''} | ${r.stats?.wordsMedian ?? ''} |`
       ),
     ``,
     ...results.filter((r) => r.error).map((r) => `- **Failed:** ${r.character.name}: ${r.error}`),
@@ -232,7 +276,8 @@ function report(results: Graded[], recs: string): string {
     `2. **Simulate.** Claude plays a learner for ${TURNS} turn${TURNS === 1 ? "" : "s"}. The character's replies come from \`lib/turn.ts\`, the same code the app uses, so this is the real prompt.`,
     `3. **Grade.** A separate Claude call reads each transcript and scores the character 1–10 (10 = a native speaker would find it entirely natural):`,
     ...crit.map((k) => `   - **${k}**: ${CRITERIA[k]}`),
-    `4. **Recommend.** One more call reads all the grades and suggests up to 3 changes. Nothing is changed automatically.`,
+    `4. **Measure length.** Counted, not graded: words in the opener, median and longest reply, share of replies over ${LONG_TURN_WORDS} words, questions per reply, and share asking more than one question (several threads at once). Yardstick: real conversational turns run about 1–2 seconds, roughly 5–${TYPICAL_TURN_WORDS} words (Heldner & Edlund 2015; Stivers et al. 2009). These are measurements only; nothing is sent to the characters.`,
+    `5. **Recommend.** One more call reads all the grades and lengths and suggests up to 3 changes. Nothing is changed automatically.`,
     ``,
     `**Learner types**`,
     ``,
@@ -243,7 +288,7 @@ function report(results: Graded[], recs: string): string {
     ``,
     `- The sample is small and the conversations are random, so expect grades to move by about half a point between runs with no changes. Look for problems that repeat, not single scores.`,
     `- The learner is simulated. It catches clear failures (switching to English, correcting speech-to-text noise, never recovering when the learner is lost) but is no substitute for talking to the characters yourself.`,
-    `- Run again after changing the prompt (\`lib/prompts/build-turn-prompt.ts\`) or character data, and compare.`,
+    `- To compare before and after a change, run both with the same \`--seed\` (same characters and learners) and compare the grades and length numbers. The learner's lines still vary between runs, so look at clear differences, not small ones.`,
     ``,
     `## Transcripts`,
     ``,
@@ -263,7 +308,7 @@ function report(results: Graded[], recs: string): string {
 
 async function main() {
   const sample = pickSample();
-  console.log(`Prompt version: ${promptVersion()} (content/it/prompts/character.md)`);
+  console.log(`Prompt version: ${promptVersion()} (content/it/prompts/character.md)${SEED !== undefined ? ` · seed ${SEED}` : ''}`);
   console.log(`Sample (${sample.length}):`);
   sample.forEach((c) =>
     console.log(`  ${c.character.name} — ${c.character.role}, ${c.place.name}, ${c.cityName} · learner: ${c.learner.id}`)
@@ -289,7 +334,8 @@ async function main() {
       try {
         const transcript = await simulate(c);
         const g = await grade(c, transcript);
-        results.push({ ...c, transcript, ...g });
+        const stats = turnStats(transcript.filter((t) => t.who === 'npc').map((t) => t.transcript));
+        results.push({ ...c, transcript, ...g, stats });
         console.log(`  ✓ ${c.character.name} (${c.cityName}): ${g.overall.toFixed(1)}`);
       } catch (e) {
         const msg = e instanceof Error ? e.message : String(e);
@@ -305,10 +351,34 @@ async function main() {
   mkdirSync(dir, { recursive: true });
   const file = join(dir, `${new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-')}.md`);
   writeFileSync(file, report(results, recs));
+  // Machine-readable summary, for comparing runs before and after a change
+  const okRuns = results.filter((r) => !r.error);
+  writeFileSync(
+    file.replace(/\.md$/, '.json'),
+    JSON.stringify(
+      {
+        at: new Date().toISOString(),
+        model: CLAUDE_MODEL,
+        promptVersion: promptVersion(),
+        seed: SEED ?? null,
+        turns: TURNS,
+        conversations: okRuns.length,
+        grades: Object.fromEntries(
+          (Object.keys(CRITERIA) as Criterion[]).map((k) => [k, okRuns.reduce((a, r) => a + r.scores[k], 0) / (okRuns.length || 1)])
+        ),
+        length: summarize(okRuns.flatMap((r) => (r.stats ? [r.stats] : []))),
+        byCharacter: okRuns.map((r) => ({ id: r.character.id, learner: r.learner.id, overall: r.overall, stats: r.stats })),
+      },
+      null,
+      2
+    )
+  );
 
   const ok = results.filter((r) => !r.error);
   const avg = ok.reduce((a, r) => a + r.overall, 0) / (ok.length || 1);
-  console.log(`\nGrade: ${avg.toFixed(1)}/10 · report: ${file.replace(process.cwd() + '/', '')}`);
+  const len = summarize(ok.flatMap((r) => (r.stats ? [r.stats] : [])));
+  console.log(`\nGrade: ${avg.toFixed(1)}/10 · opener ${len.openerWords} words · median reply ${len.wordsMedian} · ${Math.round(len.longShare * 100)}% over ${LONG_TURN_WORDS} words`);
+  console.log(`Report: ${file.replace(process.cwd() + '/', '')} (+ .json)`);
 }
 
 main().catch((e) => {

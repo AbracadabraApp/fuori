@@ -19,7 +19,10 @@
 npm run test:conversations              # 6 characters, 6 learner turns each (~85 API calls)
 npm run test:conversations -- --count=10 --turns=8
 npm run test:conversations -- --dry     # show the sample and a prompt, no API calls
+npm run test:conversations -- --seed=7  # same sample every run: use for before-and-after a change
 ```
+
+Each report now has a **Length** section (counted, not graded): opener words, median and longest reply, share of replies over 30 words, questions per reply, and share asking 2+ questions. A `.json` summary is saved next to each `.md` report so runs can be compared. Yardstick: real conversational turns are about 5–10 words. See docs/10-testing.md → "How dialogue quality is judged".
 
 1. **Sample** existing characters: Giulia and Rita always, plus random characters from the city files (one per city).
 2. **Simulate** a conversation with a learner type from `conversations/learners.ts` (beginner with speech-to-text noise, hesitant beginner, improving A2). Character replies go through `lib/turn.ts`, the same code as `/api/turn`.

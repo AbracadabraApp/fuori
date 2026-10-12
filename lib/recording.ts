@@ -14,6 +14,7 @@
 import { query } from './db';
 import { startConversation, addConversationTurn } from './memory';
 import type { CharacterSheet } from './types';
+import { turnStats, wordCount } from './dialogue-stats';
 
 export function recordingEnabled(): boolean {
   return !!process.env.DATABASE_URL;
@@ -102,16 +103,12 @@ export async function recentConversations(limit = 20, since?: Date): Promise<Rec
 
 /** Simple numbers per conversation, so length can be tracked without reading every line. */
 export function conversationStats(c: RecordedConversation) {
-  const words = (t: string) => t.split(/\s+/).filter(Boolean).length;
-  const npc = c.turns.filter((t) => t.who === 'npc').map((t) => words(t.text));
-  const learner = c.turns.filter((t) => t.who === 'learner').map((t) => words(t.text));
-  const avg = (xs: number[]) => (xs.length ? Math.round((xs.reduce((a, b) => a + b, 0) / xs.length) * 10) / 10 : 0);
+  const learner = c.turns.filter((t) => t.who === 'learner').map((t) => wordCount(t.text));
   return {
     exchanges: learner.length,
-    openerWords: npc[0] ?? 0,
-    characterWordsAvg: avg(npc),
-    characterWordsMax: npc.length ? Math.max(...npc) : 0,
-    learnerWordsAvg: avg(learner),
+    learnerWordsAvg: learner.length ? Math.round((learner.reduce((a, b) => a + b, 0) / learner.length) * 10) / 10 : 0,
+    // Same measurements as the conversation test (lib/dialogue-stats.ts)
+    character: turnStats(c.turns.filter((t) => t.who === 'npc').map((t) => t.text)),
   };
 }
 

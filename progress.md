@@ -435,3 +435,11 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 - Test: `npm run test:recording` (needs a local `DATABASE_URL`; skips otherwise; refuses Railway). Checked end to end locally: admin route 404 without key, text output, end beacon.
 - **Not done:** the end-of-conversation notes + review log call, and loading notes into the prompt.
 - **Prompt audit** (no changes made): most likely causes of long turns are structural, not wording: the character speaks first with nothing to respond to, and history is sent as a document rather than alternating messages. Details in roadmap Now #4.
+
+## 2026-10-12: Length measured in the conversation test (cloud session)
+
+- Decided with Josh: Claude tests the breadth of places and characters; Claude analyses Josh's transcripts; Josh notices problems and makes the final call (docs/10-testing.md).
+- `lib/dialogue-stats.ts`: word and question counts per character reply (opener words, median/avg/longest, share over 30 words, questions per reply, share asking 2+). Yardstick from conversation research: turns are about 5–10 words. Measurements only, never sent to characters. `npm run test:stats`.
+- `test:conversations`: a **Length** section in every report and per-character opener/median columns; a `.json` summary beside each report for comparing runs; `--seed=N` gives the same sample every time for before-and-after. The grader text is unchanged (still told not to penalize complex Italian; changing that needs Josh's OK); length is counted, not graded. Fixed a stale path in the recommender (prompt lives in `content/it/prompts/character.md`).
+- Recorded conversations use the same measurements (`conversationStats` in `lib/recording.ts`).
+- Rehearsed the whole test with a fake Claude here (no API key in the cloud session); the real baseline run is for the laptop: `npm run test:conversations -- --seed=7`.
