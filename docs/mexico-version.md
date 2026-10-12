@@ -30,9 +30,12 @@ An estimate of what it would take to prototype a Mexican Spanish version: **5 ci
 
 ## Clone or generalize?
 
+**Decided (Josh, 2026-10-11): one codebase.** Some things have to be country-specific, but improving the app should improve every country wherever possible. Corollary: when something is shared in spirit but written per language (like the character prompt), prefer a shared template with only the language-specific words filled in, so an idea like "characters can't hear your pronunciation" is added once.
+
+
 - **Clone** (copy the repo, find-and-replace): fastest on day one, about a day. But every fix lands twice (voice fallback, error handling, memory, the database), and the apps drift apart within weeks.
 - **Generalize** (language packs, one codebase): about half a day more up front, then every improvement benefits both.
-- **Recommended:** one codebase, two Railway services, each with a `LANGUAGE` setting (`it`, `es-mx`). Separate URLs and apps to the user, shared code underneath. This is what [Architecture → Keeping other languages possible](05-architecture.md) already intends.
+- **Chosen:** one codebase, two Railway services, each with a `LANGUAGE` setting (`it`, `es-mx`). Separate URLs and apps to the user, shared code underneath. This is what [Architecture → Keeping other languages possible](05-architecture.md) already intends.
 
 ## Risks beyond the code
 
