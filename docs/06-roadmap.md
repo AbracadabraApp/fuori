@@ -20,7 +20,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
    - ~~Opener quality:~~ Improved from ~40 words to 13 words
    - "noticed" reply field: deferred (open design question)
 7. **Return-visit memory checks** (by hand until the M2 digest): does a character use your name and something you said; does a correction you give ("vivo qui adesso") change how they treat you next time?
-8. **Repeated ids across Italian cities** (found 2026-10-12 by `test:pack`). 26 place and character ids are used 70 times, so those places share one image (`farmacia-centrale` covers 12 cities) and 11 repeated characters **share memory and voice across cities** (Padre Giovanni in Firenze, Venezia and Assisi). Fix: keep each id in its first city, rename the 44 later uses to `<id>-<city>`, generate their images, move any affected memory, and make `test:pack` fail on repeats. Plan and full list: [duplicate-ids-fix.md](duplicate-ids-fix.md). (The Italy trim of 2026-10-13 shows only places whose ids aren't repeated, so the bug can't be seen in the app right now, but it comes back as soon as a repeated place is shown again.) About 2 hours plus a 44-image run (laptop, xAI key).
+8. ~~**Repeated ids across Italian cities**~~ Done 2026-10-13. 44 IDs renamed in code, 44 images generated, `test:pack` passes. Database records not migrated (recent deployment, few testers, affected places currently hidden).
 9. ~~**Image sizes and settings.**~~ Cancelled 2026-10-13. Not pursuing.
 
 **Added 2026-10-13, not yet ranked against 1–9:**

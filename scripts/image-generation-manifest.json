@@ -6450,13 +6450,233 @@
       "timestamp": "2026-10-12T20:26:40.918Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/rosa-edicola.jpg",
       "type": "portrait"
+    },
+    "matera/mercato-contadino-matera": {
+      "timestamp": "2026-10-13T20:25:50.236Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/mercato-contadino-matera.jpg",
+      "type": "place"
+    },
+    "matera/farmacia-centrale-matera": {
+      "timestamp": "2026-10-13T20:26:15.889Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/farmacia-centrale-matera.jpg",
+      "type": "place"
+    },
+    "matera/suor-margherita-matera": {
+      "timestamp": "2026-10-13T20:26:36.607Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/suor-margherita-matera.jpg",
+      "type": "portrait"
+    },
+    "firenze/padre-giovanni-firenze": {
+      "timestamp": "2026-10-13T20:27:02.390Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/padre-giovanni-firenze.jpg",
+      "type": "portrait"
+    },
+    "taormina/caffe-duomo-taormina": {
+      "timestamp": "2026-10-13T20:27:22.386Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-duomo-taormina.jpg",
+      "type": "place"
+    },
+    "taormina/villa-comunale-taormina": {
+      "timestamp": "2026-10-13T20:27:41.925Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/villa-comunale-taormina.jpg",
+      "type": "place"
+    },
+    "taormina/farmacia-centrale-taormina": {
+      "timestamp": "2026-10-13T20:28:04.538Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/farmacia-centrale-taormina.jpg",
+      "type": "place"
+    },
+    "venezia/giardini-pubblici-venezia": {
+      "timestamp": "2026-10-13T20:28:26.673Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/giardini-pubblici-venezia.jpg",
+      "type": "place"
+    },
+    "venezia/padre-giovanni-venezia": {
+      "timestamp": "2026-10-13T20:28:43.192Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/padre-giovanni-venezia.jpg",
+      "type": "portrait"
+    },
+    "lecce/basilica-santa-croce-lecce": {
+      "timestamp": "2026-10-13T20:29:10.484Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/basilica-santa-croce-lecce.jpg",
+      "type": "place"
+    },
+    "lecce/farmacia-centrale-lecce": {
+      "timestamp": "2026-10-13T20:29:32.000Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/farmacia-centrale-lecce.jpg",
+      "type": "place"
+    },
+    "milano/farmacia-centrale-milano": {
+      "timestamp": "2026-10-13T20:29:52.264Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/farmacia-centrale-milano.jpg",
+      "type": "place"
+    },
+    "milano/andrea-colombo-milano": {
+      "timestamp": "2026-10-13T20:30:15.170Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/andrea-colombo-milano.jpg",
+      "type": "portrait"
+    },
+    "milano/dottoressa-martini-milano": {
+      "timestamp": "2026-10-13T20:30:39.071Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/dottoressa-martini-milano.jpg",
+      "type": "portrait"
+    },
+    "milano/suor-teresa-milano": {
+      "timestamp": "2026-10-13T20:30:55.851Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/suor-teresa-milano.jpg",
+      "type": "portrait"
+    },
+    "siena/mercato-coperto-siena": {
+      "timestamp": "2026-10-13T20:31:19.924Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/mercato-coperto-siena.jpg",
+      "type": "place"
+    },
+    "siena/enoteca-italiana-siena": {
+      "timestamp": "2026-10-13T20:31:42.151Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/enoteca-italiana-siena.jpg",
+      "type": "place"
+    },
+    "siena/farmacia-centrale-siena": {
+      "timestamp": "2026-10-13T20:32:04.713Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/farmacia-centrale-siena.jpg",
+      "type": "place"
+    },
+    "napoli/farmacia-centrale-napoli": {
+      "timestamp": "2026-10-13T20:32:25.388Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/farmacia-centrale-napoli.jpg",
+      "type": "place"
+    },
+    "napoli/stazione-centrale-napoli": {
+      "timestamp": "2026-10-13T20:32:46.674Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/stazione-centrale-napoli.jpg",
+      "type": "place"
+    },
+    "verona/farmacia-centrale-verona": {
+      "timestamp": "2026-10-13T20:33:15.004Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/farmacia-centrale-verona.jpg",
+      "type": "place"
+    },
+    "verona/beatrice-libri-verona": {
+      "timestamp": "2026-10-13T20:33:35.710Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/beatrice-libri-verona.jpg",
+      "type": "portrait"
+    },
+    "palermo/farmacia-centrale-palermo": {
+      "timestamp": "2026-10-13T20:34:00.224Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/farmacia-centrale-palermo.jpg",
+      "type": "place"
+    },
+    "palermo/stazione-centrale-palermo": {
+      "timestamp": "2026-10-13T20:34:22.310Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/stazione-centrale-palermo.jpg",
+      "type": "place"
+    },
+    "palermo/padre-leonardo-palermo": {
+      "timestamp": "2026-10-13T20:34:44.359Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/padre-leonardo-palermo.jpg",
+      "type": "portrait"
+    },
+    "palermo/suor-teresa-palermo": {
+      "timestamp": "2026-10-13T20:35:02.321Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/suor-teresa-palermo.jpg",
+      "type": "portrait"
+    },
+    "bergamo/farmacia-centrale-bergamo": {
+      "timestamp": "2026-10-13T20:35:24.658Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/farmacia-centrale-bergamo.jpg",
+      "type": "place"
+    },
+    "torino/enoteca-bacco-torino": {
+      "timestamp": "2026-10-13T20:35:46.798Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/enoteca-bacco-torino.jpg",
+      "type": "place"
+    },
+    "torino/farmacia-centrale-torino": {
+      "timestamp": "2026-10-13T20:36:05.366Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/farmacia-centrale-torino.jpg",
+      "type": "place"
+    },
+    "torino/dottoressa-carla-torino": {
+      "timestamp": "2026-10-13T20:36:23.458Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/dottoressa-carla-torino.jpg",
+      "type": "portrait"
+    },
+    "siracusa/orto-botanico-siracusa": {
+      "timestamp": "2026-10-13T20:36:51.846Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/orto-botanico-siracusa.jpg",
+      "type": "place"
+    },
+    "lucca/elena-marchetti-lucca": {
+      "timestamp": "2026-10-13T20:37:12.165Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/elena-marchetti-lucca.jpg",
+      "type": "portrait"
+    },
+    "lucca/suor-margherita-lucca": {
+      "timestamp": "2026-10-13T20:37:31.499Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/suor-margherita-lucca.jpg",
+      "type": "portrait"
+    },
+    "orvieto/bar-duomo-orvieto": {
+      "timestamp": "2026-10-13T20:37:55.917Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/bar-duomo-orvieto.jpg",
+      "type": "place"
+    },
+    "orvieto/bar-centrale-orvieto": {
+      "timestamp": "2026-10-13T20:38:16.182Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/bar-centrale-orvieto.jpg",
+      "type": "place"
+    },
+    "orvieto/mercato-coperto-orvieto": {
+      "timestamp": "2026-10-13T20:38:36.954Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/mercato-coperto-orvieto.jpg",
+      "type": "place"
+    },
+    "orvieto/mercato-contadino-orvieto": {
+      "timestamp": "2026-10-13T20:38:56.725Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/mercato-contadino-orvieto.jpg",
+      "type": "place"
+    },
+    "orvieto/farmacia-centrale-orvieto": {
+      "timestamp": "2026-10-13T20:39:21.484Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/farmacia-centrale-orvieto.jpg",
+      "type": "place"
+    },
+    "orvieto/dottoressa-martini-orvieto": {
+      "timestamp": "2026-10-13T20:39:39.159Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/dottoressa-martini-orvieto.jpg",
+      "type": "portrait"
+    },
+    "mantova/mercato-erbe-mantova": {
+      "timestamp": "2026-10-13T20:40:03.293Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/mercato-erbe-mantova.jpg",
+      "type": "place"
+    },
+    "mantova/mercato-coperto-mantova": {
+      "timestamp": "2026-10-13T20:40:24.037Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/mercato-coperto-mantova.jpg",
+      "type": "place"
+    },
+    "mantova/palazzo-ducale-mantova": {
+      "timestamp": "2026-10-13T20:40:41.581Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/palazzo-ducale-mantova.jpg",
+      "type": "place"
+    },
+    "mantova/don-giuseppe-mantova": {
+      "timestamp": "2026-10-13T20:41:02.879Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/don-giuseppe-mantova.jpg",
+      "type": "portrait"
+    },
+    "mantova/suor-maria-mantova": {
+      "timestamp": "2026-10-13T20:41:19.604Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/suor-maria-mantova.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 1290,
-    "completed": 1290,
+    "total": 1334,
+    "completed": 1334,
     "failed": 0,
-    "lastRun": "2026-10-12T20:26:43.923Z"
+    "lastRun": "2026-10-13T20:41:22.609Z"
   }
 }

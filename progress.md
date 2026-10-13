@@ -864,3 +864,41 @@ Both services auto-deploying now (~3 min each).
 - Josh: Italy's portraits didn't fill the edges (pen sketches fade into cream paper) and names had no real typeface (Arial fallback). Compared three mockups plus a variant he asked for (artifact "People Screen Options"); picked B2. The screen is now a solid paper band with "← City", the name in Alegreya 700 (31px) and "Role, Neighbourhood" in Alegreya Sans (19px), then the portrait filling the rest edge to edge, anchored at the top. The name is never under subtitles. Start conversation button and mic unchanged (Josh). Fonts via next/font in app/layout.tsx; neighbourhood passed from app/page.tsx.
 - Checked with local screenshots at 390×844 and 375×667, Italy and Mexico. Known trade-off: on tall phones the portrait is cropped at the sides (Don Chucho's street sign is cut); Italy's sketches have spare paper there.
 - **Same framing on every phone (Josh):** the portrait is always at least 124% of the screen width (the zoom a tall iPhone needs anyway), so small phones show the person as large as tall ones, with the same trim at the sides and a little lost at the bottom (behind the button). Button text now Alegreya Sans too.
+
+## 2026-10-13: Roadmap cleanup and research (laptop session)
+
+**Completed roadmap item #8 (duplicate IDs):**
+- ✅ 44 IDs renamed in code (earlier today)
+- ✅ 14 character names made unique (Suor Teresa → Suor Anna, etc.)
+- ✅ 44 missing images generated (agent: all cities, 0 errors)
+- ✅ `test:pack` passes, `test:images` passes
+- ⏸ Database migration skipped (recent deployment, few testers, affected places hidden in showcase)
+
+**Roadmap cleanup:**
+- Cancelled #9 (image sizes/aspect ratios) - not pursuing
+- Cancelled #12 (Mexican image prompts) - not pursuing
+- #7 (return-visit memory checks) - Josh will test manually and share transcripts
+
+**Research completed:**
+1. **Streaming audio vs press-to-talk** - comprehensive analysis
+   - Recommendation: Stick with press-to-talk for M1 (already implemented)
+   - Key finding: Language learners need 2.41 seconds average between turns to think
+   - VAD would either cut them off or add awkward silence
+   - Consider hybrid toggle for M2+ advanced learners
+   
+2. **Voice messages feature** - full analysis for M3
+   - Recommendation: Build in M3 after Magda, starting with character postcards
+   - Use TTS (same voices as live) for consistency
+   - Target: 20-30 seconds, max 60 seconds
+   - Frequency: 3-5 messages/week total across all characters
+   - Must have in-world triggers (no generic engagement)
+   - Playback speed 0.5×-1.5× for learners
+
+**Decisions made:**
+- Press-to-talk validated as correct choice for voice-first language learning
+- Voice messages are relationship continuity, not conversation replacement
+- Explicit control reduces learner anxiety vs ambiguous listening states
+
+**Next actions:**
+- Josh: Test return-visit memory (#7), review transcripts
+- Remaining: #13 (bench characters decision)
