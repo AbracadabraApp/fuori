@@ -514,3 +514,4 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 - **Found, not fixed:** 26 ids repeat across Italian cities (70 uses): those places share one image, and three characters (`padre-giovanni`, `suor-teresa`, `dottoressa-martini`) share memory across cities. On the roadmap (Now #8).
 - **Not changed:** legacy M2 types in `lib/types.ts` still have `it` fields (unused); `test:roles` still says "Italian" (runs on the active pack).
 - **Next:** phase 2, `content/es-mx/`.
+- **Duplicate ids:** fix written up in `docs/duplicate-ids-fix.md` (26 ids, 70 uses, 44 renames); roadmap Now #8 points to it.
