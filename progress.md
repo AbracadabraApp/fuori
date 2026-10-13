@@ -741,3 +741,41 @@ const langLearner = country === 'es-mx' ? 'a Spanish learner' : 'an Italian lear
 **Next: Deploy to Railway with COUNTRY=es-mx**
 
 - **Afuera didn't redeploy:** 15 minutes after the push, Fuori had e612c70 but Afuera still served the old person screen. Likely the Afuera service isn't connected to GitHub `main` (perhaps created with `railway up`). Fix in Railway: Afuera → Settings → Source → `AbracadabraApp/fuori`, branch `main`, auto-deploy on; or `railway up --service afuera` from the laptop for a one-off.
+
+## 2026-10-13: CRITICAL FIX - Restored conversation memory (laptop session)
+
+**Bug discovered:** Cloud session's experiment (prompt 2026-10-12h) removed transcript from "document" mode to test minimal context. But production uses document mode by default, so since 21:30 on Oct 12, ALL characters on both Fuori and Afuera had **zero conversation history**.
+
+**Symptoms:**
+- Characters asking same questions repeatedly
+- Characters reintroducing themselves mid-conversation  
+- Characters giving unrelated answers
+- Giulia asking "Di dove sei?" 5 times
+- Sofía answering things never said
+
+**Root cause:**
+Prompt version 2026-10-12h removed `{transcript}` from "Later turns" block while testing minimal context. Cloud session tested two modes:
+- document mode (one message, history as text) - TRANSCRIPT REMOVED
+- recent mode (alternating messages, history in structure) - WORKING
+
+But production defaulted to document mode = goldfish memory for 36 hours.
+
+**Fix deployed:**
+Set `TURN_HISTORY=recent` on both Railway services:
+- ✓ Fuori (Italy): TURN_HISTORY=recent
+- ✓ Afuera (Mexico): TURN_HISTORY=recent
+
+Both services auto-deploying now (~3 min each).
+
+**Why "recent" mode:**
+- Tested to quality targets (20 words, 7% questions, 100% garbled)
+- Maintains conversation history through message structure
+- No transcript text needed - history is in alternating assistant/user messages
+- Easy to revert if issues
+
+**Timeline:**
+- Oct 12 21:30: Cloud session pushed 2026-10-12h (broke document mode)
+- Oct 13 22:50: Bug discovered in user transcripts
+- Oct 13 22:55: Fix deployed to both services
+
+**Impact:** Fixed critical UX bug - characters now remember full conversation history.
