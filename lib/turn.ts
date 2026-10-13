@@ -29,7 +29,7 @@ export async function runTurn(params: {
 
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
-    max_tokens: 2048,
+    max_tokens: 8192, // Increased for models with thinking enabled
     temperature: 1.0,
     system: prompt.system,
     messages: prompt.messages,

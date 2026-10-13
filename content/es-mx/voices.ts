@@ -14,16 +14,16 @@ export const voices = {
     // No anchors in Mexico yet
     byCharacter: {} as Record<string, string>,
     f: [
-      'pFZP5JQG7iQjIQuC4Bku', // Lily
-      'XrExE9yKIg1WjnnlVkGX', // Matilda
-      'Xb7hH8MSUJpSbSDYk0k2', // Alice
-      'SAz9YHcvj6GT2YYXdXww', // River
+      'KVJNlB9xei0FCE8ekWnI', // Ingrid - young (20s), Mexican soft & natural
+      'fuVibWsnIUtzBVjB2PCa', // Ximena - young (20s), Mexican gentle & immersive
+      'akOBlaKhFd59YlK6xz9u', // Lucia - mid (30s), Mexican warm conversational
+      'XrExE9yKIg1WjnnlVkGX', // Matilda - mature (40s), premade (works well with Spanish)
     ],
     m: [
-      'JBFqnCBsd6RMkjVDRZzb', // George
-      'onwK4e9ZLuTAKqWW03F9', // Daniel
-      'nPczCjzI2devNBz1zQrb', // Brian
-      'pNInz6obpgDQGcFmaJgB', // Adam
+      'y49lIAGrsmQl8dzq2W93', // Rayito - young (20s), Mexican warm & natural
+      '8MmlQmEVy2nXcsSSkf0b', // Axel G - young-mid (20s-30s), Mexican confident & friendly
+      '4rOzDieCbHQQyo9tzqZv', // Diego - mid (30s), Mexican warm & conversational
+      'rtQzMJmQhSg0YB7cp3ed', // Joaquín - middle-aged (40s-50s), Mexican rich & captivating
     ],
   },
 

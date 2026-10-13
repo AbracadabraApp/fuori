@@ -21,7 +21,7 @@ import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { runTurn } from '@/lib/turn';
 import { buildTurnPrompt, promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { characterForPlace } from '@/lib/characters/for-place';
-import { cities } from '@/content';
+import { cities, language, country } from '@/content';
 import type { CharacterSheet, Place, Turn } from '@/lib/types';
 import { learners, type Learner } from './learners';
 import { turnStats, summarize, LONG_TURN_WORDS, TYPICAL_TURN_WORDS, type TurnStats } from '@/lib/dialogue-stats';
@@ -45,12 +45,27 @@ function seeded(seed: number) {
 }
 const random = SEED !== undefined ? seeded(Number(SEED) || 0) : Math.random;
 
-const CRITERIA = {
-  italian: 'Speaks Italian. Uses English only when the learner asks for it, and only as much as the character\'s English allows, then returns to Italian.',
-  understands: 'Understands imperfect speech. Reads garbled speech-to-text ("bone journal" = buongiorno) and learner errors as what they meant, without commenting on them.',
-  adapts: 'Adapts when the learner is lost. Talking fast or in complex Italian is fine (real people do); what matters is that when the learner signals confusion (non capisco, come?, più piano, English) the character slows down and rephrases, and when they say ripeti, repeats.',
-  alive: 'Feels like a real person in that place. Distinct personality, reacts to what was said, recasts mistakes naturally instead of teaching.',
-} as const;
+function buildCriteria() {
+  const langName = language.name;
+  const base = {
+    language: `Speaks ${langName}. Uses English only when the learner asks for it, and only as much as the character's English allows, then returns to ${langName}.`,
+    understands: 'Understands imperfect speech. Reads garbled speech-to-text and learner errors as what they meant, without commenting on them.',
+    adapts: `Adapts when the learner is lost. Talking fast or in complex ${langName} is fine (real people do); what matters is that when the learner signals confusion the character slows down and rephrases, and when they ask to repeat, repeats.`,
+    alive: 'Feels like a real person in that place. Distinct personality, reacts to what was said, recasts mistakes naturally instead of teaching.',
+  };
+
+  // Mexico-specific: check for Spain Spanish instead of Mexican Spanish
+  if (country === 'es-mx') {
+    return {
+      ...base,
+      regional: 'Uses Mexican Spanish. Avoids Spain Spanish markers like vosotros, vale, coger (for "take"), ordenador, zumo. Uses Mexican vocabulary and expressions.',
+    };
+  }
+
+  return base;
+}
+
+const CRITERIA = buildCriteria();
 type Criterion = keyof typeof CRITERIA;
 
 interface Case {
@@ -173,12 +188,16 @@ const gradeSchema = {
 async function grade(c: Case, transcript: Turn[]): Promise<Omit<Graded, keyof Case | 'transcript'>> {
   const english =
     c.character.englishAbility ? `The character's English: ${c.character.englishAbility}.` : 'The character\'s English ability is unspecified.';
+  const appDesc = country === 'es-mx'
+    ? `an app where learners practise ${language.name} by talking with characters in Mexico`
+    : `an app where learners practise Italian by talking with characters in Italy`;
+
   const result = await askJson<Record<string, unknown>>(
-    `You grade conversations from Fuori, an app where learners practise Italian by talking with characters in Italy. The goal is natural conversation, not teaching. Be honest and specific; 10 means a native speaker would find it entirely natural.`,
+    `You grade conversations from Fuori, ${appDesc}. The goal is natural conversation, not teaching. Be honest and specific; 10 means a native speaker would find it entirely natural.`,
     `Character: ${c.character.name}, ${c.character.role} at ${c.place.name}, ${c.cityName}. ${english}
 Learner type: ${c.learner.description}
 
-Grade the CHARACTER (not the learner) from 1 to 10 on the criteria below. Don't penalize the character for speaking naturally complex Italian; judge how it responds when the learner shows confusion.
+Grade the CHARACTER (not the learner) from 1 to 10 on the criteria below. Don't penalize the character for speaking naturally complex ${language.name}; judge how it responds when the learner shows confusion.
 ${Object.entries(CRITERIA).map(([k, v]) => `- ${k}: ${v}`).join('\n')}
 
 Transcript:
@@ -205,13 +224,18 @@ async function recommend(results: Graded[]): Promise<string> {
         `Problem: ${r.problem}${r.quote ? ` Quote: "${r.quote}"` : ''}`
     )
     .join('\n');
+  const appDesc = country === 'es-mx'
+    ? `a voice-first ${language.name} conversation app for learning in Mexico`
+    : `a voice-first Italian conversation app`;
+  const promptPath = `content/${country}/prompts/character.md`;
+
   return ask(
-    `You advise the builder of Fuori, a voice-first Italian conversation app. The character prompt (content/it/prompts/character.md) is deliberately minimal: it describes the situation, not how to talk, and sets no length rules. The product direction is natural conversation, not rules. For reference, real conversational turns run about ${TYPICAL_TURN_WORDS} words or fewer; replies far longer than that leave the learner no room to answer. Characters may speak as fast and complex as real Italians; don't recommend simplifying by default or beginner constraints, only better responses when the learner shows they're lost. Recommend small, high-leverage changes in that spirit. Plain language, no preamble.`,
+    `You advise the builder of Fuori, ${appDesc}. The character prompt (${promptPath}) is deliberately minimal: it describes the situation, not how to talk, and sets no length rules. The product direction is natural conversation, not rules. For reference, real conversational turns run about ${TYPICAL_TURN_WORDS} words or fewer; replies far longer than that leave the learner no room to answer. Characters may speak as fast and complex as native speakers; don't recommend simplifying by default or beginner constraints, only better responses when the learner shows they're lost. Recommend small, high-leverage changes in that spirit. Plain language, no preamble.`,
     `Graded test conversations:\n${summary}\n\nWrite markdown with exactly two sections:
 ## Top problems
 Up to 3, most common first. One line each, with a short real quote from above.
 ## Recommendations
-Up to 3 specific changes (to the character prompt in content/it/prompts/character.md, to how turns are sent in lib/prompts/build-turn-prompt.ts, or to character data). Say what to change and why, one or two lines each. If things look good, say so and recommend fewer.`,
+Up to 3 specific changes (to the character prompt in ${promptPath}, to how turns are sent in lib/prompts/build-turn-prompt.ts, or to character data). Say what to change and why, one or two lines each. If things look good, say so and recommend fewer.`,
     900
   );
 }
@@ -308,7 +332,7 @@ function report(results: Graded[], recs: string): string {
 
 async function main() {
   const sample = pickSample();
-  console.log(`Prompt version: ${promptVersion()} (content/it/prompts/character.md)${SEED !== undefined ? ` · seed ${SEED}` : ''}`);
+  console.log(`Prompt version: ${promptVersion()} (content/${country}/prompts/character.md)${SEED !== undefined ? ` · seed ${SEED}` : ''}`);
   console.log(`Sample (${sample.length}):`);
   sample.forEach((c) =>
     console.log(`  ${c.character.name} — ${c.character.role}, ${c.place.name}, ${c.cityName} · learner: ${c.learner.id}`)
