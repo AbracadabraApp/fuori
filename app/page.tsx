@@ -49,6 +49,7 @@ export default function Home() {
         characterPortrait={`${pack.images}/portraits/${characterSheet.id}.jpg`}
         cityName={cityData?.name || ''}
         cityId={cityData?.id}
+        neighbourhood={place?.neighbourhood}
         onBack={() => setSelectedPlace(null)}
         showTranscripts={showTranscripts}
         showEnglish={showEnglish}

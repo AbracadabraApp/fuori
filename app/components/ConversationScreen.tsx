@@ -61,6 +61,8 @@ interface ConversationScreenProps {
   cityName: string;
   /** City id (e.g. 'napoli'), saved with the recorded conversation */
   cityId?: string;
+  /** Neighbourhood of the place, shown after the role ("Bolero, Roma Norte") */
+  neighbourhood?: string;
   onBack: () => void;
   showTranscripts?: boolean;
   showEnglish?: boolean;
@@ -72,6 +74,7 @@ export function ConversationScreen({
   characterPortrait,
   cityName,
   cityId,
+  neighbourhood,
   onBack,
   showTranscripts = true,
   showEnglish = false,
@@ -608,6 +611,8 @@ export function ConversationScreen({
   };
 
   const role = characterRole ? characterRole.charAt(0).toUpperCase() + characterRole.slice(1) : '';
+  // "Bolero, Roma Norte": the role, then where you met them
+  const roleLine = [role, neighbourhood].filter(Boolean).join(', ');
   const state: 'idle' | 'listening' | 'thinking' | 'speaking' = isRecording
     ? 'listening'
     : isProcessing
@@ -619,37 +624,34 @@ export function ConversationScreen({
 
   return (
     <div className={styles.screen}>
-      {/* Compact header */}
-      <button type="button" onClick={onBack} className={styles.back}>
-        <span className={styles.backArrow} aria-hidden="true">←</span>
-        <span className={styles.backCity}>{cityName}</span>
-      </button>
+      {/* Band: back link and the person's name on solid paper, so subtitles never cover the name */}
+      <header className={styles.band}>
+        <button type="button" onClick={onBack} className={styles.back}>
+          <span className={styles.backArrow} aria-hidden="true">←</span>
+          <span className={styles.backCity}>{cityName}</span>
+        </button>
+        <div>
+          <h1 className={styles.name}>{characterName}</h1>
+          {roleLine && <p className={styles.role}>{roleLine}</p>}
+        </div>
+      </header>
 
-      {/* Portrait with the name and role underneath, like a Polaroid caption.
-          The figure is as big as the stage allows; text floats over it from mid-screen. */}
+      {/* Portrait fills the rest of the screen, edge to edge; text floats over it from mid-screen */}
       <div className={styles.stage}>
-        <figure className={styles.figure}>
-          {characterPortrait && !portraitFailed ? (
-            // next/image serves a resized, modern-format copy sized to the screen
-            <div className={styles.portraitFrame}>
-              <Image
-                src={characterPortrait}
-                alt={characterName}
-                fill
-                priority
-                sizes="(max-width: 600px) 100vw, 600px"
-                className={styles.portrait}
-                onError={() => setPortraitFailed(true)}
-              />
-            </div>
-          ) : (
-            <div className={styles.portraitPlaceholder}>👤</div>
-          )}
-          <figcaption className={styles.nameLine}>
-            <span className={styles.name}>{characterName}</span>
-            {role && <span className={styles.role}>, {role}</span>}
-          </figcaption>
-        </figure>
+        {characterPortrait && !portraitFailed ? (
+          // next/image serves a resized, modern-format copy sized to the screen
+          <Image
+            src={characterPortrait}
+            alt={characterName}
+            fill
+            priority
+            sizes="(max-width: 600px) 100vw, 600px"
+            className={styles.portrait}
+            onError={() => setPortraitFailed(true)}
+          />
+        ) : (
+          <div className={styles.portraitPlaceholder}>👤</div>
+        )}
       </div>
 
       {(showReply || error || voiceFallback || debug) && (

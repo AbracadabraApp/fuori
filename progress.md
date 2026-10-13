@@ -858,3 +858,8 @@ Both services auto-deploying now (~3 min each).
 
 **Status:** All character names now unique. IDs unique. Ready for image generation (44 images for renamed IDs).
 
+
+## 2026-10-13: Person screen redesign, "name on a band" (cloud session)
+
+- Josh: Italy's portraits didn't fill the edges (pen sketches fade into cream paper) and names had no real typeface (Arial fallback). Compared three mockups plus a variant he asked for (artifact "People Screen Options"); picked B2. The screen is now a solid paper band with "← City", the name in Alegreya 700 (31px) and "Role, Neighbourhood" in Alegreya Sans (19px), then the portrait filling the rest edge to edge, anchored at the top. The name is never under subtitles. Start conversation button and mic unchanged (Josh). Fonts via next/font in app/layout.tsx; neighbourhood passed from app/page.tsx.
+- Checked with local screenshots at 390×844 and 375×667, Italy and Mexico. Known trade-off: on tall phones the portrait is cropped at the sides (Don Chucho's street sign is cut); Italy's sketches have spare paper there.
