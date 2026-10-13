@@ -11,6 +11,69 @@
 
 **Next (phase 2):** `content/es-mx/` with `language.ts` and `pack.ts`, the 10 place kinds per city in the generation script, then 5 cities, 50 places, 50 personas and 105 images.
 
+## Visual style (worked out 2026-10-12, Josh with Claude, testing prompts by hand in Grok)
+
+**Cities:** Ciudad de México, Oaxaca, Puebla, Guadalajara, San Miguel de Allende.
+
+**The system**
+- **City cards:** each city has its own distinct style, rooted in something local (Josh: "Oaxaca and Mexico City evoke different ideas"). What ties the deck together is the card format, border and caption, not one technique.
+- **Places:** one style across Mexico. Linocut is the candidate (Josh: "might work for a place, not great for a city").
+- **People:** one style across Mexico, **not decided**: saturated gouache (warm, matches the Mexico City card, busier under subtitles) or linocut (graphic, matches the places, cleaner under subtitles). The test that decides: whose face would you want to talk to every morning.
+
+**Styles so far**
+- **Mexico City card, approved (V2):** flat matte gouache, jacarandas in bloom over a Roma Norte avenue, 1920s Art Deco buildings, a tamale seller on a bicycle, a schoolgirl and her grandmother, a man in a guayabera on a bench, a dog asleep. Prompt below.
+- **Drafted, not yet tried:** Oaxaca (saturated folk painting: alebrije patterns, cochineal red, indigo), Puebla (hand-painted Talavera tile panel: cobalt and white), Guadalajara (mid-century modern travel poster: flat shapes, terracotta and teal), San Miguel (loose oil pastel and gouache at sunset: ochre, rose, violet shadow). Prompts below.
+- **Places, linocut:** bold carved black lines, wood grain, black plus hot pink and marigold on off-white paper; big simple shapes so it reads at card size.
+- **People:** linocut reference is the juice seller (black, pink, marigold; her blender and oranges behind her). Gouache reference is the same woman against a rosa mexicano wall with Talavera, aguas frescas and fruit.
+- **Rejected:** the storybook "folk painting" as a general style (came out as generic nostalgic painting); thick impasto oil (a common AI look). Its warmth goes into Oaxaca's card instead.
+
+**Rules every prompt follows** (each learned from a test image or from Italy)
+- **Mexico today.** Every first try drifted to the 1940s–50s (rebozos, fedoras, lantern carts). Name modern details: T-shirts, jeans, aprons, plastic stools, motorbikes, school uniforms.
+- **Everyday life, not tourist views or clichés:** no sombreros, cacti, skulls. The learner lives there.
+- **Mexican identity comes from colour and everyday objects, never costume:** rosa mexicano walls, oilcloth on counters, aguas frescas, Talavera, papel picado. Use one or two that belong to the place, not all of them (a test portrait with all of them read as a checklist).
+- **Name the city and neighbourhood** in every place prompt (Italy: about 350 of 594 didn't, and Caffè Toledo came out as Paris).
+- **State the person's gender** (Italy: 10 women got men's portraits).
+- **Portraits show a glimpse of the person's place behind them**, with background detail above shoulder height and a calm lower half, because subtitles cover the bottom of the screen.
+- **Lettering:** none on city cards or portraits. Places may have one exact named sign written in the prompt ("The stall's sign reads 'Jugos Lupita'"; any other lettering is everyday detail, no banners naming the neighbourhood or city). Generators misspell, and this is a language app. Untested: whether Grok spells a named sign correctly.
+- **Shape:** the Grok app only makes tall (2:3) images. Prompts end with "Keep the main scene in the centre of the picture; nothing important near the top or bottom edges." so an image works cropped square or shown tall. Whether Mexico's cards are square or tall is open; whether the xAI API accepts an aspect ratio is untested.
+- **Varied faces:** generators repeat one face (three identical women in the linocut market). Describe each person differently (age, build, hair).
+
+**How place and people prompts get written:** like Italy, Claude writes each one in the content step (`scripts/generate-city-content.mjs`) from that place's own context, as Italy's prompts did (a Naples bar "with blue-tiled walls… and a small shrine to Maradona"). Each prompt = the fixed style line + a scene written for that place + the rules above. City cards stay hand-written, as Italy's did (prescriptive city prompts worked better, 2026-10-10).
+
+**Open before generating**
+- People style (gouache or linocut).
+- Square or tall cards for Mexico.
+- Variety test: a young man and an older man in the chosen people style.
+- Named-sign test on one place.
+- `scripts/generate-images.mjs` reads `content/$COUNTRY/` but still saves into the shared `public/images/{places,portraits}` by id, with one shared manifest: Mexican ids could overwrite Italian images. Give each country its own image folder before generating.
+
+**Prompts**
+
+Mexico City (approved):
+```
+Flat matte gouache illustration with simplified shapes and visible but thin brushstrokes, no thick paint, no impasto. Limited palette: jacaranda purple, dusty pink, ochre, turquoise, deep green. A street corner in Roma Norte, Mexico City, in March: jacaranda trees in full bloom arching over a wide avenue with a planted central walkway, 1920s Art Deco apartment buildings with rounded corner balconies and geometric trim, a tamale seller with a steaming pot on the back of a bicycle, a schoolgirl in uniform and her grandmother buying tamales, a man in a guayabera reading the paper on a bench, purple petals scattered on the pavement, a dog asleep in the shade. Warm late-morning light, crisp shadows. Everyday neighbourhood life. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
+```
+
+Oaxaca (draft):
+```
+Naive folk painting with bright saturated colours, flat perspective and careful small details, inspired by Oaxacan folk art: alebrije patterns, cochineal red, marigold, indigo and turquoise. A morning in Oaxaca today: a street of low colonial houses painted in bold colours leading to a church of green stone, a woman selling tlayudas from a grill on the corner, a young man on a motorbike, a grandmother with a woven bag, papel picado fluttering overhead, green mountains behind. Warm, joyful and contemporary, everyday life, no costumes. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
+```
+
+Puebla (draft):
+```
+Illustration in the style of a hand-painted Talavera tile panel from Puebla: cobalt blue and white with touches of yellow, ochre and green, slightly glossy glaze, visible brush marks, a thin decorative tile border. Puebla today: a street of colonial façades covered in blue-and-white tiles, the cathedral towers behind, a man selling camotes from a whistling cart, students with backpacks, a woman carrying a box of sweets from a dulcería. Everyday city life, contemporary clothes. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
+```
+
+Guadalajara (draft):
+```
+Mid-century modern travel poster illustration: flat colour shapes, subtle grain, bold simple geometry, warm palette of terracotta, teal, mustard and sky blue. Guadalajara today: a wide avenue with a tree-lined central walkway, the cathedral's yellow spires in the distance, a jacaranda in bloom, people on bicycles, a young woman at a tejuino stand drinking from a plastic cup, a pottery shop from nearby Tlaquepaque with clay pots stacked outside. Modern, sunny, confident. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
+```
+
+San Miguel de Allende (draft):
+```
+Loose oil-pastel and gouache painting with warm, glowing light, soft textured edges, palette of ochre, rose, burnt orange and violet shadow. San Miguel de Allende today at sunset: the pink Gothic spires of the parish church above a cobbled street, bougainvillea spilling over ochre walls, a man selling ice cream from a cart, a couple walking a dog, a group of friends laughing on the steps of the garden, lanterns just coming on. Calm, golden and contemporary. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
+```
+
 ---
 
 Earlier estimate (2026-10-11, 5 × 5), kept for history:
