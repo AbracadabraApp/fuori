@@ -376,7 +376,7 @@ export const roma: CityPantry = {
     },
     {
       id: 'chiara-gelato',
-      name: 'Chiara Fontana',
+      name: 'Chiara Rossetti',
       gender: 'f',
       age: 26,
       role: 'gelataia',
@@ -426,7 +426,7 @@ export const roma: CityPantry = {
     },
     {
       id: 'matteo-libraio',
-      name: 'Matteo Galli',
+      name: 'Matteo Serra',
       gender: 'm',
       age: 37,
       role: 'libraio',

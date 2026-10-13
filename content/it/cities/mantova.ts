@@ -372,7 +372,7 @@ export const mantova: CityPantry = {
     },
     {
       id: 'elena-te',
-      name: 'Elena Marchetti',
+      name: 'Elena Conti',
       gender: 'f',
       age: 33,
       role: 'barista',

@@ -543,7 +543,7 @@ export const palermo: CityPantry = {
     },
     {
       id: 'padre-leonardo-palermo',
-      name: 'Padre Leonardo',
+      name: 'Padre Francesco',
       gender: 'm',
       age: 68,
       role: 'sacerdote',
@@ -553,7 +553,7 @@ export const palermo: CityPantry = {
     },
     {
       id: 'suor-teresa-palermo',
-      name: 'Suor Teresa',
+      name: 'Suor Anna',
       gender: 'f',
       age: 72,
       role: 'suora',

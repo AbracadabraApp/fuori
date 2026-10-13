@@ -385,7 +385,7 @@ export const lucca: CityPantry = {
     },
     {
       id: 'elena-marchetti-lucca',
-      name: 'Elena Marchetti',
+      name: 'Elena Moretti',
       gender: 'f',
       age: 62,
       role: 'proprietaria',

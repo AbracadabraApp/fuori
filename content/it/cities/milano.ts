@@ -480,7 +480,7 @@ export const milano: CityPantry = {
     },
     {
       id: 'andrea-colombo-milano',
-      name: 'Andrea Colombo',
+      name: 'Andrea Bellini',
       gender: 'm',
       age: 52,
       role: 'fornaio',

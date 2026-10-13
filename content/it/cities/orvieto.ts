@@ -472,7 +472,7 @@ export const orvieto: CityPantry = {
     },
     {
       id: 'carla-montanari',
-      name: 'Carla Montanari',
+      name: 'Carla Benedetti',
       gender: 'f',
       age: 63,
       role: 'pasticciera',
@@ -662,7 +662,7 @@ export const orvieto: CityPantry = {
     },
     {
       id: 'dottoressa-martini-orvieto',
-      name: 'Dottoressa Martini',
+      name: 'Dottoressa Ricci',
       gender: 'f',
       age: 56,
       role: 'farmacista',

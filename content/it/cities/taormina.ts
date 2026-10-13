@@ -364,7 +364,7 @@ export const taormina: CityPantry = {
     },
     {
       id: 'salvatore-greco',
-      name: 'Salvatore Greco',
+      name: 'Salvatore Messina',
       gender: 'm',
       age: 67,
       role: 'barista',
@@ -394,7 +394,7 @@ export const taormina: CityPantry = {
     },
     {
       id: 'rosa-battaglia',
-      name: 'Rosa Battaglia',
+      name: 'Rosa Marino',
       gender: 'f',
       age: 38,
       role: 'cameriera',

@@ -530,7 +530,7 @@ export const matera: CityPantry = {
     },
     {
       id: 'suor-margherita-matera',
-      name: 'Suor Margherita',
+      name: 'Suor Rosa',
       gender: 'f',
       age: 69,
       role: 'suora',

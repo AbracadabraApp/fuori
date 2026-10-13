@@ -352,7 +352,7 @@ export const siracusa: CityPantry = {
     },
     {
       id: 'francesca-verdura',
-      name: 'Francesca Vitale',
+      name: 'Francesca Caruso',
       gender: 'f',
       age: 35,
       role: 'venditrice',
@@ -582,7 +582,7 @@ export const siracusa: CityPantry = {
     },
     {
       id: 'antonio-macellaio',
-      name: 'Antonio Greco',
+      name: 'Antonio Romano',
       gender: 'm',
       age: 51,
       role: 'macellaio',
