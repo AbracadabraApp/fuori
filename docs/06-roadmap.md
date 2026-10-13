@@ -19,7 +19,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
    - ~~Traits as manner, not expertise:~~ ~430 red traits removed (storyteller, perfectionist, passionate, teaching, verbosity drivers) across Italy and Mexico
    - ~~Opener quality:~~ Improved from ~40 words to 13 words
    - "noticed" reply field: deferred (open design question)
-7. **Return-visit memory checks** (by hand until the M2 digest): does a character use your name and something you said; does a correction you give ("vivo qui adesso") change how they treat you next time?
+7. ~~**Return-visit memory checks**~~ Done 2026-10-13. Characters remember names, facts, preferences across visits (Nonno Ettore, Sandro, Dario all confirmed working).
 8. ~~**Repeated ids across Italian cities**~~ Done 2026-10-13. 44 IDs renamed in code, 44 images generated, `test:pack` passes. Database records not migrated (recent deployment, few testers, affected places currently hidden).
 9. ~~**Image sizes and settings.**~~ Cancelled 2026-10-13. Not pursuing.
 
