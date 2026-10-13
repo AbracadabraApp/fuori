@@ -196,6 +196,8 @@ railway open
 Fuori is **mobile-first** - the primary experience is on a phone. Desktop is secondary.
 
 **Primary target:** iPhone Safari (iOS 15+)
+
+**One screen shape (Josh, 2026-10-13):** design and check layouts at the modern iPhone shape only (iPhone X and newer, e.g. 390 × 844). Older short screens (iPhone SE, 6–8) aren't a target; layouts should degrade gracefully there, not get their own design.
 **Secondary target:** Chrome on Android
 
 **Why mobile matters:**
