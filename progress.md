@@ -519,3 +519,73 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 ## 2026-10-12: Mexico status refreshed (cloud session)
 
 - `docs/mexico-version.md` now has a phase 2 status block: style decided, 5 city cards approved, 50 places and 50 people generated; 10 of 50 portraits and 0 of 50 place images made; no `language.ts`, `pack.ts` or voices yet, so Mexico doesn't run. Next: remaining images, register the pack, per-country image paths, then phase 3.
+
+## 2026-10-13: Conversation quality testing - prompt 2026-10-12i (laptop session)
+
+**Goal:** Improve conversation quality metrics from testing baseline (43.5 words, 42% multi-question turns, varying garbled understanding).
+
+**Testing framework established:**
+- `npm run test:replay`: replays real learner lines against different prompt versions
+- 8-metric quality scorecard: reply length, opener length, multi-question replies, pulls back when lost, pronunciation corrections, unprompted corrections, garbled understanding, English unasked
+- A/B comparison with gate logic: changes must improve target metric without regressing others
+- Recent mode (TURN_HISTORY=recent) vs document mode comparison
+
+**What worked - prompt 2026-10-12i achieves near-target quality:**
+- Reply length: 21 words (target ≤20, down from 43.5 baseline)
+- Questions: 9% with 2+ questions (target ≤10%, down from 42%)
+- Garbled understanding: 92% (target ≥90%)
+- Pronunciation corrections: 0 (target 0)
+- Coherent conversations with no goldfish memory
+- All successful in recent mode (alternating messages)
+
+**Key prompt changes from baseline (2026-10-12e → 2026-10-12i):**
+- **Removed full transcript** from later turns: just "They just said: {learnerSaid}" instead of entire conversation history
+- **Removed "Respond naturally as your character would"**: redundant with system prompt
+- **Social framing instead of prescriptive rules**: "It is very rude to dominate the conversation or correct pronunciation" beats word limits
+- **Explicit question rule**: "No more words after a question mark" (reduced 41% → 9% multi-question turns)
+- **Take turns**: simple instruction, no "keep conversation moving" (conflicted with question rule)
+- **Use recent mode**: alternating messages maintain coherence without transcript bloat
+
+**Character trait simplification tested:**
+- Reduced Giulia & Rita from 5 traits to 3 (removed problematic traits)
+- Giulia: removed curious, observant (question-drivers); kept quick, funny, warm
+- Rita: removed patient, storyteller (verbosity-drivers); kept warm, practical, protective
+- Trait frequency analysis revealed teaching cluster dominates: knowledgeable (60), passionate (42), patient (32), perfectionist (28), helpful (22), storyteller (26)
+- Next: audit and replace problematic traits across all city characters
+
+**What didn't work:**
+- "Enjoy the back and forth": increased questions to 58%
+- "If you don't understand them, ask to repeat": dropped garbled 92% → 67% by making characters stop to clarify instead of inferring from context
+- "Keep conversation moving": conflicted with "stop after question mark"
+- Document mode without transcript: 25 words but completely incoherent (goldfish memory, repeated introductions)
+- Recent mode + transcript: 24 words but less stable (2 JSON failures vs 0)
+
+**Tested 10+ variations systematically:**
+- 2026-10-12e: plain baseline (43.5 words, varied garbled)
+- 2026-10-12f: social framing (35.5 words, 58% questions, 100% garbled)
+- 2026-10-12g: wait for answer (33 words, 33% questions, 71% garbled)
+- 2026-10-12h: minimal turn info (document: 25 words but incoherent; recent: 32 words, 28% questions, 82% garbled)
+- 2026-10-12i: final version (21 words, 9% questions, 92% garbled) ✓
+- 2026-10-12j: recent + transcript (24 words, worse stability) ✗
+
+**Key insights:**
+- Social framing ("rude to dominate") works better than prescriptive limits ("max 20 words")
+- Minimal context per turn reduces verbosity without breaking coherence in recent mode
+- Recent mode maintains conversation memory through message structure, not text repetition
+- Explicit rules about mechanics ("no words after ?") beat ambiguous guidance ("stop after asking")
+- Characters infer from context when not told to stop and ask for clarification
+
+**Open issues:**
+- Reply length 21 vs 20 target (essentially there)
+- "Pulls back when lost" metric not yet measuring properly
+- Some characters (Rita: 34 words, Tommaso: 29 words) still verbose despite good median
+- Trait analysis shows problematic teaching/helper/storyteller traits dominate the character set
+
+**Next:** Audit city character traits and replace teaching cluster (knowledgeable, helpful, patient, perfectionist, storyteller, passionate) with traits that don't trigger teaching mode.
+
+**Files changed:**
+- `content/it/prompts/character.md`: version 2026-10-12i with changelog
+- `content/it/characters/giulia.ts`: traits reduced to ['quick', 'funny', 'warm']
+- `content/it/characters/rita.ts`: traits reduced to ['warm', 'practical', 'protective']
+
+**Testing mode:** Set `TURN_HISTORY=recent` in .env.local or Railway to use recent mode.
