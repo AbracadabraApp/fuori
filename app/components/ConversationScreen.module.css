@@ -203,7 +203,10 @@
 
 .startButton {
   padding: 16px 32px;
-  font-size: 18px;
+  /* Same face as the band; 20px reads the same size as the old 18px Arial */
+  font-family: var(--font-alegreya-sans), "Gill Sans", "Segoe UI", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
   background-color: var(--green);
   color: white;
   border: none;
