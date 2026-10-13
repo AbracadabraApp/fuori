@@ -797,3 +797,7 @@ Both services auto-deploying now (~3 min each).
 
 - From a design discussion with Josh. (1) **Everyone teaches, always in role:** supersedes "characters don't teach"; it's how the game already plays. The line is in-role help versus stepping out of role (no character sounds like a language teacher with a lesson plan). Vision principle 7, Game design → Who teaches. (2) **Magda is Josh's real teacher in Seattle, outside the game:** no place on the map, reaches the learner by message (maybe video), English and Italian freely, and she alone gets the complete learner profile (transcript analysis of mistakes, unknown words, missing tenses, avoided registers). The school tutor and in-world characters don't need it; using it to aim in-world help is a shelved maybe. Game design → Magda, ideas.md, visuals table.
 - Not changed: character prompt and scorecard (already consistent). CLAUDE.md still says "teacher characters such as Magda (M2+)"; left for Josh to approve, since the request came from another session.
+
+## 2026-10-13: Open items on the roadmap (cloud session)
+
+- The to-do list is `docs/06-roadmap.md` → Now. Added 10–13 (not yet ranked): Afuera auto-deploy, Mexican voices, Mexican image prompts (and "CDMX"), bench characters. #8 (duplicate ids) was already there; noted that the trim hides the bug for now.
