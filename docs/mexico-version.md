@@ -18,7 +18,7 @@
 **The system**
 - **City cards:** each city has its own distinct style, rooted in something local (Josh: "Oaxaca and Mexico City evoke different ideas"). What ties the deck together is the card format, border and caption, not one technique.
 - **Places:** one style across Mexico. Linocut is the candidate (Josh: "might work for a place, not great for a city").
-- **People:** one style across Mexico, **not decided**: saturated gouache (warm, matches the Mexico City card, busier under subtitles) or linocut (graphic, matches the places, cleaner under subtitles). The test that decides: whose face would you want to talk to every morning.
+- **People: saturated gouache (decided 2026-10-12, Josh).** The colour must be in the fixed style line: the first gouache test, with context but no colour instructions, came back muted grey and generic; the second, with a named palette and "no soft realism", came back vivid. Each portrait prompt = (1) fixed style line: "Flat matte gouache portrait, bold saturated colour, simplified shapes, thin visible brushstrokes, no thick paint, no soft realism. Palette drawn from rosa mexicano pink, turquoise, marigold, chili red, cobalt and deep green." (2) the person and one or two real things from their own place, written by Claude from the character's context (not the same Talavera / papel picado / aguas frescas every time); (3) fixed rules: gender, head and shoulders looking at the viewer, face centred, background detail above shoulder height and a calm lower half (subtitles), contemporary, not a costume, no lettering. Watch the first few for every wall turning the same pink. Optional later: a city accent in the palette (Puebla cobalt, Oaxaca cochineal).
 
 **Styles so far**
 - **Mexico City card, approved (V2):** flat matte gouache, jacarandas in bloom over a Roma Norte avenue, 1920s Art Deco buildings, a tamale seller on a bicycle, a schoolgirl and her grandmother, a man in a guayabera on a bench, a dog asleep. Prompt below.
@@ -46,8 +46,7 @@
 **How place and people prompts get written:** like Italy, Claude writes each one in the content step (`scripts/generate-city-content.mjs`) from that place's own context, as Italy's prompts did (a Naples bar "with blue-tiled walls… and a small shrine to Maradona"). Each prompt = the fixed style line + a scene written for that place + the rules above. City cards stay hand-written, as Italy's did (prescriptive city prompts worked better, 2026-10-10).
 
 **Open before generating**
-- People style (gouache or linocut).
-- Variety test: a young man and an older man in the chosen people style.
+- Variety test: a young man and an older man in gouache.
 - Named-sign test on one place.
 - `scripts/generate-images.mjs` reads `content/$COUNTRY/` but still saves into the shared `public/images/{places,portraits}` by id, with one shared manifest: Mexican ids could overwrite Italian images. Give each country its own image folder before generating.
 
