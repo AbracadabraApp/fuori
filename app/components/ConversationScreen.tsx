@@ -640,15 +640,17 @@ export function ConversationScreen({
       <div className={styles.stage}>
         {characterPortrait && !portraitFailed ? (
           // next/image serves a resized, modern-format copy sized to the screen
-          <Image
-            src={characterPortrait}
-            alt={characterName}
-            fill
-            priority
-            sizes="(max-width: 600px) 100vw, 600px"
-            className={styles.portrait}
-            onError={() => setPortraitFailed(true)}
-          />
+          <div className={styles.portraitFrame}>
+            <Image
+              src={characterPortrait}
+              alt={characterName}
+              fill
+              priority
+              sizes="(max-width: 600px) 130vw, 780px"
+              className={styles.portrait}
+              onError={() => setPortraitFailed(true)}
+            />
+          </div>
         ) : (
           <div className={styles.portraitPlaceholder}>👤</div>
         )}

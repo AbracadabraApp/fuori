@@ -68,11 +68,26 @@
 }
 
 /* Portrait: fills everything under the band, edge to edge, anchored at the top
-   so faces stay in view; the mic and subtitles sit over its lower part */
+   so faces stay in view; the mic and subtitles sit over its lower part.
+   Same framing on every phone (Josh, 2026-10-13): the 2:3 portrait is always at
+   least 124% of the screen width, the zoom a tall iPhone needs anyway, so a
+   short phone shows the person as large and trims the same amount at the
+   sides, losing a little at the bottom instead. */
 .stage {
   flex: 1;
   min-height: 0;
-  position: relative; /* next/image fill */
+  position: relative;
+  overflow: hidden;
+  container-type: size;
+}
+
+.portraitFrame {
+  position: absolute; /* next/image fill */
+  top: 0;
+  left: 50%;
+  width: max(124cqw, 100cqh * 2 / 3);
+  aspect-ratio: 2 / 3;
+  transform: translateX(-50%);
 }
 
 .portrait {
