@@ -642,3 +642,8 @@ Individual characters with cleaned traits:
 - Registered `es-mx` as a pack (language, cities, voices, prompts, `pack.images`); the app loads images from the pack's folder. Tests that assumed Italy (images, roles, voices, memory) now read the active pack. All pass for both countries; a real Oaxaca turn answers in Mexican Spanish.
 - Incident: the other session's `git stash -u` swept away untracked images mid-run; restored from `stash@{0}` (left in place). Commit generated files promptly.
 - **Next:** Railway service for Mexico (`COUNTRY=es-mx`), voice vetting by ear, play it on the phone.
+
+## 2026-10-12: Mexico build checked (cloud session)
+
+- The laptop session registered the Mexico pack and generated all images (fb9fbf7, 5953ecb). Checked here with `COUNTRY=es-mx`: tsc, `test:pack` and `next build` pass; the home page serves "Afuera" with the Mexican cities. Removed the stale phase 2 status block from `docs/mexico-version.md` and fixed `LANGUAGE` → `COUNTRY` in its older section.
+- **Next:** Josh creates the second Railway service from the laptop (CLI is logged in there): `COUNTRY=es-mx`, its own Postgres, then `scripts/db-migrate.mjs` once.
