@@ -40,14 +40,13 @@
 - **State the person's gender** (Italy: 10 women got men's portraits).
 - **Portraits show a glimpse of the person's place behind them**, with background detail above shoulder height and a calm lower half, because subtitles cover the bottom of the screen.
 - **Lettering:** none on city cards or portraits. Places may have one exact named sign written in the prompt ("The stall's sign reads 'Jugos Lupita'"; any other lettering is everyday detail, no banners naming the neighbourhood or city). Generators misspell, and this is a language app. Untested: whether Grok spells a named sign correctly.
-- **Shape:** the Grok app only makes tall (2:3) images. Prompts end with "Keep the main scene in the centre of the picture; nothing important near the top or bottom edges." so an image works cropped square or shown tall. Whether Mexico's cards are square or tall is open; whether the xAI API accepts an aspect ratio is untested.
+- **Shape: square (decided 2026-10-12),** like Italy's cards. Josh found how to get high-resolution square images from Grok; at least 1200 × 1200. Prompts keep the line "Keep the main scene in the centre of the picture; nothing important near the top or bottom edges." Whether the xAI API accepts an aspect ratio is still untested (matters for scripted places and portraits).
 - **Varied faces:** generators repeat one face (three identical women in the linocut market). Describe each person differently (age, build, hair).
 
 **How place and people prompts get written:** like Italy, Claude writes each one in the content step (`scripts/generate-city-content.mjs`) from that place's own context, as Italy's prompts did (a Naples bar "with blue-tiled walls… and a small shrine to Maradona"). Each prompt = the fixed style line + a scene written for that place + the rules above. City cards stay hand-written, as Italy's did (prescriptive city prompts worked better, 2026-10-10).
 
 **Open before generating**
 - People style (gouache or linocut).
-- Square or tall cards for Mexico.
 - Variety test: a young man and an older man in the chosen people style.
 - Named-sign test on one place.
 - `scripts/generate-images.mjs` reads `content/$COUNTRY/` but still saves into the shared `public/images/{places,portraits}` by id, with one shared manifest: Mexican ids could overwrite Italian images. Give each country its own image folder before generating.
