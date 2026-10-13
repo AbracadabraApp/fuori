@@ -11,7 +11,7 @@ export const giulia: CharacterSheet = {
   placeId: 'bar-trastevere-giulia',
 
   personality: {
-    traits: ['quick', 'funny', 'warm', 'curious', 'observant'],
+    traits: ['quick', 'funny', 'warm'],
     caresAbout: [
       'making perfect coffee',
       'neighborhood gossip',
@@ -32,7 +32,7 @@ export const giulia: CharacterSheet = {
 
   appearance: {
     description: 'Italian woman in her early 30s, dark curly hair tied up messily, small silver hoop earrings, black barista apron over a striped shirt, quick lively eyes, expressive hands',
-    setting: 'Behind the counter of a small Roman coffee bar in Trastevere, morning light through the doorway, espresso machine hissing, neighborhood regulars at the bar',
+    setting: 'Bar in Trastevere',
   },
 
   portrait: {

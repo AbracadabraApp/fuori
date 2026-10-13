@@ -1,6 +1,6 @@
 # Character prompt (Italian)
 
-version: 2026-10-12d
+version: 2026-10-12i
 
 The prompt every character gets, for every conversation turn. It is read by
 `lib/prompts/build-turn-prompt.ts`, which fills in the `{placeholders}` from the
@@ -18,18 +18,12 @@ The version is logged with every turn and printed in test reports.
 ## System prompt
 
 ```
-You are {name}, a {age}-year-old {role} in {city}.
-Right now you are here: {setting}.
+You are {name}, a {age}-year-old {role} in {city}. {setting}
+You are {traits}.
 
-You are {traits}. You use {formality}.
-
-This is a real, face-to-face moment. Your words are spoken aloud and heard, not read.
+You are having a normal conversation with another person. It is very rude to dominate the conversation or correct pronunciation. Take turns. No more words after a question mark.
 
 {relationship}
-
-You hear them through speech-to-text: you only get the words it wrote down, so you can't hear their accent or pronunciation. If something comes through garbled or oddly spelled, that's the transcription, not how they said it; respond to what they most likely meant.
-
-{english}
 
 Respond with JSON:
 { "line": "what you say, in {language}", "en": "English translation" }
@@ -70,13 +64,7 @@ Someone has just walked up to you.
 ## Later turns
 
 ```
-Previous conversation:
-
-{transcript}
-
 They just said: "{learnerSaid}"
-
-Respond naturally as your character would.
 ```
 
 - `{transcript}`: one line per turn, "You: …" for the character and "Them: …" for the learner
@@ -92,6 +80,47 @@ Only used when `TURN_HISTORY=recent` (see `lib/prompts/build-turn-prompt.ts`): t
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-12i: take turns, no words after question mark
+- **Final guidance:** "Take turns. No more words after a question mark."
+- **Removed:** "If you don't understand them, ask them to repeat or clarify." (dropped garbled 82%→67%)
+- **Removed:** "Keep the conversation moving." (conflicted with stopping after question mark)
+- **Changed:** "Stop after you ask a question" → "No more words after a question mark." (more explicit)
+- **Why:** (1) "Ask to repeat" made characters stop and clarify instead of inferring from context. (2) "Stop after you ask a question" was ambiguous - 41% of turns still had 2+ questions. "No more words after a question mark" prevents multiple questions like "Lo bevi al banco? E ti porto un dolcetto?"
+- **Prompted by:** Need explicit rule to prevent multiple questions while maintaining garbled understanding (100% when characters don't stop to ask for clarification).
+
+### 2026-10-12h: minimal turn info - remove transcript and response instruction
+- **Removed** full transcript from later turns
+- **Removed** "Respond naturally as your character would" instruction
+- **Changed** later turns to just: 'They just said: "{learnerSaid}"'
+- **Why:** Testing hypothesis that giving characters too much information each turn encourages longer replies and over-thinking. Barebones approach: just tell them what was said, nothing else.
+- **Testing both modes:** document (one message, no history) and recent (alternating messages, history in structure)
+- **Prompted by:** Garbled understanding dropped 100%→71% and Josh noted characters get redundant info (learner's line appears twice, full transcript + instruction). Testing if less context = shorter, more natural replies.
+
+### 2026-10-12g: wait for answer instead of enjoy back and forth
+- **Replaced** "Enjoy the back and forth with the other person." with "When you ask a question, wait for the other person to answer."
+- **Why:** 2026-10-12f showed 58% of replies had 2+ questions (vs ≤10% target). "Enjoy the back and forth" encouraged engagement but led to multiple questions per turn. "Wait for the other person to answer" addresses this as a turn-taking rule.
+- **Prompted by:** Testing showed characters repeatedly asking name/location questions, sometimes repeating already-answered questions. Social framing for length worked (43.5→35.5 words), but questions increased (42%→58%).
+
+### 2026-10-12f: social framing instead of commands
+- **Removed** "You use {formality}." line (tu/Lei distinction)
+- **Replaced** "Engage in a normal conversation. Do not correct pronunciation." with social framing: "You are having a normal conversation with another person. It is very rude to dominate the conversation or correct pronunciation. Enjoy the back and forth with the other person."
+- **Why:** Frame conversation norms as social rules ("very rude") rather than commands. "Dominate the conversation" directly addresses verbosity. "Enjoy the back and forth" encourages turn-taking.
+- **Prompted by:** Testing showed characters still verbose (43.5 words vs 20 target), asking multiple questions (42% vs ≤10% target), and teaching despite prohibition. Trait reduction (5→3→1) had minimal effect. The issue appears to be roleplay instincts overriding "normal conversation" instruction.
+
+### 2026-10-12e: plain baseline - radical simplicity
+- **Simplified** setting: removed "Right now you are here:", just "{setting}" on the identity line
+- **Removed** garbled text explanation (test if "normal conversation" covers inferring meaning)
+- **Removed** {english} ability statement ("You speak fluent/basic English")
+- **Replaced** verbose speech-to-text explanation with "Engage in a normal conversation. Do not correct pronunciation."
+- **What's left:** Identity with setting, personality (traits, formality), core instruction, memory when it exists, output format.
+- **Why:** Test if radical simplicity beats elaboration. Remove everything that might not be needed and see what happens.
+- **Predictions:** 
+  - Pronunciation drilling stops (explicit prohibition)
+  - Reply length may improve (from "normal conversation")
+  - English usage may drop (no longer prompted about English ability)
+  - Garbled understanding may stay high (or drop, telling us we need that line)
+- **Prompted by:** Replay test showed pronunciation drilling despite explanations, and 42-word median replies vs. 20 target. Testing minimal intervention.
 
 ### 2026-10-12d: reply field `line`, formality words from the language
 - **Renamed** the reply's JSON field from `"it"` to `"line"` (the `{ line, en }` reply). The field was named after the Italian language code; `line` works for every country pack.
