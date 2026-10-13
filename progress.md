@@ -647,3 +647,7 @@ Individual characters with cleaned traits:
 
 - The laptop session registered the Mexico pack and generated all images (fb9fbf7, 5953ecb). Checked here with `COUNTRY=es-mx`: tsc, `test:pack` and `next build` pass; the home page serves "Afuera" with the Mexican cities. Removed the stale phase 2 status block from `docs/mexico-version.md` and fixed `LANGUAGE` → `COUNTRY` in its older section.
 - **Next:** Josh creates the second Railway service from the laptop (CLI is logged in there): `COUNTRY=es-mx`, its own Postgres, then `scripts/db-migrate.mjs` once.
+
+## 2026-10-12: Open question, person screen layout (cloud session)
+
+- Josh saw Marco Bartoli (Assisi) with the Oct 10 layout: "← Assisi", name under the portrait ("**Marco Bartoli**, Barista"), teal button `#2c5f4f`. Main and both live sites show the Oct 11 layout (`95a8384`: one "Name · Role" line above the portrait, olive button). The source of the old page isn't known yet (not the live Railway sites; fuori.vercel.app is a 404). Josh: fix later. Options then: find the stale copy, or bring the caption back on purpose (see the parked "Name as a Polaroid caption" idea in docs/ideas.md; subtitles would cover it).
