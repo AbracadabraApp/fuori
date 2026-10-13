@@ -779,3 +779,7 @@ Both services auto-deploying now (~3 min each).
 - Oct 13 22:55: Fix deployed to both services
 
 **Impact:** Fixed critical UX bug - characters now remember full conversation history.
+
+## 2026-10-12: Teaching rule revised (cloud session)
+
+- Josh: "everyone is teaching - just not didactically." Replaces "only Magda teaches". Written into CLAUDE.md, Vision principle 7 and Game design. Ideas: school for foreigners, children in family settings, a street helper (docs/ideas.md). Not changed: the character prompt and the scorecard; their wording should follow through the gate (taste change), and the scorecard already treats teaching-when-asked and a few corrections as fine.

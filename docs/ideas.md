@@ -334,3 +334,12 @@ The stance (immersion; characters above your level are fine; teaching in charact
 - **Character-judged success.** Did the exchange work? Concrete questions, not a 1–10 score, because characters are generous. Success says you're getting by; review items are what stretch you. (M2.)
 - **Scene pace.** What's happening at the place right now ("a few people waiting at the counter") shortens turns without a length rule. Ties into length and the cold-start scene card (Coda #6–7).
 - **Interact with the transcript.** Tap a word for its meaning, translate the whole reply, save words. Deferred as too much interface for now. (M3.)
+
+
+## Beginner help: school, children, street helper (Josh, 2026-10-12)
+
+Prompted by "help more beginner level people". Rule behind all three: **everyone teaches, nobody lectures** (see Vision, principle 7).
+- **A school for foreigners** in each city: Magda's home on the map, and other teachers. A short class, then "go try it at the bar next door"; classmates are other learners (an AI German student, a Brazilian au pair) speaking simple, imperfect Italian. Class → street → class.
+- **Children** speak in short, simple, repeated sentences and don't judge: good A1 practice. Always in family settings with a parent or grandparent in the scene (the baker's daughter doing homework behind the counter, a kid with his nonna at the park). Topics stay a child's: school, pets, football, gelato. Firm prompt guardrails and a judge check that every child conversation stays age-appropriate.
+- **A street helper** (a neighbour on a bench): step aside, ask in English "how do I ask for the bill?", hear the line, go back and try it. The "help me say it" idea with a face. Likely first to build: fixes the freeze-and-quit moment, works in every city, needs no new place.
+- Other beginner ideas from the same brainstorm: tap the subtitle to replay slower; tap a word for its meaning; English that fades with visits; characters who notice confusion (by silence and length, not phrases); 2–3 tappable reply hints at A1; beginner-friendly places first in the feed; a tiny goal per visit; short A1 visits; a 60-second recap; a warm-up of 3 likely phrases before entering.

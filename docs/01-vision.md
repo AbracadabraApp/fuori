@@ -38,7 +38,7 @@ The engine scales up by following CEFR levels, not by rewriting content (see [Le
 4. **Real Italy.** Real places, real customs (standing at the bar, paying at the cassa first, the passeggiata), regional colour where it helps. No postcard clichés.
 5. **Open world, never lost.** Go almost anywhere and meet whoever Claude creates; nothing is scripted. Every day still comes with a few suggestions, including a change of scenery, so a beginner always has an easy next step.
 6. **Short sessions.** One in-game day should take 15–25 minutes.
-7. **One teacher, everyone else a local.** Magda, the tutor, explains and drills. Everyone else talks to you like a person. A local may help the way kind Italians do with a newcomer ("si dice *il* caffè, eh", slowing down, repeating a word), but never steps out of character to lecture.
+7. **Everyone teaches, nobody lectures** (Josh, 2026-10-12; was "one teacher, everyone else a local"). Every character helps you learn the way kind locals help a newcomer: slowing down, repeating, pointing, rephrasing, offering the word you're reaching for, saying your sentence back the right way ("si dice *il* caffè, eh"). That is teaching, just not didactic: no lessons, drills or grammar talk, and never stepping out of character. Explicit lessons belong to teacher characters (Magda, and the planned school for foreigners).
 
 ## What success looks like
 

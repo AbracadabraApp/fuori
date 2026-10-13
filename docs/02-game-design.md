@@ -57,7 +57,7 @@ The last suggestion of the day is usually an open conversation with someone new:
 
 ## Magda, the tutor
 
-Magda is the one character allowed to *teach*. Everyone else is a local who corrects by recasting and never lectures.
+Everyone teaches, nobody lectures (Josh, 2026-10-12). Locals help the way people help a newcomer: slowing down, repeating, rephrasing, offering a word, recasting a mistake. Explicit lessons (grammar, drills, tasks) belong to teacher characters: Magda and the planned school.
 
 - A teacher from the Veneto who coaches you remotely while you live in Italy. Warm, precise, interested in why mistakes happen.
 - Speaks Italian at your level, explains in English when it helps, gives short spoken exercises.
