@@ -22,7 +22,11 @@
 
 **Styles so far**
 - **Mexico City card, approved (V2):** flat matte gouache, jacarandas in bloom over a Roma Norte avenue, 1920s Art Deco buildings, a tamale seller on a bicycle, a schoolgirl and her grandmother, a man in a guayabera on a bench, a dog asleep. Prompt below.
-- **Drafted, not yet tried:** Oaxaca (saturated folk painting: alebrije patterns, cochineal red, indigo), Puebla (hand-painted Talavera tile panel: cobalt and white), Guadalajara (mid-century modern travel poster: flat shapes, terracotta and teal), San Miguel (loose oil pastel and gouache at sunset: ochre, rose, violet shadow). Prompts below.
+- **Oaxaca card, approved (first try):** saturated folk painting, green stone church, mountains, marigolds, papel picado, a tlayuda grill, a young man on a modern scooter.
+- **Puebla card, approved (first try, Josh):** hand-painted Talavera tile panel with a tile border; tiled façades, the cathedral's twin towers, a camote cart, students with backpacks.
+- **Guadalajara card, approved (V2):** mid-century modern travel poster; the cathedral's yellow spires, a modern bus and cars, agave in the planters, a woman drinking tejuino, Tlaquepaque pottery. V1 drifted to vintage cars and repeated Mexico City's jacaranda.
+- **San Miguel card, not yet:** V1 came back as thick impasto oil with an overwrought sunset (the rejected generic look). V2 to try: oil pastel on dark toned paper (prompt below).
+- **Recurring default to avoid:** a vendor in a straw hat (3 of the first 5 cards). Give each vendor something specific (a cap, an apron, a phone).
 - **Places, linocut:** bold carved black lines, wood grain, black plus hot pink and marigold on off-white paper; big simple shapes so it reads at card size.
 - **People:** linocut reference is the juice seller (black, pink, marigold; her blender and oranges behind her). Gouache reference is the same woman against a rosa mexicano wall with Talavera, aguas frescas and fruit.
 - **Rejected:** the storybook "folk painting" as a general style (came out as generic nostalgic painting); thick impasto oil (a common AI look). Its warmth goes into Oaxaca's card instead.
@@ -54,24 +58,24 @@ Mexico City (approved):
 Flat matte gouache illustration with simplified shapes and visible but thin brushstrokes, no thick paint, no impasto. Limited palette: jacaranda purple, dusty pink, ochre, turquoise, deep green. A street corner in Roma Norte, Mexico City, in March: jacaranda trees in full bloom arching over a wide avenue with a planted central walkway, 1920s Art Deco apartment buildings with rounded corner balconies and geometric trim, a tamale seller with a steaming pot on the back of a bicycle, a schoolgirl in uniform and her grandmother buying tamales, a man in a guayabera reading the paper on a bench, purple petals scattered on the pavement, a dog asleep in the shade. Warm late-morning light, crisp shadows. Everyday neighbourhood life. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
 ```
 
-Oaxaca (draft):
+Oaxaca (approved):
 ```
 Naive folk painting with bright saturated colours, flat perspective and careful small details, inspired by Oaxacan folk art: alebrije patterns, cochineal red, marigold, indigo and turquoise. A morning in Oaxaca today: a street of low colonial houses painted in bold colours leading to a church of green stone, a woman selling tlayudas from a grill on the corner, a young man on a motorbike, a grandmother with a woven bag, papel picado fluttering overhead, green mountains behind. Warm, joyful and contemporary, everyday life, no costumes. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
 ```
 
-Puebla (draft):
+Puebla (approved):
 ```
 Illustration in the style of a hand-painted Talavera tile panel from Puebla: cobalt blue and white with touches of yellow, ochre and green, slightly glossy glaze, visible brush marks, a thin decorative tile border. Puebla today: a street of colonial façades covered in blue-and-white tiles, the cathedral towers behind, a man selling camotes from a whistling cart, students with backpacks, a woman carrying a box of sweets from a dulcería. Everyday city life, contemporary clothes. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
 ```
 
-Guadalajara (draft):
+Guadalajara (approved V2):
 ```
-Mid-century modern travel poster illustration: flat colour shapes, subtle grain, bold simple geometry, warm palette of terracotta, teal, mustard and sky blue. Guadalajara today: a wide avenue with a tree-lined central walkway, the cathedral's yellow spires in the distance, a jacaranda in bloom, people on bicycles, a young woman at a tejuino stand drinking from a plastic cup, a pottery shop from nearby Tlaquepaque with clay pots stacked outside. Modern, sunny, confident. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
+Mid-century modern travel poster illustration: flat colour shapes, subtle grain, bold simple geometry, warm palette of terracotta, teal, mustard and sky blue. Guadalajara today: a wide pedestrian avenue with planted beds, the cathedral's yellow spires in the distance, a modern city bus and current cars on the road, people on bicycles, a young woman in a sundress drinking tejuino from a plastic cup at a stand with a teal awning, a pottery shop from nearby Tlaquepaque with clay pots stacked outside. Modern, sunny, confident. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
 ```
 
-San Miguel de Allende (draft):
+San Miguel de Allende (V2 to try):
 ```
-Loose oil-pastel and gouache painting with warm, glowing light, soft textured edges, palette of ochre, rose, burnt orange and violet shadow. San Miguel de Allende today at sunset: the pink Gothic spires of the parish church above a cobbled street, bougainvillea spilling over ochre walls, a man selling ice cream from a cart, a couple walking a dog, a group of friends laughing on the steps of the garden, lanterns just coming on. Calm, golden and contemporary. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
+Oil-pastel drawing on dark brown toned paper: chalky, visible crayon strokes, paper showing through, no thick paint, no impasto. Palette of ochre, rose, burnt orange and violet. San Miguel de Allende today at dusk: the pink Gothic spires of the parish church above a cobbled street, bougainvillea over ochre walls, an ice-cream seller in a cap and apron with a small cart, a couple walking a dog, friends laughing on the steps of the garden, lanterns just coming on. Calm, glowing and contemporary. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
 ```
 
 ---
