@@ -589,3 +589,48 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 - `content/it/characters/rita.ts`: traits reduced to ['warm', 'practical', 'protective']
 
 **Testing mode:** Set `TURN_HISTORY=recent` in .env.local or Railway to use recent mode.
+
+## 2026-10-13: Trait cleanup testing - all targets hit (laptop session)
+
+**Tested trait cleanup impact on conversation quality:**
+
+Results with prompt 2026-10-12i + cleaned traits (TURN_HISTORY=recent):
+- Reply length: **20 words** ✓ (was 21, **AT TARGET**)
+- Questions: **7%** ✓ (was 9%, improved)
+- Garbled understanding: **100%** ✓ (was 92%, perfect)
+- Pronunciation corrections: 0 ✓
+- Coherence: GOOD ✓ (no goldfish memory, context maintained)
+- Opener: 13 words ✓ (was 18, even better)
+
+Individual characters with cleaned traits:
+- Giulia: 18 words (was 20)
+- Rosa: 18 words (was 21)
+- Dott.ssa Massei: 20 words ✓
+- Marina: 25 words
+- Tommaso: 34 words (still verbose but better than baseline)
+
+**Hypothesis confirmed:** Traits drive behavior more than trait count. Removing red (problematic) traits achieved 20-word target where reducing trait count alone (5→3→1) didn't.
+
+**Trade-off noted:** May have reduced helpfulness by removing teaching/helper traits. Will monitor in actual gameplay - characters should still be conversational but might be less eager to teach/explain.
+
+**What worked:**
+- Social framing in prompt (2026-10-12i): "rude to dominate", "no words after question mark"
+- Recent mode for coherence (alternating messages)
+- Aggressive trait cleanup: ~430 problematic instances removed
+- Only green (conversational, brief) and yellow (neutral) traits remain
+
+**All conversation quality targets achieved:**
+- ✓ Reply length ≤20 words
+- ✓ Multi-question turns ≤10%
+- ✓ Garbled understanding ≥90%
+- ✓ Pronunciation corrections = 0
+- ✓ Coherent conversations
+
+**Ready for deployment:** Set `TURN_HISTORY=recent` in Railway to enable.
+
+**Files changed:**
+- `content/it/prompts/character.md`: version 2026-10-12i
+- `content/it/characters/giulia.ts`: traits ['quick', 'funny', 'warm']
+- `content/it/characters/rita.ts`: traits ['warm', 'practical', 'protective']
+- All 20 city files: 431 characters updated, red traits removed, most now have 1-2 traits
+
