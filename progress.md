@@ -783,3 +783,10 @@ Both services auto-deploying now (~3 min each).
 ## 2026-10-12: Teaching rule revised (cloud session)
 
 - Josh: "everyone is teaching - just not didactically." Replaces "only Magda teaches". Written into CLAUDE.md, Vision principle 7 and Game design. Ideas: school for foreigners, children in family settings, a street helper (docs/ideas.md). Not changed: the character prompt and the scorecard; their wording should follow through the gate (taste change), and the scorecard already treats teaching-when-asked and a few corrections as fine.
+
+## 2026-10-13: Italy trimmed to 8 cities × 10 places, hidden in data (cloud session)
+
+- Josh: Italy felt overbuilt (20 cities × ~30 places); hide in data rather than delete or comment out. New `content/it/showcase.ts` lists the shown cities and, for each, the 10 shown places. `content/it/pack.ts` sets `hidden: true` on everything else (`hidden?` added to `Place` and `CityPantry` in lib/types.ts); the feeds in app/page.tsx skip hidden cities and places. All 20 cities and 636 places stay in the data, so every test still covers them, and memory tied to hidden people stays in the database. To bring something back, add it to showcase.ts.
+- **Shown:** Roma, Matera, Firenze, Venezia, Siena, Napoli, Bologna, Palermo. Places picked for a beginner-friendly mix: 2 bars, bakery, market, trattoria or similar, gelateria, pharmacy, piazza, a shop or bookshop, an enoteca; only places with a person and an id that isn't repeated across cities (avoids the shared-memory bug). Roma keeps Rita's apartment and Giulia's bar.
+- **Test:** `test:pack` now fails if a shown place has nobody to talk to, a shown city has no places, an anchor is hidden, or showcase.ts names a city or place that doesn't exist. tsc, next build and the offline tests pass for `COUNTRY=it` and `es-mx`; the home page shows 8 cities, each feed 10 places.
+- **Open, not mine:** `test:history` fails on main before this change ("document mode should carry the whole conversation"), likely from 1353d3c (TURN_HISTORY=recent fix, laptop). Left for the laptop session.

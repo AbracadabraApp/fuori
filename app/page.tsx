@@ -23,6 +23,9 @@ export default function Home() {
   const [cityCount, setCityCount] = useState(PAGE);
   const [placeCount, setPlaceCount] = useState(PAGE);
 
+  // Cities in the list: hidden ones stay in the data but aren't shown
+  const shownCities = cityPantries.filter((c) => !c.hidden);
+
   // Region (or state) shown under the city name, from the city's data
   const getRegion = (cityId: string) => cityPantries.find((c) => c.id === cityId)?.region ?? '';
 
@@ -73,7 +76,7 @@ export default function Home() {
         <div>
           {(() => {
             // Mixed across neighbourhoods and kinds (lib/places/feed-order.ts)
-            const ordered = feedOrder(cityData);
+            const ordered = feedOrder({ ...cityData, places: cityData.places.filter((p) => !p.hidden) });
             return (
               <>
                 {ordered.slice(0, placeCount).map((place) => {
@@ -125,7 +128,7 @@ export default function Home() {
 
       {/* City cards */}
       <div>
-        {cityPantries.slice(0, cityCount).map((city) => (
+        {shownCities.slice(0, cityCount).map((city) => (
           <PlaceCard
             key={city.id}
             placeName={city.name}
@@ -138,7 +141,7 @@ export default function Home() {
             }}
           />
         ))}
-        {cityCount < cityPantries.length && (
+        {cityCount < shownCities.length && (
           <ShowMore label={language.ui.showMore} onClick={() => setCityCount((n) => n + PAGE)} />
         )}
       </div>

@@ -56,6 +56,8 @@ export interface Place {
   real: boolean;
   characterId?: string;
   imagePrompt?: string;
+  /** Not shown in the feed (kept in the data, tests and memory). See content/it/showcase.ts */
+  hidden?: boolean;
 }
 
 export type Gender = 'f' | 'm';
@@ -85,6 +87,8 @@ export interface CityPantry {
   anchorIds?: string[];
   seedCharacters?: string[];
   dayTrips?: string[];
+  /** Not shown in the city list (kept in the data, tests and memory) */
+  hidden?: boolean;
 }
 
 // Suggestion

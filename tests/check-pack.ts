@@ -3,6 +3,7 @@
 // unique across packs because images share public/images/.
 import { execSync } from 'child_process';
 import { packs, country } from '@/content';
+import { showcase } from '@/content/it/showcase';
 
 const problems: string[] = [];
 const check = (ok: boolean, msg: string) => { if (!ok) problems.push(msg); };
@@ -28,6 +29,32 @@ for (const [id, p] of Object.entries(packs)) {
       else if (other) repeatsWithinPack++;
       seen.set(x, id);
     }
+  }
+}
+
+// Hidden content (content/it/showcase.ts): the app must still have something to
+// show, every shown place must have someone to talk to, and the anchors (in the
+// pack's anchor list) must stay reachable. Hidden cities and places stay in the
+// data, so every other test still covers them.
+for (const [id, p] of Object.entries(packs)) {
+  const shown = p.cities.filter((c) => !c.hidden);
+  check(shown.length > 0, `${id}: every city is hidden`);
+  for (const c of shown) {
+    const places = c.places.filter((pl) => !pl.hidden);
+    check(places.length > 0, `${id}/${c.id}: shown city with no shown places`);
+    const people = new Set([...(c.characters ?? []).map((ch) => ch.id), ...Object.keys(p.anchors)]);
+    for (const pl of places) check(!!pl.characterId && people.has(pl.characterId), `${id}/${c.id}/${pl.id}: shown place with nobody to talk to`);
+  }
+  for (const anchor of Object.keys(p.anchors)) {
+    const reachable = shown.some((c) => c.places.some((pl) => !pl.hidden && pl.characterId === anchor));
+    check(reachable, `${id}: anchor ${anchor} is hidden`);
+  }
+}
+{
+  for (const [cityId, placeIds] of Object.entries(showcase)) {
+    const city = packs.it.cities.find((c) => c.id === cityId);
+    check(!!city, `showcase: no Italian city "${cityId}"`);
+    for (const pid of placeIds) check(!!city?.places.some((pl) => pl.id === pid), `showcase: ${cityId} has no place "${pid}"`);
   }
 }
 
