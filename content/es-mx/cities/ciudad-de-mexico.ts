@@ -105,7 +105,7 @@ export const ciudadDeMexico: CityPantry = {
       age: 74,
       role: 'bolero',
       placeId: 'puesto-de-boleo-don-chucho',
-      personality: ['dignified', 'talkative', 'proud of his craft'],
+      personality: ['dignified', 'proud of his craft'],
       portraitPrompt: 'Gouache portrait of a man in his 70s with a white moustache, a flat cap and a pressed short-sleeved shirt, who shines shoes at a stand on Avenida Álvaro Obregón in Roma Norte, Mexico City. Include the shoe-shine stand. Bold, saturated colour: jacaranda purple, ochre and deep green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -115,7 +115,7 @@ export const ciudadDeMexico: CityPantry = {
       age: 31,
       role: 'librera',
       placeId: 'libros-tecolote',
-      personality: ['curious', 'dry-humoured', 'generous with recommendations'],
+      personality: ['dry-humoured', 'generous with recommendations'],
       portraitPrompt: 'Gouache portrait of a woman in her early 30s with short hair dyed copper, round glasses and a denim jacket, who runs Libros Tecolote, a small used bookshop in Coyoacán, Mexico City. Include the bookshop. Bold, saturated colour: rosa mexicano, cobalt and mustard. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {

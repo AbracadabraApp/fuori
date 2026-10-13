@@ -105,7 +105,7 @@ export const sanMiguelDeAllende: CityPantry = {
       age: 64,
       role: 'florista',
       placeId: 'mercado-ignacio-ramirez',
-      personality: ['warm', 'chatty', 'proud of her flowers'],
+      personality: ['warm', 'proud of her flowers'],
       portraitPrompt: 'Gouache portrait of a woman in her 60s with a silver bob and a bright scarf, who runs a flower stall at the Mercado Ignacio Ramírez in San Miguel de Allende. Include the flower stall. Bold, saturated colour: rose, marigold and slate blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -155,7 +155,7 @@ export const sanMiguelDeAllende: CityPantry = {
       age: 41,
       role: 'ceramista',
       placeId: 'fabrica-la-aurora',
-      personality: ['passionate', 'generous with her time', 'a little scatterbrained'],
+      personality: ['generous with her time', 'a little scatterbrained'],
       portraitPrompt: 'Gouache portrait of a woman of 41 with curly hair tied up in a paint-spotted bandana, clay on her hands and a loose linen smock, with an enthusiastic open expression, who is a ceramic artist with a studio at Fábrica La Aurora, Guadalupe, San Miguel de Allende. Include her studio shelves of colourful pots. Bold, saturated colour: brick red, violet and sunny yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {

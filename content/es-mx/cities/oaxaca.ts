@@ -115,7 +115,7 @@ export const oaxaca: CityPantry = {
       age: 28,
       role: 'mezcalero',
       placeId: 'mezcaleria-los-amantes',
-      personality: ['patient', 'curious', 'proud of his craft'],
+      personality: ['proud of his craft'],
       portraitPrompt: 'Gouache portrait of a man in his late 20s with a short beard and a woven bracelet, wearing a plain white T-shirt, who pours mezcal behind the bar at Mezcalería Los Amantes in Oaxaca. Include the bar. Bold, saturated colour: agave green, terracotta and turquoise. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -125,7 +125,7 @@ export const oaxaca: CityPantry = {
       age: 26,
       role: 'barista',
       placeId: 'cafe-pocito-jalatlaco',
-      personality: ['friendly', 'chatty', 'a bit shy about her English'],
+      personality: ['friendly', 'a bit shy about her English'],
       portraitPrompt: 'Gouache portrait of a woman of 26 with a long dark braid, round glasses, a mustard-yellow apron over a striped shirt and a bright, patient smile, who makes coffee as a barista at Café Pocito, Jalatlaco, Oaxaca. Include the espresso machine and the café window. Bold, saturated colour: mustard yellow, magenta and forest green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -165,7 +165,7 @@ export const oaxaca: CityPantry = {
       age: 64,
       role: 'nevero',
       placeId: 'jardin-conzatti-reforma',
-      personality: ['calm', 'storyteller', 'loves the neighbourhood kids'],
+      personality: ['calm', 'loves the neighbourhood kids'],
       portraitPrompt: 'Gouache portrait of a man of 64 with a straw hat, a white guayabera, deep smile lines and a relaxed, amused expression, who sells hand-made nieves from his cart at the Jardín Conzatti, Reforma, Oaxaca. Include the ice cream cart with its tubs and the flamboyán trees. Bold, saturated colour: flamboyán red-orange, leaf green and lilac. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -175,7 +175,7 @@ export const oaxaca: CityPantry = {
       age: 70,
       role: 'sacristana',
       placeId: 'templo-san-matias-jalatlaco',
-      personality: ['devout', 'gossipy', 'knows everyone in the barrio'],
+      personality: ['devout', 'knows everyone in the barrio'],
       portraitPrompt: 'Gouache portrait of a woman of 70 with white hair under a dark rebozo, a cardigan, a ring of heavy keys in her hand and a gentle, knowing expression, who looks after the church as sacristan at the Templo de San Matías Jalatlaco, Jalatlaco, Oaxaca. Include the church door with candles and the stone facade. Bold, saturated colour: stone pink, cobalt blue and marigold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -185,7 +185,7 @@ export const oaxaca: CityPantry = {
       age: 58,
       role: 'tendero',
       placeId: 'abarrotes-los-tres-hermanos-xochimilco',
-      personality: ['dry humour', 'curious', 'keeps credit books for neighbours'],
+      personality: ['dry humour', 'keeps credit books for neighbours'],
       portraitPrompt: 'Gouache portrait of a man of 58 with a round face, a thick moustache, a football-club shirt and a pencil behind his ear, with a dry, amused expression, who runs the counter as shopkeeper at Abarrotes Los Tres Hermanos, Xochimilco, Oaxaca. Include the counter, the shelves of snacks and the barred window. Bold, saturated colour: Coca-Cola red, yellow and aqua blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -195,7 +195,7 @@ export const oaxaca: CityPantry = {
       age: 34,
       role: 'guía del jardín',
       placeId: 'jardin-etnobotanico-oaxaca',
-      personality: ['enthusiastic', 'precise', 'loves explaining plants'],
+      personality: ['enthusiastic', 'loves explaining plants'],
       portraitPrompt: 'Gouache portrait of a man of 34 with glasses, a wide-brimmed hat, a khaki shirt with a name badge and an eager, animated expression, who leads tours as a garden guide at the Jardín Etnobotánico de Oaxaca, Centro, Oaxaca. Include the tall cacti and the old stone walls of Santo Domingo. Bold, saturated colour: cactus green, sandstone gold and sky blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
   ],

@@ -236,7 +236,7 @@ async function recommend(results: Graded[]): Promise<string> {
 Up to 3, most common first. One line each, with a short real quote from above.
 ## Recommendations
 Up to 3 specific changes (to the character prompt in ${promptPath}, to how turns are sent in lib/prompts/build-turn-prompt.ts, or to character data). Say what to change and why, one or two lines each. If things look good, say so and recommend fewer.`,
-    900
+    4096 // Increased from 900 for Sonnet 5.5 with thinking
   );
 }
 

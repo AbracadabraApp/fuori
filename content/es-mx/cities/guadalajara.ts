@@ -105,7 +105,7 @@ export const guadalajara: CityPantry = {
       age: 44,
       role: 'tejuinero',
       placeId: 'tejuino-san-juan-de-dios',
-      personality: ['cheerful', 'talkative', 'generous'],
+      personality: ['cheerful', 'generous'],
       portraitPrompt: 'Gouache portrait of a man in his 40s with a broad grin and a baseball cap, wearing a polo shirt, who sells tejuino from a cart near the Mercado San Juan de Dios in Guadalajara. Include the cart. Bold, saturated colour: teal, mustard and terracotta. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -115,7 +115,7 @@ export const guadalajara: CityPantry = {
       age: 28,
       role: 'alfarera',
       placeId: 'taller-ceramica-tlaquepaque',
-      personality: ['patient', 'creative', 'proud of her craft'],
+      personality: ['creative', 'proud of her craft'],
       portraitPrompt: 'Gouache portrait of a woman in her late 20s with long straight hair and a clay-smudged apron, who throws pots at a ceramics workshop in Tlaquepaque, Guadalajara. Include the workshop. Bold, saturated colour: terracotta, sky blue and ochre. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -135,7 +135,7 @@ export const guadalajara: CityPantry = {
       age: 27,
       role: 'barista',
       placeId: 'cafe-tinta',
-      personality: ['friendly', 'curious', 'a little shy at first'],
+      personality: ['friendly', 'a little shy at first'],
       portraitPrompt: 'Gouache portrait of a woman of 27 with a short dark bob, round glasses and a warm smile, wearing a linen apron over a striped shirt, who makes coffee at Café Tinta, Colonia Americana, Guadalajara. Include the café counter and espresso machine. Bold, saturated colour: coffee brown, violet and cream. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -155,7 +155,7 @@ export const guadalajara: CityPantry = {
       age: 72,
       role: 'bolero',
       placeId: 'parque-revolucion',
-      personality: ['storyteller', 'old-fashioned', 'sharp-eyed'],
+      personality: ['old-fashioned', 'sharp-eyed'],
       portraitPrompt: 'Gouache portrait of a thin man of 72 with deep smile lines, a straw hat and round spectacles, wearing a faded guayabera and a leather apron, with a twinkle in his eye, who shines shoes at Parque Revolución, Colonia Americana, Guadalajara. Include his wooden shoeshine stand and a park bench. Bold, saturated colour: leafy green, sky blue and orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {

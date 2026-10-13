@@ -105,7 +105,7 @@ export const puebla: CityPantry = {
       age: 16,
       role: 'ayuda en la dulcería de su familia',
       placeId: 'dulces-tipicos-la-gloria',
-      personality: ['cheerful', 'chatty', 'proud of her family\'s sweets'],
+      personality: ['cheerful', 'proud of her family\'s sweets'],
       portraitPrompt: 'Gouache portrait of a girl of 16 in a school sweater with a ponytail and braces, who helps at her family\'s dulcería, Dulces Típicos La Gloria, on Calle de los Dulces in Puebla. Include the sweets shop. Bold, saturated colour: cobalt, white and candy pink. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -125,7 +125,7 @@ export const puebla: CityPantry = {
       age: 27,
       role: 'barista',
       placeId: 'cafe-cielo-rojo',
-      personality: ['relaxed', 'curious', 'loves to chat with regulars'],
+      personality: ['relaxed', 'loves to chat with regulars'],
       portraitPrompt: 'Gouache portrait of a man of 27 with a short beard, curly dark hair and a relaxed smile, in a rust-coloured apron over a linen shirt with a cloth over his shoulder, who works as a barista at Café Cielo Rojo, Barrio del Artista, Puebla. Include the café with its Talavera tables. Bold, saturated colour: terracotta red, turquoise and mustard yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -175,7 +175,7 @@ export const puebla: CityPantry = {
       age: 71,
       role: 'bolero',
       placeId: 'zocalo-de-puebla',
-      personality: ['talkative', 'nostalgic', 'knows all the city gossip'],
+      personality: ['nostalgic', 'knows all the city gossip'],
       portraitPrompt: 'Gouache portrait of a man of 71 with white hair, a straw hat, deep smile lines and a worn waistcoat, sitting by a wooden shoe-shine box with brushes and polish tins, who works as a shoe-shiner at the Zócalo de Puebla, Centro Histórico, Puebla. Include the square with its trees and cathedral. Bold, saturated colour: leafy green, sky blue and sandy yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -185,7 +185,7 @@ export const puebla: CityPantry = {
       age: 55,
       role: 'cantinero',
       placeId: 'la-pasita',
-      personality: ['dry humour', 'patient', 'a good listener'],
+      personality: ['dry humour', 'a good listener'],
       portraitPrompt: 'Gouache portrait of a man of 55 with a grey moustache, slicked-back hair and a dry, knowing smile, in a white shirt, black waistcoat and bow tie, pouring a small glass of liqueur, who works as a bartender at La Pasita, Barrio del Artista, Puebla. Include the little bar with its wooden counter and bottles. Bold, saturated colour: raisin purple, amber and deep red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
     {
@@ -195,7 +195,7 @@ export const puebla: CityPantry = {
       age: 31,
       role: 'farmacéutica',
       placeId: 'farmacia-san-rafael',
-      personality: ['patient', 'precise', 'quietly funny'],
+      personality: ['quietly funny'],
       portraitPrompt: 'Gouache portrait of a woman of 31 with glasses, her dark hair pulled back, a calm, attentive expression, in a white coat with a name badge, who works as a pharmacist at Farmacia San Rafael, La Paz, Puebla. Include the pharmacy with its green cross and shelves of medicines. Bold, saturated colour: pharmacy green, white and warm orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },
   ],
