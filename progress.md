@@ -835,3 +835,26 @@ Both services auto-deploying now (~3 min each).
 
 **Status:** Script ready, not yet run (roadmap #8 in progress).
 
+
+## 2026-10-13: Fixed duplicate character names (laptop session)
+
+**Problem:** After fixing duplicate IDs, 13 characters still had identical display names (e.g., two "Suor Teresa" nuns in different cities).
+
+**Why this matters:** Characters are memorable. Multiple "Suor Teresa" characters is confusing. Places can have generic names like "Farmacia Centrale" (realistic), but people should be distinct.
+
+**Solution:** Built `scripts/fix-duplicate-names.mjs` to give each character a unique Italian name:
+- Keeps first use unchanged
+- Renames duplicates with culturally appropriate alternatives
+- 14 total renames across 9 cities
+
+**Sample renames:**
+- Suor Teresa → Suor Anna (Palermo)
+- Suor Margherita → Suor Rosa (Matera)
+- Padre Leonardo → Padre Francesco (Palermo)
+- Dottoressa Martini → Dottoressa Ricci (Orvieto)
+- Elena Marchetti → Elena Moretti (Lucca), Elena Conti (Mantova)
+
+**Decision rationale:** Josh questioned the plan (written by cloud session) that said "A person's name doesn't change; two different nuns can both be called Suor Teresa." Agreed that unique names make more sense - any name works, so why duplicate?
+
+**Status:** All character names now unique. IDs unique. Ready for image generation (44 images for renamed IDs).
+
