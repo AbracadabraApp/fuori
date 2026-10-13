@@ -740,3 +740,4 @@ const langLearner = country === 'es-mx' ? 'a Spanish learner' : 'an Italian lear
 
 **Next: Deploy to Railway with COUNTRY=es-mx**
 
+- **Afuera didn't redeploy:** 15 minutes after the push, Fuori had e612c70 but Afuera still served the old person screen. Likely the Afuera service isn't connected to GitHub `main` (perhaps created with `railway up`). Fix in Railway: Afuera → Settings → Source → `AbracadabraApp/fuori`, branch `main`, auto-deploy on; or `railway up --service afuera` from the laptop for a one-off.
