@@ -55,15 +55,29 @@ No city is locked. [Cities and people](03-journey.md) suggests a route as inspir
 
 The last suggestion of the day is usually an open conversation with someone new: a nonna on a bench, a wine bar owner, a student sketching in the piazza. No checklist; the character has a hidden topic and leads with questions so a beginner can keep up. See [Conversation engine → Open conversations](04-conversation-engine.md#open-conversations).
 
-## Magda, the tutor
+## Who teaches
 
-Everyone teaches, nobody lectures (Josh, 2026-10-12). Locals help the way people help a newcomer: slowing down, repeating, rephrasing, offering a word, recasting a mistake. Explicit lessons (grammar, drills, tasks) belong to teacher characters: Magda and the planned school.
+Everyone teaches, always in role (Josh, 2026-10-12/13; see [Vision, principle 7](01-vision.md#principles)). Locals help the way a real person in their role helps a struggling American: slowing down, repeating, rephrasing, offering a word and its English, recasting a mistake. What no in-world character does is step out of role and sound like a language teacher with a lesson plan. Three places where teaching is the point, each a different relationship to time and task:
 
-- A teacher from the Veneto who coaches you remotely while you live in Italy. Warm, precise, interested in why mistakes happen.
-- Speaks Italian at your level, explains in English when it helps, gives short spoken exercises.
-- **Messages you** (on your in-game phone) when mistakes pile up, when you're close to the next level, or before something harder (a move, a doctor's visit, a phone call).
-- **Weekly lesson:** the week's mistakes, one new thing, and a "try this" that feeds the next days' suggestions.
-- **Bridge to real lessons:** a one-page summary (recurring mistakes, new words, transcripts worth discussing) to bring to a real Zoom lesson.
+- **The school for foreigners (scuola per stranieri)**, planned, one per city: one-on-one with a tutor. You say what you want to work on, or the tutor suggests something. Here an explicit lesson is honest, because you've sat down to be taught. It doesn't need the learner profile.
+- **People with time on their hands** (someone on a park bench, at a newsstand): no transaction and no clock, so their in-role help can stretch: asking how the Italian is going, talking at the level you say you're working on. Still a person, not a tutor.
+- **Magda**, outside the game (below).
+
+## Magda, your teacher in Seattle
+
+Decided 2026-10-13 (Josh); replaces the earlier "teacher from the Veneto who coaches you remotely".
+- **Your real Italian teacher back in Seattle,** outside the game world. She has no place on the map and isn't part of the trip.
+- **Reaches you by message:** a note when it's time to read and reply, possibly a video call. Her timing matters: a note after a session lands well; mid-conversation would pull you out of Italy.
+- **Uses English and Italian freely,** as a teacher does; no in-world rules apply to her.
+- **Gets the complete learner profile** (see below) and does real teacher work with it between sessions: summarises your mistakes, decides what to correct and how, builds vocabulary lists. She can be as detailed and exacting as she likes.
+- **Bridge to real lessons:** what she sends can go to a real lesson with the real teacher.
+
+### The learner profile is Magda's
+
+A profile built by analysing transcripts after each conversation: what you get wrong, words you don't seem to know, tenses you don't produce yet, registers you avoid (formal *Lei*). It grows from the review log (M1) into a profile that travels across conversations (M2).
+- **Magda gets all of it.** A human-style teacher is the one reader who can use the full, messy picture well.
+- **Nothing in the world needs it.** Characters teach in role without it; the school tutor works from what you ask for. This keeps the analysis from shaping or slowing conversations.
+- **Maybe later, not now:** quietly using it to aim in-world help (the nun happens to offer a word you've been missing rather than a random one). Easy to over-invest in; keep on the shelf.
 
 Inspired by the creator's real teacher. Use her first name only, and check she's happy with it before Fuori is shown to anyone else.
 
