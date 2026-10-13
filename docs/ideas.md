@@ -304,7 +304,7 @@ Your real teacher in Seattle, outside the game: the one who messages because it'
 
 ### Scope and the world
 
-9. **Fewer cities, generated on the fly:** 20 cities is a lot. Prefer 3–5 deep cities (e.g. Roma, Napoli, Firenze, Bologna) and put energy into generating places and people as you explore:
+9. **Fewer cities, generated on the fly:** *(Fewer cities done 2026-10-13: 8 Italy, 5 Mexico shown. Generation mechanics TBD: intent-driven "I want a barber" vs location-driven "generate Agrigento" vs hybrid character-suggestions. Deferred post-M2.)* 20 cities is a lot. Prefer 3–5 deep cities (e.g. Roma, Napoli, Firenze, Bologna) and put energy into generating places and people as you explore:
    - generate once, then keep (needs the database); shared across players so the world is consistent and paid for once
    - start the conversation immediately with a placeholder or a stock sketch of the place type; the portrait arrives when ready
    - run today's checks (gender, voice, portrait, prompt) on each new character at creation time
