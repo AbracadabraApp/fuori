@@ -801,3 +801,37 @@ Both services auto-deploying now (~3 min each).
 ## 2026-10-13: Open items on the roadmap (cloud session)
 
 - The to-do list is `docs/06-roadmap.md` → Now. Added 10–13 (not yet ranked): Afuera auto-deploy, Mexican voices, Mexican image prompts (and "CDMX"), bench characters. #8 (duplicate ids) was already there; noted that the trim hides the bug for now.
+
+## 2026-10-13: Duplicate ID fix script built (laptop session)
+
+**Built:** `scripts/fix-duplicate-ids.mjs` to fix 44 duplicate IDs across 16 Italian cities.
+
+**Duplicates found:**
+- 15 place IDs (44 uses): `farmacia-centrale` in 12 cities, `mercato-coperto` in 4, etc.
+- 11 character IDs (26 uses): `padre-giovanni` in 3 cities (shares memory!), `suor-teresa` in 3, etc.
+
+**Issues fixed:**
+- Image collisions: one image file per ID, so repeats show wrong city
+- Memory collisions: repeated characters share memory across cities (talk to Padre Giovanni in Firenze, the one in Venezia remembers you!)
+- Voice collisions: same voice in every city
+- Data ambiguity: can't tell cities apart in conversations table
+
+**Solution:**
+- Keep first city use (feed order)
+- Rename later uses: `farmacia-centrale` → `farmacia-centrale-bergamo`
+- 44 total renames across 16 cities
+
+**Script features:**
+- Dry run by default (shows what would change)
+- `--write` applies renames to city .ts files
+- `--db` fixes Postgres (conversations + memory migration)
+- Parses TypeScript files as text (no compile needed)
+
+**Next steps:**
+1. `node scripts/fix-duplicate-ids.mjs --write` (apply renames)
+2. Generate 44 missing images (xAI key, laptop)
+3. `npm run test:pack` (should pass with no duplicates)
+4. `railway run node scripts/fix-duplicate-ids.mjs --db` (fix production DB)
+
+**Status:** Script ready, not yet run (roadmap #8 in progress).
+
