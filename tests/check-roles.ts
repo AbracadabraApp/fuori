@@ -1,6 +1,7 @@
-// Roles are shown on screen and used in the prompt, so they should be Italian.
+// Roles are shown on screen and used in the prompt, so they should be in the
+// pack's language, not English.
 // Some generated characters had English roles ("Fruit vendor").
-import { cities } from '@/content';
+import { cities, language } from '@/content';
 
 const ENGLISH = /\b(vendor|owner|keeper|maker|seller|guide|baker|gardener|waiter|waitress|server|student|priest|nun|pharmacist|bartender|curator|historian|librarian|bookseller|florist|farmer|cook|master|manager|merchant|operator|conductor|agent|worker|musician|artist|performer|director|jeweler|goldsmith|photographer|roaster|specialist|expert|proprietor|fishmonger|friar|monk|resident|winemaker|producer|shopkeeper|chocolatier|dealer|artisan|ceramicist|gondolier)\b/i;
 
@@ -14,4 +15,4 @@ if (bad.length) {
   console.error(`${bad.length} English role(s):\n` + bad.slice(0, 20).join('\n'));
   process.exit(1);
 }
-console.log('OK: every character role is in Italian');
+console.log(`OK: every character role is in ${language.name}`);

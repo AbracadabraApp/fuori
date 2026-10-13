@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { PlaceCard } from './components/PlaceCard';
 import { ShowMore } from './components/ShowMore';
-import { language, cities as cityPantries } from '@/content';
+import { language, cities as cityPantries, pack } from '@/content';
 import { ConversationScreen } from './components/ConversationScreen';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
@@ -49,7 +49,7 @@ export default function Home() {
     return (
       <ConversationScreen
         character={characterSheet}
-        characterPortrait={`/images/portraits/${characterSheet.id}.jpg`}
+        characterPortrait={`${pack.images}/portraits/${characterSheet.id}.jpg`}
         cityName={cityData?.name || ''}
         cityId={cityData?.id}
         onBack={() => setSelectedPlace(null)}
@@ -84,7 +84,7 @@ export default function Home() {
                       placeName={place.name}
                       characterName={character?.name || ''}
                       neighborhood={place.neighbourhood}
-                      imageUrl={`/images/places/${place.id}.jpg`}
+                      imageUrl={`${pack.images}/places/${place.id}.jpg`}
                       onTap={() => setSelectedPlace(place.id)}
                     />
                   );
@@ -131,7 +131,7 @@ export default function Home() {
             placeName={city.name}
             characterName=""
             neighborhood={getRegion(city.id)}
-            imageUrl={`/images/cities/${city.id}.jpg`}
+            imageUrl={`${pack.images}/cities/${city.id}.jpg`}
             onTap={() => {
               setSelectedCity(city.id);
               setPlaceCount(PAGE); // each city starts with its first 10 places

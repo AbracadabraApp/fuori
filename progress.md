@@ -634,3 +634,11 @@ Individual characters with cleaned traits:
 - `content/it/characters/rita.ts`: traits ['warm', 'practical', 'protective']
 - All 20 city files: 431 characters updated, red traits removed, most now have 1-2 traits
 
+
+## 2026-10-12 late: Mexico is a playable pack (laptop session)
+
+- Visual style worked out with Josh in Grok (all in `docs/mexico-version.md` → Visual style): each city card its own local style (5 approved, 1200×1200 in `public/images/es-mx/cities/`), linocut places, gouache portraits from an Italy-style baseline prompt. Josh: "scale beats being deterministic"; generate a batch, fix only what's terrible.
+- Content and image scripts now read `content/<country>/generation.json` (Italy's reproduces the old behaviour). Generated Mexico: 5 cities × 10 places × 10 people, then 100 images through the xAI API (aspect ratio and 2k resolution work through the API; ~$6 total).
+- Registered `es-mx` as a pack (language, cities, voices, prompts, `pack.images`); the app loads images from the pack's folder. Tests that assumed Italy (images, roles, voices, memory) now read the active pack. All pass for both countries; a real Oaxaca turn answers in Mexican Spanish.
+- Incident: the other session's `git stash -u` swept away untracked images mid-run; restored from `stash@{0}` (left in place). Commit generated files promptly.
+- **Next:** Railway service for Mexico (`COUNTRY=es-mx`), voice vetting by ear, play it on the phone.

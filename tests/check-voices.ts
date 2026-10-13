@@ -1,6 +1,6 @@
 // Every character gets a voice that matches their gender, anchors keep their
 // fixed voice, and characters in the same city don't all share one voice.
-import { cities, voices, elevenLabsVoiceFor, browserVoiceFor } from '@/content';
+import { cities, voices, elevenLabsVoiceFor, browserVoiceFor, language } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { elevenLabsError } from '@/lib/voice/providers/elevenlabs';
 import { voiceNote, FuoriError } from '@/lib/errors';
@@ -8,8 +8,9 @@ import { voiceNote, FuoriError } from '@/lib/errors';
 const problems: string[] = [];
 let checked = 0;
 
-if (elevenLabsVoiceFor('giulia', 'f') !== voices.elevenlabs.byCharacter.giulia) problems.push('Giulia lost her fixed voice');
-if (elevenLabsVoiceFor('rita', 'f') !== voices.elevenlabs.byCharacter.rita) problems.push('Rita lost her fixed voice');
+for (const [id, voice] of Object.entries(voices.elevenlabs.byCharacter)) {
+  if (elevenLabsVoiceFor(id, 'f') !== voice || elevenLabsVoiceFor(id, 'm') !== voice) problems.push(`${id} lost their fixed voice`);
+}
 
 for (const city of cities) {
   const used = new Set<string>();
@@ -29,11 +30,12 @@ for (const city of cities) {
 
 // Phone fallback: a stock iPhone has only Alice. A man must still be heard,
 // but the app must know the gender is wrong (Salvatore became a woman silently).
-const fake = (name: string) => ({ name, lang: 'it-IT' }) as SpeechSynthesisVoice;
-const stock = browserVoiceFor([fake('Alice')], 'it-IT', 'salvatore', 'm');
-if (stock.voice?.name !== 'Alice' || stock.matchesGender) problems.push('Stock iPhone: male character should get Alice with matchesGender false');
-const withLuca = browserVoiceFor([fake('Alice'), fake('Luca')], 'it-IT', 'salvatore', 'm');
-if (withLuca.voice?.name !== 'Luca' || !withLuca.matchesGender) problems.push('With Luca installed, a male character should get Luca');
+const fake = (name: string) => ({ name, lang: language.speechLang }) as SpeechSynthesisVoice;
+const [woman, man] = [voices.browser.f[0], voices.browser.m[0]];
+const stock = browserVoiceFor([fake(woman)], language.speechLang, 'salvatore', 'm');
+if (stock.voice?.name !== woman || stock.matchesGender) problems.push(`Only ${woman} installed: a male character should get ${woman} with matchesGender false`);
+const withMan = browserVoiceFor([fake(woman), fake(man)], language.speechLang, 'salvatore', 'm');
+if (withMan.voice?.name !== man || !withMan.matchesGender) problems.push(`With ${man} installed, a male character should get ${man}`);
 if (!voiceNote(null, false, 'm')?.includes('male')) problems.push('No note when a man gets a female phone voice');
 if (voiceNote(null, true, 'm') !== null) problems.push('Note shown when nothing went wrong');
 

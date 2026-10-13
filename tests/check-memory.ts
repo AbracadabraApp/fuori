@@ -7,7 +7,7 @@ import { randomUUID } from 'crypto';
 import { buildTurnPrompt, howLongAgo } from '@/lib/prompts/build-turn-prompt';
 import { buildMemoryPrompt } from '@/lib/prompts/build-memory-prompt';
 import { characterForPlace } from '@/lib/characters/for-place';
-import { cities } from '@/content';
+import { cities, language } from '@/content';
 import type { CharacterSheet } from '@/lib/types';
 import type { MemoryOutput, Summarizer } from '@/lib/remember';
 import type { Judge } from '@/lib/quality';
@@ -47,7 +47,7 @@ const unfilled = [...(mp.system + mp.user).matchAll(/\{(\w+)\}/g)].map((m) => m[
 check(unfilled.length === 0, `memory prompt: unfilled ${unfilled.join(', ')}`);
 check(mp.user.includes(`${person.name}: Buongiorno!`) && mp.user.includes('Person: Mi chiamo Josh'), 'memory prompt: transcript lines missing');
 check(mp.user.includes('Their name is Josh'), 'memory prompt: existing notes missing');
-check(mp.system.includes('Italian'), 'memory prompt: language name missing');
+check(mp.system.includes(language.name), 'memory prompt: language name missing');
 check(buildMemoryPrompt({ character: person, notes: [], turns: [] }).user.includes("hadn't met"), 'memory prompt: no-notes wording missing');
 
 // --- Database: claim once, save, count the visit once, release on failure ---

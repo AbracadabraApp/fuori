@@ -8,8 +8,9 @@
  * Mexico: docs/mexico-version.md.
  */
 import { pack as it } from './it/pack';
+import { pack as esMx } from './es-mx/pack';
 
-export const packs = { it } as const;
+export const packs = { it, 'es-mx': esMx } as const;
 export type CountryId = keyof typeof packs;
 
 function activeCountry(): CountryId {

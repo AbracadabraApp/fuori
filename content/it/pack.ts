@@ -12,6 +12,8 @@ import type { CharacterSheet } from '@/lib/types';
 export const pack = {
   /** Folder under content/ (prompts, characters) */
   id: 'it',
+  /** Folder under public/ for city, place and portrait images */
+  images: '/images',
   language,
   cities,
   /** Hand-written anchor characters, by id */

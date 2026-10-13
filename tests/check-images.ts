@@ -6,19 +6,19 @@ import { cities, anchors, pack } from '@/content';
 
 const missing: string[] = [];
 for (const city of cities) {
-  if (!existsSync(`public/images/cities/${city.id}.jpg`)) missing.push(`cities/${city.id}.jpg`);
+  if (!existsSync(`public${pack.images}/cities/${city.id}.jpg`)) missing.push(`cities/${city.id}.jpg`);
   for (const place of city.places) {
-    if (!existsSync(`public/images/places/${place.id}.jpg`)) {
+    if (!existsSync(`public${pack.images}/places/${place.id}.jpg`)) {
       missing.push(`places/${place.id}.jpg (${city.id}${place.imagePrompt ? '' : ', no imagePrompt'})`);
     }
   }
   for (const person of city.characters ?? []) {
-    if (!existsSync(`public/images/portraits/${person.id}.jpg`)) missing.push(`portraits/${person.id}.jpg (${city.id})`);
+    if (!existsSync(`public${pack.images}/portraits/${person.id}.jpg`)) missing.push(`portraits/${person.id}.jpg (${city.id})`);
   }
 }
 
 for (const anchor of Object.values(anchors)) {
-  if (!existsSync(`public/images/portraits/${anchor.id}.jpg`)) missing.push(`portraits/${anchor.id}.jpg (anchor; prompt in content/${pack.id}/characters/${anchor.id}.ts)`);
+  if (!existsSync(`public${pack.images}/portraits/${anchor.id}.jpg`)) missing.push(`portraits/${anchor.id}.jpg (anchor; prompt in content/${pack.id}/characters/${anchor.id}.ts)`);
 }
 
 if (missing.length) {
