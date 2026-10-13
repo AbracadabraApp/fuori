@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-13T05:50:34.064Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "seed": "999",
+  "turns": 3,
+  "conversations": 2,
+  "grades": {
+    "language": 10,
+    "understands": 9.5,
+    "adapts": 7.5,
+    "alive": 6.5,
+    "regional": 9.5
+  },
+  "length": {
+    "openerWords": 24.5,
+    "replies": 8,
+    "wordsMedian": 29,
+    "wordsAvg": 29.2,
+    "wordsMax": 44,
+    "longShare": 0.5,
+    "questionsAvg": 1.2,
+    "multiQuestionShare": 0.13
+  },
+  "byCharacter": [
+    {
+      "id": "gaspar-panadero",
+      "learner": "hesitant",
+      "overall": 8.2,
+      "stats": {
+        "openerWords": 18,
+        "replies": 4,
+        "wordsMedian": 22.5,
+        "wordsAvg": 21.8,
+        "wordsMax": 28,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "padre-tomas-santo-domingo",
+      "learner": "improving",
+      "overall": 9,
+      "stats": {
+        "openerWords": 31,
+        "replies": 4,
+        "wordsMedian": 35.5,
+        "wordsAvg": 36.5,
+        "wordsMax": 44,
+        "longShare": 1,
+        "questionsAvg": 1.3,
+        "multiQuestionShare": 0.25
+      }
+    }
+  ]
+}

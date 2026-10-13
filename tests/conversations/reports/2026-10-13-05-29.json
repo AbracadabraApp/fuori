@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-13T05:29:51.097Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "seed": "7",
+  "turns": 3,
+  "conversations": 0,
+  "grades": {
+    "language": 0,
+    "understands": 0,
+    "adapts": 0,
+    "alive": 0,
+    "regional": 0
+  },
+  "length": {
+    "openerWords": 0,
+    "replies": 0,
+    "wordsMedian": 0,
+    "wordsAvg": 0,
+    "wordsMax": 0,
+    "longShare": 0,
+    "questionsAvg": 0,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": []
+}

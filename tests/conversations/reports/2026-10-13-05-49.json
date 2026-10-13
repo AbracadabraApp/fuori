@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-13T05:49:41.516Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "seed": "7",
+  "turns": 3,
+  "conversations": 1,
+  "grades": {
+    "language": 10,
+    "understands": 9,
+    "adapts": 7,
+    "alive": 7,
+    "regional": 9
+  },
+  "length": {
+    "openerWords": 23,
+    "replies": 4,
+    "wordsMedian": 24,
+    "wordsAvg": 22.5,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "ramiro-taquero",
+      "learner": "hesitant",
+      "overall": 8.4,
+      "stats": {
+        "openerWords": 23,
+        "replies": 4,
+        "wordsMedian": 24,
+        "wordsAvg": 22.5,
+        "wordsMax": 26,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

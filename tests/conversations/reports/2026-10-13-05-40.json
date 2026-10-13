@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-13T05:40:04.534Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "seed": "999",
+  "turns": 2,
+  "conversations": 2,
+  "grades": {
+    "language": 9,
+    "understands": 7.5,
+    "adapts": 6,
+    "alive": 6.5
+  },
+  "length": {
+    "openerWords": 12,
+    "replies": 6,
+    "wordsMedian": 16.5,
+    "wordsAvg": 16.3,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "giulia",
+      "learner": "hesitant",
+      "overall": 8,
+      "stats": {
+        "openerWords": 8,
+        "replies": 3,
+        "wordsMedian": 14,
+        "wordsAvg": 12.3,
+        "wordsMax": 15,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "rita",
+      "learner": "english-beginner",
+      "overall": 6.5,
+      "stats": {
+        "openerWords": 16,
+        "replies": 3,
+        "wordsMedian": 19,
+        "wordsAvg": 20.3,
+        "wordsMax": 26,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

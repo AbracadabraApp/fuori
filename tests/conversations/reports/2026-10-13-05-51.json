@@ -1,0 +1,87 @@
+{
+  "at": "2026-10-13T05:51:38.173Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "seed": "42",
+  "turns": 2,
+  "conversations": 4,
+  "grades": {
+    "language": 9.75,
+    "understands": 9.25,
+    "adapts": 7,
+    "alive": 7,
+    "regional": 9
+  },
+  "length": {
+    "openerWords": 22.5,
+    "replies": 12,
+    "wordsMedian": 27.5,
+    "wordsAvg": 28.6,
+    "wordsMax": 57,
+    "longShare": 0.17,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "efrain-zocalo-de-puebla",
+      "learner": "hesitant",
+      "overall": 8,
+      "stats": {
+        "openerWords": 26,
+        "replies": 3,
+        "wordsMedian": 26,
+        "wordsAvg": 25.7,
+        "wordsMax": 26,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "ofelia-tlayudas",
+      "learner": "improving",
+      "overall": 9.4,
+      "stats": {
+        "openerWords": 19,
+        "replies": 3,
+        "wordsMedian": 42,
+        "wordsAvg": 39.3,
+        "wordsMax": 57,
+        "longShare": 0.67,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "marisol-ceramista",
+      "learner": "english-beginner",
+      "overall": 8.4,
+      "stats": {
+        "openerWords": 28,
+        "replies": 3,
+        "wordsMedian": 29,
+        "wordsAvg": 28.7,
+        "wordsMax": 29,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "ximena-barista",
+      "learner": "hesitant",
+      "overall": 7.8,
+      "stats": {
+        "openerWords": 14,
+        "replies": 3,
+        "wordsMedian": 20,
+        "wordsAvg": 20.7,
+        "wordsMax": 28,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

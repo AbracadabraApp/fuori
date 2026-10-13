@@ -148,10 +148,17 @@ const show = (t: Turn[], c: CharacterSheet) =>
 // ---------- Simulate ----------
 
 async function learnerLine(c: Case, transcript: Turn[]): Promise<string> {
+  const langLearner = country === 'es-mx'
+    ? `a ${language.name} learner`
+    : 'an Italian learner';
+  const helpPhrases = country === 'es-mx'
+    ? '"Perdón, no entiendo", "¿Cómo?", "Más despacio, por favor", "¿Repite?", or in English'
+    : '"Scusi, non capisco", "Come?", "Più piano, per favore", "Ripeti?", or in English';
+
   return ask(
-    `You are role-playing an Italian learner in a test. ${c.learner.description}
+    `You are role-playing ${langLearner} in a test. ${c.learner.description}
 You are at ${c.place.name} in ${c.cityName}, talking to ${c.character.name} (${c.character.role}).
-Be honest about comprehension: understand only what someone at your level really would. If the character's last line was too fast, long or complex for you, say so the way a real learner would ("Scusi, non capisco", "Come?", "Più piano, per favore", "Ripeti?", or in English). Don't pretend to follow.
+Be honest about comprehension: understand only what someone at your level really would. If the character's last line was too fast, long or complex for you, say so the way a real learner would (${helpPhrases}). Don't pretend to follow.
 Write ONLY what the learner says next, as speech-to-text would capture it. One or two short sentences. No quotes, no stage directions.`,
     `Conversation so far:\n${show(transcript, c.character)}\n\nWhat do you say next?`,
     150
