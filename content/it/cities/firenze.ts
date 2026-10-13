@@ -335,7 +335,7 @@ export const firenze: CityPantry = {
       age: 33,
       role: 'pasticciera',
       placeId: 'pasticceria-nencioni',
-      personality: ['artistic', 'perfectionist', 'sweet-natured'],
+      personality: ['artistic', 'sweet-natured'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with hair in neat bun, delicate features, chef\'s whites, gentle concentrated expression, minimal pink watercolor wash, refined artistic presence',
     },
     {
@@ -365,7 +365,7 @@ export const firenze: CityPantry = {
       age: 44,
       role: 'artigiano',
       placeId: 'mercatino-santo-spirito',
-      personality: ['creative', 'bohemian', 'storyteller'],
+      personality: ['creative', 'bohemian'],
       portraitPrompt: 'Pen and ink portrait on white paper of an artistic man with longish hair, scarf, expressive hands gesturing, leather tools visible, minimal earthy watercolor wash, creative free-spirited energy',
     },
     {
@@ -385,7 +385,7 @@ export const firenze: CityPantry = {
       age: 41,
       role: 'chef',
       placeId: 'osteria-santo-spirito',
-      personality: ['passionate', 'traditional', 'maternal'],
+      personality: ['passionate', 'maternal'],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm-faced chef with gentle eyes, tasting spoon in hand, apron stained from cooking, minimal warm watercolor wash, nurturing strength evident. The subject is a woman.',
     },
     {
@@ -445,7 +445,7 @@ export const firenze: CityPantry = {
       age: 63,
       role: 'capo giardiniere',
       placeId: 'giardino-boboli',
-      personality: ['patient', 'knowledgeable', 'speaks to plants'],
+      personality: ['patient', 'local', 'speaks to plants'],
       portraitPrompt: 'Pen and ink portrait on white paper of an older gardener with sun-weathered face, cap, work shirt, gentle smile, earth under fingernails, minimal green watercolor wash, connection to nature evident. The subject is a man.',
     },
     {
@@ -475,7 +475,7 @@ export const firenze: CityPantry = {
       age: 49,
       role: 'sommelier',
       placeId: 'enoteca-alessi',
-      personality: ['knowledgeable', 'sophisticated', 'patient teacher'],
+      personality: ['local', 'sophisticated', 'patient teacher'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished sommelier with refined features, wine glass in hand, thoughtful expression, formal attire, minimal wine-red watercolor wash, cultured expertise. The subject is a man.',
     },
     {
@@ -535,7 +535,7 @@ export const firenze: CityPantry = {
       age: 46,
       role: 'profumiera',
       placeId: 'officina-profumo',
-      personality: ['elegant', 'knowledgeable', 'speaks in whispers'],
+      personality: ['elegant', 'local', 'speaks in whispers'],
       portraitPrompt: 'Pen and ink portrait on white paper of a refined woman with classic beauty, holding perfume bottle, serene expression, elegant attire, minimal lavender watercolor wash, timeless grace',
     },
     {
@@ -555,7 +555,7 @@ export const firenze: CityPantry = {
       age: 64,
       role: 'orafo',
       placeId: 'bottega-orafa',
-      personality: ['perfectionist', 'traditional', 'family secrets'],
+      personality: ['family secrets'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly goldsmith with magnifier on head, delicate tools, wise eyes, jeweler\'s precision in posture, minimal gold watercolor wash, generations of skill. The subject is a man.',
     },
     {

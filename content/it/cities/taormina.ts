@@ -349,7 +349,7 @@ export const taormina: CityPantry = {
       age: 58,
       role: 'proprietario',
       placeId: 'bar-turrisi',
-      personality: ['storyteller', 'proud', 'hospitable'],
+      personality: ['proud', 'hospitable'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, Sicilian man in his late 50s, salt-and-pepper hair, warm smile with laugh lines, holding glass of almond wine, detailed cross-hatching, warm amber wash, welcoming expression, white background',
     },
     {
@@ -369,7 +369,7 @@ export const taormina: CityPantry = {
       age: 67,
       role: 'barista',
       placeId: 'bar-san-giorgio',
-      personality: ['traditional', 'gruff but kind', 'local historian'],
+      personality: ['gruff but kind', 'local historian'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, elderly Sicilian barista, weathered face, thick gray mustache, white apron, detailed wrinkles showing character, sepia wash, knowing eyes, white background',
     },
     {
@@ -439,7 +439,7 @@ export const taormina: CityPantry = {
       age: 62,
       role: 'pasticciere',
       placeId: 'pasticceria-etna',
-      personality: ['perfectionist', 'sweet-tempered', 'master craftsman'],
+      personality: ['sweet-tempered', 'master craftsman'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, master pastry chef, white chef hat, flour on hands, holding cannolo, detailed cross-hatching, golden cream wash, proud artisan, white background. The subject is a man.',
     },
     {
@@ -459,7 +459,7 @@ export const taormina: CityPantry = {
       age: 48,
       role: 'pasticciere',
       placeId: 'dolceria-naxos',
-      personality: ['generous', 'traditional', 'family-focused'],
+      personality: ['generous', 'family-focused'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, Sicilian pastry maker, warm face, white apron, arranging marzipan fruits, careful detail work, pistachio green wash, welcoming smile, white background. The subject is a man.',
     },
     {
@@ -639,7 +639,7 @@ export const taormina: CityPantry = {
       age: 31,
       role: 'sommelier',
       placeId: 'wine-bar-dioniso',
-      personality: ['knowledgeable', 'aperitivo enthusiast', 'volcanic terroir expert'],
+      personality: ['local', 'aperitivo enthusiast', 'volcanic terroir expert'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, female sommelier pouring wine at sunset, elegant profile, wine bottle in hand, graceful line work, purple-amber wash, sophisticated warmth, white background',
     },
     {

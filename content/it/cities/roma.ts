@@ -451,7 +451,7 @@ export const roma: CityPantry = {
       age: 50,
       role: 'vinaio',
       placeId: 'enoteca-monti',
-      personality: ['laid-back', 'storyteller', 'proud of Lazio wines'],
+      personality: ['laid-back', 'proud of Lazio wines'],
       portraitPrompt: 'Pen and ink portrait on white paper of a wine seller in his fifties with salt-and-pepper stubble, rolled sleeves, a leather apron, uncorking a bottle, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
     },
     {

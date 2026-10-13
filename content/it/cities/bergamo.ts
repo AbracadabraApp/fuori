@@ -341,7 +341,7 @@ export const bergamo: CityPantry = {
       age: 52,
       role: 'proprietario',
       placeId: 'caffe-del-tasso',
-      personality: ['tradizionale', 'orgoglioso', 'filosofico'],
+      personality: ['orgoglioso', 'filosofico'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in his fifties with salt-and-pepper hair, strong nose, wearing a vest and tie, minimal sepia watercolor wash on face, detailed crosshatching, warm wise eyes, proud Bergamasco expression',
     },
     {
@@ -431,7 +431,7 @@ export const bergamo: CityPantry = {
       age: 42,
       role: 'fornaia',
       placeId: 'panificio-tresoldi',
-      personality: ['allegra', 'tradizionale', 'premurosa'],
+      personality: ['allegra', 'premurosa'],
       portraitPrompt: 'Pen and ink portrait on white paper of a cheerful woman with flour-dusted apron, warm smile, hair in bun, minimal wheat-toned watercolor wash, detailed laugh lines, welcoming baker warmth',
     },
     {
@@ -521,7 +521,7 @@ export const bergamo: CityPantry = {
       age: 63,
       role: 'cuoca e proprietaria',
       placeId: 'trattoria-del-teatro',
-      personality: ['materna', 'tradizionale', 'accogliente'],
+      personality: ['materna', 'accogliente'],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm grandmother figure with ample form, apron with stains of cooking, loving expression, minimal terracotta watercolor wash, detailed nurturing face, home cooking embodied',
     },
     {
@@ -531,7 +531,7 @@ export const bergamo: CityPantry = {
       age: 44,
       role: 'oste',
       placeId: 'osteria-del-borgo',
-      personality: ['conviviale', 'generoso', 'storyteller'],
+      personality: ['conviviale', 'generoso'],
       portraitPrompt: 'Pen and ink portrait on white paper of a robust man with ready laugh, wine-stained apron, expressive hands, minimal wine-red watercolor wash, detailed jovial features, osteria host warmth',
     },
     {
@@ -571,7 +571,7 @@ export const bergamo: CityPantry = {
       age: 41,
       role: 'storica dell\'arte',
       placeId: 'cappella-colleoni',
-      personality: ['precisa', 'entusiasta', 'educatrice'],
+      personality: ['precisa', 'entusiasta'],
       portraitPrompt: 'Pen and ink portrait on white paper of a scholarly woman with glasses, elegant scarf, notebook in hand suggested, minimal rose watercolor wash, detailed intelligent animated features, art historian passion',
     },
     {
@@ -621,7 +621,7 @@ export const bergamo: CityPantry = {
       age: 68,
       role: 'proprietario storico',
       placeId: 'vineria-cozzi',
-      personality: ['tradizionale', 'esperto', 'nostalgico'],
+      personality: ['esperto', 'nostalgico'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly wine merchant with gentle features, vest and rolled sleeves, lifetime of wine knowledge in eyes, minimal wine-red watercolor wash, detailed venerable face. The subject is a man.',
     },
     {

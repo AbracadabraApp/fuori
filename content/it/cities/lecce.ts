@@ -313,7 +313,7 @@ export const lecce: CityPantry = {
       age: 58,
       role: 'proprietario',
       placeId: 'caffe-alvino',
-      personality: ['tradizionale', 'orgoglioso', 'accogliente'],
+      personality: ['orgoglioso', 'accogliente'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in his late fifties with silver hair, warm smile, wearing crisp white shirt and vest, confident bearing, kind eyes with crow\'s feet, minimal watercolor wash in warm sepia tones, detailed crosshatching, proud proprietor of historic café',
     },
     {
@@ -543,7 +543,7 @@ export const lecce: CityPantry = {
       age: 64,
       role: 'artigiano di cartapesta',
       placeId: 'bottega-cartapesta',
-      personality: ['creativo', 'paziente', 'tradizionale'],
+      personality: ['creativo', 'paziente'],
       portraitPrompt: 'Pen and ink portrait on white paper of a master papier-mâché artisan in his sixties with paint-stained hands, gentle eyes, slight beard, wearing smock, surrounded by his creations, contemplative expression, minimal watercolor wash in warm ochre and blue, detailed artistic line work, keeper of tradition',
     },
     {

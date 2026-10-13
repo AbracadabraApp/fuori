@@ -347,7 +347,7 @@ export const mantova: CityPantry = {
       age: 58,
       role: 'proprietario',
       placeId: 'caffe-modi',
-      personality: ['refined', 'knowledgeable', 'dignified'],
+      personality: ['refined', 'local', 'dignified'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in his late fifties with silver hair, elegant posture, wearing a crisp white shirt and vest. Slight smile, knowing eyes. Minimal watercolor wash in warm sepia tones, detailed crosshatching showing refined café owner character.',
     },
     {
@@ -367,7 +367,7 @@ export const mantova: CityPantry = {
       age: 65,
       role: 'proprietario',
       placeId: 'caffe-borsa',
-      personality: ['traditional', 'opinionated', 'loyal'],
+      personality: ['opinionated', 'loyal'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sturdy older man with weathered face, knowing expression, traditional manner. Reading glasses hanging from chain. Minimal watercolor wash in grays and browns, detailed traditional café owner character.',
     },
     {
@@ -437,7 +437,7 @@ export const mantova: CityPantry = {
       age: 56,
       role: 'fornaio',
       placeId: 'panificio-pavesi',
-      personality: ['traditional', 'skilled', 'early-rising'],
+      personality: ['skilled', 'early-rising'],
       portraitPrompt: 'Pen and ink portrait on white paper of a baker with flour-dusted hair, strong hands, satisfaction of craft in face. Traditional artisan. Minimal watercolor wash in warm wheat tones, detailed linework showing master baker. The subject is a man.',
     },
     {
@@ -447,7 +447,7 @@ export const mantova: CityPantry = {
       age: 44,
       role: 'pasticcera',
       placeId: 'pasticceria-caravatti',
-      personality: ['perfectionist', 'creative', 'elegant'],
+      personality: ['creative', 'elegant'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant pastry chef with refined features, precise manner, artistic sensibility. Craftswoman pride. Minimal watercolor wash in soft rose tones, detailed character showing artistry. The subject is a woman.',
     },
     {
@@ -477,7 +477,7 @@ export const mantova: CityPantry = {
       age: 62,
       role: 'venditore',
       placeId: 'mercato-erbe',
-      personality: ['traditional', 'proud', 'weather-wise'],
+      personality: ['proud', 'weather-wise'],
       portraitPrompt: 'Pen and ink portrait on white paper of a weathered market vendor with knowing eyes, hands that know produce, decades at the market. Traditional seller. Minimal watercolor wash in earth greens, detailed market character. The subject is a man.',
     },
     {
@@ -487,7 +487,7 @@ export const mantova: CityPantry = {
       age: 51,
       role: 'venditrice',
       placeId: 'mercato-coperto',
-      personality: ['knowledgeable', 'warm', 'trusted'],
+      personality: ['local', 'warm', 'trusted'],
       portraitPrompt: 'Pen and ink portrait on white paper of a confident market woman with welcoming smile, expert in her products, customer relationships. Market wisdom. Minimal watercolor wash in warm tones, detailed vendor character.',
     },
     {
@@ -507,7 +507,7 @@ export const mantova: CityPantry = {
       age: 55,
       role: 'chef',
       placeId: 'ristorante-cigno',
-      personality: ['refined', 'traditional', 'exacting'],
+      personality: ['refined', 'exacting'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with serious expression, classical training evident, culinary pride. Master of tradition. Minimal watercolor wash in burgundy tones, detailed fine dining chef. The subject is a man.',
     },
     {
@@ -517,7 +517,7 @@ export const mantova: CityPantry = {
       age: 59,
       role: 'cuoca',
       placeId: 'trattoria-martini',
-      personality: ['maternal', 'passionate', 'traditional'],
+      personality: ['maternal', 'passionate'],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm cook with flour on hands, generations of recipes in memory, feeding people joy. Nonna energy. Minimal watercolor wash in warm reds, detailed traditional cook character.',
     },
     {
@@ -537,7 +537,7 @@ export const mantova: CityPantry = {
       age: 47,
       role: 'salumiere',
       placeId: 'salumeria-ducale',
-      personality: ['artisanal', 'knowledgeable', 'selective'],
+      personality: ['artisanal', 'local', 'selective'],
       portraitPrompt: 'Pen and ink portrait on white paper of a specialty food merchant with discerning eye, expert knowledge, pride in products. Artisan trader. Minimal watercolor wash in rich tones, detailed salumiere character. The subject is a man.',
     },
     {
@@ -617,7 +617,7 @@ export const mantova: CityPantry = {
       age: 42,
       role: 'sommelier',
       placeId: 'enoteca-cortile',
-      personality: ['refined', 'passionate', 'educational'],
+      personality: ['refined', 'passionate'],
       portraitPrompt: 'Pen and ink portrait on white paper of a knowledgeable sommelier with wine glass, refined palate, teaching joy. Wine expertise. Minimal watercolor wash in burgundy, detailed wine professional character. The subject is a man.',
     },
     {
@@ -657,7 +657,7 @@ export const mantova: CityPantry = {
       age: 52,
       role: 'bigliettaio',
       placeId: 'stazione-mantova',
-      personality: ['helpful', 'patient', 'knowledgeable'],
+      personality: ['helpful', 'patient', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a station worker with uniform, decades of travelers helped, connection point. Transportation wisdom. Minimal watercolor wash in railway blues, detailed station character. The subject is a man.',
     },
     {
@@ -677,7 +677,7 @@ export const mantova: CityPantry = {
       age: 40,
       role: 'gelataio',
       placeId: 'gelateria-ducale',
-      personality: ['innovative', 'seasonal', 'perfectionist'],
+      personality: ['innovative', 'seasonal'],
       portraitPrompt: 'Pen and ink portrait on white paper of a gelato maker with creative spirit, taste-testing expression, artisan pride. Frozen art master. Minimal watercolor wash in creamy tones, detailed gelataio character. The subject is a man.',
     },
     {

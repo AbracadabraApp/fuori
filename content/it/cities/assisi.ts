@@ -321,7 +321,7 @@ export const assisi: CityPantry = {
       age: 55,
       role: 'proprietario',
       placeId: 'caffe-santa-chiara',
-      personality: ['traditional', 'dignified', 'knowledgeable'],
+      personality: ['dignified', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished older man with graying hair, weathered face, wearing vest and tie, minimal gray watercolor wash, detailed fine lines, confident posture',
     },
     {
@@ -341,7 +341,7 @@ export const assisi: CityPantry = {
       age: 46,
       role: 'pasticciere',
       placeId: 'pasticceria-san-francesco',
-      personality: ['perfectionist', 'artistic', 'proud'],
+      personality: ['artistic', 'proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of a man with focused eyes, chef whites, slight smirk of pride, minimal pale watercolor wash, detailed shading, artistic temperament visible',
     },
     {
@@ -361,7 +361,7 @@ export const assisi: CityPantry = {
       age: 51,
       role: 'venditrice al mercato',
       placeId: 'mercato-piazza',
-      personality: ['shrewd', 'fair', 'storyteller'],
+      personality: ['shrewd', 'fair'],
       portraitPrompt: 'Pen and ink portrait on white paper of a woman with sharp intelligent eyes, headscarf, knowing smile, minimal terracotta watercolor wash, detailed expression lines, commanding presence',
     },
     {
@@ -401,7 +401,7 @@ export const assisi: CityPantry = {
       age: 71,
       role: 'proprietario',
       placeId: 'trattoria-erminio',
-      personality: ['traditional', 'gruff-but-kind', 'family-oriented'],
+      personality: ['gruff-but-kind', 'family-oriented'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly man with deeply lined face, white hair, suspenders, minimal sepia watercolor wash, gentle eyes despite stern expression, grandfatherly',
     },
     {
@@ -451,7 +451,7 @@ export const assisi: CityPantry = {
       age: 60,
       role: 'giardiniere',
       placeId: 'giardini-santa-chiara',
-      personality: ['patient', 'contemplative', 'knowledgeable'],
+      personality: ['patient', 'contemplative', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a weathered man with sun-worn face, work clothes, calloused hands, minimal green watercolor wash, peaceful eyes, connected to earth',
     },
     {
@@ -551,7 +551,7 @@ export const assisi: CityPantry = {
       age: 43,
       role: 'curatrice museale',
       placeId: 'museo-diocesano',
-      personality: ['knowledgeable', 'passionate', 'precise'],
+      personality: ['local', 'passionate', 'precise'],
       portraitPrompt: 'Pen and ink portrait on white paper of a woman with intellectual bearing, elegant professional attire, glasses, minimal museum-gold watercolor wash, cultured expression',
     },
     {
@@ -561,7 +561,7 @@ export const assisi: CityPantry = {
       age: 37,
       role: 'ceramista',
       placeId: 'laboratorio-ceramiche',
-      personality: ['artistic', 'traditional', 'patient'],
+      personality: ['artistic', 'patient'],
       portraitPrompt: 'Pen and ink portrait on white paper of a man with clay-stained hands, artisan apron, focused creative eyes, minimal blue-and-yellow watercolor wash, craftsman pride',
     },
     {
@@ -571,7 +571,7 @@ export const assisi: CityPantry = {
       age: 59,
       role: "produttore d'olio",
       placeId: 'frantoi-assisi',
-      personality: ['traditional', 'quality-focused', 'proud'],
+      personality: ['quality-focused', 'proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sturdy man with work-worn hands, holding olive branch, minimal golden-green watercolor wash, generations of knowledge in face',
     },
     {

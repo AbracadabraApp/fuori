@@ -357,7 +357,7 @@ export const orvieto: CityPantry = {
       age: 58,
       role: 'barista',
       placeId: 'caffe-montanucci',
-      personality: ['traditional', 'knowledgeable', 'proud'],
+      personality: ['local', 'proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in his late fifties with silver hair, mustache, wearing a white shirt and black vest, confident knowing expression, minimal sepia watercolor wash, skilled hands suggesting decades of coffee craft, detailed facial lines showing character',
     },
     {
@@ -397,7 +397,7 @@ export const orvieto: CityPantry = {
       age: 42,
       role: 'proprietario',
       placeId: 'caffe-della-piazza',
-      personality: ['sophisticated', 'cultured', 'perfectionist'],
+      personality: ['sophisticated', 'cultured'],
       portraitPrompt: 'Pen and ink portrait on white paper of a well-groomed man in his forties with styled hair, pressed shirt, refined features, discerning expression, minimal cool watercolor wash, attention to detail evident, detailed precise lines',
     },
     {
@@ -457,7 +457,7 @@ export const orvieto: CityPantry = {
       age: 47,
       role: 'fornaia',
       placeId: 'forno-del-duomo',
-      personality: ['strong', 'traditional', 'proud'],
+      personality: ['strong', 'proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of a robust woman with flour in hair, rolled-up sleeves, strong forearms, honest face, minimal wheat-tone watercolor wash, generations of baking in her bearing, detailed work-worn hands',
     },
     {
@@ -487,7 +487,7 @@ export const orvieto: CityPantry = {
       age: 59,
       role: 'maestro fornaio',
       placeId: 'forno-san-giovenale',
-      personality: ['traditional', 'gruff', 'skilled'],
+      personality: ['gruff', 'skilled'],
       portraitPrompt: 'Pen and ink portrait on white paper of a stocky man with powerful build, gray stubble, serious expression, flour everywhere, minimal ochre watercolor wash, ancient techniques in his hands, detailed weathered face',
     },
     {
@@ -497,7 +497,7 @@ export const orvieto: CityPantry = {
       age: 27,
       role: 'pasticciera',
       placeId: 'dolci-tentazioni',
-      personality: ['innovative', 'perfectionist', 'Instagram-savvy'],
+      personality: ['innovative', 'Instagram-savvy'],
       portraitPrompt: 'Pen and ink portrait on white paper of a stylish young woman with modern chef attire, creative expression, confident smile, minimal rose-gold watercolor wash, contemporary artisan spirit, detailed expressive features',
     },
     {
@@ -527,7 +527,7 @@ export const orvieto: CityPantry = {
       age: 45,
       role: 'negoziante',
       placeId: 'bottega-sapori-umbri',
-      personality: ['knowledgeable', 'passionate', 'educator'],
+      personality: ['local', 'passionate'],
       portraitPrompt: 'Pen and ink portrait on white paper of a enthusiastic man gesturing while explaining, intelligent eyes, casual elegance, minimal wine-red watercolor wash, love of regional products evident, detailed animated expression',
     },
     {
@@ -567,7 +567,7 @@ export const orvieto: CityPantry = {
       age: 41,
       role: 'chef',
       placeId: 'osteria-la-madia',
-      personality: ['jovial', 'storyteller', 'generous'],
+      personality: ['jovial', 'generous'],
       portraitPrompt: 'Pen and ink portrait on white paper of a friendly man with open expression, cooking stains on shirt, warm smile, minimal orange watercolor wash, convivial spirit, detailed laugh lines and expressive face',
     },
     {
@@ -597,7 +597,7 @@ export const orvieto: CityPantry = {
       age: 28,
       role: 'guida turistica',
       placeId: 'pozzo-san-patrizio',
-      personality: ['enthusiastic', 'knowledgeable', 'dramatic'],
+      personality: ['enthusiastic', 'local', 'dramatic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young man with expressive gestures, bright eyes, casual professional attire, engaging smile, minimal stone-gray watercolor wash, passion for history, detailed animated features',
     },
     {
@@ -637,7 +637,7 @@ export const orvieto: CityPantry = {
       age: 37,
       role: 'sommelier',
       placeId: 'enoteca-al-pozzo',
-      personality: ['sophisticated', 'passionate', 'knowledgeable'],
+      personality: ['sophisticated', 'passionate', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a refined man with wine glass, discerning expression, sommelier attire, minimal ruby watercolor wash, wine expertise evident, detailed contemplative tasting expression',
     },
     {
@@ -667,7 +667,7 @@ export const orvieto: CityPantry = {
       age: 56,
       role: 'farmacista',
       placeId: 'farmacia-centrale',
-      personality: ['professional', 'caring', 'knowledgeable'],
+      personality: ['professional', 'caring', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a professional woman with white coat, confident caring expression, reading glasses on chain, minimal green watercolor wash, trusted health advisor, detailed reassuring features',
     },
     {
@@ -687,7 +687,7 @@ export const orvieto: CityPantry = {
       age: 58,
       role: 'maestro ceramista',
       placeId: 'bottega-michelangeli',
-      personality: ['artistic', 'traditional', 'meticulous'],
+      personality: ['artistic', 'meticulous'],
       portraitPrompt: 'Pen and ink portrait on white paper of an artisan with clay on hands, focused intense expression, artist smock, minimal cobalt watercolor wash, centuries of tradition, detailed skilled craftsman features. The subject is a man.',
     },
     {
@@ -697,7 +697,7 @@ export const orvieto: CityPantry = {
       age: 53,
       role: 'vignaiolo',
       placeId: 'cantina-foresi',
-      personality: ['traditional', 'proud', 'knowledgeable'],
+      personality: ['proud', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man with wine-stained hands, vintner apron, knowing smile, minimal gold watercolor wash, generations of winemaking, detailed confident features',
     },
     {

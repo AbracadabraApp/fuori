@@ -347,7 +347,7 @@ export const venezia: CityPantry = {
       age: 42,
       role: 'proprietario del bar',
       placeId: 'bar-al-timon',
-      personality: ['gregarious', 'storyteller', 'generous'],
+      personality: ['gregarious', 'generous'],
       portraitPrompt: 'Pen and ink portrait on white paper of a friendly man in his forties with slightly greying curly hair, warm smile lines around eyes, casual button-down shirt, minimal warm sepia watercolor wash, detailed cross-hatching, welcoming expression',
     },
     {
@@ -357,7 +357,7 @@ export const venezia: CityPantry = {
       age: 38,
       role: 'capocameriere',
       placeId: 'caffe-florian',
-      personality: ['elegant', 'professional', 'knowledgeable'],
+      personality: ['elegant', 'professional', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in his late thirties with neat dark hair, bow tie and formal vest, subtle blue-grey watercolor wash, refined pen strokes, dignified bearing',
     },
     {
@@ -397,7 +397,7 @@ export const venezia: CityPantry = {
       age: 45,
       role: 'torrefattore',
       placeId: 'caffe-del-doge',
-      personality: ['perfectionist', 'passionate', 'intense'],
+      personality: ['passionate', 'intense'],
       portraitPrompt: 'Pen and ink portrait on white paper of a focused man in his mid-forties with strong features, serious expression, work apron, minimal brown watercolor wash, bold confident strokes, expert concentration',
     },
     {
@@ -417,7 +417,7 @@ export const venezia: CityPantry = {
       age: 68,
       role: 'proprietario del bar',
       placeId: 'bar-da-gino',
-      personality: ['traditional', 'gruff-but-kind', 'loyal'],
+      personality: ['gruff-but-kind', 'loyal'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly man with weathered face, white hair, strong Venetian features, vest and shirt, minimal terracotta watercolor wash, detailed wrinkles, dignified character',
     },
     {
@@ -427,7 +427,7 @@ export const venezia: CityPantry = {
       age: 39,
       role: 'esperta di caffè',
       placeId: 'torrefazione-cannaregio',
-      personality: ['knowledgeable', 'precise', 'enthusiastic'],
+      personality: ['local', 'precise', 'enthusiastic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a woman in her late thirties with glasses, hair tied back, professional attire, minimal coffee-brown watercolor wash, fine detailed lines, intelligent expression',
     },
     {
@@ -467,7 +467,7 @@ export const venezia: CityPantry = {
       age: 61,
       role: 'maestro pasticciere',
       placeId: 'pasticceria-rizzardini',
-      personality: ['traditional', 'exacting', 'respected'],
+      personality: ['exacting', 'respected'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished older man with white hair, chef\'s jacket, authoritative bearing, minimal cream watercolor wash, careful classical lines, master craftsman dignity',
     },
     {
@@ -477,7 +477,7 @@ export const venezia: CityPantry = {
       age: 55,
       role: 'pescivendolo',
       placeId: 'mercato-rialto',
-      personality: ['boisterous', 'knowledgeable', 'theatrical'],
+      personality: ['boisterous', 'local', 'theatrical'],
       portraitPrompt: 'Pen and ink portrait on white paper of a robust man in his fifties with ruddy complexion, rubber boots and apron, animated expression, minimal blue watercolor wash, bold energetic strokes, market vendor vitality',
     },
     {
@@ -507,7 +507,7 @@ export const venezia: CityPantry = {
       age: 47,
       role: 'chef e proprietario',
       placeId: 'ristorante-antiche-carampane',
-      personality: ['perfectionist', 'traditional', 'passionate'],
+      personality: ['passionate'],
       portraitPrompt: 'Pen and ink portrait on white paper of a serious chef in his late forties with strong features, chef\'s whites, intense gaze, minimal russet watercolor wash, bold assured strokes, culinary dedication',
     },
     {
@@ -547,7 +547,7 @@ export const venezia: CityPantry = {
       age: 28,
       role: "titolare dell'enoteca",
       placeId: 'bacaro-del-vin',
-      personality: ['enthusiastic', 'knowledgeable', 'modern-traditional'],
+      personality: ['enthusiastic', 'local', 'modern-traditional'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young man with stylish beard, casual but neat clothes, wine-stained apron, minimal wine-red watercolor wash, energetic contemporary lines, passionate expression',
     },
     {
@@ -607,7 +607,7 @@ export const venezia: CityPantry = {
       age: 72,
       role: 'storico locale',
       placeId: 'campo-dei-mori',
-      personality: ['eccentric', 'knowledgeable', 'nostalgic'],
+      personality: ['eccentric', 'local', 'nostalgic'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly man with wild white hair, tweedy jacket, animated expression, minimal terracotta watercolor wash, character-filled expressive lines, storyteller spirit',
     },
     {
@@ -627,7 +627,7 @@ export const venezia: CityPantry = {
       age: 50,
       role: 'proprietaria della cantina',
       placeId: 'cantina-do-spade',
-      personality: ['traditional', 'witty', 'keeper-of-secrets'],
+      personality: ['witty', 'keeper-of-secrets'],
       portraitPrompt: 'Pen and ink portrait on white paper of a woman in her fifties with knowing eyes, traditional dress, copper jewelry, minimal amber watercolor wash, confident assured lines, Venetian wisdom',
     },
     {
@@ -647,7 +647,7 @@ export const venezia: CityPantry = {
       age: 45,
       role: 'farmacista',
       placeId: 'farmacia-morelli',
-      personality: ['professional', 'caring', 'knowledgeable'],
+      personality: ['professional', 'caring', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a composed woman in her mid-forties with neat appearance, white coat, intelligent eyes, minimal green watercolor wash, precise professional lines, trusted healer',
     },
     {
@@ -667,7 +667,7 @@ export const venezia: CityPantry = {
       age: 58,
       role: 'maestro squerarolo',
       placeId: 'squero-san-trovaso',
-      personality: ['masterful', 'perfectionist', 'traditional'],
+      personality: ['masterful'],
       portraitPrompt: 'Pen and ink portrait on white paper of a skilled craftsman in his late fifties with calloused hands, work clothes, wood shavings in hair, minimal wood-tone watercolor wash, expert detailed strokes, artisan pride',
     },
     {
@@ -687,7 +687,7 @@ export const venezia: CityPantry = {
       age: 40,
       role: 'commerciante di spezie',
       placeId: 'fondaco-spezie',
-      personality: ['exotic', 'knowledgeable', 'merchant-heritage'],
+      personality: ['exotic', 'local', 'merchant-heritage'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman in her forties with worldly bearing, colorful scarf, knowing smile, minimal saffron watercolor wash, rich textured lines, merchant heritage',
     },
   ],

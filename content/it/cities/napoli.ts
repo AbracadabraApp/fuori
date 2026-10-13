@@ -392,7 +392,7 @@ export const napoli: CityPantry = {
       age: 67,
       role: 'proprietario',
       placeId: 'caffe-del-professore',
-      personality: ['scholarly', 'perfectionist', 'reserved'],
+      personality: ['scholarly', 'reserved'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly gentleman with round glasses, neat grey hair, and thoughtful expression. Minimal watercolor wash in sepia tones. Precise, careful linework suggesting quiet dignity.',
     },
     {
@@ -412,7 +412,7 @@ export const napoli: CityPantry = {
       age: 52,
       role: 'barista',
       placeId: 'bar-epoca',
-      personality: ['nostalgic', 'storyteller', 'meticulous'],
+      personality: ['nostalgic', 'meticulous'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man with slicked-back hair, strong jaw, and vintage style. Minimal watercolor wash in amber and grey tones. Art deco-influenced linework.',
     },
     {
@@ -432,7 +432,7 @@ export const napoli: CityPantry = {
       age: 35,
       role: 'barista',
       placeId: 'bar-chiaia-sera',
-      personality: ['sophisticated', 'charming', 'knowledgeable'],
+      personality: ['sophisticated', 'charming', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a handsome man with styled dark hair, well-groomed beard, and confident gaze. Minimal watercolor wash in deep amber for his vest. Elegant, refined linework.',
     },
     {
@@ -452,7 +452,7 @@ export const napoli: CityPantry = {
       age: 44,
       role: 'pasticciere',
       placeId: 'pasticceria-poppella',
-      personality: ['proud', 'perfectionist', 'family-oriented'],
+      personality: ['proud', 'family-oriented'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sturdy man with flour-dusted apron, strong hands, and determined expression. Minimal watercolor wash in white and cream tones. Honest, hardworking linework.',
     },
     {
@@ -462,7 +462,7 @@ export const napoli: CityPantry = {
       age: 39,
       role: 'fornaia',
       placeId: 'forno-attanasio',
-      personality: ['traditional', 'generous', 'early riser'],
+      personality: ['generous', 'early riser'],
       portraitPrompt: 'Pen and ink portrait on white paper of a robust woman with hair tied back, warm smile, and capable hands. Minimal watercolor wash in golden wheat tones. Solid, nurturing linework.',
     },
     {
@@ -502,7 +502,7 @@ export const napoli: CityPantry = {
       age: 53,
       role: 'pescivendolo',
       placeId: 'mercato-antignano',
-      personality: ['straightforward', 'fair', 'knowledgeable'],
+      personality: ['straightforward', 'fair', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a stocky man with honest face, rolled-up sleeves, and direct gaze. Minimal watercolor wash in silver-grey and blue tones. Strong, dependable linework.',
     },
     {
@@ -572,7 +572,7 @@ export const napoli: CityPantry = {
       age: 56,
       role: 'salumiere',
       placeId: 'salumeria-upnea',
-      personality: ['connoisseur', 'patient', 'educator'],
+      personality: ['connoisseur', 'patient'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man with silver beard, apron, and knowledgeable expression. Minimal watercolor wash in burgundy and aged gold. Refined, artisanal linework.',
     },
     {
@@ -602,7 +602,7 @@ export const napoli: CityPantry = {
       age: 38,
       role: 'guida turistica',
       placeId: 'castel-ovo',
-      personality: ['knowledgeable', 'enthusiastic', 'storyteller'],
+      personality: ['local', 'enthusiastic'],
       portraitPrompt: 'Pen and ink portrait on white paper of an animated man with gesturing hands, bright eyes, and engaging smile. Minimal watercolor wash in stone grey and sea blue. Expressive, engaging linework.',
     },
     {
@@ -642,7 +642,7 @@ export const napoli: CityPantry = {
       age: 43,
       role: 'sommelier',
       placeId: 'enoteca-belledonne',
-      personality: ['passionate', 'knowledgeable', 'welcoming'],
+      personality: ['passionate', 'local', 'welcoming'],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm man with wine-stained fingers, intelligent eyes, and inviting smile. Minimal watercolor wash in deep wine red. Sophisticated, hospitable linework.',
     },
     {

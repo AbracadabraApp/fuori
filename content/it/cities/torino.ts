@@ -327,7 +327,7 @@ export const torino: CityPantry = {
       age: 42,
       role: 'barista',
       placeId: 'caffe-san-carlo',
-      personality: ['professional', 'proud', 'traditional'],
+      personality: ['professional', 'proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished Italian barista in his forties with salt-and-pepper hair, wearing a crisp white shirt and black bow tie. Confident expression, hint of a smile. Minimal warm sepia wash on face. Detailed crosshatching, classic composition.',
     },
     {
@@ -337,7 +337,7 @@ export const torino: CityPantry = {
       age: 68,
       role: 'proprietaria',
       placeId: 'bicerin-dal-1763',
-      personality: ['warm', 'knowledgeable', 'guardian of tradition'],
+      personality: ['warm', 'local', 'guardian of tradition'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant elderly Italian woman with white hair in a bun, wearing a traditional apron over refined clothing. Kind eyes, wise expression. Minimal amber watercolor wash. Detailed linework, dignified presence.',
     },
     {
@@ -367,7 +367,7 @@ export const torino: CityPantry = {
       age: 29,
       role: 'pasticciera',
       placeId: 'pasticceria-stratta',
-      personality: ['artistic', 'perfectionist', 'sweet'],
+      personality: ['artistic', 'sweet'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young pastry chef with hair pulled back, wearing a pristine white chef coat. Focused expression, gentle features. Minimal pink watercolor wash on cheeks. Delicate lines, refined presence. The subject is a woman.',
     },
     {
@@ -387,7 +387,7 @@ export const torino: CityPantry = {
       age: 58,
       role: 'formaggiaio',
       placeId: 'mercato-crocetta',
-      personality: ['expert', 'generous with samples', 'storyteller'],
+      personality: ['expert', 'generous with samples'],
       portraitPrompt: 'Pen and ink portrait on white paper of a friendly cheese vendor in his late fifties with a mustache, wearing an apron. Knowledgeable eyes, welcoming expression. Minimal cream watercolor wash. Detailed facial features, approachable.',
     },
     {
@@ -437,7 +437,7 @@ export const torino: CityPantry = {
       age: 47,
       role: 'cuoco',
       placeId: 'osteria-antiche-sere',
-      personality: ['traditional', 'gruff but kind', 'talented'],
+      personality: ['gruff but kind', 'talented'],
       portraitPrompt: 'Pen and ink portrait on white paper of a serious cook in his forties with strong features, wearing a cooking apron and bandana. Concentrated expression, capable hands. Minimal earth-tone wash. Bold strokes, working authenticity.',
     },
     {
@@ -447,7 +447,7 @@ export const torino: CityPantry = {
       age: 31,
       role: 'guida turistica',
       placeId: 'mole-antonelliana',
-      personality: ['knowledgeable', 'animated', 'city-proud'],
+      personality: ['local', 'animated', 'city-proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of an articulate young woman with expressive eyes, wearing professional but stylish clothing with a museum badge. Engaging expression, intelligent gaze. Minimal blue watercolor accent. Detailed, articulate lines.',
     },
     {
@@ -537,7 +537,7 @@ export const torino: CityPantry = {
       age: 56,
       role: 'farmacista',
       placeId: 'farmacia-centrale',
-      personality: ['professional', 'caring', 'knowledgeable'],
+      personality: ['professional', 'caring', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a competent pharmacist in her fifties wearing a white coat and glasses. Caring expression, professional demeanor. Minimal clinical green wash. Precise lines, medical authority.',
     },
     {
@@ -557,7 +557,7 @@ export const torino: CityPantry = {
       age: 36,
       role: 'cioccolatiere',
       placeId: 'guido-gobino',
-      personality: ['artisan', 'perfectionist', 'proud'],
+      personality: ['artisan', 'proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of a master chocolatier in his thirties with intense focus, wearing chef whites. Precise expression, artisan pride. Minimal chocolate-brown watercolor wash. Detailed lines, craftsman character.',
     },
     {
@@ -567,7 +567,7 @@ export const torino: CityPantry = {
       age: 64,
       role: 'esperto di vermut',
       placeId: 'casa-del-vermouth',
-      personality: ['traditional', 'storyteller', 'botanical knowledge'],
+      personality: ['botanical knowledge'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished vermouth expert in his sixties with a sophisticated manner, wearing vintage-style vest. Knowledgeable eyes, refined taste. Minimal amber vermouth wash. Classic lines, heritage keeper.',
     },
     {
@@ -587,7 +587,7 @@ export const torino: CityPantry = {
       age: 24,
       role: 'gelataia',
       placeId: 'gelateria-pepino',
-      personality: ['cheerful', 'sweet', 'traditional'],
+      personality: ['cheerful', 'sweet'],
       portraitPrompt: 'Pen and ink portrait on white paper of a bright young gelato maker with a sunny smile, wearing vintage-style uniform and cap. Cheerful expression, welcoming energy. Minimal pastel watercolor wash. Light lines, joyful presence. The subject is a woman.',
     },
     {
@@ -617,7 +617,7 @@ export const torino: CityPantry = {
       age: 61,
       role: 'antiquario',
       placeId: 'balon-flea-market',
-      personality: ['eccentric', 'treasure hunter', 'storyteller'],
+      personality: ['eccentric', 'treasure hunter'],
       portraitPrompt: 'Pen and ink portrait on white paper of a colorful antique dealer in his sixties with weathered face and quirky style, wearing layers and vintage accessories. Mischievous eyes, character-filled face. Minimal vintage sepia wash. Expressive lines, bohemian spirit.',
     },
     {

@@ -340,7 +340,7 @@ export const lucca: CityPantry = {
       age: 58,
       role: 'proprietario',
       placeId: 'caffe-di-simo',
-      personality: ['refined', 'knowledgeable', 'proud of tradition'],
+      personality: ['refined', 'local', 'proud of tradition'],
       portraitPrompt: 'Pen and ink portrait on white paper of distinguished man in his late fifties with silver hair neatly combed, elegant bearing, subtle smile, wearing bow tie and vest, minimal sepia watercolor wash, fine lines showing character, background hint of Art Nouveau curves',
     },
     {
@@ -410,7 +410,7 @@ export const lucca: CityPantry = {
       age: 34,
       role: 'proprietaria',
       placeId: 'caffe-carli',
-      personality: ['sophisticated', 'perfectionist', 'design-conscious'],
+      personality: ['sophisticated', 'design-conscious'],
       portraitPrompt: 'Pen and ink portrait on white paper of elegant woman in mid-thirties with sleek bobbed hair, refined features, wearing minimalist jewelry, minimal cool watercolor wash, poised intelligent expression, precise delicate linework',
     },
     {
@@ -420,7 +420,7 @@ export const lucca: CityPantry = {
       age: 71,
       role: 'proprietario',
       placeId: 'bar-colombini',
-      personality: ['traditional', 'opinionated', 'sharp-witted'],
+      personality: ['opinionated', 'sharp-witted'],
       portraitPrompt: 'Pen and ink portrait on white paper of elderly gentleman in early seventies with white hair, strong features, wearing classic shirt and suspenders, minimal sepia watercolor wash, wise penetrating gaze, detailed expressive wrinkles, dignified bearing',
     },
     {
@@ -440,7 +440,7 @@ export const lucca: CityPantry = {
       age: 42,
       role: 'fornaia',
       placeId: 'panificio-guidi',
-      personality: ['jovial', 'generous portions', 'storyteller'],
+      personality: ['jovial', 'generous portions'],
       portraitPrompt: 'Pen and ink portrait on white paper of robust cheerful woman in early forties with curly hair tied back, bright smile, wearing flour-covered apron, minimal warm watercolor wash, laugh lines, welcoming open expression, detailed expressive features',
     },
     {
@@ -470,7 +470,7 @@ export const lucca: CityPantry = {
       age: 67,
       role: 'fornaio',
       placeId: 'forno-sant-anna',
-      personality: ['traditional', 'gruff but kind', 'neighborhood fixture'],
+      personality: ['gruff but kind', 'neighborhood fixture'],
       portraitPrompt: 'Pen and ink portrait on white paper of weathered elderly baker in late sixties with white mustache, work-worn hands, wearing traditional baker cap, minimal warm watercolor wash, gruff exterior hiding warmth, detailed character lines, flour dust',
     },
     {
@@ -480,7 +480,7 @@ export const lucca: CityPantry = {
       age: 44,
       role: 'pasticciera',
       placeId: 'pasticceria-pinelli',
-      personality: ['artistic', 'delicate touch', 'perfectionist'],
+      personality: ['artistic', 'delicate touch'],
       portraitPrompt: 'Pen and ink portrait on white paper of graceful woman in mid-forties with hair in elegant chignon, gentle smile, wearing pastry chef whites, minimal pink watercolor wash, refined precise features, artistic hands, detailed sensitive linework',
     },
     {
@@ -510,7 +510,7 @@ export const lucca: CityPantry = {
       age: 65,
       role: 'antiquario',
       placeId: 'mercato-antiquario',
-      personality: ['scholarly', 'storyteller', 'nostalgic'],
+      personality: ['scholarly', 'nostalgic'],
       portraitPrompt: 'Pen and ink portrait on white paper of distinguished elderly man in mid-sixties with reading glasses on chain, gray beard, wearing tweed jacket, minimal sepia watercolor wash, intellectual expression, detailed thoughtful features, collector eyes',
     },
     {
@@ -570,7 +570,7 @@ export const lucca: CityPantry = {
       age: 52,
       role: 'proprietaria',
       placeId: 'gastronomia-angeli',
-      personality: ['knowledgeable', 'quality-obsessed', 'welcoming'],
+      personality: ['local', 'quality-obsessed', 'welcoming'],
       portraitPrompt: 'Pen and ink portrait on white paper of elegant woman in early fifties with sophisticated style, knowing smile, wearing elegant casual attire, minimal warm watercolor wash, cultured refined expression, detailed discerning features, food expert',
     },
     {
@@ -640,7 +640,7 @@ export const lucca: CityPantry = {
       age: 57,
       role: 'sommelier',
       placeId: 'enoteca-vanni',
-      personality: ['expert', 'refined palate', 'educator'],
+      personality: ['expert', 'refined palate'],
       portraitPrompt: 'Pen and ink portrait on white paper of distinguished man in late fifties with silver hair, discerning eyes, wearing elegant casual attire, minimal burgundy watercolor wash, knowledgeable sophisticated expression, detailed refined features, wine expert bearing',
     },
     {

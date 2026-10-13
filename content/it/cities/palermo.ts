@@ -338,7 +338,7 @@ export const palermo: CityPantry = {
       age: 52,
       role: 'barista',
       placeId: 'bar-alba',
-      personality: ['traditional', 'gruff-but-kind', 'opinionated'],
+      personality: ['gruff-but-kind', 'opinionated'],
       portraitPrompt: 'Pen and ink portrait on white paper of a middle-aged Sicilian man with salt-and-pepper hair, strong features, slight stubble, wearing white shirt and black vest, knowing expression, minimal watercolor wash in warm sepias, detailed cross-hatching',
     },
     {
@@ -378,7 +378,7 @@ export const palermo: CityPantry = {
       age: 67,
       role: 'proprietario',
       placeId: 'bar-garibaldi',
-      personality: ['storyteller', 'humorous', 'neighborhood-fixture'],
+      personality: ['humorous', 'neighborhood-fixture'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly Sicilian man with weathered face, deep laugh lines, flat cap, twinkle in eye, minimal watercolor wash in warm earth tones, expressive ink strokes',
     },
     {
@@ -408,7 +408,7 @@ export const palermo: CityPantry = {
       age: 27,
       role: 'pasticciera',
       placeId: 'pasticceria-cappello',
-      personality: ['creative', 'perfectionist', 'passionate'],
+      personality: ['creative', 'passionate'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young Sicilian woman with hair in neat bun, focused expression, chef whites, artistic sensibility, minimal watercolor wash in pastel tones, refined details',
     },
     {
@@ -418,7 +418,7 @@ export const palermo: CityPantry = {
       age: 61,
       role: 'maestro fornaio',
       placeId: 'panificio-morello',
-      personality: ['skilled', 'patient', 'traditional'],
+      personality: ['skilled', 'patient'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sturdy Sicilian man with flour-dusted hair, strong hands, warm smile, baker apron, minimal watercolor wash in wheaty golds, textured cross-hatching',
     },
     {
@@ -468,7 +468,7 @@ export const palermo: CityPantry = {
       age: 63,
       role: 'pescivendola',
       placeId: 'mercato-vucciria',
-      personality: ['tough', 'knowledgeable', 'respected'],
+      personality: ['tough', 'local', 'respected'],
       portraitPrompt: 'Pen and ink portrait on white paper of a strong Sicilian woman with head scarf, weathered hands, sharp eyes, market apron, minimal watercolor wash in sea blues, decisive ink work',
     },
     {
@@ -478,7 +478,7 @@ export const palermo: CityPantry = {
       age: 51,
       role: 'formaggiaio',
       placeId: 'mercato-del-capo',
-      personality: ['knowledgeable', 'proud', 'traditional'],
+      personality: ['local', 'proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of a dignified Sicilian man with neat appearance, expert expression, holding cheese wheel, minimal watercolor wash in creamy tones, detailed rendering',
     },
     {
@@ -488,7 +488,7 @@ export const palermo: CityPantry = {
       age: 59,
       role: 'cuoca e proprietaria',
       placeId: 'trattoria-ai-cascinari',
-      personality: ['motherly', 'passionate-about-food', 'traditional'],
+      personality: ['motherly', 'passionate-about-food'],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm Sicilian woman with apron, wooden spoon in hand, caring expression, traditional style, minimal watercolor wash in warm kitchen tones, loving details',
     },
     {
@@ -538,7 +538,7 @@ export const palermo: CityPantry = {
       age: 41,
       role: 'guida turistica',
       placeId: 'teatro-massimo',
-      personality: ['knowledgeable', 'theatrical', 'passionate-about-culture'],
+      personality: ['local', 'theatrical', 'passionate-about-culture'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant Sicilian woman with expressive hands, cultured appearance, speaking gestures, professional attire, minimal watercolor wash in operatic golds, dramatic rendering',
     },
     {
@@ -588,7 +588,7 @@ export const palermo: CityPantry = {
       age: 54,
       role: 'fotografo',
       placeId: 'quattro-canti',
-      personality: ['patient', 'artistic', 'storyteller'],
+      personality: ['patient', 'artistic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a photographer with camera around neck, observant eyes, casual professional style, capturing moments, minimal watercolor wash in photo gray tones, detailed work. The subject is a man.',
     },
     {
@@ -598,7 +598,7 @@ export const palermo: CityPantry = {
       age: 39,
       role: 'sommelier',
       placeId: 'enoteca-picone',
-      personality: ['knowledgeable', 'passionate', 'discerning'],
+      personality: ['local', 'passionate', 'discerning'],
       portraitPrompt: 'Pen and ink portrait on white paper of a refined Sicilian sommelier with wine in hand, sophisticated appearance, expert expression, professional attire, minimal watercolor wash in wine tones, elegant lines. The subject is a man.',
     },
     {
@@ -628,7 +628,7 @@ export const palermo: CityPantry = {
       age: 49,
       role: 'farmacista',
       placeId: 'farmacia-centrale',
-      personality: ['professional', 'caring', 'knowledgeable'],
+      personality: ['professional', 'caring', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a professional pharmacist with white coat, reassuring expression, competent demeanor, medical setting, minimal watercolor wash in clinical whites, precise rendering. The subject is a woman.',
     },
     {
@@ -668,7 +668,7 @@ export const palermo: CityPantry = {
       age: 35,
       role: 'curatrice museale',
       placeId: 'palazzo-abatellis',
-      personality: ['knowledgeable', 'preservation-focused', 'educational'],
+      personality: ['local', 'preservation-focused'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young curator with elegant style, intelligent eyes, professional attire, surrounded by art, minimal watercolor wash in gallery tones, refined details. The subject is a woman.',
     },
   ],

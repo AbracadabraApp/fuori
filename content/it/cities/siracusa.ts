@@ -317,7 +317,7 @@ export const siracusa: CityPantry = {
       age: 67,
       role: 'barista',
       placeId: 'bar-apollo',
-      personality: ['philosophical', 'patient', 'traditional'],
+      personality: ['philosophical', 'patient'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly man with deeply lined face, white mustache, kind eyes behind reading glasses, minimal watercolor wash of weathered skin and silver hair, dignified expression, wise and gentle, white background',
     },
     {
@@ -337,7 +337,7 @@ export const siracusa: CityPantry = {
       age: 41,
       role: 'pasticciere',
       placeId: 'pasticceria-santa-lucia',
-      personality: ['perfectionist', 'artistic', 'meticulous'],
+      personality: ['artistic', 'meticulous'],
       portraitPrompt: 'Pen and ink portrait on white paper of a refined man with carefully trimmed beard, focused expression, chef\'s whites, minimal watercolor wash of light olive skin and dark eyes, artistic fingers, concentrated and precise, white background',
     },
     {
@@ -357,7 +357,7 @@ export const siracusa: CityPantry = {
       age: 35,
       role: 'venditrice',
       placeId: 'mercato-acradina',
-      personality: ['knowledgeable', 'friendly', 'local'],
+      personality: ['local', 'friendly'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young woman with practical ponytail, bright eyes, ready smile, work apron, minimal watercolor wash of fresh complexion and dark hair, energetic and approachable, white background',
     },
     {
@@ -377,7 +377,7 @@ export const siracusa: CityPantry = {
       age: 44,
       role: 'chef',
       placeId: 'ristorante-dioniso',
-      personality: ['passionate', 'traditional', 'demanding'],
+      personality: ['passionate', 'demanding'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man with graying temples, intense dark eyes, chef\'s jacket, minimal watercolor wash of Mediterranean complexion, determined expression, culinary artist, white background',
     },
     {
@@ -407,7 +407,7 @@ export const siracusa: CityPantry = {
       age: 55,
       role: 'oste',
       placeId: 'osteria-siciliana',
-      personality: ['storyteller', 'welcoming', 'wine-lover'],
+      personality: ['welcoming', 'wine-lover'],
       portraitPrompt: 'Pen and ink portrait on white paper of a jovial man with generous belly, merry eyes, vest over shirt, minimal watercolor wash of ruddy cheeks and graying hair, glass of wine suggested, convivial and warm, white background',
     },
     {
@@ -467,7 +467,7 @@ export const siracusa: CityPantry = {
       age: 39,
       role: 'enotecario',
       placeId: 'enoteca-bacco',
-      personality: ['sophisticated', 'knowledgeable', 'discerning'],
+      personality: ['sophisticated', 'local', 'discerning'],
       portraitPrompt: 'Pen and ink portrait on white paper of a refined man with neat beard, wine-stained apron over button-down, minimal watercolor wash of intelligent eyes and cultured expression, wine glass suggested, connoisseur, white background',
     },
     {
@@ -517,7 +517,7 @@ export const siracusa: CityPantry = {
       age: 64,
       role: 'storico',
       placeId: 'antica-giudecca',
-      personality: ['scholarly', 'preservationist', 'storyteller'],
+      personality: ['scholarly', 'preservationist'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished historian with thoughtful eyes, slight stoop from study, minimal watercolor wash of intellectual face and gray beard, ancient knowledge, passionate keeper of memory, white background',
     },
     {
@@ -527,7 +527,7 @@ export const siracusa: CityPantry = {
       age: 58,
       role: 'artigiano',
       placeId: 'laboratorio-papiro',
-      personality: ['traditional', 'skilled', 'patient teacher'],
+      personality: ['skilled', 'patient teacher'],
       portraitPrompt: 'Pen and ink portrait on white paper of a craftsman with work-worn hands, concentration in eyes, artisan apron, minimal watercolor wash of weathered face, ancient craft in expression, dedicated and masterful, white background. The subject is a man.',
     },
     {
@@ -547,7 +547,7 @@ export const siracusa: CityPantry = {
       age: 42,
       role: 'ceramista',
       placeId: 'bottega-ceramica',
-      personality: ['artistic', 'traditional', 'colorful'],
+      personality: ['artistic', 'colorful'],
       portraitPrompt: 'Pen and ink portrait on white paper of an artist with paint-stained fingers, creative eyes, colorful scarf, minimal watercolor wash of expressive face and paint smudges, Sicilian patterns suggested, vibrant and skilled, white background. The subject is a woman.',
     },
     {

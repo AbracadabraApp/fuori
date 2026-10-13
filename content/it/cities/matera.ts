@@ -325,7 +325,7 @@ export const matera: CityPantry = {
       age: 61,
       role: 'fornaia',
       placeId: 'panificio-del-sasso',
-      personality: ['nurturing', 'traditional', 'early riser'],
+      personality: ['nurturing', 'early riser'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly Italian woman with hair in bun, flour-dusted apron, warm smile lines, strong hands, minimal wheat-tone watercolor wash, white background, maternal gentle expression, detailed rendering',
     },
     {
@@ -335,7 +335,7 @@ export const matera: CityPantry = {
       age: 38,
       role: 'fornaio',
       placeId: 'forno-antico',
-      personality: ['jovial', 'hardworking', 'storyteller'],
+      personality: ['jovial', 'hardworking'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sturdy Italian man with thick dark hair, cheerful expression, baker\'s whites, flour on cheek, minimal warm watercolor wash, white background, friendly open face, expressive pen strokes',
     },
     {
@@ -355,7 +355,7 @@ export const matera: CityPantry = {
       age: 67,
       role: 'negoziante',
       placeId: 'bottega-sassi',
-      personality: ['knowledgeable', 'patient', 'guardian of traditions'],
+      personality: ['local', 'patient', 'guardian of traditions'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly Italian man with weathered face, wise eyes, cap, vest over shirt, minimal olive-tone watercolor wash, white background, dignified peaceful expression, careful detail work',
     },
     {
@@ -385,7 +385,7 @@ export const matera: CityPantry = {
       age: 34,
       role: 'chef',
       placeId: 'ristorante-soul',
-      personality: ['innovative', 'ambitious', 'perfectionist'],
+      personality: ['innovative', 'ambitious'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young Italian chef with intense gaze, modern chef jacket, trimmed beard, minimal cool watercolor wash, white background, creative determined expression, sharp pen detail',
     },
     {
@@ -435,7 +435,7 @@ export const matera: CityPantry = {
       age: 47,
       role: 'guida museale',
       placeId: 'casa-grotta',
-      personality: ['educational', 'detail-oriented', 'preservationist'],
+      personality: ['detail-oriented', 'preservationist'],
       portraitPrompt: 'Pen and ink portrait on white paper of a middle-aged Italian woman with glasses, professional attire, museum badge, minimal watercolor wash, white background, intelligent engaged expression, precise pen detail',
     },
     {
@@ -475,7 +475,7 @@ export const matera: CityPantry = {
       age: 41,
       role: 'sommelier',
       placeId: 'enoteca-lucania',
-      personality: ['knowledgeable', 'passionate', 'discerning'],
+      personality: ['local', 'passionate', 'discerning'],
       portraitPrompt: 'Pen and ink portrait on white paper of an Italian man with refined features, holding wine glass, vest and tie, minimal burgundy watercolor wash, white background, sophisticated appreciative expression, elegant pen lines',
     },
     {
@@ -565,7 +565,7 @@ export const matera: CityPantry = {
       age: 32,
       role: 'gelataio',
       placeId: 'gelateria-artigiana',
-      personality: ['cheerful', 'perfectionist', 'flavor innovator'],
+      personality: ['cheerful', 'flavor innovator'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young Italian man with gelato scoop, white uniform, happy expression, minimal cool pastel watercolor wash, white background, joyful creative character, sweet pen work',
     },
     {

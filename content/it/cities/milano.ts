@@ -365,7 +365,7 @@ export const milano: CityPantry = {
       age: 42,
       role: 'pasticciera',
       placeId: 'pasticceria-marchesi',
-      personality: ['meticulous', 'elegant', 'traditional'],
+      personality: ['meticulous', 'elegant'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sophisticated woman in her 40s with hair in an elegant chignon, wearing a pristine white chef\'s jacket, subtle makeup, knowing smile, minimal watercolor wash in mint green and gold tones, detailed linework, refined professional presence',
     },
     {
@@ -405,7 +405,7 @@ export const milano: CityPantry = {
       age: 35,
       role: 'pasticciere',
       placeId: 'pasticceria-sant-ambrogio',
-      personality: ['ambitious', 'perfectionist', 'charming'],
+      personality: ['ambitious', 'charming'],
       portraitPrompt: 'Pen and ink portrait on white paper of a handsome man in mid-30s with styled dark hair, well-groomed beard, wearing chef\'s whites, intense focused expression, minimal watercolor wash in pink and gold tones, polished professional appearance',
     },
     {
@@ -445,7 +445,7 @@ export const milano: CityPantry = {
       age: 38,
       role: 'responsabile',
       placeId: 'pasticceria-cucchi',
-      personality: ['refined', 'knowledgeable', 'gracious'],
+      personality: ['refined', 'local', 'gracious'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman in her late 30s with classic updo, pearl earrings, sophisticated dress, poised expression, minimal watercolor wash in soft pink and cream tones, timeless Milanese elegance',
     },
     {
@@ -465,7 +465,7 @@ export const milano: CityPantry = {
       age: 60,
       role: 'fornaio',
       placeId: 'forno-navigli',
-      personality: ['traditional', 'generous', 'early-riser'],
+      personality: ['generous', 'early-riser'],
       portraitPrompt: 'Pen and ink portrait on white paper of a stocky man in his 60s with weathered hands, simple white baker\'s clothing, warm grandfatherly smile, minimal watercolor wash in terracotta and cream tones, lifetime of bread-making in his eyes',
     },
     {
@@ -515,7 +515,7 @@ export const milano: CityPantry = {
       age: 63,
       role: 'venditore',
       placeId: 'mercatino-navigli',
-      personality: ['eccentric', 'storyteller', 'collector'],
+      personality: ['eccentric', 'collector'],
       portraitPrompt: 'Pen and ink portrait on white paper of a weathered man in his 60s with wild gray hair, vintage vest, interesting rings, twinkling eyes, minimal watercolor wash in earthy antique tones, bohemian character',
     },
     {
@@ -565,7 +565,7 @@ export const milano: CityPantry = {
       age: 51,
       role: 'responsabile di reparto',
       placeId: 'peck',
-      personality: ['refined', 'knowledgeable', 'discerning'],
+      personality: ['refined', 'local', 'discerning'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in his 50s with impeccable grooming, suit and tie, refined features, expert expression, minimal watercolor wash in rich gourmet tones, culinary connoisseur',
     },
     {
@@ -665,7 +665,7 @@ export const milano: CityPantry = {
       age: 48,
       role: 'sommelier',
       placeId: 'enoteca-brera',
-      personality: ['sophisticated', 'knowledgeable', 'conversational'],
+      personality: ['sophisticated', 'local', 'conversational'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in late 40s with salt-pepper hair, holding wine glass, expert expression, minimal watercolor wash in wine burgundy and amber tones, oenophile authority',
     },
     {
@@ -725,7 +725,7 @@ export const milano: CityPantry = {
       age: 40,
       role: 'stilista',
       placeId: 'atelier-moda',
-      personality: ['stylish', 'perfectionist', 'visionary'],
+      personality: ['stylish', 'visionary'],
       portraitPrompt: 'Pen and ink portrait on white paper of a chic woman in her 40s with fashionable attire, measuring tape around neck, fabric swatch in hand, creative intensity, minimal watercolor wash in fashion tones, Milan style authority',
     },
   ],
