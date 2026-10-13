@@ -621,33 +621,35 @@ export function ConversationScreen({
     <div className={styles.screen}>
       {/* Compact header */}
       <button type="button" onClick={onBack} className={styles.back}>
-        <span className={styles.backArrow} aria-hidden="true">‹</span>
+        <span className={styles.backArrow} aria-hidden="true">←</span>
         <span className={styles.backCity}>{cityName}</span>
       </button>
 
-      <div className={styles.nameLine}>
-        <span className={styles.name}>{characterName}</span>
-        {role && <span className={styles.role}> · {role}</span>}
-      </div>
-
-      {/* Portrait fills the stage; text floats over it from mid-screen */}
+      {/* Portrait with the name and role underneath, like a Polaroid caption.
+          The figure is as big as the stage allows; text floats over it from mid-screen. */}
       <div className={styles.stage}>
-        {characterPortrait && !portraitFailed ? (
-          // next/image serves a resized, modern-format copy sized to the screen
-          <div className={styles.portraitFrame}>
-            <Image
-              src={characterPortrait}
-              alt={characterName}
-              fill
-              priority
-              sizes="(max-width: 600px) 100vw, 600px"
-              className={styles.portrait}
-              onError={() => setPortraitFailed(true)}
-            />
-          </div>
-        ) : (
-          <div className={styles.portraitPlaceholder}>👤</div>
-        )}
+        <figure className={styles.figure}>
+          {characterPortrait && !portraitFailed ? (
+            // next/image serves a resized, modern-format copy sized to the screen
+            <div className={styles.portraitFrame}>
+              <Image
+                src={characterPortrait}
+                alt={characterName}
+                fill
+                priority
+                sizes="(max-width: 600px) 100vw, 600px"
+                className={styles.portrait}
+                onError={() => setPortraitFailed(true)}
+              />
+            </div>
+          ) : (
+            <div className={styles.portraitPlaceholder}>👤</div>
+          )}
+          <figcaption className={styles.nameLine}>
+            <span className={styles.name}>{characterName}</span>
+            {role && <span className={styles.role}>, {role}</span>}
+          </figcaption>
+        </figure>
       </div>
 
       {(showReply || error || voiceFallback || debug) && (

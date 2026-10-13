@@ -651,3 +651,7 @@ Individual characters with cleaned traits:
 ## 2026-10-12: Open question, person screen layout (cloud session)
 
 - Josh saw Marco Bartoli (Assisi) with the Oct 10 layout: "← Assisi", name under the portrait ("**Marco Bartoli**, Barista"), teal button `#2c5f4f`. Main and both live sites show the Oct 11 layout (`95a8384`: one "Name · Role" line above the portrait, olive button). The source of the old page isn't known yet (not the live Railway sites; fuori.vercel.app is a 404). Josh: fix later. Options then: find the stale copy, or bring the caption back on purpose (see the parked "Name as a Polaroid caption" idea in docs/ideas.md; subtitles would cover it).
+
+## 2026-10-12: Name under the portrait, bigger header (cloud session)
+
+- Josh: "the person name and role should go under the portrait", and the navigation and name fonts were too small. The person screen now shows the portrait (2:3, as large as fits) with "**Name**, Role" under it at 24px; back link "← City" at 24px, as on Oct 10. The figure sizes itself with container query units so the caption always fits above the mic. Subtitles still rise from mid-screen and can cover the caption during a conversation (the trade-off in docs/ideas.md, now decided by Josh). Applies to Italy and Mexico.
