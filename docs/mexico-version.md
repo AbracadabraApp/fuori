@@ -9,7 +9,12 @@
 - `npm run test:pack` checks every pack is complete and ids are unique across packs. Generation scripts write to `content/$COUNTRY/`.
 - Italy runs unchanged with the default `COUNTRY=it`.
 
-**Next (phase 2):** `content/es-mx/` with `language.ts` and `pack.ts`, the 10 place kinds per city in the generation script, then 5 cities, 50 places, 50 personas and 105 images.
+**Phase 2 status (2026-10-12, evening):**
+- **Done:** visual style decided (city cards each in a local style, linocut places, saturated gouache people); all five city cards approved and saved at 1200 × 1200 in `public/images/es-mx/cities/`. Content generated: `content/es-mx/cities/` has 5 cities, 50 places and 50 people. Generation settings live per country in `content/<country>/generation.json`; `generate-images.mjs` calls xAI directly and gives each non-Italian country its own image folder and manifest, so Mexican ids can't overwrite Italy's images.
+- **Images:** 5 of 5 city cards, 10 of 50 portraits (the test batch), 0 of 50 place images.
+- **Not done:** Mexico isn't a registered pack yet (no `language.ts`, `pack.ts` or `voices.ts` in `content/es-mx/`), so the app can't show it. The app still loads city cards from `/images/cities/<id>.jpg`, not the per-country folder.
+- **Next:** generate the 50 place images and 40 remaining portraits; add `language.ts`, `pack.ts` and voices; point image paths at the country folder; then phase 3 (voices and a second Railway service with `COUNTRY=es-mx`).
+- **Related, Italy:** the repeated-ids fix (`docs/duplicate-ids-fix.md`, roadmap Now #8) is written up, not applied.
 
 ## Visual style (worked out 2026-10-12, Josh with Claude, testing prompts by hand in Grok)
 

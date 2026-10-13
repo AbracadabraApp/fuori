@@ -515,3 +515,7 @@ conversations (id, learner_id, character_id, place_id, city_id, prompt_version,
 - **Not changed:** legacy M2 types in `lib/types.ts` still have `it` fields (unused); `test:roles` still says "Italian" (runs on the active pack).
 - **Next:** phase 2, `content/es-mx/`.
 - **Duplicate ids:** fix written up in `docs/duplicate-ids-fix.md` (26 ids, 70 uses, 44 renames); roadmap Now #8 points to it.
+
+## 2026-10-12: Mexico status refreshed (cloud session)
+
+- `docs/mexico-version.md` now has a phase 2 status block: style decided, 5 city cards approved, 50 places and 50 people generated; 10 of 50 portraits and 0 of 50 place images made; no `language.ts`, `pack.ts` or voices yet, so Mexico doesn't run. Next: remaining images, register the pack, per-country image paths, then phase 3.
