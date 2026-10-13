@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { PlaceCard } from './components/PlaceCard';
-import { ShowMore } from './components/ShowMore';
 import { language, cities as cityPantries, pack } from '@/content';
 import { ConversationScreen } from './components/ConversationScreen';
 import { characterForPlace } from '@/lib/characters/for-place';
@@ -17,11 +16,6 @@ export default function Home() {
   const [showTranscripts, setShowTranscripts] = useState(true);
   const [showEnglish, setShowEnglish] = useState(false);
   const [allowDialect, setAllowDialect] = useState(false);
-
-  // Feeds show 10 cards at a time; "show more" adds the next 10 below
-  const PAGE = 10;
-  const [cityCount, setCityCount] = useState(PAGE);
-  const [placeCount, setPlaceCount] = useState(PAGE);
 
   // Cities in the list: hidden ones stay in the data but aren't shown
   const shownCities = cityPantries.filter((c) => !c.hidden);
@@ -79,7 +73,7 @@ export default function Home() {
             const ordered = feedOrder({ ...cityData, places: cityData.places.filter((p) => !p.hidden) });
             return (
               <>
-                {ordered.slice(0, placeCount).map((place) => {
+                {ordered.map((place) => {
                   const character = cityData.characters?.find((ch) => ch.id === place.characterId);
                   return (
                     <PlaceCard
@@ -92,9 +86,6 @@ export default function Home() {
                     />
                   );
                 })}
-                {placeCount < ordered.length && (
-                  <ShowMore label={language.ui.showMore} onClick={() => setPlaceCount((n) => n + PAGE)} />
-                )}
               </>
             );
           })()}
@@ -128,7 +119,7 @@ export default function Home() {
 
       {/* City cards */}
       <div>
-        {shownCities.slice(0, cityCount).map((city) => (
+        {shownCities.map((city) => (
           <PlaceCard
             key={city.id}
             placeName={city.name}
@@ -137,13 +128,9 @@ export default function Home() {
             imageUrl={`${pack.images}/cities/${city.id}.jpg`}
             onTap={() => {
               setSelectedCity(city.id);
-              setPlaceCount(PAGE); // each city starts with its first 10 places
             }}
           />
         ))}
-        {cityCount < shownCities.length && (
-          <ShowMore label={language.ui.showMore} onClick={() => setCityCount((n) => n + PAGE)} />
-        )}
       </div>
 
       {/* Settings sheet overlay */}
