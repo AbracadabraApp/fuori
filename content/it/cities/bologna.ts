@@ -323,7 +323,7 @@ export const bologna: CityPantry = {
       age: 52,
       role: 'torrefattore',
       placeId: 'caffe-terzi',
-      personality: ['passionate', 'precise', 'local'],
+      personality: ['local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished middle-aged man with salt-and-pepper hair, strong features, wearing apron over button-down shirt, holding coffee cup, slight smile showing pride in craft, minimal sepia watercolor wash for warmth, detailed cross-hatching, capturing dedication of master roaster',
     },
     {
@@ -393,7 +393,7 @@ export const bologna: CityPantry = {
       age: 48,
       role: 'casaro',
       placeId: 'mercatino-santo-stefano',
-      personality: ['artisanal', 'patient', 'proud'],
+      personality: ['artisanal', 'proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of lean man with gentle features, wearing work coat, holding wheel of Parmigiano, thoughtful expression, minimal golden watercolor wash, detailed cross-hatching, showing dedication to traditional craft',
     },
     {
@@ -403,7 +403,7 @@ export const bologna: CityPantry = {
       age: 44,
       role: 'chef',
       placeId: 'ristorante-pappagallo',
-      personality: ['refined', 'demanding', 'creative'],
+      personality: ['refined', 'creative'],
       portraitPrompt: 'Pen and ink portrait on white paper of distinguished chef with sharp features, chef whites impeccable, tasting spoon in hand, intense focused expression, minimal burgundy watercolor accent, fine detailed work, capturing excellence of high-end chef. The subject is a man.',
     },
     {
@@ -443,7 +443,7 @@ export const bologna: CityPantry = {
       age: 68,
       role: 'storico',
       placeId: 'due-torri',
-      personality: ['scholarly', 'passionate', 'eloquent'],
+      personality: [],
       portraitPrompt: 'Pen and ink portrait on white paper of distinguished elderly academic with white beard, glasses, wearing tweed jacket, gesturing while explaining, animated scholarly expression, minimal sepia wash, detailed refined line work, showing learned guide',
     },
     {
@@ -453,7 +453,7 @@ export const bologna: CityPantry = {
       age: 59,
       role: 'sacerdote',
       placeId: 'santo-stefano',
-      personality: ['contemplative', 'gentle', 'learned'],
+      personality: ['contemplative', 'gentle'],
       portraitPrompt: 'Pen and ink portrait on white paper of priest with kind face, clerical collar, serene expression, hands folded, wise eyes, minimal gray watercolor wash, soft careful line work, capturing peaceful spiritual presence',
     },
     {
@@ -463,7 +463,7 @@ export const bologna: CityPantry = {
       age: 64,
       role: 'custode della chiesa',
       placeId: 'san-petronio',
-      personality: ['devoted', 'observant', 'protective'],
+      personality: ['devoted', 'protective'],
       portraitPrompt: 'Pen and ink portrait on white paper of dignified woman with hair covered, simple dark clothing, holding keys, watchful caring eyes, peaceful expression, minimal stone gray watercolor, precise line work, showing guardian of sacred space',
     },
     {
@@ -473,7 +473,7 @@ export const bologna: CityPantry = {
       age: 53,
       role: 'giardiniere',
       placeId: 'giardini-margherita',
-      personality: ['patient', 'outdoorsy', 'contented'],
+      personality: ['outdoorsy', 'contented'],
       portraitPrompt: 'Pen and ink portrait on white paper of weathered man with sun-lined face, work clothes, holding pruning shears, peaceful smile, connected to nature, minimal green watercolor wash, earthy line work, showing dedication to green spaces',
     },
     {
@@ -493,7 +493,7 @@ export const bologna: CityPantry = {
       age: 22,
       role: 'studentessa',
       placeId: 'piazza-verdi',
-      personality: ['studious', 'social', 'idealistic'],
+      personality: ['social', 'idealistic'],
       portraitPrompt: 'Pen and ink portrait on white paper of young woman with long hair, intelligent eyes, casual student style, holding books, bright engaged expression, minimal blue watercolor accent, fresh clean line work, capturing university life energy',
     },
     {
@@ -503,7 +503,7 @@ export const bologna: CityPantry = {
       age: 37,
       role: 'sommelier',
       placeId: 'enoteca-italiana',
-      personality: ['local', 'sophisticated', 'passionate'],
+      personality: ['local', 'sophisticated'],
       portraitPrompt: 'Pen and ink portrait on white paper of refined man in smart casual attire, holding wine glass to light, discerning expression, sommelier pin visible, minimal burgundy watercolor wash, elegant line work, showing wine expertise',
     },
     {
@@ -523,7 +523,7 @@ export const bologna: CityPantry = {
       age: 33,
       role: 'libraia',
       placeId: 'libreria-nanni',
-      personality: ['literary', 'helpful', 'curious'],
+      personality: ['literary', 'helpful'],
       portraitPrompt: 'Pen and ink portrait on white paper of young woman with glasses, intelligent kind face, holding book, thoughtful expression, surrounded by literary atmosphere, minimal warm watercolor wash, delicate line work, showing book lover dedication',
     },
     {
@@ -533,7 +533,7 @@ export const bologna: CityPantry = {
       age: 61,
       role: 'salumiere',
       placeId: 'salumeria-simoni',
-      personality: ['proud', 'expert'],
+      personality: ['proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of solid man in striped apron, holding mortadella slicer, confident craftsman expression, mustache, minimal pink and gold watercolor for meats, strong bold strokes, capturing master salumiere',
     },
     {
@@ -563,7 +563,7 @@ export const bologna: CityPantry = {
       age: 47,
       role: 'farmacista',
       placeId: 'farmacia-comunale',
-      personality: ['professional', 'caring', 'precise'],
+      personality: ['professional', 'caring'],
       portraitPrompt: 'Pen and ink portrait on white paper of professional woman with pulled-back hair, white coat, compassionate but competent expression, holding prescription, minimal clinical watercolor wash, clean precise lines, showing trusted healthcare provider',
     },
     {
@@ -593,7 +593,7 @@ export const bologna: CityPantry = {
       age: 74,
       role: 'sfoglina',
       placeId: 'sfoglia-rina',
-      personality: ['masterful', 'exacting', 'loving'],
+      personality: ['masterful', 'loving'],
       portraitPrompt: 'Pen and ink portrait on white paper of elderly woman with weathered hands, flour-dusted apron, hair in traditional style, holding rolling pin, wise experienced expression, minimal golden watercolor for pasta, detailed reverent line work, showing pasta-making mastery',
     },
     {
@@ -603,7 +603,7 @@ export const bologna: CityPantry = {
       age: 65,
       role: 'bibliotecario',
       placeId: 'archiginnasio',
-      personality: ['erudite', 'meticulous', 'dignified'],
+      personality: ['dignified'],
       portraitPrompt: 'Pen and ink portrait on white paper of distinguished scholar with gray hair, glasses, formal academic attire, holding ancient book, intellectual authoritative expression, minimal sepia watercolor wash, refined scholarly line work, capturing academic tradition. The subject is a man.',
     },
     {

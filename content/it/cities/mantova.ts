@@ -357,7 +357,7 @@ export const mantova: CityPantry = {
       age: 29,
       role: 'barista',
       placeId: 'bar-delle-erbe',
-      personality: ['energetic', 'observant', 'social'],
+      personality: ['energetic', 'social'],
       portraitPrompt: 'Pen and ink portrait on white paper of a vibrant young woman with expressive eyes, hair pulled back, friendly smile. Observant gaze watching the piazza. Minimal watercolor wash in warm coffee tones, detailed linework capturing spirited barista personality.',
     },
     {
@@ -427,7 +427,7 @@ export const mantova: CityPantry = {
       age: 31,
       role: 'barista',
       placeId: 'bar-gonzaga',
-      personality: ['professional', 'efficient', 'quality-focused'],
+      personality: ['professional', 'efficient'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young professional with neat appearance, focused expression, modern sensibility. Precise demeanor. Minimal watercolor wash in clean tones, detailed contemporary barista character. The subject is a man.',
     },
     {
@@ -507,7 +507,7 @@ export const mantova: CityPantry = {
       age: 55,
       role: 'chef',
       placeId: 'ristorante-cigno',
-      personality: ['refined', 'exacting'],
+      personality: ['refined'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with serious expression, classical training evident, culinary pride. Master of tradition. Minimal watercolor wash in burgundy tones, detailed fine dining chef. The subject is a man.',
     },
     {
@@ -517,7 +517,7 @@ export const mantova: CityPantry = {
       age: 59,
       role: 'cuoca',
       placeId: 'trattoria-martini',
-      personality: ['maternal', 'passionate'],
+      personality: ['maternal'],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm cook with flour on hands, generations of recipes in memory, feeding people joy. Nonna energy. Minimal watercolor wash in warm reds, detailed traditional cook character.',
     },
     {
@@ -547,7 +547,7 @@ export const mantova: CityPantry = {
       age: 39,
       role: 'proprietaria',
       placeId: 'gastronomia-gonzaga',
-      personality: ['efficient', 'quality-focused', 'modern'],
+      personality: ['efficient', 'modern'],
       portraitPrompt: 'Pen and ink portrait on white paper of a professional food shop owner with organized manner, contemporary approach, excellent taste. Modern gastronoma. Minimal watercolor wash in fresh tones, detailed shop owner. The subject is a woman.',
     },
     {
@@ -557,7 +557,7 @@ export const mantova: CityPantry = {
       age: 43,
       role: 'guida turistica',
       placeId: 'palazzo-ducale',
-      personality: ['erudite', 'passionate', 'eloquent'],
+      personality: [],
       portraitPrompt: 'Pen and ink portrait on white paper of a knowledgeable guide with animated expression, love of history evident, storytelling gift. Renaissance scholar energy. Minimal watercolor wash in heritage tones, detailed guide character. The subject is a man.',
     },
     {
@@ -567,7 +567,7 @@ export const mantova: CityPantry = {
       age: 36,
       role: 'storica dell\'arte',
       placeId: 'palazzo-te',
-      personality: ['scholarly', 'enthusiastic', 'detail-oriented'],
+      personality: ['enthusiastic', 'detail-oriented'],
       portraitPrompt: 'Pen and ink portrait on white paper of an art historian with intelligent eyes, Renaissance passion, interpretive skill. Academic grace. Minimal watercolor wash in soft pinks, detailed scholar character. The subject is a woman.',
     },
     {
@@ -577,7 +577,7 @@ export const mantova: CityPantry = {
       age: 68,
       role: 'parroco',
       placeId: 'duomo-mantova',
-      personality: ['serene', 'wise', 'community-caring'],
+      personality: ['serene', 'community-caring'],
       portraitPrompt: 'Pen and ink portrait on white paper of a gentle priest with kind eyes, decades of service, spiritual presence. Pastoral wisdom. Minimal watercolor wash in soft grays, detailed parish priest character.',
     },
     {
@@ -597,7 +597,7 @@ export const mantova: CityPantry = {
       age: 50,
       role: 'giardiniere',
       placeId: 'parco-te',
-      personality: ['patient', 'nature-loving', 'seasonal'],
+      personality: ['nature-loving', 'seasonal'],
       portraitPrompt: 'Pen and ink portrait on white paper of a gardener with earth-touched hands, connection to plants, outdoor life written in face. Green thumb. Minimal watercolor wash in garden greens, detailed gardener character. The subject is a man.',
     },
     {
@@ -617,7 +617,7 @@ export const mantova: CityPantry = {
       age: 42,
       role: 'sommelier',
       placeId: 'enoteca-cortile',
-      personality: ['refined', 'passionate'],
+      personality: ['refined'],
       portraitPrompt: 'Pen and ink portrait on white paper of a knowledgeable sommelier with wine glass, refined palate, teaching joy. Wine expertise. Minimal watercolor wash in burgundy, detailed wine professional character. The subject is a man.',
     },
     {
@@ -657,7 +657,7 @@ export const mantova: CityPantry = {
       age: 52,
       role: 'bigliettaio',
       placeId: 'stazione-mantova',
-      personality: ['helpful', 'patient', 'local'],
+      personality: ['helpful', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a station worker with uniform, decades of travelers helped, connection point. Transportation wisdom. Minimal watercolor wash in railway blues, detailed station character. The subject is a man.',
     },
     {

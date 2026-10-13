@@ -276,7 +276,7 @@ export const siena: CityPantry = {
       age: 42,
       role: 'proprietario',
       placeId: 'caffe-fiorella',
-      personality: ['passionate', 'welcoming', 'proud'],
+      personality: ['welcoming', 'proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of a middle-aged Italian man with warm smile, salt-and-pepper hair swept back, laugh lines around eyes, wearing crisp white shirt, minimal watercolor wash in warm sepia tones, detailed crosshatching, personal and genuine.',
     },
     {
@@ -286,7 +286,7 @@ export const siena: CityPantry = {
       age: 28,
       role: 'barista',
       placeId: 'bar-il-palio',
-      personality: ['energetic', 'chatty', 'loyal-to-her-contrada'],
+      personality: ['energetic', 'loyal-to-her-contrada'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young woman with bright eyes, dark hair in ponytail, friendly smile, wearing black apron, minimal watercolor wash in soft peachy tones, confident expression, detailed linework.',
     },
     {
@@ -306,7 +306,7 @@ export const siena: CityPantry = {
       age: 38,
       role: 'pasticciera',
       placeId: 'pasticceria-bini',
-      personality: ['meticulous', 'sweet', 'artistic'],
+      personality: ['sweet', 'artistic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a woman with flour-dusted apron, gentle smile, hair in neat bun, delicate hands, minimal watercolor wash in soft powdery pinks, warm and nurturing expression, fine detailed linework.',
     },
     {
@@ -346,7 +346,7 @@ export const siena: CityPantry = {
       age: 44,
       role: 'proprietario',
       placeId: 'bottega-del-gusto',
-      personality: ['passionate-about-food', 'particular'],
+      personality: ['particular'],
       portraitPrompt: 'Pen and ink portrait on white paper of a slim man with expressive hands, intense eyes, salt-and-pepper beard, wearing apron over dress shirt, minimal watercolor wash in rich burgundy, knowledgeable and enthusiastic.',
     },
     {
@@ -356,7 +356,7 @@ export const siena: CityPantry = {
       age: 35,
       role: 'chef',
       placeId: 'osteria-le-logge',
-      personality: ['creative', 'precise', 'ambitious'],
+      personality: ['creative', 'ambitious'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with sharp features, hair tied back, chef whites, determined expression, minimal watercolor wash in soft sienna, confident and talented demeanor.',
     },
     {
@@ -366,7 +366,7 @@ export const siena: CityPantry = {
       age: 68,
       role: 'proprietario',
       placeId: 'trattoria-papei',
-      personality: ['wise', 'humorous', 'grandfatherly'],
+      personality: ['humorous', 'grandfatherly'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly man with kind wrinkles, twinkling eyes, white hair, comfortable old cardigan, minimal watercolor wash in warm ochre, welcoming and beloved expression.',
     },
     {
@@ -396,7 +396,7 @@ export const siena: CityPantry = {
       age: 71,
       role: 'sacerdote',
       placeId: 'duomo-siena',
-      personality: ['serene', 'learned', 'gentle'],
+      personality: ['serene', 'gentle'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly priest with peaceful expression, wire-rimmed glasses, clerical collar, wise eyes, minimal watercolor wash in soft grey-blue, spiritual and compassionate.',
     },
     {
@@ -416,7 +416,7 @@ export const siena: CityPantry = {
       age: 33,
       role: 'guida turistica',
       placeId: 'piazza-del-campo',
-      personality: ['articulate', 'proud-senese', 'engaging'],
+      personality: ['proud-senese', 'engaging'],
       portraitPrompt: 'Pen and ink portrait on white paper of a handsome young man with animated expression, gesturing hands, casual but neat clothing, bright eyes, minimal watercolor wash in warm terracotta, passionate and articulate.',
     },
     {
@@ -426,7 +426,7 @@ export const siena: CityPantry = {
       age: 26,
       role: 'studentessa',
       placeId: 'piazza-salimbeni',
-      personality: ['studious', 'thoughtful', 'romantic'],
+      personality: ['thoughtful', 'romantic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young woman with book under arm, thoughtful gaze, flowing hair, simple scarf, minimal watercolor wash in soft lavender, intellectual and dreamy expression.',
     },
     {
@@ -436,7 +436,7 @@ export const siena: CityPantry = {
       age: 45,
       role: 'custode',
       placeId: 'torre-del-mangia',
-      personality: ['fit', 'informative', 'patient'],
+      personality: ['fit'],
       portraitPrompt: 'Pen and ink portrait on white paper of a lean athletic man with weathered face from sun, knowing smile, casual uniform, minimal watercolor wash in warm stone colors, steady and reliable expression.',
     },
     {
@@ -446,7 +446,7 @@ export const siena: CityPantry = {
       age: 64,
       role: 'giardiniera',
       placeId: 'orto-de-pecci',
-      personality: ['local', 'patient', 'green-thumbed'],
+      personality: ['local', 'green-thumbed'],
       portraitPrompt: 'Pen and ink portrait on white paper of an older woman with sun hat, gentle smile, gardening gloves tucked in pocket, earth under nails, minimal watercolor wash in soft green tones, nurturing and wise.',
     },
     {
@@ -456,7 +456,7 @@ export const siena: CityPantry = {
       age: 50,
       role: 'sommelier',
       placeId: 'enoteca-italiana',
-      personality: ['expert', 'discerning', 'generous'],
+      personality: ['discerning', 'generous'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man with subtle smile, holding wine glass to light, refined features, minimal watercolor wash in deep burgundy, knowledgeable and sophisticated.',
     },
     {
@@ -486,7 +486,7 @@ export const siena: CityPantry = {
       age: 56,
       role: 'artigiano',
       placeId: 'bottega-del-palio',
-      personality: ['proud', 'meticulous'],
+      personality: ['proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of a craftsman with skillful hands, concentrated expression, wearing contrada scarf, graying hair, minimal watercolor wash in silk banner colors, dedicated and authentic. The subject is a man.',
     },
     {
@@ -496,7 +496,7 @@ export const siena: CityPantry = {
       age: 48,
       role: 'farmacista',
       placeId: 'farmacia-centrale',
-      personality: ['professional', 'caring', 'precise'],
+      personality: ['professional', 'caring'],
       portraitPrompt: 'Pen and ink portrait on white paper of a professional woman with neat hair, white coat, gentle but competent expression, minimal watercolor wash in clean whites and soft blue, trustworthy and knowledgeable.',
     },
     {
@@ -536,7 +536,7 @@ export const siena: CityPantry = {
       age: 37,
       role: 'custode',
       placeId: 'fortezza-medicea',
-      personality: ['history-buff', 'serious', 'informative'],
+      personality: ['history-buff', 'serious'],
       portraitPrompt: 'Pen and ink portrait on white paper of a serious man with strong features, neat uniform, attentive eyes, minimal watercolor wash in stone grey tones, authoritative and knowledgeable.',
     },
     {

@@ -377,7 +377,7 @@ export const orvieto: CityPantry = {
       age: 67,
       role: 'proprietario',
       placeId: 'caffe-sant-angelo',
-      personality: ['gruff', 'loyal', 'observant'],
+      personality: ['gruff', 'loyal'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly man with weathered face, deep-set eyes, thick eyebrows, wearing a cardigan, serious but kind expression, minimal gray watercolor wash, hands folded, detailed wrinkles telling stories',
     },
     {
@@ -387,7 +387,7 @@ export const orvieto: CityPantry = {
       age: 35,
       role: 'barista',
       placeId: 'bar-centrale',
-      personality: ['chatty', 'warm', 'gossip'],
+      personality: ['warm'],
       portraitPrompt: 'Pen and ink portrait on white paper of a vivacious woman with curly hair pulled back, expressive face mid-laugh, colorful scarf, animated gestures suggested, minimal coral watercolor wash, warm personality radiating, detailed smile lines',
     },
     {
@@ -417,7 +417,7 @@ export const orvieto: CityPantry = {
       age: 33,
       role: 'barista',
       placeId: 'caffe-cavour',
-      personality: ['artistic', 'passionate', 'meticulous'],
+      personality: ['artistic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young man with artistic bearing, thoughtful expression, gentle eyes, casual elegance, minimal indigo watercolor wash, creative spirit visible, detailed sensitive features',
     },
     {
@@ -447,7 +447,7 @@ export const orvieto: CityPantry = {
       age: 55,
       role: 'pasticciere',
       placeId: 'pasticceria-adriano',
-      personality: ['precise', 'artistic', 'demanding'],
+      personality: ['artistic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished pastry chef with serious expression, chef whites, focused intense eyes, minimal vanilla watercolor wash, artistic temperament visible, detailed precise features showing concentration. The subject is a man.',
     },
     {
@@ -527,7 +527,7 @@ export const orvieto: CityPantry = {
       age: 45,
       role: 'negoziante',
       placeId: 'bottega-sapori-umbri',
-      personality: ['local', 'passionate'],
+      personality: ['local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a enthusiastic man gesturing while explaining, intelligent eyes, casual elegance, minimal wine-red watercolor wash, love of regional products evident, detailed animated expression',
     },
     {
@@ -587,7 +587,7 @@ export const orvieto: CityPantry = {
       age: 64,
       role: 'sacerdote',
       placeId: 'duomo-orvieto',
-      personality: ['learned', 'gentle', 'art-lover'],
+      personality: ['gentle', 'art-lover'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished priest with kind eyes, clerical collar, intellectual bearing, peaceful expression, minimal gold watercolor wash, spiritual depth, detailed contemplative face',
     },
     {
@@ -597,7 +597,7 @@ export const orvieto: CityPantry = {
       age: 28,
       role: 'guida turistica',
       placeId: 'pozzo-san-patrizio',
-      personality: ['enthusiastic', 'local', 'dramatic'],
+      personality: ['enthusiastic', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young man with expressive gestures, bright eyes, casual professional attire, engaging smile, minimal stone-gray watercolor wash, passion for history, detailed animated features',
     },
     {
@@ -607,7 +607,7 @@ export const orvieto: CityPantry = {
       age: 72,
       role: 'suora',
       placeId: 'chiesa-san-giovenale',
-      personality: ['serene', 'wise', 'devoted'],
+      personality: ['serene', 'devoted'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly nun with habit, peaceful aged face, deep spiritual eyes, gentle smile, minimal pale blue watercolor wash, lifetime of prayer, detailed tranquil expression',
     },
     {
@@ -617,7 +617,7 @@ export const orvieto: CityPantry = {
       age: 76,
       role: 'giardiniere',
       placeId: 'giardini-pubblici',
-      personality: ['patient', 'observant', 'gentle'],
+      personality: ['gentle'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly man with sun hat, weathered kind face, soil on hands, peaceful demeanor, minimal green watercolor wash, decades tending gardens, detailed wise gentle features',
     },
     {
@@ -627,7 +627,7 @@ export const orvieto: CityPantry = {
       age: 43,
       role: 'artista di strada',
       placeId: 'piazza-del-popolo',
-      personality: ['bohemian', 'observant', 'social'],
+      personality: ['bohemian', 'social'],
       portraitPrompt: 'Pen and ink portrait on white paper of an artistic woman with flowing scarf, paint on fingers, observant eyes, creative spirit, minimal ochre watercolor wash, sketching the piazza, detailed expressive artistic features',
     },
     {
@@ -637,7 +637,7 @@ export const orvieto: CityPantry = {
       age: 37,
       role: 'sommelier',
       placeId: 'enoteca-al-pozzo',
-      personality: ['sophisticated', 'passionate', 'local'],
+      personality: ['sophisticated', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a refined man with wine glass, discerning expression, sommelier attire, minimal ruby watercolor wash, wine expertise evident, detailed contemplative tasting expression',
     },
     {
@@ -687,7 +687,7 @@ export const orvieto: CityPantry = {
       age: 58,
       role: 'maestro ceramista',
       placeId: 'bottega-michelangeli',
-      personality: ['artistic', 'meticulous'],
+      personality: ['artistic'],
       portraitPrompt: 'Pen and ink portrait on white paper of an artisan with clay on hands, focused intense expression, artist smock, minimal cobalt watercolor wash, centuries of tradition, detailed skilled craftsman features. The subject is a man.',
     },
     {
@@ -707,7 +707,7 @@ export const orvieto: CityPantry = {
       age: 34,
       role: 'regista teatrale',
       placeId: 'teatro-mancinelli',
-      personality: ['dramatic', 'passionate', 'visionary'],
+      personality: ['visionary'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with expressive gestures, artistic bearing, intense creative eyes, minimal crimson watercolor wash, theatrical spirit, detailed passionate animated features',
     },
   ],

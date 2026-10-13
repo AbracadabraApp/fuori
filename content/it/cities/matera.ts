@@ -305,7 +305,7 @@ export const matera: CityPantry = {
       age: 28,
       role: 'barista',
       placeId: 'bar-vitantonio',
-      personality: ['energetic', 'chatty', 'knows everyone'],
+      personality: ['energetic', 'knows everyone'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young Italian woman with dark hair in ponytail, bright smile, expressive eyes, apron over casual clothes, minimal warm watercolor wash, white background, confident friendly expression, fine pen work',
     },
     {
@@ -355,7 +355,7 @@ export const matera: CityPantry = {
       age: 67,
       role: 'negoziante',
       placeId: 'bottega-sassi',
-      personality: ['local', 'patient', 'guardian of traditions'],
+      personality: ['local', 'guardian of traditions'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly Italian man with weathered face, wise eyes, cap, vest over shirt, minimal olive-tone watercolor wash, white background, dignified peaceful expression, careful detail work',
     },
     {
@@ -375,7 +375,7 @@ export const matera: CityPantry = {
       age: 43,
       role: 'chef proprietaria',
       placeId: 'ristorante-francesca',
-      personality: ['elegant', 'precise', 'passionate about cuisine'],
+      personality: ['elegant', 'passionate about cuisine'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sophisticated Italian woman with styled short hair, chef\'s whites, refined features, minimal watercolor wash, white background, confident artistic expression, clean pen lines',
     },
     {
@@ -415,7 +415,7 @@ export const matera: CityPantry = {
       age: 71,
       role: 'guida turistica',
       placeId: 'sassi-belvedere',
-      personality: ['wise', 'eloquent', 'local historian'],
+      personality: ['local historian'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly Italian man with white hair, gentle smile, cardigan, walking stick, minimal sepia watercolor wash, white background, scholarly kind expression, detailed portraiture',
     },
     {
@@ -475,7 +475,7 @@ export const matera: CityPantry = {
       age: 41,
       role: 'sommelier',
       placeId: 'enoteca-lucania',
-      personality: ['local', 'passionate', 'discerning'],
+      personality: ['local', 'discerning'],
       portraitPrompt: 'Pen and ink portrait on white paper of an Italian man with refined features, holding wine glass, vest and tie, minimal burgundy watercolor wash, white background, sophisticated appreciative expression, elegant pen lines',
     },
     {
@@ -545,7 +545,7 @@ export const matera: CityPantry = {
       age: 53,
       role: 'artigiano',
       placeId: 'bottega-artigiana',
-      personality: ['creative', 'patient', 'master craftsman'],
+      personality: ['creative', 'master craftsman'],
       portraitPrompt: 'Pen and ink portrait on white paper of an Italian artisan with work apron, clay on hands, focused eyes, minimal terracotta watercolor wash, white background, concentrated artistic expression, textured pen strokes. The subject is a man.',
     },
     {
@@ -555,7 +555,7 @@ export const matera: CityPantry = {
       age: 42,
       role: 'salumiera',
       placeId: 'salumeria-peperoni',
-      personality: ['proud', 'expert', 'loves to sample'],
+      personality: ['proud', 'loves to sample'],
       portraitPrompt: 'Pen and ink portrait on white paper of an Italian woman with apron, holding salami, warm smile, minimal rich food-tone watercolor wash, white background, enthusiastic friendly expression, appetizing pen detail',
     },
     {
@@ -575,7 +575,7 @@ export const matera: CityPantry = {
       age: 40,
       role: 'ceramista',
       placeId: 'ceramiche-sassi',
-      personality: ['artistic', 'traditional techniques', 'passionate'],
+      personality: ['artistic', 'traditional techniques'],
       portraitPrompt: 'Pen and ink portrait on white paper of an Italian woman with paint-stained smock, holding ceramic piece, creative eyes, minimal glazed watercolor wash, white background, artistic focused expression, crafted pen detail',
     },
   ],

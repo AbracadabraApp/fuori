@@ -276,7 +276,7 @@ export const genova: CityPantry = {
       age: 42,
       role: 'proprietario',
       placeId: 'caffe-degli-specchi',
-      personality: ['eloquent', 'proud'],
+      personality: ['proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in his forties with graying temples, neat mustache, wearing crisp white shirt and vest, minimal watercolor wash in warm sepia tones, confident expression, detailed crosshatching',
     },
     {
@@ -306,7 +306,7 @@ export const genova: CityPantry = {
       age: 38,
       role: 'pasticciera',
       placeId: 'pasticceria-liquorosa',
-      personality: ['meticulous', 'artistic', 'refined'],
+      personality: ['artistic', 'refined'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with hair in neat bun, delicate features, wearing white baker\'s coat, minimal watercolor in pale pinks, focused expression, precise linework',
     },
     {
@@ -346,7 +346,7 @@ export const genova: CityPantry = {
       age: 67,
       role: 'proprietaria',
       placeId: 'bottega-caruggi',
-      personality: ['wise', 'mysterious', 'herbalist'],
+      personality: ['mysterious', 'herbalist'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly woman with silver hair, sharp eyes behind glasses, shawl over shoulders, knowing expression, minimal watercolor in sage green, detailed wrinkles, fine crosshatching',
     },
     {
@@ -356,7 +356,7 @@ export const genova: CityPantry = {
       age: 58,
       role: 'cuoco',
       placeId: 'trattoria-rosmarino',
-      personality: ['passionate', 'nostalgic'],
+      personality: ['nostalgic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a heavyset chef with expressive face, chef\'s whites, wooden spoon in hand, minimal watercolor in warm reds, intense eyes, bold pen work. The subject is a man.',
     },
     {
@@ -396,7 +396,7 @@ export const genova: CityPantry = {
       age: 31,
       role: 'guida turistica',
       placeId: 'palazzo-ducale',
-      personality: ['enthusiastic', 'educated', 'articulate'],
+      personality: ['enthusiastic', 'educated'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young woman with intelligent eyes, professional attire, name badge, gesturing hand, minimal watercolor in soft grays, engaging expression, precise linework',
     },
     {
@@ -416,7 +416,7 @@ export const genova: CityPantry = {
       age: 68,
       role: 'sacerdote',
       placeId: 'san-lorenzo',
-      personality: ['scholarly', 'gentle', 'devoted'],
+      personality: ['gentle', 'devoted'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly priest with kind face, wire-rimmed glasses, clerical collar, hands clasped, minimal watercolor in subtle purples, serene expression, delicate lines',
     },
     {
@@ -426,7 +426,7 @@ export const genova: CityPantry = {
       age: 72,
       role: 'suora',
       placeId: 'santa-maria-castello',
-      personality: ['peaceful', 'nurturing', 'wise'],
+      personality: ['peaceful', 'nurturing'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly nun with gentle smile, habit framing face, peaceful eyes, prayer beads, minimal watercolor in soft blues, tranquil expression, soft hatching',
     },
     {
@@ -436,7 +436,7 @@ export const genova: CityPantry = {
       age: 44,
       role: 'giardiniere',
       placeId: 'villetta-dinegro',
-      personality: ['patient', 'local', 'nature-loving'],
+      personality: ['local', 'nature-loving'],
       portraitPrompt: 'Pen and ink portrait on white paper of a lean man with sun-weathered face, work shirt, gardening gloves tucked in belt, minimal watercolor in leaf greens, content expression, organic lines',
     },
     {
@@ -446,7 +446,7 @@ export const genova: CityPantry = {
       age: 26,
       role: 'artista di strada',
       placeId: 'piazza-ferrari',
-      personality: ['creative', 'observant', 'free-spirited'],
+      personality: ['creative', 'free-spirited'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young woman with artistic style, paint-stained fingers, bohemian clothing, sketchbook under arm, minimal watercolor in multiple colors, lively eyes, expressive strokes',
     },
     {
@@ -466,7 +466,7 @@ export const genova: CityPantry = {
       age: 47,
       role: 'enotecario',
       placeId: 'enoteca-sola',
-      personality: ['sophisticated', 'passionate', 'discerning'],
+      personality: ['sophisticated', 'discerning'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man with salt-and-pepper hair, refined features, holding wine glass up to light, minimal watercolor in wine tones, connoisseur expression, elegant lines',
     },
     {
@@ -486,7 +486,7 @@ export const genova: CityPantry = {
       age: 59,
       role: 'libraio',
       placeId: 'libreria-bozzi',
-      personality: ['bibliophile', 'intellectual', 'helpful'],
+      personality: ['bibliophile', 'helpful'],
       portraitPrompt: 'Pen and ink portrait on white paper of a scholarly man with reading glasses on chain, cardigan over shirt, book in hand, minimal watercolor in sepia, thoughtful expression, detailed pen strokes',
     },
     {
@@ -496,7 +496,7 @@ export const genova: CityPantry = {
       age: 43,
       role: 'farmacista',
       placeId: 'farmacia-europa',
-      personality: ['professional', 'caring', 'precise'],
+      personality: ['professional', 'caring'],
       portraitPrompt: 'Pen and ink portrait on white paper of a professional woman with neat hair, white pharmacist coat, stethoscope around neck, minimal watercolor in clinical greens, reassuring smile, clean linework',
     },
     {
@@ -536,7 +536,7 @@ export const genova: CityPantry = {
       age: 64,
       role: 'salumiere',
       placeId: 'salumeria-fontana',
-      personality: ['exacting', 'generous'],
+      personality: ['generous'],
       portraitPrompt: 'Pen and ink portrait on white paper of a stocky man with handlebar mustache, white apron, knife at belt, minimal watercolor in meat reds, proud expression, bold pen strokes',
     },
     {
@@ -546,7 +546,7 @@ export const genova: CityPantry = {
       age: 66,
       role: 'storico',
       placeId: 'via-garibaldi',
-      personality: ['erudite', 'passionate', 'distinguished'],
+      personality: ['distinguished'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly professor with white hair, bow tie, tweed jacket, architectural drawings visible, minimal watercolor in stone grays, animated expression, scholarly detail. The subject is a man.',
     },
     {
@@ -556,7 +556,7 @@ export const genova: CityPantry = {
       age: 37,
       role: 'cantiniere',
       placeId: 'cantina-squarciafico',
-      personality: ['passionate', 'local', 'convivial'],
+      personality: ['local', 'convivial'],
       portraitPrompt: 'Pen and ink portrait on white paper of a bearded man with rolled shirtsleeves, wine-stained hands, barrel in background, minimal watercolor in deep reds, animated expression, textured shading',
     },
   ],

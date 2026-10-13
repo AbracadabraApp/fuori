@@ -297,7 +297,7 @@ export const siracusa: CityPantry = {
       age: 52,
       role: 'proprietario',
       placeId: 'bar-dolce-vita',
-      personality: ['jovial', 'talkative', 'generous'],
+      personality: ['jovial', 'generous'],
       portraitPrompt: 'Pen and ink portrait on white paper of a stout middle-aged Sicilian man with salt-and-pepper hair, warm smile lines around eyes, wearing crisp white shirt, minimal watercolor wash of warm skin tones and dark hair, Mediterranean features, expressive and welcoming, white background',
     },
     {
@@ -307,7 +307,7 @@ export const siracusa: CityPantry = {
       age: 38,
       role: 'barista',
       placeId: 'caffe-archimede',
-      personality: ['efficient', 'observant', 'witty'],
+      personality: ['efficient', 'witty'],
       portraitPrompt: 'Pen and ink portrait on white paper of a slender woman with dark hair pulled back in neat bun, intelligent eyes, delicate gold earrings, minimal watercolor wash of olive skin and deep brown eyes, elegant bone structure, knowing smile, white background',
     },
     {
@@ -317,7 +317,7 @@ export const siracusa: CityPantry = {
       age: 67,
       role: 'barista',
       placeId: 'bar-apollo',
-      personality: ['philosophical', 'patient'],
+      personality: ['philosophical'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly man with deeply lined face, white mustache, kind eyes behind reading glasses, minimal watercolor wash of weathered skin and silver hair, dignified expression, wise and gentle, white background',
     },
     {
@@ -337,7 +337,7 @@ export const siracusa: CityPantry = {
       age: 41,
       role: 'pasticciere',
       placeId: 'pasticceria-santa-lucia',
-      personality: ['artistic', 'meticulous'],
+      personality: ['artistic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a refined man with carefully trimmed beard, focused expression, chef\'s whites, minimal watercolor wash of light olive skin and dark eyes, artistic fingers, concentrated and precise, white background',
     },
     {
@@ -367,7 +367,7 @@ export const siracusa: CityPantry = {
       age: 49,
       role: 'pescivendolo',
       placeId: 'pescheria-mare',
-      personality: ['straightforward', 'expert', 'maritime'],
+      personality: ['straightforward', 'maritime'],
       portraitPrompt: 'Pen and ink portrait on white paper of a lean man with weathered fisherman face, intense gaze, rubber boots suggested, minimal watercolor wash of sea-weathered skin, knowing eyes, strong and authentic, white background',
     },
     {
@@ -377,7 +377,7 @@ export const siracusa: CityPantry = {
       age: 44,
       role: 'chef',
       placeId: 'ristorante-dioniso',
-      personality: ['passionate', 'demanding'],
+      personality: [],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man with graying temples, intense dark eyes, chef\'s jacket, minimal watercolor wash of Mediterranean complexion, determined expression, culinary artist, white background',
     },
     {
@@ -417,7 +417,7 @@ export const siracusa: CityPantry = {
       age: 68,
       role: 'sacerdote',
       placeId: 'duomo-siracusa',
-      personality: ['scholarly', 'gentle', 'historical'],
+      personality: ['gentle', 'historical'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly priest with kind lined face, wire-rimmed glasses, clerical collar, minimal watercolor wash of pale skin and white hair, benevolent expression, learned and peaceful, white background',
     },
     {
@@ -437,7 +437,7 @@ export const siracusa: CityPantry = {
       age: 53,
       role: 'archeologo',
       placeId: 'parco-archeologico',
-      personality: ['passionate', 'academic', 'patient'],
+      personality: [],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished scholar with sun hat suggested, weathered face from outdoor work, thoughtful expression, minimal watercolor wash of tanned skin and gray-streaked hair, dedicated and knowledgeable, white background. The subject is a man.',
     },
     {
@@ -477,7 +477,7 @@ export const siracusa: CityPantry = {
       age: 33,
       role: 'sommelier',
       placeId: 'wine-bar-etna',
-      personality: ['professional', 'adventurous', 'precise'],
+      personality: ['professional', 'adventurous'],
       portraitPrompt: 'Pen and ink portrait on white paper of a stylish woman with confident expression, sommelier pin on collar, minimal watercolor wash of striking features and dark hair, wine expertise in eyes, modern and knowledgeable, white background',
     },
     {
@@ -497,7 +497,7 @@ export const siracusa: CityPantry = {
       age: 56,
       role: 'farmacista',
       placeId: 'farmacia-apollo',
-      personality: ['trustworthy', 'precise', 'caring'],
+      personality: ['trustworthy', 'caring'],
       portraitPrompt: 'Pen and ink portrait on white paper of a professional man with white pharmacist coat, wire glasses, reassuring expression, minimal watercolor wash of distinguished features, medical precision, dependable and kind, white background',
     },
     {
@@ -517,7 +517,7 @@ export const siracusa: CityPantry = {
       age: 64,
       role: 'storico',
       placeId: 'antica-giudecca',
-      personality: ['scholarly', 'preservationist'],
+      personality: ['preservationist'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished historian with thoughtful eyes, slight stoop from study, minimal watercolor wash of intellectual face and gray beard, ancient knowledge, passionate keeper of memory, white background',
     },
     {
@@ -557,7 +557,7 @@ export const siracusa: CityPantry = {
       age: 46,
       role: 'chef',
       placeId: 'pescheria-antica',
-      personality: ['seafood expert', 'straightforward', 'quality-focused'],
+      personality: ['seafood expert', 'straightforward'],
       portraitPrompt: 'Pen and ink portrait on white paper of a chef with maritime background, strong features, white chef jacket, minimal watercolor wash of sea-loving eyes and capable hands, fresh fish expertise, authentic and direct, white background. The subject is a man.',
     },
     {
@@ -567,7 +567,7 @@ export const siracusa: CityPantry = {
       age: 63,
       role: 'barista',
       placeId: 'bar-minerva',
-      personality: ['neighborhood fixture', 'card player', 'gossipy'],
+      personality: ['neighborhood fixture', 'card player'],
       portraitPrompt: 'Pen and ink portrait on white paper of a local character with expressive face, vest and shirtsleeves, cards suggested, minimal watercolor wash of animated features, community hub personality, talkative and familiar, white background. The subject is a man.',
     },
     {
@@ -577,7 +577,7 @@ export const siracusa: CityPantry = {
       age: 59,
       role: 'giardiniere',
       placeId: 'orto-botanico',
-      personality: ['nature-loving', 'quiet', 'observant'],
+      personality: ['nature-loving', 'quiet'],
       portraitPrompt: 'Pen and ink portrait on white paper of a gardener with sun-weathered face, work clothes, pruning shears suggested, minimal watercolor wash of earth-toned skin and peaceful eyes, plants are his language, gentle and wise, white background',
     },
     {
@@ -587,7 +587,7 @@ export const siracusa: CityPantry = {
       age: 51,
       role: 'macellaio',
       placeId: 'macelleria-tradizionale',
-      personality: ['professional', 'third-generation', 'quality-obsessed'],
+      personality: ['professional', 'third-generation'],
       portraitPrompt: 'Pen and ink portrait on white paper of a butcher with strong hands, white apron, traditional mustache, minimal watercolor wash of honest face and expert eyes, knife skills suggested, proud craftsman, trustworthy, white background',
     },
   ],

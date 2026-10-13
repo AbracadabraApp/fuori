@@ -304,7 +304,7 @@ export const verona: CityPantry = {
       age: 38,
       role: 'barista',
       placeId: 'bar-ai-scalzi',
-      personality: ['friendly', 'chatty', 'neighborhood-oriented'],
+      personality: ['friendly', 'neighborhood-oriented'],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm woman in her late thirties with dark curly hair pulled back, bright hazel eyes, wearing casual shirt and apron, laughing mid-conversation, detailed pen work with watercolor wash in warm ochre and soft pink',
     },
     {
@@ -314,7 +314,7 @@ export const verona: CityPantry = {
       age: 61,
       role: 'proprietario',
       placeId: 'caffe-dante',
-      personality: ['philosophical', 'well-read', 'observant'],
+      personality: ['philosophical', 'well-read'],
       portraitPrompt: 'Pen and ink portrait on white paper of a thoughtful elderly man with gray beard, kind eyes behind reading glasses, wearing worn cardigan, slight knowing smile, detailed linework with minimal watercolor in soft gray and warm cream tones',
     },
     {
@@ -324,7 +324,7 @@ export const verona: CityPantry = {
       age: 45,
       role: 'fornaia',
       placeId: 'panificio-mariga',
-      personality: ['hardworking', 'precise', 'maternal'],
+      personality: ['hardworking', 'maternal'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sturdy woman in her forties with flour-dusted apron, dark hair in practical bun, strong capable hands, warm smile with flour on her cheek, detailed crosshatching with watercolor wash in wheat gold and warm cream',
     },
     {
@@ -354,7 +354,7 @@ export const verona: CityPantry = {
       age: 67,
       role: 'venditrice',
       placeId: 'mercato-stadio',
-      personality: ['wise', 'no-nonsense', 'community-minded'],
+      personality: ['no-nonsense', 'community-minded'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly woman with silver hair in bun, sharp intelligent eyes, wearing practical work clothes and apron, weathered hands counting change, dignified expression, detailed linework with subtle watercolor in warm earth tones',
     },
     {
@@ -364,7 +364,7 @@ export const verona: CityPantry = {
       age: 56,
       role: 'proprietario',
       placeId: 'bottega-saporiti',
-      personality: ['exacting', 'family-proud'],
+      personality: ['family-proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of a serious middle-aged man with dark hair touched with gray, intense dark eyes, wearing traditional shopkeeper apron, slicing salami with expert hands, proud but warm expression, detailed pen work with watercolor in burgundy and cream',
     },
     {
@@ -384,7 +384,7 @@ export const verona: CityPantry = {
       age: 58,
       role: 'cuoca',
       placeId: 'trattoria-ponte-pietra',
-      personality: ['nurturing', 'passionate'],
+      personality: ['nurturing'],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm-faced woman in her fifties with graying hair, kind brown eyes, wearing chef apron over simple dress, wooden spoon in hand, motherly smile, detailed ink with watercolor in terracotta and cream',
     },
     {
@@ -414,7 +414,7 @@ export const verona: CityPantry = {
       age: 29,
       role: 'guida turistica',
       placeId: 'arena-verona',
-      personality: ['enthusiastic', 'educated', 'theatrical'],
+      personality: ['enthusiastic', 'educated'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young woman with elegant features, bright intelligent eyes, dark hair in professional style, wearing smart casual clothes, gesture of explanation, passionate expression, detailed pen work with watercolor in rose and cream tones',
     },
     {
@@ -424,7 +424,7 @@ export const verona: CityPantry = {
       age: 64,
       role: 'sacerdote',
       placeId: 'basilica-san-zeno',
-      personality: ['serene', 'scholarly', 'welcoming'],
+      personality: ['serene', 'welcoming'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly priest with gentle face, wise gray eyes behind glasses, receding gray hair, wearing simple black clergy shirt, hands clasped peacefully, benevolent smile, detailed crosshatching with watercolor in soft grays and warm cream',
     },
     {
@@ -434,7 +434,7 @@ export const verona: CityPantry = {
       age: 26,
       role: 'custode',
       placeId: 'casa-giulietta',
-      personality: ['romantic', 'multilingual', 'patient'],
+      personality: ['romantic', 'multilingual'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young woman with long dark hair, dreamy brown eyes, wearing simple elegant dress, holding love letter, gentle romantic smile, detailed pen work with watercolor wash in soft rose and cream',
     },
     {
@@ -444,7 +444,7 @@ export const verona: CityPantry = {
       age: 71,
       role: 'giardiniere',
       placeId: 'giardino-giusti',
-      personality: ['patient', 'local', 'peaceful'],
+      personality: ['local', 'peaceful'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly man with weathered kind face, silver hair, gentle blue eyes, wearing garden work clothes, pruning shears in hand, serene smile, detailed linework with watercolor in sage green and earth tones',
     },
     {
@@ -464,7 +464,7 @@ export const verona: CityPantry = {
       age: 36,
       role: 'architetta',
       placeId: 'piazza-signori',
-      personality: ['intellectual', 'precise', 'elegant'],
+      personality: ['elegant'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sophisticated woman in her mid-thirties with sleek dark hair, sharp intelligent eyes, wearing professional attire, holding architectural drawings, confident composed expression, detailed crosshatching with watercolor in cool gray and cream',
     },
     {
@@ -474,7 +474,7 @@ export const verona: CityPantry = {
       age: 49,
       role: 'sommelier',
       placeId: 'enoteca-cangrande',
-      personality: ['refined', 'passionate'],
+      personality: ['refined'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in his late forties with salt-and-pepper hair, discerning eyes, wearing smart casual attire, swirling wine glass professionally, knowing smile, detailed pen lines with watercolor in burgundy and warm tones',
     },
     {
@@ -514,7 +514,7 @@ export const verona: CityPantry = {
       age: 63,
       role: 'salumiere',
       placeId: 'salumeria-albertini',
-      personality: ['expert', 'generous'],
+      personality: ['generous'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sturdy man in his sixties with thick gray mustache, twinkling eyes, wearing traditional butcher apron, sharp knife in expert hands, proud warm expression, detailed crosshatching with watercolor in rose-red and cream',
     },
     {
@@ -534,7 +534,7 @@ export const verona: CityPantry = {
       age: 37,
       role: 'gelatiere',
       placeId: 'gelateria-ponte-pietra',
-      personality: ['cheerful', 'innovative', 'passionate'],
+      personality: ['cheerful', 'innovative'],
       portraitPrompt: 'Pen and ink portrait on white paper of a friendly man in his late thirties with warm smile, bright eyes, wearing casual gelato shop uniform, holding gelato scoop, enthusiastic expression, detailed linework with watercolor in pistachio green and cream',
     },
     {
@@ -554,7 +554,7 @@ export const verona: CityPantry = {
       age: 44,
       role: 'regista',
       placeId: 'teatro-romano',
-      personality: ['dramatic', 'visionary', 'passionate'],
+      personality: ['visionary'],
       portraitPrompt: 'Pen and ink portrait on white paper of an expressive woman in her forties with flowing dark hair, intense artistic eyes, wearing bohemian scarf and artistic clothing, gesturing dramatically, creative fire in expression, detailed pen work with watercolor in deep purple and gold',
     },
     {
@@ -564,7 +564,7 @@ export const verona: CityPantry = {
       age: 69,
       role: 'storico locale',
       placeId: 'ponte-pietra',
-      personality: ['nostalgic', 'wise'],
+      personality: ['nostalgic'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly gentleman with full gray beard, kind weathered face, bright blue eyes, wearing comfortable casual clothes, leaning on walking stick, gentle knowing smile, detailed crosshatching with watercolor in warm stone gray and cream',
     },
     {
@@ -574,7 +574,7 @@ export const verona: CityPantry = {
       age: 51,
       role: 'proprietaria',
       placeId: 'acetaia-veneta',
-      personality: ['meticulous', 'passionate'],
+      personality: [],
       portraitPrompt: 'Pen and ink portrait on white paper of a refined woman in her fifties with elegant upswept hair, discerning eyes, wearing stylish apron over good clothes, holding vintage vinegar bottle, proud cultured expression, detailed pen lines with watercolor in amber and deep brown',
     },
   ],

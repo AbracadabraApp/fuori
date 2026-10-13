@@ -367,7 +367,7 @@ export const venezia: CityPantry = {
       age: 29,
       role: 'barista',
       placeId: 'bar-ai-do-leoni',
-      personality: ['energetic', 'warm', 'chatty'],
+      personality: ['energetic', 'warm'],
       portraitPrompt: 'Pen and ink portrait on white paper of a lively young woman with dark hair pulled back, bright eyes, apron over casual clothes, minimal golden watercolor wash, expressive linework, friendly smile',
     },
     {
@@ -387,7 +387,7 @@ export const venezia: CityPantry = {
       age: 52,
       role: 'proprietaria del bar',
       placeId: 'bar-alla-toletta',
-      personality: ['motherly', 'observant', 'wise'],
+      personality: ['motherly'],
       portraitPrompt: 'Pen and ink portrait on white paper of a kind woman in her fifties with salt-and-pepper hair in a bun, gentle eyes, cardigan over blouse, minimal soft blue watercolor wash, careful detailed lines, nurturing expression',
     },
     {
@@ -397,7 +397,7 @@ export const venezia: CityPantry = {
       age: 45,
       role: 'torrefattore',
       placeId: 'caffe-del-doge',
-      personality: ['passionate', 'intense'],
+      personality: ['intense'],
       portraitPrompt: 'Pen and ink portrait on white paper of a focused man in his mid-forties with strong features, serious expression, work apron, minimal brown watercolor wash, bold confident strokes, expert concentration',
     },
     {
@@ -427,7 +427,7 @@ export const venezia: CityPantry = {
       age: 39,
       role: 'esperta di caffè',
       placeId: 'torrefazione-cannaregio',
-      personality: ['local', 'precise', 'enthusiastic'],
+      personality: ['local', 'enthusiastic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a woman in her late thirties with glasses, hair tied back, professional attire, minimal coffee-brown watercolor wash, fine detailed lines, intelligent expression',
     },
     {
@@ -447,7 +447,7 @@ export const venezia: CityPantry = {
       age: 33,
       role: 'pasticciere',
       placeId: 'pasticceria-dal-mas',
-      personality: ['creative', 'meticulous', 'proud'],
+      personality: ['creative', 'proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young chef with neat appearance, chef\'s whites, focused eyes, minimal pink watercolor wash, precise delicate lines, artistic concentration. The subject is a man.',
     },
     {
@@ -467,7 +467,7 @@ export const venezia: CityPantry = {
       age: 61,
       role: 'maestro pasticciere',
       placeId: 'pasticceria-rizzardini',
-      personality: ['exacting', 'respected'],
+      personality: ['respected'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished older man with white hair, chef\'s jacket, authoritative bearing, minimal cream watercolor wash, careful classical lines, master craftsman dignity',
     },
     {
@@ -477,7 +477,7 @@ export const venezia: CityPantry = {
       age: 55,
       role: 'pescivendolo',
       placeId: 'mercato-rialto',
-      personality: ['boisterous', 'local', 'theatrical'],
+      personality: ['boisterous', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a robust man in his fifties with ruddy complexion, rubber boots and apron, animated expression, minimal blue watercolor wash, bold energetic strokes, market vendor vitality',
     },
     {
@@ -497,7 +497,7 @@ export const venezia: CityPantry = {
       age: 59,
       role: 'pescivendolo',
       placeId: 'pescheria-castello',
-      personality: ['quiet', 'expert', 'reliable'],
+      personality: ['quiet', 'reliable'],
       portraitPrompt: 'Pen and ink portrait on white paper of a weathered man in his late fifties with sea-worn face, fisherman\'s sweater, thoughtful eyes, minimal silver-blue watercolor wash, textured detailed lines, maritime character',
     },
     {
@@ -507,7 +507,7 @@ export const venezia: CityPantry = {
       age: 47,
       role: 'chef e proprietario',
       placeId: 'ristorante-antiche-carampane',
-      personality: ['passionate'],
+      personality: [],
       portraitPrompt: 'Pen and ink portrait on white paper of a serious chef in his late forties with strong features, chef\'s whites, intense gaze, minimal russet watercolor wash, bold assured strokes, culinary dedication',
     },
     {
@@ -557,7 +557,7 @@ export const venezia: CityPantry = {
       age: 64,
       role: 'sacerdote',
       placeId: 'basilica-san-marco',
-      personality: ['scholarly', 'serene', 'guardian'],
+      personality: ['serene', 'guardian'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly priest with kind face, clerical collar, gentle eyes behind glasses, minimal gold watercolor wash, reverent detailed lines, spiritual calm',
     },
     {
@@ -657,7 +657,7 @@ export const venezia: CityPantry = {
       age: 53,
       role: 'capostazione',
       placeId: 'stazione-santa-lucia',
-      personality: ['helpful', 'organized', 'patient'],
+      personality: ['helpful', 'organized'],
       portraitPrompt: 'Pen and ink portrait on white paper of a uniformed man in his fifties with cap, official vest, calm demeanor, minimal grey-blue watercolor wash, neat orderly lines, gateway guardian',
     },
     {

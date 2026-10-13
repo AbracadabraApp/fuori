@@ -365,7 +365,7 @@ export const milano: CityPantry = {
       age: 42,
       role: 'pasticciera',
       placeId: 'pasticceria-marchesi',
-      personality: ['meticulous', 'elegant'],
+      personality: ['elegant'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sophisticated woman in her 40s with hair in an elegant chignon, wearing a pristine white chef\'s jacket, subtle makeup, knowing smile, minimal watercolor wash in mint green and gold tones, detailed linework, refined professional presence',
     },
     {
@@ -375,7 +375,7 @@ export const milano: CityPantry = {
       age: 55,
       role: 'barista',
       placeId: 'bar-rita',
-      personality: ['friendly', 'talkative', 'local character'],
+      personality: ['friendly', 'local character'],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm middle-aged man with salt-and-pepper hair, laugh lines, wearing casual button-down shirt, friendly open expression, minimal watercolor wash in warm ochre and red tones, detailed expressive features',
     },
     {
@@ -395,7 +395,7 @@ export const milano: CityPantry = {
       age: 28,
       role: 'barista',
       placeId: 'bar-quadronno',
-      personality: ['creative', 'passionate', 'modern'],
+      personality: ['creative', 'modern'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young woman with modern short haircut, tattoo visible on forearm, wearing denim apron, bright intelligent eyes, confident smile, minimal watercolor wash in soft grey and green tones, contemporary artistic energy',
     },
     {
@@ -425,7 +425,7 @@ export const milano: CityPantry = {
       age: 26,
       role: 'barista',
       placeId: 'caffe-design',
-      personality: ['minimalist', 'precise', 'design-focused'],
+      personality: ['minimalist', 'design-focused'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young man with angular features, clean-shaven, modern glasses, black t-shirt, thoughtful expression, minimal watercolor wash in grey and white tones, contemporary aesthetic sensibility',
     },
     {
@@ -435,7 +435,7 @@ export const milano: CityPantry = {
       age: 49,
       role: 'barista',
       placeId: 'bar-isola',
-      personality: ['maternal', 'gossipy', 'warm-hearted'],
+      personality: ['maternal', 'warm-hearted'],
       portraitPrompt: 'Pen and ink portrait on white paper of a robust woman in her late 40s with curly hair, kind round face, flour-dusted apron, knowing smile, minimal watercolor wash in warm blue and cream tones, neighborhood mother figure',
     },
     {
@@ -455,7 +455,7 @@ export const milano: CityPantry = {
       age: 45,
       role: 'fornaio',
       placeId: 'panificio-davide-longoni',
-      personality: ['artisan', 'passionate', 'principled'],
+      personality: ['artisan', 'principled'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sturdy man in mid-40s with flour in hair, strong hands, wearing simple baker\'s shirt, intense eyes, genuine smile, minimal watercolor wash in wheat and golden tones, craftsman\'s dedication',
     },
     {
@@ -525,7 +525,7 @@ export const milano: CityPantry = {
       age: 56,
       role: 'proprietaria',
       placeId: 'trattoria-masuelli',
-      personality: ['authoritative', 'exacting', 'protective'],
+      personality: ['authoritative', 'protective'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished woman in her 50s with elegant updo, classic dress, commanding presence, warm but firm expression, minimal watercolor wash in traditional burgundy tones, old Milan matriarch',
     },
     {
@@ -535,7 +535,7 @@ export const milano: CityPantry = {
       age: 44,
       role: 'chef',
       placeId: 'ristorante-brera',
-      personality: ['sophisticated', 'demanding', 'talented'],
+      personality: ['sophisticated', 'talented'],
       portraitPrompt: 'Pen and ink portrait on white paper of a handsome man in mid-40s with greying temples, chef\'s whites, intense eyes, slight smile, minimal watercolor wash in marble white and grey tones, culinary authority',
     },
     {
@@ -555,7 +555,7 @@ export const milano: CityPantry = {
       age: 71,
       role: 'cuoca',
       placeId: 'trattoria-isola',
-      personality: ['nonno-like', 'loving', 'wise'],
+      personality: ['nonno-like', 'loving'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly woman with white hair, apron, wooden spoon, gentle grandmother face, twinkling eyes, minimal watercolor wash in warm kitchen tones, nonna energy and love',
     },
     {
@@ -595,7 +595,7 @@ export const milano: CityPantry = {
       age: 67,
       role: 'sacerdote',
       placeId: 'duomo-milano',
-      personality: ['scholarly', 'patient', 'inspiring'],
+      personality: ['inspiring'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly priest with gentle face, clerical collar, wise eyes, serene expression, minimal watercolor wash in cathedral stone tones, spiritual gravitas',
     },
     {
@@ -605,7 +605,7 @@ export const milano: CityPantry = {
       age: 43,
       role: 'curatrice',
       placeId: 'pinacoteca-brera',
-      personality: ['intellectual', 'passionate', 'articulate'],
+      personality: [],
       portraitPrompt: 'Pen and ink portrait on white paper of a sophisticated woman in her 40s with stylish glasses, elegant professional attire, art catalog in hand, intelligent gaze, minimal watercolor wash in gallery tones, cultured authority',
     },
     {
@@ -625,7 +625,7 @@ export const milano: CityPantry = {
       age: 36,
       role: 'giardiniere',
       placeId: 'parco-sempione',
-      personality: ['nature-loving', 'quiet', 'observant'],
+      personality: ['nature-loving', 'quiet'],
       portraitPrompt: 'Pen and ink portrait on white paper of a lean man in mid-30s with sun-weathered skin, work clothes, pruning shears, peaceful expression, minimal watercolor wash in green garden tones, outdoor vitality',
     },
     {
@@ -635,7 +635,7 @@ export const milano: CityPantry = {
       age: 41,
       role: 'fioraia',
       placeId: 'piazza-santo-stefano',
-      personality: ['romantic', 'chatty', 'colorful'],
+      personality: ['romantic', 'colorful'],
       portraitPrompt: 'Pen and ink portrait on white paper of a vibrant woman in her 40s with flowers in hair, bright scarf, arranging bouquet gesture, warm smile, minimal watercolor wash in flower market colors, artistic spirit',
     },
     {
@@ -685,7 +685,7 @@ export const milano: CityPantry = {
       age: 53,
       role: 'libraio',
       placeId: 'libreria-brera',
-      personality: ['intellectual', 'thoughtful', 'recommending'],
+      personality: ['thoughtful', 'recommending'],
       portraitPrompt: 'Pen and ink portrait on white paper of a scholarly man in his 50s with reading glasses, sweater vest, book in hand, contemplative expression, minimal watercolor wash in bookshop tones, literary knowledge',
     },
     {
@@ -695,7 +695,7 @@ export const milano: CityPantry = {
       age: 59,
       role: 'farmacista',
       placeId: 'farmacia-centrale',
-      personality: ['professional', 'caring', 'precise'],
+      personality: ['professional', 'caring'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in late 50s with white coat, glasses, reassuring expression, minimal watercolor wash in pharmacy green and white tones, medical trust',
     },
     {
@@ -715,7 +715,7 @@ export const milano: CityPantry = {
       age: 46,
       role: 'guida della galleria',
       placeId: 'galleria-vittorio-emanuele',
-      personality: ['proud', 'historical', 'eloquent'],
+      personality: ['proud', 'historical'],
       portraitPrompt: 'Pen and ink portrait on white paper of a well-dressed man in mid-40s with elegant attire, explaining gesture, passionate expression, minimal watercolor wash in Galleria gold and glass tones, Milanese pride',
     },
     {

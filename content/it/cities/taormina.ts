@@ -359,7 +359,7 @@ export const taormina: CityPantry = {
       age: 42,
       role: 'barista',
       placeId: 'caffe-wunderbar',
-      personality: ['elegant', 'observant', 'cultured'],
+      personality: ['elegant', 'cultured'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, sophisticated Sicilian woman in her 40s, dark hair in elegant updo, pearl earrings, preparing espresso, fine line work, soft rose and cream wash, refined expression, white background',
     },
     {
@@ -409,7 +409,7 @@ export const taormina: CityPantry = {
       age: 44,
       role: 'barista',
       placeId: 'bar-etna',
-      personality: ['jovial', 'gossipy', 'neighborhood fixture'],
+      personality: ['jovial', 'neighborhood fixture'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, stocky Sicilian man in his 40s, friendly round face, animated expression, gesturing while talking, energetic line work, terracotta wash, convivial personality, white background',
     },
     {
@@ -419,7 +419,7 @@ export const taormina: CityPantry = {
       age: 51,
       role: 'proprietario',
       placeId: 'bar-timoleone',
-      personality: ['intellectual', 'theater lover', 'contemplative'],
+      personality: ['theater lover', 'contemplative'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, distinguished Sicilian man, graying temples, reading glasses, holding espresso cup, refined pen work, sepia and sage wash, thoughtful gaze, white background',
     },
     {
@@ -469,7 +469,7 @@ export const taormina: CityPantry = {
       age: 71,
       role: 'fornaia',
       placeId: 'forno-castelmola',
-      personality: ['wise', 'village matriarch', 'keeper of recipes'],
+      personality: ['village matriarch', 'keeper of recipes'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, elderly Sicilian baker, deeply lined face, traditional dress, hands dusted with flour, loving detail, warm amber wash, ancestral wisdom, white background. The subject is a woman.',
     },
     {
@@ -549,7 +549,7 @@ export const taormina: CityPantry = {
       age: 35,
       role: 'pizzaiolo',
       placeId: 'pizzeria-nettuno',
-      personality: ['energetic', 'theatrical', 'dough perfectionist'],
+      personality: ['energetic', 'dough perfectionist'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, young pizzaiolo tossing dough, muscular forearms, flour in air, dynamic motion lines, warm wheat wash, joyful mastery, white background. The subject is a man.',
     },
     {
@@ -569,7 +569,7 @@ export const taormina: CityPantry = {
       age: 64,
       role: 'salumiere',
       placeId: 'salumeria-sicilia',
-      personality: ['exacting', 'proud Sicilian', 'salumi poet'],
+      personality: ['proud Sicilian', 'salumi poet'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, dignified delicatessen owner, slicing prosciutto with precision, serious concentration, detailed technique, burgundy wash, artisan dedication, white background. The subject is a man.',
     },
     {
@@ -579,7 +579,7 @@ export const taormina: CityPantry = {
       age: 53,
       role: 'guida turistica',
       placeId: 'teatro-greco',
-      personality: ['eloquent', 'theatrical', 'classicist'],
+      personality: ['classicist'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, tour guide gesturing dramatically, passionate expression, ancient columns behind, expressive line work, stone beige wash, bringing history alive, white background. The subject is a man.',
     },
     {
@@ -599,7 +599,7 @@ export const taormina: CityPantry = {
       age: 46,
       role: 'giardiniera',
       placeId: 'villa-comunale',
-      personality: ['botanical expert', 'patient', 'English garden lover'],
+      personality: ['botanical expert', 'English garden lover'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, gardener with sun hat, gentle smile, holding pruning shears, surrounded by botanical sketches, green leaf wash, peaceful dedication, white background. The subject is a woman.',
     },
     {
@@ -609,7 +609,7 @@ export const taormina: CityPantry = {
       age: 43,
       role: 'musicista di strada',
       placeId: 'piazza-ix-aprile',
-      personality: ['romantic', 'observant', 'mandolin virtuoso'],
+      personality: ['romantic', 'mandolin virtuoso'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, street musician with mandolin, expressive face mid-song, musician hands detailed, warm terracotta wash, artistic soul, white background. The subject is a man.',
     },
     {
@@ -649,7 +649,7 @@ export const taormina: CityPantry = {
       age: 61,
       role: 'libraio',
       placeId: 'libreria-taormina',
-      personality: ['scholarly', 'bibliophile', 'multilingual'],
+      personality: ['bibliophile', 'multilingual'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, bookseller with reading glasses on chain, holding rare volume, surrounded by books, detailed crosshatching, sepia wash, literary knowledge, white background. The subject is a man.',
     },
     {
@@ -669,7 +669,7 @@ export const taormina: CityPantry = {
       age: 54,
       role: 'operatore funivia',
       placeId: 'funivia-taormina',
-      personality: ['patient', 'height-loving', 'reassuring'],
+      personality: ['height-loving', 'reassuring'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, cable car operator in uniform, calm steady presence, control panel visible, reliable expression, sky blue wash, mountain professional, white background. The subject is a man.',
     },
     {

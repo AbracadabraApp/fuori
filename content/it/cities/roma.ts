@@ -301,7 +301,7 @@ export const roma: CityPantry = {
       age: 48,
       role: 'formaggiaia',
       placeId: 'mercato-testaccio',
-      personality: ['precise', 'warm', 'opinionated about pecorino'],
+      personality: ['warm', 'opinionated about pecorino'],
       portraitPrompt: 'Pen and ink portrait on white paper of a cheese seller in her late forties with short grey-streaked hair, reading glasses pushed up on her head, white work coat, holding a wedge of pecorino, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a woman.',
     },
     {
@@ -311,7 +311,7 @@ export const roma: CityPantry = {
       age: 66,
       role: 'fioraia',
       placeId: 'mercato-campo-fiori',
-      personality: ['motherly', 'talkative', 'superstitious'],
+      personality: ['motherly', 'superstitious'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly flower seller with silver hair tied back, a knitted cardigan, sun-lined face, arranging bunches of sunflowers, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a woman.',
     },
     {
@@ -341,7 +341,7 @@ export const roma: CityPantry = {
       age: 63,
       role: 'oste',
       placeId: 'trattoria-trastevere',
-      personality: ['theatrical', 'hospitable', 'loves to gossip'],
+      personality: ['hospitable', 'loves to gossip'],
       portraitPrompt: 'Pen and ink portrait on white paper of a jovial trattoria owner in his sixties with a round face, white hair, open-collared shirt and waistcoat, arms spread in welcome, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
     },
     {
@@ -361,7 +361,7 @@ export const roma: CityPantry = {
       age: 70,
       role: 'parroco',
       placeId: 'basilica-santa-maria',
-      personality: ['gentle', 'scholarly', 'patient'],
+      personality: ['gentle'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly parish priest with thin white hair, kind eyes behind wire glasses, black clerical shirt with white collar, hands folded, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
     },
     {
@@ -391,7 +391,7 @@ export const roma: CityPantry = {
       age: 78,
       role: 'pensionato',
       placeId: 'villa-borghese',
-      personality: ['wise', 'nostalgic', 'talks about the old Rome'],
+      personality: ['nostalgic', 'talks about the old Rome'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly retired man with a white beard, flat cap, tweed jacket and a walking stick, sitting on a park bench under umbrella pines, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
     },
     {
@@ -401,7 +401,7 @@ export const roma: CityPantry = {
       age: 81,
       role: 'nonna del quartiere',
       placeId: 'piazza-santa-maria-trastevere',
-      personality: ['nosy', 'affectionate', 'full of advice'],
+      personality: ['affectionate', 'full of advice'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly Roman grandmother with curled white hair, a floral dress and black cardigan, sitting on a fountain step with a shopping bag, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a woman.',
     },
     {
@@ -461,7 +461,7 @@ export const roma: CityPantry = {
       age: 47,
       role: 'farmacista',
       placeId: 'farmacia-trastevere',
-      personality: ['calm', 'reassuring', 'precise'],
+      personality: ['calm', 'reassuring'],
       portraitPrompt: 'Pen and ink portrait on white paper of a pharmacist in her late forties with neat chestnut hair, reading glasses on a chain, white coat, a reassuring smile, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a woman.',
     },
     {
@@ -471,7 +471,7 @@ export const roma: CityPantry = {
       age: 33,
       role: 'commessa',
       placeId: 'negozio-abbigliamento',
-      personality: ['stylish', 'honest', 'chatty'],
+      personality: ['stylish', 'honest'],
       portraitPrompt: 'Pen and ink portrait on white paper of a shop owner in her early thirties with a sleek ponytail, gold necklace, linen blouse, folding a scarf on a wooden counter, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a woman.',
     },
     {
@@ -481,7 +481,7 @@ export const roma: CityPantry = {
       age: 55,
       role: 'bigliettaio',
       placeId: 'stazione-termini',
-      personality: ['patient', 'methodical', 'tired but kind'],
+      personality: ['methodical', 'tired but kind'],
       portraitPrompt: 'Pen and ink portrait on white paper of a ticket office clerk in his fifties with greying hair, a navy railway uniform and tie, leaning toward a ticket window, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
     },
     {
@@ -491,7 +491,7 @@ export const roma: CityPantry = {
       age: 60,
       role: 'edicolante',
       placeId: 'stazione-trastevere',
-      personality: ['sharp', 'gossipy', 'warm underneath'],
+      personality: ['sharp', 'warm underneath'],
       portraitPrompt: 'Pen and ink portrait on white paper of a newsstand owner in her sixties with cropped grey hair, a puffy vest, reading glasses on her nose, surrounded by newspapers and magazines, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a woman.',
     },
   ],

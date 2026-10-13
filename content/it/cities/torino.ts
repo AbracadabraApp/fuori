@@ -387,7 +387,7 @@ export const torino: CityPantry = {
       age: 58,
       role: 'formaggiaio',
       placeId: 'mercato-crocetta',
-      personality: ['expert', 'generous with samples'],
+      personality: ['generous with samples'],
       portraitPrompt: 'Pen and ink portrait on white paper of a friendly cheese vendor in his late fifties with a mustache, wearing an apron. Knowledgeable eyes, welcoming expression. Minimal cream watercolor wash. Detailed facial features, approachable.',
     },
     {
@@ -417,7 +417,7 @@ export const torino: CityPantry = {
       age: 38,
       role: 'chef',
       placeId: 'ristorante-consorzio',
-      personality: ['innovative', 'passionate', 'regional pride'],
+      personality: ['innovative', 'regional pride'],
       portraitPrompt: 'Pen and ink portrait on white paper of a confident female chef in her late thirties with hair in a bandana, wearing chef whites. Determined expression, creative energy. Minimal warm ochre wash. Strong lines, contemporary presence.',
     },
     {
@@ -457,7 +457,7 @@ export const torino: CityPantry = {
       age: 55,
       role: 'sacerdote',
       placeId: 'duomo-torino',
-      personality: ['serene', 'scholarly', 'welcoming'],
+      personality: ['serene', 'welcoming'],
       portraitPrompt: 'Pen and ink portrait on white paper of a gentle priest in his fifties with glasses and graying hair, wearing clerical collar. Peaceful expression, kind eyes. Minimal pale gray wash. Contemplative lines, spiritual presence.',
     },
     {
@@ -477,7 +477,7 @@ export const torino: CityPantry = {
       age: 59,
       role: 'giardiniere',
       placeId: 'parco-valentino',
-      personality: ['patient', 'nature-loving', 'philosophical'],
+      personality: ['nature-loving', 'philosophical'],
       portraitPrompt: 'Pen and ink portrait on white paper of a weathered gardener in his late fifties with sun-worn face, wearing work clothes and cap. Peaceful expression, knowing eyes. Minimal green watercolor wash. Organic lines, earthy character.',
     },
     {
@@ -497,7 +497,7 @@ export const torino: CityPantry = {
       age: 27,
       role: 'artista di strada',
       placeId: 'piazza-vittorio-veneto',
-      personality: ['creative', 'independent', 'observant'],
+      personality: ['creative', 'independent'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young artist with paint-stained fingers and creative style, wearing casual layers. Observant eyes, artistic expression. Minimal colorful watercolor splashes. Loose lines, creative energy. The subject is a woman.',
     },
     {
@@ -507,7 +507,7 @@ export const torino: CityPantry = {
       age: 41,
       role: 'sommelier',
       placeId: 'enoteca-bacco',
-      personality: ['expert', 'enthusiastic', 'regional pride'],
+      personality: ['enthusiastic', 'regional pride'],
       portraitPrompt: 'Pen and ink portrait on white paper of a knowledgeable sommelier in his forties with refined features, wearing sommelier medallion. Passionate expression, discerning look. Minimal burgundy watercolor wash. Sophisticated lines, oenophile character.',
     },
     {
@@ -577,7 +577,7 @@ export const torino: CityPantry = {
       age: 43,
       role: "curatore del museo dell'auto",
       placeId: 'museo-automobile',
-      personality: ['passionate', 'technical', 'nostalgic'],
+      personality: ['technical', 'nostalgic'],
       portraitPrompt: 'Pen and ink portrait on white paper of an automotive enthusiast curator in his forties with precise gestures, wearing modern professional attire. Enthusiastic expression, technical mind. Minimal chrome-gray wash. Sharp lines, automotive passion.',
     },
     {
@@ -597,7 +597,7 @@ export const torino: CityPantry = {
       age: 32,
       role: 'venditore ambulante',
       placeId: 'mercato-centrale-torino',
-      personality: ['artisan', 'modern', 'quality-focused'],
+      personality: ['artisan', 'modern'],
       portraitPrompt: 'Pen and ink portrait on white paper of a contemporary food artisan in his early thirties with a trimmed beard, wearing modern work apron. Proud expression, quality conscious. Minimal warm earth wash. Clean contemporary lines.',
     },
     {

@@ -323,7 +323,7 @@ export const lecce: CityPantry = {
       age: 42,
       role: 'barista',
       placeId: 'bar-della-vittoria',
-      personality: ['chiacchierona', 'energica', 'affettuosa'],
+      personality: ['energica', 'affettuosa'],
       portraitPrompt: 'Pen and ink portrait on white paper of a vivacious woman in her forties with curly dark hair pulled back, bright expressive eyes, warm genuine smile, wearing casual work clothes with apron, animated expression, minimal watercolor wash in warm ochre, detailed pen work, neighborhood favorite',
     },
     {
@@ -333,7 +333,7 @@ export const lecce: CityPantry = {
       age: 35,
       role: 'barista e poeta',
       placeId: 'caffe-letterario',
-      personality: ['intellettuale', 'riflessivo', 'gentile'],
+      personality: ['riflessivo', 'gentile'],
       portraitPrompt: 'Pen and ink portrait on white paper of a thoughtful man in his mid-thirties with glasses, slightly tousled hair, sensitive features, wearing casual sweater, book in background, contemplative expression, minimal watercolor wash in cool greys and warm browns, artistic soul, detailed line work',
     },
     {
@@ -353,7 +353,7 @@ export const lecce: CityPantry = {
       age: 67,
       role: 'pasticciere',
       placeId: 'pasticceria-natale',
-      personality: ['meticoloso', 'tradizionalista', 'saggio'],
+      personality: ['tradizionalista'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly master pastry chef with white hair and mustache, dignified bearing, wearing traditional chef whites, experienced gentle eyes, aristocratic features, minimal watercolor wash in cream and gold tones, refined detailed pen work, artisan pride',
     },
     {
@@ -373,7 +373,7 @@ export const lecce: CityPantry = {
       age: 46,
       role: 'contadina',
       placeId: 'mercato-contadino',
-      personality: ['genuina', 'orgogliosa', 'paziente'],
+      personality: ['genuina', 'orgogliosa'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sun-weathered farmer woman in her forties with kind face, practical head scarf, strong capable features, earth under fingernails, honest direct gaze, minimal watercolor wash in olive green and earth tones, detailed crosshatching, connection to land',
     },
     {
@@ -383,7 +383,7 @@ export const lecce: CityPantry = {
       age: 39,
       role: 'pescivendolo',
       placeId: 'pescheria-del-porto',
-      personality: ['diretto', 'scherzoso', 'esperto'],
+      personality: ['diretto', 'scherzoso'],
       portraitPrompt: 'Pen and ink portrait on white paper of a fishmonger in his late thirties with weather-beaten features, quick smile, wearing rubber apron and boots, sleeves rolled up, knowing expression, minimal watercolor wash in cool blue-grey tones, detailed pen work, man of the sea',
     },
     {
@@ -393,7 +393,7 @@ export const lecce: CityPantry = {
       age: 44,
       role: 'chef e proprietario',
       placeId: 'alle-due-corti',
-      personality: ['appassionato', 'perfezionista', 'carismatico'],
+      personality: ['perfezionista', 'carismatico'],
       portraitPrompt: 'Pen and ink portrait on white paper of a charismatic chef in his forties with intense eyes, confident smile, chef whites, distinguished salt-and-pepper beard, artistic hands, passionate expression, minimal watercolor wash in warm amber, detailed sophisticated line work, culinary artist',
     },
     {
@@ -423,7 +423,7 @@ export const lecce: CityPantry = {
       age: 33,
       role: 'friggitore',
       placeId: 'rusticceria-santa-croce',
-      personality: ['veloce', 'allegro', 'preciso'],
+      personality: ['veloce', 'allegro'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young fry cook in his thirties with quick smile, energetic expression, wearing casual work clothes and cap, confident stance, flour-dusted, happy in his element, minimal watercolor wash in golden yellow, detailed dynamic line work, street food master',
     },
     {
@@ -453,7 +453,7 @@ export const lecce: CityPantry = {
       age: 62,
       role: 'proprietario e guida',
       placeId: 'museo-faggiano',
-      personality: ['curioso', 'narratore', 'entusiasta'],
+      personality: ['narratore', 'entusiasta'],
       portraitPrompt: 'Pen and ink portrait on white paper of an enthusiastic museum owner in his sixties with animated features, bright curious eyes, gesturing hands, casual but dignified dress, storyteller expression, minimal watercolor wash in warm earth tones, detailed expressive line work, accidental archaeologist',
     },
     {
@@ -463,7 +463,7 @@ export const lecce: CityPantry = {
       age: 68,
       role: 'giardiniere',
       placeId: 'villa-comunale',
-      personality: ['tranquillo', 'paziente', 'saggio'],
+      personality: ['tranquillo'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly gardener with weathered kind face, sun hat, soil-stained hands, peaceful expression, connection to nature in eyes, wearing practical work clothes, minimal watercolor wash in soft green and brown, detailed gentle line work, keeper of gardens. The subject is a man.',
     },
     {
@@ -483,7 +483,7 @@ export const lecce: CityPantry = {
       age: 29,
       role: 'artista',
       placeId: 'piazzetta-falconieri',
-      personality: ['sognatrice', 'sensibile', 'osservatrice'],
+      personality: ['sognatrice', 'sensibile'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young artist in her late twenties with thoughtful eyes, paint-stained fingers, flowing dark hair, sketchbook visible, introspective expression, wearing artistic casual clothes, minimal watercolor wash in soft purple-grey, detailed sensitive line work, creative spirit',
     },
     {
@@ -493,7 +493,7 @@ export const lecce: CityPantry = {
       age: 59,
       role: 'proprietaria',
       placeId: 'enoteca-mamma-elvira',
-      personality: ['esperta', 'sofisticata', 'calorosa'],
+      personality: ['sofisticata', 'calorosa'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant wine bar owner in her late fifties with sophisticated style, knowing smile, holding wine glass, intelligent eyes, tasteful jewelry, confident bearing, minimal watercolor wash in burgundy and cream, detailed refined line work, wine expert',
     },
     {
@@ -513,7 +513,7 @@ export const lecce: CityPantry = {
       age: 52,
       role: 'libraia',
       placeId: 'libreria-palmieri',
-      personality: ['colta', 'appassionata', 'riservata'],
+      personality: ['colta', 'riservata'],
       portraitPrompt: 'Pen and ink portrait on white paper of a cultured bookseller in her fifties with reading glasses on chain, thoughtful expression, book in hand, intelligent features, elegant simple style, surrounded by literary atmosphere, minimal watercolor wash in sepia and cream, detailed scholarly line work, book lover',
     },
     {
@@ -543,7 +543,7 @@ export const lecce: CityPantry = {
       age: 64,
       role: 'artigiano di cartapesta',
       placeId: 'bottega-cartapesta',
-      personality: ['creativo', 'paziente'],
+      personality: ['creativo'],
       portraitPrompt: 'Pen and ink portrait on white paper of a master papier-mâché artisan in his sixties with paint-stained hands, gentle eyes, slight beard, wearing smock, surrounded by his creations, contemplative expression, minimal watercolor wash in warm ochre and blue, detailed artistic line work, keeper of tradition',
     },
     {
@@ -573,7 +573,7 @@ export const lecce: CityPantry = {
       age: 61,
       role: 'tabaccaio',
       placeId: 'tabaccheria-moderna',
-      personality: ['informato', 'pettegolo', 'amichevole'],
+      personality: ['amichevole'],
       portraitPrompt: 'Pen and ink portrait on white paper of a neighborhood tobacconist in his sixties with knowing smile, reading glasses, newspaper in hand, friendly wrinkled face, vest over shirt, hub of local gossip, minimal watercolor wash in warm brown and blue, detailed character-filled line work, neighborhood oracle',
     },
     {
@@ -593,7 +593,7 @@ export const lecce: CityPantry = {
       age: 57,
       role: 'salumiere',
       placeId: 'salumeria-del-corso',
-      personality: ['esperto', 'generoso', 'conviviale'],
+      personality: ['generoso', 'conviviale'],
       portraitPrompt: 'Pen and ink portrait on white paper of a traditional delicatessen owner in his fifties with substantial build, white apron, warm jovial face, mustache, knife in hand, expert in his craft, minimal watercolor wash in rich meat and cheese tones, detailed savory line work, master of provisions',
     },
     {

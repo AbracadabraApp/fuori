@@ -305,7 +305,7 @@ export const firenze: CityPantry = {
       age: 38,
       role: 'barista',
       placeId: 'bar-del-moro',
-      personality: ['warm', 'chatty', 'knows everyone'],
+      personality: ['warm', 'knows everyone'],
       portraitPrompt: 'Pen and ink portrait on white paper of a friendly woman with curly dark hair pulled back, bright eyes, welcoming smile, apron tied at waist, minimal warm watercolor wash, expressive face showing genuine warmth',
     },
     {
@@ -385,7 +385,7 @@ export const firenze: CityPantry = {
       age: 41,
       role: 'chef',
       placeId: 'osteria-santo-spirito',
-      personality: ['passionate', 'maternal'],
+      personality: ['maternal'],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm-faced chef with gentle eyes, tasting spoon in hand, apron stained from cooking, minimal warm watercolor wash, nurturing strength evident. The subject is a woman.',
     },
     {
@@ -415,7 +415,7 @@ export const firenze: CityPantry = {
       age: 59,
       role: 'sacerdote',
       placeId: 'duomo',
-      personality: ['scholarly', 'welcoming', 'loves architecture'],
+      personality: ['welcoming', 'loves architecture'],
       portraitPrompt: 'Pen and ink portrait on white paper of a dignified priest with gentle face, glasses, clerical collar, kind expression, minimal dark watercolor wash, intellectual warmth',
     },
     {
@@ -425,7 +425,7 @@ export const firenze: CityPantry = {
       age: 52,
       role: 'gioielliere',
       placeId: 'ponte-vecchio',
-      personality: ['meticulous', 'reserved', 'master craftsman'],
+      personality: ['reserved', 'master craftsman'],
       portraitPrompt: 'Pen and ink portrait on white paper of a refined jeweler with careful eyes, magnifying loupe around neck, skilled hands, formal attire, minimal golden watercolor wash, quiet expertise. The subject is a man.',
     },
     {
@@ -445,7 +445,7 @@ export const firenze: CityPantry = {
       age: 63,
       role: 'capo giardiniere',
       placeId: 'giardino-boboli',
-      personality: ['patient', 'local', 'speaks to plants'],
+      personality: ['local', 'speaks to plants'],
       portraitPrompt: 'Pen and ink portrait on white paper of an older gardener with sun-weathered face, cap, work shirt, gentle smile, earth under fingernails, minimal green watercolor wash, connection to nature evident. The subject is a man.',
     },
     {
@@ -455,7 +455,7 @@ export const firenze: CityPantry = {
       age: 35,
       role: 'guida turistica',
       placeId: 'piazza-signoria',
-      personality: ['enthusiastic', 'theatrical', 'history buff'],
+      personality: ['enthusiastic', 'history buff'],
       portraitPrompt: 'Pen and ink portrait on white paper of an animated young guide with expressive face, gesturing hand, casual professional attire, energetic eyes, minimal warm watercolor wash, passionate storyteller. The subject is a man.',
     },
     {
@@ -495,7 +495,7 @@ export const firenze: CityPantry = {
       age: 39,
       role: 'libraia',
       placeId: 'libreria-brac',
-      personality: ['intellectual', 'warm', 'recommends perfect books'],
+      personality: ['warm', 'recommends perfect books'],
       portraitPrompt: 'Pen and ink portrait on white paper of a thoughtful woman with reading glasses, book in hand, gentle smile, cardigan, minimal warm watercolor wash, literary wisdom and kindness',
     },
     {
