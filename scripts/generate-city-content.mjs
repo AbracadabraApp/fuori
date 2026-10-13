@@ -6,7 +6,8 @@
  * - Characters for each place
  * - Image prompts for places and portraits
  *
- * Output: content/it/cities/{city}.ts files
+ * Output: content/$COUNTRY/cities/{city}.ts files (COUNTRY defaults to it)
+ * Settings per country: content/$COUNTRY/generation.json
  * Cost: ~$0.50 for all 20 cities (Claude Sonnet)
  */
 
@@ -21,89 +22,55 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-// City definitions
-const cities = [
-  { id: 'firenze', name: 'Firenze', region: 'Toscana', neighborhoods: ['Oltrarno', 'San Lorenzo', 'Santa Croce', 'Santo Spirito'] },
-  { id: 'venezia', name: 'Venezia', region: 'Veneto', neighborhoods: ['Cannaregio', 'Castello', 'Dorsoduro', 'San Marco'] },
-  { id: 'milano', name: 'Milano', region: 'Lombardia', neighborhoods: ['Navigli', 'Brera', 'Porta Romana', 'Isola'] },
-  // Add more cities as needed
-];
-
-const cityPantryFormula = `
-City Pantry Formula (25-30 places):
-
-Daily Routine (repeat across neighborhoods):
-- 3 bars/cafés - morning coffee, daily touchpoint
-- 2 bakeries - bread, pastries, morning routine
-
-Food & Shopping (vocabulary contexts):
-- 2-3 markets - produce, local food, vendors
-- 2 restaurants - sit-down, regional dishes
-- 1-2 specialty food - city-specific (e.g., pizzeria, osteria, trattoria)
-
-Cultural/Landmark (2-4 places):
-- 1 major landmark (iconic)
-- 1-2 churches/cultural sites
-- 1 park or public garden
-- 1-2 piazzas (social gathering)
-
-Social/Evening (1-2 each):
-- Wine bars or aperitivo spots (enoteca, wine bar)
-- Bookshop or cultural shop
-
-Practical (1-2 total):
-- Pharmacy, neighborhood shop
-- Transportation hub if relevant
-
-City Character (2-3 unique):
-Reflect what makes this city special
-`;
-
-const artStyleGuidelines = `
-Art Styles:
-- Cities: "Loose watercolor with ink lines, atmospheric, flowing"
-- Places: "Soft pastel sketch, warm colors, textured, inviting"
-- People: "Pen and ink portrait with minimal watercolor wash, detailed, personal"
-`;
+// Everything country-specific lives in content/<country>/generation.json:
+// country and language names, cities and neighbourhoods, what kinds of
+// places to make, the image prompt templates, and (optionally) people who
+// already exist and must be included.
+const COUNTRY = process.env.COUNTRY || 'it';
+const config = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'content', COUNTRY, 'generation.json'), 'utf8'));
+const cities = config.cities;
 
 async function generateCityPantry(city) {
   console.log(`\nGenerating content for ${city.name}...`);
 
-  const prompt = `You are creating a city pantry for ${city.name}, Italy for an Italian language learning app.
+  const people = city.people?.length
+    ? `\nThese people already exist and must be included, each with their place (keep their id, name, gender, age and role, and copy their portraitPrompt exactly):\n${JSON.stringify(city.people, null, 2)}\n`
+    : '';
 
-${cityPantryFormula}
+  const prompt = `You are creating a city pantry for ${city.name}, ${config.country} for a ${config.language} language learning app. The learner has come to live here; the places are where their everyday life happens.
 
-${artStyleGuidelines}
+Places to include (${config.placesPerCity} places):
+${config.placeKinds}
 
 City: ${city.name}
 Region: ${city.region}
-Neighborhoods: ${city.neighborhoods.join(', ')}
-
-Create a complete city pantry following the formula above. For each place:
-1. Generate an appropriate Italian name (use real place names where appropriate)
+Neighborhoods: ${city.neighbourhoods.join(', ')}
+${people}
+For each place:
+1. Give it an authentic ${config.language} name (use real place names where appropriate)
 2. Assign it to a neighborhood
-3. Create a character who works/appears there (Italian name, age, personality, role)
-4. Write an image prompt for the place (pastel style)
-5. Write an image prompt for the character portrait (pen and ink style)
+3. Create one character who works or appears there (${config.language} name, gender, age, personality, role)
+4. Write an image prompt for the place following this template: ${config.placePrompt}
+5. Write a portrait prompt for the character following this template: ${config.portraitPrompt}
 
-Make the places feel authentic to ${city.name}. Include city-specific specialties.
-Use the regional character and dialect touches appropriate to ${city.region}.
+Make the places feel authentic to ${city.name} today. Include city-specific specialties.
 
-Return the data in this exact TypeScript format:
+Return only the data, in this exact TypeScript format:
 
-export const ${city.id}: CityPantry = {
+export const ${toIdentifier(city.id)}: CityPantry = {
   id: '${city.id}',
   name: '${city.name}',
-  neighbourhoods: [${city.neighborhoods.map(n => `'${n}'`).join(', ')}],
+  region: '${city.region}',
+  neighbourhoods: [${city.neighbourhoods.map(n => `'${n}'`).join(', ')}],
   places: [
     {
       id: 'place-id',
       name: 'Place Name',
-      kind: 'bar', // or market, bakery, trattoria, etc.
+      kind: 'bar', // or market, bakery, taquería, etc.
       neighbourhood: 'Neighborhood',
       real: true, // or false
       characterId: 'character-id',
-      imagePrompt: 'Soft pastel sketch on white paper...',
+      imagePrompt: '...',
     },
     // ... more places
   ],
@@ -111,11 +78,12 @@ export const ${city.id}: CityPantry = {
     {
       id: 'character-id',
       name: 'Character Name',
+      gender: 'f', // or 'm'
       age: 35,
       role: 'barista',
       placeId: 'place-id',
       personality: ['trait1', 'trait2', 'trait3'],
-      portraitPrompt: 'Pen and ink portrait on white paper...',
+      portraitPrompt: '...',
     },
     // ... more characters
   ],
@@ -124,7 +92,7 @@ export const ${city.id}: CityPantry = {
   localTouches: ['expression1', 'expression2', ...],
 };
 
-Generate 25-30 places following the formula. Be creative but authentic.`;
+Be creative but authentic.`;
 
   const message = await anthropic.messages.create({
     model: process.env.CLAUDE_MODEL || 'claude-sonnet-5-5',
@@ -135,7 +103,14 @@ Generate 25-30 places following the formula. Be creative but authentic.`;
     }],
   });
 
-  return message.content[0].text;
+  // Keep only the TypeScript, in case the reply wraps it in a code fence
+  const text = message.content.filter(b => b.type === 'text').map(b => b.text).join('');
+  return text.replace(/^[\s\S]*?```(?:typescript|ts)?\n/, '').replace(/\n```[\s\S]*$/, '').trim();
+}
+
+// 'san-miguel-de-allende' -> 'sanMiguelDeAllende'
+function toIdentifier(id) {
+  return id.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
 }
 
 async function generateAllCities() {
@@ -143,7 +118,8 @@ async function generateAllCities() {
   console.log(`Generating content for ${cities.length} cities using Claude...\n`);
 
   for (const city of cities) {
-    const outputPath = path.join(__dirname, '..', 'content', process.env.COUNTRY || 'it', 'cities', `${city.id}.ts`);
+    const outputPath = path.join(__dirname, '..', 'content', COUNTRY, 'cities', `${city.id}.ts`);
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
     // Check if already exists
     if (fs.existsSync(outputPath)) {
@@ -168,7 +144,7 @@ async function generateAllCities() {
   }
 
   console.log('\n=== Content Generation Complete ===');
-  console.log(`Review the generated files in content/${process.env.COUNTRY || 'it'}/cities/`);
+  console.log(`Review the generated files in content/${COUNTRY}/cities/`);
   console.log('Then run: node scripts/generate-images.mjs');
 }
 

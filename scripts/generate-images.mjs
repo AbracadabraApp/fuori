@@ -17,10 +17,18 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execFileSync } from 'child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const MANIFEST_PATH = path.join(__dirname, 'image-generation-manifest.json');
+// Per-country settings (content/<country>/generation.json). Italy keeps its
+// original folders and manifest; other countries get their own image folder
+// and manifest, so their ids can't overwrite Italy's images.
+const COUNTRY = process.env.COUNTRY || 'it';
+const configPath = path.join(__dirname, '..', 'content', COUNTRY, 'generation.json');
+const imageConfig = fs.existsSync(configPath) ? JSON.parse(fs.readFileSync(configPath, 'utf8')).images ?? {} : {};
+const IMAGE_DIR = path.join(__dirname, '..', 'public', imageConfig.dir ?? 'images');
+const MANIFEST_PATH = path.join(__dirname, COUNTRY === 'it' ? 'image-generation-manifest.json' : `image-generation-manifest.${COUNTRY}.json`);
 
 // Load or create manifest
 function loadManifest() {
@@ -83,23 +91,40 @@ function parseCityContent(filePath) {
   return images;
 }
 
-async function generateImage(prompt) {
-  const response = await fetch('http://localhost:3000/api/generate-image', {
+// Calls xAI directly (no dev server needed). Shape and resolution come from
+// the country's settings; without them the generator picks (Italy).
+async function generateImage(prompt, type) {
+  const size = imageConfig[type] ?? {};
+  const response = await fetch('https://api.x.ai/v1/images/generations', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ prompt }),
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${process.env.XAI_API_KEY}` },
+    body: JSON.stringify({
+      model: 'grok-imagine-image-2.0',
+      prompt,
+      n: 1,
+      ...(size.aspect_ratio ? { aspect_ratio: size.aspect_ratio } : {}),
+      ...(size.resolution ? { resolution: size.resolution } : {}),
+    }),
   });
 
   if (!response.ok) {
-    throw new Error(`API error: ${response.statusText}`);
+    throw new Error(`xAI error ${response.status}: ${(await response.text()).slice(0, 200)}`);
   }
 
   const data = await response.json();
-  const imageUrl = data.data[0].url;
-
-  // Download image
-  const imageResponse = await fetch(imageUrl);
+  const imageResponse = await fetch(data.data[0].url);
   return await imageResponse.arrayBuffer();
+}
+
+// Resize to the configured size as JPEG (macOS sips). Elsewhere, keep the original.
+function fitToSize(filepath, type) {
+  const size = imageConfig[type];
+  if (!size?.width) return;
+  try {
+    execFileSync('sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', '88', '-z', String(size.height), String(size.width), filepath, '--out', filepath], { stdio: 'ignore' });
+  } catch {
+    console.warn(`  (could not resize ${path.basename(filepath)}; kept the original size)`);
+  }
 }
 
 async function processCity(cityId, cityFile, manifest, options = {}) {
@@ -125,7 +150,7 @@ async function processCity(cityId, cityFile, manifest, options = {}) {
     // Determine output path
     const dir = image.type === 'place' ? 'places' : 'portraits';
     const filename = `${image.id}.jpg`;
-    const filepath = path.join(__dirname, '..', 'public', 'images', dir, filename);
+    const filepath = path.join(IMAGE_DIR, dir, filename);
 
     // Check if file exists
     if (fs.existsSync(filepath)) {
@@ -146,8 +171,9 @@ async function processCity(cityId, cityFile, manifest, options = {}) {
     // Generate image
     try {
       console.log(`Generating ${imageKey}...`);
-      const buffer = await generateImage(image.prompt);
+      const buffer = await generateImage(image.prompt, image.type);
       fs.writeFileSync(filepath, Buffer.from(buffer));
+      fitToSize(filepath, image.type);
 
       manifest.completed[imageKey] = {
         timestamp: new Date().toISOString(),

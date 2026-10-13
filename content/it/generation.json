@@ -1,0 +1,13 @@
+{
+  "country": "Italy",
+  "language": "Italian",
+  "placesPerCity": "25-30",
+  "placeKinds": "City Pantry Formula (25-30 places):\n\nDaily Routine (repeat across neighborhoods):\n- 3 bars/cafés - morning coffee, daily touchpoint\n- 2 bakeries - bread, pastries, morning routine\n\nFood & Shopping (vocabulary contexts):\n- 2-3 markets - produce, local food, vendors\n- 2 restaurants - sit-down, regional dishes\n- 1-2 specialty food - city-specific (e.g., pizzeria, osteria, trattoria)\n\nCultural/Landmark (2-4 places):\n- 1 major landmark (iconic)\n- 1-2 churches/cultural sites\n- 1 park or public garden\n- 1-2 piazzas (social gathering)\n\nSocial/Evening (1-2 each):\n- Wine bars or aperitivo spots (enoteca, wine bar)\n- Bookshop or cultural shop\n\nPractical (1-2 total):\n- Pharmacy, neighborhood shop\n- Transportation hub if relevant\n\nCity Character (2-3 unique):\nReflect what makes this city special",
+  "placePrompt": "Soft pastel sketch on white paper of [the place]. [Colours, light, mood]. Warm colors, textured, inviting.",
+  "portraitPrompt": "Pen and ink portrait on white paper of [the person]. Minimal watercolor wash in [a few colours]. Detailed linework, personal. The subject is a [woman/man].",
+  "cities": [
+    { "id": "firenze", "name": "Firenze", "region": "Toscana", "neighbourhoods": ["Oltrarno", "San Lorenzo", "Santa Croce", "Santo Spirito"] },
+    { "id": "venezia", "name": "Venezia", "region": "Veneto", "neighbourhoods": ["Cannaregio", "Castello", "Dorsoduro", "San Marco"] },
+    { "id": "milano", "name": "Milano", "region": "Lombardia", "neighbourhoods": ["Navigli", "Brera", "Porta Romana", "Isola"] }
+  ]
+}
