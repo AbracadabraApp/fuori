@@ -655,3 +655,45 @@ Individual characters with cleaned traits:
 ## 2026-10-12: Name under the portrait, bigger header (cloud session)
 
 - Josh: "the person name and role should go under the portrait", and the navigation and name fonts were too small. The person screen now shows the portrait (2:3, as large as fits) with "**Name**, Role" under it at 24px; back link "← City" at 24px, as on Oct 10. The figure sizes itself with container query units so the caption always fits above the mic. Subtitles still rise from mid-screen and can cover the caption during a conversation (the trade-off in docs/ideas.md, now decided by Josh). Applies to Italy and Mexico.
+
+## 2026-10-13: Mexico voices and language-agnostic testing (laptop session)
+
+**Voice selection:**
+- Searched ElevenLabs shared voice library for Mexican Spanish voices
+- Generated test clips for 12 voices (6 women, 6 men) saying: "¿Qué le damos, joven? Ahorita le preparo su tlayuda."
+- Selected 4+4 voices with varied ages for content/es-mx/voices.ts:
+  - Women: Ingrid (20s), Ximena (20s), Lucia (30s), Matilda (40s)
+  - Men: Rayito (20s), Axel G (20s-30s), Diego (30s), Joaquín (40s-50s)
+- Local listening page at /private/tmp/.../mexican-voices/index.html
+
+**Language-agnostic testing framework:**
+- Made test:conversations work with any country pack (COUNTRY env var)
+- CRITERIA adapts to language: "Speaks Spanish" vs "Speaks Italian"
+- Added 'regional' criterion for Mexico: catches Spain Spanish markers (vosotros, vale, coger for "take", ordenador, zumo)
+- Learner descriptions adapt: Mexico references vs Italy references
+- Grade and recommendation prompts use language.name dynamically
+
+**Trait cleanup:**
+- Ran same red-trait removal on Mexico characters as Italy (storyteller, perfectionist, passionate, etc)
+- Fixed 19 characters across 5 Mexico city files
+
+**Thinking/max_tokens fixes:**
+- Increased recommendation max_tokens: 900 → 4096 for Sonnet 5.5 with thinking
+- Italy test:conversations passes end-to-end
+
+**BLOCKER: Mexico conversations fail**
+- All Mexico character turns hit "Claude returned no text (blocks: thinking; stop: max_tokens)"
+- Even with 16K max_tokens (vs 2K for Italy chars), Claude spends all tokens thinking
+- Italy works with same code, same Sonnet 5.5, same prompt structure
+- Traits are cleaned, learners reference Spanish/Mexico not Italian/Italy
+- Prompt dry-run looks correct
+
+**Next steps:**
+1. Investigate why Mexico triggers infinite thinking:
+   - Try different Mexico characters to isolate
+   - Compare actual API request/response for Italy vs Mexico
+   - Check if Spanish language confuses the model differently
+   - Try disabling JSON schema for Mexico to see if that's the trigger
+2. Once Mexico conversations work, run quality tests
+3. Deploy TURN_HISTORY=recent + new voices to Railway
+
