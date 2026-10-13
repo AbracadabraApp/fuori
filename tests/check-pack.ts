@@ -33,9 +33,10 @@ for (const [id, p] of Object.entries(packs)) {
 }
 
 // Hidden content (content/it/showcase.ts): the app must still have something to
-// show, every shown place must have someone to talk to, and the anchors (in the
-// pack's anchor list) must stay reachable. Hidden cities and places stay in the
-// data, so every other test still covers them.
+// show, and every shown place must have someone to talk to. Anchors may be
+// hidden like anyone else (Josh, 2026-10-13); they only reach the app through
+// their places. Hidden cities and places stay in the data, so every other test
+// still covers them.
 for (const [id, p] of Object.entries(packs)) {
   const shown = p.cities.filter((c) => !c.hidden);
   check(shown.length > 0, `${id}: every city is hidden`);
@@ -44,10 +45,8 @@ for (const [id, p] of Object.entries(packs)) {
     check(places.length > 0, `${id}/${c.id}: shown city with no shown places`);
     const people = new Set([...(c.characters ?? []).map((ch) => ch.id), ...Object.keys(p.anchors)]);
     for (const pl of places) check(!!pl.characterId && people.has(pl.characterId), `${id}/${c.id}/${pl.id}: shown place with nobody to talk to`);
-  }
-  for (const anchor of Object.keys(p.anchors)) {
-    const reachable = shown.some((c) => c.places.some((pl) => !pl.hidden && pl.characterId === anchor));
-    check(reachable, `${id}: anchor ${anchor} is hidden`);
+    // The apartment was a place to rest in a day/time loop the game no longer has (Josh, 2026-10-13)
+    for (const pl of places) check(pl.kind !== 'apartment', `${id}/${c.id}/${pl.id}: apartments are retired, keep it hidden`);
   }
 }
 {

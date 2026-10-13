@@ -7,12 +7,16 @@
  * add it here; to show a place, add its id to its city's list. A city listed
  * here shows its listed places, in the feed's usual order.
  * Mexico has no showcase file: everything there is shown.
+ *
+ * Hidden on purpose (Josh, 2026-10-13): Rita's apartment (the game has no
+ * time or rest, it's about going out to places) and Giulia's bar (no
+ * character should be special). Both stay in roma.ts as anchors; removing the
+ * anchor code is a separate task.
  */
 export const showcase: Record<string, string[]> = {
   roma: [
-    'apartment-trastevere-rita',
-    'bar-trastevere-giulia',
     'bar-monti-corner',
+    'bar-testaccio-morning',
     'forno-trastevere',
     'mercato-san-cosimato',
     'trattoria-trastevere',
@@ -20,6 +24,7 @@ export const showcase: Record<string, string[]> = {
     'piazza-santa-maria-trastevere',
     'libreria-trastevere',
     'enoteca-trastevere',
+    'villa-borghese',
   ],
   matera: [
     'caffe-schiuma',
