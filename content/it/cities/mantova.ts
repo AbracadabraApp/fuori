@@ -129,7 +129,7 @@ export const mantova: CityPantry = {
 
     // MARKETS (3)
     {
-      id: 'mercato-erbe',
+      id: 'mercato-erbe-mantova',
       name: 'Mercato di Piazza delle Erbe',
       kind: 'market',
       neighbourhood: 'Centro Storico',
@@ -138,7 +138,7 @@ export const mantova: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of the historic market square with colorful produce stalls, flowers, local vendors under Renaissance arcades. Morning market bustle, fresh vegetables. Vibrant greens, reds, golds, lively textured market atmosphere.',
     },
     {
-      id: 'mercato-coperto',
+      id: 'mercato-coperto-mantova',
       name: 'Mercato Coperto',
       kind: 'market',
       neighbourhood: 'Cittadella',
@@ -207,7 +207,7 @@ export const mantova: CityPantry = {
 
     // LANDMARKS & CULTURAL (6)
     {
-      id: 'palazzo-ducale',
+      id: 'palazzo-ducale-mantova',
       name: 'Palazzo Ducale',
       kind: 'landmark',
       neighbourhood: 'Centro Storico',
@@ -571,7 +571,7 @@ export const mantova: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of an art historian with intelligent eyes, Renaissance passion, interpretive skill. Academic grace. Minimal watercolor wash in soft pinks, detailed scholar character. The subject is a woman.',
     },
     {
-      id: 'don-giuseppe',
+      id: 'don-giuseppe-mantova',
       name: 'Don Giuseppe Mazzini',
       gender: 'm',
       age: 68,
@@ -581,7 +581,7 @@ export const mantova: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of a gentle priest with kind eyes, decades of service, spiritual presence. Pastoral wisdom. Minimal watercolor wash in soft grays, detailed parish priest character.',
     },
     {
-      id: 'suor-maria',
+      id: 'suor-maria-mantova',
       name: 'Suor Maria Benedetta',
       gender: 'f',
       age: 54,

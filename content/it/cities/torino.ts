@@ -188,7 +188,7 @@ export const torino: CityPantry = {
     
     // WINE BARS/APERITIVO (2)
     {
-      id: 'enoteca-bacco',
+      id: 'enoteca-bacco-torino',
       name: 'Enoteca Bacco e Venere',
       kind: 'enoteca',
       neighbourhood: 'Quadrilatero Romano',
@@ -219,7 +219,7 @@ export const torino: CityPantry = {
     
     // PHARMACY (1)
     {
-      id: 'farmacia-centrale',
+      id: 'farmacia-centrale-torino',
       name: 'Farmacia Centrale',
       kind: 'pharmacy',
       neighbourhood: 'Crocetta',
@@ -531,7 +531,7 @@ export const torino: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of an intellectual bookseller in her forties with reading glasses on a chain, surrounded by literary atmosphere. Thoughtful expression, book-lover\'s eyes. Minimal sepia wash. Detailed, bibliophile character.',
     },
     {
-      id: 'dottoressa-carla',
+      id: 'dottoressa-carla-torino',
       name: 'Dott.ssa Carla Boero',
       gender: 'f',
       age: 56,

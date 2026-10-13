@@ -305,7 +305,7 @@ export const napoli: CityPantry = {
 
     // PHARMACY (1)
     {
-      id: 'farmacia-centrale',
+      id: 'farmacia-centrale-napoli',
       name: 'Farmacia Centrale',
       kind: 'pharmacy',
       neighbourhood: 'Vomero',
@@ -316,7 +316,7 @@ export const napoli: CityPantry = {
 
     // TRANSPORTATION HUB (1)
     {
-      id: 'stazione-centrale',
+      id: 'stazione-centrale-napoli',
       name: 'Stazione Napoli Centrale',
       kind: 'station',
       neighbourhood: 'Centro Storico',

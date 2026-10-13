@@ -409,7 +409,7 @@ export const firenze: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of a smiling woman with bright eyes, gelato scoop in hand, white uniform, hair covered, minimal cool pastel watercolor wash, sweet genuine happiness',
     },
     {
-      id: 'padre-giovanni',
+      id: 'padre-giovanni-firenze',
       name: 'Padre Giovanni Bardi',
       gender: 'm',
       age: 59,

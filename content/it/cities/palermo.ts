@@ -283,7 +283,7 @@ export const palermo: CityPantry = {
 
     // PRACTICAL (2 total)
     {
-      id: 'farmacia-centrale',
+      id: 'farmacia-centrale-palermo',
       name: 'Farmacia Centrale',
       kind: 'pharmacy',
       neighbourhood: 'Politeama',
@@ -292,7 +292,7 @@ export const palermo: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of a traditional pharmacy with green cross sign, wooden cabinets with remedies, professional counter, neighborhood helpers, clean whites and medicinal greens, trustworthy atmosphere',
     },
     {
-      id: 'stazione-centrale',
+      id: 'stazione-centrale-palermo',
       name: 'Stazione Centrale',
       kind: 'train-station',
       neighbourhood: 'Politeama',
@@ -542,7 +542,7 @@ export const palermo: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant Sicilian woman with expressive hands, cultured appearance, speaking gestures, professional attire, minimal watercolor wash in operatic golds, dramatic rendering',
     },
     {
-      id: 'padre-leonardo',
+      id: 'padre-leonardo-palermo',
       name: 'Padre Leonardo',
       gender: 'm',
       age: 68,
@@ -552,7 +552,7 @@ export const palermo: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly priest with kind eyes, clerical collar, serene expression, scholarly demeanor, minimal watercolor wash in Byzantine golds, reverent detail',
     },
     {
-      id: 'suor-teresa',
+      id: 'suor-teresa-palermo',
       name: 'Suor Teresa',
       gender: 'f',
       age: 72,

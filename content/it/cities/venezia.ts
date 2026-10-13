@@ -225,7 +225,7 @@ export const venezia: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of the famous white stone bridge arching over the Grand Canal, soft ivory and blue-green water tones, gondolas passing beneath, shops on bridge, timeless Venetian icon',
     },
     {
-      id: 'giardini-pubblici',
+      id: 'giardini-pubblici-venezia',
       name: 'Giardini Pubblici',
       kind: 'park',
       neighbourhood: 'Castello',
@@ -551,7 +551,7 @@ export const venezia: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of a young man with stylish beard, casual but neat clothes, wine-stained apron, minimal wine-red watercolor wash, energetic contemporary lines, passionate expression',
     },
     {
-      id: 'padre-giovanni',
+      id: 'padre-giovanni-venezia',
       name: 'Padre Giovanni Mocenigo',
       gender: 'm',
       age: 64,

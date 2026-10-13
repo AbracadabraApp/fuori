@@ -53,7 +53,7 @@ export const taormina: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper, mountaintop bar with breathtaking views, warm ochre and sky blue tones, outdoor terrace with colorful cushions, almond blossoms in spring, Mediterranean panorama, textured, airy and elevated atmosphere',
     },
     {
-      id: 'caffe-duomo',
+      id: 'caffe-duomo-taormina',
       name: 'Caffè del Duomo',
       kind: 'bar',
       neighbourhood: 'Corso Umberto',
@@ -243,7 +243,7 @@ export const taormina: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper, medieval cathedral, warm cream and rose stone tones, fortress-like facade, baroque interior glimpse, quiet piazza in front, sacred peaceful atmosphere, textured, spiritual heritage',
     },
     {
-      id: 'villa-comunale',
+      id: 'villa-comunale-taormina',
       name: 'Villa Comunale',
       kind: 'park',
       neighbourhood: 'Centro Storico',
@@ -303,7 +303,7 @@ export const taormina: CityPantry = {
 
     // PRACTICAL (2)
     {
-      id: 'farmacia-centrale',
+      id: 'farmacia-centrale-taormina',
       name: 'Farmacia Centrale',
       kind: 'pharmacy',
       neighbourhood: 'Corso Umberto',

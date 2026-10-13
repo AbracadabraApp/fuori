@@ -73,7 +73,7 @@ export const matera: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of a small cave shop selling local products, shelves with olive oil, wine, preserved vegetables, hanging peperoni cruschi, stone walls, soft interior lighting, warm amber and olive green tones, intimate rustic charm',
     },
     {
-      id: 'mercato-contadino',
+      id: 'mercato-contadino-matera',
       name: 'Mercato Contadino',
       kind: 'market',
       neighbourhood: 'Civita',
@@ -208,7 +208,7 @@ export const matera: CityPantry = {
     },
     // PHARMACY (1)
     {
-      id: 'farmacia-centrale',
+      id: 'farmacia-centrale-matera',
       name: 'Farmacia Centrale',
       kind: 'pharmacy',
       neighbourhood: 'Piano',
@@ -529,7 +529,7 @@ export const matera: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of a polished Italian man in elegant suit, welcoming gesture, refined features, minimal watercolor wash, white background, professional warm expression, executive pen detail',
     },
     {
-      id: 'suor-margherita',
+      id: 'suor-margherita-matera',
       name: 'Suor Margherita',
       gender: 'f',
       age: 69,

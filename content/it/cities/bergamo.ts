@@ -294,7 +294,7 @@ export const bergamo: CityPantry = {
 
     // PRACTICAL (2)
     {
-      id: 'farmacia-centrale',
+      id: 'farmacia-centrale-bergamo',
       name: 'Farmacia Centrale',
       kind: 'pharmacy',
       neighbourhood: 'Città Bassa',

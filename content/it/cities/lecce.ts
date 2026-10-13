@@ -126,7 +126,7 @@ export const lecce: CityPantry = {
     
     // MAJOR LANDMARK (1)
     {
-      id: 'basilica-santa-croce',
+      id: 'basilica-santa-croce-lecce',
       name: 'Basilica di Santa Croce',
       kind: 'landmark',
       neighbourhood: 'Santa Croce',
@@ -219,7 +219,7 @@ export const lecce: CityPantry = {
     
     // PRACTICAL (2)
     {
-      id: 'farmacia-centrale',
+      id: 'farmacia-centrale-lecce',
       name: 'Farmacia Centrale',
       kind: 'pharmacy',
       neighbourhood: 'Centro Storico',

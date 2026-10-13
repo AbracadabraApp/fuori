@@ -384,7 +384,7 @@ export const lucca: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of creative-looking man in late thirties with tousled dark hair, expressive eyes, slight beard, wearing casual shirt, minimal earth-tone watercolor wash, intense thoughtful expression, energetic line quality',
     },
     {
-      id: 'elena-marchetti',
+      id: 'elena-marchetti-lucca',
       name: 'Elena Marchetti',
       gender: 'f',
       age: 62,
@@ -584,7 +584,7 @@ export const lucca: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of distinguished elderly priest in late sixties with gray hair, kind eyes behind glasses, wearing clerical collar, minimal purple watercolor wash, serene wise expression, detailed compassionate features, spiritual bearing',
     },
     {
-      id: 'suor-margherita',
+      id: 'suor-margherita-lucca',
       name: 'Suor Margherita',
       gender: 'f',
       age: 56,

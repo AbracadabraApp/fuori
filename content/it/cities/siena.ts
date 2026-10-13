@@ -61,7 +61,7 @@ export const siena: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of an open-air farmers market with white canvas stalls, crates of seasonal vegetables and fruit, bunches of fresh herbs, warm morning light, earth tones and vibrant greens, bustling and organic atmosphere.',
     },
     {
-      id: 'mercato-coperto',
+      id: 'mercato-coperto-siena',
       name: 'La Lizza Market',
       kind: 'market',
       neighbourhood: 'Terzo di Camollia',
@@ -169,7 +169,7 @@ export const siena: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of a terraced Renaissance garden with geometric beds, medicinal herbs, stone pathways, views over Tuscan countryside, dappled shade, soft greens and earth tones, peaceful and historic.',
     },
     {
-      id: 'enoteca-italiana',
+      id: 'enoteca-italiana-siena',
       name: 'Enoteca Italiana',
       kind: 'enoteca',
       neighbourhood: 'Terzo di Camollia',
@@ -205,7 +205,7 @@ export const siena: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of a traditional shop selling Palio silk scarves, contrada flags, ceramic horses, hand-painted banners, vibrant colors against white walls, festive and authentic atmosphere.',
     },
     {
-      id: 'farmacia-centrale',
+      id: 'farmacia-centrale-siena',
       name: 'Farmacia Centrale',
       kind: 'pharmacy',
       neighbourhood: 'Terzo di Città',

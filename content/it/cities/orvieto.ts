@@ -17,7 +17,7 @@ export const orvieto: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of a historic Italian café with a long marble counter, vintage espresso machine gleaming in copper tones, rows of pastries under glass domes, warm amber and cream colors, morning light streaming through tall windows, textured walls with faded elegance, inviting and nostalgic atmosphere',
     },
     {
-      id: 'bar-duomo',
+      id: 'bar-duomo-orvieto',
       name: 'Bar Duomo',
       kind: 'bar',
       neighbourhood: 'Duomo',
@@ -35,7 +35,7 @@ export const orvieto: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of a small neighborhood bar tucked under medieval stone arches, simple wooden counter, bottles of amaro on shelves, locals reading newspapers, warm sienna and burnt umber colors, intimate and traditional, morning ritual atmosphere, textured ancient walls',
     },
     {
-      id: 'bar-centrale',
+      id: 'bar-centrale-orvieto',
       name: 'Bar Centrale',
       kind: 'bar',
       neighbourhood: 'Porta Maggiore',
@@ -147,7 +147,7 @@ export const orvieto: CityPantry = {
     
     // MARKETS (3)
     {
-      id: 'mercato-coperto',
+      id: 'mercato-coperto-orvieto',
       name: 'Mercato Coperto',
       kind: 'market',
       neighbourhood: 'Centro Storico',
@@ -156,7 +156,7 @@ export const orvieto: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of a covered market hall with iron and glass roof, stalls of fresh produce, hanging salumi, cheese wheels, warm amber light filtering through, vibrant vegetable colors, bustling morning market atmosphere, textured market architecture',
     },
     {
-      id: 'mercato-contadino',
+      id: 'mercato-contadino-orvieto',
       name: 'Mercato Contadino',
       kind: 'market',
       neighbourhood: 'Porta Maggiore',
@@ -301,7 +301,7 @@ export const orvieto: CityPantry = {
     
     // PRACTICAL (2)
     {
-      id: 'farmacia-centrale',
+      id: 'farmacia-centrale-orvieto',
       name: 'Farmacia Centrale',
       kind: 'pharmacy',
       neighbourhood: 'Centro Storico',
@@ -661,7 +661,7 @@ export const orvieto: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of a man with salt-and-pepper beard, soulful eyes, wine-stained apron, contemplative expression, minimal burgundy watercolor wash, passion for wine, detailed thoughtful face',
     },
     {
-      id: 'dottoressa-martini',
+      id: 'dottoressa-martini-orvieto',
       name: 'Dottoressa Martini',
       gender: 'f',
       age: 56,

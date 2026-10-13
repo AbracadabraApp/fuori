@@ -208,7 +208,7 @@ export const verona: CityPantry = {
     },
     // PHARMACY (1)
     {
-      id: 'farmacia-centrale',
+      id: 'farmacia-centrale-verona',
       name: 'Farmacia Centrale',
       kind: 'pharmacy',
       neighbourhood: 'Centro Storico',
@@ -488,7 +488,7 @@ export const verona: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of a casual young woman with wavy shoulder-length hair, bright friendly eyes, wearing jeans and simple top, pouring wine with ease, genuine warm smile, detailed linework with watercolor wash in wine red and warm cream',
     },
     {
-      id: 'beatrice-libri',
+      id: 'beatrice-libri-verona',
       name: 'Beatrice Libri',
       gender: 'f',
       age: 54,

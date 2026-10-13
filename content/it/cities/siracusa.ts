@@ -271,7 +271,7 @@ export const siracusa: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of neighborhood bar with locals playing cards, espresso machine hissing, pastries under glass dome, lottery tickets and newspapers, small TV in corner, worn but loved atmosphere, warm browns and yellows, community and daily life',
     },
     {
-      id: 'orto-botanico',
+      id: 'orto-botanico-siracusa',
       name: 'Giardino Pubblico',
       kind: 'garden',
       neighbourhood: 'Acradina',

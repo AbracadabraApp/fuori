@@ -319,7 +319,7 @@ export const milano: CityPantry = {
 
     // PRACTICAL (2 places)
     {
-      id: 'farmacia-centrale',
+      id: 'farmacia-centrale-milano',
       name: 'Farmacia Centrale',
       kind: 'pharmacy',
       neighbourhood: 'Porta Romana',
@@ -479,7 +479,7 @@ export const milano: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of a woman in her early 30s with natural beauty, flour-dusted apron, loose hair, gentle confident expression, minimal watercolor wash in soft wheat and white tones, modern artisan spirit',
     },
     {
-      id: 'andrea-colombo',
+      id: 'andrea-colombo-milano',
       name: 'Andrea Colombo',
       gender: 'm',
       age: 52,
@@ -599,7 +599,7 @@ export const milano: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly priest with gentle face, clerical collar, wise eyes, serene expression, minimal watercolor wash in cathedral stone tones, spiritual gravitas',
     },
     {
-      id: 'dottoressa-martini',
+      id: 'dottoressa-martini-milano',
       name: 'Dottoressa Martini',
       gender: 'f',
       age: 43,
@@ -609,7 +609,7 @@ export const milano: CityPantry = {
       portraitPrompt: 'Pen and ink portrait on white paper of a sophisticated woman in her 40s with stylish glasses, elegant professional attire, art catalog in hand, intelligent gaze, minimal watercolor wash in gallery tones, cultured authority',
     },
     {
-      id: 'suor-teresa',
+      id: 'suor-teresa-milano',
       name: 'Suor Teresa',
       gender: 'f',
       age: 54,
