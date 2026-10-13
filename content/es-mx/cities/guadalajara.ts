@@ -88,7 +88,7 @@ export const guadalajara: CityPantry = {
       imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Parroquia de San Pedro, Tlaquepaque, Guadalajara, today. A stone church with a tall bell tower and a front door open to the street, with strings of papel picado above the pedestrian lane. A woman in a cardigan sweeps the steps while families walk past with ice creams. Bold colour: rose pink, cobalt blue, warm gold. Square format, 1200 × 1200 pixels.',
     },
     {
-      id: 'fonda-doña-chuy',
+      id: 'fonda-dona-chuy',
       name: 'Cocina Económica Doña Chuy',
       kind: 'fonda',
       neighbourhood: 'Tlaquepaque',
@@ -194,7 +194,7 @@ export const guadalajara: CityPantry = {
       gender: 'f',
       age: 58,
       role: 'cook',
-      placeId: 'fonda-doña-chuy',
+      placeId: 'fonda-dona-chuy',
       personality: ['warm', 'bossy', 'generous with portions'],
       portraitPrompt: 'Gouache portrait of a round-faced woman of 58 with rolled-up sleeves, a hairnet and a loud, warm laugh, wearing a checked apron, who cooks lunch at Cocina Económica Doña Chuy, Tlaquepaque, Guadalajara. Include her steaming clay pots and the oilcloth tables. Bold, saturated colour: chilli red, mustard and avocado green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
     },

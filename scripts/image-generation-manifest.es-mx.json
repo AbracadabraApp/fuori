@@ -1,0 +1,512 @@
+{
+  "started": "2026-10-13T02:40:27.332Z",
+  "completed": {
+    "ciudad-de-mexico/puesto-de-boleo-don-chucho": {
+      "timestamp": "2026-10-13T02:40:51.495Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/puesto-de-boleo-don-chucho.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/libros-tecolote": {
+      "timestamp": "2026-10-13T02:41:23.039Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/libros-tecolote.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/cafe-amapola": {
+      "timestamp": "2026-10-13T02:41:52.702Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cafe-amapola.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/panaderia-la-concha-de-oro": {
+      "timestamp": "2026-10-13T02:42:20.779Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/panaderia-la-concha-de-oro.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/parque-mexico": {
+      "timestamp": "2026-10-13T02:42:47.304Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/parque-mexico.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/quesadillas-dona-lupe": {
+      "timestamp": "2026-10-13T02:43:10.726Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/quesadillas-dona-lupe.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/tacos-el-trompo-rojo": {
+      "timestamp": "2026-10-13T02:43:38.951Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tacos-el-trompo-rojo.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/fonda-dona-cuca": {
+      "timestamp": "2026-10-13T02:44:05.226Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fonda-dona-cuca.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/catedral-metropolitana": {
+      "timestamp": "2026-10-13T02:44:31.289Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/catedral-metropolitana.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/cantina-la-opera": {
+      "timestamp": "2026-10-13T02:44:58.290Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cantina-la-opera.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/chucho-lustrabotas": {
+      "timestamp": "2026-10-13T02:45:01.294Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/chucho-lustrabotas.jpg",
+      "skipped": true
+    },
+    "ciudad-de-mexico/vale-libros-tecolote": {
+      "timestamp": "2026-10-13T02:45:01.295Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/vale-libros-tecolote.jpg",
+      "skipped": true
+    },
+    "ciudad-de-mexico/ximena-barista": {
+      "timestamp": "2026-10-13T02:45:27.826Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/ximena-barista.jpg",
+      "type": "portrait"
+    },
+    "ciudad-de-mexico/gaspar-panadero": {
+      "timestamp": "2026-10-13T02:45:57.064Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/gaspar-panadero.jpg",
+      "type": "portrait"
+    },
+    "ciudad-de-mexico/beto-paseador": {
+      "timestamp": "2026-10-13T02:46:23.282Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/beto-paseador.jpg",
+      "type": "portrait"
+    },
+    "ciudad-de-mexico/lupe-quesadillera": {
+      "timestamp": "2026-10-13T02:46:52.682Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/lupe-quesadillera.jpg",
+      "type": "portrait"
+    },
+    "ciudad-de-mexico/chema-taquero": {
+      "timestamp": "2026-10-13T02:47:26.406Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/chema-taquero.jpg",
+      "type": "portrait"
+    },
+    "ciudad-de-mexico/cuca-cocinera": {
+      "timestamp": "2026-10-13T02:47:51.737Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/cuca-cocinera.jpg",
+      "type": "portrait"
+    },
+    "ciudad-de-mexico/alicia-catequista": {
+      "timestamp": "2026-10-13T02:48:18.045Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/alicia-catequista.jpg",
+      "type": "portrait"
+    },
+    "ciudad-de-mexico/efrain-mesero": {
+      "timestamp": "2026-10-13T02:48:47.183Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/efrain-mesero.jpg",
+      "type": "portrait"
+    },
+    "guadalajara/tejuino-san-juan-de-dios": {
+      "timestamp": "2026-10-13T02:49:12.882Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tejuino-san-juan-de-dios.jpg",
+      "type": "place"
+    },
+    "guadalajara/cantina-la-fuente": {
+      "timestamp": "2026-10-13T02:49:42.094Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cantina-la-fuente.jpg",
+      "type": "place"
+    },
+    "guadalajara/cafe-tinta": {
+      "timestamp": "2026-10-13T02:50:07.137Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cafe-tinta.jpg",
+      "type": "place"
+    },
+    "guadalajara/panaderia-la-espiga": {
+      "timestamp": "2026-10-13T02:50:33.454Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/panaderia-la-espiga.jpg",
+      "type": "place"
+    },
+    "guadalajara/parque-revolucion": {
+      "timestamp": "2026-10-13T02:51:08.937Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/parque-revolucion.jpg",
+      "type": "place"
+    },
+    "guadalajara/tacos-el-compa-nacho": {
+      "timestamp": "2026-10-13T02:51:33.236Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tacos-el-compa-nacho.jpg",
+      "type": "place"
+    },
+    "guadalajara/abarrotes-la-esquinita": {
+      "timestamp": "2026-10-13T02:51:57.745Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/abarrotes-la-esquinita.jpg",
+      "type": "place"
+    },
+    "guadalajara/taller-ceramica-tlaquepaque": {
+      "timestamp": "2026-10-13T02:52:23.521Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/taller-ceramica-tlaquepaque.jpg",
+      "type": "place"
+    },
+    "guadalajara/parroquia-san-pedro-tlaquepaque": {
+      "timestamp": "2026-10-13T02:52:52.135Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/parroquia-san-pedro-tlaquepaque.jpg",
+      "type": "place"
+    },
+    "guadalajara/fonda-dona-chuy": {
+      "timestamp": "2026-10-13T02:53:17.408Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fonda-dona-chuy.jpg",
+      "type": "place"
+    },
+    "guadalajara/memo-tejuino": {
+      "timestamp": "2026-10-13T02:53:20.410Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/memo-tejuino.jpg",
+      "skipped": true
+    },
+    "guadalajara/ximena-ceramica": {
+      "timestamp": "2026-10-13T02:53:20.412Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/ximena-ceramica.jpg",
+      "skipped": true
+    },
+    "guadalajara/rigoberto-cantinero": {
+      "timestamp": "2026-10-13T02:53:45.279Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/rigoberto-cantinero.jpg",
+      "type": "portrait"
+    },
+    "guadalajara/valeria-barista": {
+      "timestamp": "2026-10-13T02:54:14.553Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/valeria-barista.jpg",
+      "type": "portrait"
+    },
+    "guadalajara/efren-panadero": {
+      "timestamp": "2026-10-13T02:54:36.353Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/efren-panadero.jpg",
+      "type": "portrait"
+    },
+    "guadalajara/lalo-bolero": {
+      "timestamp": "2026-10-13T02:55:07.336Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/lalo-bolero.jpg",
+      "type": "portrait"
+    },
+    "guadalajara/nacho-taquero": {
+      "timestamp": "2026-10-13T02:55:39.736Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/nacho-taquero.jpg",
+      "type": "portrait"
+    },
+    "guadalajara/mari-tendera": {
+      "timestamp": "2026-10-13T02:56:11.666Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/mari-tendera.jpg",
+      "type": "portrait"
+    },
+    "guadalajara/lupita-sacristana": {
+      "timestamp": "2026-10-13T02:56:38.790Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/lupita-sacristana.jpg",
+      "type": "portrait"
+    },
+    "guadalajara/chuy-cocinera": {
+      "timestamp": "2026-10-13T02:57:02.885Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/chuy-cocinera.jpg",
+      "type": "portrait"
+    },
+    "oaxaca/tlayudas-mercado-20-de-noviembre": {
+      "timestamp": "2026-10-13T02:57:33.405Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tlayudas-mercado-20-de-noviembre.jpg",
+      "type": "place"
+    },
+    "oaxaca/mezcaleria-los-amantes": {
+      "timestamp": "2026-10-13T02:57:55.437Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/mezcaleria-los-amantes.jpg",
+      "type": "place"
+    },
+    "oaxaca/cafe-pocito-jalatlaco": {
+      "timestamp": "2026-10-13T02:58:17.726Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cafe-pocito-jalatlaco.jpg",
+      "type": "place"
+    },
+    "oaxaca/panaderia-el-trigal-xochimilco": {
+      "timestamp": "2026-10-13T02:58:40.132Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/panaderia-el-trigal-xochimilco.jpg",
+      "type": "place"
+    },
+    "oaxaca/puesto-chapulines-mercado-benito-juarez": {
+      "timestamp": "2026-10-13T02:59:06.921Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/puesto-chapulines-mercado-benito-juarez.jpg",
+      "type": "place"
+    },
+    "oaxaca/fonda-dona-tere-reforma": {
+      "timestamp": "2026-10-13T02:59:35.223Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fonda-dona-tere-reforma.jpg",
+      "type": "place"
+    },
+    "oaxaca/jardin-conzatti-reforma": {
+      "timestamp": "2026-10-13T03:00:01.195Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/jardin-conzatti-reforma.jpg",
+      "type": "place"
+    },
+    "oaxaca/templo-san-matias-jalatlaco": {
+      "timestamp": "2026-10-13T03:00:26.581Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/templo-san-matias-jalatlaco.jpg",
+      "type": "place"
+    },
+    "oaxaca/abarrotes-los-tres-hermanos-xochimilco": {
+      "timestamp": "2026-10-13T03:00:54.196Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/abarrotes-los-tres-hermanos-xochimilco.jpg",
+      "type": "place"
+    },
+    "oaxaca/jardin-etnobotanico-oaxaca": {
+      "timestamp": "2026-10-13T03:01:21.025Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/jardin-etnobotanico-oaxaca.jpg",
+      "type": "place"
+    },
+    "oaxaca/ofelia-tlayudas": {
+      "timestamp": "2026-10-13T03:01:24.027Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/ofelia-tlayudas.jpg",
+      "skipped": true
+    },
+    "oaxaca/emiliano-los-amantes": {
+      "timestamp": "2026-10-13T03:01:24.028Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/emiliano-los-amantes.jpg",
+      "skipped": true
+    },
+    "oaxaca/marisol-cafe-pocito": {
+      "timestamp": "2026-10-13T03:01:45.954Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/marisol-cafe-pocito.jpg",
+      "type": "portrait"
+    },
+    "oaxaca/beto-panadero": {
+      "timestamp": "2026-10-13T03:02:08.608Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/beto-panadero.jpg",
+      "type": "portrait"
+    },
+    "oaxaca/chela-chapulines": {
+      "timestamp": "2026-10-13T03:02:36.660Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/chela-chapulines.jpg",
+      "type": "portrait"
+    },
+    "oaxaca/tere-fonda": {
+      "timestamp": "2026-10-13T03:03:07.133Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/tere-fonda.jpg",
+      "type": "portrait"
+    },
+    "oaxaca/nacho-nevero": {
+      "timestamp": "2026-10-13T03:03:33.027Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/nacho-nevero.jpg",
+      "type": "portrait"
+    },
+    "oaxaca/concha-sacristana": {
+      "timestamp": "2026-10-13T03:03:59.457Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/concha-sacristana.jpg",
+      "type": "portrait"
+    },
+    "oaxaca/ruben-abarrotes": {
+      "timestamp": "2026-10-13T03:04:25.973Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/ruben-abarrotes.jpg",
+      "type": "portrait"
+    },
+    "oaxaca/luis-guia-jardin": {
+      "timestamp": "2026-10-13T03:04:56.286Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/luis-guia-jardin.jpg",
+      "type": "portrait"
+    },
+    "puebla/dulces-tipicos-la-gloria": {
+      "timestamp": "2026-10-13T03:05:24.045Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/dulces-tipicos-la-gloria.jpg",
+      "type": "place"
+    },
+    "puebla/templo-de-santo-domingo": {
+      "timestamp": "2026-10-13T03:05:48.773Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/templo-de-santo-domingo.jpg",
+      "type": "place"
+    },
+    "puebla/cafe-cielo-rojo": {
+      "timestamp": "2026-10-13T03:06:13.943Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cafe-cielo-rojo.jpg",
+      "type": "place"
+    },
+    "puebla/panaderia-la-espiga-de-la-paz": {
+      "timestamp": "2026-10-13T03:06:38.450Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/panaderia-la-espiga-de-la-paz.jpg",
+      "type": "place"
+    },
+    "puebla/cemitas-dona-lupe-analco": {
+      "timestamp": "2026-10-13T03:07:05.914Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cemitas-dona-lupe-analco.jpg",
+      "type": "place"
+    },
+    "puebla/fonda-dona-tere": {
+      "timestamp": "2026-10-13T03:07:33.339Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fonda-dona-tere.jpg",
+      "type": "place"
+    },
+    "puebla/tacos-arabes-el-puente": {
+      "timestamp": "2026-10-13T03:07:55.881Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tacos-arabes-el-puente.jpg",
+      "type": "place"
+    },
+    "puebla/zocalo-de-puebla": {
+      "timestamp": "2026-10-13T03:08:22.220Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/zocalo-de-puebla.jpg",
+      "type": "place"
+    },
+    "puebla/la-pasita": {
+      "timestamp": "2026-10-13T03:08:49.901Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/la-pasita.jpg",
+      "type": "place"
+    },
+    "puebla/farmacia-san-rafael": {
+      "timestamp": "2026-10-13T03:09:17.141Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/farmacia-san-rafael.jpg",
+      "type": "place"
+    },
+    "puebla/sofia-dulces-la-gloria": {
+      "timestamp": "2026-10-13T03:09:20.144Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/sofia-dulces-la-gloria.jpg",
+      "skipped": true
+    },
+    "puebla/padre-tomas-santo-domingo": {
+      "timestamp": "2026-10-13T03:09:20.145Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/padre-tomas-santo-domingo.jpg",
+      "skipped": true
+    },
+    "puebla/mateo-cafe-cielo-rojo": {
+      "timestamp": "2026-10-13T03:09:49.852Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/mateo-cafe-cielo-rojo.jpg",
+      "type": "portrait"
+    },
+    "puebla/remedios-panaderia-la-espiga": {
+      "timestamp": "2026-10-13T03:10:20.935Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/remedios-panaderia-la-espiga.jpg",
+      "type": "portrait"
+    },
+    "puebla/lupe-cemitas-dona-lupe": {
+      "timestamp": "2026-10-13T03:10:51.371Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/lupe-cemitas-dona-lupe.jpg",
+      "type": "portrait"
+    },
+    "puebla/tere-fonda-dona-tere": {
+      "timestamp": "2026-10-13T03:11:20.603Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/tere-fonda-dona-tere.jpg",
+      "type": "portrait"
+    },
+    "puebla/chuy-tacos-arabes-el-puente": {
+      "timestamp": "2026-10-13T03:11:50.518Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/chuy-tacos-arabes-el-puente.jpg",
+      "type": "portrait"
+    },
+    "puebla/efrain-zocalo-de-puebla": {
+      "timestamp": "2026-10-13T03:12:16.624Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/efrain-zocalo-de-puebla.jpg",
+      "type": "portrait"
+    },
+    "puebla/ruben-la-pasita": {
+      "timestamp": "2026-10-13T03:12:46.536Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/ruben-la-pasita.jpg",
+      "type": "portrait"
+    },
+    "puebla/daniela-farmacia-san-rafael": {
+      "timestamp": "2026-10-13T03:13:11.157Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/daniela-farmacia-san-rafael.jpg",
+      "type": "portrait"
+    },
+    "san-miguel-de-allende/mercado-ignacio-ramirez": {
+      "timestamp": "2026-10-13T03:13:34.831Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/mercado-ignacio-ramirez.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/jardin-allende": {
+      "timestamp": "2026-10-13T03:14:01.303Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/jardin-allende.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/parroquia-san-miguel-arcangel": {
+      "timestamp": "2026-10-13T03:14:25.497Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/parroquia-san-miguel-arcangel.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/la-cucaracha": {
+      "timestamp": "2026-10-13T03:14:52.345Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/la-cucaracha.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/cafe-de-la-calzada": {
+      "timestamp": "2026-10-13T03:15:18.847Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cafe-de-la-calzada.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/fabrica-la-aurora": {
+      "timestamp": "2026-10-13T03:15:47.574Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fabrica-la-aurora.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/panaderia-la-esperanza": {
+      "timestamp": "2026-10-13T03:16:14.497Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/panaderia-la-esperanza.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/miscelanea-los-arcos": {
+      "timestamp": "2026-10-13T03:16:41.423Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/miscelanea-los-arcos.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/fonda-la-palmita": {
+      "timestamp": "2026-10-13T03:17:11.963Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fonda-la-palmita.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/tacos-el-pastor-atascadero": {
+      "timestamp": "2026-10-13T03:17:39.012Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tacos-el-pastor-atascadero.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/rosa-flores-ignacio-ramirez": {
+      "timestamp": "2026-10-13T03:17:42.015Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/rosa-flores-ignacio-ramirez.jpg",
+      "skipped": true
+    },
+    "san-miguel-de-allende/beto-taxi": {
+      "timestamp": "2026-10-13T03:17:42.016Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/beto-taxi.jpg",
+      "skipped": true
+    },
+    "san-miguel-de-allende/aurelio-sacristan": {
+      "timestamp": "2026-10-13T03:18:14.375Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/aurelio-sacristan.jpg",
+      "type": "portrait"
+    },
+    "san-miguel-de-allende/tomas-cantinero": {
+      "timestamp": "2026-10-13T03:18:44.903Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/tomas-cantinero.jpg",
+      "type": "portrait"
+    },
+    "san-miguel-de-allende/ximena-barista-san-miguel": {
+      "timestamp": "2026-10-13T03:19:27.579Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/ximena-barista-san-miguel.jpg",
+      "type": "portrait"
+    },
+    "san-miguel-de-allende/marisol-ceramista": {
+      "timestamp": "2026-10-13T03:20:01.125Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/marisol-ceramista.jpg",
+      "type": "portrait"
+    },
+    "san-miguel-de-allende/lourdes-panadera": {
+      "timestamp": "2026-10-13T03:20:28.695Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/lourdes-panadera.jpg",
+      "type": "portrait"
+    },
+    "san-miguel-de-allende/efrain-tendero": {
+      "timestamp": "2026-10-13T03:20:55.986Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/efrain-tendero.jpg",
+      "type": "portrait"
+    },
+    "san-miguel-de-allende/chelo-cocinera": {
+      "timestamp": "2026-10-13T03:21:28.335Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/chelo-cocinera.jpg",
+      "type": "portrait"
+    },
+    "san-miguel-de-allende/ramiro-taquero": {
+      "timestamp": "2026-10-13T03:22:00.422Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/ramiro-taquero.jpg",
+      "type": "portrait"
+    }
+  },
+  "failed": {},
+  "stats": {
+    "total": 100,
+    "completed": 100,
+    "failed": 0,
+    "lastRun": "2026-10-13T03:22:03.425Z"
+  }
+}
