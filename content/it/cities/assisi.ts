@@ -292,8 +292,27 @@ export const assisi: CityPantry = {
       characterId: 'federica-lenti',
       imagePrompt: 'Soft pastel sketch on white paper of charming gelato shop with colorful display cases, pastel pink and mint green decor, medieval stone archway, customers enjoying cones, sweet summer atmosphere',
     },
+    {
+      id: 'stazione-assisi',
+      name: 'Stazione di Assisi',
+      kind: 'train-station',
+      neighbourhood: 'Santa Maria degli Angeli',
+      real: true,
+      characterId: 'luigi-bigliettaio-assisi',
+      imagePrompt: 'Soft pastel sketch on white paper of the small railway station of Assisi in Santa Maria degli Angeli, Umbria, Italy, below the hill town, a regional train at the platform, pilgrims and students with backpacks, the town and the basilica of San Francesco visible on the hillside behind, warm ochre and cream tones, morning light. The station\'s sign reads \'Assisi\'. Any other lettering is everyday Italian detail like a timetable; no other signs naming the city.',
+    },
   ],
   characters: [
+    {
+      id: 'luigi-bigliettaio-assisi',
+      name: 'Luigi Properzi',
+      gender: 'm',
+      age: 61,
+      role: 'bigliettaio',
+      placeId: 'stazione-assisi',
+      personality: ['calm', 'helpful'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a man in his early sixties with thinning grey hair and a neat moustache, navy railway uniform with a tie, behind a ticket window with a timetable behind him, minimal sepia watercolor wash, detailed cross-hatching. A man.',
+    },
     {
       id: 'marco-bartoli',
       name: 'Marco Bartoli',

@@ -347,9 +347,28 @@ export const orvieto: CityPantry = {
       characterId: 'irene-vitali',
       imagePrompt: 'Soft pastel sketch on white paper of an elegant 19th-century theater interior with red velvet seats, ornate balconies, crystal chandeliers, warm crimson and gold tones, cultural heart of city, evening performance atmosphere, textured baroque details',
     },
+    {
+      id: 'stazione-orvieto',
+      name: 'Stazione di Orvieto',
+      kind: 'train-station',
+      neighbourhood: 'Orvieto Scalo',
+      real: true,
+      characterId: 'gianni-bigliettaio-orvieto',
+      imagePrompt: 'Soft pastel sketch on white paper of the railway station of Orvieto at Orvieto Scalo, Umbria, Italy, at the foot of the town\'s tufa cliff, the red funicular car waiting across the square to go up to the town, travellers with bags, warm amber and cream colors, morning light. The station\'s sign reads \'Orvieto\'. Any other lettering is everyday Italian detail like a timetable; no other signs naming the city.',
+    },
   ],
   
   characters: [
+    {
+      id: 'gianni-bigliettaio-orvieto',
+      name: 'Gianni Fumi',
+      gender: 'm',
+      age: 58,
+      role: 'bigliettaio',
+      placeId: 'stazione-orvieto',
+      personality: ['jovial', 'punctual'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a stocky man in his late fifties with a round face and white moustache, railway cap pushed back, uniform jacket, behind a ticket window with a funicular timetable behind him, minimal sepia watercolor wash, detailed facial lines. A man.',
+    },
     {
       id: 'paolo-montanucci',
       name: 'Paolo Montanucci',

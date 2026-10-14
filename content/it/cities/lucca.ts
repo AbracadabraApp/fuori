@@ -331,8 +331,27 @@ export const lucca: CityPantry = {
       characterId: 'dottoressa-massei',
       imagePrompt: 'Soft pastel sketch on white paper of traditional pharmacy with antique wooden cabinets, ceramic medicine jars, green cross sign, white coat hanging, organized shelves, soft green and white colors, trusted neighborhood health spot, professional caring atmosphere',
     },
+    {
+      id: 'stazione-lucca',
+      name: 'Stazione di Lucca',
+      kind: 'train-station',
+      neighbourhood: 'Porta San Pietro',
+      real: true,
+      characterId: 'marta-bigliettaia-lucca',
+      imagePrompt: 'Soft pastel sketch on white paper of the railway station of Lucca, Tuscany, Italy, just outside the city walls near Porta San Pietro, a modest ochre station building, people with bicycles, a regional train at the platform, the tree-lined Renaissance walls in the background, warm amber and cream tones, morning light. The station\'s sign reads \'Lucca\'. Any other lettering is everyday Italian detail like a timetable; no other signs naming the city.',
+    },
   ],
   characters: [
+    {
+      id: 'marta-bigliettaia-lucca',
+      name: 'Marta Puccetti',
+      gender: 'f',
+      age: 40,
+      role: 'bigliettaia',
+      placeId: 'stazione-lucca',
+      personality: ['friendly', 'unhurried'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a woman around forty with wavy chestnut hair tied back, freckles, railway uniform cardigan, behind a ticket window with a bicycle parked outside the glass, minimal sepia watercolor wash, fine lines. A woman.',
+    },
     {
       id: 'sergio-di-simo',
       name: 'Sergio Di Simo',

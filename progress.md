@@ -1247,3 +1247,8 @@ Josh wants one file to drop into Google Gemini; the Anki CSV is dropped, and ver
 - Board words come from the pack (`ui.board`, `platform`, `whereTo`, `youAreHere`); the board title was hard-coded Italian, so Mexico showed "Dove vuoi andare?".
 - Checked: tsc, offline tests and builds for it and es-mx; headless walk-through Roma → Taormina and CDMX → Oaxaca.
 - **Not done:** six Italian cities have no station (Taormina, Assisi, Bergamo, Torino, Lucca, Orvieto). Not checked with a real conversation (no API key here): the clerk mentioning the platform and time.
+
+## 2026-10-14: Stations for the last six Italian cities (cloud session, branch `stations-missing`)
+
+- Josh: add stations where missing. Added a real station and a ticket seller to Taormina (Taormina-Giardini, Agata Spadaro), Assisi (Santa Maria degli Angeli, Luigi Properzi), Bergamo (Città Bassa, Sara Gamba), Torino (Porta Nuova, Enrico Bosio), Lucca (Porta San Pietro, Marta Puccetti) and Orvieto (Orvieto Scalo with the funicular, Gianni Fumi), each in its city's picture style, with the sign rule; added to the showcase.
+- **On a branch, not main:** the 12 images need the xAI key (laptop). `test:images` fails until they exist; everything else passes. **Laptop:** `git fetch && git checkout stations-missing && npm run images` (only generates what's missing), check the 12 pictures, `npm run test:images`, then merge into main and push.

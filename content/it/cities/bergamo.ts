@@ -331,9 +331,28 @@ export const bergamo: CityPantry = {
       characterId: 'clara-bellini',
       imagePrompt: 'Soft pastel sketch on white paper of a distinguished art museum building, neoclassical architecture, warm stone and terracotta tones, textured elegant facade, masterpiece collection atmosphere, cultural pride of Bergamo',
     },
+    {
+      id: 'stazione-bergamo',
+      name: 'Stazione di Bergamo',
+      kind: 'train-station',
+      neighbourhood: 'Città Bassa',
+      real: true,
+      characterId: 'sara-bigliettaia-bergamo',
+      imagePrompt: 'Soft pastel sketch on white paper of the railway station of Bergamo in Città Bassa, Lombardy, Italy, a long neoclassical facade with a portico, commuters and students, a city bus outside, the walled Città Alta on its hill in the distance, warm golden and terracotta tones, loose brushstrokes. The station\'s sign reads \'Bergamo\'. Any other lettering is everyday Italian detail like a timetable; no other signs naming the city.',
+    },
   ],
   
   characters: [
+    {
+      id: 'sara-bigliettaia-bergamo',
+      name: 'Sara Gamba',
+      gender: 'f',
+      age: 34,
+      role: 'bigliettaia',
+      placeId: 'stazione-bergamo',
+      personality: ['diretta', 'gentile'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a woman in her thirties with short dark hair and small earrings, railway uniform jacket and scarf, behind a ticket counter with a departures screen behind her, minimal sepia watercolor wash on face, detailed crosshatching, friendly direct gaze. A woman.',
+    },
     {
       id: 'marco-villa',
       name: 'Marco Villa',
