@@ -147,7 +147,72 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 - Simple implementation (every conversation) better than complex (scheduled/cached)
 - Research methods should drive requirements, not abstract features
 
-**Next:** Begin M2 implementation - Review generation prompt and schema
+**Implementation started:** Review generation system + M2 content deployment
+
+---
+
+## 2026-10-13 (night): M2 Implementation - Review System + Content Deployment
+
+**What was built:**
+
+**Review Generation System (complete):**
+- Review prompt (content/it/prompts/review.md) - instructs Claude what to analyze
+- TypeScript schema (lib/review-schema.ts) - complete type definitions
+- Generation function (lib/review.ts) - calls Claude with conversation data
+- POST /api/conversation/:id/review - generates review, stores in database
+- GET /api/learner/:id/latest-review - retrieves latest review for learner
+- Database migration (004-add-review-column.sql) - adds review JSONB column
+- Type checking passes ✓
+
+**Magda Teaching:**
+- Teaching prompt (content/it/prompts/magda-teaching.md)
+- Reads Review data, suggests focus areas
+- Voice-first methods: drills, role-plays, direct correction
+- Conversational and encouraging, not textbook-rigid
+- Based on teaching materials research
+
+**Content Deployment:**
+- Updated showcase.ts to show all M2 content
+- 8 Italian schools (Scuola) visible in all cities
+- 8 Italian stations (Stazione) visible for travel
+- 10 Italian bench characters now showing (added 6 hidden)
+- Mexico: all content auto-visible (no showcase file)
+
+**Files created/modified:** 11 implementation files
+- 3 Review core files
+- 2 API endpoints
+- 1 database migration
+- 1 Magda teaching prompt
+- 1 showcase update
+- Plus 3 agent-generated scripts
+
+**Agent work results:**
+- 21 images generated (stamps, schools, Magda, benches, stations)
+- Italy bench audit complete (recommend all 10)
+- M2 content files generated (schools, stations, ticket sellers, Magda)
+- All type-checked and integrated
+
+**What's ready:**
+- Review can be generated for any conversation
+- Magda can read Review and teach
+- All M2 content visible in feeds (schools, stations, benches)
+- Database ready (migration pending on Railway)
+
+**What's left:**
+- Visit marks CSS (stamp overlay on cards)
+- City picker UI (after Stazione conversation)
+- Hook review generation into conversation end flow
+- Deploy migration to Railway
+- Test end-to-end
+
+**Next session:** Frontend UI features (visit marks, city picker), deployment, testing
+
+**Combined session totals (evening + night):**
+- 57 files created/modified
+- 8 commits pushed
+- M2 backend foundation complete
+- M2 content ready
+- Ready for frontend + deployment
 
 ---
 
