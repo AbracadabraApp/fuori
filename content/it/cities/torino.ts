@@ -227,7 +227,18 @@ export const torino: CityPantry = {
       characterId: 'dottoressa-carla',
       imagePrompt: 'Soft pastel sketch on white paper of a traditional Italian pharmacy with dark wood cabinets, white coat service, and vintage apothecary jars. Clean whites, medical greens, warm wood tones. Professional, historic charm. Bright, textured, trustworthy.',
     },
-    
+
+    // SCHOOL (1)
+    {
+      id: 'scuola-lingua-torino',
+      name: 'Scuola di Italiano Torino',
+      kind: 'language-school',
+      neighbourhood: 'Centro',
+      real: false,
+      characterId: 'magda',
+      imagePrompt: 'Soft pastel sketch on white paper of a language school in an elegant Torinese building, tall windows with mountain views, students at a wooden table, whiteboard with Italian verbs, bookshelves, Art Nouveau details, warm cream and sage tones, textured sketch style, loose watercolor washes, lots of white paper',
+    },
+
     // TRANSPORTATION HUB (1)
     {
       id: 'porta-nuova',

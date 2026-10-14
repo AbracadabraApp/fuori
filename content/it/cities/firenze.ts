@@ -230,6 +230,17 @@ export const firenze: CityPantry = {
       characterId: 'dottoressa-molteni',
       imagePrompt: 'Soft pastel sketch on white paper of a traditional Italian pharmacy with wooden cabinets, glass bottles, green cross sign, white-coated pharmacist, organized shelves, clean whites and greens, professional trustworthy atmosphere',
     },
+
+    // SCHOOL
+    {
+      id: 'scuola-lingua-firenze',
+      name: 'Scuola di Lingua e Cultura Italiana',
+      kind: 'language-school',
+      neighbourhood: 'Oltrarno',
+      real: false,
+      characterId: 'magda',
+      imagePrompt: 'Soft pastel sketch on white paper of a language school in a Renaissance palazzo in Oltrarno, tall windows with river views, students around a table, whiteboard with Italian grammar, terracotta floor, wrought iron details, warm ochre and cream tones, textured sketch style, loose watercolor washes, lots of white paper',
+    },
     {
       id: 'stazione-smn',
       name: 'Stazione Santa Maria Novella',

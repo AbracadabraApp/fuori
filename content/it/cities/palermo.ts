@@ -292,6 +292,15 @@ export const palermo: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of a traditional pharmacy with green cross sign, wooden cabinets with remedies, professional counter, neighborhood helpers, clean whites and medicinal greens, trustworthy atmosphere',
     },
     {
+      id: 'scuola-lingua-palermo',
+      name: 'Scuola di Lingua Italiana Palermo',
+      kind: 'language-school',
+      neighbourhood: 'Kalsa',
+      real: false,
+      characterId: 'magda',
+      imagePrompt: 'Soft pastel sketch on white paper of a language school in a restored Sicilian palazzo, frescoed ceiling, tall arched windows with courtyard views, students at a marble table, whiteboard with Italian lessons, Arab-Norman architectural details, warm ochre and azure tones, textured sketch style, loose watercolor washes, lots of white paper',
+    },
+    {
       id: 'stazione-centrale-palermo',
       name: 'Stazione Centrale',
       kind: 'train-station',

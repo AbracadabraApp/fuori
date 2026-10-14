@@ -258,7 +258,18 @@ export const bologna: CityPantry = {
       characterId: 'dottoressa-lombardi',
       imagePrompt: 'Soft pastel sketch on white paper of traditional Italian pharmacy with dark wood cabinets, ceramic apothecary jars, green cross sign, organized shelves of medicines, professional counter, clinical white and forest green tones, morning light, trusted and orderly atmosphere',
     },
-    
+
+    // SCHOOL (1)
+    {
+      id: 'scuola-lingua-bologna',
+      name: 'Istituto di Lingua Italiana',
+      kind: 'language-school',
+      neighbourhood: 'Centro Storico',
+      real: false,
+      characterId: 'magda',
+      imagePrompt: 'Soft pastel sketch on white paper of a language school in a medieval building under the porticoes, arched doorway, bright classroom with wooden beams, whiteboard with Italian grammar, students with books, view of red roofs through windows, warm ochre and terracotta tones, textured sketch style, loose watercolor washes, lots of white paper',
+    },
+
     // TRANSPORTATION (1)
     {
       id: 'stazione-centrale',

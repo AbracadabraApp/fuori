@@ -328,6 +328,15 @@ export const milano: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of a historic Milanese pharmacy with vintage wooden cabinets, glass bottles, white coat service, Art Nouveau details, green cross sign, professional caring atmosphere',
     },
     {
+      id: 'scuola-lingua-milano',
+      name: 'Centro di Lingua Italiana',
+      kind: 'language-school',
+      neighbourhood: 'Brera',
+      real: false,
+      characterId: 'magda',
+      imagePrompt: 'Soft pastel sketch on white paper of a language school in a modern Milanese building, bright classroom with floor-to-ceiling windows, design-forward furniture, whiteboard with Italian conjugations, students with laptops, contemporary and sophisticated, grey and warm wood tones, textured sketch style, loose watercolor washes, lots of white paper',
+    },
+    {
       id: 'stazione-porta-garibaldi',
       name: 'Stazione Porta Garibaldi',
       kind: 'station',

@@ -241,6 +241,17 @@ export const roma: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of a small clothing boutique in Monti, linen shirts and scarves on wooden racks, a shop owner folding sweaters, a full-length mirror, sunlight through the shop window onto the street, soft neutral and dusty rose tones, textured sketch style, loose watercolor washes, lots of white paper',
     },
 
+    // School
+    {
+      id: 'scuola-lingua-roma',
+      name: 'Scuola di Lingua Italiana',
+      kind: 'language-school',
+      neighbourhood: 'Centro Storico',
+      real: false,
+      characterId: 'magda',
+      imagePrompt: 'Soft pastel sketch on white paper of a language school classroom in a historic Roman building, wooden desks arranged in a semicircle, whiteboard with Italian verb conjugations, windows overlooking a courtyard, maps of Italy on the walls, warm daylight, cream and ochre tones, textured sketch style, loose watercolor washes, lots of white paper',
+    },
+
     // Transportation
     {
       id: 'stazione-termini',

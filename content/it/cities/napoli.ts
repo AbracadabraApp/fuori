@@ -314,6 +314,17 @@ export const napoli: CityPantry = {
       imagePrompt: 'Soft pastel sketch on white paper of a modern pharmacy with white shelves, green cross sign, and a helpful pharmacist at the counter. Clean white and medical green tones, professional lighting, practical and reassuring.',
     },
 
+    // SCHOOL (1)
+    {
+      id: 'scuola-lingua-napoli',
+      name: 'Scuola Italiana di Lingua e Cultura',
+      kind: 'language-school',
+      neighbourhood: 'Vomero',
+      real: false,
+      characterId: 'magda',
+      imagePrompt: 'Soft pastel sketch on white paper of a language school in a bright Neapolitan building, large windows overlooking the bay, students at tables, whiteboard with Italian grammar, majolica tile accents, warm Mediterranean light, blue and ochre tones, textured sketch style, loose watercolor washes, lots of white paper',
+    },
+
     // TRANSPORTATION HUB (1)
     {
       id: 'stazione-centrale-napoli',
