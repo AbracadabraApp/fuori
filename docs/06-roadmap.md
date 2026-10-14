@@ -78,7 +78,6 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 ### Frontend / User-facing
 
 - [ ] Magda at school: teaching mode (not immersion); one Magda per city at scuola; uses learner profile to suggest what to work on OR learner asks what they want to learn; structured lessons with practice
-- [ ] Words at end of conversation: show 3-5 phrases worth keeping from review log; tap to hear each one; natural moment after conversation ends
 - [ ] Study export demo (experiment, not a commitment to ship): a study pack from the review log and transcripts, tried in Gemini Notebook (flashcards, quiz, Italian Audio Overview) and Anki. Extra tools for learners who want them, not core game. Plan: [study-export-demo.md](study-export-demo.md)
 - [ ] Visit marks on place cards: CSS stamp overlay after first visit; 4 complementary variants (terracotta, olive, dusty blue, red wine); place ID hash picks variant; character name appears after first meeting
 
@@ -102,6 +101,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 **Cut from original M2:**
 - Name field in settings (doesn't scale to general speech recognition issues)
 - "Today" page / diario (extra UI; review log already works)
+- Words at end of conversation (English transcript is enough; review log already captures what's worth learning)
 - Messages from characters (→ deferred to ideas; keep it simple; focus on in-game experience first)
 
 **Deferred to ideas:**

@@ -99,6 +99,7 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 **Cut from original M2:**
 - Name field in settings (doesn't scale to general speech recognition)
 - "Today" page / diario (extra UI; review log already works)
+- Words at end of conversation (English transcript is enough; review log already captures what's worth learning)
 - Messages from characters (→ deferred to ideas)
 
 **Deferred to ideas:**
@@ -120,7 +121,6 @@ Backend/Infrastructure:
 
 Frontend/User-facing:
 - Magda at school (teaching mode)
-- Words at end of conversation (review log UI)
 - Visit marks (stamp variants)
 
 **Next:** Begin M2 implementation with measurement infrastructure
