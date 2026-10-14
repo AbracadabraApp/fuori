@@ -1,0 +1,128 @@
+/* City picker modal overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background-color: var(--paper);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+.close {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close:hover {
+  color: var(--ink);
+}
+
+/* Scrollable city list */
+.cities {
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.cityCard {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 8px;
+  background-color: var(--card);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.cityCard:hover:not(:disabled) {
+  border-color: var(--terracotta);
+  transform: translateX(4px);
+}
+
+.cityCard:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.cityCard.current {
+  border-color: var(--olive);
+  background-color: var(--sand);
+}
+
+.cityImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.cityImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cityInfo {
+  flex: 1;
+}
+
+.cityName {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.cityRegion {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.currentLabel {
+  font-size: 13px;
+  color: var(--olive);
+  font-weight: 600;
+  margin-top: 4px;
+}

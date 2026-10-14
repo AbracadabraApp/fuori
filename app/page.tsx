@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { PlaceCard } from './components/PlaceCard';
+import { CityPicker } from './components/CityPicker';
 import { language, cities as cityPantries, pack } from '@/content';
 import { ConversationScreen } from './components/ConversationScreen';
 import { characterForPlace } from '@/lib/characters/for-place';
@@ -17,6 +18,7 @@ export default function Home() {
   const [showEnglish, setShowEnglish] = useState(false);
   const [allowDialect, setAllowDialect] = useState(false);
   const [visitCounts, setVisitCounts] = useState<Record<string, number>>({});
+  const [showCityPicker, setShowCityPicker] = useState(false);
 
   // Fetch visit counts when city changes
   useEffect(() => {
@@ -63,7 +65,14 @@ export default function Home() {
         cityName={cityData?.name || ''}
         cityId={cityData?.id}
         neighbourhood={place?.neighbourhood}
-        onBack={() => setSelectedPlace(null)}
+        onBack={() => {
+          // M2: After stazione conversation, show city picker
+          if (place?.id === 'stazione') {
+            setShowCityPicker(true);
+          } else {
+            setSelectedPlace(null);
+          }
+        }}
         showTranscripts={showTranscripts}
         showEnglish={showEnglish}
         allowDialect={allowDialect}
@@ -207,6 +216,22 @@ export default function Home() {
             </button>
           </div>
         </div>
+      )}
+
+      {/* M2: City picker after stazione conversation */}
+      {showCityPicker && selectedCity && (
+        <CityPicker
+          currentCityId={selectedCity}
+          onSelectCity={(cityId) => {
+            setSelectedCity(cityId);
+            setSelectedPlace(null);
+            setShowCityPicker(false);
+          }}
+          onClose={() => {
+            setSelectedPlace(null);
+            setShowCityPicker(false);
+          }}
+        />
       )}
     </div>
   );
