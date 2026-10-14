@@ -57,10 +57,15 @@ ALTER TABLE conversations ADD COLUMN IF NOT EXISTS memory_at_start jsonb;
 -- Dialogue scorecard numbers for the conversation (lib/quality.ts), written when it ends
 ALTER TABLE conversations ADD COLUMN IF NOT EXISTS quality jsonb;
 
+-- M2: Review analysis (added 2026-10-13)
+ALTER TABLE conversations ADD COLUMN IF NOT EXISTS review JSONB;
+ALTER TABLE conversations ADD COLUMN IF NOT EXISTS reviewed_at TIMESTAMP;
+
 -- Indexes for common queries
 CREATE INDEX IF NOT EXISTS idx_conversations_learner ON conversations(learner_id);
 CREATE INDEX IF NOT EXISTS idx_conversations_character ON conversations(character_id);
 CREATE INDEX IF NOT EXISTS idx_conversations_started ON conversations(started_at DESC);
+CREATE INDEX IF NOT EXISTS idx_conversations_reviewed ON conversations(learner_id, reviewed_at DESC);
 `;
 
 async function migrate() {
