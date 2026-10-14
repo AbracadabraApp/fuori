@@ -11,7 +11,7 @@ interface CityPickerProps {
 }
 
 export function CityPicker({ currentCityId, onSelectCity, onClose }: CityPickerProps) {
-  // Only show non-hidden cities
+  // Every city, including the ones after "Mostra altro" on the home list (Josh, 2026-10-14)
   const availableCities = cities.filter((c) => !c.hidden);
 
   return (

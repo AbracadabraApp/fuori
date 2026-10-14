@@ -1,11 +1,13 @@
 /**
- * Which Italian cities and places the app shows (Josh, 2026-10-12: Italy felt
- * overbuilt at 20 cities × ~30 places; trimmed to Mexico's shape, 8 × 10).
+ * Which Italian places the app shows, and which cities are on the first screen
+ * (Josh, 2026-10-12: Italy felt overbuilt at 20 cities × ~30 places; trimmed to
+ * Mexico's shape, 8 × 10. 2026-10-14: every city shows ~10 places; 8 cities are
+ * on the first screen, the rest after "Mostra altro" and at the station).
  *
  * Nothing is deleted: every city file stays complete and tested, and learner
- * memory tied to a hidden person stays in the database. To show a city again,
- * add it here; to show a place, add its id to its city's list. A city listed
- * here shows its listed places, in the feed's usual order.
+ * memory tied to a hidden person stays in the database. To show a place, add
+ * its id to its city's list; to move a city to the first screen, add it to
+ * homeCities. A city shows its listed places, in the feed's usual order.
  * Mexico has no showcase file: everything there is shown.
  *
  * Hidden on purpose (Josh, 2026-10-13): Rita's apartment (the game has no
@@ -132,4 +134,162 @@ export const showcase: Record<string, string[]> = {
     'scuola-lingua-palermo', // M2: language school with Magda
     'stazione-centrale-palermo', // M2: train station for travel
   ],
+  // Not on the first screen of the city list: reached through "Mostra altro" or
+  // the station (Josh, 2026-10-14). 10 places each, same mix, plus the station
+  // and language school where the city has them.
+  taormina: [
+    'bar-turrisi',
+    'pasticceria-etna',
+    'mercato-giardini',
+    'ristorante-baronessa',
+    'caffe-wunderbar',
+    'gelateria-paradiso',
+    'farmacia-centrale-taormina',
+    'piazza-ix-aprile',
+    'salumeria-sicilia',
+    'enoteca-nero',
+  ],
+  lecce: [
+    'caffe-alvino',
+    'panificio-fiore',
+    'mercato-comunale',
+    'alle-due-corti',
+    'bar-della-vittoria',
+    'gelateria-natale',
+    'farmacia-centrale-lecce',
+    'piazza-santoronzo',
+    'bottega-cartapesta',
+    'enoteca-mamma-elvira',
+    'stazione-lecce',
+  ],
+  milano: [
+    'pasticceria-marchesi',
+    'panificio-davide-longoni',
+    'mercato-di-porta-romana',
+    'trattoria-masuelli',
+    'bar-rita',
+    'gelateria-navigli',
+    'farmacia-centrale-milano',
+    'piazza-santo-stefano',
+    'peck',
+    'enoteca-brera',
+    'scuola-lingua-milano',
+    'stazione-porta-garibaldi',
+  ],
+  verona: [
+    'caffe-wallner',
+    'panificio-mariga',
+    'mercato-piazza-erbe',
+    'ristorante-dodici-apostoli',
+    'bar-ai-scalzi',
+    'gelateria-ponte-pietra',
+    'farmacia-centrale-verona',
+    'piazza-bra',
+    'salumeria-albertini',
+    'enoteca-cangrande',
+    'stazione-porta-nuova',
+  ],
+  assisi: [
+    'caffe-duomo',
+    'forno-santa-maria',
+    'mercato-coperto',
+    'ristorante-metastasio',
+    'bar-senso',
+    'gelateria-santa-maria',
+    'farmacia-centrale',
+    'piazza-comune',
+    'tabaccheria-assisi',
+    'enoteca-properzio',
+  ],
+  bergamo: [
+    'caffe-del-tasso',
+    'panificio-tresoldi',
+    'mercato-citta-alta',
+    'ristorante-da-vittorio',
+    'bar-donizetti',
+    'farmacia-centrale-bergamo',
+    'piazza-vecchia',
+    'enoteca-del-malpaga',
+    'libreria-sant-agostino',
+    'parco-della-trucca',
+  ],
+  torino: [
+    'caffe-san-carlo',
+    'panetteria-borgo-antico',
+    'mercato-porta-palazzo',
+    'ristorante-del-cambio',
+    'bicerin-dal-1763',
+    'guido-gobino',
+    'piazza-castello',
+    'casa-del-vermouth',
+    'enoteca-bacco-torino',
+    'libreria-luxemburg',
+    'scuola-lingua-torino',
+  ],
+  siracusa: [
+    'bar-dolce-vita',
+    'panificio-regina',
+    'mercato-ortigia',
+    'ristorante-dioniso',
+    'caffe-archimede',
+    'gelateria-nettuno',
+    'farmacia-apollo',
+    'piazza-archimede',
+    'laboratorio-papiro',
+    'enoteca-bacco',
+    'stazione-siracusa',
+  ],
+  genova: [
+    'caffe-degli-specchi',
+    'pasticceria-liquorosa',
+    'mercato-orientale',
+    'trattoria-rosmarino',
+    'bar-boccadasse',
+    'gelateria-profumo',
+    'farmacia-europa',
+    'piazza-ferrari',
+    'salumeria-fontana',
+    'enoteca-sola',
+    'stazione-principe',
+  ],
+  lucca: [
+    'caffe-di-simo',
+    'forno-amedeo-giusti',
+    'mercato-del-carmine',
+    'ristorante-giglio',
+    'bar-il-fortino',
+    'farmacia-massei',
+    'piazza-anfiteatro',
+    'gastronomia-angeli',
+    'enoteca-vanni',
+    'libreria-baroni',
+  ],
+  orvieto: [
+    'caffe-montanucci',
+    'pasticceria-adriano',
+    'mercato-coperto-orvieto',
+    'ristorante-la-grotta',
+    'bar-duomo-orvieto',
+    'piazza-del-popolo',
+    'bottega-michelangeli',
+    'enoteca-al-pozzo',
+    'libreria-del-duomo',
+    'giardini-pubblici',
+  ],
+  mantova: [
+    'caffe-modi',
+    'panificio-pavesi',
+    'mercato-erbe-mantova',
+    'ristorante-cigno',
+    'bar-delle-erbe',
+    'gelateria-ducale',
+    'farmacia-gonzaga',
+    'piazza-sordello',
+    'salumeria-ducale',
+    'enoteca-cortile',
+    'stazione-mantova',
+  ],
 };
+
+/** On the first screen of the city list, in this order; the rest come after "Mostra altro" */
+export const homeCities = ['roma', 'matera', 'firenze', 'siena', 'venezia', 'napoli', 'bologna', 'palermo'];

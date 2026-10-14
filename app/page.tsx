@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { PlaceCard } from './components/PlaceCard';
+import { ShowMore } from './components/ShowMore';
 import { CityPicker } from './components/CityPicker';
 import { language, cities as cityPantries, pack } from '@/content';
 import { ConversationScreen } from './components/ConversationScreen';
@@ -14,6 +15,8 @@ export default function Home() {
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [selectedPlace, setSelectedPlace] = useState<string | null>(null);
   const [showSettings, setShowSettings] = useState(false);
+  // City list: the first-screen cities, then the rest after "Mostra altro" (Josh, 2026-10-14)
+  const [showAllCities, setShowAllCities] = useState(false);
   const [showTranscripts, setShowTranscripts] = useState(true);
   const [showEnglish, setShowEnglish] = useState(false);
   const [allowDialect, setAllowDialect] = useState(false);
@@ -31,8 +34,10 @@ export default function Home() {
     }
   }, [selectedCity, selectedPlace]);
 
-  // Cities in the list: hidden ones stay in the data but aren't shown
+  // Cities in the list: hidden ones stay in the data but aren't shown; "more"
+  // ones wait behind "Mostra altro"
   const shownCities = cityPantries.filter((c) => !c.hidden);
+  const listedCities = showAllCities ? shownCities : shownCities.filter((c) => !c.more);
 
   // Region (or state) shown under the city name, from the city's data
   const getRegion = (cityId: string) => cityPantries.find((c) => c.id === cityId)?.region ?? '';
@@ -148,7 +153,7 @@ export default function Home() {
 
       {/* City cards */}
       <div>
-        {shownCities.map((city) => (
+        {listedCities.map((city) => (
           <PlaceCard
             key={city.id}
             placeId={city.id}
@@ -163,6 +168,9 @@ export default function Home() {
           />
         ))}
       </div>
+      {listedCities.length < shownCities.length && (
+        <ShowMore label={language.ui.showMore} onClick={() => setShowAllCities(true)} />
+      )}
 
       {/* Settings sheet overlay */}
       {showSettings && (

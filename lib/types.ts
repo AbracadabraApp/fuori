@@ -87,8 +87,10 @@ export interface CityPantry {
   anchorIds?: string[];
   seedCharacters?: string[];
   dayTrips?: string[];
-  /** Not shown in the city list (kept in the data, tests and memory) */
+  /** Not shown anywhere (kept in the data, tests and memory) */
   hidden?: boolean;
+  /** Not on the first screen of the city list: shown after "Mostra altro", and at the station */
+  more?: boolean;
 }
 
 // Suggestion

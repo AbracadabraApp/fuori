@@ -4,22 +4,30 @@
  */
 import { language } from './language';
 import { cities as allCities } from './cities';
-import { showcase } from './showcase';
+import { showcase, homeCities } from './showcase';
 import { giulia } from './characters/giulia';
 import { rita } from './characters/rita';
 import { magda } from './characters/magda';
 import { voices, elevenLabsVoiceFor, browserVoiceFor } from './voices';
 import type { CharacterSheet, CityPantry } from '@/lib/types';
 
-/** Every city and place, with hidden: true on what the showcase leaves out */
-const cities: CityPantry[] = allCities.map((city) => {
-  const shown = showcase[city.id];
-  return {
-    ...city,
-    hidden: !shown,
-    places: city.places.map((p) => ({ ...p, hidden: !shown || !shown.includes(p.id) })),
-  };
-});
+/** Every city and place: hidden: true on places the showcase leaves out (and on
+ *  any city with no showcase list); more: true on cities after "Mostra altro" */
+const cities: CityPantry[] = allCities
+  .map((city) => {
+    const shown = showcase[city.id];
+    return {
+      ...city,
+      hidden: !shown,
+      more: !homeCities.includes(city.id),
+      places: city.places.map((p) => ({ ...p, hidden: !shown || !shown.includes(p.id) })),
+    };
+  })
+  // First-screen cities in homeCities order, then the rest in file order
+  .sort((a, b) => {
+    const ia = homeCities.indexOf(a.id), ib = homeCities.indexOf(b.id);
+    return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+  });
 
 export const pack = {
   /** Folder under content/ (prompts, characters) */
