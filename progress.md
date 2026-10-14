@@ -64,6 +64,69 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 ---
 
+## 2026-10-13 (evening): M2 Roadmap Revision
+
+**What was done:**
+- Voice messages research completed (UX patterns, implementation guide, use cases)
+- M2 roadmap revised and finalized
+- Organized into Backend/Infrastructure and Frontend sections
+- Updated "Done when" criteria
+
+**Research findings:**
+- Voice messages work best for relationship continuity, not conversation replacement
+- Key patterns: waveform, speed control (0.5×-1.5× for learners), tap for transcript
+- Content guidelines: in-world triggers only, earned relationships, 3-5 messages/week max
+- Technical approach: TTS with same character voices, generate on demand
+
+**Key decisions:**
+- **Simplified Magda**: in-game school teacher (one per city), not external with messaging system
+  - Teaching mode at scuola, not immersion mode
+  - Uses learner profile to suggest what to work on
+  - Much simpler than planned external teacher with video calls
+- **Deferred messages/async**: all voice messages, off-game contact, notifications moved to deferred ideas
+  - Reasoning: if can't make very immersive, better to keep it simple
+  - Voice messages on phone, photo uploads, offline materials = interesting sidetracks
+  - Focus on making in-game experience excellent first
+- **Added visit marks**: CSS stamp overlay on place cards after first visit
+  - 4 complementary color variants: terracotta, olive, dusty blue, red wine
+  - Place ID hash picks variant (same place always same stamp)
+  - Character name appears after first meeting
+- **Added travel**: Stazione (Italy) / Terminal (Mexico) in every city
+  - Ticket seller conversation (timetables, platforms, prices)
+  - Access to all cities including hidden ones
+  - Travel vocabulary practice
+
+**Cut from original M2:**
+- Name field in settings (doesn't scale to general speech recognition)
+- "Today" page / diario (extra UI; review log already works)
+- Messages from characters (→ deferred to ideas)
+
+**Deferred to ideas:**
+- Generation on explore (mechanics TBD: intent-driven vs location-driven vs hybrid)
+- Voice messages, async communication, off-game contact
+- Phone notifications, SMS/email delivery
+
+**Confirmed working (not features to build):**
+- Food culture conversations: any character can discuss Italian food naturally
+- Deep dives on dishes emerge from conversation with any character, not just cooks
+- Cultural knowledge built into all Italian characters
+
+**M2 final structure:**
+
+Backend/Infrastructure:
+- Measurement & detection (level, profile, digest, extended scoring)
+- Character intelligence (success judgment, familiarity, reasons to return)
+- Content expansion (suggestions, bench characters, travel)
+
+Frontend/User-facing:
+- Magda at school (teaching mode)
+- Words at end of conversation (review log UI)
+- Visit marks (stamp variants)
+
+**Next:** Begin M2 implementation with measurement infrastructure
+
+---
+
 ## 2026-10-10: City Feed and Navigation
 
 **What was built:**
