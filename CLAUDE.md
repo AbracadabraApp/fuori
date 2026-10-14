@@ -21,8 +21,19 @@ Voice-first Italian learning game. Read `README.md` and the numbered files in `d
 - Don't modify or weaken existing tests to make them pass without approval.
 - When fixing bugs, add a test that would have caught it.
 
+## Definition of done
+Added 2026-10-13 after M2 was reported "complete" while its core features had never run. The full account is in `docs/11-lessons-learned.md`.
+- Done means used. Before calling anything done, complete or live, run it end to end the way a learner would (a scripted learner against the live site, like `scripts/smoke-memory.ts`, or a browser) and say what was run. If it wasn't run, the commit says "not verified".
+- After pushing, confirm the deploy succeeded (`railway status --json`) and read `railway logs` for errors from the new code.
+- No silent failures: don't hide a failing call in a fire-and-forget `.catch()`; call server code directly, not over HTTP to the app itself.
+- No placeholders in shipped code: no `TODO` stand-ins, demo ids or `localhost` URLs.
+- Before reusing a database column, field, id or file, search for what already uses it.
+- Test the connection, not just the parts: the place finds its character, ending a conversation stores what it should, the screen calls a route that exists.
+- Experiments go behind a setting whose default is today's behaviour; Railway deploys `main`, so changing a default changes production.
+- Never stash, clean or reset files you didn't create (`git stash -u`, `git clean`, `git checkout -- .`); another session may be mid-task in the same folder. Commit generated files promptly.
+
 ## Working across sessions
-- Two Claude sessions work on this repo: Claude Code on Josh's laptop and a cloud session in the Claude app's "Fuori" project. Neither can see the other's uncommitted work.
+- Several Claude sessions work on this repo: Claude Code on Josh's laptop (sometimes two at once, in the same folder) and a cloud session in the Claude app's "Fuori" project. None can see another's uncommitted work.
 - Start every session with `git pull --rebase origin main`. End every session by committing and pushing to `main`, and update `progress.md`.
 - Never leave work unpushed overnight. If it isn't on GitHub, the other session and Railway can't see it.
 - Model IDs live only in `lib/claude.ts`. Don't hard-code them elsewhere.
