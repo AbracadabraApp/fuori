@@ -6,7 +6,7 @@ Neither "stations are the only way to travel" nor "a plain travel button". Stati
 
 ### What changes from the original options
 
-- **Keep the back link to the city list** ("← Fuori" / "← Afuera", shipped 2026-10-13). Browsing cities stays free. The original "if yes" commitment to remove it is dropped.
+- **Keep the back link to the city list** ("← Fuori" / "← Afuera", shipped 2026-10-13). Several ways to navigate (Josh); removing it would be punitive. The original "if yes" commitment to remove it is dropped.
 - **No conversation is required to travel.** Talking to the ticket seller is optional practice, like any other place.
 - **No end-of-conversation detection.** The app never decides when the conversation is over: no listening for *"Buon viaggio"* (a phrase filter, which CLAUDE.md rules out), no turn counting, no waiting for the learner to back out. The learner boards when they choose.
 
@@ -37,6 +37,14 @@ The person screen's rules (2026-10-13): talking happens at the bottom (Start con
   - Make it explicit rather than incidental: pull the "leave this conversation" step (silence, then send the end beacon) into one function that both the back link and Sali call, so a later change to one can't skip the other.
   - **Test that would catch it:** leaving by Sali sends `/api/conversation/end` with the conversation id, the same as leaving by the back link (a fake `sendBeacon`, like `test:silence` fakes audio). Today no test covers the end beacon at all; add one for the back link at the same time.
 - **Not needed:** a station prompt template, a conversation state machine, end detection, a "traveling" screen (a short "on the train" moment can come later if wanted).
+
+### The station is also how you find more cities (Josh, 2026-10-14)
+
+- **Several ways to move, none taken away:** the home list (back link) and the station both stay.
+- **The departures board shows every city, including the ones off the home list** (Italy: 8 on the list, 12 more by train). The home list is "the cities you know"; the station is how you discover the rest. Today `CityPicker` shows only cities on the list (`cities.filter((c) => !c.hidden)`); this changes that.
+- **A city you arrive in must be alive:** today a hidden city also hides all its places, so arriving in Taormina would show an empty feed. Split the showcase's two jobs: which cities are on the home list, and which ~10 places each city shows. Pick 10 places for all 20 Italian cities with the same mix as the 8. (Repeated ids: none left in the hidden cities after the laptop session's fix, so no shared memory.)
+- **Proposed: a city you've travelled to joins your home list.** Otherwise finding Taormina once and losing it again would feel like a punishment. Needs the learner's visited cities remembered (small; `/api/visits` already counts place visits).
+- **Mexico:** all 5 cities are on the list, so its terminal offers the same cities for now. Same rules if it grows.
 
 ### Next
 
