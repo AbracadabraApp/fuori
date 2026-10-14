@@ -354,3 +354,4 @@ Prompted by "help more beginner level people". Rule behind all three: **everyone
 - **Demo planned for M2:** [study-export-demo.md](study-export-demo.md).
 - **Result (Josh, 2026-10-14):** a transcripts-only Markdown file in Gemini Notebook works; the Anki and Quizlet exports above are dropped. Don't build review features that repeat what the notebook does.
 - **Low-priority idea: flashcards with Magda.** The only study feature Josh might include: a simple flashcard review of words the people the learner met actually said, at the school. Not planned.
+- **Low-priority idea: point learners to Gemini Notebook (Josh, 2026-10-14).** Tell a learner who wants more review that they can use it, with a way to get their study export (today it's admin-only). Not planned.
