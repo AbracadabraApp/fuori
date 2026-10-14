@@ -71,7 +71,6 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 - [ ] Reasons to return: what's new in character's life since last visit, generated on return
 
 **Content Expansion:**
-- [ ] Where next: characters suggest places ("cambia aria", "vai dove vuoi"); `/api/suggest`, `/api/scene`
 - [ ] Bench characters: audit existing (Italy: 10 exist, 6 hidden), generate for Mexico, deploy in both packs
 - [ ] Travel between cities: Stazione (Italy) / Terminal de autobuses (Mexico) in each city; ticket seller conversation (timetables, platforms, prices); access to all cities including hidden ones; travel vocabulary practice
 
@@ -105,6 +104,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 - Messages from characters (→ deferred to ideas; keep it simple; focus on in-game experience first)
 
 **Deferred to ideas:**
+- Where next suggestions (characters suggest places; learners can already browse feed freely)
 - Generation on explore (mechanics TBD: intent vs location vs hybrid)
 - Voice messages, async communication, off-game contact (complexity; need very immersive experience or keep it simple)
 

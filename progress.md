@@ -103,6 +103,7 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 - Messages from characters (→ deferred to ideas)
 
 **Deferred to ideas:**
+- Where next suggestions (learners can browse feed freely)
 - Generation on explore (mechanics TBD: intent-driven vs location-driven vs hybrid)
 - Voice messages, async communication, off-game contact
 - Phone notifications, SMS/email delivery
