@@ -80,6 +80,11 @@ export default function Home() {
 
     return (
       <div className={styles.screen}>
+        {/* Back to the city list, styled like the person screen's back link */}
+        <button type="button" onClick={() => setSelectedCity(null)} className={styles.backLink}>
+          <span className={styles.backArrow} aria-hidden="true">←</span>
+          <span>{language.appName}</span>
+        </button>
         <h1 className={styles.cityTitle}>{cityData.name}</h1>
 
         {/* Scrolling place cards */}

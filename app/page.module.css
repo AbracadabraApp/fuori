@@ -20,9 +20,14 @@
   color: var(--green);
 }
 
+/* City name: same face, weight and size as a person's name on the person screen */
 .cityTitle {
-  composes: title;
-  margin-bottom: 24px;
+  margin: 0 0 24px;
+  font-family: var(--font-alegreya), Georgia, serif;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--ink);
 }
 
 .settingsButton {
@@ -37,6 +42,27 @@
   padding: 8px 14px;
   font-size: 15px;
   font-weight: 600;
+}
+
+/* "← Fuori" above the city name: same look as the person screen's back link */
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 0 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-alegreya-sans), "Gill Sans", "Segoe UI", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--green);
+}
+
+.backArrow {
+  font-size: 28px;
+  line-height: 1;
+  color: var(--ink);
 }
 
 .back {
