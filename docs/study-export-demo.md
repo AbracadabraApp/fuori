@@ -6,9 +6,7 @@ Written 2026-10-13 from a discussion with Josh. **A demo to see what we get, not
 
 Fuori already derives study material from every conversation: the transcript, the review log's words and phrases worth keeping, and the mistakes with a better way to say them, each tied to a person, a place and a city. **Is that material good enough to study from when it's handed to a study tool that already exists?**
 
-We use existing products rather than building our own:
-- **Gemini Notebook** (formerly NotebookLM) is the main test. It has no API, but it takes documents as sources and makes flashcards, quizzes, mind maps and Audio Overviews (a podcast-style conversation, in 80+ languages) from them.
-- **Anki** is a second, smaller test: its import takes a simple spreadsheet-style file and gives offline spaced repetition.
+We use an existing product rather than building our own: **Gemini Notebook** (formerly NotebookLM). It has no API, but it takes documents as sources and makes flashcards, quizzes, mind maps and Audio Overviews (a podcast-style conversation, in 80+ languages) from them. One file, dropped into Gemini. (An Anki CSV was planned as a second file; dropped by Josh, 2026-10-14.)
 
 ## What Fuori already has
 
@@ -32,8 +30,6 @@ A script or admin format that writes one document for a date range, for one lear
 
 Format: Markdown, which pastes cleanly into a Google Doc or uploads as a text source. Same for both countries; nothing language-specific in the code (the pack's language and app name come from the country pack).
 
-Second file, same data: a two-column CSV for **Anki** (front: the phrase and the line it came from; back: English and who said it where). Text only for the demo; the character's voice as audio is a later step if the demo earns it.
-
 ### 2. Try it (Josh, about an hour)
 
 With a week or two of real conversations:
@@ -41,7 +37,6 @@ With a week or two of real conversations:
 2. Ask for flashcards and a quiz.
 3. Make an Audio Overview **in Italian**, ideally asking for a slow, simple level. This is the interesting one: a podcast about your own week in Rome.
 4. Try a mind map or report, if curious.
-5. Import the CSV into Anki and study a few cards.
 
 ### 3. Judge it
 
@@ -51,14 +46,13 @@ With a week or two of real conversations:
 - **The review log itself:** reading the pack, are its picks the right ones? (This feeds the M1 check that's still open.)
 - **Effort:** is exporting and uploading by hand acceptable for an occasional "study my week" tool?
 
-**Done when:** Josh has tried the pack in Gemini Notebook and Anki and decided keep, change or drop.
+**Done when:** Josh has tried the pack in Gemini Notebook and decided keep, change or drop.
 
 ## Not in the demo
 
 - No study features inside the game: no drills, streaks or quizzes in Fuori (Josh's decision).
 - No automatic upload: Gemini Notebook has no API; the learner uploads the file.
 - No in-app button yet: the export runs from a script or the admin route. A learner-facing "Export my study pack" comes only if the demo is worth it.
-- No audio in Anki cards yet.
 
 ## Things to know
 
