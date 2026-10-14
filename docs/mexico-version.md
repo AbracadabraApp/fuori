@@ -135,4 +135,5 @@ Style test (`content/es-mx/style-test.json`, `npm run style-test`): each city's 
 - **Decided:** Guadalajara keeps linocut, with the lettering fixed: only the place's own sign, word for word; no "HOY" (the word "today" in prompts was painted as HOY), no neighbourhood or city names, no slogans, no brand logos, no rebozos or costumes.
 - **Decided:** Puebla's places use the city card's Talavera prompt.
 - **Decided:** Oaxaca's places use the city card's folk-painting prompt (round 1 version).
-- **In round 2:** CDMX (risograph), San Miguel (fresco pushed further). Goal: the five cities clearly different at a glance.
+- **Decided:** San Miguel's places use the city card's mural prompt (round 1 version).
+- **In round 2:** CDMX only (risograph). Goal: the five cities clearly different at a glance.

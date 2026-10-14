@@ -35,7 +35,7 @@
       ]
     },
     "san-miguel-de-allende": {
-      "style": "Mexican fresco mural: thick dark outlines, rounded monumental forms, rough plaster texture with visible cracks and patches, strong rhythmic composition; earth colours only",
+      "style": "Mexican mural painting style: flat fresco look, simplified forms, strong rhythmic composition, matte plaster texture. Palette: terracotta, ochre, rose, slate blue and deep green",
       "colours": "terracotta, ochre, rose, slate blue and deep green",
       "places": [
         "cafe-de-la-calzada",
@@ -47,6 +47,8 @@
   "round": 2,
   "skip": [
     "puebla",
-    "oaxaca"
+    "oaxaca",
+    "guadalajara",
+    "san-miguel-de-allende"
   ]
 }
