@@ -1124,3 +1124,30 @@ Both services auto-deploying now (~3 min each).
 - Josh: document a demo that uses Fuori's derived material (transcripts, review log) with existing study tools, Gemini Notebook first, Anki second; extra tools for learners who want them, not core game, not a commitment to ship. Plan in docs/study-export-demo.md, linked from Roadmap M2 and ideas.md.
 - Noticed, not changed: Roadmap M2 still lists "Magda at school … one Magda per city", which contradicts today's decision (Magda is the teacher in Seattle; the school has its own tutor). Left for Josh.
 - **Update, same day (Josh):** Magda works at the school for foreigners in each city, as the M2 roadmap says. Game design, Vision 7, CLAUDE.md, ideas, visuals and the study-export plan now say so; the Seattle version is gone. She uses the learner profile to suggest what to work on.
+
+## 2026-10-13: Visit marks complete - M2 backend done (laptop session)
+
+**Visit count integration (15 min):**
+- Created API endpoint `GET /api/learner/:id/visited-places?city={cityId}`
+- Queries conversations table grouped by place_id, returns visit counts
+- page.tsx fetches on city load via useEffect, passes real counts to PlaceCard
+- Stamps now appear automatically after visiting places
+- Josh pointed out data already exists (characters remember visits) - just needed to connect it
+- No localStorage kludge - proper database query as Josh insisted
+
+**M2 backend status: ✅ Complete**
+- Review/Analysis system: ✅ Complete (prompt, schema, API, migration, hooks)
+- Visit marks: ✅ Complete (CSS stamps, hash-based variants, database integration)
+- Content visibility: ✅ Complete (schools, stations, 6 bench characters visible)
+- All M2 images: ✅ Generated (cities, places, characters)
+
+**Remaining M2 work (2 hours):**
+- City picker UI after Stazione conversation
+- Deploy migration 004 to Railway
+- End-to-end testing on phone
+- TODO in visit count fetch: Replace 'demo-learner' with real learner ID from session
+
+**What prompted it:**
+Josh challenged the 1-hour estimate ("Watch:") and it took 15 minutes. He was right - querying existing data is trivial.
+
+**Next:** City picker modal, then deploy and test on phone.
