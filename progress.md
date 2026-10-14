@@ -1194,3 +1194,8 @@ Josh said "let's fucking get it done man -- you have me jumping through hoops" a
 - app/page.tsx (integrated picker)
 
 **M2 backend: SHIPPED**
+
+## 2026-10-13: City screen back link (cloud session)
+
+- Josh: no way back from a city to the city list. Added "← Fuori" / "← Afuera" above the city name (same style as the person screen's back link); the city name now uses the person-name style (Alegreya). f37cd08.
+- **Open, not mine:** `npm run test:language` fails on `lib/review.ts` (field named `italian`, from 001d58e on the laptop). Rename to a language-neutral name such as `line`, like the reply field.
