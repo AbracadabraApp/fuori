@@ -131,10 +131,42 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 
 **Done when:** ~~Josh has tried the export in Gemini Notebook and decided keep, change or drop~~ (kept, 2026-10-14); characters give you richer reasons to return beyond just remembering your name.
 
-## M3: Levels and polish
+## M3: Polish existing work + Language levels
 
-- [ ] Level steps (A1 → A1+ → A2 …) from evidence in conversations; level rules exist in `content/it/levels/`
-- [ ] More dialect as you level up ("Allow dialect" setting)
+**Fixes to existing work:**
+
+- [ ] **Redesign visit marks** (Josh, 2026-10-14)
+  - Move from top-right (over image) to bottom-right on white caption area
+  - Replace simple circles with distinctive stamp designs inspired by:
+    - Passport stamps (dates, borders, country marks)
+    - Official seals (ornate borders, ribbons)
+    - Wine labels (vintage, vineyard, region)
+    - Cigar wrapper labels (bands, emblems)
+  - Make each variant feel collectible and interesting, not just color variations
+
+- [ ] **Improve city picker UX** (Josh, 2026-10-14)
+  - Current: [needs specific feedback on what's broken]
+  - Improve: [to be defined based on testing]
+
+- [ ] **Address stereotypical art** (Josh, 2026-10-14)
+  - City/place images feel too touristy/generic
+  - Need more distinctive character and local personality
+  - Avoid "postcard views" - show life and neighborhoods
+
+- [ ] **Make places more unique** (Josh, 2026-10-14)
+  - Tourist-oriented places too typical/similar
+  - Need more variety and distinctiveness
+  - Each place should feel memorable, not interchangeable
+
+**Language levels:**
+
+- [ ] Level steps (A1 → A1+ → A2 …) from evidence in conversations
+  - Level rules already exist in `content/it/levels/`
+  - Implement detection and progression
+
+- [ ] More dialect as you level up
+  - Make "Allow dialect" setting functional
+  - Characters use more regional language at higher levels
 
 **Moved to ideas.md (2026-10-14):**
 - Interactive transcript (too much interface, conflicts with immersion-first approach)
