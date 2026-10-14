@@ -3,30 +3,31 @@
  * gets the same voice (chosen by a hash of their id), so neighbours differ but
  * nobody changes voice between visits.
  *
- * ElevenLabs IDs are premade voices; with the multilingual Flash v2.5 model they
- * all speak Italian, but accents vary. Run `npm run voices` to list voices on the
- * account verified for Italian, listen, and swap any that sound off.
+ * ElevenLabs IDs are NATIVE ITALIAN SPEAKERS from the voice library (2026-10-14).
+ * No multilingual English speakers - all voices are native Italians with natural
+ * pronunciation and regional accents (Standard, Romanesco, Florentine).
+ * Run `npm run voices` to hear them.
  */
 import type { Gender } from '@/lib/types';
 
 export const voices = {
   elevenlabs: {
-    // Fixed voices for anchors
+    // Fixed voices for anchors (native Italian speakers)
     byCharacter: {
-      giulia: 'pFZP5JQG7iQjIQuC4Bku', // Lily: warm, expressive (verified Italian)
-      rita: 'XrExE9yKIg1WjnnlVkGX', // Matilda: warm, mature
+      giulia: 'MuTiG4dbrEGYEy3XP4iP', // Rossana: warm conversational, native Italian
+      rita: 'ZPImQHFNyEPRDeECS4MX', // Nora: bright narrator, native Italian (Romanesco)
     } as Record<string, string>,
     f: [
-      'pFZP5JQG7iQjIQuC4Bku', // Lily (verified Italian)
-      'XrExE9yKIg1WjnnlVkGX', // Matilda (verified Italian)
-      'Xb7hH8MSUJpSbSDYk0k2', // Alice (verified Italian)
-      'SAz9YHcvj6GT2YYXdXww', // River (verified Italian, neutral)
+      'MuTiG4dbrEGYEy3XP4iP', // Rossana - warm conversational, native Italian, 7.1K uses
+      'ZPImQHFNyEPRDeECS4MX', // Nora - bright narrator, native Italian (Romanesco), 14.8K uses
+      'zFA34HbdHBvF8WhlSusK', // Vale - calm & friendly, native Italian
+      'jFW3ckrPY2w2mRxLpLQj', // Carla Castro - pleasant, native Italian (Florentine)
     ],
     m: [
-      'JBFqnCBsd6RMkjVDRZzb', // George (not verified Italian - Flash v2.5 multilingual)
-      'onwK4e9ZLuTAKqWW03F9', // Daniel (not verified Italian - Flash v2.5 multilingual)
-      'nPczCjzI2devNBz1zQrb', // Brian (not verified Italian - Flash v2.5 multilingual)
-      'pNInz6obpgDQGcFmaJgB', // Adam (not verified Italian - Flash v2.5 multilingual)
+      'covxL85MSd0uUrktE45z', // Adriatico - warm narrator, explicitly native Italian, 4.7K uses
+      'f8NAZK1ciwrVujah7clz', // Valerio - warm storyteller, native Italian (Romanesco), 13.6K uses
+      'mcMi8FJDhg35bMpWHv2R', // Paolo - dynamic radio voice, native Italian, 6.8K uses
+      'UCeW7wElM5dxewmr4a8l', // Max - natural storyteller, native Italian, modern
     ],
   },
 
