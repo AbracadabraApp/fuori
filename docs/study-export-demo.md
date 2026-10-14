@@ -49,6 +49,8 @@ With a week or two of real conversations:
 
 **Done when:** Josh has tried the pack in Gemini Notebook and decided keep, change or drop.
 
+**Result (Josh, 2026-10-14): keep.** The notebook works with version 1, transcripts only. Version 2 is not needed, and it would be silly to build anything in Fuori that does a similar review. The one study feature that might come later is simple flashcards with Magda (low priority; see [Ideas](ideas.md#study-export-not-study-tools-josh-2026-10-13)).
+
 ## Not in the demo
 
 - No study features inside the game: no drills, streaks or quizzes in Fuori (Josh's decision).

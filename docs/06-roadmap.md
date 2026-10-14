@@ -122,15 +122,14 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 
 **Study export:** one Markdown file to drop into Gemini Notebook; see [Study export demo](study-export-demo.md).
 - [x] Version 1: transcripts only, labelled by who, where and when, from an admin format (built 2026-10-14)
-- [ ] Josh tries it in Gemini Notebook (flashcards, quiz, Audio Overview in the country's language)
-- [ ] Version 2 (adds the learning notes) only if version 1 falls short
+- [x] Josh tried it in Gemini Notebook (2026-10-14): it works. Kept as is; no version 2, and nothing in Fuori that repeats the notebook's review
 
 **Character Intelligence Improvements:**
 - [ ] Richer character memories (broader topics, better continuity)
 - [ ] Character life updates (events, follow-ups on previous topics)
 - [ ] Reasons to return quality (not new system, improve existing memory prompts)
 
-**Done when:** Josh has tried the export in Gemini Notebook and decided keep, change or drop; characters give you richer reasons to return beyond just remembering your name.
+**Done when:** ~~Josh has tried the export in Gemini Notebook and decided keep, change or drop~~ (kept, 2026-10-14); characters give you richer reasons to return beyond just remembering your name.
 
 ## M3: Levels, interaction and polish
 

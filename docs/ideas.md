@@ -352,3 +352,5 @@ Prompted by "help more beginner level people". Rule behind all three: **everyone
 - **Gemini / NotebookLM** have flashcards but no API to push cards into.
 - **First, the content:** the export is only as good as the review log's picks, which are still debug-only and unchecked. Make those trustworthy before building the export.
 - **Demo planned for M2:** [study-export-demo.md](study-export-demo.md).
+- **Result (Josh, 2026-10-14):** a transcripts-only Markdown file in Gemini Notebook works; the Anki and Quizlet exports above are dropped. Don't build review features that repeat what the notebook does.
+- **Low-priority idea: flashcards with Magda.** The only study feature Josh might include: a simple flashcard review of words the people the learner met actually said, at the school. Not planned.
