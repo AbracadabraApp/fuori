@@ -11,8 +11,8 @@
       ]
     },
     "oaxaca": {
-      "style": "Oaxacan folk-art painting in the manner of painted alebrije carvings: every surface covered in dense hand-painted patterns of dots, dashes, zigzags, scales and petals; outlines traced in rows of contrasting dots; flat, toy-like perspective; loud complementary colours side by side; a border of Zapotec step-fret (greca) pattern; one fantastical alebrije creature (a patterned winged jaguar, dragon-dog or lizard) appears in the scene as a carved figure on a shelf or painted on a wall; no skulls, no devils; a contemporary scene",
-      "colours": "cochineal red, marigold, turquoise, magenta, lime green and indigo",
+      "style": "Naive folk painting with bright saturated colours, flat perspective and careful small details, inspired by Oaxacan folk art and alebrije patterns. Palette: cochineal red, marigold, indigo and turquoise",
+      "colours": "cochineal red, marigold, indigo and turquoise",
       "places": [
         "cafe-pocito-jalatlaco",
         "abarrotes-los-tres-hermanos-xochimilco"
@@ -46,6 +46,7 @@
   "abstract": "Abstract colour-block composition: large flat overlapping shapes and a few confident lines suggest the place and the people in it, without detail; bold and contemporary; use the city's colours",
   "round": 2,
   "skip": [
-    "puebla"
+    "puebla",
+    "oaxaca"
   ]
 }
