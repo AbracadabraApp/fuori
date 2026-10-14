@@ -1,17 +1,17 @@
 {
-  "about": "Place-image style test (Josh, 2026-10-14): linocuts read as stereotyped or dated about half the time. Each city gets its own place style, plus an abstract version, tried on two places and compared with the current linocut. Styles are described by their qualities, not by artists' names, so the generator doesn't pull in an era's stock motifs. Run: COUNTRY=es-mx npm run style-test. Output: style-test/es-mx/index.html (not committed).",
+  "about": "Place-image style test (Josh, 2026-10-14): linocuts read as stereotyped or dated about half the time, and Josh's hypothesis is that a different art style per city makes exploring less samey and keeps people enjoying the art rather than critiquing a repeated style. Each city's places try that city's approved card style (docs/mexico-version.md), plus an abstract version, on two places, next to the current linocut. Run: COUNTRY=es-mx npm run style-test. Output: style-test/es-mx/index.html (not committed).",
   "rules": "Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos or costumes. Lettering: only the place's own sign, word for word; no other words anywhere, no dates, no 'HOY', no neighbourhood or city names, no slogans, no brand names or logos. Keep the main scene in the centre; nothing important near the edges.",
   "cities": {
     "ciudad-de-mexico": {
-      "style": "Risograph print in two inks, fluorescent pink and teal, with visible grain, slight misregistration and flat overlapping shapes; contemporary, urban, lively",
-      "colours": "fluorescent pink and teal",
+      "style": "Flat matte gouache illustration with simplified shapes and visible but thin brushstrokes, no thick paint, no impasto. Palette: jacaranda purple, dusty pink, ochre, turquoise, deep green",
+      "colours": "jacaranda purple, dusty pink, ochre, turquoise, deep green",
       "places": [
         "cafe-amapola",
         "tacos-el-trompo-rojo"
       ]
     },
     "oaxaca": {
-      "style": "Contemporary illustration in flat bright colour with fine patterned details drawn from Oaxacan weaving and embroidery, crisp shapes; cochineal red, marigold, indigo and turquoise",
+      "style": "Naive folk painting with bright saturated colours, flat perspective and careful small details, inspired by Oaxacan folk art and alebrije patterns. Palette: cochineal red, marigold, indigo and turquoise",
       "colours": "cochineal red, marigold, indigo and turquoise",
       "places": [
         "cafe-pocito-jalatlaco",
@@ -19,15 +19,15 @@
       ]
     },
     "puebla": {
-      "style": "Modern flat graphic illustration built from simple geometric shapes, with patterns inspired by Talavera (not tiles), clean edges; cobalt blue, white, sunflower yellow and a touch of green",
-      "colours": "cobalt blue, white, sunflower yellow and green",
+      "style": "Illustration in the style of a hand-painted Talavera tile panel from Puebla: slightly glossy glaze, visible brush marks, a thin decorative tile border. Palette: cobalt blue and white with touches of yellow, ochre and green",
+      "colours": "cobalt blue and white with touches of yellow, ochre and green",
       "places": [
         "farmacia-san-rafael",
         "tacos-arabes-el-puente"
       ]
     },
     "guadalajara": {
-      "style": "Mid-century modern travel-poster illustration: flat colour shapes, subtle grain, bold simple geometry; terracotta, teal, mustard and sky blue",
+      "style": "Mid-century modern travel poster illustration: flat colour shapes, subtle grain, bold simple geometry. Palette: terracotta, teal, mustard and sky blue",
       "colours": "terracotta, teal, mustard and sky blue",
       "places": [
         "cafe-tinta",
@@ -35,7 +35,7 @@
       ]
     },
     "san-miguel-de-allende": {
-      "style": "Mural painting look: flat fresco surface, simplified rounded forms, strong rhythmic composition, matte plaster texture; terracotta, ochre, rose, slate blue and deep green",
+      "style": "Mexican mural painting style: flat fresco look, simplified forms, strong rhythmic composition, matte plaster texture. Palette: terracotta, ochre, rose, slate blue and deep green",
       "colours": "terracotta, ochre, rose, slate blue and deep green",
       "places": [
         "cafe-de-la-calzada",
