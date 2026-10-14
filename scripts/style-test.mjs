@@ -56,8 +56,10 @@ for (const [cityId, c] of Object.entries(test.cities)) {
   if ((test.skip ?? []).includes(cityId)) continue;
   for (const placeId of c.places) {
     const scene = sceneFor(cityId, placeId);
+    // A city can list several styles to try ("styles": {name: style line}); else its one style
+    const styleSet = c.styles ?? { city: c.style };
     const variants = {
-      city: `${c.style}. The scene: ${scene} ${test.rules} Square format.`,
+      ...Object.fromEntries(Object.entries(styleSet).map(([n, st]) => [n, `${st}. The scene: ${scene} ${test.rules} Square format.`])),
       abstract: `${test.abstract}: ${c.colours}. The scene: ${scene} ${test.rules} Square format.`,
     };
     const row = { cityId, placeId, files: {} };
@@ -70,7 +72,7 @@ for (const [cityId, c] of Object.entries(test.cities)) {
       } catch (e) {
         console.error(`${cityId}/${placeId} ${v}: FAILED ${e.message}`);
       }
-      row.files[v] = `${v}/${placeId}.jpg`;
+      if (!(CITY_ONLY && v === 'abstract')) row.files[v] = `${v}/${placeId}.jpg`;
     }
     rows.push(row);
   }
@@ -81,13 +83,12 @@ const current = (id) => path.relative(OUT, path.join(ROOT, 'public', gen.images?
 const html = `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width">
 <title>Place style test</title>
 <style>body{font:16px system-ui;margin:16px;background:#f5f1ed}h2{margin:28px 0 8px;font-size:18px}
-.r{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.r figure{margin:0}.r img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;background:#ddd}
+.r{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}.r figure{margin:0}.r img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;background:#ddd}
 figcaption{font-size:13px;color:#555;margin-top:4px}</style>
 <h1>Place style test: ${COUNTRY}</h1>
 ${rows.map((r) => `<h2>${r.cityId} · ${r.placeId}</h2><div class="r">
-<figure><img src="${current(r.placeId)}"><figcaption>Now (linocut)</figcaption></figure>
-<figure><img src="${r.files.city}"><figcaption>City style</figcaption></figure>
-<figure><img src="${r.files.abstract}"><figcaption>Abstract</figcaption></figure></div>`).join('\n')}`;
+<figure><img src="${current(r.placeId)}"><figcaption>Now</figcaption></figure>
+${Object.entries(r.files).map(([v, f]) => `<figure><img src="${f}"><figcaption>${v}</figcaption></figure>`).join('')}</div>`).join('\n')}`;
 if (!DRY) {
   fs.mkdirSync(OUT, { recursive: true });
   fs.writeFileSync(path.join(OUT, 'index.html'), html);
