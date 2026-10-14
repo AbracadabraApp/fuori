@@ -35,6 +35,51 @@ Stay in the same day until you succeed, or choose to move on.
 
 **Open question:** should this be the core rule, or an opt-in "replay this day" mode on top of the normal journey?
 
+## Interactive transcript
+
+**Passed on 2026-10-14.** Tap a word in the reply for its meaning, translate the whole reply, save words to a list.
+
+**Why it's appealing:**
+- Instant help when stuck on a word
+- Building a personal vocabulary list
+- Reference for later study
+
+**Why it was passed on:**
+- Too much interface for an immersion-first app (deferred from M1, removed from M3)
+- Tapping words interrupts the flow of spoken conversation
+- English translations already available as a setting for learners who need them
+- Magda's study file captures vocabulary from conversations without UI
+- Focus stays on listening and speaking, not reading and tapping
+
+**Alternative:** Vocabulary and learning moments appear in Magda's study file automatically, accessed outside of conversations. No tap-to-translate needed during immersion.
+
+## Voice notes and messages from characters
+
+**Passed on 2026-10-14.** Characters send you voice messages between visits; postcards from cities you've left.
+
+**Why it's appealing:**
+- Relationship continuity between visits
+- Gentle immersion practice outside of conversations
+- Characters feel alive beyond when you're talking to them
+- Natural triggers (you mentioned visiting Firenze, Giulia sends a postcard from there)
+
+**Research findings (2026-10-13):**
+- Works best for relationship continuity, not conversation replacement
+- Key patterns: waveform, speed control (0.5×-1.5× for learners), tap for transcript
+- TTS with same character voices (ElevenLabs), generate on demand
+- Target: 20-30 seconds, max 60 seconds
+- Frequency: 3-5 messages/week total across all characters
+- Must have in-world triggers only (no generic engagement)
+
+**Why it was passed on:**
+- Adds complexity (phone notifications, SMS/email delivery, async state)
+- In-world triggers need careful design to feel natural not pushy
+- "If can't make very immersive, better to keep it simple" (Josh, 2026-10-13)
+- Voice messages on phone, photo uploads, offline materials = interesting sidetracks
+- Focus on making in-game experience excellent first
+
+**If reconsidered:** Start with character postcards (text + audio clip) accessible in-app only, no push notifications. Build from there if it works.
+
 ## Automatic per-reply checks
 
 Deterministic checks on every character reply in `/api/turn`: too long for the level, words outside the vocabulary list, English slipping in, *tu*/*Lei* mismatching the character sheet. Parked because the simulated-learner judge covers most of this for a one-person prototype.

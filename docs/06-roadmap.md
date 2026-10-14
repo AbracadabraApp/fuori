@@ -131,13 +131,15 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 
 **Done when:** ~~Josh has tried the export in Gemini Notebook and decided keep, change or drop~~ (kept, 2026-10-14); characters give you richer reasons to return beyond just remembering your name.
 
-## M3: Levels, interaction and polish
+## M3: Levels and polish
 
-- [ ] Interact with the transcript: tap a word for its meaning, translate the whole reply, save words (deferred from M1: too much interface for now)
 - [ ] Level steps (A1 → A1+ → A2 …) from evidence in conversations; level rules exist in `content/it/levels/`
 - [ ] More dialect as you level up ("Allow dialect" setting)
-- [ ] Voice notes and messages from characters; postcards from cities you've left
 - [ ] Hosted voices for every character; Magda's voice
+
+**Moved to ideas.md (2026-10-14):**
+- Interactive transcript (too much interface, conflicts with immersion-first approach)
+- Voice notes and messages from characters (complexity, focus on in-game experience first)
 
 ## M4: Accounts and costs
 
