@@ -21,7 +21,9 @@
         "day-of-the-dead": "Illustration in Day of the Dead (Día de Muertos) style",
         "shadow-box": "Mexican shadow-box diorama: the scene built inside a small open wooden box painted in bright colours, with tiny handmade clay and papier-mâché figures and objects, photographed straight on with soft light; playful and handmade",
         "textures": "Mexico City, highly textured: palimpsestic and monolithic tezontle stone, saturated and geometric walls, fluid and sinuous steel, chiaroscuro and dappled light under emerald canopies, sizzling and aromatic amber glow, choral and kinetic street life. Palette: tezontle red-black, electric pink, cobalt blue, marigold, emerald, amber",
-        "roma-condesa": "Contemporary Roma Norte and Condesa, Mexico City: leafy and upscale, architecturally accurate — 1920s–30s Art Deco and streamline apartment buildings with rounded corner balconies, ironwork and pastel stucco, Porfirian mansions with carved stone details, tree-lined avenues with planted medians under dense ficus and jacaranda canopies; today's specialty cafés, natural-wine bars and design shops, people walking dogs, cyclists. Clean, light, contemporary illustration. Palette: leaf green, jacaranda purple, soft terracotta, cream stucco, sky blue"
+        "roma-condesa": "Contemporary Roma Norte and Condesa, Mexico City: leafy and upscale, architecturally accurate — 1920s–30s Art Deco and streamline apartment buildings with rounded corner balconies, ironwork and pastel stucco, Porfirian mansions with carved stone details, tree-lined avenues with planted medians under dense ficus and jacaranda canopies; today's specialty cafés, natural-wine bars and design shops, people walking dogs, cyclists. Clean, light, contemporary illustration. Palette: leaf green, jacaranda purple, soft terracotta, cream stucco, sky blue",
+        "diorama-photo": "Photorealistic tilt-shift photograph taken from a high angle, so the real street corner looks like a miniature model: very shallow depth of field, crisp centre and softly blurred top and bottom, real materials and textures, natural afternoon light, saturated true-to-life colour, real people",
+        "diorama-model": "Hyper-realistic museum-quality scale model photographed with a macro lens: real miniature materials (weathered stucco, real tiny plants, ceramic tiles, worn paving), lifelike painted figures, warm natural light, shallow depth of field; looks like a photograph of a real place"
       }
     },
     "oaxaca": {
@@ -30,7 +32,10 @@
       "places": [
         "cafe-pocito-jalatlaco",
         "abarrotes-los-tres-hermanos-xochimilco"
-      ]
+      ],
+      "styles": {
+        "shadow-box": "Mexican shadow-box diorama: the scene built inside a small open wooden box painted in bright colours, with tiny handmade clay and papier-mâché figures and objects, photographed straight on with soft light; playful and handmade. Palette: cochineal red, marigold, indigo and turquoise"
+      }
     },
     "puebla": {
       "style": "Illustration in the style of a hand-painted Talavera tile panel from Puebla: slightly glossy glaze, visible brush marks, a thin decorative tile border. Palette: cobalt blue and white with touches of yellow, ochre and green",
@@ -54,18 +59,20 @@
       "places": [
         "cafe-de-la-calzada",
         "miscelanea-los-arcos"
-      ]
+      ],
+      "styles": {
+        "shadow-box": "Mexican shadow-box diorama: the scene built inside a small open wooden box painted in warm colours, with tiny handmade clay and papier-mâché figures and objects, photographed straight on with soft light; playful and handmade. Palette: terracotta, ochre, rose, slate blue and deep green"
+      }
     }
   },
   "abstract": "Abstract colour-block composition: large flat overlapping shapes and a few confident lines suggest the place and the people in it, without detail; bold and contemporary; use the city's colours",
   "round": 3,
   "skip": [
     "puebla",
-    "oaxaca",
-    "guadalajara",
-    "san-miguel-de-allende"
+    "guadalajara"
   ],
   "rulesFor": {
     "day-of-the-dead": "Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, rebozos or costumes. Lettering: only the place's own sign, word for word; no other words anywhere, no dates, no 'HOY', no neighbourhood or city names, no slogans, no brand names or logos. Keep the main scene in the centre; nothing important near the edges."
-  }
+  },
+  "notes": "Round 3 picks (Josh, 2026-10-14): CDMX diorama most interesting, but should be more photorealistic; ligne-claire second. Shadow box as an alternative for Oaxaca or San Miguel."
 }
