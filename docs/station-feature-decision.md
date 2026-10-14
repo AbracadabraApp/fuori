@@ -38,13 +38,13 @@ The person screen's rules (2026-10-13): talking happens at the bottom (Start con
   - **Test that would catch it:** leaving by Sali sends `/api/conversation/end` with the conversation id, the same as leaving by the back link (a fake `sendBeacon`, like `test:silence` fakes audio). Today no test covers the end beacon at all; add one for the back link at the same time.
 - **Not needed:** a station prompt template, a conversation state machine, end detection, a "traveling" screen (a short "on the train" moment can come later if wanted).
 
-### The station is also how you find more cities (Josh, 2026-10-14)
+### Reaching the other cities (Josh, 2026-10-14)
 
 - **Several ways to move, none taken away:** the home list (back link) and the station both stay.
-- **The departures board shows every city, including the ones off the home list** (Italy: 8 on the list, 12 more by train). The home list is "the cities you know"; the station is how you discover the rest. Today `CityPicker` shows only cities on the list (`cities.filter((c) => !c.hidden)`); this changes that.
-- **A city you arrive in must be alive:** today a hidden city also hides all its places, so arriving in Taormina would show an empty feed. Split the showcase's two jobs: which cities are on the home list, and which ~10 places each city shows. Pick 10 places for all 20 Italian cities with the same mix as the 8. (Repeated ids: none left in the hidden cities after the laptop session's fix, so no shared memory.)
-- **Proposed: a city you've travelled to joins your home list.** Otherwise finding Taormina once and losing it again would feel like a punishment. Needs the learner's visited cities remembered (small; `/api/visits` already counts place visits).
-- **Mexico:** all 5 cities are on the list, so its terminal offers the same cities for now. Same rules if it grows.
+- **The home list shows the 8, then "Mostra altro" / "Ver más" reveals all the others** (Italy: 12 more). Brings back the show-more link removed on 2026-10-13, for the city list only. No remembering which cities someone has visited.
+- **The departures board shows every city too.** The station is the immersive way to travel, not the only door to the hidden cities.
+- **A city you open must be alive:** today a hidden city also hides all its places, so opening Taormina would show an empty feed. Split the showcase's two jobs: which cities are on the first screen, and which ~10 places each city shows. Pick 10 places for all 20 Italian cities with the same mix as the 8. (Repeated ids: none left in the hidden cities after the laptop session's fix.)
+- **Mexico:** all 5 cities are on the first screen, so no "Ver más" link appears until it has more.
 
 ### Next
 
