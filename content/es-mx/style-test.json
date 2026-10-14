@@ -15,7 +15,9 @@
         "ligne-claire": "Clean-line comic illustration (ligne claire): even black outlines, flat colour with no shading, crisp detail, contemporary graphic-novel look; palette of jacaranda purple, coral, mint and warm grey",
         "screenprint": "Screenprint gig poster: three bold inks (magenta, cyan, black) with halftone dot shading, slight off-register, strong graphic composition, paper texture",
         "diorama": "Miniature isometric diorama: the scene as a tiny handmade model seen from above at an angle, soft clay and painted-wood textures, warm afternoon light, shallow depth of field like a tilt-shift photo",
-        "line-spot": "Single continuous ink line drawing in the style of an architect's sketch on off-white paper, with one bright spot colour (hot pink) filling a few shapes; lots of white space"
+        "line-spot": "Single continuous ink line drawing in the style of an architect's sketch on off-white paper, with one bright spot colour (hot pink) filling a few shapes; lots of white space",
+        "kahlo": "Painting in the style of Frida Kahlo",
+        "rivera": "Painting in the style of Diego Rivera"
       }
     },
     "oaxaca": {
