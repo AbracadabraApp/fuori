@@ -343,3 +343,11 @@ Prompted by "help more beginner level people". Rule behind all three: **everyone
 - **Children** speak in short, simple, repeated sentences and don't judge: good A1 practice. Always in family settings with a parent or grandparent in the scene (the baker's daughter doing homework behind the counter, a kid with his nonna at the park). Topics stay a child's: school, pets, football, gelato. Firm prompt guardrails and a judge check that every child conversation stays age-appropriate.
 - **A street helper** (a neighbour on a bench): step aside, ask in English "how do I ask for the bill?", hear the line, go back and try it. The "help me say it" idea with a face. Likely first to build: fixes the freeze-and-quit moment, works in every city, needs no new place.
 - Other beginner ideas from the same brainstorm: tap the subtitle to replay slower; tap a word for its meaning; English that fades with visits; characters who notice confusion (by silence and length, not phrases); 2–3 tappable reply hints at A1; beginner-friendly places first in the feed; a tiny goal per visit; short A1 visits; a 60-second recap; a warm-up of 3 likely phrases before entering.
+
+## Study export, not study tools (Josh, 2026-10-13)
+
+**Decided:** Fuori won't build Duolingo-style learning (drills, streaks, spaced repetition). It has the material no study app has (real conversations, people, places, voices) and exports it to a study platform.
+- **Anki first:** open file format, works offline, does spaced repetition. A deck built from the review log: word or phrase, meaning, the line where it came up, who said it and where, and the character's voice as audio. Free on desktop and Android; AnkiMobile is a one-time purchase on iPhone.
+- **Quizlet second, text only:** Quizlet has no public API, so the most Fuori can offer is a copyable list in the format Quizlet's import accepts (term, tab, meaning per line). No audio or context.
+- **Gemini / NotebookLM** have flashcards but no API to push cards into.
+- **First, the content:** the export is only as good as the review log's picks, which are still debug-only and unchecked. Make those trustworthy before building the export.
