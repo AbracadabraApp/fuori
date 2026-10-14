@@ -42,7 +42,11 @@ export interface ReviewLog {
     better: string;
     why: string;
   }>;
-  /** Version of content/it/prompts/memory.md that wrote it */
+  /** Words or phrases the learner didn't understand (learning notes since 2026-10-14) */
+  missed?: Array<{ phrase: string; en: string }>;
+  /** Moments the learner fell back on English */
+  english?: string[];
+  /** Version of content/<country>/prompts/memory.md that wrote it */
   promptVersion?: string;
 }
 

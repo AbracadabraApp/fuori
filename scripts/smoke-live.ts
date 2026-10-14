@@ -8,9 +8,9 @@
  *   npm run smoke:live -- --url=http://localhost:3000 --keep
  *
  * Steps: the site loads; a conversation is recorded; leaving writes memory and
- * the Review; the visit is counted for the stamp; a second visit remembers the
- * learner; Magda at the school teaches from the Review. About 6 Claude replies
- * plus memory and Review (a couple of minutes, a few cents). Deletes the test
+ * the study file; the visit is counted for the stamp; a second visit remembers
+ * the learner; Magda at the school has the study file; a short lesson updates it. About 6 Claude replies
+ * plus memory and the study file (a few minutes, a few cents). Deletes the test
  * learner afterwards through `railway ssh` (skip with --keep).
  */
 import { execFileSync } from 'child_process';
@@ -26,10 +26,15 @@ const arg = (name: string) => process.argv.find((a) => a.startsWith(`--${name}=`
 const base = (arg('url') ?? LIVE[country]).replace(/\/$/, '');
 const keep = process.argv.includes('--keep');
 
-// Two learner lines with a mistake each, so the Review has something to find
+// Two learner lines with a mistake each, so the learning notes have something to find
 const LINES: Record<string, string[]> = {
   it: ['Io vuole un caffè, per favore', 'Ieri io vado al mercato con mio amico'],
   es: ['Yo quiere un café, por favor', 'Ayer yo voy al mercado con mi amigo'],
+};
+// Two answers in a lesson with Magda
+const LESSON_LINES: Record<string, string[]> = {
+  it: ['Sì, va bene. Io voglio un caffè', 'Vorrei un caffè, per favore'],
+  es: ['Sí, está bien. Yo quiero un café', 'Quisiera un café, por favor'],
 };
 
 let cookie = '';
@@ -96,10 +101,10 @@ async function main() {
     transcript.push({ who: 'learner', transcript: said }, { who: 'npc', transcript: r.line });
   }
 
-  // 3. Leaving writes memory and the Review (the server finishes before answering)
+  // 3. Leaving writes memory, learning notes and the study file (the server finishes before answering)
   const t0 = Date.now();
   const end = await post('/api/conversation/end', { conversationId: id });
-  end.status === 204 ? pass(`conversation ended (memory and Review took ${Math.round((Date.now() - t0) / 1000)}s)`) : fail('conversation ended', `status ${end.status}`);
+  end.status === 204 ? pass(`conversation ended (memory and study file took ${Math.round((Date.now() - t0) / 1000)}s)`) : fail('conversation ended', `status ${end.status}`);
 
   // 4. The visit is counted for the stamp
   const visits = (await (await fetch(`${base}/api/visits?city=${encodeURIComponent(city.id)}`, { headers: { Cookie: cookie } })).json()) as Record<string, number>;
@@ -110,12 +115,25 @@ async function main() {
   const mem = again.res.headers.get('x-memory') ?? '';
   /^1 visits, [1-9]/.test(mem) ? pass(`character remembers (${mem})`) : fail('character remembers', `x-memory "${mem}"`);
 
-  // 6. Magda at the school teaches from the Review
+  // 6. Magda at the school, with the study file the conversation just fed
   const lesson = await turn(magda, city.id, []);
   const v = lesson.res.headers.get('x-prompt-version') ?? '';
   v.startsWith('magda-') ? pass(`Magda found at ${school.name} (${v})`) : fail('Magda found at the school', `prompt version "${v}"`);
-  lesson.res.headers.get('x-review') === 'yes' ? pass('Magda has the Review') : fail('Magda has the Review', `x-review "${lesson.res.headers.get('x-review')}"`);
+  const sf = lesson.res.headers.get('x-study-file') ?? '';
+  /^[1-9]\d* lines, 0 lessons$/.test(sf) ? pass(`study file ready for the first lesson (${sf})`) : fail('study file ready for the first lesson', `x-study-file "${sf}"`);
   console.log(`Magda: ${lesson.line}\n`);
+
+  // 7. A short lesson, then leaving: the study file is updated and counts one lesson
+  const lessonId = lesson.res.headers.get('x-conversation-id');
+  const lt: Turn[] = [{ who: 'npc', transcript: lesson.line }];
+  for (const said of LESSON_LINES[language.code]) {
+    const r = await turn(magda, city.id, lt, said, lessonId);
+    lt.push({ who: 'learner', transcript: said }, { who: 'npc', transcript: r.line });
+  }
+  await post('/api/conversation/end', { conversationId: lessonId });
+  const next = await turn(magda, city.id, []);
+  const sf2 = next.res.headers.get('x-study-file') ?? '';
+  /^[1-9]\d* lines, 1 lessons$/.test(sf2) ? pass(`study file updated after the lesson (${sf2})`) : fail('study file updated after the lesson', `x-study-file "${sf2}"`);
 }
 
 main()

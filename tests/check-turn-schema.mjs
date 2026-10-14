@@ -17,6 +17,13 @@ function walk(node, path) {
   if (types.includes('object') && node.properties) {
     const missing = Object.keys(node.properties).filter((k) => !(node.required ?? []).includes(k));
     if (missing.length) problems.push(`${path}: properties not in required: ${missing.join(', ')}`);
+    // Required names must be defined, and fields must sit inside "properties": a field
+    // placed beside it makes the API reject the schema (memory broke this way, 2026-10-14)
+    const undefinedRequired = (node.required ?? []).filter((k) => !(k in node.properties));
+    if (undefinedRequired.length) problems.push(`${path}: required but not in properties: ${undefinedRequired.join(', ')}`);
+    const allowed = ['type', 'properties', 'required', 'additionalProperties', 'description'];
+    const stray = Object.keys(node).filter((k) => !allowed.includes(k));
+    if (stray.length) problems.push(`${path}: unexpected keys on an object (fields belong inside properties): ${stray.join(', ')}`);
   }
   if (types.length > 1) problems.push(`${path}: use anyOf instead of a type array`);
   for (const key of UNSUPPORTED) if (key in node) problems.push(`${path}: unsupported keyword ${key}`);

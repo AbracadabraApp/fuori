@@ -395,17 +395,13 @@ practice French in real situations.
 
 ---
 
-## Step 8: Review Prompt
+## Step 8: Magda and the study file
 
-Translate review prompt to analyze French conversations.
+(Replaces the per-conversation Review prompt, removed 2026-10-14.)
 
-Create `content/${LANG_CODE}/prompts/review.md`:
-
-**Key adaptations:**
-- French verb tenses (présent, passé composé, imparfait, futur, conditionnel, subjonctif)
-- French error patterns (articles, gender agreement, verb conjugation, pronouns)
-- French CEFR levels (same framework, language-specific markers)
-- French vocabulary extraction (verbs, nouns, adjectives, prepositions)
+- Copy `content/it/prompts/study-file.md` as is: its text is language-neutral (`{language}` comes from the pack).
+- Copy `content/it/prompts/magda-teaching.md` and translate only its example lines (the drill and the "try in town" example) into the new language.
+- Add a Magda character file (`content/${LANG_CODE}/characters/magda.ts`) and set `tutor: magda` in the pack; every school's `characterId` is `magda`.
 
 ---
 

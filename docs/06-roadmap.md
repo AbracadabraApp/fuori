@@ -60,7 +60,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 ### Backend / Infrastructure
 
 **Review Generation (replaces simple review log):**
-- [x] Rich analysis after each conversation (wired 2026-10-13: written when a conversation ends, after memory, in `conversations.analysis`; `lib/review.ts`, prompt `content/<country>/prompts/review.md`): reads transcript, outputs structured data including:
+- [x] ~~Rich analysis after each conversation~~ Replaced 2026-10-14 by learning notes (in the memory call) and Magda's study file (docs/02-game-design.md → The study file). The list below was the removed Review's content:
   - Level detection (A1/A2/B1 with error rate and complexity evidence)
   - Error patterns (categorized: verb, article, syntax, pronunciation; with examples and frequency)
   - Missing structures (should use at their level but doesn't: past tense, future, subjunctive)
@@ -69,7 +69,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
   - Tense usage statistics (present 85%, past 10%, future 0% → shows what they avoid)
   - Suggested focus areas (prioritized: what to practice, why, method)
   - Strengths (positive reinforcement)
-- [x] Review storage: `conversations.analysis` (separate from the memory review log in `review`); Magda reads the latest server-side (`latestReview`), no public API
+- [x] Storage: learning notes in `conversations.review`; the study file is Magda's `character_memories` row (`conversations.analysis` unused since 2026-10-14)
 
 **Content Expansion:**
 - [ ] Bench characters: audit Italy (10 exist, 6 hidden - decide which to show), deploy Mexico (5 generated), generate images for Mexico (5 portraits + 5 places)
@@ -77,7 +77,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 
 ### Frontend / User-facing
 
-- [x] Magda at school (wired 2026-10-13: one Magda per country, `pack.tutor`, same id at every school; prompt `content/<country>/prompts/magda-teaching.md`): teaching mode uses Review data; suggests what to practice based on patterns/missing structures; voice-first methods (drills, role-plays, error correction); simple and open prompt, refine later
+- [x] Magda at school (wired 2026-10-13; redesigned 2026-10-14: study file and one-goal lessons ending on success, struggle, ~20 replies or the learner's wish, plus one thing to try in town; prompt `content/<country>/prompts/magda-teaching.md`): teaching mode uses the study file; suggests what to practice based on patterns/missing structures; voice-first methods (drills, role-plays, error correction); simple and open prompt, refine later
 - [ ] Visit marks: CSS stamp overlay (4 SVG variants generated: terracotta, olive, blue, wine); place ID hash picks variant; shows after first visit; character name appears after meeting
 
 ### Level-aware dialogue (deferred from M1)

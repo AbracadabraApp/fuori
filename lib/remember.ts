@@ -1,7 +1,9 @@
 /**
  * End of a conversation: one Claude call reads the transcript and writes the
  * character's notes about the learner (back in the prompt next visit) and the
- * review-log entry (debug only in M1). Prompt: content/it/prompts/memory.md.
+ * learning notes (the review log). Prompt: content/<country>/prompts/memory.md.
+ * Then those learning notes are folded into Magda's study file (lib/study-file.ts).
+ * A lesson with Magda instead updates the study file from the lesson itself.
  *
  * Called from /api/conversation/end, which the phone sends when the learner
  * leaves the screen or the app goes to the background. Like recording, this
@@ -18,7 +20,8 @@ import { memoryOutputJsonSchema } from './prompts/memory-output-schema';
 import { claimForMemory, releaseMemoryClaim, saveConversationMemory, loadCharacterMemory } from './memory';
 import { recordingEnabled } from './recording';
 import { characterForPlace } from './characters/for-place';
-import { cities } from '@/content';
+import { cities, tutor } from '@/content';
+import { writeStudyFileWithClaude, saveStudyFile, type StudyFileWriter } from './study-file';
 import type { CharacterSheet } from './types';
 import { scoreConversation, saveConversationScore, judgeWithClaude, type Judge } from './quality';
 
@@ -30,6 +33,8 @@ const MemoryOutputSchema = z.object({
   review: z.object({
     items: z.array(z.object({ phrase: z.string(), en: z.string(), why: z.string() })),
     mistakes: z.array(z.object({ said: z.string(), better: z.string(), why: z.string() })),
+    missed: z.array(z.object({ phrase: z.string(), en: z.string() })).default([]),
+    english: z.array(z.string()).default([]),
   }),
 });
 export type MemoryOutput = z.infer<typeof MemoryOutputSchema>;
@@ -68,7 +73,8 @@ export async function rememberConversation(
   conversationId: string,
   learnerId: string,
   summarize: Summarizer = summarizeWithClaude,
-  judge: Judge = judgeWithClaude
+  judge: Judge = judgeWithClaude,
+  writeStudyFile: StudyFileWriter = writeStudyFileWithClaude
 ): Promise<RememberResult> {
   if (!recordingEnabled()) return 'nothing new';
   let claim: Awaited<ReturnType<typeof claimForMemory>> = null;
@@ -80,6 +86,23 @@ export async function rememberConversation(
     if (!character) throw new Error(`character ${claim.characterId} not found in ${claim.cityId || 'any city'}`);
 
     const known = await loadCharacterMemory(learnerId, claim.characterId);
+
+    // A lesson with Magda: her memory is the study file, updated from the lesson.
+    // Not scored for the dialogue scorecard (correcting is her job).
+    if (claim.characterId === tutor.id) {
+      const studyFile = await writeStudyFile({ after: 'lesson', studyFile: known.notes, character, turns: claim.turns });
+      await saveConversationMemory({
+        conversationId,
+        learnerId,
+        characterId: tutor.id,
+        notes: studyFile,
+        review: { items: [], mistakes: [] },
+        firstTime: claim.firstTime,
+      });
+      console.log(JSON.stringify({ level: 'info', event: 'study file', after: 'lesson', conversationId, lines: studyFile.length }));
+      return 'saved';
+    }
+
     const out = await summarize({ character, notes: known.notes, turns: claim.turns });
     await saveConversationMemory({
       conversationId,
@@ -90,6 +113,17 @@ export async function rememberConversation(
       firstTime: claim.firstTime,
     });
     console.log(JSON.stringify({ level: 'info', event: 'memory', conversationId, character: claim.characterId, notes: out.notes.length, firstTime: claim.firstTime }));
+
+    // Fold the learning notes into Magda's study file, so it's ready when the
+    // learner walks into the school. A problem here is logged; memory stays saved.
+    try {
+      const current = await loadCharacterMemory(learnerId, tutor.id);
+      const studyFile = await writeStudyFile({ after: 'conversation', studyFile: current.notes, character, learningNotes: out.review });
+      await saveStudyFile(learnerId, studyFile);
+      console.log(JSON.stringify({ level: 'info', event: 'study file', after: 'conversation', conversationId, lines: studyFile.length }));
+    } catch (err) {
+      logError('study file', err, conversationId);
+    }
 
     // Score it for the dialogue scorecard (lib/quality.ts). Separate from memory:
     // a scoring problem is logged and memory stays saved.

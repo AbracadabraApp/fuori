@@ -1,6 +1,6 @@
 /**
  * JSON schema for the end-of-conversation memory call (content/it/prompts/memory.md):
- * the character's notes about the learner, and the review-log entry.
+ * the character's notes about the learner, and the learning notes (review).
  * Plain object, no imports, so tests/check-turn-schema.mjs can check it too.
  */
 const string = { type: 'string' };
@@ -32,8 +32,18 @@ export const memoryOutputJsonSchema = {
             required: ['said', 'better', 'why'],
           },
         },
+        missed: {
+          type: 'array',
+          items: {
+            additionalProperties: false,
+            type: 'object',
+            properties: { phrase: string, en: string },
+            required: ['phrase', 'en'],
+          },
+        },
+        english: { type: 'array', items: string },
       },
-      required: ['items', 'mistakes'],
+      required: ['items', 'mistakes', 'missed', 'english'],
     },
   },
   required: ['notes', 'review'],

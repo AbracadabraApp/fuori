@@ -411,7 +411,8 @@ conversations (
   started_at      timestamptz not null,
   ended_at        timestamptz,
   turns           jsonb not null,  -- [{ who, text, en?, at }]
-  review          jsonb,           -- review-log entry written when it ends (2–3 items, real mistakes)
+  review          jsonb,           -- learning notes written when it ends: 2–3 things worth learning, real mistakes (said / better), phrases not understood, English fallbacks
+  analysis        jsonb,           -- unused since 2026-10-14 (the per-conversation M2 "Review", replaced by Magda's study file)
   memory_turns    int not null default 0,  -- turns already written into memory (written once per new stretch of talk)
   memory_at_start jsonb            -- what the character remembered when it started (same {relationship} for every turn)
 )
@@ -420,7 +421,7 @@ conversations (
 **Flow:**
 1. Opening a conversation loads that character's row (if any). The visit count and notes go into the character's prompt ("You've met them 3 times. You remember: their name is Josh; from Seattle; always orders a cappuccino").
 2. Each turn is saved to the conversation's row as it happens, so nothing is lost if the screen closes.
-3. When the conversation ends (leaving the screen after at least a few exchanges), one Claude call reads the transcript and writes two things: updated notes for the character (keep what matters, drop what doesn't, at most ~10 short lines; `visits` goes up by one) and the review-log entry. The review log is shown only in debug mode in M1.
+3. When the conversation ends (leaving the screen after at least a few exchanges), one Claude call reads the transcript and writes two things: updated notes for the character (keep what matters, drop what doesn't, at most ~10 short lines; `visits` goes up by one) and the learning notes (the review log). Then a small call folds those learning notes into Magda's study file: her `character_memories` row (`character_id` = the pack's tutor, `magda`), up to ~20 lines, cumulative, not shown to the learner. Its `visits` counts lessons only. A lesson with Magda updates the study file again when it ends. See [Game design → The study file](02-game-design.md#the-learner-profile-is-magdas-the-study-file).
 
 Only `learners`, `character_memories` and `conversations` are built in M1.
 

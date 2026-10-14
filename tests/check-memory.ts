@@ -62,7 +62,7 @@ async function dbChecks() {
   try {
     const base = { learnerId: me, character: person, cityId: city.id, promptVersion: 'test' };
     const calls: Parameters<Summarizer>[0][] = [];
-    const out: MemoryOutput = { notes: ['Their name is Josh', 'Lives in Trastevere'], review: { items: [{ phrase: 'magari', en: 'if only', why: 'used twice' }], mistakes: [] } };
+    const out: MemoryOutput = { notes: ['Their name is Josh', 'Lives in Trastevere'], review: { items: [{ phrase: 'magari', en: 'if only', why: 'used twice' }], mistakes: [], missed: [], english: [] } };
     const fake: Summarizer = async (input) => { calls.push(input); await new Promise((r) => setTimeout(r, 50)); return out; };
     // Scoring runs after memory (lib/quality.ts); a fake so this test never calls Claude
     const judged: string[] = [];

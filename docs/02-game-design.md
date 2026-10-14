@@ -69,12 +69,24 @@ Decided 2026-10-13 (Josh): Magda works at the scuola per stranieri, one in each 
 - **What to work on:** you tell her, or she suggests something from the learner profile (below).
 - **Warm, precise, interested in why mistakes happen.**
 
-### The learner profile is Magda's
+### The learner profile is Magda's: the study file
 
-A profile built by analysing transcripts after each conversation: what you get wrong, words you don't seem to know, tenses you don't produce yet, registers you avoid (formal *Lei*). It grows from the review log (M1) into a profile that travels across conversations (M2).
-- **Magda uses it** to suggest what to work on and to shape her lessons.
+Decided 2026-10-14 (Josh), replacing the per-conversation "Review" built for M2 (heavy, prescriptive, and only the latest one reached Magda).
+
+**Two records, nothing else:**
+- **After every conversation**, the one end-of-conversation call writes the character's memory notes (unchanged) and **learning notes**: what you actually said next to a better version, words or phrases you didn't understand, moments you fell back on English. Short, quoted, with the character and place.
+- **The study file** is Magda's memory of you: one short (about 20 lines), cumulative record: what keeps recurring, what's improving, what you practised and how it went, your rough level with evidence across conversations, what to do next, and the one thing she asked you to try in town. A small call folds each conversation's learning notes into it, so it's ready when you walk into the school; the end of each lesson updates it again. Not shown to the learner (Josh).
+
+**A lesson has one goal**, small enough to reach in about 10 minutes of talking (roughly 15–20 of your replies). Bigger topics are split across lessons ("the past tense": first *sono andato/a*, next time *ho mangiato*); the study file keeps the step.
+- **Shape:** recall something from last time (1–2 turns) → teach and drill (she models, you repeat, she varies) → use it in a short role-play without being prompted → close with a recap and **one thing to try in town** ("la prossima volta al bar, ordina con *vorrei*").
+- **It ends** when you've used it correctly on your own about three times (success; maybe one small extra if it went fast); or after several misses she shrinks the goal to what you can do and ends on that win, noting the rest; or around 20 replies she wraps up wherever you are; or you ask to stop or switch.
+- **No state machine:** Magda gets the shape in her prompt and one fact each turn (how many replies you've made this lesson); she judges the rest like a teacher. The numbers (three, about 20) are starting guesses to adjust from real lessons.
+
+**The loop:** Magda sends you into town with one thing to try; the next conversations' learning notes show whether you used it; the study file picks that up and she starts the next lesson from it. The class happens at the school; the practice happens in town.
+
 - **The rest of the world doesn't need it.** Characters teach in role without it, which keeps the analysis from shaping or slowing conversations.
 - **Maybe later, not now:** quietly using it to aim in-world help (the nun happens to offer a word you've been missing rather than a random one). Easy to over-invest in; keep on the shelf.
+- **Later:** the study export builds from saved transcripts on request; nothing is precomputed for it.
 
 Inspired by the creator's real teacher. Use her first name only, and check she's happy with it before Fuori is shown to anyone else.
 

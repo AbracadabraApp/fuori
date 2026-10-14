@@ -9,8 +9,7 @@ import { getOrCreateLearnerId } from '@/lib/learner';
 import { recordTurn, recordingEnabled } from '@/lib/recording';
 import { loadCharacterMemory, loadMemoryAtStart, type CharacterMemory } from '@/lib/memory';
 import { tutor } from '@/content';
-import { latestReview } from '@/lib/review';
-import { buildTutorPrompt } from '@/lib/prompts/build-tutor-prompt';
+import { buildTutorPrompt, repliesSoFar } from '@/lib/prompts/build-tutor-prompt';
 
 
 export async function POST(request: NextRequest) {
@@ -60,20 +59,12 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Magda teaches from the learner's latest Review, with her own prompt
+    // Magda teaches with her own prompt: her memory is the study file, and she
+    // gets one fact for pacing, how many replies the learner has made this lesson
     const isTutor = (character as CharacterSheet).id === tutor.id;
-    let tutorPrompt: ReturnType<typeof buildTutorPrompt> | undefined;
-    let tutorHasReview = false;
-    if (isTutor) {
-      let review = null;
-      try {
-        if (learnerId) review = await latestReview(learnerId);
-      } catch (err) {
-        logServerError(request, 'review load', err);
-      }
-      tutorHasReview = !!review;
-      tutorPrompt = buildTutorPrompt({ character: character as CharacterSheet, memory, review });
-    }
+    const tutorPrompt = isTutor
+      ? buildTutorPrompt({ character: character as CharacterSheet, memory, replies: repliesSoFar((transcript || []) as Turn[], learnerSaid) })
+      : undefined;
 
     const turnOutput = await runTurn({
       character: character as CharacterSheet,
@@ -123,7 +114,7 @@ export async function POST(request: NextRequest) {
     if (savedId) headers['x-conversation-id'] = savedId;
     // Read by scripts/smoke-live.ts; invisible to learners
     if (memory) headers['x-memory'] = `${memory.visits} visits, ${memory.notes.length} notes`;
-    if (tutorPrompt) headers['x-review'] = tutorHasReview ? 'yes' : 'none';
+    if (tutorPrompt) headers['x-study-file'] = `${memory?.notes.length ?? 0} lines, ${memory?.visits ?? 0} lessons`;
     return NextResponse.json(turnOutput, { headers });
   } catch (error) {
     logServerError(request, 'turn', error);
