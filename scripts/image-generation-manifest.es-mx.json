@@ -500,13 +500,138 @@
       "timestamp": "2026-10-13T03:22:00.422Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/ramiro-taquero.jpg",
       "type": "portrait"
+    },
+    "ciudad-de-mexico/alameda-central": {
+      "timestamp": "2026-10-14T06:17:00.138Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/alameda-central.jpg",
+      "skipped": true
+    },
+    "ciudad-de-mexico/escuela-lengua-cdmx": {
+      "timestamp": "2026-10-14T06:17:33.366Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/escuela-lengua-cdmx.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/terminal-tapo": {
+      "timestamp": "2026-10-14T06:18:01.285Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-tapo.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/carmen-jubilada": {
+      "timestamp": "2026-10-14T06:18:04.288Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/carmen-jubilada.jpg",
+      "skipped": true
+    },
+    "ciudad-de-mexico/arturo-taquillero-cdmx": {
+      "timestamp": "2026-10-14T06:18:39.282Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/arturo-taquillero-cdmx.jpg",
+      "type": "portrait"
+    },
+    "guadalajara/jardin-de-san-francisco": {
+      "timestamp": "2026-10-14T06:18:42.291Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/jardin-de-san-francisco.jpg",
+      "skipped": true
+    },
+    "guadalajara/escuela-lengua-guadalajara": {
+      "timestamp": "2026-10-14T06:19:02.432Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/escuela-lengua-guadalajara.jpg",
+      "type": "place"
+    },
+    "guadalajara/terminal-nueva": {
+      "timestamp": "2026-10-14T06:19:24.363Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-nueva.jpg",
+      "type": "place"
+    },
+    "guadalajara/rosa-estudiante": {
+      "timestamp": "2026-10-14T06:19:27.365Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/rosa-estudiante.jpg",
+      "skipped": true
+    },
+    "guadalajara/carlos-taquillero-gdl": {
+      "timestamp": "2026-10-14T06:19:46.028Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/carlos-taquillero-gdl.jpg",
+      "type": "portrait"
+    },
+    "oaxaca/zocalo-oaxaca": {
+      "timestamp": "2026-10-14T06:19:49.034Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/zocalo-oaxaca.jpg",
+      "skipped": true
+    },
+    "oaxaca/escuela-lengua-oaxaca": {
+      "timestamp": "2026-10-14T06:20:10.993Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/escuela-lengua-oaxaca.jpg",
+      "type": "place"
+    },
+    "oaxaca/terminal-ado-oaxaca": {
+      "timestamp": "2026-10-14T06:20:33.422Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-ado-oaxaca.jpg",
+      "type": "place"
+    },
+    "oaxaca/arturo-jubilado": {
+      "timestamp": "2026-10-14T06:20:36.427Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/arturo-jubilado.jpg",
+      "skipped": true
+    },
+    "oaxaca/ricardo-taquillero-oaxaca": {
+      "timestamp": "2026-10-14T06:20:59.428Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/ricardo-taquillero-oaxaca.jpg",
+      "type": "portrait"
+    },
+    "puebla/jardin-del-carmen": {
+      "timestamp": "2026-10-14T06:21:02.433Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/jardin-del-carmen.jpg",
+      "skipped": true
+    },
+    "puebla/escuela-lengua-puebla": {
+      "timestamp": "2026-10-14T06:21:27.659Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/escuela-lengua-puebla.jpg",
+      "type": "place"
+    },
+    "puebla/terminal-capu": {
+      "timestamp": "2026-10-14T06:22:00.148Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-capu.jpg",
+      "type": "place"
+    },
+    "puebla/beatriz-abuela": {
+      "timestamp": "2026-10-14T06:22:03.151Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/beatriz-abuela.jpg",
+      "skipped": true
+    },
+    "puebla/jorge-taquillero-puebla": {
+      "timestamp": "2026-10-14T06:22:28.021Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/jorge-taquillero-puebla.jpg",
+      "type": "portrait"
+    },
+    "san-miguel-de-allende/parque-juarez": {
+      "timestamp": "2026-10-14T06:22:31.025Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/parque-juarez.jpg",
+      "skipped": true
+    },
+    "san-miguel-de-allende/escuela-lengua-sma": {
+      "timestamp": "2026-10-14T06:22:54.932Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/escuela-lengua-sma.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/terminal-sma": {
+      "timestamp": "2026-10-14T06:23:19.390Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-sma.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/victor-jubilado": {
+      "timestamp": "2026-10-14T06:23:22.393Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/victor-jubilado.jpg",
+      "skipped": true
+    },
+    "san-miguel-de-allende/miguel-taquillero-sma": {
+      "timestamp": "2026-10-14T06:23:47.351Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/miguel-taquillero-sma.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 100,
-    "completed": 100,
+    "total": 125,
+    "completed": 125,
     "failed": 0,
-    "lastRun": "2026-10-13T03:22:03.425Z"
+    "lastRun": "2026-10-14T06:23:50.353Z"
   }
 }

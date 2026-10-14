@@ -39,7 +39,7 @@ export const showcase: Record<string, string[]> = {
     'bottega-artigiana',
     'enoteca-lucania',
     'libreria-matera',
-    'piazza-duomo-matera', // M2: bench character Alberto (pensionato)
+    'piazza-duomo', // M2: bench character Alberto (pensionato)
     'scuola-lingua-matera', // M2: language school with Magda
     'stazione-fal', // M2: train station for travel
   ],
@@ -99,7 +99,7 @@ export const showcase: Record<string, string[]> = {
     'salumeria-upnea',
     'enoteca-belledonne',
     'libreria-dante-descartes',
-    'via-spaccanapoli', // M2: bench character Nonna Assunta (abitante del quartiere)
+    'spaccanapoli-street', // M2: bench character Nonna Assunta (Via Spaccanapoli) (abitante del quartiere)
     'scuola-lingua-napoli', // M2: language school with Magda
     'stazione-centrale-napoli', // M2: train station for travel
   ],

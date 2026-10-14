@@ -18,12 +18,28 @@ export function feedOrder(city: CityPantry): Place[] {
   let i = 0;
 
   while (queues.some((q) => q.length)) {
-    const q = queues[i % queues.length];
+    // From this neighbourhood on, take the first place whose kind wasn't shown
+    // in the last few cards. If this area only has repeats left, move on to the
+    // next area that has something different (Puebla and Guadalajara showed two
+    // plazas in a row once schools and terminals were added); repeat a kind only
+    // when no area has anything else.
+    let q: Place[] | undefined;
+    let pick = -1;
+    for (let step = 0; step < queues.length && pick === -1; step++) {
+      const candidate = queues[(i + step) % queues.length];
+      const k = candidate.findIndex((p) => !recent.includes(p.kind));
+      if (k !== -1) {
+        q = candidate;
+        pick = k;
+        i += step;
+      }
+    }
+    if (!q) {
+      while (!queues[i % queues.length].length) i++;
+      q = queues[i % queues.length];
+      pick = 0;
+    }
     i++;
-    if (!q.length) continue;
-    // Prefer the first place here whose kind wasn't shown in the last few cards
-    let pick = q.findIndex((p) => !recent.includes(p.kind));
-    if (pick === -1) pick = 0;
     const [place] = q.splice(pick, 1);
     out.push(place);
     recent.push(place.kind);

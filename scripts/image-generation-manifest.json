@@ -6695,13 +6695,23 @@
       "timestamp": "2026-10-14T04:49:10.904Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/franco-stazione.jpg",
       "type": "portrait"
+    },
+    "milano/scuola-lingua-milano": {
+      "timestamp": "2026-10-14T06:16:26.903Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/scuola-lingua-milano.jpg",
+      "type": "place"
+    },
+    "torino/scuola-lingua-torino": {
+      "timestamp": "2026-10-14T06:16:56.765Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/scuola-lingua-torino.jpg",
+      "type": "place"
     }
   },
   "failed": {},
   "stats": {
-    "total": 1339,
-    "completed": 1339,
+    "total": 1341,
+    "completed": 1341,
     "failed": 0,
-    "lastRun": "2026-10-14T04:49:13.914Z"
+    "lastRun": "2026-10-14T06:16:59.775Z"
   }
 }

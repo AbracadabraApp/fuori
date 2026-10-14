@@ -1209,3 +1209,10 @@ M2 had been marked complete, but its core pieces were written and never connecte
 - Removed the `pages/` folder (three routes, all replaced). Test: `npm run test:review` (all schools have Magda with one id, her prompt fills, Review stored without touching the memory log, visits counted).
 - **Failing before this, not fixed here (from the M2 content):** `test:pack` (showcase: napoli has no place "via-spaccanapoli"), `test:images` (scuola-lingua-torino, jorge-taquillero-puebla missing), `test:feed` (Puebla: two plazas in a row).
 - Josh: Magda may later get a different name and portrait per school, keeping the one id; not now.
+
+## 2026-10-13: Fixed the checks that were failing after M2 (laptop session)
+
+- `test:pack`: the Italian showcase listed two place ids that don't exist (`via-spaccanapoli` is `spaccanapoli-street`, `piazza-duomo-matera` is `piazza-duomo`), so those bench characters were hidden; the check also didn't know about Magda (`pack.tutor`) and reported Mexican schools as empty.
+- `test:images`: 17 images were missing: 2 Italian school images (Milano, Torino) and, in Mexico, every school, bus terminal and ticket seller (15). Generated from their existing prompts (~$1).
+- `test:feed`: the feed took the next neighbourhood's place even when it repeated the kind just shown; Puebla and Guadalajara showed two plazas in a row once schools and terminals were added. It now moves on to an area with something different and repeats only when nothing else is left.
+- All checks pass for `COUNTRY=it` and `COUNTRY=es-mx`; `smoke:live` run on both sites after deploying.
