@@ -128,3 +128,10 @@ An estimate of what it would take to prototype a Mexican Spanish version: **5 ci
 ## Rough total
 
 About 1 day of code generalization (mostly Claude Code work) plus about a day of content, images and voice vetting.
+
+## Place styles per city (2026-10-14, Josh)
+
+Style test (`content/es-mx/style-test.json`, `npm run style-test`): each city's places in its own style beat the shared linocut; abstract was rejected.
+- **Decided:** Guadalajara keeps linocut, with the lettering fixed: only the place's own sign, word for word; no "HOY" (the word "today" in prompts was painted as HOY), no neighbourhood or city names, no slogans, no brand logos, no rebozos or costumes.
+- **Decided:** Puebla's Talavera tile style works for places.
+- **In round 2:** CDMX (risograph), Oaxaca (folk art dialled up), San Miguel (fresco pushed further). Goal: the five cities clearly different at a glance.
