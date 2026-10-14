@@ -1234,3 +1234,7 @@ Josh wants one file to drop into Google Gemini; the Anki CSV is dropped, and ver
 - **Checks:** `npm run test:study-export` (new), tsc, test:language, next build. Run end to end on a local database through the built app: both formats, Magda/Mexico/silent conversations excluded.
 - **Next:** Josh tries the file in Gemini Notebook (flashcards, quiz, Audio Overview) and decides keep, change, or go to version 2 (add learning notes).
 - **Result (Josh, same day):** the notebook works. Study export kept as version 1; no version 2 and no review features in Fuori that repeat the notebook. Flashcards with Magda (words people said) logged as a low-priority idea in docs/ideas.md.
+
+## 2026-10-14: Station decision revised (cloud session)
+
+- Josh agreed: keep the back link; stations stay a place; picking a destination opens the ticket seller's screen with a full-width ticket strip (ROMA → FIRENZE, platform, time, **Sali**) under the band; talking is optional; the learner boards when they tap, so no end-of-conversation detection. Written at the top of docs/station-feature-decision.md. Next: mock the ticket strip, then build.

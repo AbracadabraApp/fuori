@@ -1,5 +1,47 @@
 # Station Feature: Add or Not?
 
+## Revised proposal (2026-10-14, Josh agreed the direction)
+
+Neither "stations are the only way to travel" nor "a plain travel button". Stations stay a place you can visit; the ticket you buy there is how you leave. The analysis further down is kept as background; where it conflicts with this section, this section wins.
+
+### What changes from the original options
+
+- **Keep the back link to the city list** ("← Fuori" / "← Afuera", shipped 2026-10-13). Browsing cities stays free. The original "if yes" commitment to remove it is dropped.
+- **No conversation is required to travel.** Talking to the ticket seller is optional practice, like any other place.
+- **No end-of-conversation detection.** The app never decides when the conversation is over: no listening for *"Buon viaggio"* (a phrase filter, which CLAUDE.md rules out), no turn counting, no waiting for the learner to back out. The learner boards when they choose.
+
+### The flow
+
+1. **City screen → tap the station** (Stazione Termini, Terminal TAPO). The departures board opens: the existing city picker, already on main ("Simplify travel: direct city picker").
+2. **Pick a destination** (Firenze). Instead of travelling straight away, the station's person screen opens: the ticket seller, with the usual band (back link, name, role) and portrait.
+3. **A ticket strip** sits just under the band, full width, only on station screens:
+   - styled as a printed ticket (Trenitalia in Italy, ADO in Mexico): cream paper, a torn edge, big type
+   - **ROMA → FIRENZE**, with *Binario 4 · 14:30* below
+   - a solid **Sali** button at its right end (**Subir** in Mexico); the whole strip is the target
+4. **The clerk knows where you're going.** Their opening line can be *"Per Firenze? Il prossimo parte alle 14:30, binario 4."* Talk as long as you like, or not at all.
+5. **Tap Sali whenever you're ready** → arrive at the destination's city screen.
+
+### Why the ticket sits there
+
+The person screen's rules (2026-10-13): talking happens at the bottom (Start conversation, then the mic; one control at a time); the name lives in the band and is never covered; the portrait fills the rest. A second button at the bottom would compete with the mic (and could be tapped mid-sentence); a small link in the band was too weak for the main reason you came to the station (Josh). The ticket is a strong object of its own, between the band and the talking area, so it breaks none of those rules. Cost: on station screens only, the portrait starts about one band-height lower.
+
+### What it takes
+
+- **Departure details made by the app, not the clerk,** so the ticket and the clerk agree: platform and time from a small deterministic function of the route (same route, same platform; time = next departure after now, rounded). The clerk is free to talk prices, connections and changes.
+- **Destination in the clerk's context:** add it to the `{setting}` the code already fills for city characters ("…at the ticket window. The person is going to Firenze; the next train leaves at 14:30 from platform 4."). No new prompt template and no change to `character.md`, so no prompt version bump.
+- **Station characters:** identified by place id (`stazione-*`, `terminal-*`), as the city picker already does. Each shown city needs one station place with a ticket seller; check which cities in the showcase have one.
+- **Per-country words from the pack:** board label (Sali / Subir), the ticket's brand style and the vehicle word come from `content/<country>/language.ts`, not the code.
+- **UI:** ConversationScreen gets an optional `ticket` prop (from, to, platform, time, onBoard). Present only on station screens; everything else unchanged.
+- **Not needed:** a station prompt template, a conversation state machine, end detection, a "traveling" screen (a short "on the train" moment can come later if wanted).
+
+### Next
+
+Mock the ticket strip on a real clerk (the "People Screen Options" page), Josh looks, then build.
+
+---
+
+## Original analysis (2026-10-14, laptop session)
+
 **Decision needed:** Add stazione (Italy) / terminal (Mexico) as the travel mechanism, or use simple city picker UI?
 
 ## If we add stations
