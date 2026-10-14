@@ -33,7 +33,8 @@
     "test:history": "tsx tests/check-history.ts",
     "test:study-export": "tsx tests/check-study-export.ts",
     "smoke:live": "tsx scripts/smoke-live.ts",
-    "test:leave": "tsx tests/check-leave.ts"
+    "test:leave": "tsx tests/check-leave.ts",
+    "style-test": "node --env-file-if-exists=.env.local scripts/style-test.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

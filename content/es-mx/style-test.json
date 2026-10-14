@@ -1,0 +1,47 @@
+{
+  "about": "Place-image style test (Josh, 2026-10-14): linocuts read as stereotyped or dated about half the time. Each city gets its own place style, plus an abstract version, tried on two places and compared with the current linocut. Styles are described by their qualities, not by artists' names, so the generator doesn't pull in an era's stock motifs. Run: COUNTRY=es-mx npm run style-test. Output: style-test/es-mx/index.html (not committed).",
+  "rules": "Mexico today: contemporary clothes and objects, everyday life. No sombreros, cacti, skulls or costumes. Keep the main scene in the centre; nothing important near the edges.",
+  "cities": {
+    "ciudad-de-mexico": {
+      "style": "Risograph print in two inks, fluorescent pink and teal, with visible grain, slight misregistration and flat overlapping shapes; contemporary, urban, lively",
+      "colours": "fluorescent pink and teal",
+      "places": [
+        "cafe-amapola",
+        "tacos-el-trompo-rojo"
+      ]
+    },
+    "oaxaca": {
+      "style": "Contemporary illustration in flat bright colour with fine patterned details drawn from Oaxacan weaving and embroidery, crisp shapes; cochineal red, marigold, indigo and turquoise",
+      "colours": "cochineal red, marigold, indigo and turquoise",
+      "places": [
+        "cafe-pocito-jalatlaco",
+        "abarrotes-los-tres-hermanos-xochimilco"
+      ]
+    },
+    "puebla": {
+      "style": "Modern flat graphic illustration built from simple geometric shapes, with patterns inspired by Talavera (not tiles), clean edges; cobalt blue, white, sunflower yellow and a touch of green",
+      "colours": "cobalt blue, white, sunflower yellow and green",
+      "places": [
+        "farmacia-san-rafael",
+        "tacos-arabes-el-puente"
+      ]
+    },
+    "guadalajara": {
+      "style": "Mid-century modern travel-poster illustration: flat colour shapes, subtle grain, bold simple geometry; terracotta, teal, mustard and sky blue",
+      "colours": "terracotta, teal, mustard and sky blue",
+      "places": [
+        "cafe-tinta",
+        "abarrotes-la-esquinita"
+      ]
+    },
+    "san-miguel-de-allende": {
+      "style": "Mural painting look: flat fresco surface, simplified rounded forms, strong rhythmic composition, matte plaster texture; terracotta, ochre, rose, slate blue and deep green",
+      "colours": "terracotta, ochre, rose, slate blue and deep green",
+      "places": [
+        "cafe-de-la-calzada",
+        "miscelanea-los-arcos"
+      ]
+    }
+  },
+  "abstract": "Abstract colour-block composition: large flat overlapping shapes and a few confident lines suggest the place and the people in it, without detail; bold and contemporary; use the city's colours"
+}

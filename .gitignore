@@ -9,3 +9,4 @@ node_modules/
 # Josh's real learner lines for the replay test (tests/conversations/replay.ts), and its reports that quote them: they stay on the laptop
 tests/conversations/replay-set.json
 tests/conversations/reports/replay-*
+style-test/
