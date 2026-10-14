@@ -25,6 +25,8 @@ export const showcase: Record<string, string[]> = {
     'libreria-trastevere',
     'enoteca-trastevere',
     'villa-borghese',
+    'scuola', // M2: language school with Magda
+    'stazione', // M2: train station for travel
   ],
   matera: [
     'caffe-schiuma',
@@ -37,6 +39,9 @@ export const showcase: Record<string, string[]> = {
     'bottega-artigiana',
     'enoteca-lucania',
     'libreria-matera',
+    'piazza-duomo-matera', // M2: bench character Alberto (pensionato)
+    'scuola',
+    'stazione',
   ],
   firenze: [
     'caffe-rivoire',
@@ -49,6 +54,9 @@ export const showcase: Record<string, string[]> = {
     'piazza-signoria',
     'officina-profumo',
     'enoteca-alessi',
+    'piazza-santo-spirito', // M2: bench character Alessia (studentessa d'arte)
+    'scuola',
+    'stazione',
   ],
   siena: [
     'caffe-fiorella',
@@ -61,6 +69,9 @@ export const showcase: Record<string, string[]> = {
     'bottega-del-palio',
     'enoteca-san-domenico',
     'libreria-senese',
+    'piazza-salimbeni', // M2: bench character Beatrice (studentessa)
+    'scuola',
+    'stazione',
   ],
   venezia: [
     'bar-al-timon',
@@ -73,6 +84,9 @@ export const showcase: Record<string, string[]> = {
     'squero-san-trovaso',
     'enoteca-mascareta',
     'libreria-acqua-alta',
+    'campo-dei-mori', // M2: bench character Dante (storico locale)
+    'scuola',
+    'stazione',
   ],
   napoli: [
     'bar-nilo',
@@ -85,6 +99,9 @@ export const showcase: Record<string, string[]> = {
     'salumeria-upnea',
     'enoteca-belledonne',
     'libreria-dante-descartes',
+    'via-spaccanapoli', // M2: bench character Nonna Assunta (abitante del quartiere)
+    'scuola',
+    'stazione',
   ],
   bologna: [
     'caffe-terzi',
@@ -97,6 +114,9 @@ export const showcase: Record<string, string[]> = {
     'piazza-maggiore',
     'salumeria-simoni',
     'cantina-bentivoglio',
+    'piazza-verdi', // M2: bench character Clara (studentessa)
+    'scuola',
+    'stazione',
   ],
   palermo: [
     'bar-alba',
@@ -109,5 +129,7 @@ export const showcase: Record<string, string[]> = {
     'libreria-del-mare',
     'giardino-garibaldi',
     'osteria-ballarò',
+    'scuola',
+    'stazione',
   ],
 };
