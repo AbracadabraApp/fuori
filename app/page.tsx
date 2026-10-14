@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PlaceCard } from './components/PlaceCard';
 import { language, cities as cityPantries, pack } from '@/content';
 import { ConversationScreen } from './components/ConversationScreen';
@@ -16,6 +16,19 @@ export default function Home() {
   const [showTranscripts, setShowTranscripts] = useState(true);
   const [showEnglish, setShowEnglish] = useState(false);
   const [allowDialect, setAllowDialect] = useState(false);
+  const [visitCounts, setVisitCounts] = useState<Record<string, number>>({});
+
+  // Fetch visit counts when city changes
+  useEffect(() => {
+    if (selectedCity) {
+      // TODO: get learner ID from session/cookie
+      const learnerId = 'demo-learner';
+      fetch(`/api/learner/${learnerId}/visited-places?city=${selectedCity}`)
+        .then((res) => res.json())
+        .then((data) => setVisitCounts(data))
+        .catch((err) => console.error('Failed to fetch visit counts:', err));
+    }
+  }, [selectedCity]);
 
   // Cities in the list: hidden ones stay in the data but aren't shown
   const shownCities = cityPantries.filter((c) => !c.hidden);
@@ -84,7 +97,7 @@ export default function Home() {
                       characterName={character?.name || ''}
                       neighborhood={place.neighbourhood}
                       imageUrl={`${pack.images}/places/${place.id}.jpg`}
-                      visitCount={0} // TODO: get from conversation history
+                      visitCount={visitCounts[place.id] || 0}
                       onTap={() => setSelectedPlace(place.id)}
                     />
                   );
