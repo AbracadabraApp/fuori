@@ -1,6 +1,6 @@
 {
   "about": "Place-image style test (Josh, 2026-10-14): linocuts read as stereotyped or dated about half the time. Each city gets its own place style, plus an abstract version, tried on two places and compared with the current linocut. Styles are described by their qualities, not by artists' names, so the generator doesn't pull in an era's stock motifs. Run: COUNTRY=es-mx npm run style-test. Output: style-test/es-mx/index.html (not committed).",
-  "rules": "Mexico today: contemporary clothes and objects, everyday life. No sombreros, cacti, skulls or costumes. Keep the main scene in the centre; nothing important near the edges.",
+  "rules": "Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos or costumes. Lettering: only the place's own sign, word for word; no other words anywhere, no dates, no 'HOY', no neighbourhood or city names, no slogans, no brand names or logos. Keep the main scene in the centre; nothing important near the edges.",
   "cities": {
     "ciudad-de-mexico": {
       "style": "Risograph print in two inks, fluorescent pink and teal, with visible grain, slight misregistration and flat overlapping shapes; contemporary, urban, lively",
