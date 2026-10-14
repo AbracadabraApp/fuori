@@ -31,7 +31,7 @@
     "test:transcribe": "tsx tests/check-transcribe.ts",
     "test:quality": "tsx tests/check-quality.ts",
     "test:history": "tsx tests/check-history.ts",
-    "smoke:memory": "tsx scripts/smoke-memory.ts"
+    "smoke:live": "tsx scripts/smoke-live.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

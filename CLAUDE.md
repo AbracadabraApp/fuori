@@ -23,7 +23,7 @@ Voice-first Italian learning game. Read `README.md` and the numbered files in `d
 
 ## Definition of done
 Added 2026-10-13 after M2 was reported "complete" while its core features had never run. The full account is in `docs/11-lessons-learned.md`.
-- Done means used. Before calling anything done, complete or live, run it end to end the way a learner would (a scripted learner against the live site, like `scripts/smoke-memory.ts`, or a browser) and say what was run. If it wasn't run, the commit says "not verified".
+- Done means used. Before calling anything done, complete or live, run it end to end the way a learner would (`npm run smoke:live`, and `COUNTRY=es-mx npm run smoke:live` for Mexico, or a browser) and say what was run. If it wasn't run, the commit says "not verified".
 - After pushing, confirm the deploy succeeded (`railway status --json`) and read `railway logs` for errors from the new code.
 - No silent failures: don't hide a failing call in a fire-and-forget `.catch()`; call server code directly, not over HTTP to the app itself.
 - No placeholders in shipped code: no `TODO` stand-ins, demo ids or `localhost` URLs.

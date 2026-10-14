@@ -53,7 +53,7 @@ Written by the laptop session at Josh's request after wiring up M2 (commit `97e5
 
 These are now in CLAUDE.md under "Definition of done".
 
-1. **Done means used.** Before calling anything done, complete or live, run it end to end the way a learner would: on the live site with a scripted learner (see `scripts/smoke-memory.ts` and the M2 check described above) or in a browser, and say exactly what was run. If it wasn't run, the commit says "not verified".
+1. **Done means used.** Before calling anything done, complete or live, run it end to end the way a learner would: on the live site with `npm run smoke:live` (a scripted learner: conversation, memory, Review, stamp, second visit, Magda; `COUNTRY=es-mx` for Mexico) or in a browser, and say exactly what was run. If it wasn't run, the commit says "not verified".
 2. **After pushing, confirm the deploy succeeded** (`railway status --json`) **and read the logs** (`railway logs`) for errors from the new code.
 3. **No silent failures.** Don't hide a failing call in a fire-and-forget `.catch()`. Call server code directly rather than over HTTP to yourself.
 4. **No placeholders in shipped code:** no `TODO` stand-ins, demo ids or `localhost` URLs. Search for them before committing.

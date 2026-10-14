@@ -63,6 +63,7 @@ export async function POST(request: NextRequest) {
     // Magda teaches from the learner's latest Review, with her own prompt
     const isTutor = (character as CharacterSheet).id === tutor.id;
     let tutorPrompt: ReturnType<typeof buildTutorPrompt> | undefined;
+    let tutorHasReview = false;
     if (isTutor) {
       let review = null;
       try {
@@ -70,6 +71,7 @@ export async function POST(request: NextRequest) {
       } catch (err) {
         logServerError(request, 'review load', err);
       }
+      tutorHasReview = !!review;
       tutorPrompt = buildTutorPrompt({ character: character as CharacterSheet, memory, review });
     }
 
@@ -119,7 +121,9 @@ export async function POST(request: NextRequest) {
     // Return the validated output; the prompt version and conversation id travel in headers
     const headers: Record<string, string> = { 'x-prompt-version': version };
     if (savedId) headers['x-conversation-id'] = savedId;
-    if (memory) headers['x-memory'] = `${memory.visits} visits, ${memory.notes.length} notes`; // read by scripts/smoke-memory.ts
+    // Read by scripts/smoke-live.ts; invisible to learners
+    if (memory) headers['x-memory'] = `${memory.visits} visits, ${memory.notes.length} notes`;
+    if (tutorPrompt) headers['x-review'] = tutorHasReview ? 'yes' : 'none';
     return NextResponse.json(turnOutput, { headers });
   } catch (error) {
     logServerError(request, 'turn', error);
