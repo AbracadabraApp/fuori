@@ -32,6 +32,10 @@ The person screen's rules (2026-10-13): talking happens at the bottom (Start con
 - **Station characters:** identified by place id (`stazione-*`, `terminal-*`), as the city picker already does. Each shown city needs one station place with a ticket seller; check which cities in the showcase have one.
 - **Per-country words from the pack:** board label (Sali / Subir), the ticket's brand style and the vehicle word come from `content/<country>/language.ts`, not the code.
 - **UI:** ConversationScreen gets an optional `ticket` prop (from, to, platform, time, onBoard). Present only on station screens; everything else unchanged.
+- **Sali must save the conversation, exactly like the back link** (Josh, 2026-10-14). If boarding just navigated away, the clerk would forget you and the learning notes from that conversation would never be written, and nobody would notice (the M2 lesson). How saving works today: when ConversationScreen closes, its cleanup sends `/api/conversation/end` by beacon, which marks the conversation ended and writes the character's notes and the learning notes (`lib/remember.ts`); going to the background sends it too. So:
+  - Boarding goes through the same exit as the back link: `onBoard` closes the conversation screen inside the app (clear the place, set the new city), which runs that cleanup. Never a page reload or `window.location` change: on a reload only `pagehide` is certain, and it silences without sending the beacon.
+  - Make it explicit rather than incidental: pull the "leave this conversation" step (silence, then send the end beacon) into one function that both the back link and Sali call, so a later change to one can't skip the other.
+  - **Test that would catch it:** leaving by Sali sends `/api/conversation/end` with the conversation id, the same as leaving by the back link (a fake `sendBeacon`, like `test:silence` fakes audio). Today no test covers the end beacon at all; add one for the back link at the same time.
 - **Not needed:** a station prompt template, a conversation state machine, end detection, a "traveling" screen (a short "on the train" moment can come later if wanted).
 
 ### Next
