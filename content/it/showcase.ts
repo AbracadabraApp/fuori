@@ -25,8 +25,8 @@ export const showcase: Record<string, string[]> = {
     'libreria-trastevere',
     'enoteca-trastevere',
     'villa-borghese',
-    'scuola', // M2: language school with Magda
-    'stazione', // M2: train station for travel
+    'scuola-lingua-roma', // M2: language school with Magda
+    'stazione-termini', // M2: train station for travel
   ],
   matera: [
     'caffe-schiuma',
@@ -40,8 +40,7 @@ export const showcase: Record<string, string[]> = {
     'enoteca-lucania',
     'libreria-matera',
     'piazza-duomo-matera', // M2: bench character Alberto (pensionato)
-    'scuola',
-    'stazione',
+    'stazione-fal', // M2: train station for travel
   ],
   firenze: [
     'caffe-rivoire',
@@ -55,8 +54,8 @@ export const showcase: Record<string, string[]> = {
     'officina-profumo',
     'enoteca-alessi',
     'piazza-santo-spirito', // M2: bench character Alessia (studentessa d'arte)
-    'scuola',
-    'stazione',
+    'scuola-lingua-firenze', // M2: language school with Magda
+    'stazione-smn', // M2: train station for travel
   ],
   siena: [
     'caffe-fiorella',
@@ -70,8 +69,6 @@ export const showcase: Record<string, string[]> = {
     'enoteca-san-domenico',
     'libreria-senese',
     'piazza-salimbeni', // M2: bench character Beatrice (studentessa)
-    'scuola',
-    'stazione',
   ],
   venezia: [
     'bar-al-timon',
@@ -85,8 +82,8 @@ export const showcase: Record<string, string[]> = {
     'enoteca-mascareta',
     'libreria-acqua-alta',
     'campo-dei-mori', // M2: bench character Dante (storico locale)
-    'scuola',
-    'stazione',
+    'scuola-lingua-venezia', // M2: language school with Magda
+    'stazione-santa-lucia', // M2: train station for travel
   ],
   napoli: [
     'bar-nilo',
@@ -100,8 +97,8 @@ export const showcase: Record<string, string[]> = {
     'enoteca-belledonne',
     'libreria-dante-descartes',
     'via-spaccanapoli', // M2: bench character Nonna Assunta (abitante del quartiere)
-    'scuola',
-    'stazione',
+    'scuola-lingua-napoli', // M2: language school with Magda
+    'stazione-centrale-napoli', // M2: train station for travel
   ],
   bologna: [
     'caffe-terzi',
@@ -115,8 +112,8 @@ export const showcase: Record<string, string[]> = {
     'salumeria-simoni',
     'cantina-bentivoglio',
     'piazza-verdi', // M2: bench character Clara (studentessa)
-    'scuola',
-    'stazione',
+    'scuola-lingua-bologna', // M2: language school with Magda
+    'stazione-centrale', // M2: train station for travel
   ],
   palermo: [
     'bar-alba',
@@ -129,7 +126,7 @@ export const showcase: Record<string, string[]> = {
     'libreria-del-mare',
     'giardino-garibaldi',
     'osteria-ballarò',
-    'scuola',
-    'stazione',
+    'scuola-lingua-palermo', // M2: language school with Magda
+    'stazione-centrale-palermo', // M2: train station for travel
   ],
 };
