@@ -63,5 +63,5 @@ Use with the base template above.
 |---|---|---|
 | Giulia (anchor) | Italian woman in her early 30s, dark curly hair pinned up messily, small silver hoop earrings, navy-and-cream striped shirt, black apron, warm smile | A café counter |
 | Signora Rita (anchor) | Italian woman around 70, short silver hair neatly set, reading glasses on a chain, a soft rust-coloured cardigan, kind but sharp eyes | Her courtyard doorway with ivy |
-| Magda (your teacher in Seattle, outside the game; 2026-10-13) | Warm and precise, a deep blue scarf as accent | A bookshelf and a Seattle window, very soft (not Italy: she isn't on the trip) |
+| Magda (teacher at the school for foreigners; 2026-10-13) | Warm and precise, a deep blue scarf as accent | A classroom: a bookshelf, a window onto the street, very soft |
 | Enzo (seed) | Italian man in his 60s, sun-tanned, weathered face, thick grey moustache, worn flat cap, faded olive-green work jacket over a white shirt, broad proud smile | A market stall under a striped awning, tomatoes and artichokes |

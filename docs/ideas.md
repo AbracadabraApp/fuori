@@ -254,7 +254,7 @@ Italians send voice messages constantly. In a voice-first app, a 20-second voice
 
 ### Magda (M2)
 
-Your real teacher in Seattle, outside the game: the one who messages because it's her job, with the complete learner profile behind her notes. See [Game design → Magda](02-game-design.md#magda-your-teacher-in-seattle).
+The teacher at the school for foreigners in each city, with the learner profile behind her lessons. See [Game design → Magda](02-game-design.md#magda-at-the-school). (Whether she also messages between visits is open.)
 
 ### Guardrails
 
@@ -339,7 +339,7 @@ The stance (immersion; characters above your level are fine; teaching in charact
 ## Beginner help: school, children, street helper (Josh, 2026-10-12)
 
 Prompted by "help more beginner level people". Rule behind all three: **everyone teaches, nobody lectures** (see Vision, principle 7).
-- **A school for foreigners** in each city: one-on-one with a tutor, who teaches what you ask for (no learner profile needed). A short class, then "go try it at the bar next door"; maybe classmates who are other learners (an AI German student, a Brazilian au pair) speaking simple, imperfect Italian. Class → street → class. (Magda is not here: she's your teacher in Seattle, outside the game; see [Game design](02-game-design.md#magda-your-teacher-in-seattle).)
+- **A school for foreigners** in each city, where Magda teaches (Josh, 2026-10-13): one-on-one, what you ask for or what she suggests from the learner profile. A short class, then "go try it at the bar next door"; maybe classmates who are other learners (an AI German student, a Brazilian au pair) speaking simple, imperfect Italian. Class → street → class. (See [Game design → Magda](02-game-design.md#magda-at-the-school).)
 - **Children** speak in short, simple, repeated sentences and don't judge: good A1 practice. Always in family settings with a parent or grandparent in the scene (the baker's daughter doing homework behind the counter, a kid with his nonna at the park). Topics stay a child's: school, pets, football, gelato. Firm prompt guardrails and a judge check that every child conversation stays age-appropriate.
 - **A street helper** (a neighbour on a bench): step aside, ask in English "how do I ask for the bill?", hear the line, go back and try it. The "help me say it" idea with a face. Likely first to build: fixes the freeze-and-quit moment, works in every city, needs no new place.
 - Other beginner ideas from the same brainstorm: tap the subtitle to replay slower; tap a word for its meaning; English that fades with visits; characters who notice confusion (by silence and length, not phrases); 2–3 tappable reply hints at A1; beginner-friendly places first in the feed; a tiny goal per visit; short A1 visits; a 60-second recap; a warm-up of 3 likely phrases before entering.

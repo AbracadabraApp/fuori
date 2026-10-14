@@ -63,4 +63,4 @@ With a week or two of real conversations:
 ## Things to know
 
 - **Privacy:** the pack contains the learner's own spoken lines and goes to Google when uploaded. Fine for Josh's own conversations; anyone else would need to choose to export, with a plain note about where it goes.
-- **Magda:** the learner profile is hers (see [Game design → Magda](02-game-design.md#magda-your-teacher-in-seattle)). A study pack is a different thing: a learner's own material for their own study. They can share the same review log underneath.
+- **Magda:** the learner profile is hers (see [Game design → Magda](02-game-design.md#magda-at-the-school)). A study pack is a different thing: a learner's own material for their own study. They can share the same review log underneath.

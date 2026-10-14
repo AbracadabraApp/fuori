@@ -59,24 +59,21 @@ The last suggestion of the day is usually an open conversation with someone new:
 
 Everyone teaches, always in role (Josh, 2026-10-12/13; see [Vision, principle 7](01-vision.md#principles)). Locals help the way a real person in their role helps a struggling American: slowing down, repeating, rephrasing, offering a word and its English, recasting a mistake. What no in-world character does is step out of role and sound like a language teacher with a lesson plan. Three places where teaching is the point, each a different relationship to time and task:
 
-- **The school for foreigners (scuola per stranieri)**, planned, one per city: one-on-one with a tutor. You say what you want to work on, or the tutor suggests something. Here an explicit lesson is honest, because you've sat down to be taught. It doesn't need the learner profile.
+- **The school for foreigners (scuola per stranieri)**, one per city, where **Magda** teaches (below). Here an explicit lesson is honest, because you've sat down to be taught.
 - **People with time on their hands** (someone on a park bench, at a newsstand): no transaction and no clock, so their in-role help can stretch: asking how the Italian is going, talking at the level you say you're working on. Still a person, not a tutor.
-- **Magda**, outside the game (below).
 
-## Magda, your teacher in Seattle
+## Magda, at the school
 
-Decided 2026-10-13 (Josh); replaces the earlier "teacher from the Veneto who coaches you remotely".
-- **Your real Italian teacher back in Seattle,** outside the game world. She has no place on the map and isn't part of the trip.
-- **Reaches you by message:** a note when it's time to read and reply, possibly a video call. Her timing matters: a note after a session lands well; mid-conversation would pull you out of Italy.
-- **Uses English and Italian freely,** as a teacher does; no in-world rules apply to her.
-- **Gets the complete learner profile** (see below) and does real teacher work with it between sessions: summarises your mistakes, decides what to correct and how, builds vocabulary lists. She can be as detailed and exacting as she likes.
-- **Bridge to real lessons:** what she sends can go to a real lesson with the real teacher.
+Decided 2026-10-13 (Josh): Magda works at the scuola per stranieri, one in each city. Replaces the same day's earlier "teacher in Seattle, outside the game" and the older "teacher from the Veneto who coaches you remotely".
+- **Teaching mode, not immersion.** One-on-one lessons with practice. She is openly your teacher, so explaining grammar, drilling and switching between English and Italian is her role, not a break from it.
+- **What to work on:** you tell her, or she suggests something from the learner profile (below).
+- **Warm, precise, interested in why mistakes happen.**
 
 ### The learner profile is Magda's
 
 A profile built by analysing transcripts after each conversation: what you get wrong, words you don't seem to know, tenses you don't produce yet, registers you avoid (formal *Lei*). It grows from the review log (M1) into a profile that travels across conversations (M2).
-- **Magda gets all of it.** A human-style teacher is the one reader who can use the full, messy picture well.
-- **Nothing in the world needs it.** Characters teach in role without it; the school tutor works from what you ask for. This keeps the analysis from shaping or slowing conversations.
+- **Magda uses it** to suggest what to work on and to shape her lessons.
+- **The rest of the world doesn't need it.** Characters teach in role without it, which keeps the analysis from shaping or slowing conversations.
 - **Maybe later, not now:** quietly using it to aim in-world help (the nun happens to offer a word you've been missing rather than a random one). Easy to over-invest in; keep on the shelf.
 
 Inspired by the creator's real teacher. Use her first name only, and check she's happy with it before Fuori is shown to anyone else.

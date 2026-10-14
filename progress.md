@@ -970,3 +970,4 @@ Both services auto-deploying now (~3 min each).
 
 - Josh: document a demo that uses Fuori's derived material (transcripts, review log) with existing study tools, Gemini Notebook first, Anki second; extra tools for learners who want them, not core game, not a commitment to ship. Plan in docs/study-export-demo.md, linked from Roadmap M2 and ideas.md.
 - Noticed, not changed: Roadmap M2 still lists "Magda at school … one Magda per city", which contradicts today's decision (Magda is the teacher in Seattle; the school has its own tutor). Left for Josh.
+- **Update, same day (Josh):** Magda works at the school for foreigners in each city, as the M2 roadmap says. Game design, Vision 7, CLAUDE.md, ideas, visuals and the study-export plan now say so; the Seattle version is gone. She uses the learner profile to suggest what to work on.
