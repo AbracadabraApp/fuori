@@ -1176,10 +1176,14 @@ Josh challenged the 1-hour estimate ("Watch:") and it took 15 minutes. He was ri
 - ✅ Content visible (schools, stations, benches)
 - ✅ All images generated
 
-**Remaining work:**
-- Migration 004: Deferred (Josh will use railway agent when ready to test Review)
+**Migration 004: ✅ Deployed**
+- Ran via Railway dashboard Postgres query tab
+- Verified: review JSONB and reviewed_at columns exist
+- Index created: idx_conversations_reviewed
+
+**Remaining:**
 - End-to-end phone testing
-- Replace 'demo-learner' with real learner ID from session
+- Replace 'demo-learner' with real learner ID in visit count fetch
 
 **What prompted it:**
 Josh said "let's fucking get it done man -- you have me jumping through hoops" after railway migration complexity. Built city picker in 20 minutes instead of continuing to debug Railway CLI.
