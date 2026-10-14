@@ -16,10 +16,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const COUNTRY = process.env.COUNTRY || 'es-mx';
 const DRY = process.argv.includes('--dry');
+const CITY_ONLY = !process.argv.includes('--abstract'); // abstract dropped after round 1 (Josh)
 const test = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', COUNTRY, 'style-test.json'), 'utf8'));
 const gen = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', COUNTRY, 'generation.json'), 'utf8'));
 const size = gen.images?.place ?? {};
-const OUT = path.join(ROOT, 'style-test', COUNTRY);
+const OUT = path.join(ROOT, 'style-test', COUNTRY + (test.round ? `-round${test.round}` : ''));
 
 // The scene for a place: its imagePrompt without the old style opening and the colour line
 function sceneFor(cityId, placeId) {
@@ -52,6 +53,7 @@ async function generate(prompt, file) {
 
 const rows = [];
 for (const [cityId, c] of Object.entries(test.cities)) {
+  if ((test.skip ?? []).includes(cityId)) continue;
   for (const placeId of c.places) {
     const scene = sceneFor(cityId, placeId);
     const variants = {
@@ -60,6 +62,7 @@ for (const [cityId, c] of Object.entries(test.cities)) {
     };
     const row = { cityId, placeId, files: {} };
     for (const [v, prompt] of Object.entries(variants)) {
+      if (CITY_ONLY && v === 'abstract') continue;
       const file = path.join(OUT, v, `${placeId}.jpg`);
       if (DRY) console.log(`\n[${cityId} / ${placeId} / ${v}]\n${prompt}`);
       try {
