@@ -1,5 +1,5 @@
 {
-  "about": "Place-image style test (Josh, 2026-10-14): linocuts read as stereotyped or dated about half the time, and Josh's hypothesis is that a different art style per city makes exploring less samey and keeps people enjoying the art rather than critiquing a repeated style. Each city's places try that city's approved card style (docs/mexico-version.md), plus an abstract version, on two places, next to the current linocut. Run: COUNTRY=es-mx npm run style-test. Output: style-test/es-mx/index.html (not committed). Round 2 (Josh, 2026-10-14): city style wins, but CDMX, Guadalajara and San Miguel came out too similar (soft, flat, pastel). Each gets a distinct technique; Oaxaca and Puebla are settled and skipped.",
+  "about": "Place-image style test (Josh, 2026-10-14): linocuts read as stereotyped or dated about half the time, and Josh's hypothesis is that a different art style per city makes exploring less samey and keeps people enjoying the art rather than critiquing a repeated style. Each city's places try that city's approved card style (docs/mexico-version.md), plus an abstract version, on two places, next to the current linocut. Run: COUNTRY=es-mx npm run style-test. Output: style-test/es-mx/index.html (not committed). Round 2 (Josh, 2026-10-14): city style wins, but CDMX, Guadalajara and San Miguel came out too similar (soft, flat, pastel). Each gets a distinct technique; Oaxaca and Puebla are settled and skipped. Oaxaca back in round 2 (Josh): folk art dialled up, defined by alebrije patterning, dotted outlines and the Zapotec greca border.",
   "rules": "Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos or costumes. Lettering: only the place's own sign, word for word; no other words anywhere, no dates, no 'HOY', no neighbourhood or city names, no slogans, no brand names or logos. Keep the main scene in the centre; nothing important near the edges.",
   "cities": {
     "ciudad-de-mexico": {
@@ -11,8 +11,8 @@
       ]
     },
     "oaxaca": {
-      "style": "Naive folk painting with bright saturated colours, flat perspective and careful small details, inspired by Oaxacan folk art and alebrije patterns. Palette: cochineal red, marigold, indigo and turquoise",
-      "colours": "cochineal red, marigold, indigo and turquoise",
+      "style": "Oaxacan folk-art painting in the manner of painted alebrije carvings: every surface covered in dense hand-painted patterns of dots, dashes, zigzags, scales and petals; outlines traced in rows of contrasting dots; flat, toy-like perspective; loud complementary colours side by side; a border of Zapotec step-fret (greca) pattern; a contemporary scene",
+      "colours": "cochineal red, marigold, turquoise, magenta, lime green and indigo",
       "places": [
         "cafe-pocito-jalatlaco",
         "abarrotes-los-tres-hermanos-xochimilco"
@@ -46,7 +46,6 @@
   "abstract": "Abstract colour-block composition: large flat overlapping shapes and a few confident lines suggest the place and the people in it, without detail; bold and contemporary; use the city's colours",
   "round": 2,
   "skip": [
-    "oaxaca",
     "puebla"
   ]
 }
