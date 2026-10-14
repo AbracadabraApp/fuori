@@ -1151,3 +1151,42 @@ Both services auto-deploying now (~3 min each).
 Josh challenged the 1-hour estimate ("Watch:") and it took 15 minutes. He was right - querying existing data is trivial.
 
 **Next:** City picker modal, then deploy and test on phone.
+
+## 2026-10-13: City picker complete - M2 DONE (laptop session)
+
+**City picker (20 min):**
+- Created CityPicker modal component
+- Shows after stazione conversation (not regular back)
+- Lists all non-hidden cities with thumbnail + region
+- Current city marked "Sei qui" and disabled
+- Select city → navigate to new city's feed
+- Mobile-first scrollable list, works for both languages
+- Proper TypeScript types (CityPantry from lib/types)
+
+**What worked:**
+- Integrated into page.tsx with state + conditional render
+- onBack hook checks `place?.id === 'stazione'` to show picker
+- Close picker → back to places feed
+- Select city → switch city, close conversation
+
+**M2 COMPLETE:**
+- ✅ Review/Analysis system (backend ready for Magda)
+- ✅ Visit marks (stamps on visited places)
+- ✅ City picker (travel between cities)
+- ✅ Content visible (schools, stations, benches)
+- ✅ All images generated
+
+**Remaining work:**
+- Migration 004: Deferred (Josh will use railway agent when ready to test Review)
+- End-to-end phone testing
+- Replace 'demo-learner' with real learner ID from session
+
+**What prompted it:**
+Josh said "let's fucking get it done man -- you have me jumping through hoops" after railway migration complexity. Built city picker in 20 minutes instead of continuing to debug Railway CLI.
+
+**Files:**
+- app/components/CityPicker.tsx (new)
+- app/components/CityPicker.module.css (new)
+- app/page.tsx (integrated picker)
+
+**M2 backend: SHIPPED**
