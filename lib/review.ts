@@ -16,7 +16,7 @@ const anthropic = new Anthropic({
 
 interface ConversationTurn {
   speaker: 'learner' | 'character';
-  italian: string;
+  line: string; // What they said (in target language)
   english: string;
   timestamp: Date;
 }
@@ -111,8 +111,8 @@ function buildReviewPrompt(
   lines.push('## Transcript\n');
   for (const turn of conversation.turns) {
     const speaker = turn.speaker === 'learner' ? 'Learner' : 'Character';
-    lines.push(`**${speaker}**: ${turn.italian}`);
-    if (turn.english !== turn.italian) {
+    lines.push(`**${speaker}**: ${turn.line}`);
+    if (turn.english !== turn.line) {
       lines.push(`  _(${turn.english})_`);
     }
     lines.push('');
