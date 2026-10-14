@@ -22,7 +22,7 @@ We use an existing product rather than building our own: **Gemini Notebook** (fo
 One Markdown file for one learner and a date range, dropped into Gemini Notebook. Markdown pastes cleanly into a Google Doc or uploads as a text source. Same for both countries; nothing language-specific in the code (the language, app name and level come from the country pack). Built as an admin format next to `/api/admin/conversations?format=text`, which already prints transcripts.
 
 **Version 1: transcripts only (Josh, 2026-10-14).** Start with the simplest file and see if Gemini can find the words, phrases and mistakes itself; the characters' recasts already carry most corrections.
-- **A short note for Gemini at the top:** these are a learner's real conversations in {language} at about {level}; make study material from them, using the people and places as context; the learner's lines are speech-to-text and may contain transcription errors, so ignore spelling and pronunciation.
+- **A short note for Gemini at the top:** these are a learner's real conversations in {language} at about {level}; make study material from them, using the people and places as context. It includes this line, word for word: "The learner's lines are speech-to-text and may contain transcription errors; ignore spelling."
 - **Header:** learner, dates, cities visited, number of conversations.
 - **One section per conversation:** who (name, role), where (place, neighbourhood, city), when, then the full transcript with each line's English.
 - Lessons with Magda are left out: they are practice, not conversations in town.
