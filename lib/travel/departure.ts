@@ -1,14 +1,12 @@
 /**
- * The next departure from one city to another: platform and time, made by the
- * app (not the ticket seller) so the ticket and the clerk always agree
- * (docs/station-feature-decision.md). Deterministic: the same route always
- * uses the same platform and leaves at the same minutes past the hour.
- * Departures run every 30 minutes; the next one is at least 8 minutes away.
+ * Platform and seat for a trip from one city to another, made by the app so the
+ * ticket and the ticket seller agree (docs/station-feature-decision.md).
+ * Deterministic: the same route always uses the same platform. No departure
+ * time on the ticket (Josh, 2026-10-14): the seller is free to talk times.
  */
 export interface Departure {
   platform: number;
-  /** 24-hour clock, "14:35" */
-  time: string;
+  seat: number;
 }
 
 function hash(s: string): number {
@@ -17,15 +15,7 @@ function hash(s: string): number {
   return h;
 }
 
-export function departureFor(fromId: string, toId: string, now: Date = new Date()): Departure {
+export function departureFor(fromId: string, toId: string): Departure {
   const h = hash(`${fromId}>${toId}`);
-  const platform = 1 + (h % 12);
-  const offset = (h >>> 4) % 30; // minutes past the hour (and +30)
-  const earliest = now.getHours() * 60 + now.getMinutes() + 8;
-  let t = Math.floor(earliest / 30) * 30 + offset;
-  while (t < earliest) t += 30;
-  t %= 24 * 60;
-  const hh = String(Math.floor(t / 60)).padStart(2, '0');
-  const mm = String(t % 60).padStart(2, '0');
-  return { platform, time: `${hh}:${mm}` };
+  return { platform: 1 + (h % 12), seat: 11 + ((h >>> 5) % 78) };
 }

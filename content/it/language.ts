@@ -16,8 +16,17 @@ export const language = {
   /** Interface words */
   ui: {
     showMore: 'Mostra altro', // under the city and place feeds
-    board: 'Sali', // station: get on the train or bus
-    platform: 'Binario', // on the ticket
+    /** The ticket at the station (app/components/Ticket.tsx) */
+    ticket: {
+      vehicle: 'train' as const,
+      carrier: 'Ferrovie', // generic word, not a company name
+      service: 'Regionale · 2ª classe',
+      platform: 'Binario',
+      seat: 'Posto',
+      fareLabel: 'Tariffa',
+      fare: 'Solo andata',
+      board: 'Sali',
+    },
     whereTo: 'Dove vuoi andare?', // departures board title
     youAreHere: 'Sei qui', // departures board: the current city
   },

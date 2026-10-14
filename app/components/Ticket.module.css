@@ -1,0 +1,131 @@
+/* A printed travel ticket: a carrier band in the country's colour, then pale
+   security paper with fine diagonal stripes, a torn stub edge on the left,
+   route in big type, three small fields, a barcode and the board button. */
+.ticket {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border-left: 3px dashed rgba(0, 0, 0, 0.3); /* torn-off stub */
+  background:
+    repeating-linear-gradient(135deg, var(--stripe) 0 2px, transparent 2px 9px),
+    #fdfdfa;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  font-family: var(--font-alegreya-sans), "Gill Sans", "Segoe UI", sans-serif;
+  color: var(--ink);
+}
+
+.band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 14px;
+  background-color: var(--band);
+  color: var(--band-ink);
+}
+
+.carrier {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* round badge holding the vehicle pictogram */
+.mark {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--band-ink);
+  color: var(--band);
+}
+
+.service {
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.body {
+  display: grid;
+  gap: 10px;
+  padding: 12px 14px 14px;
+}
+
+.route {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  font-family: var(--font-alegreya), Georgia, serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.to {
+  white-space: nowrap;
+}
+
+.arrow {
+  color: var(--accent);
+}
+
+.fields {
+  display: flex;
+  gap: 22px;
+  font-variant-numeric: tabular-nums;
+}
+
+.fields b {
+  display: block;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/* a printed barcode, purely decorative */
+.barcode {
+  flex: 1;
+  max-width: 150px;
+  height: 30px;
+  background: repeating-linear-gradient(90deg,
+    var(--ink) 0 2px, transparent 2px 4px,
+    var(--ink) 4px 5px, transparent 5px 8px,
+    var(--ink) 8px 11px, transparent 11px 13px);
+  opacity: 0.8;
+}
+
+.board {
+  flex: none;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 24px;
+  background-color: var(--accent);
+  color: white;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}

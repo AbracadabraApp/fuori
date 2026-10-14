@@ -4,6 +4,7 @@
 
 .screen {
   --controls-height: 72px;
+  --ticket-height: 0px;
   position: fixed;
   inset: 0;
   background-color: var(--paper);
@@ -67,58 +68,18 @@
   color: var(--muted);
 }
 
-/* Ticket (station screens only): a printed ticket under the band, between the
-   name and the talking area, so it competes with neither (docs/station-feature-decision.md) */
-.ticket {
-  flex: none;
-  position: relative;
+/* Ticket (station screens only): sits just above the talking controls (Josh,
+   2026-10-14); subtitles move up to stay above it */
+.withTicket {
+  --ticket-height: 196px;
+}
+
+.ticketArea {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: calc(var(--controls-height) + env(safe-area-inset-bottom) + 8px);
   z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 10px 12px 0;
-  padding: 12px 12px 12px 18px;
-  background-color: #fbf6e9;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  font-family: var(--font-alegreya-sans), "Gill Sans", "Segoe UI", sans-serif;
-  border-left: 3px dashed rgba(0, 0, 0, 0.28); /* the torn-off stub */
-}
-
-.ticketText {
-  flex: 1;
-  min-width: 0;
-}
-
-.ticketRoute {
-  font-family: var(--font-alegreya), Georgia, serif;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-.ticketMeta {
-  margin-top: 3px;
-  font-size: 17px;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-}
-
-.board {
-  flex: none;
-  padding: 12px 22px;
-  border: none;
-  border-radius: 24px;
-  background-color: var(--green);
-  color: white;
-  font-family: inherit;
-  font-size: 20px;
-  font-weight: 500;
-  cursor: pointer;
 }
 
 /* Portrait: fills everything under the band, edge to edge, anchored at the top
@@ -167,8 +128,8 @@
   position: absolute;
   left: 16px;
   right: 16px;
-  bottom: calc(var(--controls-height) + env(safe-area-inset-bottom) + 6px);
-  max-height: calc(100% - var(--controls-height) - env(safe-area-inset-bottom) - 150px); /* stays below the band */
+  bottom: calc(var(--controls-height) + var(--ticket-height) + env(safe-area-inset-bottom) + 6px);
+  max-height: calc(100% - var(--controls-height) - var(--ticket-height) - env(safe-area-inset-bottom) - 150px); /* stays below the band */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

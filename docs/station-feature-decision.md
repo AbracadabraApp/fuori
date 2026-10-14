@@ -46,6 +46,12 @@ The person screen's rules (2026-10-13): talking happens at the bottom (Start con
 - **A city you open must be alive:** today a hidden city also hides all its places, so opening Taormina would show an empty feed. Split the showcase's two jobs: which cities are on the first screen, and which ~10 places each city shows. Pick 10 places for all 20 Italian cities with the same mix as the 8. (Repeated ids: none left in the hidden cities after the laptop session's fix.)
 - **Mexico:** all 5 cities are on the first screen, so no "Ver más" link appears until it has more.
 
+### Ticket redesign (Josh, 2026-10-14, after seeing it)
+
+- **Above the Start / mic button**, not under the band; subtitles move up to stay above it.
+- **No departure time:** it could contradict the ticket seller. The ticket shows platform, seat and fare; the seller is told the platform and talks times freely.
+- **A real ticket:** taller; a carrier band in the country's colour with a vehicle pictogram (no real company's logo or name: "Ferrovie", "Autobuses"); class or service; pale security paper with fine diagonal stripes instead of tan; a torn stub edge and a printed barcode. Words in `language.ui.ticket`, colours in `pack.ticketTheme`, component `app/components/Ticket.tsx`.
+
 ### Status
 
 **Built 2026-10-14** (cloud session): the departures board on the city screen (it had been drawn only on the city list, so tapping a station opened nothing), every city on it, the ticket strip with Sali/Subir, the destination in the clerk's setting, one shared leave step for both exits, `npm run test:leave`. Not yet: six Italian cities have no station (Taormina, Assisi, Bergamo, Torino, Lucca, Orvieto), so from there you leave by the back link.

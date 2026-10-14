@@ -20,6 +20,8 @@ export const pack = {
   /** Magda: the one character who teaches. One id everywhere, so her memory and
    *  the learner's Reviews follow them; placed at whichever school they visit. */
   tutor: magda,
+  /** Colours of the terminal ticket: deep red band, cobalt accent, pale red security stripes */
+  ticketTheme: { band: '#a3182b', bandInk: '#ffffff', stripe: 'rgba(163, 24, 43, 0.08)', accent: '#1f4fa3' },
   voices,
   elevenLabsVoiceFor,
   browserVoiceFor,

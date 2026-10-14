@@ -16,8 +16,17 @@ export const language = {
   /** Interface words */
   ui: {
     showMore: 'Ver más', // under the city and place feeds
-    board: 'Subir', // station: get on the train or bus
-    platform: 'Andén', // on the ticket
+    /** The ticket at the bus terminal (app/components/Ticket.tsx) */
+    ticket: {
+      vehicle: 'bus' as const,
+      carrier: 'Autobuses', // generic word, not a company name
+      service: 'Primera clase',
+      platform: 'Andén',
+      seat: 'Asiento',
+      fareLabel: 'Boleto',
+      fare: 'Sencillo',
+      board: 'Subir',
+    },
     whereTo: '¿A dónde quiere ir?', // departures board title
     youAreHere: 'Está aquí', // departures board: the current city
   },

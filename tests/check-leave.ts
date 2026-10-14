@@ -34,21 +34,20 @@ for (const failingSilence of [false, true]) {
 // Both exits in the conversation screen go through leave(): the back link and Sali
 const screen = readFileSync('app/components/ConversationScreen.tsx', 'utf8');
 check(screen.includes('onClick={() => leave(onBack)}'), 'back link must call leave(onBack)');
-check(screen.includes('onClick={() => leave(ticket.onBoard)}'), 'board button must call leave(ticket.onBoard)');
+check(screen.includes('onBoard={() => leave(ticket.onBoard)}'), 'the ticket\'s board button must go through leave(ticket.onBoard)');
 check(!/onClick=\{onBack\}|onClick=\{ticket\.onBoard\}/.test(screen), 'an exit calls onBack/onBoard directly, skipping the save');
 
-// Departures: same route, same platform; next departure 8–38 minutes away
-const at = new Date(2026, 9, 14, 14, 3);
-const a = departureFor('roma', 'firenze', at);
-const b = departureFor('roma', 'firenze', new Date(2026, 9, 14, 18, 40));
-check(a.platform === b.platform && a.platform >= 1 && a.platform <= 12, 'platform is fixed per route, 1–12');
-const mins = (t: string) => Number(t.slice(0, 2)) * 60 + Number(t.slice(3));
-const wait = mins(a.time) - (14 * 60 + 3);
-check(/^\d\d:\d\d$/.test(a.time) && wait >= 8 && wait < 38, `next departure 8–38 min away (got ${a.time})`);
-check(departureFor('roma', 'firenze', new Date(2026, 9, 14, 23, 58)).time.startsWith('00:'), 'late at night the next departure wraps past midnight');
+// Departures: same route, same platform and seat; no time on the ticket (Josh, 2026-10-14)
+const a = departureFor('roma', 'firenze');
+const b = departureFor('roma', 'firenze');
+check(a.platform === b.platform && a.seat === b.seat, 'platform and seat are fixed per route');
+check(a.platform >= 1 && a.platform <= 12 && a.seat >= 11 && a.seat <= 88, `platform 1–12, seat 11–88 (got ${a.platform}, ${a.seat})`);
+check(!('time' in a), 'no departure time: it could contradict the ticket seller');
+const ticket = readFileSync('app/components/Ticket.tsx', 'utf8');
+check(ticket.includes('onClick={onBoard}'), 'the ticket\'s board button calls onBoard');
 
 if (problems.length) {
   console.error(problems.join('\n'));
   process.exit(1);
 }
-console.log('OK: back link and Sali both save the conversation (silence, end beacon, then leave); departures are consistent');
+console.log('OK: back link and Sali both save the conversation (silence, end beacon, then leave); ticket platform and seat are consistent');

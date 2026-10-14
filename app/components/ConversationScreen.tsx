@@ -19,6 +19,7 @@ import { audioFileName } from '@/lib/speech/audio-file';
 import { silenceAll } from '@/lib/speech/silence';
 import { leaveConversation, sendConversationEnd, type Beacon } from '@/lib/conversation/leave';
 import { revealCount, estimateSeconds } from '@/lib/speech/reveal';
+import { Ticket } from './Ticket';
 import styles from './ConversationScreen.module.css';
 
 // A zero-length WAV. Playing it during a tap "unlocks" audio on iPhone Safari,
@@ -65,12 +66,12 @@ interface ConversationScreenProps {
   /** Neighbourhood of the place, shown after the role ("Bolero, Roma Norte") */
   neighbourhood?: string;
   onBack: () => void;
-  /** Station screens only: the ticket strip under the band, with the board button */
+  /** Station screens only: the ticket above the talking controls, with the board button */
   ticket?: {
     from: string;
     to: string;
     platform: number;
-    time: string;
+    seat: number;
     onBoard: () => void;
   };
   showTranscripts?: boolean;
@@ -648,7 +649,7 @@ export function ConversationScreen({
   const showReply = (showTranscripts && currentResponse) || (showEnglish && currentTranslation);
 
   return (
-    <div className={styles.screen}>
+    <div className={`${styles.screen} ${ticket ? styles.withTicket : ''}`}>
       {/* Band: back link and the person's name on solid paper, so subtitles never cover the name */}
       <header className={styles.band}>
         <button type="button" onClick={() => leave(onBack)} className={styles.back}>
@@ -661,22 +662,6 @@ export function ConversationScreen({
         </div>
       </header>
 
-      {/* Station only: your ticket. Boarding saves the conversation like the back link */}
-      {ticket && (
-        <div className={styles.ticket}>
-          <div className={styles.ticketText}>
-            <div className={styles.ticketRoute}>
-              {ticket.from} <span aria-hidden="true">→</span> {ticket.to}
-            </div>
-            <div className={styles.ticketMeta}>
-              {language.ui.platform} {ticket.platform} · {ticket.time}
-            </div>
-          </div>
-          <button type="button" onClick={() => leave(ticket.onBoard)} className={styles.board}>
-            {language.ui.board}
-          </button>
-        </div>
-      )}
 
       {/* Portrait fills the rest of the screen, edge to edge; text floats over it from mid-screen */}
       <div className={styles.stage}>
@@ -749,6 +734,14 @@ export function ConversationScreen({
               {debugInfo.lastError && <div className={styles.debugError}>{debugInfo.lastError}</div>}
             </div>
           )}
+        </div>
+      )}
+
+      {/* Station only: your ticket, just above the talking controls.
+          Boarding saves the conversation like the back link */}
+      {ticket && (
+        <div className={styles.ticketArea}>
+          <Ticket {...ticket} onBoard={() => leave(ticket.onBoard)} />
         </div>
       )}
 

@@ -63,7 +63,7 @@ export default function Home() {
         ...characterSheet,
         appearance: {
           ...characterSheet.appearance,
-          setting: `${characterSheet.appearance?.setting ?? ''}. The person is buying a ticket to ${destination.name}; the next departure leaves at ${trip.time} from platform ${trip.platform}.`,
+          setting: `${characterSheet.appearance?.setting ?? ''}. The person is buying a ticket to ${destination.name}; it leaves from platform ${trip.platform}.`,
         },
       } as CharacterSheet;
     }
@@ -96,7 +96,7 @@ export default function Home() {
                 from: cityData.name,
                 to: destination.name,
                 platform: trip.platform,
-                time: trip.time,
+                seat: trip.seat,
                 // Board: arrive at the destination's city screen (the conversation
                 // screen saves on the way out, like the back link)
                 onBoard: () => {

@@ -41,6 +41,8 @@ export const pack = {
   /** Magda: the one character who teaches. One id everywhere, so her memory and
    *  the learner's Reviews follow them; placed at whichever school they visit. */
   tutor: magda,
+  /** Colours of the station ticket: Italian rail green, red accent, pale green security stripes */
+  ticketTheme: { band: '#1d5c3a', bandInk: '#ffffff', stripe: 'rgba(29, 92, 58, 0.09)', accent: '#b8252f' },
   voices,
   elevenLabsVoiceFor,
   browserVoiceFor,

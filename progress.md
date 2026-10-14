@@ -1247,3 +1247,8 @@ Josh wants one file to drop into Google Gemini; the Anki CSV is dropped, and ver
 - Board words come from the pack (`ui.board`, `platform`, `whereTo`, `youAreHere`); the board title was hard-coded Italian, so Mexico showed "Dove vuoi andare?".
 - Checked: tsc, offline tests and builds for it and es-mx; headless walk-through Roma → Taormina and CDMX → Oaxaca.
 - **Not done:** six Italian cities have no station (Taormina, Assisi, Bergamo, Torino, Lucca, Orvieto). Not checked with a real conversation (no API key here): the clerk mentioning the platform and time.
+
+## 2026-10-14: Ticket redesign (cloud session)
+
+- Josh: ticket above the button, no times (could contradict the seller), more train/bus markings and colour, taller, not tan, diagonal stripes. New `app/components/Ticket.tsx`: carrier band (Italy rail green, Mexico deep red) with a drawn train or bus pictogram, service/class, route in big type (arrow stays with the destination when it wraps), platform / seat / fare, barcode, board button (red Sali / blue Subir), pale diagonal-striped paper. Sits above the Start/mic controls; subtitles move up above it. Departure now platform + seat, no time; the seller is told only the platform. Words in `language.ui.ticket`, colours in `pack.ticketTheme`. `test:leave` updated (time check removed with the time; checks the ticket's button goes through leave()).
+- Checked: tsc; leave, pack, language, silence, feed, images, roles for it and es-mx; both builds; headless screenshots Roma → Taormina and CDMX → Oaxaca.
