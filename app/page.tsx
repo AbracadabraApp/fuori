@@ -19,8 +19,6 @@ export default function Home() {
   const [allowDialect, setAllowDialect] = useState(false);
   const [visitCounts, setVisitCounts] = useState<Record<string, number>>({});
   const [showCityPicker, setShowCityPicker] = useState(false);
-  const [pendingStationPlace, setPendingStationPlace] = useState<string | null>(null);
-  const [destinationCity, setDestinationCity] = useState<string | null>(null);
 
   // Fetch visit counts when city changes
   useEffect(() => {
@@ -67,16 +65,7 @@ export default function Home() {
         cityName={cityData?.name || ''}
         cityId={cityData?.id}
         neighbourhood={place?.neighbourhood}
-        onBack={() => {
-          // M2: After station/terminal conversation, navigate to destination city
-          if ((place?.id.startsWith('stazione-') || place?.id.startsWith('terminal-')) && destinationCity) {
-            setSelectedCity(destinationCity);
-            setDestinationCity(null);
-            setSelectedPlace(null);
-          } else {
-            setSelectedPlace(null);
-          }
-        }}
+        onBack={() => setSelectedPlace(null)}
         showTranscripts={showTranscripts}
         showEnglish={showEnglish}
         allowDialect={allowDialect}
@@ -112,9 +101,8 @@ export default function Home() {
                       imageUrl={`${pack.images}/places/${place.id}.jpg`}
                       visitCount={visitCounts[place.id] || 0}
                       onTap={() => {
-                        // M2: Stations show city picker first, then conversation
+                        // M2: Stations show city picker, no conversation
                         if (place.id.startsWith('stazione-') || place.id.startsWith('terminal-')) {
-                          setPendingStationPlace(place.id);
                           setShowCityPicker(true);
                         } else {
                           setSelectedPlace(place.id);
@@ -235,18 +223,12 @@ export default function Home() {
         <CityPicker
           currentCityId={selectedCity}
           onSelectCity={(cityId) => {
-            // Save destination city for after conversation
-            setDestinationCity(cityId);
+            // Navigate directly to selected city
+            setSelectedCity(cityId);
             setShowCityPicker(false);
-            // Open station conversation in CURRENT city about destination
-            if (pendingStationPlace) {
-              setSelectedPlace(pendingStationPlace);
-              setPendingStationPlace(null);
-            }
           }}
           onClose={() => {
-            // Cancelled - don't open station conversation
-            setPendingStationPlace(null);
+            // Cancelled - stay in current city
             setShowCityPicker(false);
           }}
         />
