@@ -16,5 +16,9 @@ export const language = {
   /** Interface words */
   ui: {
     showMore: 'Ver más', // under the city and place feeds
+    board: 'Subir', // station: get on the train or bus
+    platform: 'Andén', // on the ticket
+    whereTo: '¿A dónde quiere ir?', // departures board title
+    youAreHere: 'Está aquí', // departures board: the current city
   },
 };

@@ -46,9 +46,9 @@ The person screen's rules (2026-10-13): talking happens at the bottom (Start con
 - **A city you open must be alive:** today a hidden city also hides all its places, so opening Taormina would show an empty feed. Split the showcase's two jobs: which cities are on the first screen, and which ~10 places each city shows. Pick 10 places for all 20 Italian cities with the same mix as the 8. (Repeated ids: none left in the hidden cities after the laptop session's fix.)
 - **Mexico:** all 5 cities are on the first screen, so no "Ver más" link appears until it has more.
 
-### Next
+### Status
 
-Mock the ticket strip on a real clerk (the "People Screen Options" page), Josh looks, then build.
+**Built 2026-10-14** (cloud session): the departures board on the city screen (it had been drawn only on the city list, so tapping a station opened nothing), every city on it, the ticket strip with Sali/Subir, the destination in the clerk's setting, one shared leave step for both exits, `npm run test:leave`. Not yet: six Italian cities have no station (Taormina, Assisi, Bergamo, Torino, Lucca, Orvieto), so from there you leave by the back link.
 
 ---
 

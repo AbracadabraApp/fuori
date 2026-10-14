@@ -16,5 +16,9 @@ export const language = {
   /** Interface words */
   ui: {
     showMore: 'Mostra altro', // under the city and place feeds
+    board: 'Sali', // station: get on the train or bus
+    platform: 'Binario', // on the ticket
+    whereTo: 'Dove vuoi andare?', // departures board title
+    youAreHere: 'Sei qui', // departures board: the current city
   },
 };

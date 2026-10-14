@@ -1238,3 +1238,12 @@ Josh wants one file to drop into Google Gemini; the Anki CSV is dropped, and ver
 ## 2026-10-14: Station decision revised (cloud session)
 
 - Josh agreed: keep the back link; stations stay a place; picking a destination opens the ticket seller's screen with a full-width ticket strip (ROMA → FIRENZE, platform, time, **Sali**) under the band; talking is optional; the learner boards when they tap, so no end-of-conversation detection. Written at the top of docs/station-feature-decision.md. Next: mock the ticket strip, then build.
+
+## 2026-10-14: Station flow built (cloud session)
+
+- **City list:** first screen shows the 8; "Mostra altro" reveals the other 12 (`homeCities` and a `more` flag in the Italian showcase). All 20 Italian cities now show 10 places (plus station and school where they exist), so none is empty on arrival.
+- **Station:** tapping it opens the departures board (all cities), which now actually opens: it had been drawn only on the city list screen. Picking a city opens the ticket seller with a ticket strip under the band (ROMA → FIRENZE, Binario 9 · 15:08, **Sali**; Mexico: Andén, **Subir**). The clerk's setting says where you're going and when it leaves (`lib/travel/departure.ts`: fixed platform per route, every 30 minutes). Talking is optional; Sali goes to the destination.
+- **Saving:** the back link and Sali both go through one leave step (silence, send /api/conversation/end, then go; `lib/conversation/leave.ts`), which also clears the id so the screen's own cleanup doesn't send a second save. `npm run test:leave` covers the save, the order, both exits and departures.
+- Board words come from the pack (`ui.board`, `platform`, `whereTo`, `youAreHere`); the board title was hard-coded Italian, so Mexico showed "Dove vuoi andare?".
+- Checked: tsc, offline tests and builds for it and es-mx; headless walk-through Roma → Taormina and CDMX → Oaxaca.
+- **Not done:** six Italian cities have no station (Taormina, Assisi, Bergamo, Torino, Lucca, Orvieto). Not checked with a real conversation (no API key here): the clerk mentioning the platform and time.

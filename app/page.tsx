@@ -8,6 +8,7 @@ import { language, cities as cityPantries, pack } from '@/content';
 import { ConversationScreen } from './components/ConversationScreen';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
+import { departureFor, type Departure } from '@/lib/travel/departure';
 import { CharacterSheet } from '@/lib/types';
 import styles from './page.module.css';
 
@@ -22,6 +23,10 @@ export default function Home() {
   const [allowDialect, setAllowDialect] = useState(false);
   const [visitCounts, setVisitCounts] = useState<Record<string, number>>({});
   const [showCityPicker, setShowCityPicker] = useState(false);
+  // Station: which station place was tapped, and the trip chosen on the
+  // departures board (fixed when chosen, so the ticket and the clerk agree)
+  const [stationPlace, setStationPlace] = useState<string | null>(null);
+  const [trip, setTrip] = useState<({ to: string } & Departure) | null>(null);
 
   // Visit counts for the stamps: fetched on entering a city and again on
   // coming back from a place, so a stamp appears as soon as you leave
@@ -48,8 +53,20 @@ export default function Home() {
     const place = cityData?.places.find((p) => p.id === selectedPlace);
 
     // Anchors (Giulia, Rita) or the city file's character for this place
-    const characterSheet: CharacterSheet | undefined =
+    let characterSheet: CharacterSheet | undefined =
       cityData && place ? characterForPlace(cityData, place) : undefined;
+
+    // At the station with a trip chosen: the ticket seller knows where you're going
+    const destination = trip ? cityPantries.find((c) => c.id === trip.to) : undefined;
+    if (characterSheet && trip && destination) {
+      characterSheet = {
+        ...characterSheet,
+        appearance: {
+          ...characterSheet.appearance,
+          setting: `${characterSheet.appearance?.setting ?? ''}. The person is buying a ticket to ${destination.name}; the next departure leaves at ${trip.time} from platform ${trip.platform}.`,
+        },
+      } as CharacterSheet;
+    }
 
     if (!characterSheet) {
       return (
@@ -69,7 +86,27 @@ export default function Home() {
         cityName={cityData?.name || ''}
         cityId={cityData?.id}
         neighbourhood={place?.neighbourhood}
-        onBack={() => setSelectedPlace(null)}
+        onBack={() => {
+          setSelectedPlace(null);
+          setTrip(null);
+        }}
+        ticket={
+          trip && destination && cityData
+            ? {
+                from: cityData.name,
+                to: destination.name,
+                platform: trip.platform,
+                time: trip.time,
+                // Board: arrive at the destination's city screen (the conversation
+                // screen saves on the way out, like the back link)
+                onBoard: () => {
+                  setSelectedPlace(null);
+                  setTrip(null);
+                  setSelectedCity(destination.id);
+                },
+              }
+            : undefined
+        }
         showTranscripts={showTranscripts}
         showEnglish={showEnglish}
         allowDialect={allowDialect}
@@ -110,8 +147,10 @@ export default function Home() {
                       imageUrl={`${pack.images}/places/${place.id}.jpg`}
                       visitCount={visitCounts[place.id] || 0}
                       onTap={() => {
-                        // M2: Stations show city picker, no conversation
+                        // Station: departures board first; picking a city opens the
+                        // ticket seller with your ticket (docs/station-feature-decision.md)
                         if (place.id.startsWith('stazione-') || place.id.startsWith('terminal-')) {
+                          setStationPlace(place.id);
                           setShowCityPicker(true);
                         } else {
                           setSelectedPlace(place.id);
@@ -124,6 +163,23 @@ export default function Home() {
             );
           })()}
         </div>
+        {/* Departures board, opened by tapping the station */}
+        {showCityPicker && selectedCity && (
+          <CityPicker
+            currentCityId={selectedCity}
+            onSelectCity={(cityId) => {
+              // Your ticket: departure fixed now; then the ticket seller's screen
+              setTrip({ to: cityId, ...departureFor(selectedCity, cityId) });
+              setSelectedPlace(stationPlace);
+              setShowCityPicker(false);
+            }}
+            onClose={() => {
+              // Cancelled - stay in current city
+              setShowCityPicker(false);
+              setStationPlace(null);
+            }}
+          />
+        )}
       </div>
     );
   }
@@ -230,21 +286,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* M2: City picker at station/terminal */}
-      {showCityPicker && selectedCity && (
-        <CityPicker
-          currentCityId={selectedCity}
-          onSelectCity={(cityId) => {
-            // Navigate directly to selected city
-            setSelectedCity(cityId);
-            setShowCityPicker(false);
-          }}
-          onClose={() => {
-            // Cancelled - stay in current city
-            setShowCityPicker(false);
-          }}
-        />
-      )}
     </div>
   );
 }

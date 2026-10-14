@@ -1,6 +1,6 @@
 'use client';
 
-import { cities, pack } from '@/content';
+import { cities, pack, language } from '@/content';
 import type { CityPantry } from '@/lib/types';
 import styles from './CityPicker.module.css';
 
@@ -18,7 +18,7 @@ export function CityPicker({ currentCityId, onSelectCity, onClose }: CityPickerP
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Dove vuoi andare?</h2>
+          <h2 className={styles.title}>{language.ui.whereTo}</h2>
           <button onClick={onClose} className={styles.close}>
             <svg
               width="24"
@@ -55,7 +55,7 @@ export function CityPicker({ currentCityId, onSelectCity, onClose }: CityPickerP
                 <div className={styles.cityInfo}>
                   <div className={styles.cityName}>{city.name}</div>
                   <div className={styles.cityRegion}>{city.region || ''}</div>
-                  {isCurrent && <div className={styles.currentLabel}>Sei qui</div>}
+                  {isCurrent && <div className={styles.currentLabel}>{language.ui.youAreHere}</div>}
                 </div>
               </button>
             );

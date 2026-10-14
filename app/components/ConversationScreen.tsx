@@ -17,6 +17,7 @@ import {
 import { isDebugMode } from '@/lib/debug';
 import { audioFileName } from '@/lib/speech/audio-file';
 import { silenceAll } from '@/lib/speech/silence';
+import { leaveConversation, sendConversationEnd, type Beacon } from '@/lib/conversation/leave';
 import { revealCount, estimateSeconds } from '@/lib/speech/reveal';
 import styles from './ConversationScreen.module.css';
 
@@ -64,6 +65,14 @@ interface ConversationScreenProps {
   /** Neighbourhood of the place, shown after the role ("Bolero, Roma Norte") */
   neighbourhood?: string;
   onBack: () => void;
+  /** Station screens only: the ticket strip under the band, with the board button */
+  ticket?: {
+    from: string;
+    to: string;
+    platform: number;
+    time: string;
+    onBoard: () => void;
+  };
   showTranscripts?: boolean;
   showEnglish?: boolean;
   allowDialect?: boolean;
@@ -76,6 +85,7 @@ export function ConversationScreen({
   cityId,
   neighbourhood,
   onBack,
+  ticket,
   showTranscripts = true,
   showEnglish = false,
   allowDialect = false,
@@ -116,6 +126,23 @@ export function ConversationScreen({
   const activeRef = useRef(true);
   // Id of this conversation in the database (set by the server on the opening line)
   const conversationIdRef = useRef<string | null>(null);
+  // Silences voice and mic; set by the effect below, used by every exit
+  const silenceRef = useRef<() => void>(() => {});
+
+  // The browser's beacon, which survives navigation
+  const beacon = (): Beacon | undefined =>
+    typeof navigator !== 'undefined' && navigator.sendBeacon
+      ? (url, body) => navigator.sendBeacon(url, body)
+      : undefined;
+
+  // Every way out of a conversation (back link, boarding at the station) goes
+  // through here: silence, save, then leave (lib/conversation/leave.ts)
+  const leave = (then: () => void) => {
+    const conversationId = conversationIdRef.current;
+    // Sent once here, so the screen closing doesn't send it a second time
+    conversationIdRef.current = null;
+    leaveConversation({ silence: () => silenceRef.current(), conversationId, beacon: beacon(), then });
+  };
 
   // Leaving the screen or switching apps silences the character and the mic.
   // Before this, characters kept talking after you went back or opened another app.
@@ -146,11 +173,9 @@ export function ConversationScreen({
     // again reopens the conversation; the server only rewrites memory if there
     // are new turns.
     const endConversation = () => {
-      const id = conversationIdRef.current;
-      if (id && typeof navigator !== 'undefined' && navigator.sendBeacon) {
-        navigator.sendBeacon('/api/conversation/end', JSON.stringify({ conversationId: id }));
-      }
+      sendConversationEnd(conversationIdRef.current, beacon());
     };
+    silenceRef.current = silence;
     const onVisibility = () => {
       if (document.hidden) {
         silence();
@@ -626,7 +651,7 @@ export function ConversationScreen({
     <div className={styles.screen}>
       {/* Band: back link and the person's name on solid paper, so subtitles never cover the name */}
       <header className={styles.band}>
-        <button type="button" onClick={onBack} className={styles.back}>
+        <button type="button" onClick={() => leave(onBack)} className={styles.back}>
           <span className={styles.backArrow} aria-hidden="true">←</span>
           <span className={styles.backCity}>{cityName}</span>
         </button>
@@ -635,6 +660,23 @@ export function ConversationScreen({
           {roleLine && <p className={styles.role}>{roleLine}</p>}
         </div>
       </header>
+
+      {/* Station only: your ticket. Boarding saves the conversation like the back link */}
+      {ticket && (
+        <div className={styles.ticket}>
+          <div className={styles.ticketText}>
+            <div className={styles.ticketRoute}>
+              {ticket.from} <span aria-hidden="true">→</span> {ticket.to}
+            </div>
+            <div className={styles.ticketMeta}>
+              {language.ui.platform} {ticket.platform} · {ticket.time}
+            </div>
+          </div>
+          <button type="button" onClick={() => leave(ticket.onBoard)} className={styles.board}>
+            {language.ui.board}
+          </button>
+        </div>
+      )}
 
       {/* Portrait fills the rest of the screen, edge to edge; text floats over it from mid-screen */}
       <div className={styles.stage}>
