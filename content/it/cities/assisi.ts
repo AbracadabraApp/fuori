@@ -311,7 +311,7 @@ export const assisi: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-assisi',
       personality: ['calm', 'helpful'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a man in his early sixties with thinning grey hair and a neat moustache, navy railway uniform with a tie, behind a ticket window with a timetable behind him, minimal sepia watercolor wash, detailed cross-hatching. A man.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a man in his early sixties with thinning grey hair and a neat moustache, navy railway uniform with a tie, behind a ticket window with a timetable behind him, minimal sepia watercolor wash, detailed cross-hatching. A man. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
     },
     {
       id: 'marco-bartoli',

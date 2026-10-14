@@ -367,7 +367,7 @@ export const orvieto: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-orvieto',
       personality: ['jovial', 'punctual'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a stocky man in his late fifties with a round face and white moustache, railway cap pushed back, uniform jacket, behind a ticket window with a funicular timetable behind him, minimal sepia watercolor wash, detailed facial lines. A man.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a stocky man in his late fifties with a round face and white moustache, railway cap pushed back, uniform jacket, behind a ticket window with a funicular timetable behind him, minimal sepia watercolor wash, detailed facial lines. A man. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
     },
     {
       id: 'paolo-montanucci',

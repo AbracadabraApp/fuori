@@ -351,7 +351,7 @@ export const bergamo: CityPantry = {
       role: 'bigliettaia',
       placeId: 'stazione-bergamo',
       personality: ['diretta', 'gentile'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a woman in her thirties with short dark hair and small earrings, railway uniform jacket and scarf, behind a ticket counter with a departures screen behind her, minimal sepia watercolor wash on face, detailed crosshatching, friendly direct gaze. A woman.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a woman in her thirties with short dark hair and small earrings, railway uniform jacket and scarf, behind a ticket counter with a departures screen behind her, minimal sepia watercolor wash on face, detailed crosshatching, friendly direct gaze. A woman. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
     },
     {
       id: 'marco-villa',

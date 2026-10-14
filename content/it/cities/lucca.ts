@@ -350,7 +350,7 @@ export const lucca: CityPantry = {
       role: 'bigliettaia',
       placeId: 'stazione-lucca',
       personality: ['friendly', 'unhurried'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a woman around forty with wavy chestnut hair tied back, freckles, railway uniform cardigan, behind a ticket window with a bicycle parked outside the glass, minimal sepia watercolor wash, fine lines. A woman.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a woman around forty with wavy chestnut hair tied back, freckles, railway uniform cardigan, behind a ticket window with a bicycle parked outside the glass, minimal sepia watercolor wash, fine lines. A woman. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
     },
     {
       id: 'sergio-di-simo',

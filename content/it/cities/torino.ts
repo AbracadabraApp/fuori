@@ -348,7 +348,7 @@ export const torino: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-porta-nuova-torino',
       personality: ['efficient', 'dry humour'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a man in his mid forties with close-cropped dark hair going grey at the temples, railway uniform with a tie, behind a ticket window in a grand station hall, a hint of a wry smile, minimal warm sepia wash on face, detailed crosshatching. A man.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a man in his mid forties with close-cropped dark hair going grey at the temples, railway uniform with a tie, behind a ticket window in a grand station hall, a hint of a wry smile, minimal warm sepia wash on face, detailed crosshatching. A man. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
     },
     {
       id: 'michele-barista',

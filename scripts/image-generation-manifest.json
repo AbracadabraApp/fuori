@@ -6705,13 +6705,98 @@
       "timestamp": "2026-10-14T06:16:56.765Z",
       "path": "/Users/josh.petersen/fuori/public/images/places/scuola-lingua-torino.jpg",
       "type": "place"
+    },
+    "assisi/stazione-assisi": {
+      "timestamp": "2026-10-14T22:42:17.974Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/stazione-assisi.jpg",
+      "type": "place"
+    },
+    "bergamo/stazione-bergamo": {
+      "timestamp": "2026-10-14T22:42:55.074Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/stazione-bergamo.jpg",
+      "type": "place"
+    },
+    "firenze/scuola-lingua-firenze": {
+      "timestamp": "2026-10-14T22:43:20.449Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/scuola-lingua-firenze.jpg",
+      "skipped": true
+    },
+    "lucca/stazione-lucca": {
+      "timestamp": "2026-10-14T22:43:33.859Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/stazione-lucca.jpg",
+      "type": "place"
+    },
+    "matera/scuola-lingua-matera": {
+      "timestamp": "2026-10-14T22:43:56.774Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/scuola-lingua-matera.jpg",
+      "skipped": true
+    },
+    "napoli/scuola-lingua-napoli": {
+      "timestamp": "2026-10-14T22:43:56.783Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/scuola-lingua-napoli.jpg",
+      "skipped": true
+    },
+    "orvieto/stazione-orvieto": {
+      "timestamp": "2026-10-14T22:44:09.919Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/stazione-orvieto.jpg",
+      "type": "place"
+    },
+    "palermo/scuola-lingua-palermo": {
+      "timestamp": "2026-10-14T22:44:34.070Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/scuola-lingua-palermo.jpg",
+      "skipped": true
+    },
+    "taormina/stazione-taormina-giardini": {
+      "timestamp": "2026-10-14T22:44:50.816Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/stazione-taormina-giardini.jpg",
+      "type": "place"
+    },
+    "taormina/agata-bigliettaia-taormina": {
+      "timestamp": "2026-10-14T22:45:12.966Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/agata-bigliettaia-taormina.jpg",
+      "type": "portrait"
+    },
+    "torino/stazione-porta-nuova-torino": {
+      "timestamp": "2026-10-14T22:45:28.901Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/stazione-porta-nuova-torino.jpg",
+      "type": "place"
+    },
+    "venezia/scuola-lingua-venezia": {
+      "timestamp": "2026-10-14T22:45:54.161Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/scuola-lingua-venezia.jpg",
+      "skipped": true
+    },
+    "assisi/luigi-bigliettaio-assisi": {
+      "timestamp": "2026-10-14T22:47:26.182Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/luigi-bigliettaio-assisi.jpg",
+      "type": "portrait"
+    },
+    "bergamo/sara-bigliettaia-bergamo": {
+      "timestamp": "2026-10-14T22:47:48.099Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/sara-bigliettaia-bergamo.jpg",
+      "type": "portrait"
+    },
+    "lucca/marta-bigliettaia-lucca": {
+      "timestamp": "2026-10-14T22:48:08.744Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/marta-bigliettaia-lucca.jpg",
+      "type": "portrait"
+    },
+    "orvieto/gianni-bigliettaio-orvieto": {
+      "timestamp": "2026-10-14T22:48:29.177Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/gianni-bigliettaio-orvieto.jpg",
+      "type": "portrait"
+    },
+    "torino/enrico-bigliettaio-torino": {
+      "timestamp": "2026-10-14T22:48:46.088Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/enrico-bigliettaio-torino.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 1341,
-    "completed": 1341,
+    "total": 1358,
+    "completed": 1358,
     "failed": 0,
-    "lastRun": "2026-10-14T06:16:59.775Z"
+    "lastRun": "2026-10-14T22:48:49.098Z"
   }
 }
