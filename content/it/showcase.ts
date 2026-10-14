@@ -40,6 +40,7 @@ export const showcase: Record<string, string[]> = {
     'enoteca-lucania',
     'libreria-matera',
     'piazza-duomo-matera', // M2: bench character Alberto (pensionato)
+    'scuola-lingua-matera', // M2: language school with Magda
     'stazione-fal', // M2: train station for travel
   ],
   firenze: [
@@ -69,6 +70,8 @@ export const showcase: Record<string, string[]> = {
     'enoteca-san-domenico',
     'libreria-senese',
     'piazza-salimbeni', // M2: bench character Beatrice (studentessa)
+    'scuola-lingua-siena', // M2: language school with Magda
+    'stazione-siena', // M2: train station for travel
   ],
   venezia: [
     'bar-al-timon',

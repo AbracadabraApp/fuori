@@ -216,6 +216,16 @@ export const matera: CityPantry = {
       characterId: 'dottoressa-mancini',
       imagePrompt: 'Soft pastel sketch on white paper of a traditional Italian pharmacy, green cross sign, wooden cabinets with remedies, white-coated pharmacist, herbal preparations, clean organized shelves, clinical whites and pharmacy greens, professional trusted atmosphere',
     },
+    // M2: Language school
+    {
+      id: 'scuola-lingua-matera',
+      name: 'Scuola di Lingua Italiana Matera',
+      kind: 'language-school',
+      neighbourhood: 'Piano',
+      real: false,
+      characterId: 'magda',
+      imagePrompt: 'Soft pastel sketch on white paper of a language school in a renovated stone building, modern classroom with traditional architecture, students at wooden tables, whiteboard with Italian lessons, large windows with views of the Sassi, warm ochre and cream tones, textured sketch style, loose watercolor washes, lots of white paper',
+    },
     // TRANSPORTATION (1)
     {
       id: 'stazione-fal',
