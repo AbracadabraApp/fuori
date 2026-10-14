@@ -64,6 +64,93 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 ---
 
+## 2026-10-13 (late evening): M2 Requirements & Design
+
+**What was done:**
+- M2 requirements gathering and design from research
+- Review/Analysis system fully specified
+- Study export design (Gemini Notebook)
+- M2 split into M2 (core) and M2.1 (deferred)
+- Agent work completed (stamps, station art, Mexico bench characters)
+
+**Research completed:**
+1. **Language teacher conversation analysis methods**
+   - Error analysis framework (identify, describe, classify, explain)
+   - Error frequency as CEFR level indicator (B2: 2.01, C1: 1.22, C2: 0.45 per 100 words)
+   - Prioritization: frequency + communicative impact
+   - Teachers track: recurring errors, breakdowns, missing structures, high-impact fixes
+
+2. **Italian teaching materials structure**
+   - Standard sequence: dialogue → vocabulary → grammar → exercises → task
+   - Task-based approach: input → practice → production
+   - Voice-first works for: drills, role-plays, error correction
+   - Voice-first struggles with: grammar tables, written exercises
+   - Modern approach: scaffolded, conversational, not rigid textbook
+
+**Design decisions:**
+
+**Review/Analysis System:**
+- Runs after every conversation (simple, no caching)
+- Rich analysis output (not just 2-3 teaching moments)
+- Called "Review" (backwards compatible naming)
+- Outputs:
+  - Level detection (A1/A2/B1 with evidence)
+  - Error patterns (categorized with examples, frequency, impact)
+  - Missing structures (should use at level but doesn't)
+  - Communicative breakdowns (where stuck/used English)
+  - Complete vocabulary list (ALL content words: verbs with tenses, nouns, adjectives, prepositions)
+  - Part of speech tagging
+  - Tense usage statistics
+  - Suggested focus areas (prioritized)
+  - Strengths (positive reinforcement)
+
+**Vocabulary tracking:**
+- Extract all verbs, nouns, adjectives, prepositions
+- Tag part of speech
+- Identify verb tenses (present, passato prossimo, imperfetto, futuro)
+- Include examples with context (who said it, where)
+- No filtering - comprehensive list, see if overwhelming
+- Powers both Magda teaching and study export
+
+**Magda at school:**
+- Reads Review data (doesn't analyze conversations herself)
+- Suggests what to practice based on patterns/missing structures
+- Uses voice-first teaching: drills, role-plays, error correction
+- Keep prompt simple and open, refine later
+- Teaching mode stays conversational, not textbook-dry
+
+**Study export (M2.1):**
+- Markdown file from Review vocabulary
+- All content words with examples and context
+- Download → upload to Gemini Notebook
+- Gemini creates flashcards, quiz, Italian Audio Overview
+- Experiment/demo, not core feature yet
+
+**M2 simplification:**
+- Removed: separate learner profile (data in Review instead)
+- Removed: dialogue digest (separate from learner features)
+- Removed: character-judged success (already in transcripts)
+- Removed: familiarity progression (Lei→tu already works)
+- Removed: reasons to return as feature (design goal for memory prompts)
+- Deferred to M2.1: study export, character intelligence improvements
+
+**Agent work completed:**
+- ✅ Visit mark stamps (4 SVG variants: terracotta, olive, blue, wine)
+- ✅ Stazione/Terminal art (2 place images, 2 ticket seller portraits)
+- ✅ Mexico bench characters (5 generated: Carmen CDMX, Arturo Oaxaca, Beatriz Puebla, Rosa Guadalajara, Víctor SMA)
+- Need to generate: bench character images (5 portraits + 5 places)
+
+**Key insights:**
+- Don't build review log + analysis - same thing, just richer
+- Payload = what Magda needs, filter later for other consumers
+- Voice-first teaching is different from textbook teaching
+- Simple implementation (every conversation) better than complex (scheduled/cached)
+- Research methods should drive requirements, not abstract features
+
+**Next:** Begin M2 implementation - Review generation prompt and schema
+
+---
+
 ## 2026-10-13 (evening): M2 Roadmap Revision
 
 **What was done:**

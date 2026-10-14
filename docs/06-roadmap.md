@@ -59,26 +59,26 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 
 ### Backend / Infrastructure
 
-**Measurement & Detection:**
-- [ ] Level detection: scorer that classifies speaker and student Italian as A1/A2/B1 with evidence
-- [ ] Learner profile: tracks level, progress, patterns; travels across characters; updated from how they speak
-- [ ] Dialogue digest: automated monitoring refreshes problem list and scorecard by prompt version; catches conversations that never ended; notifies Josh only on regressions or taste changes
-- [ ] Extended scoring: quality score (% of targets met), vocab count (from review log), verb tenses used
-
-**Character Intelligence:**
-- [ ] Character-judged success: after each conversation, concrete questions (understood what you wanted? had to repeat? fell back on English?)
-- [ ] Familiarity progression: stranger → regular → friend; *Lei* → *tu* shift; structured facts and promises
-- [ ] Reasons to return: what's new in character's life since last visit, generated on return
+**Review Generation (replaces simple review log):**
+- [ ] Rich analysis after each conversation: reads transcript, outputs structured data including:
+  - Level detection (A1/A2/B1 with error rate and complexity evidence)
+  - Error patterns (categorized: verb, article, syntax, pronunciation; with examples and frequency)
+  - Missing structures (should use at their level but doesn't: past tense, future, subjunctive)
+  - Communicative breakdowns (where stuck, fell back to English, didn't understand)
+  - Complete vocabulary list (all content words: verbs with tenses, nouns, adjectives, prepositions; tagged with part of speech, examples with context)
+  - Tense usage statistics (present 85%, past 10%, future 0% → shows what they avoid)
+  - Suggested focus areas (prioritized: what to practice, why, method)
+  - Strengths (positive reinforcement)
+- [ ] Review storage and API (GET /api/learner/:id/latest-review)
 
 **Content Expansion:**
-- [ ] Bench characters: audit existing (Italy: 10 exist, 6 hidden), generate for Mexico, deploy in both packs
-- [ ] Travel between cities: Stazione (Italy) / Terminal de autobuses (Mexico) in each city; ticket seller conversation (timetables, platforms, prices); access to all cities including hidden ones; travel vocabulary practice
+- [ ] Bench characters: audit Italy (10 exist, 6 hidden - decide which to show), deploy Mexico (5 generated), generate images for Mexico (5 portraits + 5 places)
+- [ ] Travel: Stazione/Terminal place type (images generated), ticket seller characters (portraits generated), city picker UI after conversation, access all cities including hidden
 
 ### Frontend / User-facing
 
-- [ ] Magda at school: teaching mode (not immersion); one Magda per city at scuola; uses learner profile to suggest what to work on OR learner asks what they want to learn; structured lessons with practice
-- [ ] Study export demo (experiment, not a commitment to ship): a study pack from the review log and transcripts, tried in Gemini Notebook (flashcards, quiz, Italian Audio Overview) and Anki. Extra tools for learners who want them, not core game. Plan: [study-export-demo.md](study-export-demo.md)
-- [ ] Visit marks on place cards: CSS stamp overlay after first visit; 4 complementary variants (terracotta, olive, dusty blue, red wine); place ID hash picks variant; character name appears after first meeting
+- [ ] Magda at school: teaching mode uses Review data; suggests what to practice based on patterns/missing structures; voice-first methods (drills, role-plays, error correction); simple and open prompt, refine later
+- [ ] Visit marks: CSS stamp overlay (4 SVG variants generated: terracotta, olive, blue, wine); place ID hash picks variant; shows after first visit; character name appears after meeting
 
 ### Level-aware dialogue (deferred from M1)
 
@@ -97,6 +97,14 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 
 **Only then:** add level to production character prompts and trust it works.
 
+**Removed from M2:**
+- Learner profile (consolidated into Review generation)
+- Dialogue digest (quality monitoring exists; focus on Review for learner features)
+- Extended scoring (quality score, vocab count in Review instead)
+- Character-judged success (already visible in conversation transcripts)
+- Familiarity progression (Lei→tu already works via character memory)
+- Reasons to return (design goal, improve character memory prompts; not separate feature)
+
 **Cut from original M2:**
 - Name field in settings (doesn't scale to general speech recognition issues)
 - "Today" page / diario (extra UI; review log already works)
@@ -109,6 +117,21 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 - Voice messages, async communication, off-game contact (complexity; need very immersive experience or keep it simple)
 
 **Done when:** you come back to the same bar on day 3, the barista greets you by name and remembers your usual; Magda at school helps you practice something you've been struggling with based on your recent conversations; you can see which places you've visited and travel to a new city via the train station.
+
+## M2.1: Study tools and conversation quality
+
+**Study Pack Export:**
+- [ ] Markdown generator from Review vocabulary (all content words: verbs, nouns, adjectives, prepositions with examples and context)
+- [ ] Export UI (download button)
+- [ ] Test with Gemini Notebook (flashcards, quiz, Italian Audio Overview)
+- Design complete: export all words from conversations, no filtering; let it be comprehensive and see if overwhelming; includes part of speech, verb tenses, context, examples
+
+**Character Intelligence Improvements:**
+- [ ] Richer character memories (broader topics, better continuity)
+- [ ] Character life updates (events, follow-ups on previous topics)
+- [ ] Reasons to return quality (not new system, improve existing memory prompts)
+
+**Done when:** you can export a complete vocabulary study pack from your conversations and upload to Gemini Notebook; characters give you richer reasons to return beyond just remembering your name.
 
 ## M3: Levels, interaction and polish
 
