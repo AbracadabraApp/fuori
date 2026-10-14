@@ -66,8 +66,8 @@ export default function Home() {
         cityId={cityData?.id}
         neighbourhood={place?.neighbourhood}
         onBack={() => {
-          // M2: After stazione conversation, show city picker
-          if (place?.id === 'stazione') {
+          // M2: After station/terminal conversation, show city picker
+          if (place?.id.startsWith('stazione-') || place?.id.startsWith('terminal-')) {
             setShowCityPicker(true);
           } else {
             setSelectedPlace(null);
