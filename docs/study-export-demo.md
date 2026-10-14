@@ -11,24 +11,23 @@ We use an existing product rather than building our own: **Gemini Notebook** (fo
 ## What Fuori already has
 
 - Every conversation is recorded: who said what, with English, in the `conversations` table (`lib/recording.ts`).
-- When a conversation ends, the review log is written next to it (`lib/memory.ts`, `ReviewLog`): `items` (phrase, English, why it's worth keeping) and `mistakes` (what the learner said, the better version, why).
+- When a conversation ends, its learning notes are written next to it (`lib/memory.ts`, `ReviewLog`): `items` (phrase, English, why it's worth keeping), `mistakes` (what the learner said, the better version, why), `missed` (not understood) and `english` (fell back on English).
 - `/api/admin/conversations?format=text` already prints transcripts for reading.
 - **Caveat:** the review log is still debug-only and its picks haven't been checked. The demo is partly a way to check them.
 
 ## The demo
 
-### 1. A study pack export (Claude, about half a day)
+### 1. The export, in versions
 
-A script or admin format that writes one document for a date range, for one learner:
+One Markdown file for one learner and a date range, dropped into Gemini Notebook. Markdown pastes cleanly into a Google Doc or uploads as a text source. Same for both countries; nothing language-specific in the code (the language, app name and level come from the country pack). Built as an admin format next to `/api/admin/conversations?format=text`, which already prints transcripts.
 
+**Version 1: transcripts only (Josh, 2026-10-14).** Start with the simplest file and see if Gemini can find the words, phrases and mistakes itself; the characters' recasts already carry most corrections.
+- **A short note for Gemini at the top:** these are a learner's real conversations in {language} at about {level}; make study material from them, using the people and places as context; the learner's lines are speech-to-text and may contain transcription errors, so ignore spelling and pronunciation.
 - **Header:** learner, dates, cities visited, number of conversations.
-- **One section per conversation:** who (name, role), where (place, neighbourhood, city), when.
-  - **Words and phrases:** the phrase, its English, why it's worth keeping, and the line in the conversation where it came up.
-  - **Things to say better:** what was said, the better version, why.
-  - **The conversation:** the full transcript, with English.
-- **A short instruction block at the top** for the notebook ("These are a learner's real conversations in Italian at about A2; make study material from the words, phrases and corrections, using the people and places as context").
+- **One section per conversation:** who (name, role), where (place, neighbourhood, city), when, then the full transcript with each line's English.
+- Lessons with Magda are left out: they are practice, not conversations in town.
 
-Format: Markdown, which pastes cleanly into a Google Doc or uploads as a text source. Same for both countries; nothing language-specific in the code (the pack's language and app name come from the country pack).
+**Version 2, only if version 1 falls short** (cards miss real mistakes, or Gemini is thrown by speech-to-text errors): add the learning notes to each conversation: things to say better (`mistakes`), words and phrases worth keeping (`items`), what wasn't understood (`missed`), and fallbacks to English (`english`). Comparing the two also shows whether the learning notes add anything Gemini can't find on its own.
 
 ### 2. Try it (Josh, about an hour)
 
@@ -43,7 +42,7 @@ With a week or two of real conversations:
 - **Cards:** of 20 flashcards, how many would you actually keep?
 - **Context:** do the cards and quiz use your real conversations (Franco, the artichokes, Trastevere), or could they be from any textbook?
 - **Audio Overview:** is the Italian at a level you can follow? Does it get things wrong about what happened?
-- **The review log itself:** reading the pack, are its picks the right ones? (This feeds the M1 check that's still open.)
+- **Version 1 enough?** Do the cards catch your real mistakes from the transcripts alone, or is version 2 needed?
 - **Effort:** is exporting and uploading by hand acceptable for an occasional "study my week" tool?
 
 **Done when:** Josh has tried the pack in Gemini Notebook and decided keep, change or drop.

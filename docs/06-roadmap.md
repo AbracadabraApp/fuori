@@ -120,18 +120,17 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 
 ## M2.1: Study tools and conversation quality
 
-**Study Pack Export:**
-- [ ] Markdown generator from Review vocabulary (all content words: verbs, nouns, adjectives, prepositions with examples and context)
-- [ ] Export UI (download button)
-- [ ] Test with Gemini Notebook (flashcards, quiz, Italian Audio Overview)
-- Design complete: export all words from conversations, no filtering; let it be comprehensive and see if overwhelming; includes part of speech, verb tenses, context, examples
+**Study export:** one Markdown file to drop into Gemini Notebook; see [Study export demo](study-export-demo.md).
+- [ ] Version 1: transcripts only, labelled by who, where and when, from an admin format
+- [ ] Josh tries it in Gemini Notebook (flashcards, quiz, Audio Overview in the country's language)
+- [ ] Version 2 (adds the learning notes) only if version 1 falls short
 
 **Character Intelligence Improvements:**
 - [ ] Richer character memories (broader topics, better continuity)
 - [ ] Character life updates (events, follow-ups on previous topics)
 - [ ] Reasons to return quality (not new system, improve existing memory prompts)
 
-**Done when:** you can export a complete vocabulary study pack from your conversations and upload to Gemini Notebook; characters give you richer reasons to return beyond just remembering your name.
+**Done when:** Josh has tried the export in Gemini Notebook and decided keep, change or drop; characters give you richer reasons to return beyond just remembering your name.
 
 ## M3: Levels, interaction and polish
 
