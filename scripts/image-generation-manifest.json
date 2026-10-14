@@ -6670,13 +6670,38 @@
       "timestamp": "2026-10-13T20:41:19.604Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/suor-maria-mantova.jpg",
       "type": "portrait"
+    },
+    "bologna/scuola-lingua-bologna": {
+      "timestamp": "2026-10-14T04:45:49.168Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/scuola-lingua-bologna.jpg",
+      "type": "place"
+    },
+    "roma/scuola-lingua-roma": {
+      "timestamp": "2026-10-14T04:48:04.888Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/scuola-lingua-roma.jpg",
+      "type": "place"
+    },
+    "siena/scuola-lingua-siena": {
+      "timestamp": "2026-10-14T04:48:34.369Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/scuola-lingua-siena.jpg",
+      "type": "place"
+    },
+    "siena/stazione-siena": {
+      "timestamp": "2026-10-14T04:48:50.242Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/stazione-siena.jpg",
+      "type": "place"
+    },
+    "siena/franco-stazione": {
+      "timestamp": "2026-10-14T04:49:10.904Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/franco-stazione.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 1334,
-    "completed": 1334,
+    "total": 1339,
+    "completed": 1339,
     "failed": 0,
-    "lastRun": "2026-10-13T20:41:22.609Z"
+    "lastRun": "2026-10-14T04:49:13.914Z"
   }
 }
