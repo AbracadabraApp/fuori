@@ -3,27 +3,29 @@
  * gets the same voice (chosen by a hash of their id), so neighbours differ but
  * nobody changes voice between visits.
  *
- * ElevenLabs IDs are premade voices; with the multilingual Flash v2.5 model they
- * all speak Spanish, but accents vary and none is vetted for a Mexican accent
- * yet. Run `npm run voices` (COUNTRY=es-mx), listen, and swap any that sound off.
+ * ElevenLabs IDs are NATIVE MEXICAN SPANISH SPEAKERS from the voice library
+ * (2026-10-14). High-quality, high-usage voices (10K-98K uses) with natural
+ * Mexican pronunciation. Chosen for neutral, conversational delivery - not
+ * corporate/dramatic/character-specific. Run `npm run voices` (COUNTRY=es-mx)
+ * to hear them.
  */
 import type { Gender } from '@/lib/types';
 
 export const voices = {
   elevenlabs: {
-    // No anchors in Mexico yet
+    // No anchors in Mexico yet (native Mexican Spanish speakers)
     byCharacter: {} as Record<string, string>,
     f: [
-      'KVJNlB9xei0FCE8ekWnI', // Ingrid - young (20s), Mexican soft & natural
-      'fuVibWsnIUtzBVjB2PCa', // Ximena - young (20s), Mexican gentle & immersive
-      'akOBlaKhFd59YlK6xz9u', // Lucia - mid (30s), Mexican warm conversational
-      'XrExE9yKIg1WjnnlVkGX', // Matilda - mature (40s), premade (works well with Spanish)
+      'spPXlKT5a4JMfbhPRAzA', // Camila - warm, inviting, rich Mexican Spanish, 51.7K uses
+      'm7yTemJqdIqrcNleANfX', // Ana María - calm, natural, clear, neutral Mexican, 63.3K uses
+      'ewn5JTa3lNPY8QVuZJi6', // Ana Sofía - conversational, neutral Mexican accent, 14.6K uses
+      'twZzvyYIl5ntDHC1Vatv', // Angelica - friendly, energetic, Mexican, 30.6K uses
     ],
     m: [
-      'y49lIAGrsmQl8dzq2W93', // Rayito - young (20s), Mexican warm & natural
-      '8MmlQmEVy2nXcsSSkf0b', // Axel G - young-mid (20s-30s), Mexican confident & friendly
-      '4rOzDieCbHQQyo9tzqZv', // Diego - mid (30s), Mexican warm & conversational
-      'rtQzMJmQhSg0YB7cp3ed', // Joaquín - middle-aged (40s-50s), Mexican rich & captivating
+      'HIkzxzvsigFIynXHHKhU', // Hugo M - deep & mysterious, native Mexican, 10.1K uses
+      'U9jmr7kY6mMqS39kfA01', // Javi - social media, energetic Mexican, 769 uses
+      'W6Z2FAa578IKOGSVo2sA', // Alejandro Ballesteros - warm & joyful, Mexican, 98.8K uses
+      'LegCbmbXKbT5PUp3QFWv', // Jhony - calm, measured, sincere, Mexican, 6.1K uses
     ],
   },
 
