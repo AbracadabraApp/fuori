@@ -54,7 +54,7 @@ The person screen's rules (2026-10-13): talking happens at the bottom (Start con
 
 ### Status
 
-**Built 2026-10-14** (cloud session): the departures board on the city screen (it had been drawn only on the city list, so tapping a station opened nothing), every city on it, the ticket strip with Sali/Subir, the destination in the clerk's setting, one shared leave step for both exits, `npm run test:leave`. Not yet: six Italian cities have no station (Taormina, Assisi, Bergamo, Torino, Lucca, Orvieto), so from there you leave by the back link.
+**Built 2026-10-14** (cloud session): the departures board on the city screen (it had been drawn only on the city list, so tapping a station opened nothing), every city on it, the ticket strip with Sali/Subir, the destination in the clerk's setting, one shared leave step for both exits, `npm run test:leave`. Stations for the last six Italian cities (Taormina, Assisi, Bergamo, Torino, Lucca, Orvieto) are on branch `stations-missing`, waiting for their 12 images (laptop: `npm run images`), then merge.
 
 ---
 

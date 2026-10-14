@@ -148,6 +148,7 @@ export const showcase: Record<string, string[]> = {
     'piazza-ix-aprile',
     'salumeria-sicilia',
     'enoteca-nero',
+    'stazione-taormina-giardini', // station (2026-10-14)
   ],
   lecce: [
     'caffe-alvino',
@@ -200,6 +201,7 @@ export const showcase: Record<string, string[]> = {
     'piazza-comune',
     'tabaccheria-assisi',
     'enoteca-properzio',
+    'stazione-assisi', // station (2026-10-14)
   ],
   bergamo: [
     'caffe-del-tasso',
@@ -212,6 +214,7 @@ export const showcase: Record<string, string[]> = {
     'enoteca-del-malpaga',
     'libreria-sant-agostino',
     'parco-della-trucca',
+    'stazione-bergamo', // station (2026-10-14)
   ],
   torino: [
     'caffe-san-carlo',
@@ -225,6 +228,7 @@ export const showcase: Record<string, string[]> = {
     'enoteca-bacco-torino',
     'libreria-luxemburg',
     'scuola-lingua-torino',
+    'stazione-porta-nuova-torino', // station (2026-10-14)
   ],
   siracusa: [
     'bar-dolce-vita',
@@ -263,6 +267,7 @@ export const showcase: Record<string, string[]> = {
     'gastronomia-angeli',
     'enoteca-vanni',
     'libreria-baroni',
+    'stazione-lucca', // station (2026-10-14)
   ],
   orvieto: [
     'caffe-montanucci',
@@ -275,6 +280,7 @@ export const showcase: Record<string, string[]> = {
     'enoteca-al-pozzo',
     'libreria-del-duomo',
     'giardini-pubblici',
+    'stazione-orvieto', // station (2026-10-14)
   ],
   mantova: [
     'caffe-modi',

@@ -329,8 +329,27 @@ export const torino: CityPantry = {
       characterId: 'matteo-proprietario',
       imagePrompt: 'Soft pastel sketch on white paper of a family-run neighborhood osteria with regional wine bottles, hand-written daily menus, and paper tablecloths. Warm ochre, wine red, rustic wood. Homey Piemontese cooking atmosphere. Intimate lighting, textured, authentic.',
     },
+    {
+      id: 'stazione-porta-nuova-torino',
+      name: 'Stazione di Torino Porta Nuova',
+      kind: 'train-station',
+      neighbourhood: 'San Salvario',
+      real: true,
+      characterId: 'enrico-bigliettaio-torino',
+      imagePrompt: 'Soft pastel sketch on white paper of Torino Porta Nuova station, Piedmont, Italy, the grand nineteenth-century arched facade on Corso Vittorio Emanuele, travellers with suitcases, a tram passing in front, the Alps faint in the distance, rich golds, deep reds and warm creams. The station\'s sign reads \'Porta Nuova\'. Any other lettering is everyday Italian detail like a timetable; no other signs naming the city.',
+    },
   ],
   characters: [
+    {
+      id: 'enrico-bigliettaio-torino',
+      name: 'Enrico Bosio',
+      gender: 'm',
+      age: 45,
+      role: 'bigliettaio',
+      placeId: 'stazione-porta-nuova-torino',
+      personality: ['efficient', 'dry humour'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a man in his mid forties with close-cropped dark hair going grey at the temples, railway uniform with a tie, behind a ticket window in a grand station hall, a hint of a wry smile, minimal warm sepia wash on face, detailed crosshatching. A man. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
+    },
     {
       id: 'michele-barista',
       name: 'Michele Ferrero',

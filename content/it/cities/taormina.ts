@@ -340,8 +340,27 @@ export const taormina: CityPantry = {
       characterId: 'federico-poeta',
       imagePrompt: 'Soft pastel sketch on white paper, scenic terrace overlook, soft lavender and azure tones, sweeping coastal panorama, Mount Etna in distance, romantic spot, poetic atmosphere, golden hour light, textured, inspirational vista',
     },
+    {
+      id: 'stazione-taormina-giardini',
+      name: 'Stazione di Taormina-Giardini',
+      kind: 'train-station',
+      neighbourhood: 'Villagonia',
+      real: true,
+      characterId: 'agata-bigliettaia-taormina',
+      imagePrompt: 'Soft pastel sketch on white paper, warm terracotta and cream tones, the small Liberty-style railway station of Taormina-Giardini, Sicily, Italy, by the sea below the town, ornate stone facade, a regional train at the platform, travellers with bags, palm trees and the blue sea behind, Mediterranean light. The station\'s sign reads \'Taormina-Giardini\'. Any other lettering is everyday Italian detail like a timetable; no other signs naming the city.',
+    },
   ],
   characters: [
+    {
+      id: 'agata-bigliettaia-taormina',
+      name: 'Agata Spadaro',
+      gender: 'f',
+      age: 52,
+      role: 'bigliettaia',
+      placeId: 'stazione-taormina-giardini',
+      personality: ['brisk', 'warm'],
+      portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, Sicilian woman in her early 50s, dark hair pinned up, reading glasses on a chain, navy railway uniform jacket, behind a ticket window with a timetable on the wall, detailed cross-hatching, warm amber wash, white background. A woman.',
+    },
     {
       id: 'paolo-turrisi',
       name: 'Paolo Turrisi',
