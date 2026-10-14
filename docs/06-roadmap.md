@@ -135,11 +135,13 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 
 - [ ] Level steps (A1 → A1+ → A2 …) from evidence in conversations; level rules exist in `content/it/levels/`
 - [ ] More dialect as you level up ("Allow dialect" setting)
-- [ ] Hosted voices for every character; Magda's voice
 
 **Moved to ideas.md (2026-10-14):**
 - Interactive transcript (too much interface, conflicts with immersion-first approach)
 - Voice notes and messages from characters (complexity, focus on in-game experience first)
+
+**Removed (2026-10-14):**
+- Hosted voices for every character (unrealistic cost: ~$7,500 for 686 voices; current 8-voice pool works fine)
 
 ## M4: Accounts and costs
 
