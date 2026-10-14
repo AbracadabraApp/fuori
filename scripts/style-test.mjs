@@ -7,6 +7,7 @@
  *
  *   COUNTRY=es-mx npm run style-test            # generate what's missing
  *   COUNTRY=es-mx npm run style-test -- --dry   # print the prompts only
+ *   COUNTRY=es-mx npm run style-test -- --only textures,roma-condesa
  */
 import fs from 'fs';
 import path from 'path';
@@ -17,6 +18,9 @@ const ROOT = path.join(__dirname, '..');
 const COUNTRY = process.env.COUNTRY || 'es-mx';
 const DRY = process.argv.includes('--dry');
 const CITY_ONLY = !process.argv.includes('--abstract'); // abstract dropped after round 1 (Josh)
+// --only a,b: generate just these styles (e.g. --only textures,roma-condesa)
+const onlyArg = process.argv.find((x, i) => process.argv[i - 1] === '--only');
+const ONLY = onlyArg ? new Set(onlyArg.split(',')) : null;
 const test = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', COUNTRY, 'style-test.json'), 'utf8'));
 const gen = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', COUNTRY, 'generation.json'), 'utf8'));
 const size = gen.images?.place ?? {};
@@ -65,6 +69,7 @@ for (const [cityId, c] of Object.entries(test.cities)) {
     const row = { cityId, placeId, files: {} };
     for (const [v, prompt] of Object.entries(variants)) {
       if (CITY_ONLY && v === 'abstract') continue;
+      if (ONLY && !ONLY.has(v)) continue;
       const file = path.join(OUT, v, `${placeId}.jpg`);
       if (DRY) console.log(`\n[${cityId} / ${placeId} / ${v}]\n${prompt}`);
       try {
@@ -72,7 +77,7 @@ for (const [cityId, c] of Object.entries(test.cities)) {
       } catch (e) {
         console.error(`${cityId}/${placeId} ${v}: FAILED ${e.message}`);
       }
-      if (!(CITY_ONLY && v === 'abstract')) row.files[v] = `${v}/${placeId}.jpg`;
+      if (!(CITY_ONLY && v === 'abstract') && (!ONLY || ONLY.has(v))) row.files[v] = `${v}/${placeId}.jpg`;
     }
     rows.push(row);
   }
