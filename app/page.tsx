@@ -19,6 +19,8 @@ export default function Home() {
   const [allowDialect, setAllowDialect] = useState(false);
   const [visitCounts, setVisitCounts] = useState<Record<string, number>>({});
   const [showCityPicker, setShowCityPicker] = useState(false);
+  const [pendingStationPlace, setPendingStationPlace] = useState<string | null>(null);
+  const [destinationCity, setDestinationCity] = useState<string | null>(null);
 
   // Fetch visit counts when city changes
   useEffect(() => {
@@ -66,9 +68,11 @@ export default function Home() {
         cityId={cityData?.id}
         neighbourhood={place?.neighbourhood}
         onBack={() => {
-          // M2: After station/terminal conversation, show city picker
-          if (place?.id.startsWith('stazione-') || place?.id.startsWith('terminal-')) {
-            setShowCityPicker(true);
+          // M2: After station/terminal conversation, navigate to destination city
+          if ((place?.id.startsWith('stazione-') || place?.id.startsWith('terminal-')) && destinationCity) {
+            setSelectedCity(destinationCity);
+            setDestinationCity(null);
+            setSelectedPlace(null);
           } else {
             setSelectedPlace(null);
           }
@@ -107,7 +111,15 @@ export default function Home() {
                       neighborhood={place.neighbourhood}
                       imageUrl={`${pack.images}/places/${place.id}.jpg`}
                       visitCount={visitCounts[place.id] || 0}
-                      onTap={() => setSelectedPlace(place.id)}
+                      onTap={() => {
+                        // M2: Stations show city picker first, then conversation
+                        if (place.id.startsWith('stazione-') || place.id.startsWith('terminal-')) {
+                          setPendingStationPlace(place.id);
+                          setShowCityPicker(true);
+                        } else {
+                          setSelectedPlace(place.id);
+                        }
+                      }}
                     />
                   );
                 })}
@@ -218,17 +230,23 @@ export default function Home() {
         </div>
       )}
 
-      {/* M2: City picker after stazione conversation */}
+      {/* M2: City picker at station/terminal */}
       {showCityPicker && selectedCity && (
         <CityPicker
           currentCityId={selectedCity}
           onSelectCity={(cityId) => {
-            setSelectedCity(cityId);
-            setSelectedPlace(null);
+            // Save destination city for after conversation
+            setDestinationCity(cityId);
             setShowCityPicker(false);
+            // Open station conversation in CURRENT city about destination
+            if (pendingStationPlace) {
+              setSelectedPlace(pendingStationPlace);
+              setPendingStationPlace(null);
+            }
           }}
           onClose={() => {
-            setSelectedPlace(null);
+            // Cancelled - don't open station conversation
+            setPendingStationPlace(null);
             setShowCityPicker(false);
           }}
         />
