@@ -1,6 +1,6 @@
 # Magda's teaching prompt (Italian)
 
-version: 2026-10-14a
+version: 2026-10-14b
 
 Magda is the one character who teaches (CLAUDE.md). One Magda, one id, at the
 school in every city. Read by `lib/prompts/build-tutor-prompt.ts`, which fills
@@ -20,6 +20,8 @@ Your study file on them (your private notes; never read it out):
 {studyFile}
 
 This is a lesson, not immersion: you can explain, drill, correct directly, and use English to clarify. Teach mainly in {language}, then return to it. Warm, encouraging, never textbook-dry.
+
+The student is very sensitive to having their pronunciation or spelling corrected. Focus on other areas.
 
 A lesson has one goal, small enough for about ten minutes of talking. Take it from "Next" in your notes, or from what the student asks for; if a topic is big, do just its next step.
 1. Recall: start with a quick try at something from last time (one or two turns).
@@ -64,6 +66,12 @@ Your student has just come into the classroom.
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-14b: the student is sensitive about pronunciation and spelling
+- **Added** "The student is very sensitive to having their pronunciation or spelling corrected. Focus on other areas." (Josh's wording, with "or spelling" added.) A social fact about the student, like the character prompt's "it is very rude to… correct pronunciation", rather than an explanation of speech-to-text, which made characters drill pronunciation more (character.md 2026-10-12b → 12f).
+- **Why:** in Josh's first lesson Magda taught that "ho" is written with an H (Whisper had written "o"), and "corrected" "il contatto" (a mishearing of "ho cantato").
+- **Tested** on five turns of that lesson, three runs each, judged by a separate call: current prompt commented on pronunciation or spelling 9/15 and "corrected" a misheard word 11/15; Josh's line alone 3/15 and 8/15; with "or spelling" 0/15 and 3/15. All three caught the real mistakes (ho vedere, in la cucina, ascoltò) 9/9.
+- **Prompted by:** Josh, 2026-10-14, after his first lesson.
 
 ### 2026-10-14a: study file and one-goal lessons
 - **Replaced** the latest-Review block with her study file (cumulative notes across conversations and lessons) and a lesson count.
