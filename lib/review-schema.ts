@@ -23,36 +23,10 @@ export type ErrorType =
   | 'preposition'
   | 'other';
 
-export type MissingStructure =
-  | 'passato_prossimo'
-  | 'imperfetto'
-  | 'futuro'
-  | 'condizionale'
-  | 'congiuntivo'
-  | 'pronouns'
-  | 'reflexive_verbs'
-  | 'comparatives'
-  | 'superlatives'
-  | 'relative_clauses'
-  | 'other';
-
-export type VerbTense =
-  | 'present'
-  | 'passato_prossimo'
-  | 'imperfetto'
-  | 'trapassato_prossimo'
-  | 'futuro'
-  | 'futuro_anteriore'
-  | 'condizionale'
-  | 'condizionale_passato'
-  | 'congiuntivo_presente'
-  | 'congiuntivo_passato'
-  | 'congiuntivo_imperfetto'
-  | 'congiuntivo_trapassato'
-  | 'imperativo'
-  | 'infinito'
-  | 'gerundio'
-  | 'participio';
+// Grammar structure and tense names depend on the language (Italian
+// "passato_prossimo", Spanish "preterito"); each country's review.md lists them.
+export type MissingStructure = string;
+export type VerbTense = string;
 
 export type WordType = 'verb' | 'noun' | 'adjective' | 'preposition' | 'adverb';
 export type Gender = 'masculine' | 'feminine';
@@ -113,15 +87,8 @@ export interface TenseUsageStat {
   percentage: number;
 }
 
-export interface TenseUsage {
-  present: TenseUsageStat;
-  passato_prossimo: TenseUsageStat;
-  imperfetto: TenseUsageStat;
-  futuro: TenseUsageStat;
-  condizionale?: TenseUsageStat;
-  congiuntivo?: TenseUsageStat;
-  [key: string]: TenseUsageStat | undefined;
-}
+/** Tense name (as listed in the country's review.md) → how often it was used */
+export type TenseUsage = Record<string, TenseUsageStat | undefined>;
 
 export interface SuggestedVocabulary {
   word: string;

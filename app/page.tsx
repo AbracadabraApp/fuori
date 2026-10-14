@@ -20,17 +20,16 @@ export default function Home() {
   const [visitCounts, setVisitCounts] = useState<Record<string, number>>({});
   const [showCityPicker, setShowCityPicker] = useState(false);
 
-  // Fetch visit counts when city changes
+  // Visit counts for the stamps: fetched on entering a city and again on
+  // coming back from a place, so a stamp appears as soon as you leave
   useEffect(() => {
-    if (selectedCity) {
-      // TODO: get learner ID from session/cookie
-      const learnerId = 'demo-learner';
-      fetch(`/api/learner/${learnerId}/visited-places?city=${selectedCity}`)
+    if (selectedCity && !selectedPlace) {
+      fetch(`/api/visits?city=${encodeURIComponent(selectedCity)}`)
         .then((res) => res.json())
         .then((data) => setVisitCounts(data))
         .catch((err) => console.error('Failed to fetch visit counts:', err));
     }
-  }, [selectedCity]);
+  }, [selectedCity, selectedPlace]);
 
   // Cities in the list: hidden ones stay in the data but aren't shown
   const shownCities = cityPantries.filter((c) => !c.hidden);

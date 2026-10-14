@@ -5,6 +5,7 @@
 import { language } from './language';
 import { cities } from './cities';
 import { voices, elevenLabsVoiceFor, browserVoiceFor } from './voices';
+import { magda } from './characters/magda';
 import type { CharacterSheet } from '@/lib/types';
 
 export const pack = {
@@ -16,6 +17,9 @@ export const pack = {
   cities,
   /** Hand-written anchor characters, by id (none yet) */
   anchors: {} as Record<string, CharacterSheet>,
+  /** Magda: the one character who teaches. One id everywhere, so her memory and
+   *  the learner's Reviews follow them; placed at whichever school they visit. */
+  tutor: magda,
   voices,
   elevenLabsVoiceFor,
   browserVoiceFor,

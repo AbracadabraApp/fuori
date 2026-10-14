@@ -24,6 +24,9 @@ export async function runTurn(params: {
   memory?: RememberedLearner;
   /** How the conversation so far is sent; defaults to TURN_HISTORY (see build-turn-prompt.ts) */
   history?: HistoryMode;
+  /** Magda's system prompt and first turn instead of the character prompt */
+  system?: string;
+  firstTurn?: string;
 }): Promise<TurnReply> {
   const prompt = buildTurnPrompt(params);
 

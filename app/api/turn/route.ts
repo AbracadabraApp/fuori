@@ -8,6 +8,9 @@ import { logServerError } from '@/lib/server-log';
 import { getOrCreateLearnerId } from '@/lib/learner';
 import { recordTurn, recordingEnabled } from '@/lib/recording';
 import { loadCharacterMemory, loadMemoryAtStart, type CharacterMemory } from '@/lib/memory';
+import { tutor } from '@/content';
+import { latestReview } from '@/lib/review';
+import { buildTutorPrompt } from '@/lib/prompts/build-tutor-prompt';
 
 
 export async function POST(request: NextRequest) {
@@ -57,15 +60,30 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Magda teaches from the learner's latest Review, with her own prompt
+    const isTutor = (character as CharacterSheet).id === tutor.id;
+    let tutorPrompt: ReturnType<typeof buildTutorPrompt> | undefined;
+    if (isTutor) {
+      let review = null;
+      try {
+        if (learnerId) review = await latestReview(learnerId);
+      } catch (err) {
+        logServerError(request, 'review load', err);
+      }
+      tutorPrompt = buildTutorPrompt({ character: character as CharacterSheet, memory, review });
+    }
+
     const turnOutput = await runTurn({
       character: character as CharacterSheet,
       transcript: (transcript || []) as Turn[],
       learnerSaid,
       memory,
+      system: tutorPrompt?.system,
+      firstTurn: tutorPrompt?.firstTurn,
     });
 
     // One line per turn so any reply can be traced to the prompt version that produced it
-    const version = promptVersion();
+    const version = tutorPrompt ? `magda-${tutorPrompt.version}` : promptVersion();
     console.log(
       JSON.stringify({
         level: 'info',

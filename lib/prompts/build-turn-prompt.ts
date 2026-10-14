@@ -47,6 +47,9 @@ interface BuildTurnPromptParams {
   now?: Date;
   /** Defaults to TURN_HISTORY (document unless set to recent) */
   history?: HistoryMode;
+  /** Replaces the character system prompt and first turn (Magda: build-tutor-prompt.ts) */
+  system?: string;
+  firstTurn?: string;
 }
 
 interface TurnPrompt {
@@ -115,7 +118,8 @@ export function relationshipLine(t: Template, memory: RememberedLearner | undefi
 export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
   const { character, transcript, learnerSaid, memory, now = new Date() } = params;
   const history = params.history ?? historyModeFromEnv();
-  const t = loadTemplate();
+  const base = loadTemplate();
+  const t = params.firstTurn ? { ...base, firstTurn: params.firstTurn } : base;
 
   const english =
     character.englishAbility === 'fluent'
@@ -124,7 +128,7 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
         ? 'You speak basic English.'
         : '';
 
-  const system = fill(t.system, {
+  const system = params.system ?? fill(t.system, {
     name: character.name,
     age: String(character.age),
     role: character.role,

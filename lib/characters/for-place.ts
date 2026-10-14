@@ -5,7 +5,7 @@
  * Client-safe (no fs), so the page and the conversation tests share it.
  */
 
-import { anchors } from '@/content';
+import { anchors, tutor } from '@/content';
 import type { CharacterSheet, CityCharacter, CityPantry, Place } from '@/lib/types';
 
 
@@ -42,6 +42,11 @@ export function characterForPlace(
 ): CharacterSheet | undefined {
   const id = place.characterId;
   if (!id) return undefined;
+  // Magda: the same person (same id, so the same memory) at every school,
+  // placed in this school's city and room
+  if (id === tutor.id) {
+    return { ...tutor, city: city.name, placeId: place.id, appearance: { ...tutor.appearance, setting: `${place.name}, ${place.neighbourhood}` } };
+  }
   if (anchors[id]) return anchors[id];
   const person = city.characters?.find((c) => c.id === id);
   return person ? cityCharacterToSheet(person, city, place) : undefined;

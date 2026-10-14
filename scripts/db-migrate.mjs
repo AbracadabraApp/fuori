@@ -60,6 +60,10 @@ ALTER TABLE conversations ADD COLUMN IF NOT EXISTS quality jsonb;
 -- M2: Review analysis (added 2026-10-13)
 ALTER TABLE conversations ADD COLUMN IF NOT EXISTS review JSONB;
 ALTER TABLE conversations ADD COLUMN IF NOT EXISTS reviewed_at TIMESTAMP;
+-- The full Review is stored in its own column: "review" holds the short
+-- review log written with memory, and the two must not overwrite each other
+-- (added 2026-10-13)
+ALTER TABLE conversations ADD COLUMN IF NOT EXISTS analysis JSONB;
 
 -- Indexes for common queries
 CREATE INDEX IF NOT EXISTS idx_conversations_learner ON conversations(learner_id);

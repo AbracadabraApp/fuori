@@ -27,6 +27,7 @@
     "test:recording": "tsx tests/check-recording.ts",
     "test:stats": "tsx tests/check-dialogue-stats.ts",
     "test:memory": "tsx tests/check-memory.ts",
+    "test:review": "tsx tests/check-review.ts",
     "test:transcribe": "tsx tests/check-transcribe.ts",
     "test:quality": "tsx tests/check-quality.ts",
     "test:history": "tsx tests/check-history.ts",
