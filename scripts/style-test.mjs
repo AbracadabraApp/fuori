@@ -59,7 +59,7 @@ for (const [cityId, c] of Object.entries(test.cities)) {
     // A city can list several styles to try ("styles": {name: style line}); else its one style
     const styleSet = c.styles ?? { city: c.style };
     const variants = {
-      ...Object.fromEntries(Object.entries(styleSet).map(([n, st]) => [n, `${st}. The scene: ${scene} ${test.rules} Square format.`])),
+      ...Object.fromEntries(Object.entries(styleSet).map(([n, st]) => [n, `${st}. The scene: ${scene} ${test.rulesFor?.[n] ?? test.rules} Square format.`])),
       abstract: `${test.abstract}: ${c.colours}. The scene: ${scene} ${test.rules} Square format.`,
     };
     const row = { cityId, placeId, files: {} };

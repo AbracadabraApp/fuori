@@ -17,7 +17,8 @@
         "diorama": "Miniature isometric diorama: the scene as a tiny handmade model seen from above at an angle, soft clay and painted-wood textures, warm afternoon light, shallow depth of field like a tilt-shift photo",
         "line-spot": "Single continuous ink line drawing in the style of an architect's sketch on off-white paper, with one bright spot colour (hot pink) filling a few shapes; lots of white space",
         "kahlo": "Painting in the style of Frida Kahlo",
-        "rivera": "Painting in the style of Diego Rivera"
+        "rivera": "Painting in the style of Diego Rivera",
+        "day-of-the-dead": "Illustration in Day of the Dead (Día de Muertos) style"
       }
     },
     "oaxaca": {
@@ -60,5 +61,8 @@
     "oaxaca",
     "guadalajara",
     "san-miguel-de-allende"
-  ]
+  ],
+  "rulesFor": {
+    "day-of-the-dead": "Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, rebozos or costumes. Lettering: only the place's own sign, word for word; no other words anywhere, no dates, no 'HOY', no neighbourhood or city names, no slogans, no brand names or logos. Keep the main scene in the centre; nothing important near the edges."
+  }
 }
