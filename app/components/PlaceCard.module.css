@@ -43,3 +43,34 @@
   font-size: 17px;
   color: var(--muted);
 }
+
+/* M2: Visit stamp overlay */
+.stamp {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 48px;
+  height: 48px;
+  opacity: 0.75;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none; /* Don't block card tap */
+}
+
+/* Stamp variants (SVG backgrounds) */
+.stamp[data-variant="terracotta"] {
+  background-image: url('/images/stamps/terracotta.svg');
+}
+
+.stamp[data-variant="olive"] {
+  background-image: url('/images/stamps/olive.svg');
+}
+
+.stamp[data-variant="blue"] {
+  background-image: url('/images/stamps/blue.svg');
+}
+
+.stamp[data-variant="wine"] {
+  background-image: url('/images/stamps/wine.svg');
+}

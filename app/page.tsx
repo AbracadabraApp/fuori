@@ -79,10 +79,12 @@ export default function Home() {
                   return (
                     <PlaceCard
                       key={place.id}
+                      placeId={place.id}
                       placeName={place.name}
                       characterName={character?.name || ''}
                       neighborhood={place.neighbourhood}
                       imageUrl={`${pack.images}/places/${place.id}.jpg`}
+                      visitCount={0} // TODO: get from conversation history
                       onTap={() => setSelectedPlace(place.id)}
                     />
                   );
@@ -123,10 +125,12 @@ export default function Home() {
         {shownCities.map((city) => (
           <PlaceCard
             key={city.id}
+            placeId={city.id}
             placeName={city.name}
             characterName=""
             neighborhood={getRegion(city.id)}
             imageUrl={`${pack.images}/cities/${city.id}.jpg`}
+            visitCount={0} // Cities don't show stamps
             onTap={() => {
               setSelectedCity(city.id);
             }}
