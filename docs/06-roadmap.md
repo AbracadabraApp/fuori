@@ -55,18 +55,31 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 
 **Done when:** you come back to a character another day and they remember your name and something you talked about; and the review log for a conversation picks things you'd agree were worth learning.
 
-## M2: Magda, the day, and people who know you
+## M2: Measurement, teaching, and progress
 
-- [ ] Dialogue digest: every few hours or N new conversations, refresh the problem list and scorecard by prompt version, catch conversations that never sent an end signal, notify Josh only on a regression or a taste change to approve ([plan](10-testing.md#dialogue-quality-decided-2026-10-12)); then a second grader (Grok) on the judge
-- [ ] Name field in settings, sent to Whisper as a hint so names aren't misheard ("Josh" came through as "Josué")
-- [ ] Magda reads the review log: picks a few things to work on, messages when something keeps coming up
-- [ ] End-of-day "Today" page (the diario), drawn from the review log
-- [ ] Learner profile that travels across characters, starting from the learner's stated level and updated from how they speak ([idea](ideas.md#level-speaking-and-review-2026-10-11))
-- [ ] Character-judged success after each conversation, from concrete questions (understood what you wanted? had to repeat? fell back on English?)
-- [ ] Familiarity over visits (stranger → regular → friend, *Lei* → *tu*); structured facts and promises
-- [ ] Where next: characters suggest places, "cambia aria", "vai dove vuoi" (`/api/suggest`, `/api/scene`)
-- [ ] Reasons to return: what's new in a character's life since your last visit, generated when you come back
-- [ ] Fewer, deeper cities with places and people generated as you explore
+### Backend / Infrastructure
+
+**Measurement & Detection:**
+- [ ] Level detection: scorer that classifies speaker and student Italian as A1/A2/B1 with evidence
+- [ ] Learner profile: tracks level, progress, patterns; travels across characters; updated from how they speak
+- [ ] Dialogue digest: automated monitoring refreshes problem list and scorecard by prompt version; catches conversations that never ended; notifies Josh only on regressions or taste changes
+- [ ] Extended scoring: quality score (% of targets met), vocab count (from review log), verb tenses used
+
+**Character Intelligence:**
+- [ ] Character-judged success: after each conversation, concrete questions (understood what you wanted? had to repeat? fell back on English?)
+- [ ] Familiarity progression: stranger → regular → friend; *Lei* → *tu* shift; structured facts and promises
+- [ ] Reasons to return: what's new in character's life since last visit, generated on return
+
+**Content Expansion:**
+- [ ] Where next: characters suggest places ("cambia aria", "vai dove vuoi"); `/api/suggest`, `/api/scene`
+- [ ] Bench characters: audit existing (Italy: 10 exist, 6 hidden), generate for Mexico, deploy in both packs
+- [ ] Travel between cities: Stazione (Italy) / Terminal de autobuses (Mexico) in each city; ticket seller conversation (timetables, platforms, prices); access to all cities including hidden ones; travel vocabulary practice
+
+### Frontend / User-facing
+
+- [ ] Magda at school: teaching mode (not immersion); one Magda per city at scuola; uses learner profile to suggest what to work on OR learner asks what they want to learn; structured lessons with practice
+- [ ] Words at end of conversation: show 3-5 phrases worth keeping from review log; tap to hear each one; natural moment after conversation ends
+- [ ] Visit marks on place cards: CSS stamp overlay after first visit; 4 complementary variants (terracotta, olive, dusty blue, red wine); place ID hash picks variant; character name appears after first meeting
 
 ### Level-aware dialogue (deferred from M1)
 
@@ -85,7 +98,16 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 
 **Only then:** add level to production character prompts and trust it works.
 
-**Done when:** you come back to the same bar on day 3, the barista greets you by name and remembers your usual, and Magda points out something you've been missing.
+**Cut from original M2:**
+- Name field in settings (doesn't scale to general speech recognition issues)
+- "Today" page / diario (extra UI; review log already works)
+- Messages from characters (→ deferred to ideas; keep it simple; focus on in-game experience first)
+
+**Deferred to ideas:**
+- Generation on explore (mechanics TBD: intent vs location vs hybrid)
+- Voice messages, async communication, off-game contact (complexity; need very immersive experience or keep it simple)
+
+**Done when:** you come back to the same bar on day 3, the barista greets you by name and remembers your usual; Magda at school helps you practice something you've been struggling with based on your recent conversations; you can see which places you've visited and travel to a new city via the train station.
 
 ## M3: Levels, interaction and polish
 
