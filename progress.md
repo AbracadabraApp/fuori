@@ -965,3 +965,8 @@ Both services auto-deploying now (~3 min each).
 **Next actions:**
 - Josh: Test return-visit memory (#7), review transcripts
 - Remaining: #13 (bench characters decision)
+
+## 2026-10-13: Study export demo planned for M2 (cloud session)
+
+- Josh: document a demo that uses Fuori's derived material (transcripts, review log) with existing study tools, Gemini Notebook first, Anki second; extra tools for learners who want them, not core game, not a commitment to ship. Plan in docs/study-export-demo.md, linked from Roadmap M2 and ideas.md.
+- Noticed, not changed: Roadmap M2 still lists "Magda at school … one Magda per city", which contradicts today's decision (Magda is the teacher in Seattle; the school has its own tutor). Left for Josh.

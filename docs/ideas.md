@@ -351,3 +351,4 @@ Prompted by "help more beginner level people". Rule behind all three: **everyone
 - **Quizlet second, text only:** Quizlet has no public API, so the most Fuori can offer is a copyable list in the format Quizlet's import accepts (term, tab, meaning per line). No audio or context.
 - **Gemini / NotebookLM** have flashcards but no API to push cards into.
 - **First, the content:** the export is only as good as the review log's picks, which are still debug-only and unchecked. Make those trustworthy before building the export.
+- **Demo planned for M2:** [study-export-demo.md](study-export-demo.md).
