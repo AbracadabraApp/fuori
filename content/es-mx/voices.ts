@@ -23,7 +23,7 @@ export const voices = {
     ],
     m: [
       'HIkzxzvsigFIynXHHKhU', // Hugo M - deep & mysterious, native Mexican, 10.1K uses
-      'U9jmr7kY6mMqS39kfA01', // Javi - social media, energetic Mexican, 769 uses
+      'gbTn1bmCvNgk0QEAVyfM', // Eduardo - warm, clear & mellow, native Mexican, 6.9K uses
       'W6Z2FAa578IKOGSVo2sA', // Alejandro Ballesteros - warm & joyful, Mexican, 98.8K uses
       'LegCbmbXKbT5PUp3QFWv', // Jhony - calm, measured, sincere, Mexican, 6.1K uses
     ],
