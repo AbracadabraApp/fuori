@@ -27,6 +27,8 @@ One Markdown file for one learner and a date range, dropped into Gemini Notebook
 - **One section per conversation:** who (name, role), where (place, neighbourhood, city), when, then the full transcript with each line's English.
 - Lessons with Magda are left out: they are practice, not conversations in town.
 
+**Built 2026-10-14** (`lib/study-export.ts`): `/api/admin/conversations?format=learners&key=…` lists learner ids by number of conversations; `?format=study&learner=<id>&key=…` downloads the file (last 14 days, or `since=` / `until=`). Each site exports its own country's conversations. The level comes from the Level line of Magda's study file, when she has judged one. Conversations where the learner never spoke are skipped.
+
 **Version 2, only if version 1 falls short** (cards miss real mistakes, or Gemini is thrown by speech-to-text errors): add the learning notes to each conversation: things to say better (`mistakes`), words and phrases worth keeping (`items`), what wasn't understood (`missed`), and fallbacks to English (`english`). Comparing the two also shows whether the learning notes add anything Gemini can't find on its own.
 
 ### 2. Try it (Josh, about an hour)

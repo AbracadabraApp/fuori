@@ -31,6 +31,7 @@
     "test:transcribe": "tsx tests/check-transcribe.ts",
     "test:quality": "tsx tests/check-quality.ts",
     "test:history": "tsx tests/check-history.ts",
+    "test:study-export": "tsx tests/check-study-export.ts",
     "smoke:live": "tsx scripts/smoke-live.ts"
   },
   "dependencies": {

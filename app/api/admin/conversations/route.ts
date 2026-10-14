@@ -8,12 +8,17 @@
  * plain transcripts that are easy to read on a phone and paste into a chat;
  * the default is JSON. format=scorecard gives the dialogue scorecard
  * (lib/scorecard.ts) for the scored conversations, one block per prompt version.
+ * format=study&learner=<id>&since=…&until=… gives the study export for one
+ * learner (lib/study-export.ts, docs/study-export-demo.md): a Markdown file
+ * for Gemini Notebook, by default the last 14 days. format=learners lists
+ * learner ids by number of conversations, to find whose export to make.
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
 import { recentConversations, conversationAsText, conversationStats, recordingEnabled } from '@/lib/recording';
 import { scorecard, scorecardAsText } from '@/lib/scorecard';
 import type { ConversationScore } from '@/lib/quality';
+import { learnersWithConversations, loadStudyExport, studyExportMarkdown } from '@/lib/study-export';
 
 function allowed(given: string | null): boolean {
   const key = process.env.ADMIN_KEY;
@@ -28,6 +33,29 @@ export async function GET(request: NextRequest) {
   const given = request.headers.get('x-admin-key') ?? url.searchParams.get('key');
   if (!allowed(given) || !recordingEnabled()) {
     return new NextResponse('Not found', { status: 404 });
+  }
+  if (url.searchParams.get('format') === 'learners') {
+    return new NextResponse((await learnersWithConversations()) || 'No conversations yet.', {
+      headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
+    });
+  }
+  if (url.searchParams.get('format') === 'study') {
+    const learner = url.searchParams.get('learner') ?? '';
+    if (!/^[0-9a-f-]{36}$/.test(learner)) return new NextResponse('learner=<learner id> is required', { status: 400 });
+    const date = (name: string, fallback: Date) => {
+      const v = url.searchParams.get(name);
+      return v && !isNaN(Date.parse(v)) ? new Date(v) : fallback;
+    };
+    const to = date('until', new Date());
+    const from = date('since', new Date(to.getTime() - 14 * 86400_000));
+    const md = studyExportMarkdown(await loadStudyExport(learner, from, to));
+    return new NextResponse(md, {
+      headers: {
+        'Content-Type': 'text/markdown; charset=utf-8',
+        'Content-Disposition': `attachment; filename="study-export-${from.toISOString().slice(0, 10)}-to-${to.toISOString().slice(0, 10)}.md"`,
+        'Cache-Control': 'no-store',
+      },
+    });
   }
   const limit = Number(url.searchParams.get('limit') ?? 20) || 20;
   const sinceParam = url.searchParams.get('since');

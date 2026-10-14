@@ -121,7 +121,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 ## M2.1: Study tools and conversation quality
 
 **Study export:** one Markdown file to drop into Gemini Notebook; see [Study export demo](study-export-demo.md).
-- [ ] Version 1: transcripts only, labelled by who, where and when, from an admin format
+- [x] Version 1: transcripts only, labelled by who, where and when, from an admin format (built 2026-10-14)
 - [ ] Josh tries it in Gemini Notebook (flashcards, quiz, Audio Overview in the country's language)
 - [ ] Version 2 (adds the learning notes) only if version 1 falls short
 

@@ -4,6 +4,7 @@
 
 - `npx tsc --noEmit`: type check
 - `npm run test:models`: no Claude model IDs hard-coded outside `lib/claude.ts`
+- `npm run test:study-export`: the study export file for Gemini has the note (with the speech-to-text line), header, and who, where, when and transcript per conversation
 - `npm run test:pack`: every country pack has what the shared code reads (language words, regions, cities), ids are unique across packs, and an unknown `COUNTRY` stops the app
 - `npm run test:language`: no language names or codes hard-coded in `app/` or `lib/` (they come from `content/it/language.ts`), and prompt templates say `{language}`
 - `npm run test:schema`: the `/api/turn` output schema follows structured-output rules
