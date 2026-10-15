@@ -286,7 +286,7 @@ public final class ConversationModel {
     }
 
     public func resume() async {
-        guard phase == .paused || phase.isFailed else { return }
+        guard phase == .paused || phase.isFailed || phase == .micDenied else { return }
         note = nil
         generation += 1
         if let reply = pendingReply {

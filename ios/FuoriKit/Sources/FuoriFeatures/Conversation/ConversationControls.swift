@@ -33,21 +33,17 @@ struct ConversationControls: View {
 
     // MARK: Pause
 
+    /// One button that toggles: pause while running, play while paused
+    /// (Josh, 2026-10-15). The paused state shows only here, not on the pill.
     private var pauseButton: some View {
-        Group {
-            if model.phase == .paused || model.phase.isFailed {
-                Button { Task { await model.resume() } } label: {
-                    Image(systemName: "play.fill")
-                }
-                .accessibilityLabel("Resume")
-            } else {
-                Button { model.pause() } label: {
-                    Image(systemName: "pause.fill")
-                }
-                .accessibilityLabel("Pause")
-                .disabled(model.phase == .starting || model.phase == .micDenied)
-            }
+        let isPaused = model.phase == .paused || model.phase.isFailed || model.phase == .micDenied
+        return Button {
+            if isPaused { Task { await model.resume() } } else { model.pause() }
+        } label: {
+            Image(systemName: isPaused ? "play.fill" : "pause.fill")
+                .contentTransition(.symbolEffect(.replace))
         }
+        .accessibilityLabel(isPaused ? "Resume" : "Pause")
         .font(.title3)
         .frame(width: 44, height: 44)
         .buttonStyle(.glass)
@@ -71,6 +67,7 @@ struct ConversationControls: View {
             }
             .frame(width: 112, height: 52)
             .shadow(color: .black.opacity(0.18), radius: 4, y: 2)
+            .opacity(model.phase == .paused ? 0.5 : 1)
         }
         .buttonStyle(PressableStyle())
         .disabled(!canTapTurn)
@@ -92,7 +89,7 @@ struct ConversationControls: View {
         case .tapToTalk:
             Image(systemName: "mic.fill").font(.title2).foregroundStyle(Tokens.Colors.card)
         case .paused:
-            Image(systemName: "pause.fill").font(.title3).foregroundStyle(Tokens.Colors.muted)
+            EmptyView() // shown by the pause button alone
         case .starting:
             ProgressView()
         case .micDenied, .failed:
