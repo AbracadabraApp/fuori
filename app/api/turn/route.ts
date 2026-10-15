@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { runTurn } from '@/lib/turn';
 import { promptVersion, historyModeFromEnv } from '@/lib/prompts/build-turn-prompt';
-import { CharacterSheet, Turn } from '@/lib/types';
+import { parseTurnRequest } from '@/lib/turn-request';
 import { logServerError } from '@/lib/server-log';
 import { getOrCreateLearnerId } from '@/lib/learner';
 import { recordTurn, recordingEnabled } from '@/lib/recording';
@@ -23,24 +23,12 @@ export async function POST(request: NextRequest) {
     }
 
     // Parse and validate request body
-    const body = await request.json();
-    const { learnerSaid, character, transcript, conversationId, cityId } = body;
-
-    // Basic validation
-    if (!character) {
-      return NextResponse.json(
-        { error: 'Missing required field: character' },
-        { status: 400 }
-      );
+    // Ids in, character worked out here; sizes capped (lib/turn-request.ts)
+    const parsed = parseTurnRequest(await request.json());
+    if (!parsed.ok) {
+      return NextResponse.json({ error: parsed.error }, { status: parsed.status });
     }
-
-    // For non-first turns, learnerSaid is required
-    if (transcript && transcript.length > 0 && !learnerSaid) {
-      return NextResponse.json(
-        { error: 'learnerSaid is required for non-first turns' },
-        { status: 400 }
-      );
-    }
+    const { learnerSaid, character, transcript, conversationId, cityId } = parsed;
 
     // Who's talking, and what this character remembers about them (fills the
     // prompt's {relationship} line). Never blocks the reply: without it the
@@ -52,8 +40,8 @@ export async function POST(request: NextRequest) {
         learnerId = await getOrCreateLearnerId();
         // Mid-conversation: what they remembered when it started
         memory =
-          (typeof conversationId === 'string' ? await loadMemoryAtStart(conversationId, learnerId) : null) ??
-          (await loadCharacterMemory(learnerId, (character as CharacterSheet).id));
+          (conversationId ? await loadMemoryAtStart(conversationId, learnerId) : null) ??
+          (await loadCharacterMemory(learnerId, character.id));
       } catch (err) {
         logServerError(request, 'memory load', err);
       }
@@ -61,14 +49,14 @@ export async function POST(request: NextRequest) {
 
     // Magda teaches with her own prompt: her memory is the study file, and she
     // gets one fact for pacing, how many replies the learner has made this lesson
-    const isTutor = (character as CharacterSheet).id === tutor.id;
+    const isTutor = character.id === tutor.id;
     const tutorPrompt = isTutor
-      ? buildTutorPrompt({ character: character as CharacterSheet, memory, replies: repliesSoFar((transcript || []) as Turn[], learnerSaid) })
+      ? buildTutorPrompt({ character, memory, replies: repliesSoFar(transcript, learnerSaid) })
       : undefined;
 
     const turnOutput = await runTurn({
-      character: character as CharacterSheet,
-      transcript: (transcript || []) as Turn[],
+      character,
+      transcript: transcript,
       learnerSaid,
       memory,
       system: tutorPrompt?.system,
@@ -82,8 +70,8 @@ export async function POST(request: NextRequest) {
         level: 'info',
         event: 'turn',
         id: request.headers.get('x-fuori-id') ?? undefined,
-        character: (character as CharacterSheet).id,
-        turn: (transcript || []).length === 0 ? 'opening' : 'reply',
+        character: character.id,
+        turn: transcript.length === 0 ? 'opening' : 'reply',
         promptVersion: version,
         history: historyModeFromEnv(),
       })
@@ -96,11 +84,11 @@ export async function POST(request: NextRequest) {
       try {
         savedId = await recordTurn({
           learnerId,
-          conversationId: typeof conversationId === 'string' ? conversationId : null,
-          character: character as CharacterSheet,
-          cityId: typeof cityId === 'string' ? cityId : (character as CharacterSheet).city.toLowerCase(),
+          conversationId: conversationId ?? null,
+          character,
+          cityId,
           promptVersion: version,
-          learnerSaid: (transcript || []).length ? learnerSaid : undefined,
+          learnerSaid: transcript.length ? learnerSaid : undefined,
           reply: turnOutput,
           memory,
         });

@@ -7,10 +7,9 @@ import { SettingsButton } from './components/SettingsButton';
 import { CityPicker } from './components/CityPicker';
 import { language, cities as cityPantries, pack } from '@/content';
 import { ConversationScreen } from './components/ConversationScreen';
-import { characterForPlace } from '@/lib/characters/for-place';
+import { characterForVisit } from '@/lib/characters/for-visit';
 import { feedOrder } from '@/lib/places/feed-order';
-import { clerkSetting, departureFor, type Departure } from '@/lib/travel/departure';
-import { CharacterSheet } from '@/lib/types';
+import { departureFor, type Departure } from '@/lib/travel/departure';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -111,21 +110,11 @@ export default function Home() {
     const cityData = cityPantries.find((c) => c.id === selectedCity);
     const place = cityData?.places.find((p) => p.id === selectedPlace);
 
-    // Anchors (Giulia, Rita) or the city file's character for this place
-    let characterSheet: CharacterSheet | undefined =
-      cityData && place ? characterForPlace(cityData, place) : undefined;
-
-    // At the station with a trip chosen: the ticket seller knows where you're going
+    // Anchors, Magda or the city file's character; at the station with a trip
+    // chosen, the ticket seller knows where you're going. The server works out
+    // the same person from the same ids (lib/characters/for-visit.ts).
+    const characterSheet = characterForVisit(selectedCity, selectedPlace, trip?.to);
     const destination = trip ? cityPantries.find((c) => c.id === trip.to) : undefined;
-    if (characterSheet && trip && destination) {
-      characterSheet = {
-        ...characterSheet,
-        appearance: {
-          ...characterSheet.appearance,
-          setting: clerkSetting(characterSheet.appearance?.setting ?? '', destination.name, trip.platform),
-        },
-      } as CharacterSheet;
-    }
 
     if (!characterSheet) {
       return (
@@ -145,6 +134,8 @@ export default function Home() {
         characterPortrait={`${pack.images}/portraits/${characterSheet.id}.jpg`}
         cityName={cityData?.name || ''}
         cityId={cityData?.id}
+        placeId={selectedPlace}
+        tripTo={trip?.to}
         neighbourhood={place?.neighbourhood}
         onBack={() => {
           setSelectedPlace(null);

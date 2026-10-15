@@ -32,7 +32,7 @@ export async function runTurn(params: {
 
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
-    max_tokens: 2048,
+    max_tokens: 800, // was 2048; a reply is ~20 words. Caps the cost of a turn someone tries to stretch (docs/12-native-app.md)
     temperature: 1.0,
     system: prompt.system,
     messages: prompt.messages,
@@ -40,6 +40,11 @@ export async function runTurn(params: {
       format: { type: 'json_schema', schema: turnOutputJsonSchema },
     },
   });
+
+  // Cut off mid-JSON: say so, rather than "invalid JSON"
+  if (response.stop_reason === 'max_tokens') {
+    throw new Error(`Reply hit max_tokens (${response.usage.output_tokens} tokens)`);
+  }
 
   const text = replyText(response);
 

@@ -34,6 +34,7 @@
     "test:study-export": "tsx tests/check-study-export.ts",
     "smoke:live": "tsx scripts/smoke-live.ts",
     "test:leave": "tsx tests/check-leave.ts",
+    "test:turn-request": "tsx tests/check-turn-request.ts",
     "style-test": "node --env-file-if-exists=.env.local scripts/style-test.mjs"
   },
   "dependencies": {

@@ -48,7 +48,9 @@ check(!('time' in a), 'no departure time: it could contradict the ticket seller'
 const said = clerkSetting('Stazione Termini, Esquilino', 'Firenze', a.platform);
 check(said.includes('Firenze') && said.includes(`platform ${a.platform}`), `seller knows destination and platform: ${said}`);
 check(/just told you/.test(said), 'the destination is framed as already said by the person');
-check(readFileSync('app/page.tsx', 'utf8').includes('clerkSetting('), 'the station screen builds the seller\'s setting with clerkSetting');
+// The seller's setting is built from ids (page and server alike) in for-visit.ts; the page passes the trip
+check(readFileSync('lib/characters/for-visit.ts', 'utf8').includes('clerkSetting('), 'the seller\'s setting is built with clerkSetting (lib/characters/for-visit.ts)');
+check(readFileSync('app/page.tsx', 'utf8').includes('characterForVisit(selectedCity, selectedPlace, trip?.to)'), 'the station screen passes the trip to characterForVisit');
 const ticket = readFileSync('app/components/Ticket.tsx', 'utf8');
 check(ticket.includes('onClick={onBoard}'), 'the ticket\'s board button calls onBoard');
 

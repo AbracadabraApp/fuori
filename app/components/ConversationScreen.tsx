@@ -64,6 +64,10 @@ interface ConversationScreenProps {
   cityName: string;
   /** City id (e.g. 'napoli'), saved with the recorded conversation */
   cityId?: string;
+  /** Place id: with cityId (and tripTo at a station), how the server finds the character */
+  placeId?: string;
+  /** Station only: the city the ticket is for, so the seller names it */
+  tripTo?: string;
   /** Neighbourhood of the place, shown after the role ("Bolero, Roma Norte") */
   neighbourhood?: string;
   onBack: () => void;
@@ -87,6 +91,8 @@ export function ConversationScreen({
   characterPortrait,
   cityName,
   cityId,
+  placeId,
+  tripTo,
   neighbourhood,
   onBack,
   onOpenSettings,
@@ -319,7 +325,7 @@ export function ConversationScreen({
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ character, transcript: [], cityId }),
+            body: JSON.stringify({ cityId, placeId, tripTo, transcript: [] }),
           },
           'opening line'
         )
@@ -616,7 +622,7 @@ export function ConversationScreen({
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ learnerSaid: transcription, character, transcript, cityId, conversationId: conversationIdRef.current }),
+            body: JSON.stringify({ cityId, placeId, tripTo, learnerSaid: transcription, transcript, conversationId: conversationIdRef.current }),
           },
           'reply'
         )
