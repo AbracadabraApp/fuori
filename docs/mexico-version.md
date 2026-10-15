@@ -54,6 +54,18 @@
 
 **Prompts**
 
+City pictures, redone 2026-10-14 (these replace the Mexico City and Guadalajara prompts further down):
+
+Mexico City, Chapultepec Castle:
+```
+Bright photorealistic city street photography of Mexico City today, taken at eye level with nothing blocking the view: crisp detail, true-to-life saturated colour, bright late-morning sun and dappled light; no haze, no pastel wash, no deep dark shadows. The scene: the terrace of Chapultepec Castle, home of the Museo Nacional de Historia: the pale neoclassical castle with its arcaded balconies and stone balustrades, a wide paved terrace with formal gardens, looking out over the treetops of Chapultepec Park toward the towers of Paseo de la Reforma; local families and a school group strolling, a grandfather with a granddaughter at the balustrade. Everyday local life, contemporary clothes; no costumes, no sombreros. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs. Square format.
+```
+
+Guadalajara, linocut:
+```
+Linocut print with bold carved black lines and wood-grain texture, strong contrast, in bright colour. Palette: terracotta, teal, mustard and sky blue. The scene: Guadalajara today, a wide pedestrian avenue with planted beds, the cathedral's yellow spires in the distance, a modern city bus and current cars on the road, people on bicycles, a young woman drinking tejuino from a plastic cup at a stand with a teal awning, a pottery shop from nearby Tlaquepaque with clay pots stacked outside. Modern, sunny, confident. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, skulls, rebozos or costumes. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. Absolutely no words or letters anywhere: no title, no banners, no badges or round labels, no signs, no shop names; a picture only, not a poster. Square format.
+```
+
 Mexico City (approved):
 ```
 Flat matte gouache illustration with simplified shapes and visible but thin brushstrokes, no thick paint, no impasto. Limited palette: jacaranda purple, dusty pink, ochre, turquoise, deep green. A street corner in Roma Norte, Mexico City, in March: jacaranda trees in full bloom arching over a wide avenue with a planted central walkway, 1920s Art Deco apartment buildings with rounded corner balconies and geometric trim, a tamale seller with a steaming pot on the back of a bicycle, a schoolgirl in uniform and her grandmother buying tamales, a man in a guayabera reading the paper on a bench, purple petals scattered on the pavement, a dog asleep in the shade. Warm late-morning light, crisp shadows. Everyday neighbourhood life. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. No text, no lettering, no signs.
@@ -133,6 +145,7 @@ About 1 day of code generalization (mostly Claude Code work) plus about a day of
 
 Style test (`content/es-mx/style-test.json`, `npm run style-test`): each city's places in its own style beat the shared linocut; abstract was rejected.
 - **Decided:** Guadalajara keeps linocut, with the lettering fixed: only the place's own sign, word for word; no "HOY" (the word "today" in prompts was painted as HOY), no neighbourhood or city names, no slogans, no brand logos, no rebozos or costumes.
+- **Decided (Josh, 2026-10-14, evening):** Mexico City's places are bright daytime photos, each naming its own quarter (`{neighbourhood}` in the style line): the first photo version was dark and odd (low sun, deep shadows, a blurred bike in most pictures). The city picture is now Chapultepec Castle in the same style, and Guadalajara's city picture is redone as a linocut to match its places. Prompts under "City pictures, redone 2026-10-14" below.
 - **Decided:** Puebla's places use the city card's Talavera prompt.
 - **Decided:** Oaxaca's places combine the city card's folk painting with a shadow-box diorama (Josh, 2026-10-14; was folk painting alone).
 - **Decided:** San Miguel's places use the city card's mural prompt (round 1 version).

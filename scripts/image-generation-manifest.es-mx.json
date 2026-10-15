@@ -252,8 +252,8 @@
       "type": "portrait"
     },
     "ciudad-de-mexico/alameda-central": {
-      "timestamp": "2026-10-15T00:36:45.399Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/alameda-central.jpg",
+      "timestamp": "2026-10-15T01:46:59.567Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/alameda-central.jpg",
       "type": "place"
     },
     "ciudad-de-mexico/carmen-jubilada": {
@@ -327,63 +327,63 @@
       "type": "portrait"
     },
     "ciudad-de-mexico/puesto-de-boleo-don-chucho": {
-      "timestamp": "2026-10-15T00:32:15.313Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/puesto-de-boleo-don-chucho.jpg",
+      "timestamp": "2026-10-15T01:42:50.346Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/puesto-de-boleo-don-chucho.jpg",
       "type": "place"
     },
     "ciudad-de-mexico/libros-tecolote": {
-      "timestamp": "2026-10-15T00:32:41.928Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/libros-tecolote.jpg",
+      "timestamp": "2026-10-15T01:43:14.275Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/libros-tecolote.jpg",
       "type": "place"
     },
     "ciudad-de-mexico/cafe-amapola": {
-      "timestamp": "2026-10-15T00:33:10.983Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cafe-amapola.jpg",
+      "timestamp": "2026-10-15T01:43:35.666Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/cafe-amapola.jpg",
       "type": "place"
     },
     "ciudad-de-mexico/panaderia-la-concha-de-oro": {
-      "timestamp": "2026-10-15T00:33:38.171Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/panaderia-la-concha-de-oro.jpg",
+      "timestamp": "2026-10-15T01:44:03.361Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/panaderia-la-concha-de-oro.jpg",
       "type": "place"
     },
     "ciudad-de-mexico/parque-mexico": {
-      "timestamp": "2026-10-15T00:34:09.871Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/parque-mexico.jpg",
+      "timestamp": "2026-10-15T01:44:25.164Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/parque-mexico.jpg",
       "type": "place"
     },
     "ciudad-de-mexico/quesadillas-dona-lupe": {
-      "timestamp": "2026-10-15T00:34:36.736Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/quesadillas-dona-lupe.jpg",
+      "timestamp": "2026-10-15T01:44:53.486Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/quesadillas-dona-lupe.jpg",
       "type": "place"
     },
     "ciudad-de-mexico/tacos-el-trompo-rojo": {
-      "timestamp": "2026-10-15T00:35:05.336Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tacos-el-trompo-rojo.jpg",
+      "timestamp": "2026-10-15T01:45:21.064Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/tacos-el-trompo-rojo.jpg",
       "type": "place"
     },
     "ciudad-de-mexico/fonda-dona-cuca": {
-      "timestamp": "2026-10-15T00:35:31.392Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fonda-dona-cuca.jpg",
+      "timestamp": "2026-10-15T01:45:44.499Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/fonda-dona-cuca.jpg",
       "type": "place"
     },
     "ciudad-de-mexico/catedral-metropolitana": {
-      "timestamp": "2026-10-15T00:35:54.864Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/catedral-metropolitana.jpg",
+      "timestamp": "2026-10-15T01:46:09.291Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/catedral-metropolitana.jpg",
       "type": "place"
     },
     "ciudad-de-mexico/cantina-la-opera": {
-      "timestamp": "2026-10-15T00:36:21.766Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cantina-la-opera.jpg",
+      "timestamp": "2026-10-15T01:46:35.217Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/cantina-la-opera.jpg",
       "type": "place"
     },
     "ciudad-de-mexico/escuela-lengua-cdmx": {
-      "timestamp": "2026-10-15T00:37:12.077Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/escuela-lengua-cdmx.jpg",
+      "timestamp": "2026-10-15T01:47:22.458Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/escuela-lengua-cdmx.jpg",
       "type": "place"
     },
     "ciudad-de-mexico/terminal-tapo": {
-      "timestamp": "2026-10-15T00:37:35.084Z",
-      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-tapo.jpg",
+      "timestamp": "2026-10-15T01:47:46.853Z",
+      "path": "/home/claude/fuori/public/images/es-mx/places/terminal-tapo.jpg",
       "type": "place"
     },
     "guadalajara/tejuino-san-juan-de-dios": {
@@ -632,6 +632,6 @@
     "total": 125,
     "completed": 125,
     "failed": 0,
-    "lastRun": "2026-10-15T01:02:54.921Z"
+    "lastRun": "2026-10-15T01:47:49.857Z"
   }
 }

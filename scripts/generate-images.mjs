@@ -114,6 +114,9 @@ async function generateImage(prompt, type) {
       model: 'grok-imagine-image-2.0',
       prompt,
       n: 1,
+      // The image comes back in the response, not as a link to a second host
+      // (the cloud session can reach api.x.ai but not the image host)
+      response_format: 'b64_json',
       ...(size.aspect_ratio ? { aspect_ratio: size.aspect_ratio } : {}),
       ...(size.resolution ? { resolution: size.resolution } : {}),
     }),
@@ -124,8 +127,7 @@ async function generateImage(prompt, type) {
   }
 
   const data = await response.json();
-  const imageResponse = await fetch(data.data[0].url);
-  return await imageResponse.arrayBuffer();
+  return Buffer.from(data.data[0].b64_json, 'base64');
 }
 
 // Resize to the configured size and save as JPEG quality 82 (sharp; any OS).

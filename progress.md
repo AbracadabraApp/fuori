@@ -1299,3 +1299,9 @@ Josh allowed the two live sites, api.x.ai and api.elevenlabs.io in claude.ai's n
 - Images: `railway run --service Fuori -- env COUNTRY=es-mx npm run images -- ...` works here now.
 - The database is internal to Railway (`postgres.railway.internal`), so smoke:live can't delete its test learners from here. Left: 88a31b82-1ca8-48ee-81cb-0fac5318e4a8 (Fuori), 71b218f1-1e3a-4a18-ab4e-f429806e280f (Afuera).
 - **Station path checked live, 2026-10-14** (headless Chromium, iPhone size, both sites): city → station → departures board → ticket seller with ticket → Start conversation → clerk names the destination and platform (Roma→Firenze "binario 3", CDMX→Guadalajara "andén 2", matching the ticket) → Sali/Subir → arrive at the new city, and `/api/conversation/end` is sent on boarding. Found: "Start conversation" is hard-coded English in `ConversationScreen.tsx` (not from `language.ts`); `test:language` doesn't catch it.
+
+## 2026-10-14 evening: Mexico City and Guadalajara images redone (cloud session)
+- Josh found the new Mexico City places dark and odd. New style line: bright late-morning photos, nothing blocking the view, and each place's quarter named (`{neighbourhood}`; Condesa, Roma Norte, Coyoacán, Centro Histórico). All 13 regenerated from the cloud session.
+- City pictures: Mexico City is now Chapultepec Castle (Josh picked it over Cibeles, the Anthropology museum courtyard and the jacaranda avenue); Guadalajara is redone as a linocut to match its places (first try had made-up lettering; a firmer no-lettering line fixed it). Prompts in `docs/mexico-version.md`.
+- `generate-images.mjs` now asks xAI for the image in the response (`b64_json`): the cloud session can't reach the host the image links point to.
+- Known small flaws, left: Cantina La Ópera reads as a free-standing bar; the cathedral has trees in front.
