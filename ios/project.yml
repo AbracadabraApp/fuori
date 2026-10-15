@@ -53,8 +53,11 @@ targets:
         UIAppFonts:
           - Alegreya.ttf
           - AlegreyaSans-Regular.ttf
+          - AlegreyaSans-Italic.ttf
           - AlegreyaSans-Medium.ttf
           - AlegreyaSans-Bold.ttf
+        # Shown with the first microphone request (docs/13-ios-conventions.md → Privacy)
+        NSMicrophoneUsageDescription: "Fuori listens while it's your turn, so the person you're talking with can hear and answer you. What you say is sent to Fuori's server and AI services to understand it."
         ITSAppUsesNonExemptEncryption: false
         NSAppTransportSecurity:
           NSAllowsLocalNetworking: true

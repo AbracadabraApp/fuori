@@ -11,14 +11,17 @@ let package = Package(
         .library(name: "FuoriCore", targets: ["FuoriCore"]),
         .library(name: "FuoriNetworking", targets: ["FuoriNetworking"]),
         .library(name: "FuoriDesign", targets: ["FuoriDesign"]),
+        .library(name: "FuoriAudio", targets: ["FuoriAudio"]),
         .library(name: "FuoriFeatures", targets: ["FuoriFeatures"]),
     ],
     targets: [
         .target(name: "FuoriCore"),
         .target(name: "FuoriNetworking", dependencies: ["FuoriCore"]),
         .target(name: "FuoriDesign"),
-        .target(name: "FuoriFeatures", dependencies: ["FuoriCore", "FuoriNetworking", "FuoriDesign"]),
+        .target(name: "FuoriAudio"),
+        .target(name: "FuoriFeatures", dependencies: ["FuoriCore", "FuoriNetworking", "FuoriDesign", "FuoriAudio"]),
         .testTarget(name: "FuoriCoreTests", dependencies: ["FuoriCore"], resources: [.copy("Fixtures")]),
         .testTarget(name: "FuoriNetworkingTests", dependencies: ["FuoriNetworking"]),
+        .testTarget(name: "FuoriAudioTests", dependencies: ["FuoriAudio"]),
     ]
 )

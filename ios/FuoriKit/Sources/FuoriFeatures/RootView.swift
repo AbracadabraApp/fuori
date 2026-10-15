@@ -34,8 +34,9 @@ public struct RootView: View {
                                 PlaceListView(city: city, content: content)
                             }
                             .navigationDestination(for: PersonRoute.self) { route in
-                                if let person = content.character(route.place.characterId) {
-                                    PersonView(city: route.city, place: route.place, character: person)
+                                if let person = content.character(route.place.characterId),
+                                   let conversation = model.conversation(city: route.city, place: route.place, character: person) {
+                                    PersonView(model: conversation)
                                 }
                             }
                     }
