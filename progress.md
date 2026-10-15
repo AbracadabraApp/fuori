@@ -1343,5 +1343,6 @@ Checked for docs/12-native-app.md (one app, two Railway services):
 - **Next:**
   1. Revise the conversation controls: Josh finds them too much (Pause button, pill and status label all at the bottom, the pill and label saying the same thing). The full inventory of elements and states was given in the session; decide the design first, ideally from a sketch.
   2. Try it on Josh's iPhone (installed; only the simulator has been used so far).
+  - **First real conversation (Josh, simulator, 23:19–23:26 UTC):** 13 learner turns with Franco, saved on leaving; 8 accurate memory notes (Giosuè, Seattle, Bologna, third time in Rome, carbonara for his kids, four tomatoes, basil, sent to the cheesemonger). Whisper kept his real errors and Franco recast them in role; garbled "stale Peppe" understood as cacio e pepe; asked what "finora" meant, got the English briefly and went back to Italian. No line looked cut off by the 4 s wait. Whisper's garbles ("platta", "pencetta") would mislead learning notes: known risk from the research.
   3. The rest of N1: the reply prepared during the silence, cut-off adaptation, then the device checklist (call, Siri, AirPods, locking).
   4. Railway watch paths (ios/ commits still redeploy both services).
