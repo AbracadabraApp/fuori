@@ -57,7 +57,7 @@ struct ConversationControls: View {
             ZStack {
                 Capsule().fill(pillFill)
                 Capsule().strokeBorder(ringColour.opacity(0.35), lineWidth: 2)
-                if model.phase == .hearing {
+                if model.phase == .hearing && !model.tapMode {
                     Capsule()
                         .trim(from: 0, to: model.ring)
                         .stroke(Tokens.Colors.green, style: StrokeStyle(lineWidth: 3, lineCap: .round))
@@ -83,7 +83,13 @@ struct ConversationControls: View {
                 .foregroundStyle(Tokens.Colors.card)
                 .symbolEffect(.variableColor.iterative, isActive: !reduceMotion)
         case .listening, .hearing:
-            LevelDots(level: model.level, colour: Tokens.Colors.green)
+            HStack(spacing: 10) {
+                LevelDots(level: model.level, colour: Tokens.Colors.green)
+                if model.tapMode {
+                    // Tap mode: the learner ends the turn, so show how
+                    Image(systemName: "stop.fill").font(.footnote).foregroundStyle(Tokens.Colors.green)
+                }
+            }
         case .thinking:
             LevelDots(level: reduceMotion ? 0.3 : nil, colour: Tokens.Colors.terracotta)
         case .tapToTalk:
@@ -127,7 +133,7 @@ struct ConversationControls: View {
         switch model.phase {
         case .starting: ("Arriving…", "figure.walk")
         case .speaking: (model.character.name, "waveform")
-        case .listening, .hearing: ("Your turn", "mic.fill")
+        case .listening, .hearing: (model.tapMode ? "Listening. Tap when you've finished" : "Your turn", "mic.fill")
         case .thinking: ("\(model.character.name) is thinking", "ellipsis")
         case .tapToTalk: ("Tap to speak", "hand.tap.fill")
         case .paused: ("Paused", "pause.fill")

@@ -10,9 +10,11 @@ import UIKit
 import AVFoundation
 #endif
 
-/// One hands-free conversation (docs/12-native-app.md → Audio pipeline):
-/// the character speaks, the mic opens for the learner's turn, the turn ends
-/// after a silence, the reply comes back and is spoken, and so on. The mic is
+/// One conversation (docs/12-native-app.md → Audio pipeline): the character
+/// speaks by himself; by default the learner taps to talk and taps again when
+/// done (Josh, 2026-10-15: two-way hands-free isn't the best default). With
+/// Hands-free on in Settings, the mic opens by itself and the turn ends after
+/// a silence. The mic is
 /// open only during the learner's turn. Pause is always available; calls,
 /// Siri, AirPods out and backgrounding pause, and the mic never reopens
 /// without a tap (docs/13-ios-conventions.md R4, D3).
@@ -30,7 +32,8 @@ public final class ConversationModel {
         case hearing
         /// Understanding the learner and getting the reply
         case thinking
-        /// VoiceOver is on: the mic opens on a tap (so it doesn't record VoiceOver's own voice)
+        /// The learner's turn, mic closed: a tap opens it (the default, and
+        /// always under VoiceOver so it doesn't record VoiceOver's own voice)
         case tapToTalk
         case paused
         case micDenied
@@ -75,6 +78,10 @@ public final class ConversationModel {
     /// Waits (Josh, 2026-10-15): 10 s for the first word, the turn ends after
     /// 4 s of silence; "more time to answer" gives 8 s and no first-word limit
     private var moreTime: Bool { UserDefaults.standard.bool(forKey: SettingsKey.moreTime) }
+    /// Tap to talk (the default) unless Hands-free is on; always under VoiceOver
+    public var tapMode: Bool { isVoiceOverRunning || !UserDefaults.standard.bool(forKey: SettingsKey.handsFree) }
+    /// Tap mode: a turn can't run longer than this, in case the second tap never comes
+    private let longestTurn: TimeInterval = 90
     private var firstWordWait: TimeInterval? { moreTime ? nil : 10 }
     private var endOfTurnWait: TimeInterval { moreTime ? 8 : 4 }
     /// Less than this much voice isn't a turn (a cough, a click)
@@ -157,7 +164,7 @@ public final class ConversationModel {
         // Paused while thinking: the mic stays closed until a tap
         guard phase != .paused else { return }
         ring = 0
-        if isVoiceOverRunning {
+        if tapMode {
             phase = .tapToTalk
             return
         }
@@ -200,6 +207,11 @@ public final class ConversationModel {
         let snapshot = gate.snapshot()
         let now = ProcessInfo.processInfo.systemUptime
         level = snapshot.level
+        if tapMode {
+            // The learner ends the turn with a tap; no silence timer
+            if snapshot.hasSpoken { phase = .hearing }
+            return now - turnStartedAt >= longestTurn
+        }
         guard snapshot.hasSpoken else {
             if let wait = firstWordWait, now - turnStartedAt >= wait {
                 // Nothing said: pause rather than keep listening to the room

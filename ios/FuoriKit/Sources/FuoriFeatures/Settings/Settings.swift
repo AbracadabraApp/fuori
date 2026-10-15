@@ -7,6 +7,9 @@ public enum SettingsKey {
     public static let subtitles = "settings.subtitles"
     public static let english = "settings.english"
     public static let moreTime = "settings.moreTime"
+    /// Off (default, Josh 2026-10-15): tap to talk, tap again when done.
+    /// On: the mic opens by itself after the character and closes after a silence.
+    public static let handsFree = "settings.handsFree"
 }
 
 /// The settings button, top right on every screen (Josh, D2), with Fuori's
@@ -36,6 +39,7 @@ struct SettingsSheet: View {
     @AppStorage(SettingsKey.subtitles) private var subtitles = true
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.moreTime) private var moreTime = false
+    @AppStorage(SettingsKey.handsFree) private var handsFree = false
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -48,9 +52,14 @@ struct SettingsSheet: View {
                     Text("What people say, written under them, and its English.")
                 }
                 Section {
-                    Toggle("More time to answer", isOn: $moreTime)
+                    Toggle("Hands-free", isOn: $handsFree)
+                    if handsFree {
+                        Toggle("More time to answer", isOn: $moreTime)
+                    }
                 } footer: {
-                    Text("Waits longer for you to start and to finish speaking before it's the other person's turn.")
+                    Text(handsFree
+                         ? "The microphone opens by itself when it's your turn and closes after a pause. More time to answer waits longer before your turn ends."
+                         : "Tap to talk, and tap again when you've finished.")
                 }
             }
             .navigationTitle("Settings")
