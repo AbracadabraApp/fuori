@@ -1,0 +1,40 @@
+# Builds and tests the iPhone app when anything under ios/ changes, so Swift
+# edits from a session without a Mac (the cloud session) are checked before
+# anyone relies on them (docs/12-native-app.md → Working with Xcode).
+# Passing here means it compiles and the package tests pass, not that it was
+# used on a phone: that still needs Josh's iPhone.
+name: iOS
+
+on:
+  push:
+    branches: [main]
+    paths: ['ios/**', 'design/**', '.github/workflows/ios.yml']
+  pull_request:
+    paths: ['ios/**', 'design/**', '.github/workflows/ios.yml']
+
+jobs:
+  build-and-test:
+    runs-on: macos-26
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: ios
+    steps:
+      - uses: actions/checkout@v4
+      - name: Design tokens match design/tokens.json
+        working-directory: .
+        run: node scripts/tokens.mjs --check
+      - name: Tools
+        run: brew install xcodegen xcbeautify
+      - name: Xcode version
+        run: xcodebuild -version
+      - name: Package tests
+        run: cd FuoriKit && swift test
+      - name: Generate project
+        run: xcodegen generate --quiet
+      - name: Build for the simulator
+        run: |
+          set -o pipefail
+          xcodebuild -project Fuori.xcodeproj -scheme Fuori \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO build | xcbeautify
