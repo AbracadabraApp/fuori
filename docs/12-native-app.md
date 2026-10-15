@@ -1,6 +1,6 @@
 # Native iPhone app: plan
 
-Status: **draft for Josh's decisions** (2026-10-15). Josh decided to move Fuori to a native Swift app, built in Xcode with MCP. HTML stays for prototyping, but the web app will not be maintained. This plan was put together from three reviews of the repo: an iOS architect, a service architect and a migration planner. Where they disagreed, the disagreement is listed under [Decisions](#decisions-for-josh).
+Status: **decisions 1–6, 8 and 9 made** (Josh, 2026-10-15); 7 open. See [Decisions](#decisions). Josh decided to move Fuori to a native Swift app, built in Xcode with MCP. HTML stays for prototyping, but the web app will not be maintained. This plan was put together from three reviews of the repo: an iOS architect, a service architect and a migration planner. Where they disagreed, the disagreement is listed under [Decisions](#decisions).
 
 ## Summary
 
@@ -30,7 +30,7 @@ Safari workarounds that disappear on iOS: the silent-WAV audio unlock, `MediaRec
 
 ## iOS client
 
-**Stack:** SwiftUI + Observation (`@Observable`). iOS 18 minimum. No third-party runtime dependencies; `swift-snapshot-testing` only as a test dependency.
+**Stack:** SwiftUI + Observation (`@Observable`). iOS 26 minimum (decision 8). No third-party runtime dependencies; `swift-snapshot-testing` only as a test dependency.
 
 ```
 ios/
@@ -54,7 +54,15 @@ ios/
 - **Session:** `.playAndRecord` with `.defaultToSpeaker` and `.allowBluetooth`. Turn it on when a conversation starts and off when it ends. Try `.default` mode first for TTS quality and switch to `.voiceChat` (echo cancellation) only if echo is a problem. Decide on a real device.
 - **Recording:** `AVAudioEngine` input tap → 16 kHz mono → AAC `speech.m4a`. One code path feeds both the voice gate and the file.
 - **Voice gate (M3 item 5), works in any language:** measure energy (RMS in dBFS) against a noise floor taken from the first 300 ms. Trim silence from both ends and keep 200 ms of padding. If there's less than about 250 ms of voice, don't upload. That means no Groq charge and no Whisper inventions on silence. Send the voiced milliseconds as a header. Add Apple's `SoundAnalysis` only if fans or traffic get through.
-- **Interaction:** a press starts recording. A release after more than 400 ms stops it (hold to record); a quicker release leaves it running until the next tap (toggle). That is one gesture with no setting. (Decision 4.)
+- **Hands-free conversation (decision 4, Josh 2026-10-15).** No record button: the conversation runs like a call.
+  1. Entering a place starts the conversation, and the character greets you.
+  2. When the character finishes, the mic opens and the screen shows it's your turn. **The mic is closed while the character speaks**, so the phone never hears the character through its own speaker. A tap stops the character and opens your turn. Interrupting by voice would need Apple's echo cancellation (`setVoiceProcessingEnabled`); try that later, behind a setting.
+  3. **Waiting for your first word: about 10 s.** If nothing comes, the conversation pauses (mic off, tap to continue). That saves cost and avoids Whisper inventing words from silence.
+  4. **Once you've spoken, the turn ends after 4.5 s of silence** (Josh: 4–5 s; 2 s cuts off a learner who's thinking of more to say). A ring fills during the silence, and any sound resets it. A tap ends the turn at once.
+  5. **The reply is prepared during the wait.** After about 1.5 s of silence the app uploads the voiced audio, transcribes it and asks for the reply in the background. If you speak again, that draft is thrown away and recording continues. If the silence holds, the reply plays as the ring completes, so the long wait doesn't add processing time on top. Wasted calls are logged, so their cost can be measured.
+  6. **The wait adapts to the learner.** Measure the pauses inside a learner's turns (silences after which they kept talking) and set the wait just above their typical thinking pause, within limits, starting from 4.5 s. That's timing, not words, so it works in any language.
+  7. **Noisy places:** the voice detector re-measures the room's noise at the start of each turn. If cafés still trip it, add `SoundAnalysis` speech detection.
+  8. Asking in English ("Come si dice?") has a button on the web. Hands-free, Whisper's language detection could notice English on its own; decide in N1.
 - **Playback:** download, then `AVAudioPlayer`. Replies are short, and you get the exact duration for the subtitle reveal. Stream only if measurements show it's needed. Fallback voice: `AVSpeechSynthesizer` with the pack's speech code and the best-quality voice, picked consistently from the character id. Show the fallback honestly with its E-code.
 - **Interruptions:** recording stops all playback first (barge-in). On a call or Siri, stop everything and don't resume. If AirPods are removed, stop playback; never switch to the speaker. If the route changes mid-recording, rebuild the converter. Test Whisper accuracy with the AirPods microphone early. No background audio: silence when `scenePhase != .active`.
 - **Saving on leave:** every exit (back, station, going to the background) goes through one `leaveConversation()`. It calls `POST …/end` inside `beginBackgroundTask`. If that fails, it keeps the id on disk and retries at the next launch, and the failure is shown, not swallowed. As a backstop, the server closes conversations that have been idle for more than 30 minutes, so memory never depends on the phone.
@@ -82,7 +90,7 @@ Use haptics, Keychain, `NWPathMonitor` (a plain "no connection" state), Dynamic 
 - **Versioning:** `/v1`. Only additive changes, because app builds stay on phones for months. The client sends `X-App-Version`, and the server can answer `426 upgrade_required`.
 - **Contract:** the source of truth is the Zod schemas already in `lib/` (`TurnOutputSchema` etc.). Keep one JSON example per endpoint in `server/contract/` (or `contract/`), checked by both the server tests and the Swift tests. Hand-written `Codable` is fine for about 8 endpoints. Add OpenAPI codegen only if the two drift.
 - **Errors:** `{ error: { code, message, retryable, retryAfterMs? } }`, reusing `lib/errors.ts` classifications.
-- **Identity:** `POST /v1/auth/device` creates a learner and returns an opaque bearer token. The database stores a hash of it (`learner_tokens`). The app keeps it in Keychain, which survives a reinstall. Cookie and token resolve to the same learner id, so a one-time "link this phone" step (the web debug mode shows the id, and the app accepts it) carries Josh's Rita, Giulia and Magda memories over. Sign in with Apple at M4 links to the same learner. It replaces the email-link plan.
+- **Identity:** `POST /v1/auth/device` creates a learner and returns an opaque bearer token. The database stores a hash of it (`learner_tokens`). The app keeps it in Keychain, which survives a reinstall. Cookie and token resolve to the same learner id, so every web learner can keep their data (decision 6). Before the web is retired, the web shows a **"Move to the app" button**: it opens the app through a link carrying that learner's id, and the app takes over the same learner in one tap. Anyone who never taps it starts fresh in the app; their old data stays on the server. Sign in with Apple at M4 links to the same learner. It replaces the email-link plan.
 - **Cost protection, before anyone except Josh gets TestFlight:**
   - App Attest when a device registers
   - a per-learner daily budget table (`usage_daily`: turns, speech-to-text seconds, TTS characters → `402 quota`)
@@ -92,7 +100,7 @@ Use haptics, Keychain, `NWPathMonitor` (a plain "no connection" state), Dynamic 
 ### Content and images
 
 - **Text pack (about 1 MB):** export the pack to JSON with a script. Bundle it in the app, then refresh it from `GET /v1/content` when the version changes, so changes to the pantry, anchors or Magda don't need App Review. Prompts never leave the server.
-- **Images: 806 MB, 1,452 files, stored as loose objects in git (about 900 MB).** They can't be bundled. They're served from Railway for now. Recommended before TestFlight goes beyond Josh: convert to WebP/HEIC (probably about 5× smaller) and move to Cloudflare R2 + CDN with content-hashed URLs, out of git. (Decision 5.)
+- **Images: 806 MB, 1,452 files, stored as loose objects in git (about 900 MB).** They can't be bundled. **Moving to Cloudflare R2 (decision 5; Josh has an account):** R2 charges nothing for downloads and serves from a CDN; storage is about $0.015 per GB per month. Convert to WebP or HEIC (probably about 5× smaller, so feeds load faster on mobile data), name each file by its content hash, upload with a script, and have `npm run images` upload new images there. `/v1/content` lists the URLs. Stop adding images to git and delete them from the current files, but don't rewrite git history: that would break every other session's copy. Needs an R2 API token for one bucket (kept in `.env.local` and Railway), and a choice of custom domain or the free `r2.dev` address.
 - **Railway watch paths:** both services ignore `ios/**`, `sketches/**` and `docs/**`, so Swift commits don't redeploy the server.
 
 ### Speed of a turn
@@ -130,7 +138,7 @@ Today's turn makes 3 serial phone round trips (transcribe → turn → speak) pl
 | | What | Size | Done means used |
 |---|---|---|---|
 | **N0** | Server: ids not sheets, `/v1` beside the old routes, device token, `/v1/content`, `/v1/me`, `/healthz`, delete `/api/generate-image`, Railway watch paths. iOS: XcodeGen skeleton, packages, macOS CI, tokens. | 2 | `smoke:live` (both countries) passes against production with the bearer token; the app on Josh's iPhone lists the 20 cities from `/v1/content`. |
-| **N1** | One conversation end to end: audio session, recorder, voice gate, transcribe, turn, speak + fallback, subtitle reveal, E-codes, leave with background task + server idle sweep. | 5 | Josh has a conversation of 6+ turns with Giulia on his iPhone and leaves. The admin transcript shows the turns, memory and learning notes. A second visit greets him by name. |
+| **N1** | One conversation end to end: audio session, recorder, voice gate, transcribe, turn, speak + fallback, subtitle reveal, E-codes, leave with background task + server idle sweep. | 5 | Josh has a conversation of 6+ turns with Giulia on his iPhone and leaves. The admin transcript shows the turns, memory and learning notes. A second visit greets him by name. Plus: a long thinking pause mid-turn doesn't end the turn; staying silent pauses the conversation; a turn in a noisy café works. |
 | **N2** | City and place feeds with image cache, Mostra altro, stamps (redesigned), Magda. | 3 | Fresh install → Roma → a bar → back shows a stamp → school → Magda brings up a mistake from that conversation. |
 | **N3** | Stations and ticket, settings saved on the server, debug switch, Mexico, linking web learner data. | 3 | The same path in Italy and Mexico on the device, including a trip where the clerk names the ticket's platform. `smoke:live` passes for both. |
 | **N4** | TestFlight to Josh: signing, icon, microphone text, privacy label, App Attest + budgets. | 1 | Josh plays from TestFlight on 3 separate days without the laptop, with no new E-codes in `railway logs`. |
@@ -168,20 +176,26 @@ The web UI is **frozen from now**: fix only outright breakage, since it's what J
 6. **App Review:** a specific microphone usage text, a privacy label declaring audio and text sent to Groq, Anthropic and ElevenLabs, a privacy policy URL, not in the Kids category, onboarding works without sign-in, and a "report this line" button as cheap insurance.
 7. **Memory per country:** check that memory and the study file stay separate if one learner plays both Italy and Mexico in one app (`lib/memory.ts`, `lib/study-file.ts` mention `country`; confirm against `docs/09-data-model.md`).
 
-## Decisions for Josh
+## Decisions
 
-1. **One app or two?** The reviewers split:
-   - The iOS architect: two apps (Fuori, Afuera), matching the two Railway services.
-   - The service and migration reviewers: one app.
+Made by Josh, 2026-10-15:
 
-   *Recommended:* **one app**, with the country chosen in onboarding and mapped to the two existing base URLs. Merge the services later if wanted.
-2. **Keep Next.js as the API server** (recommended), rather than migrating to Hono first?
-3. **Sign in with Apple at M4**, replacing the email link (recommended)?
-4. **Recording gesture:** the hybrid press-to-hold / tap-to-toggle (recommended), hold only, or tap only? Auto-stop after silence?
-5. **Images to R2 + CDN as WebP**, out of git, before TestFlight goes beyond you? Needs a Cloudflare account.
-6. **Carry your web learner data over** with the link step (recommended), or start fresh?
-7. **Who loses access at web sunset** (Android/desktop testers, Magda the real teacher)? Does anyone need a read-only web view?
-8. **Apple Developer account and bundle id(s); iOS 18 minimum** (recommended) or 17?
-9. **Run M3 server work alongside N0–N1** (recommended), or pause it?
+1. **One app**, with the country chosen in onboarding and mapped to the two existing base URLs. Merge the two Railway services later if wanted. (The iOS reviewer had suggested two apps.)
+2. **Keep Next.js as the API server.** Move to Hono later only if Next gets in the way.
+3. **Sign in with Apple at M4**, replacing the email-link plan.
+4. **Hands-free conversation**, with a 4.5 s end-of-turn silence (see [Audio pipeline](#audio-pipeline)).
+5. **Images move to Cloudflare R2** as WebP or HEIC. Josh has a Cloudflare account; the API token and domain are still to set up.
+6. **Every web learner keeps their data**, through the "Move to the app" link.
+8. **Checked on the laptop:**
+   - The Apple Developer account is paid and active (profiles valid to May 2027, an App Store profile exists).
+   - There's no signing certificate yet; Xcode makes one on the first build to the phone once signed in (Xcode → Settings → Accounts).
+   - Bundle id: `com.joshp100.fuori`, matching Josh's other apps.
+   - **Minimum iOS 26:** Xcode 26.6 is installed, Josh's iPhone 16 Pro runs 26.6.2 with Developer Mode on, and the household's other phones can run 26. Drop to 18 only if outside testers need it.
+   - XcodeGen and xcbeautify are to be installed at N0 (`brew install`).
+9. **M3 server work runs alongside N0–N1.**
 
-Once these are decided: update CLAUDE.md (native app, speech in/out, testing rules, `ios/` guidance, never hand-edit `.xcodeproj`), README, `docs/05-architecture.md` and `docs/10-testing.md`, and add N0–N5 to `docs/06-roadmap.md`.
+Open:
+
+7. **Who loses access at web sunset** (Android or desktop testers, the real Magda)? Does anyone need a read-only web view?
+
+Next: update CLAUDE.md (native app, speech in/out, testing rules, `ios/` guidance, never hand-edit `.xcodeproj`), README, `docs/05-architecture.md` and `docs/10-testing.md`, and add N0–N5 to `docs/06-roadmap.md`.
