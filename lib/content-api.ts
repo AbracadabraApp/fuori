@@ -14,15 +14,8 @@ import { createHash } from 'crypto';
 import { cities, country, language, pack } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
-import itImages from '@/content/it/images.json';
-import esMxImages from '@/content/es-mx/images.json';
+import { imageListFor } from '@/content';
 import type { Gender } from '@/lib/types';
-
-interface ImageList {
-  base: string;
-  images: Record<string, { key: string }>;
-}
-const imageLists: Record<string, ImageList> = { it: itImages, 'es-mx': esMxImages };
 
 export interface ContentPlace {
   id: string;
@@ -75,7 +68,7 @@ export interface Content {
 const isStation = (placeId: string) => placeId.startsWith('stazione-') || placeId.startsWith('terminal-');
 
 export function buildContent(): Content {
-  const list = imageLists[country];
+  const list = imageListFor(country);
   const image = (id: string) => {
     const entry = list?.images[id];
     return entry ? `${list.base}/${entry.key}` : null;

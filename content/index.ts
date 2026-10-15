@@ -29,3 +29,6 @@ export const tutor = pack.tutor;
 export const voices = pack.voices;
 export const elevenLabsVoiceFor = pack.elevenLabsVoiceFor;
 export const browserVoiceFor = pack.browserVoiceFor;
+
+/** Image addresses in Cloudflare R2, for the app's API (server only; content/images.ts) */
+export { imageListFor } from './images';
