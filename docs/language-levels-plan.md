@@ -71,6 +71,8 @@ Josh, 2026-10-15, after looking at Praktika's onboarding (30+ screens, a "select
 
 Rules: about two minutes; the learner's word wins (Claude suggests, the learner decides, the level judge corrects quietly later); anxious learners will stop early, so move them up quickly once they do well. Built from the ladder's pieces, so building the ladder builds most of this.
 
+
+**Revised (Josh, 2026-10-15, later): no city or face pickers.** Onboarding is: choose a country (its picture: `design/country-cards/`) → the woman in that picture greets you (`it-greeter.jpg`, `es-mx-greeter.jpg`) and does steps 3–6 (name, what brings you, the ladder, the summary) → the country's city list. She exists only in onboarding: no anchor character, no home city. No sign-in either (docs/12-native-app.md decision 3). The steps above for picking a city type and a face are superseded.
 ## Cautions
 
 - **Beginner is the biggest jump:** from B2+ down to A1–A2 is not a prompt tweak. Day one and near-A2 need very different help; beginner may need two steps inside it, even if the learner sees one name.

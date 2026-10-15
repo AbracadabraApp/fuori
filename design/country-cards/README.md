@@ -7,6 +7,13 @@ The pictures for choosing Italy or Mexico when the app starts (one app, two coun
 - Tried and not picked: a market stall and a plaza for Mexico, a café bar and a table under the vines for Italy; also folk (naive, amate) and Romantic (oil, watercolour) versions.
 - Not yet on R2: upload with the app's images when the country choice is built.
 
+## Greeters (onboarding)
+
+Josh, 2026-10-15: the woman in the country picture you tap does your onboarding. She exists only in onboarding (not a character in the world, no home city), and afterwards you land on the country's city list as usual.
+
+- `it-greeter.jpg`: the grandmother waving from her window. `es-mx-greeter.jpg`: the young woman holding her bouquet with both hands (she keeps her bag).
+- Made with xAI's image edit (`POST /v1/images/edits`, the country card as the reference image, 2:3), so face, clothes, light and setting match the card. Prompt: reframe as a closer vertical portrait looking at the camera, "keep it the same photograph: the same woman (same face, age, hair and clothes), the same place, the same bright sunny light", "exactly two arms and two hands". Check hands before using any image of people: one Mexico try had three.
+
 ## Prompts (xAI grok-imagine-image-2.0, 1:1, 2k, resized to 1200×1200 JPEG)
 
 `es-mx.jpg`:
