@@ -135,7 +135,7 @@ Track only what matters for natural conversation:
 **Output:**
 ```typescript
 {
-  it: string,  // Italian reply (spoken aloud)
+  line: string,  // the reply in the language being learned (spoken aloud; was `it` before the Mexico pack, 2026-10-12)
   en: string   // English translation (shown if enabled in Settings)
 }
 ```

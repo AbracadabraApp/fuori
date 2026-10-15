@@ -1,6 +1,6 @@
 # Fuori Development Progress
 
-## Current phase: M1, conversations working on the phone; memory next
+## Current phase: M2 live (memory, Magda, study file, stamps); M3 polish and language levels next
 
 **What to do next lives in [docs/06-roadmap.md → Now](docs/06-roadmap.md#now-ranked)** (ranked). Open decisions: [docs/open-design-questions.md](docs/open-design-questions.md). Parked ideas: [docs/ideas.md](docs/ideas.md). This file is the session log; the dated entries below say what happened and why.
 
@@ -17,7 +17,7 @@
 - **Levels:** CEFR steps (A1 → A1+ → A2 …) with the *Profilo della lingua italiana*; evidence from conversations, no tests; dialect grows with level. Characters adapt dynamically based on conversation.
 - **Interface:** Instagram-like; **scrolling full-width image cards** for city/place feeds (not 2x2 tiles); Polaroid-style cards with image on top, white caption below; conversation screen like a video call.
 - **Speech in:** Whisper on **Groq** (free tier) instead of OpenAI. Implemented in M1.
-- **Speech out:** browser voices until hosted TTS (ElevenLabs or Azure) in M3.
+- **Speech out:** ElevenLabs through `/api/speak` (native-speaker voices for Italy and Mexico, 2026-10-14), browser voice as fallback.
 - **Language validation is automated:** level rules from published standards; simulated-learner test with a judge from M2. No native-speaker gate.
 - **Visuals:** all illustrated (watercolour and ink, travel-sketchbook style). Illustrated portraits for anchors and Magda; SVG avatars for generated people; illustrated place cards for suggestions.
 - **Hosting:** Railway, deploys from `main`. Mobile-first, iPhone Safari.
@@ -29,7 +29,7 @@
 - Data model: `docs/09-data-model.md`
 
 ---
-Top section last updated: 2026-10-11 (older decisions above kept for history; the roadmap is current).
+Top section last updated: 2026-10-14 (older decisions above kept for history; the roadmap is current).
 
 ## M1 Implementation Notes
 
@@ -61,6 +61,21 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 - Simple hold-to-record UI is the right starting point
 
 **Local test URL:** http://localhost:3000
+
+---
+
+## 2026-10-14: Study file, stations, voices, Mexican place styles; docs corrected
+
+**What was done (from the day's commits):**
+- Magda redesigned (`792d3d5`): the per-conversation Review is gone. Learning notes come from the memory call and fold into Magda's study file; lessons have one goal. `lib/review.ts` and `test:review` were removed; `conversations.analysis` is unused.
+- Study export version 1: transcripts as one Markdown file for Gemini Notebook. Josh tried it and kept it; no version 2.
+- Native-speaker ElevenLabs voices for Italy and Mexico (roadmap #11 done).
+- Stations: departures board, a printed ticket, and "Sali" saves the conversation like the back link (`lib/conversation/leave.ts`). Station and ticket-seller images for all 20 Italian cities. "Mostra altro" shows every city; 10 places in each.
+- M3 refocused on polishing existing work and language levels.
+- Mexican place art: style tests decided for all five cities (`docs/mexico-version.md` → Visual style). Sign lettering still to fix when the real images are regenerated.
+- Docs corrected to match the code: reply field `{ line, en }` (was `{ it, en }`) in CLAUDE.md and the M1/engine docs; hosted voices in CLAUDE.md; level files `content/it/levels/a1.ts`…`b1.ts` (not `a1-a2.ts`); planned test scripts that never existed (`test:learner`, `test:conversations:record`, vitest/playwright) marked as planned; README status rewritten; a note in the lessons doc that the Review was later removed.
+
+**Open:** roadmap #10 (Afuera auto-deploy) not checked; #13 bench characters undecided.
 
 ---
 

@@ -4,17 +4,15 @@
 
 ## Status
 
-**M1 in progress** — City feed and navigation complete, conversation engine built, ready for deployment testing.
+**M2 live** (Magda, memory, study file, visit stamps); M3 (polish and language levels) is next. Two deployments from one codebase on Railway, both from `main`: **Fuori** (Italy, 20 cities) and **Afuera** (Mexico, 5 cities), chosen by the `COUNTRY` variable.
 
-- `prototype/index.html` is a single-page demo of one "day" with four scenes (Roma bar, Napoli market, Firenze station, Bologna piazza). It runs as a claude.ai artifact and uses Claude through the artifact runtime. Still works; kept as reference.
-- **The web app is running locally at http://localhost:3000** with:
-  - 20 Italian cities with distinctive watercolor card images
-  - Full navigation: Cities → Places → Conversation
-  - Conversation engine with Whisper (Groq) and Claude
-  - Settings UI (toggles not yet functional)
-  - Next step: deploy to Railway and test on iPhone
+- **Play:** cities → places → a spoken conversation. Whisper on Groq hears you, Claude plays the character (`{ line, en }`), ElevenLabs speaks (browser voice as fallback). Settings: show transcripts, show English.
+- **Memory:** characters remember you across visits. When a conversation ends, one call writes the character's notes and the learning notes, which feed Magda's study file. Magda teaches at the school in each city.
+- **Stations:** a departures board and ticket take you to another city.
+- **Checks:** `npm run test:*` (quick checks), `npm run test:replay` (the gate for prompt changes), `npm run smoke:live` (a scripted learner on the live site).
+- `prototype/index.html` is the original single-page demo (one "day", four scenes) that runs as a claude.ai artifact. Kept as reference.
 - Interface mockups: [Fuori mockups](https://claude.ai/artifact/1zVpF11bWHivP3RxVruKyx). They predate the open-ended direction; adapted for current implementation.
-- See [progress.md](progress.md) for detailed status and [Roadmap](docs/06-roadmap.md) for what's next.
+- See [progress.md](progress.md) for the session log and [Roadmap → Now](docs/06-roadmap.md#now-ranked) for what's next.
 
 ## Planning documents
 
@@ -24,7 +22,7 @@ Read them in order:
 2. [Game design](docs/02-game-design.md): the open world, daily suggestions, people, changing scenery, Magda, levelling up, interface
 3. [Cities and people](docs/03-journey.md): city pantries, anchors, seed characters, suggested route
 4. [Conversation engine](docs/04-conversation-engine.md): the fuller design (M2+): suggestions, scenes and characters; how characters talk, forgive, correct and remember
-   - **For M1, read [M1 conversation model](docs/M1-CONVERSATION-MODEL.md) instead:** the short prompt and two-field reply in use today
+   - **For conversations today, read [M1 conversation model](docs/M1-CONVERSATION-MODEL.md) instead:** the short prompt and two-field reply in use today
 5. [Architecture](docs/05-architecture.md): web app stack, voice, data model, API use
 6. [Roadmap](docs/06-roadmap.md): milestones, starting with M1
 7. [Visuals](docs/07-visuals.md): portrait style, moods, SVG avatars, photos

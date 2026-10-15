@@ -108,7 +108,7 @@ Fuori is Italian-only, but four cheap rules keep a second language from being a 
 
 **Country packs (2026-10-12):** `content/index.ts` exports the active pack, chosen by the `COUNTRY` setting of each deployment; each pack (`content/<country>/pack.ts`) holds its language config, cities, anchors and voices. Code imports `@/content`, never a country folder.
 
-**Enforced** by `npm run test:language` (2026-10-12): it fails when a language name, the bare code `'it'` or a locale code like `it-IT` appears in `app/` or `lib/` outside comments (the reply's `{ it, en }` field names are allowed), or when a prompt template in `content/*/prompts/` names the language instead of using `{language}`, or when code imports a country folder directly. `npm run test:pack` checks each pack is complete. Added after a Whisper hint in Italian slipped into `/api/transcribe` and was echoed into learners' lines.
+**Enforced** by `npm run test:language` (2026-10-12): it fails when a language name, the bare code `'it'` or a locale code like `it-IT` appears in `app/` or `lib/` outside comments, or when a prompt template in `content/*/prompts/` names the language instead of using `{language}`, or when code imports a country folder directly. `npm run test:pack` checks each pack is complete. Added after a Whisper hint in Italian slipped into `/api/transcribe` and was echoed into learners' lines.
 
 **Related rule: don't build on predicting what people will say.** No phrase lists or keyword filters for what learners or characters say (or what Whisper invents); prefer signals that work in any language, such as recording length, silence, or a judge call that reads the whole conversation.
 
@@ -310,8 +310,8 @@ Stored in:
 
 Italian quality is checked automatically rather than by manual review (the creator is an A1–A2 learner):
 
-1. **Level rules** (`content/it/levels/a1-a2.ts`), built once from CEFR descriptors, a frequency word list and typical A1–A2 grammar coverage. They feed the house-rules prompt layer.
-2. **Simulated learner** (`npm run test:learner`, from M2): Claude plays beginners with typical mistakes and transcription noise; a judge call scores each conversation against the level rules and the expected behaviours.
+1. **Level rules** (`content/it/levels/`: `a1.ts`, `a1plus.ts`, `a2.ts`, `a2plus.ts`, `b1.ts`), built once from CEFR descriptors, a frequency word list and typical grammar coverage. Not yet used by the character prompt (M3: language levels).
+2. **Simulated learner and judge:** `npm run test:conversations` (scripted learners against the real turn code) and `npm run test:replay` (Josh's real lines, scored by the same judge as live conversations, `lib/quality.ts`). The first simulated-learner script is archived in `tests/archive/`.
 
 Details in [Testing → Language validation](10-testing.md#4-language-validation-automated). If the reports show systematic problems: adjust the house rules or character sheets first, then try a higher effort setting, and only then consider another model.
 

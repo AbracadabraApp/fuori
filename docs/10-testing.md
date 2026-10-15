@@ -384,8 +384,8 @@ npm run test:conversations
 # Run specific test
 npm run test:conversations -- giulia-day1
 
-# Record new golden test
-npm run test:conversations:record -- new-scenario
+# Replay real learner lines against a prompt change
+npm run test:replay
 ```
 
 **Cost control:**
@@ -400,7 +400,7 @@ The creator is an A1–A2 learner, so Italian quality can't depend on anyone's p
 
 ### 4a. Level rules from published standards
 
-A single rules file, `content/it/levels/a1-a2.ts`, built once by Claude from public sources:
+One rules file per level in `content/it/levels/` (`a1.ts`, `a1plus.ts`, `a2.ts`, `a2plus.ts`, `b1.ts`), built once by Claude from public sources:
 
 - **CEFR descriptors** for A1 and A2 (the official "can-do" statements: ordering, asking prices, talking about yourself)
 - **A frequency word list**: De Mauro's *Nuovo vocabolario di base* (the standard list of the most common Italian words), trimmed to the most frequent bands for A1–A2
@@ -409,7 +409,7 @@ A single rules file, `content/it/levels/a1-a2.ts`, built once by Claude from pub
 Use frameworks and word lists, not copied textbook pages.
 
 ```typescript
-// content/it/levels/a1-a2.ts
+// content/it/levels/ (design sketch; see the files for the shape in use)
 export interface LevelRules {
   id: 'A1' | 'A2';
   canDo: string[];             // CEFR can-do statements, summarised
@@ -426,7 +426,7 @@ The rules feed two places: the house-rules layer of every character prompt ([Con
 
 ### 4b. Simulated learner
 
-A script (`npm run test:learner`) where Claude plays a beginner and another Claude call judges the result.
+Claude plays a beginner and another Claude call judges the result. Today this is `npm run test:conversations` and `npm run test:replay`, scored by the judge in `lib/quality.ts`; the first version (`tests/archive/run-simulated-learner.mjs`) is archived. The design below is the original plan.
 
 1. **Learner personas**: e.g. "A1, English speaker, uses *voglio* instead of *vorrei*, mixes up article genders, sometimes answers in English". Each persona also adds transcription noise ("bone journal", "quando costa").
 2. **Run**: each persona plays each scene against the real `/api/turn` prompts, about 20 conversations per run.
@@ -825,6 +825,8 @@ For user testing, record screen + audio:
 
 ## Test Commands
 
+Planned before the code existed; none of these scripts were built. The real commands are the `test:*` and `smoke:live` scripts in `package.json` (see `tests/README.md`).
+
 ```json
 // package.json scripts
 {
@@ -865,7 +867,7 @@ For user testing, record screen + audio:
 
 ### Fixtures:
 
-Store in `tests/fixtures/`:
+Planned, not built. Store in `tests/fixtures/`:
 - `learner-profiles.json` - Sample learners
 - `character-sheets.json` - Test characters
 - `conversations.json` - Sample transcripts

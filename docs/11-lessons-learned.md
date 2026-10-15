@@ -32,6 +32,8 @@ Written by the laptop session at Josh's request after wiring up M2 (commit `97e5
 
 ### What was fixed (commit `97e54b8`, and `TURN_HISTORY=recent` on Railway)
 
+*Later (2026-10-14, commit `792d3d5`):* the per-conversation Review described below was removed and replaced by learning notes in the memory call and Magda's study file (`lib/study-file.ts`); `lib/review.ts`, `review.md` and `test:review` no longer exist. See [Game design → The study file](02-game-design.md#the-learner-profile-is-magdas-the-study-file).
+
 - **Review:** written directly at the end of a conversation, after memory and only when memory found new turns, into its own column `conversations.analysis`. Uses `lib/claude.ts` and the active country's `review.md`; language-neutral types; nested replies unwrapped. Magda's lessons aren't reviewed.
 - **Magda:** one `tutor` per country pack, the same id at every school (one memory), placed in each school's city. `/api/turn` gives her the teaching prompt filled with her memory of the learner and their latest Review.
 - **Stamps:** `/api/visits` reads the learner from the cookie; the feed refetches on returning from a place.
