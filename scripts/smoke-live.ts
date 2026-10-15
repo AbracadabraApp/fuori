@@ -135,6 +135,72 @@ async function main() {
   const next = await turn(school.id, city.id, []);
   const sf2 = next.res.headers.get('x-study-file') ?? '';
   /^[1-9]\d* lines, 1 lessons$/.test(sf2) ? pass(`study file updated after the lesson (${sf2})`) : fail('study file updated after the lesson', `x-study-file "${sf2}"`);
+
+  await appApi(city.id, place.id, person.id, lines);
+}
+
+// The iPhone app's API (/v1, docs/12-native-app.md): sign in with a device
+// token, the content and its images, a conversation by ids with the
+// transcript kept on the server, the end call, the stamp, a return visit,
+// the voice and speech to text.
+let appLearner = '';
+async function appApi(cityId: string, placeId: string, characterId: string, said: string[]) {
+  const health = await fetch(`${base}/healthz`);
+  const h = (await health.json().catch(() => ({}))) as { ok?: boolean; commit?: string; promptVersion?: string };
+  h.ok ? pass(`healthz (commit ${h.commit}, prompt ${h.promptVersion})`) : fail('healthz', `status ${health.status}`);
+
+  const content = (await (await fetch(`${base}/v1/content`)).json()) as { version: string; cities: { id: string; image: string; places: { id: string }[] }[] };
+  const shown = cities.filter((c) => !c.hidden).length;
+  const img = await fetch(content.cities?.[0]?.image ?? '', { method: 'HEAD' }).catch(() => null);
+  content.cities?.length === shown && img?.ok && img.headers.get('content-type') === 'image/webp'
+    ? pass(`v1 content (${content.cities.length} cities, version ${content.version}, images on R2)`)
+    : fail('v1 content', `${content.cities?.length} cities (expected ${shown}), image ${img?.status}`);
+
+  const anon = await fetch(`${base}/v1/me`);
+  anon.status === 401 ? pass('v1 refuses calls without a token') : fail('v1 refuses calls without a token', `status ${anon.status}`);
+
+  const reg = (await (await fetch(`${base}/v1/auth/device`, { method: 'POST' })).json()) as { learnerId: string; token: string };
+  appLearner = reg.learnerId ?? '';
+  const auth = { Authorization: `Bearer ${reg.token}` };
+  const v1 = (path: string, body: unknown) =>
+    fetch(base + path, { method: 'POST', headers: { ...auth, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  reg.token ? pass('v1 device signed in') : fail('v1 device signed in', JSON.stringify(reg));
+
+  const open = await v1('/v1/turn', { cityId, placeId });
+  const o = (await open.json()) as { line: string; conversationId: string };
+  // Two learner lines: memory is only written after at least two (lib/remember.ts)
+  let reply = open;
+  let r: { line?: string; conversationId?: string } = {};
+  for (const line of said) {
+    reply = await v1('/v1/turn', { cityId, placeId, conversationId: o.conversationId, learnerSaid: line });
+    r = (await reply.json()) as typeof r;
+  }
+  open.ok && reply.ok && r.conversationId === o.conversationId
+    ? pass('v1 conversation by ids (transcript kept on the server)')
+    : fail('v1 conversation by ids', `${open.status}/${reply.status} ${JSON.stringify(r).slice(0, 200)}`);
+
+  const end = await v1(`/v1/conversations/${o.conversationId}/end`, {});
+  const e = (await end.json()) as { remembered?: string };
+  e.remembered === 'saved' ? pass('v1 conversation end saved memory') : fail('v1 conversation end', `${end.status} ${JSON.stringify(e)}`);
+
+  const me = (await (await fetch(`${base}/v1/me`, { headers: auth })).json()) as { visits?: Record<string, number> };
+  me.visits?.[placeId] === 1 ? pass('v1 me counts the visit') : fail('v1 me counts the visit', JSON.stringify(me));
+
+  const again = await v1('/v1/turn', { cityId, placeId });
+  const mem = again.headers.get('x-memory') ?? '';
+  /^1 visits, [1-9]/.test(mem) ? pass(`v1 character remembers (${mem})`) : fail('v1 character remembers', `x-memory "${mem}"`);
+
+  const speak = await v1('/v1/speak', { text: o.line.split(/(?<=[.!?])\s/)[0], characterId });
+  const audio = speak.ok ? await speak.blob() : null;
+  speak.ok && speak.headers.get('content-type') === 'audio/mpeg' ? pass(`v1 speak (${audio?.size} bytes)`) : fail('v1 speak', `${speak.status} ${await speak.text()}`);
+
+  if (audio) {
+    const form = new FormData();
+    form.append('audio', new File([audio], 'speech.mp3', { type: 'audio/mpeg' }));
+    const tr = await fetch(`${base}/v1/transcribe`, { method: 'POST', headers: auth, body: form });
+    const t = (await tr.json()) as { text?: string };
+    tr.ok && t.text?.trim() ? pass(`v1 transcribe ("${t.text.trim().slice(0, 40)}")`) : fail('v1 transcribe', `${tr.status} ${JSON.stringify(t)}`);
+  }
 }
 
 main()
@@ -142,6 +208,7 @@ main()
   .finally(() => {
     console.log(results.join('\n') + '\n');
     cleanup(cookie.split('=')[1] ?? '');
+    cleanup(appLearner);
     console.log(failed ? '\nFAILED' : '\nOK: the live site works end to end');
     process.exit(failed ? 1 : 0);
   });

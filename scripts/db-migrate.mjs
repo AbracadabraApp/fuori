@@ -65,6 +65,17 @@ ALTER TABLE conversations ADD COLUMN IF NOT EXISTS reviewed_at TIMESTAMP;
 -- (added 2026-10-13)
 ALTER TABLE conversations ADD COLUMN IF NOT EXISTS analysis JSONB;
 
+-- The app's sign-in: one opaque bearer token per device, stored only as a
+-- SHA-256 hash, so a database leak doesn't hand out working tokens. Deleting
+-- the row revokes it (native app, 2026-10-15; docs/12-native-app.md)
+CREATE TABLE IF NOT EXISTS learner_tokens (
+  token_hash    text PRIMARY KEY,
+  learner_id    uuid NOT NULL REFERENCES learners(id) ON DELETE CASCADE,
+  created_at    timestamptz NOT NULL DEFAULT now(),
+  last_used_at  timestamptz
+);
+CREATE INDEX IF NOT EXISTS idx_learner_tokens_learner ON learner_tokens(learner_id);
+
 -- Indexes for common queries
 CREATE INDEX IF NOT EXISTS idx_conversations_learner ON conversations(learner_id);
 CREATE INDEX IF NOT EXISTS idx_conversations_character ON conversations(character_id);

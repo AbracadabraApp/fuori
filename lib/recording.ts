@@ -13,7 +13,7 @@
 
 import { query } from './db';
 import { startConversation, addConversationTurn, type CharacterMemory, type ReviewLog } from './memory';
-import type { CharacterSheet } from './types';
+import type { CharacterSheet, Turn } from './types';
 import { turnStats, wordCount } from './dialogue-stats';
 import type { ConversationScore } from './quality';
 
@@ -66,6 +66,21 @@ export async function recordTurn(p: RecordTurnParams): Promise<string | null> {
     console.error(JSON.stringify({ level: 'error', where: 'recording', message: err instanceof Error ? err.message : String(err) }));
     return null;
   }
+}
+
+/**
+ * A conversation's turns as the prompt takes them, if it's this learner's;
+ * otherwise null. /v1/turn uses the recorded transcript instead of one sent
+ * by the app, so history can't be made up or padded.
+ */
+export async function loadConversationTurns(conversationId: string, learnerId: string): Promise<Turn[] | null> {
+  const result = await query<{ turns: { who: 'npc' | 'learner'; text: string; en?: string }[] }>(
+    'SELECT turns FROM conversations WHERE id = $1 AND learner_id = $2',
+    [conversationId, learnerId]
+  );
+  const row = result.rows[0];
+  if (!row) return null;
+  return row.turns.map((t) => ({ who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}) }));
 }
 
 /** Mark a conversation as ended (the learner left the screen). Never throws. */

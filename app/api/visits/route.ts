@@ -7,7 +7,7 @@
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { getLearnerId } from '@/lib/learner';
-import { query } from '@/lib/db';
+import { visitCounts } from '@/lib/visits';
 import { recordingEnabled } from '@/lib/recording';
 
 export async function GET(request: NextRequest) {
@@ -15,15 +15,7 @@ export async function GET(request: NextRequest) {
   const learnerId = await getLearnerId();
   if (!learnerId || !city || !recordingEnabled()) return NextResponse.json({});
   try {
-    const result = await query<{ place_id: string; visits: string }>(
-      `SELECT place_id, COUNT(*) AS visits
-       FROM conversations
-       WHERE learner_id = $1 AND city_id = $2
-         AND EXISTS (SELECT 1 FROM jsonb_array_elements(turns) t WHERE t->>'who' = 'learner')
-       GROUP BY place_id`,
-      [learnerId, city]
-    );
-    return NextResponse.json(Object.fromEntries(result.rows.map((r) => [r.place_id, Number(r.visits)])), {
+    return NextResponse.json(await visitCounts(learnerId, city), {
       headers: { 'Cache-Control': 'no-store' },
     });
   } catch (err) {
