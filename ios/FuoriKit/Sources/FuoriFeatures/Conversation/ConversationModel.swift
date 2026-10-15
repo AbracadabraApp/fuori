@@ -155,13 +155,20 @@ public final class ConversationModel {
             while !Task.isCancelled {
                 try? await Task.sleep(for: .milliseconds(100))
                 guard let self, generation == self.generation else { return }
-                if await self.tick() { return }
+                if self.tick() {
+                    // Hand over to a task of its own: finishing the turn cancels
+                    // this watcher, and must not cancel its own upload with it
+                    self.listenTask = nil
+                    Task { await self.finishTurn() }
+                    return
+                }
             }
         }
     }
 
-    /// Ten times a second while the mic is open. Returns true when the turn is over.
-    private func tick() async -> Bool {
+    /// Ten times a second while the mic is open. Returns true when the
+    /// learner's turn has ended and should be sent.
+    private func tick() -> Bool {
         let snapshot = gate.snapshot()
         let now = ProcessInfo.processInfo.systemUptime
         level = snapshot.level
@@ -169,17 +176,12 @@ public final class ConversationModel {
             if let wait = firstWordWait, now - turnStartedAt >= wait {
                 // Nothing said: pause rather than keep listening to the room
                 pause()
-                return true
             }
             return false
         }
         phase = .hearing
         ring = min(1, snapshot.silence / endOfTurnWait)
-        if ring >= 1 {
-            await finishTurn()
-            return true
-        }
-        return false
+        return ring >= 1
     }
 
     /// A tap on the turn control: while the character speaks, stop them and
