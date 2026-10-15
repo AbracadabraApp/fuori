@@ -26,7 +26,7 @@ struct PersonView: View {
                 Portrait(url: model.character.portrait, name: model.character.name)
                     .ignoresSafeArea(edges: .bottom)
                 VStack(spacing: 8) {
-                    Subtitles(line: subtitles ? model.line : nil, shown: model.shown, english: english ? model.english : nil, note: model.note)
+                    Subtitles(line: subtitles ? model.line : nil, shown: model.shown, english: english ? model.english : nil, note: note)
                     ConversationControls(model: model)
                 }
                 .padding(.horizontal, Tokens.Space.gutter)
@@ -43,6 +43,15 @@ struct PersonView: View {
         .onDisappear { model.leave() }
         .onChange(of: scenePhase) { _, phase in
             if phase == .background { model.backgrounded() }
+        }
+    }
+
+    /// The note above the controls: what went wrong, or a hint like "Didn't catch that."
+    private var note: String? {
+        switch model.phase {
+        case .failed(let message): message
+        case .micDenied: "The microphone is off for Fuori. Turn it on in Settings to talk."
+        default: model.note
         }
     }
 

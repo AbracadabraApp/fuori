@@ -1,32 +1,24 @@
 import SwiftUI
 import FuoriDesign
 
-/// The bottom of the person screen: Pause (always there), the turn pill and a
-/// word for the state, so the state never depends on colour alone
-/// (docs/13-ios-conventions.md R4). The pill shows who's talking; during the
+/// The bottom of the person screen: Pause (always there) and the turn pill.
+/// The pill shows the state by its shape (waveform, dots, pause, warning), not
+/// colour alone (docs/13-ios-conventions.md R4); VoiceOver reads it as words.
+/// No label under it (Josh, 2026-10-15: a pill on a pill). During the
 /// learner's turn a ring fills with the silence that ends it, and a tap ends
-/// the turn at once.
+/// the turn at once. Errors and "mic off" show in the note above.
 struct ConversationControls: View {
     let model: ConversationModel
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        VStack(spacing: 6) {
-            HStack {
-                pauseButton
-                Spacer()
-                pill
-                Spacer()
-                // Balances the pause button so the pill stays centred
-                Color.clear.frame(width: 44, height: 44)
-            }
-            Label(status.text, systemImage: status.symbol)
-                .typeface(.label, 15, relativeTo: .footnote, weight: .medium)
-                .foregroundStyle(Tokens.Colors.text)
-                .padding(.horizontal, 10)
-                .padding(.vertical, 4)
-                .background(Tokens.Colors.card.opacity(0.9), in: Capsule())
-                .accessibilityHidden(true) // the pill carries the same words for VoiceOver
+        HStack {
+            pauseButton
+            Spacer()
+            pill
+            Spacer()
+            // Balances the pause button so the pill stays centred
+            Color.clear.frame(width: 44, height: 44)
         }
         .padding(.bottom, 8)
         .sensoryFeedback(trigger: model.phase) { _, new in
@@ -132,7 +124,7 @@ struct ConversationControls: View {
         model.phase == .thinking ? Tokens.Colors.terracotta : Tokens.Colors.green
     }
 
-    // MARK: Words for each state (English: app chrome, docs/13 D5)
+    // MARK: Words for each state, for VoiceOver (English: app chrome, docs/13 D5)
 
     private var status: (text: String, symbol: String) {
         switch model.phase {
