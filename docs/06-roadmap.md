@@ -164,6 +164,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 - [ ] **2. Measure the level of what characters say, before tuning.** A judge calibrated on official exam samples (CELI, CILS, PLIDA; DELE), a word-coverage check against a frequency list per language (language data), and `test:levels` with 10+ turn conversations to catch drift.
 - [ ] **3. Tier in the learner's profile.** Picked at the start, saved with the learner; sets speech speed and default subtitles, with the screen switches as personal overrides (today speed follows the switches and nothing is saved).
 - [ ] **4. Beginner ladder, behind a setting.** Pick one of two replies → read it aloud → speak with help nearby → speak freely.
+- [ ] **Onboarding that places the learner, in the world** (Josh, 2026-10-15; detail in [language-levels-plan.md](language-levels-plan.md#onboarding)). Pick a city type (3 pictures) → pick one of 3 faces → that person asks your name and what you hope to get from Fuori (voice, English or Italian; Claude reads goals and a first level guess) → they climb the beginner ladder with you, asking "still comfortable?" after each step → settings shown as plain sentences you can change → you're in the city, and they live there and remember you. About two minutes. Builds on items 3 and 4 (same pieces as the ladder).
 - [ ] More dialect as you level up
   - Make "Allow dialect" setting functional (today it only sets speed to 1.0)
   - Characters use more regional language at higher levels

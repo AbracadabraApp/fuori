@@ -57,6 +57,20 @@ The two replies are written fresh each turn by Claude, in character and context 
 
 Josh doesn't speak Spanish, so Afuera makes him a real beginner tester; expect better ideas once we start.
 
+## Onboarding
+
+Josh, 2026-10-15, after looking at Praktika's onboarding (30+ screens, a "select the words you know" check that cognates fool, a "building your plan" progress screen). Fuori's onboarding rehearses the game's own loop (city, person, talk) and places the learner by doing, not by a test.
+
+1. **Pick a city type:** three pictures with a line each (big city, hill town, by the sea). Low stakes; teaches that you choose where to go; sets the first city.
+2. **Pick a face:** three people who could help you get started. The choice is a soft signal (patient shopkeeper or quick barista), and makes the onboarding someone, not a form.
+3. **That person asks your name** and uses it from then on.
+4. **They ask what you hope to get from Fuori,** by voice, in English or Italian ("whichever you like"), with one example line so nobody faces a blank page. Claude reads goals, situation and a first level guess (best of all if they answer in Italian), and starts Magda's study file.
+5. **The ladder:** they climb the beginner ladder with you. Step 1 a question with two tap answers; step 2 two Italian phrases on buttons, say the one you agree with; step 3 a spoken line with its transcript, answer or attempt; optional step 4 without the transcript. After each: "does this still feel comfortable?" Stop and start there, or go on. Language-neutral signals add evidence: spoke or not, recording length, silence, English fallback.
+6. **Summary in plain sentences**, each changeable ("You're starting out. People will speak slowly and show the English. We'll start in Bologna."). No settings screen, no CEFR labels. Claude returns structured settings (tier, starting rung, subtitles, speed) plus a confidence; it asks one more question only when unsure.
+7. **You're in the city,** and the person you picked lives there and remembers you.
+
+Rules: about two minutes; the learner's word wins (Claude suggests, the learner decides, the level judge corrects quietly later); anxious learners will stop early, so move them up quickly once they do well. Built from the ladder's pieces, so building the ladder builds most of this.
+
 ## Cautions
 
 - **Beginner is the biggest jump:** from B2+ down to A1–A2 is not a prompt tweak. Day one and near-A2 need very different help; beginner may need two steps inside it, even if the learner sees one name.
@@ -72,6 +86,6 @@ Josh doesn't speak Spanish, so Afuera makes him a real beginner tester; expect b
 ## Open questions
 
 - Two steps inside beginner, or one?
-- How the learner picks a tier at first (a question, a short chat with Magda, both?).
+- How the learner picks a tier at first: answered by the onboarding above (2026-10-15).
 - Does the dialect setting become part of Expert, or stay a separate option?
 - Speed already follows the subtitle and dialect switches (0.7 / 0.9 / 1.0), but none of the settings are saved. Once a tier exists, it should set speed and default subtitles directly, and tier and overrides should be saved with the learner.
