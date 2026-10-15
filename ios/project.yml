@@ -47,6 +47,9 @@ targets:
         UILaunchScreen:
           UIColorName: ""
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        # Light only until the "night paper" palette exists (docs/13-ios-conventions.md A1, D1):
+        # otherwise system bars turn white on the light paper in Dark Mode
+        UIUserInterfaceStyle: Light
         UIAppFonts:
           - Alegreya.ttf
           - AlegreyaSans-Regular.ttf
