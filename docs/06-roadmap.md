@@ -158,15 +158,23 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
   - Need more variety and distinctiveness
   - Each place should feel memorable, not interchangeable
 
-**Language levels:** plan captured in [language-levels-plan.md](language-levels-plan.md) (2026-10-14): learner level → system adapts; beginner / intermediate / expert; beginner reply ladder. Teacher rated today's characters B2+.
+**Language levels:** plan in [language-levels-plan.md](language-levels-plan.md): learner level → system adapts; beginner / intermediate / expert. Teacher rated today's characters B2+. Items 1–4 replace "level steps from evidence" (2026-10-15, from the two research reports: [levels](research/language-app-levels.md), [LLM language learning](research/llm-language-learning.md)).
 
-- [ ] Level steps (A1 → A1+ → A2 …) from evidence in conversations
-  - Level rules already exist in `content/it/levels/`
-  - Implement detection and progression
-
+- [ ] **1. Tier in the character prompt, every turn, worded in role.** Today the prompt has no level at all. Prompt change: bump the version, changelog entry.
+- [ ] **2. Measure the level of what characters say, before tuning.** A judge calibrated on official exam samples (CELI, CILS, PLIDA; DELE), a word-coverage check against a frequency list per language (language data), and `test:levels` with 10+ turn conversations to catch drift.
+- [ ] **3. Tier in the learner's profile.** Picked at the start, saved with the learner; sets speech speed and default subtitles, with the screen switches as personal overrides (today speed follows the switches and nothing is saved).
+- [ ] **4. Beginner ladder, behind a setting.** Pick one of two replies → read it aloud → speak with help nearby → speak freely.
 - [ ] More dialect as you level up
-  - Make "Allow dialect" setting functional
+  - Make "Allow dialect" setting functional (today it only sets speed to 1.0)
   - Characters use more regional language at higher levels
+
+**Speech and learning signals (2026-10-15, from the research):**
+
+- [ ] **5. Voice check before Whisper.** Don't upload recordings with no speech; trim silence. Whisper invents text on silence; this works in any language without a phrase list, and avoids Groq's 10 s minimum charge.
+- [ ] **6. Honest learner level.** Magda's level as a slow, coarse band from several sessions, plus a strengths line in the study file: transcripts hide beginners' errors and AI judges rarely score low, so one session's estimate runs high. Fold in Magda's lesson tweaks (real recall at the start, let the learner repair first, role-play twice).
+- [ ] **7. Measure lasting learning.** Next-day recall of Magda's target, whether the learner tried the phrase in town, retention at day 7 and day 30.
+
+Not added: anything on the "not adopted" list in progress.md (2026-10-15), and the check-and-rewrite pass from the levels report (regenerate passes were rejected as too prescriptive).
 
 **Moved to ideas.md (2026-10-14):**
 - Interactive transcript (too much interface, conflicts with immersion-first approach)
