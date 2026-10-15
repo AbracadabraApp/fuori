@@ -20,6 +20,7 @@
     "test:content-api": "tsx tests/check-content-api.ts",
     "images": "node --env-file-if-exists=.env.local scripts/generate-images.mjs",
     "tokens": "node scripts/tokens.mjs",
+    "hig": "node scripts/fetch-hig.mjs",
     "test:tokens": "node scripts/tokens.mjs --check",
     "images:upload": "node --env-file-if-exists=.env.local scripts/upload-images.mjs",
     "voices": "node --env-file-if-exists=.env.local scripts/list-voices.mjs",

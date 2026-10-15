@@ -10,3 +10,6 @@ node_modules/
 tests/conversations/replay-set.json
 tests/conversations/reports/replay-*
 style-test/
+
+# Apple's Human Interface Guidelines, downloaded by npm run hig (Apple's text; this repo is public)
+docs/reference/hig/
