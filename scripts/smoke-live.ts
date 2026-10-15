@@ -54,8 +54,9 @@ async function post(path: string, body: unknown) {
   return res;
 }
 
-async function turn(character: CharacterSheet, cityId: string, transcript: Turn[], learnerSaid?: string, conversationId?: string | null) {
-  const res = await post('/api/turn', { character, cityId, transcript, learnerSaid, conversationId });
+// Ids, not the sheet: the server works out the character (lib/characters/for-visit.ts)
+async function turn(placeId: string, cityId: string, transcript: Turn[], learnerSaid?: string, conversationId?: string | null) {
+  const res = await post('/api/turn', { cityId, placeId, transcript, learnerSaid, conversationId });
   if (!res.ok) throw new Error(`/api/turn → ${res.status} ${(await res.text()).slice(0, 200)}`);
   const reply = (await res.json()) as { line: string };
   return { line: reply.line, res };
@@ -91,13 +92,13 @@ async function main() {
   home.ok && html.includes(cities[0].name) ? pass('site loads this country') : fail('site loads this country', `${home.status}, "${cities[0].name}" not on the page`);
 
   // 2. A conversation is recorded
-  const open = await turn(person, city.id, []);
+  const open = await turn(place.id, city.id, []);
   const id = open.res.headers.get('x-conversation-id');
   id ? pass('conversation recorded') : fail('conversation recorded', 'no x-conversation-id (DATABASE_URL on the server?)');
   open.res.headers.get('x-memory')?.startsWith('0 visits') ? pass('new learner is a stranger') : fail('new learner is a stranger', `x-memory "${open.res.headers.get('x-memory')}"`);
   const transcript: Turn[] = [{ who: 'npc', transcript: open.line }];
   for (const said of lines) {
-    const r = await turn(person, city.id, transcript, said, id);
+    const r = await turn(place.id, city.id, transcript, said, id);
     transcript.push({ who: 'learner', transcript: said }, { who: 'npc', transcript: r.line });
   }
 
@@ -111,12 +112,12 @@ async function main() {
   visits[place.id] === 1 ? pass('visit counted for the stamp') : fail('visit counted for the stamp', JSON.stringify(visits));
 
   // 5. A second visit: the character remembers
-  const again = await turn(person, city.id, []);
+  const again = await turn(place.id, city.id, []);
   const mem = again.res.headers.get('x-memory') ?? '';
   /^1 visits, [1-9]/.test(mem) ? pass(`character remembers (${mem})`) : fail('character remembers', `x-memory "${mem}"`);
 
   // 6. Magda at the school, with the study file the conversation just fed
-  const lesson = await turn(magda, city.id, []);
+  const lesson = await turn(school.id, city.id, []);
   const v = lesson.res.headers.get('x-prompt-version') ?? '';
   v.startsWith('magda-') ? pass(`Magda found at ${school.name} (${v})`) : fail('Magda found at the school', `prompt version "${v}"`);
   const sf = lesson.res.headers.get('x-study-file') ?? '';
@@ -127,11 +128,11 @@ async function main() {
   const lessonId = lesson.res.headers.get('x-conversation-id');
   const lt: Turn[] = [{ who: 'npc', transcript: lesson.line }];
   for (const said of LESSON_LINES[language.code]) {
-    const r = await turn(magda, city.id, lt, said, lessonId);
+    const r = await turn(school.id, city.id, lt, said, lessonId);
     lt.push({ who: 'learner', transcript: said }, { who: 'npc', transcript: r.line });
   }
   await post('/api/conversation/end', { conversationId: lessonId });
-  const next = await turn(magda, city.id, []);
+  const next = await turn(school.id, city.id, []);
   const sf2 = next.res.headers.get('x-study-file') ?? '';
   /^[1-9]\d* lines, 1 lessons$/.test(sf2) ? pass(`study file updated after the lesson (${sf2})`) : fail('study file updated after the lesson', `x-study-file "${sf2}"`);
 }
