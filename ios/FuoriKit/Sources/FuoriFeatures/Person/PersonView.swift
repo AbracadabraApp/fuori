@@ -31,7 +31,7 @@ struct PersonView: View {
                 .typeface(.display, Tokens.Size.personName, relativeTo: .largeTitle, weight: .bold)
                 .foregroundStyle(Tokens.Colors.ink)
                 .accessibilityAddTraits(.isHeader)
-            Text("\(character.role), \(place.neighbourhood)")
+            Text("\(character.role.capitalizingFirstLetter), \(place.neighbourhood)")
                 .typeface(.label, Tokens.Size.personRole, relativeTo: .title3)
                 .foregroundStyle(Tokens.Colors.muted)
         }
@@ -70,4 +70,9 @@ private struct Portrait: View {
         .accessibilityLabel(name)
         .accessibilityAddTraits(.isImage)
     }
+}
+
+extension String {
+    /// "fruttivendolo" → "Fruttivendolo", as the web shows roles
+    var capitalizingFirstLetter: String { prefix(1).uppercased() + dropFirst() }
 }

@@ -9,7 +9,8 @@ public enum SettingsKey {
     public static let moreTime = "settings.moreTime"
 }
 
-/// The gear, top right on every screen (Josh, D2), opening the settings sheet
+/// The settings button, top right on every screen (Josh, D2), with Fuori's
+/// own icon (Josh, 2026-10-15), opening the settings sheet
 struct SettingsToolbar: ViewModifier {
     @State private var showing = false
 
@@ -18,7 +19,7 @@ struct SettingsToolbar: ViewModifier {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button { showing = true } label: {
-                        Image(systemName: "gearshape")
+                        SettingsIcon()
                     }
                     .accessibilityLabel("Settings")
                 }
