@@ -252,9 +252,9 @@
       "type": "portrait"
     },
     "ciudad-de-mexico/alameda-central": {
-      "timestamp": "2026-10-14T06:17:00.138Z",
+      "timestamp": "2026-10-15T00:36:45.399Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/alameda-central.jpg",
-      "skipped": true
+      "type": "place"
     },
     "ciudad-de-mexico/carmen-jubilada": {
       "timestamp": "2026-10-14T06:18:04.288Z",
@@ -267,9 +267,9 @@
       "type": "portrait"
     },
     "guadalajara/jardin-de-san-francisco": {
-      "timestamp": "2026-10-14T06:18:42.291Z",
+      "timestamp": "2026-10-15T00:42:41.681Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/jardin-de-san-francisco.jpg",
-      "skipped": true
+      "type": "place"
     },
     "guadalajara/rosa-estudiante": {
       "timestamp": "2026-10-14T06:19:27.365Z",
@@ -282,9 +282,9 @@
       "type": "portrait"
     },
     "oaxaca/zocalo-oaxaca": {
-      "timestamp": "2026-10-14T06:19:49.034Z",
+      "timestamp": "2026-10-15T00:49:03.754Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/zocalo-oaxaca.jpg",
-      "skipped": true
+      "type": "place"
     },
     "oaxaca/arturo-jubilado": {
       "timestamp": "2026-10-14T06:20:36.427Z",
@@ -297,9 +297,9 @@
       "type": "portrait"
     },
     "puebla/jardin-del-carmen": {
-      "timestamp": "2026-10-14T06:21:02.433Z",
+      "timestamp": "2026-10-15T00:54:56.835Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/jardin-del-carmen.jpg",
-      "skipped": true
+      "type": "place"
     },
     "puebla/beatriz-abuela": {
       "timestamp": "2026-10-14T06:22:03.151Z",
@@ -312,9 +312,9 @@
       "type": "portrait"
     },
     "san-miguel-de-allende/parque-juarez": {
-      "timestamp": "2026-10-14T06:22:31.025Z",
+      "timestamp": "2026-10-15T01:01:16.759Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/parque-juarez.jpg",
-      "skipped": true
+      "type": "place"
     },
     "san-miguel-de-allende/victor-jubilado": {
       "timestamp": "2026-10-14T06:23:22.393Z",
@@ -325,13 +325,313 @@
       "timestamp": "2026-10-14T06:23:47.351Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/miguel-taquillero-sma.jpg",
       "type": "portrait"
+    },
+    "ciudad-de-mexico/puesto-de-boleo-don-chucho": {
+      "timestamp": "2026-10-15T00:32:15.313Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/puesto-de-boleo-don-chucho.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/libros-tecolote": {
+      "timestamp": "2026-10-15T00:32:41.928Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/libros-tecolote.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/cafe-amapola": {
+      "timestamp": "2026-10-15T00:33:10.983Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cafe-amapola.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/panaderia-la-concha-de-oro": {
+      "timestamp": "2026-10-15T00:33:38.171Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/panaderia-la-concha-de-oro.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/parque-mexico": {
+      "timestamp": "2026-10-15T00:34:09.871Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/parque-mexico.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/quesadillas-dona-lupe": {
+      "timestamp": "2026-10-15T00:34:36.736Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/quesadillas-dona-lupe.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/tacos-el-trompo-rojo": {
+      "timestamp": "2026-10-15T00:35:05.336Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tacos-el-trompo-rojo.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/fonda-dona-cuca": {
+      "timestamp": "2026-10-15T00:35:31.392Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fonda-dona-cuca.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/catedral-metropolitana": {
+      "timestamp": "2026-10-15T00:35:54.864Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/catedral-metropolitana.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/cantina-la-opera": {
+      "timestamp": "2026-10-15T00:36:21.766Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cantina-la-opera.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/escuela-lengua-cdmx": {
+      "timestamp": "2026-10-15T00:37:12.077Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/escuela-lengua-cdmx.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/terminal-tapo": {
+      "timestamp": "2026-10-15T00:37:35.084Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-tapo.jpg",
+      "type": "place"
+    },
+    "guadalajara/tejuino-san-juan-de-dios": {
+      "timestamp": "2026-10-15T00:38:06.318Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tejuino-san-juan-de-dios.jpg",
+      "type": "place"
+    },
+    "guadalajara/cantina-la-fuente": {
+      "timestamp": "2026-10-15T00:38:34.028Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cantina-la-fuente.jpg",
+      "type": "place"
+    },
+    "guadalajara/cafe-tinta": {
+      "timestamp": "2026-10-15T00:38:59.354Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cafe-tinta.jpg",
+      "type": "place"
+    },
+    "guadalajara/panaderia-la-espiga": {
+      "timestamp": "2026-10-15T00:39:27.976Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/panaderia-la-espiga.jpg",
+      "type": "place"
+    },
+    "guadalajara/parque-revolucion": {
+      "timestamp": "2026-10-15T00:39:53.196Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/parque-revolucion.jpg",
+      "type": "place"
+    },
+    "guadalajara/tacos-el-compa-nacho": {
+      "timestamp": "2026-10-15T00:40:20.344Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tacos-el-compa-nacho.jpg",
+      "type": "place"
+    },
+    "guadalajara/abarrotes-la-esquinita": {
+      "timestamp": "2026-10-15T00:40:50.164Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/abarrotes-la-esquinita.jpg",
+      "type": "place"
+    },
+    "guadalajara/taller-ceramica-tlaquepaque": {
+      "timestamp": "2026-10-15T00:41:17.811Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/taller-ceramica-tlaquepaque.jpg",
+      "type": "place"
+    },
+    "guadalajara/parroquia-san-pedro-tlaquepaque": {
+      "timestamp": "2026-10-15T00:41:40.545Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/parroquia-san-pedro-tlaquepaque.jpg",
+      "type": "place"
+    },
+    "guadalajara/fonda-dona-chuy": {
+      "timestamp": "2026-10-15T00:42:08.865Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fonda-dona-chuy.jpg",
+      "type": "place"
+    },
+    "guadalajara/escuela-lengua-guadalajara": {
+      "timestamp": "2026-10-15T00:43:05.037Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/escuela-lengua-guadalajara.jpg",
+      "type": "place"
+    },
+    "guadalajara/terminal-nueva": {
+      "timestamp": "2026-10-15T00:43:34.947Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-nueva.jpg",
+      "type": "place"
+    },
+    "oaxaca/tlayudas-mercado-20-de-noviembre": {
+      "timestamp": "2026-10-15T00:44:06.156Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tlayudas-mercado-20-de-noviembre.jpg",
+      "type": "place"
+    },
+    "oaxaca/mezcaleria-los-amantes": {
+      "timestamp": "2026-10-15T00:44:35.891Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/mezcaleria-los-amantes.jpg",
+      "type": "place"
+    },
+    "oaxaca/cafe-pocito-jalatlaco": {
+      "timestamp": "2026-10-15T00:45:03.919Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cafe-pocito-jalatlaco.jpg",
+      "type": "place"
+    },
+    "oaxaca/panaderia-el-trigal-xochimilco": {
+      "timestamp": "2026-10-15T00:45:32.875Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/panaderia-el-trigal-xochimilco.jpg",
+      "type": "place"
+    },
+    "oaxaca/puesto-chapulines-mercado-benito-juarez": {
+      "timestamp": "2026-10-15T00:46:01.671Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/puesto-chapulines-mercado-benito-juarez.jpg",
+      "type": "place"
+    },
+    "oaxaca/fonda-dona-tere-reforma": {
+      "timestamp": "2026-10-15T00:46:33.877Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fonda-dona-tere-reforma.jpg",
+      "type": "place"
+    },
+    "oaxaca/jardin-conzatti-reforma": {
+      "timestamp": "2026-10-15T00:47:04.261Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/jardin-conzatti-reforma.jpg",
+      "type": "place"
+    },
+    "oaxaca/templo-san-matias-jalatlaco": {
+      "timestamp": "2026-10-15T00:47:31.679Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/templo-san-matias-jalatlaco.jpg",
+      "type": "place"
+    },
+    "oaxaca/abarrotes-los-tres-hermanos-xochimilco": {
+      "timestamp": "2026-10-15T00:48:03.370Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/abarrotes-los-tres-hermanos-xochimilco.jpg",
+      "type": "place"
+    },
+    "oaxaca/jardin-etnobotanico-oaxaca": {
+      "timestamp": "2026-10-15T00:48:36.264Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/jardin-etnobotanico-oaxaca.jpg",
+      "type": "place"
+    },
+    "oaxaca/escuela-lengua-oaxaca": {
+      "timestamp": "2026-10-15T00:49:33.815Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/escuela-lengua-oaxaca.jpg",
+      "type": "place"
+    },
+    "oaxaca/terminal-ado-oaxaca": {
+      "timestamp": "2026-10-15T00:50:11.320Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-ado-oaxaca.jpg",
+      "type": "place"
+    },
+    "puebla/dulces-tipicos-la-gloria": {
+      "timestamp": "2026-10-15T00:50:42.530Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/dulces-tipicos-la-gloria.jpg",
+      "type": "place"
+    },
+    "puebla/templo-de-santo-domingo": {
+      "timestamp": "2026-10-15T00:51:07.028Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/templo-de-santo-domingo.jpg",
+      "type": "place"
+    },
+    "puebla/cafe-cielo-rojo": {
+      "timestamp": "2026-10-15T00:51:33.902Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cafe-cielo-rojo.jpg",
+      "type": "place"
+    },
+    "puebla/panaderia-la-espiga-de-la-paz": {
+      "timestamp": "2026-10-15T00:52:03.127Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/panaderia-la-espiga-de-la-paz.jpg",
+      "type": "place"
+    },
+    "puebla/cemitas-dona-lupe-analco": {
+      "timestamp": "2026-10-15T00:52:23.194Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cemitas-dona-lupe-analco.jpg",
+      "type": "place"
+    },
+    "puebla/fonda-dona-tere": {
+      "timestamp": "2026-10-15T00:52:49.703Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fonda-dona-tere.jpg",
+      "type": "place"
+    },
+    "puebla/tacos-arabes-el-puente": {
+      "timestamp": "2026-10-15T00:53:13.624Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tacos-arabes-el-puente.jpg",
+      "type": "place"
+    },
+    "puebla/zocalo-de-puebla": {
+      "timestamp": "2026-10-15T00:53:36.504Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/zocalo-de-puebla.jpg",
+      "type": "place"
+    },
+    "puebla/la-pasita": {
+      "timestamp": "2026-10-15T00:53:58.688Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/la-pasita.jpg",
+      "type": "place"
+    },
+    "puebla/farmacia-san-rafael": {
+      "timestamp": "2026-10-15T00:54:29.489Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/farmacia-san-rafael.jpg",
+      "type": "place"
+    },
+    "puebla/escuela-lengua-puebla": {
+      "timestamp": "2026-10-15T00:55:19.481Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/escuela-lengua-puebla.jpg",
+      "type": "place"
+    },
+    "puebla/terminal-capu": {
+      "timestamp": "2026-10-15T00:55:48.714Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-capu.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/mercado-ignacio-ramirez": {
+      "timestamp": "2026-10-15T00:56:17.370Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/mercado-ignacio-ramirez.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/jardin-allende": {
+      "timestamp": "2026-10-15T00:56:44.192Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/jardin-allende.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/parroquia-san-miguel-arcangel": {
+      "timestamp": "2026-10-15T00:57:18.459Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/parroquia-san-miguel-arcangel.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/la-cucaracha": {
+      "timestamp": "2026-10-15T00:57:48.366Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/la-cucaracha.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/cafe-de-la-calzada": {
+      "timestamp": "2026-10-15T00:58:10.869Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cafe-de-la-calzada.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/fabrica-la-aurora": {
+      "timestamp": "2026-10-15T00:58:38.990Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fabrica-la-aurora.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/panaderia-la-esperanza": {
+      "timestamp": "2026-10-15T00:59:06.297Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/panaderia-la-esperanza.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/miscelanea-los-arcos": {
+      "timestamp": "2026-10-15T00:59:33.710Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/miscelanea-los-arcos.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/fonda-la-palmita": {
+      "timestamp": "2026-10-15T01:00:15.503Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/fonda-la-palmita.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/tacos-el-pastor-atascadero": {
+      "timestamp": "2026-10-15T01:00:47.981Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tacos-el-pastor-atascadero.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/escuela-lengua-sma": {
+      "timestamp": "2026-10-15T01:01:44.144Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/escuela-lengua-sma.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/terminal-sma": {
+      "timestamp": "2026-10-15T01:02:51.915Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-sma.jpg",
+      "type": "place"
     }
   },
   "failed": {},
   "stats": {
-    "total": 65,
-    "completed": 65,
+    "total": 125,
+    "completed": 125,
     "failed": 0,
-    "lastRun": "2026-10-15T00:23:22.011Z"
+    "lastRun": "2026-10-15T01:02:54.921Z"
   }
 }
