@@ -4,12 +4,19 @@ import FuoriNetworking
 
 /// The device token from POST /v1/auth/device, kept in the Keychain so it
 /// survives app updates and reinstalls (unlike the web's cookie in Safari).
+/// One token per country's server: Italy and Mexico share a database, and
+/// Magda's study file is stored under the same id in both, so one learner
+/// across countries would mix Italian and Spanish notes. Separate learners per
+/// country, as the web's separate cookies already give.
 struct KeychainTokenStore: TokenStore {
+    /// The server's host, e.g. fuori-production.up.railway.app
+    let server: String
+
     private var query: [String: Any] {
         [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: "fuori.device-token",
-            kSecAttrAccount as String: "learner",
+            kSecAttrAccount as String: server,
         ]
     }
 

@@ -8,6 +8,7 @@ Status: **draft for Josh**, 2026-10-15. Written before any more app screens are 
 - **Source:** Apple's HIG, fetched 2026-10-15 with `npm run hig` into `docs/reference/hig/` (git-ignored: it's Apple's text and this repo is public). Everything below is our paraphrase, linked to the live page.
 - **When Apple updates the HIG** (usually June, with smaller December updates), re-run `npm run hig`, check the change logs at the bottom of the pages linked here, and update this file.
 - **Severity words:** *must* = conflicts with the HIG or breaks for some users; *should* = the HIG prefers another way; *consider* = a judgement call.
+- **Both countries:** every rule applies to Fuori (Italy, Italian) and Afuera (Mexico, Mexican Spanish), and to any country added later. Examples use Italy's words ("Sali", "Mostra altro", Roma); Mexico's are "Subir", "Ver más" and its own cities, all from each country's pack via `/v1/content`. Nothing in a rule or in Swift may assume Italian.
 - Scope: iPhone only, portrait only, iOS 26 minimum, voice-first. iPad, Mac, Watch and visionOS guidance is ignored.
 
 ## 2. Default stance
@@ -30,7 +31,7 @@ Each rule: what to do, the HIG page, and where it applies in Fuori.
 ### Navigation and hierarchy
 - **One `NavigationStack`; drill-down screens push, scoped tasks use sheets.** City list → place list → conversation are pushes. [Toolbars: Navigation][toolbars] · Applies to: all.
 - **Use the standard Back button, showing the previous screen's title; never a text "Back" or a custom arrow.** The edge swipe must work everywhere. [Toolbars][toolbars], [Gestures][gestures] · Applies to: place list, conversation, Magda.
-- **Every way out of a screen runs the same code.** Swipe-back, the back button and "Sali" all reach `leaveConversation()`; no exit may skip saving, and we don't disable the swipe to force a path. · Applies to: conversation.
+- **Every way out of a screen runs the same code.** Swipe-back, the back button and boarding ("Sali" / "Subir") all reach `leaveConversation()`; no exit may skip saving, and we don't disable the swipe to force a path. · Applies to: conversation.
 - **Don't title the root screen with the app name.** Use a title that says what's there. Keep titles short (under about 15 characters). [Toolbars: Titles][toolbars] · Applies to: city list.
 - **Use a large title on top-level lists**, which shrinks as you scroll. [Toolbars: iOS][toolbars] · Applies to: city list, place list.
 - **A tab bar has not been decided.** It would be a navigation redesign, so it gets its own decision, from a sketch. If one comes, the HIG's rules apply: tabs are for navigation only, always visible except under a modal, never disabled, an SF Symbol and a one-word label each. [Tab bars][tab-bars] · Applies to: nothing yet.
@@ -110,7 +111,7 @@ Each rule: what to do, the HIG page, and where it applies in Fuori.
 
 ### Accessibility
 - **VoiceOver: every control labelled, every meaningful image described, decorative ones hidden** (barcode, sprigs, Polaroid shadow). Cards read as one element: "Roma, Lazio, visited 3 times, button". [VoiceOver][voiceover] · Applies to: all.
-- **Target-language text is spoken with the target-language voice.** Tag Italian strings with the pack's speech code (`accessibilitySpeechLanguage` / an `AttributedString` language attribute) so VoiceOver doesn't read "Binario" in an English accent. This also keeps other languages possible. [VoiceOver][voiceover], [Inclusion: Languages][inclusion] · Applies to: all target-language words.
+- **Target-language text is spoken with the target-language voice.** Tag target-language strings (Italian, Spanish) with the pack's speech code (`accessibilitySpeechLanguage` / an `AttributedString` language attribute) so VoiceOver doesn't read "Binario" in an English accent. This also keeps other languages possible. [VoiceOver][voiceover], [Inclusion: Languages][inclusion] · Applies to: all target-language words.
 - **Announce changes** ("Your turn", "Giulia is speaking", "Paused") with accessibility notifications. [VoiceOver: Navigation][voiceover] · Applies to: conversation.
 - **Subtitles are captions.** Always available; forced on when the system's Closed Captions setting is on; sized by Dynamic Type. [Accessibility: Hearing][accessibility] · Applies to: conversation.
 - **Reduce Motion: no typewriter reveal, card tilt animation or pulsing**; crossfades are fine. [Accessibility: Cognitive][accessibility], [Motion][motion] · Applies to: conversation, feeds.
@@ -148,7 +149,7 @@ Each rule: what to do, the HIG page, and where it applies in Fuori.
 | R6 | **Fixed point sizes, custom fonts** (`Tokens.Size`, `Typography.swift`) | Must fix | Dynamic Type to AX5; custom fonts must honour Bold Text. [Typography][typography] | `relativeTo:` text styles, `@ScaledMetric` for non-text sizes, `legibilityWeight` for Bold Text; snapshot tests at AX5. |
 | R7 | **Light-only paper palette** | Must decide (see [D1](#7-decisions-josh-2026-10-15)) | Support Dark Mode; supply dark and high-contrast variants of custom colours even if shipping one appearance. [Dark Mode][dark-mode], [Color][color] | A **"night paper"** variant: warm charcoal (around `#1f1c19`) background, card around `#2a2622`, text a warm off-white, olive lifted for contrast, watercolours dimmed about 10%. Until it exists, declare light-only in `Info.plist` so the system bars match the paper (see audit A1). |
 | R8 | **Polaroid cards as buttons** | Should fix | Custom buttons need a pressed state, a button trait, a label. [Buttons][buttons], [VoiceOver][voiceover] | A shared `PolaroidButtonStyle` (slight dim/scale, no motion under Reduce Motion); the card is one accessibility element with name, region and visits; the image is hidden. Place cards that can't be opened yet must not look tappable. |
-| R9 | **"Mostra altro" pagination** for 20 cities (decided: show all, D4) | Consider | Progressive disclosure is fine; scrolling is the norm; a lone Italian word as the only control on an English-chrome screen may puzzle a beginner. [Layout][layout], [Scroll views][scroll-views] | Either list all cities (a lazy list of 20 is cheap) with the first-screen ones on top, or keep the button as a standard bordered button at least 44 pt tall. See [D4](#7-decisions-josh-2026-10-15). |
+| R9 | **"Mostra altro" pagination** for 20 cities (decided: show all, D4) | Consider | Progressive disclosure is fine; scrolling is the norm; a lone target-language word as the only control on an English-chrome screen may puzzle a beginner. [Layout][layout], [Scroll views][scroll-views] | Either list all cities (a lazy list of 20 is cheap) with the first-screen ones on top, or keep the button as a standard bordered button at least 44 pt tall. See [D4](#7-decisions-josh-2026-10-15). |
 | R10 | **Departures board** (custom overlay with an × and a grid) | Should fix | A scoped task is a sheet, with a title and Cancel; one sheet at a time. [Sheets][sheets], [Modality][modality] | `.sheet` titled with `language.ui.whereTo`, Cancel leading, a `List` of cities (board styling is fine as content); the current city is disabled with "You are here" as text, not only colour. Picking a city dismisses the sheet, then pushes the conversation. |
 | R11 | **Ticket with "Sali"** | Should fix | One prominent action; 44 pt; activity indicator while it works; meaningful VoiceOver grouping. [Buttons][buttons], [VoiceOver][voiceover] | The ticket is content; "Sali" is a real `Button` with a prominent style, a pressed state and a spinner while saving. VoiceOver reads "Roma to Napoli, platform 4, seat 23" as one element; the barcode is hidden. A `.success` haptic on boarding. |
 | R12 | **Visit-count badge** (green circle with a number, top right) | Should fix | Don't imitate the system's notification badge; don't rely on colour; scale with text. [Notifications: Badging][notifications], [Color][color] | The M3 stamp redesign, which isn't a number in a circle; label "Visited 3 times"; scales with `@ScaledMetric`. |
@@ -157,7 +158,7 @@ Each rule: what to do, the HIG page, and where it applies in Fuori.
 | R15 | **Subtitles over the portrait** | Should fix | Don't put Liquid Glass in the content layer; legibility over bright content. [Materials][materials] | Subtitles sit on a solid paper card or a standard material, never glass; the card grows with Dynamic Type and scrolls if needed. |
 | R16 | **Onboarding by a character, who speaks before any permission** | Consider | Voice playback needs no permission; the mic prompt should come with context, through one "Continue" screen; onboarding should be skippable. [Onboarding][onboarding], [Privacy][privacy] | The character greets (audio only). When they first ask you to speak, the screen shows one English line ("To hear your answer, Fuori needs the microphone") and **Continue** → system prompt. Denied → step 1 of the ladder (tap answers) still works, plus a Settings button. (No Skip: D7.) |
 | R17 | **Characters are AI, presented as people** | Resolved (Josh, 2026-10-15) | Don't trick people into thinking they're talking to a person. [Generative AI][generative-ai] | Nothing in the game: the characters are illustrated, so nobody takes them for real people. The App Store description says it's AI conversation practice; the mic screen says where speech goes (privacy, N4). |
-| R18 | **Italian UI words on controls** ("Sali", ticket and sign words) | Consider | Labels must be clear; VoiceOver must pronounce them. [Writing][writing], [VoiceOver][voiceover] | Allowed as world vocabulary when the meaning is obvious from context; tagged with the speech language; English accessibility hint for beginners ("Board the train"). See [D5](#7-decisions-josh-2026-10-15). |
+| R18 | **Target-language words on controls** ("Sali" / "Subir", ticket and sign words) | Consider | Labels must be clear; VoiceOver must pronounce them. [Writing][writing], [VoiceOver][voiceover] | Allowed as world vocabulary when the meaning is obvious from context; tagged with the speech language; English accessibility hint for beginners ("Board the train"). See [D5](#7-decisions-josh-2026-10-15). |
 
 ## 5. Audit of the N0 SwiftUI code
 
@@ -179,7 +180,7 @@ Each rule: what to do, the HIG page, and where it applies in Fuori.
 | A14 | `ios/project.yml` (no asset catalog) | No `AppIcon`, no `AccentColor`, no colour sets. | Add `Fuori/Resources/Assets.xcassets` (icon from Icon Composer at N4). | Should (N4) |
 | A15 | `ios/project.yml:40-61` | No `NSMicrophoneUsageDescription` yet. | Add the string from [section 3](#privacy-and-the-microphone) in N1. | Must (N1) |
 | A16 | `FuoriDesign/PolaroidCard.swift:21-27` | Image failure and loading look the same (sand) forever, with no retry; images aren't dimmed in Dark Mode. | Keep the sand placeholder; retry on reappear; slight dim in dark. Decorative image is correctly covered by the combined element (line 51). | Consider |
-| A17 | `FuoriFeatures/PlaceListView.swift:29` | Subtitle mixes Italian role and English punctuation in one string, read by VoiceOver in English. | Build it from parts and tag the target-language parts with the speech language. | Consider |
+| A17 | `FuoriFeatures/PlaceListView.swift:29` | Subtitle mixes the target-language role ("barista", "taquero") and English punctuation in one string, read by VoiceOver in English. | Build it from parts and tag the target-language parts with the speech language. | Consider |
 
 Good already: one `NavigationStack` (`RootView.swift:11`), standard back swipe, card combined into one VoiceOver element (`PolaroidCard.swift:51`), portrait-only declared, token in Keychain, target-language words from the pack.
 
@@ -206,13 +207,13 @@ Where a strict reading of the HIG changed something already decided. Josh went t
 - **D2. Settings: a gear on every screen.** A `gearshape` toolbar item, top right on every screen (labelled "Settings" for VoiceOver), opening the settings sheet: a `Form` of toggles that apply at once, no Save button. This keeps Josh's earlier decision (settings top right everywhere) in iOS form: a symbol, not the word. Subtitles and English can also get a toggle in the conversation toolbar where their effect is visible (R1); the gear stays either way.
 - **D3. Hands-free safeguards: all four.** A Pause button always on the conversation screen; calls, Siri, AirPods out and going to the background pause, and the mic never reopens without a tap; tap-to-talk when VoiceOver or Switch Control is on; a "more time to answer" setting (e.g. 8 s). The default experience is unchanged.
 - **D4. Show all cities.** One scrolling list, first-screen cities on top in the curated order; no "Mostra altro" on the city list.
-- **D5. World words in the learned language, app controls in English.** Tickets, signs, "Sali", place and role names come from the pack; Settings, errors, permissions and accessibility hints are English. Every target-language label is tagged with the speech language for VoiceOver, with an English hint.
+- **D5. World words in the learned language, app controls in English.** Tickets, signs, "Sali" / "Subir", place and role names come from each country's pack; Settings, errors, permissions and accessibility hints are English. Every target-language label is tagged with the speech language for VoiceOver, with an English hint.
 - **D6. Typed reply only as accessibility.** Hidden unless the mic is off or an accessibility setting is on; voice stays the way to play. Around N3.
 - **D7. No Skip in onboarding.** Everyone goes through the onboarding conversation once. A **"Start as a beginner"** button is fine (Josh, 2026-10-15): an explicit choice of level, not a Skip that quietly makes you a beginner. Any default a flow needs (a starting city, a tier) comes from the country's data, e.g. its first home city, never a city named in code, so Afuera learners don't land in Italy.
 
 ## 8. Modern iOS features: what to adopt, when, and how
 
-Rule of thumb: adopt what makes Fuori feel like a native iPhone app without pulling the learner out of Italy. Nothing here that adds a streak, a nag, or a second voice talking over the character.
+Rule of thumb: adopt what makes Fuori feel like a native iPhone app without pulling the learner out of the country they're living in. Nothing here that adds a streak, a nag, or a second voice talking over the character.
 
 ### Liquid Glass and the iOS 26 look
 - **Adopt (N1, then everywhere).** [Materials: Liquid Glass][materials], [Color: Liquid Glass color][color], [Toolbars][toolbars], [Layout][layout]
@@ -240,7 +241,7 @@ Rule of thumb: adopt what makes Fuori feel like a native iPhone app without pull
 | Character starts speaking | None | The voice is the feedback. |
 | Conversation paused (interruption, timeout) | `.warning` | Paired with the "Paused" label. |
 | A failure with an E-code | `.error` | With the visible message, never alone. |
-| Boarding the train ("Sali") | `.success` | |
+| Boarding the train or bus ("Sali" / "Subir") | `.success` | |
 | Stamp earned | `.success` | Once, when the stamp appears. |
 | Tapping cards, toggles, sheets | System default only | Standard controls already play their own. |
 

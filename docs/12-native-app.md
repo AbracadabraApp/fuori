@@ -174,7 +174,7 @@ The web UI is **frozen from now**: fix only outright breakage, since it's what J
 4. **Memory saved only on "end".** Mitigation: background task, retry at next launch, and the server idle sweep.
 5. **Old app versions** after server changes. Mitigation: additive-only `/v1`, `426` for forced upgrades.
 6. **App Review:** a specific microphone usage text, a privacy label declaring audio and text sent to Groq, Anthropic and ElevenLabs, a privacy policy URL, not in the Kids category, onboarding works without sign-in, and a "report this line" button as cheap insurance.
-7. **Memory per country:** check that memory and the study file stay separate if one learner plays both Italy and Mexico in one app (`lib/memory.ts`, `lib/study-file.ts` mention `country`; confirm against `docs/09-data-model.md`).
+7. **Memory per country: resolved for now (2026-10-15).** Fuori and Afuera share one database and both Magdas have the id `magda`, so one learner playing both countries would get one study file mixing Italian and Spanish. Checked in the simulator: one app token worked on both servers. Fix: the app keeps one device token per country's server (Keychain account = the server's host), so each country has its own learner, as the web's separate cookies already do. If one person should later span countries (Sign in with Apple at M4), memory and the study file need a country first.
 
 ## Decisions
 

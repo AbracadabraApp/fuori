@@ -10,7 +10,7 @@ struct FuoriApp: App {
         // Pictures are immutable files on R2 (a new picture gets a new address),
         // so a large disk cache keeps the feeds fast and works with AsyncImage
         URLCache.shared = URLCache(memoryCapacity: 50_000_000, diskCapacity: 500_000_000)
-        _model = State(initialValue: AppModel(api: APIClient(baseURL: Server.url, tokens: KeychainTokenStore())))
+        _model = State(initialValue: AppModel(api: APIClient(baseURL: Server.url, tokens: KeychainTokenStore(server: Server.url.host() ?? Server.url.absoluteString))))
     }
 
     var body: some Scene {
