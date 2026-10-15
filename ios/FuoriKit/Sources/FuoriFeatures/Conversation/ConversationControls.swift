@@ -1,7 +1,7 @@
 import SwiftUI
 import FuoriDesign
 
-/// The bottom of the person screen: Pause (always there) and the turn pill.
+/// The bottom of the person screen: the turn pill, and Pause (always there) on the right.
 /// The pill shows the state by its shape (waveform, dots, pause, warning), not
 /// colour alone (docs/13-ios-conventions.md R4); VoiceOver reads it as words.
 /// No label under it (Josh, 2026-10-15: a pill on a pill). During the
@@ -13,12 +13,12 @@ struct ConversationControls: View {
 
     var body: some View {
         HStack {
-            pauseButton
+            // Balances the pause button so the pill stays centred
+            Color.clear.frame(width: 44, height: 44)
             Spacer()
             pill
             Spacer()
-            // Balances the pause button so the pill stays centred
-            Color.clear.frame(width: 44, height: 44)
+            pauseButton // on the right (Josh, 2026-10-15)
         }
         .padding(.bottom, 8)
         .sensoryFeedback(trigger: model.phase) { _, new in
