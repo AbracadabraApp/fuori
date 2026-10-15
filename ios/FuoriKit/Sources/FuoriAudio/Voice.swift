@@ -7,6 +7,17 @@ public final class Voice: NSObject {
     private var player: AVAudioPlayer?
     private let synthesizer = AVSpeechSynthesizer()
     private var finished: CheckedContinuation<Void, Never>?
+    /// The phone's voice: how far through the text it has spoken, and the length
+    private var spokenUpTo = 0
+    private var spokenLength = 0
+
+    /// How far through the current line the voice is (0...1), for the
+    /// typewriter subtitles; 1 when nothing is playing
+    public var progress: Double {
+        if let player, player.duration > 0 { return min(1, player.currentTime / player.duration) }
+        if synthesizer.isSpeaking, spokenLength > 0 { return min(1, Double(spokenUpTo) / Double(spokenLength)) }
+        return 1
+    }
 
     public override init() {
         super.init()
@@ -28,6 +39,8 @@ public final class Voice: NSObject {
     /// The phone's own voice: `language` is the pack's speech code (e.g. it-IT, es-MX)
     public func speak(_ text: String, language: String, rate: Float) async {
         stop()
+        spokenUpTo = 0
+        spokenLength = (text as NSString).length
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = AVSpeechSynthesisVoice(language: language)
         utterance.rate = AVSpeechUtteranceDefaultSpeechRate * rate
@@ -60,5 +73,9 @@ extension Voice: AVAudioPlayerDelegate {
 extension Voice: AVSpeechSynthesizerDelegate {
     nonisolated public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         Task { @MainActor in self.finish() }
+    }
+
+    nonisolated public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString range: NSRange, utterance: AVSpeechUtterance) {
+        Task { @MainActor in self.spokenUpTo = range.location + range.length }
     }
 }

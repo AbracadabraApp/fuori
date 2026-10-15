@@ -6,8 +6,13 @@ import FuoriDesign
 /// it stays legible over the portrait (docs/13-ios-conventions.md R15).
 struct Subtitles: View {
     let line: String?
+    /// Typewriter: characters of `line` spoken so far; nil when it's all out
+    let shown: Int?
     let english: String?
     let note: String?
+    // Web sizes, scaled with the learner's text size
+    @ScaledMetric(relativeTo: .body) private var lineSize: CGFloat = 18
+    @ScaledMetric(relativeTo: .callout) private var englishSize: CGFloat = 16
 
     var body: some View {
         VStack(spacing: 8) {
@@ -33,22 +38,36 @@ struct Subtitles: View {
         }
     }
 
+    /// As on the web: the system sans at 18 pt, italic, line height 1.4; the
+    /// English (16 pt, grey) only once the line has been spoken. The unspoken
+    /// rest of the line is laid out but invisible, so the card takes its full
+    /// size at once and doesn't grow as the text types out.
     private var text: some View {
         VStack(alignment: .leading, spacing: 8) {
             if let line {
-                Text(line)
-                    .typeface(.label, 18, relativeTo: .body)
-                    .italic()
+                Text(typed(line))
+                    .font(.system(size: lineSize).italic())
+                    .lineSpacing(lineSize * 0.4)
                     .foregroundStyle(Tokens.Colors.text)
+                    .accessibilityLabel(String(line.prefix(shown ?? line.count)))
             }
-            if let english {
+            if let english, shown == nil {
                 Text(english)
-                    .typeface(.label, 16, relativeTo: .callout)
+                    .font(.system(size: englishSize))
+                    .lineSpacing(englishSize * 0.3)
                     .foregroundStyle(Tokens.Colors.muted)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 14)
         .padding(.horizontal, 16)
+    }
+
+    private func typed(_ line: String) -> AttributedString {
+        var text = AttributedString(line)
+        guard let shown, shown < line.count else { return text }
+        let start = text.index(text.startIndex, offsetByCharacters: shown)
+        text[start...].foregroundColor = .clear
+        return text
     }
 }

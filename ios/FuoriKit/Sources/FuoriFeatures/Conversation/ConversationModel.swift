@@ -41,6 +41,10 @@ public final class ConversationModel {
     /// The character's current line and its English
     public private(set) var line: String?
     public private(set) var english: String?
+    /// Typewriter subtitles: how many characters of `line` have been spoken so
+    /// far; nil once the whole line is out (then the English appears too)
+    public private(set) var shown: Int?
+    private var revealTask: Task<Void, Never>?
     /// 0...1: how far the end-of-turn silence has run
     public private(set) var ring: Double = 0
     /// 0...1: the mic level, for the listening dots
@@ -107,21 +111,45 @@ public final class ConversationModel {
     /// Show and speak a line, then open the learner's turn
     private func present(_ reply: APIClient.TurnReply, generation: Int) async {
         guard generation == self.generation else { return }
-        if phase == .paused { pendingReply = reply; line = reply.line; english = reply.en; return }
+        if phase == .paused { pendingReply = reply; line = reply.line; english = reply.en; shown = nil; return }
         line = reply.line
         english = reply.en
+        shown = 0
         phase = .speaking
         do {
             let audio = try await api.speak(text: reply.line, characterId: character.id, speed: speed)
             guard generation == self.generation else { return }
+            startReveal(reply.line)
             try await voice.play(audio)
         } catch {
             // The hosted voice failed: the phone's own voice says it instead
             guard generation == self.generation else { return }
+            startReveal(reply.line)
             await voice.speak(reply.line, language: language.speechLang, rate: Float(speed))
         }
+        finishReveal()
         guard generation == self.generation, phase == .speaking else { return }
         await openTurn()
+    }
+
+    /// Types the line out in step with the voice (lib/speech/reveal.ts on the web)
+    private func startReveal(_ text: String) {
+        revealTask?.cancel()
+        revealTask = Task { [weak self] in
+            while !Task.isCancelled {
+                guard let self else { return }
+                let n = Reveal.count(text, fraction: self.voice.progress)
+                if n > (self.shown ?? 0) { self.shown = n }
+                try? await Task.sleep(for: .milliseconds(33))
+            }
+        }
+    }
+
+    /// The whole line: speech ended, was interrupted, or failed
+    private func finishReveal() {
+        revealTask?.cancel()
+        revealTask = nil
+        shown = nil
     }
 
     /// The learner's turn: open the mic (or wait for a tap under VoiceOver)
@@ -251,6 +279,7 @@ public final class ConversationModel {
         listenTask = nil
         recorder.stop()
         voice.stop()
+        finishReveal()
         ring = 0
         level = 0
         phase = .paused
