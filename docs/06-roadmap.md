@@ -158,7 +158,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
   - Need more variety and distinctiveness
   - Each place should feel memorable, not interchangeable
 
-**Language levels:**
+**Language levels:** plan captured in [language-levels-plan.md](language-levels-plan.md) (2026-10-14): learner level → system adapts; beginner / intermediate / expert; beginner reply ladder. Teacher rated today's characters B2+.
 
 - [ ] Level steps (A1 → A1+ → A2 …) from evidence in conversations
   - Level rules already exist in `content/it/levels/`
