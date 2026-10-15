@@ -20,6 +20,7 @@ import { silenceAll } from '@/lib/speech/silence';
 import { leaveConversation, sendConversationEnd, type Beacon } from '@/lib/conversation/leave';
 import { revealCount, estimateSeconds } from '@/lib/speech/reveal';
 import { Ticket } from './Ticket';
+import { SettingsButton } from './SettingsButton';
 import styles from './ConversationScreen.module.css';
 
 // A zero-length WAV. Playing it during a tap "unlocks" audio on iPhone Safari,
@@ -66,6 +67,8 @@ interface ConversationScreenProps {
   /** Neighbourhood of the place, shown after the role ("Bolero, Roma Norte") */
   neighbourhood?: string;
   onBack: () => void;
+  /** Opens the settings sheet (button top right, as on every screen) */
+  onOpenSettings?: () => void;
   /** Station screens only: the ticket above the talking controls, with the board button */
   ticket?: {
     from: string;
@@ -86,6 +89,7 @@ export function ConversationScreen({
   cityId,
   neighbourhood,
   onBack,
+  onOpenSettings,
   ticket,
   showTranscripts = true,
   showEnglish = false,
@@ -652,10 +656,13 @@ export function ConversationScreen({
     <div className={`${styles.screen} ${ticket ? styles.withTicket : ''}`}>
       {/* Band: back link and the person's name on solid paper, so subtitles never cover the name */}
       <header className={styles.band}>
-        <button type="button" onClick={() => leave(onBack)} className={styles.back}>
-          <span className={styles.backArrow} aria-hidden="true">←</span>
-          <span className={styles.backCity}>{cityName}</span>
-        </button>
+        <div className={styles.topRow}>
+          <button type="button" onClick={() => leave(onBack)} className={styles.back}>
+            <span className={styles.backArrow} aria-hidden="true">←</span>
+            <span className={styles.backCity}>{cityName}</span>
+          </button>
+          {onOpenSettings && <SettingsButton onClick={onOpenSettings} />}
+        </div>
         <div>
           <h1 className={styles.name}>{characterName}</h1>
           {roleLine && <p className={styles.role}>{roleLine}</p>}

@@ -30,18 +30,12 @@
   color: var(--ink);
 }
 
-.settingsButton {
+/* Back link left, settings right (city screen) */
+.topRow {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 6px;
-  background: none;
-  border: 1.5px solid var(--green);
-  border-radius: 20px;
-  cursor: pointer;
-  color: var(--green);
-  padding: 8px 14px;
-  font-size: 15px;
-  font-weight: 600;
+  gap: 12px;
 }
 
 /* "← Fuori" above the city name: same look as the person screen's back link */

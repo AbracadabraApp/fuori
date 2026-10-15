@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { PlaceCard } from './components/PlaceCard';
 import { ShowMore } from './components/ShowMore';
+import { SettingsButton } from './components/SettingsButton';
 import { CityPicker } from './components/CityPicker';
 import { language, cities as cityPantries, pack } from '@/content';
 import { ConversationScreen } from './components/ConversationScreen';
@@ -47,189 +48,8 @@ export default function Home() {
   // Region (or state) shown under the city name, from the city's data
   const getRegion = (cityId: string) => cityPantries.find((c) => c.id === cityId)?.region ?? '';
 
-  // Show conversation if place selected
-  if (selectedPlace && selectedCity) {
-    const cityData = cityPantries.find((c) => c.id === selectedCity);
-    const place = cityData?.places.find((p) => p.id === selectedPlace);
-
-    // Anchors (Giulia, Rita) or the city file's character for this place
-    let characterSheet: CharacterSheet | undefined =
-      cityData && place ? characterForPlace(cityData, place) : undefined;
-
-    // At the station with a trip chosen: the ticket seller knows where you're going
-    const destination = trip ? cityPantries.find((c) => c.id === trip.to) : undefined;
-    if (characterSheet && trip && destination) {
-      characterSheet = {
-        ...characterSheet,
-        appearance: {
-          ...characterSheet.appearance,
-          setting: clerkSetting(characterSheet.appearance?.setting ?? '', destination.name, trip.platform),
-        },
-      } as CharacterSheet;
-    }
-
-    if (!characterSheet) {
-      return (
-        <div className={styles.screen}>
-          <div onClick={() => setSelectedPlace(null)} className={styles.back}>
-            ← {cityData?.name}
-          </div>
-          <p className={styles.emptyNote}>{place?.name}: nobody to talk to here yet.</p>
-        </div>
-      );
-    }
-
-    return (
-      <ConversationScreen
-        character={characterSheet}
-        characterPortrait={`${pack.images}/portraits/${characterSheet.id}.jpg`}
-        cityName={cityData?.name || ''}
-        cityId={cityData?.id}
-        neighbourhood={place?.neighbourhood}
-        onBack={() => {
-          setSelectedPlace(null);
-          setTrip(null);
-        }}
-        ticket={
-          trip && destination && cityData
-            ? {
-                from: cityData.name,
-                to: destination.name,
-                platform: trip.platform,
-                seat: trip.seat,
-                // Board: arrive at the destination's city screen (the conversation
-                // screen saves on the way out, like the back link)
-                onBoard: () => {
-                  setSelectedPlace(null);
-                  setTrip(null);
-                  setSelectedCity(destination.id);
-                },
-              }
-            : undefined
-        }
-        showTranscripts={showTranscripts}
-        showEnglish={showEnglish}
-        allowDialect={allowDialect}
-      />
-    );
-  }
-
-  // Show places if city selected
-  if (selectedCity) {
-    const cityData = cityPantries.find((c) => c.id === selectedCity);
-    if (!cityData) return null;
-
-    return (
-      <div className={styles.screen}>
-        {/* Back to the city list, styled like the person screen's back link */}
-        <button type="button" onClick={() => setSelectedCity(null)} className={styles.backLink}>
-          <span className={styles.backArrow} aria-hidden="true">←</span>
-          <span>{language.appName}</span>
-        </button>
-        <h1 className={styles.cityTitle}>{cityData.name}</h1>
-
-        {/* Scrolling place cards */}
-        <div>
-          {(() => {
-            // Mixed across neighbourhoods and kinds (lib/places/feed-order.ts)
-            const ordered = feedOrder({ ...cityData, places: cityData.places.filter((p) => !p.hidden) });
-            return (
-              <>
-                {ordered.map((place) => {
-                  const character = cityData.characters?.find((ch) => ch.id === place.characterId);
-                  return (
-                    <PlaceCard
-                      key={place.id}
-                      placeId={place.id}
-                      placeName={place.name}
-                      characterName={character?.name || ''}
-                      neighborhood={place.neighbourhood}
-                      imageUrl={`${pack.images}/places/${place.id}.jpg`}
-                      visitCount={visitCounts[place.id] || 0}
-                      onTap={() => {
-                        // Station: departures board first; picking a city opens the
-                        // ticket seller with your ticket (docs/station-feature-decision.md)
-                        if (place.id.startsWith('stazione-') || place.id.startsWith('terminal-')) {
-                          setStationPlace(place.id);
-                          setShowCityPicker(true);
-                        } else {
-                          setSelectedPlace(place.id);
-                        }
-                      }}
-                    />
-                  );
-                })}
-              </>
-            );
-          })()}
-        </div>
-        {/* Departures board, opened by tapping the station */}
-        {showCityPicker && selectedCity && (
-          <CityPicker
-            currentCityId={selectedCity}
-            onSelectCity={(cityId) => {
-              // Your ticket: departure fixed now; then the ticket seller's screen
-              setTrip({ to: cityId, ...departureFor(selectedCity, cityId) });
-              setSelectedPlace(stationPlace);
-              setShowCityPicker(false);
-            }}
-            onClose={() => {
-              // Cancelled - stay in current city
-              setShowCityPicker(false);
-              setStationPlace(null);
-            }}
-          />
-        )}
-      </div>
-    );
-  }
-
-  // Show cities (entry screen)
-  return (
-    <div className={styles.screen}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>{language.appName}</h1>
-        <button onClick={() => setShowSettings(true)} className={styles.settingsButton}>
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="12" cy="12" r="3" />
-            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
-          </svg>
-          <span>Settings</span>
-        </button>
-      </div>
-
-      {/* City cards */}
-      <div>
-        {listedCities.map((city) => (
-          <PlaceCard
-            key={city.id}
-            placeId={city.id}
-            placeName={city.name}
-            characterName=""
-            neighborhood={getRegion(city.id)}
-            imageUrl={`${pack.images}/cities/${city.id}.jpg`}
-            visitCount={0} // Cities don't show stamps
-            onTap={() => {
-              setSelectedCity(city.id);
-            }}
-          />
-        ))}
-      </div>
-      {listedCities.length < shownCities.length && (
-        <ShowMore label={language.ui.showMore} onClick={() => setShowAllCities(true)} />
-      )}
-
-      {/* Settings sheet overlay */}
-      {showSettings && (
+  // Settings sheet, opened from the button top right on every screen
+  const settingsSheet = showSettings && (
         <div className={styles.overlay} onClick={() => setShowSettings(false)}>
           <div className={styles.sheet} onClick={(e) => e.stopPropagation()}>
             <div className={styles.sheetHeader}>
@@ -284,7 +104,183 @@ export default function Home() {
             </button>
           </div>
         </div>
+      );
+
+  // Show conversation if place selected
+  if (selectedPlace && selectedCity) {
+    const cityData = cityPantries.find((c) => c.id === selectedCity);
+    const place = cityData?.places.find((p) => p.id === selectedPlace);
+
+    // Anchors (Giulia, Rita) or the city file's character for this place
+    let characterSheet: CharacterSheet | undefined =
+      cityData && place ? characterForPlace(cityData, place) : undefined;
+
+    // At the station with a trip chosen: the ticket seller knows where you're going
+    const destination = trip ? cityPantries.find((c) => c.id === trip.to) : undefined;
+    if (characterSheet && trip && destination) {
+      characterSheet = {
+        ...characterSheet,
+        appearance: {
+          ...characterSheet.appearance,
+          setting: clerkSetting(characterSheet.appearance?.setting ?? '', destination.name, trip.platform),
+        },
+      } as CharacterSheet;
+    }
+
+    if (!characterSheet) {
+      return (
+        <div className={styles.screen}>
+          <div onClick={() => setSelectedPlace(null)} className={styles.back}>
+            ← {cityData?.name}
+          </div>
+          <p className={styles.emptyNote}>{place?.name}: nobody to talk to here yet.</p>
+        </div>
+      );
+    }
+
+    return (
+      <>
+      <ConversationScreen
+        character={characterSheet}
+        characterPortrait={`${pack.images}/portraits/${characterSheet.id}.jpg`}
+        cityName={cityData?.name || ''}
+        cityId={cityData?.id}
+        neighbourhood={place?.neighbourhood}
+        onBack={() => {
+          setSelectedPlace(null);
+          setTrip(null);
+        }}
+        ticket={
+          trip && destination && cityData
+            ? {
+                from: cityData.name,
+                to: destination.name,
+                platform: trip.platform,
+                seat: trip.seat,
+                // Board: arrive at the destination's city screen (the conversation
+                // screen saves on the way out, like the back link)
+                onBoard: () => {
+                  setSelectedPlace(null);
+                  setTrip(null);
+                  setSelectedCity(destination.id);
+                },
+              }
+            : undefined
+        }
+        onOpenSettings={() => setShowSettings(true)}
+        showTranscripts={showTranscripts}
+        showEnglish={showEnglish}
+        allowDialect={allowDialect}
+      />
+      {settingsSheet}
+      </>
+    );
+  }
+
+  // Show places if city selected
+  if (selectedCity) {
+    const cityData = cityPantries.find((c) => c.id === selectedCity);
+    if (!cityData) return null;
+
+    return (
+      <div className={styles.screen}>
+        {/* Back to the city list (styled like the person screen's back link), settings top right */}
+        <div className={styles.topRow}>
+          <button type="button" onClick={() => setSelectedCity(null)} className={styles.backLink}>
+            <span className={styles.backArrow} aria-hidden="true">←</span>
+            <span>{language.appName}</span>
+          </button>
+          <SettingsButton onClick={() => setShowSettings(true)} />
+        </div>
+        <h1 className={styles.cityTitle}>{cityData.name}</h1>
+
+        {/* Scrolling place cards */}
+        <div>
+          {(() => {
+            // Mixed across neighbourhoods and kinds (lib/places/feed-order.ts)
+            const ordered = feedOrder({ ...cityData, places: cityData.places.filter((p) => !p.hidden) });
+            return (
+              <>
+                {ordered.map((place) => {
+                  const character = cityData.characters?.find((ch) => ch.id === place.characterId);
+                  return (
+                    <PlaceCard
+                      key={place.id}
+                      placeId={place.id}
+                      placeName={place.name}
+                      characterName={character?.name || ''}
+                      neighborhood={place.neighbourhood}
+                      imageUrl={`${pack.images}/places/${place.id}.jpg`}
+                      visitCount={visitCounts[place.id] || 0}
+                      onTap={() => {
+                        // Station: departures board first; picking a city opens the
+                        // ticket seller with your ticket (docs/station-feature-decision.md)
+                        if (place.id.startsWith('stazione-') || place.id.startsWith('terminal-')) {
+                          setStationPlace(place.id);
+                          setShowCityPicker(true);
+                        } else {
+                          setSelectedPlace(place.id);
+                        }
+                      }}
+                    />
+                  );
+                })}
+              </>
+            );
+          })()}
+        </div>
+        {/* Departures board, opened by tapping the station */}
+        {showCityPicker && selectedCity && (
+          <CityPicker
+            currentCityId={selectedCity}
+            onSelectCity={(cityId) => {
+              // Your ticket: departure fixed now; then the ticket seller's screen
+              setTrip({ to: cityId, ...departureFor(selectedCity, cityId) });
+              setSelectedPlace(stationPlace);
+              setShowCityPicker(false);
+            }}
+            onClose={() => {
+              // Cancelled - stay in current city
+              setShowCityPicker(false);
+              setStationPlace(null);
+            }}
+          />
+        )}
+      {settingsSheet}
+      </div>
+    );
+  }
+
+  // Show cities (entry screen)
+  return (
+    <div className={styles.screen}>
+      <div className={styles.header}>
+        <h1 className={styles.title}>{language.appName}</h1>
+        <SettingsButton onClick={() => setShowSettings(true)} />
+      </div>
+
+      {/* City cards */}
+      <div>
+        {listedCities.map((city) => (
+          <PlaceCard
+            key={city.id}
+            placeId={city.id}
+            placeName={city.name}
+            characterName=""
+            neighborhood={getRegion(city.id)}
+            imageUrl={`${pack.images}/cities/${city.id}.jpg`}
+            visitCount={0} // Cities don't show stamps
+            onTap={() => {
+              setSelectedCity(city.id);
+            }}
+          />
+        ))}
+      </div>
+      {listedCities.length < shownCities.length && (
+        <ShowMore label={language.ui.showMore} onClick={() => setShowAllCities(true)} />
       )}
+
+      {settingsSheet}
 
     </div>
   );

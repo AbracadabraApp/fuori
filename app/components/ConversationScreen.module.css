@@ -27,6 +27,13 @@
   font-family: var(--font-alegreya-sans), "Gill Sans", "Segoe UI", sans-serif;
 }
 
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
 .back {
   display: flex;
   align-items: center;
