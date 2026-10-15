@@ -16,9 +16,13 @@
   --size-card-title: 32px;
   --size-card-subtitle: 17px;
   --size-body: 17px;
+  --size-person-name: 31px;
+  --size-person-role: 19px;
+  --size-badge: 15px;
   --space-gutter: 16px;
   --space-card-gap: 20px;
   --space-caption-padding: 16px;
+  --space-band: 12px;
   --radius-card: 8px;
   --shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }

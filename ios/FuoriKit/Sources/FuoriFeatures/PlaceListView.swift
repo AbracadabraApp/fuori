@@ -2,26 +2,43 @@ import SwiftUI
 import FuoriCore
 import FuoriDesign
 
+/// Where a place card leads: the person there
+struct PersonRoute: Hashable {
+    let city: City
+    let place: Place
+}
+
 /// A city's places in the server's feed order, each with who you meet there.
-/// Conversations come in N1 (docs/12-native-app.md); until then the cards
-/// are for looking.
+/// A card opens the person screen; stations open the departures board in N3,
+/// so until then their cards aren't buttons.
 struct PlaceListView: View {
     let city: City
     let content: Content
     @Environment(AppModel.self) private var model
+    @ScaledMetric(relativeTo: .footnote) private var badgeSize: CGFloat = 32
 
     var body: some View {
         ScrollView {
             LazyVStack(spacing: Tokens.Space.cardGap) {
                 ForEach(city.places) { place in
-                    PolaroidCard(image: place.image, title: place.name, subtitle: subtitle(place))
-                        .overlay(alignment: .topTrailing) { visitBadge(place) }
+                    if !place.station, content.character(place.characterId) != nil {
+                        NavigationLink(value: PersonRoute(city: city, place: place)) { card(place) }
+                            .buttonStyle(PressableStyle())
+                    } else {
+                        card(place)
+                    }
                 }
             }
             .padding(Tokens.Space.gutter)
         }
         .background(Tokens.Colors.paper)
         .navigationTitle(city.name)
+        .settingsToolbar()
+    }
+
+    private func card(_ place: Place) -> some View {
+        PolaroidCard(image: place.image, title: place.name, subtitle: subtitle(place))
+            .overlay(alignment: .topTrailing) { visitBadge(place) }
     }
 
     private func subtitle(_ place: Place) -> String {
@@ -33,12 +50,12 @@ struct PlaceListView: View {
     @ViewBuilder private func visitBadge(_ place: Place) -> some View {
         if let count = model.visits[place.id], count > 0 {
             Text("\(count)")
-                .font(.label(15, weight: .bold))
+                .typeface(.label, Tokens.Size.badge, relativeTo: .footnote, weight: .bold)
                 .foregroundStyle(Tokens.Colors.card)
-                .frame(width: 32, height: 32)
+                .frame(minWidth: badgeSize, minHeight: badgeSize)
                 .background(Tokens.Colors.green, in: Circle())
                 .padding(12)
-                .accessibilityLabel("\(count) visits")
+                .accessibilityLabel("Visited \(count) times")
         }
     }
 }

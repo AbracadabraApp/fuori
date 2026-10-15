@@ -27,12 +27,16 @@ public enum Tokens {
         public static let cardTitle: CGFloat = 32
         public static let cardSubtitle: CGFloat = 17
         public static let body: CGFloat = 17
+        public static let personName: CGFloat = 31
+        public static let personRole: CGFloat = 19
+        public static let badge: CGFloat = 15
     }
 
     public enum Space {
         public static let gutter: CGFloat = 16
         public static let cardGap: CGFloat = 20
         public static let captionPadding: CGFloat = 16
+        public static let band: CGFloat = 12
     }
 
     public enum Radius {

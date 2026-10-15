@@ -33,7 +33,7 @@ public final class AppModel {
             visits = try await api.me().visits
             phase = .ready
         } catch let error as APIError {
-            phase = .failed("\(error.message) (\(error.code.rawValue))")
+            phase = .failed(error.message)
         } catch {
             phase = .failed(error.localizedDescription)
         }

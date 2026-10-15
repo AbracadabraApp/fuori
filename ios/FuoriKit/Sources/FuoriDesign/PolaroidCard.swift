@@ -29,11 +29,11 @@ public struct PolaroidCard: View {
                 .clipped()
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
-                    .font(.display(Tokens.Size.cardTitle))
+                    .typeface(.display, Tokens.Size.cardTitle, relativeTo: .largeTitle, weight: .bold)
                     .foregroundStyle(Tokens.Colors.ink)
                 if let subtitle {
                     Text(subtitle)
-                        .font(.label(Tokens.Size.cardSubtitle))
+                        .typeface(.label, Tokens.Size.cardSubtitle, relativeTo: .body)
                         .foregroundStyle(Tokens.Colors.muted)
                 }
             }
