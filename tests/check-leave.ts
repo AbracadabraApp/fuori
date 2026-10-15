@@ -5,7 +5,7 @@
 // Also checks the station's departure details (platform and time).
 import { readFileSync } from 'fs';
 import { leaveConversation, sendConversationEnd } from '@/lib/conversation/leave';
-import { departureFor } from '@/lib/travel/departure';
+import { clerkSetting, departureFor } from '@/lib/travel/departure';
 
 const problems: string[] = [];
 const check = (ok: boolean, msg: string) => { if (!ok) problems.push(msg); };
@@ -43,6 +43,12 @@ const b = departureFor('roma', 'firenze');
 check(a.platform === b.platform && a.seat === b.seat, 'platform and seat are fixed per route');
 check(a.platform >= 1 && a.platform <= 12 && a.seat >= 11 && a.seat <= 88, `platform 1–12, seat 11–88 (got ${a.platform}, ${a.seat})`);
 check(!('time' in a), 'no departure time: it could contradict the ticket seller');
+// The seller is told the trip as something already said, so they don't open by asking
+// where you're going (they did with "is buying a ticket to", 2026-10-14)
+const said = clerkSetting('Stazione Termini, Esquilino', 'Firenze', a.platform);
+check(said.includes('Firenze') && said.includes(`platform ${a.platform}`), `seller knows destination and platform: ${said}`);
+check(/just told you/.test(said), 'the destination is framed as already said by the person');
+check(readFileSync('app/page.tsx', 'utf8').includes('clerkSetting('), 'the station screen builds the seller\'s setting with clerkSetting');
 const ticket = readFileSync('app/components/Ticket.tsx', 'utf8');
 check(ticket.includes('onClick={onBoard}'), 'the ticket\'s board button calls onBoard');
 

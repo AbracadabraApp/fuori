@@ -8,7 +8,7 @@ import { language, cities as cityPantries, pack } from '@/content';
 import { ConversationScreen } from './components/ConversationScreen';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
-import { departureFor, type Departure } from '@/lib/travel/departure';
+import { clerkSetting, departureFor, type Departure } from '@/lib/travel/departure';
 import { CharacterSheet } from '@/lib/types';
 import styles from './page.module.css';
 
@@ -63,7 +63,7 @@ export default function Home() {
         ...characterSheet,
         appearance: {
           ...characterSheet.appearance,
-          setting: `${characterSheet.appearance?.setting ?? ''}. The person is buying a ticket to ${destination.name}; it leaves from platform ${trip.platform}.`,
+          setting: clerkSetting(characterSheet.appearance?.setting ?? '', destination.name, trip.platform),
         },
       } as CharacterSheet;
     }

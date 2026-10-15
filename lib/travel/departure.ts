@@ -19,3 +19,13 @@ export function departureFor(fromId: string, toId: string): Departure {
   const h = hash(`${fromId}>${toId}`);
   return { platform: 1 + (h % 12), seat: 11 + ((h >>> 5) % 78) };
 }
+
+/**
+ * The ticket seller's setting once a destination is chosen. Framed as something
+ * the person has just said, so the seller opens on the trip ("Per Firenze?")
+ * rather than asking where they're going: "is buying a ticket to X" alone got
+ * "Dove va oggi?" in both countries (live check, 2026-10-14).
+ */
+export function clerkSetting(setting: string, destination: string, platform: number): string {
+  return `${setting}. The person has just told you they want a ticket to ${destination}; it leaves from platform ${platform}.`;
+}
