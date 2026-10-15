@@ -86,6 +86,7 @@ function parseCityContent(filePath) {
       id: match[1],
       name: unescape(match[2] ?? match[3]),
       prompt: unescape(match[4] ?? match[5]),
+      neighbourhood: match[0].match(/neighbourhood:\s*['"]([^'"]+)['"]/)?.[1],
     });
   }
 
@@ -157,7 +158,7 @@ async function processCity(cityId, cityFile, manifest, options = {}) {
 
     // A city with its own place style: style + scene + the name as the only sign + rules
     const prompt = image.type === 'place' && placeStyles[cityId]
-      ? buildPlacePrompt({ style: placeStyles[cityId], scene: image.prompt, sign: image.name, rules: placeRules })
+      ? buildPlacePrompt({ style: placeStyles[cityId], scene: image.prompt, sign: image.name, rules: placeRules, neighbourhood: image.neighbourhood })
       : image.prompt;
     if (options.dry) {
       console.log(`\n[${imageKey}]\n${prompt}`);

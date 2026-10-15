@@ -19,8 +19,14 @@ export function cleanScene(prompt) {
   return p.trim();
 }
 
-/** The full prompt: style, scene, the sign word for word, then the rules */
-export function buildPlacePrompt({ style, scene, sign, rules }) {
+/**
+ * The full prompt: style, scene, the sign word for word, then the rules.
+ * A style may name the place's quarter with {neighbourhood} (Mexico City,
+ * 2026-10-14: one photo style, each quarter's own architecture).
+ */
+export function buildPlacePrompt({ style, scene, sign, rules, neighbourhood }) {
+  if (style.includes('{neighbourhood}') && !neighbourhood) throw new Error(`style needs a neighbourhood: ${sign}`);
+  style = style.replaceAll('{neighbourhood}', neighbourhood ?? '');
   const signLine = sign
     ? `The sign reads "${sign}", and that sign is the only lettering in the picture.`
     : 'No lettering anywhere in the picture.';
