@@ -1283,3 +1283,8 @@ Plan: [docs/mexico-place-images-plan.md](docs/mexico-place-images-plan.md). Josh
 - Mexican place entries removed from `scripts/image-generation-manifest.es-mx.json`; they're regenerated.
 - Checks: tsc and all tests pass except `test:replay` (needs the API key) and `test:history` (already failing on main from the laptop's change). No app code changed besides the Magda file name. **Not verified live:** the Magda portrait on Afuera.
 - **Next (laptop):** `git pull && COUNTRY=es-mx npm run images -- --type place --force` (65 images, about $2). Then the cloud session builds a review sheet; flagged ones are redone with `--only`; delete the laptop's `style-test/` folder.
+
+## 2026-10-14: Station clerk checked live (laptop)
+
+- Ran a ticket-seller conversation on production for both countries, building the clerk exactly as `app/page.tsx` does with a trip chosen (scratch script, not committed). Italy: Roma → Matera, platform 6; Pietro Lombardi answered "Per Matera, vero? … dal binario 6." Mexico: CDMX → Oaxaca, andén 8; Don Arturo answered "Si va a Oaxaca … del andén 8." Both conversations ended with 204 (memory saved). All 20 Italian and 5 Mexican cities have a station with a clerk.
+- **Open:** the clerk's first line asks "dove va oggi?" although it knows the destination; the doc imagined "Per Firenze?" as the opener. Small; only the setting line would change. The ticket screen itself was not checked in a browser this time. Two test learners left in the production databases (deletion through `railway ssh` was blocked): Italy `629ac410-6fbe-4011-b3af-cc7d45dbeb0c`, Mexico `1f49d5ea-83ff-4b44-94c9-a9bfd72630f7`.
