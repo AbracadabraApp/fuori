@@ -57,10 +57,11 @@ ios/
 - **Hands-free conversation (decision 4, Josh 2026-10-15).** No record button: the conversation runs like a call.
   1. Entering a place starts the conversation, and the character greets you.
   2. When the character finishes, the mic opens and the screen shows it's your turn. **The mic is closed while the character speaks**, so the phone never hears the character through its own speaker. A tap stops the character and opens your turn. Interrupting by voice would need Apple's echo cancellation (`setVoiceProcessingEnabled`); try that later, behind a setting.
-  3. **Waiting for your first word: about 10 s.** If nothing comes, the conversation pauses (mic off, tap to continue). That saves cost and avoids Whisper inventing words from silence.
-  4. **Once you've spoken, the turn ends after 4.5 s of silence** (Josh: 4–5 s; 2 s cuts off a learner who's thinking of more to say). A ring fills during the silence, and any sound resets it. A tap ends the turn at once.
+  3. **Waiting for your first word: 10 s, for every level** (Josh, 2026-10-15). If nothing comes, the conversation pauses (mic off, tap to continue). That saves cost and avoids Whisper inventing words from silence.
+  4. **Once you've spoken, the turn ends after 4 s of silence, the same starting wait for every level** (Josh, 2026-10-15; earlier 4–5 s, and 2 s cuts off a learner who's thinking of more to say). The level doesn't set the wait; the learner's own pauses and cut-offs do (6 and 7). A ring fills during the silence, and any sound resets it. A tap ends the turn at once.
   5. **The reply is prepared during the wait.** After about 1.5 s of silence the app uploads the voiced audio, transcribes it and asks for the reply in the background. If you speak again, that draft is thrown away and recording continues. If the silence holds, the reply plays as the ring completes, so the long wait doesn't add processing time on top. Wasted calls are logged, so their cost can be measured.
-  6. **The wait adapts to the learner.** Measure the pauses inside a learner's turns (silences after which they kept talking) and set the wait just above their typical thinking pause, within limits, starting from 4.5 s. That's timing, not words, so it works in any language.
+  6. **The wait adapts to the learner.** Measure the pauses inside a learner's turns (silences after which they kept talking) and set the wait just above their typical thinking pause, within limits, starting from 4 s. That's timing, not words, so it works in any language.
+  7. **Cut-offs: adapt and count** (Josh, 2026-10-15). A cut-off is the learner starting to speak again within about 1.5 s after their turn ended: they weren't finished. The app then lengthens that learner's wait (e.g. +0.5 s, up to the "more time to answer" length) and reports it with the turn, so the server can show cut-offs per learner and per level in the scorecard and the numbers can be tuned. Timing only, so it works in any language. The speech that came after the cut-off is kept and joins the next turn, never thrown away.
   7. **Noisy places:** the voice detector re-measures the room's noise at the start of each turn. If cafés still trip it, add `SoundAnalysis` speech detection.
   8. Asking in English ("Come si dice?") has a button on the web. Hands-free, Whisper's language detection could notice English on its own; decide in N1.
 - **Playback:** download, then `AVAudioPlayer`. Replies are short, and you get the exact duration for the subtitle reveal. Stream only if measurements show it's needed. Fallback voice: `AVSpeechSynthesizer` with the pack's speech code and the best-quality voice, picked consistently from the character id. Show the fallback honestly with its E-code.
@@ -180,10 +181,10 @@ The web UI is **frozen from now**: fix only outright breakage, since it's what J
 
 Made by Josh, 2026-10-15:
 
-1. **One app**, with the country chosen in onboarding and mapped to the two existing base URLs. Merge the two Railway services later if wanted. (The iOS reviewer had suggested two apps.)
+1. **One app**, with the country chosen as the **first onboarding step** (a picture choice) **and switchable in Settings** (Josh, 2026-10-15), mapped to the two existing base URLs; each country keeps its own learner and Magda. Merge the two Railway services later if wanted. (The iOS reviewer had suggested two apps.)
 2. **Keep Next.js as the API server.** Move to Hono later only if Next gets in the way.
 3. **Sign in with Apple at M4**, replacing the email-link plan.
-4. **Hands-free conversation**, with a 4.5 s end-of-turn silence (see [Audio pipeline](#audio-pipeline)).
+4. **Hands-free conversation**, with a 4 s end-of-turn silence for every level, a 10 s wait for the first word, and cut-offs that lengthen the wait and are counted (see [Audio pipeline](#audio-pipeline)).
 5. **Images move to Cloudflare R2** as WebP or HEIC. Josh has a Cloudflare account; the API token and domain are still to set up.
 6. **Every web learner keeps their data**, through the "Move to the app" link.
 8. **Checked on the laptop:**
