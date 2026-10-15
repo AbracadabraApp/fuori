@@ -223,12 +223,8 @@ Rule of thumb: adopt what makes Fuori feel like a native iPhone app without pull
 - Applies to: all screens. Check with Reduce Transparency and Increase Contrast on.
 
 ### Sign-in, passkeys and Face ID
-- **Sign in with Apple: Adopt at M4** (decided). [Sign in with Apple][sign-in-with-apple], [Managing accounts][managing-accounts]
-  - Offer it **after** the learner has played (to keep their progress across devices or a reinstall), never as a gate; the device token keeps working without it.
-  - Use Apple's system button; show "Using Sign in with Apple" in settings; respect the private relay email.
-  - **Face ID:** Sign in with Apple confirms the Apple Account with Face ID, Touch ID or the passcode itself. Fuori writes no Face ID code for it.
-  - **Account deletion** must then be possible inside the app (an App Store rule the HIG repeats). Plan it with M4.
-- **Passkeys: Later, probably never.** Only needed if non-Apple accounts arrive (Android, web). Today's identity is a Keychain token plus Sign in with Apple.
+- **Sign in with Apple: not adopted** (Josh, 2026-10-15; was planned for M4). Identity is the silent device token, stored as a synchronizable iCloud Keychain item so it follows the learner's Apple ID to a new phone. No accounts means no sign-in screen, no account deletion flow and no Face ID code.
+- **Passkeys: Later, probably never.** Only needed if non-Apple accounts arrive (Android, web). Today's identity is an iCloud Keychain token, with no sign-in.
 - **Face ID unlock (LocalAuthentication): Don't.** Fuori holds nothing sensitive enough (cities visited, conversation notes); locking it behind Face ID adds friction for no protection, and the HIG discourages app-specific biometric toggles.
 
 ### Haptics

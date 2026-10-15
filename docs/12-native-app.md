@@ -70,7 +70,7 @@ ios/
 
 ### Apple features
 
-Use haptics, Keychain, `NWPathMonitor` (a plain "no connection" state), Dynamic Type, VoiceOver, and Sign in with Apple at M4. Not in v1: Live Activities, widgets, Siri/App Intents, push, SwiftData, or `SFSpeechRecognizer` as speech-to-text (Whisper is the decision).
+Use haptics, Keychain, `NWPathMonitor` (a plain "no connection" state), Dynamic Type, VoiceOver. No sign-in (decision 3). Not in v1: Live Activities, widgets, Siri/App Intents, push, SwiftData, or `SFSpeechRecognizer` as speech-to-text (Whisper is the decision).
 
 ## Server
 
@@ -91,7 +91,7 @@ Use haptics, Keychain, `NWPathMonitor` (a plain "no connection" state), Dynamic 
 - **Versioning:** `/v1`. Only additive changes, because app builds stay on phones for months. The client sends `X-App-Version`, and the server can answer `426 upgrade_required`.
 - **Contract:** the source of truth is the Zod schemas already in `lib/` (`TurnOutputSchema` etc.). Keep one JSON example per endpoint in `server/contract/` (or `contract/`), checked by both the server tests and the Swift tests. Hand-written `Codable` is fine for about 8 endpoints. Add OpenAPI codegen only if the two drift.
 - **Errors:** `{ error: { code, message, retryable, retryAfterMs? } }`, reusing `lib/errors.ts` classifications.
-- **Identity:** `POST /v1/auth/device` creates a learner and returns an opaque bearer token. The database stores a hash of it (`learner_tokens`). The app keeps it in Keychain, which survives a reinstall. Cookie and token resolve to the same learner id, so every web learner can keep their data (decision 6). Before the web is retired, the web shows a **"Move to the app" button**: it opens the app through a link carrying that learner's id, and the app takes over the same learner in one tap. Anyone who never taps it starts fresh in the app; their old data stays on the server. Sign in with Apple at M4 links to the same learner. It replaces the email-link plan.
+- **Identity:** `POST /v1/auth/device` creates a learner and returns an opaque bearer token. The database stores a hash of it (`learner_tokens`). The app keeps it in Keychain, which survives a reinstall. Cookie and token resolve to the same learner id, so every web learner can keep their data (decision 6). Before the web is retired, the web shows a **"Move to the app" button**: it opens the app through a link carrying that learner's id, and the app takes over the same learner in one tap. Anyone who never taps it starts fresh in the app; their old data stays on the server. No sign-in (decision 3, Josh 2026-10-15): the token is stored as an iCloud Keychain item (synchronizable), so it follows the learner's Apple ID to a new iPhone with no account or screen; a learner without iCloud Keychain starts fresh on a new phone. This replaces both the email-link plan and Sign in with Apple.
 - **Cost protection, before anyone except Josh gets TestFlight:**
   - App Attest when a device registers
   - a per-learner daily budget table (`usage_daily`: turns, speech-to-text seconds, TTS characters → `402 quota`)
@@ -175,7 +175,7 @@ The web UI is **frozen from now**: fix only outright breakage, since it's what J
 4. **Memory saved only on "end".** Mitigation: background task, retry at next launch, and the server idle sweep.
 5. **Old app versions** after server changes. Mitigation: additive-only `/v1`, `426` for forced upgrades.
 6. **App Review:** a specific microphone usage text, a privacy label declaring audio and text sent to Groq, Anthropic and ElevenLabs, a privacy policy URL, not in the Kids category, onboarding works without sign-in, and a "report this line" button as cheap insurance.
-7. **Memory per country: resolved for now (2026-10-15).** Fuori and Afuera share one database and both Magdas have the id `magda`, so one learner playing both countries would get one study file mixing Italian and Spanish. Checked in the simulator: one app token worked on both servers. Fix: the app keeps one device token per country's server (Keychain account = the server's host), so each country has its own learner, as the web's separate cookies already do. **Josh (2026-10-15): Magda doesn't need to be shared across languages.** Each country keeps its own Magda and study file; when Sign in with Apple (M4) links one person across countries, it links per-country learners rather than merging them.
+7. **Memory per country: resolved for now (2026-10-15).** Fuori and Afuera share one database and both Magdas have the id `magda`, so one learner playing both countries would get one study file mixing Italian and Spanish. Checked in the simulator: one app token worked on both servers. Fix: the app keeps one device token per country's server (Keychain account = the server's host), so each country has its own learner, as the web's separate cookies already do. **Josh (2026-10-15): Magda doesn't need to be shared across languages.** Each country keeps its own Magda and study file; with no sign-in there's nothing linking one person across countries, and nothing needs to.
 
 ## Decisions
 
@@ -183,7 +183,7 @@ Made by Josh, 2026-10-15:
 
 1. **One app**, with the country chosen as the **first onboarding step** (a picture choice) **and switchable in Settings** (Josh, 2026-10-15), mapped to the two existing base URLs; each country keeps its own learner and Magda. Merge the two Railway services later if wanted. (The iOS reviewer had suggested two apps.)
 2. **Keep Next.js as the API server.** Move to Hono later only if Next gets in the way.
-3. **Sign in with Apple at M4**, replacing the email-link plan.
+3. **No sign-in** (Josh, 2026-10-15; was Sign in with Apple at M4). The silent device token is enough: kept in iCloud Keychain so it moves to a new iPhone with the learner's Apple ID. Also means no account-deletion flow, which App Review requires only for apps that create accounts.
 4. **Hands-free conversation**, with a 4 s end-of-turn silence for every level, a 10 s wait for the first word, and cut-offs that lengthen the wait and are counted (see [Audio pipeline](#audio-pipeline)).
 5. **Images move to Cloudflare R2** as WebP or HEIC. Josh has a Cloudflare account; the API token and domain are still to set up.
 6. **Every web learner keeps their data**, through the "Move to the app" link.
