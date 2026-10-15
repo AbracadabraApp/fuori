@@ -2,6 +2,8 @@
 
 Draft, 2026-10-14, from a conversation with Josh. Not a design yet; we lay it out properly after the Mexican place images are approved. Roadmap: [M3 → Language levels](06-roadmap.md#m3-polish-existing-work--language-levels).
 
+Research behind this plan: [How language apps handle levels](research/language-app-levels.md) (2026-10-15), product and technical, with ranked implications for Fuori.
+
 ## The problem
 
 - **Characters speak too far above the learner.** Josh's Italian teacher tried the app and rated the speakers **B2+**. Phone testing said the same earlier.
