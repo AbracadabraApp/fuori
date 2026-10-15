@@ -12,6 +12,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { cleanScene } from './lib/place-prompt.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -31,12 +32,7 @@ function sceneFor(cityId, placeId) {
   const src = fs.readFileSync(path.join(ROOT, 'content', COUNTRY, 'cities', `${cityId}.ts`), 'utf8');
   const m = src.match(new RegExp(`id: '${placeId}',[\\s\\S]*?imagePrompt: '((?:[^'\\\\]|\\\\.)*)'`));
   if (!m) throw new Error(`no imagePrompt for ${cityId}/${placeId}`);
-  let p = m[1].replace(/\\'/g, "'");
-  p = p.replace(/^.*?in bright colou?r, of /i, '');
-  p = p.replace(/\s*Bold colou?r:[^.]*\.\s*/i, ' ').replace(/\s*Square format[^.]*\.?\s*$/i, '');
-  // "today" gets painted on signs as HOY (seen 2026-10-14); the rules say contemporary instead
-  p = p.replace(/,\s*today\./i, '.');
-  return p.trim();
+  return cleanScene(m[1]);
 }
 
 async function generate(prompt, file) {

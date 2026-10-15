@@ -13,7 +13,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'ofelia-tlayudas',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of a tlayuda grill at the Mercado 20 de Noviembre, Centro, Oaxaca, today. A smoky charcoal grill covered with big crisp tlayudas, strings of chorizo and cecina hanging above, long shared tables and diners leaning in under the market arches. Bold colour: cochineal red, marigold, indigo. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'a tlayuda grill at the Mercado 20 de Noviembre, Centro, Oaxaca. A smoky charcoal grill covered with big crisp tlayudas, strings of chorizo and cecina hanging above, long shared tables and diners leaning in under the market arches.',
     },
     {
       id: 'mezcaleria-los-amantes',
@@ -22,7 +22,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'emiliano-los-amantes',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Mezcalería Los Amantes, Centro, Oaxaca, today. A dim, cosy bar with shelves of unlabelled mezcal bottles, little clay copitas and orange slices with sal de gusano on the counter, and friends tasting at the bar. Bold colour: agave green, terracotta, turquoise. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Mezcalería Los Amantes, Centro, Oaxaca. A dim, cosy bar with shelves of unlabelled mezcal bottles, little clay copitas and orange slices with sal de gusano on the counter, and friends tasting at the bar.',
     },
     {
       id: 'cafe-pocito-jalatlaco',
@@ -31,7 +31,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Jalatlaco',
       real: false,
       characterId: 'marisol-cafe-pocito',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Café Pocito, Jalatlaco, Oaxaca, today. A small corner café in a low colourful house on a cobbled street, with an espresso machine, sacks of Pluma Hidalgo coffee, laptops and a few tables on the pavement under painted walls. Bold colour: ochre yellow, magenta, deep green. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Café Pocito, Jalatlaco, Oaxaca. A small corner café in a low colourful house on a cobbled street, with an espresso machine, sacks of Pluma Hidalgo coffee, laptops and a few tables on the pavement under painted walls.',
     },
     {
       id: 'panaderia-el-trigal-xochimilco',
@@ -40,7 +40,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Xochimilco',
       real: false,
       characterId: 'beto-panadero',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Panadería El Trigal, Xochimilco, Oaxaca, today. A neighbourhood bakery with a wood-fired oven door, metal trays of pan de yema, hojaldras and conchas, and neighbours queuing at the counter with baskets in the early evening. Bold colour: golden yellow, chocolate brown, sky blue. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Panadería El Trigal, Xochimilco, Oaxaca. A neighbourhood bakery with a wood-fired oven door, metal trays of pan de yema, hojaldras and conchas, and neighbours queuing at the counter with baskets in the early evening.',
     },
     {
       id: 'puesto-chapulines-mercado-benito-juarez',
@@ -49,7 +49,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Centro',
       real: false,
       characterId: 'chela-chapulines',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of a chapulines and quesillo stall at the Mercado Benito Juárez, Centro, Oaxaca, today. Wide baskets of toasted grasshoppers with lime and chile, white balls of quesillo, bars of chocolate and dried chiles piled on a stall, with shoppers passing through the covered market aisle. Bold colour: chile red, lime green, warm orange. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'a chapulines and quesillo stall at the Mercado Benito Juárez, Centro, Oaxaca. Wide baskets of toasted grasshoppers with lime and chile, white balls of quesillo, bars of chocolate and dried chiles piled on a stall, with shoppers passing through the covered market aisle.',
     },
     {
       id: 'fonda-dona-tere-reforma',
@@ -58,7 +58,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Reforma',
       real: false,
       characterId: 'tere-fonda',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Fonda Doña Tere, Reforma, Oaxaca, today. A family cocina económica at lunchtime, with oilcloth-covered tables, clay pots of mole negro and caldo de res on the stove, a chalkboard menu of the comida corrida and office workers eating. Bold colour: mole brown, papaya orange, teal. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Fonda Doña Tere, Reforma, Oaxaca. A family cocina económica at lunchtime, with oilcloth-covered tables, clay pots of mole negro and caldo de res on the stove, a chalkboard menu of the comida corrida and office workers eating.',
     },
     {
       id: 'jardin-conzatti-reforma',
@@ -67,7 +67,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Reforma',
       real: true,
       characterId: 'nacho-nevero',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Jardín Conzatti, Reforma, Oaxaca, today. A shady garden square with tall flamboyán trees, iron benches, children playing, and a nieves cart with tubs of tuna and leche quemada ice cream beside the path. Bold colour: flamboyán red-orange, leaf green, lilac. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Jardín Conzatti, Reforma, Oaxaca. A shady garden square with tall flamboyán trees, iron benches, children playing, and a nieves cart with tubs of tuna and leche quemada ice cream beside the path.',
     },
     {
       id: 'templo-san-matias-jalatlaco',
@@ -76,7 +76,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Jalatlaco',
       real: true,
       characterId: 'concha-sacristana',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Templo de San Matías Jalatlaco, Jalatlaco, Oaxaca, today. A small baroque church with a stone facade and bell tower, paper flags strung across the cobbled street, candles glowing in the open door and a few women in rebozos going in. Bold colour: stone pink, cobalt blue, marigold. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Templo de San Matías Jalatlaco, Jalatlaco, Oaxaca. A small baroque church with a stone facade and bell tower, paper flags strung across the cobbled street, candles glowing in the open door and a few women in rebozos going in.',
     },
     {
       id: 'abarrotes-los-tres-hermanos-xochimilco',
@@ -85,7 +85,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Xochimilco',
       real: false,
       characterId: 'ruben-abarrotes',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Abarrotes Los Tres Hermanos, Xochimilco, Oaxaca, today. A corner shop with a hand-painted sign, a counter and barred window, crates of refrescos, bags of tortillas, snacks hanging in strips, a gas cylinder out front and a neighbour buying eggs. Bold colour: Coca-Cola red, yellow, aqua blue. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Abarrotes Los Tres Hermanos, Xochimilco, Oaxaca. A corner shop with a hand-painted sign, a counter and barred window, crates of refrescos, bags of tortillas, snacks hanging in strips, a gas cylinder out front and a neighbour buying eggs.',
     },
     {
       id: 'jardin-etnobotanico-oaxaca',
@@ -94,7 +94,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'luis-guia-jardin',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Jardín Etnobotánico de Oaxaca, Centro, Oaxaca, today. Tall cacti and agaves in rows beside the old stone walls of the Santo Domingo complex, a guide leading a small group along a gravel path, with the church towers behind. Bold colour: cactus green, sandstone gold, sky blue. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Jardín Etnobotánico de Oaxaca, Centro, Oaxaca. Tall cacti and agaves in rows beside the old stone walls of the Santo Domingo complex, a guide leading a small group along a gravel path, with the church towers behind.',
     },
     {
       id: 'zocalo-oaxaca',
@@ -103,7 +103,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'arturo-jubilado',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Zócalo de Oaxaca, Centro, Oaxaca, today. A shady plaza with laurel trees, stone benches, a bandstand and the cathedral on one side. An elderly man sits on a bench reading a newspaper while children play and balloon sellers pass by. Bold colour: laurel green, stone grey, marigold. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Zócalo de Oaxaca, Centro, Oaxaca. A shady plaza with laurel trees, stone benches, a bandstand and the cathedral on one side. An elderly man sits on a bench reading a newspaper while children play and balloon sellers pass by.',
     },
     {
       id: 'escuela-lengua-oaxaca',
@@ -112,7 +112,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Jalatlaco',
       real: false,
       characterId: 'magda',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of a language school in Jalatlaco, Oaxaca, today. A colonial building with a tiled courtyard, bright classroom with wooden tables, whiteboard with Spanish verbs, students with notebooks, bougainvillea climbing the walls. Bold colour: magenta, jade green, ochre yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'a language school in Jalatlaco, Oaxaca. A colonial building with a tiled courtyard, bright classroom with wooden tables, whiteboard with Spanish verbs, students with notebooks, bougainvillea climbing the walls.',
     },
     {
       id: 'terminal-ado-oaxaca',
@@ -121,7 +121,7 @@ export const oaxaca: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'ricardo-taquillero-oaxaca',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the ADO bus terminal, Centro, Oaxaca, today. Travelers with woven bags at ticket counters, departure boards overhead, buses outside the glass doors, vendors selling snacks and newspapers, families waiting. Bold colour: travel blue, terracotta, warm yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the ADO bus terminal, Centro, Oaxaca. Travelers with woven bags at ticket counters, departure boards overhead, buses outside the glass doors, vendors selling snacks and newspapers, families waiting.',
     },
   ],
   characters: [

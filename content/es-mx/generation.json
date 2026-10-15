@@ -7,59 +7,193 @@
   "portraitPrompt": "Gouache portrait of [person: age, looks, clothes, expression] who [role] at [place], [neighbourhood], [city]. Include [their place]. Bold, saturated colour: [a few colours]. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
   "images": {
     "dir": "images/es-mx",
-    "place": { "aspect_ratio": "1:1", "resolution": "2k", "width": 1200, "height": 1200 },
-    "portrait": { "aspect_ratio": "2:3", "resolution": "2k", "width": 1200, "height": 1800 }
+    "place": {
+      "aspect_ratio": "1:1",
+      "resolution": "2k",
+      "width": 1200,
+      "height": 1200
+    },
+    "portrait": {
+      "aspect_ratio": "2:3",
+      "resolution": "2k",
+      "width": 1200,
+      "height": 1800
+    }
   },
   "cities": [
     {
-      "id": "ciudad-de-mexico", "name": "Ciudad de México", "region": "Ciudad de México",
-      "neighbourhoods": ["Roma Norte", "Condesa", "Coyoacán", "Centro Histórico"],
+      "id": "ciudad-de-mexico",
+      "name": "Ciudad de México",
+      "region": "Ciudad de México",
+      "neighbourhoods": [
+        "Roma Norte",
+        "Condesa",
+        "Coyoacán",
+        "Centro Histórico"
+      ],
       "people": [
-        { "id": "chucho-lustrabotas", "name": "Don Chucho", "gender": "m", "age": 74, "role": "shoe-shiner", "place": "a shoe-shine stand on Avenida Álvaro Obregón", "neighbourhood": "Roma Norte",
-          "portraitPrompt": "Gouache portrait of a man in his 70s with a white moustache, a flat cap and a pressed short-sleeved shirt, who shines shoes at a stand on Avenida Álvaro Obregón in Roma Norte, Mexico City. Include the shoe-shine stand. Bold, saturated colour: jacaranda purple, ochre and deep green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)." },
-        { "id": "vale-libros-tecolote", "name": "Vale", "gender": "f", "age": 31, "role": "bookseller", "place": "Libros Tecolote, a small used bookshop", "neighbourhood": "Coyoacán",
-          "portraitPrompt": "Gouache portrait of a woman in her early 30s with short hair dyed copper, round glasses and a denim jacket, who runs Libros Tecolote, a small used bookshop in Coyoacán, Mexico City. Include the bookshop. Bold, saturated colour: rosa mexicano, cobalt and mustard. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)." }
+        {
+          "id": "chucho-lustrabotas",
+          "name": "Don Chucho",
+          "gender": "m",
+          "age": 74,
+          "role": "shoe-shiner",
+          "place": "a shoe-shine stand on Avenida Álvaro Obregón",
+          "neighbourhood": "Roma Norte",
+          "portraitPrompt": "Gouache portrait of a man in his 70s with a white moustache, a flat cap and a pressed short-sleeved shirt, who shines shoes at a stand on Avenida Álvaro Obregón in Roma Norte, Mexico City. Include the shoe-shine stand. Bold, saturated colour: jacaranda purple, ochre and deep green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
+        },
+        {
+          "id": "vale-libros-tecolote",
+          "name": "Vale",
+          "gender": "f",
+          "age": 31,
+          "role": "bookseller",
+          "place": "Libros Tecolote, a small used bookshop",
+          "neighbourhood": "Coyoacán",
+          "portraitPrompt": "Gouache portrait of a woman in her early 30s with short hair dyed copper, round glasses and a denim jacket, who runs Libros Tecolote, a small used bookshop in Coyoacán, Mexico City. Include the bookshop. Bold, saturated colour: rosa mexicano, cobalt and mustard. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
+        }
       ]
     },
     {
-      "id": "oaxaca", "name": "Oaxaca", "region": "Oaxaca",
-      "neighbourhoods": ["Centro", "Jalatlaco", "Xochimilco", "Reforma"],
+      "id": "oaxaca",
+      "name": "Oaxaca",
+      "region": "Oaxaca",
+      "neighbourhoods": [
+        "Centro",
+        "Jalatlaco",
+        "Xochimilco",
+        "Reforma"
+      ],
       "people": [
-        { "id": "ofelia-tlayudas", "name": "Doña Ofelia", "gender": "f", "age": 56, "role": "tlayuda seller", "place": "a tlayuda grill at the Mercado 20 de Noviembre", "neighbourhood": "Centro",
-          "portraitPrompt": "Gouache portrait of a woman in her 50s with grey-streaked hair pulled back, gold earrings and a flowered apron over a T-shirt, who sells tlayudas from a grill at the Mercado 20 de Noviembre in Oaxaca. Include the grill and the market. Bold, saturated colour: cochineal red, marigold and indigo. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)." },
-        { "id": "emiliano-los-amantes", "name": "Emiliano", "gender": "m", "age": 28, "role": "mezcal bartender", "place": "Mezcalería Los Amantes", "neighbourhood": "Centro",
-          "portraitPrompt": "Gouache portrait of a man in his late 20s with a short beard and a woven bracelet, wearing a plain white T-shirt, who pours mezcal behind the bar at Mezcalería Los Amantes in Oaxaca. Include the bar. Bold, saturated colour: agave green, terracotta and turquoise. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)." }
+        {
+          "id": "ofelia-tlayudas",
+          "name": "Doña Ofelia",
+          "gender": "f",
+          "age": 56,
+          "role": "tlayuda seller",
+          "place": "a tlayuda grill at the Mercado 20 de Noviembre",
+          "neighbourhood": "Centro",
+          "portraitPrompt": "Gouache portrait of a woman in her 50s with grey-streaked hair pulled back, gold earrings and a flowered apron over a T-shirt, who sells tlayudas from a grill at the Mercado 20 de Noviembre in Oaxaca. Include the grill and the market. Bold, saturated colour: cochineal red, marigold and indigo. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
+        },
+        {
+          "id": "emiliano-los-amantes",
+          "name": "Emiliano",
+          "gender": "m",
+          "age": 28,
+          "role": "mezcal bartender",
+          "place": "Mezcalería Los Amantes",
+          "neighbourhood": "Centro",
+          "portraitPrompt": "Gouache portrait of a man in his late 20s with a short beard and a woven bracelet, wearing a plain white T-shirt, who pours mezcal behind the bar at Mezcalería Los Amantes in Oaxaca. Include the bar. Bold, saturated colour: agave green, terracotta and turquoise. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
+        }
       ]
     },
     {
-      "id": "puebla", "name": "Puebla", "region": "Puebla",
-      "neighbourhoods": ["Centro Histórico", "Barrio de Analco", "Barrio del Artista", "La Paz"],
+      "id": "puebla",
+      "name": "Puebla",
+      "region": "Puebla",
+      "neighbourhoods": [
+        "Centro Histórico",
+        "Barrio de Analco",
+        "Barrio del Artista",
+        "La Paz"
+      ],
       "people": [
-        { "id": "sofia-dulces-la-gloria", "name": "Sofía", "gender": "f", "age": 16, "role": "helps at her family's sweet shop", "place": "Dulces Típicos La Gloria on Calle de los Dulces", "neighbourhood": "Centro Histórico",
-          "portraitPrompt": "Gouache portrait of a girl of 16 in a school sweater with a ponytail and braces, who helps at her family's dulcería, Dulces Típicos La Gloria, on Calle de los Dulces in Puebla. Include the sweets shop. Bold, saturated colour: cobalt, white and candy pink. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)." },
-        { "id": "padre-tomas-santo-domingo", "name": "Padre Tomás", "gender": "m", "age": 63, "role": "priest", "place": "the Templo de Santo Domingo", "neighbourhood": "Centro Histórico",
-          "portraitPrompt": "Gouache portrait of a priest in his 60s with a kind, tired face and reading glasses, in a black clerical shirt, who looks after the Templo de Santo Domingo in Puebla. Include the church. Bold, saturated colour: gold, cobalt and warm stone. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)." }
+        {
+          "id": "sofia-dulces-la-gloria",
+          "name": "Sofía",
+          "gender": "f",
+          "age": 16,
+          "role": "helps at her family's sweet shop",
+          "place": "Dulces Típicos La Gloria on Calle de los Dulces",
+          "neighbourhood": "Centro Histórico",
+          "portraitPrompt": "Gouache portrait of a girl of 16 in a school sweater with a ponytail and braces, who helps at her family's dulcería, Dulces Típicos La Gloria, on Calle de los Dulces in Puebla. Include the sweets shop. Bold, saturated colour: cobalt, white and candy pink. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
+        },
+        {
+          "id": "padre-tomas-santo-domingo",
+          "name": "Padre Tomás",
+          "gender": "m",
+          "age": 63,
+          "role": "priest",
+          "place": "the Templo de Santo Domingo",
+          "neighbourhood": "Centro Histórico",
+          "portraitPrompt": "Gouache portrait of a priest in his 60s with a kind, tired face and reading glasses, in a black clerical shirt, who looks after the Templo de Santo Domingo in Puebla. Include the church. Bold, saturated colour: gold, cobalt and warm stone. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
+        }
       ]
     },
     {
-      "id": "guadalajara", "name": "Guadalajara", "region": "Jalisco",
-      "neighbourhoods": ["Centro", "Colonia Americana", "Chapultepec", "Tlaquepaque"],
+      "id": "guadalajara",
+      "name": "Guadalajara",
+      "region": "Jalisco",
+      "neighbourhoods": [
+        "Centro",
+        "Colonia Americana",
+        "Chapultepec",
+        "Tlaquepaque"
+      ],
       "people": [
-        { "id": "memo-tejuino", "name": "Memo", "gender": "m", "age": 44, "role": "tejuino seller", "place": "a tejuino cart near the Mercado San Juan de Dios", "neighbourhood": "Centro",
-          "portraitPrompt": "Gouache portrait of a man in his 40s with a broad grin and a baseball cap, wearing a polo shirt, who sells tejuino from a cart near the Mercado San Juan de Dios in Guadalajara. Include the cart. Bold, saturated colour: teal, mustard and terracotta. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)." },
-        { "id": "ximena-ceramica", "name": "Ximena", "gender": "f", "age": 28, "role": "potter", "place": "a ceramics workshop", "neighbourhood": "Tlaquepaque",
-          "portraitPrompt": "Gouache portrait of a woman in her late 20s with long straight hair and a clay-smudged apron, who throws pots at a ceramics workshop in Tlaquepaque, Guadalajara. Include the workshop. Bold, saturated colour: terracotta, sky blue and ochre. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)." }
+        {
+          "id": "memo-tejuino",
+          "name": "Memo",
+          "gender": "m",
+          "age": 44,
+          "role": "tejuino seller",
+          "place": "a tejuino cart near the Mercado San Juan de Dios",
+          "neighbourhood": "Centro",
+          "portraitPrompt": "Gouache portrait of a man in his 40s with a broad grin and a baseball cap, wearing a polo shirt, who sells tejuino from a cart near the Mercado San Juan de Dios in Guadalajara. Include the cart. Bold, saturated colour: teal, mustard and terracotta. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
+        },
+        {
+          "id": "ximena-ceramica",
+          "name": "Ximena",
+          "gender": "f",
+          "age": 28,
+          "role": "potter",
+          "place": "a ceramics workshop",
+          "neighbourhood": "Tlaquepaque",
+          "portraitPrompt": "Gouache portrait of a woman in her late 20s with long straight hair and a clay-smudged apron, who throws pots at a ceramics workshop in Tlaquepaque, Guadalajara. Include the workshop. Bold, saturated colour: terracotta, sky blue and ochre. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
+        }
       ]
     },
     {
-      "id": "san-miguel-de-allende", "name": "San Miguel de Allende", "region": "Guanajuato",
-      "neighbourhoods": ["Centro", "Guadalupe", "San Antonio", "Atascadero"],
+      "id": "san-miguel-de-allende",
+      "name": "San Miguel de Allende",
+      "region": "Guanajuato",
+      "neighbourhoods": [
+        "Centro",
+        "Guadalupe",
+        "San Antonio",
+        "Atascadero"
+      ],
       "people": [
-        { "id": "rosa-flores-ignacio-ramirez", "name": "Doña Rosa", "gender": "f", "age": 64, "role": "flower seller", "place": "a flower stall at the Mercado Ignacio Ramírez", "neighbourhood": "Centro",
-          "portraitPrompt": "Gouache portrait of a woman in her 60s with a silver bob and a bright scarf, who runs a flower stall at the Mercado Ignacio Ramírez in San Miguel de Allende. Include the flower stall. Bold, saturated colour: rose, marigold and slate blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)." },
-        { "id": "beto-taxi", "name": "Beto", "gender": "m", "age": 22, "role": "taxi driver", "place": "the taxi rank by the Jardín", "neighbourhood": "Centro",
-          "portraitPrompt": "Gouache portrait of a young man in his early 20s with a fade haircut and a hoodie, who drives a taxi in San Miguel de Allende. Include his green-and-white taxi and a cobbled street. Bold, saturated colour: green, ochre and rose. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)." }
+        {
+          "id": "rosa-flores-ignacio-ramirez",
+          "name": "Doña Rosa",
+          "gender": "f",
+          "age": 64,
+          "role": "flower seller",
+          "place": "a flower stall at the Mercado Ignacio Ramírez",
+          "neighbourhood": "Centro",
+          "portraitPrompt": "Gouache portrait of a woman in her 60s with a silver bob and a bright scarf, who runs a flower stall at the Mercado Ignacio Ramírez in San Miguel de Allende. Include the flower stall. Bold, saturated colour: rose, marigold and slate blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
+        },
+        {
+          "id": "beto-taxi",
+          "name": "Beto",
+          "gender": "m",
+          "age": 22,
+          "role": "taxi driver",
+          "place": "the taxi rank by the Jardín",
+          "neighbourhood": "Centro",
+          "portraitPrompt": "Gouache portrait of a young man in his early 20s with a fade haircut and a hoodie, who drives a taxi in San Miguel de Allende. Include his green-and-white taxi and a cobbled street. Bold, saturated colour: green, ochre and rose. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
+        }
       ]
     }
-  ]
+  ],
+  "placeStyles": {
+    "ciudad-de-mexico": "Candid daytime street photograph in Mexico City, shot at eye level on a 35mm lens: close in, the place and its people fill the frame, rooftops and sky cropped out; a blurred foreground element such as a café chair or a passing cyclist; low late-afternoon sun raking across the street, deep shadows; overhead cables, parked scooters and bikes, people walking past with slight motion blur; 35mm film grain and a warm film colour grade. The neighbourhood and its architecture come from the scene",
+    "guadalajara": "Linocut print with bold carved black lines and wood-grain texture, strong contrast, in bright colour. Palette: terracotta, teal, mustard and sky blue",
+    "oaxaca": "Mexican shadow-box diorama painted as naive folk art: the scene built inside a small open wooden box, with tiny handmade clay and papier-mâché figures and objects, every surface painted in bright saturated colours with careful small details and alebrije patterns, flat perspective, photographed straight on with soft light. Palette: cochineal red, marigold, indigo and turquoise",
+    "puebla": "Illustration in the style of a hand-painted Talavera tile panel from Puebla: slightly glossy glaze, visible brush marks, a thin decorative tile border. Palette: cobalt blue and white with touches of yellow, ochre and green",
+    "san-miguel-de-allende": "Mexican mural painting style: flat fresco look, simplified forms, strong rhythmic composition, matte plaster texture. Palette: terracotta, ochre, rose, slate blue and deep green"
+  },
+  "placeRules": "No other words anywhere: no dates, no 'HOY', no neighbourhood or city names, no slogans, no prices, no brand names or logos. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, skulls, rebozos or costumes. Keep the main scene in the centre; nothing important near the edges.",
+  "placeStylesNote": "Chosen 2026-10-14 by Josh from the style test (content/es-mx/style-test.json). Each place prompt = city style + the place's scene (its imagePrompt) + its name as the only sign + placeRules (scripts/lib/place-prompt.mjs)."
 }

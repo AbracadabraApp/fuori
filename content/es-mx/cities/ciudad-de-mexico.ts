@@ -13,7 +13,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Roma Norte',
       real: false,
       characterId: 'chucho-lustrabotas',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Puesto de boleo de Don Chucho, a shoe-shine stand on Avenida Álvaro Obregón, Roma Norte, Ciudad de México, today. A wooden shoe-shine stand with a raised footrest sits under a blooming jacaranda tree, tins of polish and brushes lined up on the shelf, while an office worker reads his phone with one shoe up. Bold colour: jacaranda purple, ochre, deep green. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Puesto de boleo de Don Chucho, a shoe-shine stand on Avenida Álvaro Obregón, Roma Norte, Ciudad de México. A wooden shoe-shine stand with a raised footrest sits under a blooming jacaranda tree, tins of polish and brushes lined up on the shelf, while an office worker reads his phone with one shoe up.',
     },
     {
       id: 'libros-tecolote',
@@ -22,7 +22,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Coyoacán',
       real: false,
       characterId: 'vale-libros-tecolote',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Libros Tecolote, a small used bookshop, Coyoacán, Ciudad de México, today. Crooked shelves of secondhand books spill onto the cobbled pavement in crates, a painted owl sign hangs over the door, and a cat sleeps on a pile of paperbacks while a student browses. Bold colour: rosa mexicano, cobalt, mustard. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Libros Tecolote, a small used bookshop, Coyoacán, Ciudad de México. Crooked shelves of secondhand books spill onto the cobbled pavement in crates, a painted owl sign hangs over the door, and a cat sleeps on a pile of paperbacks while a student browses.',
     },
     {
       id: 'cafe-amapola',
@@ -31,7 +31,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Condesa',
       real: false,
       characterId: 'ximena-barista',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Café Amapola, Condesa, Ciudad de México, today. A small corner café with tall windows and a few tables on the pavement under ash trees, a barista steaming milk behind the counter, and customers with laptops and clay mugs of café de olla. Bold colour: poppy red, teal, cream yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Café Amapola, Condesa, Ciudad de México. A small corner café with tall windows and a few tables on the pavement under ash trees, a barista steaming milk behind the counter, and customers with laptops and clay mugs of café de olla.',
     },
     {
       id: 'panaderia-la-concha-de-oro',
@@ -40,7 +40,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Condesa',
       real: false,
       characterId: 'gaspar-panadero',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Panadería La Concha de Oro, Condesa, Ciudad de México, today. Metal trays piled with conchas, cuernos, orejas and bolillos fill the glass shelves, a customer holds a tray and tongs, and a baker in a white apron slides fresh bread from the oven at the back. Bold colour: pink, golden brown, sky blue. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Panadería La Concha de Oro, Condesa, Ciudad de México. Metal trays piled with conchas, cuernos, orejas and bolillos fill the glass shelves, a customer holds a tray and tongs, and a baker in a white apron slides fresh bread from the oven at the back.',
     },
     {
       id: 'parque-mexico',
@@ -49,7 +49,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Condesa',
       real: true,
       characterId: 'beto-paseador',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Parque México, Condesa, Ciudad de México, today. Curving paths run beneath tall trees, and a man is surrounded by a happy tangle of leashed dogs near the round fountain and the art deco Foro Lindbergh. Joggers and a couple on a bench are in the background. Bold colour: leaf green, terracotta, sunny yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Parque México, Condesa, Ciudad de México. Curving paths run beneath tall trees, and a man is surrounded by a happy tangle of leashed dogs near the round fountain and the art deco Foro Lindbergh. Joggers and a couple on a bench are in the background.',
     },
     {
       id: 'quesadillas-dona-lupe',
@@ -58,7 +58,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Coyoacán',
       real: false,
       characterId: 'lupe-quesadillera',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Quesadillas Doña Lupe, a stall in the Mercado de Coyoacán, Coyoacán, Ciudad de México, today. A woman pats out blue-corn masa beside a hot comal, bowls of flor de calabaza, huitlacoche and cheese in front of her, and hungry customers wait on stools under hanging papel picado. Bold colour: blue corn indigo, orange, chili red. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Quesadillas Doña Lupe, a stall in the Mercado de Coyoacán, Coyoacán, Ciudad de México. A woman pats out blue-corn masa beside a hot comal, bowls of flor de calabaza, huitlacoche and cheese in front of her, and hungry customers wait on stools under hanging papel picado.',
     },
     {
       id: 'tacos-el-trompo-rojo',
@@ -67,7 +67,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Roma Norte',
       real: false,
       characterId: 'chema-taquero',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Tacos El Trompo Rojo, Roma Norte, Ciudad de México, today. At a street-corner taquería, a taquero flicks a slice of pineapple from the glowing al pastor trompo onto a tortilla. Salsas in bowls line the counter and people eat standing at a steel table in the evening light. Bold colour: chili red, pineapple yellow, night blue. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Tacos El Trompo Rojo, Roma Norte, Ciudad de México. At a street-corner taquería, a taquero flicks a slice of pineapple from the glowing al pastor trompo onto a tortilla. Salsas in bowls line the counter and people eat standing at a steel table in the evening light.',
     },
     {
       id: 'fonda-dona-cuca',
@@ -76,7 +76,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Centro Histórico',
       real: false,
       characterId: 'cuca-cocinera',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Fonda Doña Cuca, Centro Histórico, Ciudad de México, today. A narrow cocina económica with oilcloth tables, clay pots of guisados steaming behind a counter, and a chalkboard menu of comida corrida. Office workers and a street vendor share the room at lunchtime. Bold colour: tomato red, oilcloth green, warm orange. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Fonda Doña Cuca, Centro Histórico, Ciudad de México. A narrow cocina económica with oilcloth tables, clay pots of guisados steaming behind a counter, and a chalkboard menu of comida corrida. Office workers and a street vendor share the room at lunchtime.',
     },
     {
       id: 'catedral-metropolitana',
@@ -85,7 +85,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Centro Histórico',
       real: true,
       characterId: 'alicia-catequista',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Catedral Metropolitana, Centro Histórico, Ciudad de México, today. The baroque towers rise over the Zócalo, the great doors are open, and a woman volunteer in a shawl welcomes visitors while pigeons and a flower seller fill the square in front. Bold colour: stone grey-blue, gold, marigold orange. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Catedral Metropolitana, Centro Histórico, Ciudad de México. The baroque towers rise over the Zócalo, the great doors are open, and a woman volunteer in a shawl welcomes visitors while pigeons and a flower seller fill the square in front.',
     },
     {
       id: 'cantina-la-opera',
@@ -94,7 +94,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Centro Histórico',
       real: true,
       characterId: 'efrain-mesero',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Cantina La Ópera, Centro Histórico, Ciudad de México, today. Dark carved wood booths, a long bar with mirrors and a gilded ceiling with a famous bullet hole. A waiter in a white jacket carries a tray of tequila and botanas to a table of friends. Bold colour: oxblood red, gold, deep brown. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Cantina La Ópera, Centro Histórico, Ciudad de México. Dark carved wood booths, a long bar with mirrors and a gilded ceiling with a famous bullet hole. A waiter in a white jacket carries a tray of tequila and botanas to a table of friends.',
     },
     {
       id: 'alameda-central',
@@ -103,7 +103,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Centro Histórico',
       real: true,
       characterId: 'carmen-jubilada',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Alameda Central, Centro Histórico, Ciudad de México, today. Wide tree-lined paths with iron benches, a fountain in the background, and an elderly woman feeding pigeons while office workers and students pass by. Bold colour: ash tree green, fountain blue, warm ochre. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Alameda Central, Centro Histórico, Ciudad de México. Wide tree-lined paths with iron benches, a fountain in the background, and an elderly woman feeding pigeons while office workers and students pass by.',
     },
     {
       id: 'escuela-lengua-cdmx',
@@ -112,7 +112,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Roma Norte',
       real: false,
       characterId: 'magda',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of a language school in Roma Norte, Ciudad de México, today. Bright classroom in a restored mansion with tall windows, students around a table with books, whiteboard with Spanish conjugations, bookshelves, potted plants, morning light. Bold colour: terra cotta, sage green, cream yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'a language school in Roma Norte, Ciudad de México. Bright classroom in a restored mansion with tall windows, students around a table with books, whiteboard with Spanish conjugations, bookshelves, potted plants, morning light.',
     },
     {
       id: 'terminal-tapo',
@@ -121,7 +121,7 @@ export const ciudadDeMexico: CityPantry = {
       neighbourhood: 'Centro Histórico',
       real: true,
       characterId: 'arturo-taquillero-cdmx',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of a busy bus terminal in Ciudad de México, today. Travelers with bags at ticket counters, departure boards overhead, buses visible through glass doors, snack vendors, people waiting on benches. Bold colour: travel blue, warm yellow, concrete grey. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'a busy bus terminal in Ciudad de México. Travelers with bags at ticket counters, departure boards overhead, buses visible through glass doors, snack vendors, people waiting on benches.',
     },
   ],
   characters: [

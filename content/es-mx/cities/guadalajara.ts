@@ -13,7 +13,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Centro',
       real: false,
       characterId: 'memo-tejuino',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of a tejuino cart near the Mercado San Juan de Dios, Centro, Guadalajara, today. A cart with a big barrel, a ladle, a pile of limes and a bucket of shaved ice stands on a busy pavement, with the market arches behind it. A smiling seller in a cap serves a cold cup of tejuino to a customer. Bold colour: teal, mustard, terracotta. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'a tejuino cart near the Mercado San Juan de Dios, Centro, Guadalajara. A cart with a big barrel, a ladle, a pile of limes and a bucket of shaved ice stands on a busy pavement, with the market arches behind it. A smiling seller in a cap serves a cold cup of tejuino to a customer.',
     },
     {
       id: 'cantina-la-fuente',
@@ -22,7 +22,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'rigoberto-cantinero',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Cantina La Fuente, Centro, Guadalajara, today. A long wooden bar, shelves of tequila bottles, old tiled floor and ceiling fans. A bartender in a white shirt pours a drink while two regulars share plates of botanas at a small table. Bold colour: deep red, agave green, warm yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Cantina La Fuente, Centro, Guadalajara. A long wooden bar, shelves of tequila bottles, old tiled floor and ceiling fans. A bartender in a white shirt pours a drink while two regulars share plates of botanas at a small table.',
     },
     {
       id: 'cafe-tinta',
@@ -31,7 +31,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Colonia Americana',
       real: false,
       characterId: 'valeria-barista',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Café Tinta, Colonia Americana, Guadalajara, today. A small corner café in an old house with tall windows and potted plants, an espresso machine on the counter and a chalkboard menu. A barista makes a coffee while a customer with a laptop sits by the window under a jacaranda tree. Bold colour: coffee brown, violet, cream. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Café Tinta, Colonia Americana, Guadalajara. A small corner café in an old house with tall windows and potted plants, an espresso machine on the counter and a chalkboard menu. A barista makes a coffee while a customer with a laptop sits by the window under a jacaranda tree.',
     },
     {
       id: 'panaderia-la-espiga',
@@ -40,7 +40,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Colonia Americana',
       real: false,
       characterId: 'efren-panadero',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Panadería La Espiga de Oro, Colonia Americana, Guadalajara, today. Glass cases and wooden racks full of birotes, conchas and cuernitos, with metal trays and tongs on the counter. A baker in a flour-dusted apron hands over a paper bag to a woman with a shopping bag. Bold colour: golden yellow, pink, brick red. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Panadería La Espiga de Oro, Colonia Americana, Guadalajara. Glass cases and wooden racks full of birotes, conchas and cuernitos, with metal trays and tongs on the counter. A baker in a flour-dusted apron hands over a paper bag to a woman with a shopping bag.',
     },
     {
       id: 'parque-revolucion',
@@ -49,7 +49,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Colonia Americana',
       real: true,
       characterId: 'lalo-bolero',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Parque Revolución, Colonia Americana, Guadalajara, today. Tall trees, stone benches and gravel paths, with people walking dogs and a paletero pushing his cart. An older shoeshiner sits at his wooden stand beside a bench, polishing a customer\u2019s boot. Bold colour: leafy green, sky blue, orange. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Parque Revolución, Colonia Americana, Guadalajara. Tall trees, stone benches and gravel paths, with people walking dogs and a paletero pushing his cart. An older shoeshiner sits at his wooden stand beside a bench, polishing a customer\u2019s boot.',
     },
     {
       id: 'tacos-el-compa-nacho',
@@ -58,7 +58,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Chapultepec',
       real: false,
       characterId: 'nacho-taquero',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Tacos El Compa Nacho, Chapultepec, Guadalajara, today. A street-food stand with a steaming pot of birria, a griddle of tortillas, bowls of salsa, limes and onion, and a striped awning over plastic stools. A taquero in an apron chops meat while customers wait with paper plates in the evening light. Bold colour: chilli red, turquoise, golden yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Tacos El Compa Nacho, Chapultepec, Guadalajara. A street-food stand with a steaming pot of birria, a griddle of tortillas, bowls of salsa, limes and onion, and a striped awning over plastic stools. A taquero in an apron chops meat while customers wait with paper plates in the evening light.',
     },
     {
       id: 'abarrotes-la-esquinita',
@@ -67,7 +67,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Chapultepec',
       real: false,
       characterId: 'mari-tendera',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Abarrotes La Esquinita, Chapultepec, Guadalajara, today. A corner shop with a hand-painted sign, a metal shutter half raised, crates of soft drinks, hanging bags of chips and a counter with a cash register and jars of sweets. A shopkeeper leans on the counter chatting with a child buying a bag of chicharrones. Bold colour: cobalt blue, lime green, red. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Abarrotes La Esquinita, Chapultepec, Guadalajara. A corner shop with a hand-painted sign, a metal shutter half raised, crates of soft drinks, hanging bags of chips and a counter with a cash register and jars of sweets. A shopkeeper leans on the counter chatting with a child buying a bag of chicharrones.',
     },
     {
       id: 'taller-ceramica-tlaquepaque',
@@ -76,7 +76,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Tlaquepaque',
       real: false,
       characterId: 'ximena-ceramica',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Taller de Cerámica Barro Vivo, Tlaquepaque, Guadalajara, today. A courtyard workshop with a potter\u2019s wheel, shelves of painted pots and clay figures, and a kiln in the corner, with bougainvillea over the wall. A young potter shapes a jug on the wheel while a visitor admires the painted plates. Bold colour: terracotta, sky blue, ochre. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Taller de Cerámica Barro Vivo, Tlaquepaque, Guadalajara. A courtyard workshop with a potter\u2019s wheel, shelves of painted pots and clay figures, and a kiln in the corner, with bougainvillea over the wall. A young potter shapes a jug on the wheel while a visitor admires the painted plates.',
     },
     {
       id: 'parroquia-san-pedro-tlaquepaque',
@@ -85,7 +85,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Tlaquepaque',
       real: true,
       characterId: 'lupita-sacristana',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Parroquia de San Pedro, Tlaquepaque, Guadalajara, today. A stone church with a tall bell tower and a front door open to the street, with strings of papel picado above the pedestrian lane. A woman in a cardigan sweeps the steps while families walk past with ice creams. Bold colour: rose pink, cobalt blue, warm gold. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Parroquia de San Pedro, Tlaquepaque, Guadalajara. A stone church with a tall bell tower and a front door open to the street, with strings of papel picado above the pedestrian lane. A woman in a cardigan sweeps the steps while families walk past with ice creams.',
     },
     {
       id: 'fonda-dona-chuy',
@@ -94,7 +94,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Tlaquepaque',
       real: false,
       characterId: 'chuy-cocinera',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Cocina Económica Doña Chuy, Tlaquepaque, Guadalajara, today. A small family fonda with oilcloth tables, a chalkboard listing the comida corrida and clay pots steaming in an open kitchen. A cook in an apron ladles birria into a bowl while workers in the lunch crowd eat at shared tables. Bold colour: chilli red, mustard, avocado green. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Cocina Económica Doña Chuy, Tlaquepaque, Guadalajara. A small family fonda with oilcloth tables, a chalkboard listing the comida corrida and clay pots steaming in an open kitchen. A cook in an apron ladles birria into a bowl while workers in the lunch crowd eat at shared tables.',
     },
     {
       id: 'jardin-de-san-francisco',
@@ -103,7 +103,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'rosa-estudiante',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Jardín de San Francisco, Centro, Guadalajara, today. A peaceful plaza with tall trees and stone benches beside the Templo Expiatorio, with a young woman sitting on a bench with textbooks and a laptop while pigeons wander and people pass through. Bold colour: ash tree green, stone pink, notebook blue. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Jardín de San Francisco, Centro, Guadalajara. A peaceful plaza with tall trees and stone benches beside the Templo Expiatorio, with a young woman sitting on a bench with textbooks and a laptop while pigeons wander and people pass through.',
     },
     {
       id: 'escuela-lengua-guadalajara',
@@ -112,7 +112,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Chapultepec',
       real: false,
       characterId: 'magda',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of a language school in Chapultepec, Guadalajara, today. A colonial-style building with a covered courtyard, bright classroom with wooden tables, whiteboard with Spanish verbs, students with notebooks, hanging plants. Bold colour: mariachi red, lime green, ochre yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'a language school in Chapultepec, Guadalajara. A colonial-style building with a covered courtyard, bright classroom with wooden tables, whiteboard with Spanish verbs, students with notebooks, hanging plants.',
     },
     {
       id: 'terminal-nueva',
@@ -121,7 +121,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Tlaquepaque',
       real: true,
       characterId: 'carlos-taquillero-gdl',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Terminal Nueva bus station, Tlaquepaque, Guadalajara, today. Modern terminal with travelers at ticket windows, digital departure boards, buses outside, families with luggage, vendors selling tortas and drinks. Bold colour: travel blue, sunset orange, warm yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Terminal Nueva bus station, Tlaquepaque, Guadalajara. Modern terminal with travelers at ticket windows, digital departure boards, buses outside, families with luggage, vendors selling tortas and drinks.',
     },
   ],
   characters: [

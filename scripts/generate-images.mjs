@@ -9,6 +9,8 @@
  * - Fully resumable (tracks progress in manifest)
  * - Checks if images exist before generating
  * - Can run city-by-city or all at once
+ * - --type place|portrait, --only id,id, --force (regenerate existing), --dry (print prompts)
+ *   Mexico places, all 65 in their city's style: COUNTRY=es-mx npm run images -- --type place --force
  * - Handles interruption gracefully
  *
  * Cost: ~$16 for all ~540 images (xAI Grok)
@@ -17,7 +19,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { execFileSync } from 'child_process';
+import sharp from 'sharp';
+import { buildPlacePrompt } from './lib/place-prompt.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -26,7 +29,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // and manifest, so their ids can't overwrite Italy's images.
 const COUNTRY = process.env.COUNTRY || 'it';
 const configPath = path.join(__dirname, '..', 'content', COUNTRY, 'generation.json');
-const imageConfig = fs.existsSync(configPath) ? JSON.parse(fs.readFileSync(configPath, 'utf8')).images ?? {} : {};
+const generation = fs.existsSync(configPath) ? JSON.parse(fs.readFileSync(configPath, 'utf8')) : {};
+const imageConfig = generation.images ?? {};
+// Per-city place styles (Mexico, 2026-10-14): place prompt = city style + scene + sign + rules
+const placeStyles = generation.placeStyles ?? {};
+const placeRules = generation.placeRules ?? '';
 const IMAGE_DIR = path.join(__dirname, '..', 'public', imageConfig.dir ?? 'images');
 const MANIFEST_PATH = path.join(__dirname, COUNTRY === 'it' ? 'image-generation-manifest.json' : `image-generation-manifest.${COUNTRY}.json`);
 
@@ -68,13 +75,17 @@ function parseCityContent(filePath) {
   const images = [];
 
   // Extract place images
-  const placeRegex = /{\s*id:\s*['"]([^'"]+)['"],[^{}\[]*imagePrompt:\s*['"]([^'"]+)['"]/g;
+  // Places: id, name (the sign) and imagePrompt (the scene); handles \' inside strings
+  const str = `(?:'((?:[^'\\\\]|\\\\.)*)'|"((?:[^"\\\\]|\\\\.)*)")`; // single- or double-quoted
+  const placeRegex = new RegExp(`{\\s*id:\\s*['"]([^'"]+)['"],\\s*name:\\s*${str}[^{}\\[]*?imagePrompt:\\s*${str}`, 'g');
+  const unescape = (t) => t.replace(/\\(['"])/g, '$1');
   let match;
   while ((match = placeRegex.exec(content)) !== null) {
     images.push({
       type: 'place',
       id: match[1],
-      prompt: match[2],
+      name: unescape(match[2] ?? match[3]),
+      prompt: unescape(match[4] ?? match[5]),
     });
   }
 
@@ -116,15 +127,15 @@ async function generateImage(prompt, type) {
   return await imageResponse.arrayBuffer();
 }
 
-// Resize to the configured size as JPEG (macOS sips). Elsewhere, keep the original.
-function fitToSize(filepath, type) {
+// Resize to the configured size and save as JPEG quality 82 (sharp; any OS).
+// Without a configured size (Italy), re-encode at the original size.
+async function fitToSize(filepath, type) {
   const size = imageConfig[type];
-  if (!size?.width) return;
-  try {
-    execFileSync('sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', '88', '-z', String(size.height), String(size.width), filepath, '--out', filepath], { stdio: 'ignore' });
-  } catch {
-    console.warn(`  (could not resize ${path.basename(filepath)}; kept the original size)`);
-  }
+  const img = sharp(fs.readFileSync(filepath));
+  const out = await (size?.width ? img.resize(size.width, size.height, { fit: 'cover' }) : img)
+    .jpeg({ quality: 82, mozjpeg: true })
+    .toBuffer();
+  fs.writeFileSync(filepath, out);
 }
 
 async function processCity(cityId, cityFile, manifest, options = {}) {
@@ -140,8 +151,21 @@ async function processCity(cityId, cityFile, manifest, options = {}) {
   for (const image of images) {
     const imageKey = `${cityId}/${image.id}`;
 
-    // Check manifest
-    if (manifest.completed[imageKey]) {
+    // --type place|portrait and --only id,id narrow the run
+    if (options.type && image.type !== options.type) continue;
+    if (options.only && !options.only.has(image.id)) continue;
+
+    // A city with its own place style: style + scene + the name as the only sign + rules
+    const prompt = image.type === 'place' && placeStyles[cityId]
+      ? buildPlacePrompt({ style: placeStyles[cityId], scene: image.prompt, sign: image.name, rules: placeRules })
+      : image.prompt;
+    if (options.dry) {
+      console.log(`\n[${imageKey}]\n${prompt}`);
+      continue;
+    }
+
+    // Check manifest (--force regenerates anyway)
+    if (manifest.completed[imageKey] && !options.force) {
       console.log(`⊘ ${imageKey} already generated`);
       skipped++;
       continue;
@@ -152,8 +176,8 @@ async function processCity(cityId, cityFile, manifest, options = {}) {
     const filename = `${image.id}.jpg`;
     const filepath = path.join(IMAGE_DIR, dir, filename);
 
-    // Check if file exists
-    if (fs.existsSync(filepath)) {
+    // Check if file exists (--force regenerates anyway)
+    if (fs.existsSync(filepath) && !options.force) {
       console.log(`⊘ ${imageKey} file exists`);
       manifest.completed[imageKey] = {
         timestamp: new Date().toISOString(),
@@ -171,9 +195,9 @@ async function processCity(cityId, cityFile, manifest, options = {}) {
     // Generate image
     try {
       console.log(`Generating ${imageKey}...`);
-      const buffer = await generateImage(image.prompt, image.type);
+      const buffer = await generateImage(prompt, image.type);
       fs.writeFileSync(filepath, Buffer.from(buffer));
-      fitToSize(filepath, image.type);
+      await fitToSize(filepath, image.type);
 
       manifest.completed[imageKey] = {
         timestamp: new Date().toISOString(),
@@ -237,7 +261,8 @@ async function generateAllImages(options = {}) {
     }
   }
 
-  // Update manifest stats
+  // Update manifest stats (a dry run changes nothing)
+  if (options.dry) return;
   manifest.stats = {
     total: Object.keys(manifest.completed).length + Object.keys(manifest.failed).length,
     completed: Object.keys(manifest.completed).length,
@@ -268,6 +293,16 @@ for (let i = 0; i < args.length; i++) {
   } else if (args[i] === '--max' && args[i + 1]) {
     options.maxImages = parseInt(args[i + 1]);
     i++;
+  } else if (args[i] === '--only' && args[i + 1]) {
+    options.only = new Set(args[i + 1].split(','));
+    i++;
+  } else if (args[i] === '--type' && args[i + 1]) {
+    options.type = args[i + 1];
+    i++;
+  } else if (args[i] === '--force') {
+    options.force = true;
+  } else if (args[i] === '--dry') {
+    options.dry = true;
   } else if (args[i] === '--reset') {
     if (fs.existsSync(MANIFEST_PATH)) {
       fs.unlinkSync(MANIFEST_PATH);

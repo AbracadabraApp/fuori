@@ -8,7 +8,7 @@ Each city's places get their own look, so arriving somewhere new feels new and p
 
 | City | Style | From the test |
 |---|---|---|
-| Ciudad de México | Daytime street photography, La Condesa: eye level, 35mm, close in, foreground blur, low afternoon sun, film grain, Art Deco and Streamline Moderne, dense trees | `condesa-street` |
+| Ciudad de México | Daytime street photography: eye level, 35mm, close in, foreground blur, low afternoon sun, film grain. The neighbourhood and architecture come from each place's scene (Condesa's Art Deco for Condesa places, colonial stone for the Centro) | `condesa-street`, generalised |
 | Guadalajara | Linocut: bold carved black lines, wood grain, bright colour | the current linocut, lettering fixed |
 | Oaxaca | Shadow-box diorama painted as naive folk art: tiny clay figures, alebrije patterns | `folk-shadow-box` |
 | Puebla | Hand-painted Talavera tile panel with a tile border | city card style |
@@ -41,6 +41,16 @@ Found 2026-10-14:
 - **Manifest.** Reset the Mexican place entries in `scripts/image-generation-manifest.es-mx.json` so it matches what was regenerated.
 - **Style-test leftovers.** Delete the laptop's `style-test/` folder once the regeneration is approved (not in git). Keep `style-test.mjs` and its config as the record of what was tried.
 - **Stop it piling up again.** Extend `npm run test:images` to fail on image files no city, place or person uses.
+
+## Status (2026-10-14)
+
+Steps 1–3 and the clean-up are done (cloud session); see progress.md. Deleted 40 unused files (23 MB); the new check also found Afuera's Magda portrait saved under the wrong name, now fixed. **Next: step 4 on the laptop:**
+
+```
+git pull && COUNTRY=es-mx npm run images -- --type place --force
+```
+
+Preview the prompts without generating: add `--dry`. Redo single places: `--only id,id`.
 
 ## Done when
 

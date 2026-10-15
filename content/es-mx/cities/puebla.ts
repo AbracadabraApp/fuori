@@ -13,7 +13,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'Centro Histórico',
       real: false,
       characterId: 'sofia-dulces-la-gloria',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Dulces Típicos La Gloria on Calle de los Dulces, Centro Histórico, Puebla, today. A narrow shop with a tiled front and open shelves of camotes wrapped in wax paper, tortitas de Santa Clara, jamoncillo and muéganos, while a family and a few tourists choose sweets at the counter. Bold colour: cobalt, white and candy pink. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Dulces Típicos La Gloria on Calle de los Dulces, Centro Histórico, Puebla. A narrow shop with a tiled front and open shelves of camotes wrapped in wax paper, tortitas de Santa Clara, jamoncillo and muéganos, while a family and a few tourists choose sweets at the counter.',
     },
     {
       id: 'templo-de-santo-domingo',
@@ -22,7 +22,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'Centro Histórico',
       real: true,
       characterId: 'padre-tomas-santo-domingo',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Templo de Santo Domingo, Centro Histórico, Puebla, today. The baroque stone facade stands above the street, and through the open doors glows the gold of the Capilla del Rosario, while women with candles and flowers climb the steps. Bold colour: gold, cobalt and warm stone. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Templo de Santo Domingo, Centro Histórico, Puebla. The baroque stone facade stands above the street, and through the open doors glows the gold of the Capilla del Rosario, while women with candles and flowers climb the steps.',
     },
     {
       id: 'cafe-cielo-rojo',
@@ -31,7 +31,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'Barrio del Artista',
       real: false,
       characterId: 'mateo-cafe-cielo-rojo',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Café Cielo Rojo, Barrio del Artista, Puebla, today. A small café with Talavera-tiled tables and a chalkboard menu of café de olla and chocolate poblano, next to a street of painters\' studios; a barista steams milk while an artist sketches by the window. Bold colour: terracotta red, turquoise and mustard yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Café Cielo Rojo, Barrio del Artista, Puebla. A small café with Talavera-tiled tables and a chalkboard menu of café de olla and chocolate poblano, next to a street of painters\' studios; a barista steams milk while an artist sketches by the window.',
     },
     {
       id: 'panaderia-la-espiga-de-la-paz',
@@ -40,7 +40,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'La Paz',
       real: false,
       characterId: 'remedios-panaderia-la-espiga',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Panadería La Espiga, La Paz, Puebla, today. A neighbourhood bakery in the early evening, with metal trays of cemita rolls, conchas, orejas and pan de yema, and customers with tongs and trays queuing at the glass counter. Bold colour: golden brown, cream and rose pink. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Panadería La Espiga, La Paz, Puebla. A neighbourhood bakery in the early evening, with metal trays of cemita rolls, conchas, orejas and pan de yema, and customers with tongs and trays queuing at the glass counter.',
     },
     {
       id: 'cemitas-dona-lupe-analco',
@@ -49,7 +49,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'Barrio de Analco',
       real: false,
       characterId: 'lupe-cemitas-dona-lupe',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Cemitas Doña Lupe, a market stall in Barrio de Analco, Puebla, today. A busy stall with sesame-seed rolls stacked high, hanging strings of chiles chipotles, bowls of papalo, quesillo and avocado, and a woman slicing meat for a hungry line of customers. Bold colour: chile red, leaf green and sesame gold. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Cemitas Doña Lupe, a market stall in Barrio de Analco, Puebla. A busy stall with sesame-seed rolls stacked high, hanging strings of chiles chipotles, bowls of papalo, quesillo and avocado, and a woman slicing meat for a hungry line of customers.',
     },
     {
       id: 'fonda-dona-tere',
@@ -58,7 +58,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'La Paz',
       real: false,
       characterId: 'tere-fonda-dona-tere',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Fonda Doña Tere, La Paz, Puebla, today. A cocina económica at lunchtime, with oilcloth-covered tables, clay pots of mole poblano and rice, a chalkboard with the menú del día, and office workers eating the comida corrida. Bold colour: mole brown, marigold orange and bright green. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Fonda Doña Tere, La Paz, Puebla. A cocina económica at lunchtime, with oilcloth-covered tables, clay pots of mole poblano and rice, a chalkboard with the menú del día, and office workers eating the comida corrida.',
     },
     {
       id: 'tacos-arabes-el-puente',
@@ -67,7 +67,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'Barrio de Analco',
       real: false,
       characterId: 'chuy-tacos-arabes-el-puente',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Tacos Árabes El Puente, Barrio de Analco, Puebla, today. A street-food stand near the old stone bridge, with a vertical spit of marinated pork turning, small pita-like tortillas on the griddle, bottles of chipotle salsa, and people eating standing up at night. Bold colour: fire orange, deep blue and cream. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Tacos Árabes El Puente, Barrio de Analco, Puebla. A street-food stand near the old stone bridge, with a vertical spit of marinated pork turning, small pita-like tortillas on the griddle, bottles of chipotle salsa, and people eating standing up at night.',
     },
     {
       id: 'zocalo-de-puebla',
@@ -76,7 +76,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'Centro Histórico',
       real: true,
       characterId: 'efrain-zocalo-de-puebla',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Zócalo de Puebla, Centro Histórico, Puebla, today. The central square with tall ash trees, the fountain and wrought-iron benches, the cathedral towers rising behind, arcades of cafés around the edge, and a shoe-shiner on a bench with a customer. Bold colour: leafy green, sky blue and sandy yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Zócalo de Puebla, Centro Histórico, Puebla. The central square with tall ash trees, the fountain and wrought-iron benches, the cathedral towers rising behind, arcades of cafés around the edge, and a shoe-shiner on a bench with a customer.',
     },
     {
       id: 'la-pasita',
@@ -85,7 +85,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'Barrio del Artista',
       real: true,
       characterId: 'ruben-la-pasita',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of La Pasita, Barrio del Artista, Puebla, today. A tiny old bar with a wooden counter, shelves of bottles and a cheerful crowd, small glasses of the sweet raisin liqueur served with a cube of cheese and a raisin on a toothpick. Bold colour: raisin purple, amber and deep red. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'La Pasita, Barrio del Artista, Puebla. A tiny old bar with a wooden counter, shelves of bottles and a cheerful crowd, small glasses of the sweet raisin liqueur served with a cube of cheese and a raisin on a toothpick.',
     },
     {
       id: 'farmacia-san-rafael',
@@ -94,7 +94,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'La Paz',
       real: false,
       characterId: 'daniela-farmacia-san-rafael',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Farmacia San Rafael, La Paz, Puebla, today. A corner pharmacy with a green cross sign, shelves of medicines and vitamins behind the counter, a pharmacist in a white coat helping an elderly man, and a school kid buying a bottle of water. Bold colour: pharmacy green, white and warm orange. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Farmacia San Rafael, La Paz, Puebla. A corner pharmacy with a green cross sign, shelves of medicines and vitamins behind the counter, a pharmacist in a white coat helping an elderly man, and a school kid buying a bottle of water.',
     },
     {
       id: 'jardin-del-carmen',
@@ -103,7 +103,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'Barrio de Analco',
       real: true,
       characterId: 'beatriz-abuela',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Jardín del Carmen, Barrio de Analco, Puebla, today. A small neighbourhood plaza with jacaranda trees, iron benches and a fountain, the baroque church of El Carmen in the background. An elderly woman sits knitting on a bench while children play nearby. Bold colour: jacaranda purple, fountain blue, warm terracotta. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Jardín del Carmen, Barrio de Analco, Puebla. A small neighbourhood plaza with jacaranda trees, iron benches and a fountain, the baroque church of El Carmen in the background. An elderly woman sits knitting on a bench while children play nearby.',
     },
     {
       id: 'escuela-lengua-puebla',
@@ -112,7 +112,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'Centro Histórico',
       real: false,
       characterId: 'magda',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of a language school in Centro Histórico, Puebla, today. A colonial building with Talavera tile accents, bright classroom with arched windows, students at tables, whiteboard with Spanish grammar, view of the cathedral through windows. Bold colour: Talavera blue, marigold yellow, terracotta. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'a language school in Centro Histórico, Puebla. A colonial building with Talavera tile accents, bright classroom with arched windows, students at tables, whiteboard with Spanish grammar, view of the cathedral through windows.',
     },
     {
       id: 'terminal-capu',
@@ -121,7 +121,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'La Paz',
       real: true,
       characterId: 'jorge-taquillero-puebla',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the CAPU bus terminal, La Paz, Puebla, today. Travelers with bags at ticket windows, digital departure boards, buses at platforms outside, families waiting on benches, vendors with snacks. Bold colour: travel blue, terracotta, sunny yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the CAPU bus terminal, La Paz, Puebla. Travelers with bags at ticket windows, digital departure boards, buses at platforms outside, families waiting on benches, vendors with snacks.',
     },
   ],
   characters: [

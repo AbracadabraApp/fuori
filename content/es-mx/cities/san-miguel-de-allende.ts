@@ -13,7 +13,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'rosa-flores-ignacio-ramirez',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the flower stall at the Mercado Ignacio Ramírez, Centro, San Miguel de Allende, today. Buckets of roses, marigolds and gladioli crowd a covered stall under hanging papel picado, while shoppers with woven bags pass between the fruit and cheese stands. Bold colour: rose, marigold and slate blue. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the flower stall at the Mercado Ignacio Ramírez, Centro, San Miguel de Allende. Buckets of roses, marigolds and gladioli crowd a covered stall under hanging papel picado, while shoppers with woven bags pass between the fruit and cheese stands.',
     },
     {
       id: 'jardin-allende',
@@ -22,7 +22,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'beto-taxi',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Jardín Allende and the taxi rank beside it, Centro, San Miguel de Allende, today. Trimmed laurel trees and iron benches fill the plaza, with the pink Parroquia spires rising behind them and green-and-white taxis lined up on the cobbles. Bold colour: green, rose and ochre. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Jardín Allende and the taxi rank beside it, Centro, San Miguel de Allende. Trimmed laurel trees and iron benches fill the plaza, with the pink Parroquia spires rising behind them and green-and-white taxis lined up on the cobbles.',
     },
     {
       id: 'parroquia-san-miguel-arcangel',
@@ -31,7 +31,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'aurelio-sacristan',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the Parroquia de San Miguel Arcángel, Centro, San Miguel de Allende, today. The pink neo-Gothic spires climb into a sunny sky above the front steps, where women in shawls, tourists and a balloon seller gather. Bold colour: rose pink, sky blue and gold. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the Parroquia de San Miguel Arcángel, Centro, San Miguel de Allende. The pink neo-Gothic spires climb into a sunny sky above the front steps, where women in shawls, tourists and a balloon seller gather.',
     },
     {
       id: 'la-cucaracha',
@@ -40,7 +40,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'tomas-cantinero',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of La Cucaracha cantina, Centro, San Miguel de Allende, today. A dim, narrow bar with swinging wooden doors, a long counter lined with mezcal bottles and a few regulars with small glasses, with a guitarist in the corner and peanut shells on the floor. Bold colour: deep red, amber and teal. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'La Cucaracha cantina, Centro, San Miguel de Allende. A dim, narrow bar with swinging wooden doors, a long counter lined with mezcal bottles and a few regulars with small glasses, with a guitarist in the corner and peanut shells on the floor.',
     },
     {
       id: 'cafe-de-la-calzada',
@@ -49,7 +49,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'Guadalupe',
       real: false,
       characterId: 'ximena-barista-san-miguel',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Café de la Calzada, Guadalupe, San Miguel de Allende, today. A small corner café with a talavera-tiled counter, clay cups of café de olla and a few young artists with laptops and sketchbooks at tables by the open door. Bold colour: coffee brown, turquoise and marigold. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Café de la Calzada, Guadalupe, San Miguel de Allende. A small corner café with a talavera-tiled counter, clay cups of café de olla and a few young artists with laptops and sketchbooks at tables by the open door.',
     },
     {
       id: 'fabrica-la-aurora',
@@ -58,7 +58,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'Guadalupe',
       real: true,
       characterId: 'marisol-ceramista',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Fábrica La Aurora, Guadalupe, San Miguel de Allende, today. The old textile mill is now full of art studios and galleries, with tall brick arches and sawtooth skylights, bougainvillea on the walls and visitors wandering past ceramics and canvases. Bold colour: brick red, violet and sunny yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Fábrica La Aurora, Guadalupe, San Miguel de Allende. The old textile mill is now full of art studios and galleries, with tall brick arches and sawtooth skylights, bougainvillea on the walls and visitors wandering past ceramics and canvases.',
     },
     {
       id: 'panaderia-la-esperanza',
@@ -67,7 +67,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'San Antonio',
       real: false,
       characterId: 'lourdes-panadera',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Panadería La Esperanza, San Antonio, San Miguel de Allende, today. Early morning at a neighbourhood bakery where metal trays of conchas, orejas and pan de nata sit on wooden racks, a customer holds tongs and a tray, and warm light spills from the oven door. Bold colour: golden yellow, pink and warm brown. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Panadería La Esperanza, San Antonio, San Miguel de Allende. Early morning at a neighbourhood bakery where metal trays of conchas, orejas and pan de nata sit on wooden racks, a customer holds tongs and a tray, and warm light spills from the oven door.',
     },
     {
       id: 'miscelanea-los-arcos',
@@ -76,7 +76,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'San Antonio',
       real: false,
       characterId: 'efrain-tendero',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Miscelánea Los Arcos, San Antonio, San Miguel de Allende, today. A corner shop under an arched doorway with a crate of soft drinks outside, shelves of tortillas, candles, notebooks and sweets, and a neighbour paying at the counter. Bold colour: cobalt blue, orange and cream. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Miscelánea Los Arcos, San Antonio, San Miguel de Allende. A corner shop under an arched doorway with a crate of soft drinks outside, shelves of tortillas, candles, notebooks and sweets, and a neighbour paying at the counter.',
     },
     {
       id: 'fonda-la-palmita',
@@ -85,7 +85,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'Atascadero',
       real: false,
       characterId: 'chelo-cocinera',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Fonda La Palmita, Atascadero, San Miguel de Allende, today. A homely lunchtime cocina económica with oilcloth tables and a chalkboard menu, clay pots of guisados steaming on the stove and workers sitting down to the comida corrida. Bold colour: chili red, leaf green and yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Fonda La Palmita, Atascadero, San Miguel de Allende. A homely lunchtime cocina económica with oilcloth tables and a chalkboard menu, clay pots of guisados steaming on the stove and workers sitting down to the comida corrida.',
     },
     {
       id: 'tacos-el-pastor-atascadero',
@@ -94,7 +94,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'Atascadero',
       real: false,
       characterId: 'ramiro-taquero',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Tacos El Pastor de Atascadero, Atascadero, San Miguel de Allende, today. An evening street-food stand under a striped awning, with a spinning trompo of al pastor meat topped with pineapple, bowls of salsa and limes, and neighbours queuing with paper plates. Bold colour: orange, green and hot pink. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Tacos El Pastor de Atascadero, Atascadero, San Miguel de Allende. An evening street-food stand under a striped awning, with a spinning trompo of al pastor meat topped with pineapple, bowls of salsa and limes, and neighbours queuing with paper plates.',
     },
     {
       id: 'parque-juarez',
@@ -103,7 +103,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'San Antonio',
       real: true,
       characterId: 'victor-jubilado',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of Parque Juárez, San Antonio, San Miguel de Allende, today. Curving paths under tall ash and eucalyptus trees, iron benches and a small fountain, with an elderly man sitting peacefully on a bench feeding pigeons while joggers and dog-walkers pass by. Bold colour: eucalyptus green, stone grey, warm afternoon gold. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'Parque Juárez, San Antonio, San Miguel de Allende. Curving paths under tall ash and eucalyptus trees, iron benches and a small fountain, with an elderly man sitting peacefully on a bench feeding pigeons while joggers and dog-walkers pass by.',
     },
     {
       id: 'escuela-lengua-sma',
@@ -112,7 +112,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'Centro',
       real: false,
       characterId: 'magda',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of a language school in Centro, San Miguel de Allende, today. A colonial building with bright pink walls, cobblestone courtyard, bright classroom with wooden tables, whiteboard with Spanish grammar, students with books, bougainvillea climbing the walls. Bold colour: rosa mexicano, cobalt blue, golden yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'a language school in Centro, San Miguel de Allende. A colonial building with bright pink walls, cobblestone courtyard, bright classroom with wooden tables, whiteboard with Spanish grammar, students with books, bougainvillea climbing the walls.',
     },
     {
       id: 'terminal-sma',
@@ -121,7 +121,7 @@ export const sanMiguelDeAllende: CityPantry = {
       neighbourhood: 'San Antonio',
       real: true,
       characterId: 'miguel-taquillero-sma',
-      imagePrompt: 'Linocut print with bold carved black lines and wood-grain texture, in bright colour, of the bus terminal, San Antonio, San Miguel de Allende, today. A modest terminal with travelers at ticket windows, schedules on the wall, buses outside, backpackers with luggage, vendors selling snacks and local crafts. Bold colour: travel blue, terracotta, sunny yellow. Square format, 1200 × 1200 pixels.',
+      imagePrompt: 'the bus terminal, San Antonio, San Miguel de Allende. A modest terminal with travelers at ticket windows, schedules on the wall, buses outside, backpackers with luggage, vendors selling snacks and local crafts.',
     },
   ],
   characters: [
