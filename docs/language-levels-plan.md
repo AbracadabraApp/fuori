@@ -7,7 +7,7 @@ Research behind this plan: [How language apps handle levels](research/language-a
 ## The problem
 
 - **Characters speak too far above the learner.** Josh's Italian teacher tried the app and rated the speakers **B2+**. Phone testing said the same earlier.
-- **The system doesn't adapt to the learner.** The character prompt deliberately tells characters nothing about level ("they hear the learner's level in their actual Italian and adjust"). That isn't working.
+- **The system doesn't adapt to the learner.** The character prompt contains no level information. Characters get only the learner's transcribed words and are expected to infer the level from them. That isn't working; the fix is to put the tier in the prompt on every turn (Josh, 2026-10-15).
 
 ## What exists today (checked in code, 2026-10-14)
 
@@ -64,14 +64,14 @@ Josh doesn't speak Spanish, so Afuera makes him a real beginner tester; expect b
 
 ## How we'll know it works
 
-1. A judge (Claude) that rates a character's line on the CEFR scale, checked against the teacher's B2+ rating of today's characters.
-2. Sample conversations per tier, judged automatically.
-3. **Josh's teacher rates the samples per tier:** the most trustworthy test we have.
-4. Josh plays Afuera as a beginner.
+1. A judge (Claude) that rates a character's line on the CEFR scale, **calibrated against official CEFR exam material** (CELI, CILS, PLIDA for Italian; DELE for Spanish): exam-board-graded samples at each level serve as its examples and answer key. This scales to any language with CEFR exams; one teacher doesn't (Josh, 2026-10-15). Exam dialogues are tidier than casual speech, so expect slightly high ratings of natural talk.
+2. A word-coverage check: the share of a line's words outside a frequency list for the language (language data). No calibration needed.
+3. Sample conversations per tier, 10+ turns (to catch drift), judged automatically.
+4. Spot checks: Josh's teacher on Italian samples, and Josh playing Afuera as a beginner. Useful, but nothing depends on them.
 
 ## Open questions
 
 - Two steps inside beginner, or one?
 - How the learner picks a tier at first (a question, a short chat with Magda, both?).
 - Does the dialect setting become part of Expert, or stay a separate option?
-- Save settings with the learner instead of resetting on reload (small fix, could come first).
+- Speed already follows the subtitle and dialect switches (0.7 / 0.9 / 1.0), but none of the settings are saved. Once a tier exists, it should set speed and default subtitles directly, and tier and overrides should be saved with the learner.
