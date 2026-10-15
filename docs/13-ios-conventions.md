@@ -123,8 +123,8 @@ Each rule: what to do, the HIG page, and where it applies in Fuori.
 - **Confirm only significant successes** (boarding, a stamp), not every turn. [Feedback][feedback]
 
 ### Generative AI disclosure
-- **No disclosure inside the game** (Josh, 2026-10-15: the characters are illustrated, nobody will think a cartoon person is real). The App Store description says Fuori is AI conversation practice, which covers the HIG's "don't trick people" rule. Characters never break role to say they're AI. [Generative AI: Transparency][generative-ai] · Applies to: App Store listing.
-- **Before anyone but Josh uses it (N4): privacy, not a label.** A privacy policy and the App Store privacy label (required for every app), and one line on the microphone screen saying what is sent to outside AI services, which App Review's privacy rules require. [Generative AI: Privacy][generative-ai], [Privacy][privacy] · Applies to: mic permission, App Store.
+- **No disclosure inside the game** (Josh, 2026-10-15: the characters are illustrated, nobody will think a cartoon person is real). The App Store description says Fuori is AI conversation practice, which covers the HIG's "don't trick people" rule. Characters never break role to say they're AI. **Any explanation (what Fuori is, that it uses AI, where speech goes) lives only in onboarding and Settings** (an "About Fuori" row), never on the game's screens (Josh, 2026-10-15). [Generative AI: Transparency][generative-ai] · Applies to: App Store listing.
+- **Before anyone but Josh uses it (N4): privacy, not a label.** A privacy policy and the App Store privacy label (required for every app), and one line on the microphone screen (part of onboarding) saying what is sent to outside AI services, which App Review's privacy rules require; the full version in Settings → About Fuori. [Generative AI: Privacy][generative-ai], [Privacy][privacy] · Applies to: mic permission, App Store.
 - **Let people report a bad line** (already in the plan's App Review risks): a quiet affordance, never an interruption. [Generative AI: Continuous improvement][generative-ai] · Applies to: conversation, M4.
 
 ### App icon
