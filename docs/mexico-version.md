@@ -136,4 +136,6 @@ Style test (`content/es-mx/style-test.json`, `npm run style-test`): each city's 
 - **Decided:** Puebla's places use the city card's Talavera prompt.
 - **Decided:** Oaxaca's places combine the city card's folk painting with a shadow-box diorama (Josh, 2026-10-14; was folk painting alone).
 - **Decided:** San Miguel's places use the city card's mural prompt (round 1 version).
-- **In round 2:** CDMX only (risograph). Goal: the five cities clearly different at a glance.
+- **Decided:** CDMX's places are daytime street photography in La Condesa style (test style `condesa-street`): eye level, 35mm, close in, foreground blur, low late-afternoon sun, film grain; Art Deco and Streamline Moderne, dense trees (Josh, 2026-10-14). Not night for all places (night could suit a cantina later). Rejected along the way: risograph, cut paper, screenprint, diorama and tilt-shift (looked AI), Kahlo, Rivera, Day of the Dead, abstract.
+- **All five set (2026-10-14):** CDMX street photography · Guadalajara linocut · Oaxaca folk-painted shadow box · Puebla Talavera · San Miguel mural.
+- **Still to fix when regenerating:** signs keep adding neighbourhood and city names ("Café · Condesa", "Xochimilco, Oaxaca"). Each prompt should give the sign's exact words as the only lettering (The sign reads "Café Pocito".). Goal: the five cities clearly different at a glance.
