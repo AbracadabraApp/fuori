@@ -1,0 +1,661 @@
+{
+  "about": "Written by npm run images:upload. Image id → file in R2; the app loads base + key.",
+  "base": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev",
+  "images": {
+    "cities/ciudad-de-mexico": {
+      "key": "es-mx/cities/ciudad-de-mexico.ce39388441.webp",
+      "src": "3bcf116c2490aed2",
+      "bytes": 302808
+    },
+    "cities/guadalajara": {
+      "key": "es-mx/cities/guadalajara.5a6941d908.webp",
+      "src": "ee64d70d5896352e",
+      "bytes": 468630
+    },
+    "cities/oaxaca": {
+      "key": "es-mx/cities/oaxaca.d6f2f30db7.webp",
+      "src": "d4cd15ce197fd503",
+      "bytes": 252186
+    },
+    "cities/puebla": {
+      "key": "es-mx/cities/puebla.440253133a.webp",
+      "src": "ac5c7efb38dc3251",
+      "bytes": 278694
+    },
+    "cities/san-miguel-de-allende": {
+      "key": "es-mx/cities/san-miguel-de-allende.cbd3412f2c.webp",
+      "src": "aac6785e64e17dce",
+      "bytes": 176178
+    },
+    "places/abarrotes-la-esquinita": {
+      "key": "es-mx/places/abarrotes-la-esquinita.bd0b7d2970.webp",
+      "src": "6ff95d840d2acc19",
+      "bytes": 272488
+    },
+    "places/abarrotes-los-tres-hermanos-xochimilco": {
+      "key": "es-mx/places/abarrotes-los-tres-hermanos-xochimilco.74e41005d6.webp",
+      "src": "c3fd95ebbfc6a078",
+      "bytes": 263990
+    },
+    "places/alameda-central": {
+      "key": "es-mx/places/alameda-central.de0a40523e.webp",
+      "src": "d4b19a92f07e1ccb",
+      "bytes": 382372
+    },
+    "places/cafe-amapola": {
+      "key": "es-mx/places/cafe-amapola.0f3491e53f.webp",
+      "src": "31146e643537ef8f",
+      "bytes": 315802
+    },
+    "places/cafe-cielo-rojo": {
+      "key": "es-mx/places/cafe-cielo-rojo.db8a92d2f8.webp",
+      "src": "0e2bac79c3a25acc",
+      "bytes": 393794
+    },
+    "places/cafe-de-la-calzada": {
+      "key": "es-mx/places/cafe-de-la-calzada.677a2ab1e1.webp",
+      "src": "2b0d375083a5bd6b",
+      "bytes": 170204
+    },
+    "places/cafe-pocito-jalatlaco": {
+      "key": "es-mx/places/cafe-pocito-jalatlaco.2cfdc50c3d.webp",
+      "src": "36f086f968d6a96b",
+      "bytes": 315128
+    },
+    "places/cafe-tinta": {
+      "key": "es-mx/places/cafe-tinta.187b636baf.webp",
+      "src": "b8032c2005bd30e8",
+      "bytes": 345646
+    },
+    "places/cantina-la-fuente": {
+      "key": "es-mx/places/cantina-la-fuente.75596a04f0.webp",
+      "src": "854f2f3434f6ce93",
+      "bytes": 322472
+    },
+    "places/cantina-la-opera": {
+      "key": "es-mx/places/cantina-la-opera.da745812ed.webp",
+      "src": "f4f9f9d1a923e722",
+      "bytes": 239328
+    },
+    "places/catedral-metropolitana": {
+      "key": "es-mx/places/catedral-metropolitana.aa018f13b3.webp",
+      "src": "d83de01f0c291394",
+      "bytes": 385850
+    },
+    "places/cemitas-dona-lupe-analco": {
+      "key": "es-mx/places/cemitas-dona-lupe-analco.78828485b7.webp",
+      "src": "b50c5500abaf01f3",
+      "bytes": 332740
+    },
+    "places/dulces-tipicos-la-gloria": {
+      "key": "es-mx/places/dulces-tipicos-la-gloria.fa82204f21.webp",
+      "src": "91390000f2a14019",
+      "bytes": 410012
+    },
+    "places/escuela-lengua-cdmx": {
+      "key": "es-mx/places/escuela-lengua-cdmx.01e402e5e3.webp",
+      "src": "e57157d79ac237ba",
+      "bytes": 287332
+    },
+    "places/escuela-lengua-guadalajara": {
+      "key": "es-mx/places/escuela-lengua-guadalajara.c9b9379d8a.webp",
+      "src": "6fb37705765edb78",
+      "bytes": 348804
+    },
+    "places/escuela-lengua-oaxaca": {
+      "key": "es-mx/places/escuela-lengua-oaxaca.14190e1383.webp",
+      "src": "4df030d2bb171a98",
+      "bytes": 279748
+    },
+    "places/escuela-lengua-puebla": {
+      "key": "es-mx/places/escuela-lengua-puebla.5596f87d85.webp",
+      "src": "d2b7e969b8252c98",
+      "bytes": 386244
+    },
+    "places/escuela-lengua-sma": {
+      "key": "es-mx/places/escuela-lengua-sma.b79b2b3ae4.webp",
+      "src": "52001ebc2df1c5f4",
+      "bytes": 217336
+    },
+    "places/fabrica-la-aurora": {
+      "key": "es-mx/places/fabrica-la-aurora.98c4cfbd01.webp",
+      "src": "ec9c92b22051d976",
+      "bytes": 215140
+    },
+    "places/farmacia-san-rafael": {
+      "key": "es-mx/places/farmacia-san-rafael.2b8051a548.webp",
+      "src": "f1cea86c454148a8",
+      "bytes": 342632
+    },
+    "places/fonda-dona-chuy": {
+      "key": "es-mx/places/fonda-dona-chuy.31f2c7dcb0.webp",
+      "src": "760d9915240db999",
+      "bytes": 311254
+    },
+    "places/fonda-dona-cuca": {
+      "key": "es-mx/places/fonda-dona-cuca.ad831a42dc.webp",
+      "src": "e4be88ad78395faf",
+      "bytes": 288918
+    },
+    "places/fonda-dona-tere": {
+      "key": "es-mx/places/fonda-dona-tere.76aaf2c852.webp",
+      "src": "c026a30a77195c9d",
+      "bytes": 427628
+    },
+    "places/fonda-dona-tere-reforma": {
+      "key": "es-mx/places/fonda-dona-tere-reforma.c7d0ac70de.webp",
+      "src": "ba757210b53b43d8",
+      "bytes": 267560
+    },
+    "places/fonda-la-palmita": {
+      "key": "es-mx/places/fonda-la-palmita.96317ff1d0.webp",
+      "src": "9e2b890f0067c0f6",
+      "bytes": 186330
+    },
+    "places/jardin-allende": {
+      "key": "es-mx/places/jardin-allende.1de7a4f247.webp",
+      "src": "24b323d26eca5a0d",
+      "bytes": 239040
+    },
+    "places/jardin-conzatti-reforma": {
+      "key": "es-mx/places/jardin-conzatti-reforma.d24fcddb75.webp",
+      "src": "6287ca00599cf58d",
+      "bytes": 302968
+    },
+    "places/jardin-de-san-francisco": {
+      "key": "es-mx/places/jardin-de-san-francisco.9046717a9b.webp",
+      "src": "98f040e73b03c9df",
+      "bytes": 465212
+    },
+    "places/jardin-del-carmen": {
+      "key": "es-mx/places/jardin-del-carmen.e610ae5e4a.webp",
+      "src": "48ca0a9620cbd37e",
+      "bytes": 484700
+    },
+    "places/jardin-etnobotanico-oaxaca": {
+      "key": "es-mx/places/jardin-etnobotanico-oaxaca.07e19fbae7.webp",
+      "src": "b66a3b5fcd39347e",
+      "bytes": 374910
+    },
+    "places/la-cucaracha": {
+      "key": "es-mx/places/la-cucaracha.67b3e6cb97.webp",
+      "src": "c94e11c05f3136ab",
+      "bytes": 168890
+    },
+    "places/la-pasita": {
+      "key": "es-mx/places/la-pasita.76b7e38939.webp",
+      "src": "c60183e7784edd8a",
+      "bytes": 359588
+    },
+    "places/libros-tecolote": {
+      "key": "es-mx/places/libros-tecolote.5824ac4810.webp",
+      "src": "81199bf74a4caf6a",
+      "bytes": 292286
+    },
+    "places/mercado-ignacio-ramirez": {
+      "key": "es-mx/places/mercado-ignacio-ramirez.39a23ef37e.webp",
+      "src": "716cb8559ccf1373",
+      "bytes": 285260
+    },
+    "places/mezcaleria-los-amantes": {
+      "key": "es-mx/places/mezcaleria-los-amantes.cfbf0fab74.webp",
+      "src": "4474a1f45c215895",
+      "bytes": 225012
+    },
+    "places/miscelanea-los-arcos": {
+      "key": "es-mx/places/miscelanea-los-arcos.f4a566e6c0.webp",
+      "src": "733001712e5a973b",
+      "bytes": 152190
+    },
+    "places/panaderia-el-trigal-xochimilco": {
+      "key": "es-mx/places/panaderia-el-trigal-xochimilco.353d94aaad.webp",
+      "src": "1f8e0d35140e9688",
+      "bytes": 249290
+    },
+    "places/panaderia-la-concha-de-oro": {
+      "key": "es-mx/places/panaderia-la-concha-de-oro.3aa5b4f662.webp",
+      "src": "a9544cdd1f31a03d",
+      "bytes": 240686
+    },
+    "places/panaderia-la-esperanza": {
+      "key": "es-mx/places/panaderia-la-esperanza.88bf89a1df.webp",
+      "src": "0c8eb5e093d87659",
+      "bytes": 140162
+    },
+    "places/panaderia-la-espiga": {
+      "key": "es-mx/places/panaderia-la-espiga.63bd342b03.webp",
+      "src": "edc69631ad3ecbad",
+      "bytes": 335848
+    },
+    "places/panaderia-la-espiga-de-la-paz": {
+      "key": "es-mx/places/panaderia-la-espiga-de-la-paz.d1cbbe6e6b.webp",
+      "src": "f53ed42fe0e5a4a7",
+      "bytes": 315678
+    },
+    "places/parque-juarez": {
+      "key": "es-mx/places/parque-juarez.1ec4350473.webp",
+      "src": "20672c22a929a46d",
+      "bytes": 229346
+    },
+    "places/parque-mexico": {
+      "key": "es-mx/places/parque-mexico.0096ccfbeb.webp",
+      "src": "edba65c511ada2d8",
+      "bytes": 449632
+    },
+    "places/parque-revolucion": {
+      "key": "es-mx/places/parque-revolucion.70f600fedc.webp",
+      "src": "5e6d8bcac03cea46",
+      "bytes": 498012
+    },
+    "places/parroquia-san-miguel-arcangel": {
+      "key": "es-mx/places/parroquia-san-miguel-arcangel.7f4f2d1e1f.webp",
+      "src": "f8702cd9ce6d8508",
+      "bytes": 175978
+    },
+    "places/parroquia-san-pedro-tlaquepaque": {
+      "key": "es-mx/places/parroquia-san-pedro-tlaquepaque.6a6101cde6.webp",
+      "src": "e8218b86d189d1ea",
+      "bytes": 399494
+    },
+    "places/puesto-chapulines-mercado-benito-juarez": {
+      "key": "es-mx/places/puesto-chapulines-mercado-benito-juarez.e2c02efd7e.webp",
+      "src": "6e6106d1478f5236",
+      "bytes": 268182
+    },
+    "places/puesto-de-boleo-don-chucho": {
+      "key": "es-mx/places/puesto-de-boleo-don-chucho.0f46714676.webp",
+      "src": "6b3e28253a0d55c3",
+      "bytes": 242146
+    },
+    "places/quesadillas-dona-lupe": {
+      "key": "es-mx/places/quesadillas-dona-lupe.a9316c7caa.webp",
+      "src": "e1e3db7362c1e6b2",
+      "bytes": 209622
+    },
+    "places/tacos-arabes-el-puente": {
+      "key": "es-mx/places/tacos-arabes-el-puente.521b875fd1.webp",
+      "src": "68d23724c934fc9c",
+      "bytes": 373310
+    },
+    "places/tacos-el-compa-nacho": {
+      "key": "es-mx/places/tacos-el-compa-nacho.3cf0064b3e.webp",
+      "src": "d897a0be7da54c11",
+      "bytes": 314050
+    },
+    "places/tacos-el-pastor-atascadero": {
+      "key": "es-mx/places/tacos-el-pastor-atascadero.9f20527e47.webp",
+      "src": "14024e4f785fc0d2",
+      "bytes": 151418
+    },
+    "places/tacos-el-trompo-rojo": {
+      "key": "es-mx/places/tacos-el-trompo-rojo.a6868c84e5.webp",
+      "src": "fc49a3148dd883c6",
+      "bytes": 273272
+    },
+    "places/taller-ceramica-tlaquepaque": {
+      "key": "es-mx/places/taller-ceramica-tlaquepaque.e0aa9e1a41.webp",
+      "src": "6a63ad9c235acc1c",
+      "bytes": 431536
+    },
+    "places/tejuino-san-juan-de-dios": {
+      "key": "es-mx/places/tejuino-san-juan-de-dios.2d7de122f0.webp",
+      "src": "867a77f66dabf348",
+      "bytes": 349212
+    },
+    "places/templo-de-santo-domingo": {
+      "key": "es-mx/places/templo-de-santo-domingo.3ac849d8de.webp",
+      "src": "b7b4bcae2a8e269e",
+      "bytes": 445974
+    },
+    "places/templo-san-matias-jalatlaco": {
+      "key": "es-mx/places/templo-san-matias-jalatlaco.3146195ae0.webp",
+      "src": "bd1c5f71fccba539",
+      "bytes": 284614
+    },
+    "places/terminal-ado-oaxaca": {
+      "key": "es-mx/places/terminal-ado-oaxaca.e7d19fa0f3.webp",
+      "src": "f2b53b6ffb886b26",
+      "bytes": 248976
+    },
+    "places/terminal-capu": {
+      "key": "es-mx/places/terminal-capu.6b7c78b7b5.webp",
+      "src": "4ada38f5cb393c06",
+      "bytes": 382892
+    },
+    "places/terminal-nueva": {
+      "key": "es-mx/places/terminal-nueva.3d8f161c58.webp",
+      "src": "8c92713964cc0e60",
+      "bytes": 390090
+    },
+    "places/terminal-sma": {
+      "key": "es-mx/places/terminal-sma.5b6fdd5a39.webp",
+      "src": "f4d06509d1e55940",
+      "bytes": 149436
+    },
+    "places/terminal-tapo": {
+      "key": "es-mx/places/terminal-tapo.6a47eb6f24.webp",
+      "src": "e67b11ac8c86609f",
+      "bytes": 283882
+    },
+    "places/tlayudas-mercado-20-de-noviembre": {
+      "key": "es-mx/places/tlayudas-mercado-20-de-noviembre.e316f8c432.webp",
+      "src": "128bcf1e01b94de8",
+      "bytes": 296098
+    },
+    "places/zocalo-de-puebla": {
+      "key": "es-mx/places/zocalo-de-puebla.45207590d3.webp",
+      "src": "7a04fed001d85c33",
+      "bytes": 439374
+    },
+    "places/zocalo-oaxaca": {
+      "key": "es-mx/places/zocalo-oaxaca.1057ea49f0.webp",
+      "src": "8b17a335045c2f84",
+      "bytes": 316308
+    },
+    "portraits/alicia-catequista": {
+      "key": "es-mx/portraits/alicia-catequista.ad1a56bea3.webp",
+      "src": "05c2bff2a1f81120",
+      "bytes": 271140
+    },
+    "portraits/arturo-jubilado": {
+      "key": "es-mx/portraits/arturo-jubilado.b1e34d8327.webp",
+      "src": "7682246236b22391",
+      "bytes": 236576
+    },
+    "portraits/arturo-taquillero-cdmx": {
+      "key": "es-mx/portraits/arturo-taquillero-cdmx.d3a6889bec.webp",
+      "src": "c404ff9892da2d33",
+      "bytes": 284814
+    },
+    "portraits/aurelio-sacristan": {
+      "key": "es-mx/portraits/aurelio-sacristan.bebc0d798b.webp",
+      "src": "3e4f902b6b4fdf3c",
+      "bytes": 304902
+    },
+    "portraits/beatriz-abuela": {
+      "key": "es-mx/portraits/beatriz-abuela.6e4011e9be.webp",
+      "src": "88707e936961daf5",
+      "bytes": 265408
+    },
+    "portraits/beto-panadero": {
+      "key": "es-mx/portraits/beto-panadero.6862e44545.webp",
+      "src": "a77a496d8941f77a",
+      "bytes": 384710
+    },
+    "portraits/beto-paseador": {
+      "key": "es-mx/portraits/beto-paseador.729eb72724.webp",
+      "src": "5b5e7c4ce3694f0d",
+      "bytes": 364114
+    },
+    "portraits/beto-taxi": {
+      "key": "es-mx/portraits/beto-taxi.af83200edd.webp",
+      "src": "5b85d5c901ffc438",
+      "bytes": 229832
+    },
+    "portraits/carlos-taquillero-gdl": {
+      "key": "es-mx/portraits/carlos-taquillero-gdl.43bbf0e5d1.webp",
+      "src": "2245c0dc4aa89e19",
+      "bytes": 208558
+    },
+    "portraits/carmen-jubilada": {
+      "key": "es-mx/portraits/carmen-jubilada.696019adfd.webp",
+      "src": "a2d73814b790d48d",
+      "bytes": 211664
+    },
+    "portraits/chela-chapulines": {
+      "key": "es-mx/portraits/chela-chapulines.72ddc57621.webp",
+      "src": "da38a87b1a53a1d9",
+      "bytes": 414832
+    },
+    "portraits/chelo-cocinera": {
+      "key": "es-mx/portraits/chelo-cocinera.f826129536.webp",
+      "src": "5490ff8761532398",
+      "bytes": 299140
+    },
+    "portraits/chema-taquero": {
+      "key": "es-mx/portraits/chema-taquero.2242cc2903.webp",
+      "src": "b25927afa70dbcd9",
+      "bytes": 337596
+    },
+    "portraits/chucho-lustrabotas": {
+      "key": "es-mx/portraits/chucho-lustrabotas.65ecc1e452.webp",
+      "src": "cf16f5ddb137f491",
+      "bytes": 317570
+    },
+    "portraits/chuy-cocinera": {
+      "key": "es-mx/portraits/chuy-cocinera.e1c26864af.webp",
+      "src": "e0b81db096e5f505",
+      "bytes": 336128
+    },
+    "portraits/chuy-tacos-arabes-el-puente": {
+      "key": "es-mx/portraits/chuy-tacos-arabes-el-puente.6c4b4beeed.webp",
+      "src": "ad7a6d0c39c57795",
+      "bytes": 379536
+    },
+    "portraits/concha-sacristana": {
+      "key": "es-mx/portraits/concha-sacristana.0e1ef5282c.webp",
+      "src": "c165d9c0323d803a",
+      "bytes": 280302
+    },
+    "portraits/cuca-cocinera": {
+      "key": "es-mx/portraits/cuca-cocinera.e8d1876e36.webp",
+      "src": "5084c662e8cae84b",
+      "bytes": 333472
+    },
+    "portraits/daniela-farmacia-san-rafael": {
+      "key": "es-mx/portraits/daniela-farmacia-san-rafael.75ea5fccb6.webp",
+      "src": "1c91b8f690660039",
+      "bytes": 187494
+    },
+    "portraits/efrain-mesero": {
+      "key": "es-mx/portraits/efrain-mesero.55aa85e16b.webp",
+      "src": "8098f9add6395cdc",
+      "bytes": 257460
+    },
+    "portraits/efrain-tendero": {
+      "key": "es-mx/portraits/efrain-tendero.df8693a802.webp",
+      "src": "e5e59f7a34d6ef1d",
+      "bytes": 340956
+    },
+    "portraits/efrain-zocalo-de-puebla": {
+      "key": "es-mx/portraits/efrain-zocalo-de-puebla.e259cedaee.webp",
+      "src": "b7ccdee56e586872",
+      "bytes": 363526
+    },
+    "portraits/efren-panadero": {
+      "key": "es-mx/portraits/efren-panadero.cb4ecd7df6.webp",
+      "src": "fd475acf52d6c798",
+      "bytes": 301510
+    },
+    "portraits/emiliano-los-amantes": {
+      "key": "es-mx/portraits/emiliano-los-amantes.bd4b7d7152.webp",
+      "src": "61711566a1c215aa",
+      "bytes": 256198
+    },
+    "portraits/gaspar-panadero": {
+      "key": "es-mx/portraits/gaspar-panadero.dcda8eb984.webp",
+      "src": "e2fb68cd6fefaf1b",
+      "bytes": 336238
+    },
+    "portraits/jorge-taquillero-puebla": {
+      "key": "es-mx/portraits/jorge-taquillero-puebla.72d4ab02b9.webp",
+      "src": "ae74fb39945307dd",
+      "bytes": 269150
+    },
+    "portraits/lalo-bolero": {
+      "key": "es-mx/portraits/lalo-bolero.92a2499d32.webp",
+      "src": "78ba402f22e5c86c",
+      "bytes": 383048
+    },
+    "portraits/lourdes-panadera": {
+      "key": "es-mx/portraits/lourdes-panadera.dde5441b50.webp",
+      "src": "13c6e5818f02aaed",
+      "bytes": 312364
+    },
+    "portraits/luis-guia-jardin": {
+      "key": "es-mx/portraits/luis-guia-jardin.cd851267f4.webp",
+      "src": "6391438bbb90e463",
+      "bytes": 360448
+    },
+    "portraits/lupe-cemitas-dona-lupe": {
+      "key": "es-mx/portraits/lupe-cemitas-dona-lupe.d078076b05.webp",
+      "src": "b87c3b7f73972a71",
+      "bytes": 382750
+    },
+    "portraits/lupe-quesadillera": {
+      "key": "es-mx/portraits/lupe-quesadillera.cbff7832d3.webp",
+      "src": "1e807f33ef5497f3",
+      "bytes": 386990
+    },
+    "portraits/lupita-sacristana": {
+      "key": "es-mx/portraits/lupita-sacristana.d6b2838181.webp",
+      "src": "889d670f68e6db1c",
+      "bytes": 249744
+    },
+    "portraits/magda": {
+      "key": "es-mx/portraits/magda.435d462e7c.webp",
+      "src": "1f589fcd68077204",
+      "bytes": 224228
+    },
+    "portraits/mari-tendera": {
+      "key": "es-mx/portraits/mari-tendera.f0f27f1c5d.webp",
+      "src": "cce34cbbea703a42",
+      "bytes": 359796
+    },
+    "portraits/marisol-cafe-pocito": {
+      "key": "es-mx/portraits/marisol-cafe-pocito.1f4179cb7d.webp",
+      "src": "59e3d90538b0c336",
+      "bytes": 253062
+    },
+    "portraits/marisol-ceramista": {
+      "key": "es-mx/portraits/marisol-ceramista.c36db1b1fa.webp",
+      "src": "f87d2df3386b0537",
+      "bytes": 305832
+    },
+    "portraits/mateo-cafe-cielo-rojo": {
+      "key": "es-mx/portraits/mateo-cafe-cielo-rojo.80de87d0af.webp",
+      "src": "33707ea140b5534d",
+      "bytes": 333122
+    },
+    "portraits/memo-tejuino": {
+      "key": "es-mx/portraits/memo-tejuino.9faef3249e.webp",
+      "src": "48fd2cf02c2bc74b",
+      "bytes": 243128
+    },
+    "portraits/miguel-taquillero-sma": {
+      "key": "es-mx/portraits/miguel-taquillero-sma.7dbca1316e.webp",
+      "src": "0666eb8ef8c8b2ef",
+      "bytes": 266942
+    },
+    "portraits/nacho-nevero": {
+      "key": "es-mx/portraits/nacho-nevero.21048c1da6.webp",
+      "src": "da5098e19289d730",
+      "bytes": 513342
+    },
+    "portraits/nacho-taquero": {
+      "key": "es-mx/portraits/nacho-taquero.6bcb2825c5.webp",
+      "src": "92c9d22cb51622a3",
+      "bytes": 317320
+    },
+    "portraits/ofelia-tlayudas": {
+      "key": "es-mx/portraits/ofelia-tlayudas.7a654105bb.webp",
+      "src": "6fdbd0adbc96ba37",
+      "bytes": 385714
+    },
+    "portraits/padre-tomas-santo-domingo": {
+      "key": "es-mx/portraits/padre-tomas-santo-domingo.05ca5ead5f.webp",
+      "src": "b1e30169bf5d3ed2",
+      "bytes": 252588
+    },
+    "portraits/ramiro-taquero": {
+      "key": "es-mx/portraits/ramiro-taquero.44cb506f00.webp",
+      "src": "605623e18445a4c0",
+      "bytes": 370776
+    },
+    "portraits/remedios-panaderia-la-espiga": {
+      "key": "es-mx/portraits/remedios-panaderia-la-espiga.55f90bff03.webp",
+      "src": "999e0a3a46851b57",
+      "bytes": 331752
+    },
+    "portraits/ricardo-taquillero-oaxaca": {
+      "key": "es-mx/portraits/ricardo-taquillero-oaxaca.9571760ece.webp",
+      "src": "ffe0e5e221745c21",
+      "bytes": 230620
+    },
+    "portraits/rigoberto-cantinero": {
+      "key": "es-mx/portraits/rigoberto-cantinero.c38685e0c4.webp",
+      "src": "596f6446c30db65a",
+      "bytes": 242632
+    },
+    "portraits/rosa-estudiante": {
+      "key": "es-mx/portraits/rosa-estudiante.5ddd2e9055.webp",
+      "src": "83c0310d35830c88",
+      "bytes": 184050
+    },
+    "portraits/rosa-flores-ignacio-ramirez": {
+      "key": "es-mx/portraits/rosa-flores-ignacio-ramirez.a93dd65f6d.webp",
+      "src": "5cfcd589542c2ca1",
+      "bytes": 391826
+    },
+    "portraits/ruben-abarrotes": {
+      "key": "es-mx/portraits/ruben-abarrotes.856db37ee2.webp",
+      "src": "24473870bfafeb92",
+      "bytes": 368172
+    },
+    "portraits/ruben-la-pasita": {
+      "key": "es-mx/portraits/ruben-la-pasita.0154529a88.webp",
+      "src": "bd5c11503738cbe3",
+      "bytes": 237014
+    },
+    "portraits/sofia-dulces-la-gloria": {
+      "key": "es-mx/portraits/sofia-dulces-la-gloria.0d0ea4e487.webp",
+      "src": "bc49afa1521c8517",
+      "bytes": 307802
+    },
+    "portraits/tere-fonda": {
+      "key": "es-mx/portraits/tere-fonda.b8faef23b3.webp",
+      "src": "f84fa88cee39c9c6",
+      "bytes": 321846
+    },
+    "portraits/tere-fonda-dona-tere": {
+      "key": "es-mx/portraits/tere-fonda-dona-tere.a579a1c7fc.webp",
+      "src": "8520af28935875e3",
+      "bytes": 364248
+    },
+    "portraits/tomas-cantinero": {
+      "key": "es-mx/portraits/tomas-cantinero.3d5232558c.webp",
+      "src": "ae678a1c20ab513f",
+      "bytes": 311226
+    },
+    "portraits/vale-libros-tecolote": {
+      "key": "es-mx/portraits/vale-libros-tecolote.2d4fe26831.webp",
+      "src": "b933733f8be2b41b",
+      "bytes": 277388
+    },
+    "portraits/valeria-barista": {
+      "key": "es-mx/portraits/valeria-barista.1f293a5bcb.webp",
+      "src": "651b04617356f487",
+      "bytes": 211284
+    },
+    "portraits/victor-jubilado": {
+      "key": "es-mx/portraits/victor-jubilado.71cb18bbda.webp",
+      "src": "132742ed99e14c48",
+      "bytes": 248584
+    },
+    "portraits/ximena-barista": {
+      "key": "es-mx/portraits/ximena-barista.9f85c7820d.webp",
+      "src": "5a328f477da5d3a8",
+      "bytes": 214902
+    },
+    "portraits/ximena-barista-san-miguel": {
+      "key": "es-mx/portraits/ximena-barista-san-miguel.18d71f5385.webp",
+      "src": "5b9ae4d7c6ebc9e6",
+      "bytes": 272786
+    },
+    "portraits/ximena-ceramica": {
+      "key": "es-mx/portraits/ximena-ceramica.5237e176bd.webp",
+      "src": "1f5c0ebab63c6c82",
+      "bytes": 277006
+    }
+  }
+}

@@ -21,6 +21,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import sharp from 'sharp';
 import { buildPlacePrompt } from './lib/place-prompt.mjs';
+import { uploadImages } from './upload-images.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -282,6 +283,14 @@ async function generateAllImages(options = {}) {
 
   if (totalStats.failed > 0) {
     console.log('\nTo retry failed images, run this script again.');
+  }
+
+  // New and changed images go to R2 for the app; commit content/<country>/images.json
+  if (options.dry) return;
+  if (process.env.R2_ACCESS_KEY_ID) {
+    await uploadImages({ country: COUNTRY });
+  } else {
+    console.log('\nNot uploaded to R2 (no R2_* settings). Run npm run images:upload where they are set.');
   }
 }
 
