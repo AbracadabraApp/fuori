@@ -75,7 +75,7 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 - Mexican place art: style tests decided for all five cities (`docs/mexico-version.md` → Visual style). Sign lettering still to fix when the real images are regenerated.
 - Docs corrected to match the code: reply field `{ line, en }` (was `{ it, en }`) in CLAUDE.md and the M1/engine docs; hosted voices in CLAUDE.md; level files `content/it/levels/a1.ts`…`b1.ts` (not `a1-a2.ts`); planned test scripts that never existed (`test:learner`, `test:conversations:record`, vitest/playwright) marked as planned; README status rewritten; a note in the lessons doc that the Review was later removed.
 
-**Open:** roadmap #10 (Afuera auto-deploy) not checked; #13 bench characters undecided.
+**Open:** #13 bench characters undecided. Roadmap #10 resolved: `railway status --json` shows Afuera connected to `AbracadabraApp/fuori` `main` and auto-deployed `93037b1` along with Fuori.
 
 ---
 
