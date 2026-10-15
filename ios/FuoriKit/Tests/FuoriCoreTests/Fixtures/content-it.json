@@ -1,0 +1,155 @@
+{
+  "version": "ffaa38c554e8",
+  "country": "it",
+  "language": {
+    "code": "it",
+    "name": "Italian",
+    "speechLang": "it-IT",
+    "appName": "Fuori",
+    "ui": {
+      "showMore": "Mostra altro",
+      "ticket": {
+        "vehicle": "train",
+        "carrier": "Ferrovie",
+        "service": "Regionale · 2ª classe",
+        "platform": "Binario",
+        "seat": "Posto",
+        "fareLabel": "Tariffa",
+        "fare": "Solo andata",
+        "board": "Sali"
+      },
+      "whereTo": "Dove vuoi andare?",
+      "youAreHere": "Sei qui"
+    }
+  },
+  "ticketTheme": {
+    "band": "#1d5c3a",
+    "bandInk": "#ffffff",
+    "stripe": "rgba(29, 92, 58, 0.09)",
+    "accent": "#b8252f"
+  },
+  "cities": [
+    {
+      "id": "roma",
+      "name": "Roma",
+      "region": "Lazio",
+      "more": false,
+      "image": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/cities/roma.29a4d6931d.webp",
+      "places": [
+        {
+          "id": "mercato-san-cosimato",
+          "name": "Mercato di San Cosimato",
+          "kind": "market",
+          "neighbourhood": "Trastevere",
+          "station": false,
+          "characterId": "franco-ortolano",
+          "image": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/places/mercato-san-cosimato.1ac8078444.webp"
+        },
+        {
+          "id": "bar-monti-corner",
+          "name": "Bar Angolo",
+          "kind": "bar",
+          "neighbourhood": "Monti",
+          "station": false,
+          "characterId": "sandro-bar-angolo",
+          "image": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/places/bar-monti-corner.6687a1aec7.webp"
+        },
+        {
+          "id": "scuola-lingua-roma",
+          "name": "Scuola di Lingua Italiana",
+          "kind": "language-school",
+          "neighbourhood": "Centro Storico",
+          "station": false,
+          "characterId": "magda",
+          "image": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/places/scuola-lingua-roma.42df0e7f47.webp"
+        }
+      ]
+    },
+    {
+      "id": "taormina",
+      "name": "Taormina",
+      "region": "Sicilia",
+      "more": true,
+      "image": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/cities/taormina.e6417d1a4c.webp",
+      "places": [
+        {
+          "id": "mercato-giardini",
+          "name": "Mercato di Giardini Naxos",
+          "kind": "market",
+          "neighbourhood": "Centro Storico",
+          "station": false,
+          "characterId": "filippo-verde",
+          "image": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/places/mercato-giardini.a5d2b9b384.webp"
+        },
+        {
+          "id": "caffe-wunderbar",
+          "name": "Caffè Wunderbar",
+          "kind": "bar",
+          "neighbourhood": "Corso Umberto",
+          "station": false,
+          "characterId": "giuliana-rosi",
+          "image": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/places/caffe-wunderbar.063f5ef59b.webp"
+        },
+        {
+          "id": "stazione-taormina-giardini",
+          "name": "Stazione di Taormina-Giardini",
+          "kind": "train-station",
+          "neighbourhood": "Villagonia",
+          "station": true,
+          "characterId": "agata-bigliettaia-taormina",
+          "image": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/places/stazione-taormina-giardini.4c023120ba.webp"
+        }
+      ]
+    }
+  ],
+  "characters": {
+    "franco-ortolano": {
+      "id": "franco-ortolano",
+      "name": "Franco Ceccarelli",
+      "role": "fruttivendolo",
+      "gender": "m",
+      "tutor": false,
+      "portrait": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/portraits/franco-ortolano.6729674c2d.webp"
+    },
+    "sandro-bar-angolo": {
+      "id": "sandro-bar-angolo",
+      "name": "Sandro Pieri",
+      "role": "barista",
+      "gender": "m",
+      "tutor": false,
+      "portrait": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/portraits/sandro-bar-angolo.710e880cb0.webp"
+    },
+    "magda": {
+      "id": "magda",
+      "name": "Magda",
+      "role": "insegnante di italiano per stranieri",
+      "gender": "f",
+      "tutor": true,
+      "portrait": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/portraits/magda.cb8cf81b0c.webp"
+    },
+    "filippo-verde": {
+      "id": "filippo-verde",
+      "name": "Filippo Verde",
+      "role": "venditore",
+      "gender": "m",
+      "tutor": false,
+      "portrait": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/portraits/filippo-verde.2ea1de3137.webp"
+    },
+    "giuliana-rosi": {
+      "id": "giuliana-rosi",
+      "name": "Giuliana Rosi",
+      "role": "barista",
+      "gender": "f",
+      "tutor": false,
+      "portrait": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/portraits/giuliana-rosi.1383b25b75.webp"
+    },
+    "agata-bigliettaia-taormina": {
+      "id": "agata-bigliettaia-taormina",
+      "name": "Agata Spadaro",
+      "role": "bigliettaia",
+      "gender": "f",
+      "tutor": false,
+      "portrait": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/portraits/agata-bigliettaia-taormina.ac32687e7a.webp"
+    }
+  }
+}

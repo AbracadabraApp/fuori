@@ -1,0 +1,24 @@
+/* Generated from design/tokens.json by scripts/tokens.mjs (npm run tokens). Don't edit by hand. */
+:root {
+  --paper: #f5f1ed;
+  --card: #ffffff;
+  --green: #566330;
+  --sand: #e8d5c4;
+  --ink: #000000;
+  --text: #333333;
+  --muted: #666666;
+  --record: #dc3545;
+  --terracotta: #c0603a;
+  --error-bg: #f8d7da;
+  --error-ink: #721c24;
+  --font-display: "Alegreya", Georgia, serif;
+  --font-label: "Alegreya Sans", "Gill Sans", sans-serif;
+  --size-card-title: 32px;
+  --size-card-subtitle: 17px;
+  --size-body: 17px;
+  --space-gutter: 16px;
+  --space-card-gap: 20px;
+  --space-caption-padding: 16px;
+  --radius-card: 8px;
+  --shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}

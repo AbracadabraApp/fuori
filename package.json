@@ -19,6 +19,8 @@
     "test:image-list": "tsx tests/check-image-list.ts",
     "test:content-api": "tsx tests/check-content-api.ts",
     "images": "node --env-file-if-exists=.env.local scripts/generate-images.mjs",
+    "tokens": "node scripts/tokens.mjs",
+    "test:tokens": "node scripts/tokens.mjs --check",
     "images:upload": "node --env-file-if-exists=.env.local scripts/upload-images.mjs",
     "voices": "node --env-file-if-exists=.env.local scripts/list-voices.mjs",
     "test:voices": "tsx tests/check-voices.ts",

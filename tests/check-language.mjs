@@ -5,6 +5,8 @@
 // Prompted by the Whisper hint ("Trascrizione in italiano…") that slipped into
 // /api/transcribe and was echoed into learners' lines (2026-10-12).
 //
+// Also scans the iPhone app's Swift (ios/), where words in the learned
+// language must come from /v1/content too.
 // It only looks for the languages' own markers, never for phrases learners or
 // characters might say: language and country names, bare codes like 'it' and
 // 'es', locale codes like it-IT and es-MX. Comments are ignored. It also fails
@@ -27,7 +29,7 @@ function stripComments(src) {
     .replace(/\{\/\*[\s\S]*?\*\/\}/g, (m) => m.replace(/[^\n]/g, ' '));
 }
 
-const files = execSync("git ls-files -- 'app/*.ts' 'app/*.tsx' 'lib/*.ts' 'lib/*.tsx' 'lib/*.mjs'", { encoding: 'utf8' })
+const files = execSync("git ls-files -- 'app/*.ts' 'app/*.tsx' 'lib/*.ts' 'lib/*.tsx' 'lib/*.mjs' 'ios/*.swift'", { encoding: 'utf8' })
   .split('\n')
   .filter(Boolean);
 

@@ -1,0 +1,66 @@
+# The Xcode project is generated from this file: run `make project` (XcodeGen).
+# Fuori.xcodeproj is git-ignored; never edit it by hand (docs/12-native-app.md).
+name: Fuori
+options:
+  bundleIdPrefix: com.joshp100
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+packages:
+  FuoriKit:
+    path: FuoriKit
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    DEVELOPMENT_TEAM: C8V9S6KGGG
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    # The server this build talks to (Info.plist FuoriServer). Italy for now;
+    # the country is chosen in onboarding later (decision 1).
+    FUORI_SERVER: https://fuori-production.up.railway.app
+targets:
+  Fuori:
+    type: application
+    platform: iOS
+    sources:
+      - path: Fuori
+    dependencies:
+      - package: FuoriKit
+        product: FuoriFeatures
+      - package: FuoriKit
+        product: FuoriNetworking
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.joshp100.fuori
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+        ENABLE_PREVIEWS: YES
+    info:
+      path: Fuori/Info.plist
+      properties:
+        CFBundleDisplayName: Fuori
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        FuoriServer: $(FUORI_SERVER)
+        UILaunchScreen:
+          UIColorName: ""
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIAppFonts:
+          - Alegreya.ttf
+          - AlegreyaSans-Regular.ttf
+          - AlegreyaSans-Medium.ttf
+          - AlegreyaSans-Bold.ttf
+        ITSAppUsesNonExemptEncryption: false
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+schemes:
+  Fuori:
+    build:
+      targets:
+        Fuori: all
+    test:
+      targets:
+        - package: FuoriKit/FuoriCoreTests
+        - package: FuoriKit/FuoriNetworkingTests
