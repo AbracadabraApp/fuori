@@ -8,9 +8,8 @@
  * Attest is added before testers beyond Josh (docs/12-native-app.md, N4).
  */
 import { registerDevice } from '@/lib/auth';
-import { apiError, apiJson } from '@/lib/api';
+import { apiError, apiJson, serverError } from '@/lib/api';
 import { allow, clientIp } from '@/lib/rate-limit';
-import { logServerError } from '@/lib/server-log';
 
 const PER_HOUR = 10;
 
@@ -21,7 +20,6 @@ export async function POST(request: Request) {
   try {
     return apiJson(await registerDevice(), { status: 201 });
   } catch (err) {
-    logServerError(request, 'v1 auth device', err);
-    return apiError('server_error', err instanceof Error ? err.message : String(err));
+    return serverError(request, 'v1 auth device', err);
   }
 }

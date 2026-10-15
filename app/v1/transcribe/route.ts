@@ -27,7 +27,7 @@ export async function POST(request: Request) {
       return apiJson({ text: result.text, language: result.language });
     } catch (err) {
       logServerError(request, 'v1 transcribe', err);
-      return apiError('upstream_unavailable', `Speech to text: ${err instanceof Error ? err.message : String(err)}`, 1000);
+      return apiError('upstream_unavailable', 'Speech to text unavailable', 1000);
     }
   });
 }

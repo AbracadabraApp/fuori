@@ -50,9 +50,9 @@ export async function POST(request: Request) {
     } catch (err) {
       logServerError(request, 'v1 speak', err);
       const reason = err instanceof VoiceError ? err.reason : 'other';
-      if (reason === 'quota' || reason === 'auth') return apiError('quota', `Voice: ${reason}`);
+      if (reason === 'quota' || reason === 'auth') return apiError('quota', 'Voice quota used up or key rejected');
       if (reason === 'rate-limit') return apiError('rate_limited', 'Voice service busy', 2000);
-      return apiError('upstream_unavailable', `Voice: ${err instanceof Error ? err.message : String(err)}`);
+      return apiError('upstream_unavailable', 'Voice service unavailable');
     }
   });
 }

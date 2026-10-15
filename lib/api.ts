@@ -58,7 +58,16 @@ export async function withLearner(
     if (!learnerId) return apiError('unauthorized', 'Sign in with POST /v1/auth/device and send Authorization: Bearer <token>');
     return await handler(learnerId);
   } catch (err) {
-    logServerError(request, where, err);
-    return apiError('server_error', err instanceof Error ? err.message : String(err));
+    return serverError(request, where, err);
   }
+}
+
+/**
+ * An unexpected failure: the details go to the server log, tagged with the
+ * request id (x-fuori-id), and the caller gets that id, not the internals.
+ */
+export function serverError(request: Request, where: string, err: unknown): Response {
+  logServerError(request, where, err);
+  const id = request.headers.get('x-fuori-id');
+  return apiError('server_error', `Something went wrong on the server${id ? ` (${id})` : ''}`);
 }

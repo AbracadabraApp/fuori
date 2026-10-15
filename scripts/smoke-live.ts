@@ -67,8 +67,12 @@ function cleanup(learnerId: string) {
   if (!/^[0-9a-f-]{36}$/.test(learnerId)) return;
   try {
     const js = `const {Pool}=require('pg');const p=new Pool({connectionString:process.env.DATABASE_URL,ssl:/railway\\.internal/.test(process.env.DATABASE_URL)?false:{rejectUnauthorized:false}});p.query("DELETE FROM learners WHERE id='${learnerId}'").then(r=>{console.log(r.rowCount);return p.end()})`;
-    const out = execFileSync('railway', ['ssh', '--', 'node', '-e', JSON.stringify(js)], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
-    console.log(`Test learner deleted (${out.trim().split('\n').pop()} row)`);
+    // railway ssh passes arguments as they are, with no shell in between: the
+    // script goes as-is (JSON-quoting it made node evaluate a string and do nothing)
+    const out = execFileSync('railway', ['ssh', '--service', country === 'it' ? 'Fuori' : 'Afuera', '--', 'node', '-e', js], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+    const rows = out.trim().split('\n').pop();
+    if (rows !== '1') throw new Error(`deleted ${rows} rows`);
+    console.log(`Test learner deleted (${learnerId})`);
   } catch {
     console.log(`Could not delete the test learner automatically; delete ${learnerId} from learners (rows cascade).`);
   }

@@ -66,9 +66,9 @@ export async function POST(request: Request) {
       logServerError(request, 'v1 turn', err);
       // Claude busy or down: worth retrying; anything else isn't
       if (err instanceof Anthropic.APIError && (err.status === 429 || err.status === 529 || (err.status ?? 0) >= 500)) {
-        return apiError('upstream_unavailable', `Claude: ${err.message}`, 2000);
+        return apiError('upstream_unavailable', 'Claude is busy or unavailable', 2000);
       }
-      return apiError('server_error', err instanceof Error ? err.message : String(err));
+      return apiError('server_error', `Something went wrong on the server${request.headers.get('x-fuori-id') ? ` (${request.headers.get('x-fuori-id')})` : ''}`);
     }
   });
 }

@@ -5,8 +5,7 @@
  * changes.
  */
 import { buildContent, type Content } from '@/lib/content-api';
-import { apiError } from '@/lib/api';
-import { logServerError } from '@/lib/server-log';
+import { apiError, serverError } from '@/lib/api';
 
 // Content only changes with a deploy, so build it once per server start
 let cached: Content | null = null;
@@ -16,7 +15,6 @@ export async function GET(request: Request) {
     cached ??= buildContent();
     return Response.json(cached, { headers: { 'cache-control': 'public, max-age=300', etag: `"${cached.version}"` } });
   } catch (err) {
-    logServerError(request, 'v1 content', err);
-    return apiError('server_error', err instanceof Error ? err.message : String(err));
+    return serverError(request, 'v1 content', err);
   }
 }
