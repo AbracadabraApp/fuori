@@ -32,9 +32,11 @@ Research behind this plan: [How language apps handle levels](research/language-a
 
 **2. How does the system adapt?** Speech, characters, screen, Magda (table below).
 
-## Three tiers (Josh: beginner, intermediate, expert)
+## Three tiers: Beginner, Intermediate, Advanced
 
-| | Beginner | Intermediate | Expert (or "Advanced"?) |
+**Decided (Josh, 2026-10-15): three levels, named Beginner, Intermediate and Advanced.** No hidden steps inside Beginner; "Advanced" rather than "Expert".
+
+| | Beginner | Intermediate | Advanced |
 |---|---|---|---|
 | Scale underneath | A1–A2 | B1–B2 | C1+ |
 | Speech | Slower, short pauses | Just under natural | Natural |
@@ -75,8 +77,7 @@ Rules: about two minutes; the learner's word wins (Claude suggests, the learner 
 **Revised (Josh, 2026-10-15, later): no city or face pickers.** Onboarding is: choose a country (its picture: `design/country-cards/`) → the woman in that picture greets you (`it-greeter.jpg`, `es-mx-greeter.jpg`) and does steps 3–6 (name, what brings you, the ladder, the summary) → the country's city list. She exists only in onboarding: no anchor character, no home city. No sign-in either (docs/12-native-app.md decision 3). The steps above for picking a city type and a face are superseded.
 ## Cautions
 
-- **Beginner is the biggest jump:** from B2+ down to A1–A2 is not a prompt tweak. Day one and near-A2 need very different help; beginner may need two steps inside it, even if the learner sees one name.
-- "Expert" may be a strong word for a learner; "Advanced" is an option.
+- **Beginner is the biggest jump:** from B2+ down to A1–A2 is not a prompt tweak. Day one and near-A2 need very different help; within Beginner the ladder and the character's patience carry that range (Beginner stays one level, Josh 2026-10-15).
 
 ## How we'll know it works
 
@@ -87,7 +88,7 @@ Rules: about two minutes; the learner's word wins (Claude suggests, the learner 
 
 ## Open questions
 
-- Two steps inside beginner, or one?
+- ~~Two steps inside beginner, or one?~~ One: three levels, Beginner, Intermediate, Advanced (Josh, 2026-10-15).
 - How the learner picks a tier at first: answered by the onboarding above (2026-10-15).
-- Does the dialect setting become part of Expert, or stay a separate option?
+- Does the dialect setting become part of Advanced, or stay a separate option?
 - Speed already follows the subtitle and dialect switches (0.7 / 0.9 / 1.0), but none of the settings are saved. Once a tier exists, it should set speed and default subtitles directly, and tier and overrides should be saved with the learner.

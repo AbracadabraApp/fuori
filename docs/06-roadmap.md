@@ -158,7 +158,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
   - Need more variety and distinctiveness
   - Each place should feel memorable, not interchangeable
 
-**Language levels:** plan in [language-levels-plan.md](language-levels-plan.md): learner level → system adapts; beginner / intermediate / expert. Teacher rated today's characters B2+. Items 1–4 replace "level steps from evidence" (2026-10-15, from the two research reports: [levels](research/language-app-levels.md), [LLM language learning](research/llm-language-learning.md)).
+**Language levels:** plan in [language-levels-plan.md](language-levels-plan.md): learner level → system adapts; three levels, Beginner / Intermediate / Advanced (Josh, 2026-10-15). Teacher rated today's characters B2+. Items 1–4 replace "level steps from evidence" (2026-10-15, from the two research reports: [levels](research/language-app-levels.md), [LLM language learning](research/llm-language-learning.md)).
 
 - [ ] **1. Tier in the character prompt, every turn, worded in role.** Today the prompt has no level at all. Prompt change: bump the version, changelog entry.
 - [ ] **2. Measure the level of what characters say, before tuning.** A judge calibrated on official exam samples (CELI, CILS, PLIDA; DELE), a word-coverage check against a frequency list per language (language data), and `test:levels` with 10+ turn conversations to catch drift.
