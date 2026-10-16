@@ -132,6 +132,57 @@ Steps 2–5 below are the older draft.
 - Her name: none for now. The learner's name is not asked in onboarding either (Josh).
 - The one-app name (Fuori or Afuera) where it appears in shared screens.
 
+## Engineering needs (step 2, drafted 2026-10-16)
+
+From the agreed flow and the walkthrough (`design/onboarding/walkthrough.html`). Checked against the code on 2026-10-16. Decisions still open for Josh are marked **Open**.
+
+### What she says: fixed lines and two written by Claude
+- **Fixed lines** (welcome question, both buttons, beginner send-off, speaker question, the help line, Andiamo) are the agreed text, so they are country content, not generated: `content/<country>/onboarding.ts`, each line with its English. Nothing Italian in Swift or prompt templates (CLAUDE.md).
+- **Written by Claude**, through `lib/claude.ts`, reply `{ line, en }` like the characters:
+  1. **Follow-up:** reacts to answer 1 and asks one slightly harder question that builds on it, ending on the question. Shown without English.
+  2. **Send-off:** responds to answer 2, ends with the country's fixed help line. Shown with English.
+- One short prompt, `content/it/prompts/onboarding.md` (version and changelog like `character.md`), language-neutral, with her voice: warm, simple, never gendered words for the learner (benvenuto/a, bravo/a…).
+
+### Placement (the judge)
+- Called once, after answer 2, with both answers. Returns `{ level: beginner | intermediate | advanced }` plus a one-line reason for the log. Rule from Josh: answers mostly in English → beginner; mostly in the language → the judge picks the level from what they said, so a few words don't place someone high. A judge call, not word lists (CLAUDE.md).
+- The send-off is written in the same call, pitched to the level it picks, so the learner waits for one reply, not two.
+- Beginner path: no Claude call; the level is set to beginner when they tap **Andiamo**.
+
+### Server routes
+- `POST /v1/onboarding/follow-up` `{ answer }` → `{ line, en }`.
+- `POST /v1/onboarding/send-off` `{ answers: [a1, a2] }` → `{ line, en, level }`, and stores the level.
+- `POST /v1/onboarding/done` `{ path: "beginner" }` → stores beginner. (Or one route with a step field; the laptop's call.)
+- `GET /v1/me` adds `level` and `onboarded` (true once a level is stored), so the app knows whether to show onboarding.
+- `GET /v1/content` adds an `onboarding` block: the fixed lines, her four pose image URLs with a focal point each (so her face stays clear of the text), and her voice.
+- **Transcription:** `/v1/transcribe` always tells Whisper the learned language today (`mode` target or en). Onboarding answers can be English, so it needs a third mode with no language set, letting Whisper detect it; the detected language also helps the judge.
+- **Voice:** a fixed ElevenLabs voice for her per country in `content/<country>/voices.ts` (`byCharacter.guide`).
+
+### What's stored
+- `learners.level` (text, null until placed) and `learners.onboarded_at`, added in `scripts/db-migrate.mjs`; run in production through `railway ssh` as before. Learners are per country (one sign-in per country's server), so the level is per country.
+- `learners.onboarding` (jsonb): the two answers, the detected languages and the judge's level and reason, so placement can be checked and re-run. Not in `conversations`: visit counts, memory and the scorecard all read that table and would count her as a character.
+- **Open:** whether what they said (e.g. they love the food, it's their third visit) should reach characters or Magda. Default: no, it stays with onboarding.
+
+### Settings that follow the level
+- Beginner: English translation on, slower speech. Intermediate: English off, normal. Advanced: English off, full speed (Josh: "no English and faster speech"). Set on the phone when onboarding ends, as the starting values; the learner can change them in Settings.
+- The level control in Settings stays greyed out until the level is in the character prompt (roadmap 3); onboarding still stores the level now, so nothing is lost.
+
+### The app (Swift)
+- Shown after the country choice when `/v1/me` says not onboarded; ends on the city list. Every exit saves through the one leave function; leaving mid-way starts it again next time.
+- One screen with steps, not a stack: welcome → beginner send-off, or speaker question → follow-up → send-off. The settings button top right as everywhere.
+- Her picture: four poses from `/v1/content`, swapped with a plain cut, anchored by each pose's focal point; the welcome pose while she asks, listening while the mic is open, talking for her questions, laughing for send-offs.
+- Her line types out in step with her voice (reuse the conversation's subtitles); the English, then the buttons, mic or Andiamo appear only when she has finished.
+- Answer buttons: Liquid Glass with a light olive tint, the learned language on top, English under. Andiamo: solid olive.
+- Mic: the conversation's tap-to-talk (tap, "Press when done"), always tap even with Hands-free on, with the label "Answer in <language> or English". The microphone permission prompt comes on the first tap.
+- Silence: if a recording has no voice in it (the app's existing check), she doesn't move on; on the follow-up, that's when its English appears.
+- Errors: a failed call shows the error code with Try again, never a silent skip.
+- Settings → Developer: **Replay onboarding**, so Josh can test it.
+- **Open:** do existing learners (Josh in both countries) see onboarding once? Default: yes, since neither has a level.
+
+### Checks before calling it done
+- `smoke:live` gains the onboarding routes, Italy and Mexico.
+- A judge test with fixed answers per country: all English → beginner; a few words → beginner; fluent, varied answers → advanced.
+- The screen checks from CLAUDE.md (AX5, VoiceOver with her lines read in her language, 44 pt, Reduce Motion, a call and backgrounding mid-answer) on Josh's iPhone, both countries.
+
 ## Build plan (Josh, 2026-10-15)
 
 1. **Define the frontend flow:** the screens, in order, until Josh approves it.
