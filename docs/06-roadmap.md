@@ -8,11 +8,17 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the game milestones M3–M4). Roughly in order. **app** = Swift in `ios/`, **server** = Next.js, **both** = both. Detail lives in the linked docs; done and removed items are at the bottom of this file.
 
+### 0. Fix soon
+- [ ] **server** Railway watch paths: every `ios/` commit redeploys both servers today
+- [ ] **server** `test:history` fails on `main` ("document mode should carry the whole conversation")
+- [ ] **server** Delete `/api/generate-image`, an open xAI proxy anyone can run up costs on (needs Josh's go-ahead: it takes something down)
+
 ### 1. Finish the conversation on the phone
 - [ ] **app** Try Magda in the app
 - [ ] **app** Device checks: a call, Siri, AirPods in and out, backgrounding, locking
 - [ ] **both** Error codes reach the server logs (today the app only prints them)
 - [ ] **both** Response timing: investigate the ~6 s after a turn (deferred)
+- [ ] **both** Hands-free setting: prepare the reply during the silence; wait adapts to cut-offs and counts them
 
 ### 2. Prompt goals and scorecard
 | Goal | Today | Target |
@@ -56,9 +62,14 @@ Every prompt change says which goal it moves and may not make another worse (ver
 - [ ] **both** Stations and ticket: departures board, the clerk names the platform, "Sali"
 - [ ] **app** Hidden debug switch
 - [ ] **both** "Move to the app" link so web learners keep their data
+- [ ] **both** Asking in English ("Come si dice?"): the web has a button, the app doesn't
+- [ ] **app** Night-paper dark palette (D1)
+- [ ] **app** Typed reply, as an accessibility fallback only (D6)
 
 ### 6. Release
 - [ ] **both** TestFlight: signing, icon, microphone text, privacy label, App Attest, usage tracking, per-learner budgets
+- [ ] **server** R2 custom domain (the free r2.dev address is rate-limited, for development only)
+- [ ] **both** App Review: privacy policy URL, "report this line" button, forced upgrade for old app versions (`426`)
 - [ ] **server** Web sunset, about 2 weeks after TestFlight
 
 ## Earlier list (2026-10-12 to 10-14)
