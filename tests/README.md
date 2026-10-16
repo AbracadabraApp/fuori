@@ -17,7 +17,7 @@
 - `npm run test:audio`: phone recordings get a file name with the right extension (Whisper rejects "blob")
 - `npm run test:roles`: character roles are in Italian (they show on screen and go into the prompt)
 - `npm run test:quality`: conversations are scored (fake judge), scores add up to the scorecard, and the gate passes only a real improvement with nothing worse; with a local `DATABASE_URL`, also that a score saves and comes back with the conversation
-- `npm run test:history`: the two ways of sending the conversation so far (`TURN_HISTORY=document`, the default, and `recent`)
+- `npm run test:history`: how the conversation so far is sent (back-and-forth messages, the last few turns word for word; the old `document` mode was removed 2026-10-16)
 - `npm run test:memory`: memory fills the prompt's `{relationship}` line; with a local `DATABASE_URL`, also that memory is written once per ending, counts one visit per conversation, and retries after a failure (fake Claude)
 
 ## Replay test: the gate for prompt changes
@@ -27,7 +27,6 @@ Josh's real learner lines replayed against the prompt, with the characters he ta
 ```bash
 npm run test:replay -- --refresh              # rebuild the replay set from recorded conversations (needs ADMIN_KEY)
 npm run test:replay                           # scorecard for the current prompt
-npm run test:replay -- --ab=history           # TURN_HISTORY document vs recent on the same lines, with the gate
 npm run test:replay -- --compare=tests/conversations/reports/replay-…json --target=replyWords
 npm run test:replay -- --dry --others=6 --seed=7 --turns=6
 ```

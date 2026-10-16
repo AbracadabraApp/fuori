@@ -6,7 +6,7 @@
 import { z } from 'zod';
 import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
-import { buildTurnPrompt, type HistoryMode, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
+import { buildTurnPrompt, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
 import type { CharacterSheet, Turn } from '@/lib/types';
 
 export const TurnOutputSchema = z.object({
@@ -22,8 +22,6 @@ export async function runTurn(params: {
   learnerSaid?: string;
   /** What this character remembers about the learner, if they've met */
   memory?: RememberedLearner;
-  /** How the conversation so far is sent; defaults to TURN_HISTORY (see build-turn-prompt.ts) */
-  history?: HistoryMode;
   /** Magda's system prompt and first turn instead of the character prompt */
   system?: string;
   firstTurn?: string;

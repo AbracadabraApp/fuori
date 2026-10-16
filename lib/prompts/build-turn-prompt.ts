@@ -18,19 +18,15 @@ export interface RememberedLearner {
 }
 
 /**
- * How the conversation so far reaches Claude.
- * - `document` (default): the whole conversation as one "Previous conversation" block.
- * - `recent`: real back-and-forth messages, only the last RECENT_TURNS turns word for
- *   word; the learner's earlier lines ride along in one short line. A candidate for
- *   shorter replies (roadmap Now), tried with the replay test before it ships.
- * Set with the TURN_HISTORY environment variable, or per call (the replay test).
+ * How the conversation so far reaches Claude: real back-and-forth messages,
+ * only the last RECENT_TURNS turns word for word; the learner's earlier lines
+ * ride along in one short line (recentMessages below). The only way since
+ * 2026-10-16 (Josh): the old "document" mode sent the conversation as one
+ * block, but prompt 2026-10-12h took the conversation out of that block, so it
+ * sent only the last line, while production had run this mode (TURN_HISTORY=
+ * recent) since 2026-10-13.
  */
-export type HistoryMode = 'document' | 'recent';
 export const RECENT_TURNS = 6;
-
-export function historyModeFromEnv(): HistoryMode {
-  return process.env.TURN_HISTORY === 'recent' ? 'recent' : 'document';
-}
 
 export interface PromptMessage {
   role: 'user' | 'assistant';
@@ -45,8 +41,6 @@ interface BuildTurnPromptParams {
   memory?: RememberedLearner;
   /** For "last time was yesterday"; defaults to now (tests pass a fixed date) */
   now?: Date;
-  /** Defaults to TURN_HISTORY (document unless set to recent) */
-  history?: HistoryMode;
   /** Replaces the character system prompt and first turn (Magda: build-tutor-prompt.ts) */
   system?: string;
   firstTurn?: string;
@@ -54,19 +48,15 @@ interface BuildTurnPromptParams {
 
 interface TurnPrompt {
   system: string;
-  /** The single user message in `document` mode (kept for tests and reports) */
-  user: string;
-  /** What to send as `messages`: one user message, or the back-and-forth in `recent` mode */
+  /** What to send as `messages`: the opening situation, then the back-and-forth */
   messages: PromptMessage[];
   version: string;
-  history: HistoryMode;
 }
 
 export interface Template {
   version: string;
   system: string;
   firstTurn: string;
-  laterTurns: string;
   firstMeeting: string;
   metBefore: string;
   earlier: string;
@@ -78,7 +68,6 @@ export function loadTemplate(): Template {
     version: f.version,
     system: f.block('System prompt'),
     firstTurn: f.block('First turn'),
-    laterTurns: f.block('Later turns'),
     firstMeeting: f.block('Relationship: first meeting'),
     metBefore: f.block('Relationship: met before'),
     earlier: f.block('Later turns: earlier in the conversation'),
@@ -117,7 +106,6 @@ export function relationshipLine(t: Template, memory: RememberedLearner | undefi
 
 export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
   const { character, transcript, learnerSaid, memory, now = new Date() } = params;
-  const history = params.history ?? historyModeFromEnv();
   const base = loadTemplate();
   const t = params.firstTurn ? { ...base, firstTurn: params.firstTurn } : base;
 
@@ -141,20 +129,10 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
     relationship: relationshipLine(t, memory, now),
   });
 
-  const user =
-    transcript.length === 0
-      ? t.firstTurn.trim()
-      : fill(t.laterTurns, {
-          transcript: transcript.map((turn) => `${turn.who === 'npc' ? 'You' : 'Them'}: ${turn.transcript}`).join('\n'),
-          learnerSaid: learnerSaid ?? '',
-        });
-
   const messages: PromptMessage[] =
-    history === 'recent' && transcript.length > 0
-      ? recentMessages(t, transcript, learnerSaid ?? '')
-      : [{ role: 'user', content: user }];
+    transcript.length > 0 ? recentMessages(t, transcript, learnerSaid ?? '') : [{ role: 'user', content: t.firstTurn.trim() }];
 
-  return { system, user, messages, version: t.version, history };
+  return { system, messages, version: t.version };
 }
 
 /**

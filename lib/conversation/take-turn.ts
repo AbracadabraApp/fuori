@@ -6,7 +6,7 @@
  */
 
 import { runTurn } from '@/lib/turn';
-import { promptVersion, historyModeFromEnv } from '@/lib/prompts/build-turn-prompt';
+import { promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { buildTutorPrompt, repliesSoFar } from '@/lib/prompts/build-tutor-prompt';
 import { recordTurn } from '@/lib/recording';
 import { loadCharacterMemory, loadMemoryAtStart, type CharacterMemory } from '@/lib/memory';
@@ -79,7 +79,6 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       character: character.id,
       turn: transcript.length === 0 ? 'opening' : 'reply',
       promptVersion: version,
-      history: historyModeFromEnv(),
     })
   );
 
