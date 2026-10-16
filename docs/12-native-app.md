@@ -84,7 +84,7 @@ Use haptics, Keychain, `NWPathMonitor` (a plain "no connection" state), Dynamic 
 | `POST /api/speak` | Remove the `{ useBrowserSpeech }` JSON: any non-200 response means the fallback voice. Cap text length. Cache keyed on voice+text+speed (`Cache-Control: immutable`). |
 | `POST /api/conversation/{id}/end` | Idempotent, returns 202 right away, and finishes the work on the server. |
 | `/api/visits` | Folded into `GET /v1/me`. |
-| `/api/generate-image` | Deleted. |
+| `/api/generate-image` | Deleted 2026-10-15 (Josh). |
 | `/api/log` | Kept for E-codes (small). |
 | Admin | Unchanged, behind `ADMIN_KEY`. |
 | **New** | `POST /v1/auth/device`, `GET /v1/me` (learner, settings, stamps), `PUT /v1/me/settings` (also fixes M3 #3), `GET /v1/content` (pack + manifest), `GET /healthz` (DB, git SHA, prompt version; used as the Railway health check). |

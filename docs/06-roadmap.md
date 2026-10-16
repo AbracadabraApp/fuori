@@ -11,7 +11,6 @@ The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the
 ### 0. Fix soon
 - [ ] **server** Railway watch paths: every `ios/` commit redeploys both servers today
 - [ ] **server** `test:history` fails on `main` ("document mode should carry the whole conversation")
-- [ ] **server** Delete `/api/generate-image`, an open xAI proxy anyone can run up costs on (needs Josh's go-ahead: it takes something down)
 
 ### 1. Finish the conversation on the phone
 - [ ] **app** Try Magda in the app
@@ -200,6 +199,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 - [x] **N1** One conversation on the phone (Josh tried the latest build, tap to talk and the new sent state)
 - [x] Prompt: characters only get text, can't hear pronunciation (2026-10-12b; Magda 2026-10-14b)
 - [x] Bench characters (Josh, 2026-10-15)
+- [x] `/api/generate-image` deleted: an open xAI proxy (Josh, 2026-10-15)
 - [x] Prompt: traits as manner, not expertise (~430 traits removed, 2026-10-13)
 - [x] Art less stereotypical; places more unique (Josh, 2026-10-15)
 
