@@ -9,7 +9,7 @@ public enum SettingsKey {
     /// Off (default, Josh 2026-10-15): tap to talk, tap again when done.
     /// On: the mic opens by itself after the character and closes after a silence.
     public static let handsFree = "settings.handsFree"
-    /// Hidden (Settings → tap the version five times): the debug panel on the
+    /// Hidden (Settings → touch and hold Version): the debug panel on the
     /// person screen and the server choice, as the web's ?debug=1
     public static let debug = "settings.debug"
 }
@@ -51,7 +51,6 @@ struct SettingsSheet: View {
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.handsFree) private var handsFree = false
     @AppStorage(SettingsKey.debug) private var debug = false
-    @State private var versionTaps = 0
     @Environment(\.dismiss) private var dismiss
 
     private enum Level: String, CaseIterable, Identifiable {
@@ -77,19 +76,6 @@ struct SettingsSheet: View {
     var body: some View {
         NavigationStack {
             Form {
-                // At the top, so it shows as soon as five taps on Version turn it on
-                if debug {
-                    Section {
-                        Toggle("Debug panel", isOn: $debug)
-                        LabeledContent("Server", value: model.server?.host() ?? "—")
-                        LabeledContent("Learner", value: model.learnerId ?? "—")
-                            .textSelection(.enabled)
-                    } header: {
-                        Text("Developer")
-                    } footer: {
-                        Text("Shows the prompt version, what was heard, the voice and timings on the person screen.")
-                    }
-                }
                 if !model.countries.isEmpty {
                     Section {
                         HStack(alignment: .top, spacing: 12) {
@@ -135,15 +121,18 @@ struct SettingsSheet: View {
                 Section("About") {
                     Text("Everyone you meet in \(appName) is played by an AI.")
                     NavigationLink("Privacy") { PrivacyView(appName: appName) }
-                    // Five taps turn the developer section on (hidden, as the web's ?debug=1)
-                    Button {
-                        versionTaps += 1
-                        if versionTaps >= 5 { debug.toggle(); versionTaps = 0 }
-                    } label: {
-                        LabeledContent("Version", value: version)
+                    // Touch and hold for the developer rows (hidden, as the web's ?debug=1).
+                    // They appear below, so nothing moves under the finger
+                    LabeledContent("Version", value: version)
+                        .contentShape(Rectangle())
+                        .onLongPressGesture { debug.toggle() }
+                        .sensoryFeedback(.selection, trigger: debug)
+                    if debug {
+                        Toggle("Debug panel", isOn: $debug)
+                        LabeledContent("Server", value: model.server?.host() ?? "—")
+                        LabeledContent("Learner", value: model.learnerId ?? "—")
+                            .textSelection(.enabled)
                     }
-                    .buttonStyle(.plain)
-                    .sensoryFeedback(.selection, trigger: debug)
                 }
             }
             .navigationTitle("Settings")

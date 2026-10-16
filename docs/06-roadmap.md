@@ -195,7 +195,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 - [x] Error codes reach the server logs: `/v1/log`, the code on screen matches the log (2026-10-16)
 - [x] Scorecard: reply time, coherence, feels alive; a broken conversation fails the gate (2026-10-16)
 - [x] Dropped voices counted from the live logs: `npm run voice:failures` (2026-10-16)
-- [x] Hidden debug switch: Settings → tap Version five times (2026-10-16)
+- [x] Hidden debug switch: Settings → touch and hold Version (2026-10-16)
 - [x] Typed reply, as an accessibility fallback only (D6) (2026-10-16; sending not yet tried)
 - [x] Forced upgrade for old app versions: `MIN_APP_VERSION` → 426, "Update the app" (2026-10-16)
 - [x] Country choice on first launch and the new Settings; Mexico in the app (2026-10-16; not yet tapped on the phone)
