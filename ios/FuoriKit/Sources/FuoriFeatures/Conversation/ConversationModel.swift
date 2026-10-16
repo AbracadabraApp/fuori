@@ -92,15 +92,15 @@ public final class ConversationModel {
     private var pendingReply: APIClient.TurnReply?
     private var observers: [NSObjectProtocol] = []
 
-    /// Waits (Josh, 2026-10-15): 10 s for the first word, the turn ends after
-    /// 4 s of silence; "more time to answer" gives 8 s and no first-word limit
-    private var moreTime: Bool { UserDefaults.standard.bool(forKey: SettingsKey.moreTime) }
+    /// Hands-free waits (Josh, 2026-10-15): 10 s for the first word, the turn
+    /// ends after 4 s of silence. No "more time to answer" setting (Josh,
+    /// 2026-10-16: confusing); tap to talk, the default, has no timer at all.
     /// Tap to talk (the default) unless Hands-free is on; always under VoiceOver
     public var tapMode: Bool { isVoiceOverRunning || !UserDefaults.standard.bool(forKey: SettingsKey.handsFree) }
     /// Tap mode: a turn can't run longer than this, in case the second tap never comes
     private let longestTurn: TimeInterval = 90
-    private var firstWordWait: TimeInterval? { moreTime ? nil : 10 }
-    private var endOfTurnWait: TimeInterval { moreTime ? 8 : 4 }
+    private let firstWordWait: TimeInterval? = 10
+    private let endOfTurnWait: TimeInterval = 4
     /// Less than this much voice isn't a turn (a cough, a click)
     private let minimumVoice: TimeInterval = 0.25
 

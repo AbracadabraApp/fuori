@@ -6,7 +6,6 @@ import FuoriDesign
 public enum SettingsKey {
     public static let subtitles = "settings.subtitles"
     public static let english = "settings.english"
-    public static let moreTime = "settings.moreTime"
     /// Off (default, Josh 2026-10-15): tap to talk, tap again when done.
     /// On: the mic opens by itself after the character and closes after a silence.
     public static let handsFree = "settings.handsFree"
@@ -50,7 +49,6 @@ struct SettingsSheet: View {
     @Environment(AppModel.self) private var model
     @AppStorage(SettingsKey.subtitles) private var subtitles = true
     @AppStorage(SettingsKey.english) private var english = false
-    @AppStorage(SettingsKey.moreTime) private var moreTime = false
     @AppStorage(SettingsKey.handsFree) private var handsFree = false
     @AppStorage(SettingsKey.debug) private var debug = false
     @State private var versionTaps = 0
@@ -116,12 +114,9 @@ struct SettingsSheet: View {
                 }
                 Section {
                     Toggle("Hands-free", isOn: $handsFree)
-                    if handsFree {
-                        Toggle("More time to answer", isOn: $moreTime)
-                    }
                 } footer: {
                     Text(handsFree
-                         ? "The microphone opens by itself when it's your turn and closes after a pause. More time to answer waits longer before your turn ends."
+                         ? "The microphone opens by itself when it's your turn and closes after a pause."
                          : "Tap to talk, and tap again when you've finished.")
                 }
                 Section("About") {
