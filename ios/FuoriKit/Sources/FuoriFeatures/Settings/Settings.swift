@@ -77,6 +77,19 @@ struct SettingsSheet: View {
     var body: some View {
         NavigationStack {
             Form {
+                // At the top, so it shows as soon as five taps on Version turn it on
+                if debug {
+                    Section {
+                        Toggle("Debug panel", isOn: $debug)
+                        LabeledContent("Server", value: model.server?.host() ?? "—")
+                        LabeledContent("Learner", value: model.learnerId ?? "—")
+                            .textSelection(.enabled)
+                    } header: {
+                        Text("Developer")
+                    } footer: {
+                        Text("Shows the prompt version, what was heard, the voice and timings on the person screen.")
+                    }
+                }
                 if !model.countries.isEmpty {
                     Section {
                         HStack(alignment: .top, spacing: 12) {
@@ -131,18 +144,6 @@ struct SettingsSheet: View {
                     }
                     .buttonStyle(.plain)
                     .sensoryFeedback(.selection, trigger: debug)
-                }
-                if debug {
-                    Section {
-                        Toggle("Debug panel", isOn: $debug)
-                        LabeledContent("Server", value: model.server?.host() ?? "—")
-                        LabeledContent("Learner", value: model.learnerId ?? "—")
-                            .textSelection(.enabled)
-                    } header: {
-                        Text("Developer")
-                    } footer: {
-                        Text("Shows the prompt version, what was heard, the voice and timings on the person screen.")
-                    }
                 }
             }
             .navigationTitle("Settings")
