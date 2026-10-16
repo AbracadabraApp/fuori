@@ -1385,3 +1385,10 @@ Josh: "go for it" on the items Claude can finish without him. Each commit says w
 - **Watch paths, not working yet** (9c88e11): railway.json was read but ignored (config as code deprecated); patterns set on both services through the Railway API instead, and every deployment now carries them, but docs-only commits from the cloud session (5dba1d9, bb4d881) still built. Open: check Railway dashboard → service → Settings → Watch Paths, or Railway support.
 - **Not done, for Josh:** `test:history` (document mode lost the conversation in prompt 2026-10-12h on purpose, production runs recent, but document is still the default when TURN_HISTORY is unset, including the replay test's default; fixing it means changing the test); the server half of the voice check (Groq's no-speech signal is always 0.000, so there's nothing to check against).
 - All on the simulator only; the phone checks (audio, VoiceOver, typed reply) are still Josh's.
+
+## 2026-10-16 (cloud): onboarding screens redrawn; guide poses
+- Canvas row 2 redrawn to the agreed onboarding text (welcome, beginner send-off, speaker question, follow-up, speaker send-off).
+- Settings mockup: dialect and level shown greyed with "Coming soon"; every website setting carries over (Josh); all of Settings fits one screen.
+- The guide changes pose with a plain cut: welcome, listening, talking, laughing, per country. Pictures in `design/country-cards/poses/`, mapping in `docs/onboarding-design.md` ("Her poses"). For the laptop when onboarding is built.
+- Four poses for every character stays an idea (`docs/ideas.md`): neutral poses needed for open conversation; edits sometimes reframe.
+- Video loops of the guide: made, but `vidgen.x.ai` is blocked here, so not downloaded.
