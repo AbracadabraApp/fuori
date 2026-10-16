@@ -16,7 +16,7 @@ One list, merged 2026-10-15 from the iPhone milestones (N, plan in [12-native-ap
 
 **Language levels** (three levels: Beginner, Intermediate, Advanced; plan in [language-levels-plan.md](language-levels-plan.md))
 - [ ] **server** Measure the level of what characters say, before tuning: a judge calibrated on official exam samples (CELI, CILS, PLIDA; DELE), word coverage against a frequency list per language, `test:levels` with 10+ turn conversations (M3 #2)
-- [ ] **server** Level in the character prompt, every turn, worded in role; prompt version and changelog (M3 #1)
+- [ ] **server** Level in the character prompt, every turn, worded in role; prompt version and changelog (M3 #1). Replaces the "noticed" field idea (Josh, 2026-10-15: it's basically the language level).
 - [ ] **both** Level and settings saved with the learner: sets speech speed and default subtitles, switches as personal overrides (M3 #3, N3)
 - [ ] **server** Voice check before Whisper, server half: reject near-silent recordings; the app's half is done (M3 #5)
 - [ ] **server** Honest learner level: Magda's level as a slow band over several sessions, a strengths line in the study file, her lesson tweaks (M3 #6)
@@ -27,7 +27,6 @@ One list, merged 2026-10-15 from the iPhone milestones (N, plan in [12-native-ap
 - [x] ~~Characters only get text, can't hear pronunciation~~ (prompt 2026-10-12b; Magda 2026-10-14b)
 - [x] ~~Traits as manner, not expertise~~ (~430 traits removed, Italy and Mexico, 2026-10-13)
 - [ ] **server** Background as lived, not a briefing; fewer facts per character ([open question 11.2](open-design-questions.md#11-level-and-speaking-2026-10-11)). Test on 5–10 characters first.
-- [ ] **server** "Noticed" field: the character first notes how the person is speaking. Needs Josh's decision; it changes the `{ line, en }` reply ([open question 11.1](open-design-questions.md#11-level-and-speaking-2026-10-11)).
 - [ ] **server** Faster replies: try Haiku for turns, and start the voice as soon as the line is streamed (part of the timing investigation).
 - Tried and set aside: replies without their English, English on tap (2026-10-15: replies got longer, 2 of 7 conversations broke).
 
@@ -183,6 +182,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 
 ## Removed
 
+- "Noticed" reply field: folded into the level in the character prompt (Josh, 2026-10-15).
 - Prompt experiment "who the learner is: lives here now, not a tourist": cut by Josh, 2026-10-15 ("they are a user of the app trying to learn a language").
 - Richer character memories, character life updates, better reasons to return (was M2.1): cut by Josh, 2026-10-15.
 - Email sign-in (was M4): Josh decided no sign-in ([12-native-app.md](12-native-app.md) decision 3).
