@@ -23,7 +23,7 @@ The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the
 | Goal | Today | Target |
 |---|---|---|
 | **Faster** | ~6 s wait, Claude 4–5 s of it | Reply under 2 s, 4 s at most |
-| **On level** | Characters speak B2+; no level in the prompt | A set share of each line at the learner's level, the rest a little above (Josh, 2026-10-15). **90% of words within the level**, about one new word in ten (Josh, 2026-10-15; research suggests 95% for easy listening: [levels report](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech)) |
+| **On level** | Characters speak B2+; no level in the prompt | 90% of the character's words at the learner's level, about one new word in ten (Josh; the [research](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech) suggests 95% for easy listening) |
 | **Length** | Median 21 words | 20 or fewer, heading toward 10 |
 
 Every prompt change says which goal it moves and may not make another worse (version, changelog, `npm run test:replay`).
