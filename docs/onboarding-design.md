@@ -68,6 +68,8 @@ Build these two screens in the iPhone app now, ahead of the rest of onboarding. 
   - **Allow dialect:** shown as on the website, greyed out with "Coming soon" (Josh). It does nothing yet; the plan is dialect that grows with level (docs/02-game-design.md).
   - **Removed:** the "Conversation / More time to answer" row from the mockup (Josh).
 - Country names, language names and greetings come from `/v1/content`, not Swift.
+- **Every website setting carries over to the app;** none is dropped when building the app (Josh). One that doesn't work yet shows greyed out with "Coming soon".
+- **All of Settings on one screen:** every toggle and its checkmark visible at the default text size, with no scrolling box inside the sheet (no scroll within a scroll). At large text sizes the whole sheet scrolls as one.
 
 
 ## Current flow (canvas row 2, Italy shown)
