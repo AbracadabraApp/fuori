@@ -51,7 +51,6 @@ Every prompt change says which goal it moves and may not make another worse (ver
 - [ ] **both** Stations and ticket: departures board, the clerk names the platform, "Sali"
 - [ ] **both** "Move to the app" link so web learners keep their data
 - [ ] **both** Asking in English ("Come si dice?"): the web has a button, the app doesn't
-- [ ] **app** Night-paper dark palette (D1)
 
 ### 6. Release
 - [ ] **both** TestFlight: signing, icon, microphone text, privacy label, App Attest, usage tracking, per-learner budgets
@@ -64,6 +63,7 @@ Every prompt change says which goal it moves and may not make another worse (ver
 Works or is wanted, but not for the first release.
 
 - [ ] **both** Hands-free extras: prepare the reply during the silence; the wait adapts to cut-offs and counts them. Hands-free itself stays in Settings, off by default. Josh, 2026-10-16, after using it: it works well but feels like an expert feature, not because of difficulty but because of the focus a free-flowing conversation takes; pressing a button is more forgiving on response time (perception) and gives the speaker more control.
+- [ ] **app** Night-paper palette, so the app follows the phone's Dark Mode (D1). Until then the app is light only (Josh, 2026-10-16: deferred).
 
 ## Earlier list (2026-10-12 to 10-14)
 
