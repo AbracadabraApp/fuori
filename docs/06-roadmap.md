@@ -26,7 +26,6 @@ One list, merged 2026-10-15 from the iPhone milestones (N, plan in [12-native-ap
 **Prompt experiments** (each one: prompt version, changelog entry, replay gate `npm run test:replay`)
 - [x] ~~Characters only get text, can't hear pronunciation~~ (prompt 2026-10-12b; Magda 2026-10-14b)
 - [x] ~~Traits as manner, not expertise~~ (~430 traits removed, Italy and Mexico, 2026-10-13)
-- [ ] **server** Background as lived, not a briefing; fewer facts per character ([open question 11.2](open-design-questions.md#11-level-and-speaking-2026-10-11)). Test on 5–10 characters first.
 - [ ] **server** Faster replies: try Haiku for turns, and start the voice as soon as the line is streamed (part of the timing investigation).
 - Tried and set aside: replies without their English, English on tap (2026-10-15: replies got longer, 2 of 7 conversations broke).
 
@@ -182,6 +181,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 
 ## Removed
 
+- Prompt experiment "background as lived, fewer facts": cut by Josh, 2026-10-15; the prompt no longer carries any background (only name, age, role, city, setting, three traits, formality).
 - "Noticed" reply field: folded into the level in the character prompt (Josh, 2026-10-15).
 - Prompt experiment "who the learner is: lives here now, not a tourist": cut by Josh, 2026-10-15 ("they are a user of the app trying to learn a language").
 - Richer character memories, character life updates, better reasons to return (was M2.1): cut by Josh, 2026-10-15.

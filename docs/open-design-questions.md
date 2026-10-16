@@ -148,7 +148,7 @@ Questions that emerged during M1 implementation (2026-10-09) that need design/pr
 From phone play with Salvatore and Suor Agata. Background and options: [Ideas → Level, speaking and review](ideas.md#level-speaking-and-review-2026-10-11).
 
 1. **Decided 2026-10-15 (Josh): no; the level in the character prompt does this job.** **"Noticed" in the reply?** `{ noticed, it, en }`: the character first notes in a few words how the person is speaking, which makes it attend to the learner without a rule. Changes the M1 `{ it, en }` format.
-2. **Trait reframing?** Traits as manner rather than expertise, background as lived rather than a briefing, fewer facts. Test on 5–10 characters before touching 634.
+2. **Done / cut 2026-10-15:** traits reframed 2026-10-13; background cut by Josh (the prompt carries none). **Trait reframing?** Traits as manner rather than expertise, background as lived rather than a briefing, fewer facts. Test on 5–10 characters before touching 634.
 3. **Does the learner level reach characters,** or only the review log? Characters shouldn't all speak to it; light use could save stumbling at every first meeting.
 4. **Starting level:** stated by the learner (A2, or a textbook finished), or learned only from how they speak?
 5. **Where the review shows up:** Magda only, an end-of-day "Today" page, or both. (Not in real time: it pulls you out of Italy.)
