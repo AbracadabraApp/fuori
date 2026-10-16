@@ -148,12 +148,12 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
   - Current: [needs specific feedback on what's broken]
   - Improve: [to be defined based on testing]
 
-- [ ] **Address stereotypical art** (Josh, 2026-10-14)
+- [x] **Address stereotypical art** (Josh, 2026-10-14; done, Josh 2026-10-15)
   - City/place images feel too touristy/generic
   - Need more distinctive character and local personality
   - Avoid "postcard views" - show life and neighborhoods
 
-- [ ] **Make places more unique** (Josh, 2026-10-14)
+- [x] **Make places more unique** (Josh, 2026-10-14; done, Josh 2026-10-15)
   - Tourist-oriented places too typical/similar
   - Need more variety and distinctiveness
   - Each place should feel memorable, not interchangeable
