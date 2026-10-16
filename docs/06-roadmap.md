@@ -23,6 +23,15 @@ One list, merged 2026-10-15 from the iPhone milestones (N, plan in [12-native-ap
 - [ ] **server** Measure lasting learning: next-day recall of Magda's target, tried in town, retention at day 7 and 30 (M3 #7)
 - [ ] **both** More dialect as you level up; the dialect setting does nothing today (M3)
 
+**Prompt experiments** (each one: prompt version, changelog entry, replay gate `npm run test:replay`)
+- [x] ~~Characters only get text, can't hear pronunciation~~ (prompt 2026-10-12b; Magda 2026-10-14b)
+- [x] ~~Traits as manner, not expertise~~ (~430 traits removed, Italy and Mexico, 2026-10-13)
+- [ ] **server** Who the learner is: someone who lives here now, not a tourist. Tried as "They're new to the neighbourhood" (2026-10-11a) and replaced by the memory slot (2026-10-11b) because it turns false once they've met; still open how to say it truthfully.
+- [ ] **server** Background as lived, not a briefing; fewer facts per character ([open question 11.2](open-design-questions.md#11-level-and-speaking-2026-10-11)). Test on 5–10 characters first.
+- [ ] **server** "Noticed" field: the character first notes how the person is speaking. Needs Josh's decision; it changes the `{ line, en }` reply ([open question 11.1](open-design-questions.md#11-level-and-speaking-2026-10-11)).
+- [ ] **server** Faster replies: try Haiku for turns, and start the voice as soon as the line is streamed (part of the timing investigation).
+- Tried and set aside: replies without their English, English on tap (2026-10-15: replies got longer, 2 of 7 conversations broke).
+
 **Onboarding and the beginner path** ([onboarding-design.md](onboarding-design.md))
 - [ ] **both** Onboarding, including the country choice (M3)
   - [ ] Define the frontend flow
@@ -86,7 +95,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 - [x] Tests: models, schema, prompt, reply, voices, feed, audio, roles, images, and graded simulated conversations
 
 **To do**
-- [ ] Prompt experiments ([Now #3](#now-ranked)): text-only clarification, "lives here" context, manner traits
+- Prompt experiments: moved to [Now → Prompt experiments](#now) (2026-10-15), listed one by one.
 - [x] Postgres: `learners`, `character_memories`, `conversations` ([Data model](09-data-model.md#storage-strategy)); anonymous learner id in a server-set cookie
 - [x] Save each conversation: character, place, times, prompt version, and turns (who, text, English, time). No audio.
 - [x] When a conversation ends, one Claude call writes:
