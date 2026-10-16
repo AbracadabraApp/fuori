@@ -55,6 +55,20 @@ An attempt to give an overview of onboarding in Josh's words. It sits **on top o
 
 **Approved for now (Josh, 2026-10-15):** the country choice and the Settings screens (canvas row 1). Steps 1–5 below are being reworked in plain text first, then images.
 
+### Ship first: country choice and Settings (Josh, 2026-10-15)
+
+Build these two screens in the iPhone app now, ahead of the rest of onboarding. Canvas row 1 shows them; the pictures are `design/country-cards/it.jpg` and `es-mx.jpg`.
+
+- **Country choice (first launch):** two picture cards, Italy and Mexico, each with its language and a greeting in it. Tapping one picks that country's server (the `FuoriServers` list) and goes straight to its city list until the rest of onboarding exists. Shown once; switching later is in Settings.
+- **Settings:**
+  - **Where you're living:** the same two cards, the current one marked "You're here"; tapping the other switches country. Progress stays with each country (per-country tokens).
+  - **Your Italian / Your Spanish:** Beginner, Intermediate, Advanced, with the one-line note under it. Only ship this once the level actually changes how people talk (M3 tier); until then leave it out rather than show a control that does nothing.
+  - **Subtitles:** the website's two settings, *Show Italian words* and *Show English translation* (the app's existing Subtitles and English toggles). Hands-free stays as it is.
+  - **About:** the one AI line ("Everyone you meet in Fuori is played by an AI") and Privacy.
+  - **Removed:** the "Conversation / More time to answer" row from the mockup (Josh). The web's "Allow dialect (coming soon)" is left out: it doesn't work.
+- Country names, language names and greetings come from `/v1/content`, not Swift.
+
+
 ## Current flow (canvas row 2, Italy shown)
 
 **She always speaks the learned language; English is only ever subtitles, never spoken** (Josh). App text (the mic label, buttons' English lines) is separate.
@@ -93,7 +107,6 @@ Steps 2–5 below are the older draft.
 - The level steps after step 4, and how far the ladder goes in onboarding.
 - Her name: none for now. The learner's name is not asked in onboarding either (Josh).
 - The one-app name (Fuori or Afuera) where it appears in shared screens.
-- Settings mockup: level (Beginner, Intermediate, Advanced), "More time to answer", About with the AI line.
 
 ## Build plan (Josh, 2026-10-15)
 

@@ -1366,3 +1366,9 @@ Tracked in `docs/onboarding-design.md` (Josh: "not great yet, getting better"). 
 - **Decisions (Josh):** three levels named Beginner, Intermediate, Advanced (one Beginner level, no hidden steps); N1 done (he tried the latest build on his iPhone); onboarding is three to-dos (frontend flow → engineering needs → implement), no design now; art, place uniqueness and bench characters done; email sign-in removed (no sign-in).
 - **Prompt work:** three goals (faster, on level, length) with today's numbers and targets; scorecard additions listed (reply time, level, broken replies fail a change, coherence, feels alive). Cut: richer memories / life updates / reasons to return, "lives here" framing, background as lived (the prompt carries no background), the "noticed" field (folded into the level in the prompt).
 - **Next:** Josh's pick from the list; nothing started.
+
+## 2026-10-15 (cloud): onboarding screen 1 and the first two screens to ship
+- Screen 1 buttons settled: **Non ancora!** / **Sì, ma voglio migliorare** (Mexico **¡Todavía no!** / **Sí, pero quiero mejorar**). "Un po'" dropped so strong speakers fit too (Josh).
+- Settings mockup: "Conversation / More time to answer" removed; the website's subtitle settings (show Italian words, show English) added (Josh).
+- **For the laptop:** ship the country choice and Settings screens in the iPhone app now, before the rest of onboarding. Spec: "Ship first" in `docs/onboarding-design.md`. The level control waits until the M3 tier does something.
+- Next (cloud): redraw the onboarding screens on the canvas to the agreed text.
