@@ -165,12 +165,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 - [x] Version 1: transcripts only, labelled by who, where and when, from an admin format (built 2026-10-14)
 - [x] Josh tried it in Gemini Notebook (2026-10-14): it works. Kept as is; no version 2, and nothing in Fuori that repeats the notebook's review
 
-**Character Intelligence Improvements:**
-- [ ] Richer character memories (broader topics, better continuity)
-- [ ] Character life updates (events, follow-ups on previous topics)
-- [ ] Reasons to return quality (not new system, improve existing memory prompts)
-
-**Done when:** ~~Josh has tried the export in Gemini Notebook and decided keep, change or drop~~ (kept, 2026-10-14); characters give you richer reasons to return beyond just remembering your name.
+**Done when:** ~~Josh has tried the export in Gemini Notebook and decided keep, change or drop~~ (kept, 2026-10-14). The character-memory items were cut (Josh, 2026-10-15).
 
 ## Done since 2026-10-15
 
@@ -180,6 +175,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 
 ## Removed
 
+- Richer character memories, character life updates, better reasons to return (was M2.1): cut by Josh, 2026-10-15.
 - Email sign-in (was M4): Josh decided no sign-in ([12-native-app.md](12-native-app.md) decision 3).
 - Hosted voices for every character (2026-10-14): ~$7,500 for 686 voices; the 8-voice pool works.
 - Moved to [ideas.md](ideas.md) (2026-10-14): interactive transcript; voice notes and messages from characters.
