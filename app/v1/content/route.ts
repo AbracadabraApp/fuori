@@ -5,15 +5,18 @@
  * changes.
  */
 import { buildContent, type Content } from '@/lib/content-api';
-import { apiError, serverError } from '@/lib/api';
+import { serverError } from '@/lib/api';
+import { upgradeRequired } from '@/lib/app-version';
 
 // Content only changes with a deploy, so build it once per server start
 let cached: Content | null = null;
 
 export async function GET(request: Request) {
+  const tooOld = upgradeRequired(request);
+  if (tooOld) return tooOld;
   try {
     cached ??= buildContent();
-    return Response.json(cached, { headers: { 'cache-control': 'public, max-age=300', etag: `"${cached.version}"` } });
+    return Response.json(cached, { headers: { 'cache-control': 'public, max-age=300', vary: 'x-app-version', etag: `"${cached.version}"` } });
   } catch (err) {
     return serverError(request, 'v1 content', err);
   }

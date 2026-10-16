@@ -2,7 +2,8 @@ import SwiftUI
 import FuoriCore
 import FuoriDesign
 
-/// Loading, then the city list; a failure shows the server's message and a retry.
+/// Loading, then the city list; a failure shows the server's message and a
+/// retry, and a build the server no longer accepts asks for an update.
 public struct RootView: View {
     @Environment(AppModel.self) private var model
     @State private var path = NavigationPath()
@@ -25,6 +26,14 @@ public struct RootView: View {
                     } actions: {
                         Button("Try Again") { Task { await model.load() } }
                             .buttonStyle(.borderedProminent)
+                    }
+                    .background(Tokens.Colors.paper)
+                case .tooOld(let message):
+                    // No retry: trying again can't help until the app is updated
+                    ContentUnavailableView {
+                        Label("Update the app", systemImage: "arrow.down.app")
+                    } description: {
+                        Text(message)
                     }
                     .background(Tokens.Colors.paper)
                 case .ready:

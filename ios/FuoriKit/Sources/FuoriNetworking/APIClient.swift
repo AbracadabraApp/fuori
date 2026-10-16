@@ -165,8 +165,13 @@ public actor APIClient {
     private func request(_ path: String) -> URLRequest {
         var req = URLRequest(url: baseURL.appending(path: path))
         req.setValue("application/json", forHTTPHeaderField: "Accept")
+        // Lets the server turn away builds that are too old (426, lib/app-version.ts)
+        if let version = Self.appVersion { req.setValue(version, forHTTPHeaderField: "X-App-Version") }
         return req
     }
+
+    /// The app's version (CFBundleShortVersionString); nil when not running in the app (tests)
+    static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 
     private func send<T: Decodable>(_ request: URLRequest, signedIn: Bool) async throws -> T {
         try JSONDecoder().decode(T.self, from: try await sendData(request, signedIn: signedIn))

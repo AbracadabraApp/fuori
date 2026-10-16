@@ -24,4 +24,11 @@ import Testing
         #expect(error.code == .serverError)
         #expect(error.retryable)
     }
+
+    @Test func readsUpgradeRequired() {
+        let body = Data(#"{"error":{"code":"upgrade_required","message":"Update the app","retryable":false}}"#.utf8)
+        let error = APIError.from(data: body, status: 426)
+        #expect(error.code == .upgradeRequired)
+        #expect(!error.retryable)
+    }
 }

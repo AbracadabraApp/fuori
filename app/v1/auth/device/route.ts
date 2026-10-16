@@ -10,10 +10,13 @@
 import { registerDevice } from '@/lib/auth';
 import { apiError, apiJson, serverError } from '@/lib/api';
 import { allow, clientIp } from '@/lib/rate-limit';
+import { upgradeRequired } from '@/lib/app-version';
 
 const PER_HOUR = 10;
 
 export async function POST(request: Request) {
+  const tooOld = upgradeRequired(request);
+  if (tooOld) return tooOld;
   if (!allow(`device:${clientIp(request)}`, PER_HOUR, 60 * 60 * 1000)) {
     return apiError('rate_limited', `At most ${PER_HOUR} new devices an hour from one address`, 60 * 60 * 1000);
   }

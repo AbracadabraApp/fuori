@@ -8,6 +8,7 @@
 
 import { learnerFromRequest } from './auth';
 import { logServerError } from './server-log';
+import { upgradeRequired } from './app-version';
 
 export type ApiErrorCode =
   | 'bad_request'
@@ -17,7 +18,9 @@ export type ApiErrorCode =
   | 'quota'
   | 'bad_audio'
   | 'upstream_unavailable'
-  | 'server_error';
+  | 'server_error'
+  /** This app build is older than MIN_APP_VERSION (lib/app-version.ts) */
+  | 'upgrade_required';
 
 const STATUS: Record<ApiErrorCode, number> = {
   bad_request: 400,
@@ -28,6 +31,7 @@ const STATUS: Record<ApiErrorCode, number> = {
   bad_audio: 422,
   upstream_unavailable: 503,
   server_error: 500,
+  upgrade_required: 426,
 };
 
 const RETRYABLE: ApiErrorCode[] = ['rate_limited', 'upstream_unavailable', 'server_error'];
@@ -53,6 +57,8 @@ export async function withLearner(
   where: string,
   handler: (learnerId: string) => Promise<Response>
 ): Promise<Response> {
+  const tooOld = upgradeRequired(request);
+  if (tooOld) return tooOld;
   try {
     const learnerId = await learnerFromRequest(request);
     if (!learnerId) return apiError('unauthorized', 'Sign in with POST /v1/auth/device and send Authorization: Bearer <token>');

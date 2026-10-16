@@ -12,6 +12,8 @@ public struct APIError: Error, Codable, Sendable, Equatable {
         case badAudio = "bad_audio"
         case upstreamUnavailable = "upstream_unavailable"
         case serverError = "server_error"
+        /// This build is older than the server accepts: the learner has to update
+        case upgradeRequired = "upgrade_required"
         /// A code this build doesn't know yet (the server adds codes; it never renames them)
         case unknown
 

@@ -15,6 +15,8 @@ public final class AppModel {
         case loading
         case ready
         case failed(String)
+        /// The server no longer accepts this build (426): only an update helps
+        case tooOld(String)
     }
 
     public private(set) var phase: Phase = .loading
@@ -38,6 +40,8 @@ public final class AppModel {
             visits = try await api.me().visits
             phase = .ready
             retryPendingSaves()
+        } catch let error as APIError where error.code == .upgradeRequired {
+            phase = .tooOld(error.message)
         } catch {
             let code = report(error, step: "load")
             let message = (error as? APIError)?.message ?? error.localizedDescription
