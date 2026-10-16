@@ -72,11 +72,11 @@ Build these two screens in the iPhone app now, ahead of the rest of onboarding. 
 - **All of Settings on one screen:** every toggle and its checkmark visible at the default text size, with no scrolling box inside the sheet (no scroll within a scroll). At large text sizes the whole sheet scrolls as one.
 
 
-## Current flow (canvas row 2, Italy shown)
+## Current flow (canvas row 2, Italy shown; redrawn 2026-10-16 to this text)
 
 **She always speaks the learned language; English is only ever subtitles, never spoken** (Josh). App text (the mic label, buttons' English lines) is separate.
 
-**No Replay, Slower or "How do I say…?" buttons in onboarding** (Josh, 2026-10-15). The canvas mockups still show them.
+**No Replay, Slower or "How do I say…?" buttons in onboarding** (Josh, 2026-10-15).
 
 
 0. **Choose a country.** Two picture cards with the language and a greeting in it (*Ciao!*, *¡Hola!*).
