@@ -10,7 +10,7 @@ The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the
 
 ### 0. Fix soon
 - [ ] **server** Railway watch paths: set on both services 2026-10-16 (railway.json was ignored: config as code is deprecated), but docs-only commits still deploy; check in the dashboard
-- [ ] **server** `test:history` fails on `main` ("document mode should carry the whole conversation")
+- [x] **server** `test:history` fixed: "recent" is the only way to send the conversation (2026-10-16)
 
 ### 1. Finish the conversation on the phone
 - [ ] **app** Try Magda in the app
@@ -42,7 +42,6 @@ Every prompt change says which goal it moves and may not make another worse (ver
 - [ ] **server** Measure the level of what characters say: level judge on exam samples, word coverage, `test:levels`
 - [ ] **server** Level in the character prompt, every turn, in role (replaces the "noticed" field)
 - [ ] **both** Level and settings saved with the learner (speed, default subtitles)
-- [ ] **server** Voice check before Whisper, server half (app half done). Blocked: Whisper on Groq reports no-speech 0.000 even on pure silence, so it can't tell; needs a decision (2026-10-16)
 - [ ] **server** Moving up a level: when **90% of the learner's speech is at the next level**, across several conversations (Josh, 2026-10-15). Magda suggests it, the learner decides.
 - [ ] **server** Measure lasting learning: next-day recall, tried in town, day 7 and 30
 - [ ] **both** More dialect as you level up (the dialect setting does nothing today)
@@ -206,6 +205,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 
 ## Removed
 
+- Voice check before Whisper, server half (was M3 #5): dropped by Josh, 2026-10-16. Whisper on Groq reports no-speech 0.000 even on pure silence, so the server has nothing to check; the app's own check stops silent uploads.
 - Honest learner level (Magda's slow band over sessions, strengths line, her lesson tweaks; was M3 #6): cut by Josh, 2026-10-15, as not practical.
 - Replies without their English, English on tap (2026-10-15): replay A/B, replies got longer and 2 of 7 conversations broke.
 - Prompt experiment "background as lived, fewer facts": cut by Josh, 2026-10-15; the prompt no longer carries any background (only name, age, role, city, setting, three traits, formality).
