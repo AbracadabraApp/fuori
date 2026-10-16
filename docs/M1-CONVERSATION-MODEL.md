@@ -36,7 +36,7 @@ The principle: describe the situation, not how to talk (decided 2026-10-11). The
 
 **Teaching in character is fine** (Josh, 2026-10-11). A barista who slows down, repeats a word or says "si dice *il* caffè, eh" is what a kind Italian does with a newcomer. What's not fine is breaking character: lectures, tour-guide mode, a CV instead of a greeting. So telling a character about the learner's level is allowed if it keeps them in character; whether to do it is an [open question](open-design-questions.md#11-level-and-speaking-2026-10-11).
 
-**What phone play shows (2026-10-11):** characters speak B1–B2 to an A1–A2 learner, which is fine (see [Vision → Level](01-vision.md#level)); the problems are long turns with no opening to reply, traits performed as topics ("local historian" → a history lecture), and corrections of things the character can't hear. Fixes are being tested, not assumed: see [Roadmap → Now](06-roadmap.md#now-ranked).
+**What phone play shows (2026-10-11):** characters speak B1–B2 to an A1–A2 learner, which is fine (see [Vision → Level](01-vision.md#level)); the problems are long turns with no opening to reply, traits performed as topics ("local historian" → a history lecture), and corrections of things the character can't hear. Fixes are being tested, not assumed: see [Roadmap → Now](06-roadmap.md#earlier-list-2026-10-12-to-10-14).
 
 **That's the entire system prompt. Everything else emerges naturally.**
 
@@ -185,7 +185,7 @@ But test the simple version first.
 
 ## Testing
 
-`npm run test:conversations` runs simulated conversations with Giulia, Rita and a random sample of city characters, using the real prompt. A simulated learner makes realistic mistakes and says when they don't understand. A grader scores each character on four things: speaks Italian, understands imperfect speech, adapts when the learner is lost, feels like a real person. The report suggests up to 3 changes and never edits files. Complex, natural Italian is not penalized; what counts is how the character responds to confusion. That means the test can't see the main problem from phone play (long, hard turns); adding level-fit and turn-length scores is [Now #1](06-roadmap.md#now-ranked). See `tests/README.md`.
+`npm run test:conversations` runs simulated conversations with Giulia, Rita and a random sample of city characters, using the real prompt. A simulated learner makes realistic mistakes and says when they don't understand. A grader scores each character on four things: speaks Italian, understands imperfect speech, adapts when the learner is lost, feels like a real person. The report suggests up to 3 changes and never edits files. Complex, natural Italian is not penalized; what counts is how the character responds to confusion. That means the test can't see the main problem from phone play (long, hard turns); adding level-fit and turn-length scores is [Now #1](06-roadmap.md#earlier-list-2026-10-12-to-10-14). See `tests/README.md`.
 
 ## The Radical Bet
 

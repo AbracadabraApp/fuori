@@ -4,9 +4,50 @@ Each milestone ends with something playable on your phone. There is no separate 
 
 This file is the one place for **what's in each milestone** and **what to do next**. Parked ideas live in [Ideas](ideas.md); questions waiting on a decision live in [Open design questions](open-design-questions.md); what happened each session lives in `progress.md`.
 
-## Now (ranked)
+## Now
 
-Updated 2026-10-12 (evening). Top of the list first; strike items off here as they're done. How prompt changes are decided: [10-testing.md → Dialogue quality](10-testing.md#dialogue-quality-decided-2026-10-12).
+One list, merged 2026-10-15 from the iPhone milestones (N, plan in [12-native-app.md](12-native-app.md#milestones)) and the game milestones (M3, M4). Roughly in order; each item says where the work is: **app** (Swift, `ios/`), **server**, or **both**. Old labels kept in brackets so earlier notes still make sense.
+
+**Finish the conversation on the phone**
+- [ ] **app** Magda tried in the app (N2)
+- [ ] **app** Device checks: a call, Siri, AirPods in and out, backgrounding, locking (from N1)
+- [ ] **both** Error codes reach the server logs; today the app only prints them (from N1)
+- [ ] **both** Response timing: investigate the ~6 s after a turn (deferred, Josh)
+
+**Language levels** (three levels: Beginner, Intermediate, Advanced; plan in [language-levels-plan.md](language-levels-plan.md))
+- [ ] **server** Measure the level of what characters say, before tuning: a judge calibrated on official exam samples (CELI, CILS, PLIDA; DELE), word coverage against a frequency list per language, `test:levels` with 10+ turn conversations (M3 #2)
+- [ ] **server** Level in the character prompt, every turn, worded in role; prompt version and changelog (M3 #1)
+- [ ] **both** Level and settings saved with the learner: sets speech speed and default subtitles, switches as personal overrides (M3 #3, N3)
+- [ ] **server** Voice check before Whisper, server half: reject near-silent recordings; the app's half is done (M3 #5)
+- [ ] **server** Honest learner level: Magda's level as a slow band over several sessions, a strengths line in the study file, her lesson tweaks (M3 #6)
+- [ ] **server** Measure lasting learning: next-day recall of Magda's target, tried in town, retention at day 7 and 30 (M3 #7)
+- [ ] **both** More dialect as you level up; the dialect setting does nothing today (M3)
+
+**Onboarding and the beginner path** ([onboarding-design.md](onboarding-design.md))
+- [ ] **both** Onboarding, including the country choice (M3)
+  - [ ] Define the frontend flow
+  - [ ] Define the engineering needs
+  - [ ] Implement
+- [ ] **both** Beginner ladder, behind a setting: pick one of two replies → read it aloud → speak with help nearby → speak freely (M3 #4)
+
+**Parity with the web** (N2, N3)
+- [ ] **app** Visit stamps redesigned: bottom right on the caption, collectible designs (passport stamps, seals, wine and cigar labels), not a number in a circle (M3, N2)
+- [ ] **app** City picker improved; needs Josh's feedback on what's wrong (M3)
+- [ ] **both** Mexico in the app (N3)
+- [ ] **both** Stations and ticket: departures board, the clerk names the platform, "Sali" (N3)
+- [ ] **app** Hidden debug switch (N3)
+- [ ] **both** "Move to the app" link so web learners keep their data (N3)
+
+**Release**
+- [ ] **both** TestFlight: signing, icon, microphone text, privacy label, App Attest, usage tracking and per-learner daily budgets (N4, M4)
+- [ ] **server** Web sunset, about 2 weeks after TestFlight (N5)
+
+**Waiting on a decision**
+- [ ] **People with time on their hands (bench characters).** The in-world teaching point with no transaction (see [Game design → Who teaches](02-game-design.md#who-teaches)). 10 of 634 Italian characters have a role that isn't a job (pensionato, studentessa, nonna or abitante del quartiere), nearly all in piazzas and parks: 4 shown (Ettore and Gina in Roma, Elena in Matera, Giovanna in Venezia), 6 hidden. Borderline, all hidden: Federico (poeta locale, Taormina), Dante and Davide (storico locale, Venezia and Verona). Decide whether to show one per city: Firenze, Siena, Napoli and Bologna each have one waiting in `content/it/showcase.ts`; Palermo has none. Open design question first: what is he when he's not teaching? No character has a time constraint (hours, schedule) today.
+
+## Earlier list (2026-10-12 to 10-14)
+
+Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How prompt changes are decided: [10-testing.md → Dialogue quality](10-testing.md#dialogue-quality-decided-2026-10-12).
 
 1. ~~**Postgres, recording, memory, Roma portraits, ElevenLabs quota**~~ Done 2026-10-11/12. `ADMIN_KEY` set in Railway 2026-10-12. Josh's first remembered conversations (Rita, Giulia) were saved well; a true return visit is still to test.
 2. ~~**Pronunciation fact line**~~ Done 2026-10-12 (character prompt 2026-10-12b): characters only see the transcription, so they stop drilling "ca-cio e pe-pe". Factual fix, no gate.
@@ -28,7 +69,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 10. ~~**Afuera doesn't auto-deploy.**~~ Resolved; checked 2026-10-14 with `railway status --json`: Afuera's source is `AbracadabraApp/fuori`, branch `main`, and it deployed `93037b1` by itself, the same commit as Fuori. Was: The Mexico service on Railway didn't pick up e612c70 while Fuori did, so it likely isn't connected to GitHub. Fix (Josh, in the Railway dashboard): Afuera → Settings → Source → `AbracadabraApp/fuori`, branch `main`, auto-deploy on. One-off meanwhile: `railway up --service afuera` from the laptop.
 11. ~~**Mexican voices.**~~ Done 2026-10-14: native Mexican Spanish voices, 4 women and 4 men (Eduardo replaced Javi), in `content/es-mx/voices.ts`. `content/es-mx/voices.ts` reuses Italy's English premade ElevenLabs voices, so characters will sound foreign. Find Mexican-accented Spanish voices in the voice library, make one clip per voice of the same everyday line, Josh picks 4 women and 4 men by ear. Laptop session (ElevenLabs key).
 12. ~~**Mexican image prompts.**~~ Cancelled 2026-10-13. Not pursuing.
-13. **People with time on their hands (bench characters).** The in-world teaching point with no transaction (see [Game design → Who teaches](02-game-design.md#who-teaches)). 10 of 634 Italian characters have a role that isn't a job (pensionato, studentessa, nonna or abitante del quartiere), nearly all in piazzas and parks: 4 shown (Ettore and Gina in Roma, Elena in Matera, Giovanna in Venezia), 6 hidden. Borderline, all hidden: Federico (poeta locale, Taormina), Dante and Davide (storico locale, Venezia and Verona). Decide whether to show one per city: Firenze, Siena, Napoli and Bologna each have one waiting in `content/it/showcase.ts`; Palermo has none. Open design question first: what is he when he's not teaching? No character has a time constraint (hours, schedule) today.
+
 
 ## M1: Navigate cities and hold a conversation that's remembered
 
@@ -131,81 +172,17 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 
 **Done when:** ~~Josh has tried the export in Gemini Notebook and decided keep, change or drop~~ (kept, 2026-10-14); characters give you richer reasons to return beyond just remembering your name.
 
-## iPhone app (N0–N5)
+## Done since 2026-10-15
 
-Plan and pass criteria: [12-native-app.md](12-native-app.md#milestones). Runs alongside M3.
+- [x] **N0** iPhone app: server `/v1` API and Xcode skeleton (Josh used it on his iPhone)
+- [x] **N1** One conversation on the phone (Josh tried the latest build, tap to talk and the new sent state)
+- [x] Art less stereotypical; places more unique (Josh, 2026-10-15)
 
-- [x] **N0** Server `/v1` API and Xcode skeleton (Josh used it on his iPhone, 2026-10-15)
-- [x] **N1** One conversation on the phone (done, Josh 2026-10-15; he tried the latest build, tap to talk and the new sent state, on his iPhone)
-- [ ] **N2** Feeds, stamps (redesigned), Magda tried in the app
-  - Carried over from N1:
-  - [ ] Device checks: a call, Siri, AirPods in and out, backgrounding, locking
-  - [ ] Error codes reach the server logs (today only printed on the phone)
-  - [ ] Response timing: investigate the ~6 s after a turn (deferred, Josh)
-- [ ] **N3** Parity: stations and ticket, settings saved on the server, debug switch, Mexico, "Move to the app" link for web learners
-- [ ] **N4** TestFlight: signing, icon, microphone text, privacy label, App Attest and budgets
-- [ ] **N5** Web sunset (about 2 weeks after N4)
+## Removed
 
-## M3: Polish existing work + Language levels
-
-**Fixes to existing work:**
-
-- [ ] **Redesign visit marks** (Josh, 2026-10-14)
-  - Move from top-right (over image) to bottom-right on white caption area
-  - Replace simple circles with distinctive stamp designs inspired by:
-    - Passport stamps (dates, borders, country marks)
-    - Official seals (ornate borders, ribbons)
-    - Wine labels (vintage, vineyard, region)
-    - Cigar wrapper labels (bands, emblems)
-  - Make each variant feel collectible and interesting, not just color variations
-
-- [ ] **Improve city picker UX** (Josh, 2026-10-14)
-  - Current: [needs specific feedback on what's broken]
-  - Improve: [to be defined based on testing]
-
-- [x] **Address stereotypical art** (Josh, 2026-10-14; done, Josh 2026-10-15)
-  - City/place images feel too touristy/generic
-  - Need more distinctive character and local personality
-  - Avoid "postcard views" - show life and neighborhoods
-
-- [x] **Make places more unique** (Josh, 2026-10-14; done, Josh 2026-10-15)
-  - Tourist-oriented places too typical/similar
-  - Need more variety and distinctiveness
-  - Each place should feel memorable, not interchangeable
-
-**Language levels:** plan in [language-levels-plan.md](language-levels-plan.md): learner level → system adapts; three levels, Beginner / Intermediate / Advanced (Josh, 2026-10-15). Teacher rated today's characters B2+. Items 1–4 replace "level steps from evidence" (2026-10-15, from the two research reports: [levels](research/language-app-levels.md), [LLM language learning](research/llm-language-learning.md)).
-
-- [ ] **1. Tier in the character prompt, every turn, worded in role.** Today the prompt has no level at all. Prompt change: bump the version, changelog entry.
-- [ ] **2. Measure the level of what characters say, before tuning.** A judge calibrated on official exam samples (CELI, CILS, PLIDA; DELE), a word-coverage check against a frequency list per language (language data), and `test:levels` with 10+ turn conversations to catch drift.
-- [ ] **3. Tier in the learner's profile.** Picked at the start, saved with the learner; sets speech speed and default subtitles, with the screen switches as personal overrides (today speed follows the switches and nothing is saved).
-- [ ] **4. Beginner ladder, behind a setting.** Pick one of two replies → read it aloud → speak with help nearby → speak freely.
-- [ ] **Onboarding** ([onboarding-design.md](onboarding-design.md))
-  - [ ] Define the frontend flow
-  - [ ] Define the engineering needs
-  - [ ] Implement
-- [ ] More dialect as you level up
-  - Make "Allow dialect" setting functional (today it only sets speed to 1.0)
-  - Characters use more regional language at higher levels
-
-**Speech and learning signals (2026-10-15, from the research):**
-
-- [ ] **5. Voice check before Whisper.** Don't upload recordings with no speech; trim silence. Whisper invents text on silence; this works in any language without a phrase list, and avoids Groq's 10 s minimum charge.
-- [ ] **6. Honest learner level.** Magda's level as a slow, coarse band from several sessions, plus a strengths line in the study file: transcripts hide beginners' errors and AI judges rarely score low, so one session's estimate runs high. Fold in Magda's lesson tweaks (real recall at the start, let the learner repair first, role-play twice).
-- [ ] **7. Measure lasting learning.** Next-day recall of Magda's target, whether the learner tried the phrase in town, retention at day 7 and day 30.
-
-Not added: anything on the "not adopted" list in progress.md (2026-10-15), and the check-and-rewrite pass from the levels report (regenerate passes were rejected as too prescriptive).
-
-**Moved to ideas.md (2026-10-14):**
-- Interactive transcript (too much interface, conflicts with immersion-first approach)
-- Voice notes and messages from characters (complexity, focus on in-game experience first)
-
-**Removed (2026-10-14):**
-- Hosted voices for every character (unrealistic cost: ~$7,500 for 686 voices; current 8-voice pool works fine)
-
-## M4: Accounts and costs
-
-- [ ] Email sign-in link; progress follows you across devices (Postgres is already in place from M1)
-- [ ] Usage tracking and per-learner daily budgets (Claude, Whisper, ElevenLabs)
+- Email sign-in (was M4): Josh decided no sign-in ([12-native-app.md](12-native-app.md) decision 3).
+- Hosted voices for every character (2026-10-14): ~$7,500 for 686 voices; the 8-voice pool works.
+- Moved to [ideas.md](ideas.md) (2026-10-14): interactive transcript; voice notes and messages from characters.
 
 ## Later
 

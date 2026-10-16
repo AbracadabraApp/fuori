@@ -1,6 +1,6 @@
 # Language levels (M3): quick capture
 
-Draft, 2026-10-14, from a conversation with Josh. Not a design yet; we lay it out properly after the Mexican place images are approved. Roadmap: [M3 → Language levels](06-roadmap.md#m3-polish-existing-work--language-levels).
+Draft, 2026-10-14, from a conversation with Josh. Not a design yet; we lay it out properly after the Mexican place images are approved. Roadmap: [Now → Language levels](06-roadmap.md#now).
 
 Research behind this plan: [How language apps handle levels](research/language-app-levels.md) (2026-10-15), product and technical, with ranked implications for Fuori.
 

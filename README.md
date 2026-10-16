@@ -12,7 +12,7 @@
 - **Checks:** `npm run test:*` (quick checks), `npm run test:replay` (the gate for prompt changes), `npm run smoke:live` (a scripted learner on the live site).
 - `prototype/index.html` is the original single-page demo (one "day", four scenes) that runs as a claude.ai artifact. Kept as reference.
 - Interface mockups: [Fuori mockups](https://claude.ai/artifact/1zVpF11bWHivP3RxVruKyx). They predate the open-ended direction; adapted for current implementation.
-- See [progress.md](progress.md) for the session log and [Roadmap → Now](docs/06-roadmap.md#now-ranked) for what's next.
+- See [progress.md](progress.md) for the session log and [Roadmap → Now](docs/06-roadmap.md#now) for what's next.
 
 ## Planning documents
 

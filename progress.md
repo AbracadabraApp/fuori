@@ -2,7 +2,7 @@
 
 ## Current phase: M2 live (memory, Magda, study file, stamps); M3 polish and language levels next
 
-**What to do next lives in [docs/06-roadmap.md → Now](docs/06-roadmap.md#now-ranked)** (ranked). Open decisions: [docs/open-design-questions.md](docs/open-design-questions.md). Parked ideas: [docs/ideas.md](docs/ideas.md). This file is the session log; the dated entries below say what happened and why.
+**What to do next lives in [docs/06-roadmap.md → Now](docs/06-roadmap.md#now)**. Open decisions: [docs/open-design-questions.md](docs/open-design-questions.md). Parked ideas: [docs/ideas.md](docs/ideas.md). This file is the session log; the dated entries below say what happened and why.
 
 ### Decisions
 - **Immersion, not full understanding** (2026-10-11): for learners who tolerate not understanding; characters above your level and teaching in character are fine; breaking character isn't. See `docs/01-vision.md` → Level.

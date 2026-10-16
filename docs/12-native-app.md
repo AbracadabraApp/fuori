@@ -150,6 +150,8 @@ The web UI is **frozen from now**: fix only outright breakage, since it's what J
 
 ## M3 roadmap, adjusted
 
+The to-do list itself is [06-roadmap.md → Now](06-roadmap.md#now), which merges these with the milestones above (2026-10-15).
+
 - **Server, now, alongside N0–N1:**
   - #1 tier in the character prompt (behind a setting, default today's behaviour)
   - #2 level measurement
