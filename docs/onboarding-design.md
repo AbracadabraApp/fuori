@@ -62,7 +62,7 @@ An attempt to give an overview of onboarding in Josh's words. It sits **on top o
 
 0. **Choose a country.** Two picture cards with the language and a greeting in it (*Ciao!*, *¡Hola!*).
 1. **Welcome: do you speak any Italian?** (agreed, Josh 2026-10-15) No name asked. She: *Ciao, che bello conoscerti! Parli un po' d'italiano?* (Hi, lovely to meet you! Do you speak any Italian?), Italian with English subtitles. Two buttons, the learned language on top, English underneath: **Non ancora!** / Not yet! and **Un po', ma voglio migliorare** / Some, but I want to improve. Mexico: *¡Hola, qué gusto conocerte! ¿Hablas algo de español?*; **¡Todavía no!** / **Un poco, pero quiero mejorar**. "Che bello conoscerti" avoids benvenuto/benvenuta with no name. The tap is the first level signal; later steps confirm it. Optional third button for confident speakers (*Sì, abbastanza bene*) not decided.
-**Beginner path** ("Non ancora!"; agreed, Josh 2026-10-15): one screen. She: *Benissimo! Piano piano. Qui tutti ti aiutano.* (Great! Little by little. Everyone here will help you.), English subtitles. Button **Andiamo!** / Let's go! → the city list. Mexico: *¡Muy bien! Poco a poco. Aquí todos te ayudan.*; **¡Vamos!** / Let's go! No speaking on this path (Josh: no "say Ciao" try); the mic permission comes at the first conversation.
+**Beginner path** ("Non ancora!"; agreed, Josh 2026-10-15): one screen. She: *Benissimo! Piano piano. Se hai bisogno di aiuto, chiedi pure: qui tutti ti aiutano.* (Great! Little by little. If you need help, just ask: everyone here will help you.), English subtitles. Button **Andiamo!** / Let's go! → the city list. Mexico: *¡Muy bien! Poco a poco. Si necesitas ayuda, nada más pregunta: aquí todos te ayudan.*; **¡Vamos!** / Let's go! No speaking on this path (Josh: no "say Ciao" try); the mic permission comes at the first conversation.
 
 **Speaker path** ("Un po', ma voglio migliorare"); first screen agreed (Josh, 2026-10-15). Italian with English subtitles throughout. She:
 > *Che bello che parli già un po' d'italiano! Allora, raccontami: cosa ti piace dell'Italia?* (How lovely that you already speak a little Italian! So, tell me: what do you like about Italy?)
@@ -71,7 +71,7 @@ An attempt to give an overview of onboarding in Josh's words. It sits **on top o
 The microphone button; the first tap brings up iOS's permission prompt. She explains the mic in role: the one exception to never mentioning the app. Mexico: *¡Qué padre que ya hables un poco de español! Entonces, cuéntame: ¿qué te gusta de México?* / *Intenta en español, pero en inglés también está bien. Toca el micrófono, habla, y luego tócalo otra vez.* Avoid gendered words with no name (benvenuto/a, bravo/a). Then (agreed, Josh 2026-10-15):
 - **Under the microphone, during onboarding only:** a label **Answer in Italian or English** (app text in English; language name from the country's data). With it, her screen-2 line drops "ma va bene anche in inglese" and is, as Josh wrote it: *Che bello che parli già un po' d'italiano! Allora, raccontami: cosa ti piace dell'Italia? Tocca il microfono per parlare.* Mexico: *¡Qué padre que ya hables un poco de español! Entonces, cuéntame: ¿qué te gusta de México? Toca el micrófono para hablar.* "Tap again when done" is taught by the button, which shows **Done** while they talk.
 - **Follow-up screen:** she reacts to their answer and asks one slightly harder question built on it (example *Ah, il cibo! Hai ragione. È la tua prima volta in Italia?*), ending on the question, since people answer the last thing they hear (Josh): no spoken mic reminder, the label covers it. **Italian only, no English**, since this is the best level signal; the English appears only if they stay silent or say they're lost.
-- **Send-off:** she responds to what they said and encourages them on; **Andiamo!** → the city list.
+- **Send-off:** she responds to what they said, encourages them on, and says explicitly that they can always ask for help: *Se hai bisogno di aiuto, chiedi pure a chiunque.* (If you need help, just ask anyone.) Mexico: *Si necesitas ayuda, nada más pregunta.* **Andiamo!** → the city list.
 - **Placement:** mostly English in their answers → beginner (same settings as the beginner path; her send-off pitched to match). Mostly Italian → the level judge reads both answers and sets intermediate or advanced. What they said decides, not the button: people often overstate their level because they know a few words (Josh).
 Steps 2–5 below are the older draft.
 
@@ -81,6 +81,8 @@ Steps 2–5 below are the older draft.
 5. **Send-off.** Her goodbye, one plain line on how people will talk to you, "Start exploring".
 
 ## Open
+
+- For gameplay, not onboarding (Josh): teaching how to ask for help (*Può ripetere, per favore?*), e.g. a character offering it in role when the learner is lost.
 
 - Whether her line in step 3 also drops the English.
 - Where the one-line AI note goes (proposed: under the country cards).
