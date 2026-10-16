@@ -4,6 +4,14 @@ Ideas worth keeping that are **not part of the current plan**. Nothing here is s
 
 **Adopted on 2026-10-09** and moved into the numbered docs: the open-ended world, Magda the tutor, dialect that grows with level, generated characters, and the Instagram-style interface (see [Game design](02-game-design.md)). Real photos for places and food are in [Visuals](07-visuals.md).
 
+## Four poses per character (tested 2026-10-16)
+
+Each character gets four stills of the same picture: the original plus three made from it with xAI image editing (listening, talking with a gesture, laughing). The portrait changes on each turn. No video, no lip sync.
+
+- **Test:** the Italy onboarding guide. The background stayed identical across all four and every image had two hands; her face varied slightly (hair, smile). About 2 cents an image, so roughly $0.06 a character and $45 for the ~705 current portraits.
+- **Transition (Josh):** a plain cut with no zoom is his favourite; a crossfade with a slight zoom second. The crossfade alone showed both pictures at once (two faces, an extra arm) halfway through.
+- Open: which pose to show when (simple rotation, or a one-word mood next to `{ line, en }`), and whether the drawn portrait styles hold up under editing as well as the photo did.
+
 ## Animated clips for the core cast
 
 Short talking or moving clips of main characters, matching their portraits (a test clip of Enzo at his stall worked well).
