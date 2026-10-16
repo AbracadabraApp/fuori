@@ -26,6 +26,8 @@ body{background:#e9e3dc;color:var(--text);font-family:var(--sans);padding-left:m
 .choice .b{font-size:14px;color:var(--muted)}
 .choice.primary .a{color:#fff}.choice.primary .b{color:#e8e4d8}
 .choice:active,.mic:active{opacity:.75}
+.answers{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.choice.primary{box-shadow:0 3px 10px rgba(0,0,0,.18)}
 .micbox{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px;border-radius:14px;background:rgba(245,241,237,.96)}
 .mic{width:68px;height:68px;border-radius:34px;border:0;background:var(--olive);display:flex;align-items:center;justify-content:center;cursor:pointer}
 .mic.on{box-shadow:0 0 0 6px rgba(86,99,48,.28)}
@@ -80,7 +82,7 @@ function render(){
  const c=C[country],I=IMG[country];
  document.querySelector('.cities')?.remove();
  let pose='wave',h='';
- if(step==='welcome'){h=say(...c.welcome)+choice(c.no,'beginner')+choice(c.yes,'ask');}
+ if(step==='welcome'){h=say(...c.welcome)+'<div class="answers">'+choice(c.no,'beginner',true)+choice(c.yes,'ask',true)+'</div>';}
  else if(step==='beginner'){pose='laugh';h=say(...c.beginner)+choice(c.go,'cities',true);}
  else if(step==='ask'){pose=talking?'listen':'talk';h=say(...c.ask)+mic('follow');}
  else if(step==='follow'){pose=talking?'listen':'talk';h=say(c.follow)+mic('send');}
