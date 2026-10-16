@@ -74,6 +74,8 @@ Build these two screens in the iPhone app now, ahead of the rest of onboarding. 
 
 **Clickable walkthrough:** `design/onboarding/walkthrough.html` (open in a browser), both countries, both paths, as the app should look. It is the reference for the build; the canvas row is the earlier static version. Her picture is moved up per country so her face stays clear of the text.
 
+**Answer buttons** (Josh, 2026-10-16): pale olive `#dde3c6` at 95% opacity, black text, dark olive English (`#3f4a22`), set a little apart from her white line. Not in `design/tokens.json` yet: add it as a token (e.g. `greenLight`) when building. Andiamo stays solid olive.
+
 ## Her poses (Josh agreed, 2026-10-16)
 
 Four pictures of her per country, the original plus three edits that keep her, the background and the framing the same. The picture changes with a plain cut, no fade or zoom (Josh's pick from the test page). With Reduce Motion it's the same cut.
