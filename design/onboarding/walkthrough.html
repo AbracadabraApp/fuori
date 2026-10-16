@@ -75,7 +75,7 @@ const STOP='<span style="width:22px;height:22px;border-radius:4px;background:#ff
 const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
 function say(tl,en){return '<div class="say"><p class="tl" lang="'+(country==='it'?'it':'es')+'">'+esc(tl)+'</p>'+(en?'<p class="en">'+esc(en)+'</p>':'')+'</div>'}
 function choice(p,id,primary){return '<button type="button" class="choice'+(primary?' primary':'')+'" data-go="'+id+'"><span class="a" lang="'+(country==='it'?'it':'es')+'">'+esc(p[0])+'</span><span class="b">'+esc(p[1])+'</span></button>'}
-function mic(next){return '<div class="micbox"><button type="button" class="mic'+(talking?' on':'')+'" data-mic="'+next+'" aria-label="'+(talking?'Done':'Tap to talk')+'">'+(talking?STOP:MIC)+'</button><span class="l1">'+(talking?'Done':'Tap to talk')+'</span><span class="l2">Answer in '+C[country].lang+' or English</span></div>'}
+function mic(next){return '<div class="micbox"><button type="button" class="mic'+(talking?' on':'')+'" data-mic="'+next+'" aria-label="'+(talking?'Press when done':'Tap to talk')+'">'+(talking?STOP:MIC)+'</button><span class="l1">'+(talking?'Press when done':'Tap to talk')+'</span><span class="l2">Answer in '+C[country].lang+' or English</span></div>'}
 function render(){
  const c=C[country],I=IMG[country];
  document.querySelector('.cities')?.remove();
