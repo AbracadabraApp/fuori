@@ -1354,3 +1354,7 @@ Checked for docs/12-native-app.md (one app, two Railway services):
 
 ## 2026-10-15: Onboarding design started (cloud session)
 Tracked in `docs/onboarding-design.md` (Josh: "not great yet, getting better"). Objectives: find the level, show how to talk, welcome. Decided: no sign-in; country chosen first from two pictures (`design/country-cards/`); the woman in that picture is the onboarding guide (no pickers, not in the world afterwards); then the city list. Mockups on Josh's design canvas. Not built in Swift.
+
+## 2026-10-15: Onboarding vision restated (cloud session, from a voice conversation)
+
+- Josh talked through onboarding by voice; written up as "Restated vision" at the top of `docs/onboarding-design.md`, above the existing decisions and flow, which are unchanged. Key points: open with "Do you speak any Italian, or are you just getting started?"; beginners go straight to a gentle beginner path; the "some Italian" path gets an open prompt so the system hears real speech, with a quiet fallback for people who overstate; level judged throughout; buttons → no translation → speaking; three tiers set dialogue complexity, speed and screen scaffolding in the game. Josh doubts the name step. Differences from the current flow listed there for reconciling.

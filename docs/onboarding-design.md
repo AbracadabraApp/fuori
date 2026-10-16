@@ -2,6 +2,34 @@
 
 Status (Josh, 2026-10-15): **"not great yet, getting better."** Working designs, not final. Mockups: the "Country choice: onboarding and settings" canvas in Josh's claude.ai artifacts (https://claude.ai/artifact/VAa17eWjDDcwnbyALZ45Fk). Pictures: `design/country-cards/`.
 
+## Restated vision (Josh, voice conversation, written up 2026-10-15)
+
+An attempt to give an overview of onboarding in Josh's words. It sits **on top of** the work below and in [language-levels-plan.md](language-levels-plan.md); nothing here replaces or deletes it. Art is already in progress by the laptop session (country cards and greeters in `design/country-cards/`). Josh: "this captures about 50% of it"; the exact step-by-step isn't settled.
+
+**The flow as Josh describes it (Italy path; Mexico mirrors it):**
+1. **Choose a country** (Italy or Mexico).
+2. **A greeter welcomes you.** Possibly asks your name and uses it from then on. Josh's doubt: the name may be a distraction and not worth requiring, though it does introduce the microphone.
+3. **First branch: "Do you speak any Italian, or are you just getting started?"** Spoken in Italian, with the transcript and an English translation under it, and two answer buttons, each with a light English translation. (Replaces an earlier idea, "Have you been to Italy before?", which was only a proxy for level.)
+4. **Just getting started → beginner, no assessment needed.** A gentle introduction: short Italian, English translations, answers by button, easing toward the microphone.
+5. **Some Italian → let them talk.** An open prompt (tell us about yourself, why you love Italy, what you're looking forward to seeing) so the system hears a real sample. On screen: "Try to answer in Italian, or just answer in English." This is where the level is judged.
+6. **Overstated level → quiet fallback.** Someone who says they speak some Italian but clearly struggles is moved to a gentler level without being stranded. The self-report sets the starting path; their actual speech can move it in either direction.
+7. **Land on the cities page with a level already set.**
+
+**Ideas running through it:**
+- **The onboarding is the assessment.** Level is judged all along, not by a test at the end. Letting people talk early may make a long multi-step onboarding unnecessary.
+- **A progression of answering:** tap a button (with English) → button without translation → speak. Buttons and the microphone could both be offered at any point.
+- **It teaches the format:** Fuori is spoken, and the microphone is how you play.
+- **Three tiers: beginner, intermediate, advanced.** Each sets three things in the game, not just in onboarding: how complex the dialogue is, how fast it's spoken, and how much scaffolding the screen shows. Roughly:
+  - **Beginner:** short sentences, English under the Italian, answer by button.
+  - **Intermediate:** spoken Italian with the Italian transcript, answer by speaking.
+  - **Advanced:** dialogue only, no transcript, answer by speaking.
+
+**Where this differs from the current flow (to reconcile, not decided):**
+- The current step 1 asks your name and keeps it; Josh now doubts the name step is worth requiring.
+- The current first question is "What brings you here?"; Josh's restated version opens with "Do you speak any Italian, or are you just getting started?" and only asks the open question on the "some Italian" path.
+- The current flow climbs the beginner ladder for everyone; the restated version sends self-declared beginners straight to beginner and saves assessment for the "some Italian" path.
+- Advanced with no transcript at all is stronger than anything in the current Settings mockup.
+
 ## Objectives (Josh agreed, 2026-10-15)
 
 1. Find the learner's level.
