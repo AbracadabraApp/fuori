@@ -61,9 +61,6 @@ Every prompt change says which goal it moves and may not make another worse (ver
 - [ ] **both** TestFlight: signing, icon, microphone text, privacy label, App Attest, usage tracking, per-learner budgets
 - [ ] **server** Web sunset, about 2 weeks after TestFlight
 
-### Waiting on a decision
-- [ ] Bench characters (people with time on their hands): show one per city? Italy has 10, 4 shown; candidates in `content/it/showcase.ts`. First: what is he when he's not teaching?
-
 ## Earlier list (2026-10-12 to 10-14)
 
 Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How prompt changes are decided: [10-testing.md → Dialogue quality](10-testing.md#dialogue-quality-decided-2026-10-12).
@@ -191,6 +188,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 - [x] **N0** iPhone app: server `/v1` API and Xcode skeleton (Josh used it on his iPhone)
 - [x] **N1** One conversation on the phone (Josh tried the latest build, tap to talk and the new sent state)
 - [x] Prompt: characters only get text, can't hear pronunciation (2026-10-12b; Magda 2026-10-14b)
+- [x] Bench characters (Josh, 2026-10-15)
 - [x] Prompt: traits as manner, not expertise (~430 traits removed, 2026-10-13)
 - [x] Art less stereotypical; places more unique (Josh, 2026-10-15)
 
