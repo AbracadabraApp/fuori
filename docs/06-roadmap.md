@@ -33,7 +33,15 @@ Goals (Josh, 2026-10-15). Every experiment says which goal it moves; none may ma
 | **On level** | Teacher rated characters B2+; the prompt has no level | Characters speak at the learner's level (Beginner A1–A2, Intermediate B1–B2, Advanced C1+) | Not yet: the level judge (Language levels, M3 #2) |
 | **Length** | Median 21 words per reply | 20 or fewer, heading toward 10 ([10-testing.md](10-testing.md) scorecard) | Replay test, already |
 
-- [ ] **server** Replay test times each reply, so "faster" can gate a change
+- [ ] **server** Add to the scorecard (`lib/scorecard.ts`), so the replay gate checks them (Josh, 2026-10-15):
+  - [ ] Reply time per turn (goal: faster)
+  - [ ] Level of the character's lines, from the level judge (goal: on level; M3 #2)
+  - [ ] Broken replies (malformed JSON, no reply): any one fails the change; today they're dropped from the scores
+  - [ ] Coherence: replies follow from what was said, judged
+  - [ ] Feels alive, from `test:conversations` (the scorecard already has its other three: English, garbled speech, pulls back)
+  - [ ] Mexican Spanish, not Spain Spanish (Afuera only), from `test:conversations`
+  - [ ] Dropped audio can't be scored here (the replay is text only): count voice failures from the live logs instead
+  - Note: the `test:conversations` grader says not to penalise complex language; "on level" needs that changed (Josh's OK)
 - [x] ~~Characters only get text, can't hear pronunciation~~ (prompt 2026-10-12b; Magda 2026-10-14b)
 - [x] ~~Traits as manner, not expertise~~ (~430 traits removed, Italy and Mexico, 2026-10-13)
 - [ ] **server** Faster replies: try Haiku for turns, and start the voice as soon as the line is streamed (part of the timing investigation).
