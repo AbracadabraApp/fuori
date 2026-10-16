@@ -10,11 +10,14 @@ import FuoriDesign
 struct ConversationControls: View {
     let model: ConversationModel
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var typing = false
+    @State private var typed = ""
 
     var body: some View {
         HStack {
-            // Balances the pause button so the pill stays centred
-            Color.clear.frame(width: 44, height: 44)
+            // Type a reply (accessibility only, D6); otherwise empty, balancing
+            // the pause button so the pill stays centred
+            if model.canType { typeButton } else { Color.clear.frame(width: 44, height: 44) }
             Spacer()
             pill
             Spacer()
@@ -29,6 +32,25 @@ struct ConversationControls: View {
             case .failed, .micDenied: .error
             default: nil
             }
+        }
+    }
+
+    // MARK: Type
+
+    /// Only when the mic is off or VoiceOver / Switch Control is on (D6)
+    private var typeButton: some View {
+        Button { typed = ""; typing = true } label: {
+            Image(systemName: "keyboard")
+        }
+        .accessibilityLabel("Type your reply")
+        .font(.title3)
+        .frame(width: 44, height: 44)
+        .buttonStyle(.glass)
+        .buttonBorderShape(.circle)
+        .alert("Your reply", isPresented: $typing) {
+            TextField("Type what you'd say", text: $typed)
+            Button("Send") { Task { await model.send(typed: typed) } }
+            Button("Cancel", role: .cancel) {}
         }
     }
 

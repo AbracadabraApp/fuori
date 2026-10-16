@@ -310,6 +310,36 @@ public final class ConversationModel {
         }
     }
 
+    // MARK: - Typed reply (accessibility only, docs/13-ios-conventions.md D6)
+
+    /// Typing is offered only when the mic is off for Fuori or VoiceOver or
+    /// Switch Control is running; speaking stays the way to play
+    public var canType: Bool {
+        guard phase == .tapToTalk || phase == .micDenied else { return false }
+        return phase == .micDenied || isVoiceOverRunning || isSwitchControlRunning
+    }
+
+    /// A typed reply goes to the character the same way a spoken one does
+    public func send(typed text: String) async {
+        let said = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard canType, Heard.hasWords(said) else { return }
+        note = nil
+        phase = .thinking
+        let generation = self.generation
+        do {
+            debug.heard = "(typed) \(said)"
+            let started = Self.now()
+            let reply = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: said)
+            time("turn", since: started)
+            debug.promptVersion = reply.promptVersion
+            if let id = reply.conversationId { conversationId = id }
+            await present(reply, generation: generation)
+        } catch {
+            guard generation == self.generation else { return }
+            fail(error, step: "turn")
+        }
+    }
+
     // MARK: - Pause, resume, leave
 
     /// Stops the voice and the mic. Only a tap resumes.
@@ -387,6 +417,14 @@ public final class ConversationModel {
     }
 
     // MARK: - System events
+
+    private var isSwitchControlRunning: Bool {
+        #if canImport(UIKit)
+        UIAccessibility.isSwitchControlRunning
+        #else
+        false
+        #endif
+    }
 
     private var isVoiceOverRunning: Bool {
         #if canImport(UIKit)
