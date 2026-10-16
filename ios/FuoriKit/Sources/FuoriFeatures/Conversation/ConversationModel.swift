@@ -111,7 +111,7 @@ public final class ConversationModel {
             conversationId = reply.conversationId
             await present(reply, generation: generation)
         } catch {
-            fail(error)
+            fail(error, step: "start")
         }
     }
 
@@ -131,6 +131,7 @@ public final class ConversationModel {
         } catch {
             // The hosted voice failed: the phone's own voice says it instead
             guard generation == self.generation else { return }
+            report(error, step: "speak")
             startReveal(reply.line)
             await voice.speak(reply.line, language: language.speechLang, rate: Float(speed))
         }
@@ -180,7 +181,7 @@ public final class ConversationModel {
         do {
             try recorder.start { [gate] level, time in gate.process(level: level, at: time) }
         } catch {
-            fail(error)
+            fail(error, step: "record")
             return
         }
         turnStartedAt = ProcessInfo.processInfo.systemUptime
@@ -244,7 +245,8 @@ public final class ConversationModel {
         ring = 0
         level = 0
         guard recorder.writeFailures == 0, let url else {
-            note = "The recording didn't save. Try again."
+            let code = report(RecordingFailed(writeFailures: recorder.writeFailures), step: "record")
+            note = ErrorCode.message("The recording didn't save. Try again.", code: code)
             await openTurn()
             return
         }
@@ -256,6 +258,7 @@ public final class ConversationModel {
         note = nil
         phase = .thinking
         let generation = self.generation
+        var step = "transcribe"
         do {
             let audio = try Data(contentsOf: url)
             try? FileManager.default.removeItem(at: url)
@@ -267,12 +270,13 @@ public final class ConversationModel {
                 await openTurn()
                 return
             }
+            step = "turn"
             let reply = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: said)
             if let id = reply.conversationId { conversationId = id }
             await present(reply, generation: generation)
         } catch {
             guard generation == self.generation else { return }
-            fail(error)
+            fail(error, step: step)
         }
     }
 
@@ -333,11 +337,22 @@ public final class ConversationModel {
         if let conversationId { onSave(conversationId) }
     }
 
-    private func fail(_ error: Error) {
+    private func fail(_ error: Error, step: String) {
         listenTask?.cancel()
         recorder.stop()
+        let code = report(error, step: step)
         let message = (error as? APIError)?.message ?? error.localizedDescription
-        phase = .failed(message)
+        phase = .failed(ErrorCode.message(message, code: code))
+    }
+
+    /// Sends the error to the server log (/v1/log) and returns its code, the
+    /// request's own when the server answered, so both sides match
+    @discardableResult
+    private func report(_ error: Error, step: String) -> String {
+        let code = (error as? APIError)?.requestId ?? ErrorCode.make()
+        let report = APIClient.ErrorReport(id: code, step: step, error: error, context: ["characterId": character.id, "placeId": place.id])
+        Task { [api] in await api.report(report) }
+        return code
     }
 
     // MARK: - System events
@@ -409,4 +424,10 @@ private final class GateBox: @unchecked Sendable {
 /// The same clock the recorder's buffer times use
 private enum AudioClock {
     static var now: TimeInterval { ProcessInfo.processInfo.systemUptime }
+}
+
+/// The recorder couldn't write some of the learner's audio to the file
+struct RecordingFailed: Error, CustomStringConvertible {
+    let writeFailures: Int
+    var description: String { "Recording: \(writeFailures) buffers failed to write" }
 }

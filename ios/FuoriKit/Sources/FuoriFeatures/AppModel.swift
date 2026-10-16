@@ -38,10 +38,10 @@ public final class AppModel {
             visits = try await api.me().visits
             phase = .ready
             retryPendingSaves()
-        } catch let error as APIError {
-            phase = .failed(error.message)
         } catch {
-            phase = .failed(error.localizedDescription)
+            let code = report(error, step: "load")
+            let message = (error as? APIError)?.message ?? error.localizedDescription
+            phase = .failed(ErrorCode.message(message, code: code))
         }
     }
 
@@ -64,12 +64,22 @@ public final class AppModel {
                 UserDefaults.standard.set(Array(pending), forKey: Self.pendingKey)
                 visits = (try? await api.me().visits) ?? visits
             } catch {
-                print("Fuori: saving conversation \(id) failed, will retry at next launch: \(error)")
+                // Kept in the pending list and retried at the next launch
+                report(error, step: "save", context: ["conversationId": id])
             }
             #if canImport(UIKit)
             UIApplication.shared.endBackgroundTask(task)
             #endif
         }
+    }
+
+    /// Sends the error to the server log (/v1/log) and returns its code
+    @discardableResult
+    private func report(_ error: Error, step: String, context: [String: String]? = nil) -> String {
+        let code = (error as? APIError)?.requestId ?? ErrorCode.make()
+        let report = APIClient.ErrorReport(id: code, step: step, error: error, context: context)
+        Task { [api] in await api.report(report) }
+        return code
     }
 
     private func retryPendingSaves() {

@@ -26,6 +26,8 @@ public struct APIError: Error, Codable, Sendable, Equatable {
     public let retryAfterMs: Int?
     /// HTTP status, filled in by the client
     public var status: Int = 0
+    /// The request's code (x-fuori-id), filled in by the client
+    public var requestId: String?
 
     enum CodingKeys: String, CodingKey { case code, message, retryable, retryAfterMs }
 

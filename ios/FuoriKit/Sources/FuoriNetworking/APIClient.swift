@@ -99,6 +99,46 @@ public actor APIClient {
         return result.remembered
     }
 
+    // MARK: - Errors
+
+    /// An error the app hit, for the server log
+    public struct ErrorReport: Encodable, Sendable {
+        public let id: String
+        public let step: String
+        public let code: String?
+        public let status: Int?
+        public let message: String
+        public let appVersion: String?
+        public let os: String
+        public let context: [String: String]?
+
+        public init(id: String, step: String, error: Error, context: [String: String]? = nil) {
+            let api = error as? APIError
+            self.id = id
+            self.step = step
+            self.code = api?.code.rawValue
+            self.status = api.map(\.status)
+            self.message = String((api?.message ?? String(describing: error)).prefix(2000))
+            let info = Bundle.main.infoDictionary
+            self.appVersion = (info?["CFBundleShortVersionString"] as? String).map { "\($0) (\(info?["CFBundleVersion"] as? String ?? "?"))" }
+            self.os = ProcessInfo.processInfo.operatingSystemVersionString
+            self.context = context
+        }
+    }
+
+    /// POST /v1/log: send an error to the server log. Never throws; signs the
+    /// report when a token exists, but never signs in for it (signing in may be
+    /// what failed).
+    public func report(_ report: ErrorReport) async {
+        do {
+            var req = try post("v1/log", json: report)
+            if let token { req.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization") }
+            _ = try await session.data(for: req)
+        } catch {
+            print("Fuori: couldn't report \(report.id): \(error)")
+        }
+    }
+
     // MARK: - Plumbing
 
     private func post<B: Encodable>(_ path: String, json: B) throws -> URLRequest {
@@ -135,10 +175,14 @@ public actor APIClient {
     private func sendData(_ request: URLRequest, signedIn: Bool) async throws -> Data {
         var req = request
         if signedIn { req.setValue("Bearer \(try await ensureToken())", forHTTPHeaderField: "Authorization") }
+        // The code the learner sees if this fails; the server logs it too
+        let requestId = ErrorCode.make()
+        req.setValue(requestId, forHTTPHeaderField: "x-fuori-id")
         let (data, response) = try await session.data(for: req)
         let status = (response as? HTTPURLResponse)?.statusCode ?? 0
         guard (200..<300).contains(status) else {
-            let error = APIError.from(data: data, status: status)
+            var error = APIError.from(data: data, status: status)
+            error.requestId = requestId
             // A revoked or unknown token: forget it, so the next call signs in again
             if error.code == .unauthorized { token = nil }
             throw error

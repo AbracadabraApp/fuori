@@ -42,6 +42,7 @@
     "test:leave": "tsx tests/check-leave.ts",
     "test:sweep": "tsx tests/check-sweep.ts",
     "test:turn-request": "tsx tests/check-turn-request.ts",
+    "test:app-log": "tsx tests/check-app-log.ts",
     "style-test": "node --env-file-if-exists=.env.local scripts/style-test.mjs"
   },
   "dependencies": {
