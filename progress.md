@@ -1370,7 +1370,7 @@ Tracked in `docs/onboarding-design.md` (Josh: "not great yet, getting better"). 
 ## 2026-10-15 (cloud): onboarding screen 1 and the first two screens to ship
 - Screen 1 buttons settled: **Non ancora!** / **Sì, ma voglio migliorare** (Mexico **¡Todavía no!** / **Sí, pero quiero mejorar**). "Un po'" dropped so strong speakers fit too (Josh).
 - Settings mockup: "Conversation / More time to answer" removed; the website's subtitle settings (show Italian words, show English) added (Josh).
-- **For the laptop:** ship the country choice and Settings screens in the iPhone app now, before the rest of onboarding. Spec: "Ship first" in `docs/onboarding-design.md`. The level control waits until the M3 tier does something.
+- **For the laptop:** ship the country choice and Settings screens in the iPhone app now, before the rest of onboarding. Spec: "Ship first" in `docs/onboarding-design.md`. The level control ships now, greyed out with "Coming soon", until the M3 tier does something (Josh).
 - Next (cloud): redraw the onboarding screens on the canvas to the agreed text.
 
 ## 2026-10-16 (early): the "Claude can do alone" items (laptop)
