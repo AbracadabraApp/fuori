@@ -103,6 +103,8 @@ Steps 2–5 below are the older draft.
 
 ## Open
 
+- Later version (Josh, 2026-10-16): animate her. Two short loops per country made from her picture, one idle and one talking, swapped while she speaks; a still picture when Reduce Motion is on.
+
 - For gameplay, not onboarding (Josh): teaching how to ask for help (*Può ripetere, per favore?*), e.g. a character offering it in role when the learner is lost.
 
 - Whether her line in step 3 also drops the English.
