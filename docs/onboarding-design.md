@@ -30,6 +30,14 @@ An attempt to give an overview of onboarding in Josh's words. It sits **on top o
 - The current flow climbs the beginner ladder for everyone; the restated version sends self-declared beginners straight to beginner and saves assessment for the "some Italian" path.
 - Advanced with no transcript at all is stronger than anything in the current Settings mockup.
 
+**Contradictions and gaps to reconcile (2026-10-15).** Flagged only; nothing here is resolved.
+
+- **The name step is already decided and built the opposite way.** The decided flow has the greeter ask your name and keep it for Magda and the app. Josh now questions whether to require it, so a shipped decision runs against the restated vision.
+- **The tiers and the beginner ladder are written down twice.** [language-levels-plan.md](language-levels-plan.md) already has the three tiers and a ladder nearly as Josh described by voice (tap answers → Italian phrases on buttons → spoken line with transcript → optional step without transcript). The two docs describe the same ladder and should cross-reference each other; ideally one owns it.
+- **The scaffolding depends on a fix that isn't in yet.** language-levels-plan.md records (2026-10-15) that the system doesn't adapt: the character prompt carries no level, so characters guess it from the learner's words, which isn't working. "Beginners get short sentences, advanced gets no transcript" only holds once the tier is put into the prompt on every turn. The restated vision assumes the outcome of that unfinished fix.
+- **"Advanced = no transcript at all" has no home yet.** The Settings mockup offers Beginner / Intermediate / Advanced, but no tier removes the transcript. Settings and the person screen would need that state.
+- **"No English until the character has finished speaking"** (commit 3d4b268) constrains the onboarding steps that show an English translation under the Italian: the translation can appear, but not before the line has been spoken.
+
 ## Objectives (Josh agreed, 2026-10-15)
 
 1. Find the learner's level.
