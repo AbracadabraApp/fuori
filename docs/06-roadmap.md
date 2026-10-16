@@ -32,7 +32,7 @@ Every prompt change says which goal it moves and may not make another worse (ver
 
 ### 3. Language levels ([language-levels-plan.md](language-levels-plan.md))
 - [ ] **server** Measure the level of what characters say: level judge on exam samples, word coverage, `test:levels`
-- [ ] **server** Level in the character prompt, every turn, in role (replaces the "noticed" field)
+- [ ] **server** Level in the character prompt, every turn, in role (replaces the "noticed" field). Beginners: characters teach key phrases in role, such as how to ask "Come si dice …?", instead of a "Come si dice?" button (Josh, 2026-10-16). Watch whether English words inside an Italian line survive speech to text (Whisper is told to expect the learned language)
 - [ ] **both** Level and settings saved with the learner (speed, default subtitles); then turn on the greyed-out level control in Settings
 - [ ] **server** Moving up a level: when **90% of the learner's speech is at the next level**, across several conversations (Josh, 2026-10-15). Magda suggests it, the learner decides.
 - [ ] **both** More dialect as you level up (the dialect setting is greyed out today)
@@ -49,7 +49,6 @@ Every prompt change says which goal it moves and may not make another worse (ver
 - [ ] **app** City picker improved (needs Josh's feedback on what's wrong)
 - [ ] **both** Stations and ticket: departures board, the clerk names the platform, "Sali"
 - [ ] **both** "Move to the app" link so web learners keep their data
-- [ ] **both** Asking in English ("Come si dice?"): the web has a button, the app doesn't
 
 ### 6. Release
 - [ ] **both** TestFlight: signing, icon, microphone text, privacy label, App Attest, usage tracking, per-learner budgets
@@ -207,6 +206,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 
 ## Removed
 
+- "Come si dice?" button in the app (the web has one: hold to ask in English): cut by Josh, 2026-10-16; characters teach the phrase in conversation instead (see Language levels).
 - Measure lasting learning (next-day recall of Magda's target, tried in town, day 7 and 30; was M3 #7): cut by Josh, 2026-10-16; level grading across conversations covers whether the learner is improving.
 - Voice check before Whisper, server half (was M3 #5): dropped by Josh, 2026-10-16. Whisper on Groq reports no-speech 0.000 even on pure silence, so the server has nothing to check; the app's own check stops silent uploads.
 - Honest learner level (Magda's slow band over sessions, strengths line, her lesson tweaks; was M3 #6): cut by Josh, 2026-10-15, as not practical.
