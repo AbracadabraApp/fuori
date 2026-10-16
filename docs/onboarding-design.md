@@ -65,7 +65,8 @@ Build these two screens in the iPhone app now, ahead of the rest of onboarding. 
   - **Your Italian / Your Spanish:** Beginner, Intermediate, Advanced, with the one-line note under it. Ship it now, greyed out with "Coming soon" under it, and turn it on when the M3 tier changes how people talk (Josh: he's the only user).
   - **Subtitles:** the website's two settings, *Show Italian words* and *Show English translation* (the app's existing Subtitles and English toggles). Hands-free stays as it is.
   - **About:** the one AI line ("Everyone you meet in Fuori is played by an AI") and Privacy.
-  - **Removed:** the "Conversation / More time to answer" row from the mockup (Josh). The web's "Allow dialect (coming soon)" is left out: it doesn't work.
+  - **Allow dialect:** shown as on the website, greyed out with "Coming soon" (Josh). It does nothing yet; the plan is dialect that grows with level (docs/02-game-design.md).
+  - **Removed:** the "Conversation / More time to answer" row from the mockup (Josh).
 - Country names, language names and greetings come from `/v1/content`, not Swift.
 
 
