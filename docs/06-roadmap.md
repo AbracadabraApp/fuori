@@ -23,7 +23,7 @@ The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the
 | Goal | Today | Target |
 |---|---|---|
 | **Faster** | ~6 s wait, Claude 4–5 s of it | Reply under 2 s, 4 s at most |
-| **On level** | Characters speak B2+; no level in the prompt | At the learner's level: Beginner A1–A2, Intermediate B1–B2, Advanced C1+ |
+| **On level** | Characters speak B2+; no level in the prompt | A set share of each line at the learner's level, the rest a little above (Josh, 2026-10-15). Proposed: 95% of words within the level, about one new word per line ([research](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech)); Josh to confirm |
 | **Length** | Median 21 words | 20 or fewer, heading toward 10 |
 
 Every prompt change says which goal it moves and may not make another worse (version, changelog, `npm run test:replay`).
@@ -35,7 +35,7 @@ Every prompt change says which goal it moves and may not make another worse (ver
   - [ ] Coherence
   - [ ] Feels alive (from `test:conversations`)
 - [ ] **server** Count dropped audio from the live logs (a text replay can't see it)
-- [ ] **server** Change the grader's "don't penalise complex language" line (needs Josh's OK)
+- [ ] **server** Change the `test:conversations` grader: it's told not to mark down complex language, so it rewards characters who speak above the learner; judge against the on-level share instead (needs Josh's OK)
 - [ ] **server** Faster replies: try Haiku; start the voice as soon as the line is streamed
 
 ### 3. Language levels ([language-levels-plan.md](language-levels-plan.md))
