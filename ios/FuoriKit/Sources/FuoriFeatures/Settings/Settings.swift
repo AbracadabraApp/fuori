@@ -135,6 +135,9 @@ struct SettingsSheet: View {
                 if debug {
                     Section {
                         Toggle("Debug panel", isOn: $debug)
+                        LabeledContent("Server", value: model.server?.host() ?? "—")
+                        LabeledContent("Learner", value: model.learnerId ?? "—")
+                            .textSelection(.enabled)
                     } header: {
                         Text("Developer")
                     } footer: {

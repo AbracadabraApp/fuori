@@ -36,6 +36,8 @@ public final class AppModel {
     public private(set) var phase: Phase
     public private(set) var content: Content?
     public private(set) var visits: [String: Int] = [:]
+    /// This phone's learner on the current server (shown in Settings → Developer)
+    public private(set) var learnerId: String?
     /// The server in use; nil until a country is chosen
     public private(set) var server: URL?
     /// Every country's card, for the country choice and Settings (loaded from
@@ -101,6 +103,7 @@ public final class AppModel {
         api = makeAPI(country.server)
         content = nil
         visits = [:]
+        learnerId = nil
         await load()
     }
 
@@ -114,7 +117,9 @@ public final class AppModel {
         phase = .loading
         do {
             content = try await api.content()
-            visits = try await api.me().visits
+            let me = try await api.me()
+            visits = me.visits
+            learnerId = me.learnerId
             phase = .ready
             retryPendingSaves()
         } catch let error as APIError where error.code == .upgradeRequired {
