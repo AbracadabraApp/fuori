@@ -156,7 +156,7 @@ The to-do list itself is [06-roadmap.md → Now](06-roadmap.md#now), which merge
   - #1 tier in the character prompt (behind a setting, default today's behaviour)
   - #2 level measurement
   - #3 tier and settings in the learner profile (`/v1/me/settings`)
-  - #6 honest level and Magda tweaks
+  - ~~#6 honest level and Magda tweaks~~ (cut, Josh 2026-10-15)
   - #7 lasting-learning measures
   - the server half of #5 (reject near-silence)
   - the ladder's server half (two in-character candidate replies)
