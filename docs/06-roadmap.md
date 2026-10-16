@@ -23,7 +23,7 @@ The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the
 | Goal | Today | Target |
 |---|---|---|
 | **Faster** | ~6 s wait, Claude 4–5 s of it | Reply under 2 s, 4 s at most |
-| **On level** | Characters speak B2+; no level in the prompt | A set share of each line at the learner's level, the rest a little above (Josh, 2026-10-15). Proposed: 95% of words within the level, about one new word per line ([research](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech)); Josh to confirm |
+| **On level** | Characters speak B2+; no level in the prompt | A set share of each line at the learner's level, the rest a little above (Josh, 2026-10-15). **90% of words within the level**, about one new word in ten (Josh, 2026-10-15; research suggests 95% for easy listening: [levels report](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech)) |
 | **Length** | Median 21 words | 20 or fewer, heading toward 10 |
 
 Every prompt change says which goal it moves and may not make another worse (version, changelog, `npm run test:replay`).
@@ -44,7 +44,7 @@ Every prompt change says which goal it moves and may not make another worse (ver
 - [ ] **both** Level and settings saved with the learner (speed, default subtitles)
 - [ ] **server** Voice check before Whisper, server half (app half done)
 - [ ] **server** Honest learner level: Magda's slow band, strengths line, her lesson tweaks
-- [ ] **server** Moving up a level: when the learner's own speech is a set share above their level, across several conversations, not one (Josh, 2026-10-15; share to set). Magda suggests it, the learner decides. Caution: Whisper tidies beginners' speech and judges score high, so measure it the "honest level" way
+- [ ] **server** Moving up a level: when the learner's own speech is a set share above their level, across several conversations, not one: **90% of their speech at the next level** (Josh, 2026-10-15). Magda suggests it, the learner decides. Caution: Whisper tidies beginners' speech and judges score high, so measure it the "honest level" way
 - [ ] **server** Measure lasting learning: next-day recall, tried in town, day 7 and 30
 - [ ] **both** More dialect as you level up (the dialect setting does nothing today)
 

@@ -88,8 +88,8 @@ Rules: about two minutes; the learner's word wins (Claude suggests, the learner 
 
 ## Targets (Josh, 2026-10-15)
 
-- **Characters:** a set share of each line at the learner's level, the rest a little above. Proposed 95% of words within the level (listening-coverage research), to confirm.
-- **Moving up:** when the learner's own speech is a set share above their level, across several conversations. Magda suggests, the learner decides. The share is still to set.
+- **Characters:** 90% of each line's words at the learner's level, the rest a little above (about one new word in ten). The listening research suggests 95% for easy comprehension; 90% chosen for more stretch.
+- **Moving up:** when 90% of the learner's own speech is at the next level, across several conversations. Magda suggests, the learner decides.
 
 ## Open questions
 
