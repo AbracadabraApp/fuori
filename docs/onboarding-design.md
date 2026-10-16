@@ -53,6 +53,8 @@ An attempt to give an overview of onboarding in Josh's words. It sits **on top o
 - **Her name for you:** she asks it and uses it; it's kept for Magda and the app. Other characters don't get it: they learn it only if you tell them.
 - Lines are generated in her language from fixed beats; no hand-written script.
 
+**Approved for now (Josh, 2026-10-15):** the country choice and the Settings screens (canvas row 1). Steps 1–5 below are being reworked in plain text first, then images.
+
 ## Current flow (canvas row 2, Italy shown)
 
 0. **Choose a country.** Two picture cards with the language and a greeting in it (*Ciao!*, *¡Hola!*).
