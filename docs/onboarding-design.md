@@ -58,7 +58,7 @@ An attempt to give an overview of onboarding in Josh's words. It sits **on top o
 ## Current flow (canvas row 2, Italy shown)
 
 0. **Choose a country.** Two picture cards with the language and a greeting in it (*Ciao!*, *¡Hola!*).
-1. **Welcome.** She greets you and asks your name. "Your turn" with Pause, and the helps used in the game: Replay, Slower, How do I say…?
+1. **Welcome: do you speak any Italian?** (agreed, Josh 2026-10-15) No name asked. She: *Ciao, che bello conoscerti! Parli un po' d'italiano?* (Hi, lovely to meet you! Do you speak any Italian?), Italian with English subtitles. Two buttons, the learned language on top, English underneath: **Non ancora!** / Not yet! and **Un po', ma voglio migliorare** / Some, but I want to improve. Mexico: *¡Hola, qué gusto conocerte! ¿Hablas algo de español?*; **¡Todavía no!** / **Un poco, pero quiero mejorar**. "Che bello conoscerti" avoids benvenuto/benvenuta with no name. The tap is the first level signal; later steps confirm it. Optional third button for confident speakers (*Sì, abbastanza bene*) not decided.
 2. **What brings you here?** Same your-turn layout. "Say what you hope to see and learn, and why you chose Italy. English is fine." (Replaced two coffee steps, Josh.)
 3. **A question about what you said.** Your answer shown back; she asks a follow-up built on it, with two answers in Italian, underlined, no translation, to tap or say.
 4. **Still comfortable?** "Keep going" / "That's enough for now" (or say it). More level steps can follow (answer in your own words; listen only).
@@ -70,7 +70,7 @@ An attempt to give an overview of onboarding in Josh's words. It sits **on top o
 - Where the one-line AI note goes (proposed: under the country cards).
 - The microphone permission prompt: proposed at step 1, first time she asks you to speak.
 - The level steps after step 4, and how far the ladder goes in onboarding.
-- Her name: none for now.
+- Her name: none for now. The learner's name is not asked in onboarding either (Josh).
 - The one-app name (Fuori or Afuera) where it appears in shared screens.
 - Settings mockup: level (Beginner, Intermediate, Advanced), "More time to answer", About with the AI line.
 
