@@ -136,14 +136,12 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 Plan and pass criteria: [12-native-app.md](12-native-app.md#milestones). Runs alongside M3.
 
 - [x] **N0** Server `/v1` API and Xcode skeleton (Josh used it on his iPhone, 2026-10-15)
-- [ ] **N1** One conversation on the phone
-  - [x] Conversation screen: typewriter subtitles, tap to talk, Pause, English after speaking
-  - [x] Save on leave, retry at launch, server idle sweep
-  - [ ] Josh tries the latest build on his iPhone
+- [x] **N1** One conversation on the phone (done, Josh 2026-10-15)
+- [ ] **N2** Feeds, stamps (redesigned), Magda tried in the app
+  - Carried over from N1:
   - [ ] Device checks: a call, Siri, AirPods in and out, backgrounding, locking
   - [ ] Error codes reach the server logs (today only printed on the phone)
   - [ ] Response timing: investigate the ~6 s after a turn (deferred, Josh)
-- [ ] **N2** Feeds, stamps (redesigned), Magda tried in the app
 - [ ] **N3** Parity: stations and ticket, settings saved on the server, debug switch, Mexico, "Move to the app" link for web learners
 - [ ] **N4** TestFlight: signing, icon, microphone text, privacy label, App Attest and budgets
 - [ ] **N5** Web sunset (about 2 weeks after N4)
