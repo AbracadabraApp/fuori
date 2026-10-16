@@ -57,6 +57,9 @@ An attempt to give an overview of onboarding in Josh's words. It sits **on top o
 
 ## Current flow (canvas row 2, Italy shown)
 
+**No Replay, Slower or "How do I say…?" buttons in onboarding** (Josh, 2026-10-15). The canvas mockups still show them.
+
+
 0. **Choose a country.** Two picture cards with the language and a greeting in it (*Ciao!*, *¡Hola!*).
 1. **Welcome: do you speak any Italian?** (agreed, Josh 2026-10-15) No name asked. She: *Ciao, che bello conoscerti! Parli un po' d'italiano?* (Hi, lovely to meet you! Do you speak any Italian?), Italian with English subtitles. Two buttons, the learned language on top, English underneath: **Non ancora!** / Not yet! and **Un po', ma voglio migliorare** / Some, but I want to improve. Mexico: *¡Hola, qué gusto conocerte! ¿Hablas algo de español?*; **¡Todavía no!** / **Un poco, pero quiero mejorar**. "Che bello conoscerti" avoids benvenuto/benvenuta with no name. The tap is the first level signal; later steps confirm it. Optional third button for confident speakers (*Sì, abbastanza bene*) not decided.
 2. **What brings you here?** Same your-turn layout. "Say what you hope to see and learn, and why you chose Italy. English is fine." (Replaced two coffee steps, Josh.)
