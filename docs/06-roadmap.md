@@ -39,7 +39,6 @@ Goals (Josh, 2026-10-15). Every experiment says which goal it moves; none may ma
   - [ ] Broken replies (malformed JSON, no reply): any one fails the change; today they're dropped from the scores
   - [ ] Coherence: replies follow from what was said, judged
   - [ ] Feels alive, from `test:conversations` (the scorecard already has its other three: English, garbled speech, pulls back)
-  - [ ] Mexican Spanish, not Spain Spanish (Afuera only), from `test:conversations`
   - [ ] Dropped audio can't be scored here (the replay is text only): count voice failures from the live logs instead
   - Note: the `test:conversations` grader says not to penalise complex language; "on level" needs that changed (Josh's OK)
 - [x] ~~Characters only get text, can't hear pronunciation~~ (prompt 2026-10-12b; Magda 2026-10-14b)
