@@ -157,7 +157,7 @@ The to-do list itself is [06-roadmap.md → Now](06-roadmap.md#now), which merge
   - #2 level measurement
   - #3 tier and settings in the learner profile (`/v1/me/settings`)
   - ~~#6 honest level and Magda tweaks~~ (cut, Josh 2026-10-15)
-  - #7 lasting-learning measures
+  - ~~#7 lasting-learning measures~~ (cut, Josh 2026-10-16)
   - the server half of #5 (reject near-silence)
   - the ladder's server half (two in-character candidate replies)
   - art and place-uniqueness work (images and data)
