@@ -24,6 +24,16 @@ One list, merged 2026-10-15 from the iPhone milestones (N, plan in [12-native-ap
 - [ ] **both** More dialect as you level up; the dialect setting does nothing today (M3)
 
 **Prompt experiments** (each one: prompt version, changelog entry, replay gate `npm run test:replay`)
+
+Goals (Josh, 2026-10-15). Every experiment says which goal it moves; none may make another worse.
+
+| Goal | Today | Target | Measured by |
+|---|---|---|---|
+| **Faster** | Claude 4–5 s of a ~6 s wait after the learner's turn | Reply in under 2 s, 4 s at most ([10-testing.md](10-testing.md) performance targets) | Not yet: the replay test doesn't time replies |
+| **On level** | Teacher rated characters B2+; the prompt has no level | Characters speak at the learner's level (Beginner A1–A2, Intermediate B1–B2, Advanced C1+) | Not yet: the level judge (Language levels, M3 #2) |
+| **Length** | Median 21 words per reply | 20 or fewer, heading toward 10 ([10-testing.md](10-testing.md) scorecard) | Replay test, already |
+
+- [ ] **server** Replay test times each reply, so "faster" can gate a change
 - [x] ~~Characters only get text, can't hear pronunciation~~ (prompt 2026-10-12b; Magda 2026-10-14b)
 - [x] ~~Traits as manner, not expertise~~ (~430 traits removed, Italy and Mexico, 2026-10-13)
 - [ ] **server** Faster replies: try Haiku for turns, and start the voice as soon as the line is streamed (part of the timing investigation).
