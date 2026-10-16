@@ -28,8 +28,13 @@ public actor APIClient {
 
     /// GET /v1/content: no sign-in needed
     public func content() async throws -> Content {
-        try await send(request("v1/content"), signedIn: false)
+        try await send(request("v1/content", timeout: Self.loadTimeout), signedIn: false)
     }
+
+    /// Loading a country (content, then the learner) gives up after this, so a
+    /// stalled connection shows "Can't reach the server" with Try Again rather
+    /// than a spinner for a minute (URLSession's default)
+    static let loadTimeout: TimeInterval = 20
 
     public struct Me: Codable, Sendable {
         public let learnerId: String
@@ -39,7 +44,7 @@ public actor APIClient {
 
     /// GET /v1/me: the learner and their visit counts per place
     public func me() async throws -> Me {
-        try await send(request("v1/me"), signedIn: true)
+        try await send(request("v1/me", timeout: Self.loadTimeout), signedIn: true)
     }
 
     // MARK: - Conversation
@@ -162,8 +167,9 @@ public actor APIClient {
         return device.token
     }
 
-    private func request(_ path: String) -> URLRequest {
+    private func request(_ path: String, timeout: TimeInterval? = nil) -> URLRequest {
         var req = URLRequest(url: baseURL.appending(path: path))
+        if let timeout { req.timeoutInterval = timeout }
         req.setValue("application/json", forHTTPHeaderField: "Accept")
         // Lets the server turn away builds that are too old (426, lib/app-version.ts)
         if let version = Self.appVersion { req.setValue(version, forHTTPHeaderField: "X-App-Version") }

@@ -17,6 +17,7 @@ public enum SettingsKey {
 /// The settings button, top right on every screen (Josh, D2), with Fuori's
 /// own icon (Josh, 2026-10-15), opening the settings sheet
 struct SettingsToolbar: ViewModifier {
+    @Environment(AppModel.self) private var model
     @State private var showing = false
 
     func body(content: Content) -> some View {
@@ -29,7 +30,8 @@ struct SettingsToolbar: ViewModifier {
                     .accessibilityLabel("Settings")
                 }
             }
-            .sheet(isPresented: $showing) { SettingsSheet() }
+            // A country picked in the sheet is applied only once it has closed
+            .sheet(isPresented: $showing, onDismiss: { Task { await model.applyPendingCountry() } }) { SettingsSheet() }
             #if DEBUG
             // `-FuoriOpenSettings YES` opens Settings at launch, for simulator checks without tapping
             .onAppear { if UserDefaults.standard.bool(forKey: "FuoriOpenSettings") { showing = true } }
@@ -156,8 +158,9 @@ struct SettingsSheet: View {
         let here = country.server == model.server
         return Button {
             guard !here else { return }
+            // Switch after the sheet has closed (SettingsToolbar's onDismiss)
+            model.pendingCountry = country
             dismiss()
-            Task { await model.choose(country) }
         } label: {
             VStack(spacing: 6) {
                 CountryCardView(content: country.content, compact: true)

@@ -1402,3 +1402,11 @@ Josh: "go for it" on the items Claude can finish without him. Each commit says w
 - Later the same night: clickable onboarding walkthrough (`design/onboarding/walkthrough.html`) is now the build reference, both countries and both paths. Answer buttons are light olive glass (iOS 26 Liquid Glass in the app); the mic shows "Press when done" while talking; controls and English appear only when she finishes speaking; her face stays clear of the text. Mexico guide poses redone with bigger movements.
 - Next: the engineering needs for onboarding (prompt beats, placement judge, what's stored, Swift screens), then hand to the laptop.
 - **Josh's web history is in the app** (2026-10-16): his iPhone's sign-in (learner 94a01994, read from Settings → hold Version) now points to his web learner 3c544022, in one transaction on the shared database; the phone learner had no conversations or memories, so nothing was merged. The simulator's own learner is dd6ec6fb. "Move to the app" cut (Josh: only his data).
+
+## 2026-10-16: Country switch from a conversation hung on a spinner (cloud session)
+
+- Bug (Josh, iPhone): in a Mexico conversation → Settings → Italy → spinner still spinning minutes later. Both servers were answering normally (checked), so not a server problem.
+- Likely cause: the switch ran while the Settings sheet was still closing, and it removed the conversation screen that was presenting that sheet. Now the pick is held (`AppModel.pendingCountry`) and applied in the sheet's `onDismiss`, after it has fully closed.
+- Found on the way: leaving a conversation because of a country switch saved it to the *new* country's server, which failed and was retried at every launch. `AppModel.conversation` now ties each conversation's save to the server it happened on.
+- Loading a country (`/v1/content`, `/v1/me`) gives up after 20 s instead of URLSession's 60 s, so a stalled connection shows "Can't reach the server" with Try Again.
+- **Not verified:** built only by CI (no Mac in the cloud session); needs Josh's iPhone: Mexico conversation → Settings → Italy should land on Italy's cities.

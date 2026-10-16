@@ -95,6 +95,20 @@ public final class AppModel {
         }
     }
 
+    /// A country picked in Settings, applied once the sheet has finished
+    /// closing (applyPendingCountry). Switching while the sheet is still on
+    /// screen tore down the screen presenting it, mid-dismiss, and left the
+    /// app on an endless spinner (Josh, 2026-10-16: Mexico conversation →
+    /// Settings → Italy).
+    public var pendingCountry: Country?
+
+    /// Called when the settings sheet has gone: switch to the country picked in it
+    public func applyPendingCountry() async {
+        guard let country = pendingCountry else { return }
+        pendingCountry = nil
+        await choose(country)
+    }
+
     /// The learner picked a country (first launch, or Settings → Where you're living)
     public func choose(_ country: Country) async {
         UserDefaults.standard.set(country.server.absoluteString, forKey: Self.countryKey)
@@ -145,9 +159,15 @@ public final class AppModel {
     /// what they remember (POST /v1/conversations/{id}/end). Runs on after the
     /// app goes to the background for as long as iOS allows. A failed save is
     /// kept and retried at the next launch, never dropped.
-    public func save(conversationId id: String) {
-        guard let api else { return }
-        let key = pendingKey(server)
+    ///
+    /// `on` is the server the conversation happened on: a conversation left
+    /// because the learner switched country must still be saved by its own
+    /// country's server, not the new one (it used to go to the new one, fail,
+    /// and be retried there at every launch).
+    public func save(conversationId id: String, on origin: (api: APIClient, server: URL)? = nil) {
+        guard let api = origin?.api ?? api else { return }
+        let conversationServer = origin?.server ?? server
+        let key = pendingKey(conversationServer)
         UserDefaults.standard.set(Array(pending(key).union([id])), forKey: key)
         #if canImport(UIKit)
         let task = UIApplication.shared.beginBackgroundTask(withName: "save conversation")
@@ -157,7 +177,7 @@ public final class AppModel {
                 try await api.endConversation(id)
                 UserDefaults.standard.set(Array(pending(key).subtracting([id])), forKey: key)
                 // Still in the same country: refresh the visit stamps
-                if key == pendingKey(server) { visits = (try? await api.me().visits) ?? visits }
+                if conversationServer == server { visits = (try? await api.me().visits) ?? visits }
             } catch {
                 // Kept in the pending list and retried at the next launch
                 report(error, step: "save", context: ["conversationId": id], using: api)
@@ -188,9 +208,10 @@ public final class AppModel {
     }
 
     func conversation(city: City, place: Place, character: Character) -> ConversationModel? {
-        guard let content, let api else { return nil }
+        guard let content, let api, let server else { return nil }
+        // Saved by the server the conversation happened on, even after a country switch
         return ConversationModel(city: city, place: place, character: character, language: content.language, api: api) { [weak self] id in
-            self?.save(conversationId: id)
+            self?.save(conversationId: id, on: (api, server))
         }
     }
 }
