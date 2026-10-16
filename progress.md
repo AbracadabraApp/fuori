@@ -1372,3 +1372,16 @@ Tracked in `docs/onboarding-design.md` (Josh: "not great yet, getting better"). 
 - Settings mockup: "Conversation / More time to answer" removed; the website's subtitle settings (show Italian words, show English) added (Josh).
 - **For the laptop:** ship the country choice and Settings screens in the iPhone app now, before the rest of onboarding. Spec: "Ship first" in `docs/onboarding-design.md`. The level control waits until the M3 tier does something.
 - Next (cloud): redraw the onboarding screens on the canvas to the agreed text.
+
+## 2026-10-16 (early): the "Claude can do alone" items (laptop)
+
+Josh: "go for it" on the items Claude can finish without him. Each commit says what was checked.
+- **Error codes reach the server** (d9c26ef): every /v1 request carries a code (E-7K2F); failures show it on screen and go to the new `POST /v1/log`. Checked with a local server and a broken Claude key: the server's line and the app's report had the same code.
+- **Forced upgrade** (b92fddc): the app sends `X-App-Version`; `MIN_APP_VERSION` on a Railway service turns older builds away (426), and the app shows "Update the app". Unset in production.
+- **Scorecard** (947f5e4): reply time, replies that don't follow, feels alive (1–10, target 7 provisional; judge prompt 2026-10-16, both countries), and any broken conversation fails the gate. First real numbers: reply time 3.6 s median, 0.8 incoherent replies per conversation, alive 6.3.
+- **Dropped voices** (9c91c9d): `/v1/speak` logs one line per line spoken; `npm run voice:failures` counts drops by reason across recent deployments.
+- **Debug switch** (3a27fbc): Settings → tap Version five times → Developer: debug panel and server choice (Italy / Mexico). Checked on Afuera in the simulator.
+- **Typed reply** (e51d251): only when the mic is off or VoiceOver / Switch Control is on (D6). The button showed; sending a typed line isn't tried (no tapping in the simulator tools).
+- **Watch paths, not working yet** (9c88e11): railway.json was read but ignored (config as code deprecated); patterns set on both services through the Railway API instead, and every deployment now carries them, but docs-only commits from the cloud session (5dba1d9, bb4d881) still built. Open: check Railway dashboard → service → Settings → Watch Paths, or Railway support.
+- **Not done, for Josh:** `test:history` (document mode lost the conversation in prompt 2026-10-12h on purpose, production runs recent, but document is still the default when TURN_HISTORY is unset, including the replay test's default; fixing it means changing the test); the server half of the voice check (Groq's no-speech signal is always 0.000, so there's nothing to check against).
+- All on the simulator only; the phone checks (audio, VoiceOver, typed reply) are still Josh's.
