@@ -136,7 +136,7 @@ Updated 2026-10-12 (evening). Top of the list first; strike items off here as th
 Plan and pass criteria: [12-native-app.md](12-native-app.md#milestones). Runs alongside M3.
 
 - [x] **N0** Server `/v1` API and Xcode skeleton (Josh used it on his iPhone, 2026-10-15)
-- [x] **N1** One conversation on the phone (done, Josh 2026-10-15)
+- [x] **N1** One conversation on the phone (done, Josh 2026-10-15; he tried the latest build, tap to talk and the new sent state, on his iPhone)
 - [ ] **N2** Feeds, stamps (redesigned), Magda tried in the app
   - Carried over from N1:
   - [ ] Device checks: a call, Siri, AirPods in and out, backgrounding, locking
