@@ -72,6 +72,19 @@ Build these two screens in the iPhone app now, ahead of the rest of onboarding. 
 - **All of Settings on one screen:** every toggle and its checkmark visible at the default text size, with no scrolling box inside the sheet (no scroll within a scroll). At large text sizes the whole sheet scrolls as one.
 
 
+## Her poses (Josh agreed, 2026-10-16)
+
+Four pictures of her per country, the original plus three edits that keep her, the background and the framing the same. The picture changes with a plain cut, no fade or zoom (Josh's pick from the test page). With Reduce Motion it's the same cut.
+
+| Moment | Pose | Italy | Mexico |
+|---|---|---|---|
+| Screen 1, her welcome question | Welcome (original) | `it-greeter.jpg` (waving) | `es-mx-greeter.jpg` |
+| While the learner talks (mic open) | Listening | `poses/it-listen.jpg` | `poses/es-mx-listen.jpg` |
+| Her speaker question and follow-up | Talking | `poses/it-talk.jpg` | `poses/es-mx-talk.jpg` |
+| Both send-offs (beginner and speaker) | Laughing, warm | `poses/it-laugh.jpg` | `poses/es-mx-laugh.jpg` |
+
+All in `design/country-cards/`. Expressive poses are fine for her because her lines are fixed; characters in open conversation would need neutral ones (docs/ideas.md). Mexico's listening pose took a second round: the first edits moved her bag to the other shoulder.
+
 ## Current flow (canvas row 2, Italy shown; redrawn 2026-10-16 to this text)
 
 **She always speaks the learned language; English is only ever subtitles, never spoken** (Josh). App text (the mic label, buttons' English lines) is separate.
@@ -103,7 +116,7 @@ Steps 2–5 below are the older draft.
 
 ## Open
 
-- Later version (Josh, 2026-10-16): animate her. Two short loops per country made from her picture, one idle and one talking, swapped while she speaks; a still picture when Reduce Motion is on.
+- Later version (Josh, 2026-10-16): animate her with video loops. For now she changes pose instead (see "Her poses").
 
 - For gameplay, not onboarding (Josh): teaching how to ask for help (*Può ripetere, per favore?*), e.g. a character offering it in role when the learner is lost.
 
