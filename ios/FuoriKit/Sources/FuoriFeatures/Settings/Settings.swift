@@ -10,6 +10,11 @@ public enum SettingsKey {
     /// Off (default, Josh 2026-10-15): tap to talk, tap again when done.
     /// On: the mic opens by itself after the character and closes after a silence.
     public static let handsFree = "settings.handsFree"
+    /// Hidden (Settings → tap the version five times): the debug panel on the
+    /// person screen and the server choice, as the web's ?debug=1
+    public static let debug = "settings.debug"
+    /// The server chosen in the debug section; read at launch (FuoriApp's Server)
+    public static let server = "FuoriServer"
 }
 
 /// The settings button, top right on every screen (Josh, D2), with Fuori's
@@ -40,7 +45,21 @@ struct SettingsSheet: View {
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.moreTime) private var moreTime = false
     @AppStorage(SettingsKey.handsFree) private var handsFree = false
+    @AppStorage(SettingsKey.debug) private var debug = false
+    @AppStorage(SettingsKey.server) private var server = ""
+    @State private var versionTaps = 0
     @Environment(\.dismiss) private var dismiss
+
+    private var version: String {
+        let info = Bundle.main.infoDictionary
+        return "\(info?["CFBundleShortVersionString"] as? String ?? "?") (\(info?["CFBundleVersion"] as? String ?? "?"))"
+    }
+
+    /// The countries' servers from Info.plist (FuoriServers), e.g. Italy, Mexico
+    private var servers: [(name: String, url: String)] {
+        let dict = Bundle.main.object(forInfoDictionaryKey: "FuoriServers") as? [String: String] ?? [:]
+        return dict.sorted { $0.key < $1.key }.map { ($0.key, $0.value) }
+    }
 
     var body: some View {
         NavigationStack {
@@ -60,6 +79,30 @@ struct SettingsSheet: View {
                     Text(handsFree
                          ? "The microphone opens by itself when it's your turn and closes after a pause. More time to answer waits longer before your turn ends."
                          : "Tap to talk, and tap again when you've finished.")
+                }
+                if debug {
+                    Section {
+                        Picker("Server", selection: $server) {
+                            Text("This build's").tag("")
+                            ForEach(servers, id: \.url) { Text($0.name).tag($0.url) }
+                        }
+                        Toggle("Debug panel", isOn: $debug)
+                    } header: {
+                        Text("Developer")
+                    } footer: {
+                        Text("A new server takes effect the next time the app opens. Each server keeps its own learner.")
+                    }
+                }
+                Section {
+                    // Five taps turn the developer section on (hidden, as the web's ?debug=1)
+                    Button {
+                        versionTaps += 1
+                        if versionTaps >= 5 { debug.toggle(); versionTaps = 0 }
+                    } label: {
+                        LabeledContent("Version", value: version)
+                    }
+                    .buttonStyle(.plain)
+                    .sensoryFeedback(.selection, trigger: debug)
                 }
             }
             .navigationTitle("Settings")

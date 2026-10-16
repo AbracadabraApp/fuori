@@ -22,12 +22,15 @@ struct FuoriApp: App {
 }
 
 /// The server this build talks to: FuoriServer in Info.plist (FUORI_SERVER in
-/// project.yml). A launch argument `-FuoriServer <url>` overrides it, e.g. to
+/// project.yml). A launch argument `-FuoriServer <url>`, or the server chosen
+/// in Settings' hidden developer section, overrides it, e.g. to
 /// try a local server from Xcode.
 enum Server {
     static var url: URL {
-        let value = UserDefaults.standard.string(forKey: "FuoriServer")
-            ?? Bundle.main.object(forInfoDictionaryKey: "FuoriServer") as? String
+        // Set by a launch argument, or by the hidden server choice in Settings
+        // (empty means this build's own)
+        let chosen = UserDefaults.standard.string(forKey: "FuoriServer").flatMap { $0.isEmpty ? nil : $0 }
+        let value = chosen ?? Bundle.main.object(forInfoDictionaryKey: "FuoriServer") as? String
         guard let value, let url = URL(string: value) else {
             fatalError("FuoriServer missing from Info.plist (set FUORI_SERVER in ios/project.yml)")
         }

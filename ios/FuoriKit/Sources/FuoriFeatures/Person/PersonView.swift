@@ -14,6 +14,7 @@ struct PersonView: View {
     @Environment(\.scenePhase) private var scenePhase
     @AppStorage(SettingsKey.subtitles) private var subtitles = true
     @AppStorage(SettingsKey.english) private var english = false
+    @AppStorage(SettingsKey.debug) private var debug = false
 
     init(model: ConversationModel) {
         _model = State(initialValue: model)
@@ -25,6 +26,12 @@ struct PersonView: View {
             ZStack(alignment: .bottom) {
                 Portrait(url: model.character.portrait, name: model.character.name)
                     .ignoresSafeArea(edges: .bottom)
+                if debug {
+                    DebugPanel(info: model.debug, conversationId: model.conversationId)
+                        .frame(maxHeight: .infinity, alignment: .top)
+                        .padding(.horizontal, Tokens.Space.gutter)
+                        .padding(.top, 8)
+                }
                 VStack(spacing: 8) {
                     Subtitles(line: subtitles ? model.line : nil, shown: model.shown, english: english ? model.english : nil, note: note)
                     ConversationControls(model: model)
@@ -105,4 +112,33 @@ private struct Portrait: View {
 extension String {
     /// "fruttivendolo" → "Fruttivendolo", as the web shows roles
     var capitalizingFirstLetter: String { prefix(1).uppercased() + dropFirst() }
+}
+
+/// The hidden debug panel (Settings → Developer), as the web's ?debug=1:
+/// prompt version, whether the conversation is saved, what was heard, which
+/// voice spoke, step timings and the last error code
+private struct DebugPanel: View {
+    let info: ConversationModel.DebugInfo
+    let conversationId: String?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            row("Prompt", info.promptVersion)
+            row("Saved", conversationId.map { "yes (\(String($0.prefix(8))))" } ?? "no")
+            row("Heard", info.heard)
+            row("Voice", info.voice)
+            row("Timings", info.timings.isEmpty ? nil : info.timings.sorted { $0.key < $1.key }.map { "\($0.key) \($0.value) ms" }.joined(separator: " · "))
+            if let error = info.lastError { row("Error", error).foregroundStyle(Tokens.Colors.errorInk) }
+        }
+        .font(.caption.monospaced())
+        .foregroundStyle(Tokens.Colors.ink)
+        .padding(8)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Tokens.Colors.card.opacity(0.92), in: RoundedRectangle(cornerRadius: 8))
+        .accessibilityElement(children: .combine)
+    }
+
+    private func row(_ label: String, _ value: String?) -> Text {
+        Text("\(Text("\(label):").bold()) \(value ?? "—")")
+    }
 }

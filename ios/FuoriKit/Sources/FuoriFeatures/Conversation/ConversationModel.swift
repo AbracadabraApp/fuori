@@ -56,6 +56,23 @@ public final class ConversationModel {
     public private(set) var note: String?
     public private(set) var conversationId: String?
 
+    /// What the hidden debug panel shows (Settings → Developer), as the web's ?debug=1
+    public struct DebugInfo: Equatable {
+        public var promptVersion: String?
+        /// What speech to text heard (never shown otherwise: immersion)
+        public var heard: String?
+        public var voice: String?
+        /// Milliseconds per step of the last turn: transcribe, turn, voice
+        public var timings: [String: Int] = [:]
+        public var lastError: String?
+    }
+    public private(set) var debug = DebugInfo()
+
+    private static func now() -> TimeInterval { ProcessInfo.processInfo.systemUptime }
+    private func time(_ step: String, since start: TimeInterval) {
+        debug.timings[step] = Int((Self.now() - start) * 1000)
+    }
+
     public let city: City
     public let place: Place
     public let character: Character
@@ -107,7 +124,10 @@ public final class ConversationModel {
         observeInterruptions()
         do {
             try AudioSession.activate()
+            let started = Self.now()
             let reply = try await api.turn(cityId: city.id, placeId: place.id)
+            time("opening", since: started)
+            debug.promptVersion = reply.promptVersion
             conversationId = reply.conversationId
             await present(reply, generation: generation)
         } catch {
@@ -124,14 +144,18 @@ public final class ConversationModel {
         shown = 0
         phase = .speaking
         do {
+            let started = Self.now()
             let audio = try await api.speak(text: reply.line, characterId: character.id, speed: speed)
+            time("voice", since: started)
+            debug.voice = "hosted (\(audio.count / 1024) KB)"
             guard generation == self.generation else { return }
             startReveal(reply.line)
             try await voice.play(audio)
         } catch {
             // The hosted voice failed: the phone's own voice says it instead
             guard generation == self.generation else { return }
-            report(error, step: "speak")
+            let code = report(error, step: "speak")
+            debug.voice = "phone (hosted failed, \(code))"
             startReveal(reply.line)
             await voice.speak(reply.line, language: language.speechLang, rate: Float(speed))
         }
@@ -262,7 +286,10 @@ public final class ConversationModel {
         do {
             let audio = try Data(contentsOf: url)
             try? FileManager.default.removeItem(at: url)
+            var started = Self.now()
             let said = try await api.transcribe(audio: audio)
+            time("transcribe", since: started)
+            debug.heard = said
             guard generation == self.generation else { return }
             // Speech to text heard no words ("...", "?"): not a turn
             guard Heard.hasWords(said) else {
@@ -271,7 +298,10 @@ public final class ConversationModel {
                 return
             }
             step = "turn"
+            started = Self.now()
             let reply = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: said)
+            time("turn", since: started)
+            debug.promptVersion = reply.promptVersion
             if let id = reply.conversationId { conversationId = id }
             await present(reply, generation: generation)
         } catch {
@@ -351,6 +381,7 @@ public final class ConversationModel {
     private func report(_ error: Error, step: String) -> String {
         let code = (error as? APIError)?.requestId ?? ErrorCode.make()
         let report = APIClient.ErrorReport(id: code, step: step, error: error, context: ["characterId": character.id, "placeId": place.id])
+        debug.lastError = "\(code) \(step): \(report.message)"
         Task { [api] in await api.report(report) }
         return code
     }
