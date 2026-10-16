@@ -83,7 +83,7 @@ Four pictures of her per country, the original plus three edits that keep her, t
 | Her speaker question and follow-up | Talking | `poses/it-talk.jpg` | `poses/es-mx-talk.jpg` |
 | Both send-offs (beginner and speaker) | Laughing, warm | `poses/it-laugh.jpg` | `poses/es-mx-laugh.jpg` |
 
-All in `design/country-cards/`. Expressive poses are fine for her because her lines are fixed; characters in open conversation would need neutral ones (docs/ideas.md). Mexico's listening pose took a second round: the first edits moved her bag to the other shoulder.
+All in `design/country-cards/`. Expressive poses are fine for her because her lines are fixed; characters in open conversation would need neutral ones (docs/ideas.md). Mexico's poses took three rounds: the first moved her bag to the other shoulder, the second barely changed her (Josh: "not much variation"); the third asks for bigger movements (hair tucked behind her ear, an open-palm gesture, a hand over her laugh) and names where the bag stays.
 
 ## Current flow (canvas row 2, Italy shown; redrawn 2026-10-16 to this text)
 
