@@ -2,7 +2,7 @@
 
 > Copied from `content/it/prompts/quality.md` on 2026-10-12 for the Mexico pack. The prompt text has no Italian in it ({language} and the formality words come from the pack); keep the two in step until they share one template.
 
-version: 2026-10-12
+version: 2026-10-16
 
 When a conversation ends, after the memory call, one Claude call reads the
 transcript and counts the things on the dialogue scorecard that code can't
@@ -11,8 +11,9 @@ which adds the measurements code can do (reply length, questions) and saves
 both with the conversation. The replay test uses the same call, so real play
 and tests are scored the same way.
 
-This judges the character, never the learner, and only counts: it doesn't
-grade taste ("feels alive" is Josh's call).
+This judges the character, never the learner. It counts, plus one 1–10
+rating, "alive" (added 2026-10-16 at Josh's request; it used to be his call
+alone).
 
 **To change it:** edit the blocks below, bump `version`, add a changelog entry
 (what changed, why, what prompted it). Scores carry the version that wrote
@@ -32,6 +33,8 @@ Count what {name} does. Count only what is clearly there; when unsure, don't cou
 - garbledMissed: of those, how many {name} misunderstood, ignored the likely meaning of, or commented on.
 - lost: each person's line that signals they didn't follow (non capisco, come?, più piano, ripeti, switching to English to say they're lost). For each, "line" is its number among the person's lines (1 = their first), and "pulledBack" is whether {name}'s next reply was clearly simpler and shorter than the one before.
 - englishUnasked: {name}'s lines that use English the person didn't ask for. A word in quotes because they asked how to say it doesn't count.
+- incoherent: {name}'s lines that don't follow from the conversation: ignore what the person just said, contradict something {name} said earlier, or answer a question nobody asked. Misreading a garbled line is counted under garbledMissed, not here.
+- alive: from 1 to 10, how much {name} feels like a real {role} in {city} rather than an assistant: a distinct personality, reacting to what was actually said. 10 = a native speaker would find it entirely natural.
 - note: the single biggest problem with {name}'s side of the conversation, in one sentence. "None" if nothing stands out.
 ```
 
@@ -48,6 +51,11 @@ The conversation ({name}'s lines and the person's lines, in order):
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-16: coherence and "alive"
+- **Added** `incoherent` (lines that don't follow from the conversation) and `alive` (1–10, a real person in that place, as in `npm run test:conversations`).
+- **Why:** both go on the dialogue scorecard so the replay gate checks them; until now coherence was noticed only by reading, and "alive" only graded in the simulated-conversation test.
+- **Prompted by:** Josh, 2026-10-15: add coherence and feels alive to the scorecard.
 
 ### 2026-10-12: first version
 - Counts the judged items on the scorecard: pronunciation corrections, corrections asked for and unprompted, garbled lines missed, pulling back when the person is lost, English nobody asked for, and the biggest problem.

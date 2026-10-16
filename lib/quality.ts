@@ -5,7 +5,8 @@
  *   whether the reply after each "I'm lost" line got shorter;
  * - counted by one Claude call (content/it/prompts/quality.md): pronunciation
  *   corrections, corrections asked for and unprompted, garbled lines missed,
- *   pulling back when lost, English nobody asked for.
+ *   pulling back when lost, English nobody asked for, lines that don't
+ *   follow from the conversation, and a 1–10 "alive" rating.
  *
  * Real conversations are scored when they end (lib/remember.ts, after memory);
  * the replay test scores its conversations with the same functions, so real
@@ -42,6 +43,9 @@ const JudgeSchema = z.object({
   garbledMissed: z.number().int().min(0),
   lost: z.array(z.object({ line: z.number().int(), pulledBack: z.boolean() })),
   englishUnasked: z.number().int().min(0),
+  // Added 2026-10-16 (judge version 2026-10-16); optional so scores saved before still read
+  incoherent: z.number().int().min(0).optional(),
+  alive: z.number().int().min(1).max(10).optional(),
   note: z.string(),
 });
 export type QualityJudgement = z.infer<typeof JudgeSchema>;
@@ -55,6 +59,8 @@ export interface ConversationScore {
   /** For each "I'm lost" line: was the next reply shorter than the one before (code), simpler and shorter (judge) */
   lost: { line: number; shorter: boolean; pulledBack: boolean }[];
   judge: QualityJudgement;
+  /** How long each character reply took, in ms (the replay test times them; real play doesn't yet) */
+  replyMs?: number[];
 }
 
 export function qualityPromptVersion(): string {

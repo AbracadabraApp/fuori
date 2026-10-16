@@ -23,6 +23,8 @@ export const qualityOutputJsonSchema = {
       },
     },
     englishUnasked: count,
+    incoherent: count,
+    alive: count,
     note: { type: 'string' },
   },
   required: [
@@ -33,6 +35,8 @@ export const qualityOutputJsonSchema = {
     'garbledMissed',
     'lost',
     'englishUnasked',
+    'incoherent',
+    'alive',
     'note',
   ],
 };

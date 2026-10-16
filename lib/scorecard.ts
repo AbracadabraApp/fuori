@@ -20,7 +20,7 @@ interface Measure {
   /** Target, inclusive */
   target: number;
   /** How the value is shown */
-  format: 'words' | 'percent' | 'perConversation';
+  format: 'words' | 'percent' | 'perConversation' | 'seconds' | 'rating';
   /** A change this small is noise, not a regression (same units as the value) */
   tolerance: number;
   value: (scores: ConversationScore[]) => number | null;
@@ -28,7 +28,18 @@ interface Measure {
 
 const avg = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null);
 
+/** Average over the scores that have the value (older scores may not) */
+const avgOf = (s: ConversationScore[], f: (x: ConversationScore) => number | undefined) =>
+  avg(s.map(f).filter((v): v is number => typeof v === 'number'));
+
 export const MEASURES: Measure[] = [
+  {
+    key: 'replySeconds', label: 'Reply time (median seconds)', better: 'lower', target: 2, format: 'seconds', tolerance: 0.3,
+    value: (s) => {
+      const ms = s.flatMap((x) => x.replyMs ?? []);
+      return ms.length ? median(ms) / 1000 : null;
+    },
+  },
   {
     key: 'replyWords', label: 'Reply length (median words)', better: 'lower', target: 20, format: 'words', tolerance: 2,
     value: (s) => (s.length ? median(s.map((x) => x.stats.wordsMedian)) : null),
@@ -64,6 +75,14 @@ export const MEASURES: Measure[] = [
     },
   },
   {
+    key: 'incoherent', label: 'Replies that don\'t follow', better: 'lower', target: 0, format: 'perConversation', tolerance: 0.3,
+    value: (s) => avgOf(s, (x) => x.judge.incoherent),
+  },
+  {
+    key: 'alive', label: 'Feels alive (1–10)', better: 'higher', target: 7, format: 'rating', tolerance: 0.5,
+    value: (s) => avgOf(s, (x) => x.judge.alive),
+  },
+  {
     key: 'englishUnasked', label: 'English nobody asked for', better: 'lower', target: 0, format: 'perConversation', tolerance: 0.1,
     value: (s) => avg(s.map((x) => x.judge.englishUnasked)),
   },
@@ -81,14 +100,17 @@ export interface ScorecardRow {
 
 export interface Scorecard {
   conversations: number;
+  /** Conversations that broke (a reply that wasn't valid JSON, an API error); any one fails the gate */
+  broken?: number;
   rows: ScorecardRow[];
 }
 
 const meets = (m: Measure, v: number) => (m.better === 'lower' ? v <= m.target : v >= m.target);
 
-export function scorecard(scores: ConversationScore[]): Scorecard {
+export function scorecard(scores: ConversationScore[], broken = 0): Scorecard {
   return {
     conversations: scores.length,
+    broken,
     rows: MEASURES.map((m) => {
       const v = m.value(scores);
       return { key: m.key, label: m.label, value: v, target: m.target, better: m.better, ok: v === null ? null : meets(m, v) };
@@ -101,6 +123,7 @@ export function formatValue(key: string, v: number | null): string {
   const m = MEASURES.find((x) => x.key === key)!;
   if (m.format === 'percent') return `${Math.round(v * 100)}%`;
   if (m.format === 'perConversation') return `${Math.round(v * 10) / 10} per conversation`;
+  if (m.format === 'seconds') return `${Math.round(v * 10) / 10} s`;
   return String(Math.round(v * 10) / 10);
 }
 
@@ -122,8 +145,11 @@ export interface GateResult {
 
 /**
  * The gate a prompt change must pass (docs/10-testing.md): the measure it was
- * meant to move improves beyond its tolerance, and no other measure gets worse
- * beyond its tolerance. Measures with nothing to measure on either side are skipped.
+ * meant to move improves beyond its tolerance, no other measure gets worse
+ * beyond its tolerance, and no conversation broke (Josh, 2026-10-15: broken
+ * replies used to be dropped from the scores, so a change that broke 2 of 7
+ * conversations could still look fine). Measures with nothing to measure on
+ * either side are skipped.
  */
 export function gate(before: Scorecard, after: Scorecard, targetKey: string): GateResult {
   const lines: string[] = [];
@@ -142,11 +168,15 @@ export function gate(before: Scorecard, after: Scorecard, targetKey: string): Ga
     else if (verdict === 'WORSE') regressions.push(m.label);
     lines.push(`${m.key === targetKey ? '▶ ' : ''}${m.label}: ${formatValue(m.key, b)} → ${formatValue(m.key, a)} (${verdict})`);
   }
+  const broken = after.broken ?? 0;
+  lines.push(`Broken conversations: ${before.broken ?? 0} → ${broken}${broken ? ' (FAILS)' : ''}`);
+  if (broken) regressions.push(`${broken} broken conversation${broken === 1 ? '' : 's'}`);
   return { pass: improved && regressions.length === 0, target: targetKey, improved, regressions, lines };
 }
 
 /** Plain-text scorecard, one block per group (e.g. per prompt version). */
 export function scorecardAsText(title: string, card: Scorecard): string {
   const rows = card.rows.map((r) => `  ${r.ok === null ? '·' : r.ok ? '✓' : '✗'} ${r.label}: ${formatValue(r.key, r.value)} (target ${formatTarget(r.key)})`);
-  return [`${title} · ${card.conversations} conversation${card.conversations === 1 ? '' : 's'}`, ...rows].join('\n');
+  const broken = card.broken ? ` · ${card.broken} broken` : '';
+  return [`${title} · ${card.conversations} conversation${card.conversations === 1 ? '' : 's'}${broken}`, ...rows].join('\n');
 }

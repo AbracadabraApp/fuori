@@ -138,16 +138,20 @@ interface Result {
 
 async function replay(c: Case, history: HistoryMode): Promise<Result> {
   const transcript: Turn[] = [];
+  // How long each reply takes (the "faster" goal); the opening isn't a reply
+  const replyMs: number[] = [];
   try {
     const opening = await runTurn({ character: c.character, transcript: [], history });
     transcript.push({ who: 'npc', transcript: opening.line, translation: opening.en });
     for (const said of c.script.lines.slice(0, TURNS)) {
+      const started = performance.now();
       const reply = await runTurn({ character: c.character, transcript, learnerSaid: said, history });
+      replyMs.push(Math.round(performance.now() - started));
       transcript.push({ who: 'learner', transcript: said });
       transcript.push({ who: 'npc', transcript: reply.line, translation: reply.en });
     }
     const turns = transcript.map((t) => ({ who: t.who, text: t.transcript }));
-    return { case: c, turns, score: await scoreConversation(c.character, turns) };
+    return { case: c, turns, score: { ...(await scoreConversation(c.character, turns)), replyMs } };
   } catch (e) {
     return { case: c, turns: transcript.map((t) => ({ who: t.who, text: t.transcript })), error: e instanceof Error ? e.message : String(e) };
   }
@@ -202,7 +206,8 @@ function save(label: string, history: HistoryMode, results: Result[], card: Scor
   return file.replace(process.cwd() + '/', '');
 }
 
-const scored = (rs: Result[]) => scorecard(rs.flatMap((r) => (r.score ? [r.score] : [])));
+// Broken conversations count against the change (lib/scorecard.ts gate), not just dropped
+const scored = (rs: Result[]) => scorecard(rs.flatMap((r) => (r.score ? [r.score] : [])), rs.filter((r) => r.error).length);
 
 async function main() {
   if (has('refresh')) return refresh();
