@@ -82,12 +82,13 @@ Steps 2–5 below are the older draft.
 4. **Still comfortable?** "Keep going" / "That's enough for now" (or say it). More level steps can follow (answer in your own words; listen only).
 5. **Send-off.** Her goodbye, one plain line on how people will talk to you, "Start exploring".
 
+**The AI note lives in Settings → About only, not in onboarding** (Josh, 2026-10-15).
+
 ## Open
 
 - For gameplay, not onboarding (Josh): teaching how to ask for help (*Può ripetere, per favore?*), e.g. a character offering it in role when the learner is lost.
 
 - Whether her line in step 3 also drops the English.
-- Where the one-line AI note goes (proposed: under the country cards).
 - The microphone permission prompt: proposed at step 1, first time she asks you to speak.
 - The level steps after step 4, and how far the ladder goes in onboarding.
 - Her name: none for now. The learner's name is not asked in onboarding either (Josh).
