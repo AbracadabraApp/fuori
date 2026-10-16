@@ -32,7 +32,7 @@ Every prompt change says which goal it moves and may not make another worse (ver
 
 ### 3. Language levels ([language-levels-plan.md](language-levels-plan.md))
 - [ ] **server** Measure the level of what characters say: level judge on exam samples, word coverage, `test:levels`
-- [ ] **server** Level in the character prompt, every turn, in role (replaces the "noticed" field). Beginners: characters teach key phrases in role, such as how to ask "Come si dice …?", instead of a "Come si dice?" button (Josh, 2026-10-16). Watch whether English words inside an Italian line survive speech to text (Whisper is told to expect the learned language)
+- [ ] **server** Level in the character prompt, every turn, in role (replaces the "noticed" field). Beginners: characters teach key phrases in role, such as how to ask "Come si dice …?", instead of a "Come si dice?" button (Josh, 2026-10-16). Asking "Come si dice …?" by voice already works in the game, even with a whole English sentence (Josh, 2026-10-16)
 - [ ] **both** Level and settings saved with the learner (speed, default subtitles); then turn on the greyed-out level control in Settings
 - [ ] **server** Moving up a level: when **90% of the learner's speech is at the next level**, across several conversations (Josh, 2026-10-15). Magda suggests it, the learner decides.
 - [ ] **both** More dialect as you level up (the dialect setting is greyed out today)
