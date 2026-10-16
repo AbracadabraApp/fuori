@@ -17,6 +17,7 @@
     "test:reply": "tsx tests/check-reply-text.ts",
     "test:images": "tsx tests/check-images.ts",
     "test:image-list": "tsx tests/check-image-list.ts",
+    "test:country-card": "tsx tests/check-country-card.ts",
     "test:content-api": "tsx tests/check-content-api.ts",
     "images": "node --env-file-if-exists=.env.local scripts/generate-images.mjs",
     "tokens": "node scripts/tokens.mjs",

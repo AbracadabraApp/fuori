@@ -1,6 +1,6 @@
 /**
  * Images to Cloudflare R2 for the iPhone app (docs/12-native-app.md → Content
- * and images). Converts each city, place and portrait JPEG under public/ to
+ * and images). Converts each city, place, portrait and country-card JPEG under public/ to
  * WebP, names it by its contents (<country>/<kind>/<id>.<hash>.webp, so a new
  * picture gets a new address and no cache can show the old one), uploads it,
  * and records it in content/<country>/images.json. Commit that file: it's how
@@ -29,7 +29,8 @@ import { AwsClient } from 'aws4fetch';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const KINDS = ['cities', 'places', 'portraits'];
+// country: the country's card picture (country/<country>.jpg), for the app's country choice
+const KINDS = ['cities', 'places', 'portraits', 'country'];
 const WEBP_QUALITY = 80;
 const CONCURRENCY = 8;
 

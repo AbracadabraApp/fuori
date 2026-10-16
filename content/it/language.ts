@@ -10,6 +10,11 @@ export const language = {
   /** The app's name in this country (header, messages) */
   appName: 'Fuori',
 
+  /** The country's card in the app's country choice and Settings: name and
+   *  line in English (app chrome), the greeting in the language. Picture:
+   *  public/images/country/it.jpg (from design/country-cards/) */
+  card: { country: 'Italy', learn: 'Learn Italian', greeting: 'Ciao!' },
+
   /** How people address each other: the words for formal and informal */
   formality: { formal: 'Lei', informal: 'tu' },
 

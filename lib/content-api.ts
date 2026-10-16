@@ -52,6 +52,8 @@ export interface ContentCharacter {
 export interface Content {
   version: string;
   country: string;
+  /** The country's card for the app's country choice and Settings */
+  card: { country: string; learn: string; greeting: string; image: string | null };
   language: {
     code: string;
     name: string;
@@ -108,6 +110,7 @@ export function buildContent(): Content {
 
   const body = {
     country,
+    card: { ...language.card, image: image(`country/${country}`) },
     language: {
       code: language.code,
       name: language.name,

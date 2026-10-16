@@ -10,6 +10,11 @@ export const language = {
   /** The app's name in this country (lead candidate, docs/mexico-version.md) */
   appName: 'Afuera',
 
+  /** The country's card in the app's country choice and Settings: name and
+   *  line in English (app chrome), the greeting in the language. Picture:
+   *  public/images/es-mx/country/es-mx.jpg (from design/country-cards/) */
+  card: { country: 'Mexico', learn: 'Learn Mexican Spanish', greeting: '¡Hola!' },
+
   /** How people address each other: the words for formal and informal */
   formality: { formal: 'usted', informal: 'tú' },
 
