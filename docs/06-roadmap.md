@@ -6,67 +6,63 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-One list, merged 2026-10-15 from the iPhone milestones (N, plan in [12-native-app.md](12-native-app.md#milestones)) and the game milestones (M3, M4). Roughly in order; each item says where the work is: **app** (Swift, `ios/`), **server**, or **both**. Old labels kept in brackets so earlier notes still make sense.
+The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the game milestones M3–M4). Roughly in order. **app** = Swift in `ios/`, **server** = Next.js, **both** = both. Detail lives in the linked docs; done and removed items are at the bottom of this file.
 
-**Finish the conversation on the phone**
-- [ ] **app** Magda tried in the app (N2)
-- [ ] **app** Device checks: a call, Siri, AirPods in and out, backgrounding, locking (from N1)
-- [ ] **both** Error codes reach the server logs; today the app only prints them (from N1)
-- [ ] **both** Response timing: investigate the ~6 s after a turn (deferred, Josh)
+### 1. Finish the conversation on the phone
+- [ ] **app** Try Magda in the app
+- [ ] **app** Device checks: a call, Siri, AirPods in and out, backgrounding, locking
+- [ ] **both** Error codes reach the server logs (today the app only prints them)
+- [ ] **both** Response timing: investigate the ~6 s after a turn (deferred)
 
-**Language levels** (three levels: Beginner, Intermediate, Advanced; plan in [language-levels-plan.md](language-levels-plan.md))
-- [ ] **server** Measure the level of what characters say, before tuning: a judge calibrated on official exam samples (CELI, CILS, PLIDA; DELE), word coverage against a frequency list per language, `test:levels` with 10+ turn conversations (M3 #2)
-- [ ] **server** Level in the character prompt, every turn, worded in role; prompt version and changelog (M3 #1). Replaces the "noticed" field idea (Josh, 2026-10-15: it's basically the language level).
-- [ ] **both** Level and settings saved with the learner: sets speech speed and default subtitles, switches as personal overrides (M3 #3, N3)
-- [ ] **server** Voice check before Whisper, server half: reject near-silent recordings; the app's half is done (M3 #5)
-- [ ] **server** Honest learner level: Magda's level as a slow band over several sessions, a strengths line in the study file, her lesson tweaks (M3 #6)
-- [ ] **server** Measure lasting learning: next-day recall of Magda's target, tried in town, retention at day 7 and 30 (M3 #7)
-- [ ] **both** More dialect as you level up; the dialect setting does nothing today (M3)
+### 2. Prompt goals and scorecard
+| Goal | Today | Target |
+|---|---|---|
+| **Faster** | ~6 s wait, Claude 4–5 s of it | Reply under 2 s, 4 s at most |
+| **On level** | Characters speak B2+; no level in the prompt | At the learner's level: Beginner A1–A2, Intermediate B1–B2, Advanced C1+ |
+| **Length** | Median 21 words | 20 or fewer, heading toward 10 |
 
-**Prompt experiments** (each one: prompt version, changelog entry, replay gate `npm run test:replay`)
+Every prompt change says which goal it moves and may not make another worse (version, changelog, `npm run test:replay`).
 
-Goals (Josh, 2026-10-15). Every experiment says which goal it moves; none may make another worse.
+- [ ] **server** Add to the scorecard (`lib/scorecard.ts`):
+  - [ ] Reply time per turn
+  - [ ] Level of the character's lines (from the level judge, section 3)
+  - [ ] Broken replies fail the change (today they're dropped from the scores)
+  - [ ] Coherence
+  - [ ] Feels alive (from `test:conversations`)
+- [ ] **server** Count dropped audio from the live logs (a text replay can't see it)
+- [ ] **server** Change the grader's "don't penalise complex language" line (needs Josh's OK)
+- [ ] **server** Faster replies: try Haiku; start the voice as soon as the line is streamed
 
-| Goal | Today | Target | Measured by |
-|---|---|---|---|
-| **Faster** | Claude 4–5 s of a ~6 s wait after the learner's turn | Reply in under 2 s, 4 s at most ([10-testing.md](10-testing.md) performance targets) | Not yet: the replay test doesn't time replies |
-| **On level** | Teacher rated characters B2+; the prompt has no level | Characters speak at the learner's level (Beginner A1–A2, Intermediate B1–B2, Advanced C1+) | Not yet: the level judge (Language levels, M3 #2) |
-| **Length** | Median 21 words per reply | 20 or fewer, heading toward 10 ([10-testing.md](10-testing.md) scorecard) | Replay test, already |
+### 3. Language levels ([language-levels-plan.md](language-levels-plan.md))
+- [ ] **server** Measure the level of what characters say: level judge on exam samples, word coverage, `test:levels`
+- [ ] **server** Level in the character prompt, every turn, in role (replaces the "noticed" field)
+- [ ] **both** Level and settings saved with the learner (speed, default subtitles)
+- [ ] **server** Voice check before Whisper, server half (app half done)
+- [ ] **server** Honest learner level: Magda's slow band, strengths line, her lesson tweaks
+- [ ] **server** Measure lasting learning: next-day recall, tried in town, day 7 and 30
+- [ ] **both** More dialect as you level up (the dialect setting does nothing today)
 
-- [ ] **server** Add to the scorecard (`lib/scorecard.ts`), so the replay gate checks them (Josh, 2026-10-15):
-  - [ ] Reply time per turn (goal: faster)
-  - [ ] Level of the character's lines, from the level judge (goal: on level; M3 #2)
-  - [ ] Broken replies (malformed JSON, no reply): any one fails the change; today they're dropped from the scores
-  - [ ] Coherence: replies follow from what was said, judged
-  - [ ] Feels alive, from `test:conversations` (the scorecard already has its other three: English, garbled speech, pulls back)
-  - [ ] Dropped audio can't be scored here (the replay is text only): count voice failures from the live logs instead
-  - Note: the `test:conversations` grader says not to penalise complex language; "on level" needs that changed (Josh's OK)
-- [x] ~~Characters only get text, can't hear pronunciation~~ (prompt 2026-10-12b; Magda 2026-10-14b)
-- [x] ~~Traits as manner, not expertise~~ (~430 traits removed, Italy and Mexico, 2026-10-13)
-- [ ] **server** Faster replies: try Haiku for turns, and start the voice as soon as the line is streamed (part of the timing investigation).
-- Tried and set aside: replies without their English, English on tap (2026-10-15: replies got longer, 2 of 7 conversations broke).
-
-**Onboarding and the beginner path** ([onboarding-design.md](onboarding-design.md))
-- [ ] **both** Onboarding, including the country choice (M3)
+### 4. Onboarding and the beginner path ([onboarding-design.md](onboarding-design.md))
+- [ ] **both** Onboarding, including the country choice
   - [ ] Define the frontend flow
   - [ ] Define the engineering needs
   - [ ] Implement
-- [ ] **both** Beginner ladder, behind a setting: pick one of two replies → read it aloud → speak with help nearby → speak freely (M3 #4)
+- [ ] **both** Beginner ladder: pick a reply → read it aloud → speak with help → speak freely
 
-**Parity with the web** (N2, N3)
-- [ ] **app** Visit stamps redesigned: bottom right on the caption, collectible designs (passport stamps, seals, wine and cigar labels), not a number in a circle (M3, N2)
-- [ ] **app** City picker improved; needs Josh's feedback on what's wrong (M3)
-- [ ] **both** Mexico in the app (N3)
-- [ ] **both** Stations and ticket: departures board, the clerk names the platform, "Sali" (N3)
-- [ ] **app** Hidden debug switch (N3)
-- [ ] **both** "Move to the app" link so web learners keep their data (N3)
+### 5. Parity with the web
+- [ ] **app** Visit stamps redesigned (collectible, on the caption, not a number in a circle)
+- [ ] **app** City picker improved (needs Josh's feedback on what's wrong)
+- [ ] **both** Mexico in the app
+- [ ] **both** Stations and ticket: departures board, the clerk names the platform, "Sali"
+- [ ] **app** Hidden debug switch
+- [ ] **both** "Move to the app" link so web learners keep their data
 
-**Release**
-- [ ] **both** TestFlight: signing, icon, microphone text, privacy label, App Attest, usage tracking and per-learner daily budgets (N4, M4)
-- [ ] **server** Web sunset, about 2 weeks after TestFlight (N5)
+### 6. Release
+- [ ] **both** TestFlight: signing, icon, microphone text, privacy label, App Attest, usage tracking, per-learner budgets
+- [ ] **server** Web sunset, about 2 weeks after TestFlight
 
-**Waiting on a decision**
-- [ ] **People with time on their hands (bench characters).** The in-world teaching point with no transaction (see [Game design → Who teaches](02-game-design.md#who-teaches)). 10 of 634 Italian characters have a role that isn't a job (pensionato, studentessa, nonna or abitante del quartiere), nearly all in piazzas and parks: 4 shown (Ettore and Gina in Roma, Elena in Matera, Giovanna in Venezia), 6 hidden. Borderline, all hidden: Federico (poeta locale, Taormina), Dante and Davide (storico locale, Venezia and Verona). Decide whether to show one per city: Firenze, Siena, Napoli and Bologna each have one waiting in `content/it/showcase.ts`; Palermo has none. Open design question first: what is he when he's not teaching? No character has a time constraint (hours, schedule) today.
+### Waiting on a decision
+- [ ] Bench characters (people with time on their hands): show one per city? Italy has 10, 4 shown; candidates in `content/it/showcase.ts`. First: what is he when he's not teaching?
 
 ## Earlier list (2026-10-12 to 10-14)
 
@@ -194,10 +190,13 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 
 - [x] **N0** iPhone app: server `/v1` API and Xcode skeleton (Josh used it on his iPhone)
 - [x] **N1** One conversation on the phone (Josh tried the latest build, tap to talk and the new sent state)
+- [x] Prompt: characters only get text, can't hear pronunciation (2026-10-12b; Magda 2026-10-14b)
+- [x] Prompt: traits as manner, not expertise (~430 traits removed, 2026-10-13)
 - [x] Art less stereotypical; places more unique (Josh, 2026-10-15)
 
 ## Removed
 
+- Replies without their English, English on tap (2026-10-15): replay A/B, replies got longer and 2 of 7 conversations broke.
 - Prompt experiment "background as lived, fewer facts": cut by Josh, 2026-10-15; the prompt no longer carries any background (only name, age, role, city, setting, three traits, formality).
 - "Noticed" reply field: folded into the level in the character prompt (Josh, 2026-10-15).
 - Prompt experiment "who the learner is: lives here now, not a tourist": cut by Josh, 2026-10-15 ("they are a user of the app trying to learn a language").
