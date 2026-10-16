@@ -74,7 +74,7 @@ An attempt to give an overview of onboarding in Josh's words. It sits **on top o
 
 ## Build plan (Josh, 2026-10-15)
 
-1. **Define the frontend flow:** the screens, in order, until Josh approves it. ← now
+1. **Define the frontend flow:** the screens, in order, until Josh approves it.
 2. **Define the engineering needs** from the approved flow.
 3. **Implement.**
 
