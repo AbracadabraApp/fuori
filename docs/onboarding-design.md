@@ -72,6 +72,8 @@ Build these two screens in the iPhone app now, ahead of the rest of onboarding. 
 - **All of Settings on one screen:** every toggle and its checkmark visible at the default text size, with no scrolling box inside the sheet (no scroll within a scroll). At large text sizes the whole sheet scrolls as one.
 
 
+**Clickable walkthrough:** `design/onboarding/walkthrough.html` (open in a browser), both countries, both paths, as the app should look. It is the reference for the build; the canvas row is the earlier static version. Her picture is moved up per country so her face stays clear of the text.
+
 ## Her poses (Josh agreed, 2026-10-16)
 
 Four pictures of her per country, the original plus three edits that keep her, the background and the framing the same. The picture changes with a plain cut, no fade or zoom (Josh's pick from the test page). With Reduce Motion it's the same cut.
