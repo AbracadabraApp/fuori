@@ -59,12 +59,12 @@ Every prompt change says which goal it moves and may not make another worse (ver
 - [ ] **both** App Review: privacy policy URL, "report this line" button
 - [ ] **server** Web sunset, about 2 weeks after TestFlight
 
-
 ### Next release (likely deferred)
 
 Works or is wanted, but not for the first release.
 
 - [ ] **both** Hands-free extras: prepare the reply during the silence; the wait adapts to cut-offs and counts them. Hands-free itself stays in Settings, off by default. Josh, 2026-10-16, after using it: it works well but feels like an expert feature, not because of difficulty but because of the focus a free-flowing conversation takes; pressing a button is more forgiving on response time (perception) and gives the speaker more control.
+
 ## Earlier list (2026-10-12 to 10-14)
 
 Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How prompt changes are decided: [10-testing.md → Dialogue quality](10-testing.md#dialogue-quality-decided-2026-10-12).
