@@ -71,3 +71,39 @@ An attempt to give an overview of onboarding in Josh's words. It sits **on top o
 - Her name: none for now.
 - The one-app name (Fuori or Afuera) where it appears in shared screens.
 - Settings mockup: level (Beginner, Intermediate, Advanced), "More time to answer", About with the AI line.
+
+## Build plan: screens first, then code (Josh, 2026-10-15)
+
+Two passes. **First set the path in screens:** mock every screen and state (the claude.ai canvas, or HTML sketches on `sketches/tokens.css`) until Josh approves the path; the contradictions above get settled there, screen by screen. **Then code to make them work**, frontend and backend, against the approved screens. Nothing is coded before its screen is approved.
+
+### Frontend (SwiftUI, `FuoriFeatures/Onboarding`, a full-screen cover)
+
+Screens to set the path on:
+
+| # | Screen | States to mock | Open (settle on the screen) |
+|---|---|---|---|
+| F1 | **Country choice** | first launch; the same cards in Settings → Country | where the AI note goes |
+| F2 | **Greeter conversation**: one screen, her portrait and subtitles as on the person screen, with an answer area under her | answer area as: two buttons with English · two buttons without · mic (tap to talk) · buttons and mic together; speaking, listening, thinking, paused | ask the name or not; mic permission at her first spoken question |
+| F3 | **First branch**: "Do you speak any Italian, or are you just getting started?" (F2 with two buttons) | buttons with English, shown after she finishes speaking | — |
+| F4 | **Beginner path**: short lines, English after speaking, button answers easing to the mic | each ladder step; "still comfortable?" | which ladder (open question 2), how far it goes here |
+| F5 | **Some-language path**: open prompt, "Try to answer in Italian, or just answer in English" | listening; a long answer; an English answer; the quiet fallback to gentler steps | how the fallback looks (or doesn't) |
+| F6 | **Summary** in plain sentences, each changeable | Beginner / Intermediate / Advanced versions | can the learner change the level here, or only in Settings |
+| F7 | **Send-off** → the country's city list | — | — |
+| F8 | **Settings** additions | Level, Country, About Fuori (the AI line) | where "Advanced = no transcript" lives |
+
+Words in the learned language come from the server (her lines) or `/v1/content` (button labels); nothing Italian in Swift. Both countries mocked.
+
+Code, once screens are approved: first-launch gate (show onboarding until finished; resume if killed partway); the answer-area component (buttons and mic, reusing `ConversationModel`'s audio); mic permission at the right step; country switch (one Keychain token per server host already exists); Settings rows; done checklist per screen (AX5, VoiceOver with her lines read in the learned language, 44 pt, Reduce Motion, audio checks on the phone).
+
+### Backend (server, `/v1`)
+
+- **B1 Country list before any server.** The country is picked before the app knows which server to talk to, so the two cards, their pictures and the two server URLs are bundled in the app (or fetched from one fixed URL). Upload the card and greeter pictures to R2 either way.
+- **B2 The greeter as data**, per country in `content/<country>/`: her picture, voice, and the fixed beats she works through (no script). Not a character in the world.
+- **B3 `POST /v1/onboarding/turn`**: her next line from the current beat and what the learner said or tapped; returns `{line, en, answers?}` (two answers in the learned language with English, when the beat calls for buttons). Own prompt in `content/<country>/prompts/`, versioned with a changelog; all calls through `lib/claude.ts`. Recorded like any conversation.
+- **B4 Level read**: from the open answer and signals that work in any language (spoke or not, recording length, silence, answered in English) → level and a confidence. Calibrate with M3 #2's judge when it exists.
+- **B5 Learner profile**: level, name (if kept), settings overrides, onboarding finished; `GET/PUT /v1/me/settings` (M3 #3).
+- **B6 Start Magda's study file** from what they said they want (goals, why this country).
+- **B7 The level reaches the game** (M3 #1): characters' prompt, speech speed and default subtitles follow the saved level. Without it, landing "with a level set" changes nothing.
+- **B8 Checks**: a smoke test that walks onboarding end to end for both countries (`npm run smoke:live`, `COUNTRY=es-mx`), and a test that the saved level reaches `/v1/turn`.
+
+Order: screens F1–F8 → B1, B2, B5 (no Claude needed) → B3, B4 → frontend code → B6, B7. B7 can start any time; it is the same work as M3 #1.
