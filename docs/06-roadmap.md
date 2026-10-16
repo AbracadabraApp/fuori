@@ -48,7 +48,6 @@ Every prompt change says which goal it moves and may not make another worse (ver
 - [ ] **app** Visit stamps redesigned (collectible, on the caption, not a number in a circle)
 - [ ] **app** City picker improved (needs Josh's feedback on what's wrong)
 - [ ] **both** Stations and ticket: departures board, the clerk names the platform, "Sali"
-- [ ] **both** "Move to the app" link so web learners keep their data
 
 ### 6. Release
 - [ ] **both** TestFlight: signing, icon, microphone text, privacy label, App Attest, usage tracking, per-learner budgets
@@ -206,6 +205,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 
 ## Removed
 
+- "Move to the app" link for web learners: cut by Josh, 2026-10-16. Only Josh's data needed moving: his iPhone's sign-in now points to his web learner (3c544022), done on the database the same day.
 - "Come si dice?" button in the app (the web has one: hold to ask in English): cut by Josh, 2026-10-16; characters teach the phrase in conversation instead (see Language levels).
 - Measure lasting learning (next-day recall of Magda's target, tried in town, day 7 and 30; was M3 #7): cut by Josh, 2026-10-16; level grading across conversations covers whether the learner is improving.
 - Voice check before Whisper, server half (was M3 #5): dropped by Josh, 2026-10-16. Whisper on Groq reports no-speech 0.000 even on pure silence, so the server has nothing to check; the app's own check stops silent uploads.
