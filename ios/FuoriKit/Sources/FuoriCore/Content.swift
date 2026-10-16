@@ -6,6 +6,8 @@ import Foundation
 public struct Content: Codable, Sendable, Equatable {
     public let version: String
     public let country: String
+    /// The country's card in the country choice and Settings; nil from servers before 2026-10-16
+    public let card: CountryCard?
     public let language: Language
     public let ticketTheme: TicketTheme
     public let cities: [City]
@@ -17,6 +19,13 @@ public struct Content: Codable, Sendable, Equatable {
     /// The city list: first-screen cities, then the rest after "show more"
     public var firstScreenCities: [City] { cities.filter { !$0.more } }
     public var moreCities: [City] { cities.filter(\.more) }
+}
+
+/// A country as a card: its name and a line in English (app chrome), and its picture
+public struct CountryCard: Codable, Sendable, Equatable {
+    public let country: String
+    public let learn: String
+    public let image: URL?
 }
 
 public struct Language: Codable, Sendable, Equatable {

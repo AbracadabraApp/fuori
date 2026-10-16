@@ -14,6 +14,14 @@ public struct RootView: View {
         NavigationStack(path: $path) {
             Group {
                 switch model.phase {
+                case .choosingCountry:
+                    if model.countries.isEmpty {
+                        ProgressView()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(Tokens.Colors.paper)
+                    } else {
+                        CountryChoiceView()
+                    }
                 case .loading:
                     ProgressView()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -54,9 +62,11 @@ public struct RootView: View {
         }
         .tint(Tokens.Colors.green)
         .task {
-            if model.content == nil { await model.load() }
+            if model.content == nil { await model.start() }
             openFromLaunchArgument()
         }
+        // A new country (Settings → Where you're living) starts at its city list
+        .onChange(of: model.server) { path = NavigationPath() }
     }
 
     /// Debug builds only: `-FuoriOpen <cityId>/<placeId>` opens that place at

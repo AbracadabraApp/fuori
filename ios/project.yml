@@ -17,11 +17,9 @@ settings:
     CODE_SIGN_STYLE: Automatic
     MARKETING_VERSION: "0.1.0"
     CURRENT_PROJECT_VERSION: "1"
-    # The server this build talks to (Info.plist FuoriServer). Italy for now;
-    # the country is chosen in onboarding later (decision 1).
-    FUORI_SERVER: https://fuori-production.up.railway.app
-    # The two countries' servers, for the hidden debug switch (Settings → tap
-    # the version five times) until onboarding picks the country
+    # Each country's server (Info.plist FuoriCountryServers), in the order the
+    # country choice shows them; the learner picks one on first launch and can
+    # switch in Settings (docs/12-native-app.md decision 1)
     FUORI_SERVER_IT: https://fuori-production.up.railway.app
     FUORI_SERVER_MX: https://afuera-production.up.railway.app
 targets:
@@ -47,10 +45,9 @@ targets:
         CFBundleDisplayName: Fuori
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
-        FuoriServer: $(FUORI_SERVER)
-        FuoriServers:
-          Italy: $(FUORI_SERVER_IT)
-          Mexico: $(FUORI_SERVER_MX)
+        FuoriCountryServers:
+          - $(FUORI_SERVER_IT)
+          - $(FUORI_SERVER_MX)
         UILaunchScreen:
           UIColorName: ""
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
