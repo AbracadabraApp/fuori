@@ -86,6 +86,11 @@ Rules: about two minutes; the learner's word wins (Claude suggests, the learner 
 3. Sample conversations per tier, 10+ turns (to catch drift), judged automatically.
 4. Spot checks: Josh's teacher on Italian samples, and Josh playing Afuera as a beginner. Useful, but nothing depends on them.
 
+## Targets (Josh, 2026-10-15)
+
+- **Characters:** a set share of each line at the learner's level, the rest a little above. Proposed 95% of words within the level (listening-coverage research), to confirm.
+- **Moving up:** when the learner's own speech is a set share above their level, across several conversations. Magda suggests, the learner decides. The share is still to set.
+
 ## Open questions
 
 - ~~Two steps inside beginner, or one?~~ One: three levels, Beginner, Intermediate, Advanced (Josh, 2026-10-15).
