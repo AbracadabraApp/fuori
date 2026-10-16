@@ -1392,3 +1392,10 @@ Josh: "go for it" on the items Claude can finish without him. Each commit says w
 - The guide changes pose with a plain cut: welcome, listening, talking, laughing, per country. Pictures in `design/country-cards/poses/`, mapping in `docs/onboarding-design.md` ("Her poses"). For the laptop when onboarding is built.
 - Four poses for every character stays an idea (`docs/ideas.md`): neutral poses needed for open conversation; edits sometimes reframe.
 - Video loops of the guide: made, but `vidgen.x.ai` is blocked here, so not downloaded.
+
+## 2026-10-16 (morning): country choice and Settings in the app; end of session (laptop)
+
+- **Shipped (simulator-checked, installed on Josh's iPhone, not yet tapped):** country choice on first launch (cards from both servers' /v1/content) and Settings as agreed (Where you're living cards, level greyed out, Show <language> words / Show English translation / Allow dialect greyed out, Hands-free, About with the AI line, Privacy, Version). The app switches servers while running; pending saves are kept per server. Commits 6a643f6, 35edd8f, c3af204.
+- **Josh's decisions:** no greetings on the country cards (the cloud session's mockup added "Ciao!" / "¡Hola!" without agreement); keep the picture cards in Settings; no "more time to answer" setting (a6ed3f9, CLAUDE.md and docs/13 updated); "recent" is the only way to send the conversation (40a9ea8); the server half of the voice check dropped (Groq's no-speech signal is always 0).
+- **Railway:** a Fuori build failed on a corrupted build cache (not code); a redeploy from source fixed it. Watch paths still not effective.
+- **Next:** the "Start here" list at the top of docs/06-roadmap.md → Now.

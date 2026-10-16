@@ -8,47 +8,40 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the game milestones M3–M4). Roughly in order. **app** = Swift in `ios/`, **server** = Next.js, **both** = both. Detail lives in the linked docs; done and removed items are at the bottom of this file.
 
-### 0. Fix soon
-- [ ] **server** Railway watch paths: set on both services 2026-10-16 (railway.json was ignored: config as code is deprecated), but docs-only commits still deploy; check in the dashboard
-- [x] **server** `test:history` fixed: "recent" is the only way to send the conversation (2026-10-16)
+### Start here (2026-10-16)
+- [ ] **app** Josh tries today's build on his iPhone (installed): pick a country on first launch; Settings → switch country and back; Settings → Privacy; Version ×5 → debug panel; a typed reply with the mic off
+- [ ] **server** Railway watch paths: set on both services through the API (railway.json was ignored: config as code is deprecated), but docs-only commits still deploy; look in the dashboard (service → Settings → Watch Paths)
 
 ### 1. Finish the conversation on the phone
 - [ ] **app** Try Magda in the app
 - [ ] **app** Device checks: a call, Siri, AirPods in and out, backgrounding, locking
-- [x] **both** Error codes reach the server logs: `/v1/log`, the code on screen matches the log (2026-10-16)
-- [ ] **both** Response timing: investigate the ~6 s after a turn (deferred)
+- [ ] **both** Response timing: investigate the ~6 s after a turn (deferred; first number: Claude 3.6 s median per reply)
 - [ ] **both** Hands-free setting: prepare the reply during the silence; wait adapts to cut-offs and counts them
 
 ### 2. Prompt goals and scorecard
 | Goal | Today | Target |
 |---|---|---|
-| **Faster** | ~6 s wait, Claude 4–5 s of it | Reply under 2 s, 4 s at most |
+| **Faster** | ~6 s wait, Claude 3.6 s median of it | Reply under 2 s, 4 s at most |
 | **On level** | Characters speak B2+; no level in the prompt | 90% of the character's words at the learner's level, about one new word in ten (Josh; the [research](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech) suggests 95% for easy listening) |
 | **Length** | Median 21 words | 20 or fewer, heading toward 10 |
 
-Every prompt change says which goal it moves and may not make another worse (version, changelog, `npm run test:replay`).
+Every prompt change says which goal it moves and may not make another worse (version, changelog, `npm run test:replay`). The scorecard now also has reply time, coherence, feels alive and broken conversations.
 
-- [ ] **server** Add to the scorecard (`lib/scorecard.ts`):
-  - [x] Reply time per turn (first number: 3.6 s median)
-  - [ ] Level of the character's lines (from the level judge, section 3)
-  - [x] Broken replies fail the change
-  - [x] Coherence ("replies that don't follow")
-  - [x] Feels alive (1–10; target 7, provisional)
-- [x] **server** Count dropped audio from the live logs: `npm run voice:failures` (2026-10-16)
+- [ ] **server** Level of the character's lines on the scorecard (from the level judge, section 3)
 - [ ] **server** Change the `test:conversations` grader: it's told not to mark down complex language, so it rewards characters who speak above the learner; judge against the on-level share instead (needs Josh's OK)
 - [ ] **server** Faster replies: try Haiku; start the voice as soon as the line is streamed
 
 ### 3. Language levels ([language-levels-plan.md](language-levels-plan.md))
 - [ ] **server** Measure the level of what characters say: level judge on exam samples, word coverage, `test:levels`
 - [ ] **server** Level in the character prompt, every turn, in role (replaces the "noticed" field)
-- [ ] **both** Level and settings saved with the learner (speed, default subtitles)
+- [ ] **both** Level and settings saved with the learner (speed, default subtitles); then turn on the greyed-out level control in Settings
 - [ ] **server** Moving up a level: when **90% of the learner's speech is at the next level**, across several conversations (Josh, 2026-10-15). Magda suggests it, the learner decides.
 - [ ] **server** Measure lasting learning: next-day recall, tried in town, day 7 and 30
-- [ ] **both** More dialect as you level up (the dialect setting does nothing today)
+- [ ] **both** More dialect as you level up (the dialect setting is greyed out today)
 
 ### 4. Onboarding and the beginner path ([onboarding-design.md](onboarding-design.md))
-- [ ] **both** Onboarding, including the country choice
-  - [ ] Define the frontend flow
+- [ ] **both** Onboarding (the country choice and Settings shipped first, 2026-10-16)
+  - [ ] Define the frontend flow (the cloud session is drawing it with Josh)
   - [ ] Define the engineering needs
   - [ ] Implement
 - [ ] **both** Beginner ladder: pick a reply → read it aloud → speak with help → speak freely
@@ -56,19 +49,15 @@ Every prompt change says which goal it moves and may not make another worse (ver
 ### 5. Parity with the web
 - [ ] **app** Visit stamps redesigned (collectible, on the caption, not a number in a circle)
 - [ ] **app** City picker improved (needs Josh's feedback on what's wrong)
-- [ ] **both** Mexico in the app
 - [ ] **both** Stations and ticket: departures board, the clerk names the platform, "Sali"
-- [x] **app** Hidden debug switch: Settings → tap Version five times; debug panel and Italy/Mexico server choice (2026-10-16)
 - [ ] **both** "Move to the app" link so web learners keep their data
 - [ ] **both** Asking in English ("Come si dice?"): the web has a button, the app doesn't
 - [ ] **app** Night-paper dark palette (D1)
-- [x] **app** Typed reply, as an accessibility fallback only (D6): mic off, VoiceOver or Switch Control (2026-10-16; sending not yet tried)
 
 ### 6. Release
 - [ ] **both** TestFlight: signing, icon, microphone text, privacy label, App Attest, usage tracking, per-learner budgets
 - [ ] **server** R2 custom domain (the free r2.dev address is rate-limited, for development only)
 - [ ] **both** App Review: privacy policy URL, "report this line" button
-- [x] **both** Forced upgrade for old app versions: `MIN_APP_VERSION` → 426, "Update the app" (2026-10-16)
 - [ ] **server** Web sunset, about 2 weeks after TestFlight
 
 ## Earlier list (2026-10-12 to 10-14)
@@ -199,6 +188,15 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 - [x] **N1** One conversation on the phone (Josh tried the latest build, tap to talk and the new sent state)
 - [x] Prompt: characters only get text, can't hear pronunciation (2026-10-12b; Magda 2026-10-14b)
 - [x] Bench characters (Josh, 2026-10-15)
+- [x] `test:history`: "recent" is the only way to send the conversation (2026-10-16)
+- [x] Error codes reach the server logs: `/v1/log`, the code on screen matches the log (2026-10-16)
+- [x] Scorecard: reply time, coherence, feels alive; a broken conversation fails the gate (2026-10-16)
+- [x] Dropped voices counted from the live logs: `npm run voice:failures` (2026-10-16)
+- [x] Hidden debug switch: Settings → tap Version five times (2026-10-16)
+- [x] Typed reply, as an accessibility fallback only (D6) (2026-10-16; sending not yet tried)
+- [x] Forced upgrade for old app versions: `MIN_APP_VERSION` → 426, "Update the app" (2026-10-16)
+- [x] Country choice on first launch and the new Settings; Mexico in the app (2026-10-16; not yet tapped on the phone)
+- [x] "More time to answer" removed (Josh, 2026-10-16: confusing)
 - [x] `/api/generate-image` deleted: an open xAI proxy (Josh, 2026-10-15)
 - [x] Prompt: traits as manner, not expertise (~430 traits removed, 2026-10-13)
 - [x] Art less stereotypical; places more unique (Josh, 2026-10-15)
