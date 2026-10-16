@@ -24,6 +24,7 @@ struct ConversationControls: View {
         .sensoryFeedback(trigger: model.phase) { _, new in
             switch new {
             case .listening, .tapToTalk: .impact(weight: .light)
+            case .thinking: .impact(weight: .heavy) // the tap that sends the turn
             case .paused: .impact(weight: .medium)
             case .failed, .micDenied: .error
             default: nil
@@ -91,7 +92,9 @@ struct ConversationControls: View {
                 }
             }
         case .thinking:
-            LevelDots(level: reduceMotion ? 0.3 : nil, colour: Tokens.Colors.terracotta)
+            // Sent: solid terracotta with white dots, unmistakably not listening
+            // any more (Josh, 2026-10-15: the submit tap should clearly change state)
+            LevelDots(level: reduceMotion ? 0.3 : nil, colour: Tokens.Colors.card)
         case .tapToTalk:
             Image(systemName: "mic.fill").font(.title2).foregroundStyle(Tokens.Colors.card)
         case .paused:
@@ -119,6 +122,7 @@ struct ConversationControls: View {
     private var pillFill: Color {
         switch model.phase {
         case .speaking, .tapToTalk: Tokens.Colors.green
+        case .thinking: Tokens.Colors.terracotta
         default: Tokens.Colors.card
         }
     }

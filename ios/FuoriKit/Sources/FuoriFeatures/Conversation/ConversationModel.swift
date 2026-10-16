@@ -261,7 +261,8 @@ public final class ConversationModel {
             try? FileManager.default.removeItem(at: url)
             let said = try await api.transcribe(audio: audio)
             guard generation == self.generation else { return }
-            guard !said.isEmpty else {
+            // Speech to text heard no words ("...", "?"): not a turn
+            guard Heard.hasWords(said) else {
                 note = "Didn't catch that."
                 await openTurn()
                 return
