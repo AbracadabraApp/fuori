@@ -53,7 +53,7 @@ export interface Content {
   version: string;
   country: string;
   /** The country's card for the app's country choice and Settings */
-  card: { country: string; learn: string; greeting: string; image: string | null };
+  card: { country: string; learn: string; image: string | null };
   language: {
     code: string;
     name: string;
