@@ -44,7 +44,7 @@ Every prompt change says which goal it moves and may not make another worse (ver
 - [ ] **both** Level and settings saved with the learner (speed, default subtitles)
 - [ ] **server** Voice check before Whisper, server half (app half done)
 - [ ] **server** Honest learner level: Magda's slow band, strengths line, her lesson tweaks
-- [ ] **server** Moving up a level: when the learner's own speech is a set share above their level, across several conversations, not one: **90% of their speech at the next level** (Josh, 2026-10-15). Magda suggests it, the learner decides.
+- [ ] **server** Moving up a level: when **90% of the learner's speech is at the next level**, across several conversations (Josh, 2026-10-15). Magda suggests it, the learner decides.
 - [ ] **server** Measure lasting learning: next-day recall, tried in town, day 7 and 30
 - [ ] **both** More dialect as you level up (the dialect setting does nothing today)
 
