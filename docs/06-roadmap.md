@@ -43,7 +43,6 @@ Every prompt change says which goal it moves and may not make another worse (ver
 - [ ] **server** Level in the character prompt, every turn, in role (replaces the "noticed" field)
 - [ ] **both** Level and settings saved with the learner (speed, default subtitles)
 - [ ] **server** Voice check before Whisper, server half (app half done)
-- [ ] **server** Honest learner level: Magda's slow band, strengths line, her lesson tweaks
 - [ ] **server** Moving up a level: when **90% of the learner's speech is at the next level**, across several conversations (Josh, 2026-10-15). Magda suggests it, the learner decides.
 - [ ] **server** Measure lasting learning: next-day recall, tried in town, day 7 and 30
 - [ ] **both** More dialect as you level up (the dialect setting does nothing today)
@@ -206,6 +205,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 
 ## Removed
 
+- Honest learner level (Magda's slow band over sessions, strengths line, her lesson tweaks; was M3 #6): cut by Josh, 2026-10-15, as not practical.
 - Replies without their English, English on tap (2026-10-15): replay A/B, replies got longer and 2 of 7 conversations broke.
 - Prompt experiment "background as lived, fewer facts": cut by Josh, 2026-10-15; the prompt no longer carries any background (only name, age, role, city, setting, three traits, formality).
 - "Noticed" reply field: folded into the level in the character prompt (Josh, 2026-10-15).
