@@ -10,6 +10,7 @@ Each character gets four stills of the same picture: the original plus three mad
 
 - **Test:** the Italy onboarding guide. The background stayed identical across all four and every image had two hands; her face varied slightly (hair, smile). About 2 cents an image, so roughly $0.06 a character and $45 for the ~705 current portraits.
 - **Transition (Josh):** a plain cut with no zoom is his favourite; a crossfade with a slight zoom second. The crossfade alone showed both pictures at once (two faces, an extra arm) halfway through.
+- **Neutral faces for open conversation (Josh):** the conversation can go anywhere, so a laughing face can land on sad news. Fine for the onboarding guide, whose lines are known. For everyone else the four poses differ in body, not mood: listening, talking with a small gesture, talking with the other hand or a head turn, thinking (glancing aside). Mild, pleasant expression in all four.
 - Open: which pose to show when (simple rotation, or a one-word mood next to `{ line, en }`), and whether the drawn portrait styles hold up under editing as well as the photo did.
 
 ## Animated clips for the core cast
