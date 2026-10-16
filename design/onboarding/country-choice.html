@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Choose a country</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700&amp;family=Alegreya+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#566330}a:hover{color:#3f4a22}
+.card{transition:transform .15s ease, box-shadow .15s ease}
+.card:active{transform:scale(0.98)}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #f5f1ed; padding: 64px 16px 24px; display: flex; flex-direction: column; gap: 20px; font-family: 'Alegreya Sans', 'Gill Sans', sans-serif; color: #333333;">
+  <div style="display: flex; flex-direction: column; gap: 8px; padding: 0 4px;">
+    <h1 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 34px; font-weight: 700; line-height: 1.05; color: #000000;">Where are you headed?</h1>
+    <p style="margin: 0; font-size: 17px; line-height: 1.35; color: #5c5650;">Pick the country you're living in. You can switch any time in Settings.</p>
+  </div>
+
+  <sc-for list="{{countries}}" as="c" hint-placeholder-count="2">
+    <button class="card" type="button" onClick="{{c.pick}}" aria-label="{{c.label}}" style="{{c.cardStyle}}">
+      <img src="{{c.img}}" alt="" style="display: block; width: 100%; height: 214px; object-fit: cover; object-position: {{c.focus}};">
+      <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px 16px;">
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; text-align: left;">
+          <span style="font-family: 'Alegreya', Georgia, serif; font-size: 28px; font-weight: 700; line-height: 1.05; color: #000000;">{{c.name}}</span>
+          <span style="font-size: 17px; color: #5c5650;">{{c.sub}}</span>
+        </div>
+        <span lang="{{c.lang}}" style="font-family: 'Alegreya', Georgia, serif; font-style: italic; font-size: 22px; color: #566330;">{{c.hello}}</span>
+        <svg width="10" height="18" viewBox="0 0 10 18" fill="none" stroke="#8a847d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 1.5L8.5 9L1.5 16.5"/></svg>
+      </div>
+    </button>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { picked: null }; }
+  renderVals() {
+    const base = 'display: block; width: 100%; padding: 0; border: 0; border-radius: 8px; overflow: hidden; background: #ffffff; cursor: pointer; font: inherit; box-shadow: 0 2px 8px rgba(0,0,0,0.10);';
+    const list = [
+      { id: 'it', name: 'Italy', sub: 'Learn Italian', hello: 'Ciao!', lang: 'it', label: 'Italy, learn Italian', img: '/_blob/5ba28a9565bad0b8a7d8859c3c1432f1', focus: 'center 40%' },
+      { id: 'mx', name: 'Mexico', sub: 'Learn Mexican Spanish', hello: '¡Hola!', lang: 'es-MX', label: 'Mexico, learn Mexican Spanish', img: '/_blob/b76a111d201437301592d8e6ac774ccd', focus: 'center 45%' },
+    ];
+    return {
+      countries: list.map((c) => ({
+        ...c,
+        cardStyle: base + (this.state.picked === c.id ? ' outline: 3px solid #566330; outline-offset: 2px;' : ''),
+        pick: () => this.setState({ picked: c.id }),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

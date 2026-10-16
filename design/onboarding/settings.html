@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Settings</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700&amp;family=Alegreya+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#566330}a:hover{color:#3f4a22}
+.tap:active{opacity:.7}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #f5f1ed; padding: 56px 16px 24px; display: flex; flex-direction: column; gap: 12px; font-family: 'Alegreya Sans', 'Gill Sans', sans-serif; color: #333333;">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 4px;">
+    <h1 style="margin: 0; font-family: 'Alegreya', Georgia, serif; font-size: 34px; font-weight: 700; line-height: 1.05; color: #000000;">Settings</h1>
+    <button class="tap" type="button" style="min-height: 44px; padding: 0 4px; border: 0; background: none; font: inherit; font-size: 18px; font-weight: 700; color: #566330; cursor: pointer;">Done</button>
+  </div>
+
+  <section style="display: flex; flex-direction: column; gap: 8px;">
+    <h2 style="margin: 0; padding: 0 4px; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #5c5650;">Where you're living</h2>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+      <sc-for list="{{countries}}" as="c" hint-placeholder-count="2">
+        <button class="tap" type="button" onClick="{{c.pick}}" aria-label="{{c.label}}" style="{{c.cardStyle}}">
+          <img src="{{c.img}}" alt="" style="display: block; width: 100%; height: 84px; object-fit: cover;">
+          <div style="display: flex; flex-direction: column; gap: 2px; padding: 10px 12px 12px; text-align: left;">
+            <span style="font-family: 'Alegreya', Georgia, serif; font-size: 22px; font-weight: 700; line-height: 1.05; color: #000000;">{{c.name}}</span>
+            <sc-if value="{{c.current}}" hint-placeholder-val="{{true}}">
+              <span style="display: flex; align-items: center; gap: 5px; font-size: 15px; font-weight: 700; color: #566330;">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#566330" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
+                You're here
+              </span>
+            </sc-if>
+            <sc-if value="{{c.other}}" hint-placeholder-val="{{false}}">
+              <span style="font-size: 15px; color: #5c5650;">Switch to {{c.name}}</span>
+            </sc-if>
+          </div>
+        </button>
+      </sc-for>
+    </div>
+    <p style="margin: 0; padding: 0 4px; font-size: 15px; color: #5c5650;">Your progress and the people you've met are kept in each country.</p>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 8px;">
+    <h2 style="margin: 0; padding: 0 4px; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #5c5650;">{{levelHeading}}</h2>
+    <div role="group" aria-label="Level, coming soon" aria-disabled="true" style="opacity: 0.45; pointer-events: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 10px; background: #e8d5c4;">
+      <sc-for list="{{tiers}}" as="t" hint-placeholder-count="3">
+        <button class="tap" type="button" onClick="{{t.pick}}" aria-pressed="{{t.pressed}}" style="{{t.style}}">{{t.name}}</button>
+      </sc-for>
+    </div>
+    <p style="margin: 0; padding: 0 4px; font-size: 15px; line-height: 1.35; color: #5c5650;">Coming soon</p>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 8px;">
+    <h2 style="margin: 0; padding: 0 4px; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #5c5650;">Subtitles</h2>
+    <div style="display: flex; flex-direction: column; border-radius: 8px; background: #ffffff; overflow: hidden;">
+      <label style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 6px 16px; cursor: pointer; border-bottom: 1px solid #ece6df;">
+        <span style="flex-grow: 1; font-size: 18px; font-weight: 500; color: #000000;">Show {{languageName}} words</span>
+        <input type="checkbox" checked style="width: 24px; height: 24px; accent-color: #566330;">
+      </label>
+      <label style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 6px 16px; cursor: pointer;">
+        <span style="flex-grow: 1; font-size: 18px; font-weight: 500; color: #000000;">Show English translation</span>
+        <input type="checkbox" checked style="width: 24px; height: 24px; accent-color: #566330;">
+      </label>
+      <label style="display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 6px 16px; border-top: 1px solid #ece6df; opacity: 0.45;">
+        <span style="display: flex; flex-direction: column; flex-grow: 1;">
+          <span style="font-size: 18px; font-weight: 500; color: #000000;">Allow dialect</span>
+          <span style="font-size: 15px; color: #5c5650;">Coming soon</span>
+        </span>
+        <input type="checkbox" disabled style="width: 24px; height: 24px; accent-color: #566330;">
+      </label>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 8px;">
+    <h2 style="margin: 0; padding: 0 4px; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: #5c5650;">About</h2>
+    <div style="display: flex; flex-direction: column; border-radius: 8px; background: #ffffff; overflow: hidden;">
+      <p style="margin: 0; padding: 14px 16px; font-size: 17px; line-height: 1.35; color: #333333; border-bottom: 1px solid #ece6df;">Everyone you meet in {{appName}} is played by an AI.</p>
+      <a class="tap" href="#privacy" style="display: flex; align-items: center; justify-content: space-between; min-height: 48px; padding: 0 16px; font-size: 17px; color: #000000; text-decoration: none;">
+        Privacy
+        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" stroke="#8a847d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1L7 7L1 13"/></svg>
+      </a>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { country: 'it', tier: 'beginner' }; }
+  renderVals() {
+    const card = 'display: block; width: 100%; padding: 0; border: 0; border-radius: 8px; overflow: hidden; background: #ffffff; cursor: pointer; font: inherit; box-shadow: 0 2px 8px rgba(0,0,0,0.10);';
+    const list = [
+      { id: 'it', name: 'Italy', app: 'Fuori', language: 'Italian', img: '/_blob/5ba28a9565bad0b8a7d8859c3c1432f1' },
+      { id: 'mx', name: 'Mexico', app: 'Afuera', language: 'Spanish', img: '/_blob/b76a111d201437301592d8e6ac774ccd' },
+    ];
+    const here = list.find((c) => c.id === this.state.country);
+    const tierList = [
+      { id: 'beginner', name: 'Beginner', note: 'People speak slowly, keep it simple and show the English.' },
+      { id: 'intermediate', name: 'Intermediate', note: 'Normal sentences, a little slower than natural. English only if you ask.' },
+      { id: 'advanced', name: 'Advanced', note: 'People talk to you as they would to anyone, at natural speed.' },
+    ];
+    const tier = tierList.find((t) => t.id === this.state.tier);
+    return {
+      appName: here.app,
+      languageName: here.language,
+      levelHeading: 'Your ' + here.language,
+      tierNote: tier.note,
+      countries: list.map((c) => {
+        const current = c.id === this.state.country;
+        return {
+          ...c,
+          current,
+          other: !current,
+          label: current ? c.name + ', where you are now' : 'Switch to ' + c.name,
+          cardStyle: card + (current ? ' outline: 3px solid #566330; outline-offset: 2px;' : ' opacity: 0.92;'),
+          pick: () => this.setState({ country: c.id }),
+        };
+      }),
+      tiers: tierList.map((t) => {
+        const on = t.id === this.state.tier;
+        return {
+          ...t,
+          pressed: on ? 'true' : 'false',
+          style: 'min-height: 44px; border: 0; border-radius: 7px; font: inherit; font-size: 16px; cursor: pointer; ' + (on ? 'background: #566330; color: #ffffff; font-weight: 700;' : 'background: transparent; color: #333333; font-weight: 500;'),
+          pick: () => this.setState({ tier: t.id }),
+        };
+      }),
+    };
+  }
+}
+</script>
+</body>
+</html>
