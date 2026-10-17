@@ -106,6 +106,13 @@ Written by the end-of-conversation step (`lib/remember.ts`), stored with the phr
 | Audio | Character's line and answers in the character's voice; the replies in your voice |
 | Level | 1–5 |
 
+## Being explored: a scripted, smaller world for levels 1–3 (Josh, 2026-10-17)
+
+Not decided; being tested ([test-ideas.md](test-ideas.md), [level-judge-test.md](level-judge-test.md) rounds 11–12).
+- **Scripted dialogue.** Levels 1–3 last at most 100–150 turns and the learner only taps, so the dialogue can be written ahead: fixed scripts per character, the same for every learner, checked before anyone hears them, audio recorded once. CLAUDE.md's "no scripted scenes" predates beginner levels and doesn't rule this out.
+- **A smaller world.** Beginners stay in one neighbourhood until level 4: Trastevere has 11 characters (Rita, Giulia, the fruit seller, the baker, the oste, the parish priest, the nonna, the bookseller, the sommelier, the pharmacist, the newsagent); 2–3 visits each is 22–33 conversations, about the 100–150 turns of levels 1–3. Mexico City has 13 characters across four neighbourhoods. Small enough for a person to read every line, and the visits can be ordered so the frames build up ("Vorrei…" before "Sono di…"). Leaving the neighbourhood is the reward for reaching level 4.
+- **What it costs:** levels 1–3 lose the open world; the feed and the day's suggestions stay inside the neighbourhood; a script can't remember the learner's own taps from an earlier visit or say their name without live audio.
+
 ## Open questions
 
 - Phrases that aren't frames (a noun like "cornetto integrale" on its own): either the end-of-conversation step always picks frame-shaped chunks, or such phrases ride inside a frame and level 5 opens the frame's slot rather than the noun.
