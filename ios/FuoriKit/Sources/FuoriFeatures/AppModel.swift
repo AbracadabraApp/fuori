@@ -102,8 +102,18 @@ public final class AppModel {
     /// Settings → Italy).
     public var pendingCountry: Country?
 
-    /// Called when the settings sheet has gone: switch to the country picked in it
+    /// Settings → Developer → Restart onboarding, applied the same way once the
+    /// sheet has closed
+    public var pendingRestart = false
+
+    /// Called when the settings sheet has gone: switch to the country picked in
+    /// it, or go back to the start of onboarding
     public func applyPendingCountry() async {
+        if pendingRestart {
+            pendingRestart = false
+            await restartOnboarding()
+            return
+        }
         guard let country = pendingCountry else { return }
         pendingCountry = nil
         await choose(country)
@@ -119,6 +129,21 @@ public final class AppModel {
         visits = [:]
         learnerId = nil
         await load()
+    }
+
+    /// Back to the first launch, for testing onboarding (hidden: Settings →
+    /// touch and hold Version). Forgets the chosen country and shows the country
+    /// choice. Each country's learner is kept (its Keychain token), so progress
+    /// and the people met aren't lost.
+    public func restartOnboarding() async {
+        UserDefaults.standard.removeObject(forKey: Self.countryKey)
+        server = nil
+        api = nil
+        content = nil
+        visits = [:]
+        learnerId = nil
+        phase = .choosingCountry
+        await loadCountries()
     }
 
     /// Load the content, then the learner's visits (signing in on first launch).

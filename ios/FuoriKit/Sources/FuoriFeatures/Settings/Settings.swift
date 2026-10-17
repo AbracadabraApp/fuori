@@ -10,7 +10,7 @@ public enum SettingsKey {
     /// On: the mic opens by itself after the character and closes after a silence.
     public static let handsFree = "settings.handsFree"
     /// Hidden (Settings → touch and hold Version): the debug panel on the
-    /// person screen and the server choice, as the web's ?debug=1
+    /// person screen, the server and learner, and Restart onboarding, as the web's ?debug=1
     public static let debug = "settings.debug"
 }
 
@@ -134,6 +134,11 @@ struct SettingsSheet: View {
                         LabeledContent("Server", value: model.server?.host() ?? "—")
                         LabeledContent("Learner", value: model.learnerId ?? "—")
                             .textSelection(.enabled)
+                        // Back to the country choice, as on first launch (applied once the sheet has closed)
+                        Button("Restart onboarding") {
+                            model.pendingRestart = true
+                            dismiss()
+                        }
                     }
                 }
             }
