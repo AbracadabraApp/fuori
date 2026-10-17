@@ -28,6 +28,11 @@ for (const level of blocks) {
   if (unfilled.length) failures.push(`${level}: unfilled ${unfilled.join(', ')}`);
   if (!p.version.endsWith(`+${level}`)) failures.push(`${level}: version should name the level`);
 }
+// Placed in the newest message instead, the system prompt stays today's
+const atLast = buildTurnPrompt({ character, transcript: [], level: blocks[0], levelAt: 'last' });
+if (atLast.system !== plain.system) failures.push('levelAt last should leave the system prompt unchanged');
+if (!atLast.messages[atLast.messages.length - 1].content.startsWith('(')) failures.push('levelAt last should open the newest message');
+
 // Magda's own prompt never gets the block
 const magda = buildTurnPrompt({ character, transcript: [], system: 'X', level: blocks[0] });
 if (magda.system !== 'X') failures.push("a level block was added to Magda's prompt");

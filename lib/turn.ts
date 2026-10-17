@@ -4,7 +4,7 @@
  */
 
 import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
+import { anthropic, TURN_MODEL, replyText } from '@/lib/claude';
 import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
 import type { CharacterSheet, Turn } from '@/lib/types';
@@ -27,11 +27,12 @@ export async function runTurn(params: {
   firstTurn?: string;
   /** Experimental level block (tests only; see buildTurnPrompt) */
   level?: string;
+  levelAt?: 'system' | 'last';
 }): Promise<TurnReply> {
   const prompt = buildTurnPrompt(params);
 
   const response = await anthropic.messages.create({
-    model: CLAUDE_MODEL,
+    model: TURN_MODEL,
     max_tokens: 800, // was 2048; a reply is ~20 words. Caps the cost of a turn someone tries to stretch (docs/12-native-app.md)
     temperature: 1.0,
     system: prompt.system,

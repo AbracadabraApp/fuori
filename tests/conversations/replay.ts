@@ -43,6 +43,7 @@ const COMPARE = flag('compare');
 const TARGET = flag('target') ?? 'replyWords';
 const LABEL = flag('label');
 const LEVEL = flag('level');
+const LEVEL_AT = flag('level-at') as 'system' | 'last' | undefined;
 
 const DIR = join(process.cwd(), 'tests', 'conversations');
 const SET_FILE = join(DIR, 'replay-set.json');
@@ -140,11 +141,11 @@ async function replay(c: Case): Promise<Result> {
   // How long each reply takes (the "faster" goal); the opening isn't a reply
   const replyMs: number[] = [];
   try {
-    const opening = await runTurn({ character: c.character, transcript: [], level: LEVEL });
+    const opening = await runTurn({ character: c.character, transcript: [], level: LEVEL, levelAt: LEVEL_AT });
     transcript.push({ who: 'npc', transcript: opening.line, translation: opening.en });
     for (const said of c.script.lines.slice(0, TURNS)) {
       const started = performance.now();
-      const reply = await runTurn({ character: c.character, transcript, learnerSaid: said, level: LEVEL });
+      const reply = await runTurn({ character: c.character, transcript, learnerSaid: said, level: LEVEL, levelAt: LEVEL_AT });
       replyMs.push(Math.round(performance.now() - started));
       transcript.push({ who: 'learner', transcript: said });
       transcript.push({ who: 'npc', transcript: reply.line, translation: reply.en });

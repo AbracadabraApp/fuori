@@ -6,6 +6,10 @@ import Anthropic from '@anthropic-ai/sdk';
  */
 export const CLAUDE_MODEL = process.env.CLAUDE_MODEL || 'claude-sonnet-5-5';
 
+/** The characters' replies only (lib/turn.ts); the judges keep CLAUDE_MODEL.
+ *  Set TURN_MODEL in a test to try a faster model without changing the judge. */
+export const TURN_MODEL = process.env.TURN_MODEL || CLAUDE_MODEL;
+
 export const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });

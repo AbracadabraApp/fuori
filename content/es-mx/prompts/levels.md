@@ -1,6 +1,6 @@
 # Learner levels in the character prompt (Mexican Spanish)
 
-version: 2026-10-16b
+version: 2026-10-16c
 
 What a character is told about how much {language} the learner follows.
 Experimental (docs/language-levels-plan.md → Preliminary design): used only
@@ -27,6 +27,12 @@ They are just starting to learn {language}. They follow only short, plain {langu
 They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time. You're still yourself with them: your humour, your opinions, your place.
 ```
 
+## Beginner: still you, with subtitles
+
+```
+They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time. After you speak they see an English translation of what you said. You're still yourself with them: your humour, your opinions, your place.
+```
+
 ## Beginner: shape
 
 ```
@@ -44,6 +50,12 @@ For example: "¡Un café de olla, ahorita! ¿Tú vives por aquí?"
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-16c: "still you, with subtitles"
+
+Josh: success is levelled dialogue plus scaffolding. This variant tells the
+character the learner sees an English translation after each line, to see
+whether characters then keep more life without losing the beginner.
 
 ### 2026-10-16b: "situation, still you"
 

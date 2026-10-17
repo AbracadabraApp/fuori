@@ -34,6 +34,7 @@ const TURNS = arg('turns', 6);
 const DRY = process.argv.includes('--dry');
 const SEED = process.argv.find((a) => a.startsWith('--seed='))?.split('=')[1];
 const LEVEL = process.argv.find((a) => a.startsWith('--level='))?.split('=').slice(1).join('=');
+const LEVEL_AT = process.argv.find((a) => a.startsWith('--level-at='))?.split('=')[1] as 'system' | 'last' | undefined;
 
 // Seeded random numbers, so --seed gives the same sample on every run
 function seeded(seed: number) {
@@ -169,12 +170,12 @@ Write ONLY what the learner says next, as speech-to-text would capture it. One o
 
 async function simulate(c: Case): Promise<Turn[]> {
   const transcript: Turn[] = [];
-  const opening = await runTurn({ character: c.character, transcript: [], level: LEVEL });
+  const opening = await runTurn({ character: c.character, transcript: [], level: LEVEL, levelAt: LEVEL_AT });
   transcript.push({ who: 'npc', transcript: opening.line, translation: opening.en });
 
   for (let i = 0; i < TURNS; i++) {
     const said = await learnerLine(c, transcript);
-    const reply = await runTurn({ character: c.character, transcript, learnerSaid: said, level: LEVEL });
+    const reply = await runTurn({ character: c.character, transcript, learnerSaid: said, level: LEVEL, levelAt: LEVEL_AT });
     transcript.push({ who: 'learner', transcript: said });
     transcript.push({ who: 'npc', transcript: reply.line, translation: reply.en });
   }
@@ -383,7 +384,7 @@ async function main() {
   const dir = join(process.cwd(), 'tests', 'conversations', 'reports');
   mkdirSync(dir, { recursive: true });
   // Seconds and the level in the name, so runs started together don't overwrite each other
-  const file = join(dir, `${new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-')}${LEVEL ? `-${LEVEL.replace(/\W+/g, '-').toLowerCase()}` : ''}.md`);
+  const file = join(dir, `${new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-')}${LEVEL ? `-${LEVEL.replace(/\W+/g, '-').toLowerCase()}` : ''}${LEVEL_AT === 'last' ? '-last' : ''}${process.env.TURN_MODEL ? `-${process.env.TURN_MODEL}` : ''}.md`);
   writeFileSync(file, report(results, recs));
   // Machine-readable summary, for comparing runs before and after a change
   const okRuns = results.filter((r) => !r.error);

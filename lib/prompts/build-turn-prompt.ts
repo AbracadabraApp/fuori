@@ -48,6 +48,9 @@ interface BuildTurnPromptParams {
    *  "Beginner: shape"), added at the end of the character prompt. Only the
    *  tests pass one; without it the prompt is today's. */
   level?: string;
+  /** Where the level block goes: the end of the system prompt (default) or
+   *  the start of the newest message, closest to the reply (tests only) */
+  levelAt?: 'system' | 'last';
 }
 
 interface TurnPrompt {
@@ -132,16 +135,22 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
     english,
     relationship: relationshipLine(t, memory, now),
   });
-  const levelled = params.level && !params.system
-    ? `${system}\n\n${fill(readPromptFile('levels.md').block(params.level), {
+  const levelBlock = params.level && !params.system
+    ? fill(readPromptFile('levels.md').block(params.level), {
         language: language.name,
         role: character.role,
         formality: language.formality[character.speech.formality],
-      })}`
-    : system;
+      })
+    : '';
+  const levelled = levelBlock && params.levelAt !== 'last' ? `${system}\n\n${levelBlock}` : system;
 
   const messages: PromptMessage[] =
     transcript.length > 0 ? recentMessages(t, transcript, learnerSaid ?? '') : [{ role: 'user', content: t.firstTurn.trim() }];
+
+  if (levelBlock && params.levelAt === 'last') {
+    const last = messages[messages.length - 1];
+    messages[messages.length - 1] = { ...last, content: `(${levelBlock})\n\n${last.content}` };
+  }
 
   return { system: levelled, messages, version: params.level ? `${t.version}+${params.level}` : t.version };
 }
