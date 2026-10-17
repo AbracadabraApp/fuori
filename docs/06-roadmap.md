@@ -40,7 +40,7 @@ Every prompt change says which goal it moves and may not make another worse (ver
 ### 4. Onboarding and the beginner path ([onboarding-design.md](onboarding-design.md))
 - [ ] **both** Onboarding (the country choice and Settings shipped first, 2026-10-16)
   - [x] Define the frontend flow (walkthrough: `design/onboarding/walkthrough.html`)
-  - [ ] Define the engineering needs (drafted in onboarding-design.md, open points with Josh)
+  - [x] Define the engineering needs (onboarding-design.md → Engineering needs; open points answered by Josh, 2026-10-16)
   - [ ] Implement
 - [ ] **both** Beginner ladder: pick a reply → read it aloud → speak with help → speak freely
 

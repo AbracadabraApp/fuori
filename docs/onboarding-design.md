@@ -126,7 +126,6 @@ Steps 2–5 below are the older draft.
 
 - For gameplay, not onboarding (Josh): teaching how to ask for help (*Può ripetere, per favore?*), e.g. a character offering it in role when the learner is lost.
 
-- Whether her line in step 3 also drops the English.
 - The microphone permission prompt: proposed at step 1, first time she asks you to speak.
 - The level steps after step 4, and how far the ladder goes in onboarding.
 - Her name: none for now. The learner's name is not asked in onboarding either (Josh).
@@ -134,12 +133,12 @@ Steps 2–5 below are the older draft.
 
 ## Engineering needs (step 2, drafted 2026-10-16)
 
-From the agreed flow and the walkthrough (`design/onboarding/walkthrough.html`). Checked against the code on 2026-10-16. Decisions still open for Josh are marked **Open**.
+From the agreed flow and the walkthrough (`design/onboarding/walkthrough.html`). Checked against the code on 2026-10-16. Josh answered the open points on 2026-10-16; this is the spec for step 3.
 
 ### What she says: fixed lines and two written by Claude
 - **Fixed lines** (welcome question, both buttons, beginner send-off, speaker question, the help line, Andiamo) are the agreed text, so they are country content, not generated: `content/<country>/onboarding.ts`, each line with its English. Nothing Italian in Swift or prompt templates (CLAUDE.md).
 - **Written by Claude**, through `lib/claude.ts`, reply `{ line, en }` like the characters:
-  1. **Follow-up:** reacts to answer 1 and asks one slightly harder question that builds on it, ending on the question. Shown without English.
+  1. **Follow-up:** reacts to answer 1 and asks one slightly harder question that builds on it, ending on the question. Shown without English; its English appears only after a silent recording (decided, Josh 2026-10-16).
   2. **Send-off:** responds to answer 2, ends with the country's fixed help line. Shown with English.
 - One short prompt, `content/it/prompts/onboarding.md` (version and changelog like `character.md`), language-neutral, with her voice: warm, simple, never gendered words for the learner (benvenuto/a, bravo/a…).
 
@@ -151,7 +150,7 @@ From the agreed flow and the walkthrough (`design/onboarding/walkthrough.html`).
 ### Server routes
 - `POST /v1/onboarding/follow-up` `{ answer }` → `{ line, en }`.
 - `POST /v1/onboarding/send-off` `{ answers: [a1, a2] }` → `{ line, en, level }`, and stores the level.
-- `POST /v1/onboarding/done` `{ path: "beginner" }` → stores beginner. (Or one route with a step field; the laptop's call.)
+- `POST /v1/onboarding/done` `{ path: "beginner" }` → stores beginner. (Three routes, not one with a step field: Josh, 2026-10-16.)
 - `GET /v1/me` adds `level` and `onboarded` (true once a level is stored), so the app knows whether to show onboarding.
 - `GET /v1/content` adds an `onboarding` block: the fixed lines, her four pose image URLs with a focal point each (so her face stays clear of the text), and her voice.
 - **Transcription:** `/v1/transcribe` always tells Whisper the learned language today (`mode` target or en). Onboarding answers can be English, so it needs a third mode with no language set, letting Whisper detect it; the detected language also helps the judge.
@@ -160,7 +159,7 @@ From the agreed flow and the walkthrough (`design/onboarding/walkthrough.html`).
 ### What's stored
 - `learners.level` (text, null until placed) and `learners.onboarded_at`, added in `scripts/db-migrate.mjs`; run in production through `railway ssh` as before. Learners are per country (one sign-in per country's server), so the level is per country.
 - `learners.onboarding` (jsonb): the two answers, the detected languages and the judge's level and reason, so placement can be checked and re-run. Not in `conversations`: visit counts, memory and the scorecard all read that table and would count her as a character.
-- **Open:** whether what they said (e.g. they love the food, it's their third visit) should reach characters or Magda. Default: no, it stays with onboarding.
+- **Decided (Josh, 2026-10-16):** what they said (e.g. they love the food, it's their third visit) stays with onboarding; it doesn't reach characters or Magda. Characters learn it only if the learner tells them.
 
 ### Settings that follow the level
 - Beginner: English translation on, slower speech. Intermediate: English off, normal. Advanced: English off, full speed (Josh: "no English and faster speech"). Set on the phone when onboarding ends, as the starting values; the learner can change them in Settings.
@@ -176,7 +175,7 @@ From the agreed flow and the walkthrough (`design/onboarding/walkthrough.html`).
 - Silence: if a recording has no voice in it (the app's existing check), she doesn't move on; on the follow-up, that's when its English appears.
 - Errors: a failed call shows the error code with Try again, never a silent skip.
 - Settings → Developer: **Replay onboarding**, so Josh can test it.
-- **Open:** do existing learners (Josh in both countries) see onboarding once? Default: yes, since neither has a level.
+- **Decided (Josh, 2026-10-16):** existing learners (Josh in both countries) see onboarding once in each country, since neither has a level.
 
 ### Checks before calling it done
 - `smoke:live` gains the onboarding routes, Italy and Mexico.
