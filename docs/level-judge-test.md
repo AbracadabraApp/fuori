@@ -275,6 +275,17 @@ v2 (one reply yes and one no; different choices, not two wordings; answer the la
 - The quality judge hit its 4000-token limit once on these 14-line transcripts; real conversations longer than that could lose their score the same way (logged by `lib/remember.ts`, not silent).
 - **Next:** live with lookahead. While the character speaks, write the two replies (1.4 s) and then the character's answer to each, in parallel (3–4 s): about 5 s against about 7 s of speech, so no wait and no joins. And an arc: a short plan for the visit at the start that live turns follow, to get the script's shape without its joins.
 
+**Round 12: a scripted beginner world (Josh: fixed scripts per character, the same for every learner, in a smaller world).** Two visits for each of Trastevere's 11 characters and Mexico City's 13 (visit 2 written with visit 1 as context), 6 beats each, with the character's own prompt and "sometimes ask". A checker call reads both paths (every line honours the reply tapped; correct, natural, regional; beginner can follow; replies sensible and different; sounds like the role, not a teacher); a failing script is rewritten with its problems, up to twice (`script-lib.mts`). The scripts are in `design/beginner-scripts/`.
+
+| | Scripts | Passed first time | Passed within 3 | At 90%+ | A1 lines | Alive | Lines that don't follow |
+|---|---|---|---|---|---|---|---|
+| Trastevere | 22 | 18% | 86% | 70% | 54% | 5.5 | 0.42 per conversation |
+| Mexico City | 26 | 31% | 92% | 84% | 42% | 5.7 | 0.50 |
+
+- **The easiest dialogue so far** (Italy 70% of lines at the 90% mark, A1 on 54% of lines; Mexico 84%), because the checker sends back anything above a beginner: idioms ("i libri non mordono"), "magari", passato prossimo, "exigente".
+- **But the independent judge still finds them scripted:** the same problem as round 11, now after a checker said they pass. The character carries on regardless of a no ("declined figs and chose cherries, Franco went back to selling figs"; "asks 'Compri un libro oggi?' right after they said they're only browsing"), endings are abrupt, and roles skip their own job (the pharmacist hands over "quello che cerchi" without asking what for). The checker and the judge disagree, so the checker is too lenient on the joins.
+- **The cause looks structural:** a yes or no at a point where both paths must join forces one path to ignore the answer. Next (round 13): replies that pick between two things where paths join, so neither derails ("Il caffè o il tè?", not "Vuoi un caffè?"), a no only where the answer can take it, and a stricter checker that reads path 2 line by line against what was chosen.
+
 **Round 8: does the alive judge mark down questions?** Round 6's conversations judged as they are and with the closing question removed from each character line (`quality.md` judge, 3 runs each).
 
 | | With questions | Without |
