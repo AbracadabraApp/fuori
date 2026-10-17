@@ -65,7 +65,7 @@ public struct RootView: View {
             if model.content == nil { await model.start() }
             openFromLaunchArgument()
         }
-        // A new country (Settings → Where you're living) starts at its city list
+        // A new country (Settings → Explore) starts at its city list
         .onChange(of: model.server) { path = NavigationPath() }
     }
 

@@ -109,7 +109,7 @@ public final class AppModel {
         await choose(country)
     }
 
-    /// The learner picked a country (first launch, or Settings → Where you're living)
+    /// The learner picked a country (first launch, or Settings → Explore)
     public func choose(_ country: Country) async {
         UserDefaults.standard.set(country.server.absoluteString, forKey: Self.countryKey)
         guard country.server != server || content == nil else { return }

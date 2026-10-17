@@ -43,27 +43,31 @@ struct CountryCardView: View {
     var body: some View {
         let card = content.card
         VStack(alignment: .leading, spacing: 0) {
+            // Compact (Settings): the picture alone fills the card, no name under
+            // it (Josh, 2026-10-16); the button's accessibility label names the country
             Color.clear
-                .aspectRatio(compact ? 1.6 : 1.9, contentMode: .fit)
+                .aspectRatio(compact ? 1.2 : 1.9, contentMode: .fit)
                 .overlay {
                     AsyncImage(url: card?.image) { phase in
                         if let picture = phase.image { picture.resizable().scaledToFill() } else { Tokens.Colors.sand }
                     }
                 }
                 .clipped()
-            VStack(alignment: .leading, spacing: 2) {
-                Text(card?.country ?? content.language.appName)
-                    .typeface(.display, compact ? Tokens.Size.cardSubtitle : Tokens.Size.cardTitle, relativeTo: compact ? .headline : .largeTitle, weight: .bold)
-                    .foregroundStyle(Tokens.Colors.ink)
-                if !compact, let learn = card?.learn {
-                    Text(learn)
-                        .typeface(.label, Tokens.Size.cardSubtitle, relativeTo: .body)
-                        .foregroundStyle(Tokens.Colors.muted)
+            if !compact {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(card?.country ?? content.language.appName)
+                        .typeface(.display, Tokens.Size.cardTitle, relativeTo: .largeTitle, weight: .bold)
+                        .foregroundStyle(Tokens.Colors.ink)
+                    if let learn = card?.learn {
+                        Text(learn)
+                            .typeface(.label, Tokens.Size.cardSubtitle, relativeTo: .body)
+                            .foregroundStyle(Tokens.Colors.muted)
+                    }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(Tokens.Space.captionPadding)
+                .background(Tokens.Colors.card)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(compact ? 8 : Tokens.Space.captionPadding)
-            .background(Tokens.Colors.card)
         }
         .clipShape(RoundedRectangle(cornerRadius: Tokens.Radius.card))
         .shadow(color: .black.opacity(Tokens.Shadow.card.opacity), radius: Tokens.Shadow.card.radius, y: Tokens.Shadow.card.y)

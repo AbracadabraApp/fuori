@@ -61,7 +61,7 @@ Build these two screens in the iPhone app now, ahead of the rest of onboarding. 
 
 - **Country choice (first launch):** two picture cards, Italy and Mexico, each with its language and a greeting in it. Tapping one picks that country's server (the `FuoriServers` list) and goes straight to its city list until the rest of onboarding exists. Shown once; switching later is in Settings.
 - **Settings:**
-  - **Where you're living:** the same two cards, the current one marked "You're here"; tapping the other switches country. Progress stays with each country (per-country tokens).
+  - **Explore** (was "Where you're living", Josh 2026-10-16): the same two cards, picture only (no country name under it), the current one marked "You're here"; tapping the other switches country. Progress stays with each country (per-country tokens).
   - **Your Italian / Your Spanish:** Beginner, Intermediate, Advanced, with the one-line note under it. Ship it now, greyed out with "Coming soon" under it, and turn it on when the M3 tier changes how people talk (Josh: he's the only user).
   - **Subtitles:** the website's two settings, *Show Italian words* and *Show English translation* (the app's existing Subtitles and English toggles). Hands-free stays as it is.
   - **About:** the one AI line ("Everyone you meet in Fuori is played by an AI") and Privacy.
