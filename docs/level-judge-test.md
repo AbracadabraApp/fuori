@@ -141,6 +141,30 @@ Two blocks from `content/<country>/prompts/levels.md` added to the end of the ch
 - They still pull back well when lost (Sofía: "¡Claro, Jake! Despacio. Es gratis. No pagas. Es para ti.") and still answer "come si dice" in role.
 - Found on the way: the quality judge was cutting off about one conversation in four (fixed, 0e3fb30).
 
+### 2026-10-17 (overnight): round 3, bigger samples and repeats
+
+Italy: `test:replay --others=9` (12 conversations, Josh's lines). Mexico: `test:conversations --count=9 --seed=11` (only 5 conversations: one character per city). "Lines at 90%+" = lines where a beginner knows 90% of the words. Alive: Italy from the replay judge (1–10), Mexico from test:conversations' grader (its own scale).
+
+| Arm | Italy words | Italy at 90%+ | Italy alive | Mexico words | Mexico at 90%+ | Mexico alive |
+|---|---|---|---|---|---|---|
+| today | 24 | 25% | 5.4 | 26 | 51% | 7.6 |
+| today (repeat) | 23 | 27% | 5.3 | 24 | 45% | 7.4 |
+| situation | 12 | 59% | 4.4 | 13 | 79% | 6.6 |
+| **still you** | 16 | **63%** | 5.0 | 14 | **77%** | 7.2 |
+| **still you (repeat)** | 15 | **60%** | 4.9 | 15 | **86%** | 7.4 |
+| still you, in the newest message | 15 | 61% | **5.6** | 15 | 71% | 6.8 |
+| still you, with subtitles | 13.5 | 55% | 5.3 | 13 | 91% | 6.8 |
+| still you, Haiku replies | 15.5 | 43% | 4.3 | 15 | 59% | 7.0 |
+
+Reply time (Italy, median): 3.1–3.5 s on Sonnet, **1.6 s on Haiku**.
+
+- **Noise:** repeats agree within about 3 points on level and 0.1 on alive in Italy (12 conversations); Mexico (5) wobbles more, 6–9 points. Differences smaller than that aren't real.
+- **"Still you" is the pick.** As simple as "situation" in both countries (Italy 60–63% against 59%), livelier (Italy 4.9–5.0 against 4.4; Mexico 7.2–7.4 against 6.6, close to today's 7.4–7.6), and steady across a conversation (Italy early 66–69% → late 61–64%). Today's prompt is 25–27% in Italy.
+- **Placement:** in the newest message Italy was livelier (5.6, above today's) but Mexico less (6.8); mixed, so keep the simpler system-prompt placement for now and retest with more Mexico conversations.
+- **Subtitles line:** best in Mexico (91%), worst of the level arms in Italy (55%); inconclusive.
+- **Haiku:** half the wait (1.6 s), but holds the level less well (Italy 43%), understands garbled lines less (72% against 77–93%) and is flatter in Italy (4.3). Not yet; worth another try with a stronger level block, since speed is the other goal.
+- Italy's alive scores are low for every arm, today's included (target 7): that's a separate problem from levels.
+
 ## Notes from Josh (2026-10-16)
 
 - **Learners and characters may be levelled differently.** A character's line is judged for listening (would this learner understand it?); a learner's speech is production, transcribed by Whisper, short and full of errors. Ground truth for learner speech would be learner language graded by examiners (e.g. a learner corpus), not exam listening scripts.
