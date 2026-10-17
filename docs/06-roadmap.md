@@ -9,7 +9,7 @@ This file is the one place for **what's in each milestone** and **what to do nex
 The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the game milestones M3–M4). Roughly in order. **app** = Swift in `ios/`, **server** = Next.js, **both** = both. Detail lives in the linked docs; done and removed items are at the bottom of this file.
 
 ### Start here (2026-10-16)
-- [ ] **app** Josh tries today's build on his iPhone (installed): pick a country on first launch; Settings → switch country and back; Settings → Privacy; Version ×5 → debug panel; a typed reply with the mic off
+- [ ] **app** Josh tries today's build on his iPhone (installed): pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; Giulia or Rita remembers you; a typed reply with the mic off
 - [ ] **server** Railway watch paths: set on both services through the API (railway.json was ignored: config as code is deprecated), but docs-only commits still deploy; look in the dashboard (service → Settings → Watch Paths)
 
 ### 1. Finish the conversation on the phone
