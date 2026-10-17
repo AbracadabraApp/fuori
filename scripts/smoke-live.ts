@@ -155,6 +155,7 @@ async function main() {
 // transcript kept on the server, the end call, the stamp, a return visit,
 // the voice and speech to text.
 let appLearner = '';
+let onboardingLearner = '';
 async function appApi(cityId: string, placeId: string, characterId: string, said: string[]) {
   const health = await fetch(`${base}/healthz`);
   const h = (await health.json().catch(() => ({}))) as { ok?: boolean; commit?: string; promptVersion?: string };
@@ -219,7 +220,22 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
     ta.text?.trim() && ta.language ? pass(`v1 transcribe, any language (heard ${ta.language})`) : fail('v1 transcribe, any language', JSON.stringify(ta));
   }
 
-  await onboardingApi(auth, v1);
+  // This learner has talked to someone: counted as onboarded without the greeter (Josh, 2026-10-17)
+  const played = (await (await fetch(`${base}/v1/me`, { headers: auth })).json()) as { onboarded?: boolean };
+  played.onboarded === true ? pass('v1 me: a learner who has already played is onboarded') : fail('v1 me: a learner who has already played is onboarded', JSON.stringify(played));
+
+  // Onboarding itself on a fresh device, as a new learner meets it
+  const fresh = (await (await fetch(`${base}/v1/auth/device`, { method: 'POST' })).json()) as { learnerId: string; token: string };
+  onboardingLearner = fresh.learnerId ?? '';
+  const freshAuth = { Authorization: `Bearer ${fresh.token}` };
+  await onboardingApi(freshAuth, (path, body) =>
+    fetch(base + path, { method: 'POST', headers: { ...freshAuth, 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+  );
+
+  // Restart onboarding brings the greeter back even for someone who has played
+  const restart = await v1('/v1/onboarding/reset', {});
+  const restarted = (await (await fetch(`${base}/v1/me`, { headers: auth })).json()) as { onboarded?: boolean };
+  restart.status === 204 && restarted.onboarded === false ? pass('v1 onboarding reset works for a learner who has played') : fail('v1 onboarding reset for a learner who has played', `${restart.status} ${JSON.stringify(restarted)}`);
 }
 
 // The greeter (docs/onboarding-design.md): a new learner isn't onboarded; her
@@ -266,6 +282,7 @@ main()
     console.log(results.join('\n') + '\n');
     cleanup(cookie.split('=')[1] ?? '');
     cleanup(appLearner);
+    cleanup(onboardingLearner);
     console.log(failed ? '\nFAILED' : '\nOK: the live site works end to end');
     process.exit(failed ? 1 : 0);
   });

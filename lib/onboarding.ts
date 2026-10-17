@@ -44,11 +44,24 @@ export async function writeSendOff(answers: HeardAnswer[]) {
   return { ...r, line: `${r.line.trim()} ${help.line}`, en: `${r.en.trim()} ${help.en}` };
 }
 
-/** What /v1/me reports: the stored level, and whether onboarding is done */
+/**
+ * What /v1/me reports: the stored level, and whether onboarding is done.
+ * Done means they finished it, or they were already playing before it
+ * existed: a learner with conversations and no onboarding record (Josh,
+ * 2026-10-17: he had talked to people in both countries and was sent to the
+ * greeter). Restart onboarding leaves a record ({ path: "reset" }), so it
+ * still brings her back for them.
+ */
 export async function onboardingState(learnerId: string): Promise<{ level: Level | null; onboarded: boolean }> {
-  const r = await query<{ level: Level | null; onboarded_at: Date | null }>('SELECT level, onboarded_at FROM learners WHERE id = $1', [learnerId]);
+  const r = await query<{ level: Level | null; onboarded_at: Date | null; has_record: boolean; has_played: boolean }>(
+    `SELECT level, onboarded_at, onboarding IS NOT NULL AS has_record,
+       EXISTS (SELECT 1 FROM conversations c WHERE c.learner_id = learners.id
+               AND EXISTS (SELECT 1 FROM jsonb_array_elements(c.turns) t WHERE t->>'who' = 'learner')) AS has_played
+     FROM learners WHERE id = $1`,
+    [learnerId]
+  );
   const row = r.rows[0];
-  return { level: row?.level ?? null, onboarded: !!row?.onboarded_at };
+  return { level: row?.level ?? null, onboarded: !!row?.onboarded_at || (!row?.has_record && !!row?.has_played) };
 }
 
 /** Onboarding finished: the level, and for the speaker path what was said and why it was placed there */
@@ -58,5 +71,6 @@ export async function finishOnboarding(learnerId: string, level: Level, record: 
 
 /** Settings → Restart onboarding: she greets them again. Conversations, visits and memories stay. */
 export async function resetOnboarding(learnerId: string): Promise<void> {
-  await query('UPDATE learners SET level = NULL, onboarded_at = NULL, onboarding = NULL WHERE id = $1', [learnerId]);
+  // A record, not NULL: someone who has played counts as onboarded only while they have no record
+  await query(`UPDATE learners SET level = NULL, onboarded_at = NULL, onboarding = '{"path":"reset"}'::jsonb WHERE id = $1`, [learnerId]);
 }

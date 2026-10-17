@@ -183,7 +183,7 @@ From the agreed flow and the walkthrough (`design/onboarding/walkthrough.html`).
 - Silence: if a recording has no voice in it (the app's existing check), she doesn't move on; on the follow-up, that's when its English appears.
 - Errors: a failed call shows the error code with Try again, never a silent skip.
 - Settings → touch and hold Version → **Restart onboarding**, so Josh can test it. Built 2026-10-16: today it forgets the chosen country and goes back to the country choice, keeping each country's learner. When onboarding exists it must also clear the learner's `onboarded` state so she greets them again.
-- **Decided (Josh, 2026-10-16):** existing learners (Josh in both countries) see onboarding once in each country, since neither has a level.
+- **Decided (Josh, 2026-10-17, reversing 2026-10-16):** learners who were already playing don't see onboarding. Onboarded means finished it, or has conversations and no onboarding record; not "has a level". (On 2026-10-16 the plan was that existing learners see it once; on his iPhone it sent Josh, who had talked to people in both countries, to the greeter.) Restart onboarding leaves a `{ path: "reset" }` record so it still works for them.
 
 ### Checks before calling it done
 - `smoke:live` gains the onboarding routes, Italy and Mexico.
