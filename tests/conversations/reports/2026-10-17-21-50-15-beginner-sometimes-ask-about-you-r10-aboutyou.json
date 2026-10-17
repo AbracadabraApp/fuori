@@ -1,0 +1,104 @@
+{
+  "at": "2026-10-17T21:50:15.405Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "repliesVersion": null,
+  "level": "Beginner: sometimes ask, about you",
+  "seed": "11",
+  "turns": 6,
+  "conversations": 5,
+  "grades": {
+    "language": 9.4,
+    "understands": 9.2,
+    "adapts": 8,
+    "alive": 7,
+    "regional": 8.4
+  },
+  "length": {
+    "openerWords": 18,
+    "replies": 35,
+    "wordsMedian": 21,
+    "wordsAvg": 21.7,
+    "wordsMax": 31,
+    "longShare": 0.03,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.03
+  },
+  "byCharacter": [
+    {
+      "id": "beto-taxi",
+      "learner": "english-beginner",
+      "overall": 8.2,
+      "stats": {
+        "openerWords": 12,
+        "replies": 7,
+        "wordsMedian": 21,
+        "wordsAvg": 21.6,
+        "wordsMax": 29,
+        "longShare": 0,
+        "questionsAvg": 0.7,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "arturo-taquillero-cdmx",
+      "learner": "improving",
+      "overall": 8.4,
+      "stats": {
+        "openerWords": 10,
+        "replies": 7,
+        "wordsMedian": 25,
+        "wordsAvg": 22.9,
+        "wordsMax": 28,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "arturo-jubilado",
+      "learner": "hesitant",
+      "overall": 8,
+      "stats": {
+        "openerWords": 18,
+        "replies": 7,
+        "wordsMedian": 24,
+        "wordsAvg": 23.7,
+        "wordsMax": 31,
+        "longShare": 0.14,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "daniela-farmacia-san-rafael",
+      "learner": "english-beginner",
+      "overall": 8.6,
+      "stats": {
+        "openerWords": 20,
+        "replies": 7,
+        "wordsMedian": 18,
+        "wordsAvg": 18.3,
+        "wordsMax": 30,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "chuy-cocinera",
+      "learner": "hesitant",
+      "overall": 8.8,
+      "stats": {
+        "openerWords": 18,
+        "replies": 7,
+        "wordsMedian": 20,
+        "wordsAvg": 21.9,
+        "wordsMax": 27,
+        "longShare": 0,
+        "questionsAvg": 0.7,
+        "multiQuestionShare": 0.14
+      }
+    }
+  ]
+}

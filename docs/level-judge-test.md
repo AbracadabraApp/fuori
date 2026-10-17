@@ -246,6 +246,18 @@ v2 (one reply yes and one no; different choices, not two wordings; answer the la
 - Mexico: one pair offered an odd choice (Madrid to a Mexico City ticket seller), which the character then had to handle.
 - **Next (round 10):** "sometimes ask, about you" adds "They like hearing about you and this place, a little at a time", to give characters something to say besides offers.
 
+**Round 10: "sometimes ask, about you".**
+
+| Arm | At 90%+ | Words | Choice questions | Alive (replay judge) |
+|---|---|---|---|---|
+| Italy, sometimes ask (control, same run) | 66% | 16 | 37% | 4.5 |
+| Italy, about you | 62% | 15.5 | 33% | 4.6 |
+| Mexico, about you | 86% | 21 | 34% | 6.0 |
+| Mexico, about you, learner taps | 86% | 19 | 29% | 5.8 |
+
+- **No gain:** alive unchanged within noise (Italy 4.6 against 4.5; Mexico 5.8–6.0 against 5.5–6.2 in rounds 6 and 9), choice questions barely fewer, and Mexico's lines got longer (21 words against 15–17). Dropped; "sometimes ask" stays the pick.
+- **Liveliness isn't a level-block problem.** Today's prompt with no level scores only about 0.3–0.5 higher (Italy 5.3–5.4); the graders' notes point at the characters themselves ("generic", "never mentions taxi life", "no personality beyond a stock phrase"). That's the character prompt and character data, a separate change with its own replay gate.
+
 **Round 8: does the alive judge mark down questions?** Round 6's conversations judged as they are and with the closing question removed from each character line (`quality.md` judge, 3 runs each).
 
 | | With questions | Without |

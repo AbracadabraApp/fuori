@@ -1451,3 +1451,13 @@ Josh: "go for it" on the items Claude can finish without him. Each commit says w
 - Decisions (Josh): replies are whole lines on a frame; levels 1–3 are open choices with no right or wrong; nothing scripted past level 4; at most three controls (main action, Pause → Replay, Less help); progression asks after ~15 turns and moves up at 30, never down automatically.
 - Also designed: a vocabulary Diario (situation chips that warm as phrases are used in conversation, a deck of one card per phrase per pass). Same levels apply.
 - Not built; no code changed. Open: non-frame phrases, whether Diario and conversation levels interact, and a Settings overhaul.
+
+## 2026-10-17 (evening): level tests, rounds 5–10; reply buttons (laptop)
+
+Josh: "proceed with your tests ... I don't want to be the bottleneck". Claude designs and runs tests; the queue is `docs/test-ideas.md`, results in `docs/level-judge-test.md`.
+- **Questions (rounds 5–6):** the Beginner block had cut what a beginner can answer; "still you, sometimes ask" is the new Beginner pick (answerable 77–100%, same level). Josh: what characters ask is the clearest difference between levels (yes/no and this-or-that, then one fact, then anything); recorded in language-levels-plan.md and 02-game-design.md.
+- **Three levels (Josh):** the learner's level, the dialogue (tied to it), and the scaffolding (beginner-scaffolding.md, levels 1–5, where the dialogue stays at Beginner). The learner's level doesn't exist systemically yet: onboarding's one-time `learners.level`, Magda's study-file Level line and the scorecard's "lost" count are separate pieces (language-levels-plan.md → 1; roadmap item).
+- **Reply buttons (rounds 7, 9):** a separate call writes the two replies for levels 1–3 (`lib/replies.ts`, `content/<country>/prompts/replies.md`, test-only, 3449b69): sensible 97–100%, Sonnet 1.3–1.4 s, always ready before the character finishes speaking. `test:conversations -- --learner=tap` has the learner tap them: characters answer naturally and never correct a tapped line.
+- **Judges (round 8):** the alive judge doesn't mark down questions; Italy's "flat" was mostly a different judge (on the same judge Mexico 5.6, Italy 5.2). Both countries sit around 5 against a target of 7.
+- **Open:** characters drift into an order form ("Vuoi X o Y?" on 43% of turns) and feel generic; round 10's level-block fix didn't help, so it's the character prompt and data (queue item 6). `test:conversations`' alive criterion differs from the replay's judge (it also asks about recasting); aligning them changes a test, so it waits for Josh.
+- **Next:** polite "no" in the reply buttons; "Ripeti?" on levels 4–5; Mexico at 20 conversations; Josh's learner on "sometimes ask" once he sends his Mexico learner id.

@@ -7,7 +7,7 @@ How to work it: take the top item, run it, write the result in the test log, mov
 ## Up next
 
 1. **Reply buttons, polite no** (round 7 done; v2 picked). Next tweak: the "no" reply stays polite and keeps the conversation going. A "clicks" prompt writes two whole-line replies on one frame after each character line; Haiku vs Sonnet; judged for sensible, same frame, beginner-readable, distinct, English right, correct, and ready before the character's voice ends. On round 6's "sometimes ask" conversations, both countries.
-2. **Order form** (running, round 10). Round 9 found tapping works but characters turn into a list of offers ("Vuoi X o Y?" on 43% of turns); "sometimes ask, about you" tries to fix it. Simulated learner at levels 1–3 who only taps one of the two replies; the character answers it as a normal turn. Does the character recast a line that was already right, go flat, or loop on the same frame? Needs a learner mode in `test:conversations`.
+2. **Order form.** Characters turn into a list of offers ("Vuoi X o Y?" on 43% of turns). Round 10's "about you" sentence didn't help; it's part of item 6 (characters are generic), not a level-block problem. Simulated learner at levels 1–3 who only taps one of the two replies; the character answers it as a normal turn. Does the character recast a line that was already right, go flat, or loop on the same frame? Needs a learner mode in `test:conversations`.
 3. **Replies folded into the turn** (the other option in beginner-scaffolding.md → Writing the replies): the character's call returns the two replies too. Compare against item 1 for quality, the character's liveliness and reply time.
 4. **"Ripeti?" on levels 4–5.** Replay is gone, so asking the character to repeat must work: is the repeat shorter, slower-sounding and simpler, or word for word, or a new sentence? Simulated learner asks now and then; judge the repeat.
 5. **Mexico at 20 conversations** for the final Beginner pick against today's prompt, since 5 conversations wobble 6–10 points.
@@ -23,6 +23,8 @@ How to work it: take the top item, run it, write the result in the test log, mov
 - **Frames chosen by the learner's Diario** rather than by the moment: give the clicks prompt the frames being practised; does it still sound natural?
 
 ## Done
+
+- Round 10 (2026-10-17): "sometimes ask, about you" no better; liveliness lives in the character prompt and data, not the level block.
 
 - Round 9 (2026-10-17): tapping a reply works (no corrections of tapped lines, alive unchanged); found the order-form pattern.
 - Round 7 (2026-10-17): reply buttons from a separate call; v2 (yes and no as the choices) picked, Sonnet, 1.3–1.4 s.
