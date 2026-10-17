@@ -1,0 +1,103 @@
+# Beginner Scaffolding: Levels 1–5
+
+2026-10-17 · Josh · Draft. Replaces the four-step "Beginner ladder" sketch in [language-levels-plan.md](language-levels-plan.md). Mockups: the "Beginner levels on the person screen" canvas in the Claude app's Fuori project. Research behind it: the Fuori project's `research/beginner-mode-scaffolding.md` and `research/flashcards-vocabulary-review.md`.
+
+A beginner takes part at one of five levels. The level decides how much support the screen gives, from tapping a reply with English everywhere (level 1) to filling a frame in your own words (level 5). Past level 5 there's nothing to add: that's the normal screen, the way an Intermediate learner takes part. Nothing is scripted past level 4.
+
+The same levels apply to a Diario card and to the person screen in conversation.
+
+## The exchange
+
+Every turn is three beats:
+
+1. **The character's line.** Context. Never contains the phrase being practiced.
+2. **Your reply.** Always a whole line, never a lone word, built on a frame ("Vorrei…", "Posso avere…", "Mi chiamo…", "Sono di…"). The frame is the chunk being learned; what fills it can change.
+3. **The character's answer.** A natural response in character, to whatever you said.
+
+**Two voices.** The character's voice says beats 1 and 3. Your voice, a consistent native speaker matched to the learner, says your whole reply. The app never voices a lone word.
+
+## Controls (Josh, 2026-10-17: keep them few)
+
+At most three things on screen besides the navigation bar:
+
+| | Levels 1–3 (tap) | Levels 4–5 and normal (speak) |
+|---|---|---|
+| Main action | The two reply buttons | The mic pill (tapping it while the character speaks stops them and starts your turn) |
+| Pause → Replay | One button: Pause while the character speaks, Replay once they've finished | Same |
+| Less help | Once offered, until used | Same |
+
+- Pause and Replay never compete: Pause only matters while audio plays, Replay only after. This keeps the rule that Pause is always visible while the character speaks ([13-ios-conventions.md](13-ios-conventions.md), D3).
+- Levels 4–5 add one paper card with an instruction directly above the pill; levels 1–3 need none.
+- Nothing appears or disappears except the result of your answer and the Pause → Replay switch.
+
+## The levels
+
+| | 1. Choose, all English | 2. Choose, English on the character | 3. Choose, Italian only | 4. Read out loud | 5. Fill the frame | Past 5: normal screen |
+|---|---|---|---|---|---|---|
+| **Subtitles** | Italian + English | Italian + English | Italian | Italian | Italian | As set in Settings |
+| **Your side** | Two whole-line replies as buttons, Italian + English | Two whole-line replies, Italian only | Two whole-line replies, Italian only | Your whole reply in Italian, frame highlighted | The frame with an open slot: "Vorrei ________" | Nothing |
+| **Instruction** | None | None | None | Read your line out loud | Answer [character] out loud, your way: | None |
+| **Action** | Tap | Tap | Tap | Speak | Speak: fill the slot with whatever you want | Speak freely |
+| **Your voice** | After you tap | After you tap | After you tap | Before you read: hear it, then say it | After you speak, your answer said right | — |
+
+### What each level is for
+
+1. **Choose, all English.** Meet the frame with full support: you understand the question and both answers, and you hear your choice said right.
+2. **Choose, English on the character.** You still understand the question, but you read your own options in Italian.
+3. **Choose, Italian only.** To choose, you have to understand the question and both options; the character's answer confirms what you said.
+4. **Read out loud.** Your first time saying it. Hear it, then say the whole line yourself, copying the sound and rhythm.
+5. **Fill the frame.** The structure is given; the content is yours. "Vorrei ____" lets you order anything, so it's open-ended but still scaffolded.
+
+## Rules
+
+**Choices (levels 1–3).**
+- Both buttons are real, sensible options built on the same frame. Pick what you'd actually say.
+- The tapped button turns a plain selected color. No right or wrong colors.
+- Your reply fills in with your pick, your voice says it, and the character answers to it.
+
+**Speaking (levels 4–5).**
+- Tap the pill to talk, tap when done; no timers.
+- Speech checks are lenient. When recognition is unsure, count it. Marking a right answer wrong is worse than passing a near-miss.
+- After you speak, your answer shows in Italian with its English (corrected if needed), your voice says it, and the character answers.
+
+## Progression on the person screen (Josh, 2026-10-17)
+
+A turn count prompts the step up, and a ceiling keeps anyone from staying on full support forever (static support tends to create over-reliance).
+
+| Turns at a level | What happens |
+|---|---|
+| 15 | At the end of the conversation, ask whether they're ready for less help. Yes moves up one level; Not yet stays |
+| 15–30 | The Less help button stays on screen, so the learner can step up any time |
+| 30 | Move up automatically, tell the learner, and point to Settings to step back |
+
+- One level per learner.
+- Ask and move only at a natural break: when the learner leaves a conversation, never mid-turn.
+- Never move down automatically; Settings is where a learner steps back or jumps ahead.
+- 15 and 30 are starting numbers, to tune.
+
+## The Diario
+
+- Each phrase has its own level, and the card uses that level's screen.
+- Levels 1–4: completing the card moves the phrase up one level. Level 5: using the frame moves it past the ladder; not using it leaves it at 5. A phrase never moves down.
+- Only saying the phrase yourself in a real conversation retires it.
+- A pass shows each phrase once, each at its own level; one action per card; at the end, another pass or done. Up to about six phrases per pass: new ones since the last conversation first, then the ones not seen longest.
+
+## What each phrase needs
+
+Written by the end-of-conversation step (`lib/remember.ts`), stored with the phrase:
+
+| Field | Example |
+|---|---|
+| Frame, with its English | Vorrei… · I'd like… |
+| Character, place | Giulia · Bar in Trastevere |
+| Character's line, with its English | Buongiorno! Cosa prendi? · Good morning! What are you having? |
+| Two whole-line replies on the frame, with English | Vorrei un cornetto integrale. · Vorrei un macchiato. |
+| Character's answer to each | Un cornetto integrale, subito! · Un macchiato, arriva! |
+| Audio | Character's line and answers in the character's voice; the replies in your voice |
+| Level | 1–5 |
+
+## Open questions
+
+- Phrases that aren't frames (a noun like "cornetto integrale" on its own): either the end-of-conversation step always picks frame-shaped chunks, or such phrases ride inside a frame and level 5 opens the frame's slot rather than the noun.
+- Whether a phrase's Diario level and the learner's conversation level should influence each other. Today they're separate.
+- Settings overhaul: level becomes the main control; Subtitles and English are set by the level on levels 1–3; Hands-free applies from level 4.

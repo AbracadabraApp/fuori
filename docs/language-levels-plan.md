@@ -52,6 +52,8 @@ Characters are told the tier; it doesn't break character. A beginner gets a more
 
 ## Beginner ladder (Josh's idea)
 
+**Superseded (2026-10-17):** the five-level design in [beginner-scaffolding.md](beginner-scaffolding.md) replaces this sketch. Kept below for history.
+
 Support comes off step by step:
 1. **Pick:** the character speaks; the learner chooses one of two replies. No speaking yet.
 2. **Read aloud:** pick a reply, then say it; Whisper checks it was roughly that.
