@@ -163,7 +163,7 @@ Reply time (Italy, median): 3.1–3.5 s on Sonnet, **1.6 s on Haiku**.
 - **Placement:** in the newest message Italy was livelier (5.6, above today's) but Mexico less (6.8); mixed, so keep the simpler system-prompt placement for now and retest with more Mexico conversations.
 - **Subtitles line:** best in Mexico (91%), worst of the level arms in Italy (55%); inconclusive.
 - **Haiku:** half the wait (1.6 s), but holds the level less well (Italy 43%), understands garbled lines less (72% against 77–93%) and is flatter in Italy (4.3). Not yet; worth another try with a stronger level block, since speed is the other goal.
-- Italy's alive scores are low for every arm, today's included (target 7): that's a separate problem from levels.
+- Italy's alive scores are low for every arm, today's included (target 7): that's a separate problem from levels. **Correction (round 8):** mostly not. Italy's alive comes from the replay's judge (`quality.md`), Mexico's from `test:conversations`' own grader, a different prompt. Scored by the same judge (`quality.md`), round 6's Mexico conversations get 5.6 against Italy's 5.2.
 
 **Follow-up (round 4):**
 
@@ -204,7 +204,30 @@ The share of turns ending on a tacked-on "sì o no?" / "¿sí o no?" was checked
 - **"Now and then" doesn't make questions rarer:** Italy still asks on nearly every turn. But the questions come from the moment more than with "ask" ("Con zucchero o senza?" rather than "Ti piace, sì o no?"), forced tags are half as frequent, and alive is between "ask" and "still you".
 - **The level holds** (Italy 62–68%, Mexico 80–91%, against "still you" at 60–66% and 60–86%).
 - **The new pick is "sometimes ask"**: answerable turns go from about 54–79% to 77–100%, and choice questions come back for the reply buttons. It costs a little life on the judge (Mexico 7.8 → 6.8–7.0 against this round's control, which is high: round 3 had 7.2–7.4), so Josh's ear decides.
-- The alive judge may itself mark down a turn for ending on a question; not checked.
+- The alive judge may itself mark down a turn for ending on a question; checked in round 8: it doesn't.
+
+**Round 7: reply buttons, written by a separate call (2026-10-17).** For levels 1–3 of [beginner-scaffolding.md](beginner-scaffolding.md): after each character line in round 6's "sometimes ask" conversations, a "clicks" prompt writes two whole-line replies on one frame, given the conversation so far (`replies.mjs`, prompt v1). Sonnet judges each pair (sensible answer to the last line, same frame, whole sentence, beginner-readable, distinct, English right, correct). "Ready" means written before the character's line finishes at beginner speed (about 2.3 words a second).
+
+| Writer | Pairs | All good | Sensible | Distinct | Correct | Median time | Ready before the voice ends |
+|---|---|---|---|---|---|---|---|
+| Haiku, Italy | 76/76 | 89% | 93% | 97% | 97% | 2.4 s | 100% |
+| Haiku, Mexico | 35/35 | 80% | 89% | 97% | 100% | 2.2 s | 100% |
+| Sonnet, Italy | 72/76 | 90% | 96% | 96% | 97% | 1.4 s | 100% |
+| Sonnet, Mexico | 33/35 | 91% | 97% | 97% | 97% | 1.3 s | 100% |
+
+- **A separate call works, and time isn't a problem:** both writers finish well before the character stops speaking. Sonnet was faster than Haiku here (Haiku thinks longer); Sonnet's 6 misses were replies that weren't JSON, which structured output fixes.
+- **The main failure is the yes-or-no trap:** keeping both replies on one frame after a yes/no question gives "Sì, vorrei un cornetto" and "Sì, vorrei un bicchiere d'acqua", or "Sì, mi piace il mare" to "Ti piace l'arancia?". Next: one reply yes and one no. Also some near-duplicates ("piove molto" / "piove spesso") and replies answering an earlier question rather than the last one.
+
+**Round 8: does the alive judge mark down questions?** Round 6's conversations judged as they are and with the closing question removed from each character line (`quality.md` judge, 3 runs each).
+
+| | With questions | Without |
+|---|---|---|
+| Italy, every line | 5.22 | 5.14 |
+| Italy, last line only (never answered) | 5.33 | 5.25 |
+| Mexico, every line | 5.60 | 5.33 |
+
+- **No:** removing questions doesn't raise alive, so "sometimes ask"'s small alive cost isn't the judge penalising questions.
+- **Italy isn't flatter than Mexico on the same judge** (5.2 against 5.6). The gap in earlier rounds came from two different judges. On `quality.md` both countries sit around 5, below the target of 7; that's the liveliness problem, in both countries.
 
 ## Notes from Josh (2026-10-16)
 
