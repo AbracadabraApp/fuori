@@ -1,6 +1,6 @@
 # Language levels (M3): quick capture
 
-Draft, 2026-10-14, from a conversation with Josh. Not a design yet; we lay it out properly after the Mexican place images are approved. Roadmap: [Now → Language levels](06-roadmap.md#now).
+Draft, 2026-10-14, from a conversation with Josh; a preliminary design was added 2026-10-16 (below), not yet discussed. Originally: we lay it out properly after the Mexican place images are approved. Roadmap: [Now → Language levels](06-roadmap.md#now).
 
 Research behind this plan: [How language apps handle levels](research/language-app-levels.md) (2026-10-15), product and technical, with ranked implications for Fuori.
 
@@ -75,6 +75,55 @@ Rules: about two minutes; the learner's word wins (Claude suggests, the learner 
 
 
 **Revised (Josh, 2026-10-15, later): no city or face pickers.** Onboarding is: choose a country (its picture: `design/country-cards/`) → the woman in that picture greets you (`it-greeter.jpg`, `es-mx-greeter.jpg`) and does steps 3–6 (name, what brings you, the ladder, the summary) → the country's city list. She exists only in onboarding: no anchor character, no home city. No sign-in either (docs/12-native-app.md decision 3). The steps above for picking a city type and a face are superseded.
+## Preliminary design (draft, 2026-10-16)
+
+Drafted from the level judge test and the rewrite samples ([level-judge-test.md](level-judge-test.md)). Captured before discussion: Josh has concerns still to raise, so nothing here is decided.
+
+### 1. The learner's level
+- One tier per learner (Beginner, Intermediate, Advanced), set in onboarding, saved with the learner, changeable in Settings (the greyed-out control turns on).
+- Two different things, measured separately (Josh: learners and characters may be levelled differently):
+  - **What they can follow** (listening) sets how characters talk to them.
+  - **What they can say** (speaking) decides moving up.
+- The tier also sets speed, default subtitles, how readily characters offer English, and Magda's focus (the tier table above).
+
+### 2. Characters: the level in the prompt, as a shape, not a word list
+The samples showed difficulty comes from too many ideas per turn, set phrases ("di passaggio", "faccia pure", "non costa niente") and stacked clauses, more than from hard words. So each turn the prompt gets a short level block near the end (so earlier lines in the conversation don't pull it back up), worded as how this person talks to this newcomer. Beginner, roughly:
+- one or two things per turn, one idea per sentence
+- present tense first
+- plain words instead of set phrases
+- one bit of local colour allowed, made clear by the context
+- keep Lei or tu as it was (the rewrites drifted to tu)
+- when explaining a word they asked about, take more room, in small pieces
+
+Intermediate loosens this; Advanced is how they'd talk to anyone, and where dialect comes in. Each country keeps two or three example turns per tier as language data in `content/<country>/levels/`, in that language (Beginner model: Giulia's "Un caffè lungo, subito! Tu abiti qui vicino?"). No word lists, nothing Italian in code.
+
+### 3. Measuring it
+- Judge: Haiku with CEFR named (best and cheapest in the test, no recall leak), after the conversation ends with the quality judge, so no added wait.
+- Two numbers per conversation: the level of the character's lines, and the share of the character's words a learner at that tier would know (the 90% target).
+- The replay runs with a simulated learner at each tier; a prompt change may not push any tier off level. "On level" joins faster and length on the scorecard.
+- The length goal becomes ideas per turn rather than a 20-word cap, which would punish a good explanation (Rita's "assaggiare", 28 words).
+
+### 4. Moving up
+- The same judge rates the learner's own lines after each conversation, plus signals that work in any language: falling back to English, asking for a repeat, going quiet, turn length.
+- When 90% of their speech is at the next level across several conversations (start with 5), Magda suggests moving up; the learner decides.
+- Needs its own answer key: learner speech graded by examiners (a learner corpus), not exam listening scripts.
+
+### 5. Safety nets, only if needed
+- The Beginner ladder (pick, read aloud, speak with help) for day one, when even A1 Italian is too much without English.
+- A rewrite pass for Beginner lines that fail a quick check. Shown to work in the samples, but it adds about 1–3 s per turn against the "Faster" goal.
+
+### Order
+1. Level block in the prompt, tried in the replay at each tier against today's prompt (testing only, nothing ships).
+2. "On level" on the scorecard (Haiku judge).
+3. Tier saved with the learner; Settings control on; onboarding sets it.
+4. Rating the learner's speech; moving up.
+5. Dialect for Advanced; the rewrite pass if step 1 falls short.
+
+### Risks
+- The judge reads text, not speed; speed is a voice setting per tier.
+- Haiku wobbles run to run: average over a conversation, not single lines.
+- Day-one Beginners will lean on English and the ladder however simple the Italian gets.
+
 ## Cautions
 
 - **Beginner is the biggest jump:** from B2+ down to A1–A2 is not a prompt tweak. Day one and near-A2 need very different help; within Beginner the ladder and the character's patience carry that range (Beginner stays one level, Josh 2026-10-15).
