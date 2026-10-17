@@ -83,7 +83,7 @@ Drafted from the level judge test and the rewrite samples ([level-judge-test.md]
 - **What they hear (the level):** how characters speak: ideas per turn, phrasing, speed. The prompt.
 - **How they take part (the Beginner path):** what the learner does on their turn: tap a reply, read one aloud, speak with help, speak freely, and when the English shows. The ladder: screens and buttons, not the prompt.
 
-They move independently (simple dialogue with free speaking, or the reverse); "Beginner" names a starting combination of the two. Josh: if the dialogue isn't at beginner level the game doesn't work (only a native speaker has kept up so far), so the Beginner dialogue comes first.
+They move independently (simple dialogue with free speaking, or the reverse); "Beginner" names a starting combination of the two. **Success is the two together (Josh, 2026-10-16):** levelled dialogue plus the scaffolding (the English translation after each line, tap-a-reply buttons, reading a reply aloud, slower speech). The dialogue doesn't have to carry a beginner alone, so its target can stop short of stripping the characters bare; the replay tests dialogue without scaffolding, which is the harsh case, and the real test is a beginner playing with the scaffolding on. Josh: if the dialogue isn't at beginner level the game doesn't work (only a native speaker has kept up so far), so the Beginner dialogue comes first.
 
 ### 1. The learner's level
 - One tier per learner (Beginner, Intermediate, Advanced), set in onboarding, saved with the learner, changeable in Settings (the greyed-out control turns on).
