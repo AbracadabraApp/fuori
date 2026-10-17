@@ -15,7 +15,7 @@ export interface CharacterSheet {
   age: number;
   role: string;
   city: string;
-  origin: 'anchor' | 'generated' | 'tutor';
+  origin: 'generated' | 'tutor';
   placeId?: string;
 
   personality: {
@@ -84,7 +84,6 @@ export interface CityPantry {
   food: string[];
   customs: string[];
   localTouches: string[];
-  anchorIds?: string[];
   seedCharacters?: string[];
   dayTrips?: string[];
   /** Not shown anywhere (kept in the data, tests and memory) */

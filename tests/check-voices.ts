@@ -1,5 +1,4 @@
-// Every character gets a voice that matches their gender, anchors keep their
-// fixed voice, and characters in the same city don't all share one voice.
+// Every character gets a voice that matches their gender, and characters in the same city don't all share one voice.
 import { cities, voices, elevenLabsVoiceFor, browserVoiceFor, language } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { elevenLabsError } from '@/lib/voice/providers/elevenlabs';
@@ -7,10 +6,6 @@ import { voiceNote, FuoriError } from '@/lib/errors';
 
 const problems: string[] = [];
 let checked = 0;
-
-for (const [id, voice] of Object.entries(voices.elevenlabs.byCharacter)) {
-  if (elevenLabsVoiceFor(id, 'f') !== voice || elevenLabsVoiceFor(id, 'm') !== voice) problems.push(`${id} lost their fixed voice`);
-}
 
 for (const city of cities) {
   const used = new Set<string>();
@@ -22,8 +17,7 @@ for (const city of cities) {
     const v = elevenLabsVoiceFor(c.id, c.gender);
     if (!v) { problems.push(`${c.name} (${city.name}) has no voice`); continue; }
     used.add(v);
-    const fixed = voices.elevenlabs.byCharacter[c.id];
-    if (!fixed && !voices.elevenlabs[c.gender].includes(v)) problems.push(`${c.name} (${city.name}) got a ${c.gender === 'f' ? 'male' : 'female'} voice`);
+    if (!voices.elevenlabs[c.gender].includes(v)) problems.push(`${c.name} (${city.name}) got a ${c.gender === 'f' ? 'male' : 'female'} voice`);
   }
   if (checked > 5 && used.size < 2) problems.push(`${city.name}: every character has the same voice`);
 }

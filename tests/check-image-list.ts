@@ -6,7 +6,7 @@
 // Offline: compares files, doesn't call R2.
 import { createHash } from 'crypto';
 import { existsSync, readFileSync } from 'fs';
-import { cities, anchors, pack, tutor, country } from '@/content';
+import { cities, pack, tutor, country } from '@/content';
 
 const listPath = `content/${country}/images.json`;
 if (!existsSync(listPath)) {
@@ -24,7 +24,6 @@ for (const city of cities) {
   for (const place of city.places) used.push(`places/${place.id}`);
   for (const person of city.characters ?? []) used.push(`portraits/${person.id}`);
 }
-for (const anchor of Object.values(anchors)) used.push(`portraits/${anchor.id}`);
 used.push(`portraits/${tutor.id}`);
 
 const problems: string[] = [];

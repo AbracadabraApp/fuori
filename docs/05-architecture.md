@@ -52,7 +52,7 @@ End-of-day: `/api/diario` takes the day's transcripts and returns the diario, up
 
 The full TypeScript interfaces are in [Data model](09-data-model.md), which is the source of truth.
 
-Hand-written content (city pantries, anchor characters, Magda, level rules) lives in the repo as TypeScript files under `content/it/`. Generated characters and scenes are learner data, stored with the learner's progress.
+Hand-written content (city pantries, Magda, level rules) lives in the repo as TypeScript files under `content/it/`. Generated characters and scenes are learner data, stored with the learner's progress.
 
 ### Where learner data lives (decided 2026-10-10)
 
@@ -92,7 +92,7 @@ content/
     language.ts            language config (see below)
     levels/*.ts            CEFR steps (A1, A1+, A2…)
     cities/*.ts            pantry per city: neighbourhoods, places, food, customs
-    characters/*.ts        anchors (Rita, Giulia) and Magda
+    characters/magda.ts    Magda (everyone else is in the city files)
     route.ts               suggested route (inspiration only)
 prototype/index.html       the original artifact demo
 ```
@@ -101,12 +101,12 @@ prototype/index.html       the original artifact demo
 
 Fuori is Italian-only, but four cheap rules keep a second language from being a rewrite later:
 
-1. **Language content in its own folder.** Everything Italian-specific lives under `content/it/`: city pantries, anchor characters, Magda, level rules.
+1. **Language content in its own folder.** Everything Italian-specific lives under `content/it/`: city pantries, Magda, level rules.
 2. **One language config.** `content/it/language.ts` holds the speech-to-text language code (`it`), TTS voice choices, which level rules file to use, the language's name for prompts ("Italian"), and the UI words ("Come si dice?", diario, quaderno, "Ascolto…").
 3. **Nothing language-specific hard-coded.** Prompts and components read the language name, examples and UI words from the config. The house-rules prompt takes its forgiveness and correction examples ("bone journal" → buongiorno, *vorrei* vs *voglio*) from the config, not from the template.
 4. **All model calls in one module.** Every Claude call goes through `lib/claude.ts`, so swapping or adding a model provider touches one place.
 
-**Country packs (2026-10-12):** `content/index.ts` exports the active pack, chosen by the `COUNTRY` setting of each deployment; each pack (`content/<country>/pack.ts`) holds its language config, cities, anchors and voices. Code imports `@/content`, never a country folder.
+**Country packs (2026-10-12):** `content/index.ts` exports the active pack, chosen by the `COUNTRY` setting of each deployment; each pack (`content/<country>/pack.ts`) holds its language config, cities, Magda and voices. Code imports `@/content`, never a country folder.
 
 **Enforced** by `npm run test:language` (2026-10-12): it fails when a language name, the bare code `'it'` or a locale code like `it-IT` appears in `app/` or `lib/` outside comments, or when a prompt template in `content/*/prompts/` names the language instead of using `{language}`, or when code imports a country folder directly. `npm run test:pack` checks each pack is complete. Added after a Whisper hint in Italian slipped into `/api/transcribe` and was echoed into learners' lines.
 

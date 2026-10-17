@@ -1411,3 +1411,8 @@ Josh: "go for it" on the items Claude can finish without him. Each commit says w
 - Loading a country (`/v1/content`, `/v1/me`) gives up after 20 s instead of URLSession's 60 s, so a stalled connection shows "Can't reach the server" with Try Again.
 - **Not verified:** built only by CI (no Mac in the cloud session); needs Josh's iPhone: Mexico conversation → Settings → Italy should land on Italy's cities.
 - 2026-10-16: Place list opened part-way down after tapping a city (Josh). Nothing in the code set the position; added `.defaultScrollAnchor(.top, for: .initialOffset)` to `PlaceListView`. Built by CI only; not verified on the phone.
+
+## 2026-10-16 (afternoon): anchor code removed (laptop)
+
+- Josh: Giulia and Rita shouldn't be special (their places were hidden on 2026-10-13 for that reason, but the code still treated them as "anchors"). They're now ordinary Roma characters in `roma.ts`, same ids, so their memories stay linked; their places stay hidden. Removed: their hand-written sheets, their fixed voices, the anchor branch in `characterForPlace` and `characterGender`, `anchors` in both packs, the unused `lib/characters` loader, and `test:conversations` always sampling them (Josh's OK). Tests that listed anchors (pack, images, image-list, voices, prompt) no longer do.
+- Kept on purpose: the hidden apartment and Bar in Trastevere places, and the portraits `giulia.jpg` and `rita.jpg` (now used as ordinary portraits).

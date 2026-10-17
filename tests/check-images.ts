@@ -5,7 +5,7 @@
 // so they don't pile up again. A file named anywhere in app/, lib/ or content/ counts as used.
 import { existsSync, readdirSync, readFileSync, statSync } from 'fs';
 import { join } from 'path';
-import { cities, anchors, pack, tutor } from '@/content';
+import { cities, pack, tutor } from '@/content';
 
 const used = new Set<string>();
 
@@ -23,11 +23,6 @@ for (const city of cities) {
     used.add(`portraits/${person.id}.jpg`);
     if (!existsSync(`public${pack.images}/portraits/${person.id}.jpg`)) missing.push(`portraits/${person.id}.jpg (${city.id})`);
   }
-}
-
-for (const anchor of Object.values(anchors)) {
-  used.add(`portraits/${anchor.id}.jpg`);
-  if (!existsSync(`public${pack.images}/portraits/${anchor.id}.jpg`)) missing.push(`portraits/${anchor.id}.jpg (anchor; prompt in content/${pack.id}/characters/${anchor.id}.ts)`);
 }
 
 used.add(`portraits/${tutor.id}.jpg`);

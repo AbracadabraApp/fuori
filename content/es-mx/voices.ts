@@ -13,8 +13,6 @@ import type { Gender } from '@/lib/types';
 
 export const voices = {
   elevenlabs: {
-    // No anchors in Mexico yet (native Mexican Spanish speakers)
-    byCharacter: {} as Record<string, string>,
     f: [
       'spPXlKT5a4JMfbhPRAzA', // Camila - warm, inviting, rich Mexican Spanish, 51.7K uses
       'm7yTemJqdIqrcNleANfX', // Ana María - calm, natural, clear, neutral Mexican, 63.3K uses
@@ -45,7 +43,6 @@ function hash(s: string): number {
 
 export function elevenLabsVoiceFor(characterId?: string, gender?: Gender): string | undefined {
   const v = voices.elevenlabs;
-  if (characterId && v.byCharacter[characterId]) return v.byCharacter[characterId];
   if (!gender) return undefined;
   const pool = v[gender];
   return pool[hash(characterId ?? '') % pool.length];

@@ -34,7 +34,7 @@ for (const city of cities) {
     const user = messages.map((m) => m.content).join('\n');
     const unfilled = [...(system + user).matchAll(/\{(\w+)\}/g)].map((m) => m[1]);
     if (unfilled.length) failures.push(`${c.name}: unfilled placeholder(s) ${unfilled.join(', ')}`);
-    const expected = c.origin === 'anchor' ? c.appearance.setting : place.name;
+    const expected = place.name;
     if (!system.includes(expected)) failures.push(`${c.name} (${city.name}): prompt doesn't mention "${expected}"`);
   }
 }

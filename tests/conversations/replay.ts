@@ -76,7 +76,7 @@ function seeded(seed: number) {
 /** Characters Josh hasn't talked to: one per city, the same ones for the same seed. */
 function others(exclude: Set<string>, n: number): CharacterSheet[] {
   const random = seeded(SEED);
-  const pool = everyone.filter((x) => x.character.origin !== 'anchor' && !exclude.has(x.character.id));
+  const pool = everyone.filter((x) => !exclude.has(x.character.id));
   for (let i = pool.length - 1; i > 0; i--) {
     const j = Math.floor(random() * (i + 1));
     [pool[i], pool[j]] = [pool[j], pool[i]];

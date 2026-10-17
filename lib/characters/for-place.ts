@@ -1,11 +1,12 @@
 /**
- * Character for a place: hand-written anchors (Giulia, Rita) when the place has one,
- * otherwise the city file's character turned into a CharacterSheet.
+ * Character for a place: Magda at a school, otherwise the city file's
+ * character turned into a CharacterSheet. No character is special (Josh,
+ * 2026-10-13); Giulia and Rita were hand-written "anchors" until 2026-10-16.
  *
  * Client-safe (no fs), so the page and the conversation tests share it.
  */
 
-import { anchors, tutor } from '@/content';
+import { tutor } from '@/content';
 import type { CharacterSheet, CityCharacter, CityPantry, Place } from '@/lib/types';
 
 
@@ -47,7 +48,6 @@ export function characterForPlace(
   if (id === tutor.id) {
     return { ...tutor, city: city.name, placeId: place.id, appearance: { ...tutor.appearance, setting: `${place.name}, ${place.neighbourhood}` } };
   }
-  if (anchors[id]) return anchors[id];
   const person = city.characters?.find((c) => c.id === id);
   return person ? cityCharacterToSheet(person, city, place) : undefined;
 }

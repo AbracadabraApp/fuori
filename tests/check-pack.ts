@@ -43,8 +43,8 @@ for (const [id, p] of Object.entries(packs)) {
   for (const c of shown) {
     const places = c.places.filter((pl) => !pl.hidden);
     check(places.length > 0, `${id}/${c.id}: shown city with no shown places`);
-    // Who the app can find for a place: the city's characters, anchors, and the pack's Magda (tutor)
-    const people = new Set([...(c.characters ?? []).map((ch) => ch.id), ...Object.keys(p.anchors), p.tutor.id]);
+    // Who the app can find for a place: the city's characters and the pack's Magda (tutor)
+    const people = new Set([...(c.characters ?? []).map((ch) => ch.id), p.tutor.id]);
     for (const pl of places) check(!!pl.characterId && people.has(pl.characterId), `${id}/${c.id}/${pl.id}: shown place with nobody to talk to`);
     // The apartment was a place to rest in a day/time loop the game no longer has (Josh, 2026-10-13)
     for (const pl of places) check(pl.kind !== 'apartment', `${id}/${c.id}/${pl.id}: apartments are retired, keep it hidden`);

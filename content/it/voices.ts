@@ -12,11 +12,6 @@ import type { Gender } from '@/lib/types';
 
 export const voices = {
   elevenlabs: {
-    // Fixed voices for anchors (native Italian speakers)
-    byCharacter: {
-      giulia: 'MuTiG4dbrEGYEy3XP4iP', // Rossana: warm conversational, native Italian
-      rita: 'ZPImQHFNyEPRDeECS4MX', // Nora: bright narrator, native Italian (Romanesco)
-    } as Record<string, string>,
     f: [
       'MuTiG4dbrEGYEy3XP4iP', // Rossana - warm conversational, native Italian, 7.1K uses
       'ZPImQHFNyEPRDeECS4MX', // Nora - bright narrator, native Italian (Romanesco), 14.8K uses
@@ -47,7 +42,6 @@ function hash(s: string): number {
 
 export function elevenLabsVoiceFor(characterId?: string, gender?: Gender): string | undefined {
   const v = voices.elevenlabs;
-  if (characterId && v.byCharacter[characterId]) return v.byCharacter[characterId];
   if (!gender) return undefined;
   const pool = v[gender];
   return pool[hash(characterId ?? '') % pool.length];

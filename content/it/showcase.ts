@@ -12,8 +12,7 @@
  *
  * Hidden on purpose (Josh, 2026-10-13): Rita's apartment (the game has no
  * time or rest, it's about going out to places) and Giulia's bar (no
- * character should be special). Both stay in roma.ts as anchors; removing the
- * anchor code is a separate task.
+ * character should be special). Both stay in roma.ts as ordinary characters.
  */
 export const showcase: Record<string, string[]> = {
   roma: [

@@ -273,8 +273,28 @@ export const roma: CityPantry = {
     },
   ],
 
-  // People at each place (Giulia and Rita are anchors with their own files)
+  // People at each place
   characters: [
+    {
+      id: 'rita',
+      name: 'Rita',
+      gender: 'f',
+      age: 58,
+      role: 'host',
+      placeId: 'apartment-trastevere-rita',
+      personality: ['warm', 'practical', 'protective'],
+      portraitPrompt: 'Watercolour and ink sketch on white paper, travel-sketchbook style. Loose transparent washes, fine ink lines, lots of blank white paper. Square, head and shoulders, looking at the viewer. Italian woman in her late 50s, salt-and-pepper hair in a practical bob, warm brown eyes, laugh lines, simple gold necklace, comfortable clothes, hands mid-gesture. Soft natural light from apartment windows.',
+    },
+    {
+      id: 'giulia',
+      name: 'Giulia',
+      gender: 'f',
+      age: 32,
+      role: 'barista',
+      placeId: 'bar-trastevere-giulia',
+      personality: ['quick', 'funny', 'warm'],
+      portraitPrompt: 'Watercolour and ink sketch on white paper, travel-sketchbook style. Loose transparent washes, fine ink lines, lots of blank white paper. Square, head and shoulders, looking at the viewer. Italian woman in her early 30s, dark curly hair tied up messily, small silver hoop earrings, black barista apron over a striped shirt, quick lively eyes, expressive hands. Behind the counter of a small Roman coffee bar, morning light.',
+    },
     {
       id: 'sandro-bar-angolo',
       name: 'Sandro Pieri',
@@ -557,8 +577,6 @@ export const roma: CityPantry = {
     'aho',        // hey, listen
     'du\' spaghi', // two spaghetti (informal for two servings)
   ],
-
-  anchorIds: ['rita', 'giulia'],
 
   seedCharacters: [
     'Enzo, 60s, theatrical vegetable seller at San Cosimato market',

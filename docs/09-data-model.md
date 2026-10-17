@@ -20,7 +20,7 @@ interface CharacterSheet {
   age: number;                   // 32
   role: string;                  // "barista"
   city: string;                  // "Roma"
-  origin: 'anchor' | 'generated' | 'tutor'; // hand-written anchor, created during play, or Magda
+  origin: 'generated' | 'tutor'; // from the city files or created during play, or Magda (anchors removed 2026-10-16)
   placeId?: string;              // where you meet them ("roma-bar-giulia")
 
   personality: {

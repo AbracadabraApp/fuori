@@ -31,7 +31,7 @@ Respond with JSON:
 
 Placeholders:
 - `{name}`, `{age}`, `{role}`, `{city}`: from the character sheet
-- `{setting}`: where they are right now (anchors have a hand-written setting; city characters get "place, neighbourhood")
+- `{setting}`: where they are right now ("place, neighbourhood")
 - `{traits}`: personality traits, comma-separated
 - `{formality}`: "tu (informal)" or "Lei (formal)"
 - `{english}`: "You speak fluent English." / "You speak basic English." / empty (line left out)

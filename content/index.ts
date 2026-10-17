@@ -24,7 +24,6 @@ export const pack = packs[country];
 
 export const language = pack.language;
 export const cities = pack.cities;
-export const anchors = pack.anchors;
 export const tutor = pack.tutor;
 export const voices = pack.voices;
 export const elevenLabsVoiceFor = pack.elevenLabsVoiceFor;

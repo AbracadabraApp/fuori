@@ -12,8 +12,6 @@ The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the
 - [ ] **app** Josh tries today's build on his iPhone (installed): pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
 - [ ] **server** Railway watch paths: set on both services through the API (railway.json was ignored: config as code is deprecated), but docs-only commits still deploy; look in the dashboard (service → Settings → Watch Paths)
 
-- [ ] **server** Remove the anchor code, so Giulia and Rita are made like every other character (Josh, 2026-10-16). Their places have been hidden since 2026-10-13, but they still have hand-written sheets (`content/it/characters/`), fixed voices, their own branch in `characterForPlace`, and `test:conversations` always puts them in its sample. Changing that test needs Josh's OK. Their memories stay in the database.
-
 ### 1. Finish the conversation on the phone
 - [ ] **app** Try Magda in the app
 - [ ] **app** Device checks: a call, Siri, AirPods in and out, backgrounding, locking
@@ -187,6 +185,8 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 **Done when:** ~~Josh has tried the export in Gemini Notebook and decided keep, change or drop~~ (kept, 2026-10-14). The character-memory items were cut (Josh, 2026-10-15).
 
 ## Done since 2026-10-15
+
+- **server** Anchor code removed (2026-10-16, Josh): Giulia and Rita are ordinary Roma characters in `roma.ts` (same ids, so their memories stay linked; places still hidden). Gone: their hand-written sheets, fixed voices, the anchor branch in `characterForPlace`, `anchors` in the packs, and `test:conversations` always sampling them.
 
 - [x] **N0** iPhone app: server `/v1` API and Xcode skeleton (Josh used it on his iPhone)
 - [x] **N1** One conversation on the phone (Josh tried the latest build, tap to talk and the new sent state)

@@ -5,11 +5,9 @@
 import { language } from './language';
 import { cities as allCities } from './cities';
 import { showcase, homeCities } from './showcase';
-import { giulia } from './characters/giulia';
-import { rita } from './characters/rita';
 import { magda } from './characters/magda';
 import { voices, elevenLabsVoiceFor, browserVoiceFor } from './voices';
-import type { CharacterSheet, CityPantry } from '@/lib/types';
+import type { CityPantry } from '@/lib/types';
 
 /** Every city and place: hidden: true on places the showcase leaves out (and on
  *  any city with no showcase list); more: true on cities after "Mostra altro" */
@@ -36,8 +34,6 @@ export const pack = {
   images: '/images',
   language,
   cities,
-  /** Hand-written anchor characters, by id */
-  anchors: { giulia, rita } as Record<string, CharacterSheet>,
   /** Magda: the one character who teaches. One id everywhere, so her memory and
    *  the learner's Reviews follow them; placed at whichever school they visit. */
   tutor: magda,

@@ -20,7 +20,7 @@ import { venezia } from './venezia';
 import { verona } from './verona';
 
 // Feed order: alternating big city / smaller town, spread across regions,
-// Roma first (it has the anchors). The feed shows 10 at a time.
+// Roma first. The feed shows 10 at a time.
 // There are 9 big cities and 11 towns, so the list ends with three towns.
 export const cities = [
   roma, //     big   · Lazio

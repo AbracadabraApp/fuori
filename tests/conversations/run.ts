@@ -2,7 +2,7 @@
  * Grade and recommend: simulated conversations with a sample of existing characters.
  *
  *   npm run test:conversations                 # default sample
- *   npm run test:conversations -- --count=10   # characters in the sample (Giulia and Rita always included)
+ *   npm run test:conversations -- --count=10   # characters in the sample
  *   npm run test:conversations -- --turns=8    # learner turns per conversation
  *   npm run test:conversations -- --dry        # show the sample and prompts, no API calls
  *   npm run test:conversations -- --seed=7     # same sample every time: use for before-and-after
@@ -102,15 +102,14 @@ function pickSample(): Case[] {
       .map((place) => ({ place, city, character: characterForPlace(city, place) }))
       .filter((x): x is { place: Place; city: typeof city; character: CharacterSheet } => !!x.character)
   );
-  const anchors = all.filter((x) => x.character.origin === 'anchor');
-  // At most one character per city, so the sample spreads across Italy
+  // At most one character per city, so the sample spreads across the country
   const seen = new Set<string>();
-  const others = shuffle(all.filter((x) => x.character.origin !== 'anchor')).filter((x) => {
+  const others = shuffle(all).filter((x) => {
     if (seen.has(x.city.id)) return false;
     seen.add(x.city.id);
     return true;
   });
-  const picked = [...anchors, ...others].slice(0, Math.max(COUNT, anchors.length));
+  const picked = others.slice(0, COUNT);
   return picked.map((x, i) => ({
     character: x.character,
     place: x.place,
@@ -303,7 +302,7 @@ function report(results: Graded[], recs: string): string {
     ``,
     `## How this test works`,
     ``,
-    `1. **Sample.** Giulia and Rita every run, plus random characters from the city files (one per city), each at their own place.`,
+    `1. **Sample.** Random characters from the city files (one per city), each at their own place.`,
     `2. **Simulate.** Claude plays a learner for ${TURNS} turn${TURNS === 1 ? "" : "s"}. The character's replies come from \`lib/turn.ts\`, the same code the app uses, so this is the real prompt.`,
     `3. **Grade.** A separate Claude call reads each transcript and scores the character 1–10 (10 = a native speaker would find it entirely natural):`,
     ...crit.map((k) => `   - **${k}**: ${CRITERIA[k]}`),
