@@ -18,25 +18,25 @@ Every turn is three beats:
 
 ## Controls (Josh, 2026-10-17: keep them few)
 
-Two controls on every level, plus Less help only after the 15-turn question and until it's used:
+In the default tap-to-talk mode, one control per level, plus Less help only after the 15-turn question and until it's used:
 
 | | Levels 1–3 (tap) | Levels 4–5 and normal (speak) |
 |---|---|---|
-| Main action | The two reply buttons | The mic pill (tapping it while the character speaks stops them and starts your turn) |
-| Pause → Replay | One button: Pause while the character speaks, Replay once they've finished | Same |
+| Main action | The two reply buttons (tapping one while the character speaks stops them) | The mic pill (tapping it while the character speaks stops them and starts your turn) |
 | Less help | Once offered, until used | Same |
+| Pause | Hands-free only | Hands-free only |
 
-- Pause and Replay never compete: Pause only matters while audio plays, Replay only after. This keeps the rule that Pause is always visible while the character speaks ([13-ios-conventions.md](13-ios-conventions.md), D3).
+- **No Replay (Josh, 2026-10-17).** On levels 1–3 the character's words are on screen, with English on levels 1–2. On levels 4–5 the learner can ask the character to repeat ("Ripeti?", "Più lentamente"), which already works in the game and stays in role. If testing shows beginners stuck on level 3, add it back.
+- **Pause only in hands-free (Josh, 2026-10-17).** In tap-to-talk, the reply buttons and the pill already stop the character, and the mic never opens on its own. Hands-free keeps the Pause button, since there the mic can open without a tap. This changes decision D3 in [13-ios-conventions.md](13-ios-conventions.md) ("a Pause button always on the conversation screen"); update D3 and the CLAUDE.md safeguard line when this is built.
 - Levels 4–5 add one paper card with an instruction directly above the pill; levels 1–3 need none.
-- Nothing appears or disappears except the result of your answer and the Pause → Replay switch.
+- Nothing appears or disappears except the result of your answer.
 
 ### Settled after the laptop review (2026-10-17)
 - **Questions.** Every turn needs the character to ask something, since the replies need something to answer. On levels 1–3 any real question works ("Cosa prendi?"); the buttons supply the words. What the character asks starts to matter from level 4, where the learner has to come up with the words.
-- **Level 4, simplified (Josh, 2026-10-17: confusing).** No second voice before you speak. The character asks, your card shows your line, you read it out loud, and the character answers, recasting if you stumbled. Replay plays only the character's line.
-- **Pause on levels 1–3.** Same button as everywhere: Pause while any voice is playing, Replay once it's done. The mockup shows only the after state.
+- **Level 4, simplified (Josh, 2026-10-17: confusing).** No second voice before you speak. The character asks, your card shows your line, you read it out loud, and the character answers, recasting if you stumbled.
 - **Largest text size (AX5).** The portrait stays put; the area above the controls scrolls within a capped height, as the subtitle card already does past 260 pt. At AX5 the replies may cover most of the portrait; that's acceptable at that size. Check on the phone.
 - **Card wording.** Instructions like "Read your line out loud" are interface text, worded per country; any target-language words in them come from `/v1/content`, never from Swift.
-- **Writing the replies.** A separate call, run while the character's voice plays, so the turn stays `{ line, en }` and the replay gate is untouched. Test it on replayed conversations against folding the replies into the turn, for latency and quality, before deciding.
+- **Writing the replies.** A separate call, run while the character's voice plays, so the turn stays `{ line, en }` and the `test:replay` gate is untouched. Test it on replayed conversations against folding the replies into the turn, for latency and quality, before deciding.
 
 ## The levels
 

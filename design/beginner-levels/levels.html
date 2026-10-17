@@ -32,19 +32,18 @@ figcaption{font-size:15px;font-weight:700;color:var(--ink);max-width:390px}
 mark{background:var(--sand);color:#000;padding:0 3px;border-radius:4px}
 .slot{display:inline-block;width:170px;border-bottom:2px solid var(--terracotta)}
 .controls{display:flex;align-items:center;justify-content:space-between;padding-bottom:4px}
-.controls.tap{justify-content:flex-end;gap:12px}
+.controls.tap{justify-content:center}
 .pill{width:112px;height:52px;border-radius:26px;border:2px solid rgba(86,99,48,.35);background:var(--olive);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 4px rgba(0,0,0,.18)}
 .glass{width:44px;height:44px;border-radius:22px;border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 2px 6px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;color:var(--text)}
-.less{min-height:44px;padding:0 18px 0 14px;border-radius:22px;border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 2px 6px rgba(0,0,0,.15);display:flex;align-items:center;gap:8px;color:var(--olive-dark);font:700 17px var(--sans);margin-right:auto}
+.less{min-height:44px;padding:0 18px 0 14px;border-radius:22px;border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 2px 6px rgba(0,0,0,.15);display:flex;align-items:center;gap:8px;color:var(--olive-dark);font:700 17px var(--sans);}
 .spacer{width:44px;height:44px}
 </style>
 <h1>Beginner levels on the person screen</h1>
-<p class="lede">Giulia's screen at each level of <code>docs/beginner-scaffolding.md</code>, with the same exchange throughout so only the support changes. The round button on the right is Pause while she speaks and Replay once she's finished.</p>
+<p class="lede">Giulia's screen at each level of <code>docs/beginner-scaffolding.md</code>, with the same exchange throughout so only the support changes. Default tap-to-talk mode: one control per level (the replies or the mic); no Replay; Pause appears only in hands-free.</p>
 <div class="row" id="row"></div>
 <script>
 const IMG='../../public/images/portraits/giulia.jpg';
 const MIC='<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg>';
-const REPLAY='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>';
 const STEPS='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h5v-5h5V9h5V4"/><path d="M15 4h4v4"/></svg>';
 const LEVELS=[
  {cap:'Level 1: choose, all English',subEn:true,replies:'en'},
@@ -59,11 +58,11 @@ function reply(it,en,showEn){return '<div class="reply"><span class="a" lang="it
 function phone(l){
  let b='<div class="subs"><span class="it" lang="it">Buongiorno! Cosa prendi?</span>'+(l.subEn?'<span class="en">Good morning! What are you having?</span>':'')+'</div>';
  if(l.replies){const e=l.replies==='en';b+=reply('Vorrei un cornetto integrale.','I’d like a wholemeal croissant.',e)+reply('Vorrei un macchiato.','I’d like a macchiato.',e);
-  b+='<div class="controls tap">'+(l.less?'<span class="less">'+STEPS+'Less help</span>':'')+'<span class="glass" aria-label="Replay">'+REPLAY+'</span></div>';}
+  if(l.less)b+='<div class="controls tap"><span class="less">'+STEPS+'Less help</span></div>';}
  else{
   if(l.card==='read')b+='<div class="card"><span class="ins">Read your line out loud</span><span class="line" lang="it"><mark>Vorrei</mark> un cornetto integrale.</span></div>';
   if(l.card==='frame')b+='<div class="card"><span class="ins">Answer Giulia out loud, your way:</span><span class="line" lang="it"><mark>Vorrei</mark> <span class="slot">&#8203;</span></span></div>';
-  b+='<div class="controls"><span class="spacer"></span><span class="pill" aria-label="Tap to speak">'+MIC+'</span><span class="glass" aria-label="Replay">'+REPLAY+'</span></div>';}
+  b+='<div class="controls" style="justify-content:center"><span class="pill" aria-label="Tap to speak">'+MIC+'</span></div>';}
  return '<figure><figcaption>'+l.cap+'</figcaption><div class="phone"><div class="nav"><span class="back"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Trastevere</span><span class="gear" aria-label="Settings"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#566330" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg></span></div><div class="band"><span class="name">Giulia</span><span class="role">Barista, Trastevere</span></div><div class="pic"><img src="'+IMG+'" alt="Giulia"><div class="bottom">'+b+'</div></div></div></figure>';
 }
 document.getElementById('row').innerHTML=LEVELS.map(phone).join('');
