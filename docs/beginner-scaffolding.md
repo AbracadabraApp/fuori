@@ -30,6 +30,14 @@ At most three things on screen besides the navigation bar:
 - Levels 4–5 add one paper card with an instruction directly above the pill; levels 1–3 need none.
 - Nothing appears or disappears except the result of your answer and the Pause → Replay switch.
 
+### Settled after the laptop review (2026-10-17)
+- **Questions.** Every turn needs the character to ask something, since the replies need something to answer. On levels 1–3 any real question works ("Cosa prendi?"); the buttons supply the words. What the character asks starts to matter from level 4, where the learner has to come up with the words.
+- **Level 4, hear then say.** Your voice plays your line by itself as soon as the character finishes. Pause → Replay covers the whole exchange so far: Replay plays the character's line, then your line.
+- **Pause on levels 1–3.** Same button as everywhere: Pause while any voice is playing, Replay once it's done. The mockup shows only the after state.
+- **Largest text size (AX5).** The portrait stays put; the area above the controls scrolls within a capped height, as the subtitle card already does past 260 pt. At AX5 the replies may cover most of the portrait; that's acceptable at that size. Check on the phone.
+- **Card wording.** Instructions like "Read your line out loud" are interface text, worded per country; any target-language words in them come from `/v1/content`, never from Swift.
+- **Writing the replies.** A separate call, run while the character's voice plays, so the turn stays `{ line, en }` and the replay gate is untouched. Test it on replayed conversations against folding the replies into the turn, for latency and quality, before deciding.
+
 ## The levels
 
 | | 1. Choose, all English | 2. Choose, English on the character | 3. Choose, Italian only | 4. Read out loud | 5. Fill the frame | Past 5: normal screen |
