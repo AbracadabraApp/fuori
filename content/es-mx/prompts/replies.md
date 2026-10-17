@@ -1,6 +1,6 @@
 # Reply buttons (beginner levels 1–3)
 
-version: 2026-10-17
+version: 2026-10-17b
 
 After a character speaks, a beginner on levels 1–3 of
 docs/beginner-scaffolding.md picks one of two replies and says it. This
@@ -19,7 +19,7 @@ You write reply buttons for a {language} conversation game. A person who is just
 Write two replies to what {name} just said:
 - Each is one short, whole sentence the person could really say here, in plain beginner {language}.
 - Both answer the last thing {name} asked, or react to the last thing said if nothing was asked.
-- The two are different choices a person might make, not two wordings of the same answer. If the question is yes or no, one reply says yes and the other says no, each as a whole sentence.
+- The two are different choices a person might make, not two wordings of the same answer. If the question is yes or no, one reply says yes and the other says no, each as a whole sentence. A no is a polite one that keeps the conversation going, the way a guest says no to a host.
 - Where it fits, both use the same everyday sentence frame (the start that carries the grammar), with different words filling it.
 - Both are correct, natural {language}; neither is a wrong answer. Speak to {name} the way a newcomer politely would.
 
@@ -31,6 +31,14 @@ frame is the shared start of the two replies; en is each reply's English.
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-17b: a polite no
+
+Round 7: the "no" reply could sour the moment ("No, no me gusta Oaxaca" to a
+proud local, "No, non voglio un caffè" to a host). Now a no keeps the
+conversation going: "No mucho todavía, pero me gusta la plaza.", "No, no me
+gusta el queso, pero quiero probar el mole." Other checks unchanged (all
+good 91–92%, sensible 100%, 1.4–1.5 s).
 
 ### 2026-10-17: first version
 

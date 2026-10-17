@@ -229,7 +229,7 @@ v2 (one reply yes and one no; different choices, not two wordings; answer the la
 
 - **Fixed:** "Anche un cornetto?" → "Sì, voglio anche un cornetto, grazie." / "No, solo il caffè, grazie."; "¿Le gusta el picante?" → "Sí, me gusta mucho el picante." / "No, no me gusta mucho el picante." What's left is mostly the judge being strict about the frame ("Con zucchero" isn't "Il caffè con…").
 - **Pick: Sonnet, v2,** with structured output (it's faster than Haiku here). Now in `content/<country>/prompts/replies.md` and `lib/replies.ts`, used only by `test:conversations -- --learner=tap`.
-- **Seen, not yet fixed:** a "no" can be blunt or sour the moment ("No, no me gusta Oaxaca" to a proud local; "No, non voglio un caffè" to a host). A polite no that keeps the conversation going is the next prompt tweak.
+- **Seen, not yet fixed:** a "no" can be blunt or sour the moment ("No, no me gusta Oaxaca" to a proud local; "No, non voglio un caffè" to a host). A polite no that keeps the conversation going is the next prompt tweak. **Done (v3, now replies.md 2026-10-17b):** "No mucho todavía, pero me gusta la plaza."; "No, no me gusta el queso, pero quiero probar el mole." Same scores otherwise (all good 91–92%, sensible 100%, 1.4–1.5 s). The judge's politeness check passed v2 too (97–100%), so the gain is in keeping the conversation going, read by hand.
 
 **Round 9: tap and answer.** `test:conversations -- --learner=tap`: the simulated learner only taps one of the two replies (`lib/replies.ts`), at random, and the character answers it as a normal turn. "Sometimes ask", seed 11; Italy 12 conversations tapping and 12 speaking, Mexico 5 tapping. Scored with the replay's judge (`quality.md`, 2 runs) so the arms compare.
 

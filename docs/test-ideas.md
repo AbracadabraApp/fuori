@@ -24,6 +24,8 @@ How to work it: take the top item, run it, write the result in the test log, mov
 
 ## Done
 
+- Reply buttons, polite no (2026-10-17): v3 adopted as replies.md 2026-10-17b.
+
 - Round 10 (2026-10-17): "sometimes ask, about you" no better; liveliness lives in the character prompt and data, not the level block.
 
 - Round 9 (2026-10-17): tapping a reply works (no corrections of tapped lines, alive unchanged); found the order-form pattern.
