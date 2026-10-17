@@ -60,9 +60,11 @@ Known leak (Josh): naming CEFR may let Claude recognise published exam sentences
 Nouns and verbs alike (CEFR: nouns 33% exact, verbs 34%; verbs rated a bit harder, +0.48).
 
 - With CEFR named, words score far worse than sentences (33% against 60% exact). Letters stay too easy, as with sentences.
-- **But the disagreements say more about Kelly than Claude.** Kelly A1 that Claude calls B2: ambito, esigenza, provvedimento, regolamento, dichiarazione, riforma, fenomeno, stabilire, derivare. Kelly B2 that Claude calls A1: frigorifero, pranzo, pasto, neve, barca, moneta, cognome, ciliegia, automobile. Claude's answers look like a learner's reality; Kelly's look like newspaper frequency.
+- **But the disagreements say more about Kelly than Claude.** Kelly A1 that Claude calls B2: ambito, esigenza, provvedimento, regolamento, dichiarazione, riforma, fenomeno, stabilire, derivare. Kelly B2 that Claude calls A1: frigorifero, pranzo, pasto, neve, barca, moneta, cognome, ciliegia, automobile. Claude's answers look like a learner's reality; Kelly's look like newspaper frequency. Josh agrees (2026-10-16): Claude is closer than Kelly on these.
 - So this run can't answer "do words score differently from phrases?": it needs words graded by experts, not by frequency.
 - It does say something about the word-list idea: a frequency list from a web corpus ranks bureaucratic words as basic and everyday food and home words as advanced. A coverage measure built on it would mark a barista's "pranzo" as hard. If a list is ever used, it has to come from speech (subtitles) or learner material, and be checked like this first.
+
+| 8 | **No prompt, rules only** (Josh): words per sentence, hardest verb tense (a tagger such as Stanza, ~70 languages), share of words outside a frequency list; level = the highest any signal reaches. Kelly is a poor list for it (above) | Proposed |
 
 ## Ideas to keep (Josh, 2026-10-16)
 
