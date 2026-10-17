@@ -44,8 +44,11 @@ Research behind this plan: [How language apps handle levels](research/language-a
 | Screen | Subtitles and English on | Subtitles on, English off | Both off |
 | Magda | Survival phrases, confidence | Past and future, fluency | Nuance, register, dialect |
 | Replies | The ladder below | Speak freely; help if stuck | Speak freely |
+| What characters ask | Yes or no, or this or that ("Con zucchero o senza?") | One fact ("Di dove sei?", "Quanti ne vuoi?") | Anything: opinions, stories ("Che ne pensi?") |
 
 Characters are told the tier; it doesn't break character. A beginner gets a more patient barista, not a teacher ("everyone teaches, always in role").
+
+**What characters ask is the clearest difference between the levels (Josh, 2026-10-17).** It describes the outcome, not prompt wording: how a prompt gets there is for testing. A beginner always has something to answer, and something small; the questions open up as the learner does. It works the same in any language, and a "this or that" question gives the reply buttons their answers. Measured per turn by the kind of question a character's line leaves (none, yes or no, choice, one fact, open), as in `docs/level-judge-test.md` (round 5). The risk is the opposite one: a character who only asks turns a conversation into an intake form, so at higher levels the character leads less.
 
 ## Beginner ladder (Josh's idea)
 
