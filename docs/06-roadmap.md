@@ -42,6 +42,7 @@ Every prompt change says which goal it moves and may not make another worse (ver
   - [x] Define the frontend flow (walkthrough: `design/onboarding/walkthrough.html`)
   - [x] Define the engineering needs (onboarding-design.md → Engineering needs; open points answered by Josh, 2026-10-16)
   - [x] Implement (built 2026-10-17, server and app; Josh tried both countries on his iPhone)
+- [ ] **server** Learner level: what moves a learner between Beginner, Intermediate and Advanced after onboarding. Doesn't exist yet; onboarding's placement, Magda's study-file Level line and an unused type are separate pieces ([language-levels-plan.md](language-levels-plan.md) → 1)
 - [ ] **both** Beginner ladder: five levels, from tapping a reply with English to filling a frame in your own words ([beginner-scaffolding.md](beginner-scaffolding.md), draft 2026-10-17)
 
 ### 5. Parity with the web

@@ -91,6 +91,13 @@ Drafted from the level judge test and the rewrite samples ([level-judge-test.md]
 They move independently (simple dialogue with free speaking, or the reverse); "Beginner" names a starting combination of the two. **Success is the two together (Josh, 2026-10-16):** levelled dialogue plus the scaffolding (the English translation after each line, tap-a-reply buttons, reading a reply aloud, slower speech). The dialogue doesn't have to carry a beginner alone, so its target can stop short of stripping the characters bare; the replay tests dialogue without scaffolding, which is the harsh case, and the real test is a beginner playing with the scaffolding on. Josh: if the dialogue isn't at beginner level the game doesn't work (only a native speaker has kept up so far), so the Beginner dialogue comes first.
 
 ### 1. The learner's level
+**What exists (checked in code, 2026-10-17): no systemic learner level.** Josh: this is "the level of the learner", one of the three levels (the learner, the dialogue that follows it, the scaffolding), and it doesn't exist yet. Pieces only:
+- **Onboarding** places the learner once (`learners.level`: beginner, intermediate, advanced; `lib/onboarding.ts`, "if in doubt, choose the lower level"). Nothing reads it after that except `/v1/me`, and nothing ever moves it.
+- **Magda's study file** has a "Level:" line, a rough CEFR level with evidence from several conversations, or "unsure" (`content/<country>/prompts/study-file.md`). It's free text for Magda and the study export (`lib/study-export.ts`), not a stored field, on a different scale, and it doesn't feed `learners.level`.
+- **`LearnerProfile.level` / `levelEvidence`** in `lib/types.ts` (A1–B1) are from the early design and unused.
+- Character memory deliberately leaves level out (`memory.md`), so characters don't remember people as students.
+
+To build: what moves a learner between Beginner, Intermediate and Advanced, from what evidence, and where it's stored (one place, not three).
 - One tier per learner (Beginner, Intermediate, Advanced), set in onboarding, saved with the learner, changeable in Settings (the greyed-out control turns on).
 - Two different things, measured separately (Josh: learners and characters may be levelled differently):
   - **What they can follow** (listening) sets how characters talk to them.
