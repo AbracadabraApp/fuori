@@ -107,6 +107,8 @@ Nouns and verbs alike (CEFR: nouns 33% exact, verbs 34%; verbs rated a bit harde
 - **Voice:** "Io sono Elena. Sono una guida." reads like a textbook, not a person.
 - **Length:** Rita's 50-word line only came down to 32; it kept every idea, just in smaller pieces. Fewer ideas, not smaller words, is what shortens a line.
 
+Then, at Josh's request, **three whole conversation openings** (Giulia, Rosa, Rita; three character turns each, with Josh's lines) rewritten in context. Much better than lone lines: each reply still answered Josh, the teaching moment stayed (Rita's "assaggiare" explanation even grew, 26 → 28 words, in simpler pieces), and nobody became a tourist (Rosa just dropped "è in visita"). Ordinary turns roughly halved (17 → 8, 22 → 10, 25 → 11, 23 → 13). One slip: Rosa mixed Lei and tu. Lesson: simplify with the conversation in view, and let a teaching moment be longer if it's simpler.
+
 ## Notes from Josh (2026-10-16)
 
 - **Learners and characters may be levelled differently.** A character's line is judged for listening (would this learner understand it?); a learner's speech is production, transcribed by Whisper, short and full of errors. Ground truth for learner speech would be learner language graded by examiners (e.g. a learner corpus), not exam listening scripts.
