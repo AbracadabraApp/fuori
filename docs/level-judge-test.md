@@ -98,6 +98,15 @@ Nouns and verbs alike (CEFR: nouns 33% exact, verbs 34%; verbs rated a bit harde
 - Line by line, the overall CEFR judge puts today's characters at A2–B1, not the B2+ Josh's teacher heard. Possible reasons: the teacher heard speed, a whole conversation and an older, longer prompt (replies were ~60 words then, ~20 now); a text judge can't hear speed.
 - **The 90% word measure is stricter:** no line passes for a learner who arrived a few weeks ago, and three in four need the "about a year" listener. That is the gap the Beginner target has to close, and it's the measure to put on the scorecard.
 
+### 2026-10-16: sampling, not a test: real lines rewritten for a beginner (Josh)
+
+12 character lines from the replays, Sonnet asked to make each one followable by a real beginner with a free hand (cut, drop, change words, split). Haiku's CEFR grade before → after: mostly A2/B1 → A1. What it did: one idea per sentence, present tense, idioms swapped for plain words ("sei di passaggio … o abiti da queste parti?" → "Sei in vacanza? O abiti a Trastevere?"), conditions and asides dropped ("se ti viene voglia basta un cenno"). What it lost:
+- **The persona:** "Sei turista?", "Sei in vacanza?" — the learner is a newcomer staying a while, not a tourist.
+- **Teaching in role:** Roberto's "assaggiare significa provare un piccolo pezzo" (the word Josh asked about) was cut.
+- **Place:** Fonte Aretusa, Ortigia, the lungomare gone.
+- **Voice:** "Io sono Elena. Sono una guida." reads like a textbook, not a person.
+- **Length:** Rita's 50-word line only came down to 32; it kept every idea, just in smaller pieces. Fewer ideas, not smaller words, is what shortens a line.
+
 ## Notes from Josh (2026-10-16)
 
 - **Learners and characters may be levelled differently.** A character's line is judged for listening (would this learner understand it?); a learner's speech is production, transcribed by Whisper, short and full of errors. Ground truth for learner speech would be learner language graded by examiners (e.g. a learner corpus), not exam listening scripts.
