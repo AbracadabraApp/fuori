@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-17T03:00:06.093Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "level": null,
+  "seed": "7",
+  "turns": 6,
+  "conversations": 3,
+  "grades": {
+    "language": 9.666666666666666,
+    "understands": 9,
+    "adapts": 7.666666666666667,
+    "alive": 7,
+    "regional": 9
+  },
+  "length": {
+    "openerWords": 19,
+    "replies": 21,
+    "wordsMedian": 18,
+    "wordsAvg": 24.2,
+    "wordsMax": 49,
+    "longShare": 0.29,
+    "questionsAvg": 0.9,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "sofia-dulces-la-gloria",
+      "learner": "hesitant",
+      "overall": 8.4,
+      "stats": {
+        "openerWords": 27,
+        "replies": 7,
+        "wordsMedian": 17,
+        "wordsAvg": 18.3,
+        "wordsMax": 27,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "concha-sacristana",
+      "learner": "english-beginner",
+      "overall": 8.6,
+      "stats": {
+        "openerWords": 18,
+        "replies": 7,
+        "wordsMedian": 37,
+        "wordsAvg": 36.4,
+        "wordsMax": 49,
+        "longShare": 0.86,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "lupe-quesadillera",
+      "learner": "hesitant",
+      "overall": 8.4,
+      "stats": {
+        "openerWords": 19,
+        "replies": 7,
+        "wordsMedian": 18,
+        "wordsAvg": 17.9,
+        "wordsMax": 22,
+        "longShare": 0,
+        "questionsAvg": 0.7,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

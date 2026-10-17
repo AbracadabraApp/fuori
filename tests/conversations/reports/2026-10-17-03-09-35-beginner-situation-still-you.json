@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-17T03:09:35.982Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "level": "Beginner: situation, still you",
+  "seed": "7",
+  "turns": 6,
+  "conversations": 5,
+  "grades": {
+    "language": 10,
+    "understands": 9.4,
+    "adapts": 8,
+    "alive": 7.4,
+    "regional": 8.8
+  },
+  "length": {
+    "openerWords": 8,
+    "replies": 35,
+    "wordsMedian": 18,
+    "wordsAvg": 16.8,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "sofia-dulces-la-gloria",
+      "learner": "hesitant",
+      "overall": 8.2,
+      "stats": {
+        "openerWords": 14,
+        "replies": 7,
+        "wordsMedian": 17,
+        "wordsAvg": 16.4,
+        "wordsMax": 21,
+        "longShare": 0,
+        "questionsAvg": 0.3,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "concha-sacristana",
+      "learner": "english-beginner",
+      "overall": 9,
+      "stats": {
+        "openerWords": 12,
+        "replies": 7,
+        "wordsMedian": 21,
+        "wordsAvg": 20,
+        "wordsMax": 28,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "victor-jubilado",
+      "learner": "improving",
+      "overall": 8.8,
+      "stats": {
+        "openerWords": 7,
+        "replies": 7,
+        "wordsMedian": 18,
+        "wordsAvg": 17.6,
+        "wordsMax": 27,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "chuy-cocinera",
+      "learner": "english-beginner",
+      "overall": 9,
+      "stats": {
+        "openerWords": 8,
+        "replies": 7,
+        "wordsMedian": 19,
+        "wordsAvg": 17.6,
+        "wordsMax": 24,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "lupe-quesadillera",
+      "learner": "hesitant",
+      "overall": 8.6,
+      "stats": {
+        "openerWords": 8,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 12.4,
+        "wordsMax": 16,
+        "longShare": 0,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

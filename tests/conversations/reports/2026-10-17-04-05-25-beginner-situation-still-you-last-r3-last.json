@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-17T04:05:25.869Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "level": "Beginner: situation, still you",
+  "seed": "11",
+  "turns": 6,
+  "conversations": 5,
+  "grades": {
+    "language": 8.8,
+    "understands": 9.2,
+    "adapts": 7.6,
+    "alive": 6.8,
+    "regional": 8.6
+  },
+  "length": {
+    "openerWords": 11,
+    "replies": 35,
+    "wordsMedian": 15,
+    "wordsAvg": 14.8,
+    "wordsMax": 22,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0.03
+  },
+  "byCharacter": [
+    {
+      "id": "beto-taxi",
+      "learner": "english-beginner",
+      "overall": 7.8,
+      "stats": {
+        "openerWords": 17,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 12.6,
+        "wordsMax": 17,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "arturo-jubilado",
+      "learner": "hesitant",
+      "overall": 9,
+      "stats": {
+        "openerWords": 10,
+        "replies": 7,
+        "wordsMedian": 18,
+        "wordsAvg": 16.9,
+        "wordsMax": 21,
+        "longShare": 0,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0.14
+      }
+    },
+    {
+      "id": "arturo-taquillero-cdmx",
+      "learner": "improving",
+      "overall": 8.6,
+      "stats": {
+        "openerWords": 9,
+        "replies": 7,
+        "wordsMedian": 16,
+        "wordsAvg": 15.4,
+        "wordsMax": 19,
+        "longShare": 0,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "daniela-farmacia-san-rafael",
+      "learner": "english-beginner",
+      "overall": 8,
+      "stats": {
+        "openerWords": 11,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 13.4,
+        "wordsMax": 18,
+        "longShare": 0,
+        "questionsAvg": 0.3,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "chuy-cocinera",
+      "learner": "hesitant",
+      "overall": 7.6,
+      "stats": {
+        "openerWords": 15,
+        "replies": 7,
+        "wordsMedian": 15,
+        "wordsAvg": 15.9,
+        "wordsMax": 22,
+        "longShare": 0,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

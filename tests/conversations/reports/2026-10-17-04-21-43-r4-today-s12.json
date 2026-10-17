@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-17T04:21:43.223Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "level": null,
+  "seed": "12",
+  "turns": 6,
+  "conversations": 5,
+  "grades": {
+    "language": 9.2,
+    "understands": 9.4,
+    "adapts": 8.4,
+    "alive": 7.6,
+    "regional": 9
+  },
+  "length": {
+    "openerWords": 22,
+    "replies": 35,
+    "wordsMedian": 31,
+    "wordsAvg": 31.9,
+    "wordsMax": 71,
+    "longShare": 0.4,
+    "questionsAvg": 0.9,
+    "multiQuestionShare": 0.06
+  },
+  "byCharacter": [
+    {
+      "id": "ramiro-taquero",
+      "learner": "hesitant",
+      "overall": 8,
+      "stats": {
+        "openerWords": 22,
+        "replies": 7,
+        "wordsMedian": 21,
+        "wordsAvg": 20,
+        "wordsMax": 23,
+        "longShare": 0,
+        "questionsAvg": 0.7,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "emiliano-los-amantes",
+      "learner": "improving",
+      "overall": 9.2,
+      "stats": {
+        "openerWords": 20,
+        "replies": 7,
+        "wordsMedian": 55,
+        "wordsAvg": 50.3,
+        "wordsMax": 71,
+        "longShare": 0.86,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "remedios-panaderia-la-espiga",
+      "learner": "english-beginner",
+      "overall": 8.8,
+      "stats": {
+        "openerWords": 24,
+        "replies": 7,
+        "wordsMedian": 37,
+        "wordsAvg": 38,
+        "wordsMax": 59,
+        "longShare": 0.57,
+        "questionsAvg": 1.3,
+        "multiQuestionShare": 0.29
+      }
+    },
+    {
+      "id": "cuca-cocinera",
+      "learner": "english-beginner",
+      "overall": 9.6,
+      "stats": {
+        "openerWords": 18,
+        "replies": 7,
+        "wordsMedian": 31,
+        "wordsAvg": 29.9,
+        "wordsMax": 47,
+        "longShare": 0.57,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "ximena-ceramica",
+      "learner": "hesitant",
+      "overall": 8,
+      "stats": {
+        "openerWords": 22,
+        "replies": 7,
+        "wordsMedian": 21,
+        "wordsAvg": 21.1,
+        "wordsMax": 24,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

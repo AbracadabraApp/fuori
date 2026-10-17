@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-17T04:21:30.787Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "level": "Beginner: situation, still you",
+  "seed": "12",
+  "turns": 6,
+  "conversations": 5,
+  "grades": {
+    "language": 9.4,
+    "understands": 9.4,
+    "adapts": 8.2,
+    "alive": 7.4,
+    "regional": 8.6
+  },
+  "length": {
+    "openerWords": 11,
+    "replies": 35,
+    "wordsMedian": 14,
+    "wordsAvg": 16.5,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "remedios-panaderia-la-espiga",
+      "learner": "english-beginner",
+      "overall": 8.8,
+      "stats": {
+        "openerWords": 8,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 14.4,
+        "wordsMax": 22,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "ramiro-taquero",
+      "learner": "hesitant",
+      "overall": 8.2,
+      "stats": {
+        "openerWords": 10,
+        "replies": 7,
+        "wordsMedian": 11,
+        "wordsAvg": 12.9,
+        "wordsMax": 17,
+        "longShare": 0,
+        "questionsAvg": 0.9,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "emiliano-los-amantes",
+      "learner": "improving",
+      "overall": 8.8,
+      "stats": {
+        "openerWords": 11,
+        "replies": 7,
+        "wordsMedian": 25,
+        "wordsAvg": 23.4,
+        "wordsMax": 30,
+        "longShare": 0,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "ximena-ceramica",
+      "learner": "hesitant",
+      "overall": 7.8,
+      "stats": {
+        "openerWords": 13,
+        "replies": 7,
+        "wordsMedian": 13,
+        "wordsAvg": 13,
+        "wordsMax": 15,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "cuca-cocinera",
+      "learner": "english-beginner",
+      "overall": 9.4,
+      "stats": {
+        "openerWords": 14,
+        "replies": 7,
+        "wordsMedian": 19,
+        "wordsAvg": 19,
+        "wordsMax": 24,
+        "longShare": 0,
+        "questionsAvg": 0.7,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

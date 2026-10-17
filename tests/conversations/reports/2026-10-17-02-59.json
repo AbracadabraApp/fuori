@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-17T02:59:57.723Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "level": "Beginner: situation",
+  "seed": "7",
+  "turns": 6,
+  "conversations": 3,
+  "grades": {
+    "language": 9.666666666666666,
+    "understands": 9,
+    "adapts": 7.333333333333333,
+    "alive": 6.333333333333333,
+    "regional": 8.333333333333334
+  },
+  "length": {
+    "openerWords": 10,
+    "replies": 21,
+    "wordsMedian": 15,
+    "wordsAvg": 14.2,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "victor-jubilado",
+      "learner": "improving",
+      "overall": 8,
+      "stats": {
+        "openerWords": 10,
+        "replies": 7,
+        "wordsMedian": 15,
+        "wordsAvg": 14.4,
+        "wordsMax": 19,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "concha-sacristana",
+      "learner": "english-beginner",
+      "overall": 7.6,
+      "stats": {
+        "openerWords": 15,
+        "replies": 7,
+        "wordsMedian": 15,
+        "wordsAvg": 14.9,
+        "wordsMax": 19,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "lupe-quesadillera",
+      "learner": "hesitant",
+      "overall": 8.8,
+      "stats": {
+        "openerWords": 7,
+        "replies": 7,
+        "wordsMedian": 13,
+        "wordsAvg": 13.3,
+        "wordsMax": 20,
+        "longShare": 0,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

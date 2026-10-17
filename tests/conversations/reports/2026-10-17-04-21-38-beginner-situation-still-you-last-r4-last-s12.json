@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-17T04:21:38.816Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "level": "Beginner: situation, still you",
+  "seed": "12",
+  "turns": 6,
+  "conversations": 5,
+  "grades": {
+    "language": 9.6,
+    "understands": 9,
+    "adapts": 7.8,
+    "alive": 7.2,
+    "regional": 8.6
+  },
+  "length": {
+    "openerWords": 12,
+    "replies": 35,
+    "wordsMedian": 15,
+    "wordsAvg": 14.6,
+    "wordsMax": 33,
+    "longShare": 0.03,
+    "questionsAvg": 0.5,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "ramiro-taquero",
+      "learner": "hesitant",
+      "overall": 7.8,
+      "stats": {
+        "openerWords": 11,
+        "replies": 7,
+        "wordsMedian": 11,
+        "wordsAvg": 11.6,
+        "wordsMax": 15,
+        "longShare": 0,
+        "questionsAvg": 0.3,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "emiliano-los-amantes",
+      "learner": "improving",
+      "overall": 8.6,
+      "stats": {
+        "openerWords": 7,
+        "replies": 7,
+        "wordsMedian": 16,
+        "wordsAvg": 17.7,
+        "wordsMax": 33,
+        "longShare": 0.14,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "remedios-panaderia-la-espiga",
+      "learner": "english-beginner",
+      "overall": 8.8,
+      "stats": {
+        "openerWords": 12,
+        "replies": 7,
+        "wordsMedian": 15,
+        "wordsAvg": 16,
+        "wordsMax": 19,
+        "longShare": 0,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "cuca-cocinera",
+      "learner": "english-beginner",
+      "overall": 8.8,
+      "stats": {
+        "openerWords": 13,
+        "replies": 7,
+        "wordsMedian": 13,
+        "wordsAvg": 12,
+        "wordsMax": 16,
+        "longShare": 0,
+        "questionsAvg": 0.3,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "ximena-ceramica",
+      "learner": "hesitant",
+      "overall": 8.2,
+      "stats": {
+        "openerWords": 16,
+        "replies": 7,
+        "wordsMedian": 17,
+        "wordsAvg": 15.7,
+        "wordsMax": 17,
+        "longShare": 0,
+        "questionsAvg": 0.9,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

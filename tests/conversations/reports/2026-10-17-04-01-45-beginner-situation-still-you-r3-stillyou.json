@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-17T04:01:45.168Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "level": "Beginner: situation, still you",
+  "seed": "11",
+  "turns": 6,
+  "conversations": 5,
+  "grades": {
+    "language": 9.6,
+    "understands": 9.2,
+    "adapts": 8,
+    "alive": 7.2,
+    "regional": 9
+  },
+  "length": {
+    "openerWords": 9,
+    "replies": 35,
+    "wordsMedian": 14,
+    "wordsAvg": 14.1,
+    "wordsMax": 22,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "arturo-jubilado",
+      "learner": "hesitant",
+      "overall": 8.4,
+      "stats": {
+        "openerWords": 13,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 14.4,
+        "wordsMax": 21,
+        "longShare": 0,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "beto-taxi",
+      "learner": "english-beginner",
+      "overall": 8.4,
+      "stats": {
+        "openerWords": 8,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 13.6,
+        "wordsMax": 16,
+        "longShare": 0,
+        "questionsAvg": 0.3,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "arturo-taquillero-cdmx",
+      "learner": "improving",
+      "overall": 8.6,
+      "stats": {
+        "openerWords": 9,
+        "replies": 7,
+        "wordsMedian": 16,
+        "wordsAvg": 15.6,
+        "wordsMax": 21,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "daniela-farmacia-san-rafael",
+      "learner": "english-beginner",
+      "overall": 9.2,
+      "stats": {
+        "openerWords": 9,
+        "replies": 7,
+        "wordsMedian": 11,
+        "wordsAvg": 12,
+        "wordsMax": 17,
+        "longShare": 0,
+        "questionsAvg": 0.3,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "chuy-cocinera",
+      "learner": "hesitant",
+      "overall": 8.4,
+      "stats": {
+        "openerWords": 8,
+        "replies": 7,
+        "wordsMedian": 15,
+        "wordsAvg": 15.1,
+        "wordsMax": 22,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}
