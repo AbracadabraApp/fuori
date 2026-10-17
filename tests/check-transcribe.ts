@@ -13,7 +13,7 @@ async function main() {
   const params: Record<string, unknown>[] = [];
   WhisperGroqProvider.prototype.transcribe = async function (p) {
     params.push(p as unknown as Record<string, unknown>);
-    return { text: 'ciao', language: p.language };
+    return { text: 'ciao', language: p.language ?? '' };
   };
   const { POST } = await import('@/app/api/transcribe/route');
   const form = new FormData();

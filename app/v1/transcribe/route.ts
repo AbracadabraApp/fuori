@@ -3,7 +3,9 @@
  *
  * Whisper on Groq. `audio` is the recording with a real file name and type
  * (the app sends speech.m4a); `mode` is "target" (the language being learned,
- * the default) or "en" (asking how to say something). An empty `text` means
+ * the default), "en" (asking how to say something) or "any" (onboarding
+ * answers, which can be in either: Whisper detects the language and `language`
+ * says which it heard). An empty `text` means
  * nothing was understood. The app skips uploading recordings with no voice in
  * them; this route still refuses oversized files.
  */
@@ -20,7 +22,8 @@ export async function POST(request: Request) {
     const audio = form?.get('audio');
     if (!(audio instanceof File) || audio.size === 0) return apiError('bad_audio', 'Send the recording as multipart field "audio"');
     if (audio.size > MAX_BYTES) return apiError('bad_audio', `Recording too large (${audio.size} bytes)`);
-    const lang = form?.get('mode') === 'en' ? 'en' : learning.code;
+    const mode = form?.get('mode');
+    const lang = mode === 'any' ? undefined : mode === 'en' ? 'en' : learning.code;
     try {
       // No prompt: Whisper echoes it into short or quiet recordings (tests/check-transcribe.ts)
       const result = await getSpeechProvider().transcribe({ audio, language: lang });

@@ -11,7 +11,8 @@ export interface TranscriptionResult {
 
 export interface TranscriptionParams {
   audio: Buffer | Blob | File;
-  language: string;
+  /** ISO code to listen for; absent: Whisper detects it and returns it (onboarding answers can be English) */
+  language?: string;
   mimeType?: string;
   prompt?: string;
 }

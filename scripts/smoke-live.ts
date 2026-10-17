@@ -9,7 +9,8 @@
  *
  * Steps: the site loads; a conversation is recorded; leaving writes memory and
  * the study file; the visit is counted for the stamp; a second visit remembers
- * the learner; Magda at the school has the study file; a short lesson updates it. About 6 Claude replies
+ * the learner; Magda at the school has the study file; a short lesson updates it;
+ * then the app's API, including onboarding. About 6 Claude replies
  * plus memory and the study file (a few minutes, a few cents). Deletes the test
  * learner afterwards through `railway ssh` (skip with --keep).
  */
@@ -35,6 +36,12 @@ const LINES: Record<string, string[]> = {
 const LESSON_LINES: Record<string, string[]> = {
   it: ['Sì, va bene. Io voglio un caffè', 'Vorrei un caffè, per favore'],
   es: ['Sí, está bien. Yo quiero un café', 'Quisiera un café, por favor'],
+};
+
+// Two onboarding answers (the speaker path): English first, as people often start
+const ONBOARDING_ANSWERS: Record<string, string[]> = {
+  it: ['I love the food and the little towns', 'Sì, è la mia terza volta in Italia, mi piace molto'],
+  es: ['I love the food and the markets', 'Sí, es mi tercera vez en México, me gusta mucho'],
 };
 
 let cookie = '';
@@ -204,7 +211,53 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
     const tr = await fetch(`${base}/v1/transcribe`, { method: 'POST', headers: auth, body: form });
     const t = (await tr.json()) as { text?: string };
     tr.ok && t.text?.trim() ? pass(`v1 transcribe ("${t.text.trim().slice(0, 40)}")`) : fail('v1 transcribe', `${tr.status} ${JSON.stringify(t)}`);
+    // Onboarding answers can be in English: no language set, Whisper says which it heard
+    const anyForm = new FormData();
+    anyForm.append('audio', new File([audio], 'speech.mp3', { type: 'audio/mpeg' }));
+    anyForm.append('mode', 'any');
+    const ta = (await (await fetch(`${base}/v1/transcribe`, { method: 'POST', headers: auth, body: anyForm })).json()) as { text?: string; language?: string };
+    ta.text?.trim() && ta.language ? pass(`v1 transcribe, any language (heard ${ta.language})`) : fail('v1 transcribe, any language', JSON.stringify(ta));
   }
+
+  await onboardingApi(auth, v1);
+}
+
+// The greeter (docs/onboarding-design.md): a new learner isn't onboarded; her
+// content, voice, follow-up and send-off; the level is stored; Restart
+// onboarding clears it; the beginner path stores beginner.
+async function onboardingApi(auth: Record<string, string>, v1: (path: string, body: unknown) => Promise<Response>) {
+  const me = async () => (await (await fetch(`${base}/v1/me`, { headers: auth })).json()) as { level?: string | null; onboarded?: boolean };
+  const first = await me();
+  first.onboarded === false && first.level === null ? pass('v1 me: a new learner is not onboarded') : fail('v1 me: a new learner is not onboarded', JSON.stringify(first));
+
+  const content = (await (await fetch(`${base}/v1/content`)).json()) as { onboarding?: { guide: { id: string; poses: Record<string, string | null> }; lines: Record<string, { line: string; en: string }> } };
+  const ob = content.onboarding;
+  const poses = Object.values(ob?.guide.poses ?? {});
+  poses.length === 4 && poses.every(Boolean) && ob?.lines.welcome?.line ? pass('v1 content: her lines and four poses') : fail('v1 content: onboarding', JSON.stringify(ob).slice(0, 200));
+  if (!ob) return;
+
+  const speak = await v1('/v1/speak', { text: ob.lines.welcome.line, characterId: ob.guide.id });
+  speak.ok && speak.headers.get('content-type') === 'audio/mpeg' ? pass('v1 speak in her voice') : fail('v1 speak in her voice', `${speak.status} ${await speak.text()}`);
+
+  const answers = ONBOARDING_ANSWERS[language.code];
+  const fu = await v1('/v1/onboarding/follow-up', { answer: { text: answers[0], language: 'english' } });
+  const f = (await fu.json()) as { line?: string; en?: string };
+  fu.ok && f.line?.trim().endsWith('?') && f.en ? pass(`v1 onboarding follow-up ("${f.line.slice(0, 50)}…")`) : fail('v1 onboarding follow-up', `${fu.status} ${JSON.stringify(f)}`);
+
+  const so = await v1('/v1/onboarding/send-off', { answers: answers.map((text) => ({ text })) });
+  const sf = (await so.json()) as { line?: string; level?: string };
+  const after = await me();
+  so.ok && sf.line?.endsWith(ob.lines.help.line) && after.onboarded && after.level === sf.level
+    ? pass(`v1 onboarding send-off placed and stored ${sf.level}`)
+    : fail('v1 onboarding send-off', `${so.status} ${JSON.stringify(sf)} me ${JSON.stringify(after)}`);
+
+  const reset = await v1('/v1/onboarding/reset', {});
+  const cleared = await me();
+  reset.status === 204 && cleared.onboarded === false && cleared.level === null ? pass('v1 onboarding reset (Restart onboarding)') : fail('v1 onboarding reset', `${reset.status} ${JSON.stringify(cleared)}`);
+
+  const done = await v1('/v1/onboarding/done', { path: 'beginner' });
+  const beginner = await me();
+  done.ok && beginner.onboarded && beginner.level === 'beginner' ? pass('v1 onboarding done: beginner path') : fail('v1 onboarding done', `${done.status} ${JSON.stringify(beginner)}`);
 }
 
 main()

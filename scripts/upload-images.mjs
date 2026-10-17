@@ -30,7 +30,8 @@ import { AwsClient } from 'aws4fetch';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 // country: the country's card picture (country/<country>.jpg), for the app's country choice
-const KINDS = ['cities', 'places', 'portraits', 'country'];
+// guide: the greeter's four poses (welcome, listen, talk, laugh) for onboarding
+const KINDS = ['cities', 'places', 'portraits', 'country', 'guide'];
 const WEBP_QUALITY = 80;
 const CONCURRENCY = 8;
 

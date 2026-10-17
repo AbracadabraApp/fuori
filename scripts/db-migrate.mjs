@@ -76,6 +76,14 @@ CREATE TABLE IF NOT EXISTS learner_tokens (
 );
 CREATE INDEX IF NOT EXISTS idx_learner_tokens_learner ON learner_tokens(learner_id);
 
+-- Onboarding (2026-10-16, docs/onboarding-design.md): the level the greeter
+-- placed them at (beginner, intermediate, advanced; null until placed), when
+-- they finished, and what they said and why they were placed there, so
+-- placement can be checked and re-run. Per country, like learners themselves.
+ALTER TABLE learners ADD COLUMN IF NOT EXISTS level text;
+ALTER TABLE learners ADD COLUMN IF NOT EXISTS onboarded_at timestamptz;
+ALTER TABLE learners ADD COLUMN IF NOT EXISTS onboarding jsonb;
+
 -- Indexes for common queries
 CREATE INDEX IF NOT EXISTS idx_conversations_learner ON conversations(learner_id);
 CREATE INDEX IF NOT EXISTS idx_conversations_character ON conversations(character_id);

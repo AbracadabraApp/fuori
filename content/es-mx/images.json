@@ -32,6 +32,26 @@
       "src": "023a4f0921a3c7ca",
       "bytes": 301248
     },
+    "guide/laugh": {
+      "key": "es-mx/guide/laugh.383e55dd0d.webp",
+      "src": "0911fcb7e1df2444",
+      "bytes": 102706
+    },
+    "guide/listen": {
+      "key": "es-mx/guide/listen.00a98ed0cb.webp",
+      "src": "fd3ad8787a96bff3",
+      "bytes": 96116
+    },
+    "guide/talk": {
+      "key": "es-mx/guide/talk.fbffe9ccfe.webp",
+      "src": "98431972713d054f",
+      "bytes": 97606
+    },
+    "guide/welcome": {
+      "key": "es-mx/guide/welcome.8341160c15.webp",
+      "src": "c75ea8b3e9668ea4",
+      "bytes": 114816
+    },
     "places/abarrotes-la-esquinita": {
       "key": "es-mx/places/abarrotes-la-esquinita.bd0b7d2970.webp",
       "src": "6ff95d840d2acc19",

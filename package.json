@@ -45,6 +45,7 @@
     "test:study-export": "tsx tests/check-study-export.ts",
     "smoke:live": "tsx scripts/smoke-live.ts",
     "test:leave": "tsx tests/check-leave.ts",
+    "test:onboarding": "node --env-file-if-exists=.env.local node_modules/.bin/tsx tests/check-onboarding.ts",
     "test:sweep": "tsx tests/check-sweep.ts",
     "test:turn-request": "tsx tests/check-turn-request.ts",
     "test:app-log": "tsx tests/check-app-log.ts",

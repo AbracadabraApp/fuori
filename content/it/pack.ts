@@ -7,6 +7,7 @@ import { cities as allCities } from './cities';
 import { showcase, homeCities } from './showcase';
 import { magda } from './characters/magda';
 import { voices, elevenLabsVoiceFor, browserVoiceFor } from './voices';
+import { onboarding } from './onboarding';
 import type { CityPantry } from '@/lib/types';
 
 /** Every city and place: hidden: true on places the showcase leaves out (and on
@@ -39,6 +40,8 @@ export const pack = {
   tutor: magda,
   /** Colours of the station ticket: Italian rail green, red accent, pale green security stripes */
   ticketTheme: { band: '#1d5c3a', bandInk: '#ffffff', stripe: 'rgba(29, 92, 58, 0.09)', accent: '#b8252f' },
+  /** The greeter's fixed lines, voice and framing (docs/onboarding-design.md) */
+  onboarding,
   voices,
   elevenLabsVoiceFor,
   browserVoiceFor,

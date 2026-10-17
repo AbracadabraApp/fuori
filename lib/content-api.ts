@@ -11,7 +11,7 @@
  */
 
 import { createHash } from 'crypto';
-import { cities, country, language, pack } from '@/content';
+import { cities, country, language, onboarding, pack } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
 import { imageListFor } from '@/content';
@@ -49,6 +49,13 @@ export interface ContentCharacter {
   portrait: string | null;
 }
 
+/** The greeter (docs/onboarding-design.md): her fixed lines, her four poses
+ *  and how far to lift her picture so her face stays clear of the text */
+export interface ContentOnboarding {
+  guide: { id: string; lift: number; poses: Record<'welcome' | 'listen' | 'talk' | 'laugh', string | null> };
+  lines: typeof onboarding.lines;
+}
+
 export interface Content {
   version: string;
   country: string;
@@ -62,6 +69,7 @@ export interface Content {
     ui: typeof language.ui;
   };
   ticketTheme: typeof pack.ticketTheme;
+  onboarding: ContentOnboarding;
   cities: ContentCity[];
   characters: Record<string, ContentCharacter>;
 }
@@ -119,6 +127,19 @@ export function buildContent(): Content {
       ui: language.ui,
     },
     ticketTheme: pack.ticketTheme,
+    onboarding: {
+      guide: {
+        id: onboarding.guide.id,
+        lift: onboarding.guide.lift,
+        poses: {
+          welcome: image('guide/welcome'),
+          listen: image('guide/listen'),
+          talk: image('guide/talk'),
+          laugh: image('guide/laugh'),
+        },
+      },
+      lines: onboarding.lines,
+    },
     cities: out,
     characters,
   };

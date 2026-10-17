@@ -107,6 +107,26 @@
       "src": "acc0e2825d566923",
       "bytes": 274694
     },
+    "guide/laugh": {
+      "key": "it/guide/laugh.bfdac441e0.webp",
+      "src": "8d1f26ff10a3a978",
+      "bytes": 109592
+    },
+    "guide/listen": {
+      "key": "it/guide/listen.1c28795d15.webp",
+      "src": "3ed1f83f321104eb",
+      "bytes": 108764
+    },
+    "guide/talk": {
+      "key": "it/guide/talk.fa6ed97de7.webp",
+      "src": "8d960c475e24b6c4",
+      "bytes": 109178
+    },
+    "guide/welcome": {
+      "key": "it/guide/welcome.73f3b3501d.webp",
+      "src": "99d48aef863aff71",
+      "bytes": 123698
+    },
     "places/accademia-carrara": {
       "key": "it/places/accademia-carrara.a4e2a12e2b.webp",
       "src": "1a57a9fdab71d9f0",

@@ -40,8 +40,9 @@ export class WhisperGroqProvider implements SpeechProvider {
     const transcriptionOptions: any = {
       file: audioFile,
       model: 'whisper-large-v3-turbo',
-      language: language,
-      response_format: 'json',
+      // No language: Whisper detects it, and only verbose_json says which it heard
+      ...(language ? { language } : {}),
+      response_format: language ? 'json' : 'verbose_json',
     };
 
     // Add prompt if provided (helpful for context)
@@ -53,7 +54,7 @@ export class WhisperGroqProvider implements SpeechProvider {
 
     return {
       text: transcription.text,
-      language: language,
+      language: language ?? (transcription as { language?: string }).language ?? '',
     };
   }
 }

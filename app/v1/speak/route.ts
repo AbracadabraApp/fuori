@@ -6,7 +6,7 @@
  * (AVSpeechSynthesizer); `code` says why: quota (402, don't retry until the
  * quota resets), rate_limited, upstream_unavailable.
  */
-import { elevenLabsVoiceFor, language } from '@/content';
+import { elevenLabsVoiceFor, language, onboarding } from '@/content';
 import { apiError, withLearner } from '@/lib/api';
 import { characterGender } from '@/lib/characters/by-id';
 import { getVoiceProvider } from '@/lib/voice/providers';
@@ -45,7 +45,8 @@ export async function POST(request: Request) {
         text,
         language: language.code,
         characterId,
-        voice: elevenLabsVoiceFor(characterId, characterGender(characterId)),
+        // The greeter has her own voice (content/<country>/onboarding.ts); characters get one by gender
+        voice: characterId === onboarding.guide.id ? onboarding.guide.voice : elevenLabsVoiceFor(characterId, characterGender(characterId)),
         speed,
       });
       if (!result.audio) {
