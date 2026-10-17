@@ -95,6 +95,7 @@ They move independently (simple dialogue with free speaking, or the reverse); "B
 - **Onboarding** places the learner once (`learners.level`: beginner, intermediate, advanced; `lib/onboarding.ts`, "if in doubt, choose the lower level"). Nothing reads it after that except `/v1/me`, and nothing ever moves it.
 - **Magda's study file** has a "Level:" line, a rough CEFR level with evidence from several conversations, or "unsure" (`content/<country>/prompts/study-file.md`). It's free text for Magda and the study export (`lib/study-export.ts`), not a stored field, on a different scale, and it doesn't feed `learners.level`.
 - **`LearnerProfile.level` / `levelEvidence`** in `lib/types.ts` (A1–B1) are from the early design and unused.
+- **The dialogue scorecard** (`lib/quality.ts`, prompt `quality.md`) scores every real conversation when it ends and the replay test the same way. It judges the character, never the learner, but two of its counts are evidence about the learner: lines where they signalled they were lost ("non capisco", "ripeti", switching to English) and their lines garbled by speech-to-text.
 - Character memory deliberately leaves level out (`memory.md`), so characters don't remember people as students.
 
 To build: what moves a learner between Beginner, Intermediate and Advanced, from what evidence, and where it's stored (one place, not three).
