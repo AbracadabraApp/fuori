@@ -173,7 +173,9 @@ But test the simple version first.
 
 **The prompt uses only:** name, age, role, city, setting, personality traits, tu/Lei and English ability. Other sheet fields (speech description, cares about, secret, regionalisms) exist for later and are not sent in M1.
 
-**English ability** (`englishAbility` on the sheet):
+**English when asked (Josh, 2026-10-16; replaces the per-character ability below as the policy):** when the learner asks for help, in English or in Italian, any character helps in English as much as it takes, then goes back to Italian. English nobody asked for is what the scorecard counts against them. In practice the prompt says nothing about English, and this already works in the game.
+
+**English ability** (`englishAbility` on the sheet; historical, only the old anchors had one):
 - `fluent`: can briefly explain in English when asked, then back to Italian
 - `basic`: a few simple English words if the learner is really stuck
 - `none`: no English; simpler Italian, slower, with gestures

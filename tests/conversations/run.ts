@@ -50,7 +50,7 @@ const random = SEED !== undefined ? seeded(Number(SEED) || 0) : Math.random;
 function buildCriteria() {
   const langName = language.name;
   const base = {
-    language: `Speaks ${langName}. Uses English only when the learner asks for it, and only as much as the character's English allows, then returns to ${langName}.`,
+    language: `Speaks ${langName}. Uses English when the learner asks for help (in English or in ${langName}), as much as the help takes, then returns to ${langName}; no English nobody asked for.`,
     understands: 'Understands imperfect speech. Reads garbled speech-to-text and learner errors as what they meant, without commenting on them.',
     adapts: `Adapts when the learner is lost. Talking fast or in complex ${langName} is fine (real people do); what matters is that when the learner signals confusion the character slows down and rephrases, and when they ask to repeat, repeats.`,
     alive: 'Feels like a real person in that place. Distinct personality, reacts to what was said, recasts mistakes naturally instead of teaching.',
