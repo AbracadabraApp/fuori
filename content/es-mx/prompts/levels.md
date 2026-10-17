@@ -1,6 +1,6 @@
 # Learner levels in the character prompt (Mexican Spanish)
 
-version: 2026-10-16c
+version: 2026-10-17
 
 What a character is told about how much {language} the learner follows.
 Experimental (docs/language-levels-plan.md → Preliminary design): used only
@@ -33,6 +33,18 @@ They are just starting to learn {language}. They follow only short, plain {langu
 They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time. After you speak they see an English translation of what you said. You're still yourself with them: your humour, your opinions, your place.
 ```
 
+## Beginner: still you, can answer
+
+```
+They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time. They can answer a yes or no, or pick between two things, but not much more. You're still yourself with them: your humour, your opinions, your place.
+```
+
+## Beginner: still you, ask
+
+```
+They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time. Leave them something easy to answer: a yes or no, or a choice between two things. You're still yourself with them: your humour, your opinions, your place.
+```
+
 ## Beginner: shape
 
 ```
@@ -50,6 +62,15 @@ For example: "¡Un café de olla, ahorita! ¿Tú vives por aquí?"
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-17: "still you, can answer" and "still you, ask"
+
+Josh asked whether question asking had been considered. It hadn't been
+measured: counting the round 3 lines, the Beginner blocks cut the turns that
+leave the learner something to answer (Mexico 86% → 43%, Italy 89–93% →
+78–80%) and choice questions ("caffè o tè?") disappeared. Two variants to win
+them back: one describes what the learner can answer (situation), one asks
+for it directly.
 
 ### 2026-10-16c: "still you, with subtitles"
 
