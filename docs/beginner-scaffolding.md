@@ -4,7 +4,7 @@
 
 A beginner takes part at one of five levels. The level decides how much support the screen gives, from tapping a reply with English everywhere (level 1) to filling a frame in your own words (level 5). Past level 5 there's nothing to add: that's the normal screen, where you speak freely. Nothing is scripted past level 4.
 
-**These levels are scaffolding only (Josh, 2026-10-17).** They change how you take part, not how characters talk. How characters talk follows the learner's level (Beginner, Intermediate, Advanced; [language-levels-plan.md](language-levels-plan.md) → Three tiers), which moves separately. Reaching the normal screen past level 5 doesn't make you Intermediate: a Beginner there still hears Beginner dialogue.
+**These levels are scaffolding only (Josh, 2026-10-17).** They change how you take part, not how characters talk. How characters talk follows the learner's level (Beginner, Intermediate, Advanced; [language-levels-plan.md](language-levels-plan.md) → Three tiers), which moves separately. Reaching the normal screen past level 5 doesn't make you Intermediate: a Beginner there still hears Beginner dialogue. On levels 1–5 the dialogue is always the easiest (Beginner) and doesn't progress from one level to the next: only the support changes.
 
 The same levels apply to a Diario card and to the person screen in conversation.
 
