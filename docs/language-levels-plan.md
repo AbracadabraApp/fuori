@@ -79,6 +79,12 @@ Rules: about two minutes; the learner's word wins (Claude suggests, the learner 
 
 Drafted from the level judge test and the rewrite samples ([level-judge-test.md](level-judge-test.md)). Captured before discussion: Josh has concerns still to raise, so nothing here is decided.
 
+### 0. Two separate things (Josh, 2026-10-16)
+- **What they hear (the level):** how characters speak: ideas per turn, phrasing, speed. The prompt.
+- **How they take part (the Beginner path):** what the learner does on their turn: tap a reply, read one aloud, speak with help, speak freely, and when the English shows. The ladder: screens and buttons, not the prompt.
+
+They move independently (simple dialogue with free speaking, or the reverse); "Beginner" names a starting combination of the two. Josh: if the dialogue isn't at beginner level the game doesn't work (only a native speaker has kept up so far), so the Beginner dialogue comes first.
+
 ### 1. The learner's level
 - One tier per learner (Beginner, Intermediate, Advanced), set in onboarding, saved with the learner, changeable in Settings (the greyed-out control turns on).
 - Two different things, measured separately (Josh: learners and characters may be levelled differently):
