@@ -18,7 +18,7 @@ Every turn is three beats:
 
 ## Controls (Josh, 2026-10-17: keep them few)
 
-At most three things on screen besides the navigation bar:
+Two controls on every level, plus Less help only after the 15-turn question and until it's used:
 
 | | Levels 1–3 (tap) | Levels 4–5 and normal (speak) |
 |---|---|---|
@@ -32,7 +32,7 @@ At most three things on screen besides the navigation bar:
 
 ### Settled after the laptop review (2026-10-17)
 - **Questions.** Every turn needs the character to ask something, since the replies need something to answer. On levels 1–3 any real question works ("Cosa prendi?"); the buttons supply the words. What the character asks starts to matter from level 4, where the learner has to come up with the words.
-- **Level 4, hear then say.** Your voice plays your line by itself as soon as the character finishes. Pause → Replay covers the whole exchange so far: Replay plays the character's line, then your line.
+- **Level 4, simplified (Josh, 2026-10-17: confusing).** No second voice before you speak. The character asks, your card shows your line, you read it out loud, and the character answers, recasting if you stumbled. Replay plays only the character's line.
 - **Pause on levels 1–3.** Same button as everywhere: Pause while any voice is playing, Replay once it's done. The mockup shows only the after state.
 - **Largest text size (AX5).** The portrait stays put; the area above the controls scrolls within a capped height, as the subtitle card already does past 260 pt. At AX5 the replies may cover most of the portrait; that's acceptable at that size. Check on the phone.
 - **Card wording.** Instructions like "Read your line out loud" are interface text, worded per country; any target-language words in them come from `/v1/content`, never from Swift.
@@ -46,14 +46,14 @@ At most three things on screen besides the navigation bar:
 | **Your side** | Two whole-line replies as buttons, Italian + English | Two whole-line replies, Italian only | Two whole-line replies, Italian only | Your whole reply in Italian, frame highlighted | The frame with an open slot: "Vorrei ________" | Nothing |
 | **Instruction** | None | None | None | Read your line out loud | Answer [character] out loud, your way: | None |
 | **Action** | Tap | Tap | Tap | Speak | Speak: fill the slot with whatever you want | Speak freely |
-| **Your voice** | After you tap | After you tap | After you tap | Before you read: hear it, then say it | After you speak, your answer said right | — |
+| **Your voice** | After you tap | After you tap | After you tap | None: the character's answer recasts | After you speak, your answer said right | — |
 
 ### What each level is for
 
 1. **Choose, all English.** Meet the frame with full support: you understand the question and both answers, and you hear your choice said right.
 2. **Choose, English on the character.** You still understand the question, but you read your own options in Italian.
 3. **Choose, Italian only.** To choose, you have to understand the question and both options; the character's answer confirms what you said.
-4. **Read out loud.** Your first time saying it. Hear it, then say the whole line yourself, copying the sound and rhythm.
+4. **Read out loud.** Your first time saying it: read the whole line yourself; the character's answer shows you how it sounds.
 5. **Fill the frame.** The structure is given; the content is yours. "Vorrei ____" lets you order anything, so it's open-ended but still scaffolded.
 
 ## Rules
