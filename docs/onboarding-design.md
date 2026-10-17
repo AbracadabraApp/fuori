@@ -174,7 +174,7 @@ From the agreed flow and the walkthrough (`design/onboarding/walkthrough.html`).
 - Mic: the conversation's tap-to-talk (tap, "Press when done"), always tap even with Hands-free on, with the label "Answer in <language> or English". The microphone permission prompt comes on the first tap.
 - Silence: if a recording has no voice in it (the app's existing check), she doesn't move on; on the follow-up, that's when its English appears.
 - Errors: a failed call shows the error code with Try again, never a silent skip.
-- Settings → Developer: **Replay onboarding**, so Josh can test it.
+- Settings → touch and hold Version → **Restart onboarding**, so Josh can test it. Built 2026-10-16: today it forgets the chosen country and goes back to the country choice, keeping each country's learner. When onboarding exists it must also clear the learner's `onboarded` state so she greets them again.
 - **Decided (Josh, 2026-10-16):** existing learners (Josh in both countries) see onboarding once in each country, since neither has a level.
 
 ### Checks before calling it done
