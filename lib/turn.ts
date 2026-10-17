@@ -25,6 +25,8 @@ export async function runTurn(params: {
   /** Magda's system prompt and first turn instead of the character prompt */
   system?: string;
   firstTurn?: string;
+  /** Experimental level block (tests only; see buildTurnPrompt) */
+  level?: string;
 }): Promise<TurnReply> {
   const prompt = buildTurnPrompt(params);
 

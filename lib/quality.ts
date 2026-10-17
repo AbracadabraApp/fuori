@@ -88,11 +88,15 @@ export const judgeWithClaude: Judge = async (character, turns) => {
   const prompt = buildQualityPrompt(character, turns);
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
-    max_tokens: 1024,
+    // The model thinks before answering and the thinking counts toward this
+    // limit: at 1024, about one conversation in four came back cut off
+    // (replay, 2026-10-16) once the judge also wrote coherence and "alive"
+    max_tokens: 4000,
     system: prompt.system,
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: qualityOutputJsonSchema } },
   });
+  if (response.stop_reason === 'max_tokens') throw new Error(`Quality judge hit max_tokens (${response.usage.output_tokens} tokens)`);
   return JudgeSchema.parse(JSON.parse(replyText(response)));
 };
 

@@ -11,6 +11,7 @@
  *   npm run test:replay                           # score the current prompt
  *   npm run test:replay -- --compare=<report.json> --target=replyWords   # gate against an earlier run
  *   npm run test:replay -- --others=6 --seed=7 --turns=6 --dry
+ *   npm run test:replay -- --level="Beginner: shape"   # experimental level block (content/<country>/prompts/levels.md)
  *
  * --refresh reads /api/admin/conversations (FUORI_URL, default production) with
  * ADMIN_KEY, both from .env.local. The replay set (tests/conversations/replay-set.json)
@@ -41,6 +42,7 @@ const DRY = has('dry');
 const COMPARE = flag('compare');
 const TARGET = flag('target') ?? 'replyWords';
 const LABEL = flag('label');
+const LEVEL = flag('level');
 
 const DIR = join(process.cwd(), 'tests', 'conversations');
 const SET_FILE = join(DIR, 'replay-set.json');
@@ -138,11 +140,11 @@ async function replay(c: Case): Promise<Result> {
   // How long each reply takes (the "faster" goal); the opening isn't a reply
   const replyMs: number[] = [];
   try {
-    const opening = await runTurn({ character: c.character, transcript: [] });
+    const opening = await runTurn({ character: c.character, transcript: [], level: LEVEL });
     transcript.push({ who: 'npc', transcript: opening.line, translation: opening.en });
     for (const said of c.script.lines.slice(0, TURNS)) {
       const started = performance.now();
-      const reply = await runTurn({ character: c.character, transcript, learnerSaid: said });
+      const reply = await runTurn({ character: c.character, transcript, learnerSaid: said, level: LEVEL });
       replyMs.push(Math.round(performance.now() - started));
       transcript.push({ who: 'learner', transcript: said });
       transcript.push({ who: 'npc', transcript: reply.line, translation: reply.en });
@@ -173,7 +175,7 @@ async function runAll(all: Case[]): Promise<Result[]> {
 function save(label: string, results: Result[], card: Scorecard, extra: string[] = []): string {
   mkdirSync(REPORTS, { recursive: true });
   const file = join(REPORTS, `replay-${new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-')}-${label}`);
-  const head = `prompt ${promptVersion()} · model ${CLAUDE_MODEL} · judge ${qualityPromptVersion()} · ${TURNS} learner lines each`;
+  const head = `prompt ${promptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''} · model ${CLAUDE_MODEL} · judge ${qualityPromptVersion()} · ${TURNS} learner lines each`;
   const md = [
     `# Replay test: ${label}`,
     ``,
@@ -198,7 +200,7 @@ function save(label: string, results: Result[], card: Scorecard, extra: string[]
   writeFileSync(`${file}.md`, md);
   writeFileSync(
     `${file}.json`,
-    JSON.stringify({ at: new Date().toISOString(), promptVersion: promptVersion(), model: CLAUDE_MODEL, judgeVersion: qualityPromptVersion(), turns: TURNS, scorecard: card, scores: results.filter((r) => r.score).map((r) => ({ id: r.case.character.id, own: r.case.own, score: r.score })) }, null, 2)
+    JSON.stringify({ at: new Date().toISOString(), promptVersion: promptVersion(), level: LEVEL ?? null, model: CLAUDE_MODEL, judgeVersion: qualityPromptVersion(), turns: TURNS, scorecard: card, scores: results.filter((r) => r.score).map((r) => ({ id: r.case.character.id, own: r.case.own, score: r.score })) }, null, 2)
   );
   return file.replace(process.cwd() + '/', '');
 }
@@ -211,7 +213,7 @@ async function main() {
   if (!MEASURES.some((m) => m.key === TARGET)) throw new Error(`--target must be one of ${MEASURES.map((m) => m.key).join(', ')}`);
 
   const all = cases(loadSet());
-  console.log(`Prompt ${promptVersion()} · ${all.length} conversations (${all.filter((c) => c.own).length} real, ${all.filter((c) => !c.own).length} sample characters, seed ${SEED}) · ${TURNS} lines each`);
+  console.log(`Prompt ${promptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''} · ${all.length} conversations (${all.filter((c) => c.own).length} real, ${all.filter((c) => !c.own).length} sample characters, seed ${SEED}) · ${TURNS} lines each`);
   all.forEach((c) => console.log(`  ${c.character.name} (${c.character.role})${c.own ? '' : ' · sample'} ← ${c.script.lines.length} lines from ${c.script.from.slice(0, 8)}`));
   const calls = all.length * (Math.min(TURNS, 99) + 2);
   if (DRY) return console.log(`\nDry run: no API calls. About ${calls} calls in a real run.`);

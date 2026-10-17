@@ -44,6 +44,10 @@ interface BuildTurnPromptParams {
   /** Replaces the character system prompt and first turn (Magda: build-tutor-prompt.ts) */
   system?: string;
   firstTurn?: string;
+  /** Experimental: a block from content/<country>/prompts/levels.md (e.g.
+   *  "Beginner: shape"), added at the end of the character prompt. Only the
+   *  tests pass one; without it the prompt is today's. */
+  level?: string;
 }
 
 interface TurnPrompt {
@@ -128,11 +132,18 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
     english,
     relationship: relationshipLine(t, memory, now),
   });
+  const levelled = params.level && !params.system
+    ? `${system}\n\n${fill(readPromptFile('levels.md').block(params.level), {
+        language: language.name,
+        role: character.role,
+        formality: language.formality[character.speech.formality],
+      })}`
+    : system;
 
   const messages: PromptMessage[] =
     transcript.length > 0 ? recentMessages(t, transcript, learnerSaid ?? '') : [{ role: 'user', content: t.firstTurn.trim() }];
 
-  return { system, messages, version: t.version };
+  return { system: levelled, messages, version: params.level ? `${t.version}+${params.level}` : t.version };
 }
 
 /**

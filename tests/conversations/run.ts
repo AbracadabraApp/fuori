@@ -6,6 +6,7 @@
  *   npm run test:conversations -- --turns=8    # learner turns per conversation
  *   npm run test:conversations -- --dry        # show the sample and prompts, no API calls
  *   npm run test:conversations -- --seed=7     # same sample every time: use for before-and-after
+ *   npm run test:conversations -- --level="Beginner: shape"   # experimental level block (content/<country>/prompts/levels.md)
  *
  * Reports reply length as numbers (opener words, median and longest reply, share
  * of long replies, questions per reply) next to the grades, and saves a .json
@@ -32,6 +33,7 @@ const COUNT = arg('count', 6);
 const TURNS = arg('turns', 6);
 const DRY = process.argv.includes('--dry');
 const SEED = process.argv.find((a) => a.startsWith('--seed='))?.split('=')[1];
+const LEVEL = process.argv.find((a) => a.startsWith('--level='))?.split('=').slice(1).join('=');
 
 // Seeded random numbers, so --seed gives the same sample on every run
 function seeded(seed: number) {
@@ -120,7 +122,8 @@ function pickSample(): Case[] {
 
 // ---------- Claude helpers ----------
 
-async function ask(system: string, user: string, maxTokens = 400): Promise<string> {
+// Limits leave room for the model's thinking, which counts toward them
+async function ask(system: string, user: string, maxTokens = 2000): Promise<string> {
   const res = await anthropic.messages.create({
     model: CLAUDE_MODEL,
     max_tokens: maxTokens,
@@ -130,7 +133,7 @@ async function ask(system: string, user: string, maxTokens = 400): Promise<strin
   return replyText(res).trim();
 }
 
-async function askJson<T>(system: string, user: string, schema: Record<string, unknown>, maxTokens = 1500): Promise<T> {
+async function askJson<T>(system: string, user: string, schema: Record<string, unknown>, maxTokens = 4000): Promise<T> {
   const res = await anthropic.messages.create({
     model: CLAUDE_MODEL,
     max_tokens: maxTokens,
@@ -160,18 +163,18 @@ You are at ${c.place.name} in ${c.cityName}, talking to ${c.character.name} (${c
 Be honest about comprehension: understand only what someone at your level really would. If the character's last line was too fast, long or complex for you, say so the way a real learner would (${helpPhrases}). Don't pretend to follow.
 Write ONLY what the learner says next, as speech-to-text would capture it. One or two short sentences. No quotes, no stage directions.`,
     `Conversation so far:\n${show(transcript, c.character)}\n\nWhat do you say next?`,
-    150
+    2000 // was 150: the model's thinking used it up and the line came back empty
   );
 }
 
 async function simulate(c: Case): Promise<Turn[]> {
   const transcript: Turn[] = [];
-  const opening = await runTurn({ character: c.character, transcript: [] });
+  const opening = await runTurn({ character: c.character, transcript: [], level: LEVEL });
   transcript.push({ who: 'npc', transcript: opening.line, translation: opening.en });
 
   for (let i = 0; i < TURNS; i++) {
     const said = await learnerLine(c, transcript);
-    const reply = await runTurn({ character: c.character, transcript, learnerSaid: said });
+    const reply = await runTurn({ character: c.character, transcript, learnerSaid: said, level: LEVEL });
     transcript.push({ who: 'learner', transcript: said });
     transcript.push({ who: 'npc', transcript: reply.line, translation: reply.en });
   }
@@ -275,7 +278,7 @@ function report(results: Graded[], recs: string): string {
   const lines = [
     `# Conversation test`,
     ``,
-    `${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC · model ${CLAUDE_MODEL} · prompt ${promptVersion()} · ${ok.length} conversations · ${TURNS} learner turns each`,
+    `${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC · model ${CLAUDE_MODEL} · prompt ${promptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''} · ${ok.length} conversations · ${TURNS} learner turns each`,
     ``,
     `## Grade: ${avg((r) => r.overall).toFixed(1)} / 10`,
     ``,
@@ -338,7 +341,7 @@ function report(results: Graded[], recs: string): string {
 
 async function main() {
   const sample = pickSample();
-  console.log(`Prompt version: ${promptVersion()} (content/${country}/prompts/character.md)${SEED !== undefined ? ` · seed ${SEED}` : ''}`);
+  console.log(`Prompt version: ${promptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''} (content/${country}/prompts/character.md)${SEED !== undefined ? ` · seed ${SEED}` : ''}`);
   console.log(`Sample (${sample.length}):`);
   sample.forEach((c) =>
     console.log(`  ${c.character.name} — ${c.character.role}, ${c.place.name}, ${c.cityName} · learner: ${c.learner.id}`)
@@ -379,7 +382,8 @@ async function main() {
   const recs = results.some((r) => !r.error) ? await recommend(results) : '_No conversations completed._';
   const dir = join(process.cwd(), 'tests', 'conversations', 'reports');
   mkdirSync(dir, { recursive: true });
-  const file = join(dir, `${new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-')}.md`);
+  // Seconds and the level in the name, so runs started together don't overwrite each other
+  const file = join(dir, `${new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-')}${LEVEL ? `-${LEVEL.replace(/\W+/g, '-').toLowerCase()}` : ''}.md`);
   writeFileSync(file, report(results, recs));
   // Machine-readable summary, for comparing runs before and after a change
   const okRuns = results.filter((r) => !r.error);
@@ -390,6 +394,7 @@ async function main() {
         at: new Date().toISOString(),
         model: CLAUDE_MODEL,
         promptVersion: promptVersion(),
+        level: LEVEL ?? null,
         seed: SEED ?? null,
         turns: TURNS,
         conversations: okRuns.length,

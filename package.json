@@ -14,6 +14,7 @@
     "test:conversations": "tsx --env-file-if-exists=.env.local tests/conversations/run.ts",
     "test:replay": "tsx --env-file-if-exists=.env.local tests/conversations/replay.ts",
     "test:prompt": "tsx tests/check-prompt.ts",
+    "test:level-prompt": "tsx tests/check-level-prompt.ts",
     "test:reply": "tsx tests/check-reply-text.ts",
     "test:images": "tsx tests/check-images.ts",
     "test:image-list": "tsx tests/check-image-list.ts",
