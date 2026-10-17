@@ -1,6 +1,6 @@
 # Learner levels in the character prompt (Italian)
 
-version: 2026-10-17b
+version: 2026-10-17c
 
 What a character is told about how much {language} the learner follows.
 Experimental (docs/language-levels-plan.md → Preliminary design): used only
@@ -51,6 +51,12 @@ They are just starting to learn {language}. They follow only short, plain {langu
 They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time. Now and then, when it comes naturally, leave them something easy to answer, like a yes or no or a choice between two things. You're still yourself with them: your humour, your opinions, your place.
 ```
 
+## Beginner: sometimes ask, about you
+
+```
+They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time. Now and then, when it comes naturally, leave them something easy to answer, like a yes or no or a choice between two things. You're still yourself with them: your humour, your opinions, your place. They like hearing about you and this place, a little at a time.
+```
+
 ## Beginner: shape
 
 ```
@@ -68,6 +74,14 @@ For example: "Un caffè lungo, subito! Tu abiti qui vicino?"
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-17c: "sometimes ask, about you"
+
+Round 9: with "sometimes ask", characters fall into an order form ("Vuoi X o
+Y?" on 43–44% of turns, with a speaking or a tapping learner alike), and the
+grader calls them generic ("a language-lesson script rather than a taxi
+driver"). This variant adds one sentence describing the learner: they like
+hearing about the character and the place, a little at a time.
 
 ### 2026-10-17b: "still you, sometimes ask"
 

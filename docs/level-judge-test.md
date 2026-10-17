@@ -231,6 +231,21 @@ v2 (one reply yes and one no; different choices, not two wordings; answer the la
 - **Pick: Sonnet, v2,** with structured output (it's faster than Haiku here). Now in `content/<country>/prompts/replies.md` and `lib/replies.ts`, used only by `test:conversations -- --learner=tap`.
 - **Seen, not yet fixed:** a "no" can be blunt or sour the moment ("No, no me gusta Oaxaca" to a proud local; "No, non voglio un caffè" to a host). A polite no that keeps the conversation going is the next prompt tweak.
 
+**Round 9: tap and answer.** `test:conversations -- --learner=tap`: the simulated learner only taps one of the two replies (`lib/replies.ts`), at random, and the character answers it as a normal turn. "Sometimes ask", seed 11; Italy 12 conversations tapping and 12 speaking, Mexico 5 tapping. Scored with the replay's judge (`quality.md`, 2 runs) so the arms compare.
+
+| Arm | Alive | Corrections of the learner's line | Lines that don't follow | Choice questions | Turns with nothing to answer |
+|---|---|---|---|---|---|
+| Italy, learner taps | 5.7 | 0 | 0.13 per conversation | 43% | 19% |
+| Italy, learner speaks | 5.6 | 0 | 0.04 | 44% | 13% |
+| Mexico, learner taps | 6.2 | 0 | 0.50 | 20% | 14% |
+| Mexico, learner speaks (round 6) | 5.5 | 0 | 0 | 31% | 11–23% |
+
+- **Tapping works.** Characters answer the tapped line naturally, never correct a line that was already right, and are no flatter than with a speaking learner.
+- **The order form is real, and it comes from the prompt, not from tapping:** "Vuoi X o Y?" on 43–44% of Italy's turns either way. The conversation becomes a sequence of orders ("Le vuoi piccole o grandi?" → "Quante ne vuoi?" → "Vuoi anche i pomodori?" → "Ne vuoi due o quattro?"), and the grader calls a taxi driver "a generic language-lesson script". This is the intake-form risk named in language-levels-plan.md.
+- **The learner's side repeats too:** tapped lines start with "Sì" 29% of the time and "Vorrei"/"Voglio"/"Preferisco" much of the rest. That's the frame being practised, but four times in a row is a drill.
+- Mexico: one pair offered an odd choice (Madrid to a Mexico City ticket seller), which the character then had to handle.
+- **Next (round 10):** "sometimes ask, about you" adds "They like hearing about you and this place, a little at a time", to give characters something to say besides offers.
+
 **Round 8: does the alive judge mark down questions?** Round 6's conversations judged as they are and with the closing question removed from each character line (`quality.md` judge, 3 runs each).
 
 | | With questions | Without |
