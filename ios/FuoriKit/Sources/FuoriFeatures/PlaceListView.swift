@@ -31,6 +31,10 @@ struct PlaceListView: View {
             }
             .padding(Tokens.Space.gutter)
         }
+        // Always open at the first place. Josh (2026-10-16): tapping a city
+        // opened its places part-way down the list. Nothing here set the
+        // position, so SwiftUI was choosing it; this pins the start to the top.
+        .defaultScrollAnchor(.top, for: .initialOffset)
         .background(Tokens.Colors.paper)
         .navigationTitle(city.name)
         .settingsToolbar()

@@ -1410,3 +1410,4 @@ Josh: "go for it" on the items Claude can finish without him. Each commit says w
 - Found on the way: leaving a conversation because of a country switch saved it to the *new* country's server, which failed and was retried at every launch. `AppModel.conversation` now ties each conversation's save to the server it happened on.
 - Loading a country (`/v1/content`, `/v1/me`) gives up after 20 s instead of URLSession's 60 s, so a stalled connection shows "Can't reach the server" with Try Again.
 - **Not verified:** built only by CI (no Mac in the cloud session); needs Josh's iPhone: Mexico conversation → Settings → Italy should land on Italy's cities.
+- 2026-10-16: Place list opened part-way down after tapping a city (Josh). Nothing in the code set the position; added `.defaultScrollAnchor(.top, for: .initialOffset)` to `PlaceListView`. Built by CI only; not verified on the phone.
