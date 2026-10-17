@@ -192,6 +192,20 @@ Round 3 recounted: the Beginner blocks cut questions. Turns a beginner can answe
 - **"Ask" brings back questions without costing the level,** but overshoots: every turn ends on a question, often a tacked-on "sì o no?" ("Ti piace la ciliegia, sì o no?"). It reads as an interrogation, and alive drops (Mexico 7.8 → 6.8).
 - **Next (round 6):** "still you, sometimes ask", which asks for an easy question only "now and then, when it comes naturally". Two runs to check the noise.
 
+**Round 6:**
+
+| Arm | Italy at 90%+ | Italy answerable | Italy alive | Mexico at 90%+ | Mexico answerable | Mexico alive |
+|---|---|---|---|---|---|---|
+| still you, sometimes ask | 68% | 100% (choice 41%) | 4.9 | 91% | 89% (choice 31%) | 6.8 |
+| still you, sometimes ask (repeat) | 62% | 97% (choice 34%) | 5.0 | 80% | 77% (choice 31%) | 7.0 |
+
+The share of turns ending on a tacked-on "sì o no?" / "¿sí o no?" was checked by hand as a diagnostic, not a filter: still you 0–3%, sometimes ask 0–9%, ask 17–18%.
+
+- **"Now and then" doesn't make questions rarer:** Italy still asks on nearly every turn. But the questions come from the moment more than with "ask" ("Con zucchero o senza?" rather than "Ti piace, sì o no?"), forced tags are half as frequent, and alive is between "ask" and "still you".
+- **The level holds** (Italy 62–68%, Mexico 80–91%, against "still you" at 60–66% and 60–86%).
+- **The new pick is "sometimes ask"**: answerable turns go from about 54–79% to 77–100%, and choice questions come back for the reply buttons. It costs a little life on the judge (Mexico 7.8 → 6.8–7.0 against this round's control, which is high: round 3 had 7.2–7.4), so Josh's ear decides.
+- The alive judge may itself mark down a turn for ending on a question; not checked.
+
 ## Notes from Josh (2026-10-16)
 
 - **Learners and characters may be levelled differently.** A character's line is judged for listening (would this learner understand it?); a learner's speech is production, transcribed by Whisper, short and full of errors. Ground truth for learner speech would be learner language graded by examiners (e.g. a learner corpus), not exam listening scripts.

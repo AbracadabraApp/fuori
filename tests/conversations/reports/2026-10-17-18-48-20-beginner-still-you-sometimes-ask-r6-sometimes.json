@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-17T18:48:20.027Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "level": "Beginner: still you, sometimes ask",
+  "seed": "11",
+  "turns": 6,
+  "conversations": 5,
+  "grades": {
+    "language": 9.6,
+    "understands": 9.6,
+    "adapts": 8.4,
+    "alive": 6.8,
+    "regional": 8.6
+  },
+  "length": {
+    "openerWords": 11,
+    "replies": 35,
+    "wordsMedian": 15,
+    "wordsAvg": 16.9,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.9,
+    "multiQuestionShare": 0.03
+  },
+  "byCharacter": [
+    {
+      "id": "arturo-taquillero-cdmx",
+      "learner": "improving",
+      "overall": 8.6,
+      "stats": {
+        "openerWords": 7,
+        "replies": 7,
+        "wordsMedian": 22,
+        "wordsAvg": 20,
+        "wordsMax": 25,
+        "longShare": 0,
+        "questionsAvg": 0.9,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "arturo-jubilado",
+      "learner": "hesitant",
+      "overall": 8,
+      "stats": {
+        "openerWords": 12,
+        "replies": 7,
+        "wordsMedian": 21,
+        "wordsAvg": 19.1,
+        "wordsMax": 26,
+        "longShare": 0,
+        "questionsAvg": 0.7,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "beto-taxi",
+      "learner": "english-beginner",
+      "overall": 8.4,
+      "stats": {
+        "openerWords": 8,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 14.4,
+        "wordsMax": 20,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "chuy-cocinera",
+      "learner": "hesitant",
+      "overall": 8.8,
+      "stats": {
+        "openerWords": 14,
+        "replies": 7,
+        "wordsMedian": 15,
+        "wordsAvg": 16,
+        "wordsMax": 23,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0.14
+      }
+    },
+    {
+      "id": "daniela-farmacia-san-rafael",
+      "learner": "english-beginner",
+      "overall": 9.2,
+      "stats": {
+        "openerWords": 11,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 15.1,
+        "wordsMax": 20,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}
