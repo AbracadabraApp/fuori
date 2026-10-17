@@ -7,6 +7,7 @@
  *   npm run test:conversations -- --dry        # show the sample and prompts, no API calls
  *   npm run test:conversations -- --seed=7     # same sample every time: use for before-and-after
  *   npm run test:conversations -- --level="Beginner: shape"   # experimental level block (content/<country>/prompts/levels.md)
+ *   npm run test:conversations -- --learner=tap   # the learner only taps one of two reply buttons (lib/replies.ts; beginner levels 1–3)
  *
  * Reports reply length as numbers (opener words, median and longest reply, share
  * of long replies, questions per reply) next to the grades, and saves a .json
@@ -20,6 +21,7 @@ import { mkdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { runTurn } from '@/lib/turn';
+import { writeReplies, repliesPromptVersion } from '@/lib/replies';
 import { buildTurnPrompt, promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { cities, language, country } from '@/content';
@@ -36,6 +38,7 @@ const SEED = process.argv.find((a) => a.startsWith('--seed='))?.split('=')[1];
 const LEVEL = process.argv.find((a) => a.startsWith('--level='))?.split('=').slice(1).join('=');
 const LABEL = process.argv.find((a) => a.startsWith('--label='))?.split('=')[1];
 const LEVEL_AT = process.argv.find((a) => a.startsWith('--level-at='))?.split('=')[1] as 'system' | 'last' | undefined;
+const TAP = process.argv.includes('--learner=tap');
 
 // Seeded random numbers, so --seed gives the same sample on every run
 function seeded(seed: number) {
@@ -175,7 +178,10 @@ async function simulate(c: Case): Promise<Turn[]> {
   transcript.push({ who: 'npc', transcript: opening.line, translation: opening.en });
 
   for (let i = 0; i < TURNS; i++) {
-    const said = await learnerLine(c, transcript);
+    // --learner=tap: the learner picks one of the two reply buttons at random
+    const said = TAP
+      ? (await writeReplies(c.character, transcript)).replies[Math.floor(random() * 2)].line
+      : await learnerLine(c, transcript);
     const reply = await runTurn({ character: c.character, transcript, learnerSaid: said, level: LEVEL, levelAt: LEVEL_AT });
     transcript.push({ who: 'learner', transcript: said });
     transcript.push({ who: 'npc', transcript: reply.line, translation: reply.en });
@@ -280,7 +286,7 @@ function report(results: Graded[], recs: string): string {
   const lines = [
     `# Conversation test`,
     ``,
-    `${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC · model ${CLAUDE_MODEL} · prompt ${promptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''} · ${ok.length} conversations · ${TURNS} learner turns each`,
+    `${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC · model ${CLAUDE_MODEL} · prompt ${promptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''}${TAP ? ` · learner taps reply buttons (replies ${repliesPromptVersion()})` : ''} · ${ok.length} conversations · ${TURNS} learner turns each`,
     ``,
     `## Grade: ${avg((r) => r.overall).toFixed(1)} / 10`,
     ``,
@@ -385,7 +391,7 @@ async function main() {
   const dir = join(process.cwd(), 'tests', 'conversations', 'reports');
   mkdirSync(dir, { recursive: true });
   // Seconds and the level in the name, so runs started together don't overwrite each other
-  const file = join(dir, `${new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-')}${LEVEL ? `-${LEVEL.replace(/\W+/g, '-').toLowerCase()}` : ''}${LEVEL_AT === 'last' ? '-last' : ''}${process.env.TURN_MODEL ? `-${process.env.TURN_MODEL}` : ''}${LABEL ? `-${LABEL}` : ''}.md`);
+  const file = join(dir, `${new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-')}${LEVEL ? `-${LEVEL.replace(/\W+/g, '-').toLowerCase()}` : ''}${LEVEL_AT === 'last' ? '-last' : ''}${TAP ? '-tap' : ''}${process.env.TURN_MODEL ? `-${process.env.TURN_MODEL}` : ''}${LABEL ? `-${LABEL}` : ''}.md`);
   writeFileSync(file, report(results, recs));
   // Machine-readable summary, for comparing runs before and after a change
   const okRuns = results.filter((r) => !r.error);
@@ -396,6 +402,7 @@ async function main() {
         at: new Date().toISOString(),
         model: CLAUDE_MODEL,
         promptVersion: promptVersion(),
+        repliesVersion: TAP ? repliesPromptVersion() : null,
         level: LEVEL ?? null,
         seed: SEED ?? null,
         turns: TURNS,

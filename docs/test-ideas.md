@@ -6,8 +6,8 @@ How to work it: take the top item, run it, write the result in the test log, mov
 
 ## Up next
 
-1. **Reply buttons, separate call** (round 7 done; v2 running: yes and no as the choices). A "clicks" prompt writes two whole-line replies on one frame after each character line; Haiku vs Sonnet; judged for sensible, same frame, beginner-readable, distinct, English right, correct, and ready before the character's voice ends. On round 6's "sometimes ask" conversations, both countries.
-2. **Tap and answer.** Simulated learner at levels 1–3 who only taps one of the two replies; the character answers it as a normal turn. Does the character recast a line that was already right, go flat, or loop on the same frame? Needs a learner mode in `test:conversations`.
+1. **Reply buttons, polite no** (round 7 done; v2 picked). Next tweak: the "no" reply stays polite and keeps the conversation going. A "clicks" prompt writes two whole-line replies on one frame after each character line; Haiku vs Sonnet; judged for sensible, same frame, beginner-readable, distinct, English right, correct, and ready before the character's voice ends. On round 6's "sometimes ask" conversations, both countries.
+2. **Tap and answer** (running, round 9: `--learner=tap`). Simulated learner at levels 1–3 who only taps one of the two replies; the character answers it as a normal turn. Does the character recast a line that was already right, go flat, or loop on the same frame? Needs a learner mode in `test:conversations`.
 3. **Replies folded into the turn** (the other option in beginner-scaffolding.md → Writing the replies): the character's call returns the two replies too. Compare against item 1 for quality, the character's liveliness and reply time.
 4. **"Ripeti?" on levels 4–5.** Replay is gone, so asking the character to repeat must work: is the repeat shorter, slower-sounding and simpler, or word for word, or a new sentence? Simulated learner asks now and then; judge the repeat.
 5. **Mexico at 20 conversations** for the final Beginner pick against today's prompt, since 5 conversations wobble 6–10 points.

@@ -218,6 +218,19 @@ The share of turns ending on a tacked-on "sì o no?" / "¿sí o no?" was checked
 - **A separate call works, and time isn't a problem:** both writers finish well before the character stops speaking. Sonnet was faster than Haiku here (Haiku thinks longer); Sonnet's 6 misses were replies that weren't JSON, which structured output fixes.
 - **The main failure is the yes-or-no trap:** keeping both replies on one frame after a yes/no question gives "Sì, vorrei un cornetto" and "Sì, vorrei un bicchiere d'acqua", or "Sì, mi piace il mare" to "Ti piace l'arancia?". Next: one reply yes and one no. Also some near-duplicates ("piove molto" / "piove spesso") and replies answering an earlier question rather than the last one.
 
+v2 (one reply yes and one no; different choices, not two wordings; answer the last thing asked):
+
+| Writer | Pairs | All good | Sensible | Same frame | Distinct | Median time | Ready |
+|---|---|---|---|---|---|---|---|
+| Haiku, Italy | 76/76 | 93% | 100% | 96% | 100% | 2.2 s | 99% |
+| Haiku, Mexico | 35/35 | 94% | 97% | 97% | 100% | 2.7 s | 100% |
+| Sonnet, Italy | 73/76 | 92% | 100% | 93% | 100% | 1.4 s | 100% |
+| Sonnet, Mexico | 33/35 | 100% | 100% | 100% | 100% | 1.3 s | 100% |
+
+- **Fixed:** "Anche un cornetto?" → "Sì, voglio anche un cornetto, grazie." / "No, solo il caffè, grazie."; "¿Le gusta el picante?" → "Sí, me gusta mucho el picante." / "No, no me gusta mucho el picante." What's left is mostly the judge being strict about the frame ("Con zucchero" isn't "Il caffè con…").
+- **Pick: Sonnet, v2,** with structured output (it's faster than Haiku here). Now in `content/<country>/prompts/replies.md` and `lib/replies.ts`, used only by `test:conversations -- --learner=tap`.
+- **Seen, not yet fixed:** a "no" can be blunt or sour the moment ("No, no me gusta Oaxaca" to a proud local; "No, non voglio un caffè" to a host). A polite no that keeps the conversation going is the next prompt tweak.
+
 **Round 8: does the alive judge mark down questions?** Round 6's conversations judged as they are and with the closing question removed from each character line (`quality.md` judge, 3 runs each).
 
 | | With questions | Without |
