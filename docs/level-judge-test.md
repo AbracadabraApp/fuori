@@ -10,7 +10,8 @@ Temporary: the scripts and samples live in the laptop session's scratchpad, not 
   - Caveat: the level is the whole paper's, not a rating of each line, so some lines in an A2 paper are really A1. 100% exact is impossible.
   - Caveat: A1 PLIDA Juniores items are text messages; B2 CILS items are quoted speech in a reading text.
   - Most PDFs are on a third-party mirror (languageadvisor.net) with the official headers.
-- **Words** (Josh, 2026-10-16): 50+ nouns and 30 verbs per level, from a CEFR-tagged source (being gathered). Question: do single words score differently from phrases?
+- **Words** (Josh, 2026-10-16): 399 words, about 61 nouns and 38 verbs per level, from the Kelly project's Italian list (Kilgarriff et al. 2014, `it_m3.xls`). Question: do single words score differently from phrases?
+  - Caveat, and it turned out to dominate: Kelly's levels are frequency bands from a web corpus (itWaC), about 1,000 lemmas each, not judgements of what learners know. No downloadable expert-judged list (Profilo della lingua italiana, Siena, Perugia) was found.
 
 ## Rules of the test
 
@@ -32,7 +33,7 @@ Temporary: the scripts and samples live in the laptop session's scratchpad, not 
 | 5 | **Imagined learner:** "you've studied Italian for 3 months; would you understand this? yes / mostly / no" | Proposed |
 | 6 | **Model comparison:** best approach on Haiku, Sonnet, Opus (cost of a judge on every conversation) | Later |
 | 7 | **Sentence length alone, no Claude:** the control any approach must beat | Proposed |
-| W | **Words vs sentences:** approaches L and C on single nouns and verbs (Josh) | Words being gathered |
+| W | **Words vs sentences:** approaches L and C on single nouns and verbs (Josh) | Run; ground truth unsound |
 
 Known leak (Josh): naming CEFR may let Claude recognise published exam sentences instead of judging the Italian. Checks: compare C with 1 and L; compare exam papers with other sources; lightly reworded lines that keep their level.
 
@@ -48,6 +49,20 @@ Known leak (Josh): naming CEFR may let Claude recognise published exam sentences
 - **Letters:** never said D; B2 lines mostly B. The order was right (harder lines got higher letters), but with no defined scale "A to D" had no fixed meaning.
 - **CEFR:** never more than one level off, nearly unbiased; A1 lines rated A2 about two times in three.
 - Open: is C better because CEFR is a ruler or because of recall? Approach 1 decides.
+
+### 2026-10-16: single words, approaches L and C (399 × 3)
+
+| | Exact | Within one | Bias | Same every run |
+|---|---|---|---|---|
+| L, letters | 32% | 70% | −0.80 | 330/399 |
+| C, CEFR named | 33% | 71% | +0.25 | 340/399 |
+
+Nouns and verbs alike (CEFR: nouns 33% exact, verbs 34%; verbs rated a bit harder, +0.48).
+
+- With CEFR named, words score far worse than sentences (33% against 60% exact). Letters stay too easy, as with sentences.
+- **But the disagreements say more about Kelly than Claude.** Kelly A1 that Claude calls B2: ambito, esigenza, provvedimento, regolamento, dichiarazione, riforma, fenomeno, stabilire, derivare. Kelly B2 that Claude calls A1: frigorifero, pranzo, pasto, neve, barca, moneta, cognome, ciliegia, automobile. Claude's answers look like a learner's reality; Kelly's look like newspaper frequency.
+- So this run can't answer "do words score differently from phrases?": it needs words graded by experts, not by frequency.
+- It does say something about the word-list idea: a frequency list from a web corpus ranks bureaucratic words as basic and everyday food and home words as advanced. A coverage measure built on it would mark a barista's "pranzo" as hard. If a list is ever used, it has to come from speech (subtitles) or learner material, and be checked like this first.
 
 ## Ideas to keep (Josh, 2026-10-16)
 
