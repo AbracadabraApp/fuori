@@ -20,6 +20,8 @@ public final class AppModel {
         /// First launch: no country chosen yet (the country choice screen)
         case choosingCountry
         case loading
+        /// The greeter, after the country is loaded, until a level is stored
+        case onboarding
         case ready
         case failed(String)
         /// The server no longer accepts this build (426): only an update helps
@@ -43,6 +45,8 @@ public final class AppModel {
     /// Every country's card, for the country choice and Settings (loaded from
     /// each server's /v1/content, which needs no sign-in)
     public private(set) var countries: [Country] = []
+    /// The greeter's screen while phase is .onboarding
+    public private(set) var onboarding: OnboardingModel?
 
     private(set) var api: APIClient?
     private let servers: [URL]
@@ -125,17 +129,41 @@ public final class AppModel {
         guard country.server != server || content == nil else { return }
         server = country.server
         api = makeAPI(country.server)
+        onboarding?.stop()
+        onboarding = nil
         content = nil
         visits = [:]
         learnerId = nil
         await load()
     }
 
+    /// Onboarding done: start with the settings for the level (Beginner:
+    /// English translation on, which also slows the voice; Intermediate and
+    /// Advanced: off). The learner can change them in Settings.
+    private func finishOnboarding(level: String) {
+        UserDefaults.standard.set(level == "beginner", forKey: SettingsKey.english)
+        onboarding = nil
+        phase = .ready
+    }
+
     /// Back to the first launch, for testing onboarding (hidden: Settings →
-    /// touch and hold Version). Forgets the chosen country and shows the country
-    /// choice. Each country's learner is kept (its Keychain token), so progress
-    /// and the people met aren't lost.
+    /// touch and hold Version). Clears this country's level on the server so
+    /// the greeter welcomes them again, forgets the chosen country and shows
+    /// the country choice. Each country's learner is kept (its Keychain
+    /// token), so progress and the people met aren't lost.
     public func restartOnboarding() async {
+        if let api {
+            do {
+                try await api.onboardingReset()
+            } catch {
+                let code = report(error, step: "onboarding reset")
+                let message = (error as? APIError)?.message ?? error.localizedDescription
+                phase = .failed(ErrorCode.message(message, code: code))
+                return
+            }
+        }
+        onboarding?.stop()
+        onboarding = nil
         UserDefaults.standard.removeObject(forKey: Self.countryKey)
         server = nil
         api = nil
@@ -159,8 +187,17 @@ public final class AppModel {
             let me = try await api.me()
             visits = me.visits
             learnerId = me.learnerId
-            phase = .ready
             retryPendingSaves()
+            // Not placed yet in this country: the greeter first (existing
+            // learners too, once: Josh, 2026-10-16)
+            if me.onboarded == false, let content, let greeter = content.onboarding {
+                onboarding = OnboardingModel(onboarding: greeter, language: content.language, api: api) { [weak self] level in
+                    self?.finishOnboarding(level: level)
+                }
+                phase = .onboarding
+            } else {
+                phase = .ready
+            }
         } catch let error as APIError where error.code == .upgradeRequired {
             phase = .tooOld(error.message)
         } catch {

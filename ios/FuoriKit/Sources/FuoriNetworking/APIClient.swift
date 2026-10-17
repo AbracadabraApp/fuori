@@ -40,6 +40,10 @@ public actor APIClient {
         public let learnerId: String
         public let country: String
         public let visits: [String: Int]
+        /// beginner, intermediate or advanced; nil until the greeter has placed them
+        public let level: String?
+        /// false: show onboarding. nil from servers before 2026-10-17 (no onboarding)
+        public let onboarded: Bool?
     }
 
     /// GET /v1/me: the learner and their visit counts per place
@@ -66,10 +70,23 @@ public actor APIClient {
         return try await send(post("v1/turn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, learnerSaid: learnerSaid)), signedIn: true)
     }
 
-    public enum TranscribeMode: String, Sendable { case target, en }
+    /// target: the language being learned; en: English; any: Whisper detects
+    /// it (onboarding answers can be either)
+    public enum TranscribeMode: String, Sendable { case target, en, any }
+
+    /// What speech to text heard, and in which language (as Whisper names it)
+    public struct Heard: Codable, Sendable, Equatable {
+        public let text: String
+        public let language: String?
+    }
 
     /// POST /v1/transcribe: the recording (m4a) to text. Empty when nothing was understood.
     public func transcribe(audio: Data, filename: String = "speech.m4a", mimeType: String = "audio/mp4", mode: TranscribeMode = .target) async throws -> String {
+        try await transcribeHeard(audio: audio, filename: filename, mimeType: mimeType, mode: mode).text
+    }
+
+    /// POST /v1/transcribe, with the language it heard
+    public func transcribeHeard(audio: Data, filename: String = "speech.m4a", mimeType: String = "audio/mp4", mode: TranscribeMode = .target) async throws -> Heard {
         let boundary = "fuori-\(UUID().uuidString)"
         var body = Data()
         func field(_ name: String, _ value: String) {
@@ -83,9 +100,44 @@ public actor APIClient {
         req.httpMethod = "POST"
         req.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         req.httpBody = body
-        struct Result: Decodable { let text: String }
-        let result: Result = try await send(req, signedIn: true)
-        return result.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        let result: Heard = try await send(req, signedIn: true)
+        return Heard(text: result.text.trimmingCharacters(in: .whitespacesAndNewlines), language: result.language)
+    }
+
+    // MARK: - Onboarding (docs/onboarding-design.md)
+
+    public struct OnboardingLine: Codable, Sendable, Equatable {
+        public let line: String
+        public let en: String
+    }
+
+    public struct SendOff: Codable, Sendable, Equatable {
+        public let line: String
+        public let en: String
+        public let level: String
+    }
+
+    /// POST /v1/onboarding/follow-up: her reaction to the first answer and one harder question
+    public func onboardingFollowUp(answer: Heard) async throws -> OnboardingLine {
+        struct Body: Encodable { let answer: Heard }
+        return try await send(post("v1/onboarding/follow-up", json: Body(answer: answer)), signedIn: true)
+    }
+
+    /// POST /v1/onboarding/send-off: her send-off and the learner's level (stored by the server)
+    public func onboardingSendOff(answers: [Heard]) async throws -> SendOff {
+        struct Body: Encodable { let answers: [Heard] }
+        return try await send(post("v1/onboarding/send-off", json: Body(answers: answers)), signedIn: true)
+    }
+
+    /// POST /v1/onboarding/done: the beginner path, no Claude call
+    public func onboardingDone() async throws {
+        struct Body: Encodable { let path = "beginner" }
+        _ = try await sendData(post("v1/onboarding/done", json: Body()), signedIn: true)
+    }
+
+    /// POST /v1/onboarding/reset: Restart onboarding (the greeter welcomes them again)
+    public func onboardingReset() async throws {
+        _ = try await sendData(post("v1/onboarding/reset", json: [String: String]()), signedIn: true)
     }
 
     /// POST /v1/speak: the character's line in their voice, as MP3. Any error

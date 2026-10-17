@@ -458,7 +458,7 @@ extension ConversationModel.Phase {
 
 /// The voice gate shared between the audio thread (levels) and the main
 /// actor (timing), behind a lock
-private final class GateBox: @unchecked Sendable {
+final class GateBox: @unchecked Sendable {
     struct Snapshot { let hasSpoken: Bool; let silence: TimeInterval; let voiced: TimeInterval; let level: Double }
 
     private let lock = NSLock()

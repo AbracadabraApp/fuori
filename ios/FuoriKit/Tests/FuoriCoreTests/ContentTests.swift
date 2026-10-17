@@ -30,4 +30,23 @@ import Testing
         #expect(content.firstScreenCities.count == 1)
         #expect(content.moreCities.count == 1)
     }
+
+    /// The greeter: her lines, four poses and the lift (docs/onboarding-design.md)
+    @Test func decodesOnboarding() throws {
+        let onboarding = try #require(try fixture().onboarding)
+        #expect(!onboarding.lines.welcome.line.isEmpty && !onboarding.lines.welcome.en.isEmpty)
+        #expect(!onboarding.lines.help.line.isEmpty)
+        let poses = [onboarding.guide.poses.welcome, onboarding.guide.poses.listen, onboarding.guide.poses.talk, onboarding.guide.poses.laugh]
+        #expect(poses.allSatisfy { $0 != nil })
+        #expect(onboarding.guide.lift >= 0 && onboarding.guide.lift < 0.5)
+    }
+
+    /// A server from before onboarding sends no block: the app still loads (and shows no greeter)
+    @Test func decodesWithoutOnboarding() throws {
+        let url = try #require(Bundle.module.url(forResource: "content-it", withExtension: "json", subdirectory: "Fixtures"))
+        var json = try #require(try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        json["onboarding"] = nil
+        let content = try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json))
+        #expect(content.onboarding == nil)
+    }
 }

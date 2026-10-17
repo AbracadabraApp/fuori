@@ -10,6 +10,8 @@ public struct Content: Codable, Sendable, Equatable {
     public let card: CountryCard?
     public let language: Language
     public let ticketTheme: TicketTheme
+    /// The greeter; nil from servers before 2026-10-17 (then there's no onboarding)
+    public let onboarding: Onboarding?
     public let cities: [City]
     public let characters: [String: Character]
 
@@ -93,4 +95,47 @@ public struct Character: Codable, Sendable, Equatable, Identifiable, Hashable {
     /// Teaches (Magda)
     public let tutor: Bool
     public let portrait: URL?
+}
+
+/// The greeter (docs/onboarding-design.md): her fixed lines in the language
+/// being learned, each with its English, her four poses and how far to lift
+/// her picture so her face stays clear of the text
+public struct Onboarding: Codable, Sendable, Equatable {
+    public struct Line: Codable, Sendable, Equatable {
+        public let line: String
+        public let en: String
+        public init(line: String, en: String) { self.line = line; self.en = en }
+    }
+
+    public struct Lines: Codable, Sendable, Equatable {
+        public let welcome: Line
+        /// "Not yet!": the beginner path
+        public let notYet: Line
+        /// "Yes, but I want to improve": the speaker path
+        public let some: Line
+        public let beginnerSendOff: Line
+        public let go: Line
+        /// The speaker path's open question
+        public let question: Line
+        /// Ends every send-off (the server adds it to hers)
+        public let help: Line
+    }
+
+    public struct Poses: Codable, Sendable, Equatable {
+        public let welcome: URL?
+        public let listen: URL?
+        public let talk: URL?
+        public let laugh: URL?
+    }
+
+    public struct Guide: Codable, Sendable, Equatable {
+        /// Her id for /v1/speak (her own voice)
+        public let id: String
+        /// Share of the screen height her picture is lifted
+        public let lift: Double
+        public let poses: Poses
+    }
+
+    public let guide: Guide
+    public let lines: Lines
 }

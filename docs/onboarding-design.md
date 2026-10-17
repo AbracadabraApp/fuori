@@ -131,6 +131,14 @@ Steps 2–5 below are the older draft.
 - Her name: none for now. The learner's name is not asked in onboarding either (Josh).
 - The one-app name (Fuori or Afuera) where it appears in shared screens.
 
+## Built (step 3, 2026-10-16/17)
+
+Server and app built to the spec below; checked live in both countries (`smoke:live`) and in the simulator, not yet on Josh's iPhone.
+- **Server:** her lines and voice in `content/<country>/onboarding.ts`; her prompt `content/<country>/prompts/onboarding.md`; `lib/onboarding.ts`; routes `/v1/onboarding/{follow-up,send-off,done,reset}`; `/v1/me` has `level` and `onboarded`; `/v1/content` has `onboarding`; `/v1/transcribe` mode `any`. `npm run test:onboarding` (both countries) runs the judge on fixed answers.
+- **App:** `Onboarding/OnboardingModel.swift` and `OnboardingView.swift`; shown after the country loads while `/v1/me` says not onboarded; ends on the city list with English translation on for beginners, off otherwise. Settings → touch and hold Version → Restart onboarding clears the server's record too.
+- **Differences from the spec:** her picture is placed by a `lift` per country (the walkthrough's 4% / 26%) rather than a focal point per pose; "Advanced: full speed" isn't applied yet (the app has one speed setting tied to English).
+- **To watch:** with the language left open, Whisper labelled a one-word Italian "Buongiorno!" as Romanian (smoke test). Real answers are longer; if short ones go wrong, send the learned language as a hint.
+
 ## Engineering needs (step 2, drafted 2026-10-16)
 
 From the agreed flow and the walkthrough (`design/onboarding/walkthrough.html`). Checked against the code on 2026-10-16. Josh answered the open points on 2026-10-16; this is the spec for step 3.

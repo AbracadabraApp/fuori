@@ -28,6 +28,48 @@
     "stripe": "rgba(29, 92, 58, 0.09)",
     "accent": "#b8252f"
   },
+  "onboarding": {
+    "guide": {
+      "id": "guide",
+      "lift": 0.04,
+      "poses": {
+        "welcome": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/guide/welcome.73f3b3501d.webp",
+        "listen": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/guide/listen.1c28795d15.webp",
+        "talk": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/guide/talk.fa6ed97de7.webp",
+        "laugh": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/guide/laugh.bfdac441e0.webp"
+      }
+    },
+    "lines": {
+      "welcome": {
+        "line": "Ciao, che bello conoscerti! Parli un po' d'italiano?",
+        "en": "Hi, lovely to meet you! Do you speak any Italian?"
+      },
+      "notYet": {
+        "line": "Non ancora!",
+        "en": "Not yet!"
+      },
+      "some": {
+        "line": "Sì, ma voglio migliorare",
+        "en": "Yes, but I want to improve"
+      },
+      "beginnerSendOff": {
+        "line": "Benissimo! Piano piano. Se hai bisogno di aiuto, chiedi pure: qui tutti ti aiutano.",
+        "en": "Great! Little by little. If you need help, just ask: everyone here will help you."
+      },
+      "go": {
+        "line": "Andiamo!",
+        "en": "Let's go!"
+      },
+      "question": {
+        "line": "Che bello che parli già italiano! Allora, raccontami: cosa ti piace dell'Italia? Tocca il microfono per parlare.",
+        "en": "How lovely that you already speak Italian! So, tell me: what do you like about Italy? Tap the microphone to talk."
+      },
+      "help": {
+        "line": "Se hai bisogno di aiuto, chiedi pure a chiunque.",
+        "en": "If you need help, just ask anyone."
+      }
+    }
+  },
   "cities": [
     {
       "id": "roma",

@@ -44,6 +44,10 @@ public struct RootView: View {
                         Text(message)
                     }
                     .background(Tokens.Colors.paper)
+                case .onboarding:
+                    if let onboarding = model.onboarding {
+                        OnboardingView(model: onboarding)
+                    }
                 case .ready:
                     if let content = model.content {
                         CityListView(content: content)

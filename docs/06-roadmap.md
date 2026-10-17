@@ -41,7 +41,7 @@ Every prompt change says which goal it moves and may not make another worse (ver
 - [ ] **both** Onboarding (the country choice and Settings shipped first, 2026-10-16)
   - [x] Define the frontend flow (walkthrough: `design/onboarding/walkthrough.html`)
   - [x] Define the engineering needs (onboarding-design.md → Engineering needs; open points answered by Josh, 2026-10-16)
-  - [ ] Implement
+  - [ ] Implement (built 2026-10-17, server and app; live in both countries; Josh to try on his iPhone)
 - [ ] **both** Beginner ladder: pick a reply → read it aloud → speak with help → speak freely
 
 ### 5. Parity with the web
