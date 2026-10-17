@@ -1,6 +1,6 @@
 # Learner levels in the character prompt (Mexican Spanish)
 
-version: 2026-10-16
+version: 2026-10-16b
 
 What a character is told about how much {language} the learner follows.
 Experimental (docs/language-levels-plan.md → Preliminary design): used only
@@ -21,6 +21,12 @@ Two Beginner variants to compare:
 They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time.
 ```
 
+## Beginner: situation, still you
+
+```
+They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time. You're still yourself with them: your humour, your opinions, your place.
+```
+
 ## Beginner: shape
 
 ```
@@ -38,6 +44,13 @@ For example: "¡Un café de olla, ahorita! ¿Tú vives por aquí?"
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-16b: "situation, still you"
+
+First replay (both countries): "situation" brought lines down furthest
+(Italy 22 → 10 words median, 23% → 68% of lines a beginner knows 90% of the
+words of) but characters felt less alive (Italy 5.2 → 4.4, Mexico 8.0 → 6.4).
+This variant adds one sentence to keep their personality.
 
 ### 2026-10-16: first version
 

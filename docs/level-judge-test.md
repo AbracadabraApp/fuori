@@ -121,6 +121,26 @@ Second answer key: 12 lines per level from publishers' graded readers and course
 
 Then, at Josh's request, **three whole conversation openings** (Giulia, Rosa, Rita; three character turns each, with Josh's lines) rewritten in context. Much better than lone lines: each reply still answered Josh, the teaching moment stayed (Rita's "assaggiare" explanation even grew, 26 → 28 words, in simpler pieces), and nobody became a tourist (Rosa just dropped "è in visita"). Ordinary turns roughly halved (17 → 8, 22 → 10, 25 → 11, 23 → 13). One slip: Rosa mixed Lei and tu. Lesson: simplify with the conversation in view, and let a teaching moment be longer if it's simpler.
 
+### 2026-10-16: Beginner blocks in the prompt (replay, testing only)
+
+Two blocks from `content/<country>/prompts/levels.md` added to the end of the character prompt (`--level`), against today's prompt. Italy: `test:replay` (Josh's real lines, 3 own + 4 sample characters). Mexico: `test:conversations --seed=7` (simulated learners). Character lines graded by `grade-runs.mjs` (scratchpad): Haiku CEFR per line, and the share of each line's words a beginner (listeners 1–2) knows.
+
+| Arm | Lines | Words (median) | CEFR A1 / A2 / B1+ | Beginner knows (median) | Lines at 90%+ | Alive |
+|---|---|---|---|---|---|---|
+| Italy today | 43 | 22 | 16 / 40 / 44% | 84% | 23% | 5.2 |
+| Italy situation | 43 | 10 | 58 / 42 / 0% | 100% | **68%** | 4.4 |
+| Italy shape | 43 | 13 | 26 / 72 / 2% | 92% | 60% | 4.8 |
+| Mexico today | 35 | 25 | 3 / 40 / 57% | 85% | 26% | 8.0 |
+| Mexico situation | 35 | 13 | 40 / 57 / 3% | 93% | **66%** | 6.4 |
+| Mexico shape | 35 | 16 | 14 / 83 / 3% | 91% | 59% | 6.4 |
+
+(Alive: Italy from the replay judge, 1–10, 3–6 scored conversations per arm; Mexico from test:conversations' grader, a different scale. Small samples.)
+
+- **The short "situation" block wins in both countries.** One sentence describing the learner beat the list of how to talk. That fits character.md's principle (describe the situation, not how to talk).
+- **The cost is life:** characters get plainer and more generic (Giulia: "Un caffè lungo, subito! Preparo la macchina."; Sofía "a generic, friendly dispenser of simple lines"). Next: the same sentence plus one asking them to stay themselves ("situation, still you").
+- They still pull back well when lost (Sofía: "¡Claro, Jake! Despacio. Es gratis. No pagas. Es para ti.") and still answer "come si dice" in role.
+- Found on the way: the quality judge was cutting off about one conversation in four (fixed, 0e3fb30).
+
 ## Notes from Josh (2026-10-16)
 
 - **Learners and characters may be levelled differently.** A character's line is judged for listening (would this learner understand it?); a learner's speech is production, transcribed by Whisper, short and full of errors. Ground truth for learner speech would be learner language graded by examiners (e.g. a learner corpus), not exam listening scripts.
