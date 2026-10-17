@@ -17,7 +17,7 @@ struct CountryChoiceView: View {
                         .typeface(.display, Tokens.Size.personName, relativeTo: .largeTitle, weight: .bold)
                         .foregroundStyle(Tokens.Colors.ink)
                         .accessibilityAddTraits(.isHeader)
-                    Text("Pick the country you're living in. You can switch any time in Settings.")
+                    Text("Pick where to explore.")
                         .typeface(.label, Tokens.Size.body, relativeTo: .body)
                         .foregroundStyle(Tokens.Colors.muted)
                 }
