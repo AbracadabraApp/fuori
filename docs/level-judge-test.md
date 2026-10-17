@@ -179,6 +179,19 @@ Reply time (Italy, median): 3.1–3.5 s on Sonnet, **1.6 s on Haiku**.
 - **Placement on Sonnet stays a tie:** across two Mexico seeds, newest message 71% and 77%, system prompt 77–86% and 66%. Keep the system prompt.
 - Today's prompt on new characters (seed 12): 24%, like Italy. The Beginner block roughly triples it everywhere.
 
+**Questions (round 5, 2026-10-17).** Josh asked whether question asking had been considered. It hadn't been measured. A beginner needs something to answer, and reply buttons work best after a yes/no or a "this or that". New measure (`qtype.mjs`, Sonnet): the kind of question each character turn leaves (none, yes/no, choice, one fact, open) and whether a learner a few weeks in could answer it in a word or two. It rates the question alone, so it flatters hard turns that end on an easy question.
+
+Round 3 recounted: the Beginner blocks cut questions. Turns a beginner can answer fell from 80–88% to 76–78% in Italy and from 80–83% to 43% in Mexico, and choice questions went from 11–18% to 0%.
+
+| Arm | Italy at 90%+ | Italy answerable | Italy alive | Mexico at 90%+ | Mexico answerable | Mexico alive |
+|---|---|---|---|---|---|---|
+| still you (control) | 66% | 79% (choice 1%) | 5.1 | 60% | 54% (choice 0%) | 7.8 |
+| still you, can answer | 59% | 99% (choice 30%) | 4.8 | 80% | 74% (choice 34%) | 6.4 |
+| still you, ask | 66% | **100%** (choice 46%) | 4.7 | 77% | **97%** (choice 43%) | 6.8 |
+
+- **"Ask" brings back questions without costing the level,** but overshoots: every turn ends on a question, often a tacked-on "sì o no?" ("Ti piace la ciliegia, sì o no?"). It reads as an interrogation, and alive drops (Mexico 7.8 → 6.8).
+- **Next (round 6):** "still you, sometimes ask", which asks for an easy question only "now and then, when it comes naturally". Two runs to check the noise.
+
 ## Notes from Josh (2026-10-16)
 
 - **Learners and characters may be levelled differently.** A character's line is judged for listening (would this learner understand it?); a learner's speech is production, transcribed by Whisper, short and full of errors. Ground truth for learner speech would be learner language graded by examiners (e.g. a learner corpus), not exam listening scripts.

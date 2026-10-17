@@ -1,6 +1,6 @@
 # Learner levels in the character prompt (Italian)
 
-version: 2026-10-17
+version: 2026-10-17b
 
 What a character is told about how much {language} the learner follows.
 Experimental (docs/language-levels-plan.md → Preliminary design): used only
@@ -45,6 +45,12 @@ They are just starting to learn {language}. They follow only short, plain {langu
 They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time. Leave them something easy to answer: a yes or no, or a choice between two things. You're still yourself with them: your humour, your opinions, your place.
 ```
 
+## Beginner: still you, sometimes ask
+
+```
+They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time. Now and then, when it comes naturally, leave them something easy to answer, like a yes or no or a choice between two things. You're still yourself with them: your humour, your opinions, your place.
+```
+
 ## Beginner: shape
 
 ```
@@ -62,6 +68,14 @@ For example: "Un caffè lungo, subito! Tu abiti qui vicino?"
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-17b: "still you, sometimes ask"
+
+Round 5: "ask" brought back answerable turns (Italy 79% → 100%, Mexico
+54% → 97%) without losing the level, but nearly every turn ended in a
+question, often a tacked-on "sì o no?", and characters felt less alive
+(Mexico 7.8 → 6.8, Italy 5.1 → 4.7). This variant asks for questions only
+when they come naturally.
 
 ### 2026-10-17: "still you, can answer" and "still you, ask"
 

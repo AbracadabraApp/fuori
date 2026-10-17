@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-17T18:38:09.884Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "level": "Beginner: situation, still you",
+  "seed": "11",
+  "turns": 6,
+  "conversations": 5,
+  "grades": {
+    "language": 9.4,
+    "understands": 9.2,
+    "adapts": 8.2,
+    "alive": 7.8,
+    "regional": 8.8
+  },
+  "length": {
+    "openerWords": 9,
+    "replies": 35,
+    "wordsMedian": 17,
+    "wordsAvg": 16.2,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "arturo-taquillero-cdmx",
+      "learner": "improving",
+      "overall": 8.8,
+      "stats": {
+        "openerWords": 9,
+        "replies": 7,
+        "wordsMedian": 17,
+        "wordsAvg": 15.9,
+        "wordsMax": 21,
+        "longShare": 0,
+        "questionsAvg": 0.3,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "arturo-jubilado",
+      "learner": "hesitant",
+      "overall": 8.4,
+      "stats": {
+        "openerWords": 14,
+        "replies": 7,
+        "wordsMedian": 19,
+        "wordsAvg": 19,
+        "wordsMax": 23,
+        "longShare": 0,
+        "questionsAvg": 0.7,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "beto-taxi",
+      "learner": "english-beginner",
+      "overall": 8.8,
+      "stats": {
+        "openerWords": 7,
+        "replies": 7,
+        "wordsMedian": 13,
+        "wordsAvg": 13.6,
+        "wordsMax": 21,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "chuy-cocinera",
+      "learner": "hesitant",
+      "overall": 8.4,
+      "stats": {
+        "openerWords": 7,
+        "replies": 7,
+        "wordsMedian": 17,
+        "wordsAvg": 15,
+        "wordsMax": 20,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "daniela-farmacia-san-rafael",
+      "learner": "english-beginner",
+      "overall": 9,
+      "stats": {
+        "openerWords": 14,
+        "replies": 7,
+        "wordsMedian": 17,
+        "wordsAvg": 17.3,
+        "wordsMax": 21,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

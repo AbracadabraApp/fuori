@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-17T18:38:25.917Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-12i",
+  "level": "Beginner: still you, can answer",
+  "seed": "11",
+  "turns": 6,
+  "conversations": 5,
+  "grades": {
+    "language": 8.8,
+    "understands": 9.2,
+    "adapts": 8.2,
+    "alive": 6.4,
+    "regional": 8.6
+  },
+  "length": {
+    "openerWords": 11,
+    "replies": 35,
+    "wordsMedian": 16,
+    "wordsAvg": 15.2,
+    "wordsMax": 33,
+    "longShare": 0.03,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "beto-taxi",
+      "learner": "english-beginner",
+      "overall": 8.6,
+      "stats": {
+        "openerWords": 8,
+        "replies": 7,
+        "wordsMedian": 11,
+        "wordsAvg": 11.7,
+        "wordsMax": 15,
+        "longShare": 0,
+        "questionsAvg": 0.7,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "arturo-jubilado",
+      "learner": "hesitant",
+      "overall": 7.6,
+      "stats": {
+        "openerWords": 14,
+        "replies": 7,
+        "wordsMedian": 16,
+        "wordsAvg": 16.7,
+        "wordsMax": 24,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "arturo-taquillero-cdmx",
+      "learner": "improving",
+      "overall": 8.2,
+      "stats": {
+        "openerWords": 12,
+        "replies": 7,
+        "wordsMedian": 17,
+        "wordsAvg": 18.6,
+        "wordsMax": 33,
+        "longShare": 0.14,
+        "questionsAvg": 0.9,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "chuy-cocinera",
+      "learner": "hesitant",
+      "overall": 8.6,
+      "stats": {
+        "openerWords": 8,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 13.7,
+        "wordsMax": 18,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "daniela-farmacia-san-rafael",
+      "learner": "english-beginner",
+      "overall": 8.2,
+      "stats": {
+        "openerWords": 11,
+        "replies": 7,
+        "wordsMedian": 16,
+        "wordsAvg": 15.1,
+        "wordsMax": 18,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}
