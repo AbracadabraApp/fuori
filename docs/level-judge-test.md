@@ -165,6 +165,20 @@ Reply time (Italy, median): 3.1–3.5 s on Sonnet, **1.6 s on Haiku**.
 - **Haiku:** half the wait (1.6 s), but holds the level less well (Italy 43%), understands garbled lines less (72% against 77–93%) and is flatter in Italy (4.3). Not yet; worth another try with a stronger level block, since speed is the other goal.
 - Italy's alive scores are low for every arm, today's included (target 7): that's a separate problem from levels.
 
+**Follow-up (round 4):**
+
+| Arm | Words | At 90%+ (early → late) | Alive | Reply time |
+|---|---|---|---|---|
+| Italy, Haiku, block in newest message | 13 | 57% (61 → 54%) | 4.4 | 1.7 s |
+| Mexico seed 11, Haiku, newest message | 18 | 57% (87 → 27%) | 7.2 | |
+| Mexico seed 12, today | 24 | 24% | 7.6 | |
+| Mexico seed 12, still you | 15 | 66% | 7.4 | |
+| Mexico seed 12, still you, newest message | 15 | 77% | 7.2 | |
+
+- **Haiku does better with the block in the newest message** (Italy 43% → 57%, near Sonnet's 60–63%) at 1.7 s, but it still misreads garbled lines (69%) and is flat in Italy (4.4), and in Mexico it slid back late in the conversation (87% → 27%). Speed is real; Haiku isn't ready for characters yet.
+- **Placement on Sonnet stays a tie:** across two Mexico seeds, newest message 71% and 77%, system prompt 77–86% and 66%. Keep the system prompt.
+- Today's prompt on new characters (seed 12): 24%, like Italy. The Beginner block roughly triples it everywhere.
+
 ## Notes from Josh (2026-10-16)
 
 - **Learners and characters may be levelled differently.** A character's line is judged for listening (would this learner understand it?); a learner's speech is production, transcribed by Whisper, short and full of errors. Ground truth for learner speech would be learner language graded by examiners (e.g. a learner corpus), not exam listening scripts.
