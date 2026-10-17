@@ -34,7 +34,7 @@ Research behind this plan: [How language apps handle levels](research/language-a
 
 ## Three tiers: Beginner, Intermediate, Advanced
 
-**Decided (Josh, 2026-10-15): three levels, named Beginner, Intermediate and Advanced.** No hidden steps inside Beginner; "Advanced" rather than "Expert".
+**Decided (Josh, 2026-10-15): three levels, named Beginner, Intermediate and Advanced.** No hidden steps inside Beginner; "Advanced" rather than "Expert". The five scaffolding levels in [beginner-scaffolding.md](beginner-scaffolding.md) are not steps of this kind: they change how a Beginner takes part, while how characters talk follows the tier (Josh, 2026-10-17).
 
 | | Beginner | Intermediate | Advanced |
 |---|---|---|---|

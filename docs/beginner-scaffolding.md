@@ -2,7 +2,9 @@
 
 2026-10-17 · Josh · Draft. Replaces the four-step "Beginner ladder" sketch in [language-levels-plan.md](language-levels-plan.md). Mockups: [design/beginner-levels/levels.html](../design/beginner-levels/levels.html) (open it in a browser). Research behind it: the Fuori project's `research/beginner-mode-scaffolding.md` and `research/flashcards-vocabulary-review.md`.
 
-A beginner takes part at one of five levels. The level decides how much support the screen gives, from tapping a reply with English everywhere (level 1) to filling a frame in your own words (level 5). Past level 5 there's nothing to add: that's the normal screen, the way an Intermediate learner takes part. Nothing is scripted past level 4.
+A beginner takes part at one of five levels. The level decides how much support the screen gives, from tapping a reply with English everywhere (level 1) to filling a frame in your own words (level 5). Past level 5 there's nothing to add: that's the normal screen, where you speak freely. Nothing is scripted past level 4.
+
+**These levels are scaffolding only (Josh, 2026-10-17).** They change how you take part, not how characters talk. How characters talk follows the learner's level (Beginner, Intermediate, Advanced; [language-levels-plan.md](language-levels-plan.md) → Three tiers), which moves separately. Reaching the normal screen past level 5 doesn't make you Intermediate: a Beginner there still hears Beginner dialogue.
 
 The same levels apply to a Diario card and to the person screen in conversation.
 
