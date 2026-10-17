@@ -6,12 +6,13 @@ How to work it: take the top item, run it, write the result in the test log, mov
 
 ## Up next
 
-1. **Reply buttons, polite no** (round 7 done; v2 picked). Next tweak: the "no" reply stays polite and keeps the conversation going. A "clicks" prompt writes two whole-line replies on one frame after each character line; Haiku vs Sonnet; judged for sensible, same frame, beginner-readable, distinct, English right, correct, and ready before the character's voice ends. On round 6's "sometimes ask" conversations, both countries.
-2. **Order form.** Characters turn into a list of offers ("Vuoi X o Y?" on 43% of turns). Round 10's "about you" sentence didn't help; it's part of item 6 (characters are generic), not a level-block problem. Simulated learner at levels 1–3 who only taps one of the two replies; the character answers it as a normal turn. Does the character recast a line that was already right, go flat, or loop on the same frame? Needs a learner mode in `test:conversations`.
-3. **Replies folded into the turn** (the other option in beginner-scaffolding.md → Writing the replies): the character's call returns the two replies too. Compare against item 1 for quality, the character's liveliness and reply time.
+1. **Live with lookahead** (from round 11). While the character speaks: write the two replies, then the character's answer to each, in parallel, so a tap gets an instant answer with no shared joins. Measure whether it's ready in time, and the cost (two turns per turn).
+2. **A plan for the visit.** One short call at the start writes an arc (arrive → order → small talk → leave) that live turns follow: the script's shape without its joins, and less of the order form ("Vuoi X o Y?" on 43% of Italy's turns, round 9).
+3. **A script library** for levels 1–3 (Josh: they last at most 100–150 turns): written ahead per kind of place and checked before use. Compare with 1–2 on quality, cost and how canned a second visit feels.
 4. **"Ripeti?" on levels 4–5.** Replay is gone, so asking the character to repeat must work: is the repeat shorter, slower-sounding and simpler, or word for word, or a new sentence? Simulated learner asks now and then; judge the repeat.
 5. **Mexico at 20 conversations** for the final Beginner pick against today's prompt, since 5 conversations wobble 6–10 points.
-6. **Characters feel flat in both countries** (alive about 5 on the `quality.md` judge, target 7; round 8 found Italy's lower number was a different judge, not Italy). What raises it without making lines harder? Candidates: a concrete detail or opinion per character (the test report's own recommendation), reacting before asking. Also: make `test:conversations` use the same alive judge as the replay, so the two tests agree.
+6. **Characters feel flat in both countries** (alive about 5 on the `quality.md` judge, target 7; round 8 found Italy's lower number was a different judge). The level block isn't the cause (round 10); try the character prompt and data: a concrete detail or opinion per character, reacting before asking. Through the replay gate. Also: make `test:conversations` use the same alive judge as the replay (changes a test: needs Josh).
+7. **Replies folded into the turn** (the other option in beginner-scaffolding.md → Writing the replies): the character's call returns the two replies too. Lower priority now that the separate call is fast enough.
 
 ## Later
 
@@ -19,10 +20,13 @@ How to work it: take the top item, run it, write the result in the test log, mov
 - **Question ladder for Intermediate and Advanced**: level blocks that get one-fact and open questions, measured with the question-kind count (`qtype.mjs`).
 - **Learner-level evidence**: from saved conversations, does the scorecard's "lost" count plus Magda's Level line rank learners the way Josh would?
 - **Reply buttons that sometimes ask back** ("E lei?", "Lei è di qui?"): one of the two replies turns a question back to the character, so the learner takes part in the conversation instead of only answering.
+- **Quality judge cut off on long conversations:** it hit 4000 tokens on a 14-line transcript. Count how many real conversations have no score (`conversations` table), and raise the limit if any do.
 - **Move the scratch scripts into the repo** (`replies.mjs`, `qtype.mjs`, `grade-runs.mjs`, `judge-md.mts` live in the laptop scratchpad): a cloud session can't run them.
 - **Frames chosen by the learner's Diario** rather than by the moment: give the clicks prompt the frames being practised; does it still sound natural?
 
 ## Done
+
+- Round 11 (2026-10-17): scripts written in one call match live dialogue on level and liveliness, with a better arc, but the joins ignore the learner's choice and a script takes 24 s.
 
 - Reply buttons, polite no (2026-10-17): v3 adopted as replies.md 2026-10-17b.
 

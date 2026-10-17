@@ -258,6 +258,23 @@ v2 (one reply yes and one no; different choices, not two wordings; answer the la
 - **No gain:** alive unchanged within noise (Italy 4.6 against 4.5; Mexico 5.8–6.0 against 5.5–6.2 in rounds 6 and 9), choice questions barely fewer, and Mexico's lines got longer (21 words against 15–17). Dropped; "sometimes ask" stays the pick.
 - **Liveliness isn't a level-block problem.** Today's prompt with no level scores only about 0.3–0.5 higher (Italy 5.3–5.4); the graders' notes point at the characters themselves ("generic", "never mentions taxi life", "no personality beyond a stock phrase"). That's the character prompt and character data, a separate change with its own replay gate.
 
+**Round 11: scripted conversations for levels 1–3 (2026-10-17).** Josh: levels 1–3 last at most 100–150 turns and the learner only taps, so their dialogue could be scripted. Tried the cheaper form first: one call per character, with the character's own prompt and "sometimes ask", writes a whole 6-beat branching conversation (each beat: the character's line, two replies, an answer to each; both answers lead to the next beat). Each script is read as two paths (always reply 1, always reply 2) and scored like live dialogue (`script-gen.mts`). "Join fix" adds that the next line must be true after either reply.
+
+| Arm | At 90%+ | Choice questions | Nothing to answer | Alive | Lines that don't follow | Call time |
+|---|---|---|---|---|---|---|
+| Italy, live, learner taps (round 9) | 66% | 43% | 19% | 5.7 | 0.13 per conversation | 3–4 s a turn |
+| Italy, script | 65% | 23% | 29% | 5.8 | 0.33 | 24 s once |
+| Italy, script, join fix | 71% | 18% | 21% | 6.0 | 0.48 | 24 s once |
+| Mexico, live, learner taps (round 9) | 66% | 20% | 14% | 6.2 | 0.50 | 3–4 s a turn |
+| Mexico, script | 72% | 20% | 23% | 5.7 | 0.25 | 23 s once |
+| Mexico, script, join fix | 64% | 17% | 17% | 6.0 | 0.40 | 25 s once |
+
+- **Same level and liveliness as live dialogue, and a better shape:** a script has an arc (arrive, order, wait, eat, leave) instead of a run of offers; choice questions fall from 43% to about 20% in Italy.
+- **The joins are the weak point:** a line shared by both paths can ignore the learner's choice ("No, gracias, solo miro." → "Yo te la preparo ahorita… ¿Carne o queso?"). Italy's lines that don't follow go from 0.13 to 0.33–0.48 a conversation; the join-fix sentence didn't help.
+- **24 seconds to write one,** so a script would have to be written ahead (after the previous conversation, or for a library), not when the learner opens the conversation.
+- The quality judge hit its 4000-token limit once on these 14-line transcripts; real conversations longer than that could lose their score the same way (logged by `lib/remember.ts`, not silent).
+- **Next:** live with lookahead. While the character speaks, write the two replies (1.4 s) and then the character's answer to each, in parallel (3–4 s): about 5 s against about 7 s of speech, so no wait and no joins. And an arc: a short plan for the visit at the start that live turns follow, to get the script's shape without its joins.
+
 **Round 8: does the alive judge mark down questions?** Round 6's conversations judged as they are and with the closing question removed from each character line (`quality.md` judge, 3 runs each).
 
 | | With questions | Without |
