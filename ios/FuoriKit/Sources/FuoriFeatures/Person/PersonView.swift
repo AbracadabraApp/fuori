@@ -33,7 +33,7 @@ struct PersonView: View {
                         .padding(.top, 8)
                 }
                 VStack(spacing: 8) {
-                    Subtitles(line: subtitles ? model.line : nil, shown: model.shown, english: english ? model.english : nil, note: note)
+                    Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note)
                     ConversationControls(model: model)
                 }
                 .padding(.horizontal, Tokens.Space.gutter)
@@ -52,6 +52,14 @@ struct PersonView: View {
             if phase == .background { model.backgrounded() }
         }
     }
+
+    /// Reply buttons (test): the level decides the subtitles, as on levels 1–3
+    /// (docs/beginner-scaffolding.md → The levels): the character's words
+    /// always, their English on levels 1 and 2
+    @AppStorage(SettingsKey.replyButtons) private var replyButtons = false
+    @AppStorage(SettingsKey.scaffoldLevel) private var scaffoldLevel = 1
+    private var showLine: Bool { replyButtons || subtitles }
+    private var showEnglish: Bool { replyButtons ? scaffoldLevel <= 2 : english }
 
     /// The note above the controls: what went wrong, or a hint like "Didn't catch that."
     private var note: String? {

@@ -56,6 +56,15 @@ public final class ConversationModel {
     public private(set) var note: String?
     public private(set) var conversationId: String?
 
+    /// Reply buttons (test, Settings → Reply buttons): the two replies to the
+    /// character's line, shown once they've finished speaking; nil otherwise
+    /// (docs/beginner-scaffolding.md → Build: reply buttons for levels 1–3)
+    public private(set) var replies: [APIClient.Replies.Reply]?
+    /// The reply the learner tapped, until the character answers
+    public private(set) var chosen: Int?
+    /// Fetched while the character's voice plays, so it's ready when they finish
+    private var repliesTask: Task<APIClient.Replies, Error>?
+
     /// What the hidden debug panel shows (Settings → Developer), as the web's ?debug=1
     public struct DebugInfo: Equatable {
         public var promptVersion: String?
@@ -76,7 +85,8 @@ public final class ConversationModel {
     public let city: City
     public let place: Place
     public let character: Character
-    private let language: Language
+    /// The language being learned (VoiceOver reads the reply buttons in it)
+    let language: Language
     private let api: APIClient
     private let onSave: (String) -> Void
 
@@ -96,7 +106,13 @@ public final class ConversationModel {
     /// ends after 4 s of silence. No "more time to answer" setting (Josh,
     /// 2026-10-16: confusing); tap to talk, the default, has no timer at all.
     /// Tap to talk (the default) unless Hands-free is on; always under VoiceOver
-    public var tapMode: Bool { isVoiceOverRunning || !UserDefaults.standard.bool(forKey: SettingsKey.handsFree) }
+    public var tapMode: Bool { replyMode || isVoiceOverRunning || !UserDefaults.standard.bool(forKey: SettingsKey.handsFree) }
+
+    /// Reply buttons instead of the mic (a test setting, off by default)
+    public var replyMode: Bool { UserDefaults.standard.bool(forKey: SettingsKey.replyButtons) }
+    /// 1–3: level 1 shows English on the character and the replies, level 2
+    /// on the character only, level 3 none (docs/beginner-scaffolding.md → The levels)
+    public var scaffoldLevel: Int { min(3, max(1, UserDefaults.standard.integer(forKey: SettingsKey.scaffoldLevel))) }
     /// Tap mode: a turn can't run longer than this, in case the second tap never comes
     private let longestTurn: TimeInterval = 90
     private let firstWordWait: TimeInterval? = 10
@@ -139,6 +155,9 @@ public final class ConversationModel {
     private func present(_ reply: APIClient.TurnReply, generation: Int) async {
         guard generation == self.generation else { return }
         if phase == .paused { pendingReply = reply; line = reply.line; english = reply.en; shown = nil; return }
+        replies = nil
+        chosen = nil
+        fetchReplies()
         line = reply.line
         english = reply.en
         shown = 0
@@ -184,11 +203,47 @@ public final class ConversationModel {
         shown = nil
     }
 
-    /// The learner's turn: open the mic (or wait for a tap under VoiceOver)
+    /// Reply buttons: ask for the two replies as soon as the character's line
+    /// is in, in parallel with their voice
+    private func fetchReplies() {
+        repliesTask?.cancel()
+        repliesTask = nil
+        guard replyMode, let conversationId else { return }
+        let started = Self.now()
+        let (api, cityId, placeId) = (api, city.id, place.id)
+        repliesTask = Task { [weak self] in
+            let replies = try await api.replies(cityId: cityId, placeId: placeId, conversationId: conversationId)
+            self?.time("replies", since: started)
+            return replies
+        }
+    }
+
+    /// The learner's turn: the reply buttons, or open the mic (or wait for a
+    /// tap under VoiceOver)
     private func openTurn() async {
         // Paused while thinking: the mic stays closed until a tap
         guard phase != .paused else { return }
         ring = 0
+        if replyMode, let task = repliesTask {
+            let generation = self.generation
+            do {
+                let result = try await task.value
+                guard generation == self.generation, phase != .paused else { return }
+                if result.replies.count >= 2 {
+                    replies = result.replies
+                    phase = .tapToTalk
+                    return
+                }
+                repliesTask = nil
+                report(NoReplies(count: result.replies.count), step: "replies")
+            } catch {
+                guard generation == self.generation else { return }
+                // No buttons this turn: the mic instead, and the error is logged
+                repliesTask = nil
+                report(error, step: "replies")
+            }
+            note = "No replies this time. Tap to speak."
+        }
         if tapMode {
             phase = .tapToTalk
             return
@@ -323,11 +378,23 @@ public final class ConversationModel {
     public func send(typed text: String) async {
         let said = text.trimmingCharacters(in: .whitespacesAndNewlines)
         guard canType, Heard.hasWords(said) else { return }
+        await send(line: said, heard: "(typed) \(said)")
+    }
+
+    /// A tapped reply button: goes to the character as the learner's line, the
+    /// same way a typed one does. No right or wrong: the tapped one is selected
+    public func choose(_ index: Int) async {
+        guard phase == .tapToTalk, let replies, replies.indices.contains(index) else { return }
+        chosen = index
+        await send(line: replies[index].line, heard: "(tapped) \(replies[index].line)")
+    }
+
+    private func send(line said: String, heard: String) async {
         note = nil
         phase = .thinking
         let generation = self.generation
         do {
-            debug.heard = "(typed) \(said)"
+            debug.heard = heard
             let started = Self.now()
             let reply = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: said)
             time("turn", since: started)
@@ -382,6 +449,7 @@ public final class ConversationModel {
     /// stop everything and save what the character remembers
     public func leave() {
         generation += 1
+        repliesTask?.cancel()
         listenTask?.cancel()
         recorder.stop()
         voice.stop()
@@ -493,6 +561,12 @@ final class GateBox: @unchecked Sendable {
 /// The same clock the recorder's buffer times use
 private enum AudioClock {
     static var now: TimeInterval { ProcessInfo.processInfo.systemUptime }
+}
+
+/// The replies call answered with fewer than two replies
+struct NoReplies: Error, CustomStringConvertible {
+    let count: Int
+    var description: String { "Replies: got \(count), need 2" }
 }
 
 /// The recorder couldn't write some of the learner's audio to the file
