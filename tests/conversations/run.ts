@@ -22,6 +22,7 @@ import { join } from 'path';
 import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { runTurn } from '@/lib/turn';
 import { writeReplies, repliesPromptVersion } from '@/lib/replies';
+import { judgeWithClaude, qualityPromptVersion } from '@/lib/quality';
 import { buildTurnPrompt, promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { cities, language, country } from '@/content';
@@ -58,7 +59,9 @@ function buildCriteria() {
     language: `Speaks ${langName}. Uses English when the learner asks for help (in English or in ${langName}), as much as the help takes, then returns to ${langName}; no English nobody asked for.`,
     understands: 'Understands imperfect speech. Reads garbled speech-to-text and learner errors as what they meant, without commenting on them.',
     adapts: `Adapts when the learner is lost. Talking fast or in complex ${langName} is fine (real people do); what matters is that when the learner signals confusion the character slows down and rephrases, and when they ask to repeat, repeats.`,
-    alive: 'Feels like a real person in that place. Distinct personality, reacts to what was said, recasts mistakes naturally instead of teaching.',
+    // Scored by the replay's judge (lib/quality.ts, quality.md), not by this grader, so both tests
+    // measure liveliness the same way (Josh, 2026-10-17). It no longer covers recasting.
+    alive: 'Feels like a real person in that place. Scored by the judge that scores real conversations (quality.md), not by this grader.',
   };
 
   // Mexico-specific: check for Spain Spanish instead of Mexican Spanish
@@ -74,6 +77,8 @@ function buildCriteria() {
 
 const CRITERIA = buildCriteria();
 type Criterion = keyof typeof CRITERIA;
+/** What this test's own grader scores; alive comes from the quality judge */
+const GRADED = (Object.keys(CRITERIA) as Criterion[]).filter((k) => k !== 'alive');
 
 interface Case {
   character: CharacterSheet;
@@ -195,11 +200,11 @@ const gradeSchema = {
   type: 'object',
   additionalProperties: false,
   properties: {
-    ...Object.fromEntries(Object.keys(CRITERIA).map((k) => [k, { type: 'integer', description: '1-10' }])),
+    ...Object.fromEntries(GRADED.map((k) => [k, { type: 'integer', description: '1-10' }])),
     problem: { type: 'string', description: 'The single biggest problem, one sentence. "None" if none.' },
     quote: { type: 'string', description: 'The character line that best shows the problem, verbatim. Empty if none.' },
   },
-  required: [...Object.keys(CRITERIA), 'problem', 'quote'],
+  required: [...GRADED, 'problem', 'quote'],
 };
 
 async function grade(c: Case, transcript: Turn[]): Promise<Omit<Graded, keyof Case | 'transcript'>> {
@@ -209,21 +214,28 @@ async function grade(c: Case, transcript: Turn[]): Promise<Omit<Graded, keyof Ca
     ? `an app where learners practise ${language.name} by talking with characters in Mexico`
     : `an app where learners practise Italian by talking with characters in Italy`;
 
+  const judged = judgeWithClaude(
+    { name: c.character.name, age: c.character.age, role: c.character.role, city: c.cityName },
+    transcript.map((t) => ({ who: t.who, text: t.transcript }))
+  );
   const result = await askJson<Record<string, unknown>>(
     `You grade conversations from Fuori, ${appDesc}. The goal is natural conversation, not teaching. Be honest and specific; 10 means a native speaker would find it entirely natural.`,
     `Character: ${c.character.name}, ${c.character.role} at ${c.place.name}, ${c.cityName}. ${english}
 Learner type: ${c.learner.description}
 
 Grade the CHARACTER (not the learner) from 1 to 10 on the criteria below. Don't penalize the character for speaking naturally complex ${language.name}; judge how it responds when the learner shows confusion.
-${Object.entries(CRITERIA).map(([k, v]) => `- ${k}: ${v}`).join('\n')}
+${GRADED.map((k) => `- ${k}: ${CRITERIA[k]}`).join('\n')}
 
 Transcript:
 ${show(transcript, c.character)}`,
     gradeSchema
   );
-  const scores = Object.fromEntries(
-    Object.keys(CRITERIA).map((k) => [k, Math.max(1, Math.min(10, Number(result[k]) || 1))])
-  ) as Record<Criterion, number>;
+  const judgement = await judged;
+  if (judgement.alive === undefined) throw new Error('Quality judge gave no alive score');
+  const scores = Object.fromEntries([
+    ...GRADED.map((k) => [k, Math.max(1, Math.min(10, Number(result[k]) || 1))]),
+    ['alive', judgement.alive],
+  ]) as Record<Criterion, number>;
   const overall = Object.values(scores).reduce((a, b) => a + b, 0) / Object.keys(scores).length;
   return { scores, overall, problem: String(result.problem ?? ''), quote: String(result.quote ?? '') };
 }
@@ -286,7 +298,7 @@ function report(results: Graded[], recs: string): string {
   const lines = [
     `# Conversation test`,
     ``,
-    `${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC · model ${CLAUDE_MODEL} · prompt ${promptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''}${TAP ? ` · learner taps reply buttons (replies ${repliesPromptVersion()})` : ''} · ${ok.length} conversations · ${TURNS} learner turns each`,
+    `${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC · model ${CLAUDE_MODEL} · prompt ${promptVersion()} · alive judged by quality.md ${qualityPromptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''}${TAP ? ` · learner taps reply buttons (replies ${repliesPromptVersion()})` : ''} · ${ok.length} conversations · ${TURNS} learner turns each`,
     ``,
     `## Grade: ${avg((r) => r.overall).toFixed(1)} / 10`,
     ``,
