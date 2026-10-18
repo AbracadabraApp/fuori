@@ -15,7 +15,8 @@ const roma = cities.find((c) => c.id === 'roma')!;
 const character = roma.places.map((p) => characterForPlace(roma, p)).find(Boolean)!;
 
 const lines: Turn[] = [{ who: 'npc', transcript: 'Buongiorno! Cosa ti preparo?', translation: 'Good morning!' }];
-for (let i = 1; i <= 8; i++) {
+// Longer than the window, so old turns drop (sized from RECENT_TURNS: it was 8 exchanges when the window was 6)
+for (let i = 1; i <= RECENT_TURNS / 2 + 2; i++) {
   lines.push({ who: 'learner', transcript: i === 1 ? 'Mi chiamo Josh' : `riga ${i}` });
   lines.push({ who: 'npc', transcript: `risposta ${i}`, translation: `reply ${i}` });
 }

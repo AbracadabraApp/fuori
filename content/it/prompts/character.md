@@ -1,6 +1,6 @@
 # Character prompt (Italian)
 
-version: 2026-10-12i
+version: 2026-10-18
 
 The prompt every character gets, for every conversation turn. It is read by
 `lib/prompts/build-turn-prompt.ts`, which fills in the `{placeholders}` from the
@@ -75,11 +75,16 @@ They just said: "{learnerSaid}"
 Earlier in this conversation they said: {earlier}
 ```
 
-Only used when `TURN_HISTORY=recent` (see `lib/prompts/build-turn-prompt.ts`): the conversation goes to Claude as real back-and-forth messages, only the last few exchanges word for word. This line opens the oldest kept message and carries the learner's earlier lines (their name, what they asked for), which are short. Left out when nothing was dropped.
+The conversation goes to Claude as real back-and-forth messages, the last 40 word for word (in practice the whole conversation; see `lib/prompts/build-turn-prompt.ts`). This line opens the oldest kept message and carries the learner's earlier lines (their name, what they asked for), which are short. Left out when nothing was dropped.
 
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-18: the whole conversation, not the last 6 messages
+- **Changed (code, `RECENT_TURNS` in `lib/prompts/build-turn-prompt.ts`):** each turn now sends the last 40 messages word for word instead of 6, which in practice is the whole conversation (real ones run a median of 9 messages, the longest 29). The wording of this prompt is unchanged; the version is bumped so conversations after the change can be told apart.
+- **Why:** past the window the character's own earlier lines were dropped (only the learner's rode along), so it couldn't see that it had already introduced itself or asked something. Replaying the 7 longest real Italy scripts 3 times each, lines where the character repeats itself or asks what was already answered fell from 4.4% to 2.4% of its lines (0.52 to 0.29 per conversation); reply time and the rest of the replay scorecard didn't change.
+- **Prompted by:** round 15 of the level tests: in Josh's real conversations the lowest scores were repeats, Giulia (alive 3) saying "Io sono Giulia, piacere. Di dove sei?" five times and greeting him from scratch at the end; 15 of 28 real conversations ran past the window.
 
 ### 2026-10-12i: take turns, no words after question mark
 - **Final guidance:** "Take turns. No more words after a question mark."

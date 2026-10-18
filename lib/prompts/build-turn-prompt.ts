@@ -26,7 +26,11 @@ export interface RememberedLearner {
  * sent only the last line, while production had run this mode (TURN_HISTORY=
  * recent) since 2026-10-13.
  */
-export const RECENT_TURNS = 6;
+export const RECENT_TURNS = Number(process.env.TURN_RECENT_TURNS) || 40;
+// Was 6 until 2026-10-18: past the window the character's own earlier lines
+// were dropped, so it introduced itself and asked the same things again
+// (round 15: repeats 4.4% → 2.4% of its lines with 40). 40 is in practice the
+// whole conversation; TURN_RECENT_TURNS overrides it in tests.
 
 export interface PromptMessage {
   role: 'user' | 'assistant';
@@ -71,7 +75,8 @@ export interface Template {
 }
 
 export function loadTemplate(): Template {
-  const f = readPromptFile('character.md');
+  // CHARACTER_PROMPT names a trial file next to character.md (tests only; production doesn't set it)
+  const f = readPromptFile(process.env.CHARACTER_PROMPT || 'character.md');
   return {
     version: f.version,
     system: f.block('System prompt'),
