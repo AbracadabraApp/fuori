@@ -20,4 +20,7 @@ archive: project    ## Release archive for App Store Connect (registers the bund
 export: archive     ## Signed .ipa for App Store Connect in build/export (registers the App Store profile)
 	xcodebuild -exportArchive -archivePath $(ARCHIVE) -exportPath build/export -exportOptionsPlist ExportOptions.plist -allowProvisioningUpdates
 
-.PHONY: project build test archive export
+upload: archive     ## Upload a Release build to App Store Connect (TestFlight); bump CURRENT_PROJECT_VERSION in project.yml first
+	xcodebuild -exportArchive -archivePath $(ARCHIVE) -exportPath build/upload -exportOptionsPlist UploadOptions.plist -allowProvisioningUpdates
+
+.PHONY: project build test archive export upload
