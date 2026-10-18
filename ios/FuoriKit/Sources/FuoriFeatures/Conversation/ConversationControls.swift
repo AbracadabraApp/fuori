@@ -1,6 +1,9 @@
 import SwiftUI
 import FuoriDesign
 import FuoriNetworking
+#if os(iOS)
+import UIKit // accessibilitySpeechLanguage on the reply buttons
+#endif
 
 /// The bottom of the person screen: the turn pill, and Pause (always there) on the right.
 /// The pill shows the state by its shape (waveform, dots, pause, warning), not
@@ -255,7 +258,7 @@ private struct ReplyButtons: View {
         var text = AttributedString(line)
         #if os(iOS)
         // UIKit's attribute; the package tests also build for macOS
-        text.accessibilitySpeechLanguage = model.language.speechLang
+        text.uiKit.accessibilitySpeechLanguage = model.language.speechLang
         #endif
         return text
     }
