@@ -275,6 +275,18 @@ v2 (one reply yes and one no; different choices, not two wordings; answer the la
 - The quality judge hit its 4000-token limit once on these 14-line transcripts; real conversations longer than that could lose their score the same way (logged by `lib/remember.ts`, not silent).
 - **Next:** live with lookahead. While the character speaks, write the two replies (1.4 s) and then the character's answer to each, in parallel (3–4 s): about 5 s against about 7 s of speech, so no wait and no joins. And an arc: a short plan for the visit at the start that live turns follow, to get the script's shape without its joins.
 
+**Round 13: scripted world, choices at the joins and a stricter checker.** Round 12 again, with the writer told to make the replies a pick between two things where paths join, offer a no only where the answer can take it, do what a real person in the role does, and say goodbye only when the person is done; the checker also reads each path line by line against what was chosen (`V2=1 script-lib.mts`). Scripts in `design/beginner-scripts/round13-*.md`.
+
+| | Scripts | Passed first time | Passed within 3 | At 90%+ | A1 lines | Alive | Lines that don't follow | Choice questions |
+|---|---|---|---|---|---|---|---|---|
+| Trastevere | 22 | 36% (18%) | 86% (86%) | 67% (70%) | 37% (54%) | 5.4 (5.5) | 0.33 (0.42) | 72% |
+| Mexico City | 26 | 27% (31%) | 81% (92%) | 82% (84%) | 29% (42%) | 5.5 (5.7) | 0.48 (0.50) | 74% |
+
+Round 12 in brackets.
+- **Worse, not better.** Lines that don't follow barely moved (Italy 0.42 → 0.33, Mexico unchanged), and the fix made a new problem: nearly every line is now "X o Y?" (72–74% of character lines, against 43% for live dialogue in round 9), so the judge calls them "a scripted menu bot" and "a quiz". Alive and A1 both dropped.
+- **The joins are still the problem**, just moved: the character serves before the order is complete, hands over change before payment, says goodbye before the coffee comes, or claims a history ("come la vez pasada") the learner never confirmed. A checker passes these; an independent judge doesn't.
+- **Conclusion for Josh's idea (fixed scripts per character, smaller world):** a small world is cheap to write (24 characters, about 50 scripts, a few minutes), and scripted lines are the easiest for a beginner. But branching scripts written and checked by the model don't come out better than live dialogue at feeling like a person, and forcing both paths to join is what makes them feel canned. Not worth pursuing in this form. If scripts stay on the table, the next shape to try is one without joins: a tree (each reply gets its own continuation; 2 replies × 6 beats is too many, so 2–3 forks then a shared close), or live dialogue with lookahead (queue item 1), which has the same instant answer and no joins.
+
 **Round 12: a scripted beginner world (Josh: fixed scripts per character, the same for every learner, in a smaller world).** Two visits for each of Trastevere's 11 characters and Mexico City's 13 (visit 2 written with visit 1 as context), 6 beats each, with the character's own prompt and "sometimes ask". A checker call reads both paths (every line honours the reply tapped; correct, natural, regional; beginner can follow; replies sensible and different; sounds like the role, not a teacher); a failing script is rewritten with its problems, up to twice (`script-lib.mts`). The scripts are in `design/beginner-scripts/`.
 
 | | Scripts | Passed first time | Passed within 3 | At 90%+ | A1 lines | Alive | Lines that don't follow |

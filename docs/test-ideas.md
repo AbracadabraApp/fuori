@@ -8,7 +8,7 @@ How to work it: take the top item, run it, write the result in the test log, mov
 
 1. **Live with lookahead** (from round 11). While the character speaks: write the two replies, then the character's answer to each, in parallel, so a tap gets an instant answer with no shared joins. Measure whether it's ready in time, and the cost (two turns per turn).
 2. **A plan for the visit.** One short call at the start writes an arc (arrive → order → small talk → leave) that live turns follow: the script's shape without its joins, and less of the order form ("Vuoi X o Y?" on 43% of Italy's turns, round 9).
-3. **A scripted beginner world** (round 12 done; round 13 next: choices that don't derail at the joins, stricter checker; Josh: fixed scripts per character, the same for every learner, and a smaller world for beginners). Two visits for each of Trastevere's 11 characters and Mexico City's 13, each checked and rewritten up to twice. Measure: share passing first time and after rewrites, what fails, and level and liveliness against live dialogue.
+3. **Scripts as a tree, no joins** (from round 13): each reply gets its own continuation for 2–3 forks, then a shared close. Only if lookahead (item 1) doesn't already give the same thing.
 4. **"Ripeti?" on levels 4–5.** Replay is gone, so asking the character to repeat must work: is the repeat shorter, slower-sounding and simpler, or word for word, or a new sentence? Simulated learner asks now and then; judge the repeat.
 5. **Mexico at 20 conversations** for the final Beginner pick against today's prompt, since 5 conversations wobble 6–10 points.
 6. **Characters feel flat in both countries** (alive about 5 on the `quality.md` judge, target 7; round 8 found Italy's lower number was a different judge). The level block isn't the cause (round 10); try the character prompt and data: a concrete detail or opinion per character, reacting before asking. Through the replay gate. Also: make `test:conversations` use the same alive judge as the replay (changes a test: needs Josh).
@@ -25,6 +25,8 @@ How to work it: take the top item, run it, write the result in the test log, mov
 - **Frames chosen by the learner's Diario** rather than by the moment: give the clicks prompt the frames being practised; does it still sound natural?
 
 ## Done
+
+- Round 13 (2026-10-17): choices at the joins and a stricter checker made scripts worse (72–74% of lines "X o Y?", alive and A1 down, joins no better); branching scripts with joins dropped.
 
 - Round 12 (2026-10-17): scripted beginner world for Trastevere and Mexico City: 86–92% pass the checker after rewrites and it's the easiest dialogue yet, but the independent judge still finds the joins ignore a no.
 
