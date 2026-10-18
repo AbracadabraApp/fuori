@@ -253,7 +253,10 @@ private struct ReplyButtons: View {
     /// The reply, read by VoiceOver in the language being learned
     private func spoken(_ line: String) -> AttributedString {
         var text = AttributedString(line)
+        #if os(iOS)
+        // UIKit's attribute; the package tests also build for macOS
         text.accessibilitySpeechLanguage = model.language.speechLang
+        #endif
         return text
     }
 }
