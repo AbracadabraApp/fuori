@@ -4,8 +4,9 @@
  * so the character's turn stays { line, en }. Prompt in
  * content/<country>/prompts/replies.md.
  *
- * Experimental: only `npm run test:conversations -- --learner=tap` calls it.
- * Server-side only.
+ * Experimental: called by `npm run test:conversations -- --learner=tap` and by
+ * POST /v1/replies, which the app uses only when Settings → "Reply buttons
+ * (test)" is on (off by default). Server-side only.
  */
 
 import { z } from 'zod';
@@ -39,6 +40,16 @@ export function buildRepliesPrompt(character: CharacterSheet, transcript: Turn[]
   const system = fill(readPromptFile('replies.md').block('System prompt'), { language: language.name, name: character.name, role: character.role });
   const user = transcript.map((t) => `${t.who === 'npc' ? character.name : 'Person'}: ${t.transcript}`).join('\n');
   return { system, user };
+}
+
+/**
+ * Why replies can't be written for this conversation yet, or null when they
+ * can: the character must have spoken last, since the replies answer them.
+ */
+export function cannotOfferReplies(transcript: Turn[]): string | null {
+  if (transcript.length === 0) return 'The conversation has no lines yet';
+  if (transcript[transcript.length - 1].who !== 'npc') return 'The character has not answered yet';
+  return null;
 }
 
 export async function writeReplies(character: CharacterSheet, transcript: Turn[]): Promise<Replies> {

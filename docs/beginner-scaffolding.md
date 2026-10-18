@@ -106,6 +106,23 @@ Written by the end-of-conversation step (`lib/remember.ts`), stored with the phr
 | Audio | Character's line and answers in the character's voice; the replies in your voice |
 | Level | 1–5 |
 
+## Build: reply buttons for levels 1–3 (2026-10-18)
+
+A first playable version, behind a setting, so Josh can feel levels 1–3 in Afuera. Live dialogue (not the scripted world).
+
+**Server (done, cloud session, not verified live):** `POST /v1/replies { cityId, placeId, tripTo?, conversationId }` → `{ frame, replies: [{ line, en }, { line, en }], promptVersion }`. Wraps `lib/replies.ts`; reads the conversation from the database like `/v1/turn`; refuses until the character has spoken last; rate-limited per learner. `npm run test:replies-route`. Needs `smoke:live` (or one curl with a real token) once deployed.
+
+**App (laptop):**
+1. `SettingsKey.replyButtons` ("Reply buttons (test)", off by default) and `SettingsKey.scaffoldLevel` (1, 2 or 3; a picker under it, shown only when the toggle is on). On the phone for now; saved with the learner later.
+2. `APIClient.replies(cityId:placeId:tripTo:conversationId:)` → `{ frame, replies: [{ line, en }], promptVersion }`.
+3. `ConversationModel`: when the toggle is on and a character line arrives, fetch the replies in parallel with the voice. Hold them until the character finishes (subtitles fully typed). A failed fetch falls back to the mic for that turn and logs it; never a silent failure.
+4. Levels 1–3 on screen: level 1 shows the character's English and each reply's English; level 2 the character's English only; level 3 neither. The two replies replace the mic pill; no Pause or Replay in tap-to-talk.
+5. A tap sends the reply's `line` through the existing typed-reply path (`send(typed:)`, which posts to `/v1/turn` as `learnerSaid`). The tapped button shows a selected state; no right or wrong.
+6. Tapping a reply while the character is still speaking stops her and sends it.
+7. Done checks (CLAUDE.md): AX5 (the area above the controls scrolls), VoiceOver (replies read in the target language), 44 pt targets, both countries, back swipe saves.
+
+**Josh:** play 10 minutes in Afuera at level 1, then level 3. Note where it felt wrong.
+
 ## Being explored: a scripted, smaller world for levels 1–3 (Josh, 2026-10-17)
 
 Not decided; being tested ([test-ideas.md](test-ideas.md), [level-judge-test.md](level-judge-test.md) rounds 11–12).

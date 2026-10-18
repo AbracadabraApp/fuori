@@ -1466,3 +1466,9 @@ Josh: "proceed with your tests ... I don't want to be the bottleneck". Claude de
 - **Round 14, placement (Josh chose option 2: onboarding guesses, conversations correct it):** onboarding is right when learners answer as themselves (29/29) and wrong every time when a friend answers or a shy intermediate answers in English (0/18); a level judge after the first conversation gets all 47 right and later conversations don't move it. Fixed the onboarding send-off running out of tokens on mixed answers (2577809). Next: the level check at the end of each of the first 3 conversations, behind a setting.
 - **Open:** a character reply hit `lib/turn.ts`'s 800-token cap twice in about 700 test turns (the learner would get an error); raising it to about 1500 waits for Josh.
 - **Next:** live with lookahead; "Ripeti?" on levels 4–5; Mexico at 20 conversations; Josh's learner on "sometimes ask" once he sends his Mexico learner id.
+
+## 2026-10-18: Reply buttons route for levels 1–3 (cloud session)
+- `POST /v1/replies` (app/v1/replies/route.ts): the two reply buttons for beginner levels 1–3, wrapping `lib/replies.ts`. Reads the conversation from the database, refuses until the character has spoken last, rate-limited per learner. New `npm run test:replies-route`; `tsc` clean.
+- Not verified live: the cloud session has no API keys or Railway access. Next: `smoke:live` or one curl with a real token after deploy.
+- App side specced for the laptop in `docs/beginner-scaffolding.md` → "Build: reply buttons for levels 1–3": Settings toggle (off by default) and a level 1–3 picker, fetch while the character speaks, buttons in place of the mic, tap goes through `send(typed:)`.
+- Josh, 2026-10-18: there is no sign-in; every learner has a token from the start.
