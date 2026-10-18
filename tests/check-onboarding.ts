@@ -40,11 +40,15 @@ async function live() {
     it: [
       ['all English', ['I love the food and the old towns, everything is so beautiful', "Yes, it's my third time, I came with my wife last year"], ['beginner']],
       ['a few words', ['Mi piace il cibo. Pizza. Bello.', 'Sì. Roma. Grazie.'], ['beginner']],
+      // An English answer, then a fluent one (round 14: a friend answered for them). The judge thought
+      // long over the mismatch and ran out of tokens in 4 of 6 runs at max_tokens 600; any level will do
+      ['mixed', ["Oh, um, grazie! I only know a little Italian, sorry. I like the food, pizza and pasta, very much!", "La mia preferita è la margherita con la bufala, e la migliore che abbia mai mangiato è stata a Napoli, in una piccola pizzeria vicino a via dei Tribunali dove si aspetta sempre mezz'ora."], ['beginner', 'intermediate', 'advanced']],
       ['fluent', ["Mi piace soprattutto il modo in cui la gente vive le piazze la sera: c'è sempre qualcuno che chiacchiera, i bambini giocano e nessuno ha fretta.", "No, ci vengo da anni per lavoro, ma stavolta ho deciso di restare qualche mese a Bologna per vivere la città senza correre da una riunione all'altra."], ['advanced']],
     ],
     es: [
       ['all English', ['I love the food and the colours, the markets are amazing', "Yes, it's my third time, I came with my wife last year"], ['beginner']],
       ['a few words', ['Me gusta la comida. Tacos. Bonito.', 'Sí. México. Gracias.'], ['beginner']],
+      ['mixed', ["Oh, um, gracias! I only know a little Spanish, sorry. I like the food, tacos and everything, very much!", 'Mi platillo favorito son los chilaquiles verdes con un huevito estrellado, y los mejores que he probado en mi vida fueron en una fondita del mercado de Coyoacán, donde siempre hay fila.'], ['beginner', 'intermediate', 'advanced']],
       ['fluent', ['Me encanta cómo la gente sale a la calle por la tarde: los mercados, la música en las plazas y que siempre hay alguien dispuesto a platicar contigo.', 'No, vengo desde hace años por trabajo, pero esta vez decidí quedarme unos meses en Oaxaca para conocer la ciudad con calma y sin prisas.'], ['advanced']],
     ],
   };

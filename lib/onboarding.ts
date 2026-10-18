@@ -22,7 +22,9 @@ async function ask<T>(step: 'follow-up' | 'send-off', answers: HeardAnswer[], sc
   const prompt = buildOnboardingPrompt(step, answers);
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
-    max_tokens: 600,
+    // The model thinks before answering and the thinking counts toward this limit: at 600 the send-off
+    // ran out on mixed answers (one in English, one fluent) 3 times in 3 (round 14, 2026-10-18)
+    max_tokens: 2000,
     temperature: 1.0,
     system: prompt.system,
     messages: [{ role: 'user', content: prompt.user }],
