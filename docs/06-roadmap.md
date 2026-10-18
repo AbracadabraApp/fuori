@@ -10,7 +10,7 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
-1. **Turn cap:** being tested (Josh: OK to test, 2026-10-18); then Josh's OK to change it (→ Faster and reliable replies)
+1. **Turn cap:** tested (round 16); Josh's OK to raise it from 800 to 1200 (→ Faster and reliable replies)
 2. **Play Afuera with the level trial on**, so Claude can review those conversations (→ Beginner ladder)
 3. **Spec for the smaller world** (→ Smaller world, on hold)
 4. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
@@ -24,7 +24,7 @@ Claude can't move these until Josh does:
 
 ### Faster and reliable replies
 Goal: reply under 2 s, 4 s at most (today about 6 s of waiting, Claude 3.6 s median of it).
-- [ ] **Claude** ⛔ Raise the reply cap: character replies hit the 800-token cap in `lib/turn.ts` twice in about 700 test turns (2026-10-17/18), and the learner gets an error instead of a reply. Blocked on Josh's OK (about 1500 still caps a stretched turn)
+- [ ] **Claude** ⛔ Raise the reply cap from 800 to 1200 in `lib/turn.ts`. Round 16 (810 replies, same call with a 1500 cap; Italy's real scripts, simulated Mexico): median 329–343 tokens, 99% under 714, the largest 847; 2 of 810 (0.25%) went over 800, which fails the turn today; none over 1200. Most of it is thinking (with thinking median 355–396 tokens; without, 113–169). The replies near the cap took 7–8 s. Blocked on Josh's OK
 - [ ] **Claude** Investigate the ~6 s after a turn: where the time goes besides Claude
 - [ ] **Claude** Try Haiku for characters (1.6 s against about 3.4 s), with the level judge as the guard
 - [ ] **Claude** Start the voice as soon as the line is streamed
