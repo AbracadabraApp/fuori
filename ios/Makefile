@@ -12,4 +12,12 @@ test: project       ## Package tests (fast, no simulator) and the scheme's tests
 	cd FuoriKit && swift test
 	set -o pipefail && xcodebuild -project Fuori.xcodeproj -scheme Fuori -destination '$(DEST)' test | xcbeautify --quiet
 
-.PHONY: project build test
+ARCHIVE = build/Fuori.xcarchive
+
+archive: project    ## Release archive for App Store Connect (registers the bundle id and distribution signing if needed)
+	set -o pipefail && xcodebuild -project Fuori.xcodeproj -scheme Fuori -configuration Release -destination 'generic/platform=iOS' -archivePath $(ARCHIVE) -allowProvisioningUpdates archive | xcbeautify --quiet
+
+export: archive     ## Signed .ipa for App Store Connect in build/export (registers the App Store profile)
+	xcodebuild -exportArchive -archivePath $(ARCHIVE) -exportPath build/export -exportOptionsPlist ExportOptions.plist -allowProvisioningUpdates
+
+.PHONY: project build test archive export
