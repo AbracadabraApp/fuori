@@ -10,9 +10,10 @@ How to work it: take the top item, run it, write the result in the test log, mov
 2. **A plan for the visit.** One short call at the start writes an arc (arrive → order → small talk → leave) that live turns follow: the script's shape without its joins, and less of the order form ("Vuoi X o Y?" on 43% of Italy's turns, round 9).
 3. **Scripts as a tree, no joins** (from round 13): each reply gets its own continuation for 2–3 forks, then a shared close. Only if lookahead (item 1) doesn't already give the same thing.
 4. **"Ripeti?" on levels 4–5.** Replay is gone, so asking the character to repeat must work: is the repeat shorter, slower-sounding and simpler, or word for word, or a new sentence? Simulated learner asks now and then; judge the repeat.
-5. **Mexico at 20 conversations** for the final Beginner pick against today's prompt, since 5 conversations wobble 6–10 points.
-6. **Characters feel flat in both countries** (alive about 5 on the `quality.md` judge, target 7; round 8 found Italy's lower number was a different judge). The level block isn't the cause (round 10); try the character prompt and data: a concrete detail or opinion per character, reacting before asking. Through the replay gate. Also: make `test:conversations` use the same alive judge as the replay (changes a test: needs Josh).
-7. **Replies folded into the turn** (the other option in beginner-scaffolding.md → Writing the replies): the character's call returns the two replies too. Lower priority now that the separate call is fast enough.
+5. **Placement on more than one sentence** (Josh, 2026-10-18). Simulated learners at known levels (total beginner, beginner with a rehearsed sentence, someone leaning on Italian, intermediate, advanced) go through onboarding: how often is one answer enough, and does a third question or the first conversation's evidence (the scorecard's "lost" count, the quality judge) fix the misplacements? Measure placement against the known level.
+6. **Mexico at 20 conversations** for the final Beginner pick against today's prompt, since 5 conversations wobble 6–10 points.
+7. **Characters feel flat in both countries** (alive about 5 on the `quality.md` judge, target 7; round 8 found Italy's lower number was a different judge). The level block isn't the cause (round 10); try the character prompt and data: a concrete detail or opinion per character, reacting before asking. Through the replay gate. Also: make `test:conversations` use the same alive judge as the replay (changes a test: needs Josh).
+8. **Replies folded into the turn** (the other option in beginner-scaffolding.md → Writing the replies): the character's call returns the two replies too. Lower priority now that the separate call is fast enough.
 
 ## Later
 

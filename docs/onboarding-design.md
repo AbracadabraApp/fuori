@@ -128,6 +128,7 @@ Steps 2–5 below are the older draft.
 
 - The microphone permission prompt: proposed at step 1, first time she asks you to speak.
 - The level steps after step 4, and how far the ladder goes in onboarding.
+- **Placement rests on too little (Josh, 2026-10-18: "the test should probably be more than 1").** Today one sentence in the language decides it: Josh's Mexico learner was placed intermediate because someone else spoke answer 2. Two ways to give it more: more questions in onboarding (longer before they play), or treat the onboarding level as a first guess and let the first few conversations confirm or move it (the design's own "the onboarding is the assessment… judged all along", and the learner-level item in the roadmap). Being tested, see `docs/test-ideas.md`.
 - Her name: none for now. The learner's name is not asked in onboarding either (Josh).
 - The one-app name (Fuori or Afuera) where it appears in shared screens.
 
