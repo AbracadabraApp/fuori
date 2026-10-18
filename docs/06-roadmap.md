@@ -10,11 +10,13 @@ The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the
 
 ### Start here (2026-10-16)
 - [ ] **app** Josh tries today's build on his iPhone (installed): pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
+- [ ] **app** Josh plays Afuera with the level trial on (Beginner "still you, sometimes ask", his learner only, set 2026-10-18): plainer lines and now and then an easy yes/no or this-or-that question? Then Claude reviews those conversations (prompt version `2026-10-12i+Beginner: still you, sometimes ask`)
 - [ ] **server** Railway watch paths: set on both services through the API (railway.json was ignored: config as code is deprecated), but docs-only commits still deploy; look in the dashboard (service → Settings → Watch Paths)
 
 ### 1. Finish the conversation on the phone
 - [ ] **app** Try Magda in the app
 - [ ] **app** Device checks: a call, Siri, AirPods in and out, backgrounding, locking
+- [ ] **server** Character replies sometimes hit the 800-token cap in `lib/turn.ts` (2 in about 700 test turns, 2026-10-17/18): the learner gets an error instead of a reply. Raise to about 1500, which still caps a stretched turn (needs Josh's OK)
 - [ ] **both** Response timing: investigate the ~6 s after a turn (deferred; first number: Claude 3.6 s median per reply)
 
 ### 2. Prompt goals and scorecard
@@ -43,6 +45,9 @@ Every prompt change says which goal it moves and may not make another worse (ver
   - [x] Define the engineering needs (onboarding-design.md → Engineering needs; open points answered by Josh, 2026-10-16)
   - [x] Implement (built 2026-10-17, server and app; Josh tried both countries on his iPhone)
 - [ ] **server** Learner level: what moves a learner between Beginner, Intermediate and Advanced after onboarding. Doesn't exist yet; onboarding's placement, Magda's study-file Level line and an unused type are separate pieces ([language-levels-plan.md](language-levels-plan.md) → 1)
+  - [x] Decided (Josh, 2026-10-18): onboarding's level is a first guess; the first conversations confirm or move it. Tested in round 14 ([level-judge-test.md](level-judge-test.md)): one conversation corrected every misplacement
+  - [ ] Level check at the end of each of the first 3 conversations, updating `learners.level`, behind a setting that's off by default
+  - [ ] Run it on saved real conversations (Josh's included) and compare with Josh's judgement
 - [ ] **both** Beginner ladder: five levels, from tapping a reply with English to filling a frame in your own words ([beginner-scaffolding.md](beginner-scaffolding.md), draft 2026-10-17)
 
 ### 5. Parity with the web
