@@ -9,6 +9,7 @@ import { runTurn } from '@/lib/turn';
 import { promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { buildTutorPrompt, repliesSoFar } from '@/lib/prompts/build-tutor-prompt';
 import { recordTurn } from '@/lib/recording';
+import { trialLevel } from '@/lib/conversation/level-trial';
 import { loadCharacterMemory, loadMemoryAtStart, type CharacterMemory } from '@/lib/memory';
 import { tutor } from '@/content';
 import type { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
@@ -60,6 +61,9 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     ? buildTutorPrompt({ character, memory, replies: repliesSoFar(transcript, learnerSaid) })
     : undefined;
 
+  // A level block for learners in the trial (off unless LEVEL_TRIAL is set); never Magda
+  const level = tutorPrompt ? undefined : trialLevel(learnerId);
+
   const reply = await runTurn({
     character,
     transcript,
@@ -67,10 +71,11 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     memory,
     system: tutorPrompt?.system,
     firstTurn: tutorPrompt?.firstTurn,
+    level,
   });
 
   // One line per turn so any reply can be traced to the prompt version that produced it
-  const version = tutorPrompt ? `magda-${tutorPrompt.version}` : promptVersion();
+  const version = tutorPrompt ? `magda-${tutorPrompt.version}` : promptVersion(level);
   console.log(
     JSON.stringify({
       level: 'info',

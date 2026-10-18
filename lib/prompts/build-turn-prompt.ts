@@ -45,8 +45,9 @@ interface BuildTurnPromptParams {
   system?: string;
   firstTurn?: string;
   /** Experimental: a block from content/<country>/prompts/levels.md (e.g.
-   *  "Beginner: shape"), added at the end of the character prompt. Only the
-   *  tests pass one; without it the prompt is today's. */
+   *  "Beginner: shape"), added at the end of the character prompt. The tests
+   *  pass one, and so does a level trial for listed learners
+   *  (lib/conversation/level-trial.ts); without it the prompt is today's. */
   level?: string;
   /** Where the level block goes: the end of the system prompt (default) or
    *  the start of the newest message, closest to the reply (tests only) */
@@ -81,9 +82,10 @@ export function loadTemplate(): Template {
   };
 }
 
-/** Version of the character prompt in use (from character.md). */
-export function promptVersion(): string {
-  return loadTemplate().version;
+/** Version of the character prompt in use (from character.md), with the level block if one is added */
+export function promptVersion(level?: string): string {
+  const v = loadTemplate().version;
+  return level ? `${v}+${level}` : v;
 }
 
 function timesMet(visits: number): string {
