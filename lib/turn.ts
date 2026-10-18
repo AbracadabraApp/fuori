@@ -40,6 +40,8 @@ export async function runTurn(params: {
     model: TURN_MODEL,
     max_tokens: 800, // was 2048; a reply is ~20 words. Caps the cost of a turn someone tries to stretch (docs/12-native-app.md)
     temperature: 1.0,
+    // TURN_THINKING=off: no thinking before the reply (a speed trial; unset is today's behaviour)
+    ...(process.env.TURN_THINKING === 'off' ? { thinking: { type: 'between_tools' as const } } : {}),
     system: prompt.system,
     messages: prompt.messages,
     output_config: {
@@ -53,6 +55,7 @@ export async function runTurn(params: {
     laps.facts.model = response.model;
     laps.facts.inputTokens = response.usage.input_tokens;
     laps.facts.outputTokens = response.usage.output_tokens;
+    laps.facts.thought = response.content.some((b) => b.type === 'thinking' || b.type === 'redacted_thinking') ? 'yes' : 'no';
   }
 
   // Cut off mid-JSON: say so, rather than "invalid JSON"
