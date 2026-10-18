@@ -46,6 +46,7 @@
     "test:history": "tsx tests/check-history.ts",
     "test:study-export": "tsx tests/check-study-export.ts",
     "smoke:live": "tsx scripts/smoke-live.ts",
+    "measure:turn": "tsx scripts/measure-turn.ts",
     "test:leave": "tsx tests/check-leave.ts",
     "test:onboarding": "node --env-file-if-exists=.env.local node_modules/.bin/tsx tests/check-onboarding.ts",
     "test:sweep": "tsx tests/check-sweep.ts",

@@ -14,12 +14,15 @@ import { VoiceError } from '@/lib/voice/providers/elevenlabs';
 import { allow } from '@/lib/rate-limit';
 import { logServerError } from '@/lib/server-log';
 import { logVoiceOutcome } from '@/lib/voice-outcomes';
+import { Laps } from '@/lib/timing';
 
 const MAX_TEXT = 1000; // a reply is ~20 words; Magda's longest are a few hundred characters
 const PER_10_MIN = 150;
 
 export async function POST(request: Request) {
+  const laps = new Laps();
   return withLearner(request, 'v1 speak', async (learnerId) => {
+    laps.lap('auth');
     const body = await request.json().catch(() => null);
     const text = body?.text;
     const characterId = body?.characterId;
@@ -54,8 +57,13 @@ export async function POST(request: Request) {
         return apiError('upstream_unavailable', 'The voice service returned no audio');
       }
       outcome('ok');
+      laps.lap('elevenlabs');
+      laps.facts.chars = text.length;
+      laps.facts.bytes = result.audio.length;
+      laps.log('speak-timing', id);
       return new Response(new Uint8Array(result.audio), {
         headers: {
+          'server-timing': laps.header(),
           'content-type': 'audio/mpeg',
           'content-length': String(result.audio.length),
           'cache-control': 'private, max-age=86400',

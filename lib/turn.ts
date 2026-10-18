@@ -8,6 +8,7 @@ import { anthropic, TURN_MODEL, replyText } from '@/lib/claude';
 import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
 import type { CharacterSheet, Turn } from '@/lib/types';
+import type { Laps } from '@/lib/timing';
 
 export const TurnOutputSchema = z.object({
   line: z.string().describe('What the character says, in the language the person is learning'),
@@ -28,10 +29,14 @@ export async function runTurn(params: {
   /** Experimental level block (tests and the level trial; see buildTurnPrompt) */
   level?: string;
   levelAt?: 'system' | 'last';
+  /** Records Claude's first token and token counts (the speed work) */
+  laps?: Laps;
 }): Promise<TurnReply> {
   const prompt = buildTurnPrompt(params);
 
-  const response = await anthropic.messages.create({
+  // Streamed only to time the first token; the reply is still read whole
+  const started = performance.now();
+  const stream = anthropic.messages.stream({
     model: TURN_MODEL,
     max_tokens: 800, // was 2048; a reply is ~20 words. Caps the cost of a turn someone tries to stretch (docs/12-native-app.md)
     temperature: 1.0,
@@ -41,6 +46,14 @@ export async function runTurn(params: {
       format: { type: 'json_schema', schema: turnOutputJsonSchema },
     },
   });
+  const { laps } = params;
+  if (laps) stream.once('text', () => laps.mark('claudeFirstToken', performance.now() - started));
+  const response = await stream.finalMessage();
+  if (laps) {
+    laps.facts.model = response.model;
+    laps.facts.inputTokens = response.usage.input_tokens;
+    laps.facts.outputTokens = response.usage.output_tokens;
+  }
 
   // Cut off mid-JSON: say so, rather than "invalid JSON"
   if (response.stop_reason === 'max_tokens') {

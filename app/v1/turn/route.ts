@@ -17,6 +17,7 @@ import { parseTurnRequest, MAX_SAID_CHARS } from '@/lib/turn-request';
 import { loadConversationTurns } from '@/lib/recording';
 import { takeTurn } from '@/lib/conversation/take-turn';
 import { logServerError } from '@/lib/server-log';
+import { Laps } from '@/lib/timing';
 
 const Body = z.object({
   cityId: z.string(),
@@ -27,7 +28,9 @@ const Body = z.object({
 });
 
 export async function POST(request: Request) {
+  const laps = new Laps();
   return withLearner(request, 'v1 turn', async (learnerId) => {
+    laps.lap('auth');
     const body = Body.safeParse(await request.json().catch(() => null));
     if (!body.success) return apiError('bad_request', body.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; '));
     const { conversationId, learnerSaid } = body.data;
@@ -38,6 +41,7 @@ export async function POST(request: Request) {
       transcript = await loadConversationTurns(conversationId, learnerId);
       if (!transcript) return apiError('not_found', 'No such conversation for this learner');
     }
+    laps.lap('load');
 
     // Same checks as the web: the character from ids, sizes capped
     const parsed = parseTurnRequest({ ...body.data, transcript: transcript.map(({ who, transcript, translation }) => ({ who, transcript, translation })) });
@@ -53,8 +57,11 @@ export async function POST(request: Request) {
         conversationId,
         requestId: request.headers.get('x-fuori-id') ?? undefined,
         onSoftError: (where, err) => logServerError(request, where, err),
+        laps,
       });
-      const headers: Record<string, string> = {};
+      laps.facts.turn = conversationId ? 'reply' : 'opening';
+      laps.log('turn-timing', request.headers.get('x-fuori-id'));
+      const headers: Record<string, string> = { 'server-timing': laps.header() };
       // Read by scripts/smoke-live.ts
       if (result.memory) headers['x-memory'] = `${result.memory.visits} visits, ${result.memory.notes.length} notes`;
       if (result.isTutor) headers['x-study-file'] = `${result.memory?.notes.length ?? 0} lines, ${result.memory?.visits ?? 0} lessons`;

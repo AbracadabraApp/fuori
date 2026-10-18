@@ -13,11 +13,14 @@ import { language as learning } from '@/content';
 import { apiError, apiJson, withLearner } from '@/lib/api';
 import { getSpeechProvider } from '@/lib/speech/providers';
 import { logServerError } from '@/lib/server-log';
+import { Laps } from '@/lib/timing';
 
 const MAX_BYTES = 10 * 1024 * 1024; // about ten minutes of m4a; a turn is seconds
 
 export async function POST(request: Request) {
+  const laps = new Laps();
   return withLearner(request, 'v1 transcribe', async () => {
+    laps.lap('auth');
     const form = await request.formData().catch(() => null);
     const audio = form?.get('audio');
     if (!(audio instanceof File) || audio.size === 0) return apiError('bad_audio', 'Send the recording as multipart field "audio"');
@@ -26,8 +29,12 @@ export async function POST(request: Request) {
     const lang = mode === 'any' ? undefined : mode === 'en' ? 'en' : learning.code;
     try {
       // No prompt: Whisper echoes it into short or quiet recordings (tests/check-transcribe.ts)
+      laps.lap('upload');
       const result = await getSpeechProvider().transcribe({ audio, language: lang });
-      return apiJson({ text: result.text, language: result.language });
+      laps.lap('whisper');
+      laps.facts.bytes = audio.size;
+      laps.log('transcribe-timing', request.headers.get('x-fuori-id'));
+      return apiJson({ text: result.text, language: result.language }, { headers: { 'server-timing': laps.header() } });
     } catch (err) {
       logServerError(request, 'v1 transcribe', err);
       return apiError('upstream_unavailable', 'Speech to text unavailable', 1000);

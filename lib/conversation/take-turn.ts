@@ -13,6 +13,7 @@ import { trialLevel } from '@/lib/conversation/level-trial';
 import { loadCharacterMemory, loadMemoryAtStart, type CharacterMemory } from '@/lib/memory';
 import { tutor } from '@/content';
 import type { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
+import type { Laps } from '@/lib/timing';
 
 export interface TakeTurnParams {
   /** null when there's no database (local runs): no memory, nothing recorded */
@@ -26,6 +27,8 @@ export interface TakeTurnParams {
   requestId?: string;
   /** Problems that mustn't block the reply (memory, recording) are reported here */
   onSoftError: (where: string, err: unknown) => void;
+  /** Times each step: memory, claude, record */
+  laps?: Laps;
 }
 
 export interface TakeTurnResult {
@@ -53,6 +56,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       p.onSoftError('memory load', err);
     }
   }
+  p.laps?.lap('memory');
 
   // Magda teaches with her own prompt: her memory is the study file, and she
   // gets one fact for pacing, how many replies the learner has made this lesson
@@ -72,7 +76,9 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     system: tutorPrompt?.system,
     firstTurn: tutorPrompt?.firstTurn,
     level,
+    laps: p.laps,
   });
+  p.laps?.lap('claude');
 
   // One line per turn so any reply can be traced to the prompt version that produced it
   const version = tutorPrompt ? `magda-${tutorPrompt.version}` : promptVersion(level);
@@ -106,6 +112,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       p.onSoftError('recording', err);
     }
   }
+  p.laps?.lap('record');
 
   return { reply, promptVersion: version, conversationId: savedId, memory, isTutor };
 }
