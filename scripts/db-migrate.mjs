@@ -83,6 +83,8 @@ CREATE INDEX IF NOT EXISTS idx_learner_tokens_learner ON learner_tokens(learner_
 ALTER TABLE learners ADD COLUMN IF NOT EXISTS level text;
 ALTER TABLE learners ADD COLUMN IF NOT EXISTS onboarded_at timestamptz;
 ALTER TABLE learners ADD COLUMN IF NOT EXISTS onboarding jsonb;
+-- The level check after the first conversations (lib/learner-level.ts), each with its reason
+ALTER TABLE learners ADD COLUMN IF NOT EXISTS level_checks jsonb;
 
 -- Indexes for common queries
 CREATE INDEX IF NOT EXISTS idx_conversations_learner ON conversations(learner_id);

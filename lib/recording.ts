@@ -95,6 +95,8 @@ export async function markConversationEnded(conversationId: string, learnerId: s
 
 export interface RecordedConversation {
   id: string;
+  /** Whose conversation (the level check's comparison reads it from the admin export) */
+  learner_id: string;
   character_id: string;
   place_id: string;
   city_id: string;
@@ -116,7 +118,7 @@ export interface RecordedConversation {
  */
 export async function recentConversations(limit = 20, since?: Date): Promise<RecordedConversation[]> {
   const result = await query<RecordedConversation>(
-    `SELECT c.id, c.character_id, c.place_id, c.city_id, c.prompt_version, c.started_at, c.ended_at, c.turns,
+    `SELECT c.id, c.learner_id, c.character_id, c.place_id, c.city_id, c.prompt_version, c.started_at, c.ended_at, c.turns,
             c.review, m.notes, to_jsonb(c)->'quality' AS quality
      FROM conversations c
      LEFT JOIN character_memories m ON m.learner_id = c.learner_id AND m.character_id = c.character_id

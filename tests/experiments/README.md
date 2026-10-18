@@ -14,6 +14,7 @@ Run from the repo root with the API key: `npx tsx --env-file=.env.local tests/ex
 | `placement.mts` | Onboarding's level against a known level, and a level judge after each of 3 conversations | — | 14 |
 | `repeats.mts` | Character lines that repeat themselves or re-ask, on the longest replay scripts; `TURN_RECENT_TURNS` sets the history window | replay set | 15 |
 | `reply-tokens.mts` | Output tokens per character reply with a high cap (how close replies come to `max_tokens`) | replay set (Italy) or simulated learners | 16 |
+| `learner-levels.mts` | The level check (`lib/learner-level.ts`) on each real learner's first conversations, for Josh to compare with his own judgement | admin export | 14 |
 | `on-hold/smaller-world.mts` | Scripted two-visit conversations per character in one neighbourhood, checked and rewritten. On hold until the smaller world has a spec | — | 12–13 |
 
 Reports come from `npm run test:conversations` and `npm run test:replay` (`tests/conversations/reports/`); the replay set from `npm run test:replay -- --refresh`.

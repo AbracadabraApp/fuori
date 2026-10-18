@@ -52,8 +52,9 @@ Goal: 90% of the character's words at the learner's level (Josh; the [research](
 ### Learner level (placement and moving up)
 Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level line and an unused type are separate pieces ([language-levels-plan.md](language-levels-plan.md) → 1).
 - [x] **Josh** Decided (2026-10-18): onboarding's level is a first guess; the first conversations confirm or move it. Round 14: one conversation corrected every misplacement
-- [ ] **Claude** Level check at the end of each of the first 3 conversations, updating `learners.level`, behind a setting that's off by default
-- [ ] **Claude** Run it on saved real conversations (Josh's included); **Josh** compares it with his own judgement
+- [x] **Claude** Level check at the end of each of the first 3 conversations, updating `learners.level` (`lib/learner-level.ts`, `learner-level.md`, `test:learner-level`). Off unless `LEVEL_CHECK` is set (`all` or learner ids); the `level_checks` column is created the first time it runs
+- [ ] **Josh** ⛔ Turn it on (for himself first, then `all`): setting it adds a column to the production database
+- [ ] **Claude** Run it on saved real conversations (`tests/experiments/learner-levels.mts`); **Josh** compares it with his own judgement
 - [ ] **Claude** Moving up later: when 90% of the learner's speech is at the next level, across several conversations (Josh, 2026-10-15). Magda suggests it, the learner decides
 - [ ] **Claude** Level and settings saved with the learner (speed, default subtitles); then turn on the greyed-out level control in Settings
 

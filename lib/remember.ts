@@ -24,6 +24,7 @@ import { cities, tutor } from '@/content';
 import { writeStudyFileWithClaude, saveStudyFile, type StudyFileWriter } from './study-file';
 import type { CharacterSheet } from './types';
 import { scoreConversation, saveConversationScore, judgeWithClaude, type Judge } from './quality';
+import { checkLearnerLevel } from './learner-level';
 
 /** "A few exchanges": shorter conversations aren't worth remembering */
 export const MIN_LEARNER_LINES = 2;
@@ -133,6 +134,14 @@ export async function rememberConversation(
       console.log(JSON.stringify({ level: 'info', event: 'quality', conversationId, character: claim.characterId, median: score.stats.wordsMedian, unprompted: score.judge.correctionsUnprompted, pronunciation: score.judge.pronunciationCorrections }));
     } catch (err) {
       logError('quality', err, conversationId);
+    }
+
+    // The level check (lib/learner-level.ts): only when LEVEL_CHECK is on, for
+    // the first few conversations. A problem is logged; memory stays saved.
+    try {
+      await checkLearnerLevel(conversationId, learnerId);
+    } catch (err) {
+      logError('level check', err, conversationId);
     }
     return 'saved';
   } catch (err) {
