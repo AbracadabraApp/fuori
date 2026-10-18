@@ -6,71 +6,89 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the game milestones M3–M4). Roughly in order. **app** = Swift in `ios/`, **server** = Next.js, **both** = both. Detail lives in the linked docs; done and removed items are at the bottom of this file.
+The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). Each item says who does it: **Josh** or **Claude**. ⛔ marks a blocker: work that waits on someone. Detail lives in the linked docs; done and removed items are at the bottom of this file.
 
-### Start here (2026-10-16)
-- [ ] **app** Josh tries today's build on his iPhone (installed): pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
-- [ ] **app** Josh plays Afuera with the level trial on (Beginner "still you, sometimes ask", his learner only, set 2026-10-18): plainer lines and now and then an easy yes/no or this-or-that question? Then Claude reviews those conversations (prompt version `2026-10-12i+Beginner: still you, sometimes ask`)
-- [ ] **server** Railway watch paths: set on both services through the API (railway.json was ignored: config as code is deprecated), but docs-only commits still deploy; look in the dashboard (service → Settings → Watch Paths)
+### ⛔ Blockers: what's waiting on Josh
+Claude can't move these until Josh does:
+1. **Turn cap:** OK to raise the character reply cap from 800 to about 1500 tokens (→ Faster and reliable replies)
+2. **Grader:** OK to change the `test:conversations` grader's "don't mark down complex language" (→ Language level of the dialogue)
+3. **Play Afuera with the level trial on**, so Claude can review those conversations (→ Beginner ladder)
+4. **Spec for the smaller world** (→ Smaller world, on hold)
+5. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
+6. **Device checks on the iPhone** (only Josh can do audio on the phone) (→ Conversation on the phone)
 
-### 1. Finish the conversation on the phone
-- [ ] **app** Try Magda in the app
-- [ ] **app** Device checks: a call, Siri, AirPods in and out, backgrounding, locking
-- [ ] **server** Character replies sometimes hit the 800-token cap in `lib/turn.ts` (2 in about 700 test turns, 2026-10-17/18): the learner gets an error instead of a reply. Raise to about 1500, which still caps a stretched turn (needs Josh's OK)
-- [ ] **both** Response timing: investigate the ~6 s after a turn (deferred; first number: Claude 3.6 s median per reply)
+### Conversation on the phone
+- [ ] **Josh** Try today's build: pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
+- [ ] **Josh** Try Magda in the app
+- [ ] **Josh** ⛔ Device checks: a call, Siri, AirPods in and out, backgrounding, locking
+- [ ] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice?
 
-### 2. Prompt goals and scorecard
-| Goal | Today | Target |
-|---|---|---|
-| **Faster** | ~6 s wait, Claude 3.6 s median of it | Reply under 2 s, 4 s at most |
-| **On level** | Characters speak B2+; no level in the prompt | 90% of the character's words at the learner's level, about one new word in ten (Josh; the [research](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech) suggests 95% for easy listening) |
-| **Length** | Median 21 words | 20 or fewer, heading toward 10 |
+### Faster and reliable replies
+Goal: reply under 2 s, 4 s at most (today about 6 s of waiting, Claude 3.6 s median of it).
+- [ ] **Claude** ⛔ Raise the reply cap: character replies hit the 800-token cap in `lib/turn.ts` twice in about 700 test turns (2026-10-17/18), and the learner gets an error instead of a reply. Blocked on Josh's OK (about 1500 still caps a stretched turn)
+- [ ] **Claude** Investigate the ~6 s after a turn: where the time goes besides Claude
+- [ ] **Claude** Try Haiku for characters (1.6 s against about 3.4 s), with the level judge as the guard
+- [ ] **Claude** Start the voice as soon as the line is streamed
+- In progress (another laptop session, not yet committed): replies without thinking (`TURN_THINKING=off`, a speed trial behind a setting)
 
-Every prompt change says which goal it moves and may not make another worse (version, changelog, `npm run test:replay`). The scorecard now also has reply time, coherence, feels alive and broken conversations.
+### Characters feel alive
+Goal: alive 7 (today about 6 in real conversations, 5–7 with simulated learners). Order decided by Claude, judged by Josh (2026-10-18); one change at a time through the replay gate.
+- [x] **Claude** Real conversations sorted by what goes wrong (round 15): the worst were characters repeating themselves; the order form ("X o Y?") is rare in real play (8–15% of lines)
+- [x] **Claude** Characters see the whole conversation, not the last 6 messages (prompt 2026-10-18): repeats halved (4.4% → 2.4% of lines)
+- [ ] **Claude** One concrete detail per character (an opinion, something they care about): only 15 of 703 characters have more than role, traits and setting. Generate it for the characters in the replay set, put it in the prompt, replay; keep it if alive rises and lines a beginner can follow don't drop
+- [ ] **Claude** Separately, "react before asking" in the prompt, with a count of repeated patterns (rules like it made tics before, round 5)
+- [ ] **Claude** If it passes: generate details for the remaining ~680 characters, check a sample, fix only what's terrible
+- [ ] **Claude** A replay set for Mexico (the replay set is one file and holds only Italy's conversations today)
 
-- [ ] **server** Characters alive and on level (Claude decides, Josh judges; order set 2026-10-18 because the guard has to exist before the change, and one change at a time):
-  - [x] Level of the character's lines on the scorecard: "Lines a beginner can follow" (a beginner knows 90%+ of the words; target 90%), scored by the replay (`lib/level.ts`, `level.md`); real play not yet
-  - [ ] Refresh the replay set from real conversations (both countries) and sort the low-scoring ones by what goes wrong, per prompt version, from the judge's notes and a question-kind count; check whether the order form ("X o Y?") is common there or only in simulated beginners
-  - [ ] One concrete detail per character (an opinion, something they care about): only 15 of 703 characters have more than role, traits and setting. Generate it for the characters in the replay set (the ones Josh talked to), put it in the prompt, replay; keep it if alive rises and lines a beginner can follow don't drop
-  - [ ] Separately, the prompt change ("react before asking"), with a count of repeated patterns, since rules like it made tics before (round 5)
-  - [ ] What passes: generate details for the remaining ~680 characters, check a sample, fix only what's terrible
-- [ ] **server** Change the `test:conversations` grader: it's told not to mark down complex language, so it rewards characters who speak above the learner; judge against the on-level share instead (needs Josh's OK)
-- [ ] **server** Faster replies: try Haiku; start the voice as soon as the line is streamed
+### Language level of the dialogue (what characters say) ([language-levels-plan.md](language-levels-plan.md))
+Goal: 90% of the character's words at the learner's level (Josh; the [research](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech) suggests 95% for easy listening). Today a beginner can follow about 25% of lines on today's prompt.
+- [x] **Claude** Level on the scorecard: "Lines a beginner can follow" (`lib/level.ts`, `level.md`), scored by the replay; real play not yet
+- [ ] **Claude** ⛔ Change the `test:conversations` grader: it's told not to mark down complex language, so it rewards characters who speak above the learner; judge against the on-level share instead. Blocked on Josh's OK
+- [ ] **Claude** Level in the character prompt for every learner, every turn, in role, once the learner's level exists (below). The Beginner block ("still you, sometimes ask") is picked and on trial for Josh. Beginners: characters teach key phrases in role, such as how to ask "Come si dice …?", instead of a button (Josh, 2026-10-16; asking it by voice already works)
+- [ ] **Claude** Question ladder for Intermediate and Advanced (one fact, then anything), measured with the question-kind count
+- [ ] **Claude** Level of real play on the scorecard (a call per line, so decide the cost first)
+- [ ] **Josh + Claude** More dialect as you level up (the dialect setting is greyed out today)
 
-### 3. Language levels ([language-levels-plan.md](language-levels-plan.md))
-- [ ] **server** Measure the level of what characters say: level judge on exam samples, word coverage, `test:levels`
-- [ ] **server** Level in the character prompt, every turn, in role (replaces the "noticed" field). Beginners: characters teach key phrases in role, such as how to ask "Come si dice …?", instead of a "Come si dice?" button (Josh, 2026-10-16). Asking "Come si dice …?" by voice already works in the game, even with a whole English sentence (Josh, 2026-10-16)
-- [ ] **both** Level and settings saved with the learner (speed, default subtitles); then turn on the greyed-out level control in Settings
-- [ ] **server** Moving up a level: when **90% of the learner's speech is at the next level**, across several conversations (Josh, 2026-10-15). Magda suggests it, the learner decides.
-- [ ] **both** More dialect as you level up (the dialect setting is greyed out today)
+### Learner level (placement and moving up)
+Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level line and an unused type are separate pieces ([language-levels-plan.md](language-levels-plan.md) → 1).
+- [x] **Josh** Decided (2026-10-18): onboarding's level is a first guess; the first conversations confirm or move it. Round 14: one conversation corrected every misplacement
+- [ ] **Claude** Level check at the end of each of the first 3 conversations, updating `learners.level`, behind a setting that's off by default
+- [ ] **Claude** Run it on saved real conversations (Josh's included); **Josh** compares it with his own judgement
+- [ ] **Claude** Moving up later: when 90% of the learner's speech is at the next level, across several conversations (Josh, 2026-10-15). Magda suggests it, the learner decides
+- [ ] **Claude** Level and settings saved with the learner (speed, default subtitles); then turn on the greyed-out level control in Settings
 
-### 4. Onboarding and the beginner path ([onboarding-design.md](onboarding-design.md))
-- [ ] **both** Onboarding (the country choice and Settings shipped first, 2026-10-16)
-  - [x] Define the frontend flow (walkthrough: `design/onboarding/walkthrough.html`)
-  - [x] Define the engineering needs (onboarding-design.md → Engineering needs; open points answered by Josh, 2026-10-16)
-  - [x] Implement (built 2026-10-17, server and app; Josh tried both countries on his iPhone)
-- [ ] **server** Learner level: what moves a learner between Beginner, Intermediate and Advanced after onboarding. Doesn't exist yet; onboarding's placement, Magda's study-file Level line and an unused type are separate pieces ([language-levels-plan.md](language-levels-plan.md) → 1)
-  - [x] Decided (Josh, 2026-10-18): onboarding's level is a first guess; the first conversations confirm or move it. Tested in round 14 ([level-judge-test.md](level-judge-test.md)): one conversation corrected every misplacement
-  - [ ] Level check at the end of each of the first 3 conversations, updating `learners.level`, behind a setting that's off by default
-  - [ ] Run it on saved real conversations (Josh's included) and compare with Josh's judgement
-- [ ] **both** Beginner ladder: five levels, from tapping a reply with English to filling a frame in your own words ([beginner-scaffolding.md](beginner-scaffolding.md), draft 2026-10-17)
+### Onboarding ([onboarding-design.md](onboarding-design.md))
+- [x] **Josh + Claude** Flow, engineering needs, built and tried in both countries (2026-10-17)
+- [x] **Claude** The send-off failed on mixed answers (one English, one fluent): fixed 2026-10-18
 
-### 4b. A scripted, smaller world for beginners: on hold until there's a spec (Josh, 2026-10-18)
-Josh's idea (2026-10-17): for beginner levels 1–3, fixed scripts per character, the same for every learner, in a smaller world (one neighbourhood until level 4). Explored in rounds 11–13 ([level-judge-test.md](level-judge-test.md)); described in [beginner-scaffolding.md](beginner-scaffolding.md) → "On hold". No more work on it until the spec exists.
-- [ ] **Spec (Josh):** what's fixed and what's generated; which neighbourhood(s) per country; how many visits and in what order; what earns leaving it; how it fits levels 1–3 of the beginner ladder; whether audio is recorded once
-- What the tests found so far: a scripted neighbourhood is cheap to write (24 characters, about 50 scripts, minutes) and the easiest dialogue yet (70–84% of lines a beginner can follow), but where both replies have to lead to the same next line, one path ignores the learner's answer, and forcing a this-or-that choice at every join made it a quiz (round 13)
-- Parked tests: scripts as a tree with no joins (each reply gets its own continuation for 2–3 forks, then a shared close); visits ordered so frames build up ("Vorrei…" before "Sono di…")
+### Beginner ladder ([beginner-scaffolding.md](beginner-scaffolding.md))
+Five levels, from tapping a reply with English to filling a frame in your own words.
+- [x] **Claude** Reply buttons from a separate call (`lib/replies.ts`, test-only): sensible 97–100%, ready before the character finishes speaking
+- [ ] **Josh** ⛔ Play Afuera with the level trial on (Beginner "still you, sometimes ask", his learner only): plainer lines and now and then an easy yes/no or this-or-that question?
+- [ ] **Claude** Review those conversations (prompt version `2026-10-18+Beginner: still you, sometimes ask`)
+- [ ] **Claude** A first playable version of levels 1–3 behind a setting (live dialogue with reply buttons), so Josh can feel it in Afuera
+- [ ] **Claude** Tests queued in [test-ideas.md](test-ideas.md): live with lookahead, a plan for the visit, "Ripeti?" on levels 4–5, Mexico at 20 conversations
 
-### 5. Parity with the web
-- [ ] **app** Visit stamps redesigned (collectible, on the caption, not a number in a circle)
-- [ ] **app** City picker improved (needs Josh's feedback on what's wrong)
-- [ ] **both** Stations and ticket: departures board, the clerk names the platform, "Sali"
+### Smaller world for beginners: on hold until there's a spec (Josh, 2026-10-18)
+Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the same for every learner, in one neighbourhood until level 4. Explored in rounds 11–13 ([level-judge-test.md](level-judge-test.md)); described in [beginner-scaffolding.md](beginner-scaffolding.md) → "On hold". No work on it until the spec exists.
+- [ ] **Josh** ⛔ Spec: what's fixed and what's generated; which neighbourhood(s) per country; how many visits and in what order; what earns leaving it; how it fits levels 1–3; whether audio is recorded once
+- What the tests found: a scripted neighbourhood is cheap to write (24 characters, about 50 scripts, minutes) and the easiest dialogue yet (70–84% of lines a beginner can follow), but where both replies must lead to the same next line, one path ignores the learner's answer; forcing a this-or-that choice at every join made it a quiz (round 13)
+- Parked tests: scripts as a tree with no joins; visits ordered so frames build up ("Vorrei…" before "Sono di…")
 
-### 6. Release
-- [ ] **both** TestFlight: signing, icon, microphone text, privacy label, App Attest, usage tracking, per-learner budgets
-- [ ] **server** R2 custom domain (the free r2.dev address is rate-limited, for development only)
-- [ ] **both** App Review: privacy policy URL, "report this line" button
-- [ ] **server** Web sunset, about 2 weeks after TestFlight
+### Parity with the web
+- [ ] **Claude** Visit stamps redesigned (collectible, on the caption, not a number in a circle)
+- [ ] **Josh** ⛔ Say what's wrong with the city picker; then **Claude** improves it
+- [ ] **Claude** Stations and ticket: departures board, the clerk names the platform, "Sali"
+
+### Release
+- [ ] **Josh + Claude** TestFlight: signing and the App Store Connect side (**Josh**); icon, microphone text, privacy label (**Josh** approves, **Claude** prepares); App Attest, usage tracking, per-learner budgets (**Claude**, before anyone but Josh gets it)
+- [ ] **Claude** R2 custom domain (the free r2.dev address is rate-limited, for development only); **Josh** picks the domain
+- [ ] **Josh + Claude** App Review: privacy policy URL (**Josh**), "report this line" button (**Claude**)
+- [ ] **Claude** Web sunset, about 2 weeks after TestFlight
+
+### Housekeeping
+- [x] **Claude** Railway watch paths: docs-only commits are now skipped (seen 2026-10-18)
+- [ ] **Claude** Move the test scripts from the laptop scratchpad into the repo (`qtype.mjs`, `replies.mjs`, `place-test.mts`, `repeat-test.mts` and others), so a cloud session can run them
 
 ### Next release (likely deferred)
 
