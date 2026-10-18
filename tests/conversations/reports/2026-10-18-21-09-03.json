@@ -1,0 +1,118 @@
+{
+  "at": "2026-10-18T21:09:03.823Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-18",
+  "repliesVersion": null,
+  "level": null,
+  "seed": null,
+  "turns": 6,
+  "conversations": 6,
+  "grades": {
+    "language": 8.166666666666666,
+    "understands": 9,
+    "adapts": 7.5,
+    "alive": 5.5
+  },
+  "length": {
+    "openerWords": 20,
+    "replies": 42,
+    "wordsMedian": 17.5,
+    "wordsAvg": 22.5,
+    "wordsMax": 56,
+    "longShare": 0.19,
+    "questionsAvg": 0.5,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "dario-fornaio",
+      "learner": "hesitant",
+      "overall": 6.75,
+      "stats": {
+        "openerWords": 16,
+        "replies": 7,
+        "wordsMedian": 16,
+        "wordsAvg": 14.1,
+        "wordsMax": 16,
+        "longShare": 0,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "filippo-verde",
+      "learner": "english-beginner",
+      "overall": 7.75,
+      "stats": {
+        "openerWords": 21,
+        "replies": 7,
+        "wordsMedian": 17,
+        "wordsAvg": 18.3,
+        "wordsMax": 22,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "davide-storia",
+      "learner": "improving",
+      "overall": 8.25,
+      "stats": {
+        "openerWords": 19,
+        "replies": 7,
+        "wordsMedian": 38,
+        "wordsAvg": 38.1,
+        "wordsMax": 56,
+        "longShare": 0.86,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "franco-locatelli",
+      "learner": "english-beginner",
+      "overall": 8,
+      "stats": {
+        "openerWords": 23,
+        "replies": 7,
+        "wordsMedian": 17,
+        "wordsAvg": 16,
+        "wordsMax": 24,
+        "longShare": 0,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "roberto-falchi",
+      "learner": "hesitant",
+      "overall": 7,
+      "stats": {
+        "openerWords": 27,
+        "replies": 7,
+        "wordsMedian": 18,
+        "wordsAvg": 20.3,
+        "wordsMax": 29,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "francesca-moretti",
+      "learner": "improving",
+      "overall": 7.5,
+      "stats": {
+        "openerWords": 10,
+        "replies": 7,
+        "wordsMedian": 26,
+        "wordsAvg": 28.1,
+        "wordsMax": 47,
+        "longShare": 0.29,
+        "questionsAvg": 0.7,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

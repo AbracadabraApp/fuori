@@ -1,0 +1,104 @@
+{
+  "at": "2026-10-18T21:08:41.739Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-18",
+  "repliesVersion": null,
+  "level": null,
+  "seed": null,
+  "turns": 6,
+  "conversations": 5,
+  "grades": {
+    "language": 9.2,
+    "understands": 9.2,
+    "adapts": 8.2,
+    "alive": 6.4,
+    "regional": 9.4
+  },
+  "length": {
+    "openerWords": 23,
+    "replies": 35,
+    "wordsMedian": 25,
+    "wordsAvg": 32,
+    "wordsMax": 63,
+    "longShare": 0.4,
+    "questionsAvg": 0.9,
+    "multiQuestionShare": 0
+  },
+  "byCharacter": [
+    {
+      "id": "rosa-flores-ignacio-ramirez",
+      "learner": "english-beginner",
+      "overall": 8.6,
+      "stats": {
+        "openerWords": 20,
+        "replies": 7,
+        "wordsMedian": 25,
+        "wordsAvg": 24,
+        "wordsMax": 31,
+        "longShare": 0.14,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "memo-tejuino",
+      "learner": "hesitant",
+      "overall": 7.8,
+      "stats": {
+        "openerWords": 23,
+        "replies": 7,
+        "wordsMedian": 25,
+        "wordsAvg": 26.4,
+        "wordsMax": 32,
+        "longShare": 0.14,
+        "questionsAvg": 0.7,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "ofelia-tlayudas",
+      "learner": "improving",
+      "overall": 9.4,
+      "stats": {
+        "openerWords": 18,
+        "replies": 7,
+        "wordsMedian": 53,
+        "wordsAvg": 48,
+        "wordsMax": 63,
+        "longShare": 0.86,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "alicia-catequista",
+      "learner": "english-beginner",
+      "overall": 8.4,
+      "stats": {
+        "openerWords": 26,
+        "replies": 7,
+        "wordsMedian": 35,
+        "wordsAvg": 35.3,
+        "wordsMax": 52,
+        "longShare": 0.71,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "padre-tomas-santo-domingo",
+      "learner": "hesitant",
+      "overall": 8.2,
+      "stats": {
+        "openerWords": 23,
+        "replies": 7,
+        "wordsMedian": 23,
+        "wordsAvg": 26.1,
+        "wordsMax": 48,
+        "longShare": 0.14,
+        "questionsAvg": 0.9,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

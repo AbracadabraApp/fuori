@@ -10,12 +10,11 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
-1. **Turn cap:** OK to raise the character reply cap from 800 to about 1500 tokens (→ Faster and reliable replies)
-2. **Grader:** OK to change the `test:conversations` grader's "don't mark down complex language" (→ Language level of the dialogue)
-3. **Play Afuera with the level trial on**, so Claude can review those conversations (→ Beginner ladder)
-4. **Spec for the smaller world** (→ Smaller world, on hold)
-5. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
-6. **Device checks on the iPhone** (only Josh can do audio on the phone) (→ Conversation on the phone)
+1. **Turn cap:** being tested (Josh: OK to test, 2026-10-18); then Josh's OK to change it (→ Faster and reliable replies)
+2. **Play Afuera with the level trial on**, so Claude can review those conversations (→ Beginner ladder)
+3. **Spec for the smaller world** (→ Smaller world, on hold)
+4. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
+5. **Device checks on the iPhone** (only Josh can do audio on the phone) (→ Conversation on the phone)
 
 ### Conversation on the phone
 - [ ] **Josh** Try today's build: pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
@@ -43,7 +42,7 @@ Goal: alive 7 (today about 6 in real conversations, 5–7 with simulated learner
 ### Language level of the dialogue (what characters say) ([language-levels-plan.md](language-levels-plan.md))
 Goal: 90% of the character's words at the learner's level (Josh; the [research](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech) suggests 95% for easy listening). Today a beginner can follow about 25% of lines on today's prompt.
 - [x] **Claude** Level on the scorecard: "Lines a beginner can follow" (`lib/level.ts`, `level.md`), scored by the replay; real play not yet
-- [ ] **Claude** ⛔ Change the `test:conversations` grader: it's told not to mark down complex language, so it rewards characters who speak above the learner; judge against the on-level share instead. Blocked on Josh's OK
+- [x] **Claude** The `test:conversations` grader no longer says complex language is fine; it reports "Lines a beginner can follow" instead (Josh's OK, 2026-10-18). Baseline: 10% Italy, 11% Mexico
 - [ ] **Claude** Level in the character prompt for every learner, every turn, in role, once the learner's level exists (below). The Beginner block ("still you, sometimes ask") is picked and on trial for Josh. Beginners: characters teach key phrases in role, such as how to ask "Come si dice …?", instead of a button (Josh, 2026-10-16; asking it by voice already works)
 - [ ] **Claude** Question ladder for Intermediate and Advanced (one fact, then anything), measured with the question-kind count
 - [ ] **Claude** Level of real play on the scorecard (a call per line, so decide the cost first)

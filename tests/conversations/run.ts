@@ -23,6 +23,8 @@ import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { runTurn } from '@/lib/turn';
 import { writeReplies, repliesPromptVersion } from '@/lib/replies';
 import { judgeWithClaude, qualityPromptVersion } from '@/lib/quality';
+import { levelOfConversation, levelPromptVersion } from '@/lib/level';
+import { BEGINNER_FOLLOWS } from '@/lib/scorecard';
 import { buildTurnPrompt, promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { cities, language, country } from '@/content';
@@ -58,7 +60,9 @@ function buildCriteria() {
   const base = {
     language: `Speaks ${langName}. Uses English when the learner asks for help (in English or in ${langName}), as much as the help takes, then returns to ${langName}; no English nobody asked for.`,
     understands: 'Understands imperfect speech. Reads garbled speech-to-text and learner errors as what they meant, without commenting on them.',
-    adapts: `Adapts when the learner is lost. Talking fast or in complex ${langName} is fine (real people do); what matters is that when the learner signals confusion the character slows down and rephrases, and when they ask to repeat, repeats.`,
+    // Whether lines are at the learner's level is measured, not graded ("Lines a beginner can follow", lib/level.ts;
+    // Josh, 2026-10-18). This used to say complex language was fine, which rewarded talking above the learner.
+    adapts: `Adapts when the learner is lost: when the learner signals confusion the character slows down and rephrases, and when they ask to repeat, repeats.`,
     // Scored by the replay's judge (lib/quality.ts, quality.md), not by this grader, so both tests
     // measure liveliness the same way (Josh, 2026-10-17). It no longer covers recasting.
     alive: 'Feels like a real person in that place. Scored by the judge that scores real conversations (quality.md), not by this grader.',
@@ -94,6 +98,8 @@ interface Graded extends Case {
   problem: string;
   quote: string;
   stats?: TurnStats;
+  /** Per character line: the share of its words a beginner knows (lib/level.ts) */
+  beginnerKnows?: number[];
   error?: string;
 }
 
@@ -223,7 +229,7 @@ async function grade(c: Case, transcript: Turn[]): Promise<Omit<Graded, keyof Ca
     `Character: ${c.character.name}, ${c.character.role} at ${c.place.name}, ${c.cityName}. ${english}
 Learner type: ${c.learner.description}
 
-Grade the CHARACTER (not the learner) from 1 to 10 on the criteria below. Don't penalize the character for speaking naturally complex ${language.name}; judge how it responds when the learner shows confusion.
+Grade the CHARACTER (not the learner) from 1 to 10 on the criteria below.
 ${GRADED.map((k) => `- ${k}: ${CRITERIA[k]}`).join('\n')}
 
 Transcript:
@@ -250,6 +256,7 @@ async function recommend(results: Graded[]): Promise<string> {
         `${r.character.name} (${r.character.role}, ${r.cityName}) with ${r.learner.id}: ` +
         `${Object.entries(r.scores).map(([k, v]) => `${k} ${v}`).join(', ')}. ` +
         (r.stats ? `Length: opener ${r.stats.openerWords} words, median reply ${r.stats.wordsMedian}, longest ${r.stats.wordsMax}, ${Math.round(r.stats.longShare * 100)}% over ${LONG_TURN_WORDS}. ` : '') +
+        (r.beginnerKnows?.length ? `Beginner can follow ${Math.round(100 * followShare([r]))}% of lines. ` : '') +
         `Problem: ${r.problem}${r.quote ? ` Quote: "${r.quote}"` : ''}`
     )
     .join('\n');
@@ -259,7 +266,7 @@ async function recommend(results: Graded[]): Promise<string> {
   const promptPath = `content/${country}/prompts/character.md`;
 
   return ask(
-    `You advise the builder of Fuori, ${appDesc}. The character prompt (${promptPath}) is deliberately minimal: it describes the situation, not how to talk, and sets no length rules. The product direction is natural conversation, not rules. For reference, real conversational turns run about ${TYPICAL_TURN_WORDS} words or fewer; replies far longer than that leave the learner no room to answer. Characters may speak as fast and complex as native speakers; don't recommend simplifying by default or beginner constraints, only better responses when the learner shows they're lost. Recommend small, high-leverage changes in that spirit. Plain language, no preamble.`,
+    `You advise the builder of Fuori, ${appDesc}. The character prompt (${promptPath}) is deliberately minimal: it describes the situation, not how to talk, and sets no length rules. The product direction is natural conversation, not rules. For reference, real conversational turns run about ${TYPICAL_TURN_WORDS} words or fewer; replies far longer than that leave the learner no room to answer. The level goal: 90% of a character's lines are ones these learners (A1–A2) can follow, shown as "beginner can follow" below. Recommend small, high-leverage changes in that spirit. Plain language, no preamble.`,
     `Graded test conversations:\n${summary}\n\nWrite markdown with exactly two sections:
 ## Top problems
 Up to 3, most common first. One line each, with a short real quote from above.
@@ -270,6 +277,11 @@ Up to 3 specific changes (to the character prompt in ${promptPath}, to how turns
 }
 
 // ---------- Report ----------
+
+const followShare = (rs: Graded[]) => {
+  const k = rs.flatMap((r) => r.beginnerKnows ?? []);
+  return k.length ? k.filter((x) => x >= BEGINNER_FOLLOWS).length / k.length : 0;
+};
 
 function lengthSection(ok: Graded[]): string[] {
   const sum = summarize(ok.flatMap((r) => (r.stats ? [r.stats] : [])));
@@ -286,6 +298,7 @@ function lengthSection(ok: Graded[]): string[] {
     `| Replies over ${LONG_TURN_WORDS} words | ${pct(sum.longShare)} |`,
     `| Questions per reply | ${sum.questionsAvg} |`,
     `| Replies asking 2+ questions | ${pct(sum.multiQuestionShare)} |`,
+    `| Lines a beginner can follow (90%+ of words known; target 90%) | ${pct(followShare(ok))} |`,
     ``,
     `_Yardstick: a typical conversational turn is about 5–${TYPICAL_TURN_WORDS} words._`,
   ];
@@ -298,7 +311,7 @@ function report(results: Graded[], recs: string): string {
   const lines = [
     `# Conversation test`,
     ``,
-    `${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC · model ${CLAUDE_MODEL} · prompt ${promptVersion()} · alive judged by quality.md ${qualityPromptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''}${TAP ? ` · learner taps reply buttons (replies ${repliesPromptVersion()})` : ''} · ${ok.length} conversations · ${TURNS} learner turns each`,
+    `${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC · model ${CLAUDE_MODEL} · prompt ${promptVersion()} · alive judged by quality.md ${qualityPromptVersion()} · level by level.md ${levelPromptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''}${TAP ? ` · learner taps reply buttons (replies ${repliesPromptVersion()})` : ''} · ${ok.length} conversations · ${TURNS} learner turns each`,
     ``,
     `## Grade: ${avg((r) => r.overall).toFixed(1)} / 10`,
     ``,
@@ -386,9 +399,9 @@ async function main() {
     for (let c = queue.shift(); c; c = queue.shift()) {
       try {
         const transcript = await simulate(c);
-        const g = await grade(c, transcript);
+        const [g, level] = await Promise.all([grade(c, transcript), levelOfConversation(transcript.map((t) => ({ who: t.who, text: t.transcript })))]);
         const stats = turnStats(transcript.filter((t) => t.who === 'npc').map((t) => t.transcript));
-        results.push({ ...c, transcript, ...g, stats });
+        results.push({ ...c, transcript, ...g, stats, beginnerKnows: level.beginnerKnows });
         console.log(`  ✓ ${c.character.name} (${c.cityName}): ${g.overall.toFixed(1)}`);
       } catch (e) {
         const msg = e instanceof Error ? e.message : String(e);
