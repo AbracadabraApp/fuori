@@ -18,7 +18,7 @@ Claude can't move these until Josh does:
 ### Conversation on the phone
 - [ ] **Josh** Try today's build: pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
 - [ ] **Josh** Try Magda in the app
-- [ ] **Josh** ⛔ Device checks: a call, Siri, AirPods in and out, backgrounding, locking
+- [ ] **Josh** ⛔ Device checks, on the iPhone during a conversation (while the character speaks and while the mic is open): a phone call comes in; Siri; AirPods out; AirPods in; swipe to the home screen; lock the phone. Each time it should pause, save like any exit, and never reopen the mic without a tap; AirPods out shouldn't carry on through the phone speaker (CLAUDE.md → iPhone app). A simulator can't test this
 - [ ] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice?
 
 ### Faster and reliable replies
