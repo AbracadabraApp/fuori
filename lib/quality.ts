@@ -22,6 +22,7 @@ import { qualityOutputJsonSchema } from './prompts/quality-output-schema';
 import { turnStats, wordCount, type TurnStats } from './dialogue-stats';
 import { query } from './db';
 import { language } from '@/content';
+import type { LevelScore } from './level';
 
 export interface ScoredTurn {
   who: 'npc' | 'learner';
@@ -61,6 +62,8 @@ export interface ConversationScore {
   judge: QualityJudgement;
   /** How long each character reply took, in ms (the replay test times them; real play doesn't yet) */
   replyMs?: number[];
+  /** Level of the character's lines (lib/level.ts; the replay test scores it, real play doesn't yet) */
+  level?: LevelScore;
 }
 
 export function qualityPromptVersion(): string {

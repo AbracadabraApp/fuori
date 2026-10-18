@@ -42,6 +42,7 @@
     "test:magda": "tsx tests/check-magda.ts",
     "test:transcribe": "tsx tests/check-transcribe.ts",
     "test:quality": "tsx tests/check-quality.ts",
+    "test:level": "tsx --env-file-if-exists=.env.local tests/check-level.ts",
     "test:scorecard": "tsx tests/check-scorecard.ts",
     "test:voice-outcomes": "tsx tests/check-voice-outcomes.ts",
     "test:history": "tsx tests/check-history.ts",

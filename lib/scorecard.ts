@@ -26,6 +26,9 @@ interface Measure {
   value: (scores: ConversationScore[]) => number | null;
 }
 
+/** Share of a line's words a beginner must know for the line to count as one they can follow (lib/level.ts) */
+export const BEGINNER_FOLLOWS = 0.9;
+
 const avg = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null);
 
 /** Average over the scores that have the value (older scores may not) */
@@ -47,6 +50,14 @@ export const MEASURES: Measure[] = [
   {
     key: 'openerWords', label: 'Opener length (words)', better: 'lower', target: 25, format: 'words', tolerance: 3,
     value: (s) => (s.length ? median(s.map((x) => x.stats.openerWords)) : null),
+  },
+  {
+    // The "on level" goal (docs/06-roadmap.md → 2): lines where a beginner knows 90%+ of the words
+    key: 'beginnerFollows', label: 'Lines a beginner can follow', better: 'higher', target: 0.9, format: 'percent', tolerance: 0.05,
+    value: (s) => {
+      const known = s.flatMap((x) => x.level?.beginnerKnows ?? []);
+      return known.length ? known.filter((k) => k >= BEGINNER_FOLLOWS).length / known.length : null;
+    },
   },
   {
     key: 'multiQuestion', label: 'Replies with 2+ questions', better: 'lower', target: 0.1, format: 'percent', tolerance: 0.05,

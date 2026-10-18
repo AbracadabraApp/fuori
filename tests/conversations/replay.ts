@@ -30,6 +30,7 @@ import { promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { cities } from '@/content';
 import { scoreConversation, qualityPromptVersion, type ConversationScore, type ScoredTurn } from '@/lib/quality';
+import { levelOfConversation, levelPromptVersion } from '@/lib/level';
 import { scorecard, gate, scorecardAsText, MEASURES, type Scorecard } from '@/lib/scorecard';
 import type { CharacterSheet, Turn } from '@/lib/types';
 
@@ -151,7 +152,8 @@ async function replay(c: Case): Promise<Result> {
       transcript.push({ who: 'npc', transcript: reply.line, translation: reply.en });
     }
     const turns = transcript.map((t) => ({ who: t.who, text: t.transcript }));
-    return { case: c, turns, score: { ...(await scoreConversation(c.character, turns)), replyMs } };
+    const [score, level] = await Promise.all([scoreConversation(c.character, turns), levelOfConversation(turns)]);
+    return { case: c, turns, score: { ...score, level, replyMs } };
   } catch (e) {
     return { case: c, turns: transcript.map((t) => ({ who: t.who, text: t.transcript })), error: e instanceof Error ? e.message : String(e) };
   }
@@ -176,7 +178,7 @@ async function runAll(all: Case[]): Promise<Result[]> {
 function save(label: string, results: Result[], card: Scorecard, extra: string[] = []): string {
   mkdirSync(REPORTS, { recursive: true });
   const file = join(REPORTS, `replay-${new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-')}-${label}`);
-  const head = `prompt ${promptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''} · model ${CLAUDE_MODEL} · judge ${qualityPromptVersion()} · ${TURNS} learner lines each`;
+  const head = `prompt ${promptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''} · model ${CLAUDE_MODEL} · judge ${qualityPromptVersion()} · level ${levelPromptVersion()} · ${TURNS} learner lines each`;
   const md = [
     `# Replay test: ${label}`,
     ``,

@@ -28,7 +28,12 @@ The one to-do list (merged 2026-10-15 from the iPhone milestones N0–N5 and the
 
 Every prompt change says which goal it moves and may not make another worse (version, changelog, `npm run test:replay`). The scorecard now also has reply time, coherence, feels alive and broken conversations.
 
-- [ ] **server** Level of the character's lines on the scorecard (from the level judge, section 3)
+- [ ] **server** Characters alive and on level (Claude decides, Josh judges; order set 2026-10-18 because the guard has to exist before the change, and one change at a time):
+  - [x] Level of the character's lines on the scorecard: "Lines a beginner can follow" (a beginner knows 90%+ of the words; target 90%), scored by the replay (`lib/level.ts`, `level.md`); real play not yet
+  - [ ] Refresh the replay set from real conversations (both countries) and sort the low-scoring ones by what goes wrong, per prompt version, from the judge's notes and a question-kind count; check whether the order form ("X o Y?") is common there or only in simulated beginners
+  - [ ] One concrete detail per character (an opinion, something they care about): only 15 of 703 characters have more than role, traits and setting. Generate it for Trastevere and Mexico City (24 characters), put it in the prompt, replay; keep it if alive rises and lines a beginner can follow don't drop
+  - [ ] Separately, the prompt change ("react before asking"), with a count of repeated patterns, since rules like it made tics before (round 5)
+  - [ ] What passes: generate details for the remaining ~680 characters, check a sample, fix only what's terrible
 - [ ] **server** Change the `test:conversations` grader: it's told not to mark down complex language, so it rewards characters who speak above the learner; judge against the on-level share instead (needs Josh's OK)
 - [ ] **server** Faster replies: try Haiku; start the voice as soon as the line is streamed
 
