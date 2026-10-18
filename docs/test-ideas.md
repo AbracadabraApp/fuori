@@ -10,7 +10,7 @@ How to work it: take the top item, run it, write the result in the test log, mov
 2. **A plan for the visit.** One short call at the start writes an arc (arrive → order → small talk → leave) that live turns follow: the script's shape without its joins, and less of the order form ("Vuoi X o Y?" on 43% of Italy's turns, round 9).
 3. **Scripts as a tree, no joins** (from round 13): each reply gets its own continuation for 2–3 forks, then a shared close. Only if lookahead (item 1) doesn't already give the same thing.
 4. **"Ripeti?" on levels 4–5.** Replay is gone, so asking the character to repeat must work: is the repeat shorter, slower-sounding and simpler, or word for word, or a new sentence? Simulated learner asks now and then; judge the repeat.
-5. **Placement on more than one sentence** (Josh, 2026-10-18). Simulated learners at known levels (total beginner, beginner with a rehearsed sentence, someone leaning on Italian, intermediate, advanced) go through onboarding: how often is one answer enough, and does a third question or the first conversation's evidence (the scorecard's "lost" count, the quality judge) fix the misplacements? Measure placement against the known level.
+5. **Level check after the first conversations, built behind a setting** (from round 14): at the end of each of a learner's first 3 conversations, the level judge reads onboarding and the conversations and updates `learners.level`; off by default. Then the same on real conversations: rerun it on saved ones and compare with what Josh would say.
 6. **Mexico at 20 conversations** for the final Beginner pick against today's prompt, since 5 conversations wobble 6–10 points.
 7. **Characters feel flat in both countries** (alive about 5 on the `quality.md` judge, target 7; round 8 found Italy's lower number was a different judge). The level block isn't the cause (round 10); try the character prompt and data: a concrete detail or opinion per character, reacting before asking. Through the replay gate. Also: make `test:conversations` use the same alive judge as the replay (changes a test: needs Josh).
 8. **Replies folded into the turn** (the other option in beginner-scaffolding.md → Writing the replies): the character's call returns the two replies too. Lower priority now that the separate call is fast enough.
@@ -26,6 +26,8 @@ How to work it: take the top item, run it, write the result in the test log, mov
 - **Frames chosen by the learner's Diario** rather than by the moment: give the clicks prompt the frames being practised; does it still sound natural?
 
 ## Done
+
+- Round 14 (2026-10-18): onboarding placement right when learners answer as themselves, wrong every time for a friend answering or a shy learner answering in English; one conversation corrects it in every run (47/47). Found the onboarding send-off max_tokens bug (2577809).
 
 - Round 13 (2026-10-17): choices at the joins and a stricter checker made scripts worse (72–74% of lines "X o Y?", alive and A1 down, joins no better); branching scripts with joins dropped.
 

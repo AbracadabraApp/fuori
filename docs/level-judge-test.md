@@ -275,6 +275,19 @@ v2 (one reply yes and one no; different choices, not two wordings; answer the la
 - The quality judge hit its 4000-token limit once on these 14-line transcripts; real conversations longer than that could lose their score the same way (logged by `lib/remember.ts`, not silent).
 - **Next:** live with lookahead. While the character speaks, write the two replies (1.4 s) and then the character's answer to each, in parallel (3–4 s): about 5 s against about 7 s of speech, so no wait and no joins. And an arc: a short plan for the visit at the start that live turns follow, to get the script's shape without its joins.
 
+**Round 14: onboarding as a first guess, the first conversations correct it (Josh, 2026-10-18: option 2).** Simulated learners at a known level went through the real onboarding (`writeFollowUp`, `writeSendOff`), then 3 conversations of 5 turns with random characters on today's prompt. After each conversation a level judge (same three levels and wording as onboarding, plus how well they follow; "a single good line doesn't make a level") read the two onboarding answers and every conversation so far (`place-test.mts`). Six learners: a total beginner, a beginner with app phrases, a total beginner whose friend speaks answer 2 (Josh's case), an intermediate, a shy intermediate who answers onboarding in English, and an advanced speaker.
+
+| | Onboarding alone | After conversation 1 | After 2 | After 3 |
+|---|---|---|---|---|
+| Plain learners (total, phrases, intermediate, advanced; 29 runs, both countries) | 29/29 | 29/29 | 29/29 | 29/29 |
+| Friend speaks answer 2 (truth beginner; 10 runs) | 0/10 (all too high: 7 intermediate, 3 advanced) | 10/10 | 10/10 | 10/10 |
+| Shy intermediate answers in English (8 runs) | 0/8 (beginner) | 8/8 | 8/8 | 8/8 |
+
+- **Onboarding is right when the learner answers as themselves, and wrong every time when they don't.** The first conversation corrects it in every run, in both directions, and later conversations never move it again.
+- **One conversation was enough here**; with real learners (shorter, noisier, less consistent than simulated ones) the check should run after each of the first few, and 100% is an upper bound.
+- **Found a bug:** the onboarding send-off ran out of tokens on mixed answers (one English, one fluent) in 4 of 6 runs; fixed in 2577809. Also a second character reply hitting `lib/turn.ts`'s 800-token cap (one in about 700 test turns tonight, two in all).
+- **The first round's shy learners ignored "answer in English"** and were left out; the rerun forced it.
+
 **Round 13: scripted world, choices at the joins and a stricter checker.** Round 12 again, with the writer told to make the replies a pick between two things where paths join, offer a no only where the answer can take it, do what a real person in the role does, and say goodbye only when the person is done; the checker also reads each path line by line against what was chosen (`V2=1 script-lib.mts`). Scripts in `design/beginner-scripts/round13-*.md`.
 
 | | Scripts | Passed first time | Passed within 3 | At 90%+ | A1 lines | Alive | Lines that don't follow | Choice questions |
