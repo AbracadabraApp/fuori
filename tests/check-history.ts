@@ -3,7 +3,10 @@
 // name) when old turns drop. The old `document` mode was removed 2026-10-16
 // (Josh): prompt 2026-10-12h had taken the conversation out of it, so it sent
 // only the last line, and this test's document check failed from then on.
-import { buildTurnPrompt, RECENT_TURNS } from '@/lib/prompts/build-turn-prompt';
+import { buildTurnPrompt, loadTemplate, RECENT_TURNS } from '@/lib/prompts/build-turn-prompt';
+
+// The opening situation as character.md words it
+const OPENING = loadTemplate().firstTurn.trim();
 import { characterForPlace } from '@/lib/characters/for-place';
 import { cities } from '@/content';
 import type { Turn } from '@/lib/types';
@@ -23,7 +26,7 @@ for (let i = 1; i <= RECENT_TURNS / 2 + 2; i++) {
 
 // First turn: the opening situation only
 const first = buildTurnPrompt({ character, transcript: [] });
-check(first.messages.length === 1 && first.messages[0].content === 'Someone has just walked up to you.', 'first turn: the opening situation only');
+check(first.messages.length === 1 && first.messages[0].content === OPENING, 'first turn: the opening situation only');
 
 // Recent: alternating, starts and ends with the user, only the last few turns
 const rec = buildTurnPrompt({ character, transcript: lines, learnerSaid: 'ultima' });
@@ -40,7 +43,7 @@ check(!!assistant && JSON.parse(assistant.content).line.startsWith('risposta'), 
 // Short conversation: nothing dropped, no "earlier" line
 const short = buildTurnPrompt({ character, transcript: lines.slice(0, 3), learnerSaid: 'ciao' });
 check(!short.messages[0].content.includes('Earlier'), 'nothing dropped, so no "earlier" line');
-check(short.messages[0].content === 'Someone has just walked up to you.', 'short conversation keeps the opening situation');
+check(short.messages[0].content === OPENING, 'short conversation keeps the opening situation');
 
 // Two character lines in a row merge instead of breaking the alternation
 const doubled: Turn[] = [...lines.slice(0, 3), { who: 'npc', transcript: 'di nuovo', translation: 'again' }];

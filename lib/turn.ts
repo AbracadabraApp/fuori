@@ -42,8 +42,9 @@ export async function runTurn(params: {
     // 2 of 810 replies, since thinking counts toward it (round 16, 2026-10-18: largest seen 847, none over 1200)
     max_tokens: 1200,
     temperature: 1.0,
-    // TURN_THINKING=off: no thinking before the reply (a speed trial; unset is today's behaviour)
-    ...(process.env.TURN_THINKING === 'off' ? { thinking: { type: 'between_tools' as const } } : {}),
+    // No thinking before the reply: it was most of the wait (prompt 2026-10-18b changelog).
+    // This model turns thinking off with between_tools, not disabled. TURN_THINKING=on brings it back.
+    ...(process.env.TURN_THINKING === 'on' ? {} : { thinking: { type: 'between_tools' as const } }),
     system: prompt.system,
     messages: prompt.messages,
     output_config: {

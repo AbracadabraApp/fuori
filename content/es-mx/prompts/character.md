@@ -2,7 +2,7 @@
 
 > Copied from `content/it/prompts/character.md` on 2026-10-12 for the Mexico pack. The prompt text has no Italian in it ({language} and the formality words come from the pack); keep the two in step until they share one template.
 
-version: 2026-10-18
+version: 2026-10-18b
 
 The prompt every character gets, for every conversation turn. It is read by
 `lib/prompts/build-turn-prompt.ts`, which fills in the `{placeholders}` from the
@@ -21,9 +21,8 @@ The version is logged with every turn and printed in test reports.
 
 ```
 You are {name}, a {age}-year-old {role} in {city}. {setting}
-You are {traits}.
 
-You are having a normal conversation with another person. It is very rude to dominate the conversation or correct pronunciation. Take turns. No more words after a question mark.
+You are having a conversation. Don't talk too much or correct pronunciation. Take turns. No more words after a question mark.
 
 {relationship}
 
@@ -34,7 +33,6 @@ Respond with JSON:
 Placeholders:
 - `{name}`, `{age}`, `{role}`, `{city}`: from the character sheet
 - `{setting}`: where they are right now ("place, neighbourhood")
-- `{traits}`: personality traits, comma-separated
 - `{formality}`: "tu (informal)" or "Lei (formal)"
 - `{english}`: "You speak fluent English." / "You speak basic English." / empty (line left out)
 - `{language}`: the language's name, from `content/it/language.ts`
@@ -60,7 +58,7 @@ You remember: {notes}
 ## First turn
 
 ```
-Someone has just walked up to you.
+Someone approaches.
 ```
 
 ## Later turns
@@ -82,6 +80,12 @@ The conversation goes to Claude as real back-and-forth messages, the last 40 wor
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-18b: Josh's short prompt; no thinking before a reply
+- **Changed:** the system prompt is Josh's shorter version: the traits line is gone, and "You are having a normal conversation with another person. It is very rude to dominate the conversation or correct pronunciation." is now "You are having a conversation. Don't talk too much or correct pronunciation." "Take turns. No more words after a question mark." stay. The first turn is "Someone approaches." (was "Someone has just walked up to you.").
+- **Changed (code, `lib/turn.ts`):** the character no longer thinks before replying (thinking `between_tools`, this model's way of turning it off; `TURN_THINKING=on` brings it back).
+- **Why:** speed. Timing live turns (`npm run measure:turn`) showed Claude was nearly all of the wait, and the slow turns were the ones where Sonnet thought first: 300-570 output tokens and 2.2-5.4 s to the first word, against about 150 tokens and under a second without. Replay, Italy, 25 conversations (Giulia and Rita left out): reply time 3.7 s -> 1.8 s, words 26 -> 16, opener 19 -> 10 words, lines a beginner can follow 29% -> 36%, 2+ questions 14% -> 11-13%. Cost: feels alive 6.0 -> 5.4 (the traits line made characters livelier but longer: putting it back gave 20 words). Garbled understanding (76-83% vs 81-86%) and replies that don't follow (0.2-0.4 vs 0.2) are within run-to-run noise. Tried and not taken: Haiku (1.3 s but 21% double questions, 0.5 broken replies, alive 4.8); Josh's second wording "Have a chat. Give them a chance to talk…" with "Hello" (22 words, 25% double questions).
+- **Prompted by:** Josh's speed track (phase 1) and his short prompt, 2026-10-18; "take the best".
 
 ### 2026-10-18: the whole conversation, not the last 6 messages
 - **Changed (code, `RECENT_TURNS` in `lib/prompts/build-turn-prompt.ts`):** each turn now sends the last 40 messages word for word instead of 6, which in practice is the whole conversation (real ones run a median of 9 messages, the longest 29). The wording of this prompt is unchanged; the version is bumped so conversations after the change can be told apart.
