@@ -115,8 +115,10 @@ function shuffle<T>(items: T[]): T[] {
 }
 
 function pickSample(): Case[] {
-  const all = cities.flatMap((city) =>
+  // Only people the game shows (hidden places and cities left out, as in the replay)
+  const all = cities.filter((city) => !city.hidden).flatMap((city) =>
     city.places
+      .filter((place) => !place.hidden)
       .map((place) => ({ place, city, character: characterForPlace(city, place) }))
       .filter((x): x is { place: Place; city: typeof city; character: CharacterSheet } => !!x.character)
   );

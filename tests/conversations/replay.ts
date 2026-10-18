@@ -59,8 +59,11 @@ interface Script {
 
 // ---------- Characters ----------
 
-const everyone = cities.flatMap((city) =>
-  city.places.flatMap((place) => {
+// Only people the game shows: hidden places (content/<country>/showcase.ts) and
+// cities are left out, so Giulia and Rita, hidden on purpose, aren't tested
+// (Josh, 2026-10-18: written as anchor characters, they distort the tests)
+const everyone = cities.filter((city) => !city.hidden).flatMap((city) =>
+  city.places.filter((place) => !place.hidden).flatMap((place) => {
     const c = characterForPlace(city, place);
     return c ? [{ character: c, cityName: city.name, cityId: city.id }] : [];
   })
@@ -108,7 +111,8 @@ async function refresh() {
 
 function loadSet(): Script[] {
   if (!existsSync(SET_FILE)) throw new Error('No replay set yet. Run: npm run test:replay -- --refresh');
-  return (JSON.parse(readFileSync(SET_FILE, 'utf8')) as { scripts: Script[] }).scripts;
+  // Josh's conversations with people the game no longer shows are left out
+  return (JSON.parse(readFileSync(SET_FILE, 'utf8')) as { scripts: Script[] }).scripts.filter((s) => byId.has(s.characterId));
 }
 
 interface Case {
