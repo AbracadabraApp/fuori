@@ -38,7 +38,9 @@ export async function runTurn(params: {
   const started = performance.now();
   const stream = anthropic.messages.stream({
     model: TURN_MODEL,
-    max_tokens: 800, // was 2048; a reply is ~20 words. Caps the cost of a turn someone tries to stretch (docs/12-native-app.md)
+    // Caps the cost of a turn someone tries to stretch (docs/12-native-app.md). Was 2048, then 800; 800 failed
+    // 2 of 810 replies, since thinking counts toward it (round 16, 2026-10-18: largest seen 847, none over 1200)
+    max_tokens: 1200,
     temperature: 1.0,
     // TURN_THINKING=off: no thinking before the reply (a speed trial; unset is today's behaviour)
     ...(process.env.TURN_THINKING === 'off' ? { thinking: { type: 'between_tools' as const } } : {}),

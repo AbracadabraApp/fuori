@@ -10,11 +10,10 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
-1. **Turn cap:** tested (round 16); Josh's OK to raise it from 800 to 1200 (→ Faster and reliable replies)
-2. **Play Afuera with the level trial on**, so Claude can review those conversations (→ Beginner ladder)
-3. **Spec for the smaller world** (→ Smaller world, on hold)
-4. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
-5. **Device checks on the iPhone** (only Josh can do audio on the phone) (→ Conversation on the phone)
+1. **Play Afuera with the level trial on**, so Claude can review those conversations (→ Beginner ladder)
+2. **Spec for the smaller world** (→ Smaller world, on hold)
+3. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
+4. **Device checks on the iPhone** (only Josh can do audio on the phone) (→ Conversation on the phone)
 
 ### Conversation on the phone
 - [ ] **Josh** Try today's build: pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
@@ -24,7 +23,7 @@ Claude can't move these until Josh does:
 
 ### Faster and reliable replies
 Goal: reply under 2 s, 4 s at most (today about 6 s of waiting, Claude 3.6 s median of it).
-- [ ] **Claude** ⛔ Raise the reply cap from 800 to 1200 in `lib/turn.ts`. Round 16 (810 replies, same call with a 1500 cap; Italy's real scripts, simulated Mexico): median 329–343 tokens, 99% under 714, the largest 847; 2 of 810 (0.25%) went over 800, which fails the turn today; none over 1200. Most of it is thinking (with thinking median 355–396 tokens; without, 113–169). The replies near the cap took 7–8 s. Blocked on Josh's OK
+- [x] **Claude** Raised the reply cap from 800 to 1200 in `lib/turn.ts` (Josh's OK, 2026-10-18). Round 16 (810 replies, same call with a 1500 cap; Italy's real scripts, simulated Mexico): median 329–343 tokens, 99% under 714, the largest 847; 2 of 810 (0.25%) went over 800, which fails the turn today; none over 1200. Most of it is thinking (with thinking median 355–396 tokens; without, 113–169). The replies near the cap took 7–8 s.
 - [ ] **Claude** Investigate the ~6 s after a turn: where the time goes besides Claude
 - [ ] **Claude** Try Haiku for characters (1.6 s against about 3.4 s), with the level judge as the guard
 - [ ] **Claude** Start the voice as soon as the line is streamed
