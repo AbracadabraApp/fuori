@@ -8,12 +8,15 @@ How to work it: take the top item, run it, write the result in the test log, mov
 
 1. **Live with lookahead** (from round 11). While the character speaks: write the two replies, then the character's answer to each, in parallel, so a tap gets an instant answer with no shared joins. Measure whether it's ready in time, and the cost (two turns per turn).
 2. **A plan for the visit.** One short call at the start writes an arc (arrive → order → small talk → leave) that live turns follow: the script's shape without its joins, and less of the order form ("Vuoi X o Y?" on 43% of Italy's turns, round 9).
-3. **Scripts as a tree, no joins** (from round 13): each reply gets its own continuation for 2–3 forks, then a shared close. Only if lookahead (item 1) doesn't already give the same thing.
-4. **"Ripeti?" on levels 4–5.** Replay is gone, so asking the character to repeat must work: is the repeat shorter, slower-sounding and simpler, or word for word, or a new sentence? Simulated learner asks now and then; judge the repeat.
-5. **Level check after the first conversations, built behind a setting** (from round 14): at the end of each of a learner's first 3 conversations, the level judge reads onboarding and the conversations and updates `learners.level`; off by default. Then the same on real conversations: rerun it on saved ones and compare with what Josh would say.
-6. **Mexico at 20 conversations** for the final Beginner pick against today's prompt, since 5 conversations wobble 6–10 points.
-7. **Characters feel flat in both countries** (alive Italy 5.0, Mexico 6.8 on the shared judge, target 7). Plan and order in the roadmap → 2, "Characters alive and on level": level on the scorecard (done), real conversations sorted by problem, a concrete detail per character, then the prompt change, one at a time through the replay gate.
-8. **Replies folded into the turn** (the other option in beginner-scaffolding.md → Writing the replies): the character's call returns the two replies too. Lower priority now that the separate call is fast enough.
+3. **"Ripeti?" on levels 4–5.** Replay is gone, so asking the character to repeat must work: is the repeat shorter, slower-sounding and simpler, or word for word, or a new sentence? Simulated learner asks now and then; judge the repeat.
+4. **Level check after the first conversations, built behind a setting** (from round 14): at the end of each of a learner's first 3 conversations, the level judge reads onboarding and the conversations and updates `learners.level`; off by default. Then the same on real conversations: rerun it on saved ones and compare with what Josh would say.
+5. **Mexico at 20 conversations** for the final Beginner pick against today's prompt, since 5 conversations wobble 6–10 points.
+6. **Characters feel flat in both countries** (alive Italy 5.0, Mexico 6.8 on the shared judge, target 7). Plan and order in the roadmap → 2, "Characters alive and on level": level on the scorecard (done), real conversations sorted by problem, a concrete detail per character, then the prompt change, one at a time through the replay gate.
+7. **Replies folded into the turn** (the other option in beginner-scaffolding.md → Writing the replies): the character's call returns the two replies too. Lower priority now that the separate call is fast enough.
+
+## On hold
+
+- **A scripted, smaller world for beginners** (Josh, 2026-10-18: hold until there's a better spec). Its items and the parked tests are in the roadmap → 4b.
 
 ## Later
 

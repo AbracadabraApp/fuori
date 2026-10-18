@@ -31,7 +31,7 @@ Every prompt change says which goal it moves and may not make another worse (ver
 - [ ] **server** Characters alive and on level (Claude decides, Josh judges; order set 2026-10-18 because the guard has to exist before the change, and one change at a time):
   - [x] Level of the character's lines on the scorecard: "Lines a beginner can follow" (a beginner knows 90%+ of the words; target 90%), scored by the replay (`lib/level.ts`, `level.md`); real play not yet
   - [ ] Refresh the replay set from real conversations (both countries) and sort the low-scoring ones by what goes wrong, per prompt version, from the judge's notes and a question-kind count; check whether the order form ("X o Y?") is common there or only in simulated beginners
-  - [ ] One concrete detail per character (an opinion, something they care about): only 15 of 703 characters have more than role, traits and setting. Generate it for Trastevere and Mexico City (24 characters), put it in the prompt, replay; keep it if alive rises and lines a beginner can follow don't drop
+  - [ ] One concrete detail per character (an opinion, something they care about): only 15 of 703 characters have more than role, traits and setting. Generate it for the characters in the replay set (the ones Josh talked to), put it in the prompt, replay; keep it if alive rises and lines a beginner can follow don't drop
   - [ ] Separately, the prompt change ("react before asking"), with a count of repeated patterns, since rules like it made tics before (round 5)
   - [ ] What passes: generate details for the remaining ~680 characters, check a sample, fix only what's terrible
 - [ ] **server** Change the `test:conversations` grader: it's told not to mark down complex language, so it rewards characters who speak above the learner; judge against the on-level share instead (needs Josh's OK)
@@ -54,6 +54,12 @@ Every prompt change says which goal it moves and may not make another worse (ver
   - [ ] Level check at the end of each of the first 3 conversations, updating `learners.level`, behind a setting that's off by default
   - [ ] Run it on saved real conversations (Josh's included) and compare with Josh's judgement
 - [ ] **both** Beginner ladder: five levels, from tapping a reply with English to filling a frame in your own words ([beginner-scaffolding.md](beginner-scaffolding.md), draft 2026-10-17)
+
+### 4b. A scripted, smaller world for beginners: on hold until there's a spec (Josh, 2026-10-18)
+Josh's idea (2026-10-17): for beginner levels 1–3, fixed scripts per character, the same for every learner, in a smaller world (one neighbourhood until level 4). Explored in rounds 11–13 ([level-judge-test.md](level-judge-test.md)); described in [beginner-scaffolding.md](beginner-scaffolding.md) → "On hold". No more work on it until the spec exists.
+- [ ] **Spec (Josh):** what's fixed and what's generated; which neighbourhood(s) per country; how many visits and in what order; what earns leaving it; how it fits levels 1–3 of the beginner ladder; whether audio is recorded once
+- What the tests found so far: a scripted neighbourhood is cheap to write (24 characters, about 50 scripts, minutes) and the easiest dialogue yet (70–84% of lines a beginner can follow), but where both replies have to lead to the same next line, one path ignores the learner's answer, and forcing a this-or-that choice at every join made it a quiz (round 13)
+- Parked tests: scripts as a tree with no joins (each reply gets its own continuation for 2–3 forks, then a shared close); visits ordered so frames build up ("Vorrei…" before "Sono di…")
 
 ### 5. Parity with the web
 - [ ] **app** Visit stamps redesigned (collectible, on the caption, not a number in a circle)

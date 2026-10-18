@@ -123,7 +123,7 @@ A first playable version, behind a setting, so Josh can feel levels 1–3 in Afu
 
 **Josh:** play 10 minutes in Afuera at level 1, then level 3. Note where it felt wrong.
 
-## Being explored: a scripted, smaller world for levels 1–3 (Josh, 2026-10-17)
+## On hold: a scripted, smaller world for levels 1–3 (Josh, 2026-10-17; on hold until there's a spec, 2026-10-18)
 
 Not decided; being tested ([test-ideas.md](test-ideas.md), [level-judge-test.md](level-judge-test.md) rounds 11–12).
 - **Scripted dialogue.** Levels 1–3 last at most 100–150 turns and the learner only taps, so the dialogue can be written ahead: fixed scripts per character, the same for every learner, checked before anyone hears them, audio recorded once. CLAUDE.md's "no scripted scenes" predates beginner levels and doesn't rule this out.
