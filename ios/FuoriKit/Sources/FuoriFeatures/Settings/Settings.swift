@@ -12,6 +12,11 @@ public enum SettingsKey {
     /// Hidden (Settings → touch and hold Version): the debug panel on the
     /// person screen, the server and learner, and Restart onboarding, as the web's ?debug=1
     public static let debug = "settings.debug"
+    /// Test (docs/beginner-scaffolding.md → Build): two whole-line replies to
+    /// tap instead of the mic. Off by default, so production is unchanged
+    public static let replyButtons = "settings.replyButtons"
+    /// 1, 2 or 3: how much English the reply buttons show (levels 1–3)
+    public static let scaffoldLevel = "settings.scaffoldLevel"
 }
 
 /// The settings button, top right on every screen (Josh, D2), with Fuori's
@@ -53,6 +58,8 @@ struct SettingsSheet: View {
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.handsFree) private var handsFree = false
     @AppStorage(SettingsKey.debug) private var debug = false
+    @AppStorage(SettingsKey.replyButtons) private var replyButtons = false
+    @AppStorage(SettingsKey.scaffoldLevel) private var scaffoldLevel = 1
     @Environment(\.dismiss) private var dismiss
 
     private enum Level: String, CaseIterable, Identifiable {
@@ -120,6 +127,19 @@ struct SettingsSheet: View {
                          ? "The microphone opens by itself when it's your turn and closes after a pause."
                          : "Tap to talk, and tap again when you've finished.")
                 }
+                Section {
+                    Toggle("Reply buttons (test)", isOn: $replyButtons)
+                    if replyButtons {
+                        Picker("Level", selection: $scaffoldLevel) {
+                            Text("1").tag(1)
+                            Text("2").tag(2)
+                            Text("3").tag(3)
+                        }
+                        .pickerStyle(.segmented)
+                    }
+                } footer: {
+                    Text(replyButtons ? Self.scaffoldNote(scaffoldLevel) : "Tap one of two replies instead of speaking.")
+                }
                 Section("About") {
                     Text("Everyone you meet in \(appName) is played by an AI.")
                     NavigationLink("Privacy") { PrivacyView(appName: appName) }
@@ -156,6 +176,15 @@ struct SettingsSheet: View {
         .presentationDetents([.large])
         // The other country's card, if the launch didn't get it
         .task { if model.countries.count < 2 { await model.loadCountries() } }
+    }
+
+    /// What each reply-button level shows (docs/beginner-scaffolding.md → The levels)
+    static func scaffoldNote(_ level: Int) -> String {
+        switch level {
+        case 1: "Level 1: English on what people say and on both replies."
+        case 2: "Level 2: English on what people say; replies without it."
+        default: "Level 3: no English. The replies replace the microphone."
+        }
     }
 
     /// The current country is marked "You're here"; tapping the other switches to it

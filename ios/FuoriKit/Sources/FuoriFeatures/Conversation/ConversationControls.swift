@@ -1,5 +1,6 @@
 import SwiftUI
 import FuoriDesign
+import FuoriNetworking
 
 /// The bottom of the person screen: the turn pill, and Pause (always there) on the right.
 /// The pill shows the state by its shape (waveform, dots, pause, warning), not
@@ -14,14 +15,26 @@ struct ConversationControls: View {
     @State private var typed = ""
 
     var body: some View {
-        HStack {
-            // Type a reply (accessibility only, D6); otherwise empty, balancing
-            // the pause button so the pill stays centred
-            if model.canType { typeButton } else { Color.clear.frame(width: 44, height: 44) }
-            Spacer()
-            pill
-            Spacer()
-            pauseButton // on the right (Josh, 2026-10-15)
+        Group {
+            if let replies = model.replies {
+                // Reply buttons (test): they replace the pill. Pause only to come
+                // back from an interruption; in tap-to-talk the mic never opens
+                // by itself (docs/beginner-scaffolding.md → Controls)
+                VStack(spacing: 8) {
+                    ReplyButtons(model: model, replies: replies)
+                    if needsResume { HStack { Spacer(); pauseButton } }
+                }
+            } else {
+                HStack {
+                    // Type a reply (accessibility only, D6); otherwise empty, balancing
+                    // the pause button so the pill stays centred
+                    if model.canType { typeButton } else { Color.clear.frame(width: 44, height: 44) }
+                    Spacer()
+                    pill
+                    Spacer()
+                    pauseButton // on the right (Josh, 2026-10-15)
+                }
+            }
         }
         .padding(.bottom, 8)
         .sensoryFeedback(trigger: model.phase) { _, new in
@@ -58,8 +71,10 @@ struct ConversationControls: View {
 
     /// One button that toggles: pause while running, play while paused
     /// (Josh, 2026-10-15). The paused state shows only here, not on the pill.
+    private var needsResume: Bool { model.phase == .paused || model.phase.isFailed || model.phase == .micDenied }
+
     private var pauseButton: some View {
-        let isPaused = model.phase == .paused || model.phase.isFailed || model.phase == .micDenied
+        let isPaused = needsResume
         return Button {
             if isPaused { Task { await model.resume() } } else { model.pause() }
         } label: {
@@ -190,5 +205,56 @@ private struct LevelDots: View {
             }
             .frame(height: 30)
         }
+    }
+}
+
+/// Two whole-line replies on one frame (beginner levels 1–3,
+/// docs/beginner-scaffolding.md → Rules). Tapping one sends it as the
+/// learner's line; the tapped one turns a plain selected colour, with no right
+/// or wrong. Level 1 shows each reply's English under it.
+private struct ReplyButtons: View {
+    let model: ConversationModel
+    let replies: [APIClient.Replies.Reply]
+
+    var body: some View {
+        VStack(spacing: 8) {
+            ForEach(Array(replies.prefix(2).enumerated()), id: \.offset) { index, reply in
+                button(index, reply)
+            }
+        }
+    }
+
+    private func button(_ index: Int, _ reply: APIClient.Replies.Reply) -> some View {
+        let selected = model.chosen == index
+        return Button { Task { await model.choose(index) } } label: {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(spoken(reply.line))
+                    .typeface(.label, Tokens.Size.body, relativeTo: .body, weight: .semibold)
+                    .foregroundStyle(selected ? Tokens.Colors.card : Tokens.Colors.text)
+                if model.scaffoldLevel == 1 {
+                    Text(reply.en)
+                        .typeface(.label, Tokens.Size.badge, relativeTo: .callout)
+                        .foregroundStyle(selected ? Tokens.Colors.card : Tokens.Colors.muted)
+                }
+            }
+            .multilineTextAlignment(.leading)
+            .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+            .padding(.vertical, 10)
+            .padding(.horizontal, 16)
+            .background(selected ? Tokens.Colors.green : Tokens.Colors.card, in: RoundedRectangle(cornerRadius: 14))
+            .shadow(color: .black.opacity(Tokens.Shadow.card.opacity), radius: Tokens.Shadow.card.radius, y: Tokens.Shadow.card.y)
+        }
+        .buttonStyle(PressableStyle())
+        .disabled(model.phase != .tapToTalk)
+        .accessibilityAddTraits(selected ? .isSelected : [])
+        .accessibilityHint("Says this to \(model.character.name)")
+    }
+
+    /// The reply, read by VoiceOver in the language being learned
+    private func spoken(_ line: String) -> AttributedString {
+        var text = AttributedString(line)
+        // Foundation's language attribute: VoiceOver reads the text in it
+        text.languageIdentifier = model.language.speechLang
+        return text
     }
 }
