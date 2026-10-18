@@ -14,7 +14,7 @@ Claude can't move these until Josh does:
 2. **Spec for the smaller world** (→ Smaller world, on hold)
 3. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
 4. **Device checks on the iPhone** (only Josh can do audio on the phone) (→ Conversation on the phone)
-5. **Create the app in App Store Connect** (→ Release, stage 1)
+5. **Install build 1 from TestFlight**: create an internal group, add yourself and the build (→ Release, stage 1)
 
 ### Conversation on the phone
 - [ ] **Josh** Try today's build: pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
@@ -86,9 +86,9 @@ Two stages. A TestFlight for Josh alone needs no Apple review and none of the co
 
 **Stage 1: TestFlight for Josh only** (internal testing; N4 in 12-native-app.md)
 - [x] **Claude** Icon (2026-10-17), microphone usage text, export compliance (`ITSAppUsesNonExemptEncryption: false`), version 0.1.0 build 1
-- [ ] **Josh** ⛔ Create the app in App Store Connect: bundle id `com.joshp100.fuori`, the store name (one app for both countries: "Fuori"?), SKU, primary language English. Web only, about 5 minutes
-- [ ] **Claude** `make archive` and `make upload`: a Release archive exported and uploaded to App Store Connect; Xcode creates the distribution certificate; the build number goes up with each upload
-- [ ] **Claude** Release-build check: builds in Release, no development server or debug-only path reachable, the hidden Settings rows still hidden
+- [x] **Josh** Created the app in App Store Connect (2026-10-18); **Claude** registered the bundle id `com.joshp100.fuori` (it wasn't: phone builds used the wildcard profile)
+- [x] **Claude** `make archive`, `make export`, `make upload` (`ios/Makefile`); build 0.1.0 (1) uploaded 2026-10-18. Bump `CURRENT_PROJECT_VERSION` in `project.yml` before each upload
+- [x] **Claude** Release-build check: production servers only, launch-argument shortcuts are debug-only
 - [ ] **Claude** The sign-in token carries over from the Xcode build to the TestFlight one (same team and bundle id, so the Keychain item should). Open from 2026-10-17: after one install the phone may have signed in as a new learner, which would make characters forget Josh
 - [ ] **Josh** Add himself to an internal testing group and install from TestFlight
 - [ ] **Josh** The device checks (Conversation on the phone) on the TestFlight build
@@ -106,6 +106,8 @@ Two stages. A TestFlight for Josh alone needs no Apple review and none of the co
 **Stage 3: the App Store** (later)
 - [ ] **Claude** "Report this line" button; screenshots, description, age rating and review notes (**Josh** approves)
 - [ ] **Claude** Web sunset, about 2 weeks after TestFlight
+- [ ] **Josh** Storefronts: launch outside the EU and skip the EU trader declaration (Josh, 2026-10-18: learners are English speakers, not Italians, and the store is chosen by the Apple ID's country, not where they are). Declare trader status (App Store Connect → Business) only if EU stores are wanted later
+- Screenshots for the App Store page: 3–10 at the 6.9-inch size (1320×2868), taken from the app by **Claude**; a preview video is optional. Nothing beyond the icon is needed for TestFlight
 
 ### Housekeeping
 - [x] **Claude** Railway watch paths: docs-only commits are now skipped (seen 2026-10-18)
