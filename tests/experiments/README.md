@@ -1,0 +1,21 @@
+# Experiments
+
+Scripts behind the level and dialogue tests (results in [docs/level-judge-test.md](../../docs/level-judge-test.md), queue in [docs/test-ideas.md](../../docs/test-ideas.md)). Moved here from the laptop session's scratchpad on 2026-10-18 so any session can rerun them. They aren't checks that pass or fail: each prints numbers to compare between arms.
+
+Run from the repo root with the API key: `npx tsx --env-file=.env.local tests/experiments/<script>.mts …`, with `COUNTRY=es-mx` for Mexico. Outputs go to `tests/experiments/out/`, which is gitignored because several quote Josh's real lines. Every Claude call goes through `lib/claude.ts`, so the models are the app's.
+
+| Script | What it measures | Input | Rounds |
+|---|---|---|---|
+| `question-kinds.mts` | What each character line asks (none, yes/no, choice, one fact, open) and whether a beginner could answer | report `.md` files, `label=path` | 5–6, 15 |
+| `line-level.mts` | Lines a beginner can follow (the scorecard's level judge, `lib/level.ts`), early and late in the conversation | report `.md` files | 1–14 (as `grade-runs.mjs`) |
+| `judge-report.mts` | The replay's quality judge (alive, replies that don't follow) on any report, twice per conversation; `--notes` prints why | report `.md` files | 8–13 |
+| `reply-buttons.mts` | The reply buttons (`lib/replies.ts`) for every character line, judged in 8 checks, and whether they're ready before the line ends | report `.md` files | 7 |
+| `real-conversations.mts` | Real conversations from the admin export, re-judged, written as a report (lowest first) for the scripts above | admin export, prompt version | 15 |
+| `placement.mts` | Onboarding's level against a known level, and a level judge after each of 3 conversations | — | 14 |
+| `repeats.mts` | Character lines that repeat themselves or re-ask, on the longest replay scripts; `TURN_RECENT_TURNS` sets the history window | replay set | 15 |
+| `reply-tokens.mts` | Output tokens per character reply with a high cap (how close replies come to `max_tokens`) | replay set (Italy) or simulated learners | 16 |
+| `on-hold/smaller-world.mts` | Scripted two-visit conversations per character in one neighbourhood, checked and rewritten. On hold until the smaller world has a spec | — | 12–13 |
+
+Reports come from `npm run test:conversations` and `npm run test:replay` (`tests/conversations/reports/`); the replay set from `npm run test:replay -- --refresh`.
+
+Not moved: the early level-judge scripts of rounds 1–4 (the exam-sample ground truth) and round 8's one-off check; their results are in the test log.

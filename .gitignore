@@ -13,3 +13,6 @@ style-test/
 
 # Apple's Human Interface Guidelines, downloaded by npm run hig (Apple's text; this repo is public)
 docs/reference/hig/
+
+# Experiment outputs (tests/experiments): several quote Josh's real lines
+tests/experiments/out/
