@@ -14,6 +14,7 @@ Claude can't move these until Josh does:
 2. **Spec for the smaller world** (→ Smaller world, on hold)
 3. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
 4. **Device checks on the iPhone** (only Josh can do audio on the phone) (→ Conversation on the phone)
+5. **Create the app in App Store Connect** (→ Release, stage 1)
 
 ### Conversation on the phone
 - [ ] **Josh** Try today's build: pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
@@ -22,12 +23,13 @@ Claude can't move these until Josh does:
 - [ ] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice?
 
 ### Faster and reliable replies
-Goal: reply under 2 s, 4 s at most (today about 6 s of waiting, Claude 3.6 s median of it).
+Goal: reply under 2 s, 4 s at most. Measured 2026-10-18 (`npm run measure:turn`, Server-Timing on `/v1`): Claude was nearly all of the wait, mostly thinking before the reply; transcribing 0.3 s, the voice 0.5–0.8 s, the network and sign-in tens of milliseconds.
 - [x] **Claude** Raised the reply cap from 800 to 1200 in `lib/turn.ts` (Josh's OK, 2026-10-18). Round 16 (810 replies, same call with a 1500 cap; Italy's real scripts, simulated Mexico): median 329–343 tokens, 99% under 714, the largest 847; 2 of 810 (0.25%) went over 800, which fails the turn today; none over 1200. Most of it is thinking (with thinking median 355–396 tokens; without, 113–169). The replies near the cap took 7–8 s.
-- [ ] **Claude** Investigate the ~6 s after a turn: where the time goes besides Claude
-- [ ] **Claude** Try Haiku for characters (1.6 s against about 3.4 s), with the level judge as the guard
-- [ ] **Claude** Start the voice as soon as the line is streamed
-- In progress (another laptop session, not yet committed): replies without thinking (`TURN_THINKING=off`, a speed trial behind a setting)
+- [x] **Claude** Where the time goes: `measure:turn` and per-step timing in the logs (`turn-timing`, `transcribe-timing`, `speak-timing`)
+- [x] **Claude** Haiku for characters through the replay: 1.3 s, but double questions 21% and the most broken replies; not taken
+- [x] **Claude** Josh's short prompt and no thinking before a reply (prompt 2026-10-18b, Josh: "take the best"): replay reply time 3.7 → 1.8 s, 26 → 16 words, feels alive 6.0 → 5.4. Live wait still to measure after the deploy
+- [ ] **Claude** Save the turn after the reply is sent, not before (up to 1 s on some turns)
+- [ ] **Claude** Start the voice on the first streamed sentence (server and app)
 
 ### Characters feel alive
 Goal: alive 7 (today about 6 in real conversations, 5–7 with simulated learners). Order decided by Claude, judged by Josh (2026-10-18); one change at a time through the replay gate.
@@ -78,10 +80,30 @@ Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the sam
 - [ ] **Josh** ⛔ Say what's wrong with the city picker; then **Claude** improves it
 - [ ] **Claude** Stations and ticket: departures board, the clerk names the platform, "Sali"
 
-### Release
-- [ ] **Josh + Claude** TestFlight: signing and the App Store Connect side (**Josh**); icon, microphone text, privacy label (**Josh** approves, **Claude** prepares); App Attest, usage tracking, per-learner budgets (**Claude**, before anyone but Josh gets it)
-- [ ] **Claude** R2 custom domain (the free r2.dev address is rate-limited, for development only); **Josh** picks the domain
-- [ ] **Josh + Claude** App Review: privacy policy URL (**Josh**), "report this line" button (**Claude**)
+### Release: the route to TestFlight (broken down 2026-10-18)
+Two stages. A TestFlight for Josh alone needs no Apple review and none of the cost protection; anyone else does ([12-native-app.md](12-native-app.md) → Cost protection). Josh's developer account is paid (Movie Genius shipped from it), so App Store signing works.
+
+**Stage 1: TestFlight for Josh only** (internal testing; N4 in 12-native-app.md)
+- [x] **Claude** Icon (2026-10-17), microphone usage text, export compliance (`ITSAppUsesNonExemptEncryption: false`), version 0.1.0 build 1
+- [ ] **Josh** ⛔ Create the app in App Store Connect: bundle id `com.joshp100.fuori`, the store name (one app for both countries: "Fuori"?), SKU, primary language English. Web only, about 5 minutes
+- [ ] **Claude** `make archive` and `make upload`: a Release archive exported and uploaded to App Store Connect; Xcode creates the distribution certificate; the build number goes up with each upload
+- [ ] **Claude** Release-build check: builds in Release, no development server or debug-only path reachable, the hidden Settings rows still hidden
+- [ ] **Claude** The sign-in token carries over from the Xcode build to the TestFlight one (same team and bundle id, so the Keychain item should). Open from 2026-10-17: after one install the phone may have signed in as a new learner, which would make characters forget Josh
+- [ ] **Josh** Add himself to an internal testing group and install from TestFlight
+- [ ] **Josh** The device checks (Conversation on the phone) on the TestFlight build
+- [ ] **Josh** Gate: play from TestFlight on 3 separate days without the laptop; **Claude** checks `railway logs` for new error codes
+
+**Stage 2: before anyone else gets it** (external testers; Apple's beta review, usually about a day)
+- [ ] **Claude** App Attest when a device registers
+- [ ] **Claude** Usage tracking and a per-learner daily budget (`usage_daily`: turns, speech-to-text seconds, voice characters → `402 quota`; the app already falls back to the phone's voice on `quota`)
+- [ ] **Claude** R2 custom domain for images (r2.dev is rate-limited, for development only); **Josh** picks the domain
+- [ ] **Claude** Privacy policy page at a public URL; **Josh** approves the text
+- [ ] **Claude** One line on the microphone step of onboarding saying what is sent to outside AI services
+- [ ] **Josh** App Privacy label in App Store Connect (audio and text sent to Groq, Anthropic and ElevenLabs); **Claude** drafts the answers
+- [ ] **Josh** Beta app description, feedback email and notes for the reviewer; **Claude** drafts them
+
+**Stage 3: the App Store** (later)
+- [ ] **Claude** "Report this line" button; screenshots, description, age rating and review notes (**Josh** approves)
 - [ ] **Claude** Web sunset, about 2 weeks after TestFlight
 
 ### Housekeeping
