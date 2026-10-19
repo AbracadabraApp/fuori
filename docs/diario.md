@@ -15,6 +15,14 @@ Mockup: the interactive Diario canvas in the Claude app (chip → deck → end o
 - Open: whether the book shows during a conversation. Suggest not, so scenes stay in the world; Settings stays there per D2.
 - This replaces, for now, the bottom-tab idea in [02-game-design.md](02-game-design.md) (Oggi · Viaggio · Diario · Tu). There is no end-of-day Diario (Josh, 2026-10-18: "end of day is gone").
 
+## Direction: chips with missions (Josh, 2026-10-18; proposed until Josh reviews the chips)
+
+- 90 chips, all prebuilt: 30 for beginners (what you're **doing**: ordering, asking the price, your name, the way), 30 for intermediate (what you're **feeling**: what you liked, tired or happy, a complaint, your day), 30 for advanced (what you're **thinking**: an opinion and why, comparing, what you'd do if, disagreeing politely).
+- Tap a chip: 3–5 missions ("Go order an orange juice at the bar"). Tap one: you're in a real conversation at a real place in your city, with its character. No card screens and no scripted dialogue: you practise in the world.
+- The AI only colours chips, from transcripts (did it, tried it, needed English or got stuck, only heard it). It never writes the missions or the dialogue.
+- Needs: missions name a kind of place, and the app picks one in the current city; the character knows why you came (one line in the opening situation, tested on the replay); beginners need reply buttons to succeed, so missions ship with them; a colouring judge, tested against Josh's own reading of transcripts first.
+- Replaces the card decks below if it holds up; the chip wall, groups and heat stay.
+
 ## The shape
 
 The Diario opens on a wall of chips, one per situation group, like the genre chips in MovieGenius. Each chip warms from cool to gold as its phrases are learned. Tap a chip and its deck starts: one card per phrase per pass, each card at that phrase's level (levels and screens in [beginner-scaffolding.md](beginner-scaffolding.md)).
