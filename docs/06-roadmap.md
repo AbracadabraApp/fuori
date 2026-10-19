@@ -118,7 +118,7 @@ Two stages. A TestFlight for Josh alone needs no Apple review and none of the co
 - [x] **Josh** Created the app in App Store Connect (2026-10-18); **Claude** registered the bundle id `com.joshp100.fuori` (it wasn't: phone builds used the wildcard profile)
 - [x] **Claude** `make archive`, `make export`, `make upload` (`ios/Makefile`); build 0.1.0 (1) uploaded 2026-10-18. Bump `CURRENT_PROJECT_VERSION` in `project.yml` before each upload
 - [x] **Claude** Release-build check: production servers only, launch-argument shortcuts are debug-only
-- [ ] **Claude** The sign-in token carries over from the Xcode build to the TestFlight one (same team and bundle id, so the Keychain item should). Open from 2026-10-17: after one install the phone may have signed in as a new learner, which would make characters forget Josh
+- [x] **Claude** The sign-in token carries over from the Xcode build to the TestFlight one. Confirmed 2026-10-19: on the phone, build 1 signed in as Josh's own learner in both countries (Italy `3c544022`, from the web days; Mexico `25d15e1d`), and Josh: characters remember him from the web. (The Mac install is a separate learner, as expected: its Keychain is its own)
 - [x] **Josh** Installed from TestFlight and played in Italy (2026-10-18)
 - [ ] **Josh** The device checks (Conversation on the phone) on the TestFlight build
 - [ ] **Josh** Gate: play from TestFlight on 3 separate days without the laptop; **Claude** checks `railway logs` for new error codes
