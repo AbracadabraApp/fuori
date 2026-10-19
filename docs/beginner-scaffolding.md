@@ -2,6 +2,19 @@
 
 2026-10-17 · Josh · Draft. Replaces the four-step "Beginner ladder" sketch in [language-levels-plan.md](language-levels-plan.md). Mockups: [design/beginner-levels/levels.html](../design/beginner-levels/levels.html) (open it in a browser). Research behind it: [research/beginner-mode-scaffolding.md](research/beginner-mode-scaffolding.md) and [research/flashcards-vocabulary-review.md](research/flashcards-vocabulary-review.md). The Diario itself (book icon, chip wall, heat, retiring phrases): [diario.md](diario.md).
 
+## Revised: three levels (Josh, 2026-10-19; replaces the five levels below once specced)
+
+| Level | What happens | English | You |
+|---|---|---|---|
+| **1. Character teaching** | Adaptive: she teaches the line you need, in role (the question, what it means, one way to answer), more when you struggle, less as you cope ([proposal-level1-teaching.md](proposal-level1-teaching.md)) | Spoken, inside her line; reply buttons carry an English subtitle | Tap at first; **taps end before level 1 ends**, so you're speaking by the end of it |
+| **2. Practising conversation** | A normal conversation, kept simple | Spoken, only when you ask | Speak. **No taps** |
+| **3. Advanced** | Today's game | Spoken, only when you ask | Speak |
+
+- **No English translation line under the character's words, at any level.** The English is in the dialogue (when she teaches or when you ask) and on the reply buttons. The reply stays `{ line, en }`: `en` is still made for memory, the Diario and the button subtitles, just not shown.
+- **Needs before the translation line can go:** characters must give the English when you ask what something means. Round 21 (`tests/experiments/help-asks.mts`, Josh's real conversations): of 23 Italy asks wanting English, 35% got it in the spoken line; "how do I say X" answered in Italian is right, but "what does X mean" relied on the translation about half the time. One sentence in `character.md`, tested with round 18 and 21, first.
+- **The Done link** (below, Build) follows the same rule at every level: it fades in when the conversation is over.
+- Open: how the taps fade out inside level 1 (which signal moves you from tapping to speaking), and how these three levels relate to the learner tiers (Beginner, Intermediate, Advanced) the character's dialogue follows.
+
 A beginner takes part at one of five levels. The level decides how much support the screen gives, from tapping a reply with English everywhere (level 1) to filling a frame in your own words (level 5). Past level 5 there's nothing to add: that's the normal screen, where you speak freely. Nothing is scripted past level 4.
 
 **These levels are scaffolding only (Josh, 2026-10-17).** They change how you take part, not how characters talk. How characters talk follows the learner's level (Beginner, Intermediate, Advanced; [language-levels-plan.md](language-levels-plan.md) → Three tiers), which moves separately. Reaching the normal screen past level 5 doesn't make you Intermediate: a Beginner there still hears Beginner dialogue. On levels 1–5 the dialogue is always the easiest (Beginner) and doesn't progress from one level to the next: only the support changes.
