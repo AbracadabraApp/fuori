@@ -39,6 +39,10 @@ const PROBES = {
     said: "Sorry, what does that mean?",
     expect: 'They asked, in English, what the character just said means. Pass if the character tells them in English in what they say (not only in the translation), briefly, then carries on in the language, in role.',
   },
+  'what does it mean, in the language': {
+    said: es ? 'Perdón, ¿qué significa eso?' : 'Scusi, cosa vuol dire?',
+    expect: 'They asked, in the language, what the character just said means. Pass if the character tells them in English in what they say (not only in the translation), briefly, then carries on in the language, in role.',
+  },
   'garbled speech': {
     said: es ? 'buenas quisiera eh uno de esto por fa vor cuanto cuesta' : 'buongiorno vorrei eh uno di quest per fa vore quanto costa',
     expect: 'This came through speech-to-text with noise: they want one of something and ask the price. Pass if the character understands the likely meaning and answers it naturally, without remarking on how it was said or asking them to repeat.',

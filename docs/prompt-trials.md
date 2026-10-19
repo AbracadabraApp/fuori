@@ -56,6 +56,19 @@ English when asked, for dropping the English translation line (Josh, 2026-10-19)
 | 2026-10-18b (production) | Production | `character.md` | 0% / 0% | 0–6% / 0% | 100% / 100% | 22% / 0% | — |
 | + "They see no translation… tell them in English, briefly, then carry on" | Dropped | `character-english.md` | 0–13% / 0–6% | 0–13% / 13–19% | 100% / 100% | 48% / 20% | The JSON line still said `line` is "in {language}", so the English went into `en` |
 | + same, and the JSON line: `"line": "what you say, out loud: {language}, and English only when they ask for it"` | **Best so far** | `character-english2.md` | **100% / 100%** | **94% / 63%** | 100% / 100% | 52% / 33% | Not yet: in long real conversations "what does X mean" is still often explained in the language; needs the replay gate before it ships |
+| + "what something means, in English or in {language}" (CLAUDE.md: help comes in English either way) | Tried | `character-english3.md` | 100% / 100% | 88% / 81%; asked in the language 100% / 81% | 100% / 100% | 55% / 40% | "How do I say" fell to 69% Italy: "In English: you say 'Vorrei…'" |
+| english3 + teaching: "When they get a word or a verb form wrong, use it the right way in your answer, in passing" | Tried | `character-teach.md` | 100% / 94–100% | 88% / 88%; in the language 94–100% / 88–100% | 100% / 100% | 50% / 60% | See teaching below |
+| teach + "When they ask how to say something, just say it in {language}" | Tried | `character-teach2.md` | 100% / 100% | 75% / 88%; in the language 75% / 100% | 100% / 100% | 48% / 17% | Within noise of teach (16 samples swing about ±15%); replay gate decides |
+
+Teaching in character (Josh, 2026-10-19: at all levels; vocabulary, gender or number, conjugation, dialect). Goal: characters pick up more of the learner's errors, in role, without lessons or longer lines. `teach-moments.mts` replays each chance the character missed in Josh's real conversations (Italy 78–79, Mexico 6–8: too few) and judges the new line; mistake probe from `core-behaviours.mts`.
+
+| Prompt | Mistake probe (Italy / Mexico) | Missed chances now picked up, Italy (conjugation) | Sounds like a lesson | Words per line | Decision |
+|---|---|---|---|---|---|
+| 2026-10-18b (production) | 0% / 13% | 21% (17%) | 1 | 26.1 | — |
+| `character-english3.md` | 6% / 31% | 23% (23%) | 6 | 26.6 | — |
+| `character-teach.md` | 69–100% / 88% | 49% (37%) | 5 | 29.3 | Replay gate next |
+| `character-teach2.md` | 81% / 75% | 42% (34%) | 3 | 28.5 | Replay gate next |
+
 
 ### Diario cards (experiment, `tests/experiments/diario-cards.mts`)
 
