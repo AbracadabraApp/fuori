@@ -1,6 +1,6 @@
 # Fuori
 
-Voice-first Italian learning game. Read `README.md` and the numbered files in `docs/` before making product or architecture decisions; they are the source of truth for the design.
+Voice-first Italian learning game. **It's a language-learning game, not a language-generating game (Josh, 2026-10-19):** when teaching conflicts with speed, garbled-speech handling, character traits or liveliness, teaching wins. Judge a change first by what the learner learns; the rest are guardrails. Textbooks are the model for how a language is taught. Read `README.md` and the numbered files in `docs/` before making product or architecture decisions; they are the source of truth for the design.
 
 - `prototype/index.html` is the original claude.ai artifact demo. Keep it working and don't refactor it into the app; port ideas from it instead.
 - The learner persona is someone who loves Italy and is staying for a while, not a tourist. Characters treat them as a newcomer who belongs and remember them across days.
