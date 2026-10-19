@@ -185,6 +185,9 @@ public final class ConversationModel {
     }
 
     /// The learner's turn: open the mic (or wait for a tap under VoiceOver)
+    /// True while startRecording waits for the mic
+    private var openingMic = false
+
     private func openTurn() async {
         // Paused while thinking: the mic stays closed until a tap
         guard phase != .paused else { return }
@@ -197,6 +200,13 @@ public final class ConversationModel {
     }
 
     private func startRecording() async {
+        // A second tap while the mic is still opening would start a second
+        // recording and a second watcher; the orphaned watcher later finished
+        // the turn again with the first file already deleted (TestFlight
+        // 0.1.0 (1), "no such file" at step transcribe, 2026-10-19)
+        guard !openingMic, listenTask == nil else { return }
+        openingMic = true
+        defer { openingMic = false }
         guard await AudioSession.requestMicrophone() else {
             phase = .micDenied
             return
@@ -262,6 +272,8 @@ public final class ConversationModel {
     }
 
     private func finishTurn() async {
+        // Once per turn: the tap and the turn's time limit can both end it
+        guard phase == .listening || phase == .hearing else { return }
         listenTask?.cancel()
         listenTask = nil
         let url = recorder.stop()

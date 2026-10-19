@@ -56,6 +56,8 @@ public final class Recorder: @unchecked Sendable {
         engine.inputNode.removeTap(onBus: 0)
         engine.stop()
         file = nil // closes the file
+        // Handed over once: the caller deletes it after reading
+        defer { url = nil }
         return url
     }
 

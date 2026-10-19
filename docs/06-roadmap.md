@@ -14,9 +14,11 @@ Claude can't move these until Josh does:
 2. **Spec for the smaller world** (→ Smaller world, on hold)
 3. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
 4. **Device checks on the iPhone** (only Josh can do audio on the phone) (→ Conversation on the phone)
-5. **Install build 1 from TestFlight**: create an internal group, add yourself and the build (→ Release, stage 1)
 
 ### Conversation on the phone
+- Josh played build 0.1.0 (1) from TestFlight in Italy (2026-10-18): quality good, shorter replies, easier to understand, relatively fast. The mic tap wasn't crisp or obvious
+- [ ] **Claude** The mic tap: make it plainly register (it shows nothing until the mic opens, which can take a moment; a press that changes at once, perhaps a haptic). Propose to Josh before building
+- [x] **Claude** "No such file" errors at step transcribe on that build: a second tap while the mic was opening started a second recording, and the orphaned watcher later finished the turn again with the file already deleted. Fixed in the next build
 - [ ] **Josh** Try today's build: pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
 - [ ] **Josh** Try Magda in the app
 - [ ] **Josh** ⛔ Device checks, on the iPhone during a conversation (while the character speaks and while the mic is open): a phone call comes in; Siri; AirPods out; AirPods in; swipe to the home screen; lock the phone. Each time it should pause, save like any exit, and never reopen the mic without a tap; AirPods out shouldn't carry on through the phone speaker (CLAUDE.md → iPhone app). A simulator can't test this
@@ -90,7 +92,7 @@ Two stages. A TestFlight for Josh alone needs no Apple review and none of the co
 - [x] **Claude** `make archive`, `make export`, `make upload` (`ios/Makefile`); build 0.1.0 (1) uploaded 2026-10-18. Bump `CURRENT_PROJECT_VERSION` in `project.yml` before each upload
 - [x] **Claude** Release-build check: production servers only, launch-argument shortcuts are debug-only
 - [ ] **Claude** The sign-in token carries over from the Xcode build to the TestFlight one (same team and bundle id, so the Keychain item should). Open from 2026-10-17: after one install the phone may have signed in as a new learner, which would make characters forget Josh
-- [ ] **Josh** Add himself to an internal testing group and install from TestFlight
+- [x] **Josh** Installed from TestFlight and played in Italy (2026-10-18)
 - [ ] **Josh** The device checks (Conversation on the phone) on the TestFlight build
 - [ ] **Josh** Gate: play from TestFlight on 3 separate days without the laptop; **Claude** checks `railway logs` for new error codes
 
