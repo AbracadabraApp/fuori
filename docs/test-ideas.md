@@ -30,6 +30,8 @@ How to work it: take the top item, run it, write the result in the test log, mov
 
 ## Done
 
+- Round 17 (2026-10-18): Diario cards. Today's stored review phrases are mostly the character's lines, 18–22% card-worthy; a dedicated card maker gets 69–78% of cards through 9 checks, but only about half its lines are at a beginner's 90% of words.
+
 - Round 14 (2026-10-18): onboarding placement right when learners answer as themselves, wrong every time for a friend answering or a shy learner answering in English; one conversation corrects it in every run (47/47). Found the onboarding send-off max_tokens bug (2577809).
 
 - Round 13 (2026-10-17): choices at the joins and a stricter checker made scripts worse (72–74% of lines "X o Y?", alive and A1 down, joins no better); branching scripts with joins dropped.

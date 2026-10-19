@@ -74,8 +74,10 @@ Five levels, from tapping a reply with English to filling a frame in your own wo
 
 ### Diario: the review place ([diario.md](diario.md); card screens in [beginner-scaffolding.md](beginner-scaffolding.md))
 Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens phrase cards from your own conversations, at each phrase's own beginner level.
-- [ ] **Claude** Card test before any screen: run the memory step on the 24 replay conversations, make cards, judge whether the phrases are useful frames, the two replies make sense, and a beginner follows the character's line
-- [ ] **Claude** The memory prompt picks frame-shaped phrases (whole lines on "Vorrei…", not lone nouns)
+- [x] **Claude** Card test (round 17, [level-judge-test.md](level-judge-test.md)): today's review phrases are mostly the character's lines (18–22% card-worthy); a card maker passes 69–78% of cards on 9 checks; level is the weak spot (about half the lines at 90% of words)
+- [ ] **Claude** Card maker v2: plainer lines and replies, and the line must call for the frame; rerun round 17
+- [ ] **Josh** Decide: does the 90%-of-words bar apply to the whole card, or to the frame and the character's line (the slot noun comes from the learner's own scene, with English on levels 1–2)?
+- [ ] **Claude** Cards from their own step after each conversation (round 17: today's review phrases mostly can't be cards)
 - [ ] **Claude** A judge call per conversation: did the learner say a card's phrase themselves (retires it). No phrase matching
 - [ ] **Josh** Decide: the learner's voice for their replies (one voice per country, or matched to the learner); whether the book shows during a conversation (diario.md suggests not)
 - [ ] **Claude** Build after reply buttons (levels 1–3), since the cards are those screens
