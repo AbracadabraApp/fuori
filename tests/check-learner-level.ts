@@ -9,7 +9,7 @@ import { randomUUID } from 'crypto';
 import { readFileSync } from 'fs';
 import { pack, tutor } from '@/content';
 import {
-  LEVEL_CHECKS, buildLearnerLevelPrompt, checkLearnerLevel, conversationsToCheck, judgeLearnerLevel,
+  LEVEL_CHECKS, buildLearnerLevelPrompt, levelAfter, checkLearnerLevel, conversationsToCheck, judgeLearnerLevel,
   learnerLevelPromptVersion, levelCheckEnabled, type CheckedConversation, type LevelCheck, type LevelJudge,
 } from '@/lib/learner-level';
 
@@ -28,6 +28,13 @@ const all = [conv('a', 3), conv('short', 1), conv('b', 2), conv('c', 5), conv('d
 check(conversationsToCheck(all, 'b').map((c) => c.id).join() === 'a,b', 'the first ones: all of them up to this one');
 check(conversationsToCheck(all, 'e').map((c) => c.id).join() === 'c,d,e', `later: the latest ${LEVEL_CHECKS}, short ones skipped`);
 check(conversationsToCheck(all, 'short').length === 0, 'a conversation too short to say anything: none');
+
+// A change after the first check needs two checks in a row (Josh's Mexico learner: b, b, then i from a friend's lines)
+const b = { level: 'beginner' as const }, i = { level: 'intermediate' as const };
+check(levelAfter('intermediate', [], 'beginner') === 'beginner', 'the first check sets the level');
+check(levelAfter(null, [], 'beginner') === 'beginner', 'no level yet: the check sets it');
+check(levelAfter('beginner', [b, b], 'intermediate') === 'beginner', 'one check that disagrees with the one before: kept');
+check(levelAfter('beginner', [b, i], 'intermediate') === 'intermediate', 'two checks in a row agree: moved');
 
 // The prompt: version and changelog, placeholders filled, lines labelled
 const md = readFileSync(`content/${pack.id}/prompts/learner-level.md`, 'utf8');

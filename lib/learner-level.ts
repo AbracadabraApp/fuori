@@ -3,7 +3,7 @@
  * first conversations confirm or move it). After each of a learner's first
  * LEVEL_CHECKS conversations, one call (content/<country>/prompts/learner-level.md)
  * reads the onboarding answers and the conversations so far and sets
- * learners.level. Each check is kept in learners.level_checks with its reason.
+ * learners.level (a later check needs the one before to agree: levelAfter). Each check is kept in learners.level_checks with its reason.
  *
  * Off unless LEVEL_CHECK is set: "all", or learner ids separated by commas.
  * Off, it doesn't touch the database. Called from lib/remember.ts when a
@@ -33,9 +33,25 @@ export interface LevelCheck {
   at: string;
   conversationId: string;
   before: Level | null;
+  /** What the judge said */
   level: Level;
+  /** The stored level after this check (see levelAfter) */
+  after?: Level;
   reason: string;
   promptVersion: string;
+}
+
+/**
+ * The stored level after a check. The first check sets it (round 14: one
+ * conversation corrected every placement onboarding got wrong). A later check
+ * moves it only if the check before said the same, so one conversation where
+ * someone else spoke doesn't move it (Josh's Mexico learner: beginner, beginner,
+ * then intermediate from a friend's lines, 2026-10-18).
+ */
+export function levelAfter(current: Level | null, earlier: Pick<LevelCheck, 'level'>[], judged: Level): Level {
+  const previous = earlier[earlier.length - 1];
+  if (!previous || !current) return judged;
+  return previous.level === judged ? judged : current;
 }
 
 export function levelCheckEnabled(learnerId: string, env: Record<string, string | undefined> = process.env): boolean {
@@ -126,8 +142,9 @@ export async function checkLearnerLevel(conversationId: string, learnerId: strin
 
   const answers = (learner.onboarding?.answers ?? []).map((a) => a.text).filter(Boolean);
   const judged = await judge(answers, picked.map((c) => ({ name: characterName(c.city_id, c.character_id), turns: c.turns.map((t) => ({ who: t.who, text: t.text })) })));
-  const check: LevelCheck = { at: new Date().toISOString(), conversationId, before: learner.level, level: judged.level, reason: judged.reason, promptVersion: learnerLevelPromptVersion() };
-  await query('UPDATE learners SET level = $2, level_checks = $3 WHERE id = $1', [learnerId, judged.level, JSON.stringify([...checks, check])]);
-  console.log(JSON.stringify({ level: 'info', event: 'level check', conversationId, learnerId, check: checks.length + 1, before: learner.level, after: judged.level, conversations: picked.length }));
-  return judged.level === learner.level ? 'kept' : 'changed';
+  const after = levelAfter(learner.level, checks, judged.level);
+  const check: LevelCheck = { at: new Date().toISOString(), conversationId, before: learner.level, level: judged.level, after, reason: judged.reason, promptVersion: learnerLevelPromptVersion() };
+  await query('UPDATE learners SET level = $2, level_checks = $3 WHERE id = $1', [learnerId, after, JSON.stringify([...checks, check])]);
+  console.log(JSON.stringify({ level: 'info', event: 'level check', conversationId, learnerId, check: checks.length + 1, before: learner.level, judged: judged.level, after, conversations: picked.length }));
+  return after === learner.level ? 'kept' : 'changed';
 }
