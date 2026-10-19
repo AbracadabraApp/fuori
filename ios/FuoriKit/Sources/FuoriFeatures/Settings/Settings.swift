@@ -93,8 +93,6 @@ struct SettingsSheet: View {
                         .listRowInsets(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12))
                     } header: {
                         Text("Explore")
-                    } footer: {
-                        Text("Your progress and the people you've met are kept in each country.")
                     }
                 }
                 Section {
