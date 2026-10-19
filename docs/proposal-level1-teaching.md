@@ -71,7 +71,8 @@ That's a lesson, not a barista. Only the question the learner has to answer gets
 - **Her suggestion is a button.** The reply she says aloud must be one of the two reply buttons, word for word, so the learner hears the line they can tap. The replies call (`lib/replies.ts`) already reads her last line; it should take her suggestion as one of the two. The test checks that they match.
 - **The fade is simple.** Level 1: she teaches the key line every turn. Level 2 and up: she doesn't (no "teach on hesitation": with no timer, by Josh's rule, a character can't tell that you're hesitating). Level 3 and up keeps today's rule, English when you ask.
 - **Less on screen.** With the English spoken, the English subtitle line goes at level 1, or it would appear twice. The Italian subtitle stays (an option, as everywhere).
-- **English is still on the buttons, for now.** Level 1 keeps English on the reply buttons, as in the levels table. That's the first step. The ear-first version would hide the buttons' English behind a tap too; try it once this works.
+- **English stays on the buttons.** Level 1 keeps English on the reply buttons, as in the levels table.
+- **No new controls.** No tap-to-translate, replay, dictionary or other new chrome on the conversation screen (Josh, 2026-10-19). Help comes from the character, by voice; the screen doesn't grow.
 - **It fits missions.** The mission card previews the frame ("Vorrei ___"). Hearing her say it just before you need it is the "meet it" step, with no extra staging.
 
 ## Where it would live
