@@ -4,6 +4,8 @@ Scripts behind the level and dialogue tests (results in [docs/level-judge-test.m
 
 Run from the repo root with the API key: `npx tsx --env-file=.env.local tests/experiments/<script>.mts …`, with `COUNTRY=es-mx` for Mexico. Outputs go to `tests/experiments/out/`, which is gitignored because several quote Josh's real lines. Every Claude call goes through `lib/claude.ts`, so the models are the app's.
 
+**Committed test conversations:** `tests/conversations/synthetic-set/<country>.json` (28 per country, simulated learners: beginner, hesitant, improving, asks what things mean, verb mistakes, errand then leave, chatty then leave), same shape as the admin export, so pass it wherever a script takes `out/admin.json`. Made by `tests/conversations/synthetic-set.ts` with the production prompt (version in each row). Synthetic learners are tidier than real ones (round 19: 82% said goodbye against 54% in Josh's conversations), so confirm findings on the real export on the laptop.
+
 | Script | What it measures | Input | Rounds |
 |---|---|---|---|
 | `question-kinds.mts` | What each character line asks (none, yes/no, choice, one fact, open) and whether a beginner could answer | report `.md` files, `label=path` | 5–6, 15 |

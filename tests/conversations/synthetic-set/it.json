@@ -1,0 +1,2525 @@
+[
+  {
+    "id": "synthetic-it-01",
+    "synthetic": true,
+    "learner": "english-beginner",
+    "character_id": "paolo-doria",
+    "place_id": "mercato-orientale",
+    "city_id": "genova",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T09:00:00.000Z",
+    "ended_at": "2026-10-19T09:03:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T09:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Prego, venga pure. Cosa le serve oggi?",
+        "en": "Good morning! Please, come on over. What do you need today?"
+      },
+      {
+        "at": "2026-10-19T09:00:20.000Z",
+        "who": "learner",
+        "text": "Bone journal! Um, voglio il... la pizza? No... voglio pomodori, per favore."
+      },
+      {
+        "at": "2026-10-19T09:00:40.000Z",
+        "who": "npc",
+        "text": "Ah, i pomodori! Ottima scelta, sono freschissimi, arrivano stamattina. Quanti ne vuole, un chilo?",
+        "en": "Ah, tomatoes! Excellent choice, they're very fresh, they arrived this morning. How many do you want, a kilo?"
+      },
+      {
+        "at": "2026-10-19T09:01:00.000Z",
+        "who": "learner",
+        "text": "Um... un chilo, sì. Sì, un chilo, per favore. Quando costa?"
+      },
+      {
+        "at": "2026-10-19T09:01:20.000Z",
+        "who": "npc",
+        "text": "Un chilo fa tre euro e cinquanta. Li metto in un sacchetto?",
+        "en": "A kilo comes to three euros fifty. Shall I put them in a bag?"
+      },
+      {
+        "at": "2026-10-19T09:01:40.000Z",
+        "who": "learner",
+        "text": "Sì, un sacchetto, per favore. Um, ecco... tre euro e cinquanta. Gratsie!"
+      },
+      {
+        "at": "2026-10-19T09:02:00.000Z",
+        "who": "npc",
+        "text": "Perfetto, ecco i suoi pomodori. Grazie a lei! Buona giornata e buon appetito!",
+        "en": "Perfect, here are your tomatoes. Thank you! Have a nice day and enjoy your meal!"
+      },
+      {
+        "at": "2026-10-19T09:02:20.000Z",
+        "who": "learner",
+        "text": "Grazie! Buona giornata, arrivederci!"
+      },
+      {
+        "at": "2026-10-19T09:02:40.000Z",
+        "who": "npc",
+        "text": "Arrivederci, torni a trovarmi presto!",
+        "en": "Goodbye, come see me again soon!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-02",
+    "synthetic": true,
+    "learner": "hesitant",
+    "character_id": "isabella-conti",
+    "place_id": "piazza-comune",
+    "city_id": "assisi",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T10:00:00.000Z",
+    "ended_at": "2026-10-19T10:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T10:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Ti piace la musica di strada? Io sono Isabella, suono qui in piazza ogni giorno.",
+        "en": "Good morning! Do you like street music? I'm Isabella, I play here in the square every day."
+      },
+      {
+        "at": "2026-10-19T10:00:20.000Z",
+        "who": "learner",
+        "text": "Ehm... buongiorno. Io... ehm... sono Marco. Ripeti per favore, più lentamente?"
+      },
+      {
+        "at": "2026-10-19T10:00:40.000Z",
+        "who": "npc",
+        "text": "Certo, Marco! Piacere. Mi chiamo Isabella. Suono qui, in piazza, ogni giorno. Sei di Assisi?",
+        "en": "Of course, Marco! Nice to meet you. My name is Isabella. I play here, in the square, every day. Are you from Assisi?"
+      },
+      {
+        "at": "2026-10-19T10:01:00.000Z",
+        "who": "learner",
+        "text": "Ehm... no. Io sono... ehm... americano. Sorry... Assisi... bella. Ehm... piacere, Isabella."
+      },
+      {
+        "at": "2026-10-19T10:01:20.000Z",
+        "who": "npc",
+        "text": "Non ti preoccupare, Marco, parli benissimo! Benvenuto in Italia. Sei qui in vacanza?",
+        "en": "Don't worry, Marco, you speak very well! Welcome to Italy. Are you here on vacation?"
+      },
+      {
+        "at": "2026-10-19T10:01:40.000Z",
+        "who": "learner",
+        "text": "Ehm... vacanza... sì? Ehm... sì, io... vacanza. Ehm... sorry, do you speak English?"
+      },
+      {
+        "at": "2026-10-19T10:02:00.000Z",
+        "who": "npc",
+        "text": "Un pochino, Marco, ma qui parliamo italiano, e vai benissimo! Vuoi sentire una canzone?",
+        "en": "A little, Marco, but here we speak Italian, and you're doing great! Do you want to hear a song?"
+      },
+      {
+        "at": "2026-10-19T10:02:20.000Z",
+        "who": "learner",
+        "text": "Ehm... una canzone... sì, ehm... sì, grazie. Mi piace... la musica."
+      },
+      {
+        "at": "2026-10-19T10:02:40.000Z",
+        "who": "npc",
+        "text": "Perfetto! Ti suono una canzone italiana, molto famosa. Siediti qui, Marco, e ascolta.",
+        "en": "Perfect! I'll play you an Italian song, a very famous one. Sit down here, Marco, and listen."
+      },
+      {
+        "at": "2026-10-19T10:03:00.000Z",
+        "who": "learner",
+        "text": "Ehm... siediti... ehm... okay. Grazie, Isabella. Ehm... ripeti per favore?"
+      },
+      {
+        "at": "2026-10-19T10:03:20.000Z",
+        "who": "npc",
+        "text": "Certo! Siediti qui. Siediti, Marco, vuol dire: sit down. Poi ascolta la canzone.",
+        "en": "Of course! Siediti qui. Siediti, Marco, means: sit down. Then listen to the song."
+      },
+      {
+        "at": "2026-10-19T10:03:40.000Z",
+        "who": "learner",
+        "text": "Ah... okay! Ehm... grazie, Isabella. Io... ehm... siedo qui. Ascolto la canzone."
+      },
+      {
+        "at": "2026-10-19T10:04:00.000Z",
+        "who": "npc",
+        "text": "Bravissimo, Marco! Ecco, comincio. Questa canzone parla di un amore a Roma. Ti piace?",
+        "en": "Very good, Marco! Here, I'm starting. This song is about a love in Rome. Do you like it?"
+      },
+      {
+        "at": "2026-10-19T10:04:20.000Z",
+        "who": "learner",
+        "text": "Ehm... sì, mi piace. Ehm... bella canzone. Ehm... Roma... amore... ehm, bello."
+      },
+      {
+        "at": "2026-10-19T10:04:40.000Z",
+        "who": "npc",
+        "text": "Grazie, Marco! Sì, Roma e l'amore: una combinazione perfetta. Sei mai stato a Roma?",
+        "en": "Thank you, Marco! Yes, Rome and love: a perfect combination. Have you ever been to Rome?"
+      },
+      {
+        "at": "2026-10-19T10:05:00.000Z",
+        "who": "learner",
+        "text": "Ehm... Roma... no. Ehm... ripeti per favore, più lentamente?"
+      },
+      {
+        "at": "2026-10-19T10:05:20.000Z",
+        "who": "npc",
+        "text": "Certo! Sei... mai... stato... a Roma? Hai visitato Roma?",
+        "en": "Of course! Have you ever been to Rome? Have you visited Rome?"
+      },
+      {
+        "at": "2026-10-19T10:05:40.000Z",
+        "who": "learner",
+        "text": "Ehm... no, io... ehm... non visito Roma. Ehm... Assisi, sì. Roma... forse domani?"
+      },
+      {
+        "at": "2026-10-19T10:06:00.000Z",
+        "who": "npc",
+        "text": "Che bella idea, Marco! Roma è bellissima. Ma prima, goditi Assisi. Dove alloggi qui?",
+        "en": "What a great idea, Marco! Rome is beautiful. But first, enjoy Assisi. Where are you staying here?"
+      },
+      {
+        "at": "2026-10-19T10:06:20.000Z",
+        "who": "learner",
+        "text": "Ehm... alloggi? Ehm... non capisco. Più lentamente, per favore?"
+      },
+      {
+        "at": "2026-10-19T10:06:40.000Z",
+        "who": "npc",
+        "text": "Certo! Dove dormi, Marco? In un albergo? Alloggi vuol dire: where are you staying.",
+        "en": "Of course! Where do you sleep, Marco? In a hotel? Alloggi means: where are you staying."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-03",
+    "synthetic": true,
+    "learner": "improving",
+    "character_id": "marco-verdure",
+    "place_id": "mercato-piazza-erbe",
+    "city_id": "verona",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T11:00:00.000Z",
+    "ended_at": "2026-10-19T11:05:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T11:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto al mercato. Cosa le serve oggi?",
+        "en": "Good morning! Welcome to the market. What do you need today?"
+      },
+      {
+        "at": "2026-10-19T11:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno! Sono qui da poche settimane e ieri sono andato al supermercato, ma oggi voglio comprare le mele e le fragole. Sono buone?"
+      },
+      {
+        "at": "2026-10-19T11:00:40.000Z",
+        "who": "npc",
+        "text": "Benvenuto a Verona! Sono freschissime, le fragole sono arrivate stamattina. Quanti chili desidera?",
+        "en": "Welcome to Verona! They're very fresh, the strawberries arrived this morning. How many kilos would you like?"
+      },
+      {
+        "at": "2026-10-19T11:01:00.000Z",
+        "who": "learner",
+        "text": "Vorrei un chilo di mele e mezzo chilo di fragole, per favore. Lei lavora qui da molto tempo?"
+      },
+      {
+        "at": "2026-10-19T11:01:20.000Z",
+        "who": "npc",
+        "text": "Ecco a lei, un chilo di mele e mezzo di fragole! Sì, lavoro qui da vent'anni, era il banco di mio padre. Ma lei, da dove viene?",
+        "en": "Here you go, a kilo of apples and half a kilo of strawberries! Yes, I've worked here for twenty years, it was my father's stall. But where are you from?"
+      },
+      {
+        "at": "2026-10-19T11:01:40.000Z",
+        "who": "learner",
+        "text": "Vengo dalla Germania, da Monaco. Che bello, il banco di suo padre! Quanto costa tutto, per favore?"
+      },
+      {
+        "at": "2026-10-19T11:02:00.000Z",
+        "who": "npc",
+        "text": "Monaco, che bella città! Allora, le mele due euro e cinquanta, le fragole tre euro. Fanno cinque euro e cinquanta in tutto.",
+        "en": "Munich, what a beautiful city! So, the apples are two euros fifty, the strawberries three euros. That makes five euros fifty in total."
+      },
+      {
+        "at": "2026-10-19T11:02:20.000Z",
+        "who": "learner",
+        "text": "Ecco a lei, cinque euro e cinquanta. Grazie mille! Ieri ho visto tanti turisti in piazza, il mercato è sempre cosÃ¬ pieno?"
+      },
+      {
+        "at": "2026-10-19T11:02:40.000Z",
+        "who": "npc",
+        "text": "Grazie a lei! Sì, in primavera e in estate c'è sempre tanta gente, soprattutto nel fine settimana. Ma la mattina presto è più tranquillo, e i veronesi vengono a fare la spesa. Le piace Verona finora?",
+        "en": "Thank you! Yes, in spring and summer there are always lots of people, especially on weekends. But early in the morning it's quieter, and the locals come to do their shopping. Do you like Verona so far?"
+      },
+      {
+        "at": "2026-10-19T11:03:00.000Z",
+        "who": "learner",
+        "text": "Sì, mi piace molto! Ieri sono andato all'Arena e ho mangiato un risotto buonissimo. Lei conosce un buon ristorante qui vicino?"
+      },
+      {
+        "at": "2026-10-19T11:03:20.000Z",
+        "who": "npc",
+        "text": "Eh, l'Arena è bellissima! Per mangiare bene qui vicino le consiglio una trattoria in via Mazzini, fanno un risotto all'Amarone che è una meraviglia. Provi quello!",
+        "en": "Ah, the Arena is gorgeous! For a good meal nearby I recommend a trattoria on Via Mazzini, they make an Amarone risotto that's a marvel. Try that one!"
+      },
+      {
+        "at": "2026-10-19T11:03:40.000Z",
+        "who": "learner",
+        "text": "Un risotto all'Amarone, che bello! Grazie mille per il consiglio, ci vado domani. Lei mangia spesso là?"
+      },
+      {
+        "at": "2026-10-19T11:04:00.000Z",
+        "who": "npc",
+        "text": "Ma sì, ogni tanto ci vado la domenica con la famiglia, il proprietario è un mio amico. Se ci va, gli dica che l'ha mandata Marco, il fruttivendolo!",
+        "en": "Oh yes, I go there every now and then on Sundays with my family, the owner is a friend of mine. If you go, tell him that Marco, the fruit seller, sent you!"
+      },
+      {
+        "at": "2026-10-19T11:04:20.000Z",
+        "who": "learner",
+        "text": "Va bene, gli dico che mi manda Marco! Grazie mille e buona giornata, arrivederci!"
+      },
+      {
+        "at": "2026-10-19T11:04:40.000Z",
+        "who": "npc",
+        "text": "Perfetto! Grazie a lei, buona giornata e buon appetito! Arrivederci, e torni presto a trovarmi!",
+        "en": "Perfect! Thank you, have a good day and enjoy your meal! Goodbye, and come visit me again soon!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-04",
+    "synthetic": true,
+    "learner": "asks-meaning",
+    "character_id": "michele-barista",
+    "place_id": "caffe-san-carlo",
+    "city_id": "torino",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T12:00:00.000Z",
+    "ended_at": "2026-10-19T12:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T12:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto al Caffè San Carlo. Cosa le preparo?",
+        "en": "Good morning! Welcome to Caffè San Carlo. What can I make for you?"
+      },
+      {
+        "at": "2026-10-19T12:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno. Um, un caffè, per favore. Scusi, cosa significa \"preparo\"?"
+      },
+      {
+        "at": "2026-10-19T12:00:40.000Z",
+        "who": "npc",
+        "text": "Certo, un caffè! \"Preparo\" viene da \"preparare\", cioè fare, mettere insieme. Quindi \"cosa le preparo\" vuol dire: cosa le faccio. Lo beve qui al banco o preferisce sedersi?",
+        "en": "Of course, one coffee! \"Preparo\" comes from \"preparare\", meaning to make or put together. So \"cosa le preparo\" means: what shall I make you. Will you drink it here at the counter or would you prefer to sit?"
+      },
+      {
+        "at": "2026-10-19T12:01:00.000Z",
+        "who": "learner",
+        "text": "Ah, ho capito, grazie. Scusi, cosa significa \"banco\"?"
+      },
+      {
+        "at": "2026-10-19T12:01:20.000Z",
+        "who": "npc",
+        "text": "Il banco è questo, qui davanti a me, dove stanno i clienti in piedi. Qui in Italia il caffè si beve spesso così, veloce, al banco. Si ferma un momento?",
+        "en": "The counter is this one, right in front of me, where customers stand. Here in Italy coffee is often drunk like this, quickly, at the counter. Will you stay a moment?"
+      },
+      {
+        "at": "2026-10-19T12:01:40.000Z",
+        "who": "learner",
+        "text": "Sì, al banco, grazie. Um, scusi, come si dice \"how much is it\" in italiano?"
+      },
+      {
+        "at": "2026-10-19T12:02:00.000Z",
+        "who": "npc",
+        "text": "Si dice \"Quanto costa?\" oppure \"Quanto le devo?\", che al bar è più comune. Ecco il suo caffè, signore.",
+        "en": "You say \"Quanto costa?\" or \"Quanto le devo?\", which is more common at a bar. Here is your coffee, sir."
+      },
+      {
+        "at": "2026-10-19T12:02:20.000Z",
+        "who": "learner",
+        "text": "Grazie! Um, quanto le devo?"
+      },
+      {
+        "at": "2026-10-19T12:02:40.000Z",
+        "who": "npc",
+        "text": "Un euro e dieci, grazie. Bravo, ha parlato proprio come un torinese!",
+        "en": "One euro ten, please. Well done, you spoke just like a Turinese!"
+      },
+      {
+        "at": "2026-10-19T12:03:00.000Z",
+        "who": "learner",
+        "text": "Un euro e dieci, ecco. Grazie mille! Um, scusi, cosa significa \"torinese\"?"
+      },
+      {
+        "at": "2026-10-19T12:03:20.000Z",
+        "who": "npc",
+        "text": "Torinese vuol dire di Torino, la città dove siamo adesso. Io sono torinese, per esempio. Lei da dove viene?",
+        "en": "Torinese means from Turin, the city where we are now. I am Torinese, for example. Where are you from?"
+      },
+      {
+        "at": "2026-10-19T12:03:40.000Z",
+        "who": "learner",
+        "text": "Ah, ho capito! Io vengo da Londra. Um, scusi, come si dice \"nice to meet you\" in italiano?"
+      },
+      {
+        "at": "2026-10-19T12:04:00.000Z",
+        "who": "npc",
+        "text": "Si dice \"Piacere!\" oppure \"Molto piacere!\". Io sono Michele, piacere. Londra è bellissima, ci sono stato una volta.",
+        "en": "You say \"Piacere!\" or \"Molto piacere!\". I'm Michele, nice to meet you. London is beautiful, I've been there once."
+      },
+      {
+        "at": "2026-10-19T12:04:20.000Z",
+        "who": "learner",
+        "text": "Piacere, Michele! Um, scusi, cosa significa \"bellissima\"?"
+      },
+      {
+        "at": "2026-10-19T12:04:40.000Z",
+        "who": "npc",
+        "text": "\"Bellissima\" vuol dire molto, molto bella. Da \"bella\" si aggiunge \"-issima\" per dire \"very\". Per esempio, il suo italiano è bellissimo!",
+        "en": "\"Bellissima\" means very, very beautiful. From \"bella\" you add \"-issima\" to say \"very\". For example, your Italian is very beautiful!"
+      },
+      {
+        "at": "2026-10-19T12:05:00.000Z",
+        "who": "learner",
+        "text": "Ah, grazie mille! Um, scusi, cosa significa \"italiano\"... no, scusi, come si dice \"see you later\" in italiano?"
+      },
+      {
+        "at": "2026-10-19T12:05:20.000Z",
+        "who": "npc",
+        "text": "Si dice \"A dopo!\" se ci vediamo oggi, oppure \"Arrivederci!\" o \"A presto!\". Ci vediamo domani per un altro caffè, eh!",
+        "en": "You say \"A dopo!\" if we're seeing each other today, or \"Arrivederci!\" or \"A presto!\". See you tomorrow for another coffee, eh!"
+      },
+      {
+        "at": "2026-10-19T12:05:40.000Z",
+        "who": "learner",
+        "text": "Ah, grazie! Um, scusi, cosa significa \"domani\"? Non capisco."
+      },
+      {
+        "at": "2026-10-19T12:06:00.000Z",
+        "who": "npc",
+        "text": "\"Domani\" è il giorno dopo oggi. Oggi è oggi, domani è il giorno dopo. Quindi \"a domani\" vuol dire: ci vediamo il giorno dopo.",
+        "en": "\"Domani\" is the day after today. Today is today, tomorrow is the day after. So \"a domani\" means: we'll see each other the next day."
+      },
+      {
+        "at": "2026-10-19T12:06:20.000Z",
+        "who": "learner",
+        "text": "Ah, ho capito! Grazie, Michele. A domani! Arrivederci!"
+      },
+      {
+        "at": "2026-10-19T12:06:40.000Z",
+        "who": "npc",
+        "text": "A domani, e buona giornata a Torino! Arrivederci!",
+        "en": "See you tomorrow, and have a good day in Turin! Goodbye!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-05",
+    "synthetic": true,
+    "learner": "verb-mistakes",
+    "character_id": "luigi-bigliettaio-assisi",
+    "place_id": "stazione-assisi",
+    "city_id": "assisi",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T13:00:00.000Z",
+    "ended_at": "2026-10-19T13:03:40.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T13:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Dove va oggi? Un biglietto per Roma, forse?",
+        "en": "Good morning! Where are you going today? A ticket to Rome, perhaps?"
+      },
+      {
+        "at": "2026-10-19T13:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno! Sì, io vado a Roma oggi. Voglio un biglietto per Roma Termini, per favore. Quanto costa?"
+      },
+      {
+        "at": "2026-10-19T13:00:40.000Z",
+        "who": "npc",
+        "text": "Va bene, Roma Termini. Con il regionale costa circa dodici euro, ma ci vogliono due ore e mezza. Va bene cosรฌ?",
+        "en": "All right, Roma Termini. With the regional train it costs about twelve euros, but it takes two and a half hours. Is that okay?"
+      },
+      {
+        "at": "2026-10-19T13:01:00.000Z",
+        "who": "learner",
+        "text": "Sì, va bene. Io prendo il regionale. A che ora parte il treno?"
+      },
+      {
+        "at": "2026-10-19T13:01:20.000Z",
+        "who": "npc",
+        "text": "Il prossimo parte alle dieci e quarantacinque, dal binario due. Ha ancora venti minuti. Solo andata o anche il ritorno?",
+        "en": "The next one leaves at ten forty-five, from platform two. You still have twenty minutes. One way only, or the return as well?"
+      },
+      {
+        "at": "2026-10-19T13:01:40.000Z",
+        "who": "learner",
+        "text": "Solo andata, grazie. Io torno a Assisi domani, ma compro il biglietto domani a Roma."
+      },
+      {
+        "at": "2026-10-19T13:02:00.000Z",
+        "who": "npc",
+        "text": "Perfetto, solo andata allora. Sono dodici euro e dieci. Ricordi di convalidare il biglietto alla macchinetta gialla prima di salire, eh!",
+        "en": "Perfect, one way then. That's twelve euros ten. Remember to validate the ticket at the yellow machine before boarding, eh!"
+      },
+      {
+        "at": "2026-10-19T13:02:20.000Z",
+        "who": "learner",
+        "text": "Ok, grazie. Io pago con la carta, va bene? Dove è la macchinetta giallo?"
+      },
+      {
+        "at": "2026-10-19T13:02:40.000Z",
+        "who": "npc",
+        "text": "Certo, con la carta va benissimo. La macchinetta gialla รจ lร , vicino all'entrata del binario due, a destra. La vede?",
+        "en": "Of course, paying by card is perfectly fine. The yellow machine is over there, near the entrance to platform two, on the right. Do you see it?"
+      },
+      {
+        "at": "2026-10-19T13:03:00.000Z",
+        "who": "learner",
+        "text": "Sì, la vedo! Grazie mille. Io convalido il biglietto e poi aspetto il treno al binario due."
+      },
+      {
+        "at": "2026-10-19T13:03:20.000Z",
+        "who": "npc",
+        "text": "Esatto, bravo! Il treno arriva tra poco. Buon viaggio a Roma e buona giornata!",
+        "en": "Exactly, well done! The train arrives shortly. Have a good trip to Rome and a good day!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-06",
+    "synthetic": true,
+    "learner": "errand-and-leave",
+    "character_id": "federica-lenti",
+    "place_id": "gelateria-santa-maria",
+    "city_id": "assisi",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T14:00:00.000Z",
+    "ended_at": "2026-10-19T14:03:40.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T14:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto alla Gelateria Santa Maria. Cosa ti preparo oggi?",
+        "en": "Good morning! Welcome to Gelateria Santa Maria. What can I make for you today?"
+      },
+      {
+        "at": "2026-10-19T14:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno. Vorrei un gelato, per favore. Cioccolato e... fragola."
+      },
+      {
+        "at": "2026-10-19T14:00:40.000Z",
+        "who": "npc",
+        "text": "Ottima scelta, cioccolato e fragola vanno sempre d'accordo! Lo vuoi in coppetta o nel cono?",
+        "en": "Great choice, chocolate and strawberry always go well together! Do you want it in a cup or in a cone?"
+      },
+      {
+        "at": "2026-10-19T14:01:00.000Z",
+        "who": "learner",
+        "text": "Nel cono, per favore."
+      },
+      {
+        "at": "2026-10-19T14:01:20.000Z",
+        "who": "npc",
+        "text": "Perfetto, ecco il tuo cono! Vuoi anche un po' di panna sopra?",
+        "en": "Perfect, here's your cone! Would you like a bit of whipped cream on top too?"
+      },
+      {
+        "at": "2026-10-19T14:01:40.000Z",
+        "who": "learner",
+        "text": "No, grazie. Quanto costa?"
+      },
+      {
+        "at": "2026-10-19T14:02:00.000Z",
+        "who": "npc",
+        "text": "Senza panna, sono tre euro. Paghi in contanti o con la carta?",
+        "en": "Without cream, it's three euros. Are you paying in cash or by card?"
+      },
+      {
+        "at": "2026-10-19T14:02:20.000Z",
+        "who": "learner",
+        "text": "In contanti. Ecco, tre euro."
+      },
+      {
+        "at": "2026-10-19T14:02:40.000Z",
+        "who": "npc",
+        "text": "Grazie mille! Ecco il tuo gelato, buona passeggiata ad Assisi. Sei qui in vacanza?",
+        "en": "Thank you so much! Here's your gelato, enjoy your walk in Assisi. Are you here on vacation?"
+      },
+      {
+        "at": "2026-10-19T14:03:00.000Z",
+        "who": "learner",
+        "text": "Sì, sono in vacanza. Assisi è molto bella! Grazie e arrivederci."
+      },
+      {
+        "at": "2026-10-19T14:03:20.000Z",
+        "who": "npc",
+        "text": "Grazie a te, sono contenta che ti piaccia! Arrivederci e buona vacanza!",
+        "en": "Thank you, I'm glad you like it! Goodbye and have a great vacation!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-07",
+    "synthetic": true,
+    "learner": "chatty-leaver",
+    "character_id": "roberto-costa",
+    "place_id": "bar-rita",
+    "city_id": "milano",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T15:00:00.000Z",
+    "ended_at": "2026-10-19T15:05:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T15:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Mi dica, cosa le preparo?",
+        "en": "Good morning! Tell me, what can I make for you?"
+      },
+      {
+        "at": "2026-10-19T15:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno! Un cappuccino e un cornetto, per favore."
+      },
+      {
+        "at": "2026-10-19T15:00:40.000Z",
+        "who": "npc",
+        "text": "Subito! Il cornetto lo vuole semplice o alla crema?",
+        "en": "Right away! Do you want the croissant plain or with cream?"
+      },
+      {
+        "at": "2026-10-19T15:01:00.000Z",
+        "who": "learner",
+        "text": "Alla crema, per favore. Grazie mille!"
+      },
+      {
+        "at": "2026-10-19T15:01:20.000Z",
+        "who": "npc",
+        "text": "Perfetto, alla crema! Sono tre euro e cinquanta. Si accomodi pure, glielo porto subito.",
+        "en": "Perfect, with cream! That'll be three euros fifty. Please, make yourself comfortable, I'll bring it right over."
+      },
+      {
+        "at": "2026-10-19T15:01:40.000Z",
+        "who": "learner",
+        "text": "Grazie! Va bene, mi siedo qui vicino alla finestra."
+      },
+      {
+        "at": "2026-10-19T15:02:00.000Z",
+        "who": "npc",
+        "text": "Ottima scelta, lì c'è un bel sole la mattina. Ecco a lei, cappuccino e cornetto caldo! Buona colazione. Lei non è di qui, vero?",
+        "en": "Great choice, there's lovely sun there in the morning. Here you are, cappuccino and a warm croissant! Enjoy your breakfast. You're not from around here, are you?"
+      },
+      {
+        "at": "2026-10-19T15:02:20.000Z",
+        "who": "learner",
+        "text": "No, non sono di Milano. Sono americano, ma studio italiano qui da due mesi."
+      },
+      {
+        "at": "2026-10-19T15:02:40.000Z",
+        "who": "npc",
+        "text": "Ah, americano! Complimenti, due mesi e parla già molto bene. Si trova bene a Milano, nei Navigli?",
+        "en": "Ah, an American! Congratulations, two months and you already speak very well. Are you enjoying Milan, here in the Navigli?"
+      },
+      {
+        "at": "2026-10-19T15:03:00.000Z",
+        "who": "learner",
+        "text": "Sì, mi piace molto! Ma Milano è un po' grande, e io non conosco ancora tutti i posti."
+      },
+      {
+        "at": "2026-10-19T15:03:20.000Z",
+        "who": "npc",
+        "text": "Eh, Milano è grande, ma con calma si scopre tutto! Qui nei Navigli la sera è bellissimo, con i locali lungo il canale. Ha già visto il Duomo?",
+        "en": "Eh, Milan is big, but little by little you discover everything! Here in the Navigli the evening is beautiful, with the bars along the canal. Have you already seen the Duomo?"
+      },
+      {
+        "at": "2026-10-19T15:03:40.000Z",
+        "who": "learner",
+        "text": "Sì, ho visto il Duomo la settimana scorsa. È molto bello! Ma non sono ancora salito sul tetto."
+      },
+      {
+        "at": "2026-10-19T15:04:00.000Z",
+        "who": "npc",
+        "text": "Ah, ma allora deve proprio salire sul tetto! La vista è magnifica, soprattutto con la giornata limpida. Vada la mattina presto, così trova meno gente. Poi mi racconta com'è!",
+        "en": "Ah, then you really must go up on the roof! The view is magnificent, especially on a clear day. Go early in the morning, so there are fewer people. Then you can tell me how it was!"
+      },
+      {
+        "at": "2026-10-19T15:04:20.000Z",
+        "who": "learner",
+        "text": "Grazie del consiglio! Vado domani mattina presto. Adesso devo andare a lezione. Arrivederci e a presto!"
+      },
+      {
+        "at": "2026-10-19T15:04:40.000Z",
+        "who": "npc",
+        "text": "Benissimo, buona lezione e buona salita domani! Arrivederci, e a presto!",
+        "en": "Very good, enjoy your class and a good climb tomorrow! Goodbye, and see you soon!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-08",
+    "synthetic": true,
+    "learner": "english-beginner",
+    "character_id": "marco-cioccolataio",
+    "place_id": "guido-gobino",
+    "city_id": "torino",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T16:00:00.000Z",
+    "ended_at": "2026-10-19T16:03:40.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T16:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto da Gobino. Posso aiutarla?",
+        "en": "Good morning! Welcome to Gobino. Can I help you?"
+      },
+      {
+        "at": "2026-10-19T16:00:20.000Z",
+        "who": "learner",
+        "text": "Bone journal! Io voglio il cioccolato, per favore. Quando costa?"
+      },
+      {
+        "at": "2026-10-19T16:00:40.000Z",
+        "who": "npc",
+        "text": "Certo, con piacere! Dipende dal cioccolato: abbiamo i gianduiotti, le tavolette, le praline. Quale preferisce?",
+        "en": "Of course, with pleasure! It depends on the chocolate: we have gianduiotti, bars, pralines. Which do you prefer?"
+      },
+      {
+        "at": "2026-10-19T16:01:00.000Z",
+        "who": "learner",
+        "text": "Um... non capisco. Gianduiotti? Io voglio il... uh... gianduiotti, per favore. Quando costa?"
+      },
+      {
+        "at": "2026-10-19T16:01:20.000Z",
+        "who": "npc",
+        "text": "Ottima scelta! I gianduiotti sono il nostro cioccolato tipico di Torino, con nocciole del Piemonte. Costano quaranta euro al chilo. Quanti ne desidera?",
+        "en": "Great choice! Gianduiotti are our typical Turin chocolate, made with Piedmont hazelnuts. They cost forty euros per kilo. How many would you like?"
+      },
+      {
+        "at": "2026-10-19T16:01:40.000Z",
+        "who": "learner",
+        "text": "Um... quaranta euro? Non capisco \"quanti\". Io voglio... piccolo, per favore. Uno... box?"
+      },
+      {
+        "at": "2026-10-19T16:02:00.000Z",
+        "who": "npc",
+        "text": "Ah, una scatola piccola! Va benissimo. Abbiamo una scatola da dieci gianduiotti, costa otto euro. Va bene?",
+        "en": "Ah, a small box! That's perfect. We have a box of ten gianduiotti, it costs eight euros. Is that okay?"
+      },
+      {
+        "at": "2026-10-19T16:02:20.000Z",
+        "who": "learner",
+        "text": "Si, va bene. Otto euro. Gratsie! Uh... posso pagare con la carta?"
+      },
+      {
+        "at": "2026-10-19T16:02:40.000Z",
+        "who": "npc",
+        "text": "Ma certo, la carta va benissimo! Ecco la sua scatola di gianduiotti. Può avvicinare la carta qui al lettore.",
+        "en": "But of course, a card is just fine! Here is your box of gianduiotti. You can hold your card up to the reader here."
+      },
+      {
+        "at": "2026-10-19T16:03:00.000Z",
+        "who": "learner",
+        "text": "Ok, gratsie! Uh... qui? Arrivederci, buon giorno!"
+      },
+      {
+        "at": "2026-10-19T16:03:20.000Z",
+        "who": "npc",
+        "text": "Sì, esatto, proprio lì! Perfetto, pagamento riuscito. Grazie a lei, arrivederci e buona giornata! Torni a trovarci!",
+        "en": "Yes, exactly, right there! Perfect, payment successful. Thank you, goodbye and have a nice day! Come visit us again!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-09",
+    "synthetic": true,
+    "learner": "hesitant",
+    "character_id": "dottoressa-marta",
+    "place_id": "farmacia-centrale-verona",
+    "city_id": "verona",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T17:00:00.000Z",
+    "ended_at": "2026-10-19T17:04:20.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T17:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Mi dica, come posso aiutarla?",
+        "en": "Good morning! Tell me, how can I help you?"
+      },
+      {
+        "at": "2026-10-19T17:00:20.000Z",
+        "who": "learner",
+        "text": "Ehm... buongiorno. Io... ehm... ho... mal di testa? Ripeti per favore... no, sorry. Io ho mal di testa."
+      },
+      {
+        "at": "2026-10-19T17:00:40.000Z",
+        "who": "npc",
+        "text": "Capisco, mi dispiace. Da quanto tempo ha mal di testa?",
+        "en": "I understand, I'm sorry. How long have you had the headache?"
+      },
+      {
+        "at": "2026-10-19T17:01:00.000Z",
+        "who": "learner",
+        "text": "Ehm... scusi, non capisco. Più lentamente, per favore?"
+      },
+      {
+        "at": "2026-10-19T17:01:20.000Z",
+        "who": "npc",
+        "text": "Certo, nessun problema. Da quanto tempo? Da oggi? Da ieri?",
+        "en": "Of course, no problem. Since when? Since today? Since yesterday?"
+      },
+      {
+        "at": "2026-10-19T17:01:40.000Z",
+        "who": "learner",
+        "text": "Ehm... da ieri. Sì, da ieri. Ehm... io voglio... medicina, per favore?"
+      },
+      {
+        "at": "2026-10-19T17:02:00.000Z",
+        "who": "npc",
+        "text": "Va bene, le do una pastiglia di paracetamolo. Ha qualche allergia ai farmaci?",
+        "en": "All right, I'll give you a paracetamol tablet. Do you have any drug allergies?"
+      },
+      {
+        "at": "2026-10-19T17:02:20.000Z",
+        "who": "learner",
+        "text": "Ehm... scusi, \"allergia\"... non capisco. Do you speak English? Sorry."
+      },
+      {
+        "at": "2026-10-19T17:02:40.000Z",
+        "who": "npc",
+        "text": "Non si preoccupi! Allergia: per esempio, le fa male qualche medicina? Sì o no?",
+        "en": "Don't worry! Allergy: for example, does any medicine make you sick? Yes or no?"
+      },
+      {
+        "at": "2026-10-19T17:03:00.000Z",
+        "who": "learner",
+        "text": "Ehm... no. No, io... non ho allergia. Ehm... quanto costa, per favore?"
+      },
+      {
+        "at": "2026-10-19T17:03:20.000Z",
+        "who": "npc",
+        "text": "Perfetto. Sono quattro euro e cinquanta.",
+        "en": "Perfect. That's four euros and fifty."
+      },
+      {
+        "at": "2026-10-19T17:03:40.000Z",
+        "who": "learner",
+        "text": "Ehm... quattro euro... e cinquanta? Okay. Ecco, per favore. Grazie mille, arrivederci!"
+      },
+      {
+        "at": "2026-10-19T17:04:00.000Z",
+        "who": "npc",
+        "text": "Grazie a lei! Arrivederci, e speriamo che il mal di testa passi presto. Buona giornata!",
+        "en": "Thank you! Goodbye, and let's hope your headache goes away soon. Have a nice day!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-10",
+    "synthetic": true,
+    "learner": "improving",
+    "character_id": "vincenzo-monti",
+    "place_id": "mercato-coperto",
+    "city_id": "assisi",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T18:00:00.000Z",
+    "ended_at": "2026-10-19T18:04:20.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T18:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto al mercato. Cosa le serve oggi?",
+        "en": "Good morning! Welcome to the market. What do you need today?"
+      },
+      {
+        "at": "2026-10-19T18:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno! Ieri sono andato al supermercato e ho comprato le mele, ma oggi voglio provare le frutta del mercato. Sono buone le pesche?"
+      },
+      {
+        "at": "2026-10-19T18:00:40.000Z",
+        "who": "npc",
+        "text": "Ah, ha fatto bene a venire qui! Le pesche sono dolcissime, arrivano dai campi qui vicino. Ne vuole assaggiare una?",
+        "en": "Ah, you did well to come here! The peaches are very sweet, they come from the fields nearby. Would you like to taste one?"
+      },
+      {
+        "at": "2026-10-19T18:01:00.000Z",
+        "who": "learner",
+        "text": "Sì, grazie! Sono molto gentile. Lei lavora qui da tanto tempo, o ha aperto il banco poco fa?"
+      },
+      {
+        "at": "2026-10-19T18:01:20.000Z",
+        "who": "npc",
+        "text": "Eh, da trent'anni! Prima c'era mio padre, adesso il banco è mio. Tenga, assaggi questa, è ancora fresca di stamattina.",
+        "en": "Eh, for thirty years! My father was here before, now the stall is mine. Here, try this one, it's still fresh from this morning."
+      },
+      {
+        "at": "2026-10-19T18:01:40.000Z",
+        "who": "learner",
+        "text": "Mmm, è buonissima! Trent'anni, che bello! Io sono in Italia da poche settimane e mi piace molto Assisi. Lei abita qui vicino?"
+      },
+      {
+        "at": "2026-10-19T18:02:00.000Z",
+        "who": "npc",
+        "text": "Sì, abito poco lontano, a dieci minuti a piedi. Sono nato qui, non me ne andrei mai! Ne porta qualche pesca a casa?",
+        "en": "Yes, I live not far away, ten minutes on foot. I was born here, I would never leave! Will you take a few peaches home?"
+      },
+      {
+        "at": "2026-10-19T18:02:20.000Z",
+        "who": "learner",
+        "text": "Sì, voglio comprare quattro pesche, per favore. Quanto costano? E lei, cosa consiglia di vedere ad Assisi?"
+      },
+      {
+        "at": "2026-10-19T18:02:40.000Z",
+        "who": "npc",
+        "text": "Quattro pesche, benissimo! Fanno due euro e cinquanta. Per Assisi, vada alla Basilica di San Francesco, e poi salga alla Rocca Maggiore per il panorama. Ha già visto la basilica?",
+        "en": "Four peaches, very good! That's two euros fifty. For Assisi, go to the Basilica of San Francis, and then climb up to the Rocca Maggiore for the view. Have you already seen the basilica?"
+      },
+      {
+        "at": "2026-10-19T18:03:00.000Z",
+        "who": "learner",
+        "text": "Sì, ho visto la basilica la settimana scorsa, è molto bella! Non sono ancora andato alla Rocca Maggiore. Ecco, due euro e cinquanta."
+      },
+      {
+        "at": "2026-10-19T18:03:20.000Z",
+        "who": "npc",
+        "text": "Grazie, ecco le sue pesche! Alla Rocca vada nel pomeriggio, quando la luce è più bella. Da lassù si vede tutta la valle. Buona giornata e torni presto a trovarmi!",
+        "en": "Thank you, here are your peaches! Go to the Rocca in the afternoon, when the light is most beautiful. From up there you can see the whole valley. Have a good day and come back to see me soon!"
+      },
+      {
+        "at": "2026-10-19T18:03:40.000Z",
+        "who": "learner",
+        "text": "Grazie mille! Vado alla Rocca domani pomeriggio, e poi torno a dirle come è stato. Buona giornata, arrivederci!"
+      },
+      {
+        "at": "2026-10-19T18:04:00.000Z",
+        "who": "npc",
+        "text": "Perfetto, mi raccomando, porti una bottiglia d'acqua che si sale! Arrivederci, a domani!",
+        "en": "Perfect, be sure to bring a bottle of water because it's a climb! Goodbye, see you tomorrow!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-11",
+    "synthetic": true,
+    "learner": "asks-meaning",
+    "character_id": "michele-franco",
+    "place_id": "stazione-porta-garibaldi",
+    "city_id": "milano",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T19:00:00.000Z",
+    "ended_at": "2026-10-19T19:05:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T19:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Posso aiutarla? Cerca qualcosa qui in stazione?",
+        "en": "Good morning! Can I help you? Are you looking for something here at the station?"
+      },
+      {
+        "at": "2026-10-19T19:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno. Sì, io cerco il binario... uh, sorry, come si dice platform in italiano? Cerco il treno per Bergamo."
+      },
+      {
+        "at": "2026-10-19T19:00:40.000Z",
+        "who": "npc",
+        "text": "Si dice \"binario\", proprio come ha detto lei! Per Bergamo, guardi il tabellone lì in fondo: il treno parte dal binario 3. Ha già il biglietto?",
+        "en": "It's called \"binario\", just as you said! For Bergamo, look at the board down there: the train leaves from platform 3. Do you already have your ticket?"
+      },
+      {
+        "at": "2026-10-19T19:01:00.000Z",
+        "who": "learner",
+        "text": "Ah, binario, grazie! Uhm, il biglietto... sorry, what does \"tabellone\" mean? Non ho il biglietto."
+      },
+      {
+        "at": "2026-10-19T19:01:20.000Z",
+        "who": "npc",
+        "text": "Il tabellone è il pannello grande con gli orari dei treni, quello con le scritte luminose. Per il biglietto, c'è la biglietteria qui a destra, oppure le macchinette automatiche. Va bene?",
+        "en": "The \"tabellone\" is the big panel with the train times, the one with the lit-up writing. For the ticket, there's the ticket office here on the right, or the automatic machines. Is that okay?"
+      },
+      {
+        "at": "2026-10-19T19:01:40.000Z",
+        "who": "learner",
+        "text": "Ah, okay, grazie! Uhm, \"macchinette\"... sorry, what does that mean? Is it a machine for tickets?"
+      },
+      {
+        "at": "2026-10-19T19:02:00.000Z",
+        "who": "npc",
+        "text": "Esatto! \"Macchinetta\" è una piccola macchina: qui sono quelle automatiche per fare il biglietto da soli. Sono veloci, e hanno anche la lingua inglese.",
+        "en": "Exactly! A \"macchinetta\" is a small machine: here they're the automatic ones where you make your own ticket. They're quick, and they have an English language option too."
+      },
+      {
+        "at": "2026-10-19T19:02:20.000Z",
+        "who": "learner",
+        "text": "Ah, perfetto, grazie mille! Uhm, io vado alla macchinetta. Il treno per Bergamo parte alle... how do you say \"what time\"?"
+      },
+      {
+        "at": "2026-10-19T19:02:40.000Z",
+        "who": "npc",
+        "text": "Si dice \"a che ora\". Quindi: \"A che ora parte il treno per Bergamo?\" Guardi il tabellone, ci sono tutti gli orari. Prova a dirlo?",
+        "en": "You say \"a che ora\". So: \"A che ora parte il treno per Bergamo?\" Look at the board, all the times are there. Want to try saying it?"
+      },
+      {
+        "at": "2026-10-19T19:03:00.000Z",
+        "who": "learner",
+        "text": "A che ora parte il treno per Bergamo? Uhm, è giusto?"
+      },
+      {
+        "at": "2026-10-19T19:03:20.000Z",
+        "who": "npc",
+        "text": "Giusto, perfetto! Bravo. Il prossimo treno parte tra dieci minuti, quindi si sbrighi con il biglietto!",
+        "en": "Correct, perfect! Well done. The next train leaves in ten minutes, so hurry up with the ticket!"
+      },
+      {
+        "at": "2026-10-19T19:03:40.000Z",
+        "who": "learner",
+        "text": "Ah, dieci minuti! Uhm, \"si sbrighi\"... sorry, what does that mean?"
+      },
+      {
+        "at": "2026-10-19T19:04:00.000Z",
+        "who": "npc",
+        "text": "\"Si sbrighi\" vuol dire \"faccia in fretta\", cioè: hurry up! Viene da \"sbrigarsi\". Ora vada, il treno non aspetta!",
+        "en": "\"Si sbrighi\" means \"do it quickly\", that is: hurry up! It comes from \"sbrigarsi\". Now go, the train won't wait!"
+      },
+      {
+        "at": "2026-10-19T19:04:20.000Z",
+        "who": "learner",
+        "text": "Ah, hurry up! Okay, grazie mille, arrivederci!"
+      },
+      {
+        "at": "2026-10-19T19:04:40.000Z",
+        "who": "npc",
+        "text": "Arrivederci e buon viaggio! Saluti a Bergamo!",
+        "en": "Goodbye and have a good trip! Say hello to Bergamo!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-12",
+    "synthetic": true,
+    "learner": "verb-mistakes",
+    "character_id": "vittorio-cerea",
+    "place_id": "ristorante-da-vittorio",
+    "city_id": "bergamo",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T20:00:00.000Z",
+    "ended_at": "2026-10-19T20:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T20:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto da Vittorio. Posso aiutarla?",
+        "en": "Good morning! Welcome to Da Vittorio. Can I help you?"
+      },
+      {
+        "at": "2026-10-19T20:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno! Io avere una prenotazione per due persona, per le uno e mezzo."
+      },
+      {
+        "at": "2026-10-19T20:00:40.000Z",
+        "who": "npc",
+        "text": "Perfetto, benvenuto! A che nome è la prenotazione?",
+        "en": "Perfect, welcome! What name is the reservation under?"
+      },
+      {
+        "at": "2026-10-19T20:01:00.000Z",
+        "who": "learner",
+        "text": "Sì, la prenotazione è a nome di Smith. Io è con mia moglie, noi siamo arrivato un po' presto."
+      },
+      {
+        "at": "2026-10-19T20:01:20.000Z",
+        "who": "npc",
+        "text": "Nessun problema, signor Smith, il tavolo è quasi pronto. Intanto, volete accomodarvi al bar per un aperitivo?",
+        "en": "No problem, Mr. Smith, your table is almost ready. In the meantime, would you like to sit at the bar for an aperitif?"
+      },
+      {
+        "at": "2026-10-19T20:01:40.000Z",
+        "who": "learner",
+        "text": "Sì, grazie! Noi volere un aperitivo. Mia moglie bevo un bicchiere di vino bianco, e io una birra."
+      },
+      {
+        "at": "2026-10-19T20:02:00.000Z",
+        "who": "npc",
+        "text": "Ottima scelta! Un bianco della Franciacorta per la signora e una birra artigianale per lei. Accomodatevi pure, arrivo subito.",
+        "en": "Excellent choice! A white from Franciacorta for the lady and a craft beer for you. Please make yourselves comfortable, I'll be right there."
+      },
+      {
+        "at": "2026-10-19T20:02:20.000Z",
+        "who": "learner",
+        "text": "Grazie mille! Noi aspettiamo qui al bar, e poi il tavolo è pronto, sì?"
+      },
+      {
+        "at": "2026-10-19T20:02:40.000Z",
+        "who": "npc",
+        "text": "Esatto, signor Smith. Tra dieci minuti vi accompagno al vostro tavolo.",
+        "en": "Exactly, Mr. Smith. In ten minutes I'll show you to your table."
+      },
+      {
+        "at": "2026-10-19T20:03:00.000Z",
+        "who": "learner",
+        "text": "Va bene, grazie! Io e mia moglie aspettare qui. Il ristorante è molto bello, io ho letto che lei è un cuoco famoso."
+      },
+      {
+        "at": "2026-10-19T20:03:20.000Z",
+        "who": "npc",
+        "text": "Troppo gentile, signor Smith! Cucino con passione, la fama viene dopo. Spero che il pranzo vi piaccia.",
+        "en": "You're too kind, Mr. Smith! I cook with passion, fame comes after. I hope you'll enjoy your lunch."
+      },
+      {
+        "at": "2026-10-19T20:03:40.000Z",
+        "who": "learner",
+        "text": "Sì, io sono sicuro! Mia moglie e io amiamo molto la cucina italiano. Noi mangiare spesso la pasta a casa."
+      },
+      {
+        "at": "2026-10-19T20:04:00.000Z",
+        "who": "npc",
+        "text": "Che bello! Allora oggi vi faccio assaggiare la cucina bergamasca, con i casoncelli: sono la nostra specialità. Li conoscete?",
+        "en": "How lovely! Then today I'll have you taste Bergamo cuisine, with casoncelli: they are our specialty. Do you know them?"
+      },
+      {
+        "at": "2026-10-19T20:04:20.000Z",
+        "who": "learner",
+        "text": "Casoncelli? No, io non conosco. Che cosa è? È una pasta con carne o con il formaggio?"
+      },
+      {
+        "at": "2026-10-19T20:04:40.000Z",
+        "who": "npc",
+        "text": "È una pasta ripiena, signor Smith: dentro c'è carne, con amaretti e uvetta, e sopra burro fuso, salvia e pancetta croccante. Un sapore unico!",
+        "en": "It's a filled pasta, Mr. Smith: inside there's meat, with amaretti cookies and raisins, and on top melted butter, sage and crispy pancetta. A unique flavor!"
+      },
+      {
+        "at": "2026-10-19T20:05:00.000Z",
+        "who": "learner",
+        "text": "Ah, interessante! Amaretti e uvetta, non capisco bene, è dolce o è salato? Io volere provare i casoncelli."
+      },
+      {
+        "at": "2026-10-19T20:05:20.000Z",
+        "who": "npc",
+        "text": "È un equilibrio, signor Smith: il ripieno è un po' dolce, ma il burro, la salvia e la pancetta lo rendono salato. Vedrà, è una sorpresa! Allora li provate?",
+        "en": "It's a balance, Mr. Smith: the filling is a little sweet, but the butter, sage and pancetta make it savory. You'll see, it's a surprise! So will you try them?"
+      },
+      {
+        "at": "2026-10-19T20:05:40.000Z",
+        "who": "learner",
+        "text": "Sì, noi li provare! Mia moglie è molto curioso, lei ama le sorpresa. Grazie, chef!"
+      },
+      {
+        "at": "2026-10-19T20:06:00.000Z",
+        "who": "npc",
+        "text": "Ma che bello, signor Smith, la curiosità è la miglior qualità a tavola! Allora preparo due porzioni di casoncelli. Ora godetevi l'aperitivo, vi chiamo io quando il tavolo è pronto.",
+        "en": "How wonderful, Mr. Smith, curiosity is the best quality at the table! Then I'll prepare two portions of casoncelli. Now enjoy your aperitif, I'll call you when the table is ready."
+      },
+      {
+        "at": "2026-10-19T20:06:20.000Z",
+        "who": "learner",
+        "text": "Va bene, grazie! Noi aspettiamo al bar, e io bevere la mia birra. A dopo, chef!"
+      },
+      {
+        "at": "2026-10-19T20:06:40.000Z",
+        "who": "npc",
+        "text": "A dopo, signor Smith! Buon aperitivo a lei e alla signora.",
+        "en": "See you later, Mr. Smith! Enjoy your aperitif, you and your wife."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-13",
+    "synthetic": true,
+    "learner": "errand-and-leave",
+    "character_id": "simona-bianco",
+    "place_id": "gelateria-natale",
+    "city_id": "lecce",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T21:00:00.000Z",
+    "ended_at": "2026-10-19T21:03:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T21:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto da Gelateria Natale. Cosa ti preparo oggi?",
+        "en": "Good morning! Welcome to Gelateria Natale. What can I get you today?"
+      },
+      {
+        "at": "2026-10-19T21:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno. Vorrei un gelato, per favore. Cioccolato e fragola."
+      },
+      {
+        "at": "2026-10-19T21:00:40.000Z",
+        "who": "npc",
+        "text": "Ottima scelta! Lo preferisci in coppetta o in cono?",
+        "en": "Great choice! Do you prefer it in a cup or a cone?"
+      },
+      {
+        "at": "2026-10-19T21:01:00.000Z",
+        "who": "learner",
+        "text": "In cono, per favore. Quanto costa?"
+      },
+      {
+        "at": "2026-10-19T21:01:20.000Z",
+        "who": "npc",
+        "text": "Un cono con due gusti costa tre euro. Vuoi anche un po' di panna sopra?",
+        "en": "A cone with two flavors costs three euros. Would you like a little whipped cream on top?"
+      },
+      {
+        "at": "2026-10-19T21:01:40.000Z",
+        "who": "learner",
+        "text": "No, grazie, senza panna. Ecco tre euro."
+      },
+      {
+        "at": "2026-10-19T21:02:00.000Z",
+        "who": "npc",
+        "text": "Perfetto, grazie! Ecco il tuo cono, cioccolato e fragola. Buon gelato!",
+        "en": "Perfect, thank you! Here's your cone, chocolate and strawberry. Enjoy your gelato!"
+      },
+      {
+        "at": "2026-10-19T21:02:20.000Z",
+        "who": "learner",
+        "text": "Grazie mille! Arrivederci e buona giornata!"
+      },
+      {
+        "at": "2026-10-19T21:02:40.000Z",
+        "who": "npc",
+        "text": "Grazie a te! Arrivederci e buona giornata, torna a trovarci presto!",
+        "en": "Thank you! Goodbye and have a nice day, come visit us again soon!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-14",
+    "synthetic": true,
+    "learner": "chatty-leaver",
+    "character_id": "lorenzo-peck",
+    "place_id": "peck",
+    "city_id": "milano",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T22:00:00.000Z",
+    "ended_at": "2026-10-19T22:04:20.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T22:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Posso aiutarla? Mi chiamo Lorenzo, piacere.",
+        "en": "Good morning! Can I help you? My name is Lorenzo, nice to meet you."
+      },
+      {
+        "at": "2026-10-19T22:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno Lorenzo, piacere. Io sono, um, Anna. Cerco un regalo per la mia amica, forse formaggio o vino."
+      },
+      {
+        "at": "2026-10-19T22:00:40.000Z",
+        "who": "npc",
+        "text": "Piacere, Anna! Bella idea, un regalo da gustare. La sua amica preferisce il formaggio o il vino?",
+        "en": "Nice to meet you, Anna! Great idea, a gift to savor. Does your friend prefer cheese or wine?"
+      },
+      {
+        "at": "2026-10-19T22:01:00.000Z",
+        "who": "learner",
+        "text": "Um, lei ama il vino, penso. Ma anche il formaggio è buono. Cosa mi consiglia?"
+      },
+      {
+        "at": "2026-10-19T22:01:20.000Z",
+        "who": "npc",
+        "text": "Allora le consiglio un buon vino rosso, magari un Barolo, e un pezzo di Parmigiano stagionato da portare insieme. Così ha tutti e due! Le va?",
+        "en": "Then I recommend a good red wine, maybe a Barolo, and a piece of aged Parmigiano to bring along. That way you have both! Does that suit you?"
+      },
+      {
+        "at": "2026-10-19T22:01:40.000Z",
+        "who": "learner",
+        "text": "Sì, mi piace molto! Prendo il Barolo e il Parmigiano, grazie. Quanto costa, per favore?"
+      },
+      {
+        "at": "2026-10-19T22:02:00.000Z",
+        "who": "npc",
+        "text": "Perfetto, Anna! Il Barolo costa trentacinque euro e il Parmigiano dodici. In tutto sono quarantasette euro. Le faccio anche una confezione regalo?",
+        "en": "Perfect, Anna! The Barolo costs thirty-five euros and the Parmigiano twelve. In total it's forty-seven euros. Shall I also do gift wrapping for you?"
+      },
+      {
+        "at": "2026-10-19T22:02:20.000Z",
+        "who": "learner",
+        "text": "Sì, grazie, una confezione regalo è perfetto. Posso pagare con la carta?"
+      },
+      {
+        "at": "2026-10-19T22:02:40.000Z",
+        "who": "npc",
+        "text": "Certo, Anna, con la carta va benissimo. Prepari pure la carta, intanto io le faccio la confezione. Un attimo e il regalo è pronto!",
+        "en": "Of course, Anna, paying by card is absolutely fine. Go ahead and get your card ready, meanwhile I'll do the wrapping. One moment and the gift is ready!"
+      },
+      {
+        "at": "2026-10-19T22:03:00.000Z",
+        "who": "learner",
+        "text": "Va bene, grazie mille. Um, è molto bello! Arrivederci, Lorenzo, a presto!"
+      },
+      {
+        "at": "2026-10-19T22:03:20.000Z",
+        "who": "npc",
+        "text": "Grazie a lei, Anna! Spero che la sua amica apprezzi il regalo. Arrivederci e a presto!",
+        "en": "Thank you, Anna! I hope your friend enjoys the gift. Goodbye and see you soon!"
+      },
+      {
+        "at": "2026-10-19T22:03:40.000Z",
+        "who": "learner",
+        "text": "Grazie ancora, Lorenzo. Buona giornata!"
+      },
+      {
+        "at": "2026-10-19T22:04:00.000Z",
+        "who": "npc",
+        "text": "Altrettanto, Anna! Buona giornata e buona festa con la sua amica!",
+        "en": "Likewise, Anna! Have a good day and enjoy the celebration with your friend!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-15",
+    "synthetic": true,
+    "learner": "english-beginner",
+    "character_id": "maestro-orlando",
+    "place_id": "bottega-cartapesta",
+    "city_id": "lecce",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T23:00:00.000Z",
+    "ended_at": "2026-10-19T23:04:20.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T23:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Prego, entri pure. Sono Orlando, il maestro di questa bottega. Cerca qualcosa di particolare?",
+        "en": "Good morning! Please, come in. I'm Orlando, the master of this workshop. Are you looking for something in particular?"
+      },
+      {
+        "at": "2026-10-19T23:00:20.000Z",
+        "who": "learner",
+        "text": "Bone journal! Io voglio... uh, guardare le statue. Sono molto bello."
+      },
+      {
+        "at": "2026-10-19T23:00:40.000Z",
+        "who": "npc",
+        "text": "Grazie, grazie! Guardi pure, con calma. Ogni statua è fatta a mano, con carta, colla e tanta pazienza. Qui a Lecce la cartapesta è una tradizione antica. Lei è di passaggio in città?",
+        "en": "Thank you, thank you! Look all you like, take your time. Every statue is made by hand, with paper, glue and lots of patience. Here in Lecce, papier-mâché is an ancient tradition. Are you just passing through the city?"
+      },
+      {
+        "at": "2026-10-19T23:01:00.000Z",
+        "who": "learner",
+        "text": "Scusi, non capisco. Di... passaggio? Io sono americano. Io sono a Lecce per tre giorni."
+      },
+      {
+        "at": "2026-10-19T23:01:20.000Z",
+        "who": "npc",
+        "text": "Ah, capisco! \"Di passaggio\" vuol dire che resta qui per poco tempo, come lei. Tre giorni a Lecce, che bello! Benvenuto, americano. Quale statua le piace di più?",
+        "en": "Ah, I see! \"Di passaggio\" means that you're staying here only a short time, like you. Three days in Lecce, how lovely! Welcome, American. Which statue do you like best?"
+      },
+      {
+        "at": "2026-10-19T23:01:40.000Z",
+        "who": "learner",
+        "text": "Uh... questo. Il... la statua con il cavallo? Io piace molto. Quanto costa?"
+      },
+      {
+        "at": "2026-10-19T23:02:00.000Z",
+        "who": "npc",
+        "text": "Ah, Sant'Oronzo a cavallo! Bella scelta, è il patrono di Lecce. Questa, di media grandezza, costa centoventi euro. Se la guarda da vicino, vede ogni dettaglio dipinto a mano.",
+        "en": "Ah, Saint Oronzo on horseback! Good choice, he's the patron saint of Lecce. This one, medium-sized, costs one hundred twenty euros. If you look at it up close, you can see every detail painted by hand."
+      },
+      {
+        "at": "2026-10-19T23:02:20.000Z",
+        "who": "learner",
+        "text": "Uh, scusi. Cento... venti? Okay. Io voglio la statua. Posso, uh, pagare con la carta?"
+      },
+      {
+        "at": "2026-10-19T23:02:40.000Z",
+        "who": "npc",
+        "text": "Sì, sì, certo, la carta va benissimo! Le preparo la statua con un bel imballaggio, così arriva sana e salva in America. Vuole anche un sacchetto per portarla?",
+        "en": "Yes, yes, of course, a card is just fine! I'll prepare the statue with nice packaging, so it arrives safe and sound in America. Would you also like a bag to carry it?"
+      },
+      {
+        "at": "2026-10-19T23:03:00.000Z",
+        "who": "learner",
+        "text": "Uh, scusi... sacchetto? Non capisco. Sì, grazie. Io pago con la carta adesso."
+      },
+      {
+        "at": "2026-10-19T23:03:20.000Z",
+        "who": "npc",
+        "text": "Perfetto! \"Sacchetto\" è una piccola borsa, per portare la statua. Ecco il lettore, avvicini la carta qui. Ecco fatto, tutto a posto! Grazie mille, e buon soggiorno a Lecce!",
+        "en": "Perfect! \"Sacchetto\" is a small bag, for carrying the statue. Here's the card reader, hold your card here. There, all done! Thank you very much, and enjoy your stay in Lecce!"
+      },
+      {
+        "at": "2026-10-19T23:03:40.000Z",
+        "who": "learner",
+        "text": "Gratsie! Uh... arrivederci, Maestro. Io sono molto contento."
+      },
+      {
+        "at": "2026-10-19T23:04:00.000Z",
+        "who": "npc",
+        "text": "Arrivederci, e grazie a lei! Sono contento anch'io. Torni a trovarmi se ritorna a Lecce. Buona giornata!",
+        "en": "Goodbye, and thank you! I'm happy too. Come see me again if you return to Lecce. Have a nice day!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-16",
+    "synthetic": true,
+    "learner": "hesitant",
+    "character_id": "paolo-stazione",
+    "place_id": "stazione-porta-nuova",
+    "city_id": "verona",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T00:00:00.000Z",
+    "ended_at": "2026-10-20T00:03:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T00:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Posso aiutarla?",
+        "en": "Good morning! Can I help you?"
+      },
+      {
+        "at": "2026-10-20T00:00:20.000Z",
+        "who": "learner",
+        "text": "Ehm... buongiorno. Io... ehm... voglio un biglietto... per Venezia, per favore."
+      },
+      {
+        "at": "2026-10-20T00:00:40.000Z",
+        "who": "npc",
+        "text": "Certo! Per Venezia, il biglietto si fa alla biglietteria o alla macchinetta qui accanto. Andata e ritorno, oppure solo andata?",
+        "en": "Of course! For Venice, you can buy the ticket at the ticket office or at the machine right here. Round trip, or one way only?"
+      },
+      {
+        "at": "2026-10-20T00:01:00.000Z",
+        "who": "learner",
+        "text": "Ehm... scusi, ripeti per favore? Più lentamente... non capisco."
+      },
+      {
+        "at": "2026-10-20T00:01:20.000Z",
+        "who": "npc",
+        "text": "Certo, nessun problema. Il biglietto... lo compra lì, alla macchinetta. Solo andata, o andata e ritorno?",
+        "en": "Of course, no problem. The ticket... you buy it there, at the machine. One way, or round trip?"
+      },
+      {
+        "at": "2026-10-20T00:01:40.000Z",
+        "who": "learner",
+        "text": "Ehm... andata... e ritorno? Ehm... non capisco. Sorry, do you speak English?"
+      },
+      {
+        "at": "2026-10-20T00:02:00.000Z",
+        "who": "npc",
+        "text": "Un pochino! Andata e ritorno, va bene. Macchinetta, lì, a sinistra. Venezia: venti minuti, un'ora. Okay?",
+        "en": "A little bit! Round trip, fine. Ticket machine, there, on the left. Venice: twenty minutes, an hour. Okay?"
+      },
+      {
+        "at": "2026-10-20T00:02:20.000Z",
+        "who": "learner",
+        "text": "Ehm... okay. Macchinetta... a sinistra. Ehm... grazie mille! Arrivederci."
+      },
+      {
+        "at": "2026-10-20T00:02:40.000Z",
+        "who": "npc",
+        "text": "Prego! Buon viaggio e arrivederci!",
+        "en": "You're welcome! Have a good trip and goodbye!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-17",
+    "synthetic": true,
+    "learner": "improving",
+    "character_id": "beatrice-castelli",
+    "place_id": "libreria-sant-agostino",
+    "city_id": "bergamo",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T01:00:00.000Z",
+    "ended_at": "2026-10-20T01:05:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T01:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto alla Libreria Sant'Agostino. Cerca qualcosa in particolare?",
+        "en": "Good morning! Welcome to Libreria Sant'Agostino. Are you looking for something in particular?"
+      },
+      {
+        "at": "2026-10-20T01:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno! Sono arrivato a Bergamo tre settimane fa e vorrei comprare un libro facile in italiano. Lei ha un consiglio?"
+      },
+      {
+        "at": "2026-10-20T01:00:40.000Z",
+        "who": "npc",
+        "text": "Benvenuto a Bergamo, allora! Certo, ho qualche idea. Preferisce un romanzo o dei racconti brevi?",
+        "en": "Welcome to Bergamo, then! Of course, I have a few ideas. Do you prefer a novel or short stories?"
+      },
+      {
+        "at": "2026-10-20T01:01:00.000Z",
+        "who": "learner",
+        "text": "Mmm, penso i racconti brevi, perché sono più corti. Ieri ho provato a leggere un romanzo ma era troppo difficile per me."
+      },
+      {
+        "at": "2026-10-20T01:01:20.000Z",
+        "who": "npc",
+        "text": "Capisco, fa bene a cominciare con qualcosa di più corto. Le consiglio i racconti di Gianni Rodari: sono semplici, divertenti e pieni di fantasia. Vuole vederli?",
+        "en": "I understand, you're right to start with something shorter. I recommend Gianni Rodari's stories: they're simple, fun, and full of imagination. Would you like to see them?"
+      },
+      {
+        "at": "2026-10-20T01:01:40.000Z",
+        "who": "learner",
+        "text": "Sì, volentieri! Rodari è un autore famoso? Io non lo conosco, ma mi piace se è divertente."
+      },
+      {
+        "at": "2026-10-20T01:02:00.000Z",
+        "who": "npc",
+        "text": "Ma certo, è uno degli autori più amati in Italia! Tutti lo leggono da bambini, e piace anche agli adulti. Ecco, questa raccolta si chiama «Favole al telefono»: sono storie brevissime, perfette per lei.",
+        "en": "Of course, he's one of the most beloved authors in Italy! Everyone reads him as a child, and adults enjoy him too. Here, this collection is called 'Favole al telefono' (Telephone Tales): they're very short stories, perfect for you."
+      },
+      {
+        "at": "2026-10-20T01:02:20.000Z",
+        "who": "learner",
+        "text": "Favole al telefono, che titolo carino! Quanto costa questo libro? E lei, ha letto Rodari quando era piccola?"
+      },
+      {
+        "at": "2026-10-20T01:02:40.000Z",
+        "who": "npc",
+        "text": "Costa dodici euro. E sì, certo: me lo leggeva mia nonna, e ancora oggi la storia che preferisco è quella del signor Bianchi che si perde sempre. Allora, lo prende?",
+        "en": "It costs twelve euros. And yes, of course: my grandmother used to read it to me, and even today my favorite story is the one about Mr. Bianchi who is always getting lost. So, will you take it?"
+      },
+      {
+        "at": "2026-10-20T01:03:00.000Z",
+        "who": "learner",
+        "text": "Sì, lo prendo! Che bello, sua nonna leggeva i libri a lei. Posso pagare con la carta?"
+      },
+      {
+        "at": "2026-10-20T01:03:20.000Z",
+        "who": "npc",
+        "text": "Sì, certo, la carta va benissimo. Mi dà un attimo che preparo il sacchetto. Vuole anche uno scontrino?",
+        "en": "Yes, of course, a card is fine. Give me a moment while I get the bag ready. Would you like a receipt too?"
+      },
+      {
+        "at": "2026-10-20T01:03:40.000Z",
+        "who": "learner",
+        "text": "Sì, grazie, lo scontrino. Poi, un'altra domanda: c'è un bar buono qui vicino? Io sono nuovo e non conosco il quartiere."
+      },
+      {
+        "at": "2026-10-20T01:04:00.000Z",
+        "who": "npc",
+        "text": "Certo! A due passi da qui, in fondo alla via, c'è il Caffè Borgo: il cappuccino è ottimo e ci sono anche dei buoni cornetti. Ecco il suo libro e lo scontrino. Buona lettura e buona passeggiata!",
+        "en": "Of course! Just a couple of steps from here, at the end of the street, there's Caffè Borgo: the cappuccino is excellent and they have good croissants too. Here's your book and the receipt. Enjoy your reading and your walk!"
+      },
+      {
+        "at": "2026-10-20T01:04:20.000Z",
+        "who": "learner",
+        "text": "Grazie mille! Vado al Caffè Borgo adesso e leggo il primo racconto. Arrivederci!"
+      },
+      {
+        "at": "2026-10-20T01:04:40.000Z",
+        "who": "npc",
+        "text": "Che bel programma! Arrivederci e a presto, torni a dirmi se le è piaciuto!",
+        "en": "What a nice plan! Goodbye and see you soon, come back and tell me if you liked it!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-18",
+    "synthetic": true,
+    "learner": "asks-meaning",
+    "character_id": "giuseppe-fornaio",
+    "place_id": "panetteria-borgo-antico",
+    "city_id": "torino",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T02:00:00.000Z",
+    "ended_at": "2026-10-20T02:03:40.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T02:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto alla Panetteria Borgo Antico. Cosa le posso dare oggi?",
+        "en": "Good morning! Welcome to Panetteria Borgo Antico. What can I get you today?"
+      },
+      {
+        "at": "2026-10-20T02:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno. Um, vorrei... un pane, per favore. Sorry, how do you say \"a loaf\" in Italian?"
+      },
+      {
+        "at": "2026-10-20T02:00:40.000Z",
+        "who": "npc",
+        "text": "Si dice \"una pagnotta\", oppure \"un filone\" se è lungo. Che tipo di pane preferisce?",
+        "en": "You say \"una pagnotta,\" or \"un filone\" if it's long. What kind of bread do you prefer?"
+      },
+      {
+        "at": "2026-10-20T02:01:00.000Z",
+        "who": "learner",
+        "text": "Um, scusi, \"preferisce\" cosa significa? Sorry, I don't understand. Vorrei una pagnotta, per favore."
+      },
+      {
+        "at": "2026-10-20T02:01:20.000Z",
+        "who": "npc",
+        "text": "\"Preferisce\" vuol dire \"do you prefer\", cosa le piace di più. Allora, una pagnotta! Questa è appena sfornata, ancora calda. Va bene?",
+        "en": "\"Preferisce\" means \"do you prefer\" — what you like more. So, a loaf! This one is fresh out of the oven, still warm. Is that okay?"
+      },
+      {
+        "at": "2026-10-20T02:01:40.000Z",
+        "who": "learner",
+        "text": "Sì, va bene, grazie. Sorry, \"sfornata\" cosa significa? Quanto costa, per favore?"
+      },
+      {
+        "at": "2026-10-20T02:02:00.000Z",
+        "who": "npc",
+        "text": "\"Sfornata\" vuol dire \"taken out of the oven\", quindi fresca fresca! Sono due euro e cinquanta, grazie.",
+        "en": "\"Sfornata\" means \"taken out of the oven,\" so, very fresh! That's two euros fifty, thank you."
+      },
+      {
+        "at": "2026-10-20T02:02:20.000Z",
+        "who": "learner",
+        "text": "Ah, ho capito, fresca! Ecco, tre euro. Um, how do I say \"keep the change\"?"
+      },
+      {
+        "at": "2026-10-20T02:02:40.000Z",
+        "who": "npc",
+        "text": "Si dice \"tenga il resto\". Grazie mille, è molto gentile! Ecco il suo pane, ancora caldo. Buona giornata!",
+        "en": "You say \"tenga il resto.\" Thank you so much, that's very kind! Here's your bread, still warm. Have a nice day!"
+      },
+      {
+        "at": "2026-10-20T02:03:00.000Z",
+        "who": "learner",
+        "text": "Grazie mille! Um, tenga il resto... Buona giornata anche a lei! Arrivederci!"
+      },
+      {
+        "at": "2026-10-20T02:03:20.000Z",
+        "who": "npc",
+        "text": "Perfetto, benissimo! Arrivederci, e torni presto a trovarci!",
+        "en": "Perfect, very good! Goodbye, and come back to see us soon!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-19",
+    "synthetic": true,
+    "learner": "verb-mistakes",
+    "character_id": "franca-proprietaria",
+    "place_id": "bicerin-dal-1763",
+    "city_id": "torino",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T03:00:00.000Z",
+    "ended_at": "2026-10-20T03:05:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T03:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto al Bicerin. Prego, entri pure. Cosa le posso offrire?",
+        "en": "Good morning! Welcome to Al Bicerin. Please, come right in. What can I offer you?"
+      },
+      {
+        "at": "2026-10-20T03:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno! Io voglio un bicerin, per favore. Ieri io ho letto che è molto famoso qui a Torino."
+      },
+      {
+        "at": "2026-10-20T03:00:40.000Z",
+        "who": "npc",
+        "text": "Ah, ha letto bene! Il bicerin è la nostra tradizione: caffè, cioccolata e crema di latte. Si accomodi, glielo preparo subito. È la sua prima volta a Torino?",
+        "en": "Ah, you read correctly! The bicerin is our tradition: coffee, chocolate and cream. Have a seat, I'll prepare it right away. Is it your first time in Turin?"
+      },
+      {
+        "at": "2026-10-20T03:01:00.000Z",
+        "who": "learner",
+        "text": "Sì, è la mia prima volta! Io sono arrivato ieri sera con il treno da Milano, e io visito Torino per tre giorni."
+      },
+      {
+        "at": "2026-10-20T03:01:20.000Z",
+        "who": "npc",
+        "text": "Che bello, tre giorni sono un bel po'! Il Quadrilatero Romano è un ottimo punto di partenza, qui intorno ci sono tante cose da vedere. Ecco il suo bicerin, attenzione, è caldo! Cosa le piacerebbe visitare?",
+        "en": "How lovely, three days is a good while! The Roman Quarter is an excellent starting point, there's a lot to see around here. Here's your bicerin, careful, it's hot! What would you like to visit?"
+      },
+      {
+        "at": "2026-10-20T03:01:40.000Z",
+        "who": "learner",
+        "text": "Grazie! Io vorrei visitare il Museo Egizio, perché mio amico dice che è molto bello. Ieri io vado al Mole Antonelliana, ma era chiuso."
+      },
+      {
+        "at": "2026-10-20T03:02:00.000Z",
+        "who": "npc",
+        "text": "Il Museo Egizio è una scelta ottima, è il più importante dopo quello del Cairo! Peccato per la Mole, ma non si preoccupi, riprovi domani. Il museo è qui vicino, a due passi. Le piace l'arte antica?",
+        "en": "The Egyptian Museum is an excellent choice, it's the most important one after the one in Cairo! Too bad about the Mole, but don't worry, try again tomorrow. The museum is right nearby, just a couple of steps away. Do you like ancient art?"
+      },
+      {
+        "at": "2026-10-20T03:02:20.000Z",
+        "who": "learner",
+        "text": "Sì, mi piace molto! Io studio la storia a scuola, e io piace anche i musei di arte moderna."
+      },
+      {
+        "at": "2026-10-20T03:02:40.000Z",
+        "who": "npc",
+        "text": "Bene, allora a Torino starà benissimo! Per l'arte moderna c'è la GAM, la Galleria d'Arte Moderna, e anche il Castello di Rivoli, che è molto bello. Mi dica, il bicerin le piace?",
+        "en": "Good, then you'll be very happy in Turin! For modern art there's the GAM, the Gallery of Modern Art, and also the Castello di Rivoli, which is very beautiful. Tell me, do you like the bicerin?"
+      },
+      {
+        "at": "2026-10-20T03:03:00.000Z",
+        "who": "learner",
+        "text": "Sì, il bicerin è molto buono! Io bevo tutto il cioccolata e il caffè, è delizioso. Quanto costa, per favore?"
+      },
+      {
+        "at": "2026-10-20T03:03:20.000Z",
+        "who": "npc",
+        "text": "Che piacere, sono contenta che le sia piaciuto! Sono sei euro e cinquanta. Può pagare alla cassa, quando vuole.",
+        "en": "What a pleasure, I'm glad you liked it! That's six euros fifty. You can pay at the register whenever you like."
+      },
+      {
+        "at": "2026-10-20T03:03:40.000Z",
+        "who": "learner",
+        "text": "Va bene, grazie! Io pago adesso alla cassa. Il bicerin era molto buono, io tornare domani con mio amico."
+      },
+      {
+        "at": "2026-10-20T03:04:00.000Z",
+        "who": "npc",
+        "text": "Che bello, la aspetto volentieri! Porti pure il suo amico, così assaggia anche lui il bicerin. Buona visita al Museo Egizio e buona giornata!",
+        "en": "How lovely, I'll gladly expect you! Do bring your friend, so he can taste the bicerin too. Enjoy your visit to the Egyptian Museum and have a good day!"
+      },
+      {
+        "at": "2026-10-20T03:04:20.000Z",
+        "who": "learner",
+        "text": "Grazie mille! Arrivederci e buona giornata anche a lei!"
+      },
+      {
+        "at": "2026-10-20T03:04:40.000Z",
+        "who": "npc",
+        "text": "Arrivederci, a domani! Buon viaggio a Torino!",
+        "en": "Goodbye, see you tomorrow! Enjoy your stay in Turin!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-20",
+    "synthetic": true,
+    "learner": "errand-and-leave",
+    "character_id": "giovanni-rota",
+    "place_id": "mercato-citta-alta",
+    "city_id": "bergamo",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T04:00:00.000Z",
+    "ended_at": "2026-10-20T04:03:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T04:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto al mercato. Cerca qualcosa di particolare?",
+        "en": "Good morning! Welcome to the market. Are you looking for something in particular?"
+      },
+      {
+        "at": "2026-10-20T04:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno! Vorrei un chilo di mele, per favore."
+      },
+      {
+        "at": "2026-10-20T04:00:40.000Z",
+        "who": "npc",
+        "text": "Certo! Ho delle bellissime mele della Valtellina, dolci e croccanti. Le va bene così?",
+        "en": "Of course! I have some beautiful apples from Valtellina, sweet and crisp. Does that work for you?"
+      },
+      {
+        "at": "2026-10-20T04:01:00.000Z",
+        "who": "learner",
+        "text": "Sì, va bene. Quanto costano, per favore?"
+      },
+      {
+        "at": "2026-10-20T04:01:20.000Z",
+        "who": "npc",
+        "text": "Due euro e cinquanta al chilo. Un prezzo onesto, vedrà che buone! Altro?",
+        "en": "Two euros fifty per kilo. An honest price, you'll see how good they are! Anything else?"
+      },
+      {
+        "at": "2026-10-20T04:01:40.000Z",
+        "who": "learner",
+        "text": "No, grazie, solo le mele. Ecco due euro e cinquanta."
+      },
+      {
+        "at": "2026-10-20T04:02:00.000Z",
+        "who": "npc",
+        "text": "Perfetto, grazie a lei! Ecco le sue mele, un chilo esatto. Buona giornata e buon appetito!",
+        "en": "Perfect, thank you! Here are your apples, exactly one kilo. Have a nice day and enjoy!"
+      },
+      {
+        "at": "2026-10-20T04:02:20.000Z",
+        "who": "learner",
+        "text": "Grazie mille! Buona giornata, arrivederci!"
+      },
+      {
+        "at": "2026-10-20T04:02:40.000Z",
+        "who": "npc",
+        "text": "Arrivederci, e torni a trovarmi presto! Goda Bergamo Alta!",
+        "en": "Goodbye, and come visit me again soon! Enjoy Bergamo Alta!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-21",
+    "synthetic": true,
+    "learner": "chatty-leaver",
+    "character_id": "giulia-neri",
+    "place_id": "bar-il-palio",
+    "city_id": "siena",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T05:00:00.000Z",
+    "ended_at": "2026-10-20T05:03:40.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T05:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto al Bar Il Palio. Cosa ti preparo?",
+        "en": "Good morning! Welcome to Bar Il Palio. What can I get you?"
+      },
+      {
+        "at": "2026-10-20T05:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno! Vorrei un caffè e un cornetto, per favore."
+      },
+      {
+        "at": "2026-10-20T05:00:40.000Z",
+        "who": "npc",
+        "text": "Perfetto! Un caffè e un cornetto, arrivano subito. Il cornetto lo vuoi semplice o con la crema?",
+        "en": "Perfect! One coffee and one croissant, coming right up. Do you want the croissant plain or with custard?"
+      },
+      {
+        "at": "2026-10-20T05:01:00.000Z",
+        "who": "learner",
+        "text": "Con la crema, per favore. Grazie!"
+      },
+      {
+        "at": "2026-10-20T05:01:20.000Z",
+        "who": "npc",
+        "text": "Ottima scelta! Ecco a te, caffè e cornetto con la crema. Sei di Siena o sei qui in vacanza?",
+        "en": "Great choice! Here you go, coffee and a custard croissant. Are you from Siena or are you here on vacation?"
+      },
+      {
+        "at": "2026-10-20T05:01:40.000Z",
+        "who": "learner",
+        "text": "Sono in vacanza. Sono qui da tre giorni, Siena è molto bella!"
+      },
+      {
+        "at": "2026-10-20T05:02:00.000Z",
+        "who": "npc",
+        "text": "Che bello, sono contenta che ti piace! Questo è il nostro Terzo di San Martino, siamo vicinissimi a Piazza del Campo. Hai già visto il Duomo?",
+        "en": "How nice, I'm glad you like it! This is our Terzo of San Martino, we're very close to Piazza del Campo. Have you already seen the Duomo?"
+      },
+      {
+        "at": "2026-10-20T05:02:20.000Z",
+        "who": "learner",
+        "text": "Sì, ho visto il Duomo ieri. È bellissimo! Oggi vado a Piazza del Campo."
+      },
+      {
+        "at": "2026-10-20T05:02:40.000Z",
+        "who": "npc",
+        "text": "Ottimo programma! In Piazza del Campo ti consiglio di salire sulla Torre del Mangia, la vista è stupenda. Ma preparati, ci sono tanti scalini!",
+        "en": "Great plan! In Piazza del Campo I recommend climbing the Torre del Mangia, the view is stunning. But get ready, there are lots of steps!"
+      },
+      {
+        "at": "2026-10-20T05:03:00.000Z",
+        "who": "learner",
+        "text": "Ah, tanti scalini! Va bene, grazie del consiglio. Ora devo andare, arrivederci e buona giornata!"
+      },
+      {
+        "at": "2026-10-20T05:03:20.000Z",
+        "who": "npc",
+        "text": "Grazie a te! Buona giornata e buona visita a Siena, arrivederci!",
+        "en": "Thank you! Have a good day and enjoy your visit to Siena, goodbye!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-22",
+    "synthetic": true,
+    "learner": "english-beginner",
+    "character_id": "pietro-biglietteria",
+    "place_id": "stazione-termini",
+    "city_id": "roma",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T06:00:00.000Z",
+    "ended_at": "2026-10-20T06:03:40.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T06:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Mi dica, dove deve andare?",
+        "en": "Good morning! Tell me, where do you need to go?"
+      },
+      {
+        "at": "2026-10-20T06:00:20.000Z",
+        "who": "learner",
+        "text": "Bone journal. Voglio un biglietto per Firenze, per favore."
+      },
+      {
+        "at": "2026-10-20T06:00:40.000Z",
+        "who": "npc",
+        "text": "Certo! Per Firenze ci sono diversi treni. Preferisce quello veloce o il regionale? Parte oggi?",
+        "en": "Of course! There are several trains to Florence. Do you prefer the fast one or the regional? Are you leaving today?"
+      },
+      {
+        "at": "2026-10-20T06:01:00.000Z",
+        "who": "learner",
+        "text": "Um... veloce? Sì, oggi. Quando costa, per favore?"
+      },
+      {
+        "at": "2026-10-20T06:01:20.000Z",
+        "who": "npc",
+        "text": "Allora, il treno veloce per Firenze costa circa trenta euro, solo andata. Le serve anche il ritorno?",
+        "en": "So, the fast train to Florence costs about thirty euros, one way. Do you need the return too?"
+      },
+      {
+        "at": "2026-10-20T06:01:40.000Z",
+        "who": "learner",
+        "text": "No, solo andata, per favore. Um... a che ora parte il treno?"
+      },
+      {
+        "at": "2026-10-20T06:02:00.000Z",
+        "who": "npc",
+        "text": "Il prossimo parte alle dieci e quaranta, dal binario nove. Va bene per lei?",
+        "en": "The next one leaves at ten forty, from platform nine. Is that fine for you?"
+      },
+      {
+        "at": "2026-10-20T06:02:20.000Z",
+        "who": "learner",
+        "text": "Sì, va bene. Gratsie! Um... dove è il binario nove?"
+      },
+      {
+        "at": "2026-10-20T06:02:40.000Z",
+        "who": "npc",
+        "text": "Prego! Il binario nove è dritto, in fondo a sinistra, dopo i negozi. Sono circa due minuti a piedi. Buon viaggio!",
+        "en": "You're welcome! Platform nine is straight ahead, at the end on the left, after the shops. It's about two minutes on foot. Have a good trip!"
+      },
+      {
+        "at": "2026-10-20T06:03:00.000Z",
+        "who": "learner",
+        "text": "Um... dritto, e poi sinistra? Okay. Mille gratsie! Arrivederchi!"
+      },
+      {
+        "at": "2026-10-20T06:03:20.000Z",
+        "who": "npc",
+        "text": "Esatto, dritto e poi a sinistra. Arrivederci, buona giornata!",
+        "en": "Exactly, straight and then left. Goodbye, have a nice day!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-23",
+    "synthetic": true,
+    "learner": "hesitant",
+    "character_id": "salvatore-leone",
+    "place_id": "mercato-comunale",
+    "city_id": "lecce",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T07:00:00.000Z",
+    "ended_at": "2026-10-20T07:03:40.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T07:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno, signore! Benvenuto al mercato. Cerca qualcosa di particolare oggi?",
+        "en": "Good morning, sir! Welcome to the market. Are you looking for something in particular today?"
+      },
+      {
+        "at": "2026-10-20T07:00:20.000Z",
+        "who": "learner",
+        "text": "Ehm... buongiorno. Io... ehm... cerco... le arance? Ripeti per favore, più lentamente."
+      },
+      {
+        "at": "2026-10-20T07:00:40.000Z",
+        "who": "npc",
+        "text": "Certo, con calma. Le... a-ran-ce. Sì, le arance, le abbiamo! Dolci e succose, vengono dalla Sicilia. Quante ne vuole?",
+        "en": "Of course, take your time. The... or-an-ges. Yes, oranges, we have them! Sweet and juicy, they come from Sicily. How many would you like?"
+      },
+      {
+        "at": "2026-10-20T07:01:00.000Z",
+        "who": "learner",
+        "text": "Ehm... scusi, non capisco. Ripeti per favore, più lentamente?"
+      },
+      {
+        "at": "2026-10-20T07:01:20.000Z",
+        "who": "npc",
+        "text": "Va bene, va bene. Quante... arance... vuole? Un chilo? Due chili?",
+        "en": "All right, all right. How many... oranges... do you want? One kilo? Two kilos?"
+      },
+      {
+        "at": "2026-10-20T07:01:40.000Z",
+        "who": "learner",
+        "text": "Ehm... un chilo? Sì... un chilo, per favore."
+      },
+      {
+        "at": "2026-10-20T07:02:00.000Z",
+        "who": "npc",
+        "text": "Perfetto, un chilo di arance. Ecco qua, bellissime! Sono due euro e cinquanta.",
+        "en": "Perfect, one kilo of oranges. Here you go, beautiful ones! That's two euros fifty."
+      },
+      {
+        "at": "2026-10-20T07:02:20.000Z",
+        "who": "learner",
+        "text": "Ehm... due euro... cinquanta? Ecco... grazie."
+      },
+      {
+        "at": "2026-10-20T07:02:40.000Z",
+        "who": "npc",
+        "text": "Grazie a lei! Ecco le sue arance. Buona giornata e buon appetito!",
+        "en": "Thank you! Here are your oranges. Have a good day and enjoy!"
+      },
+      {
+        "at": "2026-10-20T07:03:00.000Z",
+        "who": "learner",
+        "text": "Grazie... buona giornata! Arrivederci."
+      },
+      {
+        "at": "2026-10-20T07:03:20.000Z",
+        "who": "npc",
+        "text": "Arrivederci, a presto! Torni a trovarci quando vuole.",
+        "en": "Goodbye, see you soon! Come back and see us whenever you like."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-24",
+    "synthetic": true,
+    "learner": "improving",
+    "character_id": "stefano-wallner",
+    "place_id": "caffe-wallner",
+    "city_id": "verona",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T08:00:00.000Z",
+    "ended_at": "2026-10-20T08:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T08:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno! Benvenuto al Caffè Wallner. Mi dica, cosa le porto?",
+        "en": "Good morning! Welcome to Caffè Wallner. Tell me, what can I bring you?"
+      },
+      {
+        "at": "2026-10-20T08:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno! Io vorrei un cappuccino, per favore. Ieri sono stato qui vicino e ho visto il suo caffè, è molto carino."
+      },
+      {
+        "at": "2026-10-20T08:00:40.000Z",
+        "who": "npc",
+        "text": "Grazie mille, è un piacere sentirlo! Un cappuccino, subito. Lei è di Verona o è in visita?",
+        "en": "Thank you so much, it's a pleasure to hear that! One cappuccino, right away. Are you from Verona or just visiting?"
+      },
+      {
+        "at": "2026-10-20T08:01:00.000Z",
+        "who": "learner",
+        "text": "No, non sono di Verona. Sono in Italia da poche settimane e abito qui vicino. Lei è sempre vissuto a Verona?"
+      },
+      {
+        "at": "2026-10-20T08:01:20.000Z",
+        "who": "npc",
+        "text": "Sempre! Sono nato qui, e questo caffè era già di mio padre. Ma lei, di dov'è? E come si trova in Italia?",
+        "en": "Always! I was born here, and this café was already my father's. But you, where are you from? And how are you finding Italy?"
+      },
+      {
+        "at": "2026-10-20T08:01:40.000Z",
+        "who": "learner",
+        "text": "Sono americano, di Chicago. Mi trovo molto bene in Italia, ma la lingua è un po' difficile! Il suo papà ha aperto il caffè tanti anni fa?"
+      },
+      {
+        "at": "2026-10-20T08:02:00.000Z",
+        "who": "npc",
+        "text": "Ah, Chicago! Che bella città. Sì, mio padre ha aperto nel 1968, più di cinquant'anni fa. E non si preoccupi, il suo italiano è già molto buono! Ecco il suo cappuccino.",
+        "en": "Ah, Chicago! What a beautiful city. Yes, my father opened in 1968, more than fifty years ago. And don't worry, your Italian is already very good! Here's your cappuccino."
+      },
+      {
+        "at": "2026-10-20T08:02:20.000Z",
+        "who": "learner",
+        "text": "Grazie mille! Wow, nel 1968, è tanto tempo! Mi può dire, qual è un buon posto qui vicino per mangiare? Ieri ho mangiato una pizza ma non era molto buona."
+      },
+      {
+        "at": "2026-10-20T08:02:40.000Z",
+        "who": "npc",
+        "text": "Ah, la pizza per turisti, la conosco bene! Vada alla trattoria in Via Mazzini, due passi da qui: la pasta fatta in casa è ottima. Provi i bigoli, sono un piatto tipico veneto. Ha già visitato l'Arena?",
+        "en": "Ah, tourist pizza, I know it well! Go to the trattoria on Via Mazzini, just a couple of steps from here: the homemade pasta is excellent. Try the bigoli, they're a typical Venetian dish. Have you already visited the Arena?"
+      },
+      {
+        "at": "2026-10-20T08:03:00.000Z",
+        "who": "learner",
+        "text": "Grazie per il consiglio! No, non ho ancora visitato l'Arena, ma voglio andare questa settimana. Lei ci va qualche volta?"
+      },
+      {
+        "at": "2026-10-20T08:03:20.000Z",
+        "who": "npc",
+        "text": "Certo, quasi ogni estate per l'opera! Vedere l'Aida sotto le stelle è un'emozione unica. Se può, ci vada di sera, non se ne pentirà.",
+        "en": "Of course, almost every summer for the opera! Seeing Aida under the stars is a one-of-a-kind thrill. If you can, go in the evening, you won't regret it."
+      },
+      {
+        "at": "2026-10-20T08:03:40.000Z",
+        "who": "learner",
+        "text": "Che bello! Io non ho mai visto un'opera. Sono andato a un concerto a Chicago, ma l'opera è molto cara, no?"
+      },
+      {
+        "at": "2026-10-20T08:04:00.000Z",
+        "who": "npc",
+        "text": "Dipende! I posti migliori costano molto, è vero, ma i gradoni, cioè i posti in alto, sono molto più economici. E l'atmosfera è la stessa, creda a me. Le piace la musica classica?",
+        "en": "It depends! The best seats cost a lot, it's true, but the gradoni, the seats up high, are much cheaper. And the atmosphere is the same, believe me. Do you like classical music?"
+      },
+      {
+        "at": "2026-10-20T08:04:20.000Z",
+        "who": "learner",
+        "text": "Sì, mi piace un po'. Che cosa sono i \"gradoni\"? Non ho capito bene la parola, scusi."
+      },
+      {
+        "at": "2026-10-20T08:04:40.000Z",
+        "who": "npc",
+        "text": "Nessun problema! I gradoni sono i grandi scalini di pietra dell'Arena, dove ci si siede senza posto numerato. Sono antichi, romani, e quindi un po' duri: porti un cuscino!",
+        "en": "No problem! The gradoni are the big stone steps of the Arena, where you sit without a numbered seat. They're ancient, Roman, and so a bit hard: bring a cushion!"
+      },
+      {
+        "at": "2026-10-20T08:05:00.000Z",
+        "who": "learner",
+        "text": "Ah, capisco! Gli scalini di pietra. Un cuscino, buona idea! Lei porta un cuscino quando va all'Arena?"
+      },
+      {
+        "at": "2026-10-20T08:05:20.000Z",
+        "who": "npc",
+        "text": "Ma certo, e anche una bottiglia d'acqua e una giacca leggera, perché la sera in pietra fa fresco! Ormai sono un esperto. Il cappuccino come è? Le piace?",
+        "en": "But of course, and also a bottle of water and a light jacket, because in the evening it gets cool on the stone! By now I'm an expert. How's the cappuccino? Do you like it?"
+      },
+      {
+        "at": "2026-10-20T08:05:40.000Z",
+        "who": "learner",
+        "text": "Sì, il cappuccino è molto buono! Io bevo sempre il caffè a casa, ma questo è più buono. Lei fa il caffè ogni giorno?"
+      },
+      {
+        "at": "2026-10-20T08:06:00.000Z",
+        "who": "npc",
+        "text": "Ogni giorno, dalle sei del mattino! Il segreto è la macchina e la mano, e io ho ancora quella di mio padre. Grazie del complimento, mi fa molto piacere!",
+        "en": "Every day, from six in the morning! The secret is the machine and the hand, and I still have my father's. Thanks for the compliment, it makes me very happy!"
+      },
+      {
+        "at": "2026-10-20T08:06:20.000Z",
+        "who": "learner",
+        "text": "Che bello, la macchina di suo padre! Io ho comprato una macchina del caffè la settimana scorsa, ma il caffè non è come questo."
+      },
+      {
+        "at": "2026-10-20T08:06:40.000Z",
+        "who": "npc",
+        "text": "Eh, ci vuole pratica, non si scoraggi! Usi caffè macinato fresco e non faccia l'acqua troppo calda. Se vuole, le insegno qualche trucco la prossima volta che passa. Come si chiama, scusi?",
+        "en": "Eh, it takes practice, don't get discouraged! Use freshly ground coffee and don't make the water too hot. If you like, I'll teach you a few tricks next time you come by. What's your name, sorry?"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-25",
+    "synthetic": true,
+    "learner": "asks-meaning",
+    "character_id": "stefano-maitre",
+    "place_id": "ristorante-del-cambio",
+    "city_id": "torino",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T09:00:00.000Z",
+    "ended_at": "2026-10-20T09:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T09:00:00.000Z",
+        "who": "npc",
+        "text": "Buonasera, benvenuto al Ristorante Del Cambio. Posso aiutarla?",
+        "en": "Good evening, welcome to Ristorante Del Cambio. May I help you?"
+      },
+      {
+        "at": "2026-10-20T09:00:20.000Z",
+        "who": "learner",
+        "text": "Buonasera. Um, un tavolo per due, per favore. Sorry, how do you say... 'reservation'?"
+      },
+      {
+        "at": "2026-10-20T09:00:40.000Z",
+        "who": "npc",
+        "text": "Si dice 'prenotazione'. Ha una prenotazione a suo nome, oppure vuole un tavolo senza?",
+        "en": "You say 'prenotazione'. Do you have a reservation under your name, or would you like a table without one?"
+      },
+      {
+        "at": "2026-10-20T09:01:00.000Z",
+        "who": "learner",
+        "text": "Um, no prenotazione. Scusi, what does 'senza' mean? Is it 'without'?"
+      },
+      {
+        "at": "2026-10-20T09:01:20.000Z",
+        "who": "npc",
+        "text": "Esatto, 'senza' significa 'without'. Allora, un tavolo per due senza prenotazione: lasci che controlli se abbiamo posto. Un momento, prego.",
+        "en": "Exactly, 'senza' means 'without'. So, a table for two without a reservation: let me check if we have room. One moment, please."
+      },
+      {
+        "at": "2026-10-20T09:01:40.000Z",
+        "who": "learner",
+        "text": "Va bene, grazie. Um, scusi, what does 'controlli' mean?"
+      },
+      {
+        "at": "2026-10-20T09:02:00.000Z",
+        "who": "npc",
+        "text": "'Controlli' viene da 'controllare', che significa 'to check'. Lei è gentile ad aspettare. Ecco, abbiamo un tavolo libero vicino alla finestra: le va bene?",
+        "en": "'Controlli' comes from 'controllare', which means 'to check'. You are kind to wait. There, we have a free table by the window: does that suit you?"
+      },
+      {
+        "at": "2026-10-20T09:02:20.000Z",
+        "who": "learner",
+        "text": "Sì, va bene, grazie. Scusi, what does 'finestra' mean?"
+      },
+      {
+        "at": "2026-10-20T09:02:40.000Z",
+        "who": "npc",
+        "text": "'Finestra' significa 'window'. Da quel tavolo si vede la piazza, è molto piacevole la sera. Mi segua, prego.",
+        "en": "'Finestra' means 'window'. From that table you can see the square, it's very pleasant in the evening. Follow me, please."
+      },
+      {
+        "at": "2026-10-20T09:03:00.000Z",
+        "who": "learner",
+        "text": "Grazie mille. Um, scusi, what does 'segua' mean? Is it 'follow'?"
+      },
+      {
+        "at": "2026-10-20T09:03:20.000Z",
+        "who": "npc",
+        "text": "Sì, esatto: 'segua' viene da 'seguire', 'to follow'. Ecco, siamo arrivati. Si accomodi pure: le porto subito il menù.",
+        "en": "Yes, exactly: 'segua' comes from 'seguire', 'to follow'. Here we are. Please make yourself comfortable: I'll bring you the menu right away."
+      },
+      {
+        "at": "2026-10-20T09:03:40.000Z",
+        "who": "learner",
+        "text": "Grazie. Um, scusi, what does 'si accomodi' mean?"
+      },
+      {
+        "at": "2026-10-20T09:04:00.000Z",
+        "who": "npc",
+        "text": "'Si accomodi' significa 'make yourself comfortable', o semplicemente 'take a seat'. È un modo molto cortese per invitare qualcuno a sedersi.",
+        "en": "'Si accomodi' means 'make yourself comfortable', or simply 'take a seat'. It's a very polite way to invite someone to sit down."
+      },
+      {
+        "at": "2026-10-20T09:04:20.000Z",
+        "who": "learner",
+        "text": "Ah, ho capito. Grazie. Um, scusi, how do you say 'water' in Italian?"
+      },
+      {
+        "at": "2026-10-20T09:04:40.000Z",
+        "who": "npc",
+        "text": "Si dice 'acqua'. La preferisce naturale o frizzante?",
+        "en": "You say 'acqua'. Would you prefer still or sparkling?"
+      },
+      {
+        "at": "2026-10-20T09:05:00.000Z",
+        "who": "learner",
+        "text": "Um, acqua... scusi, what does 'frizzante' mean? Is it like 'sparkling'?"
+      },
+      {
+        "at": "2026-10-20T09:05:20.000Z",
+        "who": "npc",
+        "text": "Sì, esattamente: 'frizzante' vuol dire 'sparkling', con le bollicine. 'Naturale' invece è 'still', senza bollicine. Quale preferisce?",
+        "en": "Yes, exactly: 'frizzante' means 'sparkling', with bubbles. 'Naturale' instead is 'still', without bubbles. Which do you prefer?"
+      },
+      {
+        "at": "2026-10-20T09:05:40.000Z",
+        "who": "learner",
+        "text": "Acqua naturale, per favore. Um, scusi, what does 'bollicine' mean?"
+      },
+      {
+        "at": "2026-10-20T09:06:00.000Z",
+        "who": "npc",
+        "text": "'Bollicine' sono le 'bubbles', le piccole bolle nell'acqua o nello spumante. Perfetto, acqua naturale: gliela porto subito.",
+        "en": "'Bollicine' are 'bubbles', the little bubbles in water or in sparkling wine. Perfect, still water: I'll bring it right away."
+      },
+      {
+        "at": "2026-10-20T09:06:20.000Z",
+        "who": "learner",
+        "text": "Grazie mille. Um, scusi, what does 'gliela porto' mean?"
+      },
+      {
+        "at": "2026-10-20T09:06:40.000Z",
+        "who": "npc",
+        "text": "'Gliela porto' significa 'I'll bring it to you': 'porto' è 'I bring', e 'gliela' vuol dire 'it to you'. Si usa molto nel parlare di tutti i giorni.",
+        "en": "'Gliela porto' means 'I'll bring it to you': 'porto' is 'I bring', and 'gliela' means 'it to you'. It's used a lot in everyday speech."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-26",
+    "synthetic": true,
+    "learner": "verb-mistakes",
+    "character_id": "francesca-clemente",
+    "place_id": "ristorante-francesca",
+    "city_id": "matera",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T10:00:00.000Z",
+    "ended_at": "2026-10-20T10:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T10:00:00.000Z",
+        "who": "npc",
+        "text": "Buonasera! Benvenuto al Ristorante Francesca. Cercava un tavolo?",
+        "en": "Good evening! Welcome to Ristorante Francesca. Were you looking for a table?"
+      },
+      {
+        "at": "2026-10-20T10:00:20.000Z",
+        "who": "learner",
+        "text": "Buonasera! Sì, io cerco un tavolo per due persone, per favore. Noi siamo molto fame."
+      },
+      {
+        "at": "2026-10-20T10:00:40.000Z",
+        "who": "npc",
+        "text": "Perfetto, ho un bel tavolo vicino alla finestra, con vista sui Sassi. Mi segua, prego. Ha già mangiato la cucina lucana?",
+        "en": "Perfect, I have a lovely table by the window, with a view of the Sassi. Follow me, please. Have you ever tried Lucanian cuisine?"
+      },
+      {
+        "at": "2026-10-20T10:01:00.000Z",
+        "who": "learner",
+        "text": "No, io non mangio mai la cucina lucana. Che cosa tu consigli per noi?"
+      },
+      {
+        "at": "2026-10-20T10:01:20.000Z",
+        "who": "npc",
+        "text": "Allora iniziate con i peperoni cruschi e le orecchiette con la cima di rapa, sono il nostro orgoglio. Poi, se avete ancora fame, l'agnello al forno con patate. Vi piace la carne?",
+        "en": "Then start with the peperoni cruschi and the orecchiette with turnip tops, they are our pride. Then, if you're still hungry, the oven-baked lamb with potatoes. Do you like meat?"
+      },
+      {
+        "at": "2026-10-20T10:01:40.000Z",
+        "who": "learner",
+        "text": "Sì, noi piace la carne molto. Io voglio l'agnello, e mia amico mangia le orecchiette."
+      },
+      {
+        "at": "2026-10-20T10:02:00.000Z",
+        "who": "npc",
+        "text": "Ottima scelta! L'agnello e le orecchiette, subito. E da bere? Un bicchiere di Aglianico del Vulture, il nostro vino rosso?",
+        "en": "Excellent choice! The lamb and the orecchiette, right away. And to drink? A glass of Aglianico del Vulture, our red wine?"
+      },
+      {
+        "at": "2026-10-20T10:02:20.000Z",
+        "who": "learner",
+        "text": "Sì, un bicchiere di vino rosso va bene. E per il mia amico una acqua, per favore."
+      },
+      {
+        "at": "2026-10-20T10:02:40.000Z",
+        "who": "npc",
+        "text": "Benissimo, un Aglianico per lei e un'acqua per il suo amico. Naturale o frizzante?",
+        "en": "Very good, an Aglianico for you and a water for your friend. Still or sparkling?"
+      },
+      {
+        "at": "2026-10-20T10:03:00.000Z",
+        "who": "learner",
+        "text": "Naturale, per favore. E io anche voglio i peperoni, che cosa sono? Io non capisco."
+      },
+      {
+        "at": "2026-10-20T10:03:20.000Z",
+        "who": "npc",
+        "text": "Sono peperoni rossi essiccati al sole e poi fritti: croccanti, dolci e un po' affumicati. Sono tipici di Senise, qui in Basilicata. Ne porto una porzione da dividere?",
+        "en": "They're red peppers dried in the sun and then fried: crunchy, sweet and a little smoky. They're typical of Senise, here in Basilicata. Shall I bring a portion to share?"
+      },
+      {
+        "at": "2026-10-20T10:03:40.000Z",
+        "who": "learner",
+        "text": "Sì, grazie, una porzione va bene. Noi dividiamo i peperoni, io e mio amica."
+      },
+      {
+        "at": "2026-10-20T10:04:00.000Z",
+        "who": "npc",
+        "text": "Perfetto, allora una porzione di peperoni cruschi da dividere. Intanto vi porto l'acqua e il vino. Torno subito, mettetevi pure comodi!",
+        "en": "Perfect, then one portion of peperoni cruschi to share. In the meantime I'll bring you the water and the wine. I'll be right back, make yourselves comfortable!"
+      },
+      {
+        "at": "2026-10-20T10:04:20.000Z",
+        "who": "learner",
+        "text": "Grazie mille! Noi aspettiamo qui. Il ristorante è molto bello, io amo i Sassi."
+      },
+      {
+        "at": "2026-10-20T10:04:40.000Z",
+        "who": "npc",
+        "text": "Grazie, mi fa piacere! Sono nata qui, e i Sassi per me sono casa. Questa sera il tramonto sarà bellissimo dalla finestra. È la sua prima volta a Matera?",
+        "en": "Thank you, that makes me happy! I was born here, and the Sassi are home to me. This evening the sunset will be beautiful from the window. Is it your first time in Matera?"
+      },
+      {
+        "at": "2026-10-20T10:05:00.000Z",
+        "who": "learner",
+        "text": "Sì, è la mia prima volta a Matera. Io arrivo ieri con mio amico, e noi visitiamo i Sassi oggi."
+      },
+      {
+        "at": "2026-10-20T10:05:20.000Z",
+        "who": "npc",
+        "text": "Che bello, benvenuti allora! Un giorno solo non basta per i Sassi, ma si comincia bene. Domani, se potete, salite alla Murgia: la vista di sera è magica. Quanti giorni restate?",
+        "en": "How lovely, welcome then! One day isn't enough for the Sassi, but it's a good start. Tomorrow, if you can, go up to the Murgia: the view in the evening is magical. How many days are you staying?"
+      },
+      {
+        "at": "2026-10-20T10:05:40.000Z",
+        "who": "learner",
+        "text": "Noi restiamo tre giorni. Che cosa è la Murgia? Io non capisco bene."
+      },
+      {
+        "at": "2026-10-20T10:06:00.000Z",
+        "who": "npc",
+        "text": "La Murgia è l'altopiano roccioso di fronte ai Sassi, dall'altra parte del canyon. Da lì vedete tutta la città, soprattutto al tramonto. Ci sono anche delle chiese scavate nella roccia.",
+        "en": "The Murgia is the rocky plateau across from the Sassi, on the other side of the canyon. From there you can see the whole city, especially at sunset. There are also churches carved into the rock."
+      },
+      {
+        "at": "2026-10-20T10:06:20.000Z",
+        "who": "learner",
+        "text": "Ah, io capisco, è una montagna. Noi andiamo la Murgia domani, è bella la vista di sera?"
+      },
+      {
+        "at": "2026-10-20T10:06:40.000Z",
+        "who": "npc",
+        "text": "Bellissima, la luce dorata sulle case di pietra è uno spettacolo. Non è proprio una montagna, è un altopiano, ma la salita è facile. Portate una giacca, la sera fa fresco.",
+        "en": "Beautiful, the golden light on the stone houses is a sight to see. It's not really a mountain, it's a plateau, but the climb is easy. Bring a jacket, it gets cool in the evening."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-27",
+    "synthetic": true,
+    "learner": "errand-and-leave",
+    "character_id": "dottore-lombardi",
+    "place_id": "farmacia-centrale-milano",
+    "city_id": "milano",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T11:00:00.000Z",
+    "ended_at": "2026-10-20T11:03:40.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T11:00:00.000Z",
+        "who": "npc",
+        "text": "Buongiorno, signore. Posso aiutarla?",
+        "en": "Good morning. Can I help you?"
+      },
+      {
+        "at": "2026-10-20T11:00:20.000Z",
+        "who": "learner",
+        "text": "Buongiorno. Ho mal di testa. Avete qualcosa per il mal di testa, per favore?"
+      },
+      {
+        "at": "2026-10-20T11:00:40.000Z",
+        "who": "npc",
+        "text": "Certo, abbiamo diverse cose. Ha qualche allergia ai farmaci? Prende altre medicine?",
+        "en": "Of course, we have several options. Do you have any drug allergies? Are you taking any other medicines?"
+      },
+      {
+        "at": "2026-10-20T11:01:00.000Z",
+        "who": "learner",
+        "text": "No, non ho allergie. Non prendo altre medicine."
+      },
+      {
+        "at": "2026-10-20T11:01:20.000Z",
+        "who": "npc",
+        "text": "Bene. Allora le consiglio il paracetamolo: una compressa da 500 milligrammi, massimo tre al giorno. Lo prenda dopo mangiato. Le va bene?",
+        "en": "Good. Then I recommend paracetamol: one 500 milligram tablet, maximum three a day. Take it after eating. Does that suit you?"
+      },
+      {
+        "at": "2026-10-20T11:01:40.000Z",
+        "who": "learner",
+        "text": "Sì, va bene. Quanto costa, per favore?"
+      },
+      {
+        "at": "2026-10-20T11:02:00.000Z",
+        "who": "npc",
+        "text": "Sono quattro euro e cinquanta. Se il mal di testa non passa entro due giorni, vada dal medico.",
+        "en": "That's four euros fifty. If the headache doesn't go away within two days, go see a doctor."
+      },
+      {
+        "at": "2026-10-20T11:02:20.000Z",
+        "who": "learner",
+        "text": "Ok, grazie. Ecco cinque euro."
+      },
+      {
+        "at": "2026-10-20T11:02:40.000Z",
+        "who": "npc",
+        "text": "Grazie a lei. Ecco il resto, cinquanta centesimi, e lo scontrino. Buona giornata e si riposi!",
+        "en": "Thank you. Here's your change, fifty cents, and the receipt. Have a good day and get some rest!"
+      },
+      {
+        "at": "2026-10-20T11:03:00.000Z",
+        "who": "learner",
+        "text": "Grazie mille! Buona giornata, arrivederci!"
+      },
+      {
+        "at": "2026-10-20T11:03:20.000Z",
+        "who": "npc",
+        "text": "Arrivederci, signore. Si riguardi!",
+        "en": "Goodbye, sir. Take care!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-it-28",
+    "synthetic": true,
+    "learner": "chatty-leaver",
+    "character_id": "stefano-vino",
+    "place_id": "enoteca-bacco",
+    "city_id": "siracusa",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T12:00:00.000Z",
+    "ended_at": "2026-10-20T12:04:20.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T12:00:00.000Z",
+        "who": "npc",
+        "text": "Buonasera, benvenuto all'Enoteca Bacco! Prego, si accomodi. Cerca qualcosa in particolare?",
+        "en": "Good evening, welcome to Enoteca Bacco! Please, make yourself at home. Are you looking for something in particular?"
+      },
+      {
+        "at": "2026-10-20T12:00:20.000Z",
+        "who": "learner",
+        "text": "Buonasera. Sì, io cerco un vino rosso della Sicilia, forse un Nero d'Avola. Cosa mi consiglia?"
+      },
+      {
+        "at": "2026-10-20T12:00:40.000Z",
+        "who": "npc",
+        "text": "Ottima scelta! Il Nero d'Avola è il nostro orgoglio. Ne ho uno di Noto, corposo e speziato, perfetto con la carne. Lo preferisce più morbido o più strutturato?",
+        "en": "Excellent choice! Nero d'Avola is our pride. I have one from Noto, full-bodied and spicy, perfect with meat. Do you prefer it softer or more structured?"
+      },
+      {
+        "at": "2026-10-20T12:01:00.000Z",
+        "who": "learner",
+        "text": "Mmm, più morbido, per favore. Non è troppo forte, vero?"
+      },
+      {
+        "at": "2026-10-20T12:01:20.000Z",
+        "who": "npc",
+        "text": "No, no, stia tranquillo. Allora le consiglio un Nero d'Avola in purezza, giovane, solo acciaio: frutto maturo, tannini dolci, molto facile da bere. Vuole assaggiarlo?",
+        "en": "No, no, don't worry. Then I recommend a pure Nero d'Avola, young, steel-aged only: ripe fruit, soft tannins, very easy to drink. Would you like to taste it?"
+      },
+      {
+        "at": "2026-10-20T12:01:40.000Z",
+        "who": "learner",
+        "text": "Sì, volentieri, grazie. Un assaggio, per favore."
+      },
+      {
+        "at": "2026-10-20T12:02:00.000Z",
+        "who": "npc",
+        "text": "Certo, un attimo. Ecco, senta prima il profumo: ciliegia, un po' di prugna. Poi lo assaggi con calma. Che ne dice?",
+        "en": "Of course, one moment. Here, smell it first: cherry, a bit of plum. Then taste it slowly. What do you think?"
+      },
+      {
+        "at": "2026-10-20T12:02:20.000Z",
+        "who": "learner",
+        "text": "Mmm, è buono! Morbido, mi piace molto. Prendo due bottiglie, per favore."
+      },
+      {
+        "at": "2026-10-20T12:02:40.000Z",
+        "who": "npc",
+        "text": "Perfetto, sono contento che le piaccia! Due bottiglie, subito. Sono trentasei euro in tutto. Le faccio una confezione regalo, o va bene così?",
+        "en": "Perfect, I'm glad you like it! Two bottles, right away. That's thirty-six euros in total. Shall I do a gift wrap for you, or is it fine like this?"
+      },
+      {
+        "at": "2026-10-20T12:03:00.000Z",
+        "who": "learner",
+        "text": "No, va bene così, grazie. Ecco trentasei euro. Grazie mille, arrivederci!"
+      },
+      {
+        "at": "2026-10-20T12:03:20.000Z",
+        "who": "npc",
+        "text": "Grazie a lei! Ecco le sue due bottiglie. Buona serata e buon vino, e torni a trovarci presto, mi raccomando!",
+        "en": "Thank you! Here are your two bottles. Have a good evening and enjoy the wine, and come back and see us soon, I insist!"
+      },
+      {
+        "at": "2026-10-20T12:03:40.000Z",
+        "who": "learner",
+        "text": "Grazie, altrettanto! Sicuro, torno presto. Buona serata, arrivederci!"
+      },
+      {
+        "at": "2026-10-20T12:04:00.000Z",
+        "who": "npc",
+        "text": "Arrivederci, a presto! Buona serata e... salute!",
+        "en": "Goodbye, see you soon! Have a good evening and... cheers!"
+      }
+    ]
+  }
+]

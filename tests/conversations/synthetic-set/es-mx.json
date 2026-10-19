@@ -1,0 +1,2932 @@
+[
+  {
+    "id": "synthetic-es-mx-01",
+    "synthetic": true,
+    "learner": "english-beginner",
+    "character_id": "rosa-flores-ignacio-ramirez",
+    "place_id": "mercado-ignacio-ramirez",
+    "city_id": "san-miguel-de-allende",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T09:00:00.000Z",
+    "ended_at": "2026-10-19T09:05:40.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T09:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenos días, joven! Pase, pase, mire las flores. ¿Qué anda buscando hoy?",
+        "en": "Good morning, young one! Come in, come in, look at the flowers. What are you looking for today?"
+      },
+      {
+        "at": "2026-10-19T09:00:20.000Z",
+        "who": "learner",
+        "text": "Buenos días, señora. Yo quiero... flores para mi mamá. Son para su cumpleaños."
+      },
+      {
+        "at": "2026-10-19T09:00:40.000Z",
+        "who": "npc",
+        "text": "¡Ay, qué bonito detalle! Para una mamá en su cumpleaños, tengo rosas, girasoles y unas margaritas muy frescas. ¿Cuáles le gustan a ella?",
+        "en": "Aw, what a lovely gesture! For a mom on her birthday, I have roses, sunflowers, and some very fresh daisies. Which ones does she like?"
+      },
+      {
+        "at": "2026-10-19T09:01:00.000Z",
+        "who": "learner",
+        "text": "Um... a ella le gusta las rosas. Las rosas rojas... no, el rosas rosado? ¿Cuánto cuesta?"
+      },
+      {
+        "at": "2026-10-19T09:01:20.000Z",
+        "who": "npc",
+        "text": "Las rosas rosadas son preciosas, joven. La docena cuesta ciento cincuenta pesos. ¿Quiere una docena para su mamá?",
+        "en": "The pink roses are gorgeous, young one. A dozen costs one hundred fifty pesos. Do you want a dozen for your mom?"
+      },
+      {
+        "at": "2026-10-19T09:01:40.000Z",
+        "who": "learner",
+        "text": "Um... ciento cincuenta pesos? Sí, quiero una docena, por favor. Es... uh, es muy bonito."
+      },
+      {
+        "at": "2026-10-19T09:02:00.000Z",
+        "who": "npc",
+        "text": "¡Perfecto! Le voy a escoger las más bonitas y se las envuelvo con papel y un listón. ¿Quiere que le ponga una tarjetita para su mamá?",
+        "en": "Perfect! I'm going to pick out the prettiest ones and wrap them with paper and a ribbon. Do you want me to add a little card for your mom?"
+      },
+      {
+        "at": "2026-10-19T09:02:20.000Z",
+        "who": "learner",
+        "text": "Una... tarjeta? Um, sí, por favor. Yo no entiendo todo. Puede usted repetir?"
+      },
+      {
+        "at": "2026-10-19T09:02:40.000Z",
+        "who": "npc",
+        "text": "¡Claro que sí! Dije: le pongo una tarjetita con las flores, para que usted le escriba un mensaje a su mamá. Es un papelito pequeño. ¿Qué le quiere decir?",
+        "en": "Of course! I said: I'll put a little card with the flowers, so you can write a message to your mom. It's a small piece of paper. What do you want to say to her?"
+      },
+      {
+        "at": "2026-10-19T09:03:00.000Z",
+        "who": "learner",
+        "text": "Um... un mensaje? Yo no sé... Feliz cumpleaños, mamá. Es correcto? Y yo te quiero... uh, yo la quiero mucho."
+      },
+      {
+        "at": "2026-10-19T09:03:20.000Z",
+        "who": "npc",
+        "text": "Muy correcto, joven, y qué lindo mensaje. Solo un detalle: a su mamá le dice «te quiero mucho», porque le habla a ella. Aquí tiene la tarjeta y una pluma, escríbalo con calma.",
+        "en": "Very correct, young one, and what a lovely message. Just one detail: to your mom you say \"te quiero mucho,\" because you're speaking to her. Here's the card and a pen, write it calmly."
+      },
+      {
+        "at": "2026-10-19T09:03:40.000Z",
+        "who": "learner",
+        "text": "Ah, gracias. Yo escribo... te quiero mucho. Um, la tarjeta es gratis? O cuánto es todo?"
+      },
+      {
+        "at": "2026-10-19T09:04:00.000Z",
+        "who": "npc",
+        "text": "La tarjeta va de regalo de mi parte, joven. Solo son los ciento cincuenta pesos de las rosas. Aquí tiene su ramo, ya está envuelto con su listón. ¿Va a pagar con billete o con monedas?",
+        "en": "The card is a gift from me, young one. It's only the one hundred fifty pesos for the roses. Here's your bouquet, already wrapped with its ribbon. Will you pay with bills or coins?"
+      },
+      {
+        "at": "2026-10-19T09:04:20.000Z",
+        "who": "learner",
+        "text": "Um... billete. Tengo un billete de doscientos pesos. Es bien? Gracias por la tarjeta, señora."
+      },
+      {
+        "at": "2026-10-19T09:04:40.000Z",
+        "who": "npc",
+        "text": "Sí, es perfecto, joven. Le doy su cambio: cincuenta pesos. Y de nada, con mucho gusto. Que le guste mucho a su mamá. ¡Feliz cumpleaños para ella!",
+        "en": "Yes, that's perfect, young one. I'll give you your change: fifty pesos. And you're welcome, my pleasure. I hope your mom loves them. Happy birthday to her!"
+      },
+      {
+        "at": "2026-10-19T09:05:00.000Z",
+        "who": "learner",
+        "text": "Ah, gracias, señora. Muchas gracias por todo. Adiós, y que tenga un buen día!"
+      },
+      {
+        "at": "2026-10-19T09:05:20.000Z",
+        "who": "npc",
+        "text": "¡Igualmente, joven! Que Dios lo bendiga, y vuelva cuando quiera. ¡Hasta pronto!",
+        "en": "Likewise, young one! God bless you, and come back whenever you like. See you soon!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-02",
+    "synthetic": true,
+    "learner": "hesitant",
+    "character_id": "carmen-jubilada",
+    "place_id": "alameda-central",
+    "city_id": "ciudad-de-mexico",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T10:00:00.000Z",
+    "ended_at": "2026-10-19T10:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T10:00:00.000Z",
+        "who": "npc",
+        "text": "Buenas tardes, joven. ¿Busca algo por aquí en la Alameda?",
+        "en": "Good afternoon, young one. Are you looking for something around here in the Alameda?"
+      },
+      {
+        "at": "2026-10-19T10:00:20.000Z",
+        "who": "learner",
+        "text": "Ehm... hola, buenas... tardes. Yo... ehm... no entiendo. Más lento, por favor."
+      },
+      {
+        "at": "2026-10-19T10:00:40.000Z",
+        "who": "npc",
+        "text": "Ay, perdone, con calma. Yo soy Carmen. ¿Y usted, cómo se llama?",
+        "en": "Oh, forgive me, no rush. I am Carmen. And you, what is your name?"
+      },
+      {
+        "at": "2026-10-19T10:01:00.000Z",
+        "who": "learner",
+        "text": "Ehm... yo... me llamo... Sam. Mucho gusto, ehm... Doña Carmen."
+      },
+      {
+        "at": "2026-10-19T10:01:20.000Z",
+        "who": "npc",
+        "text": "Mucho gusto, Sam. Qué bonito nombre. ¿De dónde es usted?",
+        "en": "A pleasure, Sam. What a nice name. Where are you from?"
+      },
+      {
+        "at": "2026-10-19T10:01:40.000Z",
+        "who": "learner",
+        "text": "Ehm... yo soy... de Estados Unidos. Ehm... ¿y usted?"
+      },
+      {
+        "at": "2026-10-19T10:02:00.000Z",
+        "who": "npc",
+        "text": "Yo soy de aquí, de la Ciudad de México. Toda mi vida, mijo. ¿Le gusta el centro?",
+        "en": "I'm from here, Mexico City. My whole life, son. Do you like the downtown?"
+      },
+      {
+        "at": "2026-10-19T10:02:20.000Z",
+        "who": "learner",
+        "text": "Ehm... sí, me gusta... ehm... es bonito. Sorry... ¿repite, por favor? Más lento."
+      },
+      {
+        "at": "2026-10-19T10:02:40.000Z",
+        "who": "npc",
+        "text": "Claro que sí, mijo. Yo... vivo... aquí. En la Ciudad de México. ¿Le gusta... el centro?",
+        "en": "Of course, son. I... live... here. In Mexico City. Do you like... the downtown?"
+      },
+      {
+        "at": "2026-10-19T10:03:00.000Z",
+        "who": "learner",
+        "text": "Ehm... sí. Me gusta... mucho el centro. Es... ehm... muy bonito. Gracias, Doña Carmen."
+      },
+      {
+        "at": "2026-10-19T10:03:20.000Z",
+        "who": "npc",
+        "text": "Me da mucho gusto, mijo. Esta Alameda es mi lugar favorito. Aquí vengo todas las tardes a descansar y ver a la gente pasar. ¿Quiere sentarse un ratito conmigo?",
+        "en": "I'm so glad, son. This Alameda is my favorite place. I come here every afternoon to rest and watch the people go by. Would you like to sit with me for a little while?"
+      },
+      {
+        "at": "2026-10-19T10:03:40.000Z",
+        "who": "learner",
+        "text": "Ehm... sentarse... ehm... no entiendo. Sorry, ¿do you speak English? O... más lento, por favor."
+      },
+      {
+        "at": "2026-10-19T10:04:00.000Z",
+        "who": "npc",
+        "text": "No, mijo, solo español. Mire... sentarse es así. Yo me siento aquí, en la banca. ¿Se sienta conmigo?",
+        "en": "No, son, only Spanish. Look... to sit is like this. I sit here, on the bench. Will you sit with me?"
+      },
+      {
+        "at": "2026-10-19T10:04:20.000Z",
+        "who": "learner",
+        "text": "Ehm... ah, sentarse... sí, sí. Ehm... gracias, Doña Carmen. Me siento... ehm... aquí."
+      },
+      {
+        "at": "2026-10-19T10:04:40.000Z",
+        "who": "npc",
+        "text": "Muy bien, mijo, qué bueno. Mire, aquí se está fresquito, con los árboles. Me gusta mucho. ¿Y a usted, le gusta?",
+        "en": "Very good, son, how nice. Look, it's nice and cool here, with the trees. I like it a lot. And you, do you like it?"
+      },
+      {
+        "at": "2026-10-19T10:05:00.000Z",
+        "who": "learner",
+        "text": "Ehm... sí, me gusta. Ehm... es... bonito. Los árboles... ehm... muy bonitos."
+      },
+      {
+        "at": "2026-10-19T10:05:20.000Z",
+        "who": "npc",
+        "text": "Sí, mijo, son muy bonitos. Y mire, allá hay unas palomas. A los niños les encantan. ¿Usted tiene hijos?",
+        "en": "Yes, son, they're very pretty. And look, over there are some pigeons. The children love them. Do you have children?"
+      },
+      {
+        "at": "2026-10-19T10:05:40.000Z",
+        "who": "learner",
+        "text": "Ehm... palomas... no entiendo. Ehm... ¿hijos? Ehm... repite, por favor. Más lento."
+      },
+      {
+        "at": "2026-10-19T10:06:00.000Z",
+        "who": "npc",
+        "text": "Ay, mijo, perdone. Mire, allá... palomas. Son pájaros, grises. Y mi pregunta: ¿usted... tiene... hijos? Niños, ¿sí?",
+        "en": "Oh, son, forgive me. Look, over there... pigeons. They are birds, gray ones. And my question: do you... have... children? Kids, yes?"
+      },
+      {
+        "at": "2026-10-19T10:06:20.000Z",
+        "who": "learner",
+        "text": "Ehm... palomas, ah, pájaros... sí. Hijos... ehm... no. No tengo hijos. ¿Y usted?"
+      },
+      {
+        "at": "2026-10-19T10:06:40.000Z",
+        "who": "npc",
+        "text": "Sí, mijo, tengo tres hijos y cinco nietos. Mis nietos vienen a veces conmigo a darle de comer a las palomas. ¿Usted tiene hermanos?",
+        "en": "Yes, son, I have three children and five grandchildren. My grandchildren sometimes come with me to feed the pigeons. Do you have siblings?"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-03",
+    "synthetic": true,
+    "learner": "improving",
+    "character_id": "beto-panadero",
+    "place_id": "panaderia-el-trigal-xochimilco",
+    "city_id": "oaxaca",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T11:00:00.000Z",
+    "ended_at": "2026-10-19T11:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T11:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes, joven! Bienvenido a Panadería El Trigal. ¿Qué se le antoja hoy?",
+        "en": "Good afternoon, young man! Welcome to Panadería El Trigal. What are you craving today?"
+      },
+      {
+        "at": "2026-10-19T11:00:20.000Z",
+        "who": "learner",
+        "text": "Buenas tardes. Ayer yo comí un pan muy rico aquí, pero no recuerdo el nombre. Era dulce y tenía azúcar de color rosa."
+      },
+      {
+        "at": "2026-10-19T11:00:40.000Z",
+        "who": "npc",
+        "text": "Ah, ya sé cuál es: la concha, la de azúcar rosita. Es de las más queridas por aquí, y todavía me quedan unas calientitas. ¿Cuántas le pongo?",
+        "en": "Ah, I know which one: the concha, the one with pink sugar. It's one of the most beloved here, and I still have a few warm ones left. How many shall I put in for you?"
+      },
+      {
+        "at": "2026-10-19T11:01:00.000Z",
+        "who": "learner",
+        "text": "¡Ah, la concha! Gracias. Quiero dos, por favor. Y usted, ¿hace el pan todos los días aquí?"
+      },
+      {
+        "at": "2026-10-19T11:01:20.000Z",
+        "who": "npc",
+        "text": "Con mucho gusto, aquí tiene sus dos conchas. Sí, joven, todos los días me levanto a las cuatro de la mañana a amasar. Son más de cuarenta años en el horno. ¿Y usted, de dónde es?",
+        "en": "With pleasure, here are your two conchas. Yes, young man, every day I get up at four in the morning to knead. It's more than forty years at the oven. And you, where are you from?"
+      },
+      {
+        "at": "2026-10-19T11:01:40.000Z",
+        "who": "learner",
+        "text": "Yo soy de Canadá. Llegué a Oaxaca hace tres semanas y me gusta mucho. ¡Cuarenta años es mucho tiempo! ¿Le gusta su trabajo?"
+      },
+      {
+        "at": "2026-10-19T11:02:00.000Z",
+        "who": "npc",
+        "text": "¡Qué bonito, Canadá! Pues bienvenido a Oaxaca, joven, ojalá se quede mucho tiempo. Y sí, me gusta mi trabajo, claro que sí. Huele a pan calientito desde temprano, y eso no tiene precio. Mire, si le gustó la concha, mañana pruebe también el pan de yema, que es muy de aquí. ¿Ya conoce el pan de yema?",
+        "en": "How nice, Canada! Well, welcome to Oaxaca, young man, I hope you stay a long time. And yes, I like my work, of course. It smells of warm bread from early on, and that's priceless. Look, if you liked the concha, tomorrow also try the pan de yema, which is very much from here. Do you already know pan de yema?"
+      },
+      {
+        "at": "2026-10-19T11:02:20.000Z",
+        "who": "learner",
+        "text": "No, todavía no lo conozco. ¿Cómo es el pan de yema? ¿Es dulce también?"
+      },
+      {
+        "at": "2026-10-19T11:02:40.000Z",
+        "who": "npc",
+        "text": "Es un pan suavecito, de color amarillo, hecho con yemas de huevo y un toque de anís. Es ligeramente dulce, no tanto como la concha, y es perfecto para mojar en chocolate caliente. Aquí en Oaxaca no puede faltar en la mesa. Mañana le guardo uno, joven.",
+        "en": "It's a soft little bread, yellow in color, made with egg yolks and a touch of anise. It's slightly sweet, not as much as the concha, and it's perfect for dunking in hot chocolate. Here in Oaxaca it can't be missing from the table. Tomorrow I'll save one for you, young man."
+      },
+      {
+        "at": "2026-10-19T11:03:00.000Z",
+        "who": "learner",
+        "text": "¡Muchas gracias, Don Beto! Yo bebí chocolate ayer en el mercado y estaba muy rico. ¿Usted vive cerca de la panadería?"
+      },
+      {
+        "at": "2026-10-19T11:03:20.000Z",
+        "who": "npc",
+        "text": "¡Qué bueno que ya probó el chocolate oaxaqueño, joven! Y sí, vivo a unas cuantas cuadras, a unos diez minutos caminando. Por eso llego tan temprano sin problema. Así puedo despedirme de mi esposa y llegar al horno antes de que salga el sol.",
+        "en": "How good that you've already tried Oaxacan chocolate, young man! And yes, I live a few blocks away, about ten minutes on foot. That's why I get here so early with no trouble. That way I can say goodbye to my wife and reach the oven before the sun comes up."
+      },
+      {
+        "at": "2026-10-19T11:03:40.000Z",
+        "who": "learner",
+        "text": "¡Qué bien! Yo vivo cerca del Zócalo. ¿Hay un buen restaurante en su barrio? Quiero comer comida típica."
+      },
+      {
+        "at": "2026-10-19T11:04:00.000Z",
+        "who": "npc",
+        "text": "Mire, joven, a dos cuadras de aquí está la fonda de doña Chela, comida casera de verdad. Pida el mole negro con pollo o unas tlayudas, y de tomar, un agua de tuna. Eso sí, vaya temprano, porque a las tres ya casi no queda nada. ¿Le gusta el picante?",
+        "en": "Look, young man, two blocks from here is doña Chela's fonda, truly homemade food. Order the mole negro with chicken or some tlayudas, and to drink, a prickly pear water. But go early, because by three o'clock there's almost nothing left. Do you like spicy food?"
+      },
+      {
+        "at": "2026-10-19T11:04:20.000Z",
+        "who": "learner",
+        "text": "Sí, me gusta un poco el picante, pero no mucho. ¿Qué es el agua de tuna? No entendí la palabra \"tuna\"."
+      },
+      {
+        "at": "2026-10-19T11:04:40.000Z",
+        "who": "npc",
+        "text": "La tuna es el fruto del nopal, joven, ese cactus con espinas que ve por todos lados. Por dentro es rojita o verde, muy jugosa y dulce. Con ella se hace un agua fresca, con hielo y un poquito de azúcar. Es muy rica con este calor, y no pica nada. ¿Ya probó algún agua fresca?",
+        "en": "The tuna is the fruit of the nopal, young man, that cactus with spines you see everywhere. Inside it's red or green, very juicy and sweet. With it they make a fresh fruit water, with ice and a little sugar. It's very good in this heat, and it isn't spicy at all. Have you tried any agua fresca yet?"
+      },
+      {
+        "at": "2026-10-19T11:05:00.000Z",
+        "who": "learner",
+        "text": "Sí, ayer bebí un agua de jamaica en el mercado. Era muy rica. ¿Usted toma agua de tuna también?"
+      },
+      {
+        "at": "2026-10-19T11:05:20.000Z",
+        "who": "npc",
+        "text": "¡Claro que sí, joven! Cuando salgo del horno, ya con el calor encima, no hay nada mejor que un vaso grande de agua de tuna bien fría. Mi esposa la prepara en casa, y a veces me trae una jarrita aquí a la panadería. El agua de jamaica también me gusta mucho, es de las favoritas de mis nietos.",
+        "en": "Of course, young man! When I come away from the oven, with the heat already on me, there's nothing better than a big glass of ice-cold agua de tuna. My wife makes it at home, and sometimes she brings me a little pitcher here at the bakery. I also like agua de jamaica a lot, it's one of my grandchildren's favorites."
+      },
+      {
+        "at": "2026-10-19T11:05:40.000Z",
+        "who": "learner",
+        "text": "¡Qué bonito! ¿Usted tiene muchos nietos? Y ¿ellos también comen el pan de la panadería?"
+      },
+      {
+        "at": "2026-10-19T11:06:00.000Z",
+        "who": "npc",
+        "text": "Tengo cuatro nietos, joven, dos niñas y dos niños, y claro que comen el pan de la panadería. Les encantan las conchas, igual que a usted. Los domingos vienen todos a la casa y se llevan una bolsa llena de pan para la semana. Para mí, esa es la mejor paga. ¿Y usted tiene familia en Canadá?",
+        "en": "I have four grandchildren, young man, two girls and two boys, and of course they eat the bakery's bread. They love the conchas, just like you. On Sundays they all come to the house and take away a bag full of bread for the week. For me, that's the best pay. And you, do you have family in Canada?"
+      },
+      {
+        "at": "2026-10-19T11:06:20.000Z",
+        "who": "learner",
+        "text": "Sí, tengo mis padres y una hermana en Canadá. Ellos viven en Toronto. Yo hablé con ellos ayer por teléfono."
+      },
+      {
+        "at": "2026-10-19T11:06:40.000Z",
+        "who": "npc",
+        "text": "Qué bueno que habló con ellos, joven. Seguro lo extrañan, y usted a ellos también. Toronto, ¿eh? Dicen que allá hace mucho frío. Pues aquí, cuando quiera algo calientito que le recuerde a casa, venga a la panadería y platicamos. Siempre hay pan recién salido.",
+        "en": "It's good that you talked with them, young man. Surely they miss you, and you them too. Toronto, huh? They say it's very cold there. Well, here, when you want something warm to remind you of home, come to the bakery and we'll chat. There's always bread fresh out of the oven."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-04",
+    "synthetic": true,
+    "learner": "asks-meaning",
+    "character_id": "aurelio-sacristan",
+    "place_id": "parroquia-san-miguel-arcangel",
+    "city_id": "san-miguel-de-allende",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T12:00:00.000Z",
+    "ended_at": "2026-10-19T12:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T12:00:00.000Z",
+        "who": "npc",
+        "text": "Buenas tardes, joven. Bienvenido a la Parroquia. ¿En qué puedo servirle?",
+        "en": "Good afternoon, young one. Welcome to the Parish. How can I help you?"
+      },
+      {
+        "at": "2026-10-19T12:00:20.000Z",
+        "who": "learner",
+        "text": "Buenas tardes. Eh... sorry, what does \"servirle\" mean? Yo quiero ver la iglesia, por favor."
+      },
+      {
+        "at": "2026-10-19T12:00:40.000Z",
+        "who": "npc",
+        "text": "\"Servirle\" es ayudarle, joven. Claro que sí, pase usted, la iglesia está abierta. ¿Es su primera vez aquí?",
+        "en": "\"Servirle\" means to help you, young one. Of course, come in, the church is open. Is it your first time here?"
+      },
+      {
+        "at": "2026-10-19T12:01:00.000Z",
+        "who": "learner",
+        "text": "Sí, es mi primera vez. Eh... ¿cómo se dice \"beautiful\" en español? La iglesia es muy... eh... bonita?"
+      },
+      {
+        "at": "2026-10-19T12:01:20.000Z",
+        "who": "npc",
+        "text": "Muy bien, \"bonita\" está perfecto. También puede decir \"hermosa\", que es más elegante. Y esta iglesia, joven, es la más hermosa de San Miguel. ¿Quiere que le cuente un poquito de su historia?",
+        "en": "Very good, \"bonita\" is perfect. You can also say \"hermosa,\" which is more elegant. And this church, young one, is the most beautiful in San Miguel. Would you like me to tell you a little of its history?"
+      },
+      {
+        "at": "2026-10-19T12:01:40.000Z",
+        "who": "learner",
+        "text": "Sí, por favor. Eh... perdón, ¿qué significa \"historia\"? Es \"history\", no?"
+      },
+      {
+        "at": "2026-10-19T12:02:00.000Z",
+        "who": "npc",
+        "text": "Exacto, joven, \"historia\" es \"history\". Y tambiĂŠn significa \"story\", un cuento. Mire hacia arriba: esas torres de piedra rosada las diseĂąĂł un hombre sin estudios, Zeferino GutiĂŠrrez, hace mĂĄs de cien aĂąos. Dicen que las dibujĂł en la arena con un palo.",
+        "en": "Exactly, young one, \"historia\" is \"history.\" It also means \"story,\" a tale. Look up: those pink stone towers were designed by a man with no formal schooling, Zeferino GutiĂŠrrez, over a hundred years ago. They say he drew them in the sand with a stick."
+      },
+      {
+        "at": "2026-10-19T12:02:20.000Z",
+        "who": "learner",
+        "text": "Ah, okay. Eh... perdón, ¿qué significa \"torres\"? Y \"piedra rosada\", es... pink stone?"
+      },
+      {
+        "at": "2026-10-19T12:02:40.000Z",
+        "who": "npc",
+        "text": "SĂ­, \"piedra rosada\" es \"pink stone\", muy bien. Y \"torres\" son \"towers\", esas partes altas que tocan el cielo. Son de cantera, una piedra de esta regiĂłn que de lejos se ve color de rosa.",
+        "en": "Yes, \"piedra rosada\" is \"pink stone,\" very good. And \"torres\" are \"towers,\" those tall parts that touch the sky. They're made of cantera, a stone from this region that looks rose-colored from afar."
+      },
+      {
+        "at": "2026-10-19T12:03:00.000Z",
+        "who": "learner",
+        "text": "Ah, okay, towers. Eh... perdón, ¿qué significa \"cantera\"? Y las torres son muy bonitas."
+      },
+      {
+        "at": "2026-10-19T12:03:20.000Z",
+        "who": "npc",
+        "text": "\"Cantera\" es \"quarry stone\", joven, una piedra que se corta de la montaña y es fĂĄcil de tallar. Y gracias, las torres son hermosas, se lo digo yo que las veo todos los dĂ­as. ÂżLe gustarĂ­a pasar a ver el interior ahora?",
+        "en": "\"Cantera\" is \"quarry stone,\" young one, a stone that's cut from the mountain and is easy to carve. And thank you, the towers are beautiful, I tell you who sees them every day. Would you like to go in and see the inside now?"
+      },
+      {
+        "at": "2026-10-19T12:03:40.000Z",
+        "who": "learner",
+        "text": "Sí, por favor. Eh... perdón, ¿qué significa \"interior\"? Es \"inside\", no?"
+      },
+      {
+        "at": "2026-10-19T12:04:00.000Z",
+        "who": "npc",
+        "text": "Exacto, joven, \"interior\" es \"inside\". Ya aprendiĂł muchas palabras hoy. Pase por esta puerta, y al fondo verĂĄ el altar y al Cristo de la Conquista, que es muy antiguo y muy venerado aquĂ­.",
+        "en": "Exactly, young one, \"interior\" is \"inside.\" You've already learned many words today. Come through this door, and at the back you'll see the altar and the Cristo de la Conquista, which is very old and much revered here."
+      },
+      {
+        "at": "2026-10-19T12:04:20.000Z",
+        "who": "learner",
+        "text": "Gracias, Don Aurelio. Eh... perdón, ¿qué significa \"venerado\"? Y \"antiguo\" es... old?"
+      },
+      {
+        "at": "2026-10-19T12:04:40.000Z",
+        "who": "npc",
+        "text": "SĂ­, \"antiguo\" es \"old\", pero de muchos siglos, joven. Y \"venerado\" es que la gente lo respeta y lo quiere con mucha fe. Vienen a rezarle de todo el pueblo, y de lejos tambiĂŠn.",
+        "en": "Yes, \"antiguo\" is \"old,\" but from many centuries ago, young one. And \"venerado\" means that people respect it and love it with great faith. They come to pray to it from all over town, and from far away too."
+      },
+      {
+        "at": "2026-10-19T12:05:00.000Z",
+        "who": "learner",
+        "text": "Ah, okay. Gracias. Eh... perdón, ¿qué significa \"rezarle\"? Y \"siglos\" es... centuries?"
+      },
+      {
+        "at": "2026-10-19T12:05:20.000Z",
+        "who": "npc",
+        "text": "SĂ­, \"siglos\" es \"centuries\", muy bien. Y \"rezarle\" es \"to pray to him\", joven, hablarle a Dios o a un santo con el corazĂłn. Mire, ahĂ­ estĂĄ el Cristo, al fondo. Puede acercarse con calma, nadie tiene prisa aquĂ­.",
+        "en": "Yes, \"siglos\" is \"centuries,\" very good. And \"rezarle\" is \"to pray to him,\" young one, to speak to God or a saint from the heart. Look, there is the Cristo, at the back. You can approach calmly, nobody is in a hurry here."
+      },
+      {
+        "at": "2026-10-19T12:05:40.000Z",
+        "who": "learner",
+        "text": "Ah, okay. Gracias, Don Aurelio. Eh... perdón, ¿qué significa \"acercarse\"? Y \"calma\"... es calm?"
+      },
+      {
+        "at": "2026-10-19T12:06:00.000Z",
+        "who": "npc",
+        "text": "SĂ­, \"calma\" es \"calm\", joven. Y \"acercarse\" es \"to get closer\", \"to approach\". Vaya despacito, y si quiere, se sienta un ratito en una banca. ÂżLe gusta el silencio de las iglesias?",
+        "en": "Yes, \"calma\" is \"calm,\" young one. And \"acercarse\" is \"to get closer,\" \"to approach.\" Go slowly, and if you like, sit for a little while on a pew. Do you like the silence of churches?"
+      },
+      {
+        "at": "2026-10-19T12:06:20.000Z",
+        "who": "learner",
+        "text": "Sí, me gusta el silencio. Eh... perdón, ¿qué significa \"banca\"? Y \"despacito\"... es slowly?"
+      },
+      {
+        "at": "2026-10-19T12:06:40.000Z",
+        "who": "npc",
+        "text": "SĂ­, \"despacito\" es \"slowly\", un poquito mĂĄs suave que \"despacio\", joven. Y \"banca\" es \"bench\", o \"pew\" en la iglesia, donde uno se sienta a rezar. Hay muchas bancas de madera ahĂ­ adelante.",
+        "en": "Yes, \"despacito\" is \"slowly,\" a little softer than \"despacio,\" young one. And \"banca\" is \"bench,\" or \"pew\" in a church, where one sits to pray. There are many wooden pews up front."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-05",
+    "synthetic": true,
+    "learner": "verb-mistakes",
+    "character_id": "chela-chapulines",
+    "place_id": "puesto-chapulines-mercado-benito-juarez",
+    "city_id": "oaxaca",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T13:00:00.000Z",
+    "ended_at": "2026-10-19T13:05:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T13:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes, joven! Pásele, pásele. Tengo chapulines y quesillo bien fresquecito. ¿Qué le sirvo?",
+        "en": "Good afternoon, young one! Come on in, come on in. I have chapulines and quesillo, nice and fresh. What can I get you?"
+      },
+      {
+        "at": "2026-10-19T13:00:20.000Z",
+        "who": "learner",
+        "text": "Hola, buenas tardes. Yo quiero probar los chapulines, pero yo no sé que sabor es. Ella es muy picante?"
+      },
+      {
+        "at": "2026-10-19T13:00:40.000Z",
+        "who": "npc",
+        "text": "¡Ay, pues pruébelos, no se preocupe! Tengo unos con limón y ajo que no pican nada, y otros con chile que sí traen su piquetito. Tome, pruebe uno de los de limón. ¿Quiere?",
+        "en": "Oh, just try them, don't worry! I have some with lemon and garlic that aren't spicy at all, and others with chile that do have a little kick. Here, try one of the lemon ones. Want one?"
+      },
+      {
+        "at": "2026-10-19T13:01:00.000Z",
+        "who": "learner",
+        "text": "Sí, gracias. Mmm, está muy rico! Yo quiero probar los otros con chile también, por favor."
+      },
+      {
+        "at": "2026-10-19T13:01:20.000Z",
+        "who": "npc",
+        "text": "¡Ándele, qué bueno que le gustó! Tome, estos son los de chile. Pero le aviso, ¡con cuidadito, eh!",
+        "en": "There you go, so glad you liked it! Here, these are the chile ones. But I'm warning you, careful, okay!"
+      },
+      {
+        "at": "2026-10-19T13:01:40.000Z",
+        "who": "learner",
+        "text": "Gracias. Mmm, ellos son muy picante! Pero me gusta. Yo quiero comprar un bolsa de los de limón, por favor."
+      },
+      {
+        "at": "2026-10-19T13:02:00.000Z",
+        "who": "npc",
+        "text": "¡Ja, ja, ja! Ya le dije que traían su piquetito. Muy bien, una bolsita de los de limón. Son sesenta pesos, joven. ¿Algo más, o quiere llevarse también un poquito de quesillo?",
+        "en": "Ha ha ha! I told you they had a little kick. Very good, one little bag of the lemon ones. That's sixty pesos, young one. Anything else, or would you like to take a little quesillo too?"
+      },
+      {
+        "at": "2026-10-19T13:02:20.000Z",
+        "who": "learner",
+        "text": "Sí, yo quiero un poquito de quesillo también. Cuánto cuesta el quesillo?"
+      },
+      {
+        "at": "2026-10-19T13:02:40.000Z",
+        "who": "npc",
+        "text": "El quesillo está a ciento veinte pesos el kilo, joven. Pero le puedo vender medio kilo o un cuarto, lo que usted quiera. ¿Cuánto se va a llevar?",
+        "en": "The quesillo is one hundred twenty pesos a kilo, young one. But I can sell you half a kilo or a quarter, whatever you like. How much are you going to take?"
+      },
+      {
+        "at": "2026-10-19T13:03:00.000Z",
+        "who": "learner",
+        "text": "Mmm, yo quiero un cuarto, por favor. Cuánto es todo?"
+      },
+      {
+        "at": "2026-10-19T13:03:20.000Z",
+        "who": "npc",
+        "text": "Un cuarto son treinta pesos, joven. Con los sesenta de los chapulines, son noventa pesos en total. Aquí tiene su quesillo y sus chapulines.",
+        "en": "A quarter is thirty pesos, young one. With the sixty for the chapulines, that's ninety pesos total. Here are your quesillo and your chapulines."
+      },
+      {
+        "at": "2026-10-19T13:03:40.000Z",
+        "who": "learner",
+        "text": "Gracias. Aquí está cien pesos. Yo tiene cambio?"
+      },
+      {
+        "at": "2026-10-19T13:04:00.000Z",
+        "who": "npc",
+        "text": "Sí, claro que tengo cambio, joven. Aquí están sus diez pesos. Muchas gracias por su compra, y que le aproveche. ¡Vuelva pronto!",
+        "en": "Yes, of course I have change, young one. Here are your ten pesos. Thank you very much for your purchase, and enjoy. Come back soon!"
+      },
+      {
+        "at": "2026-10-19T13:04:20.000Z",
+        "who": "learner",
+        "text": "Gracias, doña Chela! Yo voy a volver mañana. Adiós!"
+      },
+      {
+        "at": "2026-10-19T13:04:40.000Z",
+        "who": "npc",
+        "text": "¡Aquí lo espero mañana, joven! Que Dios lo bendiga. ¡Adiós, adiós!",
+        "en": "I'll be here waiting for you tomorrow, young one! God bless you. Goodbye, goodbye!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-06",
+    "synthetic": true,
+    "learner": "errand-and-leave",
+    "character_id": "nacho-nevero",
+    "place_id": "jardin-conzatti-reforma",
+    "city_id": "oaxaca",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T14:00:00.000Z",
+    "ended_at": "2026-10-19T14:03:40.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T14:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes, joven! ¿Gusta una nieve? Tengo de tuna, de leche quemada, de mezcal...",
+        "en": "Good afternoon, young one! Would you like a nieve? I have prickly pear, burnt milk, mezcal..."
+      },
+      {
+        "at": "2026-10-19T14:00:20.000Z",
+        "who": "learner",
+        "text": "Buenas tardes. Eh... quiero una nieve de tuna, por favor. ¿Cuánto cuesta?"
+      },
+      {
+        "at": "2026-10-19T14:00:40.000Z",
+        "who": "npc",
+        "text": "Muy buena elección, la de tuna es de las que más se me van. Un cono sencillo son treinta pesos, y uno doble cuarenta y cinco. ¿De cuál le sirvo?",
+        "en": "Very good choice, the prickly pear is one of my best sellers. A single cone is thirty pesos, and a double is forty-five. Which one shall I serve you?"
+      },
+      {
+        "at": "2026-10-19T14:01:00.000Z",
+        "who": "learner",
+        "text": "Eh... uno sencillo, por favor. Treinta pesos, ¿sí?"
+      },
+      {
+        "at": "2026-10-19T14:01:20.000Z",
+        "who": "npc",
+        "text": "Así es, joven, treinta pesos. Ahorita se lo preparo. ¿Es usted de por aquí, o anda de visita?",
+        "en": "That's right, young one, thirty pesos. I'll prepare it for you right now. Are you from around here, or are you visiting?"
+      },
+      {
+        "at": "2026-10-19T14:01:40.000Z",
+        "who": "learner",
+        "text": "Eh... soy de visita. Soy de Estados Unidos. Me gusta mucho Oaxaca."
+      },
+      {
+        "at": "2026-10-19T14:02:00.000Z",
+        "who": "npc",
+        "text": "¡Qué bueno, joven! Oaxaca es tierra bonita, y aquí en el jardín se pasa muy a gusto la tarde. Tenga, su nieve de tuna. ¿Ya probó el mole?",
+        "en": "How nice, young one! Oaxaca is a beautiful land, and here in the garden the afternoon is spent very pleasantly. Here you go, your prickly pear nieve. Have you tried the mole yet?"
+      },
+      {
+        "at": "2026-10-19T14:02:20.000Z",
+        "who": "learner",
+        "text": "Sí, el mole es muy rico. Eh... aquí está el dinero, treinta pesos. Gracias, adiós."
+      },
+      {
+        "at": "2026-10-19T14:02:40.000Z",
+        "who": "npc",
+        "text": "Muchas gracias, joven, que le vaya muy bien. ¡Disfrute Oaxaca y vuelva pronto por otra nieve!",
+        "en": "Thank you very much, young one, take care. Enjoy Oaxaca and come back soon for another nieve!"
+      },
+      {
+        "at": "2026-10-19T14:03:00.000Z",
+        "who": "learner",
+        "text": "Gracias, hasta luego."
+      },
+      {
+        "at": "2026-10-19T14:03:20.000Z",
+        "who": "npc",
+        "text": "Hasta luego, joven, que Dios lo bendiga. Aquí lo espero.",
+        "en": "See you later, young one, God bless you. I'll be here waiting for you."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-07",
+    "synthetic": true,
+    "learner": "chatty-leaver",
+    "character_id": "beto-paseador",
+    "place_id": "parque-mexico",
+    "city_id": "ciudad-de-mexico",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T15:00:00.000Z",
+    "ended_at": "2026-10-19T15:03:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T15:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes! ¿Le gustan los perros?",
+        "en": "Good afternoon! Do you like dogs?"
+      },
+      {
+        "at": "2026-10-19T15:00:20.000Z",
+        "who": "learner",
+        "text": "Sí, me gustan mucho los perros. Tengo un perro en mi casa, se llama Max."
+      },
+      {
+        "at": "2026-10-19T15:00:40.000Z",
+        "who": "npc",
+        "text": "¡Qué bonito nombre, Max! Yo paseo ocho perros todos los días aquí en el parque. ¿Qué raza es el suyo?",
+        "en": "What a nice name, Max! I walk eight dogs every day here in the park. What breed is yours?"
+      },
+      {
+        "at": "2026-10-19T15:01:00.000Z",
+        "who": "learner",
+        "text": "Max es un labrador. Es muy grande y muy simpático. ¿Y sus perros, qué razas son?"
+      },
+      {
+        "at": "2026-10-19T15:01:20.000Z",
+        "who": "npc",
+        "text": "¡Ah, los labradores son lo máximo! Mis perros son muy variados: tengo dos French poodles, un bulldog, un schnauzer y cuatro chihuahuas. Hoy vinieron solo tres, por suerte. ¿Su Max sale mucho a caminar?",
+        "en": "Ah, Labradors are the best! My dogs are very varied: I have two French poodles, a bulldog, a schnauzer, and four chihuahuas. Today only three came, luckily. Does your Max go out for walks a lot?"
+      },
+      {
+        "at": "2026-10-19T15:01:40.000Z",
+        "who": "learner",
+        "text": "Sí, Max camina mucho conmigo, dos veces al día. Ocho perros son muchos, ¿no es difícil?"
+      },
+      {
+        "at": "2026-10-19T15:02:00.000Z",
+        "who": "npc",
+        "text": "Ja, a veces sí, sobre todo cuando los chihuahuas se enojan con el bulldog. Pero ya los conozco bien, y con paciencia todo se puede. Además, caminar en Parque México es un gusto. Usted, ¿vive cerca de aquí?",
+        "en": "Ha, sometimes yes, especially when the chihuahuas get angry at the bulldog. But I know them well by now, and with patience anything is possible. Besides, walking in Parque México is a pleasure. Do you live near here?"
+      },
+      {
+        "at": "2026-10-19T15:02:20.000Z",
+        "who": "learner",
+        "text": "Sí, vivo cerca, en la Condesa. Bueno, Beto, tengo que irme. Mucho gusto, y hasta pronto."
+      },
+      {
+        "at": "2026-10-19T15:02:40.000Z",
+        "who": "npc",
+        "text": "¡El gusto fue mío! Salúdeme a Max. Hasta pronto, que le vaya muy bien.",
+        "en": "The pleasure was mine! Say hi to Max for me. See you soon, take care."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-08",
+    "synthetic": true,
+    "learner": "english-beginner",
+    "character_id": "chema-taquero",
+    "place_id": "tacos-el-trompo-rojo",
+    "city_id": "ciudad-de-mexico",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T16:00:00.000Z",
+    "ended_at": "2026-10-19T16:03:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T16:00:00.000Z",
+        "who": "npc",
+        "text": "¡Quihubo, joven! Bienvenido al Trompo Rojo. ¿Qué le sirvo?",
+        "en": "Hey there, young one! Welcome to Trompo Rojo. What can I get you?"
+      },
+      {
+        "at": "2026-10-19T16:00:20.000Z",
+        "who": "learner",
+        "text": "Hola. Eh... quiero tres tacos al pastor, por favor. Para comer aquí."
+      },
+      {
+        "at": "2026-10-19T16:00:40.000Z",
+        "who": "npc",
+        "text": "¡Claro que sí! Tres al pastor para comer aquí. ¿Los quiere con todo, con piña, cilantro y cebolla?",
+        "en": "Of course! Three al pastor to eat here. Do you want them with everything, with pineapple, cilantro and onion?"
+      },
+      {
+        "at": "2026-10-19T16:01:00.000Z",
+        "who": "learner",
+        "text": "Sí, con todo, por favor. Eh... la piña también. Gracias."
+      },
+      {
+        "at": "2026-10-19T16:01:20.000Z",
+        "who": "npc",
+        "text": "Perfecto, ya le saco su piña del trompo. Ahorita se los preparo. ¿Algo de tomar?",
+        "en": "Perfect, I'll cut your pineapple right off the spit. I'll prepare them in a moment. Anything to drink?"
+      },
+      {
+        "at": "2026-10-19T16:01:40.000Z",
+        "who": "learner",
+        "text": "Eh... sí. Quiero una agua, por favor. Eh, sin gas."
+      },
+      {
+        "at": "2026-10-19T16:02:00.000Z",
+        "who": "npc",
+        "text": "Muy bien, un agua sin gas. Siéntese donde guste, joven, ahorita le llevo todo a su mesa.",
+        "en": "Very well, a still water. Sit wherever you like, young one, I'll bring everything to your table in a moment."
+      },
+      {
+        "at": "2026-10-19T16:02:20.000Z",
+        "who": "learner",
+        "text": "Ok, gracias. Eh, me siento allí."
+      },
+      {
+        "at": "2026-10-19T16:02:40.000Z",
+        "who": "npc",
+        "text": "Sí, ahí está bien, ahí le da la sombrita. Ya mero le llevo sus tacos.",
+        "en": "Yes, there's fine, it's nice and shady there. I'll bring your tacos over in just a moment."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-09",
+    "synthetic": true,
+    "learner": "hesitant",
+    "character_id": "chelo-cocinera",
+    "place_id": "fonda-la-palmita",
+    "city_id": "san-miguel-de-allende",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T17:00:00.000Z",
+    "ended_at": "2026-10-19T17:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T17:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes, joven! Pásele, pásele. Soy Doña Chelo. ¿Qué se le antoja hoy?",
+        "en": "Good afternoon, young one! Come in, come in. I'm Doña Chelo. What are you in the mood for today?"
+      },
+      {
+        "at": "2026-10-19T17:00:20.000Z",
+        "who": "learner",
+        "text": "Ehm... buenas tardes. Yo... ehm... no entiendo. ¿Repite, por favor? Más lento."
+      },
+      {
+        "at": "2026-10-19T17:00:40.000Z",
+        "who": "npc",
+        "text": "Claro que sí, con calma. Buenas tardes. Soy Chelo. ¿Quiere comer algo?",
+        "en": "Of course, no rush. Good afternoon. I'm Chelo. Do you want to eat something?"
+      },
+      {
+        "at": "2026-10-19T17:01:00.000Z",
+        "who": "learner",
+        "text": "Ehm... sí. Yo... ehm... quiero... ¿qué hay? Sorry, no sé."
+      },
+      {
+        "at": "2026-10-19T17:01:20.000Z",
+        "who": "npc",
+        "text": "No se apure. Hay sopa, enchiladas y mole con pollo. Todo está caliente y recién hecho. ¿Cuál quiere probar?",
+        "en": "Don't worry. There's soup, enchiladas, and mole with chicken. Everything is hot and freshly made. Which one do you want to try?"
+      },
+      {
+        "at": "2026-10-19T17:01:40.000Z",
+        "who": "learner",
+        "text": "Ehm... sopa? Yo... ehm... quiero la sopa, por favor."
+      },
+      {
+        "at": "2026-10-19T17:02:00.000Z",
+        "who": "npc",
+        "text": "¡Muy bien! Una sopa para el joven. Siéntese donde guste, ahorita se la llevo. ¿Algo de tomar?",
+        "en": "Very good! One soup for the young man. Sit wherever you like, I'll bring it right away. Anything to drink?"
+      },
+      {
+        "at": "2026-10-19T17:02:20.000Z",
+        "who": "learner",
+        "text": "Ehm... tomar? Yo... ehm... agua, por favor. Gracias."
+      },
+      {
+        "at": "2026-10-19T17:02:40.000Z",
+        "who": "npc",
+        "text": "Con mucho gusto. Un agua para usted. Ahorita regreso con todo.",
+        "en": "My pleasure. A water for you. I'll be right back with everything."
+      },
+      {
+        "at": "2026-10-19T17:03:00.000Z",
+        "who": "learner",
+        "text": "Ehm... gracias. Yo... ehm... me siento aquí? Sorry... do you speak English?"
+      },
+      {
+        "at": "2026-10-19T17:03:20.000Z",
+        "who": "npc",
+        "text": "Sí, siéntese ahí, junto a la ventana, es la mejor mesa. Inglés, poquito, poquito. Pero aquí nos entendemos, no se preocupe.",
+        "en": "Yes, sit there, by the window, it's the best table. English, just a little, a little. But here we'll understand each other, don't worry."
+      },
+      {
+        "at": "2026-10-19T17:03:40.000Z",
+        "who": "learner",
+        "text": "Ehm... okay. Gracias, Doña Chelo. Yo... ehm... me siento... allí. Muy bien."
+      },
+      {
+        "at": "2026-10-19T17:04:00.000Z",
+        "who": "npc",
+        "text": "Eso es, muy bien dicho. Ahorita le traigo su sopa y su agua. Con permiso.",
+        "en": "That's it, well said. I'll bring you your soup and water right away. Excuse me."
+      },
+      {
+        "at": "2026-10-19T17:04:20.000Z",
+        "who": "learner",
+        "text": "Ehm... gracias. Yo... ehm... espero aquí. Gracias, Doña Chelo."
+      },
+      {
+        "at": "2026-10-19T17:04:40.000Z",
+        "who": "npc",
+        "text": "De nada, joven. Usted tranquilo, ya mero está. Aquí tiene su agüita, y la sopa viene en un momento.",
+        "en": "You're welcome, young man. You relax, it's almost ready. Here's your little water, and the soup is coming in a moment."
+      },
+      {
+        "at": "2026-10-19T17:05:00.000Z",
+        "who": "learner",
+        "text": "Ehm... gracias. Yo... ehm... el agua. Muy bien. Gracias, Doña Chelo."
+      },
+      {
+        "at": "2026-10-19T17:05:20.000Z",
+        "who": "npc",
+        "text": "Con gusto, joven. Tómese su agüita, que ya casi viene la sopa. Aquí no hay prisa.",
+        "en": "My pleasure, young man. Enjoy your little water, the soup is almost here. There's no rush here."
+      },
+      {
+        "at": "2026-10-19T17:05:40.000Z",
+        "who": "learner",
+        "text": "Ehm... okay. Yo... ehm... espero la sopa. Gracias."
+      },
+      {
+        "at": "2026-10-19T17:06:00.000Z",
+        "who": "npc",
+        "text": "Ya mero, joven. Aquí está su sopa, bien calientita. Con cuidado, que quema. Buen provecho.",
+        "en": "Almost, young man. Here's your soup, nice and hot. Careful, it's burning hot. Enjoy your meal."
+      },
+      {
+        "at": "2026-10-19T17:06:20.000Z",
+        "who": "learner",
+        "text": "Ehm... gracias, Doña Chelo. Yo... ehm... la sopa... caliente? Muy bien. Gracias."
+      },
+      {
+        "at": "2026-10-19T17:06:40.000Z",
+        "who": "npc",
+        "text": "Sí, joven, calientita, recién salida de la olla. Sóplele tantito antes de probar. Y si quiere tortillas, nomás me dice.",
+        "en": "Yes, young man, nice and hot, fresh out of the pot. Blow on it a little before tasting. And if you want tortillas, just tell me."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-10",
+    "synthetic": true,
+    "learner": "improving",
+    "character_id": "daniela-farmacia-san-rafael",
+    "place_id": "farmacia-san-rafael",
+    "city_id": "puebla",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T18:00:00.000Z",
+    "ended_at": "2026-10-19T18:06:20.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T18:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes! Bienvenido a la Farmacia San Rafael. ¿En qué le puedo ayudar?",
+        "en": "Good afternoon! Welcome to Farmacia San Rafael. How can I help you?"
+      },
+      {
+        "at": "2026-10-19T18:00:20.000Z",
+        "who": "learner",
+        "text": "Buenas tardes. Ayer yo caminé mucho y ahora me duele el pie. ¿Tiene algo para el dolor?"
+      },
+      {
+        "at": "2026-10-19T18:00:40.000Z",
+        "who": "npc",
+        "text": "Claro que sí. Tenemos pomadas antiinflamatorias y también pastillas para el dolor. ¿Le duele mucho o es solo una molestia leve?",
+        "en": "Of course. We have anti-inflammatory ointments and also pain pills. Does it hurt a lot or is it just a mild discomfort?"
+      },
+      {
+        "at": "2026-10-19T18:01:00.000Z",
+        "who": "learner",
+        "text": "Me duele un poco, pero no es muy fuerte. Creo que la pomada es mejor, porque mis zapatos son nuevos. ¿Usted tiene una pomada buena?"
+      },
+      {
+        "at": "2026-10-19T18:01:20.000Z",
+        "who": "npc",
+        "text": "Sí, tengo una muy buena con diclofenaco. Se aplica dos o tres veces al día sobre la zona adolorida. Y los zapatos nuevos a veces lastiman, ¿verdad? ¿Quiere que se la traiga?",
+        "en": "Yes, I have a very good one with diclofenac. You apply it two or three times a day on the sore area. And new shoes can hurt sometimes, right? Would you like me to bring it to you?"
+      },
+      {
+        "at": "2026-10-19T18:01:40.000Z",
+        "who": "learner",
+        "text": "Sí, por favor, tráigala. ¿Es usted de Puebla? Yo llegué hace unas semanas y me gusta mucho el barrio."
+      },
+      {
+        "at": "2026-10-19T18:02:00.000Z",
+        "who": "npc",
+        "text": "Aquí tiene la pomada. Sí, soy de Puebla, nací aquí. Qué bueno que le guste La Paz, es un barrio muy bonito. ¿De dónde viene usted?",
+        "en": "Here is the ointment. Yes, I'm from Puebla, I was born here. I'm glad you like La Paz, it's a very nice neighborhood. Where are you from?"
+      },
+      {
+        "at": "2026-10-19T18:02:20.000Z",
+        "who": "learner",
+        "text": "Soy de Canadá. Llegué a México hace tres semanas y estudio español. ¿Usted vive cerca de la farmacia?"
+      },
+      {
+        "at": "2026-10-19T18:02:40.000Z",
+        "who": "npc",
+        "text": "¡Qué padre, Canadá! Su español está muy bien para tres semanas. Sí, vivo a unas diez cuadras de aquí, así que camino al trabajo todos los días. ¿Le gusta la comida poblana?",
+        "en": "How cool, Canada! Your Spanish is very good for three weeks. Yes, I live about ten blocks from here, so I walk to work every day. Do you like Poblano food?"
+      },
+      {
+        "at": "2026-10-19T18:03:00.000Z",
+        "who": "learner",
+        "text": "Sí, me gusta mucho. Ayer comí mole poblano por primera vez y estaba muy rico. ¿Usted cocina mole en su casa?"
+      },
+      {
+        "at": "2026-10-19T18:03:20.000Z",
+        "who": "npc",
+        "text": "¡Qué bueno que probó el mole! Yo lo preparo en casa solo en fiestas, porque lleva muchísimo tiempo y muchos ingredientes. Mi mamá hace el mejor, con receta de mi abuela. ¿Le gustó más el picante o el dulce?",
+        "en": "I'm glad you tried the mole! I only make it at home for celebrations, because it takes a lot of time and many ingredients. My mom makes the best one, with my grandmother's recipe. Did you like the spicy or the sweet part more?"
+      },
+      {
+        "at": "2026-10-19T18:03:40.000Z",
+        "who": "learner",
+        "text": "Me gustó más el dulce, creo. El picante fue un poco fuerte para mí. ¿Cuánto cuesta la pomada?"
+      },
+      {
+        "at": "2026-10-19T18:04:00.000Z",
+        "who": "npc",
+        "text": "La pomada cuesta ochenta y cinco pesos. Si quiere, también tenemos una versión más pequeña por cincuenta. ¿Cuál prefiere?",
+        "en": "The ointment costs eighty-five pesos. If you like, we also have a smaller version for fifty. Which do you prefer?"
+      },
+      {
+        "at": "2026-10-19T18:04:20.000Z",
+        "who": "learner",
+        "text": "Mmm, la grande, por favor. Ochenta y cinco pesos, ¿verdad? ¿Puedo pagar con tarjeta?"
+      },
+      {
+        "at": "2026-10-19T18:04:40.000Z",
+        "who": "npc",
+        "text": "Sí, son ochenta y cinco pesos, y claro que puede pagar con tarjeta. Solo inserte el chip en la terminal, por favor. ¿Quiere su ticket?",
+        "en": "Yes, it's eighty-five pesos, and of course you can pay by card. Just insert the chip into the terminal, please. Would you like your receipt?"
+      },
+      {
+        "at": "2026-10-19T18:05:00.000Z",
+        "who": "learner",
+        "text": "Sí, por favor, quiero el ticket. Gracias, Daniela. ¿Usted recomienda un restaurante bueno de mole cerca de aquí?"
+      },
+      {
+        "at": "2026-10-19T18:05:20.000Z",
+        "who": "npc",
+        "text": "Aquí está su ticket. Sí, a dos cuadras hay una fondita que se llama La Casa de Doña Chela, y su mole es delicioso. Pero pida el mole poco picante, que es el que le gusta. ¿Va a ir hoy?",
+        "en": "Here is your receipt. Yes, two blocks from here there's a little eatery called La Casa de Doña Chela, and its mole is delicious. But ask for the mild mole, since that's the one you like. Are you going to go today?"
+      },
+      {
+        "at": "2026-10-19T18:05:40.000Z",
+        "who": "learner",
+        "text": "Sí, creo que voy a ir hoy. Muchas gracias por todo, Daniela. ¡Hasta luego!"
+      },
+      {
+        "at": "2026-10-19T18:06:00.000Z",
+        "who": "npc",
+        "text": "¡Con mucho gusto! Que se mejore ese pie y que disfrute el mole. ¡Hasta luego y bienvenido a Puebla!",
+        "en": "My pleasure! I hope your foot gets better and enjoy the mole. See you later and welcome to Puebla!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-11",
+    "synthetic": true,
+    "learner": "asks-meaning",
+    "character_id": "concha-sacristana",
+    "place_id": "templo-san-matias-jalatlaco",
+    "city_id": "oaxaca",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T19:00:00.000Z",
+    "ended_at": "2026-10-19T19:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T19:00:00.000Z",
+        "who": "npc",
+        "text": "Buenas tardes, joven. Pase, pase, la iglesia está abierta. ¿En qué le puedo ayudar?",
+        "en": "Good afternoon, young one. Come in, come in, the church is open. How can I help you?"
+      },
+      {
+        "at": "2026-10-19T19:00:20.000Z",
+        "who": "learner",
+        "text": "Buenas tardes. Eh, me gusta la iglesia. Es muy bonita. Sorry, what does sacristana mean?"
+      },
+      {
+        "at": "2026-10-19T19:00:40.000Z",
+        "who": "npc",
+        "text": "Ay, muchas gracias, es muy bonita, ¿verdad? La sacristana es la que cuida el templo: limpio, pongo las flores y preparo todo para la misa. Llevo muchos años aquí. ¿Usted es de por aquí?",
+        "en": "Oh, thank you very much, it is very beautiful, isn't it? The sacristana is the one who takes care of the church: I clean, I put out the flowers, and I get everything ready for Mass. I've been here many years. Are you from around here?"
+      },
+      {
+        "at": "2026-10-19T19:01:00.000Z",
+        "who": "learner",
+        "text": "No, no soy de aquí. Soy de los Estados Unidos. Eh, how do you say... 'flowers' in Spanish? Sorry, I don't understand 'misa'."
+      },
+      {
+        "at": "2026-10-19T19:01:20.000Z",
+        "who": "npc",
+        "text": "No se preocupe, joven. 'Flowers' se dice 'flores', como las que tengo en el altar. Y la misa es el servicio de la iglesia, cuando la gente viene a rezar con el padre. Aquí es todos los días a las siete de la tarde. ¿Le gustaría ver las flores?",
+        "en": "Don't worry, young one. 'Flowers' is said 'flores', like the ones I have on the altar. And the misa is the church service, when people come to pray with the priest. Here it's every day at seven in the evening. Would you like to see the flowers?"
+      },
+      {
+        "at": "2026-10-19T19:01:40.000Z",
+        "who": "learner",
+        "text": "Sí, por favor. Me gustan las flores. Eh, what does 'altar' mean? Or, no sé, ¿es 'altar' también en inglés?"
+      },
+      {
+        "at": "2026-10-19T19:02:00.000Z",
+        "who": "npc",
+        "text": "Sí, joven, es la misma palabra: altar. Es la mesa grande al frente de la iglesia, donde el padre hace la misa. Venga conmigo, le muestro las flores. Hoy tengo cempasúchil, que es una flor naranja muy típica de Oaxaca.",
+        "en": "Yes, young one, it's the same word: altar. It's the big table at the front of the church, where the priest says the Mass. Come with me, I'll show you the flowers. Today I have cempasúchil, which is a very typical orange flower from Oaxaca."
+      },
+      {
+        "at": "2026-10-19T19:02:20.000Z",
+        "who": "learner",
+        "text": "Ah, gracias. Eh, perdón, ¿qué significa 'cempasúchil'? Es una flor naranja, ¿sí?"
+      },
+      {
+        "at": "2026-10-19T19:02:40.000Z",
+        "who": "npc",
+        "text": "Sí, joven, es una flor naranja, muy grande y de olor fuerte. En inglés le dicen 'marigold'. Es una palabra de los antiguos mexicanos, y con ella adornamos los altares, sobre todo para el Día de Muertos. ¿Quiere olerla?",
+        "en": "Yes, young one, it's an orange flower, very big and with a strong smell. In English they call it 'marigold'. It's a word from the ancient Mexicans, and we decorate the altars with it, especially for the Day of the Dead. Do you want to smell it?"
+      },
+      {
+        "at": "2026-10-19T19:03:00.000Z",
+        "who": "learner",
+        "text": "Sí, quiero olerla. Mmm, huele muy fuerte. Eh, sorry, what does 'Día de Muertos' mean?"
+      },
+      {
+        "at": "2026-10-19T19:03:20.000Z",
+        "who": "npc",
+        "text": "Sí, huele fuerte, ¿verdad? Esa es la idea, joven: se dice que el olor guía a las almas. 'Día de Muertos' es 'Day of the Dead', una fiesta de principios de noviembre. Las familias recuerdan a sus difuntos, a los que ya no están, y les ponen comida, flores y velas. Es una fiesta muy bonita, no es triste. ¿Usted ha visto un altar de muertos?",
+        "en": "Yes, it smells strong, doesn't it? That's the idea, young one: they say the scent guides the souls. 'Día de Muertos' is 'Day of the Dead', a festival in early November. Families remember their departed, those who are no longer here, and they put out food, flowers, and candles for them. It's a very beautiful celebration, not a sad one. Have you seen a day of the dead altar?"
+      },
+      {
+        "at": "2026-10-19T19:03:40.000Z",
+        "who": "learner",
+        "text": "No, no he visto un altar de muertos. Eh, sorry, what does 'difuntos' mean? Y... 'almas'?"
+      },
+      {
+        "at": "2026-10-19T19:04:00.000Z",
+        "who": "npc",
+        "text": "Con gusto, joven. 'Difuntos' son las personas que ya murieron, 'the deceased'. Y 'almas' es 'souls', el espíritu de la persona, lo que según nuestra fe sigue vivo. Por eso les ponemos flores y su comida favorita, para que vengan a visitarnos esos días. Si usted viene en noviembre, aquí en Jalatlaco hay altares muy bonitos.",
+        "en": "Gladly, young one. 'Difuntos' are the people who have already died, 'the deceased'. And 'almas' is 'souls', the spirit of the person, what according to our faith remains alive. That's why we put out flowers and their favorite food for them, so they come to visit us on those days. If you come in November, here in Jalatlaco there are very beautiful altars."
+      },
+      {
+        "at": "2026-10-19T19:04:20.000Z",
+        "who": "learner",
+        "text": "Ah, okay. Muchas gracias, Doña Concha. Eh, sorry, how do you say 'candles' in Spanish? Y... voy a venir en noviembre."
+      },
+      {
+        "at": "2026-10-19T19:04:40.000Z",
+        "who": "npc",
+        "text": "'Candles' se dice 'velas', joven. Mire, aquí tengo algunas junto al altar. Qué bueno que va a venir en noviembre, aquí lo espero con mucho gusto. Y traiga hambre, que en esos días siempre hay pan de muerto y chocolate. ¿Cuánto tiempo se va a quedar en Oaxaca?",
+        "en": "'Candles' is said 'velas', young one. Look, I have some here next to the altar. How wonderful that you're coming in November, I'll be here waiting for you gladly. And bring an appetite, because on those days there's always pan de muerto and chocolate. How long are you going to stay in Oaxaca?"
+      },
+      {
+        "at": "2026-10-19T19:05:00.000Z",
+        "who": "learner",
+        "text": "Eh, me voy a quedar una semana. Sorry, what does 'pan de muerto' mean?"
+      },
+      {
+        "at": "2026-10-19T19:05:20.000Z",
+        "who": "npc",
+        "text": "Una semana, qué bien, joven. 'Pan de muerto' es 'bread of the dead', un pan dulce, redondo, con unos huesitos de masa encima. Se hace nada más para esta fiesta, y se come con chocolate caliente. Aquí en Oaxaca el chocolate es de los mejores. Con una semana le alcanza para probar muchas cosas.",
+        "en": "One week, how nice, young one. 'Pan de muerto' is 'bread of the dead', a sweet, round bread with little dough bones on top. It's made only for this holiday, and it's eaten with hot chocolate. Here in Oaxaca the chocolate is among the best. With a week you have time to try many things."
+      },
+      {
+        "at": "2026-10-19T19:05:40.000Z",
+        "who": "learner",
+        "text": "Ah, qué rico. Eh, sorry, what does 'le alcanza' mean? Y muchas gracias por todo, Doña Concha."
+      },
+      {
+        "at": "2026-10-19T19:06:00.000Z",
+        "who": "npc",
+        "text": "De nada, joven, fue un gusto platicar con usted. 'Le alcanza' quiere decir que es suficiente: con una semana tiene tiempo de sobra para probar todo. Que Dios lo bendiga y que le vaya muy bien en Oaxaca. Aquí estoy cuando regrese.",
+        "en": "You're welcome, young one, it was a pleasure to chat with you. 'Le alcanza' means that it's enough: with a week you have plenty of time to try everything. May God bless you and may things go very well for you in Oaxaca. I'll be here when you return."
+      },
+      {
+        "at": "2026-10-19T19:06:20.000Z",
+        "who": "learner",
+        "text": "Ah, okay, gracias. Adiós, Doña Concha. Hasta luego."
+      },
+      {
+        "at": "2026-10-19T19:06:40.000Z",
+        "who": "npc",
+        "text": "Adiós, joven, hasta luego. Cuídese mucho y no se olvide de noviembre. Aquí lo espero.",
+        "en": "Goodbye, young one, see you later. Take good care and don't forget November. I'll be waiting for you here."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-12",
+    "synthetic": true,
+    "learner": "verb-mistakes",
+    "character_id": "beto-taxi",
+    "place_id": "jardin-allende",
+    "city_id": "san-miguel-de-allende",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T20:00:00.000Z",
+    "ended_at": "2026-10-19T20:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T20:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes! ¿Necesita un taxi?",
+        "en": "Good afternoon! Do you need a taxi?"
+      },
+      {
+        "at": "2026-10-19T20:00:20.000Z",
+        "who": "learner",
+        "text": "Sí, buenas tardes. Yo necesito ir a el Mercado de Artesanías, cuánto cuesta?"
+      },
+      {
+        "at": "2026-10-19T20:00:40.000Z",
+        "who": "npc",
+        "text": "Claro que sí, son ochenta pesos hasta el Mercado de Artesanías. ¿Le parece bien?",
+        "en": "Of course, it's eighty pesos to the Mercado de Artesanías. Does that sound good to you?"
+      },
+      {
+        "at": "2026-10-19T20:01:00.000Z",
+        "who": "learner",
+        "text": "Sí, está bien. Yo vamos ahora, por favor?"
+      },
+      {
+        "at": "2026-10-19T20:01:20.000Z",
+        "who": "npc",
+        "text": "¡Perfecto! Suba, por favor. Es un viaje de unos diez minutos.",
+        "en": "Perfect! Get in, please. It's about a ten-minute trip."
+      },
+      {
+        "at": "2026-10-19T20:01:40.000Z",
+        "who": "learner",
+        "text": "Gracias. Yo estoy muy feliz de ir a el mercado, mi amigas dicen que es muy bonito."
+      },
+      {
+        "at": "2026-10-19T20:02:00.000Z",
+        "who": "npc",
+        "text": "Sí, tienen razón, es muy bonito. Hay mucha cerámica, textiles y cosas de plata. ¿Es su primera vez en San Miguel?",
+        "en": "Yes, they're right, it's very pretty. There's a lot of ceramics, textiles, and silver items. Is it your first time in San Miguel?"
+      },
+      {
+        "at": "2026-10-19T20:02:20.000Z",
+        "who": "learner",
+        "text": "Sí, es mi primera vez. Yo llego ayer y me gusta mucho la ciudad."
+      },
+      {
+        "at": "2026-10-19T20:02:40.000Z",
+        "who": "npc",
+        "text": "¡Qué bueno que le guste! Es una ciudad muy bonita, con mucha historia. Si tiene tiempo, no se pierda la Parroquia y los callejones del centro. ¿Cuántos días se queda?",
+        "en": "I'm glad you like it! It's a very pretty city, with a lot of history. If you have time, don't miss the Parroquia and the alleys of the center. How many days are you staying?"
+      },
+      {
+        "at": "2026-10-19T20:03:00.000Z",
+        "who": "learner",
+        "text": "Yo me quedo cinco días. Mañana yo voy a visitar la Parroquia con mi amigas."
+      },
+      {
+        "at": "2026-10-19T20:03:20.000Z",
+        "who": "npc",
+        "text": "¡Muy bien! Cinco días es buen tiempo para conocer todo. La Parroquia está muy cerca de aquí, pueden ir caminando desde el Jardín. ¿Ya probó la comida de aquí?",
+        "en": "Very good! Five days is a good amount of time to see everything. The Parroquia is very close to here, you can walk there from the Jardín. Have you tried the food here yet?"
+      },
+      {
+        "at": "2026-10-19T20:03:40.000Z",
+        "who": "learner",
+        "text": "Sí, yo como tacos ayer en un restaurante cerca de mi hotel. Son muy rico!"
+      },
+      {
+        "at": "2026-10-19T20:04:00.000Z",
+        "who": "npc",
+        "text": "¡Qué bueno! Los tacos son lo mejor. Mire, ya casi llegamos al mercado. ¿Quiere que la espere o prefiere que la recoja más tarde?",
+        "en": "How great! Tacos are the best. Look, we're almost at the market. Do you want me to wait for you or would you prefer I pick you up later?"
+      },
+      {
+        "at": "2026-10-19T20:04:20.000Z",
+        "who": "learner",
+        "text": "Mmm, no entiendo. Puede repetir, por favor? Qué es \"recoja\"?"
+      },
+      {
+        "at": "2026-10-19T20:04:40.000Z",
+        "who": "npc",
+        "text": "Claro. \"Recoger\" es ir por usted otra vez. ¿Quiere que la espere aquí, o regreso por usted más tarde?",
+        "en": "Of course. \"Recoger\" means to come get you again. Do you want me to wait for you here, or come back for you later?"
+      },
+      {
+        "at": "2026-10-19T20:05:00.000Z",
+        "who": "learner",
+        "text": "Ah, entiendo. No, no necesito que usted espera. Yo voy a regresar con mi amigas, gracias."
+      },
+      {
+        "at": "2026-10-19T20:05:20.000Z",
+        "who": "npc",
+        "text": "Perfecto, no hay problema. Llegamos al Mercado de Artesanías. Son ochenta pesos, por favor.",
+        "en": "Perfect, no problem. We've arrived at the Mercado de Artesanías. That's eighty pesos, please."
+      },
+      {
+        "at": "2026-10-19T20:05:40.000Z",
+        "who": "learner",
+        "text": "Sí, aquí está. Ochenta pesos. Muchas gracias por el viaje, usted es muy amable."
+      },
+      {
+        "at": "2026-10-19T20:06:00.000Z",
+        "who": "npc",
+        "text": "Gracias a usted, fue un gusto. ¡Que disfrute el mercado y el resto de su viaje!",
+        "en": "Thank you, it was a pleasure. Enjoy the market and the rest of your trip!"
+      },
+      {
+        "at": "2026-10-19T20:06:20.000Z",
+        "who": "learner",
+        "text": "Gracias, adiós! Usted tiene un buen día también."
+      },
+      {
+        "at": "2026-10-19T20:06:40.000Z",
+        "who": "npc",
+        "text": "¡Adiós! Cuídese mucho y bienvenida a San Miguel.",
+        "en": "Goodbye! Take care and welcome to San Miguel."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-13",
+    "synthetic": true,
+    "learner": "errand-and-leave",
+    "character_id": "ximena-barista",
+    "place_id": "cafe-amapola",
+    "city_id": "ciudad-de-mexico",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T21:00:00.000Z",
+    "ended_at": "2026-10-19T21:04:20.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T21:00:00.000Z",
+        "who": "npc",
+        "text": "¡Hola, buenas tardes! Bienvenido a Café Amapola. ¿Qué te sirvo?",
+        "en": "Hi, good afternoon! Welcome to Café Amapola. What can I get you?"
+      },
+      {
+        "at": "2026-10-19T21:00:20.000Z",
+        "who": "learner",
+        "text": "Hola, buenas tardes. Quiero un café con leche, por favor."
+      },
+      {
+        "at": "2026-10-19T21:00:40.000Z",
+        "who": "npc",
+        "text": "Claro, un café con leche. ¿Lo quieres caliente o frío?",
+        "en": "Of course, a coffee with milk. Do you want it hot or cold?"
+      },
+      {
+        "at": "2026-10-19T21:01:00.000Z",
+        "who": "learner",
+        "text": "Caliente, por favor."
+      },
+      {
+        "at": "2026-10-19T21:01:20.000Z",
+        "who": "npc",
+        "text": "Perfecto, caliente. ¿Lo quieres chico, mediano o grande?",
+        "en": "Perfect, hot. Do you want it small, medium, or large?"
+      },
+      {
+        "at": "2026-10-19T21:01:40.000Z",
+        "who": "learner",
+        "text": "Mediano, por favor."
+      },
+      {
+        "at": "2026-10-19T21:02:00.000Z",
+        "who": "npc",
+        "text": "Listo, un café con leche mediano, caliente. Son cincuenta y cinco pesos. ¿Va a ser con tarjeta o en efectivo?",
+        "en": "Got it, a medium hot café con leche. That's fifty-five pesos. Will it be card or cash?"
+      },
+      {
+        "at": "2026-10-19T21:02:20.000Z",
+        "who": "learner",
+        "text": "En efectivo, por favor. Aquí está."
+      },
+      {
+        "at": "2026-10-19T21:02:40.000Z",
+        "who": "npc",
+        "text": "Gracias. Tu cambio, y en un momentito te llamo cuando esté listo tu café. ¿Me dices tu nombre para anotarlo?",
+        "en": "Thanks. Here's your change, and in just a moment I'll call you when your coffee is ready. Can you tell me your name so I can write it down?"
+      },
+      {
+        "at": "2026-10-19T21:03:00.000Z",
+        "who": "learner",
+        "text": "Me llamo David. Gracias."
+      },
+      {
+        "at": "2026-10-19T21:03:20.000Z",
+        "who": "npc",
+        "text": "Mucho gusto, David, yo soy Ximena. Ahorita te preparo tu café.",
+        "en": "Nice to meet you, David, I'm Ximena. I'll make your coffee right now."
+      },
+      {
+        "at": "2026-10-19T21:03:40.000Z",
+        "who": "learner",
+        "text": "Mucho gusto, Ximena. Gracias. Adiós."
+      },
+      {
+        "at": "2026-10-19T21:04:00.000Z",
+        "who": "npc",
+        "text": "¡Con gusto, David! Que tengas muy buena tarde, aquí te espero cuando quieras volver.",
+        "en": "My pleasure, David! Have a really nice afternoon, I'll be here whenever you want to come back."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-14",
+    "synthetic": true,
+    "learner": "chatty-leaver",
+    "character_id": "rosa-estudiante",
+    "place_id": "jardin-de-san-francisco",
+    "city_id": "guadalajara",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T22:00:00.000Z",
+    "ended_at": "2026-10-19T22:03:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T22:00:00.000Z",
+        "who": "npc",
+        "text": "¡Hola! ¿Qué tal? ¿Vienes seguido a este jardín?",
+        "en": "Hi! How's it going? Do you come to this garden often?"
+      },
+      {
+        "at": "2026-10-19T22:00:20.000Z",
+        "who": "learner",
+        "text": "Hola Rosa, estoy bien, gracias. No, es mi primera vez aquí, pero es muy bonito."
+      },
+      {
+        "at": "2026-10-19T22:00:40.000Z",
+        "who": "npc",
+        "text": "¡Qué bueno que te guste! Yo vengo a estudiar aquí cuando hace buen clima. ¿De dónde eres?",
+        "en": "I'm glad you like it! I come here to study when the weather is nice. Where are you from?"
+      },
+      {
+        "at": "2026-10-19T22:01:00.000Z",
+        "who": "learner",
+        "text": "Soy de Canadá, pero ahora vivo aquí en Guadalajara para estudiar español. ¿Y tú, qué estudias?"
+      },
+      {
+        "at": "2026-10-19T22:01:20.000Z",
+        "who": "npc",
+        "text": "¡Qué padre! Tu español está muy bien. Yo estudio psicología en la universidad. ¿Y cuánto tiempo llevas aquí en Guadalajara?",
+        "en": "How cool! Your Spanish is very good. I study psychology at the university. And how long have you been here in Guadalajara?"
+      },
+      {
+        "at": "2026-10-19T22:01:40.000Z",
+        "who": "learner",
+        "text": "Llevo dos meses aquí. Me gusta mucho la ciudad y la comida."
+      },
+      {
+        "at": "2026-10-19T22:02:00.000Z",
+        "who": "npc",
+        "text": "¡Qué bien! La comida de aquí es lo mejor. ¿Ya probaste las tortas ahogadas?",
+        "en": "How nice! The food here is the best. Have you tried the tortas ahogadas yet?"
+      },
+      {
+        "at": "2026-10-19T22:02:20.000Z",
+        "who": "learner",
+        "text": "Sí, las probé la semana pasada. Estaban muy ricas, pero un poco picantes. Bueno, Rosa, tengo que irme a mi clase. ¡Fue un gusto hablar contigo!"
+      },
+      {
+        "at": "2026-10-19T22:02:40.000Z",
+        "who": "npc",
+        "text": "¡Igualmente, fue un gusto conocerte! Suerte en tu clase y disfruta Guadalajara. ¡Nos vemos por aquí!",
+        "en": "Likewise, it was a pleasure to meet you! Good luck in your class and enjoy Guadalajara. See you around here!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-15",
+    "synthetic": true,
+    "learner": "english-beginner",
+    "character_id": "lupita-sacristana",
+    "place_id": "parroquia-san-pedro-tlaquepaque",
+    "city_id": "guadalajara",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-19T23:00:00.000Z",
+    "ended_at": "2026-10-19T23:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-19T23:00:00.000Z",
+        "who": "npc",
+        "text": "Buenas tardes, bienvenido a la parroquia. ¿En qué le puedo ayudar?",
+        "en": "Good afternoon, welcome to the parish. How can I help you?"
+      },
+      {
+        "at": "2026-10-19T23:00:20.000Z",
+        "who": "learner",
+        "text": "Hola, buenas tardes. Yo soy turista. Yo quiero ver la iglesia, por favor. Es posible?"
+      },
+      {
+        "at": "2026-10-19T23:00:40.000Z",
+        "who": "npc",
+        "text": "Claro que sí, pase usted. La iglesia está abierta hasta las seis de la tarde. ¿De dónde nos visita?",
+        "en": "Of course, come in. The church is open until six in the evening. Where are you visiting from?"
+      },
+      {
+        "at": "2026-10-19T23:01:00.000Z",
+        "who": "learner",
+        "text": "Yo soy de Estados Unidos. Es una iglesia muy bonita. Gracias!"
+      },
+      {
+        "at": "2026-10-19T23:01:20.000Z",
+        "who": "npc",
+        "text": "Muchas gracias, qué amable. Es una iglesia muy antigua y la queremos mucho. ¿Es su primera vez en Tlaquepaque?",
+        "en": "Thank you very much, how kind. It's a very old church and we love it dearly. Is it your first time in Tlaquepaque?"
+      },
+      {
+        "at": "2026-10-19T23:01:40.000Z",
+        "who": "learner",
+        "text": "Si, es mi primera vez. Tlaquepaque es muy bonito. Yo no entiendo todo, lo siento. Mi español es poco."
+      },
+      {
+        "at": "2026-10-19T23:02:00.000Z",
+        "who": "npc",
+        "text": "No se preocupe, usted habla muy bien y yo hablo despacito. Con gusto le explico lo que quiera de la iglesia. ¿Le gustaría ver el altar?",
+        "en": "Don't worry, you speak very well and I'll speak slowly. I'm happy to explain whatever you'd like about the church. Would you like to see the altar?"
+      },
+      {
+        "at": "2026-10-19T23:02:20.000Z",
+        "who": "learner",
+        "text": "Si, por favor. Yo quiero ver el altar. Es muy antiguo?"
+      },
+      {
+        "at": "2026-10-19T23:02:40.000Z",
+        "who": "npc",
+        "text": "Sí, es muy antiguo, tiene más de doscientos años. Venga conmigo, por aquí. ¿Le gusta la historia?",
+        "en": "Yes, it's very old, it's more than two hundred years old. Come with me, this way. Do you like history?"
+      },
+      {
+        "at": "2026-10-19T23:03:00.000Z",
+        "who": "learner",
+        "text": "Si, me gusta la historia. Yo no entiendo \"doscientos\". Es mucho años?"
+      },
+      {
+        "at": "2026-10-19T23:03:20.000Z",
+        "who": "npc",
+        "text": "Sí, es mucho tiempo. Doscientos es dos veces cien: 200. Entonces el altar tiene más de 200 años.",
+        "en": "Yes, it's a long time. Doscientos is two times one hundred: 200. So the altar is more than 200 years old."
+      },
+      {
+        "at": "2026-10-19T23:03:40.000Z",
+        "who": "learner",
+        "text": "Ah, doscientos es 200. Gracias! Es muy, muy antiguo. Yo puedo tomar una foto?"
+      },
+      {
+        "at": "2026-10-19T23:04:00.000Z",
+        "who": "npc",
+        "text": "Sí, claro, puede tomar fotos del altar. Solo le pido que no use el flash, por favor. ¿Quiere que le cuente algo de la imagen del centro?",
+        "en": "Yes, of course, you can take photos of the altar. I just ask that you not use the flash, please. Would you like me to tell you something about the image in the center?"
+      },
+      {
+        "at": "2026-10-19T23:04:20.000Z",
+        "who": "learner",
+        "text": "Si, por favor. Yo no uso el flash. Que es la imagen? Es un santo?"
+      },
+      {
+        "at": "2026-10-19T23:04:40.000Z",
+        "who": "npc",
+        "text": "Sí, es San Pedro, el santo de nuestra parroquia. Tiene las llaves del cielo en la mano. Mire, aquí están, cerquita de usted. ¿Las ve?",
+        "en": "Yes, it's Saint Peter, the saint of our parish. He holds the keys to heaven in his hand. Look, here they are, right near you. Do you see them?"
+      },
+      {
+        "at": "2026-10-19T23:05:00.000Z",
+        "who": "learner",
+        "text": "Si, yo veo las llaves. Son grandes! San Pedro tiene las llaves del cielo? Yo no entiendo mucho."
+      },
+      {
+        "at": "2026-10-19T23:05:20.000Z",
+        "who": "npc",
+        "text": "Sí, según la Biblia, Jesús le dio a San Pedro las llaves del cielo. Por eso se las ponen en la mano. Es una tradición muy bonita. ¿Quiere ver algo más de la iglesia?",
+        "en": "Yes, according to the Bible, Jesus gave Saint Peter the keys to heaven. That's why they put them in his hand. It's a very beautiful tradition. Would you like to see anything else in the church?"
+      },
+      {
+        "at": "2026-10-19T23:05:40.000Z",
+        "who": "learner",
+        "text": "Si, gracias. Yo quiero ver las flores, por favor. Hay un otro altar? Yo tengo tiempo."
+      },
+      {
+        "at": "2026-10-19T23:06:00.000Z",
+        "who": "npc",
+        "text": "Sí, hay otro altar a la izquierda, con la Virgen de Guadalupe. Siempre le ponemos flores frescas. Sígame, por favor. ¿Le gustan las rosas?",
+        "en": "Yes, there is another altar on the left, with the Virgin of Guadalupe. We always put fresh flowers on it. Follow me, please. Do you like roses?"
+      },
+      {
+        "at": "2026-10-19T23:06:20.000Z",
+        "who": "learner",
+        "text": "Si, me gustan las rosas. Son muy bonitas! Yo no entiendo \"izquierda\". Es aqui?"
+      },
+      {
+        "at": "2026-10-19T23:06:40.000Z",
+        "who": "npc",
+        "text": "Sí, justo aquí. Izquierda es este lado, mire, el lado de la mano con que usted no escribe, si es derecho. Mire qué bonitas rosas rojas le trajeron hoy a la Virgen. ¿Le gustan?",
+        "en": "Yes, right here. Izquierda is this side, look, the side of the hand you don't write with, if you're right-handed. Look at the pretty red roses they brought the Virgin today. Do you like them?"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-16",
+    "synthetic": true,
+    "learner": "hesitant",
+    "character_id": "alicia-catequista",
+    "place_id": "catedral-metropolitana",
+    "city_id": "ciudad-de-mexico",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T00:00:00.000Z",
+    "ended_at": "2026-10-20T00:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T00:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes! Bienvenido a la Catedral Metropolitana. Soy Alicia, guía voluntaria. ¿De dónde viene usted?",
+        "en": "Good afternoon! Welcome to the Metropolitan Cathedral. I'm Alicia, a volunteer guide. Where are you coming from?"
+      },
+      {
+        "at": "2026-10-20T00:00:20.000Z",
+        "who": "learner",
+        "text": "Ehm... buenas tardes. Yo... ehm... soy de... Estados Unidos. Repite por favor, más lento?"
+      },
+      {
+        "at": "2026-10-20T00:00:40.000Z",
+        "who": "npc",
+        "text": "Claro, con gusto. Le pregunto: ¿de dónde viene usted? Ah, de Estados Unidos, qué bien. Bienvenido.",
+        "en": "Of course, gladly. I ask: where are you from? Ah, from the United States, how nice. Welcome."
+      },
+      {
+        "at": "2026-10-20T00:01:00.000Z",
+        "who": "learner",
+        "text": "Ehm... sí. Gracias. Yo... ehm... me gusta... la catedral. Es muy... grande."
+      },
+      {
+        "at": "2026-10-20T00:01:20.000Z",
+        "who": "npc",
+        "text": "Sí, es muy grande y muy antigua. La empezaron a construir en 1573, hace casi cinco siglos. ¿Es su primera vez en México?",
+        "en": "Yes, it's very big and very old. They began building it in 1573, almost five centuries ago. Is it your first time in Mexico?"
+      },
+      {
+        "at": "2026-10-20T00:01:40.000Z",
+        "who": "learner",
+        "text": "Ehm... sorry, what? Primera... vez? Ehm... sí. Es mi primera vez."
+      },
+      {
+        "at": "2026-10-20T00:02:00.000Z",
+        "who": "npc",
+        "text": "¡Qué emoción! Primera vez quiere decir 'first time'. Bienvenido a México. Si quiere, le enseño los altares de la catedral.",
+        "en": "How exciting! 'Primera vez' means 'first time'. Welcome to Mexico. If you'd like, I'll show you the cathedral's altars."
+      },
+      {
+        "at": "2026-10-20T00:02:20.000Z",
+        "who": "learner",
+        "text": "Ehm... altares? Ehm... sí, por favor. Más lento, por favor."
+      },
+      {
+        "at": "2026-10-20T00:02:40.000Z",
+        "who": "npc",
+        "text": "Con mucho gusto. Venga conmigo, despacito. Altares son... altars, en inglés. Aquí a la derecha está el primero.",
+        "en": "With pleasure. Come with me, nice and slow. 'Altares' are... altars, in English. Here on the right is the first one."
+      },
+      {
+        "at": "2026-10-20T00:03:00.000Z",
+        "who": "learner",
+        "text": "Ehm... a la... derecha? Ah, okay. Ehm... es muy bonito. Gracias."
+      },
+      {
+        "at": "2026-10-20T00:03:20.000Z",
+        "who": "npc",
+        "text": "Sí, a la derecha, right. Es el Altar del Perdón, todo de oro. ¿Le gusta el color dorado?",
+        "en": "Yes, 'a la derecha,' right. It's the Altar of Forgiveness, all in gold. Do you like the golden color?"
+      },
+      {
+        "at": "2026-10-20T00:03:40.000Z",
+        "who": "learner",
+        "text": "Ehm... dorado? Ehm... sí. Me gusta... el oro. Es muy bonito."
+      },
+      {
+        "at": "2026-10-20T00:04:00.000Z",
+        "who": "npc",
+        "text": "Sí, oro, gold. Es muy bonito, tiene razón. Mire, ahora vamos al centro de la catedral, donde está el órgano. Venga conmigo.",
+        "en": "Yes, 'oro,' gold. It's very beautiful, you're right. Look, now we're going to the center of the cathedral, where the organ is. Come with me."
+      },
+      {
+        "at": "2026-10-20T00:04:20.000Z",
+        "who": "learner",
+        "text": "Ehm... el... órgano? Ehm... okay. Sí, vamos. Más lento, por favor."
+      },
+      {
+        "at": "2026-10-20T00:04:40.000Z",
+        "who": "npc",
+        "text": "Sí, despacito, no hay prisa. El órgano es un instrumento musical muy grande, con muchos tubos. Mire hacia arriba, ahí está. ¿Le gusta la música?",
+        "en": "Yes, nice and slow, there's no rush. The organ is a very big musical instrument with many pipes. Look up, there it is. Do you like music?"
+      },
+      {
+        "at": "2026-10-20T00:05:00.000Z",
+        "who": "learner",
+        "text": "Ehm... música? Ah... sí. Me gusta... la música. El órgano es... muy grande."
+      },
+      {
+        "at": "2026-10-20T00:05:20.000Z",
+        "who": "npc",
+        "text": "Sí, muy grande, y suena precioso. Tiene más de siete mil tubos. Si tiene suerte, hoy lo escuchamos en la misa de las seis.",
+        "en": "Yes, very big, and it sounds beautiful. It has more than seven thousand pipes. If you're lucky, we'll hear it today at the six o'clock Mass."
+      },
+      {
+        "at": "2026-10-20T00:05:40.000Z",
+        "who": "learner",
+        "text": "Ehm... misa? Sorry... no entiendo. Repite, por favor, más lento."
+      },
+      {
+        "at": "2026-10-20T00:06:00.000Z",
+        "who": "npc",
+        "text": "Con gusto. Misa... es la ceremonia de la iglesia, en inglés, 'Mass'. Hoy hay misa a las seis, y el órgano suena muy bonito.",
+        "en": "Gladly. 'Misa'... is the church ceremony, in English, 'Mass'. Today there is Mass at six, and the organ sounds very beautiful."
+      },
+      {
+        "at": "2026-10-20T00:06:20.000Z",
+        "who": "learner",
+        "text": "Ah, okay. Misa... Mass. Ehm... a las seis? Sí, me gusta. Gracias, Alicia."
+      },
+      {
+        "at": "2026-10-20T00:06:40.000Z",
+        "who": "npc",
+        "text": "¡De nada! Qué bien que se queda. Son las cuatro, así que tiene dos horas. Puede caminar por la catedral con calma, o visitar el Zócalo, que está aquí al lado.",
+        "en": "You're welcome! How nice that you're staying. It's four o'clock, so you have two hours. You can walk around the cathedral at your leisure, or visit the Zócalo, which is right next door."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-17",
+    "synthetic": true,
+    "learner": "improving",
+    "character_id": "jorge-taquillero-puebla",
+    "place_id": "terminal-capu",
+    "city_id": "puebla",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T01:00:00.000Z",
+    "ended_at": "2026-10-20T01:06:20.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T01:00:00.000Z",
+        "who": "npc",
+        "text": "Buenas tardes, bienvenido. ¿A dónde va a viajar hoy?",
+        "en": "Good afternoon, welcome. Where are you traveling to today?"
+      },
+      {
+        "at": "2026-10-20T01:00:20.000Z",
+        "who": "learner",
+        "text": "Buenas tardes. Quiero un boleto para Oaxaca, por favor. Ayer yo llegué a Puebla y quiero viajar mañana."
+      },
+      {
+        "at": "2026-10-20T01:00:40.000Z",
+        "who": "npc",
+        "text": "Muy bien, para mañana a Oaxaca. Tenemos salidas en la mañana y en la noche. ¿A qué hora prefiere viajar?",
+        "en": "Very well, for tomorrow to Oaxaca. We have departures in the morning and at night. What time do you prefer to travel?"
+      },
+      {
+        "at": "2026-10-20T01:01:00.000Z",
+        "who": "learner",
+        "text": "Prefiero la mañana, por favor. Eh, ¿cuánto tiempo es el viaje a Oaxaca? Yo no sé si es muy largo."
+      },
+      {
+        "at": "2026-10-20T01:01:20.000Z",
+        "who": "npc",
+        "text": "Son como cuatro horas y media, más o menos. No es tan largo, el camino es bueno. Tengo salida a las ocho de la mañana y otra a las diez y media. ¿Cuál le acomoda?",
+        "en": "It's about four and a half hours, more or less. It's not that long, the road is good. I have a departure at eight in the morning and another at ten thirty. Which one suits you?"
+      },
+      {
+        "at": "2026-10-20T01:01:40.000Z",
+        "who": "learner",
+        "text": "Mmm, la de las ocho está bien, creo. Eh, ¿usted es de Puebla? Yo estoy aquí un poco tiempo y me gusta mucho la ciudad."
+      },
+      {
+        "at": "2026-10-20T01:02:00.000Z",
+        "who": "npc",
+        "text": "Sí, soy poblano de toda la vida. Qué bueno que le gusta la ciudad, tiene mucho que ver. Entonces le anoto la de las ocho para mañana. ¿Me da su nombre, por favor?",
+        "en": "Yes, I'm a Pueblan all my life. I'm glad you like the city, there's a lot to see. So I'll put you down for the eight o'clock tomorrow. Can I have your name, please?"
+      },
+      {
+        "at": "2026-10-20T01:02:20.000Z",
+        "who": "learner",
+        "text": "Me llamo Daniel. Eh, ¿usted recomienda un lugar para comer aquí cerca? Yo probé los chiles en nogada ayer y me gustaron mucho."
+      },
+      {
+        "at": "2026-10-20T01:02:40.000Z",
+        "who": "npc",
+        "text": "Mucho gusto, Daniel. Qué bueno que probó los chiles en nogada, esos son orgullo de Puebla. Aquí cerca, en La Paz, hay unas cemitas muy buenas, y también unas tortas de milanesa que le van a encantar. ¿Le gustan los antojitos?",
+        "en": "Nice to meet you, Daniel. I'm glad you tried the chiles en nogada, those are the pride of Puebla. Near here, in La Paz, there are some very good cemitas, and also some milanesa tortas you're going to love. Do you like street snacks?"
+      },
+      {
+        "at": "2026-10-20T01:03:00.000Z",
+        "who": "learner",
+        "text": "Sí, me gustan mucho los antojitos. Eh, ¿qué es una cemita? Yo no conozco esa palabra."
+      },
+      {
+        "at": "2026-10-20T01:03:20.000Z",
+        "who": "npc",
+        "text": "Es un sándwich poblano, en un pan grande con semillas de ajonjolí. Lleva carne, aguacate, queso, cebolla y chile chipotle, y un poquito de papalo, que es una hierba muy de aquí. Es contundente, con una sola se llena.",
+        "en": "It's a Pueblan sandwich, on a big roll with sesame seeds. It has meat, avocado, cheese, onion and chipotle chile, and a little papalo, which is an herb very typical of here. It's hearty, you'll be full with just one."
+      },
+      {
+        "at": "2026-10-20T01:03:40.000Z",
+        "who": "learner",
+        "text": "Ah, entiendo, es un sándwich grande. Suena muy rico. Eh, ¿qué es papalo? Yo no sé esa palabra tampoco."
+      },
+      {
+        "at": "2026-10-20T01:04:00.000Z",
+        "who": "npc",
+        "text": "Es una hierba de hojas verdes, con un sabor fuerte, parecido al cilantro pero más intenso. A algunos les encanta y a otros no tanto. Pruébela y me cuenta, Daniel. ¿Le anoto entonces el boleto de las ocho?",
+        "en": "It's an herb with green leaves and a strong flavor, similar to cilantro but more intense. Some people love it and others not so much. Try it and tell me, Daniel. So shall I write up the eight o'clock ticket?"
+      },
+      {
+        "at": "2026-10-20T01:04:20.000Z",
+        "who": "learner",
+        "text": "Sí, por favor, anote el boleto de las ocho. Eh, ¿cuánto cuesta? Y ¿puedo pagar con tarjeta?"
+      },
+      {
+        "at": "2026-10-20T01:04:40.000Z",
+        "who": "npc",
+        "text": "Son cuatrocientos veinte pesos el boleto. Sí, acepto tarjeta, sin problema. Cuando guste, me la da.",
+        "en": "It's four hundred twenty pesos for the ticket. Yes, I accept cards, no problem. Whenever you like, hand it over to me."
+      },
+      {
+        "at": "2026-10-20T01:05:00.000Z",
+        "who": "learner",
+        "text": "Perfecto, aquí está mi tarjeta. Eh, ¿necesito llegar temprano mañana, o puedo llegar a las ocho?"
+      },
+      {
+        "at": "2026-10-20T01:05:20.000Z",
+        "who": "npc",
+        "text": "Gracias, Daniel, ya está su pago. Le recomiendo llegar unos veinte o treinta minutos antes, para abordar con calma y encontrar su andén. Aquí tiene su boleto, la salida es a las ocho en punto.",
+        "en": "Thank you, Daniel, your payment is done. I recommend arriving about twenty or thirty minutes early, to board calmly and find your platform. Here's your ticket, departure is at eight on the dot."
+      },
+      {
+        "at": "2026-10-20T01:05:40.000Z",
+        "who": "learner",
+        "text": "Ah, entiendo, veinte o treinta minutos antes. Muchas gracias, Jorge. Voy a probar la cemita. Hasta luego."
+      },
+      {
+        "at": "2026-10-20T01:06:00.000Z",
+        "who": "npc",
+        "text": "Con mucho gusto, Daniel. Que disfrute la cemita y buen viaje mañana. Hasta luego.",
+        "en": "My pleasure, Daniel. Enjoy the cemita and have a good trip tomorrow. See you later."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-18",
+    "synthetic": true,
+    "learner": "asks-meaning",
+    "character_id": "memo-tejuino",
+    "place_id": "tejuino-san-juan-de-dios",
+    "city_id": "guadalajara",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T02:00:00.000Z",
+    "ended_at": "2026-10-20T02:04:20.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T02:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes, joven! Pásele, pásele. ¿Gusta un tejuino bien fresco?",
+        "en": "Good afternoon! Come on over, come on over. Would you like a nice cold tejuino?"
+      },
+      {
+        "at": "2026-10-20T02:00:20.000Z",
+        "who": "learner",
+        "text": "Hola, buenas tardes. Perdón, ¿qué es un tejuino? Sorry, what does that mean?"
+      },
+      {
+        "at": "2026-10-20T02:00:40.000Z",
+        "who": "npc",
+        "text": "Es una bebida de maíz fermentado, bien fría, con limón, sal y una bolita de nieve de limón encima. Es muy de aquí de Jalisco. ¿Quiere probarlo?",
+        "en": "It's a drink made from fermented corn, ice cold, with lime, salt, and a scoop of lime sorbet on top. It's very much from here in Jalisco. Do you want to try it?"
+      },
+      {
+        "at": "2026-10-20T02:01:00.000Z",
+        "who": "learner",
+        "text": "Ehh... perdón, ¿qué es \"fermentado\"? Y... ¿nieve? Sorry, I don't understand. ¿Es helado?"
+      },
+      {
+        "at": "2026-10-20T02:01:20.000Z",
+        "who": "npc",
+        "text": "Sí, la nieve es como un helado, pero de agua, de limón. Y fermentado es que el maíz reposa unos días y se pone un poquito agrio, no es nada fuerte. Es muy rico y refrescante. ¿Le doy uno chico para que pruebe?",
+        "en": "Yes, nieve is like ice cream, but water-based, lime flavored. And fermented means the corn rests for a few days and gets a little bit sour, nothing strong. It's very tasty and refreshing. Shall I give you a small one to try?"
+      },
+      {
+        "at": "2026-10-20T02:01:40.000Z",
+        "who": "learner",
+        "text": "Ah, okay. Sí, un tejuino chico, por favor. ¿Cuánto es?"
+      },
+      {
+        "at": "2026-10-20T02:02:00.000Z",
+        "who": "npc",
+        "text": "El chico son treinta pesos, joven. Ahorita se lo preparo con su limón y su sal.",
+        "en": "The small one is thirty pesos, young man. I'll prepare it for you right now with your lime and salt."
+      },
+      {
+        "at": "2026-10-20T02:02:20.000Z",
+        "who": "learner",
+        "text": "Okay, gracias. Eh... ¿cómo se dice \"sorry, can I pay now?\" en español?"
+      },
+      {
+        "at": "2026-10-20T02:02:40.000Z",
+        "who": "npc",
+        "text": "Se dice: \"Perdón, ¿ya le puedo pagar?\" Y yo le contesto: \"Claro, cuando guste.\"",
+        "en": "You say: \"Perdón, ¿ya le puedo pagar?\" And I answer: \"Of course, whenever you like.\""
+      },
+      {
+        "at": "2026-10-20T02:03:00.000Z",
+        "who": "learner",
+        "text": "Ah, okay. Perdón, ¿ya le puedo pagar? Aquí está, treinta pesos."
+      },
+      {
+        "at": "2026-10-20T02:03:20.000Z",
+        "who": "npc",
+        "text": "Claro, cuando guste. Gracias, joven. Aquí tiene su tejuino, bien frío. Con cuidado con la nieve, que se derrite rápido.",
+        "en": "Of course, whenever you like. Thank you, young man. Here's your tejuino, nice and cold. Careful with the sorbet, it melts fast."
+      },
+      {
+        "at": "2026-10-20T02:03:40.000Z",
+        "who": "learner",
+        "text": "Gracias. Perdón, ¿qué es \"derrite\"? Ah, ¿se... melts? Sorry. Ok, gracias, adiós."
+      },
+      {
+        "at": "2026-10-20T02:04:00.000Z",
+        "who": "npc",
+        "text": "¡Así es, melts! Muy bien. Que le vaya bonito, joven, y regrese cuando quiera. ¡Hasta luego!",
+        "en": "That's right, melts! Very good. Take care, young man, and come back whenever you like. See you later!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-19",
+    "synthetic": true,
+    "learner": "verb-mistakes",
+    "character_id": "lupe-cemitas-dona-lupe",
+    "place_id": "cemitas-dona-lupe-analco",
+    "city_id": "puebla",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T03:00:00.000Z",
+    "ended_at": "2026-10-20T03:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T03:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes! Bienvenido a Cemitas Doña Lupe. ¿Qué le sirvo?",
+        "en": "Good afternoon! Welcome to Cemitas Doña Lupe. What can I get you?"
+      },
+      {
+        "at": "2026-10-20T03:00:20.000Z",
+        "who": "learner",
+        "text": "Hola, buenas tardes. Yo quiero una cemita de milanesa, por favor. Y tú tiene refrescos?"
+      },
+      {
+        "at": "2026-10-20T03:00:40.000Z",
+        "who": "npc",
+        "text": "Claro que sí, una cemita de milanesa, ahorita se la preparo. Tengo Coca, Jarritos y agua de horchata. ¿Cuál se le antoja?",
+        "en": "Of course, one milanesa cemita, I'll make it for you right away. I have Coca-Cola, Jarritos, and horchata water. Which one sounds good to you?"
+      },
+      {
+        "at": "2026-10-20T03:01:00.000Z",
+        "who": "learner",
+        "text": "Mmm, yo quiero un Jarritos, por favor. Cuánto cuesta los dos cosas?"
+      },
+      {
+        "at": "2026-10-20T03:01:20.000Z",
+        "who": "npc",
+        "text": "Muy bien, un Jarritos. La cemita de milanesa son 70 pesos y el refresco 20, así que en total son 90 pesos. ¿Le pongo chile a su cemita?",
+        "en": "Very good, one Jarritos. The milanesa cemita is 70 pesos and the soda is 20, so in total it's 90 pesos. Shall I put chile on your cemita?"
+      },
+      {
+        "at": "2026-10-20T03:01:40.000Z",
+        "who": "learner",
+        "text": "Sí, con chile, por favor. Yo pago noventa pesos ahora? Aquí está el dinero."
+      },
+      {
+        "at": "2026-10-20T03:02:00.000Z",
+        "who": "npc",
+        "text": "Gracias, joven, ahorita le cobro. Tome su Jarritos, y su cemita ya casi está lista. ¿Gusta sentarse en la mesita de allá mientras la termino?",
+        "en": "Thank you, young man, I'll take your payment right now. Here's your Jarritos, and your cemita is almost ready. Would you like to sit at the little table over there while I finish it?"
+      },
+      {
+        "at": "2026-10-20T03:02:20.000Z",
+        "who": "learner",
+        "text": "Sí, gracias. Yo sentar en la mesa y espero mi cemita. Muchas gracias, señora."
+      },
+      {
+        "at": "2026-10-20T03:02:40.000Z",
+        "who": "npc",
+        "text": "Con mucho gusto, joven. Ahorita le llevo su cemita calientita, con su chile y todo. Mientras tanto, disfrute su Jarritos.",
+        "en": "My pleasure, young man. I'll bring you your cemita nice and hot in just a moment, with your chile and everything. In the meantime, enjoy your Jarritos."
+      },
+      {
+        "at": "2026-10-20T03:03:00.000Z",
+        "who": "learner",
+        "text": "Gracias, señora. Yo esperar aquí y tomo mi Jarritos. Se ve muy rico la cemita."
+      },
+      {
+        "at": "2026-10-20T03:03:20.000Z",
+        "who": "npc",
+        "text": "Ay, qué amable, gracias. Aquí tiene su cemita, bien calientita. Es de milanesa con aguacate, quesillo y papalo, como se hace en Puebla. ¿Ya había probado una cemita antes?",
+        "en": "Aw, how kind, thank you. Here is your cemita, nice and hot. It's milanesa with avocado, quesillo, and papalo, the way it's made in Puebla. Have you tried a cemita before?"
+      },
+      {
+        "at": "2026-10-20T03:03:40.000Z",
+        "who": "learner",
+        "text": "No, yo no probar una cemita antes. Es mi primera vez! Qué es el papalo?"
+      },
+      {
+        "at": "2026-10-20T03:04:00.000Z",
+        "who": "npc",
+        "text": "¡Ay, qué bueno, entonces es un gran día! El papalo es una hierba de aquí de Puebla, tiene un sabor fuerte, como entre cilantro y limón. Algunos la aman y otros no tanto. Pruébela y me cuenta qué le parece.",
+        "en": "Oh, how wonderful, then it's a big day! Papalo is an herb from here in Puebla, with a strong flavor, somewhere between cilantro and lime. Some people love it and others not so much. Try it and tell me what you think."
+      },
+      {
+        "at": "2026-10-20T03:04:20.000Z",
+        "who": "learner",
+        "text": "Ok, yo pruebo el papalo. Mmm... es muy fuerte, pero me gusta! La cemita es muy rico, gracias."
+      },
+      {
+        "at": "2026-10-20T03:04:40.000Z",
+        "who": "npc",
+        "text": "¡Me da mucho gusto que le guste! Ya con eso se ganó su primera cemita poblana. Aquí siempre es bienvenido, joven. ¿De dónde nos visita?",
+        "en": "I'm so glad you like it! With that, you've earned your first Puebla cemita. You're always welcome here, young man. Where are you visiting from?"
+      },
+      {
+        "at": "2026-10-20T03:05:00.000Z",
+        "who": "learner",
+        "text": "Yo soy de Estados Unidos, de California. Yo estar en Puebla por una semana con mi amigos."
+      },
+      {
+        "at": "2026-10-20T03:05:20.000Z",
+        "who": "npc",
+        "text": "¡Qué bonito, de California! Pues bienvenido a Puebla, una semana es poquito pero alcanza para comer muy rico. Dígame, ¿ya conoce el mercado de Analco, aquí a la vuelta?",
+        "en": "How nice, from California! Well, welcome to Puebla, a week is short but enough to eat very well. Tell me, do you already know the Analco market, right around the corner?"
+      },
+      {
+        "at": "2026-10-20T03:05:40.000Z",
+        "who": "learner",
+        "text": "No, yo no conozco el mercado. Es grande? Yo quiero ir mañana con mi amigos."
+      },
+      {
+        "at": "2026-10-20T03:06:00.000Z",
+        "who": "npc",
+        "text": "Es chiquito pero tiene de todo: frutas, dulces típicos, hasta mole para llevar. Vayan temprano, que en la mañana todo está más fresco y hay menos gente. Y si pasan por aquí, me saludan.",
+        "en": "It's small but has a bit of everything: fruit, traditional sweets, even mole to take home. Go early, because in the morning everything is fresher and there are fewer people. And if you pass by here, say hello to me."
+      },
+      {
+        "at": "2026-10-20T03:06:20.000Z",
+        "who": "learner",
+        "text": "Ok, gracias señora! Nosotros vamos temprano mañana y yo la saludo. Adiós!"
+      },
+      {
+        "at": "2026-10-20T03:06:40.000Z",
+        "who": "npc",
+        "text": "¡Hasta mañana, joven! Que le vaya muy bien y disfrute mucho Puebla. Aquí los espero con gusto.",
+        "en": "See you tomorrow, young man! Take care and enjoy Puebla very much. I'll be happy to see you all here."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-20",
+    "synthetic": true,
+    "learner": "errand-and-leave",
+    "character_id": "carlos-taquillero-gdl",
+    "place_id": "terminal-nueva",
+    "city_id": "guadalajara",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T04:00:00.000Z",
+    "ended_at": "2026-10-20T04:03:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T04:00:00.000Z",
+        "who": "npc",
+        "text": "Buenas tardes, joven. ¿A dónde va?",
+        "en": "Good afternoon, young one. Where are you headed?"
+      },
+      {
+        "at": "2026-10-20T04:00:20.000Z",
+        "who": "learner",
+        "text": "Buenas tardes. Quiero un boleto para Puerto Vallarta, por favor."
+      },
+      {
+        "at": "2026-10-20T04:00:40.000Z",
+        "who": "npc",
+        "text": "Claro que sí. Tengo salida a las cuatro y media, son cuatrocientos cincuenta pesos. ¿Le sirve?",
+        "en": "Of course. I have a departure at four-thirty, it's four hundred fifty pesos. Does that work for you?"
+      },
+      {
+        "at": "2026-10-20T04:01:00.000Z",
+        "who": "learner",
+        "text": "Sí, está bien. Un boleto, por favor. ¿Puedo pagar con tarjeta?"
+      },
+      {
+        "at": "2026-10-20T04:01:20.000Z",
+        "who": "npc",
+        "text": "Sí, claro, aquí aceptamos tarjeta. Nada más inserte o acerque su tarjeta a la terminal.",
+        "en": "Yes, of course, we accept cards here. Just insert or tap your card on the terminal."
+      },
+      {
+        "at": "2026-10-20T04:01:40.000Z",
+        "who": "learner",
+        "text": "Ok, aquí está. ¿Es el autobús de las cuatro y media? ¿Qué número de andén?"
+      },
+      {
+        "at": "2026-10-20T04:02:00.000Z",
+        "who": "npc",
+        "text": "Ya quedó su pago, aquí tiene su boleto. Sí, es el de las cuatro y media, sale del andén siete. Quede pendiente, que a veces cambian el andén a último momento.",
+        "en": "Your payment went through, here's your ticket. Yes, it's the four-thirty one, it leaves from platform seven. Keep an eye out, because sometimes they change the platform at the last minute."
+      },
+      {
+        "at": "2026-10-20T04:02:20.000Z",
+        "who": "learner",
+        "text": "Ok, andén siete. Muchas gracias, adiós."
+      },
+      {
+        "at": "2026-10-20T04:02:40.000Z",
+        "who": "npc",
+        "text": "Con gusto, joven. Buen viaje y que le vaya muy bien en Vallarta.",
+        "en": "My pleasure, young one. Have a good trip and I hope all goes well for you in Vallarta."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-21",
+    "synthetic": true,
+    "learner": "chatty-leaver",
+    "character_id": "efrain-tendero",
+    "place_id": "miscelanea-los-arcos",
+    "city_id": "san-miguel-de-allende",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T05:00:00.000Z",
+    "ended_at": "2026-10-20T05:03:40.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T05:00:00.000Z",
+        "who": "npc",
+        "text": "Buenas tardes, joven. ¿En qué le puedo ayudar?",
+        "en": "Good afternoon, young one. How can I help you?"
+      },
+      {
+        "at": "2026-10-20T05:00:20.000Z",
+        "who": "learner",
+        "text": "Buenas tardes, señor. Quiero una botella de agua, por favor."
+      },
+      {
+        "at": "2026-10-20T05:00:40.000Z",
+        "who": "npc",
+        "text": "Claro que sí. Aquí tiene, bien fría. Son doce pesos. ¿Algo más?",
+        "en": "Of course. Here you go, nice and cold. That's twelve pesos. Anything else?"
+      },
+      {
+        "at": "2026-10-20T05:01:00.000Z",
+        "who": "learner",
+        "text": "No, nada más, gracias. Aquí están doce pesos."
+      },
+      {
+        "at": "2026-10-20T05:01:20.000Z",
+        "who": "npc",
+        "text": "Muchas gracias, joven. Que le vaya muy bien. Por cierto, no lo había visto por aquí, ¿es usted nuevo en el barrio?",
+        "en": "Thank you very much, young one. Take care. By the way, I hadn't seen you around here—are you new in the neighborhood?"
+      },
+      {
+        "at": "2026-10-20T05:01:40.000Z",
+        "who": "learner",
+        "text": "Sí, soy nuevo. Estudio español aquí en San Miguel por un mes. Me gusta mucho el barrio."
+      },
+      {
+        "at": "2026-10-20T05:02:00.000Z",
+        "who": "npc",
+        "text": "Qué bueno, bienvenido a San Antonio. Aquí en Los Arcos siempre tiene su casa, y su español se entiende muy bien. Dígame, ¿de dónde viene usted?",
+        "en": "How nice, welcome to San Antonio. Here at Los Arcos you always have a home, and your Spanish is easy to understand. Tell me, where do you come from?"
+      },
+      {
+        "at": "2026-10-20T05:02:20.000Z",
+        "who": "learner",
+        "text": "Gracias, señor. Soy de Canadá, de Toronto. Es mi primera vez en México."
+      },
+      {
+        "at": "2026-10-20T05:02:40.000Z",
+        "who": "npc",
+        "text": "¡Toronto, qué lejos! Pues bienvenido a México, joven. Aquí la gente es amable y la comida es muy buena. ¿Ya probó los tacos?",
+        "en": "Toronto, how far! Well, welcome to Mexico, young one. The people here are friendly and the food is very good. Have you tried the tacos yet?"
+      },
+      {
+        "at": "2026-10-20T05:03:00.000Z",
+        "who": "learner",
+        "text": "Sí, ya probé los tacos. Son muy ricos. Bueno, señor, tengo que ir a clase. Mucho gusto, hasta luego."
+      },
+      {
+        "at": "2026-10-20T05:03:20.000Z",
+        "who": "npc",
+        "text": "El gusto fue mío, joven. Que le vaya muy bien en su clase, y regrese cuando quiera. ¡Hasta luego!",
+        "en": "The pleasure was mine, young one. I hope your class goes very well, and come back whenever you like. See you later!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-22",
+    "synthetic": true,
+    "learner": "english-beginner",
+    "character_id": "mateo-cafe-cielo-rojo",
+    "place_id": "cafe-cielo-rojo",
+    "city_id": "puebla",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T06:00:00.000Z",
+    "ended_at": "2026-10-20T06:05:40.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T06:00:00.000Z",
+        "who": "npc",
+        "text": "¡Hola, buenas tardes! Bienvenido a Café Cielo Rojo. ¿Qué te sirvo?",
+        "en": "Hi, good afternoon! Welcome to Café Cielo Rojo. What can I get you?"
+      },
+      {
+        "at": "2026-10-20T06:00:20.000Z",
+        "who": "learner",
+        "text": "Hola. Um, yo quiero un café con leche, por favor. Es la... el menú en inglés?"
+      },
+      {
+        "at": "2026-10-20T06:00:40.000Z",
+        "who": "npc",
+        "text": "Claro, un café con leche, ahorita te lo preparo. Y sí, tengo el menú en inglés aquí, ¿lo quieres ver?",
+        "en": "Of course, one café con leche, I'll get it ready right now. And yes, I have the menu in English right here, do you want to see it?"
+      },
+      {
+        "at": "2026-10-20T06:01:00.000Z",
+        "who": "learner",
+        "text": "Sí, por favor. Um, gracias. Cuánto es el café?"
+      },
+      {
+        "at": "2026-10-20T06:01:20.000Z",
+        "who": "npc",
+        "text": "Aquí tienes el menú. El café con leche cuesta cuarenta y cinco pesos. ¿Algo más con eso, tal vez un pan dulce?",
+        "en": "Here's the menu. The café con leche costs forty-five pesos. Anything else with that, maybe a sweet bread?"
+      },
+      {
+        "at": "2026-10-20T06:01:40.000Z",
+        "who": "learner",
+        "text": "Um, un pan dulce... qué es? No entiendo. Es dulce? Cuánto es el pan?"
+      },
+      {
+        "at": "2026-10-20T06:02:00.000Z",
+        "who": "npc",
+        "text": "Sí, es dulce. Es un pan suave, con azúcar encima, y es típico de México. Los panes cuestan veinte pesos cada uno.",
+        "en": "Yes, it's sweet. It's a soft bread with sugar on top, and it's typical of Mexico. The breads cost twenty pesos each."
+      },
+      {
+        "at": "2026-10-20T06:02:20.000Z",
+        "who": "learner",
+        "text": "Ah, okay. Um, sí, un pan dulce, por favor. Entonces, es... sesenta y cinco pesos? Cuarenta y cinco más veinte."
+      },
+      {
+        "at": "2026-10-20T06:02:40.000Z",
+        "who": "npc",
+        "text": "¡Exacto! Son sesenta y cinco pesos en total. Muy bien con las cuentas. ¿Vas a pagar en efectivo o con tarjeta?",
+        "en": "Exactly! It's sixty-five pesos in total. Very good with the math. Will you pay in cash or by card?"
+      },
+      {
+        "at": "2026-10-20T06:03:00.000Z",
+        "who": "learner",
+        "text": "Um, con tarjeta, por favor. Es... okay? Gracias."
+      },
+      {
+        "at": "2026-10-20T06:03:20.000Z",
+        "who": "npc",
+        "text": "Sí, sí, con tarjeta está perfecto. Pásala por aquí en la terminal, por favor. Ahorita te preparo tu café.",
+        "en": "Yes, yes, card is perfect. Tap it right here on the terminal, please. I'll get your coffee ready right away."
+      },
+      {
+        "at": "2026-10-20T06:03:40.000Z",
+        "who": "learner",
+        "text": "Okay... aquí? Es la tarjeta... um, así? Gracias."
+      },
+      {
+        "at": "2026-10-20T06:04:00.000Z",
+        "who": "npc",
+        "text": "Sí, así está bien, ya pasó el pago. Gracias a ti. Siéntate donde quieras, yo te llevo tu café y tu pan a la mesa.",
+        "en": "Yes, that's right, the payment went through. Thank you. Sit wherever you like, I'll bring your coffee and your bread to the table."
+      },
+      {
+        "at": "2026-10-20T06:04:20.000Z",
+        "who": "learner",
+        "text": "Okay, gracias. Um, yo... siento en la mesa? Gracias, Mateo."
+      },
+      {
+        "at": "2026-10-20T06:04:40.000Z",
+        "who": "npc",
+        "text": "¡Con gusto! Y sí, siéntate en la mesa que prefieras. Por cierto, se dice «me siento» o «voy a sentarme». Ahorita te llevo tu café.",
+        "en": "My pleasure! And yes, sit at whichever table you prefer. By the way, you say \"me siento\" or \"voy a sentarme.\" I'll bring your coffee right away."
+      },
+      {
+        "at": "2026-10-20T06:05:00.000Z",
+        "who": "learner",
+        "text": "Ah, okay. Me siento... gracias, Mateo. Um, muy amable."
+      },
+      {
+        "at": "2026-10-20T06:05:20.000Z",
+        "who": "npc",
+        "text": "¡De nada, es un gusto! Ahorita te lo llevo. Por cierto, ¿cómo te llamas?",
+        "en": "You're welcome, it's a pleasure! I'll bring it right over. By the way, what's your name?"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-23",
+    "synthetic": true,
+    "learner": "hesitant",
+    "character_id": "beatriz-abuela",
+    "place_id": "jardin-del-carmen",
+    "city_id": "puebla",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T07:00:00.000Z",
+    "ended_at": "2026-10-20T07:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T07:00:00.000Z",
+        "who": "npc",
+        "text": "Buenas tardes, joven. ¿Viene a descansar un ratito al jardín?",
+        "en": "Good afternoon, young one. Have you come to rest a little while in the garden?"
+      },
+      {
+        "at": "2026-10-20T07:00:20.000Z",
+        "who": "learner",
+        "text": "Ehm... buenas tardes. Yo... ehm... no entiendo. Repite, por favor, más lento."
+      },
+      {
+        "at": "2026-10-20T07:00:40.000Z",
+        "who": "npc",
+        "text": "Ay, no se preocupe, mijo. Buenas... tardes. ¿Viene... a descansar... al jardín?",
+        "en": "Oh, don't worry, dear. Good... afternoon. Have you come... to rest... in the garden?"
+      },
+      {
+        "at": "2026-10-20T07:01:00.000Z",
+        "who": "learner",
+        "text": "Ehm... sí. Yo... descansar. Ehm... un poco. Gracias."
+      },
+      {
+        "at": "2026-10-20T07:01:20.000Z",
+        "who": "npc",
+        "text": "Qué bueno, siéntese aquí conmigo, hay sombrita. Yo me llamo Beatriz. ¿Y usted, cómo se llama?",
+        "en": "How nice, sit here with me, there's a little shade. My name is Beatriz. And you, what's your name?"
+      },
+      {
+        "at": "2026-10-20T07:01:40.000Z",
+        "who": "learner",
+        "text": "Ehm... gracias. Yo... me llamo... Daniel. Ehm... mucho gusto."
+      },
+      {
+        "at": "2026-10-20T07:02:00.000Z",
+        "who": "npc",
+        "text": "Mucho gusto, Daniel. Es un nombre muy bonito. Yo vengo a este jardín todas las tardes, desde hace muchos años. ¿Usted es de aquí, de Puebla?",
+        "en": "Nice to meet you, Daniel. That's a very pretty name. I come to this garden every afternoon, for many years now. Are you from here, from Puebla?"
+      },
+      {
+        "at": "2026-10-20T07:02:20.000Z",
+        "who": "learner",
+        "text": "Ehm... no. Yo... soy de... Estados Unidos. Ehm... repite, por favor, más lento."
+      },
+      {
+        "at": "2026-10-20T07:02:40.000Z",
+        "who": "npc",
+        "text": "Ay, perdón, mijo. Voy más despacito. Usted... es de aquí... de Puebla?",
+        "en": "Oh, sorry, dear. I'll go more slowly. Are you... from here... from Puebla?"
+      },
+      {
+        "at": "2026-10-20T07:03:00.000Z",
+        "who": "learner",
+        "text": "Ehm... no. Yo no soy de Puebla. Yo soy de Estados Unidos. Ehm... sorry, do you speak English?"
+      },
+      {
+        "at": "2026-10-20T07:03:20.000Z",
+        "who": "npc",
+        "text": "Ay, no, mijo, English no. Solo un poquito... \"hello\" y \"thank you\". Pero aquí platicamos despacito, y así usted aprende. ¿Le gusta Puebla?",
+        "en": "Oh, no, dear, no English. Just a tiny bit... \"hello\" and \"thank you.\" But here we'll chat slowly, and that way you learn. Do you like Puebla?"
+      },
+      {
+        "at": "2026-10-20T07:03:40.000Z",
+        "who": "learner",
+        "text": "Ehm... sí. Puebla... ehm... bonito. Me gusta. Ehm... más lento, por favor."
+      },
+      {
+        "at": "2026-10-20T07:04:00.000Z",
+        "who": "npc",
+        "text": "Ay, qué bueno, Daniel. Puebla... es muy bonita. Aquí... hay muchas iglesias... y mucha comida rica. ¿Ya probó... el mole poblano?",
+        "en": "Oh, how nice, Daniel. Puebla... is very pretty. Here... there are many churches... and lots of delicious food. Have you already tried... mole poblano?"
+      },
+      {
+        "at": "2026-10-20T07:04:20.000Z",
+        "who": "learner",
+        "text": "Ehm... mole... sí? Ehm... no entiendo. No... no sé. ¿Qué es mole?"
+      },
+      {
+        "at": "2026-10-20T07:04:40.000Z",
+        "who": "npc",
+        "text": "Ay, mijo, el mole es una salsa. Es espesa, de chile y chocolate, y se come con pollo. Es la comida de Puebla.",
+        "en": "Oh, dear, mole is a sauce. It's thick, made of chile and chocolate, and it's eaten with chicken. It's the food of Puebla."
+      },
+      {
+        "at": "2026-10-20T07:05:00.000Z",
+        "who": "learner",
+        "text": "Ehm... salsa... chocolate? Ehm... no entiendo. Más lento, por favor. Yo... no probé mole."
+      },
+      {
+        "at": "2026-10-20T07:05:20.000Z",
+        "who": "npc",
+        "text": "Ay, no se apure, mijo. Mole... es una salsa. Lleva chile... y un poquito de chocolate. Se come... con pollo. Muy rico. Usted tiene que probarlo.",
+        "en": "Oh, don't worry, dear. Mole... is a sauce. It has chile... and a little bit of chocolate. You eat it... with chicken. Very tasty. You have to try it."
+      },
+      {
+        "at": "2026-10-20T07:05:40.000Z",
+        "who": "learner",
+        "text": "Ehm... sí. Pollo, chile, chocolate... interesante. Ehm... ¿dónde? ¿Dónde probar mole?"
+      },
+      {
+        "at": "2026-10-20T07:06:00.000Z",
+        "who": "npc",
+        "text": "Ay, mijo, hay muchos lugares. Aquí cerquita, en el barrio de Analco, hay una fondita muy buena. Y también en el mercado. Pregunte por el mole poblano, ¿eh?",
+        "en": "Oh, dear, there are many places. Right nearby, in the Analco neighborhood, there's a very good little eatery. And also in the market. Ask for the mole poblano, okay?"
+      },
+      {
+        "at": "2026-10-20T07:06:20.000Z",
+        "who": "learner",
+        "text": "Ehm... Analco... mercado. Ehm... más lento, por favor. ¿Cerca... de aquí?"
+      },
+      {
+        "at": "2026-10-20T07:06:40.000Z",
+        "who": "npc",
+        "text": "Sí, mijo, muy cerca. Está... a cinco minutitos... caminando. Aquí mismo, en el barrio.",
+        "en": "Yes, dear, very close. It's... five little minutes... walking. Right here, in the neighborhood."
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-24",
+    "synthetic": true,
+    "learner": "improving",
+    "character_id": "chuy-tacos-arabes-el-puente",
+    "place_id": "tacos-arabes-el-puente",
+    "city_id": "puebla",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T08:00:00.000Z",
+    "ended_at": "2026-10-20T08:07:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T08:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes, joven! Bienvenido a Tacos Árabes El Puente. ¿Qué le sirvo?",
+        "en": "Good afternoon, young man! Welcome to Tacos Árabes El Puente. What can I get you?"
+      },
+      {
+        "at": "2026-10-20T08:00:20.000Z",
+        "who": "learner",
+        "text": "Hola, buenas tardes. Es mi primera vez aquí, ¿qué me recomienda? Ayer comí tacos al pastor y me gustaron mucho."
+      },
+      {
+        "at": "2026-10-20T08:00:40.000Z",
+        "who": "npc",
+        "text": "¡Qué bueno que le gustaron! Pues aquí lo que se pide son los tacos árabes, en tortilla de harina, con la carne del trompo, y le va a gustar mucho si le gusta el pastor. ¿Se anima a probarlos con un poquito de chipotle?",
+        "en": "Great that you liked them! Well, what people order here are the tacos árabes, on a flour tortilla, with meat from the spit, and you'll like it a lot if you like al pastor. Are you up for trying them with a little chipotle?"
+      },
+      {
+        "at": "2026-10-20T08:01:00.000Z",
+        "who": "learner",
+        "text": "Sí, quiero probar los tacos árabes. Pero no entendí bien, ¿el chipotle es muy picante? Yo no como mucho picante todavía."
+      },
+      {
+        "at": "2026-10-20T08:01:20.000Z",
+        "who": "npc",
+        "text": "Pica un poquito, pero no es tan fuerte. Mejor se lo pongo aparte, en una salsita, y usted le echa lo que aguante. ¿Cuántos tacos le preparo?",
+        "en": "It's a little spicy, but not that strong. I'll put it on the side in a little salsa, and you add as much as you can handle. How many tacos should I make you?"
+      },
+      {
+        "at": "2026-10-20T08:01:40.000Z",
+        "who": "learner",
+        "text": "Ah, qué bien, gracias. Tres tacos, por favor. Oiga, ¿usted trabaja aquí todos los días? ¿Es un negocio de su familia?"
+      },
+      {
+        "at": "2026-10-20T08:02:00.000Z",
+        "who": "npc",
+        "text": "Sí, de lunes a sábado, aquí me tiene desde las diez de la mañana. El negocio era de mi papá, y ahora me toca a mí seguirle. ¿Y usted, de dónde es, que anda probando tacos por Puebla?",
+        "en": "Yes, Monday through Saturday, you'll find me here from ten in the morning. The business was my dad's, and now it's my turn to carry it on. And you, where are you from, that you're out trying tacos in Puebla?"
+      },
+      {
+        "at": "2026-10-20T08:02:20.000Z",
+        "who": "learner",
+        "text": "Soy de Canadá, llegué a México hace tres semanas. Estoy estudiando español aquí en Puebla. ¿Su papá empezó el negocio hace mucho tiempo?"
+      },
+      {
+        "at": "2026-10-20T08:02:40.000Z",
+        "who": "npc",
+        "text": "¡Ay, qué bonito, de Canadá! Y fíjese que su español se entiende muy bien. Mi papá empezó el puesto hace como treinta años, aquí mismo, junto al puente. Ya muchos clientes vienen desde que yo era chamaco. ¿Y le está gustando Puebla?",
+        "en": "Oh, how nice, from Canada! And you know, your Spanish is understood very well. My dad started the stand about thirty years ago, right here next to the bridge. Many customers have been coming since I was a kid. And are you liking Puebla?"
+      },
+      {
+        "at": "2026-10-20T08:03:00.000Z",
+        "who": "learner",
+        "text": "Sí, me gusta mucho Puebla. La gente es muy amable y la comida es muy rica. Ayer caminé por el centro y vi la catedral. ¿Usted vive cerca de aquí?"
+      },
+      {
+        "at": "2026-10-20T08:03:20.000Z",
+        "who": "npc",
+        "text": "Sí, vivo aquí en Analco, a unas cuatro cuadras, con mi esposa y mis dos hijos. Todo el barrio me conoce. Y qué bueno que ya fue a la catedral, es bien bonita. Ahorita ya casi están sus tacos. ¿Quiere algo de tomar mientras espera?",
+        "en": "Yes, I live here in Analco, about four blocks away, with my wife and my two kids. The whole neighborhood knows me. And it's great that you already went to the cathedral, it's really beautiful. Your tacos are almost ready now. Would you like something to drink while you wait?"
+      },
+      {
+        "at": "2026-10-20T08:03:40.000Z",
+        "who": "learner",
+        "text": "Sí, quiero una agua de horchata, por favor. ¿Analco es un barrio bonito? ¿Qué hay allí para ver?"
+      },
+      {
+        "at": "2026-10-20T08:04:00.000Z",
+        "who": "npc",
+        "text": "Ahorita le sirvo su horchata, bien fría. Analco es de los barrios más antiguos de Puebla, y es muy tranquilo. Aquí cerquita está el Paseo del Puente de Ladrillo y la iglesia de San Francisco, y los domingos hay mucha gente paseando. ¿Usted ya conoce esa parte?",
+        "en": "I'll serve you your horchata right now, nice and cold. Analco is one of the oldest neighborhoods in Puebla, and it's very quiet. Right nearby is the Paseo del Puente de Ladrillo and the church of San Francisco, and on Sundays there are lots of people strolling around. Do you know that area yet?"
+      },
+      {
+        "at": "2026-10-20T08:04:20.000Z",
+        "who": "learner",
+        "text": "No, todavía no conozco esa parte. ¿Qué es el Puente de Ladrillo? Y los domingos, ¿qué hace la gente allí?"
+      },
+      {
+        "at": "2026-10-20T08:04:40.000Z",
+        "who": "npc",
+        "text": "Es un puente de ladrillo rojo, muy viejo, de hace como trescientos años, que cruza el río San Francisco, aquí a unos pasos de mi puesto. Ahora ya es un paseo peatonal, y los domingos la gente camina, se toma fotos, y los niños andan en bicicleta. Cuando termine sus tacos, camine para allá, le va a gustar. ¿Quiere su horchata con hielo?",
+        "en": "It's an old red brick bridge, about three hundred years old, that crosses the San Francisco river, just a few steps from my stand. Now it's a pedestrian walkway, and on Sundays people walk around, take photos, and kids ride bikes. When you finish your tacos, walk over there, you'll like it. Do you want your horchata with ice?"
+      },
+      {
+        "at": "2026-10-20T08:05:00.000Z",
+        "who": "learner",
+        "text": "Sí, con hielo, por favor. Gracias. Voy a caminar al puente después de comer. ¿Usted va allí con sus hijos los domingos?"
+      },
+      {
+        "at": "2026-10-20T08:05:20.000Z",
+        "who": "npc",
+        "text": "Pues los domingos casi siempre estoy aquí, porque es cuando más gente viene. Pero a veces, en la tarde, cierro temprano y me llevo a los niños a pasear por el puente. Mi hijo más chico se la pasa corriendo y mi hija quiere un helado cada vez. Aquí tiene su horchata, joven. ¿Le echo la salsa aparte, como quedamos?",
+        "en": "Well, on Sundays I'm almost always here, because that's when the most people come. But sometimes, in the afternoon, I close early and take the kids for a stroll on the bridge. My youngest son spends the whole time running around and my daughter wants an ice cream every time. Here's your horchata, young man. Should I put the salsa on the side, like we agreed?"
+      },
+      {
+        "at": "2026-10-20T08:05:40.000Z",
+        "who": "learner",
+        "text": "Sí, la salsa aparte, por favor. Gracias por la horchata. ¿Cuántos años tienen sus hijos?"
+      },
+      {
+        "at": "2026-10-20T08:06:00.000Z",
+        "who": "npc",
+        "text": "Con gusto. Mi hija Camila tiene nueve años y el chiquito, Mateo, tiene cinco. Los dos son bien inquietos, ni cómo hacerles. Ahí le dejo su salsita, pruebe poquito primero. ¿Ya había probado la horchata mexicana?",
+        "en": "My pleasure. My daughter Camila is nine years old and the little one, Mateo, is five. They're both really restless, nothing you can do about it. I'll leave your little salsa here, try just a bit first. Have you tried Mexican horchata before?"
+      },
+      {
+        "at": "2026-10-20T08:06:20.000Z",
+        "who": "learner",
+        "text": "No, es mi primera vez con la horchata mexicana. Mmm, está muy rica y dulce. ¿Qué lleva? No entendí bien \"inquietos\", ¿qué significa?"
+      },
+      {
+        "at": "2026-10-20T08:06:40.000Z",
+        "who": "npc",
+        "text": "Me alegra que le guste. Lleva arroz, canela, azúcar y leche, todo licuado con agua. Y \"inquietos\" es que no se están quietos, siempre andan moviéndose, corriendo, brincando. Así son los niños, ¿no? Aquí tiene sus tres tacos, joven. ¿Qué tal están?",
+        "en": "I'm glad you like it. It has rice, cinnamon, sugar and milk, all blended with water. And \"inquietos\" means they don't stay still, they're always moving, running, jumping. That's how kids are, right? Here are your three tacos, young man. How are they?"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-25",
+    "synthetic": true,
+    "learner": "asks-meaning",
+    "character_id": "miguel-taquillero-sma",
+    "place_id": "terminal-sma",
+    "city_id": "san-miguel-de-allende",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T09:00:00.000Z",
+    "ended_at": "2026-10-20T09:06:20.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T09:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes! ¿A dónde viaja hoy?",
+        "en": "Good afternoon! Where are you traveling today?"
+      },
+      {
+        "at": "2026-10-20T09:00:20.000Z",
+        "who": "learner",
+        "text": "Hola, buenas tardes. Eh... quiero un boleto a Guanajuato, por favor."
+      },
+      {
+        "at": "2026-10-20T09:00:40.000Z",
+        "who": "npc",
+        "text": "Claro que sí. Hay un autobús a las cuatro y media. ¿Le sirve ese horario?",
+        "en": "Of course. There's a bus at four thirty. Does that time work for you?"
+      },
+      {
+        "at": "2026-10-20T09:01:00.000Z",
+        "who": "learner",
+        "text": "Perdón, ¿qué significa \"le sirve\"? Eh... no entiendo. ¿A las cuatro y media está bien?"
+      },
+      {
+        "at": "2026-10-20T09:01:20.000Z",
+        "who": "npc",
+        "text": "Sí, \"¿le sirve?\" quiere decir \"¿le conviene?\", o sea, si ese horario le parece bien. Entonces, a las cuatro y media. ¿Sencillo o redondo?",
+        "en": "Yes, \"¿le sirve?\" means \"does it suit you?\", that is, whether that time seems good to you. So, at four thirty. One-way or round trip?"
+      },
+      {
+        "at": "2026-10-20T09:01:40.000Z",
+        "who": "learner",
+        "text": "Eh... perdón, ¿qué significa \"sencillo\" y \"redondo\"? No entiendo."
+      },
+      {
+        "at": "2026-10-20T09:02:00.000Z",
+        "who": "npc",
+        "text": "Sencillo es solo de ida, nada más para Guanajuato. Redondo es de ida y vuelta, o sea, también el regreso a San Miguel. ¿Cuál prefiere?",
+        "en": "Sencillo is one-way only, just to Guanajuato. Redondo is round trip, meaning the return to San Miguel too. Which do you prefer?"
+      },
+      {
+        "at": "2026-10-20T09:02:20.000Z",
+        "who": "learner",
+        "text": "Ah, ok. Sencillo, por favor. Solo de ida. ¿Cuánto cuesta?"
+      },
+      {
+        "at": "2026-10-20T09:02:40.000Z",
+        "who": "npc",
+        "text": "El boleto sencillo a Guanajuato cuesta ciento ochenta pesos. ¿Va a pagar en efectivo o con tarjeta?",
+        "en": "The one-way ticket to Guanajuato costs one hundred eighty pesos. Are you going to pay in cash or by card?"
+      },
+      {
+        "at": "2026-10-20T09:03:00.000Z",
+        "who": "learner",
+        "text": "Eh... perdón, ¿qué significa \"efectivo\"? Yo tengo tarjeta y también dinero."
+      },
+      {
+        "at": "2026-10-20T09:03:20.000Z",
+        "who": "npc",
+        "text": "\"Efectivo\" es el dinero en billetes y monedas, o sea, el dinero que trae en la mano. Entonces, ¿prefiere pagar en efectivo o con la tarjeta?",
+        "en": "\"Efectivo\" is money in bills and coins, that is, the money you carry in your hand. So, do you prefer to pay in cash or with the card?"
+      },
+      {
+        "at": "2026-10-20T09:03:40.000Z",
+        "who": "learner",
+        "text": "Ah, ok. Con tarjeta, por favor. Eh... ¿cómo se dice \"platform\" en español?"
+      },
+      {
+        "at": "2026-10-20T09:04:00.000Z",
+        "who": "npc",
+        "text": "Se dice \"andén\". Su autobús sale del andén número cuatro. Ya casi está su boleto, ¿me da su tarjeta?",
+        "en": "It's called \"andén\". Your bus leaves from platform number four. Your ticket is almost ready, may I have your card?"
+      },
+      {
+        "at": "2026-10-20T09:04:20.000Z",
+        "who": "learner",
+        "text": "Sí, aquí está mi tarjeta. Eh... ¿el andén cuatro está por aquí?"
+      },
+      {
+        "at": "2026-10-20T09:04:40.000Z",
+        "who": "npc",
+        "text": "Sí, está muy cerca. Salga por esa puerta de la izquierda y camine derecho; el cuatro es el tercer andén. Aquí tiene su boleto, buen viaje.",
+        "en": "Yes, it's very close. Go out through that door on the left and walk straight; number four is the third platform. Here is your ticket, have a good trip."
+      },
+      {
+        "at": "2026-10-20T09:05:00.000Z",
+        "who": "learner",
+        "text": "Eh... gracias. Perdón, ¿qué significa \"derecho\"? ¿Es \"straight\"?"
+      },
+      {
+        "at": "2026-10-20T09:05:20.000Z",
+        "who": "npc",
+        "text": "Sí, exacto: \"derecho\" es \"straight\", o sea, sin dar vuelta, todo recto. Es camine derecho hasta el tercer andén.",
+        "en": "Yes, exactly: \"derecho\" is \"straight\", meaning without turning, all straight ahead. Walk straight until the third platform."
+      },
+      {
+        "at": "2026-10-20T09:05:40.000Z",
+        "who": "learner",
+        "text": "Ah, ok. Gracias, Miguel. Muy amable. Adiós."
+      },
+      {
+        "at": "2026-10-20T09:06:00.000Z",
+        "who": "npc",
+        "text": "Con mucho gusto. Que le vaya muy bien en Guanajuato. ¡Adiós!",
+        "en": "My pleasure. I hope all goes very well for you in Guanajuato. Goodbye!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-26",
+    "synthetic": true,
+    "learner": "verb-mistakes",
+    "character_id": "vale-libros-tecolote",
+    "place_id": "libros-tecolote",
+    "city_id": "ciudad-de-mexico",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T10:00:00.000Z",
+    "ended_at": "2026-10-20T10:05:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T10:00:00.000Z",
+        "who": "npc",
+        "text": "¡Hola, buenas tardes! Bienvenido a Libros Tecolote. ¿Buscas algo en especial?",
+        "en": "Hello, good afternoon! Welcome to Libros Tecolote. Are you looking for something in particular?"
+      },
+      {
+        "at": "2026-10-20T10:00:20.000Z",
+        "who": "learner",
+        "text": "Hola, buenas tardes. Yo estar buscando un libro para mi hermano, él tiene quince año y le gusta las aventuras."
+      },
+      {
+        "at": "2026-10-20T10:00:40.000Z",
+        "who": "npc",
+        "text": "¡Qué bien, tengo varias ideas! Para un chico de quince años, a muchos les encanta 'El Hobbit' o 'Las aventuras de Tom Sawyer'. ¿Ya leyó algo parecido?",
+        "en": "How nice, I have several ideas! For a fifteen-year-old, many love 'The Hobbit' or 'The Adventures of Tom Sawyer'. Has he already read something similar?"
+      },
+      {
+        "at": "2026-10-20T10:01:00.000Z",
+        "who": "learner",
+        "text": "No sé, creo que él no leer el Hobbit. Él lee un libro de Harry Potter el año pasado, y le gustó mucho."
+      },
+      {
+        "at": "2026-10-20T10:01:20.000Z",
+        "who": "npc",
+        "text": "Entonces 'El Hobbit' es perfecto para él, tiene magia, dragones y mucha aventura. Está por allá, en la sección de fantasía, en el segundo estante. ¿Quieres que te lo traiga?",
+        "en": "Then 'The Hobbit' is perfect for him, it has magic, dragons and lots of adventure. It's over there, in the fantasy section, on the second shelf. Do you want me to bring it to you?"
+      },
+      {
+        "at": "2026-10-20T10:01:40.000Z",
+        "who": "learner",
+        "text": "Sí, por favor, tráeme el libro. Y cuánto cuesta el Hobbit?"
+      },
+      {
+        "at": "2026-10-20T10:02:00.000Z",
+        "who": "npc",
+        "text": "¡Claro, ahorita te lo traigo! Esta edición cuesta doscientos cincuenta pesos. ¿Te parece bien?",
+        "en": "Of course, I'll bring it right now! This edition costs two hundred fifty pesos. Does that sound good to you?"
+      },
+      {
+        "at": "2026-10-20T10:02:20.000Z",
+        "who": "learner",
+        "text": "Sí, está bien. Yo pagar con tarjeta, es posible? Y también quiero un bolsa para regalo."
+      },
+      {
+        "at": "2026-10-20T10:02:40.000Z",
+        "who": "npc",
+        "text": "Sí, claro, aceptamos tarjeta sin problema. Y tengo unas bolsas de regalo muy bonitas, con dibujos de tecolotes. Te la pongo en seguida. ¿Quieres que le escriba una dedicatoria a tu hermano?",
+        "en": "Yes, of course, we accept cards with no problem. And I have some really pretty gift bags with owl drawings. I'll put it in for you right away. Do you want me to write a dedication for your brother?"
+      },
+      {
+        "at": "2026-10-20T10:03:00.000Z",
+        "who": "learner",
+        "text": "Sí, una dedicatoria, por favor. Yo quiero que tú escribes: \"Para Mateo, feliz cumpleaños\"."
+      },
+      {
+        "at": "2026-10-20T10:03:20.000Z",
+        "who": "npc",
+        "text": "Con mucho gusto. 'Para Mateo, feliz cumpleaños', quedará muy bonito. Mientras la escribo, puedes ir pasando a la caja con tu tarjeta.",
+        "en": "With pleasure. 'For Mateo, happy birthday', it will look very nice. While I write it, you can head over to the register with your card."
+      },
+      {
+        "at": "2026-10-20T10:03:40.000Z",
+        "who": "learner",
+        "text": "Sí, gracias. Yo voy a la caja y pago con la tarjeta."
+      },
+      {
+        "at": "2026-10-20T10:04:00.000Z",
+        "who": "npc",
+        "text": "Perfecto, ahorita te alcanzo con el libro y la bolsa. Seguro a Mateo le va a encantar. ¡Feliz cumpleaños a tu hermano de mi parte!",
+        "en": "Perfect, I'll catch up with you in a moment with the book and the bag. I'm sure Mateo is going to love it. Happy birthday to your brother from me!"
+      },
+      {
+        "at": "2026-10-20T10:04:20.000Z",
+        "who": "learner",
+        "text": "Gracias, tú eres muy amable. Yo digo a mi hermano de tu parte. Adiós."
+      },
+      {
+        "at": "2026-10-20T10:04:40.000Z",
+        "who": "npc",
+        "text": "¡Gracias a ti! Que le vaya muy bien a Mateo con su libro. ¡Hasta luego y vuelve cuando quieras!",
+        "en": "Thank you! I hope Mateo enjoys his book. See you later, and come back anytime!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-27",
+    "synthetic": true,
+    "learner": "errand-and-leave",
+    "character_id": "cuca-cocinera",
+    "place_id": "fonda-dona-cuca",
+    "city_id": "ciudad-de-mexico",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T11:00:00.000Z",
+    "ended_at": "2026-10-20T11:05:00.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T11:00:00.000Z",
+        "who": "npc",
+        "text": "¡Buenas tardes, joven! Pase, pase, siéntese. Hoy tengo mole poblano y caldo de pollo. ¿Qué le sirvo?",
+        "en": "Good afternoon, young one! Come in, come in, have a seat. Today I have mole poblano and chicken broth. What can I serve you?"
+      },
+      {
+        "at": "2026-10-20T11:00:20.000Z",
+        "who": "learner",
+        "text": "Buenas tardes. Eh, quiero el caldo de pollo, por favor. ¿Cuánto cuesta?"
+      },
+      {
+        "at": "2026-10-20T11:00:40.000Z",
+        "who": "npc",
+        "text": "Muy bien, el caldo de pollo son sesenta pesos, con tortillas y su limoncito. Ahorita se lo traigo calientito. ¿Algo de tomar?",
+        "en": "Very good, the chicken broth is sixty pesos, with tortillas and a little lime. I'll bring it to you nice and hot right away. Anything to drink?"
+      },
+      {
+        "at": "2026-10-20T11:01:00.000Z",
+        "who": "learner",
+        "text": "Sí, eh... un agua de jamaica, por favor. ¿Cuánto es todo?"
+      },
+      {
+        "at": "2026-10-20T11:01:20.000Z",
+        "who": "npc",
+        "text": "Con el agua de jamaica son ochenta pesos en total, mi cielo. Siéntese tantito, ya le llevo todo. ¿Es usted de por aquí?",
+        "en": "With the jamaica water, it's eighty pesos total, my dear. Sit down for a moment, I'll bring you everything right away. Are you from around here?"
+      },
+      {
+        "at": "2026-10-20T11:01:40.000Z",
+        "who": "learner",
+        "text": "No, soy de Estados Unidos. Estoy aquí de vacaciones. Eh, gracias."
+      },
+      {
+        "at": "2026-10-20T11:02:00.000Z",
+        "who": "npc",
+        "text": "¡Ay, qué bonito, bienvenido a México! Aquí en el Centro hay mucho que ver, y ya verá que mi caldito le va a caer de maravilla. Con permiso, ya vengo.",
+        "en": "Oh, how nice, welcome to Mexico! There's a lot to see here in the Centro, and you'll see my little broth will hit the spot. Excuse me, I'll be right back."
+      },
+      {
+        "at": "2026-10-20T11:02:20.000Z",
+        "who": "learner",
+        "text": "Con permiso... Muy bien, gracias, doña Cuca. Eh, esperar aquí."
+      },
+      {
+        "at": "2026-10-20T11:02:40.000Z",
+        "who": "npc",
+        "text": "Sí, mi vida, espere tranquilito, ya casi está. Aquí tiene su agüita de jamaica mientras tanto. ¡Provecho!",
+        "en": "Yes, my dear, wait calmly, it's almost ready. Here's your little jamaica water in the meantime. Enjoy!"
+      },
+      {
+        "at": "2026-10-20T11:03:00.000Z",
+        "who": "learner",
+        "text": "Gracias, doña Cuca. Eh... ¿puedo pagar ahora?"
+      },
+      {
+        "at": "2026-10-20T11:03:20.000Z",
+        "who": "npc",
+        "text": "Claro que sí, mi cielo, como usted prefiera. Son ochenta pesos, aquí en la caja se los recibo.",
+        "en": "Of course, my dear, however you prefer. It's eighty pesos, I'll take it from you here at the register."
+      },
+      {
+        "at": "2026-10-20T11:03:40.000Z",
+        "who": "learner",
+        "text": "Eh, ochenta pesos. Aquí tiene, cien pesos. ¿Tiene cambio, por favor?"
+      },
+      {
+        "at": "2026-10-20T11:04:00.000Z",
+        "who": "npc",
+        "text": "Sí, cómo no, aquí tiene sus veinte pesos de cambio. Gracias, joven, y que disfrute su caldito.",
+        "en": "Yes, of course, here are your twenty pesos in change. Thank you, young man, and enjoy your little broth."
+      },
+      {
+        "at": "2026-10-20T11:04:20.000Z",
+        "who": "learner",
+        "text": "Muchas gracias, doña Cuca. Adiós, buenas tardes."
+      },
+      {
+        "at": "2026-10-20T11:04:40.000Z",
+        "who": "npc",
+        "text": "Adiós, mi cielo, que le vaya muy bonito en sus vacaciones. ¡Vuelva pronto a su casa!",
+        "en": "Goodbye, my dear, I hope your vacation goes beautifully. Come back soon to your home!"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-es-mx-28",
+    "synthetic": true,
+    "learner": "chatty-leaver",
+    "character_id": "chucho-lustrabotas",
+    "place_id": "puesto-de-boleo-don-chucho",
+    "city_id": "ciudad-de-mexico",
+    "prompt_version": "2026-10-18b",
+    "started_at": "2026-10-20T12:00:00.000Z",
+    "ended_at": "2026-10-20T12:04:20.000Z",
+    "turns": [
+      {
+        "at": "2026-10-20T12:00:00.000Z",
+        "who": "npc",
+        "text": "Buenas tardes, joven. ¿Le doy una boleadita a esos zapatos?",
+        "en": "Good afternoon, young man. Shall I give those shoes a little shine?"
+      },
+      {
+        "at": "2026-10-20T12:00:20.000Z",
+        "who": "learner",
+        "text": "Buenas tardes, señor. Sí, por favor, mis zapatos están muy sucios. ¿Cuánto cuesta?"
+      },
+      {
+        "at": "2026-10-20T12:00:40.000Z",
+        "who": "npc",
+        "text": "Para usted, cuarenta pesos, y se los dejo como espejo. Siéntese, siéntese. ¿Es usted de por aquí?",
+        "en": "For you, forty pesos, and I'll leave them like a mirror. Sit down, sit down. Are you from around here?"
+      },
+      {
+        "at": "2026-10-20T12:01:00.000Z",
+        "who": "learner",
+        "text": "No, soy de Canadá. Estoy aquí de vacaciones, pero estudio español."
+      },
+      {
+        "at": "2026-10-20T12:01:20.000Z",
+        "who": "npc",
+        "text": "¡Ándale, de Canadá! Qué bueno que estudia español, y lo habla muy bien. Aquí en la Roma hay mucho turista, pero pocos se sientan a platicar. ¿Y qué tal le ha parecido la ciudad?",
+        "en": "Well, how about that, from Canada! It's good that you study Spanish, and you speak it very well. Here in the Roma there are a lot of tourists, but few sit down to chat. And how has the city seemed to you so far?"
+      },
+      {
+        "at": "2026-10-20T12:01:40.000Z",
+        "who": "learner",
+        "text": "Me gusta mucho la ciudad. La comida es muy rica y la gente es muy amable. Pero es muy grande, ¿no?"
+      },
+      {
+        "at": "2026-10-20T12:02:00.000Z",
+        "who": "npc",
+        "text": "Uy, sí, grandísima, joven. Yo llevo cincuenta años aquí y todavía no la conozco toda. Pero qué bueno que le gusta la comida, porque aquí no se pasa hambre. ¿Ya probó los tacos de la esquina?",
+        "en": "Oh, yes, huge, young man. I've been here fifty years and I still don't know all of it. But I'm glad you like the food, because nobody goes hungry here. Have you tried the tacos on the corner yet?"
+      },
+      {
+        "at": "2026-10-20T12:02:20.000Z",
+        "who": "learner",
+        "text": "Sí, ya probé los tacos al pastor. Están muy buenos. Y usted, ¿cuál es su favorito?"
+      },
+      {
+        "at": "2026-10-20T12:02:40.000Z",
+        "who": "npc",
+        "text": "¡Ah, qué buen gusto! Mire, yo soy fiel a los tacos de suadero, con su cebollita y su limón, bien doraditos. Y ya que le pregunto, joven, ¿cuántos días se queda por acá?",
+        "en": "Ah, what good taste! Look, I'm loyal to suadero tacos, with a little onion and lime, nice and crispy. And since I'm asking, young man, how many days are you staying around here?"
+      },
+      {
+        "at": "2026-10-20T12:03:00.000Z",
+        "who": "learner",
+        "text": "Me quedo una semana más. Mañana voy a probar los tacos de suadero, ¡gracias por la idea!"
+      },
+      {
+        "at": "2026-10-20T12:03:20.000Z",
+        "who": "npc",
+        "text": "¡Eso, joven! Me va a dar la razón, ya verá. Pídalos con todo y no se detenga en la salsa verde, que ahí está el secreto. Y mire, ya casi quedan sus zapatos: un trapito más y quedan relucientes.",
+        "en": "That's the spirit, young man! You'll see, you'll agree with me. Order them with everything and don't hold back on the green salsa, that's where the secret is. And look, your shoes are almost done: one more rub with the cloth and they'll be gleaming."
+      },
+      {
+        "at": "2026-10-20T12:03:40.000Z",
+        "who": "learner",
+        "text": "Muchas gracias, señor. Los zapatos se ven muy bien. Aquí tiene los cuarenta pesos. ¡Hasta luego y que le vaya bien!"
+      },
+      {
+        "at": "2026-10-20T12:04:00.000Z",
+        "who": "npc",
+        "text": "Gracias a usted, joven, que Dios lo bendiga. Disfrute mucho México y no se olvide del suadero. ¡Que le vaya muy bien en su semana!",
+        "en": "Thank you, young man, God bless you. Enjoy Mexico a lot and don't forget the suadero. May your week go very well!"
+      }
+    ]
+  }
+]
