@@ -2,6 +2,8 @@
 
 2026-10-19 · Josh · **Proposed.** Revised the same day after the laptop session's review (its feedback and answers are folded in below). Nothing built or run yet.
 
+> **Update 2026-10-19 (cloud session):** the prompt part of this proposal (a level 1 teaching block) is superseded by [teaching-on-screen.md](teaching-on-screen.md): no new level prompts; level 1 = Beginner block + `teach3` + `english3`, tested stacked.
+
 ## The problem
 
 At level 1 the screen carries a lot of text: the character's Italian line, its English, and two reply buttons in Italian and English. Josh, testing: the English is distracting, and there's too much to read. Once English is on screen, the eye goes to it and the ear stops working.
