@@ -19,6 +19,7 @@ Run from the repo root with the API key: `npx tsx --env-file=.env.local tests/ex
 | `core-behaviours.mts` | CLAUDE.md's core behaviours (help when asked, garbled speech, recasting a mistake, no unasked English), one probe each, thinking off and on; `PROBES=` picks probes, `CHARACTER_PROMPT=` a trial prompt | — | 18 |
 | `conversation-ends.mts` | Real conversations from the admin export: where each was first naturally over (errand done and closed, or both said goodbye), what happened after, and whether the learner said goodbye; reads `ended_at`, which includes idle time, so the seconds are rough; also writes JSON for end-detect | — | 19 |
 | `end-detect.mts` | Two ways to notice a conversation is over, scored against conversation-ends' judge: an `over` flag on the character's reply (trial schema, line regenerated) and a separate judge after each real line (timed) | — | 20 |
+| `help-asks.mts` | Real conversations: every learner turn asking for help, and whether the next character line carried English in the spoken line, helped in the language only, or ignored it (before dropping the English translation line) | — | 21 |
 | `voice-speed.mts` | Speed of speech in (Groq Whisper, ElevenLabs Scribe) and speech out (ElevenLabs models, whole file and first streamed byte), short to long lines, both languages; laptop network | — | voice 1 |
 | `on-hold/smaller-world.mts` | Scripted two-visit conversations per character in one neighbourhood, checked and rewritten. On hold until the smaller world has a spec | — | 12–13 |
 
