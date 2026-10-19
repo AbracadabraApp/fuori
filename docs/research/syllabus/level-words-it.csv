@@ -1,0 +1,1480 @@
+lemma,pos,level,unit,theme
+musica,noun,A1,0,italian words known abroad
+arte,noun,A1,0,italian words known abroad
+spaghetti,noun,A1,0,italian words known abroad
+moda,noun,A1,0,italian words known abroad
+espresso,noun,A1,0,italian words known abroad
+opera,noun,A1,0,italian words known abroad
+cappuccino,noun,A1,0,italian words known abroad
+cinema,noun,A1,0,italian words known abroad
+caffè,noun,A1,0,italian words known abroad
+cucina,noun,A1,0,italian words known abroad
+gelato,noun,A1,0,italian words known abroad
+pizza,noun,A1,0,italian words known abroad
+prosciutto,noun,A1,0,italian words known abroad
+pesce,noun,A1,0,italian words known abroad
+zucchero,noun,A1,0,italian words known abroad
+ghiaccio,noun,A1,0,italian words known abroad
+limoncello,noun,A1,0,italian words known abroad
+parmigiano,noun,A1,0,italian words known abroad
+gondola,noun,A1,0,italian words known abroad
+maschera,noun,A1,0,italian words known abroad
+ciao,interj,A1,0,greetings and introductions
+piacere,interj,A1,0,greetings and introductions
+sì,interj,A1,0,greetings and introductions
+no,interj,A1,0,greetings and introductions
+nome,noun,A1,0,greetings and introductions
+cognome,noun,A1,0,greetings and introductions
+età,noun,A1,0,greetings and introductions
+anno,noun,A1,0,greetings and introductions
+nazionalità,noun,A1,0,greetings and introductions
+essere,verb,A1,0,greetings and introductions
+avere,verb,A1,0,greetings and introductions
+chiamarsi,verb,A1,0,greetings and introductions
+scusare,verb,A1,0,greetings and introductions
+ragazzo,noun,A1,0,people and family
+ragazza,noun,A1,0,people and family
+amico,noun,A1,0,people and family
+studente,noun,A1,0,people and family
+insegnante,noun,A1,0,people and family
+fratello,noun,A1,0,people and family
+sorella,noun,A1,0,people and family
+figlio,noun,A1,0,people and family
+famiglia,noun,A1,0,people and family
+mamma,noun,A1,0,people and family
+nonna,noun,A1,0,people and family
+zio,noun,A1,0,people and family
+tesoro,noun,A1,0,people and family
+italiano,adj,A1,0,nationalities
+americano,adj,A1,0,nationalities
+australiano,adj,A1,0,nationalities
+spagnolo,adj,A1,0,nationalities
+argentino,adj,A1,0,nationalities
+tedesco,adj,A1,0,nationalities
+inglese,adj,A1,0,nationalities
+svizzero,adj,A1,0,nationalities
+portoghese,adj,A1,0,nationalities
+brasiliano,adj,A1,0,nationalities
+marocchino,adj,A1,0,nationalities
+chiave,noun,A1,0,everyday objects and places
+casa,noun,A1,0,everyday objects and places
+macchina,noun,A1,0,everyday objects and places
+libro,noun,A1,0,everyday objects and places
+borsa,noun,A1,0,everyday objects and places
+pagina,noun,A1,0,everyday objects and places
+finestra,noun,A1,0,everyday objects and places
+porta,noun,A1,0,everyday objects and places
+lezione,noun,A1,0,everyday objects and places
+giornale,noun,A1,0,everyday objects and places
+treno,noun,A1,0,everyday objects and places
+autobus,noun,A1,0,everyday objects and places
+lettera,noun,A1,0,everyday objects and places
+zaino,noun,A1,0,everyday objects and places
+lavagna,noun,A1,0,everyday objects and places
+glossario,noun,A1,0,everyday objects and places
+gatto,noun,A1,0,everyday objects and places
+chitarra,noun,A1,0,everyday objects and places
+vestito,noun,A1,0,everyday objects and places
+stivale,noun,A1,0,everyday objects and places
+albero,noun,A1,0,everyday objects and places
+isola,noun,A1,0,everyday objects and places
+museo,noun,A1,0,everyday objects and places
+ristorante,noun,A1,0,everyday objects and places
+aereo,noun,A1,0,everyday objects and places
+città,noun,A1,0,everyday objects and places
+problema,noun,A1,0,everyday objects and places
+sport,noun,A1,0,everyday objects and places
+calcio,noun,A1,0,everyday objects and places
+centro,noun,A1,0,everyday objects and places
+notte,noun,A1,0,everyday objects and places
+immagine,noun,A1,0,everyday objects and places
+parola,noun,A1,0,everyday objects and places
+lingua,noun,A1,0,everyday objects and places
+galleria,noun,A1,0,everyday objects and places
+doccia,noun,A1,0,everyday objects and places
+bello,adj,A1,0,describing things
+nuovo,adj,A1,0,describing things
+alto,adj,A1,0,describing things
+piccolo,adj,A1,0,describing things
+aperto,adj,A1,0,describing things
+rosso,adj,A1,0,describing things
+moderno,adj,A1,0,describing things
+giovane,adj,A1,0,describing things
+buono,adj,A1,0,describing things
+difficile,adj,A1,0,describing things
+corretto,adj,A1,0,describing things
+scrivere,verb,A1,0,classroom
+leggere,verb,A1,0,classroom
+ascoltare,verb,A1,0,classroom
+ripetere,verb,A1,0,classroom
+zero,num,A1,0,numbers 0-30
+uno,num,A1,0,numbers 0-30
+due,num,A1,0,numbers 0-30
+tre,num,A1,0,numbers 0-30
+quattro,num,A1,0,numbers 0-30
+cinque,num,A1,0,numbers 0-30
+sei,num,A1,0,numbers 0-30
+sette,num,A1,0,numbers 0-30
+otto,num,A1,0,numbers 0-30
+nove,num,A1,0,numbers 0-30
+dieci,num,A1,0,numbers 0-30
+undici,num,A1,0,numbers 0-30
+dodici,num,A1,0,numbers 0-30
+tredici,num,A1,0,numbers 0-30
+quattordici,num,A1,0,numbers 0-30
+quindici,num,A1,0,numbers 0-30
+sedici,num,A1,0,numbers 0-30
+diciassette,num,A1,0,numbers 0-30
+diciotto,num,A1,0,numbers 0-30
+diciannove,num,A1,0,numbers 0-30
+venti,num,A1,0,numbers 0-30
+trenta,num,A1,0,numbers 0-30
+io,pron,A1,0,function words
+tu,pron,A1,0,function words
+lui,pron,A1,0,function words
+lei,pron,A1,0,function words
+noi,pron,A1,0,function words
+voi,pron,A1,0,function words
+loro,pron,A1,0,function words
+chi,pron,A1,0,function words
+questo,det,A1,0,function words
+molto,adv,A1,0,function words
+anche,adv,A1,0,function words
+non,adv,A1,0,function words
+come,adv,A1,0,function words
+quanto,adv,A1,0,function words
+dove,adv,A1,0,function words
+davvero,adv,A1,0,function words
+ecco,adv,A1,0,function words
+e,conj,A1,0,function words
+o,conj,A1,0,function words
+di,prep,A1,0,function words
+con,prep,A1,0,function words
+il,art,A1,0,function words
+lo,art,A1,0,function words
+la,art,A1,0,function words
+un,art,A1,0,function words
+una,art,A1,0,function words
+lavorare,verb,A1,1,work and daily routine
+prendere,verb,A1,1,work and daily routine
+aprire,verb,A1,1,work and daily routine
+finire,verb,A1,1,work and daily routine
+abitare,verb,A1,1,work and daily routine
+parlare,verb,A1,1,work and daily routine
+capire,verb,A1,1,work and daily routine
+preferire,verb,A1,1,work and daily routine
+partire,verb,A1,1,work and daily routine
+arrivare,verb,A1,1,work and daily routine
+studiare,verb,A1,1,work and daily routine
+dormire,verb,A1,1,work and daily routine
+offrire,verb,A1,1,work and daily routine
+sentire,verb,A1,1,work and daily routine
+spedire,verb,A1,1,work and daily routine
+pulire,verb,A1,1,work and daily routine
+guardare,verb,A1,1,work and daily routine
+mangiare,verb,A1,1,work and daily routine
+andare,verb,A1,1,work and daily routine
+invitare,verb,A1,1,work and daily routine
+scendere,verb,A1,1,work and daily routine
+stare,verb,A1,1,work and daily routine
+vivere,verb,A1,1,work and daily routine
+rispondere,verb,A1,1,work and daily routine
+descrivere,verb,A1,1,work and daily routine
+salutare,verb,A1,1,work and daily routine
+chiedere,verb,A1,1,work and daily routine
+cucinare,verb,A1,1,work and daily routine
+telefonare,verb,A1,1,work and daily routine
+costruire,verb,A1,1,work and daily routine
+lavoro,noun,A1,1,work and daily routine
+collega,noun,A1,1,work and daily routine
+ufficio,noun,A1,1,work and daily routine
+minuto,noun,A1,1,work and daily routine
+ora,noun,A1,1,work and daily routine
+fortuna,noun,A1,1,work and daily routine
+inizio,noun,A1,1,work and daily routine
+volta,noun,A1,1,work and daily routine
+appuntamento,noun,A1,1,work and daily routine
+sabato,noun,A1,1,work and daily routine
+pomeriggio,noun,A1,1,work and daily routine
+cena,noun,A1,1,work and daily routine
+messaggio,noun,A1,1,work and daily routine
+persona,noun,A1,1,work and daily routine
+corso,noun,A1,1,work and daily routine
+attore,noun,A1,1,work and daily routine
+domanda,noun,A1,1,work and daily routine
+idea,noun,A1,1,work and daily routine
+storia,noun,A1,1,work and daily routine
+uomo,noun,A1,1,work and daily routine
+donna,noun,A1,1,work and daily routine
+mattina,noun,A1,1,work and daily routine
+sera,noun,A1,1,work and daily routine
+serata,noun,A1,1,work and daily routine
+giorno,noun,A1,1,work and daily routine
+vacanza,noun,A1,1,work and daily routine
+metro,noun,A1,1,getting around the city
+via,noun,A1,1,getting around the city
+fermata,noun,A1,1,getting around the city
+università,noun,A1,1,getting around the city
+biblioteca,noun,A1,1,getting around the city
+bar,noun,A1,1,getting around the city
+discoteca,noun,A1,1,getting around the city
+signore,noun,A1,1,formal address
+signora,noun,A1,1,formal address
+pronuncia,noun,A1,1,formal address
+complimenti,noun,A1,1,formal address
+occhio,noun,A1,1,describing people
+capello,noun,A1,1,describing people
+testa,noun,A1,1,describing people
+viso,noun,A1,1,describing people
+mano,noun,A1,1,describing people
+bocca,noun,A1,1,describing people
+naso,noun,A1,1,describing people
+carattere,noun,A1,1,describing people
+aspetto,noun,A1,1,describing people
+contento,adj,A1,1,describing people
+pronto,adj,A1,1,describing people
+primo,adj,A1,1,describing people
+simpatico,adj,A1,1,describing people
+carino,adj,A1,1,describing people
+libero,adj,A1,1,describing people
+dolce,adj,A1,1,describing people
+verde,adj,A1,1,describing people
+biondo,adj,A1,1,describing people
+interessante,adj,A1,1,describing people
+intelligente,adj,A1,1,describing people
+famoso,adj,A1,1,describing people
+straniero,adj,A1,1,describing people
+ultimo,adj,A1,1,describing people
+perfetto,adj,A1,1,describing people
+bruno,adj,A1,1,describing people
+magro,adj,A1,1,describing people
+lungo,adj,A1,1,describing people
+corto,adj,A1,1,describing people
+marrone,adj,A1,1,describing people
+grande,adj,A1,1,describing people
+anziano,adj,A1,1,describing people
+brutto,adj,A1,1,describing people
+basso,adj,A1,1,describing people
+nero,adj,A1,1,describing people
+castano,adj,A1,1,describing people
+azzurro,adj,A1,1,describing people
+antipatico,adj,A1,1,describing people
+allegro,adj,A1,1,describing people
+triste,adj,A1,1,describing people
+scortese,adj,A1,1,describing people
+gentile,adj,A1,1,describing people
+grasso,adj,A1,1,describing people
+francese,adj,A1,1,describing people
+regione,noun,A1,1,Italy: regions and cities
+grazie,interj,A1,1,greetings
+prego,interj,A1,1,greetings
+arrivederci,interj,A1,1,greetings
+buonasera,interj,A1,1,greetings
+buonanotte,interj,A1,1,greetings
+buongiorno,interj,A1,1,greetings
+salve,interj,A1,1,greetings
+bene,adv,A1,1,function words
+certo,adv,A1,1,function words
+vicino,adv,A1,1,function words
+lì,adv,A1,1,function words
+qui,adv,A1,1,function words
+già,adv,A1,1,function words
+allora,adv,A1,1,function words
+domani,adv,A1,1,function words
+presto,adv,A1,1,function words
+così,adv,A1,1,function words
+dopo,adv,A1,1,function words
+perché,adv,A1,1,function words
+quando,adv,A1,1,function words
+però,adv,A1,1,function words
+cosa,pron,A1,1,function words
+a,prep,A1,1,function words
+da,prep,A1,1,function words
+in,prep,A1,1,function words
+per,prep,A1,1,function words
+vero,adj,A1,1,function words
+venire,verb,A1,2,free time
+dare,verb,A1,2,free time
+sapere,verb,A1,2,free time
+uscire,verb,A1,2,free time
+fare,verb,A1,2,free time
+giocare,verb,A1,2,free time
+suonare,verb,A1,2,free time
+ballare,verb,A1,2,free time
+amare,verb,A1,2,free time
+passare,verb,A1,2,free time
+potere,verb,A1,2,free time
+volere,verb,A1,2,free time
+dovere,verb,A1,2,free time
+restare,verb,A1,2,free time
+pensare,verb,A1,2,free time
+aspettare,verb,A1,2,free time
+tornare,verb,A1,2,free time
+entrare,verb,A1,2,free time
+girare,verb,A1,2,free time
+bere,verb,A1,2,free time
+pagare,verb,A1,2,free time
+vedere,verb,A1,2,free time
+conoscere,verb,A1,2,free time
+visitare,verb,A1,2,free time
+correre,verb,A1,2,free time
+camminare,verb,A1,2,free time
+usare,verb,A1,2,free time
+comprare,verb,A1,2,free time
+costare,verb,A1,2,free time
+tempo,noun,A1,2,free time
+interesse,noun,A1,2,free time
+attività,noun,A1,2,free time
+videogioco,noun,A1,2,free time
+palestra,noun,A1,2,free time
+strumento,noun,A1,2,free time
+televisione,noun,A1,2,free time
+teatro,noun,A1,2,free time
+pianoforte,noun,A1,2,free time
+violino,noun,A1,2,free time
+piscina,noun,A1,2,free time
+forma,noun,A1,2,free time
+gruppo,noun,A1,2,free time
+partita,noun,A1,2,free time
+carta,noun,A1,2,free time
+fine settimana,noun,A1,2,free time
+mare,noun,A1,2,free time
+biglietto,noun,A1,2,free time
+concerto,noun,A1,2,free time
+mostra,noun,A1,2,free time
+spesa,noun,A1,2,free time
+gita,noun,A1,2,free time
+montagna,noun,A1,2,free time
+invito,noun,A1,2,free time
+pensione,noun,A1,2,free time
+tango,noun,A1,2,free time
+volentieri,adv,A1,2,invitations
+purtroppo,adv,A1,2,invitations
+magari,adv,A1,2,invitations
+impegno,noun,A1,2,invitations
+agenda,noun,A1,2,invitations
+appartamento,noun,A1,2,the home
+periferia,noun,A1,2,the home
+stadio,noun,A1,2,the home
+piano,noun,A1,2,the home
+soggiorno,noun,A1,2,the home
+camera da letto,noun,A1,2,the home
+bagno,noun,A1,2,the home
+balcone,noun,A1,2,the home
+affitto,noun,A1,2,the home
+euro,noun,A1,2,the home
+ascensore,noun,A1,2,the home
+stanza,noun,A1,2,the home
+salotto,noun,A1,2,the home
+studio,noun,A1,2,the home
+ingresso,noun,A1,2,the home
+ripostiglio,noun,A1,2,the home
+indirizzo,noun,A1,2,the home
+letto,noun,A1,2,the home
+comodo,adj,A1,2,the home
+luminoso,adj,A1,2,the home
+fortunato,adj,A1,2,the home
+lunedì,noun,A1,2,days and times
+martedì,noun,A1,2,days and times
+mercoledì,noun,A1,2,days and times
+giovedì,noun,A1,2,days and times
+venerdì,noun,A1,2,days and times
+domenica,noun,A1,2,days and times
+settimana,noun,A1,2,days and times
+mezzogiorno,noun,A1,2,days and times
+mezzanotte,noun,A1,2,days and times
+quarto,noun,A1,2,days and times
+orologio,noun,A1,2,days and times
+mezzo,adj,A1,2,days and times
+prossimo,adj,A1,2,days and times
+quaranta,num,A1,2,numbers and ordinals
+cinquanta,num,A1,2,numbers and ordinals
+sessanta,num,A1,2,numbers and ordinals
+settanta,num,A1,2,numbers and ordinals
+ottanta,num,A1,2,numbers and ordinals
+novanta,num,A1,2,numbers and ordinals
+cento,num,A1,2,numbers and ordinals
+mille,num,A1,2,numbers and ordinals
+secondo,adj,A1,2,numbers and ordinals
+terzo,adj,A1,2,numbers and ordinals
+quinto,adj,A1,2,numbers and ordinals
+sesto,adj,A1,2,numbers and ordinals
+settimo,adj,A1,2,numbers and ordinals
+ottavo,adj,A1,2,numbers and ordinals
+nono,adj,A1,2,numbers and ordinals
+decimo,adj,A1,2,numbers and ordinals
+tram,noun,A1,2,city transport
+metropolitana,noun,A1,2,city transport
+tabaccheria,noun,A1,2,city transport
+edicola,noun,A1,2,city transport
+abbonamento,noun,A1,2,city transport
+cellulare,noun,A1,2,city transport
+stazione,noun,A1,2,city transport
+passeggero,noun,A1,2,city transport
+bicicletta,noun,A1,2,city transport
+internet,noun,A1,2,city transport
+aeroporto,noun,A1,2,city transport
+piede,noun,A1,2,city transport
+agenzia,noun,A1,2,city transport
+esame,noun,A1,2,city transport
+convalidare,verb,A1,2,city transport
+timbrare,verb,A1,2,city transport
+pubblico,adj,A1,2,city transport
+stasera,adv,A1,2,function words
+oggi,adv,A1,2,function words
+spesso,adv,A1,2,function words
+adesso,adv,A1,2,function words
+sempre,adv,A1,2,function words
+proprio,adv,A1,2,function words
+insieme,adv,A1,2,function words
+tardi,adv,A1,2,function words
+poco,adv,A1,2,function words
+tanto,adv,A1,2,function words
+ogni,det,A1,2,function words
+qualche,det,A1,2,function words
+sotto,prep,A1,2,function words
+email,noun,A1,3,communication and technology
+videochiamata,noun,A1,3,communication and technology
+pacco,noun,A1,3,communication and technology
+computer,noun,A1,3,communication and technology
+server,noun,A1,3,communication and technology
+tecnico,noun,A1,3,communication and technology
+tablet,noun,A1,3,communication and technology
+portatile,noun,A1,3,communication and technology
+video,noun,A1,3,communication and technology
+sito,noun,A1,3,communication and technology
+cartella,noun,A1,3,communication and technology
+link,noun,A1,3,communication and technology
+password,noun,A1,3,communication and technology
+file,noun,A1,3,communication and technology
+prefisso,noun,A1,3,communication and technology
+numero,noun,A1,3,communication and technology
+emergenza,noun,A1,3,communication and technology
+ambulanza,noun,A1,3,communication and technology
+inviare,verb,A1,3,communication and technology
+mandare,verb,A1,3,communication and technology
+condividere,verb,A1,3,communication and technology
+cliccare,verb,A1,3,communication and technology
+scaricare,verb,A1,3,communication and technology
+caricare,verb,A1,3,communication and technology
+chattare,verb,A1,3,communication and technology
+chiamare,verb,A1,3,communication and technology
+mittente,noun,A1,3,letters and email
+destinatario,noun,A1,3,letters and email
+bacio,noun,A1,3,letters and email
+abbraccio,noun,A1,3,letters and email
+saluto,noun,A1,3,letters and email
+informale,adj,A1,3,letters and email
+formale,adj,A1,3,letters and email
+pausa,noun,A1,3,places and opening hours
+pranzo,noun,A1,3,places and opening hours
+panino,noun,A1,3,places and opening hours
+posta,noun,A1,3,places and opening hours
+medico,noun,A1,3,places and opening hours
+banca,noun,A1,3,places and opening hours
+farmacia,noun,A1,3,places and opening hours
+negozio,noun,A1,3,places and opening hours
+orario,noun,A1,3,places and opening hours
+parco,noun,A1,3,places and opening hours
+chiudere,verb,A1,3,places and opening hours
+credere,verb,A1,3,places and opening hours
+succedere,verb,A1,3,places and opening hours
+incontrare,verb,A1,3,places and opening hours
+trovare,verb,A1,3,places and opening hours
+cominciare,verb,A1,3,places and opening hours
+restituire,verb,A1,3,places and opening hours
+armadio,noun,A1,3,furniture and location
+abito,noun,A1,3,furniture and location
+televisore,noun,A1,3,furniture and location
+camino,noun,A1,3,furniture and location
+divano,noun,A1,3,furniture and location
+libreria,noun,A1,3,furniture and location
+scrivania,noun,A1,3,furniture and location
+sedia,noun,A1,3,furniture and location
+parete,noun,A1,3,furniture and location
+tavolo,noun,A1,3,furniture and location
+tavolino,noun,A1,3,furniture and location
+poltrona,noun,A1,3,furniture and location
+tappeto,noun,A1,3,furniture and location
+lampada,noun,A1,3,furniture and location
+quadro,noun,A1,3,furniture and location
+pianta,noun,A1,3,furniture and location
+specchio,noun,A1,3,furniture and location
+cuscino,noun,A1,3,furniture and location
+scatola,noun,A1,3,furniture and location
+cassetto,noun,A1,3,furniture and location
+destra,noun,A1,3,furniture and location
+sinistra,noun,A1,3,furniture and location
+accanto,adv,A1,3,furniture and location
+davanti,adv,A1,3,furniture and location
+dietro,adv,A1,3,furniture and location
+dentro,adv,A1,3,furniture and location
+sopra,adv,A1,3,furniture and location
+intorno,adv,A1,3,furniture and location
+tra,prep,A1,3,furniture and location
+fra,prep,A1,3,furniture and location
+su,prep,A1,3,furniture and location
+guanto,noun,A1,3,everyday things
+rivista,noun,A1,3,everyday things
+regalo,noun,A1,3,everyday things
+latte,noun,A1,3,everyday things
+frutta,noun,A1,3,everyday things
+tv,noun,A1,3,everyday things
+canale,noun,A1,3,everyday things
+traffico,noun,A1,3,everyday things
+sciopero,noun,A1,3,everyday things
+motorino,noun,A1,3,everyday things
+penna,noun,A1,3,everyday things
+festa,noun,A1,3,everyday things
+valigia,noun,A1,3,everyday things
+appunto,noun,A1,3,everyday things
+mio,adj,A1,3,possession
+tuo,adj,A1,3,possession
+suo,adj,A1,3,possession
+ringraziare,verb,A1,3,thanking
+figurarsi,verb,A1,3,thanking
+gennaio,noun,A1,3,months and seasons
+febbraio,noun,A1,3,months and seasons
+marzo,noun,A1,3,months and seasons
+aprile,noun,A1,3,months and seasons
+maggio,noun,A1,3,months and seasons
+giugno,noun,A1,3,months and seasons
+luglio,noun,A1,3,months and seasons
+agosto,noun,A1,3,months and seasons
+settembre,noun,A1,3,months and seasons
+ottobre,noun,A1,3,months and seasons
+novembre,noun,A1,3,months and seasons
+dicembre,noun,A1,3,months and seasons
+primavera,noun,A1,3,months and seasons
+estate,noun,A1,3,months and seasons
+autunno,noun,A1,3,months and seasons
+inverno,noun,A1,3,months and seasons
+stagione,noun,A1,3,months and seasons
+milione,noun,A1,3,numbers and prices
+prezzo,noun,A1,3,numbers and prices
+impossibile,adj,A1,3,describing things
+lontano,adj,A1,3,describing things
+sicuro,adj,A1,3,describing things
+blu,adj,A1,3,describing things
+vecchio,adj,A1,3,describing things
+chiuso,adj,A1,3,describing things
+utile,adj,A1,3,describing things
+forse,adv,A1,3,uncertainty
+probabilmente,adv,A1,3,uncertainty
+boh,interj,A1,3,uncertainty
+subito,adv,A1,3,function words
+infatti,adv,A1,3,function words
+ancora,adv,A1,3,function words
+veramente,adv,A1,3,function words
+durante,prep,A1,3,function words
+fino,prep,A1,3,function words
+raccontare,verb,A1,4,weekend and past events
+ridere,verb,A1,4,weekend and past events
+portare,verb,A1,4,weekend and past events
+sbagliare,verb,A1,4,weekend and past events
+provare,verb,A1,4,weekend and past events
+ricevere,verb,A1,4,weekend and past events
+rimanere,verb,A1,4,weekend and past events
+vendere,verb,A1,4,weekend and past events
+nascere,verb,A1,4,weekend and past events
+morire,verb,A1,4,weekend and past events
+diventare,verb,A1,4,weekend and past events
+rubare,verb,A1,4,weekend and past events
+ricordare,verb,A1,4,weekend and past events
+chiacchierare,verb,A1,4,weekend and past events
+cantare,verb,A1,4,weekend and past events
+mettere,verb,A1,4,weekend and past events
+vincere,verb,A1,4,weekend and past events
+pubblicare,verb,A1,4,weekend and past events
+iniziare,verb,A1,4,weekend and past events
+durare,verb,A1,4,weekend and past events
+decidere,verb,A1,4,weekend and past events
+commedia,noun,A1,4,weekend and past events
+film,noun,A1,4,weekend and past events
+giro,noun,A1,4,weekend and past events
+gente,noun,A1,4,weekend and past events
+festival,noun,A1,4,weekend and past events
+polizia,noun,A1,4,weekend and past events
+poliziotto,noun,A1,4,weekend and past events
+agente,noun,A1,4,weekend and past events
+aula,noun,A1,4,weekend and past events
+mensa,noun,A1,4,weekend and past events
+professore,noun,A1,4,weekend and past events
+dentista,noun,A1,4,weekend and past events
+data,noun,A1,4,weekend and past events
+mese,noun,A1,4,weekend and past events
+premio,noun,A1,4,weekend and past events
+artista,noun,A1,4,weekend and past events
+programma,noun,A1,4,weekend and past events
+giornata,noun,A1,4,weekend and past events
+notizia,noun,A1,4,weekend and past events
+patente,noun,A1,4,weekend and past events
+verità,noun,A1,4,weekend and past events
+radio,noun,A1,4,weekend and past events
+sbagliato,adj,A1,4,weekend and past events
+diverso,adj,A1,4,weekend and past events
+stanco,adj,A1,4,weekend and past events
+scorso,adj,A1,4,weekend and past events
+speciale,adj,A1,4,weekend and past events
+fisso,adj,A1,4,weekend and past events
+ordinare,verb,A1,4,ordering at the bar
+pranzare,verb,A1,4,ordering at the bar
+cameriere,noun,A1,4,ordering at the bar
+ordine,noun,A1,4,ordering at the bar
+confusione,noun,A1,4,ordering at the bar
+listino,noun,A1,4,ordering at the bar
+tramezzino,noun,A1,4,ordering at the bar
+fetta,noun,A1,4,ordering at the bar
+torta,noun,A1,4,ordering at the bar
+cioccolato,noun,A1,4,ordering at the bar
+cornetto,noun,A1,4,ordering at the bar
+bottiglia,noun,A1,4,ordering at the bar
+acqua,noun,A1,4,ordering at the bar
+lattina,noun,A1,4,ordering at the bar
+formaggio,noun,A1,4,ordering at the bar
+mozzarella,noun,A1,4,ordering at the bar
+tè,noun,A1,4,ordering at the bar
+tisana,noun,A1,4,ordering at the bar
+cioccolata,noun,A1,4,ordering at the bar
+panna,noun,A1,4,ordering at the bar
+succo,noun,A1,4,ordering at the bar
+spremuta,noun,A1,4,ordering at the bar
+arancia,noun,A1,4,ordering at the bar
+birra,noun,A1,4,ordering at the bar
+aperitivo,noun,A1,4,ordering at the bar
+coppetta,noun,A1,4,ordering at the bar
+tiramisù,noun,A1,4,ordering at the bar
+bibita,noun,A1,4,ordering at the bar
+banco,noun,A1,4,ordering at the bar
+cassa,noun,A1,4,ordering at the bar
+scontrino,noun,A1,4,ordering at the bar
+colazione,noun,A1,4,ordering at the bar
+insalata,noun,A1,4,ordering at the bar
+cliente,noun,A1,4,ordering at the bar
+tazzina,noun,A1,4,ordering at the bar
+moka,noun,A1,4,ordering at the bar
+caffellatte,noun,A1,4,ordering at the bar
+liquore,noun,A1,4,ordering at the bar
+fame,noun,A1,4,ordering at the bar
+sete,noun,A1,4,ordering at the bar
+toast,noun,A1,4,ordering at the bar
+pomodoro,noun,A1,4,ordering at the bar
+macchiato,adj,A1,4,ordering at the bar
+ristretto,adj,A1,4,ordering at the bar
+minerale,adj,A1,4,ordering at the bar
+naturale,adj,A1,4,ordering at the bar
+crudo,adj,A1,4,ordering at the bar
+cotto,adj,A1,4,ordering at the bar
+deciso,adj,A1,4,ordering at the bar
+fa,adv,A1,4,time expressions
+mai,adv,A1,4,time expressions
+appena,adv,A1,4,time expressions
+più,adv,A1,4,time expressions
+prima,adv,A1,4,time expressions
+poi,adv,A1,4,time expressions
+ieri,adv,A1,4,time expressions
+stamattina,adv,A1,4,time expressions
+circa,adv,A1,4,time expressions
+invece,adv,A1,4,time expressions
+cioè,adv,A1,4,time expressions
+fine,noun,A1,4,time expressions
+verso,prep,A1,4,time expressions
+niente,pron,A1,4,function words
+festeggiare,verb,A1,5,plans and holidays
+viaggiare,verb,A1,5,plans and holidays
+prenotare,verb,A1,5,plans and holidays
+cambiare,verb,A1,5,plans and holidays
+lasciare,verb,A1,5,plans and holidays
+cercare,verb,A1,5,plans and holidays
+preparare,verb,A1,5,plans and holidays
+addobbare,verb,A1,5,plans and holidays
+promettere,verb,A1,5,plans and holidays
+sposare,verb,A1,5,plans and holidays
+organizzare,verb,A1,5,plans and holidays
+collegare,verb,A1,5,plans and holidays
+rinunciare,verb,A1,5,plans and holidays
+fermarsi,verb,A1,5,plans and holidays
+Capodanno,noun,A1,5,plans and holidays
+Natale,noun,A1,5,plans and holidays
+Pasqua,noun,A1,5,plans and holidays
+presepe,noun,A1,5,plans and holidays
+panettone,noun,A1,5,plans and holidays
+tombola,noun,A1,5,plans and holidays
+dono,noun,A1,5,plans and holidays
+mercatino,noun,A1,5,plans and holidays
+tradizione,noun,A1,5,plans and holidays
+menù,noun,A1,5,plans and holidays
+cenone,noun,A1,5,plans and holidays
+parente,noun,A1,5,plans and holidays
+genitore,noun,A1,5,plans and holidays
+cugino,noun,A1,5,plans and holidays
+ferie,noun,A1,5,plans and holidays
+permesso,noun,A1,5,plans and holidays
+laurea,noun,A1,5,plans and holidays
+natura,noun,A1,5,plans and holidays
+avventura,noun,A1,5,plans and holidays
+relax,noun,A1,5,plans and holidays
+shopping,noun,A1,5,plans and holidays
+paese,noun,A1,5,plans and holidays
+tipico,adj,A1,5,plans and holidays
+natalizio,adj,A1,5,plans and holidays
+bianco,adj,A1,5,plans and holidays
+elegante,adj,A1,5,plans and holidays
+documento,noun,A1,5,air and train travel
+bagaglio,noun,A1,5,air and train travel
+carta d'imbarco,noun,A1,5,air and train travel
+imbarco,noun,A1,5,air and train travel
+uscita,noun,A1,5,air and train travel
+partenza,noun,A1,5,air and train travel
+viaggio,noun,A1,5,air and train travel
+biglietteria,noun,A1,5,air and train travel
+controllore,noun,A1,5,air and train travel
+viaggiatore,noun,A1,5,air and train travel
+binario,noun,A1,5,air and train travel
+posto,noun,A1,5,air and train travel
+carrozza,noun,A1,5,air and train travel
+classe,noun,A1,5,air and train travel
+cambio,noun,A1,5,air and train travel
+andata,noun,A1,5,air and train travel
+ritorno,noun,A1,5,air and train travel
+centesimo,noun,A1,5,air and train travel
+arrivo,noun,A1,5,air and train travel
+direzione,noun,A1,5,air and train travel
+volo,noun,A1,5,air and train travel
+nave,noun,A1,5,air and train travel
+campeggio,noun,A1,5,air and train travel
+hotel,noun,A1,5,air and train travel
+albergo,noun,A1,5,air and train travel
+ombrello,noun,A1,5,air and train travel
+occhiali,noun,A1,5,air and train travel
+scarpa,noun,A1,5,air and train travel
+prenotazione,noun,A1,5,air and train travel
+diretto,adj,A1,5,air and train travel
+veloce,adj,A1,5,air and train travel
+regionale,adj,A1,5,air and train travel
+rapido,adj,A1,5,air and train travel
+caro,adj,A1,5,air and train travel
+obbligatorio,adj,A1,5,air and train travel
+facile,adj,A1,5,air and train travel
+piovere,verb,A1,5,weather
+nevicare,verb,A1,5,weather
+tirare,verb,A1,5,weather
+sole,noun,A1,5,weather
+previsione,noun,A1,5,weather
+pioggia,noun,A1,5,weather
+neve,noun,A1,5,weather
+vento,noun,A1,5,weather
+nebbia,noun,A1,5,weather
+temporale,noun,A1,5,weather
+cielo,noun,A1,5,weather
+temperatura,noun,A1,5,weather
+caldo,noun,A1,5,weather
+freddo,noun,A1,5,weather
+sereno,adj,A1,5,weather
+nuvoloso,adj,A1,5,weather
+variabile,adj,A1,5,weather
+coperto,adj,A1,5,weather
+mosso,adj,A1,5,weather
+calmo,adj,A1,5,weather
+agitato,adj,A1,5,weather
+debole,adj,A1,5,weather
+moderato,adj,A1,5,weather
+forte,adj,A1,5,weather
+quindi,adv,A1,5,function words
+direttamente,adv,A1,5,function words
+sicuramente,adv,A1,5,function words
+anziché,adv,A1,5,function words
+chissà,interj,A1,5,function words
+compleanno,noun,A2,6,family
+padre,noun,A2,6,family
+madre,noun,A2,6,family
+marito,noun,A2,6,family
+moglie,noun,A2,6,family
+figlia,noun,A2,6,family
+nonno,noun,A2,6,family
+nipote,noun,A2,6,family
+zia,noun,A2,6,family
+cugina,noun,A2,6,family
+coppia,noun,A2,6,family
+coniuge,noun,A2,6,family
+parentela,noun,A2,6,family
+bambino,noun,A2,6,family
+bambina,noun,A2,6,family
+sorellina,noun,A2,6,family
+fratellino,noun,A2,6,family
+papà,noun,A2,6,family
+discreto,adj,A2,6,family
+vivace,adj,A2,6,family
+arrabbiato,adj,A2,6,family
+litigare,verb,A2,6,family
+discutere,verb,A2,6,family
+politica,noun,A2,6,family
+vicino di casa,noun,A2,6,family
+cane,noun,A2,6,family
+cucciolo,noun,A2,6,family
+specialità,noun,A2,6,restaurant and menu
+risotto,noun,A2,6,restaurant and menu
+cotoletta,noun,A2,6,restaurant and menu
+antipasto,noun,A2,6,restaurant and menu
+bruschetta,noun,A2,6,restaurant and menu
+contorno,noun,A2,6,restaurant and menu
+piatto,noun,A2,6,restaurant and menu
+vino,noun,A2,6,restaurant and menu
+bistecca,noun,A2,6,restaurant and menu
+pollo,noun,A2,6,restaurant and menu
+aglio,noun,A2,6,restaurant and menu
+vitello,noun,A2,6,restaurant and menu
+verdura,noun,A2,6,restaurant and menu
+involtino,noun,A2,6,restaurant and menu
+lasagna,noun,A2,6,restaurant and menu
+pesto,noun,A2,6,restaurant and menu
+carbonara,noun,A2,6,restaurant and menu
+patata,noun,A2,6,restaurant and menu
+forno,noun,A2,6,restaurant and menu
+bevanda,noun,A2,6,restaurant and menu
+mela,noun,A2,6,restaurant and menu
+carne,noun,A2,6,restaurant and menu
+chef,noun,A2,6,restaurant and menu
+cuoco,noun,A2,6,restaurant and menu
+sale,noun,A2,6,restaurant and menu
+pasta,noun,A2,6,restaurant and menu
+panna cotta,noun,A2,6,restaurant and menu
+tavolo per due,noun,A2,6,restaurant and menu
+ordinazione,noun,A2,6,restaurant and menu
+saporito,adj,A2,6,restaurant and menu
+salato,adj,A2,6,restaurant and menu
+ottimo,adj,A2,6,restaurant and menu
+preferito,adj,A2,6,restaurant and menu
+leggero,adj,A2,6,restaurant and menu
+misto,adj,A2,6,restaurant and menu
+grigliato,adj,A2,6,restaurant and menu
+frizzante,adj,A2,6,restaurant and menu
+fresco,adj,A2,6,restaurant and menu
+al dente,adj,A2,6,restaurant and menu
+piccante,adj,A2,6,restaurant and menu
+consigliare,verb,A2,6,restaurant and menu
+assaggiare,verb,A2,6,restaurant and menu
+sembrare,verb,A2,6,restaurant and menu
+cenare,verb,A2,6,restaurant and menu
+spuntino,noun,A2,6,meals
+merenda,noun,A2,6,meals
+pasto,noun,A2,6,meals
+biscotto,noun,A2,6,meals
+burro,noun,A2,6,meals
+miele,noun,A2,6,meals
+fetta biscottata,noun,A2,6,meals
+cereale,noun,A2,6,meals
+pane,noun,A2,6,meals
+uovo,noun,A2,6,meals
+saltare,verb,A2,6,meals
+volerci,verb,A2,6,meals
+metterci,verb,A2,6,meals
+fretta,noun,A2,6,meals
+cottura,noun,A2,6,meals
+tavola,noun,A2,6,kitchen and table
+tovaglia,noun,A2,6,kitchen and table
+tovagliolo,noun,A2,6,kitchen and table
+forchetta,noun,A2,6,kitchen and table
+coltello,noun,A2,6,kitchen and table
+cucchiaio,noun,A2,6,kitchen and table
+bicchiere,noun,A2,6,kitchen and table
+pentola,noun,A2,6,kitchen and table
+padella,noun,A2,6,kitchen and table
+grattugia,noun,A2,6,kitchen and table
+tagliere,noun,A2,6,kitchen and table
+mestolo,noun,A2,6,kitchen and table
+colapasta,noun,A2,6,kitchen and table
+sugo,noun,A2,6,kitchen and table
+salame,noun,A2,6,kitchen and table
+cuocere,verb,A2,6,kitchen and table
+tagliare,verb,A2,6,kitchen and table
+friggere,verb,A2,6,kitchen and table
+mescolare,verb,A2,6,kitchen and table
+grattugiare,verb,A2,6,kitchen and table
+bollire,verb,A2,6,kitchen and table
+apparecchiare,verb,A2,6,kitchen and table
+ricetta,noun,A2,6,food culture
+ingrediente,noun,A2,6,food culture
+sapore,noun,A2,6,food culture
+leggenda,noun,A2,6,food culture
+basilico,noun,A2,6,food culture
+bandiera,noun,A2,6,food culture
+re,noun,A2,6,food culture
+regina,noun,A2,6,food culture
+pizzaiolo,noun,A2,6,food culture
+trattoria,noun,A2,6,food culture
+osteria,noun,A2,6,food culture
+pizzeria,noun,A2,6,food culture
+paninoteca,noun,A2,6,food culture
+locale,noun,A2,6,food culture
+popolo,noun,A2,6,food culture
+secolo,noun,A2,6,food culture
+origine,noun,A2,6,food culture
+economico,adj,A2,6,food culture
+accogliente,adj,A2,6,food culture
+raffinato,adj,A2,6,food culture
+antico,adj,A2,6,food culture
+vario,adj,A2,6,food culture
+gustare,verb,A2,6,food culture
+comunque,adv,A2,6,function words
+siccome,adv,A2,6,function words
+in genere,adv,A2,6,function words
+di solito,adv,A2,6,function words
+naturalmente,adv,A2,6,function words
+affatto,adv,A2,6,function words
+nostro,pron,A2,6,function words
+vostro,pron,A2,6,function words
+quello,pron,A2,6,function words
+genere,noun,A2,7,cinema
+azione,noun,A2,7,cinema
+orrore,noun,A2,7,cinema
+regista,noun,A2,7,cinema
+attrice,noun,A2,7,cinema
+titolo,noun,A2,7,cinema
+trama,noun,A2,7,cinema
+recensione,noun,A2,7,cinema
+critica,noun,A2,7,cinema
+stampa,noun,A2,7,cinema
+spettacolo,noun,A2,7,cinema
+sala,noun,A2,7,cinema
+colonna sonora,noun,A2,7,cinema
+trailer,noun,A2,7,cinema
+pubblicità,noun,A2,7,cinema
+personaggio,noun,A2,7,cinema
+protagonista,noun,A2,7,cinema
+ruolo,noun,A2,7,cinema
+interprete,noun,A2,7,cinema
+capolavoro,noun,A2,7,cinema
+romanzo,noun,A2,7,cinema
+guerra,noun,A2,7,cinema
+movimento,noun,A2,7,cinema
+successo,noun,A2,7,cinema
+carriera,noun,A2,7,cinema
+talento,noun,A2,7,cinema
+commento,noun,A2,7,cinema
+popcorn,noun,A2,7,cinema
+fantasma,noun,A2,7,cinema
+assassino,noun,A2,7,cinema
+pregio,noun,A2,7,cinema
+difetto,noun,A2,7,cinema
+locandina,noun,A2,7,cinema
+ironia,noun,A2,7,cinema
+comico,adj,A2,7,cinema
+drammatico,adj,A2,7,cinema
+divertente,adj,A2,7,cinema
+emozionante,adj,A2,7,cinema
+geniale,adj,A2,7,cinema
+bravo,adj,A2,7,cinema
+migliore,adj,A2,7,cinema
+complicato,adj,A2,7,cinema
+confuso,adj,A2,7,cinema
+malinconico,adj,A2,7,cinema
+poetico,adj,A2,7,cinema
+conosciuto,adj,A2,7,cinema
+apprezzato,adj,A2,7,cinema
+recitare,verb,A2,7,cinema
+interpretare,verb,A2,7,cinema
+scegliere,verb,A2,7,cinema
+dirigere,verb,A2,7,cinema
+ambientare,verb,A2,7,cinema
+febbre,noun,A2,7,memories and the past
+ricordo,noun,A2,7,memories and the past
+infanzia,noun,A2,7,memories and the past
+mazzo,noun,A2,7,memories and the past
+fiore,noun,A2,7,memories and the past
+silenzio,noun,A2,7,memories and the past
+maestra,noun,A2,7,memories and the past
+abitudine,noun,A2,7,memories and the past
+liceo,noun,A2,7,memories and the past
+tesi,noun,A2,7,memories and the past
+ospedale,noun,A2,7,memories and the past
+autostop,noun,A2,7,memories and the past
+passaporto,noun,A2,7,memories and the past
+stipendio,noun,A2,7,memories and the past
+supereroe,noun,A2,7,memories and the past
+offerta,noun,A2,7,memories and the past
+bugia,noun,A2,7,memories and the past
+innamorato,adj,A2,7,memories and the past
+esagerato,adj,A2,7,memories and the past
+particolare,adj,A2,7,memories and the past
+cattivo,adj,A2,7,memories and the past
+strano,adj,A2,7,memories and the past
+nervoso,adj,A2,7,memories and the past
+buio,adj,A2,7,memories and the past
+piovoso,adj,A2,7,memories and the past
+deserto,adj,A2,7,memories and the past
+impaziente,adj,A2,7,memories and the past
+felice,adj,A2,7,memories and the past
+tranquillo,adj,A2,7,memories and the past
+timido,adj,A2,7,memories and the past
+dimenticare,verb,A2,7,memories and the past
+scherzare,verb,A2,7,memories and the past
+notare,verb,A2,7,memories and the past
+perdere,verb,A2,7,memories and the past
+riuscire,verb,A2,7,memories and the past
+interrogare,verb,A2,7,memories and the past
+tradurre,verb,A2,7,memories and the past
+lavare,verb,A2,7,memories and the past
+accadere,verb,A2,7,memories and the past
+mentre,adv,A2,7,telling a story
+innanzitutto,adv,A2,7,telling a story
+finalmente,adv,A2,7,telling a story
+ormai,adv,A2,7,telling a story
+all'improvviso,adv,A2,7,telling a story
+da piccolo,adv,A2,7,telling a story
+un tempo,adv,A2,7,telling a story
+ogni tanto,adv,A2,7,telling a story
+pure,adv,A2,7,telling a story
+macché,interj,A2,7,telling a story
+oddio,interj,A2,7,telling a story
+vabbè,interj,A2,7,telling a story
+ma dai,interj,A2,7,telling a story
+accordo,noun,A2,7,agreeing and disagreeing
+ragione,noun,A2,7,agreeing and disagreeing
+parere,noun,A2,7,agreeing and disagreeing
+opinione,noun,A2,7,agreeing and disagreeing
+sbagliarsi,verb,A2,7,agreeing and disagreeing
+lista,noun,A2,8,supermarket
+supermercato,noun,A2,8,supermarket
+fila,noun,A2,8,supermarket
+pera,noun,A2,8,supermarket
+banana,noun,A2,8,supermarket
+caloria,noun,A2,8,supermarket
+dieta,noun,A2,8,supermarket
+limone,noun,A2,8,supermarket
+sacchetto,noun,A2,8,supermarket
+confezione,noun,A2,8,supermarket
+memoria,noun,A2,8,supermarket
+yogurt,noun,A2,8,supermarket
+detersivo,noun,A2,8,supermarket
+cioccolatino,noun,A2,8,supermarket
+integrale,adj,A2,8,supermarket
+uguale,adj,A2,8,supermarket
+occupato,adj,A2,8,supermarket
+vuoto,adj,A2,8,supermarket
+pieno,adj,A2,8,supermarket
+mancare,verb,A2,8,supermarket
+convincere,verb,A2,8,supermarket
+rivedere,verb,A2,8,supermarket
+accompagnare,verb,A2,8,supermarket
+pregare,verb,A2,8,supermarket
+fumare,verb,A2,8,supermarket
+servire,verb,A2,8,supermarket
+bastare,verb,A2,8,supermarket
+controllare,verb,A2,8,supermarket
+consegnare,verb,A2,8,supermarket
+dimenticarsi,verb,A2,8,supermarket
+peccato,noun,A2,8,joy and disappointment
+rabbia,noun,A2,8,joy and disappointment
+sorpresa,noun,A2,8,joy and disappointment
+borsa di studio,noun,A2,8,joy and disappointment
+mannaggia,interj,A2,8,joy and disappointment
+accidenti,interj,A2,8,joy and disappointment
+uffa,interj,A2,8,joy and disappointment
+meno male,interj,A2,8,joy and disappointment
+etto,noun,A2,8,quantities and containers
+grammo,noun,A2,8,quantities and containers
+chilo,noun,A2,8,quantities and containers
+litro,noun,A2,8,quantities and containers
+dozzina,noun,A2,8,quantities and containers
+paio,noun,A2,8,quantities and containers
+tubetto,noun,A2,8,quantities and containers
+vasetto,noun,A2,8,quantities and containers
+scatoletta,noun,A2,8,quantities and containers
+barattolo,noun,A2,8,quantities and containers
+aranciata,noun,A2,8,quantities and containers
+dentifricio,noun,A2,8,quantities and containers
+marmellata,noun,A2,8,quantities and containers
+tonno,noun,A2,8,quantities and containers
+bustina,noun,A2,8,quantities and containers
+desiderare,verb,A2,8,quantities and containers
+alimentari,noun,A2,8,shops
+pasticceria,noun,A2,8,shops
+fruttivendolo,noun,A2,8,shops
+fioraio,noun,A2,8,shops
+macellaio,noun,A2,8,shops
+medicina,noun,A2,8,shops
+dizionario,noun,A2,8,shops
+rosa,noun,A2,8,shops
+shampoo,noun,A2,8,shops
+negoziante,noun,A2,8,shops
+matrimonio,noun,A2,8,parties and help
+aiuto,noun,A2,8,parties and help
+bisogno,noun,A2,8,parties and help
+ricerca,noun,A2,8,parties and help
+angolo,noun,A2,8,parties and help
+compito,noun,A2,8,parties and help
+unico,adj,A2,8,parties and help
+dispiaciuto,adj,A2,8,parties and help
+stressato,adj,A2,8,parties and help
+aiutare,verb,A2,8,parties and help
+carota,noun,A2,8,baking
+farina,noun,A2,8,baking
+lievito,noun,A2,8,baking
+olio,noun,A2,8,baking
+oliva,noun,A2,8,baking
+frigorifero,noun,A2,8,baking
+mercato,noun,A2,8,markets and typical products
+acciuga,noun,A2,8,markets and typical products
+erba,noun,A2,8,markets and typical products
+prodotto,noun,A2,8,markets and typical products
+maiale,noun,A2,8,markets and typical products
+clima,noun,A2,8,markets and typical products
+produzione,noun,A2,8,markets and typical products
+bufala,noun,A2,8,markets and typical products
+generi alimentari,noun,A2,8,markets and typical products
+abbigliamento,noun,A2,8,markets and typical products
+calzature,noun,A2,8,markets and typical products
+casalinghi,noun,A2,8,markets and typical products
+delicato,adj,A2,8,markets and typical products
+gustoso,adj,A2,8,markets and typical products
+genuino,adj,A2,8,markets and typical products
+storico,adj,A2,8,markets and typical products
+conservare,verb,A2,8,markets and typical products
+frequentare,verb,A2,8,markets and typical products
+anzi,adv,A2,8,function words
+abbastanza,adv,A2,8,function words
+soltanto,adv,A2,8,function words
+di meno,adv,A2,8,function words
+in fondo,adv,A2,8,function words
+a memoria,adv,A2,8,function words
+da un po',adv,A2,8,function words
+ne,pron,A2,8,function words
+nessuno,pron,A2,8,function words
+svegliarsi,verb,A2,9,daily routine
+alzarsi,verb,A2,9,daily routine
+vestirsi,verb,A2,9,daily routine
+mettersi,verb,A2,9,daily routine
+divertirsi,verb,A2,9,daily routine
+annoiarsi,verb,A2,9,daily routine
+rilassarsi,verb,A2,9,daily routine
+riposarsi,verb,A2,9,daily routine
+sentirsi,verb,A2,9,daily routine
+addormentarsi,verb,A2,9,daily routine
+prepararsi,verb,A2,9,daily routine
+lavarsi,verb,A2,9,daily routine
+farsi la doccia,verb,A2,9,daily routine
+pettinarsi,verb,A2,9,daily routine
+laurearsi,verb,A2,9,daily routine
+arrabbiarsi,verb,A2,9,daily routine
+preoccuparsi,verb,A2,9,daily routine
+trovarsi,verb,A2,9,daily routine
+sbrigarsi,verb,A2,9,daily routine
+stancarsi,verb,A2,9,daily routine
+sedersi,verb,A2,9,daily routine
+svegliare,verb,A2,9,daily routine
+conoscersi,verb,A2,9,relationships
+vedersi,verb,A2,9,relationships
+incontrarsi,verb,A2,9,relationships
+salutarsi,verb,A2,9,relationships
+amarsi,verb,A2,9,relationships
+sposarsi,verb,A2,9,relationships
+innamorarsi,verb,A2,9,relationships
+lasciarsi,verb,A2,9,relationships
+darsi del tu,verb,A2,9,relationships
+raffreddore,noun,A2,9,daily routine
+voglia,noun,A2,9,daily routine
+centro commerciale,noun,A2,9,daily routine
+campo da tennis,noun,A2,9,daily routine
+barba,noun,A2,9,daily routine
+terribile,adj,A2,9,daily routine
+solito,adj,A2,9,daily routine
+evitare,verb,A2,9,daily routine
+scoprire,verb,A2,9,daily routine
+giacca,noun,A2,9,clothes
+gonna,noun,A2,9,clothes
+pantaloni,noun,A2,9,clothes
+jeans,noun,A2,9,clothes
+scarpe da tennis,noun,A2,9,clothes
+maglietta,noun,A2,9,clothes
+calzino,noun,A2,9,clothes
+cappotto,noun,A2,9,clothes
+camicia,noun,A2,9,clothes
+accessorio,noun,A2,9,clothes
+cintura,noun,A2,9,clothes
+cappello,noun,A2,9,clothes
+calza,noun,A2,9,clothes
+maglione,noun,A2,9,clothes
+giubbotto,noun,A2,9,clothes
+tacco,noun,A2,9,clothes
+maglia,noun,A2,9,clothes
+cravatta,noun,A2,9,clothes
+scarpe da ginnastica,noun,A2,9,clothes
+occhiali da sole,noun,A2,9,clothes
+camicetta,noun,A2,9,clothes
+vetrina,noun,A2,9,buying clothes
+colore,noun,A2,9,buying clothes
+taglia,noun,A2,9,buying clothes
+camerino,noun,A2,9,buying clothes
+sconto,noun,A2,9,buying clothes
+contanti,noun,A2,9,buying clothes
+bancomat,noun,A2,9,buying clothes
+carta di credito,noun,A2,9,buying clothes
+commessa,noun,A2,9,buying clothes
+commesso,noun,A2,9,buying clothes
+saldi,noun,A2,9,buying clothes
+etichetta,noun,A2,9,buying clothes
+lavaggio,noun,A2,9,buying clothes
+provenienza,noun,A2,9,buying clothes
+merce,noun,A2,9,buying clothes
+cartello,noun,A2,9,buying clothes
+portafoglio,noun,A2,9,buying clothes
+capo,noun,A2,9,buying clothes
+stretto,adj,A2,9,buying clothes
+largo,adj,A2,9,buying clothes
+pesante,adj,A2,9,buying clothes
+alla moda,adj,A2,9,buying clothes
+sportivo,adj,A2,9,buying clothes
+classico,adj,A2,9,buying clothes
+casual,adj,A2,9,buying clothes
+necessario,adj,A2,9,buying clothes
+inutile,adj,A2,9,buying clothes
+importante,adj,A2,9,buying clothes
+ottimista,adj,A2,9,buying clothes
+indossare,verb,A2,9,buying clothes
+fidarsi,verb,A2,9,buying clothes
+confrontare,verb,A2,9,buying clothes
+spendere,verb,A2,9,buying clothes
+regalare,verb,A2,9,buying clothes
+lino,noun,A2,9,colours and fabrics
+seta,noun,A2,9,colours and fabrics
+tessuto,noun,A2,9,colours and fabrics
+pelle,noun,A2,9,colours and fabrics
+cotone,noun,A2,9,colours and fabrics
+lana,noun,A2,9,colours and fabrics
+stoffa,noun,A2,9,colours and fabrics
+misura,noun,A2,9,colours and fabrics
+stile,noun,A2,9,colours and fabrics
+manica,noun,A2,9,colours and fabrics
+riga,noun,A2,9,colours and fabrics
+pois,noun,A2,9,colours and fabrics
+tinta unita,noun,A2,9,colours and fabrics
+pallino,noun,A2,9,colours and fabrics
+celeste,adj,A2,9,colours and fabrics
+grigio,adj,A2,9,colours and fabrics
+giallo,adj,A2,9,colours and fabrics
+arancione,adj,A2,9,colours and fabrics
+viola,adj,A2,9,colours and fabrics
+beige,adj,A2,9,colours and fabrics
+sintetico,adj,A2,9,colours and fabrics
+a righe,adj,A2,9,colours and fabrics
+a quadri,adj,A2,9,colours and fabrics
+stilista,noun,A2,9,italian fashion
+gusto,noun,A2,9,italian fashion
+qualità,noun,A2,9,italian fashion
+gioiello,noun,A2,9,italian fashion
+maglieria,noun,A2,9,italian fashion
+esportazione,noun,A2,9,italian fashion
+campagna pubblicitaria,noun,A2,9,italian fashion
+lusso,noun,A2,9,italian fashion
+azienda,noun,A2,9,italian fashion
+marchio,noun,A2,9,italian fashion
+ladro,noun,A2,9,italian fashion
+firmato,adj,A2,9,italian fashion
+originale,adj,A2,9,italian fashion
+costoso,adj,A2,9,italian fashion
+provocatorio,adj,A2,9,italian fashion
+bisognare,verb,A2,9,function words
+con comodo,adv,A2,9,function words
+in fretta,adv,A2,9,function words
+a buon prezzo,adv,A2,9,function words
+trasmissione,noun,A2,10,television
+documentario,noun,A2,10,television
+talent show,noun,A2,10,television
+quiz,noun,A2,10,television
+reality,noun,A2,10,television
+soap opera,noun,A2,10,television
+telegiornale,noun,A2,10,television
+cartone animato,noun,A2,10,television
+serie,noun,A2,10,television
+fiction,noun,A2,10,television
+puntata,noun,A2,10,television
+telecomando,noun,A2,10,television
+zapping,noun,A2,10,television
+rete,noun,A2,10,television
+emittente,noun,A2,10,television
+spettatore,noun,A2,10,television
+conduttore,noun,A2,10,television
+intrattenimento,noun,A2,10,television
+attualità,noun,A2,10,television
+talk show,noun,A2,10,television
+varietà,noun,A2,10,television
+canone,noun,A2,10,television
+squadra,noun,A2,10,television
+onda,noun,A2,10,television
+pollice,noun,A2,10,television
+provino,noun,A2,10,television
+opportunità,noun,A2,10,television
+spoiler,noun,A2,10,television
+noioso,adj,A2,10,television
+illegale,adj,A2,10,television
+interessato,adj,A2,10,television
+abbonato,adj,A2,10,television
+andare in onda,verb,A2,10,television
+mettere su,verb,A2,10,television
+importare,verb,A2,10,television
+interessare,verb,A2,10,television
+prestito,noun,A2,10,favours and borrowing
+favore,noun,A2,10,favours and borrowing
+comportamento,noun,A2,10,favours and borrowing
+noia,noun,A2,10,favours and borrowing
+soldi,noun,A2,10,favours and borrowing
+vaso,noun,A2,10,favours and borrowing
+curriculum,noun,A2,10,favours and borrowing
+logico,adj,A2,10,favours and borrowing
+giusto,adj,A2,10,favours and borrowing
+prestare,verb,A2,10,favours and borrowing
+dispiacere,verb,A2,10,favours and borrowing
+lamentarsi,verb,A2,10,favours and borrowing
+spostare,verb,A2,10,favours and borrowing
+proporre,verb,A2,10,favours and borrowing
+spiegare,verb,A2,10,favours and borrowing
+concorso,noun,A2,10,instructions and advertising
+bullismo,noun,A2,10,instructions and advertising
+luce,noun,A2,10,instructions and advertising
+sogno,noun,A2,10,instructions and advertising
+rumore,noun,A2,10,instructions and advertising
+istruzione,noun,A2,10,instructions and advertising
+novità,noun,A2,10,instructions and advertising
+acceso,adj,A2,10,instructions and advertising
+partecipare,verb,A2,10,instructions and advertising
+spegnere,verb,A2,10,instructions and advertising
+realizzare,verb,A2,10,instructions and advertising
+proibire,verb,A2,10,instructions and advertising
+dimagrire,verb,A2,10,instructions and advertising
+strappare,verb,A2,10,instructions and advertising
+tenere,verb,A2,10,instructions and advertising
+calmarsi,verb,A2,10,instructions and advertising
+articolo,noun,A2,10,press
+redazione,noun,A2,10,press
+statistica,noun,A2,10,press
+vendita,noun,A2,10,press
+quotidiano,noun,A2,10,press
+settimanale,noun,A2,10,press
+mensile,noun,A2,10,press
+giornalista,noun,A2,10,press
+supplemento,noun,A2,10,press
+inserto,noun,A2,10,press
+testata,noun,A2,10,press
+classifica,noun,A2,10,press
+commissario,noun,A2,10,press
+dialetto,noun,A2,10,press
+legame,noun,A2,10,press
+economia,noun,A2,10,press
+scienza,noun,A2,10,press
+salute,noun,A2,10,press
+bellezza,noun,A2,10,press
+femminile,adj,A2,10,press
+finanziario,adj,A2,10,press
+statale,adj,A2,10,press
+privato,adj,A2,10,press
+nazionale,adj,A2,10,press
+navigare,verb,A2,10,press
+informarsi,verb,A2,10,press
+incrocio,noun,A2,10,directions
+strada,noun,A2,10,directions
+indicazione,noun,A2,10,directions
+cartina,noun,A2,10,directions
+caccia al tesoro,noun,A2,10,directions
+punto,noun,A2,10,directions
+dritto,adj,A2,10,directions
+raggiungere,verb,A2,10,directions
+attraversare,verb,A2,10,directions
+al più presto,adv,A2,10,function words
+cantante,noun,A2,11,music
+produttore,noun,A2,11,music
+intervista,noun,A2,11,music
+star,noun,A2,11,music
+tendenza,noun,A2,11,music
+download,noun,A2,11,music
+social media,noun,A2,11,music
+esperto,noun,A2,11,music
+vincitrice,noun,A2,11,music
+vincitore,noun,A2,11,music
+assistente,noun,A2,11,music
+suggerimento,noun,A2,11,music
+musica leggera,noun,A2,11,music
+pop,noun,A2,11,music
+rock,noun,A2,11,music
+blues,noun,A2,11,music
+rap,noun,A2,11,music
+manifestazione,noun,A2,11,music
+gara,noun,A2,11,music
+canzone,noun,A2,11,music
+cantautore,noun,A2,11,music
+cantautrice,noun,A2,11,music
+singolo,noun,A2,11,music
+disco,noun,A2,11,music
+album,noun,A2,11,music
+suono,noun,A2,11,music
+voce,noun,A2,11,music
+microfono,noun,A2,11,music
+batteria,noun,A2,11,music
+cuffia,noun,A2,11,music
+tastiera,noun,A2,11,music
+testo,noun,A2,11,music
+autore,noun,A2,11,music
+tournée,noun,A2,11,music
+DJ,noun,A2,11,music
+riconoscimento,noun,A2,11,music
+fan,noun,A2,11,music
+appassionato,adj,A2,11,music
+spontaneo,adj,A2,11,music
+romantico,adj,A2,11,music
+etnico,adj,A2,11,music
+prestigioso,adj,A2,11,music
+celebre,adj,A2,11,music
+dal vivo,adj,A2,11,music
+esibirsi,verb,A2,11,music
+comporre,verb,A2,11,music
+emozionare,verb,A2,11,music
+collaborare,verb,A2,11,music
+intervistare,verb,A2,11,music
+desiderio,noun,A2,11,"wishes, requests and advice"
+consiglio,noun,A2,11,"wishes, requests and advice"
+proposta,noun,A2,11,"wishes, requests and advice"
+stress,noun,A2,11,"wishes, requests and advice"
+applicazione,noun,A2,11,"wishes, requests and advice"
+passante,noun,A2,11,"wishes, requests and advice"
+ipotesi,noun,A2,11,"wishes, requests and advice"
+errore,noun,A2,11,"wishes, requests and advice"
+compagno,noun,A2,11,"wishes, requests and advice"
+compagna,noun,A2,11,"wishes, requests and advice"
+scandalo,noun,A2,11,"wishes, requests and advice"
+ministro,noun,A2,11,"wishes, requests and advice"
+presidente,noun,A2,11,"wishes, requests and advice"
+passo,noun,A2,11,"wishes, requests and advice"
+accettare,verb,A2,11,"wishes, requests and advice"
+insistere,verb,A2,11,"wishes, requests and advice"
+coinvolgere,verb,A2,11,"wishes, requests and advice"
+giustificarsi,verb,A2,11,"wishes, requests and advice"
+ospitare,verb,A2,11,"wishes, requests and advice"
+guasto,noun,A2,11,a bad evening
+diretta,noun,A2,11,a bad evening
+streaming,noun,A2,11,a bad evening
+connessione,noun,A2,11,a bad evening
+trasloco,noun,A2,11,a bad evening
+puntuale,adj,A2,11,a bad evening
+lento,adj,A2,11,a bad evening
+sottosopra,adj,A2,11,a bad evening
+sfortunato,adj,A2,11,a bad evening
+esaurito,adj,A2,11,a bad evening
+accendersi,verb,A2,11,a bad evening
+mettere da parte,verb,A2,11,a bad evening
+fare tardi,verb,A2,11,a bad evening
+lasciare stare,verb,A2,11,a bad evening
+barca,noun,A2,11,everyday extras
+villa,noun,A2,11,everyday extras
+smog,noun,A2,11,everyday extras
+ginocchio,noun,A2,11,everyday extras
+amaro,adj,A2,11,everyday extras
+sincero,adj,A2,11,everyday extras
+effettivamente,adv,A2,11,function words
+evidentemente,adv,A2,11,function words
+altrimenti,adv,A2,11,function words
+nemmeno,adv,A2,11,function words
+neppure,adv,A2,11,function words
+assolutamente,adv,A2,11,function words
+al posto tuo,adv,A2,11,function words
+ad alta voce,adv,A2,11,function words
+ad essere sinceri,adv,A2,11,function words

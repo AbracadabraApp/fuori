@@ -1,0 +1,187 @@
+"Ciao, io sono…","Hi, I'm…",unit0 introduce_yourself
+Mi chiamo…,My name is…,unit0 introduce_yourself
+Come ti chiami?,What's your name?,unit0 ask_a_name
+Piacere!,Nice to meet you!,unit0 introduce_yourself
+E tu?,And you?,unit0 keep_the_conversation_going
+Questo è… / Questa è…,This is… (introducing someone),unit0 introduce_someone
+Si chiama…,His/her name is…,unit0 say_someone's_name
+Sono italiano / italiana.,I'm Italian.,unit0 say_nationality
+Sei spagnolo?,Are you Spanish?,unit0 ask_nationality
+Quanti anni hai?,How old are you?,unit0 ask_age
+Ho trent'anni.,I'm thirty.,unit0 say_age
+Come si scrive?,How do you spell it?,unit0 spell
+Chi è?,Who is it? / Who's that?,unit0 ask_who_someone_is
+Ecco le chiavi!,Here are the keys!,unit0 point_something_out
+Davvero?,Really?,unit0 react
+Pronto?,Hello? (on the phone),unit1 phone
+Come stai? / Come sta?,How are you? (informal / formal),unit1 ask_how_someone_is
+"Bene, grazie. E tu?","Fine, thanks. And you?",unit1 answer_how_you_are
+"Scusa, per andare in centro?","Excuse me, how do I get to the centre?",unit1 ask_the_way
+Prendi il 22 e scendi…,Take the 22 and get off…,unit1 give_directions
+Di dove sei?,Where are you from?,unit1 ask_where_someone_is_from
+Sono di…,I'm from…,unit1 say_where_you're_from
+Sei qui per lavoro?,Are you here for work?,unit1 ask_why_someone_is_here
+Sono qui per studiare l'italiano.,I'm here to study Italian.,unit1 say_why_you're_here
+Da quanto tempo sei qui?,How long have you been here?,unit1 ask_how_long
+Dove abiti?,Where do you live?,unit1 ask_where_someone_lives
+"Scusi, sa dov'è…?","Excuse me, do you know where … is?",unit1 ask_the_way_politely
+Parli molto bene l'italiano!,You speak Italian very well!,unit1 pay_a_compliment
+Com'è?,What's he/she like?,unit1 ask_for_a_description
+È alta e simpatica.,She's tall and nice.,unit1 describe_a_person
+A presto!,See you soon!,unit1 say_goodbye
+Cosa fai nel tempo libero?,What do you do in your free time?,unit2 talk_about_free_time
+Mi piace… / Non mi piace…,I like… / I don't like…,unit2 say_what_you_like
+Vieni con noi?,Are you coming with us?,unit2 invite
+Che ne dici di…?,How about…?,unit2 suggest
+Perché non andiamo…?,Why don't we go…?,unit2 suggest
+Volentieri!,I'd love to!,unit2 accept
+"Mi dispiace, non posso.","Sorry, I can't.",unit2 decline
+Ho già un impegno.,I already have plans.,unit2 decline
+Magari un'altra volta.,Maybe another time.,unit2 decline_politely
+"Scusi, posso entrare?","Excuse me, may I come in?",unit2 ask_permission
+"Può ripetere, per favore?","Could you repeat that, please?",unit2 ask_for_help
+Sei libero sabato?,Are you free on Saturday?,unit2 arrange_a_day
+Abito al primo piano.,I live on the first floor.,unit2 describe_your_home
+Che ore sono?,What time is it?,unit2 ask_the_time
+Sono le tre e mezzo.,It's half past three.,unit2 tell_the_time
+Che succede?,What's going on?,unit3 react
+A che ora apre / chiude?,What time does it open / close?,unit3 ask_opening_hours
+È aperto dalle 9 alle 13.,It's open from 9 to 1.,unit3 give_opening_hours
+Non so.,I don't know.,unit3 express_uncertainty
+Non sono sicuro.,I'm not sure.,unit3 express_uncertainty
+Non credo.,I don't think so.,unit3 express_uncertainty
+Dov'è…?,Where is…?,unit3 locate_something
+È accanto alla posta.,It's next to the post office.,unit3 locate_something
+C'è… / Ci sono…,There is… / There are…,unit3 say_what's_there
+Di chi è?,Whose is it?,unit3 ask_about_possession
+È mio / È tuo.,It's mine / It's yours.,unit3 express_possession
+Grazie mille!,Thanks a lot!,unit3 thank
+Prego. / Di niente.,You're welcome. / Not at all.,unit3 reply_to_thanks
+Figurati!,Don't mention it! (informal),unit3 reply_to_thanks
+Quanto costa?,How much is it?,unit3 ask_a_price
+Come hai passato il fine settimana?,How was your weekend?,unit4 ask_about_the_weekend
+Che cosa hai fatto di bello?,Did you do anything nice?,unit4 ask_about_the_past
+Sono andato al cinema.,I went to the cinema.,unit4 tell_what_you_did
+Sono rimasta a casa.,I stayed at home.,unit4 tell_what_you_did
+Peccato!,What a shame!,unit4 react
+Prima… poi… alla fine…,First… then… in the end…,unit4 tell_a_story_in_order
+Che cosa è successo?,What happened?,unit4 ask_about_the_past
+Due giorni fa.,Two days ago.,unit4 place_an_event_in_time
+Quando sei nato?,When were you born?,unit4 ask_a_date
+Cosa prendi?,What are you having?,unit4 order_at_the_bar
+"Per me un caffè, grazie.","A coffee for me, thanks.",unit4 order_at_the_bar
+Vorrei un cornetto.,I'd like a croissant.,unit4 order_at_the_bar
+Ho fame. / Ho sete.,I'm hungry. / I'm thirsty.,unit4 say_what_you_need
+Preferisco il tè al caffè.,I prefer tea to coffee.,unit4 express_preference
+Non sono mai stato a…,I've never been to…,unit4 talk_about_experience
+Cosa farai a Capodanno?,What will you do for New Year's?,unit5 ask_about_plans
+Buon viaggio!,Have a good trip!,unit5 wish_well
+Un biglietto per Firenze.,A ticket to Florence.,unit5 buy_a_ticket
+Andata e ritorno?,Return?,unit5 buy_a_ticket
+A che ora parte il prossimo treno?,When does the next train leave?,unit5 ask_about_trains
+Da quale binario parte?,Which platform does it leave from?,unit5 ask_about_trains
+Bisogna cambiare a Bologna.,You have to change at Bologna.,unit5 give_travel_info
+È libero questo posto?,Is this seat free?,unit5 on_the_train
+Che tempo fa?,What's the weather like?,unit5 talk_about_the_weather
+Fa freddo. / Fa caldo.,It's cold. / It's hot.,unit5 talk_about_the_weather
+Piove. / C'è il sole.,It's raining. / It's sunny.,unit5 talk_about_the_weather
+Domani pioverà.,It'll rain tomorrow.,unit5 predict
+"Se farà bel tempo, andremo al mare.","If the weather's nice, we'll go to the beach.",unit5 make_plans_with_a_condition
+Sarà in piscina.,He's probably at the pool.,unit5 guess
+"Appena avrò finito, ti chiamo.","As soon as I've finished, I'll call you.",unit5 sequence_future_events
+È il mio piatto preferito.,It's my favourite dish.,unit6 say_what_you_like
+Questa è mia sorella. / Questi sono i miei genitori.,This is my sister. / These are my parents.,unit6 introduce_family
+Hai fratelli o sorelle?,Do you have brothers or sisters?,unit6 ask_about_family
+Di chi è questa bici? – È di mio fratello.,Whose bike is this? – It's my brother's.,unit6 say_who_owns_something
+"Prendi il risotto, è buonissimo!","Have the risotto, it's really good!",unit6 give_advice
+"Scusi, possiamo ordinare?","Excuse me, can we order?",unit6 order_at_a_restaurant
+Come primo prendo… e come secondo…,For the first course I'll have… and for the main…,unit6 order_at_a_restaurant
+Cosa ci consiglia?,What do you recommend?,unit6 ask_for_a_recommendation
+"La bistecca ben cotta, per favore.","The steak well done, please.",unit6 order_at_a_restaurant
+Da bere? – Una bottiglia d'acqua frizzante.,To drink? – A bottle of sparkling water.,unit6 order_drinks
+Mi piacciono le lasagne.,I like lasagne.,unit6 say_what_you_like
+Non mi piace affatto.,I don't like it at all.,unit6 say_what_you_don't_like
+Facciamo uno spuntino?,Shall we have a snack?,unit6 suggest_something
+Non faccio mai colazione.,I never have breakfast.,unit6 talk_about_meals
+Quanto ci vuole? – Ci metto dieci minuti.,How long does it take? – It takes me ten minutes.,unit6 say_how_long_something_takes
+Che genere di film ti piace?,What kind of films do you like?,unit7 talk_about_films
+Non è il mio genere.,It's not my kind of thing.,unit7 give_an_opinion
+Avevo la febbre e sono rimasta a casa.,I had a temperature and stayed at home.,unit7 describe_the_past
+Da piccolo andavo spesso al cinema.,As a child I often went to the cinema.,unit7 talk_about_past_habits
+Ti ricordi di quella sera?,Do you remember that evening?,unit7 share_memories
+Non mi ricordo.,I don't remember.,unit7 share_memories
+Che bei tempi!,Those were the days!,unit7 share_memories
+"Mentre parlavo al telefono, è arrivata lei.","While I was on the phone, she arrived.",unit7 tell_a_story
+Era una sera di giugno…,It was a June evening…,unit7 set_the_scene
+"Quando sono arrivato, il film era già cominciato.","When I arrived, the film had already started.",unit7 order_past_events
+Cosa pensi di questo regista?,What do you think of this director?,unit7 ask_an_opinion
+"Secondo me, è bravissimo.",I think he's really good.,unit7 give_an_opinion
+Sono d'accordo con te.,I agree with you.,unit7 agree
+Non sono d'accordo. / Non è vero!,I don't agree. / That's not true!,unit7 disagree
+Hai ragione.,You're right.,unit7 agree
+Che ridere!,How funny!,unit7 react
+Non la trovo.,I can't find it.,unit8 talk_about_things_already_mentioned
+Lo prendiamo?,Shall we get it?,unit8 shop_together
+Cos'altro ci manca?,What else do we need?,unit8 shop_together
+Lo so. / Non lo sapevo.,I know. / I didn't know.,unit8 say_what_you_know
+Che peccato!,What a shame!,unit8 express_disappointment
+Che bella notizia!,What great news!,unit8 express_joy
+Accidenti!,Oh no! / Damn!,unit8 express_annoyance
+Vorrei due etti di prosciutto.,I'd like 200 grams of ham.,unit8 buy_food_by_weight
+Quanto ne vuole?,How much would you like?,unit8 buy_food_by_weight
+Ne prendo un chilo.,I'll take a kilo.,unit8 buy_food_by_weight
+"Desidera altro? – No, basta così.","Anything else? – No, that's all.",unit8 finish_shopping
+Dove li hai comprati?,Where did you buy them?,unit8 ask_about_a_purchase
+Ti posso aiutare? / Vuoi una mano?,Can I help you? / Do you want a hand?,unit8 offer_help
+"Grazie, sei molto gentile!","Thanks, that's very kind of you!",unit8 accept_help
+"Grazie, faccio da solo.","Thanks, I can manage.",unit8 refuse_help
+"Ce l'hai? – Sì, ce l'ho.","Have you got it? – Yes, I have.",unit8 say_what_you_have
+Ce n'è poco.,There's not much left.,unit8 talk_about_quantities
+Il sabato mi sveglio tardi.,On Saturdays I wake up late.,unit9 talk_about_routine
+Ci vediamo alle otto.,See you at eight.,unit9 arrange_to_meet
+Ci siamo divertiti un sacco.,We had a great time.,unit9 talk_about_the_past
+Ho visto una giacca in vetrina.,I saw a jacket in the window.,unit9 shop_for_clothes
+La posso provare?,Can I try it on?,unit9 shop_for_clothes
+Che taglia porta? – La 48.,What size are you? – A 48.,unit9 talk_about_size
+Che numero porta?,What shoe size are you?,unit9 talk_about_size
+C'è anche in blu?,Does it come in blue too?,unit9 ask_about_colour
+È un po' stretta. Ha una taglia più grande?,It's a bit tight. Do you have a bigger size?,unit9 talk_about_fit
+Quanto costa? C'è uno sconto?,How much is it? Is there a discount?,unit9 ask_the_price
+La prendo.,I'll take it.,unit9 buy_something
+Posso pagare con la carta?,Can I pay by card?,unit9 pay
+Si può pagare in contanti?,Can you pay cash?,unit9 pay
+Che ne pensi? / Che te ne pare?,What do you think?,unit9 ask_an_opinion
+Lo trovo un po' caro.,I think it's a bit expensive.,unit9 give_an_opinion
+Bisogna provarlo prima.,You need to try it on first.,unit9 say_what's_necessary
+Che c'è stasera in TV?,What's on TV tonight?,unit10 talk_about_TV
+Su che canale lo danno?,Which channel is it on?,unit10 talk_about_TV
+"Cambia canale, per favore!","Change the channel, please!",unit10 ask_someone_to_do_something
+Non mi piacciono i reality.,I don't like reality shows.,unit10 give_TV_preferences
+Mi presti la tua macchina?,Can I borrow your car?,unit10 borrow_something
+Mi fai un favore?,Can you do me a favour?,unit10 ask_a_favour
+Mi dai una mano?,Can you give me a hand?,unit10 ask_for_help
+"Mi dispiace, ma non ti posso aiutare.","Sorry, but I can't help you.",unit10 express_regret
+Mi sembra giusto.,That seems fair.,unit10 give_an_opinion
+Gli ho telefonato ieri.,I phoned him yesterday.,unit10 talk_about_who_you_told
+Prendilo pure!,"Go ahead, take it!",unit10 give_permission
+Non preoccuparti!,Don't worry!,unit10 reassure
+Dimmi!,Tell me!,unit10 invite_someone_to_speak
+"Scusi, per il Duomo?","Excuse me, which way to the cathedral?",unit10 ask_the_way
+Va' sempre dritto.,Go straight on.,unit10 give_directions
+Al primo incrocio gira a destra.,Turn right at the first junction.,unit10 give_directions
+Cosa gli chiederesti?,What would you ask him?,unit11 ask_for_ideas
+Mi piacerebbe sapere…,I'd like to know…,unit11 express_a_wish
+Potresti aiutarmi?,Could you help me?,unit11 ask_politely
+Ti dispiacerebbe chiudere la finestra?,Would you mind closing the window?,unit11 ask_politely
+Mi porteresti con te?,Would you take me with you?,unit11 ask_politely
+"Al posto tuo, ci andrei.","If I were you, I'd go.",unit11 give_advice
+Dovresti ascoltarlo.,You should listen to it.,unit11 give_advice
+Faresti bene a riposarti.,You'd do well to rest.,unit11 give_advice
+Potremmo guardarlo insieme. Ti va?,We could watch it together. Fancy it?,unit11 suggest_something
+Preferirei di no.,I'd rather not.,unit11 decline_politely
+Avrei voglia di fare quattro passi.,I feel like going for a little walk.,unit11 express_a_wish
+Dovrebbe arrivare alle otto.,He should arrive at eight.,unit11 make_a_guess
+"Secondo i giornali, sarebbe già partito.","According to the papers, he's already left.",unit11 report_unconfirmed_news
+"L'avrei visto volentieri, ma…","I'd have loved to see it, but…",unit11 express_an_unfulfilled_wish
+Avresti dovuto chiamarmi.,You should have called me.,unit11 give_advice_about_the_past
+Ha detto che sarebbe venuto.,He said he would come.,unit11 report_what_someone_said
