@@ -63,6 +63,7 @@ const lines = [
   ...[...AFTER, 'never over'].map((a) => `| ${a} | ${results.filter((r) => r.after === a).length} |`), '',
 ];
 console.log(lines.join('\n'));
+writeFileSync(join(OUT, `conversation-ends-${pack.id}.json`), JSON.stringify(results, null, 2));
 writeFileSync(join(OUT, `conversation-ends-${pack.id}.md`), [...lines, '## Each conversation', '',
   ...results.map((r) => `- **${r.name}** (${r.turns} turns): over at ${r.overAt ?? '—'}, ${r.after}${r.goodbyeAt ? `, goodbye at ${r.goodbyeAt}` : ''}, ${r.tailSeconds ?? '—'} s after. ${r.why} ${r.note}`),
 ].join('\n'));
