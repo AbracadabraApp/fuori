@@ -1,0 +1,63 @@
+# Diario: Phrase Review
+
+2026-10-18 · Josh · Draft. The Diario-specific half of the beginner work. Levels, card screens, controls and progression live in [beginner-scaffolding.md](beginner-scaffolding.md); this doc covers how you get to the Diario, the chip wall, groups, heat and retiring phrases. Research: [research/beginner-mode-scaffolding.md](research/beginner-mode-scaffolding.md), [research/flashcards-vocabulary-review.md](research/flashcards-vocabulary-review.md).
+
+Mockup: the interactive Diario canvas in the Claude app (chip → deck → end of pass), https://claude.ai/artifact/4RpwTiTgFXkNcT2ASs7LGg. It predates two decisions: it still shows Replay and Pause on the cards. [beginner-scaffolding.md](beginner-scaffolding.md) wins (no Replay; Pause only in hands-free). The card screens in [design/beginner-levels/levels.html](../design/beginner-levels/levels.html) are current.
+
+## Getting there: a book icon next to Settings (Josh, 2026-10-18)
+
+- A book icon sits immediately left of the Settings icon in the top-right toolbar, wherever Settings appears (D2 in [13-ios-conventions.md](13-ios-conventions.md); today the city and place lists via `.settingsToolbar()` in `FuoriFeatures/Settings/Settings.swift`).
+- Add it in the same modifier as a second `ToolbarItem(placement: .primaryAction)`, so the two always travel together. Rename the modifier if it no longer fits (`.topToolbar()` or similar).
+- Fuori's own drawing, like `SettingsIcon` (a small open book, same stroke weight), in `FuoriDesign`; not the system `book`. VoiceOver label "Diario". 44 pt target.
+- Opens the Diario as a full-screen cover with a close button (it's a place you spend a few minutes, not a quick sheet). Back swipe or close returns to where you were.
+- No badge or count on the icon: no streak pressure, matching "no likes, no streaks" in [02-game-design.md](02-game-design.md).
+- Before the first conversation the Diario has no phrases: the wall shows all chips cool, with one line pointing you to a place to go.
+- Open: whether the book shows during a conversation. Suggest not, so scenes stay in the world; Settings stays there per D2.
+- This replaces, for now, the bottom-tab idea in [02-game-design.md](02-game-design.md) (Oggi · Viaggio · Diario · Tu). The end-of-day Diario screen described there is a separate, later idea.
+
+## The shape
+
+The Diario opens on a wall of chips, one per situation group, like the genre chips in MovieGenius. Each chip warms from cool to gold as its phrases are learned. Tap a chip and its deck starts: one card per phrase per pass, each card at that phrase's level (levels and screens in [beginner-scaffolding.md](beginner-scaffolding.md)).
+
+## The groups
+
+A fixed list per country, about 12–15, kept as language data (`content/<lang>/`) so the wall stays stable: At the bar, Food and the market, Getting around, Numbers and money, Time and plans, Meeting people, Asking for help, Around the house, Feelings and opinions. Situations map onto places, so a cool chip points you somewhere to go. Group names on screen are interface text, worded per country; any target-language words come from `/v1/content`, never from Swift.
+
+## Retiring phrases (Josh, 2026-10-17)
+
+- A phrase you've said yourself in a conversation is retired, from any level: it leaves the deck. Using it with a character is the proof.
+- Card practice moves a phrase up levels but never retires it.
+- Retired phrases stay visible in the group as learned.
+- Whether the learner said it is judged by Claude after each conversation (`lib/remember.ts`), not by string matching.
+
+## The heat scale
+
+- Five steps, cool to gold; legend reads "Just heard" → "Used with people".
+- Counts retired phrases (plus partial credit for levels reached), not a percentage, so a chip never cools when you meet new phrases.
+- Gold comes only through conversation, which keeps the Diario tied to the game.
+
+## Recycling phrases through the world
+
+- Characters get two or three of the learner's recent Diario phrases as "things this newcomer has been learning", so scenes call for them. Shared across characters.
+- This is how spacing happens without drills: the same phrases return in new scenes, and saying one there retires it.
+
+## The phrases
+
+- Frames and short phrases, since chunks are the beginner's unit, always practiced inside a whole reply.
+- The system selects and edits; the learner never curates. Selection quality decides whether the chips mean anything.
+- What each phrase stores (frame, character, line, two replies, answers, audio, level): [beginner-scaffolding.md](beginner-scaffolding.md) → What each phrase needs. Each phrase also needs its group.
+
+## Where it lives
+
+Outside the game world, so characters stay in character. Could be framed as Magda's notebook, though Magda now works inside the world at the scuola (see [02-game-design.md](02-game-design.md)); decide whether that framing still fits.
+
+## How we'll know it works
+
+Chips opened; passes per visit; phrases retired through conversation over time.
+
+## Build order (suggested)
+
+1. Book icon and an empty Diario cover with the chip wall from static group data.
+2. `remember.ts` writes phrases with their group; a server route returns the learner's phrases by group.
+3. Decks using the level screens already built for the person screen (levels 1–3 first, behind the same test setting).
+4. Retiring and heat, once `remember.ts` judges "said it yourself".

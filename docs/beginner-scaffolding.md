@@ -1,6 +1,6 @@
 # Beginner Scaffolding: Levels 1–5
 
-2026-10-17 · Josh · Draft. Replaces the four-step "Beginner ladder" sketch in [language-levels-plan.md](language-levels-plan.md). Mockups: [design/beginner-levels/levels.html](../design/beginner-levels/levels.html) (open it in a browser). Research behind it: the Fuori project's `research/beginner-mode-scaffolding.md` and `research/flashcards-vocabulary-review.md`.
+2026-10-17 · Josh · Draft. Replaces the four-step "Beginner ladder" sketch in [language-levels-plan.md](language-levels-plan.md). Mockups: [design/beginner-levels/levels.html](../design/beginner-levels/levels.html) (open it in a browser). Research behind it: [research/beginner-mode-scaffolding.md](research/beginner-mode-scaffolding.md) and [research/flashcards-vocabulary-review.md](research/flashcards-vocabulary-review.md). The Diario itself (book icon, chip wall, heat, retiring phrases): [diario.md](diario.md).
 
 A beginner takes part at one of five levels. The level decides how much support the screen gives, from tapping a reply with English everywhere (level 1) to filling a frame in your own words (level 5). Past level 5 there's nothing to add: that's the normal screen, where you speak freely. Nothing is scripted past level 4.
 
