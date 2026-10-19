@@ -68,6 +68,18 @@ Teaching in character (Josh, 2026-10-19: at all levels; vocabulary, gender or nu
 | `character-english3.md` | 6% / 31% | 23% (23%) | 6 | 26.6 | — |
 | `character-teach.md` | 69–100% / 88% | 49% (37%) | 5 | 29.3 | Replay gate next |
 | `character-teach2.md` | 81% / 75% | 42% (34%) | 3 | 28.5 | Replay gate next |
+| `character-teach3.md`: english3 + "When they get a word or a verb form wrong and you know what they meant, use the right form in what you say next, in a statement, without pointing it out." | 56% / 81% | 35% (30%) | 6 | 27.5 | **Passes the gate within noise** (below). Written after reading teach's failures: recasts asked as questions ("Due caffè, allora? Oppure…?") and speech-to-text noise "corrected" ("Ettore, non attore") |
+
+Replay gate, Italy, 25 conversations (Mexico has no replay set yet). Today's prompt run twice to show the noise.
+
+| Prompt | Reply time | Words | 2+ questions | Garbled understood | Pulls back when lost | Alive | English unasked | Decision |
+|---|---|---|---|---|---|---|---|---|
+| 2026-10-18b, run 1 / run 2 | 2.0 / 2.0 s | 18 / 17 | 9% / 16% | 83% / 81% | 33% / 22% | 5.2 / 5.5 | 0 / 0 | — |
+| `character-english3.md` | 2.1 s | 17 | 18% | 80% | 22% | 5.4 | 0.1 (two borderline: the learner had asked) | Within noise |
+| `character-teach.md` | 2.3 s | 18 | **22%** | **69%** | 22% | 5.4 | ~0 | Fails |
+| `character-teach2.md` | 2.4 s | 17 | **21%** | **74%** | 33% | 5.4 | 0 | Fails |
+| **`character-teach3.md`** | 2.1 s | 18 | 9% | 82% | 44% | 5.3 | ~0 | **Candidate**; Josh decides |
+
 
 
 ### Diario cards (experiment, `tests/experiments/diario-cards.mts`)
