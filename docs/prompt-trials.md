@@ -1,0 +1,59 @@
+# Prompts: what exists and what's been tried
+
+**Read this before writing a new prompt** (Josh, 2026-10-18: someone may reinvent a prompt for one purpose when an existing one is already better). First check whether an existing prompt does the job, or most of it; then check below whether the idea was already tried.
+
+Each prompt's own changelog (bottom of its file) records the versions that shipped. This file adds what's easy to lose: what each prompt is for, and trials that didn't ship. Add a row in the same commit as the trial, even when it's dropped. The text of a deleted trial stays findable by its commit.
+
+## What exists
+
+All in `content/<country>/prompts/`, one copy per country.
+
+| Prompt | What it does | Runs in production | Reuse it for |
+|---|---|---|---|
+| `character.md` | A character's next line, `{ line, en }` | Every turn | Anything a character says, including lines written outside a live conversation (a Diario card's line and answers) |
+| `levels.md` | Level blocks appended to the character prompt | Josh's Mexico learner only (`LEVEL_TRIAL`) | Making any character line easier |
+| `replies.md` | Two whole-line replies on one frame, answering the character's last line | No (route built, app not yet) | Reply buttons, Diario card replies |
+| `magda-teaching.md` | Magda's lessons | Conversations with Magda | Explicit teaching |
+| `onboarding.md` | The greeter: follow-up, placement, send-off | Once per new learner | — |
+| `memory.md` | After a conversation: the character's notes, and review phrases, mistakes, missed, English | Every conversation | What the learner got wrong or needed (the Diario's frames start here) |
+| `study-file.md` | The learner profile Magda reads | Every conversation | — |
+| `quality.md` | Judges a conversation (alive, replies that don't follow, …) | Every conversation; also the replay judge | Judging dialogue |
+| `learner-level.md` | The learner's level from their first conversations | No (`LEVEL_CHECK` off) | Placing a learner |
+| `level.md` | Which words of a line a beginner knows | No (replay and experiments) | Measuring any line's level |
+
+Experiment prompts live inside `tests/experiments/*.mts` and are listed below when they're tried.
+
+## Trials
+
+Measures are only comparable within one block (same judge, replay set and history window). The block says what it was measured on.
+
+### character.md
+
+Measured on the replay, Italy, 28 conversations, whole-conversation history (from 2026-10-18). Goal of these trials: faster, shorter replies without losing the rest.
+
+| Version or trial | Status | Text | Wait | Words | Beginner follows | 2+ questions | Garbled understood | Alive | Decision |
+|---|---|---|---|---|---|---|---|---|---|
+| 2026-10-18 (long prompt), thinking | Replaced | 18bd99e | 3.4 s | 23 | 25% | 10% | 81% | 6.0 | Production before 18b |
+| short, thinking | Tried | `character-short.md`, 5e20523 | 2.8 s | 16 | 39% | 8% | 88% | 5.1 | Became 18b |
+| **short, no thinking = 2026-10-18b** | **Production** | `character.md` | **1.9 s** | 17 | 37% | 14% | 94% | 5.3 | Shipped (Josh: "take the best"), 55520dc |
+| short2 ("Have a chat…", "Hello"), thinking | Dropped | `character-short2.md`, 03662a2 | 3.3 s | 20.5 | 41% | 9% | 84% | 5.3 | Longer than short |
+| short2, no thinking | Dropped | same | 2.1 s | 22 | 40% | 23% | 91% | 5.4 | Longer; double questions |
+
+Earlier, on the 6-message history (not comparable with the block above), 5e20523: short + Haiku 1.3 s but 21% double questions and broken replies (dropped); short + traits line 3.1 s, 20 words (dropped).
+
+Core behaviours (round 18, `core-behaviours.mts`, 8 characters × 2 runs; goal: CLAUDE.md's behaviours hold on the short prompt):
+
+| Version | "Say it in English" spoken in English | Mistake recast | How do I say / Come si dice / garbled / no unasked English |
+|---|---|---|---|
+| 2026-10-18, thinking | 0% / 0% (Italy / Mexico) | 31% / 44% | — |
+| 2026-10-18b, no thinking (production) | 0% / 0% | 13% / 19% | 100% |
+| 2026-10-18b, thinking | 0% / 0% | 19% / 13% | 94–100% |
+
+### Diario cards (experiment, `tests/experiments/diario-cards.mts`)
+
+Goal: cards worth reviewing, made from a real conversation. Round 17, admin export (Italy 28, Mexico 9 conversations).
+
+| Version | Status | Pass 9 checks | Beginner follows line / replies | Decision |
+|---|---|---|---|---|
+| Today's stored review phrases (`memory.md`) as cards | — | 18–22% card-worthy | — | Not enough on their own |
+| Card maker v1, one new prompt | Tried | 69% / 78% | 54% / 57% Italy, 38% / 35% Mexico | **Next: build from existing prompts instead** (`memory.md` picks frames, `character.md` + Beginner writes the line and answers, `replies.md` the replies), and compare |
