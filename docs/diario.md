@@ -13,7 +13,7 @@ Mockup: the interactive Diario canvas in the Claude app (chip → deck → end o
 - No badge or count on the icon: no streak pressure, matching "no likes, no streaks" in [02-game-design.md](02-game-design.md).
 - Before the first conversation the Diario has no phrases: the wall shows all chips cool, with one line pointing you to a place to go.
 - Open: whether the book shows during a conversation. Suggest not, so scenes stay in the world; Settings stays there per D2.
-- This replaces, for now, the bottom-tab idea in [02-game-design.md](02-game-design.md) (Oggi · Viaggio · Diario · Tu). The end-of-day Diario screen described there is a separate, later idea.
+- This replaces, for now, the bottom-tab idea in [02-game-design.md](02-game-design.md) (Oggi · Viaggio · Diario · Tu). There is no end-of-day Diario (Josh, 2026-10-18: "end of day is gone").
 
 ## The shape
 

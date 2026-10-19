@@ -92,7 +92,7 @@ Inspired by the creator's real teacher. Use her first name only, and check she's
 
 ## Diario: the review place
 
-**No end of day (Josh, 2026-10-18).** The Diario is a place to review, not a screen that closes the day. It opens from a book in the top navigation bar, left of the settings button. Inside: phrase cards from your own conversations, each a character's line in their voice with your reply on a frame ("Vorrei…"), shown at that phrase's own beginner level (tap a reply, read it aloud, fill the frame). Full design: [beginner-scaffolding.md](beginner-scaffolding.md) → The Diario. Corrections and what you missed come from the end-of-conversation step (`lib/remember.ts`), not an end-of-day call. Going there is always optional: no counts of cards due, no streaks.
+**No end of day (Josh, 2026-10-18).** The Diario is a place to review, not a screen that closes the day. It opens from a book in the top navigation bar, left of the settings button. Inside: phrase cards from your own conversations, each a character's line in their voice with your reply on a frame ("Vorrei…"), shown at that phrase's own beginner level (tap a reply, read it aloud, fill the frame). Full design: [diario.md](diario.md); card screens in [beginner-scaffolding.md](beginner-scaffolding.md). Corrections and what you missed come from the end-of-conversation step (`lib/remember.ts`), not an end-of-day call. Going there is always optional: no counts of cards due, no streaks.
 
 ## Levelling up
 

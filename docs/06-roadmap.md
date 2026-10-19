@@ -72,12 +72,12 @@ Five levels, from tapping a reply with English to filling a frame in your own wo
 - [ ] **Claude** A first playable version of levels 1–3 behind a setting (live dialogue with reply buttons), so Josh can feel it in Afuera
 - [ ] **Claude** Tests queued in [test-ideas.md](test-ideas.md): live with lookahead, a plan for the visit, "Ripeti?" on levels 4–5, Mexico at 20 conversations
 
-### Diario: the review place ([beginner-scaffolding.md](beginner-scaffolding.md) → The Diario)
+### Diario: the review place ([diario.md](diario.md); card screens in [beginner-scaffolding.md](beginner-scaffolding.md))
 Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens phrase cards from your own conversations, at each phrase's own beginner level.
 - [ ] **Claude** Card test before any screen: run the memory step on the 24 replay conversations, make cards, judge whether the phrases are useful frames, the two replies make sense, and a beginner follows the character's line
 - [ ] **Claude** The memory prompt picks frame-shaped phrases (whole lines on "Vorrei…", not lone nouns)
 - [ ] **Claude** A judge call per conversation: did the learner say a card's phrase themselves (retires it). No phrase matching
-- [ ] **Josh** Decide: the learner's voice for their replies (one voice per country, or matched to the learner); whether the book shows during a conversation
+- [ ] **Josh** Decide: the learner's voice for their replies (one voice per country, or matched to the learner); whether the book shows during a conversation (diario.md suggests not)
 - [ ] **Claude** Build after reply buttons (levels 1–3), since the cards are those screens
 
 ### Smaller world for beginners: on hold until there's a spec (Josh, 2026-10-18)
