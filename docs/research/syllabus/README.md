@@ -21,7 +21,7 @@ The three Progetto books are scans; they were read with OCR, so a few pages (cro
 - **`a1-progetto-1a.md`, `a2-progetto-1b.md`, `b1-b2-progetto-2.md`:** per unit, what the learner can do, key frames, grammar in order, vocabulary themes, settings; then the order and pacing.
 - **`functions-grammar.md`:** each communicative function (personal information, location, prices, the past, opinions…) with its grammar and level, and a newcomer's first-week order.
 - **`chips-vs-syllabus.md`:** Fuori's 10 beginner chips checked against A1–A2.
-- **`level-words-it.csv`:** 1,479 everyday lemmas (`lemma,pos,level,unit,theme`), each at the level and unit where a learner first meets it (A1: 788, A2: 691). For measuring what a beginner can follow, in place of Kelly (`docs/level-judge-test.md`: Kelly's levels are newspaper frequency). Spot check: *frigorifero* A2, *pranzo* A1, *cognome* A1, *scontrino* A1; *regolamento*, *provvedimento* absent.
+- **`level-words-it.csv`:** 1,479 everyday lemmas (`lemma,pos,level,unit,theme`), each at the level and unit where a learner first meets it (A1: 786, A2: 693). For measuring what a beginner can follow, in place of Kelly (`docs/level-judge-test.md`: Kelly's levels are newspaper frequency). Spot check: *frigorifero* A2, *pranzo* A1, *cognome* A1, *scontrino* A1; *regolamento*, *provvedimento* absent.
 - **`anki-a1-a2.csv`:** 187 A1–A2 phrase cards (Italian, English, tags), importable into Anki; Josh's own study.
 
 ## The progression in one table
