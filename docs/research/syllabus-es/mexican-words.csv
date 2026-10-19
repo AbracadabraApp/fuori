@@ -1,0 +1,1869 @@
+spanish,english,pos,topic,in_pcic,pcic_level
+contrato,Contract,noun,Business - Negocios,no,
+orden,Order,noun,Business - Negocios,no,
+trato,Deal,noun,Business - Negocios,no,
+ventas,Sales,noun,Company - Compañía,no,
+mercadotecnia,Marketing,noun,Company - Compañía,no,
+departamento de TI,IT department,phrase,Company - Compañía,no,
+viaje de negocios,Business trip,phrase,Company - Compañía,no,
+industria,Industry,noun,Industry - Industria,no,
+impresión,Print,noun,Media - Media,no,
+folleto,Pamphlet,noun,Media - Media,no,
+transmitir,Transmit,verb,Media - Media,no,
+editorial de periódicos,Newspaper publisher,noun,Media - Media,no,
+informe,Report,noun,Media - Media,no,
+presentar,Submit,verb,Media - Media,no,
+noticias,News,noun,Media - Media,no,
+canal de televisión,TV station,noun,Media - Media,no,
+editar,Edit,verb,Media - Media,no,
+programa,Program,noun,Media - Media,yes,A2
+canal,Channel,noun,Media - Media,no,
+impresión,Printing,noun,Media - Media,no,
+difusión,Broadcast,noun,Media - Media,no,
+estación,Station,noun,Media - Media,yes,A1
+sala de juntas,Boardroom,noun,Meetings - Reuniones,no,
+traductor,Translator,noun,Meetings - Reuniones,no,
+contabilidad,Accounting,noun,Meetings - Reuniones,no,
+humorístico,Humorous,adjective,Meetings - Reuniones,no,
+broma,Joke,noun,Meetings - Reuniones,no,
+impresión,Impression,noun,Meetings - Reuniones,no,
+forma de pensar,Way of thinking,phrase,Meetings - Reuniones,no,
+objeción,Objection,noun,Meetings - Reuniones,no,
+energético,Energetic,adjective,Meetings - Reuniones,no,
+discusión,Discussion,noun,Meetings - Reuniones,yes,A2
+negociacion,Negotiation,noun,Meetings - Reuniones,no,
+presidente,Chairman,noun,Meetings - Reuniones,yes,A1
+publicar,Publish,verb,Meetings Actions - Acciones en una Reunión,no,
+desacordar,Disagree,verb,Meetings Actions - Acciones en una Reunión,no,
+mantener,Maintain,verb,Meetings Actions - Acciones en una Reunión,no,
+cambiar,Change,verb,Meetings Actions - Acciones en una Reunión,yes,A1
+decidir,Decide,verb,Meetings Actions - Acciones en una Reunión,no,
+oponer,Oppose,verb,Meetings Actions - Acciones en una Reunión,no,
+acordar,Agree,verb,Meetings Actions - Acciones en una Reunión,no,
+anunciar,Announce,verb,Meetings Actions - Acciones en una Reunión,no,
+aprobar,Approve,verb,Meetings Actions - Acciones en una Reunión,yes,A2
+criticar,Criticize,verb,Meetings Actions - Acciones en una Reunión,no,
+presentar,Put forward,noun,Meetings Actions - Acciones en una Reunión,no,
+apoyar,Support,noun,Meetings Actions - Acciones en una Reunión,no,
+investigación,Research,noun,Meetings Actions - Acciones en una Reunión,no,
+petición,Request,noun,Meetings Actions - Acciones en una Reunión,no,
+negociar,Negotiate,verb,Meetings Actions - Acciones en una Reunión,no,
+celebrar una reunión,Hold a meeting,phrase,Meetings Actions - Acciones en una Reunión,no,
+revisar,Revise,verb,Meetings Actions - Acciones en una Reunión,no,
+fábrica,Factory,noun,Production - Producción,yes,A2
+salida,Output,noun,Production - Producción,yes,A1
+mano de obra,Workforce,noun,Production - Producción,no,
+material,Material,noun,Production - Producción,no,
+parte,Part,noun,Production - Producción,no,
+máquina,Machine,noun,Production - Producción,no,
+cemento,Cement,noun,Production - Producción,no,
+carbón,Coal,noun,Production - Producción,no,
+gas,Gas,noun,Production - Producción,yes,A1
+textiles,Textile,noun,Production - Producción,no,
+entrada,Input,noun,Production - Producción,yes,A1
+pesca,Fishing,noun,Production - Producción,no,
+turismo,Tourism,noun,Production - Producción,yes,A1
+exportar,Export,verb,Production - Producción,no,
+importar,Import,verb,Production - Producción,yes,A2
+disminuir,Decrease,verb,Production - Producción,no,
+gasolina,Gasoline,noun,Production - Producción,no,
+bufanda,Scarf,noun,Accessories - Accesorios,yes,A2
+cinturón,Belt,noun,Accessories - Accesorios,no,
+guantes,Glove,noun,Accessories - Accesorios,no,
+reloj de pulsera,Wristwatch,noun,Accessories - Accesorios,no,
+lentes,Eyeglasses,noun,Accessories - Accesorios,yes,A1
+gafas de sol,Sunglasses,noun,Accessories - Accesorios,no,
+reloj,Watch,noun,Accessories - Accesorios,yes,A1
+gafas,Glasses,noun,Accessories - Accesorios,yes,A1
+paraguas,Umbrella,noun,Accessories - Accesorios,yes,A2
+gancho de ropa,Hanger,noun,Accessories - Accesorios,no,
+trapo,Cloth,noun,Clothing - Ropa,no,
+abrigo,Coat,noun,Clothing - Ropa,yes,A2
+chamarra,Jacket,noun,Clothing - Ropa,yes,A2
+abrigo,Overcoat,noun,Clothing - Ropa,yes,A2
+impermeable,Raincoat,noun,Clothing - Ropa,no,
+sombrero,Hat,noun,Clothing - Ropa,yes,A2
+sudadera,Sweat suit,noun,Clothing - Ropa,no,
+suéter,Sweater,noun,Clothing - Ropa,yes,A1
+chaleco,Vest,noun,Clothing - Ropa,no,
+pantalones de mezclilla,Jeans,noun,Clothing - Ropa,no,
+ropa,Clothes,noun,Clothing - Ropa,yes,A2
+camisa,Shirt,noun,Clothing - Ropa,yes,A1
+pantalones,Pants,noun,Clothing - Ropa,no,
+bolsillo,Pocket,noun,Clothing - Ropa,no,
+botón,Button,noun,Clothing - Ropa,no,
+banda elástica,Elastic band,noun,Clothing - Ropa,no,
+manga,Sleeve,noun,Clothing - Ropa,no,
+collarín,Collar,noun,Clothing - Ropa,no,
+ropa,Clothing,noun,Clothing - Ropa,yes,A2
+playera,T-shirt,noun,Clothing - Ropa,no,
+probarse,Try on,verb,Clothing Actions - Acciones sobre Ropa,yes,A2
+ponerse,Put on,verb,Clothing Actions - Acciones sobre Ropa,yes,A2
+chocar,Clash,verb,Clothing Actions - Acciones sobre Ropa,no,
+lavar la ropa,Wash clothes,verb,Clothing Actions - Acciones sobre Ropa,no,
+coser,Sew,verb,Clothing Actions - Acciones sobre Ropa,no,
+arreglar,Mend,verb,Clothing Actions - Acciones sobre Ropa,no,
+tejer,Knit,verb,Clothing Actions - Acciones sobre Ropa,no,
+teñir,Dye,verb,Clothing Actions - Acciones sobre Ropa,no,
+probar,Fit a garment,verb,Clothing Actions - Acciones sobre Ropa,no,
+ir con,Go with,phrase,Clothing Actions - Acciones sobre Ropa,no,
+combinar,Match,verb,Clothing Actions - Acciones sobre Ropa,no,
+marca,Brand,noun,Clothing Describing - Describiendo Ropa,no,
+tamaño,Size,noun,Clothing Describing - Describiendo Ropa,no,
+estilo,Style,noun,Clothing Describing - Describiendo Ropa,no,
+de moda,Fashionable,adjective,Clothing Describing - Describiendo Ropa,no,
+flojo,Loose,adjective,Clothing Describing - Describiendo Ropa,no,
+apretado,Tight,adjective,Clothing Describing - Describiendo Ropa,no,
+aseado,Neat,adjective,Clothing Describing - Describiendo Ropa,no,
+seda,Silk,noun,Clothing Describing - Describiendo Ropa,no,
+chico,Small (S),adjective,Clothing Describing - Describiendo Ropa,yes,A1
+mediano,Medium (M),adjective,Clothing Describing - Describiendo Ropa,yes,A2
+grande,Large (L),adjective,Clothing Describing - Describiendo Ropa,yes,A1
+extra grande,Extra Large (XL),adjective,Clothing Describing - Describiendo Ropa,no,
+de manga larga,Long-sleeved,adjective,Clothing Describing - Describiendo Ropa,no,
+de manga corta,Short-sleeved,adjective,Clothing Describing - Describiendo Ropa,no,
+hecho a mano,Handmade,adjective,Clothing Describing - Describiendo Ropa,no,
+algodón,Cotton,noun,Clothing Describing - Describiendo Ropa,no,
+lana,Wool,noun,Clothing Describing - Describiendo Ropa,no,
+lino,Linen,noun,Clothing Describing - Describiendo Ropa,no,
+corbata,Necktie,noun,Clothing Formal - Ropa formal,yes,A2
+traje,Suit,noun,Clothing Formal - Ropa formal,yes,A2
+corbata,Tie,noun,Clothing Formal - Ropa formal,yes,A2
+sandalias,Sandal,noun,Footwear - Calzado,no,
+zapato,Shoe,noun,Footwear - Calzado,yes,A1
+calcetines,Sock,noun,Footwear - Calzado,no,
+tenis,Sneaker,noun,Footwear - Calzado,yes,A1
+aretes,Earring,noun,Jewelry - Joyeria,no,
+collar,Necklace,noun,Jewelry - Joyeria,no,
+anillo,Ring,noun,Jewelry - Joyeria,no,
+maquillaje,Makeup,noun,Makeup - Maquillaje,no,
+ropa interior,Underwear,noun,Underwear and Sleepwear - Ropa interior y ropa para dormir,no,
+camiseta,Undershirt,noun,Underwear and Sleepwear - Ropa interior y ropa para dormir,no,
+piyama,Pajamas,noun,Underwear and Sleepwear - Ropa interior y ropa para dormir,no,
+brasier,Brassiere,noun,Underwear and Sleepwear - Ropa interior y ropa para dormir,yes,A2
+boxers,Boxer shorts,noun,Underwear and Sleepwear - Ropa interior y ropa para dormir,no,
+traje de baño,Swimsuit,noun,Womens Wear - Ropa para Mujeres,yes,A2
+blusa,Blouse,noun,Womens Wear - Ropa para Mujeres,yes,A2
+falda,Skirt,noun,Womens Wear - Ropa para Mujeres,yes,A1
+vestido,Dress,noun,Womens Wear - Ropa para Mujeres,no,
+minifalda,Mini-skirt,noun,Womens Wear - Ropa para Mujeres,no,
+día,Day,noun,Calendar - Calendario,yes,A1
+semana,Week,noun,Calendar - Calendario,yes,A1
+año,Year,noun,Calendar - Calendario,yes,A1
+hoy,Today,noun,Calendar - Calendario,yes,A1
+mañana,Tomorrow,noun,Calendar - Calendario,yes,A1
+ayer,Yesterday,noun,Calendar - Calendario,yes,A1
+calendario,Calendar,noun,Calendar - Calendario,no,
+segundo,Second,noun,Clock - Reloj,yes,A1
+hora,Hour,noun,Clock - Reloj,yes,A1
+minuto,Minute,noun,Clock - Reloj,yes,A1
+AM,AM,phrase,Clock - Reloj,no,
+mediodía,Noon,noun,Clock - Reloj,yes,A1
+en punto,O'clock,phrase,Clock - Reloj,no,
+cuarto para (hora),Quarter to (hour),phrase,Clock - Reloj,no,
+y media,Half past,phrase,Clock - Reloj,no,
+PM,PM,phrase,Clock - Reloj,no,
+reloj,Clock,noun,Clock - Reloj,yes,A1
+claro,Light,adjective,Colors - Colores,yes,A1
+oro,Gold,adjective,Colors - Colores,no,
+plateado,Silver,adjective,Colors - Colores,no,
+beige,Beige,adjective,Colors - Colores,no,
+brillante,Bright,adjective,Colors - Colores,no,
+índigo,Indigo,adjective,Colors - Colores,no,
+oscuro,Dark,adjective,Colors - Colores,yes,A1
+durazno,Peach,adjective,Colors - Colores,no,
+negro,Black,adjective,Colors Basic - Colores Elementales,yes,A1
+café,Brown,adjective,Colors Basic - Colores Elementales,yes,A1
+gris,Gray,adjective,Colors Basic - Colores Elementales,yes,A1
+blanco,White,adjective,Colors Basic - Colores Elementales,yes,A1
+morado,Purple,adjective,Colors Basic - Colores Elementales,no,
+rojo,Red,adjective,Colors Basic - Colores Elementales,yes,A1
+verde,Green,adjective,Colors Basic - Colores Elementales,yes,A1
+azul,Blue,adjective,Colors Basic - Colores Elementales,yes,A1
+amarillo,Yellow,adjective,Colors Basic - Colores Elementales,yes,A1
+rosa,Pink,adjective,Colors Basic - Colores Elementales,yes,A2
+color,Color,noun,Colors Basic - Colores Elementales,yes,A2
+naranja,Orange,adjective,Colors Basic - Colores Elementales,yes,A1
+poder,Can,verb,Common Actions 1 - Acciones comunes 1,yes,A2
+hacer,Do,verb,Common Actions 1 - Acciones comunes 1,yes,A1
+ir,Go,verb,Common Actions 1 - Acciones comunes 1,yes,A1
+venir,Come,verb,Common Actions 1 - Acciones comunes 1,yes,A1
+reír,Laugh,verb,Common Actions 1 - Acciones comunes 1,no,
+hacer,Make,verb,Common Actions 1 - Acciones comunes 1,yes,A1
+encontrar,Find,verb,Common Actions 1 - Acciones comunes 1,no,
+dar,Give,verb,Common Actions 1 - Acciones comunes 1,yes,A2
+hablar,Talk,verb,Common Actions 1 - Acciones comunes 1,yes,A1
+descansar,Rest,verb,Common Actions 2 - Acciones comunes 2,no,
+escuchar,Hear,verb,Common Actions 2 - Acciones comunes 2,yes,A1
+planear,Plan,verb,Common Actions 2 - Acciones comunes 2,no,
+querer,Want,verb,Common Actions 2 - Acciones comunes 2,no,
+recordar,Remember,verb,Common Actions 2 - Acciones comunes 2,no,
+ayudar,Help,verb,Common Actions 2 - Acciones comunes 2,no,
+mover,Move,verb,Common Actions 2 - Acciones comunes 2,no,
+intentar,Try,verb,Common Actions 2 - Acciones comunes 2,no,
+mantener,Keep,verb,Common Actions 2 - Acciones comunes 2,no,
+comenzar,Start,verb,Common Actions 2 - Acciones comunes 2,no,
+terminar,Finish,verb,Common Actions 2 - Acciones comunes 2,yes,A1
+convertirse,Become,verb,Common Actions 2 - Acciones comunes 2,no,
+medir,Measure,verb,Common Actions 2 - Acciones comunes 2,no,
+esperar,Wait,verb,Common Actions 2 - Acciones comunes 2,no,
+sostener,Hold,noun,Common Actions 2 - Acciones comunes 2,no,
+creer,Believe,verb,Common Actions 3 - Acciones comunes 3,yes,A1
+parecerse,Resemble,verb,Common Actions 3 - Acciones comunes 3,no,
+respetar,Respect,verb,Common Actions 3 - Acciones comunes 3,no,
+agradecer,Thank,verb,Common Actions 3 - Acciones comunes 3,no,
+amar,Love,verb,Common Actions 3 - Acciones comunes 3,no,
+necesitar,Need,verb,Common Actions 3 - Acciones comunes 3,yes,A2
+estar de pie,Stand,verb,Common Actions 3 - Acciones comunes 3,no,
+decir,Say,verb,Common Actions 3 - Acciones comunes 3,yes,A2
+ver,See,verb,Common Actions 3 - Acciones comunes 3,yes,A1
+fallar,Miss,verb,Common Actions 3 - Acciones comunes 3,no,
+entrar,Enter,verb,Common Actions 3 - Acciones comunes 3,yes,A1
+lejano,Far,adjective,Common Adjectives 1 - Adjetivos comunes 1,no,
+bueno,Good,adjective,Common Adjectives 1 - Adjetivos comunes 1,yes,A1
+hermoso,Beautiful,adjective,Common Adjectives 1 - Adjetivos comunes 1,yes,A1
+débil,Weak,adjective,Common Adjectives 1 - Adjetivos comunes 1,no,
+fuerte,Strong,adjective,Common Adjectives 1 - Adjetivos comunes 1,yes,A2
+feo,Ugly,adjective,Common Adjectives 1 - Adjetivos comunes 1,yes,A1
+difícil,Difficult,adjective,Common Adjectives 1 - Adjetivos comunes 1,yes,A1
+fácil,Easy,adjective,Common Adjectives 1 - Adjetivos comunes 1,yes,A1
+malo,Bad,adjective,Common Adjectives 1 - Adjetivos comunes 1,yes,A1
+alto,High,adjective,Common Adjectives 1 - Adjetivos comunes 1,yes,A1
+bajo,Low,adjective,Common Adjectives 1 - Adjetivos comunes 1,yes,A1
+limpio,Clean,adjective,Common Adjectives 1 - Adjetivos comunes 1,yes,A2
+sucio,Dirty,adjective,Common Adjectives 1 - Adjetivos comunes 1,yes,A2
+cercano,Near,adjective,Common Adjectives 1 - Adjetivos comunes 1,no,
+importante,Important,adjective,Common Adjectives 2 - Adjetivos comunes 2,yes,A2
+concurrido,Busy,adjective,Common Adjectives 2 - Adjetivos comunes 2,no,
+amable,Kind,adjective,Common Adjectives 2 - Adjetivos comunes 2,yes,A2
+espantoso,Scary,adjective,Common Adjectives 2 - Adjetivos comunes 2,no,
+frío,Cold,noun,Common Adjectives 2 - Adjetivos comunes 2,yes,A1
+interesante,Interesting,adjective,Common Adjectives 2 - Adjetivos comunes 2,yes,A1
+caliente,Hot,adjective,Common Adjectives 2 - Adjetivos comunes 2,yes,A1
+cruel,Mean,adjective,Common Adjectives 2 - Adjetivos comunes 2,no,
+serio,Serious,adjective,Common Adjectives 2 - Adjetivos comunes 2,yes,A1
+cansado,Tired,adjective,Common Adjectives 2 - Adjetivos comunes 2,yes,A2
+relajante,Relaxing,noun,Common Adjectives 2 - Adjetivos comunes 2,no,
+insatisfecho,Dissatisfied,adjective,Common Adjectives 3 - Adjetivos comunes 3,no,
+doloroso,Painful,adjective,Common Adjectives 3 - Adjetivos comunes 3,no,
+profundo,Deep,adjective,Common Adjectives 3 - Adjetivos comunes 3,no,
+pobre,Poor,adjective,Common Adjectives 3 - Adjetivos comunes 3,yes,A2
+famoso,Famous,adjective,Common Adjectives 3 - Adjetivos comunes 3,no,
+rico,Rich,adjective,Common Adjectives 3 - Adjetivos comunes 3,yes,A2
+insignificante,Insignificant,adjective,Common Adjectives 3 - Adjetivos comunes 3,no,
+emocionado,Excited,adjective,Common Adjectives 3 - Adjetivos comunes 3,no,
+poco profundo,Shallow,phrase,Common Adjectives 3 - Adjetivos comunes 3,no,
+tímido,Shy,adjective,Common Adjectives 3 - Adjetivos comunes 3,yes,A1
+esperanzado,Hopeful,adjective,Common Adjectives 3 - Adjetivos comunes 3,no,
+avergonzado,Embarrassed,adjective,Common Adjectives 3 - Adjetivos comunes 3,no,
+casual,Casual,adjective,Common Adjectives 3 - Adjetivos comunes 3,no,
+un gusto conocerte.,Nice to meet you.,expression,Common Expressions - Expresiones comunes,no,
+¿Cómo estás?,How are you?,expression,Common Expressions - Expresiones comunes,no,
+estoy bien.,I'm good.,expression,Common Expressions - Expresiones comunes,no,
+gracias.,Thank you.,expression,Common Expressions - Expresiones comunes,no,
+¿Qué hora es?,What time is it?,expression,Common Expressions - Expresiones comunes,no,
+si,Yes,adverb,Common Expressions - Expresiones comunes,yes,A2
+no,No,noun,Common Expressions - Expresiones comunes,yes,A1
+¡Impresionante!,Awesome!,expression,Common Expressions - Expresiones comunes,no,
+¡Delicioso!,Delicious!,expression,Common Expressions - Expresiones comunes,no,
+me gusta.,I like it.,expression,Common Expressions - Expresiones comunes,no,
+no me gusta.,I don't like it.,expression,Common Expressions - Expresiones comunes,no,
+gracias.,Thanks.,expression,Common Expressions - Expresiones comunes,no,
+ayuda!,Help!,expression,Common Expressions - Expresiones comunes,no,
+lo siento.,I'm sorry.,expression,Common Expressions - Expresiones comunes,no,
+no se preocupe.,Don't worry.,expression,Common Expressions - Expresiones comunes,no,
+no hay problema.,No problem.,expression,Common Expressions - Expresiones comunes,no,
+perdon/ Disculpe,Excuse me.,expression,Common Expressions - Expresiones comunes,no,
+está bien.,It's okay.,expression,Common Expressions - Expresiones comunes,no,
+¿En serio?,Really?,expression,Common Expressions - Expresiones comunes,no,
+soy ... (nombre).,I'm...(name).,expression,Common Expressions - Expresiones comunes,no,
+por favor.,Please.,expression,Common Expressions - Expresiones comunes,no,
+"por favor, discúlpeme",Please forgive me.,expression,Common Expressions - Expresiones comunes,no,
+quisiera...,I'd like...,expression,Common Expressions - Expresiones comunes,no,
+me gustaría ... (verbo).,I'd like to...(verb).,expression,Common Expressions - Expresiones comunes,no,
+verdadero,True,adjective,Common Expressions - Expresiones comunes,no,
+falso,False,adjective,Common Expressions - Expresiones comunes,no,
+ordenador portátil,Laptop computer,noun,Computer - Informática,yes,A2
+teclado,Keyboard,noun,Computer - Informática,no,
+monitor,Monitor,noun,Computer - Informática,no,
+altavoz,Speaker,noun,Computer - Informática,no,
+ratón,Mouse,noun,Computer - Informática,no,
+webcam,Webcam,noun,Computer - Informática,no,
+micrófono,Microphone,noun,Computer - Informática,no,
+ordenador de escritorio,Desktop computer,phrase,Computer - Informática,no,
+llamar,Call,verb,Daily Routine Afternoon - rutina diaria por la tarde,yes,A2
+navegar por internet,Surf the internet,phrase,Daily Routine Afternoon - rutina diaria por la tarde,no,
+llamar por teléfono,Telephone,verb,Daily Routine Afternoon - rutina diaria por la tarde,no,
+cocinar,Cook,verb,Daily Routine Evening - Rutina diaria de noche,yes,A2
+volver,Return,verb,Daily Routine Evening - Rutina diaria de noche,yes,A1
+dormir,Sleep,verb,Daily Routine Evening - Rutina diaria de noche,no,
+quitarse,Take off,verb,Daily Routine Evening - Rutina diaria de noche,yes,A2
+relajar,Relax,verb,Daily Routine Evening - Rutina diaria de noche,no,
+duchar,Shower,verb,Daily Routine Evening - Rutina diaria de noche,no,
+baño,Bath,noun,Daily Routine Evening - Rutina diaria de noche,yes,A1
+despertar,Wake up,verb,Daily Routine Morning - Rutina diaria de la mañana,no,
+comer,Eat,verb,Daily Routine Morning - Rutina diaria de la mañana,yes,A1
+irse,Leave,verb,Daily Routine Morning - Rutina diaria de la mañana,no,
+lunes,Monday,noun,Days of the Week - Días de la Semana,yes,A1
+martes,Tuesday,noun,Days of the Week - Días de la Semana,yes,A1
+miércoles,Wednesday,noun,Days of the Week - Días de la Semana,yes,A1
+jueves,Thursday,noun,Days of the Week - Días de la Semana,yes,A1
+viernes,Friday,noun,Days of the Week - Días de la Semana,yes,A1
+sábado,Saturday,noun,Days of the Week - Días de la Semana,yes,A1
+domingo,Sunday,noun,Days of the Week - Días de la Semana,yes,A1
+frente,Front,adverb,Directions - Indicaciones,no,
+atras,Back,noun,Directions - Indicaciones,no,
+este,East,noun,Directions - Indicaciones,yes,A1
+oeste,West,noun,Directions - Indicaciones,yes,A1
+norte,North,noun,Directions - Indicaciones,yes,A1
+sur,South,noun,Directions - Indicaciones,yes,A1
+afuera,Outside,adverb,Directions - Indicaciones,no,
+adentro,Inside,adverb,Directions - Indicaciones,no,
+derecha,Right,noun,Directions - Indicaciones,yes,A1
+izquierda,Left,noun,Directions - Indicaciones,yes,A1
+libra,Pound,noun,Measurements - Mediciones,yes,A2
+milla,Mile,noun,Measurements - Mediciones,no,
+pie,Foot,noun,Measurements - Mediciones,yes,A1
+pulgada,Inch,noun,Measurements - Mediciones,no,
+centímetro,Centimeter,noun,Measurements Metric - Medidas Métricas,yes,A2
+kiogram,Kilogram,noun,Measurements Metric - Medidas Métricas,no,
+gramo,Gram,noun,Measurements Metric - Medidas Métricas,yes,A2
+metro,Meter,noun,Measurements Metric - Medidas Métricas,yes,A1
+litro,Liter,noun,Measurements Metric - Medidas Métricas,yes,A2
+kilómetro,Kilometer,noun,Measurements Metric - Medidas Métricas,yes,A1
+tarjeta de débito,Debit card,noun,Money - Dinero,no,
+billete,Bill,noun,Money - Dinero,yes,A1
+mayo,May,noun,Months of the Year - Meses del Año,yes,A1
+marzo,March,noun,Months of the Year - Meses del Año,yes,A1
+enero,January,noun,Months of the Year - Meses del Año,yes,A1
+febrero,February,noun,Months of the Year - Meses del Año,yes,A1
+abril,April,noun,Months of the Year - Meses del Año,yes,A1
+junio,June,noun,Months of the Year - Meses del Año,yes,A1
+julio,July,noun,Months of the Year - Meses del Año,yes,A1
+agosto,August,noun,Months of the Year - Meses del Año,yes,A1
+septiembre,September,noun,Months of the Year - Meses del Año,yes,A1
+octubre,October,noun,Months of the Year - Meses del Año,yes,A1
+noviembre,November,noun,Months of the Year - Meses del Año,yes,A1
+diciembre,December,noun,Months of the Year - Meses del Año,yes,A1
+uno,One,noun,Numbers 00-10 - Números 00-10,yes,A1
+dos,Two,noun,Numbers 00-10 - Números 00-10,yes,A1
+tres,Three,noun,Numbers 00-10 - Números 00-10,yes,A1
+cuatro,Four,noun,Numbers 00-10 - Números 00-10,yes,A1
+cinco,Five,noun,Numbers 00-10 - Números 00-10,yes,A1
+seis,Six,noun,Numbers 00-10 - Números 00-10,yes,A1
+siete,Seven,noun,Numbers 00-10 - Números 00-10,yes,A1
+ocho,Eight,noun,Numbers 00-10 - Números 00-10,yes,A1
+nueve,Nine,noun,Numbers 00-10 - Números 00-10,yes,A1
+diez,Ten,noun,Numbers 00-10 - Números 00-10,yes,A1
+cero,Zero,noun,Numbers 00-10 - Números 00-10,yes,A1
+quinientos,Five hundred,noun,Numbers 0101-0999 - Números 0101-0999,yes,A1
+novecientos noventa y nueve,Nine hundred ninty-nine,noun,Numbers 0101-0999 - Números 0101-0999,no,
+ciento uno,One hundred one,noun,Numbers 0101-0999 - Números 0101-0999,no,
+cuatrocientos,Four hundred,noun,Numbers 0101-0999 - Números 0101-0999,yes,A1
+setecientos,Seven hundred,noun,Numbers 0101-0999 - Números 0101-0999,yes,A1
+doscientos,Two hundred,noun,Numbers 0101-0999 - Números 0101-0999,yes,A1
+trescientos,Three hundred,noun,Numbers 0101-0999 - Números 0101-0999,yes,A1
+ochocientos,Eight hundred,noun,Numbers 0101-0999 - Números 0101-0999,yes,A1
+seiscientos,Six hundred,noun,Numbers 0101-0999 - Números 0101-0999,yes,A1
+novecientos,Nine hundred,noun,Numbers 0101-0999 - Números 0101-0999,yes,A1
+once,Eleven,noun,Numbers 011-20 - Números 011-20,yes,A1
+doce,Twelve,noun,Numbers 011-20 - Números 011-20,yes,A1
+trece,Thirteen,noun,Numbers 011-20 - Números 011-20,yes,A1
+catorce,Fourteen,noun,Numbers 011-20 - Números 011-20,yes,A1
+quince,Fifteen,noun,Numbers 011-20 - Números 011-20,yes,A1
+dieciséis,Sixteen,noun,Numbers 011-20 - Números 011-20,yes,A1
+diecisiete,Seventeen,noun,Numbers 011-20 - Números 011-20,yes,A1
+dieciocho,Eighteen,noun,Numbers 011-20 - Números 011-20,yes,A1
+diecinueve,Nineteen,noun,Numbers 011-20 - Números 011-20,yes,A1
+veinte,Twenty,noun,Numbers 011-20 - Números 011-20,yes,A1
+veintiuno,Twenty-one,noun,Numbers 021-100 - Números 021-100,yes,A1
+veintidós,Twenty-two,noun,Numbers 021-100 - Números 021-100,no,
+treinta y tres,Thirty-three,noun,Numbers 021-100 - Números 021-100,no,
+cuarenta y cuatro,Forty-four,noun,Numbers 021-100 - Números 021-100,no,
+cincuenta y cinco,Fifty-five,noun,Numbers 021-100 - Números 021-100,no,
+sesenta y seis,Sixty-six,noun,Numbers 021-100 - Números 021-100,no,
+setenta y siete,Seventy-seven,noun,Numbers 021-100 - Números 021-100,no,
+ochenta y ocho,Eighty-eight,noun,Numbers 021-100 - Números 021-100,no,
+noventa y nueve,Ninety-nine,noun,Numbers 021-100 - Números 021-100,no,
+cien,One hundred,noun,Numbers 021-100 - Números 021-100,yes,A1
+mil,One thousand,noun,Numbers 1000-10000 - Números de 1000 a 10000,yes,A1
+dos mil,Two thousand,noun,Numbers 1000-10000 - Números de 1000 a 10000,no,
+ocho mil,Eight thousand,noun,Numbers 1000-10000 - Números de 1000 a 10000,no,
+tres mil,Three thousand,noun,Numbers 1000-10000 - Números de 1000 a 10000,no,
+cuatro mil,Four thousand,noun,Numbers 1000-10000 - Números de 1000 a 10000,no,
+cinco mil,Five thousand,noun,Numbers 1000-10000 - Números de 1000 a 10000,no,
+seis mil,Six thousand,noun,Numbers 1000-10000 - Números de 1000 a 10000,no,
+siete mil,Seven thousand,noun,Numbers 1000-10000 - Números de 1000 a 10000,no,
+nueve mil,Nine thousand,noun,Numbers 1000-10000 - Números de 1000 a 10000,no,
+mil millones,One billion,phrase,Numbers Big - Números grandes,no,
+un billón,One trillion,numeral,Numbers Big - Números grandes,no,
+diez mil,Ten thousand,phrase,Numbers Big - Números grandes,no,
+cien mil,One hundred thousand,noun,Numbers Big - Números grandes,no,
+un millón,One million,phrase,Numbers Big - Números grandes,no,
+cien millones,One hundred million,phrase,Numbers Big - Números grandes,no,
+diez mil millones,Ten billion,phrase,Numbers Big - Números grandes,no,
+cien mil millones,One hundred billion,phrase,Numbers Big - Números grandes,no,
+diez billones,Ten trillion,phrase,Numbers Big - Números grandes,no,
+cien billones,One hundred trillion,numeral,Numbers Big - Números grandes,no,
+primero,First,adjective,Numbers Ordinal - Números ordinales,yes,A1
+tercero,Third,adjective,Numbers Ordinal - Números ordinales,yes,A1
+cuarto,Fourth,adjective,Numbers Ordinal - Números ordinales,yes,A1
+quinto,Fifth,adjective,Numbers Ordinal - Números ordinales,yes,A1
+sexto,Sixth,adjective,Numbers Ordinal - Números ordinales,yes,A1
+séptimo,Seventh,adjective,Numbers Ordinal - Números ordinales,yes,A1
+noveno,Ninth,adjective,Numbers Ordinal - Números ordinales,yes,A1
+décimo,Tenth,adjective,Numbers Ordinal - Números ordinales,yes,A1
+octavo,Eighth,adjective,Numbers Ordinal - Números ordinales,yes,A1
+a cuadros,Checkered,adjective,Patterns - Patrones,no,
+a lunares,Polka dot,noun,Patterns - Patrones,no,
+a rayas,Pin-striped,adjective,Patterns - Patrones,no,
+punto,Dot,noun,Patterns - Patrones,yes,A1
+sólido,Solid,adjective,Patterns - Patrones,no,
+rayado,Striped,adjective,Patterns - Patrones,no,
+escocés,Plaid,adjective,Patterns - Patrones,no,
+ondulado,Wavy,adjective,Patterns - Patrones,no,
+cartera,Wallet,noun,Personal Items - Artículos Personales,yes,A1
+cartera,Purse,noun,Personal Items - Artículos Personales,yes,A1
+por qué,Why,adverb,Questions - Preguntas,no,
+cómo,How,adverb,Questions - Preguntas,yes,A1
+cuando,When,adverb,Questions - Preguntas,yes,A2
+donde,Where,adverb,Questions - Preguntas,no,
+qué,What,adverb,Questions - Preguntas,yes,A1
+quién,Who,adverb,Questions - Preguntas,yes,A1
+qué tipo,What kind,phrase,Questions - Preguntas,no,
+¿qué pasa?,What's up?,expression,Questions - Preguntas,no,
+¿Cuál es tu nombre?,What's your name?,expression,Questions - Preguntas,no,
+¿Cuál es tu número de teléfono?,What's your phone number?,expression,Questions - Preguntas,no,
+¿Cuál es tu dirección de correo electrónico?,What's your e-mail address?,expression,Questions - Preguntas,no,
+¿Cuántos años tienes?,How old are you?,expression,Questions - Preguntas,no,
+¿De dónde eres?,Where are you from?,expression,Questions - Preguntas,no,
+¿Quién es ese?,Who is that?,expression,Questions - Preguntas,no,
+¿Qué es?,What is it?,expression,Questions - Preguntas,no,
+¿Dónde viven?,Where do live?,expression,Questions - Preguntas,no,
+redondo,Round,adjective,Shape Size Consistency - Forma Consistencia Tamaño,yes,A2
+grande,Big,adjective,Shape Size Consistency - Forma Consistencia Tamaño,yes,A1
+ancho,Wide,adjective,Shape Size Consistency - Forma Consistencia Tamaño,yes,A2
+denso,Dense,adjective,Shape Size Consistency - Forma Consistencia Tamaño,no,
+pequeño,Small,adjective,Shape Size Consistency - Forma Consistencia Tamaño,yes,A1
+vasto,Vast,adjective,Shape Size Consistency - Forma Consistencia Tamaño,no,
+cuadrado,Square,adjective,Shape Size Consistency - Forma Consistencia Tamaño,yes,A2
+angosto,Narrow,adjective,Shape Size Consistency - Forma Consistencia Tamaño,no,
+duro,Hard,adjective,Shape Size Consistency - Forma Consistencia Tamaño,no,
+áspero,Coarse,adjective,Shape Size Consistency - Forma Consistencia Tamaño,no,
+fino,Fine,adjective,Shape Size Consistency - Forma Consistencia Tamaño,no,
+suave,Soft,adjective,Shape Size Consistency - Forma Consistencia Tamaño,no,
+ligero,Light,adjective,Shape Size Consistency - Forma Consistencia Tamaño,no,
+pesado,Heavy,adjective,Shape Size Consistency - Forma Consistencia Tamaño,no,
+largo,Long,adjective,Shape Size Consistency - Forma Consistencia Tamaño,yes,A1
+regalo,Present,noun,Shopping - Compras,yes,A2
+devolver,Return,verb,Shopping - Compras,yes,A2
+costo,Cost,noun,Shopping - Compras,no,
+barato,Cheap,adjective,Shopping - Compras,yes,A1
+caro,Expensive,adjective,Shopping - Compras,yes,A1
+descuento,Discount,noun,Shopping - Compras,no,
+venta,Sale,noun,Shopping - Compras,no,
+vendedor,Salesperson,noun,Shopping - Compras,yes,A1
+gastar dinero,Spend money,noun,Shopping - Compras,no,
+tienda de ropa,Clothing store,noun,Shopping - Compras,no,
+almacén,Department store,noun,Shopping - Compras,no,
+boutique,Boutique,noun,Shopping - Compras,no,
+tienda de zapatos,Shoe store,noun,Shopping - Compras,no,
+joyería,Jewelry store,noun,Shopping - Compras,no,
+muestra,Sample,noun,Shopping - Compras,no,
+tienda,Store,noun,Shopping - Compras,yes,A1
+compras,Shopping,noun,Shopping - Compras,no,
+mercado,Market,noun,Shopping - Compras,yes,A1
+precio,Price,noun,Shopping - Compras,yes,A1
+cupón,Coupon,noun,Shopping - Compras,no,
+bolsa,Bag,noun,Shopping - Compras,yes,A1
+bolsa de plástico,Plastic bag,noun,Shopping - Compras,no,
+pasillo,Aisle,noun,Shopping - Compras,yes,A2
+carrito de compras,Shopping cart,noun,Shopping - Compras,no,
+envíar mensajes de texto,Text,phrase,Technology Everyday - Tecnología de todos los días,no,
+café internet,Internet cafe,phrase,Technology Everyday - Tecnología de todos los días,no,
+inalámbrico,Wireless,adjective,Technology Everyday - Tecnología de todos los días,no,
+acceso a Internet,Internet access,phrase,Technology Everyday - Tecnología de todos los días,no,
+correo electrónico,E-mail,noun,Technology Everyday - Tecnología de todos los días,yes,A1
+mensaje de texto,Text message,noun,Technology Everyday - Tecnología de todos los días,no,
+skype,Skype,noun,Technology Everyday - Tecnología de todos los días,no,
+yahoo,Yahoo!,noun,Technology Everyday - Tecnología de todos los días,no,
+IPhone,IPhone,noun,Technology Everyday - Tecnología de todos los días,no,
+blog,Blog,noun,Technology Everyday - Tecnología de todos los días,no,
+sitio de redes sociales,Social networking site,noun,Technology Everyday - Tecnología de todos los días,no,
+hotmail,Hotmail,noun,Technology Everyday - Tecnología de todos los días,no,
+motor de búsqueda,Search engine,noun,Technology Everyday - Tecnología de todos los días,no,
+enviar un correo electrónico,E-mail,phrase,Technology Everyday - Tecnología de todos los días,no,
+telefóno público,Public phone,noun,Telephone - Teléfono,no,
+telefonía IP,IP phone,noun,Telephone - Teléfono,no,
+teléfono celular,Cellular phone,noun,Telephone - Teléfono,no,
+llamada local,Local phone call,noun,Telephone - Teléfono,no,
+VoIP,VoIP,noun,Telephone - Teléfono,no,
+llamar a un número equivocado,Call a wrong number,phrase,Telephone - Teléfono,no,
+buscar,Search,verb,Telephone - Teléfono,yes,A2
+marcar,Dial,verb,Telephone - Teléfono,no,
+contestar,Pick up,verb,Telephone - Teléfono,yes,A2
+número de teléfono,Phone number,noun,Telephone - Teléfono,yes,A1
+auricular,Receiver,noun,Telephone - Teléfono,no,
+operador,Operator,noun,Telephone - Teléfono,no,
+teléfono móvil,Mobile phone,noun,Telephone - Teléfono,no,
+llamada de larga distancia,Long-distance call,phrase,Telephone - Teléfono,no,
+ocupado,Busy,adjective,Telephone - Teléfono,no,
+medianoche,Midnight,noun,Time Relative - Tiempo relativo,no,
+noche,Evening,noun,Time Relative - Tiempo relativo,yes,A1
+mañana,Morning,noun,Time Relative - Tiempo relativo,yes,A1
+todo el dia,All day,phrase,Time Relative - Tiempo relativo,no,
+noche,Nighttime,noun,Time Relative - Tiempo relativo,yes,A1
+día,Daytime,noun,Time Relative - Tiempo relativo,yes,A1
+después,After,adverb,Time Relative - Tiempo relativo,yes,A1
+de aquí en adelante,From now on,phrase,Time Relative - Tiempo relativo,no,
+antes,Before,adverb,Time Relative - Tiempo relativo,yes,A1
+nunca,Never,adverb,Time Relative - Tiempo relativo,yes,A1
+ahora,Now,adverb,Time Relative - Tiempo relativo,yes,A1
+seguido,Often,adverb,Time Relative - Tiempo relativo,no,
+usualmente,Usually,adverb,Time Relative - Tiempo relativo,no,
+invierno,Winter,noun,Time Seasons - Temporadas,yes,A1
+verano,Summer,noun,Time Seasons - Temporadas,yes,A1
+primavera,Spring,noun,Time Seasons - Temporadas,yes,A1
+otoño,Fall,noun,Time Seasons - Temporadas,yes,A1
+lluvia pesada,Heavy rain,phrase,Weather - Clima,no,
+congelar,Freeze,verb,Weather - Clima,no,
+soleado,Sunny,adjective,Weather - Clima,no,
+lluvioso,Rainy,adjective,Weather - Clima,no,
+arcoiris,Rainbow,noun,Weather - Clima,no,
+relámpago,Lightning,noun,Weather - Clima,no,
+cielo claro,Clear sky,phrase,Weather - Clima,no,
+llover duro,Shower,noun,Weather - Clima,no,
+llovizna,Drizzle,noun,Weather - Clima,no,
+humedad,Humidity,noun,Weather - Clima,no,
+viento,Wind,noun,Weather - Clima,yes,A1
+aguanieve,Sleet,noun,Weather - Clima,no,
+helarse,Ice over,verb,Weather - Clima,no,
+bochornoso,Muggy,adjective,Weather - Clima,no,
+nublado,Cloudy,adjective,Weather - Clima,no,
+por debajo de cero,Below freezing,phrase,Weather - Clima,no,
+bajo cero,Below zero,phrase,Weather - Clima,no,
+despejar,Clear up,verb,Weather - Clima,no,
+calor extremo,Extreme heat,phrase,Weather - Clima,no,
+escarcha,Frost,noun,Weather - Clima,no,
+nublarse,Become cloudy,verb,Weather - Clima,no,
+hielo,Ice,noun,Weather - Clima,yes,A2
+dibujo,Drawing,noun,Art - Arte,yes,A2
+novela,Novel,noun,Literature - Literatura,yes,A2
+literatura,Literature,noun,Literature - Literatura,yes,A2
+cuento,Short story,noun,Literature - Literatura,yes,A2
+flauta,Flute,noun,Musical Instruments - Instrumentos Musicales,no,
+trombón,Trombone,noun,Musical Instruments - Instrumentos Musicales,no,
+saxofón,Saxophone,noun,Musical Instruments - Instrumentos Musicales,no,
+armónica,Harmonica,noun,Musical Instruments - Instrumentos Musicales,no,
+batería,Drums,noun,Musical Instruments - Instrumentos Musicales,no,
+ópera,Opera,noun,Performing Arts - Artes Escénicas,yes,A2
+fotografía,Photography,noun,Photography - Fotografía,yes,A2
+fotografía,Photograph,noun,Photography - Fotografía,yes,A2
+disfrutar,Enjoy,verb,At The Table - En la Mesa,no,
+hambriento,Hungry,adjective,At The Table - En la Mesa,no,
+sediento,Thirsty,adjective,At The Table - En la Mesa,no,
+delicioso,Delicious,adjective,At The Table - En la Mesa,no,
+asqueroso,Disgusting,adjective,At The Table - En la Mesa,no,
+condimento,Condiment,noun,Condiments - Condimentos,no,
+azucar,Sugar,noun,Condiments - Condimentos,no,
+sal,Salt,noun,Condiments - Condimentos,yes,A2
+vinagre,Vinegar,noun,Condiments - Condimentos,no,
+chile,Chili pepper,noun,Condiments - Condimentos,no,
+mantequilla,Butter,noun,Condiments - Condimentos,yes,A2
+salsa picante,Hot sauce,noun,Condiments - Condimentos,no,
+salsa de tomate,Ketchup,noun,Condiments - Condimentos,no,
+mostaza,Mustard,noun,Condiments - Condimentos,no,
+salsa Tabasco,Tabasco sauce,noun,Condiments - Condimentos,no,
+pimienta,Pepper,noun,Condiments - Condimentos,yes,A2
+verdura,Vegetable,noun,Cooking - Cocina,yes,A1
+mezclar,Mix,verb,Cooking Actions - Acciones en la cocina,no,
+cortar,Chop,verb,Cooking Actions - Acciones en la cocina,no,
+picar,Mince,verb,Cooking Actions - Acciones en la cocina,no,
+hornear,Bake,verb,Cooking Actions - Acciones en la cocina,no,
+asar a la parilla,Grill,verb,Cooking Actions - Acciones en la cocina,no,
+preparar,Prepare,verb,Cooking Actions - Acciones en la cocina,yes,A2
+sofreír,Stir-fry,verb,Cooking Actions - Acciones en la cocina,no,
+freír,Fry,verb,Cooking Actions - Acciones en la cocina,no,
+rostizar,Roast,verb,Cooking Actions - Acciones en la cocina,no,
+cortar,Cut,verb,Cooking Actions - Acciones en la cocina,no,
+saltear,Saute,verb,Cooking Actions - Acciones en la cocina,no,
+hervir,Boil,verb,Cooking Actions - Acciones en la cocina,no,
+preparar al vapor,Steam,verb,Cooking Actions - Acciones en la cocina,no,
+recalentar,Reheat,verb,Cooking Actions - Acciones en la cocina,no,
+cocinar en el microondas,Microwave,verb,Cooking Actions - Acciones en la cocina,no,
+asar,Barbecue,verb,Cooking Actions - Acciones en la cocina,no,
+café,Coffee,noun,Drinks - Bebidas,yes,A1
+agua hirviendo,Boiling water,phrase,Drinks - Bebidas,no,
+jugo de frutas,Fruit juice,phrase,Drinks - Bebidas,no,
+refresco,Soda,noun,Drinks - Bebidas,no,
+leche,Milk,noun,Drinks - Bebidas,yes,A1
+te negro,Black tea,noun,Drinks - Bebidas,no,
+té de hierbas,Herb tea,noun,Drinks - Bebidas,no,
+té,Tea,noun,Drinks - Bebidas,yes,A1
+café con leche,Caffe latte,noun,Drinks - Bebidas,yes,A1
+cocoa,Cocoa,noun,Drinks - Bebidas,no,
+refresco,Soft drink,noun,Drinks - Bebidas,no,
+jugo,Juice,noun,Drinks - Bebidas,yes,A2
+gaseosa,Pop,noun,Drinks - Bebidas,no,
+cerveza,Beer,noun,Drinks Alcoholic - Bebidas Alcohólicas,yes,A1
+whiskey,Whiskey,noun,Drinks Alcoholic - Bebidas Alcohólicas,no,
+vino,Wine,noun,Drinks Alcoholic - Bebidas Alcohólicas,yes,A1
+alcohol,Alcohol,noun,Drinks Alcoholic - Bebidas Alcohólicas,yes,A2
+palillos,Chopsticks,noun,Eating Utensils - Utensilios de Comida,no,
+cubierto,Eating utensil,noun,Eating Utensils - Utensilios de Comida,no,
+cuchillo para filete,Steak knife,phrase,Eating Utensils - Utensilios de Comida,no,
+cuchillo de talla,Carving knife,phrase,Eating Utensils - Utensilios de Comida,no,
+hamburguesa,Hamburger,noun,Fast Food - Comida Rápida,yes,A1
+hamburguesa con queso,Cheese burger,noun,Fast Food - Comida Rápida,no,
+pizza,Pizza,noun,Fast Food - Comida Rápida,no,
+perro caliente,Hot dog,noun,Fast Food - Comida Rápida,no,
+salado,Salty,adjective,Flavors - Sabores,no,
+sabor,Taste,noun,Flavors - Sabores,no,
+dulce,Sweet,adjective,Flavors - Sabores,no,
+amargo,Bitter,adjective,Flavors - Sabores,no,
+picante,Spicy,adjective,Flavors - Sabores,no,
+agrio,Sour,adjective,Flavors - Sabores,no,
+probar,Taste,verb,Flavors - Sabores,no,
+arroz,Rice,noun,Food - Alimentos,yes,A2
+trigo,Wheat,noun,Food - Alimentos,no,
+pan,Bread,noun,Food - Alimentos,yes,A1
+arroz cocido,Cooked rice,phrase,Food - Alimentos,no,
+cebada,Barley,noun,Food - Alimentos,no,
+carne,Meat,noun,Food - Alimentos,yes,A1
+dulces,Sweets,noun,Food - Alimentos,no,
+pastel,Cake,noun,Food - Alimentos,yes,A2
+dulce,Candy,noun,Food - Alimentos,no,
+huevo,Egg,noun,Food - Alimentos,yes,A1
+fideos,Noodle,noun,Food - Alimentos,no,
+fruta,Fruit,noun,Fruits - Frutas,yes,A1
+albaricoque,Apricot,noun,Fruits - Frutas,no,
+plátano,Banana,noun,Fruits - Frutas,yes,A2
+manzana,Apple,noun,Fruits - Frutas,yes,A2
+uva,Grape,noun,Fruits - Frutas,no,
+sandía,Watermelon,noun,Fruits - Frutas,no,
+toronja,Grapefruit,noun,Fruits - Frutas,no,
+piña,Pineapple,noun,Fruits - Frutas,no,
+melón,Melon,noun,Fruits - Frutas,no,
+tomate,Tomato,noun,Fruits - Frutas,yes,A2
+fresa,Strawberry,noun,Fruits - Frutas,yes,A2
+higo,Fig,noun,Fruits - Frutas,no,
+ciruela,Plum,noun,Fruits - Frutas,no,
+arándano,Blueberry,noun,Fruits - Frutas,no,
+ciruela pasa,Prune,noun,Fruits - Frutas,no,
+mango,Mango,noun,Fruits - Frutas,no,
+limón,Lemon,noun,Fruits - Frutas,no,
+frambuesa,Raspberry,noun,Fruits - Frutas,no,
+cereza,Cherry,noun,Fruits - Frutas,no,
+ajo,Garlic,noun,Ingredients - Ingredientes,yes,A2
+jengibre,Ginger,noun,Ingredients - Ingredientes,no,
+aceite de oliva,Olive oil,noun,Ingredients - Ingredientes,no,
+especia,Spice,noun,Ingredients - Ingredientes,no,
+salsa,Sauce,noun,Ingredients - Ingredientes,yes,A2
+aceite vegetal,Vegetable oil,noun,Ingredients - Ingredientes,no,
+aceite de sésamo,Sesame oil,noun,Ingredients - Ingredientes,no,
+ingrediente,Ingredient,noun,Ingredients - Ingredientes,yes,A2
+harina,Flour,noun,Ingredients - Ingredientes,yes,A2
+aceite de cocina,Cooking oil,noun,Ingredients - Ingredientes,no,
+almuerzo,Lunch,noun,Meals - Comidas,no,
+aperitivo,Appetizer,noun,Meals - Comidas,yes,A2
+entrada,Entrée,noun,Meals - Comidas,yes,A1
+platillo principal,Main course,noun,Meals - Comidas,no,
+comida casera,Home cooking,noun,Meals - Comidas,no,
+comer afuera,Eat out,phrase,Meals - Comidas,no,
+botana de medianoche,Midnight snack,phrase,Meals - Comidas,no,
+lleno,Full,adjective,Meals - Comidas,no,
+postre,Dessert,noun,Meals - Comidas,yes,A1
+servir,Serve,verb,Meals - Comidas,no,
+comida de platillos,Course meal,phrase,Meals - Comidas,no,
+buffet,Buffet,noun,Meals - Comidas,no,
+todo lo que puedas comer,All-you-can-eat,phrase,Meals - Comidas,no,
+comida,Meal,noun,Meals - Comidas,yes,A1
+carne de res,Beef,noun,Meats - Carnes,no,
+puerco,Pork,noun,Meats - Carnes,no,
+pollo,Chicken,noun,Meats - Carnes,yes,A2
+cordero,Lamb,noun,Meats - Carnes,yes,A2
+nuez,Nut,noun,Nuts - Nueces,no,
+cacahuate,Peanut,noun,Nuts - Nueces,no,
+nuez de la india,Cashew nut,noun,Nuts - Nueces,no,
+cena,Dinner,noun,Restaurants - Restaurantes,yes,A1
+bocadillo,Snack,noun,Restaurants - Restaurantes,yes,A1
+maître,Maitre d',noun,Restaurants - Restaurantes,no,
+chef,Chef,noun,Restaurants - Restaurantes,yes,A2
+menú,Menu,noun,Restaurants - Restaurantes,yes,A1
+autoservicio,Self-service,noun,Restaurants - Restaurantes,no,
+jarra de agua,Pitcher of water,phrase,Restaurants - Restaurantes,no,
+no fumador,Non-smoking,phrase,Restaurants - Restaurantes,no,
+fumador,Smoking,noun,Restaurants - Restaurantes,no,
+factura,Bill,noun,Restaurants - Restaurantes,yes,A2
+ordenar comida,Order food,phrase,Restaurants - Restaurantes,no,
+comida occidental,Western food,phrase,Restaurants - Restaurantes,no,
+comida italiana,Italian food,noun,Restaurants - Restaurantes,no,
+comida china,Chinese food,noun,Restaurants - Restaurantes,no,
+comida étnica,Ethnic food,noun,Restaurants - Restaurantes,no,
+cheque,Check,noun,Restaurants - Restaurantes,yes,A2
+agua,Water,noun,Restaurants - Restaurantes,yes,A1
+comida rápida,Fast food,noun,Restaurants and Establishments - Restaurantes y Establecimientos,yes,A2
+restaurante,Restaurant,noun,Restaurants and Establishments - Restaurantes y Establecimientos,yes,A1
+café,Café,noun,Restaurants and Establishments - Restaurantes y Establecimientos,yes,A1
+bar,Bar,noun,Restaurants and Establishments - Restaurantes y Establecimientos,yes,A1
+cafetería,Coffee shop,noun,Restaurants and Establishments - Restaurantes y Establecimientos,yes,A2
+mariscos,Seafood,noun,Seafood - Mariscos,no,
+pescado,Fish,noun,Seafood - Mariscos,yes,A1
+camarón,Shrimp,noun,Seafood - Mariscos,yes,A2
+salmón,Salmon,noun,Seafood - Mariscos,yes,A2
+atún,Tuna,noun,Seafood - Mariscos,yes,A2
+cangrejo,Crab,noun,Seafood - Mariscos,no,
+langosta,Lobster,noun,Seafood - Mariscos,no,
+cucharón,Ladle,noun,Tableware - Utensilios de cocina,no,
+palillo,Toothpick,noun,Tableware - Utensilios de cocina,no,
+plato,Dish,noun,Tableware - Utensilios de cocina,yes,A1
+taza,Cup,noun,Tableware - Utensilios de cocina,yes,A2
+vaso,Drinking glass,noun,Tableware - Utensilios de cocina,yes,A2
+taza de café,Coffee mug,noun,Tableware - Utensilios de cocina,no,
+taza de té,Teacup,noun,Tableware - Utensilios de cocina,no,
+jarro,Pitcher,noun,Tableware - Utensilios de cocina,no,
+tetera,Teapot,noun,Tableware - Utensilios de cocina,no,
+copa de vino,Wine glass,noun,Tableware - Utensilios de cocina,no,
+cafetera,Coffee pot,noun,Tableware - Utensilios de cocina,no,
+maíz,Corn,noun,Vegetables - Vegetales,no,
+papa,Potato,noun,Vegetables - Vegetales,yes,A2
+frijol de soya,Soybean,noun,Vegetables - Vegetales,no,
+papa dulce,Sweet potato,noun,Vegetables - Vegetales,no,
+zanahoria,Carrot,noun,Vegetables - Vegetales,yes,A2
+nabo,Turnip,noun,Vegetables - Vegetales,no,
+cebolla,Onion,noun,Vegetables - Vegetales,yes,A2
+champiñón,Mushroom,noun,Vegetables - Vegetales,no,
+lechuga,Lettuce,noun,Vegetables - Vegetales,yes,A2
+pepino,Cucumber,noun,Vegetables - Vegetales,no,
+coliflor,Cauliflower,noun,Vegetables - Vegetales,no,
+repollo,Cabbage,noun,Vegetables - Vegetales,no,
+apio,Celery,noun,Vegetables - Vegetales,no,
+berenjena,Eggplant,noun,Vegetables - Vegetales,no,
+pimiento,Bell pepper,noun,Vegetables - Vegetales,no,
+brócoli,Broccoli,noun,Vegetables - Vegetales,no,
+espinaca,Spinach,noun,Vegetables - Vegetales,no,
+brote de judía,Bean sprout,noun,Vegetables - Vegetales,no,
+músculo,Muscle,noun,Body - Cuerpo,no,
+hueso,Bone,noun,Body - Cuerpo,no,
+columna vertebral,Backbone,noun,Body - Cuerpo,no,
+cuerpo,Body,noun,Body - Cuerpo,no,
+estómago,Stomach,noun,Body - Cuerpo,yes,A2
+piel,Skin,noun,Body - Cuerpo,yes,A2
+sangre,Blood,noun,Body - Cuerpo,no,
+rodilla,Knee,noun,Body - Cuerpo,no,
+pecho,Chest,noun,Body - Cuerpo,no,
+espalda,Back,noun,Body - Cuerpo,yes,A2
+tirar,Pull,verb,Body Actions - Acciones del cuerpo,no,
+agacharse,Squat,verb,Body Actions - Acciones del cuerpo,no,
+hacer un ademán,Gesture,phrase,Body Actions - Acciones del cuerpo,no,
+levantar la mano,Raise one's hand,phrase,Body Actions - Acciones del cuerpo,no,
+levantar,Lift up,verb,Body Actions - Acciones del cuerpo,no,
+tomar,Take,verb,Body Actions - Acciones del cuerpo,yes,A2
+colgar,Hang,verb,Body Actions - Acciones del cuerpo,no,
+cavar,Dig,verb,Body Actions - Acciones del cuerpo,no,
+pulsar,Push,verb,Body Actions - Acciones del cuerpo,no,
+poner,Put,verb,Body Actions - Acciones del cuerpo,no,
+escalar,Climb,verb,Body Actions - Acciones del cuerpo,no,
+usar,Use,verb,Body Actions - Acciones del cuerpo,no,
+sacudir la cabeza,Shake one's head,phrase,Body Actions - Acciones del cuerpo,no,
+distender,Sprain,verb,Body Actions - Acciones del cuerpo,no,
+torcer,Twist,verb,Body Actions - Acciones del cuerpo,no,
+trabajar,Work,verb,Body Actions - Acciones del cuerpo,yes,A1
+atrapar,Catch,verb,Body Actions - Acciones del cuerpo,no,
+bajo,Short,adjective,Body Describing - Describiendo el Cuerpo,yes,A1
+constitución,Build,noun,Body Describing - Describiendo el Cuerpo,no,
+saludable,Healthy,adjective,Body Describing - Describiendo el Cuerpo,no,
+flaco,Skinny,adjective,Body Describing - Describiendo el Cuerpo,no,
+alto,Tall,adjective,Body Describing - Describiendo el Cuerpo,yes,A1
+delgado,Slim,adjective,Body Describing - Describiendo el Cuerpo,yes,A1
+tipo de cuerpo,Body type,phrase,Body Describing - Describiendo el Cuerpo,no,
+figura,Figure,noun,Body Describing - Describiendo el Cuerpo,no,
+grueso,Thick,adjective,Body Describing - Describiendo el Cuerpo,no,
+cuerpo,Frame,noun,Body Describing - Describiendo el Cuerpo,no,
+delgado,Thin,noun,Body Describing - Describiendo el Cuerpo,yes,A1
+sudar,Sweat,verb,Body Functions - Funciones corporales,no,
+estornudar,Sneeze,verb,Body Functions - Funciones corporales,no,
+saliva,Saliva,noun,Body Functions - Funciones corporales,no,
+hipo,Hiccup,noun,Body Functions - Funciones corporales,no,
+orinar,Urinate,verb,Body Functions - Funciones corporales,no,
+pasar el gas,Pass gas,verb,Body Functions - Funciones corporales,no,
+tirarse un pedo,Fart,phrase,Body Functions - Funciones corporales,no,
+llorar,Cry,verb,Body Functions - Funciones corporales,no,
+lágrima,Tear,noun,Body Functions - Funciones corporales,no,
+grano,Pimple,noun,Body Functions - Funciones corporales,no,
+sudor,Sweat,noun,Body Functions - Funciones corporales,no,
+toser,Cough,verb,Body Functions - Funciones corporales,no,
+aparecer (granos),Break out,verb,Body Functions - Funciones corporales,no,
+respirar,Breathe,verb,Body Functions - Funciones corporales,no,
+escupir,Spit,verb,Body Functions - Funciones corporales,no,
+defecar,Defecate,verb,Body Functions - Funciones corporales,no,
+cara,Face,noun,Body Head - Cuerpo y Cabeza,yes,A1
+barbilla,Chin,noun,Body Head - Cuerpo y Cabeza,no,
+oreja,Ear,noun,Body Head - Cuerpo y Cabeza,no,
+frente,Forehead,noun,Body Head - Cuerpo y Cabeza,no,
+cabello,Hair,noun,Body Head - Cuerpo y Cabeza,no,
+cabello rubio,Blonde hair,noun,Body Head - Cuerpo y Cabeza,no,
+cabello negro,Black hair,phrase,Body Head - Cuerpo y Cabeza,no,
+cabello castaño,Brown hair,phrase,Body Head - Cuerpo y Cabeza,no,
+cabello pelirojo,Red hair,phrase,Body Head - Cuerpo y Cabeza,no,
+boca,Mouth,noun,Body Head - Cuerpo y Cabeza,yes,A2
+bigote,Mustache,noun,Body Head - Cuerpo y Cabeza,yes,A1
+barba,Beard,noun,Body Head - Cuerpo y Cabeza,yes,A1
+mejilla,Cheek,noun,Body Head - Cuerpo y Cabeza,no,
+nariz,Nose,noun,Body Head - Cuerpo y Cabeza,yes,A1
+diente,Tooth,noun,Body Head - Cuerpo y Cabeza,yes,A1
+arruga,Wrinkle,noun,Body Head - Cuerpo y Cabeza,no,
+ceja,Eyebrow,noun,Body Head - Cuerpo y Cabeza,no,
+párpado,Eyelid,noun,Body Head - Cuerpo y Cabeza,no,
+ojo,Eye,noun,Body Head - Cuerpo y Cabeza,yes,A1
+pestaña,Eyelash,noun,Body Head - Cuerpo y Cabeza,no,
+vello de la cara,Facial hair,phrase,Body Head - Cuerpo y Cabeza,no,
+lengua,Tongue,noun,Body Head - Cuerpo y Cabeza,no,
+papila gustativa,Taste bud,noun,Body Head - Cuerpo y Cabeza,no,
+fosa nasal,Nostril,noun,Body Head - Cuerpo y Cabeza,no,
+dientes,Teeth,noun,Body Head - Cuerpo y Cabeza,no,
+labio,Lip,noun,Body Head - Cuerpo y Cabeza,no,
+muslo,Thigh,noun,Body Lower - Parte inferior del cuerpo,no,
+pantorilla,Calf,noun,Body Lower - Parte inferior del cuerpo,no,
+nalgas,Buttocks,noun,Body Lower - Parte inferior del cuerpo,no,
+tobillo,Ankle,noun,Body Lower - Parte inferior del cuerpo,no,
+pierna,Leg,noun,Body Lower - Parte inferior del cuerpo,yes,A2
+uña del dedo del pie,Toenail,noun,Body Lower - Parte inferior del cuerpo,no,
+talón,Heel,noun,Body Lower - Parte inferior del cuerpo,no,
+cintura,Waist,noun,Body Lower - Parte inferior del cuerpo,no,
+rótula,Kneecap,noun,Body Lower - Parte inferior del cuerpo,no,
+ingle,Groin,noun,Body Lower - Parte inferior del cuerpo,no,
+talón de Aquiles,Achilles' heel,noun,Body Lower - Parte inferior del cuerpo,no,
+cabeza,Head,noun,Body Upper - Cuerpo Superior,yes,A2
+cuello,Neck,noun,Body Upper - Cuerpo Superior,yes,A2
+hombro,Shoulder,noun,Body Upper - Cuerpo Superior,no,
+brazo,Arm,noun,Body Upper - Cuerpo Superior,yes,A2
+codo,Elbow,noun,Body Upper - Cuerpo Superior,no,
+antebrazo,Forearm,noun,Body Upper - Cuerpo Superior,no,
+muñeca,Wrist,noun,Body Upper - Cuerpo Superior,no,
+mano,Hand,noun,Body Upper - Cuerpo Superior,yes,A1
+dedo,Finger,noun,Body Upper - Cuerpo Superior,yes,A2
+pulgar,Thumb,noun,Body Upper - Cuerpo Superior,no,
+dedo meñique,Pinkie,noun,Body Upper - Cuerpo Superior,no,
+dedo medio,Middle finger,noun,Body Upper - Cuerpo Superior,no,
+dedo índice,Index finger,noun,Body Upper - Cuerpo Superior,no,
+dedo anular,Ring finger,noun,Body Upper - Cuerpo Superior,no,
+costilla,Rib,noun,Body Upper - Cuerpo Superior,no,
+abdomen,Abdomen,noun,Body Upper - Cuerpo Superior,no,
+barriga,Belly,noun,Body Upper - Cuerpo Superior,no,
+columna vertebral,Spine,noun,Body Upper - Cuerpo Superior,no,
+riñón,Kidney,noun,Body Upper - Cuerpo Superior,no,
+omóplato,Shoulder blade,noun,Body Upper - Cuerpo Superior,no,
+asma,Asthma,noun,Disease - Enfermedades,no,
+alergia,Allergy,noun,Disorders - Trastornos de salud,yes,A2
+vendaje,Bandage,noun,First Aid Kit - Equipo de Primeros Auxilios,no,
+temperatura corporal,Body temperature,noun,Hospitals - Hospitales,no,
+tomarse la temperatura,Take one's temperature,phrase,Hospitals - Hospitales,no,
+operación,Operation,noun,Hospitals - Hospitales,no,
+tomarse el pulso,Take one's pulse,phrase,Hospitals - Hospitales,no,
+sala de emergencia,Emergency room,noun,Hospitals - Hospitales,no,
+poner una inyección,Give an injection,phrase,Hospitals - Hospitales,no,
+doctor médico,Medical doctor,noun,Hospitals - Hospitales,no,
+paciente,Patient,noun,Hospitals - Hospitales,no,
+historia médica,Medical history,noun,Hospitals - Hospitales,no,
+seguro,Insurance,noun,Hospitals - Hospitales,yes,A2
+rayos X,X-ray,noun,Hospitals - Hospitales,no,
+análisis de sangre,Blood test,noun,Hospitals - Hospitales,no,
+intravenosa,Intravenous,adjective,Hospitals - Hospitales,no,
+termómetro,Thermometer,noun,Hospitals - Hospitales,no,
+aguja,Needle,noun,Hospitals - Hospitales,no,
+navaja de afeitar,Shaving razor,noun,Hygiene - Higiene,no,
+toallita,Washcloth,noun,Hygiene - Higiene,no,
+toalla,Towel,noun,Hygiene - Higiene,yes,A2
+jabón,Soap,noun,Hygiene - Higiene,yes,A1
+cepillo de dientes,Toothbrush,noun,Hygiene - Higiene,yes,A2
+pasta dental,Toothpaste,noun,Hygiene - Higiene,no,
+acondicionador,Conditioner,noun,Hygiene - Higiene,no,
+desodorante,Deodorant,noun,Hygiene - Higiene,yes,A2
+champú,Shampoo,noun,Hygiene - Higiene,yes,A2
+jabón líquido,Liquid soap,noun,Hygiene - Higiene,no,
+ducha,Shower,noun,Hygiene Actions - Acciones de Higiene,yes,A1
+bañar,Bathe,verb,Hygiene Actions - Acciones de Higiene,no,
+rasurar,Shave,verb,Hygiene Actions - Acciones de Higiene,no,
+cepillar,Brush,verb,Hygiene Actions - Acciones de Higiene,no,
+lavar,Wash,verb,Hygiene Actions - Acciones de Higiene,yes,A2
+peine,Comb,noun,Hygiene Actions - Acciones de Higiene,no,
+hacer gárgaras,Gargle,phrase,Hygiene Actions - Acciones de Higiene,no,
+cepillo,Brush,noun,Hygiene Actions - Acciones de Higiene,yes,A2
+secar con secador de mano,Blow-dry,phrase,Hygiene Actions - Acciones de Higiene,no,
+infección,Infection,noun,Illnesses - Enfermedades,no,
+enfermedad,Illness,noun,Illnesses - Enfermedades,yes,A2
+gripe,Flu,noun,Illnesses - Enfermedades,yes,A2
+resfriado,Cold,noun,Illnesses - Enfermedades,no,
+quemadura,Burn,noun,Injuries - Lesiones,no,
+herida,Injury,noun,Injuries - Lesiones,no,
+cortada,Cut,noun,Injuries - Lesiones,no,
+prescripción,Prescription,noun,Medicine - Medicina,no,
+medicina,Medicine,noun,Medicine - Medicina,yes,A2
+dolor,Pain,noun,Symptoms - Síntomas,yes,A2
+erupción,Rash,noun,Symptoms - Síntomas,no,
+tos,Cough,noun,Symptoms - Síntomas,yes,A2
+náusea,Nausea,noun,Symptoms - Síntomas,no,
+fatiga,Fatigue,noun,Symptoms - Síntomas,no,
+diarrea,Diarrhea,noun,Symptoms - Síntomas,no,
+picazón,Itch,noun,Symptoms - Síntomas,no,
+síntoma,Symptom,noun,Symptoms - Síntomas,no,
+dolor de cabeza,Headache,noun,Symptoms - Síntomas,no,
+dolor de estómago,Stomach ache,noun,Symptoms - Síntomas,no,
+fiebre,Fever,noun,Symptoms - Síntomas,yes,A2
+dolor de garganta,Sore throat,phrase,Symptoms - Síntomas,no,
+nariz que moquea,Runny nose,phrase,Symptoms - Síntomas,no,
+nariz congestionada,Stuffy nose,phrase,Symptoms - Síntomas,no,
+mareado,Dizzy,adjective,Symptoms - Síntomas,no,
+puerta,Door,noun,Bedroom - Dormitorio,yes,A1
+control remoto,Remote control,noun,Bedroom - Dormitorio,no,
+mesa,Table,noun,Furniture - Muebles,yes,A1
+estudio,Study,noun,Home - Hogar,yes,A1
+sótano,Basement,noun,Home - Hogar,no,
+dormitorio,Bedroom,noun,Home - Hogar,yes,A1
+baño,Toilet,noun,Home - Hogar,yes,A1
+cocina,Kitchen,noun,Home - Hogar,yes,A1
+puerta trasera,Back door,noun,Home - Hogar,no,
+baño,Bathroom,noun,Home - Hogar,yes,A1
+suelo,Floor,noun,Home - Hogar,yes,A2
+techo,Ceiling,noun,Home - Hogar,yes,A2
+sala de estar,Living room,noun,Home - Hogar,yes,A1
+comedor,Dining room,noun,Home - Hogar,no,
+abajo,Downstairs,noun,Home - Hogar,no,
+ático,Attic,noun,Home - Hogar,no,
+armario,Closet,noun,Home - Hogar,yes,A1
+ventana,Window,noun,Home - Hogar,yes,A1
+pasillo,Hallway,noun,Home - Hogar,yes,A2
+patio trasero,Backyard,noun,Home - Hogar,no,
+entrada,Doorway,noun,Home - Hogar,yes,A1
+entrada,Entry,noun,Home - Hogar,yes,A1
+balcón,Balcony,noun,Home - Hogar,no,
+estufa,Stove,noun,Home Appliances - Electrodomésticos,no,
+aire acondicionado,Air conditioner,noun,Home Appliances - Electrodomésticos,yes,A1
+horno de micrroondas,Microwave oven,noun,Home Electronics - Electrónicos para el hogar,no,
+arrocera eléctrica,Electric rice cooker,phrase,Home Electronics - Electrónicos para el hogar,no,
+horno,Oven,noun,Home Electronics - Electrónicos para el hogar,no,
+refrigerador,Refrigerator,noun,Home Electronics - Electrónicos para el hogar,yes,A2
+aspiradora,Vacuum cleaner,noun,Home Electronics - Electrónicos para el hogar,no,
+secador de pelo,Hair dryer,noun,Home Electronics - Electrónicos para el hogar,no,
+encender,Turn on,verb,Home Electronics - Electrónicos para el hogar,no,
+apagar,Turn off,verb,Home Electronics - Electrónicos para el hogar,no,
+computadora portátil,Laptop,noun,Home Electronics - Electrónicos para el hogar,no,
+enchufe,Electric plug,noun,Home Electronics - Electrónicos para el hogar,no,
+radio,Radio,noun,Home Electronics - Electrónicos para el hogar,yes,A1
+videograbadora,VCR,noun,Home Electronics - Electrónicos para el hogar,no,
+lavadora,Washing machine,noun,Home Electronics - Electrónicos para el hogar,yes,A2
+reproductor de DVD,DVD player,noun,Home Electronics - Electrónicos para el hogar,no,
+reproductor de discos,Record player,noun,Home Electronics - Electrónicos para el hogar,no,
+televisión,Television,noun,Home Electronics - Electrónicos para el hogar,yes,A1
+ventilador,Fan,noun,Home Electronics - Electrónicos para el hogar,no,
+electricidad,Electricity,noun,Home Electronics - Electrónicos para el hogar,no,
+microondas,Microwave,noun,Home Electronics - Electrónicos para el hogar,yes,A2
+lavavajillas,Dishwasher,noun,Home Electronics - Electrónicos para el hogar,no,
+toma de corriente,Power outlet,noun,Home Electronics - Electrónicos para el hogar,no,
+toma de corriente,Power socket,noun,Home Electronics - Electrónicos para el hogar,no,
+lámpara,Lamp,noun,Home Interior - Interior de la casa,no,
+estante,Bookshelf,noun,Home Interior - Interior de la casa,no,
+escritorio,Desk,noun,Home Interior - Interior de la casa,no,
+alfombra,Carpet,noun,Home Interior - Interior de la casa,no,
+tapete,Mat,noun,Home Interior - Interior de la casa,no,
+muebles,Furniture,noun,Home Interior - Interior de la casa,no,
+descanso para pies,Footrest,noun,Home Interior - Interior de la casa,no,
+tapete,Rug,noun,Home Interior - Interior de la casa,no,
+cama,Bed,noun,Home Interior - Interior de la casa,yes,A1
+pintura,Painting,noun,Home Interior - Interior de la casa,no,
+espejo,Mirror,noun,Home Interior - Interior de la casa,no,
+reloj de pared,Wall clock,noun,Home Interior - Interior de la casa,no,
+mesita de noche,Nightstand,noun,Home Interior - Interior de la casa,no,
+vestidor,Dresser,noun,Home Interior - Interior de la casa,no,
+mesa de café,Coffee table,noun,Home Interior - Interior de la casa,no,
+mesa de la cocina,Kitchen table,noun,Home Interior - Interior de la casa,no,
+sofá,Sofa,noun,Home Interior - Interior de la casa,yes,A1
+cortina,Curtain,noun,Home Interior - Interior de la casa,no,
+mecedora,Rocking chair,noun,Home Interior - Interior de la casa,no,
+reloj despertador,Alarm clock,noun,Home Interior - Interior de la casa,no,
+mesa de cena,Dinner table,noun,Home Interior - Interior de la casa,no,
+caja de herramientas,Toolbox,noun,Home Tools - Herramientas del hogar,no,
+cinta métrica,Tape measure,noun,Home Tools - Herramientas del hogar,no,
+nivel,Level,noun,Home Tools - Herramientas del hogar,no,
+tornillo,Screw,noun,Home Tools - Herramientas del hogar,no,
+destornillador,Screwdriver,noun,Home Tools - Herramientas del hogar,no,
+martillo,Hammer,noun,Home Tools - Herramientas del hogar,no,
+serrucho,Saw,noun,Home Tools - Herramientas del hogar,no,
+limpiar,Clean,verb,House Work - Trabajo casero,yes,A2
+secar,Dry,verb,House Work - Trabajo casero,no,
+trapear,Mop,verb,House Work - Trabajo casero,no,
+pasar la aspiradora,Vacuum,verb,House Work - Trabajo casero,no,
+barrer,Sweep,verb,House Work - Trabajo casero,no,
+guardar,Put away,verb,House Work - Trabajo casero,no,
+polvo,Dust,noun,House Work - Trabajo casero,no,
+sacar,Take out,verb,House Work - Trabajo casero,no,
+foco,Light bulb,noun,Household Items - Artículos del hogar,no,
+pila,Battery,noun,Household Items - Artículos del hogar,no,
+papel higiénico,Toilet paper,noun,Household Items - Artículos del hogar,no,
+vela,Candle,noun,Household Items - Artículos del hogar,no,
+pañuelo de papel,Tissue,noun,Household Items - Artículos del hogar,no,
+encendedor,Lighter,noun,Household Items - Artículos del hogar,no,
+esponja,Sponge,noun,Household Items - Artículos del hogar,no,
+cenicero,Ashtray,noun,Household Items - Artículos del hogar,no,
+destapador,Bottle opener,noun,Household Items - Artículos del hogar,no,
+abrelatas,Can opener,noun,Household Items - Artículos del hogar,no,
+gancho para abrigos,Coat hanger,noun,Household Items - Artículos del hogar,no,
+fósforos,Match,noun,Household Items - Artículos del hogar,no,
+cuchara,Spoon,noun,Kitchen - Cocina,no,
+tenedor,Fork,noun,Kitchen - Cocina,no,
+cuchillo,Knife,noun,Kitchen - Cocina,no,
+plato,Plate,noun,Kitchen - Cocina,yes,A1
+sartén,Frying pan,noun,Kitchen - Cocina,no,
+olla,Pot,noun,Kitchen - Cocina,no,
+tabla de cortar,Cutting board,noun,Kitchen - Cocina,no,
+tetera,Kettle,noun,Kitchen - Cocina,no,
+fregadero,Sink,noun,Kitchen - Cocina,no,
+tazón,Bowl,noun,Kitchen - Cocina,no,
+triste,Sad,adjective,Negative Emotions - Emociones negativas,yes,A2
+asustado,Scared,adjective,Negative Emotions - Emociones negativas,no,
+nervioso,Nervous,adjective,Negative Emotions - Emociones negativas,yes,A2
+desagrada,Dislike,verb,Negative Emotions - Emociones negativas,no,
+aburrido,Bored,adjective,Negative Emotions - Emociones negativas,yes,A2
+hermano menor,Younger brother,phrase,People - Personas,no,
+hermano mayor,Older brother,phrase,People - Personas,no,
+hermana menor,Younger sister,phrase,People - Personas,no,
+hermana mayor,Older sister,phrase,People - Personas,no,
+abuela,Grandmother,noun,People - Personas,no,
+abuelo,Grandfather,noun,People - Personas,yes,A1
+marido,Husband,noun,People - Personas,yes,A1
+esposa,Wife,noun,People - Personas,no,
+hijo,Son,noun,People - Personas,yes,A1
+hija,Daughter,noun,People - Personas,no,
+sra.,Mrs.,noun,People - Personas,no,
+compañero de clase,Classmate,noun,People - Personas,no,
+mujer,Woman,noun,People - Personas,yes,A1
+hombre,Man,noun,People - Personas,yes,A1
+novia,Girlfriend,noun,People - Personas,no,
+novio,Boyfriend,noun,People - Personas,yes,A1
+socio,Partner,noun,People - Personas,yes,A2
+niño,Child,noun,People - Personas,yes,A1
+vecino,Neighbor,noun,People - Personas,yes,A2
+juventud,Youth,noun,People - Personas,no,
+anciano,Elderly,adjective,People - Personas,no,
+amigo,Friend,noun,People - Personas,yes,A1
+adulto,Adult,noun,People - Personas,yes,A2
+bebé,Baby,noun,People - Personas,yes,A2
+niño,Boy,noun,People - Personas,yes,A1
+niña,Girl,noun,People - Personas,no,
+ciudadano mayor,Senior citizen,noun,People - Personas,no,
+sr.,Mr.,noun,People - Personas,no,
+feliz,Happy,adjective,People Feelings - Sentimientos,no,
+insatisfecho,Unsatisfied,adjective,People Feelings - Sentimientos,no,
+satisfecho,Satisfied,adjective,People Feelings - Sentimientos,no,
+calmado,Calm,adjective,People Feelings - Sentimientos,no,
+aburrido,Boring,adjective,People Feelings - Sentimientos,yes,A2
+emocionante,Exciting,adjective,People Feelings - Sentimientos,no,
+asustado,Afraid,adjective,People Feelings - Sentimientos,no,
+molesto,Upset,adjective,People Feelings - Sentimientos,no,
+solitario,Lonely,adjective,People Feelings - Sentimientos,no,
+temer,Fear,verb,People Feelings - Sentimientos,no,
+sentir,Feel,verb,People Feelings - Sentimientos,no,
+preocuparse,Worry,noun,People Feelings - Sentimientos,no,
+ansioso,Anxious,adjective,People Feelings - Sentimientos,no,
+enojado,Angry,adjective,People Personality - Personalidad,yes,A2
+de mal genio,Short-tempered,adjective,People Personality - Personalidad,no,
+educado,Polite,adjective,People Personality - Personalidad,no,
+despótico,Overbearing,adjective,People Personality - Personalidad,no,
+estricto,Strict,adjective,People Personality - Personalidad,no,
+sobresaliente,Outstanding,adjective,People Personality - Personalidad,no,
+grandioso,Great,adjective,People Personality - Personalidad,no,
+popular,Popular,adjective,People Personality - Personalidad,no,
+abierto,Open,adjective,People Personality - Personalidad,yes,A1
+listo,Clever,adjective,People Personality - Personalidad,no,
+notable,Remarkable,adjective,People Personality - Personalidad,no,
+animado,Lively,adjective,People Personality - Personalidad,no,
+astuto,Cunning,adjective,People Personality - Personalidad,no,
+activo,Active,adjective,People Personality - Personalidad,no,
+honesto,Honest,adjective,People Personality - Personalidad,no,
+astuto,Sly,adjective,People Personality - Personalidad,no,
+molesto,Annoying,adjective,People Personality - Personalidad,no,
+orgulloso,Proud,adjective,People Personality - Personalidad,no,
+cálido,Warm,adjective,People Personality - Personalidad,no,
+grillo,Cricket,noun,Pets - Mascotas,no,
+hámster,Hamster,noun,Pets - Mascotas,no,
+edificio de apartamentos,Apartment building,noun,Places to Live - Lugares para vivir,no,
+ciudad,City,noun,Places to Live - Lugares para vivir,yes,A1
+granja,Farm,noun,Places to Live - Lugares para vivir,no,
+ciudad,Town,noun,Places to Live - Lugares para vivir,yes,A1
+pueblo,Village,noun,Places to Live - Lugares para vivir,yes,A1
+país,Country,noun,Places to Live - Lugares para vivir,yes,A1
+suburbio,Suburb,noun,Places to Live - Lugares para vivir,no,
+gracioso,Funny,adjective,Positive Emotions - Emociones Positivas,no,
+interesado,Interested,adjective,Positive Emotions - Emociones Positivas,no,
+relajado,Relaxed,adjective,Positive Emotions - Emociones Positivas,no,
+rana,Frog,noun,Amphibians - Anfibios,no,
+tritón,Newt,noun,Amphibians - Anfibios,no,
+koala,Koala,noun,Animals Australia - Animales Australia,no,
+canguro,Kangaroo,noun,Animals Australia - Animales Australia,yes,A2
+emú,Emu,noun,Animals Australia - Animales Australia,no,
+ornitorrinco,Platypus,noun,Animals Australia - Animales Australia,no,
+wombat,Wombat,noun,Animals Australia - Animales Australia,no,
+león,Lion,noun,Animals Big Cats - Animales Grandes Gatos,no,
+tigre,Tiger,noun,Animals Big Cats - Animales Grandes Gatos,no,
+guepardo,Cheetah,noun,Animals Big Cats - Animales Grandes Gatos,no,
+jaguar,Jaguar,noun,Animals Big Cats - Animales Grandes Gatos,no,
+leona,Lioness,noun,Animals Big Cats - Animales Grandes Gatos,no,
+vaca,Cow,noun,Animals Farm - Animals Farm,yes,A2
+cerdo,Pig,noun,Animals Farm - Animals Farm,yes,A2
+oveja,Sheep,noun,Animals Farm - Animals Farm,no,
+cabra,Goat,noun,Animals Farm - Animals Farm,no,
+gallina,Chicken,noun,Animals Farm - Animals Farm,no,
+oso,Bear,noun,Animals Forest - Animales del bosque,no,
+mapache,Raccoon,noun,Animals Forest - Animales del bosque,no,
+búo,Owl,noun,Animals Forest - Animales del bosque,no,
+castor,Beaver,noun,Animals Forest - Animales del bosque,no,
+águila,Eagle,noun,Animals Forest - Animales del bosque,no,
+caballo,Horse,noun,Animals Grassland - Animales del bosque,yes,A2
+zorro,Fox,noun,Animals Grassland - Animales del bosque,no,
+venado,Deer,noun,Animals Grassland - Animales del bosque,no,
+lobo,Wolf,noun,Animals Grassland - Animales del bosque,no,
+búfalo,Buffalo,noun,Animals Grassland - Animales del bosque,no,
+jabalí,Wild boar,noun,Animals Jungle - Animales de la selva,no,
+murciélago,Bat,noun,Animals Jungle - Animales de la selva,no,
+gorila,Gorilla,noun,Animals Jungle - Animales de la selva,no,
+chimpancé,Chimpanzee,noun,Animals Jungle - Animales de la selva,no,
+oso hormiguero,Anteater,noun,Animals Jungle - Animales de la selva,no,
+elefante,Elephant,noun,Animals Safari - Animales de Safari,no,
+mono,Monkey,noun,Animals Safari - Animales de Safari,no,
+cebra,Zebra,noun,Animals Safari - Animales de Safari,no,
+rinoceronte,Rhinoceros,noun,Animals Safari - Animales de Safari,no,
+jirafa,Giraffe,noun,Animals Safari - Animales de Safari,no,
+gallo,Rooster,noun,Birds - Aves,no,
+pájaro,Bird,noun,Birds - Aves,yes,A2
+pavo,Turkey,noun,Birds - Aves,no,
+paloma,Pigeon,noun,Birds - Aves,no,
+pato,Duck,noun,Birds - Aves,no,
+cuervo,Crow,noun,Birds - Aves,no,
+codorniz,Quail,noun,Birds - Aves,no,
+pavo real,Peacock,noun,Birds - Aves,no,
+grulla,Crane,noun,Birds - Aves,no,
+buitre,Vulture,noun,Birds - Aves,no,
+gaviota,Seagull,noun,Birds - Aves,no,
+cisne,Swan,noun,Birds - Aves,no,
+cucaracha,Cockroach,noun,Bugs and Insects - Insectos,no,
+mosquito,Mosquito,noun,Bugs and Insects - Insectos,yes,A2
+abeja,Bee,noun,Bugs and Insects - Insectos,no,
+mosca,Fly,noun,Bugs and Insects - Insectos,yes,A2
+mosquito,Gnat,noun,Bugs and Insects - Insectos,yes,A2
+araña,Spider,noun,Bugs and Insects - Insectos,yes,A2
+hormiga,Ant,noun,Bugs and Insects - Insectos,no,
+escarabajo,Beetle,noun,Bugs and Insects - Insectos,no,
+gusano medidor,Inchworm,noun,Bugs and Insects - Insectos,no,
+cigarra,Cicada,noun,Bugs and Insects - Insectos,no,
+mariquita,Ladybug,noun,Bugs and Insects - Insectos,no,
+luciérnaga,Firefly,noun,Bugs and Insects - Insectos,no,
+lombriz,Worm,noun,Bugs and Insects - Insectos,no,
+bicho,Bug,noun,Bugs and Insects - Insectos,no,
+oruga,Caterpillar,noun,Bugs and Insects - Insectos,no,
+colina,Hill,noun,Environment - Medio Ambiente,no,
+archipiélago,Archipelago,noun,Environment - Medio Ambiente,no,
+continente,Mainland,noun,Environment - Medio Ambiente,no,
+montaña,Mountain,noun,Environment - Medio Ambiente,yes,A1
+playa,Beach,noun,Environment - Medio Ambiente,yes,A1
+cordillera,Mountain range,noun,Environment - Medio Ambiente,no,
+selva,Rain forest,noun,Environment - Medio Ambiente,no,
+isla,Island,noun,Environment - Medio Ambiente,yes,A2
+bosque,Forest,noun,Environment - Medio Ambiente,yes,A2
+río,River,noun,Environment - Medio Ambiente,yes,A1
+laguna,Pond,noun,Environment - Medio Ambiente,no,
+pantano,Marsh,noun,Environment - Medio Ambiente,no,
+océano,Ocean,noun,Environment - Medio Ambiente,no,
+estrecho,Strait,noun,Environment - Medio Ambiente,yes,A2
+costa,Seaside,noun,Environment - Medio Ambiente,yes,A2
+lago,Lake,noun,Environment - Medio Ambiente,no,
+campo,Field,noun,Environment - Medio Ambiente,yes,A1
+pradera,Grassland,noun,Environment - Medio Ambiente,no,
+páramo,Wasteland,noun,Environment - Medio Ambiente,no,
+pasto,Grass,noun,Environment - Medio Ambiente,no,
+cielo,Sky,noun,Environment - Medio Ambiente,yes,A2
+desierto,Desert,noun,Environment - Medio Ambiente,yes,A2
+suelo,Soil,noun,Environment - Medio Ambiente,yes,A2
+roca,Rock,noun,Environment - Medio Ambiente,no,
+suciedad,Dirt,noun,Environment - Medio Ambiente,no,
+rosa,Rose,noun,Flowers - Flores,yes,A2
+flor,Flower,noun,Flowers - Flores,yes,A1
+lirio,Lily,noun,Flowers - Flores,no,
+girasol,Sunflower,noun,Flowers - Flores,no,
+diente de león,Dandelion,noun,Flowers - Flores,no,
+perro,Dog,noun,Mammals - Mamíferos,yes,A2
+gato,Cat,noun,Mammals - Mamíferos,yes,A2
+conejo,Rabbit,noun,Mammals - Mamíferos,no,
+foca,Seal,noun,Marine Life - Vida Marina,no,
+tiburón,Shark,noun,Marine Life - Vida Marina,no,
+ballena,Whale,noun,Marine Life - Vida Marina,no,
+delfín,Dolphin,noun,Marine Life - Vida Marina,no,
+medusa,Jellyfish,noun,Marine Life - Vida Marina,no,
+mantaraya,Stingray,noun,Marine Life - Vida Marina,no,
+foca,Fur seal,noun,Marine Life - Vida Marina,no,
+pez,Fish,noun,Marine Life - Vida Marina,yes,A2
+erizo de mar,Urchin,noun,Marine Life - Vida Marina,no,
+pulpo,Octopus,noun,Marine Life - Vida Marina,no,
+calamar,Squid,noun,Marine Life - Vida Marina,no,
+inundación,Flood,noun,Natural Disasters - Desastres Naturales,no,
+tifón,Typhoon,noun,Natural Disasters - Desastres Naturales,no,
+tormenta eléctrica,Thunderstorm,noun,Natural Disasters - Desastres Naturales,no,
+huracán,Hurricane,noun,Natural Disasters - Desastres Naturales,no,
+tornado,Tornado,noun,Natural Disasters - Desastres Naturales,no,
+fuego,Fire,noun,Natural Disasters - Desastres Naturales,no,
+sequía,Drought,noun,Natural Disasters - Desastres Naturales,no,
+sunami,Tsunami,noun,Natural Disasters - Desastres Naturales,no,
+avalancha,Avalanche,noun,Natural Disasters - Desastres Naturales,no,
+terremoto,Earthquake,noun,Natural Disasters - Desastres Naturales,no,
+tormenta de arena,Sandstorm,noun,Natural Disasters - Desastres Naturales,no,
+hoja,Leaf,noun,Plants - Plantas,yes,A2
+florecer,Bloom,verb,Plants - Plantas,no,
+marchitar,Wilt,verb,Plants - Plantas,no,
+rama,Branch,noun,Plants - Plantas,no,
+árbol,Tree,noun,Plants - Plantas,yes,A1
+arbusto,Bush,noun,Plants - Plantas,no,
+semilla,Seed,noun,Plants - Plantas,no,
+mala hierba,Weed,noun,Plants - Plantas,no,
+serpiente,Snake,noun,Reptiles - Reptiles,no,
+tortuga,Turtle,noun,Reptiles - Reptiles,no,
+lluvia,Rain,noun,Weather - Clima,yes,A2
+nieve,Snow,noun,Weather - Clima,yes,A2
+nube,Cloud,noun,Weather - Clima,yes,A2
+reporte del clima,Weather report,noun,Weather - Clima,no,
+centígrados,Celsius,noun,Weather - Clima,no,
+fahrenheit,Fahrenheit,noun,Weather - Clima,no,
+temperatura,Temperature,noun,Weather - Clima,no,
+húmedo,Humid,adjective,Weather - Clima,no,
+ventoso,Windy,adjective,Weather - Clima,no,
+niebla,Fog,noun,Weather - Clima,yes,A2
+fresco,Cool,adjective,Weather - Clima,no,
+caluroso,Hot,adjective,Weather - Clima,no,
+sol,Sun,noun,Weather - Clima,yes,A1
+clima,Weather,noun,Weather - Clima,no,
+grado,Degree,noun,Weather - Clima,no,
+granizo,Hail,noun,Weather - Clima,no,
+tormenta eléctrica,Thunder storm,noun,Weather - Clima,no,
+acuario,Aquarium,noun,Aquarium - Acuario,no,
+libre de impuestos,Tax-free,adjective,Crossing Borders - Cruzando Fronteras,no,
+tarjeta de entrada,Entry card,noun,Crossing Borders - Cruzando Fronteras,no,
+permiso de reingreso,Re-entry permit,noun,Crossing Borders - Cruzando Fronteras,no,
+nacionalidad,Nationality,noun,Crossing Borders - Cruzando Fronteras,yes,A1
+licencia de manejo,Driver's license,noun,Crossing Borders - Cruzando Fronteras,yes,A1
+contrabando,Contraband,noun,Crossing Borders - Cruzando Fronteras,no,
+cuarentena,Quarantine,noun,Crossing Borders - Cruzando Fronteras,no,
+aduana,Customs,noun,Crossing Borders - Cruzando Fronteras,no,
+forma de declaración,Declaration form,noun,Crossing Borders - Cruzando Fronteras,no,
+multa,Fine,noun,Crossing Borders - Cruzando Fronteras,no,
+ilegal,Illegal,adjective,Crossing Borders - Cruzando Fronteras,no,
+visa,Visa,noun,Crossing Borders - Cruzando Fronteras,no,
+inspeccionar,Inspect,verb,Crossing Borders Action - Acciones Cruzando Fronteras,no,
+confiscar,Confiscate,verb,Crossing Borders Action - Acciones Cruzando Fronteras,no,
+declarar,Declare,verb,Crossing Borders Action - Acciones Cruzando Fronteras,no,
+pagar impuestos,Pay taxes,phrase,Crossing Borders Action - Acciones Cruzando Fronteras,no,
+llenar,Fill out,verb,Crossing Borders Action - Acciones Cruzando Fronteras,no,
+visitar parientes,Visit relatives,phrase,Crossing Borders Action - Acciones Cruzando Fronteras,no,
+efectivo,Cash,noun,Currency Exchange - Cambio de divisas,yes,A2
+billete de baja denominación,Small bill,phrase,Currency Exchange - Cambio de divisas,no,
+cambiar,Convert,verb,Currency Exchange - Cambio de divisas,yes,A1
+tipo de cambio,Exchange rate,phrase,Currency Exchange - Cambio de divisas,no,
+divisas,Foreign exchange,noun,Currency Exchange - Cambio de divisas,no,
+cambiar dinero,Change,phrase,Currency Exchange - Cambio de divisas,no,
+cheque de viajero,Traveler's check,noun,Currency Exchange - Cambio de divisas,no,
+yen Japonés,Japanese Yen,noun,Currency Exchange - Cambio de divisas,no,
+euro,Euro,noun,Currency Exchange - Cambio de divisas,yes,A1
+libra inglesa,British Pound,phrase,Currency Exchange - Cambio de divisas,no,
+moneda,Coin,noun,Currency Exchange - Cambio de divisas,yes,A2
+dólar,United States Dollar,noun,Currency Exchange - Cambio de divisas,no,
+tarjeta de crédito,Currency,noun,Currency Exchange - Cambio de divisas,yes,A1
+dinero,Money,noun,Currency Exchange - Cambio de divisas,yes,A1
+suspenso,Suspense,noun,Entertainment - Entretenimiento,no,
+teatro,Theater,noun,Entertainment - Entretenimiento,yes,A1
+caricatura,Cartoon,noun,Entertainment - Entretenimiento,no,
+animación,Animation,noun,Entertainment - Entretenimiento,no,
+misterio,Mystery,noun,Entertainment - Entretenimiento,no,
+comedia,Comedy,noun,Entertainment - Entretenimiento,no,
+comedia romántica,Romantic comedy,noun,Entertainment - Entretenimiento,no,
+cantante,Singer,noun,Entertainment - Entretenimiento,yes,A1
+drama,Drama,noun,Entertainment - Entretenimiento,no,
+película,Film,noun,Entertainment - Entretenimiento,yes,A1
+actor,Actor,noun,Entertainment - Entretenimiento,yes,A1
+actriz,Actress,noun,Entertainment - Entretenimiento,yes,A1
+rendimiento,Performance,noun,Entertainment - Entretenimiento,no,
+documental,Documentary,noun,Entertainment - Entretenimiento,no,
+obra de teatro,Stage play,noun,Entertainment - Entretenimiento,yes,A2
+actor de voz,Voice actor,noun,Entertainment - Entretenimiento,no,
+musical,Musical,noun,Entertainment - Entretenimiento,yes,A2
+revista,Magazine,noun,Entertainment - Entretenimiento,yes,A1
+estrella,Star,noun,Entertainment - Entretenimiento,yes,A2
+audiolibro,Audiobook,noun,Entertainment - Entretenimiento,no,
+programa de televisión,TV show,noun,Entertainment - Entretenimiento,no,
+videojuego,Video game,noun,Entertainment - Entretenimiento,no,
+correr,Run,verb,Exercise - Ejercicio,yes,A1
+saltar,Jump,verb,Exercise - Ejercicio,no,
+patear,Kick,verb,Exercise - Ejercicio,no,
+trotar,Jogging,verb,Exercise - Ejercicio,no,
+ejercicio,Exercise,noun,Exercise - Ejercicio,yes,A1
+pase de abordaje,Boarding pass,noun,Flight - Vuelo,no,
+puerta de salida,Departing gate,noun,Flight - Vuelo,no,
+salida,Departure,noun,Flight - Vuelo,yes,A1
+llegada,Arrival,noun,Flight - Vuelo,no,
+número de vuelo,Flight number,noun,Flight - Vuelo,no,
+película,Movie,noun,Hobbies - Aficiones,yes,A1
+ajedrez,Chess,noun,Hobbies - Aficiones,yes,A2
+poker,Poker,noun,Hobbies - Aficiones,no,
+caligrafía,Calligraphy,noun,Hobbies - Aficiones,no,
+guitarra,Guitar,noun,Hobbies - Aficiones,yes,A2
+bailar,Dance,verb,Hobbies - Aficiones,yes,A1
+cantar una canción,Sing a song,phrase,Hobbies - Aficiones,no,
+trompeta,Trumpet,noun,Hobbies - Aficiones,no,
+violín,Violin,noun,Hobbies - Aficiones,yes,A2
+tocar un instrumento musical,Play a musical instrument,phrase,Hobbies - Aficiones,no,
+música rock,Rock music,noun,Hobbies - Aficiones,no,
+foto,Photo,noun,Hobbies - Aficiones,yes,A1
+tomar una foto,Take a picture,phrase,Hobbies - Aficiones,no,
+navegar en la red,Surf the net,verb,Hobbies - Aficiones,no,
+piano,Piano,noun,Hobbies - Aficiones,yes,A2
+coleccionar estampillas,Collect stamps,phrase,Hobbies - Aficiones,no,
+patinaje sobre hielo,Ice skating,noun,Hobbies - Aficiones,no,
+música,Music,noun,Hobbies - Aficiones,yes,A1
+instrumento musical,Musical instrument,noun,Hobbies - Aficiones,no,
+ejercitarse,Exercise,verb,Hobbies - Aficiones,no,
+artes marciales,Martial arts,noun,Hobbies - Aficiones,no,
+pescar,Fish,verb,Hobbies - Aficiones,no,
+jugar al ajedrez,Play chess,phrase,Hobbies - Aficiones,no,
+jugar al poker,Play poker,noun,Hobbies - Aficiones,no,
+disfrutar de un pasatiempo,Enjoy a hobby,phrase,Hobbies - Aficiones,no,
+lectura,Reading,noun,Hobbies - Aficiones,no,
+ejercicio,Exercising,noun,Hobbies - Aficiones,yes,A1
+ejercicio,Working out,noun,Hobbies - Aficiones,yes,A1
+juego de cartas,Playing cards,noun,Hobbies - Aficiones,no,
+cuarto,Room,noun,Hotels - Hoteles,yes,A1
+vestíbulo,Lobby,noun,Hotels - Hoteles,no,
+cama individual,Single bed,noun,Hotels - Hoteles,no,
+cama doble,Double bed,noun,Hotels - Hoteles,no,
+servicio despertador,Wake-up service,noun,Hotels - Hoteles,no,
+suite,Suite,noun,Hotels - Hoteles,no,
+no haber lugar,No vacancy,phrase,Hotels - Hoteles,no,
+propina,Tip,noun,Hotels - Hoteles,yes,A2
+tarjeta de crédito,Credit card,noun,Hotels - Hoteles,yes,A1
+servicio a habitaciones,Room service,noun,Hotels - Hoteles,no,
+recibo,Receipt,noun,Hotels - Hoteles,no,
+hotel,Hotel,noun,Hotels - Hoteles,yes,A1
+recepción,Front desk,noun,Hotels - Hoteles,no,
+mesera,Waitress,noun,Hotels - Hoteles,no,
+salón-bar,Lounge,noun,Hotels - Hoteles,no,
+servivio de lavandería,Laundry service,phrase,Hotels - Hoteles,no,
+registrarse,Sign in,verb,Hotels - Hoteles,no,
+llave electrónica,Electronic key,noun,Hotels - Hoteles,no,
+llave,Key,noun,Hotels - Hoteles,yes,A1
+internet,Internet,noun,Hotels - Hoteles,yes,A1
+mesero,Waiter,noun,Hotels - Hoteles,no,
+Wi-Fi,Wi-Fi,noun,Hotels - Hoteles,no,
+registrarse,Check in,verb,Hotels - Hoteles,no,
+salir,Check out,verb,Hotels - Hoteles,yes,A1
+número de cuarto,Room number,noun,Hotels - Hoteles,no,
+llave del cuarto,Room key,noun,Hotels - Hoteles,no,
+llamada de despertador,Wake up call,noun,Hotels - Hoteles,no,
+vacante,Vacancy,noun,Hotels - Hoteles,no,
+patio de recreo,Playground,noun,Parks - Parques,no,
+piscina,Pool,noun,Parks - Parques,yes,A2
+dar la bienvenida,Welcome,verb,Paying a Visit - Hacer una visita,no,
+siéntete en casa,Make yourself at home.,expression,Paying a Visit - Hacer una visita,no,
+mi nombre es ...,My name is…,expression,Paying a Visit - Hacer una visita,no,
+hola.,Hi.,expression,Paying a Visit - Hacer una visita,no,
+disculpe por hacerlo esperar,Sorry to keep you waiting.,expression,Paying a Visit - Hacer una visita,no,
+¿Cómo has estado?,How have you been?,expression,Paying a Visit - Hacer una visita,no,
+esto es para ti.,This is for you.,expression,Paying a Visit - Hacer una visita,no,
+tocar,Knock,verb,Paying a Visit - Hacer una visita,yes,A2
+de nada,You're welcome.,expression,Paying a Visit - Hacer una visita,yes,A2
+tengo mucho tiempo sin verte.,Long time no see.,expression,Paying a Visit - Hacer una visita,no,
+este es (nombre de la persona).,This is (person's name).,expression,Paying a Visit - Hacer una visita,no,
+ganador,Winner,noun,Sporting Event - Evento deportivo,no,
+perdedor,Loser,noun,Sporting Event - Evento deportivo,no,
+juegos Olímpicos,Olympics,noun,Sporting Event - Evento deportivo,no,
+copa del Mundo,World Cup,noun,Sporting Event - Evento deportivo,no,
+campeón,Champion,noun,Sporting Event - Evento deportivo,no,
+estadio,Stadium,noun,Sporting Event - Evento deportivo,no,
+animar,Cheer,verb,Sporting Event - Evento deportivo,no,
+semifinal,Semi-final,noun,Sporting Event - Evento deportivo,no,
+competición,Competition,noun,Sporting Event - Evento deportivo,no,
+partido,Game,noun,Sporting Event - Evento deportivo,yes,A2
+perder,Lose,verb,Sporting Event - Evento deportivo,no,
+ganar,Win,verb,Sporting Event - Evento deportivo,yes,A2
+campeonato,Championship contest,phrase,Sporting Event - Evento deportivo,no,
+equipo,Team,noun,Sporting Event - Evento deportivo,no,
+atleta,Athlete,noun,Sporting Event - Evento deportivo,no,
+jugador,Player,noun,Sporting Event - Evento deportivo,no,
+ver,Watch,verb,Sporting Event - Evento deportivo,yes,A1
+gerente,Manager,noun,Sporting Event - Evento deportivo,no,
+artes marciales mixtas,Mixed martial arts,phrase,Sports Individual - Deportes Individuales,no,
+tenis de mesa,Ping pong,noun,Sports Individual - Deportes Individuales,no,
+gimnasia,Gymnastics,noun,Sports Individual - Deportes Individuales,yes,A1
+correr,Running,noun,Sports Individual - Deportes Individuales,yes,A1
+nadar,Swimming,verb,Sports Individual - Deportes Individuales,yes,A1
+montar a caballo,Horseback riding,phrase,Sports Individual - Deportes Individuales,no,
+esquí,Skiing,noun,Sports Individual - Deportes Individuales,no,
+atletismo,Track and field,noun,Sports Individual - Deportes Individuales,no,
+tenis,Tennis,noun,Sports Individual - Deportes Individuales,yes,A1
+bádminton,Badminton,noun,Sports Individual - Deportes Individuales,no,
+maratón,Marathon,noun,Sports Individual - Deportes Individuales,no,
+boxeo,Boxing,noun,Sports Individual - Deportes Individuales,no,
+carreras de autos,Auto racing,noun,Sports Individual - Deportes Individuales,no,
+golf,Golf,noun,Sports Individual - Deportes Individuales,no,
+ciclismo,Cycling,noun,Sports Individual - Deportes Individuales,no,
+beisbol,Baseball,noun,Sports Team - Deportes de Equipo,no,
+hockey sobre hielo,Ice hockey,noun,Sports Team - Deportes de Equipo,no,
+voleibol,Volleyball,noun,Sports Team - Deportes de Equipo,no,
+baloncesto,Basketball,noun,Sports Team - Deportes de Equipo,yes,A1
+fútbol,Soccer,noun,Sports Team - Deportes de Equipo,yes,A1
+fútbol americano,Football,noun,Sports Team - Deportes de Equipo,no,
+fútbol,Football,noun,Sports Team - Deportes de Equipo,yes,A1
+guión,Script,noun,Studying a Language - Estudiar un idioma,yes,A1
+verbo,Verb,noun,Studying a Language - Estudiar un idioma,no,
+sustantivo,Noun,noun,Studying a Language - Estudiar un idioma,no,
+adjetivo,Adjective,noun,Studying a Language - Estudiar un idioma,no,
+leer en voz alta,Read aloud,phrase,Studying a Language - Estudiar un idioma,no,
+repetir,Repeat,verb,Studying a Language - Estudiar un idioma,yes,A1
+lección,Lesson,noun,Studying a Language - Estudiar un idioma,yes,A1
+incorrecto,Incorrect,adjective,Studying a Language - Estudiar un idioma,no,
+corregir,Correct,adjective,Studying a Language - Estudiar un idioma,no,
+aprender,Learn,verb,Studying a Language - Estudiar un idioma,yes,A1
+estudiar,Study,verb,Studying a Language - Estudiar un idioma,yes,A1
+composición escrita,Written composition,phrase,Studying a Language - Estudiar un idioma,no,
+centro comercial,Mall,noun,Tourism - Turismo,yes,A1
+catarata,Waterfall,noun,Tourism - Turismo,no,
+palacio,Palace,noun,Tourism - Turismo,yes,A2
+parque,Park,noun,Tourism - Turismo,yes,A1
+intérprete,Interpreter,noun,Travel - Viajes,no,
+información,Information,noun,Travel - Viajes,yes,A1
+salida,Exit,noun,Travel - Viajes,yes,A1
+direcciones,Directions,noun,Travel - Viajes,no,
+atracción turística,Tourist attraction,noun,Travel - Viajes,no,
+guía,Guide,noun,Travel - Viajes,yes,A2
+arreglar,Arrange,verb,Travel - Viajes,no,
+maleta,Suitcase,noun,Travel - Viajes,yes,A1
+turista,Tourist,noun,Travel - Viajes,yes,A1
+itinerario,Itinerary,noun,Travel - Viajes,no,
+guía,Guidebook,noun,Travel - Viajes,yes,A2
+camión de tour,Tour bus,noun,Travel - Viajes,no,
+excursión,Tour,noun,Travel - Viajes,yes,A2
+agencia de viajes,Travel agency,noun,Travel - Viajes,yes,A2
+entrada,Entrance,noun,Travel - Viajes,yes,A1
+hacer turismo,Go sightseeing,noun,Travel - Viajes,no,
+acompañar,Accompany,verb,Travel - Viajes,no,
+guía de turistas,Tour guide,noun,Travel - Viajes,no,
+pasaporte,Passport,noun,Travel - Viajes,yes,A1
+visitar lugares de interés,Sightsee,verb,Travel - Viajes,no,
+orden del día,Agenda,noun,Travel - Viajes,no,
+viajar,Traveling,noun,Travel - Viajes,yes,A1
+zoológico,Zoo,noun,Zoo - Zoológico,yes,A2
+silla,Chair,noun,Classroom - Aula,yes,A1
+tarea,Homework,noun,Classroom - Aula,yes,A1
+dictado,Dictation,noun,Classroom - Aula,no,
+pizarrón,Whiteboard,noun,Classroom - Aula,no,
+pizarrón,Blackboard,noun,Classroom - Aula,no,
+proyector,Projector,noun,Classroom - Aula,no,
+libro,Book,noun,Classroom - Aula,yes,A1
+examen,Test,noun,Classroom - Aula,yes,A1
+examen rápido,Quiz,noun,Classroom - Aula,no,
+pluma,Pen,noun,Classroom - Aula,yes,A1
+cuaderno,Notebook,noun,Classroom - Aula,yes,A2
+lápiz,Pencil,noun,Classroom - Aula,yes,A1
+borrador,Eraser,noun,Classroom - Aula,no,
+lectura,Lecture,noun,Classroom - Aula,no,
+clase,Class,noun,Classroom - Aula,yes,A1
+libro de texto,Textbook,noun,Classroom - Aula,no,
+problema,Problem,noun,Classroom - Aula,no,
+pregunta,Question,noun,Classroom - Aula,yes,A1
+carta,Letter,noun,Classroom - Aula,yes,A1
+estudiante,Student,noun,Classroom - Aula,yes,A1
+maestra,Teacher,noun,Classroom - Aula,no,
+gis,Chalk,noun,Classroom - Aula,no,
+marcador,Marker,noun,Classroom - Aula,no,
+diccionario,Dictionary,noun,Classroom - Aula,yes,A1
+mapa,Map,noun,Classroom - Aula,yes,A1
+salón de clases,Classroom,noun,Classroom - Aula,no,
+escuela,School,noun,Classroom - Aula,yes,A1
+dibujar,Draw,verb,Classroom Actions - Acciones en el aula,yes,A2
+asistir clases,Attend classes,phrase,Classroom Actions - Acciones en el aula,no,
+llegar,Arrive,verb,Classroom Actions - Acciones en el aula,yes,A1
+asistir una lectura,Attend a lecture,phrase,Classroom Actions - Acciones en el aula,no,
+responder,Answer,verb,Classroom Actions - Acciones en el aula,yes,A2
+enseñar,Teach,verb,Classroom Actions - Acciones en el aula,no,
+tomar una prueba,Take a test,phrase,Classroom Actions - Acciones en el aula,no,
+preguntar,Ask,verb,Classroom Actions - Acciones en el aula,yes,A2
+estar atrasado,Be late,phrase,Classroom Actions - Acciones en el aula,no,
+explicar,Explain,verb,Classroom Actions - Acciones en el aula,no,
+cerrar,Close,verb,Classroom Actions - Acciones en el aula,yes,A1
+subrayar,Underline,verb,Classroom Actions - Acciones en el aula,no,
+limpiar,Wipe,verb,Classroom Actions - Acciones en el aula,yes,A2
+borrar,Erase,verb,Classroom Actions - Acciones en el aula,no,
+leer,Read,verb,Classroom Actions - Acciones en el aula,yes,A1
+hacer una oración,Make a sentence,phrase,Classroom Actions - Acciones en el aula,no,
+abrir,Open,verb,Classroom Actions - Acciones en el aula,yes,A1
+escuchar,Listen,verb,Classroom Actions - Acciones en el aula,yes,A1
+asistir,Attend,verb,Classroom Actions - Acciones en el aula,no,
+aprobar un exámen,Pass a test,phrase,Classroom Actions - Acciones en el aula,no,
+"más lento, por favor.","Slower, please.",expression,Classroom Expressions - Expresiones en el aula,no,
+no entiendo.,I don't understand.,expression,Classroom Expressions - Expresiones en el aula,no,
+"una vez más, por favor.","Once again, please.",expression,Classroom Expressions - Expresiones en el aula,no,
+es difícil.,It's difficult.,expression,Classroom Expressions - Expresiones en el aula,no,
+director,Director,noun,Occupations - Ocupaciones,yes,A1
+enfermera,Nurse,noun,Occupations - Ocupaciones,no,
+contador,Accountant,noun,Occupations - Ocupaciones,no,
+abogado,Lawyer,noun,Occupations - Ocupaciones,yes,A1
+empleado,Clerk,noun,Occupations - Ocupaciones,yes,A2
+empleada,Employee,noun,Occupations - Ocupaciones,no,
+policía,Police officer,noun,Occupations - Ocupaciones,yes,A1
+trabajador de oficina,Office worker,noun,Occupations - Ocupaciones,no,
+agricultor,Farmer,noun,Occupations - Ocupaciones,yes,A2
+cocinero,Cook,noun,Occupations - Ocupaciones,yes,A2
+ama de casa,Housewife,noun,Occupations - Ocupaciones,yes,A1
+atleta profesional,Professional athlete,phrase,Occupations - Ocupaciones,no,
+obrero industrial,Factory worker,noun,Occupations - Ocupaciones,no,
+ingeniero,Engineer,noun,Occupations - Ocupaciones,yes,A1
+doctor,Doctor,noun,Occupations - Ocupaciones,no,
+bombero,Firefighter,noun,Occupations - Ocupaciones,yes,A1
+secretaria,Secretary,noun,Occupations - Ocupaciones,no,
+trabajador de la compañía,Company worker,noun,Occupations - Ocupaciones,no,
+empresario,Businessman,noun,Occupations - Ocupaciones,yes,A2
+profesor,Professor,noun,Occupations - Ocupaciones,yes,A1
+programador,Programmer,noun,Occupations - Ocupaciones,no,
+vendedor,Salesman,noun,Occupations - Ocupaciones,yes,A1
+policía,Policeman,noun,Occupations - Ocupaciones,yes,A1
+banquero,Banker,noun,Occupations - Ocupaciones,no,
+escritor,Writer,noun,Occupations - Ocupaciones,yes,A2
+diseñador,Designer,noun,Occupations - Ocupaciones,no,
+artista,Artist,noun,Occupations - Ocupaciones,yes,A2
+soldado,Soldier,noun,Occupations - Ocupaciones,no,
+empresario,Entrepreneur,noun,Occupations - Ocupaciones,yes,A2
+obrero,Construction worker,noun,Occupations - Ocupaciones,no,
+ama de casa,Homemaker,noun,Occupations - Ocupaciones,yes,A1
+presidente,President,noun,Occupations - Ocupaciones,yes,A1
+mecánico,Mechanic,noun,Occupations - Ocupaciones,yes,A2
+jefa,Boss,noun,Office - Oficina,no,
+cliente,Customer,noun,Office - Oficina,yes,A2
+fax,Fax,noun,Office - Oficina,yes,A1
+compañero de trabajo,Coworker,noun,Office - Oficina,no,
+teléfono,Telephone,noun,Office - Oficina,yes,A1
+reunión,Meeting,noun,Office - Oficina,yes,A2
+documento,Document,noun,Office - Oficina,no,
+jefe,Boss,noun,Office - Oficina,yes,A1
+computadora,Computer,noun,Office Equipment - Equipos de oficina,yes,A1
+fax,Fax machine,noun,Office Equipment - Equipos de oficina,yes,A1
+impresora,Printer,noun,Office Equipment - Equipos de oficina,yes,A2
+fotocopiadora,Copy machine,noun,Office Equipment - Equipos de oficina,yes,A2
+cinta adhesiva,Scotch tape,noun,Office Supplies - Material de Oficina,no,
+bote de basura,Garbage pail,noun,Office Supplies - Material de Oficina,no,
+papel,Paper,noun,Office Supplies - Material de Oficina,yes,A1
+DVD,DVD,noun,Office Supplies - Material de Oficina,yes,A1
+engrapadora,Stapler,noun,Office Supplies - Material de Oficina,no,
+grapa,Staple,noun,Office Supplies - Material de Oficina,no,
+clip de papel,Paper clip,noun,Office Supplies - Material de Oficina,no,
+CD,CD,noun,Office Supplies - Material de Oficina,no,
+carpeta,Folder,noun,Office Supplies - Material de Oficina,no,
+día de fiesta,Holiday,noun,School - Escuela,no,
+escuela primaria,Elementary school,noun,School - Escuela,no,
+escuela secundaria,Middle school,noun,School - Escuela,no,
+escuela preparatoria,High school,noun,School - Escuela,no,
+universidad,University,noun,School - Escuela,yes,A1
+colegio,College,noun,School - Escuela,yes,A1
+matrícula,Tuition,noun,School - Escuela,yes,A2
+gimnasio,Gym,noun,School - Escuela,yes,A2
+año escolar,School year,noun,School - Escuela,no,
+vacaciones de la escuela,School holiday,noun,School - Escuela,no,
+vacaciones,Vacation,noun,School - Escuela,yes,A1
+vacaciones de verano,Summer vacation,noun,School - Escuela,no,
+escuela de verano,Summer school,noun,School - Escuela,no,
+exámenes finales,Final,noun,School - Escuela,no,
+departamento,Department,noun,School - Escuela,yes,A1
+director,Principal,noun,School - Escuela,yes,A1
+mochila,Backpack,noun,School Supplies - Útiles Escolares,yes,A2
+tijeras,Scissors,noun,School Supplies - Útiles Escolares,no,
+tachuela,Tack,noun,School Supplies - Útiles Escolares,no,
+bolígrafo,Ballpoint pen,noun,School Supplies - Útiles Escolares,yes,A1
+portaminas,Mechanical pencil,noun,School Supplies - Útiles Escolares,no,
+regla,Ruler,noun,School Supplies - Útiles Escolares,yes,A2
+mina,Lead,noun,School Supplies - Útiles Escolares,no,
+pegamento,Glue,noun,School Supplies - Útiles Escolares,no,
+superior,Superior,noun,Work Place - Lugar de Trabajo,no,
+colega,Colleague,noun,Work Place - Lugar de Trabajo,no,
+terminar el trabajo,Finish work,phrase,Work Place - Lugar de Trabajo,no,
+empresa,Enterprise,noun,Work Place - Lugar de Trabajo,yes,A1
+compañía,Company,noun,Work Place - Lugar de Trabajo,no,
+asignar,Assign,verb,Work Place - Lugar de Trabajo,no,
+tiempo extra,Overtime,noun,Work Place - Lugar de Trabajo,no,
+bono,Bonus,noun,Work Place - Lugar de Trabajo,no,
+salario,Salary,noun,Work Place - Lugar de Trabajo,no,
+paga,Wage,noun,Work Place - Lugar de Trabajo,no,
+subordinado,Subordinate,noun,Work Place - Lugar de Trabajo,no,
+supervisar,Supervise,verb,Work Place - Lugar de Trabajo,no,
+turno,Shift,noun,Work Place - Lugar de Trabajo,no,
+departamento + oficina,Department+office,noun,Work Place - Lugar de Trabajo,no,
+idioma,Language,noun,Language - Idioma,yes,A2
+carácter,Character,noun,Language - Idioma,yes,A2
+cumpleaños,Birthday,noun,Life Events - Acontecimientos de la Vida,yes,A2
+comprar,Buy,verb,Life Events - Acontecimientos de la Vida,yes,A1
+retirar,Retire,verb,Life Events - Acontecimientos de la Vida,no,
+graduación,Graduation,noun,Life Events - Acontecimientos de la Vida,no,
+promoción,Promotion,noun,Life Events - Acontecimientos de la Vida,no,
+aniversario,Anniversary,noun,Life Events - Acontecimientos de la Vida,no,
+funeral,Funeral,noun,Life Events - Acontecimientos de la Vida,no,
+casa,Home,noun,Life Events - Acontecimientos de la Vida,yes,A1
+trabajo,Job,noun,Life Events - Acontecimientos de la Vida,yes,A1
+viajar,Travel,verb,Life Events - Acontecimientos de la Vida,yes,A1
+graduar,Graduate,verb,Life Events - Acontecimientos de la Vida,no,
+nacimiento,Birth,noun,Life Events - Acontecimientos de la Vida,yes,A1
+boda,Wedding,noun,Life Events - Acontecimientos de la Vida,no,
+nacer,Born,verb,Life Events - Acontecimientos de la Vida,yes,A2
+conseguir un trabajo,Get a job,phrase,Life Events - Acontecimientos de la Vida,no,
+morir,Die,verb,Life Events - Acontecimientos de la Vida,yes,A2
+casarse,Marry,verb,Life Events - Acontecimientos de la Vida,yes,A2
+comprometer,Engage,verb,Life Events - Acontecimientos de la Vida,no,
+festival,Festival,noun,Religion - Religión,no,
+ceremonia,Ceremony,noun,Religion - Religión,no,
+religión,Religion,noun,Religion - Religión,yes,A1
+islam,Islam,noun,Religion - Religión,no,
+protestantismo,Protestantism,noun,Religion - Religión,no,
+catolicismo,Catholicism,noun,Religion - Religión,no,
+hinduismo,Hinduism,noun,Religion - Religión,no,
+budismo,Buddhism,noun,Religion - Religión,no,
+templo,Temple,noun,Religion - Religión,no,
+mezquita,Mosque,noun,Religion - Religión,yes,A1
+iglesia,Church,noun,Religion - Religión,yes,A1
+estatua,Statue,noun,Religion - Religión,yes,A2
+taoismo,Taoism,noun,Religion - Religión,no,
+biblia,Bible,noun,Religion - Religión,no,
+corán,Quran,noun,Religion - Religión,no,
+sacerdote,Priest,noun,Religion - Religión,no,
+judaismo,Judaism,noun,Religion - Religión,no,
+agricultura,Agriculture,noun,Study Subjects - Sujetos de estudio,no,
+inglés,English,noun,Study Subjects - Sujetos de estudio,no,
+negocios,Business,noun,Study Subjects - Sujetos de estudio,no,
+arte,Art,noun,Study Subjects - Sujetos de estudio,yes,A2
+historia,History,noun,Study Subjects - Sujetos de estudio,yes,A1
+geografía,Geography,noun,Study Subjects - Sujetos de estudio,no,
+política,Politics,noun,Study Subjects - Sujetos de estudio,yes,A2
+biología,Biology,noun,Study Subjects - Sujetos de estudio,no,
+química,Chemistry,noun,Study Subjects - Sujetos de estudio,no,
+física,Physics,noun,Study Subjects - Sujetos de estudio,no,
+matemáticas,Math,noun,Study Subjects - Sujetos de estudio,yes,A1
+economía,Economy,noun,Study Subjects - Sujetos de estudio,no,
+ciencias de la computación,Computer science,noun,Study Subjects - Sujetos de estudio,no,
+ciencia,Science,noun,Study Subjects - Sujetos de estudio,yes,A2
+economía,Economics,noun,Study Subjects - Sujetos de estudio,no,
+educación,Education,noun,Study Subjects - Sujetos de estudio,yes,A2
+lenguaje/ lingüística,Language / linguistics,noun,Study Subjects - Sujetos de estudio,no,
+ciencias de la Tierra,Earth science,noun,Study Subjects - Sujetos de estudio,no,
+sociologí​a,Sociology,noun,Study Subjects - Sujetos de estudio,no,
+derecho,Law,noun,Study Subjects - Sujetos de estudio,yes,A2
+Océano Pacífico,Pacific Ocean,noun,World Bodies of Water - Cuerpos de Agua Mundiales,no,
+Océano Índico,Indian Ocean,noun,World Bodies of Water - Cuerpos de Agua Mundiales,no,
+Océano Atlántico,Atlantic Ocean,noun,World Bodies of Water - Cuerpos de Agua Mundiales,no,
+Bruselas,Brussels,noun,World Cities - Ciudades del Mundo,no,
+Ciudad de México,Mexico City,noun,World Cities - Ciudades del Mundo,no,
+Madrid,Madrid,noun,World Cities - Ciudades del Mundo,no,
+Nueva Delhi,New Delhi,noun,World Cities - Ciudades del Mundo,no,
+Tokio,Tokyo,noun,World Cities - Ciudades del Mundo,no,
+Pekín,Beijing,noun,World Cities - Ciudades del Mundo,no,
+Londres,London,noun,World Cities - Ciudades del Mundo,no,
+Washington D.C.,Washington D.C.,noun,World Cities - Ciudades del Mundo,no,
+Toronto,Toronto,noun,World Cities - Ciudades del Mundo,no,
+Paris,Paris,noun,World Cities - Ciudades del Mundo,no,
+Sydney,Sydney,noun,World Cities - Ciudades del Mundo,no,
+Bangkok,Bangkok,noun,World Cities - Ciudades del Mundo,no,
+Berlín,Berlin,noun,World Cities - Ciudades del Mundo,no,
+Seúl,Seoul,noun,World Cities - Ciudades del Mundo,no,
+Los Ángeles,Los Angeles,noun,World Cities - Ciudades del Mundo,no,
+Nueva York,New York,noun,World Cities - Ciudades del Mundo,no,
+Roma,Rome,noun,World Cities - Ciudades del Mundo,no,
+Dubai,Dubai,noun,World Cities - Ciudades del Mundo,no,
+Moscú,Moscow,noun,World Cities - Ciudades del Mundo,no,
+Australia,Australia,noun,World Continents - Continentes del Mundo,no,
+Antártida,Antarctica,noun,World Continents - Continentes del Mundo,no,
+Asia,Asia,noun,World Continents - Continentes del Mundo,no,
+África,Africa,noun,World Continents - Continentes del Mundo,no,
+Europa,Europe,noun,World Continents - Continentes del Mundo,no,
+Norteamérica,North America,noun,World Continents - Continentes del Mundo,no,
+Sudamérica,South America,noun,World Continents - Continentes del Mundo,no,
+China,China,noun,World Countries - Países del mundo,no,
+Estados Unidos,United States of America,noun,World Countries - Países del mundo,no,
+India,India,noun,World Countries - Países del mundo,no,
+Francia,France,noun,World Countries - Países del mundo,no,
+Inglaterra,England,noun,World Countries - Países del mundo,no,
+Canadá,Canada,noun,World Countries - Países del mundo,no,
+Italia,Italy,noun,World Countries - Países del mundo,no,
+Rusia,Russia,noun,World Countries - Países del mundo,no,
+Japón,Japan,noun,World Countries - Países del mundo,no,
+Korea del Sur,South Korea,noun,World Countries - Países del mundo,no,
+Brasil,Brazil,noun,World Countries - Países del mundo,no,
+Portugal,Portugal,noun,World Countries - Países del mundo,no,
+España,Spain,noun,World Countries - Países del mundo,no,
+México,Mexico,noun,World Countries - Países del mundo,no,
+Argentina,Argentina,noun,World Countries - Países del mundo,no,
+Egipto,Egypt,noun,World Countries - Países del mundo,no,
+Singapúr,Singapore,noun,World Countries - Países del mundo,no,
+Tierra,Earth,noun,World Territories - Territorios del mundo,no,
+Medio Oriente,Middle East,noun,World Territories - Territorios del mundo,no,
+Centroamérica,Central America,noun,World Territories - Territorios del mundo,no,
+sobrecargo,Flight attendant,noun,Airplanes - Aviones,yes,A2
+primera clase,First class,phrase,Airplanes - Aviones,no,
+avión,Airplane,noun,Airplanes - Aviones,yes,A1
+cinturón de seguridad,Seat belt,noun,Airplanes - Aviones,no,
+asiento,Seat,noun,Airplanes - Aviones,no,
+número de asiento,Seat number,noun,Airplanes - Aviones,no,
+almohada,Pillow,noun,Airplanes - Aviones,no,
+dispositivo de flotación,Flotation device,noun,Airplanes - Aviones,no,
+chaleco salvavidas,Life jacket,noun,Airplanes - Aviones,no,
+diferencia de tiempo,Time difference,noun,Airplanes - Aviones,no,
+mareo,Motion sickness,noun,Airplanes - Aviones,no,
+clase económica,Economy class,noun,Airplanes - Aviones,no,
+cobija,Blanket,noun,Airplanes - Aviones,no,
+bolsa para el mareo,Sick bag,noun,Airplanes - Aviones,no,
+audífonos,Earphones,noun,Airplanes - Aviones,no,
+cabina,Cabin,noun,Airplanes - Aviones,yes,A2
+compartimiento de almacenamiento superior,Overhead storage compartment,noun,Airplanes - Aviones,no,
+asiento del pasillo,Aisle seat,noun,Airplanes - Aviones,no,
+asiento de la ventana,Window seat,noun,Airplanes - Aviones,no,
+piloto,Pilot,noun,Airplanes - Aviones,yes,A2
+auricular,Headphones,noun,Airplanes - Aviones,no,
+salida de emergencia,Emergency exit,noun,Airplanes - Aviones,no,
+tarde,Late,adjective,Airports - Aeropuertos,yes,A1
+carga,Freight,noun,Airports - Aeropuertos,no,
+terminal,Terminal,noun,Airports - Aeropuertos,no,
+cancelar,Cancel,verb,Airports - Aeropuertos,no,
+cambio de moneda,Currency exchange,noun,Airports - Aeropuertos,no,
+recogida del equipaje,Luggage pickup,phrase,Airports - Aeropuertos,no,
+boleto de avión,Plane ticket,phrase,Airports - Aeropuertos,no,
+vuelo,Flight,noun,Airports - Aeropuertos,yes,A2
+abordar,Board,verb,Airports - Aeropuertos,no,
+puerta de abordaje,Boarding gate,noun,Airports - Aeropuertos,no,
+confirmar,Confirm,verb,Airports - Aeropuertos,no,
+equipaje,Luggage,noun,Airports - Aeropuertos,no,
+atrasado,Delayed,adjective,Airports - Aeropuertos,no,
+reservar,Reserve,verb,Airports - Aeropuertos,yes,A2
+hangar,Hangar,noun,Airports - Aeropuertos,no,
+tienda libre de impuestos,Duty-free,phrase,Airports - Aeropuertos,no,
+reservación,Reservation,noun,Airports - Aeropuertos,no,
+despegar,Take off,phrase,Airports - Aeropuertos,no,
+aterrizar,Land,verb,Airports - Aeropuertos,no,
+biblioteca,Library,noun,Around Town - Alrededor de la Ciudad,yes,A1
+supermercado,Supermarket,noun,Around Town - Alrededor de la Ciudad,yes,A1
+banco,Bank,noun,Around Town - Alrededor de la Ciudad,yes,A1
+tienda de conveniencia,Convenience store,noun,Around Town - Alrededor de la Ciudad,no,
+hospital,Hospital,noun,Around Town - Alrededor de la Ciudad,yes,A1
+estación de policia,Police station,noun,Around Town - Alrededor de la Ciudad,no,
+farmacia,Pharmacy,noun,Around Town - Alrededor de la Ciudad,yes,A1
+pastelería,Bakery,noun,Around Town - Alrededor de la Ciudad,no,
+cine,Movie theater,noun,Around Town - Alrededor de la Ciudad,yes,A1
+pared,Wall,noun,Buildings - Edificios,yes,A2
+terrateniente,Landlord,noun,Buildings - Edificios,no,
+dormitorio,Dormitory,noun,Buildings - Edificios,yes,A1
+rentar,Rent,verb,Buildings - Edificios,no,
+oficina,Office,noun,Buildings - Edificios,yes,A1
+jardín,Garden,noun,Buildings - Edificios,yes,A1
+escalera de incendios,Fire escape,noun,Buildings - Edificios,no,
+apartamento,Apartment,noun,Buildings - Edificios,yes,A1
+ascensor,Elevator,noun,Buildings - Edificios,yes,A1
+torre,Tower,noun,Buildings - Edificios,no,
+edificio,Building,noun,Buildings - Edificios,yes,A1
+casa,House,noun,Buildings - Edificios,yes,A1
+superintendente,Superintendent,noun,Buildings - Edificios,no,
+rascacielos,Skyscraper,noun,Buildings - Edificios,no,
+escalera mecánica,Escalator,noun,Buildings - Edificios,no,
+patio,Yard,noun,Buildings - Edificios,no,
+sobre,Envelope,noun,Post Office - Oficina de Correos,yes,A1
+buzón,Mailbox,noun,Post Office - Oficina de Correos,no,
+escribir una carta,Write a letter,phrase,Post Office - Oficina de Correos,no,
+paquete,Parcel,noun,Post Office - Oficina de Correos,yes,A2
+dirección,Address,noun,Post Office - Oficina de Correos,yes,A1
+enviar una carta,Post a letter,phrase,Post Office - Oficina de Correos,no,
+carta express,Express letter,noun,Post Office - Oficina de Correos,no,
+correo certificado,Certified mail,noun,Post Office - Oficina de Correos,no,
+recibir,Receive,verb,Post Office - Oficina de Correos,yes,A2
+destinatario,Recipient,noun,Post Office - Oficina de Correos,no,
+destinatario,Consignee,noun,Post Office - Oficina de Correos,no,
+correo aéreo,Airmail,noun,Post Office - Oficina de Correos,no,
+oficina de correos,Post office,noun,Post Office - Oficina de Correos,no,
+cartero,Mailman,noun,Post Office - Oficina de Correos,no,
+correo urgente,Express mail,noun,Post Office - Oficina de Correos,no,
+correo,Mail,noun,Post Office - Oficina de Correos,yes,A1
+regresar,Return,verb,Post Office - Oficina de Correos,no,
+sellar,Seal,verb,Post Office - Oficina de Correos,no,
+estampilla en una carta,Stamp on a letter,phrase,Post Office - Oficina de Correos,no,
+papelería,Stationery,noun,Post Office - Oficina de Correos,yes,A2
+metro,Subway,noun,Public Transportation - Transporte Público,yes,A1
+tarifa,Fare,noun,Public Transportation - Transporte Público,no,
+parada de autobús,Bus stop,noun,Public Transportation - Transporte Público,no,
+esquina,Corner,noun,Streets - Calles,yes,A2
+banqueta,Sidewalk,noun,Streets - Calles,no,
+unidireccional,One way,adjective,Streets - Calles,no,
+vuelta a la derecha,Right turn,phrase,Streets - Calles,no,
+vuelta a la izquierda,Left turn,phrase,Streets - Calles,no,
+intersección,Intersection,noun,Streets - Calles,no,
+paso a desnivel,Overpass,noun,Streets - Calles,no,
+cruce de caminos,Crossroad,noun,Streets - Calles,no,
+doblar,Turn a corner,phrase,Streets - Calles,no,
+atestado,Crowded,adjective,Streets - Calles,no,
+puente,Bridge,noun,Streets - Calles,no,
+embotellamiento,Traffic jam,noun,Streets - Calles,no,
+glorieta,Roundabout,noun,Streets - Calles,no,
+luz roja,Red light,noun,Streets - Calles,no,
+señal de alto,Stop sign,noun,Streets - Calles,no,
+límite de velocidad,Speed limit,noun,Streets - Calles,no,
+autopista,Highway,noun,Streets - Calles,no,
+sendero,Road,noun,Streets - Calles,no,
+calle,Street,noun,Streets - Calles,yes,A1
+semáforo,Traffic light,noun,Streets - Calles,no,
+girar,Turn,verb,Streets - Calles,yes,A2
+plaza,Square,noun,Streets - Calles,yes,A1
+puente peatonal,Overhead walkway,noun,Streets - Calles,no,
+señalamiento,Sign,noun,Streets - Calles,no,
+boleto,Ticket,noun,Trains - Trenes,no,
+viaje de ida y vuelta,Roundtrip,phrase,Trains - Trenes,no,
+taquilla,Ticket window,noun,Trains - Trenes,no,
+registro de equipaje,Luggage check,phrase,Trains - Trenes,no,
+tren rápido,Express train,noun,Trains - Trenes,no,
+tren local,Local train,noun,Trains - Trenes,no,
+horario,Timetable,noun,Trains - Trenes,yes,A1
+inspección de boletos,Ticket inspection,phrase,Trains - Trenes,no,
+puerta de entrada,Ticket gate,noun,Trains - Trenes,no,
+tren,Train,noun,Trains - Trenes,yes,A1
+tren bala,Bullet train,noun,Trains - Trenes,no,
+plataforma,Platform,noun,Trains - Trenes,no,
+número de tren,Train number,noun,Trains - Trenes,no,
+conductor,Conductor,noun,Trains - Trenes,yes,A1
+vías de tren,Train track,noun,Trains - Trenes,no,
+coche comedor,Dining car,noun,Trains - Trenes,no,
+asiento para discapacitados,Handicapped seating,noun,Trains - Trenes,no,
+agarrarse del pasamano,Hold onto the handrail,phrase,Trains - Trenes,no,
+ceder un asiento,Give up a seat,phrase,Trains - Trenes,no,
+sala de espera,Waiting room,noun,Trains - Trenes,no,
+estación de tren,Train station,noun,Trains - Trenes,no,
+maquina expendedora de boletos,Ticket machine,noun,Trains - Trenes,no,
+parada,Stop,noun,Trains - Trenes,yes,A1
+taquilla,Ticket booth,noun,Trains - Trenes,no,
+viajar,Ride,verb,Transportation Actions - Acciones de Transporte,yes,A1
+conmutar,Commute,verb,Transportation Actions - Acciones de Transporte,no,
+transferir,Transfer,verb,Transportation Actions - Acciones de Transporte,no,
+conductor,Driver,noun,Vehicles - Vehículos,yes,A1
+autobús,Bus,noun,Vehicles - Vehículos,yes,A1
+taxi,Taxi,noun,Vehicles - Vehículos,yes,A1
+bicicleta,Bicycle,noun,Vehicles - Vehículos,yes,A2
+metro,Metro,noun,Vehicles - Vehículos,yes,A1
+tranvía,Trolley car,noun,Vehicles - Vehículos,no,
+monoriel,Monorail,noun,Vehicles - Vehículos,no,
+carro,Car,noun,Vehicles - Vehículos,yes,A1
+pasajero,Passenger,noun,Vehicles - Vehículos,no,
+licencia,License,noun,Vehicles - Vehículos,no,
+moto,Motorbike,noun,Vehicles - Vehículos,yes,A2
+motocicleta,Motorcycle,noun,Vehicles - Vehículos,no,
+scooter,Scooter,noun,Vehicles - Vehículos,no,
+automóvil,Automobile,noun,Vehicles - Vehículos,no,
+teleférico,Cable car,noun,Vehicles - Vehículos,no,
+vehículo,Vehicle,noun,Vehicles - Vehículos,no,
+barco,Boat,noun,Vehicles - Vehículos,yes,A1
+helicóptero,Helicopter,noun,Vehicles - Vehículos,no,
+camión,Truck,noun,Vehicles - Vehículos,yes,A1
+ciclomotor,Moped,noun,Vehicles - Vehículos,no,
+subir a un auto,Get in a car,phrase,Vehicles - Vehículos,no,
