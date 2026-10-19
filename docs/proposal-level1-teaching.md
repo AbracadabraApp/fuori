@@ -48,7 +48,7 @@ Her line is Italian only, as now; level 2 already shows English on the character
 >
 > *Learner taps "Vorrei una spremuta."*
 >
-> **Giulia:** Brava. Con zucchero?
+> **Giulia:** Bravo. Con zucchero?
 
 **Level 3 and up: today's rule, English only when asked**
 
