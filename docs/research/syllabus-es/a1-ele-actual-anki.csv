@@ -1,0 +1,212 @@
+spanish,english,unit,function
+¡Hola!,Hi!,1,greet
+Buenos días. / Buenas tardes. / Buenas noches.,Good morning. / Good afternoon. / Good evening.,1,greet
+Me llamo…,My name is…,1,introduce_yourself
+¿Cómo te llamas?,What's your name?,1,ask_a_name
+¿Y tú?,And you?,1,keep_the_conversation_going
+¿Cómo te apellidas?,What's your surname?,1,ask_a_name
+¿Cómo se escribe?,How do you spell it?,1,ask_for_help
+No entiendo.,I don't understand.,1,ask_for_help
+"¿Puedes repetir, por favor?","Can you say that again, please?",1,ask_for_help
+¿Está bien así?,Is this right?,1,ask_for_help
+¡Adiós!,Bye!,1,say_goodbye
+Hasta mañana.,See you tomorrow.,1,say_goodbye
+¿De dónde eres?,Where are you from?,2,ask_where_someone_is_from
+"Soy estadounidense, de…","I'm American, from…",2,say_where_you_are_from
+¿De dónde es?,Where is he/she from?,2,ask_where_someone_is_from
+Es mexicana.,She's Mexican.,2,say_where_someone_is_from
+¿Qué idiomas hablas?,What languages do you speak?,2,talk_about_languages
+Hablo inglés y un poco de español.,I speak English and a little Spanish.,2,talk_about_languages
+¿Qué idioma se habla en…?,What language do they speak in…?,2,talk_about_languages
+No sé.,I don't know.,2,say_you_dont_know
+¿Cómo se dice … en español?,How do you say … in Spanish?,2,ask_for_a_word
+"Más despacio, por favor.","Slower, please.",2,ask_for_help
+"Más alto, por favor.","Louder, please.",2,ask_for_help
+"Un café con leche, por favor.","A coffee with milk, please.",2,order_food_and_drink
+¿Cuánto es?,How much is it?,2,ask_the_price
+Perdón.,Sorry. / Excuse me.,2,apologise
+¿Qué haces? ¿Estudias o trabajas?,What do you do? Do you study or work?,3,ask_about_work
+Soy médico. / Soy estudiante.,I'm a doctor. / I'm a student.,3,say_what_you_do
+¿Dónde trabajas?,Where do you work?,3,ask_about_work
+Trabajo en un hospital.,I work in a hospital.,3,say_what_you_do
+¿Qué estudias?,What are you studying?,3,ask_about_studies
+Estudio Medicina.,I'm studying medicine.,3,say_what_you_do
+¿Dónde vives?,Where do you live?,3,ask_an_address
+Vivo en la calle…,I live on … Street.,3,give_an_address
+¿En qué número?,What number?,3,ask_an_address
+¿Qué teléfono tienes?,What's your phone number?,3,ask_a_phone_number
+Es un celular.,It's a mobile number.,3,give_a_phone_number
+¿Cuál es tu correo electrónico?,What's your email?,3,ask_an_email
+No tengo…,I don't have…,3,say_you_dont_have
+"Buenos días, señora López.","Good morning, Mrs López.",4,greet_formally
+¿Qué tal está?,How are you? (formal),4,ask_how_someone_is
+¿Qué tal estás? / ¿Qué tal?,How are you? / How's it going? (informal),4,ask_how_someone_is
+"Muy bien, gracias. ¿Y usted?","Very well, thanks. And you? (formal)",4,say_how_you_are
+"Mire, le presento a…",Let me introduce… (formal),4,introduce_someone
+"Mira, este es Alberto, un amigo.","Look, this is Alberto, a friend. (informal)",4,introduce_someone
+Encantado. / Encantada.,Pleased to meet you.,4,reply_to_an_introduction
+Mucho gusto.,Nice to meet you.,4,reply_to_an_introduction
+"¿El señor Cortés, por favor?","Mr Cortés, please? (asking for someone)",4,ask_for_someone
+"Sí, soy yo.","Yes, that's me.",4,identify_yourself
+"Un momento, por favor.","One moment, please.",4,ask_someone_to_wait
+"Eres estadounidense, ¿no?","You're American, aren't you?",4,check_information
+¿Cómo se llama usted?,What's your name? (formal),4,ask_a_name
+¿Estás casado? / ¿Estás casada?,Are you married?,5,ask_about_family
+"No, estoy soltero.","No, I'm single.",5,talk_about_family
+¿A qué te dedicas?,What do you do for a living?,5,ask_about_work
+¿Tienen hijos?,Do you (two) have children?,5,ask_about_family
+Tenemos una hija.,We have a daughter.,5,talk_about_family
+¿Cuántos años tiene?,How old is he/she?,5,ask_an_age
+¿Tienes hermanos?,Do you have brothers or sisters?,5,ask_about_family
+Mi padre es abogado.,My father is a lawyer.,5,talk_about_family
+¿Cómo es?,What's he/she like?,5,ask_for_a_description
+Es alto y usa lentes.,He's tall and wears glasses.,5,describe_someone
+Tiene los ojos cafés.,He/she has brown eyes.,5,describe_someone
+Es muy simpática.,She's really nice.,5,describe_someone
+¿Quién es este?,Who's this?,5,identify_someone
+Es mi hermano mayor.,It's my older brother.,5,identify_someone
+"Mira, una foto de mi familia.","Look, a photo of my family.",5,show_something
+Muchas gracias.,Thanks very much.,5,thank_someone
+Hay un periódico en la mesa.,There's a newspaper on the table.,6,say_what_there_is
+Buenos días. ¿Qué desea?,Good morning. What can I do for you? (shop assistant),6,serve_a_customer
+¿Tienen cuadernos?,Do you have notebooks?,6,ask_for_something_in_a_shop
+Quería una agenda.,I'd like a planner.,6,ask_for_something_in_a_shop
+Quiero…,I want…,6,ask_for_something_in_a_shop
+¿Puedo ver ese rojo?,Can I see that red one?,6,ask_to_see_something
+"¿Este? — Sí, ese.","This one? — Yes, that one.",6,point_to_something
+¿Cuánto cuesta?,How much is it?,6,ask_the_price
+¿Cuánto cuestan estos lentes?,How much are these glasses?,6,ask_the_price
+Cuarenta pesos con cincuenta centavos.,One seventy-five (euros). / Forty pesos fifty.,6,give_the_price
+Está bien. Me lo llevo.,"OK, I'll take it.",6,buy_something
+¿Cuál es la moneda de tu país?,What's the currency in your country?,6,ask_about_money
+Tengo una pluma y un diccionario.,I've got a pen and a dictionary.,6,say_what_you_have
+¿Dónde está Oaxaca?,Where is Oaxaca?,7,ask_where_a_place_is
+Está en el sur del país.,It's in the south of the country.,7,say_where_a_place_is
+Está al norte de…,It's north of…,7,say_where_a_place_is
+Está cerca de… / lejos de…,It's near… / far from…,7,say_where_a_place_is
+¿Cómo es?,What's it like?,7,ask_for_a_description
+Es una ciudad muy bonita y tranquila.,"It's a very pretty, quiet city.",7,describe_a_place
+"Es pequeña, pero tiene muchos monumentos.","It's small, but it has lots of monuments.",7,describe_a_place
+Tiene playa y un puerto importante.,It has a beach and an important port.,7,describe_a_place
+¿Cuántos habitantes tiene?,How many people live there?,7,ask_about_population
+Más de dos millones. / Casi un millón.,Over two million. / Almost a million.,7,talk_about_population
+¿Cuál es la capital de…?,What's the capital of…?,7,ask_about_a_country
+Es famosa por el café.,It's famous for its coffee.,7,say_what_a_place_is_known_for
+¿Por qué vives aquí?,Why do you live here?,7,ask_why
+Porque es muy tranquilo.,Because it's very quiet.,7,give_a_reason
+¿Cómo es tu casa?,What's your home like?,8,ask_for_a_description
+Es antigua y bastante grande.,It's old and quite big.,8,describe_a_home
+¿Cuántas recámaras tiene?,How many bedrooms does it have?,8,ask_about_a_home
+Está cerca del centro.,It's near the centre.,8,describe_a_home
+¿Está bien comunicada?,Is it well connected (for transport)?,8,ask_about_a_home
+Tiene mucha luz.,It gets lots of light.,8,describe_a_home
+No tiene elevador.,It doesn't have a lift.,8,describe_a_home
+Rento un departamento.,I rent a flat.,8,talk_about_where_you_live
+Comparto departamento con dos amigas.,I share a flat with two friends.,8,talk_about_where_you_live
+¿Qué hay en la sala?,What's in the living room?,8,ask_what_there_is
+Hay una mesa y cuatro sillas.,There's a table and four chairs.,8,say_what_there_is
+¿Dónde está el sofá?,Where's the sofa?,8,ask_where_something_is
+Está enfrente de la ventana.,It's opposite the window.,8,say_where_something_is
+Está al lado de… / encima de… / debajo de…,It's next to… / on top of… / under…,8,say_where_something_is
+Está en el refri.,It's in the fridge.,8,say_where_something_is
+¿Te gusta el fútbol?,Do you like football?,9,ask_about_likes
+Me gusta mucho el cine.,I really like films.,9,say_what_you_like
+Me gustan las películas de aventuras.,I like adventure films.,9,say_what_you_like
+No me gusta nada…,I don't like … at all.,9,say_what_you_dont_like
+¡Me encanta!,I love it!,9,say_what_you_like
+¿Y a ti?,And you? (about likes),9,keep_the_conversation_going
+A mí también. / A mí tampoco.,Me too. / Me neither.,9,agree
+A mí sí. / A mí no.,I do. / I don't.,9,disagree
+A mi hermano le encanta bailar.,My brother loves dancing.,9,talk_about_someone_elses_likes
+No me gustan las computadoras.,I don't like computers.,9,say_what_you_dont_like
+"A ustedes les gusta…, ¿verdad?","You (all) like…, right?",9,check_information
+Nos gusta viajar.,We like travelling.,9,say_what_you_like
+Es precioso. / Es horrible.,It's lovely. / It's awful.,9,give_an_opinion
+En mi colonia hay muchas tiendas.,There are lots of shops in my neighbourhood.,10,describe_a_neighbourhood
+Hay pocas zonas verdes.,There aren't many green spaces.,10,describe_a_neighbourhood
+Es tranquilo y está muy bien comunicado.,It's quiet and has good transport.,10,describe_a_neighbourhood
+Lo que más me gusta de mi colonia es…,What I like most about my neighbourhood is…,10,say_what_you_like
+Mi lugar favorito es una plaza pequeña.,My favourite place is a little square.,10,express_a_preference
+¿Qué hora es?,What time is it?,10,ask_the_time
+Es la una y cuarto.,It's quarter past one.,10,tell_the_time
+Son las tres y media.,It's half past three.,10,tell_the_time
+Son diez para las cinco.,It's ten to five.,10,tell_the_time
+¿A qué hora abren las tiendas?,What time do the shops open?,10,ask_opening_times
+Abren a las nueve y media.,They open at half past nine.,10,give_opening_times
+Los sábados por la tarde está cerrado.,It's closed on Saturday afternoons.,10,give_opening_times
+¿Qué tiempo hace?,What's the weather like?,10,ask_about_the_weather
+Hace calor. / Hace frío. / Hace sol.,It's hot. / It's cold. / It's sunny.,10,talk_about_the_weather
+Llueve mucho. / Está nublado.,It rains a lot. / It's cloudy.,10,talk_about_the_weather
+¿A qué hora te levantas?,What time do you get up?,11,ask_about_routine
+Me levanto a las siete.,I get up at seven.,11,talk_about_routine
+Me baño y desayuno.,I shower and have breakfast.,11,talk_about_routine
+¿Comes en casa?,Do you have lunch at home?,11,ask_about_routine
+"No, en el trabajo.","No, at work.",11,talk_about_routine
+Empiezo a trabajar a las nueve.,I start work at nine.,11,talk_about_routine
+Termino de trabajar a las seis.,I finish work at six.,11,talk_about_routine
+Vuelvo a casa a las siete.,I get home at seven.,11,talk_about_routine
+Ceno como a las diez.,I have dinner around ten.,11,talk_about_routine
+¿Qué haces por la tarde?,What do you do in the afternoon?,11,ask_about_routine
+Voy a clase de música.,I go to music class.,11,talk_about_routine
+Me lavo los dientes.,I brush my teeth.,11,talk_about_routine
+"Me acuesto a las once, más o menos.",I go to bed around eleven.,11,talk_about_routine
+Todos los días salgo con mi perro.,Every day I go out with my dog.,11,talk_about_routine
+¿Qué haces los fines de semana?,What do you do at weekends?,12,ask_about_free_time
+¿Qué hacen los fines de semana?,What do you (all) do at weekends?,12,ask_about_free_time
+Los sábados nos levantamos tarde.,On Saturdays we get up late.,12,talk_about_free_time
+Hacemos el súper.,We do the grocery shopping.,12,talk_about_free_time
+Limpiamos la casa.,We clean the house.,12,talk_about_free_time
+Cenamos fuera.,We eat out in the evening.,12,talk_about_free_time
+Luego vamos por unos tragos.,Then we go out for drinks.,12,talk_about_free_time
+Voy al campo muchos fines de semana.,I go to the countryside a lot of weekends.,12,talk_about_free_time
+Andamos en bici.,We go cycling.,12,talk_about_free_time
+Siempre… / Normalmente…,Always… / Usually…,12,say_how_often
+Voy al cine seguido.,I often go to the cinema.,12,say_how_often
+A veces como con mi familia.,Sometimes I have lunch with my family.,12,say_how_often
+No veo nunca la tele.,I never watch TV.,12,say_how_often
+Nos acostamos temprano.,We go to bed early.,12,talk_about_free_time
+¿Y ustedes?,And you (all)?,12,keep_the_conversation_going
+¿Qué haces en tu trabajo?,What do you do in your job?,13,ask_about_work
+Atiendo a los clientes.,I deal with customers.,13,talk_about_work
+¿Cuántas horas trabajas al día?,How many hours a day do you work?,13,ask_about_work
+¿Qué horario tienes?,What are your hours?,13,ask_about_work
+De nueve a tres.,From nine to three.,13,talk_about_work
+¿Trabajas los fines de semana?,Do you work weekends?,13,ask_about_work
+Lo que más me gusta es hablar con la gente.,What I like most is talking to people.,13,say_what_you_like
+"Lo que menos, que gano poco.",What I like least is that I earn very little.,13,say_what_you_dont_like
+Estoy desempleado. / No tengo trabajo.,I'm out of work.,13,talk_about_work
+¿Cómo vas al trabajo?,How do you get to work?,13,ask_about_transport
+En carro. / En metro. / Caminando.,By car. / By metro. / On foot.,13,talk_about_transport
+¿Cuánto tardas en llegar?,How long does it take you to get there?,13,ask_about_transport
+Unos veinte minutos.,About twenty minutes.,13,talk_about_transport
+Tomo el metro dos veces al día.,I take the metro twice a day.,13,say_how_often
+Una vez a la semana.,Once a week.,13,say_how_often
+¿Sabes nadar?,Can you swim?,14,ask_about_abilities
+"Sí, ¿y tú? — Yo también. / Yo no.","Yes, can you? — Me too. / I can't.",14,agree
+Sé tocar la guitarra.,I can play the guitar.,14,talk_about_abilities
+No sé manejar.,I can't drive.,14,talk_about_abilities
+¿Cocinas bien?,Are you a good cook?,14,ask_about_abilities
+"Regular. / Así, así.",So-so.,14,rate_something
+Ni bien ni mal.,"Not good, not bad.",14,rate_something
+"Sí, bastante bien.","Yes, pretty well.",14,rate_something
+¿Conoces Oaxaca?,Have you been to Oaxaca?,14,ask_what_someone_knows
+No conozco a tu hermana.,I haven't met your sister.,14,say_what_you_know
+No sé qué día es hoy.,I don't know what day it is.,14,say_you_dont_know
+Yo creo que hablar idiomas es muy útil.,I think speaking languages is very useful.,14,give_an_opinion
+Pues yo creo que es difícil.,"Well, I think it's hard.",14,disagree
+"Sí, pero también es…","Yes, but it's also…",14,add_a_counter_argument
+Es muy interesante. / Es aburrido.,It's very interesting. / It's boring.,14,give_an_opinion
+¿Qué hiciste ayer?,What did you do yesterday?,15,ask_about_the_past
+¿Saliste?,Did you go out?,15,ask_about_the_past
+"No, me quedé en casa.","No, I stayed home.",15,talk_about_the_past
+Vimos una película.,We watched a film.,15,talk_about_the_past
+Me vi con Gloria.,I met up with Gloria.,15,talk_about_the_past
+Fuimos a dar una vuelta.,We went for a walk.,15,talk_about_the_past
+Tomamos algo.,We had a drink.,15,talk_about_the_past
+Volví a casa un poco tarde.,I got home a bit late.,15,talk_about_the_past
+Ayer me levanté a las ocho.,Yesterday I got up at eight.,15,talk_about_the_past
+Estuve en el parque.,I was at the park.,15,talk_about_the_past
+A las seis fui al gimnasio.,At six I went to the gym.,15,talk_about_the_past
+Hice un examen.,I took an exam.,15,talk_about_the_past
+Me acosté muy temprano.,I went to bed very early.,15,talk_about_the_past
+Ayer conocí a…,Yesterday I met… (for the first time),15,talk_about_the_past
