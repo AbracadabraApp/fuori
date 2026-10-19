@@ -91,7 +91,9 @@ Five levels, from tapping a reply with English to filling a frame in your own wo
 ### Diario: the review place ([diario.md](diario.md); card screens in [beginner-scaffolding.md](beginner-scaffolding.md))
 Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens phrase cards from your own conversations, at each phrase's own beginner level.
 - [x] **Claude** Card test (round 17, [level-judge-test.md](level-judge-test.md)): today's review phrases are mostly the character's lines (18–22% card-worthy); a card maker passes 69–78% of cards on 9 checks; level is the weak spot (about half the lines at 90% of words)
-- [ ] **Claude** Card maker v2: plainer lines and replies, and the line must call for the frame; rerun round 17
+- [ ] **Claude** Missions prototype P1–P3 first ([diario.md](diario.md) → Prototype first; Josh, 2026-10-19: prototype before building the whole feature)
+- [ ] **Josh** P4: after playing the prototype, build the whole chips-and-missions feature, change it, or drop it
+- [ ] **Claude** Card maker v2 (on hold until P4: chips with missions may replace cards)
 - [ ] **Josh** Decide: does the 90%-of-words bar apply to the whole card, or to the frame and the character's line (the slot noun comes from the learner's own scene, with English on levels 1–2)?
 - [ ] **Claude** Cards from their own step after each conversation (round 17: today's review phrases mostly can't be cards)
 - [ ] **Claude** A judge call per conversation: did the learner say a card's phrase themselves (retires it). No phrase matching

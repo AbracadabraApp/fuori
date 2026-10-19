@@ -23,6 +23,19 @@ Mockup: the interactive Diario canvas in the Claude app (chip → deck → end o
 - Needs: a mission names a kind of place (bar, market, pharmacy) and opens an ordinary conversation at one in the current city, built as simply as possible: memory, past visits and which place don't matter (Josh); the character knows why you came (one line in the opening situation, tested on the replay); beginners need reply buttons to succeed, so missions ship with them; a colouring judge, tested against Josh's own reading of transcripts first.
 - Replaces the card decks below if it holds up; the chip wall, groups and heat stay.
 
+## Prototype first (Josh, 2026-10-19)
+
+Prove missions work with a few chips before writing 90 or building the chip wall. Each step has a goal and a bar; the next step waits on it.
+
+| Step | What | Who | Goal and bar |
+|---|---|---|---|
+| P1 | 3 beginner chips × 3 missions per country, as data; an experiment opens each mission with one "why you came" line and a simulated beginner | Claude | The character steers to the mission without breaking role in 90%+ of runs; a beginner follows 90% of the words |
+| P2 | A colouring judge on P1's transcripts and real ones | Claude, then Josh reads 20 | The judge's colour matches Josh's reading on 18 of 20 |
+| P3 | Missions in the app behind a setting (off by default): a plain list of the 9 missions in Settings, tap one and you're in the conversation; no chip wall, no reply buttons yet | Claude builds, Josh plays | Josh: drilling a mission feels worth repeating. Ships in the next build (releases are on hold to a milestone) |
+| P4 | Decide | Josh | Build the whole feature (90 chips, the wall, colouring, reply buttons), change it, or drop it |
+
+The card maker (round 17) waits on P4.
+
 ## The shape
 
 The Diario opens on a wall of chips, one per situation group, like the genre chips in MovieGenius. Each chip warms from cool to gold as its phrases are learned. Tap a chip and its deck starts: one card per phrase per pass, each card at that phrase's level (levels and screens in [beginner-scaffolding.md](beginner-scaffolding.md)).
