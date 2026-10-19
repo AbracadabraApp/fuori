@@ -68,31 +68,53 @@ That's a lesson, not a barista. Only the question the learner has to answer gets
 
 The simplest scaffolding: no reply buttons. At level 1 she teaches the line you need and you say it back with the mic; her words are on screen as subtitles. She does it for the first N turns of each conversation (N shrinking with the count of conversations, [beginner-scaffolding.md](beginner-scaffolding.md)); after that she just talks, and helps when asked. Nothing new on screen and no second call. The buttons stay built behind the hidden test switch, to bring back for the first turn or two only if speaking from the start proves too hard.
 
-Josh's two rules from the sample (2026-10-19):
-- **Teach a choice, not a yes.** Her suggestion shows how to pick between things, not how to agree: "Con un cornetto o senza? *With a croissant or without?* Puoi dire: con un cornetto."
-- **Show the person of the verb.** When the answer turns her "you" into your "I", she says both: "Sei *(you are)* nuovo qui? Puoi dire: sì, sono *(I am)* nuovo." This is the conjugation gap round 22 found (9 caught, 37 missed).
+How she teaches (Josh, 2026-10-19; the sample below is the reference, an earlier "Puoi dire" sample of Claude's was clumsy: three parts on every line):
+- **The frame, not the whole line.** "Dici: vorrei, e cosa vuoi" leaves the slot for you to fill; you never just repeat.
+- **Little and spread out.** A few words of English and one frame where they're needed; some turns have neither.
+- **She fades inside the scene.** Once you're managing, the English stops (scene 5), as well as after N turns.
+- **Rough answers count.** English slips ("Vorrei… tomatoes?") and mistakes ("Uno biglietto") come back recast in her reply, with no comment.
+- **A choice, not a yes** (Josh): "Crema… o pistacchio?", "Un chilo?"
+- **The person of the verb, modelled** (Josh): she says it about herself first ("Io sono Giulia. E tu…?"), so "sei" is answered with "sono". Round 22's conjugation gap (9 caught, 37 missed). No bracketed glosses.
 
-Sample, Giulia at the bar, N = 3 for this conversation (*italics* she says aloud in English):
+**Reference sample: five scenes, no buttons** (*italics* she says aloud in English):
 
-> **Giulia:** Buongiorno! Cosa prendi? *What would you like?* Puoi dire: vorrei un caffè.
->
-> **You:** Vorrei un… cappuccino?
->
-> **Giulia:** Un cappuccino, perfetto! Con un cornetto o senza? *With a croissant or without?* Puoi dire: con un cornetto.
->
-> **You:** Senza.
->
-> **Giulia:** Ecco il cappuccino. Sei *(you are)* nuovo qui? Puoi dire: sì, sono *(I am)* nuovo.
->
-> **You:** Sì, sono nuovo.
->
-> **Giulia:** Benvenuto! Io sono Giulia. Tu come ti chiami? *(N reached: she just talks)*
->
-> **You:** Sorry… what?
->
-> **Giulia:** Come ti chiami? *What's your name?* Io mi chiamo Giulia. E tu?
+**1. Introduce yourself (Giulia)**
+> **Giulia:** Ciao! Sei nuovo qui? Io sono Giulia. E tu, come ti chiami? *What's your name?* Dici: mi chiamo, e il tuo nome.
+> **You:** Mi chiamo Josh.
+> **Giulia:** Piacere, Josh! Di dove sei? *Where are you from?* Puoi dire: sono di, e la tua città.
+> **You:** Sono… Seattle.
+> **Giulia:** Ah, sei di Seattle! Che bello. Benvenuto.
 
-To check in the trial: the teaching comes after her question, which today's prompt forbids ("No more words after a question mark"), so try the exemption against teaching first; "Puoi dire" shouldn't repeat every turn; and listen to 5–10 mixed-language lines in the voice before anything else.
+**2. Buy at the market (Anna)**
+> **Anna:** Buongiorno! Cosa ti do? *What can I get you?* Dici: vorrei, e cosa vuoi.
+> **You:** Vorrei… tomatoes?
+> **Anna:** Pomodori! *Tomatoes.* Quanti? Un chilo? *A kilo?*
+> **You:** Sì, un chilo.
+> **Anna:** Ecco. Altro? *Anything else?* Se basta, dici: basta così.
+> **You:** Basta così, grazie.
+
+**3. Get around (Marco)**
+> **Marco:** Buongiorno. Quanti biglietti? *How many tickets?* Dici: un biglietto, per favore.
+> **You:** Uno biglietto, per favore.
+> **Marco:** Un biglietto, certo. Un euro e cinquanta. Con la carta? *By card?*
+> **You:** Sì, carta.
+> **Marco:** Perfetto. Ecco il biglietto.
+
+**4. Say you don't understand (Sandro)**
+> **Sandro:** Allora, cornetto alla crema, al pistacchio, integrale, vuoto…
+> **You:** Sorry, I don't understand.
+> **Sandro:** Ah, scusa, parlo veloce! *Sorry, I talk fast!* Puoi dire: più piano, per favore. *Slower, please.* Allora: crema… o pistacchio?
+> **You:** Crema.
+> **Sandro:** Alla crema. Ottimo.
+
+**5. Ask for directions (the newsagent)**
+> **Newsagent:** Ciao! Hai bisogno? *Need something?* Se cerchi un posto, dici: dov'è, e il posto.
+> **You:** Dov'è la… pharmacy?
+> **Newsagent:** La farmacia! È lì, a destra. *It's there, on the right.*
+> **You:** A destra?
+> **Newsagent:** Sì, a destra. Due minuti.
+
+To check in the trial: does she stop teaching once you're managing; the frame after her question breaks today's "No more words after a question mark", so try the exemption against frame-first; "Dici" shouldn't open every turn; a mission about asking (scene 5) needs her to give a reason to ask, where she could start to sound scripted; and listen to 5–10 mixed-language lines in the voice before anything else.
 
 ## How it would work
 
