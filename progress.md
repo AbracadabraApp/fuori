@@ -1492,3 +1492,4 @@ Josh: "proceed with your tests ... I don't want to be the bottleneck". Claude de
 
 ## 2026-10-19 (afternoon): Teaching on screen, and no new level prompts (cloud session)
 - Added `docs/teaching-on-screen.md` (proposed): the teaching is in what the character says; the screen underlines the one thing taught and greys English; no transcript, no new controls. After reviewing `prompt-trials.md` and the `levels.md` changelog, it recommends no new level 1/2 prompts (they'd repeat the teacher trap, the order-form rounds 5/9, and unasked English): level 1 = Beginner block + `teach3` + `english3`, to be replayed stacked, Mexico first. Pointer added to `proposal-level1-teaching.md`. Mockups redone on the canvas. Docs only.
+- Same day: `docs/research/textbook-a1-sequence.md`: how *Nuovissimo Progetto italiano 1* sequences its introductory unit and Unit 1 (from the publisher's free specimen), with the core phrases and what it suggests for Fuori.
