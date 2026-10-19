@@ -57,3 +57,13 @@ Goal: cards worth reviewing, made from a real conversation. Round 17, admin expo
 |---|---|---|---|---|
 | Today's stored review phrases (`memory.md`) as cards | — | 18–22% card-worthy | — | Not enough on their own |
 | Card maker v1, one new prompt | Tried | 69% / 78% | 54% / 57% Italy, 38% / 35% Mexico | **Next: build from existing prompts instead** (`memory.md` picks frames, `character.md` + Beginner writes the line and answers, `replies.md` the replies), and compare |
+
+### Noticing a conversation is over (experiment, `tests/experiments/end-detect.mts`)
+
+Goal: the game knows when both have said goodbye, or the errand is paid and thanked (Josh, 2026-10-19), without ending anything early. Round 20, Italy, 26 real conversations, 153 character turns (Mexico: 1 conversation reached an end, too few). Truth: round 19's judge. Bar: ends early on 2% of turns or fewer, catches 90% of ended conversations.
+
+| Way | Status | Ends early | Catches the end | Extra cost | Words per line | Decision |
+|---|---|---|---|---|---|---|
+| `over` on the character's reply (production `character.md`, trial schema) | Tried | 0% | 82% of 17 | none | 25.2 (25.6 without) | Recommended; changes `{ line, en }`, needs Josh |
+| Separate judge after each line | Tried | 0% | 82% of 17 | a call, median 1.3 s, while the voice plays | unchanged | Same result for more cost |
+

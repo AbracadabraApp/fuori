@@ -48,8 +48,10 @@ Goal: reply under 2 s, 4 s at most. Measured 2026-10-18 (`npm run measure:turn`,
 ### Ending a conversation (round 19; Josh, 2026-10-19)
 Josh: some conversations are clearly over (both said ciao, arrivederci, ci vediamo; you paid and said thank you) but the only way out is back. Investigate game-wide, missions included ("Done").
 - [x] **Claude** Round 19 (`tests/experiments/conversation-ends.mts`, admin export): Italy 28 conversations, 17 reached a natural end (13 of those left within one exchange; characters never opened something new after it, 2 added a reminder or answered a silent turn); 11 left mid-question. Mexico 9: 8 left mid-question and no learner said goodbye
-- [ ] **Josh** Decide: when both have said goodbye, does the scene end by itself (the mic stays closed, the character's goodbye plays, then back to the city)? And: a goodbye button for learners who can't say it yet (Mexico: nobody said goodbye)?
-- [ ] **Claude** If yes: test how to detect it (a field on the character's reply, which changes `{ line, en }` and needs Josh's ok, or a separate judge while the voice plays) against round 19's judge on the same conversations, before building
+- [x] **Claude** Round 20 (`end-detect.mts`, Italy 26 conversations, 153 turns): an `over` flag on the character's reply and a separate judge both end nothing early (0%) and catch 82% of ended conversations (bar 90%); the misses are mostly where only the character said goodbye, which isn't Josh's "both say ciao". The flag costs nothing and doesn't change the line. Mexico untested: only 1 conversation reached an end
+- [ ] **Josh** Decide: add `over` to the character's reply (changes CLAUDE.md's `{ line, en }`). Josh's design (2026-10-19): when it's over, an "Esci" or "Fuori" link fades in; tap it or ignore it and keep talking. Nothing ends by itself. Drafted for the next build
+- [ ] **Josh** Pick the word: "Esci" or "Fuori" for Italy, and Mexico's ("Salir"?); it comes from `/v1/content`, not Swift
+- [ ] **Josh** A goodbye button for learners who can't say it yet (Mexico: nobody said goodbye)?
 
 ### Core behaviours (round 18)
 - [ ] **Josh** Decide: when a learner asks "say it in English", is the translation shown under the line enough? Today the character repeats in the language and never speaks English (on every prompt tested)
@@ -121,7 +123,7 @@ Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the sam
 Two stages. A TestFlight for Josh alone needs no Apple review and none of the cost protection; anyone else does ([12-native-app.md](12-native-app.md) → Cost protection). Josh's developer account is paid (Movie Genius shipped from it), so App Store signing works.
 
 **Stage 1: TestFlight for Josh only** (internal testing; N4 in 12-native-app.md)
-- Josh, 2026-10-18: hold new TestFlight builds until a milestone; server changes still reach build 1 through Railway. Waiting for the next build: the mic states (87ed253, 9c2ed05) and the double-tap fix (5e54841); drafted for it (Josh, 2026-10-19: "promising, draft for next release"): the conversation ends itself after both say goodbye (round 20's `over` flag; design still with Josh)
+- Josh, 2026-10-18: hold new TestFlight builds until a milestone; server changes still reach build 1 through Railway. Waiting for the next build: the mic states (87ed253, 9c2ed05) and the double-tap fix (5e54841); drafted for it (Josh, 2026-10-19: "promising, draft for next release"): an exit link fades in when the conversation is over (round 20's `over` flag), to tap or ignore
 - [x] **Claude** Icon (2026-10-17), microphone usage text, export compliance (`ITSAppUsesNonExemptEncryption: false`), version 0.1.0 build 1
 - [x] **Josh** Created the app in App Store Connect (2026-10-18); **Claude** registered the bundle id `com.joshp100.fuori` (it wasn't: phone builds used the wildcard profile)
 - [x] **Claude** `make archive`, `make export`, `make upload` (`ios/Makefile`); build 0.1.0 (1) uploaded 2026-10-18. Bump `CURRENT_PROJECT_VERSION` in `project.yml` before each upload

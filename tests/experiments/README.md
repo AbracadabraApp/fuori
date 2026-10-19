@@ -17,7 +17,8 @@ Run from the repo root with the API key: `npx tsx --env-file=.env.local tests/ex
 | `learner-levels.mts` | The level check (`lib/learner-level.ts`) on each real learner's first conversations, for Josh to compare with his own judgement | admin export | 14 |
 | `diario-cards.mts` | Diario cards from real conversations: today's stored review phrases against a draft card maker, 9 checks plus the level judge | admin export | 17 |
 | `core-behaviours.mts` | CLAUDE.md's core behaviours (help when asked, garbled speech, recasting a mistake, no unasked English), one probe each, thinking off and on; `PROBES=` picks probes, `CHARACTER_PROMPT=` a trial prompt | — | 18 |
-| `conversation-ends.mts` | Real conversations from the admin export: where each was first naturally over (errand done and closed, or both said goodbye), what happened after, and whether the learner said goodbye; reads `ended_at`, which includes idle time, so the seconds are rough | — | 19 |
+| `conversation-ends.mts` | Real conversations from the admin export: where each was first naturally over (errand done and closed, or both said goodbye), what happened after, and whether the learner said goodbye; reads `ended_at`, which includes idle time, so the seconds are rough; also writes JSON for end-detect | — | 19 |
+| `end-detect.mts` | Two ways to notice a conversation is over, scored against conversation-ends' judge: an `over` flag on the character's reply (trial schema, line regenerated) and a separate judge after each real line (timed) | — | 20 |
 | `voice-speed.mts` | Speed of speech in (Groq Whisper, ElevenLabs Scribe) and speech out (ElevenLabs models, whole file and first streamed byte), short to long lines, both languages; laptop network | — | voice 1 |
 | `on-hold/smaller-world.mts` | Scripted two-visit conversations per character in one neighbourhood, checked and rewritten. On hold until the smaller world has a spec | — | 12–13 |
 
