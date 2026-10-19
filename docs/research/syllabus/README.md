@@ -22,6 +22,8 @@ The three Progetto books are scans; they were read with OCR, so a few pages (cro
 - **`functions-grammar.md`:** each communicative function (personal information, location, prices, the past, opinions…) with its grammar and level, and a newcomer's first-week order.
 - **`chips-vs-syllabus.md`:** Fuori's 10 beginner chips checked against A1–A2.
 - **`level-words-it.csv`:** 1,479 everyday lemmas (`lemma,pos,level,unit,theme`), each at the level and unit where a learner first meets it (A1: 786, A2: 693). For measuring what a beginner can follow, in place of Kelly (`docs/level-judge-test.md`: Kelly's levels are newspaper frequency). Spot check: *frigorifero* A2, *pranzo* A1, *cognome* A1, *scontrino* A1; *regolamento*, *provvedimento* absent.
+- **`prepositions.md`:** di, a, da, in, con, su, per, tra/fra: uses with examples, the articulated forms, the classic beginner confusions (a vs in with places, da), what A1 needs first. From *Le preposizioni italiane*.
+- **`grammar-terms.md`:** 52 grammar points by level (A1–B2), each explained through English with the trap for English speakers, plus the 10 questions a beginner asks most with one-line answers for Learn. From *English Grammar for Students of Italian* (Adorni & Primorac).
 - **`anki-a1-a2.csv`:** 187 A1–A2 phrase cards (Italian, English, tags), importable into Anki; Josh's own study.
 
 ## The progression in one table
