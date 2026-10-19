@@ -101,6 +101,11 @@ Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens 
 - [ ] **Josh** Decide: the learner's voice for their replies (one voice per country, or matched to the learner); whether the book shows during a conversation (diario.md suggests not)
 - [ ] **Claude** Build after reply buttons (levels 1–3), since the cards are those screens
 
+### Learn: the teacher outside the world ([learn.md](learn.md); Josh, 2026-10-19, option D for Magda)
+- [ ] **Claude** L1: the Learn prompt as a trial file, Ask and Lesson runs with simulated learners (bars in learn.md)
+- [ ] **Claude** L2: Learn behind a setting (off by default): an icon left of the Diario opens the teacher, English and the language both ways (`mode: "any"`); next build
+- [ ] **Josh** L3: keep it and take the school out of the world, or change it; name, icon, whether she stays Magda
+
 ### Smaller world for beginners: on hold until there's a spec (Josh, 2026-10-18)
 Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the same for every learner, in one neighbourhood until level 4. Explored in rounds 11–13 ([level-judge-test.md](level-judge-test.md)); described in [beginner-scaffolding.md](beginner-scaffolding.md) → "On hold". No work on it until the spec exists.
 - [ ] **Josh** ⛔ Spec: what's fixed and what's generated; which neighbourhood(s) per country; how many visits and in what order; what earns leaving it; how it fits levels 1–3; whether audio is recorded once

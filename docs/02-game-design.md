@@ -64,6 +64,8 @@ Everyone teaches, always in role (Josh, 2026-10-12/13; see [Vision, principle 7]
 
 ## Magda, at the school
 
+**Moving (Josh, 2026-10-19, draft):** Magda leaves the school for a Learn feature next to the Diario: a teacher with no role in the world, English both ways. See [learn.md](learn.md). Until it's built, the section below holds.
+
 Decided 2026-10-13 (Josh): Magda works at the scuola per stranieri, one in each city. Replaces the same day's earlier "teacher in Seattle, outside the game" and the older "teacher from the Veneto who coaches you remotely".
 - **Teaching mode, not immersion.** One-on-one lessons with practice. She is openly your teacher, so explaining grammar, drilling and switching between English and Italian is her role, not a break from it.
 - **What to work on:** you tell her, or she suggests something from the learner profile (below).
