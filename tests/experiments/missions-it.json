@@ -1,0 +1,15 @@
+{
+  "source": "Josh, 2026-10-19: example of 10 beginner chips and missions",
+  "chips": [
+    { "chip": "Greet and say goodbye", "missions": ["Say good morning to the barista and thank her on the way out", "Greet the newsagent in the afternoon (buonasera, not buongiorno)", "Say goodbye to the shopkeeper and wish her a good day", "Greet a neighbour on the stairs"] },
+    { "chip": "Introduce yourself", "missions": ["Tell the barista your name and ask hers", "Tell the market seller where you're from", "Explain to the neighbour that you've just moved in", "Introduce yourself at the language school's front desk", "Ask her phone number"] },
+    { "chip": "Order food and drink", "missions": ["Order an orange juice at the bar", "Order a cornetto and ask what's in it", "Order two coffees, one for a friend", "Order a slice of pizza by weight", "Ask for a glass of water with your coffee"] },
+    { "chip": "Ask the price and pay", "missions": ["Ask how much a coffee costs and pay at the till", "Ask whether you can pay by card", "Pay and ask for the receipt", "Ask the total for two items and check your change"] },
+    { "chip": "Buy at the market", "missions": ["Buy a kilo of tomatoes", "Ask for two etti of cheese", "Point at fruit and ask what it's called", "Buy a few apples and say that's all", "Ask what's in season"] },
+    { "chip": "Ask for directions", "missions": ["Ask where the nearest pharmacy is", "Ask whether the market is far", "Ask the way to the bus stop and repeat it back", "Ask where the bathroom is in a café"] },
+    { "chip": "Say what you don't understand", "missions": ["Ask the barista to say it again", "Ask the market seller to slow down", "Ask what a word means", "Ask how to say something in Italian"] },
+    { "chip": "Talk about time", "missions": ["Ask what time the bakery opens", "Ask when the pharmacy closes today", "Ask someone the time", "Ask whether the shop is open tomorrow"] },
+    { "chip": "Get around", "missions": ["Buy a bus ticket at the newsstand", "Ask which bus goes to the centre", "Ask the driver to tell you your stop", "Buy a train ticket for tomorrow morning"] },
+    { "chip": "Make a small plan", "missions": ["Accept the barista's suggestion to come back tomorrow", "Suggest meeting a neighbour for coffee at ten", "Agree on a time with your teacher", "Say you're busy today and suggest another day"] }
+  ]
+}

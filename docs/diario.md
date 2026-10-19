@@ -36,6 +36,8 @@ Prove missions work with a few chips before writing 90 or building the chip wall
 
 The card maker (round 17) waits on P4.
 
+P1 uses Josh's 10 beginner chips (2026-10-19), Italy first: greet and say goodbye; introduce yourself; order food and drink; ask the price and pay; buy at the market; ask for directions; say what you don't understand; talk about time; get around; make a small plan (3–5 missions each). The full list is in `tests/experiments/missions-it.json`. Some missions have no place yet in the city files (an edicola, a bus, a neighbour's stairs), and Mexico has no market and no café; P1 reports which, and those wait for Josh.
+
 ## The shape
 
 The Diario opens on a wall of chips, one per situation group, like the genre chips in MovieGenius. Each chip warms from cool to gold as its phrases are learned. Tap a chip and its deck starts: one card per phrase per pass, each card at that phrase's level (levels and screens in [beginner-scaffolding.md](beginner-scaffolding.md)).
