@@ -38,6 +38,11 @@ Goal: reply under 2 s, 4 s at most. Measured 2026-10-18 (`npm run measure:turn`,
   - **Groq Whisper:** `whisper-large-v3` against `-turbo`; upload and transcribe time against recording length; hallucination on near-silence; failure rate
   - **ElevenLabs:** voice model (Flash against Multilingual) on speed and how it sounds; streaming the audio; the quota and how often the app falls back to the phone's voice
   - **Railway and storage:** server region against Josh's location (network time per call), Postgres query times, R2 image load times (r2.dev is rate-limited)
+- [x] **Claude** Voice speed, first round (Josh: "measure speed first"; `tests/experiments/voice-speed.mts`, 5 rounds, both languages, laptop network, 2026-10-18). Median seconds for a short / medium / long line (~4 / 15 / 40 words):
+  - Speech in: Groq `whisper-large-v3-turbo` (today's) 0.26 / 0.29 / 0.36, the fastest. `whisper-large-v3` 0.29 / 0.32 / 0.46, and with no language given it once returned Spanish as English. ElevenLabs Scribe v1 and v2 0.40 / 0.6 / 0.7. Keep Groq turbo
+  - Speech out, whole file: Flash v2.5 (today's) 0.23 / 0.37 / 0.65 and Turbo v2.5 the same; Multilingual v2 1.0 / 1.4 / 2.9 and v3 1.1 / 2.1 / 4.2, too slow to use. Keep Flash
+  - Speech out streamed: Flash's first byte comes at 0.17–0.19 s whatever the length, so streaming saves up to about 0.45 s on long lines
+  - So speech in and out together are under 1 s; the rest of the wait is Claude. Deepgram, AssemblyAI and OpenAI not yet timed: **Josh** ⛔ gives API keys if they should be
 - [ ] **Claude** Test speech-to-text alternatives to Whisper on Groq: Deepgram Nova-3, AssemblyAI, OpenAI `gpt-4o-transcribe` / `gpt-4o-mini-transcribe`, ElevenLabs Scribe, Speechmatics and Google Chirp. Measure on one fixed set of real learner recordings in Italian and Mexican Spanish: errors on a beginner's accent and mistakes (the transcript must keep the learner's mistakes, not fix them), behaviour on silence and noise, speed and price per minute. **Josh** ⛔ records the set (about 20 short turns per language, including hesitant and wrong ones). Apple's on-device recognition is out of scope unless Josh reopens it (CLAUDE.md: speech in is Whisper on the server)
 
 ### Core behaviours (round 18)

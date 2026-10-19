@@ -17,6 +17,7 @@ Run from the repo root with the API key: `npx tsx --env-file=.env.local tests/ex
 | `learner-levels.mts` | The level check (`lib/learner-level.ts`) on each real learner's first conversations, for Josh to compare with his own judgement | admin export | 14 |
 | `diario-cards.mts` | Diario cards from real conversations: today's stored review phrases against a draft card maker, 9 checks plus the level judge | admin export | 17 |
 | `core-behaviours.mts` | CLAUDE.md's core behaviours (help when asked, garbled speech, recasting a mistake, no unasked English), one probe each, thinking off and on; `PROBES=` picks probes, `CHARACTER_PROMPT=` a trial prompt | — | 18 |
+| `voice-speed.mts` | Speed of speech in (Groq Whisper, ElevenLabs Scribe) and speech out (ElevenLabs models, whole file and first streamed byte), short to long lines, both languages; laptop network | — | voice 1 |
 | `on-hold/smaller-world.mts` | Scripted two-visit conversations per character in one neighbourhood, checked and rewritten. On hold until the smaller world has a spec | — | 12–13 |
 
 Reports come from `npm run test:conversations` and `npm run test:replay` (`tests/conversations/reports/`); the replay set from `npm run test:replay -- --refresh`.
