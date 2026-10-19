@@ -45,14 +45,6 @@ Goal: reply under 2 s, 4 s at most. Measured 2026-10-18 (`npm run measure:turn`,
   - So speech in and out together are under 1 s; the rest of the wait is Claude. Other providers aren't timed: none is expected to beat these on speed by more than about 0.1 s, and Josh (2026-10-18) doesn't want ones expected to be slower tested. The one kind that could save time is speech to text that streams while the learner talks (Deepgram, for example), which would take the 0.3 s off; worth a look only after the reply and the voice stream
 - [ ] **Claude** Test speech-to-text alternatives to Whisper on Groq: Deepgram Nova-3, AssemblyAI, OpenAI `gpt-4o-transcribe` / `gpt-4o-mini-transcribe`, ElevenLabs Scribe, Speechmatics and Google Chirp. Measure on one fixed set of real learner recordings in Italian and Mexican Spanish: errors on a beginner's accent and mistakes (the transcript must keep the learner's mistakes, not fix them), behaviour on silence and noise, speed and price per minute. **Josh** ⛔ records the set (about 20 short turns per language, including hesitant and wrong ones). Apple's on-device recognition is out of scope unless Josh reopens it (CLAUDE.md: speech in is Whisper on the server)
 
-### Ending a conversation (round 19; Josh, 2026-10-19)
-Josh: some conversations are clearly over (both said ciao, arrivederci, ci vediamo; you paid and said thank you) but the only way out is back. Investigate game-wide, missions included ("Done").
-- [x] **Claude** Round 19 (`tests/experiments/conversation-ends.mts`, admin export): Italy 28 conversations, 17 reached a natural end (13 of those left within one exchange; characters never opened something new after it, 2 added a reminder or answered a silent turn); 11 left mid-question. Mexico 9: 8 left mid-question and no learner said goodbye
-- [x] **Claude** Round 20 (`end-detect.mts`, Italy 26 conversations, 153 turns): an `over` flag on the character's reply and a separate judge both end nothing early (0%) and catch 82% of ended conversations (bar 90%); the misses are mostly where only the character said goodbye, which isn't Josh's "both say ciao". The flag costs nothing and doesn't change the line. Mexico untested: only 1 conversation reached an end
-- [ ] **Josh** Decide: add `over` to the character's reply (changes CLAUDE.md's `{ line, en }`). Josh's design (2026-10-19): when it's over, an "Esci" or "Fuori" link fades in; tap it or ignore it and keep talking. Nothing ends by itself. Drafted for the next build
-- [ ] **Josh** Pick the word: "Esci" or "Fuori" for Italy, and Mexico's ("Salir"?); it comes from `/v1/content`, not Swift
-- [ ] **Claude** Reply buttons (levels 1–3) get the same Done link, by the same rule: it fades in when it's over, not always shown; and once the errand is done, one reply is a goodbye, so beginners can get there (test on `replies.md` first) (Josh, 2026-10-19: "the beginner buttons really need a done button/link"; [beginner-scaffolding.md](beginner-scaffolding.md) → Build)
-
 ### Core behaviours (round 18)
 - [ ] **Josh** Decide: when a learner asks "say it in English", is the translation shown under the line enough? Today the character repeats in the language and never speaks English (on every prompt tested)
 - [ ] **Claude** Recasting mistakes fell with the short prompt (13–19% of replies, from 31–44%): try one short line in the prompt, gated on this test and the replay (speed, words, alive)
@@ -168,6 +160,14 @@ Works or is wanted, but not for the first release.
 
 - [ ] **both** Hands-free extras: prepare the reply during the silence; the wait adapts to cut-offs and counts them. Hands-free itself stays in Settings, off by default. Josh, 2026-10-16, after using it: it works well but feels like an expert feature, not because of difficulty but because of the focus a free-flowing conversation takes; pressing a button is more forgiving on response time (perception) and gives the speaker more control.
 - [ ] **app** Night-paper palette, so the app follows the phone's Dark Mode (D1). Until then the app is light only (Josh, 2026-10-16: deferred).
+
+#### Ending a conversation (round 19; Josh, 2026-10-19; next release, Josh 2026-10-19: reply buttons first)
+Josh: some conversations are clearly over (both said ciao, arrivederci, ci vediamo; you paid and said thank you) but the only way out is back. Investigate game-wide, missions included ("Done").
+- [x] **Claude** Round 19 (`tests/experiments/conversation-ends.mts`, admin export): Italy 28 conversations, 17 reached a natural end (13 of those left within one exchange; characters never opened something new after it, 2 added a reminder or answered a silent turn); 11 left mid-question. Mexico 9: 8 left mid-question and no learner said goodbye
+- [x] **Claude** Round 20 (`end-detect.mts`, Italy 26 conversations, 153 turns): an `over` flag on the character's reply and a separate judge both end nothing early (0%) and catch 82% of ended conversations (bar 90%); the misses are mostly where only the character said goodbye, which isn't Josh's "both say ciao". The flag costs nothing and doesn't change the line. Mexico untested: only 1 conversation reached an end
+- [ ] **Josh** Decide: add `over` to the character's reply (changes CLAUDE.md's `{ line, en }`). Josh's design (2026-10-19): when it's over, an "Esci" or "Fuori" link fades in; tap it or ignore it and keep talking. Nothing ends by itself. Drafted for the next build
+- [ ] **Josh** Pick the word: "Esci" or "Fuori" for Italy, and Mexico's ("Salir"?); it comes from `/v1/content`, not Swift
+- [ ] **Claude** Reply buttons (levels 1–3) get the same Done link, by the same rule: it fades in when it's over, not always shown; and once the errand is done, one reply is a goodbye, so beginners can get there (test on `replies.md` first) (Josh, 2026-10-19: "the beginner buttons really need a done button/link"; [beginner-scaffolding.md](beginner-scaffolding.md) → Build)
 
 ## Earlier list (2026-10-12 to 10-14)
 
