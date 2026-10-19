@@ -40,6 +40,10 @@ Goal: reply under 2 s, 4 s at most. Measured 2026-10-18 (`npm run measure:turn`,
   - **Railway and storage:** server region against Josh's location (network time per call), Postgres query times, R2 image load times (r2.dev is rate-limited)
 - [ ] **Claude** Test speech-to-text alternatives to Whisper on Groq: Deepgram Nova-3, AssemblyAI, OpenAI `gpt-4o-transcribe` / `gpt-4o-mini-transcribe`, ElevenLabs Scribe, Speechmatics and Google Chirp. Measure on one fixed set of real learner recordings in Italian and Mexican Spanish: errors on a beginner's accent and mistakes (the transcript must keep the learner's mistakes, not fix them), behaviour on silence and noise, speed and price per minute. **Josh** ⛔ records the set (about 20 short turns per language, including hesitant and wrong ones). Apple's on-device recognition is out of scope unless Josh reopens it (CLAUDE.md: speech in is Whisper on the server)
 
+### Core behaviours (round 18)
+- [ ] **Josh** Decide: when a learner asks "say it in English", is the translation shown under the line enough? Today the character repeats in the language and never speaks English (on every prompt tested)
+- [ ] **Claude** Recasting mistakes fell with the short prompt (13–19% of replies, from 31–44%): try one short line in the prompt, gated on this test and the replay (speed, words, alive)
+
 ### Characters feel alive
 Goal: alive 7 (today about 6 in real conversations, 5–7 with simulated learners). Order decided by Claude, judged by Josh (2026-10-18); one change at a time through the replay gate.
 - [x] **Claude** Real conversations sorted by what goes wrong (round 15): the worst were characters repeating themselves; the order form ("X o Y?") is rare in real play (8–15% of lines)

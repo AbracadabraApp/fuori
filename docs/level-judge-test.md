@@ -275,6 +275,21 @@ v2 (one reply yes and one no; different choices, not two wordings; answer the la
 - The quality judge hit its 4000-token limit once on these 14-line transcripts; real conversations longer than that could lose their score the same way (logged by `lib/remember.ts`, not silent).
 - **Next:** live with lookahead. While the character speaks, write the two replies (1.4 s) and then the character's answer to each, in parallel (3–4 s): about 5 s against about 7 s of speech, so no wait and no joins. And an arc: a short plan for the visit at the start that live turns follow, to get the script's shape without its joins.
 
+**Round 18: core behaviours on the short prompt (2026-10-18b).** The short prompt no longer spells out CLAUDE.md's core behaviours. One probe per behaviour: a real opening line, one learner line, the character's answer, judged with the English the game shows under it (`tests/experiments/core-behaviours.mts`). 8 characters × 2 runs per probe and arm.
+
+| Probe | Italy, 18b (production: no thinking) | 18b, thinking | Previous prompt 2026-10-18, thinking (production before 18b) | Mexico, 18b | 18b, thinking | Previous, thinking |
+|---|---|---|---|---|---|---|
+| "How do I say…?" (in English) | 100% | 100% | | 100% | 100% | |
+| "Come si dice…?" (in the language) | 100% | 100% | | 100% | 100% | |
+| Garbled speech understood | 100% | 94% | | 100% | 100% | |
+| No English nobody asked for | 100% | 100% | | 100% | 100% | |
+| "Can you say it in English?" | 0% | 0% | 0% | 0% | 0% | 0% |
+| A mistake recast in role | 13% | 19% | 31% | 19% | 13% | 44% |
+
+- **Asking for English never gets English in what the character says,** on either prompt: they repeat the line in the language ("Certo! Ho detto: buongiorno, cosa le preparo?"), and the English arrives only as the translation the game shows afterwards. Not a regression: the turn's `line` is "what you say, in {language}", and it's spoken by a voice for that language. A design question for Josh, not a prompt bug.
+- **Recasting fell with the short prompt:** a mistake ("Io vuole due di questi. Io è nuovo qui.") is echoed back right in 13–19% of replies, against 31–44% on the previous prompt with thinking. Mostly the character just moves on ("Certo, due di questi, subito! Benvenuto a Firenze."). 16 per cell, so the size is rough; the direction is the same in both countries.
+- Everything else holds at 94–100%.
+
 **Round 17: Diario cards from real conversations (2026-10-18, [diario.md](diario.md)).** Are the phrases worth reviewing? Real conversations from the admin export with 2+ learner lines (Italy 28, Mexico 9). Arm "today": every review phrase the memory step already stores (items, mistakes' better version, missed), judged on whether the learner would say it and whether it's on a reusable frame. Arm "cards": a draft card maker writes up to 6 cards per conversation (a frame the learner needed: a mistake, English, a recast, or something they couldn't answer; the character's line inviting it; two replies on the frame with the character's answers). Each card judged in 9 checks, and the level judge (`lib/level.ts`, 90% of words) on its line and replies (`tests/experiments/diario-cards.mts`).
 
 | | Today's phrases: card-worthy | Cards | Pass the 9 checks | Conversations with 3+ good cards | Beginner follows the line | and both replies |
