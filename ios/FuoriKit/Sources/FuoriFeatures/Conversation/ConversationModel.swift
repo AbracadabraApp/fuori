@@ -283,12 +283,19 @@ public final class ConversationModel {
     private func finishTurn() async {
         // Once per turn: the tap and the turn's time limit can both end it
         guard phase == .listening || phase == .hearing, openingMic != generation else { return }
-        listenTask?.cancel()
-        listenTask = nil
-        let url = recorder.stop()
-        let snapshot = gate.snapshot()
+        // Terracotta at the tap, before stopping the mic and reading the file
+        // (Josh, 2026-10-18: the sent state shows on the send tap, not on the reply)
+        phase = .thinking
         ring = 0
         level = 0
+        listenTask?.cancel()
+        listenTask = nil
+        let generation = self.generation
+        await Task.yield() // lets the pill redraw before the mic stops
+        let url = recorder.stop()
+        // Left in that moment: leave() already closed the mic
+        guard generation == self.generation else { return }
+        let snapshot = gate.snapshot()
         guard recorder.writeFailures == 0, let url else {
             let code = report(RecordingFailed(writeFailures: recorder.writeFailures), step: "record")
             note = ErrorCode.message("The recording didn't save. Try again.", code: code)
@@ -301,8 +308,6 @@ public final class ConversationModel {
             return
         }
         note = nil
-        phase = .thinking
-        let generation = self.generation
         var step = "transcribe"
         do {
             let audio = try Data(contentsOf: url)
@@ -345,7 +350,6 @@ public final class ConversationModel {
         let said = text.trimmingCharacters(in: .whitespacesAndNewlines)
         guard canType, Heard.hasWords(said) else { return }
         note = nil
-        phase = .thinking
         let generation = self.generation
         do {
             debug.heard = "(typed) \(said)"
