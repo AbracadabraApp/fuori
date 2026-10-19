@@ -64,6 +64,36 @@ Her line is Italian only, as now; level 2 already shows English on the character
 
 That's a lesson, not a barista. Only the question the learner has to answer gets the English and a way to reply.
 
+## Simplest version: no buttons, you say it back (Josh, 2026-10-19)
+
+The simplest scaffolding: no reply buttons. At level 1 she teaches the line you need and you say it back with the mic; her words are on screen as subtitles. She does it for the first N turns of each conversation (N shrinking with the count of conversations, [beginner-scaffolding.md](beginner-scaffolding.md)); after that she just talks, and helps when asked. Nothing new on screen and no second call. The buttons stay built behind the hidden test switch, to bring back for the first turn or two only if speaking from the start proves too hard.
+
+Josh's two rules from the sample (2026-10-19):
+- **Teach a choice, not a yes.** Her suggestion shows how to pick between things, not how to agree: "Con un cornetto o senza? *With a croissant or without?* Puoi dire: con un cornetto."
+- **Show the person of the verb.** When the answer turns her "you" into your "I", she says both: "Sei *(you are)* nuovo qui? Puoi dire: sì, sono *(I am)* nuovo." This is the conjugation gap round 22 found (9 caught, 37 missed).
+
+Sample, Giulia at the bar, N = 3 for this conversation (*italics* she says aloud in English):
+
+> **Giulia:** Buongiorno! Cosa prendi? *What would you like?* Puoi dire: vorrei un caffè.
+>
+> **You:** Vorrei un… cappuccino?
+>
+> **Giulia:** Un cappuccino, perfetto! Con un cornetto o senza? *With a croissant or without?* Puoi dire: con un cornetto.
+>
+> **You:** Senza.
+>
+> **Giulia:** Ecco il cappuccino. Sei *(you are)* nuovo qui? Puoi dire: sì, sono *(I am)* nuovo.
+>
+> **You:** Sì, sono nuovo.
+>
+> **Giulia:** Benvenuto! Io sono Giulia. Tu come ti chiami? *(N reached: she just talks)*
+>
+> **You:** Sorry… what?
+>
+> **Giulia:** Come ti chiami? *What's your name?* Io mi chiamo Giulia. E tu?
+
+To check in the trial: the teaching comes after her question, which today's prompt forbids ("No more words after a question mark"), so try the exemption against teaching first; "Puoi dire" shouldn't repeat every turn; and listen to 5–10 mixed-language lines in the voice before anything else.
+
 ## How it would work
 
 - **Only the key line.** She teaches the question you have to answer, not everything she says. The scene shouldn't turn into a lesson.
