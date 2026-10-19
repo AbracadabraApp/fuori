@@ -87,6 +87,8 @@ A turn count prompts the step up, and a ceiling keeps anyone from staying on ful
 
 ## The Diario
 
+A review place, opened from a book in the top navigation bar, left of the settings button (Josh, 2026-10-18). There's no end-of-day Diario. Open question: whether the book shows during a conversation too, or only on the other screens.
+
 - Each phrase has its own level, and the card uses that level's screen.
 - Levels 1–4: completing the card moves the phrase up one level. Level 5: using the frame moves it past the ladder; not using it leaves it at 5. A phrase never moves down.
 - Only saying the phrase yourself in a real conversation retires it.

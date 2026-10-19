@@ -12,7 +12,7 @@ Viaggio: pick a city (or stay where you are)
           + one "cambia aria" option (new neighbourhood, day trip, new city)
           + "vai dove vuoi" (say where you want to go)
   → each choice opens a conversation with someone at that place
-  → Diario: review the day, plan tomorrow
+  → Diario (any time, from the book in the top bar): review phrases from your conversations
 ```
 
 Days are **game days, not calendar days**. A player can do one a night or three on a Sunday. Characters may say "ci vediamo domani", but nothing is locked behind real time.
@@ -90,13 +90,9 @@ Decided 2026-10-14 (Josh), replacing the per-conversation "Review" built for M2 
 
 Inspired by the creator's real teacher. Use her first name only, and check she's happy with it before Fuori is shown to anyone else.
 
-## Diario: end of day
+## Diario: the review place
 
-A short screen, also voiced, that closes the day:
-- The 2–3 corrections that mattered most, with the better phrasing to say aloud.
-- New words and phrases, added to the quaderno.
-- One or two "try tomorrow" goals pulled from your mistakes. These feed tomorrow's suggestions.
-- A one-line note from the evening's character, in Italian.
+**No end of day (Josh, 2026-10-18).** The Diario is a place to review, not a screen that closes the day. It opens from a book in the top navigation bar, left of the settings button. Inside: phrase cards from your own conversations, each a character's line in their voice with your reply on a frame ("Vorrei…"), shown at that phrase's own beginner level (tap a reply, read it aloud, fill the frame). Full design: [beginner-scaffolding.md](beginner-scaffolding.md) → The Diario. Corrections and what you missed come from the end-of-conversation step (`lib/remember.ts`), not an end-of-day call. Going there is always optional: no counts of cards due, no streaks.
 
 ## Levelling up
 
@@ -105,7 +101,7 @@ Levels follow the **CEFR** (A1, A2, B1…), with Italian specifics from the *Pro
 - **What you hear:** speed, sentence length, vocabulary, tenses, how much regional dialect, and what characters ask: yes or no and this or that for a beginner, one fact for an intermediate, anything for an advanced learner (Josh, 2026-10-17; see `docs/language-levels-plan.md` → Three tiers).
 - **What situations ask of you:** ordering → describing → telling what happened → giving opinions → handling problems.
 
-**How the game knows you're ready** (from conversations, no tests): how often you need hints, "Come si dice?", slow replay or English; how many corrections; whether old mistakes stop recurring; the words and tenses you actually use. The diario updates your profile; changes need consistent evidence across several days, so one good or bad day doesn't move you.
+**How the game knows you're ready** (from conversations, no tests): how often you need hints, "Come si dice?", slow replay or English; how many corrections; whether old mistakes stop recurring; the words and tenses you actually use. The end-of-conversation step updates your profile; changes need consistent evidence across several conversations, so one good or bad day doesn't move you.
 
 **Small steps:**
 
@@ -140,7 +136,7 @@ Instagram-like and phone-first. Original mockups: [Fuori mockups](https://claude
 - **Viaggio:** cities as large square tiles; the current city is highlighted with your days there and the people you know.
 - **Oggi:** today's suggestions as **vertically scrolling full-width image cards** (watercolour illustrations), with captions overlaid on the bottom. Plus "cambia aria" and "vai dove vuoi" cards. Tap one to go there.
 - **Conversazione:** like a video call. Large portrait with the character's mood, transcript and quiet correction notes below, a big mic button, "Come si dice?" and "Piano · Ripeti".
-- **Diario** and **Tu** (your journal: places, food and people as a grid).
+- **Diario:** the review place, from a book in the top bar left of settings (see above). **Tu** (your journal: places, food and people as a grid).
 - Bottom tabs: Oggi · Viaggio · Diario · Tu. No likes, no infinite feed, no streaks.
 
 ## Out of scope for now
