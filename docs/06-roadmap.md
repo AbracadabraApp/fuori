@@ -14,6 +14,7 @@ Claude can't move these until Josh does:
 2. **Spec for the smaller world** (→ Smaller world, on hold)
 3. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
 4. **Device checks on the iPhone** (only Josh can do audio on the phone) (→ Conversation on the phone)
+5. **Record the speech-to-text test set**: about 20 short turns per language, including hesitant and wrong ones (→ Faster and reliable replies)
 
 ### Conversation on the phone
 - Josh played build 0.1.0 (1) from TestFlight in Italy (2026-10-18): quality good, shorter replies, easier to understand, relatively fast. The mic tap wasn't crisp or obvious
@@ -32,6 +33,12 @@ Goal: reply under 2 s, 4 s at most. Measured 2026-10-18 (`npm run measure:turn`,
 - [x] **Claude** Josh's short prompt and no thinking before a reply (prompt 2026-10-18b, Josh: "take the best"): replay reply time 3.7 → 1.8 s, 26 → 16 words, feels alive 6.0 → 5.4. Live wait still to measure after the deploy
 - [ ] **Claude** Save the turn after the reply is sent, not before (up to 1 s on some turns)
 - [ ] **Claude** Start the voice on the first streamed sentence (server and app)
+- [ ] **Claude** Test every outside service on speed, failures and cost, one at a time with `measure:turn` and the logs (Josh, 2026-10-18). Each gets a short write-up: what we use, what else it offers, what was measured, keep or change:
+  - **Claude:** prompt caching (not used yet; the prompt passes the ~1,024-token minimum only around turn 6–8, so mainly a cost saving, plus cheaper test runs); time to first token (0.8–1.2 s today, and one 4.4 s outlier on 2026-10-18); how often a call fails or is retried
+  - **Groq Whisper:** `whisper-large-v3` against `-turbo`; upload and transcribe time against recording length; hallucination on near-silence; failure rate
+  - **ElevenLabs:** voice model (Flash against Multilingual) on speed and how it sounds; streaming the audio; the quota and how often the app falls back to the phone's voice
+  - **Railway and storage:** server region against Josh's location (network time per call), Postgres query times, R2 image load times (r2.dev is rate-limited)
+- [ ] **Claude** Test speech-to-text alternatives to Whisper on Groq: Deepgram Nova-3, AssemblyAI, OpenAI `gpt-4o-transcribe` / `gpt-4o-mini-transcribe`, ElevenLabs Scribe, Speechmatics and Google Chirp. Measure on one fixed set of real learner recordings in Italian and Mexican Spanish: errors on a beginner's accent and mistakes (the transcript must keep the learner's mistakes, not fix them), behaviour on silence and noise, speed and price per minute. **Josh** ⛔ records the set (about 20 short turns per language, including hesitant and wrong ones). Apple's on-device recognition is out of scope unless Josh reopens it (CLAUDE.md: speech in is Whisper on the server)
 
 ### Characters feel alive
 Goal: alive 7 (today about 6 in real conversations, 5–7 with simulated learners). Order decided by Claude, judged by Josh (2026-10-18); one change at a time through the replay gate.
