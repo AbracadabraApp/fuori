@@ -3,11 +3,16 @@
 // Josh, 2026-10-19, before dropping the English translation line: "the majority
 // of the time they do" help). A judge reads each conversation and lists every
 // learner turn that asks for help, and how the next character line answered.
+// With PROMPTS=character.md,character-english.md it also replays each ask:
+// the character's reply is made again from the real conversation up to the
+// ask, once per prompt file, and judged the same way.
 //   npx tsx --env-file=.env.local tests/experiments/help-asks.mts tests/experiments/out/admin.json   (COUNTRY as needed)
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { cities, language, pack } from '@/content';
 import { findCharacter } from '@/lib/remember';
+import { runTurn } from '@/lib/turn';
+import type { Turn } from '@/lib/types';
 import { OUT, ask, pct, pool } from './common.mjs';
 
 type Row = { id: string; character_id: string; city_id: string; turns: { who: string; text: string; en?: string }[] };
@@ -44,6 +49,27 @@ const lines = [`# Help asks in real conversations, ${pack.id} (round 21)`, '', `
   row('Wanted English (meaning, how to say, in English)', asks.filter((a) => a.wantsEnglish)),
   row('Other help (repeat, slower, didn\'t understand)', asks.filter((a) => !a.wantsEnglish)),
   row('All', asks), ''];
+const ARMS = process.env.PROMPTS?.split(',') ?? [];
+const replaySchema = { type: 'object', additionalProperties: false, required: ['how', 'note'], properties: { how: { type: 'string', enum: [...HOW] }, note: { type: 'string' } } };
+type Replayed = { arm: string; ask: Ask; line: string; how: string; note: string };
+const replayed: Replayed[] = [];
+for (const arm of ARMS) {
+  process.env.CHARACTER_PROMPT = arm;
+  replayed.push(...await pool(asks.map((a) => async (): Promise<Replayed> => {
+    const r = rows.find((x) => x.id === a.conv)!;
+    const c = findCharacter(r.city_id, r.character_id)!;
+    const before: Turn[] = r.turns.slice(0, a.turn - 1).map((t) => ({ who: t.who === 'learner' ? 'learner' : 'npc', transcript: t.text, translation: t.en }));
+    const said = r.turns[a.turn - 1]?.text ?? '';
+    const reply = await runTurn({ character: c, transcript: before, learnerSaid: said });
+    const j = JSON.parse(await ask(`A ${language.name} conversation game, by voice; the learner hears only what ${c.name} says.\n\n${before.slice(-4).map((t) => `${t.who === 'learner' ? 'Learner' : c.name}: ${t.transcript}`).join('\n')}\nLearner (asking for help): ${said}\n${c.name}: ${reply.line}\n\nHow did ${c.name} answer the ask? "English in the spoken line" (English words in the line itself), "helped in the language only", or "ignored the ask". Reply with JSON: how, note (one short line).`, { schema: replaySchema })) as { how: string; note: string };
+    return { arm, ask: a, line: reply.line, ...j };
+  }), 6));
+}
+delete process.env.CHARACTER_PROMPT;
+if (ARMS.length) lines.push('## Replayed with each prompt', '', `| Prompt | Asks wanting English: English in the spoken line | Other help: English in the spoken line | Ignored |`, '|---|---|---|---|',
+  ...ARMS.map((arm) => { const xs = replayed.filter((x) => x.arm === arm); const e = xs.filter((x) => x.ask.wantsEnglish), o = xs.filter((x) => !x.ask.wantsEnglish);
+    const share = (ys: Replayed[]) => ys.length ? `${pct(ys.filter((y) => y.how === HOW[0]).length / ys.length)} (${ys.length})` : '—';
+    return `| ${arm} | ${share(e)} | ${share(o)} | ${xs.filter((x) => x.how === HOW[2]).length} |`; }), '');
 console.log(lines.join('\n'));
-writeFileSync(join(OUT, `help-asks-${pack.id}.md`), [...lines, ...asks.map((a) => `- ${a.name} turn ${a.turn} (${a.wantsEnglish ? 'English' : 'other'}): ${a.how}. ${a.note}`)].join('\n'));
+writeFileSync(join(OUT, `help-asks-${pack.id}.md`), [...lines, ...asks.map((a) => `- ${a.name} turn ${a.turn} (${a.wantsEnglish ? 'English' : 'other'}): ${a.how}. ${a.note}`), '', ...replayed.map((x) => `- [${x.arm}] ${x.ask.name} turn ${x.ask.turn}: ${x.how}. ${x.line}`)].join('\n'));
 console.log(`→ tests/experiments/out/help-asks-${pack.id}.md`);

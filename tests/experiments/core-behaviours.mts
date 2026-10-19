@@ -3,7 +3,8 @@
 // the language; understand speech-to-text noise; recast a real mistake in role;
 // no English nobody asked for. Each probe: the character opens (a real first
 // turn), the learner says one line, the character answers; a judge reads it.
-// Arms: thinking off (production) and on (TURN_THINKING=on).
+// Arms: thinking off (production) and on (TURN_THINKING=on); or, with
+// PROMPTS=character.md,character-english.md, one arm per prompt file, thinking off.
 //   npx tsx --env-file=.env.local tests/experiments/core-behaviours.mts [characters] [runs]   (COUNTRY as needed)
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -34,6 +35,10 @@ const PROBES = {
     said: es ? '¿Cómo se dice "receipt"?' : 'Come si dice "receipt"?',
     expect: 'They asked, in the language, for a word. Pass if the character gives the word (English is fine to make it clear) and carries on, in role.',
   },
+  'what does it mean': {
+    said: "Sorry, what does that mean?",
+    expect: 'They asked, in English, what the character just said means. Pass if the character tells them in English in what they say (not only in the translation), briefly, then carries on in the language, in role.',
+  },
   'garbled speech': {
     said: es ? 'buenas quisiera eh uno de esto por fa vor cuanto cuesta' : 'buongiorno vorrei eh uno di quest per fa vore quanto costa',
     expect: 'This came through speech-to-text with noise: they want one of something and ask the price. Pass if the character understands the likely meaning and answers it naturally, without remarking on how it was said or asking them to repeat.',
@@ -59,8 +64,10 @@ const judge = (c: CharacterSheet, opening: string, said: string, reply: string, 
 
 type Result = { arm: string; probe: Probe; name: string; opening: string; said: string; reply: string; pass: boolean; note: string };
 const results: Result[] = [];
-for (const arm of ['thinking off', 'thinking on']) {
-  if (arm === 'thinking on') process.env.TURN_THINKING = 'on'; else delete process.env.TURN_THINKING;
+const ARMS = process.env.PROMPTS?.split(',') ?? ['thinking off', 'thinking on'];
+for (const arm of ARMS) {
+  if (process.env.PROMPTS) process.env.CHARACTER_PROMPT = arm;
+  else if (arm === 'thinking on') process.env.TURN_THINKING = 'on'; else delete process.env.TURN_THINKING;
   const jobs = cast.flatMap((c) => (Object.keys(PROBES) as Probe[]).filter((p) => !ONLY || ONLY.includes(p)).flatMap((probe) => Array.from({ length: RUNS }, () => async () => {
     const open = await runTurn({ character: c, transcript: [] });
     const said = PROBES[probe].said;
@@ -72,9 +79,10 @@ for (const arm of ['thinking off', 'thinking on']) {
   await pool(jobs, 6);
 }
 
-const lines = [`# Core behaviours, ${pack.id}, prompt ${promptVersion()}`, '', `${cast.length} characters × ${RUNS} runs per probe.`, '',
-  `| Probe | ${['thinking off', 'thinking on'].join(' | ')} |`, '|---|---|---|',
-  ...(Object.keys(PROBES) as Probe[]).filter((p) => !ONLY || ONLY.includes(p)).map((p) => `| ${p} | ${['thinking off', 'thinking on'].map((a) => { const xs = results.filter((r) => r.arm === a && r.probe === p); return `${pct(xs.filter((r) => r.pass).length / xs.length)} (${xs.length})`; }).join(' | ')} |`), ''];
+delete process.env.CHARACTER_PROMPT;
+const lines = [`# Core behaviours, ${pack.id}, prompt ${process.env.PROMPTS ?? promptVersion()}`, '', `${cast.length} characters × ${RUNS} runs per probe.`, '',
+  `| Probe | ${ARMS.join(' | ')} |`, `|---|${ARMS.map(() => '---|').join('')}`,
+  ...(Object.keys(PROBES) as Probe[]).filter((p) => !ONLY || ONLY.includes(p)).map((p) => `| ${p} | ${ARMS.map((a) => { const xs = results.filter((r) => r.arm === a && r.probe === p); return `${pct(xs.filter((r) => r.pass).length / xs.length)} (${xs.length})`; }).join(' | ')} |`), ''];
 console.log(lines.join('\n'));
 writeFileSync(join(OUT, `core-behaviours-${pack.id}.md`), [...lines, '## Failures', '', ...results.filter((r) => !r.pass).flatMap((r) => [
   `**${r.probe}** · ${r.arm} · ${r.name}: ${r.note}`, `> ${r.name}: ${r.opening}`, `> Learner: ${r.said}`, `> ${r.name}: ${r.reply}`, '',
