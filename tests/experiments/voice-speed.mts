@@ -14,7 +14,7 @@
 import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { OUT } from './common.mts';
+import { OUT } from './common.mjs';
 
 const ROUNDS = Number(process.argv[process.argv.indexOf('--rounds') + 1]) || 5;
 const XI = process.env.ELEVENLABS_API_KEY!;
