@@ -1,6 +1,6 @@
 # Proposal: At Level 1, Characters Teach Their Lines
 
-2026-10-19 · Josh · **Proposed, for feedback.** Nothing here is built or decided.
+2026-10-19 · Josh · **Proposed.** Revised the same day after the laptop session's review (its feedback and answers are folded in below). Nothing built or run yet.
 
 ## The problem
 
@@ -18,7 +18,7 @@ This changes one rule. Today a character uses English only when the learner asks
 
 ## Sample dialogue
 
-Mission: order an orange juice at the bar. Giulia, Trastevere. Italics are the English she says aloud.
+Mission: order an orange juice at the bar. Giulia, Trastevere. Italics are the English she says aloud. The reply she suggests is always one of the two buttons.
 
 **Level 1: she teaches the key line every turn**
 
@@ -38,19 +38,17 @@ Mission: order an orange juice at the bar. Giulia, Trastevere. Italics are the E
 >
 > *Done appears.*
 
-**Level 2: she teaches only when the learner asks**
+**Level 2: no teaching**
+
+Her line is Italian only, as now; level 2 already shows English on the character's line, so she doesn't need to teach.
 
 > **Giulia:** Ciao! Cosa ti preparo?
 >
-> Buttons: **Vorrei una spremuta** / **Un caffè, per favore** / **Cosa vuol dire?**
->
-> *Learner taps "Cosa vuol dire?"*
->
-> **Giulia:** Ah! *What can I make you?* Un caffè, una spremuta…
+> Buttons: **Vorrei una spremuta** / **Un caffè, per favore**
 >
 > *Learner taps "Vorrei una spremuta."*
 >
-> **Giulia:** Bravo. Con zucchero?
+> **Giulia:** Brava. Con zucchero?
 
 **Level 3 and up: today's rule, English only when asked**
 
@@ -70,39 +68,41 @@ That's a lesson, not a barista. Only the question the learner has to answer gets
 
 - **Only the key line.** She teaches the question you have to answer, not everything she says. The scene shouldn't turn into a lesson.
 - **She stays herself.** She teaches the way she would, warm and a little teasing, not like a textbook. No "repeat after me."
-- **It fades by level.**
-  - Level 1: she teaches the key line every turn.
-  - Level 2: only when the learner hesitates or asks.
-  - Level 3 and up: back to today's rule, English only when asked.
-- **Less on screen.** With the English spoken, the English subtitle line can go at level 1. The Italian subtitle stays (an option, as everywhere). English moves onto the reply buttons ("Vorrei un caffè · I'd like a coffee") or onto a tap of the subtitle.
+- **Her suggestion is a button.** The reply she says aloud must be one of the two reply buttons, word for word, so the learner hears the line they can tap. The replies call (`lib/replies.ts`) already reads her last line; it should take her suggestion as one of the two. The test checks that they match.
+- **The fade is simple.** Level 1: she teaches the key line every turn. Level 2 and up: she doesn't (no "teach on hesitation": with no timer, by Josh's rule, a character can't tell that you're hesitating). Level 3 and up keeps today's rule, English when you ask.
+- **Less on screen.** With the English spoken, the English subtitle line goes at level 1, or it would appear twice. The Italian subtitle stays (an option, as everywhere).
+- **English is still on the buttons, for now.** Level 1 keeps English on the reply buttons, as in the levels table. That's the first step. The ear-first version would hide the buttons' English behind a tap too; try it once this works.
 - **It fits missions.** The mission card previews the frame ("Vorrei ___"). Hearing her say it just before you need it is the "meet it" step, with no extra staging.
 
 ## Where it would live
 
-A new variant in `content/it/prompts/levels.md`, not a change to `character.md`, so production is untouched until it's chosen. Possible wording, to trial:
+A new variant in both `content/es-mx/prompts/levels.md` and `content/it/prompts/levels.md`, not a change to `character.md`, so production is untouched until it's chosen. Possible wording, to trial:
 
 ```
 They are just starting to learn {language} and understand almost none yet. When you ask them something, help them answer the way a kind {role} helps a newcomer: say your question, then what it means in English, then one short way they could answer in {language}. Only for the thing you've just asked; the rest stays in {language}. You're still yourself with them: your humour, your opinions, your place.
 ```
 
-The reply stays `{ line, en }`. The English inside `line` is spoken by the {language} voice, so check how ElevenLabs handles mixed lines (accent, pacing) before judging the idea on the phone.
+The reply stays `{ line, en }`. The English inside `line` is spoken by the {language} voice.
 
 ## How to test it
 
-- `npm run test:replay --level=<this block>` against the current Beginner block, on the usual 25 replayed conversations.
-- Watch for:
-  - Does she teach only the key line, or slide into English throughout?
-  - Line length: teaching adds words. Is it still short?
-  - Does she stay in character, or start sounding like a teacher?
-  - Does the frame she offers match the mission's frame?
-  - Do the reply buttons still make sense next to her suggestion?
-- Then listen on the phone for how the mixed-language voice sounds.
-- Add a row to `docs/prompt-trials.md` with the result, kept or dropped.
+1. **Listen first, on the laptop.** The mixed-language voice is the biggest unknown and doesn't need the phone. Generate 5–10 mixed lines through `/v1/speak` with the current voices and listen for accent and pacing. Costs pennies. If it sounds wrong, decide on a second voice before anything else.
+2. **Replay Mexico first.** Josh is a real beginner in Spanish and intermediate in Italian, and the level trial already runs on his Mexico learner. `COUNTRY=es-mx npm run test:replay -- --level=<this block>` (note the `--` so npm passes the flag through), against the current Beginner block on the usual 25 conversations. Then Italy.
+3. **Run the "help in English" probe** from the core-behaviours test (round 18) on the new block, to check she teaches only the key line and doesn't slide into English throughout.
+4. **Measure honestly.** The level judge counts English words as known, so mixed lines would score as easier without being easier. Judge only the Italian part of each line, and report words per line separately: teaching adds about 8–10.
+5. **Watch for:**
+   - Does she teach only the key line?
+   - Does she stay in character, or start sounding like a teacher?
+   - Is her suggestion one of the two buttons, word for word?
+   - Does the frame she offers match the mission's frame?
+6. Add a row to `docs/prompt-trials.md` with the result, kept or dropped.
 
-## Questions for feedback
+## Questions, with the laptop session's answers
 
-1. Is it all right for a character to offer English unasked, at level 1 only?
-2. Should the English subtitle line go at level 1 once she speaks the English?
-3. Level 2: teach on hesitation, or not at all?
-4. Does a spoken English phrase in an Italian voice sound right, or would the English need a second voice (more staging)?
-5. Does this overlap with Magda's role (explicit teaching), or is it clearly "a person helping a newcomer"?
+| Question | Answer (laptop review, 2026-10-19) | Josh |
+|---|---|---|
+| 1. Is unasked English all right at level 1? | Yes, at level 1 only. Choosing level 1 is effectively asking for it, and a real person does exactly this with a newcomer. | |
+| 2. Drop the English subtitle line at level 1? | Yes, if she speaks the English; otherwise the English appears twice. | |
+| 3. Level 2: teach on hesitation? | No. A character can't tell you're hesitating (no timer), and level 2 already shows English. Level 1 teaches, level 2 doesn't. | |
+| 4. A second voice for the English? | Decide after the listening test (test step 1). A second voice is staging. | |
+| 5. Overlap with Magda? | No. This is a person helping a newcomer in the moment. Magda runs lessons with a goal and a recap. | |
