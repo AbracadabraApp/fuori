@@ -51,7 +51,7 @@ Josh: some conversations are clearly over (both said ciao, arrivederci, ci vedia
 - [x] **Claude** Round 20 (`end-detect.mts`, Italy 26 conversations, 153 turns): an `over` flag on the character's reply and a separate judge both end nothing early (0%) and catch 82% of ended conversations (bar 90%); the misses are mostly where only the character said goodbye, which isn't Josh's "both say ciao". The flag costs nothing and doesn't change the line. Mexico untested: only 1 conversation reached an end
 - [ ] **Josh** Decide: add `over` to the character's reply (changes CLAUDE.md's `{ line, en }`). Josh's design (2026-10-19): when it's over, an "Esci" or "Fuori" link fades in; tap it or ignore it and keep talking. Nothing ends by itself. Drafted for the next build
 - [ ] **Josh** Pick the word: "Esci" or "Fuori" for Italy, and Mexico's ("Salir"?); it comes from `/v1/content`, not Swift
-- [ ] **Claude** Reply buttons (levels 1–3) get a Done link, always shown under the replies, the same link as above (Josh, 2026-10-19: "the beginner buttons really need a done button/link"; [beginner-scaffolding.md](beginner-scaffolding.md) → Build)
+- [ ] **Claude** Reply buttons (levels 1–3) get the same Done link, by the same rule: it fades in when it's over, not always shown; and once the errand is done, one reply is a goodbye, so beginners can get there (test on `replies.md` first) (Josh, 2026-10-19: "the beginner buttons really need a done button/link"; [beginner-scaffolding.md](beginner-scaffolding.md) → Build)
 
 ### Core behaviours (round 18)
 - [ ] **Josh** Decide: when a learner asks "say it in English", is the translation shown under the line enough? Today the character repeats in the language and never speaks English (on every prompt tested)

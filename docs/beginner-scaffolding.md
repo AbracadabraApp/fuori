@@ -131,7 +131,7 @@ A first playable version, behind a setting, so Josh can feel levels 1–3 in Afu
 - With the setting on, the words always show and the level decides the English, whatever Subtitles says.
 - Checked in the simulator in Mexico: level 1 (Ximena, Café Amapola) and level 3 at AX5 (Vale, Libros Tecolote). Not tapped there (no tap tool); tapping, VoiceOver and Italy on the phone.
 
-**Needed: a Done link (Josh, 2026-10-19: "the beginner buttons really need a done button/link").** At levels 1–3 the learner can only say what the buttons offer, so they can't take their leave in words, and back isn't an obvious way out. A Done link under the two replies, always there, leaves through the one leave function. It's the same link that fades in for everyone when a conversation is over (roadmap → Ending a conversation, round 20), shown from the start for beginners. Its word comes from `/v1/content`, like the rest.
+**Needed: a Done link (Josh, 2026-10-19: "the beginner buttons really need a done button/link"; same rules as everyone, not always shown).** It fades in when the conversation is over, the same link and rule as for every learner (roadmap → Ending a conversation, round 20), and leaves through the one leave function. Its word comes from `/v1/content`. For a beginner to get there, the replies must be able to close a conversation: once the errand is done, one of the two replies is a goodbye or thanks (`replies.md`; test it before building, since in round 19 no Mexico learner ever reached an end).
 
 **Josh:** play 10 minutes in Afuera at level 1, then level 3. Note where it felt wrong.
 
