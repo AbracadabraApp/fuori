@@ -49,3 +49,7 @@ The three Progetto books are scans; they were read with OCR, so a few pages (cro
 **English Grammar for Students of Italian** and **Le preposizioni italiane.** Explanations in English of what each grammar point is, and a clear guide to prepositions: material for Magda's lessons and Settings → About, not the game world.
 
 **Must-Know Italian Slang Words & Phrases.** Mostly young people's slang (*scialla, raga, tranqui, che pizza, uffa*), one lesson on Rome (*bella* as hi and bye, *famo*, *come butta?*), food idioms, and vulgar word charts. Slang belongs to who a character is (a young Roman barista), not to a level, and to advanced learners where dialect grows with level. Treat it with care: several entries are niche or doubtful (*pollege, brenso, jamairo*), and some glosses are wrong (*cavolo* is a mild "darn", not the swear word given). Check any slang with the judge or a native speaker before using it.
+
+## Where the full texts are
+
+The full extracted text of every source (OCR for the three Progetto scans) and the working files are on Josh's laptop at `~/fuori/books-private/`, excluded from git via `.git/info/exclude`. Use them for further analysis; never commit them or put their text in the app.
