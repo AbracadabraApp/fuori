@@ -49,6 +49,14 @@ Core behaviours (round 18, `core-behaviours.mts`, 8 characters × 2 runs; goal: 
 | 2026-10-18b, no thinking (production) | 0% / 0% | 13% / 19% | 100% |
 | 2026-10-18b, thinking | 0% / 0% | 19% / 13% | 94–100% |
 
+English when asked, for dropping the English translation line (Josh, 2026-10-19). Goal: with no translation on screen, "what does that mean?" and "say it in English" get English in the spoken line, briefly; no English nobody asked for. Probes: `core-behaviours.mts` with `PROMPTS=`, 8 characters × 2 runs; real asks: `help-asks.mts` replaying Josh's real asks (Italy 23, Mexico 5–6, from the admin export; "wanting English" includes "how do I say X", where an answer in the language is right, so it understates).
+
+| Trial | Status | Text | Say it in English (Italy / Mexico) | What does it mean | No unasked English | Real asks wanting English, spoken English | Decision |
+|---|---|---|---|---|---|---|---|
+| 2026-10-18b (production) | Production | `character.md` | 0% / 0% | 0–6% / 0% | 100% / 100% | 22% / 0% | — |
+| + "They see no translation… tell them in English, briefly, then carry on" | Dropped | `character-english.md` | 0–13% / 0–6% | 0–13% / 13–19% | 100% / 100% | 48% / 20% | The JSON line still said `line` is "in {language}", so the English went into `en` |
+| + same, and the JSON line: `"line": "what you say, out loud: {language}, and English only when they ask for it"` | **Best so far** | `character-english2.md` | **100% / 100%** | **94% / 63%** | 100% / 100% | 52% / 33% | Not yet: in long real conversations "what does X mean" is still often explained in the language; needs the replay gate before it ships |
+
 ### Diario cards (experiment, `tests/experiments/diario-cards.mts`)
 
 Goal: cards worth reviewing, made from a real conversation. Round 17, admin export (Italy 28, Mexico 9 conversations).
