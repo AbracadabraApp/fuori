@@ -35,6 +35,10 @@ public final class ConversationModel {
         /// The learner's turn, mic closed: a tap opens it (the default, and
         /// always under VoiceOver so it doesn't record VoiceOver's own voice)
         case tapToTalk
+        /// Beginner levels 1–3 (Settings → Reply buttons, test only): the
+        /// learner's turn is a tap on one of two replies; `replies` is nil
+        /// while they're still being written
+        case choosing
         case paused
         case micDenied
         case failed(String)
@@ -55,6 +59,10 @@ public final class ConversationModel {
     /// A short note under the subtitles, e.g. when nothing was heard
     public private(set) var note: String?
     public private(set) var conversationId: String?
+    /// The two reply buttons for this turn (beginner levels 1–3), once written
+    public private(set) var replies: [APIClient.ReplyOption]?
+    /// The reply just tapped, shown selected until the character answers
+    public private(set) var chosen: APIClient.ReplyOption?
 
     /// What the hidden debug panel shows (Settings → Developer), as the web's ?debug=1
     public struct DebugInfo: Equatable {
@@ -77,6 +85,8 @@ public final class ConversationModel {
     public let place: Place
     public let character: Character
     private let language: Language
+    /// For VoiceOver: words in the language being learned are read in it
+    public var speechLanguage: String { language.speechLang }
     private let api: APIClient
     private let onSave: (String) -> Void
 
@@ -91,6 +101,8 @@ public final class ConversationModel {
     /// A reply that arrived while paused, played on resume
     private var pendingReply: APIClient.TurnReply?
     private var observers: [NSObjectProtocol] = []
+    /// The replies to the current line, written while the character speaks
+    private var repliesTask: Task<Result<APIClient.Replies, Error>, Never>?
 
     /// Hands-free waits (Josh, 2026-10-15): 10 s for the first word, the turn
     /// ends after 4 s of silence. No "more time to answer" setting (Josh,
@@ -103,6 +115,14 @@ public final class ConversationModel {
     private let endOfTurnWait: TimeInterval = 4
     /// Less than this much voice isn't a turn (a cough, a click)
     private let minimumVoice: TimeInterval = 0.25
+
+    /// Beginner level 1–3 when Settings → Reply buttons (test) is on, else nil.
+    /// Level 1 shows the English of the character and of both replies, level
+    /// 2 the character's only, level 3 none (docs/beginner-scaffolding.md)
+    public var scaffoldLevel: Int? {
+        guard UserDefaults.standard.bool(forKey: SettingsKey.replyButtons) else { return nil }
+        return min(3, max(1, UserDefaults.standard.integer(forKey: SettingsKey.scaffoldLevel)))
+    }
 
     /// Speed as on the web: slower with English on
     private var speed: Double { UserDefaults.standard.bool(forKey: SettingsKey.english) ? 0.7 : 0.9 }
@@ -138,10 +158,13 @@ public final class ConversationModel {
     /// Show and speak a line, then open the learner's turn
     private func present(_ reply: APIClient.TurnReply, generation: Int) async {
         guard generation == self.generation else { return }
-        if phase == .paused { pendingReply = reply; line = reply.line; english = reply.en; shown = nil; return }
+        if phase == .paused { pendingReply = reply; line = reply.line; english = reply.en; shown = nil; replies = nil; chosen = nil; writeReplies(); return }
         line = reply.line
         english = reply.en
         shown = 0
+        replies = nil
+        chosen = nil
+        writeReplies()
         phase = .speaking
         do {
             let started = Self.now()
@@ -193,6 +216,10 @@ public final class ConversationModel {
         // Paused while thinking: the mic stays closed until a tap
         guard phase != .paused else { return }
         ring = 0
+        if scaffoldLevel != nil, repliesTask != nil {
+            await showReplies()
+            return
+        }
         if tapMode {
             phase = .tapToTalk
             return
@@ -336,6 +363,77 @@ public final class ConversationModel {
         }
     }
 
+    // MARK: - Reply buttons (beginner levels 1–3, docs/beginner-scaffolding.md)
+
+    /// Starts writing the two replies to the line just received, in parallel
+    /// with the voice, so they're usually ready when the character finishes.
+    /// Only with the setting on; the server has recorded the line by now.
+    private func writeReplies() {
+        repliesTask?.cancel()
+        repliesTask = nil
+        guard scaffoldLevel != nil, let conversationId else { return }
+        let started = Self.now()
+        repliesTask = Task { [api, city, place] in
+            do {
+                let replies = try await api.replies(cityId: city.id, placeId: place.id, conversationId: conversationId)
+                return .success(replies)
+            } catch {
+                return .failure(error)
+            }
+        }
+        Task { [weak self] in
+            guard let self, let task = self.repliesTask else { return }
+            if case .success = await task.value { self.time("replies", since: started) }
+        }
+    }
+
+    /// The learner's turn on levels 1–3: the two replies, once written. If
+    /// writing them failed, this turn falls back to the mic and says so.
+    private func showReplies() async {
+        phase = .choosing
+        guard let task = repliesTask else { return }
+        let generation = self.generation
+        let result = await task.value
+        guard generation == self.generation, phase == .choosing else { return }
+        switch result {
+        case .success(let written) where written.replies.count == 2:
+            replies = written.replies
+        case .success(let written):
+            fallBackToMic(APIError(code: .serverError, message: "Expected 2 replies, got \(written.replies.count)", retryable: false, status: 200))
+        case .failure(let error):
+            fallBackToMic(error)
+        }
+    }
+
+    private func fallBackToMic(_ error: Error) {
+        repliesTask = nil
+        let code = report(error, step: "replies")
+        note = ErrorCode.message("No replies this time. Tap the mic to answer.", code: code)
+        phase = .tapToTalk
+    }
+
+    /// A tap on a reply: it goes to the character as if the learner had said it
+    public func choose(_ reply: APIClient.ReplyOption) async {
+        guard phase == .choosing, replies?.contains(reply) == true else { return }
+        chosen = reply
+        note = nil
+        phase = .thinking
+        repliesTask = nil
+        let generation = self.generation
+        do {
+            debug.heard = "(tapped) \(reply.line)"
+            let started = Self.now()
+            let next = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: reply.line)
+            time("turn", since: started)
+            debug.promptVersion = next.promptVersion
+            if let id = next.conversationId { conversationId = id }
+            await present(next, generation: generation)
+        } catch {
+            guard generation == self.generation else { return }
+            fail(error, step: "turn")
+        }
+    }
+
     // MARK: - Typed reply (accessibility only, docs/13-ios-conventions.md D6)
 
     /// Typing is offered only when the mic is off for Fuori or VoiceOver or
@@ -408,6 +506,7 @@ public final class ConversationModel {
     public func leave() {
         generation += 1
         listenTask?.cancel()
+        repliesTask?.cancel()
         recorder.stop()
         voice.stop()
         for o in observers { NotificationCenter.default.removeObserver(o) }

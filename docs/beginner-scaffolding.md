@@ -123,6 +123,14 @@ A first playable version, behind a setting, so Josh can feel levels 1–3 in Afu
 6. Tapping a reply while the character is still speaking stops her and sends it.
 7. Done checks (CLAUDE.md): AX5 (the area above the controls scrolls), VoiceOver (replies read in the target language), 44 pt targets, both countries, back swipe saves.
 
+**Built 2026-10-19 (laptop):** as above, with these choices:
+- The switch and the level picker are among Settings' hidden developer rows (touch and hold Version), not in plain Settings, so no tester finds a test switch.
+- The replies appear when the character has finished, not while she speaks, so the learner listens first; step 6 (tap a reply to cut her off) is therefore not built.
+- No learner's voice saying the tapped line yet ("Your voice" in the levels table); the character's answer follows straight away.
+- Pause stays visible (CLAUDE.md still says always); the change to "Pause only in hands-free" waits for D3 to be updated.
+- With the setting on, the words always show and the level decides the English, whatever Subtitles says.
+- Checked in the simulator in Mexico: level 1 (Ximena, Café Amapola) and level 3 at AX5 (Vale, Libros Tecolote). Not tapped there (no tap tool); tapping, VoiceOver and Italy on the phone.
+
 **Josh:** play 10 minutes in Afuera at level 1, then level 3. Note where it felt wrong.
 
 ## On hold: a scripted, smaller world for levels 1–3 (Josh, 2026-10-17; on hold until there's a spec, 2026-10-18)

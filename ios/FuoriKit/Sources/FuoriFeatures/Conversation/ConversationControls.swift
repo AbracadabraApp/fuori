@@ -14,25 +14,36 @@ struct ConversationControls: View {
     @State private var typed = ""
 
     var body: some View {
-        HStack {
-            // Type a reply (accessibility only, D6); otherwise empty, balancing
-            // the pause button so the pill stays centred
-            if model.canType { typeButton } else { Color.clear.frame(width: 44, height: 44) }
-            Spacer()
-            pill
-            Spacer()
-            pauseButton // on the right (Josh, 2026-10-15)
+        VStack(spacing: 8) {
+            if showsReplies { ReplyButtons(model: model) }
+            HStack {
+                // Type a reply (accessibility only, D6); otherwise empty, balancing
+                // the pause button so the pill stays centred
+                if model.canType { typeButton } else { Color.clear.frame(width: 44, height: 44) }
+                Spacer()
+                // On levels 1–3 the two replies take the pill's place
+                if showsReplies { Color.clear.frame(width: 112, height: 52) } else { pill }
+                Spacer()
+                pauseButton // on the right (Josh, 2026-10-15)
+            }
         }
         .padding(.bottom, 8)
         .sensoryFeedback(trigger: model.phase) { _, new in
             switch new {
-            case .listening, .tapToTalk: .impact(weight: .light)
+            case .listening, .tapToTalk, .choosing: .impact(weight: .light)
             case .thinking: .impact(weight: .heavy) // the tap that sends the turn
             case .paused: .impact(weight: .medium)
             case .failed, .micDenied: .error
             default: nil
             }
         }
+    }
+
+    /// The reply buttons, from the moment the turn opens until the character
+    /// answers the one tapped
+    private var showsReplies: Bool {
+        guard model.scaffoldLevel != nil else { return false }
+        return model.phase == .choosing || (model.phase == .thinking && model.chosen != nil)
     }
 
     // MARK: Type
@@ -119,8 +130,8 @@ struct ConversationControls: View {
             LevelDots(level: reduceMotion ? 0.3 : nil, colour: Tokens.Colors.card)
         case .tapToTalk:
             Image(systemName: "mic.fill").font(.title2).foregroundStyle(Tokens.Colors.text)
-        case .paused:
-            EmptyView() // shown by the pause button alone
+        case .paused, .choosing:
+            EmptyView() // paused: shown by the pause button alone; choosing: the replies replace the pill
         case .starting:
             ProgressView()
         case .micDenied, .failed:
@@ -168,6 +179,7 @@ struct ConversationControls: View {
         case .listening, .hearing: (model.tapMode ? "Listening. Tap when you've finished" : "Your turn", "mic.fill")
         case .thinking: ("\(model.character.name) is thinking", "ellipsis")
         case .tapToTalk: ("Tap to speak", "hand.tap.fill")
+        case .choosing: ("Choose your reply", "hand.tap.fill")
         case .paused: ("Paused", "pause.fill")
         case .micDenied: ("Microphone off in Settings", "mic.slash.fill")
         case .failed(let message): (message, "exclamationmark.triangle.fill")

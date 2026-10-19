@@ -91,9 +91,10 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 ### Beginner ladder ([beginner-scaffolding.md](beginner-scaffolding.md))
 Five levels, from tapping a reply with English to filling a frame in your own words.
 - [x] **Claude** Reply buttons from a separate call (`lib/replies.ts`, test-only): sensible 97–100%, ready before the character finishes speaking
-- [ ] **Josh** ⛔ Play Afuera with the level trial on (Beginner "still you, sometimes ask", his learner only): plainer lines and now and then an easy yes/no or this-or-that question?
-- [ ] **Claude** Review those conversations (prompt version `2026-10-18+Beginner: still you, sometimes ask`)
-- [ ] **Claude** A first playable version of levels 1–3 behind a setting (live dialogue with reply buttons), so Josh can feel it in Afuera
+- [x] **Josh** Played Afuera with the level trial on: Chucho the shoeshiner, 23 turns (2026-10-19, prompt `2026-10-18b+Beginner: still you, sometimes ask`)
+- [x] **Claude** Reviewed it. Good: easy questions came back ("¿negros o cafés?", "¿billetes o monedas?", two "¿sí o no?"); he helped in role every time Josh reached for a word (derecho, la cuenta, quédese con el cambio); judge alive 7. Not yet beginner-plain: median 23 words a line (the trial's replay runs were about 10, on the older prompt), and 42% of replies asked two questions (target ≤ 10%). The trial block hasn't been replayed on prompt 2026-10-18b; next: replay it there before more play
+- [x] **Claude** First playable levels 1–3 behind a setting (2026-10-19): Settings → touch and hold Version → Reply buttons (test), level 1–3. The replies are written while the character speaks and replace the mic pill; a tap sends the line. `smoke:live` checks `/v1/replies` (Mexico passes)
+- [ ] **Josh** Play 10 minutes in Afuera at level 1, then level 3; note where it felt wrong
 - [ ] **Claude** Tests queued in [test-ideas.md](test-ideas.md): live with lookahead, a plan for the visit, "Ripeti?" on levels 4–5, Mexico at 20 conversations
 
 ### Diario: the review place ([diario.md](diario.md); card screens in [beginner-scaffolding.md](beginner-scaffolding.md))

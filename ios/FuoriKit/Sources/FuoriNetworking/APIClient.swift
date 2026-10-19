@@ -70,6 +70,28 @@ public actor APIClient {
         return try await send(post("v1/turn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, learnerSaid: learnerSaid)), signedIn: true)
     }
 
+    /// One of the two reply buttons on beginner levels 1–3: a whole line in the
+    /// language being learned, and its English
+    public struct ReplyOption: Codable, Sendable, Equatable, Hashable {
+        public let line: String
+        public let en: String
+    }
+
+    public struct Replies: Codable, Sendable, Equatable {
+        /// The chunk both replies are built on ("Vorrei…")
+        public let frame: String
+        public let replies: [ReplyOption]
+        public let promptVersion: String
+    }
+
+    /// POST /v1/replies: two replies to the character's last line, for the
+    /// reply buttons (docs/beginner-scaffolding.md). The server reads the
+    /// conversation; the character must have spoken last.
+    public func replies(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String) async throws -> Replies {
+        struct Body: Encodable { let cityId: String; let placeId: String; let tripTo: String?; let conversationId: String }
+        return try await send(post("v1/replies", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId)), signedIn: true)
+    }
+
     /// target: the language being learned; en: English; any: Whisper detects
     /// it (onboarding answers can be either)
     public enum TranscribeMode: String, Sendable { case target, en, any }

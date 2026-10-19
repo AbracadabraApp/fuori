@@ -191,6 +191,14 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
     ? pass('v1 conversation by ids (transcript kept on the server)')
     : fail('v1 conversation by ids', `${open.status}/${reply.status} ${JSON.stringify(r).slice(0, 200)}`);
 
+  // The reply buttons for beginner levels 1–3 (docs/beginner-scaffolding.md): two
+  // whole-line replies to the character's last line, read from the database
+  const rep = await v1('/v1/replies', { cityId, placeId, conversationId: o.conversationId });
+  const rp = (await rep.json()) as { frame?: string; replies?: { line?: string; en?: string }[] };
+  rep.ok && rp.replies?.length === 2 && rp.replies.every((x) => x.line?.trim() && x.en?.trim())
+    ? pass(`v1 replies ("${rp.replies[0].line?.slice(0, 30)}" / "${rp.replies[1].line?.slice(0, 30)}")`)
+    : fail('v1 replies', `${rep.status} ${JSON.stringify(rp).slice(0, 200)}`);
+
   const end = await v1(`/v1/conversations/${o.conversationId}/end`, {});
   const e = (await end.json()) as { remembered?: string };
   e.remembered === 'saved' ? pass('v1 conversation end saved memory') : fail('v1 conversation end', `${end.status} ${JSON.stringify(e)}`);
