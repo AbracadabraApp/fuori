@@ -361,3 +361,19 @@ Words per level, used without being deterministic, loosest first:
 2. Say the budget, not the words: "mostly everyday words; a harder one, say it and its English" in the prompt; approach 4 checks it.
 3. The learner's own words: what they've said or been taught in their conversations counts as known. A record, not a prediction; any language; soft hint in the prompt and a per-learner coverage score.
 4. Fixed lists per level in the prompt: deterministic, one language only, and the research found it backfired. Kept out.
+
+### 2026-10-19: round 23, the syllabus word list against the judge (209 lines, synthetic set, Italy)
+
+From the cloud session's syllabus handoff: could a count against `docs/research/syllabus/level-words-it.csv` (1,479 A1–A2 lemmas from Josh's course books) replace the judge, being cheaper and steadier? Lemmas from spaCy `it_core_news_lg`; closed-class words (articles, prepositions, pronouns, conjunctions, auxiliaries) counted as known in one arm, since the list has few of them. Scripts: `tests/experiments/word-list-level.*`.
+
+| Measure | Lines a beginner can follow | Agrees with the judge on clear lines (188) | Rank correlation with the judge | Same verdict every run |
+|---|---|---|---|---|
+| Judge, 3 runs | 31% / 31% / 31% | — | — | 90% of lines |
+| List + closed-class words | 29% | 65% | 0.28 | 100% |
+| List alone | 12% | 72% | 0.36 | 100% |
+
+- Agreement is barely above chance: with about 30% of lines passing on both, two coin flips at that rate agree 58% of the time.
+- The judge is already steady (90% same verdict, median spread 0), so the list's only real gain is cost.
+- The list's misses are its own gaps (*dire*, *solo*, *altro*, *piazza*, *male*, *benvenuto* aren't on it) and lemmatizer errors (*buona* not taken to *buono*, *va* not to *andare*, made-up lemmas such as *dicere*, *piacciare*).
+- The judge has its own oddities (*Posso aiutarla?* 67%, *Arrivederci, torni a trovarmi presto!* 60%: it marks pronouns joined to verbs as hard), but it reads like a listener; the list reads like a dictionary lookup.
+- **Result: the judge stays.** The word list doesn't replace it. Not tried: filling the list's gaps from a spoken frequency list, which would need its own check, as Kelly did; Mexico, which has no list.

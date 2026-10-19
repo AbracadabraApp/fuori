@@ -41,6 +41,8 @@ The three Progetto books are scans; they were read with OCR, so a few pages (cro
 - **A word list for "can a beginner follow this line?"** `level-words-it.csv` gives a fixed, everyday-weighted list per level, so the measure can be a count instead of a judgement. Next: compare its verdicts with the `level.md` judge on the replay set.
 - **Grammar per level for the levels block.** A beginner character should stay mostly in the present, with the past (*ho fatto*) as the first stretch; the imperfect, imperative, conditional and *ne* are A2. Characters will still use some (directions, "Quanto ne vuole?"), so keep those lines short and guessable.
 - **Chips.** Eight of the ten beginner chips are A1. *Buy at the market* is A2 (quantities, *ne*); *Ask for directions* is A1 to ask but A2 to understand. A1 also covers likes and free time, where you live, what you did, and the weather, which have no chip yet. See `chips-vs-syllabus.md`.
+- **The phrase cards are Diario material** (Josh, 2026-10-19): `anki-a1-a2.csv`'s 187 A1–A2 phrases, with English and topic tags, are close to what the Diario's chips need. They can seed each chip before the learner has phrases of their own, and check that the beginner chips cover A1–A2. The learner's own phrases come first.
+- **Rejected: bring your own textbook** (Josh, 2026-10-19: "hate this idea"). No learner-supplied course material seeds the Diario or Learn.
 - **Order differs where the game needs it.** The books delay ordering at a bar to Unit 4; Fuori's world starts there. *Vorrei* as a fixed phrase is how both handle it.
 - **Fluency first, correction later** (the books' teacher notes) matches recasts in character and corrections in the review.
 

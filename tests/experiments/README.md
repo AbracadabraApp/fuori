@@ -23,6 +23,7 @@ Run from the repo root with the API key: `npx tsx --env-file=.env.local tests/ex
 | `end-detect.mts` | Two ways to notice a conversation is over, scored against conversation-ends' judge: an `over` flag on the character's reply (trial schema, line regenerated) and a separate judge after each real line (timed) | — | 20 |
 | `help-asks.mts` | Real conversations: every learner turn asking for help, and whether the next character line carried English in the spoken line, helped in the language only, or ignored it (before dropping the English translation line) ; `PROMPTS=` replays each ask with each prompt file | — | 21 |
 | `teach-moments.mts` | Real conversations: the character's teaching moments by kind (vocabulary, gender or number, conjugation, dialect or local), how (recast, in the language, in English), whether it sounds like a lesson, and missed chances | — | 22 |
+| `word-list-level.py` + `word-list-level.mts` | "Lines a beginner can follow" by a fixed word list (the syllabus's `level-words-it.csv`, lemmas from spaCy's large Italian model; needs a venv, see the script) against the level.md judge run three times | — | 23 |
 | `voice-speed.mts` | Speed of speech in (Groq Whisper, ElevenLabs Scribe) and speech out (ElevenLabs models, whole file and first streamed byte), short to long lines, both languages; laptop network | — | voice 1 |
 | `on-hold/smaller-world.mts` | Scripted two-visit conversations per character in one neighbourhood, checked and rewritten. On hold until the smaller world has a spec | — | 12–13 |
 
