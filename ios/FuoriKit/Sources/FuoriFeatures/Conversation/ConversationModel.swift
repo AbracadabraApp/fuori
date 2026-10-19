@@ -185,8 +185,9 @@ public final class ConversationModel {
     }
 
     /// The learner's turn: open the mic (or wait for a tap under VoiceOver)
-    /// True while startRecording waits for the mic
-    private var openingMic = false
+    /// The generation whose startRecording is waiting for the mic (a pause
+    /// moves on the generation, so a stale wait never blocks a new turn)
+    private var openingMic: Int?
 
     private func openTurn() async {
         // Paused while thinking: the mic stays closed until a tap
@@ -204,10 +205,18 @@ public final class ConversationModel {
         // recording and a second watcher; the orphaned watcher later finished
         // the turn again with the first file already deleted (TestFlight
         // 0.1.0 (1), "no such file" at step transcribe, 2026-10-19)
-        guard !openingMic, listenTask == nil else { return }
-        openingMic = true
-        defer { openingMic = false }
-        guard await AudioSession.requestMicrophone() else {
+        guard openingMic != generation, listenTask == nil else { return }
+        let opening = generation
+        openingMic = opening
+        defer { if openingMic == opening { openingMic = nil } }
+        // The pill turns green at the tap, not when the mic is ready (Josh,
+        // 2026-10-18: the tap should plainly register, so nobody taps twice)
+        phase = .listening
+        level = 0
+        let allowed = await AudioSession.requestMicrophone()
+        // Paused or left while the mic was opening: it stays closed
+        guard opening == generation, phase == .listening else { return }
+        guard allowed else {
             phase = .micDenied
             return
         }
@@ -273,7 +282,7 @@ public final class ConversationModel {
 
     private func finishTurn() async {
         // Once per turn: the tap and the turn's time limit can both end it
-        guard phase == .listening || phase == .hearing else { return }
+        guard phase == .listening || phase == .hearing, openingMic != generation else { return }
         listenTask?.cancel()
         listenTask = nil
         let url = recorder.stop()

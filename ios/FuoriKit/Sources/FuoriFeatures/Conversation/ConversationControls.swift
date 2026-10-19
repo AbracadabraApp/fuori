@@ -83,7 +83,7 @@ struct ConversationControls: View {
                 if model.phase == .hearing && !model.tapMode {
                     Capsule()
                         .trim(from: 0, to: model.ring)
-                        .stroke(Tokens.Colors.green, style: StrokeStyle(lineWidth: 3, lineCap: .round))
+                        .stroke(Tokens.Colors.card, style: StrokeStyle(lineWidth: 3, lineCap: .round))
                         .padding(1.5)
                 }
                 pillContent
@@ -103,14 +103,14 @@ struct ConversationControls: View {
         case .speaking:
             Image(systemName: "waveform")
                 .font(.title2)
-                .foregroundStyle(Tokens.Colors.card)
+                .foregroundStyle(Tokens.Colors.text)
                 .symbolEffect(.variableColor.iterative, isActive: !reduceMotion)
         case .listening, .hearing:
             HStack(spacing: 10) {
-                LevelDots(level: model.level, colour: Tokens.Colors.green)
+                LevelDots(level: model.level, colour: Tokens.Colors.card)
                 if model.tapMode {
                     // Tap mode: the learner ends the turn, so show how
-                    Image(systemName: "stop.fill").font(.footnote).foregroundStyle(Tokens.Colors.green)
+                    Image(systemName: "stop.fill").font(.footnote).foregroundStyle(Tokens.Colors.card)
                 }
             }
         case .thinking:
@@ -118,7 +118,7 @@ struct ConversationControls: View {
             // any more (Josh, 2026-10-15: the submit tap should clearly change state)
             LevelDots(level: reduceMotion ? 0.3 : nil, colour: Tokens.Colors.card)
         case .tapToTalk:
-            Image(systemName: "mic.fill").font(.title2).foregroundStyle(Tokens.Colors.card)
+            Image(systemName: "mic.fill").font(.title2).foregroundStyle(Tokens.Colors.text)
         case .paused:
             EmptyView() // shown by the pause button alone
         case .starting:
@@ -141,16 +141,22 @@ struct ConversationControls: View {
         }
     }
 
+    /// One colour per state, so the tap plainly registers (Josh, 2026-10-18):
+    /// green while you talk, terracotta once it's sent, cream otherwise
     private var pillFill: Color {
         switch model.phase {
-        case .speaking, .tapToTalk: Tokens.Colors.green
+        case .listening, .hearing: Tokens.Colors.green
         case .thinking: Tokens.Colors.terracotta
         default: Tokens.Colors.card
         }
     }
 
     private var ringColour: Color {
-        model.phase == .thinking ? Tokens.Colors.terracotta : Tokens.Colors.green
+        switch model.phase {
+        case .thinking: Tokens.Colors.terracotta
+        case .listening, .hearing: Tokens.Colors.card
+        default: Tokens.Colors.green
+        }
     }
 
     // MARK: Words for each state, for VoiceOver (English: app chrome, docs/13 D5)
