@@ -1,0 +1,271 @@
+spanish,english,unit,function
+Me llamo… ¿Y tú?,My name is… And you?,0,introduce_yourself
+¿De dónde eres?,Where are you from?,0,ask_where_someone_is_from
+"Soy brasileño, de Porto Alegre.","I'm Brazilian, from Porto Alegre.",0,say_where_you_are_from
+¿Cómo se escribe?,How do you spell it?,0,ask_for_spelling
+¿Con be grande o con ve chica?,With a B or a V?,0,ask_for_spelling
+¿Qué significa…?,What does … mean?,0,ask_for_a_word
+¿Cómo se dice laptop en español?,How do you say laptop in Spanish?,0,ask_for_a_word
+"¿Puede repetir, por favor?","Could you repeat that, please?",0,ask_for_help
+¿Así está bien?,Is this right?,0,ask_for_help
+"¡Hola!, ¿qué tal?","Hi, how's it going?",1,greet
+"Bien, ¿y tú?","Fine, and you?",1,ask_how_someone_is
+"Mira, esta es Ana, una compañera nueva.","Look, this is Ana, a new classmate.",1,introduce_someone
+¡Encantado! / ¡Encantada!,Pleased to meet you!,1,reply_to_an_introduction
+"Buenos días, señor Prado, ¿cómo está usted?","Good morning, Mr Prado, how are you? (formal)",1,ask_how_someone_is
+Le presento a la señora Ruiz.,May I introduce Mrs Ruiz? (formal),1,introduce_someone
+Mucho gusto.,Nice to meet you.,1,reply_to_an_introduction
+¿A qué te dedicas?,What do you do for a living?,1,ask_about_work
+Soy médica. ¿Y tú?,I'm a doctor. And you?,1,say_what_you_do
+¿De dónde son ustedes?,Where are you (all) from?,1,ask_where_someone_is_from
+"Somos argentinos, de Buenos Aires.","We're Argentinian, from Buenos Aires.",1,say_where_you_are_from
+¿Dónde vive usted?,Where do you live? (formal),1,ask_an_address
+"Vivo en la calle Goya, número 87.",I live at 87 Goya Street.,1,give_an_address
+¿Cuál es tu número de celular?,What's your mobile number?,1,ask_a_phone_number
+¿Cuál es tu correo electrónico?,What's your email?,1,ask_an_email
+"¿Estás casado? — No, estoy soltero.","Are you married? — No, I'm single.",2,ask_about_family
+¿Tienes hijos?,Do you have children?,2,ask_about_family
+Tengo un hermano y una hermana.,I have a brother and a sister.,2,talk_about_family
+Mi papá se llama Manuel y tiene 58 años.,My father's name is Manuel and he's 58.,2,talk_about_family
+Estos son mis papás.,These are my parents.,2,identify_someone
+¿Dónde están mis lentes?,Where are my glasses?,2,ask_where_something_is
+Están encima de la mesa.,They're on the table.,2,say_where_something_is
+El celular está al lado de la computadora.,The phone is next to the computer.,2,say_where_something_is
+¿Esta es tu chamarra?,Is this your jacket?,2,ask_who_something_belongs_to
+¿Qué hora es?,What time is it?,2,ask_the_time
+Son las tres y media.,It's half past three.,2,tell_the_time
+Es cuarto para las dos.,It's a quarter to two.,2,tell_the_time
+¿A qué hora comen en tu país?,What time do you have lunch in your country?,2,ask_about_routine
+Los bancos abren por la mañana.,Banks open in the morning.,2,give_opening_times
+¿A qué hora te levantas?,What time do you get up?,3,ask_about_routine
+Me levanto a las siete y me baño.,I get up at seven and shower.,3,talk_about_routine
+Los domingos me levanto muy tarde.,On Sundays I get up really late.,3,talk_about_routine
+Me acuesto temprano.,I go to bed early.,3,talk_about_routine
+Salgo de casa a las ocho.,I leave home at eight.,3,talk_about_routine
+Voy al trabajo en camión.,I go to work by bus.,3,talk_about_transport
+Trabajo de ocho a tres.,I work from eight to three.,3,talk_about_work
+¿Qué horario tienes?,What are your hours?,3,ask_about_work
+"¿Tienes algún día libre? — Sí, los domingos.","Do you get a day off? — Yes, Sundays.",3,ask_about_work
+¿Qué desayunas normalmente?,What do you usually have for breakfast?,3,ask_about_routine
+"Buenos días, ¿qué desean?","Good morning, what would you like? (to a group)",3,serve_a_customer
+"Un café con leche y pan tostado, por favor.","A coffee with milk and some toast, please.",3,order_food_and_drink
+Yo solo quiero un jugo de naranja.,I just want an orange juice.,3,order_food_and_drink
+Me gusta el café negro y sin azúcar.,"I like my coffee black, no sugar.",3,say_what_you_like
+¿Dónde vives? — En un departamento en el centro.,Where do you live? — In a flat in the centre.,4,talk_about_where_you_live
+¿En qué piso vives? — En el tercer piso.,Which floor do you live on? — The third.,4,talk_about_where_you_live
+¿Cuántas recámaras tiene?,How many bedrooms does it have?,4,ask_about_a_home
+"Mi casa es pequeña, pero tiene mucha luz.","My place is small, but it gets lots of light.",4,describe_a_home
+"¿Tienen cochera? — No, nos estacionamos en la calle.","Do you have a garage? — No, we park on the street.",4,ask_about_a_home
+En la sala hay dos sillones.,There are two armchairs in the living room.,4,say_what_there_is
+¿Hay leche en el refri?,Is there any milk in the fridge?,4,ask_what_there_is
+"Perdone, ¿hay un supermercado cerca de aquí?","Excuse me, is there a supermarket near here?",4,ask_what_there_is
+Las llaves están en la mesa de la cocina.,The keys are on the kitchen table.,4,say_where_something_is
+¿Hay habitaciones libres para el fin de semana?,Do you have rooms free for the weekend?,4,book_a_room
+"Una doble, por favor. ¿Qué precio tiene?","A double, please. How much is it?",4,book_a_room
+¿Para cuántas noches? — Para dos.,For how many nights? — Two.,4,book_a_room
+"¿Me hace la reservación, por favor?",Please book it for me.,4,book_a_room
+¿Aceptan tarjeta de crédito?,Do you take credit cards?,4,ask_about_payment
+¿Qué van a tomar de primero?,What will you have for your first course?,5,serve_a_customer
+De primero quiero una sopa.,For my first course I'd like soup.,5,order_food_and_drink
+¿Y de segundo? — Pollo a la plancha.,And for your main? — Grilled chicken.,5,order_food_and_drink
+"¿Y para beber? — Agua mineral, por favor.","And to drink? — Mineral water, please.",5,order_food_and_drink
+¿Y de postre? — Un helado de vainilla.,And for dessert? — Vanilla ice cream.,5,order_food_and_drink
+"¿Me trae una servilleta, por favor?","Could you bring me a napkin, please?",5,ask_for_something
+"¿Me trae la cuenta, por favor? — Sí, ahora mismo.","Could I have the bill, please? — Right away.",5,ask_for_the_bill
+¿Te gusta el cine?,Do you like films?,5,ask_what_someone_likes
+Me gustan las películas de terror.,I like horror films.,5,say_what_you_like
+Me encanta viajar.,I love travelling.,5,say_what_you_like
+No me gusta nada ir de compras.,I don't like shopping at all.,5,say_what_you_dont_like
+A mí también. / A mí tampoco.,Me too. / Me neither.,5,agree
+¿Les gusta bailar?,Do you (all) like dancing?,5,ask_what_someone_likes
+Corta los plátanos y mézclalos con la leche.,Slice the bananas and mix them with the milk.,5,give_instructions
+"Habla más bajo, por favor.","Talk more quietly, please.",5,ask_a_favour
+"Perdone, ¿cómo se va de aquí a Goya?","Excuse me, how do I get from here to Goya?",6,ask_for_directions
+Tome la línea 8 hasta Mar de Cristal.,Take line 8 to Mar de Cristal.,6,give_directions
+Transborde a la línea 4. Es la tercera estación.,Change to line 4. It's the third stop.,6,give_directions
+¿Qué boleto tenemos que comprar?,Which ticket do we need to buy?,6,ask_about_transport
+¿Cuánto cuesta?,How much is it?,6,ask_the_price
+¿Me puede dar un mapa del metro?,Could you give me a metro map?,6,ask_for_something
+"Cierra la ventana, por favor, tengo frío.","Close the window, please, I'm cold.",6,ask_a_favour
+¿Puedes venir un momento?,Can you come here a moment?,6,ask_a_favour
+Pásame la sal.,Pass me the salt.,6,ask_a_favour
+"¿Se puede? — Sí, pase y siéntese.","May I come in? — Yes, come in and sit down.",6,invite_someone_in
+Mi colonia es tranquila y está cerca del centro.,My neighbourhood is quiet and close to the centre.,6,describe_a_neighbourhood
+Está bien comunicado.,It has good transport links.,6,describe_a_neighbourhood
+Esa calle es muy ruidosa.,That street is very noisy.,6,describe_a_neighbourhood
+El banco está enfrente de mi oficina.,The bank is opposite my office.,6,say_where_a_place_is
+¿Vamos al centro esta tarde?,Shall we go into town this afternoon?,7,suggest_a_plan
+¿Por qué no vienes con nosotros?,Why don't you come with us?,7,invite_someone
+¿Dónde nos vemos?,Where shall we meet?,7,arrange_to_meet
+¿A las cinco en la puerta del metro?,Five o'clock at the metro entrance?,7,arrange_to_meet
+"No, mejor a las seis. ¿Te parece bien?","No, six is better. Is that OK with you?",7,arrange_to_meet
+Va. / Sale. / Está bien.,OK.,7,accept_an_invitation
+"Lo siento, no puedo, tengo que trabajar.","Sorry, I can't, I have to work.",7,decline_an_invitation
+¿Bueno?,Hello? (answering the phone),7,answer_the_phone
+¿Puedo hablar con el señor Álvarez?,Could I speak to Mr Álvarez?,7,make_a_phone_call
+No está. ¿Quiere dejarle un recado?,He's not in. Would you like to leave a message?,7,take_a_message
+"Sí, dígale que lo llamo mañana.","Yes, tell him I'll call him tomorrow.",7,leave_a_message
+¿Qué estás haciendo? — Estoy viendo una serie.,What are you doing? — I'm watching a series.,7,say_what_youre_doing
+"Es alto, tiene el pelo corto y usa lentes.","He's tall, has short hair and wears glasses.",7,describe_someone
+Es muy simpática y habladora.,She's really nice and chatty.,7,describe_someone
+¡Qué bien! / ¡Qué va!,Great! / No way!,7,react
+"Perdone, ¿puede decirme cómo se va a la plaza de Armas?","Excuse me, can you tell me how to get to the main square?",8,ask_for_directions
+"Por favor, ¿para ir a la catedral?","Excuse me, which way to the cathedral?",8,ask_for_directions
+¿Hay una farmacia por aquí?,Is there a pharmacy around here?,8,ask_what_there_is
+Siga derecho hasta el final de la calle.,Go straight on to the end of the street.,8,give_directions
+Dé vuelta a la izquierda.,Turn left.,8,give_directions
+Tome la tercera calle a la derecha.,Take the third street on the right.,8,give_directions
+¿Dónde se compran timbres? — En el correo.,Where do you buy stamps? — At the post office.,8,ask_where_to_buy
+¿Adónde fuiste el sábado?,Where did you go on Saturday?,8,ask_about_the_past
+"No salí, me quedé en casa.","I didn't go out, I stayed home.",8,talk_about_the_past
+Ayer comimos en un restaurante peruano.,Yesterday we had lunch at a Peruvian restaurant.,8,talk_about_the_past
+¿Dónde estuviste de vacaciones?,Where were you on holiday?,8,ask_about_the_past
+Fue un viaje estupendo.,It was a great trip.,8,talk_about_the_past
+¿Qué tiempo hace hoy? — Hace calor.,What's the weather like today? — It's hot.,8,talk_about_the_weather
+Ayer llovió mucho y hizo frío.,Yesterday it rained a lot and was cold.,8,talk_about_the_weather
+"Mi cumpleaños es en otoño, el 10 de octubre.","My birthday is in the autumn, on 10 October.",8,give_a_date
+"Buenos días, ¿qué desea? / ¿Puedo ayudarle?","Good morning, can I help you?",9,serve_a_customer
+"Disculpe, ¿cuánto cuestan estos zapatos?","Excuse me, how much are these shoes?",9,ask_the_price
+¿Y aquellos cafés?,And those brown ones over there?,9,ask_the_price
+Es un poco cara. Tengo que pensarlo.,It's a bit expensive. I need to think about it.,9,decline_politely
+¿Puedo probármela?,Can I try it on?,9,ask_to_try_something_on
+¿Qué talla tiene?,What size are you?,9,ask_about_size
+¿Cómo me queda?,How does it look on me?,9,ask_for_an_opinion
+Te queda muy bien. / No te queda bien.,It really suits you. / It doesn't suit you.,9,give_an_opinion
+Me gusta mucho. Me la llevo.,I really like it. I'll take it.,9,buy_something
+¿Paga en efectivo o con tarjeta? — Con tarjeta.,Cash or card? — Card.,9,pay
+Hoy trae jeans y un suéter rojo.,Today she's wearing jeans and a red jumper.,9,describe_clothes
+El avión es más rápido que el tren.,The plane is faster than the train.,9,compare
+El taxi no es tan barato como el metro.,Taxis aren't as cheap as the metro.,9,compare
+Esta película es mejor que esa.,This film is better than that one.,9,compare
+¿Qué es aquello?,What's that over there?,9,ask_about_something
+¿Qué te pasa? — No me siento bien.,What's wrong? — I don't feel well.,10,say_how_you_feel
+Me duele la cabeza.,I've got a headache.,10,say_what_hurts
+Me duelen los pies.,My feet hurt.,10,say_what_hurts
+Creo que tengo fiebre.,I think I have a temperature.,10,say_how_you_feel
+¿Por qué no tomas un analgésico y te acuestas?,Why don't you take a painkiller and lie down?,10,give_advice
+"Sí, creo que es lo mejor.","Yes, I think that's best.",10,accept_advice
+"Si mañana no estás mejor, vamos al médico.","If you're not better tomorrow, we'll go to the doctor.",10,give_advice
+Antes viajábamos mucho.,We used to travel a lot.,10,talk_about_the_past
+"Cuando era pequeño, vivía con mis abuelos.","When I was little, I lived with my grandparents.",10,talk_about_the_past
+¿Cómo era tu escuela?,What was your school like?,10,ask_about_the_past
+¿Qué vas a hacer este verano?,What are you going to do this summer?,10,ask_about_plans
+Voy a trabajar en un hotel porque quiero ahorrar.,I'm going to work in a hotel because I want to save.,10,talk_about_plans
+Este fin de semana voy a levantarme tarde.,This weekend I'm going to sleep in.,10,talk_about_plans
+¿Con quién vas a ir?,Who are you going with?,10,ask_about_plans
+"¿Cuál prefieres, este o ese?","Which one do you prefer, this or that?",11,ask_a_preference
+"¿Qué prefieres, carne o pescado?","What do you prefer, meat or fish?",11,ask_a_preference
+¿Cuántas horas duermes?,How many hours do you sleep?,11,ask_about_routine
+¿Dónde naciste?,Where were you born?,11,ask_about_the_past
+"Nací en 1990, en Guadalajara.","I was born in 1990, in Guadalajara.",11,talk_about_the_past
+Empezó a cantar de muy pequeña.,She started singing when she was very young.,11,tell_a_life_story
+En 1950 se fue a vivir a Estados Unidos.,In 1950 she went to live in the United States.,11,tell_a_life_story
+Murió en 1935 en un accidente.,He died in an accident in 1935.,11,tell_a_life_story
+"Ayer no hice la cena, la hizo mi compañero.","I didn't make dinner yesterday, my flatmate did.",11,talk_about_the_past
+¿Cuándo es tu cumpleaños? — El dieciséis de diciembre.,When's your birthday? — The sixteenth of December.,11,give_a_date
+¿Qué pasó el tres de diciembre?,What happened on the third of December?,11,ask_about_the_past
+Dos millones y medio de habitantes.,Two and a half million people.,11,talk_about_population
+El veinticinco por ciento.,Twenty-five per cent.,11,give_a_number
+Mi abuela cumple ochenta años.,My grandmother is turning eighty.,12,talk_about_family
+No tengo nada de ganas de ir.,I really don't feel like going.,12,say_what_you_dont_want
+Es muy cariñosa y divertida.,She's very affectionate and fun.,12,describe_someone
+Mi prima es muy buena onda.,My cousin is really nice.,12,describe_someone
+Hoy está muy serio.,He's very serious today.,12,describe_a_mood
+¿Cómo te fue hoy?,How did your day go?,12,ask_about_the_past
+Hoy tuve mucho trabajo.,I had a lot of work today.,12,talk_about_the_past
+Llevé a los niños a la escuela.,I took the kids to school.,12,talk_about_the_past
+"¿Ya hiciste las maletas? — No, todavía no.","Have you packed? — No, not yet.",12,ask_about_the_past
+¿Has estado alguna vez en Buenos Aires?,Have you ever been to Buenos Aires?,12,ask_about_experiences
+"No, no he estado nunca.","No, I've never been.",12,talk_about_experiences
+"Sí, estuve hace tres años.","Yes, I went three years ago.",12,talk_about_experiences
+Hay que quitarse los zapatos.,You have to take your shoes off.,12,say_what_you_must_do
+Aquí no se puede fumar.,You can't smoke here.,12,say_what_isnt_allowed
+Me gustaría vivir en el campo.,I'd like to live in the country.,13,say_what_you_would_like
+Estoy buscando un departamento pequeño en el centro.,I'm looking for a small flat in the centre.,13,look_for_a_home
+¿Dónde le gustaría vivir?,Where would you like to live? (formal),13,ask_what_someone_would_like
+"Quiero rentar, no comprar.","I want to rent, not buy.",13,look_for_a_home
+¿Qué hiciste el fin de semana?,What did you do at the weekend?,13,ask_about_the_past
+El sábado fui al cine y el domingo me quedé en casa.,On Saturday I went to the cinema and on Sunday I stayed in.,13,talk_about_the_past
+¿Ya viste la última película de Almodóvar?,Have you seen Almodóvar's latest film?,13,ask_about_free_time
+¿Qué tipo de películas te gustan?,What kind of films do you like?,13,ask_what_someone_likes
+¿Me prestas tu diccionario?,Can I borrow your dictionary?,13,borrow_something
+"Sí, claro, agárralo.","Sure, take it.",13,lend_something
+"No, lo siento, lo necesito yo.","No, sorry, I need it.",13,refuse_politely
+¡Qué reloj tan bonito! ¿Quién te lo regaló?,What a lovely watch! Who gave it to you?,13,ask_about_a_gift
+Me lo regaló mi novio.,My boyfriend gave it to me.,13,talk_about_a_gift
+"¿Le diste las llaves a Mercedes? — Sí, ya se las di.","Have you given Mercedes the keys? — Yes, I've already given them to her.",13,talk_about_the_past
+Yo tampoco. / A mí sí.,Me neither. / I do.,13,agree
+Antes no había tantos carros.,There didn't used to be so many cars.,14,talk_about_the_past
+"Cuando era niña, jugaba en la calle.","When I was a girl, I played in the street.",14,talk_about_the_past
+"Como no había camión, iba caminando.","As there was no bus, I walked.",14,talk_about_the_past
+La primera vez que vi el mar me pareció precioso.,The first time I saw the sea I thought it was beautiful.,14,tell_a_story
+Ahora se vive mucho mejor que antes.,Life is much better now than it used to be.,14,compare
+Yo no gano tanto como tú.,I don't earn as much as you.,14,compare
+Ana tiene tantos amigos como Sara.,Ana has as many friends as Sara.,14,compare
+Es el restaurante más caro de la ciudad.,It's the most expensive restaurant in town.,14,compare
+¡Está riquísimo!,It's delicious!,14,give_an_opinion
+"Perdone, ¿podría decirme dónde hay un puesto de periódicos?","Excuse me, could you tell me where there's a newsstand?",14,ask_for_directions
+Siga derecho y dé vuelta a la izquierda.,Go straight on and turn left.,14,give_directions
+La farmacia está detrás de la iglesia.,The pharmacy is behind the church.,14,say_where_a_place_is
+Voy al trabajo en metro.,I go to work by metro.,14,talk_about_transport
+En las tardes regreso caminando.,In the afternoons I walk home.,14,talk_about_transport
+Quería más información sobre la moto.,I'd like more information about the motorbike.,15,ask_for_information
+¿Está en buen estado?,Is it in good condition?,15,ask_about_something
+¿Puedo ir a verla?,Can I come and see it?,15,arrange_to_meet
+¿Te queda bien el sábado?,Does Saturday work for you?,15,arrange_to_meet
+"Buenas tardes, ¿qué desea?","Good afternoon, what can I get you?",15,serve_a_customer
+Quería unas naranjas para jugo.,I'd like some oranges for juice.,15,ask_for_something_in_a_shop
+Me da dos kilos.,"Two kilos, please.",15,ask_for_something_in_a_shop
+"Lo siento, no me queda ninguna.","Sorry, I haven't got any left.",15,say_you_dont_have
+"¿Algo más? — No, nada más. ¿Cuánto es?","Anything else? — No, that's all. How much is it?",15,ask_the_price
+Aquí tiene su cambio.,Here's your change.,15,give_change
+"¿Llamó alguien? — No, no llamó nadie.","Did anyone call? — No, no one called.",15,ask_about_the_past
+Se lavan los camarones y se pica la cebolla.,Wash the prawns and chop the onion.,15,give_instructions
+"Nos trae dos cervezas y un vino, por favor.","Two small beers and a wine, please.",15,order_food_and_drink
+¿Quieren algo de botana?,Would you like something to snack on?,15,serve_a_customer
+"¿Me cobra, por favor? / La cuenta, por favor.","Can I pay, please? / The bill, please.",15,ask_for_the_bill
+"Deja, hoy invito yo.","Leave it, it's on me today.",15,offer_to_pay
+Ponte crema y no tomes mucho el sol.,Put sunscreen on and don't sunbathe too much.,16,give_advice
+No te bañes después de comer.,Don't swim after eating.,16,give_advice
+"Buenos días, ¿qué le pasa?","Good morning, what's the matter? (doctor)",16,ask_how_someone_is
+No puedo dormir.,I can't sleep.,16,say_how_you_feel
+Tengo tos y me duele la garganta.,I've got a cough and a sore throat.,16,say_what_hurts
+¿Desde cuándo? — Desde hace dos días.,Since when? — For two days.,16,ask_how_long
+Tómese estas pastillas cada ocho horas.,Take these tablets every eight hours.,16,give_instructions
+Beba mucho líquido y no salga a la calle.,Drink plenty of fluids and don't go out.,16,give_instructions
+Estoy muy nerviosa.,I'm really nervous.,16,describe_a_mood
+Mi jefe está de mal humor.,My boss is in a bad mood.,16,describe_a_mood
+Estoy harta de limpiar.,I'm sick of cleaning.,16,describe_a_mood
+¡Que te mejores!,Get well soon!,16,give_good_wishes
+¡Que tengas buen viaje!,Have a good trip!,16,give_good_wishes
+¡Provecho!,Enjoy your meal!,16,give_good_wishes
+Espero que estés bien.,I hope you're well.,16,give_good_wishes
+¿Por qué no te inscribes a yoga?,Why don't you sign up for yoga?,16,give_advice
+Estoy buscando trabajo.,I'm looking for work.,17,talk_about_work
+"¿Tienes experiencia? — Sí, dos años en un restaurante.","Do you have experience? — Yes, two years in a restaurant.",17,ask_about_work
+¿Cuál es el horario?,What are the hours?,17,ask_about_work
+¿Qué tipo de contrato ofrecen?,What kind of contract are you offering?,17,ask_about_work
+¿Cuál es el sueldo?,What's the salary?,17,ask_about_work
+Es un trabajo de medio tiempo.,It's a part-time job.,17,talk_about_work
+Cuido a mis pacientes.,I look after my patients.,17,say_what_you_do
+"Cuando estaba esperando el camión, me robaron la bolsa.","While I was waiting for the bus, my bag was stolen.",17,tell_a_story
+"Mientras estábamos viendo el partido, se fue la luz.","While we were watching the match, the power went out.",17,tell_a_story
+¿Vienes el domingo a mi fiesta?,Are you coming to my party on Sunday?,17,invite_someone
+Es que el domingo tengo clase.,"The thing is, I have class on Sunday.",17,make_an_excuse
+Me dijo que tenía clase.,She told me she had class.,17,report_what_someone_said
+Me preguntó si quería ir.,He asked me if I wanted to go.,17,report_what_someone_said
+¿Qué te dijo?,What did she say to you?,17,ask_what_someone_said
+¿Cuánto tiempo llevas esperando?,How long have you been waiting?,18,ask_how_long
+Llevo más de una hora aquí.,I've been here over an hour.,18,say_how_long
+Llevo seis meses estudiando español.,I've been learning Spanish for six months.,18,say_how_long
+¿Dónde crees que estarás dentro de veinte años?,Where do you think you'll be in twenty years?,18,ask_about_the_future
+Yo creo que habrá menos contaminación.,I think there'll be less pollution.,18,make_a_prediction
+Mañana iré al cine contigo.,I'll go to the cinema with you tomorrow.,18,make_a_promise
+"Si no llueve, iré a tu casa.","If it doesn't rain, I'll come to your place.",18,talk_about_conditions
+"Si puedes, ven a mi casa.",Come over if you can.,18,talk_about_conditions
+¿Qué te parece esta foto?,What do you think of this photo?,18,ask_for_an_opinion
+Me parece preciosa. / A mí no me gusta nada.,I think it's beautiful. / I don't like it at all.,18,give_an_opinion
+A mí me preocupa la contaminación.,Pollution worries me.,18,give_an_opinion
+No me interesa la política. — A mí tampoco.,I'm not interested in politics. — Neither am I.,18,agree
+Yo también lo creo. / Yo no lo creo.,I think so too. / I don't think so.,18,agree
+"Mira, esta foto es de un viaje que hice.","Look, this photo is from a trip I took.",18,show_something
