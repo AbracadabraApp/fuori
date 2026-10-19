@@ -102,6 +102,15 @@ Two stages. A TestFlight for Josh alone needs no Apple review and none of the co
 - [ ] **Claude** One line on the microphone step of onboarding saying what is sent to outside AI services
 - [ ] **Josh** App Privacy label in App Store Connect (audio and text sent to Groq, Anthropic and ElevenLabs); **Claude** drafts the answers
 - [ ] **Josh** Beta app description, feedback email and notes for the reviewer; **Claude** drafts them
+- [ ] **Josh** Approve what testers are asked to test (2026-10-18; things Josh can't judge himself, having built it and knowing the language):
+  1. First 5 minutes alone: choose a country, allow the mic, pick a place and start talking, with no help
+  2. Speed: does the ~4 s wait feel like a conversation or like waiting? Decides how urgent starting the voice on the first sentence is
+  3. Beginners: can they follow at their level? The tests say only about a third of lines are easy enough
+  4. Coming back: do they return on a second day unprompted, and does the character remember them?
+  5. Mexico from someone who doesn't speak Spanish
+  6. Anything broken: a reply that doesn't follow, English nobody asked for, the mic not opening, a hang
+
+  TestFlight "What to Test" text (draft): *Pick Italy or Mexico and talk to whoever you meet. Tap to speak, tap again when you're done. Please tell us: was anything confusing in the first few minutes? Did the replies come fast enough to feel like a conversation? Could you follow what people said? Did anyone remember you when you came back another day? Screenshot anything broken or odd (shake or use TestFlight's feedback).*
 
 **Stage 3: the App Store** (later)
 - [ ] **Claude** "Report this line" button; screenshots, description, age rating and review notes (**Josh** approves)
