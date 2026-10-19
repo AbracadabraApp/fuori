@@ -33,6 +33,10 @@
 | L2 | Learn behind a setting (off by default): the icon opens a conversation with the teacher, `mode: "any"` transcription | Claude builds, Josh plays | Josh: it's where he'd go when stuck. Next build (releases are on hold) |
 | L3 | Decide | Josh | Keep it, move the school out of the world, or change it |
 
+## Shelved
+
+- A RAG over the full texts of the course books (Josh, 2026-10-19: shelved, low value for now).
+
 ## Open (Josh)
 
 - Name and icon: "Impara"/"Aprende"? A different drawing from the Diario's book.
