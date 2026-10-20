@@ -2,6 +2,18 @@
 
 2026-10-19 · Josh · Draft. Josh's option D for Magda: a Learn feature next to the Diario, with full licence to speak and listen in English, and a teacher who is a character but plays no role in the world. Replaces Magda at the school for foreigners once built; until then the school stays as it is.
 
+## Recast (Josh, 2026-10-20): Learn replaces Magda and the Diario
+
+An idea still forming; precision and measurement wait until it has shape (Josh). Learn is a part of the app like Settings, not a character, and has two layers:
+
+- **The Learn area** (the icon next to Settings): the learner's whole history, the structured side: phrases collected from every conversation, corrections over time, grammar met, lessons. Magda's and the Diario's ideas move here; those areas go away.
+- **The Learn page** (a sheet over the conversation): after a few turns a Learn link appears; tap it and a page is written from that conversation alone. This is where structured learning happens, so it's generous and English is fine. Order (Josh): corrections first, then new words, then a little about how the language works (only the forms needed now, no full conjugation tables), a note on life here when the scene has one, then your turn. Characters illustrate it: their lines as examples, their voice to repeat a line, the mic to try it yourself.
+- Each page feeds the area.
+- The page starts from the learning notes the memory call already writes after every conversation (mistakes, words worth learning, what wasn't understood; Josh: "Magda may already have that"), expanded for the learner.
+- First try: `content/it/prompts/learn.md`, run by `tests/experiments/learn-page.mts` on the modelled month (pages in `tests/experiments/out/learn-pages-it.md`).
+
+The sections below are the 2026-10-19 draft (a teacher next to the Diario); the recast replaces them where they differ.
+
 ## Why (2026-10-19)
 
 - Characters now teach in passing and give English when asked (teach3, [prompt-trials.md](prompt-trials.md)), so the world covers most day-to-day teaching.
