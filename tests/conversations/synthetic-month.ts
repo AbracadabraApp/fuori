@@ -11,7 +11,7 @@
  *   npx tsx --env-file=.env.local tests/conversations/synthetic-month.ts   (CHARACTER_PROMPT as needed)
  *   → tests/conversations/synthetic-month/it.json and it.md
  */
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { cities, language, pack } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
@@ -43,7 +43,7 @@ async function ask(system: string, content: string, s: object): Promise<string> 
   for (let attempt = 0; ; attempt++) {
     try {
       const r = await anthropic.messages.create({
-        model: CLAUDE_MODEL, max_tokens: 3000, system,
+        model: CLAUDE_MODEL, max_tokens: 8000, system,
         messages: [{ role: 'user', content }],
         output_config: { format: { type: 'json_schema', schema: s } },
       } as Parameters<typeof anthropic.messages.create>[0]);
@@ -63,10 +63,17 @@ type Row = { id: string; synthetic: true; day: number; character_id: string; pla
 async function main() {
   const memories = new Map<string, { visits: number; lastVisit: Date | null; notes: string[] }>();
   let notebook: string[] = [];
-  const rows: Row[] = [];
   const dir = join(process.cwd(), 'tests', 'conversations', 'synthetic-month');
   mkdirSync(dir, { recursive: true });
-  for (let i = 0; i < PLAN.length; i++) {
+  // RESUME=1 carries on after the last saved day, rebuilding memory and the notebook from it
+  const saved = join(dir, `${pack.id}.json`);
+  const rows: Row[] = process.env.RESUME && existsSync(saved) ? JSON.parse(readFileSync(saved, 'utf8')) : [];
+  for (const r of rows) {
+    const m = memories.get(r.character_id);
+    memories.set(r.character_id, { visits: (m?.visits ?? 0) + 1, lastVisit: new Date(r.started_at), notes: r.memory });
+    notebook = r.notebook;
+  }
+  for (let i = rows.length; i < PLAN.length; i++) {
     const day = i + 1;
     const place = roma.places.find((p) => p.id === PLAN[i])!;
     const character = characterForPlace(roma, place)!;
