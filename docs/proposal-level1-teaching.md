@@ -66,9 +66,9 @@ Her line is Italian only, as now; level 2 already shows English on the character
 
 That's a lesson, not a barista. Only the question the learner has to answer gets the English and a way to reply.
 
-## Simplest version: no buttons, you say it back (Josh, 2026-10-19)
+## Idea, not a direction: no buttons, you say it back (2026-10-19)
 
-The simplest scaffolding: no reply buttons. At level 1 she teaches the line you need and you say it back with the mic; her words are on screen as subtitles. She does it for the first N turns of each conversation (N shrinking with the count of conversations, [beginner-scaffolding.md](beginner-scaffolding.md)); after that she just talks, and helps when asked. Nothing new on screen and no second call. The buttons stay built behind the hidden test switch, to bring back for the first turn or two only if speaking from the start proves too hard.
+**Not chosen (Josh, 2026-10-20).** The reply buttons are the beginner scaffolding; this is only an idea on paper, kept for its teaching rules and sample scenes. The idea: no reply buttons. At level 1 she teaches the line you need and you say it back with the mic; her words are on screen as subtitles. She does it for the first N turns of each conversation (N shrinking with the count of conversations, [beginner-scaffolding.md](beginner-scaffolding.md)); after that she just talks, and helps when asked. Nothing new on screen and no second call. 
 
 How she teaches (Josh, 2026-10-19; the sample below is the reference, an earlier "Puoi dire" sample of Claude's was clumsy: three parts on every line):
 - **The frame, not the whole line.** "Dici: vorrei, e cosa vuoi" leaves the slot for you to fill; you never just repeat.
