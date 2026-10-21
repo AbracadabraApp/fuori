@@ -13,6 +13,7 @@ Each page the agent writes feeds the area.
 
 Not requirements; ideas Josh wants to let sit (Josh: "we have to be provisional and let ideas bake"). What's clear so far:
 
+- **Schools go away, and Magda is no longer an in-game character** (Josh, 2026-10-20). Whether Learn has a teacher or is just content is open; Josh leans toward no person. What Magda's code does that Learn would keep without her: the learning notes after every conversation and the study file (today stored as Magda's memory row; it would become the learner's own record).
 - **Learn is not the game. It's spell check** (Josh): a tool you reach for, precise and useful, no ceremony. No rituals, no time or calendar (the game has none).
 - **The agent is for review** of one conversation; **the area has more latitude for lessons**, including what may never come up in conversation (seasons, prepositions).
 - **Lessons draw on the learner's own conversations, always**, but not necessarily in aggregate: one good line they heard, not a count.
