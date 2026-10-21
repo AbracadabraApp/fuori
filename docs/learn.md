@@ -6,8 +6,10 @@
 
 Learn is a part of the app like Settings, not a character. It has two parts:
 
-- **The Learn agent** reviews one conversation, on the conversation screen, and writes its page.
-- **The Learn area** (the icon next to Settings) holds the learner's history across all conversations: the structured side.
+- **The Learn agent**, the "co-pilot" of each conversation (Josh, 2026-10-21): reviews that one conversation, on the conversation screen, and writes its page. Reached from the conversation (the Learn link), not the book.
+- **The Learn area**, the "home" for structured, scripted, comprehensive learning (Josh, 2026-10-21): what Italian learners need, in course order, aware of the learner's whole history. The book icon next to Settings.
+
+Always say which: "Learn" alone has meant both, which is how the review first ended up behind the book. If one had to go, the agent stays (Josh: "I'd get rid of the nav bar area, but I'm not sure why we'd have to"), so it's built first and the area grows from its pages.
 
 Each page the agent writes feeds the area.
 
