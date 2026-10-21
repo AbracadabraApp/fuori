@@ -29,7 +29,7 @@ Added 2026-10-13 after M2 was reported "complete" while its core features had ne
 - No placeholders in shipped code: no `TODO` stand-ins, demo ids or `localhost` URLs.
 - Before reusing a database column, field, id or file, search for what already uses it.
 - Test the connection, not just the parts: the place finds its character, ending a conversation stores what it should, the screen calls a route that exists.
-- Experiments go behind a setting whose default is today's behaviour; Railway deploys `main`, so changing a default changes production.
+- No test flags for now (Josh, 2026-10-21): the users are Josh and his family, so new features ship on, not behind a setting. Railway deploys `main`, so a push changes what they play; anything that could break a conversation still needs to be run first (`smoke:live`). A flag is still right when code needs something production doesn't have yet (a column before its migration).
 - Never stash, clean or reset files you didn't create (`git stash -u`, `git clean`, `git checkout -- .`); another session may be mid-task in the same folder. Commit generated files promptly.
 
 ## iPhone app

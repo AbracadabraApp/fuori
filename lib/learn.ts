@@ -4,8 +4,7 @@
  * from the transcript by content/<country>/prompts/learn.md as JSON
  * (lib/prompts/learn-output-schema.ts); the app lays it out.
  *
- * Experimental: called by POST /v1/learn, which the app uses only when
- * Settings → "Learn page (test)" is on (off by default). Server-side only.
+ * Called by POST /v1/learn when the learner opens the Learn sheet. Server-side only.
  */
 
 import { existsSync } from 'node:fs';

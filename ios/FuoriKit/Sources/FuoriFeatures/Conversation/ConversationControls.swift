@@ -12,7 +12,7 @@ import FuoriDesign
 /// the turn at once. Errors and "mic off" show in the note above.
 struct ConversationControls: View {
     let model: ConversationModel
-    /// Opens the Learn sheet; nil hides the Learn link (Settings → "Learn page (test)" off)
+    /// Opens the Learn sheet; nil hides the Learn link
     var onLearn: (() -> Void)? = nil
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var typing = false

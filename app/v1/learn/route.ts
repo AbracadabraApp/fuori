@@ -7,7 +7,7 @@
  *
  * The Learn page for this conversation so far (docs/learn.md → The page),
  * written by lib/learn.ts. The app calls it when the learner opens the Learn
- * sheet, and only when Settings → "Learn page (test)" is on (off by default).
+ * sheet (the Learn link, after four learner lines).
  * The app says each correction's `right` in the character's voice through
  * /v1/speak.
  *

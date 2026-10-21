@@ -12,9 +12,6 @@ public enum SettingsKey {
     /// Hidden (Settings → touch and hold Version): the debug panel on the
     /// person screen, the server and learner, and Restart onboarding, as the web's ?debug=1
     public static let debug = "settings.debug"
-    /// Test only, off by default (docs/learn.md → The page): the book button on
-    /// the person screen opens the Learn sheet for the conversation so far
-    public static let learnSheet = "settings.learnSheet"
 }
 
 /// The settings button, top right on every screen (Josh, D2), with Fuori's
@@ -56,7 +53,6 @@ struct SettingsSheet: View {
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.handsFree) private var handsFree = false
     @AppStorage(SettingsKey.debug) private var debug = false
-    @AppStorage(SettingsKey.learnSheet) private var learnSheet = false
     @Environment(\.dismiss) private var dismiss
 
     private enum Level: String, CaseIterable, Identifiable {
@@ -136,8 +132,6 @@ struct SettingsSheet: View {
                         LabeledContent("Server", value: model.server?.host() ?? "—")
                         LabeledContent("Learner", value: model.learnerId ?? "—")
                             .textSelection(.enabled)
-                        // Test only: the book on the person screen (docs/learn.md)
-                        Toggle("Learn page (test)", isOn: $learnSheet)
                         // Back to the country choice, as on first launch (applied once the sheet has closed)
                         Button("Restart onboarding") {
                             model.pendingRestart = true

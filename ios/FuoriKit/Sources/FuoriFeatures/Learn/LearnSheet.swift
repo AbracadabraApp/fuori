@@ -8,7 +8,6 @@ import FuoriNetworking
 /// corrections as tap-to-fix buttons that say the right phrase in the
 /// character's voice, a plain list of their words, and one thing good to know.
 /// Replaying text, not the mic: nothing here asks the learner to speak.
-/// Test only: Settings → "Learn page (test)", off by default.
 struct LearnSheet: View {
     let model: ConversationModel
     @Environment(\.dismiss) private var dismiss

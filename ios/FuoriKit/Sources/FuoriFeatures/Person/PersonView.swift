@@ -15,7 +15,6 @@ struct PersonView: View {
     @AppStorage(SettingsKey.subtitles) private var subtitles = true
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.debug) private var debug = false
-    @AppStorage(SettingsKey.learnSheet) private var learnOn = false
     @State private var showingLearn = false
 
     init(model: ConversationModel) {
@@ -40,7 +39,7 @@ struct PersonView: View {
                     let showLine = model.scaffolding || subtitles
                     let showEnglish = model.scaffolding || english
                     Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note)
-                    ConversationControls(model: model, onLearn: learnOn ? openLearn : nil)
+                    ConversationControls(model: model, onLearn: openLearn)
                 }
                 .padding(.horizontal, Tokens.Space.gutter)
             }

@@ -471,9 +471,10 @@ public final class ConversationModel {
     /// Lines the learner has sent in this conversation (spoken, tapped or typed)
     public private(set) var learnerLines = 0
 
-    /// The Learn link appears once there's something to go over: two of the
-    /// learner's lines saved on the server (docs/learn.md → the Learn link)
-    public var hasSomethingToLearn: Bool { conversationId != nil && learnerLines >= 2 }
+    /// The Learn link appears once there's something to go over: four of the
+    /// learner's lines saved on the server (docs/learn.md → the Learn link;
+    /// Josh, 2026-10-21: "I'd probably try 4 turns, not 2")
+    public var hasSomethingToLearn: Bool { conversationId != nil && learnerLines >= 4 }
 
     /// The line the Learn sheet is saying aloud right now, for its sound wave
     public private(set) var learnSaying: String?
