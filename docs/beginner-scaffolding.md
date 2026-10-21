@@ -2,6 +2,23 @@
 
 2026-10-17 · Josh · Draft. Replaces the four-step "Beginner ladder" sketch in [language-levels-plan.md](language-levels-plan.md). Mockups: [design/beginner-levels/levels.html](../design/beginner-levels/levels.html) (open it in a browser). Research behind it: [research/beginner-mode-scaffolding.md](research/beginner-mode-scaffolding.md) and [research/flashcards-vocabulary-review.md](research/flashcards-vocabulary-review.md). The Diario itself (book icon, chip wall, heat, retiring phrases): [diario.md](diario.md).
 
+## Reply buttons: the three-step chain (Josh, 2026-10-21)
+
+Within level 1's reply buttons, three steps, in order:
+
+| Step | Buttons | You |
+|---|---|---|
+| A | Two replies, **both good** | **Tap** one; it's sent |
+| B | Two replies, **both good** | Tap one, then **read it aloud** |
+| C | Two replies, **only one good** | Choose and **read it aloud**; you have to understand her to pick |
+
+Then free speech (level 2). Proposed details, not yet confirmed:
+- **Read aloud:** tapping a reply chooses it (ink) and opens the mic; the dots show inside the chosen button; tap again when done (hands-free: silence ends it). No transcript on screen.
+- **What's sent on B and C:** the chosen line, so a mumble or a speech-recognition slip can't derail a beginner; what was heard is kept for Learn's "you said".
+- **The wrong reply on C** is correct Italian that doesn't fit the moment (answers another question, wrong item, wrong time), never broken Italian: the screen must not model mistakes. Choosing it is answered by the character in role (puzzled, then helps), not by a buzzer or a red mark.
+- **Needs:** `replies.md` must make a plausible wrong reply and say which one is right (trial in `docs/prompt-trials.md`); which step you're on is counted per conversation, like the taps-run-out schedule below.
+- If the mic is off or VoiceOver is on, B and C fall back to tapping.
+
 ## Revised: three levels (Josh, 2026-10-19; replaces the five levels below once specced)
 
 | Level | What happens | English | You |
