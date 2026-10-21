@@ -120,6 +120,26 @@ Steps 2–5 below are the older draft.
 
 **The AI note lives in Settings → About only, not in onboarding** (Josh, 2026-10-15).
 
+## Name and address (proposed 2026-10-21)
+
+**Why now:** characters didn't know whether the learner is a woman or a man and defaulted to the masculine (Dario to Teresa: *benvenuto*, *sei tornato*, *un uomo che sa quello che vuole*; Josh's Italian teacher noticed it too). Told, they get it right every time (docs/prompt-trials.md → Learner gender). The name was left out of onboarding because you never meet her again (2026-10-15); now it has a job: it leads into how you want to be addressed, which every character uses (Josh, 2026-10-21: "now it trips a setting").
+
+**Where:** right after the first tap (*Non ancora!* or *Sì, ma voglio migliorare*), before the paths split.
+
+| Step | Italy | Mexico | English under it |
+|---|---|---|---|
+| Name (mic) | *Come ti chiami? Tocca il microfono e dimmi il tuo nome.* | *¿Cómo te llamas? Toca el micrófono y dime tu nombre.* | What's your name? Tap the microphone and tell me your name. |
+| Address | *Piacere, {name}! In italiano le parole cambiano: a una donna dico «benvenuta», a un uomo «benvenuto». Per te?* | *¡Mucho gusto, {name}! En español las palabras cambian: a una mujer le digo «bienvenida», a un hombre «bienvenido». ¿Para ti?* | Nice to meet you, {name}! In Italian words change: to a woman I say benvenuta, to a man benvenuto. Which for you? |
+| Buttons | **Benvenuta!** · **Benvenuto!** | **¡Bienvenida!** · **¡Bienvenido!** | to a woman · to a man |
+| After the tap | *Benvenuta, {name}!* / *Benvenuto, {name}!* | *¡Bienvenida, {name}!* / *¡Bienvenido, {name}!* | Welcome, {name}! |
+
+- Fixed lines with the name filled in: no Claude call, no wait. Her line shows the name as Whisper heard it; tapping the mic again lets them say it again. The buttons save the address either way.
+- **Stored:** `learners.addressed_as` (`f` / `m`) for every character (character.md `{person}`); the name only in `learners.onboarding`, for her. Characters still learn the name when you tell them.
+- **Learners who were already playing** don't see onboarding (2026-10-17), so Settings gets the same choice: one row, the two words from content.
+- Later, only if real conversations still show mistakes: the name, the voice's pitch and their own corrections as signals for learners who never chose.
+
+**Build:** content lines in both `onboarding.ts`; the migration (`addressed_as` plus where it came from), which needs Josh; `POST /v1/onboarding/address` `{ addressedAs, name }`; `/v1/me` reports it; `LEARNER_ADDRESS=on` once migrated; a route test and `smoke:live`; then the iOS step in `OnboardingModel` / `OnboardingView` and the Settings row, checked on Josh's iPhone in both countries.
+
 ## Open
 
 - Later version (Josh, 2026-10-16): animate her with video loops. For now she changes pose instead (see "Her poses").
@@ -129,7 +149,7 @@ Steps 2–5 below are the older draft.
 - The microphone permission prompt: proposed at step 1, first time she asks you to speak.
 - The level steps after step 4, and how far the ladder goes in onboarding.
 - **Placement rests on too little (Josh, 2026-10-18: "the test should probably be more than 1").** Today one sentence in the language decides it: Josh's Mexico learner was placed intermediate because someone else spoke answer 2. Two ways to give it more: more questions in onboarding (longer before they play), or treat the onboarding level as a first guess and let the first few conversations confirm or move it (the design's own "the onboarding is the assessment… judged all along", and the learner-level item in the roadmap). Being tested, see `docs/test-ideas.md`.
-- Her name: none for now. The learner's name is not asked in onboarding either (Josh).
+- Her name: none for now. The learner's name: proposed again on 2026-10-21 to lead into how they want to be addressed (Name and address, above).
 - The one-app name (Fuori or Afuera) where it appears in shared screens.
 
 ## Built (step 3, 2026-10-16/17)
