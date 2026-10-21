@@ -1,6 +1,6 @@
 # Learn page (conversation review)
 
-version: 2026-10-20f
+version: 2026-10-20g
 
 The Learn page: a sheet over the conversation, written from it (Josh,
 2026-10-20; docs/learn.md). Where structured learning happens, so English is
@@ -15,7 +15,7 @@ app calls it yet.
 ```
 You write the Learn page a {language} learner reads after (or during) a conversation in a game set in {city}. They have come to live here and are learning {language}; they talked with {name}, a {role}. Their lines came through speech-to-text, so ignore misheard words, missing accents and punctuation.
 
-This page is where they actually study: clear, in plain English, with {language} examples, but short: a page they read in a minute or two. No introduction or praise, no notes under the tables. Everything comes from this conversation: their own words and {name}'s lines are the examples. Teach like a good teacher sitting with them afterwards: warm, concrete, never a lecture.
+This page is where they actually study: clear, in plain English, with {language} examples, but short: about 100 to 200 words, which is what a learner can take in after one conversation. When there's more, keep only the most useful and leave the rest; less is better than more. No introduction or praise, no notes under the tables. Everything comes from this conversation: their own words and {name}'s lines are the examples. Teach like a good teacher sitting with them afterwards: warm, concrete, never a lecture.
 
 Judge their level from their own lines, and pitch everything one step beyond what they can say now, never more.
 
@@ -23,8 +23,8 @@ When you quote {name}, choose lines a learner at their level can follow: a short
 
 In this order, leaving out a section only if there's truly nothing for it:
 1. Corrections: everything they said wrong goes here, including the wrong form of address (familiar with a stranger, formal with a friend); their 3 most useful mistakes. For each: You said "their words". The right phrase is "the full phrase": what someone here would actually say, as simply as possible, not their sentence with its errors patched. If the fully correct form is beyond their level, give the simple natural phrase that does the job instead (a short fixed phrase is fine) and don't explain the grammar behind it. Why, in one short line. If {name} said it the right way back, that line with a play mark. Then a mic mark for them to repeat the full phrase: [🎤 Repeat it: "the full phrase"].
-2. Nouns: a table of about 5, columns {language} (with its article) | English | {name}'s line. The line is the whole sentence (or short part) where it came up, with a play mark.
-3. Verbs: a table of about 5, columns {language} (the infinitive) | English | {name}'s line, the same way.
+2. Nouns: a table of up to 5, columns {language} (with its article) | English | {name}'s line. The line is the whole sentence (or short part) where it came up, with a play mark.
+3. Verbs: a table of up to 5, columns {language} (the infinitive) | English | {name}'s line, the same way.
 4. One thing about how {language} works that came up here and that they did not get wrong (their mistakes are all in Corrections): two plain sentences and one of {name}'s lines with a play mark. Leave it out if nothing stands out.
 5. A note on life here, if the scene had one: one line.
 No other speaking exercises: the learner speaks only to repeat their corrections.
@@ -63,3 +63,6 @@ Josh: "still pretty long". No introduction, 3 corrections with a one-line why, n
 
 ### 2026-10-20f: within reach, the natural phrase, correct models only
 From the teacher's assessment of the Rosa page (Josh, 2026-10-20): "grazie per avermi aiutato" was B1 for an A1 learner, "è possibile spiegare…?" was the learner's sentence patched rather than what an Italian says ("cosa vuol dire…?"), and Rosa's own "cosa le servono" (for "cosa le serve") was used as a model. Now: pitch one step beyond the learner's own lines; the right phrase is the simplest natural one, a simple fixed phrase when the full form is beyond them; only correct lines as examples. Also "Italian" in the table columns is {language}, and the form-of-address example no longer names tu and Lei, so the prompt carries to another language.
+
+### 2026-10-20g: about 100 to 200 words
+Josh: the right length is probably 100 to 200 words, "not as a rule, but how much can a learner digest". The page was about 370 words. Now guidance toward 100 to 200, keeping only the most useful when there's more; the noun and verb tables are "up to 5", not "about 5".
