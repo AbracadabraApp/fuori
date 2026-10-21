@@ -2,9 +2,9 @@ import SwiftUI
 import FuoriDesign
 import FuoriNetworking
 
-/// Beginner levels 1–3 (docs/beginner-scaffolding.md, test only): the learner's
+/// Scaffolding (docs/beginner-scaffolding.md, docs/glossary.md): the learner's
 /// turn is a tap on one of two whole-line replies, which take the mic pill's
-/// place. Level 1 shows each reply's English under it. The tapped reply stays
+/// place. Each reply shows its English under it. The tapped reply stays
 /// marked until the character answers; there's no right or wrong.
 ///
 /// The replies are controls, so they're Liquid Glass, not the card material
@@ -52,7 +52,7 @@ struct ReplyButtons: View {
 
     private func button(_ reply: APIClient.ReplyOption) -> some View {
         let chosen = model.chosen == reply
-        let showEnglish = model.scaffoldLevel == 1
+        let showEnglish = true // scaffolding always shows the English (docs/beginner-scaffolding.md)
         return Button { Task { await model.choose(reply) } } label: {
             VStack(alignment: .leading, spacing: 4) {
                 Text(reply.line)

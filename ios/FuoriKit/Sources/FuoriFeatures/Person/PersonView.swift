@@ -35,11 +35,10 @@ struct PersonView: View {
                         .padding(.top, 8)
                 }
                 VStack(spacing: 8) {
-                    // On beginner levels 1–3 the level decides: the words always,
-                    // the English on levels 1 and 2 (docs/beginner-scaffolding.md)
-                    let level = model.scaffoldLevel
-                    let showLine = level != nil || subtitles
-                    let showEnglish = level.map { $0 <= 2 } ?? english
+                    // While scaffolding: the words and the English always
+                    // (docs/beginner-scaffolding.md)
+                    let showLine = model.scaffolding || subtitles
+                    let showEnglish = model.scaffolding || english
                     Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note)
                     ConversationControls(model: model)
                 }

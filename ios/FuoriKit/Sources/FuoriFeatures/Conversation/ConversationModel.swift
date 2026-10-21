@@ -35,7 +35,7 @@ public final class ConversationModel {
         /// The learner's turn, mic closed: a tap opens it (the default, and
         /// always under VoiceOver so it doesn't record VoiceOver's own voice)
         case tapToTalk
-        /// Beginner levels 1–3 (Settings → Reply buttons, test only): the
+        /// Scaffolding (the server says when, lib/scaffold.ts): the
         /// learner's turn is a tap on one of two replies; `replies` is nil
         /// while they're still being written
         case choosing
@@ -59,7 +59,7 @@ public final class ConversationModel {
     /// A short note under the subtitles, e.g. when nothing was heard
     public private(set) var note: String?
     public private(set) var conversationId: String?
-    /// The two reply buttons for this turn (beginner levels 1–3), once written
+    /// The two reply buttons for this turn (scaffolding), once written
     public private(set) var replies: [APIClient.ReplyOption]?
     /// The reply just tapped, shown selected until the character answers
     public private(set) var chosen: APIClient.ReplyOption?
@@ -116,12 +116,12 @@ public final class ConversationModel {
     /// Less than this much voice isn't a turn (a cough, a click)
     private let minimumVoice: TimeInterval = 0.25
 
-    /// 1 while the learner's turn is a tap on the reply buttons, else nil.
-    /// The server decides with each line (beginners, the first turns of each
-    /// conversation, fewer as conversations add up: lib/scaffold.ts; Josh,
-    /// 2026-10-21: always on at Beginner, no switch). Level 1 shows the English
-    /// of the character and of both replies (docs/beginner-scaffolding.md)
-    public private(set) var scaffoldLevel: Int?
+    /// Scaffolding (docs/glossary.md): the learner's turn is a tap on the
+    /// reply buttons, with the English of the character and of both replies.
+    /// The server decides with each line (beginners start with it, for the
+    /// first turns of each conversation, fewer as conversations add up:
+    /// lib/scaffold.ts; Josh, 2026-10-21: no switch)
+    public private(set) var scaffolding = false
 
     /// Speed as on the web: slower with English on
     private var speed: Double { UserDefaults.standard.bool(forKey: SettingsKey.english) ? 0.7 : 0.9 }
@@ -157,7 +157,7 @@ public final class ConversationModel {
     /// Show and speak a line, then open the learner's turn
     private func present(_ reply: APIClient.TurnReply, generation: Int) async {
         guard generation == self.generation else { return }
-        scaffoldLevel = reply.replies == true ? 1 : nil
+        scaffolding = reply.replies == true
         if phase == .paused { pendingReply = reply; line = reply.line; english = reply.en; shown = nil; replies = nil; chosen = nil; writeReplies(); return }
         line = reply.line
         english = reply.en
@@ -216,7 +216,7 @@ public final class ConversationModel {
         // Paused while thinking: the mic stays closed until a tap
         guard phase != .paused else { return }
         ring = 0
-        if scaffoldLevel != nil, repliesTask != nil {
+        if scaffolding, repliesTask != nil {
             await showReplies()
             return
         }
@@ -363,7 +363,7 @@ public final class ConversationModel {
         }
     }
 
-    // MARK: - Reply buttons (beginner levels 1–3, docs/beginner-scaffolding.md)
+    // MARK: - Reply buttons (scaffolding, docs/beginner-scaffolding.md)
 
     /// Starts writing the two replies to the line just received, in parallel
     /// with the voice, so they're usually ready when the character finishes.
@@ -371,7 +371,7 @@ public final class ConversationModel {
     private func writeReplies() {
         repliesTask?.cancel()
         repliesTask = nil
-        guard scaffoldLevel != nil, let conversationId else { return }
+        guard scaffolding, let conversationId else { return }
         let started = Self.now()
         repliesTask = Task { [api, city, place] in
             do {
@@ -387,7 +387,7 @@ public final class ConversationModel {
         }
     }
 
-    /// The learner's turn on levels 1–3: the two replies, once written. If
+    /// The learner's turn while scaffolding: the two replies, once written. If
     /// writing them failed, this turn falls back to the mic and says so.
     private func showReplies() async {
         phase = .choosing

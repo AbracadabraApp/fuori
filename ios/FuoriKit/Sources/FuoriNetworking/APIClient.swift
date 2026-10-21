@@ -74,7 +74,7 @@ public actor APIClient {
         return try await send(post("v1/turn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, learnerSaid: learnerSaid)), signedIn: true)
     }
 
-    /// One of the two reply buttons on beginner levels 1–3: a whole line in the
+    /// One of the two reply buttons while scaffolding: a whole line in the
     /// language being learned, and its English
     public struct ReplyOption: Codable, Sendable, Equatable, Hashable {
         public let line: String

@@ -5,13 +5,13 @@
 ## Settled
 
 - **Learn** (Josh, 2026-10-21): everything taught outside the world, reached from the book icon in the nav bar next to Settings. Magda, the scuole, the Diario and missions all fall into Learn; tutor, school, study file, Diario, chips and missions are older names for its parts. See [learn.md](learn.md).
-- **Scaffolding** (Josh, 2026-10-21): everything before the stand-alone microphone, the support a beginner gets inside a conversation. Today it's the reply chain: tap one of two good replies, then read one aloud, then choose the one that fits and read it ([beginner-scaffolding.md](beginner-scaffolding.md) → the three-step chain). Past scaffolding, the learner speaks with the mic alone.
+- **Scaffolding** (Josh, 2026-10-21): the support that gets a new learner used to the game, everything before the stand-alone microphone: onboarding, the reply buttons, the stages that follow. Beginners start with scaffolding, but scaffolding isn't the level: the level (Beginner, Intermediate, Advanced) sets how complex the dialogue is; scaffolding sets how you take part. Scaffolding is counted out (`lib/scaffold.ts`), not judged. Today it's the reply chain: tap one of two good replies, then read one aloud, then choose the one that fits and read it ([beginner-scaffolding.md](beginner-scaffolding.md) → the three-step chain). Past scaffolding, the learner speaks with the mic alone.
 
 - **Services** (or "plumbing"; Josh, 2026-10-21): what's underneath the game, not a part of it: Whisper on Groq (speech in), ElevenLabs and the phone's voice (speech out). Proposed to include Claude API calls (`lib/claude.ts`), Railway and the database too.
 
 ## Proposed (not settled)
 
-- **Level** means only the learner's level (Beginner, Intermediate, Advanced). Not the scaffolding steps ("beginner level 1–3" in the test setting), not CEFR (A1, A2: research docs only).
+- **Level** means only the learner's level (Beginner, Intermediate, Advanced). Not the scaffolding steps (call those stages), not CEFR (A1, A2: research docs only).
 - **Conversation**: one visit to one character. **Turn**: one exchange. **Line**: what one person says. **Scene**: the setting a conversation opens in (place, moment, why you came). "Dialogue" is the name of the area, not the thing.
 - **Replies**: the two buttons in a conversation.
 - **Character** for everyone you meet; "person" only in "person screen".

@@ -21,7 +21,7 @@ struct ConversationControls: View {
                 // the pause button so the pill stays centred
                 if model.canType { typeButton } else { Color.clear.frame(width: 44, height: 44) }
                 Spacer()
-                // On levels 1–3 the two replies take the pill's place
+                // While scaffolding the two replies take the pill's place
                 if showsReplies { Color.clear.frame(width: 112, height: 52) } else { pill }
                 Spacer()
                 pauseButton // on the right (Josh, 2026-10-15)
@@ -42,7 +42,7 @@ struct ConversationControls: View {
     /// The reply buttons, from the moment the turn opens until the character
     /// answers the one tapped
     private var showsReplies: Bool {
-        guard model.scaffoldLevel != nil else { return false }
+        guard model.scaffolding else { return false }
         return model.phase == .choosing || (model.phase == .thinking && model.chosen != nil)
     }
 
