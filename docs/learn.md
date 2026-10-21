@@ -15,7 +15,7 @@ Not requirements; ideas Josh wants to let sit (Josh: "we have to be provisional 
 
 - **Schools go away, and Magda is no longer an in-game character** (Josh, 2026-10-20). Whether Learn has a teacher or is just content is open; Josh leans toward no person. What Magda's code does that Learn would keep without her: the learning notes after every conversation and the study file (today stored as Magda's memory row; it would become the learner's own record).
 - **Learn is not the game. It's spell check** (Josh): a tool you reach for, precise and useful, no ceremony. No rituals, no time or calendar (the game has none).
-- **Not every conversation needs a Learn link** (Josh): it appears only when there's something worth reviewing. The conversation's learning notes still reach the area when it ends.
+- **The Done and Learn links are just ideas** (Josh, 2026-10-20). If there is a Learn link, not every conversation needs one (Josh): it appears only when there's something worth reviewing. The conversation's learning notes still reach the area when it ends.
 - **The agent is for review** of one conversation; **the area has more latitude for lessons**, including what may never come up in conversation (seasons, prepositions).
 - **Lessons draw on the learner's own conversations, always**, but not necessarily in aggregate: one good line they heard, not a count.
 - **The people you know illustrating lessons** (portraits, voices, lines) fits the vision; an idea, not a requirement.
@@ -42,7 +42,7 @@ The principles behind both parts. They come from Josh's reactions to the first p
 
 ## The Learn agent: one conversation
 
-**Where:** on the conversation screen. After a few turns (Done is set aside for now) a Learn link appears; tapping it pauses the scene and raises a scrollable sheet over the conversation. Close it and you're back in the scene.
+**Where:** on the conversation screen. One idea (Josh: the Done and Learn links are just ideas): after a few turns a Learn link appears; tapping it pauses the scene and raises a scrollable sheet over the conversation. Close it and you're back in the scene.
 
 **What it reads:** the whole conversation, the learner's lines and the character's alike, plus the learning notes the memory call already writes after every conversation (mistakes, words worth learning, what wasn't understood, English fallbacks; Josh: "Magda may already have that"). Later, the learner's history from the area, so it can notice progress (principle 8 and below).
 

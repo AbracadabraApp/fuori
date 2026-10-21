@@ -12,7 +12,7 @@
 
 - **No English translation line under the character's words, at any level.** The English is in the dialogue (when she teaches or when you ask) and on the reply buttons. The reply stays `{ line, en }`: `en` is still made for memory, the Diario and the button subtitles, just not shown.
 - **Needs before the translation line can go:** characters must give the English when you ask what something means. Round 21 (`tests/experiments/help-asks.mts`, Josh's real conversations): of 23 Italy asks wanting English, 35% got it in the spoken line; "how do I say X" answered in Italian is right, but "what does X mean" relied on the translation about half the time. One sentence in `character.md`, tested with round 18 and 21, first.
-- **The Done link** (below, Build) follows the same rule at every level: it fades in when the conversation is over.
+- **The Done link** (an idea only, Josh 2026-10-20; below, Build) would follow the same rule at every level: it fades in when the conversation is over.
 - **The model (Josh, 2026-10-19):** levels 1–3 are the one scale; teaching in character at every level; scaffolding (the reply buttons) only for level 1, and only for the first N turns. Counting decides, not a judge.
 - **Per conversation (Josh, 2026-10-19).** Each conversation at level 1 opens with N tapped turns, then you speak in the same conversation. N shrinks with the count of conversations, so the taps run out before level 1 ends (Claude's proposal; numbers for Josh, starting at: N = 4 for the first 3 conversations, then 3, 2, 1, so 12 conversations with taps, then none). A new character's opening turns are where a beginner is most lost; speaking still starts in the first conversation.
 
@@ -145,7 +145,7 @@ A first playable version, behind a setting, so Josh can feel levels 1–3 in Afu
 - With the setting on, the words always show and the level decides the English, whatever Subtitles says.
 - Checked in the simulator in Mexico: level 1 (Ximena, Café Amapola) and level 3 at AX5 (Vale, Libros Tecolote). Not tapped there (no tap tool); tapping, VoiceOver and Italy on the phone.
 
-**Needed: a Done link (Josh, 2026-10-19: "the beginner buttons really need a done button/link"; same rules as everyone, not always shown).** It fades in when the conversation is over, the same link and rule as for every learner (roadmap → Ending a conversation, round 20), and leaves through the one leave function. Its word comes from `/v1/content`. For a beginner to get there, the replies must be able to close a conversation: once the errand is done, one of the two replies is a goodbye or thanks (`replies.md`; test it before building, since in round 19 no Mexico learner ever reached an end).
+**Idea: a Done link (an idea only, Josh 2026-10-20; earlier, 2026-10-19: "the beginner buttons really need a done button/link"; same rules as everyone, not always shown).** It fades in when the conversation is over, the same link and rule as for every learner (roadmap → Ending a conversation, round 20), and leaves through the one leave function. Its word comes from `/v1/content`. For a beginner to get there, the replies must be able to close a conversation: once the errand is done, one of the two replies is a goodbye or thanks (`replies.md`; test it before building, since in round 19 no Mexico learner ever reached an end).
 
 **Josh:** play 10 minutes in Afuera at level 1, then level 3. Note where it felt wrong.
 
