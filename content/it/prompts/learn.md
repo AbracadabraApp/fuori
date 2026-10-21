@@ -1,6 +1,6 @@
 # Learn page (conversation review)
 
-version: 2026-10-20g
+version: 2026-10-20h
 
 The Learn page: a sheet over the conversation, written from it (Josh,
 2026-10-20; docs/learn.md). Where structured learning happens, so English is
@@ -21,13 +21,13 @@ Judge their level from their own lines, and pitch everything one step beyond wha
 
 When you quote {name}, choose lines a learner at their level can follow: a short line, or the short part of a longer one. Use a line as an example only if it is correct {language}; people slip too, so skip any that isn't.
 
-In this order, leaving out a section only if there's truly nothing for it:
-1. Corrections: everything they said wrong goes here, including the wrong form of address (familiar with a stranger, formal with a friend); their 3 most useful mistakes. For each: You said "their words". The right phrase is "the full phrase": what someone here would actually say, as simply as possible, not their sentence with its errors patched. If the fully correct form is beyond their level, give the simple natural phrase that does the job instead (a short fixed phrase is fine) and don't explain the grammar behind it. Why, in one short line. If {name} said it the right way back, that line with a play mark. Then a mic mark for them to repeat the full phrase: [🎤 Repeat it: "the full phrase"].
-2. Nouns: a table of up to 5, columns {language} (with its article) | English | {name}'s line. The line is the whole sentence (or short part) where it came up, with a play mark.
-3. Verbs: a table of up to 5, columns {language} (the infinitive) | English | {name}'s line, the same way.
-4. One thing about how {language} works that came up here and that they did not get wrong (their mistakes are all in Corrections): two plain sentences and one of {name}'s lines with a play mark. Leave it out if nothing stands out.
-5. A note on life here, if the scene had one: one line.
-No other speaking exercises: the learner speaks only to repeat their corrections.
+A page doesn't do everything it could, and pages shouldn't all look alike. Choose what this conversation most calls for: often one thing, sometimes two. One page might only correct their mistakes; another might only teach a few nouns, or a few verbs; another a single point about how {language} works. The kinds, and how each looks when you use it:
+- Corrections: their most useful mistakes, the form of address included (familiar with a stranger, formal with a friend), one to three. For each: You said "their words". The right phrase is "the full phrase": what someone here would actually say, as simply as possible, not their sentence with its errors patched. If the fully correct form is beyond their level, give the simple natural phrase that does the job instead (a short fixed phrase is fine) and don't explain the grammar behind it. Why, in one short line. If {name} said it the right way back, that line with a play mark. Then a mic mark: [🎤 Repeat it: "the full phrase"]. If the page has corrections, they come first.
+- Nouns: a short table, columns {language} (with its article) | English | {name}'s line, the whole sentence (or short part) where it came up, with a play mark.
+- Verbs: the same, with the infinitive.
+- How {language} works: one thing that came up and that they didn't get wrong: two plain sentences and one of {name}'s lines with a play mark.
+- Life here: one line, if the scene had something.
+The learner speaks only to repeat a correction.
 
 Markdown, with these marks the app will turn into buttons:
 - [▶ {name}: "line"] where {name} can say a line aloud.
@@ -66,3 +66,6 @@ From the teacher's assessment of the Rosa page (Josh, 2026-10-20): "grazie per a
 
 ### 2026-10-20g: about 100 to 200 words
 Josh: the right length is probably 100 to 200 words, "not as a rule, but how much can a learner digest". The page was about 370 words. Now guidance toward 100 to 200, keeping only the most useful when there's more; the noun and verb tables are "up to 5", not "about 5".
+
+### 2026-10-20h: not formulaic
+Josh: "every page doesn't have to do everything it can. One might just correct mistakes. Another might just do nouns, or verbs... the review shouldn't be formulaic." The fixed five-section order is now a set of kinds, each with its format; the page chooses what the conversation most calls for, often one thing, sometimes two. Corrections still come first when they're there.
