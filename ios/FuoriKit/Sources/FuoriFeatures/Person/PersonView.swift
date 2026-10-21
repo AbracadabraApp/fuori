@@ -40,7 +40,7 @@ struct PersonView: View {
                     let showLine = model.scaffolding || subtitles
                     let showEnglish = model.scaffolding || english
                     Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note)
-                    ConversationControls(model: model)
+                    ConversationControls(model: model, onLearn: learnOn ? openLearn : nil)
                 }
                 .padding(.horizontal, Tokens.Space.gutter)
             }
@@ -50,23 +50,6 @@ struct PersonView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Tokens.Colors.paper, for: .navigationBar)
         #endif
-        // Learn (test only): the book left of Settings, in the same group.
-        // It opens the sheet over the paused scene (docs/learn.md)
-        .toolbar {
-            if learnOn {
-                ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        model.openLearn()
-                        showingLearn = true
-                    } label: {
-                        Image(systemName: "character.book.closed")
-                    }
-                    .accessibilityLabel("Learn")
-                    .accessibilityHint(model.conversationId == nil ? "After you've said something" : "Goes over this conversation")
-                    .disabled(model.conversationId == nil)
-                }
-            }
-        }
         .sheet(isPresented: $showingLearn, onDismiss: { model.closeLearn() }) {
             LearnSheet(model: model)
         }
@@ -77,6 +60,12 @@ struct PersonView: View {
         .onChange(of: scenePhase) { _, phase in
             if phase == .background { model.backgrounded() }
         }
+    }
+
+    /// The Learn link: pause the scene, then the Learn sheet over it
+    private func openLearn() {
+        model.openLearn()
+        showingLearn = true
     }
 
     /// The note above the controls: what went wrong, or a hint like "Didn't catch that."

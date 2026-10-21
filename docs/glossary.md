@@ -4,7 +4,11 @@
 
 ## Settled
 
-- **Learn** (Josh, 2026-10-21): everything taught outside the world, reached from the book icon in the nav bar next to Settings. Magda, the scuole, the Diario and missions all fall into Learn; tutor, school, study file, Diario, chips and missions are older names for its parts. See [learn.md](learn.md).
+- **Learn** (Josh, 2026-10-21): everything taught outside the world. Magda, the scuole, the Diario and missions all fall into Learn; tutor, school, study file, Diario, chips and missions are older names for its parts. See [learn.md](learn.md). Its parts:
+  - **Learn area**: the book icon in the nav bar, next to Settings. The learner's history across all conversations; where Magda, the Diario and missions live. Not built.
+  - **Learn agent**: the call that reviews one conversation and writes its Learn sheet (`lib/learn.ts`, `prompts/learn.md`).
+  - **Learn sheet**: what the agent writes for one conversation (corrections, words, good to know), shown over the paused conversation. Each sheet feeds the Learn area.
+  - **Learn link**: how you reach the sheet, bottom right in a conversation; it appears once there's something to go over.
 - **Scaffolding** (Josh, 2026-10-21): the support that gets a new learner used to the game, everything before the stand-alone microphone: onboarding, the reply buttons, the stages that follow. Beginners start with scaffolding, but scaffolding isn't the level: the level (Beginner, Intermediate, Advanced) sets how complex the dialogue is; scaffolding sets how you take part. It isn't a setting: the game decides when you see it, by counting (`lib/scaffold.ts`), not by a judge. The rules and the full set of stages aren't settled yet (Josh, 2026-10-21). Today it's the reply chain: tap one of two good replies, then read one aloud, then choose the one that fits and read it ([beginner-scaffolding.md](beginner-scaffolding.md) → the three-step chain). Past scaffolding, the learner speaks with the mic alone.
 
 - **Services** (or "plumbing"; Josh, 2026-10-21): what's underneath the game, not a part of it: Whisper on Groq (speech in), ElevenLabs and the phone's voice (speech out). Proposed to include Claude API calls (`lib/claude.ts`), Railway and the database too.

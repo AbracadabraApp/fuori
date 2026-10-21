@@ -9,6 +9,8 @@ import FuoriDesign
 /// the turn at once. Errors and "mic off" show in the note above.
 struct ConversationControls: View {
     let model: ConversationModel
+    /// Opens the Learn sheet; nil hides the Learn link (Settings → "Learn page (test)" off)
+    var onLearn: (() -> Void)? = nil
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var typing = false
     @State private var typed = ""
@@ -16,6 +18,15 @@ struct ConversationControls: View {
     var body: some View {
         VStack(spacing: 8) {
             if showsReplies { ReplyButtons(model: model) }
+            // The Learn link, bottom right above Pause, once there's something
+            // to go over (docs/learn.md); it opens the Learn sheet
+            if let onLearn, model.hasSomethingToLearn {
+                HStack {
+                    Spacer()
+                    learnLink(onLearn)
+                }
+                .transition(.opacity)
+            }
             HStack {
                 // Type a reply (accessibility only, D6); otherwise empty, balancing
                 // the pause button so the pill stays centred
@@ -63,6 +74,19 @@ struct ConversationControls: View {
             Button("Send") { Task { await model.send(typed: typed) } }
             Button("Cancel", role: .cancel) {}
         }
+    }
+
+    // MARK: Learn
+
+    private func learnLink(_ open: @escaping () -> Void) -> some View {
+        Button(action: open) {
+            Label("Learn", systemImage: "character.book.closed")
+                .typeface(.label, 16, relativeTo: .callout, weight: .semibold)
+                .frame(minHeight: 44)
+                .padding(.horizontal, 4)
+        }
+        .buttonStyle(.glass)
+        .accessibilityHint("Goes over this conversation so far")
     }
 
     // MARK: Pause

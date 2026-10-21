@@ -353,6 +353,7 @@ public final class ConversationModel {
             step = "turn"
             started = Self.now()
             let reply = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: said)
+            learnerLines += 1
             time("turn", since: started)
             debug.promptVersion = reply.promptVersion
             if let id = reply.conversationId { conversationId = id }
@@ -424,6 +425,7 @@ public final class ConversationModel {
             debug.heard = "(tapped) \(reply.line)"
             let started = Self.now()
             let next = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: reply.line)
+            learnerLines += 1
             time("turn", since: started)
             debug.promptVersion = next.promptVersion
             if let id = next.conversationId { conversationId = id }
@@ -453,6 +455,7 @@ public final class ConversationModel {
             debug.heard = "(typed) \(said)"
             let started = Self.now()
             let reply = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: said)
+            learnerLines += 1
             time("turn", since: started)
             debug.promptVersion = reply.promptVersion
             if let id = reply.conversationId { conversationId = id }
@@ -464,6 +467,13 @@ public final class ConversationModel {
     }
 
     // MARK: - Learn
+
+    /// Lines the learner has sent in this conversation (spoken, tapped or typed)
+    public private(set) var learnerLines = 0
+
+    /// The Learn link appears once there's something to go over: two of the
+    /// learner's lines saved on the server (docs/learn.md → the Learn link)
+    public var hasSomethingToLearn: Bool { conversationId != nil && learnerLines >= 2 }
 
     /// The line the Learn sheet is saying aloud right now, for its sound wave
     public private(set) var learnSaying: String?
