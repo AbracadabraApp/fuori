@@ -46,17 +46,14 @@ The principles behind both parts. They come from Josh's reactions to the first p
 
 **What it reads:** the whole conversation, the learner's lines and the character's alike, plus the learning notes the memory call already writes after every conversation (mistakes, words worth learning, what wasn't understood, English fallbacks; Josh: "Magda may already have that"). Later, the learner's history from the area, so it can notice progress (principle 8 and below).
 
-**The page, in this order (Josh, 2026-10-20):**
+**The page (Josh, 2026-10-21; replaces the 2026-10-20 order).** Walked through with Josh on the "Learn sheet" canvas (https://claude.ai/artifact/TvFT7hHqsKb1uHW5cbcD4Z, board 3 "Simplified"). Replaying text, not the mic: nothing on the page asks the learner to speak.
 
-1. **Corrections first.** Every mistake the learner made goes here, the form of address included (*scusa / dimmi* to a stranger); their 3 most useful. Each one:
-   - You said "…". The right phrase is "…": the simplest natural phrase an Italian would say, not their sentence patched. When the full fix is beyond their level, the simple version (*Grazie dell'aiuto!*).
-   - Why, in one plain line.
-   - The character's line saying it right, with a play button, if there is one.
-   - 🎤 Repeat it. This is the only speaking on the page.
-2. **Nouns:** a table of about 5. Italian (with its article) · English · the character's whole sentence where it came up, with a play button. A short line a learner can follow, or the short part of a longer one.
-3. **Verbs:** a table of about 5, the same way, with the infinitive.
-4. **How the language works:** one thing that came up and that they didn't get wrong (their mistakes are all in Corrections). Two plain sentences and one of the character's lines.
-5. **Life here:** one line, if the scene had something.
+- **Top:** the book symbol filled in (the Learn toolbar icon, selected), the character's name and the place, Close. No "Learn" title, no summary or praise line, no section label for corrections.
+1. **Say it this way: corrections**, each one a single button, in this order:
+   - Closed: *you said "…"* and "Tap to fix". Seeing their own line first gives the learner a moment to fix it themselves.
+   - Tapped: it opens to the why (one plain line), then the right phrase (the simplest natural one, as before), which plays at once **in the character's voice**. Tapping again replays it. No Play icon (it plays by itself), no separate box with the character's line, no Repeat it.
+2. **Giulia's words: a plain word list, not about speech.** One card, "Things" then "Doing": Italian on the left (nouns with their article, the plural if that's what was said; verbs as the infinitive with the form the character used, in small grey, *prendere · prende*), English on the right. No audio, no example sentences. About 6–8 words met in this conversation that are new at the learner's level.
+3. **Good to know: always one cultural or practical point** from the scene (paying at the *cassa* first). No grammar lesson here: the "How the language works" section is gone; language points live in the corrections.
 
 **Length:** short; a page read in a minute or two. No introduction or praise, no notes under the tables (Josh: "still pretty long" until these cuts). For scale: the Rosa conversation was 796 words and its page 369.
 
