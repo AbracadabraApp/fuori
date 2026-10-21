@@ -20,6 +20,7 @@ All in `content/<country>/prompts/`, one copy per country.
 | `quality.md` | Judges a conversation (alive, replies that don't follow, …) | Every conversation; also the replay judge | Judging dialogue |
 | `learner-level.md` | The learner's level from their first conversations | No (`LEVEL_CHECK` off) | Placing a learner |
 | `level.md` | Which words of a line a beginner knows | No (replay and experiments) | Measuring any line's level |
+| `learn.md` (Italy only so far) | The Learn page for one conversation: corrections, words, good to know, as JSON | No (`tests/experiments/learn-page.mts`) | Reviewing a conversation for the learner |
 
 Experiment prompts live inside `tests/experiments/*.mts` and are listed below when they're tried.
 
@@ -115,3 +116,14 @@ Goal: the game knows when both have said goodbye, or the errand is paid and than
 | Man, known | 97% of 31 | 1 of 16 | 100% of 38 | 0 of 16 |
 
 **Kept.** Unknown, characters default to the masculine: benvenuto, bentornato, bravo, signore; bienvenido, mijo, amigo, cómodo. Told, they're right every time, and women get more gendered words, not fewer (49 against 15). The two wrong words with men are a stray "brava" and "l'ha mandata" (probably about someone else). The judge also counted the neutral "joven" as masculine, so Mexico's unknown-woman figures are a little low. The line is empty until the learner's gender is known, so today's prompt is unchanged; how it gets known (a pitch guess from the voice, their own corrections and agreement, Settings) is the next step.
+
+### Learn page (`learn.md`, experiment `tests/experiments/learn-page.mts`)
+
+Read by Josh, not scored: pages on his real conversations (Rosa, Franco, Sandro) and days of the modelled month.
+
+| Version | What changed | Result | Decision |
+|---|---|---|---|
+| 2026-10-20 to 20j | Prose page: corrections with Repeat it, nouns and verbs tables with the character's line, how the language works, life here; then shorter, level, natural phrase, not formulaic, small slips small, the part that changes in bold | 369 words, then 125-153; small slips still sometimes got a full correction, and the mic repeated the whole sentence | Replaced by the simplified page |
+| **2026-10-21** | JSON for the simplified sheet (docs/learn.md → The page): corrections { said, why, right }, words things / doing, goodToKnow | 6 pages: 0-3 corrections, 7-10 words, one point each; Josh's tu with strangers caught each time; the parts that change are short ("Sono pensione" → "Sono in pensione") | Shown to Josh before building |
+
+Seen on the 2026-10-21 pages, for later: a form sometimes carries a word with it ("torna pure", "resti pure"); a rare word slips in now and then (il filo, filare); two pages in a row had the same Good to know (supplì), which the Learn area's history could prevent.

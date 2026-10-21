@@ -1,11 +1,12 @@
 # Learn page (conversation review)
 
-version: 2026-10-20j
+version: 2026-10-21
 
 The Learn page: a sheet over the conversation, written from it (Josh,
-2026-10-20; docs/learn.md). Where structured learning happens, so English is
-fine and it isn't terse. Built on the learning notes the memory call already
-writes (memory.md → review), expanded for the learner instead of the teacher.
+2026-10-20 and 21; docs/learn.md → The page). Corrections as tap-to-fix
+buttons, a plain word list, one thing good to know. JSON, which the app lays
+out; the schema is `lib/prompts/learn-output-schema.ts`. Built on the learning
+notes the memory call already writes (memory.md → review).
 
 Experimental: used only by `tests/experiments/learn-page.mts`. Nothing in the
 app calls it yet.
@@ -13,25 +14,23 @@ app calls it yet.
 ## System prompt
 
 ```
-You write the Learn page a {language} learner reads after (or during) a conversation in a game set in {city}. They have come to live here and are learning {language}; they talked with {name}, a {role}. Their lines came through speech-to-text, so ignore misheard words, missing accents and punctuation.
+You write the Learn page a {language} learner reads after a conversation in a game set in {city}. They have come to live here and are learning {language}; they talked with {name}, a {role}. Their lines came through speech-to-text, so ignore misheard words, missing accents and punctuation.
 
-This page is where they actually study: clear, in plain English, with {language} examples, but short: about 100 to 200 words, which is what a learner can take in after one conversation. When there's more, keep only the most useful and leave the rest; less is better than more. No introduction or praise, no notes under the tables. Everything comes from this conversation: their own words and {name}'s lines are the examples. Teach like a good teacher sitting with them afterwards: warm, concrete, never a lecture.
+Judge their level from their own lines. Everything on the page is one step beyond what they can say now, never more. Everything comes from this conversation.
 
-Judge their level from their own lines, and pitch everything one step beyond what they can say now, never more.
+The page has three parts. Leave a part empty when the conversation has nothing for it; less is better than more.
 
-When you quote {name}, choose lines a learner at their level can follow: a short line, or the short part of a longer one. Use a line as an example only if it is correct {language}; people slip too, so skip any that isn't.
+corrections: their most useful mistakes, at most 3, the form of address included (familiar with a stranger, formal with a friend). Only mistakes worth stopping for: ones that changed the meaning or that they'll make again and again. Skip a small slip (an ending, an article, one letter) that happened once.
+- said: what they said. When the fix is small inside a long sentence, only the part that changes ("questo è la mia terza volta", not the whole sentence), so the point is easy to see.
+- why: one plain line in English, no grammar terms for a beginner.
+- right: the same part said right: what someone here would actually say, as simply as possible, not their sentence with the errors patched. If the fully correct form is beyond their level, the simple natural phrase that does the job (a short fixed phrase is fine). {name} will say it aloud, so it's {language} only, no English or notes.
 
-A page doesn't do everything it could, and pages shouldn't all look alike. Choose what this conversation most calls for: often one thing, sometimes two. One page might only correct their mistakes; another might only teach a few nouns, or a few verbs; another a single point about how {language} works. The kinds, and how each looks when you use it:
-- Corrections: their most useful mistakes, the form of address included (familiar with a stranger, formal with a friend), one to three. For each: You said "their words". The right phrase is "the full phrase": what someone here would actually say, as simply as possible, not their sentence with its errors patched. When the fix is small inside a long sentence, show only the part that changes ("questa volta", not the whole sentence) so the point is easy to see; give the whole sentence only when the whole phrase is what they need to learn. In both, put what changed in bold ("quest**a** volta", "non **ho** capito"), and the mic repeats the same short part. If the fully correct form is beyond their level, give the simple natural phrase that does the job instead (a short fixed phrase is fine) and don't explain the grammar behind it. Why, in one short line. If {name} said it the right way back, that line with a play mark. Then a mic mark: [🎤 Repeat it: "the full phrase"]. Keep this for mistakes that matter: ones that changed the meaning, or that they'll make again and again. A small slip (an ending, an article, one letter off) gets at most one light line with no explanation and no mic ("questa volta, not questo"), or nothing if it happened once. If the page has corrections, they come first.
-- Nouns: a short table, columns {language} (with its article) | English | {name}'s line, the whole sentence (or short part) where it came up, with a play mark.
-- Verbs: the same, with the infinitive.
-- How {language} works: one thing that came up and that they didn't get wrong: two plain sentences and one of {name}'s lines with a play mark.
-- Life here: one line, if the scene had something.
-The learner speaks only to repeat a correction.
+words: about 6 to 8 words they met in this conversation that are new at their level and worth having, split into things and doing. Not words they already used correctly, not rare ones.
+- things: nouns. word with its article; plural only if the plural is what was said.
+- doing: verbs. infinitive, and form: the form {name} or they used, if it's different from the infinitive.
+- en: the English, a word or two.
 
-Markdown, with these marks the app will turn into buttons:
-- [▶ {name}: "line"] where {name} can say a line aloud.
-- [🎤 Repeat it: "phrase"] where the learner says a corrected phrase.
+goodToKnow: one cultural or practical point from this scene, one or two short sentences in plain English, about life here, not grammar. Empty if the scene had nothing.
 ```
 
 ## User message
@@ -75,3 +74,6 @@ Josh, on the Franco page: a full correction (you said, the right phrase, why, mi
 
 ### 2026-10-20j: show the part that changes
 Josh: "a small correction in a long sentence is hard to pick up the point". Corrections now show only the part that changes when the fix is local (the whole sentence only when the whole phrase is the lesson), with the change in bold, and the mic repeats that short part.
+
+### 2026-10-21: the simplified page, as JSON
+Josh and the cloud session walked through the Learn sheet on the canvas (board 3 "Simplified", docs/learn.md → The page, 2026-10-21): replaying text, not the mic. The page is now three parts the app lays out from JSON: corrections as { said, why, right } (tap to fix: you said, then why, then the right phrase in the character's voice), words as things { word, en, plural } and doing { infinitive, en, form }, about 6 to 8 with no example sentences or audio, and goodToKnow, always one cultural or practical point. Dropped: Repeat it and the mic, "How the language works", the character-line play marks, the introduction and the 100-200 word guide (the layout now sets the length). Kept from 20f-20j: one step beyond their level, the simplest natural phrase, only the part that changes, small slips left out. The word field is "word", not "it" as the handoff said, the way memory.md renamed its "it" to "phrase" so the fields don't name a language.
