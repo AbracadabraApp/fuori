@@ -1516,3 +1516,12 @@ Josh: "proceed with your tests ... I don't want to be the bottleneck". Claude de
 - **CLAUDE.md:** a language-learning game, not a language-generating game; teaching wins over speed, garbled speech, character and liveliness.
 - **Also:** a modelled month in Rome (`tests/conversations/synthetic-month/`, transcripts only); round 23: the syllabus word list doesn't replace the level judge as a measure.
 - **Waiting on Josh:** teach3 option B; rebuilding the replay gate around teaching; a beginner's first week as a direction.
+
+## 2026-10-21 (cloud session): conversation screen, reply buttons and Learn icon
+
+Mockups: "Reply buttons" canvas in the Claude app, https://claude.ai/artifact/X2FsYUrGWzXzf2tJxBALBV (D3 is the current screen).
+- **Reply buttons (Josh: go forward):** iOS 26 Liquid Glass instead of the custom white cards (`ReplyButtons.swift`), which used the subtitle's material and so read as dialogue. Clear glass at rest (`.glassEffect(.regular.interactive(), in: .rect(cornerRadius: 22))`), ink when chosen, both in one `GlassEffectContainer`; no border, no card shadow. Olive dropped: green stays for Tap to talk only. Colour study C1–C6 on the canvas (contrast: glass 6–11:1, chosen 15:1; the token terracotta fails at 4.2:1).
+- **Hairline underline** on the Italian in each button: 1 pt, 3 pt offset, 45% of the text colour. Lighter than the 2 pt teaching underline so the two don't compete.
+- **Her line becomes a bubble on the left** (Josh: "looks good"): opaque cream, serif, max ~86% width, corner nicked toward the portrait. Replies are right-aligned glass capsules that hug their text. Only her current line ever shows: no history, no bubble for the learner (no transcript).
+- **Top of the screen unchanged** (Josh didn't like the full-bleed version): standard bar, name band, portrait.
+- **Diario goes away** (Josh, 2026-10-21; docs/learn.md already says Learn replaces it). The toolbar is Learn · Settings, Learn left of Settings in the same group. Icon: `character.book.closed` (a book with a letter). Not built.
