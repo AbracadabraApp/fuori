@@ -410,3 +410,10 @@ Prompted by "help more beginner level people". Rule behind all three: **everyone
 - **Result (Josh, 2026-10-14):** a transcripts-only Markdown file in Gemini Notebook works; the Anki and Quizlet exports above are dropped. Don't build review features that repeat what the notebook does.
 - **Low-priority idea: flashcards with Magda.** The only study feature Josh might include: a simple flashcard review of words the people the learner met actually said, at the school. Not planned.
 - **Low-priority idea: point learners to Gemini Notebook (Josh, 2026-10-14).** Tell a learner who wants more review that they can use it, with a way to get their study export (today it's admin-only). Not planned.
+
+## Music and singing (Josh, 2026-10-20)
+
+- Characters who sing or play: a street musician who sings a verse and explains it if you ask; someone humming at work; the radio in a bar.
+- Old songs locals really sing, public domain: *O sole mio*, *Santa Lucia* (Italy); *Cielito lindo*, *La cucaracha* (Mexico).
+- A chorus that comes back across places, so the words stick; melody helps memory.
+- A short a cappella line in the character's own voice may sound more natural than a produced track (ElevenLabs has a music model; untested).
