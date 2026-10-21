@@ -55,6 +55,24 @@ The principles behind both parts. They come from Josh's reactions to the first p
 2. **Giulia's words: a plain word list, not about speech.** One card, "Things" then "Doing": Italian on the left (nouns with their article, the plural if that's what was said; verbs as the infinitive with the form the character used, in small grey, *prendere · prende*), English on the right. No audio, no example sentences. About 6–8 words met in this conversation that are new at the learner's level.
 3. **Good to know: always one cultural or practical point** from the scene (paying at the *cassa* first). No grammar lesson here: the "How the language works" section is gone; language points live in the corrections.
 
+**Idea, not decided: the page as units (Josh, 2026-10-21: "the learn page doesn't always have to look the same or try to be complete").** Instead of the same sections every time, the page picks a few units, chosen by what happened in the conversation. At most three a page, corrections first when there are any, never an empty unit ("no corrections!" doesn't show). Each unit could be its own small output, so each can be trialled alone. Candidates:
+
+| Unit | Shows when | What it is |
+|---|---|---|
+| Say it this way | Mistakes worth fixing | The tap-to-fix corrections above |
+| The word you were missing | The learner fell back on English or stalled | "You said *receipt*: **lo scontrino**." |
+| What she meant | The learner asked for a repeat or didn't follow | Her line, the English, tap to hear it again slowly |
+| A phrase to steal | She used a chunk the learner can reuse | *Lo prende al banco?* → *Lo prendo al banco.* |
+| Numbers she said | Prices, times, quantities came up | *un euro e venti* = €1.20 |
+| Her words | New words came up | The plain word list above |
+| Two ways to say it | A contrast came up (*tu/Lei*; Spain vs Mexico, *¿me regala…?*) | Two lines side by side, one sentence on when |
+| You got it | Something hard last time went right (needs history) | "Last time *quanto costano* tripped you; today you said it." |
+| Next time, try | Almost always | One thing to say on the next visit; the character can listen for it |
+| Good to know | A cultural or practical moment | One paragraph |
+| The character's own thing | A running bit (Don Chucho's song) | One line of flavour |
+
+Claude's favourites: The word you were missing, What she meant, Next time try (straight from where the learner struggled, short, and the last ties Learn back to the game).
+
 **Length:** short; a page read in a minute or two. No introduction or praise, no notes under the tables (Josh: "still pretty long" until these cuts). For scale: the Rosa conversation was 796 words and its page 369.
 
 **Still to add (direction, 2026-10-20):** a can-do line at the top (principle 9); examples before the rule (3); simplest natural phrase and the level check on every correction (1); only correct character lines (12).
