@@ -30,6 +30,11 @@ public struct PolaroidCard: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .typeface(.display, Tokens.Size.cardTitle, relativeTo: .largeTitle, weight: .bold)
+                    // Alegreya's own leading is 1.36 em, so a two-line name
+                    // ("Piazza Santa Maria in Trastevere") looked like two
+                    // titles. 1.1 em reads as one; a multiple of the point
+                    // size, so it scales with Dynamic Type (Josh, 2026-10-21).
+                    .lineHeight(.multiple(factor: 1.1))
                     .foregroundStyle(Tokens.Colors.ink)
                 if let subtitle {
                     Text(subtitle)
