@@ -60,6 +60,10 @@ public actor APIClient {
         /// The recorded conversation; nil when the server couldn't record it
         public let conversationId: String?
         public let promptVersion: String
+        /// The learner's next turn is a tap on two reply buttons (/v1/replies)
+        /// instead of the mic: beginners, first turns of each conversation.
+        /// Nil from a server older than that
+        public let replies: Bool?
     }
 
     /// POST /v1/turn. Without a conversation id: the character's opening line.

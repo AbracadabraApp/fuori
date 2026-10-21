@@ -14,4 +14,13 @@ import Testing
         #expect(replies.replies[1].line == "Compramos pan y queso.")
         #expect(replies.replies[0].en == "We buy mangoes and bananas.")
     }
+
+    /// /v1/turn says whether the next turn is a tap (lib/scaffold.ts); an
+    /// older server leaves it out, which means the mic
+    @Test func readsTurnRepliesFlag() throws {
+        let on = Data(#"{"line":"¿Se le lustran?","en":"Shine?","conversationId":"c","promptVersion":"v","replies":true}"#.utf8)
+        let old = Data(#"{"line":"¿Se le lustran?","en":"Shine?","conversationId":"c","promptVersion":"v"}"#.utf8)
+        #expect(try JSONDecoder().decode(APIClient.TurnReply.self, from: on).replies == true)
+        #expect(try JSONDecoder().decode(APIClient.TurnReply.self, from: old).replies == nil)
+    }
 }

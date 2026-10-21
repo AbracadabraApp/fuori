@@ -116,13 +116,12 @@ public final class ConversationModel {
     /// Less than this much voice isn't a turn (a cough, a click)
     private let minimumVoice: TimeInterval = 0.25
 
-    /// Beginner level 1–3 when Settings → Reply buttons (test) is on, else nil.
-    /// Level 1 shows the English of the character and of both replies, level
-    /// 2 the character's only, level 3 none (docs/beginner-scaffolding.md)
-    public var scaffoldLevel: Int? {
-        guard UserDefaults.standard.bool(forKey: SettingsKey.replyButtons) else { return nil }
-        return min(3, max(1, UserDefaults.standard.integer(forKey: SettingsKey.scaffoldLevel)))
-    }
+    /// 1 while the learner's turn is a tap on the reply buttons, else nil.
+    /// The server decides with each line (beginners, the first turns of each
+    /// conversation, fewer as conversations add up: lib/scaffold.ts; Josh,
+    /// 2026-10-21: always on at Beginner, no switch). Level 1 shows the English
+    /// of the character and of both replies (docs/beginner-scaffolding.md)
+    public private(set) var scaffoldLevel: Int?
 
     /// Speed as on the web: slower with English on
     private var speed: Double { UserDefaults.standard.bool(forKey: SettingsKey.english) ? 0.7 : 0.9 }
@@ -158,6 +157,7 @@ public final class ConversationModel {
     /// Show and speak a line, then open the learner's turn
     private func present(_ reply: APIClient.TurnReply, generation: Int) async {
         guard generation == self.generation else { return }
+        scaffoldLevel = reply.replies == true ? 1 : nil
         if phase == .paused { pendingReply = reply; line = reply.line; english = reply.en; shown = nil; replies = nil; chosen = nil; writeReplies(); return }
         line = reply.line
         english = reply.en

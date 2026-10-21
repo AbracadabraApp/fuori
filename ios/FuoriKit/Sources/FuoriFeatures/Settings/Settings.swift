@@ -12,11 +12,6 @@ public enum SettingsKey {
     /// Hidden (Settings → touch and hold Version): the debug panel on the
     /// person screen, the server and learner, and Restart onboarding, as the web's ?debug=1
     public static let debug = "settings.debug"
-    /// Test only, off by default (docs/beginner-scaffolding.md → Build): the
-    /// two reply buttons of beginner levels 1–3 replace the mic
-    public static let replyButtons = "settings.replyButtons"
-    /// 1, 2 or 3 while `replyButtons` is on: how much English shows
-    public static let scaffoldLevel = "settings.scaffoldLevel"
 }
 
 /// The settings button, top right on every screen (Josh, D2), with Fuori's
@@ -58,8 +53,6 @@ struct SettingsSheet: View {
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.handsFree) private var handsFree = false
     @AppStorage(SettingsKey.debug) private var debug = false
-    @AppStorage(SettingsKey.replyButtons) private var replyButtons = false
-    @AppStorage(SettingsKey.scaffoldLevel) private var scaffoldLevel = 1
     @Environment(\.dismiss) private var dismiss
 
     private enum Level: String, CaseIterable, Identifiable {
@@ -139,16 +132,6 @@ struct SettingsSheet: View {
                         LabeledContent("Server", value: model.server?.host() ?? "—")
                         LabeledContent("Learner", value: model.learnerId ?? "—")
                             .textSelection(.enabled)
-                        // Test only, among the hidden rows so no tester stumbles on it
-                        // (docs/beginner-scaffolding.md → Build: reply buttons)
-                        Toggle("Reply buttons (test)", isOn: $replyButtons)
-                        if replyButtons {
-                            Picker("Beginner level", selection: $scaffoldLevel) {
-                                Text("1: all English").tag(1)
-                                Text("2: English on their lines").tag(2)
-                                Text("3: no English").tag(3)
-                            }
-                        }
                         // Back to the country choice, as on first launch (applied once the sheet has closed)
                         Button("Restart onboarding") {
                             model.pendingRestart = true

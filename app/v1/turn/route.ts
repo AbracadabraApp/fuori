@@ -1,7 +1,7 @@
 /**
  * POST /v1/turn
  *   { cityId, placeId, tripTo?, conversationId?, learnerSaid? }
- *   → { line, en, conversationId, promptVersion }
+ *   → { line, en, conversationId, promptVersion, replies }
  *
  * Without conversationId: the character's opening line, and a new
  * conversation. With it: the learner's line (learnerSaid) and the reply. The
@@ -9,6 +9,10 @@
  * far from the database; the app never sends a character sheet or a
  * transcript (docs/12-native-app.md). Same turn code as the web
  * (lib/conversation/take-turn.ts).
+ *
+ * `replies`: the learner's next turn is a tap on two reply buttons
+ * (/v1/replies) instead of the mic: beginners, for the first turns of each
+ * conversation (lib/scaffold.ts).
  */
 import Anthropic from '@anthropic-ai/sdk';
 import { z } from 'zod';
@@ -18,6 +22,8 @@ import { loadConversationTurns } from '@/lib/recording';
 import { takeTurn } from '@/lib/conversation/take-turn';
 import { logServerError } from '@/lib/server-log';
 import { Laps } from '@/lib/timing';
+import { offerReplies, scaffoldFacts } from '@/lib/scaffold';
+import { tutor } from '@/content';
 
 const Body = z.object({
   cityId: z.string(),
@@ -59,14 +65,19 @@ export async function POST(request: Request) {
         onSoftError: (where, err) => logServerError(request, where, err),
         laps,
       });
+      const facts = await scaffoldFacts(learnerId, result.conversationId ?? null, tutor.id);
+      const learnerTurns = parsed.transcript.filter((t) => t.who === 'learner').length + (learnerSaid ? 1 : 0);
+      const replies = offerReplies({ ...facts, learnerTurns, isTutor: result.isTutor });
+      laps.lap('scaffold');
       laps.facts.turn = conversationId ? 'reply' : 'opening';
+      laps.facts.replies = replies ? "yes" : "no";
       laps.log('turn-timing', request.headers.get('x-fuori-id'));
       const headers: Record<string, string> = { 'server-timing': laps.header() };
       // Read by scripts/smoke-live.ts
       if (result.memory) headers['x-memory'] = `${result.memory.visits} visits, ${result.memory.notes.length} notes`;
       if (result.isTutor) headers['x-study-file'] = `${result.memory?.notes.length ?? 0} lines, ${result.memory?.visits ?? 0} lessons`;
       return apiJson(
-        { ...result.reply, conversationId: result.conversationId, promptVersion: result.promptVersion },
+        { ...result.reply, conversationId: result.conversationId, promptVersion: result.promptVersion, replies },
         { headers }
       );
     } catch (err) {
