@@ -1,6 +1,6 @@
 # Learn page (conversation review)
 
-version: 2026-10-20
+version: 2026-10-20b
 
 The Learn page: a sheet over the conversation, written from it (Josh,
 2026-10-20; docs/learn.md). Where structured learning happens, so English is
@@ -15,14 +15,17 @@ app calls it yet.
 ```
 You write the Learn page a {language} learner reads after (or during) a conversation in a game set in {city}. They have come to live here and are learning {language}; they talked with {name}, a {role}. Their lines came through speech-to-text, so ignore misheard words, missing accents and punctuation.
 
-This page is where they actually study, so be generous and clear, in plain English, with {language} examples. Everything comes from this conversation: their own words and {name}'s lines are the examples. Teach like a good teacher sitting with them afterwards: warm, concrete, never a lecture.
+This page is where they actually study: clear, in plain English, with {language} examples, but short enough to read in a few minutes. Everything comes from this conversation: their own words and {name}'s lines are the examples. Teach like a good teacher sitting with them afterwards: warm, concrete, never a lecture.
+
+When you quote {name}, choose lines a learner at their level can follow (judge by their own lines): a short line, or the short part of a longer one. Skip lines that are too hard to learn from yet.
 
 In this order, leaving out a section only if there's truly nothing for it:
-1. Corrections. Their real mistakes: what they said, the better way, and a short explanation of why, in a sentence or two. If {name} said it the right way back, quote it.
-2. New words and phrases. From {name}'s lines, the ones they probably didn't know or will need again: the {language}, the English, the line it came from, and a short note on how it's used.
-3. One thing about how {language} works that came up here (a verb, a polite form, gender, a preposition): explained plainly, with examples from the conversation and one or two more. Only the forms they need now, not full tables.
-4. A note on life here, if the scene had one (how people order at a bar, what a market seller means by an etto).
-5. Your turn: one or two short things to say out loud using today's material, given in English.
+1. Corrections: their 3 most useful mistakes. What they said, the better way, and why in one sentence. If {name} said it the right way back, give that line with a play mark.
+2. Nouns: a table of about 5, columns Italian (with its article) | English | {name}'s line. The line is the whole sentence (or short part) where it came up, with a play mark.
+3. Verbs: a table of about 5, columns Italian (the infinitive) | English | {name}'s line, the same way.
+4. One thing about how {language} works that came up here (a polite form, a plural, a verb pattern): a few plain sentences and, if it helps, a small table whose examples are {name}'s whole lines with play marks. Only the forms they need now.
+5. A note on life here, if the scene had one: one or two lines.
+6. Your turn: one or two short things to say out loud using today's material, given in English.
 
 Markdown, with these marks the app will turn into buttons:
 - [▶ {name}: "line"] where {name} can say a line aloud.
@@ -43,3 +46,6 @@ The conversation:
 
 ### 2026-10-20: first version
 Josh's Learn idea (2026-10-20): a page over the conversation, from that conversation, corrections first, then vocabulary, then a little grammar and a culture note, no full conjugation tables. Starts from memory.md's learning notes, since they already pick out mistakes, words worth learning and what wasn't understood (Josh: "Magda may already have that").
+
+### 2026-10-20b: shorter; nouns and verbs in tables with the whole line
+Josh, after reading the first page on a real conversation (Rosa, Firenze): too long; separate nouns and verbs; a noun table of about 5 like the verb table he liked; instead of a column with the bare form, the character's whole sentence with a play button; and lines a learner can follow ("mi indichi pure quello che cerca, anche col dito" is too sophisticated). Corrections capped at 3, the life note at one or two lines.
