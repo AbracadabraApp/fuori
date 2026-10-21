@@ -2,6 +2,8 @@
 
 2026-10-20 · Josh · Notes for an idea still forming: precision and measurement wait until it has shape (Josh). Learn replaces Magda and the Diario; those areas go away once it's built.
 
+**One home (Josh, 2026-10-21):** Magda, the scuole (the schools for foreigners on the map), the Diario and missions all fall into Learn, reached from the book icon in the nav bar next to Settings. In docs and talk, "Learn" is the one name for teaching outside the world; tutor, school, study file, Diario, chips and missions are older names for parts of it.
+
 Learn is a part of the app like Settings, not a character. It has two parts:
 
 - **The Learn agent** reviews one conversation, on the conversation screen, and writes its page.
