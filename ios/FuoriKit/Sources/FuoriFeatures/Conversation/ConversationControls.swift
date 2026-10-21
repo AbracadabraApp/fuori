@@ -1,7 +1,10 @@
 import SwiftUI
 import FuoriDesign
 
-/// The bottom of the person screen: the turn pill, and Pause (always there) on the right.
+/// The bottom of the person screen: the turn pill, and on the right Pause in
+/// hands-free (Josh, 2026-10-21: in tap-to-talk the scene already waits for a
+/// tap, so Pause did little), Resume whenever the scene is paused, otherwise
+/// the Learn link.
 /// The pill shows the state by its shape (waveform, dots, pause, warning), not
 /// colour alone (docs/13-ios-conventions.md R4); VoiceOver reads it as words.
 /// No label under it (Josh, 2026-10-15: a pill on a pill). During the
@@ -18,9 +21,8 @@ struct ConversationControls: View {
     var body: some View {
         VStack(spacing: 8) {
             if showsReplies { ReplyButtons(model: model) }
-            // The Learn link, bottom right above Pause, once there's something
-            // to go over (docs/learn.md); it opens the Learn sheet
-            if let onLearn, model.hasSomethingToLearn {
+            // In hands-free Pause holds the corner, so the Learn link sits above it
+            if let onLearn, showsPause, model.hasSomethingToLearn {
                 HStack {
                     Spacer()
                     learnLink(onLearn)
@@ -29,13 +31,20 @@ struct ConversationControls: View {
             }
             HStack {
                 // Type a reply (accessibility only, D6); otherwise empty, balancing
-                // the pause button so the pill stays centred
+                // the right-hand button so the pill stays centred
                 if model.canType { typeButton } else { Color.clear.frame(width: 44, height: 44) }
                 Spacer()
                 // While scaffolding the two replies take the pill's place
                 if showsReplies { Color.clear.frame(width: 112, height: 52) } else { pill }
                 Spacer()
-                pauseButton // on the right (Josh, 2026-10-15)
+                // Bottom right (Josh, 2026-10-15): Pause or Resume, else the Learn link
+                if showsPause {
+                    pauseButton
+                } else if let onLearn, model.hasSomethingToLearn {
+                    learnLink(onLearn).transition(.opacity)
+                } else {
+                    Color.clear.frame(width: 44, height: 44)
+                }
             }
         }
         .padding(.bottom, 8)
@@ -78,18 +87,28 @@ struct ConversationControls: View {
 
     // MARK: Learn
 
+    /// The Learn link (docs/glossary.md): the book in a glass circle, matching
+    /// Pause; it opens the Learn sheet for the conversation so far
     private func learnLink(_ open: @escaping () -> Void) -> some View {
         Button(action: open) {
-            Label("Learn", systemImage: "character.book.closed")
-                .typeface(.label, 16, relativeTo: .callout, weight: .semibold)
-                .frame(minHeight: 44)
-                .padding(.horizontal, 4)
+            Image(systemName: "character.book.closed")
         }
-        .buttonStyle(.glass)
+        .accessibilityLabel("Learn")
         .accessibilityHint("Goes over this conversation so far")
+        .font(.title3)
+        .frame(width: 44, height: 44)
+        .buttonStyle(.glass)
+        .buttonBorderShape(.circle)
     }
 
     // MARK: Pause
+
+    /// Pause only in hands-free, where the mic opens by itself; Resume whenever
+    /// the scene is paused (a call, Siri, the Learn sheet) or failed, so there's
+    /// always a way back in
+    private var showsPause: Bool { !model.tapMode || isPaused }
+
+    private var isPaused: Bool { model.phase == .paused || model.phase.isFailed || model.phase == .micDenied }
 
     /// One button that toggles: pause while running, play while paused
     /// (Josh, 2026-10-15). The paused state shows only here, not on the pill.
