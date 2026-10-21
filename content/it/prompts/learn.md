@@ -1,6 +1,6 @@
 # Learn page (conversation review)
 
-version: 2026-10-20i
+version: 2026-10-20j
 
 The Learn page: a sheet over the conversation, written from it (Josh,
 2026-10-20; docs/learn.md). Where structured learning happens, so English is
@@ -22,7 +22,7 @@ Judge their level from their own lines, and pitch everything one step beyond wha
 When you quote {name}, choose lines a learner at their level can follow: a short line, or the short part of a longer one. Use a line as an example only if it is correct {language}; people slip too, so skip any that isn't.
 
 A page doesn't do everything it could, and pages shouldn't all look alike. Choose what this conversation most calls for: often one thing, sometimes two. One page might only correct their mistakes; another might only teach a few nouns, or a few verbs; another a single point about how {language} works. The kinds, and how each looks when you use it:
-- Corrections: their most useful mistakes, the form of address included (familiar with a stranger, formal with a friend), one to three. For each: You said "their words". The right phrase is "the full phrase": what someone here would actually say, as simply as possible, not their sentence with its errors patched. If the fully correct form is beyond their level, give the simple natural phrase that does the job instead (a short fixed phrase is fine) and don't explain the grammar behind it. Why, in one short line. If {name} said it the right way back, that line with a play mark. Then a mic mark: [🎤 Repeat it: "the full phrase"]. Keep this for mistakes that matter: ones that changed the meaning, or that they'll make again and again. A small slip (an ending, an article, one letter off) gets at most one light line with no explanation and no mic ("questa volta, not questo"), or nothing if it happened once. If the page has corrections, they come first.
+- Corrections: their most useful mistakes, the form of address included (familiar with a stranger, formal with a friend), one to three. For each: You said "their words". The right phrase is "the full phrase": what someone here would actually say, as simply as possible, not their sentence with its errors patched. When the fix is small inside a long sentence, show only the part that changes ("questa volta", not the whole sentence) so the point is easy to see; give the whole sentence only when the whole phrase is what they need to learn. In both, put what changed in bold ("quest**a** volta", "non **ho** capito"), and the mic repeats the same short part. If the fully correct form is beyond their level, give the simple natural phrase that does the job instead (a short fixed phrase is fine) and don't explain the grammar behind it. Why, in one short line. If {name} said it the right way back, that line with a play mark. Then a mic mark: [🎤 Repeat it: "the full phrase"]. Keep this for mistakes that matter: ones that changed the meaning, or that they'll make again and again. A small slip (an ending, an article, one letter off) gets at most one light line with no explanation and no mic ("questa volta, not questo"), or nothing if it happened once. If the page has corrections, they come first.
 - Nouns: a short table, columns {language} (with its article) | English | {name}'s line, the whole sentence (or short part) where it came up, with a play mark.
 - Verbs: the same, with the infinitive.
 - How {language} works: one thing that came up and that they didn't get wrong: two plain sentences and one of {name}'s lines with a play mark.
@@ -72,3 +72,6 @@ Josh: "every page doesn't have to do everything it can. One might just correct m
 
 ### 2026-10-20i: small slips stay small
 Josh, on the Franco page: a full correction (you said, the right phrase, why, mic) for "questo" instead of "questa" is "a lot for something off by a letter". The full treatment is now for mistakes that matter (changed the meaning, or will recur); a small slip gets one light line without why or mic, or nothing if it happened once.
+
+### 2026-10-20j: show the part that changes
+Josh: "a small correction in a long sentence is hard to pick up the point". Corrections now show only the part that changes when the fix is local (the whole sentence only when the whole phrase is the lesson), with the change in bold, and the mic repeats that short part.
