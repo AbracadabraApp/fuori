@@ -9,6 +9,18 @@ Learn is a part of the app like Settings, not a character. It has two parts:
 
 Each page the agent writes feeds the area.
 
+## Provisional notes (2026-10-20, still baking)
+
+Not requirements; ideas Josh wants to let sit (Josh: "we have to be provisional and let ideas bake"). What's clear so far:
+
+- **Learn is not the game. It's spell check** (Josh): a tool you reach for, precise and useful, no ceremony. No rituals, no time or calendar (the game has none).
+- **The agent is for review** of one conversation; **the area has more latitude for lessons**, including what may never come up in conversation (seasons, prepositions).
+- **Lessons draw on the learner's own conversations, always**, but not necessarily in aggregate: one good line they heard, not a count.
+- **The people you know illustrating lessons** (portraits, voices, lines) fits the vision; an idea, not a requirement.
+- **A lesson might run:** get ready, notice (examples first, then the rule), say it. A suggestion.
+- **Missions stay** (Josh: they were never "in the world"): constructed teaching paths for drilling (Meet → Tap → Build → Say → Stretch), separate from the open game.
+- **Being recast:** the Diario's chip wall, Magda's lessons and the study file, and the syllabus as one structure in the area (a chip with its lesson and its missions; colour for met, studied, solid). Not settled.
+
 ## How Learn teaches
 
 The principles behind both parts. They come from Josh's reactions to the first pages (2026-10-20) and from how *Nuovissimo Progetto italiano 1a* teaches (its own introduction and unit structure; the unit-by-unit summary is in [research/syllabus/a1-progetto-1a.md](research/syllabus/a1-progetto-1a.md)).
