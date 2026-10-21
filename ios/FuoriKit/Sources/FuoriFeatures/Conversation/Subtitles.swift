@@ -1,9 +1,12 @@
 import SwiftUI
 import FuoriDesign
 
-/// What the character just said, on a white card just above the controls,
-/// growing upward like subtitles (the web's reply card). Solid, not glass, so
-/// it stays legible over the portrait (docs/13-ios-conventions.md R15).
+/// What the character just said, in a cream bubble on the left just above the
+/// controls, growing upward like subtitles. Solid, not glass, so it stays
+/// legible over the portrait (docs/13-ios-conventions.md R15) and reads as her
+/// words, not a control: the reply buttons are glass on the right (Josh,
+/// 2026-10-21, "Reply buttons" canvas D2/D3). Only her current line shows,
+/// never a history and never a bubble for the learner (no transcript).
 struct Subtitles: View {
     let line: String?
     /// Typewriter: characters of `line` spoken so far; nil when it's all out
@@ -24,8 +27,13 @@ struct Subtitles: View {
                 }
                 .frame(maxHeight: 260)
                 .fixedSize(horizontal: false, vertical: true)
-                .background(Tokens.Colors.card.opacity(0.96), in: RoundedRectangle(cornerRadius: 14))
+                .background(Tokens.Colors.paper, in: Self.bubble)
                 .shadow(color: .black.opacity(Tokens.Shadow.card.opacity), radius: Tokens.Shadow.card.radius, y: Tokens.Shadow.card.y)
+                // Hugs her words on the left, leaving the right for the learner's side
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.trailing, 40)
+                // Room between her line and the replies or the mic
+                .padding(.bottom, 10)
             }
             if let note {
                 Text(note)
@@ -58,10 +66,13 @@ struct Subtitles: View {
                     .foregroundStyle(Tokens.Colors.muted)
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, 14)
+        .padding(.vertical, 13)
         .padding(.horizontal, 16)
     }
+
+    /// Rounded, with the top corner toward her portrait tightened
+    private static let bubble = UnevenRoundedRectangle(
+        topLeadingRadius: 6, bottomLeadingRadius: 20, bottomTrailingRadius: 20, topTrailingRadius: 20)
 
     private func typed(_ line: String) -> AttributedString {
         var text = AttributedString(line)
