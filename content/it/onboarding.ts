@@ -29,6 +29,16 @@ export const onboarding = {
       line: "Che bello che parli già italiano! Allora, raccontami: cosa ti piace dell'Italia? Tocca il microfono per parlare.",
       en: 'How lovely that you already speak Italian! So, tell me: what do you like about Italy? Tap the microphone to talk.',
     },
+    /** Name and address (docs/onboarding-design.md → Name and address): after the first tap. {name} is what Whisper heard */
+    askName: { line: 'Come ti chiami? Tocca il microfono e dimmi il tuo nome.', en: "What's your name? Tap the microphone and tell me your name." },
+    address: {
+      line: 'Piacere, {name}! In italiano le parole cambiano: a una donna dico «benvenuta», a un uomo «benvenuto». Per te?',
+      en: 'Nice to meet you, {name}! In Italian words change: to a woman I say benvenuta, to a man benvenuto. Which for you?',
+    },
+    asWoman: { line: 'Benvenuta!', en: 'to a woman' },
+    asMan: { line: 'Benvenuto!', en: 'to a man' },
+    welcomeWoman: { line: 'Benvenuta, {name}!', en: 'Welcome, {name}!' },
+    welcomeMan: { line: 'Benvenuto, {name}!', en: 'Welcome, {name}!' },
     /** The send-off always ends with this (Claude writes what comes before it) */
     help: { line: 'Se hai bisogno di aiuto, chiedi pure a chiunque.', en: 'If you need help, just ask anyone.' },
   },

@@ -12,6 +12,9 @@ const check = (ok: boolean, what: string) => { if (!ok) problems.push(what); };
 
 // Every fixed line has its text and its English
 for (const [key, l] of Object.entries(onboarding.lines)) check(!!l.line.trim() && !!l.en.trim(), `${country}: line "${key}" needs text and English`);
+// Name and address: her two lines use the name she heard, and both buttons are there
+for (const key of ['address', 'welcomeWoman', 'welcomeMan'] as const) check(onboarding.lines[key].line.includes('{name}') && onboarding.lines[key].en.includes('{name}'), `${country}: line "${key}" needs {name} in the line and the English`);
+check(!!onboarding.lines.asWoman.line && !!onboarding.lines.asMan.line && !onboarding.lines.askName.line.includes('{name}'), `${country}: name and address buttons`);
 check(!!onboarding.guide.voice && onboarding.guide.lift >= 0 && onboarding.guide.lift < 0.5, `${country}: guide needs a voice and a lift under 0.5`);
 
 // Prompt: version matches its newest changelog entry, both steps fill every placeholder

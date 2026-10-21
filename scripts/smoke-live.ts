@@ -275,6 +275,18 @@ async function onboardingApi(auth: Record<string, string>, v1: (path: string, bo
     ? pass(`v1 onboarding send-off placed and stored ${sf.level}`)
     : fail('v1 onboarding send-off', `${so.status} ${JSON.stringify(sf)} me ${JSON.stringify(after)}`);
 
+  // Name and address (docs/onboarding-design.md): saved for every character, changed in Settings; off until migrated
+  const addr = await v1('/v1/onboarding/address', { addressedAs: 'f', name: 'Teresa' });
+  if (addr.status === 404) pass('v1 onboarding address: off on this server (LEARNER_ADDRESS not on)');
+  else {
+    const chose = (await me()) as { addressedAs?: string };
+    const changed = await v1('/v1/me/address', { addressedAs: 'm' });
+    const now = (await me()) as { addressedAs?: string };
+    addr.status === 204 && chose.addressedAs === 'f' && changed.status === 204 && now.addressedAs === 'm'
+      ? pass('v1 onboarding address saved, and changed in Settings')
+      : fail('v1 address', `${addr.status} ${JSON.stringify(chose)} then ${changed.status} ${JSON.stringify(now)}`);
+  }
+
   const reset = await v1('/v1/onboarding/reset', {});
   const cleared = await me();
   reset.status === 204 && cleared.onboarded === false && cleared.level === null ? pass('v1 onboarding reset (Restart onboarding)') : fail('v1 onboarding reset', `${reset.status} ${JSON.stringify(cleared)}`);

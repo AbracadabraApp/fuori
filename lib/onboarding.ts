@@ -68,7 +68,8 @@ export async function onboardingState(learnerId: string): Promise<{ level: Level
 
 /** Onboarding finished: the level, and for the speaker path what was said and why it was placed there */
 export async function finishOnboarding(learnerId: string, level: Level, record: Record<string, unknown>): Promise<void> {
-  await query('UPDATE learners SET level = $2, onboarded_at = now(), onboarding = $3 WHERE id = $1', [learnerId, level, JSON.stringify(record)]);
+  // Merged into what's there, so the name from the address step stays (a reset record's path is replaced)
+  await query(`UPDATE learners SET level = $2, onboarded_at = now(), onboarding = COALESCE(onboarding, '{}'::jsonb) || $3::jsonb WHERE id = $1`, [learnerId, level, JSON.stringify(record)]);
 }
 
 /** Settings → Restart onboarding: she greets them again. Conversations, visits and memories stay. */

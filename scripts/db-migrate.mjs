@@ -88,7 +88,10 @@ ALTER TABLE learners ADD COLUMN IF NOT EXISTS level_checks jsonb;
 -- Whether characters address them as a woman ('f') or a man ('m'); null until
 -- they say (2026-10-21: characters defaulted to the masculine with women).
 -- Read by every character (character.md {person}), unlike per-character memory.
+-- addressed_from: how it was learned ('chose' in onboarding or Settings; later
+-- weaker signals may fill it, never over a choice).
 ALTER TABLE learners ADD COLUMN IF NOT EXISTS addressed_as text CHECK (addressed_as IN ('f', 'm'));
+ALTER TABLE learners ADD COLUMN IF NOT EXISTS addressed_from text;
 
 -- Indexes for common queries
 CREATE INDEX IF NOT EXISTS idx_conversations_learner ON conversations(learner_id);
