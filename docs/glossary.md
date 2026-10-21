@@ -7,7 +7,7 @@
 - **Learn** (Josh, 2026-10-21): everything taught outside the world, reached from the book icon in the nav bar next to Settings. Magda, the scuole, the Diario and missions all fall into Learn; tutor, school, study file, Diario, chips and missions are older names for its parts. See [learn.md](learn.md).
 - **Scaffolding** (Josh, 2026-10-21): everything before the stand-alone microphone, the support a beginner gets inside a conversation. Today it's the reply chain: tap one of two good replies, then read one aloud, then choose the one that fits and read it ([beginner-scaffolding.md](beginner-scaffolding.md) → the three-step chain). Past scaffolding, the learner speaks with the mic alone.
 
-- **Plumbing** (Josh, 2026-10-21): the services underneath the game, not a part of it: Whisper on Groq (speech in), ElevenLabs and the phone's voice (speech out). Proposed to include Claude API calls (`lib/claude.ts`), Railway and the database too.
+- **Services** (or "plumbing"; Josh, 2026-10-21): what's underneath the game, not a part of it: Whisper on Groq (speech in), ElevenLabs and the phone's voice (speech out). Proposed to include Claude API calls (`lib/claude.ts`), Railway and the database too.
 
 ## Proposed (not settled)
 
