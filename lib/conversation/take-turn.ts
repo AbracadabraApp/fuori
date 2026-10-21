@@ -11,7 +11,9 @@ import { buildTutorPrompt, repliesSoFar } from '@/lib/prompts/build-tutor-prompt
 import { recordTurn } from '@/lib/recording';
 import { trialLevel } from '@/lib/conversation/level-trial';
 import { loadCharacterMemory, loadMemoryAtStart, type CharacterMemory } from '@/lib/memory';
+import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
+import type { Gender } from '@/lib/types';
 import type { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
 import type { Laps } from '@/lib/timing';
 
@@ -47,6 +49,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // {relationship} line). Never blocks the reply: without it the character
   // just hasn't met them. Mid-conversation: what they remembered when it started.
   let memory: CharacterMemory | undefined;
+  let addressedAs: Gender | undefined;
   if (learnerId) {
     try {
       memory =
@@ -54,6 +57,12 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         (await loadCharacterMemory(learnerId, character.id));
     } catch (err) {
       p.onSoftError('memory load', err);
+    }
+    // Whether they're a woman or a man, which every character can see
+    try {
+      addressedAs = await loadAddressedAs(learnerId);
+    } catch (err) {
+      p.onSoftError('learner address', err);
     }
   }
   p.laps?.lap('memory');
@@ -73,6 +82,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     transcript,
     learnerSaid,
     memory,
+    addressedAs,
     system: tutorPrompt?.system,
     firstTurn: tutorPrompt?.firstTurn,
     level,

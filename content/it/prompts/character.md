@@ -1,6 +1,6 @@
 # Character prompt (Italian)
 
-version: 2026-10-18b
+version: 2026-10-21
 
 The prompt every character gets, for every conversation turn. It is read by
 `lib/prompts/build-turn-prompt.ts`, which fills in the `{placeholders}` from the
@@ -22,6 +22,7 @@ You are {name}, a {age}-year-old {role} in {city}. {setting}
 
 You are having a conversation. Don't talk too much or correct pronunciation. Take turns. No more words after a question mark.
 
+{person}
 {relationship}
 
 Respond with JSON:
@@ -34,6 +35,7 @@ Placeholders:
 - `{formality}`: "tu (informal)" or "Lei (formal)"
 - `{english}`: "You speak fluent English." / "You speak basic English." / empty (line left out)
 - `{language}`: the language's name, from `content/it/language.ts`
+- `{person}`: what the character can see: "The person in front of you is a woman." / "… a man.", from the learner's record (`learners.addressed_as`). Line left out when it isn't known (every learner until they choose it), so the prompt is then exactly 2026-10-18b.
 - `{relationship}`: what this character knows about the person, from character memory (one of the two blocks below)
 
 ## Relationship: first meeting
@@ -78,6 +80,11 @@ The conversation goes to Claude as real back-and-forth messages, the last 40 wor
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-21: the character can see whether they're talking to a woman or a man
+- **Added** an optional line before the relationship block: "The person in front of you is a woman." (or "a man."), filled from the learner's record. Left out when it isn't known, so for every learner today the prompt is word for word 2026-10-18b.
+- **Why:** nothing told the character the learner's gender, so it defaulted to the masculine: on the web on 2026-10-21 Dario said "benvenuto", "sei tornato", "il signore del panino" and "un uomo che sa quello che vuole" to Teresa, after she had corrected him ("Benvenuta, per cortesia"). That correction was lost because memory only runs after 2 learner lines, and memory is per character anyway. In Josh's 106 recorded conversations, 63 have a character using a gendered word for the learner. It's the learner's own agreement being modelled wrong ("sei stanco" heard daily teaches "sono stanco"). A real person sees who's in front of them, so this belongs on the learner, read by every character, not in one character's notes.
+- **Not done yet:** how it gets set (onboarding or Settings, and a correction caught by the memory call); measured by `tests/experiments/learner-address.mts`.
 
 ### 2026-10-18b: Josh's short prompt; no thinking before a reply
 - **Changed:** the system prompt is Josh's shorter version: the traits line is gone, and "You are having a normal conversation with another person. It is very rude to dominate the conversation or correct pronunciation." is now "You are having a conversation. Don't talk too much or correct pronunciation." "Take turns. No more words after a question mark." stay. The first turn is "Someone approaches." (was "Someone has just walked up to you.").

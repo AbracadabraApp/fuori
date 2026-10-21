@@ -38,8 +38,18 @@ for (const city of cities) {
     if (!system.includes(expected)) failures.push(`${c.name} (${city.name}): prompt doesn't mention "${expected}"`);
   }
 }
+// The learner's gender reaches the character when known, and leaves no trace when not (2026-10-21)
+{
+  const city = cities[0];
+  const c = characterForPlace(city, city.places.find((pl) => characterForPlace(city, pl))!)!;
+  const unset = buildTurnPrompt({ character: c, transcript: [] }).system;
+  if (/in front of you/.test(unset)) failures.push('{person}: a line about the learner appears when their gender is unknown');
+  if (/\n{3,}/.test(unset)) failures.push('{person}: unset leaves a blank gap in the system prompt');
+  if (!buildTurnPrompt({ character: c, transcript: [], addressedAs: 'f' }).system.includes('The person in front of you is a woman.')) failures.push('{person}: addressedAs f is not in the prompt');
+  if (!buildTurnPrompt({ character: c, transcript: [], addressedAs: 'm' }).system.includes('The person in front of you is a man.')) failures.push('{person}: addressedAs m is not in the prompt');
+}
 if (failures.length) {
   console.error(failures.slice(0, 10).join('\n'));
   process.exit(1);
 }
-console.log(`OK: prompt ${version} has a changelog entry, fills every placeholder, and says where each character is`);
+console.log(`OK: prompt ${version} has a changelog entry, fills every placeholder, says where each character is, and says who's in front of them only when known`);

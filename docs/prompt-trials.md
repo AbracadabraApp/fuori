@@ -100,3 +100,18 @@ Goal: the game knows when both have said goodbye, or the errand is paid and than
 | `over` on the character's reply (production `character.md`, trial schema) | Tried | 0% | 82% of 17 | none | 25.2 (25.6 without) | Recommended; changes `{ line, en }`, needs Josh |
 | Separate judge after each line | Tried | 0% | 82% of 17 | a call, median 1.3 s, while the voice plays | unchanged | Same result for more cost |
 
+
+### Learner gender (character.md 2026-10-21, experiment `tests/experiments/learner-address.mts`)
+
+8 characters per country, 5 learner replies, a simulated learner who never shows their own gender; a judge lists every word for the learner that shows a gender. Right = agrees with the learner. 2026-10-21.
+
+| Arm | Italy: right | Italy: conversations with a wrong one | Mexico: right | Mexico: conversations with a wrong one |
+|---|---|---|---|---|
+| Woman, gender unknown (today), first visit | 20% of 15 | 6 of 8 | 0% of 22 | 8 of 8 |
+| Woman, unknown, returning | 10% of 10 | 6 of 8 | 0% of 13 | 5 of 8 |
+| Woman, known (`{person}` line), first visit | 100% of 49 | 0 of 8 | 100% of 26 | 0 of 8 |
+| Woman, known, returning | 100% of 29 | 0 of 8 | 100% of 25 | 0 of 8 |
+| Man, unknown | 97% of 37 | 1 of 16 | 100% of 17 | 0 of 16 |
+| Man, known | 97% of 31 | 1 of 16 | 100% of 38 | 0 of 16 |
+
+**Kept.** Unknown, characters default to the masculine: benvenuto, bentornato, bravo, signore; bienvenido, mijo, amigo, cómodo. Told, they're right every time, and women get more gendered words, not fewer (49 against 15). The two wrong words with men are a stray "brava" and "l'ha mandata" (probably about someone else). The judge also counted the neutral "joven" as masculine, so Mexico's unknown-woman figures are a little low. The line is empty until the learner's gender is known, so today's prompt is unchanged; how it gets known (a pitch guess from the voice, their own corrections and agreement, Settings) is the next step.

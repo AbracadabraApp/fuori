@@ -7,7 +7,7 @@ import { z } from 'zod';
 import { anthropic, TURN_MODEL, replyText } from '@/lib/claude';
 import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
-import type { CharacterSheet, Turn } from '@/lib/types';
+import type { CharacterSheet, Gender, Turn } from '@/lib/types';
 import type { Laps } from '@/lib/timing';
 
 export const TurnOutputSchema = z.object({
@@ -23,6 +23,8 @@ export async function runTurn(params: {
   learnerSaid?: string;
   /** What this character remembers about the learner, if they've met */
   memory?: RememberedLearner;
+  /** Whether the learner is a woman or a man, when known (learners.addressed_as) */
+  addressedAs?: Gender;
   /** Magda's system prompt and first turn instead of the character prompt */
   system?: string;
   firstTurn?: string;

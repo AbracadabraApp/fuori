@@ -8,7 +8,7 @@
 
 import { readPromptFile, fill } from './template';
 import { language } from '@/content';
-import type { CharacterSheet, Turn } from '../types';
+import type { CharacterSheet, Gender, Turn } from '../types';
 
 /** What the character remembers about this learner (from character_memories) */
 export interface RememberedLearner {
@@ -43,6 +43,9 @@ interface BuildTurnPromptParams {
   learnerSaid?: string;
   /** Absent or 0 visits: they haven't met */
   memory?: RememberedLearner;
+  /** Whether the learner is a woman or a man (learners.addressed_as), so the
+   *  character's agreement is right; absent when unknown */
+  addressedAs?: Gender;
   /** For "last time was yesterday"; defaults to now (tests pass a fixed date) */
   now?: Date;
   /** Replaces the character system prompt and first turn (Magda: build-tutor-prompt.ts) */
@@ -118,6 +121,11 @@ export function relationshipLine(t: Template, memory: RememberedLearner | undefi
   });
 }
 
+/** The {person} line: what the character can see. Empty (line left out) when unknown. */
+export function personLine(addressedAs: Gender | undefined): string {
+  return addressedAs ? `The person in front of you is ${addressedAs === 'f' ? 'a woman' : 'a man'}.` : '';
+}
+
 export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
   const { character, transcript, learnerSaid, memory, now = new Date() } = params;
   const base = loadTemplate();
@@ -140,6 +148,7 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
     traits: character.personality.traits.join(', '),
     formality: `${language.formality[character.speech.formality]} (${character.speech.formality})`,
     english,
+    person: personLine(params.addressedAs),
     relationship: relationshipLine(t, memory, now),
   });
   const levelBlock = params.level && !params.system
