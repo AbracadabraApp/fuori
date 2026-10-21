@@ -463,6 +463,51 @@ public final class ConversationModel {
         }
     }
 
+    // MARK: - Learn
+
+    /// The line the Learn sheet is saying aloud right now, for its sound wave
+    public private(set) var learnSaying: String?
+
+    /// The page for the conversation so far (POST /v1/learn)
+    public func learnPage() async throws -> APIClient.LearnPage {
+        guard let conversationId else { throw NoConversationYet() }
+        let started = Self.now()
+        defer { time("learn", since: started) }
+        do {
+            return try await api.learn(cityId: city.id, placeId: place.id, conversationId: conversationId)
+        } catch {
+            _ = report(error, step: "learn")
+            throw error
+        }
+    }
+
+    /// The Learn sheet opens over a paused scene; closing it leaves the scene
+    /// paused, so nothing speaks or listens until the learner taps
+    public func openLearn() { pause() }
+
+    /// Says a corrected line in the character's own voice (the phone's voice
+    /// if the hosted one fails), as the scene does. Tapping again replays.
+    public func sayForLearn(_ text: String) async {
+        voice.stop()
+        learnSaying = text
+        do {
+            let audio = try await api.speak(text: text, characterId: character.id, speed: speed)
+            guard learnSaying == text else { return }
+            try await voice.play(audio)
+        } catch {
+            guard learnSaying == text else { return }
+            _ = report(error, step: "learn speak")
+            await voice.speak(text, language: language.speechLang, rate: Float(speed))
+        }
+        if learnSaying == text { learnSaying = nil }
+    }
+
+    /// The sheet closed: stop its voice
+    public func closeLearn() {
+        learnSaying = nil
+        voice.stop()
+    }
+
     // MARK: - Pause, resume, leave
 
     /// Stops the voice and the mic. Only a tap resumes.
@@ -623,4 +668,9 @@ private enum AudioClock {
 struct RecordingFailed: Error, CustomStringConvertible {
     let writeFailures: Int
     var description: String { "Recording: \(writeFailures) buffers failed to write" }
+}
+
+/// The Learn sheet was opened before the server had saved the conversation
+private struct NoConversationYet: LocalizedError {
+    var errorDescription: String? { "Say something first, then open Learn." }
 }

@@ -8,8 +8,9 @@ buttons, a plain word list, one thing good to know. JSON, which the app lays
 out; the schema is `lib/prompts/learn-output-schema.ts`. Built on the learning
 notes the memory call already writes (memory.md → review).
 
-Experimental: used only by `tests/experiments/learn-page.mts`. Nothing in the
-app calls it yet.
+Experimental: used by `tests/experiments/learn-page.mts` and by POST /v1/learn
+(`lib/learn.ts`), which the app calls only when Settings → "Learn page
+(test)" is on (off by default).
 
 ## System prompt
 

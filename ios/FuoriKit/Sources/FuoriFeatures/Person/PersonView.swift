@@ -15,6 +15,8 @@ struct PersonView: View {
     @AppStorage(SettingsKey.subtitles) private var subtitles = true
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.debug) private var debug = false
+    @AppStorage(SettingsKey.learnSheet) private var learnOn = false
+    @State private var showingLearn = false
 
     init(model: ConversationModel) {
         _model = State(initialValue: model)
@@ -49,6 +51,26 @@ struct PersonView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Tokens.Colors.paper, for: .navigationBar)
         #endif
+        // Learn (test only): the book left of Settings, in the same group.
+        // It opens the sheet over the paused scene (docs/learn.md)
+        .toolbar {
+            if learnOn {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        model.openLearn()
+                        showingLearn = true
+                    } label: {
+                        Image(systemName: "character.book.closed")
+                    }
+                    .accessibilityLabel("Learn")
+                    .accessibilityHint(model.conversationId == nil ? "After you've said something" : "Goes over this conversation")
+                    .disabled(model.conversationId == nil)
+                }
+            }
+        }
+        .sheet(isPresented: $showingLearn, onDismiss: { model.closeLearn() }) {
+            LearnSheet(model: model)
+        }
         .settingsToolbar()
         .task { await model.start() }
         // Every way out (back button, edge swipe) saves through leave()

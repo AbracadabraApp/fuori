@@ -96,6 +96,45 @@ public actor APIClient {
         return try await send(post("v1/replies", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId)), signedIn: true)
     }
 
+    /// The Learn page for a conversation so far (docs/learn.md → The page)
+    public struct LearnPage: Codable, Sendable, Equatable {
+        public struct Correction: Codable, Sendable, Equatable, Hashable {
+            /// What the learner said (only the part that changes)
+            public let said: String
+            /// One plain line in English
+            public let why: String
+            /// The same part said right, in the language only; the character says it
+            public let right: String
+        }
+        public struct Thing: Codable, Sendable, Equatable, Hashable {
+            public let word: String
+            public let en: String
+            /// Empty unless the plural is what was said
+            public let plural: String
+        }
+        public struct Doing: Codable, Sendable, Equatable, Hashable {
+            public let infinitive: String
+            public let en: String
+            /// The form used in the conversation, empty when it's the infinitive
+            public let form: String
+        }
+        public struct Words: Codable, Sendable, Equatable {
+            public let things: [Thing]
+            public let doing: [Doing]
+        }
+        public let corrections: [Correction]
+        public let words: Words
+        public let goodToKnow: String
+        public let promptVersion: String
+    }
+
+    /// POST /v1/learn: the Learn page for this conversation so far. The server
+    /// reads the conversation; the learner must have said something.
+    public func learn(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String) async throws -> LearnPage {
+        struct Body: Encodable { let cityId: String; let placeId: String; let tripTo: String?; let conversationId: String }
+        return try await send(post("v1/learn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId)), signedIn: true)
+    }
+
     /// target: the language being learned; en: English; any: Whisper detects
     /// it (onboarding answers can be either)
     public enum TranscribeMode: String, Sendable { case target, en, any }

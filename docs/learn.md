@@ -83,7 +83,9 @@ Claude's favourites: The word you were missing, What she meant, Next time try (s
 
 **Rating it (proposal):** correct first: every quote really said, every "You said" really theirs, the words they asked about on the page (code can check these); right for the learner: Josh's reading, and in the app one tap (useful / so-so / not for me) and "I knew this" on a word; does it stick: in later real conversations, the corrected phrase used and the mistake gone. A real teacher's picks on a few conversations are the best reference for "would a teacher choose these".
 
-**First try:** `content/it/prompts/learn.md` (experimental; nothing in the app calls it), run by `tests/experiments/learn-page.mts` on the modelled month and on one of Josh's conversations (pages in `tests/experiments/out/`, off git).
+**Wired up (2026-10-21, test only):** Settings → "Learn page (test)" (off by default) puts the book on the person screen, left of Settings. It pauses the scene and opens the sheet, which calls POST /v1/learn (`lib/learn.ts`, the prompt below) for the conversation so far; corrections say `right` through /v1/speak in the character's voice. Closing leaves the scene paused. Italy only: a country without `prompts/learn.md` gets "Learn isn't ready for this country yet". The memory call's learning notes aren't passed yet (they're written when the conversation ends; mid-conversation the prompt gets "(none)").
+
+**First try:** `content/it/prompts/learn.md`, run by `tests/experiments/learn-page.mts` on the modelled month and on one of Josh's conversations (pages in `tests/experiments/out/`, off git).
 
 ## The Learn area: the learner's history
 
