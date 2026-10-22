@@ -66,6 +66,8 @@ export async function POST(request: Request) {
         requestId: request.headers.get('x-fuori-id') ?? undefined,
         onSoftError: (where, err) => logServerError(request, where, err),
         laps,
+        // The conversation was loaded above as this learner's
+        saveAfterReply: true,
       });
       const facts = await scaffoldFacts(learnerId, result.conversationId ?? null, tutor.id);
       const learnerTurns = parsed.transcript.filter((t) => t.who === 'learner').length + (learnerSaid ? 1 : 0);

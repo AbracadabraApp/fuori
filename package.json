@@ -39,6 +39,7 @@
     "test:silence": "tsx tests/check-silence.ts",
     "test:reveal": "tsx tests/check-reveal.ts",
     "test:recording": "tsx tests/check-recording.ts",
+    "test:save-later": "tsx tests/check-save-later.ts",
     "test:stats": "tsx tests/check-dialogue-stats.ts",
     "test:memory": "tsx tests/check-memory.ts",
     "test:magda": "tsx tests/check-magda.ts",

@@ -1,14 +1,15 @@
 /**
  * One conversation turn, shared by /api/turn (web, cookie) and /v1/turn (app,
  * bearer token): load what the character remembers, run Magda's or the
- * character prompt, log the prompt version, and record the exchange.
+ * character prompt, log the prompt version, and record the exchange (after
+ * the reply goes out, when the caller allows it: saveAfterReply).
  * Framework-neutral: takes a learner id, not a request.
  */
 
 import { runTurn } from '@/lib/turn';
 import { promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { buildTutorPrompt, repliesSoFar } from '@/lib/prompts/build-tutor-prompt';
-import { recordTurn } from '@/lib/recording';
+import { recordTurn, saveLater } from '@/lib/recording';
 import { trialLevel } from '@/lib/conversation/level-trial';
 import { loadCharacterMemory, loadMemoryAtStart, type CharacterMemory } from '@/lib/memory';
 import { loadAddressedAs } from '@/lib/learner-address';
@@ -31,6 +32,14 @@ export interface TakeTurnParams {
   onSoftError: (where: string, err: unknown) => void;
   /** Times each step: memory, claude, record */
   laps?: Laps;
+  /**
+   * Save a reply's exchange after the reply goes out, not before (saving took
+   * up to 0.8 s). Only when the caller has already loaded conversationId as
+   * this learner's (/v1/turn), since a bad id would start a new conversation
+   * whose id the reply couldn't carry. Openings always save first: the reply
+   * needs the new id.
+   */
+  saveAfterReply?: boolean;
 }
 
 export interface TakeTurnResult {
@@ -107,8 +116,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // reply: recording problems are reported and the conversation carries on.
   let savedId: string | null = null;
   if (learnerId) {
-    try {
-      savedId = await recordTurn({
+    const save = () =>
+      recordTurn({
         learnerId,
         conversationId: conversationId ?? null,
         character,
@@ -117,9 +126,16 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         learnerSaid: transcript.length ? learnerSaid : undefined,
         reply,
         memory,
+      }).catch((err) => {
+        p.onSoftError('recording', err);
+        return null;
       });
-    } catch (err) {
-      p.onSoftError('recording', err);
+    if (conversationId && p.saveAfterReply) {
+      // Readers of this conversation wait for it (lib/recording.ts → saveLater)
+      void saveLater(conversationId, save);
+      savedId = conversationId;
+    } else {
+      savedId = await save();
     }
   }
   p.laps?.lap('record');

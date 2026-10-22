@@ -21,6 +21,33 @@ export function recordingEnabled(): boolean {
   return !!process.env.DATABASE_URL;
 }
 
+/**
+ * Saves still running per conversation. takeTurn saves a reply's exchange
+ * after the reply has gone out (it took up to 0.8 s, 2026-10-22), so anything
+ * that reads a conversation waits here first: the next turn, the reply
+ * buttons, ending it. Saves for one conversation run in order. One server
+ * process per country (Railway), so an in-memory queue covers every reader.
+ */
+const pendingSaves = new Map<string, Promise<void>>();
+
+/** Run `save` after any earlier save for this conversation; readers wait for it */
+export function saveLater(conversationId: string, save: () => Promise<unknown>): Promise<void> {
+  const run = (pendingSaves.get(conversationId) ?? Promise.resolve()).then(save).then(
+    () => undefined,
+    () => undefined // the save reports its own errors
+  );
+  pendingSaves.set(conversationId, run);
+  void run.then(() => {
+    if (pendingSaves.get(conversationId) === run) pendingSaves.delete(conversationId);
+  });
+  return run;
+}
+
+/** Resolves once every save started for this conversation has finished */
+export async function savesDone(conversationId: string): Promise<void> {
+  await pendingSaves.get(conversationId);
+}
+
 interface RecordTurnParams {
   learnerId: string;
   /** From the browser; null on the opening line */
@@ -74,6 +101,7 @@ export async function recordTurn(p: RecordTurnParams): Promise<string | null> {
  * by the app, so history can't be made up or padded.
  */
 export async function loadConversationTurns(conversationId: string, learnerId: string): Promise<Turn[] | null> {
+  await savesDone(conversationId);
   const result = await query<{ turns: { who: 'npc' | 'learner'; text: string; en?: string }[] }>(
     'SELECT turns FROM conversations WHERE id = $1 AND learner_id = $2',
     [conversationId, learnerId]
@@ -87,6 +115,7 @@ export async function loadConversationTurns(conversationId: string, learnerId: s
 export async function markConversationEnded(conversationId: string, learnerId: string): Promise<void> {
   if (!recordingEnabled()) return;
   try {
+    await savesDone(conversationId);
     await query('UPDATE conversations SET ended_at = now() WHERE id = $1 AND learner_id = $2', [conversationId, learnerId]);
   } catch (err) {
     console.error(JSON.stringify({ level: 'error', where: 'recording end', message: err instanceof Error ? err.message : String(err) }));

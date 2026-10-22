@@ -3,7 +3,7 @@
 // DATABASE_URL=postgres://… npm run test:recording
 import { randomUUID } from 'crypto';
 import { query, closePool } from '@/lib/db';
-import { recordTurn, markConversationEnded, recentConversations, conversationAsText } from '@/lib/recording';
+import { recordTurn, markConversationEnded, recentConversations, conversationAsText, saveLater, loadConversationTurns } from '@/lib/recording';
 import type { CharacterSheet } from '@/lib/types';
 
 if (!process.env.DATABASE_URL) {
@@ -54,6 +54,17 @@ async function main() {
   const mine = recent.find((c) => c.id === id);
   if (!mine) problems.push('not in recent conversations');
   else if (!conversationAsText(mine).includes('YOU : Un caffè, per favore')) problems.push('text transcript missing the learner line');
+
+  // Saved after the reply went out (/v1/turn, 2026-10-22): the next turn's
+  // load still sees the exchange, even though the save hadn't finished
+  const later = await recordTurn({ ...base, learnerId: me, conversationId: null, reply: { line: 'Prego?', en: 'Yes?' } });
+  if (!later) throw new Error('opening not recorded');
+  void saveLater(later, async () => {
+    await new Promise((r) => setTimeout(r, 100));
+    await recordTurn({ ...base, learnerId: me, conversationId: later, learnerSaid: 'Un cornetto', reply: { line: 'Ecco.', en: 'Here.' } });
+  });
+  const seen = (await loadConversationTurns(later, me))?.map((t) => t.transcript).join(' | ');
+  if (seen !== 'Prego? | Un cornetto | Ecco.') problems.push(`the next turn read the conversation before the save: ${seen}`);
 
   await query('DELETE FROM learners WHERE id = ANY($1)', [[me, other]]);
 }
