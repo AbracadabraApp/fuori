@@ -60,7 +60,7 @@ import Testing
         var lines = try #require(onboarding["lines"] as? [String: Any])
         #expect(try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json)).onboarding?.lines.addressLines == nil)
         lines["askName"] = ["line": "Come ti chiami? Tocca il microfono e dimmi il tuo nome.", "en": "What's your name? Tap the microphone and tell me your name."]
-        lines["address"] = ["line": "Piacere, {name}! In italiano le parole cambiano: a una donna dico «benvenuta», a un uomo «benvenuto». Per te?", "en": "Nice to meet you, {name}! In Italian words change: to a woman I say benvenuta, to a man benvenuto. Which for you?"]
+        lines["address"] = ["line": "Piacere, {name}! A una donna dico «benvenuta», a un uomo «benvenuto». Per te?", "en": "Nice to meet you, {name}! To a woman I say benvenuta, to a man benvenuto. Which for you?"]
         lines["asWoman"] = ["line": "Benvenuta!", "en": "to a woman"]
         lines["asMan"] = ["line": "Benvenuto!", "en": "to a man"]
         lines["welcomeWoman"] = ["line": "Benvenuta, {name}!", "en": "Welcome, {name}!"]
@@ -73,7 +73,7 @@ import Testing
         #expect(address.welcomeMan.named("Giosuè").line == "Benvenuto, Giosuè!")
         #expect(address.welcomeMan.named("Giosuè").en == "Welcome, Giosuè!")
         #expect(address.welcomeWoman.named(nil).line == "Benvenuta!")
-        #expect(address.address.named(nil).line.hasPrefix("Piacere! In italiano"))
-        #expect(address.address.named(nil).en.hasPrefix("Nice to meet you! In Italian"))
+        #expect(address.address.named(nil).line.hasPrefix("Piacere! A una donna"))
+        #expect(address.address.named(nil).en.hasPrefix("Nice to meet you! To a woman"))
     }
 }

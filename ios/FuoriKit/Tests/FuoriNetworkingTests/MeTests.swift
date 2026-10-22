@@ -7,9 +7,9 @@ import Testing
 /// which means off: no question in onboarding, no Settings row.
 @Suite struct MeTests {
     @Test func readsAddress() throws {
-        let on = Data(#"{"learnerId":"l","country":"it","visits":{},"level":"beginner","onboarded":true,"addressOn":true,"addressedAs":"f"}"#.utf8)
-        let notChosen = Data(#"{"learnerId":"l","country":"it","visits":{},"level":null,"onboarded":false,"addressOn":true}"#.utf8)
-        let old = Data(#"{"learnerId":"l","country":"it","visits":{},"level":null,"onboarded":false}"#.utf8)
+        let on = Data(#"{"learnerId":"l","country":"xx","visits":{},"level":"beginner","onboarded":true,"addressOn":true,"addressedAs":"f"}"#.utf8)
+        let notChosen = Data(#"{"learnerId":"l","country":"xx","visits":{},"level":null,"onboarded":false,"addressOn":true}"#.utf8)
+        let old = Data(#"{"learnerId":"l","country":"xx","visits":{},"level":null,"onboarded":false}"#.utf8)
         let me = try JSONDecoder().decode(APIClient.Me.self, from: on)
         #expect(me.addressOn == true && me.addressedAs == "f")
         let fresh = try JSONDecoder().decode(APIClient.Me.self, from: notChosen)
