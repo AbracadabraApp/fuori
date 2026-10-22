@@ -11,6 +11,7 @@
  *   COUNTRY=es-mx npm run measure:turn -- --turns=8
  *   npm run measure:turn -- --url=http://localhost:3000 --keep
  *   npm run measure:turn -- --no-early   # the voice made only when asked, as before 2026-10-22
+ *   npm run measure:turn -- --stream     # streamed, as the app asks: the voice from the first sentence
  *
  * The learner's recordings are made once with the greeter's hosted voice
  * (through /v1/speak) and converted to m4a with afconvert, like the app's.
@@ -37,6 +38,33 @@ const turns = Number(arg('turns') ?? 5);
 // to the turn, so /v1/speak makes the voice from scratch, as before 2026-10-22
 const SPEED = 0.9;
 const turnSpeed = process.argv.includes('--no-early') ? 0.7 : SPEED;
+// --stream: the turn streamed as the app asks for it (Accept: application/x-ndjson):
+// the voice starts with the first sentence when the line has more than one
+const stream = process.argv.includes('--stream');
+
+/** A streamed /v1/turn: ms to the first sentence (if any), ms to the reply, the reply */
+async function streamedTurn(base: string, headers: Record<string, string>, body: unknown) {
+  const t = performance.now();
+  const res = await fetch(base + '/v1/turn', { method: 'POST', headers: { ...headers, 'Content-Type': 'application/json', Accept: 'application/x-ndjson' }, body: JSON.stringify(body) });
+  if (!res.ok || !res.body) throw new Error(`/v1/turn → ${res.status} ${await res.text()}`);
+  let first: { text: string; ms: number } | undefined;
+  let buffered = '';
+  const decoder = new TextDecoder();
+  for await (const chunk of res.body as unknown as AsyncIterable<Uint8Array>) {
+    buffered += decoder.decode(chunk, { stream: true });
+    let nl: number;
+    while ((nl = buffered.indexOf('\n')) >= 0) {
+      const line = buffered.slice(0, nl);
+      buffered = buffered.slice(nl + 1);
+      if (!line.trim()) continue;
+      const event = JSON.parse(line);
+      if (event.first) first = { text: event.first, ms: Math.round(performance.now() - t) };
+      else if (event.reply) return { first, ms: Math.round(performance.now() - t), reply: event.reply as { line: string; conversationId: string } };
+      else if (event.error) throw new Error(`/v1/turn streamed error ${JSON.stringify(event)}`);
+    }
+  }
+  throw new Error('/v1/turn stream ended without a reply');
+}
 
 // What the learner says, a short line a turn, as in a real conversation
 const LINES: Record<string, string[]> = {
@@ -110,6 +138,34 @@ async function main() {
     const opening = await timed(json('/v1/turn', { cityId: city.id, placeId: place.id, speed: turnSpeed }));
     const conversationId = (JSON.parse(new TextDecoder().decode(opening.body)) as { conversationId: string }).conversationId;
     console.log(`opening: ${opening.step.client} ms  (server ${JSON.stringify(opening.step.server)})\n`);
+
+    if (stream) {
+      // Tap to the first sound: transcribe, then the first sentence (or the whole
+      // reply when it's one sentence), then its voice
+      const rows: { wait: number; split: boolean; firstMs: number; replyMs: number; voiceMs: number; words: number }[] = [];
+      for (let i = 0; i < turns; i++) {
+        const form = new FormData();
+        form.append('audio', new Blob([new Uint8Array(recordings[i % recordings.length])], { type: 'audio/m4a' }), 'speech.m4a');
+        const tr = await timed(() => fetch(`${base}/v1/transcribe`, { method: 'POST', headers: auth, body: form }));
+        const said = (JSON.parse(new TextDecoder().decode(tr.body)) as { text: string }).text;
+        const tu = await streamedTurn(base, { ...auth, 'x-fuori-id': `measure-${Date.now()}` }, { cityId: city.id, placeId: place.id, conversationId, learnerSaid: said, speed: turnSpeed });
+        const firstText = (tu.first?.text ?? tu.reply.line).trim();
+        const sp = await timed(json('/v1/speak', { text: firstText, characterId: person.id, speed: SPEED }));
+        // The rest, as the app asks for it after the first sentence (not timed: it plays after)
+        if (tu.first) await timed(json('/v1/speak', { text: tu.reply.line.slice(tu.first.text.length).trim(), characterId: person.id, speed: SPEED }));
+        const toVoice = tu.first ? tu.first.ms : tu.ms;
+        const wait = tr.step.client + toVoice + sp.step.client;
+        rows.push({ wait, split: !!tu.first, firstMs: toVoice, replyMs: tu.ms, voiceMs: sp.step.client, words: tu.reply.line.split(/\s+/).length });
+        console.log(`turn ${i + 1}: ${wait} ms = transcribe ${tr.step.client} + ${tu.first ? `first sentence ${tu.first.ms} (whole reply ${tu.ms})` : `reply ${tu.ms} (one sentence)`} + voice ${sp.step.client}   → "${tu.reply.line}"`);
+      }
+      const m = (f: (r: (typeof rows)[number]) => number) => median(rows.map(f));
+      console.log(`\nMedian over ${rows.length} turns (ms), streamed, from tapping done to the voice starting:`);
+      console.log(`  total wait          ${m((r) => r.wait)}`);
+      console.log(`  to the first words  ${m((r) => r.firstMs)}   (whole reply ${m((r) => r.replyMs)}; split ${rows.filter((r) => r.split).length} of ${rows.length})`);
+      console.log(`  voice               ${m((r) => r.voiceMs)}`);
+      console.log(`  reply length        ${m((r) => r.words)} words`);
+      return;
+    }
 
     const rows: { transcribe: Step; turn: Step; speak: Step; words: number }[] = [];
     for (let i = 0; i < turns; i++) {
