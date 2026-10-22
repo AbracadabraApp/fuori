@@ -85,6 +85,67 @@ public actor APIClient {
         return try await send(post("v1/turn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed)), signedIn: true)
     }
 
+    /// POST /v1/turn, streamed: `onFirst` gets the line's first sentence as
+    /// soon as it's written (exactly as the line starts; its voice is already
+    /// being made), while the rest is still being written; then the whole
+    /// reply comes back as from `turn`. A line of one sentence, or a server
+    /// that doesn't stream, gives no `onFirst`.
+    public func turnStreamed(cityId: String, placeId: String, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, onFirst: @escaping @Sendable (String) -> Void) async throws -> TurnReply {
+        struct Body: Encodable { let cityId: String; let placeId: String; let conversationId: String?; let learnerSaid: String?; let speed: Double? }
+        var req = try post("v1/turn", json: Body(cityId: cityId, placeId: placeId, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed))
+        req.setValue("application/x-ndjson", forHTTPHeaderField: "Accept")
+        req.setValue("Bearer \(try await ensureToken())", forHTTPHeaderField: "Authorization")
+        let requestId = ErrorCode.make()
+        req.setValue(requestId, forHTTPHeaderField: "x-fuori-id")
+        let (bytes, response) = try await session.bytes(for: req)
+        let status = (response as? HTTPURLResponse)?.statusCode ?? 0
+        guard (200..<300).contains(status) else {
+            var data = Data()
+            for try await byte in bytes { data.append(byte) }
+            var error = APIError.from(data: data, status: status)
+            error.requestId = requestId
+            if error.code == .unauthorized { token = nil }
+            throw error
+        }
+        for try await line in bytes.lines {
+            switch try TurnStreamEvent.parse(line) {
+            case .first(let first): onFirst(first)
+            case .reply(let reply): return reply
+            case .error(var error):
+                error.requestId = requestId
+                throw error
+            case nil: continue
+            }
+        }
+        var error = APIError(code: .serverError, message: "The reply stopped before it finished", retryable: true, status: status)
+        error.requestId = requestId
+        throw error
+    }
+
+    /// One line of a streamed /v1/turn
+    public enum TurnStreamEvent: Equatable, Sendable {
+        case first(String)
+        case reply(TurnReply)
+        case error(APIError)
+
+        /// nil for a blank line or one this build doesn't know. A server that
+        /// doesn't stream answers with the reply itself, read as `.reply`.
+        public static func parse(_ line: String) throws -> TurnStreamEvent? {
+            let data = Data(line.utf8)
+            guard !line.trimmingCharacters(in: .whitespaces).isEmpty else { return nil }
+            struct Event: Decodable { let first: String?; let reply: TurnReply?; let error: APIError?; let status: Int? }
+            let event = try JSONDecoder().decode(Event.self, from: data)
+            if let first = event.first { return .first(first) }
+            if let reply = event.reply { return .reply(reply) }
+            if var error = event.error {
+                error.status = event.status ?? 0
+                return .error(error)
+            }
+            if let reply = try? JSONDecoder().decode(TurnReply.self, from: data) { return .reply(reply) }
+            return nil
+        }
+    }
+
     /// One of the two reply buttons while scaffolding: a whole line in the
     /// language being learned, and its English
     public struct ReplyOption: Codable, Sendable, Equatable, Hashable {

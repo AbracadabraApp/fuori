@@ -176,7 +176,7 @@ public final class ConversationModel {
         do {
             try AudioSession.activate()
             let started = Self.now()
-            let reply = try await api.turn(cityId: city.id, placeId: place.id, speed: speed)
+            let reply = try await requestTurn(learnerSaid: nil)
             time("opening", since: started)
             debug.promptVersion = reply.promptVersion
             conversationId = reply.conversationId
@@ -194,6 +194,14 @@ public final class ConversationModel {
         stage = scaffolding ? (reply.stage.flatMap(Stage.init(rawValue:)) ?? .tap) : nil
         readingAloud = false
         if phase == .paused { pendingReply = reply; line = reply.line; english = reply.en; shown = nil; replies = nil; chosen = nil; writeReplies(); return }
+        if let head {
+            self.head = nil
+            if reply.line.hasPrefix(head.text), await sayRest(of: reply, after: head, generation: generation) { return }
+            // Not said (its voice failed) or not this line: the whole line, as usual
+            head.task.cancel()
+            voice.stop()
+            guard generation == self.generation, phase == .speaking else { return }
+        }
         line = reply.line
         english = reply.en
         shown = 0
@@ -222,13 +230,122 @@ public final class ConversationModel {
         await openTurn()
     }
 
+    // MARK: - The first sentence first (/v1/turn streamed; roadmap N4, speed)
+
+    /// The line's first sentence, said while the rest of the reply is written
+    private struct Head {
+        /// Exactly as the line starts, with the space after it
+        let text: String
+        /// True once it has been said through
+        let task: Task<Bool, Never>
+    }
+    private var head: Head?
+    /// A turn request is on its way (a first sentence may start meanwhile)
+    private var awaitingReply = false
+    /// The learner tapped while the character spoke: the rest isn't said
+    private var stoppedByTap = false
+
+    /// POST /v1/turn, streamed: the first sentence starts being said as soon
+    /// as it's written, and present() says the rest
+    private func requestTurn(learnerSaid: String?) async throws -> APIClient.TurnReply {
+        head = nil
+        awaitingReply = true
+        defer { awaitingReply = false }
+        let generation = self.generation
+        return try await api.turnStreamed(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed) { [weak self] first in
+            Task { @MainActor in self?.startHead(first, generation: generation) }
+        }
+    }
+
+    private func startHead(_ first: String, generation: Int) {
+        // Only while still waiting for the reply: once it's here, present() says the whole line
+        guard awaitingReply, head == nil, generation == self.generation, phase == .thinking || phase == .starting else { return }
+        stoppedByTap = false
+        line = first
+        english = nil
+        shown = 0
+        replies = nil
+        chosen = nil
+        phase = .speaking
+        let said = first.trimmingCharacters(in: .whitespacesAndNewlines)
+        let task = Task { [weak self] () -> Bool in
+            guard let self else { return false }
+            do {
+                let started = Self.now()
+                let audio = try await self.api.speak(text: said, characterId: self.character.id, speed: self.speed)
+                self.time("voice first", since: started)
+                guard generation == self.generation, self.phase == .speaking, !self.stoppedByTap else { return false }
+                self.startReveal(first)
+                try await self.voice.play(audio)
+                return generation == self.generation
+            } catch {
+                guard generation == self.generation else { return false }
+                // present() says the whole line instead, the phone's voice if need be
+                self.report(error, step: "speak")
+                return false
+            }
+        }
+        head = Head(text: first, task: task)
+    }
+
+    /// The reply has come while its first sentence is being said: say the
+    /// rest once it finishes. False when the first sentence wasn't said, so
+    /// present() says the whole line.
+    private func sayRest(of reply: APIClient.TurnReply, after head: Head, generation: Int) async -> Bool {
+        line = reply.line
+        english = reply.en
+        replies = nil
+        chosen = nil
+        writeReplies()
+        let after = reply.line.dropFirst(head.text.count)
+        let offset = head.text.count + after.prefix(while: \.isWhitespace).count
+        let rest = after.trimmingCharacters(in: .whitespacesAndNewlines)
+        // The rest's voice was started on the server when the line was written
+        let restAudio = Task { [api, character, speed] () -> Result<Data, Error>? in
+            guard !rest.isEmpty else { return nil }
+            do { return .success(try await api.speak(text: rest, characterId: character.id, speed: speed)) } catch { return .failure(error) }
+        }
+        let said = await head.task.value
+        guard generation == self.generation else { restAudio.cancel(); return true }
+        if stoppedByTap || phase != .speaking {
+            restAudio.cancel()
+            finishReveal()
+            if phase == .speaking { await openTurn() }
+            return true
+        }
+        guard said else { restAudio.cancel(); return false }
+        switch await restAudio.value {
+        case .success(let audio):
+            guard generation == self.generation, phase == .speaking else { return true }
+            debug.voice = "hosted, first sentence first"
+            startReveal(rest, offset: offset)
+            do { try await voice.play(audio) } catch {
+                report(error, step: "speak")
+                await voice.speak(rest, language: language.speechLang, rate: Float(speed))
+            }
+        case .failure(let error):
+            guard generation == self.generation, phase == .speaking else { return true }
+            let code = report(error, step: "speak")
+            debug.voice = "phone for the rest (hosted failed, \(code))"
+            startReveal(rest, offset: offset)
+            await voice.speak(rest, language: language.speechLang, rate: Float(speed))
+        case nil:
+            break
+        }
+        finishReveal()
+        guard generation == self.generation, phase == .speaking else { return true }
+        await openTurn()
+        return true
+    }
+
     /// Types the line out in step with the voice (lib/speech/reveal.ts on the web)
-    private func startReveal(_ text: String) {
+    /// `offset`: where `text` starts in the line (the rest after a first sentence)
+    private func startReveal(_ text: String, offset: Int = 0) {
         revealTask?.cancel()
         revealTask = Task { [weak self] in
             while !Task.isCancelled {
                 guard let self else { return }
-                let n = Reveal.count(text, fraction: self.voice.progress)
+                let n = offset + Reveal.count(text, fraction: self.voice.progress)
                 if n > (self.shown ?? 0) { self.shown = n }
                 try? await Task.sleep(for: .milliseconds(33))
             }
@@ -336,7 +453,9 @@ public final class ConversationModel {
     /// start and end it
     public func tapTurn() async {
         switch phase {
-        case .speaking: voice.stop() // present() then opens the learner's turn
+        case .speaking:
+            stoppedByTap = true // a first sentence's rest isn't said either
+            voice.stop() // present() then opens the learner's turn
         case .tapToTalk: await startRecording()
         case .listening, .hearing: await finishTurn()
         default: break
@@ -410,7 +529,7 @@ public final class ConversationModel {
             }
             step = "turn"
             started = Self.now()
-            let reply = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: said, speed: speed)
+            let reply = try await requestTurn(learnerSaid: said)
             learnerLines += 1
             time("turn", since: started)
             debug.promptVersion = reply.promptVersion
@@ -497,7 +616,7 @@ public final class ConversationModel {
         do {
             debug.heard = "(\(how)) \(reply.line)"
             let started = Self.now()
-            let next = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: reply.line, speed: speed)
+            let next = try await requestTurn(learnerSaid: reply.line)
             learnerLines += 1
             time("turn", since: started)
             debug.promptVersion = next.promptVersion
@@ -527,7 +646,7 @@ public final class ConversationModel {
         do {
             debug.heard = "(typed) \(said)"
             let started = Self.now()
-            let reply = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: said, speed: speed)
+            let reply = try await requestTurn(learnerSaid: said)
             learnerLines += 1
             time("turn", since: started)
             debug.promptVersion = reply.promptVersion
@@ -597,6 +716,16 @@ public final class ConversationModel {
     /// Stops the voice and the mic. Only a tap resumes.
     public func pause() {
         guard phase != .paused else { return }
+        if head != nil, awaitingReply {
+            // Saying the first sentence while the rest is written: stop it, and
+            // keep the reply for resume, which says the whole line
+            head?.task.cancel()
+            head = nil
+            voice.stop()
+            finishReveal()
+            phase = .paused
+            return
+        }
         if phase == .thinking {
             // The learner's line is already on its way: let the reply arrive
             // and keep it (pendingReply) until they tap to resume
