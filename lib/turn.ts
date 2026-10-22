@@ -34,8 +34,8 @@ export async function runTurn(params: {
   levelAt?: 'system' | 'last';
   /** Records Claude's first token and token counts (the speed work) */
   laps?: Laps;
-  /** Called once, as soon as the line is written (before the English): /v1/turn starts the voice */
-  onLine?: (line: string) => void;
+  /** Called with the reply written so far, on every streamed chunk (/v1/turn's LineWatcher) */
+  onText?: (snapshot: string) => void;
 }): Promise<TurnReply> {
   const prompt = buildTurnPrompt(params);
 
@@ -58,16 +58,15 @@ export async function runTurn(params: {
   });
   const { laps } = params;
   if (laps) stream.once('text', () => laps.mark('claudeFirstToken', performance.now() - started));
-  const { onLine } = params;
-  if (onLine) {
-    let told = false;
+  const { onText } = params;
+  if (onText) {
+    let lineAt = 0;
     stream.on('text', (_delta, snapshot) => {
-      if (told) return;
-      const line = lineWhenWritten(snapshot);
-      if (line === undefined) return;
-      told = true;
-      laps?.mark('claudeLine', performance.now() - started);
-      onLine(line);
+      if (!lineAt && lineWhenWritten(snapshot) !== undefined) {
+        lineAt = performance.now() - started;
+        laps?.mark('claudeLine', lineAt);
+      }
+      onText(snapshot);
     });
   }
   const response = await stream.finalMessage();

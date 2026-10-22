@@ -14,6 +14,8 @@ export interface SynthesisParams {
   voice?: string; // voice ID or name
   speed?: number; // 0.5 to 2.0
   characterId?: string; // for voice mapping
+  /** What was said just before, in another clip: the voice carries on from it (ElevenLabs previous_text) */
+  previousText?: string;
 }
 
 export interface SynthesisResult {

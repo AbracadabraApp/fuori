@@ -1,7 +1,7 @@
 // The voice started early (lib/voice/early-voice.ts, 2026-10-22): the line is
 // found in the streamed JSON as soon as its string closes, and only then; a
 // voice is taken once, for exactly the same line. No API calls.
-import { lineWhenWritten, startEarlyVoice, takeEarlyVoice } from '@/lib/voice/early-voice';
+import { lineWhenWritten, partialLine, firstSentence, LineWatcher, startEarlyVoice, takeEarlyVoice } from '@/lib/voice/early-voice';
 import { getVoiceProvider } from '@/lib/voice/providers';
 
 const problems: string[] = [];
@@ -30,6 +30,38 @@ check('escaped quote at the end', lineWhenWritten('{"line": "Dice \\"'), undefin
 check('accents', lineWhenWritten('{"line": "Perch\\u00e9 no? È così.",'), 'Perché no? È così.');
 // An empty line isn't a line
 check('empty', lineWhenWritten('{"line": "", "en": ""}'), undefined);
+
+// The line as it's written: decoded so far, an escape cut at the end dropped
+check('partial', partialLine('{"line": "Ciao, come st')?.text, 'Ciao, come st');
+check('partial not closed', partialLine('{"line": "Ciao')?.closed, false);
+check('cut escape', partialLine('{"line": "Perch\\u00')?.text, 'Perch');
+check('cut backslash', partialLine('{"line": "Dice \\')?.text, 'Dice ');
+check('closed', partialLine('{"line": "Ciao!", "en')?.closed, true);
+
+// The first sentence: only once more follows it, never too short, a prefix of the line
+check('no end yet', firstSentence('Buongiorno, signora'), undefined);
+check('end but nothing after', firstSentence('Buongiorno, come sta? '), undefined);
+check('first sentence', firstSentence('Buongiorno, come sta? Io b'), 'Buongiorno, come sta? ');
+check('too short skipped', firstSentence('Ciao! Che bello vederti. Al'), 'Ciao! Che bello vederti. ');
+check('closing quote kept', firstSentence('Lei dice «va bene.» Poi'), 'Lei dice «va bene.» ');
+check('Spanish', firstSentence('¡Qué gusto verte otra vez! ¿Cómo'), '¡Qué gusto verte otra vez! ');
+check('ellipsis', firstSentence('Eh, non lo so… Forse'), 'Eh, non lo so… ');
+
+// The watcher on a reply arriving chunk by chunk
+const reply = JSON.stringify({ line: 'Buongiorno, come sta oggi? Io benissimo, grazie.', en: 'Good morning, how are you today? Very well, thanks.' });
+const seen: string[] = [];
+const w = new LineWatcher({ split: true, onFirst: (f) => seen.push(`first:${f}`), onLine: (l, f) => seen.push(`line:${l}|${f ?? ''}`) });
+for (let n = 1; n <= reply.length; n++) w.feed(reply.slice(0, n));
+check('watcher: first then line, once each', seen.join(' / '), 'first:Buongiorno, come sta oggi?  / line:Buongiorno, come sta oggi? Io benissimo, grazie.|Buongiorno, come sta oggi? ');
+const plain: string[] = [];
+const w2 = new LineWatcher({ split: false, onFirst: () => plain.push('first'), onLine: (l, f) => plain.push(`line:${f === undefined}`) });
+for (let n = 1; n <= reply.length; n++) w2.feed(reply.slice(0, n));
+check('watcher without split: line only', plain.join(','), 'line:true');
+const one: string[] = [];
+const w3 = new LineWatcher({ split: true, onFirst: () => one.push('first'), onLine: (l, f) => one.push(`line:${f === undefined}`) });
+const short = JSON.stringify({ line: 'Certo, subito.', en: 'Sure, right away.' });
+for (let n = 1; n <= short.length; n++) w3.feed(short.slice(0, n));
+check('one sentence: not split', one.join(','), 'line:true');
 
 // Without a hosted voice configured, nothing is started and nothing can be taken
 delete process.env.ELEVENLABS_API_KEY;

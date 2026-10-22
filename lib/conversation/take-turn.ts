@@ -40,8 +40,8 @@ export interface TakeTurnParams {
    * needs the new id.
    */
   saveAfterReply?: boolean;
-  /** Called as soon as the line is written, before the English (runTurn's onLine) */
-  onLine?: (line: string) => void;
+  /** The reply written so far, on every streamed chunk (runTurn's onText) */
+  onText?: (snapshot: string) => void;
 }
 
 export interface TakeTurnResult {
@@ -98,7 +98,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     firstTurn: tutorPrompt?.firstTurn,
     level,
     laps: p.laps,
-    onLine: p.onLine,
+    onText: p.onText,
   });
   p.laps?.lap('claude');
 

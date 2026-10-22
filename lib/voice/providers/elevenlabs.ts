@@ -85,6 +85,8 @@ export class ElevenLabsProvider implements VoiceProvider {
       body: JSON.stringify({
         text,
         model_id: 'eleven_flash_v2_5', // Flash v2.5: fast, Italian support, 32 languages
+        // The second clip of a line split for speed carries on from the first
+        ...(params.previousText ? { previous_text: params.previousText } : {}),
         voice_settings: {
           stability: 0.5,
           similarity_boost: 0.75,

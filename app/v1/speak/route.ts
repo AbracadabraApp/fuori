@@ -45,7 +45,7 @@ export async function POST(request: Request) {
     }
     try {
       // Started by /v1/turn as soon as the line was written (lib/voice/early-voice.ts)
-      const early = await takeEarlyVoice(learnerId, characterId, speed, text);
+      const early = await takeEarlyVoice(learnerId, characterId, speed, text.trim());
       laps.facts.early = early === undefined ? 'no' : early ? 'yes' : 'failed';
       const result =
         early ??
