@@ -1,5 +1,5 @@
 {
-  "about": "Flashcards (Josh, 2026-10-21): a production candidate, not used by the app yet. One card per word: the word with its article, the English, which sense the card teaches, and the picture (a scene that shows that sense without any writing in it). Images: 1:1, generated at 2k, saved 1200 x 1200 JPEG.",
+  "about": "Flashcards (Josh, 2026-10-21): a production candidate, not used by the app yet. One card per word: the word with its article, the English, which sense the card teaches, and the picture: image is object (one simple thing on plain paper), scene (a wide scene) or none (no picture works: the card uses the English where a picture would go). Images: 1:1, generated at 2k, saved 1200 x 1200 JPEG.",
   "language": "es-mx",
   "image": {
     "aspect_ratio": "1:1",
@@ -14,7 +14,8 @@
       "gender": "m",
       "en": "shoe",
       "note": "",
-      "picture": "A pair of polished leather shoes on a tiled floor"
+      "image": "object",
+      "picture": "A leather shoe, alone on plain paper, centred with plenty of space around it"
     },
     {
       "word": "tarde",
@@ -22,6 +23,7 @@
       "gender": "f",
       "en": "afternoon",
       "note": "Also an adverb: late (llegar tarde); the card teaches the afternoon",
+      "image": "scene",
       "picture": "A Mexican plaza in warm afternoon light, long shadows under the trees"
     },
     {
@@ -30,7 +32,8 @@
       "gender": "m",
       "en": "pleasure; taste",
       "note": "Mucho gusto (Nice to meet you)",
-      "picture": "Two people shaking hands warmly as they meet in a doorway"
+      "image": "none",
+      "picture": ""
     },
     {
       "word": "día",
@@ -38,7 +41,8 @@
       "gender": "m",
       "en": "day",
       "note": "Masculine though it ends in -a",
-      "picture": "Bright midday sun over a colourful Mexican street"
+      "image": "none",
+      "picture": ""
     },
     {
       "word": "vez",
@@ -46,7 +50,8 @@
       "gender": "f",
       "en": "time (as in once, twice)",
       "note": "Una vez, tres veces; not time on a clock",
-      "picture": "Three identical clay mugs of coffee in a row on a wooden table"
+      "image": "none",
+      "picture": ""
     },
     {
       "word": "café",
@@ -54,7 +59,8 @@
       "gender": "m",
       "en": "coffee",
       "note": "Café de olla: spiced coffee from a clay pot",
-      "picture": "A clay mug of café de olla with a cinnamon stick"
+      "image": "object",
+      "picture": "A clay mug of coffee with a cinnamon stick, alone on plain paper, centred with plenty of space around it"
     },
     {
       "word": "año",
@@ -62,7 +68,8 @@
       "gender": "m",
       "en": "year",
       "note": "",
-      "picture": "One tree shown in four seasons side by side: blossom, leaves, autumn, bare"
+      "image": "none",
+      "picture": ""
     },
     {
       "word": "joven",
@@ -70,6 +77,7 @@
       "gender": "m/f",
       "en": "young person",
       "note": "Also an adjective: young",
+      "image": "scene",
       "picture": "A young woman with a backpack walking through a market"
     },
     {
@@ -78,7 +86,8 @@
       "gender": "m",
       "en": "bread",
       "note": "Pan dulce: sweet breads",
-      "picture": "A basket of conchas and other pan dulce in a bakery window"
+      "image": "object",
+      "picture": "A concha (Mexican sweet bread), alone on plain paper, centred with plenty of space around it"
     },
     {
       "word": "olla",
@@ -86,7 +95,8 @@
       "gender": "f",
       "en": "pot (cooking pot)",
       "note": "Café de olla, frijoles de olla",
-      "picture": "A clay olla steaming on a stove"
+      "image": "object",
+      "picture": "A clay cooking pot, alone on plain paper, centred with plenty of space around it"
     },
     {
       "word": "canción",
@@ -94,6 +104,7 @@
       "gender": "f",
       "en": "song",
       "note": "",
+      "image": "scene",
       "picture": "A man with a guitar singing in a courtyard"
     },
     {
@@ -102,7 +113,8 @@
       "gender": "m",
       "en": "shine, sparkle",
       "note": "",
-      "picture": "A silver jug catching the light with a bright glint"
+      "image": "none",
+      "picture": ""
     },
     {
       "word": "agua",
@@ -110,7 +122,8 @@
       "gender": "f",
       "en": "water",
       "note": "Feminine, but el agua (it starts with a stressed a)",
-      "picture": "A glass jug of water and a glass on a sunny table"
+      "image": "object",
+      "picture": "A glass of water, alone on plain paper, centred with plenty of space around it"
     },
     {
       "word": "trabajo",
@@ -118,6 +131,7 @@
       "gender": "m",
       "en": "work; job",
       "note": "",
+      "image": "scene",
       "picture": "A carpenter planing wood in a small workshop"
     },
     {
@@ -126,7 +140,8 @@
       "gender": "f",
       "en": "window",
       "note": "",
-      "picture": "A window with painted wooden shutters open onto a street, a plant on the sill"
+      "image": "object",
+      "picture": "A window with painted wooden shutters, open, alone on plain paper, centred with plenty of space around it"
     },
     {
       "word": "nombre",
@@ -134,7 +149,8 @@
       "gender": "m",
       "en": "name",
       "note": "",
-      "picture": "A hand writing on a blank name tag, the letters too small to read"
+      "image": "none",
+      "picture": ""
     },
     {
       "word": "puesto",
@@ -142,6 +158,7 @@
       "gender": "m",
       "en": "stall (at a market)",
       "note": "Also post, position; in Mexico the street-food stall",
+      "image": "scene",
       "picture": "A taco stall at night with a striped awning and a small crowd"
     },
     {
@@ -150,7 +167,8 @@
       "gender": "m",
       "en": "son, dear (mi hijo, affectionate)",
       "note": "Said by an older person to a younger one",
-      "picture": "An older woman fondly patting a young man's cheek"
+      "image": "none",
+      "picture": ""
     },
     {
       "word": "calma",
@@ -158,7 +176,8 @@
       "gender": "f",
       "en": "calm",
       "note": "",
-      "picture": "A hammock between two palms beside still water at dawn"
+      "image": "none",
+      "picture": ""
     },
     {
       "word": "verdad",
@@ -166,7 +185,8 @@
       "gender": "f",
       "en": "truth; ¿verdad? = right?",
       "note": "Most met as the tag ¿verdad?",
-      "picture": "A person speaking earnestly with a hand on their heart"
+      "image": "none",
+      "picture": ""
     }
   ]
 }
