@@ -1,6 +1,6 @@
 # Teach plan: a model syllabus and a teach agent in Learn
 
-2026-10-21 · Josh · Draft, not built. Two agents with different jobs:
+2026-10-21 · Josh · Draft. **Step 1 done for Italy (2026-10-22):** `content/it/syllabus.json`, `content/it/syllabus-words.csv`, readable `docs/syllabus-it.md`. Mexico not started; the teach agent not built. Two agents with different jobs:
 
 1. **Magda the syllabus builder** (placeholder name), run offline once per country: reads the books and writes a model syllabus for Fuori as data.
 2. **The teach agent**, live in the Learn area: never sees the books; reads the syllabus and the learner's history and decides what to teach next and how.
