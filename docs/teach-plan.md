@@ -13,7 +13,7 @@ The books are in `books-private/` in the repo folder on Josh's laptop (git-exclu
 
 **Output:** `content/<country>/syllabus.json` and a readable `docs/syllabus-<country>.md` for Josh to review (fields below, in the prompt).
 
-**Where it runs:** where the books are (`books-private/` on the laptop): a Claude Code session at high effort, reading one source at a time and writing working notes to `books-private/syllabus-working/` as it goes, so a long run can resume. The result is committed like any other content. Once for Italy, once for Mexico. Josh's call (2026-10-21): the books are the source to learn from, including their dialogues and exercises as models; no self-imposed copyright limits on how Magda uses them.
+**Where it runs:** where the books are (`books-private/` on the laptop): a Claude Code session at high effort, reading one source at a time and writing working notes to `books-private/syllabus-working/` as it goes, so a long run can resume. The result is committed like any other content. Once for Italy, once for Mexico, covering every CEFR level the sources cover (A1 to C1), not just beginners. Josh's call (2026-10-21): the books are the source to learn from, including their dialogues and exercises as models; no self-imposed copyright limits on how Magda uses them.
 
 ```
 You are Magda, an experienced teacher of {language} to English-speaking adults.
@@ -42,16 +42,18 @@ METHOD
 2. Line the books up against each other and against the function map and the
    official inventory: where they agree on order, where they differ, what each
    covers that others don't.
-3. Reorder for a newcomer's first weeks here: survival first (greet, introduce
-   yourself, say you don't understand, ask for things, prices and numbers, pay),
-   then the rest of A1, then A2, then B1. Keep the books' logic of what must come
-   before what (a frame before the grammar that explains it; the present before
-   the past).
+3. Cover every level the sources cover, A1 through C1. At A1, reorder for a
+   newcomer's first weeks here: survival first (greet, introduce yourself, say you
+   don't understand, ask for things, prices and numbers, pay). From A2 up, follow
+   the books' progression, adapted to life here (stories of what you did, opinions,
+   plans, complaints, bureaucracy, the doctor, work, debate). Keep the books' logic
+   of what must come before what (a frame before the grammar that explains it;
+   the present before the past).
 4. Write the units. Then review the whole syllabus against every book's unit
    list: nothing important dropped, nothing out of reach too early.
 
 EACH UNIT (JSON)
-- id, level (A1/A2/B1), order, prerequisites (unit ids)
+- id, level (A1/A2/B1/B2/C1), order, prerequisites (unit ids)
 - can_do: one line, the learner's view ("Order at a bar and pay")
 - functions (from the function map)
 - frames: 3–8 short reusable chunks a person here really says, each with English
@@ -62,9 +64,11 @@ EACH UNIT (JSON)
   dialogues freely
 - grammar: only what the frames need, explained in one plain sentence, with the
   trap for English speakers
-- vocabulary: 10–25 words with article/gender and English, each tagged with its
-  level in level-words-{country}.csv and image (object / scene / none, as in
-  docs/flashcards.md)
+- vocabulary: 10–25 words across parts of speech (nouns with article/gender,
+  verbs with the forms used, adjectives with agreement, adverbs, pronouns,
+  prepositions, conjunctions, set phrases), each with English, part of speech,
+  its level (from level-words-{country}.csv for A1–A2; from the books above that)
+  and image (object / scene / none, as in docs/flashcards.md)
 - pronunciation: the one or two sounds or stresses this unit's words trip on
 - common_errors: what English speakers get wrong here, with the right form
 - culture: one practical point about life here
@@ -76,7 +80,13 @@ EACH UNIT (JSON)
 - review: when to bring it back (after 1, 3, 7 conversations…)
 
 ALSO
-- A scaffolding map: for each A1 unit, which reply-button steps fit it (tap two
+- A grammar inventory by part of speech and level: for each part of speech
+  (articles, nouns, adjectives, pronouns, verbs by tense and mood, adverbs,
+  prepositions, conjunctions, word order), what's introduced at each level and in
+  which unit, so nothing is missed and nothing lands too early.
+- An extended word list for B1–C1 in the shape of level-words-{country}.csv
+  (lemma, part of speech, level, unit, theme), since today's list stops at A2.
+- A scaffolding map (A1 only): for each A1 unit, which reply-button steps fit it (tap two
   good replies; read one aloud; choose the one that fits).
 - Coverage: check the game's beginner chips (chips-vs-syllabus.md) and the 20
   flashcard words against the units; say what's missing on either side.
@@ -86,9 +96,10 @@ ALSO
 
 Be concrete and right: every frame correct and natural for {country} today, every
 level checked against the word list. Prefer fewer, solid units to many thin ones
-(about 20–30 for A1–A2, 10–15 for B1).
-OUTPUT: syllabus.json (units, scaffolding map, coverage, decisions, gaps) and a
-readable summary for review.
+(roughly 12–15 per level).
+OUTPUT: syllabus.json (units, grammar inventory, B1–C1 word list, scaffolding
+map, coverage, decisions, gaps) and a readable summary for review, one section
+per level.
 ```
 
 ## 2. The teach agent in the Learn area
