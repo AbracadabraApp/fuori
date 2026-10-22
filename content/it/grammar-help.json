@@ -1,0 +1,4680 @@
+{
+  "source": "English Grammar for Students of Italian (Adorni & Primorac, 2nd ed.), modernised: voi for groups, gli for 'to them', visto, Cos'è.",
+  "questions": [
+    {
+      "q": "Tu or Lei: which 'you' do I use?",
+      "a": "Use tu with friends, family, children and anyone you call by first name. Use Lei with strangers, shopkeepers, officials and anyone you'd call signore or signora; when in doubt, use Lei.",
+      "examples": [
+        {
+          "it": "Ciao Marco, come stai?",
+          "en": "Hi Marco, how are you?"
+        },
+        {
+          "it": "Buongiorno, signora, come sta?",
+          "en": "Good morning, madam, how are you?"
+        }
+      ],
+      "unit": "a1-01",
+      "level": "A1"
+    },
+    {
+      "q": "Why does the polite 'you' look like 'she'?",
+      "a": "Lei, the polite 'you', takes the same verb form as lei (she). Context tells you which one is meant.",
+      "examples": [
+        {
+          "it": "Lei è di Roma, signore?",
+          "en": "Are you from Rome, sir?"
+        },
+        {
+          "it": "Lei è di Roma.",
+          "en": "She's from Rome."
+        }
+      ],
+      "unit": "a1-01",
+      "level": "A1"
+    },
+    {
+      "q": "Why do Italians say 'sto bene' and not 'sono bene'?",
+      "a": "How you are in health is expressed with stare, not essere. So 'I'm fine' is sto bene and 'How are you?' is come stai? or come sta?",
+      "examples": [
+        {
+          "it": "Come stai? Sto bene, grazie.",
+          "en": "How are you? I'm fine, thanks."
+        },
+        {
+          "it": "Mia madre non sta bene.",
+          "en": "My mother isn't well."
+        }
+      ],
+      "unit": "a1-01",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'la signora Rossi' with 'the'?",
+      "a": "When you talk about someone, a title like signora, signor or dottore takes the article. When you speak to them directly, drop it.",
+      "examples": [
+        {
+          "it": "La signora Rossi è molto gentile.",
+          "en": "Mrs Rossi is very kind."
+        },
+        {
+          "it": "Buongiorno, signora Rossi!",
+          "en": "Good morning, Mrs Rossi!"
+        }
+      ],
+      "unit": "a1-01",
+      "level": "A1"
+    },
+    {
+      "q": "How do I make a sentence negative?",
+      "a": "Put non right before the verb. There's nothing else to add.",
+      "examples": [
+        {
+          "it": "Non ho capito.",
+          "en": "I didn't understand."
+        },
+        {
+          "it": "Non parlo tedesco.",
+          "en": "I don't speak German."
+        }
+      ],
+      "unit": "a1-02",
+      "level": "A1"
+    },
+    {
+      "q": "Where is 'do' or 'did' in an Italian negative?",
+      "a": "Nowhere: Italian has no word for 'do/does/did'. Non plus the verb does the whole job.",
+      "examples": [
+        {
+          "it": "Non lavoro il lunedì.",
+          "en": "I don't work on Mondays."
+        },
+        {
+          "it": "Il treno non è arrivato.",
+          "en": "The train didn't arrive."
+        }
+      ],
+      "unit": "a1-02",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'slowly' or 'clearly'?",
+      "a": "Many adverbs are made by adding -mente to the feminine adjective (lenta → lentamente, chiara → chiaramente). Adverbs never change their ending.",
+      "examples": [
+        {
+          "it": "Può parlare più lentamente?",
+          "en": "Could you speak more slowly?"
+        },
+        {
+          "it": "Parla chiaramente.",
+          "en": "She speaks clearly."
+        }
+      ],
+      "unit": "a1-02",
+      "level": "A1"
+    },
+    {
+      "q": "Why does 'come si dice?' use si?",
+      "a": "Si plus a verb means 'one' or 'people' in general, so come si dice? is literally 'how does one say?'.",
+      "examples": [
+        {
+          "it": "Come si dice 'fork' in italiano?",
+          "en": "How do you say 'fork' in Italian?"
+        },
+        {
+          "it": "Come si scrive?",
+          "en": "How do you spell it?"
+        }
+      ],
+      "unit": "a1-02",
+      "level": "A1"
+    },
+    {
+      "q": "Do I need to say 'io', 'tu', 'lui'?",
+      "a": "Usually not: the verb ending already says who. Add the pronoun only for emphasis or contrast, or to make clear who in the third person.",
+      "examples": [
+        {
+          "it": "Sono americano.",
+          "en": "I'm American."
+        },
+        {
+          "it": "Io lavoro, lui no.",
+          "en": "I work; he doesn't."
+        }
+      ],
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "q": "How do I ask a yes/no question?",
+      "a": "Say the sentence with your voice rising at the end. You can also put the subject after the verb; there's no 'do' to add.",
+      "examples": [
+        {
+          "it": "Sei americano?",
+          "en": "Are you American?"
+        },
+        {
+          "it": "Parla inglese, Lei?",
+          "en": "Do you speak English?"
+        }
+      ],
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "q": "Why is it 'mi chiamo Josh'?",
+      "a": "Chiamarsi means 'to call oneself', so Italians say 'I call myself Josh'. The mi is part of the verb and can't be dropped.",
+      "examples": [
+        {
+          "it": "Mi chiamo Josh. E tu, come ti chiami?",
+          "en": "My name's Josh. And what's your name?"
+        },
+        {
+          "it": "Come si chiama, signora?",
+          "en": "What's your name, madam?"
+        }
+      ],
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'americana' for a woman and 'americano' for a man?",
+      "a": "Italian adjectives match the gender and number of the person or thing. Adjectives in -o have four forms (-o, -a, -i, -e); adjectives in -e have two (-e, -i).",
+      "examples": [
+        {
+          "it": "Anna è americana.",
+          "en": "Anna is American."
+        },
+        {
+          "it": "Paul e Kate sono inglesi.",
+          "en": "Paul and Kate are English."
+        }
+      ],
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'l'Italia' with an article?",
+      "a": "Countries usually take the article (l'Italia, gli Stati Uniti), but after in for 'in/to a country' the article normally drops.",
+      "examples": [
+        {
+          "it": "L'Italia è bellissima.",
+          "en": "Italy is beautiful."
+        },
+        {
+          "it": "Abito in Italia da un mese.",
+          "en": "I've been living in Italy for a month."
+        }
+      ],
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "q": "'To Rome' or 'in Rome': a or in?",
+      "a": "Cities take a, countries and regions take in. The same word covers 'to' and 'in'.",
+      "examples": [
+        {
+          "it": "Abito a Firenze.",
+          "en": "I live in Florence."
+        },
+        {
+          "it": "Vado in Toscana.",
+          "en": "I'm going to Tuscany."
+        }
+      ],
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "q": "Che, che cosa or cosa?",
+      "a": "All three mean 'what?' and are interchangeable; cosa is the most common in speech.",
+      "examples": [
+        {
+          "it": "Cosa fai qui?",
+          "en": "What are you doing here?"
+        },
+        {
+          "it": "Che cosa prendi?",
+          "en": "What are you having?"
+        }
+      ],
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "q": "Why is a table feminine?",
+      "a": "Every Italian noun is masculine or feminine, and for things the choice is arbitrary. Learn each noun with its article so you learn its gender too.",
+      "examples": [
+        {
+          "it": "la sedia",
+          "en": "the chair"
+        },
+        {
+          "it": "il tavolo",
+          "en": "the table"
+        }
+      ],
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "q": "How can I tell if a noun is masculine or feminine?",
+      "a": "The ending usually tells you: -o is masculine, -a feminine, a consonant masculine, and -zione, -tà feminine. Nouns in -e can be either, so learn them with il or la.",
+      "examples": [
+        {
+          "it": "il cornetto, la spremuta",
+          "en": "the croissant, the fresh juice"
+        },
+        {
+          "it": "il bar, la lezione",
+          "en": "the bar, the lesson"
+        }
+      ],
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'il problema' if -a is feminine?",
+      "a": "A few nouns break the pattern: il problema and il programma are masculine, la mano is feminine. These have to be learned one by one.",
+      "examples": [
+        {
+          "it": "Nessun problema!",
+          "en": "No problem!"
+        },
+        {
+          "it": "Mi fa male la mano.",
+          "en": "My hand hurts."
+        }
+      ],
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'uno spritz' but 'un caffè'?",
+      "a": "Masculine words starting with z or s + consonant take uno; other masculine words take un. Feminine words take una, or un' before a vowel.",
+      "examples": [
+        {
+          "it": "Uno spritz e un caffè, per favore.",
+          "en": "A spritz and a coffee, please."
+        },
+        {
+          "it": "Un'aranciata e una spremuta.",
+          "en": "An orange soda and a fresh juice."
+        }
+      ],
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "q": "How do I make a noun plural?",
+      "a": "Change the last vowel: -o and -e become -i, -a becomes -e. Nouns ending in an accented vowel or a consonant don't change.",
+      "examples": [
+        {
+          "it": "due cappuccini, due cornetti",
+          "en": "two cappuccinos, two croissants"
+        },
+        {
+          "it": "due birre, due bicchieri",
+          "en": "two beers, two glasses"
+        }
+      ],
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'due caffè' and not 'due caffèi'?",
+      "a": "Nouns ending in an accented vowel or a consonant are the same in the plural; the article or number shows it's plural.",
+      "examples": [
+        {
+          "it": "Due caffè, per favore.",
+          "en": "Two coffees, please."
+        },
+        {
+          "it": "i bar, le città",
+          "en": "the bars, the cities"
+        }
+      ],
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'it' as a subject?",
+      "a": "You don't say it: the verb alone is enough. Italian has no everyday word for 'it' as a subject.",
+      "examples": [
+        {
+          "it": "Com'è il caffè? È buonissimo.",
+          "en": "How's the coffee? It's excellent."
+        },
+        {
+          "it": "Piove.",
+          "en": "It's raining."
+        }
+      ],
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "q": "How do I ask politely for something?",
+      "a": "Use vorrei (I would like) or a conditional like potrebbe (could you). Mi dà...? and posso avere...? also work at the counter.",
+      "examples": [
+        {
+          "it": "Vorrei un cappuccino, per favore.",
+          "en": "I'd like a cappuccino, please."
+        },
+        {
+          "it": "Potrebbe ripetere?",
+          "en": "Could you repeat that?"
+        }
+      ],
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'a coffee cup' or 'orange juice'?",
+      "a": "Italian doesn't stack nouns. It says noun + da/di/a + noun: 'a cup for coffee', 'juice of orange'. Da shows what something is for, di what it's made of.",
+      "examples": [
+        {
+          "it": "una tazza da caffè",
+          "en": "a coffee cup"
+        },
+        {
+          "it": "un succo d'arancia",
+          "en": "an orange juice"
+        }
+      ],
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'I'm 30'?",
+      "a": "Age uses avere: 'I have thirty years'. Ask with quanti anni hai?",
+      "examples": [
+        {
+          "it": "Ho trent'anni.",
+          "en": "I'm thirty."
+        },
+        {
+          "it": "Quanti anni ha Sua figlia?",
+          "en": "How old is your daughter?"
+        }
+      ],
+      "unit": "a1-05",
+      "level": "A1"
+    },
+    {
+      "q": "Why are there so many words for 'the'?",
+      "a": "'The' has to match the noun's gender, its number and its first sound: il, lo, l', la in the singular; i, gli, le in the plural.",
+      "examples": [
+        {
+          "it": "il pane, lo zucchero, l'olio, la pasta",
+          "en": "the bread, the sugar, the oil, the pasta"
+        },
+        {
+          "it": "i biscotti, gli spaghetti, le uova",
+          "en": "the biscuits, the spaghetti, the eggs"
+        }
+      ],
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "q": "When do I use lo and gli?",
+      "a": "Lo (plural gli) goes before masculine words starting with z, s + consonant, gn, ps or y. Before a vowel, the masculine singular is l' and the plural is gli.",
+      "examples": [
+        {
+          "it": "lo studente, gli studenti",
+          "en": "the student, the students"
+        },
+        {
+          "it": "l'amico, gli amici",
+          "en": "the friend, the friends"
+        }
+      ],
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'some'?",
+      "a": "Use di + 'the': del, dello, della, dell', dei, degli, delle. Un po' di also works for 'a bit of'.",
+      "examples": [
+        {
+          "it": "Vorrei del pane.",
+          "en": "I'd like some bread."
+        },
+        {
+          "it": "Ho comprato delle pesche.",
+          "en": "I bought some peaches."
+        }
+      ],
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "q": "Why is there no 'del' in 'non ho pane'?",
+      "a": "The 'some' word is dropped after non, and it's optional in questions.",
+      "examples": [
+        {
+          "it": "Avete pane? No, oggi non abbiamo pane.",
+          "en": "Do you have any bread? No, we don't have any bread today."
+        },
+        {
+          "it": "Non ho amici qui.",
+          "en": "I don't have any friends here."
+        }
+      ],
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "q": "C'è or ecco?",
+      "a": "C'è / ci sono says something exists or is somewhere. Ecco points at it: 'here it is!' or 'there it is!' and needs no verb.",
+      "examples": [
+        {
+          "it": "C'è una farmacia qui vicino?",
+          "en": "Is there a pharmacy near here?"
+        },
+        {
+          "it": "Ecco il tuo caffè!",
+          "en": "Here's your coffee!"
+        }
+      ],
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'this one' or 'that one'?",
+      "a": "Just questo or quello, matched to the noun you mean. There's no word for 'one'.",
+      "examples": [
+        {
+          "it": "Quale torta vuole? Questa.",
+          "en": "Which cake would you like? This one."
+        },
+        {
+          "it": "Prendo quelli lì.",
+          "en": "I'll take those ones there."
+        }
+      ],
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "q": "How do I ask 'what is it?' when I don't know a word?",
+      "a": "Use Cos'è? for 'what is it?' and Cosa sono? for several things. Cos'è is for a definition; for a choice, use qual è.",
+      "examples": [
+        {
+          "it": "Cos'è questo?",
+          "en": "What's this?"
+        },
+        {
+          "it": "Scusi, cosa sono quelli?",
+          "en": "Excuse me, what are those?"
+        }
+      ],
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'look for'?",
+      "a": "Cercare already means 'look for', so don't add a preposition. Many English verb + preposition pairs are one Italian verb.",
+      "examples": [
+        {
+          "it": "Cerco le chiavi.",
+          "en": "I'm looking for my keys."
+        },
+        {
+          "it": "Cerco una farmacia.",
+          "en": "I'm looking for a pharmacy."
+        }
+      ],
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "q": "C'è or è?",
+      "a": "C'è asks or says whether something exists (is there a...?). È with dov'è asks where a specific thing is.",
+      "examples": [
+        {
+          "it": "C'è un bagno?",
+          "en": "Is there a bathroom?"
+        },
+        {
+          "it": "Dov'è il bagno?",
+          "en": "Where's the bathroom?"
+        }
+      ],
+      "unit": "a1-07",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'to Luca's' or 'to the doctor's'?",
+      "a": "Use da + the person: it means 'to' or 'at someone's place'.",
+      "examples": [
+        {
+          "it": "Vado dal medico.",
+          "en": "I'm going to the doctor's."
+        },
+        {
+          "it": "Stasera ceniamo da Luca.",
+          "en": "Tonight we're having dinner at Luca's."
+        }
+      ],
+      "unit": "a1-07",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'entrare in' when English just says 'enter'?",
+      "a": "Some Italian verbs need a preposition where English has none (entrare in, avvicinarsi a). Learn each verb with its preposition.",
+      "examples": [
+        {
+          "it": "Entro in farmacia.",
+          "en": "I'm going into the pharmacy."
+        },
+        {
+          "it": "Si avvicina alla porta.",
+          "en": "He approaches the door."
+        }
+      ],
+      "unit": "a1-07",
+      "level": "A1"
+    },
+    {
+      "q": "Why do directions sound like 'giri' and 'prenda' instead of 'gira' and 'prendi'?",
+      "a": "Those are polite (Lei) commands, and they borrow the subjunctive's vowels: -are verbs end in -i, -ere and -ire verbs in -a. Scusi, senta and mi dica work the same way.",
+      "examples": [
+        {
+          "it": "Giri a destra e prenda la seconda.",
+          "en": "Turn right and take the second one."
+        },
+        {
+          "it": "Scusi, mi dica.",
+          "en": "Yes, how can I help you?"
+        }
+      ],
+      "unit": "a1-07",
+      "level": "A1"
+    },
+    {
+      "q": "Che or quale before a noun?",
+      "a": "Che + noun is a general 'what'; quale + noun means 'which one of these'. In everyday speech che is used for both.",
+      "examples": [
+        {
+          "it": "Che ore sono?",
+          "en": "What time is it?"
+        },
+        {
+          "it": "Quale treno prendiamo?",
+          "en": "Which train are we taking?"
+        }
+      ],
+      "unit": "a1-08",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'quante mele' but 'quanto pane'?",
+      "a": "Quanto (how much / how many) matches the noun: quanto, quanta, quanti, quante. It does this even when the noun is left out.",
+      "examples": [
+        {
+          "it": "Quante pesche vuole?",
+          "en": "How many peaches would you like?"
+        },
+        {
+          "it": "Ho del pane. Quanto ne vuoi?",
+          "en": "I've got some bread. How much do you want?"
+        }
+      ],
+      "unit": "a1-09",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'l'uovo' but 'le uova'?",
+      "a": "A few nouns become feminine in the plural, ending in -a: l'uovo → le uova, il braccio → le braccia.",
+      "examples": [
+        {
+          "it": "Sei uova, per favore.",
+          "en": "Six eggs, please."
+        },
+        {
+          "it": "Mi fanno male le braccia.",
+          "en": "My arms hurt."
+        }
+      ],
+      "unit": "a1-09",
+      "level": "A1"
+    },
+    {
+      "q": "'What's your number?': che or qual è?",
+      "a": "When the answer is a choice among many (number, address, favourite), use qual è. Use cos'è only to ask for a definition. For a name, say come ti chiami?",
+      "examples": [
+        {
+          "it": "Qual è il tuo numero?",
+          "en": "What's your number?"
+        },
+        {
+          "it": "Qual è l'indirizzo?",
+          "en": "What's the address?"
+        }
+      ],
+      "unit": "a1-10",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'I like'?",
+      "a": "Use mi piace: what you like is the subject, so the sentence is really 'it is pleasing to me'. Mi piace for one thing or a verb, mi piacciono for several.",
+      "examples": [
+        {
+          "it": "Mi piace Roma.",
+          "en": "I like Rome."
+        },
+        {
+          "it": "Mi piacciono i musei.",
+          "en": "I like museums."
+        }
+      ],
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'mi piacciono' and not 'mi piace' with plurals?",
+      "a": "The verb agrees with the thing liked, not with you. Several things are pleasing, so piacciono.",
+      "examples": [
+        {
+          "it": "Mi piacciono le olive.",
+          "en": "I like olives."
+        },
+        {
+          "it": "Ti piacciono i film italiani?",
+          "en": "Do you like Italian films?"
+        }
+      ],
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'it's cold' or 'it's hot'?",
+      "a": "Weather uses fare: fa freddo, fa caldo, fa bel tempo. È freddo describes a thing, like a coffee.",
+      "examples": [
+        {
+          "it": "Oggi fa freddo.",
+          "en": "It's cold today."
+        },
+        {
+          "it": "Il caffè è freddo.",
+          "en": "The coffee is cold."
+        }
+      ],
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "q": "How do I add 'isn't it?' or 'don't you?'",
+      "a": "Add vero? or no? to the end. Unlike English, it never changes.",
+      "examples": [
+        {
+          "it": "Fa caldo oggi, vero?",
+          "en": "It's hot today, isn't it?"
+        },
+        {
+          "it": "Sei di Milano, no?",
+          "en": "You're from Milan, aren't you?"
+        }
+      ],
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'you all'?",
+      "a": "Use voi, with the verb in -ate, -ete, -ite. Today voi is used for any group, even polite; the old formal Loro is ceremonial and rare.",
+      "examples": [
+        {
+          "it": "Voi cosa prendete?",
+          "en": "What are you all having?"
+        },
+        {
+          "it": "Signori, venite con me?",
+          "en": "Gentlemen, are you coming with me?"
+        }
+      ],
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "q": "Which verb form goes with 'Maria and I' or 'you and Paolo'?",
+      "a": "'X and I' takes the noi form; 'you and X' takes the voi form; two other people take the loro form.",
+      "examples": [
+        {
+          "it": "Io e Maria andiamo al mare.",
+          "en": "Maria and I are going to the seaside."
+        },
+        {
+          "it": "Tu e Paolo venite stasera?",
+          "en": "Are you and Paolo coming tonight?"
+        }
+      ],
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'mi piace il caffè' with 'the'?",
+      "a": "Italian uses the article with nouns meant in general (coffee in general, life, war) where English leaves it out.",
+      "examples": [
+        {
+          "it": "Mi piace il caffè.",
+          "en": "I like coffee."
+        },
+        {
+          "it": "La vita è bella.",
+          "en": "Life is beautiful."
+        }
+      ],
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "q": "How do I translate 'reading' in 'I like reading' or 'Reading is fun'?",
+      "a": "Use the infinitive: leggere. After piacere, after a preposition, and as a subject, English -ing is an Italian infinitive.",
+      "examples": [
+        {
+          "it": "Mi piace leggere.",
+          "en": "I like reading."
+        },
+        {
+          "it": "Viaggiare è bellissimo.",
+          "en": "Travelling is wonderful."
+        }
+      ],
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "q": "Buono or bene?",
+      "a": "Buono is an adjective and describes things (good). Bene is an adverb and describes how something is done (well); it never changes.",
+      "examples": [
+        {
+          "it": "È una pizza buona.",
+          "en": "It's a good pizza."
+        },
+        {
+          "it": "Parli bene l'italiano!",
+          "en": "You speak Italian well!"
+        }
+      ],
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "q": "Does 'molto' change?",
+      "a": "Only when it means 'many/much' before a noun (molti, molta, molte). As 'very' or 'a lot' it stays molto.",
+      "examples": [
+        {
+          "it": "Ci sono molte persone.",
+          "en": "There are a lot of people."
+        },
+        {
+          "it": "È molto bello. Mi piace molto.",
+          "en": "It's very nice. I like it a lot."
+        }
+      ],
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "q": "Is 'can' always potere?",
+      "a": "For a skill you've learned, use sapere: so nuotare. Use potere for being able or allowed to do something.",
+      "examples": [
+        {
+          "it": "So nuotare, ma oggi non posso.",
+          "en": "I can swim, but I can't today."
+        },
+        {
+          "it": "Sai cucinare?",
+          "en": "Can you cook?"
+        }
+      ],
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'voglio partire' with no 'to'?",
+      "a": "The infinitive already means 'to leave'. After volere, potere, dovere and sapere it follows directly.",
+      "examples": [
+        {
+          "it": "Voglio partire domani.",
+          "en": "I want to leave tomorrow."
+        },
+        {
+          "it": "Devo lavorare.",
+          "en": "I have to work."
+        }
+      ],
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "q": "Can I use the present for the future?",
+      "a": "Yes. For plans and anything soon, the present is normal: domani parto.",
+      "examples": [
+        {
+          "it": "Domani vado a Siena.",
+          "en": "Tomorrow I'm going to Siena."
+        },
+        {
+          "it": "Stasera resto a casa.",
+          "en": "I'm staying home tonight."
+        }
+      ],
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "q": "Can I end a question with a preposition?",
+      "a": "No. The preposition always goes first: 'with whom are you going?'.",
+      "examples": [
+        {
+          "it": "Con chi vai?",
+          "en": "Who are you going with?"
+        },
+        {
+          "it": "Di cosa parlate?",
+          "en": "What are you talking about?"
+        }
+      ],
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'with me' or 'for you'?",
+      "a": "After a preposition use me, te, lui, lei, Lei, noi, voi, loro. Only me and te differ from the subject words.",
+      "examples": [
+        {
+          "it": "Vieni con me?",
+          "en": "Are you coming with me?"
+        },
+        {
+          "it": "Questo è per te.",
+          "en": "This is for you."
+        }
+      ],
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'wait for', 'look at' or 'pay for'?",
+      "a": "Aspettare, guardare and pagare already include the preposition, so they take the thing directly.",
+      "examples": [
+        {
+          "it": "Aspetto l'autobus.",
+          "en": "I'm waiting for the bus."
+        },
+        {
+          "it": "Pago io il caffè.",
+          "en": "I'll pay for the coffee."
+        }
+      ],
+      "unit": "a1-13",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'tickets are sold here' or 'English spoken'?",
+      "a": "Italians prefer si + verb to the passive. The verb agrees with what follows: si vende for one thing, si vendono for several.",
+      "examples": [
+        {
+          "it": "Qui si parla inglese.",
+          "en": "English is spoken here."
+        },
+        {
+          "it": "Dove si comprano i biglietti?",
+          "en": "Where do you buy tickets?"
+        }
+      ],
+      "unit": "a1-13",
+      "level": "A1"
+    },
+    {
+      "q": "Why is the subject after the verb in 'arriva l'autobus'?",
+      "a": "Italian word order is freer than English. With verbs like arrivare, the subject often comes last. Find the subject by asking who or what is acting.",
+      "examples": [
+        {
+          "it": "Ecco, arriva l'autobus.",
+          "en": "Look, the bus is coming."
+        },
+        {
+          "it": "Arrivano i ragazzi.",
+          "en": "The kids are arriving."
+        }
+      ],
+      "unit": "a1-13",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'I'm hungry' or 'I'm cold'?",
+      "a": "These use avere: 'I have hunger', 'I have cold'. The same goes for sete (thirsty), sonno (sleepy), paura (afraid) and caldo (hot).",
+      "examples": [
+        {
+          "it": "Ho fame e ho sete.",
+          "en": "I'm hungry and thirsty."
+        },
+        {
+          "it": "Hai freddo?",
+          "en": "Are you cold?"
+        }
+      ],
+      "unit": "a1-14",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'my head hurts'?",
+      "a": "Say mi fa male + the body part, which is literally 'it does me harm'. Use mi fanno male for plurals, or ho mal di + the body part.",
+      "examples": [
+        {
+          "it": "Mi fa male la testa.",
+          "en": "My head hurts."
+        },
+        {
+          "it": "Ho mal di gola.",
+          "en": "I have a sore throat."
+        }
+      ],
+      "unit": "a1-14",
+      "level": "A1"
+    },
+    {
+      "q": "Avere or essere in the past?",
+      "a": "Verbs that take a direct object use avere. Reflexive verbs and most verbs of motion or change (andare, venire, arrivare, partire, uscire, nascere, morire, diventare, restare, stare, essere) use essere.",
+      "examples": [
+        {
+          "it": "Ho mangiato una pizza.",
+          "en": "I ate a pizza."
+        },
+        {
+          "it": "Sono andata al mercato.",
+          "en": "I went to the market."
+        }
+      ],
+      "unit": "a1-15",
+      "level": "A1"
+    },
+    {
+      "q": "Why 'andata' and not 'andato'?",
+      "a": "With essere, the past participle matches the subject's gender and number: andato, andata, andati, andate.",
+      "examples": [
+        {
+          "it": "Maria è arrivata ieri.",
+          "en": "Maria arrived yesterday."
+        },
+        {
+          "it": "I miei figli sono partiti.",
+          "en": "My children have left."
+        }
+      ],
+      "unit": "a1-15",
+      "level": "A1"
+    },
+    {
+      "q": "Is 'I went' or 'I have gone' a different Italian tense?",
+      "a": "No. 'I went', 'I have gone' and 'I did go' are all the passato prossimo when they mean a finished event.",
+      "examples": [
+        {
+          "it": "Ho visto il Colosseo.",
+          "en": "I saw / I've seen the Colosseum."
+        },
+        {
+          "it": "Hai già mangiato?",
+          "en": "Have you eaten yet?"
+        }
+      ],
+      "unit": "a1-15",
+      "level": "A1"
+    },
+    {
+      "q": "How do I say 'John's'?",
+      "a": "Italian has no 's. Say 'the X of John': la macchina di Giovanni. With a noun, di joins the article: del, della, dei.",
+      "examples": [
+        {
+          "it": "la camicia di Giovanni",
+          "en": "John's shirt"
+        },
+        {
+          "it": "il padre delle ragazze",
+          "en": "the girls' father"
+        }
+      ],
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "q": "How do I ask 'whose'?",
+      "a": "Say 'of whom is it?': di chi è? for one thing, di chi sono? for several.",
+      "examples": [
+        {
+          "it": "Di chi è questa borsa?",
+          "en": "Whose bag is this?"
+        },
+        {
+          "it": "Di chi sono le chiavi?",
+          "en": "Whose keys are these?"
+        }
+      ],
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'Mario's' or 'my father's' without a noun?",
+      "a": "Use quello / quella / quelli / quelle di: 'the one of Mario'. Quello matches the thing you mean.",
+      "examples": [
+        {
+          "it": "Quale casa vendi? Quella di mio padre.",
+          "en": "Which house are you selling? My father's."
+        },
+        {
+          "it": "Le mie scarpe? No, quelle di Anna.",
+          "en": "My shoes? No, Anna's."
+        }
+      ],
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "q": "Why does 'his' become 'sua'?",
+      "a": "An Italian possessive matches the thing owned, not the owner. So a man's car is la sua macchina, and i suoi libri can mean his books or her books.",
+      "examples": [
+        {
+          "it": "Marco ama la sua macchina.",
+          "en": "Marco loves his car."
+        },
+        {
+          "it": "Anna legge i suoi libri.",
+          "en": "Anna reads her books."
+        }
+      ],
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "q": "Do I need 'the' with mio?",
+      "a": "Yes, normally: il mio libro, la mia casa. But drop it with one family member (mia madre, tuo fratello). It comes back in the plural (i miei fratelli) and always with loro.",
+      "examples": [
+        {
+          "it": "La mia casa è vicina.",
+          "en": "My house is close by."
+        },
+        {
+          "it": "Mia sorella vive a Torino.",
+          "en": "My sister lives in Turin."
+        }
+      ],
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'mine' or 'yours'?",
+      "a": "Use the same word as 'my' or 'your' with the article and no noun: il mio, la tua, i nostri. It matches the thing, not the owner.",
+      "examples": [
+        {
+          "it": "Non prendo la tua macchina, prendo la mia.",
+          "en": "I won't take your car, I'll take mine."
+        },
+        {
+          "it": "I nostri figli stanno bene. E i vostri?",
+          "en": "Our kids are fine. And yours?"
+        }
+      ],
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "q": "Why 'è mio' with no article?",
+      "a": "After essere, a possessive that just says who owns something usually drops the article.",
+      "examples": [
+        {
+          "it": "Questo zaino è mio.",
+          "en": "This backpack is mine."
+        },
+        {
+          "it": "È tua questa giacca?",
+          "en": "Is this jacket yours?"
+        }
+      ],
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "q": "Do adjectives go before or after the noun?",
+      "a": "Usually after, especially colours, nationalities and shapes. A few common ones (bello, buono, grande, piccolo, nuovo) often go before.",
+      "examples": [
+        {
+          "it": "una casa bianca",
+          "en": "a white house"
+        },
+        {
+          "it": "una bella giornata",
+          "en": "a beautiful day"
+        }
+      ],
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "q": "Is 'la famiglia' singular or plural?",
+      "a": "Singular, as in English: a group noun takes a singular verb.",
+      "examples": [
+        {
+          "it": "La mia famiglia sta bene.",
+          "en": "My family is well."
+        },
+        {
+          "it": "La gente è simpatica qui.",
+          "en": "People are nice here."
+        }
+      ],
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'I'm doing X'?",
+      "a": "Usually with the plain present: faccio means 'I do' and 'I'm doing'. Use sto + -ando/-endo only for something happening right this minute.",
+      "examples": [
+        {
+          "it": "Cosa fai? Sto cucinando.",
+          "en": "What are you doing? I'm cooking."
+        },
+        {
+          "it": "Quest'anno studio italiano.",
+          "en": "This year I'm studying Italian."
+        }
+      ],
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "q": "Why 'mi alzo' for 'I get up'?",
+      "a": "Many everyday verbs are reflexive in Italian (alzarsi, vestirsi, sedersi, trovarsi), and the mi, ti or si is required. It goes before the verb.",
+      "examples": [
+        {
+          "it": "Mi alzo alle sette.",
+          "en": "I get up at seven."
+        },
+        {
+          "it": "Come ti trovi a Bologna?",
+          "en": "How are you getting on in Bologna?"
+        }
+      ],
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "q": "Why 'mi sono alzato' with essere?",
+      "a": "All reflexive verbs take essere in the past, and the participle matches the subject.",
+      "examples": [
+        {
+          "it": "Stamattina mi sono alzata tardi.",
+          "en": "This morning I got up late."
+        },
+        {
+          "it": "Ci siamo persi.",
+          "en": "We got lost."
+        }
+      ],
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'to have a good time'?",
+      "a": "Use divertirsi. Idioms don't translate word for word: 'avere un buon tempo' means nothing in Italian.",
+      "examples": [
+        {
+          "it": "Ci siamo divertiti molto.",
+          "en": "We had a great time."
+        },
+        {
+          "it": "Divertiti!",
+          "en": "Have fun!"
+        }
+      ],
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "q": "Why is 'non vedo nessuno' correct?",
+      "a": "Italian requires a double negative: non + verb + nessuno, niente or mai. A positive word like qualcosa can't follow non.",
+      "examples": [
+        {
+          "it": "Non c'è nessuno.",
+          "en": "There's nobody here."
+        },
+        {
+          "it": "Non ho fatto niente.",
+          "en": "I didn't do anything."
+        }
+      ],
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'ever' and 'never'?",
+      "a": "Both are mai. In a question it means 'ever'; with non it means 'never'.",
+      "examples": [
+        {
+          "it": "Sei mai stato a Venezia?",
+          "en": "Have you ever been to Venice?"
+        },
+        {
+          "it": "Non sono mai stato a Venezia.",
+          "en": "I've never been to Venice."
+        }
+      ],
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'he likes' or 'she likes'?",
+      "a": "Use gli piace (to him) and le piace (to her), or a + name: a Marco piace. The verb still agrees with the thing liked.",
+      "examples": [
+        {
+          "it": "A Marco piace il pesce.",
+          "en": "Marco likes fish."
+        },
+        {
+          "it": "Le piacciono i dolci.",
+          "en": "She likes desserts."
+        }
+      ],
+      "unit": "a2-03",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'I liked it'?",
+      "a": "Piacere takes essere in the past, and the participle matches the thing liked: mi è piaciuto, mi è piaciuta, mi sono piaciuti.",
+      "examples": [
+        {
+          "it": "Mi è piaciuta molto la cena.",
+          "en": "I really liked the dinner."
+        },
+        {
+          "it": "Ti sono piaciuti i musei?",
+          "en": "Did you like the museums?"
+        }
+      ],
+      "unit": "a2-03",
+      "level": "A2"
+    },
+    {
+      "q": "Passato prossimo or imperfetto?",
+      "a": "The passato prossimo tells what happened. The imperfetto tells what used to happen, what was going on, and what things were like (age, weather, time, feelings); English 'went' gives no clue.",
+      "examples": [
+        {
+          "it": "Ieri sono andato al mare.",
+          "en": "Yesterday I went to the seaside."
+        },
+        {
+          "it": "Da bambino andavo al mare ogni estate.",
+          "en": "As a child I used to go to the seaside every summer."
+        }
+      ],
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'used to' or 'was doing'?",
+      "a": "Both are the imperfetto: one word, no extra helper.",
+      "examples": [
+        {
+          "it": "Giocavo a calcio ogni pomeriggio.",
+          "en": "I used to play football every afternoon."
+        },
+        {
+          "it": "Leggeva quando sono arrivato.",
+          "en": "He was reading when I arrived."
+        }
+      ],
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'before leaving'?",
+      "a": "Use prima di + infinitive. After any preposition, English -ing is an Italian infinitive.",
+      "examples": [
+        {
+          "it": "Prima di uscire, chiudo le finestre.",
+          "en": "Before going out, I close the windows."
+        },
+        {
+          "it": "Senza dire niente.",
+          "en": "Without saying anything."
+        }
+      ],
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'I remember'?",
+      "a": "Ricordarsi di: the thing remembered comes after di. Ricordare with a direct object also works.",
+      "examples": [
+        {
+          "it": "Ti ricordi di me?",
+          "en": "Do you remember me?"
+        },
+        {
+          "it": "Non mi ricordo del suo nome.",
+          "en": "I don't remember his name."
+        }
+      ],
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "q": "Where do object pronouns go?",
+      "a": "Before the conjugated verb: lo vedo, la prendo. After an infinitive they can attach to its end: posso assaggiarlo.",
+      "examples": [
+        {
+          "it": "Il prosciutto? Lo prendo.",
+          "en": "The ham? I'll take it."
+        },
+        {
+          "it": "La posso assaggiare?",
+          "en": "Can I taste it?"
+        }
+      ],
+      "unit": "a2-05",
+      "level": "A2"
+    },
+    {
+      "q": "Lo or la for 'it'?",
+      "a": "'It' takes the gender of the noun it stands for: lo for masculine, la for feminine. 'Them' is li or le.",
+      "examples": [
+        {
+          "it": "Vedi la macchina? Sì, la vedo.",
+          "en": "Do you see the car? Yes, I see it."
+        },
+        {
+          "it": "Le pesche? Le prendo tutte.",
+          "en": "The peaches? I'll take them all."
+        }
+      ],
+      "unit": "a2-05",
+      "level": "A2"
+    },
+    {
+      "q": "Why 'l'ho vista' and not 'l'ho visto'?",
+      "a": "With avere, the participle matches a lo, la, li or le placed before it. With no pronoun in front, it stays -o.",
+      "examples": [
+        {
+          "it": "Hai visto Maria? Sì, l'ho vista.",
+          "en": "Have you seen Maria? Yes, I saw her."
+        },
+        {
+          "it": "Le chiavi? Le ho prese io.",
+          "en": "The keys? I took them."
+        }
+      ],
+      "unit": "a2-05",
+      "level": "A2"
+    },
+    {
+      "q": "Gli or le?",
+      "a": "Gli means 'to him' (and in speech 'to them'); le means 'to her'; Le means 'to you' formally.",
+      "examples": [
+        {
+          "it": "Gli scrivo domani.",
+          "en": "I'll write to him tomorrow."
+        },
+        {
+          "it": "Le ho dato il libro.",
+          "en": "I gave her the book."
+        }
+      ],
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'to them'?",
+      "a": "In everyday Italian, gli before the verb. Loro after the verb is correct but formal.",
+      "examples": [
+        {
+          "it": "Gli do le chiavi domani.",
+          "en": "I'll give them the keys tomorrow."
+        },
+        {
+          "it": "Ho telefonato ai miei: gli ho detto tutto.",
+          "en": "I called my parents: I told them everything."
+        }
+      ],
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "q": "Why 'telefono a Maria'?",
+      "a": "Telefonare takes a, so its pronoun is the 'to' kind: gli or le, not lo or la. Always check what the Italian verb takes, not the English one.",
+      "examples": [
+        {
+          "it": "Telefono a mia madre ogni giorno.",
+          "en": "I call my mother every day."
+        },
+        {
+          "it": "Le telefono stasera.",
+          "en": "I'll call her tonight."
+        }
+      ],
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "q": "Why 'mi dispiace' and not 'io dispiaccio'?",
+      "a": "Dispiacere works like piacere: the thing is 'displeasing to me'. Mancare, servire and occorrere work the same way.",
+      "examples": [
+        {
+          "it": "Mi dispiace, non lo so.",
+          "en": "I'm sorry, I don't know."
+        },
+        {
+          "it": "Le dispiace se apro la finestra?",
+          "en": "Do you mind if I open the window?"
+        }
+      ],
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'Who are you talking to?'",
+      "a": "Put the a first: 'to whom are you speaking?'. The same goes for da chi, con chi and per chi.",
+      "examples": [
+        {
+          "it": "A chi scrivi?",
+          "en": "Who are you writing to?"
+        },
+        {
+          "it": "Da chi hai avuto questo libro?",
+          "en": "Who did you get this book from?"
+        }
+      ],
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "q": "Where does the person go in 'I give Maria the book'?",
+      "a": "Italian has no 'give someone something' order. Say the thing first, then a + the person: 'I give the book to Maria'.",
+      "examples": [
+        {
+          "it": "Do il libro a Maria.",
+          "en": "I give Maria the book."
+        },
+        {
+          "it": "Scrivo una lettera a mio fratello.",
+          "en": "I'm writing my brother a letter."
+        }
+      ],
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "q": "How do I stress 'HER, not him'?",
+      "a": "Use the strong pronoun after the verb (vedo lei, ho dato il libro a lei) instead of the short one before it.",
+      "examples": [
+        {
+          "it": "Non cerco lui, cerco lei.",
+          "en": "I'm not looking for him, I'm looking for her."
+        },
+        {
+          "it": "L'ho dato a te, non a lui.",
+          "en": "I gave it to you, not to him."
+        }
+      ],
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "q": "How do I find the Italian for 'look after' or 'look into'?",
+      "a": "Look up the whole English phrase: each has its own Italian verb (badare a, approfondire). Never take the first meaning of 'look' and add a preposition.",
+      "examples": [
+        {
+          "it": "Bado io ai bambini.",
+          "en": "I'll look after the kids."
+        },
+        {
+          "it": "Approfondisco la questione.",
+          "en": "I'll look into the matter."
+        }
+      ],
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "q": "How do I tell a friend 'don't'?",
+      "a": "For tu, use non + the infinitive: non toccare, non preoccuparti. For everyone else, just put non before the command.",
+      "examples": [
+        {
+          "it": "Non toccare!",
+          "en": "Don't touch!"
+        },
+        {
+          "it": "Non preoccuparti.",
+          "en": "Don't worry."
+        }
+      ],
+      "unit": "a2-08",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'let's'?",
+      "a": "Use the noi form of the verb, with no extra word.",
+      "examples": [
+        {
+          "it": "Andiamo!",
+          "en": "Let's go!"
+        },
+        {
+          "it": "Mangiamo fuori stasera.",
+          "en": "Let's eat out tonight."
+        }
+      ],
+      "unit": "a2-08",
+      "level": "A2"
+    },
+    {
+      "q": "How do I form the future?",
+      "a": "Drop the final -e of the infinitive and add -ò, -ai, -à, -emo, -ete, -anno; -are verbs change -ar- to -er-. Some stems are short: andrò, avrò, sarò.",
+      "examples": [
+        {
+          "it": "Domani parlerò con lui.",
+          "en": "Tomorrow I'll talk to him."
+        },
+        {
+          "it": "Partiremo alle otto.",
+          "en": "We'll leave at eight."
+        }
+      ],
+      "unit": "a2-09",
+      "level": "A2"
+    },
+    {
+      "q": "Why the future after 'when' or 'as soon as'?",
+      "a": "If the action is in the future, Italian uses the future in both halves, where English uses the present after 'when'. In casual speech both halves can also be in the present.",
+      "examples": [
+        {
+          "it": "Quando arriverai, ti chiamerò.",
+          "en": "When you arrive, I'll call you."
+        },
+        {
+          "it": "Appena tornerà, gli telefonerò.",
+          "en": "As soon as he gets back, I'll call him."
+        }
+      ],
+      "unit": "a2-09",
+      "level": "A2"
+    },
+    {
+      "q": "Why 'sarà a casa' for 'he's probably home'?",
+      "a": "Italian uses the future to guess about the present, so you don't need 'probably' or 'I wonder'.",
+      "examples": [
+        {
+          "it": "Che ore saranno? Saranno le tre.",
+          "en": "I wonder what time it is. It must be about three."
+        },
+        {
+          "it": "Chi sarà alla porta?",
+          "en": "Who could be at the door?"
+        }
+      ],
+      "unit": "a2-09",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'if I have time, I'll come'?",
+      "a": "For a real possibility, use the present in both parts or the future in both parts.",
+      "examples": [
+        {
+          "it": "Se ho tempo, vengo.",
+          "en": "If I have time, I'll come."
+        },
+        {
+          "it": "Se avrò tempo, verrò.",
+          "en": "If I have time, I'll come."
+        }
+      ],
+      "unit": "a2-09",
+      "level": "A2"
+    },
+    {
+      "q": "Is there a word for 'will'?",
+      "a": "No. The future ending carries 'will', and the present often does the job too.",
+      "examples": [
+        {
+          "it": "Ti aspetterò.",
+          "en": "I'll wait for you."
+        },
+        {
+          "it": "Ci vediamo domani.",
+          "en": "I'll see you tomorrow."
+        }
+      ],
+      "unit": "a2-09",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'taller than', 'the tallest' and 'very tall'?",
+      "a": "Più alto di (taller than), il più alto (the tallest), altissimo or molto alto (very tall). There's no -er or -est.",
+      "examples": [
+        {
+          "it": "Roma è più grande di Firenze.",
+          "en": "Rome is bigger than Florence."
+        },
+        {
+          "it": "Questo gelato è buonissimo!",
+          "en": "This gelato is really good!"
+        }
+      ],
+      "unit": "a2-10",
+      "level": "A2"
+    },
+    {
+      "q": "'The best in town': in or di?",
+      "a": "After a superlative, 'in' or 'of' is always di: il migliore della città, il più bravo della classe.",
+      "examples": [
+        {
+          "it": "È il ristorante migliore della città.",
+          "en": "It's the best restaurant in town."
+        },
+        {
+          "it": "È la più piccola della famiglia.",
+          "en": "She's the youngest in the family."
+        }
+      ],
+      "unit": "a2-10",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'better' and 'worse'?",
+      "a": "Migliore and peggiore as adjectives (or più buono, più cattivo). As adverbs, use meglio and peggio.",
+      "examples": [
+        {
+          "it": "Questa pizza è migliore.",
+          "en": "This pizza is better."
+        },
+        {
+          "it": "Oggi sto meglio.",
+          "en": "I feel better today."
+        }
+      ],
+      "unit": "a2-10",
+      "level": "A2"
+    },
+    {
+      "q": "How do I form the conditional?",
+      "a": "Take the future stem and add -ei, -esti, -ebbe, -emmo, -este, -ebbero: parlerei, vorrei, potrebbe.",
+      "examples": [
+        {
+          "it": "Prenderei un caffè.",
+          "en": "I'd have a coffee."
+        },
+        {
+          "it": "Sarebbe bello.",
+          "en": "It would be nice."
+        }
+      ],
+      "unit": "a2-11",
+      "level": "A2"
+    },
+    {
+      "q": "Does 'would' always mean the conditional?",
+      "a": "No. 'Would' meaning 'used to' is the imperfetto, and 'said he would come' is the past conditional. Otherwise it's the conditional.",
+      "examples": [
+        {
+          "it": "Quando ero piccolo, mio nonno mi raccontava delle storie.",
+          "en": "When I was little, my grandfather would tell me stories."
+        },
+        {
+          "it": "Vorrei venire.",
+          "en": "I would like to come."
+        }
+      ],
+      "unit": "a2-11",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'you should'?",
+      "a": "Use the conditional of dovere: dovresti, dovrebbe.",
+      "examples": [
+        {
+          "it": "Dovresti riposare.",
+          "en": "You should rest."
+        },
+        {
+          "it": "Dovrebbe chiamare il medico.",
+          "en": "You should call the doctor."
+        }
+      ],
+      "unit": "a2-11",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'I hurt my ankle'?",
+      "a": "Say farsi male a: 'I made myself harm at the ankle'. It's reflexive, so use essere in the past.",
+      "examples": [
+        {
+          "it": "Mi sono fatto male alla caviglia.",
+          "en": "I hurt my ankle."
+        },
+        {
+          "it": "Ti sei fatta male?",
+          "en": "Did you hurt yourself?"
+        }
+      ],
+      "unit": "a2-12",
+      "level": "A2"
+    },
+    {
+      "q": "How do I say 'I need'?",
+      "a": "Use mi serve for one thing and mi servono for several: the thing needed is the subject, like piacere. Ho bisogno di also works.",
+      "examples": [
+        {
+          "it": "Mi serve una penna.",
+          "en": "I need a pen."
+        },
+        {
+          "it": "Mi servono due francobolli.",
+          "en": "I need two stamps."
+        }
+      ],
+      "unit": "a2-14",
+      "level": "A2"
+    },
+    {
+      "q": "Can I drop 'that' or 'who' in 'the book I bought'?",
+      "a": "No. Italian always says che: il libro che ho comprato.",
+      "examples": [
+        {
+          "it": "Il libro che ho comprato è bello.",
+          "en": "The book I bought is good."
+        },
+        {
+          "it": "La signora che lavora al bar è simpatica.",
+          "en": "The lady who works at the bar is nice."
+        }
+      ],
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "q": "Che or cui?",
+      "a": "Che for the subject or direct object. Cui after a preposition: a cui, di cui, con cui, in cui.",
+      "examples": [
+        {
+          "it": "È l'amico di cui ti ho parlato.",
+          "en": "He's the friend I told you about."
+        },
+        {
+          "it": "La ragazza con cui esco è di Napoli.",
+          "en": "The girl I go out with is from Naples."
+        }
+      ],
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "q": "How do I say 'what' in 'I don't know what you want'?",
+      "a": "Use quello che or ciò che when 'what' means 'the thing that'.",
+      "examples": [
+        {
+          "it": "Non capisco quello che dici.",
+          "en": "I don't understand what you're saying."
+        },
+        {
+          "it": "Ecco ciò che ho letto.",
+          "en": "Here's what I read."
+        }
+      ],
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "q": "How do I say 'those who' or 'whoever'?",
+      "a": "Use chi with a singular verb: chi studia means 'whoever studies' or 'those who study'.",
+      "examples": [
+        {
+          "it": "Chi studia, impara.",
+          "en": "Those who study learn."
+        },
+        {
+          "it": "Chi arriva prima, aspetta.",
+          "en": "Whoever gets there first waits."
+        }
+      ],
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "q": "Più ... di or più ... che?",
+      "a": "Use di before a noun or pronoun (più alto di Marco). Use che when you compare two adjectives, verbs or phrases (più bello che comodo).",
+      "examples": [
+        {
+          "it": "Questo appartamento è più luminoso dell'altro.",
+          "en": "This flat is brighter than the other one."
+        },
+        {
+          "it": "È più bello che comodo.",
+          "en": "It's more beautiful than comfortable."
+        }
+      ],
+      "unit": "b1-04",
+      "level": "B1"
+    },
+    {
+      "q": "How do I say 'which' meaning 'and that'?",
+      "a": "When 'which' refers to a whole idea, use il che (or e questo).",
+      "examples": [
+        {
+          "it": "Parli molte lingue, il che è un vantaggio.",
+          "en": "You speak many languages, which is an advantage."
+        },
+        {
+          "it": "Il treno era in ritardo, il che ci ha fatto perdere la coincidenza.",
+          "en": "The train was late, which made us miss our connection."
+        }
+      ],
+      "unit": "b1-05",
+      "level": "B1"
+    },
+    {
+      "q": "When do I need 'had done' (the trapassato)?",
+      "a": "Whenever one past action happened before another past action, even if English would just say 'saw'. Italian is stricter about the order of tenses.",
+      "examples": [
+        {
+          "it": "Quando sono arrivato, il treno era già partito.",
+          "en": "When I arrived, the train had already left."
+        },
+        {
+          "it": "Voleva sapere chi aveva visto lo studente.",
+          "en": "He wanted to know who had seen the student."
+        }
+      ],
+      "unit": "b1-06",
+      "level": "B1"
+    },
+    {
+      "q": "What is the subjunctive, and when do I use it?",
+      "a": "It's a set of verb forms used after che when the main verb expresses an opinion, wish, fear, doubt or possibility. English gives you no signal, so look at the Italian main verb.",
+      "examples": [
+        {
+          "it": "Penso che sia chiuso.",
+          "en": "I think it's closed."
+        },
+        {
+          "it": "Spero che tu stia meglio.",
+          "en": "I hope you're feeling better."
+        }
+      ],
+      "unit": "b1-07",
+      "level": "B1"
+    },
+    {
+      "q": "Does 'I think that...' always take the subjunctive?",
+      "a": "After penso, credo, spero, voglio, temo and è possibile che, yes. After so che, dico che, sono sicuro che and è vero che, use the indicative.",
+      "examples": [
+        {
+          "it": "Credo che abbia ragione.",
+          "en": "I think he's right."
+        },
+        {
+          "it": "So che ha ragione.",
+          "en": "I know he's right."
+        }
+      ],
+      "unit": "b1-07",
+      "level": "B1"
+    },
+    {
+      "q": "How do I say 'I want you to come'?",
+      "a": "Use volere che + subjunctive: 'I want that you come'. Only use the infinitive when the subject stays the same (voglio venire).",
+      "examples": [
+        {
+          "it": "Voglio che tu venga.",
+          "en": "I want you to come."
+        },
+        {
+          "it": "Mia moglie vuole che io cucini.",
+          "en": "My wife wants me to cook."
+        }
+      ],
+      "unit": "b1-07",
+      "level": "B1"
+    },
+    {
+      "q": "How do I say 'before' with a verb?",
+      "a": "Use prima di + infinitive when the subject is the same, and prima che + subjunctive when it's different. Before a noun, use prima di.",
+      "examples": [
+        {
+          "it": "Prima di partire, ti chiamo.",
+          "en": "Before I leave, I'll call you."
+        },
+        {
+          "it": "Prima che tu parta, ti do le chiavi.",
+          "en": "Before you leave, I'll give you the keys."
+        }
+      ],
+      "unit": "b1-08",
+      "level": "B1"
+    },
+    {
+      "q": "Which conjunctions take the subjunctive?",
+      "a": "Benché (although), perché meaning 'so that', prima che, purché and a condizione che (provided that). Anche se (even though) takes the indicative.",
+      "examples": [
+        {
+          "it": "Benché sia tardi, resto ancora un po'.",
+          "en": "Although it's late, I'll stay a bit longer."
+        },
+        {
+          "it": "Te lo spiego perché tu capisca.",
+          "en": "I'll explain it so that you understand."
+        }
+      ],
+      "unit": "b1-08",
+      "level": "B1"
+    },
+    {
+      "q": "Why 'qualche libro' and not 'qualche libri'?",
+      "a": "Qualche means 'some' but always takes a singular noun. For a plural, use alcuni / alcune or dei / delle.",
+      "examples": [
+        {
+          "it": "Ho qualche domanda.",
+          "en": "I have a few questions."
+        },
+        {
+          "it": "Ho alcune domande.",
+          "en": "I have some questions."
+        }
+      ],
+      "unit": "b1-09",
+      "level": "B1"
+    },
+    {
+      "q": "How do I say 'I miss you'?",
+      "a": "Use mancare, which works like piacere: 'you are lacking to me'. The person missed is the subject.",
+      "examples": [
+        {
+          "it": "Mi manchi.",
+          "en": "I miss you."
+        },
+        {
+          "it": "Mi mancano i miei figli.",
+          "en": "I miss my children."
+        }
+      ],
+      "unit": "b1-11",
+      "level": "B1"
+    },
+    {
+      "q": "How do I say 'If I were...'?",
+      "a": "Use se + imperfect subjunctive, then the conditional. Never put the conditional after se.",
+      "examples": [
+        {
+          "it": "Se fossi ricco, comprerei una casa in Toscana.",
+          "en": "If I were rich, I'd buy a house in Tuscany."
+        },
+        {
+          "it": "Se avessi tempo, verrei.",
+          "en": "If I had time, I'd come."
+        }
+      ],
+      "unit": "b1-12",
+      "level": "B1"
+    },
+    {
+      "q": "What is the passato remoto?",
+      "a": "It's a one-word past used mostly in writing, history and storytelling (fu, nacque, costruirono). In conversation in the north and centre, the passato prossimo replaces it.",
+      "examples": [
+        {
+          "it": "Michelangelo nacque nel 1475.",
+          "en": "Michelangelo was born in 1475."
+        },
+        {
+          "it": "La chiesa fu costruita nel Trecento.",
+          "en": "The church was built in the 1300s."
+        }
+      ],
+      "unit": "b1-13",
+      "level": "B1"
+    },
+    {
+      "q": "How do I say 'was built by'?",
+      "a": "Use essere + the past participle, which agrees, and da for 'by'. In conversation Italians often use an active sentence or si instead.",
+      "examples": [
+        {
+          "it": "Il ponte è stato costruito dai Romani.",
+          "en": "The bridge was built by the Romans."
+        },
+        {
+          "it": "Il conto è pagato dai genitori.",
+          "en": "The bill is paid by the parents."
+        }
+      ],
+      "unit": "b1-13",
+      "level": "B1"
+    },
+    {
+      "q": "How do I say 'if only...!'?",
+      "a": "Use magari + imperfect subjunctive.",
+      "examples": [
+        {
+          "it": "Magari fosse qui!",
+          "en": "If only she were here!"
+        },
+        {
+          "it": "Magari potessi restare!",
+          "en": "If only I could stay!"
+        }
+      ],
+      "unit": "b2-02",
+      "level": "B2"
+    },
+    {
+      "q": "How do I say 'If I had known, I would have come'?",
+      "a": "Use se + pluperfect subjunctive, then the past conditional.",
+      "examples": [
+        {
+          "it": "Se l'avessi saputo, sarei venuto.",
+          "en": "If I'd known, I would have come."
+        },
+        {
+          "it": "Se avessimo avuto i soldi, saremmo partiti.",
+          "en": "If we'd had the money, we would have left."
+        }
+      ],
+      "unit": "b2-03",
+      "level": "B2"
+    },
+    {
+      "q": "How do I say 'when I've finished, I'll...'?",
+      "a": "Use the future perfect (avrò / sarò + participle) for the action that comes first, after quando, dopo che or appena.",
+      "examples": [
+        {
+          "it": "Quando avrò finito, ti chiamo.",
+          "en": "When I've finished, I'll call you."
+        },
+        {
+          "it": "Usciremo dopo che i bambini saranno andati a letto.",
+          "en": "We'll go out after the children have gone to bed."
+        }
+      ],
+      "unit": "b2-04",
+      "level": "B2"
+    },
+    {
+      "q": "How do I say 'he said he would come'?",
+      "a": "Use the past conditional: ha detto che sarebbe venuto. English uses 'would come' here, but Italian needs 'would have come'.",
+      "examples": [
+        {
+          "it": "Paolo ha detto che sarebbe venuto.",
+          "en": "Paolo said he would come."
+        },
+        {
+          "it": "Mi hai promesso che mi avresti aiutato.",
+          "en": "You promised you'd help me."
+        }
+      ],
+      "unit": "b2-07",
+      "level": "B2"
+    },
+    {
+      "q": "How do I say 'by studying' or 'while walking'?",
+      "a": "Use the gerundio (-ando, -endo) on its own, with no preposition before it.",
+      "examples": [
+        {
+          "it": "Studiando sodo, ha imparato l'italiano.",
+          "en": "By studying hard, he learned Italian."
+        },
+        {
+          "it": "Camminando, ho visto un vecchio amico.",
+          "en": "While walking, I saw an old friend."
+        }
+      ],
+      "unit": "b2-10",
+      "level": "B2"
+    },
+    {
+      "q": "How do I say 'interesting' or 'surprising'?",
+      "a": "Adjectives like these often come from verbs and end in -ante or -ente. They work like ordinary -e adjectives.",
+      "examples": [
+        {
+          "it": "Un libro interessante.",
+          "en": "An interesting book."
+        },
+        {
+          "it": "Una scoperta sorprendente.",
+          "en": "A surprising discovery."
+        }
+      ],
+      "unit": "b2-10",
+      "level": "B2"
+    },
+    {
+      "q": "Why is Lei sometimes written with a capital L?",
+      "a": "Capital Lei, Le and Suo mark the polite 'you' in formal letters. In everyday writing, lowercase is common too.",
+      "examples": [
+        {
+          "it": "La ringrazio per la Sua risposta.",
+          "en": "Thank you for your reply."
+        },
+        {
+          "it": "Le scrivo per chiedere informazioni.",
+          "en": "I'm writing to ask for information."
+        }
+      ],
+      "unit": "b2-11",
+      "level": "B2"
+    },
+    {
+      "q": "How do I say 'whose' in 'a poet whose works...'?",
+      "a": "Use the article + cui + noun. The article matches the thing owned.",
+      "examples": [
+        {
+          "it": "Dante è un poeta le cui opere sono famose.",
+          "en": "Dante is a poet whose works are famous."
+        },
+        {
+          "it": "La casa il cui tetto è crollato.",
+          "en": "The house whose roof collapsed."
+        }
+      ],
+      "unit": "c1-08",
+      "level": "C1"
+    }
+  ],
+  "english_rewrites": [
+    {
+      "english": "I'm fine.",
+      "rewrite": "I stay well.",
+      "italian": "Sto bene.",
+      "en": "I'm fine.",
+      "unit": "a1-01",
+      "level": "A1"
+    },
+    {
+      "english": "Mrs Bianchi is here.",
+      "rewrite": "The Mrs Bianchi is here.",
+      "italian": "La signora Bianchi è qui.",
+      "en": "Mrs Bianchi is here.",
+      "unit": "a1-01",
+      "level": "A1"
+    },
+    {
+      "english": "I don't speak German.",
+      "rewrite": "I not speak German.",
+      "italian": "Non parlo tedesco.",
+      "en": "I don't speak German.",
+      "unit": "a1-02",
+      "level": "A1"
+    },
+    {
+      "english": "How do you say 'fork'?",
+      "rewrite": "How does one say 'fork'?",
+      "italian": "Come si dice 'fork'?",
+      "en": "How do you say 'fork'?",
+      "unit": "a1-02",
+      "level": "A1"
+    },
+    {
+      "english": "My name is Josh.",
+      "rewrite": "I call myself Josh.",
+      "italian": "Mi chiamo Josh.",
+      "en": "My name is Josh.",
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "english": "Does John study?",
+      "rewrite": "Studies John?",
+      "italian": "Studia Giovanni?",
+      "en": "Does John study?",
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "english": "Italy is beautiful.",
+      "rewrite": "The Italy is beautiful.",
+      "italian": "L'Italia è bellissima.",
+      "en": "Italy is beautiful.",
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "english": "It's very good.",
+      "rewrite": "Is very good.",
+      "italian": "È buonissimo.",
+      "en": "It's very good.",
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "english": "I'll have a coffee.",
+      "rewrite": "I take a coffee.",
+      "italian": "Prendo un caffè.",
+      "en": "I'll have a coffee.",
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "english": "a coffee cup",
+      "rewrite": "a cup for coffee",
+      "italian": "una tazza da caffè",
+      "en": "a coffee cup",
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "english": "an orange juice",
+      "rewrite": "a juice of orange",
+      "italian": "un succo d'arancia",
+      "en": "an orange juice",
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "english": "I'm thirty.",
+      "rewrite": "I have thirty years.",
+      "italian": "Ho trent'anni.",
+      "en": "I'm thirty.",
+      "unit": "a1-05",
+      "level": "A1"
+    },
+    {
+      "english": "How old are you?",
+      "rewrite": "How many years do you have?",
+      "italian": "Quanti anni hai?",
+      "en": "How old are you?",
+      "unit": "a1-05",
+      "level": "A1"
+    },
+    {
+      "english": "I'm buying some bread.",
+      "rewrite": "I buy of the bread.",
+      "italian": "Compro del pane.",
+      "en": "I'm buying some bread.",
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "english": "I'm looking for the keys.",
+      "rewrite": "I search the keys.",
+      "italian": "Cerco le chiavi.",
+      "en": "I'm looking for the keys.",
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "english": "Which one do you want? This one.",
+      "rewrite": "Which do you want? This.",
+      "italian": "Quale vuoi? Questo.",
+      "en": "Which one do you want? This one.",
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "english": "There's the train!",
+      "rewrite": "Behold the train!",
+      "italian": "Ecco il treno!",
+      "en": "There's the train!",
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "english": "They're on the table. (the keys)",
+      "rewrite": "Are on the table.",
+      "italian": "Sono sul tavolo.",
+      "en": "They're on the table.",
+      "unit": "a1-07",
+      "level": "A1"
+    },
+    {
+      "english": "I'm going to the doctor's.",
+      "rewrite": "I go from the doctor.",
+      "italian": "Vado dal medico.",
+      "en": "I'm going to the doctor's.",
+      "unit": "a1-07",
+      "level": "A1"
+    },
+    {
+      "english": "I'm going into the shop.",
+      "rewrite": "I enter in the shop.",
+      "italian": "Entro nel negozio.",
+      "en": "I'm going into the shop.",
+      "unit": "a1-07",
+      "level": "A1"
+    },
+    {
+      "english": "I like Rome.",
+      "rewrite": "Rome is pleasing to me.",
+      "italian": "Mi piace Roma.",
+      "en": "I like Rome.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "english": "I like museums.",
+      "rewrite": "Museums are pleasing to me.",
+      "italian": "Mi piacciono i musei.",
+      "en": "I like museums.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "english": "I like coffee.",
+      "rewrite": "To me is pleasing the coffee.",
+      "italian": "Mi piace il caffè.",
+      "en": "I like coffee.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "english": "I like playing tennis.",
+      "rewrite": "To play tennis is pleasing to me.",
+      "italian": "Mi piace giocare a tennis.",
+      "en": "I like playing tennis.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "english": "Reading is fun.",
+      "rewrite": "To read is fun.",
+      "italian": "Leggere è divertente.",
+      "en": "Reading is fun.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "english": "It's cold today.",
+      "rewrite": "It makes cold today.",
+      "italian": "Oggi fa freddo.",
+      "en": "It's cold today.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "english": "It's raining.",
+      "rewrite": "Rains.",
+      "italian": "Piove.",
+      "en": "It's raining.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "english": "He's a nice guy, isn't he?",
+      "rewrite": "He's a nice guy, true?",
+      "italian": "È un bravo ragazzo, vero?",
+      "en": "He's a nice guy, isn't he?",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "english": "Who are you going with?",
+      "rewrite": "With whom are you going?",
+      "italian": "Con chi vai?",
+      "en": "Who are you going with?",
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "english": "Which ones do you want to play with?",
+      "rewrite": "With which ones do you want to play?",
+      "italian": "Con quali vuoi giocare?",
+      "en": "Which ones do you want to play with?",
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "english": "I can swim.",
+      "rewrite": "I know how to swim.",
+      "italian": "So nuotare.",
+      "en": "I can swim.",
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "english": "I'm leaving tomorrow.",
+      "rewrite": "Tomorrow I leave.",
+      "italian": "Domani parto.",
+      "en": "I'm leaving tomorrow.",
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "english": "English is spoken here.",
+      "rewrite": "Here one speaks English.",
+      "italian": "Qui si parla inglese.",
+      "en": "English is spoken here.",
+      "unit": "a1-13",
+      "level": "A1"
+    },
+    {
+      "english": "Tickets are sold here.",
+      "rewrite": "Here one sells tickets.",
+      "italian": "Qui si vendono biglietti.",
+      "en": "Tickets are sold here.",
+      "unit": "a1-13",
+      "level": "A1"
+    },
+    {
+      "english": "I'm waiting for the bus.",
+      "rewrite": "I await the bus.",
+      "italian": "Aspetto l'autobus.",
+      "en": "I'm waiting for the bus.",
+      "unit": "a1-13",
+      "level": "A1"
+    },
+    {
+      "english": "Here comes the bus.",
+      "rewrite": "Arrives the bus.",
+      "italian": "Arriva l'autobus.",
+      "en": "Here comes the bus.",
+      "unit": "a1-13",
+      "level": "A1"
+    },
+    {
+      "english": "I'm hungry.",
+      "rewrite": "I have hunger.",
+      "italian": "Ho fame.",
+      "en": "I'm hungry.",
+      "unit": "a1-14",
+      "level": "A1"
+    },
+    {
+      "english": "I'm cold.",
+      "rewrite": "I have cold.",
+      "italian": "Ho freddo.",
+      "en": "I'm cold.",
+      "unit": "a1-14",
+      "level": "A1"
+    },
+    {
+      "english": "My foot hurts.",
+      "rewrite": "To me does harm the foot.",
+      "italian": "Mi fa male il piede.",
+      "en": "My foot hurts.",
+      "unit": "a1-14",
+      "level": "A1"
+    },
+    {
+      "english": "I went to the market.",
+      "rewrite": "I am gone to the market.",
+      "italian": "Sono andata al mercato.",
+      "en": "I went to the market.",
+      "unit": "a1-15",
+      "level": "A1"
+    },
+    {
+      "english": "Did you sleep well?",
+      "rewrite": "Have you slept well?",
+      "italian": "Hai dormito bene?",
+      "en": "Did you sleep well?",
+      "unit": "a1-15",
+      "level": "A1"
+    },
+    {
+      "english": "John's shirt",
+      "rewrite": "the shirt of John",
+      "italian": "la camicia di Giovanni",
+      "en": "John's shirt",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "english": "the girls' father",
+      "rewrite": "the father of the girls",
+      "italian": "il padre delle ragazze",
+      "en": "the girls' father",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "english": "Whose car is it?",
+      "rewrite": "Of whom is the car?",
+      "italian": "Di chi è la macchina?",
+      "en": "Whose car is it?",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "english": "My father's. (the house)",
+      "rewrite": "The one of my father.",
+      "italian": "Quella di mio padre.",
+      "en": "My father's.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "english": "my friends",
+      "rewrite": "the my friends",
+      "italian": "i miei amici",
+      "en": "my friends",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "english": "Marco loves his car.",
+      "rewrite": "Marco loves the his car.",
+      "italian": "Marco ama la sua macchina.",
+      "en": "Marco loves his car.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "english": "I'm going with hers. (her little brother)",
+      "rewrite": "I'm going with the her (one).",
+      "italian": "Vado con il suo.",
+      "en": "I'm going with hers.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "english": "It's mine.",
+      "rewrite": "Is mine.",
+      "italian": "È mio.",
+      "en": "It's mine.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "english": "My mother's name is Anna.",
+      "rewrite": "My mother calls herself Anna.",
+      "italian": "Mia madre si chiama Anna.",
+      "en": "My mother's name is Anna.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "english": "I don't have anything.",
+      "rewrite": "I don't have nothing.",
+      "italian": "Non ho niente.",
+      "en": "I don't have anything.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "english": "I don't know anyone here.",
+      "rewrite": "I don't know no one here.",
+      "italian": "Non conosco nessuno qui.",
+      "en": "I don't know anyone here.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "english": "I've never been to Venice.",
+      "rewrite": "I am not never been to Venice.",
+      "italian": "Non sono mai stato a Venezia.",
+      "en": "I've never been to Venice.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "english": "I don't want to go anywhere.",
+      "rewrite": "I don't want to go to no part.",
+      "italian": "Non voglio andare da nessuna parte.",
+      "en": "I don't want to go anywhere.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "english": "My brother is working in California.",
+      "rewrite": "My brother works in California.",
+      "italian": "Mio fratello lavora in California.",
+      "en": "My brother works in California.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "english": "I'm eating right now.",
+      "rewrite": "I stay eating.",
+      "italian": "Sto mangiando.",
+      "en": "I'm eating (right now).",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "english": "We had a great time.",
+      "rewrite": "We amused ourselves a lot.",
+      "italian": "Ci siamo divertiti molto.",
+      "en": "We had a great time.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "english": "Marco likes fish.",
+      "rewrite": "To Marco is pleasing the fish.",
+      "italian": "A Marco piace il pesce.",
+      "en": "Marco likes fish.",
+      "unit": "a2-03",
+      "level": "A2"
+    },
+    {
+      "english": "a chocolate cake",
+      "rewrite": "a cake with the chocolate",
+      "italian": "una torta al cioccolato",
+      "en": "a chocolate cake",
+      "unit": "a2-03",
+      "level": "A2"
+    },
+    {
+      "english": "She would talk while he painted.",
+      "rewrite": "She used to talk while he used to paint.",
+      "italian": "Parlava mentre lui dipingeva.",
+      "en": "She would talk while he painted.",
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "english": "Before going out, I close the windows.",
+      "rewrite": "Before of to go out, I close the windows.",
+      "italian": "Prima di uscire, chiudo le finestre.",
+      "en": "Before going out, I close the windows.",
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "english": "I remember your name.",
+      "rewrite": "I remember myself of your name.",
+      "italian": "Mi ricordo del tuo nome.",
+      "en": "I remember your name.",
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "english": "I saw her.",
+      "rewrite": "Her I have seen.",
+      "italian": "L'ho vista.",
+      "en": "I saw her.",
+      "unit": "a2-05",
+      "level": "A2"
+    },
+    {
+      "english": "a leather jacket",
+      "rewrite": "a jacket of leather",
+      "italian": "una giacca di pelle",
+      "en": "a leather jacket",
+      "unit": "a2-06",
+      "level": "A2"
+    },
+    {
+      "english": "I give him the book.",
+      "rewrite": "To him I give the book.",
+      "italian": "Gli do il libro.",
+      "en": "I give him the book.",
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "english": "John writes his brother a letter.",
+      "rewrite": "John writes a letter to his brother.",
+      "italian": "Giovanni scrive una lettera a suo fratello.",
+      "en": "John writes his brother a letter.",
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "english": "Who are you talking to?",
+      "rewrite": "To whom are you speaking?",
+      "italian": "A chi parli?",
+      "en": "Who are you talking to?",
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "english": "Who did you get this book from?",
+      "rewrite": "From whom did you have this book?",
+      "italian": "Da chi hai avuto questo libro?",
+      "en": "Who did you get this book from?",
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "english": "I'll call Maria.",
+      "rewrite": "I'll telephone to Maria.",
+      "italian": "Telefono a Maria.",
+      "en": "I'll call Maria.",
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "english": "I'm sorry.",
+      "rewrite": "To me it is displeasing.",
+      "italian": "Mi dispiace.",
+      "en": "I'm sorry.",
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "english": "Let's go!",
+      "rewrite": "We go!",
+      "italian": "Andiamo!",
+      "en": "Let's go!",
+      "unit": "a2-08",
+      "level": "A2"
+    },
+    {
+      "english": "Don't touch!",
+      "rewrite": "Not to touch!",
+      "italian": "Non toccare!",
+      "en": "Don't touch!",
+      "unit": "a2-08",
+      "level": "A2"
+    },
+    {
+      "english": "I wonder who's at the door.",
+      "rewrite": "Who will be at the door?",
+      "italian": "Chi sarà alla porta?",
+      "en": "I wonder who's at the door.",
+      "unit": "a2-09",
+      "level": "A2"
+    },
+    {
+      "english": "It's probably three o'clock.",
+      "rewrite": "They will be the three.",
+      "italian": "Saranno le tre.",
+      "en": "It's probably three o'clock.",
+      "unit": "a2-09",
+      "level": "A2"
+    },
+    {
+      "english": "As soon as he gets back, I'll call him.",
+      "rewrite": "As soon as he will get back, I will telephone to him.",
+      "italian": "Appena tornerà, gli telefonerò.",
+      "en": "As soon as he gets back, I'll call him.",
+      "unit": "a2-09",
+      "level": "A2"
+    },
+    {
+      "english": "Giovanni is taller than Roberto.",
+      "rewrite": "Giovanni is more tall of Roberto.",
+      "italian": "Giovanni è più alto di Roberto.",
+      "en": "Giovanni is taller than Roberto.",
+      "unit": "a2-10",
+      "level": "A2"
+    },
+    {
+      "english": "It's the best restaurant in town.",
+      "rewrite": "It's the restaurant best of the city.",
+      "italian": "È il ristorante migliore della città.",
+      "en": "It's the best restaurant in town.",
+      "unit": "a2-10",
+      "level": "A2"
+    },
+    {
+      "english": "I hurt my ankle.",
+      "rewrite": "I made myself harm at the ankle.",
+      "italian": "Mi sono fatto male alla caviglia.",
+      "en": "I hurt my ankle.",
+      "unit": "a2-12",
+      "level": "A2"
+    },
+    {
+      "english": "I need two stamps.",
+      "rewrite": "To me are needed two stamps.",
+      "italian": "Mi servono due francobolli.",
+      "en": "I need two stamps.",
+      "unit": "a2-14",
+      "level": "A2"
+    },
+    {
+      "english": "Here's the book I bought.",
+      "rewrite": "Here's the book that I bought.",
+      "italian": "Ecco il libro che ho comprato.",
+      "en": "Here's the book I bought.",
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "english": "The man I speak to is my uncle.",
+      "rewrite": "The man to whom I speak is my uncle.",
+      "italian": "L'uomo a cui parlo è mio zio.",
+      "en": "The man I speak to is my uncle.",
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "english": "Here's the student I was talking about.",
+      "rewrite": "Here's the student about whom I was talking.",
+      "italian": "Ecco lo studente di cui parlavo.",
+      "en": "Here's the student I was talking about.",
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "english": "The girl I go out with is from Naples.",
+      "rewrite": "The girl with whom I go out is from Naples.",
+      "italian": "La ragazza con cui esco è di Napoli.",
+      "en": "The girl I go out with is from Naples.",
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "english": "The ones I gave you.",
+      "rewrite": "Those that I gave you.",
+      "italian": "Quelli che ti ho dato.",
+      "en": "The ones I gave you.",
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "english": "I don't know what happened.",
+      "rewrite": "I don't know that which happened.",
+      "italian": "Non so quello che è successo.",
+      "en": "I don't know what happened.",
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "english": "Those who study learn.",
+      "rewrite": "Who studies, learns.",
+      "italian": "Chi studia impara.",
+      "en": "Those who study learn.",
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "english": "You speak many languages, which is an advantage.",
+      "rewrite": "You speak many languages, the which is an advantage.",
+      "italian": "Parli molte lingue, il che è un vantaggio.",
+      "en": "You speak many languages, which is an advantage.",
+      "unit": "b1-05",
+      "level": "B1"
+    },
+    {
+      "english": "He wanted to know who saw the student.",
+      "rewrite": "He wanted to know who had seen the student.",
+      "italian": "Voleva sapere chi aveva visto lo studente.",
+      "en": "He wanted to know who had seen the student.",
+      "unit": "b1-06",
+      "level": "B1"
+    },
+    {
+      "english": "I want you to come.",
+      "rewrite": "I want that you come.",
+      "italian": "Voglio che tu venga.",
+      "en": "I want you to come.",
+      "unit": "b1-07",
+      "level": "B1"
+    },
+    {
+      "english": "Before the show starts.",
+      "rewrite": "Before that the show starts.",
+      "italian": "Prima che cominci lo spettacolo.",
+      "en": "Before the show starts.",
+      "unit": "b1-08",
+      "level": "B1"
+    },
+    {
+      "english": "I miss you.",
+      "rewrite": "You are lacking to me.",
+      "italian": "Mi manchi.",
+      "en": "I miss you.",
+      "unit": "b1-11",
+      "level": "B1"
+    },
+    {
+      "english": "If I were rich, I'd buy a villa.",
+      "rewrite": "If I were (subjunctive) rich, I would buy a villa.",
+      "italian": "Se fossi ricco, comprerei una villa.",
+      "en": "If I were rich, I'd buy a villa.",
+      "unit": "b1-12",
+      "level": "B1"
+    },
+    {
+      "english": "When I've written the letter, I'll send it.",
+      "rewrite": "When I will have written the letter, I will send it.",
+      "italian": "Quando avrò scritto la lettera, la spedirò.",
+      "en": "When I've written the letter, I'll send it.",
+      "unit": "b2-04",
+      "level": "B2"
+    },
+    {
+      "english": "She said she would come.",
+      "rewrite": "She said she would have come.",
+      "italian": "Ha detto che sarebbe venuta.",
+      "en": "She said she would come.",
+      "unit": "b2-07",
+      "level": "B2"
+    },
+    {
+      "english": "By studying hard, Tony learned Italian.",
+      "rewrite": "Studying hard, Tony learned Italian.",
+      "italian": "Studiando sodo, Tony ha imparato l'italiano.",
+      "en": "By studying hard, Tony learned Italian.",
+      "unit": "b2-10",
+      "level": "B2"
+    },
+    {
+      "english": "Dante is a poet whose works are well known.",
+      "rewrite": "Dante is a poet the whose works are well known.",
+      "italian": "Dante è un poeta le cui opere sono molto conosciute.",
+      "en": "Dante is a poet whose works are well known.",
+      "unit": "c1-08",
+      "level": "C1"
+    }
+  ],
+  "recasts": [
+    {
+      "wrong": "Sono bene, grazie.",
+      "right": "Sto bene, grazie.",
+      "en": "I'm fine, thanks.",
+      "why": "How you are in health uses stare, not essere.",
+      "unit": "a1-01",
+      "level": "A1"
+    },
+    {
+      "wrong": "Signora, come stai?",
+      "right": "Signora, come sta?",
+      "en": "Madam, how are you?",
+      "why": "With someone you call signora, use the Lei form.",
+      "unit": "a1-01",
+      "level": "A1"
+    },
+    {
+      "wrong": "Signore, parli inglese?",
+      "right": "Signore, parla inglese?",
+      "en": "Sir, do you speak English?",
+      "why": "Lei takes the third-person verb, like 'she'.",
+      "unit": "a1-01",
+      "level": "A1"
+    },
+    {
+      "wrong": "Può parlare più lento?",
+      "right": "Può parlare più lentamente?",
+      "en": "Could you speak more slowly?",
+      "why": "Describing how you do something takes the adverb (-mente), not the adjective.",
+      "unit": "a1-02",
+      "level": "A1"
+    },
+    {
+      "wrong": "Io ho il nome Josh.",
+      "right": "Mi chiamo Josh.",
+      "en": "My name is Josh.",
+      "why": "Italians say 'I call myself': mi chiamo.",
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "wrong": "Vado in Roma.",
+      "right": "Vado a Roma.",
+      "en": "I'm going to Rome.",
+      "why": "Cities take a; countries and regions take in.",
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "wrong": "Abito a Italia.",
+      "right": "Abito in Italia.",
+      "en": "I live in Italy.",
+      "why": "Countries take in, not a.",
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "wrong": "Anna è americano.",
+      "right": "Anna è americana.",
+      "en": "Anna is American.",
+      "why": "The adjective matches the person: feminine -a.",
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "wrong": "Uno caffè, per favore.",
+      "right": "Un caffè, per favore.",
+      "en": "A coffee, please.",
+      "why": "Uno is only for masculine words starting with z or s + consonant.",
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "wrong": "Un spritz.",
+      "right": "Uno spritz.",
+      "en": "A spritz.",
+      "why": "Before s + consonant, masculine words take uno.",
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "wrong": "Un amica.",
+      "right": "Un'amica.",
+      "en": "A (female) friend.",
+      "why": "Feminine una becomes un' before a vowel.",
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "wrong": "Due cappuccino.",
+      "right": "Due cappuccini.",
+      "en": "Two cappuccinos.",
+      "why": "Masculine -o becomes -i in the plural.",
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "wrong": "Esso è buono.",
+      "right": "È buono.",
+      "en": "It's good.",
+      "why": "Italian doesn't say 'it' as a subject; the verb is enough.",
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "wrong": "Una tazza caffè.",
+      "right": "Una tazza da caffè.",
+      "en": "A coffee cup.",
+      "why": "Italian links two nouns with a preposition: da for what something is for.",
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "wrong": "Sono trent'anni.",
+      "right": "Ho trent'anni.",
+      "en": "I'm thirty.",
+      "why": "Age uses avere: 'I have thirty years'.",
+      "unit": "a1-05",
+      "level": "A1"
+    },
+    {
+      "wrong": "Pago per il caffè.",
+      "right": "Pago il caffè.",
+      "en": "I'll pay for the coffee.",
+      "why": "Pagare already includes 'for'.",
+      "unit": "a1-05",
+      "level": "A1"
+    },
+    {
+      "wrong": "Il studente.",
+      "right": "Lo studente.",
+      "en": "The student.",
+      "why": "Before s + consonant, masculine 'the' is lo.",
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "wrong": "I studenti.",
+      "right": "Gli studenti.",
+      "en": "The students.",
+      "why": "Before s + consonant or a vowel, the masculine plural is gli.",
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "wrong": "Non ho del pane.",
+      "right": "Non ho pane.",
+      "en": "I don't have any bread.",
+      "why": "After non, the 'some' word (del, della...) is dropped.",
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "wrong": "Cerco per le chiavi.",
+      "right": "Cerco le chiavi.",
+      "en": "I'm looking for my keys.",
+      "why": "Cercare already means 'look for'.",
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "wrong": "Prendo questo uno.",
+      "right": "Prendo questo.",
+      "en": "I'll take this one.",
+      "why": "There's no word for 'one': questo alone means 'this one'.",
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "wrong": "C'è il mio amico! (pointing)",
+      "right": "Ecco il mio amico!",
+      "en": "There's my friend!",
+      "why": "To point something out, use ecco; c'è says something exists.",
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "wrong": "Ecco una farmacia qui vicino?",
+      "right": "C'è una farmacia qui vicino?",
+      "en": "Is there a pharmacy near here?",
+      "why": "To ask whether something exists, use c'è.",
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "wrong": "Che è questo?",
+      "right": "Cos'è questo?",
+      "en": "What's this?",
+      "why": "Cos'è is the natural way to ask what something is.",
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "wrong": "Vado al Luca.",
+      "right": "Vado da Luca.",
+      "en": "I'm going to Luca's.",
+      "why": "'To someone's place' is da + the person.",
+      "unit": "a1-07",
+      "level": "A1"
+    },
+    {
+      "wrong": "Entro il negozio.",
+      "right": "Entro nel negozio.",
+      "en": "I'm going into the shop.",
+      "why": "Entrare needs in before the place.",
+      "unit": "a1-07",
+      "level": "A1"
+    },
+    {
+      "wrong": "Quanto pesche?",
+      "right": "Quante pesche?",
+      "en": "How many peaches?",
+      "why": "Quanto matches the noun: quante for feminine plural.",
+      "unit": "a1-09",
+      "level": "A1"
+    },
+    {
+      "wrong": "Sei uovi.",
+      "right": "Sei uova.",
+      "en": "Six eggs.",
+      "why": "Uovo has an irregular plural: le uova.",
+      "unit": "a1-09",
+      "level": "A1"
+    },
+    {
+      "wrong": "La problema è la doccia.",
+      "right": "Il problema è la doccia.",
+      "en": "The problem is the shower.",
+      "why": "Problema is masculine even though it ends in -a.",
+      "unit": "a1-10",
+      "level": "A1"
+    },
+    {
+      "wrong": "Che è il tuo numero?",
+      "right": "Qual è il tuo numero?",
+      "en": "What's your number?",
+      "why": "For a choice among many (number, address), use qual è.",
+      "unit": "a1-10",
+      "level": "A1"
+    },
+    {
+      "wrong": "Io piaccio la pizza.",
+      "right": "Mi piace la pizza.",
+      "en": "I like pizza.",
+      "why": "The thing liked is the subject: 'pizza is pleasing to me'.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "wrong": "Mi piace i cornetti.",
+      "right": "Mi piacciono i cornetti.",
+      "en": "I like croissants.",
+      "why": "The verb agrees with the thing liked: plural piacciono.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "wrong": "Oggi è freddo.",
+      "right": "Oggi fa freddo.",
+      "en": "It's cold today.",
+      "why": "Weather uses fare.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "wrong": "È caldo oggi.",
+      "right": "Fa caldo oggi.",
+      "en": "It's hot today.",
+      "why": "Weather uses fare.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "wrong": "Leggendo è divertente.",
+      "right": "Leggere è divertente.",
+      "en": "Reading is fun.",
+      "why": "As a subject, English -ing is the Italian infinitive.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "wrong": "Parli buono l'italiano.",
+      "right": "Parli bene l'italiano.",
+      "en": "You speak Italian well.",
+      "why": "Bene (well) describes an action; buono (good) describes a thing.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "wrong": "La pizza è bene.",
+      "right": "La pizza è buona.",
+      "en": "The pizza is good.",
+      "why": "A thing is buono; an action is done bene.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "wrong": "Ci sono molto persone.",
+      "right": "Ci sono molte persone.",
+      "en": "There are a lot of people.",
+      "why": "Before a noun, molto agrees: molte persone.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "wrong": "Il film è molto interessando.",
+      "right": "Il film è molto interessante.",
+      "en": "The film is very interesting.",
+      "why": "English -ing adjectives become -ante or -ente.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "wrong": "Guardo a quella chiesa.",
+      "right": "Guardo quella chiesa.",
+      "en": "I'm looking at that church.",
+      "why": "Guardare already means 'look at'.",
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "wrong": "Chi vai con?",
+      "right": "Con chi vai?",
+      "en": "Who are you going with?",
+      "why": "Italian never ends with a preposition: it goes before chi.",
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "wrong": "Vieni con io?",
+      "right": "Vieni con me?",
+      "en": "Are you coming with me?",
+      "why": "After a preposition, 'I' becomes me.",
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "wrong": "Questo è per tu.",
+      "right": "Questo è per te.",
+      "en": "This is for you.",
+      "why": "After a preposition, tu becomes te.",
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "wrong": "Voglio a partire.",
+      "right": "Voglio partire.",
+      "en": "I want to leave.",
+      "why": "After volere, the infinitive follows directly.",
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "wrong": "Posso nuotare. (meaning 'I know how')",
+      "right": "So nuotare.",
+      "en": "I can swim.",
+      "why": "For a learned skill, 'can' is sapere.",
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "wrong": "Aspetto per l'autobus.",
+      "right": "Aspetto l'autobus.",
+      "en": "I'm waiting for the bus.",
+      "why": "Aspettare already means 'wait for'.",
+      "unit": "a1-13",
+      "level": "A1"
+    },
+    {
+      "wrong": "Sono fame.",
+      "right": "Ho fame.",
+      "en": "I'm hungry.",
+      "why": "Hunger uses avere: 'I have hunger'.",
+      "unit": "a1-14",
+      "level": "A1"
+    },
+    {
+      "wrong": "Sono sete.",
+      "right": "Ho sete.",
+      "en": "I'm thirsty.",
+      "why": "Thirst uses avere: 'I have thirst'.",
+      "unit": "a1-14",
+      "level": "A1"
+    },
+    {
+      "wrong": "Sono freddo.",
+      "right": "Ho freddo.",
+      "en": "I'm cold.",
+      "why": "Feeling cold uses avere.",
+      "unit": "a1-14",
+      "level": "A1"
+    },
+    {
+      "wrong": "Mi fa male le gambe.",
+      "right": "Mi fanno male le gambe.",
+      "en": "My legs hurt.",
+      "why": "The verb agrees with what hurts: plural fanno.",
+      "unit": "a1-14",
+      "level": "A1"
+    },
+    {
+      "wrong": "Ho andato al mercato.",
+      "right": "Sono andato al mercato.",
+      "en": "I went to the market.",
+      "why": "Andare takes essere in the past.",
+      "unit": "a1-15",
+      "level": "A1"
+    },
+    {
+      "wrong": "Ho stato a Roma.",
+      "right": "Sono stato a Roma.",
+      "en": "I've been to Rome.",
+      "why": "Essere takes essere in the past.",
+      "unit": "a1-15",
+      "level": "A1"
+    },
+    {
+      "wrong": "Sono mangiato bene.",
+      "right": "Ho mangiato bene.",
+      "en": "I ate well.",
+      "why": "Mangiare takes avere in the past.",
+      "unit": "a1-15",
+      "level": "A1"
+    },
+    {
+      "wrong": "Maria è andato a casa.",
+      "right": "Maria è andata a casa.",
+      "en": "Maria went home.",
+      "why": "With essere, the participle matches the subject.",
+      "unit": "a1-15",
+      "level": "A1"
+    },
+    {
+      "wrong": "Ho veduto il Colosseo.",
+      "right": "Ho visto il Colosseo.",
+      "en": "I saw the Colosseum.",
+      "why": "Visto is the everyday participle of vedere.",
+      "unit": "a1-15",
+      "level": "A1"
+    },
+    {
+      "wrong": "Il mio madre.",
+      "right": "Mia madre.",
+      "en": "My mother.",
+      "why": "One family member takes no article, and possessives match the person's gender.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "wrong": "Mio amico è qui.",
+      "right": "Il mio amico è qui.",
+      "en": "My friend is here.",
+      "why": "Possessives normally take the article.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "wrong": "Il suo macchina. (his car)",
+      "right": "La sua macchina.",
+      "en": "His car.",
+      "why": "The possessive matches the thing owned, not the owner.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "wrong": "Le sue libri.",
+      "right": "I suoi libri.",
+      "en": "His / her books.",
+      "why": "Libri is masculine plural, so i suoi.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "wrong": "Il loro casa.",
+      "right": "La loro casa.",
+      "en": "Their house.",
+      "why": "Loro never changes, but the article matches the thing: la.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "wrong": "Vado con la sua. (her brother)",
+      "right": "Vado con il suo.",
+      "en": "I'm going with hers.",
+      "why": "'Hers' matches the brother, so masculine il suo.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "wrong": "Giovanni macchina.",
+      "right": "La macchina di Giovanni.",
+      "en": "John's car.",
+      "why": "Italian has no 's: say 'the car of John'.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "wrong": "Chi è la macchina?",
+      "right": "Di chi è la macchina?",
+      "en": "Whose car is it?",
+      "why": "'Whose' is di chi, 'of whom'.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "wrong": "Quel di Mario.",
+      "right": "Quello di Mario.",
+      "en": "Mario's.",
+      "why": "Alone, 'that one' is quello; quel only goes before a noun.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "wrong": "Una casa bianco.",
+      "right": "Una casa bianca.",
+      "en": "A white house.",
+      "why": "The adjective matches the noun: feminine -a.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "wrong": "Le ragazze sono stanco.",
+      "right": "Le ragazze sono stanche.",
+      "en": "The girls are tired.",
+      "why": "After essere, the adjective matches the subject.",
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "wrong": "Non ho qualcosa.",
+      "right": "Non ho niente.",
+      "en": "I don't have anything.",
+      "why": "After non, use the negative word: niente.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "wrong": "Non vedo qualcuno.",
+      "right": "Non vedo nessuno.",
+      "en": "I don't see anyone.",
+      "why": "After non, use the negative word: nessuno.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "wrong": "Ho mai visto Venezia.",
+      "right": "Non ho mai visto Venezia.",
+      "en": "I've never seen Venice.",
+      "why": "'Never' needs non before the verb as well as mai.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "wrong": "Sto studiando italiano quest'anno.",
+      "right": "Studio italiano quest'anno.",
+      "en": "I'm studying Italian this year.",
+      "why": "For something ongoing over weeks or months, use the plain present.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "wrong": "Sto lavorando a Seattle. (my job)",
+      "right": "Lavoro a Seattle.",
+      "en": "I work in Seattle.",
+      "why": "Stare + -ando is only for right this minute.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "wrong": "Sto mangiando la pizza ogni sabato.",
+      "right": "Mangio la pizza ogni sabato.",
+      "en": "I eat pizza every Saturday.",
+      "why": "Habits take the plain present.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "wrong": "Alzo alle sette.",
+      "right": "Mi alzo alle sette.",
+      "en": "I get up at seven.",
+      "why": "Alzarsi is reflexive: the mi can't be dropped.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "wrong": "Ho alzato tardi.",
+      "right": "Mi sono alzato tardi.",
+      "en": "I got up late.",
+      "why": "Reflexive verbs take essere in the past.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "wrong": "Ho avuto un buon tempo.",
+      "right": "Mi sono divertito.",
+      "en": "I had a good time.",
+      "why": "'Have a good time' is divertirsi.",
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "wrong": "Lui piace il calcio.",
+      "right": "Gli piace il calcio.",
+      "en": "He likes football.",
+      "why": "With piacere the person is 'to him': gli.",
+      "unit": "a2-03",
+      "level": "A2"
+    },
+    {
+      "wrong": "Ho piaciuto il film.",
+      "right": "Mi è piaciuto il film.",
+      "en": "I liked the film.",
+      "why": "Piacere takes essere, and the film is the subject.",
+      "unit": "a2-03",
+      "level": "A2"
+    },
+    {
+      "wrong": "Prima di partendo.",
+      "right": "Prima di partire.",
+      "en": "Before leaving.",
+      "why": "After a preposition, use the infinitive.",
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "wrong": "Da bambino sono andato al mare ogni estate.",
+      "right": "Da bambino andavo al mare ogni estate.",
+      "en": "As a child I used to go to the seaside every summer.",
+      "why": "Habits in the past take the imperfetto.",
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "wrong": "Ho avuto dieci anni.",
+      "right": "Avevo dieci anni.",
+      "en": "I was ten.",
+      "why": "Age in the past is description: imperfetto.",
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "wrong": "Sono state le tre.",
+      "right": "Erano le tre.",
+      "en": "It was three o'clock.",
+      "why": "Time of day in the past takes the imperfetto.",
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "wrong": "Vedo lo.",
+      "right": "Lo vedo.",
+      "en": "I see him.",
+      "why": "Short object pronouns go before the conjugated verb.",
+      "unit": "a2-05",
+      "level": "A2"
+    },
+    {
+      "wrong": "La borsa? L'ho visto.",
+      "right": "La borsa? L'ho vista.",
+      "en": "The bag? I saw it.",
+      "why": "With avere, the participle matches a lo/la placed before it.",
+      "unit": "a2-05",
+      "level": "A2"
+    },
+    {
+      "wrong": "Una rossa macchina.",
+      "right": "Una macchina rossa.",
+      "en": "A red car.",
+      "why": "Colour adjectives go after the noun.",
+      "unit": "a2-06",
+      "level": "A2"
+    },
+    {
+      "wrong": "Quel studente.",
+      "right": "Quello studente.",
+      "en": "That student.",
+      "why": "Quello changes like the article: lo studente, quello studente.",
+      "unit": "a2-06",
+      "level": "A2"
+    },
+    {
+      "wrong": "Quelli alberi.",
+      "right": "Quegli alberi.",
+      "en": "Those trees.",
+      "why": "Before a vowel the masculine plural is quegli, like gli.",
+      "unit": "a2-06",
+      "level": "A2"
+    },
+    {
+      "wrong": "Una tennis racchetta.",
+      "right": "Una racchetta da tennis.",
+      "en": "A tennis racket.",
+      "why": "Italian puts the main noun first: 'a racket for tennis'.",
+      "unit": "a2-06",
+      "level": "A2"
+    },
+    {
+      "wrong": "Telefono Maria.",
+      "right": "Telefono a Maria.",
+      "en": "I'm calling Maria.",
+      "why": "Telefonare takes a before the person.",
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "wrong": "Lo telefono stasera.",
+      "right": "Gli telefono stasera.",
+      "en": "I'll call him tonight.",
+      "why": "Telefonare takes a, so 'him' is gli.",
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "wrong": "La telefono domani.",
+      "right": "Le telefono domani.",
+      "en": "I'll call her tomorrow.",
+      "why": "Telefonare takes a, so 'her' is le.",
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "wrong": "Lo do il libro.",
+      "right": "Gli do il libro.",
+      "en": "I'll give him the book.",
+      "why": "'To him' is gli; lo means 'him' as a direct object.",
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "wrong": "Le ho data il libro.",
+      "right": "Le ho dato il libro.",
+      "en": "I gave her the book.",
+      "why": "The participle doesn't agree with an indirect pronoun.",
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "wrong": "Non tocca!",
+      "right": "Non toccare!",
+      "en": "Don't touch!",
+      "why": "Telling a friend 'don't': non + infinitive.",
+      "unit": "a2-08",
+      "level": "A2"
+    },
+    {
+      "wrong": "Non parli! (to a friend)",
+      "right": "Non parlare!",
+      "en": "Don't talk!",
+      "why": "The negative tu command is non + infinitive.",
+      "unit": "a2-08",
+      "level": "A2"
+    },
+    {
+      "wrong": "Quando arrivi, ti chiamerò.",
+      "right": "Quando arriverai, ti chiamerò.",
+      "en": "When you arrive, I'll call you.",
+      "why": "Keep both halves in the future (or both in the present).",
+      "unit": "a2-09",
+      "level": "A2"
+    },
+    {
+      "wrong": "Se ho i soldi, verrei.",
+      "right": "Se ho i soldi, vengo.",
+      "en": "If I have the money, I'll come.",
+      "why": "A real possibility takes present + present or future + future.",
+      "unit": "a2-09",
+      "level": "A2"
+    },
+    {
+      "wrong": "Più alto che Roberto.",
+      "right": "Più alto di Roberto.",
+      "en": "Taller than Roberto.",
+      "why": "Before a name or noun, 'than' is di.",
+      "unit": "a2-10",
+      "level": "A2"
+    },
+    {
+      "wrong": "Il più bello in città.",
+      "right": "Il più bello della città.",
+      "en": "The most beautiful in town.",
+      "why": "After a superlative, 'in' is di.",
+      "unit": "a2-10",
+      "level": "A2"
+    },
+    {
+      "wrong": "Parlerebbe mentre dipingeva. (used to)",
+      "right": "Parlava mentre dipingeva.",
+      "en": "She would talk while he painted.",
+      "why": "'Would' meaning 'used to' is the imperfetto.",
+      "unit": "a2-11",
+      "level": "A2"
+    },
+    {
+      "wrong": "Il libro ho comprato.",
+      "right": "Il libro che ho comprato.",
+      "en": "The book I bought.",
+      "why": "Italian never drops che.",
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "wrong": "La ragazza che esco con.",
+      "right": "La ragazza con cui esco.",
+      "en": "The girl I go out with.",
+      "why": "After a preposition use cui, and put the preposition first.",
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "wrong": "Il ragazzo che ho parlato.",
+      "right": "Il ragazzo di cui ho parlato.",
+      "en": "The boy I talked about.",
+      "why": "Parlare di needs di + cui.",
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "wrong": "Voleva sapere chi ha visto lo studente.",
+      "right": "Voleva sapere chi aveva visto lo studente.",
+      "en": "He wanted to know who had seen the student.",
+      "why": "The earlier past action takes the trapassato.",
+      "unit": "b1-06",
+      "level": "B1"
+    },
+    {
+      "wrong": "Penso che è chiuso.",
+      "right": "Penso che sia chiuso.",
+      "en": "I think it's closed.",
+      "why": "After penso che, use the subjunctive.",
+      "unit": "b1-07",
+      "level": "B1"
+    },
+    {
+      "wrong": "Voglio te venire.",
+      "right": "Voglio che tu venga.",
+      "en": "I want you to come.",
+      "why": "'Want someone to' is volere che + subjunctive.",
+      "unit": "b1-07",
+      "level": "B1"
+    },
+    {
+      "wrong": "Spero che stai meglio.",
+      "right": "Spero che tu stia meglio.",
+      "en": "I hope you're feeling better.",
+      "why": "After spero che, use the subjunctive.",
+      "unit": "b1-07",
+      "level": "B1"
+    },
+    {
+      "wrong": "Prima che partire.",
+      "right": "Prima di partire.",
+      "en": "Before leaving.",
+      "why": "With an infinitive, use prima di.",
+      "unit": "b1-08",
+      "level": "B1"
+    },
+    {
+      "wrong": "Prima che lui parte.",
+      "right": "Prima che lui parta.",
+      "en": "Before he leaves.",
+      "why": "Prima che takes the subjunctive.",
+      "unit": "b1-08",
+      "level": "B1"
+    },
+    {
+      "wrong": "Qualche libri.",
+      "right": "Qualche libro.",
+      "en": "Some books.",
+      "why": "Qualche always takes a singular noun.",
+      "unit": "b1-09",
+      "level": "B1"
+    },
+    {
+      "wrong": "Se avrei tempo, verrei.",
+      "right": "Se avessi tempo, verrei.",
+      "en": "If I had time, I'd come.",
+      "why": "After se, use the imperfect subjunctive, never the conditional.",
+      "unit": "b1-12",
+      "level": "B1"
+    },
+    {
+      "wrong": "Vorrei che tu vieni.",
+      "right": "Vorrei che tu venissi.",
+      "en": "I'd like you to come.",
+      "why": "Vorrei che takes the imperfect subjunctive.",
+      "unit": "b1-12",
+      "level": "B1"
+    },
+    {
+      "wrong": "Il ponte è stato costruito per i Romani.",
+      "right": "Il ponte è stato costruito dai Romani.",
+      "en": "The bridge was built by the Romans.",
+      "why": "In the passive, 'by' is da, not per.",
+      "unit": "b1-13",
+      "level": "B1"
+    },
+    {
+      "wrong": "Dopo che hanno mangiato, usciremo.",
+      "right": "Dopo che avranno mangiato, usciremo.",
+      "en": "After they've eaten, we'll go out.",
+      "why": "A future action completed first takes the future perfect.",
+      "unit": "b2-04",
+      "level": "B2"
+    },
+    {
+      "wrong": "Si vende biglietti.",
+      "right": "Si vendono biglietti.",
+      "en": "Tickets are sold.",
+      "why": "With si, the verb agrees with what follows: plural.",
+      "unit": "b2-05",
+      "level": "B2"
+    },
+    {
+      "wrong": "Ha detto che verrebbe.",
+      "right": "Ha detto che sarebbe venuto.",
+      "en": "He said he would come.",
+      "why": "A future seen from the past takes the past conditional.",
+      "unit": "b2-07",
+      "level": "B2"
+    },
+    {
+      "wrong": "Per studiando sodo, ha imparato.",
+      "right": "Studiando sodo, ha imparato.",
+      "en": "By studying hard, he learned.",
+      "why": "The gerundio takes no preposition before it.",
+      "unit": "b2-10",
+      "level": "B2"
+    },
+    {
+      "wrong": "Mi fido lui.",
+      "right": "Mi fido di lui.",
+      "en": "I trust him.",
+      "why": "Fidarsi takes di.",
+      "unit": "c1-02",
+      "level": "C1"
+    }
+  ],
+  "recipes": [
+    {
+      "for": "choosing 'you' (subject)",
+      "steps": [
+        "Familiar or formal? First names, friends, family, children → familiar. Signore, signora, a title, a stranger → formal. When in doubt, formal.",
+        "One person or more than one?",
+        "Choose: familiar one = tu; formal one = Lei (with the he/she verb form); more than one, familiar or formal = voi."
+      ],
+      "example": {
+        "it": "Signora, Lei viene con noi? Ragazzi, voi venite?",
+        "en": "Madam, are you coming with us? Guys, are you coming?"
+      },
+      "unit": "a1-01",
+      "level": "A1"
+    },
+    {
+      "for": "making a sentence negative",
+      "steps": [
+        "Find the conjugated verb.",
+        "Drop any English 'do / does / did' (and 'will' or 'would' if they only mark time).",
+        "Put non right before the verb (and before any short pronoun in front of it)."
+      ],
+      "example": {
+        "it": "Non lo so. Non ho capito.",
+        "en": "I don't know. I didn't understand."
+      },
+      "unit": "a1-02",
+      "level": "A1"
+    },
+    {
+      "for": "asking a yes/no question",
+      "steps": [
+        "Start from the statement.",
+        "Drop 'do / does / did'; Italian has no question helper.",
+        "Raise your voice at the end, or put the subject after the verb (verb + rest + subject).",
+        "To check something, add vero? or no? at the end."
+      ],
+      "example": {
+        "it": "Studia italiano Giovanni? Sei di Roma, vero?",
+        "en": "Is Giovanni studying Italian? You're from Rome, aren't you?"
+      },
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "for": "making an adjective agree",
+      "steps": [
+        "Find the noun or person it describes.",
+        "Note its gender (masculine or feminine) and number (one or more).",
+        "Adjectives in -o have four endings: -o, -a, -i, -e. Adjectives in -e have two: -e (singular), -i (plural).",
+        "Put it after the noun, unless it's one of the short common ones that go before (bello, buono, grande, piccolo)."
+      ],
+      "example": {
+        "it": "Le ragazze americane sono simpatiche.",
+        "en": "The American girls are nice."
+      },
+      "unit": "a1-03",
+      "level": "A1"
+    },
+    {
+      "for": "telling a noun's gender",
+      "steps": [
+        "Look at the ending: -o is usually masculine, -a usually feminine.",
+        "Consonant ending (bar, film, sport) → masculine.",
+        "-zione, -tà, -tù, -ie → feminine; -i is usually feminine (la crisi).",
+        "-e → could be either: learn it with its article.",
+        "Watch the exceptions: il problema, la mano, la foto, la radio."
+      ],
+      "example": {
+        "it": "il latte, la lezione",
+        "en": "the milk, the lesson"
+      },
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "for": "choosing 'a / an'",
+      "steps": [
+        "Is the noun masculine or feminine?",
+        "Look at its first letter.",
+        "Masculine: uno before z or s + consonant; un before everything else, vowels included.",
+        "Feminine: un' before a vowel; una before a consonant."
+      ],
+      "example": {
+        "it": "un caffè, uno spritz, una birra, un'aranciata",
+        "en": "a coffee, a spritz, a beer, an orange soda"
+      },
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "for": "making a noun plural",
+      "steps": [
+        "Look at the last letter.",
+        "-o → -i; -e → -i; -a (feminine) → -e.",
+        "Ends in an accented vowel, a consonant or -i → no change; let the article show the plural.",
+        "Change the article and any adjective to match."
+      ],
+      "example": {
+        "it": "il cornetto caldo → i cornetti caldi; il caffè → i caffè",
+        "en": "the warm croissant → the warm croissants; the coffee → the coffees"
+      },
+      "unit": "a1-04",
+      "level": "A1"
+    },
+    {
+      "for": "choosing 'the'",
+      "steps": [
+        "Gender: masculine or feminine?",
+        "Number: one or more?",
+        "First sound of the next word: vowel; z or s + consonant; other consonant.",
+        "Masculine: il / i before most consonants; lo / gli before z or s + consonant; l' / gli before a vowel.",
+        "Feminine: la / le before a consonant; l' / le before a vowel."
+      ],
+      "example": {
+        "it": "il pane, lo zucchero, l'olio, gli spaghetti, la pasta, le uova",
+        "en": "the bread, the sugar, the oil, the spaghetti, the pasta, the eggs"
+      },
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "for": "saying 'some'",
+      "steps": [
+        "Is the sentence negative? Then leave 'some' out: non ho pane.",
+        "Is it a question? 'Some' is optional.",
+        "Otherwise use di + the right 'the': del, dello, dell', della (one mass noun), dei, degli, delle (several countable things).",
+        "Un po' di is always a safe alternative."
+      ],
+      "example": {
+        "it": "Vorrei del pane e delle pesche.",
+        "en": "I'd like some bread and some peaches."
+      },
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "for": "saying 'this one / that one'",
+      "steps": [
+        "Find the noun you mean.",
+        "Note its gender and number.",
+        "Choose questo, questa, questi, queste (near) or quello, quella, quelli, quelle (far). Add no word for 'one'."
+      ],
+      "example": {
+        "it": "Quale borsa? Questa, non quella.",
+        "en": "Which bag? This one, not that one."
+      },
+      "unit": "a1-06",
+      "level": "A1"
+    },
+    {
+      "for": "choosing a preposition for a place",
+      "steps": [
+        "A city or town → a (abito a Napoli, vado a Napoli).",
+        "A country, region or large island → in (in Italia, in Sicilia).",
+        "A person or their home or business → da (dal medico, da Luca).",
+        "A room or a shop named by its type → in (in cucina, in farmacia).",
+        "The same preposition means 'in', 'at' and 'to'."
+      ],
+      "example": {
+        "it": "Domani vado a Bologna, poi in Toscana da mia sorella.",
+        "en": "Tomorrow I'm going to Bologna, then to Tuscany to my sister's."
+      },
+      "unit": "a1-07",
+      "level": "A1"
+    },
+    {
+      "for": "choosing che, quale or quanto before a noun",
+      "steps": [
+        "General 'what + noun' → che (never changes).",
+        "'Which one(s) of these' → quale (singular) or quali (plural).",
+        "'How much / how many' → quanto, quanta, quanti, quante, matching the noun's gender and number."
+      ],
+      "example": {
+        "it": "Quante pesche vuole? E quale melone?",
+        "en": "How many peaches would you like? And which melon?"
+      },
+      "unit": "a1-09",
+      "level": "A1"
+    },
+    {
+      "for": "saying 'how much / how many' without a noun",
+      "steps": [
+        "Find the noun it stands for.",
+        "Note its gender.",
+        "Note its number.",
+        "Choose quanto, quanta, quanti or quante."
+      ],
+      "example": {
+        "it": "C'erano dieci studenti. Quanti hanno votato?",
+        "en": "There were ten students. How many voted?"
+      },
+      "unit": "a1-09",
+      "level": "A1"
+    },
+    {
+      "for": "'what is...?': cos'è or qual è",
+      "steps": [
+        "Do you want a definition or explanation? → Cos'è...?",
+        "Do you want one answer out of many possible ones (a name, number, address, favourite)? → Qual è...? (Quali sono...? for several.)"
+      ],
+      "example": {
+        "it": "Cos'è la ribollita? Qual è il tuo piatto preferito?",
+        "en": "What's ribollita? What's your favourite dish?"
+      },
+      "unit": "a1-10",
+      "level": "A1"
+    },
+    {
+      "for": "conjugating a regular verb in the present",
+      "steps": [
+        "Find the group from the infinitive: -are, -ere or -ire.",
+        "Find the stem: take off the -are, -ere or -ire.",
+        "Find the subject (ask 'who is doing it?'); X and I = noi, you and X = voi, two others = loro.",
+        "Add the ending: -are: -o, -i, -a, -iamo, -ate, -ano; -ere: -o, -i, -e, -iamo, -ete, -ono; -ire: -o, -i, -e, -iamo, -ite, -ono.",
+        "Leave out the subject pronoun unless you need emphasis or clarity."
+      ],
+      "example": {
+        "it": "Io e Marco parliamo; tu e Anna parlate.",
+        "en": "Marco and I talk; you and Anna talk."
+      },
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "for": "saying 'I like' (and other piacere-type verbs)",
+      "steps": [
+        "Turn the English round: 'I like the car' → 'the car is pleasing to me'.",
+        "The person becomes 'to me / to you / to him': mi, ti, gli, le, ci, vi, gli (or a + name).",
+        "Put that person first.",
+        "The thing liked is the subject: piace for one thing or a verb, piacciono for several."
+      ],
+      "example": {
+        "it": "A Carlo piace la macchina. Mi piacciono i musei.",
+        "en": "Carlo likes the car. I like museums."
+      },
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "for": "adjective or adverb (buono / bene, molto)",
+      "steps": [
+        "Ask what the word describes.",
+        "A noun → adjective: it agrees (buono, buona; molti, molte).",
+        "A verb, an adjective or another adverb → adverb: it never changes (bene, molto, lentamente)."
+      ],
+      "example": {
+        "it": "È una buona macchina e va bene. È molto bella.",
+        "en": "It's a good car and it runs well. It's very nice."
+      },
+      "unit": "a1-11",
+      "level": "A1"
+    },
+    {
+      "for": "asking a question with a preposition",
+      "steps": [
+        "Find the English preposition, often stranded at the end ('Who are you going with?').",
+        "Restructure so it comes first: 'With whom are you going?'.",
+        "Translate: preposition + chi (people), cosa (things) or quale/quali (which)."
+      ],
+      "example": {
+        "it": "Con chi vai? Di cosa parlate?",
+        "en": "Who are you going with? What are you talking about?"
+      },
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "for": "choosing a pronoun after a preposition",
+      "steps": [
+        "Find the preposition (con, per, di, da, a, senza...).",
+        "Choose the strong form: me, te, lui, lei, Lei, noi, voi, loro.",
+        "For 'you': familiar one = te; formal one = Lei; more than one = voi."
+      ],
+      "example": {
+        "it": "Vengo con te. Questo è per Lei, signora.",
+        "en": "I'm coming with you. This is for you, madam."
+      },
+      "unit": "a1-12",
+      "level": "A1"
+    },
+    {
+      "for": "finding the right verb for an English verb + preposition",
+      "steps": [
+        "Look up the whole English phrase (look for, look after, wait for), not just the verb.",
+        "Take the Italian verb it gives (cercare, badare a, aspettare); don't add the English preposition.",
+        "Check whether the Italian verb itself needs a preposition (telefonare a, entrare in, fidarsi di).",
+        "That tells you what kind of object or pronoun follows."
+      ],
+      "example": {
+        "it": "Cerco Franco. Entro in classe. Telefono a Maria.",
+        "en": "I'm looking for Franco. I go into the classroom. I'm calling Maria."
+      },
+      "unit": "a1-13",
+      "level": "A1"
+    },
+    {
+      "for": "saying 'X is done / one does X' with si",
+      "steps": [
+        "Find the thing being done to (tickets, English).",
+        "Put si before the verb in the third person.",
+        "Make the verb agree with that thing: singular (si vende) or plural (si vendono)."
+      ],
+      "example": {
+        "it": "Qui si parla inglese. Dove si comprano i biglietti?",
+        "en": "English is spoken here. Where do you buy tickets?"
+      },
+      "unit": "a1-13",
+      "level": "A1"
+    },
+    {
+      "for": "translating 'to be'",
+      "steps": [
+        "Exists or is there? → c'è / ci sono.",
+        "Pointing at it ('there it is!')? → ecco.",
+        "Hunger, thirst, sleepiness, cold, heat, fear, age? → avere (ho fame, ho trent'anni).",
+        "Weather? → fare (fa caldo).",
+        "Health ('how are you')? → stare (sto bene).",
+        "Otherwise → essere."
+      ],
+      "example": {
+        "it": "Ho freddo: fa freddo oggi, ma sto bene.",
+        "en": "I'm cold: it's cold today, but I'm fine."
+      },
+      "unit": "a1-14",
+      "level": "A1"
+    },
+    {
+      "for": "choosing avere or essere in the past",
+      "steps": [
+        "Does the verb take a direct object (eat something, see someone)? → avere.",
+        "Is it reflexive (alzarsi, divertirsi)? → essere.",
+        "Otherwise check the essere list: andare / venire, arrivare / partire, entrare / uscire, nascere / morire, essere, stare, restare, diventare, piacere, riuscire. If it's on the list → essere; if not → avere.",
+        "Unsure? The dictionary shows the auxiliary."
+      ],
+      "example": {
+        "it": "Ho mangiato e poi sono uscito.",
+        "en": "I ate and then I went out."
+      },
+      "unit": "a1-15",
+      "level": "A1"
+    },
+    {
+      "for": "saying 'X's' (possession)",
+      "steps": [
+        "Turn the English round: 'John's shirt' → 'the shirt of John'.",
+        "Put the thing owned first, with its article.",
+        "Add di + the owner; if the owner has an article, merge them (del, della, dei, delle).",
+        "With no noun ('my father's'), use quello / quella / quelli / quelle di, matched to the thing."
+      ],
+      "example": {
+        "it": "la camicia di Giovanni; Quale casa? Quella di mio padre.",
+        "en": "John's shirt; Which house? My father's."
+      },
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "for": "choosing a possessive adjective",
+      "steps": [
+        "Find the thing owned and note its gender and number.",
+        "Find the owner, which gives the stem: mi- (my), tu- (your, one friend), su- (his, her, its, formal your), nostr- (our), vostr- (your, several), loro (their).",
+        "Add the article that matches the thing owned.",
+        "Add the ending that matches the thing: -o, -a, -i, -e (mio → miei, tuo → tuoi, suo → suoi; loro never changes).",
+        "Check everything agrees. With one family member, drop the article (mia madre)."
+      ],
+      "example": {
+        "it": "i miei libri, la sua casa, le loro figlie",
+        "en": "my books, his/her house, their daughters"
+      },
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "for": "saying 'mine, yours, his'",
+      "steps": [
+        "Find the thing it stands for and note its gender and number.",
+        "Choose the possessive as for 'my' (mio, tuo, suo...), matched to that thing, not the owner.",
+        "Add the article (il mio, la tua...). After essere, it's usually dropped (è mio)."
+      ],
+      "example": {
+        "it": "Questa è la mia chiave; loro hanno dimenticato la loro.",
+        "en": "Here's my key; they forgot theirs."
+      },
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "for": "asking 'whose?'",
+      "steps": [
+        "Restructure: 'whose car is it?' → 'of whom is the car?'.",
+        "Di chi + è (one thing) or sono (several) + the thing."
+      ],
+      "example": {
+        "it": "Di chi sono queste chiavi?",
+        "en": "Whose keys are these?"
+      },
+      "unit": "a2-01",
+      "level": "A2"
+    },
+    {
+      "for": "using a negative word (nothing, nobody, never)",
+      "steps": [
+        "Find the English indefinite word (anything, anyone, ever, anywhere).",
+        "Choose its negative opposite: niente, nessuno, mai, da nessuna parte.",
+        "Restructure the English as a double negative: 'I don't see nobody'.",
+        "Say non + verb + the negative word."
+      ],
+      "example": {
+        "it": "Non vedo nessuno. Non ho mangiato niente.",
+        "en": "I don't see anyone. I haven't eaten anything."
+      },
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "for": "present or stare + -ando",
+      "steps": [
+        "Is it happening right this minute, and do you want to stress that? → sto, stai, sta + -ando (-are) or -endo (-ere, -ire).",
+        "Is it a habit, a general truth, or something going on these days or this year? → plain present."
+      ],
+      "example": {
+        "it": "Cosa studi quest'anno? Adesso sto studiando.",
+        "en": "What are you studying this year? Right now I'm studying."
+      },
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "for": "using a reflexive verb",
+      "steps": [
+        "Spot the -si infinitive (alzarsi, chiamarsi, divertirsi).",
+        "Choose the pronoun for the subject: mi, ti, si, ci, vi, si.",
+        "Put it before the conjugated verb.",
+        "In the past, use essere and make the participle agree with the subject."
+      ],
+      "example": {
+        "it": "Mi alzo alle sette. Ieri mi sono alzata alle nove.",
+        "en": "I get up at seven. Yesterday I got up at nine."
+      },
+      "unit": "a2-02",
+      "level": "A2"
+    },
+    {
+      "for": "passato prossimo or imperfetto",
+      "steps": [
+        "Does English say or mean 'used to'? → imperfetto.",
+        "Does English say 'was / were -ing'? → imperfetto.",
+        "Is it a description: age, weather, time, feelings, how things were? → imperfetto.",
+        "Is it a finished event: what happened, once or a set number of times? → passato prossimo.",
+        "In one sentence, the background is imperfetto and the event that interrupts it is passato prossimo."
+      ],
+      "example": {
+        "it": "Pioveva quando sono uscito.",
+        "en": "It was raining when I went out."
+      },
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "for": "translating an English -ing word",
+      "steps": [
+        "Is it a noun (subject, or after a preposition or piacere)? → infinitive: leggere è bello; prima di partire; mi piace nuotare.",
+        "Is it part of 'is / was -ing'? → plain present or imperfetto; stare + -ando only for 'right now'.",
+        "Is it a 'by / while doing' phrase? → gerundio (-ando, -endo), no preposition.",
+        "Is it an adjective (interesting)? → -ante or -ente adjective."
+      ],
+      "example": {
+        "it": "Prima di partire, mi piace camminare.",
+        "en": "Before leaving, I like walking."
+      },
+      "unit": "a2-04",
+      "level": "A2"
+    },
+    {
+      "for": "choosing 'it' or 'them' as an object",
+      "steps": [
+        "Find the noun it stands for (the antecedent).",
+        "Note its gender.",
+        "Note its number.",
+        "Choose lo (m. sing.), la (f. sing.), li (m. pl.), le (f. pl.).",
+        "Put it before the conjugated verb (or attach it to an infinitive)."
+      ],
+      "example": {
+        "it": "Vedi la macchina? Sì, la vedo.",
+        "en": "Do you see the car? Yes, I see it."
+      },
+      "unit": "a2-05",
+      "level": "A2"
+    },
+    {
+      "for": "making the past participle agree",
+      "steps": [
+        "Which auxiliary? Essere → the participle agrees with the subject.",
+        "Avere → is there a lo, la, li or le before the verb? Then it agrees with that pronoun.",
+        "Otherwise (avere with no direct pronoun in front, or an indirect pronoun like le or gli) → leave it in -o."
+      ],
+      "example": {
+        "it": "Maria è partita. Le chiavi? Le ho prese. Le ho parlato.",
+        "en": "Maria has left. The keys? I took them. I spoke to her."
+      },
+      "unit": "a2-05",
+      "level": "A2"
+    },
+    {
+      "for": "choosing 'that' (quello) before a noun",
+      "steps": [
+        "Note the noun's gender and number.",
+        "Look at its first letter, exactly as for 'the'.",
+        "Masculine: quel / quei (most consonants), quello / quegli (z, s + consonant), quell' / quegli (vowel).",
+        "Feminine: quella / quelle; quell' before a vowel."
+      ],
+      "example": {
+        "it": "quel ragazzo, quello studente, quell'albero, quegli alberi",
+        "en": "that boy, that student, that tree, those trees"
+      },
+      "unit": "a2-06",
+      "level": "A2"
+    },
+    {
+      "for": "choosing an object pronoun for 'you'",
+      "steps": [
+        "Familiar or formal?",
+        "One person or more?",
+        "Direct ('see you'): ti (one, familiar), La (one, formal), vi (several).",
+        "Indirect ('to you'): ti (one, familiar), Le (one, formal), vi (several).",
+        "After a preposition: te, Lei, voi."
+      ],
+      "example": {
+        "it": "Signora, La chiamo domani e Le spiego tutto.",
+        "en": "Madam, I'll call you tomorrow and explain everything to you."
+      },
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "for": "choosing an indirect object pronoun ('to him, to her')",
+      "steps": [
+        "Check that the Italian verb takes a (dare a, telefonare a, scrivere a, piacere a), whatever English does.",
+        "Find the person.",
+        "Choose: mi, ti, gli (to him), le (to her), Le (to you, formal), ci, vi, gli (to them).",
+        "Drop the 'to' and put the pronoun before the conjugated verb."
+      ],
+      "example": {
+        "it": "Gli do il libro. Le telefono stasera.",
+        "en": "I'll give him the book. I'll call her tonight."
+      },
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "for": "working out what kind of object an Italian verb takes",
+      "steps": [
+        "Look up the Italian verb, not the English one.",
+        "No preposition (cercare, aspettare, guardare, pagare) → direct object: lo, la, li, le.",
+        "With a (telefonare a, somigliare a) → indirect object: gli, le.",
+        "With another preposition (ricordarsi di, fidarsi di, entrare in) → keep that preposition + noun or strong pronoun.",
+        "Turned round, like piacere, mancare, dispiacere, servire → the English subject becomes 'to me / to him'."
+      ],
+      "example": {
+        "it": "Aspetto Marco. Gli telefono. Mi fido di lui. Mi manca.",
+        "en": "I'm waiting for Marco. I'll call him. I trust him. I miss him."
+      },
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "for": "stressing an object pronoun",
+      "steps": [
+        "Is there emphasis or a contrast ('her, not him')?",
+        "No → short pronoun before the verb (la vedo, le do il libro).",
+        "Yes → strong pronoun after the verb (vedo lei, do il libro a lei)."
+      ],
+      "example": {
+        "it": "Non cerco lui, cerco lei.",
+        "en": "I'm not looking for him, I'm looking for her."
+      },
+      "unit": "a2-07",
+      "level": "A2"
+    },
+    {
+      "for": "choosing a command form",
+      "steps": [
+        "Who are you telling? One friend, several people, 'let's', or someone you call Lei?",
+        "Tu: -are verbs end in -a (parla), -ere and -ire verbs end in -i (scrivi, parti).",
+        "Tu negative: non + infinitive (non parlare).",
+        "Voi and noi: same as the present (parlate, andiamo); negative just adds non.",
+        "Lei: the subjunctive form (parli, scriva, parta); negative just adds non."
+      ],
+      "example": {
+        "it": "Gira a destra! Non correre! Andiamo! Scusi, signora.",
+        "en": "Turn right! Don't run! Let's go! Excuse me, madam."
+      },
+      "unit": "a2-08",
+      "level": "A2"
+    },
+    {
+      "for": "forming the future",
+      "steps": [
+        "Start from the infinitive.",
+        "-are verbs: change -are to -er- (parlare → parler-).",
+        "-ere and -ire verbs: drop the final -e (prendere → prender-, partire → partir-).",
+        "Learn the short stems: andr-, avr-, sar-, far-, verr-, potr-, vorr-.",
+        "Add -ò, -ai, -à, -emo, -ete, -anno."
+      ],
+      "example": {
+        "it": "Domani parlerò con lui e poi partirò.",
+        "en": "Tomorrow I'll talk to him and then I'll leave."
+      },
+      "unit": "a2-09",
+      "level": "A2"
+    },
+    {
+      "for": "the tense after 'when' / 'as soon as' about the future",
+      "steps": [
+        "Is the action after quando / appena / se in the future?",
+        "Then put it in the future too, where English uses the present.",
+        "If it will be finished before the main action, use the future perfect (avrò fatto).",
+        "In casual speech, both halves in the present is also fine."
+      ],
+      "example": {
+        "it": "Appena arriverò, ti chiamerò.",
+        "en": "As soon as I arrive, I'll call you."
+      },
+      "unit": "a2-09",
+      "level": "A2"
+    },
+    {
+      "for": "comparing",
+      "steps": [
+        "More than → più + adjective + di (di + article merges: del, della).",
+        "Less than → meno + adjective + di.",
+        "As ... as → (così) + adjective + come, or (tanto) + adjective + quanto.",
+        "The most / the least → il / la / i / le più (meno) + adjective + di; 'in' after a superlative is di.",
+        "Very → -issimo or molto + adjective. Learn migliore / peggiore separately."
+      ],
+      "example": {
+        "it": "Roma è più grande di Firenze, ma Firenze è bellissima.",
+        "en": "Rome is bigger than Florence, but Florence is beautiful."
+      },
+      "unit": "a2-10",
+      "level": "A2"
+    },
+    {
+      "for": "forming the conditional",
+      "steps": [
+        "Take the future stem (parler-, prender-, partir-; vorr-, potr-, dovr-, sar-, avr-).",
+        "Add -ei, -esti, -ebbe, -emmo, -este, -ebbero."
+      ],
+      "example": {
+        "it": "Vorrei un tavolo per due. Potrebbe aiutarmi?",
+        "en": "I'd like a table for two. Could you help me?"
+      },
+      "unit": "a2-11",
+      "level": "A2"
+    },
+    {
+      "for": "deciding what English 'would' means",
+      "steps": [
+        "Does 'would' mean 'used to' (a past habit)? → imperfetto.",
+        "Is it a future seen from the past ('said he would come')? → past conditional (sarebbe venuto).",
+        "Is it in the 'if' half of a sentence? → never the conditional; use the subjunctive.",
+        "Otherwise (polite requests, wishes, 'would' results) → conditional."
+      ],
+      "example": {
+        "it": "Da piccolo mangiavo sempre il gelato; ora vorrei un caffè.",
+        "en": "As a child I would always eat ice cream; now I'd like a coffee."
+      },
+      "unit": "a2-11",
+      "level": "A2"
+    },
+    {
+      "for": "choosing a relative pronoun (that, who, which, whom)",
+      "steps": [
+        "Find the relative clause; if a preposition dangles at the end, move it to the front ('the student I talked about' → 'about whom I talked').",
+        "Find or put back the relative pronoun; Italian never leaves it out.",
+        "Find the antecedent (the noun it refers to). Person or thing doesn't matter.",
+        "Decide its job in the Italian clause: subject or direct object → che; after a (to whom) → a cui; after another preposition → preposition + cui; 'whose' → article + cui + noun (article matches the thing owned).",
+        "Choose the form."
+      ],
+      "example": {
+        "it": "I ragazzi di cui parlavamo erano giovani.",
+        "en": "The boys we were talking about were young."
+      },
+      "unit": "b1-03",
+      "level": "B1"
+    },
+    {
+      "for": "relatives with no antecedent (what, which, those who)",
+      "steps": [
+        "Does 'what' mean 'the thing that'? → quello che / ciò che.",
+        "Does 'which' refer to a whole idea in the sentence before? → il che.",
+        "Does it mean 'he who / those who / whoever'? → chi + singular verb."
+      ],
+      "example": {
+        "it": "Non so quello che vuoi. Chi cerca trova.",
+        "en": "I don't know what you want. Whoever looks will find."
+      },
+      "unit": "b1-05",
+      "level": "B1"
+    },
+    {
+      "for": "when to use the trapassato",
+      "steps": [
+        "Put the past events on a timeline: now = 0, the main past event = -1.",
+        "Is there an action that happened before -1? That's -2.",
+        "Put -2 in the trapassato: imperfetto of avere or essere + past participle, with the same auxiliary choice and agreement as the passato prossimo.",
+        "Do this even if English just uses the simple past."
+      ],
+      "example": {
+        "it": "Quando sono arrivata, il film era già cominciato.",
+        "en": "When I arrived, the film had already started."
+      },
+      "unit": "b1-06",
+      "level": "B1"
+    },
+    {
+      "for": "subjunctive or indicative after che",
+      "steps": [
+        "Find the main verb or expression before che.",
+        "Opinion, wish, hope, fear, doubt, emotion, command or possibility (penso, credo, spero, voglio, temo, è possibile, è importante)? → subjunctive.",
+        "Knowledge or certainty (so, dico, sono sicuro, è vero, secondo me)? → indicative.",
+        "Same subject in both parts? → di + infinitive instead (spero di venire)."
+      ],
+      "example": {
+        "it": "Credo che sia tardi, ma so che hai tempo.",
+        "en": "I think it's late, but I know you have time."
+      },
+      "unit": "b1-07",
+      "level": "B1"
+    },
+    {
+      "for": "prima di or prima che",
+      "steps": [
+        "Is 'before' followed by a noun? → prima di (+ article): prima della cena.",
+        "Followed by a verb with the same subject? → prima di + infinitive.",
+        "Followed by a clause with a different subject? → prima che + subjunctive."
+      ],
+      "example": {
+        "it": "Prima di cena ti chiamo, prima che tu esca.",
+        "en": "I'll call you before dinner, before you go out."
+      },
+      "unit": "b1-08",
+      "level": "B1"
+    },
+    {
+      "for": "choosing tenses in 'if' sentences",
+      "steps": [
+        "Is it a real possibility? → se + present, then present (or future + future).",
+        "Is it unreal now ('if I were')? → se + imperfect subjunctive, then present conditional.",
+        "Is it unreal in the past ('if I had')? → se + pluperfect subjunctive, then past conditional (B2).",
+        "Never put the conditional right after se."
+      ],
+      "example": {
+        "it": "Se ho tempo vengo; se avessi tempo verrei.",
+        "en": "If I have time I'll come; if I had time I'd come."
+      },
+      "unit": "b1-12",
+      "level": "B1"
+    },
+    {
+      "for": "turning an active sentence into a passive one",
+      "steps": [
+        "The direct object becomes the subject.",
+        "Put essere in the same tense as the active verb, + the past participle, matching the new subject.",
+        "The old subject, if you keep it, follows da (dal, dalla...).",
+        "Ask whether si + verb or an active sentence would sound more natural; Italian uses the passive less than English."
+      ],
+      "example": {
+        "it": "Il professore prepara l'esame → L'esame è preparato dal professore.",
+        "en": "The teacher prepares the exam → The exam is prepared by the teacher."
+      },
+      "unit": "b2-05",
+      "level": "B2"
+    },
+    {
+      "for": "reporting what someone said in the past",
+      "steps": [
+        "Is the reporting verb in the past (ha detto, diceva)?",
+        "Present → imperfetto; passato prossimo → trapassato.",
+        "Future (or 'would' about later) → past conditional: sarebbe venuto.",
+        "If the reporting verb is present (dice), change nothing."
+      ],
+      "example": {
+        "it": "Ha detto che sarebbe venuto alle otto.",
+        "en": "He said he would come at eight."
+      },
+      "unit": "b2-07",
+      "level": "B2"
+    }
+  ]
+}

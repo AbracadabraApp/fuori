@@ -4,6 +4,8 @@
 
 **How it was made:** every Italian course book was read in full, one reader per book (notes on Josh's laptop in `books-private/syllabus-working/`); the books were lined up and the units ordered for a newcomer's first weeks at A1 and by the books' progression above; each level was written in full; a second teacher reviewed every Italian line and its English and fixed what was wrong.
 
+**Grammar help:** `content/it/grammar-help.json`, from *English Grammar for Students of Italian*, the book with the most for English speakers: 136 questions learners ask with plain answers, 96 "reword the English first" aids ("the car of John"), 117 wrong → right recasts for characters, 53 step-by-step choice recipes (which article, which pronoun), each linked to the unit where it's first needed. For Learn's "why…?" answers and characters' recasts.
+
 **Size:** A1 15 units, A2 14 units, B1 13 units, B2 13 units, C1 14 units; 611 key phrases; 3906 words in the word list; grammar inventory of 304 points.
 
 **Each unit has:** what you can do after it, situations, key phrases (each to *say* or only to *understand*), 2–3 model exchanges, the grammar the phrases need with the trap for English speakers, vocabulary across parts of speech (with flashcard image kind), pronunciation, common mistakes, one culture point, what it recycles, the evidence that you have it, and when to review it. The full detail is in the JSON; below are the essentials.
