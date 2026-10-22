@@ -78,9 +78,11 @@ public actor APIClient {
     /// POST /v1/turn. Without a conversation id: the character's opening line.
     /// With one: the learner's line and the reply. The server works out the
     /// character from the ids and keeps the transcript.
-    public func turn(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String? = nil, learnerSaid: String? = nil) async throws -> TurnReply {
-        struct Body: Encodable { let cityId: String; let placeId: String; let tripTo: String?; let conversationId: String?; let learnerSaid: String? }
-        return try await send(post("v1/turn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, learnerSaid: learnerSaid)), signedIn: true)
+    /// `speed`: what the app will ask /v1/speak for, so the server can start
+    /// the voice at that speed as soon as the line is written
+    public func turn(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil) async throws -> TurnReply {
+        struct Body: Encodable { let cityId: String; let placeId: String; let tripTo: String?; let conversationId: String?; let learnerSaid: String?; let speed: Double? }
+        return try await send(post("v1/turn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed)), signedIn: true)
     }
 
     /// One of the two reply buttons while scaffolding: a whole line in the

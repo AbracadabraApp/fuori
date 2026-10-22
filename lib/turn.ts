@@ -9,6 +9,7 @@ import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
 import type { CharacterSheet, Gender, Turn } from '@/lib/types';
 import type { Laps } from '@/lib/timing';
+import { lineWhenWritten } from '@/lib/voice/early-voice';
 
 export const TurnOutputSchema = z.object({
   line: z.string().describe('What the character says, in the language the person is learning'),
@@ -33,6 +34,8 @@ export async function runTurn(params: {
   levelAt?: 'system' | 'last';
   /** Records Claude's first token and token counts (the speed work) */
   laps?: Laps;
+  /** Called once, as soon as the line is written (before the English): /v1/turn starts the voice */
+  onLine?: (line: string) => void;
 }): Promise<TurnReply> {
   const prompt = buildTurnPrompt(params);
 
@@ -55,6 +58,18 @@ export async function runTurn(params: {
   });
   const { laps } = params;
   if (laps) stream.once('text', () => laps.mark('claudeFirstToken', performance.now() - started));
+  const { onLine } = params;
+  if (onLine) {
+    let told = false;
+    stream.on('text', (_delta, snapshot) => {
+      if (told) return;
+      const line = lineWhenWritten(snapshot);
+      if (line === undefined) return;
+      told = true;
+      laps?.mark('claudeLine', performance.now() - started);
+      onLine(line);
+    });
+  }
   const response = await stream.finalMessage();
   if (laps) {
     laps.facts.model = response.model;

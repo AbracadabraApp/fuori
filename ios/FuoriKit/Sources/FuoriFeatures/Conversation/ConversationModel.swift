@@ -176,7 +176,7 @@ public final class ConversationModel {
         do {
             try AudioSession.activate()
             let started = Self.now()
-            let reply = try await api.turn(cityId: city.id, placeId: place.id)
+            let reply = try await api.turn(cityId: city.id, placeId: place.id, speed: speed)
             time("opening", since: started)
             debug.promptVersion = reply.promptVersion
             conversationId = reply.conversationId
@@ -410,7 +410,7 @@ public final class ConversationModel {
             }
             step = "turn"
             started = Self.now()
-            let reply = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: said)
+            let reply = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: said, speed: speed)
             learnerLines += 1
             time("turn", since: started)
             debug.promptVersion = reply.promptVersion
@@ -497,7 +497,7 @@ public final class ConversationModel {
         do {
             debug.heard = "(\(how)) \(reply.line)"
             let started = Self.now()
-            let next = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: reply.line)
+            let next = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: reply.line, speed: speed)
             learnerLines += 1
             time("turn", since: started)
             debug.promptVersion = next.promptVersion
@@ -527,7 +527,7 @@ public final class ConversationModel {
         do {
             debug.heard = "(typed) \(said)"
             let started = Self.now()
-            let reply = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: said)
+            let reply = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: said, speed: speed)
             learnerLines += 1
             time("turn", since: started)
             debug.promptVersion = reply.promptVersion

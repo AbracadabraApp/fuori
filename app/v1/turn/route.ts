@@ -1,6 +1,6 @@
 /**
  * POST /v1/turn
- *   { cityId, placeId, tripTo?, conversationId?, learnerSaid? }
+ *   { cityId, placeId, tripTo?, conversationId?, learnerSaid?, speed? }
  *   → { line, en, conversationId, promptVersion, replies, stage }
  *
  * Without conversationId: the character's opening line, and a new
@@ -8,7 +8,9 @@
  * server works out the character from the ids and reads the conversation so
  * far from the database; the app never sends a character sheet or a
  * transcript (docs/12-native-app.md). Same turn code as the web
- * (lib/conversation/take-turn.ts).
+ * (lib/conversation/take-turn.ts). The voice for the line is started as soon
+ * as it's written, at `speed` (lib/voice/early-voice.ts), so /v1/speak is
+ * quicker; the exchange is saved after the reply goes out.
  *
  * `replies`: the learner's next turn uses the two reply buttons
  * (/v1/replies) instead of the mic; `stage` says how: tap, read (tap, then
@@ -26,6 +28,7 @@ import { logServerError } from '@/lib/server-log';
 import { Laps } from '@/lib/timing';
 import { scaffoldFacts, scaffoldStage } from '@/lib/scaffold';
 import { tutor } from '@/content';
+import { startEarlyVoice, DEFAULT_APP_SPEED } from '@/lib/voice/early-voice';
 
 const Body = z.object({
   cityId: z.string(),
@@ -33,6 +36,8 @@ const Body = z.object({
   tripTo: z.string().optional(),
   conversationId: z.string().uuid().optional(),
   learnerSaid: z.string().max(MAX_SAID_CHARS).optional(),
+  /** The speed the app will ask /v1/speak for; the voice is started early at it */
+  speed: z.number().min(0.5).max(2).optional(),
 });
 
 export async function POST(request: Request) {
@@ -68,6 +73,15 @@ export async function POST(request: Request) {
         laps,
         // The conversation was loaded above as this learner's
         saveAfterReply: true,
+        // Start the voice while the English is still being written; /v1/speak takes it
+        onLine: (line) =>
+          startEarlyVoice({
+            learnerId,
+            characterId: parsed.character.id,
+            text: line,
+            speed: body.data.speed ?? DEFAULT_APP_SPEED,
+            onError: (err) => logServerError(request, 'v1 turn early voice', err),
+          }),
       });
       const facts = await scaffoldFacts(learnerId, result.conversationId ?? null, tutor.id);
       const learnerTurns = parsed.transcript.filter((t) => t.who === 'learner').length + (learnerSaid ? 1 : 0);

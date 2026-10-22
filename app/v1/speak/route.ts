@@ -6,9 +6,9 @@
  * (AVSpeechSynthesizer); `code` says why: quota (402, don't retry until the
  * quota resets), rate_limited, upstream_unavailable.
  */
-import { elevenLabsVoiceFor, language, onboarding } from '@/content';
+import { language } from '@/content';
 import { apiError, withLearner } from '@/lib/api';
-import { characterGender } from '@/lib/characters/by-id';
+import { takeEarlyVoice, voiceForCharacter } from '@/lib/voice/early-voice';
 import { getVoiceProvider } from '@/lib/voice/providers';
 import { VoiceError } from '@/lib/voice/providers/elevenlabs';
 import { allow } from '@/lib/rate-limit';
@@ -44,14 +44,19 @@ export async function POST(request: Request) {
       return apiError('upstream_unavailable', 'No hosted voice configured');
     }
     try {
-      const result = await provider.synthesize({
-        text,
-        language: language.code,
-        characterId,
-        // The greeter has her own voice (content/<country>/onboarding.ts); characters get one by gender
-        voice: characterId === onboarding.guide.id ? onboarding.guide.voice : elevenLabsVoiceFor(characterId, characterGender(characterId)),
-        speed,
-      });
+      // Started by /v1/turn as soon as the line was written (lib/voice/early-voice.ts)
+      const early = await takeEarlyVoice(learnerId, characterId, speed, text);
+      laps.facts.early = early === undefined ? 'no' : early ? 'yes' : 'failed';
+      const result =
+        early ??
+        (await provider.synthesize({
+          text,
+          language: language.code,
+          characterId,
+          // The greeter has her own voice (content/<country>/onboarding.ts); characters get one by gender
+          voice: voiceForCharacter(characterId),
+          speed,
+        }));
       if (!result.audio) {
         outcome('no-audio');
         return apiError('upstream_unavailable', 'The voice service returned no audio');
