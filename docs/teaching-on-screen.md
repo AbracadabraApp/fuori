@@ -10,7 +10,7 @@ The teaching is in what the character says. The screen only marks it: an underli
 
 Earlier drafts proposed a level 1 "teach" block and a separate level 2 block. Reviewing the log, both would repeat known problems:
 
-- **Levels 1–5 are steps within the beginner tier** (`beginner-scaffolding.md`) and differ by screen, not prompt. The prompt has one Beginner block, part of the beginner / intermediate / advanced tiers. A level-1 prompt and a level-2 prompt would be a second level system.
+- **Scaffolding stages are not levels** (`beginner-scaffolding.md`; Josh, 2026-10-21): they differ by screen, not prompt. The prompt has one Beginner block, part of the beginner / intermediate / advanced tiers. A level-1 prompt and a level-2 prompt would be a second level system.
 - **"They're learning Italian" turns characters into teachers** (character.md changelog, 2026-10-11). "Sounds like a lesson" is measured for this reason.
 - **Choice questions become an order form.** Round 9: "Vuoi X o Y?" on 43–44% of turns, graded "a language-lesson script". Round 5: a tacked-on "sì o no?" on nearly every turn. A "Capisci?" check every turn would do the same and add double questions, which is what failed `teach` and `teach2`.
 - **Unasked English fails a gate measure by design.** If proactive English is ever wanted at level 1, the measure needs a level-aware exception first.

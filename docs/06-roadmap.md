@@ -80,8 +80,8 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 - [x] **Josh + Claude** Flow, engineering needs, built and tried in both countries (2026-10-17)
 - [x] **Claude** The send-off failed on mixed answers (one English, one fluent): fixed 2026-10-18
 
-### Scaffolding: the beginner ladder ([beginner-scaffolding.md](beginner-scaffolding.md)) — N4
-Five levels, from tapping a reply with English to filling a frame in your own words.
+### Scaffolding ([beginner-scaffolding.md](beginner-scaffolding.md)) — N4
+Onboarding, then reply buttons for the first turns of each conversation (stage A, built 2026-10-21, server-decided, no switch), then the mic. Stages B and C proposed; the rest not settled.
 - [x] **Claude** Reply buttons from a separate call (`lib/replies.ts`, test-only): sensible 97–100%, ready before the character finishes speaking
 - [x] **Josh** Played Afuera with the level trial on: Chucho the shoeshiner, 23 turns (2026-10-19, prompt `2026-10-18b+Beginner: still you, sometimes ask`)
 - [x] **Claude** Reviewed it. Good: easy questions came back ("¿negros o cafés?", "¿billetes o monedas?", two "¿sí o no?"); he helped in role every time Josh reached for a word (derecho, la cuenta, quédese con el cambio); judge alive 7. Not yet beginner-plain: median 23 words a line (the trial's replay runs were about 10, on the older prompt), and 42% of replies asked two questions (target ≤ 10%). The trial block hasn't been replayed on prompt 2026-10-18b; next: replay it there before more play
@@ -172,7 +172,7 @@ Josh: some conversations are clearly over (both said ciao, arrivederci, ci vedia
 - [x] **Claude** Round 20 (`end-detect.mts`, Italy 26 conversations, 153 turns): an `over` flag on the character's reply and a separate judge both end nothing early (0%) and catch 82% of ended conversations (bar 90%); the misses are mostly where only the character said goodbye, which isn't Josh's "both say ciao". The flag costs nothing and doesn't change the line. Mexico untested: only 1 conversation reached an end
 - [ ] **Josh** Decide: add `over` to the character's reply (changes CLAUDE.md's `{ line, en }`). Josh's design (2026-10-19): when it's over, an "Esci" or "Fuori" link fades in; tap it or ignore it and keep talking. Nothing ends by itself. An idea only (Josh, 2026-10-20), not scheduled
 - [ ] **Josh** Pick the word: "Esci" or "Fuori" for Italy, and Mexico's ("Salir"?); it comes from `/v1/content`, not Swift
-- [ ] **Claude** Reply buttons (levels 1–3) get the same Done link, by the same rule: it fades in when it's over, not always shown; and once the errand is done, one reply is a goodbye, so beginners can get there (test on `replies.md` first) (Josh, 2026-10-19: "the beginner buttons really need a done button/link"; [beginner-scaffolding.md](beginner-scaffolding.md) → Build)
+- [ ] **Claude** Reply buttons (levels 1–3) get the same Done link, by the same rule: it fades in when it's over, not always shown; and once the errand is done, one reply is a goodbye, so beginners can get there (test on `replies.md` first) (Josh, 2026-10-19: "the beginner buttons really need a done button/link"; [beginner-scaffolding.md](beginner-scaffolding.md) → Idea: a Done link)
 
 ## Earlier list (2026-10-12 to 10-14)
 

@@ -1,135 +1,98 @@
-# Beginner Scaffolding: Levels 1–5
+# Scaffolding
 
-2026-10-17 · Josh · Draft. Replaces the four-step "Beginner ladder" sketch in [language-levels-plan.md](language-levels-plan.md). Mockups: [design/beginner-levels/levels.html](../design/beginner-levels/levels.html) (open it in a browser). Research behind it: [research/beginner-mode-scaffolding.md](research/beginner-mode-scaffolding.md) and [research/flashcards-vocabulary-review.md](research/flashcards-vocabulary-review.md). The Diario itself (book icon, chip wall, heat, retiring phrases): [diario.md](diario.md).
+Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plans were stacked here (17, 19 and 21 October), each replacing part of the one before, and the doc called scaffolding steps "levels"; the earlier plans are now under [History](#history) at the bottom. Research: [research/beginner-mode-scaffolding.md](research/beginner-mode-scaffolding.md), [research/flashcards-vocabulary-review.md](research/flashcards-vocabulary-review.md). The Diario: [diario.md](diario.md).
 
-## Built: always on at Beginner (Josh, 2026-10-21)
+## The words (Josh, 2026-10-21; [glossary.md](glossary.md))
 
-The reply buttons are no longer behind the hidden test switch (removed). Beginners start with scaffolding (level and scaffolding are separate things: [glossary.md](glossary.md)): every learner whose stored level is Beginner taps the first N turns of each conversation, then speaks. A learner with no level yet (onboarding skipped or reset, and the level check off) counts as new and gets them too (Josh, 2026-10-22). N follows the schedule below (4, 4, 4, 3, 3, 3, 2, 2, 2, 1, 1, 1, then none), counting earlier conversations where they said something; never in Magda's lessons, which don't count. The server decides with every line: `/v1/turn` returns `replies: true` when the learner's next turn is a tap (`lib/scaffold.ts`, `npm run test:scaffold`). The buttons and her line show English. Not built yet: steps B and C below, and the Done link.
+- **Level** is only the learner's level: Beginner, Intermediate, Advanced. It mainly sets how complex the dialogue is.
+- **Scaffolding** is the support that gets a new learner used to the game: onboarding, the reply buttons, and the stages that follow, up to the stand-alone microphone. Its steps are **stages**, never levels.
+- Beginners start with scaffolding, but the two are separate: finishing scaffolding doesn't make anyone Intermediate.
+- **Scaffolding isn't a setting.** The game decides when you see it, by counting (`lib/scaffold.ts`), not by a judge or a switch. The rules and the full set of stages aren't settled yet.
 
-## Reply buttons: the three-step chain (Josh, 2026-10-21)
+## The sequence a new learner meets
 
-Within level 1's reply buttons, three steps, in order:
+| # | Step | What happens | Status |
+|---|---|---|---|
+| 1 | **Onboarding** | Choose a country; the greeter asks two things, answered by button or voice; she places you at a level | Built ([onboarding-design.md](onboarding-design.md)) |
+| 2 | **Reply buttons, stage A: tap** | The first N turns of each conversation are taps on one of two good replies; N runs out over 12 conversations | **Built**, live 2026-10-22 |
+| 3 | Stage B: tap, then read it aloud | | Proposed, not built |
+| 4 | Stage C: choose the one that fits, read it aloud | | Proposed, not built |
+| 5 | **The microphone alone** | Speak freely; today's game | Built |
 
-| Step | Buttons | You |
+Today a beginner goes 1 → 2 → 5: within a conversation, taps first, then the mic.
+
+## 1. Onboarding sets the level
+
+Onboarding is where the level comes from: the greeter's send-off judges your answers and stores Beginner, Intermediate or Advanced (`lib/onboarding.ts`; the app shows it while `/v1/me` says not onboarded). A second source exists: the level check after each conversation (`lib/learner-level.ts`), but it's **off** unless `LEVEL_CHECK` is set, and it isn't set on either service.
+
+**No level yet counts as new (Josh, 2026-10-22).** If onboarding is skipped or reset (Settings → touch and hold Version → Restart onboarding) and never finished, the learner has no level. That learner gets the reply buttons, like a Beginner. Found when Josh's Mexico learner had no level (onboarding reset, `{"path":"reset"}`) and so never saw the buttons.
+
+## 2. Reply buttons, stage A: tap (built)
+
+**Who:** a learner whose level is Beginner or not set yet. Never Intermediate or Advanced; never with Magda, whose lessons don't count either.
+
+**When:** the first N learner turns of each conversation are taps, then the learner speaks in the same conversation. N follows how many conversations they've had before (ones where they said something):
+
+| Conversations before | 0–2 | 3–5 | 6–8 | 9–11 | 12+ |
+|---|---|---|---|---|---|
+| Tapped turns (N) | 4 | 3 | 2 | 1 | none |
+
+`TAP_SCHEDULE` in `lib/scaffold.ts`. Claude's proposal; the numbers are Josh's to set.
+
+**How it works:**
+- The server decides with every line: `/v1/turn` returns `replies: true` when the learner's next turn is a tap. The app holds no switch (the hidden "Reply buttons (test)" toggle and the level picker were removed 2026-10-21).
+- The replies come from a separate call, `POST /v1/replies` (`lib/replies.ts`, prompt `replies.md`), written while the character's voice plays, so the turn stays `{ line, en }`.
+- They appear when the character has finished, so the learner listens first. Two whole-line replies on the same frame ("Vorrei…", "Mi chiamo…"), both sensible; pick what you'd actually say. The tapped one shows a plain selected state, no right or wrong colours.
+- A tap sends the line through the typed-reply path (`learnerSaid` on `/v1/turn`), and the character answers to it.
+- While scaffolding, the buttons and the character's line show English, whatever Settings says.
+- A failed replies call falls back to the mic for that turn and is logged.
+- Tests: `npm run test:scaffold` (who and when), `npm run test:replies-route`, `smoke:live`.
+
+**Not built:** a second voice saying the tapped line (the character answers straight away); tapping a reply to cut the character off.
+
+## 3–4. Stages B and C (Josh, 2026-10-21; proposed, not built)
+
+| Stage | Buttons | You |
 |---|---|---|
 | A | Two replies, **both good** | **Tap** one; it's sent |
 | B | Two replies, **both good** | Tap one, then **read it aloud** |
 | C | Two replies, **only one good** | Choose and **read it aloud**; you have to understand her to pick |
 
-Then free speech (level 2). Proposed details, not yet confirmed:
+Proposed details, not yet confirmed:
 - **Read aloud:** tapping a reply chooses it (ink) and opens the mic; the dots show inside the chosen button; tap again when done (hands-free: silence ends it). No transcript on screen.
-- **What's sent on B and C:** the chosen line, so a mumble or a speech-recognition slip can't derail a beginner; what was heard is kept for Learn's "you said".
+- **What's sent on B and C:** the chosen line, so a mumble or a speech-recognition slip can't derail a beginner; what was heard is kept for Learn's "you said". Speech checks are lenient: marking a right answer wrong is worse than passing a near-miss.
 - **The wrong reply on C** is correct Italian that doesn't fit the moment (answers another question, wrong item, wrong time), never broken Italian: the screen must not model mistakes. Choosing it is answered by the character in role (puzzled, then helps), not by a buzzer or a red mark.
-- **Needs:** `replies.md` must make a plausible wrong reply and say which one is right (trial in `docs/prompt-trials.md`); which step you're on is counted per conversation, like the taps-run-out schedule below.
+- **Needs:** `replies.md` must make a plausible wrong reply and say which one is right (trial in `docs/prompt-trials.md`); which stage you're on is counted, like the schedule above.
 - If the mic is off or VoiceOver is on, B and C fall back to tapping.
 
-## Revised: three levels (Josh, 2026-10-19; replaces the five levels below once specced)
+## Not settled (Josh's to decide)
 
-| Level | What happens | English | You |
-|---|---|---|---|
-| **1. Character teaching** | Adaptive: she teaches the line you need, in role (the question, what it means, one way to answer), more when you struggle, less as you cope ([proposal-level1-teaching.md](proposal-level1-teaching.md)) | Spoken, inside her line; reply buttons carry an English subtitle | Tap at first; **taps end before level 1 ends**, so you're speaking by the end of it |
-| **2. Practising conversation** | A normal conversation, kept simple | Spoken, only when you ask | Speak. **No taps** |
-| **3. Advanced** | Today's game | Spoken, only when you ask | Speak |
+- **The rules for moving between stages:** when B and C start, how they share the tapped turns, and whether anything moves a learner back.
+- **The full set of stages.** Candidates from earlier plans, none chosen: less English step by step (English on her line only, then none); fill the frame ("Vorrei ____", speak the rest your own way); a "Less help" button the learner can press.
+- **The numbers** in `TAP_SCHEDULE`.
+- **English under the character's line.** On 19 October Josh decided no translation line at any level, the English to come in the dialogue and on the buttons, once characters reliably give English when asked what something means. What's built shows English on her line while scaffolding. Which holds?
+- **Whether the level check turns on** (`LEVEL_CHECK`), so a learner's level can move after onboarding rather than resting on two answers.
 
-- **No English translation line under the character's words, at any level.** The English is in the dialogue (when she teaches or when you ask) and on the reply buttons. The reply stays `{ line, en }`: `en` is still made for memory, the Diario and the button subtitles, just not shown.
-- **Needs before the translation line can go:** characters must give the English when you ask what something means. Round 21 (`tests/experiments/help-asks.mts`, Josh's real conversations): of 23 Italy asks wanting English, 35% got it in the spoken line; "how do I say X" answered in Italian is right, but "what does X mean" relied on the translation about half the time. One sentence in `character.md`, tested with round 18 and 21, first.
-- **The Done link** (an idea only, Josh 2026-10-20; below, Build) would follow the same rule at every level: it fades in when the conversation is over.
-- **The model (Josh, 2026-10-19):** levels 1–3 are the one scale; teaching in character at every level; scaffolding (the reply buttons) only for level 1, and only for the first N turns. Counting decides, not a judge.
-- **Per conversation (Josh, 2026-10-19).** Each conversation at level 1 opens with N tapped turns, then you speak in the same conversation. N shrinks with the count of conversations, so the taps run out before level 1 ends (Claude's proposal; numbers for Josh, starting at: N = 4 for the first 3 conversations, then 3, 2, 1, so 12 conversations with taps, then none). A new character's opening turns are where a beginner is most lost; speaking still starts in the first conversation.
+## Rules that still hold (from the 17 October plan)
 
-A beginner takes part at one of five levels. The level decides how much support the screen gives, from tapping a reply with English everywhere (level 1) to filling a frame in your own words (level 5). Past level 5 there's nothing to add: that's the normal screen, where you speak freely. Nothing is scripted past level 4.
+- **Every reply is a whole line** built on a frame, never a lone word.
+- **Every turn the character asks something,** since the replies need something to answer.
+- **No Replay (Josh, 2026-10-17).** The words are on screen while scaffolding; once speaking, the learner can ask the character to repeat ("Ripeti?", "Più lentamente"), which stays in role.
+- **Pause only in hands-free (Josh, 2026-10-17; CLAUDE.md since 2026-10-21).** In tap-to-talk the buttons and the pill already wait for a tap.
+- **Few controls.** While tapping, the two buttons replace the mic pill; nothing appears or disappears except the result of your answer.
+- **Largest text size (AX5):** the portrait stays put; the area above the controls scrolls within a capped height. The replies may cover most of the portrait at that size.
+- **Wording:** any instruction ("Read your line out loud") is interface text, worded per country; target-language words come from `/v1/content`, never from Swift.
+- **Writing the replies** stays a separate call unless a test shows folding them into the turn is better for latency and quality ([test-ideas.md](test-ideas.md)).
 
-**These levels are scaffolding only (Josh, 2026-10-17).** They change how you take part, not how characters talk. How characters talk follows the learner's level (Beginner, Intermediate, Advanced; [language-levels-plan.md](language-levels-plan.md) → Three tiers), which moves separately. Reaching the normal screen past level 5 doesn't make you Intermediate: a Beginner there still hears Beginner dialogue. On levels 1–5 the dialogue is always the easiest (Beginner) and doesn't progress from one level to the next: only the support changes.
+## Idea: a Done link (an idea only, Josh 2026-10-20)
 
-The same levels apply to a Diario card and to the person screen in conversation.
+Josh, 2026-10-19: "the beginner buttons really need a done button/link". It would fade in when the conversation is over, the same link and rule as for every learner (roadmap → Ending a conversation, round 20), and leave through the one leave function; its word from `/v1/content`. For a beginner to get there, the replies must be able to close a conversation: once the errand is done, one of the two replies is a goodbye or thanks (`replies.md`; test before building, since in round 19 no Mexico learner reached an end).
 
-## The exchange
+## The Diario's cards
 
-Every turn is three beats:
+The Diario ([diario.md](diario.md)) reviews phrases from your own conversations on cards. The 17 October plan gave each phrase its own step on the five-step ladder below (card practice moves it up; saying it yourself in a real conversation retires it). That ladder is now history, so the card screens need restating against the current stages; the Diario's missions prototype comes first ([diario.md](diario.md) → Prototype first).
 
-1. **The character's line.** Context. Never contains the phrase being practiced.
-2. **Your reply.** Always a whole line, never a lone word, built on a frame ("Vorrei…", "Posso avere…", "Mi chiamo…", "Sono di…"). The frame is the chunk being learned; what fills it can change.
-3. **The character's answer.** A natural response in character, to whatever you said.
-
-**Two voices.** The character's voice says beats 1 and 3. Your voice, a consistent native speaker matched to the learner, says your whole reply. The app never voices a lone word.
-
-## Controls (Josh, 2026-10-17: keep them few)
-
-In the default tap-to-talk mode, one control per level, plus Less help only after the 15-turn question and until it's used:
-
-| | Levels 1–3 (tap) | Levels 4–5 and normal (speak) |
-|---|---|---|
-| Main action | The two reply buttons (tapping one while the character speaks stops them) | The mic pill (tapping it while the character speaks stops them and starts your turn) |
-| Less help | Once offered, until used | Same |
-| Pause | Hands-free only | Hands-free only |
-
-- **No Replay (Josh, 2026-10-17).** On levels 1–3 the character's words are on screen, with English on levels 1–2. On levels 4–5 the learner can ask the character to repeat ("Ripeti?", "Più lentamente"), which already works in the game and stays in role. If testing shows beginners stuck on level 3, add it back.
-- **Pause only in hands-free (Josh, 2026-10-17).** In tap-to-talk, the reply buttons and the pill already stop the character, and the mic never opens on its own. Hands-free keeps the Pause button, since there the mic can open without a tap. This changes decision D3 in [13-ios-conventions.md](13-ios-conventions.md) ("a Pause button always on the conversation screen"); update D3 and the CLAUDE.md safeguard line when this is built.
-- Levels 4–5 add one paper card with an instruction directly above the pill; levels 1–3 need none.
-- Nothing appears or disappears except the result of your answer.
-
-### Settled after the laptop review (2026-10-17)
-- **Questions.** Every turn needs the character to ask something, since the replies need something to answer. On levels 1–3 any real question works ("Cosa prendi?"); the buttons supply the words. What the character asks starts to matter from level 4, where the learner has to come up with the words.
-- **Level 4, simplified (Josh, 2026-10-17: confusing).** No second voice before you speak. The character asks, your card shows your line, you read it out loud, and the character answers, recasting if you stumbled.
-- **Largest text size (AX5).** The portrait stays put; the area above the controls scrolls within a capped height, as the subtitle card already does past 260 pt. At AX5 the replies may cover most of the portrait; that's acceptable at that size. Check on the phone.
-- **Card wording.** Instructions like "Read your line out loud" are interface text, worded per country; any target-language words in them come from `/v1/content`, never from Swift.
-- **Writing the replies.** A separate call, run while the character's voice plays, so the turn stays `{ line, en }` and the `test:replay` gate is untouched. Test it on replayed conversations against folding the replies into the turn, for latency and quality, before deciding.
-
-## The levels
-
-| | 1. Choose, all English | 2. Choose, English on the character | 3. Choose, Italian only | 4. Read out loud | 5. Fill the frame | Past 5: normal screen |
-|---|---|---|---|---|---|---|
-| **Subtitles** | Italian + English | Italian + English | Italian | Italian | Italian | As set in Settings |
-| **Your side** | Two whole-line replies as buttons, Italian + English | Two whole-line replies, Italian only | Two whole-line replies, Italian only | Your whole reply in Italian, frame highlighted | The frame with an open slot: "Vorrei ________" | Nothing |
-| **Instruction** | None | None | None | Read your line out loud | Answer [character] out loud, your way: | None |
-| **Action** | Tap | Tap | Tap | Speak | Speak: fill the slot with whatever you want | Speak freely |
-| **Your voice** | After you tap | After you tap | After you tap | None: the character's answer recasts | After you speak, your answer said right | — |
-
-### What each level is for
-
-1. **Choose, all English.** Meet the frame with full support: you understand the question and both answers, and you hear your choice said right.
-2. **Choose, English on the character.** You still understand the question, but you read your own options in Italian.
-3. **Choose, Italian only.** To choose, you have to understand the question and both options; the character's answer confirms what you said.
-4. **Read out loud.** Your first time saying it: read the whole line yourself; the character's answer shows you how it sounds.
-5. **Fill the frame.** The structure is given; the content is yours. "Vorrei ____" lets you order anything, so it's open-ended but still scaffolded.
-
-## Rules
-
-**Choices (levels 1–3).**
-- Both buttons are real, sensible options built on the same frame. Pick what you'd actually say.
-- The tapped button turns a plain selected color. No right or wrong colors.
-- Your reply fills in with your pick, your voice says it, and the character answers to it.
-
-**Speaking (levels 4–5).**
-- Tap the pill to talk, tap when done; no timers.
-- Speech checks are lenient. When recognition is unsure, count it. Marking a right answer wrong is worse than passing a near-miss.
-- After you speak, your answer shows in Italian with its English (corrected if needed), your voice says it, and the character answers.
-
-## Progression on the person screen (Josh, 2026-10-17)
-
-A turn count prompts the step up, and a ceiling keeps anyone from staying on full support forever (static support tends to create over-reliance).
-
-| Turns at a level | What happens |
-|---|---|
-| 15 | At the end of the conversation, ask whether they're ready for less help. Yes moves up one level; Not yet stays |
-| 15–30 | The Less help button stays on screen, so the learner can step up any time |
-| 30 | Move up automatically, tell the learner, and point to Settings to step back |
-
-- One level per learner.
-- Ask and move only at a natural break: when the learner leaves a conversation, never mid-turn.
-- Never move down automatically; Settings is where a learner steps back or jumps ahead.
-- 15 and 30 are starting numbers, to tune.
-
-## The Diario
-
-A review place, opened from a book in the top navigation bar, left of the settings button (Josh, 2026-10-18); there's no end-of-day Diario. How you get there, the chip wall and retiring phrases: [diario.md](diario.md).
-
-- Each phrase has its own level, and the card uses that level's screen.
-- Levels 1–4: completing the card moves the phrase up one level. Level 5: using the frame moves it past the ladder; not using it leaves it at 5. A phrase never moves down.
-- Only saying the phrase yourself in a real conversation retires it.
-- A pass shows each phrase once, each at its own level; one action per card; at the end, another pass or done. Up to about six phrases per pass: new ones since the last conversation first, then the ones not seen longest.
-
-## What each phrase needs
+### What each phrase needs
 
 Written by the end-of-conversation step (`lib/remember.ts`), stored with the phrase:
 
@@ -141,44 +104,29 @@ Written by the end-of-conversation step (`lib/remember.ts`), stored with the phr
 | Two whole-line replies on the frame, with English | Vorrei un cornetto integrale. · Vorrei un macchiato. |
 | Character's answer to each | Un cornetto integrale, subito! · Un macchiato, arriva! |
 | Audio | Character's line and answers in the character's voice; the replies in your voice |
-| Level | 1–5 |
+| Stage | Where the phrase is in its practice |
 
-## Build: reply buttons for levels 1–3 (2026-10-18)
+## On hold: a scripted, smaller world for beginners (Josh, 2026-10-17; on hold until there's a spec, 2026-10-18)
 
-A first playable version, behind a setting, so Josh can feel levels 1–3 in Afuera. Live dialogue (not the scripted world).
-
-**Server (done, cloud session, not verified live):** `POST /v1/replies { cityId, placeId, tripTo?, conversationId }` → `{ frame, replies: [{ line, en }, { line, en }], promptVersion }`. Wraps `lib/replies.ts`; reads the conversation from the database like `/v1/turn`; refuses until the character has spoken last; rate-limited per learner. `npm run test:replies-route`. Needs `smoke:live` (or one curl with a real token) once deployed.
-
-**App (laptop):**
-1. `SettingsKey.replyButtons` ("Reply buttons (test)", off by default) and `SettingsKey.scaffoldLevel` (1, 2 or 3; a picker under it, shown only when the toggle is on). On the phone for now; saved with the learner later.
-2. `APIClient.replies(cityId:placeId:tripTo:conversationId:)` → `{ frame, replies: [{ line, en }], promptVersion }`.
-3. `ConversationModel`: when the toggle is on and a character line arrives, fetch the replies in parallel with the voice. Hold them until the character finishes (subtitles fully typed). A failed fetch falls back to the mic for that turn and logs it; never a silent failure.
-4. Levels 1–3 on screen: level 1 shows the character's English and each reply's English; level 2 the character's English only; level 3 neither. The two replies replace the mic pill; no Pause or Replay in tap-to-talk.
-5. A tap sends the reply's `line` through the existing typed-reply path (`send(typed:)`, which posts to `/v1/turn` as `learnerSaid`). The tapped button shows a selected state; no right or wrong.
-6. Tapping a reply while the character is still speaking stops her and sends it.
-7. Done checks (CLAUDE.md): AX5 (the area above the controls scrolls), VoiceOver (replies read in the target language), 44 pt targets, both countries, back swipe saves.
-
-**Built 2026-10-19 (laptop):** as above, with these choices:
-- The switch and the level picker are among Settings' hidden developer rows (touch and hold Version), not in plain Settings, so no tester finds a test switch.
-- The replies appear when the character has finished, not while she speaks, so the learner listens first; step 6 (tap a reply to cut her off) is therefore not built.
-- No learner's voice saying the tapped line yet ("Your voice" in the levels table); the character's answer follows straight away.
-- Pause stays visible (CLAUDE.md still says always); the change to "Pause only in hands-free" waits for D3 to be updated.
-- With the setting on, the words always show and the level decides the English, whatever Subtitles says.
-- Checked in the simulator in Mexico: level 1 (Ximena, Café Amapola) and level 3 at AX5 (Vale, Libros Tecolote). Not tapped there (no tap tool); tapping, VoiceOver and Italy on the phone.
-
-**Idea: a Done link (an idea only, Josh 2026-10-20; earlier, 2026-10-19: "the beginner buttons really need a done button/link"; same rules as everyone, not always shown).** It fades in when the conversation is over, the same link and rule as for every learner (roadmap → Ending a conversation, round 20), and leaves through the one leave function. Its word comes from `/v1/content`. For a beginner to get there, the replies must be able to close a conversation: once the errand is done, one of the two replies is a goodbye or thanks (`replies.md`; test it before building, since in round 19 no Mexico learner ever reached an end).
-
-**Josh:** play 10 minutes in Afuera at level 1, then level 3. Note where it felt wrong.
-
-## On hold: a scripted, smaller world for levels 1–3 (Josh, 2026-10-17; on hold until there's a spec, 2026-10-18)
-
-Not decided; being tested ([test-ideas.md](test-ideas.md), [level-judge-test.md](level-judge-test.md) rounds 11–12).
-- **Scripted dialogue.** Levels 1–3 last at most 100–150 turns and the learner only taps, so the dialogue can be written ahead: fixed scripts per character, the same for every learner, checked before anyone hears them, audio recorded once. CLAUDE.md's "no scripted scenes" predates beginner levels and doesn't rule this out.
-- **A smaller world.** Beginners stay in one neighbourhood until level 4: Trastevere has 11 characters (Rita, Giulia, the fruit seller, the baker, the oste, the parish priest, the nonna, the bookseller, the sommelier, the pharmacist, the newsagent); 2–3 visits each is 22–33 conversations, about the 100–150 turns of levels 1–3. Mexico City has 13 characters across four neighbourhoods. Small enough for a person to read every line, and the visits can be ordered so the frames build up ("Vorrei…" before "Sono di…"). Leaving the neighbourhood is the reward for reaching level 4.
-- **What it costs:** levels 1–3 lose the open world; the feed and the day's suggestions stay inside the neighbourhood; a script can't remember the learner's own taps from an earlier visit or say their name without live audio.
+Fixed scripts per character, the same for every learner, in one neighbourhood (Trastevere: 11 characters; Mexico City: 13 across four neighbourhoods) while the learner only taps; leaving the neighbourhood is the reward for speaking. Tests (rounds 11–13, [level-judge-test.md](level-judge-test.md)): cheap to write and the easiest dialogue yet (70–84% of lines a beginner can follow), but where both replies must lead to the same next line one path ignores the learner's answer, and forcing a this-or-that choice at every join made it a quiz. Costs: the open world, memory of the learner's own taps, their name without live audio. CLAUDE.md's "no scripted scenes" predates this and doesn't rule it out.
 
 ## Open questions
 
-- Phrases that aren't frames (a noun like "cornetto integrale" on its own): either the end-of-conversation step always picks frame-shaped chunks, or such phrases ride inside a frame and level 5 opens the frame's slot rather than the noun.
-- Whether a phrase's Diario level and the learner's conversation level should influence each other. Today they're separate.
-- Settings overhaul: level becomes the main control; Subtitles and English are set by the level on levels 1–3; Hands-free applies from level 4.
+- Phrases that aren't frames (a noun like "cornetto integrale" on its own): either the end-of-conversation step always picks frame-shaped chunks, or such phrases ride inside a frame.
+- Settings: Subtitles and English are overridden while scaffolding; Hands-free applies once speaking.
+
+## History
+
+**17 October: five steps ("levels 1–5"), replaced.** Each step changed only the screen, not how characters talk:
+
+| | 1. Choose, all English | 2. Choose, English on the character | 3. Choose, Italian only | 4. Read out loud | 5. Fill the frame |
+|---|---|---|---|---|---|
+| Subtitles | Italian + English | Italian + English | Italian | Italian | Italian |
+| Your side | Two replies, Italian + English | Two replies, Italian | Two replies, Italian | Your whole reply | "Vorrei ________" |
+| Action | Tap | Tap | Tap | Speak | Speak, your way |
+
+A second voice was to say your reply after each tap. Moving up: at 15 turns on a step, ask at the end of the conversation whether you're ready for less help; from 15 to 30 a "Less help" button; at 30 move up automatically, with Settings to step back; never down on its own. None of steps 2–5 or the moves were built.
+
+**19 October: three "levels", partly kept.** 1. Character teaching (she teaches the line you need, in role, with taps at the start of each conversation that run out), 2. practising conversation, no taps, 3. today's game. Kept: the taps per conversation that run out (stage A's schedule). Dropped: character teaching as a separate step ([proposal-level1-teaching.md](proposal-level1-teaching.md), not chosen 2026-10-20); calling these levels (2026-10-21). Still open: no translation line (above).
+
+**18–19 October: the first build,** behind a hidden test switch with a step picker (1–3) on the phone. Replaced on 2026-10-21 by the server deciding, with no switch.

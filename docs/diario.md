@@ -1,6 +1,6 @@
 # Diario: Phrase Review
 
-2026-10-18 · Josh · Draft. The Diario-specific half of the beginner work. Levels, card screens, controls and progression live in [beginner-scaffolding.md](beginner-scaffolding.md); this doc covers how you get to the Diario, the chip wall, groups, heat and retiring phrases. Research: [research/beginner-mode-scaffolding.md](research/beginner-mode-scaffolding.md), [research/flashcards-vocabulary-review.md](research/flashcards-vocabulary-review.md).
+2026-10-18 · Josh · Draft. The Diario-specific half of the beginner work. Scaffolding stages and what each phrase stores live in [beginner-scaffolding.md](beginner-scaffolding.md) (its five-step ladder, which the cards used, is history as of 2026-10-22); this doc covers how you get to the Diario, the chip wall, groups, heat and retiring phrases. Research: [research/beginner-mode-scaffolding.md](research/beginner-mode-scaffolding.md), [research/flashcards-vocabulary-review.md](research/flashcards-vocabulary-review.md).
 
 Mockup: the interactive Diario canvas in the Claude app (chip → deck → end of pass), https://claude.ai/artifact/4RpwTiTgFXkNcT2ASs7LGg. It predates two decisions: it still shows Replay and Pause on the cards. [beginner-scaffolding.md](beginner-scaffolding.md) wins (no Replay; Pause only in hands-free). The card screens in [design/beginner-levels/levels.html](../design/beginner-levels/levels.html) are current.
 
