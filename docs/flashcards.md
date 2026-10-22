@@ -10,7 +10,7 @@
 
 ## Words without a good picture (Josh, 2026-10-21)
 
-Each card says what kind of image it gets: **object** (one simple thing on plain paper, centred with space around it, which reads fine in a wide card: *albicocca*, *zapato*), **scene** (a wide scene: *sera*, *puesto*) or **none** (no picture really works: *parola*, *cosa*, *ragione*, *verdad*). A card with no picture still goes through all four stages, with the English where the picture would be: a is the word, tap for the English; b the word and the mic; c the English, tap for the word; d the English and the mic. Italy: 10 object, 3 scene, 7 none; Mexico: 7, 5, 8.
+Each card says what kind of image it gets: **object** (one simple thing on plain paper, centred with space around it, which reads fine in a wide card: *albicocca*, *zapato*), **scene** (a wide scene: *sera*, *puesto*) or **none** (no picture really works: *parola*, *cosa*, *ragione*, *verdad*). A card with no picture still goes through all four stages, with the English where the picture would be: a is the word, tap for the English; b the word and the mic; c the English, tap for the word; d the English and the mic. Italy: 10 object, 3 scene, 7 none; Mexico: 6, 5, 9.
 
 ## Four stages, easiest first (Josh; order agreed 2026-10-21)
 
