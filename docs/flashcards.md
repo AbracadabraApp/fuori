@@ -5,7 +5,8 @@
 ## The card
 
 - One picture per word, with no writing in it, showing the sense the card teaches.
-- Size still open: a square centred on the screen (A: screen width minus 24 pt each side, 342 pt on a standard iPhone), or 2:1 cards in a scrolling list (D: 342 × 171 pt). Square images are generated 1:1 at 2k and saved 1200 × 1200 (like the Mexican place pictures); wide ones would be 2:1, 1600 × 800. Style not chosen yet (the icon's woodcut, the Italian places' pastel, or the Mexican places' photographic look).
+- **Wide and scrollable** (Josh, 2026-10-21): 2:1 cards in a scrolling list, about two on screen with the next peeking in (342 × 171 pt picture on a standard iPhone, the word below). Images generated 2:1 and saved 1600 × 800. Style not chosen yet (the icon's woodcut, the Italian places' pastel, or the Mexican places' photographic look). Picture ideas should lean to wide scenes, since a single object sits small in a wide frame.
+- **No helper words** (Josh: "not sold on all the helper words"): a card shows only what its stage shows (picture, word, English, a mic icon). No "Tap to see the English", "What is this?", "Say it" or "You said it"; no counter like "3 of 20" in the list. Tapping reveals; the mic is an icon with a VoiceOver label.
 
 ## Four stages, easiest first (Josh; order agreed 2026-10-21)
 
