@@ -182,7 +182,7 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   const o = (await open.json()) as { line: string; conversationId: string; replies?: unknown };
   // Whether the next turn is a tap on the reply buttons (lib/scaffold.ts); this
   // learner has no level yet, so it's the mic
-  o.replies === false ? pass('v1 turn says mic or buttons (mic: no level yet)') : fail('v1 turn replies flag', JSON.stringify(o.replies));
+  o.replies === true ? pass('v1 turn says mic or buttons (buttons: no level yet counts as new)') : fail('v1 turn replies flag', JSON.stringify(o.replies));
   // Two learner lines: memory is only written after at least two (lib/remember.ts)
   let reply = open;
   let r: { line?: string; conversationId?: string } = {};
