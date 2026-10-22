@@ -162,12 +162,12 @@
       "level": "A1"
     },
     {
-      "q": "Why is it 'mi chiamo Josh'?",
-      "a": "Chiamarsi means 'to call oneself', so Italians say 'I call myself Josh'. The mi is part of the verb and can't be dropped.",
+      "q": "Why is it 'mi chiamo Tom'?",
+      "a": "Chiamarsi means 'to call oneself', so Italians say 'I call myself Tom'. The mi is part of the verb and can't be dropped.",
       "examples": [
         {
-          "it": "Mi chiamo Josh. E tu, come ti chiami?",
-          "en": "My name's Josh. And what's your name?"
+          "it": "Mi chiamo Tom. E tu, come ti chiami?",
+          "en": "My name's Tom. And what's your name?"
         },
         {
           "it": "Come si chiama, signora?",
@@ -2212,10 +2212,10 @@
       "level": "A1"
     },
     {
-      "english": "My name is Josh.",
-      "rewrite": "I call myself Josh.",
-      "italian": "Mi chiamo Josh.",
-      "en": "My name is Josh.",
+      "english": "My name is Tom.",
+      "rewrite": "I call myself Tom.",
+      "italian": "Mi chiamo Tom.",
+      "en": "My name is Tom.",
       "unit": "a1-03",
       "level": "A1"
     },
@@ -2982,9 +2982,9 @@
       "level": "A1"
     },
     {
-      "wrong": "Io ho il nome Josh.",
-      "right": "Mi chiamo Josh.",
-      "en": "My name is Josh.",
+      "wrong": "Io ho il nome Tom.",
+      "right": "Mi chiamo Tom.",
+      "en": "My name is Tom.",
       "why": "Italians say 'I call myself': mi chiamo.",
       "unit": "a1-03",
       "level": "A1"
@@ -3510,9 +3510,9 @@
       "level": "A2"
     },
     {
-      "wrong": "Sto lavorando a Seattle. (my job)",
-      "right": "Lavoro a Seattle.",
-      "en": "I work in Seattle.",
+      "wrong": "Sto lavorando a Chicago. (my job)",
+      "right": "Lavoro a Chicago.",
+      "en": "I work in Chicago.",
       "why": "Stare + -ando is only for right this minute.",
       "unit": "a2-02",
       "level": "A2"
