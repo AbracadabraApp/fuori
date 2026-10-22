@@ -16,7 +16,7 @@ settings:
     DEVELOPMENT_TEAM: C8V9S6KGGG
     CODE_SIGN_STYLE: Automatic
     MARKETING_VERSION: "0.1.0"
-    CURRENT_PROJECT_VERSION: "1"
+    CURRENT_PROJECT_VERSION: "2"
     # Each country's server (Info.plist FuoriCountryServers), in the order the
     # country choice shows them; the learner picks one on first launch and can
     # switch in Settings (docs/12-native-app.md decision 1)
