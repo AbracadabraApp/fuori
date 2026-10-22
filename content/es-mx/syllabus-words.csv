@@ -1,0 +1,3301 @@
+lemma,pos,level,unit,theme
+hola,interj,A1,a1-01,greetings and leave-taking
+buenos días,phrase,A1,a1-01,greetings and leave-taking
+buenas tardes,phrase,A1,a1-01,greetings and leave-taking
+buenas noches,phrase,A1,a1-01,greetings and leave-taking
+buenas,interj,A1,a1-01,greetings and leave-taking
+adiós,interj,A1,a1-01,greetings and leave-taking
+hasta luego,phrase,A1,a1-01,greetings and leave-taking
+hasta mañana,phrase,A1,a1-01,greetings and leave-taking
+nos vemos,phrase,A1,a1-01,greetings and leave-taking
+que le vaya bien,phrase,A1,a1-01,greetings and leave-taking
+que te vaya bien,phrase,A1,a1-01,greetings and leave-taking
+bye,interj,A1,a1-01,greetings and leave-taking
+qué tal,phrase,A1,a1-01,greetings and leave-taking
+cómo está,phrase,A1,a1-01,greetings and leave-taking
+cómo estás,phrase,A1,a1-01,greetings and leave-taking
+más o menos,phrase,A1,a1-01,greetings and leave-taking
+gracias,interj,A1,a1-01,greetings and leave-taking
+muchas gracias,phrase,A1,a1-01,greetings and leave-taking
+día,noun-m,A1,a1-01,times of day and titles
+tarde,noun-f,A1,a1-01,times of day and titles
+noche,noun-f,A1,a1-01,times of day and titles
+mañana,noun-f,A1,a1-01,times of day and titles
+señor,noun-m,A1,a1-01,times of day and titles
+señora,noun-f,A1,a1-01,times of day and titles
+señorita,noun-f,A1,a1-01,times of day and titles
+bien,adv,A1,a1-01,function words
+muy,adv,A1,a1-01,function words
+mal,adv,A1,a1-01,function words
+estar,verb,A1,a1-01,function words
+yo,pron,A1,a1-01,function words
+tú,pron,A1,a1-01,function words
+usted,pron,A1,a1-01,function words
+ustedes,pron,A1,a1-01,function words
+él,pron,A1,a1-01,function words
+ella,pron,A1,a1-01,function words
+y,conj,A1,a1-01,function words
+hasta,prep,A1,a1-01,function words
+regular,adj,A1,a1-01,greetings and leave-taking
+mande,interj,A1,a1-02,repair and help
+perdón,interj,A1,a1-02,repair and help
+entender,verb,A1,a1-02,repair and help
+repetir,verb,A1,a1-02,repair and help
+despacio,adv,A1,a1-02,repair and help
+por favor,phrase,A1,a1-02,repair and help
+significar,verb,A1,a1-02,repair and help
+decir,verb,A1,a1-02,repair and help
+escribir,verb,A1,a1-02,repair and help
+hablar,verb,A1,a1-02,repair and help
+saber,verb,A1,a1-02,repair and help
+poder,verb,A1,a1-02,repair and help
+no sé,phrase,A1,a1-02,repair and help
+otra vez,phrase,A1,a1-02,repair and help
+un poquito,phrase,A1,a1-02,repair and help
+aprender,verb,A1,a1-02,repair and help
+palabra,noun-f,A1,a1-02,repair and help
+pregunta,noun-f,A1,a1-02,repair and help
+idioma,noun-m,A1,a1-02,repair and help
+español,noun-m,A1,a1-02,repair and help
+inglés,noun-m,A1,a1-02,repair and help
+letra,noun-f,A1,a1-02,the alphabet
+alfabeto,noun-m,A1,a1-02,the alphabet
+be grande,phrase,A1,a1-02,the alphabet
+ve chica,phrase,A1,a1-02,the alphabet
+doble u,phrase,A1,a1-02,the alphabet
+i griega,phrase,A1,a1-02,the alphabet
+acento,noun-m,A1,a1-02,the alphabet
+sí,adv,A1,a1-02,function words
+no,adv,A1,a1-02,function words
+cómo,adv,A1,a1-02,function words
+qué,pron,A1,a1-02,function words
+lo,pron,A1,a1-02,function words
+me,pron,A1,a1-02,function words
+más,adv,A1,a1-02,function words
+comprender,verb,A1,a1-02,repair and help
+practicar,verb,A1,a1-02,repair and help
+diccionario,noun-m,A1,a1-02,repair and help
+ajá,interj,A1,a1-02,repair and help
+llamarse,verb,A1,a1-03,personal details
+nombre,noun-m,A1,a1-03,personal details
+apellido,noun-m,A1,a1-03,personal details
+ser,verb,A1,a1-03,personal details
+vivir,verb,A1,a1-03,personal details
+colonia,noun-f,A1,a1-03,personal details
+dirección,noun-f,A1,a1-03,personal details
+calle,noun-f,A1,a1-03,personal details
+avenida,noun-f,A1,a1-03,personal details
+número,noun-m,A1,a1-03,personal details
+código postal,noun-m,A1,a1-03,personal details
+país,noun-m,A1,a1-03,personal details
+ciudad,noun-f,A1,a1-03,personal details
+pueblo,noun-m,A1,a1-03,personal details
+nuevo,adj,A1,a1-03,personal details
+mucho gusto,phrase,A1,a1-03,personal details
+encantado,adj,A1,a1-03,personal details
+igualmente,adv,A1,a1-03,personal details
+presentar,verb,A1,a1-03,personal details
+mexicano,adj,A1,a1-03,origin and nationality
+estadounidense,adj,A1,a1-03,origin and nationality
+canadiense,adj,A1,a1-03,origin and nationality
+inglés,adj,A1,a1-03,origin and nationality
+español,adj,A1,a1-03,origin and nationality
+francés,adj,A1,a1-03,origin and nationality
+alemán,adj,A1,a1-03,origin and nationality
+extranjero,adj,A1,a1-03,origin and nationality
+extranjero,noun-m,A1,a1-03,origin and nationality
+llevar,verb,A1,a1-03,time here
+tener,verb,A1,a1-03,time here
+semana,noun-f,A1,a1-03,time here
+mes,noun-m,A1,a1-03,time here
+año,noun-m,A1,a1-03,time here
+cuánto tiempo,phrase,A1,a1-03,time here
+celular,noun-m,A1,a1-03,contacts
+teléfono,noun-m,A1,a1-03,contacts
+WhatsApp,noun-m,A1,a1-03,contacts
+correo,noun-m,A1,a1-03,contacts
+correo electrónico,noun-m,A1,a1-03,contacts
+arroba,noun-f,A1,a1-03,contacts
+punto,noun-m,A1,a1-03,contacts
+guion bajo,noun-m,A1,a1-03,contacts
+pasar,verb,A1,a1-03,contacts
+amigo,noun-m,A1,a1-03,people
+vecino,noun-m,A1,a1-03,people
+persona,noun-f,A1,a1-03,people
+hombre,noun-m,A1,a1-03,people
+mujer,noun-f,A1,a1-03,people
+de,prep,A1,a1-03,function words
+en,prep,A1,a1-03,function words
+aquí,adv,A1,a1-03,function words
+ahora,adv,A1,a1-03,function words
+pero,conj,A1,a1-03,function words
+o,conj,A1,a1-03,function words
+dónde,adv,A1,a1-03,function words
+nosotros,pron,A1,a1-03,function words
+ellos,pron,A1,a1-03,function words
+te,pron,A1,a1-03,function words
+se,pron,A1,a1-03,function words
+mi,det,A1,a1-03,function words
+tu,det,A1,a1-03,function words
+italiano,adj,A1,a1-03,origin and nationality
+japonés,adj,A1,a1-03,origin and nationality
+coreano,adj,A1,a1-03,origin and nationality
+brasileño,adj,A1,a1-03,origin and nationality
+argentino,adj,A1,a1-03,origin and nationality
+colombiano,adj,A1,a1-03,origin and nationality
+ellas,pron,A1,a1-03,function words
+presentarse,verb,A1,a1-03,function words
+con permiso,phrase,A1,a1-04,courtesy
+permiso,noun-m,A1,a1-04,courtesy
+disculpe,interj,A1,a1-04,courtesy
+disculpa,interj,A1,a1-04,courtesy
+no pasa nada,phrase,A1,a1-04,courtesy
+lo siento,phrase,A1,a1-04,courtesy
+no hay problema,phrase,A1,a1-04,courtesy
+provecho,interj,A1,a1-04,courtesy
+de nada,phrase,A1,a1-04,courtesy
+con mucho gusto,phrase,A1,a1-04,courtesy
+a sus órdenes,phrase,A1,a1-04,courtesy
+pásele,interj,A1,a1-04,courtesy
+muy amable,phrase,A1,a1-04,courtesy
+amable,adj,A1,a1-04,courtesy
+salud,interj,A1,a1-04,courtesy
+favor,noun-m,A1,a1-04,courtesy
+joven,noun-mf,A1,a1-04,forms of address
+don,noun-m,A1,a1-04,forms of address
+doña,noun-f,A1,a1-04,forms of address
+güero,adj,A1,a1-04,forms of address
+güero,noun-m,A1,a1-04,forms of address
+jefe,noun-m,A1,a1-04,forms of address
+momento,noun-m,A1,a1-04,small words
+momentito,noun-m,A1,a1-04,small words
+ahorita,adv,A1,a1-04,small words
+poquito,noun-m,A1,a1-04,small words
+ayudar,verb,A1,a1-04,small words
+esperar,verb,A1,a1-04,small words
+buscar,verb,A1,a1-04,small words
+algo,pron,A1,a1-04,small words
+bienvenido,adj,A1,a1-04,courtesy
+buen provecho,phrase,A1,a1-04,courtesy
+oye,interj,A1,a1-04,courtesy
+oiga,interj,A1,a1-04,courtesy
+taco,noun-m,A1,a1-05,the taquería and food stands
+al pastor,phrase,A1,a1-05,the taquería and food stands
+suadero,noun-m,A1,a1-05,the taquería and food stands
+bistec,noun-m,A1,a1-05,the taquería and food stands
+carnitas,noun-f,A1,a1-05,the taquería and food stands
+quesadilla,noun-f,A1,a1-05,the taquería and food stands
+torta,noun-f,A1,a1-05,the taquería and food stands
+tortilla,noun-f,A1,a1-05,the taquería and food stands
+salsa,noun-f,A1,a1-05,the taquería and food stands
+salsa verde,noun-f,A1,a1-05,the taquería and food stands
+salsa roja,noun-f,A1,a1-05,the taquería and food stands
+cebolla,noun-f,A1,a1-05,the taquería and food stands
+cilantro,noun-m,A1,a1-05,the taquería and food stands
+limón,noun-m,A1,a1-05,the taquería and food stands
+chile,noun-m,A1,a1-05,the taquería and food stands
+queso,noun-m,A1,a1-05,the taquería and food stands
+carne,noun-f,A1,a1-05,the taquería and food stands
+pollo,noun-m,A1,a1-05,the taquería and food stands
+taquería,noun-f,A1,a1-05,the taquería and food stands
+puesto,noun-m,A1,a1-05,the taquería and food stands
+orden,noun-f,A1,a1-05,the taquería and food stands
+con todo,phrase,A1,a1-05,the taquería and food stands
+para aquí,phrase,A1,a1-05,the taquería and food stands
+para llevar,phrase,A1,a1-05,the taquería and food stands
+café,noun-m,A1,a1-05,drinks
+café de olla,noun-m,A1,a1-05,drinks
+café americano,noun-m,A1,a1-05,drinks
+agua,noun-f,A1,a1-05,drinks
+agua natural,noun-f,A1,a1-05,drinks
+agua mineral,noun-f,A1,a1-05,drinks
+agua fresca,noun-f,A1,a1-05,drinks
+horchata,noun-f,A1,a1-05,drinks
+jamaica,noun-f,A1,a1-05,drinks
+jugo,noun-m,A1,a1-05,drinks
+naranja,noun-f,A1,a1-05,drinks
+refresco,noun-m,A1,a1-05,drinks
+leche,noun-f,A1,a1-05,drinks
+té,noun-m,A1,a1-05,drinks
+cerveza,noun-f,A1,a1-05,drinks
+hielo,noun-m,A1,a1-05,drinks
+querer,verb,A1,a1-05,at the counter
+dar,verb,A1,a1-05,at the counter
+regalar,verb,A1,a1-05,at the counter
+servilleta,noun-f,A1,a1-05,at the counter
+plato,noun-m,A1,a1-05,at the counter
+vaso,noun-m,A1,a1-05,at the counter
+mesa,noun-f,A1,a1-05,at the counter
+picar,verb,A1,a1-05,at the counter
+picante,adj,A1,a1-05,at the counter
+comer,verb,A1,a1-05,at the counter
+tomar,verb,A1,a1-05,at the counter
+hambre,noun-f,A1,a1-05,at the counter
+sed,noun-f,A1,a1-05,at the counter
+un,art,A1,a1-05,function words
+una,art,A1,a1-05,function words
+unos,art,A1,a1-05,function words
+unas,art,A1,a1-05,function words
+con,prep,A1,a1-05,function words
+sin,prep,A1,a1-05,function words
+todo,pron,A1,a1-05,function words
+le,pron,A1,a1-05,function words
+sándwich,noun-m,A1,a1-05,the taquería and food stands
+hamburguesa,noun-f,A1,a1-05,the taquería and food stands
+bebida,noun-f,A1,a1-05,the taquería and food stands
+café con leche,noun-m,A1,a1-05,the taquería and food stands
+peso,noun-m,A1,a1-06,money
+centavo,noun-m,A1,a1-06,money
+billete,noun-m,A1,a1-06,money
+moneda,noun-f,A1,a1-06,money
+cambio,noun-m,A1,a1-06,money
+efectivo,noun-m,A1,a1-06,money
+tarjeta,noun-f,A1,a1-06,money
+terminal,noun-f,A1,a1-06,money
+dinero,noun-m,A1,a1-06,money
+precio,noun-m,A1,a1-06,money
+cajero,noun-m,A1,a1-06,money
+cuánto,pron,A1,a1-06,paying
+costar,verb,A1,a1-06,paying
+deber,verb,A1,a1-06,paying
+pagar,verb,A1,a1-06,paying
+cobrar,verb,A1,a1-06,paying
+aceptar,verb,A1,a1-06,paying
+traer,verb,A1,a1-06,paying
+caro,adj,A1,a1-06,paying
+barato,adj,A1,a1-06,paying
+menos,adv,A1,a1-06,paying
+total,noun-m,A1,a1-06,paying
+cero,num,A1,a1-06,numbers
+uno,num,A1,a1-06,numbers
+dos,num,A1,a1-06,numbers
+tres,num,A1,a1-06,numbers
+cuatro,num,A1,a1-06,numbers
+cinco,num,A1,a1-06,numbers
+seis,num,A1,a1-06,numbers
+siete,num,A1,a1-06,numbers
+ocho,num,A1,a1-06,numbers
+nueve,num,A1,a1-06,numbers
+diez,num,A1,a1-06,numbers
+once,num,A1,a1-06,numbers
+doce,num,A1,a1-06,numbers
+trece,num,A1,a1-06,numbers
+catorce,num,A1,a1-06,numbers
+quince,num,A1,a1-06,numbers
+dieciséis,num,A1,a1-06,numbers
+diecisiete,num,A1,a1-06,numbers
+dieciocho,num,A1,a1-06,numbers
+diecinueve,num,A1,a1-06,numbers
+veinte,num,A1,a1-06,numbers
+veintiuno,num,A1,a1-06,numbers
+treinta,num,A1,a1-06,numbers
+cuarenta,num,A1,a1-06,numbers
+cincuenta,num,A1,a1-06,numbers
+sesenta,num,A1,a1-06,numbers
+setenta,num,A1,a1-06,numbers
+ochenta,num,A1,a1-06,numbers
+noventa,num,A1,a1-06,numbers
+cien,num,A1,a1-06,numbers
+ciento,num,A1,a1-06,numbers
+doscientos,num,A1,a1-06,numbers
+trescientos,num,A1,a1-06,numbers
+cuatrocientos,num,A1,a1-06,numbers
+quinientos,num,A1,a1-06,numbers
+seiscientos,num,A1,a1-06,numbers
+setecientos,num,A1,a1-06,numbers
+ochocientos,num,A1,a1-06,numbers
+novecientos,num,A1,a1-06,numbers
+mil,num,A1,a1-06,numbers
+millón,noun-m,A1,a1-06,numbers
+valer,verb,A1,a1-06,paying
+haber,verb,A1,a1-07,pointing and asking
+este,det,A1,a1-07,pointing and asking
+ese,det,A1,a1-07,pointing and asking
+aquel,det,A1,a1-07,pointing and asking
+esto,pron,A1,a1-07,pointing and asking
+eso,pron,A1,a1-07,pointing and asking
+aquello,pron,A1,a1-07,pointing and asking
+acá,adv,A1,a1-07,pointing and asking
+allá,adv,A1,a1-07,pointing and asking
+ahí,adv,A1,a1-07,pointing and asking
+allí,adv,A1,a1-07,pointing and asking
+nomás,adv,A1,a1-07,pointing and asking
+ya,adv,A1,a1-07,pointing and asking
+ya no,phrase,A1,a1-07,pointing and asking
+otro,det,A1,a1-07,pointing and asking
+algo más,phrase,A1,a1-07,pointing and asking
+es todo,phrase,A1,a1-07,pointing and asking
+acabarse,verb,A1,a1-07,pointing and asking
+llevarse,verb,A1,a1-07,pointing and asking
+comprar,verb,A1,a1-07,pointing and asking
+vender,verb,A1,a1-07,pointing and asking
+cosa,noun-f,A1,a1-07,pointing and asking
+grande,adj,A1,a1-07,pointing and asking
+chico,adj,A1,a1-07,pointing and asking
+tienda,noun-f,A1,a1-07,the corner shop
+tiendita,noun-f,A1,a1-07,the corner shop
+súper,noun-m,A1,a1-07,the corner shop
+supermercado,noun-m,A1,a1-07,the corner shop
+pila,noun-f,A1,a1-07,the corner shop
+pan,noun-m,A1,a1-07,the corner shop
+pan dulce,noun-m,A1,a1-07,the corner shop
+bolillo,noun-m,A1,a1-07,the corner shop
+concha,noun-f,A1,a1-07,the corner shop
+huevo,noun-m,A1,a1-07,the corner shop
+galleta,noun-f,A1,a1-07,the corner shop
+papel de baño,noun-m,A1,a1-07,the corner shop
+jabón,noun-m,A1,a1-07,the corner shop
+botella,noun-f,A1,a1-07,the corner shop
+bolsa,noun-f,A1,a1-07,the corner shop
+panadería,noun-f,A1,a1-07,the bakery and the stationer's
+charola,noun-f,A1,a1-07,the bakery and the stationer's
+pinzas,noun-f,A1,a1-07,the bakery and the stationer's
+papelería,noun-f,A1,a1-07,the bakery and the stationer's
+copia,noun-f,A1,a1-07,the bakery and the stationer's
+pluma,noun-f,A1,a1-07,the bakery and the stationer's
+lápiz,noun-m,A1,a1-07,the bakery and the stationer's
+cuaderno,noun-m,A1,a1-07,the bakery and the stationer's
+papel,noun-m,A1,a1-07,the bakery and the stationer's
+el,art,A1,a1-07,function words
+la,art,A1,a1-07,function words
+los,art,A1,a1-07,function words
+las,art,A1,a1-07,function words
+para,prep,A1,a1-07,function words
+pequeño,adj,A1,a1-07,the corner shop
+solo,adv,A1,a1-07,the corner shop
+yogurt,noun-m,A1,a1-07,the corner shop
+cereal,noun-m,A1,a1-07,the corner shop
+jamón,noun-m,A1,a1-07,the corner shop
+mermelada,noun-f,A1,a1-07,the corner shop
+panadero,noun-m,A1,a1-07,the corner shop
+compra,noun-f,A1,a1-07,the corner shop
+hacer el súper,phrase,A1,a1-07,the corner shop
+lista,noun-f,A1,a1-07,the corner shop
+hoja,noun-f,A1,a1-07,the corner shop
+goma,noun-f,A1,a1-07,the corner shop
+bote,noun-m,A1,a1-07,the corner shop
+kilo,noun-m,A1,a1-08,weights and quantities
+medio,adj,A1,a1-08,weights and quantities
+cuarto,noun-m,A1,a1-08,weights and quantities
+gramo,noun-m,A1,a1-08,weights and quantities
+pieza,noun-f,A1,a1-08,weights and quantities
+docena,noun-f,A1,a1-08,weights and quantities
+a cómo,phrase,A1,a1-08,weights and quantities
+pesar,verb,A1,a1-08,weights and quantities
+jitomate,noun-m,A1,a1-08,fruit and vegetables
+tomate verde,noun-m,A1,a1-08,fruit and vegetables
+aguacate,noun-m,A1,a1-08,fruit and vegetables
+elote,noun-m,A1,a1-08,fruit and vegetables
+papa,noun-f,A1,a1-08,fruit and vegetables
+plátano,noun-m,A1,a1-08,fruit and vegetables
+mango,noun-m,A1,a1-08,fruit and vegetables
+manzana,noun-f,A1,a1-08,fruit and vegetables
+fresa,noun-f,A1,a1-08,fruit and vegetables
+piña,noun-f,A1,a1-08,fruit and vegetables
+papaya,noun-f,A1,a1-08,fruit and vegetables
+sandía,noun-f,A1,a1-08,fruit and vegetables
+melón,noun-m,A1,a1-08,fruit and vegetables
+uva,noun-f,A1,a1-08,fruit and vegetables
+guayaba,noun-f,A1,a1-08,fruit and vegetables
+zanahoria,noun-f,A1,a1-08,fruit and vegetables
+calabacita,noun-f,A1,a1-08,fruit and vegetables
+nopal,noun-m,A1,a1-08,fruit and vegetables
+ejote,noun-m,A1,a1-08,fruit and vegetables
+ajo,noun-m,A1,a1-08,fruit and vegetables
+fruta,noun-f,A1,a1-08,fruit and vegetables
+verdura,noun-f,A1,a1-08,fruit and vegetables
+mercado,noun-m,A1,a1-08,the market
+tianguis,noun-m,A1,a1-08,the market
+tortillería,noun-f,A1,a1-08,the market
+carnicería,noun-f,A1,a1-08,the market
+pollería,noun-f,A1,a1-08,the market
+marchante,noun-mf,A1,a1-08,the market
+pilón,noun-m,A1,a1-08,the market
+mandado,noun-m,A1,a1-08,the market
+res,noun-f,A1,a1-08,the market
+puerco,noun-m,A1,a1-08,the market
+pescado,noun-m,A1,a1-08,the market
+carne molida,noun-f,A1,a1-08,the market
+probar,verb,A1,a1-08,at the stall
+seguir,verb,A1,a1-08,at the stall
+quién,pron,A1,a1-08,at the stall
+dulce,adj,A1,a1-08,at the stall
+maduro,adj,A1,a1-08,at the stall
+fresco,adj,A1,a1-08,at the stall
+ándele,interj,A1,a1-08,at the stall
+lechuga,noun-f,A1,a1-08,fruit and vegetables
+perejil,noun-m,A1,a1-08,fruit and vegetables
+cerdo,noun-m,A1,a1-08,fruit and vegetables
+carnicero,noun-m,A1,a1-08,fruit and vegetables
+litro,noun-m,A1,a1-08,fruit and vegetables
+quedar,verb,A1,a1-09,asking the way
+qué tan,phrase,A1,a1-09,asking the way
+lejos,adv,A1,a1-09,asking the way
+cerca,adv,A1,a1-09,asking the way
+perdido,adj,A1,a1-09,asking the way
+por aquí,phrase,A1,a1-09,asking the way
+caminar,verb,A1,a1-09,asking the way
+a pie,phrase,A1,a1-09,asking the way
+minuto,noun-m,A1,a1-09,asking the way
+derecho,adv,A1,a1-09,directions
+dar vuelta,phrase,A1,a1-09,directions
+vuelta,noun-f,A1,a1-09,directions
+derecha,noun-f,A1,a1-09,directions
+izquierda,noun-f,A1,a1-09,directions
+cruzar,verb,A1,a1-09,directions
+esquina,noun-f,A1,a1-09,directions
+lado,noun-m,A1,a1-09,directions
+final,noun-m,A1,a1-09,directions
+enfrente de,prep,A1,a1-09,directions
+al lado de,prep,A1,a1-09,directions
+detrás de,prep,A1,a1-09,directions
+delante de,prep,A1,a1-09,directions
+entre,prep,A1,a1-09,directions
+a,prep,A1,a1-09,directions
+cuadra,noun-f,A1,a1-09,the street
+banqueta,noun-f,A1,a1-09,the street
+semáforo,noun-m,A1,a1-09,the street
+glorieta,noun-f,A1,a1-09,the street
+metro,noun-m,A1,a1-09,the street
+parada,noun-f,A1,a1-09,the street
+cajero automático,noun-m,A1,a1-09,the street
+farmacia,noun-f,A1,a1-09,the street
+banco,noun-m,A1,a1-09,the street
+parque,noun-m,A1,a1-09,the street
+iglesia,noun-f,A1,a1-09,the street
+plaza,noun-f,A1,a1-09,the street
+zócalo,noun-m,A1,a1-09,the street
+centro,noun-m,A1,a1-09,the street
+museo,noun-m,A1,a1-09,the street
+oficina,noun-f,A1,a1-09,the street
+biblioteca,noun-f,A1,a1-09,the street
+catedral,noun-f,A1,a1-09,the street
+librería,noun-f,A1,a1-09,the street
+entrar,verb,A1,a1-09,the street
+al,art,A1,a1-09,the street
+del,art,A1,a1-09,the street
+abajo de,prep,A1,a1-09,the street
+arriba de,prep,A1,a1-09,the street
+debajo de,prep,A1,a1-09,the street
+encima de,prep,A1,a1-09,the street
+hora,noun-f,A1,a1-10,clock time
+qué horas son,phrase,A1,a1-10,clock time
+en punto,phrase,A1,a1-10,clock time
+y media,phrase,A1,a1-10,clock time
+cuarto para,phrase,A1,a1-10,clock time
+mediodía,noun-m,A1,a1-10,clock time
+medianoche,noun-f,A1,a1-10,clock time
+horario,noun-m,A1,a1-10,clock time
+lunes,noun-m,A1,a1-10,days of the week
+martes,noun-m,A1,a1-10,days of the week
+miércoles,noun-m,A1,a1-10,days of the week
+jueves,noun-m,A1,a1-10,days of the week
+viernes,noun-m,A1,a1-10,days of the week
+sábado,noun-m,A1,a1-10,days of the week
+domingo,noun-m,A1,a1-10,days of the week
+fin de semana,noun-m,A1,a1-10,days of the week
+enero,noun-m,A1,a1-10,months
+febrero,noun-m,A1,a1-10,months
+marzo,noun-m,A1,a1-10,months
+abril,noun-m,A1,a1-10,months
+mayo,noun-m,A1,a1-10,months
+junio,noun-m,A1,a1-10,months
+julio,noun-m,A1,a1-10,months
+agosto,noun-m,A1,a1-10,months
+septiembre,noun-m,A1,a1-10,months
+octubre,noun-m,A1,a1-10,months
+noviembre,noun-m,A1,a1-10,months
+diciembre,noun-m,A1,a1-10,months
+hoy,adv,A1,a1-10,when and opening hours
+mañana,adv,A1,a1-10,when and opening hours
+temprano,adv,A1,a1-10,when and opening hours
+tarde,adv,A1,a1-10,when and opening hours
+antes,adv,A1,a1-10,when and opening hours
+después,adv,A1,a1-10,when and opening hours
+al rato,phrase,A1,a1-10,when and opening hours
+rato,noun-m,A1,a1-10,when and opening hours
+en la mañana,phrase,A1,a1-10,when and opening hours
+en la tarde,phrase,A1,a1-10,when and opening hours
+en la noche,phrase,A1,a1-10,when and opening hours
+abrir,verb,A1,a1-10,when and opening hours
+cerrar,verb,A1,a1-10,when and opening hours
+abierto,adj,A1,a1-10,when and opening hours
+cerrado,adj,A1,a1-10,when and opening hours
+desde,prep,A1,a1-10,when and opening hours
+verse,verb,A1,a1-10,agreeing to meet
+sale,interj,A1,a1-10,agreeing to meet
+va,interj,A1,a1-10,agreeing to meet
+órale,interj,A1,a1-10,agreeing to meet
+está bien,phrase,A1,a1-10,agreeing to meet
+de acuerdo,phrase,A1,a1-10,agreeing to meet
+claro,interj,A1,a1-10,agreeing to meet
+media hora,noun-f,A1,a1-10,clock time
+nos,pron,A1,a1-10,function words
+camión,noun-m,A1,a1-11,transport
+pesero,noun-m,A1,a1-11,transport
+combi,noun-f,A1,a1-11,transport
+micro,noun-m,A1,a1-11,transport
+metrobús,noun-m,A1,a1-11,transport
+taxi,noun-m,A1,a1-11,transport
+taxi de sitio,noun-m,A1,a1-11,transport
+aplicación,noun-f,A1,a1-11,transport
+tren,noun-m,A1,a1-11,transport
+avión,noun-m,A1,a1-11,transport
+aeropuerto,noun-m,A1,a1-11,transport
+bicicleta,noun-f,A1,a1-11,transport
+bici,noun-f,A1,a1-11,transport
+moto,noun-f,A1,a1-11,transport
+carro,noun-m,A1,a1-11,transport
+transporte,noun-m,A1,a1-11,transport
+información,noun-f,A1,a1-11,transport
+pasaje,noun-m,A1,a1-11,on the bus and metro
+línea,noun-f,A1,a1-11,on the bus and metro
+estación,noun-f,A1,a1-11,on the bus and metro
+bajar,verb,A1,a1-11,on the bus and metro
+bajarse,verb,A1,a1-11,on the bus and metro
+subir,verb,A1,a1-11,on the bus and metro
+subirse,verb,A1,a1-11,on the bus and metro
+ir,verb,A1,a1-11,on the bus and metro
+venir,verb,A1,a1-11,on the bus and metro
+llegar,verb,A1,a1-11,on the bus and metro
+conductor,noun-m,A1,a1-11,on the bus and metro
+chofer,noun-mf,A1,a1-11,on the bus and metro
+taxista,noun-mf,A1,a1-11,on the bus and metro
+lleno,adj,A1,a1-11,on the bus and metro
+rápido,adj,A1,a1-11,on the bus and metro
+lento,adj,A1,a1-11,on the bus and metro
+viaje,noun-m,A1,a1-11,on the bus and metro
+por,prep,A1,a1-11,function words
+rentar,verb,A1,a1-12,the home
+renta,noun-f,A1,a1-12,the home
+departamento,noun-m,A1,a1-12,the home
+depa,noun-m,A1,a1-12,the home
+casa,noun-f,A1,a1-12,the home
+edificio,noun-m,A1,a1-12,the home
+piso,noun-m,A1,a1-12,the home
+planta baja,noun-f,A1,a1-12,the home
+recámara,noun-f,A1,a1-12,the home
+sala,noun-f,A1,a1-12,the home
+cocina,noun-f,A1,a1-12,the home
+comedor,noun-m,A1,a1-12,the home
+baño,noun-m,A1,a1-12,the home
+regadera,noun-f,A1,a1-12,the home
+ventana,noun-f,A1,a1-12,the home
+puerta,noun-f,A1,a1-12,the home
+azotea,noun-f,A1,a1-12,the home
+patio,noun-m,A1,a1-12,the home
+escalera,noun-f,A1,a1-12,the home
+pared,noun-f,A1,a1-12,the home
+techo,noun-m,A1,a1-12,the home
+jardín,noun-m,A1,a1-12,the home
+cochera,noun-f,A1,a1-12,the home
+elevador,noun-m,A1,a1-12,the home
+estufa,noun-f,A1,a1-12,in the home
+refri,noun-m,A1,a1-12,in the home
+refrigerador,noun-m,A1,a1-12,in the home
+boiler,noun-m,A1,a1-12,in the home
+tinaco,noun-m,A1,a1-12,in the home
+garrafón,noun-m,A1,a1-12,in the home
+gas,noun-m,A1,a1-12,in the home
+llave,noun-f,A1,a1-12,in the home
+cama,noun-f,A1,a1-12,in the home
+silla,noun-f,A1,a1-12,in the home
+sillón,noun-m,A1,a1-12,in the home
+sofá,noun-m,A1,a1-12,in the home
+clóset,noun-m,A1,a1-12,in the home
+lámpara,noun-f,A1,a1-12,in the home
+espejo,noun-m,A1,a1-12,in the home
+mueble,noun-m,A1,a1-12,in the home
+lavadora,noun-f,A1,a1-12,in the home
+microondas,noun-m,A1,a1-12,in the home
+tele,noun-f,A1,a1-12,in the home
+televisión,noun-f,A1,a1-12,in the home
+lavabo,noun-m,A1,a1-12,in the home
+casero,noun-m,A1,a1-12,the landlord
+vivir abajo,phrase,A1,a1-12,the landlord
+caliente,adj,A1,a1-12,the landlord
+chiquito,adj,A1,a1-12,the landlord
+bonito,adj,A1,a1-12,the landlord
+primero,adj,A1,a1-12,ordinals
+segundo,adj,A1,a1-12,ordinals
+tercero,adj,A1,a1-12,ordinals
+cuarto,adj,A1,a1-12,ordinals
+quinto,adj,A1,a1-12,ordinals
+sexto,adj,A1,a1-12,ordinals
+séptimo,adj,A1,a1-12,ordinals
+octavo,adj,A1,a1-12,ordinals
+noveno,adj,A1,a1-12,ordinals
+décimo,adj,A1,a1-12,ordinals
+abajo,adv,A1,a1-12,function words
+arriba,adv,A1,a1-12,function words
+adentro,adv,A1,a1-12,function words
+afuera,adv,A1,a1-12,function words
+su,det,A1,a1-12,function words
+librero,noun-m,A1,a1-12,in the home
+tina,noun-f,A1,a1-12,in the home
+gustar,verb,A1,a1-13,likes
+encantar,verb,A1,a1-13,likes
+preferir,verb,A1,a1-13,likes
+mucho,adv,A1,a1-13,likes
+mucho,adj,A1,a1-13,likes
+poco,adj,A1,a1-13,likes
+bastante,adv,A1,a1-13,likes
+nada,pron,A1,a1-13,likes
+también,adv,A1,a1-13,likes
+tampoco,adv,A1,a1-13,likes
+mí,pron,A1,a1-13,likes
+ti,pron,A1,a1-13,likes
+verdad,noun-f,A1,a1-13,likes
+a poco,phrase,A1,a1-13,likes
+rico,adj,A1,a1-13,likes
+delicioso,adj,A1,a1-13,likes
+feo,adj,A1,a1-13,likes
+bueno,adj,A1,a1-13,likes
+malo,adj,A1,a1-13,likes
+fácil,adj,A1,a1-13,likes
+difícil,adj,A1,a1-13,likes
+interesante,adj,A1,a1-13,likes
+comida,noun-f,A1,a1-13,food and dishes
+tamal,noun-m,A1,a1-13,food and dishes
+mole,noun-m,A1,a1-13,food and dishes
+pozole,noun-m,A1,a1-13,food and dishes
+enchilada,noun-f,A1,a1-13,food and dishes
+picante,noun-m,A1,a1-13,food and dishes
+postre,noun-m,A1,a1-13,food and dishes
+sopa,noun-f,A1,a1-13,food and dishes
+arroz,noun-m,A1,a1-13,food and dishes
+frijol,noun-m,A1,a1-13,food and dishes
+música,noun-f,A1,a1-13,free time
+cine,noun-m,A1,a1-13,free time
+película,noun-f,A1,a1-13,free time
+leer,verb,A1,a1-13,free time
+bailar,verb,A1,a1-13,free time
+cantar,verb,A1,a1-13,free time
+escuchar,verb,A1,a1-13,free time
+ver,verb,A1,a1-13,free time
+jugar,verb,A1,a1-13,free time
+futbol,noun-m,A1,a1-13,free time
+deporte,noun-m,A1,a1-13,free time
+viajar,verb,A1,a1-13,free time
+playa,noun-f,A1,a1-13,free time
+revista,noun-f,A1,a1-13,free time
+periódico,noun-m,A1,a1-13,free time
+hacer,verb,A1,a1-13,weather
+calor,noun-m,A1,a1-13,weather
+frío,noun-m,A1,a1-13,weather
+frío,adj,A1,a1-13,weather
+llover,verb,A1,a1-13,weather
+lluvia,noun-f,A1,a1-13,weather
+aguacero,noun-m,A1,a1-13,weather
+sol,noun-m,A1,a1-13,weather
+nublado,adj,A1,a1-13,weather
+viento,noun-m,A1,a1-13,weather
+nube,noun-f,A1,a1-13,weather
+tormenta,noun-f,A1,a1-13,weather
+clima,noun-m,A1,a1-13,weather
+tiempo,noun-m,A1,a1-13,weather
+grado,noun-m,A1,a1-13,weather
+temperatura,noun-f,A1,a1-13,weather
+parecer,verb,A1,a1-13,weather
+temporada de lluvias,noun-f,A1,a1-13,seasons
+temporada de secas,noun-f,A1,a1-13,seasons
+temporada,noun-f,A1,a1-13,seasons
+primavera,noun-f,A1,a1-13,seasons
+verano,noun-m,A1,a1-13,seasons
+otoño,noun-m,A1,a1-13,seasons
+invierno,noun-m,A1,a1-13,seasons
+odiar,verb,A1,a1-13,likes
+mirar,verb,A1,a1-13,likes
+libro,noun-m,A1,a1-13,likes
+canción,noun-f,A1,a1-13,likes
+cantante,noun-mf,A1,a1-13,likes
+nevar,verb,A1,a1-13,weather
+nieve,noun-f,A1,a1-13,weather
+neblina,noun-f,A1,a1-13,weather
+seco,adj,A1,a1-13,weather
+paraguas,noun-m,A1,a1-13,weather
+aire,noun-m,A1,a1-13,weather
+cielo,noun-m,A1,a1-13,weather
+tener frío,phrase,A1,a1-13,weather
+tener calor,phrase,A1,a1-13,weather
+cuerpo,noun-m,A1,a1-14,the body
+cabeza,noun-f,A1,a1-14,the body
+cara,noun-f,A1,a1-14,the body
+ojo,noun-m,A1,a1-14,the body
+nariz,noun-f,A1,a1-14,the body
+boca,noun-f,A1,a1-14,the body
+oído,noun-m,A1,a1-14,the body
+diente,noun-m,A1,a1-14,the body
+muela,noun-f,A1,a1-14,the body
+garganta,noun-f,A1,a1-14,the body
+cuello,noun-m,A1,a1-14,the body
+pecho,noun-m,A1,a1-14,the body
+espalda,noun-f,A1,a1-14,the body
+estómago,noun-m,A1,a1-14,the body
+brazo,noun-m,A1,a1-14,the body
+mano,noun-f,A1,a1-14,the body
+dedo,noun-m,A1,a1-14,the body
+pierna,noun-f,A1,a1-14,the body
+pie,noun-m,A1,a1-14,the body
+pelo,noun-m,A1,a1-14,the body
+sentirse,verb,A1,a1-14,feeling ill
+doler,verb,A1,a1-14,feeling ill
+dolor,noun-m,A1,a1-14,feeling ill
+enfermo,adj,A1,a1-14,feeling ill
+gripa,noun-f,A1,a1-14,feeling ill
+calentura,noun-f,A1,a1-14,feeling ill
+fiebre,noun-f,A1,a1-14,feeling ill
+tos,noun-f,A1,a1-14,feeling ill
+diarrea,noun-f,A1,a1-14,feeling ill
+alergia,noun-f,A1,a1-14,feeling ill
+caer mal,phrase,A1,a1-14,feeling ill
+vomitar,verb,A1,a1-14,feeling ill
+pastilla,noun-f,A1,a1-14,the pharmacy
+jarabe,noun-m,A1,a1-14,the pharmacy
+receta,noun-f,A1,a1-14,the pharmacy
+medicina,noun-f,A1,a1-14,the pharmacy
+consultorio,noun-m,A1,a1-14,the pharmacy
+doctor,noun-m,A1,a1-14,the pharmacy
+médico,noun-m,A1,a1-14,the pharmacy
+necesitar,verb,A1,a1-14,the pharmacy
+cada,det,A1,a1-14,the pharmacy
+ayuda,noun-f,A1,a1-14,emergencies
+auxilio,interj,A1,a1-14,emergencies
+emergencia,noun-f,A1,a1-14,emergencies
+urgencias,noun-f,A1,a1-14,emergencies
+ambulancia,noun-f,A1,a1-14,emergencies
+policía,noun-mf,A1,a1-14,emergencies
+bombero,noun-m,A1,a1-14,emergencies
+hospital,noun-m,A1,a1-14,emergencies
+alerta sísmica,noun-f,A1,a1-14,emergencies
+sismo,noun-m,A1,a1-14,emergencies
+temblor,noun-m,A1,a1-14,emergencies
+llamar,verb,A1,a1-14,emergencies
+salir,verb,A1,a1-14,emergencies
+cuidado,interj,A1,a1-14,emergencies
+fuerte,adj,A1,a1-14,feeling ill
+medicamento,noun-m,A1,a1-14,feeling ill
+Cruz Roja,noun-f,A1,a1-14,feeling ill
+ayer,adv,A1,a1-15,time words
+anoche,adv,A1,a1-15,time words
+todavía,adv,A1,a1-15,time words
+todavía no,phrase,A1,a1-15,time words
+luego,adv,A1,a1-15,time words
+este año,phrase,A1,a1-15,time words
+levantarse,verb,A1,a1-15,everyday verbs
+olvidar,verb,A1,a1-15,everyday verbs
+olvidarse,verb,A1,a1-15,everyday verbs
+trabajar,verb,A1,a1-15,everyday verbs
+estudiar,verb,A1,a1-15,everyday verbs
+regresar,verb,A1,a1-15,everyday verbs
+cómo te fue,phrase,A1,a1-15,everyday verbs
+me fue bien,phrase,A1,a1-15,everyday verbs
+fonda,noun-f,A1,a1-15,places and things
+cartera,noun-f,A1,a1-15,places and things
+trabajo,noun-m,A1,a1-15,places and things
+familia,noun-f,A2,a2-01,family
+papá,noun-m,A2,a2-01,family
+mamá,noun-f,A2,a2-01,family
+padre,noun-m,A2,a2-01,family
+madre,noun-f,A2,a2-01,family
+hijo,noun-m,A2,a2-01,family
+hermano,noun-m,A2,a2-01,family
+abuelo,noun-m,A2,a2-01,family
+nieto,noun-m,A2,a2-01,family
+tío,noun-m,A2,a2-01,family
+primo,noun-m,A2,a2-01,family
+sobrino,noun-m,A2,a2-01,family
+esposo,noun-m,A2,a2-01,family
+pareja,noun-f,A2,a2-01,family
+novio,noun-m,A2,a2-01,family
+suegro,noun-m,A2,a2-01,family
+cuñado,noun-m,A2,a2-01,family
+yerno,noun-m,A2,a2-01,family
+nuera,noun-f,A2,a2-01,family
+compadre,noun-m,A2,a2-01,family
+comadre,noun-f,A2,a2-01,family
+padrino,noun-m,A2,a2-01,family
+madrina,noun-f,A2,a2-01,family
+mijo,noun-m,A2,a2-01,family
+bebé,noun-mf,A2,a2-01,family
+niño,noun-m,A2,a2-01,family
+hijo único,noun-m,A2,a2-01,family
+gemelo,noun-m,A2,a2-01,family
+pariente,noun-mf,A2,a2-01,family
+foto,noun-f,A2,a2-01,family
+edad,noun-f,A2,a2-01,family
+mayor,adj,A2,a2-01,family situation
+menor,adj,A2,a2-01,family situation
+casado,adj,A2,a2-01,family situation
+soltero,adj,A2,a2-01,family situation
+divorciado,adj,A2,a2-01,family situation
+separado,adj,A2,a2-01,family situation
+viudo,adj,A2,a2-01,family situation
+casarse,verb,A2,a2-01,family situation
+tener hijos,phrase,A2,a2-01,family situation
+alto,adj,A2,a2-01,appearance
+bajo,adj,A2,a2-01,appearance
+gordo,adj,A2,a2-01,appearance
+flaco,adj,A2,a2-01,appearance
+delgado,adj,A2,a2-01,appearance
+chaparro,adj,A2,a2-01,appearance
+moreno,adj,A2,a2-01,appearance
+lacio,adj,A2,a2-01,appearance
+chino,adj,A2,a2-01,appearance
+largo,adj,A2,a2-01,appearance
+corto,adj,A2,a2-01,appearance
+canoso,adj,A2,a2-01,appearance
+pelón,adj,A2,a2-01,appearance
+calvo,adj,A2,a2-01,appearance
+barba,noun-f,A2,a2-01,appearance
+bigote,noun-m,A2,a2-01,appearance
+lentes,noun-m,A2,a2-01,appearance
+café,adj,A2,a2-01,appearance
+azul,adj,A2,a2-01,appearance
+verde,adj,A2,a2-01,appearance
+negro,adj,A2,a2-01,appearance
+claro,adj,A2,a2-01,appearance
+oscuro,adj,A2,a2-01,appearance
+guapo,adj,A2,a2-01,appearance
+lindo,adj,A2,a2-01,appearance
+viejo,adj,A2,a2-01,appearance
+joven,adj,A2,a2-01,appearance
+parecerse,verb,A2,a2-01,appearance
+usar,verb,A2,a2-01,appearance
+describir,verb,A2,a2-01,appearance
+buena onda,phrase,A2,a2-01,character
+mala onda,phrase,A2,a2-01,character
+simpático,adj,A2,a2-01,character
+antipático,adj,A2,a2-01,character
+chistoso,adj,A2,a2-01,character
+serio,adj,A2,a2-01,character
+tímido,adj,A2,a2-01,character
+platicador,adj,A2,a2-01,character
+trabajador,adj,A2,a2-01,character
+inteligente,adj,A2,a2-01,character
+tranquilo,adj,A2,a2-01,character
+sangrón,adj,A2,a2-01,character
+alegre,adj,A2,a2-01,character
+generoso,adj,A2,a2-01,character
+codo,adj,A2,a2-01,character
+egoísta,adj,A2,a2-01,character
+cariñoso,adj,A2,a2-01,character
+sociable,adj,A2,a2-01,character
+nuestro,det,A2,a2-01,function words
+cuántos,pron,A2,a2-01,function words
+rubio,adj,A2,a2-01,appearance
+marido,noun-m,A2,a2-01,appearance
+adolescente,noun-mf,A2,a2-01,appearance
+adulto,noun-m,A2,a2-01,appearance
+carácter,noun-m,A2,a2-01,appearance
+optimista,adj,A2,a2-01,appearance
+agradable,adj,A2,a2-01,appearance
+separarse,verb,A2,a2-01,appearance
+divorciarse,verb,A2,a2-01,appearance
+solo,adj,A2,a2-01,appearance
+e,conj,A2,a2-01,function words
+u,conj,A2,a2-01,function words
+despertarse,verb,A2,a2-02,daily routine
+bañarse,verb,A2,a2-02,daily routine
+lavarse,verb,A2,a2-02,daily routine
+lavarse los dientes,phrase,A2,a2-02,daily routine
+peinarse,verb,A2,a2-02,daily routine
+rasurarse,verb,A2,a2-02,daily routine
+maquillarse,verb,A2,a2-02,daily routine
+vestirse,verb,A2,a2-02,daily routine
+ponerse,verb,A2,a2-02,daily routine
+quitarse,verb,A2,a2-02,daily routine
+acostarse,verb,A2,a2-02,daily routine
+dormir,verb,A2,a2-02,daily routine
+dormirse,verb,A2,a2-02,daily routine
+desayunar,verb,A2,a2-02,daily routine
+cenar,verb,A2,a2-02,daily routine
+empezar,verb,A2,a2-02,daily routine
+terminar,verb,A2,a2-02,daily routine
+volver,verb,A2,a2-02,daily routine
+descansar,verb,A2,a2-02,daily routine
+hacer ejercicio,phrase,A2,a2-02,daily routine
+ejercicio,noun-m,A2,a2-02,daily routine
+gimnasio,noun-m,A2,a2-02,daily routine
+despertador,noun-m,A2,a2-02,daily routine
+rutina,noun-f,A2,a2-02,daily routine
+desayuno,noun-m,A2,a2-02,meals of the day
+almuerzo,noun-m,A2,a2-02,meals of the day
+cena,noun-f,A2,a2-02,meals of the day
+toalla,noun-f,A2,a2-02,hygiene
+cepillo de dientes,noun-m,A2,a2-02,hygiene
+pasta de dientes,noun-f,A2,a2-02,hygiene
+champú,noun-m,A2,a2-02,hygiene
+desodorante,noun-m,A2,a2-02,hygiene
+rastrillo,noun-m,A2,a2-02,hygiene
+secadora,noun-f,A2,a2-02,hygiene
+siempre,adv,A2,a2-02,frequency
+nunca,adv,A2,a2-02,frequency
+a veces,phrase,A2,a2-02,frequency
+seguido,adv,A2,a2-02,frequency
+normalmente,adv,A2,a2-02,frequency
+casi,adv,A2,a2-02,frequency
+casi nunca,phrase,A2,a2-02,frequency
+de vez en cuando,phrase,A2,a2-02,frequency
+una vez,phrase,A2,a2-02,frequency
+vez,noun-f,A2,a2-02,frequency
+todos los días,phrase,A2,a2-02,frequency
+diario,adv,A2,a2-02,frequency
+acostumbrarse,verb,A2,a2-02,becoming a regular
+acostumbrar,verb,A2,a2-02,becoming a regular
+costumbre,noun-f,A2,a2-02,becoming a regular
+poco a poco,phrase,A2,a2-02,becoming a regular
+lo de siempre,phrase,A2,a2-02,becoming a regular
+cliente,noun-mf,A2,a2-02,becoming a regular
+hablar de tú,phrase,A2,a2-02,becoming a regular
+tutear,verb,A2,a2-02,becoming a regular
+gel,noun-m,A2,a2-02,hygiene
+cepillo,noun-m,A2,a2-02,hygiene
+acabar,verb,A2,a2-02,daily routine
+normal,adj,A2,a2-02,daily routine
+tener sueño,phrase,A2,a2-02,daily routine
+comida corrida,noun-f,A2,a2-03,the fonda and comida corrida
+menú,noun-m,A2,a2-03,the fonda and comida corrida
+sopa de fideo,noun-f,A2,a2-03,the fonda and comida corrida
+fideo,noun-m,A2,a2-03,the fonda and comida corrida
+guisado,noun-m,A2,a2-03,the fonda and comida corrida
+plato fuerte,noun-m,A2,a2-03,the fonda and comida corrida
+entrada,noun-f,A2,a2-03,the fonda and comida corrida
+tinga,noun-f,A2,a2-03,the fonda and comida corrida
+milanesa,noun-f,A2,a2-03,the fonda and comida corrida
+chilaquiles,noun-m,A2,a2-03,the fonda and comida corrida
+frijoles de olla,noun-m,A2,a2-03,the fonda and comida corrida
+huevos rancheros,noun-m,A2,a2-03,the fonda and comida corrida
+guacamole,noun-m,A2,a2-03,the fonda and comida corrida
+ensalada,noun-f,A2,a2-03,the fonda and comida corrida
+mariscos,noun-m,A2,a2-03,the fonda and comida corrida
+camarón,noun-m,A2,a2-03,the fonda and comida corrida
+flan,noun-m,A2,a2-03,the fonda and comida corrida
+pastel,noun-m,A2,a2-03,the fonda and comida corrida
+helado,noun-m,A2,a2-03,the fonda and comida corrida
+chocolate,noun-m,A2,a2-03,the fonda and comida corrida
+cacahuate,noun-m,A2,a2-03,ingredients
+nuez,noun-f,A2,a2-03,ingredients
+sal,noun-f,A2,a2-03,ingredients
+pimienta,noun-f,A2,a2-03,ingredients
+aceite,noun-m,A2,a2-03,ingredients
+azúcar,noun-m,A2,a2-03,ingredients
+crema,noun-f,A2,a2-03,ingredients
+mantequilla,noun-f,A2,a2-03,ingredients
+harina,noun-f,A2,a2-03,ingredients
+maíz,noun-m,A2,a2-03,ingredients
+vegetariano,adj,A2,a2-03,ingredients
+alérgico,adj,A2,a2-03,ingredients
+cuenta,noun-f,A2,a2-03,the bill
+propina,noun-f,A2,a2-03,the bill
+factura,noun-f,A2,a2-03,the bill
+mesero,noun-m,A2,a2-03,the bill
+carta,noun-f,A2,a2-03,the bill
+incluir,verb,A2,a2-03,the bill
+junto,adj,A2,a2-03,the bill
+restaurante,noun-m,A2,a2-03,eating out
+cafetería,noun-f,A2,a2-03,eating out
+cantina,noun-f,A2,a2-03,eating out
+cocinero,noun-m,A2,a2-03,eating out
+pedir,verb,A2,a2-03,eating out
+ordenar,verb,A2,a2-03,eating out
+reservar,verb,A2,a2-03,eating out
+reservación,noun-f,A2,a2-03,eating out
+sabroso,adj,A2,a2-03,eating out
+salado,adj,A2,a2-03,eating out
+picoso,adj,A2,a2-03,eating out
+vino,noun-m,A2,a2-03,eating out
+mezcal,noun-m,A2,a2-03,eating out
+tequila,noun-m,A2,a2-03,eating out
+beber,verb,A2,a2-03,eating out
+cubiertos,noun-m,A2,a2-03,eating out
+tenedor,noun-m,A2,a2-03,eating out
+cuchillo,noun-m,A2,a2-03,eating out
+cuchara,noun-f,A2,a2-03,eating out
+taza,noun-f,A2,a2-03,eating out
+copa,noun-f,A2,a2-03,eating out
+bar,noun-m,A2,a2-03,eating out
+vino tinto,noun-m,A2,a2-03,eating out
+ron,noun-m,A2,a2-03,eating out
+mayonesa,noun-f,A2,a2-03,eating out
+atún,noun-m,A2,a2-03,eating out
+salmón,noun-m,A2,a2-03,eating out
+pasta,noun-f,A2,a2-03,eating out
+cordero,noun-m,A2,a2-03,eating out
+borrego,noun-m,A2,a2-03,eating out
+barbacoa,noun-f,A2,a2-03,eating out
+filete,noun-m,A2,a2-03,eating out
+vainilla,noun-f,A2,a2-03,eating out
+chef,noun-mf,A2,a2-03,eating out
+comida rápida,noun-f,A2,a2-03,eating out
+ropa,noun-f,A2,a2-04,clothes
+playera,noun-f,A2,a2-04,clothes
+chamarra,noun-f,A2,a2-04,clothes
+pantalón,noun-m,A2,a2-04,clothes
+jeans,noun-m,A2,a2-04,clothes
+mezclilla,noun-f,A2,a2-04,clothes
+suéter,noun-m,A2,a2-04,clothes
+sudadera,noun-f,A2,a2-04,clothes
+camisa,noun-f,A2,a2-04,clothes
+blusa,noun-f,A2,a2-04,clothes
+falda,noun-f,A2,a2-04,clothes
+vestido,noun-m,A2,a2-04,clothes
+traje,noun-m,A2,a2-04,clothes
+corbata,noun-f,A2,a2-04,clothes
+ropa interior,noun-f,A2,a2-04,clothes
+calzones,noun-m,A2,a2-04,clothes
+brasier,noun-m,A2,a2-04,clothes
+piyama,noun-f,A2,a2-04,clothes
+traje de baño,noun-m,A2,a2-04,clothes
+gorra,noun-f,A2,a2-04,clothes
+sombrero,noun-m,A2,a2-04,clothes
+bufanda,noun-f,A2,a2-04,clothes
+guante,noun-m,A2,a2-04,clothes
+cinturón,noun-m,A2,a2-04,clothes
+zapato,noun-m,A2,a2-04,shoes and accessories
+tenis,noun-m,A2,a2-04,shoes and accessories
+sandalia,noun-f,A2,a2-04,shoes and accessories
+huarache,noun-m,A2,a2-04,shoes and accessories
+bota,noun-f,A2,a2-04,shoes and accessories
+calcetín,noun-m,A2,a2-04,shoes and accessories
+arete,noun-m,A2,a2-04,shoes and accessories
+collar,noun-m,A2,a2-04,shoes and accessories
+anillo,noun-m,A2,a2-04,shoes and accessories
+reloj,noun-m,A2,a2-04,shoes and accessories
+lentes de sol,noun-m,A2,a2-04,shoes and accessories
+talla,noun-f,A2,a2-04,size and fit
+mediano,adj,A2,a2-04,size and fit
+apretado,adj,A2,a2-04,size and fit
+flojo,adj,A2,a2-04,size and fit
+probarse,verb,A2,a2-04,size and fit
+probador,noun-m,A2,a2-04,size and fit
+demasiado,adv,A2,a2-04,size and fit
+color,noun-m,A2,a2-04,colours and materials
+blanco,adj,A2,a2-04,colours and materials
+rojo,adj,A2,a2-04,colours and materials
+amarillo,adj,A2,a2-04,colours and materials
+gris,adj,A2,a2-04,colours and materials
+morado,adj,A2,a2-04,colours and materials
+rosa,adj,A2,a2-04,colours and materials
+naranja,adj,A2,a2-04,colours and materials
+a rayas,phrase,A2,a2-04,colours and materials
+de cuadros,phrase,A2,a2-04,colours and materials
+tela,noun-f,A2,a2-04,colours and materials
+algodón,noun-m,A2,a2-04,colours and materials
+lana,noun-f,A2,a2-04,colours and materials
+piel,noun-f,A2,a2-04,colours and materials
+caja,noun-f,A2,a2-04,the shop
+ticket,noun-m,A2,a2-04,the shop
+devolución,noun-f,A2,a2-04,the shop
+devolver,verb,A2,a2-04,the shop
+cambiar,verb,A2,a2-04,the shop
+barata,noun-f,A2,a2-04,the shop
+oferta,noun-f,A2,a2-04,the shop
+descuento,noun-m,A2,a2-04,the shop
+nada más,phrase,A2,a2-04,the shop
+tienda departamental,noun-f,A2,a2-04,the shop
+centro comercial,noun-m,A2,a2-04,the shop
+zapatería,noun-f,A2,a2-04,the shop
+vendedor,noun-m,A2,a2-04,the shop
+que,conj,A2,a2-04,the shop
+pañuelo,noun-m,A2,a2-04,clothes
+calzoncillo,noun-m,A2,a2-04,clothes
+medias,noun-f,A2,a2-04,clothes
+abrigo,noun-m,A2,a2-04,clothes
+gorro,noun-m,A2,a2-04,clothes
+ancho,adj,A2,a2-04,size and fit
+centímetro,noun-m,A2,a2-04,size and fit
+pasarla bien,phrase,A2,a2-05,weekend and outings
+pasado,adj,A2,a2-05,weekend and outings
+antier,adv,A2,a2-05,weekend and outings
+conocer,verb,A2,a2-05,weekend and outings
+visitar,verb,A2,a2-05,weekend and outings
+excursión,noun-f,A2,a2-05,weekend and outings
+paseo,noun-m,A2,a2-05,weekend and outings
+pasear,verb,A2,a2-05,weekend and outings
+dar una vuelta,phrase,A2,a2-05,weekend and outings
+ir de compras,phrase,A2,a2-05,weekend and outings
+quedarse,verb,A2,a2-05,weekend and outings
+tráfico,noun-m,A2,a2-05,weekend and outings
+carne asada,noun-f,A2,a2-05,weekend and outings
+fiesta,noun-f,A2,a2-05,weekend and outings
+concierto,noun-m,A2,a2-05,weekend and outings
+partido,noun-m,A2,a2-05,weekend and outings
+teatro,noun-m,A2,a2-05,weekend and outings
+exposición,noun-f,A2,a2-05,weekend and outings
+tomar fotos,phrase,A2,a2-05,weekend and outings
+montaña,noun-f,A2,a2-05,weekend and outings
+río,noun-m,A2,a2-05,weekend and outings
+lago,noun-m,A2,a2-05,weekend and outings
+campo,noun-m,A2,a2-05,weekend and outings
+nadar,verb,A2,a2-05,free time
+correr,verb,A2,a2-05,free time
+andar en bici,phrase,A2,a2-05,free time
+divertido,adj,A2,a2-05,free time
+aburrido,adj,A2,a2-05,free time
+increíble,adj,A2,a2-05,free time
+divertirse,verb,A2,a2-05,free time
+contar,verb,A2,a2-05,free time
+andar,verb,A2,a2-05,free time
+gimnasia,noun-f,A2,a2-05,free time
+circo,noun-m,A2,a2-05,free time
+básquetbol,noun-m,A2,a2-05,free time
+juego,noun-m,A2,a2-05,free time
+ajedrez,noun-m,A2,a2-05,free time
+dominó,noun-m,A2,a2-05,free time
+pasatiempo,noun-m,A2,a2-05,free time
+zoológico,noun-m,A2,a2-05,free time
+caminata,noun-f,A2,a2-05,free time
+arte,noun-m,A2,a2-05,free time
+músico,noun-m,A2,a2-05,free time
+guitarra,noun-f,A2,a2-05,free time
+piano,noun-m,A2,a2-05,free time
+instrumento,noun-m,A2,a2-05,free time
+tocar,verb,A2,a2-05,free time
+pintar,verb,A2,a2-05,free time
+cámara,noun-f,A2,a2-05,free time
+obra de teatro,noun-f,A2,a2-05,free time
+hacer deporte,phrase,A2,a2-05,free time
+durante,prep,A2,a2-05,free time
+durar,verb,A2,a2-05,free time
+invitar,verb,A2,a2-06,plans and invitations
+invitación,noun-f,A2,a2-06,plans and invitations
+plan,noun-m,A2,a2-06,plans and invitations
+ir por,phrase,A2,a2-06,plans and invitations
+platicar,verb,A2,a2-06,plans and invitations
+tener que,phrase,A2,a2-06,plans and invitations
+me encantaría,phrase,A2,a2-06,plans and invitations
+qué tal si,phrase,A2,a2-06,plans and invitations
+otro día,phrase,A2,a2-06,plans and invitations
+tomar algo,phrase,A2,a2-06,plans and invitations
+tiempo libre,noun-m,A2,a2-06,plans and invitations
+libre,adj,A2,a2-06,plans and invitations
+ocupado,adj,A2,a2-06,plans and invitations
+ganas,noun-f,A2,a2-06,plans and invitations
+cuándo,adv,A2,a2-06,plans and invitations
+es que,phrase,A2,a2-06,soft refusals
+a ver,phrase,A2,a2-06,soft refusals
+ahí vemos,phrase,A2,a2-06,soft refusals
+déjame ver,phrase,A2,a2-06,soft refusals
+hacer la lucha,phrase,A2,a2-06,soft refusals
+quedar de,phrase,A2,a2-06,soft refusals
+lástima,noun-f,A2,a2-06,soft refusals
+pena,noun-f,A2,a2-06,soft refusals
+porque,conj,A2,a2-06,function words
+por qué,adv,A2,a2-06,function words
+si,conj,A2,a2-06,function words
+conmigo,pron,A2,a2-06,function words
+contigo,pron,A2,a2-06,function words
+tener tiempo,phrase,A2,a2-06,plans and invitations
+esta noche,phrase,A2,a2-06,plans and invitations
+quedarse en casa,phrase,A2,a2-06,plans and invitations
+salir a cenar,phrase,A2,a2-06,plans and invitations
+ir al cine,phrase,A2,a2-06,plans and invitations
+bueno,interj,A2,a2-07,the phone
+encontrarse,verb,A2,a2-07,the phone
+de parte de quién,phrase,A2,a2-07,the phone
+permitir,verb,A2,a2-07,the phone
+tantito,adv,A2,a2-07,the phone
+equivocarse,verb,A2,a2-07,the phone
+número equivocado,noun-m,A2,a2-07,the phone
+marcar,verb,A2,a2-07,the phone
+colgar,verb,A2,a2-07,the phone
+contestar,verb,A2,a2-07,the phone
+llamada,noun-f,A2,a2-07,the phone
+recado,noun-m,A2,a2-07,the phone
+oír,verb,A2,a2-07,the phone
+señal,noun-f,A2,a2-07,the phone
+cortarse,verb,A2,a2-07,the phone
+batería,noun-f,A2,a2-07,the phone
+cargador,noun-m,A2,a2-07,the phone
+mensaje,noun-m,A2,a2-07,messaging
+audio,noun-m,A2,a2-07,messaging
+ubicación,noun-f,A2,a2-07,messaging
+grupo,noun-m,A2,a2-07,messaging
+mandar,verb,A2,a2-07,messaging
+avisar,verb,A2,a2-07,messaging
+videollamada,noun-f,A2,a2-07,messaging
+cita,noun-f,A2,a2-07,appointments
+hacer una cita,phrase,A2,a2-07,appointments
+fecha,noun-f,A2,a2-07,appointments
+licenciado,noun-m,A2,a2-07,appointments
+ingeniero,noun-m,A2,a2-07,appointments
+maestro,noun-m,A2,a2-07,appointments
+quisiera,phrase,A2,a2-07,appointments
+teléfono fijo,noun-m,A2,a2-07,the phone
+lada,noun-f,A2,a2-07,the phone
+extensión,noun-f,A2,a2-07,the phone
+recibir,verb,A2,a2-07,the phone
+nota,noun-f,A2,a2-07,the phone
+video,noun-m,A2,a2-07,the phone
+un abrazo,phrase,A2,a2-07,the phone
+les,pron,A2,a2-07,function words
+transbordar,verb,A2,a2-08,the metro and city buses
+transbordo,noun-m,A2,a2-08,the metro and city buses
+andén,noun-m,A2,a2-08,the metro and city buses
+hora pico,noun-f,A2,a2-08,the metro and city buses
+pasarse,verb,A2,a2-08,the metro and city buses
+regresarse,verb,A2,a2-08,the metro and city buses
+irse,verb,A2,a2-08,the metro and city buses
+tardarse,verb,A2,a2-08,the metro and city buses
+perderse,verb,A2,a2-08,the metro and city buses
+mapa,noun-m,A2,a2-08,the metro and city buses
+vacío,adj,A2,a2-08,the metro and city buses
+boleto,noun-m,A2,a2-08,long-distance buses
+sencillo,adj,A2,a2-08,long-distance buses
+redondo,adj,A2,a2-08,long-distance buses
+viaje redondo,noun-m,A2,a2-08,long-distance buses
+central de autobuses,noun-f,A2,a2-08,long-distance buses
+taquilla,noun-f,A2,a2-08,long-distance buses
+autobús,noun-m,A2,a2-08,long-distance buses
+salida,noun-f,A2,a2-08,long-distance buses
+llegada,noun-f,A2,a2-08,long-distance buses
+sala de espera,noun-f,A2,a2-08,long-distance buses
+equipaje,noun-m,A2,a2-08,long-distance buses
+maleta,noun-f,A2,a2-08,long-distance buses
+mochila,noun-f,A2,a2-08,long-distance buses
+asiento,noun-m,A2,a2-08,long-distance buses
+ventanilla,noun-f,A2,a2-08,long-distance buses
+pasillo,noun-m,A2,a2-08,long-distance buses
+manejar,verb,A2,a2-08,by car
+estacionarse,verb,A2,a2-08,by car
+licencia de manejo,noun-f,A2,a2-08,by car
+gasolina,noun-f,A2,a2-08,by car
+gasolinera,noun-f,A2,a2-08,by car
+tope,noun-m,A2,a2-08,by car
+apurarse,verb,A2,a2-08,by car
+carretera,noun-f,A2,a2-08,by car
+autopista,noun-f,A2,a2-08,by car
+caseta,noun-f,A2,a2-08,by car
+kilómetro,noun-m,A2,a2-08,by car
+norte,noun-m,A2,a2-08,directions
+sur,noun-m,A2,a2-08,directions
+este,noun-m,A2,a2-08,directions
+oeste,noun-m,A2,a2-08,directions
+puente,noun-m,A2,a2-08,directions
+puente peatonal,noun-m,A2,a2-08,directions
+distancia,noun-f,A2,a2-08,directions
+parado,adj,A2,a2-08,directions
+luz,noun-f,A2,a2-09,the home's services
+irse la luz,phrase,A2,a2-09,the home's services
+foco,noun-m,A2,a2-09,the home's services
+contacto,noun-m,A2,a2-09,the home's services
+apagador,noun-m,A2,a2-09,the home's services
+fuga,noun-f,A2,a2-09,the home's services
+gotera,noun-f,A2,a2-09,the home's services
+tapado,adj,A2,a2-09,the home's services
+recibo,noun-m,A2,a2-09,the home's services
+recibo de luz,noun-m,A2,a2-09,the home's services
+basura,noun-f,A2,a2-09,the home's services
+camión de la basura,noun-m,A2,a2-09,the home's services
+prender,verb,A2,a2-09,the home's services
+apagar,verb,A2,a2-09,the home's services
+descomponerse,verb,A2,a2-09,things that break
+descompuesto,adj,A2,a2-09,things that break
+romperse,verb,A2,a2-09,things that break
+roto,adj,A2,a2-09,things that break
+caerse,verb,A2,a2-09,things that break
+perder,verb,A2,a2-09,things that break
+funcionar,verb,A2,a2-09,things that break
+servir,verb,A2,a2-09,things that break
+problema,noun-m,A2,a2-09,things that break
+arreglar,verb,A2,a2-09,things that break
+componer,verb,A2,a2-09,things that break
+tirar,verb,A2,a2-09,things that break
+sacar,verb,A2,a2-09,things that break
+plomero,noun-m,A2,a2-09,repairs
+electricista,noun-mf,A2,a2-09,repairs
+técnico,noun-m,A2,a2-09,repairs
+cerrajero,noun-m,A2,a2-09,repairs
+albañil,noun-mf,A2,a2-09,repairs
+barrer,verb,A2,a2-09,housework
+trapear,verb,A2,a2-09,housework
+limpiar,verb,A2,a2-09,housework
+lavar,verb,A2,a2-09,housework
+lavar los trastes,phrase,A2,a2-09,housework
+trastes,noun-m,A2,a2-09,housework
+sucio,adj,A2,a2-09,housework
+limpio,adj,A2,a2-09,housework
+escoba,noun-f,A2,a2-09,housework
+trapeador,noun-m,A2,a2-09,housework
+cubeta,noun-f,A2,a2-09,housework
+cucaracha,noun-f,A2,a2-09,housework
+cerillo,noun-m,A2,a2-09,housework
+encendedor,noun-m,A2,a2-09,housework
+vela,noun-f,A2,a2-09,housework
+linterna,noun-f,A2,a2-09,housework
+alguien,pron,A2,a2-09,function words
+nadie,pron,A2,a2-09,function words
+alguno,det,A2,a2-09,function words
+ninguno,det,A2,a2-09,function words
+eléctrico,adj,A2,a2-09,housework
+lavatrastes,noun-m,A2,a2-09,housework
+plástico,noun-m,A2,a2-09,housework
+bote de basura,noun-m,A2,a2-09,housework
+cuando,conj,A2,a2-10,before and now
+de niño,phrase,A2,a2-10,before and now
+de joven,phrase,A2,a2-10,before and now
+infancia,noun-f,A2,a2-10,before and now
+época,noun-f,A2,a2-10,before and now
+pasado,noun-m,A2,a2-10,before and now
+vida,noun-f,A2,a2-10,before and now
+cambiar de casa,phrase,A2,a2-10,before and now
+mudarse,verb,A2,a2-10,before and now
+recordar,verb,A2,a2-10,before and now
+acordarse,verb,A2,a2-10,before and now
+extrañar,verb,A2,a2-10,before and now
+nacer,verb,A2,a2-10,before and now
+crecer,verb,A2,a2-10,before and now
+morir,verb,A2,a2-10,before and now
+escuela,noun-f,A2,a2-10,school
+primaria,noun-f,A2,a2-10,school
+secundaria,noun-f,A2,a2-10,school
+prepa,noun-f,A2,a2-10,school
+universidad,noun-f,A2,a2-10,school
+clase,noun-f,A2,a2-10,school
+estudiante,noun-mf,A2,a2-10,school
+tarea,noun-f,A2,a2-10,school
+examen,noun-m,A2,a2-10,school
+amigo de la infancia,noun-m,A2,a2-10,school
+barrio,noun-m,A2,a2-10,the neighbourhood then
+terreno,noun-m,A2,a2-10,the neighbourhood then
+vecindad,noun-f,A2,a2-10,the neighbourhood then
+preparatoria,noun-f,A2,a2-10,school
+matemáticas,noun-f,A2,a2-10,school
+ciencia,noun-f,A2,a2-10,school
+materia,noun-f,A2,a2-10,school
+página,noun-f,A2,a2-10,school
+alumno,noun-m,A2,a2-10,school
+pizarrón,noun-m,A2,a2-10,school
+dibujar,verb,A2,a2-10,school
+dibujo,noun-m,A2,a2-10,school
+repasar,verb,A2,a2-10,school
+reprobar,verb,A2,a2-10,school
+aprobar un examen,phrase,A2,a2-10,school
+calificación,noun-f,A2,a2-10,school
+uniforme escolar,noun-m,A2,a2-10,school
+recreo,noun-m,A2,a2-10,school
+desde hace,phrase,A2,a2-11,at the doctor's
+desde cuándo,phrase,A2,a2-11,at the doctor's
+torcerse,verb,A2,a2-11,at the doctor's
+quemarse,verb,A2,a2-11,at the doctor's
+golpearse,verb,A2,a2-11,at the doctor's
+herida,noun-f,A2,a2-11,at the doctor's
+cortada,noun-f,A2,a2-11,at the doctor's
+moretón,noun-m,A2,a2-11,at the doctor's
+hinchado,adj,A2,a2-11,at the doctor's
+penicilina,noun-f,A2,a2-11,at the doctor's
+análisis,noun-m,A2,a2-11,at the doctor's
+inyección,noun-f,A2,a2-11,at the doctor's
+vacuna,noun-f,A2,a2-11,at the doctor's
+mejorarse,verb,A2,a2-11,at the doctor's
+que se mejore,phrase,A2,a2-11,at the doctor's
+recetar,verb,A2,a2-11,at the doctor's
+reposo,noun-m,A2,a2-11,at the doctor's
+tobillo,noun-m,A2,a2-11,the body
+rodilla,noun-f,A2,a2-11,the body
+codo,noun-m,A2,a2-11,the body
+hombro,noun-m,A2,a2-11,the body
+muñeca,noun-f,A2,a2-11,the body
+uña,noun-f,A2,a2-11,the body
+sangre,noun-f,A2,a2-11,the body
+hueso,noun-m,A2,a2-11,the body
+oreja,noun-f,A2,a2-11,the body
+mareado,adj,A2,a2-11,symptoms
+náusea,noun-f,A2,a2-11,symptoms
+resfriado,noun-m,A2,a2-11,symptoms
+cansancio,noun-m,A2,a2-11,symptoms
+débil,adj,A2,a2-11,symptoms
+comezón,noun-f,A2,a2-11,symptoms
+roncha,noun-f,A2,a2-11,symptoms
+piquete,noun-m,A2,a2-11,symptoms
+síntoma,noun-m,A2,a2-11,symptoms
+dentista,noun-mf,A2,a2-11,the clinic
+enfermero,noun-m,A2,a2-11,the clinic
+paciente,noun-mf,A2,a2-11,the clinic
+termómetro,noun-m,A2,a2-11,the clinic
+curita,noun-f,A2,a2-11,the clinic
+venda,noun-f,A2,a2-11,the clinic
+pomada,noun-f,A2,a2-11,the clinic
+gota,noun-f,A2,a2-11,the clinic
+salud,noun-f,A2,a2-11,the clinic
+sano,adj,A2,a2-11,the clinic
+contento,adj,A2,a2-12,feelings
+feliz,adj,A2,a2-12,feelings
+triste,adj,A2,a2-12,feelings
+enojado,adj,A2,a2-12,feelings
+preocupado,adj,A2,a2-12,feelings
+nervioso,adj,A2,a2-12,feelings
+cansado,adj,A2,a2-12,feelings
+emocionado,adj,A2,a2-12,feelings
+asustado,adj,A2,a2-12,feelings
+harto,adj,A2,a2-12,feelings
+deprimido,adj,A2,a2-12,feelings
+estresado,adj,A2,a2-12,feelings
+calma,noun-f,A2,a2-12,feelings
+miedo,noun-m,A2,a2-12,feelings
+flojera,noun-f,A2,a2-12,feelings
+gusto,noun-m,A2,a2-12,feelings
+vergüenza,noun-f,A2,a2-12,feelings
+coraje,noun-m,A2,a2-12,feelings
+qué padre,phrase,A2,a2-12,reactions
+padre,adj,A2,a2-12,reactions
+híjole,interj,A2,a2-12,reactions
+no me digas,phrase,A2,a2-12,reactions
+en serio,phrase,A2,a2-12,reactions
+pobrecito,adj,A2,a2-12,reactions
+ni modo,phrase,A2,a2-12,reactions
+qué bueno,phrase,A2,a2-12,reactions
+ay,interj,A2,a2-12,reactions
+uf,interj,A2,a2-12,reactions
+caer bien,phrase,A2,a2-12,reactions
+calmarse,verb,A2,a2-12,feeling verbs
+enojarse,verb,A2,a2-12,feeling verbs
+preocuparse,verb,A2,a2-12,feeling verbs
+alegrarse,verb,A2,a2-12,feeling verbs
+llorar,verb,A2,a2-12,feeling verbs
+reír,verb,A2,a2-12,feeling verbs
+reírse,verb,A2,a2-12,feeling verbs
+sonreír,verb,A2,a2-12,feeling verbs
+sentir,verb,A2,a2-12,feeling verbs
+tener miedo,phrase,A2,a2-12,feelings
+qué bien,phrase,A2,a2-12,feelings
+ruidoso,adj,A2,a2-13,comparing places
+seguro,adj,A2,a2-13,comparing places
+peligroso,adj,A2,a2-13,comparing places
+céntrico,adj,A2,a2-13,comparing places
+moderno,adj,A2,a2-13,comparing places
+antiguo,adj,A2,a2-13,comparing places
+mejor,adj,A2,a2-13,comparing places
+peor,adj,A2,a2-13,comparing places
+tan,adv,A2,a2-13,comparing places
+tanto,adj,A2,a2-13,comparing places
+como,conj,A2,a2-13,comparing places
+cuál,pron,A2,a2-13,comparing places
+recomendar,verb,A2,a2-13,comparing places
+comparar,verb,A2,a2-13,comparing places
+diferencia,noun-f,A2,a2-13,comparing places
+distinto,adj,A2,a2-13,comparing places
+diferente,adj,A2,a2-13,comparing places
+parecido,adj,A2,a2-13,comparing places
+igual,adj,A2,a2-13,comparing places
+mismo,adj,A2,a2-13,comparing places
+ni,conj,A2,a2-13,comparing places
+zona,noun-f,A2,a2-13,city places
+centro histórico,noun-m,A2,a2-13,city places
+lugar,noun-m,A2,a2-13,city places
+vista,noun-f,A2,a2-13,city places
+ambiente,noun-m,A2,a2-13,city places
+gente,noun-f,A2,a2-13,city places
+vida nocturna,noun-f,A2,a2-13,city places
+seguridad,noun-f,A2,a2-13,city places
+mío,pron,A2,a2-13,city places
+tuyo,pron,A2,a2-13,city places
+suyo,pron,A2,a2-13,city places
+hermoso,adj,A2,a2-13,comparing places
+angosto,adj,A2,a2-13,comparing places
+capital,noun-f,A2,a2-13,comparing places
+habitante,noun-mf,A2,a2-13,comparing places
+peatonal,adj,A2,a2-13,comparing places
+alrededor de,prep,A2,a2-13,comparing places
+afueras,noun-f,A2,a2-13,comparing places
+alguna vez,phrase,A2,a2-14,experiences
+acabar de,phrase,A2,a2-14,experiences
+experiencia,noun-f,A2,a2-14,experiences
+turista,noun-mf,A2,a2-14,experiences
+recorrer,verb,A2,a2-14,experiences
+vacaciones,noun-f,A2,a2-14,experiences
+vuelo,noun-m,A2,a2-14,experiences
+volar,verb,A2,a2-14,experiences
+hotel,noun-m,A2,a2-14,experiences
+hostal,noun-m,A2,a2-14,experiences
+pirámide,noun-f,A2,a2-14,travel in Mexico
+ruina,noun-f,A2,a2-14,travel in Mexico
+sierra,noun-f,A2,a2-14,travel in Mexico
+costa,noun-f,A2,a2-14,travel in Mexico
+isla,noun-f,A2,a2-14,travel in Mexico
+volcán,noun-m,A2,a2-14,travel in Mexico
+cenote,noun-m,A2,a2-14,travel in Mexico
+selva,noun-f,A2,a2-14,travel in Mexico
+desierto,noun-m,A2,a2-14,travel in Mexico
+pueblo mágico,noun-m,A2,a2-14,travel in Mexico
+mar,noun-m,A2,a2-14,travel in Mexico
+océano,noun-m,A2,a2-14,travel in Mexico
+bosque,noun-m,A2,a2-14,travel in Mexico
+cerro,noun-m,A2,a2-14,travel in Mexico
+cascada,noun-f,A2,a2-14,travel in Mexico
+paisaje,noun-m,A2,a2-14,travel in Mexico
+chapulín,noun-m,A2,a2-14,food experiences
+platillo,noun-m,A2,a2-14,food experiences
+habitación,noun-f,A2,a2-14,experiences
+individual,adj,A2,a2-14,experiences
+doble,adj,A2,a2-14,experiences
+barco,noun-m,A2,a2-14,experiences
+puerto,noun-m,A2,a2-14,experiences
+monumento,noun-m,A2,a2-14,experiences
+estatua,noun-f,A2,a2-14,experiences
+palacio,noun-m,A2,a2-14,experiences
+castillo,noun-m,A2,a2-14,experiences
+guía,noun-mf,A2,a2-14,experiences
+turístico,adj,A2,a2-14,experiences
+agencia de viajes,noun-f,A2,a2-14,experiences
+oficina de turismo,noun-f,A2,a2-14,experiences
+piloto,noun-mf,A2,a2-14,experiences
+sobrecargo,noun-mf,A2,a2-14,experiences
+impresionante,adj,A2,a2-14,experiences
+naturaleza,noun-f,A2,a2-14,nature
+animal,noun-m,A2,a2-14,nature
+flor,noun-f,A2,a2-14,nature
+árbol,noun-m,A2,a2-14,nature
+pájaro,noun-m,A2,a2-14,nature
+pez,noun-m,A2,a2-14,nature
+caballo,noun-m,A2,a2-14,nature
+vaca,noun-f,A2,a2-14,nature
+burro,noun-m,A2,a2-14,nature
+mosca,noun-f,A2,a2-14,nature
+mosquito,noun-m,A2,a2-14,nature
+araña,noun-f,A2,a2-14,nature
+alacrán,noun-m,A2,a2-14,nature
+luna,noun-f,A2,a2-14,nature
+estrella,noun-f,A2,a2-14,nature
+se acostumbra,phrase,A2,a2-15,customs and rules
+prohibir,verb,A2,a2-15,customs and rules
+prohibido,adj,A2,a2-15,customs and rules
+permitido,adj,A2,a2-15,customs and rules
+regla,noun-f,A2,a2-15,customs and rules
+tradición,noun-f,A2,a2-15,customs and rules
+tradicional,adj,A2,a2-15,customs and rules
+típico,adj,A2,a2-15,customs and rules
+misa,noun-f,A2,a2-15,customs and rules
+católico,adj,A2,a2-15,customs and rules
+virgen,noun-f,A2,a2-15,customs and rules
+cumpleaños,noun-m,A2,a2-15,celebrations
+felicidades,interj,A2,a2-15,celebrations
+feliz cumpleaños,phrase,A2,a2-15,celebrations
+mañanitas,noun-f,A2,a2-15,celebrations
+piñata,noun-f,A2,a2-15,celebrations
+regalo,noun-m,A2,a2-15,celebrations
+celebrar,verb,A2,a2-15,celebrations
+festejar,verb,A2,a2-15,celebrations
+felicitar,verb,A2,a2-15,celebrations
+invitado,noun-m,A2,a2-15,celebrations
+abrazo,noun-m,A2,a2-15,celebrations
+beso,noun-m,A2,a2-15,celebrations
+Día de Muertos,noun-m,A2,a2-15,holidays
+ofrenda,noun-f,A2,a2-15,holidays
+cempasúchil,noun-m,A2,a2-15,holidays
+pan de muerto,noun-m,A2,a2-15,holidays
+calavera,noun-f,A2,a2-15,holidays
+altar,noun-m,A2,a2-15,holidays
+panteón,noun-m,A2,a2-15,holidays
+Navidad,noun-f,A2,a2-15,holidays
+posada,noun-f,A2,a2-15,holidays
+ponche,noun-m,A2,a2-15,holidays
+Reyes,noun-m,A2,a2-15,holidays
+rosca,noun-f,A2,a2-15,holidays
+Año Nuevo,noun-m,A2,a2-15,holidays
+Semana Santa,noun-f,A2,a2-15,holidays
+feria,noun-f,A2,a2-15,holidays
+atole,noun-m,A2,a2-15,holidays
+día festivo,noun-m,A2,a2-15,holidays
+desfilar,verb,A2,a2-15,holidays
+ojalá,interj,B1,b1-01,wishes and leave-taking
+desear,verb,B1,b1-01,wishes and leave-taking
+deseo,noun-m,B1,b1-01,wishes and leave-taking
+suerte,noun-f,B1,b1-01,wishes and leave-taking
+mucha suerte,phrase,B1,b1-01,wishes and leave-taking
+buen viaje,phrase,B1,b1-01,wishes and leave-taking
+que te mejores,phrase,B1,b1-01,wishes and leave-taking
+que descanses,phrase,B1,b1-01,wishes and leave-taking
+que te la pases bien,phrase,B1,b1-01,wishes and leave-taking
+que te diviertas,phrase,B1,b1-01,wishes and leave-taking
+que te vaya bonito,phrase,B1,b1-01,wishes and leave-taking
+buen fin de semana,phrase,B1,b1-01,wishes and leave-taking
+hasta pronto,phrase,B1,b1-01,wishes and leave-taking
+cuídate,phrase,B1,b1-01,wishes and leave-taking
+cuidarse,verb,B1,b1-01,wishes and leave-taking
+cuidar,verb,B1,b1-01,wishes and leave-taking
+saludo,noun-m,B1,b1-01,wishes and leave-taking
+saludar,verb,B1,b1-01,wishes and leave-taking
+agradecer,verb,B1,b1-01,wishes and leave-taking
+ánimo,noun-m,B1,b1-01,wishes and leave-taking
+éxito,noun-m,B1,b1-01,wishes and leave-taking
+esperanza,noun-f,B1,b1-01,wishes and leave-taking
+ilusión,noun-f,B1,b1-01,wishes and leave-taking
+sueño,noun-m,B1,b1-01,wishes and leave-taking
+cumplirse,verb,B1,b1-01,wishes and leave-taking
+mejorar,verb,B1,b1-01,wishes and leave-taking
+salir bien,phrase,B1,b1-01,wishes and leave-taking
+pronto,adv,B1,b1-01,wishes and leave-taking
+si Dios quiere,phrase,B1,b1-01,religion in everyday speech
+primero Dios,phrase,B1,b1-01,religion in everyday speech
+gracias a Dios,phrase,B1,b1-01,religion in everyday speech
+Dios,noun-m,B1,b1-01,religion in everyday speech
+fe,noun-f,B1,b1-01,religion in everyday speech
+rezar,verb,B1,b1-01,religion in everyday speech
+bendición,noun-f,B1,b1-01,religion in everyday speech
+que Dios te bendiga,phrase,B1,b1-01,religion in everyday speech
+tener suerte,phrase,B1,b1-01,wishes and leave-taking
+suertudo,adj,B1,b1-01,wishes and leave-taking
+cariño,noun-m,B1,b1-01,wishes and leave-taking
+te quiero,phrase,B1,b1-01,wishes and leave-taking
+te amo,phrase,B1,b1-01,wishes and leave-taking
+abrazar,verb,B1,b1-01,wishes and leave-taking
+besar,verb,B1,b1-01,wishes and leave-taking
+religión,noun-f,B1,b1-01,religion in everyday speech
+religioso,adj,B1,b1-01,religion in everyday speech
+creyente,noun-mf,B1,b1-01,religion in everyday speech
+cristiano,adj,B1,b1-01,religion in everyday speech
+judío,adj,B1,b1-01,religion in everyday speech
+musulmán,adj,B1,b1-01,religion in everyday speech
+santo,noun-m,B1,b1-01,religion in everyday speech
+milagro,noun-m,B1,b1-01,religion in everyday speech
+hacer el favor,phrase,B1,b1-02,favours and requests
+echar la mano,phrase,B1,b1-02,favours and requests
+prestar,verb,B1,b1-02,favours and requests
+pedir prestado,phrase,B1,b1-02,favours and requests
+revisar,verb,B1,b1-02,favours and requests
+dejar,verb,B1,b1-02,favours and requests
+encargar,verb,B1,b1-02,favours and requests
+encargo,noun-m,B1,b1-02,favours and requests
+recoger,verb,B1,b1-02,favours and requests
+entregar,verb,B1,b1-02,favours and requests
+molestar,verb,B1,b1-02,favours and requests
+molestia,noun-f,B1,b1-02,favours and requests
+disculpar,verb,B1,b1-02,favours and requests
+perdonar,verb,B1,b1-02,favours and requests
+por supuesto,phrase,B1,b1-02,favours and requests
+cómo no,phrase,B1,b1-02,favours and requests
+no hay de qué,phrase,B1,b1-02,favours and requests
+a la orden,phrase,B1,b1-02,favours and requests
+de verdad,phrase,B1,b1-02,favours and requests
+urgente,adj,B1,b1-02,favours and requests
+pendiente,noun-m,B1,b1-02,favours and requests
+hoy mismo,phrase,B1,b1-02,favours and requests
+lo antes posible,phrase,B1,b1-02,favours and requests
+cuanto antes,phrase,B1,b1-02,favours and requests
+va a estar difícil,phrase,B1,b1-02,favours and requests
+regar,verb,B1,b1-02,looking after things
+planta,noun-f,B1,b1-02,looking after things
+perro,noun-m,B1,b1-02,looking after things
+gato,noun-m,B1,b1-02,looking after things
+mascota,noun-f,B1,b1-02,looking after things
+dar de comer,phrase,B1,b1-02,looking after things
+mudanza,noun-f,B1,b1-02,moving house
+flete,noun-m,B1,b1-02,moving house
+cargar,verb,B1,b1-02,moving house
+mover,verb,B1,b1-02,moving house
+empacar,verb,B1,b1-02,moving house
+desempacar,verb,B1,b1-02,moving house
+cinta,noun-f,B1,b1-02,moving house
+agradecido,adj,B1,b1-02,favours and requests
+paquetería,noun-f,B1,b1-02,favours and requests
+agarrar,verb,B1,b1-02,favours and requests
+pasar por,phrase,B1,b1-02,favours and requests
+prestado,adj,B1,b1-02,favours and requests
+anuncio,noun-m,B1,b1-03,renting
+se renta,phrase,B1,b1-03,renting
+disponible,adj,B1,b1-03,renting
+mantenimiento,noun-m,B1,b1-03,renting
+amueblado,adj,B1,b1-03,renting
+aparte,adv,B1,b1-03,renting
+depósito,noun-m,B1,b1-03,renting
+por adelantado,phrase,B1,b1-03,renting
+aval,noun-mf,B1,b1-03,renting
+fiador,noun-m,B1,b1-03,renting
+póliza jurídica,noun-f,B1,b1-03,renting
+contrato,noun-m,B1,b1-03,renting
+firmar,verb,B1,b1-03,renting
+costo,noun-m,B1,b1-03,renting
+mensual,adj,B1,b1-03,renting
+agencia,noun-f,B1,b1-03,renting
+inmobiliaria,noun-f,B1,b1-03,renting
+tandeo,noun-m,B1,b1-03,the building
+cisterna,noun-f,B1,b1-03,the building
+condominio,noun-m,B1,b1-03,the building
+privada,noun-f,B1,b1-03,the building
+estacionamiento,noun-m,B1,b1-03,the building
+alberca,noun-f,B1,b1-03,the building
+vigilancia,noun-f,B1,b1-03,the building
+vigilante,noun-mf,B1,b1-03,the building
+portero,noun-m,B1,b1-03,the building
+administrador,noun-m,B1,b1-03,the building
+dueño,noun-m,B1,b1-03,the building
+inquilino,noun-m,B1,b1-03,the building
+interfón,noun-m,B1,b1-03,the building
+cuarto de servicio,noun-m,B1,b1-03,the building
+medio baño,noun-m,B1,b1-03,the building
+lavadero,noun-m,B1,b1-03,the building
+tendedero,noun-m,B1,b1-03,the building
+zotehuela,noun-f,B1,b1-03,the building
+cocina integral,noun-f,B1,b1-03,the building
+metro cuadrado,noun-m,B1,b1-03,describing a flat
+luminoso,adj,B1,b1-03,describing a flat
+amplio,adj,B1,b1-03,describing a flat
+espacioso,adj,B1,b1-03,describing a flat
+tamaño,noun-m,B1,b1-03,describing a flat
+ubicado,adj,B1,b1-03,describing a flat
+bien ubicado,phrase,B1,b1-03,describing a flat
+exterior,adj,B1,b1-03,renting
+interior,adj,B1,b1-03,renting
+aire acondicionado,noun-m,B1,b1-03,renting
+calefacción,noun-f,B1,b1-03,renting
+propietario,noun-m,B1,b1-03,renting
+compañero de cuarto,noun-m,B1,b1-03,renting
+roomie,noun-mf,B1,b1-03,renting
+compartir,verb,B1,b1-03,renting
+cambiarse,verb,B1,b1-03,renting
+incluido,adj,B1,b1-03,renting
+fraccionamiento,noun-m,B1,b1-03,renting
+casa sola,noun-f,B1,b1-03,renting
+planta alta,noun-f,B1,b1-03,renting
+agua caliente,noun-f,B1,b1-03,renting
+trámite,noun-m,B1,b1-04,documents
+documento,noun-m,B1,b1-04,documents
+pasaporte,noun-m,B1,b1-04,documents
+tarjeta de residente,noun-f,B1,b1-04,documents
+residente,noun-mf,B1,b1-04,documents
+residencia,noun-f,B1,b1-04,documents
+CURP,noun-f,B1,b1-04,documents
+RFC,noun-m,B1,b1-04,documents
+comprobante de domicilio,noun-m,B1,b1-04,documents
+comprobante,noun-m,B1,b1-04,documents
+acta de nacimiento,noun-f,B1,b1-04,documents
+acta,noun-f,B1,b1-04,documents
+identificación,noun-f,B1,b1-04,documents
+INE,noun-f,B1,b1-04,documents
+credencial,noun-f,B1,b1-04,documents
+visa,noun-f,B1,b1-04,documents
+original,noun-m,B1,b1-04,documents
+vigente,adj,B1,b1-04,documents
+fotografía,noun-f,B1,b1-04,documents
+huella,noun-f,B1,b1-04,documents
+turno,noun-m,B1,b1-04,at the office
+ficha,noun-f,B1,b1-04,at the office
+fila,noun-f,B1,b1-04,at the office
+formarse,verb,B1,b1-04,at the office
+formato,noun-m,B1,b1-04,at the office
+forma,noun-f,B1,b1-04,at the office
+llenar,verb,B1,b1-04,at the office
+sello,noun-m,B1,b1-04,at the office
+faltar,verb,B1,b1-04,at the office
+hacer falta,phrase,B1,b1-04,at the office
+requisito,noun-m,B1,b1-04,at the office
+solicitud,noun-f,B1,b1-04,at the office
+solicitar,verb,B1,b1-04,at the office
+migración,noun-f,B1,b1-04,at the office
+atender,verb,B1,b1-04,at the office
+funcionario,noun-m,B1,b1-04,at the office
+módulo,noun-m,B1,b1-04,at the office
+en línea,phrase,B1,b1-04,at the office
+imprimir,verb,B1,b1-04,at the office
+escanear,verb,B1,b1-04,at the office
+venir por,phrase,B1,b1-04,at the office
+completo,adj,B1,b1-04,at the office
+estado civil,noun-m,B1,b1-04,documents
+fecha de nacimiento,noun-f,B1,b1-04,documents
+nacimiento,noun-m,B1,b1-04,documents
+lugar de nacimiento,noun-m,B1,b1-04,documents
+domicilio,noun-m,B1,b1-04,documents
+certificado,noun-m,B1,b1-04,documents
+credencial para votar,noun-f,B1,b1-04,documents
+nacionalidad,noun-f,B1,b1-04,documents
+sexo,noun-m,B1,b1-04,documents
+ocupación,noun-f,B1,b1-04,documents
+tamaño infantil,phrase,B1,b1-04,documents
+copia certificada,noun-f,B1,b1-04,documents
+cuenta de banco,noun-f,B1,b1-05,banking
+tarjeta de débito,noun-f,B1,b1-05,banking
+tarjeta de crédito,noun-f,B1,b1-05,banking
+CLABE,noun-f,B1,b1-05,banking
+NIP,noun-m,B1,b1-05,banking
+transferencia,noun-f,B1,b1-05,banking
+transferir,verb,B1,b1-05,banking
+depositar,verb,B1,b1-05,banking
+retirar,verb,B1,b1-05,banking
+sacar dinero,phrase,B1,b1-05,banking
+comisión,noun-f,B1,b1-05,banking
+estado de cuenta,noun-m,B1,b1-05,banking
+sucursal,noun-f,B1,b1-05,banking
+banca en línea,noun-f,B1,b1-05,banking
+firma,noun-f,B1,b1-05,banking
+préstamo,noun-m,B1,b1-05,banking
+crédito,noun-m,B1,b1-05,banking
+deuda,noun-f,B1,b1-05,banking
+interés,noun-m,B1,b1-05,banking
+meses sin intereses,phrase,B1,b1-05,banking
+cargo,noun-m,B1,b1-05,banking
+tipo de cambio,noun-m,B1,b1-05,money
+dólar,noun-m,B1,b1-05,money
+casa de cambio,noun-f,B1,b1-05,money
+ahorrar,verb,B1,b1-05,money
+ahorro,noun-m,B1,b1-05,money
+gastar,verb,B1,b1-05,money
+gasto,noun-m,B1,b1-05,money
+saldo,noun-m,B1,b1-05,the phone
+recarga,noun-f,B1,b1-05,the phone
+recargar,verb,B1,b1-05,the phone
+datos,noun-m,B1,b1-05,the phone
+chip,noun-m,B1,b1-05,the phone
+wifi,noun-m,B1,b1-05,the phone
+contraseña,noun-f,B1,b1-05,the phone
+internet,noun-m,B1,b1-05,the phone
+compañía,noun-f,B1,b1-05,the phone
+cheque,noun-m,B1,b1-05,banking
+pago,noun-m,B1,b1-05,banking
+monedero,noun-m,B1,b1-05,banking
+domiciliar,verb,B1,b1-05,banking
+abrir una cuenta,phrase,B1,b1-05,banking
+mensaje de texto,noun-m,B1,b1-05,banking
+queja,noun-f,B1,b1-06,complaints
+quejarse,verb,B1,b1-06,complaints
+reclamar,verb,B1,b1-06,complaints
+reembolso,noun-m,B1,b1-06,complaints
+garantía,noun-f,B1,b1-06,complaints
+Profeco,noun-f,B1,b1-06,complaints
+error,noun-m,B1,b1-06,complaints
+defecto,noun-m,B1,b1-06,complaints
+defectuoso,adj,B1,b1-06,complaints
+en mal estado,phrase,B1,b1-06,complaints
+caducado,adj,B1,b1-06,complaints
+mancha,noun-f,B1,b1-06,complaints
+tardar,verb,B1,b1-06,complaints
+retraso,noun-m,B1,b1-06,complaints
+reportar,verb,B1,b1-06,complaints
+reporte,noun-m,B1,b1-06,complaints
+exigir,verb,B1,b1-06,complaints
+derecho,noun-m,B1,b1-06,complaints
+consumidor,noun-m,B1,b1-06,complaints
+ruido,noun-m,B1,b1-06,noise and neighbours
+volumen,noun-m,B1,b1-06,noise and neighbours
+molesto,adj,B1,b1-06,noise and neighbours
+respetar,verb,B1,b1-06,noise and neighbours
+respeto,noun-m,B1,b1-06,noise and neighbours
+culpa,noun-f,B1,b1-06,noise and neighbours
+disculpa,noun-f,B1,b1-06,noise and neighbours
+una disculpa,phrase,B1,b1-06,noise and neighbours
+razón,noun-f,B1,b1-06,noise and neighbours
+tener razón,phrase,B1,b1-06,noise and neighbours
+solución,noun-f,B1,b1-06,noise and neighbours
+solucionar,verb,B1,b1-06,noise and neighbours
+gerente,noun-mf,B1,b1-06,noise and neighbours
+encargado,noun-m,B1,b1-06,noise and neighbours
+responsable,noun-mf,B1,b1-06,noise and neighbours
+producto,noun-m,B1,b1-06,complaints
+tolerar,verb,B1,b1-06,complaints
+soportar,verb,B1,b1-06,complaints
+aguantar,verb,B1,b1-06,complaints
+ya basta,phrase,B1,b1-06,complaints
+silencio,noun-m,B1,b1-06,complaints
+bajarle,verb,B1,b1-06,complaints
+inaceptable,adj,B1,b1-06,complaints
+pésimo,adj,B1,b1-06,complaints
+de repente,phrase,B1,b1-07,story connectors
+de pronto,phrase,B1,b1-07,story connectors
+entonces,adv,B1,b1-07,story connectors
+al principio,phrase,B1,b1-07,story connectors
+primero,adv,B1,b1-07,story connectors
+al final,phrase,B1,b1-07,story connectors
+por fin,phrase,B1,b1-07,story connectors
+total que,phrase,B1,b1-07,story connectors
+en eso,phrase,B1,b1-07,story connectors
+y luego,phrase,B1,b1-07,story connectors
+resulta que,phrase,B1,b1-07,story connectors
+de hecho,phrase,B1,b1-07,story connectors
+la verdad,phrase,B1,b1-07,story connectors
+por suerte,phrase,B1,b1-07,story connectors
+fíjate que,phrase,B1,b1-07,story openers and reactions
+qué crees,phrase,B1,b1-07,story openers and reactions
+a que no sabes,phrase,B1,b1-07,story openers and reactions
+no te creo,phrase,B1,b1-07,story openers and reactions
+no inventes,phrase,B1,b1-07,story openers and reactions
+accidente,noun-m,B1,b1-07,everyday mishaps
+susto,noun-m,B1,b1-07,everyday mishaps
+asustarse,verb,B1,b1-07,everyday mishaps
+chocar,verb,B1,b1-07,everyday mishaps
+ocurrir,verb,B1,b1-07,everyday mishaps
+suceder,verb,B1,b1-07,everyday mishaps
+darse cuenta,phrase,B1,b1-07,everyday mishaps
+dejar plantado,phrase,B1,b1-07,everyday mishaps
+aventura,noun-f,B1,b1-07,everyday mishaps
+situación,noun-f,B1,b1-07,everyday mishaps
+historia,noun-f,B1,b1-07,everyday mishaps
+anécdota,noun-f,B1,b1-07,everyday mishaps
+chisme,noun-m,B1,b1-07,everyday mishaps
+chismoso,adj,B1,b1-07,everyday mishaps
+llegar tarde,phrase,B1,b1-07,everyday mishaps
+de regreso,phrase,B1,b1-07,everyday mishaps
+mitad,noun-f,B1,b1-07,everyday mishaps
+camino,noun-m,B1,b1-07,everyday mishaps
+gritar,verb,B1,b1-07,everyday mishaps
+tropezarse,verb,B1,b1-07,everyday mishaps
+sonar,verb,B1,b1-07,everyday mishaps
+ponerse a,phrase,B1,b1-07,everyday mishaps
+qué mala suerte,phrase,B1,b1-07,everyday mishaps
+opinión,noun-f,B1,b1-08,opinion words
+opinar,verb,B1,b1-08,opinion words
+creer,verb,B1,b1-08,opinion words
+pensar,verb,B1,b1-08,opinion words
+estar de acuerdo,phrase,B1,b1-08,opinion words
+para nada,phrase,B1,b1-08,opinion words
+cómo crees,phrase,B1,b1-08,opinion words
+depende,phrase,B1,b1-08,opinion words
+depender,verb,B1,b1-08,opinion words
+dar igual,phrase,B1,b1-08,opinion words
+a lo mejor,phrase,B1,b1-08,opinion words
+tal vez,adv,B1,b1-08,opinion words
+quizás,adv,B1,b1-08,opinion words
+obvio,adj,B1,b1-08,opinion words
+cierto,adj,B1,b1-08,opinion words
+mentira,noun-f,B1,b1-08,opinion words
+punto de vista,noun-m,B1,b1-08,opinion words
+idea,noun-f,B1,b1-08,opinion words
+tema,noun-m,B1,b1-08,opinion words
+a favor,phrase,B1,b1-08,opinion words
+en contra,phrase,B1,b1-08,opinion words
+según yo,phrase,B1,b1-08,opinion words
+importar,verb,B1,b1-08,opinion words
+interesar,verb,B1,b1-08,opinion words
+discutir,verb,B1,b1-08,opinion words
+conversar,verb,B1,b1-08,opinion words
+conversación,noun-f,B1,b1-08,opinion words
+necesario,adj,B1,b1-08,opinion words
+útil,adj,B1,b1-08,opinion words
+importante,adj,B1,b1-08,opinion words
+justo,adj,B1,b1-08,opinion words
+injusto,adj,B1,b1-08,opinion words
+noticia,noun-f,B1,b1-08,the city and local news
+gobierno,noun-m,B1,b1-08,the city and local news
+presidente,noun-mf,B1,b1-08,the city and local news
+alcaldía,noun-f,B1,b1-08,the city and local news
+contaminación,noun-f,B1,b1-08,the city and local news
+inseguridad,noun-f,B1,b1-08,the city and local news
+obra,noun-f,B1,b1-08,the city and local news
+discusión,noun-f,B1,b1-08,opinion words
+todo el mundo,phrase,B1,b1-08,opinion words
+puede ser,phrase,B1,b1-08,opinion words
+sentido,noun-m,B1,b1-08,opinion words
+tener sentido,phrase,B1,b1-08,opinion words
+lógico,adj,B1,b1-08,opinion words
+absurdo,adj,B1,b1-08,opinion words
+ridículo,adj,B1,b1-08,opinion words
+me parece bien,phrase,B1,b1-08,opinion words
+preferible,adj,B1,b1-08,opinion words
+dedicarse,verb,B1,b1-09,work
+chamba,noun-f,B1,b1-09,work
+sueldo,noun-m,B1,b1-09,work
+salario,noun-m,B1,b1-09,work
+prestación,noun-f,B1,b1-09,work
+aguinaldo,noun-m,B1,b1-09,work
+junta,noun-f,B1,b1-09,work
+empresa,noun-f,B1,b1-09,work
+compañero,noun-m,B1,b1-09,work
+colega,noun-mf,B1,b1-09,work
+empleado,noun-m,B1,b1-09,work
+empleo,noun-m,B1,b1-09,work
+desempleo,noun-m,B1,b1-09,work
+desempleado,adj,B1,b1-09,work
+negocio,noun-m,B1,b1-09,work
+quincena,noun-f,B1,b1-09,work
+horas extra,noun-f,B1,b1-09,work
+profesión,noun-f,B1,b1-09,work
+reunión,noun-f,B1,b1-09,work
+proyecto,noun-m,B1,b1-09,work
+home office,noun-m,B1,b1-09,work
+taller,noun-m,B1,b1-09,work
+fábrica,noun-f,B1,b1-09,work
+jubilarse,verb,B1,b1-09,work
+jubilado,adj,B1,b1-09,work
+entrevista,noun-f,B1,b1-09,job hunting
+currículum,noun-m,B1,b1-09,job hunting
+contratar,verb,B1,b1-09,job hunting
+renunciar,verb,B1,b1-09,job hunting
+renuncia,noun-f,B1,b1-09,job hunting
+despedir,verb,B1,b1-09,job hunting
+medio tiempo,phrase,B1,b1-09,job hunting
+tiempo completo,phrase,B1,b1-09,job hunting
+por mi cuenta,phrase,B1,b1-09,job hunting
+ganar,verb,B1,b1-09,job hunting
+se solicita,phrase,B1,b1-09,job hunting
+vacante,noun-f,B1,b1-09,job hunting
+abogado,noun-m,B1,b1-09,jobs
+contador,noun-m,B1,b1-09,jobs
+arquitecto,noun-m,B1,b1-09,jobs
+programador,noun-m,B1,b1-09,jobs
+diseñador,noun-m,B1,b1-09,jobs
+profesor,noun-m,B1,b1-09,jobs
+periodista,noun-mf,B1,b1-09,jobs
+traductor,noun-m,B1,b1-09,jobs
+secretario,noun-m,B1,b1-09,jobs
+recepcionista,noun-mf,B1,b1-09,jobs
+empresario,noun-m,B1,b1-09,jobs
+computadora,noun-f,B1,b1-09,jobs
+laptop,noun-f,B1,b1-09,jobs
+impresora,noun-f,B1,b1-09,jobs
+ama de casa,noun-f,B1,b1-09,work
+socio,noun-m,B1,b1-09,work
+uniforme,noun-m,B1,b1-09,work
+niñera,noun-f,B1,b1-09,work
+dar clases,phrase,B1,b1-09,work
+obrero,noun-m,B1,b1-09,work
+comerciante,noun-mf,B1,b1-09,work
+patrón,noun-m,B1,b1-09,work
+trabajador,noun-m,B1,b1-09,work
+ascender,verb,B1,b1-09,work
+ascenso,noun-m,B1,b1-09,work
+capacitación,noun-f,B1,b1-09,work
+título,noun-m,B1,b1-09,work
+carrera,noun-f,B1,b1-09,work
+licenciatura,noun-f,B1,b1-09,work
+maestría,noun-f,B1,b1-09,work
+seguro social,noun-m,B1,b1-10,health services
+seguro de gastos médicos,noun-m,B1,b1-10,health services
+seguro,noun-m,B1,b1-10,health services
+clínica,noun-f,B1,b1-10,health services
+médico particular,noun-m,B1,b1-10,health services
+estudio,noun-m,B1,b1-10,health services
+laboratorio,noun-m,B1,b1-10,health services
+consulta,noun-f,B1,b1-10,health services
+consultar,verb,B1,b1-10,health services
+chequeo,noun-m,B1,b1-10,health services
+tratamiento,noun-m,B1,b1-10,health services
+operación,noun-f,B1,b1-10,health services
+operar,verb,B1,b1-10,health services
+psicólogo,noun-m,B1,b1-10,health services
+nutriólogo,noun-m,B1,b1-10,health services
+terapia,noun-f,B1,b1-10,health services
+incapacidad,noun-f,B1,b1-10,health services
+presión,noun-f,B1,b1-10,conditions and advice
+diabetes,noun-f,B1,b1-10,conditions and advice
+colesterol,noun-m,B1,b1-10,conditions and advice
+enfermedad,noun-f,B1,b1-10,conditions and advice
+infección,noun-f,B1,b1-10,conditions and advice
+grave,adj,B1,b1-10,conditions and advice
+estrés,noun-m,B1,b1-10,conditions and advice
+antibiótico,noun-m,B1,b1-10,conditions and advice
+consejo,noun-m,B1,b1-10,conditions and advice
+aconsejar,verb,B1,b1-10,conditions and advice
+dieta,noun-f,B1,b1-10,conditions and advice
+bajar de peso,phrase,B1,b1-10,conditions and advice
+fumar,verb,B1,b1-10,conditions and advice
+dejar de,phrase,B1,b1-10,conditions and advice
+alcohol,noun-m,B1,b1-10,conditions and advice
+cada ocho horas,phrase,B1,b1-10,conditions and advice
+dolor de cabeza,noun-m,B1,b1-10,conditions and advice
+vitamina,noun-f,B1,b1-10,conditions and advice
+suero,noun-m,B1,b1-10,conditions and advice
+deshidratación,noun-f,B1,b1-10,conditions and advice
+corazón,noun-m,B1,b1-10,conditions and advice
+pulmón,noun-m,B1,b1-10,conditions and advice
+riñón,noun-m,B1,b1-10,conditions and advice
+hígado,noun-m,B1,b1-10,conditions and advice
+embarazada,adj,B1,b1-10,conditions and advice
+embarazo,noun-m,B1,b1-10,conditions and advice
+IMSS,noun-m,B1,b1-10,conditions and advice
+ISSSTE,noun-m,B1,b1-10,conditions and advice
+futuro,noun-m,B1,b1-11,plans and intentions
+intención,noun-f,B1,b1-11,plans and intentions
+decidir,verb,B1,b1-11,plans and intentions
+decisión,noun-f,B1,b1-11,plans and intentions
+meta,noun-f,B1,b1-11,plans and intentions
+par,noun-m,B1,b1-11,plans and intentions
+algún día,phrase,B1,b1-11,plans and intentions
+próximo,adj,B1,b1-11,plans and intentions
+que viene,phrase,B1,b1-11,plans and intentions
+pasado mañana,adv,B1,b1-11,plans and intentions
+dentro de,prep,B1,b1-11,plans and intentions
+quedarse un tiempo,phrase,B1,b1-11,plans and intentions
+probablemente,adv,B1,b1-11,guesses
+seguramente,adv,B1,b1-11,guesses
+posible,adj,B1,b1-11,guesses
+imposible,adj,B1,b1-11,guesses
+probable,adj,B1,b1-11,guesses
+quién sabe,phrase,B1,b1-11,guesses
+ya veremos,phrase,B1,b1-11,guesses
+suponer,verb,B1,b1-11,guesses
+imaginarse,verb,B1,b1-11,guesses
+adivinar,verb,B1,b1-11,guesses
+dudar,verb,B1,b1-11,guesses
+duda,noun-f,B1,b1-11,guesses
+encontrar,verb,B1,b1-11,guesses
+estar por,phrase,B1,b1-11,guesses
+estar a punto de,phrase,B1,b1-11,guesses
+en cuanto,conj,B1,b1-11,time connectors
+tan pronto como,conj,B1,b1-11,time connectors
+mientras tanto,phrase,B1,b1-11,time connectors
+pronóstico,noun-m,B1,b1-11,the forecast
+despejado,adj,B1,b1-11,the forecast
+llovizna,noun-f,B1,b1-11,the forecast
+estar seguro,phrase,B1,b1-11,plans and intentions
+tarde o temprano,phrase,B1,b1-11,plans and intentions
+planear,verb,B1,b1-11,plans and intentions
+organizar,verb,B1,b1-11,plans and intentions
+probabilidad,noun-f,B1,b1-11,plans and intentions
+pásale,interj,B1,b1-12,hospitality
+ándale,interj,B1,b1-12,hospitality
+estás en tu casa,phrase,B1,b1-12,hospitality
+mi casa es tu casa,phrase,B1,b1-12,hospitality
+con confianza,phrase,B1,b1-12,hospitality
+confianza,noun-f,B1,b1-12,hospitality
+antojarse,verb,B1,b1-12,hospitality
+sobremesa,noun-f,B1,b1-12,hospitality
+botana,noun-f,B1,b1-12,hospitality
+comida casera,noun-f,B1,b1-12,hospitality
+preparar,verb,B1,b1-12,hospitality
+cocinar,verb,B1,b1-12,hospitality
+servirse,verb,B1,b1-12,hospitality
+sentarse,verb,B1,b1-12,hospitality
+ponerse cómodo,phrase,B1,b1-12,hospitality
+anfitrión,noun-m,B1,b1-12,hospitality
+visita,noun-f,B1,b1-12,hospitality
+despedirse,verb,B1,b1-12,hospitality
+ya me voy,phrase,B1,b1-12,hospitality
+pésame,noun-m,B1,b1-12,occasions
+mi más sentido pésame,phrase,B1,b1-12,occasions
+velorio,noun-m,B1,b1-12,occasions
+funeral,noun-m,B1,b1-12,occasions
+bautizo,noun-m,B1,b1-12,occasions
+boda,noun-f,B1,b1-12,occasions
+XV años,noun-m,B1,b1-12,occasions
+quinceañera,noun-f,B1,b1-12,occasions
+primera comunión,noun-f,B1,b1-12,occasions
+ceremonia,noun-f,B1,b1-12,occasions
+cumplir,verb,B1,b1-12,occasions
+cumplir años,phrase,B1,b1-12,occasions
+aniversario,noun-m,B1,b1-12,occasions
+compadrazgo,noun-m,B1,b1-12,occasions
+ingrediente,noun-m,B1,b1-12,hospitality
+ramo,noun-m,B1,b1-12,hospitality
+convivio,noun-m,B1,b1-12,hospitality
+sazón,noun-f,B1,b1-12,hospitality
+llenarse,verb,B1,b1-12,hospitality
+sentado,adj,B1,b1-12,hospitality
+preguntar,verb,B1,b1-13,passing on messages
+comentar,verb,B1,b1-13,passing on messages
+mencionar,verb,B1,b1-13,passing on messages
+explicar,verb,B1,b1-13,passing on messages
+responder,verb,B1,b1-13,passing on messages
+dizque,adv,B1,b1-13,passing on messages
+rumor,noun-m,B1,b1-13,passing on messages
+enterarse,verb,B1,b1-13,passing on messages
+aclarar,verb,B1,b1-13,passing on messages
+prometer,verb,B1,b1-13,passing on messages
+promesa,noun-f,B1,b1-13,passing on messages
+insistir,verb,B1,b1-13,passing on messages
+negar,verb,B1,b1-13,passing on messages
+confirmar,verb,B1,b1-13,passing on messages
+cancelar,verb,B1,b1-13,passing on messages
+posponer,verb,B1,b1-13,passing on messages
+recordar algo a alguien,phrase,B1,b1-13,passing on messages
+afirmar,verb,B1,b1-13,passing on messages
+asegurar,verb,B1,b1-13,passing on messages
+reconocer,verb,B1,b1-13,passing on messages
+admitir,verb,B1,b1-13,passing on messages
+preguntarse,verb,B1,b1-13,passing on messages
+soñar,verb,B2,b2-01,dreams and plans
+como si,phrase,B2,b2-01,dreams and plans
+lotería,noun-f,B2,b2-01,dreams and plans
+ganarse la lotería,phrase,B2,b2-01,dreams and plans
+millonario,adj,B2,b2-01,dreams and plans
+mundo,noun-m,B2,b2-01,dreams and plans
+curso,noun-m,B2,b2-01,dreams and plans
+oportunidad,noun-f,B2,b2-01,dreams and plans
+ofrecer,verb,B2,b2-01,dreams and plans
+rechazar,verb,B2,b2-01,dreams and plans
+posibilidad,noun-f,B2,b2-01,dreams and plans
+arriesgarse,verb,B2,b2-01,dreams and plans
+riesgo,noun-m,B2,b2-01,dreams and plans
+valer la pena,phrase,B2,b2-01,dreams and plans
+aprovechar,verb,B2,b2-01,dreams and plans
+en tu lugar,phrase,B2,b2-01,dreams and plans
+propuesta,noun-f,B2,b2-01,dreams and plans
+realidad,noun-f,B2,b2-01,dreams and plans
+real,adj,B2,b2-01,dreams and plans
+ideal,adj,B2,b2-01,dreams and plans
+perfecto,adj,B2,b2-01,dreams and plans
+imaginación,noun-f,B2,b2-01,dreams and plans
+fantasía,noun-f,B2,b2-01,dreams and plans
+dar la vuelta al mundo,phrase,B2,b2-01,dreams and plans
+contar con,phrase,B2,b2-01,dreams and plans
+libertad,noun-f,B2,b2-01,dreams and plans
+tranquilidad,noun-f,B2,b2-01,dreams and plans
+felicidad,noun-f,B2,b2-01,dreams and plans
+lujo,noun-m,B2,b2-01,dreams and plans
+luz natural,noun-f,B2,b2-02,housing features
+natural,adj,B2,b2-02,housing features
+soleado,adj,B2,b2-02,housing features
+ventilado,adj,B2,b2-02,housing features
+silencioso,adj,B2,b2-02,housing features
+cómodo,adj,B2,b2-02,housing features
+accesible,adj,B2,b2-02,housing features
+cercano,adj,B2,b2-02,housing features
+económico,adj,B2,b2-02,housing features
+acogedor,adj,B2,b2-02,housing features
+terraza,noun-f,B2,b2-02,housing features
+balcón,noun-m,B2,b2-02,housing features
+característica,noun-f,B2,b2-02,housing features
+condición,noun-f,B2,b2-02,housing features
+recomendación,noun-f,B2,b2-02,housing features
+jardinero,noun-m,B2,b2-02,services and trades
+mecánico,noun-m,B2,b2-02,services and trades
+tintorería,noun-f,B2,b2-02,services and trades
+lavandería,noun-f,B2,b2-02,services and trades
+estética,noun-f,B2,b2-02,services and trades
+peluquería,noun-f,B2,b2-02,services and trades
+barbería,noun-f,B2,b2-02,services and trades
+veterinario,noun-m,B2,b2-02,services and trades
+guardería,noun-f,B2,b2-02,services and trades
+kínder,noun-m,B2,b2-02,services and trades
+colegio,noun-m,B2,b2-02,services and trades
+donde,adv,B2,b2-02,function words
+quien,pron,B2,b2-02,function words
+cual,pron,B2,b2-02,function words
+decoración,noun-f,B2,b2-02,housing features
+inscripción,noun-f,B2,b2-02,housing features
+colegiatura,noun-f,B2,b2-02,housing features
+confiable,adj,B2,b2-02,housing features
+recomendado,adj,B2,b2-02,housing features
+de confianza,phrase,B2,b2-02,housing features
+arrepentirse,verb,B2,b2-03,decisions and mistakes
+arrepentido,adj,B2,b2-03,decisions and mistakes
+equivocación,noun-f,B2,b2-03,decisions and mistakes
+lamentar,verb,B2,b2-03,decisions and mistakes
+a tiempo,phrase,B2,b2-03,decisions and mistakes
+confiar,verb,B2,b2-03,decisions and mistakes
+fiarse,verb,B2,b2-03,decisions and mistakes
+engañar,verb,B2,b2-03,decisions and mistakes
+estafa,noun-f,B2,b2-03,decisions and mistakes
+estafar,verb,B2,b2-03,decisions and mistakes
+lección,noun-f,B2,b2-03,decisions and mistakes
+aprender la lección,phrase,B2,b2-03,decisions and mistakes
+advertir,verb,B2,b2-03,decisions and mistakes
+advertencia,noun-f,B2,b2-03,decisions and mistakes
+fijarse,verb,B2,b2-03,decisions and mistakes
+cuidadoso,adj,B2,b2-03,decisions and mistakes
+descuidado,adj,B2,b2-03,decisions and mistakes
+culpar,verb,B2,b2-03,decisions and mistakes
+cometer un error,phrase,B2,b2-03,decisions and mistakes
+elegir,verb,B2,b2-03,decisions and mistakes
+escoger,verb,B2,b2-03,decisions and mistakes
+opción,noun-f,B2,b2-03,decisions and mistakes
+alternativa,noun-f,B2,b2-03,decisions and mistakes
+ingenuo,adj,B2,b2-03,decisions and mistakes
+falla,noun-f,B2,b2-04,services and contracts
+módem,noun-m,B2,b2-04,services and contracts
+dar de baja,phrase,B2,b2-04,services and contracts
+dar de alta,phrase,B2,b2-04,services and contracts
+folio,noun-m,B2,b2-04,services and contracts
+penalización,noun-f,B2,b2-04,services and contracts
+plazo forzoso,noun-m,B2,b2-04,services and contracts
+plazo,noun-m,B2,b2-04,services and contracts
+letras chiquitas,noun-f,B2,b2-04,services and contracts
+atención a clientes,noun-f,B2,b2-04,services and contracts
+atención,noun-f,B2,b2-04,services and contracts
+asesor,noun-m,B2,b2-04,services and contracts
+ejecutivo,noun-m,B2,b2-04,services and contracts
+tarifa,noun-f,B2,b2-04,services and contracts
+cobro,noun-m,B2,b2-04,services and contracts
+paquete,noun-m,B2,b2-04,services and contracts
+promoción,noun-f,B2,b2-04,services and contracts
+comunicar,verb,B2,b2-04,faults and fixes
+comunicarse,verb,B2,b2-04,faults and fixes
+conectar,verb,B2,b2-04,faults and fixes
+desconectar,verb,B2,b2-04,faults and fixes
+reiniciar,verb,B2,b2-04,faults and fixes
+instalar,verb,B2,b2-04,faults and fixes
+instalación,noun-f,B2,b2-04,faults and fixes
+actualizar,verb,B2,b2-04,faults and fixes
+visita técnica,noun-f,B2,b2-04,faults and fixes
+seguir sin,phrase,B2,b2-04,faults and fixes
+cancelación,noun-f,B2,b2-04,services and contracts
+aclaración,noun-f,B2,b2-04,services and contracts
+grabación,noun-f,B2,b2-04,services and contracts
+en espera,phrase,B2,b2-04,services and contracts
+junta de condóminos,noun-f,B2,b2-05,the building
+condómino,noun-m,B2,b2-05,the building
+cuota,noun-f,B2,b2-05,the building
+cuota de mantenimiento,noun-f,B2,b2-05,the building
+bomba,noun-f,B2,b2-05,the building
+área común,noun-f,B2,b2-05,the building
+común,adj,B2,b2-05,the building
+reglamento,noun-m,B2,b2-05,the building
+reparación,noun-f,B2,b2-05,the building
+presupuesto,noun-m,B2,b2-05,the building
+multa,noun-f,B2,b2-05,the building
+corte,noun-m,B2,b2-05,the building
+aviso,noun-m,B2,b2-05,the building
+votar,verb,B2,b2-05,voting and agreements
+votación,noun-f,B2,b2-05,voting and agreements
+voto,noun-m,B2,b2-05,voting and agreements
+acuerdo,noun-m,B2,b2-05,voting and agreements
+proponer,verb,B2,b2-05,voting and agreements
+sugerir,verb,B2,b2-05,voting and agreements
+sugerencia,noun-f,B2,b2-05,voting and agreements
+mayoría,noun-f,B2,b2-05,voting and agreements
+asamblea,noun-f,B2,b2-05,voting and agreements
+orden del día,noun-m,B2,b2-05,voting and agreements
+agregar,verb,B2,b2-05,voting and agreements
+interrumpir,verb,B2,b2-05,voting and agreements
+tomar la palabra,phrase,B2,b2-05,voting and agreements
+aunque,conj,B2,b2-05,voting and agreements
+mientras,conj,B2,b2-05,voting and agreements
+antes de que,conj,B2,b2-05,voting and agreements
+hasta que,conj,B2,b2-05,voting and agreements
+fachada,noun-f,B2,b2-05,the building
+reciclar,verb,B2,b2-05,the building
+separar la basura,phrase,B2,b2-05,the building
+orgánico,adj,B2,b2-05,the building
+inorgánico,adj,B2,b2-05,the building
+gentrificación,noun-f,B2,b2-06,local issues
+escasez,noun-f,B2,b2-06,local issues
+delincuencia,noun-f,B2,b2-06,local issues
+Hoy No Circula,noun-m,B2,b2-06,local issues
+contingencia ambiental,noun-f,B2,b2-06,local issues
+turismo,noun-m,B2,b2-06,local issues
+desarrollo,noun-m,B2,b2-06,local issues
+construcción,noun-f,B2,b2-06,local issues
+autoridad,noun-f,B2,b2-06,local issues
+ciudadano,noun-m,B2,b2-06,local issues
+impuesto,noun-m,B2,b2-06,local issues
+transporte público,noun-m,B2,b2-06,local issues
+ciclovía,noun-f,B2,b2-06,local issues
+ambulante,noun-mf,B2,b2-06,local issues
+comercio,noun-m,B2,b2-06,local issues
+vivienda,noun-f,B2,b2-06,local issues
+servicio público,noun-m,B2,b2-06,local issues
+por un lado,phrase,B2,b2-06,argument connectors
+por otro lado,phrase,B2,b2-06,argument connectors
+sin embargo,phrase,B2,b2-06,argument connectors
+en cambio,phrase,B2,b2-06,argument connectors
+por lo tanto,phrase,B2,b2-06,argument connectors
+ya que,conj,B2,b2-06,argument connectors
+puesto que,conj,B2,b2-06,argument connectors
+además,adv,B2,b2-06,argument connectors
+sino,conj,B2,b2-06,argument connectors
+lo que pasa es que,phrase,B2,b2-06,argument connectors
+puede que,phrase,B2,b2-06,argument connectors
+dato,noun-m,B2,b2-06,arguing a point
+estadística,noun-f,B2,b2-06,arguing a point
+encuesta,noun-f,B2,b2-06,arguing a point
+medida,noun-f,B2,b2-06,arguing a point
+consecuencia,noun-f,B2,b2-06,arguing a point
+causa,noun-f,B2,b2-06,arguing a point
+ventaja,noun-f,B2,b2-06,arguing a point
+desventaja,noun-f,B2,b2-06,arguing a point
+beneficio,noun-m,B2,b2-06,arguing a point
+perjudicar,verb,B2,b2-06,arguing a point
+afectar,verb,B2,b2-06,arguing a point
+aumentar,verb,B2,b2-06,arguing a point
+empeorar,verb,B2,b2-06,arguing a point
+quitar,verb,B2,b2-06,arguing a point
+municipal,adj,B2,b2-06,local issues
+público,adj,B2,b2-06,local issues
+presidencia municipal,noun-f,B2,b2-06,local issues
+ciclista,noun-mf,B2,b2-06,local issues
+secretaría,noun-f,B2,b2-06,local issues
+minoría,noun-f,B2,b2-06,local issues
+agua potable,noun-f,B2,b2-06,local issues
+sequía,noun-f,B2,b2-06,local issues
+reciclaje,noun-m,B2,b2-06,local issues
+si no es molestia,phrase,B2,b2-07,politeness and indirectness
+se me hace que,phrase,B2,b2-07,politeness and indirectness
+indirecta,noun-f,B2,b2-07,politeness and indirectness
+directo,adj,B2,b2-07,politeness and indirectness
+indirecto,adj,B2,b2-07,politeness and indirectness
+educado,adj,B2,b2-07,politeness and indirectness
+cortés,adj,B2,b2-07,politeness and indirectness
+educación,noun-f,B2,b2-07,politeness and indirectness
+tono,noun-m,B2,b2-07,politeness and indirectness
+grosero,adj,B2,b2-07,politeness and indirectness
+ofender,verb,B2,b2-07,politeness and indirectness
+ofenderse,verb,B2,b2-07,politeness and indirectness
+quedar bien,phrase,B2,b2-07,politeness and indirectness
+quedar mal,phrase,B2,b2-07,politeness and indirectness
+compromiso,noun-m,B2,b2-07,politeness and indirectness
+comprometerse,verb,B2,b2-07,politeness and indirectness
+presionar,verb,B2,b2-07,politeness and indirectness
+negarse,verb,B2,b2-07,politeness and indirectness
+pretexto,noun-m,B2,b2-07,politeness and indirectness
+excusa,noun-f,B2,b2-07,politeness and indirectness
+puntual,adj,B2,b2-07,politeness and indirectness
+impuntual,adj,B2,b2-07,politeness and indirectness
+broma,noun-f,B2,b2-07,honesty and humour
+en broma,phrase,B2,b2-07,honesty and humour
+sincero,adj,B2,b2-07,honesty and humour
+honesto,adj,B2,b2-07,honesty and humour
+mentir,verb,B2,b2-07,honesty and humour
+criticar,verb,B2,b2-07,honesty and humour
+crítica,noun-f,B2,b2-07,honesty and humour
+chiste,noun-m,B2,b2-07,honesty and humour
+burlarse,verb,B2,b2-07,honesty and humour
+delicado,adj,B2,b2-07,honesty and humour
+sensible,adj,B2,b2-07,honesty and humour
+susceptible,adj,B2,b2-07,honesty and humour
+uno,pron,B2,b2-07,politeness and indirectness
+dar a entender,phrase,B2,b2-07,politeness and indirectness
+insinuar,verb,B2,b2-07,politeness and indirectness
+suavizar,verb,B2,b2-07,politeness and indirectness
+sin rodeos,phrase,B2,b2-07,politeness and indirectness
+asaltar,verb,B2,b2-08,crime
+asalto,noun-m,B2,b2-08,crime
+robar,verb,B2,b2-08,crime
+robo,noun-m,B2,b2-08,crime
+ladrón,noun-m,B2,b2-08,crime
+ratero,noun-m,B2,b2-08,crime
+denuncia,noun-f,B2,b2-08,crime
+levantar una denuncia,phrase,B2,b2-08,crime
+denunciar,verb,B2,b2-08,crime
+Ministerio Público,noun-m,B2,b2-08,crime
+fiscalía,noun-f,B2,b2-08,crime
+patrulla,noun-f,B2,b2-08,crime
+agente,noun-mf,B2,b2-08,crime
+extorsión,noun-f,B2,b2-08,crime
+extorsionar,verb,B2,b2-08,crime
+sospechoso,adj,B2,b2-08,crime
+testigo,noun-mf,B2,b2-08,crime
+víctima,noun-f,B2,b2-08,crime
+detener,verb,B2,b2-08,crime
+detenido,adj,B2,b2-08,crime
+delito,noun-m,B2,b2-08,crime
+cárcel,noun-f,B2,b2-08,crime
+amenazar,verb,B2,b2-08,crime
+amenaza,noun-f,B2,b2-08,crime
+peligro,noun-m,B2,b2-08,crime
+ponchar,verb,B2,b2-08,the car and accidents
+poncharse,verb,B2,b2-08,the car and accidents
+llanta,noun-f,B2,b2-08,the car and accidents
+llanta de refacción,noun-f,B2,b2-08,the car and accidents
+vulcanizadora,noun-f,B2,b2-08,the car and accidents
+tránsito,noun-m,B2,b2-08,the car and accidents
+infracción,noun-f,B2,b2-08,the car and accidents
+choque,noun-m,B2,b2-08,the car and accidents
+herido,adj,B2,b2-08,the car and accidents
+aseguradora,noun-f,B2,b2-08,the car and accidents
+ajustador,noun-m,B2,b2-08,the car and accidents
+grúa,noun-f,B2,b2-08,the car and accidents
+corralón,noun-m,B2,b2-08,the car and accidents
+golpe,noun-m,B2,b2-08,the car and accidents
+daño,noun-m,B2,b2-08,the car and accidents
+culpable,adj,B2,b2-08,the car and accidents
+placa,noun-f,B2,b2-08,the car and accidents
+cajuela,noun-f,B2,b2-08,the car and accidents
+juez,noun-mf,B2,b2-08,crime
+demanda,noun-f,B2,b2-08,crime
+demandar,verb,B2,b2-08,crime
+secuestro,noun-m,B2,b2-08,crime
+fraude,noun-m,B2,b2-08,crime
+clonar,verb,B2,b2-08,crime
+bloquear,verb,B2,b2-08,crime
+volverse,verb,B2,b2-09,change and adaptation
+hacerse,verb,B2,b2-09,change and adaptation
+llegar a ser,phrase,B2,b2-09,change and adaptation
+convertirse,verb,B2,b2-09,change and adaptation
+cada vez más,phrase,B2,b2-09,change and adaptation
+cada vez menos,phrase,B2,b2-09,change and adaptation
+adaptarse,verb,B2,b2-09,change and adaptation
+adaptación,noun-f,B2,b2-09,change and adaptation
+integrarse,verb,B2,b2-09,change and adaptation
+sentirse en casa,phrase,B2,b2-09,change and adaptation
+pertenecer,verb,B2,b2-09,change and adaptation
+raíz,noun-f,B2,b2-09,change and adaptation
+identidad,noun-f,B2,b2-09,change and adaptation
+nostalgia,noun-f,B2,b2-09,change and adaptation
+transformar,verb,B2,b2-09,change and adaptation
+envejecer,verb,B2,b2-09,change and adaptation
+madurar,verb,B2,b2-09,change and adaptation
+famoso,adj,B2,b2-09,change and adaptation
+pobre,adj,B2,b2-09,change and adaptation
+loco,adj,B2,b2-09,change and adaptation
+independiente,adj,B2,b2-09,change and adaptation
+amistad,noun-f,B2,b2-09,change and adaptation
+recién,adv,B2,b2-09,then and now
+a partir de,phrase,B2,b2-09,then and now
+desde entonces,phrase,B2,b2-09,then and now
+últimamente,adv,B2,b2-09,then and now
+hoy en día,phrase,B2,b2-09,then and now
+actual,adj,B2,b2-09,then and now
+actualmente,adv,B2,b2-09,then and now
+moda,noun-f,B2,b2-09,then and now
+de moda,phrase,B2,b2-09,then and now
+echar raíces,phrase,B2,b2-09,change and adaptation
+personalidad,noun-f,B2,b2-09,change and adaptation
+ponerse nervioso,phrase,B2,b2-09,change and adaptation
+quedarse sin,phrase,B2,b2-09,change and adaptation
+Independencia,noun-f,B2,b2-10,history
+Revolución,noun-f,B2,b2-10,history
+Conquista,noun-f,B2,b2-10,history
+mexica,noun-mf,B2,b2-10,history
+azteca,noun-mf,B2,b2-10,history
+maya,noun-mf,B2,b2-10,history
+fundar,verb,B2,b2-10,history
+fundación,noun-f,B2,b2-10,history
+siglo,noun-m,B2,b2-10,history
+héroe,noun-m,B2,b2-10,history
+heroína,noun-f,B2,b2-10,history
+batalla,noun-f,B2,b2-10,history
+guerra,noun-f,B2,b2-10,history
+paz,noun-f,B2,b2-10,history
+rey,noun-m,B2,b2-10,history
+reina,noun-f,B2,b2-10,history
+imperio,noun-m,B2,b2-10,history
+colonial,adj,B2,b2-10,history
+virreinato,noun-m,B2,b2-10,history
+leyenda,noun-f,B2,b2-10,history
+mito,noun-m,B2,b2-10,history
+origen,noun-m,B2,b2-10,history
+prehispánico,adj,B2,b2-10,history
+indígena,adj,B2,b2-10,history
+templo,noun-m,B2,b2-10,history
+cultura,noun-f,B2,b2-10,history
+histórico,adj,B2,b2-10,history
+según,prep,B2,b2-10,history
+Grito,noun-m,B2,b2-10,holidays
+Fiestas Patrias,noun-f,B2,b2-10,holidays
+Candelaria,noun-f,B2,b2-10,holidays
+peregrino,noun-m,B2,b2-10,holidays
+peregrinación,noun-f,B2,b2-10,holidays
+Basílica,noun-f,B2,b2-10,holidays
+desfile,noun-m,B2,b2-10,holidays
+bandera,noun-f,B2,b2-10,holidays
+himno,noun-m,B2,b2-10,holidays
+patria,noun-f,B2,b2-10,holidays
+conmemorar,verb,B2,b2-10,holidays
+papel picado,noun-m,B2,b2-10,holidays
+cohete,noun-m,B2,b2-10,holidays
+fuegos artificiales,noun-m,B2,b2-10,holidays
+banda,noun-f,B2,b2-10,holidays
+mariachi,noun-m,B2,b2-10,holidays
+ejército,noun-m,B2,b2-10,history
+soldado,noun-m,B2,b2-10,history
+conquistador,noun-m,B2,b2-10,history
+estimado,adj,B2,b2-11,formal writing
+a quien corresponda,phrase,B2,b2-11,formal writing
+por medio de la presente,phrase,B2,b2-11,formal writing
+adjuntar,verb,B2,b2-11,formal writing
+adjunto,adj,B2,b2-11,formal writing
+informar,verb,B2,b2-11,formal writing
+comentario,noun-m,B2,b2-11,formal writing
+quedo atento,phrase,B2,b2-11,formal writing
+atentamente,adv,B2,b2-11,formal writing
+cordial,adj,B2,b2-11,formal writing
+asunto,noun-m,B2,b2-11,formal writing
+remitente,noun-mf,B2,b2-11,formal writing
+destinatario,noun-mf,B2,b2-11,formal writing
+en relación con,phrase,B2,b2-11,formal writing
+por lo anterior,phrase,B2,b2-11,formal writing
+sin más por el momento,phrase,B2,b2-11,formal writing
+de antemano,phrase,B2,b2-11,formal writing
+respuesta,noun-f,B2,b2-11,formal writing
+enviar,verb,B2,b2-11,formal writing
+oficio,noun-m,B2,b2-11,formal writing
+constancia,noun-f,B2,b2-11,formal writing
+carta de recomendación,noun-f,B2,b2-11,formal writing
+formal,adj,B2,b2-11,formal writing
+informal,adj,B2,b2-11,formal writing
+fecha límite,noun-f,B2,b2-11,formal writing
+petición,noun-f,B2,b2-11,formal writing
+notificar,verb,B2,b2-11,formal writing
+a la brevedad,phrase,B2,b2-11,formal writing
+sobre,noun-m,B2,b2-11,formal writing
+membrete,noun-m,B2,b2-11,formal writing
+atento,adj,B2,b2-11,formal writing
+cordialmente,adv,B2,b2-11,formal writing
+anexo,noun-m,B2,b2-11,formal writing
+expedir,verb,B2,b2-11,formal writing
+otorgar,verb,B2,b2-11,formal writing
+chido,adj,B2,b2-12,slang to use with friends
+neta,noun-f,B2,b2-12,slang to use with friends
+no manches,phrase,B2,b2-12,slang to use with friends
+varo,noun-m,B2,b2-12,slang to use with friends
+aguas,interj,B2,b2-12,slang to use with friends
+cuate,noun-m,B2,b2-12,slang to use with friends
+compa,noun-mf,B2,b2-12,slang to use with friends
+qué oso,phrase,B2,b2-12,slang to use with friends
+chela,noun-f,B2,b2-12,slang to use with friends
+cruda,noun-f,B2,b2-12,slang to use with friends
+crudo,adj,B2,b2-12,slang to use with friends
+qué onda,phrase,B2,b2-12,slang to use with friends
+chavo,noun-m,B2,b2-12,slang to use with friends
+chamaco,noun-m,B2,b2-12,slang to use with friends
+escuincle,noun-mf,B2,b2-12,slang to use with friends
+gacho,adj,B2,b2-12,slang to use with friends
+me late,phrase,B2,b2-12,slang to use with friends
+ni idea,phrase,B2,b2-12,slang to use with friends
+no hay bronca,phrase,B2,b2-12,slang to use with friends
+bronca,noun-f,B2,b2-12,slang to use with friends
+aventón,noun-m,B2,b2-12,slang to use with friends
+antro,noun-m,B2,b2-12,slang to use with friends
+pachanga,noun-f,B2,b2-12,slang to use with friends
+relajo,noun-m,B2,b2-12,slang to use with friends
+chismear,verb,B2,b2-12,slang to use with friends
+apapachar,verb,B2,b2-12,slang to use with friends
+apapacho,noun-m,B2,b2-12,slang to use with friends
+luego luego,phrase,B2,b2-12,slang to use with friends
+guácala,interj,B2,b2-12,slang to use with friends
+fuchi,interj,B2,b2-12,slang to use with friends
+chin,interj,B2,b2-12,slang to use with friends
+güey,noun-mf,B2,b2-12,slang to recognise
+fresa,adj,B2,b2-12,slang to recognise
+naco,adj,B2,b2-12,slang to recognise
+carnal,noun-m,B2,b2-12,slang to recognise
+o sea,phrase,B2,b2-12,fillers and markers
+pues,adv,B2,b2-12,fillers and markers
+este,interj,B2,b2-12,fillers and markers
+agüitado,adj,B2,b2-12,slang to use with friends
+padrísimo,adj,B2,b2-12,slang to use with friends
+cotorro,adj,B2,b2-12,slang to use with friends
+rifarse,verb,B2,b2-12,slang to use with friends
+chafa,adj,B2,b2-12,slang to use with friends
+aventar,verb,B2,b2-12,slang to use with friends
+noticiero,noun-m,B2,b2-13,media
+serie,noun-f,B2,b2-13,media
+telenovela,noun-f,B2,b2-13,media
+doblado,adj,B2,b2-13,media
+subtitulado,adj,B2,b2-13,media
+subtítulo,noun-m,B2,b2-13,media
+estreno,noun-m,B2,b2-13,media
+estrenar,verb,B2,b2-13,media
+trama,noun-f,B2,b2-13,media
+personaje,noun-m,B2,b2-13,media
+protagonista,noun-mf,B2,b2-13,media
+actor,noun-m,B2,b2-13,media
+actriz,noun-f,B2,b2-13,media
+director,noun-m,B2,b2-13,media
+guion,noun-m,B2,b2-13,media
+escena,noun-f,B2,b2-13,media
+capítulo,noun-m,B2,b2-13,media
+plataforma,noun-f,B2,b2-13,media
+reseña,noun-f,B2,b2-13,media
+basado,adj,B2,b2-13,media
+tratarse,verb,B2,b2-13,media
+titular,noun-m,B2,b2-13,media
+reportero,noun-m,B2,b2-13,media
+transmitir,verb,B2,b2-13,media
+en vivo,phrase,B2,b2-13,media
+canal,noun-m,B2,b2-13,media
+radio,noun-m,B2,b2-13,media
+comercial,noun-m,B2,b2-13,media
+redes sociales,noun-f,B2,b2-13,media
+publicar,verb,B2,b2-13,media
+fuente,noun-f,B2,b2-13,media
+falso,adj,B2,b2-13,media
+verdadero,adj,B2,b2-13,media
+simulacro,noun-m,B2,b2-13,news topics
+huracán,noun-m,B2,b2-13,news topics
+inundación,noun-f,B2,b2-13,news topics
+programa,noun-m,B2,b2-13,media
+publicidad,noun-f,B2,b2-13,media
+página web,noun-f,B2,b2-13,media
+red,noun-f,B2,b2-13,media
+tecnología,noun-f,B2,b2-13,media
+científico,noun-m,B2,b2-13,media
+periodismo,noun-m,B2,b2-13,media
+entrevistar,verb,B2,b2-13,media
+audiencia,noun-f,B2,b2-13,media
+documental,noun-m,B2,b2-13,media
+caricatura,noun-f,B2,b2-13,media
+comedia,noun-f,B2,b2-13,media
+drama,noun-m,B2,b2-13,media
+terror,noun-m,B2,b2-13,media
+suspenso,noun-m,B2,b2-13,media
+cartelera,noun-f,B2,b2-13,media
+palomitas,noun-f,B2,b2-13,media
+mandar hacer,phrase,C1,c1-01,trades and services
+mandar arreglar,phrase,C1,c1-01,trades and services
+cotización,noun-f,C1,c1-01,trades and services
+anticipo,noun-m,C1,c1-01,trades and services
+quedar en,phrase,C1,c1-01,trades and services
+cobrar de más,phrase,C1,c1-01,trades and services
+carpintero,noun-m,C1,c1-01,trades and services
+herrero,noun-m,C1,c1-01,trades and services
+tapicero,noun-m,C1,c1-01,trades and services
+costurera,noun-f,C1,c1-01,trades and services
+sastre,noun-m,C1,c1-01,trades and services
+pintor,noun-m,C1,c1-01,trades and services
+contratista,noun-mf,C1,c1-01,trades and services
+maestro de obras,noun-m,C1,c1-01,trades and services
+impermeabilizar,verb,C1,c1-01,trades and services
+impermeabilización,noun-f,C1,c1-01,trades and services
+herrería,noun-f,C1,c1-01,trades and services
+reparar,verb,C1,c1-01,trades and services
+hecho al aventón,phrase,C1,c1-01,trades and services
+encima,adv,C1,c1-01,trades and services
+cortina,noun-f,C1,c1-01,materials and repairs
+material,noun-m,C1,c1-01,materials and repairs
+madera,noun-f,C1,c1-01,materials and repairs
+metal,noun-m,C1,c1-01,materials and repairs
+vidrio,noun-m,C1,c1-01,materials and repairs
+pintura,noun-f,C1,c1-01,materials and repairs
+tubería,noun-f,C1,c1-01,materials and repairs
+cable,noun-m,C1,c1-01,materials and repairs
+tornillo,noun-m,C1,c1-01,materials and repairs
+clavo,noun-m,C1,c1-01,materials and repairs
+martillo,noun-m,C1,c1-01,materials and repairs
+desarmador,noun-m,C1,c1-01,materials and repairs
+taladro,noun-m,C1,c1-01,materials and repairs
+herramienta,noun-f,C1,c1-01,materials and repairs
+medir,verb,C1,c1-01,materials and repairs
+listo,adj,C1,c1-01,materials and repairs
+pulir,verb,C1,c1-01,materials and repairs
+barnizar,verb,C1,c1-01,materials and repairs
+lijar,verb,C1,c1-01,materials and repairs
+soldar,verb,C1,c1-01,materials and repairs
+remodelar,verb,C1,c1-01,materials and repairs
+remodelación,noun-f,C1,c1-01,materials and repairs
+obra negra,noun-f,C1,c1-01,materials and repairs
+mano de obra,noun-f,C1,c1-01,materials and repairs
+plomería,noun-f,C1,c1-01,materials and repairs
+electricidad,noun-f,C1,c1-01,materials and repairs
+punzante,adj,C1,c1-02,symptoms in detail
+sordo,adj,C1,c1-02,symptoms in detail
+agudo,adj,C1,c1-02,symptoms in detail
+constante,adj,C1,c1-02,symptoms in detail
+que va y viene,phrase,C1,c1-02,symptoms in detail
+agruras,noun-f,C1,c1-02,symptoms in detail
+inflamación,noun-f,C1,c1-02,symptoms in detail
+fractura,noun-f,C1,c1-02,symptoms in detail
+esguince,noun-m,C1,c1-02,symptoms in detail
+yeso,noun-m,C1,c1-02,symptoms in detail
+mareo,noun-m,C1,c1-02,symptoms in detail
+recaída,noun-f,C1,c1-02,symptoms in detail
+padecer,verb,C1,c1-02,symptoms in detail
+crónico,adj,C1,c1-02,symptoms in detail
+efecto secundario,noun-m,C1,c1-02,symptoms in detail
+dosis,noun-f,C1,c1-02,symptoms in detail
+pase,noun-m,C1,c1-02,medicine
+especialista,noun-mf,C1,c1-02,medicine
+en ayunas,phrase,C1,c1-02,medicine
+cirugía,noun-f,C1,c1-02,medicine
+internar,verb,C1,c1-02,medicine
+deducible,noun-m,C1,c1-02,medicine
+cubrir,verb,C1,c1-02,medicine
+cobertura,noun-f,C1,c1-02,medicine
+póliza,noun-f,C1,c1-02,medicine
+coaseguro,noun-m,C1,c1-02,medicine
+diagnóstico,noun-m,C1,c1-02,medicine
+diagnosticar,verb,C1,c1-02,medicine
+ultrasonido,noun-m,C1,c1-02,medicine
+radiografía,noun-f,C1,c1-02,medicine
+resonancia,noun-f,C1,c1-02,medicine
+cardiólogo,noun-m,C1,c1-02,medicine
+ginecólogo,noun-m,C1,c1-02,medicine
+pediatra,noun-mf,C1,c1-02,medicine
+dermatólogo,noun-m,C1,c1-02,medicine
+oftalmólogo,noun-m,C1,c1-02,medicine
+traumatólogo,noun-m,C1,c1-02,medicine
+fisioterapia,noun-f,C1,c1-02,medicine
+rehabilitación,noun-f,C1,c1-02,medicine
+surtir,verb,C1,c1-02,medicine
+genérico,adj,C1,c1-02,medicine
+alta,noun-f,C1,c1-02,medicine
+en caso de que,conj,C1,c1-02,medicine
+vómito,noun-m,C1,c1-02,medicine
+orina,noun-f,C1,c1-02,medicine
+muestra,noun-f,C1,c1-02,medicine
+resultado,noun-m,C1,c1-02,medicine
+seguimiento,noun-m,C1,c1-02,medicine
+quirófano,noun-m,C1,c1-02,medicine
+anestesia,noun-f,C1,c1-02,medicine
+cicatriz,noun-f,C1,c1-02,medicine
+terapia intensiva,noun-f,C1,c1-02,medicine
+SAT,noun-m,C1,c1-03,tax
+darse de alta,phrase,C1,c1-03,tax
+datos fiscales,noun-m,C1,c1-03,tax
+CFDI,noun-m,C1,c1-03,tax
+declaración,noun-f,C1,c1-03,tax
+declaración anual,noun-f,C1,c1-03,tax
+IVA,noun-m,C1,c1-03,tax
+ISR,noun-m,C1,c1-03,tax
+régimen fiscal,noun-m,C1,c1-03,tax
+deducir,verb,C1,c1-03,tax
+contribuyente,noun-mf,C1,c1-03,tax
+honorarios,noun-m,C1,c1-03,tax
+recibo de honorarios,noun-m,C1,c1-03,tax
+retención,noun-f,C1,c1-03,tax
+predial,noun-m,C1,c1-03,tax
+cláusula,noun-f,C1,c1-03,contracts and money
+renovación,noun-f,C1,c1-03,contracts and money
+renovar,verb,C1,c1-03,contracts and money
+recargo,noun-m,C1,c1-03,contracts and money
+anticipación,noun-f,C1,c1-03,contracts and money
+rescindir,verb,C1,c1-03,contracts and money
+vigencia,noun-f,C1,c1-03,contracts and money
+arrendamiento,noun-m,C1,c1-03,contracts and money
+arrendador,noun-m,C1,c1-03,contracts and money
+arrendatario,noun-m,C1,c1-03,contracts and money
+notario,noun-m,C1,c1-03,contracts and money
+notaría,noun-f,C1,c1-03,contracts and money
+escritura,noun-f,C1,c1-03,contracts and money
+hipoteca,noun-f,C1,c1-03,contracts and money
+inversión,noun-f,C1,c1-03,contracts and money
+invertir,verb,C1,c1-03,contracts and money
+rendimiento,noun-m,C1,c1-03,contracts and money
+Afore,noun-f,C1,c1-03,contracts and money
+pensión,noun-f,C1,c1-03,contracts and money
+ingreso,noun-m,C1,c1-03,contracts and money
+incumplir,verb,C1,c1-03,contracts and money
+obligación,noun-f,C1,c1-03,contracts and money
+legal,adj,C1,c1-03,contracts and money
+ilegal,adj,C1,c1-03,contracts and money
+siempre y cuando,conj,C1,c1-03,contracts and money
+a menos que,conj,C1,c1-03,contracts and money
+con tal de que,conj,C1,c1-03,contracts and money
+contabilidad,noun-f,C1,c1-03,contracts and money
+nómina,noun-f,C1,c1-03,contracts and money
+finiquito,noun-m,C1,c1-03,contracts and money
+liquidación,noun-f,C1,c1-03,contracts and money
+prima vacacional,noun-f,C1,c1-03,contracts and money
+cobranza,noun-f,C1,c1-03,contracts and money
+moroso,adj,C1,c1-03,contracts and money
+embargo,noun-m,C1,c1-03,contracts and money
+vencerse,verb,C1,c1-04,immigration
+vencido,adj,C1,c1-04,immigration
+residente temporal,noun-mf,C1,c1-04,immigration
+residente permanente,noun-mf,C1,c1-04,immigration
+cambio de condición,noun-m,C1,c1-04,immigration
+pago de derechos,noun-m,C1,c1-04,immigration
+resolución,noun-f,C1,c1-04,immigration
+gestor,noun-m,C1,c1-04,immigration
+gestoría,noun-f,C1,c1-04,immigration
+apostilla,noun-f,C1,c1-04,immigration
+apostillar,verb,C1,c1-04,immigration
+traducir,verb,C1,c1-04,immigration
+traducción,noun-f,C1,c1-04,immigration
+expediente,noun-m,C1,c1-04,immigration
+notificación,noun-f,C1,c1-04,immigration
+solvencia económica,noun-f,C1,c1-04,immigration
+antecedentes,noun-m,C1,c1-04,immigration
+consulado,noun-m,C1,c1-04,immigration
+embajada,noun-f,C1,c1-04,immigration
+frontera,noun-f,C1,c1-04,immigration
+aduana,noun-f,C1,c1-04,immigration
+migrante,noun-mf,C1,c1-04,immigration
+migratorio,adj,C1,c1-04,immigration
+naturalizarse,verb,C1,c1-04,immigration
+ciudadanía,noun-f,C1,c1-04,immigration
+tengo entendido,phrase,C1,c1-04,bureaucratic register
+que yo sepa,phrase,C1,c1-04,bureaucratic register
+sellar,verb,C1,c1-04,bureaucratic register
+burocracia,noun-f,C1,c1-04,bureaucratic register
+burocrático,adj,C1,c1-04,bureaucratic register
+papeleo,noun-m,C1,c1-04,bureaucratic register
+agilizar,verb,C1,c1-04,bureaucratic register
+demora,noun-f,C1,c1-04,bureaucratic register
+aprobar,verb,C1,c1-04,bureaucratic register
+autorizar,verb,C1,c1-04,bureaucratic register
+autorización,noun-f,C1,c1-04,bureaucratic register
+ley,noun-f,C1,c1-04,bureaucratic register
+artículo,noun-m,C1,c1-04,bureaucratic register
+oficial,adj,C1,c1-04,bureaucratic register
+jurídico,adj,C1,c1-04,bureaucratic register
+prórroga,noun-f,C1,c1-04,bureaucratic register
+requerimiento,noun-m,C1,c1-04,bureaucratic register
+tramitar,verb,C1,c1-04,bureaucratic register
+encarecer,verb,C1,c1-05,public affairs
+falta,noun-f,C1,c1-05,public affairs
+argumento,noun-m,C1,c1-05,public affairs
+argumentar,verb,C1,c1-05,public affairs
+convencer,verb,C1,c1-05,public affairs
+convencido,adj,C1,c1-05,public affairs
+postura,noun-f,C1,c1-05,public affairs
+posición,noun-f,C1,c1-05,public affairs
+matiz,noun-m,C1,c1-05,public affairs
+matizar,verb,C1,c1-05,public affairs
+plantear,verb,C1,c1-05,public affairs
+planteamiento,noun-m,C1,c1-05,public affairs
+sostener,verb,C1,c1-05,public affairs
+cuestionar,verb,C1,c1-05,public affairs
+rebatir,verb,C1,c1-05,public affairs
+contradecir,verb,C1,c1-05,public affairs
+contradicción,noun-f,C1,c1-05,public affairs
+coherente,adj,C1,c1-05,public affairs
+polémico,adj,C1,c1-05,public affairs
+polémica,noun-f,C1,c1-05,public affairs
+debate,noun-m,C1,c1-05,public affairs
+debatir,verb,C1,c1-05,public affairs
+consenso,noun-m,C1,c1-05,public affairs
+discrepar,verb,C1,c1-05,public affairs
+desacuerdo,noun-m,C1,c1-05,public affairs
+discurso,noun-m,C1,c1-05,public affairs
+política,noun-f,C1,c1-05,public affairs
+político,noun-m,C1,c1-05,public affairs
+elección,noun-f,C1,c1-05,public affairs
+democracia,noun-f,C1,c1-05,public affairs
+corrupción,noun-f,C1,c1-05,public affairs
+transparencia,noun-f,C1,c1-05,public affairs
+desigualdad,noun-f,C1,c1-05,public affairs
+pobreza,noun-f,C1,c1-05,public affairs
+privilegio,noun-m,C1,c1-05,public affairs
+recurso,noun-m,C1,c1-05,public affairs
+sustentable,adj,C1,c1-05,public affairs
+medio ambiente,noun-m,C1,c1-05,public affairs
+ecológico,adj,C1,c1-05,public affairs
+si bien,conj,C1,c1-05,argument connectors
+por más que,conj,C1,c1-05,argument connectors
+habría que,phrase,C1,c1-05,argument connectors
+con todo respeto,phrase,C1,c1-05,argument connectors
+ciertamente,adv,C1,c1-05,argument connectors
+evidentemente,adv,C1,c1-05,argument connectors
+en definitiva,phrase,C1,c1-05,argument connectors
+en resumen,phrase,C1,c1-05,argument connectors
+a fin de cuentas,phrase,C1,c1-05,argument connectors
+de ahí que,conj,C1,c1-05,argument connectors
+no obstante,adv,C1,c1-05,argument connectors
+planeta,noun-m,C1,c1-05,public affairs
+partido político,noun-m,C1,c1-05,public affairs
+opinión pública,noun-f,C1,c1-05,public affairs
+mediático,adj,C1,c1-05,public affairs
+reforma,noun-f,C1,c1-05,public affairs
+iniciativa,noun-f,C1,c1-05,public affairs
+inflación,noun-f,C1,c1-05,public affairs
+economía,noun-f,C1,c1-05,public affairs
+crecimiento,noun-m,C1,c1-05,public affairs
+salario mínimo,noun-m,C1,c1-05,public affairs
+qué esperanza,phrase,C1,c1-06,humour
+es broma,phrase,C1,c1-06,humour
+no te creas,phrase,C1,c1-06,humour
+creérsela,phrase,C1,c1-06,humour
+echarle crema a los tacos,phrase,C1,c1-06,humour
+al que le quede el saco que se lo ponga,phrase,C1,c1-06,humour
+te lo digo Juan para que lo entiendas Pedro,phrase,C1,c1-06,humour
+ironía,noun-f,C1,c1-06,humour
+irónico,adj,C1,c1-06,humour
+sarcasmo,noun-m,C1,c1-06,humour
+sarcástico,adj,C1,c1-06,humour
+albur,noun-m,C1,c1-06,humour
+doble sentido,noun-m,C1,c1-06,humour
+calaverita,noun-f,C1,c1-06,humour
+verso,noun-m,C1,c1-06,humour
+rima,noun-f,C1,c1-06,humour
+rimar,verb,C1,c1-06,humour
+gracioso,adj,C1,c1-06,humour
+humor,noun-m,C1,c1-06,humour
+sentido del humor,noun-m,C1,c1-06,humour
+payaso,noun-m,C1,c1-06,humour
+carrilla,noun-f,C1,c1-06,teasing and banter
+echar carrilla,phrase,C1,c1-06,teasing and banter
+bromear,verb,C1,c1-06,teasing and banter
+vacilar,verb,C1,c1-06,teasing and banter
+cotorrear,verb,C1,c1-06,teasing and banter
+cotorreo,noun-m,C1,c1-06,teasing and banter
+picardía,noun-f,C1,c1-06,teasing and banter
+pícaro,adj,C1,c1-06,teasing and banter
+ingenio,noun-m,C1,c1-06,teasing and banter
+ingenioso,adj,C1,c1-06,teasing and banter
+meme,noun-m,C1,c1-06,teasing and banter
+apodo,noun-m,C1,c1-06,teasing and banter
+exagerar,verb,C1,c1-06,teasing and banter
+exagerado,adj,C1,c1-06,teasing and banter
+presumir,verb,C1,c1-06,teasing and banter
+presumido,adj,C1,c1-06,teasing and banter
+carcajada,noun-f,C1,c1-06,humour
+bromista,noun-mf,C1,c1-06,humour
+pesado,adj,C1,c1-06,humour
+pues nada,phrase,C1,c1-07,storytelling markers
+y yo así de,phrase,C1,c1-07,storytelling markers
+cómo que,phrase,C1,c1-07,storytelling markers
+ni te cuento,phrase,C1,c1-07,storytelling markers
+y yo qué sabía,phrase,C1,c1-07,storytelling markers
+y así,phrase,C1,c1-07,storytelling markers
+de plano,phrase,C1,c1-07,storytelling markers
+nada que ver,phrase,C1,c1-07,storytelling markers
+para colmo,phrase,C1,c1-07,storytelling markers
+menos mal,phrase,C1,c1-07,storytelling markers
+de milagro,phrase,C1,c1-07,storytelling markers
+por poco,phrase,C1,c1-07,storytelling markers
+tal cual,phrase,C1,c1-07,storytelling markers
+literal,adv,C1,c1-07,storytelling markers
+según él,phrase,C1,c1-07,storytelling markers
+el chiste es que,phrase,C1,c1-07,storytelling markers
+la cosa es que,phrase,C1,c1-07,storytelling markers
+narrar,verb,C1,c1-07,telling it well
+relato,noun-m,C1,c1-07,telling it well
+desenlace,noun-m,C1,c1-07,telling it well
+giro,noun-m,C1,c1-07,telling it well
+sorprenderse,verb,C1,c1-07,telling it well
+sorpresa,noun-f,C1,c1-07,telling it well
+quedarse helado,phrase,C1,c1-07,telling it well
+quedarse con la boca abierta,phrase,C1,c1-07,telling it well
+morirse de risa,phrase,C1,c1-07,telling it well
+de buenas a primeras,phrase,C1,c1-07,storytelling markers
+ni más ni menos,phrase,C1,c1-07,storytelling markers
+a todo esto,phrase,C1,c1-07,storytelling markers
+por cierto,phrase,C1,c1-07,storytelling markers
+dicho y hecho,phrase,C1,c1-07,storytelling markers
+Porfiriato,noun-m,C1,c1-08,history
+revolucionario,adj,C1,c1-08,history
+movimiento estudiantil,noun-m,C1,c1-08,history
+movimiento,noun-m,C1,c1-08,history
+masacre,noun-f,C1,c1-08,history
+memoria,noun-f,C1,c1-08,history
+sobreviviente,noun-mf,C1,c1-08,history
+terremoto,noun-m,C1,c1-08,history
+damnificado,noun-m,C1,c1-08,history
+rescate,noun-m,C1,c1-08,history
+rescatista,noun-mf,C1,c1-08,history
+solidaridad,noun-f,C1,c1-08,history
+brigada,noun-f,C1,c1-08,history
+reconstrucción,noun-f,C1,c1-08,history
+constitución,noun-f,C1,c1-08,history
+régimen,noun-m,C1,c1-08,history
+dictadura,noun-f,C1,c1-08,history
+represión,noun-f,C1,c1-08,history
+protesta,noun-f,C1,c1-08,history
+manifestación,noun-f,C1,c1-08,history
+marcha,noun-f,C1,c1-08,history
+colonización,noun-f,C1,c1-08,history
+náhuatl,noun-m,C1,c1-08,identity
+mestizaje,noun-m,C1,c1-08,identity
+mestizo,adj,C1,c1-08,identity
+el otro lado,phrase,C1,c1-08,identity
+remesa,noun-f,C1,c1-08,identity
+orgullo,noun-m,C1,c1-08,identity
+orgulloso,adj,C1,c1-08,identity
+patrimonio,noun-m,C1,c1-08,identity
+herencia,noun-f,C1,c1-08,identity
+mezcla,noun-f,C1,c1-08,identity
+cuyo,pron,C1,c1-08,identity
+el cual,pron,C1,c1-08,identity
+quienes,pron,C1,c1-08,identity
+hasta donde sé,phrase,C1,c1-08,identity
+campesino,noun-m,C1,c1-08,history
+ejido,noun-m,C1,c1-08,history
+hacienda,noun-f,C1,c1-08,history
+caudillo,noun-m,C1,c1-08,history
+pueblo originario,noun-m,C1,c1-08,history
+deportación,noun-f,C1,c1-08,history
+exilio,noun-m,C1,c1-08,history
+refugiado,noun-m,C1,c1-08,history
+asilo,noun-m,C1,c1-08,history
+pronunciar,verb,C1,c1-09,regions and accents
+pronunciación,noun-f,C1,c1-09,regions and accents
+región,noun-f,C1,c1-09,regions and accents
+regional,adj,C1,c1-09,regions and accents
+norteño,adj,C1,c1-09,regions and accents
+costeño,adj,C1,c1-09,regions and accents
+yucateco,adj,C1,c1-09,regions and accents
+chilango,adj,C1,c1-09,regions and accents
+tapatío,adj,C1,c1-09,regions and accents
+regiomontano,adj,C1,c1-09,regions and accents
+oaxaqueño,adj,C1,c1-09,regions and accents
+poblano,adj,C1,c1-09,regions and accents
+golpeado,adj,C1,c1-09,regions and accents
+cantadito,adj,C1,c1-09,regions and accents
+dialecto,noun-m,C1,c1-09,regions and accents
+variante,noun-f,C1,c1-09,regions and accents
+hablante,noun-mf,C1,c1-09,regions and accents
+bilingüe,adj,C1,c1-09,regions and accents
+vos,pron,C1,c1-09,regions and accents
+vosotros,pron,C1,c1-09,regions and accents
+lengua,noun-f,C1,c1-09,indigenous languages
+lengua indígena,noun-f,C1,c1-09,indigenous languages
+zapoteco,noun-m,C1,c1-09,indigenous languages
+mixteco,noun-m,C1,c1-09,indigenous languages
+otomí,noun-m,C1,c1-09,indigenous languages
+tzotzil,noun-m,C1,c1-09,indigenous languages
+purépecha,noun-m,C1,c1-09,indigenous languages
+papalote,noun-m,C1,c1-09,Nahuatl loanwords
+guajolote,noun-m,C1,c1-09,Nahuatl loanwords
+popote,noun-m,C1,c1-09,Nahuatl loanwords
+mecate,noun-m,C1,c1-09,Nahuatl loanwords
+tlapalería,noun-f,C1,c1-09,Nahuatl loanwords
+jícara,noun-f,C1,c1-09,Nahuatl loanwords
+molcajete,noun-m,C1,c1-09,Nahuatl loanwords
+metate,noun-m,C1,c1-09,Nahuatl loanwords
+comal,noun-m,C1,c1-09,Nahuatl loanwords
+huipil,noun-m,C1,c1-09,Nahuatl loanwords
+rebozo,noun-m,C1,c1-09,Nahuatl loanwords
+petate,noun-m,C1,c1-09,Nahuatl loanwords
+mexicanismo,noun-m,C1,c1-09,regions and accents
+anglicismo,noun-m,C1,c1-09,regions and accents
+jerga,noun-f,C1,c1-09,regions and accents
+caló,noun-m,C1,c1-09,regions and accents
+tlacuache,noun-m,C1,c1-09,Nahuatl loanwords
+ajolote,noun-m,C1,c1-09,Nahuatl loanwords
+zacate,noun-m,C1,c1-09,Nahuatl loanwords
+decir unas palabras,phrase,C1,c1-10,formal occasions
+brindar,verb,C1,c1-10,formal occasions
+brindis,noun-m,C1,c1-10,formal occasions
+honor,noun-m,C1,c1-10,formal occasions
+acompañar,verb,C1,c1-10,formal occasions
+lo acompaño en su dolor,phrase,C1,c1-10,formal occasions
+que en paz descanse,phrase,C1,c1-10,formal occasions
+de todo corazón,phrase,C1,c1-10,formal occasions
+novenario,noun-m,C1,c1-10,formal occasions
+rosario,noun-m,C1,c1-10,formal occasions
+difunto,noun-m,C1,c1-10,formal occasions
+fallecer,verb,C1,c1-10,formal occasions
+fallecimiento,noun-m,C1,c1-10,formal occasions
+sepelio,noun-m,C1,c1-10,formal occasions
+cementerio,noun-m,C1,c1-10,formal occasions
+entierro,noun-m,C1,c1-10,formal occasions
+cremación,noun-f,C1,c1-10,formal occasions
+condolencia,noun-f,C1,c1-10,formal occasions
+luto,noun-m,C1,c1-10,formal occasions
+chambelán,noun-m,C1,c1-10,formal occasions
+vals,noun-m,C1,c1-10,formal occasions
+banquete,noun-m,C1,c1-10,formal occasions
+etiqueta,noun-f,C1,c1-10,formal occasions
+aplaudir,verb,C1,c1-10,formal occasions
+aplauso,noun-m,C1,c1-10,formal occasions
+homenaje,noun-m,C1,c1-10,formal occasions
+festejado,noun-m,C1,c1-10,formal occasions
+solemne,adj,C1,c1-10,formal occasions
+emotivo,adj,C1,c1-10,formal occasions
+conmovedor,adj,C1,c1-10,formal occasions
+conmover,verb,C1,c1-10,formal occasions
+emocionar,verb,C1,c1-10,formal occasions
+recuerdo,noun-m,C1,c1-10,formal occasions
+generación,noun-f,C1,c1-10,formal occasions
+graduación,noun-f,C1,c1-10,formal occasions
+lazo,noun-m,C1,c1-10,formal occasions
+arras,noun-f,C1,c1-10,formal occasions
+argolla,noun-f,C1,c1-10,formal occasions
+anillo de compromiso,noun-m,C1,c1-10,formal occasions
+despedida de soltero,noun-f,C1,c1-10,formal occasions
+luna de miel,noun-f,C1,c1-10,formal occasions
+recepción,noun-f,C1,c1-10,formal occasions
+salón de fiestas,noun-m,C1,c1-10,formal occasions
+echarle ganas,phrase,C1,c1-11,idioms
+regarla,phrase,C1,c1-11,idioms
+hacerse bolas,phrase,C1,c1-11,idioms
+ponerse las pilas,phrase,C1,c1-11,idioms
+arreglárselas,phrase,C1,c1-11,idioms
+tirar la toalla,phrase,C1,c1-11,idioms
+meter la pata,phrase,C1,c1-11,idioms
+estar en las nubes,phrase,C1,c1-11,idioms
+dar lata,phrase,C1,c1-11,idioms
+lata,noun-f,C1,c1-11,idioms
+echar a perder,phrase,C1,c1-11,idioms
+hacerse el tonto,phrase,C1,c1-11,idioms
+costar un ojo de la cara,phrase,C1,c1-11,idioms
+darle vueltas,phrase,C1,c1-11,idioms
+salirse con la suya,phrase,C1,c1-11,idioms
+estar hasta el gorro,phrase,C1,c1-11,idioms
+dicho,noun-m,C1,c1-11,idioms
+refrán,noun-m,C1,c1-11,idioms
+no hay mal que por bien no venga,phrase,C1,c1-11,proverbs
+camarón que se duerme se lo lleva la corriente,phrase,C1,c1-11,proverbs
+más vale tarde que nunca,phrase,C1,c1-11,proverbs
+al mal tiempo buena cara,phrase,C1,c1-11,proverbs
+del plato a la boca se cae la sopa,phrase,C1,c1-11,proverbs
+al buen entendedor pocas palabras,phrase,C1,c1-11,proverbs
+chiquito pero picoso,phrase,C1,c1-11,proverbs
+el que madruga Dios lo ayuda,phrase,C1,c1-11,proverbs
+ojos que no ven corazón que no siente,phrase,C1,c1-11,proverbs
+dime con quién andas y te diré quién eres,phrase,C1,c1-11,proverbs
+a lo hecho pecho,phrase,C1,c1-11,proverbs
+de tal palo tal astilla,phrase,C1,c1-11,proverbs
+darle el avión a alguien,phrase,C1,c1-11,idioms
+ahogarse en un vaso de agua,phrase,C1,c1-11,idioms
+estar de malas,phrase,C1,c1-11,idioms
+estar de buenas,phrase,C1,c1-11,idioms
+no tener pelos en la lengua,phrase,C1,c1-11,idioms
+dar el gatazo,phrase,C1,c1-11,idioms
+echar la culpa,phrase,C1,c1-11,idioms
+ponerse de acuerdo,phrase,C1,c1-11,idioms
+sacar de onda,phrase,C1,c1-11,idioms
+estar de pelos,phrase,C1,c1-11,idioms
+hacer el oso,phrase,C1,c1-11,idioms
+muralismo,noun-m,C1,c1-12,the arts
+mural,noun-m,C1,c1-12,the arts
+literatura,noun-f,C1,c1-12,the arts
+novela,noun-f,C1,c1-12,the arts
+cuento,noun-m,C1,c1-12,the arts
+poema,noun-m,C1,c1-12,the arts
+poesía,noun-f,C1,c1-12,the arts
+poeta,noun-mf,C1,c1-12,the arts
+escritor,noun-m,C1,c1-12,the arts
+autor,noun-m,C1,c1-12,the arts
+obra maestra,noun-f,C1,c1-12,the arts
+época de oro,noun-f,C1,c1-12,the arts
+son,noun-m,C1,c1-12,the arts
+son jarocho,noun-m,C1,c1-12,the arts
+ranchera,noun-f,C1,c1-12,the arts
+corrido,noun-m,C1,c1-12,the arts
+danzón,noun-m,C1,c1-12,the arts
+bolero,noun-m,C1,c1-12,the arts
+cumbia,noun-f,C1,c1-12,the arts
+galería,noun-f,C1,c1-12,the arts
+artista,noun-mf,C1,c1-12,the arts
+cuadro,noun-m,C1,c1-12,the arts
+retrato,noun-m,C1,c1-12,the arts
+autorretrato,noun-m,C1,c1-12,the arts
+escultura,noun-f,C1,c1-12,the arts
+arquitectura,noun-f,C1,c1-12,the arts
+estilo,noun-m,C1,c1-12,the arts
+ritmo,noun-m,C1,c1-12,the arts
+narrador,noun-m,C1,c1-12,critique
+lector,noun-m,C1,c1-12,critique
+crítico,noun-m,C1,c1-12,critique
+metáfora,noun-f,C1,c1-12,critique
+símbolo,noun-m,C1,c1-12,critique
+surrealismo,noun-m,C1,c1-12,critique
+realismo mágico,noun-m,C1,c1-12,critique
+fascinar,verb,C1,c1-12,critique
+llamar la atención,phrase,C1,c1-12,critique
+influencia,noun-f,C1,c1-12,critique
+inspirarse,verb,C1,c1-12,critique
+inspiración,noun-f,C1,c1-12,critique
+música clásica,noun-f,C1,c1-12,the arts
+orquesta,noun-f,C1,c1-12,the arts
+compositor,noun-m,C1,c1-12,the arts
+cantautor,noun-m,C1,c1-12,the arts
+melodía,noun-f,C1,c1-12,the arts
+cineasta,noun-mf,C1,c1-12,the arts
+largometraje,noun-m,C1,c1-12,the arts
+cortometraje,noun-m,C1,c1-12,the arts
+guionista,noun-mf,C1,c1-12,the arts
+reparto,noun-m,C1,c1-12,the arts
+premio,noun-m,C1,c1-12,the arts
+nominado,adj,C1,c1-12,the arts
+galardonado,adj,C1,c1-12,the arts
+malentendido,noun-m,C1,c1-13,mediation
+malinterpretar,verb,C1,c1-13,mediation
+referirse,verb,C1,c1-13,mediation
+es decir,phrase,C1,c1-13,mediation
+en otras palabras,phrase,C1,c1-13,mediation
+lo que quiso decir,phrase,C1,c1-13,mediation
+tomar a mal,phrase,C1,c1-13,mediation
+considerarse,verb,C1,c1-13,mediation
+mediar,verb,C1,c1-13,mediation
+mediador,noun-m,C1,c1-13,mediation
+conflicto,noun-m,C1,c1-13,mediation
+resolver,verb,C1,c1-13,mediation
+disculparse,verb,C1,c1-13,mediation
+pedir perdón,phrase,C1,c1-13,mediation
+ponerse en los zapatos de alguien,phrase,C1,c1-13,mediation
+ceder,verb,C1,c1-13,mediation
+negociar,verb,C1,c1-13,mediation
+reconciliarse,verb,C1,c1-13,mediation
+convivir,verb,C1,c1-13,community life
+convivencia,noun-f,C1,c1-13,community life
+tolerancia,noun-f,C1,c1-13,community life
+diversidad,noun-f,C1,c1-13,community life
+prejuicio,noun-m,C1,c1-13,community life
+estereotipo,noun-m,C1,c1-13,community life
+choque cultural,noun-m,C1,c1-13,community life
+comunidad,noun-f,C1,c1-13,community life
+participar,verb,C1,c1-13,community life
+participación,noun-f,C1,c1-13,community life
+voluntario,noun-m,C1,c1-13,community life
+colaborar,verb,C1,c1-13,community life
+asociación,noun-f,C1,c1-13,community life
+organización,noun-f,C1,c1-13,community life
+comité,noun-m,C1,c1-13,community life
+vecinal,adj,C1,c1-13,community life
+solidario,adj,C1,c1-13,community life
+apoyo,noun-m,C1,c1-13,community life
+apoyar,verb,C1,c1-13,community life
+sensibilidad,noun-f,C1,c1-13,community life
+empatía,noun-f,C1,c1-13,community life
+tolerante,adj,C1,c1-13,community life
+integración,noun-f,C1,c1-13,community life
+inclusión,noun-f,C1,c1-13,community life
+discriminación,noun-f,C1,c1-13,community life
+racismo,noun-m,C1,c1-13,community life
+clasismo,noun-m,C1,c1-13,community life
+barrera,noun-f,C1,c1-13,community life
+mediación,noun-f,C1,c1-13,community life
+diálogo,noun-m,C1,c1-13,community life
+intercambio,noun-m,C1,c1-13,community life
