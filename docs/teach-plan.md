@@ -22,20 +22,29 @@ live in {country} learns {language} by talking with people at real places (bars,
 markets, shops, stations, a landlady, neighbours). Characters speak only {language},
 help in English when asked, and recast mistakes in role.
 
-SOURCES (read all of them; they are yours to use fully)
-- The course books in {books_dir}: {book_list}. Their unit order, dialogues,
-  exercises, word lists and grammar notes are your main evidence for what to teach
-  when, and how.
-- docs/research/{syllabus_dir}/: unit summaries, the function map (22 functions
-  with CEFR levels), level-words-{country}.csv (the word list by level), grammar
-  terms with the trap for English speakers, prepositions, chips-vs-syllabus.
-- {country_notes}: e.g. for Mexico communicating-in-mexico.md, mexican-words.csv,
-  the PCIC inventories; use Mexican forms, flag anything Spain-only.
-- docs/learn.md (the 12 teaching principles), docs/flashcards.md, docs/teach-plan.md, and the game's places:
-  content/{country}/cities/*.ts (kinds of place and roles of the people there).
+SOURCES
+Read every book in {books_dir} in full, cover to cover: every unit, dialogue,
+exercise, grammar note, word list, answer key and transcript. The books are your
+evidence; our summaries are not a substitute. Italy: Nuovissimo Progetto italiano
+1a, 1B, 2 (and workbook), 3 (key and audio transcripts); Italian Grammar You
+Really Need to Know (Proudfoot); English Grammar for Students of Italian; Beginner's
+Guide to Italian; Le preposizioni italiane; Must-Know Italian Slang. Mexico: ELE
+Actual A1, Español en Marcha, the PCIC (Plan curricular del Instituto Cervantes),
+Seven Keys, Word Power. Work through one book at a time, writing working notes to
+{books_dir}/syllabus-working/ so the run can resume.
+
+Then, as cross-checks only:
+- docs/research/{syllabus_dir}/: our earlier unit summaries, the function map,
+  level-words-{country}.csv, grammar traps, prepositions, chips-vs-syllabus.
+  Where they disagree with a book, the book wins; say so.
+- {country_notes}: e.g. for Mexico communicating-in-mexico.md, mexican-words.csv;
+  use Mexican forms, flag anything Spain-only.
+- docs/learn.md (the 12 teaching principles), docs/flashcards.md, docs/teach-plan.md,
+  and the game's places: content/{country}/cities/*.ts (kinds of place and roles
+  of the people there).
 
 METHOD
-1. Read each book in order and make a table of its units: can-do, situations,
+1. Read each book in full, in order, and make a table of its units: can-do, situations,
    functions, frames, grammar, vocabulary themes, culture, recurring characters.
 2. Line the books up against each other and against the function map and the
    official inventory: where they agree on order, where they differ, what each
