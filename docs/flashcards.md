@@ -12,6 +12,10 @@
 
 Each card says what kind of image it gets: **object** (one simple thing on plain paper, centred with space around it, which reads fine in a wide card: *albicocca*, *zapato*), **scene** (a wide scene: *sera*, *puesto*) or **none** (no picture really works: *parola*, *cosa*, *ragione*, *verdad*). A card with no picture still goes through all four stages, with the English where the picture would be: a is the word, tap for the English; b the word and the mic; c the English, tap for the word; d the English and the mic. Italy: 10 object, 3 scene, 7 none; Mexico: 6, 5, 9.
 
+## Article + noun (Josh, 2026-10-21)
+
+Every noun is shown, spoken and asked for with its article: *il banco*, *l'albicocca*, *el agua*, *la tarde*. The article carries the gender, so it's learned with the word from the start, and two words give Whisper more to hear than one. Saying the noun without its article still counts at stage b; at d the article is part of the answer. Lists keep `article` and `word` separate so the app can join them (*l'* with no space). Exceptions: *mijo* is a term of address, shown bare; *el/la joven* is shown as *la joven* to match its picture.
+
 ## Four stages, easiest first (Josh; order agreed 2026-10-21)
 
 | Stage | The card shows | You | Can it be wrong? |
