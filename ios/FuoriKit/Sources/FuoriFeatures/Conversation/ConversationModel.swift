@@ -44,7 +44,11 @@ public final class ConversationModel {
         case failed(String)
     }
 
-    public private(set) var phase: Phase = .starting
+    public private(set) var phase: Phase = .starting {
+        didSet { if phase != oldValue { phaseLog.note(phase) } }
+    }
+    /// The last few phases with their times, for error reports
+    @ObservationIgnored private var phaseLog = PhaseLog()
     /// The character's current line and its English
     public private(set) var line: String?
     public private(set) var english: String?
@@ -351,11 +355,23 @@ public final class ConversationModel {
         listenTask = nil
         let generation = self.generation
         await Task.yield() // lets the pill redraw before the mic stops
-        let url = recorder.stop()
+        let wasRecording = recorder.isRecording
+        let lastStop = recorder.lastStop
+        let url = recorder.stop("finish")
         // Left in that moment: leave() already closed the mic
         guard generation == self.generation else { return }
         let snapshot = gate.snapshot()
-        guard recorder.writeFailures == 0, let url else {
+        // The pill said listening but the mic wasn't on: something stopped it
+        // first, or it never opened. Nothing was recorded, so the learner
+        // says it again; the report says what stopped it (the "0 buffers
+        // failed to write" errors on Josh's phone, 2026-10-21, cause unknown)
+        guard wasRecording, let url else {
+            let code = report(MicNotRecording(lastStop: lastStop, phases: phaseLog.text), step: "record")
+            note = ErrorCode.message("The mic wasn't on. Say it again.", code: code)
+            await openTurn()
+            return
+        }
+        guard recorder.writeFailures == 0 else {
             let code = report(RecordingFailed(writeFailures: recorder.writeFailures), step: "record")
             note = ErrorCode.message("The recording didn't save. Try again.", code: code)
             await openTurn()
@@ -590,7 +606,7 @@ public final class ConversationModel {
         generation += 1
         listenTask?.cancel()
         listenTask = nil
-        recorder.stop()
+        recorder.stop("pause")
         voice.stop()
         finishReveal()
         ring = 0
@@ -620,7 +636,7 @@ public final class ConversationModel {
         generation += 1
         listenTask?.cancel()
         repliesTask?.cancel()
-        recorder.stop()
+        recorder.stop("leave")
         voice.stop()
         for o in observers { NotificationCenter.default.removeObserver(o) }
         observers = []
@@ -636,7 +652,7 @@ public final class ConversationModel {
 
     private func fail(_ error: Error, step: String) {
         listenTask?.cancel()
-        recorder.stop()
+        recorder.stop("fail \(step)")
         let code = report(error, step: step)
         let message = (error as? APIError)?.message ?? error.localizedDescription
         phase = .failed(ErrorCode.message(message, code: code))
@@ -736,6 +752,38 @@ private enum AudioClock {
 struct RecordingFailed: Error, CustomStringConvertible {
     let writeFailures: Int
     var description: String { "Recording: \(writeFailures) buffers failed to write" }
+}
+
+/// A turn ended with the mic off. `lastStop` is what stopped the recorder
+/// last and when; `phases` the last few phases, seconds before now.
+struct MicNotRecording: Error, CustomStringConvertible {
+    let lastStop: (reason: String, at: TimeInterval)?
+    let phases: String
+    var description: String {
+        let stopped = lastStop.map { "\($0.reason), \(String(format: "%.1f", ProcessInfo.processInfo.systemUptime - $0.at)) s ago" } ?? "never started"
+        return "Recording: the mic wasn't on at send (last stop: \(stopped); phases: \(phases))"
+    }
+}
+
+/// The last few phases of a conversation with their times
+struct PhaseLog {
+    private var entries: [(phase: String, at: TimeInterval)] = []
+
+    mutating func note(_ phase: ConversationModel.Phase) {
+        let name: String
+        switch phase {
+        case .failed: name = "failed"
+        default: name = String(describing: phase)
+        }
+        entries.append((name, ProcessInfo.processInfo.systemUptime))
+        if entries.count > 10 { entries.removeFirst() }
+    }
+
+    /// Oldest first: "listening -12.3s, thinking -0.1s"
+    var text: String {
+        let now = ProcessInfo.processInfo.systemUptime
+        return entries.map { "\($0.phase) -\(String(format: "%.1f", now - $0.at))s" }.joined(separator: ", ")
+    }
 }
 
 /// The Learn sheet was opened before the server had saved the conversation

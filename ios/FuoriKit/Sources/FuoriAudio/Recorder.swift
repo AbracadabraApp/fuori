@@ -10,6 +10,12 @@ public final class Recorder: @unchecked Sendable {
     /// Buffers that couldn't be written to the file in this turn; the
     /// conversation reports a non-zero count instead of sending a broken file
     public private(set) var writeFailures = 0
+    /// True between a successful `start` and the next `stop`
+    public private(set) var isRecording = false
+    /// What stopped the last recording, and when (system uptime): for the
+    /// error report when a turn ends with no file (2026-10-22, the
+    /// "0 buffers failed to write" errors on Josh's phone)
+    public private(set) var lastStop: (reason: String, at: TimeInterval)?
 
     public init() {}
 
@@ -48,11 +54,15 @@ public final class Recorder: @unchecked Sendable {
         }
         engine.prepare()
         try engine.start()
+        isRecording = true
     }
 
-    /// Stops recording and returns the file (nil if nothing was recording)
+    /// Stops recording and returns the file (nil if nothing was recording).
+    /// `reason` says who stopped it, kept in `lastStop` for error reports.
     @discardableResult
-    public func stop() -> URL? {
+    public func stop(_ reason: String) -> URL? {
+        if isRecording { lastStop = (reason, ProcessInfo.processInfo.systemUptime) }
+        isRecording = false
         engine.inputNode.removeTap(onBus: 0)
         engine.stop()
         file = nil // closes the file

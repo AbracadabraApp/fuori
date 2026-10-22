@@ -263,7 +263,7 @@ public final class OnboardingModel {
         wasStopped = true
         generation += 1
         levelTask?.cancel()
-        _ = recorder.stop()
+        _ = recorder.stop("onboarding stop")
         stopAudio()
         level = 0
         if phase == .speaking || phase == .listening { phase = .ready }
@@ -355,7 +355,7 @@ public final class OnboardingModel {
         guard phase == .listening else { return }
         levelTask?.cancel()
         levelTask = nil
-        let url = recorder.stop()
+        let url = recorder.stop("onboarding finish")
         let snapshot = gate.snapshot()
         level = 0
         guard recorder.writeFailures == 0, let url else {
