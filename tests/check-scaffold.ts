@@ -1,4 +1,4 @@
-// Reply buttons for beginners (lib/scaffold.ts): only at Beginner, never with
+// Reply buttons for beginners (lib/scaffold.ts): at Beginner or no level yet, never with
 // Magda, for the first N turns of a conversation, N shrinking to none
 import { offerReplies, tapTurns, TAP_SCHEDULE } from '@/lib/scaffold';
 
@@ -8,7 +8,8 @@ const base = { level: 'beginner' as const, conversationsBefore: 0, learnerTurns:
 if (!offerReplies(base)) failures.push('a new beginner should tap their first turn');
 if (offerReplies({ ...base, level: 'intermediate' })) failures.push('intermediate: no buttons');
 if (offerReplies({ ...base, level: 'advanced' })) failures.push('advanced: no buttons');
-if (offerReplies({ ...base, level: null })) failures.push('no level yet (not onboarded): no buttons');
+if (!offerReplies({ ...base, level: null })) failures.push('no level yet (not onboarded): a new learner, so buttons');
+if (offerReplies({ ...base, level: null, conversationsBefore: TAP_SCHEDULE.length })) failures.push('no level, after the schedule: no taps');
 if (offerReplies({ ...base, isTutor: true })) failures.push('Magda: no buttons');
 if (!offerReplies({ ...base, learnerTurns: 3 })) failures.push('first conversation: the 4th turn is still a tap');
 if (offerReplies({ ...base, learnerTurns: 4 })) failures.push('first conversation: the 5th turn is spoken');

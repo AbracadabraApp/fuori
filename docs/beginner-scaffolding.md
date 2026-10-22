@@ -4,7 +4,7 @@
 
 ## Built: always on at Beginner (Josh, 2026-10-21)
 
-The reply buttons are no longer behind the hidden test switch (removed). Beginners start with scaffolding (level and scaffolding are separate things: [glossary.md](glossary.md)): every learner whose stored level is Beginner taps the first N turns of each conversation, then speaks; N follows the schedule below (4, 4, 4, 3, 3, 3, 2, 2, 2, 1, 1, 1, then none), counting earlier conversations where they said something; never in Magda's lessons, which don't count. The server decides with every line: `/v1/turn` returns `replies: true` when the learner's next turn is a tap (`lib/scaffold.ts`, `npm run test:scaffold`). The buttons and her line show English. Not built yet: steps B and C below, and the Done link.
+The reply buttons are no longer behind the hidden test switch (removed). Beginners start with scaffolding (level and scaffolding are separate things: [glossary.md](glossary.md)): every learner whose stored level is Beginner taps the first N turns of each conversation, then speaks. A learner with no level yet (onboarding skipped or reset, and the level check off) counts as new and gets them too (Josh, 2026-10-22). N follows the schedule below (4, 4, 4, 3, 3, 3, 2, 2, 2, 1, 1, 1, then none), counting earlier conversations where they said something; never in Magda's lessons, which don't count. The server decides with every line: `/v1/turn` returns `replies: true` when the learner's next turn is a tap (`lib/scaffold.ts`, `npm run test:scaffold`). The buttons and her line show English. Not built yet: steps B and C below, and the Done link.
 
 ## Reply buttons: the three-step chain (Josh, 2026-10-21)
 

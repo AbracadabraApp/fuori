@@ -6,6 +6,9 @@
  * they've already had, so the taps run out: 4 for the first 3 conversations,
  * then 3, 2, 1 for 3 each (Claude's proposal; the numbers are Josh's to set).
  * Counting decides, not a judge. Never with Magda: lessons are spoken.
+ * A learner with no level yet (onboarding skipped or reset, level check off)
+ * counts as new and gets the buttons too (Josh, 2026-10-22: his Mexico
+ * learner had no level, so the buttons never showed).
  */
 import { query } from '@/lib/db';
 import type { Level } from '@/lib/onboarding';
@@ -19,7 +22,7 @@ export function tapTurns(conversationsBefore: number): number {
 
 /** Whether the learner's next turn is a tap on the reply buttons */
 export function offerReplies(p: { level: Level | null; conversationsBefore: number; learnerTurns: number; isTutor: boolean }): boolean {
-  if (p.isTutor || p.level !== 'beginner') return false;
+  if (p.isTutor || (p.level !== null && p.level !== 'beginner')) return false;
   return p.learnerTurns < tapTurns(p.conversationsBefore);
 }
 
