@@ -88,8 +88,9 @@ ALSO
   (articles, nouns, adjectives, pronouns, verbs by tense and mood, adverbs,
   prepositions, conjunctions, word order), what's introduced at each level and in
   which unit, so nothing is missed and nothing lands too early.
-- An extended word list for B1–C1 in the shape of level-words-{country}.csv
-  (lemma, part of speech, level, unit, theme), since today's list stops at A2.
+- One word list for all levels, A1–C1, in the shape of level-words-{country}.csv
+  (lemma, part of speech, level, unit, theme): check and revise today's A1–A2 list
+  against the books read in full, then extend it through C1.
 - Coverage: check the game's beginner chips (chips-vs-syllabus.md) and the 20
   flashcard words against the units; say what's missing on either side.
 - Decisions: every place the books disagree, what you chose and why.
@@ -99,7 +100,7 @@ ALSO
 Be concrete and right: every frame correct and natural for {country} today, every
 level checked against the word list. Prefer fewer, solid units to many thin ones
 (roughly 12–15 per level).
-OUTPUT: syllabus.json (units, grammar inventory, B1–C1 word list, coverage, decisions, gaps) and a readable summary for review, one section
+OUTPUT: syllabus.json (units, grammar inventory, A1–C1 word list, coverage, decisions, gaps) and a readable summary for review, one section
 per level.
 ```
 
