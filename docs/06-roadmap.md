@@ -79,6 +79,7 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 ### Onboarding ([onboarding-design.md](onboarding-design.md)) — N4, scaffolding
 - [x] **Josh + Claude** Flow, engineering needs, built and tried in both countries (2026-10-17)
 - [x] **Claude** The send-off failed on mixed answers (one English, one fluent): fixed 2026-10-18
+- [ ] **Claude** Launch and opening moment (Josh, 2026-10-22: "a strong intro"; canvas "Launch screen", https://claude.ai/artifact/5mTwgS9R8CubVMyUKaXoJZ). The system launch screen is paper with the icon (a `LaunchBackground` colour set named in `UILaunchScreen`, fixing the white flash, iOS conventions A13); the app's first view matches it exactly and holds the large picture for about a second at least (longer only while content loads), then fades to where the learner left off. A tap skips it. On first launch it stays and becomes the country choice, Fuori | Afuera (board 2), replacing today's two-card screen. Reduce Motion: plain crossfade. Check in both countries, AX5, VoiceOver
 
 ### Scaffolding ([beginner-scaffolding.md](beginner-scaffolding.md)) — N4
 Onboarding, then reply buttons for the first turns of each conversation (stage A, built 2026-10-21, server-decided, no switch), then the mic. Stages B and C proposed; the rest not settled.
