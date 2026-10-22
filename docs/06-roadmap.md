@@ -6,7 +6,7 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). Each item says who does it: **Josh** or **Claude**. ⛔ marks a blocker: work that waits on someone. Detail lives in the linked docs; done and removed items are at the bottom of this file.
+The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases (Josh, 2026-10-22):** this release is **N4**, TestFlight to Josh, and includes scaffolding (onboarding, reply buttons). **N5** is next: Learn, Teach (Magda's syllabus) and the Diario, plus the web sunset ([12-native-app.md](12-native-app.md) → Milestones). Each section below says which. Each item says who does it: **Josh** or **Claude**. ⛔ marks a blocker: work that waits on someone. Detail lives in the linked docs; done and removed items are at the bottom of this file.
 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
@@ -76,11 +76,11 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 - [ ] **Claude** Moving up later: when 90% of the learner's speech is at the next level, across several conversations (Josh, 2026-10-15). Magda suggests it, the learner decides
 - [ ] **Claude** Level and settings saved with the learner (speed, default subtitles); then turn on the greyed-out level control in Settings
 
-### Onboarding ([onboarding-design.md](onboarding-design.md))
+### Onboarding ([onboarding-design.md](onboarding-design.md)) — N4, scaffolding
 - [x] **Josh + Claude** Flow, engineering needs, built and tried in both countries (2026-10-17)
 - [x] **Claude** The send-off failed on mixed answers (one English, one fluent): fixed 2026-10-18
 
-### Beginner ladder ([beginner-scaffolding.md](beginner-scaffolding.md))
+### Scaffolding: the beginner ladder ([beginner-scaffolding.md](beginner-scaffolding.md)) — N4
 Five levels, from tapping a reply with English to filling a frame in your own words.
 - [x] **Claude** Reply buttons from a separate call (`lib/replies.ts`, test-only): sensible 97–100%, ready before the character finishes speaking
 - [x] **Josh** Played Afuera with the level trial on: Chucho the shoeshiner, 23 turns (2026-10-19, prompt `2026-10-18b+Beginner: still you, sometimes ask`)
@@ -89,7 +89,7 @@ Five levels, from tapping a reply with English to filling a frame in your own wo
 - [ ] **Josh** Play 10 minutes in Afuera at level 1, then level 3; note where it felt wrong
 - [ ] **Claude** Tests queued in [test-ideas.md](test-ideas.md): live with lookahead, a plan for the visit, "Ripeti?" on levels 4–5, Mexico at 20 conversations
 
-### Diario: the review place ([diario.md](diario.md); card screens in [beginner-scaffolding.md](beginner-scaffolding.md))
+### Diario: the review place ([diario.md](diario.md); card screens in [beginner-scaffolding.md](beginner-scaffolding.md)) — N5
 Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens phrase cards from your own conversations, at each phrase's own beginner level.
 - [x] **Claude** Card test (round 17, [level-judge-test.md](level-judge-test.md)): today's review phrases are mostly the character's lines (18–22% card-worthy); a card maker passes 69–78% of cards on 9 checks; level is the weak spot (about half the lines at 90% of words)
 - [ ] **Claude** Missions prototype P1–P3 first ([diario.md](diario.md) → Prototype first; Josh, 2026-10-19: prototype before building the whole feature)
@@ -101,7 +101,7 @@ Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens 
 - [ ] **Josh** Decide: the learner's voice for their replies (one voice per country, or matched to the learner); whether the book shows during a conversation (diario.md suggests not)
 - [ ] **Claude** Build after reply buttons (levels 1–3), since the cards are those screens
 
-### Learn: the teacher outside the world ([learn.md](learn.md); Josh, 2026-10-19, option D for Magda)
+### Learn and Teach: the teacher outside the world ([learn.md](learn.md), [teach-plan.md](teach-plan.md); Josh, 2026-10-19, option D for Magda) — N5
 - [ ] **Claude** L1: the Learn prompt as a trial file, Ask and Lesson runs with simulated learners (bars in learn.md)
 - [ ] **Claude** L2: Learn behind a setting (off by default): an icon left of the Diario opens the teacher, English and the language both ways (`mode: "any"`); next build
 - [ ] **Josh** L3: keep it and take the school out of the world, or change it; name, icon, whether she stays Magda
@@ -120,7 +120,7 @@ Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the sam
 ### Release: the route to TestFlight (broken down 2026-10-18)
 Two stages. A TestFlight for Josh alone needs no Apple review and none of the cost protection; anyone else does ([12-native-app.md](12-native-app.md) → Cost protection). Josh's developer account is paid (Movie Genius shipped from it), so App Store signing works.
 
-**Stage 1: TestFlight for Josh only** (internal testing; N4 in 12-native-app.md)
+**Stage 1: TestFlight for Josh only** (internal testing; N4 in 12-native-app.md, scaffolding included)
 - Josh, 2026-10-18: hold new TestFlight builds until a milestone; server changes still reach build 1 through Railway. Waiting for the next build: the mic states (87ed253, 9c2ed05) and the double-tap fix (5e54841); an idea only (Josh, 2026-10-20): an exit link that fades in when the conversation is over (round 20's `over` flag), to tap or ignore
 - [x] **Claude** Icon (2026-10-17), microphone usage text, export compliance (`ITSAppUsesNonExemptEncryption: false`), version 0.1.0 build 1
 - [x] **Josh** Created the app in App Store Connect (2026-10-18); **Claude** registered the bundle id `com.joshp100.fuori` (it wasn't: phone builds used the wildcard profile)
