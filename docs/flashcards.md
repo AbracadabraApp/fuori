@@ -33,3 +33,9 @@ The mic stages check what Whisper heard against the one word on the card (the ap
 - A new word joining the deck slides in from the bottom of the list; a card moving to its next stage changes in place.
 - A card that passes stage d lifts away toward the own-words list: the one moment of celebration.
 - Reduce Motion: every one of these is a cross-fade.
+
+## Sound (proposed 2026-10-21)
+
+- Every reveal plays the word once, in the language being learned: stage a when the English appears, b and d after you've said it (so you compare yourself with a native speaker, not copy one first), c when the word appears.
+- Tapping the word replays it. Nothing plays on scroll or when a card first comes into view.
+- One neutral native voice per country through /v1/speak (a character's voice belongs to that character), the phone's voice as fallback; recordings cached with the card.
