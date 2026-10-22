@@ -26,7 +26,7 @@ Claude can't move these until Josh does:
 - [ ] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice?
 
 ### Open bugs and learner data — N4 (added 2026-10-22)
-- [ ] **Claude** Recording error "0 buffers failed to write" (E-DP2R, E-TX3U, E-PSTC) on turns in Italy: the recorder is stopped before the turn finishes, cause not found. Next: report what stopped it, and reproduce with the phone's logs streaming (**Josh** plays while Claude watches). Blocks the 3-day gate
+- [ ] **Claude** Recording error "0 buffers failed to write" (E-DP2R, E-TX3U, E-PSTC) on turns in Italy: the recorder is stopped before the turn finishes, cause not found. Done (ce1109c, on Josh's phone 2026-10-22): the report now says what stopped the mic and the last phases ("the mic wasn't on at send …"), and the turn reopens with "The mic wasn't on. Say it again." Next: **Josh** plays; Claude reads the next report and fixes the cause. Blocks the 3-day gate
 - [ ] **Josh** Merge learner `dd6ec6fb` (Josh's Franco conversations, 15–16 Oct) into his Italy learner `3c544022`, so Franco remembers him: needs Josh's yes (production data)
 - [ ] **Josh** Say whose learner `819f7aed` is ("José", 1 conversation, 17 Oct)
 
@@ -36,8 +36,9 @@ Goal: reply under 2 s, 4 s at most. Measured 2026-10-18 (`npm run measure:turn`,
 - [x] **Claude** Where the time goes: `measure:turn` and per-step timing in the logs (`turn-timing`, `transcribe-timing`, `speak-timing`)
 - [x] **Claude** Haiku for characters through the replay: 1.3 s, but double questions 21% and the most broken replies; not taken
 - [x] **Claude** Josh's short prompt and no thinking before a reply (prompt 2026-10-18b, Josh: "take the best"): replay reply time 3.7 → 1.8 s, 26 → 16 words, feels alive 6.0 → 5.4. Live wait still to measure after the deploy
-- [ ] **Claude** Save the turn after the reply is sent, not before (up to 1 s on some turns)
-- [ ] **Claude** Start the voice on the first streamed sentence (server and app)
+- [x] **Claude** Save the turn after the reply is sent, not before (up to 1 s on some turns): 8b599c1 (2026-10-22). Readers of the conversation wait for the save
+- [x] **Claude** Step 1 (acfece6, 2026-10-22): the server starts the voice as soon as the line is written, before the English; /v1/speak takes it
+- [ ] **Claude** Step 2: the app plays the first sentence while the rest is written (the reply streamed to the app)
 - [ ] **Claude** Test every outside service on speed, failures and cost, one at a time with `measure:turn` and the logs (Josh, 2026-10-18). Each gets a short write-up: what we use, what else it offers, what was measured, keep or change:
   - **Claude:** prompt caching (not used yet; the prompt passes the ~1,024-token minimum only around turn 6–8, so mainly a cost saving, plus cheaper test runs); time to first token (0.8–1.2 s today, and one 4.4 s outlier on 2026-10-18); how often a call fails or is retried
   - **Groq Whisper:** `whisper-large-v3` against `-turbo`; upload and transcribe time against recording length; hallucination on near-silence; failure rate
@@ -163,7 +164,7 @@ Two stages. A TestFlight for Josh alone needs no Apple review and none of the co
 
 ### Housekeeping — N4
 - [x] **Claude** Railway watch paths: docs-only commits are now skipped (seen 2026-10-18)
-- [ ] **Claude** Move the test scripts from the laptop scratchpad into the repo (`qtype.mjs`, `replies.mjs`, `place-test.mts`, `repeat-test.mts` and others), so a cloud session can run them
+- [x] **Claude** Move the test scripts from the laptop scratchpad into the repo: done 2026-10-18 (`tests/experiments/`, README there: qtype → question-kinds, replies → reply-buttons, place-test → placement, repeat-test → repeats, cap-test → reply-tokens, real-judge → real-conversations); ticked 2026-10-22
 
 ### Next release (likely deferred) — N5
 
