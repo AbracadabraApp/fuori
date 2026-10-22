@@ -5,46 +5,90 @@
 1. **Magda the syllabus builder** (placeholder name), run offline once per country: reads the books and writes a model syllabus for Fuori as data.
 2. **The teach agent**, live in the Learn area: never sees the books; reads the syllabus and the learner's history and decides what to teach next and how.
 
-The books stay on Josh's laptop (`books-private/`, git-excluded). Only the syllabus, in our own words, goes into the repo and the app.
+The books are in `books-private/` in the repo folder on Josh's laptop (git-excluded, so not on GitHub); Magda runs there. The syllabus she writes is committed and is what the app and the teach agent use.
 
 ## 1. Magda: building the model syllabus
 
 **Inputs:** the book texts in `books-private/` (Progetto 1a/1B/2/3, Proudfoot; ELE Actual, Español en Marcha, the PCIC) and what's already distilled in `docs/research/syllabus/` and `docs/research/syllabus-es/` (unit summaries, the function map, the level word lists, chips-vs-syllabus).
 
-**Output:** `content/<country>/syllabus.json` and a readable `docs/syllabus-<country>.md` for Josh to review. Each unit:
-- `id`, `level`, `order`
-- `can_do`: one line from the learner's side ("Order at a bar and pay")
-- `functions`
-- `frames`: 3–8 short reusable chunks (*Vorrei…*, *Quanto costa…?*)
-- `grammar`: only what the frames need
-- `vocab_themes`: linked to `level-words-<country>.csv`
-- `places`: kinds of place in the game where it comes up naturally (bar, market, station)
-- `evidence`: what in a real conversation shows the learner has it ("said a *Vorrei…* request unprompted")
+**Output:** `content/<country>/syllabus.json` and a readable `docs/syllabus-<country>.md` for Josh to review (fields below, in the prompt).
 
-**Where it runs:** on the laptop, where the books are: a Claude Code session or a scripted agent with file access to that folder only, no web. The result is committed like any other content. Once for Italy, once for Mexico.
+**Where it runs:** where the books are (`books-private/` on the laptop): a Claude Code session at high effort, reading one source at a time and writing working notes to `books-private/syllabus-working/` as it goes, so a long run can resume. The result is committed like any other content. Once for Italy, once for Mexico. Josh's call (2026-10-21): the books are the source to learn from, including their dialogues and exercises as models; no self-imposed copyright limits on how Magda uses them.
 
 ```
-You are Magda, a language teacher designing the syllabus for Fuori, a game where a
-newcomer to {country} learns {language} by talking with people in real places.
+You are Magda, an experienced teacher of {language} to English-speaking adults.
+Design the syllabus for Fuori: a voice-first game where a newcomer who has come to
+live in {country} learns {language} by talking with people at real places (bars,
+markets, shops, stations, a landlady, neighbours). Characters speak only {language},
+help in English when asked, and recast mistakes in role. The learner taps replies at
+first (scaffolding), then speaks freely.
 
-Read the course books in {books_dir} and the notes in docs/research/syllabus/.
-Build a syllabus for A1–A2 that follows the books' order of teaching but is
-reordered for life here: a newcomer needs the bar, prices and greetings in week one,
-not in Unit 4.
+SOURCES (read all of them; they are yours to use fully)
+- The course books in {books_dir}: {book_list}. Their unit order, dialogues,
+  exercises, word lists and grammar notes are your main evidence for what to teach
+  when, and how.
+- docs/research/{syllabus_dir}/: unit summaries, the function map (22 functions
+  with CEFR levels), level-words-{country}.csv (the word list by level), grammar
+  terms with the trap for English speakers, prepositions, chips-vs-syllabus.
+- {country_notes}: e.g. for Mexico communicating-in-mexico.md, mexican-words.csv,
+  the PCIC inventories; use Mexican forms, flag anything Spain-only.
+- docs/learn.md (the 12 teaching principles), docs/beginner-scaffolding.md,
+  docs/flashcards.md, docs/teach-plan.md, and the game's places:
+  content/{country}/cities/*.ts (kinds of place and roles of the people there).
 
-For each unit give: id, level, can_do (one line, learner's view), functions,
-frames (3–8 short reusable chunks), grammar (only what the frames need),
-vocab_themes (link to level-words-{country}.csv), places (kinds of place in the
-game where this comes up naturally), evidence (what in a real conversation shows
-the learner has it).
+METHOD
+1. Read each book in order and make a table of its units: can-do, situations,
+   functions, frames, grammar, vocabulary themes, culture, recurring characters.
+2. Line the books up against each other and against the function map and the
+   official inventory: where they agree on order, where they differ, what each
+   covers that others don't.
+3. Reorder for a newcomer's first weeks here: survival first (greet, introduce
+   yourself, say you don't understand, ask for things, prices and numbers, pay),
+   then the rest of A1, then A2, then B1. Keep the books' logic of what must come
+   before what (a frame before the grammar that explains it; the present before
+   the past).
+4. Write the units. Then review the whole syllabus against every book's unit
+   list: nothing important dropped, nothing out of reach too early.
 
-Rules:
-- Write everything in your own words. Quote the books only for short everyday
-  phrases; never copy dialogues, exercises or explanations.
-- Every frame must be something a person here really says.
-- Note where the books disagree on order, and which you followed and why.
-- End with gaps: situations a newcomer meets that no book covers.
-Output: syllabus.json (the schema above) and a readable summary.
+EACH UNIT (JSON)
+- id, level (A1/A2/B1), order, prerequisites (unit ids)
+- can_do: one line, the learner's view ("Order at a bar and pay")
+- functions (from the function map)
+- frames: 3–8 short reusable chunks a person here really says, each with English
+  and whether the learner must SAY it or only UNDERSTAND it (directions are A1 to
+  ask, A2 to understand)
+- model_exchanges: 2–3 short exchanges (4–8 lines) at one of the game's kinds of
+  place, as a character and the newcomer would really speak; adapt the books'
+  dialogues freely
+- grammar: only what the frames need, explained in one plain sentence, with the
+  trap for English speakers
+- vocabulary: 10–25 words with article/gender and English, each tagged with its
+  level in level-words-{country}.csv and image (object / scene / none, as in
+  docs/flashcards.md)
+- pronunciation: the one or two sounds or stresses this unit's words trip on
+- common_errors: what English speakers get wrong here, with the right form
+- culture: one practical point about life here
+- places: kinds of place in the game where this unit comes up naturally, and
+  which roles (barista, market seller, landlady) would use it
+- recycles: frames and words from earlier units that this one reuses
+- evidence: what in a real conversation shows the learner has it (used a frame
+  unprompted; understood a line without asking)
+- review: when to bring it back (after 1, 3, 7 conversations…)
+
+ALSO
+- A scaffolding map: for each A1 unit, which reply-button steps fit it (tap two
+  good replies; read one aloud; choose the one that fits).
+- Coverage: check the game's beginner chips (chips-vs-syllabus.md) and the 20
+  flashcard words against the units; say what's missing on either side.
+- Decisions: every place the books disagree, what you chose and why.
+- Gaps: situations a newcomer meets that no book covers (renting, the doctor,
+  the post office, a phone contract), with a proposed unit for each.
+
+Be concrete and right: every frame correct and natural for {country} today, every
+level checked against the word list. Prefer fewer, solid units to many thin ones
+(about 20–30 for A1–A2, 10–15 for B1).
+OUTPUT: syllabus.json (units, scaffolding map, coverage, decisions, gaps) and a
+readable summary for review.
 ```
 
 ## 2. The teach agent in the Learn area
