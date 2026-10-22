@@ -34,8 +34,9 @@ struct ConversationControls: View {
                 // the right-hand button so the pill stays centred
                 if model.canType { typeButton } else { Color.clear.frame(width: 44, height: 44) }
                 Spacer()
-                // While scaffolding the two replies take the pill's place
-                if showsReplies { Color.clear.frame(width: 112, height: 52) } else { pill }
+                // While scaffolding the two replies take the pill's place, until
+                // the learner reads the chosen one aloud (read and choose stages)
+                if showsReplies && !model.readingAloud { Color.clear.frame(width: 112, height: 52) } else { pill }
                 Spacer()
                 // Bottom right (Josh, 2026-10-15): Pause or Resume, else the Learn link
                 if showsPause {
@@ -60,10 +61,10 @@ struct ConversationControls: View {
     }
 
     /// The reply buttons, from the moment the turn opens until the character
-    /// answers the one tapped
+    /// answers the one tapped (or read aloud)
     private var showsReplies: Bool {
         guard model.scaffolding else { return false }
-        return model.phase == .choosing || (model.phase == .thinking && model.chosen != nil)
+        return model.phase == .choosing || model.readingAloud || (model.phase == .thinking && model.chosen != nil)
     }
 
     // MARK: Type

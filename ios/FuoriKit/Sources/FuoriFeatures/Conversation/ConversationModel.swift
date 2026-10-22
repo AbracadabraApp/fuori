@@ -63,6 +63,9 @@ public final class ConversationModel {
     public private(set) var replies: [APIClient.ReplyOption]?
     /// The reply just tapped, shown selected until the character answers
     public private(set) var chosen: APIClient.ReplyOption?
+    /// Read and choose stages: the mic is open for the learner to say the
+    /// chosen reply aloud
+    public private(set) var readingAloud = false
 
     /// What the hidden debug panel shows (Settings → Developer), as the web's ?debug=1
     public struct DebugInfo: Equatable {
@@ -123,6 +126,31 @@ public final class ConversationModel {
     /// lib/scaffold.ts; Josh, 2026-10-21: no switch)
     public private(set) var scaffolding = false
 
+    /// How the reply buttons are used this turn (lib/scaffold.ts; Josh,
+    /// 2026-10-22): in each of the first 3 conversations, turn 1 tap, turn 2
+    /// tap then read aloud, turn 3 choose the one that fits then read aloud
+    public enum Stage: String, Sendable {
+        case tap, read, choose
+        /// Whether the chosen reply is then said aloud
+        public var readsAloud: Bool { self != .tap }
+    }
+    public private(set) var stage: Stage?
+
+    /// What to do now, under her line while scaffolding (interface text)
+    public var instruction: String? {
+        guard scaffolding, let stage, stage.readsAloud else { return nil }
+        switch phase {
+        case .choosing where chosen == nil:
+            return stage == .choose ? "Choose the one that fits, then read it out loud" : "Tap one, then read it out loud"
+        case .choosing:
+            return "Tap your reply to try again"
+        case .listening, .hearing:
+            return tapMode ? "Read it out loud, then tap to send" : "Read it out loud"
+        default:
+            return nil
+        }
+    }
+
     /// Speed as on the web: slower with English on
     private var speed: Double { UserDefaults.standard.bool(forKey: SettingsKey.english) ? 0.7 : 0.9 }
 
@@ -158,6 +186,9 @@ public final class ConversationModel {
     private func present(_ reply: APIClient.TurnReply, generation: Int) async {
         guard generation == self.generation else { return }
         scaffolding = reply.replies == true
+        // An older server sends no stage: every scaffolding turn is a tap
+        stage = scaffolding ? (reply.stage.flatMap(Stage.init(rawValue:)) ?? .tap) : nil
+        readingAloud = false
         if phase == .paused { pendingReply = reply; line = reply.line; english = reply.en; shown = nil; replies = nil; chosen = nil; writeReplies(); return }
         line = reply.line
         english = reply.en
@@ -216,6 +247,7 @@ public final class ConversationModel {
         // Paused while thinking: the mic stays closed until a tap
         guard phase != .paused else { return }
         ring = 0
+        readingAloud = false
         if scaffolding, repliesTask != nil {
             await showReplies()
             return
@@ -335,6 +367,16 @@ public final class ConversationModel {
             return
         }
         note = nil
+        if readingAloud, let chosen {
+            // Read and choose stages: the chosen line is what's sent, so a
+            // mumble or a speech-recognition slip can't derail a beginner
+            // (docs/beginner-scaffolding.md → stages B and C). Not
+            // transcribed: what was heard isn't used yet.
+            try? FileManager.default.removeItem(at: url)
+            readingAloud = false
+            await sendChosen(chosen, generation: generation, how: "read aloud")
+            return
+        }
         var step = "transcribe"
         do {
             let audio = try Data(contentsOf: url)
@@ -374,9 +416,10 @@ public final class ConversationModel {
         repliesTask = nil
         guard scaffolding, let conversationId else { return }
         let started = Self.now()
+        let stage = stage?.rawValue
         repliesTask = Task { [api, city, place] in
             do {
-                let replies = try await api.replies(cityId: city.id, placeId: place.id, conversationId: conversationId)
+                let replies = try await api.replies(cityId: city.id, placeId: place.id, conversationId: conversationId, stage: stage)
                 return .success(replies)
             } catch {
                 return .failure(error)
@@ -413,16 +456,30 @@ public final class ConversationModel {
         phase = .tapToTalk
     }
 
-    /// A tap on a reply: it goes to the character as if the learner had said it
+    /// A tap on a reply. Tap stage: it goes to the character as if the
+    /// learner had said it. Read and choose stages: it's chosen and the mic
+    /// opens for the learner to read it aloud; then it's sent. Under
+    /// VoiceOver (which would be recorded) or with the mic off, it's sent at
+    /// the tap.
     public func choose(_ reply: APIClient.ReplyOption) async {
         guard phase == .choosing, replies?.contains(reply) == true else { return }
         chosen = reply
         note = nil
+        if stage?.readsAloud == true, !isVoiceOverRunning {
+            readingAloud = true
+            await startRecording()
+            // Mic off in Settings: send it as a tap rather than strand them
+            guard phase == .micDenied else { return }
+            readingAloud = false
+        }
+        await sendChosen(reply, generation: generation, how: "tapped")
+    }
+
+    private func sendChosen(_ reply: APIClient.ReplyOption, generation: Int, how: String) async {
         phase = .thinking
         repliesTask = nil
-        let generation = self.generation
         do {
-            debug.heard = "(tapped) \(reply.line)"
+            debug.heard = "(\(how)) \(reply.line)"
             let started = Self.now()
             let next = try await api.turn(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: reply.line)
             learnerLines += 1

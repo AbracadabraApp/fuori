@@ -23,4 +23,16 @@ import Testing
         #expect(try JSONDecoder().decode(APIClient.TurnReply.self, from: on).replies == true)
         #expect(try JSONDecoder().decode(APIClient.TurnReply.self, from: old).replies == nil)
     }
+
+    /// The stage of a scaffolding turn (lib/scaffold.ts), and which reply fits
+    /// on the choose stage; both absent from an older server
+    @Test func readsStageAndFits() throws {
+        let read = Data(#"{"line":"¿Se le lustran?","en":"Shine?","conversationId":"c","promptVersion":"v","replies":true,"stage":"read"}"#.utf8)
+        let turn = try JSONDecoder().decode(APIClient.TurnReply.self, from: read)
+        #expect(turn.stage == "read")
+        let choice = Data(#"{"frame":"","replies":[{"line":"Sí","en":"Yes"},{"line":"Soy de Canadá","en":"I'm from Canada"}],"fits":0,"promptVersion":"v"}"#.utf8)
+        #expect(try JSONDecoder().decode(APIClient.Replies.self, from: choice).fits == 0)
+        let plain = Data(#"{"frame":"Sí","replies":[{"line":"Sí","en":"Yes"},{"line":"No","en":"No"}],"promptVersion":"v"}"#.utf8)
+        #expect(try JSONDecoder().decode(APIClient.Replies.self, from: plain).fits == nil)
+    }
 }

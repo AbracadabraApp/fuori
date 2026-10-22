@@ -60,10 +60,14 @@ public actor APIClient {
         /// The recorded conversation; nil when the server couldn't record it
         public let conversationId: String?
         public let promptVersion: String
-        /// The learner's next turn is a tap on two reply buttons (/v1/replies)
-        /// instead of the mic: beginners, first turns of each conversation.
-        /// Nil from a server older than that
+        /// The learner's next turn uses two reply buttons (/v1/replies)
+        /// instead of the mic: new learners, first turns of their first
+        /// conversations. Nil from a server older than that
         public let replies: Bool?
+        /// How the buttons are used (lib/scaffold.ts): "tap", "read" (tap,
+        /// then read it aloud) or "choose" (only one fits; choose, then read
+        /// it aloud). Nil when `replies` isn't true, or from an older server
+        public let stage: String?
     }
 
     /// POST /v1/turn. Without a conversation id: the character's opening line.
@@ -85,15 +89,18 @@ public actor APIClient {
         /// The chunk both replies are built on ("Vorrei…")
         public let frame: String
         public let replies: [ReplyOption]
+        /// Choose stage: which reply fits (the other answers something else)
+        public let fits: Int?
         public let promptVersion: String
     }
 
     /// POST /v1/replies: two replies to the character's last line, for the
     /// reply buttons (docs/beginner-scaffolding.md). The server reads the
-    /// conversation; the character must have spoken last.
-    public func replies(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String) async throws -> Replies {
-        struct Body: Encodable { let cityId: String; let placeId: String; let tripTo: String?; let conversationId: String }
-        return try await send(post("v1/replies", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId)), signedIn: true)
+    /// conversation; the character must have spoken last. `stage` "choose"
+    /// writes one reply that fits and one that doesn't.
+    public func replies(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String, stage: String? = nil) async throws -> Replies {
+        struct Body: Encodable { let cityId: String; let placeId: String; let tripTo: String?; let conversationId: String; let stage: String? }
+        return try await send(post("v1/replies", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, stage: stage)), signedIn: true)
     }
 
     /// The Learn page for a conversation so far (docs/learn.md → The page)

@@ -5,7 +5,10 @@ import FuoriNetworking
 /// Scaffolding (docs/beginner-scaffolding.md, docs/glossary.md): the learner's
 /// turn is a tap on one of two whole-line replies, which take the mic pill's
 /// place. Each reply shows its English under it. The tapped reply stays
-/// marked until the character answers; there's no right or wrong.
+/// marked until the character answers; there's no right or wrong colour,
+/// even on the choose stage, where the character answers a reply that
+/// doesn't fit in role. On the read and choose stages a short instruction
+/// sits above them, and the pill returns while the chosen one is read aloud.
 ///
 /// The replies are controls, so they're Liquid Glass, not the card material
 /// her line uses (Josh, 2026-10-21: the white cards read as more dialogue).
@@ -31,6 +34,16 @@ struct ReplyButtons: View {
     private var buttons: some View {
         GlassEffectContainer(spacing: 8) {
             VStack(alignment: .trailing, spacing: 8) {
+                if let instruction = model.instruction {
+                    Text(instruction)
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(Tokens.Colors.text)
+                        .multilineTextAlignment(.trailing)
+                        .padding(.vertical, 6)
+                        .padding(.horizontal, 12)
+                        .glassEffect(.regular.tint(Tokens.Colors.card.opacity(0.5)), in: .capsule)
+                        .accessibilityAddTraits(.isStaticText)
+                }
                 if let replies = model.replies {
                     ForEach(replies, id: \.self) { reply in
                         HStack(spacing: 0) {
@@ -71,7 +84,7 @@ struct ReplyButtons: View {
             .padding(.horizontal, 20)
             .modifier(ReplyMaterial(chosen: chosen))
             // Once one is tapped, the other steps back
-            .opacity(model.chosen != nil && !chosen ? 0.5 : 1)
+            .opacity(model.chosen != nil && !chosen && model.phase != .choosing ? 0.5 : 1)
         }
         .buttonStyle(PressableStyle())
         .disabled(model.phase != .choosing)
