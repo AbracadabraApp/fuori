@@ -25,3 +25,11 @@ The mic stages check what Whisper heard against the one word on the card (the ap
 - Rounds go card by card at the same stage: 1a 2a 3a 4a 5a, then 1b … 5b, and so on, so four other cards come between a card's stages (spacing).
 - A card that passes stage d leaves the deck and the next word from the pool joins at stage a.
 - **Passed words go on a list of "own" words** (Josh). Nothing more for now. Maybe later: stage d words come back on some rotation to check they stuck (not decided).
+
+## Motion (agreed 2026-10-21)
+
+- Revealing an answer: no flip. The card grows a little and the new line fades in; the picture never moves.
+- Mic stages: the picture or word fades in after you say it.
+- A new word joining the deck slides in from the bottom of the list; a card moving to its next stage changes in place.
+- A card that passes stage d lifts away toward the own-words list: the one moment of celebration.
+- Reduce Motion: every one of these is a cross-fade.
