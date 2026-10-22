@@ -6,7 +6,7 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases (Josh, 2026-10-22):** this release is **N4**, TestFlight to Josh, and includes scaffolding (onboarding, reply buttons). **N5** is next: Learn, Teach (Magda's syllabus) and the Diario, plus the web sunset. **N6**: a framework for level, repeatable and improving ([12-native-app.md](12-native-app.md) → Milestones). Each section below says which. Each item says who does it: **Josh** or **Claude**. ⛔ marks a blocker: work that waits on someone. Detail lives in the linked docs; done and removed items are at the bottom of this file.
+The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases (Josh, 2026-10-22):** this release is **N4**, TestFlight to Josh, and includes scaffolding (onboarding, reply buttons). **N5** is next: Learn, Teach (Magda's syllabus) and the Diario, plus the web sunset. Every open item is in N4 or N5 (Josh, 2026-10-22). **N6**: a framework for level, repeatable and improving ([12-native-app.md](12-native-app.md) → Milestones). Each section below says which. Each item says who does it: **Josh** or **Claude**. ⛔ marks a blocker: work that waits on someone. Detail lives in the linked docs; done and removed items are at the bottom of this file.
 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
@@ -16,7 +16,7 @@ Claude can't move these until Josh does:
 4. **Device checks on the iPhone** (only Josh can do audio on the phone) (→ Conversation on the phone)
 5. **Record the speech-to-text test set**: about 20 short turns per language, including hesitant and wrong ones (→ Faster and reliable replies)
 
-### Conversation on the phone
+### Conversation on the phone — N4
 - Josh played build 0.1.0 (1) from TestFlight in Italy (2026-10-18): quality good, shorter replies, easier to understand, relatively fast. The mic tap wasn't crisp or obvious
 - [x] **Claude** The mic tap plainly registers (Josh chose the states, 2026-10-18): cream with a waveform while the character speaks, cream with a mic on your turn, green with live dots and a stop as soon as you tap (before the mic is ready), terracotta once sent, taps ignored. **Josh** to check on the next TestFlight build
 - [x] **Claude** "No such file" errors at step transcribe on that build: a second tap while the mic was opening started a second recording, and the orphaned watcher later finished the turn again with the file already deleted. Fixed in the next build
@@ -25,7 +25,12 @@ Claude can't move these until Josh does:
 - [ ] **Josh** ⛔ Device checks, on the iPhone during a conversation (while the character speaks and while the mic is open): a phone call comes in; Siri; AirPods out; AirPods in; swipe to the home screen; lock the phone. Each time it should pause, save like any exit, and never reopen the mic without a tap; AirPods out shouldn't carry on through the phone speaker (CLAUDE.md → iPhone app). A simulator can't test this
 - [ ] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice?
 
-### Faster and reliable replies
+### Open bugs and learner data — N4 (added 2026-10-22)
+- [ ] **Claude** Recording error "0 buffers failed to write" (E-DP2R, E-TX3U, E-PSTC) on turns in Italy: the recorder is stopped before the turn finishes, cause not found. Next: report what stopped it, and reproduce with the phone's logs streaming (**Josh** plays while Claude watches). Blocks the 3-day gate
+- [ ] **Josh** Merge learner `dd6ec6fb` (Josh's Franco conversations, 15–16 Oct) into his Italy learner `3c544022`, so Franco remembers him: needs Josh's yes (production data)
+- [ ] **Josh** Say whose learner `819f7aed` is ("José", 1 conversation, 17 Oct)
+
+### Faster and reliable replies — N4 for the two speed fixes (save after sending, voice on the first sentence); N5 for testing outside services
 Goal: reply under 2 s, 4 s at most. Measured 2026-10-18 (`npm run measure:turn`, Server-Timing on `/v1`): Claude was nearly all of the wait, mostly thinking before the reply; transcribing 0.3 s, the voice 0.5–0.8 s, the network and sign-in tens of milliseconds.
 - [x] **Claude** Raised the reply cap from 800 to 1200 in `lib/turn.ts` (Josh's OK, 2026-10-18). Round 16 (810 replies, same call with a 1500 cap; Italy's real scripts, simulated Mexico): median 329–343 tokens, 99% under 714, the largest 847; 2 of 810 (0.25%) went over 800, which fails the turn today; none over 1200. Most of it is thinking (with thinking median 355–396 tokens; without, 113–169). The replies near the cap took 7–8 s.
 - [x] **Claude** Where the time goes: `measure:turn` and per-step timing in the logs (`turn-timing`, `transcribe-timing`, `speak-timing`)
@@ -45,11 +50,11 @@ Goal: reply under 2 s, 4 s at most. Measured 2026-10-18 (`npm run measure:turn`,
   - So speech in and out together are under 1 s; the rest of the wait is Claude. Other providers aren't timed: none is expected to beat these on speed by more than about 0.1 s, and Josh (2026-10-18) doesn't want ones expected to be slower tested. The one kind that could save time is speech to text that streams while the learner talks (Deepgram, for example), which would take the 0.3 s off; worth a look only after the reply and the voice stream
 - [ ] **Claude** Test speech-to-text alternatives to Whisper on Groq: Deepgram Nova-3, AssemblyAI, OpenAI `gpt-4o-transcribe` / `gpt-4o-mini-transcribe`, ElevenLabs Scribe, Speechmatics and Google Chirp. Measure on one fixed set of real learner recordings in Italian and Mexican Spanish: errors on a beginner's accent and mistakes (the transcript must keep the learner's mistakes, not fix them), behaviour on silence and noise, speed and price per minute. **Josh** ⛔ records the set (about 20 short turns per language, including hesitant and wrong ones). Apple's on-device recognition is out of scope unless Josh reopens it (CLAUDE.md: speech in is Whisper on the server)
 
-### Core behaviours (round 18)
+### Core behaviours (round 18) — N5
 - [ ] **Josh** Decide: when a learner asks "say it in English", is the translation shown under the line enough? Today the character repeats in the language and never speaks English (on every prompt tested)
 - [ ] **Claude** Recasting mistakes fell with the short prompt (13–19% of replies, from 31–44%): try one short line in the prompt, gated on this test and the replay (speed, words, alive)
 
-### Characters feel alive
+### Characters feel alive — N5
 Goal: alive 7 (today about 6 in real conversations, 5–7 with simulated learners). Order decided by Claude, judged by Josh (2026-10-18); one change at a time through the replay gate.
 - [x] **Claude** Real conversations sorted by what goes wrong (round 15): the worst were characters repeating themselves; the order form ("X o Y?") is rare in real play (8–15% of lines)
 - [x] **Claude** Characters see the whole conversation, not the last 6 messages (prompt 2026-10-18): repeats halved (4.4% → 2.4% of lines)
@@ -107,13 +112,13 @@ Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens 
 - [ ] **Claude** L2: Learn behind a setting (off by default): an icon left of the Diario opens the teacher, English and the language both ways (`mode: "any"`); next build
 - [ ] **Josh** L3: keep it and take the school out of the world, or change it; name, icon, whether she stays Magda
 
-### Smaller world for beginners: on hold until there's a spec (Josh, 2026-10-18)
+### Smaller world for beginners: on hold until there's a spec (Josh, 2026-10-18) — N5
 Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the same for every learner, in one neighbourhood until level 4. Explored in rounds 11–13 ([level-judge-test.md](level-judge-test.md)); described in [beginner-scaffolding.md](beginner-scaffolding.md) → "On hold". No work on it until the spec exists.
 - [ ] **Josh** ⛔ Spec: what's fixed and what's generated; which neighbourhood(s) per country; how many visits and in what order; what earns leaving it; how it fits levels 1–3; whether audio is recorded once
 - What the tests found: a scripted neighbourhood is cheap to write (24 characters, about 50 scripts, minutes) and the easiest dialogue yet (70–84% of lines a beginner can follow), but where both replies must lead to the same next line, one path ignores the learner's answer; forcing a this-or-that choice at every join made it a quiz (round 13)
 - Parked tests: scripts as a tree with no joins; visits ordered so frames build up ("Vorrei…" before "Sono di…")
 
-### Parity with the web
+### Parity with the web — N5, before the web sunset
 - [ ] **Claude** Visit stamps redesigned (collectible, on the caption, not a number in a circle)
 - [ ] **Josh** ⛔ Say what's wrong with the city picker; then **Claude** improves it
 - [ ] **Claude** Stations and ticket: departures board, the clerk names the platform, "Sali"
@@ -132,7 +137,7 @@ Two stages. A TestFlight for Josh alone needs no Apple review and none of the co
 - [ ] **Josh** The device checks (Conversation on the phone) on the TestFlight build
 - [ ] **Josh** Gate: play from TestFlight on 3 separate days without the laptop; **Claude** checks `railway logs` for new error codes
 
-**Stage 2: before anyone else gets it** (external testers; Apple's beta review, usually about a day)
+**Stage 2: before anyone else gets it** — N5 (external testers; Apple's beta review, usually about a day)
 - [ ] **Claude** App Attest when a device registers
 - [ ] **Claude** Usage tracking and a per-learner daily budget (`usage_daily`: turns, speech-to-text seconds, voice characters → `402 quota`; the app already falls back to the phone's voice on `quota`)
 - [ ] **Claude** R2 custom domain for images (r2.dev is rate-limited, for development only); **Josh** picks the domain
@@ -150,17 +155,17 @@ Two stages. A TestFlight for Josh alone needs no Apple review and none of the co
 
   TestFlight "What to Test" text (draft): *Pick Italy or Mexico and talk to whoever you meet. Tap to speak, tap again when you're done. Please tell us: was anything confusing in the first few minutes? Did the replies come fast enough to feel like a conversation? Could you follow what people said? Did anyone remember you when you came back another day? Screenshot anything broken or odd (shake or use TestFlight's feedback).*
 
-**Stage 3: the App Store** (later)
+**Stage 3: the App Store** (later) — N5
 - [ ] **Claude** "Report this line" button; screenshots, description, age rating and review notes (**Josh** approves)
 - [ ] **Claude** Web sunset, about 2 weeks after TestFlight
 - [ ] **Josh** Storefronts: launch outside the EU and skip the EU trader declaration (Josh, 2026-10-18: learners are English speakers, not Italians, and the store is chosen by the Apple ID's country, not where they are). Declare trader status (App Store Connect → Business) only if EU stores are wanted later
 - Screenshots for the App Store page: 3–10 at the 6.9-inch size (1320×2868), taken from the app by **Claude**; a preview video is optional. Nothing beyond the icon is needed for TestFlight
 
-### Housekeeping
+### Housekeeping — N4
 - [x] **Claude** Railway watch paths: docs-only commits are now skipped (seen 2026-10-18)
 - [ ] **Claude** Move the test scripts from the laptop scratchpad into the repo (`qtype.mjs`, `replies.mjs`, `place-test.mts`, `repeat-test.mts` and others), so a cloud session can run them
 
-### Next release (likely deferred)
+### Next release (likely deferred) — N5
 
 Works or is wanted, but not for the first release.
 
