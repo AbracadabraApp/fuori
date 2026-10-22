@@ -1,22 +1,26 @@
-// Reply buttons for beginners (lib/scaffold.ts): at Beginner or no level yet, never with
-// Magda, for the first N turns of a conversation, N shrinking to none
-import { offerReplies, tapTurns, TAP_SCHEDULE } from '@/lib/scaffold';
+// Scaffolding stages (lib/scaffold.ts): new learners (Beginner or no level
+// yet), never with Magda; each of the first 3 conversations steps through
+// tap, read, choose, one turn each, then the mic (Josh, 2026-10-22)
+import { scaffoldStage, STAGES, SCAFFOLD_CONVERSATIONS } from '@/lib/scaffold';
 
 const failures: string[] = [];
 const base = { level: 'beginner' as const, conversationsBefore: 0, learnerTurns: 0, isTutor: false };
+const expect = (what: string, got: unknown, want: unknown) => { if (got !== want) failures.push(`${what}: expected ${want}, got ${got}`); };
 
-if (!offerReplies(base)) failures.push('a new beginner should tap their first turn');
-if (offerReplies({ ...base, level: 'intermediate' })) failures.push('intermediate: no buttons');
-if (offerReplies({ ...base, level: 'advanced' })) failures.push('advanced: no buttons');
-if (!offerReplies({ ...base, level: null })) failures.push('no level yet (not onboarded): a new learner, so buttons');
-if (offerReplies({ ...base, level: null, conversationsBefore: TAP_SCHEDULE.length })) failures.push('no level, after the schedule: no taps');
-if (offerReplies({ ...base, isTutor: true })) failures.push('Magda: no buttons');
-if (!offerReplies({ ...base, learnerTurns: 3 })) failures.push('first conversation: the 4th turn is still a tap');
-if (offerReplies({ ...base, learnerTurns: 4 })) failures.push('first conversation: the 5th turn is spoken');
-if (tapTurns(3) !== 3 || tapTurns(6) !== 2 || tapTurns(9) !== 1) failures.push(`schedule should be 4,4,4,3,3,3,2,2,2,1,1,1, got ${TAP_SCHEDULE}`);
-if (offerReplies({ ...base, conversationsBefore: TAP_SCHEDULE.length })) failures.push('after the schedule: no more taps');
-if (offerReplies({ ...base, conversationsBefore: 1000 })) failures.push('long after: no taps');
-for (let i = 1; i < TAP_SCHEDULE.length; i++) if (TAP_SCHEDULE[i] > TAP_SCHEDULE[i - 1]) failures.push('taps should never grow');
+expect('first turn', scaffoldStage(base), 'tap');
+expect('second turn', scaffoldStage({ ...base, learnerTurns: 1 }), 'read');
+expect('third turn', scaffoldStage({ ...base, learnerTurns: 2 }), 'choose');
+expect('fourth turn: the mic', scaffoldStage({ ...base, learnerTurns: 3 }), null);
+expect('later turns: the mic', scaffoldStage({ ...base, learnerTurns: 20 }), null);
+expect('no level yet counts as new', scaffoldStage({ ...base, level: null }), 'tap');
+expect('intermediate', scaffoldStage({ ...base, level: 'intermediate' }), null);
+expect('advanced', scaffoldStage({ ...base, level: 'advanced' }), null);
+expect('Magda', scaffoldStage({ ...base, isTutor: true }), null);
+expect('third conversation repeats', scaffoldStage({ ...base, conversationsBefore: 2, learnerTurns: 2 }), 'choose');
+expect('fourth conversation: the mic', scaffoldStage({ ...base, conversationsBefore: SCAFFOLD_CONVERSATIONS }), null);
+expect('no level, fourth conversation: the mic', scaffoldStage({ ...base, level: null, conversationsBefore: 3 }), null);
+expect('three stages, in order', STAGES.join(','), 'tap,read,choose');
+expect('three conversations', SCAFFOLD_CONVERSATIONS, 3);
 
 if (failures.length) { console.error(failures.join('\n')); process.exit(1); }
-console.log('OK: reply buttons for beginners, first turns of each conversation, running out');
+console.log('OK: tap, read, choose in each of the first 3 conversations, then the mic');

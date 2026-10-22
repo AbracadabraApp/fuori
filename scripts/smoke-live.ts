@@ -179,13 +179,13 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   reg.token ? pass('v1 device signed in') : fail('v1 device signed in', JSON.stringify(reg));
 
   const open = await v1('/v1/turn', { cityId, placeId });
-  const o = (await open.json()) as { line: string; conversationId: string; replies?: unknown };
-  // Whether the next turn is a tap on the reply buttons (lib/scaffold.ts); this
-  // learner has no level yet, so it's the mic
-  o.replies === true ? pass('v1 turn says mic or buttons (buttons: no level yet counts as new)') : fail('v1 turn replies flag', JSON.stringify(o.replies));
+  const o = (await open.json()) as { line: string; conversationId: string; replies?: unknown; stage?: unknown };
+  // Whether the next turn uses the reply buttons, and how (lib/scaffold.ts):
+  // this learner has no level yet, so counts as new: the first turn is a tap
+  o.replies === true && o.stage === 'tap' ? pass('v1 turn says mic or buttons (tap: no level yet counts as new)') : fail('v1 turn replies flag', JSON.stringify({ replies: o.replies, stage: o.stage }));
   // Two learner lines: memory is only written after at least two (lib/remember.ts)
   let reply = open;
-  let r: { line?: string; conversationId?: string } = {};
+  let r: { line?: string; conversationId?: string; stage?: unknown } = {};
   for (const line of said) {
     reply = await v1('/v1/turn', { cityId, placeId, conversationId: o.conversationId, learnerSaid: line });
     r = (await reply.json()) as typeof r;
@@ -193,14 +193,22 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   open.ok && reply.ok && r.conversationId === o.conversationId
     ? pass('v1 conversation by ids (transcript kept on the server)')
     : fail('v1 conversation by ids', `${open.status}/${reply.status} ${JSON.stringify(r).slice(0, 200)}`);
+  // After two lines the third turn is the choose stage
+  r.stage === 'choose' ? pass('v1 turn stages: tap, then after two lines choose') : fail('v1 turn stage after two lines', JSON.stringify(r.stage));
 
-  // The reply buttons for beginner levels 1–3 (docs/beginner-scaffolding.md): two
+  // The reply buttons while scaffolding (docs/beginner-scaffolding.md): two
   // whole-line replies to the character's last line, read from the database
   const rep = await v1('/v1/replies', { cityId, placeId, conversationId: o.conversationId });
   const rp = (await rep.json()) as { frame?: string; replies?: { line?: string; en?: string }[] };
   rep.ok && rp.replies?.length === 2 && rp.replies.every((x) => x.line?.trim() && x.en?.trim())
     ? pass(`v1 replies ("${rp.replies[0].line?.slice(0, 30)}" / "${rp.replies[1].line?.slice(0, 30)}")`)
     : fail('v1 replies', `${rep.status} ${JSON.stringify(rp).slice(0, 200)}`);
+  // The choose stage: one reply fits, and `fits` says which
+  const ch = await v1('/v1/replies', { cityId, placeId, conversationId: o.conversationId, stage: 'choose' });
+  const cp = (await ch.json()) as { replies?: { line?: string; en?: string }[]; fits?: number };
+  ch.ok && cp.replies?.length === 2 && (cp.fits === 0 || cp.fits === 1)
+    ? pass(`v1 replies, choose ("${cp.replies[cp.fits].line?.slice(0, 30)}" fits, not "${cp.replies[1 - cp.fits].line?.slice(0, 30)}")`)
+    : fail('v1 replies choose', `${ch.status} ${JSON.stringify(cp).slice(0, 200)}`);
 
   const end = await v1(`/v1/conversations/${o.conversationId}/end`, {});
   const e = (await end.json()) as { remembered?: string };

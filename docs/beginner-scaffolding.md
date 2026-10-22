@@ -14,12 +14,12 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 | # | Step | What happens | Status |
 |---|---|---|---|
 | 1 | **Onboarding** | Choose a country; the greeter asks two things, answered by button or voice; she places you at a level | Built ([onboarding-design.md](onboarding-design.md)) |
-| 2 | **Reply buttons, stage A: tap** | The first N turns of each conversation are taps on one of two good replies; N runs out over 12 conversations | **Built**, live 2026-10-22 |
-| 3 | Stage B: tap, then read it aloud | | Proposed, not built |
-| 4 | Stage C: choose the one that fits, read it aloud | | Proposed, not built |
+| 2 | **Reply buttons, stage A: tap** | Two good replies; tap one and it's sent | **Built**, live 2026-10-22 |
+| 3 | **Stage B: tap, then read it aloud** | Two good replies; tap one, then say it | Being built (2026-10-22) |
+| 4 | **Stage C: choose, read it aloud** | Only one reply fits; choose, then say it | Being built (2026-10-22) |
 | 5 | **The microphone alone** | Speak freely; today's game | Built |
 
-Today a beginner goes 1 → 2 → 5: within a conversation, taps first, then the mic.
+In each of the first 3 conversations: A, B, C (one turn each), then the mic; from the 4th, the mic alone.
 
 ## 1. Onboarding sets the level
 
@@ -31,16 +31,16 @@ Onboarding is where the level comes from: the greeter's send-off judges your ans
 
 **Who:** a learner whose level is Beginner or not set yet. Never Intermediate or Advanced; never with Magda, whose lessons don't count either.
 
-**When:** the first N learner turns of each conversation are taps, then the learner speaks in the same conversation. N follows how many conversations they've had before (ones where they said something):
+**When (Josh, 2026-10-22: "a–c in a conversation, repeat in next 2 conversations"):** in each of a new learner's first 3 conversations, their first three turns step through the stages, one turn each, then they speak for the rest of that conversation. From the 4th conversation on, the mic alone.
 
-| Conversations before | 0–2 | 3–5 | 6–8 | 9–11 | 12+ |
-|---|---|---|---|---|---|
-| Tapped turns (N) | 4 | 3 | 2 | 1 | none |
+| Learner turn in conversations 1–3 | 1st | 2nd | 3rd | 4th on |
+|---|---|---|---|---|
+| Stage | A tap | B tap, read aloud | C choose, read aloud | mic |
 
-`TAP_SCHEDULE` in `lib/scaffold.ts`. Claude's proposal; the numbers are Josh's to set.
+`STAGES` and `SCAFFOLD_CONVERSATIONS` in `lib/scaffold.ts`; one turn per stage is Claude's starting point. Conversations count from the first, or from `learners.scaffold_from` (a restart), ones where they said something, Magda's not counted. This replaced a schedule of 4, 3, 2, 1 taps over 12 conversations (2026-10-21).
 
 **How it works:**
-- The server decides with every line: `/v1/turn` returns `replies: true` when the learner's next turn is a tap. The app holds no switch (the hidden "Reply buttons (test)" toggle and the level picker were removed 2026-10-21).
+- The server decides with every line: `/v1/turn` returns `replies: true` and `stage` (`tap`, `read`, `choose`) when the learner's next turn uses the buttons. The app holds no switch (the hidden "Reply buttons (test)" toggle and the level picker were removed 2026-10-21).
 - The replies come from a separate call, `POST /v1/replies` (`lib/replies.ts`, prompt `replies.md`), written while the character's voice plays, so the turn stays `{ line, en }`.
 - They appear when the character has finished, so the learner listens first. Two whole-line replies on the same frame ("Vorrei…", "Mi chiamo…"), both sensible; pick what you'd actually say. The tapped one shows a plain selected state, no right or wrong colours.
 - A tap sends the line through the typed-reply path (`learnerSaid` on `/v1/turn`), and the character answers to it.
@@ -67,9 +67,9 @@ Proposed details, not yet confirmed:
 
 ## Not settled (Josh's to decide)
 
-- **The rules for moving between stages:** when B and C start, how they share the tapped turns, and whether anything moves a learner back.
+- **Whether anything moves a learner back** (a learner who struggles after conversation 3).
 - **The full set of stages.** Candidates from earlier plans, none chosen: less English step by step (English on her line only, then none); fill the frame ("Vorrei ____", speak the rest your own way); a "Less help" button the learner can press.
-- **The numbers** in `TAP_SCHEDULE`.
+- **The numbers:** one turn per stage, three conversations.
 - **English under the character's line.** On 19 October Josh decided no translation line at any level, the English to come in the dialogue and on the buttons, once characters reliably give English when asked what something means. What's built shows English on her line while scaffolding. Which holds?
 - **Whether the level check turns on** (`LEVEL_CHECK`), so a learner's level can move after onboarding rather than resting on two answers.
 

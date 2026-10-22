@@ -12,7 +12,7 @@ All in `content/<country>/prompts/`, one copy per country.
 |---|---|---|---|
 | `character.md` | A character's next line, `{ line, en }` | Every turn | Anything a character says, including lines written outside a live conversation (a Diario card's line and answers) |
 | `levels.md` | Level blocks appended to the character prompt | Josh's Mexico learner only (`LEVEL_TRIAL`) | Making any character line easier |
-| `replies.md` | Two whole-line replies on one frame, answering the character's last line | No (route built, app not yet) | Reply buttons, Diario card replies |
+| `replies.md` | Two whole-line replies on one frame, answering the character's last line; its Choose prompt writes one that fits and one that doesn't (2026-10-22) | Yes: the reply buttons while scaffolding (`/v1/replies`) | Reply buttons, Diario card replies |
 | `magda-teaching.md` | Magda's lessons | Conversations with Magda | Explicit teaching |
 | `onboarding.md` | The greeter: follow-up, placement, send-off | Once per new learner | — |
 | `memory.md` | After a conversation: the character's notes, and review phrases, mistakes, missed, English | Every conversation | What the learner got wrong or needed (the Diario's frames start here) |
@@ -82,6 +82,15 @@ Replay gate, Italy, 25 conversations (Mexico has no replay set yet). Today's pro
 | **`character-teach3.md`** | 2.1 s | 18 | 9% | 82% | 44% | 5.3 | ~0 | **Candidate**; Josh decides |
 
 
+
+### Reply buttons, choose stage (`replies.md` → Choose prompt, experiment `tests/experiments/reply-choice.mts`)
+
+The third scaffolding stage (Josh, 2026-10-22): two replies, only one fits, the learner chooses and reads it aloud. The first three character lines of each of the 28 committed synthetic conversations per country (84 pairs each); a second model judges 7 checks (the one that fits is sensible; the other clearly doesn't fit here, is correct, isn't silly; picking needs understanding the line; beginner; English right). 2026-10-22.
+
+| Version | Italy all checks | Mexico all checks | Misfit wrong here | Needs understanding | Median | Decision |
+|---|---|---|---|---|---|---|
+| v1: misfit answers another question, names the wrong thing, or belongs at another time; same frame | 70% | 75% | 87% / 87% | 90% / 89% | 1.7 s | Dropped: the misfit was often another fair choice (coffee at a market), or the greeting gave it away |
+| v2 (shipped, 2026-10-22): misfit answers a *different question*, never another choice to the same one; both start the same; no word echoed from her line in one only | **92%** | **85%** | 99% / 99% | 95% / 94% | 4.5–5.1 s | **Kept.** Left: an occasional odd "per favore" on the misfit, the reply that fits echoing her words, some fitting replies above beginner (quisiera, he venido). Slower: still written while she speaks; watch whether it's ready in time |
 
 ### Diario cards (experiment, `tests/experiments/diario-cards.mts`)
 

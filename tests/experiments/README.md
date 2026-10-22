@@ -12,6 +12,7 @@ Run from the repo root with the API key: `npx tsx --env-file=.env.local tests/ex
 | `line-level.mts` | Lines a beginner can follow (the scorecard's level judge, `lib/level.ts`), early and late in the conversation | report `.md` files | 1–14 (as `grade-runs.mjs`) |
 | `judge-report.mts` | The replay's quality judge (alive, replies that don't follow) on any report, twice per conversation; `--notes` prints why | report `.md` files | 8–13 |
 | `reply-buttons.mts` | The reply buttons (`lib/replies.ts`) for every character line, judged in 8 checks, and whether they're ready before the line ends | report `.md` files | 7 |
+| `reply-choice.mts` | The choose stage's pair (one reply fits, one doesn't), judged in 7 checks, on the first three lines of each synthetic conversation | synthetic set | choice 1 |
 | `real-conversations.mts` | Real conversations from the admin export, re-judged, written as a report (lowest first) for the scripts above | admin export, prompt version | 15 |
 | `placement.mts` | Onboarding's level against a known level, and a level judge after each of 3 conversations | — | 14 |
 | `repeats.mts` | Character lines that repeat themselves or re-ask, on the longest replay scripts; `TURN_RECENT_TURNS` sets the history window | replay set | 15 |

@@ -1,7 +1,7 @@
 /**
  * POST /v1/turn
  *   { cityId, placeId, tripTo?, conversationId?, learnerSaid? }
- *   → { line, en, conversationId, promptVersion, replies }
+ *   → { line, en, conversationId, promptVersion, replies, stage }
  *
  * Without conversationId: the character's opening line, and a new
  * conversation. With it: the learner's line (learnerSaid) and the reply. The
@@ -10,9 +10,11 @@
  * transcript (docs/12-native-app.md). Same turn code as the web
  * (lib/conversation/take-turn.ts).
  *
- * `replies`: the learner's next turn is a tap on two reply buttons
- * (/v1/replies) instead of the mic: beginners, for the first turns of each
- * conversation (lib/scaffold.ts).
+ * `replies`: the learner's next turn uses the two reply buttons
+ * (/v1/replies) instead of the mic; `stage` says how: tap, read (tap, then
+ * read it aloud) or choose (only one fits; choose, then read it aloud), or
+ * null. New learners, the first turns of their first conversations
+ * (lib/scaffold.ts). `replies` stays for apps that don't read `stage`.
  */
 import Anthropic from '@anthropic-ai/sdk';
 import { z } from 'zod';
@@ -22,7 +24,7 @@ import { loadConversationTurns } from '@/lib/recording';
 import { takeTurn } from '@/lib/conversation/take-turn';
 import { logServerError } from '@/lib/server-log';
 import { Laps } from '@/lib/timing';
-import { offerReplies, scaffoldFacts } from '@/lib/scaffold';
+import { scaffoldFacts, scaffoldStage } from '@/lib/scaffold';
 import { tutor } from '@/content';
 
 const Body = z.object({
@@ -67,17 +69,18 @@ export async function POST(request: Request) {
       });
       const facts = await scaffoldFacts(learnerId, result.conversationId ?? null, tutor.id);
       const learnerTurns = parsed.transcript.filter((t) => t.who === 'learner').length + (learnerSaid ? 1 : 0);
-      const replies = offerReplies({ ...facts, learnerTurns, isTutor: result.isTutor });
+      const stage = scaffoldStage({ ...facts, learnerTurns, isTutor: result.isTutor });
+      const replies = stage !== null
       laps.lap('scaffold');
       laps.facts.turn = conversationId ? 'reply' : 'opening';
-      laps.facts.replies = replies ? "yes" : "no";
+      laps.facts.replies = stage ?? "no";
       laps.log('turn-timing', request.headers.get('x-fuori-id'));
       const headers: Record<string, string> = { 'server-timing': laps.header() };
       // Read by scripts/smoke-live.ts
       if (result.memory) headers['x-memory'] = `${result.memory.visits} visits, ${result.memory.notes.length} notes`;
       if (result.isTutor) headers['x-study-file'] = `${result.memory?.notes.length ?? 0} lines, ${result.memory?.visits ?? 0} lessons`;
       return apiJson(
-        { ...result.reply, conversationId: result.conversationId, promptVersion: result.promptVersion, replies },
+        { ...result.reply, conversationId: result.conversationId, promptVersion: result.promptVersion, replies, stage },
         { headers }
       );
     } catch (err) {

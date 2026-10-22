@@ -1,12 +1,12 @@
 /**
- * Reply buttons for beginner levels 1–3 (docs/beginner-scaffolding.md): two
- * whole-line replies to the character's last line, written by a separate call
- * so the character's turn stays { line, en }. Prompt in
- * content/<country>/prompts/replies.md.
+ * Reply buttons for scaffolding (docs/beginner-scaffolding.md, lib/scaffold.ts):
+ * two whole-line replies to the character's last line, written by a separate
+ * call so the character's turn stays { line, en }. Prompt in
+ * content/<country>/prompts/replies.md: two good replies for the tap and read
+ * stages, one that fits and one that doesn't for the choose stage.
  *
- * Experimental: called by `npm run test:conversations -- --learner=tap` and by
- * POST /v1/replies, which the app uses only when Settings → "Reply buttons
- * (test)" is on (off by default). Server-side only.
+ * Called by POST /v1/replies and `npm run test:conversations -- --learner=tap`.
+ * Server-side only.
  */
 
 import { z } from 'zod';
@@ -17,7 +17,11 @@ import type { CharacterSheet, Turn } from './types';
 
 const Reply = z.object({ line: z.string(), en: z.string() });
 const RepliesSchema = z.object({ frame: z.string(), replies: z.array(Reply).length(2) });
-export type Replies = z.infer<typeof RepliesSchema>;
+export type Replies = z.infer<typeof RepliesSchema> & {
+  /** Choose stage: which of the two replies fits (the other answers something else) */
+  fits?: number;
+};
+const ChoiceSchema = z.object({ fits: Reply, misfit: Reply });
 
 const outputSchema = {
   type: 'object',
@@ -32,12 +36,15 @@ const outputSchema = {
   required: ['frame', 'replies'],
 };
 
+const replyJson = { type: 'object', additionalProperties: false, properties: { line: { type: 'string' }, en: { type: 'string' } }, required: ['line', 'en'] };
+const choiceSchema = { type: 'object', additionalProperties: false, properties: { fits: replyJson, misfit: replyJson }, required: ['fits', 'misfit'] };
+
 export function repliesPromptVersion(): string {
   return readPromptFile('replies.md').version;
 }
 
-export function buildRepliesPrompt(character: CharacterSheet, transcript: Turn[]): { system: string; user: string } {
-  const system = fill(readPromptFile('replies.md').block('System prompt'), { language: language.name, name: character.name, role: character.role });
+export function buildRepliesPrompt(character: CharacterSheet, transcript: Turn[], block: 'System prompt' | 'Choose prompt' = 'System prompt'): { system: string; user: string } {
+  const system = fill(readPromptFile('replies.md').block(block), { language: language.name, name: character.name, role: character.role });
   const user = transcript.map((t) => `${t.who === 'npc' ? character.name : 'Person'}: ${t.transcript}`).join('\n');
   return { system, user };
 }
@@ -63,4 +70,26 @@ export async function writeReplies(character: CharacterSheet, transcript: Turn[]
   });
   if (response.stop_reason === 'max_tokens') throw new Error(`Reply buttons hit max_tokens (${response.usage.output_tokens} tokens)`);
   return RepliesSchema.parse(JSON.parse(replyText(response)));
+}
+
+/**
+ * The choose stage: one reply that fits and one, correct but out of place,
+ * that doesn't, in random order so the right one isn't always first
+ */
+export async function writeChoice(character: CharacterSheet, transcript: Turn[], random: () => number = Math.random): Promise<Replies> {
+  const prompt = buildRepliesPrompt(character, transcript, 'Choose prompt');
+  const response = await anthropic.messages.create({
+    model: CLAUDE_MODEL,
+    max_tokens: 3000, // leaves room for thinking, which counts toward it
+    system: prompt.system,
+    messages: [{ role: 'user', content: prompt.user }],
+    output_config: { format: { type: 'json_schema', schema: choiceSchema } },
+  });
+  if (response.stop_reason === 'max_tokens') throw new Error(`Reply buttons (choose) hit max_tokens (${response.usage.output_tokens} tokens)`);
+  return shuffleChoice(ChoiceSchema.parse(JSON.parse(replyText(response))), random);
+}
+
+export function shuffleChoice(c: z.infer<typeof ChoiceSchema>, random: () => number = Math.random): Replies {
+  const fitsFirst = random() < 0.5;
+  return { frame: '', replies: fitsFirst ? [c.fits, c.misfit] : [c.misfit, c.fits], fits: fitsFirst ? 0 : 1 };
 }
