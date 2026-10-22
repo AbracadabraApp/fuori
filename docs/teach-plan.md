@@ -39,9 +39,7 @@ Then, as cross-checks only:
   Where they disagree with a book, the book wins; say so.
 - {country_notes}: e.g. for Mexico communicating-in-mexico.md, mexican-words.csv;
   use Mexican forms, flag anything Spain-only.
-- docs/learn.md (the 12 teaching principles), docs/flashcards.md, docs/teach-plan.md,
-  and the game's places: content/{country}/cities/*.ts (kinds of place and roles
-  of the people there).
+- docs/learn.md (the 12 teaching principles), docs/flashcards.md, docs/teach-plan.md.
 
 METHOD
 1. Read each book in full, in order, and make a table of its units: can-do, situations,
@@ -66,9 +64,8 @@ EACH UNIT (JSON)
 - frames: 3–8 short reusable chunks a person here really says, each with English
   and whether the learner must SAY it or only UNDERSTAND it (directions are A1 to
   ask, A2 to understand)
-- model_exchanges: 2–3 short exchanges (4–8 lines) at one of the game's kinds of
-  place, as a character and the newcomer would really speak; adapt the books'
-  dialogues freely
+- model_exchanges: 2–3 short exchanges (4–8 lines) in a real-life situation, as
+  people here and a newcomer would really speak; adapt the books' dialogues freely
 - grammar: only what the frames need, explained in one plain sentence, with the
   trap for English speakers
 - vocabulary: 10–25 words across parts of speech (nouns with article/gender,
@@ -79,8 +76,8 @@ EACH UNIT (JSON)
 - pronunciation: the one or two sounds or stresses this unit's words trip on
 - common_errors: what English speakers get wrong here, with the right form
 - culture: one practical point about life here
-- places: kinds of place in the game where this unit comes up naturally, and
-  which roles (barista, market seller, landlady) would use it
+- situations: the real-life situations where this language is needed (at a bar,
+  at the doctor, renting a flat), chosen by what a newcomer needs, not by the game
 - recycles: frames and words from earlier units that this one reuses
 - evidence: what in a real conversation shows the learner has it (used a frame
   unprompted; understood a line without asking)
@@ -105,6 +102,8 @@ level checked against the word list. Prefer fewer, solid units to many thin ones
 OUTPUT: syllabus.json (units, grammar inventory, B1–C1 word list, coverage, decisions, gaps) and a readable summary for review, one section
 per level.
 ```
+
+The syllabus is about the language and real-life situations only, not the game's places or mechanics (Josh, 2026-10-21). Connecting a unit to a place in town is the teach agent's job at run time.
 
 ## 2. The teach agent in the Learn area
 
