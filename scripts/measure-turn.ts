@@ -10,6 +10,7 @@
  *   npm run measure:turn                  # Italy, 5 turns
  *   COUNTRY=es-mx npm run measure:turn -- --turns=8
  *   npm run measure:turn -- --url=http://localhost:3000 --keep
+ *   npm run measure:turn -- --no-early   # the voice made only when asked, as before 2026-10-22
  *
  * The learner's recordings are made once with the greeter's hosted voice
  * (through /v1/speak) and converted to m4a with afconvert, like the app's.
@@ -31,6 +32,11 @@ const arg = (name: string) => process.argv.find((a) => a.startsWith(`--${name}=`
 const base = (arg('url') ?? LIVE[country]).replace(/\/$/, '');
 const keep = process.argv.includes('--keep');
 const turns = Number(arg('turns') ?? 5);
+// The app's voice speed (English off). The turn sends it so the server starts
+// the voice early (lib/voice/early-voice.ts); --no-early sends another speed
+// to the turn, so /v1/speak makes the voice from scratch, as before 2026-10-22
+const SPEED = 0.9;
+const turnSpeed = process.argv.includes('--no-early') ? 0.7 : SPEED;
 
 // What the learner says, a short line a turn, as in a real conversation
 const LINES: Record<string, string[]> = {
@@ -101,7 +107,7 @@ async function main() {
       recordings.push(readFileSync(join(dir, `${i}.m4a`)));
     }
 
-    const opening = await timed(json('/v1/turn', { cityId: city.id, placeId: place.id }));
+    const opening = await timed(json('/v1/turn', { cityId: city.id, placeId: place.id, speed: turnSpeed }));
     const conversationId = (JSON.parse(new TextDecoder().decode(opening.body)) as { conversationId: string }).conversationId;
     console.log(`opening: ${opening.step.client} ms  (server ${JSON.stringify(opening.step.server)})\n`);
 
@@ -111,9 +117,9 @@ async function main() {
       form.append('audio', new Blob([new Uint8Array(recordings[i % recordings.length])], { type: 'audio/m4a' }), 'speech.m4a');
       const tr = await timed(() => fetch(`${base}/v1/transcribe`, { method: 'POST', headers: auth, body: form }));
       const said = (JSON.parse(new TextDecoder().decode(tr.body)) as { text: string }).text;
-      const tu = await timed(json('/v1/turn', { cityId: city.id, placeId: place.id, conversationId, learnerSaid: said }));
+      const tu = await timed(json('/v1/turn', { cityId: city.id, placeId: place.id, conversationId, learnerSaid: said, speed: turnSpeed }));
       const reply = JSON.parse(new TextDecoder().decode(tu.body)) as { line: string };
-      const sp = await timed(json('/v1/speak', { text: reply.line, characterId: person.id, speed: 1 }));
+      const sp = await timed(json('/v1/speak', { text: reply.line, characterId: person.id, speed: SPEED }));
       rows.push({ transcribe: tr.step, turn: tu.step, speak: sp.step, words: reply.line.split(/\s+/).length });
       const total = tr.step.client + tu.step.client + sp.step.client;
       console.log(`turn ${i + 1}: ${total} ms = transcribe ${tr.step.client} + turn ${tu.step.client} + voice ${sp.step.client}   "${said}" → "${reply.line}"`);
