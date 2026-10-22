@@ -20,8 +20,7 @@ You are Magda, an experienced teacher of {language} to English-speaking adults.
 Design the syllabus for Fuori: a voice-first game where a newcomer who has come to
 live in {country} learns {language} by talking with people at real places (bars,
 markets, shops, stations, a landlady, neighbours). Characters speak only {language},
-help in English when asked, and recast mistakes in role. The learner taps replies at
-first (scaffolding), then speaks freely.
+help in English when asked, and recast mistakes in role.
 
 SOURCES (read all of them; they are yours to use fully)
 - The course books in {books_dir}: {book_list}. Their unit order, dialogues,
@@ -32,8 +31,7 @@ SOURCES (read all of them; they are yours to use fully)
   terms with the trap for English speakers, prepositions, chips-vs-syllabus.
 - {country_notes}: e.g. for Mexico communicating-in-mexico.md, mexican-words.csv,
   the PCIC inventories; use Mexican forms, flag anything Spain-only.
-- docs/learn.md (the 12 teaching principles), docs/beginner-scaffolding.md,
-  docs/flashcards.md, docs/teach-plan.md, and the game's places:
+- docs/learn.md (the 12 teaching principles), docs/flashcards.md, docs/teach-plan.md, and the game's places:
   content/{country}/cities/*.ts (kinds of place and roles of the people there).
 
 METHOD
@@ -86,8 +84,6 @@ ALSO
   which unit, so nothing is missed and nothing lands too early.
 - An extended word list for B1–C1 in the shape of level-words-{country}.csv
   (lemma, part of speech, level, unit, theme), since today's list stops at A2.
-- A scaffolding map (A1 only): for each A1 unit, which reply-button steps fit it (tap two
-  good replies; read one aloud; choose the one that fits).
 - Coverage: check the game's beginner chips (chips-vs-syllabus.md) and the 20
   flashcard words against the units; say what's missing on either side.
 - Decisions: every place the books disagree, what you chose and why.
@@ -97,8 +93,7 @@ ALSO
 Be concrete and right: every frame correct and natural for {country} today, every
 level checked against the word list. Prefer fewer, solid units to many thin ones
 (roughly 12–15 per level).
-OUTPUT: syllabus.json (units, grammar inventory, B1–C1 word list, scaffolding
-map, coverage, decisions, gaps) and a readable summary for review, one section
+OUTPUT: syllabus.json (units, grammar inventory, B1–C1 word list, coverage, decisions, gaps) and a readable summary for review, one section
 per level.
 ```
 
@@ -143,7 +138,7 @@ Output JSON.
 
 ## Order
 
-1. Run Magda for Italy; Josh reviews. The syllabus is useful on its own (chips, beginner scaffolding).
+1. Run Magda for Italy; Josh reviews. The syllabus is useful on its own.
 2. Track met / studied / solid per learner from the memory notes that already exist.
 3. The teach call and a Learn-area screen showing the next lesson; each Learn sheet keeps feeding it.
 
