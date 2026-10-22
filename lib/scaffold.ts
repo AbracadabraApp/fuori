@@ -25,7 +25,8 @@ export function offerReplies(p: { level: Level | null; conversationsBefore: numb
 
 /**
  * The learner's level and how many conversations they've had before this
- * one: those where they said something, Magda's lessons not counted
+ * one: those where they said something, Magda's lessons not counted, and
+ * none started before learners.scaffold_from (a restart; null counts all)
  */
 export async function scaffoldFacts(learnerId: string, conversationId: string | null, tutorId: string): Promise<{ level: Level | null; conversationsBefore: number }> {
   const r = await query<{ level: Level | null; before: string }>(
@@ -34,6 +35,7 @@ export async function scaffoldFacts(learnerId: string, conversationId: string | 
               WHERE c.learner_id = l.id
                 AND c.id IS DISTINCT FROM $2::uuid
                 AND c.character_id <> $3
+                AND (l.scaffold_from IS NULL OR c.started_at >= l.scaffold_from)
                 AND c.turns @> '[{"who":"learner"}]'::jsonb) AS before
        FROM learners l WHERE l.id = $1`,
     [learnerId, conversationId, tutorId]

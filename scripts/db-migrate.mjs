@@ -92,6 +92,10 @@ ALTER TABLE learners ADD COLUMN IF NOT EXISTS level_checks jsonb;
 -- weaker signals may fill it, never over a choice).
 ALTER TABLE learners ADD COLUMN IF NOT EXISTS addressed_as text CHECK (addressed_as IN ('f', 'm'));
 ALTER TABLE learners ADD COLUMN IF NOT EXISTS addressed_from text;
+-- Scaffolding counts only conversations started after this (lib/scaffold.ts);
+-- null counts them all. Set to restart the reply buttons without deleting
+-- conversations (Josh, 2026-10-22, for his own learners).
+ALTER TABLE learners ADD COLUMN IF NOT EXISTS scaffold_from timestamptz;
 
 -- Indexes for common queries
 CREATE INDEX IF NOT EXISTS idx_conversations_learner ON conversations(learner_id);
