@@ -1,0 +1,172 @@
+{
+  "about": "Flashcards (Josh, 2026-10-21): a production candidate, not used by the app yet. One card per word: the word with its article, the English, which sense the card teaches, and the picture (a scene that shows that sense without any writing in it). Images: 1:1, generated at 2k, saved 1200 x 1200 JPEG.",
+  "language": "it",
+  "image": {
+    "aspect_ratio": "1:1",
+    "resolution": "2k",
+    "width": 1200,
+    "height": 1200
+  },
+  "cards": [
+    {
+      "word": "caffè",
+      "article": "il",
+      "gender": "m",
+      "en": "coffee (an espresso)",
+      "note": "",
+      "picture": "An espresso in a small white cup on its saucer, on a marble bar counter"
+    },
+    {
+      "word": "parola",
+      "article": "la",
+      "gender": "f",
+      "en": "word",
+      "note": "",
+      "picture": "An open dictionary on a café table, one entry circled in pencil, the print too small to read"
+    },
+    {
+      "word": "banco",
+      "article": "il",
+      "gender": "m",
+      "en": "counter (at a bar)",
+      "note": "Also bench, bank; the bar counter is where a newcomer meets it",
+      "picture": "A wooden bar counter with a few espresso cups and a sugar bowl, a barista's hands behind it"
+    },
+    {
+      "word": "sera",
+      "article": "la",
+      "gender": "f",
+      "en": "evening",
+      "note": "",
+      "picture": "A small piazza at dusk, street lamps just lit, people strolling, the sky deep blue and orange"
+    },
+    {
+      "word": "cosa",
+      "article": "la",
+      "gender": "f",
+      "en": "thing",
+      "note": "Most often met in Cosa? (What?); the card teaches the noun",
+      "picture": "A table with a jumble of everyday things: keys, a cup, a book, a ball of string, sunglasses"
+    },
+    {
+      "word": "volta",
+      "article": "la",
+      "gender": "f",
+      "en": "time (as in once, twice)",
+      "note": "Una volta, tre volte; not time on a clock",
+      "picture": "Three identical espresso cups in a row on a counter, as if ordered three times"
+    },
+    {
+      "word": "euro",
+      "article": "l'",
+      "gender": "m",
+      "en": "euro",
+      "note": "Plural euro: it doesn't change",
+      "picture": "A few euro coins and a folded note on a small saucer by a till"
+    },
+    {
+      "word": "tempo",
+      "article": "il",
+      "gender": "m",
+      "en": "time; weather",
+      "note": "Two everyday senses: non ho tempo, che tempo fa?",
+      "picture": "A town clock tower against a sky half sunny and half rainy"
+    },
+    {
+      "word": "pepe",
+      "article": "il",
+      "gender": "m",
+      "en": "pepper",
+      "note": "",
+      "picture": "A wooden pepper grinder beside a little heap of black peppercorns"
+    },
+    {
+      "word": "pecorino",
+      "article": "il",
+      "gender": "m",
+      "en": "pecorino (sheep's cheese)",
+      "note": "",
+      "picture": "A wheel of pecorino with a wedge cut out, on a wooden board"
+    },
+    {
+      "word": "parte",
+      "article": "la",
+      "gender": "f",
+      "en": "part",
+      "note": "",
+      "picture": "A round pizza on a table with one slice taken out"
+    },
+    {
+      "word": "ragione",
+      "article": "la",
+      "gender": "f",
+      "en": "reason; avere ragione = to be right",
+      "note": "Most met in Hai ragione! (You're right!)",
+      "picture": "Two friends at a café table, one conceding with open hands and a smile while the other makes a point"
+    },
+    {
+      "word": "figlio",
+      "article": "il",
+      "gender": "m",
+      "en": "son",
+      "note": "",
+      "picture": "A father walking hand in hand with his young son down a lane"
+    },
+    {
+      "word": "cacio",
+      "article": "il",
+      "gender": "m",
+      "en": "cheese (in Rome: pecorino)",
+      "note": "Cacio e pepe",
+      "picture": "A hunk of cheese being grated over a plate of pasta"
+    },
+    {
+      "word": "cornetto",
+      "article": "il",
+      "gender": "m",
+      "en": "croissant (Italian breakfast pastry)",
+      "note": "",
+      "picture": "A cornetto on a small plate beside a cappuccino"
+    },
+    {
+      "word": "pomodoro",
+      "article": "il",
+      "gender": "m",
+      "en": "tomato",
+      "note": "",
+      "picture": "Ripe red tomatoes on the vine in a market crate"
+    },
+    {
+      "word": "italiano",
+      "article": "l'",
+      "gender": "m",
+      "en": "Italian (the language; an Italian man)",
+      "note": "",
+      "picture": "A small group chatting animatedly at an outdoor café, hands in motion"
+    },
+    {
+      "word": "treno",
+      "article": "il",
+      "gender": "m",
+      "en": "train",
+      "note": "",
+      "picture": "A regional train pulling into a small station platform"
+    },
+    {
+      "word": "correzione",
+      "article": "la",
+      "gender": "f",
+      "en": "correction",
+      "note": "",
+      "picture": "A hand correcting handwriting on a page with a red pencil, the words too small to read"
+    },
+    {
+      "word": "albicocca",
+      "article": "l'",
+      "gender": "f",
+      "en": "apricot",
+      "note": "",
+      "picture": "A bowl of ripe apricots, one cut in half showing the stone"
+    }
+  ]
+}
