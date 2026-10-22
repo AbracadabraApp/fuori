@@ -6,7 +6,7 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases (Josh, 2026-10-22):** this release is **N4**, TestFlight to Josh, and includes scaffolding (onboarding, reply buttons). **N5** is next: Learn, Teach (Magda's syllabus) and the Diario, plus the web sunset ([12-native-app.md](12-native-app.md) → Milestones). Each section below says which. Each item says who does it: **Josh** or **Claude**. ⛔ marks a blocker: work that waits on someone. Detail lives in the linked docs; done and removed items are at the bottom of this file.
+The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases (Josh, 2026-10-22):** this release is **N4**, TestFlight to Josh, and includes scaffolding (onboarding, reply buttons). **N5** is next: Learn, Teach (Magda's syllabus) and the Diario, plus the web sunset. **N6**: a framework for level, repeatable and improving ([12-native-app.md](12-native-app.md) → Milestones). Each section below says which. Each item says who does it: **Josh** or **Claude**. ⛔ marks a blocker: work that waits on someone. Detail lives in the linked docs; done and removed items are at the bottom of this file.
 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
@@ -58,7 +58,7 @@ Goal: alive 7 (today about 6 in real conversations, 5–7 with simulated learner
 - [ ] **Claude** If it passes: generate details for the remaining ~680 characters, check a sample, fix only what's terrible
 - [ ] **Claude** A replay set for Mexico (the replay set is one file and holds only Italy's conversations today)
 
-### Language level of the dialogue (what characters say) ([language-levels-plan.md](language-levels-plan.md))
+### Language level of the dialogue (what characters say) ([language-levels-plan.md](language-levels-plan.md)) — N6, the level framework
 Goal: 90% of the character's words at the learner's level (Josh; the [research](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech) suggests 95% for easy listening). Today a beginner can follow about 25% of lines on today's prompt.
 - [x] **Claude** Level on the scorecard: "Lines a beginner can follow" (`lib/level.ts`, `level.md`), scored by the replay; real play not yet
 - [x] **Claude** The `test:conversations` grader no longer says complex language is fine; it reports "Lines a beginner can follow" instead (Josh's OK, 2026-10-18). Baseline: 10% Italy, 11% Mexico
@@ -67,7 +67,7 @@ Goal: 90% of the character's words at the learner's level (Josh; the [research](
 - [ ] **Claude** Level of real play on the scorecard (a call per line, so decide the cost first)
 - [ ] **Josh + Claude** More dialect as you level up (the dialect setting is greyed out today)
 
-### Learner level (placement and moving up)
+### Learner level (placement and moving up) — N6, the level framework
 Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level line and an unused type are separate pieces ([language-levels-plan.md](language-levels-plan.md) → 1).
 - [x] **Josh** Decided (2026-10-18): onboarding's level is a first guess; the first conversations confirm or move it. Round 14: one conversation corrected every misplacement
 - [x] **Claude** Level check at the end of each of the first 3 conversations, updating `learners.level` (`lib/learner-level.ts`, `learner-level.md`, `test:learner-level`). Off unless `LEVEL_CHECK` is set (`all` or learner ids); the `level_checks` column is created the first time it runs
