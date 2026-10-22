@@ -38,4 +38,4 @@ The mic stages check what Whisper heard against the one word on the card (the ap
 
 - Every reveal plays the word once, in the language being learned: stage a when the English appears, b and d after you've said it (so you compare yourself with a native speaker, not copy one first), c when the word appears.
 - Tapping the word replays it. Nothing plays on scroll or when a card first comes into view.
-- One neutral native voice per country through /v1/speak (a character's voice belongs to that character), the phone's voice as fallback; recordings cached with the card.
+- The voice: Giulia's in Italy and Rosa's in Mexico (Josh, 2026-10-21): both are in the city files (`giulia` in Roma, `rosa-estudiante` in Guadalajara) but not in play, so their voices are free. /v1/speak already takes a character id, so the cards call it with those ids (today they resolve to Nora, Romanesco, and the Mexican pool voice `spPXlKT5a4JMfbhPRAzA`). The phone's voice as fallback; recordings cached with the card.
