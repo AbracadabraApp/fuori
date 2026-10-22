@@ -49,4 +49,31 @@ import Testing
         let content = try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json))
         #expect(content.onboarding == nil)
     }
+
+    /// Name and address (docs/onboarding-design.md): the six lines as the
+    /// server sends them (content/<country>/onboarding.ts), and {name} filled
+    /// in, or left out with its comma when they skipped the name
+    @Test func decodesAddressLines() throws {
+        let url = try #require(Bundle.module.url(forResource: "content-it", withExtension: "json", subdirectory: "Fixtures"))
+        var json = try #require(try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        var onboarding = try #require(json["onboarding"] as? [String: Any])
+        var lines = try #require(onboarding["lines"] as? [String: Any])
+        #expect(try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json)).onboarding?.lines.addressLines == nil)
+        lines["askName"] = ["line": "Come ti chiami? Tocca il microfono e dimmi il tuo nome.", "en": "What's your name? Tap the microphone and tell me your name."]
+        lines["address"] = ["line": "Piacere, {name}! In italiano le parole cambiano: a una donna dico «benvenuta», a un uomo «benvenuto». Per te?", "en": "Nice to meet you, {name}! In Italian words change: to a woman I say benvenuta, to a man benvenuto. Which for you?"]
+        lines["asWoman"] = ["line": "Benvenuta!", "en": "to a woman"]
+        lines["asMan"] = ["line": "Benvenuto!", "en": "to a man"]
+        lines["welcomeWoman"] = ["line": "Benvenuta, {name}!", "en": "Welcome, {name}!"]
+        lines["welcomeMan"] = ["line": "Benvenuto, {name}!", "en": "Welcome, {name}!"]
+        onboarding["lines"] = lines
+        json["onboarding"] = onboarding
+        let content = try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json))
+        let address = try #require(content.onboarding?.lines.addressLines)
+        #expect(address.asWoman.line == "Benvenuta!")
+        #expect(address.welcomeMan.named("Giosuè").line == "Benvenuto, Giosuè!")
+        #expect(address.welcomeMan.named("Giosuè").en == "Welcome, Giosuè!")
+        #expect(address.welcomeWoman.named(nil).line == "Benvenuta!")
+        #expect(address.address.named(nil).line.hasPrefix("Piacere! In italiano"))
+        #expect(address.address.named(nil).en.hasPrefix("Nice to meet you! In Italian"))
+    }
 }

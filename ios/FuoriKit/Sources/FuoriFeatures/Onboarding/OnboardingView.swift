@@ -120,7 +120,33 @@ struct OnboardingView: View {
                     Task { await model.finish() }
                 }
             case .question, .followUp:
-                MicBox(model: model)
+                MicBox(model: model, hint: "Answer in \(model.language.name) or English")
+            case .askName:
+                VStack(spacing: 6) {
+                    MicBox(model: model, hint: nil)
+                    if model.phase != .listening && model.phase != .thinking {
+                        Button("Skip") { Task { await model.skipName() } }
+                            .typeface(.label, 16, relativeTo: .body)
+                            .foregroundStyle(Tokens.Colors.ink)
+                            .frame(minWidth: 88, minHeight: 44)
+                            .background(Tokens.Colors.paper.opacity(0.96), in: Capsule())
+                            .accessibilityHint("Go on without your name")
+                    }
+                }
+            case .address:
+                if let lines = model.addressLines {
+                    VStack(spacing: 10) {
+                        AnswerButton(said: lines.asWoman, language: model.language) { Task { await model.chooseAddress(woman: true) } }
+                        AnswerButton(said: lines.asMan, language: model.language) { Task { await model.chooseAddress(woman: false) } }
+                        SayAgainButton(model: model)
+                    }
+                    .disabled(model.phase == .thinking)
+                    .padding(.top, 6)
+                }
+            case .welcomed:
+                GoButton(said: model.onboarding.lines.go, language: model.language, busy: false) {
+                    Task { await model.continueAfterWelcome() }
+                }
             }
         }
     }
@@ -218,10 +244,11 @@ private struct GoButton: View {
     }
 }
 
-/// The mic: "Tap to talk", then "Press when done" while they talk, with
-/// "Answer in <language> or English" under it (onboarding only)
+/// The mic: "Tap to talk", then "Press when done" while they talk, with a
+/// hint under it ("Answer in <language> or English"; none for the name)
 private struct MicBox: View {
     let model: OnboardingModel
+    let hint: String?
 
     var body: some View {
         let talking = model.phase == .listening
@@ -251,13 +278,33 @@ private struct MicBox: View {
                 .typeface(.label, 16, relativeTo: .body, weight: .bold)
                 .foregroundStyle(Tokens.Colors.ink)
                 .multilineTextAlignment(.center)
-            Text("Answer in \(model.language.name) or English")
-                .typeface(.label, 14, relativeTo: .footnote)
-                .foregroundStyle(Tokens.Colors.muted)
+            if let hint {
+                Text(hint)
+                    .typeface(.label, 14, relativeTo: .footnote)
+                    .foregroundStyle(Tokens.Colors.muted)
+            }
         }
         .padding(12)
         .frame(maxWidth: .infinity)
         .background(Tokens.Colors.paper.opacity(0.96), in: RoundedRectangle(cornerRadius: 14))
+    }
+}
+
+/// On the address step: say the name again if she got it wrong (the mic,
+/// tap to talk and tap when done, as everywhere in onboarding)
+private struct SayAgainButton: View {
+    let model: OnboardingModel
+
+    var body: some View {
+        let talking = model.phase == .listening
+        Button { Task { await model.tapMic() } } label: {
+            Label(talking ? "Press when done" : "Say my name again", systemImage: talking ? "stop.fill" : "mic.fill")
+                .typeface(.label, 16, relativeTo: .body, weight: .bold)
+                .foregroundStyle(Tokens.Colors.ink)
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .background(Tokens.Colors.paper.opacity(0.96), in: Capsule())
+        }
+        .buttonStyle(PressableStyle())
     }
 }
 

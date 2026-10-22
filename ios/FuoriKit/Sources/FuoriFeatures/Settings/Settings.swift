@@ -100,6 +100,9 @@ struct SettingsSheet: View {
                 } footer: {
                     Text("Coming soon. \(Level.beginner.note)")
                 }
+                if model.addressOn, let lines = model.content?.onboarding?.lines.addressLines {
+                    AddressSection(lines: lines)
+                }
                 Section {
                     Toggle("Show \(language) words", isOn: $subtitles)
                     Toggle("Show English translation", isOn: $english)

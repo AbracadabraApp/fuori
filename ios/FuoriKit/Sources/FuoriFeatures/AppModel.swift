@@ -45,6 +45,12 @@ public final class AppModel {
     /// Every country's card, for the country choice and Settings (loaded from
     /// each server's /v1/content, which needs no sign-in)
     public private(set) var countries: [Country] = []
+    /// Whether this server saves how characters address the learner (/v1/me addressOn)
+    public private(set) var addressOn = false
+    /// "f" or "m" once chosen (onboarding or Settings); nil until then
+    public private(set) var addressedAs: String?
+    /// Shown under the Settings row when saving the choice failed
+    public private(set) var addressError: String?
     /// The greeter's screen while phase is .onboarding
     public private(set) var onboarding: OnboardingModel?
 
@@ -142,6 +148,7 @@ public final class AppModel {
     /// Advanced: off). The learner can change them in Settings.
     private func finishOnboarding(level: String) {
         UserDefaults.standard.set(level == "beginner", forKey: SettingsKey.english)
+        if let api { Task { addressedAs = (try? await api.me())?.addressedAs ?? addressedAs } }
         onboarding = nil
         phase = .ready
     }
@@ -187,11 +194,13 @@ public final class AppModel {
             let me = try await api.me()
             visits = me.visits
             learnerId = me.learnerId
+            addressOn = me.addressOn == true
+            addressedAs = me.addressedAs
             retryPendingSaves()
             // Not placed yet in this country: the greeter first (existing
             // learners too, once: Josh, 2026-10-16)
             if me.onboarded == false, let content, let greeter = content.onboarding {
-                onboarding = OnboardingModel(onboarding: greeter, language: content.language, api: api) { [weak self] level in
+                onboarding = OnboardingModel(onboarding: greeter, language: content.language, api: api, askAddress: addressOn) { [weak self] level in
                     self?.finishOnboarding(level: level)
                 }
                 phase = .onboarding
@@ -204,6 +213,27 @@ public final class AppModel {
             let code = report(error, step: "load")
             let message = (error as? APIError)?.message ?? error.localizedDescription
             phase = .failed(ErrorCode.message(message, code: code))
+        }
+    }
+
+    /// Settings: how characters address them ("f" or "m"). Shown at once;
+    /// a failure puts the old choice back and is reported. A 404 means the
+    /// server has it off: the row goes away.
+    public func chooseAddress(_ choice: String) async {
+        guard let api, choice != addressedAs else { return }
+        let before = addressedAs
+        addressedAs = choice
+        addressError = nil
+        do {
+            try await api.chooseAddress(choice)
+        } catch {
+            addressedAs = before
+            let code = report(error, step: "settings address")
+            if (error as? APIError)?.code == .notFound {
+                addressOn = false
+            } else {
+                addressError = ErrorCode.message("Couldn't save that. Try again.", code: code)
+            }
         }
     }
 

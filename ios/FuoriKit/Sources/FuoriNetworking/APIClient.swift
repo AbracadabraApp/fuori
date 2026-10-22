@@ -44,6 +44,11 @@ public actor APIClient {
         public let level: String?
         /// false: show onboarding. nil from servers before 2026-10-17 (no onboarding)
         public let onboarded: Bool?
+        /// Whether the server saves how characters address the learner
+        /// (LEARNER_ADDRESS); nil from servers before 2026-10-22, meaning off
+        public let addressOn: Bool?
+        /// "f" or "m" once they've chosen; nil until then
+        public let addressedAs: String?
     }
 
     /// GET /v1/me: the learner and their visit counts per place
@@ -205,6 +210,20 @@ public actor APIClient {
     public func onboardingDone() async throws {
         struct Body: Encodable { let path = "beginner" }
         _ = try await sendData(post("v1/onboarding/done", json: Body()), signedIn: true)
+    }
+
+    /// POST /v1/onboarding/address: how every character addresses them ("f" or
+    /// "m"), and the name for her. 404 while the server has it off
+    public func onboardingAddress(addressedAs: String, name: String?) async throws {
+        struct Body: Encodable { let addressedAs: String; let name: String? }
+        _ = try await sendData(post("v1/onboarding/address", json: Body(addressedAs: addressedAs, name: name)), signedIn: true)
+    }
+
+    /// POST /v1/me/address: the same choice from Settings, for learners who
+    /// never saw her question. 404 while the server has it off
+    public func chooseAddress(_ addressedAs: String) async throws {
+        struct Body: Encodable { let addressedAs: String }
+        _ = try await sendData(post("v1/me/address", json: Body(addressedAs: addressedAs)), signedIn: true)
     }
 
     /// POST /v1/onboarding/reset: Restart onboarding (the greeter welcomes them again)

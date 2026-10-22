@@ -105,6 +105,30 @@ public struct Onboarding: Codable, Sendable, Equatable {
         public let line: String
         public let en: String
         public init(line: String, en: String) { self.line = line; self.en = en }
+
+        /// With the learner's name in place of {name}; without one, the name
+        /// and the comma before it are left out ("Piacere!", "Welcome!")
+        public func named(_ name: String?) -> Line {
+            func fill(_ s: String) -> String {
+                guard let name, !name.isEmpty else {
+                    return s.replacingOccurrences(of: ", {name}", with: "").replacingOccurrences(of: " {name}", with: "").replacingOccurrences(of: "{name}", with: "")
+                }
+                return s.replacingOccurrences(of: "{name}", with: name)
+            }
+            return Line(line: fill(line), en: fill(en))
+        }
+    }
+
+    /// Name and address (docs/onboarding-design.md → Name and address): her
+    /// question for the name, how she'd welcome a woman or a man, the two
+    /// buttons and her welcome after the tap. {name} is filled in by the app
+    public struct AddressLines: Sendable, Equatable {
+        public let askName: Line
+        public let address: Line
+        public let asWoman: Line
+        public let asMan: Line
+        public let welcomeWoman: Line
+        public let welcomeMan: Line
     }
 
     public struct Lines: Codable, Sendable, Equatable {
@@ -119,6 +143,19 @@ public struct Onboarding: Codable, Sendable, Equatable {
         public let question: Line
         /// Ends every send-off (the server adds it to hers)
         public let help: Line
+        /// Name and address; nil from servers before 2026-10-21
+        public let askName: Line?
+        public let address: Line?
+        public let asWoman: Line?
+        public let asMan: Line?
+        public let welcomeWoman: Line?
+        public let welcomeMan: Line?
+
+        /// All six, or nil if this server doesn't send them
+        public var addressLines: AddressLines? {
+            guard let askName, let address, let asWoman, let asMan, let welcomeWoman, let welcomeMan else { return nil }
+            return AddressLines(askName: askName, address: address, asWoman: asWoman, asMan: asMan, welcomeWoman: welcomeWoman, welcomeMan: welcomeMan)
+        }
     }
 
     public struct Poses: Codable, Sendable, Equatable {

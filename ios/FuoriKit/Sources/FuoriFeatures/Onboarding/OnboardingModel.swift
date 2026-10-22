@@ -10,6 +10,11 @@ import FuoriAudio
 ///   welcome ─ "Not yet!" ──────────────→ beginner send-off → go → city list
 ///           └ "Yes, but I want to improve" → question → follow-up → send-off → go
 ///
+/// Right after that first tap, before the paths split, she asks their name
+/// (mic) and whether she should welcome a woman or a man (two buttons), then
+/// welcomes them by name (docs/onboarding-design.md → Name and address). Only
+/// while the server saves it (/v1/me addressOn) and sends her lines.
+///
 /// She always speaks the language being learned; English is only subtitles.
 /// Her line types out as she speaks; the English and the controls appear only
 /// when she has finished. The mic is always tap to talk here, even with
@@ -20,8 +25,11 @@ import FuoriAudio
 @Observable
 public final class OnboardingModel {
     public enum Step: Equatable {
-        case welcome, beginnerSendOff, question, followUp, sendOff
+        case welcome, askName, address, welcomed, beginnerSendOff, question, followUp, sendOff
     }
+
+    /// Which way the first tap went: where she goes after the name and address
+    public enum Path: Equatable { case beginner, speaker }
 
     public enum Phase: Equatable {
         /// She's speaking (or her line is being fetched)
@@ -67,8 +75,15 @@ public final class OnboardingModel {
     private var answers: [APIClient.Heard] = []
     /// The level from the send-off, applied when they tap go
     private var placedLevel = "beginner"
+    /// Her name and address lines, or nil when the server doesn't save the choice
+    public let addressLines: Onboarding.AddressLines?
+    /// The name as heard; nil if they skipped it
+    public private(set) var name: String?
+    private var path: Path = .beginner
     /// Bumped when something stops the current step; late results are dropped
     private var generation = 0
+    /// stop() ran since her last line started
+    private var wasStopped = false
     /// What to retry after a failure
     private var retry: (() async -> Void)?
 
@@ -79,8 +94,10 @@ public final class OnboardingModel {
     /// Her speed: a little slower than a character's, as for a beginner with English on
     private let speed = 0.8
 
-    public init(onboarding: Onboarding, language: Language, api: APIClient, onFinish: @escaping (String) -> Void) {
+    /// - askAddress: the server saves how characters address them (/v1/me addressOn)
+    public init(onboarding: Onboarding, language: Language, api: APIClient, askAddress: Bool = false, onFinish: @escaping (String) -> Void) {
         self.onboarding = onboarding
+        self.addressLines = askAddress ? onboarding.lines.addressLines : nil
         self.language = language
         self.api = api
         self.onFinish = onFinish
@@ -92,8 +109,8 @@ public final class OnboardingModel {
         if phase == .listening { return .listen }
         switch step {
         case .welcome: return .welcome
-        case .question, .followUp: return .talk
-        case .beginnerSendOff, .sendOff: return .laugh
+        case .askName, .address, .question, .followUp: return .talk
+        case .welcomed, .beginnerSendOff, .sendOff: return .laugh
         }
     }
 
@@ -123,16 +140,83 @@ public final class OnboardingModel {
     /// "Not yet!": the beginner send-off, no speaking on this path
     public func chooseNotYet() async {
         guard step == .welcome, phase == .ready else { return }
-        step = .beginnerSendOff
-        placedLevel = "beginner"
-        await say(onboarding.lines.beginnerSendOff, englishAllowed: true)
+        await choose(.beginner)
     }
 
     /// "Yes, but I want to improve": her open question, answered by speaking
     public func chooseSome() async {
         guard step == .welcome, phase == .ready else { return }
-        step = .question
-        await say(onboarding.lines.question, englishAllowed: true)
+        await choose(.speaker)
+    }
+
+    /// The first tap: her name question first, when the server saves the
+    /// answer; then the path
+    private func choose(_ path: Path) async {
+        self.path = path
+        if let addressLines {
+            step = .askName
+            await say(addressLines.askName, englishAllowed: true)
+        } else {
+            await go()
+        }
+    }
+
+    /// The path the first tap chose
+    private func go() async {
+        switch path {
+        case .beginner:
+            step = .beginnerSendOff
+            placedLevel = "beginner"
+            await say(onboarding.lines.beginnerSendOff, englishAllowed: true)
+        case .speaker:
+            step = .question
+            await say(onboarding.lines.question, englishAllowed: true)
+        }
+    }
+
+    // MARK: - Name and address
+
+    /// No name (they'd rather not, or the mic is off): she asks the address without it
+    public func skipName() async {
+        guard step == .askName, phase == .ready || phase == .micDenied, let addressLines else { return }
+        name = nil
+        step = .address
+        await say(addressLines.address.named(nil), englishAllowed: true)
+    }
+
+    /// Woman or man: saved for every character, then her welcome by name and on
+    /// down the path. While the server has it off (404) the step is skipped and
+    /// logged; any other failure shows Try again.
+    public func chooseAddress(woman: Bool) async {
+        guard step == .address, phase == .ready, let addressLines else { return }
+        phase = .thinking
+        do {
+            try await api.onboardingAddress(addressedAs: woman ? "f" : "m", name: name)
+        } catch let error as APIError where error.code == .notFound {
+            report(error, step: "onboarding address off")
+        } catch {
+            fail(error, step: "onboarding address") { [weak self] in
+                self?.phase = .ready
+                await self?.chooseAddress(woman: woman)
+            }
+            return
+        }
+        step = .welcomed
+        await say((woman ? addressLines.welcomeWoman : addressLines.welcomeMan).named(name), englishAllowed: true)
+        // Stopped while she spoke (backgrounded): wait for the go button instead
+        guard step == .welcomed, phase == .ready, !wasStopped else { return }
+        await go()
+    }
+
+    /// The go button after her welcome, if she was stopped before moving on
+    public func continueAfterWelcome() async {
+        guard step == .welcomed, phase == .ready else { return }
+        await go()
+    }
+
+    /// The name as heard, without the full stop Whisper adds
+    static func cleanName(_ text: String) -> String {
+        text.trimmingCharacters(in: .whitespacesAndNewlines.union(.punctuationCharacters))
     }
 
     /// The go button after either send-off. The beginner path tells the
@@ -176,6 +260,7 @@ public final class OnboardingModel {
     /// The app went to the background, or the screen went away: stop her
     /// voice and the mic, and wait at this step's controls
     public func stop() {
+        wasStopped = true
         generation += 1
         levelTask?.cancel()
         _ = recorder.stop()
@@ -187,6 +272,7 @@ public final class OnboardingModel {
     // MARK: - Her lines
 
     private func say(_ said: Onboarding.Line, englishAllowed: Bool) async {
+        wasStopped = false
         generation += 1
         let generation = self.generation
         line = said.line
@@ -235,7 +321,7 @@ public final class OnboardingModel {
     // MARK: - Their answers
 
     private func startRecording() async {
-        guard step == .question || step == .followUp else { return }
+        guard [.askName, .address, .question, .followUp].contains(step) else { return }
         guard await AudioSession.requestMicrophone() else {
             phase = .micDenied
             return
@@ -322,6 +408,13 @@ public final class OnboardingModel {
     /// Her reply to an answer: the follow-up after the first, the send-off after the second
     private func reply(to heard: APIClient.Heard) async {
         let generation = self.generation
+        if step == .askName || step == .address, let addressLines {
+            // Her line shows the name as heard; saying it again (the mic on the address step) replaces it
+            name = Self.cleanName(heard.text)
+            step = .address
+            await say(addressLines.address.named(name), englishAllowed: true)
+            return
+        }
         do {
             if step == .question {
                 let followUp = try await api.onboardingFollowUp(answer: heard)
