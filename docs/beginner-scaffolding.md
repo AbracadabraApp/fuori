@@ -15,6 +15,7 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 
 Josh: "inside the game we can simplify all the scaffolding to just be say it, get this language back, read it." Onboarding is separate and keeps its buttons ("treat onboarding different in every way").
 - **The direction:** in conversations, scaffolding is only "say it in English" (below): say what you mean in English, get one line back in the language at your level, read it out loud. The two answer bubbles, the stages and the read-aloud panel built 2026-10-22 ([reply-panel.md](reply-panel.md)) would go. The panel stays until the new loop has been played.
+- **The mechanic (Josh):** speak English into the mic → a line in the language comes back to read aloud. **Where it shows is open:** a bubble in the conversation, or a sheet (Josh: "or we could redesign to use sheet"). Claude's view: the sheet, i.e. the reply panel built 2026-10-22 with one line instead of two. The instruction sits by the mic, a "hear it" control fits there, and a sheet reads as "to say" while bubbles read as "said".
 - **Risks to test** (Claude's assessment, 2026-10-23):
   - **Mixed speech.** Beginners say "Sì, I want un caffè". Whisper names one language per recording, so a mixed sentence may go straight to her. The test is whether a judge on the transcript (is this the learner's language, fully?) is fast and reliable enough.
   - **Reading a line you've never heard.** Beginners mispronounce Italian they've only seen. Playing the line in the character's voice first, or a tap to hear it, may be needed.
