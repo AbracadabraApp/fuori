@@ -15,20 +15,6 @@
  * character should be special). Both stay in roma.ts as ordinary characters.
  */
 export const showcase: Record<string, string[]> = {
-  roma: [
-    'bar-monti-corner',
-    'bar-testaccio-morning',
-    'forno-trastevere',
-    'mercato-san-cosimato',
-    'trattoria-trastevere',
-    'farmacia-trastevere',
-    'piazza-santa-maria-trastevere',
-    'libreria-trastevere',
-    'enoteca-trastevere',
-    'villa-borghese',
-    'scuola-lingua-roma', // M2: language school with Magda
-    'stazione-termini', // M2: train station for travel
-  ],
   // Roma redone (Josh, 2026-10-22; docs/rome-redo.md): today's Rome beside the
   // original, to compare. No language school: schools move into Learn.
   'roma-nuova': [
@@ -311,4 +297,28 @@ export const showcase: Record<string, string[]> = {
 };
 
 /** On the first screen of the city list, in this order; the rest come after "Mostra altro" */
-export const homeCities = ['roma', 'roma-nuova', 'matera', 'firenze', 'siena', 'venezia', 'napoli', 'bologna', 'palermo'];
+export const homeCities = ['roma-nuova', 'matera', 'firenze', 'siena', 'venezia', 'napoli', 'bologna', 'palermo'];
+
+/**
+ * Hidden for now, not deleted (Josh, 2026-10-22: "hide old Rome for now,
+ * don't lose it"): the original Roma's shown places, while Roma nuova is
+ * tried (docs/rome-redo.md). roma.ts, its people and their memories are
+ * untouched. To bring it back, move this list into showcase as `roma` and
+ * put 'roma' back at the front of homeCities.
+ */
+export const hiddenForNow: Record<string, string[]> = {
+  roma: [
+    'bar-monti-corner',
+    'bar-testaccio-morning',
+    'forno-trastevere',
+    'mercato-san-cosimato',
+    'trattoria-trastevere',
+    'farmacia-trastevere',
+    'piazza-santa-maria-trastevere',
+    'libreria-trastevere',
+    'enoteca-trastevere',
+    'villa-borghese',
+    'scuola-lingua-roma', // M2: language school with Magda
+    'stazione-termini', // M2: train station for travel
+  ],
+};
