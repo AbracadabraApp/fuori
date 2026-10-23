@@ -35,6 +35,15 @@ Open:
 - **Explain screens get skipped:** the first real turn should still make the mic obvious.
 - Replaces the fixed schedule in `lib/scaffold.ts` and the read-aloud panel built 2026-10-22 ([reply-panel.md](reply-panel.md)) once decided.
 
+### Say it in English: maybe the main beginner loop (Josh, 2026-10-22; an idea to test)
+
+Josh: "the say it in English to generate the Italian bubble, that you have to read, could change the game play quite a bit."
+- **How it works:** the learner says what they want in English; it comes back as one Italian bubble (with the English) at their level; they read it aloud and that's what she hears. If they speak Italian, the turn goes straight to her as now. Whisper reports each recording's language, so no phrase lists.
+- **Why it could change the game:** the learner leads the conversation instead of picking from two lines; the words are ones they wanted, so they stick, and they feed Learn and the flashcards; the characters stay fully Italian, since the translating moves out of the character into the interface. It may replace the two bubbles after the first turns: two bubbles are the training wheels, "say it your way" the game.
+- **Care:** the Italian must be what a learner at their level can say, not a literal translation (a prompt job; the level judge can check it). English-first can become a habit; the end-of-conversation offers move them on.
+- **Speed (laptop measurements, 2026-10-22):** tap to the character's first word, Italy median 3.3 → 2.5 → 1.9 s, Mexico 1.7 s, with the first sentence streamed. The Italian bubble is one short line, so English → bubble should be about 1.5 s (transcribe ~0.5 s, the line ~1 s, streamed); the rest of the turn is as fast as any turn. The added time is mostly the learner reading the line, which is the practice.
+- **Next:** a rough version to play (when Whisper hears English, one short call returns the line at the learner's level; show it as the bubble to read), then Josh and a family beginner play a few conversations before deciding.
+
 ## The sequence a new learner meets
 
 | # | Step | What happens | Status |

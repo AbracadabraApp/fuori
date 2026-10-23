@@ -140,6 +140,13 @@ Steps 2–5 below are the older draft.
 
 **Build:** content lines in both `onboarding.ts`; the migration (`addressed_as` plus where it came from), which needs Josh; `POST /v1/onboarding/address` `{ addressedAs, name }`; `/v1/me` reports it; `LEARNER_ADDRESS=on` once migrated; a route test and `smoke:live`; then the iOS step in `OnboardingModel` / `OnboardingView` and the Settings row, checked on Josh's iPhone in both countries.
 
+## Proposal: set up, then an optional tour; the panel as the place to explain (Josh, 2026-10-22; not decided)
+
+- **The explanation panel** (the paper panel from [reply-panel.md](reply-panel.md)) becomes the standard place the game explains itself: the first time you meet the reply bubbles, the Learn link, the station, an offer to take a training wheel off, the flashcards. Short, how it works, **Next**. Learners learn the pattern: when the paper panel rises, the game is explaining, not the character speaking.
+- **An orientation, character-led:** Josh: "we may need an option to give users a full orientation of how the game works; this might be more of a character-driven tour… a reworking of onboarding that is less language-immersive, more a set-up to play." The greeter (her poses already exist) walks you through picking a place, how talking works, Learn, how people remember you, travel; mostly in English; skippable at first launch and replayable from Settings ("How Fuori works").
+- **So onboarding splits in two:** set-up (country, microphone, name, level; short, partly in the target language, as now) and the tour (optional, English, the greeter).
+- **Needs Josh's call:** CLAUDE.md says "no AI notes in the game: explanations only in onboarding and Settings → About Fuori." A recurring explanation panel breaks that as written; the rule needs updating before anyone builds it.
+
 ## Open
 
 - Later version (Josh, 2026-10-16): animate her with video loops. For now she changes pose instead (see "Her poses").
