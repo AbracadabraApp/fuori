@@ -40,4 +40,4 @@
 
 ## Done means
 
-Played on Josh's iPhone in both countries, tap-to-talk and hands-free; a call, Siri, AirPods out and backgrounding each land on your turn with the mic closed; AX5; VoiceOver.
+Played on Josh's iPhone in both countries, tap-to-talk and hands-free; AX5; VoiceOver. A call, Siri, AirPods out and backgrounding landing on your turn with the mic closed: checked in N6 (Josh, 2026-10-23).

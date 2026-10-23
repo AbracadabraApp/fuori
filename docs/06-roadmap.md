@@ -6,14 +6,14 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases (Josh, 2026-10-22):** this release is **N4**, TestFlight to Josh, and includes scaffolding (onboarding, reply buttons). **N5** is next: Learn, Teach (Magda's syllabus) and the Diario, plus the web sunset. Every open item is in N4 or N5 (Josh, 2026-10-22). **N6**: a framework for level, repeatable and improving ([12-native-app.md](12-native-app.md) → Milestones). Each section below says which. Each item says who does it: **Josh** or **Claude**. ⛔ marks a blocker: work that waits on someone. Detail lives in the linked docs; done and removed items are at the bottom of this file.
+The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases (Josh, 2026-10-22):** this release is **N4**, TestFlight to Josh, and includes scaffolding (onboarding, reply buttons). **N5** is next: Learn, Teach (Magda's syllabus) and the Diario, plus the web sunset. Every open item is in N4 or N5 (Josh, 2026-10-22). **N6**: a framework for level, repeatable and improving; also the device checks (a call, Siri, AirPods, backgrounding, locking: Josh, 2026-10-23) ([12-native-app.md](12-native-app.md) → Milestones). Each section below says which. Each item says who does it: **Josh** or **Claude**. ⛔ marks a blocker: work that waits on someone. Detail lives in the linked docs; done and removed items are at the bottom of this file.
 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
 1. **Play Afuera with the level trial on**, so Claude can review those conversations (→ Beginner ladder)
 2. **Spec for the smaller world** (→ Smaller world, on hold)
 3. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
-4. **Device checks on the iPhone** (only Josh can do audio on the phone) (→ Conversation on the phone)
+4. ~~Device checks on the iPhone~~: moved to N6 (Josh, 2026-10-23)
 5. **Record the speech-to-text test set**: about 20 short turns per language, including hesitant and wrong ones (→ Faster and reliable replies)
 
 ### Conversation on the phone — N4
@@ -23,8 +23,7 @@ Claude can't move these until Josh does:
 - [ ] **Josh** Try today's build: pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
 - [ ] **Josh** Try Magda in the app
 - [x] **Claude** Bottom bar: one circle in two colours, no Pause or Play (Josh, 2026-10-22; [bottom-bar.md](bottom-bar.md)): green mic and your wave, terracotta sending dots and her wave; interruptions return to your turn; the Learn link on the right, centred on the circle Built 0dde6b8 (2026-10-22), on Josh's phone
-- [ ] **Josh** Bottom bar on the phone: the four states in both countries; a call, Siri, AirPods out and backgrounding each land on your turn with the mic closed
-- [ ] **Josh** ⛔ Device checks, on the iPhone during a conversation (while the character speaks and while the mic is open): a phone call comes in; Siri; AirPods out; AirPods in; swipe to the home screen; lock the phone. Each time it should pause, save like any exit, and never reopen the mic without a tap; AirPods out shouldn't carry on through the phone speaker (CLAUDE.md → iPhone app). A simulator can't test this
+- [ ] **Josh** Bottom bar on the phone: the four states in both countries (a call, Siri, AirPods and backgrounding: N6, Josh 2026-10-23)
 - [ ] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice?
 
 ### Open bugs and learner data — N4 (added 2026-10-22)
@@ -75,6 +74,9 @@ Goal: 90% of the character's words at the learner's level (Josh; the [research](
 - [ ] **Claude** Question ladder for Intermediate and Advanced (one fact, then anything), measured with the question-kind count
 - [ ] **Claude** Level of real play on the scorecard (a call per line, so decide the cost first)
 - [ ] **Josh + Claude** More dialect as you level up (the dialect setting is greyed out today)
+
+### Device checks — N6 (Josh, 2026-10-23: moved from N4)
+- [ ] **Josh** Device checks, on the iPhone during a conversation (while the character speaks and while the mic is open): a phone call comes in; Siri; AirPods out; AirPods in; swipe to the home screen; lock the phone. Each time it should pause, save like any exit, and never reopen the mic without a tap; AirPods out shouldn't carry on through the phone speaker (CLAUDE.md → iPhone app). A simulator can't test this
 
 ### Learner level (placement and moving up) — N6, the level framework
 Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level line and an unused type are separate pieces ([language-levels-plan.md](language-levels-plan.md) → 1).
