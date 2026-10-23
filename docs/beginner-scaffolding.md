@@ -64,8 +64,8 @@ Onboarding is where the level comes from: the greeter's send-off judges your ans
 - **Every reply is a whole line** built on a frame, never a lone word.
 - **Every turn the character asks something,** since the replies need something to answer.
 - **No Replay (Josh, 2026-10-17).** The words are on screen while scaffolding; once speaking, the learner can ask the character to repeat ("Ripeti?", "Più lentamente"), which stays in role.
-- **Pause only in hands-free (Josh, 2026-10-17; CLAUDE.md since 2026-10-21).** In tap-to-talk the buttons and the pill already wait for a tap.
-- **Few controls.** While tapping, the two buttons replace the mic pill; nothing appears or disappears except the result of your answer.
+- **No Pause** (Josh, 2026-10-22: none anywhere, [bottom-bar.md](bottom-bar.md)). In tap-to-talk the mic already waits for a tap.
+- **Few controls.** The answers sit above the mic circle; nothing appears or disappears except the result of your answer.
 - **Largest text size (AX5):** the portrait stays put; the area above the controls scrolls within a capped height. The replies may cover most of the portrait at that size.
 - **Wording:** any instruction ("Read your line out loud") is interface text, worded per country; target-language words come from `/v1/content`, never from Swift.
 - **Writing the replies** stays a separate call unless a test shows folding them into the turn is better for latency and quality ([test-ideas.md](test-ideas.md)).

@@ -7,7 +7,7 @@
 After playing the reply buttons (Afuera, Marisol): "a success but some changes".
 - **Tap-only goes** (stage A). It's too simple and doesn't prepare you for what comes next. The read-aloud stages stay as they are.
 - **It wasn't obvious you have to tap the mic and read the line.** The instruction and the mic were far apart, and there was too much chrome.
-- **No Pause here.** Pause is for hands-free only.
+- **No Pause here.** (Since the same evening, no Pause anywhere: [bottom-bar.md](bottom-bar.md).)
 - **First time, more explanation**, in an onboarding-like bottom panel. **Answers as text, not buttons.**
 - **The mic works exactly as it does everywhere else** (Josh: "the mic works the same way"): tap, talk (green), tap to send (terracotta), and what Whisper heard goes to the character. No matching against the answers, no highlight on the line read, no "Got it".
 
@@ -19,7 +19,7 @@ Assets in `design/reply-panel/`: `E1.jpg` to `E4.jpg` (iPhone 390 × 844 pt at 2
 |---|---|---|
 | ![E1](../design/reply-panel/E1.jpg) | **E1 · First time** (the learner's first scaffolded turn ever): one extra line above the answers, "To get you started, here are two answers." | Tap the mic, then read one out loud |
 | ![E2](../design/reply-panel/E2.jpg) | **E2 · Every later turn** | Tap, then read one out loud |
-| ![E3](../design/reply-panel/E3.jpg) | **E3 · Talking**: the usual green mic with the level and the stop square | Read one out loud, then tap to send (hands-free: Read one out loud) |
+| ![E3](../design/reply-panel/E3.jpg) | **E3 · Talking**: the usual green circle with your sound wave ([bottom-bar.md](bottom-bar.md)) | Read one out loud, then tap to send (hands-free: Read one out loud) |
 | ![E4](../design/reply-panel/E4.jpg) | **E4 · Sent**: the usual terracotta mic; nothing highlighted | Sent |
 
 ## Layout, top to bottom
@@ -31,11 +31,11 @@ Assets in `design/reply-panel/`: `E1.jpg` to `E4.jpg` (iPhone 390 × 844 pt at 2
    - **OR**: a centred divider, small spaced capitals (caption2, bold, about 1 pt tracking, muted) with a hairline running out to each side. Josh: a plain "or" "looks like an accident".
    - **Answer 2**: as answer 1.
    - A hairline, then the **instruction**, centred, callout size, muted, then the **mic**, centred.
-3. **No Pause** and no Learn link inside this state (Pause shows only in hands-free: `showsPause` in `ConversationControls.swift` already says `!model.tapMode || isPaused`; check it holds here, since Josh saw Pause beside the buttons).
+3. **No Pause** (there is none anywhere now: [bottom-bar.md](bottom-bar.md)) and no Learn link inside this state.
 
 **Hierarchy is the point** (Josh: "things are too equal", "too messy"): her line (serif, in its bubble) > the answers (largest text in the panel, underlined) > the how-to (small, muted, by the mic). Answers are tight together; space separates the groups.
 
-**The mic** in the mock is a round button; build it with the app's existing mic control, centred, with its existing states and colours (cream, green with level dots and the stop square, terracotta when sent). Only its position is new: centred under the instruction. Its states don't change.
+**The mic** is the conversation screen's one circle, centred under the instruction, with its usual states ([bottom-bar.md](bottom-bar.md): green mic, green wave while you talk, terracotta while sending and while she speaks). Only its position is new.
 
 ## Behaviour
 

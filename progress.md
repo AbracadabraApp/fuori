@@ -1578,3 +1578,9 @@ Mockups: "Reply buttons" canvas in the Claude app, https://claude.ai/artifact/X2
 - **App error reports kept in the database** (`app_errors`, e99f4b9): Railway's log goes with each deploy, and Josh's Mexico session's log was gone within the hour. Read them at `/api/admin/conversations?format=errors`. Checked live on Afuera with one test report, then deleted it.
 - **Test scripts:** already moved to `tests/experiments/` on 2026-10-18; roadmap ticked.
 - **Open:** pause and resume during a first sentence not tried on the phone; the recording bug's cause; the dd6ec6fb learner merge (Josh's Franco history) waits on Josh; whose learner 819f7aed is; iCloud junk cleanup left to Josh in Finder.
+
+## 2026-10-22 (cloud session, evening): reply panel and bottom bar designed with Josh
+
+- **Reply panel** (`docs/reply-panel.md`, design/reply-panel/, canvas row E): tap-only goes; answers as text with speech-bubble dingbats, an OR divider and a quiet instruction centred above the mic; first-time line; what Whisper heard is sent. The laptop built it the same evening (`ReplyPanel.swift`), not yet played on the phone.
+- **Bottom bar** (`docs/bottom-bar.md`, design/bottom-bar/, canvas row F): one circle in two colours. Green is you (mic, then your wave); terracotta is her (sending dots, then her wave). No Pause and no Play anywhere (Josh: "complexity before anyone asks for it"); interruptions return to your turn with the mic closed; the Learn link on the right, centred on the circle. CLAUDE.md's safeguard line, learn.md, 12-native-app.md, 13-ios-conventions.md (D3), beginner-scaffolding.md and the roadmap (N4) updated to match. Not built.
+- **Roma nuova** live with pictures (Josh ran images:upload; images.json committed).
