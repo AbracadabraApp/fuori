@@ -12,6 +12,24 @@
 
 **Mock-ups (2026-10-23):** canvas "Reply buttons", row H; pictures in `design/orientation/H1.png` to `H11.png`. Skip and "n of 11" sit in the bar; her full picture while she sets you up (1–4, 9, 11), then the app's own screens dimmed behind her card, with a small portrait of her on the card (5–8, 10); the circle and the Learn book are highlighted when she explains them.
 
+**More of a mix (Josh, 2026-10-23: "Maybe more of a mix of Italian and English?"):** every card opens with one short Italian line and its English, then the explanation in English. The Italian lines are simple and come back in the game. Buttons to move on say *Avanti*. Lines on the mock-ups:
+
+| Beat | Italian line | English |
+|---|---|---|
+| 1 | *Ciao! Benvenuti a Fuori.* … *Come ti chiami?* | Hi! Welcome to Fuori. … What's your name? |
+| 2 | *Piacere, {name}!* | Nice to meet you! |
+| 3 | *Grazie. Benvenuto/a, {name}!* … *Parli italiano?* | Thanks. Welcome! … Do you speak Italian? |
+| 4 | *Perfetto! Fuori è un viaggio in Italia.* | Perfect! Fuori is a trip to Italy. |
+| 5 | *Si comincia da Roma.* | You start in Rome. |
+| 6 | *Scegli un posto.* | Pick a place. |
+| 7 | *Tocca e parla.* | Tap and talk. |
+| 8 | *Qui tutti parlano italiano.* (and *Può ripetere?*) | Everyone here speaks Italian. |
+| 9 | *Non sai come si dice?* … *Perché sei in Italia?* | Don't know how to say it? … Why are you in Italy? |
+| 10 | *E qui impari.* | And here's where you learn. |
+| 11 | *Ecco tutto, {name}. Andiamo!* | That's everything. Let's go! |
+
+Beat 1 uses *Benvenuti* (plural) because she doesn't know yet how to address the learner.
+
 Each beat: what's on screen · what she says · what the learner does · what it sets.
 
 ---
