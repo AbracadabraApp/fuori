@@ -23,6 +23,11 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 - **Not built yet:** the Beginner hint in her opener (G1), Claude's take for spoken Italian, the character closing the conversation.
 - **It replaces every click-to-answer scaffold (Josh, 2026-10-23):** the reply buttons, the answer panel and its stages, and answers as buttons (under VoiceOver or with the mic off) all go once say it is settled; Fuori is voice only (D6). Onboarding keeps its buttons.
 - **Characters' help doesn't change (Josh, 2026-10-23):** a character still helps in English when asked, as CLAUDE.md says; say it sits beside that.
+- **Decided, later on 2026-10-23 (Josh, with the laptop session): English gets help first; correcting Italian is tabled.** Commit to the direction and make it work, no "help in English" button as a hedge (Josh: "better to decide these are good and work to make better"). The mic sorts it out, one tap per turn:
+  - English, or mostly English → the two bubbles (grey: what was heard, from Whisper as is; white: "Say this:" the line from `/v1/say-it`, with a play button in the phone's voice); the mic reopens for the reading; the reading goes to her, never checked again (4030210).
+  - Italian, mistakes and all → straight to her; she recasts in role, as today (say-it's `sendAsSaid`, "when in doubt, the character"). Learn lists the mistakes afterwards.
+  - Tabled: Italian with mistakes coming back as a corrected line. Talked through: a setting ("Correct my Italian"), or smart with no setting ("would she understand you?": correct only what she wouldn't follow). Not now.
+  - Small next step agreed in conversation: show the grey bubble as soon as Whisper returns (~0.5 s) instead of with the line (~2 s), so the learner sees at once what was heard.
 - **Open (Josh, 2026-10-23):**
   - *Routing mixed-language input:* which English is "turn this into a line" ("I'd like two coffees"), which is a question to her ("how do you say receipt?", where she helps as today), and which is their own attempt with an English word in it ("vorrei the receipt").
   - *Whether to tell the character the line was read:* she hears it as an ordinary line, or knows it was the game's line read aloud (no recasting it; maybe a word of praise).
