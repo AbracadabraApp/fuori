@@ -63,13 +63,11 @@ public final class ConversationModel {
     /// A short note under the subtitles, e.g. when nothing was heard
     public private(set) var note: String?
     public private(set) var conversationId: String?
-    /// The two reply buttons for this turn (scaffolding), once written
+    /// The two suggested answers for this turn (scaffolding), once written
     public private(set) var replies: [APIClient.ReplyOption]?
-    /// The reply just tapped, shown selected until the character answers
+    /// The answer tapped where answers are buttons (VoiceOver, mic off),
+    /// shown selected until the character answers
     public private(set) var chosen: APIClient.ReplyOption?
-    /// Read and choose stages: the mic is open for the learner to say the
-    /// chosen reply aloud
-    public private(set) var readingAloud = false
 
     /// What the hidden debug panel shows (Settings → Developer), as the web's ?debug=1
     public struct DebugInfo: Equatable {
@@ -130,28 +128,35 @@ public final class ConversationModel {
     /// lib/scaffold.ts; Josh, 2026-10-21: no switch)
     public private(set) var scaffolding = false
 
-    /// How the reply buttons are used this turn (lib/scaffold.ts; Josh,
-    /// 2026-10-22): in each of the first 3 conversations, turn 1 tap, turn 2
-    /// tap then read aloud, turn 3 choose the one that fits then read aloud
-    public enum Stage: String, Sendable {
-        case tap, read, choose
-        /// Whether the chosen reply is then said aloud
-        public var readsAloud: Bool { self != .tap }
-    }
+    /// Which answers this turn (lib/scaffold.ts; docs/reply-panel.md): read
+    /// (two good answers) or choose (only one fits). Either way the learner
+    /// reads one out loud on the mic, which works as everywhere: what was
+    /// heard goes to the character (Josh, 2026-10-22: tap-only went)
+    public enum Stage: String, Sendable { case read, choose }
     public private(set) var stage: Stage?
 
-    /// What to do now, under her line while scaffolding (interface text)
+    /// The panel's extra line, on the learner's first scaffolded turn ever
+    public private(set) var firstTime = false
+
+    /// Answers as buttons that send the line, where reading aloud can't work:
+    /// VoiceOver (it would be recorded) or the mic off
+    public var answersAreButtons: Bool { isVoiceOverRunning || phase == .micDenied || phase == .choosing }
+
+    /// The answers panel shows from the learner's turn until the character answers
+    public var showsAnswers: Bool {
+        guard scaffolding, replies != nil else { return false }
+        return [.tapToTalk, .listening, .hearing, .thinking, .choosing, .micDenied].contains(phase)
+    }
+
+    /// The how-to above the mic in the answers panel (interface text, English)
     public var instruction: String? {
-        guard scaffolding, let stage, stage.readsAloud else { return nil }
+        guard showsAnswers else { return nil }
         switch phase {
-        case .choosing where chosen == nil:
-            return stage == .choose ? "Choose the one that fits, then read it out loud" : "Tap one, then read it out loud"
-        case .choosing:
-            return "Tap your reply to try again"
-        case .listening, .hearing:
-            return tapMode ? "Read it out loud, then tap to send" : "Read it out loud"
-        default:
-            return nil
+        case .tapToTalk: return firstTime ? "Tap the mic, then read one out loud" : "Tap, then read one out loud"
+        case .listening, .hearing: return tapMode ? "Read one out loud, then tap to send" : "Read one out loud"
+        case .thinking: return "Sent"
+        case .choosing, .micDenied: return "Tap one to say it"
+        default: return nil
         }
     }
 
@@ -190,9 +195,9 @@ public final class ConversationModel {
     private func present(_ reply: APIClient.TurnReply, generation: Int) async {
         guard generation == self.generation else { return }
         scaffolding = reply.replies == true
-        // An older server sends no stage: every scaffolding turn is a tap
-        stage = scaffolding ? (reply.stage.flatMap(Stage.init(rawValue:)) ?? .tap) : nil
-        readingAloud = false
+        // An older server sends no stage (or "tap", now gone): two good answers
+        stage = scaffolding ? (reply.stage.flatMap(Stage.init(rawValue:)) ?? .read) : nil
+        firstTime = scaffolding && !UserDefaults.standard.bool(forKey: Self.answersIntroduced)
         if phase == .paused { pendingReply = reply; line = reply.line; english = reply.en; shown = nil; replies = nil; chosen = nil; writeReplies(); return }
         if let head {
             self.head = nil
@@ -368,10 +373,14 @@ public final class ConversationModel {
         // Paused while thinking: the mic stays closed until a tap
         guard phase != .paused else { return }
         ring = 0
-        readingAloud = false
         if scaffolding, repliesTask != nil {
-            await showReplies()
-            return
+            // Under VoiceOver the answers are buttons: wait for a tap on one
+            if isVoiceOverRunning {
+                await showReplies()
+                return
+            }
+            // Otherwise the answers fill the panel above the usual mic
+            Task { await self.loadReplies() }
         }
         if tapMode {
             phase = .tapToTalk
@@ -502,16 +511,7 @@ public final class ConversationModel {
             return
         }
         note = nil
-        if readingAloud, let chosen {
-            // Read and choose stages: the chosen line is what's sent, so a
-            // mumble or a speech-recognition slip can't derail a beginner
-            // (docs/beginner-scaffolding.md → stages B and C). Not
-            // transcribed: what was heard isn't used yet.
-            try? FileManager.default.removeItem(at: url)
-            readingAloud = false
-            await sendChosen(chosen, generation: generation, how: "read aloud")
-            return
-        }
+        if showsAnswers { UserDefaults.standard.set(true, forKey: Self.answersIntroduced) }
         var step = "transcribe"
         do {
             let audio = try Data(contentsOf: url)
@@ -566,8 +566,35 @@ public final class ConversationModel {
         }
     }
 
-    /// The learner's turn while scaffolding: the two replies, once written. If
-    /// writing them failed, this turn falls back to the mic and says so.
+    /// Set once the learner has answered with the panel for the first time
+    static let answersIntroduced = "scaffold.answersIntroduced"
+
+    /// The answers for the panel, once written, without changing the turn:
+    /// the mic is already the learner's. If writing them failed, the turn
+    /// goes on with the mic alone and says so.
+    private func loadReplies() async {
+        guard let task = repliesTask else { return }
+        let generation = self.generation
+        let result = await task.value
+        guard generation == self.generation, repliesTask == task else { return }
+        switch result {
+        case .success(let written) where written.replies.count == 2:
+            replies = written.replies
+        case .success(let written):
+            noReplies(APIError(code: .serverError, message: "Expected 2 replies, got \(written.replies.count)", retryable: false, status: 200))
+        case .failure(let error):
+            noReplies(error)
+        }
+    }
+
+    private func noReplies(_ error: Error) {
+        repliesTask = nil
+        let code = report(error, step: "replies")
+        note = ErrorCode.message("No suggestions this time. Answer in your own words.", code: code)
+    }
+
+    /// Under VoiceOver: the two answers as buttons, once written. If writing
+    /// them failed, this turn falls back to the mic and says so.
     private func showReplies() async {
         phase = .choosing
         guard let task = repliesTask else { return }
@@ -591,22 +618,13 @@ public final class ConversationModel {
         phase = .tapToTalk
     }
 
-    /// A tap on a reply. Tap stage: it goes to the character as if the
-    /// learner had said it. Read and choose stages: it's chosen and the mic
-    /// opens for the learner to read it aloud; then it's sent. Under
-    /// VoiceOver (which would be recorded) or with the mic off, it's sent at
-    /// the tap.
+    /// A tap on an answer, where answers are buttons (VoiceOver, mic off):
+    /// it goes to the character as if the learner had said it
     public func choose(_ reply: APIClient.ReplyOption) async {
-        guard phase == .choosing, replies?.contains(reply) == true else { return }
+        guard phase == .choosing || phase == .micDenied, replies?.contains(reply) == true else { return }
         chosen = reply
         note = nil
-        if stage?.readsAloud == true, !isVoiceOverRunning {
-            readingAloud = true
-            await startRecording()
-            // Mic off in Settings: send it as a tap rather than strand them
-            guard phase == .micDenied else { return }
-            readingAloud = false
-        }
+        UserDefaults.standard.set(true, forKey: Self.answersIntroduced)
         await sendChosen(reply, generation: generation, how: "tapped")
     }
 

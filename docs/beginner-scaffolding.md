@@ -9,19 +9,19 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 - Beginners start with scaffolding, but the two are separate: finishing scaffolding doesn't make anyone Intermediate.
 - **Scaffolding isn't a setting.** The game decides when you see it, by counting (`lib/scaffold.ts`), not by a judge or a switch. The rules and the full set of stages aren't settled yet.
 
-**Next (Josh, 2026-10-22):** the reply buttons become a reply panel: answers as text, "read one out loud" above the usual mic, no tap stage, no Pause. Spec and assets: [reply-panel.md](reply-panel.md).
+**The reply panel (Josh, 2026-10-22; built the same day):** the reply buttons became a panel of suggested answers as text, "read one out loud" above the usual mic, no tap stage, no Pause. Spec and screens: [reply-panel.md](reply-panel.md).
 
 ## The sequence a new learner meets
 
 | # | Step | What happens | Status |
 |---|---|---|---|
 | 1 | **Onboarding** | Choose a country; the greeter asks two things, answered by button or voice; she places you at a level | Built ([onboarding-design.md](onboarding-design.md)) |
-| 2 | **Reply buttons, stage A: tap** | Two good replies; tap one and it's sent | Built, live 2026-10-22; **going** (Josh, 2026-10-22: too simple; see [reply-panel.md](reply-panel.md)) |
-| 3 | **Stage B: tap, then read it aloud** | Two good replies; tap one, then say it | Being built (2026-10-22) |
-| 4 | **Stage C: choose, read it aloud** | Only one reply fits; choose, then say it | Being built (2026-10-22) |
+| 2 | **Read one out loud** (stage `read`) | Two good answers shown as text; tap the mic and read one out loud; what was heard is sent | **Built** 2026-10-22 |
+| 3 | **Read the one that fits** (stage `choose`) | Only one answer fits; read that one out loud | **Built** 2026-10-22 |
+| — | ~~Tap a reply~~ | Built 2026-10-21, dropped 2026-10-22 (Josh: too simple, doesn't prepare you for what comes next) | Gone |
 | 5 | **The microphone alone** | Speak freely; today's game | Built |
 
-In each of the first 3 conversations: A, B, C (one turn each), then the mic; from the 4th, the mic alone.
+In each of the first 3 conversations: read, then choose (one turn each), then the mic alone; from the 4th, the mic alone.
 
 ## 1. Onboarding sets the level
 
@@ -29,43 +29,27 @@ Onboarding is where the level comes from: the greeter's send-off judges your ans
 
 **No level yet counts as new (Josh, 2026-10-22).** If onboarding is skipped or reset (Settings → touch and hold Version → Restart onboarding) and never finished, the learner has no level. That learner gets the reply buttons, like a Beginner. Found when Josh's Mexico learner had no level (onboarding reset, `{"path":"reset"}`) and so never saw the buttons.
 
-## 2. Reply buttons, stage A: tap (built)
+## 2–3. The reply panel: read, then choose (built 2026-10-22)
 
 **Who:** a learner whose level is Beginner or not set yet. Never Intermediate or Advanced; never with Magda, whose lessons don't count either.
 
-**When (Josh, 2026-10-22: "a–c in a conversation, repeat in next 2 conversations"):** in each of a new learner's first 3 conversations, their first three turns step through the stages, one turn each, then they speak for the rest of that conversation. From the 4th conversation on, the mic alone.
+**When (Josh, 2026-10-22):** in each of a new learner's first 3 conversations, their first two turns show the panel, one stage each, then they speak on their own for the rest of that conversation. From the 4th conversation on, the mic alone.
 
-| Learner turn in conversations 1–3 | 1st | 2nd | 3rd | 4th on |
-|---|---|---|---|---|
-| Stage | A tap | B tap, read aloud | C choose, read aloud | mic |
+| Learner turn in conversations 1–3 | 1st | 2nd | 3rd on |
+|---|---|---|---|
+| Stage | read: two good answers | choose: only one fits | mic alone |
 
-`STAGES` and `SCAFFOLD_CONVERSATIONS` in `lib/scaffold.ts`; one turn per stage is Claude's starting point. Conversations count from the first, or from `learners.scaffold_from` (a restart), ones where they said something, Magda's not counted. This replaced a schedule of 4, 3, 2, 1 taps over 12 conversations (2026-10-21).
+`STAGES` and `SCAFFOLD_CONVERSATIONS` in `lib/scaffold.ts`; one turn per stage is Claude's starting point. Conversations count from the first, or from `learners.scaffold_from` (a restart), ones where they said something, Magda's not counted. History of the schedule: 4, 3, 2, 1 taps over 12 conversations (2026-10-21); tap, read, choose (earlier on 2026-10-22); read, choose (now).
 
-**How it works:**
-- The server decides with every line: `/v1/turn` returns `replies: true` and `stage` (`tap`, `read`, `choose`) when the learner's next turn uses the buttons. The app holds no switch (the hidden "Reply buttons (test)" toggle and the level picker were removed 2026-10-21).
-- The replies come from a separate call, `POST /v1/replies` (`lib/replies.ts`, prompt `replies.md`), written while the character's voice plays, so the turn stays `{ line, en }`.
-- They appear when the character has finished, so the learner listens first. Two whole-line replies on the same frame ("Vorrei…", "Mi chiamo…"), both sensible; pick what you'd actually say. The tapped one shows a plain selected state, no right or wrong colours.
-- A tap sends the line through the typed-reply path (`learnerSaid` on `/v1/turn`), and the character answers to it.
-- While scaffolding, the buttons and the character's line show English, whatever Settings says.
-- A failed replies call falls back to the mic for that turn and is logged.
-- Tests: `npm run test:scaffold` (who and when), `npm run test:replies-route`, `smoke:live`.
-
-**Not built:** a second voice saying the tapped line (the character answers straight away); tapping a reply to cut the character off.
-
-## 3–4. Stages B and C (Josh, 2026-10-21; proposed, not built)
-
-| Stage | Buttons | You |
-|---|---|---|
-| A | Two replies, **both good** | **Tap** one; it's sent |
-| B | Two replies, **both good** | Tap one, then **read it aloud** |
-| C | Two replies, **only one good** | Choose and **read it aloud**; you have to understand her to pick |
-
-Proposed details, not yet confirmed:
-- **Read aloud:** tapping a reply chooses it (ink) and opens the mic; the dots show inside the chosen button; tap again when done (hands-free: silence ends it). No transcript on screen.
-- **What's sent on B and C:** the chosen line, so a mumble or a speech-recognition slip can't derail a beginner; what was heard is kept for Learn's "you said". Speech checks are lenient: marking a right answer wrong is worse than passing a near-miss.
-- **The wrong reply on C** is correct Italian that doesn't fit the moment (answers another question, wrong item, wrong time), never broken Italian: the screen must not model mistakes. Choosing it is answered by the character in role (puzzled, then helps), not by a buzzer or a red mark.
-- **Needs:** `replies.md` must make a plausible wrong reply and say which one is right (trial in `docs/prompt-trials.md`); which stage you're on is counted, like the schedule above.
-- If the mic is off or VoiceOver is on, B and C fall back to tapping.
+**How it works** (screens and layout: [reply-panel.md](reply-panel.md)):
+- The server decides with every line: `/v1/turn` returns `replies: true` and `stage` (`read`, `choose`). The app holds no switch.
+- The answers come from a separate call, `POST /v1/replies` (`lib/replies.ts`, prompt `replies.md`), written while the character's voice plays, so the turn stays `{ line, en }`. On `choose`, replies.md's Choose prompt writes one that fits and one that's correct language but answers a different question; `fits` says which (trial: 92% Italy / 85% Mexico pass every check, `docs/prompt-trials.md`).
+- They show after she finishes, as text in one panel with their English, above the usual mic. **The mic works as everywhere** (Josh: "the mic works the same way"): tap, read (green), tap to send (terracotta), and what Whisper heard goes to the character, who answers whatever was said, in role. No matching against the answers.
+- **First time ever** (kept in the app, `scaffold.answersIntroduced`): one extra line, "To get you started, here are two answers.", and the instruction "Tap the mic, then read one out loud"; later "Tap, then read one out loud".
+- **Under VoiceOver or with the mic off,** the answers are buttons that send the line.
+- While scaffolding, the answers and the character's line show English, whatever Settings says. No Pause and no Learn link in the panel.
+- A failed replies call: the panel doesn't show, the note says to answer in your own words, and it's logged.
+- Tests: `npm run test:scaffold`, `npm run test:replies-prompt`, `npm run test:replies-route`, `smoke:live`.
 
 ## Not settled (Josh's to decide)
 

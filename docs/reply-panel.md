@@ -1,6 +1,6 @@
 # Reply panel: read one out loud
 
-2026-10-22 · Josh · Decided with the cloud session on the design canvas ("Reply buttons", row E: https://claude.ai/artifact/X2FsYUrGWzXzf2tJxBALBV). **Not built.** For the laptop session to build. Replaces the reply buttons in scaffolding ([beginner-scaffolding.md](beginner-scaffolding.md)).
+2026-10-22 · Josh · Decided with the cloud session on the design canvas ("Reply buttons", row E: https://claude.ai/artifact/X2FsYUrGWzXzf2tJxBALBV). **Built 2026-10-22 (laptop)**: server `lib/scaffold.ts` (stages read, choose), app `ReplyPanel.swift` (replaces `ReplyButtons.swift`). Not yet played on Josh's iPhone; see Done means. Replaces the reply buttons in scaffolding ([beginner-scaffolding.md](beginner-scaffolding.md)).
 
 ## What Josh decided
 

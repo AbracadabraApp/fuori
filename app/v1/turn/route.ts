@@ -20,9 +20,8 @@
  * (trimmed), whose voice carries on from the first.
  *
  * `replies`: the learner's next turn uses the two reply buttons
- * (/v1/replies) instead of the mic; `stage` says how: tap, read (tap, then
- * read it aloud) or choose (only one fits; choose, then read it aloud), or
- * null. New learners, the first turns of their first conversations
+ * (/v1/replies) shown above the mic; `stage` says which: read (two good
+ * answers to read one out loud) or choose (only one fits), or null. New learners, the first turns of their first conversations
  * (lib/scaffold.ts). `replies` stays for apps that don't read `stage`.
  */
 import Anthropic from '@anthropic-ai/sdk';

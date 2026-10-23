@@ -1,11 +1,11 @@
 /**
- * Reply buttons (docs/beginner-scaffolding.md; Josh, 2026-10-22: "a–c in a
- * conversation, repeat in next 2 conversations"). In each of a new learner's
- * first SCAFFOLD_CONVERSATIONS conversations, their first turns step through
- * the stages, one turn each, then they speak:
- *   tap     two good replies; tap one and it's sent
- *   read    two good replies; tap one, then read it aloud
- *   choose  only one reply fits; choose, then read it aloud
+ * Suggested answers (docs/beginner-scaffolding.md, docs/reply-panel.md). In
+ * each of a new learner's first SCAFFOLD_CONVERSATIONS conversations, their
+ * first turns step through the stages, one turn each, then they speak freely:
+ *   read    two good answers shown; they read one out loud on the mic
+ *   choose  only one fits; they read the one that fits out loud
+ * Tap-only went (Josh, 2026-10-22: too simple, doesn't prepare you for what
+ * comes next); the mic works as everywhere and what was heard is sent.
  * Counting decides, not a judge. Who: level Beginner, or no level yet
  * (onboarding skipped or reset; Josh, 2026-10-22). Never with Magda: lessons
  * are spoken, and they don't count.
@@ -13,7 +13,7 @@
 import { query } from '@/lib/db';
 import type { Level } from '@/lib/onboarding';
 
-export const STAGES = ['tap', 'read', 'choose'] as const;
+export const STAGES = ['read', 'choose'] as const;
 export type Stage = (typeof STAGES)[number];
 
 /** Conversations with the stages, counting from the first (or from a restart) */

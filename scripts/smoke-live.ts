@@ -181,20 +181,22 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   const open = await v1('/v1/turn', { cityId, placeId });
   const o = (await open.json()) as { line: string; conversationId: string; replies?: unknown; stage?: unknown };
   // Whether the next turn uses the reply buttons, and how (lib/scaffold.ts):
-  // this learner has no level yet, so counts as new: the first turn is a tap
-  o.replies === true && o.stage === 'tap' ? pass('v1 turn says mic or buttons (tap: no level yet counts as new)') : fail('v1 turn replies flag', JSON.stringify({ replies: o.replies, stage: o.stage }));
+  // this learner has no level yet, so counts as new: the first turn is read
+  o.replies === true && o.stage === 'read' ? pass('v1 turn says mic or answers (read: no level yet counts as new)') : fail('v1 turn replies flag', JSON.stringify({ replies: o.replies, stage: o.stage }));
   // Two learner lines: memory is only written after at least two (lib/remember.ts)
   let reply = open;
   let r: { line?: string; conversationId?: string; stage?: unknown } = {};
+  const stages: unknown[] = [];
   for (const line of said) {
     reply = await v1('/v1/turn', { cityId, placeId, conversationId: o.conversationId, learnerSaid: line });
     r = (await reply.json()) as typeof r;
+    stages.push(r.stage ?? null);
   }
   open.ok && reply.ok && r.conversationId === o.conversationId
     ? pass('v1 conversation by ids (transcript kept on the server)')
     : fail('v1 conversation by ids', `${open.status}/${reply.status} ${JSON.stringify(r).slice(0, 200)}`);
-  // After two lines the third turn is the choose stage
-  r.stage === 'choose' ? pass('v1 turn stages: tap, then after two lines choose') : fail('v1 turn stage after two lines', JSON.stringify(r.stage));
+  // Read, then choose, then the mic alone
+  stages[0] === 'choose' && stages[1] === null ? pass('v1 turn stages: read, choose, then the mic') : fail('v1 turn stages after one and two lines', JSON.stringify(stages));
 
   // The reply buttons while scaffolding (docs/beginner-scaffolding.md): two
   // whole-line replies to the character's last line, read from the database

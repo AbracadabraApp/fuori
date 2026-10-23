@@ -19,33 +19,13 @@ struct ConversationControls: View {
     @State private var typed = ""
 
     var body: some View {
-        VStack(spacing: 8) {
-            if showsReplies { ReplyButtons(model: model) }
-            // In hands-free Pause holds the corner, so the Learn link sits above it
-            if let onLearn, showsPause, model.hasSomethingToLearn {
-                HStack {
-                    Spacer()
-                    learnLink(onLearn)
-                }
-                .transition(.opacity)
-            }
-            HStack {
-                // Type a reply (accessibility only, D6); otherwise empty, balancing
-                // the right-hand button so the pill stays centred
-                if model.canType { typeButton } else { Color.clear.frame(width: 44, height: 44) }
-                Spacer()
-                // While scaffolding the two replies take the pill's place, until
-                // the learner reads the chosen one aloud (read and choose stages)
-                if showsReplies && !model.readingAloud { Color.clear.frame(width: 112, height: 52) } else { pill }
-                Spacer()
-                // Bottom right (Josh, 2026-10-15): Pause or Resume, else the Learn link
-                if showsPause {
-                    pauseButton
-                } else if let onLearn, model.hasSomethingToLearn {
-                    learnLink(onLearn).transition(.opacity)
-                } else {
-                    Color.clear.frame(width: 44, height: 44)
-                }
+        Group {
+            // Scaffolding: the answers panel, with the usual mic centred in it
+            // and no Pause or Learn link (docs/reply-panel.md)
+            if model.showsAnswers {
+                ReplyPanel(model: model) { pill }
+            } else {
+                controls
             }
         }
         .padding(.bottom, 8)
@@ -60,11 +40,33 @@ struct ConversationControls: View {
         }
     }
 
-    /// The reply buttons, from the moment the turn opens until the character
-    /// answers the one tapped (or read aloud)
-    private var showsReplies: Bool {
-        guard model.scaffolding else { return false }
-        return model.phase == .choosing || model.readingAloud || (model.phase == .thinking && model.chosen != nil)
+    private var controls: some View {
+        VStack(spacing: 8) {
+            // In hands-free Pause holds the corner, so the Learn link sits above it
+            if let onLearn, showsPause, model.hasSomethingToLearn {
+                HStack {
+                    Spacer()
+                    learnLink(onLearn)
+                }
+                .transition(.opacity)
+            }
+            HStack {
+                // Type a reply (accessibility only, D6); otherwise empty, balancing
+                // the right-hand button so the pill stays centred
+                if model.canType { typeButton } else { Color.clear.frame(width: 44, height: 44) }
+                Spacer()
+                pill
+                Spacer()
+                // Bottom right (Josh, 2026-10-15): Pause or Resume, else the Learn link
+                if showsPause {
+                    pauseButton
+                } else if let onLearn, model.hasSomethingToLearn {
+                    learnLink(onLearn).transition(.opacity)
+                } else {
+                    Color.clear.frame(width: 44, height: 44)
+                }
+            }
+        }
     }
 
     // MARK: Type
@@ -175,7 +177,7 @@ struct ConversationControls: View {
         case .tapToTalk:
             Image(systemName: "mic.fill").font(.title2).foregroundStyle(Tokens.Colors.text)
         case .paused, .choosing:
-            EmptyView() // paused: shown by the pause button alone; choosing: the replies replace the pill
+            EmptyView() // paused: shown by the pause button alone; choosing: the answers are buttons (VoiceOver)
         case .starting:
             ProgressView()
         case .micDenied, .failed:
@@ -223,7 +225,7 @@ struct ConversationControls: View {
         case .listening, .hearing: (model.tapMode ? "Listening. Tap when you've finished" : "Your turn", "mic.fill")
         case .thinking: ("\(model.character.name) is thinking", "ellipsis")
         case .tapToTalk: ("Tap to speak", "hand.tap.fill")
-        case .choosing: ("Choose your reply", "hand.tap.fill")
+        case .choosing: ("Choose an answer", "hand.tap.fill")
         case .paused: ("Paused", "pause.fill")
         case .micDenied: ("Microphone off in Settings", "mic.slash.fill")
         case .failed(let message): (message, "exclamationmark.triangle.fill")
