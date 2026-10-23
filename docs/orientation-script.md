@@ -10,6 +10,8 @@
 - **About two to three minutes. Skippable at every step, replayable from Settings → How Fuori works.** Explanation beats move on with **Next**; that's navigation, not an answer.
 - **The game's rules don't apply here** (Josh, 2026-10-23). The immersion rules (Italian only, English only when asked, no AI notes) are for conversations in the world. This is set-up: she speaks English, talks about the app and names its parts.
 
+**Mock-ups (2026-10-23):** canvas "Reply buttons", row H; pictures in `design/orientation/H1.png` to `H11.png`. Skip and "n of 11" sit in the bar; her full picture while she sets you up (1–4, 9, 11), then the app's own screens dimmed behind her card, with a small portrait of her on the card (5–8, 10); the circle and the Learn book are highlighted when she explains them.
+
 Each beat: what's on screen · what she says · what the learner does · what it sets.
 
 ---
