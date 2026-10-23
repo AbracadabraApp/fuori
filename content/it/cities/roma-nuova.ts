@@ -40,7 +40,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Garbatella',
       real: false,
       characterId: 'mohamed-hassan',
-      imagePrompt: 'A family trattoria in Garbatella at lunchtime, with paper-covered tables, a chalkboard of daily dishes and a few workers and neighbours eating. Mohamed moves between the tables with plates on his arm.',
+      imagePrompt: 'A neighbourhood trattoria on a quiet street in Garbatella, seen from the road: a ground-floor restaurant in a low, ochre-washed lotto building with arched windows, a few small tables and chairs set out on the pavement under a canvas awning, potted plants by the door, and green courtyard glimpses and brick stairways of the surrounding apartment blocks. Mohamed Hassan, a young waiter in a black waistcoat and long white apron, stands just outside with a tray and a cloth over his arm, wiping down a table beneath a soft blue October sky.',
     },
     {
       id: 'pantheon-rotonda',
@@ -58,7 +58,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Centro Storico',
       real: true,
       characterId: 'franca-mattei',
-      imagePrompt: 'The church steps of Il Gesù and the small piazza in front, with a few people going in and out of the heavy doors in the afternoon light. Franca climbs the steps slowly, as she does every day.',
+      imagePrompt: 'The Baroque church of Il Gesù seen from its piazza in the historic centre: the tall, pale travertine facade with paired pilasters, a triangular pediment and a heavy central doorway at the top of a few shallow steps, flanked by dark palazzi and cobbled stones in the foreground, with a busy street edge, a few pedestrians and a bright, slightly hazy autumn sky above. Franca Mattei, an elderly retired schoolteacher in a light coat with a handbag over her arm, stands on the steps just outside the great doors, looking out across the piazza.',
     },
     {
       id: 'villa-borghese-nuova',
@@ -85,7 +85,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Pigneto',
       real: false,
       characterId: 'marco-zhou',
-      imagePrompt: 'A small tabaccheria in Pigneto with shelves of cigarettes behind the counter, lottery tickets, bus passes and a rack of magazines, and neighbours dropping in for small errands. Marco serves from behind the counter.',
+      imagePrompt: 'A small tabaccheria on a low-rise street in Pigneto, seen from the opposite kerb: a narrow shopfront with a dark awning, a glass door, a window crowded with lottery tickets and newspapers on a rack outside, and a tobacco-sign board above the entrance, set between modest apartment blocks with balconies and laundry and a graffiti-covered wall nearby. Marco Zhou, a man in a casual shirt and apron, leans in the doorway with arms folded, nodding to a neighbour on a bicycle under a pale, slightly overcast autumn sky.',
     },
     {
       id: 'farmacia-prati',
@@ -94,7 +94,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Prati',
       real: false,
       characterId: 'silvia-bruni-nuova',
-      imagePrompt: 'A bright pharmacy in Prati with wooden shelves of boxed medicines and a long counter where a couple of customers wait their turn. Silvia stands behind the counter reading a prescription.',
+      imagePrompt: 'A pharmacy on a broad, tree-lined street in Prati, seen from the pavement across the way: a stone-faced early-twentieth-century building with tall shuttered windows above, a glass-fronted shopfront below with an illuminated green cross jutting out over the entrance, and plane trees casting dappled shade under a clear October sky. Dott.ssa Silvia Bruni, a woman in a white coat, stands in the open doorway with one hand on the door frame, glancing up the street while a scooter and a couple of passers-by go by.',
     },
     {
       id: 'stazione-termini-nuova',
@@ -136,7 +136,7 @@ export const romaNuova: CityPantry = {
       role: 'cameriere',
       placeId: 'trattoria-garbatella',
       personality: ['opinionated', 'warm', 'proud'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 41-year-old Egyptian-born man with short dark hair, a trimmed beard going slightly grey and a knowing half-smile, wearing a white shirt with sleeves rolled up and a long dark apron. He is carrying two plates of pasta and glancing over his shoulder as if about to share an opinion about last night\'s match, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Roman ochre and terracotta watercolor like the other portraits, of a 41-year-old Egyptian-born man with short dark hair, a trimmed beard going slightly grey and a knowing half-smile, wearing a light blue shirt with sleeves rolled up and a long olive-green apron. He is carrying two plates of pasta and glancing over his shoulder as if about to share an opinion about last night\'s match; detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
     },
     {
       id: 'matteo-rinaldi',
