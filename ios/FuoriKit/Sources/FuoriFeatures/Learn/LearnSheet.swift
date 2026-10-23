@@ -3,7 +3,7 @@ import FuoriDesign
 import FuoriNetworking
 
 /// The Learn sheet (docs/learn.md → The page, walked through with Josh on
-/// 2026-10-21; canvas "Learn sheet", board 3). It opens over the paused scene
+/// 2026-10-21; canvas "Learn sheet", board 3). It opens over the stopped scene
 /// from the book on the person screen and reviews the conversation so far:
 /// corrections as tap-to-fix buttons that say the right phrase in the
 /// character's voice, a plain list of their words, and one thing good to know.
@@ -189,11 +189,14 @@ struct LearnSheet: View {
                             .typeface(.label, 20, relativeTo: .title3, weight: .semibold)
                             .foregroundStyle(Tokens.Colors.ink)
                         Spacer(minLength: 8)
-                        // She's saying it: the only sign of the voice, since it plays by itself
-                        Image(systemName: "waveform")
+                        // Stays after she's said it, so it's plain a tap says it again
+                        // (Josh, 2026-10-22: "the play buttons should not go away");
+                        // a moving wave while she's saying it
+                        Image(systemName: saying ? "waveform" : "play.circle.fill")
+                            .font(.title2)
                             .foregroundStyle(Tokens.Colors.green)
                             .symbolEffect(.variableColor.iterative, isActive: saying && !reduceMotion)
-                            .opacity(saying ? 1 : 0)
+                            .contentTransition(.symbolEffect(.replace))
                             .accessibilityHidden(true)
                     }
                     .padding(.top, 4)
@@ -215,8 +218,11 @@ struct LearnSheet: View {
 
     // MARK: Words
 
-    /// A plain list, not about speech: things, then doing. Italian on the
-    /// left, English on the right; stacked at the accessibility sizes.
+    /// Things, then doing: the word on the left, English on the right;
+    /// stacked at the accessibility sizes. Tapping a row says the word in the
+    /// character's voice, with no play button on each (Josh, 2026-10-22: "the
+    /// vocab words could play on tap? otherwise too many play buttons"); the
+    /// word turns green while it's being said.
     private func wordList(_ words: APIClient.LearnPage.Words) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             if !words.things.isEmpty {
@@ -250,13 +256,14 @@ struct LearnSheet: View {
         let layout = typeSize.isAccessibilitySize
             ? AnyLayout(VStackLayout(alignment: .leading, spacing: 2))
             : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 12))
-        return VStack(spacing: 0) {
+        let saying = model.learnSaying == word
+        return Button { Task { await model.sayForLearn(word) } } label: { VStack(spacing: 0) {
             Divider()
             layout {
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
                     Text(target(word))
                         .typeface(.label, 17, relativeTo: .body, weight: .bold)
-                        .foregroundStyle(Tokens.Colors.ink)
+                        .foregroundStyle(saying ? Tokens.Colors.green : Tokens.Colors.ink)
                     if !extra.isEmpty {
                         Text("· \(Text(target(extra)))")
                             .typeface(.label, 15, relativeTo: .subheadline)
@@ -270,8 +277,12 @@ struct LearnSheet: View {
                     .multilineTextAlignment(typeSize.isAccessibilitySize ? .leading : .trailing)
             }
             .padding(.vertical, 9)
-        }
+            .frame(minHeight: 44)
+            .contentShape(Rectangle())
+        } }
+        .buttonStyle(.plain)
         .accessibilityElement(children: .combine)
+        .accessibilityHint("Says it in \(model.character.name)'s voice")
     }
 
     /// Words in the language being learned, tagged so VoiceOver reads them in it
