@@ -673,39 +673,9 @@ public final class ConversationModel {
         }
     }
 
-    // MARK: - Typed reply (accessibility only, docs/13-ios-conventions.md D6)
-
-    /// Typing is offered only when the mic is off for Fuori or VoiceOver or
-    /// Switch Control is running; speaking stays the way to play
-    public var canType: Bool {
-        guard phase == .tapToTalk || phase == .micDenied else { return false }
-        return phase == .micDenied || isVoiceOverRunning || isSwitchControlRunning
-    }
-
-    /// A typed reply goes to the character the same way a spoken one does
-    public func send(typed text: String) async {
-        let said = text.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard canType, Heard.hasWords(said) else { return }
-        note = nil
-        let generation = self.generation
-        do {
-            debug.heard = "(typed) \(said)"
-            let started = Self.now()
-            let reply = try await requestTurn(learnerSaid: said)
-            learnerLines += 1
-            time("turn", since: started)
-            debug.promptVersion = reply.promptVersion
-            if let id = reply.conversationId { conversationId = id }
-            await present(reply, generation: generation)
-        } catch {
-            guard generation == self.generation else { return }
-            fail(error, step: "turn")
-        }
-    }
-
     // MARK: - Learn
 
-    /// Lines the learner has sent in this conversation (spoken, tapped or typed)
+    /// Lines the learner has sent in this conversation (spoken or tapped)
     public private(set) var learnerLines = 0
 
     /// The Learn link appears once there's something to go over: four of the
@@ -839,14 +809,6 @@ public final class ConversationModel {
     }
 
     // MARK: - System events
-
-    private var isSwitchControlRunning: Bool {
-        #if canImport(UIKit)
-        UIAccessibility.isSwitchControlRunning
-        #else
-        false
-        #endif
-    }
 
     private var isVoiceOverRunning: Bool {
         #if canImport(UIKit)

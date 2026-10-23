@@ -17,8 +17,6 @@ struct ConversationControls: View {
     var onLearn: (() -> Void)? = nil
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @ScaledMetric(relativeTo: .title2) private var circleSize: CGFloat = 68
-    @State private var typing = false
-    @State private var typed = ""
 
     var body: some View {
         Group {
@@ -45,8 +43,6 @@ struct ConversationControls: View {
         ZStack {
             circle
             HStack {
-                // Type a reply (accessibility only, D6)
-                if model.canType { typeButton }
                 Spacer()
                 // Bottom right, centred on the circle's line, the same place in
                 // every state; empty until there's something to learn
@@ -55,25 +51,6 @@ struct ConversationControls: View {
                 }
             }
             .padding(.horizontal, 6)
-        }
-    }
-
-    // MARK: Type
-
-    /// Only when the mic is off or VoiceOver / Switch Control is on (D6)
-    private var typeButton: some View {
-        Button { typed = ""; typing = true } label: {
-            Image(systemName: "keyboard")
-        }
-        .accessibilityLabel("Type your reply")
-        .font(.title3)
-        .frame(width: 48, height: 48)
-        .buttonStyle(.glass)
-        .buttonBorderShape(.circle)
-        .alert("Your reply", isPresented: $typing) {
-            TextField("Type what you'd say", text: $typed)
-            Button("Send") { Task { await model.send(typed: typed) } }
-            Button("Cancel", role: .cancel) {}
         }
     }
 
