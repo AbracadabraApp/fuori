@@ -12,6 +12,8 @@
  * learner (lib/study-export.ts, docs/study-export-demo.md): a Markdown file
  * for Gemini Notebook, by default the last 14 days. format=learners lists
  * learner ids by number of conversations, to find whose export to make.
+ * format=errors&since=…&limit=50 lists the iPhone app's error reports, every
+ * country, newest first (lib/app-errors.ts).
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
@@ -19,6 +21,7 @@ import { recentConversations, conversationAsText, conversationStats, recordingEn
 import { scorecard, scorecardAsText } from '@/lib/scorecard';
 import type { ConversationScore } from '@/lib/quality';
 import { learnersWithConversations, loadStudyExport, studyExportMarkdown } from '@/lib/study-export';
+import { recentAppErrors, appErrorsAsText } from '@/lib/app-errors';
 
 function allowed(given: string | null): boolean {
   const key = process.env.ADMIN_KEY;
@@ -36,6 +39,13 @@ export async function GET(request: NextRequest) {
   }
   if (url.searchParams.get('format') === 'learners') {
     return new NextResponse((await learnersWithConversations()) || 'No conversations yet.', {
+      headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
+    });
+  }
+  if (url.searchParams.get('format') === 'errors') {
+    const since = url.searchParams.get('since');
+    const rows = await recentAppErrors(Number(url.searchParams.get('limit') ?? 50) || 50, since && !isNaN(Date.parse(since)) ? new Date(since) : undefined);
+    return new NextResponse(appErrorsAsText(rows) || 'No app errors.', {
       headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
     });
   }

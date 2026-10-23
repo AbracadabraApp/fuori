@@ -5,6 +5,7 @@ import { randomUUID } from 'crypto';
 import { query, closePool } from '@/lib/db';
 import { recordTurn, markConversationEnded, recentConversations, conversationAsText, saveLater, loadConversationTurns } from '@/lib/recording';
 import type { CharacterSheet } from '@/lib/types';
+import { saveAppError, recentAppErrors, appErrorsAsText } from '@/lib/app-errors';
 
 if (!process.env.DATABASE_URL) {
   console.log('SKIPPED: set DATABASE_URL to a test database to run the recording check');
@@ -65,6 +66,15 @@ async function main() {
   });
   const seen = (await loadConversationTurns(later, me))?.map((t) => t.transcript).join(' | ');
   if (seen !== 'Prego? | Un cornetto | Ecco.') problems.push(`the next turn read the conversation before the save: ${seen}`);
+
+  // App error reports are kept, newest first, and read back as text (lib/app-errors.ts)
+  const t0 = new Date(Date.now() - 1000);
+  await saveAppError({ id: 'E-TST1', step: 'record', message: 'first', appVersion: '0.1.0 (2)' }, me);
+  await saveAppError({ id: 'E-TST2', step: 'turn', code: 'server_error', status: 500, message: 'second', context: { placeId: 'bar' } }, null);
+  const errs = await recentAppErrors(10, t0);
+  if (errs.map((e) => e.code).join(',') !== 'E-TST2,E-TST1') problems.push(`app errors not kept newest first: ${errs.map((e) => e.code)}`);
+  if (!appErrorsAsText(errs).includes('E-TST1 · record')) problems.push('app errors text missing a report');
+  await query("DELETE FROM app_errors WHERE code LIKE 'E-TST%'");
 
   await query('DELETE FROM learners WHERE id = ANY($1)', [[me, other]]);
 }

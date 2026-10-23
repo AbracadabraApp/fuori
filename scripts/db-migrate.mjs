@@ -96,6 +96,23 @@ ALTER TABLE learners ADD COLUMN IF NOT EXISTS addressed_from text;
 -- null counts them all. Set to restart the reply buttons without deleting
 -- conversations (Josh, 2026-10-22, for his own learners).
 ALTER TABLE learners ADD COLUMN IF NOT EXISTS scaffold_from timestamptz;
+-- Errors from the iPhone app (/v1/log), kept because Railway's log goes with
+-- each deploy (lib/app-errors.ts, 2026-10-22). Every country's server writes here.
+CREATE TABLE IF NOT EXISTS app_errors (
+  id          bigserial PRIMARY KEY,
+  at          timestamptz NOT NULL DEFAULT now(),
+  country     text NOT NULL,
+  learner_id  uuid,
+  code        text NOT NULL,
+  step        text NOT NULL,
+  api_code    text,
+  status      int,
+  message     text NOT NULL,
+  app_version text,
+  os          text,
+  context     jsonb
+);
+CREATE INDEX IF NOT EXISTS idx_app_errors_at ON app_errors(at DESC);
 
 -- Indexes for common queries
 CREATE INDEX IF NOT EXISTS idx_conversations_learner ON conversations(learner_id);
