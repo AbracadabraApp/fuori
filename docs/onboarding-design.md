@@ -129,8 +129,8 @@ Steps 2–5 below are the older draft.
 | Step | Italy | Mexico | English under it |
 |---|---|---|---|
 | Name (mic) | *Come ti chiami? Tocca il microfono e dimmi il tuo nome.* | *¿Cómo te llamas? Toca el micrófono y dime tu nombre.* | What's your name? Tap the microphone and tell me your name. |
-| Address | *Piacere, {name}! In italiano le parole cambiano: a una donna dico «benvenuta», a un uomo «benvenuto». Per te?* | *¡Mucho gusto, {name}! En español las palabras cambian: a una mujer le digo «bienvenida», a un hombre «bienvenido». ¿Para ti?* | Nice to meet you, {name}! In Italian words change: to a woman I say benvenuta, to a man benvenuto. Which for you? |
-| Buttons | **Benvenuta!** · **Benvenuto!** | **¡Bienvenida!** · **¡Bienvenido!** | to a woman · to a man |
+| Address (Josh, 2026-10-22: the first wording was too subtle; say it plainly) | *Piacere, {name}! In italiano le parole cambiano con il genere. Ti dico «benvenuta» o «benvenuto»?* | *¡Mucho gusto, {name}! En español las palabras cambian según el género. ¿Te digo «bienvenida» o «bienvenido»?* | Nice to meet you, {name}! In Italian, words change with gender. Should I say benvenuta (female) or benvenuto (male) to you? |
+| Buttons | **Benvenuta!** · **Benvenuto!** | **¡Bienvenida!** · **¡Bienvenido!** | female · male |
 | After the tap | *Benvenuta, {name}!* / *Benvenuto, {name}!* | *¡Bienvenida, {name}!* / *¡Bienvenido, {name}!* | Welcome, {name}! |
 
 - Fixed lines with the name filled in: no Claude call, no wait. Her line shows the name as Whisper heard it; tapping the mic again lets them say it again. The buttons save the address either way.

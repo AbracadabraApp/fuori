@@ -30,11 +30,11 @@ export const onboarding = {
     /** Name and address (docs/onboarding-design.md → Name and address): after the first tap. {name} is what Whisper heard */
     askName: { line: '¿Cómo te llamas? Toca el micrófono y dime tu nombre.', en: "What's your name? Tap the microphone and tell me your name." },
     address: {
-      line: '¡Mucho gusto, {name}! En español las palabras cambian: a una mujer le digo «bienvenida», a un hombre «bienvenido». ¿Para ti?',
-      en: 'Nice to meet you, {name}! In Spanish words change: to a woman I say bienvenida, to a man bienvenido. Which for you?',
+      line: '¡Mucho gusto, {name}! En español las palabras cambian según el género. ¿Te digo «bienvenida» o «bienvenido»?',
+      en: 'Nice to meet you, {name}! In Spanish, words change with gender. Should I say bienvenida (female) or bienvenido (male) to you?',
     },
-    asWoman: { line: '¡Bienvenida!', en: 'to a woman' },
-    asMan: { line: '¡Bienvenido!', en: 'to a man' },
+    asWoman: { line: '¡Bienvenida!', en: 'female' },
+    asMan: { line: '¡Bienvenido!', en: 'male' },
     welcomeWoman: { line: '¡Bienvenida, {name}!', en: 'Welcome, {name}!' },
     welcomeMan: { line: '¡Bienvenido, {name}!', en: 'Welcome, {name}!' },
     /** The send-off always ends with this (Claude writes what comes before it) */
