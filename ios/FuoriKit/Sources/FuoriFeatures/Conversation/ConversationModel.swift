@@ -112,7 +112,7 @@ public final class ConversationModel {
     /// One tap per turn (Josh, 2026-10-23): the learner taps to talk and
     /// silence sends it; no second tap (a tap still sends early). 10 s for
     /// the first word (20 s before reading a line from say it in English,
-    /// which takes a moment), then 2 s of silence ends the turn (Josh: agreed).
+    /// which takes a moment), then 2.5 s of silence ends the turn (Josh: 2 s agreed, then 2.5 s, 2026-10-23).
     /// No "more time to answer" setting (Josh, 2026-10-16: confusing).
     /// The turn opens on a tap unless Hands-free is on; always under VoiceOver
     public var tapMode: Bool { isVoiceOverRunning || !UserDefaults.standard.bool(forKey: SettingsKey.handsFree) }
@@ -123,7 +123,7 @@ public final class ConversationModel {
     private let longestTurn: TimeInterval = 90
     private var firstWordWait: TimeInterval = 10
     private let readingWait: TimeInterval = 20
-    private let endOfTurnWait: TimeInterval = 2
+    private let endOfTurnWait: TimeInterval = 2.5
     /// Less than this much voice isn't a turn (a cough, a click)
     private let minimumVoice: TimeInterval = 0.25
 
