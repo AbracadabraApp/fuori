@@ -22,7 +22,8 @@ Claude can't move these until Josh does:
 - [x] **Claude** "No such file" errors at step transcribe on that build: a second tap while the mic was opening started a second recording, and the orphaned watcher later finished the turn again with the file already deleted. Fixed in the next build
 - [ ] **Josh** Try today's build: pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
 - [ ] **Josh** Try Magda in the app
-- [ ] **Claude** Bottom bar: one circle in two colours, no Pause or Play (Josh, 2026-10-22; [bottom-bar.md](bottom-bar.md)): green mic and your wave, terracotta sending dots and her wave; interruptions return to your turn; the Learn link on the right, centred on the circle
+- [x] **Claude** Bottom bar: one circle in two colours, no Pause or Play (Josh, 2026-10-22; [bottom-bar.md](bottom-bar.md)): green mic and your wave, terracotta sending dots and her wave; interruptions return to your turn; the Learn link on the right, centred on the circle Built 0dde6b8 (2026-10-22), on Josh's phone
+- [ ] **Josh** Bottom bar on the phone: the four states in both countries; a call, Siri, AirPods out and backgrounding each land on your turn with the mic closed
 - [ ] **Josh** ⛔ Device checks, on the iPhone during a conversation (while the character speaks and while the mic is open): a phone call comes in; Siri; AirPods out; AirPods in; swipe to the home screen; lock the phone. Each time it should pause, save like any exit, and never reopen the mic without a tap; AirPods out shouldn't carry on through the phone speaker (CLAUDE.md → iPhone app). A simulator can't test this
 - [ ] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice?
 
