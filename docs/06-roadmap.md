@@ -28,7 +28,7 @@ Claude can't move these until Josh does:
 - [ ] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice?
 
 ### Open bugs and learner data — N4 (added 2026-10-22)
-- [ ] **Claude** Recording error "0 buffers failed to write" (E-DP2R, E-TX3U, E-PSTC) on turns in Italy: the recorder is stopped before the turn finishes, cause not found. Done (ce1109c, on Josh's phone 2026-10-22): the report now says what stopped the mic and the last phases ("the mic wasn't on at send …"), and the turn reopens with "The mic wasn't on. Say it again." Next: **Josh** plays; Claude reads the next report and fixes the cause. Blocks the 3-day gate
+- [x] **Claude** Recording error "0 buffers failed to write" / "the mic wasn't on": found from the saved reports (2026-10-23) and fixed in 27c8902: the send tap's cancelled watcher ticked once more and set the circle back to "talking", so a second tap found the mic closed. **Josh** to confirm on the next build that it's gone
 - [ ] **Josh** Merge learner `dd6ec6fb` (Josh's Franco conversations, 15–16 Oct) into his Italy learner `3c544022`, so Franco remembers him: needs Josh's yes (production data)
 - [ ] **Josh** Say whose learner `819f7aed` is ("José", 1 conversation, 17 Oct)
 
