@@ -22,10 +22,10 @@ Each beat: what's on screen · what she says · what the learner does · what it
 
 ## 2 · Your level, and saying it in English
 
-**She:** "Nice to meet you, {name}. Here's the trick that makes Fuori work: if you don't know how to say something, say it in English. You'll get it back in Italian, and you read that out loud. Let's try. How much Italian do you have?"
-**Learner:** says it in English ("I'm just starting", "I know a little", "I'm pretty comfortable"). An Italian bubble comes back with the English (*Sono principiante.* · I'm a beginner.). They read it aloud.
+**She:** "Nice to meet you, {name}. Here's the trick that makes Fuori work: if you don't know how to say something, say it in English. You'll get it back in Italian, and you read that out loud. Let's try. Is your Italian beginner, intermediate or advanced?"
+**Learner:** says one in English. An Italian bubble comes back with the English (*Sono principiante.* · I'm a beginner. / *Sono di livello intermedio.* / *Sono di livello avanzato.*). They read it aloud.
 **She:** "Perfect, that's the whole trick. I'll start you there."
-**Sets:** the level, from what they said (a small judge call, as onboarding has today), with that level's settings. The first conversations can still adjust it. Anyone who answers in Italian skips the bubble, and their Italian counts too.
+**Sets:** the level they said: Beginner, Intermediate or Advanced (Josh, 2026-10-23: stick to the three levels), with that level's settings. Anyone who answers in Italian skips the bubble.
 
 ## 3 · Gender rules
 
@@ -77,7 +77,7 @@ Each beat: what's on screen · what she says · what the learner does · what it
 
 ## Notes for the build (when decided)
 
-- **Fixed lines,** except the Italian bubbles (the "say it in English" call) and two small judge calls: the level from answer 2, and the address from answer 3. No buttons for either.
+- **Fixed lines,** except the Italian bubbles (the "say it in English" call) and a small call reading the level (2) and the address (3) from what was said. No buttons for either.
 - **Her English** is spoken in an English voice for the tour, or her own voice if it handles English well.
 - **Skip** at any step goes to the city list with what's been set; anything unset falls back as today.
 - **Replay** from Settings → How Fuori works runs 4–11 (no name, level or address again).
