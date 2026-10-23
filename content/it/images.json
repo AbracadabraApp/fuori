@@ -72,6 +72,11 @@
       "src": "c06cc8561fde64be",
       "bytes": 331412
     },
+    "cities/roma-nuova": {
+      "key": "it/cities/roma-nuova.29a4d6931d.webp",
+      "src": "c06cc8561fde64be",
+      "bytes": 331412
+    },
     "cities/siena": {
       "key": "it/cities/siena.0c8172e469.webp",
       "src": "98fe4dffd21940c5",
@@ -411,6 +416,11 @@
       "key": "it/places/bar-matilde.36e8b71035.webp",
       "src": "5e3d1c17a8abc7d1",
       "bytes": 251088
+    },
+    "places/bar-mattina-nuova": {
+      "key": "it/places/bar-mattina-nuova.a74fb7b892.webp",
+      "src": "3a5a2f61bfa5c7c8",
+      "bytes": 210650
     },
     "places/bar-mexico": {
       "key": "it/places/bar-mexico.1fd83172be.webp",
@@ -1342,6 +1352,11 @@
       "src": "e7d98f54062d4afc",
       "bytes": 172916
     },
+    "places/farmacia-prati": {
+      "key": "it/places/farmacia-prati.559760315c.webp",
+      "src": "871f5b48095c08a3",
+      "bytes": 179364
+    },
     "places/farmacia-trastevere": {
       "key": "it/places/farmacia-trastevere.f4fa598c73.webp",
       "src": "6e02d023927cc10d",
@@ -1581,6 +1596,11 @@
       "key": "it/places/gelateria-vivoli.e8d80a48b0.webp",
       "src": "ff5f46137fe8cf56",
       "bytes": 207314
+    },
+    "places/gesu-piazza": {
+      "key": "it/places/gesu-piazza.713bdb494c.webp",
+      "src": "7c1683a6bba086b9",
+      "bytes": 239114
     },
     "places/giardini-margherita": {
       "key": "it/places/giardini-margherita.95bf76d76b.webp",
@@ -2297,6 +2317,11 @@
       "src": "fc04e5a661fcdb74",
       "bytes": 262458
     },
+    "places/pantheon-rotonda": {
+      "key": "it/places/pantheon-rotonda.f9b279c137.webp",
+      "src": "64d83f7276aa89df",
+      "bytes": 183376
+    },
     "places/paperback-exchange": {
       "key": "it/places/paperback-exchange.0e021b8374.webp",
       "src": "34c86b280abe9340",
@@ -2651,6 +2676,11 @@
       "key": "it/places/pinacoteca-brera.d5f4bf76c1.webp",
       "src": "4bcf1aec0153a7b4",
       "bytes": 213592
+    },
+    "places/pizza-taglio-san-lorenzo": {
+      "key": "it/places/pizza-taglio-san-lorenzo.ed5281ca5f.webp",
+      "src": "97e06a79c2ab862e",
+      "bytes": 212976
     },
     "places/pizzeria-charlie": {
       "key": "it/places/pizzeria-charlie.61c0770e1e.webp",
@@ -3147,6 +3177,11 @@
       "src": "450a93dacd9e8c92",
       "bytes": 194722
     },
+    "places/stazione-termini-nuova": {
+      "key": "it/places/stazione-termini-nuova.59159e35f3.webp",
+      "src": "526f6162862c8c23",
+      "bytes": 169832
+    },
     "places/stazione-trastevere": {
       "key": "it/places/stazione-trastevere.de109bb24b.webp",
       "src": "657e847bf3c54d76",
@@ -3161,6 +3196,11 @@
       "key": "it/places/tabaccheria-moderna.f03dfa6075.webp",
       "src": "2a3ec6d1a464d895",
       "bytes": 206416
+    },
+    "places/tabaccheria-pigneto": {
+      "key": "it/places/tabaccheria-pigneto.a83289a513.webp",
+      "src": "e32faf46111df503",
+      "bytes": 197708
     },
     "places/teatro-donizetti": {
       "key": "it/places/teatro-donizetti.58d50eae4d.webp",
@@ -3212,6 +3252,11 @@
       "src": "26a7d47e6ee5313a",
       "bytes": 235512
     },
+    "places/tram-porta-maggiore": {
+      "key": "it/places/tram-porta-maggiore.bfe9d2e564.webp",
+      "src": "0e40eacf369729e5",
+      "bytes": 226042
+    },
     "places/trattoria-ai-cascinari": {
       "key": "it/places/trattoria-ai-cascinari.978007f453.webp",
       "src": "ed811286884e32fd",
@@ -3246,6 +3291,11 @@
       "key": "it/places/trattoria-erminio.912ff8718e.webp",
       "src": "55be66756bae8095",
       "bytes": 253706
+    },
+    "places/trattoria-garbatella": {
+      "key": "it/places/trattoria-garbatella.923cc34c07.webp",
+      "src": "2072b86dae68c4df",
+      "bytes": 177538
     },
     "places/trattoria-isola": {
       "key": "it/places/trattoria-isola.5c8b070a66.webp",
@@ -3331,6 +3381,11 @@
       "key": "it/places/villa-borghese.9b9da5f83e.webp",
       "src": "c2a72b81fa14d883",
       "bytes": 288684
+    },
+    "places/villa-borghese-nuova": {
+      "key": "it/places/villa-borghese-nuova.5fa769d10e.webp",
+      "src": "69d4bbe371425273",
+      "bytes": 364032
     },
     "places/villa-comunale": {
       "key": "it/places/villa-comunale.8560e6f05e.webp",
@@ -4097,6 +4152,11 @@
       "src": "2f87394859fc4109",
       "bytes": 272666
     },
+    "portraits/daniele-sorrentino": {
+      "key": "it/portraits/daniele-sorrentino.ea43cdbac9.webp",
+      "src": "167c117940966ea5",
+      "bytes": 257704
+    },
     "portraits/dante-mori": {
       "key": "it/portraits/dante-mori.d4fc52b27e.webp",
       "src": "0c7c55464ee463c0",
@@ -4482,6 +4542,11 @@
       "src": "09ea7a91a41a9806",
       "bytes": 189624
     },
+    "portraits/ettore-gentili-nuova": {
+      "key": "it/portraits/ettore-gentili-nuova.436780dad4.webp",
+      "src": "3ead2130a0852232",
+      "bytes": 141214
+    },
     "portraits/ezio-ruffini": {
       "key": "it/portraits/ezio-ruffini.4b0bf20333.webp",
       "src": "16dc5677d4223405",
@@ -4581,6 +4646,11 @@
       "key": "it/portraits/franca-colombi.b0baa1f336.webp",
       "src": "13762a492fc83aa9",
       "bytes": 321240
+    },
+    "portraits/franca-mattei": {
+      "key": "it/portraits/franca-mattei.b69fd7628c.webp",
+      "src": "380ae00d9dfcd62d",
+      "bytes": 146996
     },
     "portraits/franca-proprietaria": {
       "key": "it/portraits/franca-proprietaria.ad0dd99719.webp",
@@ -4736,6 +4806,11 @@
       "key": "it/portraits/gino-sorbillo.69abf6a96a.webp",
       "src": "8fe6b48f09e75657",
       "bytes": 325672
+    },
+    "portraits/giorgia-ferri": {
+      "key": "it/portraits/giorgia-ferri.fdc2807427.webp",
+      "src": "43e477aa128bfafd",
+      "bytes": 244968
     },
     "portraits/giorgio-bar": {
       "key": "it/portraits/giorgio-bar.61db5ad043.webp",
@@ -5232,6 +5307,11 @@
       "src": "87ea75dc76711c38",
       "bytes": 289124
     },
+    "portraits/luisa-cocco-nuova": {
+      "key": "it/portraits/luisa-cocco-nuova.1ef7634422.webp",
+      "src": "d3f95cd28e0caedf",
+      "bytes": 232278
+    },
     "portraits/luisa-de-marco": {
       "key": "it/portraits/luisa-de-marco.5d6ad0958e.webp",
       "src": "ec136d002b263050",
@@ -5361,6 +5441,11 @@
       "key": "it/portraits/marco-villa.2d66ab8a40.webp",
       "src": "1cf2fd48ece296e4",
       "bytes": 254844
+    },
+    "portraits/marco-zhou": {
+      "key": "it/portraits/marco-zhou.c719e813f8.webp",
+      "src": "e5603283c5c093bf",
+      "bytes": 261966
     },
     "portraits/margherita-pasticcera": {
       "key": "it/portraits/margherita-pasticcera.0ac869e839.webp",
@@ -5532,6 +5617,11 @@
       "src": "ce464d4a2ac5ac70",
       "bytes": 283890
     },
+    "portraits/matteo-rinaldi": {
+      "key": "it/portraits/matteo-rinaldi.68622bbe9c.webp",
+      "src": "27c2dde621e91f26",
+      "bytes": 182044
+    },
     "portraits/matteo-torre": {
       "key": "it/portraits/matteo-torre.1363770d85.webp",
       "src": "ca7318c6326025c5",
@@ -5616,6 +5706,11 @@
       "key": "it/portraits/mimmo-verde.031f460abe.webp",
       "src": "90dbdcac885f9fc3",
       "bytes": 232602
+    },
+    "portraits/mohamed-hassan": {
+      "key": "it/portraits/mohamed-hassan.85cb7a19da.webp",
+      "src": "48536770eca1c89d",
+      "bytes": 214738
     },
     "portraits/nello-ferrari": {
       "key": "it/portraits/nello-ferrari.78ce191fbd.webp",
@@ -5876,6 +5971,11 @@
       "key": "it/portraits/pietro-stazione.a47ebf1fcb.webp",
       "src": "fd0d1a13d1cf66d2",
       "bytes": 240554
+    },
+    "portraits/pietro-termini-nuova": {
+      "key": "it/portraits/pietro-termini-nuova.be7f17bd31.webp",
+      "src": "b04b7227c94a606d",
+      "bytes": 260124
     },
     "portraits/pietro-volpe": {
       "key": "it/portraits/pietro-volpe.1a48d2b129.webp",
@@ -6156,6 +6256,11 @@
       "key": "it/portraits/silvia-baroni.5789622c74.webp",
       "src": "b088f5abf2259302",
       "bytes": 277416
+    },
+    "portraits/silvia-bruni-nuova": {
+      "key": "it/portraits/silvia-bruni-nuova.bb21456c7d.webp",
+      "src": "adde905aec443d4a",
+      "bytes": 247276
     },
     "portraits/silvia-castagna": {
       "key": "it/portraits/silvia-castagna.be6534f244.webp",
