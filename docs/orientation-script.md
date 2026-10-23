@@ -4,7 +4,8 @@
 
 **The idea:**
 - **An English introduction.** She explains in English, as a friendly guide would before you go out.
-- **Every answer is spoken, never tapped** (Josh: "No clicks to answer"). From the second question on, the learner answers the way beginners will play: **say it in English → the Italian line comes back → read it out loud.** The tour is practice in the loop the whole game uses ([beginner-scaffolding.md](beginner-scaffolding.md)).
+- **The dialogue style (Josh, 2026-10-23):** she says in English how Italians say it, asks the question in Italian, you answer with the microphone, and she replies in Italian. "In Italian, you ask someone their name by saying *Come ti chiami?*" → *Come ti chiami?* → your name → *Piacere!* Each set-up question teaches a phrase you'll hear again.
+- **Every answer is spoken, never tapped** (Josh: "No clicks to answer"). From the level question on, the learner can answer the way beginners will play: **say it in English → the Italian line comes back → read it out loud.** The tour is practice in the loop the whole game uses ([beginner-scaffolding.md](beginner-scaffolding.md)).
 - **It covers, in Josh's order:** your level, the gender rules, how the game works, cities, places, the microphone, talking with characters, what to do when you don't know how to reply, and Learn. The microphone comes first in practice, since every answer needs it.
 - **About two to three minutes. Skippable at every step, replayable from Settings → How Fuori works.** Explanation beats move on with **Next**; that's navigation, not an answer.
 - **The game's rules don't apply here** (Josh, 2026-10-23). The immersion rules (Italian only, English only when asked, no AI notes) are for conversations in the world. This is set-up: she speaks English, talks about the app and names its parts.
@@ -13,26 +14,30 @@ Each beat: what's on screen · what she says · what the learner does · what it
 
 ---
 
-## 1 · Hello, and the microphone
+## 1 · Your name
 
 **Screen:** her portrait, large. The green circle at the bottom.
-**She:** "Hi, welcome to Fuori. I'll show you how it works before you head out. It takes about two minutes. You talk out loud here: tap the green circle, talk, and tap again when you're done. What's your name?"
-**Learner:** taps, says their name, taps (the first tap brings up iOS's permission prompt). **Skip the tour** sits under the panel.
+**She:** "Hi, welcome to Fuori. I'll show you how it works before you head out. It takes about two minutes. In Italian, you ask someone their name by saying *Come ti chiami?* Use the microphone to answer: tap the green circle, talk, and tap again when you're done."
+**She:** *Come ti chiami?*
+**Learner:** taps, says their name (*Mi chiamo…* or just the name), taps. The first tap brings up iOS's permission prompt. **Skip the tour** sits under the panel.
+**She:** *Piacere, {name}!* "Nice to meet you."
 **Sets:** the name, and that the mic works.
 
-## 2 · Your level, and saying it in English
+## 2 · Masculine or feminine
 
-**She:** "Nice to meet you, {name}. Here's the trick that makes Fuori work: if you don't know how to say something, say it in English. You'll get it back in Italian, and you read that out loud. Let's try. Is your Italian beginner, intermediate or advanced?"
-**Learner:** says one in English. An Italian bubble comes back with the English (*Sono principiante.* · I'm a beginner. / *Sono di livello intermedio.* / *Sono di livello avanzato.*). They read it aloud.
-**She:** "Perfect, that's the whole trick. I'll start you there."
-**Sets:** the level they said: Beginner, Intermediate or Advanced (Josh, 2026-10-23: stick to the three levels), with that level's settings. Anyone who answers in Italian skips the bubble.
-
-## 3 · Gender rules
-
-**She:** "One thing about Italian: words change for men and women. A man is *contento*, a woman is *contenta*. When people welcome you, it's *benvenuto* or *benvenuta*. Things have a gender too: *il caffè*, *la pizza*. You'll pick it up as you go. Which should people say to you: *benvenuto* or *benvenuta*?"
-**Learner:** says one (or says it in English: "a woman", "a man").
-**She:** "*Benvenuta, {name}!* That's how everyone will greet you."
+**She:** "In Italian, words can be masculine or feminine. Even when we welcome someone, we say *benvenuto* to men and *benvenuta* to women. How do you want to be greeted?"
+**She:** *Benvenuto o benvenuta?*
+**Learner:** says one.
+**She:** *Grazie. Benvenuta, {name}!*
 **Sets:** how every character addresses them.
+
+## 3 · Your level, and saying it in English
+
+**She:** "In Italian, you ask if someone speaks Italian by saying *Parli italiano?* If you don't know how to answer in Italian, here's the trick that makes Fuori work: say it in English. You'll get it back in Italian, and you read that out loud. Tell me: beginner, intermediate or advanced?"
+**She:** *Parli italiano?*
+**Learner:** says it in English. An Italian bubble comes back with the English (*Sono principiante.* · I'm a beginner. / *Parlo un po' d'italiano.* · I speak a little Italian. / *Sì, parlo bene l'italiano.* · Yes, I speak Italian well.). They read it aloud.
+**She:** *Perfetto!* "That's the whole trick. I'll start you there."
+**Sets:** the level they said: Beginner, Intermediate or Advanced (Josh, 2026-10-23: stick to the three levels), with that level's settings. Anyone who answers in Italian skips the bubble.
 
 ## 4 · How the game works
 
@@ -77,7 +82,7 @@ Each beat: what's on screen · what she says · what the learner does · what it
 
 ## Notes for the build (when decided)
 
-- **Fixed lines,** except the Italian bubbles (the "say it in English" call) and a small call reading the level (2) and the address (3) from what was said. No buttons for either.
+- **Fixed lines,** except the Italian bubbles (the "say it in English" call) and a small call reading the address (2) and the level (3) from what was said. No buttons for either.
 - **Her English** is spoken in an English voice for the tour, or her own voice if it handles English well.
 - **Skip** at any step goes to the city list with what's been set; anything unset falls back as today.
 - **Replay** from Settings → How Fuori works runs 4–11 (no name, level or address again).
