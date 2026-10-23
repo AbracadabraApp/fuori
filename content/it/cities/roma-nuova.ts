@@ -40,7 +40,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Garbatella',
       real: false,
       characterId: 'mohamed-hassan',
-      imagePrompt: 'A neighbourhood trattoria on a quiet street in Garbatella, seen from the road: a ground-floor restaurant in a low, ochre-washed lotto building with arched windows, a few small tables and chairs set out on the pavement under a canvas awning, potted plants by the door, and green courtyard glimpses and brick stairways of the surrounding apartment blocks. Mohamed Hassan, a young waiter in a black waistcoat and long white apron, stands just outside with a tray and a cloth over his arm, wiping down a table beneath a soft blue October sky.',
+      imagePrompt: 'On an ordinary weekday in Garbatella, the trattoria occupies the ground floor of a tall, low-key apartment building in a continuous row, with a few outdoor tables on the pavement, windows above hung with laundry, and neighbouring shopfronts on either side under a clear October sky. Mohamed Hassan, the cameriere, stands just outside by the tables with a tray and a cloth over his arm.',
     },
     {
       id: 'pantheon-rotonda',
@@ -85,7 +85,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Pigneto',
       real: false,
       characterId: 'marco-zhou',
-      imagePrompt: 'A small tabaccheria on a low-rise street in Pigneto, seen from the opposite kerb: a narrow shopfront with a dark awning, a glass door, a window crowded with lottery tickets and newspapers on a rack outside, and a tobacco-sign board above the entrance, set between modest apartment blocks with balconies and laundry and a graffiti-covered wall nearby. Marco Zhou, a man in a casual shirt and apron, leans in the doorway with arms folded, nodding to a neighbour on a bicycle under a pale, slightly overcast autumn sky.',
+      imagePrompt: 'On a quiet weekday morning in Pigneto, the street-level tabaccheria sits in a continuous row of tall, weathered apartment buildings, its glass front and open door beneath several storeys of shuttered windows and small balconies, with neighbouring shopfronts on either side and a pale autumn sky above. Marco Zhou, the tabaccaio, stands in the doorway with his arms folded, looking out at the street.',
     },
     {
       id: 'farmacia-prati',
