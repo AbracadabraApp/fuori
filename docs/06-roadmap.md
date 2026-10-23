@@ -147,7 +147,7 @@ Two stages. A TestFlight for Josh alone needs no Apple review and none of the co
 - [x] **Claude** The sign-in token carries over from the Xcode build to the TestFlight one. Confirmed 2026-10-19: on the phone, build 1 signed in as Josh's own learner in both countries (Italy `3c544022`, from the web days; Mexico `25d15e1d`), and Josh: characters remember him from the web. (The Mac install is a separate learner, as expected: its Keychain is its own)
 - [x] **Josh** Installed from TestFlight and played in Italy (2026-10-18)
 - [ ] **Josh** The device checks (Conversation on the phone) on the TestFlight build
-- [ ] **Josh** Gate: play from TestFlight on 3 separate days without the laptop; **Claude** checks `railway logs` for new error codes
+- ~~Gate: play from TestFlight on 3 separate days without the laptop~~: dropped (Josh, 2026-10-23: not a release item; Claude wrote it into the plan). Claude reads the saved app error reports (`format=errors`) as Josh plays
 
 **Stage 2: before anyone else gets it** — N5 (external testers; Apple's beta review, usually about a day)
 - [ ] **Claude** App Attest when a device registers
