@@ -22,12 +22,17 @@ struct ConversationControls: View {
         Group {
             // Scaffolding: the answers panel, with the same circle centred in it
             // (docs/reply-panel.md)
+            // It fades in once she has finished speaking (Josh, 2026-10-22:
+            // let the speaker speak, then fade in the sheet); no motion under
+            // Reduce Motion, just the fade
             if model.showsAnswers {
                 ReplyPanel(model: model) { circle }
+                    .transition(.opacity)
             } else {
                 controls
             }
         }
+        .animation(.easeIn(duration: reduceMotion ? 0.2 : 0.45), value: model.showsAnswers)
         .padding(.bottom, 8)
         .sensoryFeedback(trigger: model.phase) { _, new in
             switch new {
