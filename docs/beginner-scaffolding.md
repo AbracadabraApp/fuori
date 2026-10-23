@@ -9,12 +9,14 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 - Beginners start with scaffolding, but the two are separate: finishing scaffolding doesn't make anyone Intermediate.
 - **Scaffolding isn't a setting.** The game decides when you see it, by counting (`lib/scaffold.ts`), not by a judge or a switch. The rules and the full set of stages aren't settled yet.
 
+**Next (Josh, 2026-10-22):** the reply buttons become a reply panel: answers as text, "read one out loud" above the usual mic, no tap stage, no Pause. Spec and assets: [reply-panel.md](reply-panel.md).
+
 ## The sequence a new learner meets
 
 | # | Step | What happens | Status |
 |---|---|---|---|
 | 1 | **Onboarding** | Choose a country; the greeter asks two things, answered by button or voice; she places you at a level | Built ([onboarding-design.md](onboarding-design.md)) |
-| 2 | **Reply buttons, stage A: tap** | Two good replies; tap one and it's sent | **Built**, live 2026-10-22 |
+| 2 | **Reply buttons, stage A: tap** | Two good replies; tap one and it's sent | Built, live 2026-10-22; **going** (Josh, 2026-10-22: too simple; see [reply-panel.md](reply-panel.md)) |
 | 3 | **Stage B: tap, then read it aloud** | Two good replies; tap one, then say it | Being built (2026-10-22) |
 | 4 | **Stage C: choose, read it aloud** | Only one reply fits; choose, then say it | Being built (2026-10-22) |
 | 5 | **The microphone alone** | Speak freely; today's game | Built |
