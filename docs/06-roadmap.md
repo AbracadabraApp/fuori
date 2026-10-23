@@ -39,7 +39,7 @@ Goal: reply under 2 s, 4 s at most. Measured 2026-10-18 (`npm run measure:turn`,
 - [x] **Claude** Save the turn after the reply is sent, not before (up to 1 s on some turns): 8b599c1 (2026-10-22). Readers of the conversation wait for the save
 - [x] **Claude** Step 1 (acfece6, 2026-10-22): the server starts the voice as soon as the line is written, before the English; /v1/speak takes it
 - [x] **Claude** Step 2 (d167356 server, 0f8bc32 app, 2026-10-22): the app says the first sentence while the rest is written. Live, median tap to voice: Italy 3.3 s before → 2.5 s (step 1) → 1.9 s; Mexico 1.7 s (`measure:turn --stream`)
-- [ ] **Josh** On the phone: does the voice flow naturally from the first sentence to the rest (two clips, the second carries on from the first)?
+- [x] **Josh** On the phone (Mexico, 2026-10-22): the voice flows from the first sentence to the rest; subtitles and tap to stop look right ("I think so"). Pause and resume not yet tried
 - [ ] **Claude** Test every outside service on speed, failures and cost, one at a time with `measure:turn` and the logs (Josh, 2026-10-18). Each gets a short write-up: what we use, what else it offers, what was measured, keep or change:
   - **Claude:** prompt caching (not used yet; the prompt passes the ~1,024-token minimum only around turn 6–8, so mainly a cost saving, plus cheaper test runs); time to first token (0.8–1.2 s today, and one 4.4 s outlier on 2026-10-18); how often a call fails or is retried
   - **Groq Whisper:** `whisper-large-v3` against `-turbo`; upload and transcribe time against recording length; hallucination on near-silence; failure rate
