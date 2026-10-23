@@ -9,5 +9,10 @@
     { "id": "firenze", "name": "Firenze", "region": "Toscana", "neighbourhoods": ["Oltrarno", "San Lorenzo", "Santa Croce", "Santo Spirito"] },
     { "id": "venezia", "name": "Venezia", "region": "Veneto", "neighbourhoods": ["Cannaregio", "Castello", "Dorsoduro", "San Marco"] },
     { "id": "milano", "name": "Milano", "region": "Lombardia", "neighbourhoods": ["Navigli", "Brera", "Porta Romana", "Isola"] }
-  ]
+  ],
+  "placeStyles": {
+    "roma-nuova": "Fine-line pen drawing on white paper, precise thin black lines, flat light colour fills"
+  },
+  "placeRules": "No other words anywhere: no dates, no neighbourhood or city names, no slogans, no prices, no brand names or logos. Contemporary Italy: today's clothes and objects, everyday life. Keep the main scene in the centre; nothing important near the edges.",
+  "placeStylesNote": "Roma nuova (2026-10-22, docs/rome-redo.md): place prompt = city style + scene + its name as the only sign + placeRules (scripts/lib/place-prompt.mjs), as Mexico does. Cities without a style keep their full imagePrompt."
 }

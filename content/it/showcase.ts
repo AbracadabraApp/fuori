@@ -29,6 +29,20 @@ export const showcase: Record<string, string[]> = {
     'scuola-lingua-roma', // M2: language school with Magda
     'stazione-termini', // M2: train station for travel
   ],
+  // Roma redone (Josh, 2026-10-22; docs/rome-redo.md): today's Rome beside the
+  // original, to compare. No language school: schools move into Learn.
+  'roma-nuova': [
+    'bar-mattina-nuova',
+    'pizza-taglio-san-lorenzo',
+    'trattoria-garbatella',
+    'pantheon-rotonda',
+    'gesu-piazza',
+    'villa-borghese-nuova',
+    'tram-porta-maggiore',
+    'tabaccheria-pigneto',
+    'farmacia-prati',
+    'stazione-termini-nuova',
+  ],
   matera: [
     'caffe-schiuma',
     'panificio-del-sasso',
@@ -297,4 +311,4 @@ export const showcase: Record<string, string[]> = {
 };
 
 /** On the first screen of the city list, in this order; the rest come after "Mostra altro" */
-export const homeCities = ['roma', 'matera', 'firenze', 'siena', 'venezia', 'napoli', 'bologna', 'palermo'];
+export const homeCities = ['roma', 'roma-nuova', 'matera', 'firenze', 'siena', 'venezia', 'napoli', 'bologna', 'palermo'];

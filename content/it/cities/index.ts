@@ -12,6 +12,7 @@ import { napoli } from './napoli';
 import { orvieto } from './orvieto';
 import { palermo } from './palermo';
 import { roma } from './roma';
+import { romaNuova } from './roma-nuova';
 import { siena } from './siena';
 import { siracusa } from './siracusa';
 import { taormina } from './taormina';
@@ -24,6 +25,7 @@ import { verona } from './verona';
 // There are 9 big cities and 11 towns, so the list ends with three towns.
 export const cities = [
   roma, //     big   · Lazio
+  romaNuova, // Roma redone (docs/rome-redo.md), beside the original to compare
   matera, //   town  · Basilicata
   firenze, //  big   · Toscana
   taormina, // town  · Sicilia
