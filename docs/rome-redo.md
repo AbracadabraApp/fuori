@@ -44,6 +44,13 @@ Leaves the feed (hidden, not deleted, as `content/it/showcase.ts` does): Bar Ang
 - Images in `public/images/` (the web serves these). **Not yet on R2**: the laptop VM and the cloud can't reach R2's upload endpoint, so the iPhone app shows the city without pictures until `npm run images:upload` is run on the Mac (it uploads only the new files and updates `content/it/images.json`; commit that).
 - The city card reuses Roma's picture.
 
+## What we learned from the pictures (2026-10-22, Josh)
+
+- Shops are seen **from the street**, recognisable by their front (the green cross, the tabaccheria's awning), with the street, the buildings and the sky; an interior or a building on blank paper doesn't read as the place.
+- In Rome nothing but the Pantheon stands alone: shops, bars and restaurants are **on the ground floor of a continuous row of apartment buildings** (now in Italy's `placeRules`, and the scene must say it too: a scene that says "a low building" wins over the rule).
+- **Close in:** the shopfront and the person fill most of the card, a floor or two above. The farmacia, tabaccheria and trattoria were cropped to this by hand; next time the scene instruction should ask for it ("close enough that the shopfront and the person fill most of the picture, with the first floor above").
+- A portrait with a white shirt and dark apron came out with no colour three times; colourful clothes and the wash named first fixed it.
+
 ## How to build it for every city (proposed)
 
 1. **Scenes separate from style, as Mexico does** (`docs/mexico-place-images-plan.md`): `placeStyles` for Rome in `content/it/generation.json`, scene-only `imagePrompt`s, `scripts/lib/place-prompt.mjs` assembles style + scene + sign + rules.
