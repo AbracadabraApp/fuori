@@ -71,7 +71,11 @@ export async function writeLearnPage(character: CharacterSheet, city: string, tr
   const prompt = buildLearnPrompt(character, city, transcript);
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
-    max_tokens: 8000, // leaves room for thinking, which counts toward it
+    max_tokens: 8000,
+    // No thinking before the page (Josh, 2026-10-22: Learn took 7–9 s to open).
+    // On Josh's Memo conversation: 8.4–9.5 s with it, 4.7–5.0 s without, the
+    // same three corrections and words. As the turn call: between_tools, not disabled
+    thinking: { type: 'between_tools' },
     system: prompt.system,
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: learnOutputJsonSchema } },

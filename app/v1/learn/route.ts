@@ -6,7 +6,8 @@
  *       goodToKnow, promptVersion }
  *
  * The Learn page for this conversation so far (docs/learn.md → The page),
- * written by lib/learn.ts. The app calls it when the learner opens the Learn
+ * written by lib/learn.ts; usually already written while the learner talked
+ * (lib/learn-ahead.ts), so it opens at once. The app calls it when the learner opens the Learn
  * sheet (the Learn link, after four learner lines).
  * The app says each correction's `right` in the character's voice through
  * /v1/speak.
@@ -22,6 +23,7 @@ import { parseTurnRequest } from '@/lib/turn-request';
 import { loadConversationTurns } from '@/lib/recording';
 import { cannotWriteLearnPage, learnAvailable, learnPromptVersion, writeLearnPage } from '@/lib/learn';
 import { badRequest, claudeFailed } from '@/lib/onboarding-api';
+import { learnPageAhead } from '@/lib/learn-ahead';
 
 const Body = z.object({
   cityId: z.string(),
@@ -49,7 +51,8 @@ export async function POST(request: Request) {
 
     const city = cities.find((c) => c.id === cityId)?.name ?? cityId;
     try {
-      const page = await writeLearnPage(parsed.character, city, transcript);
+      // Written ahead while they talked (lib/learn-ahead.ts), else now
+      const page = (await learnPageAhead(conversationId, transcript.length)) ?? (await writeLearnPage(parsed.character, city, transcript));
       return apiJson({ ...page, promptVersion: learnPromptVersion() });
     } catch (err) {
       return claudeFailed(request, 'v1 learn', err);

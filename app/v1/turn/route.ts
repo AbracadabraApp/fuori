@@ -33,7 +33,8 @@ import { takeTurn } from '@/lib/conversation/take-turn';
 import { logServerError } from '@/lib/server-log';
 import { Laps } from '@/lib/timing';
 import { scaffoldFacts, scaffoldStage } from '@/lib/scaffold';
-import { tutor } from '@/content';
+import { cities, tutor } from '@/content';
+import { writeLearnAhead } from '@/lib/learn-ahead';
 import { startEarlyVoice, DEFAULT_APP_SPEED, LineWatcher } from '@/lib/voice/early-voice';
 
 /** Asked for in Accept, the reply streams: { first }, then { reply } or { error } */
@@ -112,6 +113,21 @@ export async function POST(request: Request) {
         const stage = scaffoldStage({ ...facts, learnerTurns, isTutor: result.isTutor });
         const replies = stage !== null;
         laps.lap('scaffold');
+        // The Learn page for the conversation as it now stands, written while
+        // the learner reads and answers (lib/learn-ahead.ts)
+        if (result.conversationId && !result.isTutor) {
+          writeLearnAhead({
+            conversationId: result.conversationId,
+            character: parsed.character,
+            city: cities.find((c) => c.id === parsed.cityId)?.name ?? parsed.cityId,
+            transcript: [
+              ...parsed.transcript,
+              ...(parsed.learnerSaid ? [{ who: 'learner' as const, transcript: parsed.learnerSaid }] : []),
+              { who: 'npc' as const, transcript: result.reply.line, translation: result.reply.en },
+            ],
+            onError: (err) => logServerError(request, 'v1 turn learn ahead', err),
+          });
+        }
         laps.facts.turn = conversationId ? 'reply' : 'opening';
         laps.facts.replies = stage ?? 'no';
         laps.facts.streamed = onFirst ? 'yes' : 'no';
