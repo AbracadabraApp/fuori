@@ -6,7 +6,7 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases (Josh, 2026-10-22):** this release is **N4**, TestFlight to Josh, and includes scaffolding (onboarding, reply buttons). **N5** is next: Learn, Teach (Magda's syllabus) and the Diario, plus the web sunset. Every open item is in N4 or N5 (Josh, 2026-10-22). **N6**: a framework for level, repeatable and improving; also the device checks (a call, Siri, AirPods, backgrounding, locking: Josh, 2026-10-23) ([12-native-app.md](12-native-app.md) → Milestones). Each section below says which. Each item says who does it: **Josh** or **Claude**. ⛔ marks a blocker: work that waits on someone. Detail lives in the linked docs; done and removed items are at the bottom of this file.
+The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases (Josh, 2026-10-22):** this release is **N4**, TestFlight to Josh, and includes scaffolding (onboarding, reply buttons). **N5** is next: Learn, Teach (Magda's syllabus) and the Diario, plus the web sunset. Every open item is in N4 or N5 (Josh, 2026-10-22). **N6**: a framework for level, repeatable and improving; a conversation library (real speech kept to replay tests on); also the device checks (a call, Siri, AirPods, backgrounding, locking: Josh, 2026-10-23) ([12-native-app.md](12-native-app.md) → Milestones). Each section below says which. Each item says who does it: **Josh** or **Claude**. ⛔ marks a blocker: work that waits on someone. Detail lives in the linked docs; done and removed items are at the bottom of this file.
 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
@@ -74,6 +74,13 @@ Goal: 90% of the character's words at the learner's level (Josh; the [research](
 - [ ] **Claude** Question ladder for Intermediate and Advanced (one fact, then anything), measured with the question-kind count
 - [ ] **Claude** Level of real play on the scorecard (a call per line, so decide the cost first)
 - [ ] **Josh + Claude** More dialect as you level up (the dialect setting is greyed out today)
+
+### Conversation library — N6 (Josh, 2026-10-23)
+Real learner speech kept as a test set, so changes can be replayed on the same input. Today only the text Whisper returned is saved; the app deletes each recording, so nothing real can be transcribed again.
+- [ ] **Josh** Decide: whose recordings are kept (Josh, family, later testers), for how long, and whether and how they're told (N5's privacy policy covers testers)
+- [ ] **Claude** Keep each turn's recording with its transcript, the language Whisper heard and what happened next (sent, say it in English, "didn't catch that"), e.g. in R2 beside the images
+- [ ] **Claude** Replay tools: run the library through another speech-to-text provider, the language routing (say it in English), or the end-of-turn silence, and compare with what happened
+- [ ] **Claude** Meanwhile, from text only: read the saved learner lines for transcription that went wrong (garbled, invented on silence, English turned into nonsense) for a rough error rate
 
 ### Device checks — N6 (Josh, 2026-10-23: moved from N4)
 - [ ] **Josh** Device checks, on the iPhone during a conversation (while the character speaks and while the mic is open): a phone call comes in; Siri; AirPods out; AirPods in; swipe to the home screen; lock the phone. Each time it should pause, save like any exit, and never reopen the mic without a tap; AirPods out shouldn't carry on through the phone speaker (CLAUDE.md → iPhone app). A simulator can't test this
