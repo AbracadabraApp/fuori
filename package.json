@@ -19,6 +19,7 @@
     "test:replies-route": "tsx tests/check-replies-route.ts",
     "test:learn-route": "tsx tests/check-learn-route.ts",
     "test:level-trial": "tsx tests/check-level-trial.ts",
+    "test:say-it": "tsx tests/check-say-it.ts",
     "test:scaffold": "tsx tests/check-scaffold.ts",
     "test:reply": "tsx tests/check-reply-text.ts",
     "test:images": "tsx tests/check-images.ts",

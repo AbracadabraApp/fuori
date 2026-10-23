@@ -205,6 +205,10 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   rep.ok && rp.replies?.length === 2 && rp.replies.every((x) => x.line?.trim() && x.en?.trim())
     ? pass(`v1 replies ("${rp.replies[0].line?.slice(0, 30)}" / "${rp.replies[1].line?.slice(0, 30)}")`)
     : fail('v1 replies', `${rep.status} ${JSON.stringify(rp).slice(0, 200)}`);
+  // Say it in English (Josh, 2026-10-23): English in, one line in the language to read
+  const si = await v1('/v1/say-it', { cityId, placeId, conversationId: o.conversationId, heard: "Sorry, I didn't understand" });
+  const sj = (await si.json()) as { line?: string; en?: string };
+  si.ok && sj.line?.trim() && sj.en?.trim() ? pass(`v1 say-it ("Sorry, I didn't understand" → "${sj.line?.slice(0, 40)}")`) : fail('v1 say-it', `${si.status} ${JSON.stringify(sj).slice(0, 200)}`);
   // The choose stage: one reply fits, and `fits` says which
   const ch = await v1('/v1/replies', { cityId, placeId, conversationId: o.conversationId, stage: 'choose' });
   const cp = (await ch.json()) as { replies?: { line?: string; en?: string }[]; fits?: number };

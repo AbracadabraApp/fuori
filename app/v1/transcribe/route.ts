@@ -5,7 +5,11 @@
  * (the app sends speech.m4a); `mode` is "target" (the language being learned,
  * the default), "en" (asking how to say something) or "any" (onboarding
  * answers, which can be in either: Whisper detects the language and `language`
- * says which it heard). An empty `text` means
+ * says which it heard) or "turn" (a conversation turn, which may be the
+ * language being learned or English for "say it in English": `language` is
+ * "en" for English, otherwise the learned language's code; anything Whisper
+ * names as a third language is transcribed again as the learned language, since
+ * beginners' accents get misnamed). An empty `text` means
  * nothing was understood. The app skips uploading recordings with no voice in
  * them; this route still refuses oversized files.
  */
@@ -14,6 +18,7 @@ import { apiError, apiJson, withLearner } from '@/lib/api';
 import { getSpeechProvider } from '@/lib/speech/providers';
 import { logServerError } from '@/lib/server-log';
 import { Laps } from '@/lib/timing';
+import { spokenLanguage } from '@/lib/speech/spoken-language';
 
 const MAX_BYTES = 10 * 1024 * 1024; // about ten minutes of m4a; a turn is seconds
 
@@ -26,12 +31,22 @@ export async function POST(request: Request) {
     if (!(audio instanceof File) || audio.size === 0) return apiError('bad_audio', 'Send the recording as multipart field "audio"');
     if (audio.size > MAX_BYTES) return apiError('bad_audio', `Recording too large (${audio.size} bytes)`);
     const mode = form?.get('mode');
-    const lang = mode === 'any' ? undefined : mode === 'en' ? 'en' : learning.code;
+    const lang = mode === 'any' || mode === 'turn' ? undefined : mode === 'en' ? 'en' : learning.code;
     try {
       // No prompt: Whisper echoes it into short or quiet recordings (tests/check-transcribe.ts)
       laps.lap('upload');
-      const result = await getSpeechProvider().transcribe({ audio, language: lang });
+      let result = await getSpeechProvider().transcribe({ audio, language: lang });
       laps.lap('whisper');
+      if (mode === 'turn') {
+        const heard = spokenLanguage(result.language, learning.code);
+        if (heard === 'other') {
+          result = { ...(await getSpeechProvider().transcribe({ audio, language: learning.code })), language: learning.code };
+          laps.lap('again');
+        } else {
+          result = { ...result, language: heard === 'en' ? 'en' : learning.code };
+        }
+        laps.facts.heard = heard;
+      }
       laps.facts.bytes = audio.size;
       laps.log('transcribe-timing', request.headers.get('x-fuori-id'));
       return apiJson({ text: result.text, language: result.language }, { headers: { 'server-timing': laps.header() } });
@@ -41,3 +56,4 @@ export async function POST(request: Request) {
     }
   });
 }
+

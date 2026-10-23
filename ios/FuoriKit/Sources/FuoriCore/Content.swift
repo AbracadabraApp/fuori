@@ -44,6 +44,9 @@ public struct UIWords: Codable, Sendable, Equatable {
     public let showMore: String
     public let whereTo: String
     public let youAreHere: String
+    /// Say it in English: the label on what the learner said ("Come si dice:");
+    /// nil from servers before 2026-10-23
+    public let howToSay: String?
     public let ticket: TicketWords
 }
 

@@ -33,6 +33,7 @@ export const language = {
       board: 'Subir',
     },
     whereTo: '¿A dónde quiere ir?', // departures board title
+    howToSay: '¿Cómo se dice?', // say it in English: the label on what the learner said
     youAreHere: 'Está aquí', // departures board: the current city
   },
 };

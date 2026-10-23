@@ -90,6 +90,8 @@ public final class ConversationModel {
     private let language: Language
     /// For VoiceOver: words in the language being learned are read in it
     public var speechLanguage: String { language.speechLang }
+    /// Say it in English: the label on what the learner said, in the language ("Come si dice:")
+    public var howToSay: String? { language.ui.howToSay }
     private let api: APIClient
     private let onSave: (String) -> Void
 
@@ -107,15 +109,21 @@ public final class ConversationModel {
     /// The replies to the current line, written while the character speaks
     private var repliesTask: Task<Result<APIClient.Replies, Error>, Never>?
 
-    /// Hands-free waits (Josh, 2026-10-15): 10 s for the first word, the turn
-    /// ends after 4 s of silence. No "more time to answer" setting (Josh,
-    /// 2026-10-16: confusing); tap to talk, the default, has no timer at all.
-    /// Tap to talk (the default) unless Hands-free is on; always under VoiceOver
+    /// One tap per turn (Josh, 2026-10-23): the learner taps to talk and
+    /// silence sends it; no second tap (a tap still sends early). 10 s for
+    /// the first word (20 s before reading a line from say it in English,
+    /// which takes a moment), then 2 s of silence ends the turn (Josh: agreed).
+    /// No "more time to answer" setting (Josh, 2026-10-16: confusing).
+    /// The turn opens on a tap unless Hands-free is on; always under VoiceOver
     public var tapMode: Bool { isVoiceOverRunning || !UserDefaults.standard.bool(forKey: SettingsKey.handsFree) }
-    /// Tap mode: a turn can't run longer than this, in case the second tap never comes
+    /// Silence ends the turn, except under VoiceOver, where a tap ends it (the
+    /// screen reader's own voice would keep it open)
+    public var endsOnSilence: Bool { !isVoiceOverRunning }
+    /// Under VoiceOver: a turn can't run longer than this, in case the second tap never comes
     private let longestTurn: TimeInterval = 90
-    private let firstWordWait: TimeInterval? = 10
-    private let endOfTurnWait: TimeInterval = 4
+    private var firstWordWait: TimeInterval = 10
+    private let readingWait: TimeInterval = 20
+    private let endOfTurnWait: TimeInterval = 2
     /// Less than this much voice isn't a turn (a cough, a click)
     private let minimumVoice: TimeInterval = 0.25
 
@@ -133,6 +141,18 @@ public final class ConversationModel {
     public enum Stage: String, Sendable { case read, choose }
     public private(set) var stage: Stage?
 
+    /// Say it in English (docs/beginner-scaffolding.md; Josh, 2026-10-23): what
+    /// the learner said in English and the line to read out loud. Shown from
+    /// the moment it comes back until she answers
+    public struct SayIt: Equatable, Sendable {
+        public let english: String
+        public let line: String
+        public let en: String
+    }
+    public private(set) var sayIt: SayIt?
+    /// The line is being played (hear it), so the mic is closed for it
+    public private(set) var hearingLine = false
+
     /// The panel's extra line, on the learner's first scaffolded turn ever
     public private(set) var firstTime = false
 
@@ -142,7 +162,7 @@ public final class ConversationModel {
 
     /// The answers panel shows from the learner's turn until the character answers
     public var showsAnswers: Bool {
-        guard scaffolding, replies != nil else { return false }
+        guard scaffolding, replies != nil, sayIt == nil else { return false }
         return [.tapToTalk, .listening, .hearing, .thinking, .choosing, .micDenied].contains(phase)
     }
 
@@ -151,7 +171,7 @@ public final class ConversationModel {
         guard showsAnswers else { return nil }
         switch phase {
         case .tapToTalk: return firstTime ? "Tap the mic, then read one out loud" : "Tap, then read one out loud"
-        case .listening, .hearing: return tapMode ? "Read one out loud, then tap to send" : "Read one out loud"
+        case .listening, .hearing: return "Read one out loud"
         case .thinking: return "Sent"
         case .choosing, .micDenied: return "Tap one to say it"
         default: return nil
@@ -208,6 +228,7 @@ public final class ConversationModel {
         }
         #endif
         firstTime = scaffolding && !UserDefaults.standard.bool(forKey: Self.answersIntroduced)
+        sayIt = nil
         if interrupted {
             // Something cut in while it was on its way: show it, don't say it,
             // and leave the learner on their turn with the mic closed
@@ -410,7 +431,8 @@ public final class ConversationModel {
         await startRecording()
     }
 
-    private func startRecording() async {
+    private func startRecording(firstWordWait wait: TimeInterval = 10) async {
+        firstWordWait = wait
         // A second tap while the mic is still opening would start a second
         // recording and a second watcher; the orphaned watcher later finished
         // the turn again with the first file already deleted (TestFlight
@@ -469,13 +491,13 @@ public final class ConversationModel {
         let snapshot = gate.snapshot()
         let now = ProcessInfo.processInfo.systemUptime
         level = snapshot.level
-        if tapMode {
-            // The learner ends the turn with a tap; no silence timer
+        if !endsOnSilence {
+            // Under VoiceOver the learner ends the turn with a tap; no silence timer
             if snapshot.hasSpoken { phase = .hearing }
             return now - turnStartedAt >= longestTurn
         }
         guard snapshot.hasSpoken else {
-            if let wait = firstWordWait, now - turnStartedAt >= wait {
+            if now - turnStartedAt >= firstWordWait {
                 // Nothing said: close the mic rather than keep listening to the
                 // room; it's still their turn (docs/bottom-bar.md)
                 interrupt()
@@ -552,14 +574,22 @@ public final class ConversationModel {
             let audio = try Data(contentsOf: url)
             try? FileManager.default.removeItem(at: url)
             var started = Self.now()
-            let said = try await api.transcribe(audio: audio)
+            let heard = try await api.transcribeHeard(audio: audio, mode: .turn)
+            let said = heard.text
             time("transcribe", since: started)
-            debug.heard = said
+            debug.heard = "(\(heard.language ?? "?")) \(said)"
             guard generation == self.generation else { return }
             // Speech to text heard no words ("...", "?"): not a turn
             guard Heard.hasWords(said) else {
                 note = "Didn't catch that."
                 await openTurn()
+                return
+            }
+            // English: say it in English. The line in the language comes back
+            // to read out loud, and the mic reopens for the reading
+            if heard.language == "en" {
+                step = "say-it"
+                await sayItInEnglish(said, generation: generation)
                 return
             }
             step = "turn"
@@ -574,6 +604,50 @@ public final class ConversationModel {
             guard generation == self.generation else { return }
             fail(error, step: step)
         }
+    }
+
+    // MARK: - Say it in English (docs/beginner-scaffolding.md)
+
+    /// The learner said it in English: show what they said and the line to
+    /// read, then open the mic for the reading by itself (Josh, 2026-10-23:
+    /// "circle back to green listening"). The reading goes to her as any turn
+    private func sayItInEnglish(_ english: String, generation: Int) async {
+        do {
+            let started = Self.now()
+            let line = try await api.sayIt(cityId: city.id, placeId: place.id, conversationId: conversationId, heard: english)
+            time("say-it", since: started)
+            guard generation == self.generation else { return }
+            sayIt = SayIt(english: english, line: line.line, en: line.en)
+            // Under VoiceOver the mic waits for a tap, as every turn does there
+            if tapMode && !endsOnSilence {
+                phase = .tapToTalk
+                return
+            }
+            await startRecording(firstWordWait: readingWait)
+        } catch {
+            guard generation == self.generation else { return }
+            fail(error, step: "say-it")
+        }
+    }
+
+    /// Hear it: the line said by the phone's own voice, not hers (it's the
+    /// learner's line), with the mic closed while it plays; then the mic
+    /// reopens for the reading
+    public func hearLine() async {
+        guard let sayIt, !hearingLine else { return }
+        let wasListening = phase == .listening || phase == .hearing
+        if wasListening {
+            listenTask?.cancel()
+            listenTask = nil
+            if let url = recorder.stop("hear it") { try? FileManager.default.removeItem(at: url) }
+        }
+        let generation = self.generation
+        hearingLine = true
+        phase = .tapToTalk
+        await voice.speak(sayIt.line, language: language.speechLang, rate: Float(speed))
+        hearingLine = false
+        guard generation == self.generation, self.sayIt == sayIt, phase == .tapToTalk else { return }
+        if endsOnSilence { await startRecording(firstWordWait: readingWait) }
     }
 
     // MARK: - Reply buttons (scaffolding, docs/beginner-scaffolding.md)

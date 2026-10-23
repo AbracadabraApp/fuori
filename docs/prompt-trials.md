@@ -15,6 +15,7 @@ All in `content/<country>/prompts/`, one copy per country.
 | `replies.md` | Two whole-line replies on one frame, answering the character's last line; its Choose prompt writes one that fits and one that doesn't (2026-10-22) | Yes: the reply buttons while scaffolding (`/v1/replies`) | Reply buttons, Diario card replies |
 | `magda-teaching.md` | Magda's lessons | Conversations with Magda | Explicit teaching |
 | `onboarding.md` | The greeter: follow-up, placement, send-off | Once per new learner | — |
+| `say-it.md` | Say it in English: the one line in the language the learner reads out loud, the gist at their level | Yes, from 2026-10-23 (`/v1/say-it`) | Turning what a learner means into a line they can say |
 | `name.md` | The learner's name out of their spoken answer ("My name is Josh" → Josh), any language | Once per new learner (`/v1/onboarding/name`) | Picking a name or short fact out of a spoken answer |
 | `memory.md` | After a conversation: the character's notes, and review phrases, mistakes, missed, English | Every conversation | What the learner got wrong or needed (the Diario's frames start here) |
 | `study-file.md` | The learner profile Magda reads | Every conversation | — |
@@ -100,6 +101,15 @@ Josh, 2026-10-22: onboarding said back "¡Mucho gusto, My name is Josh!". 16 fix
 | Version | Italy | Mexico | Median | Decision |
 |---|---|---|---|---|
 | v1 (shipped, 2026-10-22) | 16/16 | 16/16 | 1.2–1.8 s | **Kept** |
+
+### Say it in English (`say-it.md`, experiment `tests/experiments/say-it.mts`)
+
+Josh, 2026-10-23: the learner says it in English, gets one line in the language back, reads it out loud. 35 lines per country: seven English requests (simple, two-part, rambling, "I didn't understand", "what does that mean", mixed, goodbye) against the opening lines of 10 synthetic conversations, beginners and intermediates; a judge checks 6 things. Some "fits" misses are the test's own (a coffee order at a flower stall).
+
+| Version | Italy all checks | Mexico all checks | Meaning | Level | Median | Decision |
+|---|---|---|---|---|---|---|
+| v1 | 80% | 69% | 94% / 94% | 91% / 94% | 1.5 s | Two-part requests came back as two long sentences, too much to read aloud |
+| v2 (shipped, 2026-10-23b): the one thing that matters most, one short sentence (~8 words) for beginners, greeting only if they greeted | 69% | 60% | 80% / 86% | **100% / 100%** | 1.4–1.7 s | **Kept:** the judge marks the dropped half as lost meaning, which is the point (Josh: the gist at their level). Watch: it can invent a detail ("lo mismo de ayer" → *un café*) |
 
 ### Diario cards (experiment, `tests/experiments/diario-cards.mts`)
 

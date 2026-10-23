@@ -212,7 +212,10 @@ public actor APIClient {
 
     /// target: the language being learned; en: English; any: Whisper detects
     /// it (onboarding answers can be either)
-    public enum TranscribeMode: String, Sendable { case target, en, any }
+    /// target: the learned language; en: English; any: either, detected
+    /// (onboarding); turn: a conversation turn, the learned language or
+    /// English for say it in English (`language` is "en" or the learned code)
+    public enum TranscribeMode: String, Sendable { case target, en, any, turn }
 
     /// What speech to text heard, and in which language (as Whisper names it)
     public struct Heard: Codable, Sendable, Equatable {
@@ -260,6 +263,19 @@ public actor APIClient {
     public struct HeardName: Codable, Sendable, Equatable {
         /// Just the name ("My name is Josh" → "Josh"); nil when none was given
         public let name: String?
+    }
+
+    /// Say it in English: the line in the language to read out loud, and its English
+    public struct SayItLine: Codable, Sendable, Equatable {
+        public let line: String
+        public let en: String
+    }
+
+    /// POST /v1/say-it: what the learner said in English on their turn → the
+    /// one line in the language they read out loud, at their level
+    public func sayIt(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String?, heard: String) async throws -> SayItLine {
+        struct Body: Encodable { let cityId: String; let placeId: String; let tripTo: String?; let conversationId: String?; let heard: String }
+        return try await send(post("v1/say-it", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, heard: heard)), signedIn: true)
     }
 
     /// POST /v1/onboarding/name: the name out of what speech to text heard

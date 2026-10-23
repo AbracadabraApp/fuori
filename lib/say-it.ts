@@ -1,0 +1,47 @@
+/**
+ * Say it in English (docs/beginner-scaffolding.md; Josh, 2026-10-23): the
+ * learner says in English what they want to say; this writes the one line in
+ * the language they read out loud to the character, at their level (the gist,
+ * not word for word). Prompt in content/<country>/prompts/say-it.md. Used by
+ * POST /v1/say-it. Server-side only.
+ */
+import { z } from 'zod';
+import { anthropic, CLAUDE_MODEL, replyText } from './claude';
+import { readPromptFile, fill } from './prompts/template';
+import { language } from '@/content';
+import type { Level } from './onboarding';
+import type { CharacterSheet, Turn } from './types';
+
+const Line = z.object({ line: z.string().min(1), en: z.string().min(1) });
+export type SayItLine = z.infer<typeof Line>;
+
+const schema = { type: 'object', additionalProperties: false, properties: { line: { type: 'string' }, en: { type: 'string' } }, required: ['line', 'en'] };
+
+export function sayItPromptVersion(): string {
+  return readPromptFile('say-it.md').version;
+}
+
+export function buildSayItPrompt(character: CharacterSheet, transcript: Turn[], english: string, level: Level | null): { system: string; user: string } {
+  const system = fill(readPromptFile('say-it.md').block('System prompt'), {
+    language: language.name,
+    name: character.name,
+    role: character.role,
+    level: level ?? 'beginner',
+    formality: `"${language.formality.formal}", unless ${character.name} has been using "${language.formality.informal}"`,
+  });
+  const so = transcript.map((t) => `${t.who === 'npc' ? character.name : 'Person'}: ${t.transcript}`).join('\n');
+  return { system, user: `${so || '(nothing said yet)'}\n\nWhat they want to say, in English: ${english}` };
+}
+
+export async function writeSayIt(character: CharacterSheet, transcript: Turn[], english: string, level: Level | null): Promise<SayItLine> {
+  const prompt = buildSayItPrompt(character, transcript, english, level);
+  const response = await anthropic.messages.create({
+    model: CLAUDE_MODEL,
+    max_tokens: 2000, // leaves room for thinking, which counts toward it
+    system: prompt.system,
+    messages: [{ role: 'user', content: prompt.user }],
+    output_config: { format: { type: 'json_schema', schema } },
+  });
+  if (response.stop_reason === 'max_tokens') throw new Error(`Say it hit max_tokens (${response.usage.output_tokens} tokens)`);
+  return Line.parse(JSON.parse(replyText(response)));
+}

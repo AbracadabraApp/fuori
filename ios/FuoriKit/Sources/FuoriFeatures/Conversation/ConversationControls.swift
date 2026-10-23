@@ -29,10 +29,18 @@ struct ConversationControls: View {
                 ReplyPanel(model: model) { circle }
                     .transition(.opacity)
             } else {
-                controls
+                VStack(spacing: 12) {
+                    // Say it in English: what they said and the line to read
+                    if let sayIt = model.sayIt {
+                        SayItBubbles(model: model, sayIt: sayIt)
+                            .transition(.opacity)
+                    }
+                    controls
+                }
             }
         }
         .animation(.easeIn(duration: reduceMotion ? 0.2 : 0.45), value: model.showsAnswers)
+        .animation(.easeIn(duration: reduceMotion ? 0.2 : 0.3), value: model.sayIt)
         .padding(.bottom, 8)
         .sensoryFeedback(trigger: model.phase) { _, new in
             switch new {
@@ -84,7 +92,7 @@ struct ConversationControls: View {
         Button { Task { await model.tapTurn() } } label: {
             ZStack {
                 Circle().fill(isTheirs ? Tokens.Colors.terracotta : Tokens.Colors.green)
-                if model.phase == .hearing && !model.tapMode {
+                if model.phase == .hearing && model.endsOnSilence {
                     Circle()
                         .trim(from: 0, to: model.ring)
                         .rotation(.degrees(-90))
@@ -132,7 +140,7 @@ struct ConversationControls: View {
         switch model.phase {
         case .starting: "Arriving"
         case .speaking: "\(model.character.name) is speaking"
-        case .listening, .hearing: model.tapMode ? "Tap to send" : "Listening"
+        case .listening, .hearing: model.endsOnSilence ? "Listening. Stop talking to send, or tap" : "Tap to send"
         case .thinking: "Sending"
         case .tapToTalk: "Tap to talk"
         case .choosing: "Choose an answer"

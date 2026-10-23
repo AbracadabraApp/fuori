@@ -33,6 +33,7 @@ export const language = {
       board: 'Sali',
     },
     whereTo: 'Dove vuoi andare?', // departures board title
+    howToSay: 'Come si dice:', // say it in English: the label on what the learner said
     youAreHere: 'Sei qui', // departures board: the current city
   },
 };
