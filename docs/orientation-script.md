@@ -95,4 +95,5 @@ Each beat: what's on screen · what she says · what the learner does · what it
 - **Skip** at every step goes to the city list with what's been set so far; anything unset falls back as today (no name, address unset, no level counts as new).
 - **Replay** from Settings → How Fuori works runs beats 3 and 6–9 (no name, address or level again).
 - **Mexico:** the same beats in English; *bienvenida / bienvenido*; *¿Cómo estás?* with *Bien, gracias* / *Más o menos*; "why are you in Mexico?"; *¿Me lo puede repetir, por favor?*; *¡Vámonos!*
-- **Needs Josh's call:** her speaking English (today's onboarding rule says she never does); CLAUDE.md's "no AI notes in the game" rule; whether "say it in English" (beat 4) is built before the tour, since the tour teaches it.
+- **The game's rules don't apply here** (Josh, 2026-10-23: "Don't apply rules to onboarding"). The immersion rules (characters speak Italian, English only when asked, no spoken English, no AI notes) are for conversations in the world. The orientation is set-up, so she explains in English, talks about the app, and names its parts.
+- **Needs Josh's call:** whether "say it in English" (beat 4) is built before the tour, since the tour teaches it.

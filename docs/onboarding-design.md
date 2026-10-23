@@ -145,7 +145,8 @@ Steps 2–5 below are the older draft.
 - **The explanation panel** (the paper panel from [reply-panel.md](reply-panel.md)) becomes the standard place the game explains itself: the first time you meet the reply bubbles, the Learn link, the station, an offer to take a training wheel off, the flashcards. Short, how it works, **Next**. Learners learn the pattern: when the paper panel rises, the game is explaining, not the character speaking.
 - **An orientation, character-led:** Josh: "we may need an option to give users a full orientation of how the game works; this might be more of a character-driven tour… a reworking of onboarding that is less language-immersive, more a set-up to play." The greeter (her poses already exist) walks you through picking a place, how talking works, Learn, how people remember you, travel; mostly in English; skippable at first launch and replayable from Settings ("How Fuori works").
 - **So onboarding splits in two:** set-up (country, microphone, name, level; short, partly in the target language, as now) and the tour (optional, English, the greeter).
-- **Needs Josh's call:** CLAUDE.md says "no AI notes in the game: explanations only in onboarding and Settings → About Fuori." A recurring explanation panel breaks that as written; the rule needs updating before anyone builds it.
+- **The game's rules don't apply to onboarding** (Josh, 2026-10-23: "Don't apply rules to onboarding"). The immersion rules (Italian only, English only when asked, never spoken English, no AI notes) are for conversations in the world; onboarding and the orientation tour can explain in English and talk about the app. This also overrides "She always speaks the learned language" above for the tour. Draft: [orientation-script.md](orientation-script.md).
+- **Still open:** a recurring explanation panel during play is in the game, not onboarding, so CLAUDE.md's "no AI notes in the game" rule still needs Josh's call before anyone builds it.
 
 ## Open
 
