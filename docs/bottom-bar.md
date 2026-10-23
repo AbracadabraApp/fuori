@@ -2,7 +2,7 @@
 
 2026-10-22 · Josh · Decided with the cloud session on the design canvas ("Reply buttons", row F: https://claude.ai/artifact/X2FsYUrGWzXzf2tJxBALBV). **Not built.** For every conversation screen, scaffolding or not.
 
-![The three states](../design/bottom-bar/states.jpg)
+![The four states](../design/bottom-bar/states.jpg)
 
 ## Decisions (Josh)
 
