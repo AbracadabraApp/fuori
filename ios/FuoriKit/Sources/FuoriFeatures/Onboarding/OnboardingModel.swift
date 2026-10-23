@@ -409,8 +409,17 @@ public final class OnboardingModel {
     private func reply(to heard: APIClient.Heard) async {
         let generation = self.generation
         if step == .askName || step == .address, let addressLines {
-            // Her line shows the name as heard; saying it again (the mic on the address step) replaces it
-            name = Self.cleanName(heard.text)
+            // Her line says just the name ("My name is Josh" → "Josh", Josh
+            // 2026-10-22: she said back the whole sentence); saying it again
+            // (the mic on the address step) replaces it. If the server can't
+            // pick it out, the whole answer, cleaned, rather than stop here
+            do {
+                name = try await api.onboardingName(heard: heard.text).name
+            } catch {
+                report(error, step: "onboarding name")
+                name = Self.cleanName(heard.text)
+            }
+            guard generation == self.generation else { return }
             step = .address
             await say(addressLines.address.named(name), englishAllowed: true)
             return

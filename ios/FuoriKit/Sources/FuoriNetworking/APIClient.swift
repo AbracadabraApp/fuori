@@ -257,6 +257,17 @@ public actor APIClient {
         public let level: String
     }
 
+    public struct HeardName: Codable, Sendable, Equatable {
+        /// Just the name ("My name is Josh" → "Josh"); nil when none was given
+        public let name: String?
+    }
+
+    /// POST /v1/onboarding/name: the name out of what speech to text heard
+    public func onboardingName(heard: String) async throws -> HeardName {
+        struct Body: Encodable { let heard: String }
+        return try await send(post("v1/onboarding/name", json: Body(heard: heard)), signedIn: true)
+    }
+
     /// POST /v1/onboarding/follow-up: her reaction to the first answer and one harder question
     public func onboardingFollowUp(answer: Heard) async throws -> OnboardingLine {
         struct Body: Encodable { let answer: Heard }

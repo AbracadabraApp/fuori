@@ -286,6 +286,11 @@ async function onboardingApi(auth: Record<string, string>, v1: (path: string, bo
     ? pass(`v1 onboarding send-off placed and stored ${sf.level}`)
     : fail('v1 onboarding send-off', `${so.status} ${JSON.stringify(sf)} me ${JSON.stringify(after)}`);
 
+  // Just the name out of a whole answer (Josh, 2026-10-22: she said back "My name is Josh")
+  const nm = await v1('/v1/onboarding/name', { heard: 'My name is Teresa, nice to meet you.' });
+  const nj = (await nm.json()) as { name?: string | null };
+  nm.ok && nj.name === 'Teresa' ? pass('v1 onboarding name ("My name is Teresa…" → Teresa)') : fail('v1 onboarding name', `${nm.status} ${JSON.stringify(nj)}`);
+
   // Name and address (docs/onboarding-design.md): saved for every character, changed in Settings; off until migrated
   const addr = await v1('/v1/onboarding/address', { addressedAs: 'f', name: 'Teresa' });
   if (addr.status === 404) pass('v1 onboarding address: off on this server (LEARNER_ADDRESS not on)');

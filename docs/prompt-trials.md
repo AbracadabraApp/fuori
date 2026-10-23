@@ -15,6 +15,7 @@ All in `content/<country>/prompts/`, one copy per country.
 | `replies.md` | Two whole-line replies on one frame, answering the character's last line; its Choose prompt writes one that fits and one that doesn't (2026-10-22) | Yes: the reply buttons while scaffolding (`/v1/replies`) | Reply buttons, Diario card replies |
 | `magda-teaching.md` | Magda's lessons | Conversations with Magda | Explicit teaching |
 | `onboarding.md` | The greeter: follow-up, placement, send-off | Once per new learner | — |
+| `name.md` | The learner's name out of their spoken answer ("My name is Josh" → Josh), any language | Once per new learner (`/v1/onboarding/name`) | Picking a name or short fact out of a spoken answer |
 | `memory.md` | After a conversation: the character's notes, and review phrases, mistakes, missed, English | Every conversation | What the learner got wrong or needed (the Diario's frames start here) |
 | `study-file.md` | The learner profile Magda reads | Every conversation | — |
 | `quality.md` | Judges a conversation (alive, replies that don't follow, …) | Every conversation; also the replay judge | Judging dialogue |
@@ -91,6 +92,14 @@ The third scaffolding stage (Josh, 2026-10-22): two replies, only one fits, the 
 |---|---|---|---|---|---|---|
 | v1: misfit answers another question, names the wrong thing, or belongs at another time; same frame | 70% | 75% | 87% / 87% | 90% / 89% | 1.7 s | Dropped: the misfit was often another fair choice (coffee at a market), or the greeting gave it away |
 | v2 (shipped, 2026-10-22): misfit answers a *different question*, never another choice to the same one; both start the same; no word echoed from her line in one only | **92%** | **85%** | 99% / 99% | 95% / 94% | 4.5–5.1 s | **Kept.** Left: an occasional odd "per favore" on the misfit, the reply that fits echoing her words, some fitting replies above beginner (quisiera, he venido). Slower: still written while she speaks; watch whether it's ready in time |
+
+### Learner's name (`name.md`, experiment `tests/experiments/name-from-heard.mts`)
+
+Josh, 2026-10-22: onboarding said back "¡Mucho gusto, My name is Josh!". 16 fixed answers in six languages (whole sentences, a nickname, a surname, no name at all).
+
+| Version | Italy | Mexico | Median | Decision |
+|---|---|---|---|---|
+| v1 (shipped, 2026-10-22) | 16/16 | 16/16 | 1.2–1.8 s | **Kept** |
 
 ### Diario cards (experiment, `tests/experiments/diario-cards.mts`)
 

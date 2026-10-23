@@ -6,7 +6,8 @@
  */
 import { z } from 'zod';
 import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
-import { onboarding } from '@/content';
+import { onboarding, language } from '@/content';
+import { readPromptFile, fill } from '@/lib/prompts/template';
 import { buildOnboardingPrompt, type HeardAnswer } from '@/lib/prompts/build-onboarding-prompt';
 import { followUpJsonSchema, sendOffJsonSchema } from '@/lib/prompts/onboarding-output-schema';
 import { query } from './db';
@@ -76,4 +77,23 @@ export async function finishOnboarding(learnerId: string, level: Level, record: 
 export async function resetOnboarding(learnerId: string): Promise<void> {
   // A record, not NULL: someone who has played counts as onboarded only while they have no record
   await query(`UPDATE learners SET level = NULL, onboarded_at = NULL, onboarding = '{"path":"reset"}'::jsonb WHERE id = $1`, [learnerId]);
+}
+
+/**
+ * The name the learner gave, from what speech to text heard when she asked
+ * ("My name is Josh" → "Josh"); null when there's none. A judge call, not a
+ * phrase list, so it works in any language (content/<country>/prompts/name.md).
+ */
+export async function nameFromHeard(heard: string): Promise<{ name: string | null; promptVersion: string }> {
+  const file = readPromptFile('name.md');
+  const response = await anthropic.messages.create({
+    model: CLAUDE_MODEL,
+    max_tokens: 1000,
+    system: fill(file.block('System prompt'), { language: language.name }),
+    messages: [{ role: 'user', content: heard }],
+    output_config: { format: { type: 'json_schema', schema: { type: 'object', additionalProperties: false, properties: { name: { type: 'string' } }, required: ['name'] } } },
+  });
+  if (response.stop_reason === 'max_tokens') throw new Error(`Name hit max_tokens (${response.usage.output_tokens} tokens)`);
+  const name = z.object({ name: z.string() }).parse(JSON.parse(replyText(response))).name.trim();
+  return { name: name || null, promptVersion: file.version };
 }
