@@ -443,7 +443,13 @@ public final class ConversationModel {
         listenTask = Task { [weak self] in
             while !Task.isCancelled {
                 try? await Task.sleep(for: .milliseconds(100))
-                guard let self, generation == self.generation else { return }
+                // Cancelled while asleep (the learner tapped send): the sleep
+                // ends early and this must not tick once more. It did, and
+                // set the circle back to "talking" after the send, so the
+                // learner tapped again and that second send found the mic
+                // already closed: "the mic wasn't on" (E-87MU and four more
+                // on Josh's phone, 2026-10-23), the old "0 buffers failed"
+                guard !Task.isCancelled, let self, generation == self.generation else { return }
                 if self.tick() {
                     // Hand over to a task of its own: finishing the turn cancels
                     // this watcher, and must not cancel its own upload with it
@@ -458,6 +464,8 @@ public final class ConversationModel {
     /// Ten times a second while the mic is open. Returns true when the
     /// learner's turn has ended and should be sent.
     private func tick() -> Bool {
+        // Only while the mic is open: never move a sent turn back to "talking"
+        guard phase == .listening || phase == .hearing else { return false }
         let snapshot = gate.snapshot()
         let now = ProcessInfo.processInfo.systemUptime
         level = snapshot.level
