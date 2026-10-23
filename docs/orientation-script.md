@@ -26,9 +26,8 @@ Each beat: what's on screen · what she says · what the learner does · what it
 ## 2 · Masculine or feminine
 
 **She:** "In Italian, words can be masculine or feminine. Even when we welcome someone, we say *benvenuto* to men and *benvenuta* to women. How do you want to be greeted?"
-**She:** *Benvenuto o benvenuta?*
-**Learner:** taps **Benvenuto** or **Benvenuta**.
-**She:** *Grazie. Benvenuta, {name}!*
+**Learner:** taps **Masculine** or **Feminine**.
+**She:** *Grazie. Benvenuto, {name}!* or *Grazie. Benvenuta, {name}!*
 **Sets:** how every character addresses them.
 
 ## 3 · Your level
@@ -86,6 +85,6 @@ Each beat: what's on screen · what she says · what the learner does · what it
 - **Her English** is spoken in an English voice for the tour, or her own voice if it handles English well.
 - **Skip** at any step goes to the city list with what's been set; anything unset falls back as today.
 - **Replay** from Settings → How Fuori works runs 4–11 (no name, level or address again).
-- **Mexico:** the same beats; *contento / contenta*, *bienvenido / bienvenida*, *el café*, *la tortilla*; the cities and places from its content; *¡Vámonos!*
+- **Mexico:** the same beats; *contento / contenta*, *bienvenido / bienvenida* (the same Masculine and Feminine buttons), *el café*, *la tortilla*; the cities and places from its content; *¡Vámonos!*
 - **Words in the learned language** (examples, sample places) come from country content, not Swift (CLAUDE.md).
 - **Depends on** "say it in English" being built: the tour is made of it.
