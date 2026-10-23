@@ -1,29 +1,31 @@
 import SwiftUI
 import FuoriDesign
 
-/// The bottom of the person screen: the turn pill, and on the right Pause in
-/// hands-free (Josh, 2026-10-21: in tap-to-talk the scene already waits for a
-/// tap, so Pause did little), Resume whenever the scene is paused, otherwise
-/// the Learn link.
-/// The pill shows the state by its shape (waveform, dots, pause, warning), not
-/// colour alone (docs/13-ios-conventions.md R4); VoiceOver reads it as words.
-/// No label under it (Josh, 2026-10-15: a pill on a pill). During the
-/// learner's turn a ring fills with the silence that ends it, and a tap ends
-/// the turn at once. Errors and "mic off" show in the note above.
+/// The bottom bar (docs/bottom-bar.md; Josh, 2026-10-22): one circle in two
+/// colours, green for the learner (mic, then their wave) and terracotta for
+/// the character (sending, then her wave), and the Learn link on the right.
+/// No Pause or Resume: a call, Siri, AirPods out or backgrounding leave the
+/// learner on their turn with the mic closed, and a failed step shows its
+/// message above and leaves them there too.
+/// The circle keeps its size and place; only its fill and glyph change, so
+/// the state shows by shape as well as colour (docs/13-ios-conventions.md R4);
+/// VoiceOver reads it as words. In hands-free a ring fills with the silence
+/// that ends the turn.
 struct ConversationControls: View {
     let model: ConversationModel
     /// Opens the Learn sheet; nil hides the Learn link
     var onLearn: (() -> Void)? = nil
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @ScaledMetric(relativeTo: .title2) private var circleSize: CGFloat = 68
     @State private var typing = false
     @State private var typed = ""
 
     var body: some View {
         Group {
-            // Scaffolding: the answers panel, with the usual mic centred in it
-            // and no Pause or Learn link (docs/reply-panel.md)
+            // Scaffolding: the answers panel, with the same circle centred in it
+            // (docs/reply-panel.md)
             if model.showsAnswers {
-                ReplyPanel(model: model) { pill }
+                ReplyPanel(model: model) { circle }
             } else {
                 controls
             }
@@ -33,39 +35,26 @@ struct ConversationControls: View {
             switch new {
             case .listening, .tapToTalk, .choosing: .impact(weight: .light)
             case .thinking: .impact(weight: .heavy) // the tap that sends the turn
-            case .paused: .impact(weight: .medium)
-            case .failed, .micDenied: .error
+            case .micDenied: .error
             default: nil
             }
         }
     }
 
     private var controls: some View {
-        VStack(spacing: 8) {
-            // In hands-free Pause holds the corner, so the Learn link sits above it
-            if let onLearn, showsPause, model.hasSomethingToLearn {
-                HStack {
-                    Spacer()
-                    learnLink(onLearn)
-                }
-                .transition(.opacity)
-            }
+        ZStack {
+            circle
             HStack {
-                // Type a reply (accessibility only, D6); otherwise empty, balancing
-                // the right-hand button so the pill stays centred
-                if model.canType { typeButton } else { Color.clear.frame(width: 44, height: 44) }
+                // Type a reply (accessibility only, D6)
+                if model.canType { typeButton }
                 Spacer()
-                pill
-                Spacer()
-                // Bottom right (Josh, 2026-10-15): Pause or Resume, else the Learn link
-                if showsPause {
-                    pauseButton
-                } else if let onLearn, model.hasSomethingToLearn {
+                // Bottom right, centred on the circle's line, the same place in
+                // every state; empty until there's something to learn
+                if let onLearn, model.hasSomethingToLearn {
                     learnLink(onLearn).transition(.opacity)
-                } else {
-                    Color.clear.frame(width: 44, height: 44)
                 }
             }
+            .padding(.horizontal, 6)
         }
     }
 
@@ -78,7 +67,7 @@ struct ConversationControls: View {
         }
         .accessibilityLabel("Type your reply")
         .font(.title3)
-        .frame(width: 44, height: 44)
+        .frame(width: 48, height: 48)
         .buttonStyle(.glass)
         .buttonBorderShape(.circle)
         .alert("Your reply", isPresented: $typing) {
@@ -90,8 +79,8 @@ struct ConversationControls: View {
 
     // MARK: Learn
 
-    /// The Learn link (docs/glossary.md): the book in a glass circle, matching
-    /// Pause; it opens the Learn sheet for the conversation so far
+    /// The Learn link (docs/glossary.md): the book in a 48 pt glass circle; it
+    /// opens the Learn sheet for the conversation so far
     private func learnLink(_ open: @escaping () -> Void) -> some View {
         Button(action: open) {
             Image(systemName: "character.book.closed")
@@ -99,160 +88,126 @@ struct ConversationControls: View {
         .accessibilityLabel("Learn")
         .accessibilityHint("Goes over this conversation so far")
         .font(.title3)
-        .frame(width: 44, height: 44)
+        .frame(width: 48, height: 48)
         .buttonStyle(.glass)
         .buttonBorderShape(.circle)
     }
 
-    // MARK: Pause
+    // MARK: Circle
 
-    /// Pause only in hands-free, where the mic opens by itself; Resume whenever
-    /// the scene is paused (a call, Siri, the Learn sheet) or failed, so there's
-    /// always a way back in
-    private var showsPause: Bool { !model.tapMode || isPaused }
+    /// Green is the learner, terracotta the character
+    private var isTheirs: Bool { [.starting, .speaking, .thinking].contains(model.phase) }
 
-    private var isPaused: Bool { model.phase == .paused || model.phase.isFailed || model.phase == .micDenied }
-
-    /// One button that toggles: pause while running, play while paused
-    /// (Josh, 2026-10-15). The paused state shows only here, not on the pill.
-    private var pauseButton: some View {
-        let isPaused = model.phase == .paused || model.phase.isFailed || model.phase == .micDenied
-        return Button {
-            if isPaused { Task { await model.resume() } } else { model.pause() }
-        } label: {
-            Image(systemName: isPaused ? "play.fill" : "pause.fill")
-                .contentTransition(.symbolEffect(.replace))
-        }
-        .accessibilityLabel(isPaused ? "Resume" : "Pause")
-        .font(.title3)
-        .frame(width: 44, height: 44)
-        .buttonStyle(.glass)
-        .buttonBorderShape(.circle)
-    }
-
-    // MARK: Pill
-
-    private var pill: some View {
+    private var circle: some View {
         Button { Task { await model.tapTurn() } } label: {
             ZStack {
-                Capsule().fill(pillFill)
-                Capsule().strokeBorder(ringColour.opacity(0.35), lineWidth: 2)
+                Circle().fill(isTheirs ? Tokens.Colors.terracotta : Tokens.Colors.green)
                 if model.phase == .hearing && !model.tapMode {
-                    Capsule()
+                    Circle()
                         .trim(from: 0, to: model.ring)
+                        .rotation(.degrees(-90))
                         .stroke(Tokens.Colors.card, style: StrokeStyle(lineWidth: 3, lineCap: .round))
-                        .padding(1.5)
+                        .padding(3)
                 }
-                pillContent
+                glyph
             }
-            .frame(width: 112, height: 52)
-            .shadow(color: .black.opacity(0.18), radius: 4, y: 2)
-            .opacity(model.phase == .paused ? 0.5 : 1)
+            .frame(width: circleSize, height: circleSize)
+            .shadow(color: .black.opacity(0.18), radius: 5, y: 2)
         }
         .buttonStyle(PressableStyle())
-        .disabled(!canTapTurn)
-        .accessibilityLabel(status.text)
+        .disabled(!canTap)
+        .accessibilityLabel(label)
         .accessibilityHint(hint)
     }
 
-    @ViewBuilder private var pillContent: some View {
+    @ViewBuilder private var glyph: some View {
         switch model.phase {
-        case .speaking:
-            Image(systemName: "waveform")
-                .font(.title2)
-                .foregroundStyle(Tokens.Colors.text)
-                .symbolEffect(.variableColor.iterative, isActive: !reduceMotion)
+        case .tapToTalk, .choosing:
+            Image(systemName: "mic.fill").font(.title).foregroundStyle(Tokens.Colors.card)
+        case .micDenied:
+            Image(systemName: "mic.slash.fill").font(.title).foregroundStyle(Tokens.Colors.card)
         case .listening, .hearing:
-            HStack(spacing: 10) {
-                LevelDots(level: model.level, colour: Tokens.Colors.card)
-                if model.tapMode {
-                    // Tap mode: the learner ends the turn, so show how
-                    Image(systemName: "stop.fill").font(.footnote).foregroundStyle(Tokens.Colors.card)
-                }
-            }
+            // The learner's wave, moving with their voice
+            Wave(level: { model.level }, still: reduceMotion)
         case .thinking:
-            // Sent: solid terracotta with white dots, unmistakably not listening
-            // any more (Josh, 2026-10-15: the submit tap should clearly change state)
-            LevelDots(level: reduceMotion ? 0.3 : nil, colour: Tokens.Colors.card)
-        case .tapToTalk:
-            Image(systemName: "mic.fill").font(.title2).foregroundStyle(Tokens.Colors.text)
-        case .paused, .choosing:
-            EmptyView() // paused: shown by the pause button alone; choosing: the answers are buttons (VoiceOver)
+            SendingDots(still: reduceMotion)
+        case .speaking:
+            // Her wave, moving with her voice (the phone's voice can't be
+            // measured, so then it moves by itself)
+            Wave(level: { model.voiceLevel }, still: reduceMotion)
         case .starting:
-            ProgressView()
-        case .micDenied, .failed:
-            Image(systemName: "exclamationmark.triangle.fill").font(.title3).foregroundStyle(Tokens.Colors.errorInk)
+            ProgressView().tint(Tokens.Colors.card)
         }
     }
 
-    private var canTapTurn: Bool {
-        [.speaking, .listening, .hearing, .tapToTalk].contains(model.phase)
+    private var canTap: Bool {
+        [.speaking, .listening, .hearing, .tapToTalk, .micDenied].contains(model.phase)
+    }
+
+    // MARK: Words for VoiceOver (English: app chrome, docs/13 D5)
+
+    private var label: String {
+        switch model.phase {
+        case .starting: "Arriving"
+        case .speaking: "\(model.character.name) is speaking"
+        case .listening, .hearing: model.tapMode ? "Tap to send" : "Listening"
+        case .thinking: "Sending"
+        case .tapToTalk: "Tap to talk"
+        case .choosing: "Choose an answer"
+        case .micDenied: "Microphone off in Settings"
+        }
     }
 
     private var hint: String {
         switch model.phase {
         case .speaking: "Stops \(model.character.name) and starts your turn"
-        case .tapToTalk: "Starts your turn"
+        case .tapToTalk, .micDenied: "Starts your turn"
         case .listening, .hearing: "Ends your turn"
         default: ""
         }
     }
+}
 
-    /// One colour per state, so the tap plainly registers (Josh, 2026-10-18):
-    /// green while you talk, terracotta once it's sent, cream otherwise
-    private var pillFill: Color {
-        switch model.phase {
-        case .listening, .hearing: Tokens.Colors.green
-        case .thinking: Tokens.Colors.terracotta
-        default: Tokens.Colors.card
-        }
-    }
+/// Five bars moving with a voice's level, read every frame; with no level
+/// (the phone's own voice) they move by themselves. Still under Reduce Motion.
+private struct Wave: View {
+    let level: () -> Double?
+    let still: Bool
 
-    private var ringColour: Color {
-        switch model.phase {
-        case .thinking: Tokens.Colors.terracotta
-        case .listening, .hearing: Tokens.Colors.card
-        default: Tokens.Colors.green
-        }
-    }
-
-    // MARK: Words for each state, for VoiceOver (English: app chrome, docs/13 D5)
-
-    private var status: (text: String, symbol: String) {
-        switch model.phase {
-        case .starting: ("Arriving…", "figure.walk")
-        case .speaking: (model.character.name, "waveform")
-        case .listening, .hearing: (model.tapMode ? "Listening. Tap when you've finished" : "Your turn", "mic.fill")
-        case .thinking: ("\(model.character.name) is thinking", "ellipsis")
-        case .tapToTalk: ("Tap to speak", "hand.tap.fill")
-        case .choosing: ("Choose an answer", "hand.tap.fill")
-        case .paused: ("Paused", "pause.fill")
-        case .micDenied: ("Microphone off in Settings", "mic.slash.fill")
-        case .failed(let message): (message, "exclamationmark.triangle.fill")
+    var body: some View {
+        TimelineView(.animation(paused: still)) { context in
+            let t = context.date.timeIntervalSinceReferenceDate
+            let measured = still ? 0.4 : level()
+            HStack(spacing: 4) {
+                ForEach(0..<5, id: \.self) { i in
+                    let shape = [0.55, 0.8, 1, 0.8, 0.55][i]
+                    let scale = measured.map { 0.25 + 0.75 * $0 * shape }
+                        ?? (0.35 + 0.5 * abs(sin(t * 4 + Double(i) * 0.7)) * shape)
+                    Capsule()
+                        .fill(Tokens.Colors.card)
+                        .frame(width: 4, height: 30 * scale)
+                }
+            }
+            .frame(height: 32)
         }
     }
 }
 
-/// Five dots: driven by the mic level while listening, gently pulsing while
-/// thinking (still under Reduce Motion)
-private struct LevelDots: View {
-    /// 0...1, or nil to pulse on its own
-    let level: Double?
-    let colour: Color
+/// Three dots pulsing in turn while the line is sent; still under Reduce Motion
+private struct SendingDots: View {
+    let still: Bool
 
     var body: some View {
-        TimelineView(.animation(paused: level != nil)) { context in
+        TimelineView(.animation(paused: still)) { context in
             let t = context.date.timeIntervalSinceReferenceDate
             HStack(spacing: 6) {
-                ForEach(0..<5, id: \.self) { i in
-                    let scale = level.map { 0.35 + 0.65 * $0 * [0.6, 0.85, 1, 0.85, 0.6][i] }
-                        ?? (0.5 + 0.5 * abs(sin(t * 3 + Double(i) * 0.4)))
-                    Capsule()
-                        .fill(colour)
-                        .frame(width: 6, height: 26 * scale)
+                ForEach(0..<3, id: \.self) { i in
+                    Circle()
+                        .fill(Tokens.Colors.card)
+                        .frame(width: 8, height: 8)
+                        .opacity(still ? 1 : 0.35 + 0.65 * max(0, sin(t * 5 - Double(i) * 0.9)))
                 }
             }
-            .frame(height: 30)
         }
     }
 }

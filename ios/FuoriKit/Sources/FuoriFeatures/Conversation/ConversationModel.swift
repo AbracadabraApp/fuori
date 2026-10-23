@@ -39,9 +39,7 @@ public final class ConversationModel {
         /// learner's turn is a tap on one of two replies; `replies` is nil
         /// while they're still being written
         case choosing
-        case paused
         case micDenied
-        case failed(String)
     }
 
     public private(set) var phase: Phase = .starting {
@@ -103,8 +101,8 @@ public final class ConversationModel {
     /// Bumped whenever something stops the current step; late results from an
     /// older step are dropped
     private var generation = 0
-    /// A reply that arrived while paused, played on resume
-    private var pendingReply: APIClient.TurnReply?
+    /// Something cut in while the reply was on its way: it's shown, not said
+    private var interrupted = false
     private var observers: [NSObjectProtocol] = []
     /// The replies to the current line, written while the character speaks
     private var repliesTask: Task<Result<APIClient.Replies, Error>, Never>?
@@ -160,6 +158,10 @@ public final class ConversationModel {
         }
     }
 
+    /// How loud the character's voice is now (0...1), nil when it can't be
+    /// measured; read every frame by the circle's wave
+    public var voiceLevel: Double? { voice.level }
+
     /// Speed as on the web: slower with English on
     private var speed: Double { UserDefaults.standard.bool(forKey: SettingsKey.english) ? 0.7 : 0.9 }
 
@@ -197,8 +199,28 @@ public final class ConversationModel {
         scaffolding = reply.replies == true
         // An older server sends no stage (or "tap", now gone): two good answers
         stage = scaffolding ? (reply.stage.flatMap(Stage.init(rawValue:)) ?? .read) : nil
+        #if DEBUG
+        // `-FuoriStage read|choose`: the answers panel for any learner, for
+        // simulator checks without a new learner (the server still writes them)
+        if let forced = UserDefaults.standard.string(forKey: "FuoriStage").flatMap(Stage.init(rawValue:)) {
+            scaffolding = true
+            stage = forced
+        }
+        #endif
         firstTime = scaffolding && !UserDefaults.standard.bool(forKey: Self.answersIntroduced)
-        if phase == .paused { pendingReply = reply; line = reply.line; english = reply.en; shown = nil; replies = nil; chosen = nil; writeReplies(); return }
+        if interrupted {
+            // Something cut in while it was on its way: show it, don't say it,
+            // and leave the learner on their turn with the mic closed
+            interrupted = false
+            line = reply.line
+            english = reply.en
+            shown = nil
+            replies = nil
+            chosen = nil
+            writeReplies()
+            await openTurn(micClosed: true)
+            return
+        }
         if let head {
             self.head = nil
             if reply.line.hasPrefix(head.text), await sayRest(of: reply, after: head, generation: generation) { return }
@@ -369,9 +391,8 @@ public final class ConversationModel {
     /// moves on the generation, so a stale wait never blocks a new turn)
     private var openingMic: Int?
 
-    private func openTurn() async {
-        // Paused while thinking: the mic stays closed until a tap
-        guard phase != .paused else { return }
+    /// `micClosed`: after an interruption the mic waits for a tap, hands-free too
+    private func openTurn(micClosed: Bool = false) async {
         ring = 0
         if scaffolding, repliesTask != nil {
             // Under VoiceOver the answers are buttons: wait for a tap on one
@@ -382,7 +403,7 @@ public final class ConversationModel {
             // Otherwise the answers fill the panel above the usual mic
             Task { await self.loadReplies() }
         }
-        if tapMode {
+        if tapMode || micClosed {
             phase = .tapToTalk
             return
         }
@@ -447,8 +468,9 @@ public final class ConversationModel {
         }
         guard snapshot.hasSpoken else {
             if let wait = firstWordWait, now - turnStartedAt >= wait {
-                // Nothing said: pause rather than keep listening to the room
-                pause()
+                // Nothing said: close the mic rather than keep listening to the
+                // room; it's still their turn (docs/bottom-bar.md)
+                interrupt()
             }
             return false
         }
@@ -465,7 +487,12 @@ public final class ConversationModel {
         case .speaking:
             stoppedByTap = true // a first sentence's rest isn't said either
             voice.stop() // present() then opens the learner's turn
-        case .tapToTalk: await startRecording()
+        case .tapToTalk where line == nil && conversationId == nil:
+            // The opening line failed: a tap tries again
+            note = nil
+            phase = .starting
+            await start()
+        case .tapToTalk, .micDenied: await startRecording()
         case .listening, .hearing: await finishTurn()
         default: break
         }
@@ -702,9 +729,9 @@ public final class ConversationModel {
         }
     }
 
-    /// The Learn sheet opens over a paused scene; closing it leaves the scene
-    /// paused, so nothing speaks or listens until the learner taps
-    public func openLearn() { pause() }
+    /// The Learn sheet opens over a stopped scene; closing it leaves the
+    /// learner on their turn, so nothing speaks or listens until they tap
+    public func openLearn() { interrupt() }
 
     /// Says a corrected line in the character's own voice (the phone's voice
     /// if the hosted one fails), as the scene does. Tapping again replays.
@@ -729,52 +756,38 @@ public final class ConversationModel {
         voice.stop()
     }
 
-    // MARK: - Pause, resume, leave
+    // MARK: - Interruptions, leave
 
-    /// Stops the voice and the mic. Only a tap resumes.
-    public func pause() {
-        guard phase != .paused else { return }
-        if head != nil, awaitingReply {
-            // Saying the first sentence while the rest is written: stop it, and
-            // keep the reply for resume, which says the whole line
+    /// Something cut in (a call, Siri, AirPods out, the app in the background,
+    /// the Learn sheet, no first word in hands-free): stop what was happening
+    /// and leave the learner on their turn with the mic closed. No Pause or
+    /// Resume (Josh, 2026-10-22, docs/bottom-bar.md).
+    public func interrupt() {
+        if awaitingReply || phase == .thinking || phase == .starting {
+            // A line is on its way: stop any first sentence being said; the
+            // reply is shown, not said, when it comes (present)
+            interrupted = true
             head?.task.cancel()
             head = nil
             voice.stop()
             finishReveal()
-            phase = .paused
+            if phase == .speaking { phase = .thinking }
             return
         }
-        if phase == .thinking {
-            // The learner's line is already on its way: let the reply arrive
-            // and keep it (pendingReply) until they tap to resume
-            phase = .paused
+        // Already their turn with the mic closed: nothing to stop
+        guard [.speaking, .listening, .hearing].contains(phase) else {
+            voice.stop()
             return
         }
         generation += 1
         listenTask?.cancel()
         listenTask = nil
-        recorder.stop("pause")
+        recorder.stop("interrupt")
         voice.stop()
         finishReveal()
         ring = 0
         level = 0
-        phase = .paused
-    }
-
-    public func resume() async {
-        guard phase == .paused || phase.isFailed || phase == .micDenied else { return }
-        note = nil
-        generation += 1
-        if let reply = pendingReply {
-            pendingReply = nil
-            phase = .starting
-            await present(reply, generation: generation)
-        } else if line == nil {
-            phase = .starting
-            await start()
-        } else {
-            await openTurn()
-        }
+        Task { await self.openTurn(micClosed: true) }
     }
 
     /// The learner leaves (back, swipe, or the app going to the background):
@@ -791,18 +804,27 @@ public final class ConversationModel {
         if let conversationId { onSave(conversationId) }
     }
 
-    /// The app went to the background: pause, and save in case it never comes back
+    /// The app went to the background: stop, and save in case it never comes back
     public func backgrounded() {
-        pause()
+        interrupt()
         if let conversationId { onSave(conversationId) }
     }
 
+    /// A step failed: its message shows above the circle and the learner is
+    /// on their turn (docs/bottom-bar.md); before the opening line, a tap
+    /// tries the opening again
     private func fail(_ error: Error, step: String) {
         listenTask?.cancel()
+        listenTask = nil
+        head?.task.cancel()
+        head = nil
         recorder.stop("fail \(step)")
+        voice.stop()
+        finishReveal()
         let code = report(error, step: step)
         let message = (error as? APIError)?.message ?? error.localizedDescription
-        phase = .failed(ErrorCode.message(message, code: code))
+        note = ErrorCode.message(message, code: code)
+        phase = .tapToTalk
     }
 
     /// Sends the error to the server log (/v1/log) and returns its code, the
@@ -834,27 +856,26 @@ public final class ConversationModel {
         #endif
     }
 
-    /// Calls, Siri and headphones coming out pause; nothing resumes by itself
+    /// Calls, Siri and headphones coming out leave the learner on their turn, mic closed
     private func observeInterruptions() {
         #if os(iOS)
+        // Once per conversation (a retried opening calls start() again)
+        guard observers.isEmpty else { return }
         let center = NotificationCenter.default
         observers.append(center.addObserver(forName: AVAudioSession.interruptionNotification, object: nil, queue: .main) { [weak self] note in
             let began = (note.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt) == AVAudioSession.InterruptionType.began.rawValue
-            if began { MainActor.assumeIsolated { self?.pause() } }
+            if began { MainActor.assumeIsolated { self?.interrupt() } }
         })
         observers.append(center.addObserver(forName: AVAudioSession.routeChangeNotification, object: nil, queue: .main) { [weak self] note in
             let reason = note.userInfo?[AVAudioSessionRouteChangeReasonKey] as? UInt
             if reason == AVAudioSession.RouteChangeReason.oldDeviceUnavailable.rawValue {
-                MainActor.assumeIsolated { self?.pause() }
+                MainActor.assumeIsolated { self?.interrupt() }
             }
         })
         #endif
     }
 }
 
-extension ConversationModel.Phase {
-    var isFailed: Bool { if case .failed = self { true } else { false } }
-}
 
 /// The voice gate shared between the audio thread (levels) and the main
 /// actor (timing), behind a lock
@@ -917,12 +938,7 @@ struct PhaseLog {
     private var entries: [(phase: String, at: TimeInterval)] = []
 
     mutating func note(_ phase: ConversationModel.Phase) {
-        let name: String
-        switch phase {
-        case .failed: name = "failed"
-        default: name = String(describing: phase)
-        }
-        entries.append((name, ProcessInfo.processInfo.systemUptime))
+        entries.append((String(describing: phase), ProcessInfo.processInfo.systemUptime))
         if entries.count > 10 { entries.removeFirst() }
     }
 

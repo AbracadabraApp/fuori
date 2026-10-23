@@ -19,6 +19,15 @@ public final class Voice: NSObject {
         return 1
     }
 
+    /// How loud the voice is right now (0...1), for the wave on the circle;
+    /// nil for the phone's own voice, which can't be measured (the wave moves
+    /// by itself then)
+    public var level: Double? {
+        guard let player, player.isPlaying else { return nil }
+        player.updateMeters()
+        return Double(max(0, min(1, (player.averagePower(forChannel: 0) + 50) / 45)))
+    }
+
     public override init() {
         super.init()
         synthesizer.delegate = self
@@ -29,6 +38,7 @@ public final class Voice: NSObject {
         stop()
         let player = try AVAudioPlayer(data: data)
         player.delegate = self
+        player.isMeteringEnabled = true
         self.player = player
         await withCheckedContinuation { continuation in
             finished = continuation

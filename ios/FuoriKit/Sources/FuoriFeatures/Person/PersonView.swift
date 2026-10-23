@@ -70,7 +70,6 @@ struct PersonView: View {
     /// The note above the controls: what went wrong, or a hint like "Didn't catch that."
     private var note: String? {
         switch model.phase {
-        case .failed(let message): message
         case .micDenied: "The microphone is off for Fuori. Turn it on in Settings to talk."
         default: model.note
         }
