@@ -267,6 +267,10 @@ public actor APIClient {
 
     /// Say it in English: the line in the language to read out loud, and its English
     public struct SayItLine: Codable, Sendable, Equatable {
+        /// No line to read: it was already in the language (speech to text
+        /// mislabels learners' speech as English) or too unclear to tell, so
+        /// it goes to the character as said. Nil from a server before 2026-10-23c
+        public let sendAsSaid: Bool?
         public let line: String
         public let en: String
     }

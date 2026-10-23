@@ -574,7 +574,11 @@ public final class ConversationModel {
             let audio = try Data(contentsOf: url)
             try? FileManager.default.removeItem(at: url)
             var started = Self.now()
-            let heard = try await api.transcribeHeard(audio: audio, mode: .turn)
+            // Reading a "Say this" line: it's in the language and goes to her,
+            // with no language check (it looped back into say it whenever
+            // Whisper called the reading English: Josh, Mohamed, 2026-10-23)
+            let reading = sayIt != nil
+            let heard = try await api.transcribeHeard(audio: audio, mode: reading ? .target : .turn)
             let said = heard.text
             time("transcribe", since: started)
             debug.heard = "(\(heard.language ?? "?")) \(said)"
@@ -587,23 +591,28 @@ public final class ConversationModel {
             }
             // English: say it in English. The line in the language comes back
             // to read out loud, and the mic reopens for the reading
-            if heard.language == "en" {
+            if !reading, heard.language == "en" {
                 step = "say-it"
                 await sayItInEnglish(said, generation: generation)
                 return
             }
             step = "turn"
-            started = Self.now()
-            let reply = try await requestTurn(learnerSaid: said)
-            learnerLines += 1
-            time("turn", since: started)
-            debug.promptVersion = reply.promptVersion
-            if let id = reply.conversationId { conversationId = id }
-            await present(reply, generation: generation)
+            try await sendTurn(said, generation: generation)
         } catch {
             guard generation == self.generation else { return }
             fail(error, step: step)
         }
+    }
+
+    /// The learner's line to the character, and her reply
+    private func sendTurn(_ said: String, generation: Int) async throws {
+        let started = Self.now()
+        let reply = try await requestTurn(learnerSaid: said)
+        learnerLines += 1
+        time("turn", since: started)
+        debug.promptVersion = reply.promptVersion
+        if let id = reply.conversationId { conversationId = id }
+        await present(reply, generation: generation)
     }
 
     // MARK: - Say it in English (docs/beginner-scaffolding.md)
@@ -617,6 +626,13 @@ public final class ConversationModel {
             let line = try await api.sayIt(cityId: city.id, placeId: place.id, conversationId: conversationId, heard: english)
             time("say-it", since: started)
             guard generation == self.generation else { return }
+            // Already in the language (Whisper mislabelled it) or too unclear
+            // to tell: it goes to her as said. When in doubt, the character
+            if line.sendAsSaid == true || line.line.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                debug.heard = (debug.heard ?? "") + " → to her as said"
+                try await sendTurn(english, generation: generation)
+                return
+            }
             sayIt = SayIt(english: english, line: line.line, en: line.en)
             // Under VoiceOver the mic waits for a tap, as every turn does there
             if tapMode && !endsOnSilence {
@@ -626,7 +642,7 @@ public final class ConversationModel {
             await startRecording(firstWordWait: readingWait)
         } catch {
             guard generation == self.generation else { return }
-            fail(error, step: "say-it")
+            fail(error, step: sayIt == nil ? "say-it" : "turn")
         }
     }
 

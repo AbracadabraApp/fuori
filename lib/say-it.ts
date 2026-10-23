@@ -12,10 +12,15 @@ import { language } from '@/content';
 import type { Level } from './onboarding';
 import type { CharacterSheet, Turn } from './types';
 
-const Line = z.object({ line: z.string().min(1), en: z.string().min(1) });
+// sendAsSaid: no line to write. What Whisper labelled English is in fact the
+// learned language (2026-10-23: Josh's own Italian was labelled English in 4
+// of 5 turns), or too short or unclear to tell what they meant ("Okay", "C.").
+// The app then sends it to the character as said; line and en are empty.
+// When in doubt it goes to the character, who helps in role (CLAUDE.md)
+const Line = z.object({ sendAsSaid: z.boolean(), line: z.string(), en: z.string() }).refine((l) => l.sendAsSaid || l.line.trim().length > 0, 'line is required unless sendAsSaid');
 export type SayItLine = z.infer<typeof Line>;
 
-const schema = { type: 'object', additionalProperties: false, properties: { line: { type: 'string' }, en: { type: 'string' } }, required: ['line', 'en'] };
+const schema = { type: 'object', additionalProperties: false, properties: { sendAsSaid: { type: 'boolean' }, line: { type: 'string' }, en: { type: 'string' } }, required: ['sendAsSaid', 'line', 'en'] };
 
 export function sayItPromptVersion(): string {
   return readPromptFile('say-it.md').version;

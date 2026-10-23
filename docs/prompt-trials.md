@@ -109,7 +109,8 @@ Josh, 2026-10-23: the learner says it in English, gets one line in the language 
 | Version | Italy all checks | Mexico all checks | Meaning | Level | Median | Decision |
 |---|---|---|---|---|---|---|
 | v1 | 80% | 69% | 94% / 94% | 91% / 94% | 1.5 s | Two-part requests came back as two long sentences, too much to read aloud |
-| v2 (shipped, 2026-10-23b): the one thing that matters most, one short sentence (~8 words) for beginners, greeting only if they greeted | 69% | 60% | 80% / 86% | **100% / 100%** | 1.4–1.7 s | **Kept:** the judge marks the dropped half as lost meaning, which is the point (Josh: the gist at their level). Watch: it can invent a detail ("lo mismo de ayer" → *un café*) |
+| v2 (2026-10-23b): the one thing that matters most, one short sentence (~8 words) for beginners, greeting only if they greeted | 69% | 60% | 80% / 86% | **100% / 100%** | 1.4–1.7 s | **Kept:** the judge marks the dropped half as lost meaning, which is the point (Josh: the gist at their level). Watch: it can invent a detail ("lo mismo de ayer" → *un café*) |
+| **v3 (2026-10-23c): first decide whether there's a line to write** (`sendAsSaid`: already in the language, or too short/unclear) | 18 cases: Josh's 4 real Italian turns Whisper labelled English (Mohamed, 2026-10-23) and Spanish ones | | | | 1.2–4.0 s | **Kept:** all 4 of Josh's real lines and both Spanish ones go to the character as said; clear English and mixed requests still get a line; "Okay." and a misheard "C." no longer invent a request (v3 draft wrote *Sì, un tavolo per uno, grazie* and *Una canción, por favor* for them) |
 
 ### Diario cards (experiment, `tests/experiments/diario-cards.mts`)
 
