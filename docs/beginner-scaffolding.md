@@ -21,6 +21,11 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 - **The line:** `POST /v1/say-it` (`lib/say-it.ts`, prompt `say-it.md`): the gist at the learner's level, one short sentence for beginners, fitting her last line; "I didn't understand" comes back as the help phrase. Trial: level 100% in both countries, never mixed language, 1.4–1.7 s (docs/prompt-trials.md).
 - **On screen:** grey bubble "*Come si dice:* (what they said)" (the label from content, `ui.howToSay`), then "Say this: **line**" with the speaker, on the learner's side, above the circle (`SayItBubbles.swift`). The reply panel stays for now and hides while say it is showing.
 - **Not built yet:** the Beginner hint in her opener (G1), Claude's take for spoken Italian, the character closing the conversation.
+- **It replaces every click-to-answer scaffold (Josh, 2026-10-23):** the reply buttons, the answer panel and its stages, and answers as buttons (under VoiceOver or with the mic off) all go once say it is settled; Fuori is voice only (D6). Onboarding keeps its buttons.
+- **Characters' help doesn't change (Josh, 2026-10-23):** a character still helps in English when asked, as CLAUDE.md says; say it sits beside that.
+- **Open (Josh, 2026-10-23):**
+  - *Routing mixed-language input:* which English is "turn this into a line" ("I'd like two coffees"), which is a question to her ("how do you say receipt?", where she helps as today), and which is their own attempt with an English word in it ("vorrei the receipt").
+  - *Whether to tell the character the line was read:* she hears it as an ordinary line, or knows it was the game's line read aloud (no recasting it; maybe a word of praise).
 
 Josh: "inside the game we can simplify all the scaffolding to just be say it, get this language back, read it." Onboarding is separate and keeps its buttons ("treat onboarding different in every way").
 - **The direction:** in conversations, scaffolding is only "say it in English" (below): say what you mean in English, get one line back in the language at your level, read it out loud. The two answer bubbles, the stages and the read-aloud panel built 2026-10-22 ([reply-panel.md](reply-panel.md)) would go. The panel stays until the new loop has been played.
