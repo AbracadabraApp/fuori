@@ -6,6 +6,7 @@ import { query, closePool } from '@/lib/db';
 import { recordTurn, markConversationEnded, recentConversations, conversationAsText, saveLater, loadConversationTurns } from '@/lib/recording';
 import type { CharacterSheet } from '@/lib/types';
 import { saveAppError, recentAppErrors, appErrorsAsText } from '@/lib/app-errors';
+import { saveSayIt, recentSayIts, sayItsAsText } from '@/lib/say-it-log';
 
 if (!process.env.DATABASE_URL) {
   console.log('SKIPPED: set DATABASE_URL to a test database to run the recording check');
@@ -75,6 +76,14 @@ async function main() {
   if (errs.map((e) => e.code).join(',') !== 'E-TST2,E-TST1') problems.push(`app errors not kept newest first: ${errs.map((e) => e.code)}`);
   if (!appErrorsAsText(errs).includes('E-TST1 · record')) problems.push('app errors text missing a report');
   await query("DELETE FROM app_errors WHERE code LIKE 'E-TST%'");
+
+  // Say it decisions are kept and read back (lib/say-it-log.ts)
+  await saveSayIt({ learnerId: me, conversationId: later, heard: 'Si, ho domandato un tavolo', sendAsSaid: true, line: '', ms: 1200, promptVersion: 'test' });
+  await saveSayIt({ learnerId: me, conversationId: later, heard: 'I would like a table', sendAsSaid: false, line: 'Vorrei un tavolo.', ms: 1500, promptVersion: 'test' });
+  const says = await recentSayIts(10, t0);
+  const sayText = sayItsAsText(says);
+  if (says.length !== 2 || !sayText.includes('→ to the character as said') || !sayText.includes('→ say this: Vorrei un tavolo.')) problems.push(`say it log not kept or read back: ${sayText}`);
+  await query("DELETE FROM say_it_log WHERE prompt_version = 'test'");
 
   await query('DELETE FROM learners WHERE id = ANY($1)', [[me, other]]);
 }

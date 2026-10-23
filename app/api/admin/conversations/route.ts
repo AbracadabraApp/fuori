@@ -13,7 +13,8 @@
  * for Gemini Notebook, by default the last 14 days. format=learners lists
  * learner ids by number of conversations, to find whose export to make.
  * format=errors&since=…&limit=50 lists the iPhone app's error reports, every
- * country, newest first (lib/app-errors.ts).
+ * country, newest first (lib/app-errors.ts). format=sayit&since=… lists every
+ * say it in English decision (lib/say-it-log.ts).
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
@@ -22,6 +23,7 @@ import { scorecard, scorecardAsText } from '@/lib/scorecard';
 import type { ConversationScore } from '@/lib/quality';
 import { learnersWithConversations, loadStudyExport, studyExportMarkdown } from '@/lib/study-export';
 import { recentAppErrors, appErrorsAsText } from '@/lib/app-errors';
+import { recentSayIts, sayItsAsText } from '@/lib/say-it-log';
 
 function allowed(given: string | null): boolean {
   const key = process.env.ADMIN_KEY;
@@ -39,6 +41,13 @@ export async function GET(request: NextRequest) {
   }
   if (url.searchParams.get('format') === 'learners') {
     return new NextResponse((await learnersWithConversations()) || 'No conversations yet.', {
+      headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
+    });
+  }
+  if (url.searchParams.get('format') === 'sayit') {
+    const since = url.searchParams.get('since');
+    const rows = await recentSayIts(Number(url.searchParams.get('limit') ?? 100) || 100, since && !isNaN(Date.parse(since)) ? new Date(since) : undefined);
+    return new NextResponse(sayItsAsText(rows) || 'No say it decisions yet.', {
       headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
     });
   }

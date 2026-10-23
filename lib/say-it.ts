@@ -42,7 +42,11 @@ export async function writeSayIt(character: CharacterSheet, transcript: Turn[], 
   const prompt = buildSayItPrompt(character, transcript, english, level);
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
-    max_tokens: 2000, // leaves room for thinking, which counts toward it
+    max_tokens: 2000,
+    // No thinking step (2026-10-23: it took 2–4 s on Josh's phone, on top of
+    // transcribing; Learn went 9 s → 5 s the same way). As the turn call:
+    // between_tools, not disabled
+    thinking: { type: 'between_tools' },
     system: prompt.system,
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema } },

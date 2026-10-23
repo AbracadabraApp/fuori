@@ -113,6 +113,20 @@ CREATE TABLE IF NOT EXISTS app_errors (
   context     jsonb
 );
 CREATE INDEX IF NOT EXISTS idx_app_errors_at ON app_errors(at DESC);
+-- Every say it in English decision (lib/say-it-log.ts, 2026-10-23)
+CREATE TABLE IF NOT EXISTS say_it_log (
+  id              bigserial PRIMARY KEY,
+  at              timestamptz NOT NULL DEFAULT now(),
+  country         text NOT NULL,
+  learner_id      uuid NOT NULL,
+  conversation_id uuid,
+  heard           text NOT NULL,
+  send_as_said    boolean NOT NULL,
+  line            text,
+  ms              int,
+  prompt_version  text
+);
+CREATE INDEX IF NOT EXISTS idx_say_it_log_at ON say_it_log(at DESC);
 
 -- Indexes for common queries
 CREATE INDEX IF NOT EXISTS idx_conversations_learner ON conversations(learner_id);

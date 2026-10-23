@@ -1,6 +1,6 @@
 /**
  * POST /v1/say-it { cityId, placeId, tripTo?, conversationId?, heard }
- *   → { line, en, promptVersion }
+ *   → { sendAsSaid, line, en, promptVersion }
  *
  * Say it in English (docs/beginner-scaffolding.md; Josh, 2026-10-23): the
  * learner said `heard` in English on their turn; this returns the one line in
@@ -8,6 +8,9 @@
  * shows what they said and the line, then opens the mic for the reading,
  * which goes to /v1/turn as usual. The server reads the conversation from the
  * database (none yet: the opening line only) and the learner's level.
+ * sendAsSaid: no line (it was already the language, or too unclear); the app
+ * sends what they said to the character. Every decision is kept
+ * (lib/say-it-log.ts).
  */
 import { z } from 'zod';
 import { apiError, apiJson, withLearner } from '@/lib/api';
@@ -16,6 +19,8 @@ import { parseTurnRequest, MAX_SAID_CHARS } from '@/lib/turn-request';
 import { loadConversationTurns } from '@/lib/recording';
 import { badRequest, claudeFailed } from '@/lib/onboarding-api';
 import { sayItPromptVersion, writeSayIt } from '@/lib/say-it';
+import { saveSayIt } from '@/lib/say-it-log';
+import { logServerError } from '@/lib/server-log';
 import { query } from '@/lib/db';
 import type { Level } from '@/lib/onboarding';
 
@@ -43,7 +48,14 @@ export async function POST(request: Request) {
     const level = (await query<{ level: Level | null }>('SELECT level FROM learners WHERE id = $1', [learnerId])).rows[0]?.level ?? null;
 
     try {
+      const started = Date.now();
       const line = await writeSayIt(parsed.character, transcript, heard, level);
+      // Every decision kept, to measure routing on real play (lib/say-it-log.ts)
+      try {
+        await saveSayIt({ learnerId, conversationId: conversationId ?? null, heard, sendAsSaid: line.sendAsSaid, line: line.line, ms: Date.now() - started, promptVersion: sayItPromptVersion() });
+      } catch (err) {
+        logServerError(request, 'v1 say-it log', err);
+      }
       return apiJson({ ...line, promptVersion: sayItPromptVersion() });
     } catch (err) {
       return claudeFailed(request, 'v1 say-it', err);
