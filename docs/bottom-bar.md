@@ -17,6 +17,7 @@
   | **She's speaking** | terracotta, sound wave moving with her voice | cuts in and starts your turn (as today) |
 
   Green is you, terracotta is her.
+- **Hands-free: a ring around the circle** fills with the silence that ends your turn (Josh, 2026-10-22: "the hands free ring should be used in hands free"). Only in hands-free, only while you're talking.
 - **No Pause and no Play/Resume, anywhere** (Josh: "complexity before anyone asks for it"; the Pause and Resume safeguards were rules a computer wrote). A call, Siri, AirPods coming out or backgrounding just ends what was happening and leaves you on **your turn**; the mic never reopens without a tap. A failed step shows its message and leaves you on your turn too.
 - **Nothing else in the bar but the Learn link** ([learn.md](learn.md)): a 48 pt glass circle on the right, its centre on the circle's centre line, 6 pt in from the 48 pt column at the edge. Same place in every state, so it's never a moving target. Before there's anything to learn, the right side is empty.
 
