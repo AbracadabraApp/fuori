@@ -11,6 +11,30 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 
 **The reply panel (Josh, 2026-10-22; built the same day):** the reply buttons became a panel of suggested answers as text, "read one out loud" above the usual mic, no tap stage, no Pause. Spec and screens: [reply-panel.md](reply-panel.md).
 
+## Proposal: training wheels the learner takes off (Josh, 2026-10-22; direction agreed, details not decided)
+
+**What prompted it:** watching new learners, they need the scaffolding for the whole session, maybe much longer than planned. The fixed schedule (three turns in each of the first three conversations) drops them too early. So the learner takes the wheels off when they're ready, instead of the game pushing.
+
+| Step | What the learner sees | How they move on |
+|---|---|---|
+| **0 · Explain once** | A panel that explains how it works ("You'll see two answers. Read them and choose yours, then tap the mic and say it out loud") and a **Next** button (Josh: panels explain how it works) | Tapping Next |
+| **1 · Two bubbles, with English** | Her line in a bubble on the left, two answers as speech bubbles on the right (canvas D6: Josh, bubbles show "speech"), Italian with the English under it | Offered: "Want to try without the English hints?" Yes, or keep them |
+| **2 · Two bubbles, Italian only** | The same, without the English | Offered: "You can read a line or answer on your own" |
+| **3 · Bubbles as a suggestion** | The bubbles stay; the mic takes anything said | Offered: "Ready to go all in?" |
+| **4 · The mic alone** | Today's game | A learner can step back down (Settings) |
+| **Any time · Say it in English** | Say it in English → it comes back as an Italian bubble with the English → say it in Italian | Always available, at every step |
+
+Decided in conversation (Josh):
+- **Offer at the end of a conversation**, not mid-turn. There's no great measure of the end yet; the reliable signal is leaving (every exit goes through one leave function), so the offer can come as they leave or as the next conversation opens.
+- **No fixed count.** "Many beginners aren't ready to move on"; the right number of turns isn't known. Default is to stay; an offer that's declined comes back later rather than once only.
+
+Open:
+- **Listening still has to count.** With two good answers a learner can read the bubbles and skip her line. Keep a step where only one answer fits (the old choose stage), so they must understand her to pick.
+- **What earns an offer:** turns at a step, or evidence (answers read aloud smoothly several times running). The logs from the first family testers should show where people start to cope.
+- **Say it in English** can become a crutch (say it in English, read the Italian back). Still better than picking from two, since the learner decides what to say.
+- **Explain screens get skipped:** the first real turn should still make the mic obvious.
+- Replaces the fixed schedule in `lib/scaffold.ts` and the read-aloud panel built 2026-10-22 ([reply-panel.md](reply-panel.md)) once decided.
+
 ## The sequence a new learner meets
 
 | # | Step | What happens | Status |
