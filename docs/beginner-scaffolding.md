@@ -11,6 +11,16 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 
 **The reply panel (Josh, 2026-10-22; built the same day):** the reply buttons became a panel of suggested answers as text, "read one out loud" above the usual mic, no tap stage, no Pause. Spec and screens: [reply-panel.md](reply-panel.md).
 
+## Say it in English becomes the way in (Josh, 2026-10-23)
+
+Josh: "say it in English → becomes the sitewide onboarding. No clicks to answer."
+- **Decided:** "say it in English" (below) is how new learners get into the game, everywhere, starting with the orientation tour ([orientation-script.md](orientation-script.md)). Nobody answers by tapping.
+- **Follows from it, for Josh to confirm:** the two answer bubbles in the steps below, and the read-aloud panel built 2026-10-22 ([reply-panel.md](reply-panel.md)), are replaced by it rather than coming first. The panel stays in the app until "say it in English" is built and played.
+- **Open:**
+  - **Listening.** The `choose` stage made the learner understand her line to pick an answer. With "say it in English", they still have to understand her to know what to say; if they don't, they ask (characters help in English when asked). Whether that's enough shows in play.
+  - **A learner with nothing to say.** Two bubbles gave a blank beginner something to start from; "say it in English" assumes they know what they want to say. Her lines can end on simple questions; play will show whether more is needed.
+  - **Moving off it.** The end-of-conversation offers below still apply, reworded for this loop (for example, "Want to try saying it in Italian first?").
+
 ## Proposal: training wheels the learner takes off (Josh, 2026-10-22; direction agreed, details not decided)
 
 **What prompted it:** watching new learners, they need the scaffolding for the whole session, maybe much longer than planned. The fixed schedule (three turns in each of the first three conversations) drops them too early. So the learner takes the wheels off when they're ready, instead of the game pushing.
