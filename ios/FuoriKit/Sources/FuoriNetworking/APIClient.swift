@@ -225,6 +225,13 @@ public actor APIClient {
         /// learned language (Whisper sometimes translates instead of
         /// transcribing). Nil otherwise, and from older servers
         public var learned: String? = nil
+
+        /// Without the spaces Whisper leaves around the text, keeping every
+        /// field (rebuilding it by hand once dropped `learned`, so say it never
+        /// saw the learned-language version: 2026-10-24)
+        func trimmed() -> Heard {
+            Heard(text: text.trimmingCharacters(in: .whitespacesAndNewlines), language: language, learned: learned?.trimmingCharacters(in: .whitespacesAndNewlines))
+        }
     }
 
     /// POST /v1/transcribe: the recording (m4a) to text. Empty when nothing was understood.
@@ -248,7 +255,7 @@ public actor APIClient {
         req.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         req.httpBody = body
         let result: Heard = try await send(req, signedIn: true)
-        return Heard(text: result.text.trimmingCharacters(in: .whitespacesAndNewlines), language: result.language)
+        return result.trimmed()
     }
 
     // MARK: - Onboarding (docs/onboarding-design.md)

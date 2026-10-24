@@ -30,4 +30,14 @@ import Testing
         let plain = try JSONDecoder().decode(APIClient.Heard.self, from: Data(#"{"text":"Vorrei un cono.","language":"it"}"#.utf8))
         #expect(plain.learned == nil)
     }
+
+    /// transcribeHeard trims what it decoded: the learned-language version must
+    /// survive that, or say it never sees it (found from a Venice turn that
+    /// became a line to read, Josh, 2026-10-24)
+    @Test func trimmingKeepsHeardAsLearned() throws {
+        let heard = try JSONDecoder().decode(APIClient.Heard.self, from: Data(#"{"text":" My accent is obvious, yes? ","language":"en","learned":" Si sente il mio accento, vero? "}"#.utf8)).trimmed()
+        #expect(heard.text == "My accent is obvious, yes?")
+        #expect(heard.language == "en")
+        #expect(heard.learned == "Si sente il mio accento, vero?")
+    }
 }
