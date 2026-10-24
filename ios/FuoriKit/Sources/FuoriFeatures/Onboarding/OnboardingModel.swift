@@ -21,11 +21,22 @@ import FuoriAudio
 /// Hands-free on. A recording with no voice in it doesn't move her on; on the
 /// follow-up, that's when its English appears. A failed call shows its code
 /// with Try again, never a silent skip.
+///
+/// The orientation tour (docs/orientation-script.md; Josh, 2026-10-23), when
+/// the server sends its lines, replaces that, steps 1–3 for now:
+///
+///   hello (name by mic) → gender (Benvenuto / Benvenuta) → level (three
+///   buttons) → levelSet (Avanti) → city list
+///
+/// Each card: her line in the language and its English, a note in English,
+/// and on steps 1 and 3 her question. No Skip and no step count (Josh).
 @MainActor
 @Observable
 public final class OnboardingModel {
     public enum Step: Equatable {
         case welcome, askName, address, welcomed, beginnerSendOff, question, followUp, sendOff
+        /// The orientation tour
+        case hello, gender, level, levelSet
     }
 
     /// Which way the first tap went: where she goes after the name and address
@@ -79,6 +90,14 @@ public final class OnboardingModel {
     public let addressLines: Onboarding.AddressLines?
     /// The name as heard; nil if they skipped it
     public private(set) var name: String?
+    /// The orientation tour's lines, or nil for today's onboarding
+    public let orientation: Onboarding.Orientation?
+    /// The tour's card: her line, its English and the note
+    public private(set) var card: Onboarding.Card?
+    /// The tour's question under the card (her name, the level), or nil
+    public private(set) var question: Onboarding.Card?
+    /// The level they picked on step 3
+    public private(set) var chosenLevel: String?
     private var path: Path = .beginner
     /// Bumped when something stops the current step; late results are dropped
     private var generation = 0
@@ -98,6 +117,7 @@ public final class OnboardingModel {
     public init(onboarding: Onboarding, language: Language, api: APIClient, askAddress: Bool = false, onFinish: @escaping (String) -> Void) {
         self.onboarding = onboarding
         self.addressLines = askAddress ? onboarding.lines.addressLines : nil
+        self.orientation = onboarding.orientation
         self.language = language
         self.api = api
         self.onFinish = onFinish
@@ -108,9 +128,9 @@ public final class OnboardingModel {
     public var pose: Pose {
         if phase == .listening { return .listen }
         switch step {
-        case .welcome: return .welcome
-        case .askName, .address, .question, .followUp: return .talk
-        case .welcomed, .beginnerSendOff, .sendOff: return .laugh
+        case .welcome, .hello: return .welcome
+        case .askName, .address, .question, .followUp, .gender, .level: return .talk
+        case .welcomed, .beginnerSendOff, .sendOff, .levelSet: return .laugh
         }
     }
 
@@ -134,7 +154,76 @@ public final class OnboardingModel {
 
     public func start() async {
         guard step == .welcome, line.isEmpty else { return }
+        if let orientation {
+            step = .hello
+            await sayCard(orientation.hello, question: orientation.askName)
+            return
+        }
         await say(onboarding.lines.welcome, englishAllowed: true)
+    }
+
+    // MARK: - The orientation tour
+
+    /// A card: she says her line and the question; the English and the note
+    /// show when she has finished
+    private func sayCard(_ card: Onboarding.Card, question: Onboarding.Card?) async {
+        self.card = card
+        self.question = question
+        let spoken = [card.line, question?.line].compactMap { $0 }.joined(separator: " ")
+        let english = [card.en, question?.en].compactMap { $0 }.joined(separator: " ")
+        await say(Onboarding.Line(line: spoken, en: english), englishAllowed: true)
+    }
+
+    /// Step 1 with the mic off: on without a name
+    public func continueWithoutName() async {
+        guard step == .hello, phase == .ready || phase == .micDenied, let orientation else { return }
+        name = nil
+        step = .gender
+        await sayCard(orientation.niceToMeet.named(nil), question: nil)
+    }
+
+    /// Step 2: how characters address them, then her welcome and the level question
+    public func chooseGender(woman: Bool) async {
+        guard step == .gender, phase == .ready, let orientation else { return }
+        phase = .thinking
+        do {
+            try await api.onboardingAddress(addressedAs: woman ? "f" : "m", name: name)
+        } catch let error as APIError where error.code == .notFound {
+            report(error, step: "onboarding address off")
+        } catch {
+            fail(error, step: "onboarding address") { [weak self] in
+                self?.phase = .ready
+                await self?.chooseGender(woman: woman)
+            }
+            return
+        }
+        step = .level
+        await sayCard((woman ? orientation.welcomeWoman : orientation.welcomeMan).named(name), question: orientation.askLevel)
+    }
+
+    /// Step 3: the level they pick is their level, in Settings too (Josh, 2026-10-23)
+    public func chooseLevel(_ level: String) async {
+        guard step == .level, phase == .ready, let orientation else { return }
+        phase = .thinking
+        do {
+            try await api.onboardingLevel(level)
+        } catch {
+            fail(error, step: "onboarding level") { [weak self] in
+                self?.phase = .ready
+                await self?.chooseLevel(level)
+            }
+            return
+        }
+        chosenLevel = level
+        step = .levelSet
+        await sayCard(orientation.levelSet, question: nil)
+    }
+
+    /// Avanti after step 3: the city list (steps 4–11 aren't built yet)
+    public func finishOrientation() {
+        guard step == .levelSet, phase == .ready else { return }
+        stopAudio()
+        onFinish(chosenLevel ?? "beginner")
     }
 
     /// "Not yet!": the beginner send-off, no speaking on this path
@@ -321,7 +410,7 @@ public final class OnboardingModel {
     // MARK: - Their answers
 
     private func startRecording() async {
-        guard [.askName, .address, .question, .followUp].contains(step) else { return }
+        guard [.askName, .address, .question, .followUp, .hello, .gender].contains(step) else { return }
         guard await AudioSession.requestMicrophone() else {
             phase = .micDenied
             return
@@ -408,6 +497,19 @@ public final class OnboardingModel {
     /// Her reply to an answer: the follow-up after the first, the send-off after the second
     private func reply(to heard: APIClient.Heard) async {
         let generation = self.generation
+        // The tour's step 1 (or saying the name again on step 2): just the name, then step 2
+        if step == .hello || step == .gender, let orientation {
+            do {
+                name = try await api.onboardingName(heard: heard.text).name
+            } catch {
+                report(error, step: "onboarding name")
+                name = Self.cleanName(heard.text)
+            }
+            guard generation == self.generation else { return }
+            step = .gender
+            await sayCard(orientation.niceToMeet.named(name), question: nil)
+            return
+        }
         if step == .askName || step == .address, let addressLines {
             // Her line says just the name ("My name is Josh" → "Josh", Josh
             // 2026-10-22: she said back the whole sentence); saying it again

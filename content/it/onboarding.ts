@@ -42,4 +42,29 @@ export const onboarding = {
     /** The send-off always ends with this (Claude writes what comes before it) */
     help: { line: 'Se hai bisogno di aiuto, chiedi pure a chiunque.', en: 'If you need help, just ask anyone.' },
   },
+  /** The orientation tour (docs/orientation-script.md; Josh, 2026-10-23),
+   *  steps 1–3 for now: name by mic, masculine or feminine, level. Each card
+   *  opens with her line in Italian and its English, then a note in English
+   *  (app chrome; *word* is italic). {name} is the name she picked out */
+  orientation: {
+    hello: {
+      line: 'Ciao! Benvenuti a Fuori.',
+      en: 'Hi! Welcome to Fuori.',
+      note: "I'll show you how Fuori works before you head out. It takes two minutes. First: this is how you ask someone's name. Tap the green microphone to talk. Tap it again to send me your name.",
+    },
+    askName: { line: 'Come ti chiami?', en: "What's your name? Tap the mic" },
+    niceToMeet: {
+      line: 'Piacere, {name}!',
+      en: 'Nice to meet you, {name}!',
+      note: 'Italian words can be masculine or feminine. Even a welcome changes: *benvenuto* for a man, *benvenuta* for a woman. How should people greet you?',
+    },
+    /** The two buttons (Josh, 2026-10-23): the word, and Masculine / Feminine under it */
+    asMan: { line: 'Benvenuto', en: 'Masculine' },
+    asWoman: { line: 'Benvenuta', en: 'Feminine' },
+    welcomeMan: { line: 'Grazie. Benvenuto, {name}!', en: 'Thanks. Welcome, {name}!', note: "Now, how much Italian do you speak? This is how you'd ask someone:" },
+    welcomeWoman: { line: 'Grazie. Benvenuta, {name}!', en: 'Thanks. Welcome, {name}!', note: "Now, how much Italian do you speak? This is how you'd ask someone:" },
+    askLevel: { line: 'Parli italiano?', en: 'Do you speak Italian?' },
+    levelSet: { line: 'Perfetto!', en: 'Perfect!', note: "I'll start you there. You can change it any time in Settings." },
+    next: { line: 'Avanti', en: 'Next' },
+  },
 };

@@ -49,6 +49,11 @@ public final class AppModel {
     public private(set) var addressOn = false
     /// "f" or "m" once chosen (onboarding or Settings); nil until then
     public private(set) var addressedAs: String?
+    /// beginner, intermediate or advanced, as stored on the server (the
+    /// orientation tour's pick, or Settings); nil until placed
+    public private(set) var level: String?
+    /// A failed level change in Settings, with its code
+    public private(set) var levelError: String?
     /// Shown under the Settings row when saving the choice failed
     public private(set) var addressError: String?
     /// The greeter's screen while phase is .onboarding
@@ -147,6 +152,7 @@ public final class AppModel {
     /// English translation on, which also slows the voice; Intermediate and
     /// Advanced: off). The learner can change them in Settings.
     private func finishOnboarding(level: String) {
+        self.level = level
         UserDefaults.standard.set(level == "beginner", forKey: SettingsKey.english)
         if let api { Task { addressedAs = (try? await api.me())?.addressedAs ?? addressedAs } }
         onboarding = nil
@@ -196,6 +202,7 @@ public final class AppModel {
             learnerId = me.learnerId
             addressOn = me.addressOn == true
             addressedAs = me.addressedAs
+            level = me.level
             retryPendingSaves()
             // Not placed yet in this country: the greeter first (existing
             // learners too, once: Josh, 2026-10-16)
@@ -213,6 +220,25 @@ public final class AppModel {
             let code = report(error, step: "load")
             let message = (error as? APIError)?.message ?? error.localizedDescription
             phase = .failed(ErrorCode.message(message, code: code))
+        }
+    }
+
+    /// Settings: their level (Josh, 2026-10-23: the level picked in the tour
+    /// shows in Settings and changes there). Shown at once; a failure puts the
+    /// old one back and is reported. English translation follows the level,
+    /// as after onboarding (on for Beginner), and can still be changed.
+    public func chooseLevel(_ choice: String) async {
+        guard let api, choice != level else { return }
+        let before = level
+        level = choice
+        levelError = nil
+        do {
+            try await api.chooseLevel(choice)
+            UserDefaults.standard.set(choice == "beginner", forKey: SettingsKey.english)
+        } catch {
+            level = before
+            let code = report(error, step: "settings level")
+            levelError = ErrorCode.message("Couldn't save that. Try again.", code: code)
         }
     }
 

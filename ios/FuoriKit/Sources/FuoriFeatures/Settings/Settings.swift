@@ -67,6 +67,14 @@ struct SettingsSheet: View {
         }
     }
 
+    private var currentLevel: Level {
+        Level.allCases.first { $0.rawValue.lowercased() == model.level } ?? .beginner
+    }
+
+    private var levelBinding: Binding<Level> {
+        Binding(get: { currentLevel }, set: { new in Task { await model.chooseLevel(new.rawValue.lowercased()) } })
+    }
+
     private var version: String {
         let info = Bundle.main.infoDictionary
         return "\(info?["CFBundleShortVersionString"] as? String ?? "?") (\(info?["CFBundleVersion"] as? String ?? "?"))"
@@ -89,16 +97,21 @@ struct SettingsSheet: View {
                     }
                 }
                 Section {
-                    // Greyed out until the level changes how people talk (M3; Josh, 2026-10-15)
-                    Picker("Your \(language)", selection: .constant(Level.beginner)) {
+                    // Live (Josh, 2026-10-23): the level picked in the
+                    // orientation tour, changed here; saved on the server
+                    Picker("Your \(language)", selection: levelBinding) {
                         ForEach(Level.allCases) { Text($0.rawValue).tag($0) }
                     }
                     .pickerStyle(.segmented)
-                    .disabled(true)
+                    .disabled(model.level == nil)
                 } header: {
                     Text("Your \(language)")
                 } footer: {
-                    Text("Coming soon. \(Level.beginner.note)")
+                    if let error = model.levelError {
+                        Text(error).foregroundStyle(Tokens.Colors.errorInk)
+                    } else {
+                        Text(currentLevel.note)
+                    }
                 }
                 if model.addressOn, let lines = model.content?.onboarding?.lines.addressLines {
                     AddressSection(lines: lines)

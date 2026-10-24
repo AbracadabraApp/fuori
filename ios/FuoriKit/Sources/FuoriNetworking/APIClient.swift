@@ -301,6 +301,19 @@ public actor APIClient {
     }
 
     /// POST /v1/onboarding/done: the beginner path, no Claude call
+    /// POST /v1/onboarding/level: the level they picked in the orientation
+    /// tour; onboarding is done
+    public func onboardingLevel(_ level: String) async throws {
+        struct Body: Encodable { let level: String }
+        _ = try await sendData(post("v1/onboarding/level", json: Body(level: level)), signedIn: true)
+    }
+
+    /// POST /v1/me/level: Settings, their level (beginner, intermediate, advanced)
+    public func chooseLevel(_ level: String) async throws {
+        struct Body: Encodable { let level: String }
+        _ = try await sendData(post("v1/me/level", json: Body(level: level)), signedIn: true)
+    }
+
     public func onboardingDone() async throws {
         struct Body: Encodable { let path = "beginner" }
         _ = try await sendData(post("v1/onboarding/done", json: Body()), signedIn: true)

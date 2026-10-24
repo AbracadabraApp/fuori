@@ -17,7 +17,11 @@ struct OnboardingView: View {
                 .ignoresSafeArea(edges: .bottom)
             VStack(spacing: 10) {
                 Spacer(minLength: 0)
-                said
+                if let card = model.card {
+                    OrientationCard(model: model, card: card, question: model.question)
+                } else {
+                    said
+                }
                 if let note = model.note { noteView(note) }
                 controls
             }
@@ -146,6 +150,41 @@ struct OnboardingView: View {
             case .welcomed:
                 GoButton(said: model.onboarding.lines.go, language: model.language, busy: false) {
                     Task { await model.continueAfterWelcome() }
+                }
+            // The orientation tour (docs/orientation-script.md)
+            case .hello:
+                VStack(spacing: 6) {
+                    MicBox(model: model, hint: nil)
+                    if model.phase == .micDenied {
+                        Button("Go on without the microphone") { Task { await model.continueWithoutName() } }
+                            .typeface(.label, 16, relativeTo: .body)
+                            .foregroundStyle(Tokens.Colors.ink)
+                            .frame(minHeight: 44)
+                            .padding(.horizontal, 16)
+                            .background(Tokens.Colors.paper.opacity(0.96), in: Capsule())
+                    }
+                }
+            case .gender:
+                if let o = model.orientation {
+                    VStack(spacing: 10) {
+                        AnswerButton(said: o.asMan.said, language: model.language) { Task { await model.chooseGender(woman: false) } }
+                        AnswerButton(said: o.asWoman.said, language: model.language) { Task { await model.chooseGender(woman: true) } }
+                        if model.name != nil || model.phase == .listening { SayAgainButton(model: model) }
+                    }
+                    .disabled(model.phase == .thinking)
+                    .padding(.top, 6)
+                }
+            case .level:
+                VStack(spacing: 10) {
+                    ForEach([("beginner", "Beginner"), ("intermediate", "Intermediate"), ("advanced", "Advanced")], id: \.0) { level, label in
+                        ChoiceButton(label: label) { Task { await model.chooseLevel(level) } }
+                    }
+                }
+                .disabled(model.phase == .thinking)
+                .padding(.top, 6)
+            case .levelSet:
+                if let o = model.orientation {
+                    GoButton(said: o.next.said, language: model.language, busy: false) { model.finishOrientation() }
                 }
             }
         }
@@ -313,4 +352,78 @@ private func inLanguage(_ text: String, _ language: Language) -> AttributedStrin
     var a = AttributedString(text)
     a.languageIdentifier = language.speechLang
     return a
+}
+
+/// The orientation tour's card (design/orientation/H1–H3): her line in the
+/// language, large, with its English under it; then the note in English (app
+/// chrome, *word* italic); then her question, if there is one, under a
+/// hairline. The English, the note and the question's English show once
+/// she has finished speaking.
+private struct OrientationCard: View {
+    let model: OnboardingModel
+    let card: Onboarding.Card
+    let question: Onboarding.Card?
+
+    var body: some View {
+        let done = model.shownEnglish != nil
+        VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(inLanguage(card.line, model.language))
+                    .typeface(.display, 22, relativeTo: .title2, weight: .bold)
+                    .foregroundStyle(Tokens.Colors.ink)
+                if done {
+                    Text(card.en)
+                        .typeface(.label, 14, relativeTo: .footnote)
+                        .foregroundStyle(Tokens.Colors.muted)
+                }
+            }
+            if done, let note = card.note {
+                Text(markdown(note))
+                    .typeface(.label, 16, relativeTo: .callout)
+                    .foregroundStyle(Tokens.Colors.text)
+            }
+            if let question {
+                Rectangle().fill(Tokens.Colors.muted.opacity(0.25)).frame(height: 1)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(inLanguage(question.line, model.language))
+                        .typeface(.display, 22, relativeTo: .title2, weight: .bold)
+                        .foregroundStyle(Tokens.Colors.ink)
+                    if done {
+                        Text(question.en)
+                            .typeface(.label, 14, relativeTo: .footnote)
+                            .foregroundStyle(Tokens.Colors.muted)
+                    }
+                }
+            }
+        }
+        .fixedSize(horizontal: false, vertical: true)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, 16)
+        .padding(.horizontal, 16)
+        .background(Tokens.Colors.card, in: RoundedRectangle(cornerRadius: 18))
+        .shadow(color: .black.opacity(0.15), radius: 8, y: 4)
+    }
+
+    /// The note's *word* in italics
+    private func markdown(_ text: String) -> AttributedString {
+        (try? AttributedString(markdown: text)) ?? AttributedString(text)
+    }
+}
+
+/// A plain choice in English (the level): the answer buttons' look, one line
+private struct ChoiceButton: View {
+    let label: String
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text(label)
+                .typeface(.label, 18, relativeTo: .body, weight: .semibold)
+                .foregroundStyle(Tokens.Colors.ink)
+                .frame(maxWidth: .infinity, minHeight: 52)
+                .contentShape(RoundedRectangle(cornerRadius: 14))
+        }
+        .buttonStyle(.plain)
+        .glassEffect(.regular.tint(Color(red: 0.86, green: 0.89, blue: 0.77).opacity(0.85)).interactive(), in: RoundedRectangle(cornerRadius: 14))
+    }
 }

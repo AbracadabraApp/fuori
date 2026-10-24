@@ -34,7 +34,8 @@ for (const [pose, url] of Object.entries(c.onboarding.guide.poses)) check(!!url,
 check(c.onboarding.lines.welcome.line === onboarding.lines.welcome.line, '/v1/content: welcome line missing');
 
 // Her voice: /v1/speak picks the guide's own voice by id
-check(readFileSync('app/v1/speak/route.ts', 'utf8').includes('onboarding.guide.voice'), '/v1/speak must use onboarding.guide.voice for the greeter');
+// The greeter's voice is chosen where /v1/speak picks voices (moved to lib/voice/early-voice.ts in the speed work, acfece6)
+check(['app/v1/speak/route.ts', 'lib/voice/early-voice.ts'].some((f) => readFileSync(f, 'utf8').includes('onboarding.guide.voice')), '/v1/speak must use onboarding.guide.voice for the greeter');
 
 async function live() {
   const { writeFollowUp, writeSendOff } = await import('@/lib/onboarding');

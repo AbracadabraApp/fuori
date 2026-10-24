@@ -12,6 +12,8 @@
 
 **Mock-ups (2026-10-23):** canvas "Reply buttons", row H; pictures in `design/orientation/H1.png` to `H11.png`. Skip and "n of 11" sit in the bar; her full picture while she sets you up (1–4, 9, 11), then the app's own screens dimmed behind her card, with a small portrait of her on the card (5–8, 10); the circle and the Learn book are highlighted when she explains them.
 
+**Built, steps 1–3 (laptop, 2026-10-23), with Josh's edits:** H1's note ends "Tap the green microphone to talk. Tap it again to send me your name." and her question reads "What's your name? Tap the mic" (onboarding keeps tap to talk, tap to send); H2's buttons are **Benvenuto** (Masculine) and **Benvenuta** (Feminine); H3 unchanged, and the level picked is the learner's level, shown and changed in Settings (`POST /v1/me/level`; the Settings picker is live). **No Skip and no "n of 11" in the bar** (Josh). With the mic off, step 1 offers to go on without a name. Lines in `content/<country>/onboarding.ts` → `orientation`; the app uses the tour when the server sends them, else today's onboarding. After step 3, Avanti goes to the city list until steps 4–11 are built.
+
 **More of a mix (Josh, 2026-10-23: "Maybe more of a mix of Italian and English?"):** every card opens with one short Italian line and its English, then the explanation in English. The Italian lines are simple and come back in the game. Buttons to move on say *Avanti*. Lines on the mock-ups:
 
 | Beat | Italian line | English |

@@ -73,6 +73,11 @@ export async function finishOnboarding(learnerId: string, level: Level, record: 
   await query(`UPDATE learners SET level = $2, onboarded_at = now(), onboarding = COALESCE(onboarding, '{}'::jsonb) || $3::jsonb WHERE id = $1`, [learnerId, level, JSON.stringify(record)]);
 }
 
+/** Settings: the learner changes their level; onboarding is left as it is */
+export async function setLevel(learnerId: string, level: Level): Promise<void> {
+  await query('UPDATE learners SET level = $2 WHERE id = $1', [learnerId, level]);
+}
+
 /** Settings → Restart onboarding: she greets them again. Conversations, visits and memories stay. */
 export async function resetOnboarding(learnerId: string): Promise<void> {
   // A record, not NULL: someone who has played counts as onboarded only while they have no record

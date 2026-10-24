@@ -176,6 +176,39 @@ public struct Onboarding: Codable, Sendable, Equatable {
         public let poses: Poses
     }
 
+    /// The orientation tour (docs/orientation-script.md; Josh, 2026-10-23),
+    /// steps 1–3: her line and its English, then a note in English (app
+    /// chrome; *word* is italic). {name} is filled in by the app
+    public struct Card: Codable, Sendable, Equatable {
+        public let line: String
+        public let en: String
+        public let note: String?
+
+        public var said: Line { Line(line: line, en: en) }
+
+        public func named(_ name: String?) -> Card {
+            let filled = said.named(name)
+            return Card(line: filled.line, en: filled.en, note: note)
+        }
+
+        public init(line: String, en: String, note: String?) { self.line = line; self.en = en; self.note = note }
+    }
+
+    public struct Orientation: Codable, Sendable, Equatable {
+        public let hello: Card
+        public let askName: Card
+        public let niceToMeet: Card
+        public let asMan: Card
+        public let asWoman: Card
+        public let welcomeMan: Card
+        public let welcomeWoman: Card
+        public let askLevel: Card
+        public let levelSet: Card
+        public let next: Card
+    }
+
     public let guide: Guide
     public let lines: Lines
+    /// nil from servers before 2026-10-23: today's onboarding then
+    public let orientation: Orientation?
 }

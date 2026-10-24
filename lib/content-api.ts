@@ -54,6 +54,8 @@ export interface ContentCharacter {
 export interface ContentOnboarding {
   guide: { id: string; lift: number; poses: Record<'welcome' | 'listen' | 'talk' | 'laugh', string | null> };
   lines: typeof onboarding.lines;
+  /** The orientation tour's lines (docs/orientation-script.md), steps 1–3 */
+  orientation: typeof onboarding.orientation;
 }
 
 export interface Content {
@@ -139,6 +141,7 @@ export function buildContent(): Content {
         },
       },
       lines: onboarding.lines,
+      orientation: onboarding.orientation,
     },
     cities: out,
     characters,

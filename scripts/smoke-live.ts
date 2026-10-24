@@ -292,6 +292,17 @@ async function onboardingApi(auth: Record<string, string>, v1: (path: string, bo
     ? pass(`v1 onboarding send-off placed and stored ${sf.level}`)
     : fail('v1 onboarding send-off', `${so.status} ${JSON.stringify(sf)} me ${JSON.stringify(after)}`);
 
+  // The orientation tour's lines and the level it sets, changed in Settings (Josh, 2026-10-23)
+  const ct = (await (await fetch(`${base}/v1/content`, { headers: auth })).json()) as { onboarding?: { orientation?: { hello?: { line?: string } } } };
+  ct.onboarding?.orientation?.hello?.line ? pass(`v1 content has the orientation tour ("${ct.onboarding.orientation.hello.line}")`) : fail('v1 content orientation', JSON.stringify(ct.onboarding?.orientation ?? null).slice(0, 120));
+  const lv = await v1('/v1/onboarding/level', { level: 'intermediate' });
+  const afterLevel = (await me()) as { level?: string; onboarded?: boolean };
+  const ch = await v1('/v1/me/level', { level: 'beginner' });
+  const afterSettings = (await me()) as { level?: string };
+  lv.ok && afterLevel.level === 'intermediate' && afterLevel.onboarded && ch.status === 204 && afterSettings.level === 'beginner'
+    ? pass('v1 onboarding level picked, then changed in Settings')
+    : fail('v1 onboarding level', `${lv.status}/${ch.status} ${JSON.stringify(afterLevel)} ${JSON.stringify(afterSettings)}`);
+
   // Just the name out of a whole answer (Josh, 2026-10-22: she said back "My name is Josh")
   const nm = await v1('/v1/onboarding/name', { heard: 'My name is Teresa, nice to meet you.' });
   const nj = (await nm.json()) as { name?: string | null };

@@ -40,4 +40,29 @@ export const onboarding = {
     /** The send-off always ends with this (Claude writes what comes before it) */
     help: { line: 'Si necesitas ayuda, nada más pregunta.', en: 'If you need help, just ask.' },
   },
+  /** The orientation tour (docs/orientation-script.md; Josh, 2026-10-23),
+   *  steps 1–3 for now: name by mic, masculine or feminine, level. Each card
+   *  opens with her line in Spanish and its English, then a note in English
+   *  (app chrome; *word* is italic). {name} is the name she picked out */
+  orientation: {
+    hello: {
+      line: '¡Hola! Bienvenidos a Afuera.',
+      en: 'Hi! Welcome to Afuera.',
+      note: "I'll show you how Afuera works before you head out. It takes two minutes. First: this is how you ask someone's name. Tap the green microphone to talk. Tap it again to send me your name.",
+    },
+    askName: { line: '¿Cómo te llamas?', en: "What's your name? Tap the mic" },
+    niceToMeet: {
+      line: '¡Mucho gusto, {name}!',
+      en: 'Nice to meet you, {name}!',
+      note: 'Spanish words can be masculine or feminine. Even a welcome changes: *bienvenido* for a man, *bienvenida* for a woman. How should people greet you?',
+    },
+    /** The two buttons (Josh, 2026-10-23): the word, and Masculine / Feminine under it */
+    asMan: { line: 'Bienvenido', en: 'Masculine' },
+    asWoman: { line: 'Bienvenida', en: 'Feminine' },
+    welcomeMan: { line: 'Gracias. ¡Bienvenido, {name}!', en: 'Thanks. Welcome, {name}!', note: "Now, how much Spanish do you speak? This is how you'd ask someone:" },
+    welcomeWoman: { line: 'Gracias. ¡Bienvenida, {name}!', en: 'Thanks. Welcome, {name}!', note: "Now, how much Spanish do you speak? This is how you'd ask someone:" },
+    askLevel: { line: '¿Hablas español?', en: 'Do you speak Spanish?' },
+    levelSet: { line: '¡Perfecto!', en: 'Perfect!', note: "I'll start you there. You can change it any time in Settings." },
+    next: { line: 'Siguiente', en: 'Next' },
+  },
 };
