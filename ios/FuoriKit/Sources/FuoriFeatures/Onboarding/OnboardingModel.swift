@@ -3,6 +3,9 @@ import Observation
 import FuoriCore
 import FuoriNetworking
 import FuoriAudio
+#if canImport(UIKit)
+import UIKit
+#endif
 
 /// The greeter's onboarding (docs/onboarding-design.md → Current flow and
 /// Engineering needs). One screen with steps:
@@ -110,6 +113,19 @@ public final class OnboardingModel {
     private let minimumVoice: TimeInterval = 0.25
     /// A turn can't run longer than this, in case the second tap never comes
     private let longestAnswer: TimeInterval = 90
+
+    /// Silence ends the answer, as in the game, except under VoiceOver, where
+    /// a tap ends it (the screen reader's own voice would keep it open). A tap
+    /// still sends at any time. Before 2026-10-24 onboarding waited for a
+    /// second tap while the game ended on silence (Josh: "tap to say it, not
+    /// tap it twice")
+    public var endsOnSilence: Bool {
+        #if canImport(UIKit)
+        !UIAccessibility.isVoiceOverRunning
+        #else
+        true
+        #endif
+    }
     /// Her speed: full speed (Josh, 2026-10-23: "way too low key - she should
     /// read at full speed"; it was 0.8)
     private let speed = 1.0
@@ -381,8 +397,8 @@ public final class OnboardingModel {
         onFinish(placedLevel)
     }
 
-    /// The mic: the first tap opens it (iOS asks for permission the first time),
-    /// the second sends the answer
+    /// The mic: a tap opens it (iOS asks for permission the first time); a
+    /// silence sends the answer, or a second tap sends it sooner
     public func tapMic() async {
         switch phase {
         case .ready, .micDenied: await startRecording()
@@ -487,8 +503,10 @@ public final class OnboardingModel {
             while !Task.isCancelled {
                 try? await Task.sleep(for: .milliseconds(100))
                 guard let self, generation == self.generation, self.phase == .listening else { return }
-                self.level = self.gate.snapshot().level
-                if ProcessInfo.processInfo.systemUptime - started >= self.longestAnswer {
+                let snapshot = self.gate.snapshot()
+                self.level = snapshot.level
+                let silenceEnded = self.endsOnSilence && snapshot.hasSpoken && snapshot.silence >= EndOfTurn.usual
+                if silenceEnded || ProcessInfo.processInfo.systemUptime - started >= self.longestAnswer {
                     self.levelTask = nil
                     Task { await self.finishAnswer() }
                     return

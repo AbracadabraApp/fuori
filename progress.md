@@ -1612,3 +1612,4 @@ Design only; nothing built. Decisions are Josh's unless marked.
 - **Florence redone in place** (docs/rome-redo.md → Florence): 10 real places, new people, in Florence's own pastel style, images in public/images.
 - **Open:** Matera and Florence images aren't on R2 yet: `npm run images:upload` on Josh's Mac, then commit `content/it/images.json`. test:language fails on the laptop's `OrientationTests.swift` ("Parli italiano?").
 
+- 2026-10-24 (cloud): Onboarding's mic now ends on a silence like the game (EndOfTurn.usual; a tap still sends; VoiceOver keeps tap to end). Card 1 says "Tap the green microphone and say your name." (was "…Tap it again to finish."); "Press when done" → "Listening…". CI only; not verified on the phone.

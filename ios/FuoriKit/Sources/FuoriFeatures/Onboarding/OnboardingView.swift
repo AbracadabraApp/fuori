@@ -293,7 +293,8 @@ private struct GoButton: View {
     }
 }
 
-/// The mic: "Tap to talk", then "Press when done" while they talk, with a
+/// The mic: "Tap to talk", then "Listening" while they talk (a silence
+/// sends; a tap sends sooner; under VoiceOver a tap ends it), with a
 /// hint under it ("Answer in <language> or English"; none for the name)
 private struct MicBox: View {
     let model: OnboardingModel
@@ -322,8 +323,8 @@ private struct MicBox: View {
             }
             .buttonStyle(PressableStyle())
             .disabled(model.phase == .thinking)
-            .accessibilityLabel(talking ? "Press when done" : "Tap to talk")
-            Text(model.phase == .micDenied ? "The microphone is off. Turn it on in Settings to answer." : talking ? "Press when done" : "Tap to talk")
+            .accessibilityLabel(talking ? (model.endsOnSilence ? "Listening. Tap to send" : "Tap when done") : "Tap to talk")
+            Text(model.phase == .micDenied ? "The microphone is off. Turn it on in Settings to answer." : talking ? (model.endsOnSilence ? "Listening…" : "Tap when done") : "Tap to talk")
                 .typeface(.label, 16, relativeTo: .body, weight: .bold)
                 .foregroundStyle(Tokens.Colors.ink)
                 .multilineTextAlignment(.center)
@@ -340,14 +341,14 @@ private struct MicBox: View {
 }
 
 /// On the address step: say the name again if she got it wrong (the mic,
-/// tap to talk and tap when done, as everywhere in onboarding)
+/// tap to talk; a silence sends, as everywhere in onboarding)
 private struct SayAgainButton: View {
     let model: OnboardingModel
 
     var body: some View {
         let talking = model.phase == .listening
         Button { Task { await model.tapMic() } } label: {
-            Label(talking ? "Press when done" : "Say my name again", systemImage: talking ? "stop.fill" : "mic.fill")
+            Label(talking ? (model.endsOnSilence ? "Listening…" : "Tap when done") : "Say my name again", systemImage: talking ? "stop.fill" : "mic.fill")
                 .typeface(.label, 16, relativeTo: .body, weight: .bold)
                 .foregroundStyle(Tokens.Colors.ink)
                 .frame(maxWidth: .infinity, minHeight: 44)

@@ -48,7 +48,7 @@ export const onboarding = {
     hello: {
       line: '¡Hola! Bienvenidos a Afuera.',
       en: 'Hi! Welcome to Afuera.',
-      note: "I'll show you how Afuera works. Tap the green microphone to say your name. Tap it again to finish.",
+      note: "I'll show you how Afuera works. Tap the green microphone and say your name.",
     },
     askName: { line: '¿Cómo te llamas?', en: "What's your name? Tap the mic" },
     niceToMeet: {

@@ -3,7 +3,7 @@
  * (docs/onboarding-design.md, agreed with Josh 2026-10-15/16). Her fixed lines
  * are the agreed text, each with its English; the follow-up and the speaker's
  * send-off are written by Claude (content/it/prompts/onboarding.md). App words
- * ("Answer in Italian or English", "Press when done") are English chrome in
+ * ("Answer in Italian or English", "Listening…") are English chrome in
  * the app, with the language name from language.ts.
  */
 export const onboarding = {
@@ -55,7 +55,7 @@ export const onboarding = {
     hello: {
       line: 'Ciao! Benvenuti a Fuori.',
       en: 'Hi! Welcome to Fuori.',
-      note: "I'll show you how Fuori works. Tap the green microphone to say your name. Tap it again to finish.",
+      note: "I'll show you how Fuori works. Tap the green microphone and say your name.",
     },
     askName: { line: 'Come ti chiami?', en: "What's your name? Tap the mic" },
     niceToMeet: {
