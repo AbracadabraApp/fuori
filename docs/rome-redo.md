@@ -84,5 +84,5 @@ Josh: "lets give florence a rome style update", "just go, no second". Florence w
 | 9 | Farmacia Molteni, Via Calzaiuoli | Mark Santos, 31, pharmacist, born in Florence to Filipino parents |
 | 10 | Stazione Santa Maria Novella | Massimo Cecchi, 57, ticket clerk |
 
-- Scenes, roles, personalities and portraits from one dated instruction (Sonnet), with the street-view and close-in lessons from Rome built in; fine-line place style (`placeStyles.firenze`); images with grok-imagine-image-2.0 on the laptop. No language school (as Rome). The city card is unchanged.
+- Scenes, roles, personalities and portraits from one dated instruction (Sonnet), with the street-view and close-in lessons from Rome built in; Florence's own soft pastel place style (Josh: "I didn't ask for a new style"; a first round in fine-line was redrawn); images with grok-imagine-image-2.0 on the laptop. No language school (as Rome). The city card is unchanged.
 - The image script's TypeScript reader cut a portrait prompt at an escaped apostrophe ("dog\'s"); reworded. Rome's "last night\'s match" prompt may have been cut the same way.

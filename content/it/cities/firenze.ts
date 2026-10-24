@@ -308,7 +308,7 @@ export const firenze: CityPantry = {
       neighbourhood: 'Sant\'Ambrogio',
       real: true,
       characterId: 'tommaso-bini',
-      imagePrompt: 'The street front of a speciality coffee bar on the ground floor of a tall stone apartment building in a continuous row, with large windows and an open door, the first floor of the building rising above. A young barista in an apron stands at the open door with a cup, while a cyclist and a woman with a shopping bag pass on the pavement.',
+      imagePrompt: 'Soft pastel sketch on white paper, textured strokes, warm ochre, terracotta, cream and sage tones, inviting atmosphere. The street front of a speciality coffee bar on the ground floor of a tall stone apartment building in a continuous row, with large windows and an open door, the first floor of the building rising above. A young barista in an apron stands at the open door with a cup, while a cyclist and a woman with a shopping bag pass on the pavement. The sign reads "Ditta Artigianale" and that is the only lettering in the picture: no other words, menus, prices or posters. Contemporary clothes and objects.',
     },
     {
       id: 'lampredotto-pollini',
@@ -317,7 +317,7 @@ export const firenze: CityPantry = {
       neighbourhood: 'Sant\'Ambrogio',
       real: true,
       characterId: 'andrea-becattini',
-      imagePrompt: 'A small lampredotto street stall, a van-like cart with a steaming counter and an awning, stands in a Sant\'Ambrogio street beside tall stone apartment buildings with their first floors above. A taxi driver stands at the counter eating a sandwich from paper, while a few other customers wait nearby on the cobbles.',
+      imagePrompt: 'Soft pastel sketch on white paper, textured strokes, warm ochre, terracotta, cream and sage tones, inviting atmosphere. A small lampredotto street stall, a van-like cart with a steaming counter and an awning, stands in a Sant\'Ambrogio street beside tall stone apartment buildings with their first floors above. A taxi driver stands at the counter eating a sandwich from paper, while a few other customers wait nearby on the cobbles. The sign reads "Lampredotto da Pollini" and that is the only lettering in the picture: no other words, menus, prices or posters. Contemporary clothes and objects.',
     },
     {
       id: 'trattoria-mario-nuova',
@@ -326,7 +326,7 @@ export const firenze: CityPantry = {
       neighbourhood: 'San Lorenzo',
       real: true,
       characterId: 'ardit-hoxha',
-      imagePrompt: 'The street front of a lunch-only trattoria on the ground floor of a tall stone apartment building in a continuous row, with a plain door and windows showing long shared tables packed with diners, the first floor of the building above. A waiter stands in the doorway with a pad while people queue on the pavement for a seat.',
+      imagePrompt: 'Soft pastel sketch on white paper, textured strokes, warm ochre, terracotta, cream and sage tones, inviting atmosphere. The street front of a lunch-only trattoria on the ground floor of a tall stone apartment building in a continuous row, with a plain door and windows showing long shared tables packed with diners, the first floor of the building above. A waiter stands in the doorway with a pad while people queue on the pavement for a seat. The sign reads "Trattoria Mario" and that is the only lettering in the picture: no other words, menus, prices or posters. Contemporary clothes and objects.',
     },
     {
       id: 'santo-spirito-scalini',
@@ -335,7 +335,7 @@ export const firenze: CityPantry = {
       neighbourhood: 'Oltrarno',
       real: true,
       characterId: 'chiara-russo',
-      imagePrompt: 'The wide stone steps of the church of Santo Spirito in the Oltrarno, with the plain pale facade behind and the square\'s plane trees and market stalls to the side. A young woman sits on the steps with a sketchbook while pigeons and a few people with coffee cups sit nearby in the October sun.',
+      imagePrompt: 'Soft pastel sketch on white paper, textured strokes, warm ochre, terracotta, cream and sage tones, inviting atmosphere. The wide stone steps of the church of Santo Spirito in the Oltrarno, with the plain pale facade behind and the square\'s plane trees and market stalls to the side. A young woman sits on the steps with a sketchbook while pigeons and a few people with coffee cups sit nearby in the October sun. The sign reads "Santo Spirito" and that is the only lettering in the picture: no other words, menus, prices or posters. Contemporary clothes and objects.',
     },
     {
       id: 'santa-croce-piazza',
@@ -344,7 +344,7 @@ export const firenze: CityPantry = {
       neighbourhood: 'Santa Croce',
       real: true,
       characterId: 'lorenzo-marchi',
-      imagePrompt: 'The open square in front of the white-and-green marble facade of Santa Croce, with the statue of Dante on its plinth and tall stone buildings around the edge. An old man walks slowly across the paving with a small dog on a lead while tourists and a few locals cross behind him.',
+      imagePrompt: 'Soft pastel sketch on white paper, textured strokes, warm ochre, terracotta, cream and sage tones, inviting atmosphere. The open square in front of the white-and-green marble facade of Santa Croce, with the statue of Dante on its plinth and tall stone buildings around the edge. An old man walks slowly across the paving with a small dog on a lead while tourists and a few locals cross behind him. The sign reads "Piazza Santa Croce" and that is the only lettering in the picture: no other words, menus, prices or posters. Contemporary clothes and objects.',
     },
     {
       id: 'parco-cascine',
@@ -353,7 +353,7 @@ export const firenze: CityPantry = {
       neighbourhood: 'Cascine',
       real: true,
       characterId: 'rosa-quispe',
-      imagePrompt: 'A broad path under tall trees in the Cascine park in early autumn, with fallen yellow leaves on the ground and a lawn beside it. A woman sits on a bench with a snack bag while her small son plays with a ball on the grass nearby, and a jogger and a cyclist pass in the distance.',
+      imagePrompt: 'Soft pastel sketch on white paper, textured strokes, warm ochre, terracotta, cream and sage tones, inviting atmosphere. A broad path under tall trees in the Cascine park in early autumn, with fallen yellow leaves on the ground and a lawn beside it. A woman sits on a bench with a snack bag while her small son plays with a ball on the grass nearby, and a jogger and a cyclist pass in the distance. The sign reads "Parco delle Cascine" and that is the only lettering in the picture: no other words, menus, prices or posters. Contemporary clothes and objects.',
     },
     {
       id: 'tram-alamanni',
@@ -362,7 +362,7 @@ export const firenze: CityPantry = {
       neighbourhood: 'Santa Maria Novella',
       real: true,
       characterId: 'ioana-popescu',
-      imagePrompt: 'The T1 tram stop Alamanni beside Santa Maria Novella station, with a covered platform, a tram arriving on the tracks and the station buildings behind. A nurse waits on the platform with a bag over her shoulder among a few commuters and travellers with suitcases.',
+      imagePrompt: 'Soft pastel sketch on white paper, textured strokes, warm ochre, terracotta, cream and sage tones, inviting atmosphere. The T1 tram stop Alamanni beside Santa Maria Novella station, with a covered platform, a tram arriving on the tracks and the station buildings behind. A nurse waits on the platform with a bag over her shoulder among a few commuters and travellers with suitcases. The sign reads "Fermata del tram, Alamanni" and that is the only lettering in the picture: no other words, menus, prices or posters. Contemporary clothes and objects.',
     },
     {
       id: 'tabaccheria-nesi',
@@ -371,7 +371,7 @@ export const firenze: CityPantry = {
       neighbourhood: 'Campo di Marte',
       real: false,
       characterId: 'graziella-nesi',
-      imagePrompt: 'The street front of a tabaccheria on the ground floor of a tall stone apartment building in a continuous row in Campo di Marte, with a glass door and a window of newspapers, lottery tickets and cards, the first floor of the building above. A woman stands at the open door while a man in a jacket walks in and a woman with a pushchair passes.',
+      imagePrompt: 'Soft pastel sketch on white paper, textured strokes, warm ochre, terracotta, cream and sage tones, inviting atmosphere. The street front of a tabaccheria on the ground floor of a tall stone apartment building in a continuous row in Campo di Marte, with a glass door and a window of newspapers, lottery tickets and cards, the first floor of the building above. A woman stands at the open door while a man in a jacket walks in and a woman with a pushchair passes. The sign reads "Tabaccheria Nesi" and that is the only lettering in the picture: no other words, menus, prices or posters. Contemporary clothes and objects.',
     },
     {
       id: 'farmacia-molteni-nuova',
@@ -380,7 +380,7 @@ export const firenze: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'mark-santos',
-      imagePrompt: 'The street front of an all-night pharmacy on Via Calzaiuoli in the centre, on the ground floor of a tall stone apartment building in a continuous row, with a lit green cross, wide windows and the first floor above. A pharmacist in a white coat stands at the door while shoppers and tourists pass along the pedestrian street.',
+      imagePrompt: 'Soft pastel sketch on white paper, textured strokes, warm ochre, terracotta, cream and sage tones, inviting atmosphere. The street front of an all-night pharmacy on Via Calzaiuoli in the centre, on the ground floor of a tall stone apartment building in a continuous row, with a lit green cross, wide windows and the first floor above. A pharmacist in a white coat stands at the door while shoppers and tourists pass along the pedestrian street. The sign reads "Farmacia Molteni" and that is the only lettering in the picture: no other words, menus, prices or posters. Contemporary clothes and objects.',
     },
     {
       id: 'stazione-smn-nuova',
@@ -389,7 +389,7 @@ export const firenze: CityPantry = {
       neighbourhood: 'Santa Maria Novella',
       real: true,
       characterId: 'massimo-cecchi',
-      imagePrompt: 'The ticket office inside Santa Maria Novella station, with a long counter behind glass, ticket machines to one side and a high ceiling above. A clerk sits at the window speaking to a traveller with a suitcase while a short queue waits behind, under the departure boards.',
+      imagePrompt: 'Soft pastel sketch on white paper, textured strokes, warm ochre, terracotta, cream and sage tones, inviting atmosphere. The ticket office inside Santa Maria Novella station, with a long counter behind glass, ticket machines to one side and a high ceiling above. A clerk sits at the window speaking to a traveller with a suitcase while a short queue waits behind, under the departure boards. The sign reads "Stazione Santa Maria Novella" and that is the only lettering in the picture: no other words, menus, prices or posters. Contemporary clothes and objects.',
     },
   ],
   characters: [
