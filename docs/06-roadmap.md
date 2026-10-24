@@ -107,7 +107,7 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 - [ ] **Claude** One tap per turn: tap once; English ends on silence, the mic reopens for the reading (waits for speech to start, closed while hear-it plays), the reading ends on silence and is sent; tap again next turn
 - [x] **Claude** Beginner opener hint: built 10537a1 (2026-10-23), on Josh's phone. Was:: her first line in each conversation ends with a small mic and "Answer in <language> or English" (G1); nothing above the mic
 - [ ] **Tabled (Josh, 2026-10-23: English gets help first; correcting the learner's language waits)** Claude (laptop): test Claude's take for the learner's spoken language (Italian or Spanish) on logged learner turns (what they meant, clean, at their level; none when unclear); Josh reads it beside Whisper's text before anything's built
-- [ ] **Josh** Play the rough version with a family beginner; then decide whether the reply panel goes
+- [ ] **Josh** Play the rough version with a family beginner; then decide whether the reply panel goes (Josh, 2026-10-23, on his phone: "reply panel good")
 Onboarding, then reply buttons for the first turns of each conversation (stage A, built 2026-10-21, server-decided, no switch), then the mic. Stages B and C proposed; the rest not settled.
 - [x] **Claude** Reply buttons from a separate call (`lib/replies.ts`, test-only): sensible 97–100%, ready before the character finishes speaking
 - [x] **Josh** Played Afuera with the level trial on: Chucho the shoeshiner, 23 turns (2026-10-19, prompt `2026-10-18b+Beginner: still you, sometimes ask`)
