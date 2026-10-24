@@ -170,9 +170,30 @@ public final class OnboardingModel {
     private func sayCard(_ card: Onboarding.Card, question: Onboarding.Card?) async {
         self.card = card
         self.question = question
-        let spoken = [card.line, question?.line].compactMap { $0 }.joined(separator: " ")
-        let english = [card.en, question?.en].compactMap { $0 }.joined(separator: " ")
-        await say(Onboarding.Line(line: spoken, en: english), englishAllowed: true)
+        await say(Onboarding.Line(line: Self.spoken(card, question: question, extra: extraSpoken), en: ""), englishAllowed: true)
+    }
+
+    /// Everything on the card, read aloud in her voice (Josh, 2026-10-23: "all
+    /// dialogue read - in English and Italian - not buttons"): her line, its
+    /// English, the note, then the question and its English, then anything
+    /// else on the card (card 5's example, card 6's Learn book)
+    nonisolated static func spoken(_ card: Onboarding.Card, question: Onboarding.Card?, extra: [String] = []) -> String {
+        let parts = [card.line, card.en, card.note, question?.line, question?.en].compactMap { $0 } + extra
+        return parts
+            .map { $0.replacingOccurrences(of: "*", with: "").trimmingCharacters(in: .whitespaces) }
+            .filter { !$0.isEmpty }
+            .map { ".!?:".contains($0.last ?? ".") ? $0 : $0 + "." }
+            .joined(separator: " ")
+    }
+
+    /// What else card 5 and card 6 show, to be read with them
+    private var extraSpoken: [String] {
+        guard let o = orientation else { return [] }
+        switch step {
+        case .sayIt: return [o.sayItExample?.en, o.sayItExample?.line].compactMap { $0 }
+        case .help: return [o.learn].compactMap { $0 }
+        default: return []
+        }
     }
 
     /// Step 1 with the mic off: on without a name

@@ -364,15 +364,16 @@ private func inLanguage(_ text: String, _ language: Language) -> AttributedStrin
 /// The orientation tour's card (design/orientation/H1–H3): her line in the
 /// language, large, with its English under it; then the note in English (app
 /// chrome, *word* italic); then her question, if there is one, under a
-/// hairline. The English, the note and the question's English show once
-/// she has finished speaking.
+/// hairline. All of it shows at once: she reads it all aloud, English too
+/// (Josh, 2026-10-23).
 private struct OrientationCard: View {
     let model: OnboardingModel
     let card: Onboarding.Card
     let question: Onboarding.Card?
 
     var body: some View {
-        let done = model.shownEnglish != nil
+        // She reads it all aloud, English too, so it all shows from the start
+        let done = true
         VStack(alignment: .leading, spacing: 8) {
             VStack(alignment: .leading, spacing: 2) {
                 Text(inLanguage(card.line, model.language))
