@@ -114,8 +114,10 @@ public final class ConversationModel {
     /// the first word (20 s before reading a line from say it in English,
     /// which takes a moment), then 2.5 s of silence ends the turn (Josh: 2 s agreed, then 2.5 s, 2026-10-23).
     /// No "more time to answer" setting (Josh, 2026-10-16: confusing).
-    /// The turn opens on a tap unless Hands-free is on; always under VoiceOver
-    public var tapMode: Bool { isVoiceOverRunning || !UserDefaults.standard.bool(forKey: SettingsKey.handsFree) }
+    /// The turn opens on a tap, always: the Hands-free setting is hidden
+    /// (Josh, 2026-10-23), and a stored "on" is ignored so nobody is left
+    /// with a mic that opens by itself and no switch to turn it off
+    public var tapMode: Bool { true }
     /// Silence ends the turn, except under VoiceOver, where a tap ends it (the
     /// screen reader's own voice would keep it open)
     public var endsOnSilence: Bool { !isVoiceOverRunning }
@@ -123,7 +125,7 @@ public final class ConversationModel {
     private let longestTurn: TimeInterval = 90
     private var firstWordWait: TimeInterval = 10
     private let readingWait: TimeInterval = 20
-    private let endOfTurnWait: TimeInterval = 2.5
+    // The silence that ends a turn: EndOfTurn (2.5 s, Josh; sooner after a finished sentence)
     /// Less than this much voice isn't a turn (a cough, a click)
     private let minimumVoice: TimeInterval = 0.25
 
@@ -433,6 +435,7 @@ public final class ConversationModel {
 
     private func startRecording(firstWordWait wait: TimeInterval = 10) async {
         firstWordWait = wait
+        resetEarly()
         // A second tap while the mic is still opening would start a second
         // recording and a second watcher; the orphaned watcher later finished
         // the turn again with the first file already deleted (TestFlight
@@ -505,8 +508,49 @@ public final class ConversationModel {
             return false
         }
         phase = .hearing
-        ring = min(1, snapshot.silence / endOfTurnWait)
+        if snapshot.silence < earlyAfter {
+            // Talking again: what was sent early is out of date
+            if early != nil { resetEarly() }
+        } else if early == nil {
+            startEarly()
+        }
+        ring = min(1, snapshot.silence / silenceTarget)
         return ring >= 1
+    }
+
+    // MARK: - Transcribing during the silence (2026-10-23, speed)
+
+    /// After this much silence the turn so far is sent to speech to text, so
+    /// its words are ready when the turn ends and their punctuation sets how
+    /// long a silence ends it (EndOfTurn: sooner after a finished sentence,
+    /// longer when it trails off)
+    private let earlyAfter: TimeInterval = 0.6
+    private var early: Task<APIClient.Heard?, Never>?
+    private var earlyHeard: APIClient.Heard?
+    private var silenceTarget: TimeInterval = EndOfTurn.usual
+
+    private func resetEarly() {
+        early?.cancel()
+        early = nil
+        earlyHeard = nil
+        silenceTarget = EndOfTurn.usual
+    }
+
+    private func startEarly() {
+        let wav = recorder.snapshotWAV()
+        let mode: APIClient.TranscribeMode = sayIt != nil ? .target : .turn
+        // A failure here costs nothing: the turn is transcribed as usual when
+        // it ends, and that call reports its own errors
+        let task = Task { [api] () -> APIClient.Heard? in
+            try? await api.transcribeHeard(audio: wav, filename: "speech.wav", mimeType: "audio/wav", mode: mode)
+        }
+        early = task
+        Task { [weak self] in
+            let heard = await task.value
+            guard let self, self.early == task, let heard else { return }
+            self.earlyHeard = heard
+            self.silenceTarget = EndOfTurn.silence(after: heard.text)
+        }
     }
 
     /// A tap on the turn control: while the character speaks, stop them and
@@ -571,14 +615,25 @@ public final class ConversationModel {
         if showsAnswers { UserDefaults.standard.set(true, forKey: Self.answersIntroduced) }
         var step = "transcribe"
         do {
-            let audio = try Data(contentsOf: url)
-            try? FileManager.default.removeItem(at: url)
             var started = Self.now()
             // Reading a "Say this" line: it's in the language and goes to her,
             // with no language check (it looped back into say it whenever
             // Whisper called the reading English: Josh, Mohamed, 2026-10-23)
             let reading = sayIt != nil
-            let heard = try await api.transcribeHeard(audio: audio, mode: reading ? .target : .turn)
+            // Transcribed during the silence, with nothing said since: use it
+            var fromSilence = earlyHeard
+            if fromSilence == nil, let early { fromSilence = await early.value }
+            let heard: APIClient.Heard
+            if let fromSilence {
+                try? FileManager.default.removeItem(at: url)
+                heard = fromSilence
+                debug.timings["end wait"] = Int(silenceTarget * 1000)
+            } else {
+                let audio = try Data(contentsOf: url)
+                try? FileManager.default.removeItem(at: url)
+                heard = try await api.transcribeHeard(audio: audio, mode: reading ? .target : .turn)
+            }
+            resetEarly()
             let said = heard.text
             time("transcribe", since: started)
             debug.heard = "(\(heard.language ?? "?")) \(said)"

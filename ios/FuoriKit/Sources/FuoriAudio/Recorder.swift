@@ -17,7 +17,37 @@ public final class Recorder: @unchecked Sendable {
     /// "0 buffers failed to write" errors on Josh's phone)
     public private(set) var lastStop: (reason: String, at: TimeInterval)?
 
+    /// The turn so far as 16 kHz 16-bit mono, kept beside the file so a copy
+    /// can be sent while the learner is still in their turn: transcribing
+    /// starts during the silence that may end it (2026-10-23, speed)
+    private static let pcmFormat = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: 16_000, channels: 1, interleaved: true)!
+    private var converter: AVAudioConverter?
+    private var pcm = Data()
+    private let pcmLock = NSLock()
+
     public init() {}
+
+    /// Seconds recorded so far in this turn
+    public var recordedSeconds: Double {
+        pcmLock.withLock { Double(pcm.count) / 2 / Self.pcmFormat.sampleRate }
+    }
+
+    /// The turn so far as a WAV file, for transcribing before the turn ends
+    public func snapshotWAV() -> Data {
+        let samples = pcmLock.withLock { pcm }
+        return Self.wav(samples, sampleRate: Int(Self.pcmFormat.sampleRate))
+    }
+
+    /// A 16-bit mono PCM WAV file
+    static func wav(_ samples: Data, sampleRate: Int) -> Data {
+        var d = Data()
+        func u32(_ v: Int) { var x = UInt32(v).littleEndian; d.append(Data(bytes: &x, count: 4)) }
+        func u16(_ v: Int) { var x = UInt16(v).littleEndian; d.append(Data(bytes: &x, count: 2)) }
+        d.append(Data("RIFF".utf8)); u32(36 + samples.count); d.append(Data("WAVE".utf8))
+        d.append(Data("fmt ".utf8)); u32(16); u16(1); u16(1); u32(sampleRate); u32(sampleRate * 2); u16(2); u16(16)
+        d.append(Data("data".utf8)); u32(samples.count); d.append(samples)
+        return d
+    }
 
     /// Starts recording. `onLevel` is called on the audio thread with each
     /// buffer's level (dBFS) and the time in seconds.
@@ -38,6 +68,8 @@ public final class Recorder: @unchecked Sendable {
         file = try AVAudioFile(forWriting: url, settings: settings, commonFormat: .pcmFormatFloat32, interleaved: false)
         self.url = url
         writeFailures = 0
+        converter = AVAudioConverter(from: mono, to: Self.pcmFormat)
+        pcmLock.withLock { pcm = Data() }
 
         input.removeTap(onBus: 0)
         input.installTap(onBus: 0, bufferSize: 1024, format: format) { [weak self] buffer, time in
@@ -50,11 +82,30 @@ public final class Recorder: @unchecked Sendable {
                 copy.frameLength = buffer.frameLength
                 copy.floatChannelData![0].update(from: channel, count: Int(buffer.frameLength))
                 do { try self.file?.write(from: copy) } catch { self.writeFailures += 1 }
+                self.keep(copy)
             }
         }
         engine.prepare()
         try engine.start()
         isRecording = true
+    }
+
+    /// Adds a buffer to the 16 kHz copy (audio thread)
+    private func keep(_ buffer: AVAudioPCMBuffer) {
+        guard let converter else { return }
+        let capacity = AVAudioFrameCount(Double(buffer.frameLength) * Self.pcmFormat.sampleRate / buffer.format.sampleRate) + 32
+        guard let out = AVAudioPCMBuffer(pcmFormat: Self.pcmFormat, frameCapacity: capacity) else { return }
+        var given = false
+        var error: NSError?
+        converter.convert(to: out, error: &error) { _, status in
+            if given { status.pointee = .noDataNow; return nil }
+            given = true
+            status.pointee = .haveData
+            return buffer
+        }
+        guard error == nil, out.frameLength > 0, let samples = out.int16ChannelData?[0] else { return }
+        let bytes = Data(bytes: samples, count: Int(out.frameLength) * 2)
+        pcmLock.withLock { pcm.append(bytes) }
     }
 
     /// Stops recording and returns the file (nil if nothing was recording).
