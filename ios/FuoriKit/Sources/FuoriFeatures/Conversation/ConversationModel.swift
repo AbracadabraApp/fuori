@@ -264,7 +264,7 @@ public final class ConversationModel {
             // Not said (its voice failed) or not this line: the whole line, as usual
             head.task.cancel()
             voice.stop()
-            guard generation == self.generation, phase == .speaking else { return }
+            guard generation == self.generation, [.speaking, .thinking, .starting].contains(phase) else { return }
         }
         line = reply.line
         english = reply.en
@@ -313,6 +313,9 @@ public final class ConversationModel {
     /// as it's written, and present() says the rest
     private func requestTurn(learnerSaid: String?) async throws -> APIClient.TurnReply {
         head = nil
+        // A new turn: an interruption during an earlier one (whose reply then
+        // failed) mustn't silence this reply
+        interrupted = false
         awaitingReply = true
         defer { awaitingReply = false }
         let generation = self.generation
@@ -325,14 +328,6 @@ public final class ConversationModel {
         // Only while still waiting for the reply: once it's here, present() says the whole line
         guard awaitingReply, head == nil, generation == self.generation, phase == .thinking || phase == .starting else { return }
         stoppedByTap = false
-        // Her reply has begun: the last "Say this" is done with
-        sayIt = nil
-        line = first
-        english = nil
-        shown = 0
-        replies = nil
-        chosen = nil
-        phase = .speaking
         let said = first.trimmingCharacters(in: .whitespacesAndNewlines)
         let task = Task { [weak self] () -> Bool in
             guard let self else { return false }
@@ -340,7 +335,19 @@ public final class ConversationModel {
                 let started = Self.now()
                 let audio = try await self.api.speak(text: said, characterId: self.character.id, speed: self.speed)
                 self.time("voice first", since: started)
-                guard generation == self.generation, self.phase == .speaking, !self.stoppedByTap else { return false }
+                // Still sending, not interrupted meanwhile: only now does she
+                // speak and her bubble appear. Switching on when the line was
+                // written left an empty bubble and her wave for the second the
+                // voice took (Josh's screenshot, Andrea, 2026-10-23)
+                guard generation == self.generation, !self.interrupted, self.phase == .thinking || self.phase == .starting else { return false }
+                // Her reply has begun: the last "Say this" is done with
+                self.sayIt = nil
+                self.line = first
+                self.english = nil
+                self.shown = 0
+                self.replies = nil
+                self.chosen = nil
+                self.phase = .speaking
                 self.startReveal(first)
                 try await self.voice.play(audio)
                 return generation == self.generation
@@ -358,10 +365,6 @@ public final class ConversationModel {
     /// rest once it finishes. False when the first sentence wasn't said, so
     /// present() says the whole line.
     private func sayRest(of reply: APIClient.TurnReply, after head: Head, generation: Int) async -> Bool {
-        line = reply.line
-        english = reply.en
-        replies = nil
-        chosen = nil
         writeReplies()
         let after = reply.line.dropFirst(head.text.count)
         let offset = head.text.count + after.prefix(while: \.isWhitespace).count
@@ -373,13 +376,20 @@ public final class ConversationModel {
         }
         let said = await head.task.value
         guard generation == self.generation else { restAudio.cancel(); return true }
+        // The first sentence was never said (its voice failed, or it came too
+        // late): present() says the whole line
+        guard said || stoppedByTap else { restAudio.cancel(); return false }
+        // The whole line now; what's been said of it stays shown
+        line = reply.line
+        english = reply.en
+        replies = nil
+        chosen = nil
         if stoppedByTap || phase != .speaking {
             restAudio.cancel()
             finishReveal()
             if phase == .speaking { await openTurn() }
             return true
         }
-        guard said else { restAudio.cancel(); return false }
         switch await restAudio.value {
         case .success(let audio):
             guard generation == self.generation, phase == .speaking else { return true }
