@@ -10,9 +10,9 @@
 - **About two to three minutes. Skippable at every step, replayable from Settings → How Fuori works.** Explanation beats move on with **Next**; that's navigation, not an answer.
 - **The game's rules don't apply here** (Josh, 2026-10-23). The immersion rules (Italian only, English only when asked, no AI notes) are for conversations in the world. This is set-up: she speaks English, talks about the app and names its parts.
 
-**Mock-ups (2026-10-23):** canvas "Reply buttons", row H; pictures in `design/orientation/H1.png` to `H9.png`. No Skip or step count in the bar (Josh); her full picture while she sets you up (1–4, 7–9), then the app's own screens dimmed behind her card, with a small portrait of her on the card (5, 6).
+**Mock-ups (2026-10-23):** canvas "Reply buttons", row H; pictures in `design/orientation/H1.png` to `H7.png`. No Skip or step count in the bar (Josh); her full picture while she sets you up (all of them).
 
-**Built, steps 1–3 (laptop, 2026-10-23), with Josh's edits:** H1's note ends "Tap the green microphone to talk. Tap it again to send me your name." and her question reads "What's your name? Tap the mic" (onboarding keeps tap to talk, tap to send); H2's buttons are **Benvenuto** (Masculine) and **Benvenuta** (Feminine); H3 unchanged, and the level picked is the learner's level, shown and changed in Settings (`POST /v1/me/level`; the Settings picker is live). **No Skip and no step count in the bar** (Josh). With the mic off, step 1 offers to go on without a name. Lines in `content/<country>/onboarding.ts` → `orientation`; the app uses the tour when the server sends them, else today's onboarding. After step 3, Avanti goes to the city list until steps 4–9 are built (the tour is now 9 steps: Josh dropped the circle and talking-with-characters beats and folded Learn into one help card, 2026-10-23).
+**Built, steps 1–3 (laptop, 2026-10-23), with Josh's edits:** H1's note ends "Tap the green microphone to talk. Tap it again to send me your name." and her question reads "What's your name? Tap the mic" (onboarding keeps tap to talk, tap to send); H2's buttons are **Benvenuto** (Masculine) and **Benvenuta** (Feminine); H3 unchanged, and the level picked is the learner's level, shown and changed in Settings (`POST /v1/me/level`; the Settings picker is live). **No Skip and no step count in the bar** (Josh). With the mic off, step 1 offers to go on without a name. Lines in `content/<country>/onboarding.ts` → `orientation`; the app uses the tour when the server sends them, else today's onboarding. After step 3, Avanti goes to the city list until steps 4–7 are built (the tour is now 7 cards: Josh dropped the circle, talking-with-characters, cities and places beats, "you can cut 5 & 6 and not lose anything", and folded Learn into one help card, 2026-10-23).
 
 **More of a mix (Josh, 2026-10-23: "Maybe more of a mix of Italian and English?"):** every card opens with one short Italian line and its English, then the explanation in English. The Italian lines are simple and come back in the game. Buttons to move on say *Avanti*. Lines on the mock-ups:
 
@@ -22,11 +22,9 @@
 | 2 | *Piacere, {name}!* | Nice to meet you! |
 | 3 | *Grazie. Benvenuto/a, {name}!* … *Parli italiano?* | Thanks. Welcome! … Do you speak Italian? |
 | 4 | *Perfetto! Fuori è un viaggio in Italia.* | Perfect! Fuori is a trip to Italy. |
-| 5 | *Si comincia da Roma.* | You start in Rome. |
-| 6 | *Scegli un posto.* | Pick a place. |
-| 7 | *Non sai come si dice?* | Don't know how to say it? |
-| 8 | *Se non capisci, chiedi.* | If you don't understand, ask. |
-| 9 | *Ecco tutto, {name}. Andiamo!* | That's everything. Let's go! |
+| 5 | *Non sai come si dice?* | Don't know how to say it? |
+| 6 | *Se non capisci, chiedi.* | If you don't understand, ask. |
+| 7 | *Ecco tutto, {name}. Andiamo!* | That's everything. Let's go! |
 
 Beat 1 uses *Benvenuti* (plural) because she doesn't know yet how to address the learner.
 
@@ -62,31 +60,21 @@ Each beat: what's on screen · what she says · what the learner does · what it
 
 **She:** "Fuori is a trip to Italy. You stay a while, go out and talk to people. There are no lessons and no scores: you learn by talking, and people help you the way they'd help any newcomer."
 
-## 5 · Cities
-
-**Screen:** the city list behind her.
-**She:** "You start in Rome. Other cities open up: Matera, Bergamo and more. Each one has its own places and people. To travel, go to the station."
-
-## 6 · Places
-
-**Screen:** a city's places.
-**She:** "In each city, pick a place: a bar, a trattoria, a piazza, a pharmacy. Someone is always there. They remember you, so go back and they'll know you."
-
-## 7 · Say it in English
+## 5 · Say it in English
 
 Kept (Josh, 2026-10-23: "H9 was good"), shown as an example, not tried ("better without 'try it', that gets confusing"). Her picture, the G2 bubbles.
 **She:** *Non sai come si dice?* "Don't know how to say it? Say it in English, and it comes back in Italian for you to read out loud. Like this:"
 **Shown:** the grey bubble *Come si dice:* I'm here for a few months to learn Italian, and the "Say this:" bubble *Sono qui per qualche mese per imparare l'italiano.*
 **Learner:** **Avanti**.
 
-## 8 · Getting help, and Learn
+## 6 · Getting help, and Learn
 
 Josh, 2026-10-23: no beats explaining the buttons (the circle, talking with characters); one card on getting help from characters, with Learn, over her picture. No phrases to remember ("telling them to recall Può ripetere is useless").
 **She:** *Se non capisci, chiedi.* "If you don't understand, ask. Everyone here will help you. Just ask, in English: they'll explain, then go back to Italian."
 **Then:** the Learn book (Josh's words): "After a conversation, this book appears. It reviews what you said in the conversation and helps you keep track of new vocabulary."
 **Learner:** **Avanti**.
 
-## 9 · Off you go
+## 7 · Off you go
 
 **She:** *Ecco tutto, {name}. Andiamo!* "That's everything. To start, you'll get help with every answer, and you can ask for less later."
 **Learner:** **Andiamo!** → the city list.
