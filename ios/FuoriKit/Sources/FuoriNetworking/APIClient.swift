@@ -399,6 +399,16 @@ public actor APIClient {
 
     private struct Device: Codable { let learnerId: String; let token: String }
 
+    /// POST /v1/me/start-over: Restart Fuori. The server makes a new player
+    /// for this device; its token replaces the old one only once it's here,
+    /// so a failure leaves the learner as they were
+    public func startOver() async throws -> String {
+        let device: Device = try await send(post("v1/me/start-over", json: [String: String]()), signedIn: true)
+        tokens.save(device.token)
+        token = device.token
+        return device.learnerId
+    }
+
     /// Sign in once per device: POST /v1/auth/device
     private func ensureToken() async throws -> String {
         if let token { return token }

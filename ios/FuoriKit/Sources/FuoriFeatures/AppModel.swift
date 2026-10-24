@@ -157,6 +157,32 @@ public final class AppModel {
         phase = .ready
     }
 
+    /// Settings → Restart Fuori (Josh, 2026-10-23): this country starts over
+    /// as a new player: the tour again, nobody remembers them, scaffolding
+    /// from the start. The old player stays on the server (the server notes
+    /// which one it replaced). Other countries aren't touched.
+    public func restartGame() async {
+        guard let api else { return }
+        do {
+            _ = try await api.startOver()
+        } catch {
+            let code = report(error, step: "restart")
+            let message = (error as? APIError)?.message ?? error.localizedDescription
+            phase = .failed(ErrorCode.message(message, code: code))
+            return
+        }
+        // The panel's first-time line and the level's settings come back with the new player
+        UserDefaults.standard.removeObject(forKey: "scaffold.answersIntroduced")
+        onboarding?.stop()
+        onboarding = nil
+        content = nil
+        visits = [:]
+        learnerId = nil
+        level = nil
+        addressedAs = nil
+        await load()
+    }
+
     /// Back to the first launch, for testing onboarding (hidden: Settings →
     /// touch and hold Version). Clears this country's level on the server so
     /// the greeter welcomes them again, forgets the chosen country and shows

@@ -156,6 +156,7 @@ async function main() {
 // the voice and speech to text.
 let appLearner = '';
 let onboardingLearner = '';
+let restartedLearner = '';
 async function appApi(cityId: string, placeId: string, characterId: string, said: string[]) {
   const health = await fetch(`${base}/healthz`);
   const h = (await health.json().catch(() => ({}))) as { ok?: boolean; commit?: string; promptVersion?: string };
@@ -327,6 +328,16 @@ async function onboardingApi(auth: Record<string, string>, v1: (path: string, bo
   const done = await v1('/v1/onboarding/done', { path: 'beginner' });
   const beginner = await me();
   done.ok && beginner.onboarded && beginner.level === 'beginner' ? pass('v1 onboarding done: beginner path') : fail('v1 onboarding done', `${done.status} ${JSON.stringify(beginner)}`);
+
+  // Restart Fuori (Josh, 2026-10-23): a new player for this device, not onboarded; the old one is kept
+  const rs = await v1('/v1/me/start-over', {});
+  const rj = (await rs.json()) as { learnerId?: string; token?: string };
+  restartedLearner = rj.learnerId ?? '';
+  const fresh = rj.token ? ((await (await fetch(`${base}/v1/me`, { headers: { Authorization: `Bearer ${rj.token}` } })).json()) as { learnerId?: string; onboarded?: boolean; level?: string | null }) : {};
+  const old = await me();
+  rs.status === 201 && fresh.learnerId === rj.learnerId && fresh.onboarded === false && fresh.level === null && old.level === 'beginner'
+    ? pass('v1 restart: a new player, not onboarded; the old one kept')
+    : fail('v1 restart', `${rs.status} ${JSON.stringify(fresh)} old ${JSON.stringify(old)}`);
 }
 
 main()
@@ -336,6 +347,7 @@ main()
     cleanup(cookie.split('=')[1] ?? '');
     cleanup(appLearner);
     cleanup(onboardingLearner);
+    cleanup(restartedLearner);
     console.log(failed ? '\nFAILED' : '\nOK: the live site works end to end');
     process.exit(failed ? 1 : 0);
   });

@@ -70,6 +70,7 @@ struct SettingsSheet: View {
     @AppStorage(SettingsKey.dialect) private var dialect = false
     @AppStorage(SettingsKey.debug) private var debug = false
     @Environment(\.dismiss) private var dismiss
+    @State private var confirmingRestart = false
 
     private enum Level: String, CaseIterable, Identifiable {
         case beginner = "Beginner", intermediate = "Intermediate", advanced = "Advanced"
@@ -153,6 +154,22 @@ struct SettingsSheet: View {
                     Text("Subtitles")
                 } footer: {
                     Text("Set for your level; change them any time.")
+                }
+                // Restart, below the subtitles (Josh, 2026-10-23): a new player
+                // in this country, after a confirmation
+                Section {
+                    Button("Restart \(appName)", role: .destructive) { confirmingRestart = true }
+                        .confirmationDialog("Restart \(appName)?", isPresented: $confirmingRestart, titleVisibility: .visible) {
+                            Button("Restart", role: .destructive) {
+                                dismiss()
+                                Task { await model.restartGame() }
+                            }
+                            Button("Cancel", role: .cancel) {}
+                        } message: {
+                            Text("You'll start again as a new player: the tour, and nobody you've met will remember you. Other countries aren't affected.")
+                        }
+                } footer: {
+                    Text("Start over from the beginning in \(model.content?.card?.country ?? appName).")
                 }
                 // No Hands-free (Josh, 2026-10-23: hidden): every turn starts
                 // with a tap and silence sends it
