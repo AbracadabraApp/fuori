@@ -16,6 +16,9 @@ export interface SynthesisParams {
   characterId?: string; // for voice mapping
   /** What was said just before, in another clip: the voice carries on from it (ElevenLabs previous_text) */
   previousText?: string;
+  /** ElevenLabs delivery: lower stability and more style are livelier (defaults 0.5 and 0) */
+  stability?: number;
+  style?: number;
 }
 
 export interface SynthesisResult {

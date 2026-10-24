@@ -27,6 +27,13 @@ export function voiceForCharacter(characterId: string): string | undefined {
   return characterId === onboarding.guide.id ? onboarding.guide.voice : elevenLabsVoiceFor(characterId, characterGender(characterId));
 }
 
+/** How the voice is delivered: the greeter's own settings (livelier), characters the defaults */
+export function deliveryForCharacter(characterId: string): { stability?: number; style?: number } {
+  if (characterId !== onboarding.guide.id) return {};
+  const g = onboarding.guide as { stability?: number; style?: number };
+  return { stability: g.stability, style: g.style };
+}
+
 function key(learnerId: string, characterId: string, speed: number, text: string): string {
   return `${learnerId}\u0000${characterId}\u0000${speed}\u0000${text}`;
 }
@@ -46,7 +53,7 @@ export function startEarlyVoice(p: { learnerId: string; characterId: string; tex
   const now = Date.now();
   sweep(now);
   const result = provider
-    .synthesize({ text: p.text, language: language.code, characterId: p.characterId, voice: voiceForCharacter(p.characterId), speed: p.speed, previousText: p.previousText })
+    .synthesize({ text: p.text, language: language.code, characterId: p.characterId, voice: voiceForCharacter(p.characterId), ...deliveryForCharacter(p.characterId), speed: p.speed, previousText: p.previousText })
     .catch((err) => {
       p.onError(err);
       return null;

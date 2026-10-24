@@ -8,7 +8,7 @@
  */
 import { language } from '@/content';
 import { apiError, withLearner } from '@/lib/api';
-import { takeEarlyVoice, voiceForCharacter } from '@/lib/voice/early-voice';
+import { takeEarlyVoice, voiceForCharacter, deliveryForCharacter } from '@/lib/voice/early-voice';
 import { getVoiceProvider } from '@/lib/voice/providers';
 import { VoiceError } from '@/lib/voice/providers/elevenlabs';
 import { allow } from '@/lib/rate-limit';
@@ -55,6 +55,7 @@ export async function POST(request: Request) {
           characterId,
           // The greeter has her own voice (content/<country>/onboarding.ts); characters get one by gender
           voice: voiceForCharacter(characterId),
+          ...deliveryForCharacter(characterId),
           speed,
         }));
       if (!result.audio) {

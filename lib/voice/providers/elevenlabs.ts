@@ -67,7 +67,7 @@ export class ElevenLabsProvider implements VoiceProvider {
   }
 
   async synthesize(params: SynthesisParams): Promise<SynthesisResult> {
-    const { text, voice, speed = 1.0, characterId } = params;
+    const { text, voice, speed = 1.0, characterId, stability = 0.5, style = 0.0 } = params;
 
     // Determine which voice to use
     const voiceId = voice || (characterId && this.voiceMap[characterId]) || this.voiceMap.default;
@@ -88,9 +88,9 @@ export class ElevenLabsProvider implements VoiceProvider {
         // The second clip of a line split for speed carries on from the first
         ...(params.previousText ? { previous_text: params.previousText } : {}),
         voice_settings: {
-          stability: 0.5,
+          stability,
           similarity_boost: 0.75,
-          style: 0.0,
+          style,
           use_speaker_boost: true,
         },
       }),

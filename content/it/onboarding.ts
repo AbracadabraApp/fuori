@@ -10,8 +10,13 @@ export const onboarding = {
   guide: {
     /** Her id for /v1/speak; she isn't a character in the world */
     id: 'guide',
-    /** Rossana: warm, conversational, native Italian (voices.ts) */
-    voice: 'MuTiG4dbrEGYEy3XP4iP',
+    /** Nora: bright, native Italian (Romanesco), delivered lively (Josh,
+     *  2026-10-23: Rossana was "way too low key"; he picked "nora lively" from
+     *  card-1 samples). Rossana was 'MuTiG4dbrEGYEy3XP4iP' */
+    voice: 'ZPImQHFNyEPRDeECS4MX',
+    /** ElevenLabs delivery for her (characters keep 0.5 / 0): livelier */
+    stability: 0.3,
+    style: 0.45,
     /** How far her picture is lifted, as a share of the screen height, so her
      *  face stays clear of the text (design/onboarding/walkthrough.html: 4%) */
     lift: 0.04,
