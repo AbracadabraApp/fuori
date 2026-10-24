@@ -11,6 +11,17 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 
 **The reply panel (Josh, 2026-10-22; built the same day):** the reply buttons became a panel of suggested answers as text, "read one out loud" above the usual mic, no tap stage, no Pause. Spec and screens: [reply-panel.md](reply-panel.md).
 
+## Beginner guides: spoken English framing, Italian in bubbles (Josh, 2026-10-24; a new idea, not decided)
+
+Josh: a lot of beginners walk into a place with no sense of where they are or what's special about it. For Beginners, characters could teach explicitly, mixing English and the language: a little English framing makes the place interesting, then they switch to the language to ask a question, first saying in English what the question is.
+
+- **Spoken English, Italian in bubbles (Josh):** the English is only heard, never shown. The words and lines in the language appear as bubbles as they're said. The English translation isn't shown, or a tap on a bubble reveals it.
+- **A turn could run:** framing in English (a sentence or two: where you are, what's special), one or two words to keep said in the language, then the question in English, the question in the language, and how to answer. Sergio, Venice: *"Welcome! Everything on my counter came in from the lagoon this morning. The Venetian thing is **le seppie**, cuttlefish, cooked black in their own ink. Now let me ask you: have you ever eaten them? **Ha mai mangiato le seppie?** You can say **sì** or **no, mai**."* Bubbles: *le seppie*, *Ha mai mangiato le seppie?*, and the answers *sì* / *no, mai*.
+- **Sketches:** canvas "Learn area", row E (E1 while he speaks, E2 your turn with a bubble tapped).
+- **Against today's rules:** CLAUDE.md says characters teach only in role and avoid English nobody asked for, with explicit lessons in Magda or Learn. This would change that for Beginners only; CLAUDE.md stays as it is until Josh decides.
+- **Open:** whether the answers are bubbles or only said by the character; how the English fades (counted, like the stages: mostly English in the first conversations, then less, then only when asked); the reply shape (spoken text plus the bubbles, instead of `{ line, en }`); the voice (ElevenLabs can speak English with the character's accent; the phone's fallback voice speaks one language); how it sits with the reply panel and say it in English.
+- **To try first (Claude's suggestion):** a Beginner block in `levels.md` for each country, replayed on real Beginner conversations against today (how much is English, is the question clear, could a beginner answer, does the character still feel alive), a row in prompt-trials.md, then Josh reads a handful side by side.
+
 ## Say it in English: the one scaffold in the game (Josh, 2026-10-23; direction, to test)
 
 **Decided with Josh, 2026-10-23 (conference), built the same day:**
