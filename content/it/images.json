@@ -223,9 +223,9 @@
       "bytes": 216080
     },
     "places/atelier-maschera": {
-      "key": "it/places/atelier-maschera.67615e8346.webp",
-      "src": "e0d82c8a08b6ca42",
-      "bytes": 235820
+      "key": "it/places/atelier-maschera.d936abe03f.webp",
+      "src": "743ca5e36e025c56",
+      "bytes": 316056
     },
     "places/atelier-moda": {
       "key": "it/places/atelier-moda.4b1a154efa.webp",
@@ -233,9 +233,9 @@
       "bytes": 181578
     },
     "places/bacaro-del-vin": {
-      "key": "it/places/bacaro-del-vin.544b7f83f4.webp",
-      "src": "6342cbe3ec9f5b11",
-      "bytes": 223450
+      "key": "it/places/bacaro-del-vin.8ba0dbd4e4.webp",
+      "src": "32f2aa8af3981b27",
+      "bytes": 279682
     },
     "places/balon-flea-market": {
       "key": "it/places/balon-flea-market.0d40c7d68e.webp",
@@ -243,14 +243,14 @@
       "bytes": 318034
     },
     "places/bar-ai-do-leoni": {
-      "key": "it/places/bar-ai-do-leoni.098ab2f4a1.webp",
-      "src": "8f6d34ee5d0d21f7",
-      "bytes": 245928
+      "key": "it/places/bar-ai-do-leoni.b993dafe42.webp",
+      "src": "cb43ba5ac691b3d8",
+      "bytes": 272976
     },
     "places/bar-ai-ormesini": {
-      "key": "it/places/bar-ai-ormesini.0dae990fc4.webp",
-      "src": "d947e44bc7be2855",
-      "bytes": 194406
+      "key": "it/places/bar-ai-ormesini.c26bc87f1c.webp",
+      "src": "ced88d5f9a773c45",
+      "bytes": 260992
     },
     "places/bar-ai-scalzi": {
       "key": "it/places/bar-ai-scalzi.481c5fdb4b.webp",
@@ -258,9 +258,9 @@
       "bytes": 246866
     },
     "places/bar-al-timon": {
-      "key": "it/places/bar-al-timon.519a2abe5d.webp",
-      "src": "a5572b9ebe77a7d0",
-      "bytes": 249126
+      "key": "it/places/bar-al-timon.787c0a567c.webp",
+      "src": "5059f8cc59748baf",
+      "bytes": 316030
     },
     "places/bar-alba": {
       "key": "it/places/bar-alba.0fcbe75f6b.webp",
@@ -273,9 +273,9 @@
       "bytes": 209310
     },
     "places/bar-alla-toletta": {
-      "key": "it/places/bar-alla-toletta.0ee2b2194c.webp",
-      "src": "c1aaaaee6738a561",
-      "bytes": 201336
+      "key": "it/places/bar-alla-toletta.93c376659f.webp",
+      "src": "7ea38d144f4886be",
+      "bytes": 302592
     },
     "places/bar-anfiteatro": {
       "key": "it/places/bar-anfiteatro.8ee45686d1.webp",
@@ -318,9 +318,9 @@
       "bytes": 231308
     },
     "places/bar-da-gino": {
-      "key": "it/places/bar-da-gino.482af56b3f.webp",
-      "src": "83aa6110fe7d4e57",
-      "bytes": 247840
+      "key": "it/places/bar-da-gino.5cb6fa9d8a.webp",
+      "src": "e1ea81d6481e0410",
+      "bytes": 272764
     },
     "places/bar-del-corso": {
       "key": "it/places/bar-del-corso.2c419a177a.webp",
@@ -573,9 +573,9 @@
       "bytes": 176610
     },
     "places/basilica-san-marco": {
-      "key": "it/places/basilica-san-marco.80194d7760.webp",
-      "src": "d85b98f64262020b",
-      "bytes": 229480
+      "key": "it/places/basilica-san-marco.dd0586bbda.webp",
+      "src": "fdc124dd9fc45eb5",
+      "bytes": 296736
     },
     "places/basilica-san-zeno": {
       "key": "it/places/basilica-san-zeno.ea20575b5c.webp",
@@ -748,9 +748,9 @@
       "bytes": 282890
     },
     "places/caffe-del-doge": {
-      "key": "it/places/caffe-del-doge.33277f7162.webp",
-      "src": "df7c8adce408c9ae",
-      "bytes": 270708
+      "key": "it/places/caffe-del-doge.636c7574fd.webp",
+      "src": "fe7de7a758a522f2",
+      "bytes": 280176
     },
     "places/caffe-del-kassaro": {
       "key": "it/places/caffe-del-kassaro.179ac69703.webp",
@@ -813,9 +813,9 @@
       "bytes": 258066
     },
     "places/caffe-florian": {
-      "key": "it/places/caffe-florian.64d98c1ff2.webp",
-      "src": "2c8176ae6440fc2b",
-      "bytes": 230136
+      "key": "it/places/caffe-florian.97d9156a5b.webp",
+      "src": "87f65b810c1d46b5",
+      "bytes": 299830
     },
     "places/caffe-gambrinus": {
       "key": "it/places/caffe-gambrinus.8d65a66b66.webp",
@@ -863,9 +863,9 @@
       "bytes": 260456
     },
     "places/caffe-rosso": {
-      "key": "it/places/caffe-rosso.267f793b3c.webp",
-      "src": "ca8bc0b02eeae4d3",
-      "bytes": 276678
+      "key": "it/places/caffe-rosso.f392d3e3ae.webp",
+      "src": "52eabe486f453344",
+      "bytes": 337994
     },
     "places/caffe-san-carlo": {
       "key": "it/places/caffe-san-carlo.27f9b2526f.webp",
@@ -923,14 +923,14 @@
       "bytes": 246616
     },
     "places/campo-dei-mori": {
-      "key": "it/places/campo-dei-mori.25969003d1.webp",
-      "src": "e26bdfb32b4ca25e",
-      "bytes": 220434
+      "key": "it/places/campo-dei-mori.b255f06783.webp",
+      "src": "9bdf3e05387edaa7",
+      "bytes": 273356
     },
     "places/campo-santa-margherita": {
-      "key": "it/places/campo-santa-margherita.8db38111c0.webp",
-      "src": "eddf14777351881e",
-      "bytes": 222674
+      "key": "it/places/campo-santa-margherita.e1a0e8c461.webp",
+      "src": "0bb00db27c46f9c3",
+      "bytes": 295314
     },
     "places/cantina-bentivoglio": {
       "key": "it/places/cantina-bentivoglio.e95ffd869a.webp",
@@ -938,9 +938,9 @@
       "bytes": 267950
     },
     "places/cantina-do-spade": {
-      "key": "it/places/cantina-do-spade.fd5351639f.webp",
-      "src": "d922366f96d4c751",
-      "bytes": 248146
+      "key": "it/places/cantina-do-spade.b2b59f0d08.webp",
+      "src": "6052d1658444a139",
+      "bytes": 273286
     },
     "places/cantina-foresi": {
       "key": "it/places/cantina-foresi.5505f78465.webp",
@@ -1018,9 +1018,9 @@
       "bytes": 214232
     },
     "places/chiesa-madonna-orto": {
-      "key": "it/places/chiesa-madonna-orto.5a4a7ab670.webp",
-      "src": "4163bab204c82727",
-      "bytes": 215774
+      "key": "it/places/chiesa-madonna-orto.6d21195c80.webp",
+      "src": "aac2bebf5154d310",
+      "bytes": 277204
     },
     "places/chiesa-san-giovenale": {
       "key": "it/places/chiesa-san-giovenale.9266f84ff5.webp",
@@ -1213,9 +1213,9 @@
       "bytes": 285034
     },
     "places/enoteca-mascareta": {
-      "key": "it/places/enoteca-mascareta.b42bbd22bc.webp",
-      "src": "b5c74a5c86ab101f",
-      "bytes": 245818
+      "key": "it/places/enoteca-mascareta.f449ed44c6.webp",
+      "src": "783e84a6010fdb5f",
+      "bytes": 308038
     },
     "places/enoteca-monti": {
       "key": "it/places/enoteca-monti.4d539adda4.webp",
@@ -1358,9 +1358,9 @@
       "bytes": 277094
     },
     "places/farmacia-morelli": {
-      "key": "it/places/farmacia-morelli.c4d26fc55c.webp",
-      "src": "e7d98f54062d4afc",
-      "bytes": 172916
+      "key": "it/places/farmacia-morelli.c57cc44ace.webp",
+      "src": "4b19fd91b6844ada",
+      "bytes": 293108
     },
     "places/farmacia-prati": {
       "key": "it/places/farmacia-prati.559760315c.webp",
@@ -1378,9 +1378,9 @@
       "bytes": 156262
     },
     "places/fondaco-spezie": {
-      "key": "it/places/fondaco-spezie.a86fc91b7c.webp",
-      "src": "50083b7cd9c7b829",
-      "bytes": 290010
+      "key": "it/places/fondaco-spezie.de202058cb.webp",
+      "src": "2c86eac9d4cac60e",
+      "bytes": 307698
     },
     "places/fontana-trevi": {
       "key": "it/places/fontana-trevi.21884c69a5.webp",
@@ -1623,9 +1623,9 @@
       "bytes": 264178
     },
     "places/giardini-pubblici-venezia": {
-      "key": "it/places/giardini-pubblici-venezia.9452fee877.webp",
-      "src": "45fe6bb0f6bca6ab",
-      "bytes": 213628
+      "key": "it/places/giardini-pubblici-venezia.7c40ca4d71.webp",
+      "src": "7e40496a472a55bf",
+      "bytes": 328638
     },
     "places/giardini-santa-chiara": {
       "key": "it/places/giardini-santa-chiara.3aeab599b1.webp",
@@ -1693,9 +1693,9 @@
       "bytes": 259540
     },
     "places/libreria-acqua-alta": {
-      "key": "it/places/libreria-acqua-alta.930f133b9f.webp",
-      "src": "04b4dba5dfc09f5d",
-      "bytes": 274222
+      "key": "it/places/libreria-acqua-alta.87d1a114f6.webp",
+      "src": "9812b0417deb0f4a",
+      "bytes": 350256
     },
     "places/libreria-baroni": {
       "key": "it/places/libreria-baroni.7895bddfa8.webp",
@@ -1868,9 +1868,9 @@
       "bytes": 263390
     },
     "places/mercato-cannaregio": {
-      "key": "it/places/mercato-cannaregio.000117f3b8.webp",
-      "src": "58109e382fe2205c",
-      "bytes": 280636
+      "key": "it/places/mercato-cannaregio.6378000ff1.webp",
+      "src": "ee15bae5d6b9f6b4",
+      "bytes": 329786
     },
     "places/mercato-centrale": {
       "key": "it/places/mercato-centrale.1a6dd5bb0b.webp",
@@ -2028,9 +2028,9 @@
       "bytes": 277424
     },
     "places/mercato-rialto": {
-      "key": "it/places/mercato-rialto.d47311a887.webp",
-      "src": "63b99fe10572d59f",
-      "bytes": 257542
+      "key": "it/places/mercato-rialto.fdb1a9d147.webp",
+      "src": "8dad45324acb7a15",
+      "bytes": 326514
     },
     "places/mercato-san-cosimato": {
       "key": "it/places/mercato-san-cosimato.1ac8078444.webp",
@@ -2108,9 +2108,9 @@
       "bytes": 238690
     },
     "places/osteria-al-squero": {
-      "key": "it/places/osteria-al-squero.6fba3afaf5.webp",
-      "src": "b2554ee6f14d2b88",
-      "bytes": 273320
+      "key": "it/places/osteria-al-squero.6be9e2ef31.webp",
+      "src": "272767b22a0261c3",
+      "bytes": 286446
     },
     "places/osteria-antica": {
       "key": "it/places/osteria-antica.de3fa4d925.webp",
@@ -2308,9 +2308,9 @@
       "bytes": 252652
     },
     "places/panificio-san-marco": {
-      "key": "it/places/panificio-san-marco.d7bd584242.webp",
-      "src": "7ae31415dcb807e0",
-      "bytes": 287342
+      "key": "it/places/panificio-san-marco.bc9136193a.webp",
+      "src": "654943abc812bb2e",
+      "bytes": 311122
     },
     "places/panificio-san-pancrazio": {
       "key": "it/places/panificio-san-pancrazio.baf3b5b241.webp",
@@ -2328,9 +2328,9 @@
       "bytes": 226202
     },
     "places/panificio-volpe": {
-      "key": "it/places/panificio-volpe.54f3ec1c07.webp",
-      "src": "fc04e5a661fcdb74",
-      "bytes": 262458
+      "key": "it/places/panificio-volpe.a0e7b3a9cb.webp",
+      "src": "1eda00a61518f8cd",
+      "bytes": 293864
     },
     "places/pantheon-rotonda": {
       "key": "it/places/pantheon-rotonda.f9b279c137.webp",
@@ -2428,9 +2428,9 @@
       "bytes": 267490
     },
     "places/pasticceria-dal-mas": {
-      "key": "it/places/pasticceria-dal-mas.e08c1a6fa5.webp",
-      "src": "c46c190790c78b82",
-      "bytes": 175130
+      "key": "it/places/pasticceria-dal-mas.d13881dff9.webp",
+      "src": "4bf54027d2eeeb2a",
+      "bytes": 276670
     },
     "places/pasticceria-etna": {
       "key": "it/places/pasticceria-etna.ac3e55d05c.webp",
@@ -2483,9 +2483,9 @@
       "bytes": 220974
     },
     "places/pasticceria-rizzardini": {
-      "key": "it/places/pasticceria-rizzardini.58d750ee52.webp",
-      "src": "1e7ba38e0a7d5232",
-      "bytes": 237592
+      "key": "it/places/pasticceria-rizzardini.c5dcaf1737.webp",
+      "src": "17268499cb785ae7",
+      "bytes": 248296
     },
     "places/pasticceria-san-francesco": {
       "key": "it/places/pasticceria-san-francesco.e078c86c24.webp",
@@ -2518,9 +2518,9 @@
       "bytes": 218462
     },
     "places/pescheria-castello": {
-      "key": "it/places/pescheria-castello.01d84b3e66.webp",
-      "src": "62a0c798f99019f2",
-      "bytes": 232310
+      "key": "it/places/pescheria-castello.93e236c177.webp",
+      "src": "881f7edf9e1e31b9",
+      "bytes": 321604
     },
     "places/pescheria-del-porto": {
       "key": "it/places/pescheria-del-porto.2ac9cef141.webp",
@@ -2758,9 +2758,9 @@
       "bytes": 210368
     },
     "places/ponte-rialto": {
-      "key": "it/places/ponte-rialto.c111dc0112.webp",
-      "src": "88ad2aba92d0aff0",
-      "bytes": 160174
+      "key": "it/places/ponte-rialto.9c7ba907fa.webp",
+      "src": "9aad69cccd907546",
+      "bytes": 314624
     },
     "places/ponte-vecchio": {
       "key": "it/places/ponte-vecchio.2409500dc9.webp",
@@ -2798,9 +2798,9 @@
       "bytes": 244842
     },
     "places/ristorante-antiche-carampane": {
-      "key": "it/places/ristorante-antiche-carampane.07632d21c6.webp",
-      "src": "776976d570e724b8",
-      "bytes": 222812
+      "key": "it/places/ristorante-antiche-carampane.3ed825f70f.webp",
+      "src": "e9f23383b514b457",
+      "bytes": 283472
     },
     "places/ristorante-baronessa": {
       "key": "it/places/ristorante-baronessa.68ff36200a.webp",
@@ -2833,9 +2833,9 @@
       "bytes": 231980
     },
     "places/ristorante-da-alvise": {
-      "key": "it/places/ristorante-da-alvise.67d4616498.webp",
-      "src": "a68d5cb2578e6223",
-      "bytes": 232024
+      "key": "it/places/ristorante-da-alvise.85d699238f.webp",
+      "src": "23ac5f31c887a6d3",
+      "bytes": 308358
     },
     "places/ristorante-da-nello": {
       "key": "it/places/ristorante-da-nello.65ea643de4.webp",
@@ -3083,9 +3083,9 @@
       "bytes": 218946
     },
     "places/scuola-lingua-venezia": {
-      "key": "it/places/scuola-lingua-venezia.70edda2adb.webp",
-      "src": "fcb5d83e7937e7bf",
-      "bytes": 220756
+      "key": "it/places/scuola-lingua-venezia.4a2fa03e46.webp",
+      "src": "9145c4fb256761ed",
+      "bytes": 311734
     },
     "places/sentierone": {
       "key": "it/places/sentierone.04e5fb4cab.webp",
@@ -3103,9 +3103,9 @@
       "bytes": 234004
     },
     "places/squero-san-trovaso": {
-      "key": "it/places/squero-san-trovaso.0ceb9ffc6a.webp",
-      "src": "7365cd89acbc9ff6",
-      "bytes": 225598
+      "key": "it/places/squero-san-trovaso.0fb25b650f.webp",
+      "src": "1e8fd8c2c96aa549",
+      "bytes": 314514
     },
     "places/stazione-assisi": {
       "key": "it/places/stazione-assisi.0efd6dd029.webp",
@@ -3178,9 +3178,9 @@
       "bytes": 261464
     },
     "places/stazione-santa-lucia": {
-      "key": "it/places/stazione-santa-lucia.1368ee34a1.webp",
-      "src": "10e8691774d492c4",
-      "bytes": 162708
+      "key": "it/places/stazione-santa-lucia.7d27b61435.webp",
+      "src": "bdf03c320a45af0a",
+      "bytes": 279544
     },
     "places/stazione-siena": {
       "key": "it/places/stazione-siena.ede0619cf0.webp",
@@ -3288,9 +3288,9 @@
       "bytes": 252344
     },
     "places/torrefazione-cannaregio": {
-      "key": "it/places/torrefazione-cannaregio.e2d79a1226.webp",
-      "src": "26a7d47e6ee5313a",
-      "bytes": 235512
+      "key": "it/places/torrefazione-cannaregio.dba57ed120.webp",
+      "src": "6a2e2cfe86dda329",
+      "bytes": 301236
     },
     "places/tram-alamanni": {
       "key": "it/places/tram-alamanni.ae7bad2deb.webp",
@@ -3308,9 +3308,9 @@
       "bytes": 254606
     },
     "places/trattoria-alla-madonna": {
-      "key": "it/places/trattoria-alla-madonna.87e252f280.webp",
-      "src": "5f5f37dabe158f89",
-      "bytes": 291278
+      "key": "it/places/trattoria-alla-madonna.b6eef20227.webp",
+      "src": "d2a5db1f9060115b",
+      "bytes": 350722
     },
     "places/trattoria-aretusa": {
       "key": "it/places/trattoria-aretusa.6a4fbaead8.webp",
