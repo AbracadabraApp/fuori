@@ -10,7 +10,7 @@ import { CityPantry } from '@/lib/types';
  */
 export const romaNuova: CityPantry = {
   id: 'roma-nuova',
-  name: 'Roma nuova',
+  name: 'Roma',
   region: 'Lazio',
   neighbourhoods: ['Testaccio', 'San Lorenzo', 'Garbatella', 'Centro Storico', 'Pinciano', 'Porta Maggiore', 'Pigneto', 'Prati', 'Esquilino'],
 
