@@ -14,12 +14,19 @@ public struct RootView: View {
     @State private var launchHeld = false
     /// The learner tapped to skip the opening moment
     @State private var launchSkipped = false
+    /// A country has been picked this launch (the choice shows at every launch)
+    @State private var countryPicked = false
 
     public init() {}
 
     public var body: some View {
         ZStack {
             app
+            if showsChoiceAtLaunch {
+                CountryChoiceView(art: art) { countryPicked = true }
+                    .transition(.opacity)
+                    .zIndex(1)
+            }
             if showsLaunch {
                 LaunchView(art: art)
                     .transition(.opacity)
@@ -28,6 +35,7 @@ public struct RootView: View {
             }
         }
         .animation(reduceMotion ? .linear(duration: 0.25) : .easeInOut(duration: 0.45), value: showsLaunch)
+        .animation(reduceMotion ? .linear(duration: 0.25) : .easeInOut(duration: 0.45), value: showsChoiceAtLaunch)
         .task {
             // The opening moment holds about a second (canvas "Launch screen")
             try? await Task.sleep(for: .seconds(1))
@@ -40,9 +48,24 @@ public struct RootView: View {
     /// launch it gives way to the country choice, the picture moving up.
     private var showsLaunch: Bool {
         if case .choosingCountry = model.phase { return model.countries.isEmpty }
+        // Every launch: the picture until the countries are in, then the choice
+        if asksCountry { return model.countries.isEmpty }
         if model.phase == .loading { return true }
         return !launchHeld && !launchSkipped
     }
+
+    /// The choice at every launch (not the first, which has its own; not
+    /// with a server set from outside, or a place opened by launch argument)
+    private var asksCountry: Bool {
+        guard !countryPicked, !model.serverIsFixed else { return false }
+        if case .choosingCountry = model.phase { return false }
+        #if DEBUG
+        if UserDefaults.standard.string(forKey: "FuoriOpen") != nil { return false }
+        #endif
+        return true
+    }
+
+    private var showsChoiceAtLaunch: Bool { asksCountry && !model.countries.isEmpty }
 
     private var canSkipLaunch: Bool {
         model.phase != .loading && model.phase != .choosingCountry

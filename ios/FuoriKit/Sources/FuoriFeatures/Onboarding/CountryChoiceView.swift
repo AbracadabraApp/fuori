@@ -2,14 +2,19 @@ import SwiftUI
 import FuoriCore
 import FuoriDesign
 
-/// First launch: where you're living, Fuori or Afuera (canvas "Launch screen",
-/// board 2; Josh, 2026-10-22). The launch picture moves up from the middle
-/// of the screen and two cards come in under it, each from that country's
-/// /v1/content: its app name, "Italy · learn Italian". Shown once; switching
-/// later is in Settings.
+/// Where you're living, Fuori or Afuera (canvas "Launch screen", board 2;
+/// Josh, 2026-10-22). The launch picture moves up from the middle of the
+/// screen and two cards come in under it, each from that country's
+/// /v1/content: its app name, "Italy · learn Italian". At every launch
+/// (Josh, 2026-10-23: the one-second picture "pops and goes"; "start with
+/// A"); the chosen country loads behind it, so picking it again is
+/// immediate.
 struct CountryChoiceView: View {
     @Environment(AppModel.self) private var model
     let art: Namespace.ID
+    /// Every launch (Josh, 2026-10-23: "start with A"): what a pick does
+    /// besides choosing the country, i.e. closing the choice
+    var onPick: (() -> Void)? = nil
 
     var body: some View {
         ScrollView {
@@ -24,16 +29,24 @@ struct CountryChoiceView: View {
                         .padding(.horizontal, 4)
                         .accessibilityAddTraits(.isHeader)
                     ForEach(model.countries) { country in
-                        Button { Task { await model.choose(country) } } label: {
+                        Button {
+                            onPick?()
+                            // The country already loading behind the choice: just go in
+                            if onPick != nil, country.server == model.server { return }
+                            Task { await model.choose(country) }
+                        } label: {
                             CountryPick(content: country.content)
                         }
                         .buttonStyle(PressableStyle())
                     }
-                    Text("You can switch later in Settings.")
-                        .typeface(.label, 15, relativeTo: .footnote)
-                        .foregroundStyle(Tokens.Colors.muted)
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 12)
+                    // First launch only: at every launch it's asked anyway
+                    if onPick == nil {
+                        Text("You can switch later in Settings.")
+                            .typeface(.label, 15, relativeTo: .footnote)
+                            .foregroundStyle(Tokens.Colors.muted)
+                            .frame(maxWidth: .infinity)
+                            .padding(.top, 12)
+                    }
                 }
                 .padding(.horizontal, 16)
                 .transition(.opacity.combined(with: .move(edge: .bottom)))

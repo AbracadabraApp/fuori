@@ -63,12 +63,15 @@ public final class AppModel {
 
     /// The chosen country's server, kept between launches
     static let countryKey = "country.server"
+    /// Set from outside (-FuoriServer): no country choice at launch
+    public let serverIsFixed: Bool
 
     /// - servers: every country's server (Info.plist FuoriCountryServers)
     /// - fixedServer: a server set from outside (the -FuoriServer launch
     ///   argument, e.g. a local server), which skips the country choice
     public init(servers: [URL], fixedServer: URL? = nil, makeAPI: @escaping (URL) -> APIClient) {
         self.servers = servers
+        serverIsFixed = fixedServer != nil
         self.makeAPI = makeAPI
         let chosen = fixedServer ?? UserDefaults.standard.string(forKey: Self.countryKey).flatMap(URL.init(string:))
         if let chosen {
@@ -85,8 +88,11 @@ public final class AppModel {
         if server == nil {
             await loadCountries()
         } else {
-            await load()
-            await loadCountries()
+            // Together: the country choice shows at every launch, over this
+            // country loading behind it
+            async let country: Void = load()
+            async let choice: Void = loadCountries()
+            _ = await (country, choice)
         }
     }
 
