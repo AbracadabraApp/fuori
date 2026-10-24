@@ -28,7 +28,7 @@ Claude can't move these until Josh does:
 
 ### Open bugs and learner data — N4 (added 2026-10-22)
 - [x] **Claude** Recording error "0 buffers failed to write" / "the mic wasn't on": found from the saved reports (2026-10-23) and fixed in 27c8902: the send tap's cancelled watcher ticked once more and set the circle back to "talking", so a second tap found the mic closed. **Josh** to confirm on the next build that it's gone
-- [ ] **Josh** Merge learner `dd6ec6fb` (Josh's Franco conversations, 15–16 Oct) into his Italy learner `3c544022`, so Franco remembers him: needs Josh's yes (production data)
+- ~~Merge learner `dd6ec6fb` (Josh's Franco conversations) into `3c544022`~~: not important (Josh, 2026-10-23); left as is
 - [x] **Josh** Whose learner `819f7aed` is ("José", 1 conversation with Franco, 17 Oct): Josh testing (2026-10-23). Left as is
 
 ### Faster and reliable replies — N4 for the two speed fixes (save after sending, voice on the first sentence); N5 for testing outside services
