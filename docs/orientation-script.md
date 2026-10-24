@@ -24,7 +24,7 @@
 | 4 | *Perfetto! Fuori è un viaggio in Italia.* | Perfect! Fuori is a trip to Italy. |
 | 5 | *Si comincia da Roma.* | You start in Rome. |
 | 6 | *Scegli un posto.* | Pick a place. |
-| 7 | *Non sai come si dice?* … *Perché sei in Italia?* | Don't know how to say it? … Why are you in Italy? |
+| 7 | *Non sai come si dice?* | Don't know how to say it? |
 | 8 | *Se non capisci, chiedi.* | If you don't understand, ask. |
 | 9 | *Ecco tutto, {name}. Andiamo!* | That's everything. Let's go! |
 
@@ -74,10 +74,10 @@ Each beat: what's on screen · what she says · what the learner does · what it
 
 ## 7 · Say it in English
 
-Kept (Josh, 2026-10-23: "H9 was good"). Her picture, the G2 bubbles.
-**She:** *Non sai come si dice?* "Don't know how to say it? Say it in English, and it comes back in Italian for you to read out loud. Try it:" *Perché sei in Italia?* (Why are you in Italy?)
-**Learner:** says it in English (the grey *Come si dice:* bubble), gets the "Say this:" line, reads it aloud; the mic has reopened by itself.
-**Sets:** what brings them here (for the characters' memory).
+Kept (Josh, 2026-10-23: "H9 was good"), shown as an example, not tried ("better without 'try it', that gets confusing"). Her picture, the G2 bubbles.
+**She:** *Non sai come si dice?* "Don't know how to say it? Say it in English, and it comes back in Italian for you to read out loud. Like this:"
+**Shown:** the grey bubble *Come si dice:* I'm here for a few months to learn Italian, and the "Say this:" bubble *Sono qui per qualche mese per imparare l'italiano.*
+**Learner:** **Avanti**.
 
 ## 8 · Getting help, and Learn
 
