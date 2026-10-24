@@ -43,9 +43,9 @@
       "bytes": 187192
     },
     "cities/matera": {
-      "key": "it/cities/matera.08e945753f.webp",
-      "src": "276273c7cb0909ca",
-      "bytes": 241334
+      "key": "it/cities/matera.a1b752fd80.webp",
+      "src": "975a2d97e0fcb64a",
+      "bytes": 213080
     },
     "cities/milano": {
       "key": "it/cities/milano.fa57b0b47d.webp",
@@ -1062,6 +1062,11 @@
       "src": "bdb4a02749b9b607",
       "bytes": 208718
     },
+    "places/ditta-artigianale-nuova": {
+      "key": "it/places/ditta-artigianale-nuova.9a708b4880.webp",
+      "src": "c0d63395a2031311",
+      "bytes": 171436
+    },
     "places/dolceria-naxos": {
       "key": "it/places/dolceria-naxos.a260cfe3be.webp",
       "src": "062940f7095aac41",
@@ -1346,6 +1351,11 @@
       "key": "it/places/farmacia-molteni.47b78e475c.webp",
       "src": "641c4bf00ab84542",
       "bytes": 194296
+    },
+    "places/farmacia-molteni-nuova": {
+      "key": "it/places/farmacia-molteni-nuova.53a810468e.webp",
+      "src": "9f9530c3c19710c8",
+      "bytes": 227914
     },
     "places/farmacia-morelli": {
       "key": "it/places/farmacia-morelli.c4d26fc55c.webp",
@@ -1661,6 +1671,11 @@
       "key": "it/places/laboratorio-papiro.c0f711f3f4.webp",
       "src": "d1a8f532b6c57ab5",
       "bytes": 241118
+    },
+    "places/lampredotto-pollini": {
+      "key": "it/places/lampredotto-pollini.225c23a51b.webp",
+      "src": "89ff092246d5faae",
+      "bytes": 250124
     },
     "places/lampredotto-stand": {
       "key": "it/places/lampredotto-stand.f3b9b7619c.webp",
@@ -2332,6 +2347,11 @@
       "src": "9a26514074b003be",
       "bytes": 273154
     },
+    "places/parco-cascine": {
+      "key": "it/places/parco-cascine.e3a0c66d56.webp",
+      "src": "30016989b25cef5d",
+      "bytes": 376286
+    },
     "places/parco-della-trucca": {
       "key": "it/places/parco-della-trucca.661bb29385.webp",
       "src": "078e692aa2e83980",
@@ -2977,10 +2997,20 @@
       "src": "2996b9e49d11da86",
       "bytes": 215224
     },
+    "places/santa-croce-piazza": {
+      "key": "it/places/santa-croce-piazza.6e89928357.webp",
+      "src": "374cd7a7e464b60c",
+      "bytes": 201764
+    },
     "places/santa-maria-castello": {
       "key": "it/places/santa-maria-castello.1ea7453f0a.webp",
       "src": "75d6f08142addf09",
       "bytes": 201922
+    },
+    "places/santo-spirito-scalini": {
+      "key": "it/places/santo-spirito-scalini.62717d60a9.webp",
+      "src": "250be1552fbaeaa2",
+      "bytes": 240022
     },
     "places/santo-stefano": {
       "key": "it/places/santo-stefano.712bf61eeb.webp",
@@ -3167,6 +3197,11 @@
       "src": "05b8faa83ef3494f",
       "bytes": 198598
     },
+    "places/stazione-smn-nuova": {
+      "key": "it/places/stazione-smn-nuova.4fd7d1ab7c.webp",
+      "src": "8e320d0083bcd11e",
+      "bytes": 164992
+    },
     "places/stazione-taormina-giardini": {
       "key": "it/places/stazione-taormina-giardini.4c023120ba.webp",
       "src": "1ec9d2c9aa2ee184",
@@ -3196,6 +3231,11 @@
       "key": "it/places/tabaccheria-moderna.f03dfa6075.webp",
       "src": "2a3ec6d1a464d895",
       "bytes": 206416
+    },
+    "places/tabaccheria-nesi": {
+      "key": "it/places/tabaccheria-nesi.1e3c78bc25.webp",
+      "src": "6382a9e90f2c458e",
+      "bytes": 180022
     },
     "places/tabaccheria-pigneto": {
       "key": "it/places/tabaccheria-pigneto.a83289a513.webp",
@@ -3251,6 +3291,11 @@
       "key": "it/places/torrefazione-cannaregio.e2d79a1226.webp",
       "src": "26a7d47e6ee5313a",
       "bytes": 235512
+    },
+    "places/tram-alamanni": {
+      "key": "it/places/tram-alamanni.18b6f11781.webp",
+      "src": "9fb2004549eb9c17",
+      "bytes": 215274
     },
     "places/tram-porta-maggiore": {
       "key": "it/places/tram-porta-maggiore.bfe9d2e564.webp",
@@ -3311,6 +3356,11 @@
       "key": "it/places/trattoria-mario.35d39d2c3c.webp",
       "src": "e5b9d307a684ea9a",
       "bytes": 274630
+    },
+    "places/trattoria-mario-nuova": {
+      "key": "it/places/trattoria-mario-nuova.b6986be772.webp",
+      "src": "07f1c5fa88b98828",
+      "bytes": 216754
     },
     "places/trattoria-martini": {
       "key": "it/places/trattoria-martini.5b811dbd4b.webp",
@@ -3587,6 +3637,11 @@
       "src": "c584901801a14d83",
       "bytes": 246874
     },
+    "portraits/andrea-becattini": {
+      "key": "it/portraits/andrea-becattini.db7dd795b5.webp",
+      "src": "beb20092c831464d",
+      "bytes": 332290
+    },
     "portraits/andrea-brivido": {
       "key": "it/portraits/andrea-brivido.da496d31af.webp",
       "src": "ca09168b582ede69",
@@ -3791,6 +3846,11 @@
       "key": "it/portraits/antonio-starita.bba885dad1.webp",
       "src": "a3e79bbff2409c2a",
       "bytes": 293176
+    },
+    "portraits/ardit-hoxha": {
+      "key": "it/portraits/ardit-hoxha.94a075caea.webp",
+      "src": "084928bd87213b14",
+      "bytes": 244332
     },
     "portraits/arturo-papiro": {
       "key": "it/portraits/arturo-papiro.a257bdc297.webp",
@@ -4041,6 +4101,11 @@
       "key": "it/portraits/chiara-ormesini.a3df93cb22.webp",
       "src": "d223354f945e3099",
       "bytes": 268544
+    },
+    "portraits/chiara-russo": {
+      "key": "it/portraits/chiara-russo.693b02f8a2.webp",
+      "src": "818a99160e492d48",
+      "bytes": 258628
     },
     "portraits/chiara-volume": {
       "key": "it/portraits/chiara-volume.d5cbb2f141.webp",
@@ -5027,6 +5092,11 @@
       "src": "a2378b5c9012ae80",
       "bytes": 276396
     },
+    "portraits/graziella-nesi": {
+      "key": "it/portraits/graziella-nesi.62b6d618f3.webp",
+      "src": "7630898df661d397",
+      "bytes": 253054
+    },
     "portraits/greta-vino": {
       "key": "it/portraits/greta-vino.df6106175a.webp",
       "src": "61df9b20bc892cb8",
@@ -5036,6 +5106,11 @@
       "key": "it/portraits/guida-alessandra.ab54b6e363.webp",
       "src": "7e9586274f4c4a9d",
       "bytes": 252528
+    },
+    "portraits/ioana-popescu": {
+      "key": "it/portraits/ioana-popescu.a429d4ea09.webp",
+      "src": "c7e8b49544fb6d2a",
+      "bytes": 188142
     },
     "portraits/irene-perlini": {
       "key": "it/portraits/irene-perlini.bdf6d5c991.webp",
@@ -5161,6 +5236,11 @@
       "key": "it/portraits/lorenzo-forti.4242c0c566.webp",
       "src": "e44bc38a14a4aaf8",
       "bytes": 273602
+    },
+    "portraits/lorenzo-marchi": {
+      "key": "it/portraits/lorenzo-marchi.909e635180.webp",
+      "src": "80456de7c5851e36",
+      "bytes": 252186
     },
     "portraits/lorenzo-peck": {
       "key": "it/portraits/lorenzo-peck.4fd799d0c6.webp",
@@ -5542,6 +5622,11 @@
       "src": "10c3fad5656d9cf2",
       "bytes": 255308
     },
+    "portraits/mark-santos": {
+      "key": "it/portraits/mark-santos.85c7da246e.webp",
+      "src": "19b3479b6fd334a8",
+      "bytes": 258970
+    },
     "portraits/marta-bigliettaia-lucca": {
       "key": "it/portraits/marta-bigliettaia-lucca.058079599b.webp",
       "src": "7a647bc7d2a51144",
@@ -5556,6 +5641,11 @@
       "key": "it/portraits/martina-greco.1ddcdfeac4.webp",
       "src": "21c0e334ee536afa",
       "bytes": 257768
+    },
+    "portraits/massimo-cecchi": {
+      "key": "it/portraits/massimo-cecchi.fab27282ec.webp",
+      "src": "2e1791f9baca9d95",
+      "bytes": 340022
     },
     "portraits/massimo-piazza": {
       "key": "it/portraits/massimo-piazza.76afcaf6fe.webp",
@@ -6172,6 +6262,11 @@
       "src": "daf2bd2fb2dd5168",
       "bytes": 218284
     },
+    "portraits/rosa-quispe": {
+      "key": "it/portraits/rosa-quispe.953c346a54.webp",
+      "src": "8f2828b693303acd",
+      "bytes": 281408
+    },
     "portraits/salvatore-bar": {
       "key": "it/portraits/salvatore-bar.df5154f2c7.webp",
       "src": "23d7ce2b9a7cdb62",
@@ -6546,6 +6641,11 @@
       "key": "it/portraits/tommaso-berti.00a932ea5d.webp",
       "src": "91304f05a357d84c",
       "bytes": 284224
+    },
+    "portraits/tommaso-bini": {
+      "key": "it/portraits/tommaso-bini.66e4819204.webp",
+      "src": "ea2823b26a488329",
+      "bytes": 233144
     },
     "portraits/tommaso-dalmas": {
       "key": "it/portraits/tommaso-dalmas.9c8c2116a4.webp",
