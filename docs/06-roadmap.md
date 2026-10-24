@@ -24,7 +24,7 @@ Claude can't move these until Josh does:
 - [ ] **N5 (moved from N4, Josh 2026-10-23: leave Magda where she is; she becomes Learn and Teach in N5)** **Josh** Try Magda in the app
 - [x] **Claude** Bottom bar: one circle in two colours, no Pause or Play (Josh, 2026-10-22; [bottom-bar.md](bottom-bar.md)): green mic and your wave, terracotta sending dots and her wave; interruptions return to your turn; the Learn link on the right, centred on the circle Built 0dde6b8 (2026-10-22), on Josh's phone
 - [x] **Josh** Bottom bar on the phone: the four states in both countries: good (Josh, 2026-10-23) (a call, Siri, AirPods and backgrounding: N6, Josh 2026-10-23)
-- [ ] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice?
+- [x] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice? Josh, 2026-10-23: no
 
 ### Open bugs and learner data — N4 (added 2026-10-22)
 - [x] **Claude** Recording error "0 buffers failed to write" / "the mic wasn't on": found from the saved reports (2026-10-23) and fixed in 27c8902: the send tap's cancelled watcher ticked once more and set the circle back to "talking", so a second tap found the mic closed. **Josh** to confirm on the next build that it's gone
