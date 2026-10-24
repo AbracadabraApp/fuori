@@ -2,35 +2,90 @@ import SwiftUI
 import FuoriCore
 import FuoriDesign
 
-/// First launch: pick the country you're living in (docs/onboarding-design.md
-/// → Ship first). Two picture cards, each from that country's /v1/content;
-/// tapping one goes straight to its city list until the rest of onboarding
-/// exists. Shown once; switching later is in Settings.
+/// First launch: where you're living, Fuori or Afuera (canvas "Launch screen",
+/// board 2; Josh, 2026-10-22). The launch picture moves up from the middle
+/// of the screen and two cards come in under it, each from that country's
+/// /v1/content: its app name, "Italy · learn Italian". Shown once; switching
+/// later is in Settings.
 struct CountryChoiceView: View {
     @Environment(AppModel.self) private var model
+    let art: Namespace.ID
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: Tokens.Space.cardGap) {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("Where are you headed?")
-                        .typeface(.display, Tokens.Size.personName, relativeTo: .largeTitle, weight: .bold)
-                        .foregroundStyle(Tokens.Colors.ink)
-                        .accessibilityAddTraits(.isHeader)
-                    Text("Pick where to explore.")
-                        .typeface(.label, Tokens.Size.body, relativeTo: .body)
+            VStack(spacing: 14) {
+                LaunchArt(art: art)
+                    // The art's top edge 64 pt down; the picture has 24 pt of room for its shadow
+                    .padding(.top, 40)
+                VStack(alignment: .leading, spacing: 14) {
+                    Text("Where are you living?")
+                        .typeface(.label, 17, relativeTo: .body)
                         .foregroundStyle(Tokens.Colors.muted)
-                }
-                ForEach(model.countries) { country in
-                    Button { Task { await model.choose(country) } } label: {
-                        CountryCardView(content: country.content)
+                        .padding(.horizontal, 4)
+                        .accessibilityAddTraits(.isHeader)
+                    ForEach(model.countries) { country in
+                        Button { Task { await model.choose(country) } } label: {
+                            CountryPick(content: country.content)
+                        }
+                        .buttonStyle(PressableStyle())
                     }
-                    .buttonStyle(PressableStyle())
+                    Text("You can switch later in Settings.")
+                        .typeface(.label, 15, relativeTo: .footnote)
+                        .foregroundStyle(Tokens.Colors.muted)
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 12)
                 }
+                .padding(.horizontal, 16)
+                .transition(.opacity.combined(with: .move(edge: .bottom)))
             }
-            .padding(Tokens.Space.gutter)
+            .padding(.bottom, 34)
         }
+        .scrollBounceBehavior(.basedOnSize)
         .background(Tokens.Colors.paper)
+    }
+}
+
+/// A country to pick: its app name large ("Fuori"), then "Italy · learn
+/// Italian", and a chevron
+private struct CountryPick: View {
+    let content: Content
+
+    var body: some View {
+        HStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(name)
+                    .typeface(.display, 46, relativeTo: .largeTitle, weight: .heavy)
+                    .foregroundStyle(Tokens.Colors.ink)
+                Text(subtitle)
+                    .typeface(.label, 17, relativeTo: .body)
+                    .foregroundStyle(Tokens.Colors.muted)
+            }
+            Spacer(minLength: 8)
+            Image(systemName: "chevron.right")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(Tokens.Colors.green)
+                .accessibilityHidden(true)
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 10)
+        .frame(maxWidth: .infinity, minHeight: 88, alignment: .leading)
+        .background(Tokens.Colors.card, in: RoundedRectangle(cornerRadius: 16))
+        .shadow(color: .black.opacity(0.08), radius: 4, y: 2)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text("\(Text(name)), \(content.card?.country ?? ""): \(content.card?.learn ?? "")"))
+    }
+
+    /// The app name, read by VoiceOver in its own language
+    private var name: AttributedString {
+        var s = AttributedString(content.language.appName)
+        s.languageIdentifier = content.language.speechLang
+        return s
+    }
+
+    /// "Italy · learn Italian"
+    private var subtitle: String {
+        guard let card = content.card else { return "" }
+        return "\(card.country) · \(card.learn.prefix(1).lowercased())\(card.learn.dropFirst())"
     }
 }
 

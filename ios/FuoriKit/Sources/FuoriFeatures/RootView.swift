@@ -7,25 +7,64 @@ import FuoriDesign
 public struct RootView: View {
     @Environment(AppModel.self) private var model
     @State private var path = NavigationPath()
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    /// The launch picture, shared by the launch view and the country choice
+    @Namespace private var art
+    /// The opening moment has been held for its minimum
+    @State private var launchHeld = false
+    /// The learner tapped to skip the opening moment
+    @State private var launchSkipped = false
 
     public init() {}
 
     public var body: some View {
+        ZStack {
+            app
+            if showsLaunch {
+                LaunchView(art: art)
+                    .transition(.opacity)
+                    .onTapGesture { if canSkipLaunch { launchSkipped = true } }
+                    .zIndex(1)
+            }
+        }
+        .animation(reduceMotion ? .linear(duration: 0.25) : .easeInOut(duration: 0.45), value: showsLaunch)
+        .task {
+            // The opening moment holds about a second (canvas "Launch screen")
+            try? await Task.sleep(for: .seconds(1))
+            launchHeld = true
+        }
+    }
+
+    /// Paper and the picture: at least a second, longer while the country
+    /// loads; a tap skips the rest once there's something to show. On first
+    /// launch it gives way to the country choice, the picture moving up.
+    private var showsLaunch: Bool {
+        if case .choosingCountry = model.phase { return model.countries.isEmpty }
+        if model.phase == .loading { return true }
+        return !launchHeld && !launchSkipped
+    }
+
+    private var canSkipLaunch: Bool {
+        model.phase != .loading && model.phase != .choosingCountry
+    }
+
+    private var app: some View {
         NavigationStack(path: $path) {
             Group {
                 switch model.phase {
                 case .choosingCountry:
+                    // Until the countries are in, the launch view covers this
                     if model.countries.isEmpty {
-                        ProgressView()
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .background(Tokens.Colors.paper)
+                        Tokens.Colors.paper.ignoresSafeArea()
                     } else {
-                        CountryChoiceView()
+                        CountryChoiceView(art: art)
+                            #if os(iOS)
+                            .toolbar(.hidden, for: .navigationBar)
+                            #endif
                     }
                 case .loading:
-                    ProgressView()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Tokens.Colors.paper)
+                    // Covered by the launch view
+                    Tokens.Colors.paper.ignoresSafeArea()
                 case .failed(let message):
                     ContentUnavailableView {
                         Label("Can't reach the server", systemImage: "wifi.exclamationmark")

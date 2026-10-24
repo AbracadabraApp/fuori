@@ -50,8 +50,11 @@ targets:
         FuoriCountryServers:
           - $(FUORI_SERVER_IT)
           - $(FUORI_SERVER_MX)
+        # The system launch screen: paper and the launch picture, matched exactly by
+        # the app's first view (LaunchView), so there's no white flash (iOS conventions A13)
         UILaunchScreen:
-          UIColorName: ""
+          UIColorName: LaunchBackground
+          UIImageName: LaunchArt
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         # Light only until the "night paper" palette exists (docs/13-ios-conventions.md A1, D1):
         # otherwise system bars turn white on the light paper in Dark Mode
