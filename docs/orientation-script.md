@@ -83,7 +83,7 @@ Kept (Josh, 2026-10-23: "H9 was good"). Her picture, the G2 bubbles.
 
 Josh, 2026-10-23: no beats explaining the buttons (the circle, talking with characters); one card on getting help from characters, with Learn, over her picture. No phrases to remember ("telling them to recall Può ripetere is useless").
 **She:** *Se non capisci, chiedi.* "If you don't understand, ask. Everyone here will help you. Just ask, in English: they'll explain, then go back to Italian."
-**Then:** the Learn book: "After a few turns, this book appears in your conversation. That's Learn: what you said, a better way to say it, and a teacher you can ask anything, in English."
+**Then:** the Learn book (Josh's words): "After a conversation, this book appears. It reviews what you said in the conversation and helps you keep track of new vocabulary."
 **Learner:** **Avanti**.
 
 ## 9 · Off you go
