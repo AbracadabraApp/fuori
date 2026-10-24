@@ -64,5 +64,28 @@ export const onboarding = {
     askLevel: { line: '¿Hablas español?', en: 'Do you speak Spanish?' },
     levelSet: { line: '¡Perfecto!', en: 'Perfect!', note: "I'll start you there. You can change it any time in Settings." },
     next: { line: 'Siguiente', en: 'Next' },
+    /** Cards 4–7 (Josh, 2026-10-23: 7 cards). Card 4 opens with ¡Perfecto!,
+     *  after the level; levelSet stays for builds from before */
+    trip: {
+      line: '¡Perfecto! Afuera es un viaje a México.',
+      en: 'Perfect! Afuera is a trip to Mexico.',
+      note: "You stay a while, go out and talk to people. No lessons, no scores: you learn by talking, and people help you the way they'd help any newcomer.",
+    },
+    sayIt: {
+      line: '¿No sabes cómo se dice?',
+      en: "Don't know how to say it?",
+      note: 'Say it in English, and it comes back in Spanish for you to read out loud. Like this:',
+    },
+    /** Card 5's example, shown as the game shows it: what was said, the line to read */
+    sayItExample: { line: 'Estoy aquí unos meses para aprender español.', en: "I'm here for a few months to learn Spanish" },
+    help: {
+      line: 'Si no entiendes, pregunta.',
+      en: "If you don't understand, ask.",
+      note: "Everyone here will help you. Just ask, in English: they'll explain, then go back to Spanish.",
+    },
+    /** Card 6, beside the Learn book (Josh's words) */
+    learn: 'After a conversation, this book appears. It reviews what you said in the conversation and helps you keep track of new vocabulary.',
+    ready: { line: 'Eso es todo, {name}. ¡Vámonos!', en: "That's everything, {name}. Let's go!", note: "Answer in Spanish if you can, in English if you can't." },
+    go: { line: '¡Vámonos!', en: "Let's go!" },
   },
 };

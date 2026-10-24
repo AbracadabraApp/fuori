@@ -182,9 +182,16 @@ struct OnboardingView: View {
                 }
                 .disabled(model.phase == .thinking)
                 .padding(.top, 6)
-            case .levelSet:
+            case .levelSet, .trip, .sayIt, .help, .ready:
                 if let o = model.orientation {
-                    GoButton(said: o.next.said, language: model.language, busy: false) { model.finishOrientation() }
+                    VStack(spacing: 10) {
+                        // Card 5: the example, as the game shows it
+                        if model.step == .sayIt, let example = o.sayItExample {
+                            ExampleBubbles(model: model, example: example)
+                        }
+                        let button = model.step == .ready || (model.step == .levelSet) ? (o.go ?? o.next) : o.next
+                        GoButton(said: button.said, language: model.language, busy: false) { Task { await model.advance() } }
+                    }
                 }
             }
         }
@@ -382,6 +389,22 @@ private struct OrientationCard: View {
                     .typeface(.label, 16, relativeTo: .callout)
                     .foregroundStyle(Tokens.Colors.text)
             }
+            // Card 6: the Learn book (Josh's words), under a hairline
+            if done, model.step == .help, let learn = model.orientation?.learn {
+                Rectangle().fill(Tokens.Colors.muted.opacity(0.25)).frame(height: 1)
+                HStack(alignment: .center, spacing: 14) {
+                    Image(systemName: "character.book.closed")
+                        .font(.title3)
+                        .foregroundStyle(Tokens.Colors.ink)
+                        .frame(width: 48, height: 48)
+                        .background(Tokens.Colors.paper, in: Circle())
+                        .shadow(color: .black.opacity(0.12), radius: 3, y: 1)
+                        .accessibilityHidden(true)
+                    Text(learn)
+                        .typeface(.label, 16, relativeTo: .callout)
+                        .foregroundStyle(Tokens.Colors.text)
+                }
+            }
             if let question {
                 Rectangle().fill(Tokens.Colors.muted.opacity(0.25)).frame(height: 1)
                 VStack(alignment: .leading, spacing: 2) {
@@ -425,5 +448,40 @@ private struct ChoiceButton: View {
         }
         .buttonStyle(.plain)
         .glassEffect(.regular.tint(Color(red: 0.86, green: 0.89, blue: 0.77).opacity(0.85)).interactive(), in: RoundedRectangle(cornerRadius: 14))
+    }
+}
+
+/// Card 5's example (design/orientation/H5): the two bubbles as the game
+/// shows them (SayItBubbles), on the learner's side: what was said, under
+/// the "Come si dice:" label from content, then "Say this:" and the line,
+/// with a play button
+private struct ExampleBubbles: View {
+    let model: OnboardingModel
+    let example: Onboarding.Card
+
+    var body: some View {
+        VStack(alignment: .trailing, spacing: 8) {
+            (Text("\(model.language.ui.howToSay ?? "") ").font(.footnote) + Text(example.en))
+                .typeface(.label, 15, relativeTo: .callout)
+                .foregroundStyle(Tokens.Colors.card)
+                .padding(.vertical, 10)
+                .padding(.horizontal, 14)
+                .background(Tokens.Colors.ink.opacity(0.55), in: UnevenRoundedRectangle(topLeadingRadius: 18, bottomLeadingRadius: 18, bottomTrailingRadius: 18, topTrailingRadius: 6))
+            HStack(spacing: 10) {
+                (Text("Say this: ").font(.footnote).foregroundStyle(Tokens.Colors.muted) + Text(inLanguage(example.line, model.language)).bold().foregroundStyle(Tokens.Colors.ink))
+                    .typeface(.label, 17, relativeTo: .body)
+                Button { Task { await model.playExample() } } label: {
+                    Image(systemName: "speaker.wave.2").font(.body).foregroundStyle(Tokens.Colors.green).frame(width: 44, height: 44)
+                }
+                .buttonStyle(PressableStyle())
+                .accessibilityLabel("Hear it")
+            }
+            .padding(.leading, 14)
+            .padding(.trailing, 4)
+            .padding(.vertical, 4)
+            .background(Tokens.Colors.card, in: UnevenRoundedRectangle(topLeadingRadius: 18, bottomLeadingRadius: 18, bottomTrailingRadius: 18, topTrailingRadius: 6))
+        }
+        .frame(maxWidth: .infinity, alignment: .trailing)
+        .padding(.leading, 30)
     }
 }

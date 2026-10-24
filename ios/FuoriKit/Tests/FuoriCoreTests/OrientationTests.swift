@@ -25,7 +25,7 @@ import Testing
             "asWoman": card("Benvenuta", "Feminine"),
             "welcomeMan": card("Grazie. Benvenuto, {name}!", "Thanks. Welcome, {name}!", "How much do you speak?"),
             "welcomeWoman": card("Grazie. Benvenuta, {name}!", "Thanks. Welcome, {name}!", "How much do you speak?"),
-            "askLevel": card("Parli italiano?", "Do you speak Italian?"),
+            "askLevel": card("Parli?", "Do you speak it?"),
             "levelSet": card("Perfetto!", "Perfect!", "You can change it in Settings."),
             "next": card("Avanti", "Next"),
         ]

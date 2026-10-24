@@ -205,6 +205,17 @@ public struct Onboarding: Codable, Sendable, Equatable {
         public let askLevel: Card
         public let levelSet: Card
         public let next: Card
+        /// Cards 4–7 (Josh, 2026-10-23); nil from servers before them, when
+        /// the tour ends after the level
+        public let trip: Card?
+        public let sayIt: Card?
+        /// Card 5's example: `en` is what was said, `line` the line to read
+        public let sayItExample: Card?
+        public let help: Card?
+        /// Card 6, beside the Learn book
+        public let learn: String?
+        public let ready: Card?
+        public let go: Card?
     }
 
     public let guide: Guide

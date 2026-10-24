@@ -36,7 +36,7 @@ public final class OnboardingModel {
     public enum Step: Equatable {
         case welcome, askName, address, welcomed, beginnerSendOff, question, followUp, sendOff
         /// The orientation tour
-        case hello, gender, level, levelSet
+        case hello, gender, level, levelSet, trip, sayIt, help, ready
     }
 
     /// Which way the first tap went: where she goes after the name and address
@@ -130,7 +130,8 @@ public final class OnboardingModel {
         switch step {
         case .welcome, .hello: return .welcome
         case .askName, .address, .question, .followUp, .gender, .level: return .talk
-        case .welcomed, .beginnerSendOff, .sendOff, .levelSet: return .laugh
+        case .welcomed, .beginnerSendOff, .sendOff, .levelSet, .trip, .ready: return .laugh
+        case .sayIt, .help: return .talk
         }
     }
 
@@ -215,15 +216,44 @@ public final class OnboardingModel {
             return
         }
         chosenLevel = level
-        step = .levelSet
-        await sayCard(orientation.levelSet, question: nil)
+        // Card 4 opens with Perfetto!; an older server has only the old Perfetto! card
+        if let trip = orientation.trip {
+            step = .trip
+            await sayCard(trip, question: nil)
+        } else {
+            step = .levelSet
+            await sayCard(orientation.levelSet, question: nil)
+        }
     }
 
-    /// Avanti after step 3: the city list (steps 4–11 aren't built yet)
-    public func finishOrientation() {
-        guard step == .levelSet, phase == .ready else { return }
+    /// Avanti on cards 4–6, Andiamo! on card 7 (the city list)
+    public func advance() async {
+        guard phase == .ready, let o = orientation else { return }
+        switch step {
+        case .trip:
+            if let sayIt = o.sayIt { step = .sayIt; await sayCard(sayIt, question: nil) } else { finish(o) }
+        case .sayIt:
+            if let help = o.help { step = .help; await sayCard(help, question: nil) } else { finish(o) }
+        case .help:
+            if let ready = o.ready { step = .ready; await sayCard(ready.named(name), question: nil) } else { finish(o) }
+        case .ready, .levelSet:
+            finish(o)
+        default:
+            break
+        }
+    }
+
+    private func finish(_ o: Onboarding.Orientation) {
         stopAudio()
         onFinish(chosenLevel ?? "beginner")
+    }
+
+    /// Card 5's example line, played as the game plays a "Say this" line:
+    /// the phone's own voice
+    public func playExample() async {
+        guard step == .sayIt, let line = orientation?.sayItExample?.line else { return }
+        voice.stop()
+        await voice.speak(line, language: language.speechLang, rate: Float(speed))
     }
 
     /// "Not yet!": the beginner send-off, no speaking on this path
