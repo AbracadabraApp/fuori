@@ -1598,3 +1598,11 @@ Design only; nothing built. Decisions are Josh's unless marked.
 - **ElevenLabs Speech Engine** evaluated: not a fit (it takes over turn-taking and speech-to-text, browser-only client, 8¢/min); only Scribe is worth a test.
 - **Next:** the two measurements on the laptop, then a rough say-it-in-English to play.
 
+## 2026-10-23 (cloud session, later): orientation mock-ups, Matera, Roma, Florence
+
+- **Orientation tour:** mock-ups on the canvas (row H, `design/orientation/`), cut by Josh to 7 cards (name, masculine/feminine, level, what Fuori is, say it in English as an example, getting help with Learn, Andiamo), mixed Italian and English. Step 1's note reworded live in both countries. Steps 4–7 not built.
+- **Matera** city picture redone (a mother and two kids on the Sassi stairs, Josh's pick).
+- **Roma nuova renamed Roma** (display name; id unchanged).
+- **Florence redone in place** (docs/rome-redo.md → Florence): 10 real places, new people, fine-line style, images in public/images.
+- **Open:** Matera and Florence images aren't on R2 yet: `npm run images:upload` on Josh's Mac, then commit `content/it/images.json`. test:language fails on the laptop's `OrientationTests.swift` ("Parli italiano?").
+

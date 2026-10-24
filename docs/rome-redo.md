@@ -64,3 +64,25 @@ Leaves the feed (hidden, not deleted, as `content/it/showcase.ts` does): Bar Ang
 - The city rule for generating other cities (the City Pantry Formula) needs the same change before any city is regenerated.
 - Missions for the counters are N5 with Learn.
 - Found on the way: Bergamo's showcase names `libreria-sant-agostino`, which isn't in `bergamo.ts`.
+
+## Florence, the same way (2026-10-23, Josh)
+
+Josh: "lets give florence a rome style update", "just go, no second". Florence was replaced in place: the 10 new places and people are added to `content/it/cities/firenze.ts` with new ids and `showcase.ts` now shows them; the old shown list is kept in `hiddenForNow.firenze` (the places and their people stay in the file, so nothing is lost).
+- **Real businesses under their real names** (Josh: "real businesses under their real names; you fought me on this in Rome for no good reason"). At a real business the person is staff or a customer, never the actual owner.
+- **People** (Josh: "mix young and old, ethnic Italian and ethnic representative of Florence in appropriate locations"): Florence's largest foreign communities are Peruvian, Romanian, Chinese, Albanian and Filipino (Tuttitalia, 1 January 2025; 15.6% of residents).
+
+| # | Place | Person |
+|---|---|---|
+| 1 | Ditta Artigianale, Sant'Ambrogio | Tommaso Bini, 27, barista, Florentine |
+| 2 | Lampredotto da Pollini, Sant'Ambrogio | Andrea Becattini, 61, Florentine taxi driver at lunch |
+| 3 | Trattoria Mario, San Lorenzo | Ardit Hoxha, 44, waiter, from Durrës |
+| 4 | Santo Spirito, the church steps | Chiara Russo, 22, architecture student from Lecce |
+| 5 | Piazza Santa Croce | Lorenzo Marchi, 76, retired leather craftsman, with his dog |
+| 6 | Parco delle Cascine | Rosa Quispe, 39, cook from Lima, with her son |
+| 7 | Tram T1, Alamanni | Ioana Popescu, 34, nurse from Romania, going to Careggi |
+| 8 | Tabaccheria Nesi, Campo di Marte | Graziella Nesi, 66, has run it for 40 years |
+| 9 | Farmacia Molteni, Via Calzaiuoli | Mark Santos, 31, pharmacist, born in Florence to Filipino parents |
+| 10 | Stazione Santa Maria Novella | Massimo Cecchi, 57, ticket clerk |
+
+- Scenes, roles, personalities and portraits from one dated instruction (Sonnet), with the street-view and close-in lessons from Rome built in; fine-line place style (`placeStyles.firenze`); images with grok-imagine-image-2.0 on the laptop. No language school (as Rome). The city card is unchanged.
+- The image script's TypeScript reader cut a portrait prompt at an escaped apostrophe ("dog\'s"); reworded. Rome's "last night\'s match" prompt may have been cut the same way.

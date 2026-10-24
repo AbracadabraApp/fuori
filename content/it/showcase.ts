@@ -45,19 +45,17 @@ export const showcase: Record<string, string[]> = {
     'stazione-fal', // M2: train station for travel
   ],
   firenze: [
-    'caffe-rivoire',
-    'forno-galli',
-    'mercato-centrale',
-    'trattoria-mario',
-    'bar-del-moro',
-    'gelateria-vivoli',
-    'farmacia-molteni',
-    'piazza-signoria',
-    'officina-profumo',
-    'enoteca-alessi',
-    'piazza-santo-spirito', // M2: bench character Alessia (studentessa d'arte)
-    'scuola-lingua-firenze', // M2: language school with Magda
-    'stazione-smn', // M2: train station for travel
+    // Today's Florence (Josh, 2026-10-23): real places, everyday people
+    'ditta-artigianale-nuova',
+    'lampredotto-pollini',
+    'trattoria-mario-nuova',
+    'santo-spirito-scalini',
+    'santa-croce-piazza',
+    'parco-cascine',
+    'tram-alamanni',
+    'tabaccheria-nesi',
+    'farmacia-molteni-nuova',
+    'stazione-smn-nuova',
   ],
   siena: [
     'caffe-fiorella',
@@ -307,6 +305,21 @@ export const homeCities = ['roma-nuova', 'matera', 'firenze', 'siena', 'venezia'
  * put 'roma' back at the front of homeCities.
  */
 export const hiddenForNow: Record<string, string[]> = {
+  firenze: [ // replaced 2026-10-23
+    'caffe-rivoire',
+    'forno-galli',
+    'mercato-centrale',
+    'trattoria-mario',
+    'bar-del-moro',
+    'gelateria-vivoli',
+    'farmacia-molteni',
+    'piazza-signoria',
+    'officina-profumo',
+    'enoteca-alessi',
+    'piazza-santo-spirito', // M2: bench character Alessia (studentessa d'arte)
+    'scuola-lingua-firenze', // M2: language school with Magda
+    'stazione-smn', // M2: train station for travel
+  ],
   roma: [
     'bar-monti-corner',
     'bar-testaccio-morning',
