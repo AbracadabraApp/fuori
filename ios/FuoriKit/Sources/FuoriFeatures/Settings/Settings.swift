@@ -194,9 +194,10 @@ struct SettingsSheet: View {
         .task { if model.countries.count < 2 { await model.loadCountries() } }
     }
 
-    /// The current country is marked "You're here"; tapping the other switches to it
+    /// The current country is marked "You are in <country>"; tapping the other switches to it
     private func countryButton(_ country: AppModel.Country) -> some View {
         let here = country.server == model.server
+        let name = country.content.card?.country ?? country.content.language.appName
         return Button {
             guard !here else { return }
             // Switch after the sheet has closed (SettingsToolbar's onDismiss)
@@ -209,7 +210,8 @@ struct SettingsSheet: View {
                         RoundedRectangle(cornerRadius: Tokens.Radius.card)
                             .strokeBorder(here ? Tokens.Colors.green : .clear, lineWidth: 3)
                     }
-                Text(here ? "You're here" : "Switch to \(country.content.card?.country ?? country.content.language.appName)")
+                // Josh, 2026-10-23: "You are in Italy" (the country from content)
+                Text(here ? "You are in \(name)" : "Switch to \(name)")
                     .typeface(.label, Tokens.Size.badge, relativeTo: .footnote, weight: here ? .bold : .regular)
                     .foregroundStyle(here ? Tokens.Colors.green : Tokens.Colors.text)
             }
