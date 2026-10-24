@@ -86,7 +86,7 @@ Josh, 2026-10-23: no beats explaining the buttons (the circle, talking with char
 - **Fixed lines,** except the Italian bubble in 9 (the "say it in English" call).
 - **Her English** is spoken in an English voice for the tour, or her own voice if it handles English well.
 - **Skip** at any step goes to the city list with what's been set; anything unset falls back as today.
-- **Replay** from Settings → How Fuori works runs 4–11 (no name, level or address again).
+- **Replay** from Settings → How Fuori works runs 4–7 (no name, level or address again).
 - **Mexico:** the same beats; *contento / contenta*, *bienvenido / bienvenida* (the same Masculine and Feminine buttons), *el café*, *la tortilla*; the cities and places from its content; *¡Vámonos!*
 - **Words in the learned language** (examples, sample places) come from country content, not Swift (CLAUDE.md).
 - **Depends on** "say it in English" being built: the tour is made of it.
