@@ -11,7 +11,7 @@
     { "id": "milano", "name": "Milano", "region": "Lombardia", "neighbourhoods": ["Navigli", "Brera", "Porta Romana", "Isola"] }
   ],
   "placeStyles": {
-    "roma-nuova": "Fine-line pen drawing on white paper, precise thin black lines, flat light colour fills"},
+    "roma-nuova": "Fine-line pen drawing on white paper, precise thin black lines, flat light colour fills", "venezia": "Loose watercolour wash on white paper, wet transparent colour bleeding softly at the edges, bright sunlight with long shadows, reflections in the canal water and on wet stone and glass, glints of coloured glass, boats and sails where there is water, a few pigeons"},
   "placeRules": "No other words anywhere: no dates, no neighbourhood or city names, no slogans, no prices, no brand names or logos. Contemporary Italy: today's clothes and objects, everyday life. Shops, bars and restaurants are on the ground floor of a continuous row of apartment buildings, as in an Italian city, never a separate small building or kiosk. Keep the main scene in the centre; nothing important near the edges.",
   "placeStylesNote": "Roma nuova (2026-10-22, docs/rome-redo.md): place prompt = city style + scene + its name as the only sign + placeRules (scripts/lib/place-prompt.mjs), as Mexico does. Cities without a style keep their full imagePrompt."
 }

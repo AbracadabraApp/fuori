@@ -86,3 +86,10 @@ Josh: "lets give florence a rome style update", "just go, no second". Florence w
 
 - Scenes, roles, personalities and portraits from one dated instruction (Sonnet), with the street-view and close-in lessons from Rome built in; Florence's own soft pastel place style (Josh: "I didn't ask for a new style"; a first round in fine-line was redrawn); images with grok-imagine-image-2.0 on the laptop. No language school (as Rome). The city card is unchanged.
 - The image script's TypeScript reader cut a portrait prompt at an escaped apostrophe ("dog\'s"); reworded. Rome's "last night\'s match" prompt may have been cut the same way.
+
+## Venice: new art only (2026-10-23, Josh)
+
+Josh: "keep all venice places the same - just change art", after the watercolour-wash test meant for Florence turned out to be Venice's look (water, coloured glass, sails, pigeons). All 36 Venice places redrawn; places, names and people unchanged.
+- `placeStyles.venezia` in `content/it/generation.json`: a loose watercolour wash, bright sun with long shadows, reflections in canal water and wet stone, glints of coloured glass, boats and sails where there is water, a few pigeons.
+- Each Venice `imagePrompt` lost its old "Soft pastel sketch on white paper of" opening, so the prompt builder adds the style, the place name as the only sign and Italy's rules, as Rome and Mexico do. The old colour words stay in the scenes.
+- Watch: pigeons and sails turn up in nearly every picture, which risks the sameness Josh started from; the style line can say "sometimes".

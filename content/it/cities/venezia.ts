@@ -14,7 +14,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Cannaregio',
       real: true,
       characterId: 'marco-timon',
-      imagePrompt: 'Soft pastel sketch on white paper of a cozy canalside bar with outdoor seating, warm amber and terracotta tones, wooden tables along the fondamenta, wine bottles visible through windows, morning light reflecting off canal water, textured and inviting atmosphere',
+      imagePrompt: 'A cozy canalside bar with outdoor seating, warm amber and terracotta tones, wooden tables along the fondamenta, wine bottles visible through windows, morning light reflecting off canal water, textured and inviting atmosphere.',
     },
     {
       id: 'caffe-florian',
@@ -23,7 +23,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'San Marco',
       real: true,
       characterId: 'antonio-florian',
-      imagePrompt: 'Soft pastel sketch on white paper of an elegant historic café with arched porticos, cream and gold tones, small round tables with white tablecloths, ornate interior glimpses, pigeons in the piazza, warm morning light, sophisticated and timeless',
+      imagePrompt: 'An elegant historic café with arched porticos, cream and gold tones, small round tables with white tablecloths, ornate interior glimpses, pigeons in the piazza, warm morning light, sophisticated and timeless.',
     },
     {
       id: 'bar-ai-do-leoni',
@@ -32,7 +32,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Castello',
       real: false,
       characterId: 'giulia-leoni',
-      imagePrompt: 'Soft pastel sketch on white paper of a neighborhood bar with two lion statues flanking the entrance, warm ochre and rose tones, locals standing at counter with espresso, morning newspapers, nautical touches, welcoming and authentic',
+      imagePrompt: 'A neighborhood bar with two lion statues flanking the entrance, warm ochre and rose tones, locals standing at counter with espresso, morning newspapers, nautical touches, welcoming and authentic.',
     },
     {
       id: 'caffe-rosso',
@@ -41,7 +41,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Dorsoduro',
       real: true,
       characterId: 'stefano-rosso',
-      imagePrompt: 'Soft pastel sketch on white paper of a lively campo café with red awning, warm brick and burgundy tones, students and locals mingling, outdoor tables in square, morning bustle, energetic and bohemian atmosphere',
+      imagePrompt: 'A lively campo café with red awning, warm brick and burgundy tones, students and locals mingling, outdoor tables in square, morning bustle, energetic and bohemian atmosphere.',
     },
     {
       id: 'bar-alla-toletta',
@@ -50,7 +50,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Dorsoduro',
       real: false,
       characterId: 'elena-toletta',
-      imagePrompt: 'Soft pastel sketch on white paper of a corner bar near a small bridge, soft blue-grey and cream tones, barista visible through window, morning pastries displayed, quiet canal view, intimate and charming',
+      imagePrompt: 'A corner bar near a small bridge, soft blue-grey and cream tones, barista visible through window, morning pastries displayed, quiet canal view, intimate and charming.',
     },
     {
       id: 'caffe-del-doge',
@@ -59,7 +59,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'San Marco',
       real: true,
       characterId: 'roberto-doge',
-      imagePrompt: 'Soft pastel sketch on white paper of an artisan coffee roastery café, warm brown and copper tones, coffee sacks and roasting equipment visible, aromatic atmosphere, wooden counters, rich and inviting',
+      imagePrompt: 'An artisan coffee roastery café, warm brown and copper tones, coffee sacks and roasting equipment visible, aromatic atmosphere, wooden counters, rich and inviting.',
     },
     {
       id: 'bar-ai-ormesini',
@@ -68,7 +68,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Cannaregio',
       real: false,
       characterId: 'chiara-ormesini',
-      imagePrompt: 'Soft pastel sketch on white paper of a local workers bar on a wide fondamenta, pale yellow and white tones, morning crowd at counter, tramezzini sandwiches displayed, boats passing by, working-class warmth',
+      imagePrompt: 'A local workers bar on a wide fondamenta, pale yellow and white tones, morning crowd at counter, tramezzini sandwiches displayed, boats passing by, working-class warmth.',
     },
     {
       id: 'bar-da-gino',
@@ -77,7 +77,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Castello',
       real: false,
       characterId: 'gino-battaglia',
-      imagePrompt: 'Soft pastel sketch on white paper of a tiny neighborhood bar tucked in a narrow calle, warm terracotta and olive tones, old espresso machine gleaming, local fishermen gathering, weathered charm and authenticity',
+      imagePrompt: 'A tiny neighborhood bar tucked in a narrow calle, warm terracotta and olive tones, old espresso machine gleaming, local fishermen gathering, weathered charm and authenticity.',
     },
     {
       id: 'torrefazione-cannaregio',
@@ -86,7 +86,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Cannaregio',
       real: false,
       characterId: 'luciana-caffe',
-      imagePrompt: 'Soft pastel sketch on white paper of a coffee roasting shop with café counter, deep brown and cream tones, burlap sacks of beans, vintage roaster visible, aromatic morning scene, artisanal and specialized',
+      imagePrompt: 'A coffee roasting shop with café counter, deep brown and cream tones, burlap sacks of beans, vintage roaster visible, aromatic morning scene, artisanal and specialized.',
     },
 
     // DAILY ROUTINE - Bakeries (4)
@@ -97,7 +97,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Cannaregio',
       real: false,
       characterId: 'angela-volpe',
-      imagePrompt: 'Soft pastel sketch on white paper of a traditional bakery with wooden shelves, warm golden and wheat tones, fresh bread loaves displayed, flour dust in morning light, oven glow from back, wholesome and fragrant',
+      imagePrompt: 'A traditional bakery with wooden shelves, warm golden and wheat tones, fresh bread loaves displayed, flour dust in morning light, oven glow from back, wholesome and fragrant.',
     },
     {
       id: 'pasticceria-dal-mas',
@@ -106,7 +106,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Dorsoduro',
       real: false,
       characterId: 'tommaso-dalmas',
-      imagePrompt: 'Soft pastel sketch on white paper of an elegant pastry shop with glass cases, soft pink and cream tones, delicate Venetian cookies displayed, fritole and galani pastries, refined morning sweetness',
+      imagePrompt: 'An elegant pastry shop with glass cases, soft pink and cream tones, delicate Venetian cookies displayed, fritole and galani pastries, refined morning sweetness.',
     },
     {
       id: 'panificio-san-marco',
@@ -115,7 +115,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'San Marco',
       real: false,
       characterId: 'francesca-pane',
-      imagePrompt: 'Soft pastel sketch on white paper of a busy bakery near tourist routes, warm amber and gold tones, focaccia and traditional breads, locals and visitors mixing, aromatic morning atmosphere',
+      imagePrompt: 'A busy bakery near tourist routes, warm amber and gold tones, focaccia and traditional breads, locals and visitors mixing, aromatic morning atmosphere.',
     },
     {
       id: 'pasticceria-rizzardini',
@@ -124,7 +124,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Castello',
       real: false,
       characterId: 'paolo-rizzardini',
-      imagePrompt: 'Soft pastel sketch on white paper of a historic pastry shop with vintage signage, soft cream and chocolate tones, traditional Venetian sweets, brass fixtures, timeless morning ritual',
+      imagePrompt: 'A historic pastry shop with vintage signage, soft cream and chocolate tones, traditional Venetian sweets, brass fixtures, timeless morning ritual.',
     },
 
     // FOOD & SHOPPING - Markets (3)
@@ -135,7 +135,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'San Marco',
       real: true,
       characterId: 'sergio-rialto',
-      imagePrompt: 'Soft pastel sketch on white paper of the famous Rialto fish and produce market, vibrant seafood blues and vegetable greens, market stalls under white canopies, Grand Canal beyond, lively morning commerce, iconic Venetian scene',
+      imagePrompt: 'The famous Rialto fish and produce market, vibrant seafood blues and vegetable greens, market stalls under white canopies, Grand Canal beyond, lively morning commerce, iconic Venetian scene.',
     },
     {
       id: 'mercato-cannaregio',
@@ -144,7 +144,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Cannaregio',
       real: false,
       characterId: 'maria-mercato',
-      imagePrompt: 'Soft pastel sketch on white paper of a neighborhood produce market in a campo, warm earth tones and fresh greens, seasonal vegetables and fruits, local vendors calling out, authentic morning market bustle',
+      imagePrompt: 'A neighborhood produce market in a campo, warm earth tones and fresh greens, seasonal vegetables and fruits, local vendors calling out, authentic morning market bustle.',
     },
     {
       id: 'pescheria-castello',
@@ -153,7 +153,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Castello',
       real: false,
       characterId: 'vittorio-pesce',
-      imagePrompt: 'Soft pastel sketch on white paper of a small fish market near the arsenale, silvery blue and white tones, fresh lagoon catch displayed on ice, seagulls overhead, salty morning air, maritime authenticity',
+      imagePrompt: 'A small fish market near the arsenale, silvery blue and white tones, fresh lagoon catch displayed on ice, seagulls overhead, salty morning air, maritime authenticity.',
     },
 
     // FOOD & SHOPPING - Restaurants (2)
@@ -164,7 +164,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'San Marco',
       real: true,
       characterId: 'lorenzo-carampane',
-      imagePrompt: 'Soft pastel sketch on white paper of a hidden traditional restaurant in a quiet calle, warm russet and cream tones, white tablecloths glimpsed through windows, intimate dining room, classic Venetian elegance',
+      imagePrompt: 'A hidden traditional restaurant in a quiet calle, warm russet and cream tones, white tablecloths glimpsed through windows, intimate dining room, classic Venetian elegance.',
     },
     {
       id: 'ristorante-da-alvise',
@@ -173,7 +173,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Cannaregio',
       real: false,
       characterId: 'alvise-costa',
-      imagePrompt: 'Soft pastel sketch on white paper of a family-run restaurant with canal-side terrace, soft blue-grey and white tones, gondolas passing, set tables with wine glasses, romantic evening atmosphere',
+      imagePrompt: 'A family-run restaurant with canal-side terrace, soft blue-grey and white tones, gondolas passing, set tables with wine glasses, romantic evening atmosphere.',
     },
 
     // FOOD & SHOPPING - Specialty Food (3)
@@ -184,7 +184,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Dorsoduro',
       real: true,
       characterId: 'michele-squero',
-      imagePrompt: 'Soft pastel sketch on white paper of a cozy osteria overlooking a gondola repair yard, warm amber and wood tones, cicchetti displayed on counter, locals with wine glasses, authentic Venetian charm',
+      imagePrompt: 'A cozy osteria overlooking a gondola repair yard, warm amber and wood tones, cicchetti displayed on counter, locals with wine glasses, authentic Venetian charm.',
     },
     {
       id: 'trattoria-alla-madonna',
@@ -193,7 +193,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'San Marco',
       real: true,
       characterId: 'isabella-madonna',
-      imagePrompt: 'Soft pastel sketch on white paper of a bustling traditional trattoria, warm yellow and terracotta tones, crowded tables, fresh seafood platters, old photographs on walls, lively Venetian dining',
+      imagePrompt: 'A bustling traditional trattoria, warm yellow and terracotta tones, crowded tables, fresh seafood platters, old photographs on walls, lively Venetian dining.',
     },
     {
       id: 'bacaro-del-vin',
@@ -202,7 +202,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Castello',
       real: false,
       characterId: 'nicolo-bacaro',
-      imagePrompt: 'Soft pastel sketch on white paper of a tiny wine bar with standing room only, deep wine red and wood tones, cicchetti platters, wine bottles lining walls, intimate local gathering spot',
+      imagePrompt: 'A tiny wine bar with standing room only, deep wine red and wood tones, cicchetti platters, wine bottles lining walls, intimate local gathering spot.',
     },
 
     // CULTURAL/LANDMARK (6)
@@ -213,7 +213,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'San Marco',
       real: true,
       characterId: 'padre-giovanni',
-      imagePrompt: 'Soft pastel sketch on white paper of the magnificent Byzantine basilica with golden mosaics, warm gold and azure tones, ornate domes and arches, pigeons in piazza, majestic and iconic',
+      imagePrompt: 'The magnificent Byzantine basilica with golden mosaics, warm gold and azure tones, ornate domes and arches, pigeons in piazza, majestic and iconic.',
     },
     {
       id: 'ponte-rialto',
@@ -222,7 +222,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'San Marco',
       real: true,
       characterId: 'carlo-gondoliere',
-      imagePrompt: 'Soft pastel sketch on white paper of the famous white stone bridge arching over the Grand Canal, soft ivory and blue-green water tones, gondolas passing beneath, shops on bridge, timeless Venetian icon',
+      imagePrompt: 'The famous white stone bridge arching over the Grand Canal, soft ivory and blue-green water tones, gondolas passing beneath, shops on bridge, timeless Venetian icon.',
     },
     {
       id: 'giardini-pubblici-venezia',
@@ -231,7 +231,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Castello',
       real: true,
       characterId: 'beatrice-giardini',
-      imagePrompt: 'Soft pastel sketch on white paper of public gardens with tree-lined paths, soft green and dappled light, benches overlooking lagoon, rare Venice greenery, peaceful afternoon retreat',
+      imagePrompt: 'Public gardens with tree-lined paths, soft green and dappled light, benches overlooking lagoon, rare Venice greenery, peaceful afternoon retreat.',
     },
     {
       id: 'campo-santa-margherita',
@@ -240,7 +240,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Dorsoduro',
       real: true,
       characterId: 'giovanna-campo',
-      imagePrompt: 'Soft pastel sketch on white paper of a lively rectangular campo with market stalls, warm ochre building facades, students and families, outdoor café tables, vibrant community heart',
+      imagePrompt: 'A lively rectangular campo with market stalls, warm ochre building facades, students and families, outdoor café tables, vibrant community heart.',
     },
     {
       id: 'chiesa-madonna-orto',
@@ -249,7 +249,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Cannaregio',
       real: true,
       characterId: 'suora-teresa',
-      imagePrompt: 'Soft pastel sketch on white paper of a Gothic brick church in quiet neighborhood, warm rose-brick and cream tones, peaceful campo in front, Tintoretto paintings within, serene spiritual beauty',
+      imagePrompt: 'A Gothic brick church in quiet neighborhood, warm rose-brick and cream tones, peaceful campo in front, Tintoretto paintings within, serene spiritual beauty.',
     },
     {
       id: 'campo-dei-mori',
@@ -258,7 +258,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Cannaregio',
       real: true,
       characterId: 'dante-mori',
-      imagePrompt: 'Soft pastel sketch on white paper of a charming small campo with statue of Moorish merchant, warm terracotta and weathered stone, historic well, quiet residential square, mysterious Venetian character',
+      imagePrompt: 'A charming small campo with statue of Moorish merchant, warm terracotta and weathered stone, historic well, quiet residential square, mysterious Venetian character.',
     },
 
     // SOCIAL/EVENING (3)
@@ -269,7 +269,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Castello',
       real: false,
       characterId: 'matteo-vino',
-      imagePrompt: 'Soft pastel sketch on white paper of an intimate wine bar with exposed brick, deep burgundy and warm wood tones, wine bottles glowing, small tables with candles, romantic evening atmosphere',
+      imagePrompt: 'An intimate wine bar with exposed brick, deep burgundy and warm wood tones, wine bottles glowing, small tables with candles, romantic evening atmosphere.',
     },
     {
       id: 'cantina-do-spade',
@@ -278,7 +278,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'San Marco',
       real: true,
       characterId: 'sandra-spade',
-      imagePrompt: 'Soft pastel sketch on white paper of a historic wine tavern near Rialto, warm amber and copper tones, hanging copper pots, locals gathering for ombra, centuries of Venetian wine tradition',
+      imagePrompt: 'A historic wine tavern near Rialto, warm amber and copper tones, hanging copper pots, locals gathering for ombra, centuries of Venetian wine tradition.',
     },
     {
       id: 'libreria-acqua-alta',
@@ -287,7 +287,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Castello',
       real: true,
       characterId: 'luigi-libri',
-      imagePrompt: 'Soft pastel sketch on white paper of the famous bookshop with books in gondola and bathtub, soft faded paper tones and blues, cats lounging, stacks reaching ceiling, whimsical Venetian eccentricity',
+      imagePrompt: 'The famous bookshop with books in gondola and bathtub, soft faded paper tones and blues, cats lounging, stacks reaching ceiling, whimsical Venetian eccentricity.',
     },
 
     // PRACTICAL (2)
@@ -298,7 +298,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Dorsoduro',
       real: false,
       characterId: 'dottoressa-morelli',
-      imagePrompt: 'Soft pastel sketch on white paper of a traditional pharmacy with antique wooden cabinets, soft green and cream tones, glass bottles on shelves, professional neighborhood care',
+      imagePrompt: 'A traditional pharmacy with antique wooden cabinets, soft green and cream tones, glass bottles on shelves, professional neighborhood care.',
     },
     {
       id: 'scuola-lingua-venezia',
@@ -307,7 +307,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Dorsoduro',
       real: false,
       characterId: 'magda',
-      imagePrompt: 'Soft pastel sketch on white paper of a language school in a palazzo overlooking a canal, tall windows with water reflections, students at a round table, whiteboard with Italian verbs, Murano glass chandelier, soft aqua and cream tones, textured sketch style, loose watercolor washes, lots of white paper',
+      imagePrompt: 'A language school in a palazzo overlooking a canal, tall windows with water reflections, students at a round table, whiteboard with Italian verbs, Murano glass chandelier, soft aqua and cream tones, textured sketch style, loose watercolor washes, lots of white paper.',
     },
     {
       id: 'stazione-santa-lucia',
@@ -316,7 +316,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Cannaregio',
       real: true,
       characterId: 'pietro-stazione',
-      imagePrompt: 'Soft pastel sketch on white paper of the modernist train station where land meets water, soft grey and blue tones, vaporetti waiting outside, travelers with luggage, Venice\'s gateway',
+      imagePrompt: 'The modernist train station where land meets water, soft grey and blue tones, vaporetti waiting outside, travelers with luggage, Venice\'s gateway.',
     },
 
     // CITY CHARACTER (3)
@@ -327,7 +327,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Dorsoduro',
       real: true,
       characterId: 'andrea-gondola',
-      imagePrompt: 'Soft pastel sketch on white paper of a traditional gondola boatyard with wooden boats under construction, warm wood and black lacquer tones, craftsmen at work, timeless Venetian artistry',
+      imagePrompt: 'A traditional gondola boatyard with wooden boats under construction, warm wood and black lacquer tones, craftsmen at work, timeless Venetian artistry.',
     },
     {
       id: 'atelier-maschera',
@@ -336,7 +336,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'San Marco',
       real: false,
       characterId: 'valentina-maschera',
-      imagePrompt: 'Soft pastel sketch on white paper of a mask-making atelier with Carnival masks displayed, soft gold and jewel tones, feathers and decorations, artisan at work, mysterious Venetian tradition',
+      imagePrompt: 'A mask-making atelier with Carnival masks displayed, soft gold and jewel tones, feathers and decorations, artisan at work, mysterious Venetian tradition.',
     },
     {
       id: 'fondaco-spezie',
@@ -345,7 +345,7 @@ export const venezia: CityPantry = {
       neighbourhood: 'Dorsoduro',
       real: false,
       characterId: 'emilia-spezie',
-      imagePrompt: 'Soft pastel sketch on white paper of a spice and specialty foods shop, warm saffron and crimson tones, sacks of spices, preserved seafood, exotic merchant heritage, aromatic atmosphere',
+      imagePrompt: 'A spice and specialty foods shop, warm saffron and crimson tones, sacks of spices, preserved seafood, exotic merchant heritage, aromatic atmosphere.',
     },
   ],
   characters: [
