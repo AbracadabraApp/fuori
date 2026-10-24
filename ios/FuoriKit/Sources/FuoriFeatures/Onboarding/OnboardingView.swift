@@ -97,7 +97,10 @@ struct OnboardingView: View {
     @ViewBuilder private var controls: some View {
         switch model.phase {
         case .speaking:
-            EmptyView()
+            // Card 1: the mic is there while she talks about it (Josh,
+            // 2026-10-23: "odd to have her reference it when it's missing");
+            // a tap stops her and opens it
+            if model.step == .hello { MicBox(model: model, hint: nil) } else { EmptyView() }
         case .failed(let message):
             VStack(spacing: 8) {
                 Text(message)

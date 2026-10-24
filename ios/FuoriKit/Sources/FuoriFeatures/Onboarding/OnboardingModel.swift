@@ -384,6 +384,10 @@ public final class OnboardingModel {
     public func tapMic() async {
         switch phase {
         case .ready, .micDenied: await startRecording()
+        case .speaking where step == .hello:
+            // Card 1 shows the mic while she speaks: a tap stops her and opens it
+            stopAudio()
+            await startRecording()
         case .listening: await finishAnswer()
         default: break
         }
