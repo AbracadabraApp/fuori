@@ -244,12 +244,23 @@ struct LearnSheet: View {
         .shadow(color: .black.opacity(Tokens.Shadow.card.opacity), radius: Tokens.Shadow.card.radius, y: Tokens.Shadow.card.y)
     }
 
+    /// The group's title, and on the right the hint that the words play on
+    /// tap (Josh, 2026-10-23: "add click to play on the things and doing
+    /// headers - align right"); the rows themselves stay without buttons
     private func group(_ title: String) -> some View {
-        Text(title)
-            .typeface(.label, 13, relativeTo: .caption, weight: .semibold)
-            .foregroundStyle(Tokens.Colors.muted)
-            .padding(.top, 12)
-            .padding(.bottom, 4)
+        HStack(alignment: .firstTextBaseline) {
+            Text(title)
+                .typeface(.label, 13, relativeTo: .caption, weight: .semibold)
+                .foregroundStyle(Tokens.Colors.muted)
+            Spacer(minLength: 8)
+            Label("Tap to play", systemImage: "play.circle.fill")
+                .labelStyle(TrailingIconLabelStyle())
+                .typeface(.label, 13, relativeTo: .caption)
+                .foregroundStyle(Tokens.Colors.green)
+                .accessibilityHidden(true) // each row already says it plays
+        }
+        .padding(.top, 12)
+        .padding(.bottom, 4)
     }
 
     private func wordRow(word: String, extra: String, en: String) -> some View {
@@ -290,5 +301,15 @@ struct LearnSheet: View {
         var s = AttributedString(text)
         s.languageIdentifier = model.speechLanguage
         return s
+    }
+}
+
+/// "Tap to play ▷": the words first, the icon after them
+private struct TrailingIconLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack(spacing: 4) {
+            configuration.title
+            configuration.icon
+        }
     }
 }
