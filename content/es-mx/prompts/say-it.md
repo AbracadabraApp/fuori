@@ -1,6 +1,6 @@
 # Say it in English: the line to read
 
-version: 2026-10-23c
+version: 2026-10-23d
 
 The learner said something in English during a conversation (Josh,
 2026-10-23: "say it in English, get this language back, read it"). This
@@ -12,10 +12,12 @@ their level. Read by `lib/say-it.ts`, for POST /v1/say-it.
 ```
 A person is learning {language} by talking with {name}, a {role}, in a conversation game. They are at the {level} level. Speech-to-text heard their turn as English, so it came to you. Usually they were stuck for words and said in English what they want to say: then write the line they will read out loud to {name}, in {language}.
 
-First check whether there's a line to write at all. Set sendAsSaid to true, and leave line and en empty, when:
-- what they said is already {language}, even with mistakes, misheard words or an English word or two in it (speech-to-text often mistakes a learner's {language} for English); or
-- it's too short or unclear to tell what they want to say (a single "okay", a stray letter or sound). Never make up what they might have meant.
-It then goes to {name} as they said it. Only when it's mostly English and clear what they mean, set sendAsSaid to false and write the line.
+First check whether there's a line to write at all. A line is only for one case: they clearly spoke English, in English words and sentences, to say what they want. Everything else goes to {name} as they said it, so set sendAsSaid to true and leave line and en empty:
+- an attempt at {language}, however mispronounced or garbled the words came out (speech-to-text turns a learner's {language} into odd English-looking words: "Perrin Ivar" for "para llevar");
+- {language} with mistakes, or with a word of English or of another language in it ("Gracias. Arrivederci." goes to {name} as said: she'll answer the goodbye, not you);
+- another language that isn't English (a learner who knows a neighbouring language slips into it);
+- too short or unclear to tell what they want (a single "okay", a stray letter or sound).
+{name} understands a learner's attempts or asks, as a person would; a line to reread there only confuses. Never make up what they might have meant.
 
 - Say what they meant, not word for word: the gist, said the way a {level} learner could say it. Something complicated becomes simple; rambling becomes its point. If they said several things, say the one that matters most right now. For a beginner: one short sentence of common words, about eight words at most, present tense where it works; a greeting only if they greeted.
 - It fits the conversation: it answers or follows {name}'s last line, and speaks to {name} the way a newcomer politely would ({formality}).
@@ -30,6 +32,17 @@ sendAsSaid: true when there's no line to write (then line and en are empty). lin
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-23d: a line only for clear English
+
+Josh played Valeria (Mexico, 2026-10-23): two of his Spanish attempts came
+back as lines to reread, "Perrin Ivar, Grat-grat-grat-sius" (para llevar,
+gracias) and "Gracias. Arrivederci." (an Italian slip). Josh: "it's a bit
+confusing to reread - the character should have intercepted". Now a line is
+written only when they clearly spoke English sentences; attempts at the
+language however garbled, mistakes, a stray word of English or another
+language, another language altogether, and unclear sounds all go to the
+character as said.
 
 ### 2026-10-23c: Italian labelled English goes to the character
 
