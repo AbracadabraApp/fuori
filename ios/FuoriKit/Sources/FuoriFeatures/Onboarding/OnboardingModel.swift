@@ -110,8 +110,9 @@ public final class OnboardingModel {
     private let minimumVoice: TimeInterval = 0.25
     /// A turn can't run longer than this, in case the second tap never comes
     private let longestAnswer: TimeInterval = 90
-    /// Her speed: a little slower than a character's, as for a beginner with English on
-    private let speed = 0.8
+    /// Her speed: full speed (Josh, 2026-10-23: "way too low key - she should
+    /// read at full speed"; it was 0.8)
+    private let speed = 1.0
 
     /// - askAddress: the server saves how characters address them (/v1/me addressOn)
     public init(onboarding: Onboarding, language: Language, api: APIClient, askAddress: Bool = false, onFinish: @escaping (String) -> Void) {
@@ -173,12 +174,13 @@ public final class OnboardingModel {
         await say(Onboarding.Line(line: Self.spoken(card, question: question, extra: extraSpoken), en: ""), englishAllowed: true)
     }
 
-    /// Everything on the card, read aloud in her voice (Josh, 2026-10-23: "all
-    /// dialogue read - in English and Italian - not buttons"): her line, its
-    /// English, the note, then the question and its English, then anything
-    /// else on the card (card 5's example, card 6's Learn book)
+    /// The card read aloud in her voice (Josh, 2026-10-23: "all dialogue read
+    /// … not buttons", then "the translations don't need to be read"): her
+    /// line in the language, the note in English, her question in the
+    /// language, then anything else on the card (card 5's example, card 6's
+    /// Learn book). The English translations under her lines are shown, not read
     nonisolated static func spoken(_ card: Onboarding.Card, question: Onboarding.Card?, extra: [String] = []) -> String {
-        let parts = [card.line, card.en, card.note, question?.line, question?.en].compactMap { $0 } + extra
+        let parts = [card.line, card.note, question?.line].compactMap { $0 } + extra
         return parts
             .map { $0.replacingOccurrences(of: "*", with: "").trimmingCharacters(in: .whitespaces) }
             .filter { !$0.isEmpty }
