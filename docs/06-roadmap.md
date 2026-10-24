@@ -21,7 +21,7 @@ Claude can't move these until Josh does:
 - [x] **Claude** The mic tap plainly registers (Josh chose the states, 2026-10-18): cream with a waveform while the character speaks, cream with a mic on your turn, green with live dots and a stop as soon as you tap (before the mic is ready), terracotta once sent, taps ignored. **Josh** to check on the next TestFlight build
 - [x] **Claude** "No such file" errors at step transcribe on that build: a second tap while the mic was opening started a second recording, and the orphaned watcher later finished the turn again with the file already deleted. Fixed in the next build
 - [ ] **Josh** Try today's build: pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off
-- [ ] **Josh** Try Magda in the app
+- [ ] **N5 (moved from N4, Josh 2026-10-23: leave Magda where she is; she becomes Learn and Teach in N5)** **Josh** Try Magda in the app
 - [x] **Claude** Bottom bar: one circle in two colours, no Pause or Play (Josh, 2026-10-22; [bottom-bar.md](bottom-bar.md)): green mic and your wave, terracotta sending dots and her wave; interruptions return to your turn; the Learn link on the right, centred on the circle Built 0dde6b8 (2026-10-22), on Josh's phone
 - [ ] **Josh** Bottom bar on the phone: the four states in both countries (a call, Siri, AirPods and backgrounding: N6, Josh 2026-10-23)
 - [ ] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice?
