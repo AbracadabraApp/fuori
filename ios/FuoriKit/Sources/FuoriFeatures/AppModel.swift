@@ -54,8 +54,6 @@ public final class AppModel {
     public private(set) var level: String?
     /// A failed level change in Settings, with its code
     public private(set) var levelError: String?
-    /// Shown under the Settings row when saving the choice failed
-    public private(set) var addressError: String?
     /// The greeter's screen while phase is .onboarding
     public private(set) var onboarding: OnboardingModel?
 
@@ -148,12 +146,12 @@ public final class AppModel {
         await load()
     }
 
-    /// Onboarding done: start with the settings for the level (Beginner:
-    /// English translation on, which also slows the voice; Intermediate and
-    /// Advanced: off). The learner can change them in Settings.
+    /// Onboarding done: start with the settings for the level
+    /// (SettingsKey.applyDefaults; English on also slows the voice). The
+    /// learner can change them in Settings.
     private func finishOnboarding(level: String) {
         self.level = level
-        UserDefaults.standard.set(level == "beginner", forKey: SettingsKey.english)
+        SettingsKey.applyDefaults(forLevel: level)
         if let api { Task { addressedAs = (try? await api.me())?.addressedAs ?? addressedAs } }
         onboarding = nil
         phase = .ready
@@ -225,8 +223,8 @@ public final class AppModel {
 
     /// Settings: their level (Josh, 2026-10-23: the level picked in the tour
     /// shows in Settings and changes there). Shown at once; a failure puts the
-    /// old one back and is reported. English translation follows the level,
-    /// as after onboarding (on for Beginner), and can still be changed.
+    /// old one back and is reported. The subtitles and dialect follow the
+    /// level (SettingsKey.applyDefaults) and can still be changed.
     public func chooseLevel(_ choice: String) async {
         guard let api, choice != level else { return }
         let before = level
@@ -234,32 +232,11 @@ public final class AppModel {
         levelError = nil
         do {
             try await api.chooseLevel(choice)
-            UserDefaults.standard.set(choice == "beginner", forKey: SettingsKey.english)
+            SettingsKey.applyDefaults(forLevel: choice)
         } catch {
             level = before
             let code = report(error, step: "settings level")
             levelError = ErrorCode.message("Couldn't save that. Try again.", code: code)
-        }
-    }
-
-    /// Settings: how characters address them ("f" or "m"). Shown at once;
-    /// a failure puts the old choice back and is reported. A 404 means the
-    /// server has it off: the row goes away.
-    public func chooseAddress(_ choice: String) async {
-        guard let api, choice != addressedAs else { return }
-        let before = addressedAs
-        addressedAs = choice
-        addressError = nil
-        do {
-            try await api.chooseAddress(choice)
-        } catch {
-            addressedAs = before
-            let code = report(error, step: "settings address")
-            if (error as? APIError)?.code == .notFound {
-                addressOn = false
-            } else {
-                addressError = ErrorCode.message("Couldn't save that. Try again.", code: code)
-            }
         }
     }
 

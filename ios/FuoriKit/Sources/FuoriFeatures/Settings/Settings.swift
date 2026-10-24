@@ -1,14 +1,30 @@
 import SwiftUI
 import FuoriDesign
+#if canImport(UIKit)
+import UIKit
+#endif
 
 /// The learner's settings, kept on the phone for now (saved with the learner on
 /// the server in M3 item 3). Changes apply at once; there's no Save.
 public enum SettingsKey {
     public static let subtitles = "settings.subtitles"
     public static let english = "settings.english"
-    /// Off (default, Josh 2026-10-15): tap to talk, tap again when done.
-    /// On: the mic opens by itself after the character and closes after a silence.
+    /// Hidden since 2026-10-23 (Josh): every turn starts with a tap; a stored
+    /// value is ignored (ConversationModel.tapMode)
     public static let handsFree = "settings.handsFree"
+    /// Dialect allowed (Josh, 2026-10-23: a working control, wired up later):
+    /// on for Advanced by default
+    public static let dialect = "settings.dialect"
+
+    /// The defaults that follow the level (Josh, 2026-10-23), set when the
+    /// level is picked in the tour or changed in Settings; each can still be
+    /// changed after. Beginner: the language's words and English. Intermediate:
+    /// the words, no English. Advanced: neither, dialect on.
+    public static func applyDefaults(forLevel level: String, to defaults: UserDefaults = .standard) {
+        defaults.set(level != "advanced", forKey: subtitles)
+        defaults.set(level == "beginner", forKey: english)
+        defaults.set(level == "advanced", forKey: dialect)
+    }
     /// Hidden (Settings → touch and hold Version): the debug panel on the
     /// person screen, the server and learner, and Restart onboarding, as the web's ?debug=1
     public static let debug = "settings.debug"
@@ -51,7 +67,7 @@ struct SettingsSheet: View {
     @Environment(AppModel.self) private var model
     @AppStorage(SettingsKey.subtitles) private var subtitles = true
     @AppStorage(SettingsKey.english) private var english = false
-    @AppStorage(SettingsKey.handsFree) private var handsFree = false
+    @AppStorage(SettingsKey.dialect) private var dialect = false
     @AppStorage(SettingsKey.debug) private var debug = false
     @Environment(\.dismiss) private var dismiss
 
@@ -65,6 +81,18 @@ struct SettingsSheet: View {
             case .advanced: "People talk to you as they would to anyone, at natural speed."
             }
         }
+    }
+
+    /// The level's selected segment in olive with white text (Josh,
+    /// 2026-10-23: "make selection clearer"); iOS's default is a faint white.
+    /// The only segmented control in the app, so the appearance is set here
+    init() {
+        #if canImport(UIKit)
+        let control = UISegmentedControl.appearance()
+        control.selectedSegmentTintColor = UIColor(Tokens.Colors.green)
+        control.setTitleTextAttributes([.foregroundColor: UIColor.white, .font: UIFont.preferredFont(forTextStyle: .subheadline).bold()], for: .selected)
+        control.setTitleTextAttributes([.foregroundColor: UIColor(Tokens.Colors.text)], for: .normal)
+        #endif
     }
 
     private var currentLevel: Level {
@@ -113,27 +141,21 @@ struct SettingsSheet: View {
                         Text(currentLevel.note)
                     }
                 }
-                if model.addressOn, let lines = model.content?.onboarding?.lines.addressLines {
-                    AddressSection(lines: lines)
-                }
+                // No masculine/feminine row (Josh, 2026-10-23: removed
+                // entirely); it's chosen in the orientation tour
                 Section {
                     Toggle("Show \(language) words", isOn: $subtitles)
                     Toggle("Show English translation", isOn: $english)
-                    // As on the website; does nothing yet (dialect grows with level, docs/02-game-design.md)
-                    Toggle("Allow dialect", isOn: .constant(false))
-                        .disabled(true)
+                    // A working switch, not wired into the conversation yet (Josh,
+                    // 2026-10-23: "make it work as control… we will wire it up later")
+                    Toggle("Allow dialect", isOn: $dialect)
                 } header: {
                     Text("Subtitles")
                 } footer: {
-                    Text("Allow dialect: coming soon.")
+                    Text("Set for your level; change them any time.")
                 }
-                Section {
-                    Toggle("Hands-free", isOn: $handsFree)
-                } footer: {
-                    Text(handsFree
-                         ? "The microphone opens by itself when it's your turn and closes after a pause."
-                         : "Tap to talk, and tap again when you've finished.")
-                }
+                // No Hands-free (Josh, 2026-10-23: hidden): every turn starts
+                // with a tap and silence sends it
                 Section("About") {
                     Text("Everyone you meet in \(appName) is played by an AI.")
                     NavigationLink("Privacy") { PrivacyView(appName: appName) }
@@ -214,3 +236,9 @@ private struct PrivacyView: View {
         .navigationTitle("Privacy")
     }
 }
+
+#if canImport(UIKit)
+private extension UIFont {
+    func bold() -> UIFont { UIFont(descriptor: fontDescriptor.withSymbolicTraits(.traitBold) ?? fontDescriptor, size: 0) }
+}
+#endif

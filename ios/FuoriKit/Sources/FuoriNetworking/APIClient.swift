@@ -326,13 +326,6 @@ public actor APIClient {
         _ = try await sendData(post("v1/onboarding/address", json: Body(addressedAs: addressedAs, name: name)), signedIn: true)
     }
 
-    /// POST /v1/me/address: the same choice from Settings, for learners who
-    /// never saw her question. 404 while the server has it off
-    public func chooseAddress(_ addressedAs: String) async throws {
-        struct Body: Encodable { let addressedAs: String }
-        _ = try await sendData(post("v1/me/address", json: Body(addressedAs: addressedAs)), signedIn: true)
-    }
-
     /// POST /v1/onboarding/reset: Restart onboarding (the greeter welcomes them again)
     public func onboardingReset() async throws {
         _ = try await sendData(post("v1/onboarding/reset", json: [String: String]()), signedIn: true)

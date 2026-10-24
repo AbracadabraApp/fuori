@@ -461,14 +461,14 @@ private struct ExampleBubbles: View {
 
     var body: some View {
         VStack(alignment: .trailing, spacing: 8) {
-            (Text("\(model.language.ui.howToSay ?? "") ").font(.footnote) + Text(example.en))
+            Text("\(Text("\(model.language.ui.howToSay ?? "") ").font(.footnote))\(example.en)")
                 .typeface(.label, 15, relativeTo: .callout)
                 .foregroundStyle(Tokens.Colors.card)
                 .padding(.vertical, 10)
                 .padding(.horizontal, 14)
                 .background(Tokens.Colors.ink.opacity(0.55), in: UnevenRoundedRectangle(topLeadingRadius: 18, bottomLeadingRadius: 18, bottomTrailingRadius: 18, topTrailingRadius: 6))
             HStack(spacing: 10) {
-                (Text("Say this: ").font(.footnote).foregroundStyle(Tokens.Colors.muted) + Text(inLanguage(example.line, model.language)).bold().foregroundStyle(Tokens.Colors.ink))
+                Text("\(Text("Say this: ").font(.footnote).foregroundStyle(Tokens.Colors.muted))\(Text(inLanguage(example.line, model.language)).bold().foregroundStyle(Tokens.Colors.ink))")
                     .typeface(.label, 17, relativeTo: .body)
                 Button { Task { await model.playExample() } } label: {
                     Image(systemName: "speaker.wave.2").font(.body).foregroundStyle(Tokens.Colors.green).frame(width: 44, height: 44)
