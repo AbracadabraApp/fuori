@@ -50,7 +50,7 @@ export const onboarding = {
     hello: {
       line: 'Ciao! Benvenuti a Fuori.',
       en: 'Hi! Welcome to Fuori.',
-      note: "I'll show you how Fuori works before you head out. It takes two minutes. First: this is how you ask someone's name. Tap the green microphone to talk. Tap it again to send me your name.",
+      note: "I'll show you how Fuori works. Tap the green microphone to say your name. Tap it again to finish.",
     },
     askName: { line: 'Come ti chiami?', en: "What's your name? Tap the mic" },
     niceToMeet: {
