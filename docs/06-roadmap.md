@@ -10,11 +10,11 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
-1. **Play Afuera with the level trial on**, so Claude can review those conversations (→ Beginner ladder)
+1. ~~Play Afuera with the level trial on~~: done 2026-10-19 (Chucho, 23 turns; reviewed under Scaffolding)
 2. **Spec for the smaller world** (→ Smaller world, on hold)
 3. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
 4. ~~Device checks on the iPhone~~: moved to N6 (Josh, 2026-10-23)
-5. **Record the speech-to-text test set**: about 20 short turns per language, including hesitant and wrong ones (→ Faster and reliable replies)
+5. **Record the speech-to-text test set** on the iPhone: about 20 short turns per language (hesitant and wrong ones included) plus 30–50 typical English and mixed requests; one set for both jobs (→ Faster and reliable replies; Scaffolding → Measure English transcription). Superseded if the conversation library (N6) keeps real recordings first
 
 ### Conversation on the phone — N4
 - Josh played build 0.1.0 (1) from TestFlight in Italy (2026-10-18): quality good, shorter replies, easier to understand, relatively fast. The mic tap wasn't crisp or obvious
@@ -102,18 +102,18 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 
 ### Scaffolding ([beginner-scaffolding.md](beginner-scaffolding.md)) — N4
 **Direction, 2026-10-23 (Josh):** inside the game, scaffolding becomes one loop: say it in English → a line in the language comes back → read it out loud. The reply panel stays until that's been played. Design: bubble (canvas row G, `design/say-it-in-english/`); details in beginner-scaffolding.md.
-- [ ] **Claude (laptop)** Measure English transcription: 30–50 typical English and mixed requests recorded on Josh's iPhone through `/v1/transcribe`; count the ones wrong enough to change the line. Try ElevenLabs Scribe on the same clips
+- [ ] **Claude (laptop)** Measure English transcription on the recordings from blocker 5 (**Josh** records them: 30–50 typical English and mixed requests on his iPhone) through `/v1/transcribe`; count the ones wrong enough to change the line. Try ElevenLabs Scribe on the same clips
 - [ ] **Claude** Say it in English, rough version to play: when the recording isn't the learned language, one short call returns the line at the learner's level (the gist, not word for word); show the grey *Come si dice:* bubble with what was said and the "Say this:" bubble with hear-it; the reading is sent as usual. Prompt trial row in prompt-trials.md
 - [ ] **Claude** One tap per turn: tap once; English ends on silence, the mic reopens for the reading (waits for speech to start, closed while hear-it plays), the reading ends on silence and is sent; tap again next turn
 - [ ] **Claude** Beginner opener hint: her first line in each conversation ends with a small mic and "Answer in <language> or English" (G1); nothing above the mic
-- [ ] **Claude (laptop)** Test Claude's take for spoken Italian on logged learner turns (what they meant, clean, at their level; none when unclear); Josh reads it beside Whisper's text before anything's built
+- [ ] **Tabled (Josh, 2026-10-23: English gets help first; correcting the learner's language waits)** Claude (laptop): test Claude's take for the learner's spoken language (Italian or Spanish) on logged learner turns (what they meant, clean, at their level; none when unclear); Josh reads it beside Whisper's text before anything's built
 - [ ] **Josh** Play the rough version with a family beginner; then decide whether the reply panel goes
 Onboarding, then reply buttons for the first turns of each conversation (stage A, built 2026-10-21, server-decided, no switch), then the mic. Stages B and C proposed; the rest not settled.
 - [x] **Claude** Reply buttons from a separate call (`lib/replies.ts`, test-only): sensible 97–100%, ready before the character finishes speaking
 - [x] **Josh** Played Afuera with the level trial on: Chucho the shoeshiner, 23 turns (2026-10-19, prompt `2026-10-18b+Beginner: still you, sometimes ask`)
 - [x] **Claude** Reviewed it. Good: easy questions came back ("¿negros o cafés?", "¿billetes o monedas?", two "¿sí o no?"); he helped in role every time Josh reached for a word (derecho, la cuenta, quédese con el cambio); judge alive 7. Not yet beginner-plain: median 23 words a line (the trial's replay runs were about 10, on the older prompt), and 42% of replies asked two questions (target ≤ 10%). The trial block hasn't been replayed on prompt 2026-10-18b; next: replay it there before more play
-- [x] **Claude** First playable levels 1–3 behind a setting (2026-10-19): Settings → touch and hold Version → Reply buttons (test), level 1–3. The replies are written while the character speaks and replace the mic pill; a tap sends the line. `smoke:live` checks `/v1/replies` (Mexico passes)
-- [ ] **Josh** Play 10 minutes in Afuera at level 1, then level 3; note where it felt wrong
+- [x] **Claude** First playable levels 1–3 behind a setting (2026-10-19): Settings → touch and hold Version → Reply buttons (test), level 1–3. The replies are written while the character speaks and replace the mic pill; a tap sends the line. `smoke:live` checks `/v1/replies` (Mexico passes) (Since then: the setting is gone, always on at Beginner, 2026-10-21; the steps are stages, not levels, docs/glossary.md; all click-to-answer scaffolding is to be replaced by say it in English, 2026-10-23)
+- ~~Play 10 minutes in Afuera at level 1, then level 3~~: superseded (no setting or levels any more; say it in English replaces the reply buttons, Josh 2026-10-23)
 - [ ] **Claude** Tests queued in [test-ideas.md](test-ideas.md): live with lookahead, a plan for the visit, "Ripeti?" on levels 4–5, Mexico at 20 conversations
 
 ### Diario: the review place ([diario.md](diario.md); card screens in [beginner-scaffolding.md](beginner-scaffolding.md)) — N5
@@ -200,7 +200,7 @@ Josh: some conversations are clearly over (both said ciao, arrivederci, ci vedia
 - **N5 (Josh, 2026-10-23).** **Josh, 2026-10-23:** the learner's goodbye is the trigger; she answers with hers and the conversation is over: the mic goes, a finish link leaves like Back; the learner can leave early but not continue. Round 20's `over` flag is the mechanism (its misses were where only she said goodbye). Supersedes "ignore it and keep talking" below. Details in beginner-scaffolding.md
 - ~~Decide: add `over`; the link fades in, ignore it and keep talking, nothing ends by itself~~: superseded by the goodbye rule above (Josh, 2026-10-23: the learner can leave early but not continue)
 - [ ] **Josh** Pick the word: "Esci" or "Fuori" for Italy, and Mexico's ("Salir"?); it comes from `/v1/content`, not Swift
-- [ ] **Claude** Reply buttons (levels 1–3) get the same Done link, by the same rule: it fades in when it's over, not always shown; and once the errand is done, one reply is a goodbye, so beginners can get there (test on `replies.md` first) (Josh, 2026-10-19: "the beginner buttons really need a done button/link"; [beginner-scaffolding.md](beginner-scaffolding.md) → Idea: a Done link)
+- ~~Reply buttons get the same Done link~~: superseded (say it in English replaces the reply buttons; the goodbye rule ends conversations for everyone, Josh 2026-10-23)
 
 ## Earlier list (2026-10-12 to 10-14)
 
