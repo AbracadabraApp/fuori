@@ -38,7 +38,7 @@ struct PersonView: View {
                     // (docs/beginner-scaffolding.md)
                     let showLine = model.scaffolding || subtitles
                     let showEnglish = model.scaffolding || english
-                    Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note)
+                    Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note, hint: model.openerHint)
                     ConversationControls(model: model, onLearn: openLearn)
                 }
                 .padding(.horizontal, Tokens.Space.gutter)

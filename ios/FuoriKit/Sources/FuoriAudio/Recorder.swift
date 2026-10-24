@@ -95,13 +95,16 @@ public final class Recorder: @unchecked Sendable {
         guard let converter else { return }
         let capacity = AVAudioFrameCount(Double(buffer.frameLength) * Self.pcmFormat.sampleRate / buffer.format.sampleRate) + 32
         guard let out = AVAudioPCMBuffer(pcmFormat: Self.pcmFormat, frameCapacity: capacity) else { return }
-        var given = false
+        // The converter calls back synchronously: one buffer in, then "no more for now"
+        final class Given: @unchecked Sendable { var done = false }
+        let given = Given()
+        nonisolated(unsafe) let input = buffer
         var error: NSError?
         converter.convert(to: out, error: &error) { _, status in
-            if given { status.pointee = .noDataNow; return nil }
-            given = true
+            if given.done { status.pointee = .noDataNow; return nil }
+            given.done = true
             status.pointee = .haveData
-            return buffer
+            return input
         }
         guard error == nil, out.frameLength > 0, let samples = out.int16ChannelData?[0] else { return }
         let bytes = Data(bytes: samples, count: Int(out.frameLength) * 2)

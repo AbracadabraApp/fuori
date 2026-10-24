@@ -184,10 +184,24 @@ public final class ConversationModel {
     /// measured; read every frame by the circle's wave
     public var voiceLevel: Double? { voice.level }
 
+    private let beginner: Bool
+
+    /// The Beginner hint under her first line (Josh, 2026-10-23, canvas G1):
+    /// "Answer in Italian or English", until the learner has said something
+    /// in this conversation. Interface text, English; the language's name from
+    /// content
+    public var openerHint: String? {
+        guard beginner, learnerLines == 0, sayIt == nil, line != nil, shown == nil else { return nil }
+        guard [.tapToTalk, .listening, .hearing].contains(phase) else { return nil }
+        return "Answer in \(language.name) or English"
+    }
+
     /// Speed as on the web: slower with English on
     private var speed: Double { UserDefaults.standard.bool(forKey: SettingsKey.english) ? 0.7 : 0.9 }
 
-    public init(city: City, place: Place, character: Character, language: Language, api: APIClient, onSave: @escaping (String) -> Void) {
+    /// `beginner`: the learner's level is Beginner (for the opener hint)
+    public init(city: City, place: Place, character: Character, language: Language, api: APIClient, beginner: Bool = false, onSave: @escaping (String) -> Void) {
+        self.beginner = beginner
         self.city = city
         self.place = place
         self.character = character
@@ -615,7 +629,7 @@ public final class ConversationModel {
         if showsAnswers { UserDefaults.standard.set(true, forKey: Self.answersIntroduced) }
         var step = "transcribe"
         do {
-            var started = Self.now()
+            let started = Self.now()
             // Reading a "Say this" line: it's in the language and goes to her,
             // with no language check (it looped back into say it whenever
             // Whisper called the reading English: Josh, Mohamed, 2026-10-23)

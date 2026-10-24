@@ -13,9 +13,12 @@ struct Subtitles: View {
     let shown: Int?
     let english: String?
     let note: String?
+    /// The Beginner hint under her first line ("Answer in Italian or English")
+    var hint: String? = nil
     // Web sizes, scaled with the learner's text size
     @ScaledMetric(relativeTo: .body) private var lineSize: CGFloat = 18
     @ScaledMetric(relativeTo: .callout) private var englishSize: CGFloat = 16
+    @ScaledMetric(relativeTo: .footnote) private var hintSize: CGFloat = 14
 
     var body: some View {
         VStack(spacing: 8) {
@@ -65,6 +68,13 @@ struct Subtitles: View {
                     .lineSpacing(englishSize * 0.3)
                     .foregroundStyle(Tokens.Colors.muted)
             }
+            if let hint, shown == nil {
+                Divider()
+                Label(hint, systemImage: "mic.fill")
+                    .labelStyle(HintLabelStyle())
+                    .font(.system(size: hintSize))
+                    .foregroundStyle(Tokens.Colors.green)
+            }
         }
         .padding(.vertical, 13)
         .padding(.horizontal, 16)
@@ -80,5 +90,15 @@ struct Subtitles: View {
         let start = text.index(text.startIndex, offsetByCharacters: shown)
         text[start...].foregroundColor = .clear
         return text
+    }
+}
+
+/// A small icon beside the text, top-aligned when the text wraps
+private struct HintLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 6) {
+            configuration.icon.imageScale(.small)
+            configuration.title
+        }
     }
 }

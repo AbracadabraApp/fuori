@@ -331,7 +331,7 @@ public final class AppModel {
     func conversation(city: City, place: Place, character: Character) -> ConversationModel? {
         guard let content, let api, let server else { return nil }
         // Saved by the server the conversation happened on, even after a country switch
-        return ConversationModel(city: city, place: place, character: character, language: content.language, api: api) { [weak self] id in
+        return ConversationModel(city: city, place: place, character: character, language: content.language, api: api, beginner: level == "beginner") { [weak self] id in
             self?.save(conversationId: id, on: (api, server))
         }
     }
