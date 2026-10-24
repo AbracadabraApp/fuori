@@ -30,6 +30,8 @@ const Body = z.object({
   tripTo: z.string().optional(),
   conversationId: z.string().uuid().optional(),
   heard: z.string().trim().min(1).max(MAX_SAID_CHARS),
+  /** The same recording heard as the learned language (/v1/transcribe `learned`) */
+  heardAsLearned: z.string().trim().max(MAX_SAID_CHARS).optional(),
 });
 
 export async function POST(request: Request) {
@@ -39,7 +41,7 @@ export async function POST(request: Request) {
     // One call per English turn; a long conversation is well under this
     if (!allow(`say-it:${learnerId}`, 120, 10 * 60 * 1000)) return apiError('rate_limited', 'Too many tries; wait a moment', 60_000);
 
-    const { cityId, placeId, tripTo, conversationId, heard } = body.data;
+    const { cityId, placeId, tripTo, conversationId, heard, heardAsLearned } = body.data;
     const parsed = parseTurnRequest({ cityId, placeId, tripTo });
     if (!parsed.ok) return apiError(parsed.status === 404 ? 'not_found' : 'bad_request', parsed.error);
 
@@ -49,10 +51,10 @@ export async function POST(request: Request) {
 
     try {
       const started = Date.now();
-      const line = await writeSayIt(parsed.character, transcript, heard, level);
+      const line = await writeSayIt(parsed.character, transcript, heard, level, heardAsLearned);
       // Every decision kept, to measure routing on real play (lib/say-it-log.ts)
       try {
-        await saveSayIt({ learnerId, conversationId: conversationId ?? null, heard, sendAsSaid: line.sendAsSaid, line: line.line, ms: Date.now() - started, promptVersion: sayItPromptVersion() });
+        await saveSayIt({ learnerId, conversationId: conversationId ?? null, heard: heardAsLearned ? `${heard} | as the language: ${heardAsLearned}` : heard, sendAsSaid: line.sendAsSaid, line: line.line, ms: Date.now() - started, promptVersion: sayItPromptVersion() });
       } catch (err) {
         logServerError(request, 'v1 say-it log', err);
       }

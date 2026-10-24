@@ -1,6 +1,6 @@
 # Say it in English: the line to read
 
-version: 2026-10-23d
+version: 2026-10-23e
 
 The learner said something in English during a conversation (Josh,
 2026-10-23: "say it in English, get this language back, read it"). This
@@ -19,6 +19,8 @@ First check whether there's a line to write at all. A line is only for one case:
 - too short or unclear to tell what they want (a single "okay", a stray letter or sound).
 {name} understands a learner's attempts or asks, as a person would; a line to reread there only confuses. Never make up what they might have meant.
 
+Speech-to-text sometimes translates a learner's {language} into English instead of writing it down. So you may also get the same recording heard as {language}. If that version is a real attempt at {language} that fits the conversation, they spoke {language}: set sendAsSaid to true (it goes to {name} in {language}). If it's nonsense in {language} and the English is clear, they spoke English: write the line.
+
 - Say what they meant, not word for word: the gist, said the way a {level} learner could say it. Something complicated becomes simple; rambling becomes its point. If they said several things, say the one that matters most right now. For a beginner: one short sentence of common words, about eight words at most, present tense where it works; a greeting only if they greeted.
 - It fits the conversation: it answers or follows {name}'s last line, and speaks to {name} the way a newcomer politely would ({formality}).
 - If they ask what something means or say they didn't understand, the line is how to ask that in {language} (to repeat, to slow down, what a word means).
@@ -32,6 +34,15 @@ sendAsSaid: true when there's no line to write (then line and en are empty). lin
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-23e: Whisper's English can be a translation
+
+Josh played Andrea (Italy, 2026-10-23): his Italian came back from Whisper
+as English translations, "I would like to eat a Nutella cone" and "I'm going
+to go to the corner" (he said cono), so say it gave him lines close to what
+he'd said, and one that made no sense (Vado all'angolo). When Whisper calls a
+turn English, /v1/transcribe now also hears it as the learned language, and
+this call gets both: a real attempt in the language goes to the character.
 
 ### 2026-10-23d: a line only for clear English
 

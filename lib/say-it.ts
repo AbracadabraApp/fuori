@@ -26,7 +26,8 @@ export function sayItPromptVersion(): string {
   return readPromptFile('say-it.md').version;
 }
 
-export function buildSayItPrompt(character: CharacterSheet, transcript: Turn[], english: string, level: Level | null): { system: string; user: string } {
+/** `asLearned`: the same recording heard as the learned language, when there is one */
+export function buildSayItPrompt(character: CharacterSheet, transcript: Turn[], english: string, level: Level | null, asLearned?: string): { system: string; user: string } {
   const system = fill(readPromptFile('say-it.md').block('System prompt'), {
     language: language.name,
     name: character.name,
@@ -35,11 +36,14 @@ export function buildSayItPrompt(character: CharacterSheet, transcript: Turn[], 
     formality: `"${language.formality.formal}", unless ${character.name} has been using "${language.formality.informal}"`,
   });
   const so = transcript.map((t) => `${t.who === 'npc' ? character.name : 'Person'}: ${t.transcript}`).join('\n');
-  return { system, user: `${so || '(nothing said yet)'}\n\nWhat they want to say, in English: ${english}` };
+  const heard = asLearned?.trim()
+    ? `Speech-to-text heard their turn as English: ${english}\nThe same recording heard as ${language.name}: ${asLearned.trim()}`
+    : `What they want to say, in English: ${english}`;
+  return { system, user: `${so || '(nothing said yet)'}\n\n${heard}` };
 }
 
-export async function writeSayIt(character: CharacterSheet, transcript: Turn[], english: string, level: Level | null): Promise<SayItLine> {
-  const prompt = buildSayItPrompt(character, transcript, english, level);
+export async function writeSayIt(character: CharacterSheet, transcript: Turn[], english: string, level: Level | null, asLearned?: string): Promise<SayItLine> {
+  const prompt = buildSayItPrompt(character, transcript, english, level, asLearned);
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
     max_tokens: 2000,

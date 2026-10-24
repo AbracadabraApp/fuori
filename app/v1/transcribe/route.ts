@@ -36,6 +36,7 @@ export async function POST(request: Request) {
       // No prompt: Whisper echoes it into short or quiet recordings (tests/check-transcribe.ts)
       laps.lap('upload');
       let result = await getSpeechProvider().transcribe({ audio, language: lang });
+      let learned: string | undefined;
       laps.lap('whisper');
       if (mode === 'turn') {
         const heard = spokenLanguage(result.language, learning.code);
@@ -46,10 +47,19 @@ export async function POST(request: Request) {
           result = { ...result, language: heard === 'en' ? 'en' : learning.code };
         }
         laps.facts.heard = heard;
+        // Called English: Whisper sometimes translates a learner's speech into
+        // English rather than transcribing it ("vorrei mangiare un cono alla
+        // Nutella" came back as "I would like to eat a Nutella cone", Josh,
+        // 2026-10-23). The same recording heard as the learned language goes
+        // with it, so say it can tell a translation from real English
+        if (heard === 'en') {
+          learned = (await getSpeechProvider().transcribe({ audio, language: learning.code })).text;
+          laps.lap('as-learned');
+        }
       }
       laps.facts.bytes = audio.size;
       laps.log('transcribe-timing', request.headers.get('x-fuori-id'));
-      return apiJson({ text: result.text, language: result.language }, { headers: { 'server-timing': laps.header() } });
+      return apiJson({ text: result.text, language: result.language, ...(learned !== undefined ? { learned } : {}) }, { headers: { 'server-timing': laps.header() } });
     } catch (err) {
       logServerError(request, 'v1 transcribe', err);
       return apiError('upstream_unavailable', 'Speech to text unavailable', 1000);

@@ -325,6 +325,8 @@ public final class ConversationModel {
         // Only while still waiting for the reply: once it's here, present() says the whole line
         guard awaitingReply, head == nil, generation == self.generation, phase == .thinking || phase == .starting else { return }
         stoppedByTap = false
+        // Her reply has begun: the last "Say this" is done with
+        sayIt = nil
         line = first
         english = nil
         shown = 0
@@ -662,7 +664,7 @@ public final class ConversationModel {
             // to read out loud, and the mic reopens for the reading
             if !reading, heard.language == "en" {
                 step = "say-it"
-                await sayItInEnglish(said, generation: generation)
+                await sayItInEnglish(said, asLearned: heard.learned, generation: generation)
                 return
             }
             step = "turn"
@@ -689,17 +691,21 @@ public final class ConversationModel {
     /// The learner said it in English: show what they said and the line to
     /// read, then open the mic for the reading by itself (Josh, 2026-10-23:
     /// "circle back to green listening"). The reading goes to her as any turn
-    private func sayItInEnglish(_ english: String, generation: Int) async {
+    /// `asLearned`: the same recording heard as the learned language, which
+    /// goes to her instead when it was really the language (Whisper sometimes
+    /// translates a learner's speech into English)
+    private func sayItInEnglish(_ english: String, asLearned: String? = nil, generation: Int) async {
         do {
             let started = Self.now()
-            let line = try await api.sayIt(cityId: city.id, placeId: place.id, conversationId: conversationId, heard: english)
+            let line = try await api.sayIt(cityId: city.id, placeId: place.id, conversationId: conversationId, heard: english, heardAsLearned: asLearned)
             time("say-it", since: started)
             guard generation == self.generation else { return }
             // Already in the language (Whisper mislabelled it) or too unclear
             // to tell: it goes to her as said. When in doubt, the character
             if line.sendAsSaid == true || line.line.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                debug.heard = (debug.heard ?? "") + " → to her as said"
-                try await sendTurn(english, generation: generation)
+                let said = asLearned.flatMap { Heard.hasWords($0) ? $0 : nil } ?? english
+                debug.heard = (debug.heard ?? "") + " → to her as said: \(said)"
+                try await sendTurn(said, generation: generation)
                 return
             }
             sayIt = SayIt(english: english, line: line.line, en: line.en)

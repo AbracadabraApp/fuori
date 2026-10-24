@@ -21,4 +21,13 @@ import Testing
         let line = try JSONDecoder().decode(APIClient.SayItLine.self, from: Data(#"{"line":"Hola.","en":"Hi.","promptVersion":"v"}"#.utf8))
         #expect(line.sendAsSaid == nil)
     }
+
+    /// /v1/transcribe in turn mode, heard as English: the same recording heard
+    /// as the learned language comes along (Whisper can translate)
+    @Test func readsHeardAsLearned() throws {
+        let both = try JSONDecoder().decode(APIClient.Heard.self, from: Data(#"{"text":"I would like a cone.","language":"en","learned":"Vorrei un cono."}"#.utf8))
+        #expect(both.learned == "Vorrei un cono.")
+        let plain = try JSONDecoder().decode(APIClient.Heard.self, from: Data(#"{"text":"Vorrei un cono.","language":"it"}"#.utf8))
+        #expect(plain.learned == nil)
+    }
 }
