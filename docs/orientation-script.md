@@ -76,7 +76,7 @@ Josh, 2026-10-23: no beats explaining the buttons (the circle, talking with char
 
 ## 7 · Off you go
 
-**She:** *Ecco tutto, {name}. Andiamo!* "That's everything. To start, you'll get help with every answer, and you can ask for less later."
+**She:** *Ecco tutto, {name}. Andiamo!* "That's everything. Answer in Italian if you can, in English if you can't."
 **Learner:** **Andiamo!** → the city list.
 
 ---
