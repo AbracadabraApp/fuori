@@ -6,7 +6,7 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases (Josh, 2026-10-22):** this release is **N4**, TestFlight to Josh, and includes scaffolding (onboarding, reply buttons). **N5** is next: Learn, Teach (Magda's syllabus) and the Diario, plus the web sunset. Every open item is in N4 or N5 (Josh, 2026-10-22). Moved out of N4 on 2026-10-23 (Josh: "move to 5 or 6"): measuring English transcription, the queued scaffolding tests and the device checks (N6). N4 is now: play and tick what's built (say it in English, one tap per turn, the bottom bar, Magda), the launch screen and the Beginner opener hint (built, to look at), and the orientation tour. **N6**: a framework for level, repeatable and improving; a conversation library (real speech kept to replay tests on); also the device checks (a call, Siri, AirPods, backgrounding, locking: Josh, 2026-10-23) ([12-native-app.md](12-native-app.md) → Milestones). Each section below says which. Each item says who does it: **Josh** or **Claude**. ⛔ marks a blocker: work that waits on someone. Detail lives in the linked docs; done and removed items are at the bottom of this file.
+The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases:** **N4 is done** (Josh, 2026-10-25): TestFlight build 0.1.0 (5), with scaffolding, say it in English, one tap per turn, the bottom bar, the launch screen and country choice, faster replies, Learn in both countries. Open N4 work moved to N5 the same day, each item marked "N5 (from N4)". **N5** is now: Learn, Teach (Magda's syllabus) and the Diario, say it in English settled with a family beginner, the orientation tour, testers beyond Josh and the App Store, plus the web sunset. **N6**: a framework for level, repeatable and improving; a conversation library (real speech kept to replay tests on); the device checks (a call, Siri, AirPods, backgrounding, locking).
 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
@@ -16,7 +16,7 @@ Claude can't move these until Josh does:
 4. ~~Device checks on the iPhone~~: moved to N6 (Josh, 2026-10-23)
 5. **Record the speech-to-text test set** on the iPhone: about 20 short turns per language (hesitant and wrong ones included) plus 30–50 typical English and mixed requests; one set for both jobs (→ Faster and reliable replies; Scaffolding → Measure English transcription). Superseded if the conversation library (N6) keeps real recordings first
 
-### Conversation on the phone — N4
+### Conversation on the phone — N4 done (2026-10-25)
 - Josh played build 0.1.0 (1) from TestFlight in Italy (2026-10-18): quality good, shorter replies, easier to understand, relatively fast. The mic tap wasn't crisp or obvious
 - [x] **Claude** The mic tap plainly registers (Josh chose the states, 2026-10-18): cream with a waveform while the character speaks, cream with a mic on your turn, green with live dots and a stop as soon as you tap (before the mic is ready), terracotta once sent, taps ignored. **Josh** to check on the next TestFlight build
 - [x] **Claude** "No such file" errors at step transcribe on that build: a second tap while the mic was opening started a second recording, and the orphaned watcher later finished the turn again with the file already deleted. Fixed in the next build
@@ -26,7 +26,7 @@ Claude can't move these until Josh does:
 - [x] **Josh** Bottom bar on the phone: the four states in both countries: good (Josh, 2026-10-23) (a call, Siri, AirPods and backgrounding: N6, Josh 2026-10-23)
 - [x] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice? Josh, 2026-10-23: no
 
-### Open bugs and learner data — N4 (added 2026-10-22)
+### Open bugs and learner data — N4 done (2026-10-25)
 - [x] **Claude** Recording error "0 buffers failed to write" / "the mic wasn't on": found from the saved reports (2026-10-23) and fixed in 27c8902: the send tap's cancelled watcher ticked once more and set the circle back to "talking", so a second tap found the mic closed. **Josh** to confirm on the next build that it's gone
 - ~~Merge learner `dd6ec6fb` (Josh's Franco conversations) into `3c544022`~~: not important (Josh, 2026-10-23); left as is
 - [x] **Josh** Whose learner `819f7aed` is ("José", 1 conversation with Franco, 17 Oct): Josh testing (2026-10-23). Left as is
@@ -94,20 +94,20 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 - [ ] **Claude** Moving up later: when 90% of the learner's speech is at the next level, across several conversations (Josh, 2026-10-15). Magda suggests it, the learner decides
 - [ ] **Claude** Level and settings saved with the learner (speed, default subtitles); then turn on the greyed-out level control in Settings
 
-### Onboarding ([onboarding-design.md](onboarding-design.md)) — N4, scaffolding
+### Onboarding ([onboarding-design.md](onboarding-design.md)) — N4 done; the orientation tour is N5
 - [x] **Josh + Claude** Flow, engineering needs, built and tried in both countries (2026-10-17)
 - [x] **Claude** The send-off failed on mixed answers (one English, one fluent): fixed 2026-10-18
-- [ ] **Josh + Claude** Orientation tour to replace onboarding ([orientation-script.md](orientation-script.md), draft, 2026-10-23): the greeter's tour in 7 cards, mixed Italian and English (name by mic, Masculine/Feminine and level by buttons, what Fuori is, say it in English as an example, getting help with Learn, off you go; mock-ups on the canvas, row H). The game's rules don't apply to onboarding (Josh). Depends on say it in English
+- [ ] **N5 (from N4)** **Josh + Claude** Orientation tour to replace onboarding ([orientation-script.md](orientation-script.md), draft, 2026-10-23): the greeter's tour in 7 cards, mixed Italian and English (name by mic, Masculine/Feminine and level by buttons, what Fuori is, say it in English as an example, getting help with Learn, off you go; mock-ups on the canvas, row H). The game's rules don't apply to onboarding (Josh). Depends on say it in English
 - [x] **Claude** Launch and opening moment: built 2d2c660 (2026-10-23), on Josh's phone; the first-launch choice not yet seen. **Josh** to look: (Josh, 2026-10-22: "a strong intro"; canvas "Launch screen", https://claude.ai/artifact/5mTwgS9R8CubVMyUKaXoJZ). The system launch screen is paper with the icon (a `LaunchBackground` colour set named in `UILaunchScreen`, fixing the white flash, iOS conventions A13); the app's first view matches it exactly and holds the large picture for about a second at least (longer only while content loads), then fades to where the learner left off. A tap skips it. On first launch it stays and becomes the country choice, Fuori | Afuera (board 2), replacing today's two-card screen. Reduce Motion: plain crossfade. Check in both countries, AX5, VoiceOver
 
-### Scaffolding ([beginner-scaffolding.md](beginner-scaffolding.md)) — N4
+### Scaffolding ([beginner-scaffolding.md](beginner-scaffolding.md)) — N4 done; open items N5
 **Direction, 2026-10-23 (Josh):** inside the game, scaffolding becomes one loop: say it in English → a line in the language comes back → read it out loud. The reply panel stays until that's been played. Design: bubble (canvas row G, `design/say-it-in-english/`); details in beginner-scaffolding.md.
 - [ ] **N6, with the conversation library (moved from N4, Josh 2026-10-23)** **Claude (laptop)** Measure English transcription on the recordings from blocker 5 (**Josh** records them: 30–50 typical English and mixed requests on his iPhone) through `/v1/transcribe`; count the ones wrong enough to change the line. Try ElevenLabs Scribe on the same clips
-- [ ] **Claude** Say it in English, rough version to play: when the recording isn't the learned language, one short call returns the line at the learner's level (the gist, not word for word); show the grey *Come si dice:* bubble with what was said and the "Say this:" bubble with hear-it; the reading is sent as usual. Prompt trial row in prompt-trials.md
-- [ ] **Claude** One tap per turn: tap once; English ends on silence, the mic reopens for the reading (waits for speech to start, closed while hear-it plays), the reading ends on silence and is sent; tap again next turn
+- [x] **Claude** Say it in English, rough version to play (built 2026-10-23 d56b402, routing fixed through a730bc1; in build 5): when the recording isn't the learned language, one short call returns the line at the learner's level (the gist, not word for word); show the grey *Come si dice:* bubble with what was said and the "Say this:" bubble with hear-it; the reading is sent as usual. Prompt trial row in prompt-trials.md
+- [x] **Claude** One tap per turn (built 2026-10-23; finished sentences end sooner, 015f3ac): tap once; English ends on silence, the mic reopens for the reading (waits for speech to start, closed while hear-it plays), the reading ends on silence and is sent; tap again next turn
 - [x] **Claude** Beginner opener hint: built 10537a1 (2026-10-23), on Josh's phone. Was:: her first line in each conversation ends with a small mic and "Answer in <language> or English" (G1); nothing above the mic
 - [ ] **Tabled (Josh, 2026-10-23: English gets help first; correcting the learner's language waits)** Claude (laptop): test Claude's take for the learner's spoken language (Italian or Spanish) on logged learner turns (what they meant, clean, at their level; none when unclear); Josh reads it beside Whisper's text before anything's built
-- [ ] **Josh** Play the rough version with a family beginner; then decide whether the reply panel goes (Josh, 2026-10-23, on his phone: "reply panel good")
+- [ ] **N5 (from N4)** **Josh** Play the rough version with a family beginner; then decide whether the reply panel goes (Josh, 2026-10-23, on his phone: "reply panel good")
 Onboarding, then reply buttons for the first turns of each conversation (stage A, built 2026-10-21, server-decided, no switch), then the mic. Stages B and C proposed; the rest not settled.
 - [x] **Claude** Reply buttons from a separate call (`lib/replies.ts`, test-only): sensible 97–100%, ready before the character finishes speaking
 - [x] **Josh** Played Afuera with the level trial on: Chucho the shoeshiner, 23 turns (2026-10-19, prompt `2026-10-18b+Beginner: still you, sometimes ask`)
@@ -147,7 +147,7 @@ Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the sam
 ### Release: the route to TestFlight (broken down 2026-10-18)
 Two stages. A TestFlight for Josh alone needs no Apple review and none of the cost protection; anyone else does ([12-native-app.md](12-native-app.md) → Cost protection). Josh's developer account is paid (Movie Genius shipped from it), so App Store signing works.
 
-**Stage 1: TestFlight for Josh only** (internal testing; N4 in 12-native-app.md, scaffolding included)
+**Stage 1: TestFlight for Josh only** (internal testing; N4 in 12-native-app.md, scaffolding included) — **done 2026-10-25, build 0.1.0 (5)**
 - Josh, 2026-10-18: hold new TestFlight builds until a milestone; server changes still reach build 1 through Railway. Waiting for the next build: the mic states (87ed253, 9c2ed05) and the double-tap fix (5e54841); an idea only (Josh, 2026-10-20): an exit link that fades in when the conversation is over (round 20's `over` flag), to tap or ignore
 - [x] **Claude** Icon (2026-10-17), microphone usage text, export compliance (`ITSAppUsesNonExemptEncryption: false`), version 0.1.0 build 1
 - [x] **Josh** Created the app in App Store Connect (2026-10-18); **Claude** registered the bundle id `com.joshp100.fuori` (it wasn't: phone builds used the wildcard profile)
@@ -182,7 +182,7 @@ Two stages. A TestFlight for Josh alone needs no Apple review and none of the co
 - [ ] **Josh** Storefronts: launch outside the EU and skip the EU trader declaration (Josh, 2026-10-18: learners are English speakers, not Italians, and the store is chosen by the Apple ID's country, not where they are). Declare trader status (App Store Connect → Business) only if EU stores are wanted later
 - Screenshots for the App Store page: 3–10 at the 6.9-inch size (1320×2868), taken from the app by **Claude**; a preview video is optional. Nothing beyond the icon is needed for TestFlight
 
-### Housekeeping — N4
+### Housekeeping — N4 done
 - [x] **Claude** Railway watch paths: docs-only commits are now skipped (seen 2026-10-18)
 - [x] **Claude** Move the test scripts from the laptop scratchpad into the repo: done 2026-10-18 (`tests/experiments/`, README there: qtype → question-kinds, replies → reply-buttons, place-test → placement, repeat-test → repeats, cap-test → reply-tokens, real-judge → real-conversations); ticked 2026-10-22
 
