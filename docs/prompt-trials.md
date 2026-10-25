@@ -113,6 +113,15 @@ Josh, 2026-10-23: the learner says it in English, gets one line in the language 
 | v3 (2026-10-23c): first decide whether there's a line to write(`sendAsSaid`: already in the language, or too short/unclear) | 18 cases: Josh's 4 real Italian turns Whisper labelled English (Mohamed, 2026-10-23) and Spanish ones | | | | 1.2–4.0 s | **Kept:** all 4 of Josh's real lines and both Spanish ones go to the character as said; clear English and mixed requests still get a line; "Okay." and a misheard "C." no longer invent a request (v3 draft wrote *Sì, un tavolo per uno, grazie* and *Una canción, por favor* for them) |
 | **v4 / v5 (2026-10-23d, e): a line only for clear English; and Whisper's English can be a translation** | Josh's real lines from Valeria, Rosa and Andrea (Mexico, Italy): garbled Spanish, Italian slips, Whisper's English translations of his Italian paired with the same recording heard as the language | | | | 1.0–2.5 s | **Kept:** "Perrin Ivar, Grat-grat-sius", "Gracias. Arrivederci.", "Il canto, señorita" go to the character; "I would like to eat a Nutella cone" + "Vorrei mangiare un cono alla Nutella" and "I'm going to go to the corner" + "Il cono" go to the character; real English (both versions English, since Whisper forced to the language writes English as English) still gets a line |
 
+### Beginner level dialogue (`beginner.md`, trial; experiment `tests/experiments/beginner-dialogue.mts`)
+
+Josh's goals (docs/beginner-scaffolding.md → Beginner level dialogue → Goals). Six of his real conversations replayed (Sergio, Andrea, Luisa; Valeria, Rosa, Ofelia), his lines as said, the reply as parts: English (heard), words, a question, answers to say back. Read by Josh side by side with what the character said that day.
+
+| Version | What changed | Result | Decision |
+|---|---|---|---|
+| 2026-10-25-trial | First version from the goals | Shape right (one question a turn, answers offered, place and name first); English 36–54 words a turn against 7–18 in the language; praised and corrected ("Small fix: we say poca gente"); asked the name three times after Josh moved on; "Mi chiamo Anna" | Revised |
+| **2026-10-25b-trial** | Two short English sentences at most; opener varied (history, culture; name only sometimes); follow the learner; no praise or corrections | English 14–29 words a turn, the language 8–19; Andrea let the name go ("your name can wait") when Josh chose flavours; one hard fact stated (Venice centre "around fifty thousand") | Josh to read; next: opener also on the country, region, city or weather (Josh), name blank as … |
+
 ### Diario cards (experiment, `tests/experiments/diario-cards.mts`)
 
 Goal: cards worth reviewing, made from a real conversation. Round 17, admin export (Italy 28, Mexico 9 conversations).

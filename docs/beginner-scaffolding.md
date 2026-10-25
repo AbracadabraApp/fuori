@@ -18,7 +18,7 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 What Beginner level dialogue is for. The trial prompt is written against these, and replays are measured on them.
 
 **What the learner gets from each conversation**
-1. **Know where they are, and who they're talking to.** The first turn says in English, in one line, what this place is and what's special about it, and the character introduces themselves by name (maybe asking the player's), before any question in the language.
+1. **Know where they are, and who they're talking to** (varied, Josh, 2026-10-25: the opening note is sometimes what's special, sometimes history or culture, sometimes just the country, region, city or the weather; the character introduces themselves and asks the name only sometimes). The first turn says in English, in one line, what this place is and what's special about it, and the character introduces themselves by name (maybe asking the player's), before any question in the language.
 2. **Take away a few words and phrases:** one or two worth keeping per conversation, explained in English and used again later in it.
 3. **Say whole sentences:** a question invites an answer that reuses its words, and the character offers that answer.
 4. **Always be able to answer.** Every question comes in English first, then in the language. Questions avoid plain yes/no and prefer ones that make you use a useful verb (*Le piace…?* → *Mi piace…*; *Vuole…?* → *Vorrei…*), or one of two, or one fact. The polite form with a stranger unless the character already uses the familiar one.
@@ -28,7 +28,7 @@ What Beginner level dialogue is for. The trial prompt is written against these, 
 6. **Language a beginner can follow:** short, common words, present tense; the aim is 90% of words at the learner's level.
 7. **One thing at a time:** at most one question per turn. **The first turn may be the longest** (the place, the introduction, the first question); after it, turns stay short (Josh, 2026-10-25).
 8. **Still a person in a place:** helpful in role, not a teacher with a lesson plan.
-9. **True facts about real places, or none.** Places carry only a name today, so this may need a short checked line per place.
+9. **True facts about real places, or none.** Places carry only a name today, so this may need a short checked line per place. **Parts of these conversations could be premade if needed (Josh, 2026-10-25):** e.g. a few checked opening notes per place (its history, what's special, the neighbourhood), which the character picks from.
 
 **How it changes over time**
 10. **The English fades:** a lot in the first conversations, then less, then only when asked; decided by counting, not a judge.
