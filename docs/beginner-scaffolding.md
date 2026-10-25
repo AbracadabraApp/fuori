@@ -13,6 +13,30 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 
 ## Beginner level dialogue: spoken English framing, Italian in bubbles (Josh, 2026-10-24; a new idea, not decided)
 
+### Goals (Josh, 2026-10-25)
+
+What Beginner level dialogue is for. The trial prompt is written against these, and replays are measured on them.
+
+**What the learner gets from each conversation**
+1. **Know where they are, and who they're talking to.** The first turn says in English, in one line, what this place is and what's special about it, and the character introduces themselves by name (maybe asking the player's), before any question in the language.
+2. **Take away a few words and phrases:** one or two worth keeping per conversation, explained in English and used again later in it.
+3. **Say whole sentences:** a question invites an answer that reuses its words, and the character offers that answer.
+4. **Always be able to answer.** Every question comes in English first, then in the language. Questions avoid plain yes/no and prefer ones that make you use a useful verb (*Le piace…?* → *Mi piace…*; *Vuole…?* → *Vorrei…*), or one of two, or one fact. The polite form with a stranger unless the character already uses the familiar one.
+
+**How the character talks**
+5. **English as support, heard not shown, and brief:** a sentence or two to set the scene, then the language. No lectures (not what goes into carbonara, the kinds of pizza, how the bread differs); one interesting detail at most. Each phrase in the language gets its own bubble (a single word can sit inline), its English a tap away.
+6. **Language a beginner can follow:** short, common words, present tense; the aim is 90% of words at the learner's level.
+7. **One thing at a time:** at most one question per turn.
+8. **Still a person in a place:** helpful in role, not a teacher with a lesson plan.
+9. **True facts about real places, or none.** Places carry only a name today, so this may need a short checked line per place.
+
+**How it changes over time**
+10. **The English fades:** a lot in the first conversations, then less, then only when asked; decided by counting, not a judge.
+11. **Help still works:** asking in English still gets help (the character, or say it in English).
+
+**How we'd know it works**
+12. **Measured on replays:** words at level, questions per turn, an answer offered for each question, the place described first and the character introduced; then Josh reads them side by side with today's.
+
 Named by Josh, 2026-10-25 (it was "Beginner guides"): it's how the Beginner level talks, so it's level, not scaffolding (docs/glossary.md: level sets how complex the dialogue is).
 
 Josh: a lot of beginners walk into a place with no sense of where they are or what's special about it. For Beginners, characters could teach explicitly, mixing English and the language: a little English framing makes the place interesting, then they switch to the language to ask a question, first saying in English what the question is.
