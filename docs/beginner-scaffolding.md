@@ -26,13 +26,14 @@ What Beginner level dialogue is for. The trial prompt is written against these, 
 **How the character talks**
 5. **English as support, heard not shown, and brief:** a sentence or two to set the scene, then the language. No lectures (not what goes into carbonara, the kinds of pizza, how the bread differs); one interesting detail at most. Each phrase in the language gets its own bubble (a single word can sit inline), its English a tap away.
 6. **Language a beginner can follow:** short, common words, present tense; the aim is 90% of words at the learner's level.
-7. **One thing at a time:** at most one question per turn.
+7. **One thing at a time:** at most one question per turn. **The first turn may be the longest** (the place, the introduction, the first question); after it, turns stay short (Josh, 2026-10-25).
 8. **Still a person in a place:** helpful in role, not a teacher with a lesson plan.
 9. **True facts about real places, or none.** Places carry only a name today, so this may need a short checked line per place.
 
 **How it changes over time**
 10. **The English fades:** a lot in the first conversations, then less, then only when asked; decided by counting, not a judge.
 11. **Help still works:** asking in English still gets help (the character, or say it in English).
+11b. **Help to close (Josh, 2026-10-25):** when the errand is done, the character offers the goodbye as a phrase to reuse (*Grazie, arrivederci!*), so a beginner can end the conversation properly; their goodbye ends it (the goodbye rule, N5).
 
 **How we'd know it works**
 12. **Measured on replays:** words at level, questions per turn, an answer offered for each question, the place described first and the character introduced; then Josh reads them side by side with today's.
