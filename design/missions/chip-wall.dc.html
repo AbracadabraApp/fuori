@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Missions</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#4a300a}a:hover{color:#2b1b04}
+</style>
+</helmet>
+<div style="width: 390px; height: 1300px; box-sizing: border-box; padding: 28px 22px 40px; background: #f2f2f6; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #1c1c1e; display: flex; flex-direction: column; gap: 22px">
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-size: 34px; font-weight: 800; letter-spacing: -0.5px">Missions</h1>
+<p style="margin: 0; font-size: 16px; line-height: 1.35; color: #6b6b70">Each chip warms as you use its phrases with people — from cool to gold.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 3px; height: 18px">
+<div style="background: #ecebe6; border-radius: 9px 0 0 9px"></div>
+<div style="background: #f3e3c3"></div>
+<div style="background: #ecc985"></div>
+<div style="background: #dfa457"></div>
+<div style="background: #9c5f1f; border-radius: 0 9px 9px 0"></div>
+</div>
+<div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; color: #6b6b70">
+<span>Just heard</span>
+<span>Used with people</span>
+</div>
+</div>
+
+<sc-for list="{{sections}}" as="section" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 6px 0 0; font-size: 13px; font-weight: 700; letter-spacing: 1.6px; color: #6b6b70">{{section.label}}</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{section.chips}}" as="chip" hint-placeholder-count="6">
+<button type="button" style="{{chip.style}}">{{chip.name}}</button>
+</sc-for>
+</div>
+</div>
+</sc-for>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"showHeat":{"editor":"boolean","default":true},"$preview":{"width":390,"height":1300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const showHeat = this.props.showHeat ?? true;
+    // heat 0 (just heard) to 4 (used with people)
+    const fills = ['#ecebe6', '#f3e3c3', '#ecc985', '#dfa457', '#9c5f1f'];
+    const ink = ['#4a300a', '#4a300a', '#4a300a', '#3a2406', '#ffffff'];
+    const chip = (name, heat) => {
+      const h = showHeat ? heat : 0;
+      return {
+        name,
+        style: 'min-height: 52px; padding: 12px 22px; border-radius: 26px; border: 1px solid rgba(0,0,0,0.05); font: inherit; font-size: 21px; font-weight: 700; cursor: pointer; background: ' + fills[h] + '; color: ' + ink[h] + ';'
+      };
+    };
+    return {
+      // One chip per unit of the A1–A2 syllabus (content/it/syllabus.json), in its order
+      sections: [
+        { label: 'A1 · YOUR FIRST WEEKS', chips: [
+          chip('Greetings', 4), chip('Come?', 4), chip('Introductions', 3),
+          chip('The bar', 4), chip('Paying', 2), chip('Questions', 2),
+          chip('Directions', 1), chip('Times', 1), chip('Market', 2),
+          chip('Home', 0), chip('Small talk', 1), chip('Plans', 0),
+          chip('Buses', 0), chip('Health', 0), chip('The past', 0)
+        ]},
+        { label: 'A2 · SETTLING IN', chips: [
+          chip('Family', 0), chip('Routine', 0), chip('Eating out', 1),
+          chip('Stories', 0), chip('Deli', 0), chip('Clothes', 0),
+          chip('Neighbours', 0), chip('Instructions', 0), chip('Holidays', 0),
+          chip('Opinions', 0), chip('Favours', 0), chip('Doctor', 0),
+          chip('Complaints', 0), chip('Post', 0)
+        ]}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

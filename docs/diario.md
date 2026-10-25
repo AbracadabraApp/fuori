@@ -17,6 +17,8 @@ Mockup: the interactive Diario canvas in the Claude app (chip → deck → end o
 
 ## Direction: chips with missions (Josh, 2026-10-18; proposed until Josh reviews the chips)
 
+Mockup (2026-10-24): the Design canvas "Diario mission chips", https://claude.ai/artifact/LGHnWtmpXQm7kcVtpYKaap, files in [design/missions/](../design/missions/). Two screens: the chip wall, one chip per A1 and A2 unit of [syllabus-it.md](syllabus-it.md) in syllabus order, names cut to one or two words (Josh: "shorten these so you get more per line"), heat from cool to gold; and the Introductions chip opened, four of the unit's frames as tilted paper cards with the learner's own words (name, city, street) on a dashed blank, each card at its own heat, then Practise and Meet someone. Differs from the direction below: the opened chip shows phrases, not 3–5 missions; Meet someone stands in for the missions. Not decided.
+
 - 90 chips, all prebuilt: 30 for beginners (what you're **doing**: ordering, asking the price, your name, the way), 30 for intermediate (what you're **feeling**: what you liked, tired or happy, a complaint, your day), 30 for advanced (what you're **thinking**: an opinion and why, comparing, what you'd do if, disagreeing politely).
 - Tap a chip: 3–5 missions ("Go order an orange juice at the bar"). Tap one: you're in a real conversation at a real place in your city, with its character. No card screens and no scripted dialogue: you practise in the world.
 - The AI only colours chips, from transcripts (did it, tried it, needed English or got stuck, only heard it). It never writes the missions or the dialogue.

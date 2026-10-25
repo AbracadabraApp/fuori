@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Introductions</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 390px; height: 1000px; box-sizing: border-box; padding: 18px 22px 40px; background: #f2f2f6; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #1c1c1e; display: flex; flex-direction: column; gap: 18px">
+
+<div style="display: flex; justify-content: space-between; align-items: center; height: 44px">
+<span style="font-size: 17px; color: #9c5f1f; font-weight: 500">‹ Missions</span>
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1.4px; color: #6b6b70">A1 · 3 OF 15</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-size: 34px; font-weight: 800; letter-spacing: -0.5px">Introductions</h1>
+<p style="margin: 0; font-size: 16px; line-height: 1.35; color: #6b6b70">Four things to say the first time you meet someone. Fill in your own words.</p>
+</div>
+
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<span style="padding: 6px 12px; border-radius: 14px; background: #ffffff; font-size: 14px; color: #3c3c43">A new neighbour</span>
+<span style="padding: 6px 12px; border-radius: 14px; background: #ffffff; font-size: 14px; color: #3c3c43">The bar</span>
+<span style="padding: 6px 12px; border-radius: 14px; background: #ffffff; font-size: 14px; color: #3c3c43">First day at school</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 0; padding-top: 6px">
+<sc-for list="{{cards}}" as="card" hint-placeholder-count="4">
+<div style="{{card.wrap}}">
+<div style="{{card.style}}">
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<span style="{{card.kicker}}">{{card.n}} · {{card.label}}</span>
+<span style="{{card.kicker}}">{{card.uses}}</span>
+</div>
+<div style="font-family: 'New York', 'Iowan Old Style', Georgia, serif; font-size: 27px; line-height: 1.25; font-weight: 600">
+<span>{{card.before}}</span><span style="{{card.blank}}">{{card.fill}}</span><span>{{card.after}}</span>
+</div>
+<div style="{{card.en}}">{{card.english}}</div>
+</div>
+</div>
+</sc-for>
+</div>
+
+<div style="display: flex; gap: 12px; padding-top: 10px">
+<button type="button" style="flex: 1; min-height: 52px; border-radius: 26px; border: none; background: #2f7d4f; color: #fff; font: inherit; font-size: 18px; font-weight: 700">🎙 Practise</button>
+<button type="button" style="flex: 1; min-height: 52px; border-radius: 26px; border: none; background: #ffffff; color: #9c5f1f; font: inherit; font-size: 18px; font-weight: 700">Meet someone</button>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    // From content/it/syllabus.json unit a1-03. heat 0–4 as on the Missions screen.
+    const fills = ['#ecebe6', '#f3e3c3', '#ecc985', '#dfa457', '#9c5f1f'];
+    const ink = ['#2b1b04', '#2b1b04', '#2b1b04', '#2b1b04', '#ffffff'];
+    const sub = ['#6b6b70', '#6b5a3a', '#5e4417', '#4a300a', '#f6e7cf'];
+    const tilt = [-1.6, 1.2, -0.8, 1.8];
+    const rows = [
+      ['1', 'Your name', 'Mi chiamo ', 'Josh', '. E Lei?', "My name's Josh. And you?", 4, 'used 9×'],
+      ['2', 'Where from', 'Sono americano, di ', 'Seattle', '.', "I'm American, from Seattle.", 3, 'used 5×'],
+      ['3', 'You live here', 'No, abito qui, in via ', 'Toledo', '!', 'No, I live here, on Via Toledo!', 1, 'heard 2×'],
+      ['4', 'How long', 'Sono in Italia da ', 'tre settimane', '.', "I've been in Italy for three weeks.", 0, 'new']
+    ];
+    return {
+      cards: rows.map(([n, label, before, fill, after, english, h, uses], i) => ({
+        n, label, before, fill, after, english, uses,
+        wrap: 'margin-top: ' + (i ? -6 : 0) + 'px; transform: rotate(' + tilt[i] + 'deg); position: relative; z-index: ' + (i + 1) + ';',
+        style: 'display: flex; flex-direction: column; gap: 10px; padding: 18px 20px 20px; border-radius: 18px; background: ' + fills[h] + '; color: ' + ink[h] + '; box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 8px 18px rgba(60,40,10,0.10); border: 1px solid rgba(0,0,0,0.05);',
+        kicker: 'font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: ' + sub[h] + ';',
+        blank: 'padding: 0 4px; border-bottom: 2.5px dashed ' + (h === 4 ? '#f6e7cf' : '#9c5f1f') + '; font-style: italic;',
+        en: 'font-size: 15px; line-height: 1.35; color: ' + sub[h] + ';'
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

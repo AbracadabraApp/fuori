@@ -64,6 +64,10 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 ---
 
+## 2026-10-25: Diario mission-chip mockup (cloud session)
+- Done: Design canvas "Diario mission chips" (https://claude.ai/artifact/LGHnWtmpXQm7kcVtpYKaap), files in `design/missions/`: the chip wall from the A1–A2 syllabus units with short names, and the Introductions chip opened as four phrase cards. Noted in `docs/diario.md`.
+- Open: the opened chip shows phrases, while the direction in `docs/diario.md` says 3–5 missions; Josh to decide. "Flirting" (Josh's example) has no syllabus unit. Mockup only; no app code.
+
 ## 2026-10-24: Say it never got the Italian version (cloud session)
 
 - **Bug:** Josh's Venice turn with Sergio became a "Come si dice / Say this" line instead of going to the character (Josh: "My transcript is fine. Should have gone to character"). `APIClient.transcribeHeard` rebuilt `Heard` by hand to trim it and dropped `learned`, so the app never passed the learned-language version to `/v1/say-it`. The 2026-10-23e fix (Whisper's English can be a translation) worked on the server but never reached it from the app. Fixed with `Heard.trimmed()`, which keeps every field; test `trimmingKeepsHeardAsLearned`.
