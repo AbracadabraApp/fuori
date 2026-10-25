@@ -11,7 +11,9 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 
 **The reply panel (Josh, 2026-10-22; built the same day):** the reply buttons became a panel of suggested answers as text, "read one out loud" above the usual mic, no tap stage, no Pause. Spec and screens: [reply-panel.md](reply-panel.md).
 
-## Beginner guides: spoken English framing, Italian in bubbles (Josh, 2026-10-24; a new idea, not decided)
+## Beginner level dialogue: spoken English framing, Italian in bubbles (Josh, 2026-10-24; a new idea, not decided)
+
+Named by Josh, 2026-10-25 (it was "Beginner guides"): it's how the Beginner level talks, so it's level, not scaffolding (docs/glossary.md: level sets how complex the dialogue is).
 
 Josh: a lot of beginners walk into a place with no sense of where they are or what's special about it. For Beginners, characters could teach explicitly, mixing English and the language: a little English framing makes the place interesting, then they switch to the language to ask a question, first saying in English what the question is.
 
