@@ -120,7 +120,8 @@ Josh's goals (docs/beginner-scaffolding.md → Beginner level dialogue → Goals
 | Version | What changed | Result | Decision |
 |---|---|---|---|
 | 2026-10-25-trial | First version from the goals | Shape right (one question a turn, answers offered, place and name first); English 36–54 words a turn against 7–18 in the language; praised and corrected ("Small fix: we say poca gente"); asked the name three times after Josh moved on; "Mi chiamo Anna" | Revised |
-| **2026-10-25b-trial** | Two short English sentences at most; opener varied (history, culture; name only sometimes); follow the learner; no praise or corrections | English 14–29 words a turn, the language 8–19; Andrea let the name go ("your name can wait") when Josh chose flavours; one hard fact stated (Venice centre "around fifty thousand") | Josh to read; next: opener also on the country, region, city or weather (Josh), name blank as … |
+| **2026-10-25b-trial** | Two short English sentences at most; opener varied (history, culture; name only sometimes); follow the learner; no praise or corrections | English 14–29 words a turn, the language 8–19; Andrea let the name go ("your name can wait") when Josh chose flavours; one hard fact stated (Venice centre "around fifty thousand") | Josh: "not quite flowing but right direction" |
+| **2026-10-25c-trial** | React first, the errand leads the questions, varied turn shape; opener can be country, region, city or weather; tested with a simulated beginner answering the character's own questions | Conversations run hello → name → choice → how served → extra → paying → goodbye (Andrea: pistachio, cone, honey, cream, card, arrivederci); 0.6–1.0 questions a turn; English 117–263 words over 9 turns per conversation, the language 98–140; the simulated beginner is tidy (mostly reads the offered answers) | Josh to read |
 
 ### Diario cards (experiment, `tests/experiments/diario-cards.mts`)
 
