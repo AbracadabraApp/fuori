@@ -19,7 +19,7 @@ const tidy = tidyParts(parts);
 check('empty parts dropped', tidy.length === 4, tidy.length);
 check('parts trimmed', tidy[3].text === 'Mi piace il pesce.', tidy[3].text);
 const { line, en } = lineFromParts(tidy);
-check('line is what she says, in order: a word then its English, no answers', line === 'Welcome to the market! il pesce the fish Le piace il pesce?', line);
+check('line is what she says, in order: a word or the question, then its English; no answers', line === 'Welcome to the market! il pesce the fish Le piace il pesce? Do you like fish?', line);
 check('en is the English of what she says', en === 'Welcome to the market! the fish Do you like fish?', en);
 
 const city = cities.find((c) => c.places.some((p) => p.characterId && characterForPlace(c, p)?.origin === 'generated'))!;
