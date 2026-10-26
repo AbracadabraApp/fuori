@@ -103,6 +103,14 @@ export function withoutNames(en: string, text: string): string {
 }
 
 /**
+ * Unicode escapes the model sometimes leaves in its text, decoded: "\\u00bfPaga"
+ * → "¿Paga", "d\\u00eda" → "día" (Josh's screenshots, Doña Rosa, 2026-10-26)
+ */
+export function decodeEscapes(t: string): string {
+  return t.replace(/\\u([0-9a-fA-F]{4})/g, (_, hex: string) => String.fromCharCode(parseInt(hex, 16)));
+}
+
+/**
  * Empty parts dropped, so the app never shows an empty bubble. The gloss is
  * kept only on words and questions, without the names said in the phrase
  */
@@ -115,7 +123,8 @@ export function tidyParts(parts: Part[]): Part[] {
     .filter((p, i) => p.kind !== 'question' || i === lastQuestion)
     .map((p) => {
       const glossed = (p.kind === 'word' || p.kind === 'question') && p.gloss?.trim();
-      return { ...p, text: p.text.trim(), en: p.en.trim(), gloss: glossed ? withoutNames(p.gloss!, p.text) : '' };
+      const text = decodeEscapes(p.text.trim());
+      return { ...p, text, en: decodeEscapes(p.en.trim()), gloss: glossed ? withoutNames(decodeEscapes(p.gloss!), text) : '' };
     })
     .filter((p) => p.text);
 }

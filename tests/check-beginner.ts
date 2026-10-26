@@ -24,6 +24,10 @@ check('line is what she says, in order: each phrase then its gloss (none when em
 check('a gloss loses the name', tidyParts([{ kind: 'word', text: 'Piacere, Joshua!', en: 'Nice to meet you, Joshua!', gloss: 'nice to meet you, Joshua' }])[0].gloss === 'nice to meet you', tidyParts([{ kind: 'word', text: 'Piacere, Joshua!', en: 'Nice to meet you, Joshua!', gloss: 'nice to meet you, Joshua' }])[0].gloss);
 check('en is the English of what she says', en === 'Welcome to the market! the fish Do you like fish? Hi!', en);
 
+// Unicode escapes the model leaves in its text are decoded
+const escaped = tidyParts([{ kind: 'question', text: '\\u00bfPaga en efectivo?', en: 'Cash?', gloss: 'cash?' }, { kind: 'word', text: 'Que tenga un lindo d\\u00eda.', en: 'Have a nice day.', gloss: '' }]);
+check('escapes decoded', escaped[0].text === '¿Paga en efectivo?' && escaped[1].text === 'Que tenga un lindo día.', escaped.map((p) => p.text));
+
 // One question a turn: the last kept, the others dropped
 const two = tidyParts([
   { kind: 'question', text: 'Prende un caffè?', en: 'Having a coffee?', gloss: 'coffee?' },
