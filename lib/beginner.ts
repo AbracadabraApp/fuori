@@ -62,7 +62,11 @@ export function beginnerPromptVersion(): string {
  */
 export function lineFromParts(parts: Part[]): { line: string; en: string } {
   const spoken = parts.filter((p) => p.kind !== 'answer');
-  const said = spoken.map((p) => p.text.trim()).filter(Boolean);
+  // A word or phrase is followed by its English, said not shown, so the
+  // learner follows without reading (Josh, 2026-10-25: "Sono una studentessa
+  // d'arte" in a bubble, then "an art student" heard). The prompt asked for
+  // it and the model left it out, so it's added here, from the part's English
+  const said = spoken.flatMap((p) => (p.kind === 'word' && p.en.trim() ? [p.text.trim(), p.en.trim()] : [p.text.trim()])).filter(Boolean);
   const en = spoken.map((p) => (p.kind === 'english' ? p.text : p.en).trim()).filter(Boolean);
   return { line: said.join(' '), en: en.join(' ') };
 }

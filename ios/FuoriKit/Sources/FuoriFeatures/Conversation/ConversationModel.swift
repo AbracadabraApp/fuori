@@ -209,6 +209,8 @@ public final class ConversationModel {
         for part in parts where !part.isAnswer {
             if !part.isEnglish, shown.map({ $0 > start }) ?? true { out.append(part) }
             start += part.text.count + 1
+            // A word is followed in the line by its English, said (lib/beginner.ts)
+            if part.kind == "word", !part.en.isEmpty { start += part.en.count + 1 }
         }
         return out
     }
