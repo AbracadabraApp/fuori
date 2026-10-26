@@ -26,12 +26,19 @@ export type PartKind = (typeof PART_KINDS)[number];
 export interface Part {
   kind: PartKind;
   text: string;
-  /** English for a part in the language; empty for an english part */
+  /** English for a part in the language (shown on a tap); empty for an english part */
   en: string;
+  /**
+   * Word or question: the English she says right after it so they follow:
+   * short and natural, not word for word, empty when it's obvious (Josh,
+   * 2026-10-25: "the English helper echo doesn't need to be a full
+   * translation word for word - unnatural"). Names left out.
+   */
+  gloss?: string;
 }
 
 const PartsSchema = z.object({
-  parts: z.array(z.object({ kind: z.enum(PART_KINDS), text: z.string(), en: z.string() })).min(1),
+  parts: z.array(z.object({ kind: z.enum(PART_KINDS), text: z.string(), en: z.string(), gloss: z.string() })).min(1),
 });
 
 export const partsJsonSchema = {
@@ -44,8 +51,8 @@ export const partsJsonSchema = {
       items: {
         type: 'object',
         additionalProperties: false,
-        required: ['kind', 'text', 'en'],
-        properties: { kind: { type: 'string', enum: [...PART_KINDS] }, text: { type: 'string' }, en: { type: 'string' } },
+        required: ['kind', 'text', 'en', 'gloss'],
+        properties: { kind: { type: 'string', enum: [...PART_KINDS] }, text: { type: 'string' }, en: { type: 'string' }, gloss: { type: 'string' } },
       },
     },
   },
@@ -68,8 +75,7 @@ export function lineFromParts(parts: Part[]): { line: string; en: string } {
   // it and the model left it out, so it's added here, from the part's English
   // The question too: in the language first, then its English (Josh,
   // 2026-10-25: "ti piace la musica italiana? do you like italian music?")
-  const glossed = (p: Part) => (p.kind === 'word' || p.kind === 'question') && p.en.trim();
-  const said = spoken.flatMap((p) => (glossed(p) ? [p.text.trim(), withoutNames(p.en, p.text)] : [p.text.trim()])).filter(Boolean);
+  const said = spoken.flatMap((p) => [p.text.trim(), p.gloss?.trim() ?? '']).filter(Boolean);
   const en = spoken.map((p) => (p.kind === 'english' ? p.text : p.en).trim()).filter(Boolean);
   return { line: said.join(' '), en: en.join(' ') };
 }
@@ -96,9 +102,17 @@ export function withoutNames(en: string, text: string): string {
   return out;
 }
 
-/** Empty parts dropped, so the app never shows an empty bubble */
+/**
+ * Empty parts dropped, so the app never shows an empty bubble. The gloss is
+ * kept only on words and questions, without the names said in the phrase
+ */
 export function tidyParts(parts: Part[]): Part[] {
-  return parts.map((p) => ({ ...p, text: p.text.trim(), en: p.en.trim() })).filter((p) => p.text);
+  return parts
+    .map((p) => {
+      const glossed = (p.kind === 'word' || p.kind === 'question') && p.gloss?.trim();
+      return { ...p, text: p.text.trim(), en: p.en.trim(), gloss: glossed ? withoutNames(p.gloss!, p.text) : '' };
+    })
+    .filter((p) => p.text);
 }
 
 export function buildBeginnerPrompt(p: {

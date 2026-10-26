@@ -10,17 +10,19 @@ const check = (what: string, ok: boolean, got?: unknown) => { if (!ok) problems.
 
 const parts: Part[] = [
   { kind: 'english', text: 'Welcome to the market!', en: '' },
-  { kind: 'word', text: 'il pesce', en: 'the fish' },
-  { kind: 'question', text: 'Le piace il pesce?', en: 'Do you like fish?' },
+  { kind: 'word', text: 'il pesce', en: 'the fish', gloss: 'fish' },
+  { kind: 'question', text: 'Le piace il pesce?', en: 'Do you like fish?', gloss: 'do you like it?' },
+  { kind: 'word', text: 'Ciao!', en: 'Hi!', gloss: '' },
   { kind: 'answer', text: ' Mi piace il pesce. ', en: 'I like fish.' },
   { kind: 'answer', text: '  ', en: '' },
 ];
 const tidy = tidyParts(parts);
-check('empty parts dropped', tidy.length === 4, tidy.length);
-check('parts trimmed', tidy[3].text === 'Mi piace il pesce.', tidy[3].text);
+check('empty parts dropped', tidy.length === 5, tidy.length);
+check('parts trimmed', tidy[4].text === 'Mi piace il pesce.', tidy[4].text);
 const { line, en } = lineFromParts(tidy);
-check('line is what she says, in order: a word or the question, then its English; no answers', line === 'Welcome to the market! il pesce the fish Le piace il pesce? Do you like fish?', line);
-check('en is the English of what she says', en === 'Welcome to the market! the fish Do you like fish?', en);
+check('line is what she says, in order: each phrase then its gloss (none when empty); no answers', line === 'Welcome to the market! il pesce fish Le piace il pesce? do you like it? Ciao!', line);
+check('a gloss loses the name', tidyParts([{ kind: 'word', text: 'Piacere, Joshua!', en: 'Nice to meet you, Joshua!', gloss: 'nice to meet you, Joshua' }])[0].gloss === 'nice to meet you', tidyParts([{ kind: 'word', text: 'Piacere, Joshua!', en: 'Nice to meet you, Joshua!', gloss: 'nice to meet you, Joshua' }])[0].gloss);
+check('en is the English of what she says', en === 'Welcome to the market! the fish Do you like fish? Hi!', en);
 
 // Names are said once, in the language: not again in the English after it
 check('vocative at the end', withoutNames('Nice to meet you, Joshua!', 'Piacere, Joshua!') === 'Nice to meet you!', withoutNames('Nice to meet you, Joshua!', 'Piacere, Joshua!'));

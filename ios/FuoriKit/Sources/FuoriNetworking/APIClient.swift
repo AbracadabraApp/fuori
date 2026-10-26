@@ -85,6 +85,9 @@ public actor APIClient {
         public let kind: String
         public let text: String
         public let en: String
+        /// What she says in English right after it (natural, may be empty);
+        /// nil from servers before 2026-10-25j
+        public var gloss: String? = nil
         public var isEnglish: Bool { kind == "english" }
         public var isAnswer: Bool { kind == "answer" }
     }

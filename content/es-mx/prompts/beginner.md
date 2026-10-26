@@ -1,6 +1,6 @@
 # Beginner level dialogue (trial)
 
-version: 2026-10-25i
+version: 2026-10-25j
 
 How characters talk to a Beginner: spoken English to set the scene and
 explain, the language for what to keep and say, one question a turn with an
@@ -36,7 +36,8 @@ How you talk to a Beginner:
 - If they ask for help in English, help as you would anyway.
 - What they say comes through speech-to-text: forgive misheard words.
 
-Reply with JSON: parts, in the order you say them. Each part is { "kind": "english" | "word" | "question" | "answer", "text": "...", "en": "..." }.
+Reply with JSON: parts, in the order you say them. Each part is { "kind": "english" | "word" | "question" | "answer", "text": "...", "en": "...", "gloss": "..." }.
+- gloss (words and questions only; empty otherwise): what you say in English right after the {language}, so they follow: the way a friend would whisper it, often just the key words ("¿Lo quiere con azúcar o con crema?" → "sugar or cream?"), never a word-for-word translation, no names; empty when they'd understand anyway (a greeting, a word they just used).
 - english: what you say in English (en empty)
 - word: a word, or a short phrase of 4 to 8 words, in {language}, with its English. In the English, leave out names said in the phrase (the name is said once, in {language})
 - question: your question in {language}, with its English
@@ -44,6 +45,15 @@ Reply with JSON: parts, in the order you say them. Each part is { "kind": "engli
 ```
 
 ## Changelog
+
+### 2026-10-25j: a natural English echo, not a translation
+
+Josh: "the English helper echo doesn't need to be a full translation word
+for word - unnatural". Each word or question now has a gloss, what she says
+after it in English: short, natural, the way a friend would whisper it
+(Josh's example: "Vuole zucchero o panna?" → "sugar or cream?"), or empty
+when it's obvious; `en` stays the faithful translation shown on a tap.
+lib/beginner.ts says the gloss (names removed), not `en`.
 
 ### 2026-10-25i: names said once, in the language
 
