@@ -100,6 +100,16 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 - [ ] **N5 (from N4)** **Josh + Claude** Orientation tour to replace onboarding ([orientation-script.md](orientation-script.md), draft, 2026-10-23): the greeter's tour in 7 cards, mixed Italian and English (name by mic, Masculine/Feminine and level by buttons, what Fuori is, say it in English as an example, getting help with Learn, off you go; mock-ups on the canvas, row H). The game's rules don't apply to onboarding (Josh). Depends on say it in English
 - [x] **Claude** Launch and opening moment: built 2d2c660 (2026-10-23), on Josh's phone; the first-launch choice not yet seen. **Josh** to look: (Josh, 2026-10-22: "a strong intro"; canvas "Launch screen", https://claude.ai/artifact/5mTwgS9R8CubVMyUKaXoJZ). The system launch screen is paper with the icon (a `LaunchBackground` colour set named in `UILaunchScreen`, fixing the white flash, iOS conventions A13); the app's first view matches it exactly and holds the large picture for about a second at least (longer only while content loads), then fades to where the learner left off. A tap skips it. On first launch it stays and becomes the country choice, Fuori | Afuera (board 2), replacing today's two-card screen. Reduce Motion: plain crossfade. Check in both countries, AX5, VoiceOver
 
+### Beginner level dialogue — N5 ([beginner-scaffolding.md](beginner-scaffolding.md) → Beginner level dialogue)
+- [x] **Josh + Claude** Goals (2026-10-25)
+- [x] **Claude** Trial prompt, three versions on Josh's real conversations and a simulated beginner (docs/prompt-trials.md)
+- [x] **Claude** First playable version (aff1c7e, 2026-10-25): Beginners get the turn in parts (English heard, words and question as bubbles, answers to say back); live in both countries (smoke:live), on Josh's phone
+- [ ] **Josh** Play it in both countries; then what to change
+- [ ] **Claude** The English fading over time, by count
+- [ ] **Josh + Claude** Premade place notes (checked facts per place) if the openers drift
+- [ ] **Claude** Faster Beginner turns (the parts reply isn't streamed by sentence yet)
+- [ ] **Josh** Then: keep it and settle CLAUDE.md's teaching rules by level
+
 ### Scaffolding ([beginner-scaffolding.md](beginner-scaffolding.md)) — N4 done; open items N5
 **Direction, 2026-10-23 (Josh):** inside the game, scaffolding becomes one loop: say it in English → a line in the language comes back → read it out loud. The reply panel stays until that's been played. Design: bubble (canvas row G, `design/say-it-in-english/`); details in beginner-scaffolding.md.
 - [ ] **N6, with the conversation library (moved from N4, Josh 2026-10-23)** **Claude (laptop)** Measure English transcription on the recordings from blocker 5 (**Josh** records them: 30–50 typical English and mixed requests on his iPhone) through `/v1/transcribe`; count the ones wrong enough to change the line. Try ElevenLabs Scribe on the same clips
