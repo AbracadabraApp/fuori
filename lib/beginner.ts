@@ -14,7 +14,7 @@
  * memory, Learn and the voice work as for any turn.
  */
 import { z } from 'zod';
-import { anthropic, TURN_MODEL, replyText } from '@/lib/claude';
+import { anthropic, TURN_MODEL, replyText, finalWithDeadline } from '@/lib/claude';
 import { readPromptFile, fill } from '@/lib/prompts/template';
 import { loadTemplate, relationshipLine, personLine, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
 import { cities, language } from '@/content';
@@ -173,6 +173,8 @@ export function buildBeginnerPrompt(p: {
 export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { laps?: Laps }): Promise<{ line: string; en: string; parts: Part[] }> {
   const prompt = buildBeginnerPrompt(p);
   const started = performance.now();
+  // A deadline and one retry (lib/claude.ts): a stalled reply hung Doña Rosa
+  const response = await finalWithDeadline(() => {
   const stream = anthropic.messages.stream({
     model: TURN_MODEL,
     max_tokens: 1500,
@@ -184,7 +186,8 @@ export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[
     output_config: { format: { type: 'json_schema', schema: partsJsonSchema } },
   } as Parameters<typeof anthropic.messages.stream>[0]);
   if (p.laps) stream.once('text', () => p.laps!.mark('claudeFirstToken', performance.now() - started));
-  const response = await stream.finalMessage();
+  return stream;
+  });
   if (response.stop_reason === 'max_tokens') throw new Error(`Beginner turn hit max_tokens (${response.usage.output_tokens} tokens)`);
   const parts = tidyParts(PartsSchema.parse(JSON.parse(replyText(response))).parts);
   if (!parts.length) throw new Error('Beginner turn came back with no parts');

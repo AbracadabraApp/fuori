@@ -4,7 +4,7 @@
  */
 
 import { z } from 'zod';
-import { anthropic, TURN_MODEL, replyText } from '@/lib/claude';
+import { anthropic, TURN_MODEL, replyText, finalWithDeadline } from '@/lib/claude';
 import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
 import type { CharacterSheet, Gender, Turn } from '@/lib/types';
@@ -41,6 +41,9 @@ export async function runTurn(params: {
 
   // Streamed only to time the first token; the reply is still read whole
   const started = performance.now();
+  const { laps, onText } = params;
+  // A deadline and one retry (lib/claude.ts): a stalled reply hung the scene
+  const response = await finalWithDeadline(() => {
   const stream = anthropic.messages.stream({
     model: TURN_MODEL,
     // Caps the cost of a turn someone tries to stretch (docs/12-native-app.md). Was 2048, then 800; 800 failed
@@ -56,9 +59,7 @@ export async function runTurn(params: {
       format: { type: 'json_schema', schema: turnOutputJsonSchema },
     },
   });
-  const { laps } = params;
   if (laps) stream.once('text', () => laps.mark('claudeFirstToken', performance.now() - started));
-  const { onText } = params;
   if (onText) {
     let lineAt = 0;
     stream.on('text', (_delta, snapshot) => {
@@ -69,7 +70,8 @@ export async function runTurn(params: {
       onText(snapshot);
     });
   }
-  const response = await stream.finalMessage();
+  return stream;
+  });
   if (laps) {
     laps.facts.model = response.model;
     laps.facts.inputTokens = response.usage.input_tokens;
