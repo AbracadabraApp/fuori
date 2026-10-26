@@ -42,6 +42,7 @@
     "test:recording": "tsx tests/check-recording.ts",
     "test:save-later": "tsx tests/check-save-later.ts",
     "test:early-voice": "tsx tests/check-early-voice.ts",
+    "test:beginner": "tsx tests/check-beginner.ts",
     "test:learn-ahead": "tsx tests/check-learn-ahead.ts",
     "test:stats": "tsx tests/check-dialogue-stats.ts",
     "test:memory": "tsx tests/check-memory.ts",

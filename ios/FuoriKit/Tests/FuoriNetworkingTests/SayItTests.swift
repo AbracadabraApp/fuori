@@ -27,7 +27,7 @@ import Testing
     @Test func readsHeardAsLearned() throws {
         let both = try JSONDecoder().decode(APIClient.Heard.self, from: Data(#"{"text":"I would like a cone.","language":"en","learned":"Vorrei un cono."}"#.utf8))
         #expect(both.learned == "Vorrei un cono.")
-        let plain = try JSONDecoder().decode(APIClient.Heard.self, from: Data(#"{"text":"Vorrei un cono.","language":"it"}"#.utf8))
+        let plain = try JSONDecoder().decode(APIClient.Heard.self, from: Data(#"{"text":"Vorrei un cono.","language":"xx"}"#.utf8))
         #expect(plain.learned == nil)
     }
 

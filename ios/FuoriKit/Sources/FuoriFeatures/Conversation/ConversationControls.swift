@@ -34,6 +34,10 @@ struct ConversationControls: View {
                     if let sayIt = model.sayIt {
                         SayItBubbles(model: model, sayIt: sayIt)
                             .transition(.opacity)
+                    } else if !model.answersToSay.isEmpty {
+                        // Beginner dialogue: what to say back, on the learner's turn
+                        AnswersToSay(answers: model.answersToSay, speechLanguage: model.speechLanguage)
+                            .transition(.opacity)
                     }
                     controls
                 }

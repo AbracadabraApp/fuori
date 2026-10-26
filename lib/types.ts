@@ -271,4 +271,6 @@ export interface TurnOutput {
   /** What the character says, in the language being learned */
   line: string;
   en: string;
+  /** Beginner level dialogue (lib/beginner.ts): the turn in parts; `line` is them all, in order */
+  parts?: import('@/lib/beginner').Part[];
 }

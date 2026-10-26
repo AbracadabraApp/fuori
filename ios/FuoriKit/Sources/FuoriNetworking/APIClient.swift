@@ -73,6 +73,20 @@ public actor APIClient {
         /// then read it aloud) or "choose" (only one fits; choose, then read
         /// it aloud). Nil when `replies` isn't true, or from an older server
         public let stage: String?
+        /// Beginner level dialogue (lib/beginner.ts): the turn in parts.
+        /// `line` is all of them in order, which is what the voice says;
+        /// nil for other levels and from older servers
+        public var parts: [TurnPart]? = nil
+    }
+
+    /// A part of a Beginner turn: English heard (not shown), or a word, the
+    /// question or an answer to say back, in the language, with its English
+    public struct TurnPart: Codable, Sendable, Equatable, Hashable {
+        public let kind: String
+        public let text: String
+        public let en: String
+        public var isEnglish: Bool { kind == "english" }
+        public var isAnswer: Bool { kind == "answer" }
     }
 
     /// POST /v1/turn. Without a conversation id: the character's opening line.

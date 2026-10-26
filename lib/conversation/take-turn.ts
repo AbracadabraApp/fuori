@@ -14,6 +14,8 @@ import { trialLevel } from '@/lib/conversation/level-trial';
 import { loadCharacterMemory, loadMemoryAtStart, type CharacterMemory } from '@/lib/memory';
 import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
+import { onboardingState } from '@/lib/onboarding';
+import { runBeginnerTurn, beginnerPromptVersion } from '@/lib/beginner';
 import type { Gender } from '@/lib/types';
 import type { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
 import type { Laps } from '@/lib/timing';
@@ -88,7 +90,21 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // A level block for learners in the trial (off unless LEVEL_TRIAL is set); never Magda
   const level = tutorPrompt ? undefined : trialLevel(learnerId);
 
-  const reply = await runTurn({
+  // Beginner level dialogue (lib/beginner.ts; Josh, 2026-10-25): a Beginner,
+  // or a learner with no level yet, gets the parts reply; never Magda
+  let beginner = false;
+  if (learnerId && !isTutor) {
+    try {
+      const { level: learnerLevel } = await onboardingState(learnerId);
+      beginner = learnerLevel === 'beginner' || learnerLevel === null;
+    } catch (err) {
+      p.onSoftError('learner level', err);
+    }
+  }
+
+  const reply: TurnOutput = beginner
+    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps })
+    : await runTurn({
     character,
     transcript,
     learnerSaid,
@@ -103,7 +119,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   p.laps?.lap('claude');
 
   // One line per turn so any reply can be traced to the prompt version that produced it
-  const version = tutorPrompt ? `magda-${tutorPrompt.version}` : promptVersion(level);
+  const version = tutorPrompt ? `magda-${tutorPrompt.version}` : beginner ? beginnerPromptVersion() : promptVersion(level);
   console.log(
     JSON.stringify({
       level: 'info',

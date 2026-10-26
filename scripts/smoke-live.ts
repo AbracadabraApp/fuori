@@ -180,10 +180,13 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   reg.token ? pass('v1 device signed in') : fail('v1 device signed in', JSON.stringify(reg));
 
   const open = await v1('/v1/turn', { cityId, placeId });
-  const o = (await open.json()) as { line: string; conversationId: string; replies?: unknown; stage?: unknown };
-  // Whether the next turn uses the reply buttons, and how (lib/scaffold.ts):
-  // this learner has no level yet, so counts as new: the first turn is read
-  o.replies === true && o.stage === 'read' ? pass('v1 turn says mic or answers (read: no level yet counts as new)') : fail('v1 turn replies flag', JSON.stringify({ replies: o.replies, stage: o.stage }));
+  const o = (await open.json()) as { line: string; conversationId: string; replies?: unknown; stage?: unknown; parts?: { kind: string; text: string }[] };
+  // No level yet counts as a Beginner: Beginner level dialogue (lib/beginner.ts),
+  // the turn in parts with a question and answers to say back, and no answer panel
+  const kinds = (o.parts ?? []).map((p) => p.kind);
+  kinds.includes('question') && kinds.includes('answer') && o.stage === null && o.line?.length > 0
+    ? pass(`v1 turn: Beginner dialogue in parts (${kinds.join(', ')})`)
+    : fail('v1 turn Beginner parts', JSON.stringify({ parts: o.parts, stage: o.stage }).slice(0, 300));
   // Two learner lines: memory is only written after at least two (lib/remember.ts)
   let reply = open;
   let r: { line?: string; conversationId?: string; stage?: unknown } = {};
@@ -196,8 +199,8 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   open.ok && reply.ok && r.conversationId === o.conversationId
     ? pass('v1 conversation by ids (transcript kept on the server)')
     : fail('v1 conversation by ids', `${open.status}/${reply.status} ${JSON.stringify(r).slice(0, 200)}`);
-  // Read, then choose, then the mic alone
-  stages[0] === 'choose' && stages[1] === null ? pass('v1 turn stages: read, choose, then the mic') : fail('v1 turn stages after one and two lines', JSON.stringify(stages));
+  // Beginner dialogue: no answer panel stages
+  stages.every((s) => s === null) ? pass('v1 turn: no answer panel with Beginner dialogue') : fail('v1 turn stages with Beginner dialogue', JSON.stringify(stages));
 
   // The reply buttons while scaffolding (docs/beginner-scaffolding.md): two
   // whole-line replies to the character's last line, read from the database

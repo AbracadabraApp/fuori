@@ -50,6 +50,8 @@ public final class ConversationModel {
     /// The character's current line and its English
     public private(set) var line: String?
     public private(set) var english: String?
+    /// Beginner level dialogue: her turn in parts (APIClient.TurnPart), or nil
+    public private(set) var parts: [APIClient.TurnPart]?
     /// Typewriter subtitles: how many characters of `line` have been spoken so
     /// far; nil once the whole line is out (then the English appears too)
     public private(set) var shown: Int?
@@ -191,9 +193,29 @@ public final class ConversationModel {
     /// in this conversation. Interface text, English; the language's name from
     /// content
     public var openerHint: String? {
-        guard beginner, learnerLines == 0, sayIt == nil, line != nil, shown == nil else { return nil }
+        guard beginner, parts == nil, learnerLines == 0, sayIt == nil, line != nil, shown == nil else { return nil }
         guard [.tapToTalk, .listening, .hearing].contains(phase) else { return nil }
         return "Answer in \(language.name) or English"
+    }
+
+    /// Beginner dialogue: the parts in the language as they're said: a part
+    /// shows once the voice has reached it in `line` (all of them once she's
+    /// done); the answers wait for the learner's turn
+    public var shownParts: [APIClient.TurnPart] {
+        guard let parts else { return [] }
+        var start = 0
+        var out: [APIClient.TurnPart] = []
+        for part in parts {
+            if !part.isEnglish, !part.isAnswer, shown.map({ $0 > start }) ?? true { out.append(part) }
+            start += part.text.count + 1
+        }
+        return out
+    }
+
+    /// Beginner dialogue: the answers to say back, on the learner's turn
+    public var answersToSay: [APIClient.TurnPart] {
+        guard let parts, sayIt == nil, [.tapToTalk, .listening, .hearing].contains(phase) else { return [] }
+        return parts.filter(\.isAnswer)
     }
 
     /// Speed as on the web: slower with English on
@@ -251,6 +273,7 @@ public final class ConversationModel {
             interrupted = false
             line = reply.line
             english = reply.en
+            parts = reply.parts
             shown = nil
             replies = nil
             chosen = nil
@@ -268,6 +291,7 @@ public final class ConversationModel {
         }
         line = reply.line
         english = reply.en
+        parts = reply.parts
         shown = 0
         replies = nil
         chosen = nil
@@ -343,6 +367,7 @@ public final class ConversationModel {
                 // Her reply has begun: the last "Say this" is done with
                 self.sayIt = nil
                 self.line = first
+                self.parts = nil
                 self.english = nil
                 self.shown = 0
                 self.replies = nil
@@ -382,6 +407,7 @@ public final class ConversationModel {
         // The whole line now; what's been said of it stays shown
         line = reply.line
         english = reply.en
+        parts = reply.parts
         replies = nil
         chosen = nil
         if stoppedByTap || phase != .speaking {

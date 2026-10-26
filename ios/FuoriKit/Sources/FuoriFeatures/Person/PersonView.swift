@@ -38,7 +38,13 @@ struct PersonView: View {
                     // (docs/beginner-scaffolding.md)
                     let showLine = model.scaffolding || subtitles
                     let showEnglish = model.scaffolding || english
-                    Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note, hint: model.openerHint)
+                    if model.parts != nil {
+                        // Beginner dialogue: her English is heard, her words in the language are bubbles
+                        BeginnerBubbles(parts: model.shownParts, speechLanguage: model.speechLanguage)
+                        if let note { Subtitles(line: nil, shown: nil, english: nil, note: note) }
+                    } else {
+                        Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note, hint: model.openerHint)
+                    }
                     ConversationControls(model: model, onLearn: openLearn)
                 }
                 .padding(.horizontal, Tokens.Space.gutter)

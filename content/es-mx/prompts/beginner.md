@@ -5,10 +5,10 @@ version: 2026-10-25c-trial
 How characters talk to a Beginner: spoken English to set the scene and
 explain, the language for what to keep and say, one question a turn with an
 answer to reuse (docs/beginner-scaffolding.md → Beginner level dialogue →
-Goals; Josh, 2026-10-25). A TRIAL: used only by
-tests/experiments/beginner-dialogue.mts, not by the game. It goes against
-CLAUDE.md's "teach only in role, no English nobody asked for" for Beginners;
-CLAUDE.md changes only if Josh keeps it.
+Goals; Josh, 2026-10-25). In the game for Beginners (and learners with no
+level yet) since 2026-10-25, first playable version (lib/beginner.ts, N5);
+also used by tests/experiments/beginner-dialogue.mts. For Beginners it
+replaces CLAUDE.md's "teach only in role, no English nobody asked for".
 
 ## System prompt
 
