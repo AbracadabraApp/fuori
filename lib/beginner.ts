@@ -69,9 +69,31 @@ export function lineFromParts(parts: Part[]): { line: string; en: string } {
   // The question too: in the language first, then its English (Josh,
   // 2026-10-25: "ti piace la musica italiana? do you like italian music?")
   const glossed = (p: Part) => (p.kind === 'word' || p.kind === 'question') && p.en.trim();
-  const said = spoken.flatMap((p) => (glossed(p) ? [p.text.trim(), p.en.trim()] : [p.text.trim()])).filter(Boolean);
+  const said = spoken.flatMap((p) => (glossed(p) ? [p.text.trim(), withoutNames(p.en, p.text)] : [p.text.trim()])).filter(Boolean);
   const en = spoken.map((p) => (p.kind === 'english' ? p.text : p.en).trim()).filter(Boolean);
   return { line: said.join(' '), en: en.join(' ') };
+}
+
+/**
+ * The English said after a phrase, without the names it addresses: the name
+ * is said once, in the language ("Piacere, Joshua!" then "Nice to meet
+ * you!", not "Nice to meet you, Joshua!": Josh, 2026-10-25, "repeating the
+ * name in English and Italian sounds mechanical"). A name is a capitalised
+ * word set off by a comma in both the phrase and its English.
+ */
+export function withoutNames(en: string, text: string): string {
+  let out = en.trim();
+  const names = [...text.matchAll(/(?:^|,\s*)([A-ZÀ-Ý][\p{L}'-]+)(?=\s*[,!?.]|$)|([A-ZÀ-Ý][\p{L}'-]+)(?=\s*,)/gu)].map((m) => m[1] ?? m[2]);
+  for (const name of new Set(names)) {
+    const n = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    out = out.replace(new RegExp(`,\\s*${n}(?=\\s*[!?.,]|$)`, 'u'), '');
+    const start = new RegExp(`^${n},\\s*`, 'u');
+    if (start.test(out)) {
+      out = out.replace(start, '');
+      out = out.charAt(0).toUpperCase() + out.slice(1);
+    }
+  }
+  return out;
 }
 
 /** Empty parts dropped, so the app never shows an empty bubble */

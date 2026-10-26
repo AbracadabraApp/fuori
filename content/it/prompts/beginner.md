@@ -1,6 +1,6 @@
 # Beginner level dialogue (trial)
 
-version: 2026-10-25h
+version: 2026-10-25i
 
 How characters talk to a Beginner: spoken English to set the scene and
 explain, the language for what to keep and say, one question a turn with an
@@ -38,12 +38,19 @@ How you talk to a Beginner:
 
 Reply with JSON: parts, in the order you say them. Each part is { "kind": "english" | "word" | "question" | "answer", "text": "...", "en": "..." }.
 - english: what you say in English (en empty)
-- word: a word, or a short phrase of 4 to 8 words, in {language}, with its English
+- word: a word, or a short phrase of 4 to 8 words, in {language}, with its English. In the English, leave out names said in the phrase (the name is said once, in {language})
 - question: your question in {language}, with its English
 - answer: a sentence they can say back, in {language}, with its English. It's shown to them, not said by you: don't repeat it in your other parts
 ```
 
 ## Changelog
+
+### 2026-10-25i: names said once, in the language
+
+Josh: "repeating the name in English and Italian sounds mechanical. I'd only
+use it in Italian." ("Piacere, Joshua! Nice to meet you, Joshua!") The
+English of a phrase leaves out the names said in it; lib/beginner.ts also
+strips them from the English it says after each phrase.
 
 ### 2026-10-25h: answers as a local would say them
 
