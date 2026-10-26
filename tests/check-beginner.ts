@@ -19,8 +19,8 @@ const tidy = tidyParts(parts);
 check('empty parts dropped', tidy.length === 4, tidy.length);
 check('parts trimmed', tidy[3].text === 'Mi piace il pesce.', tidy[3].text);
 const { line, en } = lineFromParts(tidy);
-check('line is every part in order', line === 'Welcome to the market! il pesce Le piace il pesce? Mi piace il pesce.', line);
-check('en is the English of every part', en === 'Welcome to the market! the fish Do you like fish? I like fish.', en);
+check('line is what she says, in order, without the answers', line === 'Welcome to the market! il pesce Le piace il pesce?', line);
+check('en is the English of what she says', en === 'Welcome to the market! the fish Do you like fish?', en);
 
 const city = cities.find((c) => c.places.some((p) => p.characterId && characterForPlace(c, p)?.origin === 'generated'))!;
 const place = city.places.find((p) => p.characterId && characterForPlace(city, p)?.origin === 'generated')!;

@@ -205,8 +205,9 @@ public final class ConversationModel {
         guard let parts else { return [] }
         var start = 0
         var out: [APIClient.TurnPart] = []
-        for part in parts {
-            if !part.isEnglish, !part.isAnswer, shown.map({ $0 > start }) ?? true { out.append(part) }
+        // The answers aren't in `line` (she doesn't say them): they don't count
+        for part in parts where !part.isAnswer {
+            if !part.isEnglish, shown.map({ $0 > start }) ?? true { out.append(part) }
             start += part.text.count + 1
         }
         return out

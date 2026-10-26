@@ -9,8 +9,9 @@
  *
  * Prompt: content/<country>/prompts/beginner.md (trial versions in
  * docs/prompt-trials.md). Replaces the character prompt for Beginners only;
- * Magda keeps hers. `line` (everything said, in order) and `en` are derived
- * from the parts, so saving, memory, Learn and the voice work as for any turn.
+ * Magda keeps hers. `line` (everything she says, in order: the answers to
+ * say back aren't in it) and `en` are derived from the parts, so saving,
+ * memory, Learn and the voice work as for any turn.
  */
 import { z } from 'zod';
 import { anthropic, TURN_MODEL, replyText } from '@/lib/claude';
@@ -54,10 +55,15 @@ export function beginnerPromptVersion(): string {
   return `beginner-${readPromptFile('beginner.md').version}`;
 }
 
-/** Everything said, in order (what the voice says and the transcript keeps), and its English */
+/**
+ * What she says, in order (what the voice says and the transcript keeps), and
+ * its English. The answers aren't in it: they're for the learner to say, shown
+ * on their turn, not read out first (Josh, 2026-10-25)
+ */
 export function lineFromParts(parts: Part[]): { line: string; en: string } {
-  const said = parts.map((p) => p.text.trim()).filter(Boolean);
-  const en = parts.map((p) => (p.kind === 'english' ? p.text : p.en).trim()).filter(Boolean);
+  const spoken = parts.filter((p) => p.kind !== 'answer');
+  const said = spoken.map((p) => p.text.trim()).filter(Boolean);
+  const en = spoken.map((p) => (p.kind === 'english' ? p.text : p.en).trim()).filter(Boolean);
   return { line: said.join(' '), en: en.join(' ') };
 }
 
