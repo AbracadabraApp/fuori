@@ -10,3 +10,14 @@ export function spokenLanguage(named: string | undefined, learnedCode: string): 
   if (n === learnedCode.toLowerCase() || (learnedName && n === learnedName)) return 'learned';
   return 'other';
 }
+
+/**
+ * The same words, ignoring case, accents and punctuation. When Whisper calls
+ * a turn English but hears the same words as the learned language ("Quiero
+ * cinco girasoles, por favor." both ways, Josh, 2026-10-26), it was the
+ * learned language, and say it needn't be asked (it cost 1–1.8 s a turn).
+ */
+export function sameWords(a: string, b: string): boolean {
+  const norm = (t: string) => t.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  return norm(a) !== '' && norm(a) === norm(b);
+}

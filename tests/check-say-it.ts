@@ -3,6 +3,7 @@
 import { readFileSync } from 'node:fs';
 import { spokenLanguage } from '@/lib/speech/spoken-language';
 import { buildSayItPrompt, sayItPromptVersion } from '@/lib/say-it';
+import { sameWords } from '@/lib/speech/spoken-language';
 import { cities, pack } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 
@@ -29,6 +30,12 @@ if (!p.user.includes("I'd like a coffee")) failures.push('the English should be 
 const md = readFileSync(`content/${pack.id}/prompts/say-it.md`, 'utf8');
 const newest = (md.split('## Changelog')[1] ?? '').match(/^### ([^\s:]+)/m)?.[1];
 if (newest !== sayItPromptVersion()) failures.push(`say-it.md: version ${sayItPromptVersion()} but newest changelog entry ${newest}`);
+
+// Heard the same both ways: the learned language, no say it (2026-10-26)
+if (!sameWords('Quiero cinco girasoles, por favor.', 'quiero cinco girasoles por favor')) failures.push('sameWords: case and punctuation');
+if (!sameWords('Pago en efectivo', 'Pagó en efectivo!')) failures.push('sameWords: accents');
+if (sameWords('I want a paper, please.', 'Quiero papel, por favor.')) failures.push('sameWords: different words');
+if (sameWords('', '')) failures.push('sameWords: empty');
 
 if (failures.length) { console.error(failures.join('\n')); process.exit(1); }
 console.log(`OK: say it in English: languages told apart, say-it.md ${sayItPromptVersion()} fills its placeholders (${pack.id})`);

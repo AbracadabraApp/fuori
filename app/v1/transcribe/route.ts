@@ -18,7 +18,7 @@ import { apiError, apiJson, withLearner } from '@/lib/api';
 import { getSpeechProvider } from '@/lib/speech/providers';
 import { logServerError } from '@/lib/server-log';
 import { Laps } from '@/lib/timing';
-import { spokenLanguage } from '@/lib/speech/spoken-language';
+import { spokenLanguage, sameWords } from '@/lib/speech/spoken-language';
 
 const MAX_BYTES = 10 * 1024 * 1024; // about ten minutes of m4a; a turn is seconds
 
@@ -55,6 +55,12 @@ export async function POST(request: Request) {
         if (heard === 'en') {
           learned = (await getSpeechProvider().transcribe({ audio, language: learning.code })).text;
           laps.lap('as-learned');
+          // Heard the same both ways: it was the learned language (no say it needed)
+          if (sameWords(learned, result.text)) {
+            result = { ...result, language: learning.code };
+            learned = undefined;
+            laps.facts.heard = 'learned (same both ways)';
+          }
         }
       }
       laps.facts.bytes = audio.size;
