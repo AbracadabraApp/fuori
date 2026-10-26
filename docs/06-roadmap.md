@@ -105,7 +105,9 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 - [x] **Claude** Trial prompt, three versions on Josh's real conversations and a simulated beginner (docs/prompt-trials.md)
 - [x] **Claude** First playable version (aff1c7e, 2026-10-25): Beginners get the turn in parts (English heard, words and question as bubbles, answers to say back); live in both countries (smoke:live), on Josh's phone
 - [ ] **Josh** Play it in both countries; then what to change
-- [ ] **Claude** The English fading over time, by count
+- [ ] **Josh + Claude** Getting harder over time (Josh, 2026-10-25, a plan, not built): slower and staggered, a stage per conversation: 1,1,1,1,1 · 1,2,1,1,2 · 2,2,2,3,3, then on to Intermediate. Stages fade the English echo, the answers to say back (two, one, a frame, none), the bubbles, and raise her Italian and the questions (this-or-that, one fact, open). Principles: count practice, not visits (conversations where the learner said enough); fade one support at a time; stretch, then consolidate (the staggering); advance on mastery (answering in their own words) with the count as the default
+- [ ] **Claude** The English fading over time, by count (part of the plan above)
+- [ ] **Josh + Claude** Hands-free as the default (Josh, 2026-10-25: "creeping in as a better UI than clicking the microphone", untested): she speaks, the mic opens by itself, silence sends. Room noise or a covered mic misfires today with or without the tap, so only the tap changes. Try it on Josh's phone first (a developer switch), Beginner conversations with and without the tap
 - [ ] **Josh + Claude** Premade place notes (checked facts per place) if the openers drift
 - [ ] **Claude** Faster Beginner turns (the parts reply isn't streamed by sentence yet)
 - [ ] **Josh** Then: keep it and settle CLAUDE.md's teaching rules by level
