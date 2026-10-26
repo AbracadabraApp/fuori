@@ -107,7 +107,12 @@ export function withoutNames(en: string, text: string): string {
  * kept only on words and questions, without the names said in the phrase
  */
 export function tidyParts(parts: Part[]): Part[] {
+  // One question a turn (goal 7): when the model asks two ("Prende un caffè?
+  // Vuole un caffè o un cappuccino?", Sofia, 2026-10-25), keep the last, which
+  // the answers go with, and drop the others
+  const lastQuestion = parts.map((p) => p.kind).lastIndexOf('question');
   return parts
+    .filter((p, i) => p.kind !== 'question' || i === lastQuestion)
     .map((p) => {
       const glossed = (p.kind === 'word' || p.kind === 'question') && p.gloss?.trim();
       return { ...p, text: p.text.trim(), en: p.en.trim(), gloss: glossed ? withoutNames(p.gloss!, p.text) : '' };

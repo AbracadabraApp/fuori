@@ -24,6 +24,14 @@ check('line is what she says, in order: each phrase then its gloss (none when em
 check('a gloss loses the name', tidyParts([{ kind: 'word', text: 'Piacere, Joshua!', en: 'Nice to meet you, Joshua!', gloss: 'nice to meet you, Joshua' }])[0].gloss === 'nice to meet you', tidyParts([{ kind: 'word', text: 'Piacere, Joshua!', en: 'Nice to meet you, Joshua!', gloss: 'nice to meet you, Joshua' }])[0].gloss);
 check('en is the English of what she says', en === 'Welcome to the market! the fish Do you like fish? Hi!', en);
 
+// One question a turn: the last kept, the others dropped
+const two = tidyParts([
+  { kind: 'question', text: 'Prende un caffè?', en: 'Having a coffee?', gloss: 'coffee?' },
+  { kind: 'question', text: 'Vuole un caffè o un cappuccino?', en: 'Coffee or cappuccino?', gloss: 'coffee or cappuccino?' },
+  { kind: 'answer', text: 'Un caffè, grazie.', en: 'A coffee, thanks.' },
+]);
+check('two questions: only the last kept', two.filter((p) => p.kind === 'question').map((p) => p.text).join('|') === 'Vuole un caffè o un cappuccino?', two.map((p) => p.text));
+
 // Names are said once, in the language: not again in the English after it
 check('vocative at the end', withoutNames('Nice to meet you, Joshua!', 'Piacere, Joshua!') === 'Nice to meet you!', withoutNames('Nice to meet you, Joshua!', 'Piacere, Joshua!'));
 check('vocative at the start', withoutNames('Joshua, do you like Italian music?', 'Joshua, ti piace la musica italiana?') === 'Do you like Italian music?', withoutNames('Joshua, do you like Italian music?', 'Joshua, ti piace la musica italiana?'));
