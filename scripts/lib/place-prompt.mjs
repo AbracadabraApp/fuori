@@ -13,6 +13,7 @@
 export function cleanScene(prompt) {
   let p = prompt.replace(/\\'/g, "'");
   p = p.replace(/^.*?in bright colou?r, of /i, '');
+  p = p.replace(/^soft pastel sketch on white paper of /i, ''); // Italy's original opening (Napoli, 2026-10-27)
   p = p.replace(/,\s*today\./i, '.');
   p = p.replace(/\s*Bold colou?r:[^.]*\.\s*/i, ' ');
   p = p.replace(/\s*Square format[^.]*\.?\s*$/i, '');
@@ -22,13 +23,15 @@ export function cleanScene(prompt) {
 /**
  * The full prompt: style, scene, the sign word for word, then the rules.
  * A style may name the place's quarter with {neighbourhood} (Mexico City,
- * 2026-10-14: one photo style, each quarter's own architecture).
+ * 2026-10-14: one photo style, each quarter's own architecture). framing says
+ * where the camera stands (generation.json placeFraming, by place kind).
  */
-export function buildPlacePrompt({ style, scene, sign, rules, neighbourhood }) {
+export function buildPlacePrompt({ style, scene, sign, rules, neighbourhood, framing }) {
   if (style.includes('{neighbourhood}') && !neighbourhood) throw new Error(`style needs a neighbourhood: ${sign}`);
   style = style.replaceAll('{neighbourhood}', neighbourhood ?? '');
   const signLine = sign
     ? `The sign reads "${sign}", and that sign is the only lettering in the picture.`
     : 'No lettering anywhere in the picture.';
-  return `${style}. The scene: ${scene} ${signLine} ${rules} Square format.`;
+  const frame = framing ? ` ${framing}` : '';
+  return `${style}. The scene: ${scene}${frame} ${signLine} ${rules} Square format.`;
 }

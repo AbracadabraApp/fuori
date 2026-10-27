@@ -20,7 +20,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import sharp from 'sharp';
-import { buildPlacePrompt } from './lib/place-prompt.mjs';
+import { buildPlacePrompt, cleanScene } from './lib/place-prompt.mjs';
 import { uploadImages } from './upload-images.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -35,6 +35,9 @@ const imageConfig = generation.images ?? {};
 // Per-city place styles (Mexico, 2026-10-14): place prompt = city style + scene + sign + rules
 const placeStyles = generation.placeStyles ?? {};
 const placeRules = generation.placeRules ?? '';
+// Where the camera stands, by place kind (Napoli, 2026-10-27): close for shops and food, wide for squares
+const placeFraming = generation.placeFraming;
+const framingFor = (kind) => placeFraming && (placeFraming.wideKinds.includes(kind) ? placeFraming.wide : placeFraming.close);
 const IMAGE_DIR = path.join(__dirname, '..', 'public', imageConfig.dir ?? 'images');
 const MANIFEST_PATH = path.join(__dirname, COUNTRY === 'it' ? 'image-generation-manifest.json' : `image-generation-manifest.${COUNTRY}.json`);
 
@@ -88,6 +91,7 @@ function parseCityContent(filePath) {
       name: unescape(match[2] ?? match[3]),
       prompt: unescape(match[4] ?? match[5]),
       neighbourhood: match[0].match(/neighbourhood:\s*['"]([^'"]+)['"]/)?.[1],
+      kind: match[0].match(/kind:\s*['"]([^'"]+)['"]/)?.[1],
     });
   }
 
@@ -161,7 +165,7 @@ async function processCity(cityId, cityFile, manifest, options = {}) {
 
     // A city with its own place style: style + scene + the name as the only sign + rules
     const prompt = image.type === 'place' && placeStyles[cityId]
-      ? buildPlacePrompt({ style: placeStyles[cityId], scene: image.prompt, sign: image.name, rules: placeRules, neighbourhood: image.neighbourhood })
+      ? buildPlacePrompt({ style: placeStyles[cityId], scene: cleanScene(image.prompt), sign: image.name, rules: placeRules, neighbourhood: image.neighbourhood, framing: framingFor(image.kind) })
       : image.prompt;
     if (options.dry) {
       console.log(`\n[${imageKey}]\n${prompt}`);
