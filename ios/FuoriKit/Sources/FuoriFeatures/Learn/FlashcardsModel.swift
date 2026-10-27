@@ -13,6 +13,11 @@ import FuoriAudio
 ///   3 · Say it: picture only, with the mic. The one real test: a pass moves
 ///       the word to your own words and the next word joins at stage 1
 ///
+/// One card at a time (Josh, 2026-10-27: "i don't like the 5 at a time"):
+/// five words rotate behind the scenes, and each step on a card moves on to
+/// the next of the five, so a whole round passes at one stage before a word
+/// comes back at its next (docs/flashcards.md → The deck: spacing).
+///
 /// Progress is kept on the phone, per country (the server keeps nothing yet).
 @MainActor
 @Observable
@@ -21,6 +26,10 @@ final class FlashcardsModel {
 
     /// The cards in play, in order
     private(set) var deck: [Flashcard] = []
+    /// Which of the five is showing
+    private(set) var index = 0
+    /// The one card on screen
+    var current: Flashcard? { deck.isEmpty ? nil : deck[index % deck.count] }
     private(set) var stages: [String: Stage] = [:]
     /// Words that passed stage 3
     private(set) var own: [Flashcard] = []
@@ -31,6 +40,8 @@ final class FlashcardsModel {
     private(set) var checking: String?
     /// A miss on this card (stage 3, or stage 1's retry)
     private(set) var missed: String?
+    /// Just passed stage 3: the card's moment before it leaves
+    private(set) var passed: String?
     private(set) var note: String?
 
     let speechLanguage: String
@@ -69,8 +80,8 @@ final class FlashcardsModel {
             revealed.insert(card.id)
             await say(card)
             stages[card.id] = .say
-            revealed.remove(card.id)
             save()
+            await next()
         case .say:
             break
         }
@@ -110,27 +121,51 @@ final class FlashcardsModel {
             missed = nil
             if stage == .meet {
                 stages[card.id] = .recall
-                revealed.remove(card.id)
+                save()
+                await next()
             } else {
+                passed = card.id
+                try? await Task.sleep(for: .milliseconds(900))
+                passed = nil
                 pass(card)
+                save()
             }
-            save()
         } else {
             missed = card.id
             if stage == .say {
-                // The answer shows and is said; the card stays at stage 3
+                // The answer shows and is said; the card stays at stage 3 and
+                // comes back next round
                 revealed.insert(card.id)
                 await say(card)
+                try? await Task.sleep(for: .milliseconds(700))
+                await next()
             }
         }
     }
 
+    /// The next of the five, after a short beat so the step registers
+    private func next() async {
+        try? await Task.sleep(for: .milliseconds(400))
+        if let card = current { revealed.remove(card.id) }
+        missed = nil
+        guard !deck.isEmpty else { return }
+        index = (index + 1) % deck.count
+    }
+
+    /// A word passes stage 3: it goes to your words, and the next word from
+    /// the pool takes its place in the rotation, at stage 1
     private func pass(_ card: Flashcard) {
         stages[card.id] = nil
         revealed.remove(card.id)
         own.insert(card, at: 0)
-        deck.removeAll { $0.id == card.id }
-        refill()
+        guard let at = deck.firstIndex(where: { $0.id == card.id }) else { return }
+        deck.remove(at: at)
+        let owned = Set(own.map(\.id))
+        if let fresh = pool.first(where: { !owned.contains($0.id) && !deck.contains($0) }) {
+            deck.insert(fresh, at: at)
+            stages[fresh.id] = .meet
+        }
+        index = deck.isEmpty ? 0 : (at + 1) % deck.count
     }
 
     // MARK: Matching

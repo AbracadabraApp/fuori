@@ -2,10 +2,11 @@ import SwiftUI
 import FuoriCore
 import FuoriDesign
 
-/// The deck (docs/flashcards.md, the Flashcards canvas): five wide 2:1 cards
-/// in a scrolling list, each at its own stage, with no helper words; tapping
-/// reveals, the mic is an icon. A card with no picture keeps the card's size
-/// and centres its cue. Below, the words you own.
+/// The deck (docs/flashcards.md, the Flashcards canvas): one card at a time
+/// (Josh, 2026-10-27), a wide 2:1 picture with no helper words; tapping
+/// reveals, the mic is an icon, and finishing a step brings the next of the
+/// five in. A card with no picture keeps the card's size and centres its
+/// cue. Below, the words you own.
 struct FlashcardsView: View {
     let model: FlashcardsModel
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -13,9 +14,10 @@ struct FlashcardsView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
-                ForEach(model.deck) { card in
+                if let card = model.current {
                     FlashcardRow(model: model, card: card)
-                        .transition(reduceMotion ? .opacity : .move(edge: .bottom).combined(with: .opacity))
+                        .id(card.id + "\(model.stage(card).rawValue)")
+                        .transition(reduceMotion ? .opacity : .asymmetric(insertion: .move(edge: .trailing).combined(with: .opacity), removal: .move(edge: .leading).combined(with: .opacity)))
                 }
                 if let note = model.note {
                     Text(note)
@@ -26,7 +28,8 @@ struct FlashcardsView: View {
             }
             .padding(.horizontal, 24)
             .padding(.vertical, 16)
-            .animation(reduceMotion ? .easeInOut(duration: 0.2) : .spring(duration: 0.4), value: model.deck)
+            .animation(reduceMotion ? .easeInOut(duration: 0.2) : .spring(duration: 0.45), value: model.current?.id)
+            .animation(reduceMotion ? .easeInOut(duration: 0.2) : .spring(duration: 0.45), value: model.index)
         }
         .background(Tokens.Colors.paper)
         .navigationTitle("Flashcards")
@@ -102,6 +105,15 @@ private struct FlashcardRow: View {
         .overlay {
             if model.missed == card.id {
                 RoundedRectangle(cornerRadius: 16).stroke(Tokens.Colors.terracotta, lineWidth: 2)
+            }
+            if model.passed == card.id {
+                // Passing stage 3: the one moment of celebration
+                ZStack {
+                    RoundedRectangle(cornerRadius: 16).fill(Tokens.Colors.green.opacity(0.85))
+                    Image(systemName: "checkmark.circle.fill").font(.system(size: 56)).foregroundStyle(Tokens.Colors.card)
+                }
+                .transition(.opacity)
+                .accessibilityLabel("Yours")
             }
         }
     }
