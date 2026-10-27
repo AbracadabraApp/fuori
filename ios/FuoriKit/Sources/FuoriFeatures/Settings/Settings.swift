@@ -9,8 +9,8 @@ import UIKit
 public enum SettingsKey {
     public static let subtitles = "settings.subtitles"
     public static let english = "settings.english"
-    /// Hidden since 2026-10-23 (Josh): every turn starts with a tap; a stored
-    /// value is ignored (ConversationModel.tapMode)
+    /// Hidden since 2026-10-23 (Josh); hands-free is on for everyone since
+    /// 2026-10-26, and a stored value is ignored (ConversationModel.tapMode)
     public static let handsFree = "settings.handsFree"
     /// Dialect allowed (Josh, 2026-10-23: a working control, wired up later):
     /// on for Advanced by default
@@ -171,8 +171,8 @@ struct SettingsSheet: View {
                 } footer: {
                     Text("Start over from the beginning in \(model.content?.card?.country ?? appName).")
                 }
-                // No Hands-free (Josh, 2026-10-23: hidden): every turn starts
-                // with a tap and silence sends it
+                // No Hands-free switch: on for everyone (Josh, 2026-10-26), the
+                // mic opens by itself and closes after 5 s of nothing said
                 Section("About") {
                     Text("Everyone you meet in \(appName) is played by an AI.")
                     NavigationLink("Privacy") { PrivacyView(appName: appName) }

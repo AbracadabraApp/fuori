@@ -111,21 +111,23 @@ public final class ConversationModel {
     /// The replies to the current line, written while the character speaks
     private var repliesTask: Task<Result<APIClient.Replies, Error>, Never>?
 
-    /// One tap per turn (Josh, 2026-10-23): the learner taps to talk and
-    /// silence sends it; no second tap (a tap still sends early). 10 s for
-    /// the first word (20 s before reading a line from say it in English,
-    /// which takes a moment), then 2.5 s of silence ends the turn (Josh: 2 s agreed, then 2.5 s, 2026-10-23).
-    /// No "more time to answer" setting (Josh, 2026-10-16: confusing).
-    /// The turn opens on a tap, always: the Hands-free setting is hidden
-    /// (Josh, 2026-10-23), and a stored "on" is ignored so nobody is left
-    /// with a mic that opens by itself and no switch to turn it off
-    public var tapMode: Bool { true }
+    /// Hands-free for everyone (Josh, 2026-10-26: "hands free on 5s"): the mic
+    /// opens by itself when she has finished and silence sends the turn (a tap
+    /// still sends early). 5 s for the first word, then the mic closes and it's
+    /// still their turn, a tap away, so walking off never leaves it open (20 s
+    /// before reading a line from say it in English, which takes a moment);
+    /// then 2.5 s of silence ends the turn (Josh: 2 s agreed, then 2.5 s, 2026-10-23).
+    /// No "more time to answer" setting (Josh, 2026-10-16: confusing), and no
+    /// Hands-free switch (hidden 2026-10-23; a stored value is ignored).
+    /// Under VoiceOver every turn opens on a tap (the screen reader's voice
+    /// would be heard as the learner). Interruptions still close the mic until a tap
+    public var tapMode: Bool { isVoiceOverRunning }
     /// Silence ends the turn, except under VoiceOver, where a tap ends it (the
     /// screen reader's own voice would keep it open)
     public var endsOnSilence: Bool { !isVoiceOverRunning }
     /// Under VoiceOver: a turn can't run longer than this, in case the second tap never comes
     private let longestTurn: TimeInterval = 90
-    private var firstWordWait: TimeInterval = 10
+    private var firstWordWait: TimeInterval = 5
     private let readingWait: TimeInterval = 20
     // The silence that ends a turn: EndOfTurn (2.5 s, Josh; sooner after a finished sentence)
     /// Less than this much voice isn't a turn (a cough, a click)
@@ -490,7 +492,7 @@ public final class ConversationModel {
         await startRecording()
     }
 
-    private func startRecording(firstWordWait wait: TimeInterval = 10) async {
+    private func startRecording(firstWordWait wait: TimeInterval = 5) async {
         firstWordWait = wait
         resetEarly()
         // A second tap while the mic is still opening would start a second
