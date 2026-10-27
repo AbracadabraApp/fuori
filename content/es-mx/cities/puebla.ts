@@ -37,6 +37,7 @@ export const puebla: CityPantry = {
       id: 'panaderia-la-espiga-de-la-paz',
       name: 'Panadería La Espiga',
       kind: 'bakery',
+      hidden: true, // bakeries hidden (Josh, 2026-10-27: the conversation is poor)
       neighbourhood: 'La Paz',
       real: false,
       characterId: 'remedios-panaderia-la-espiga',

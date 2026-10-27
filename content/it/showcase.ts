@@ -14,6 +14,8 @@
  * time or rest, it's about going out to places) and Giulia's bar (no
  * character should be special). Both stay in roma.ts as ordinary characters.
  */
+// Bakeries hidden (Josh, 2026-10-27: "the conversation is poor"), except
+// Dario's forno in Rome, brought back the same day
 export const showcase: Record<string, string[]> = {
   // Roma redone (Josh, 2026-10-22; docs/rome-redo.md): today's Rome beside the
   // original, to compare. No language school: schools move into Learn.
@@ -33,7 +35,6 @@ export const showcase: Record<string, string[]> = {
   ],
   matera: [
     'caffe-schiuma',
-    'panificio-del-sasso',
     'mercato-piccianello',
     'ristorante-francesca',
     'bar-vitantonio',
@@ -61,7 +62,6 @@ export const showcase: Record<string, string[]> = {
   ],
   siena: [
     'caffe-fiorella',
-    'pasticceria-bini',
     'mercato-della-terra',
     'osteria-le-logge',
     'bar-il-palio',
@@ -76,7 +76,6 @@ export const showcase: Record<string, string[]> = {
   ],
   venezia: [
     'bar-al-timon',
-    'panificio-volpe',
     'mercato-rialto',
     'ristorante-antiche-carampane',
     'caffe-florian',
@@ -91,7 +90,6 @@ export const showcase: Record<string, string[]> = {
   ],
   napoli: [
     'bar-nilo',
-    'pasticceria-poppella',
     'mercato-pignasecca',
     'pizzeria-sorbillo',
     'caffe-gambrinus',
@@ -106,7 +104,6 @@ export const showcase: Record<string, string[]> = {
   ],
   bologna: [
     'caffe-terzi',
-    'forno-brisa',
     'mercato-mezzo',
     'ristorante-pappagallo',
     'bar-senza-nome',
@@ -121,7 +118,6 @@ export const showcase: Record<string, string[]> = {
   ],
   palermo: [
     'bar-alba',
-    'panificio-morello',
     'mercato-ballaro',
     'trattoria-ai-cascinari',
     'caffe-del-kassaro',
@@ -138,7 +134,6 @@ export const showcase: Record<string, string[]> = {
   // and language school where the city has them.
   taormina: [
     'bar-turrisi',
-    'pasticceria-etna',
     'mercato-giardini',
     'ristorante-baronessa',
     'caffe-wunderbar',
@@ -151,7 +146,6 @@ export const showcase: Record<string, string[]> = {
   ],
   lecce: [
     'caffe-alvino',
-    'panificio-fiore',
     'mercato-comunale',
     'alle-due-corti',
     'bar-della-vittoria',
@@ -164,7 +158,6 @@ export const showcase: Record<string, string[]> = {
   ],
   milano: [
     'pasticceria-marchesi',
-    'panificio-davide-longoni',
     'mercato-di-porta-romana',
     'trattoria-masuelli',
     'bar-rita',
@@ -178,7 +171,6 @@ export const showcase: Record<string, string[]> = {
   ],
   verona: [
     'caffe-wallner',
-    'panificio-mariga',
     'mercato-piazza-erbe',
     'ristorante-dodici-apostoli',
     'bar-ai-scalzi',
@@ -191,7 +183,6 @@ export const showcase: Record<string, string[]> = {
   ],
   assisi: [
     'caffe-duomo',
-    'forno-santa-maria',
     'mercato-coperto',
     'ristorante-metastasio',
     'bar-senso',
@@ -204,7 +195,6 @@ export const showcase: Record<string, string[]> = {
   ],
   bergamo: [
     'caffe-del-tasso',
-    'panificio-tresoldi',
     'mercato-citta-alta',
     'ristorante-da-vittorio',
     'bar-donizetti',
@@ -217,7 +207,6 @@ export const showcase: Record<string, string[]> = {
   ],
   torino: [
     'caffe-san-carlo',
-    'panetteria-borgo-antico',
     'mercato-porta-palazzo',
     'ristorante-del-cambio',
     'bicerin-dal-1763',
@@ -231,7 +220,6 @@ export const showcase: Record<string, string[]> = {
   ],
   siracusa: [
     'bar-dolce-vita',
-    'panificio-regina',
     'mercato-ortigia',
     'ristorante-dioniso',
     'caffe-archimede',
@@ -244,7 +232,6 @@ export const showcase: Record<string, string[]> = {
   ],
   genova: [
     'caffe-degli-specchi',
-    'pasticceria-liquorosa',
     'mercato-orientale',
     'trattoria-rosmarino',
     'bar-boccadasse',
@@ -257,7 +244,6 @@ export const showcase: Record<string, string[]> = {
   ],
   lucca: [
     'caffe-di-simo',
-    'forno-amedeo-giusti',
     'mercato-del-carmine',
     'ristorante-giglio',
     'bar-il-fortino',
@@ -270,7 +256,6 @@ export const showcase: Record<string, string[]> = {
   ],
   orvieto: [
     'caffe-montanucci',
-    'pasticceria-adriano',
     'mercato-coperto-orvieto',
     'ristorante-la-grotta',
     'bar-duomo-orvieto',
@@ -283,7 +268,6 @@ export const showcase: Record<string, string[]> = {
   ],
   mantova: [
     'caffe-modi',
-    'panificio-pavesi',
     'mercato-erbe-mantova',
     'ristorante-cigno',
     'bar-delle-erbe',

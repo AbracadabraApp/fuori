@@ -37,6 +37,7 @@ export const guadalajara: CityPantry = {
       id: 'panaderia-la-espiga',
       name: 'Panadería La Espiga de Oro',
       kind: 'bakery',
+      hidden: true, // bakeries hidden (Josh, 2026-10-27: the conversation is poor)
       neighbourhood: 'Colonia Americana',
       real: false,
       characterId: 'efren-panadero',

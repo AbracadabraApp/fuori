@@ -64,6 +64,7 @@ export const sanMiguelDeAllende: CityPantry = {
       id: 'panaderia-la-esperanza',
       name: 'Panadería La Esperanza',
       kind: 'bakery',
+      hidden: true, // bakeries hidden (Josh, 2026-10-27: the conversation is poor)
       neighbourhood: 'San Antonio',
       real: false,
       characterId: 'lourdes-panadera',

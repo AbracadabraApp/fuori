@@ -37,6 +37,7 @@ export const oaxaca: CityPantry = {
       id: 'panaderia-el-trigal-xochimilco',
       name: 'Panadería El Trigal',
       kind: 'panadería',
+      hidden: true, // bakeries hidden (Josh, 2026-10-27: the conversation is poor)
       neighbourhood: 'Xochimilco',
       real: false,
       characterId: 'beto-panadero',

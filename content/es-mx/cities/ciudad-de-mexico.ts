@@ -37,6 +37,7 @@ export const ciudadDeMexico: CityPantry = {
       id: 'panaderia-la-concha-de-oro',
       name: 'Panadería La Concha de Oro',
       kind: 'bakery',
+      hidden: true, // bakeries hidden (Josh, 2026-10-27: the conversation is poor)
       neighbourhood: 'Condesa',
       real: false,
       characterId: 'gaspar-panadero',
