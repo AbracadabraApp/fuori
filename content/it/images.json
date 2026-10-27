@@ -122,10 +122,45 @@
       "src": "c457ca4abef97b1f",
       "bytes": 140548
     },
+    "flashcards/cacio": {
+      "key": "it/flashcards/cacio.0633bbe38d.webp",
+      "src": "6e8784137631d37e",
+      "bytes": 75550
+    },
     "flashcards/caffe": {
       "key": "it/flashcards/caffe.ac14a695b4.webp",
       "src": "4ced3cee3e70f9dc",
       "bytes": 42930
+    },
+    "flashcards/cornetto": {
+      "key": "it/flashcards/cornetto.fa598c5908.webp",
+      "src": "2d0f3e2fae19a13e",
+      "bytes": 86162
+    },
+    "flashcards/euro": {
+      "key": "it/flashcards/euro.499ba8b897.webp",
+      "src": "91491d7996411b46",
+      "bytes": 69940
+    },
+    "flashcards/figlio": {
+      "key": "it/flashcards/figlio.50b90ff508.webp",
+      "src": "c0c6cb3c70f850d4",
+      "bytes": 237996
+    },
+    "flashcards/parte": {
+      "key": "it/flashcards/parte.b646355b8c.webp",
+      "src": "663a19d660777f11",
+      "bytes": 107592
+    },
+    "flashcards/pecorino": {
+      "key": "it/flashcards/pecorino.fecc6fd461.webp",
+      "src": "fd58c7885b8d4b5e",
+      "bytes": 67188
+    },
+    "flashcards/pepe": {
+      "key": "it/flashcards/pepe.76a9268b49.webp",
+      "src": "d9e9024da1272a98",
+      "bytes": 49570
     },
     "flashcards/pomodoro": {
       "key": "it/flashcards/pomodoro.3a726c589c.webp",
@@ -136,6 +171,11 @@
       "key": "it/flashcards/sera.7d6d3eb5da.webp",
       "src": "254d2d0da3ff2c68",
       "bytes": 345580
+    },
+    "flashcards/treno": {
+      "key": "it/flashcards/treno.fe62037dc9.webp",
+      "src": "14552ac0ce553fd3",
+      "bytes": 130116
     },
     "guide/laugh": {
       "key": "it/guide/laugh.bfdac441e0.webp",

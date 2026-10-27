@@ -32,6 +32,26 @@
       "src": "023a4f0921a3c7ca",
       "bytes": 301248
     },
+    "flashcards/agua": {
+      "key": "es-mx/flashcards/agua.4da998633c.webp",
+      "src": "5833e7e6be8fbdcc",
+      "bytes": 64032
+    },
+    "flashcards/cafe": {
+      "key": "es-mx/flashcards/cafe.d8d06a236a.webp",
+      "src": "446cb21398ecc7c1",
+      "bytes": 57092
+    },
+    "flashcards/cancion": {
+      "key": "es-mx/flashcards/cancion.0af5b08e7a.webp",
+      "src": "f8e627f4382e42ab",
+      "bytes": 210082
+    },
+    "flashcards/joven": {
+      "key": "es-mx/flashcards/joven.d1d3623245.webp",
+      "src": "3ed974c501a33756",
+      "bytes": 240034
+    },
     "flashcards/olla": {
       "key": "es-mx/flashcards/olla.0f4821b941.webp",
       "src": "4bcc278ab0d67279",
@@ -51,6 +71,16 @@
       "key": "es-mx/flashcards/tarde.5509ceedf1.webp",
       "src": "32f3cd7ab6c5dbab",
       "bytes": 167936
+    },
+    "flashcards/trabajo": {
+      "key": "es-mx/flashcards/trabajo.41ee823ff0.webp",
+      "src": "60264da3785182fd",
+      "bytes": 207780
+    },
+    "flashcards/ventana": {
+      "key": "es-mx/flashcards/ventana.84fde6e90d.webp",
+      "src": "90cf80e455ea1618",
+      "bytes": 53494
     },
     "flashcards/zapato": {
       "key": "es-mx/flashcards/zapato.ac587ecede.webp",
