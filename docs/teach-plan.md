@@ -7,6 +7,18 @@
 
 The books are in `books-private/` in the repo folder on Josh's laptop (git-excluded, so not on GitHub); Magda runs there. The syllabus she writes is committed and is what the app and the teach agent use.
 
+## Lessons and missions: the direction (Josh, 2026-10-27)
+
+Agreed with Josh after a trial lesson (`content/it/prompts/lesson.md`, `tests/experiments/lesson.mts`, unit a1-15) and a comparison of four ways to make lessons:
+
+- **Lessons come from the syllabus, adapted to the game** (option D). The syllabus sets the order and the content (its frames, model exchanges, plain explanation, the real trap); a lesson is **one step** of a unit (a1-15 has four: *ho* + participle, the irregulars, *sono* for going, time words). The game supplies the people and places: the exchange's "barista" becomes a character the learner knows, in their voice. Lessons can be made ahead per country and checked once.
+- **The learner's history only places them** (where to start, what's solid). A lesson never quotes their mistakes or reports on them (Josh: opening on "you said *ho vedere*" was "harsh", read like "surveillance", and pinned the line on the wrong person; "it doesn't need to be true, it just needs to be a good lesson").
+- **Missions are personal** (option C): built on what the learner already says plus the lesson's step, at their places with their people ("go back to Bar Mattina and tell Luisa what you had yesterday"). Doing it well needs a "can say" record beside the mistakes the notes keep today.
+- **A mission comes after a lesson:** the lesson's "take it to town" becomes the unit chip's mission ([diario.md](diario.md) → chips with missions). Either can stand alone.
+- **The chip ties them:** met (came up in a conversation), studied (lesson done), solid (a mission or any conversation shows the learner said it themselves).
+
+Rejected: lessons improvised from the learner's history (A: too many verbs, mistakes up front, facts wrong); improvised from the unit and level (B: a stepping stone; contrasts with things not taught, generic answers).
+
 ## 1. Magda: building the model syllabus
 
 **Inputs:** the book texts in `books-private/` (Progetto 1a/1B/2/3, Proudfoot; ELE Actual, Español en Marcha, the PCIC) and what's already distilled in `docs/research/syllabus/` and `docs/research/syllabus-es/` (unit summaries, the function map, the level word lists, chips-vs-syllabus).

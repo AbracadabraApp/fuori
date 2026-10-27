@@ -1648,3 +1648,14 @@ Design only; nothing built. Decisions are Josh's unless marked.
 - **Built and live** (lib/beginner.ts, aff1c7e onward): a Beginner, or a learner with no level, gets the turn in parts. The voice says it all; her phrases and question in the language show as bubbles, each followed by its English said, not shown (added by the server, since the model left it out); the answers show on the learner's side ("Say: …") and aren't spoken; a tap on a bubble shows its English. No answer panel for Beginners. CLAUDE.md notes that Beginners are spoken to this way.
 - **Josh's notes along the way, all in:** answers not read aloud; no invented errands for characters without one (Chiara, a student, offered coffee); no teacher talk or corrections; 4–8 word phrases, not only single words; the phrase first, then its English; the question too ("ti piace la musica italiana? do you like Italian music?").
 - **Open:** a leftover teacher line now and then; questions sometimes long; the English doesn't fade yet; Beginner turns aren't streamed by sentence (slower); premade place notes; TestFlight still on build 5 (Beginner dialogue is on Josh's phone by direct install only).
+
+## 2026-10-26 to 10-27 (laptop): speed, hands-free, recordings, Learn lessons
+
+- **Beginner turns faster** (145ee09): the voice starts with the first parts (PartsWatcher). Live, tap to first word: Italy 1.9 s, Mexico 1.7 s (was ~4 s); ordinary turns unchanged at ~1.9 s.
+- **Hands-free for everyone** (e9dbb8f, Josh: "hands free on 5s"): the mic opens after she speaks; nothing said for 5 s closes it, still your turn; tap-to-talk under VoiceOver. On Josh's phone, not yet played. Goodbye ending the conversation offered, not built.
+- **Mexico learner addressed as a man again** (Josh's yes; production data).
+- **Conversation library, smallest version** (7cf3ab1): /v1/transcribe keeps recordings of learners in `KEEP_RECORDINGS_FOR` in the private R2 bucket `fuori-recordings` (deleted after 30 days); `npm run replay:recordings`. **Waiting on Josh:** setting the Railway variables (the command is in the conversation; Railway refused it from Claude). Nothing is kept until then.
+- **Learn lessons:** trial prompt `content/it/prompts/lesson.md` (v1 from Josh's history, v2 one step at his level). Decided with Josh: lessons from the syllabus, one step each, voiced by people he knows; missions after them, personal; met/studied/solid on the chip (docs/teach-plan.md → Lessons and missions). Magda moves into Learn; schools hidden later.
+- **Laptop keys are stale:** `.env.local` ANTHROPIC_API_KEY and ELEVENLABS_API_KEY predate the rotation; experiments borrowed Railway's for the run.
+- **Seen, not looked into:** Luisa calls Josh "Gabriele" (she heard "Ancchiele" on 10-24 and kept it).
+- **Next:** a lesson straight from a syllabus step to compare; TestFlight build 7 with the speed and hands-free changes; Josh plays hands-free.

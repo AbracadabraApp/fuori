@@ -142,6 +142,7 @@ Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens 
 - [ ] **Claude** Build after reply buttons (levels 1–3), since the cards are those screens
 
 ### Learn and Teach: the teacher outside the world ([learn.md](learn.md), [teach-plan.md](teach-plan.md); Josh, 2026-10-19, option D for Magda) — N5
+- [ ] **Josh + Claude** Lessons from the syllabus, one step each, voiced by people the learner knows; missions after them, built on what the learner can say (Josh, 2026-10-27: [teach-plan.md](teach-plan.md) → Lessons and missions). Next: one lesson made straight from a unit's step (a1-15 step 1) to compare with the improvised trial; split units into steps; a "can say" record in the memory notes
 - [ ] **Claude** L1: the Learn prompt as a trial file, Ask and Lesson runs with simulated learners (bars in learn.md)
 - [ ] **Claude** L2: Learn behind a setting (off by default): an icon left of the Diario opens the teacher, English and the language both ways (`mode: "any"`); next build
 - [ ] **Josh** L3: keep it and take the school out of the world, or change it; name, icon, whether she stays Magda
