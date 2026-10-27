@@ -49,6 +49,16 @@ A thread that runs across days and places, so the city becomes a story the learn
 - **The learner keeps the clues:** in the Diario or Learn, with who said what; the answer is something they piece together.
 - **It ends somewhere:** a person found, a story told, a place opened. Then another begins, in another city.
 
+## Geography along the way (Josh)
+
+A mystery or an adventure can teach where things are, a little at a time:
+
+- **The trail moves:** a clue points to another neighbourhood ("the photo was taken in Trastevere, by the river") and the learner goes there, on the city map, by tram or on foot.
+- **Then to another city:** the family moved to Naples, the painter came from Siena; the trail leaves by train from the station, and the next city opens with a reason to be there.
+- **Asking the way is part of it:** directions, landmarks, which tram, a ticket: the syllabus's own early units (A1 #7 directions, #13 tickets and platforms) used for something the learner wants.
+- **What each place is known for:** a region's food, its dialect word, its river or hill, the history of a neighbourhood, picked up from the people who live there, not from a lesson.
+- **The map remembers:** places visited and clues found show on the city map and the country map, so the learner sees the country fill in.
+
 ## How it fits what's decided
 
 - **Beginners:** the English carries the story and the explanations; the language is a few words worth keeping (*scavo*, *affresco*, *secolo*, *Guardi!*).
