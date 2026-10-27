@@ -30,11 +30,10 @@ The mic stages check what Whisper heard against the one word on the card (the ap
 
 ## The deck
 
-- **5 cards in play** (Josh: start with 5), taken from the country's 20 as a pool.
-- **All the words in a weighted shuffle** (Josh, 2026-10-27: "I like seeing multiple cards… I'd prefer 20 cards where 5 have heavier weights in the shuffle"): every word not yet yours is in the scrolling list, each at its own stage; the five focus words weigh 4× in the shuffle so they come up near the top more often; pull down to reshuffle. A word that passes stage 3 leaves for your words, and the next word from the pool becomes a focus word. (Briefly one card at a time, the same day; Josh preferred seeing several.)
-- Rounds go card by card at the same stage: every card at stage 1, then every card at stage 2, and so on, so four other cards come between a card's stages (spacing).
-- A card that passes stage 3 leaves the deck and the next word from the pool joins at stage 1.
-- **Passed words go on a list of "own" words** (Josh). Nothing more for now. Maybe later: stage 3 words come back on some rotation to check they stuck (not decided).
+- ~~5 cards in play~~ (2026-10-21; replaced 2026-10-27 by the weighted shuffle below).
+- **All the words in one weighted shuffle** (Josh, 2026-10-27): every card is in the scrolling list, each at its own stage; the further a word has got, the more it comes up, so words in progress get finished before new ones crowd in (as Anki puts learning cards before new ones). Weights: not met 1, met 2, recalled 3, missed at "say it" 4, yours ¼ (Claude's tweak, agreed: a learned word comes back rarely, as a check; a miss on a check takes it back to stage 3). With 20 new words that's about 1 in 20, 1 in 10, 1 in 7, 1 in 5, and about 1 in 80. Pull down to reshuffle. (Earlier the same day: one card at a time, then five fixed focus words; Josh preferred this.)
+- Spacing comes from the shuffle: other cards come between two looks at the same word.
+- **Passed words go on a list of "own" words** (Josh), and stay in the shuffle at weight ¼ as an occasional check (2026-10-27).
 
 ## Motion (agreed 2026-10-21)
 

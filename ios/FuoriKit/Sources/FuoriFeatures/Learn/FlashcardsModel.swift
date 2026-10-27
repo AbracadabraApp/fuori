@@ -4,20 +4,20 @@ import FuoriCore
 import FuoriNetworking
 import FuoriAudio
 
-/// Flashcards (docs/flashcards.md; Josh, 2026-10-27: three stages). Five
-/// cards in play from the country's starter words; each card has a stage:
+/// Flashcards (docs/flashcards.md; Josh, 2026-10-27: three stages). Every
+/// starter word is a card, each at its own stage:
 ///
 ///   1 · Meet it: picture + word. Tap: the English shows and the word is
 ///       said; then say it once on the mic (lenient: a miss is a retry)
 ///   2 · Recall it: picture + English. Tap: the word shows and is said
-///   3 · Say it: picture only, with the mic. The one real test: a pass moves
-///       the word to your own words and the next word joins at stage 1
+///   3 · Say it: picture only, with the mic. The one real test: a pass makes
+///       the word yours
 ///
-/// All the words at once, shuffled (Josh, 2026-10-27: "I'd prefer 20 cards
-/// where 5 have heavier weights in the shuffle"): every word not yet yours is
-/// in the list, each at its own stage; five of them, the focus, weigh more in
-/// the shuffle so they come up near the top more often. A word that passes
-/// stage 3 leaves for your words and another becomes one of the five.
+/// All the cards in one weighted shuffle (Josh, 2026-10-27): the further a
+/// word has got, the more it comes up, so words in progress get finished
+/// before new ones crowd in; once it's yours it comes up rarely, as a check.
+/// Weights (see `weight`): not met 1, met 2, recalled 3, missed at "say it" 4,
+/// yours ¼. A miss on a check takes a word back to stage 3.
 ///
 /// Progress is kept on the phone, per country (the server keeps nothing yet).
 @MainActor
@@ -25,24 +25,20 @@ import FuoriAudio
 final class FlashcardsModel {
     enum Stage: Int, Codable { case meet = 1, recall = 2, say = 3 }
 
-    /// The cards in play, in order
-    /// The five focus words, which weigh more in the shuffle
-    private(set) var deck: [Flashcard] = []
-    /// What's on screen: every word not yet yours, in a weighted shuffle
+    /// What's on screen: every card, in a weighted shuffle
     private(set) var shown: [Flashcard] = []
-    /// How much more often a focus word comes near the top
-    static let focusWeight = 4.0
     private(set) var stages: [String: Stage] = [:]
-    /// Words that passed stage 3
+    /// Words that passed stage 3, newest first
     private(set) var own: [Flashcard] = []
+    /// Words missed at stage 3 since their last pass: they weigh most
+    private(set) var missedSay: Set<String> = []
     /// Cards whose answer is showing (stage 1's English, stage 2's word, a missed stage 3)
     private(set) var revealed: Set<String> = []
-    /// Stage 1: said once, so the card can move on
     private(set) var listening: String?
     private(set) var checking: String?
-    /// A miss on this card (stage 3, or stage 1's retry)
+    /// A miss on this card just now (stage 3, or stage 1's retry)
     private(set) var missed: String?
-    /// Just passed stage 3: the card's moment before it leaves
+    /// Just passed stage 3: the card's moment
     private(set) var passed: String?
     private(set) var note: String?
 
@@ -52,13 +48,11 @@ final class FlashcardsModel {
     private let voice = Voice()
     private let recorder = Recorder()
     private let storeKey: String
-    static let inPlay = 5
 
     private struct Saved: Codable {
         var stages: [String: Stage]
         var own: [String]
-        /// The five focus words; nil in what earlier builds saved
-        var focus: [String]?
+        var missedSay: [String]?
     }
 
     init(cards: [Flashcard], language: Language, country: String, api: APIClient) {
@@ -69,7 +63,32 @@ final class FlashcardsModel {
         load()
     }
 
-    func stage(_ card: Flashcard) -> Stage { stages[card.id] ?? .meet }
+    func isOwn(_ card: Flashcard) -> Bool { own.contains(card) }
+
+    /// A word that's yours comes back as a check, at "say it"
+    func stage(_ card: Flashcard) -> Stage { isOwn(card) ? .say : (stages[card.id] ?? .meet) }
+
+    /// How much a card weighs in the shuffle (Josh, 2026-10-27): the further
+    /// along, the more it comes up; a missed "say it" most; yours rarely
+    func weight(_ card: Flashcard) -> Double {
+        if isOwn(card) { return 0.25 }
+        if missedSay.contains(card.id) { return 4 }
+        switch stage(card) {
+        case .meet: return 1
+        case .recall: return 2
+        case .say: return 3
+        }
+    }
+
+    /// A new weighted shuffle of every card (opening the deck, or pulling to
+    /// refresh). Weighted random order: each card's key is u^(1/weight),
+    /// highest first, so a heavier card tends to come nearer the top
+    func shuffle() {
+        shown = pool
+            .map { card in (card, pow(Double.random(in: 0.0001...1), 1 / weight(card))) }
+            .sorted { $0.1 > $1.1 }
+            .map(\.0)
+    }
 
     // MARK: Taps
 
@@ -125,46 +144,33 @@ final class FlashcardsModel {
             if stage == .meet {
                 stages[card.id] = .recall
                 revealed.remove(card.id)
-                save()
             } else {
                 passed = card.id
                 try? await Task.sleep(for: .milliseconds(900))
                 passed = nil
-                pass(card)
-                save()
+                missedSay.remove(card.id)
+                revealed.remove(card.id)
+                if !isOwn(card) {
+                    stages[card.id] = nil
+                    own.insert(card, at: 0)
+                }
             }
+            save()
         } else {
             missed = card.id
             if stage == .say {
-                // The answer shows and is said; the card stays at stage 3 and
-                // comes back next round
+                // The answer shows and is said. A word that was yours goes
+                // back to stage 3; either way it now weighs most
+                if isOwn(card) {
+                    own.removeAll { $0 == card }
+                    stages[card.id] = .say
+                }
+                missedSay.insert(card.id)
                 revealed.insert(card.id)
+                save()
                 await say(card)
             }
         }
-    }
-
-    /// A word passes stage 3: it goes to your words and leaves the list;
-    /// if it was a focus word, the next word from the pool takes its place
-    private func pass(_ card: Flashcard) {
-        stages[card.id] = nil
-        revealed.remove(card.id)
-        own.insert(card, at: 0)
-        shown.removeAll { $0.id == card.id }
-        deck.removeAll { $0.id == card.id }
-        refill()
-    }
-
-    /// A new weighted shuffle of every word not yet yours (opening the deck,
-    /// or pulling to refresh): focus words come up near the top more often
-    func shuffle() {
-        let owned = Set(own.map(\.id))
-        let focus = Set(deck.map(\.id))
-        // Weighted random order: each card's key is u^(1/weight), highest first
-        shown = pool.filter { !owned.contains($0.id) }
-            .map { card in (card, pow(Double.random(in: 0.0001...1), 1 / (focus.contains(card.id) ? Self.focusWeight : 1))) }
-            .sorted { $0.1 > $1.1 }
-            .map(\.0)
     }
 
     // MARK: Matching
@@ -229,24 +235,13 @@ final class FlashcardsModel {
         if let data = UserDefaults.standard.data(forKey: storeKey), let saved = try? JSONDecoder().decode(Saved.self, from: data) {
             stages = saved.stages
             own = saved.own.compactMap { id in pool.first { $0.id == id } }
-            deck = (saved.focus ?? Array(saved.stages.keys)).compactMap { id in pool.first { $0.id == id } }.prefix(Self.inPlay).map { $0 }
+            missedSay = Set(saved.missedSay ?? [])
         }
-        refill()
         shuffle()
     }
 
-    /// Five in play: the next words from the pool join at stage 1
-    private func refill() {
-        let owned = Set(own.map(\.id))
-        for card in pool where deck.count < Self.inPlay && !owned.contains(card.id) && !deck.contains(where: { $0.id == card.id }) {
-            deck.append(card)
-            if stages[card.id] == nil { stages[card.id] = .meet }
-        }
-        save()
-    }
-
     private func save() {
-        let saved = Saved(stages: stages, own: own.map(\.id), focus: deck.map(\.id))
+        let saved = Saved(stages: stages, own: own.map(\.id), missedSay: Array(missedSay))
         if let data = try? JSONEncoder().encode(saved) { UserDefaults.standard.set(data, forKey: storeKey) }
     }
 }
