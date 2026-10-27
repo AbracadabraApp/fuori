@@ -21,8 +21,8 @@ struct LearnArea: View {
             ScrollView {
                 VStack(spacing: 14) {
                     lessonsCard
-                    GlassCard(title: "Missions", line: "Things to do in town, one at a time.", symbol: "basket.fill", tint: Tokens.Colors.missions)
-                    GlassCard(title: "Flashcards", line: "Words from your conversations, with pictures.", symbol: "rectangle.on.rectangle.angled.fill", tint: Tokens.Colors.flashcards)
+                    GlassCard(title: "Missions", line: "Things to do in town, one at a time.", symbol: "basket.fill", tint: Tokens.Colors.missions, ink: Tokens.Colors.ink)
+                    GlassCard(title: "Flashcards", line: "Words from your conversations, with pictures.", symbol: "rectangle.on.rectangle.angled.fill", tint: Tokens.Colors.flashcards, ink: .white)
                 }
                 .padding(.horizontal, Tokens.Space.gutter)
                 .padding(.top, 4)
@@ -71,17 +71,16 @@ struct LearnArea: View {
                     .padding(.vertical, 10)
                     .padding(.horizontal, 12)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .glassEffect(.regular, in: UnevenRoundedRectangle(topLeadingRadius: 16, bottomLeadingRadius: 4, bottomTrailingRadius: 16, topTrailingRadius: 16))
+                    .background(.white, in: UnevenRoundedRectangle(topLeadingRadius: 16, bottomLeadingRadius: 4, bottomTrailingRadius: 16, topTrailingRadius: 16))
             }
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Lessons")
                         .typeface(.display, 28, relativeTo: .title, weight: .bold)
-                        .foregroundStyle(Tokens.Colors.ink)
                     Text("with \(magda?.name ?? "Magda")")
                         .typeface(.label, 15, relativeTo: .subheadline)
-                        .foregroundStyle(Tokens.Colors.text)
                 }
+                .foregroundStyle(.white)
                 Spacer(minLength: 8)
                 if let lesson, let button = model.content?.language.ui.letsDoIt {
                     Button { openLesson(lesson) } label: {
@@ -91,14 +90,15 @@ struct LearnArea: View {
                             .frame(minHeight: 36)
                     }
                     .buttonStyle(.glassProminent)
-                    .tint(Tokens.Colors.lessons)
+                    .tint(.white)
+                    .foregroundStyle(Tokens.Colors.lessons)
                     .accessibilityHint("Goes over this mistake")
                 }
             }
         }
         .padding(18)
         .frame(maxWidth: .infinity, alignment: .topLeading)
-        .glassEffect(.regular.tint(Tokens.Colors.lessons.opacity(0.22)), in: RoundedRectangle(cornerRadius: 26))
+        .glassEffect(.regular.tint(Tokens.Colors.lessons.opacity(0.92)), in: RoundedRectangle(cornerRadius: 26))
     }
 
     /// Her offer: your latest mistake, or, before there is one, what lessons are
@@ -136,28 +136,30 @@ private struct GlassCard: View {
     let line: String
     let symbol: String
     let tint: Color
+    /// Text and symbol: white on terracotta and azure, ink on gold (white on
+    /// gold is under the 4.5:1 contrast the app keeps)
+    let ink: Color
 
     var body: some View {
         HStack(alignment: .center, spacing: 14) {
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .typeface(.display, 28, relativeTo: .title, weight: .bold)
-                    .foregroundStyle(Tokens.Colors.ink)
                 Text(line)
                     .typeface(.label, 15, relativeTo: .subheadline)
-                    .foregroundStyle(Tokens.Colors.text)
             }
+            .foregroundStyle(ink)
             Spacer(minLength: 8)
             Image(systemName: symbol)
                 .font(.system(size: 30, weight: .semibold))
-                .foregroundStyle(tint)
+                .foregroundStyle(ink)
                 .frame(width: 72, height: 72)
-                .glassEffect(.regular.tint(tint.opacity(0.18)), in: Circle())
+                .glassEffect(.regular.tint(.white.opacity(0.25)), in: Circle())
                 .accessibilityHidden(true)
         }
         .padding(18)
         .frame(maxWidth: .infinity, minHeight: 130, alignment: .leading)
-        .glassEffect(.regular.tint(tint.opacity(0.18)), in: RoundedRectangle(cornerRadius: 26))
+        .glassEffect(.regular.tint(tint.opacity(0.92)), in: RoundedRectangle(cornerRadius: 26))
         .accessibilityElement(children: .combine)
     }
 }
@@ -168,9 +170,9 @@ private struct Wash: View {
         GeometryReader { geo in
             ZStack {
                 Tokens.Colors.paper
-                Circle().fill(Tokens.Colors.lessons.opacity(0.55)).frame(width: geo.size.width * 0.9).offset(x: -geo.size.width * 0.25, y: -geo.size.height * 0.28)
-                Circle().fill(Tokens.Colors.missions.opacity(0.6)).frame(width: geo.size.width * 0.85).offset(x: geo.size.width * 0.3, y: geo.size.height * 0.02)
-                Circle().fill(Tokens.Colors.flashcards.opacity(0.5)).frame(width: geo.size.width * 0.9).offset(x: -geo.size.width * 0.15, y: geo.size.height * 0.32)
+                Circle().fill(Tokens.Colors.lessons.opacity(0.35)).frame(width: geo.size.width * 0.9).offset(x: -geo.size.width * 0.25, y: -geo.size.height * 0.28)
+                Circle().fill(Tokens.Colors.missions.opacity(0.35)).frame(width: geo.size.width * 0.85).offset(x: geo.size.width * 0.3, y: geo.size.height * 0.02)
+                Circle().fill(Tokens.Colors.flashcards.opacity(0.3)).frame(width: geo.size.width * 0.9).offset(x: -geo.size.width * 0.15, y: geo.size.height * 0.32)
             }
             .blur(radius: 60)
         }

@@ -14,9 +14,9 @@ public enum Tokens {
         public static let terracotta = Color(red: 0.7529, green: 0.3765, blue: 0.2275) // #c0603a
         public static let errorBg = Color(red: 0.9725, green: 0.8431, blue: 0.8549) // #f8d7da
         public static let errorInk = Color(red: 0.4471, green: 0.1098, blue: 0.1412) // #721c24
-        public static let lessons = Color(red: 0.6471, green: 0.3059, blue: 0.1725) // #a54e2c
-        public static let missions = Color(red: 0.9490, green: 0.7569, blue: 0.3059) // #f2c14e
-        public static let flashcards = Color(red: 0.1843, green: 0.4353, blue: 0.5608) // #2f6f8f
+        public static let lessons = Color(red: 0.7686, green: 0.2588, blue: 0.1098) // #c4421c
+        public static let missions = Color(red: 0.9020, green: 0.6314, blue: 0.0863) // #e6a116
+        public static let flashcards = Color(red: 0.1059, green: 0.4706, blue: 0.7686) // #1b78c4
     }
 
     public enum FontFamily {
