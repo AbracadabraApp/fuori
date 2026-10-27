@@ -47,7 +47,8 @@ A thread that runs across days and places, so the city becomes a story the learn
 - **The clues live with people:** the journalist knows the year, the priest has the parish register, the archaeologist recognises the building, the barber remembers the family. Each clue is an ordinary conversation at an ordinary place, and the person gives it away only if the learner asks (a question in the language: *Conosce questa persona?*, *Quando è stata fatta questa foto?*).
 - **Each step is something to say:** asking, describing, telling what someone else said. That's the syllabus's own order (questions, then descriptions, then the past), so a mystery can follow the units: the learner can only ask the next question once they've learned how.
 - **The learner keeps the clues:** in the Diario or Learn, with who said what; the answer is something they piece together.
-- **It ends somewhere:** a person found, a story told, a place opened. Then another begins, in another city.
+- **It runs across cities (Josh):** one mystery, a chapter per city. Rome finds the photo; Naples has the family; Florence has the painter who made the portrait; Venice has the last letter. Each city adds its own people and places to the story, and the trail gives the game's change of scenery a reason (CLAUDE.md: every day comes with a change of scenery).
+- **It ends somewhere:** a person found, a story told, a place opened. Then another begins.
 
 ## Geography along the way (Josh)
 
@@ -70,7 +71,7 @@ A mystery or an adventure can teach where things are, a little at a time:
 
 ## Open
 
-- Whether a mystery is generated per learner or written once per city
+- Whether a mystery is generated per learner or written once (per country, as a route through its cities)
 - How long a mystery runs (a week of play? a city?)
 - Where clues are kept and shown
 - Josh is playing the current places first (2026-10-27)
