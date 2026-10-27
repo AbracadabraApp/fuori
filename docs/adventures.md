@@ -66,7 +66,7 @@ A mystery or an adventure can teach where things are, a little at a time:
 - **Missions** ([teach-plan.md](teach-plan.md) → Lessons and missions): an adventure or a mystery step can be a mission ("go back to the dig on Saturday", "ask the priest about the name in the register").
 - **The syllabus:** experts and mysteries bring in the later topics naturally (the past, describing, opinions, reported speech).
 - **The prompt knows the place:** the kind of place and why the person is there go into the prompt, so nobody gets an invented job.
-- **Who's where** (correcting the redo's rule, which Claude wrote, not Josh): at a real business the person is staff with an invented name, never the real owner; at an invented business anyone fits, the owner included; customers and passers-by belong in public places. Josh's own rule was only "real businesses under their real names".
+- **Who's where:** at a business, someone who works there (the owner fits too); customers and passers-by belong in public places; every person can have a `here` line saying why they're there. (Josh's own rule is only "real businesses under their real names"; "never the real owner" was Claude's addition and is dropped, 2026-10-27.)
 - **Open-ended world** (CLAUDE.md): adventures and mysteries are generated during play like everything else; what's hand-written is at most the shape (the kinds of places, people and mystery steps), as with the city pantries.
 
 ## Open

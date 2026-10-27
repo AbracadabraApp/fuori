@@ -458,7 +458,7 @@ export const napoli: CityPantry = {
     },
     {
       id: 'ciro-poppella',
-      name: 'Ciro Esposito',
+      name: 'Ciro Poppella',
       gender: 'm',
       age: 44,
       role: 'pasticciere',

@@ -321,7 +321,7 @@ export const siena: CityPantry = {
     },
     {
       id: 'lucia-bini',
-      name: 'Lucia Corsi',
+      name: 'Lucia Bini',
       gender: 'f',
       age: 38,
       role: 'pasticciera',
