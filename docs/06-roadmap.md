@@ -109,7 +109,7 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 - [ ] **Claude** The English fading over time, by count (part of the plan above)
 - [x] **Josh + Claude** Hands-free as the default (on for everyone 2026-10-26, Josh: "hands free on 5s": the mic opens after she speaks and closes after 5 s with nothing said, still your turn; tap-to-talk under VoiceOver; Josh to play it on the phone) (Josh, 2026-10-25: "creeping in as a better UI than clicking the microphone"): she speaks, the mic opens by itself, silence sends. Room noise or a covered mic misfires today with or without the tap, so only the tap changes. Try it on Josh's phone first (a developer switch), Beginner conversations with and without the tap
 - [ ] **Josh + Claude** Premade place notes (checked facts per place) if the openers drift
-- [ ] **Claude** Faster Beginner turns (the parts reply isn't streamed by sentence yet)
+- [x] **Claude** Faster Beginner turns (145ee09, 2026-10-26): the voice starts with the first parts; live, tap to first word 1.9 s Italy, 1.7 s Mexico (was ~4 s)
 - [ ] **Josh** Then: keep it and settle CLAUDE.md's teaching rules by level
 
 ### Scaffolding ([beginner-scaffolding.md](beginner-scaffolding.md)) — N4 done; open items N5
@@ -202,7 +202,7 @@ Two stages. A TestFlight for Josh alone needs no Apple review and none of the co
 
 Works or is wanted, but not for the first release.
 
-- [ ] **both** Hands-free extras: prepare the reply during the silence; the wait adapts to cut-offs and counts them. Hands-free itself stays in Settings, off by default. Josh, 2026-10-16, after using it: it works well but feels like an expert feature, not because of difficulty but because of the focus a free-flowing conversation takes; pressing a button is more forgiving on response time (perception) and gives the speaker more control.
+- [ ] **both** Hands-free extras: prepare the reply during the silence; the wait adapts to cut-offs and counts them. (Hands-free itself is on for everyone since 2026-10-26.) Josh, 2026-10-16, after using it: it works well but feels like an expert feature, not because of difficulty but because of the focus a free-flowing conversation takes; pressing a button is more forgiving on response time (perception) and gives the speaker more control.
 - [ ] **app** Night-paper palette, so the app follows the phone's Dark Mode (D1). Until then the app is light only (Josh, 2026-10-16: deferred).
 
 #### Ending a conversation (round 19; Josh, 2026-10-19; next release, Josh 2026-10-19: reply buttons first)
