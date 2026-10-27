@@ -308,6 +308,7 @@ export const genova: CityPantry = {
       placeId: 'pasticceria-liquorosa',
       personality: ['artistic', 'refined'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with hair in neat bun, delicate features, wearing white baker\'s coat, minimal watercolor in pale pinks, focused expression, precise linework',
+      here: 'You work in this historic Genoese pastry shop, where pandolce genovese is the pride of the house.',
     },
     {
       id: 'francesco-parodi',

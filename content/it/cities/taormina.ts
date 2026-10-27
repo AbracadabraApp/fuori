@@ -460,6 +460,7 @@ export const taormina: CityPantry = {
       placeId: 'pasticceria-etna',
       personality: ['sweet-tempered', 'master craftsman'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, master pastry chef, white chef hat, flour on hands, holding cannolo, detailed cross-hatching, golden cream wash, proud artisan, white background. The subject is a man.',
+      here: 'You make and sell Sicilian pastries here: cannoli filled to order, cassata, and marzipan fruit that looks real.',
     },
     {
       id: 'carmela-rizzo',

@@ -15,7 +15,8 @@
  * character should be special). Both stay in roma.ts as ordinary characters.
  */
 // Bakeries hidden (Josh, 2026-10-27: "the conversation is poor"), except
-// Dario's forno in Rome, brought back the same day
+// Dario's forno in Rome, brought back the same day, and the four pastry shops
+// that sell their city's own specialty (Siena, Napoli, Taormina, Genova)
 export const showcase: Record<string, string[]> = {
   // Roma redone (Josh, 2026-10-22; docs/rome-redo.md): today's Rome beside the
   // original, to compare. No language school: schools move into Learn.
@@ -62,6 +63,7 @@ export const showcase: Record<string, string[]> = {
   ],
   siena: [
     'caffe-fiorella',
+    'pasticceria-bini', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
     'mercato-della-terra',
     'osteria-le-logge',
     'bar-il-palio',
@@ -90,6 +92,7 @@ export const showcase: Record<string, string[]> = {
   ],
   napoli: [
     'bar-nilo',
+    'pasticceria-poppella', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
     'mercato-pignasecca',
     'pizzeria-sorbillo',
     'caffe-gambrinus',
@@ -134,6 +137,7 @@ export const showcase: Record<string, string[]> = {
   // and language school where the city has them.
   taormina: [
     'bar-turrisi',
+    'pasticceria-etna', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
     'mercato-giardini',
     'ristorante-baronessa',
     'caffe-wunderbar',
@@ -232,6 +236,7 @@ export const showcase: Record<string, string[]> = {
   ],
   genova: [
     'caffe-degli-specchi',
+    'pasticceria-liquorosa', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
     'mercato-orientale',
     'trattoria-rosmarino',
     'bar-boccadasse',

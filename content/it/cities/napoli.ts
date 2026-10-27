@@ -458,13 +458,14 @@ export const napoli: CityPantry = {
     },
     {
       id: 'ciro-poppella',
-      name: 'Ciro Poppella',
+      name: 'Ciro Esposito',
       gender: 'm',
       age: 44,
       role: 'pasticciere',
       placeId: 'pasticceria-poppella',
       personality: ['proud', 'family-oriented'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sturdy man with flour-dusted apron, strong hands, and determined expression. Minimal watercolor wash in white and cream tones. Honest, hardworking linework.',
+      here: 'You serve at the counter of this famous Rione Sanità pastry shop, where people queue for the fiocchi di neve; you fill sfogliatelle and know which come out warm.',
     },
     {
       id: 'maria-attanasio',

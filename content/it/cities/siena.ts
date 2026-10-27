@@ -321,13 +321,14 @@ export const siena: CityPantry = {
     },
     {
       id: 'lucia-bini',
-      name: 'Lucia Bini',
+      name: 'Lucia Corsi',
       gender: 'f',
       age: 38,
       role: 'pasticciera',
       placeId: 'pasticceria-bini',
       personality: ['sweet', 'artistic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a woman with flour-dusted apron, gentle smile, hair in neat bun, delicate hands, minimal watercolor wash in soft powdery pinks, warm and nurturing expression, fine detailed linework.',
+      here: 'You work the counter at this old Siena pastry shop: ricciarelli and panforte, made the Sienese way, and you like telling newcomers which one to try first.',
     },
     {
       id: 'roberto-galli',
