@@ -3,7 +3,7 @@
 // the people list, hidden cities and places are left out, and nothing the
 // server keeps to itself (prompts, personalities, image prompts, voices)
 // leaks into it. Run for both countries (COUNTRY=es-mx).
-import { cities, country } from '@/content';
+import { cities, country, pack } from '@/content';
 import { buildContent } from '@/lib/content-api';
 
 const problems: string[] = [];
@@ -19,11 +19,14 @@ for (const field of ['imagePrompt', 'portraitPrompt', 'personality', 'traits', '
 const base = /^https:\/\/[^/]+\/.+\.webp$/;
 const shownCities = cities.filter((x) => !x.hidden);
 check(c.cities.length === shownCities.length && c.cities.length > 0, `expected ${shownCities.length} shown cities, got ${c.cities.length}`);
+check(Object.values(c.characters).some((x) => x.tutor && base.test(x.portrait ?? '')), 'Magda (the tutor) should be in characters with her portrait, for Learn');
 for (const city of c.cities) {
+  check(!city.places.some((p) => p.characterId === pack.tutor.id), `city ${city.id} still shows a language school`);
   const source = cities.find((x) => x.id === city.id)!;
   check(!source.hidden, `hidden city ${city.id} is in the content`);
   check(base.test(city.image ?? ''), `city ${city.id} has no image address`);
-  const shownPlaces = source.places.filter((p) => !p.hidden).map((p) => p.id).sort();
+  // Language schools are left out (Josh, 2026-10-27: Magda is in Learn)
+  const shownPlaces = source.places.filter((p) => !p.hidden && p.characterId !== pack.tutor.id).map((p) => p.id).sort();
   check(JSON.stringify(city.places.map((p) => p.id).sort()) === JSON.stringify(shownPlaces), `city ${city.id}: places don't match the shown places`);
   check(city.places.some((p) => p.station), `city ${city.id} has no station`);
   for (const place of city.places) {

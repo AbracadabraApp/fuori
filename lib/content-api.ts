@@ -95,7 +95,10 @@ export function buildContent(): Content {
     ...(city.region ? { region: city.region } : {}),
     more: !!city.more,
     image: image(`cities/${city.id}`),
-    places: feedOrder({ ...city, places: city.places.filter((p) => !p.hidden) }).map((place) => {
+    // Language schools are hidden (Josh, 2026-10-27): Magda teaches in Learn,
+    // not at a school in a city. They stay in the content, so old
+    // conversations and /v1/turn still find them
+    places: feedOrder({ ...city, places: city.places.filter((p) => !p.hidden && p.characterId !== pack.tutor.id) }).map((place) => {
       const person = characterForPlace(city, place);
       if (person && !characters[person.id]) {
         characters[person.id] = {
@@ -118,6 +121,14 @@ export function buildContent(): Content {
       };
     }),
   }));
+
+  // Magda isn't in any city's places now, but Learn shows her (the Lessons card)
+  const tutorCity = cities.find((c) => c.places.some((p) => p.characterId === pack.tutor.id));
+  const tutorPlace = tutorCity?.places.find((p) => p.characterId === pack.tutor.id);
+  const tutorSheet = tutorCity && tutorPlace ? characterForPlace(tutorCity, tutorPlace) : null;
+  if (tutorSheet && !characters[tutorSheet.id]) {
+    characters[tutorSheet.id] = { id: tutorSheet.id, name: tutorSheet.name, role: tutorSheet.role, ...(tutorSheet.gender ? { gender: tutorSheet.gender } : {}), tutor: true, portrait: image(`portraits/${tutorSheet.id}`) };
+  }
 
   const body = {
     country,
