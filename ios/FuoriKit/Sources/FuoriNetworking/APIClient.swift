@@ -449,6 +449,29 @@ public actor APIClient {
         public let startedAt: String
         /// How many lines the learner said
         public let lines: Int
+
+        public init(id: String, cityId: String, placeId: String, characterId: String, startedAt: String, lines: Int) {
+            self.id = id; self.cityId = cityId; self.placeId = placeId; self.characterId = characterId; self.startedAt = startedAt; self.lines = lines
+        }
+    }
+
+    /// The Learn home's Lessons card: the learner's latest real mistake
+    public struct LearnHome: Codable, Sendable, Equatable {
+        public struct Lesson: Codable, Sendable, Equatable {
+            public let conversationId: String
+            public let cityId: String
+            public let placeId: String
+            public let characterId: String
+            public let said: String
+            public let better: String
+            public let why: String
+        }
+        public let lesson: Lesson?
+    }
+
+    /// GET /v1/learn/home
+    public func learnHome() async throws -> LearnHome {
+        try await send(request("v1/learn/home"), signedIn: true)
     }
 
     /// GET /v1/me/conversations: this learner's conversations, newest first

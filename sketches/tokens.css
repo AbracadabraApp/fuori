@@ -11,6 +11,16 @@
   --terracotta: #c0603a;
   --error-bg: #f8d7da;
   --error-ink: #721c24;
+  --lessons: #a54e2c;
+  --lessons-shade: #b45a35;
+  --missions: #f2c14e;
+  --missions-ink: #3b2a10;
+  --flashcards: #2f6f8f;
+  --flashcards-back: #8ecae6;
+  --fruit-red: #e76f51;
+  --fruit-orange: #f4a261;
+  --fruit-green: #9cc5a1;
+  --crate: #9b6b45;
   --font-display: "Alegreya", Georgia, serif;
   --font-label: "Alegreya Sans", "Gill Sans", sans-serif;
   --size-card-title: 32px;

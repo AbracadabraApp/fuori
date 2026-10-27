@@ -170,6 +170,13 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
     ? pass(`v1 me conversations (the Learn area lists it, ${mine.conversations[0].lines} lines)`)
     : fail('v1 me conversations', JSON.stringify(mine).slice(0, 200));
 
+  // The Learn home's Lessons card: the latest real mistake, saved when the conversation ended
+  const lh = await fetch(`${base}/v1/learn/home`, { headers: auth });
+  const lhj = (await lh.json()) as { lesson?: { said?: string; better?: string } | null };
+  lh.ok && (lhj.lesson === null || (lhj.lesson?.said && lhj.lesson?.better))
+    ? pass(`v1 learn home (${lhj.lesson ? `"${lhj.lesson.said}" → "${lhj.lesson.better}"` : 'no mistake saved'})`)
+    : fail('v1 learn home', `${lh.status} ${JSON.stringify(lhj).slice(0, 200)}`);
+
   const again = await v1('/v1/turn', { cityId, placeId });
   const mem = again.headers.get('x-memory') ?? '';
   /^1 visits, [1-9]/.test(mem) ? pass(`v1 character remembers (${mem})`) : fail('v1 character remembers', `x-memory "${mem}"`);

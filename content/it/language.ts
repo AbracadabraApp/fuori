@@ -33,6 +33,7 @@ export const language = {
       board: 'Sali',
     },
     whereTo: 'Dove vuoi andare?', // departures board title
+    letsDoIt: 'Sì, dai', // Learn home: the Lessons card's button (canvas "Learn area", D3)
     howToSay: 'Come si dice:', // say it in English: the label on what the learner said
     youAreHere: 'Sei qui', // departures board: the current city
   },

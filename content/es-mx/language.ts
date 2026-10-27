@@ -33,6 +33,7 @@ export const language = {
       board: 'Subir',
     },
     whereTo: '¿A dónde quiere ir?', // departures board title
+    letsDoIt: '¡Sí, va!', // Learn home: the Lessons card's button (canvas "Learn area", D3)
     howToSay: '¿Cómo se dice?', // say it in English: the label on what the learner said
     youAreHere: 'Está aquí', // departures board: the current city
   },
