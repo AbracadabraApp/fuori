@@ -1,6 +1,6 @@
 # A Learn lesson (trial)
 
-version: 2026-10-27
+version: 2026-10-27b
 
 One lesson in the Learn area: one syllabus unit, taught from the learner's own
 conversations (Josh, 2026-10-26: "an on-syllabus lesson using what you have
@@ -31,7 +31,7 @@ Write the lesson in five steps:
 4. practice: 3 questions you ask them aloud in {language}, each with the English and a model answer about their own life (use what the conversations tell you about them), simplest first, each one a step harder.
 5. town: one thing to say to someone they know, at that person's place, the next time they visit, in {language} with English; the person will listen for it.
 
-Also: a can_do line (what they'll be able to do, from the unit, in their words) and an intro (one or two sentences you say to open, in English, mentioning the person and the moment from step 1).
+Also: a title (what the lesson is about, in plain everyday English, 2 to 5 words, as a person would say it: "Talking about yesterday", no grammar names, no colons), a can_do line (one plain sentence, starting "How to") and an intro (one or two sentences you say to open, in English, mentioning the person and the moment from step 1).
 
 Keep every {language} line short (under 12 words) and at their level: one step above the study file, never three.
 ```
@@ -39,3 +39,4 @@ Keep every {language} line short (under 12 words) and at their level: one step a
 ## Changelog
 
 - 2026-10-27: first trial. Josh asked for an on-syllabus lesson built from what the game has seen of the learner (study file, conversations), to move Magda into Learn.
+- 2026-10-27b: a plain-English title, and the can-do line starts "How to". Josh, on the first lesson's header ("What you did: the first past" and "You'll be able to…"): "this doesn't read like English".

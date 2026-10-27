@@ -35,6 +35,7 @@ const schema = {
   type: 'object',
   additionalProperties: false,
   properties: {
+    title: { type: 'string' },
     can_do: { type: 'string' },
     intro: { type: 'string' },
     your_line: { type: 'object', additionalProperties: false, properties: { who: { type: 'string' }, said: { type: 'string' }, right: { type: 'string' }, en: { type: 'string' } }, required: ['who', 'said', 'right', 'en'] },
@@ -43,7 +44,7 @@ const schema = {
     practice: { type: 'array', items: { type: 'object', additionalProperties: false, properties: { ask: line, answer: line }, required: ['ask', 'answer'] } },
     town: { type: 'object', additionalProperties: false, properties: { who: { type: 'string' }, it: { type: 'string' }, en: { type: 'string' } }, required: ['who', 'it', 'en'] },
   },
-  required: ['can_do', 'intro', 'your_line', 'examples', 'notice', 'practice', 'town'],
+  required: ['title', 'can_do', 'intro', 'your_line', 'examples', 'notice', 'practice', 'town'],
 };
 
 const f = readPromptFile('lesson.md');
