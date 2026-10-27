@@ -9,7 +9,7 @@ import FuoriNetworking
 /// character's voice, a plain list of their words, and one thing good to know.
 /// Replaying text, not the mic: nothing here asks the learner to speak.
 struct LearnSheet: View {
-    let model: ConversationModel
+    let model: any LearnSource
     @Environment(\.dismiss) private var dismiss
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion

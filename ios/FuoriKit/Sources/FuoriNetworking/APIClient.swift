@@ -439,6 +439,25 @@ public actor APIClient {
         return device.learnerId
     }
 
+    /// A conversation the learner had, for the Learn area
+    public struct PastConversation: Codable, Sendable, Equatable, Identifiable, Hashable {
+        public let id: String
+        public let cityId: String
+        public let placeId: String
+        public let characterId: String
+        /// ISO 8601
+        public let startedAt: String
+        /// How many lines the learner said
+        public let lines: Int
+    }
+
+    /// GET /v1/me/conversations: this learner's conversations, newest first
+    public func myConversations() async throws -> [PastConversation] {
+        struct Body: Decodable { let conversations: [PastConversation] }
+        let body: Body = try await send(request("v1/me/conversations"), signedIn: true)
+        return body.conversations
+    }
+
     /// Sign in once per device: POST /v1/auth/device
     private func ensureToken() async throws -> String {
         if let token { return token }

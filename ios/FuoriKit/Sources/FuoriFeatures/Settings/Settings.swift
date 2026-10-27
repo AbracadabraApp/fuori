@@ -35,10 +35,22 @@ public enum SettingsKey {
 struct SettingsToolbar: ViewModifier {
     @Environment(AppModel.self) private var model
     @State private var showing = false
+    @State private var learning = false
 
     func body(content: Content) -> some View {
         content
             .toolbar {
+                // The Learn area, next to Settings (docs/learn.md; Josh,
+                // 2026-10-26); not during onboarding, which has nothing to learn yet
+                if model.phase == .ready {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button { learning = true } label: {
+                            Image(systemName: "character.book.closed")
+                        }
+                        .accessibilityLabel("Learn")
+                        .accessibilityHint("Your conversations and what to learn from them")
+                    }
+                }
                 ToolbarItem(placement: .primaryAction) {
                     Button { showing = true } label: {
                         SettingsIcon()
@@ -46,11 +58,14 @@ struct SettingsToolbar: ViewModifier {
                     .accessibilityLabel("Settings")
                 }
             }
+            .sheet(isPresented: $learning) { LearnArea() }
             // A country picked in the sheet is applied only once it has closed
             .sheet(isPresented: $showing, onDismiss: { Task { await model.applyPendingCountry() } }) { SettingsSheet() }
             #if DEBUG
             // `-FuoriOpenSettings YES` opens Settings at launch, for simulator checks without tapping
             .onAppear { if UserDefaults.standard.bool(forKey: "FuoriOpenSettings") { showing = true } }
+            // `-FuoriOpenLearn YES` opens the Learn area at launch
+            .onAppear { if UserDefaults.standard.bool(forKey: "FuoriOpenLearn"), model.phase == .ready { learning = true } }
             #endif
     }
 }

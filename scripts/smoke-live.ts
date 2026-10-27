@@ -164,6 +164,12 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   const me = (await (await fetch(`${base}/v1/me`, { headers: auth })).json()) as { visits?: Record<string, number> };
   me.visits?.[placeId] === 1 ? pass('v1 me counts the visit') : fail('v1 me counts the visit', JSON.stringify(me));
 
+  // The Learn area lists the conversation (Josh, 2026-10-26)
+  const mine = (await (await fetch(`${base}/v1/me/conversations`, { headers: auth })).json()) as { conversations?: { id: string; placeId: string; lines: number }[] };
+  mine.conversations?.[0]?.id === o.conversationId && mine.conversations[0].placeId === placeId && mine.conversations[0].lines === said.length
+    ? pass(`v1 me conversations (the Learn area lists it, ${mine.conversations[0].lines} lines)`)
+    : fail('v1 me conversations', JSON.stringify(mine).slice(0, 200));
+
   const again = await v1('/v1/turn', { cityId, placeId });
   const mem = again.headers.get('x-memory') ?? '';
   /^1 visits, [1-9]/.test(mem) ? pass(`v1 character remembers (${mem})`) : fail('v1 character remembers', `x-memory "${mem}"`);
