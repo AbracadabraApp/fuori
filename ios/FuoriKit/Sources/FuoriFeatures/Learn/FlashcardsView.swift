@@ -94,7 +94,9 @@ private struct FlashcardRow: View {
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                if stage != .recall && (stage == .say || revealed) { micButton }
+                // The mic shows from the start at stages 1 and 3: each card shows
+                // its two actions, tap the picture, tap the mic
+                if stage != .recall { micButton }
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
@@ -171,7 +173,8 @@ private struct FlashcardRow: View {
         }
         .buttonStyle(PressableStyle())
         .disabled(model.checking != nil || (model.listening != nil && !on))
-        .accessibilityLabel(on ? "Done" : "Say it")
+        .accessibilityLabel(on ? "Listening" : "Say it")
+        .accessibilityHint(on ? "Stops when you've finished the word" : "")
     }
 
     private func cueLabel(_ stage: FlashcardsModel.Stage) -> Text {

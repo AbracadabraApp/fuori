@@ -47,6 +47,12 @@ final class FlashcardsModel {
     private let api: APIClient
     private let voice = Voice()
     private let recorder = Recorder()
+    private let gate = GateBox()
+    private var listenTask: Task<Void, Never>?
+    /// One tap, then silence ends it, as in the game (Josh, 2026-10-27: "why no
+    /// hands free"); shorter than the game's 2.5 s, since it's one word
+    private let endOfWord: TimeInterval = 1.2
+    private let firstSoundWait: TimeInterval = 6
     private let storeKey: String
 
     private struct Saved: Codable {
@@ -109,9 +115,12 @@ final class FlashcardsModel {
         }
     }
 
-    /// The mic: first tap listens, second checks what was heard
+    /// The mic: one tap listens, and a short silence after the word checks it
+    /// (a second tap checks at once)
     func mic(_ card: Flashcard) async {
         if listening == card.id {
+            listenTask?.cancel()
+            listenTask = nil
             await check(card)
         } else if listening == nil {
             guard await AudioSession.requestMicrophone() else {
@@ -120,10 +129,32 @@ final class FlashcardsModel {
             }
             do {
                 try AudioSession.activate()
-                try recorder.start { _, _ in }
+                gate.reset()
+                try recorder.start { [gate] level, time in gate.process(level: level, at: time) }
                 listening = card.id
                 missed = nil
                 note = nil
+                let started = ProcessInfo.processInfo.systemUptime
+                listenTask = Task { [weak self] in
+                    while !Task.isCancelled {
+                        try? await Task.sleep(for: .milliseconds(100))
+                        guard !Task.isCancelled, let self, self.listening == card.id else { return }
+                        let snap = self.gate.snapshot()
+                        if snap.hasSpoken, snap.silence >= self.endOfWord {
+                            self.listenTask = nil
+                            await self.check(card)
+                            return
+                        }
+                        if !snap.hasSpoken, ProcessInfo.processInfo.systemUptime - started >= self.firstSoundWait {
+                            // Nothing said: close the mic; the card waits for another tap
+                            _ = self.recorder.stop("flashcard, nothing said")
+                            self.listening = nil
+                            self.listenTask = nil
+                            self.note = "Didn't catch that."
+                            return
+                        }
+                    }
+                }
             } catch {
                 note = "The microphone didn't start. Try again."
             }
@@ -225,6 +256,8 @@ final class FlashcardsModel {
     }
 
     func stop() {
+        listenTask?.cancel()
+        listenTask = nil
         voice.stop()
         if listening != nil { _ = recorder.stop("flashcards closed"); listening = nil }
     }

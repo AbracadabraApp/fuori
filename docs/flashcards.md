@@ -26,7 +26,7 @@ Every noun is shown, spoken and asked for with its article: *il banco*, *l'albic
 
 Why (Claude, agreed by Josh): reading a word you can see aloud (the old b) was the weakest step; folded into the first meeting, you hear it said first, then say it once, so speaking starts on the first card and the deck has one judged mic stage.
 
-The mic stages check what Whisper heard against the one word on the card (the app knows the answer, so no phrase lists): ignore the article and accents, accept close spellings. Whisper is weakest on a lone word; if that's a problem, ask for a short phrase (*al banco*).
+**The mic (Josh, 2026-10-27):** shown from the start at stages 1 and 3; one tap, and a short silence after the word (1.2 s) checks it, as in the game; a second tap checks at once; nothing said in 6 s closes it. The mic stages check what Whisper heard against the one word on the card (the app knows the answer, so no phrase lists): ignore the article and accents, accept close spellings. Whisper is weakest on a lone word; if that's a problem, ask for a short phrase (*al banco*).
 
 ## The deck
 
