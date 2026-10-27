@@ -103,7 +103,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   }
 
   const reply: TurnOutput = beginner
-    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps })
+    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText })
     : await runTurn({
     character,
     transcript,

@@ -107,7 +107,9 @@ public actor APIClient {
     /// being made), while the rest is still being written; then the whole
     /// reply comes back as from `turn`. A line of one sentence, or a server
     /// that doesn't stream, gives no `onFirst`.
-    public func turnStreamed(cityId: String, placeId: String, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, onFirst: @escaping @Sendable (String) -> Void) async throws -> TurnReply {
+    /// `onFirst` also gets the first parts of a Beginner turn (nil otherwise),
+    /// so they show as bubbles while they're said
+    public func turnStreamed(cityId: String, placeId: String, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, onFirst: @escaping @Sendable (String, [TurnPart]?) -> Void) async throws -> TurnReply {
         struct Body: Encodable { let cityId: String; let placeId: String; let conversationId: String?; let learnerSaid: String?; let speed: Double? }
         var req = try post("v1/turn", json: Body(cityId: cityId, placeId: placeId, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed))
         req.setValue("application/x-ndjson", forHTTPHeaderField: "Accept")
@@ -126,7 +128,7 @@ public actor APIClient {
         }
         for try await line in bytes.lines {
             switch try TurnStreamEvent.parse(line) {
-            case .first(let first): onFirst(first)
+            case .first(let first, let parts): onFirst(first, parts)
             case .reply(let reply): return reply
             case .error(var error):
                 error.requestId = requestId
@@ -141,7 +143,7 @@ public actor APIClient {
 
     /// One line of a streamed /v1/turn
     public enum TurnStreamEvent: Equatable, Sendable {
-        case first(String)
+        case first(String, [TurnPart]?)
         case reply(TurnReply)
         case error(APIError)
 
@@ -150,9 +152,9 @@ public actor APIClient {
         public static func parse(_ line: String) throws -> TurnStreamEvent? {
             let data = Data(line.utf8)
             guard !line.trimmingCharacters(in: .whitespaces).isEmpty else { return nil }
-            struct Event: Decodable { let first: String?; let reply: TurnReply?; let error: APIError?; let status: Int? }
+            struct Event: Decodable { let first: String?; let parts: [TurnPart]?; let reply: TurnReply?; let error: APIError?; let status: Int? }
             let event = try JSONDecoder().decode(Event.self, from: data)
-            if let first = event.first { return .first(first) }
+            if let first = event.first { return .first(first, event.parts) }
             if let reply = event.reply { return .reply(reply) }
             if var error = event.error {
                 error.status = event.status ?? 0

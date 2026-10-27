@@ -169,8 +169,48 @@ export function buildBeginnerPrompt(p: {
   return { system, messages };
 }
 
+/**
+ * Watches a streamed parts reply and calls onFirst with the start of what
+ * she'll say, as soon as the first parts are complete (enough words, or two
+ * parts), so the voice can start while the rest is written (2026-10-26:
+ * Beginner turns waited for the whole reply, about 4 s to her first word
+ * against 1.9 s for other turns). What it passes is exactly how the line
+ * will start (lineFromParts of those parts), so the app can say the rest after.
+ */
+export class PartsWatcher {
+  private sent = false;
+  constructor(private onFirst: (first: string, parts: Part[]) => void, private minWords = 5) {}
+
+  feed(snapshot: string): void {
+    if (this.sent) return;
+    const complete: Part[] = [];
+    const re = /\{\s*"kind"\s*:\s*"(\w+)"\s*,\s*"text"\s*:\s*("(?:[^"\\]|\\.)*")\s*,\s*"en"\s*:\s*("(?:[^"\\]|\\.)*")\s*,\s*"gloss"\s*:\s*("(?:[^"\\]|\\.)*")\s*\}/g;
+    for (let m = re.exec(snapshot); m; m = re.exec(snapshot)) {
+      try {
+        complete.push({ kind: m[1] as PartKind, text: JSON.parse(m[2]), en: JSON.parse(m[3]), gloss: JSON.parse(m[4]) });
+      } catch {
+        return;
+      }
+    }
+    // Only what she says, up to the first question (a later question could replace it)
+    const lead: Part[] = [];
+    for (const part of complete) {
+      if (part.kind === 'answer' || part.kind === 'question') break;
+      lead.push(part);
+    }
+    if (!lead.length) return;
+    const first = lineFromParts(tidyParts(lead)).line;
+    const words = first.split(/\s+/).filter(Boolean).length;
+    // A last complete part might be followed by more of the same: wait until the next one has started
+    const moreComing = complete.length > lead.length || /\}\s*,\s*\{/.test(snapshot.slice(snapshot.lastIndexOf('}')));
+    if (!moreComing || (words < this.minWords && lead.length < 2)) return;
+    this.sent = true;
+    this.onFirst(first + ' ', tidyParts(lead));
+  }
+}
+
 /** One Beginner turn: the parts, and the line and English derived from them */
-export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { laps?: Laps }): Promise<{ line: string; en: string; parts: Part[] }> {
+export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { laps?: Laps; onText?: (snapshot: string) => void }): Promise<{ line: string; en: string; parts: Part[] }> {
   const prompt = buildBeginnerPrompt(p);
   const started = performance.now();
   // A deadline and one retry (lib/claude.ts): a stalled reply hung Doña Rosa
@@ -186,6 +226,7 @@ export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[
     output_config: { format: { type: 'json_schema', schema: partsJsonSchema } },
   } as Parameters<typeof anthropic.messages.stream>[0]);
   if (p.laps) stream.once('text', () => p.laps!.mark('claudeFirstToken', performance.now() - started));
+  if (p.onText) stream.on('text', (_delta, snapshot) => p.onText!(snapshot));
   return stream;
   });
   if (response.stop_reason === 'max_tokens') throw new Error(`Beginner turn hit max_tokens (${response.usage.output_tokens} tokens)`);

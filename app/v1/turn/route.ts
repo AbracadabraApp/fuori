@@ -36,6 +36,7 @@ import { scaffoldFacts, scaffoldStage } from '@/lib/scaffold';
 import { cities, tutor } from '@/content';
 import { writeLearnAhead } from '@/lib/learn-ahead';
 import { startEarlyVoice, DEFAULT_APP_SPEED, LineWatcher } from '@/lib/voice/early-voice';
+import { PartsWatcher, type Part } from '@/lib/beginner';
 
 /** Asked for in Accept, the reply streams: { first }, then { reply } or { error } */
 const NDJSON = 'application/x-ndjson';
@@ -83,7 +84,7 @@ export async function POST(request: Request) {
       });
 
     /** The turn; onFirst, when streaming, gets the first sentence as soon as more follows it */
-    const run = async (onFirst?: (first: string) => void): Promise<{ body: object; headers: Record<string, string> } | { error: Response }> => {
+    const run = async (onFirst?: (first: string, parts?: Part[]) => void): Promise<{ body: object; headers: Record<string, string> } | { error: Response }> => {
       const watcher = new LineWatcher({
         split: !!onFirst,
         onFirst: (first) => {
@@ -92,6 +93,14 @@ export async function POST(request: Request) {
         },
         // Split: the rest carries on from the first sentence. Not split: the whole line
         onLine: (line, first) => (first ? voice(line.slice(first.length), first) : voice(line)),
+      });
+      // Beginner turns come in parts (lib/beginner.ts): the first parts start the voice
+      let partsFirst: string | undefined;
+      const partsWatcher = new PartsWatcher((first, leadParts) => {
+        if (!onFirst) return; // the app doesn't stream: the whole line's voice is started below
+        partsFirst = first;
+        voice(first);
+        onFirst(first, leadParts);
       });
       try {
         const result = await takeTurn({
@@ -106,8 +115,16 @@ export async function POST(request: Request) {
           laps,
           // The conversation was loaded above as this learner's
           saveAfterReply: true,
-          onText: (snapshot) => watcher.feed(snapshot),
+          onText: (snapshot) => {
+            watcher.feed(snapshot);
+            partsWatcher.feed(snapshot);
+          },
         });
+        // Beginner: the voice for the rest (after the first parts), or the whole line
+        if (result.reply.parts) {
+          if (partsFirst && result.reply.line.startsWith(partsFirst)) voice(result.reply.line.slice(partsFirst.length), partsFirst);
+          else voice(result.reply.line);
+        }
         const facts = await scaffoldFacts(learnerId, result.conversationId ?? null, tutor.id);
         const learnerTurns = parsed.transcript.filter((t) => t.who === 'learner').length + (learnerSaid ? 1 : 0);
         // Beginner level dialogue offers its own answers to say back: no answer panel with it
@@ -166,7 +183,7 @@ export async function POST(request: Request) {
             // The app went away (left or paused the scene); the turn is still saved
           }
         };
-        const r = await run((first) => send({ first }));
+        const r = await run((first, parts) => send(parts ? { first, parts } : { first }));
         if ('error' in r) send({ ...(await r.error.json()), status: r.error.status });
         else send({ reply: r.body });
         try {

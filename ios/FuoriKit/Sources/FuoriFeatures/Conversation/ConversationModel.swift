@@ -346,12 +346,13 @@ public final class ConversationModel {
         awaitingReply = true
         defer { awaitingReply = false }
         let generation = self.generation
-        return try await api.turnStreamed(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed) { [weak self] first in
-            Task { @MainActor in self?.startHead(first, generation: generation) }
+        return try await api.turnStreamed(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed) { [weak self] first, parts in
+            Task { @MainActor in self?.startHead(first, parts: parts, generation: generation) }
         }
     }
 
-    private func startHead(_ first: String, generation: Int) {
+    /// `parts`: a Beginner turn's first parts, shown as bubbles while they're said
+    private func startHead(_ first: String, parts headParts: [APIClient.TurnPart]? = nil, generation: Int) {
         // Only while still waiting for the reply: once it's here, present() says the whole line
         guard awaitingReply, head == nil, generation == self.generation, phase == .thinking || phase == .starting else { return }
         stoppedByTap = false
@@ -370,7 +371,7 @@ public final class ConversationModel {
                 // Her reply has begun: the last "Say this" is done with
                 self.sayIt = nil
                 self.line = first
-                self.parts = nil
+                self.parts = headParts
                 self.english = nil
                 self.shown = 0
                 self.replies = nil
@@ -410,6 +411,7 @@ public final class ConversationModel {
         // The whole line now; what's been said of it stays shown
         line = reply.line
         english = reply.en
+        parts = reply.parts
         parts = reply.parts
         replies = nil
         chosen = nil

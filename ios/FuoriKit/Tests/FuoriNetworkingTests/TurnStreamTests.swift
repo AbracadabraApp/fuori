@@ -7,7 +7,15 @@ import Testing
 /// server that doesn't stream sends the reply itself.
 @Suite struct TurnStreamTests {
     @Test func readsFirstSentence() throws {
-        #expect(try APIClient.TurnStreamEvent.parse(#"{"first":"Hola, ¿cómo está? "}"#) == .first("Hola, ¿cómo está? "))
+        #expect(try APIClient.TurnStreamEvent.parse(#"{"first":"Hola, ¿cómo está? "}"#) == .first("Hola, ¿cómo está? ", nil))
+    }
+
+    /// A Beginner turn's first piece carries its parts, to show as bubbles
+    @Test func readsFirstWithParts() throws {
+        let event = try APIClient.TurnStreamEvent.parse(#"{"first":"Welcome! Hola. hi ","parts":[{"kind":"english","text":"Welcome!","en":"","gloss":""},{"kind":"word","text":"Hola.","en":"Hello.","gloss":"hi"}]}"#)
+        guard case .first(let first, let parts) = event else { Issue.record("not a first: \(String(describing: event))"); return }
+        #expect(first == "Welcome! Hola. hi ")
+        #expect(parts?.count == 2)
     }
 
     @Test func readsReply() throws {

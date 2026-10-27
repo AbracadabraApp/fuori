@@ -1,7 +1,7 @@
 // Beginner level dialogue (lib/beginner.ts): the line and English come from the
 // parts in order, empty parts are dropped, and the prompt fills every
 // placeholder with the character, the place and the conversation. No API calls.
-import { lineFromParts, tidyParts, buildBeginnerPrompt, withoutNames, type Part } from '@/lib/beginner';
+import { lineFromParts, tidyParts, buildBeginnerPrompt, withoutNames, PartsWatcher, type Part } from '@/lib/beginner';
 import { cities, pack } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 
@@ -23,6 +23,24 @@ const { line, en } = lineFromParts(tidy);
 check('line is what she says, in order: each phrase then its gloss (none when empty); no answers', line === 'Welcome to the market! il pesce fish Le piace il pesce? do you like it? Ciao!', line);
 check('a gloss loses the name', tidyParts([{ kind: 'word', text: 'Piacere, Joshua!', en: 'Nice to meet you, Joshua!', gloss: 'nice to meet you, Joshua' }])[0].gloss === 'nice to meet you', tidyParts([{ kind: 'word', text: 'Piacere, Joshua!', en: 'Nice to meet you, Joshua!', gloss: 'nice to meet you, Joshua' }])[0].gloss);
 check('en is the English of what she says', en === 'Welcome to the market! the fish Do you like fish? Hi!', en);
+
+// Streamed: the first parts start the voice, and are exactly how the line begins
+const streamed: Part[] = [
+  { kind: 'english', text: 'Welcome to the market, the oldest in town!', en: '', gloss: '' },
+  { kind: 'word', text: 'Il pesce è freschissimo.', en: 'The fish is very fresh.', gloss: 'very fresh fish' },
+  { kind: 'question', text: 'Che cosa desidera?', en: 'What would you like?', gloss: 'what would you like?' },
+  { kind: 'answer', text: 'Vorrei il pesce.', en: 'I would like the fish.', gloss: '' },
+];
+const json = JSON.stringify({ parts: streamed });
+let firstSaid: string | undefined;
+let firstParts: Part[] = [];
+const pw = new PartsWatcher((f, ps) => { if (firstSaid === undefined) { firstSaid = f; firstParts = ps; } });
+for (let n = 1; n <= json.length; n++) pw.feed(json.slice(0, n));
+const whole = lineFromParts(tidyParts(streamed)).line;
+check('streamed: a first piece is sent', firstSaid !== undefined);
+check('streamed: the line starts with it', !!firstSaid && whole.startsWith(firstSaid), `${firstSaid} | ${whole}`);
+check('streamed: it stops before the question', !!firstSaid && !firstSaid.includes('Che cosa'), firstSaid);
+check('streamed: its parts come with it, and say exactly it', firstParts.length > 0 && lineFromParts(firstParts).line + ' ' === firstSaid, firstParts.map((p) => p.kind));
 
 // Unicode escapes the model leaves in its text are decoded
 const escaped = tidyParts([{ kind: 'question', text: '\\u00bfPaga en efectivo?', en: 'Cash?', gloss: 'cash?' }, { kind: 'word', text: 'Que tenga un lindo d\\u00eda.', en: 'Have a nice day.', gloss: '' }]);
