@@ -124,6 +124,16 @@ export const oaxaca: CityPantry = {
       characterId: 'ricardo-taquillero-oaxaca',
       imagePrompt: 'the ADO bus terminal, Centro, Oaxaca. Travelers with woven bags at ticket counters, departure boards overhead, buses outside the glass doors, vendors selling snacks and newspapers, families waiting.',
     },
+    // In place of the hidden panadería: the city's own food (Josh, 2026-10-27)
+    {
+      id: 'chocolate-mayordomo-mina',
+      name: 'Chocolate Mayordomo, Calle Mina',
+      kind: 'chocolate-mill',
+      neighbourhood: 'Centro',
+      real: true,
+      characterId: 'rufina-molinera',
+      imagePrompt: 'A chocolate shop on Calle Mina, Centro, Oaxaca, beside the Mercado 20 de Noviembre. Sacks of cacao beans, a steel mill at the back grinding cacao with sugar and cinnamon into a thick paste, the smell of chocolate filling the street, clay mugs of frothy hot chocolate and pan de yema on the counter.',
+    },
   ],
   characters: [
     {
@@ -245,6 +255,17 @@ export const oaxaca: CityPantry = {
       placeId: 'terminal-ado-oaxaca',
       personality: ['efficient', 'friendly', 'knows all the routes'],
       portraitPrompt: 'Gouache portrait of a man of 45 with short dark hair, a mustache, a company polo shirt with a name badge and a helpful, professional smile, who sells bus tickets at the ADO terminal, Centro, Oaxaca. Include the ticket counter and departure schedule. Bold, saturated colour: travel blue, terracotta and warm yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+    },
+    {
+      id: 'rufina-molinera',
+      name: 'Doña Rufina',
+      gender: 'f',
+      age: 52,
+      role: 'molinera de chocolate',
+      placeId: 'chocolate-mayordomo-mina',
+      personality: ['warm', 'proud', 'talks while she works'],
+      portraitPrompt: 'Gouache portrait of a woman of 52 with her hair in two braids, a checked apron with cacao dust on it, holding a scoop of cacao beans, who grinds chocolate at a chocolate mill on Calle Mina in Oaxaca. Include the steel mill and sacks of cacao. Bold, saturated colour: cochineal red, marigold and indigo. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: 'You grind cacao to order at the mill behind the counter, with sugar, cinnamon and almonds, the way each customer likes it; you pour hot chocolate, made with water or milk, and sell pan de yema to dunk in it.',
     },
   ],
   food: [

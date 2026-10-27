@@ -157,6 +157,11 @@
       "src": "f4f9f9d1a923e722",
       "bytes": 239328
     },
+    "places/casa-del-tumbagon": {
+      "key": "es-mx/places/casa-del-tumbagon.7e72d77d6c.webp",
+      "src": "807a52d5855856ac",
+      "bytes": 272486
+    },
     "places/catedral-metropolitana": {
       "key": "es-mx/places/catedral-metropolitana.aa018f13b3.webp",
       "src": "d83de01f0c291394",
@@ -166,6 +171,16 @@
       "key": "es-mx/places/cemitas-dona-lupe-analco.78828485b7.webp",
       "src": "b50c5500abaf01f3",
       "bytes": 332740
+    },
+    "places/chocolate-mayordomo-mina": {
+      "key": "es-mx/places/chocolate-mayordomo-mina.33d64dd045.webp",
+      "src": "017d8735eace0014",
+      "bytes": 284480
+    },
+    "places/churreria-el-moro": {
+      "key": "es-mx/places/churreria-el-moro.f95ea22b69.webp",
+      "src": "83cb023a180e53cb",
+      "bytes": 296698
     },
     "places/dulces-tipicos-la-gloria": {
       "key": "es-mx/places/dulces-tipicos-la-gloria.fa82204f21.webp",
@@ -261,6 +276,11 @@
       "key": "es-mx/places/la-cucaracha.67b3e6cb97.webp",
       "src": "c94e11c05f3136ab",
       "bytes": 168890
+    },
+    "places/la-gran-fama-dulces": {
+      "key": "es-mx/places/la-gran-fama-dulces.14e8c9d323.webp",
+      "src": "5ada32a3575abe26",
+      "bytes": 378312
     },
     "places/la-pasita": {
       "key": "es-mx/places/la-pasita.76b7e38939.webp",
@@ -437,6 +457,11 @@
       "src": "05c2bff2a1f81120",
       "bytes": 271140
     },
+    "portraits/amparo-dulcera": {
+      "key": "es-mx/portraits/amparo-dulcera.af07ed807f.webp",
+      "src": "933aca3ab0f222b7",
+      "bytes": 360228
+    },
     "portraits/arturo-jubilado": {
       "key": "es-mx/portraits/arturo-jubilado.b1e34d8327.webp",
       "src": "7682246236b22391",
@@ -612,6 +637,11 @@
       "src": "f87d2df3386b0537",
       "bytes": 305832
     },
+    "portraits/marisol-tumbagones": {
+      "key": "es-mx/portraits/marisol-tumbagones.02ade57cb9.webp",
+      "src": "73e384d0139182ae",
+      "bytes": 356592
+    },
     "portraits/mateo-cafe-cielo-rojo": {
       "key": "es-mx/portraits/mateo-cafe-cielo-rojo.80de87d0af.webp",
       "src": "33707ea140b5534d",
@@ -687,6 +717,11 @@
       "src": "bd5c11503738cbe3",
       "bytes": 237014
     },
+    "portraits/rufina-molinera": {
+      "key": "es-mx/portraits/rufina-molinera.bb65af22b1.webp",
+      "src": "5a4657a07fe80b35",
+      "bytes": 333092
+    },
     "portraits/sofia-dulces-la-gloria": {
       "key": "es-mx/portraits/sofia-dulces-la-gloria.0d0ea4e487.webp",
       "src": "bc49afa1521c8517",
@@ -706,6 +741,11 @@
       "key": "es-mx/portraits/tomas-cantinero.3d5232558c.webp",
       "src": "ae678a1c20ab513f",
       "bytes": 311226
+    },
+    "portraits/tono-churrero": {
+      "key": "es-mx/portraits/tono-churrero.65675c6835.webp",
+      "src": "71bae62480ded45d",
+      "bytes": 319802
     },
     "portraits/vale-libros-tecolote": {
       "key": "es-mx/portraits/vale-libros-tecolote.2d4fe26831.webp",

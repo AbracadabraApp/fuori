@@ -625,13 +625,53 @@
       "timestamp": "2026-10-15T01:02:51.915Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-sma.jpg",
       "type": "place"
+    },
+    "ciudad-de-mexico/churreria-el-moro": {
+      "timestamp": "2026-10-27T23:54:08.326Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/churreria-el-moro.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/tono-churrero": {
+      "timestamp": "2026-10-27T23:54:31.958Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/tono-churrero.jpg",
+      "type": "portrait"
+    },
+    "oaxaca/chocolate-mayordomo-mina": {
+      "timestamp": "2026-10-27T23:54:57.329Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/chocolate-mayordomo-mina.jpg",
+      "type": "place"
+    },
+    "oaxaca/rufina-molinera": {
+      "timestamp": "2026-10-27T23:55:28.579Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/rufina-molinera.jpg",
+      "type": "portrait"
+    },
+    "puebla/la-gran-fama-dulces": {
+      "timestamp": "2026-10-27T23:55:59.508Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/la-gran-fama-dulces.jpg",
+      "type": "place"
+    },
+    "puebla/amparo-dulcera": {
+      "timestamp": "2026-10-27T23:58:12.339Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/amparo-dulcera.jpg",
+      "type": "portrait"
+    },
+    "san-miguel-de-allende/casa-del-tumbagon": {
+      "timestamp": "2026-10-27T23:56:52.250Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/casa-del-tumbagon.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/marisol-tumbagones": {
+      "timestamp": "2026-10-27T23:58:39.328Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/marisol-tumbagones.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 125,
-    "completed": 125,
+    "total": 133,
+    "completed": 133,
     "failed": 0,
-    "lastRun": "2026-10-15T01:47:49.857Z"
+    "lastRun": "2026-10-27T23:58:42.333Z"
   }
 }

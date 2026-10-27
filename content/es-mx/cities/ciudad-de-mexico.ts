@@ -124,6 +124,16 @@ export const ciudadDeMexico: CityPantry = {
       characterId: 'arturo-taquillero-cdmx',
       imagePrompt: 'a busy bus terminal in Ciudad de México. Travelers with bags at ticket counters, departure boards overhead, buses visible through glass doors, snack vendors, people waiting on benches.',
     },
+    // In place of the hidden panadería: the city's own food (Josh, 2026-10-27)
+    {
+      id: 'churreria-el-moro',
+      name: 'Churrería El Moro',
+      kind: 'churrería',
+      neighbourhood: 'Centro Histórico',
+      real: true,
+      characterId: 'tono-churrero',
+      imagePrompt: 'Churrería El Moro on Eje Central, Centro Histórico, Ciudad de México. Blue and white tiles, a long counter, a churrero pulling a long coil of churro dough out of the hot oil and cutting it, cups of thick hot chocolate and plates of churros dusted with cinnamon sugar on small tables, late at night with the street outside lit up.',
+    },
   ],
   characters: [
     {
@@ -245,6 +255,17 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'terminal-tapo',
       personality: ['patient', 'helpful', 'seen everything'],
       portraitPrompt: 'Gouache portrait of a man of 58 with greying hair, reading glasses on a chain, a pressed blue uniform shirt with a name badge, and a calm, helpful expression, who sells bus tickets at the TAPO terminal, Centro Histórico, Ciudad de México. Include the ticket counter and departure board. Bold, saturated colour: travel blue, warm yellow and concrete grey. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+    },
+    {
+      id: 'tono-churrero',
+      name: 'Toño',
+      gender: 'm',
+      age: 44,
+      role: 'churrero',
+      placeId: 'churreria-el-moro',
+      personality: ['night owl', 'quick-witted', 'proud of the place'],
+      portraitPrompt: 'Gouache portrait of a man of 44 with a trimmed moustache, a white cap and a white jacket, holding a long churro coil on a wooden stick, who fries churros at Churrería El Moro on Eje Central in Ciudad de México. Include the fryer and the blue and white tiles. Bold, saturated colour: jacaranda purple, ochre and deep green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: 'You fry churros at El Moro on Eje Central, open day and night since 1935; you ask everyone how they want their hot chocolate, light (mexicano) or thick (español), and how many churros.',
     },
   ],
   food: [

@@ -37,7 +37,6 @@ export const guadalajara: CityPantry = {
       id: 'panaderia-la-espiga',
       name: 'Panadería La Espiga de Oro',
       kind: 'bakery',
-      hidden: true, // bakeries hidden (Josh, 2026-10-27: the conversation is poor)
       neighbourhood: 'Colonia Americana',
       real: false,
       characterId: 'efren-panadero',
@@ -175,6 +174,7 @@ export const guadalajara: CityPantry = {
       placeId: 'panaderia-la-espiga',
       personality: ['early-rising', 'proud', 'fatherly'],
       portraitPrompt: 'Gouache portrait of a stocky man of 61 with white stubble, flour on his forearms and a paper baker\u2019s hat, wearing a white apron, with a proud, gentle expression, who bakes bread at Panadería La Espiga de Oro, Colonia Americana, Guadalajara. Include the bread racks and glass counter. Bold, saturated colour: golden yellow, pink and brick red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: 'You bake birote salado, the crusty sourdough roll Guadalajara is known for and the only bread that works for tortas ahogadas; people come early before it sells out.',
     },
     {
       id: 'lalo-bolero',

@@ -124,6 +124,16 @@ export const sanMiguelDeAllende: CityPantry = {
       characterId: 'miguel-taquillero-sma',
       imagePrompt: 'the bus terminal, San Antonio, San Miguel de Allende. A modest terminal with travelers at ticket windows, schedules on the wall, buses outside, backpackers with luggage, vendors selling snacks and local crafts.',
     },
+    // In place of the hidden panadería: the city's own food (Josh, 2026-10-27)
+    {
+      id: 'casa-del-tumbagon',
+      name: 'Casa del Tumbagón',
+      kind: 'sweet-shop',
+      neighbourhood: 'Centro',
+      real: true,
+      characterId: 'marisol-tumbagones',
+      imagePrompt: 'Casa del Tumbagón, a small sweet shop in the Centro of San Miguel de Allende, a few streets from the pink spires of the Parroquia. Shelves of tumbagones, crisp rolled sweets dusted with sugar and cinnamon, jars of cajeta and other dulces típicos, a colourful painted wall outside.',
+    },
   ],
   characters: [
     {
@@ -245,6 +255,17 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'terminal-sma',
       personality: ['helpful', 'patient with tourists', 'knows English phrases'],
       portraitPrompt: 'Gouache portrait of a man of 39 with short dark hair, reading glasses and a company uniform shirt with a name badge, with a calm, helpful expression, who sells bus tickets at the Terminal de Autobuses, San Antonio, San Miguel de Allende. Include the ticket counter and schedule board. Bold, saturated colour: travel blue, terracotta and sunny yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+    },
+    {
+      id: 'marisol-tumbagones',
+      name: 'Marisol',
+      gender: 'f',
+      age: 34,
+      role: 'dulcera',
+      placeId: 'casa-del-tumbagon',
+      personality: ['teasing', 'cheerful', 'knows every legend'],
+      portraitPrompt: 'Gouache portrait of a woman of 34 with a high ponytail, embroidered blouse and a big laugh, holding a tray of tumbagones (thin, crisp wafers rolled into tubes like cigars, dusted with sugar and cinnamon; not doughnuts or rings), who sells sweets at the Casa del Tumbagón in San Miguel de Allende. Include the shelves of sweets. Bold, saturated colour: rose, marigold and slate blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You sell tumbagones, San Miguel's own sweet, near the Parroquia; you love the legend that the sweet tells you whether your partner is faithful, and you tease customers with it.",
     },
   ],
   food: [

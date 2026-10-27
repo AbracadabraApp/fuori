@@ -124,6 +124,16 @@ export const puebla: CityPantry = {
       characterId: 'jorge-taquillero-puebla',
       imagePrompt: 'the CAPU bus terminal, La Paz, Puebla. Travelers with bags at ticket windows, digital departure boards, buses at platforms outside, families waiting on benches, vendors with snacks.',
     },
+    // In place of the hidden panadería: the city's own food (Josh, 2026-10-27)
+    {
+      id: 'la-gran-fama-dulces',
+      name: 'La Gran Fama, Calle de los Dulces',
+      kind: 'sweet-shop',
+      neighbourhood: 'Centro Histórico',
+      real: true,
+      characterId: 'amparo-dulcera',
+      imagePrompt: 'La Gran Fama on the Calle de los Dulces, Centro Histórico, Puebla, beside the old convent of Santa Clara. Glass cases and talavera jars full of camotes wrapped in paper, tortitas de Santa Clara, jamoncillos and ates, an old wooden counter, a customer choosing a box of sweets.',
+    },
   ],
   characters: [
     {
@@ -245,6 +255,17 @@ export const puebla: CityPantry = {
       placeId: 'terminal-capu',
       personality: ['patient', 'helpful with directions', 'knows the schedules by heart'],
       portraitPrompt: 'Gouache portrait of a man of 52 with greying temples, a company uniform vest, reading glasses and a helpful, professional expression, who sells bus tickets at the CAPU terminal, La Paz, Puebla. Include the ticket counter and departure board. Bold, saturated colour: travel blue, terracotta and sunny yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+    },
+    {
+      id: 'amparo-dulcera',
+      name: 'Doña Amparo',
+      gender: 'f',
+      age: 66,
+      role: 'dulcera',
+      placeId: 'la-gran-fama-dulces',
+      personality: ['storyteller', 'precise', 'sweet-toothed'],
+      portraitPrompt: 'Gouache portrait of a woman of 66 with short silver hair, reading glasses on a chain and a lace collar, holding an open box of camotes poblanos (long, smooth candy sticks of sweet-potato paste in pastel colours, each wrapped in white paper; candies, not raw sweet potatoes), who sells sweets at La Gran Fama on the Calle de los Dulces in Puebla. Include the glass cases and talavera jars. Bold, saturated colour: cobalt, white and candy pink. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: 'You sell sweets at La Gran Fama, the oldest shop on the Calle de los Dulces: camotes, tortitas de Santa Clara, jamoncillo; you know the convent stories behind them and like telling newcomers which to try first.',
     },
   ],
   food: [
