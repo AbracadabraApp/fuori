@@ -81,11 +81,13 @@ private struct FlashcardRow: View {
             HStack(alignment: .center, spacing: 12) {
                 VStack(alignment: .leading, spacing: 2) {
                     switch stage {
+                    // A card without a picture already shows its cue large
+                    // in the picture's place: not again underneath
                     case .meet:
-                        word
+                        if card.picture != nil { word }
                         if revealed { english }
                     case .recall:
-                        english
+                        if card.picture != nil { english }
                         if revealed { word }
                     case .say:
                         if revealed { word }
