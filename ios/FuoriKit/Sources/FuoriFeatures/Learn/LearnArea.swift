@@ -19,22 +19,22 @@ struct LearnArea: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 12) {
+                VStack(spacing: 14) {
                     lessonsCard
-                    MissionsCard()
-                    FlashcardsCard()
+                    GlassCard(title: "Missions", line: "Things to do in town, one at a time.", symbol: "basket.fill", tint: Tokens.Colors.missions)
+                    GlassCard(title: "Flashcards", line: "Words from your conversations, with pictures.", symbol: "rectangle.on.rectangle.angled.fill", tint: Tokens.Colors.flashcards)
                 }
                 .padding(.horizontal, Tokens.Space.gutter)
+                .padding(.top, 4)
                 .padding(.bottom, 24)
             }
-            .background(Tokens.Colors.paper)
+            .background { Wash() }
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Label("Learn", systemImage: "character.book.closed.fill")
                         .labelStyle(.titleAndIcon)
                         .font(.headline)
                         .foregroundStyle(Tokens.Colors.ink)
-                        .tint(Tokens.Colors.green)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button { dismiss() } label: { Image(systemName: "xmark") }
@@ -53,14 +53,17 @@ struct LearnArea: View {
 
     // MARK: Lessons
 
+    /// Glass over the terracotta wash (Josh, 2026-10-26: "a modern look - less
+    /// construction paper more glass"): her portrait, her offer in a glass
+    /// bubble, and Sì, dai as a prominent glass button
     private var lessonsCard: some View {
         let lesson = home?.lesson
-        return VStack(alignment: .leading, spacing: 14) {
+        return VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .top, spacing: 12) {
-                AsyncImage(url: magda?.portrait) { $0.resizable().scaledToFill() } placeholder: { Tokens.Colors.missions }
-                    .frame(width: 72, height: 72)
+                AsyncImage(url: magda?.portrait) { $0.resizable().scaledToFill() } placeholder: { Tokens.Colors.sand }
+                    .frame(width: 64, height: 64)
                     .clipShape(Circle())
-                    .overlay { Circle().stroke(Tokens.Colors.card, lineWidth: 3) }
+                    .overlay { Circle().stroke(.white.opacity(0.8), lineWidth: 2) }
                     .accessibilityHidden(true)
                 Text(lessonLine(lesson))
                     .typeface(.label, 16, relativeTo: .callout)
@@ -68,43 +71,34 @@ struct LearnArea: View {
                     .padding(.vertical, 10)
                     .padding(.horizontal, 12)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(Tokens.Colors.card, in: UnevenRoundedRectangle(topLeadingRadius: 14, bottomLeadingRadius: 4, bottomTrailingRadius: 14, topTrailingRadius: 14))
+                    .glassEffect(.regular, in: UnevenRoundedRectangle(topLeadingRadius: 16, bottomLeadingRadius: 4, bottomTrailingRadius: 16, topTrailingRadius: 16))
             }
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Lessons")
                         .typeface(.display, 28, relativeTo: .title, weight: .bold)
+                        .foregroundStyle(Tokens.Colors.ink)
                     Text("with \(magda?.name ?? "Magda")")
                         .typeface(.label, 15, relativeTo: .subheadline)
+                        .foregroundStyle(Tokens.Colors.text)
                 }
-                .foregroundStyle(Tokens.Colors.card)
                 Spacer(minLength: 8)
                 if let lesson, let button = model.content?.language.ui.letsDoIt {
                     Button { openLesson(lesson) } label: {
                         Text(inLanguage(button))
                             .typeface(.label, 16, relativeTo: .callout, weight: .bold)
-                            .foregroundStyle(Tokens.Colors.lessons)
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 18)
-                            .frame(minHeight: 44)
-                            .background(Tokens.Colors.card, in: Capsule())
+                            .padding(.horizontal, 6)
+                            .frame(minHeight: 36)
                     }
-                    .buttonStyle(PressableStyle())
+                    .buttonStyle(.glassProminent)
+                    .tint(Tokens.Colors.lessons)
                     .accessibilityHint("Goes over this mistake")
                 }
             }
         }
-        .padding(16)
-        .frame(maxWidth: .infinity, minHeight: 200, alignment: .topLeading)
-        .background {
-            ZStack {
-                Tokens.Colors.lessons
-                Circle().fill(Tokens.Colors.lessonsShade).frame(width: 180).offset(x: 140, y: 90)
-                Circle().fill(Tokens.Colors.lessonsShade).frame(width: 60).offset(x: 120, y: -80)
-            }
-        }
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-        .shadow(color: .black.opacity(0.12), radius: 4, y: 2)
+        .padding(18)
+        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .glassEffect(.regular.tint(Tokens.Colors.lessons.opacity(0.22)), in: RoundedRectangle(cornerRadius: 26))
     }
 
     /// Her offer: your latest mistake, or, before there is one, what lessons are
@@ -133,99 +127,54 @@ struct LearnArea: View {
     }
 }
 
-// MARK: - Missions
+// MARK: - The other cards
 
-/// Missions (the mission chips canvas): a market awning and a crate of fruit.
-/// Not open yet: the chip wall is the next step
-private struct MissionsCard: View {
+/// A Learn card in glass: a tinted symbol in a glass circle, the title and one
+/// line. Missions and Flashcards don't open yet
+private struct GlassCard: View {
+    let title: String
+    let line: String
+    let symbol: String
+    let tint: Color
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Spacer(minLength: 0)
-            Text("Missions")
-                .typeface(.display, 28, relativeTo: .title, weight: .bold)
-            Text("Things to do in town, one at a time.")
-                .typeface(.label, 15, relativeTo: .subheadline)
-        }
-        .foregroundStyle(Tokens.Colors.missionsInk)
-        .padding(16)
-        .frame(maxWidth: .infinity, minHeight: 250, alignment: .bottomLeading)
-        .background(alignment: .top) {
-            ZStack(alignment: .top) {
-                Tokens.Colors.missions
-                Awning().frame(height: 60)
-                Crate().frame(width: 150, height: 110).frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing).padding(.trailing, 18).padding(.bottom, 40)
+        HStack(alignment: .center, spacing: 14) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .typeface(.display, 28, relativeTo: .title, weight: .bold)
+                    .foregroundStyle(Tokens.Colors.ink)
+                Text(line)
+                    .typeface(.label, 15, relativeTo: .subheadline)
+                    .foregroundStyle(Tokens.Colors.text)
             }
+            Spacer(minLength: 8)
+            Image(systemName: symbol)
+                .font(.system(size: 30, weight: .semibold))
+                .foregroundStyle(tint)
+                .frame(width: 72, height: 72)
+                .glassEffect(.regular.tint(tint.opacity(0.18)), in: Circle())
+                .accessibilityHidden(true)
         }
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-        .shadow(color: .black.opacity(0.12), radius: 4, y: 2)
+        .padding(18)
+        .frame(maxWidth: .infinity, minHeight: 130, alignment: .leading)
+        .glassEffect(.regular.tint(tint.opacity(0.18)), in: RoundedRectangle(cornerRadius: 26))
         .accessibilityElement(children: .combine)
     }
 }
 
-private struct Awning: View {
+/// Behind the glass: soft blurred washes of the three cards' colours on paper
+private struct Wash: View {
     var body: some View {
-        Canvas { ctx, size in
-            let stripe = size.width / 12
-            ctx.fill(Path(CGRect(x: 0, y: 0, width: size.width, height: size.height - 14)), with: .color(Tokens.Colors.card))
-            for i in 0..<12 {
-                let x = CGFloat(i) * stripe
-                let color = i.isMultiple(of: 2) ? Tokens.Colors.flashcards : Tokens.Colors.card
-                var p = Path(CGRect(x: x, y: 0, width: stripe, height: size.height - 14))
-                p.addEllipse(in: CGRect(x: x, y: size.height - 28, width: stripe, height: 28))
-                ctx.fill(p, with: .color(color))
+        GeometryReader { geo in
+            ZStack {
+                Tokens.Colors.paper
+                Circle().fill(Tokens.Colors.lessons.opacity(0.55)).frame(width: geo.size.width * 0.9).offset(x: -geo.size.width * 0.25, y: -geo.size.height * 0.28)
+                Circle().fill(Tokens.Colors.missions.opacity(0.6)).frame(width: geo.size.width * 0.85).offset(x: geo.size.width * 0.3, y: geo.size.height * 0.02)
+                Circle().fill(Tokens.Colors.flashcards.opacity(0.5)).frame(width: geo.size.width * 0.9).offset(x: -geo.size.width * 0.15, y: geo.size.height * 0.32)
             }
+            .blur(radius: 60)
         }
+        .ignoresSafeArea()
         .accessibilityHidden(true)
-    }
-}
-
-private struct Crate: View {
-    var body: some View {
-        ZStack(alignment: .bottom) {
-            RoundedRectangle(cornerRadius: 6).fill(Tokens.Colors.crate).frame(height: 60)
-            VStack(spacing: -6) {
-                HStack(spacing: -2) { fruit(Tokens.Colors.fruitOrange); fruit(Tokens.Colors.fruitRed); fruit(Tokens.Colors.fruitGreen) }
-                HStack(spacing: -2) { fruit(Tokens.Colors.fruitRed); fruit(Tokens.Colors.fruitOrange); fruit(Tokens.Colors.fruitRed); fruit(Tokens.Colors.fruitGreen); fruit(Tokens.Colors.fruitOrange) }
-            }
-            .padding(.bottom, 48)
-        }
-        .accessibilityHidden(true)
-    }
-
-    private func fruit(_ color: Color) -> some View { Circle().fill(color).frame(width: 26, height: 26) }
-}
-
-// MARK: - Flashcards
-
-/// Flashcards (the Flashcards canvas): two cards, one with a cup on it. Not
-/// open yet
-private struct FlashcardsCard: View {
-    var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Spacer(minLength: 0)
-            Text("Flashcards")
-                .typeface(.display, 28, relativeTo: .title, weight: .bold)
-            Text("Words from your conversations, with pictures.")
-                .typeface(.label, 15, relativeTo: .subheadline)
-        }
-        .foregroundStyle(Tokens.Colors.card)
-        .padding(16)
-        .frame(maxWidth: .infinity, minHeight: 170, alignment: .bottomLeading)
-        .background(alignment: .topTrailing) {
-            ZStack(alignment: .topTrailing) {
-                Tokens.Colors.flashcards
-                ZStack {
-                    RoundedRectangle(cornerRadius: 8).fill(Tokens.Colors.flashcardsBack).frame(width: 130, height: 80).rotationEffect(.degrees(-10))
-                    RoundedRectangle(cornerRadius: 8).fill(Tokens.Colors.card).frame(width: 130, height: 80)
-                        .overlay { Image(systemName: "cup.and.saucer").font(.title).foregroundStyle(Tokens.Colors.crate) }
-                        .rotationEffect(.degrees(6))
-                }
-                .padding(.top, 30)
-                .padding(.trailing, 24)
-            }
-        }
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-        .shadow(color: .black.opacity(0.12), radius: 4, y: 2)
-        .accessibilityElement(children: .combine)
     }
 }

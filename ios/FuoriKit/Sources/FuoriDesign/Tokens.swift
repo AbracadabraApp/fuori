@@ -15,15 +15,8 @@ public enum Tokens {
         public static let errorBg = Color(red: 0.9725, green: 0.8431, blue: 0.8549) // #f8d7da
         public static let errorInk = Color(red: 0.4471, green: 0.1098, blue: 0.1412) // #721c24
         public static let lessons = Color(red: 0.6471, green: 0.3059, blue: 0.1725) // #a54e2c
-        public static let lessonsShade = Color(red: 0.7059, green: 0.3529, blue: 0.2078) // #b45a35
         public static let missions = Color(red: 0.9490, green: 0.7569, blue: 0.3059) // #f2c14e
-        public static let missionsInk = Color(red: 0.2314, green: 0.1647, blue: 0.0627) // #3b2a10
         public static let flashcards = Color(red: 0.1843, green: 0.4353, blue: 0.5608) // #2f6f8f
-        public static let flashcardsBack = Color(red: 0.5569, green: 0.7922, blue: 0.9020) // #8ecae6
-        public static let fruitRed = Color(red: 0.9059, green: 0.4353, blue: 0.3176) // #e76f51
-        public static let fruitOrange = Color(red: 0.9569, green: 0.6353, blue: 0.3804) // #f4a261
-        public static let fruitGreen = Color(red: 0.6118, green: 0.7725, blue: 0.6314) // #9cc5a1
-        public static let crate = Color(red: 0.6078, green: 0.4196, blue: 0.2706) // #9b6b45
     }
 
     public enum FontFamily {
