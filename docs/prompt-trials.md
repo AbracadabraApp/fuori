@@ -23,6 +23,7 @@ All in `content/<country>/prompts/`, one copy per country.
 | `learner-level.md` | The learner's level from their first conversations | No (`LEVEL_CHECK` off) | Placing a learner |
 | `level.md` | Which words of a line a beginner knows | No (replay and experiments) | Measuring any line's level |
 | `learn.md` (Italy only so far) | The Learn page for one conversation: corrections, words, good to know, as JSON | No (`tests/experiments/learn-page.mts`) | Reviewing a conversation for the learner |
+| `lesson.md` (Italy only, trial) | A Learn lesson: one syllabus unit taught from the learner's study file and recent conversations, in five steps (your line, examples in the voices of people they know, notice, say it, take it to town), as JSON | No (`tests/experiments/lesson.mts`; first run 2026-10-27 for Josh, unit a1-15) | Teaching a syllabus unit outside the world |
 
 Experiment prompts live inside `tests/experiments/*.mts` and are listed below when they're tried.
 
