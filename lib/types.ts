@@ -71,6 +71,11 @@ export interface CityCharacter {
   placeId: string;
   personality: string[];
   portraitPrompt: string;
+  /** Why they're at the place and what they do there, one line to them
+   *  ("You work the counter here between lectures"). Without it a person who
+   *  doesn't serve anyone gets an invented job (Josh, 2026-10-27: a student
+   *  sold him pizza, a woman in a square made him coffee) */
+  here?: string;
 }
 
 export interface CityPantry {

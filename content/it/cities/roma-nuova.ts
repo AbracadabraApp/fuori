@@ -30,7 +30,7 @@ export const romaNuova: CityPantry = {
       kind: 'pizza-al-taglio',
       neighbourhood: 'San Lorenzo',
       real: false,
-      characterId: 'giorgia-ferri',
+      hidden: true, // Giorgia moved to the Sapienza steps (Josh, 2026-10-27)
       imagePrompt: 'A narrow pizza al taglio shop in San Lorenzo, with trays of rectangular pizza behind a glass counter and a few students eating on stools by the window. Giorgia stands at the counter between lectures, waiting for her usual slice to be weighed.',
     },
     {
@@ -49,7 +49,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Centro Storico',
       real: true,
       characterId: 'matteo-rinaldi',
-      imagePrompt: 'The fountain steps in Piazza della Rotonda, with the Pantheon\'s columns behind and tourists and pigeons crossing the square on an October weekday. Matteo sits on the edge of the fountain with his delivery bag beside him, waiting for the next order.',
+      imagePrompt: 'The fountain steps in Piazza della Rotonda, with the Pantheon\'s columns behind and tourists and pigeons crossing the square on an October weekday. Matteo sits on the edge of the fountain with a sketchbook on his knee, drawing the portico between tours.',
     },
     {
       id: 'gesu-piazza',
@@ -105,6 +105,36 @@ export const romaNuova: CityPantry = {
       characterId: 'pietro-termini-nuova',
       imagePrompt: 'The big concourse of Stazione Termini on a weekday, with travellers crossing under the departures board, a line of people at the ticket machines and the ticket office windows behind. Pietro serves a traveller at a ticket window.',
     },
+    // Brought back from roma.ts with their art (Josh, 2026-10-27: "add back the
+    // pizza guy", "I miss the big old guy at the bar"); same ids, so the same
+    // pictures and the same memory of the learner
+    {
+      id: 'bar-monti-corner',
+      name: 'Bar Angolo',
+      kind: 'bar',
+      neighbourhood: 'Monti',
+      real: false,
+      characterId: 'sandro-bar-angolo',
+      imagePrompt: 'Soft pastel sketch on white paper of a small corner bar on a sloping cobbled street in Monti, zinc counter, chrome espresso machine, glass case of cornetti, two locals chatting at the counter, ivy on the faded orange wall outside, soft morning light, ochre and sage tones, textured sketch style, loose watercolor washes, lots of white paper',
+    },
+    {
+      id: 'forno-trastevere',
+      name: 'Forno in Trastevere',
+      kind: 'bakery',
+      neighbourhood: 'Trastevere',
+      real: false,
+      characterId: 'dario-fornaio',
+      imagePrompt: 'Soft pastel sketch on white paper of a small Trastevere bakery with a wood-fired oven glowing in the back, trays of pizza bianca and pizza rossa sold by weight, baker in a white apron, paper-wrapped slices on the counter, warm golden tones, textured sketch style, loose watercolor washes, lots of white paper',
+    },
+    {
+      id: 'sapienza-scalinata',
+      name: 'La Sapienza',
+      kind: 'university',
+      neighbourhood: 'San Lorenzo',
+      real: true,
+      characterId: 'giorgia-ferri',
+      imagePrompt: 'The wide stone steps in front of the main building of La Sapienza university in Rome, a 1930s travertine facade with no lettering on it and the statue of Minerva, students sitting on the steps with books, slices of pizza and coffee on a sunny October afternoon. Giorgia sits on the steps with a canvas tote full of books and a slice of pizza.',
+    },
   ],
 
   characters: [
@@ -124,9 +154,10 @@ export const romaNuova: CityPantry = {
       gender: 'f',
       age: 23,
       role: 'studentessa',
-      placeId: 'pizza-taglio-san-lorenzo',
+      placeId: 'sapienza-scalinata',
       personality: ['curious', 'easygoing', 'chatty'],
       portraitPrompt: 'Pen and ink portrait on white paper of a 23-year-old woman with wavy chestnut hair, a denim jacket over a sweater and a canvas tote full of books on her shoulder, looking relaxed and a little tired. She is holding a slice of pizza in paper and a phone with her other hand, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      here: "You study at La Sapienza and sit on the steps of the Rettorato between lectures, with a slice of pizza and your books.",
     },
     {
       id: 'mohamed-hassan',
@@ -143,10 +174,11 @@ export const romaNuova: CityPantry = {
       name: 'Matteo Rinaldi',
       gender: 'm',
       age: 31,
-      role: 'fattorino',
+      role: 'studente di storia antica e guida turistica',
       placeId: 'pantheon-rotonda',
-      personality: ['laid-back', 'street-smart', 'friendly'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 31-year-old man with short dark hair and stubble, wearing a puffer vest over a hoodie and cycling shoes, looking patient but ready to go. He is holding his phone in one hand, watching for the order to come in, with a large insulated delivery backpack at his feet, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      personality: ['laid-back', 'bookish', 'friendly'],
+      portraitPrompt: "Pen and ink portrait on white paper of a 31-year-old man with short dark hair, stubble and round glasses, in a worn corduroy jacket over a sweater, a sketchbook open on his knee and a pencil in his hand, looking up mid-thought as if about to explain something, minimal watercolor wash in warm Roman ochre and terracotta tones, delicate linework",
+      here: "You study classical history at La Sapienza and give tours part time. Between tours you sit on the fountain steps sketching the Pantheon's portico.",
     },
     {
       id: 'franca-mattei',
@@ -157,6 +189,7 @@ export const romaNuova: CityPantry = {
       placeId: 'gesu-piazza',
       personality: ['kind', 'precise', 'curious'],
       portraitPrompt: 'Pen and ink portrait on white paper of a 67-year-old woman with short silver hair, round glasses and a calm, attentive face, wearing a camel coat, a silk scarf and flat leather shoes. She is holding a worn leather handbag and a folded newspaper under her arm, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      here: 'You come to Il Gesù most mornings, and you like showing newcomers where to stand to see the painted ceiling.',
     },
     {
       id: 'ettore-gentili-nuova',
@@ -167,6 +200,7 @@ export const romaNuova: CityPantry = {
       placeId: 'villa-borghese-nuova',
       personality: ['gentle', 'talkative', 'nostalgic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a 78-year-old man with thinning white hair, a deeply lined, cheerful face and a straight back, wearing a tweed cap, a green jacket and polished brown shoes. He is walking with a wooden cane in one hand and lifting the other to greet someone, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      here: 'You walk here every morning and sit on the same bench by the lake.',
     },
     {
       id: 'daniele-sorrentino',
@@ -177,6 +211,7 @@ export const romaNuova: CityPantry = {
       placeId: 'tram-porta-maggiore',
       personality: ['calm', 'dry-humoured', 'punctual'],
       portraitPrompt: 'Pen and ink portrait on white paper of a 28-year-old man with a short beard, messy dark hair and headphones around his neck, wearing a black jacket and jeans, with a slightly sleepy but good-natured expression. He is carrying a heavy black equipment case on a strap and checking his phone, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      here: "You're on your way to set up the sound for tonight's free concert in a piazza, and you'd happily tell anyone about it.",
     },
     {
       id: 'marco-zhou',
@@ -207,6 +242,26 @@ export const romaNuova: CityPantry = {
       placeId: 'stazione-termini-nuova',
       personality: ['methodical', 'tired but kind'],
       portraitPrompt: 'Pen and ink portrait on white paper of a ticket office clerk in his fifties with greying hair, a navy railway uniform and tie, leaning toward a ticket window, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+    },
+    {
+      id: 'sandro-bar-angolo',
+      name: 'Sandro Pieri',
+      gender: 'm',
+      age: 61,
+      role: 'barista',
+      placeId: 'bar-monti-corner',
+      personality: ['gruff', 'loyal', 'dry humour'],
+      portraitPrompt: 'Pen and ink portrait on white paper of an older Roman barista with a bald head, thick grey moustache, rolled shirtsleeves and a striped apron, wiping the zinc counter, half a smile, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
+    },
+    {
+      id: 'dario-fornaio',
+      name: 'Dario Ferri',
+      gender: 'm',
+      age: 34,
+      role: 'fornaio',
+      placeId: 'forno-trastevere',
+      personality: ['early riser', 'shy', 'proud of his pizza bianca'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a young baker in his thirties with curly dark hair dusted with flour, short beard, white t-shirt and apron, holding a long tray of pizza bianca, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
     },
   ],
 

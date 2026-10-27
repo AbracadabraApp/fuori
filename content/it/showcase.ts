@@ -19,7 +19,9 @@ export const showcase: Record<string, string[]> = {
   // original, to compare. No language school: schools move into Learn.
   'roma-nuova': [
     'bar-mattina-nuova',
-    'pizza-taglio-san-lorenzo',
+    'bar-monti-corner', // Sandro, back from roma.ts (Josh, 2026-10-27)
+    'forno-trastevere', // Dario, back from roma.ts, in place of Pizzeria Da Gigi
+    'sapienza-scalinata', // Giorgia, moved from Da Gigi
     'trattoria-garbatella',
     'pantheon-rotonda',
     'gesu-piazza',

@@ -15,7 +15,10 @@ export function cityCharacterToSheet(
   city: CityPantry,
   place?: Place
 ): CharacterSheet {
-  const where = place ? `${place.name}, ${place.neighbourhood}` : city.name;
+  // The kind of place goes with its name ("Pizzeria Da Gigi" is pizza by the
+  // slice), and why they're there, so nobody is handed an invented job
+  const where = place ? `${place.name} (${place.kind.replace(/-/g, ' ')}), ${place.neighbourhood}` : city.name;
+  const setting = person.here ? `${where}. ${person.here}` : where;
   return {
     id: person.id,
     name: person.name,
@@ -32,7 +35,7 @@ export function cityCharacterToSheet(
       regionalisms: [],
       description: `${person.role} at ${where}`,
     },
-    appearance: { description: '', setting: where },
+    appearance: { description: '', setting },
     portrait: { kind: 'illustrated', prompt: person.portraitPrompt },
   };
 }

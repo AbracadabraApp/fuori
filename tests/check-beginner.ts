@@ -54,6 +54,27 @@ const two = tidyParts([
 ]);
 check('two questions: only the last kept', two.filter((p) => p.kind === 'question').map((p) => p.text).join('|') === 'Vuole un caffè o un cappuccino?', two.map((p) => p.text));
 
+// A phrase that ends in "?" is a question too: Giorgia, 2026-10-27, asked the drink twice
+const twice = tidyParts([
+  { kind: 'word', text: 'Da bere, acqua o birra?', en: 'To drink, water or beer?', gloss: 'water or beer' },
+  { kind: 'question', text: 'Che cosa vuole da bere?', en: 'What would you like to drink?', gloss: 'what to drink' },
+]);
+check('a phrase asking too: only the last question kept', twice.length === 1 && twice[0].text === 'Che cosa vuole da bere?', twice.map((p) => p.text));
+const alone = tidyParts([{ kind: 'word', text: 'Acqua o birra?', en: 'Water or beer?', gloss: '' }]);
+check('a phrase asking alone becomes the question', alone[0].kind === 'question', alone);
+
+// The person's setting: the kind of place, and why they're there (no invented jobs)
+const anyCity = cities.find((c) => c.places.some((pl) => pl.characterId && c.characters?.some((x) => x.id === pl.characterId)))!;
+const anyPlace = anyCity.places.find((pl) => pl.characterId && anyCity.characters?.some((x) => x.id === pl.characterId))!;
+const anyone = characterForPlace(anyCity, anyPlace)!;
+check('setting has the kind of place', anyone.appearance!.setting.includes(`(${anyPlace.kind.replace(/-/g, ' ')})`), anyone.appearance!.setting);
+check('the Beginner prompt gets the setting', buildBeginnerPrompt({ character: anyone, transcript: [] } as any).system.includes(anyone.appearance!.setting), anyone.appearance!.setting);
+const rome = cities.find((c) => c.id === 'roma-nuova');
+if (rome) {
+  const gigi = characterForPlace(rome, rome.places.find((pl) => pl.id === 'sapienza-scalinata')!)!;
+  check("setting has why they're there", gigi.appearance!.setting.includes('study at La Sapienza'), gigi.appearance!.setting);
+}
+
 // Names are said once, in the language: not again in the English after it
 check('vocative at the end', withoutNames('Nice to meet you, Joshua!', 'Piacere, Joshua!') === 'Nice to meet you!', withoutNames('Nice to meet you, Joshua!', 'Piacere, Joshua!'));
 check('vocative at the start', withoutNames('Joshua, do you like Italian music?', 'Joshua, ti piace la musica italiana?') === 'Do you like Italian music?', withoutNames('Joshua, do you like Italian music?', 'Joshua, ti piace la musica italiana?'));

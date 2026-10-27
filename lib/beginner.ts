@@ -118,9 +118,14 @@ export function tidyParts(parts: Part[]): Part[] {
   // One question a turn (goal 7): when the model asks two ("Prende un caffè?
   // Vuole un caffè o un cappuccino?", Sofia, 2026-10-25), keep the last, which
   // the answers go with, and drop the others
-  const lastQuestion = parts.map((p) => p.kind).lastIndexOf('question');
+  // the answers go with, and drop the others. A phrase that ends in a question
+  // mark is a question too ("Da bere, acqua o birra? … Che cosa vuole da bere?",
+  // Giorgia, 2026-10-27): punctuation, so any language
+  const asks = parts.map((p) => p.kind === 'question' || (p.kind === 'word' && /\?["'»”’)]*$/.test(p.text.trim())));
+  const lastQuestion = asks.lastIndexOf(true);
   return parts
-    .filter((p, i) => p.kind !== 'question' || i === lastQuestion)
+    .filter((_, i) => !asks[i] || i === lastQuestion)
+    .map((p) => (p.kind === 'word' && /\?["'»”’)]*$/.test(p.text.trim()) ? { ...p, kind: 'question' as PartKind } : p))
     .map((p) => {
       const glossed = (p.kind === 'word' || p.kind === 'question') && p.gloss?.trim();
       const text = decodeEscapes(p.text.trim());
@@ -149,8 +154,8 @@ export function buildBeginnerPrompt(p: {
   const system = fill(readPromptFile('beginner.md').block('System prompt'), {
     name: character.name,
     role: character.role,
-    place: place?.name ?? character.appearance?.setting ?? '',
-    neighbourhood: (place as { neighbourhood?: string } | undefined)?.neighbourhood ?? '',
+    // The place with its kind and neighbourhood, and why they're there (lib/characters/for-place.ts)
+    setting: (character.appearance?.setting ?? place?.name ?? '').replace(/([^.!?])$/, '$1.'),
     city: city?.name ?? character.city,
     character: about,
     language: language.name,

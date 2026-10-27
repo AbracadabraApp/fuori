@@ -68,7 +68,7 @@ Leaves the feed (hidden, not deleted, as `content/it/showcase.ts` does): Bar Ang
 ## Florence, the same way (2026-10-23, Josh)
 
 Josh: "lets give florence a rome style update", "just go, no second". Florence was replaced in place: the 10 new places and people are added to `content/it/cities/firenze.ts` with new ids and `showcase.ts` now shows them; the old shown list is kept in `hiddenForNow.firenze` (the places and their people stay in the file, so nothing is lost).
-- **Real businesses under their real names** (Josh: "real businesses under their real names; you fought me on this in Rome for no good reason"). At a real business the person is staff or a customer, never the actual owner.
+- **Real businesses under their real names** (Josh: "real businesses under their real names; you fought me on this in Rome for no good reason"). At a real business the person is staff or a customer, never the actual owner. **Corrected 2026-10-27:** that sentence was Claude's, not Josh's, and "or a customer" put a student in a pizza shop with nothing to sell (she invented a sit-down pizzeria). Now: at a real business, staff with an invented name, never the real owner; at an invented business anyone fits; customers and passers-by in public places; every person can have a `here` line saying why they're there ([adventures.md](adventures.md)).
 - **People** (Josh: "mix young and old, ethnic Italian and ethnic representative of Florence in appropriate locations"): Florence's largest foreign communities are Peruvian, Romanian, Chinese, Albanian and Filipino (Tuttitalia, 1 January 2025; 15.6% of residents).
 
 | # | Place | Person |

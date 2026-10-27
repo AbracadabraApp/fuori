@@ -2358,9 +2358,9 @@
       "bytes": 293864
     },
     "places/pantheon-rotonda": {
-      "key": "it/places/pantheon-rotonda.f9b279c137.webp",
-      "src": "64d83f7276aa89df",
-      "bytes": 183376
+      "key": "it/places/pantheon-rotonda.41bd90f247.webp",
+      "src": "8a5f461074f02dec",
+      "bytes": 244202
     },
     "places/paperback-exchange": {
       "key": "it/places/paperback-exchange.0e021b8374.webp",
@@ -3046,6 +3046,11 @@
       "key": "it/places/santuario-madonna.100a030e68.webp",
       "src": "26d092a39e71b578",
       "bytes": 118826
+    },
+    "places/sapienza-scalinata": {
+      "key": "it/places/sapienza-scalinata.bfae225854.webp",
+      "src": "d7e5b0f905a819b0",
+      "bytes": 200092
     },
     "places/sassi-belvedere": {
       "key": "it/places/sassi-belvedere.339a716589.webp",
@@ -5733,9 +5738,9 @@
       "bytes": 283890
     },
     "portraits/matteo-rinaldi": {
-      "key": "it/portraits/matteo-rinaldi.68622bbe9c.webp",
-      "src": "27c2dde621e91f26",
-      "bytes": 182044
+      "key": "it/portraits/matteo-rinaldi.b06ff7fff6.webp",
+      "src": "402ce1bdb9f3c167",
+      "bytes": 257648
     },
     "portraits/matteo-torre": {
       "key": "it/portraits/matteo-torre.1363770d85.webp",

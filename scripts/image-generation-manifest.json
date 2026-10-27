@@ -6790,13 +6790,28 @@
       "timestamp": "2026-10-14T22:48:46.088Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/enrico-bigliettaio-torino.jpg",
       "type": "portrait"
+    },
+    "roma-nuova/pantheon-rotonda": {
+      "timestamp": "2026-10-27T19:35:44.724Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/pantheon-rotonda.jpg",
+      "type": "place"
+    },
+    "roma-nuova/sapienza-scalinata": {
+      "timestamp": "2026-10-27T19:36:57.277Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/sapienza-scalinata.jpg",
+      "type": "place"
+    },
+    "roma-nuova/matteo-rinaldi": {
+      "timestamp": "2026-10-27T19:37:16.862Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/matteo-rinaldi.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 1358,
-    "completed": 1358,
+    "total": 1361,
+    "completed": 1361,
     "failed": 0,
-    "lastRun": "2026-10-14T22:48:49.098Z"
+    "lastRun": "2026-10-27T19:37:19.879Z"
   }
 }
