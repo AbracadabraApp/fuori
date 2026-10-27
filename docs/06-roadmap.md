@@ -147,6 +147,11 @@ Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens 
 - [ ] **Claude** L2: Learn behind a setting (off by default): an icon left of the Diario opens the teacher, English and the language both ways (`mode: "any"`); next build
 - [ ] **Josh** L3: keep it and take the school out of the world, or change it; name, icon, whether she stays Magda
 
+### Adventures ([adventures.md](adventures.md); Josh, 2026-10-27: ideas forming) — N5
+- [ ] **Josh** Play the current places (Rome first) and note who and where feels off
+- [ ] **Claude** Then: the Beginner prompt told the kind of place and why the person is there (no invented jobs: a student selling pizza, a woman in a square making coffee); check every city for customers placed in shops
+- [ ] **Josh + Claude** Adventures: places where something happens, people with something to show (scholar, priest, docent, professor, journalist, archaeologist), and a mystery to solve across days and places; Rome first
+
 ### Smaller world for beginners: on hold until there's a spec (Josh, 2026-10-18) — N5
 Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the same for every learner, in one neighbourhood until level 4. Explored in rounds 11–13 ([level-judge-test.md](level-judge-test.md)); described in [beginner-scaffolding.md](beginner-scaffolding.md) → "On hold". No work on it until the spec exists.
 - [ ] **Josh** ⛔ Spec: what's fixed and what's generated; which neighbourhood(s) per country; how many visits and in what order; what earns leaving it; how it fits levels 1–3; whether audio is recorded once
