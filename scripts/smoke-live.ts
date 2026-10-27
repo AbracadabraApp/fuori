@@ -7,10 +7,10 @@
  *   COUNTRY=es-mx npm run smoke:live        # Mexico, afuera-production
  *   npm run smoke:live -- --url=http://localhost:3000 --keep
  *
- * Steps: the site loads; a conversation is recorded; leaving writes memory and
- * the study file; the visit is counted for the stamp; a second visit remembers
- * the learner; Magda at the school has the study file; a short lesson updates it;
- * then the app's API, including onboarding. About 6 Claude replies
+ * Steps: the website is switched off (404); then the app's API: a conversation
+ * is recorded; leaving writes memory and the study file; the visit is counted
+ * for the stamp; a second visit remembers the learner; Magda at the school has
+ * the study file and a short lesson updates it; onboarding. About 6 Claude replies
  * plus memory and the study file (a few minutes, a few cents). Deletes the test
  * learner afterwards through `railway ssh` (skip with --keep).
  */
@@ -44,30 +44,10 @@ const ONBOARDING_ANSWERS: Record<string, string[]> = {
   es: ['I love the food and the markets', 'Sí, es mi tercera vez en México, me gusta mucho'],
 };
 
-let cookie = '';
 const results: string[] = [];
 let failed = false;
 const pass = (step: string) => results.push(`  ok   ${step}`);
 const fail = (step: string, why: string) => { results.push(`  FAIL ${step}: ${why}`); failed = true; };
-
-async function post(path: string, body: unknown) {
-  const res = await fetch(base + path, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', ...(cookie ? { Cookie: cookie } : {}) },
-    body: JSON.stringify(body),
-  });
-  const set = res.headers.get('set-cookie')?.match(/fuori_learner_id=[^;]+/)?.[0];
-  if (set) cookie = set;
-  return res;
-}
-
-// Ids, not the sheet: the server works out the character (lib/characters/for-visit.ts)
-async function turn(placeId: string, cityId: string, transcript: Turn[], learnerSaid?: string, conversationId?: string | null) {
-  const res = await post('/api/turn', { cityId, placeId, transcript, learnerSaid, conversationId });
-  if (!res.ok) throw new Error(`/api/turn → ${res.status} ${(await res.text()).slice(0, 200)}`);
-  const reply = (await res.json()) as { line: string };
-  return { line: reply.line, res };
-}
 
 function cleanup(learnerId: string) {
   if (keep || !learnerId) return console.log(`Test learner kept: ${learnerId}`);
@@ -97,57 +77,14 @@ async function main() {
   const magda = characterForPlace(city, school)!;
   console.log(`${base} · ${country} · ${person.name} (${place.name}) and Magda (${school.name}), ${city.name}\n`);
 
-  // 1. The site loads and serves this country
+  // 1. The website is switched off (proxy.ts; Josh, 2026-10-26): its page and
+  // its open /api routes are not found; the app's /v1 is served
   const home = await fetch(base);
-  const html = await home.text();
-  home.ok && html.includes(cities[0].name) ? pass('site loads this country') : fail('site loads this country', `${home.status}, "${cities[0].name}" not on the page`);
+  home.status === 404 ? pass('website switched off (home page not found)') : fail('website switched off', `home page ${home.status}`);
+  const webSpeak = await fetch(`${base}/api/speak`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'ciao' }) });
+  webSpeak.status === 404 ? pass('web /api/speak not found (no voice without sign-in)') : fail('web /api/speak not found', `status ${webSpeak.status}`);
 
-  // 2. A conversation is recorded
-  const open = await turn(place.id, city.id, []);
-  const id = open.res.headers.get('x-conversation-id');
-  id ? pass('conversation recorded') : fail('conversation recorded', 'no x-conversation-id (DATABASE_URL on the server?)');
-  open.res.headers.get('x-memory')?.startsWith('0 visits') ? pass('new learner is a stranger') : fail('new learner is a stranger', `x-memory "${open.res.headers.get('x-memory')}"`);
-  const transcript: Turn[] = [{ who: 'npc', transcript: open.line }];
-  for (const said of lines) {
-    const r = await turn(place.id, city.id, transcript, said, id);
-    transcript.push({ who: 'learner', transcript: said }, { who: 'npc', transcript: r.line });
-  }
-
-  // 3. Leaving writes memory, learning notes and the study file (the server finishes before answering)
-  const t0 = Date.now();
-  const end = await post('/api/conversation/end', { conversationId: id });
-  end.status === 204 ? pass(`conversation ended (memory and study file took ${Math.round((Date.now() - t0) / 1000)}s)`) : fail('conversation ended', `status ${end.status}`);
-
-  // 4. The visit is counted for the stamp
-  const visits = (await (await fetch(`${base}/api/visits?city=${encodeURIComponent(city.id)}`, { headers: { Cookie: cookie } })).json()) as Record<string, number>;
-  visits[place.id] === 1 ? pass('visit counted for the stamp') : fail('visit counted for the stamp', JSON.stringify(visits));
-
-  // 5. A second visit: the character remembers
-  const again = await turn(place.id, city.id, []);
-  const mem = again.res.headers.get('x-memory') ?? '';
-  /^1 visits, [1-9]/.test(mem) ? pass(`character remembers (${mem})`) : fail('character remembers', `x-memory "${mem}"`);
-
-  // 6. Magda at the school, with the study file the conversation just fed
-  const lesson = await turn(school.id, city.id, []);
-  const v = lesson.res.headers.get('x-prompt-version') ?? '';
-  v.startsWith('magda-') ? pass(`Magda found at ${school.name} (${v})`) : fail('Magda found at the school', `prompt version "${v}"`);
-  const sf = lesson.res.headers.get('x-study-file') ?? '';
-  /^[1-9]\d* lines, 0 lessons$/.test(sf) ? pass(`study file ready for the first lesson (${sf})`) : fail('study file ready for the first lesson', `x-study-file "${sf}"`);
-  console.log(`Magda: ${lesson.line}\n`);
-
-  // 7. A short lesson, then leaving: the study file is updated and counts one lesson
-  const lessonId = lesson.res.headers.get('x-conversation-id');
-  const lt: Turn[] = [{ who: 'npc', transcript: lesson.line }];
-  for (const said of LESSON_LINES[language.code]) {
-    const r = await turn(school.id, city.id, lt, said, lessonId);
-    lt.push({ who: 'learner', transcript: said }, { who: 'npc', transcript: r.line });
-  }
-  await post('/api/conversation/end', { conversationId: lessonId });
-  const next = await turn(school.id, city.id, []);
-  const sf2 = next.res.headers.get('x-study-file') ?? '';
-  /^[1-9]\d* lines, 1 lessons$/.test(sf2) ? pass(`study file updated after the lesson (${sf2})`) : fail('study file updated after the lesson', `x-study-file "${sf2}"`);
-
-  await appApi(city.id, place.id, person.id, lines);
+  await appApi(city.id, place.id, person.id, lines, school.id);
 }
 
 // The iPhone app's API (/v1, docs/12-native-app.md): sign in with a device
@@ -157,7 +94,7 @@ async function main() {
 let appLearner = '';
 let onboardingLearner = '';
 let restartedLearner = '';
-async function appApi(cityId: string, placeId: string, characterId: string, said: string[]) {
+async function appApi(cityId: string, placeId: string, characterId: string, said: string[], schoolId: string) {
   const health = await fetch(`${base}/healthz`);
   const h = (await health.json().catch(() => ({}))) as { ok?: boolean; commit?: string; promptVersion?: string };
   h.ok ? pass(`healthz (commit ${h.commit}, prompt ${h.promptVersion})`) : fail('healthz', `status ${health.status}`);
@@ -230,6 +167,20 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   const again = await v1('/v1/turn', { cityId, placeId });
   const mem = again.headers.get('x-memory') ?? '';
   /^1 visits, [1-9]/.test(mem) ? pass(`v1 character remembers (${mem})`) : fail('v1 character remembers', `x-memory "${mem}"`);
+
+  // Magda at the school, with the study file the conversation just fed; a
+  // short lesson, then leaving, updates it and counts one lesson (moved from
+  // the web half when the website was switched off, 2026-10-26)
+  const lesson = await v1('/v1/turn', { cityId, placeId: schoolId });
+  const lj = (await lesson.json()) as { line?: string; conversationId?: string; promptVersion?: string };
+  (lj.promptVersion ?? '').startsWith('magda-') ? pass(`v1 Magda found at the school (${lj.promptVersion})`) : fail('v1 Magda found at the school', `prompt version "${lj.promptVersion}"`);
+  const sf = lesson.headers.get('x-study-file') ?? '';
+  /^[1-9]\d* lines, 0 lessons$/.test(sf) ? pass(`v1 study file ready for the first lesson (${sf})`) : fail('v1 study file ready for the first lesson', `x-study-file "${sf}"`);
+  for (const line of LESSON_LINES[language.code]) await v1('/v1/turn', { cityId, placeId: schoolId, conversationId: lj.conversationId, learnerSaid: line });
+  await v1(`/v1/conversations/${lj.conversationId}/end`, {});
+  const nextLesson = await v1('/v1/turn', { cityId, placeId: schoolId });
+  const sf2 = nextLesson.headers.get('x-study-file') ?? '';
+  /^[1-9]\d* lines, 1 lessons$/.test(sf2) ? pass(`v1 study file updated after the lesson (${sf2})`) : fail('v1 study file updated after the lesson', `x-study-file "${sf2}"`);
 
   const speak = await v1('/v1/speak', { text: o.line.split(/(?<=[.!?])\s/)[0], characterId });
   const audio = speak.ok ? await speak.blob() : null;
@@ -347,7 +298,6 @@ main()
   .catch((e) => fail('run', e instanceof Error ? e.message : String(e)))
   .finally(() => {
     console.log(results.join('\n') + '\n');
-    cleanup(cookie.split('=')[1] ?? '');
     cleanup(appLearner);
     cleanup(onboardingLearner);
     cleanup(restartedLearner);
