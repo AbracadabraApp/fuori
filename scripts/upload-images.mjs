@@ -31,7 +31,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 // country: the country's card picture (country/<country>.jpg), for the app's country choice
 // guide: the greeter's four poses (welcome, listen, talk, laugh) for onboarding
-const KINDS = ['cities', 'places', 'portraits', 'country', 'guide'];
+// flashcards: one 2:1 picture per word (1600 × 800), named by the word's id (docs/flashcards.md)
+const KINDS = ['cities', 'places', 'portraits', 'country', 'guide', 'flashcards'];
 const WEBP_QUALITY = 80;
 const CONCURRENCY = 8;
 

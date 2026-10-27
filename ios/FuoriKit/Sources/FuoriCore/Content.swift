@@ -13,6 +13,8 @@ public struct Content: Codable, Sendable, Equatable {
     /// The greeter; nil from servers before 2026-10-17 (then there's no onboarding)
     public let onboarding: Onboarding?
     public let cities: [City]
+    /// Flashcards' starter words (docs/flashcards.md); nil from servers before 2026-10-27
+    public let flashcards: [Flashcard]?
     public let characters: [String: Character]
 
     public func city(_ id: String) -> City? { cities.first { $0.id == id } }
@@ -224,4 +226,17 @@ public struct Onboarding: Codable, Sendable, Equatable {
     public let lines: Lines
     /// nil from servers before 2026-10-23: today's onboarding then
     public let orientation: Orientation?
+}
+
+/// A flashcard (docs/flashcards.md): the word as shown and said, with its
+/// article ("il banco"), its English, and its 2:1 picture if there is one
+public struct Flashcard: Codable, Sendable, Equatable, Hashable, Identifiable {
+    public let id: String
+    public let said: String
+    public let en: String
+    public let picture: URL?
+
+    public init(id: String, said: String, en: String, picture: URL?) {
+        self.id = id; self.said = said; self.en = en; self.picture = picture
+    }
 }

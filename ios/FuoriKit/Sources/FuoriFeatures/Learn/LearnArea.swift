@@ -22,13 +22,22 @@ struct LearnArea: View {
                 VStack(spacing: 14) {
                     lessonsCard
                     GlassCard(title: "Missions", line: "Things to do in town, one at a time.", symbol: "basket.fill", tint: Tokens.Colors.missions, ink: Tokens.Colors.ink)
-                    GlassCard(title: "Flashcards", line: "Words from your conversations, with pictures.", symbol: "rectangle.on.rectangle.angled.fill", tint: Tokens.Colors.flashcards, ink: .white)
+                    if let deck = deckModel {
+                        NavigationLink { FlashcardsView(model: deck) } label: { flashcardsCard }
+                            .buttonStyle(.plain)
+                            .accessibilityHint("Opens your flashcards")
+                    } else {
+                        flashcardsCard
+                    }
                 }
                 .padding(.horizontal, Tokens.Space.gutter)
                 .padding(.top, 4)
                 .padding(.bottom, 24)
             }
             .background { Wash() }
+            .navigationDestination(isPresented: $showingDeck) {
+                if let deckModel { FlashcardsView(model: deckModel) }
+            }
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Label("Learn", systemImage: "character.book.closed.fill")
@@ -45,11 +54,32 @@ struct LearnArea: View {
             .navigationBarTitleDisplayMode(.inline)
             #endif
         }
-        .task { home = try? await model.api?.learnHome() }
+        .task {
+            makeDeck()
+            #if DEBUG
+            if UserDefaults.standard.bool(forKey: "FuoriOpenFlashcards"), deckModel != nil { showingDeck = true }
+            #endif
+            home = try? await model.api?.learnHome()
+        }
         .sheet(item: $open) { past in LearnSheet(model: past) }
     }
 
     private var magda: Character? { model.content?.characters.values.first { $0.tutor } }
+
+    private var flashcardsCard: some View {
+        GlassCard(title: "Flashcards", line: "Five words at a time, with pictures.", symbol: "rectangle.on.rectangle.angled.fill", tint: Tokens.Colors.flashcards, ink: .white)
+    }
+
+    /// The deck (docs/flashcards.md), made when Learn opens, from the
+    /// country's starter words; nil from servers without them
+    @State private var deckModel: FlashcardsModel?
+    /// Debug: `-FuoriOpenFlashcards YES` opens the deck at launch
+    @State private var showingDeck = false
+
+    private func makeDeck() {
+        guard deckModel == nil, let content = model.content, let cards = content.flashcards, !cards.isEmpty, let api = model.api else { return }
+        deckModel = FlashcardsModel(cards: cards, language: content.language, country: content.country, api: api)
+    }
 
     // MARK: Lessons
 

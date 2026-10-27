@@ -12,6 +12,7 @@
 
 import { createHash } from 'crypto';
 import { cities, country, language, onboarding, pack } from '@/content';
+import { flashcards } from '@/lib/flashcards';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
 import { imageListFor } from '@/content';
@@ -120,6 +121,8 @@ export function buildContent(): Content {
 
   const body = {
     country,
+    /** Flashcards (docs/flashcards.md): the starter words, pictured ones first */
+    flashcards: flashcards(image),
     card: { ...language.card, image: image(`country/${country}`) },
     language: {
       code: language.code,
