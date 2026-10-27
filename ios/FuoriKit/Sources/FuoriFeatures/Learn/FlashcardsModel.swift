@@ -13,10 +13,11 @@ import FuoriAudio
 ///   3 · Say it: picture only, with the mic. The one real test: a pass moves
 ///       the word to your own words and the next word joins at stage 1
 ///
-/// One card at a time (Josh, 2026-10-27: "i don't like the 5 at a time"):
-/// five words rotate behind the scenes, and each step on a card moves on to
-/// the next of the five, so a whole round passes at one stage before a word
-/// comes back at its next (docs/flashcards.md → The deck: spacing).
+/// All the words at once, shuffled (Josh, 2026-10-27: "I'd prefer 20 cards
+/// where 5 have heavier weights in the shuffle"): every word not yet yours is
+/// in the list, each at its own stage; five of them, the focus, weigh more in
+/// the shuffle so they come up near the top more often. A word that passes
+/// stage 3 leaves for your words and another becomes one of the five.
 ///
 /// Progress is kept on the phone, per country (the server keeps nothing yet).
 @MainActor
@@ -25,11 +26,12 @@ final class FlashcardsModel {
     enum Stage: Int, Codable { case meet = 1, recall = 2, say = 3 }
 
     /// The cards in play, in order
+    /// The five focus words, which weigh more in the shuffle
     private(set) var deck: [Flashcard] = []
-    /// Which of the five is showing
-    private(set) var index = 0
-    /// The one card on screen
-    var current: Flashcard? { deck.isEmpty ? nil : deck[index % deck.count] }
+    /// What's on screen: every word not yet yours, in a weighted shuffle
+    private(set) var shown: [Flashcard] = []
+    /// How much more often a focus word comes near the top
+    static let focusWeight = 4.0
     private(set) var stages: [String: Stage] = [:]
     /// Words that passed stage 3
     private(set) var own: [Flashcard] = []
@@ -55,6 +57,8 @@ final class FlashcardsModel {
     private struct Saved: Codable {
         var stages: [String: Stage]
         var own: [String]
+        /// The five focus words; nil in what earlier builds saved
+        var focus: [String]?
     }
 
     init(cards: [Flashcard], language: Language, country: String, api: APIClient) {
@@ -81,7 +85,6 @@ final class FlashcardsModel {
             await say(card)
             stages[card.id] = .say
             save()
-            await next()
         case .say:
             break
         }
@@ -121,8 +124,8 @@ final class FlashcardsModel {
             missed = nil
             if stage == .meet {
                 stages[card.id] = .recall
+                revealed.remove(card.id)
                 save()
-                await next()
             } else {
                 passed = card.id
                 try? await Task.sleep(for: .milliseconds(900))
@@ -137,35 +140,31 @@ final class FlashcardsModel {
                 // comes back next round
                 revealed.insert(card.id)
                 await say(card)
-                try? await Task.sleep(for: .milliseconds(700))
-                await next()
             }
         }
     }
 
-    /// The next of the five, after a short beat so the step registers
-    private func next() async {
-        try? await Task.sleep(for: .milliseconds(400))
-        if let card = current { revealed.remove(card.id) }
-        missed = nil
-        guard !deck.isEmpty else { return }
-        index = (index + 1) % deck.count
-    }
-
-    /// A word passes stage 3: it goes to your words, and the next word from
-    /// the pool takes its place in the rotation, at stage 1
+    /// A word passes stage 3: it goes to your words and leaves the list;
+    /// if it was a focus word, the next word from the pool takes its place
     private func pass(_ card: Flashcard) {
         stages[card.id] = nil
         revealed.remove(card.id)
         own.insert(card, at: 0)
-        guard let at = deck.firstIndex(where: { $0.id == card.id }) else { return }
-        deck.remove(at: at)
+        shown.removeAll { $0.id == card.id }
+        deck.removeAll { $0.id == card.id }
+        refill()
+    }
+
+    /// A new weighted shuffle of every word not yet yours (opening the deck,
+    /// or pulling to refresh): focus words come up near the top more often
+    func shuffle() {
         let owned = Set(own.map(\.id))
-        if let fresh = pool.first(where: { !owned.contains($0.id) && !deck.contains($0) }) {
-            deck.insert(fresh, at: at)
-            stages[fresh.id] = .meet
-        }
-        index = deck.isEmpty ? 0 : (at + 1) % deck.count
+        let focus = Set(deck.map(\.id))
+        // Weighted random order: each card's key is u^(1/weight), highest first
+        shown = pool.filter { !owned.contains($0.id) }
+            .map { card in (card, pow(Double.random(in: 0.0001...1), 1 / (focus.contains(card.id) ? Self.focusWeight : 1))) }
+            .sorted { $0.1 > $1.1 }
+            .map(\.0)
     }
 
     // MARK: Matching
@@ -230,9 +229,10 @@ final class FlashcardsModel {
         if let data = UserDefaults.standard.data(forKey: storeKey), let saved = try? JSONDecoder().decode(Saved.self, from: data) {
             stages = saved.stages
             own = saved.own.compactMap { id in pool.first { $0.id == id } }
-            deck = pool.filter { stages[$0.id] != nil }
+            deck = (saved.focus ?? Array(saved.stages.keys)).compactMap { id in pool.first { $0.id == id } }.prefix(Self.inPlay).map { $0 }
         }
         refill()
+        shuffle()
     }
 
     /// Five in play: the next words from the pool join at stage 1
@@ -246,7 +246,7 @@ final class FlashcardsModel {
     }
 
     private func save() {
-        let saved = Saved(stages: stages, own: own.map(\.id))
+        let saved = Saved(stages: stages, own: own.map(\.id), focus: deck.map(\.id))
         if let data = try? JSONEncoder().encode(saved) { UserDefaults.standard.set(data, forKey: storeKey) }
     }
 }

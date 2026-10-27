@@ -31,7 +31,7 @@ The mic stages check what Whisper heard against the one word on the card (the ap
 ## The deck
 
 - **5 cards in play** (Josh: start with 5), taken from the country's 20 as a pool.
-- **One card on screen at a time** (Josh, 2026-10-27: "i don't like the 5 at a time"): the five rotate behind the scenes; finishing a step on a card brings the next of the five in, so a round passes at one stage before a word comes back.
+- **All the words in a weighted shuffle** (Josh, 2026-10-27: "I like seeing multiple cards… I'd prefer 20 cards where 5 have heavier weights in the shuffle"): every word not yet yours is in the scrolling list, each at its own stage; the five focus words weigh 4× in the shuffle so they come up near the top more often; pull down to reshuffle. A word that passes stage 3 leaves for your words, and the next word from the pool becomes a focus word. (Briefly one card at a time, the same day; Josh preferred seeing several.)
 - Rounds go card by card at the same stage: every card at stage 1, then every card at stage 2, and so on, so four other cards come between a card's stages (spacing).
 - A card that passes stage 3 leaves the deck and the next word from the pool joins at stage 1.
 - **Passed words go on a list of "own" words** (Josh). Nothing more for now. Maybe later: stage 3 words come back on some rotation to check they stuck (not decided).

@@ -2,11 +2,11 @@ import SwiftUI
 import FuoriCore
 import FuoriDesign
 
-/// The deck (docs/flashcards.md, the Flashcards canvas): one card at a time
-/// (Josh, 2026-10-27), a wide 2:1 picture with no helper words; tapping
-/// reveals, the mic is an icon, and finishing a step brings the next of the
-/// five in. A card with no picture keeps the card's size and centres its
-/// cue. Below, the words you own.
+/// The deck (docs/flashcards.md, the Flashcards canvas): every word not yet
+/// yours, wide 2:1 cards in a scrolling list, shuffled with five focus words
+/// weighing more (Josh, 2026-10-27); each card at its own stage, no helper
+/// words; tapping reveals, the mic is an icon; pull to reshuffle. A card with
+/// no picture keeps the card's size and centres its cue. Below, your words.
 struct FlashcardsView: View {
     let model: FlashcardsModel
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -14,10 +14,9 @@ struct FlashcardsView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
-                if let card = model.current {
+                ForEach(model.shown) { card in
                     FlashcardRow(model: model, card: card)
-                        .id(card.id + "\(model.stage(card).rawValue)")
-                        .transition(reduceMotion ? .opacity : .asymmetric(insertion: .move(edge: .trailing).combined(with: .opacity), removal: .move(edge: .leading).combined(with: .opacity)))
+                        .transition(reduceMotion ? .opacity : .move(edge: .bottom).combined(with: .opacity))
                 }
                 if let note = model.note {
                     Text(note)
@@ -28,9 +27,9 @@ struct FlashcardsView: View {
             }
             .padding(.horizontal, 24)
             .padding(.vertical, 16)
-            .animation(reduceMotion ? .easeInOut(duration: 0.2) : .spring(duration: 0.45), value: model.current?.id)
-            .animation(reduceMotion ? .easeInOut(duration: 0.2) : .spring(duration: 0.45), value: model.index)
+            .animation(reduceMotion ? .easeInOut(duration: 0.2) : .spring(duration: 0.4), value: model.shown)
         }
+        .refreshable { model.shuffle() }
         .background(Tokens.Colors.paper)
         .navigationTitle("Flashcards")
         #if os(iOS)
