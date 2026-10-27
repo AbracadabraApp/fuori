@@ -42,35 +42,7 @@ Sketched during design; Claude may use them as templates or generate others like
 
 Full pantry in `content/it/cities/roma.ts` with 24 places, regional food, customs, and local expressions.
 
-**City Pantry Formula** (applied to all cities, 25-30 places each):
-
-**Daily Routine (repeat across neighborhoods):**
-- 3 bars/cafés - morning coffee, daily touchpoint
-- 2 bakeries - bread, pastries, morning routine
-
-**Food & Shopping (vocabulary contexts):**
-- 2-3 markets - produce, local food, vendors
-- 2 restaurants - sit-down, regional dishes
-- 1-2 specialty food - city-specific (pizzeria in Naples, piadina in Bologna, etc.)
-
-**Cultural/Landmark (2-4 places):**
-- 1 major landmark (iconic)
-- 1-2 churches/cultural sites
-- 1 park or public garden
-- 1-2 piazzas (social gathering)
-
-**Social/Evening (1-2 each):**
-- Wine bars or aperitivo spots (regional: enoteca, bacaro, osteria)
-- Bookshop or cultural shop
-
-**Practical (1-2 total):**
-- Pharmacy, market, neighborhood shop
-- Transportation hub
-
-**City Character (2-3 unique):**
-Examples - Milan: design shop, fashion atelier, Navigli aperitivo | Venice: gondola workshop, mask shop, bacaro | Naples: sfogliatella shop, pizzeria fritta | Florence: leather workshop, Oltrarno artisan | Bologna: tortellini shop, university bookshop | Palermo: street food stand, Arab market
-
-This formula ensures vocabulary consistency while giving each city unique character.
+**City Pantry Formula:** rewritten 2026-10-27 (Josh: the cities felt alike, two bars and a wine bar everywhere, a bakery in almost every city). The one copy is `placeKinds` in `content/<country>/generation.json`, read by `scripts/generate-city-content.mjs` and `scripts/generate-cities-batch.mjs`. In short: 10–12 places; at most 2 bars and 1 gelateria, no bakeries; one each of market, local eating place, landmark, church, piazza or park, errand and station; 2–3 places only this city has or where something is happening, with at least one person with something to show; staff at businesses, customers and passers-by only in public places; every person has a reason to be there (`here`). Ideas behind it: [adventures.md](adventures.md).
 
 ### A first week, for reference
 

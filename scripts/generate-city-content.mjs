@@ -49,7 +49,7 @@ ${people}
 For each place:
 1. Give it an authentic ${config.language} name (use real place names where appropriate)
 2. Assign it to a neighborhood
-3. Create one character who works or appears there (${config.language} name, gender, age, personality, role)
+3. Create one character who works or appears there (${config.language} name, gender, age, personality, role), following "Who is where" above, and a "here" line: one sentence to them on why they're at this place today and what they do there ("You work the counter here between lectures")
 4. Write an image prompt for the place following this template: ${config.placePrompt}
 5. Write a portrait prompt for the character following this template: ${config.portraitPrompt}
 
@@ -66,7 +66,7 @@ export const ${toIdentifier(city.id)}: CityPantry = {
     {
       id: 'place-id',
       name: 'Place Name',
-      kind: 'bar', // or market, bakery, taquería, etc.
+      kind: 'bar', // or market, train-station, taquería, etc.
       neighbourhood: 'Neighborhood',
       real: true, // or false
       characterId: 'character-id',
@@ -84,6 +84,7 @@ export const ${toIdentifier(city.id)}: CityPantry = {
       placeId: 'place-id',
       personality: ['trait1', 'trait2', 'trait3'],
       portraitPrompt: '...',
+      here: '...',
     },
     // ... more characters
   ],

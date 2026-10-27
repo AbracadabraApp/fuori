@@ -61,7 +61,7 @@ Leaves the feed (hidden, not deleted, as `content/it/showcase.ts` does): Bar Ang
 ## Open
 
 - The pastel or fine-line choice.
-- The city rule for generating other cities (the City Pantry Formula) needs the same change before any city is regenerated.
+- ~~The city rule for generating other cities (the City Pantry Formula) needs the same change before any city is regenerated.~~ Done 2026-10-27: `placeKinds` in `content/<country>/generation.json` ([03-journey.md](03-journey.md)).
 - Missions for the counters are N5 with Learn.
 - Found on the way: Bergamo's showcase names `libreria-sant-agostino`, which isn't in `bergamo.ts`.
 

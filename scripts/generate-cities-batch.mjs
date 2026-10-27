@@ -34,35 +34,9 @@ const allCities = {
   taormina: { id: 'taormina', name: 'Taormina', region: 'Sicilia', neighborhoods: ['Centro Storico', 'Corso Umberto', 'Teatro Greco', 'Castelmola'] },
 };
 
-const cityPantryFormula = `
-City Pantry Formula (25-30 places):
-
-Daily Routine (repeat across neighborhoods):
-- 3 bars/cafés - morning coffee, daily touchpoint
-- 2 bakeries - bread, pastries, morning routine
-
-Food & Shopping (vocabulary contexts):
-- 2-3 markets - produce, local food, vendors
-- 2 restaurants - sit-down, regional dishes
-- 1-2 specialty food - city-specific (e.g., pizzeria, osteria, trattoria)
-
-Cultural/Landmark (2-4 places):
-- 1 major landmark (iconic)
-- 1-2 churches/cultural sites
-- 1 park or public garden
-- 1-2 piazzas (social gathering)
-
-Social/Evening (1-2 each):
-- Wine bars or aperitivo spots (enoteca, wine bar)
-- Bookshop or cultural shop
-
-Practical (1-2 total):
-- Pharmacy, neighborhood shop
-- Transportation hub if relevant
-
-City Character (2-3 unique):
-Reflect what makes this city special
-`;
+// The formula lives in content/it/generation.json (placeKinds), the one copy
+// both generators read (Josh, 2026-10-27: fix the source of the repetition)
+const cityPantryFormula = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'content', 'it', 'generation.json'), 'utf8')).placeKinds;
 
 const artStyleGuidelines = `
 Art Styles:
