@@ -41,6 +41,7 @@ const placeFraming = generation.placeFraming;
 function framingFor(kind, turn, id) {
   if (!placeFraming) return undefined;
   if (placeFraming.wideKinds.includes(kind) || placeFraming.wideIds?.includes(id)) return placeFraming.wide;
+  if (placeFraming.viewIds?.[id] !== undefined) return placeFraming.views[placeFraming.viewIds[id]]; // a view picked for one place
   return placeFraming.views[turn % placeFraming.views.length];
 }
 const IMAGE_DIR = path.join(__dirname, '..', 'public', imageConfig.dir ?? 'images');

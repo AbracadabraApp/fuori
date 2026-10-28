@@ -13,7 +13,7 @@ export const siena: CityPantry = {
       neighbourhood: 'Piazza del Campo',
       real: false,
       characterId: 'marco-fiorella',
-      imagePrompt: 'Soft pastel sketch on white paper of a traditional Italian café with small marble-topped tables along the edge of Piazza del Campo, rust-red awning, vintage espresso machine visible through the window, warm ochre and terracotta tones, morning light, textured and inviting.',
+      imagePrompt: 'Torrefazione Fiorella, a tiny standing coffee bar and roastery on the steep Via di Citta: a narrow doorway in an old brick palazzo, a short marble counter, sacks and jars of coffee beans, a barista pulling espresso for people standing shoulder to shoulder, the smell of roasting coffee drifting into the street.',
     },
     {
       id: 'bar-il-palio',
@@ -22,7 +22,7 @@ export const siena: CityPantry = {
       neighbourhood: 'Terzo di San Martino',
       real: false,
       characterId: 'giulia-neri',
-      imagePrompt: 'Soft pastel sketch on white paper of a cozy corner bar with Palio flags and contrada banners on brick walls, polished wooden counter, pastries under glass dome, warm amber and cream colors, inviting morning atmosphere, textured brushwork.',
+      imagePrompt: 'a neighbourhood corner bar in a red brick street of San Martino, old photographs of the Palio horse race on its walls, a polished wooden counter with pastries under glass, locals at the counter arguing about the last Palio.',
     },
     {
       id: 'caffe-nannini',
@@ -58,7 +58,7 @@ export const siena: CityPantry = {
       neighbourhood: 'Piazza del Campo',
       real: false,
       characterId: 'paolo-rossi',
-      imagePrompt: 'Soft pastel sketch on white paper of an open-air farmers market with white canvas stalls, crates of seasonal vegetables and fruit, bunches of fresh herbs, warm morning light, earth tones and vibrant greens, bustling and organic atmosphere.',
+      imagePrompt: 'the monthly farmers market in Piazza del Campo: rows of white canvas stalls on the sloping red brick of the shell-shaped square, farmers selling pecorino, cured meats, honey, bread and crates of seasonal vegetables, shoppers with baskets, the Palazzo Pubblico and the Torre del Mangia behind.',
     },
     {
       id: 'mercato-coperto-siena',
@@ -148,7 +148,7 @@ export const siena: CityPantry = {
       neighbourhood: 'Terzo di Camollia',
       real: true,
       characterId: 'beatrice-salvi',
-      imagePrompt: 'Soft pastel sketch on white paper of an elegant Renaissance square surrounded by historic palazzi, central statue, benches under trees, warm stone facades, quiet and refined atmosphere, soft peachy and grey tones.',
+      imagePrompt: 'Piazza Salimbeni: a small, quiet square closed on three sides by palazzi, the Gothic Palazzo Salimbeni of brick and stone with pointed triple windows at the back, the statue of Sallustio Bandini on a tall plinth in the middle, people in suits crossing, students sitting on the steps of the statue.',
     },
     {
       id: 'torre-del-mangia',
@@ -193,7 +193,7 @@ export const siena: CityPantry = {
       neighbourhood: 'Terzo di Città',
       real: true,
       characterId: 'elisabetta-libri',
-      imagePrompt: 'Soft pastel sketch on white paper of a charming bookshop with floor-to-ceiling wooden shelves, stacks of Italian literature, reading nook by window, warm lamp lighting, cream and forest green tones, intellectual and intimate.',
+      imagePrompt: 'an old bookshop on the steep Via di Citta, its window full of books on Siena, Tuscany and Italian novels, wooden shelves to the ceiling inside, a bookseller talking with a customer, people walking uphill past the door.',
     },
     {
       id: 'bottega-del-palio',
@@ -202,7 +202,7 @@ export const siena: CityPantry = {
       neighbourhood: 'Piazza del Campo',
       real: false,
       characterId: 'giovanni-bacci',
-      imagePrompt: 'Soft pastel sketch on white paper of a traditional shop selling Palio silk scarves, contrada flags, ceramic horses, hand-painted banners, vibrant colors against white walls, festive and authentic atmosphere.',
+      imagePrompt: 'a small shop on a brick street off the Campo selling silk scarves and flags in the colours of the seventeen contrade, ceramic horses and hand-painted banners, the scarves and flags hanging around its door.',
     },
     {
       id: 'farmacia-centrale-siena',
@@ -238,7 +238,7 @@ export const siena: CityPantry = {
       neighbourhood: 'Terzo di San Martino',
       real: true,
       characterId: 'andrea-brivido',
-      imagePrompt: 'Soft pastel sketch on white paper of a modern gelateria with gleaming display cases of colorful gelato, chrome scoops, clean white and pastel interiors, bright and cheerful atmosphere, creamy pinks and mint greens.',
+      imagePrompt: 'a small modern gelateria on a narrow brick street near the cathedral, a glass counter of gelato in steel tubs, people eating cones in the street, the striped black and white marble bell tower of the Duomo visible above the roofs at the end of the street.',
     },
     {
       id: 'fortezza-medicea',
@@ -285,7 +285,7 @@ export const siena: CityPantry = {
       neighbourhood: 'Terzo di Camollia',
       real: true,
       characterId: 'franco-stazione',
-      imagePrompt: 'Soft pastel sketch on white paper of a regional train station, platform with travelers, ticket office, departure boards, connection to Florence and other cities, functional architecture, transit blues and greys, gateway atmosphere',
+      imagePrompt: 'Siena station down in the valley below the old city: a plain modern station building on its square, buses and taxis, travellers with suitcases, and above it on the hill the red brick city with its towers.',
     },
     // A deli for this city's own food (Josh, 2026-10-27: "make the delis")
     {
