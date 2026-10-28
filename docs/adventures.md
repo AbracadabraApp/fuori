@@ -60,6 +60,10 @@ A mystery or an adventure can teach where things are, a little at a time:
 - **What each place is known for:** a region's food, its dialect word, its river or hill, the history of a neighbourhood, picked up from the people who live there, not from a lesson.
 - **The map remembers:** places visited and clues found show on the city map and the country map, so the learner sees the country fill in.
 
+## Seen in play: following the learner's interest (Josh, 2026-10-27)
+
+Beatrice, a student in Piazza Salimbeni in Siena, heard Josh mention Machiavelli and the republic, and took him to Lorenzetti's *Good and Bad Government* in the Palazzo Pubblico: tickets, the Sala dei Nove, the tyrant, Justice, the cord through the citizens' hands. English carried the history; the Italian came as phrases tied to it (*Una corda unisce tutti i cittadini*). Nothing in her prompt mentioned the fresco: she matched his interest to something real in her city. That's an adventure starting by itself, and the way in worth keeping: the character follows what the learner cares about to a real place. One shaky detail ("the devil behind the tyrant": the figures there are vices) is why place facts may need checking.
+
 ## How it fits what's decided
 
 - **Beginners:** the English carries the story and the explanations; the language is a few words worth keeping (*scavo*, *affresco*, *secolo*, *Guardi!*).
