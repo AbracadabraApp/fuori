@@ -1,6 +1,6 @@
 # Say it in English: the line to read
 
-version: 2026-10-23e
+version: 2026-10-27
 
 The learner said something in English during a conversation (Josh,
 2026-10-23: "say it in English, get this language back, read it"). This
@@ -19,7 +19,9 @@ First check whether there's a line to write at all. A line is only for one case:
 - too short or unclear to tell what they want (a single "okay", a stray letter or sound).
 {name} understands a learner's attempts or asks, as a person would; a line to reread there only confuses. Never make up what they might have meant.
 
-Speech-to-text sometimes translates a learner's {language} into English instead of writing it down. So you may also get the same recording heard as {language}. If that version is a real attempt at {language} that fits the conversation, they spoke {language}: set sendAsSaid to true (it goes to {name} in {language}). If it's nonsense in {language} and the English is clear, they spoke English: write the line.
+Judge only their own last line. {name}'s lines may mix English with {language} (beginners are helped in English), and the learner may have spoken English earlier; neither means this line was English.
+
+Speech-to-text sometimes translates a learner's {language} into English instead of writing it down. So you may also get the same recording heard as {language}. If that version is a real attempt at {language} that fits the conversation, they spoke {language}: set sendAsSaid to true (it goes to {name} in {language}). Words run together or misspelled still count as an attempt: if you can tell from the {language} version what they meant, it's {language}, even when the English reads clearly; an English version that doesn't fit the conversation was most likely speech-to-text guessing. If it's nonsense in {language} and the English is clear and fits, they spoke English: write the line.
 
 - Say what they meant, not word for word: the gist, said the way a {level} learner could say it. Something complicated becomes simple; rambling becomes its point. If they said several things, say the one that matters most right now. For a beginner: one short sentence of common words, about eight words at most, present tense where it works; a greeting only if they greeted.
 - It fits the conversation: it answers or follows {name}'s last line, and speaks to {name} the way a newcomer politely would ({formality}).
@@ -32,6 +34,8 @@ sendAsSaid: true when there's no line to write (then line and en are empty). lin
 - `{language}`: the language being learned; `{name}`, `{role}`: the character's; `{level}`: beginner, intermediate or advanced; `{formality}`: the language's polite form, from content
 
 ## Changelog
+### 2026-10-27: judge only their last line, not the conversation's English
+Josh's Beginner conversations on 2026-10-27: his Italian, which Whisper called English and translated, was rewritten into a line to read instead of going to the character: at Pizzeria Da Gigi ("Pagokonlacar, tajarazzi" became "Pago con la carta, grazie") and at the Pignasecca ("Mi piace i limoni ma non ha un ragione adesso per usa. Scusa, mi non parla italiano bene" became "Mi piacciono i limoni, ma non parlo bene italiano", dropping what he meant about not buying; then his reading and his complaint went to Salvatore as one turn). With Italian-only context the same lines went to the character 30/30; with the real Beginner conversation, where the character speaks English too, 1/8 and 0/8. Now: judge only their last line; the character's English, or English the learner spoke earlier, doesn't make this line English. Then a second rule for the pizza case, whose language version was run together ("Pagokonlacar") while the English ("I'm going to go to the next one") was clear but unrelated: words run together or misspelled are an attempt if you can tell what they meant, and English that doesn't fit the conversation was speech-to-text guessing.
 
 Newest first. Each entry: what changed, why, and what prompted it.
 

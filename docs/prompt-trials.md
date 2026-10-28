@@ -181,3 +181,13 @@ Josh's Salvatore page (Napoli, 2026-10-27) corrected fine Italian ("non parlo be
 | + never correct what's right; keep their meaning; nonsense was misheard | 3/3, invented rules | 2/3 | 0/3 | 1/3 | — | Not enough |
 | **+ the why names exactly what was wrong, or no correction** | 4/4, now the article (l'italiano), a fair point; 1/4 still says "people usually" | 1/4 | 0/4 | 0/4 | 1/4 ("mi ha detto" → "mi ha detto Lei") | **Kept** |
 
+### Say it: Italian taken for English in Beginner conversations (`say-it.md` 2026-10-27, both countries; `tests/experiments/say-it-two.mts`)
+
+Josh's two Italian turns on 2026-10-27 that Whisper called English and translated, sent to say it with the real conversation before them (runs each):
+
+| Version | Pignasecca ("Mi piace i limoni ma non ha un ragione…") to Salvatore as said | Da Gigi ("Pagokonlacar, tajarazzi") to Giorgia as said | Same lines with Italian-only context | English set (say-it.mts, it): lines written | Decision |
+|---|---|---|---|---|---|
+| 2026-10-23e (before) | 1/8 | 0/8 | 30/30 | — | Cause: the Beginner character speaks English too |
+| + judge only their last line | 8/8 | 0/8 | — | — | Not enough |
+| **+ run together or misspelled is still an attempt; English that doesn't fit was speech-to-text guessing** | **8/8** | **8/8** | — | 35/35 (the mixed "Sì, I want un caffè" goes as said, by design); all checks 63% (69% at v2, within noise) | **Kept** |
+
