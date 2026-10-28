@@ -40,7 +40,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Garbatella',
       real: false,
       characterId: 'mohamed-hassan',
-      imagePrompt: 'On an ordinary weekday in Garbatella, the trattoria occupies the ground floor of a tall, low-key apartment building in a continuous row, with a few outdoor tables on the pavement, windows above hung with laundry, and neighbouring shopfronts on either side under a clear October sky. Mohamed Hassan, the cameriere, stands just outside by the tables with a tray and a cloth over his arm.',
+      imagePrompt: 'On an ordinary weekday in Garbatella, the trattoria occupies the ground floor of one of the 1920s garden-city buildings of the quarter, ochre and orange with arched doorways, little loggias and a courtyard with trees, with a few outdoor tables on the pavement, windows above hung with laundry, and neighbouring shopfronts on either side under a clear October sky. Mohamed Hassan, the cameriere, stands just outside by the tables with a tray and a cloth over his arm.',
     },
     {
       id: 'pantheon-rotonda',
@@ -76,7 +76,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Porta Maggiore',
       real: true,
       characterId: 'daniele-sorrentino',
-      imagePrompt: 'A tram stop at Porta Maggiore on a weekday morning, with the ancient gate behind, traffic circling and commuters waiting on the platform. Daniele stands at the edge of the platform, looking down the tracks for the tram.',
+      imagePrompt: 'A tram stop at Porta Maggiore on a weekday morning: the huge travertine arches of the ancient aqueduct gate behind, a tangle of tram wires and rails crossing in front of it, an orange tram arriving, traffic circling and commuters waiting on the platform. Daniele stands at the edge of the platform, looking down the tracks for the tram.',
     },
     {
       id: 'tabaccheria-pigneto',
