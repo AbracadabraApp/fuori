@@ -463,9 +463,9 @@
       "bytes": 257114
     },
     "places/bar-il-palio": {
-      "key": "it/places/bar-il-palio.73ab145d10.webp",
-      "src": "9fe973fdd040f414",
-      "bytes": 239362
+      "key": "it/places/bar-il-palio.e7306b38e5.webp",
+      "src": "907a80cfe97a4e36",
+      "bytes": 272642
     },
     "places/bar-isola": {
       "key": "it/places/bar-isola.3cebb2e285.webp",
@@ -713,9 +713,9 @@
       "bytes": 285930
     },
     "places/bottega-del-palio": {
-      "key": "it/places/bottega-del-palio.711ae31822.webp",
-      "src": "8b21fe99ace489bc",
-      "bytes": 274446
+      "key": "it/places/bottega-del-palio.570261d280.webp",
+      "src": "082c5d007b2f1233",
+      "bytes": 292102
     },
     "places/bottega-michelangeli": {
       "key": "it/places/bottega-michelangeli.ebdd494d01.webp",
@@ -868,9 +868,9 @@
       "bytes": 245382
     },
     "places/caffe-fiorella": {
-      "key": "it/places/caffe-fiorella.b0fc8fbd67.webp",
-      "src": "932b111547a3d24a",
-      "bytes": 212894
+      "key": "it/places/caffe-fiorella.6b65d8dd7f.webp",
+      "src": "02205814b20023ea",
+      "bytes": 294354
     },
     "places/caffe-fiorio": {
       "key": "it/places/caffe-fiorio.3c395b9573.webp",
@@ -1623,9 +1623,9 @@
       "bytes": 229876
     },
     "places/gelateria-brivido": {
-      "key": "it/places/gelateria-brivido.1b15afb7c3.webp",
-      "src": "b2aac471ee0f494b",
-      "bytes": 167728
+      "key": "it/places/gelateria-brivido.2b4fd2c415.webp",
+      "src": "3fbfcf00fd02d99a",
+      "bytes": 262146
     },
     "places/gelateria-ducale": {
       "key": "it/places/gelateria-ducale.6d6d15e555.webp",
@@ -1858,9 +1858,9 @@
       "bytes": 230290
     },
     "places/libreria-senese": {
-      "key": "it/places/libreria-senese.f796760ca0.webp",
-      "src": "4d080b72e554de07",
-      "bytes": 237550
+      "key": "it/places/libreria-senese.8e6ad61dd6.webp",
+      "src": "15671aa8f29ad80b",
+      "bytes": 266490
     },
     "places/libreria-taormina": {
       "key": "it/places/libreria-taormina.a2feedaaed.webp",
@@ -2028,9 +2028,9 @@
       "bytes": 282790
     },
     "places/mercato-della-terra": {
-      "key": "it/places/mercato-della-terra.3a8e828478.webp",
-      "src": "9dad2302722de6c8",
-      "bytes": 223234
+      "key": "it/places/mercato-della-terra.91fac903f7.webp",
+      "src": "3038e591ea954773",
+      "bytes": 261552
     },
     "places/mercato-di-porta-romana": {
       "key": "it/places/mercato-di-porta-romana.da61c07156.webp",
@@ -2238,9 +2238,9 @@
       "bytes": 277514
     },
     "places/osteria-le-logge": {
-      "key": "it/places/osteria-le-logge.e71d68daf8.webp",
-      "src": "11efe2644662ec8a",
-      "bytes": 259804
+      "key": "it/places/osteria-le-logge.8c5122b56d.webp",
+      "src": "62e0d6ca2d866df3",
+      "bytes": 250638
     },
     "places/osteria-navigli": {
       "key": "it/places/osteria-navigli.e3fe7dccbf.webp",
@@ -2473,9 +2473,9 @@
       "bytes": 135692
     },
     "places/pasticceria-bini": {
-      "key": "it/places/pasticceria-bini.daf9f598ae.webp",
-      "src": "bb0b9f6a4867dd6e",
-      "bytes": 232356
+      "key": "it/places/pasticceria-bini.a38abe5aa5.webp",
+      "src": "8f0de536a34f54d2",
+      "bytes": 262402
     },
     "places/pasticceria-caffe-nessi": {
       "key": "it/places/pasticceria-caffe-nessi.57abc82e65.webp",
@@ -2658,9 +2658,9 @@
       "bytes": 238114
     },
     "places/piazza-del-campo": {
-      "key": "it/places/piazza-del-campo.9064409c81.webp",
-      "src": "c61b6a44d042624d",
-      "bytes": 217904
+      "key": "it/places/piazza-del-campo.6bd9a255c5.webp",
+      "src": "d666845db674a8c9",
+      "bytes": 249540
     },
     "places/piazza-del-popolo": {
       "key": "it/places/piazza-del-popolo.4cb66b7c55.webp",
@@ -2698,9 +2698,9 @@
       "bytes": 285276
     },
     "places/piazza-salimbeni": {
-      "key": "it/places/piazza-salimbeni.f16802c77b.webp",
-      "src": "d101b66c9a0d1d19",
-      "bytes": 188554
+      "key": "it/places/piazza-salimbeni.4d321c4002.webp",
+      "src": "640b74ad5fe9ba3f",
+      "bytes": 254412
     },
     "places/piazza-san-michele": {
       "key": "it/places/piazza-san-michele.6660dfe85a.webp",
@@ -2838,9 +2838,9 @@
       "bytes": 249310
     },
     "places/pizzicheria-de-miccoli": {
-      "key": "it/places/pizzicheria-de-miccoli.1588bb7da2.webp",
-      "src": "015fb333a96becfe",
-      "bytes": 176478
+      "key": "it/places/pizzicheria-de-miccoli.dc9262d126.webp",
+      "src": "bbe98a571d37b00d",
+      "bytes": 276430
     },
     "places/polenteria-valtellina": {
       "key": "it/places/polenteria-valtellina.b23136e1d7.webp",
@@ -3283,9 +3283,9 @@
       "bytes": 279544
     },
     "places/stazione-siena": {
-      "key": "it/places/stazione-siena.ede0619cf0.webp",
-      "src": "5122eef1169d2f4d",
-      "bytes": 202856
+      "key": "it/places/stazione-siena.20505fff31.webp",
+      "src": "fc08a867f0dd75ee",
+      "bytes": 271330
     },
     "places/stazione-siracusa": {
       "key": "it/places/stazione-siracusa.7361fe674c.webp",
