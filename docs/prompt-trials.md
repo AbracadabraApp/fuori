@@ -170,3 +170,14 @@ Read by Josh, not scored: pages on his real conversations (Rosa, Franco, Sandro)
 | **2026-10-21, no thinking** (call setting, prompt unchanged; Mexico gets the same prompt as `es-mx/prompts/learn.md`, 2026-10-22) | The page written without the thinking step (`thinking: between_tools`, as the turn call), 2026-10-22 | Josh's Memo conversation (Mexico), 2 runs each: 8.4–9.5 s and ~1170 tokens with thinking, 4.7–5.0 s and ~600 without; the same three corrections (piano piano → poco a poco, hablo un poquito de español, mucho gusto), the same words and culture note | Kept (Josh: "both", with the page written ahead while the learner talks, `lib/learn-ahead.ts`) |
 
 Seen on the 2026-10-21 pages, for later: a form sometimes carries a word with it ("torna pure", "resti pure"); a rare word slips in now and then (il filo, filare); two pages in a row had the same Good to know (supplì), which the Learn area's history could prevent.
+
+### Learn page corrections (`learn.md` 2026-10-27, both countries; `tests/experiments/learn-one.mts`)
+
+Josh's Salvatore page (Napoli, 2026-10-27) corrected fine Italian ("non parlo bene italiano", with an invented word-order rule and "molto" added) and lines speech-to-text had garbled. Same conversation, runs per version:
+
+| Version | "non parlo bene italiano" | garbled "stessa punta" | garbled "giusto ragione" | "molto" added | other invented mistake | Decision |
+|---|---|---|---|---|---|---|
+| 2026-10-21 (before) | 3/3, invented rules | 3/3 | 2/3 | 1/3 | — | — |
+| + never correct what's right; keep their meaning; nonsense was misheard | 3/3, invented rules | 2/3 | 0/3 | 1/3 | — | Not enough |
+| **+ the why names exactly what was wrong, or no correction** | 4/4, now the article (l'italiano), a fair point; 1/4 still says "people usually" | 1/4 | 0/4 | 0/4 | 1/4 ("mi ha detto" → "mi ha detto Lei") | **Kept** |
+
