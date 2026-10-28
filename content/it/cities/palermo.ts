@@ -14,7 +14,7 @@ export const palermo: CityPantry = {
       neighbourhood: 'Vucciria',
       real: true,
       characterId: 'salvatore-russo',
-      imagePrompt: 'Soft pastel sketch on white paper of a traditional Sicilian bar with marble counter, vintage espresso machine gleaming in morning light, brioche filled pastry case, locals standing at counter, warm peachy walls, textured brushstrokes, inviting atmosphere',
+      imagePrompt: 'Bar Alba, one of the old pastry bars of Palermo: a long glass counter of arancine, cannoli, cassata and brioche with granita, men in jackets drinking coffee at the counter, a wide street outside with Liberty-era palazzi and palm trees.',
     },
     {
       id: 'caffe-del-kassaro',
@@ -23,7 +23,7 @@ export const palermo: CityPantry = {
       neighbourhood: 'Kalsa',
       real: false,
       characterId: 'angela-lombardo',
-      imagePrompt: 'Soft pastel sketch on white paper of an elegant café with small round tables on cobblestones, Art Nouveau details, potted jasmine plants, view of baroque buildings, morning sunlight, soft yellows and creams, warm and welcoming',
+      imagePrompt: 'a café on the Cassaro, the old main street of Palermo, small round tables on the stone paving outside, the tall faded baroque palazzi of the street with iron balconies on both sides, the cathedral visible at the end of the street.',
     },
     {
       id: 'bar-touring',
@@ -126,7 +126,7 @@ export const palermo: CityPantry = {
       neighbourhood: 'Ballarò',
       real: true,
       characterId: 'vito-abbate',
-      imagePrompt: 'Soft pastel sketch on white paper of a vibrant street market with colorful produce stalls, hanging swordfish, vendors calling out, awnings creating striped shadows, vegetables in crates, bursts of red tomatoes and green fennel, energetic chaos',
+      imagePrompt: 'the Ballarò street market: a long narrow street of stalls under red, white and blue tarps and big umbrellas, swordfish and tuna on ice, piles of lemons, oranges, aubergines and long green squash, vendors calling out, the majolica-tiled dome of the Carmine church rising above the stalls.',
     },
     {
       id: 'mercato-vucciria',
@@ -155,7 +155,7 @@ export const palermo: CityPantry = {
       neighbourhood: 'Ballarò',
       real: true,
       characterId: 'carmela-todaro',
-      imagePrompt: 'Soft pastel sketch on white paper of a family trattoria with checkered tablecloths, walls covered in old photos, kitchen visible through beaded curtain, pasta dishes being served, warm amber lighting, intimate and homey',
+      imagePrompt: 'a simple family trattoria on a quiet street of old Palermo, its door open, paper tablecloths and old photos on the walls inside, the owner at the door, neighbours passing, laundry on the iron balconies above.',
     },
     {
       id: 'osteria-ballarò',
@@ -164,7 +164,7 @@ export const palermo: CityPantry = {
       neighbourhood: 'Vucciria',
       real: false,
       characterId: 'filippo-basile',
-      imagePrompt: 'Soft pastel sketch on white paper of a rustic osteria with wooden tables, wine bottles lining walls, open kitchen with sizzling pans, locals dining, soft golden candlelight, terracotta and burgundy tones, convivial atmosphere',
+      imagePrompt: 'an osteria in the ground floor of an old stone palazzo near the Ballarò market, its tall arched doorways open on a room with stone vaulted ceilings, wooden tables and diners talking, a few tables outside on the paving.',
     },
 
     // SPECIALTY FOOD (3 total)
@@ -231,7 +231,7 @@ export const palermo: CityPantry = {
       neighbourhood: 'Kalsa',
       real: true,
       characterId: 'nunzio-palmeri',
-      imagePrompt: 'Soft pastel sketch on white paper of a public garden with enormous ficus trees, elderly people on benches, children playing, dappled shade, iron fence, soft greens and sandy paths, peaceful urban oasis',
+      imagePrompt: 'the Giardino Garibaldi in Piazza Marina, dominated by an enormous old fig tree with aerial roots spreading like a cave, wrought-iron railings, old men on benches, children playing, the stone palazzi of the square around it.',
     },
     {
       id: 'piazza-pretoria',
@@ -240,7 +240,7 @@ export const palermo: CityPantry = {
       neighbourhood: 'Kalsa',
       real: true,
       characterId: 'grazia-salamone',
-      imagePrompt: 'Soft pastel sketch on white paper of a baroque square with ornate fountain of nude statues, surrounding palaces, people gathering, evening passeggiata, soft pinks and marble whites, theatrical beauty',
+      imagePrompt: 'Piazza Pretoria: the great sixteenth-century fountain in tiers of white marble with its many statues, ringed by a balustrade, the palazzo of the town hall behind it and the church of Santa Caterina at the side, people sitting on the steps.',
     },
     {
       id: 'quattro-canti',
@@ -269,7 +269,7 @@ export const palermo: CityPantry = {
       neighbourhood: 'Kalsa',
       real: false,
       characterId: 'beatrice-amato',
-      imagePrompt: 'Soft pastel sketch on white paper of an independent bookshop with wooden shelves, armchair reading nook, Sicilian literature section, maritime themed, soft lamplight, warm browns and navy blues, intimate cultural space',
+      imagePrompt: 'a small independent bookshop in the ground floor of a tall old palazzo near the old harbour of the Cala, books about the sea and Sicily in the window, wooden shelves inside, the harbour and fishing boats glimpsed at the end of the street.',
     },
     {
       id: 'corleone-wine-bar',
@@ -307,7 +307,7 @@ export const palermo: CityPantry = {
       neighbourhood: 'Politeama',
       real: true,
       characterId: 'michele-sorrentino',
-      imagePrompt: 'Soft pastel sketch on white paper of a grand railway station with vaulted ceilings, travelers with luggage, departure boards, ticket windows, pigeons, soft grays and transportation blues, gateway atmosphere',
+      imagePrompt: 'Palermo Centrale station: the long neoclassical stone front with columns and a clock, seen across Piazza Giulio Cesare, buses, taxis and scooters, travellers with suitcases, palm trees.',
     },
 
     // CITY CHARACTER (3 unique Palermo spots)
@@ -346,7 +346,7 @@ export const palermo: CityPantry = {
       neighbourhood: 'Ballarò',
       real: false,
       characterId: 'toto-meusaro',
-      imagePrompt: 'Soft pastel sketch on white paper of a street-food stall in the Ballarò market in Palermo: a big round pan of spleen simmering in lard, soft sesame rolls (vastedde) piled beside it, grated caciocavallo and ricotta, a vendor filling a roll with a fork while shoppers wait among crates of lemons and striped awnings, loud and busy, warm golden market light.',
+      imagePrompt: 'a street-food stall in the Ballarò market: a big round pan of spleen simmering in lard, soft sesame rolls piled beside it, grated caciocavallo and ricotta, a vendor filling a roll with a fork while shoppers wait among crates of lemons and striped tarps.',
     },
   ],
   characters: [
