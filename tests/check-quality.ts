@@ -3,7 +3,7 @@
 // No Claude calls: the judge is a fake. The database part (saving a score)
 // runs with DATABASE_URL against a local test database and skips without it.
 import { randomUUID } from 'crypto';
-import { buildQualityPrompt, scoreConversation, shorterAfterLost, type ConversationScore, type Judge, type ScoredTurn } from '@/lib/quality';
+import { buildQualityPrompt, phraseStats, scoreConversation, shorterAfterLost, type ConversationScore, type Judge, type ScoredTurn } from '@/lib/quality';
 import { scorecard, gate, scorecardAsText } from '@/lib/scorecard';
 
 const problems: string[] = [];
@@ -25,6 +25,20 @@ const unfilled = [...(p.system + p.user).matchAll(/\{(\w+)\}/g)].map((m) => m[1]
 check(!unfilled.length, `quality prompt: unfilled ${unfilled.join(', ')}`);
 check(p.user.includes('Person 1: Mi chiamo Josh') && p.user.includes('Person 2: Non capisco'), 'quality prompt: learner lines should be numbered');
 check(p.system.includes('Italian') && p.system.includes("can't hear"), 'quality prompt: language or "can\'t hear" missing');
+// A Beginner conversation gets the Beginner block (English by design); others don't
+const pb = buildQualityPrompt(rita, turns, { beginner: true });
+check(pb.system.includes('Beginner conversation') && !p.system.includes('Beginner conversation'), 'quality prompt: the Beginner block only for Beginner conversations');
+check(![...pb.system.matchAll(/\{(\w+)\}/g)].length, 'quality prompt (Beginner): unfilled placeholders');
+check(p.system.includes('characterLanguage'), 'quality prompt: asks for the word counts');
+
+// Beginner phrases counted exactly from the saved parts (answers are the learner's, not counted)
+const ps = phraseStats([
+  { who: 'npc', text: '', parts: [{ kind: 'english', text: 'Welcome to the market.' }, { kind: 'word', text: 'Guardi che belle arance!' }, { kind: 'question', text: 'Come si chiama?' }, { kind: 'answer', text: 'Mi chiamo …' }] },
+  { who: 'learner', text: 'Mi chiamo Josh' },
+  { who: 'npc', text: '', parts: [{ kind: 'word', text: 'Piacere!' }, { kind: 'question', text: 'Di dove è?' }] },
+]);
+check(!!ps && ps.phrases === 4 && ps.words === 11 && ps.englishWords === 4 && ps.replies === 2, `phrase stats: ${JSON.stringify(ps)}`);
+check(phraseStats(turns) === null, 'phrase stats: none without parts');
 
 // --- Code's half of "pulls back": the reply after line 2 is shorter than the one before ---
 const shorter = shorterAfterLost(turns, [2]);

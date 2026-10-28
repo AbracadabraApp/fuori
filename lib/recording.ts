@@ -57,7 +57,7 @@ interface RecordTurnParams {
   promptVersion: string;
   /** What Whisper heard; absent on the opening line */
   learnerSaid?: string;
-  reply: { line: string; en: string };
+  reply: { line: string; en: string; parts?: { kind: string; text: string }[] };
   /** What the character remembered at the start, kept with a new conversation */
   memory?: CharacterMemory;
 }
@@ -74,7 +74,7 @@ export async function recordTurn(p: RecordTurnParams): Promise<string | null> {
     let id = p.conversationId;
     const turns = [
       ...(p.learnerSaid ? [{ who: 'learner' as const, text: p.learnerSaid, at }] : []),
-      { who: 'npc' as const, text: p.reply.line, en: p.reply.en, at },
+      { who: 'npc' as const, text: p.reply.line, en: p.reply.en, at, ...(p.reply.parts ? { parts: p.reply.parts.map((x) => ({ kind: x.kind, text: x.text })) } : {}) },
     ];
 
     if (id) {

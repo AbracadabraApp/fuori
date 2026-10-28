@@ -129,9 +129,10 @@ export async function rememberConversation(
     // Score it for the dialogue scorecard (lib/quality.ts). Separate from memory:
     // a scoring problem is logged and memory stays saved.
     try {
-      const score = await scoreConversation(character, claim.turns, judge);
+      // Beginner dialogue (lib/beginner.ts) speaks English by design; its turns carry a beginner- prompt version
+      const score = await scoreConversation(character, claim.turns, judge, { beginner: !!claim.promptVersion?.startsWith('beginner-') });
       await saveConversationScore(conversationId, score);
-      console.log(JSON.stringify({ level: 'info', event: 'quality', conversationId, character: claim.characterId, median: score.stats.wordsMedian, unprompted: score.judge.correctionsUnprompted, pronunciation: score.judge.pronunciationCorrections }));
+      console.log(JSON.stringify({ level: 'info', event: 'quality', conversationId, character: claim.characterId, median: score.stats.wordsMedian, unprompted: score.judge.correctionsUnprompted, pronunciation: score.judge.pronunciationCorrections, words: score.judge.words }));
     } catch (err) {
       logError('quality', err, conversationId);
     }

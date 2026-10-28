@@ -25,6 +25,21 @@ export const qualityOutputJsonSchema = {
     englishUnasked: count,
     incoherent: count,
     alive: count,
+    words: {
+      additionalProperties: false,
+      type: 'object',
+      properties: {
+        characterPhrases: count,
+        characterLanguage: count,
+        characterEnglish: count,
+        personLanguage: count,
+        personEnglish: count,
+        personLinesLanguage: count,
+        personLinesEnglish: count,
+        personLinesMixed: count,
+      },
+      required: ['characterPhrases', 'characterLanguage', 'characterEnglish', 'personLanguage', 'personEnglish', 'personLinesLanguage', 'personLinesEnglish', 'personLinesMixed'],
+    },
     note: { type: 'string' },
   },
   required: [
@@ -37,6 +52,7 @@ export const qualityOutputJsonSchema = {
     'englishUnasked',
     'incoherent',
     'alive',
+    'words',
     'note',
   ],
 };

@@ -25,6 +25,8 @@ export interface ConversationTurn {
   text: string;
   en?: string;
   at: string; // ISO timestamp
+  /** Beginner level dialogue: the reply in parts, kept so its phrases can be counted exactly (lib/quality.ts) */
+  parts?: { kind: string; text: string }[];
 }
 
 /**
@@ -154,20 +156,20 @@ export async function claimForMemory(
   conversationId: string,
   learnerId: string,
   minLearnerLines: number
-): Promise<{ firstTime: boolean; before: number; claimed: number; characterId: string; cityId: string; turns: ConversationTurn[] } | null> {
-  const result = await query<{ before: number; claimed: number; character_id: string; city_id: string; turns: ConversationTurn[] }>(
+): Promise<{ firstTime: boolean; before: number; claimed: number; characterId: string; cityId: string; turns: ConversationTurn[]; promptVersion: string | null } | null> {
+  const result = await query<{ before: number; claimed: number; character_id: string; city_id: string; turns: ConversationTurn[]; prompt_version: string | null }>(
     `UPDATE conversations c
      SET memory_turns = jsonb_array_length(c.turns)
      FROM (SELECT id, memory_turns AS before FROM conversations WHERE id = $1) old
      WHERE c.id = old.id AND c.learner_id = $2
        AND jsonb_array_length(c.turns) > c.memory_turns
        AND (SELECT count(*) FROM jsonb_array_elements(c.turns) t WHERE t->>'who' = 'learner') >= $3
-     RETURNING old.before, c.memory_turns AS claimed, c.character_id, c.city_id, c.turns`,
+     RETURNING old.before, c.memory_turns AS claimed, c.character_id, c.city_id, c.turns, c.prompt_version`,
     [conversationId, learnerId, minLearnerLines]
   );
   const row = result.rows[0];
   if (!row) return null;
-  return { firstTime: row.before === 0, before: row.before, claimed: row.claimed, characterId: row.character_id, cityId: row.city_id ?? '', turns: row.turns };
+  return { firstTime: row.before === 0, before: row.before, claimed: row.claimed, characterId: row.character_id, cityId: row.city_id ?? '', turns: row.turns, promptVersion: row.prompt_version ?? null };
 }
 
 /** Undo a claim when writing memory failed, so the next end signal tries again. */

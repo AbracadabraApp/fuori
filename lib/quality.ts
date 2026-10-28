@@ -27,6 +27,24 @@ import type { LevelScore } from './level';
 export interface ScoredTurn {
   who: 'npc' | 'learner';
   text: string;
+  /** Beginner replies saved with their parts (from 2026-10-27) */
+  parts?: { kind: string; text: string }[];
+}
+
+/**
+ * The character's phrases in the language, counted exactly from Beginner
+ * replies' parts (words and questions; answers are the learner's to say):
+ * how many, how long, and the English around them. Null when no reply has
+ * parts (other levels, or saved before 2026-10-27): the judge's counts stand.
+ */
+export function phraseStats(turns: ScoredTurn[]): { replies: number; phrases: number; words: number; avgWords: number; englishWords: number } | null {
+  const withParts = turns.filter((t) => t.who === 'npc' && t.parts?.length);
+  if (!withParts.length) return null;
+  const parts = withParts.flatMap((t) => t.parts!);
+  const phrases = parts.filter((x) => x.kind === 'word' || x.kind === 'question');
+  const words = phrases.reduce((n, x) => n + wordCount(x.text), 0);
+  const englishWords = parts.filter((x) => x.kind === 'english').reduce((n, x) => n + wordCount(x.text), 0);
+  return { replies: withParts.length, phrases: phrases.length, words, avgWords: phrases.length ? Math.round((10 * words) / phrases.length) / 10 : 0, englishWords };
 }
 
 export interface ScoredCharacter {
@@ -47,6 +65,22 @@ const JudgeSchema = z.object({
   // Added 2026-10-16 (judge version 2026-10-16); optional so scores saved before still read
   incoherent: z.number().int().min(0).optional(),
   alive: z.number().int().min(1).max(10).optional(),
+  // Added 2026-10-27 (judge version 2026-10-27): how much each side spoke the
+  // language and English (Josh: "both are important, character and speaker";
+  // for the character, total words, not a share, and "the length of phrase and
+  // number of phrases per dialogue": average length = characterLanguage / characterPhrases)
+  words: z
+    .object({
+      characterPhrases: z.number().int().min(0),
+      characterLanguage: z.number().int().min(0),
+      characterEnglish: z.number().int().min(0),
+      personLanguage: z.number().int().min(0),
+      personEnglish: z.number().int().min(0),
+      personLinesLanguage: z.number().int().min(0),
+      personLinesEnglish: z.number().int().min(0),
+      personLinesMixed: z.number().int().min(0),
+    })
+    .optional(),
   note: z.string(),
 });
 export type QualityJudgement = z.infer<typeof JudgeSchema>;
@@ -54,12 +88,16 @@ export type QualityJudgement = z.infer<typeof JudgeSchema>;
 export interface ConversationScore {
   /** Version of content/it/prompts/quality.md that judged it */
   judgeVersion: string;
+  /** A Beginner conversation (English by design; englishUnasked counts only English beyond it) */
+  beginner?: boolean;
   /** Learner lines in the conversation */
   learnerLines: number;
   stats: TurnStats;
   /** For each "I'm lost" line: was the next reply shorter than the one before (code), simpler and shorter (judge) */
   lost: { line: number; shorter: boolean; pulledBack: boolean }[];
   judge: QualityJudgement;
+  /** Beginner replies' phrases in the language, counted exactly from their parts (phraseStats) */
+  phrases?: ReturnType<typeof phraseStats>;
   /** How long each character reply took, in ms (the replay test times them; real play doesn't yet) */
   replyMs?: number[];
   /** Level of the character's lines (lib/level.ts; the replay test scores it, real play doesn't yet) */
@@ -70,7 +108,7 @@ export function qualityPromptVersion(): string {
   return readPromptFile('quality.md').version;
 }
 
-export function buildQualityPrompt(character: ScoredCharacter, turns: ScoredTurn[]): { system: string; user: string } {
+export function buildQualityPrompt(character: ScoredCharacter, turns: ScoredTurn[], opts: { beginner?: boolean } = {}): { system: string; user: string } {
   const f = readPromptFile('quality.md');
   const values = {
     name: character.name,
@@ -79,16 +117,17 @@ export function buildQualityPrompt(character: ScoredCharacter, turns: ScoredTurn
     city: character.city,
     language: language.name,
   };
+  const withBeginner = { ...values, beginner: opts.beginner ? fill(f.block('Beginner'), values) : '' };
   let n = 0;
   const transcript = turns.map((t) => (t.who === 'npc' ? `${character.name}: ${t.text}` : `Person ${++n}: ${t.text}`)).join('\n');
-  return { system: fill(f.block('System prompt'), values), user: fill(f.block('User message'), { ...values, transcript }) };
+  return { system: fill(f.block('System prompt'), withBeginner), user: fill(f.block('User message'), { ...values, transcript }) };
 }
 
 /** Counts the judged items. Tests pass a fake. */
-export type Judge = (character: ScoredCharacter, turns: ScoredTurn[]) => Promise<QualityJudgement>;
+export type Judge = (character: ScoredCharacter, turns: ScoredTurn[], opts?: { beginner?: boolean }) => Promise<QualityJudgement>;
 
-export const judgeWithClaude: Judge = async (character, turns) => {
-  const prompt = buildQualityPrompt(character, turns);
+export const judgeWithClaude: Judge = async (character, turns, opts = {}) => {
+  const prompt = buildQualityPrompt(character, turns, opts);
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
     // The model thinks before answering and the thinking counts toward this
@@ -124,16 +163,19 @@ export function shorterAfterLost(turns: ScoredTurn[], lostLines: number[]): Map<
 export async function scoreConversation(
   character: ScoredCharacter,
   turns: ScoredTurn[],
-  judge: Judge = judgeWithClaude
+  judge: Judge = judgeWithClaude,
+  opts: { beginner?: boolean } = {}
 ): Promise<ConversationScore> {
-  const j = await judge(character, turns);
+  const j = await judge(character, turns, opts);
   const shorter = shorterAfterLost(turns, j.lost.map((l) => l.line));
   return {
     judgeVersion: qualityPromptVersion(),
+    ...(opts.beginner ? { beginner: true } : {}),
     learnerLines: turns.filter((t) => t.who === 'learner').length,
     stats: turnStats(turns.filter((t) => t.who === 'npc').map((t) => t.text)),
     lost: j.lost.map((l) => ({ line: l.line, shorter: shorter.get(l.line) ?? false, pulledBack: l.pulledBack })),
     judge: j,
+    ...(phraseStats(turns) ? { phrases: phraseStats(turns) } : {}),
   };
 }
 

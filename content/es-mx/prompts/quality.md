@@ -2,7 +2,7 @@
 
 > Copied from `content/it/prompts/quality.md` on 2026-10-12 for the Mexico pack. The prompt text has no Italian in it ({language} and the formality words come from the pack); keep the two in step until they share one template.
 
-version: 2026-10-16
+version: 2026-10-27
 
 When a conversation ends, after the memory call, one Claude call reads the
 transcript and counts the things on the dialogue scorecard that code can't
@@ -35,8 +35,19 @@ Count what {name} does. Count only what is clearly there; when unsure, don't cou
 - englishUnasked: {name}'s lines that use English the person didn't ask for. A word in quotes because they asked how to say it doesn't count.
 - incoherent: {name}'s lines that don't follow from the conversation: ignore what the person just said, contradict something {name} said earlier, or answer a question nobody asked. Misreading a garbled line is counted under garbledMissed, not here.
 - alive: from 1 to 10, how much {name} feels like a real {role} in {city} rather than an assistant: a distinct personality, reacting to what was actually said. 10 = a native speaker would find it entirely natural.
+- words: how much each side spoke {language} and English. Count words, roughly but honestly, over the whole conversation: characterPhrases is how many phrases or sentences {name} said in {language} (a short phrase, a question and a full sentence each count once; a single word on its own counts too); characterLanguage and characterEnglish are {name}'s words in {language} and in English (totals, not a share); personLanguage and personEnglish are the person's; personLinesLanguage, personLinesEnglish and personLinesMixed count the person's lines that were mostly {language}, mostly English, or a real mix. A name or a borrowed word (pizza, ok) doesn't change a line's language.
 - note: the single biggest problem with {name}'s side of the conversation, in one sentence. "None" if nothing stands out.
+
+{beginner}
 ```
+
+## Beginner
+
+```
+This is a Beginner conversation: {name} is meant to speak some English, a sentence or two a turn to set the scene and explain, with the {language} as short phrases, one question and an answer to say back. That English is by design: count englishUnasked only for English beyond it (a lecture, English in place of the question or the phrases, a turn mostly in English for no reason). Still count every English word in words.
+```
+
+Added to the system prompt for a Beginner conversation (lib/beginner.ts), where English is part of the design.
 
 ## User message
 
@@ -51,6 +62,11 @@ The conversation ({name}'s lines and the person's lines, in order):
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-27: how much each side speaks the language; Beginner English isn't a fault
+- **Added** `words`: the character's phrases in the language (how many; their average length is words ÷ phrases: Josh, "the length of phrase and number of phrases per dialogue"), its words in the language and in English (totals), the person's words, and the person's lines that were mostly the language, mostly English or mixed.
+- **Changed:** a Beginner conversation gets the `## Beginner` block: the scene-setting English is by design, so `englishUnasked` counts only English beyond it.
+- **Prompted by:** Josh, 2026-10-27: "do we have a concept of how much Italian is spoken?", then "both are important, character and speaker", and "for character it shouldn't be share but total words". The judge had scored Beatrice (Beginner, 36 replies) at 36 "unasked English" lines and called her a bilingual assistant, for doing what the Beginner level asks.
 
 ### 2026-10-16: coherence and "alive"
 - **Added** `incoherent` (lines that don't follow from the conversation) and `alive` (1–10, a real person in that place, as in `npm run test:conversations`).

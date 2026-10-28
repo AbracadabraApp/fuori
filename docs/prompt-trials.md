@@ -192,3 +192,12 @@ Josh's two Italian turns on 2026-10-27 that Whisper called English and translate
 | + judge only their last line | 8/8 | 0/8 | — | — | Not enough |
 | **+ run together or misspelled is still an attempt; English that doesn't fit was speech-to-text guessing** | **8/8** | **8/8** | — | 35/35 (the mixed "Sì, I want un caffè" goes as said, by design); all checks 63% (69% at v2, within noise) | **Kept** |
 
+### Quality judge: how much each side speaks the language (`quality.md` 2026-10-27, both countries; `tests/experiments/judge-one.mts`)
+
+Josh, 2026-10-27: both sides matter, character and speaker; for the character not a share but how many phrases in the language and how long. Beatrice (Siena, Beginner, 71 turns), judged:
+
+| Version | englishUnasked | alive | Character phrases / words in the language / English words | Person lines in the language / English / mixed | Decision |
+|---|---|---|---|---|---|
+| 2026-10-16 (no Beginner block) | 36 ("a bilingual assistant") | 4 | — / 430 / 570 | 35 / 0 / 0 | Beginner English counted as a fault |
+| **2026-10-27, Beginner block + words, two runs** | 0, 0 | 5, 5 | 105, 105 / 520, 360 / 470, 440 | 35 / 0 / 0, twice | **Kept.** Phrase and line counts steady; word counts swing (±20%), so Beginner phrases are also counted exactly in code from the saved parts (`phraseStats`, from 2026-10-27 on) |
+
