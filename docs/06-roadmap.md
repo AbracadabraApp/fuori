@@ -6,7 +6,7 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases:** **N4 is done** (Josh, 2026-10-25): TestFlight build 0.1.0 (5), with scaffolding, say it in English, one tap per turn, the bottom bar, the launch screen and country choice, faster replies, Learn in both countries. Open N4 work moved to N5 the same day, each item marked "N5 (from N4)". **N5 is about the Beginner level (Josh, 2026-10-25):** Beginner level dialogue with spoken English as support ([beginner-scaffolding.md](beginner-scaffolding.md) → Beginner level dialogue), and CLAUDE.md's teaching rules changed to vary by level (today: teach only in role, no English nobody asked for, for everyone). Also listed for N5 until Josh places them: Learn, Teach (Magda's syllabus) and the Diario, say it in English settled with a family beginner, the orientation tour, testers beyond Josh and the App Store, plus the web sunset. **N6**: a framework for level, repeatable and improving; a conversation library (real speech kept to replay tests on); the device checks (a call, Siri, AirPods, backgrounding, locking).
+The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases:** **N4 is done** (Josh, 2026-10-25): TestFlight build 0.1.0 (5), with scaffolding, say it in English, one tap per turn, the bottom bar, the launch screen and country choice, faster replies, Learn in both countries. Open N4 work moved to N5 the same day, each item marked "N5 (from N4)". **N5 is about the Beginner level (Josh, 2026-10-25):** Beginner level dialogue with spoken English as support ([beginner-scaffolding.md](beginner-scaffolding.md) → Beginner level dialogue), and CLAUDE.md's teaching rules changed to vary by level (today: teach only in role, no English nobody asked for, for everyone). Also listed for N5 until Josh places them: Learn, Teach (Magda's syllabus) and the Diario, say it in English settled with a family beginner, the orientation tour, testers beyond Josh and the App Store, plus the web sunset. **N6**: a framework for level, repeatable and improving; a conversation library (real speech kept to replay tests on); ~~the device checks~~ done (Josh, 2026-10-27).
 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
@@ -83,8 +83,8 @@ Real learner speech kept as a test set, so changes can be replayed on the same i
 - [ ] **Claude** Replay tools: run the library through another speech-to-text provider, the language routing (say it in English), or the end-of-turn silence, and compare with what happened
 - [ ] **Claude** Meanwhile, from text only: read the saved learner lines for transcription that went wrong (garbled, invented on silence, English turned into nonsense) for a rough error rate
 
-### Device checks — N6 (Josh, 2026-10-23: moved from N4)
-- [ ] **Josh** Device checks, on the iPhone during a conversation (while the character speaks and while the mic is open): a phone call comes in; Siri; AirPods out; AirPods in; swipe to the home screen; lock the phone. Each time it should pause, save like any exit, and never reopen the mic without a tap; AirPods out shouldn't carry on through the phone speaker (CLAUDE.md → iPhone app). A simulator can't test this
+### Device checks — done (Josh, 2026-10-27: "works")
+- [x] **Josh** Device checks (Josh, 2026-10-27: calls, Siri, AirPods and backgrounding "works"), on the iPhone during a conversation (while the character speaks and while the mic is open): a phone call comes in; Siri; AirPods out; AirPods in; swipe to the home screen; lock the phone. Each time it should pause, save like any exit, and never reopen the mic without a tap; AirPods out shouldn't carry on through the phone speaker (CLAUDE.md → iPhone app). A simulator can't test this
 
 ### Learner level (placement and moving up) — N6, the level framework
 Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level line and an unused type are separate pieces ([language-levels-plan.md](language-levels-plan.md) → 1).
@@ -174,7 +174,7 @@ Two stages. A TestFlight for Josh alone needs no Apple review and none of the co
 - [x] **Claude** Release-build check: production servers only, launch-argument shortcuts are debug-only
 - [x] **Claude** The sign-in token carries over from the Xcode build to the TestFlight one. Confirmed 2026-10-19: on the phone, build 1 signed in as Josh's own learner in both countries (Italy `3c544022`, from the web days; Mexico `25d15e1d`), and Josh: characters remember him from the web. (The Mac install is a separate learner, as expected: its Keychain is its own)
 - [x] **Josh** Installed from TestFlight and played in Italy (2026-10-18)
-- [ ] **N6 (moved from N4, Josh 2026-10-23)** **Josh** The device checks (Conversation on the phone) on the TestFlight build
+- [x] **N6 (moved from N4, Josh 2026-10-23)** **Josh** The device checks (Conversation on the phone): Josh, 2026-10-27, "works" (on his phone's development build)
 - ~~Gate: play from TestFlight on 3 separate days without the laptop~~: dropped (Josh, 2026-10-23: not a release item; Claude wrote it into the plan). Claude reads the saved app error reports (`format=errors`) as Josh plays
 
 **Stage 2: before anyone else gets it** — N5 (external testers; Apple's beta review, usually about a day)
