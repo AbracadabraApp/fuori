@@ -6,15 +6,24 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases:** **N4 is done** (Josh, 2026-10-25): TestFlight build 0.1.0 (5), with scaffolding, say it in English, one tap per turn, the bottom bar, the launch screen and country choice, faster replies, Learn in both countries. Open N4 work moved to N5 the same day, each item marked "N5 (from N4)". **N5 is about the Beginner level (Josh, 2026-10-25):** Beginner level dialogue with spoken English as support ([beginner-scaffolding.md](beginner-scaffolding.md) → Beginner level dialogue), and CLAUDE.md's teaching rules changed to vary by level (today: teach only in role, no English nobody asked for, for everyone). Also listed for N5 until Josh places them: Learn, Teach (Magda's syllabus) and the Diario, say it in English settled with a family beginner, the orientation tour, testers beyond Josh and the App Store, plus the web sunset. **N6**: a framework for level, repeatable and improving; a conversation library (real speech kept to replay tests on); ~~the device checks~~ done (Josh, 2026-10-27).
+The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases** (updated 2026-10-27):
+
+- **N4 is done** (Josh, 2026-10-25): TestFlight build 0.1.0 (5), with scaffolding, say it in English, one tap per turn, the bottom bar, the launch screen and country choice, faster replies, Learn in both countries. Build 6 uploaded since. Open N4 work moved to N5, each item marked "N5 (from N4)".
+- **N5 is about the Beginner level** (Josh, 2026-10-25): Beginner level dialogue with spoken English as support, and CLAUDE.md's teaching rules varying by level.
+  - *Done so far:* Beginner dialogue live in both countries and as fast as other turns (tap to first word ~1.8 s); hands-free for everyone (mic closes after 5 s of nothing); the device checks (Josh: "works"); recordings of Josh's turns kept 30 days (on since 2026-10-27, R2_ACCOUNT_ID); say it and the Learn page stop rewriting Josh's Italian; places with their city's own food (delis, street food, restaurants, specialty pastry shops; bakeries and Italy's wine bars hidden); Italy's cast rebalanced with a reason to be there for everyone; the City Pantry Formula rewritten.
+  - *Next:* TestFlight build 7 (the family is on build 6); Josh plays hands-free and the new places, on Wi-Fi and on cellular; measure transcription on the kept recordings; a log of every turn's timings, phone and server, kept across deploys (typical and worst 1 in 20, counted from after the end-of-turn wait); `here` lines for Mexico's people; the English fading over time (Josh's staggered plan).
+  - *Then, as Josh places them:* Learn lessons from the syllabus with missions after them ([teach-plan.md](teach-plan.md) → Lessons and missions), Magda into Learn and the schools hidden; adventures ([adventures.md](adventures.md)); the orientation tour; the Diario.
+  - *Before testers outside the family:* a usage limit per device (speech, turns, voice); Josh decides whose recordings are kept and for how long; a privacy policy naming Groq, Anthropic and ElevenLabs; the App Store items under Release; then the web sunset.
+- **N6:** a framework for level, repeatable and improving (placement, moving up, level in the prompt); the conversation library beyond Josh's own recordings; a shorter end-of-turn wait for Intermediate and Advanced (Beginners keep 2.5 s), tuned from the recordings.
+- **Later:** prompt caching (speed and cost only, no quality change: the turn prompt is ~140 tokens, the Beginner prompt ~1,400); real accounts, when someone needs Fuori on more than one device.
 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
 1. ~~Play Afuera with the level trial on~~: done 2026-10-19 (Chucho, 23 turns; reviewed under Scaffolding)
 2. **Spec for the smaller world** (→ Smaller world, on hold)
 3. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
-4. ~~Device checks on the iPhone~~: moved to N6 (Josh, 2026-10-23)
-5. **Record the speech-to-text test set** on the iPhone: about 20 short turns per language (hesitant and wrong ones included) plus 30–50 typical English and mixed requests; one set for both jobs (→ Faster and reliable replies; Scaffolding → Measure English transcription). Superseded if the conversation library (N6) keeps real recordings first
+4. ~~Device checks on the iPhone~~: done (Josh, 2026-10-27: "works")
+5. **Record the speech-to-text test set** on the iPhone: about 20 short turns per language (hesitant and wrong ones included) plus 30–50 typical English and mixed requests; one set for both jobs (→ Faster and reliable replies; Scaffolding → Measure English transcription). Superseded: Josh's real turns are kept since 2026-10-27 (conversation library, smallest version)
 
 ### Conversation on the phone — N4 done (2026-10-25)
 - Josh played build 0.1.0 (1) from TestFlight in Italy (2026-10-18): quality good, shorter replies, easier to understand, relatively fast. The mic tap wasn't crisp or obvious
