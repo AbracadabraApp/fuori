@@ -25,7 +25,13 @@ What Beginner level dialogue is for. The trial prompt is written against these, 
 
 **How the character talks**
 5. **English as support, heard not shown, and brief:** a sentence or two to set the scene, then the language. No lectures (not what goes into carbonara, the kinds of pizza, how the bread differs); one interesting detail at most. Each phrase in the language gets its own bubble (a single word can sit inline), its English a tap away.
-5b. **English for context, Italian for the common things (Josh, 2026-10-27):** English that carries history, culture or an explanation is worth having: a conversation in Italian only would lose it, and the context can itself bring Italian phrases with it. English for common words a beginner could take in Italian (the coffee, the price, "here you are", "how many?") lowers the conversation's value: those belong in Italian, glossed if needed. So the measure isn't how much English, it's what the English is spent on.
+5b. **English used to teach, not instead of teaching (Josh, 2026-10-27):** English that carries history, culture or an explanation is worth having: a conversation in Italian only would lose it, and the context can bring Italian phrases with it ("This square was the city's market for 700 years. *Qui c'era il mercato.*"). What lowers the value isn't which words are in English but English that does the Italian's job instead of setting it up. Josh: "I don't think word choice is what matters but a more pedagogical use of English." Pedagogical uses, for example:
+   - **Context that leads into a phrase:** a bit of history or culture, then the Italian that goes with it.
+   - **Explaining a phrase just said:** what it means, when people say it, why it's said that way.
+   - **Setting up the learner's turn:** what they're about to be asked, so they can answer in Italian.
+   - **Help when they're lost or ask.**
+
+   English that lowers it: saying in English what the beginner could have taken in Italian with a gloss (the order, the price, "here you are"); narration and chat that leads to no Italian; repeating in English what was just said in Italian.
 6. **Language a beginner can follow:** short, common words, present tense; the aim is 90% of words at the learner's level.
 7. **One thing at a time:** at most one question per turn. **The first turn may be the longest** (the place, the introduction, the first question); after it, turns stay short (Josh, 2026-10-25).
 8. **Still a person in a place:** helpful in role, not a teacher with a lesson plan.
@@ -38,6 +44,14 @@ What Beginner level dialogue is for. The trial prompt is written against these, 
 
 **How we'd know it works**
 12. **Measured on replays:** words at level, questions per turn, an answer offered for each question, the place described first and the character introduced; then Josh reads them side by side with today's.
+12b. **What we measure today, on every conversation (2026-10-27, `lib/quality.ts`, `quality.md`):**
+   - **The character's Italian:** how many phrases per conversation and how long they are (words ÷ phrases). Exact for Beginner turns from 2026-10-27, counted from the saved parts (`phraseStats`); otherwise the judge's count. Totals, not a share of English (Josh).
+   - **The character's English:** total words (exact from the parts for Beginner; the judge's estimate otherwise, ±20% run to run).
+   - **The learner:** their lines that were mostly Italian, mostly English or mixed, and their words in each (the judge).
+   - **English nobody asked for:** for Beginner conversations only English beyond the setup counts (the `## Beginner` block).
+   - First reading, Beatrice (Siena, 36 replies): about 105 Italian phrases, about 3 a reply; Josh's 35 lines all Italian.
+
+12c. **Next measure (idea, not built):** what the English is used for (5b): each English stretch judged as teaching (context that leads into a phrase, explaining a phrase, setting up the learner's turn, help) or not (doing the Italian's job, narration that leads nowhere, repeating the Italian). Shown as counts per conversation beside the phrase counts, so the English can fade where it isn't teaching and stay where it is.
 
 Named by Josh, 2026-10-25 (it was "Beginner guides"): it's how the Beginner level talks, so it's level, not scaffolding (docs/glossary.md: level sets how complex the dialogue is).
 
