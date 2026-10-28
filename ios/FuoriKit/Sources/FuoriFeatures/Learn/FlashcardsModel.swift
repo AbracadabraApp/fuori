@@ -4,42 +4,49 @@ import FuoriCore
 import FuoriNetworking
 import FuoriAudio
 
-/// Flashcards (docs/flashcards.md; Josh, 2026-10-27: three stages). Every
-/// starter word is a card, each at its own stage:
+/// Flashcards (docs/flashcards.md; Josh, 2026-10-28): an endless feed, like
+/// Instagram's, where every word moves along only when you say it.
 ///
-///   1 · Meet it: picture + word. Tap: the English shows and the word is
-///       said; then say it once on the mic (lenient: a miss is a retry)
-///   2 · Recall it: picture + English. Tap: the word shows and is said
-///   3 · Say it: picture only, with the mic. The one real test: a pass makes
-///       the word yours
+///   1 · Meet it: picture + word, no mic. Tap: the English shows, the word is
+///       said, then the mic opens by itself; say it to move on (a miss: the
+///       word again, and the mic again)
+///   2 · Recall it: picture + English, and the mic. Say the word; tapping the
+///       card shows it, and counts as a miss
+///   3 · Say it: picture only, and the mic, with the article. A pass makes the
+///       word yours
 ///
-/// All the cards in one weighted shuffle (Josh, 2026-10-27): the further a
-/// word has got, the more it comes up, so words in progress get finished
-/// before new ones crowd in; once it's yours it comes up rarely, as a check.
-/// Weights (see `weight`): not met 1, met 2, recalled 3, missed at "say it" 4,
-/// yours ¼. A miss on a check takes a word back to stage 3.
-///
-/// Progress is kept on the phone, per country (the server keeps nothing yet).
+/// What comes next is `FlashcardSchedule`: words come back a few cards later,
+/// a step further along; words that are yours after 1, 3, 7… days. Scrolling
+/// past a card is fine: it comes back. Progress is kept on the phone, per
+/// country (the server keeps nothing yet).
 @MainActor
 @Observable
 final class FlashcardsModel {
-    enum Stage: Int, Codable { case meet = 1, recall = 2, say = 3 }
+    typealias Stage = FlashcardSchedule.Stage
 
-    /// What's on screen: every card, in a weighted shuffle
-    private(set) var shown: [Flashcard] = []
-    private(set) var stages: [String: Stage] = [:]
-    /// Words that passed stage 3, newest first
-    private(set) var own: [Flashcard] = []
-    /// Words missed at stage 3 since their last pass: they weigh most
-    private(set) var missedSay: Set<String> = []
-    /// Cards whose answer is showing (stage 1's English, stage 2's word, a missed stage 3)
-    private(set) var revealed: Set<String> = []
-    private(set) var listening: String?
-    private(set) var checking: String?
-    /// A miss on this card just now (stage 3, or stage 1's retry)
-    private(set) var missed: String?
-    /// Just passed stage 3: the card's moment
-    private(set) var passed: String?
+    /// One card in the feed. The same word can be in it more than once
+    struct Item: Identifiable, Equatable {
+        enum Outcome: Equatable { case passed, missed }
+        let id = UUID()
+        let card: Flashcard
+        /// Once answered: how, and at which stage (the card stays as it was)
+        var done: (outcome: Outcome, stage: Stage)?
+
+        static func == (a: Item, b: Item) -> Bool {
+            a.id == b.id && a.done?.outcome == b.done?.outcome && a.done?.stage == b.done?.stage
+        }
+    }
+
+    private(set) var feed: [Item] = []
+    private(set) var schedule: FlashcardSchedule
+    /// Cards whose answer is showing (stage 1's English, a missed or asked-for word)
+    private(set) var revealed: Set<UUID> = []
+    private(set) var listening: UUID?
+    private(set) var checking: UUID?
+    /// A miss on this card just now (stage 1, which tries again)
+    private(set) var missed: UUID?
+    /// Just passed: the card's moment
+    private(set) var passed: UUID?
     private(set) var note: String?
 
     let speechLanguage: String
@@ -49,16 +56,20 @@ final class FlashcardsModel {
     private let recorder = Recorder()
     private let gate = GateBox()
     private var listenTask: Task<Void, Never>?
-    /// One tap, then silence ends it, as in the game (Josh, 2026-10-27: "why no
-    /// hands free"); shorter than the game's 2.5 s, since it's one word
+    /// Silence after the word ends the turn, as in the game; shorter, since
+    /// it's one word
     private let endOfWord: TimeInterval = 1.2
-    private let firstSoundWait: TimeInterval = 6
+    /// Nothing said for this long: the mic closes and the card waits for a tap
+    private let firstSoundWait: TimeInterval = 5
+    /// Whatever it hears (a room, a TV), the mic never stays open longer
+    private let longest: TimeInterval = 8
     private let storeKey: String
 
     private struct Saved: Codable {
         var stages: [String: Stage]
-        var own: [String]
-        var missedSay: [String]?
+        /// Before 2026-10-28: the ids of words that are yours, without days
+        var own: [String]?
+        var mine: [String: FlashcardSchedule.Own]?
     }
 
     init(cards: [Flashcard], language: Language, country: String, api: APIClient) {
@@ -66,148 +77,159 @@ final class FlashcardsModel {
         self.speechLanguage = language.speechLang
         self.api = api
         self.storeKey = "flashcards.\(country)"
+        self.schedule = FlashcardSchedule()
         load()
+        more()
     }
 
-    func isOwn(_ card: Flashcard) -> Bool { own.contains(card) }
+    func stage(_ item: Item) -> Stage { item.done?.stage ?? schedule.stage(item.card.id) }
 
-    /// A word that's yours comes back as a check, at "say it"
-    func stage(_ card: Flashcard) -> Stage { isOwn(card) ? .say : (stages[card.id] ?? .meet) }
+    /// Words that are yours, soonest check first
+    var own: [Flashcard] {
+        pool.filter { schedule.isOwn($0.id) }
+            .sorted { (schedule.own[$0.id]?.due ?? .distantPast) < (schedule.own[$1.id]?.due ?? .distantPast) }
+    }
 
-    /// How much a card weighs in the shuffle (Josh, 2026-10-27): the further
-    /// along, the more it comes up; a missed "say it" most; yours rarely
-    func weight(_ card: Flashcard) -> Double {
-        if isOwn(card) { return 0.25 }
-        if missedSay.contains(card.id) { return 4 }
-        switch stage(card) {
-        case .meet: return 1
-        case .recall: return 2
-        case .say: return 3
+    /// A few more cards at the end of the feed (it never runs out)
+    func more(_ count: Int = 3) {
+        let ids = pool.map(\.id)
+        for _ in 0..<count {
+            let recent = feed.suffix(FlashcardSchedule.apart).map(\.card.id)
+            guard let id = schedule.next(from: ids, recent: recent, slot: feed.count, now: .now),
+                  let card = pool.first(where: { $0.id == id }) else { return }
+            schedule.shown(id, slot: feed.count)
+            feed.append(Item(card: card))
         }
-    }
-
-    /// A new weighted shuffle of every card (opening the deck, or pulling to
-    /// refresh). Weighted random order: each card's key is u^(1/weight),
-    /// highest first, so a heavier card tends to come nearer the top
-    func shuffle() {
-        shown = pool
-            .map { card in (card, pow(Double.random(in: 0.0001...1), 1 / weight(card))) }
-            .sorted { $0.1 > $1.1 }
-            .map(\.0)
+        save()
     }
 
     // MARK: Taps
 
-    /// Tapping the card: stage 1 shows the English and says the word; stage 2
-    /// shows the word, says it and moves the card to stage 3
-    func tap(_ card: Flashcard) async {
-        switch stage(card) {
+    /// Tapping the card. Stage 1: the English shows, the word is said, and the
+    /// mic opens. Stage 2: the word shows and is said, a miss. Stage 3: nothing
+    func tap(_ item: Item) async {
+        guard item.done == nil, listening != item.id, checking == nil else { return }
+        switch stage(item) {
         case .meet:
-            revealed.insert(card.id)
-            await say(card)
+            revealed.insert(item.id)
+            await say(item.card)
+            await listen(item)
         case .recall:
-            revealed.insert(card.id)
-            await say(card)
-            stages[card.id] = .say
-            save()
+            finish(item, .missed)
+            revealed.insert(item.id)
+            await say(item.card)
         case .say:
             break
         }
     }
 
-    /// The mic: one tap listens, and a short silence after the word checks it
-    /// (a second tap checks at once)
-    func mic(_ card: Flashcard) async {
-        if listening == card.id {
+    /// The mic: a tap listens (a short silence after the word checks it);
+    /// tapping it again while listening checks at once
+    func mic(_ item: Item) async {
+        guard item.done == nil, checking == nil else { return }
+        if listening == item.id {
             listenTask?.cancel()
             listenTask = nil
-            await check(card)
-        } else if listening == nil {
-            guard await AudioSession.requestMicrophone() else {
-                note = "The microphone is off. Turn it on in Settings."
-                return
-            }
-            do {
-                try AudioSession.activate()
-                gate.reset()
-                try recorder.start { [gate] level, time in gate.process(level: level, at: time) }
-                listening = card.id
-                missed = nil
-                note = nil
-                let started = ProcessInfo.processInfo.systemUptime
-                listenTask = Task { [weak self] in
-                    while !Task.isCancelled {
-                        try? await Task.sleep(for: .milliseconds(100))
-                        guard !Task.isCancelled, let self, self.listening == card.id else { return }
-                        let snap = self.gate.snapshot()
-                        if snap.hasSpoken, snap.silence >= self.endOfWord {
-                            self.listenTask = nil
-                            await self.check(card)
-                            return
-                        }
-                        if !snap.hasSpoken, ProcessInfo.processInfo.systemUptime - started >= self.firstSoundWait {
-                            // Nothing said: close the mic; the card waits for another tap
-                            _ = self.recorder.stop("flashcard, nothing said")
-                            self.listening = nil
-                            self.listenTask = nil
-                            self.note = "Didn't catch that."
-                            return
-                        }
-                    }
+            await check(item)
+        } else {
+            await listen(item)
+        }
+    }
+
+    private func listen(_ item: Item) async {
+        // Another card's mic closes without checking
+        if listening != nil { closeMic("flashcard, another card") }
+        guard await AudioSession.requestMicrophone() else {
+            note = "The microphone is off. Turn it on in Settings."
+            return
+        }
+        do {
+            voice.stop()
+            try AudioSession.activate()
+            gate.reset()
+            try recorder.start { [gate] level, time in gate.process(level: level, at: time) }
+        } catch {
+            note = "The microphone didn't start. Try again."
+            return
+        }
+        listening = item.id
+        note = nil
+        let started = ProcessInfo.processInfo.systemUptime
+        listenTask = Task { [weak self] in
+            while !Task.isCancelled {
+                try? await Task.sleep(for: .milliseconds(100))
+                guard !Task.isCancelled, let self, self.listening == item.id else { return }
+                let snap = self.gate.snapshot()
+                let open = ProcessInfo.processInfo.systemUptime - started
+                if snap.hasSpoken, snap.silence >= self.endOfWord || open >= self.longest {
+                    self.listenTask = nil
+                    await self.check(item)
+                    return
                 }
-            } catch {
-                note = "The microphone didn't start. Try again."
+                if !snap.hasSpoken, open >= self.firstSoundWait {
+                    // Nothing said: the mic closes; the card waits for a tap
+                    self.closeMic("flashcard, nothing said")
+                    self.note = "Didn't catch that. Tap the mic to try again."
+                    return
+                }
             }
         }
     }
 
-    private func check(_ card: Flashcard) async {
+    private func closeMic(_ why: String) {
+        listenTask?.cancel()
+        listenTask = nil
+        _ = recorder.stop(why)
+        listening = nil
+    }
+
+    private func check(_ item: Item) async {
         let url = recorder.stop("flashcard")
         listening = nil
         guard let url, let audio = try? Data(contentsOf: url) else { return }
         try? FileManager.default.removeItem(at: url)
-        checking = card.id
-        defer { checking = nil }
+        checking = item.id
         let heard = (try? await api.transcribe(audio: audio)) ?? ""
-        let stage = stage(card)
-        if Self.matches(heard: heard, said: card.said, needArticle: stage == .say) {
+        checking = nil
+        let stage = stage(item)
+        if Self.matches(heard: heard, said: item.card.said, needArticle: stage == .say) {
             missed = nil
-            if stage == .meet {
-                stages[card.id] = .recall
-                revealed.remove(card.id)
-            } else {
-                passed = card.id
-                try? await Task.sleep(for: .milliseconds(900))
-                passed = nil
-                missedSay.remove(card.id)
-                revealed.remove(card.id)
-                if !isOwn(card) {
-                    stages[card.id] = nil
-                    own.insert(card, at: 0)
-                }
-            }
-            save()
+            finish(item, .passed)
+            passed = item.id
+            try? await Task.sleep(for: .milliseconds(900))
+            if passed == item.id { passed = nil }
+        } else if stage == .meet {
+            // Stage 1 tries again at once: the word, then the mic
+            missed = item.id
+            await say(item.card)
+            await listen(item)
         } else {
-            missed = card.id
-            if stage == .say {
-                // The answer shows and is said. A word that was yours goes
-                // back to stage 3; either way it now weighs most
-                if isOwn(card) {
-                    own.removeAll { $0 == card }
-                    stages[card.id] = .say
-                }
-                missedSay.insert(card.id)
-                revealed.insert(card.id)
-                save()
-                await say(card)
-            }
+            // The answer shows and is said; the word comes back soon
+            finish(item, .missed)
+            revealed.insert(item.id)
+            await say(item.card)
         }
+    }
+
+    /// The card is answered: it stays in the feed as it was, and the word is
+    /// scheduled again
+    private func finish(_ item: Item, _ outcome: Item.Outcome) {
+        guard let index = feed.firstIndex(where: { $0.id == item.id }) else { return }
+        let stage = stage(item)
+        feed[index].done = (outcome, stage)
+        if outcome == .passed {
+            schedule.passed(item.card.id, end: feed.count, now: .now)
+        } else {
+            schedule.missed(item.card.id, end: feed.count)
+        }
+        if missed == item.id { missed = nil }
+        save()
     }
 
     // MARK: Matching
 
     /// Lenient: accents and case ignored, close spellings accepted. Stage 3
-    /// wants the article too; stage 1 counts the word alone
+    /// wants the article too; stages 1 and 2 count the word alone
     nonisolated static func matches(heard: String, said: String, needArticle: Bool) -> Bool {
         let h = normal(heard), s = normal(said)
         guard !h.isEmpty else { return false }
@@ -256,25 +278,24 @@ final class FlashcardsModel {
     }
 
     func stop() {
-        listenTask?.cancel()
-        listenTask = nil
         voice.stop()
-        if listening != nil { _ = recorder.stop("flashcards closed"); listening = nil }
+        if listening != nil { closeMic("flashcards closed") }
     }
 
     // MARK: Saving
 
     private func load() {
-        if let data = UserDefaults.standard.data(forKey: storeKey), let saved = try? JSONDecoder().decode(Saved.self, from: data) {
-            stages = saved.stages
-            own = saved.own.compactMap { id in pool.first { $0.id == id } }
-            missedSay = Set(saved.missedSay ?? [])
-        }
-        shuffle()
+        guard let data = UserDefaults.standard.data(forKey: storeKey),
+              let saved = try? JSONDecoder().decode(Saved.self, from: data) else { return }
+        var mine = saved.mine ?? [:]
+        // Words that were yours before the days came in: checked at once
+        for id in saved.own ?? [] where mine[id] == nil { mine[id] = .init(due: .now, step: 0) }
+        let ids = Set(pool.map(\.id))
+        schedule = FlashcardSchedule(stages: saved.stages.filter { ids.contains($0.key) && mine[$0.key] == nil }, own: mine.filter { ids.contains($0.key) })
     }
 
     private func save() {
-        let saved = Saved(stages: stages, own: own.map(\.id), missedSay: Array(missedSay))
+        let saved = Saved(stages: schedule.stages, own: nil, mine: schedule.own)
         if let data = try? JSONEncoder().encode(saved) { UserDefaults.standard.set(data, forKey: storeKey) }
     }
 }

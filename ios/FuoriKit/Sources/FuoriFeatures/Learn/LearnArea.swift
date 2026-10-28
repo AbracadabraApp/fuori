@@ -67,7 +67,7 @@ struct LearnArea: View {
     private var magda: Character? { model.content?.characters.values.first { $0.tutor } }
 
     private var flashcardsCard: some View {
-        GlassCard(title: "Flashcards", line: "Five words at a time, with pictures.", symbol: "rectangle.on.rectangle.angled.fill", tint: Tokens.Colors.flashcards, ink: .white)
+        GlassCard(title: "Flashcards", line: "Words with pictures, to say out loud.", symbol: "rectangle.on.rectangle.angled.fill", tint: Tokens.Colors.flashcards, ink: .white)
     }
 
     /// The deck (docs/flashcards.md), made when Learn opens, from the

@@ -16,24 +16,30 @@ Each card says what kind of image it gets: **object** (one simple thing on plain
 
 Every noun is shown, spoken and asked for with its article: *il banco*, *l'albicocca*, *el agua*, *la tarde*. The article carries the gender, so it's learned with the word from the start, and two words give Whisper more to hear than one. Saying the noun without its article still counts at stage 1; at stage 3 the article is part of the answer. Lists keep `article` and `word` separate so the app can join them (*l'* with no space). Exceptions: *mijo* is a term of address, shown bare; *el/la joven* is shown as *la joven* to match its picture.
 
-## Three stages, easiest first (Josh, 2026-10-27: a and b combined; was four, agreed 2026-10-21)
+## Three stages, each passed only by saying the word (Josh, 2026-10-28; three stages since 2026-10-27, four before)
 
-| Stage | The card shows | You | Can it be wrong? |
+| Stage | The card shows | You | Moves on when |
 |---|---|---|---|
-| 1 · Meet it (was a + b) | Picture + the word in the language | Tap: the English appears and the word is said. Then say it once yourself on the mic | No: judged leniently, a miss is a retry |
-| 2 · Recall it (was c) | Picture + the English | Recall the word; tap to see it, played in a native voice | No (you answer in your head) |
-| 3 · Say it (was d) | Picture only, with the mic | Say the word | **Yes**: the only real test. A miss keeps the card at 3 for another round |
+| 1 · Meet it | Picture + the word in the language, **no mic** | Tap: the English appears, the word is said, then the mic opens by itself | You say the word (article not needed). A miss: the word again, the mic again |
+| 2 · Recall it | Picture + the English, and the mic | Say the word. Tapping the card shows it and plays it, and counts as a miss | You say the word (article not needed) |
+| 3 · Say it | Picture only, and the mic | Say the word with its article | You say it right: the word is yours. A miss shows and plays the answer |
 
-Why (Claude, agreed by Josh): reading a word you can see aloud (the old b) was the weakest step; folded into the first meeting, you hear it said first, then say it once, so speaking starts on the first card and the deck has one judged mic stage.
+Why (Josh, 2026-10-28): "if it's there it should be required". Until then stage 2 moved on with a tap and checked nothing, so after saying a word once a card reached the test, and stage 3 cards looked greyed out (iOS dims a disabled button); now no card is dimmed: taps where there's nothing to do are simply ignored.
 
-**The mic (Josh, 2026-10-27):** shown from the start at stages 1 and 3; one tap, and a short silence after the word (1.2 s) checks it, as in the game; a second tap checks at once; nothing said in 6 s closes it. The mic stages check what Whisper heard against the one word on the card (the app knows the answer, so no phrase lists): ignore the article and accents, accept close spellings. Whisper is weakest on a lone word; if that's a problem, ask for a short phrase (*al banco*).
+**The mic:** one tap (stage 1: by itself after the word); a short silence after the word (1.2 s) checks it, as in the game; a second tap checks at once; nothing said in 5 s closes it, and whatever it hears it never stays open more than 8 s (a noisy room once kept it listening). It checks what Whisper heard against the one word on the card (the app knows the answer, so no phrase lists): accents ignored, close spellings accepted. Whisper is weakest on a lone word; if that's a problem, ask for a short phrase (*al banco*).
 
-## The deck
+## The feed (Josh, 2026-10-28: "think of it like an instagram feed"; "endless with frequency"; Anki-style, Claude's recommendation)
 
-- ~~5 cards in play~~ (2026-10-21; replaced 2026-10-27 by the weighted shuffle below).
-- **All the words in one weighted shuffle** (Josh, 2026-10-27): every card is in the scrolling list, each at its own stage; the further a word has got, the more it comes up, so words in progress get finished before new ones crowd in (as Anki puts learning cards before new ones). Weights: not met 1, met 2, recalled 3, missed at "say it" 4, yours ¼ (Claude's tweak, agreed: a learned word comes back rarely, as a check; a miss on a check takes it back to stage 3). With 20 new words that's about 1 in 20, 1 in 10, 1 in 7, 1 in 5, and about 1 in 80. Pull down to reshuffle. (Earlier the same day: one card at a time, then five fixed focus words; Josh preferred this.)
-- Spacing comes from the shuffle: other cards come between two looks at the same word.
-- **Passed words go on a list of "own" words** (Josh), and stay in the shuffle at weight ¼ as an occasional check (2026-10-27).
+- **Endless scroll.** More cards load below; scroll past any card, and it comes back later (after 5 cards). Answered cards stay as they were, with a tick or a "comes back" mark.
+- **Spacing, not dice** (`FlashcardSchedule.swift`), as Anki's learning steps: after passing stage 1 a word comes back 3 cards later, after stage 2 6 cards later, after a miss 2 cards later; never closer than 4 cards apart.
+- **Five words in progress at a time**; a new word comes in when there's room (as Anki's new-cards limit), so words in progress get finished first.
+- **Words that are yours** leave the feed and come back as a stage-3 check after 1 day, then 3, 7, 16, 40, 90 (each pass a step further; a miss takes the word back to stage 3). They're listed under "Your words" in the toolbar.
+- **When everything is done**, the feed shows words that are yours early, as extra practice, rather than ending.
+- Gaps between cards live in memory for the session; stages and the days are saved on the phone, per country.
+- Earlier (2026-10-27, replaced): a weighted shuffle of all 20 (not met 1, met 2, recalled 3, missed 4, yours ¼); each card appeared once, so the weights only changed the order and nothing repeated.
+
+### Next (agreed 2026-10-28, not built)
+- **One master deck per country, filtered per learner.** A build script collects the words on everyone's Learn pages (Things and Doing), most frequent first, writes cards (word, article, English, picture idea, base word), makes the pictures once and adds them for everyone. Each learner's new cards come first from their own Learn pages, then the starter words, then the rest. Matching by base word, which the build asks Claude for (nothing language-specific in code). No personal decks (Josh: "a bit fancy").
 
 ## Motion (agreed 2026-10-21)
 
