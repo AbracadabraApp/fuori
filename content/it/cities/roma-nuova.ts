@@ -49,7 +49,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Centro Storico',
       real: true,
       characterId: 'matteo-rinaldi',
-      imagePrompt: 'The fountain steps in Piazza della Rotonda, with the Pantheon\'s columns behind and tourists and pigeons crossing the square on an October weekday. Matteo sits on the edge of the fountain with a sketchbook on his knee, drawing the portico between tours.',
+      imagePrompt: 'The fountain steps in Piazza della Rotonda, the baroque fountain with its small Egyptian obelisk in the middle of the square, with the Pantheon\'s columns and great bronze doors behind and tall palazzi around the piazza, and tourists and pigeons crossing the square on an October weekday. Matteo sits on the edge of the fountain with a sketchbook on his knee, drawing the portico between tours.',
     },
     {
       id: 'gesu-piazza',
@@ -76,7 +76,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Porta Maggiore',
       real: true,
       characterId: 'daniele-sorrentino',
-      imagePrompt: 'A tram stop at Porta Maggiore on a weekday morning: the huge travertine arches of the ancient aqueduct gate behind, a tangle of tram wires and rails crossing in front of it, an orange tram arriving, traffic circling and commuters waiting on the platform. Daniele stands at the edge of the platform, looking down the tracks for the tram.',
+      imagePrompt: 'A tram stop at Porta Maggiore on a weekday morning: the huge travertine arches of the ancient aqueduct gate behind, umbrella pines beyond it, a tangle of tram wires and rails crossing in front of it, an orange tram arriving, traffic circling and commuters waiting on the platform. Daniele stands at the edge of the platform, looking down the tracks for the tram.',
     },
     {
       id: 'tabaccheria-pigneto',
