@@ -12,7 +12,7 @@ export const romaNuova: CityPantry = {
   id: 'roma-nuova',
   name: 'Roma',
   region: 'Lazio',
-  neighbourhoods: ['Testaccio', 'San Lorenzo', 'Garbatella', 'Centro Storico', 'Pinciano', 'Porta Maggiore', 'Pigneto', 'Prati', 'Esquilino'],
+  neighbourhoods: ['Testaccio', 'San Lorenzo', 'Garbatella', 'Centro Storico', 'Pinciano', 'Porta Maggiore', 'Pigneto', 'Prati', 'Esquilino', 'Trastevere', 'Monti'],
 
   places: [
     {
@@ -144,6 +144,16 @@ export const romaNuova: CityPantry = {
       real: true,
       characterId: 'claudio-salumiere',
       imagePrompt: 'The counter of a famous old deli on Via Marmorata in Testaccio: hams and salami hanging from the ceiling, wheels of pecorino romano stacked high, a whole porchetta on the counter being sliced, jars of truffles and olive oil on the shelves, a customer tasting a sliver of cheese.',
+    },
+    // Street food only this city has (Josh, 2026-10-27)
+    {
+      id: 'grattachecca-lungotevere',
+      name: 'Chiosco della grattachecca',
+      kind: 'kiosk',
+      neighbourhood: 'Trastevere',
+      real: false,
+      characterId: 'mirella-grattachecca',
+      imagePrompt: 'An old green kiosk on the Lungotevere by the Tiber in Trastevere on a hot evening: a big block of ice being shaved by hand with a metal scraper into a glass, bottles of coloured syrups (tamarind, mint, lemon, cherry) on the counter, fresh fruit, people waiting under the plane trees with the river behind.',
     },
   ],
 
@@ -283,6 +293,17 @@ export const romaNuova: CityPantry = {
       personality: ['generous', 'loud', 'loves a tasting'],
       portraitPrompt: 'Pen and ink portrait on white paper of a 52-year-old man with a shaved head, thick forearms and a broad smile, in a white jacket and a burgundy apron, holding out a sliver of pecorino on the tip of a knife, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
       here: 'You work the counter at Volpetti on Via Marmorata, a Testaccio deli since 1973: pecorino romano, guanciale for carbonara, porchetta sliced to order. You always offer a taste before people buy.',
+    },
+    {
+      id: 'mirella-grattachecca',
+      name: 'Mirella',
+      gender: 'f',
+      age: 70,
+      role: 'grattacheccara',
+      placeId: 'grattachecca-lungotevere',
+      personality: ['brisk', 'nostalgic', 'teasing'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a 70-year-old Roman woman with short white hair, gold glasses and a sleeveless floral dress, shaving a block of ice with a metal scraper, minimal watercolor wash in warm Roman ochre and terracotta tones with a touch of mint green, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      here: 'You run a grattachecca kiosk by the Tiber, as your family has for decades: you shave ice by hand from a block into a glass and pour syrup over it, tamarind, mint, lemon or amarena, with fresh fruit; Romans come on hot evenings and argue about the best flavour.',
     },
   ],
 

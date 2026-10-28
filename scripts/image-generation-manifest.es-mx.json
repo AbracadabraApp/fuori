@@ -665,13 +665,23 @@
       "timestamp": "2026-10-27T23:58:39.328Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/marisol-tumbagones.jpg",
       "type": "portrait"
+    },
+    "ciudad-de-mexico/tamales-oaxaquenos-bici": {
+      "timestamp": "2026-10-28T00:20:15.169Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tamales-oaxaquenos-bici.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/fidel-tamalero": {
+      "timestamp": "2026-10-28T00:20:38.625Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/fidel-tamalero.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 133,
-    "completed": 133,
+    "total": 135,
+    "completed": 135,
     "failed": 0,
-    "lastRun": "2026-10-27T23:58:42.333Z"
+    "lastRun": "2026-10-28T00:20:41.636Z"
   }
 }

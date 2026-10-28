@@ -134,6 +134,16 @@ export const ciudadDeMexico: CityPantry = {
       characterId: 'tono-churrero',
       imagePrompt: 'Churrería El Moro on Eje Central, Centro Histórico, Ciudad de México. Blue and white tiles, a long counter, a churrero pulling a long coil of churro dough out of the hot oil and cutting it, cups of thick hot chocolate and plates of churros dusted with cinnamon sugar on small tables, late at night with the street outside lit up.',
     },
+    // Street food only this city has (Josh, 2026-10-27)
+    {
+      id: 'tamales-oaxaquenos-bici',
+      name: 'La bici de los tamales oaxaqueños',
+      kind: 'street-food',
+      neighbourhood: 'Coyoacán',
+      real: false,
+      characterId: 'fidel-tamalero',
+      imagePrompt: "A tamales vendor's tricycle on a street corner in Coyoacán, Ciudad de México, at dusk: a big steaming pot of tamales, a pot of atole, bolillos for guajolotas, a loudspeaker on a pole, neighbours in sweaters gathering around under the street lamps.",
+    },
   ],
   characters: [
     {
@@ -266,6 +276,17 @@ export const ciudadDeMexico: CityPantry = {
       personality: ['night owl', 'quick-witted', 'proud of the place'],
       portraitPrompt: 'Gouache portrait of a man of 44 with a trimmed moustache, a white cap and a white jacket, holding a long churro coil on a wooden stick, who fries churros at Churrería El Moro on Eje Central in Ciudad de México. Include the fryer and the blue and white tiles. Bold, saturated colour: jacaranda purple, ochre and deep green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: 'You fry churros at El Moro on Eje Central, open day and night since 1935; you ask everyone how they want their hot chocolate, light (mexicano) or thick (español), and how many churros.',
+    },
+    {
+      id: 'fidel-tamalero',
+      name: 'Fidel',
+      gender: 'm',
+      age: 50,
+      role: 'tamalero',
+      placeId: 'tamales-oaxaquenos-bici',
+      personality: ['patient', 'early riser', 'dry humour'],
+      portraitPrompt: 'Gouache portrait of a man of 50 with a cap, a thick sweater and a moustache, lifting the lid of a steaming tamal pot on his tricycle, a loudspeaker on a pole behind him, who sells tamales from a tricycle in Coyoacán in Ciudad de México. Bold, saturated colour: jacaranda purple, ochre and deep green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: 'You ride your tricycle through the neighbourhood morning and night with the recorded call every Chilango knows, "ricos tamales oaxaqueños"; you sell tamales verdes, rojos, de rajas and de dulce, atole to drink, and the guajolota, a tamal inside a bolillo.',
     },
   ],
   food: [

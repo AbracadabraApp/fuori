@@ -22,6 +22,7 @@ export const showcase: Record<string, string[]> = {
   // original, to compare. No language school: schools move into Learn.
   'roma-nuova': [
     'bar-mattina-nuova',
+    'grattachecca-lungotevere', // street food only this city has (Josh, 2026-10-27)
     'bar-monti-corner', // Sandro, back from roma.ts (Josh, 2026-10-27)
     'volpetti-testaccio', // a deli for the city's own food (Josh, 2026-10-27)
     'forno-trastevere', // Dario, back from roma.ts, in place of Pizzeria Da Gigi
@@ -94,6 +95,7 @@ export const showcase: Record<string, string[]> = {
   ],
   napoli: [
     'bar-nilo',
+    'pizza-a-portafoglio-tribunali', // street food only this city has (Josh, 2026-10-27)
     'pasticceria-poppella', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
     'mozzarella-spaccanapoli', // a deli for the city's own food (Josh, 2026-10-27)
     'mercato-pignasecca',
@@ -123,6 +125,7 @@ export const showcase: Record<string, string[]> = {
   ],
   palermo: [
     'bar-alba',
+    'pani-ca-meusa-ballaro', // street food only this city has (Josh, 2026-10-27)
     'mercato-ballaro',
     'trattoria-ai-cascinari',
     'caffe-del-kassaro',

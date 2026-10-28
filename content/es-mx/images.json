@@ -397,6 +397,11 @@
       "src": "6a63ad9c235acc1c",
       "bytes": 431536
     },
+    "places/tamales-oaxaquenos-bici": {
+      "key": "es-mx/places/tamales-oaxaquenos-bici.bb80eef418.webp",
+      "src": "9416407f3ff1f733",
+      "bytes": 242906
+    },
     "places/tejuino-san-juan-de-dios": {
       "key": "es-mx/places/tejuino-san-juan-de-dios.2d7de122f0.webp",
       "src": "867a77f66dabf348",
@@ -576,6 +581,11 @@
       "key": "es-mx/portraits/emiliano-los-amantes.bd4b7d7152.webp",
       "src": "61711566a1c215aa",
       "bytes": 256198
+    },
+    "portraits/fidel-tamalero": {
+      "key": "es-mx/portraits/fidel-tamalero.a988ff443a.webp",
+      "src": "a6abdde1ceb81a41",
+      "bytes": 338340
     },
     "portraits/gaspar-panadero": {
       "key": "es-mx/portraits/gaspar-panadero.dcda8eb984.webp",

@@ -374,6 +374,16 @@ export const napoli: CityPantry = {
       characterId: 'rosaria-mozzarella',
       imagePrompt: 'Soft pastel sketch on white paper of a small mozzarella shop on a narrow Spaccanapoli street, white balls of mozzarella di bufala floating in tubs of milky water, braided treccia and smoked provola on the counter, a woman lifting a mozzarella out with a ladle for a customer, warm cream and blue tones.',
     },
+    // Street food only this city has (Josh, 2026-10-27)
+    {
+      id: 'pizza-a-portafoglio-tribunali',
+      name: 'Pizza a portafoglio, Via dei Tribunali',
+      kind: 'street-food',
+      neighbourhood: 'Centro Storico',
+      real: false,
+      characterId: 'gennaro-pizzaiolo',
+      imagePrompt: "Soft pastel sketch on white paper of a pizzeria's street window on Via dei Tribunali in Naples: small pizzas coming out of the wood-fired oven, folded in four and wrapped in paper for people eating as they walk, a queue on the narrow street under hanging laundry, warm red and cream tones.",
+    },
   ],
   characters: [
     {
@@ -747,6 +757,17 @@ export const napoli: CityPantry = {
       personality: ['warm', 'strict about freshness', 'funny'],
       portraitPrompt: 'Pen and ink portrait on white paper of a 48-year-old woman with curly dark hair tied up, gold hoop earrings and a white apron, holding a ball of mozzarella in a ladle, minimal watercolor wash in cream and soft blue tones, detailed linework.',
       here: 'You sell mozzarella di bufala, made this morning and brought in from Caserta, plus treccia and smoked provola; you tell people to eat it today, never from the fridge.',
+    },
+    {
+      id: 'gennaro-pizzaiolo',
+      name: 'Gennaro',
+      gender: 'm',
+      age: 29,
+      role: 'pizzaiolo',
+      placeId: 'pizza-a-portafoglio-tribunali',
+      personality: ['fast', 'cheeky', 'proud of Naples'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a 29-year-old Neapolitan man with short curly hair and flour on his forearms, a white T-shirt, folding a small pizza in four with paper around it, cheeky grin, minimal watercolor wash in tomato red and cream, detailed linework.',
+      here: 'You make pizza a portafoglio at the street window of a pizzeria on Via dei Tribunali: a small margherita or marinara folded in four like a wallet and wrapped in paper, eaten walking, for a couple of euros. You also sell the cuoppo, a paper cone of fried things.',
     },
   ],
   food: [

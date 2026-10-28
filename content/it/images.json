@@ -1717,6 +1717,11 @@
       "src": "906db3d4961ef703",
       "bytes": 223492
     },
+    "places/grattachecca-lungotevere": {
+      "key": "it/places/grattachecca-lungotevere.e70b3729dd.webp",
+      "src": "acbe564d83dd2bd7",
+      "bytes": 234398
+    },
     "places/guido-gobino": {
       "key": "it/places/guido-gobino.e29a498afe.webp",
       "src": "3c898a00f63286e8",
@@ -2312,6 +2317,11 @@
       "src": "b38cf076cb4822e4",
       "bytes": 200402
     },
+    "places/pani-ca-meusa-ballaro": {
+      "key": "it/places/pani-ca-meusa-ballaro.03fadd135e.webp",
+      "src": "d67c6bcefcf07c1b",
+      "bytes": 294674
+    },
     "places/panificio-atti": {
       "key": "it/places/panificio-atti.add3cf7c2e.webp",
       "src": "198cf5b2d41a1bbb",
@@ -2771,6 +2781,11 @@
       "key": "it/places/pinacoteca-brera.d5f4bf76c1.webp",
       "src": "4bcf1aec0153a7b4",
       "bytes": 213592
+    },
+    "places/pizza-a-portafoglio-tribunali": {
+      "key": "it/places/pizza-a-portafoglio-tribunali.eca007285f.webp",
+      "src": "aa60a819fe876da1",
+      "bytes": 297430
     },
     "places/pizza-taglio-san-lorenzo": {
       "key": "it/places/pizza-taglio-san-lorenzo.ed5281ca5f.webp",
@@ -4927,6 +4942,11 @@
       "src": "8eb9e1dcd5a161af",
       "bytes": 307782
     },
+    "portraits/gennaro-pizzaiolo": {
+      "key": "it/portraits/gennaro-pizzaiolo.1bb455170d.webp",
+      "src": "d547bc0839a643dd",
+      "bytes": 244270
+    },
     "portraits/giacomo-giardiniere": {
       "key": "it/portraits/giacomo-giardiniere.f54d68cf7c.webp",
       "src": "f5c8eceeedf63bea",
@@ -5902,6 +5922,11 @@
       "src": "90dbdcac885f9fc3",
       "bytes": 232602
     },
+    "portraits/mirella-grattachecca": {
+      "key": "it/portraits/mirella-grattachecca.1c7c3a2437.webp",
+      "src": "b21ef6d5abc9703c",
+      "bytes": 241618
+    },
     "portraits/mohamed-hassan": {
       "key": "it/portraits/mohamed-hassan.85cb7a19da.webp",
       "src": "48536770eca1c89d",
@@ -6806,6 +6831,11 @@
       "key": "it/portraits/tonino-pesce.534e6b3065.webp",
       "src": "744088a5fc7ae8f1",
       "bytes": 136340
+    },
+    "portraits/toto-meusaro": {
+      "key": "it/portraits/toto-meusaro.bd99b85544.webp",
+      "src": "2051410d6d2bfad6",
+      "bytes": 255694
     },
     "portraits/valentina-enotecaia": {
       "key": "it/portraits/valentina-enotecaia.29a4273b93.webp",

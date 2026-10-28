@@ -6845,13 +6845,43 @@
       "timestamp": "2026-10-28T00:05:32.603Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/andrea-casaro.jpg",
       "type": "portrait"
+    },
+    "napoli/pizza-a-portafoglio-tribunali": {
+      "timestamp": "2026-10-28T00:18:12.943Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/pizza-a-portafoglio-tribunali.jpg",
+      "type": "place"
+    },
+    "napoli/gennaro-pizzaiolo": {
+      "timestamp": "2026-10-28T00:18:29.165Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/gennaro-pizzaiolo.jpg",
+      "type": "portrait"
+    },
+    "palermo/pani-ca-meusa-ballaro": {
+      "timestamp": "2026-10-28T00:18:51.165Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/pani-ca-meusa-ballaro.jpg",
+      "type": "place"
+    },
+    "palermo/toto-meusaro": {
+      "timestamp": "2026-10-28T00:19:07.305Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/toto-meusaro.jpg",
+      "type": "portrait"
+    },
+    "roma-nuova/grattachecca-lungotevere": {
+      "timestamp": "2026-10-28T00:19:23.456Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/grattachecca-lungotevere.jpg",
+      "type": "place"
+    },
+    "roma-nuova/mirella-grattachecca": {
+      "timestamp": "2026-10-28T00:19:44.718Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/mirella-grattachecca.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 1369,
-    "completed": 1369,
+    "total": 1375,
+    "completed": 1375,
     "failed": 0,
-    "lastRun": "2026-10-28T00:06:42.035Z"
+    "lastRun": "2026-10-28T00:19:47.734Z"
   }
 }

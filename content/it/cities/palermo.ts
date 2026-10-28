@@ -338,6 +338,16 @@ export const palermo: CityPantry = {
       characterId: 'claudia-ferrante',
       imagePrompt: 'Soft pastel sketch on white paper of a Gothic-Catalan palace housing art museum, courtyard with arches, medieval paintings visible through windows, art students sketching, soft stone colors and gallery whites, cultural treasure',
     },
+    // Street food only this city has (Josh, 2026-10-27)
+    {
+      id: 'pani-ca-meusa-ballaro',
+      name: "Pani ca' meusa, Ballarò",
+      kind: 'street-food',
+      neighbourhood: 'Ballarò',
+      real: false,
+      characterId: 'toto-meusaro',
+      imagePrompt: 'Soft pastel sketch on white paper of a street-food stall in the Ballarò market in Palermo: a big round pan of spleen simmering in lard, soft sesame rolls (vastedde) piled beside it, grated caciocavallo and ricotta, a vendor filling a roll with a fork while shoppers wait among crates of lemons and striped awnings, loud and busy, warm golden market light.',
+    },
   ],
   characters: [
     {
@@ -679,6 +689,17 @@ export const palermo: CityPantry = {
       placeId: 'palazzo-abatellis',
       personality: ['local', 'preservation-focused'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young curator with elegant style, intelligent eyes, professional attire, surrounded by art, minimal watercolor wash in gallery tones, refined details. The subject is a woman.',
+    },
+    {
+      id: 'toto-meusaro',
+      name: 'Totò',
+      gender: 'm',
+      age: 63,
+      role: 'meusaro',
+      placeId: 'pani-ca-meusa-ballaro',
+      personality: ['loud', 'theatrical', 'proud of Palermo'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a 63-year-old Sicilian man with a weathered face, a white cap and a white apron, holding a sesame roll stuffed with spleen and ricotta out towards the viewer with a big laugh, minimal watercolor wash in warm golden and lemon tones, detailed linework.',
+      here: 'You sell pani ca\' meusa at Ballarò market from a pan of spleen simmering in lard, the way your father did: you shout to the crowd and ask everyone "schietta o maritata?", plain with lemon, or "married" with ricotta and caciocavallo. You also do panelle.',
     },
   ],
   food: [
