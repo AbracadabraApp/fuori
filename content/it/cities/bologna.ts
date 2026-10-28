@@ -546,6 +546,7 @@ export const bologna: CityPantry = {
       placeId: 'salumeria-simoni',
       personality: ['proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of solid man in striped apron, holding mortadella slicer, confident craftsman expression, mustache, minimal pink and gold watercolor for meats, strong bold strokes, capturing master salumiere',
+      here: "You slice mortadella by hand in the Quadrilatero, the old market streets off Piazza Maggiore; you sell Parmigiano Reggiano by its age (24 or 36 months) and fresh tortellini, and you'll tell anyone how mortadella should be cut.",
     },
     {
       id: 'carla-gentile',

@@ -135,6 +135,16 @@ export const romaNuova: CityPantry = {
       characterId: 'giorgia-ferri',
       imagePrompt: 'The wide stone steps in front of the main building of La Sapienza university in Rome, a 1930s travertine facade with no lettering on it and the statue of Minerva, students sitting on the steps with books, slices of pizza and coffee on a sunny October afternoon. Giorgia sits on the steps with a canvas tote full of books and a slice of pizza.',
     },
+    // A deli for this city's own food (Josh, 2026-10-27: "make the delis")
+    {
+      id: 'volpetti-testaccio',
+      name: 'Volpetti',
+      kind: 'deli',
+      neighbourhood: 'Testaccio',
+      real: true,
+      characterId: 'claudio-salumiere',
+      imagePrompt: 'The counter of a famous old deli on Via Marmorata in Testaccio: hams and salami hanging from the ceiling, wheels of pecorino romano stacked high, a whole porchetta on the counter being sliced, jars of truffles and olive oil on the shelves, a customer tasting a sliver of cheese.',
+    },
   ],
 
   characters: [
@@ -262,6 +272,17 @@ export const romaNuova: CityPantry = {
       placeId: 'forno-trastevere',
       personality: ['early riser', 'shy', 'proud of his pizza bianca'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young baker in his thirties with curly dark hair dusted with flour, short beard, white t-shirt and apron, holding a long tray of pizza bianca, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
+    },
+    {
+      id: 'claudio-salumiere',
+      name: 'Claudio Marini',
+      gender: 'm',
+      age: 52,
+      role: 'salumiere',
+      placeId: 'volpetti-testaccio',
+      personality: ['generous', 'loud', 'loves a tasting'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a 52-year-old man with a shaved head, thick forearms and a broad smile, in a white jacket and a burgundy apron, holding out a sliver of pecorino on the tip of a knife, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      here: 'You work the counter at Volpetti on Via Marmorata, a Testaccio deli since 1973: pecorino romano, guanciale for carbonara, porchetta sliced to order. You always offer a taste before people buy.',
     },
   ],
 

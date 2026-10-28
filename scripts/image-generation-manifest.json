@@ -6805,13 +6805,53 @@
       "timestamp": "2026-10-27T19:37:16.862Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/matteo-rinaldi.jpg",
       "type": "portrait"
+    },
+    "napoli/mozzarella-spaccanapoli": {
+      "timestamp": "2026-10-28T00:03:02.180Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/mozzarella-spaccanapoli.jpg",
+      "type": "place"
+    },
+    "napoli/rosaria-mozzarella": {
+      "timestamp": "2026-10-28T00:03:24.260Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/rosaria-mozzarella.jpg",
+      "type": "portrait"
+    },
+    "roma-nuova/volpetti-testaccio": {
+      "timestamp": "2026-10-28T00:03:42.126Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/volpetti-testaccio.jpg",
+      "type": "place"
+    },
+    "roma-nuova/claudio-salumiere": {
+      "timestamp": "2026-10-28T00:04:04.933Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/claudio-salumiere.jpg",
+      "type": "portrait"
+    },
+    "siena/pizzicheria-de-miccoli": {
+      "timestamp": "2026-10-28T00:06:13.674Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/pizzicheria-de-miccoli.jpg",
+      "type": "place"
+    },
+    "siena/duccio-pizzicagnolo": {
+      "timestamp": "2026-10-28T00:04:45.970Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/duccio-pizzicagnolo.jpg",
+      "type": "portrait"
+    },
+    "siracusa/caseificio-borderi": {
+      "timestamp": "2026-10-28T00:06:39.024Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/caseificio-borderi.jpg",
+      "type": "place"
+    },
+    "siracusa/andrea-casaro": {
+      "timestamp": "2026-10-28T00:05:32.603Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/andrea-casaro.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 1361,
-    "completed": 1361,
+    "total": 1369,
+    "completed": 1369,
     "failed": 0,
-    "lastRun": "2026-10-27T19:37:19.879Z"
+    "lastRun": "2026-10-28T00:06:42.035Z"
   }
 }

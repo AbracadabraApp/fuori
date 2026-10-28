@@ -23,6 +23,7 @@ export const showcase: Record<string, string[]> = {
   'roma-nuova': [
     'bar-mattina-nuova',
     'bar-monti-corner', // Sandro, back from roma.ts (Josh, 2026-10-27)
+    'volpetti-testaccio', // a deli for the city's own food (Josh, 2026-10-27)
     'forno-trastevere', // Dario, back from roma.ts, in place of Pizzeria Da Gigi
     'sapienza-scalinata', // Giorgia, moved from Da Gigi
     'trattoria-garbatella',
@@ -64,6 +65,7 @@ export const showcase: Record<string, string[]> = {
   siena: [
     'caffe-fiorella',
     'pasticceria-bini', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
+    'pizzicheria-de-miccoli', // a deli for the city's own food (Josh, 2026-10-27)
     'mercato-della-terra',
     'osteria-le-logge',
     'bar-il-palio',
@@ -93,12 +95,12 @@ export const showcase: Record<string, string[]> = {
   napoli: [
     'bar-nilo',
     'pasticceria-poppella', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
+    'mozzarella-spaccanapoli', // a deli for the city's own food (Josh, 2026-10-27)
     'mercato-pignasecca',
     'pizzeria-sorbillo',
     'caffe-gambrinus',
     'gay-odin',
     'piazza-bellini',
-    'salumeria-upnea',
     'enoteca-belledonne',
     'libreria-dante-descartes',
     'spaccanapoli-street', // M2: bench character Nonna Assunta (Via Spaccanapoli) (abitante del quartiere)
@@ -224,6 +226,7 @@ export const showcase: Record<string, string[]> = {
   ],
   siracusa: [
     'bar-dolce-vita',
+    'caseificio-borderi', // a deli for the city's own food (Josh, 2026-10-27)
     'mercato-ortigia',
     'ristorante-dioniso',
     'caffe-archimede',

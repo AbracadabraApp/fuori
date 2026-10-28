@@ -287,6 +287,16 @@ export const siena: CityPantry = {
       characterId: 'franco-stazione',
       imagePrompt: 'Soft pastel sketch on white paper of a regional train station, platform with travelers, ticket office, departure boards, connection to Florence and other cities, functional architecture, transit blues and greys, gateway atmosphere',
     },
+    // A deli for this city's own food (Josh, 2026-10-27: "make the delis")
+    {
+      id: 'pizzicheria-de-miccoli',
+      name: "Pizzicheria de' Miccoli",
+      kind: 'deli',
+      neighbourhood: 'Terzo di Città',
+      real: true,
+      characterId: 'duccio-pizzicagnolo',
+      imagePrompt: "Soft pastel sketch on white paper of a narrow Sienese deli on Via di Città with a stuffed wild boar's head over the door, salami of cinta senese and hams hanging inside, a porchetta on the counter and panini being filled for people in the street, warm terracotta and stone tones. The only lettering is the shop sign, which reads \"Pizzicheria de' Miccoli\".",
+    },
   ],
   characters: [
     {
@@ -590,6 +600,17 @@ export const siena: CityPantry = {
       placeId: 'stazione-siena',
       personality: ['efficient', 'helpful'],
       portraitPrompt: 'Pen and ink portrait on white paper of a ticket office clerk in his late forties, navy railway uniform, friendly professional expression, minimal watercolor wash in transit blues, reliable and approachable. The subject is a man.',
+    },
+    {
+      id: 'duccio-pizzicagnolo',
+      name: 'Duccio Ferri',
+      gender: 'm',
+      age: 40,
+      role: 'pizzicagnolo',
+      placeId: 'pizzicheria-de-miccoli',
+      personality: ['joking', 'proud of Siena', 'quick with a knife'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a 40-year-old man with a dark beard and a flat cap, sleeves rolled up, holding a panino stuffed with porchetta, minimal watercolor wash in warm terracotta and Siena earth tones, detailed linework.',
+      here: "You work at the pizzicheria on Via di Città with the boar's head over the door: salami of cinta senese, the black-and-white Sienese pig, pecorino, and porchetta panini you fill while people wait in the street.",
     },
   ],
   food: [

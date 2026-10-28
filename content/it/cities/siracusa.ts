@@ -288,6 +288,16 @@ export const siracusa: CityPantry = {
       characterId: 'antonio-macellaio',
       imagePrompt: 'Soft pastel sketch on white paper of traditional butcher shop with hanging salamis, display case of fresh meats, marble counter, sawdust on floor, handwritten price signs, professional knives, red and white tones, traditional and professional',
     },
+    // A deli for this city's own food (Josh, 2026-10-27: "make the delis")
+    {
+      id: 'caseificio-borderi',
+      name: 'Caseificio Borderi',
+      kind: 'deli',
+      neighbourhood: 'Ortigia',
+      real: true,
+      characterId: 'andrea-casaro',
+      imagePrompt: 'Soft pastel sketch on white paper of a cheese shop at the edge of the Ortigia market, a long queue outside, a man behind the counter building a huge panino in front of the customers with ricotta, smoked mozzarella, sun-dried tomatoes and pistachio pesto, crates of lemons and wheels of caciocavallo, bright Sicilian morning light. The only lettering is the shop sign, which reads "Caseificio Borderi".',
+    },
   ],
   characters: [
     {
@@ -589,6 +599,17 @@ export const siracusa: CityPantry = {
       placeId: 'macelleria-tradizionale',
       personality: ['professional', 'third-generation'],
       portraitPrompt: 'Pen and ink portrait on white paper of a butcher with strong hands, white apron, traditional mustache, minimal watercolor wash of honest face and expert eyes, knife skills suggested, proud craftsman, trustworthy, white background',
+    },
+    {
+      id: 'andrea-casaro',
+      name: 'Andrea',
+      gender: 'm',
+      age: 45,
+      role: 'casaro',
+      placeId: 'caseificio-borderi',
+      personality: ['showman', 'generous', 'talks while he works'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a 45-year-old man with curly grey-flecked hair and a big grin, in a white T-shirt and apron, holding up a fat panino with cheese spilling out, minimal watercolor wash in lemon yellow and sea blue, detailed linework.',
+      here: "You make panini to order at your family's cheese shop in the Ortigia market, a caseificio since 1936: you ask what people like, then build the sandwich in front of them with ricotta, smoked mozzarella, caciocavallo and pistachio pesto, and hand out tastes to the queue.",
     },
   ],
   food: [

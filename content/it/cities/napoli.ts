@@ -364,6 +364,16 @@ export const napoli: CityPantry = {
       characterId: 'maestro-ferrigno',
       imagePrompt: 'Soft pastel sketch on white paper of a magical street filled with workshops making presepi (nativity scenes), with miniature figures, lights, and craftsmen at work. Warm Christmas tones year-round, enchanting detail, artisanal wonder.',
     },
+    // Napoli's deli is a mozzarella shop (Josh, 2026-10-27: "make the delis"; Salumeria Upnea, really a bistro, is no longer shown)
+    {
+      id: 'mozzarella-spaccanapoli',
+      name: 'Latteria Esposito',
+      kind: 'mozzarella-shop',
+      neighbourhood: 'Spaccanapoli',
+      real: false,
+      characterId: 'rosaria-mozzarella',
+      imagePrompt: 'Soft pastel sketch on white paper of a small mozzarella shop on a narrow Spaccanapoli street, white balls of mozzarella di bufala floating in tubs of milky water, braided treccia and smoked provola on the counter, a woman lifting a mozzarella out with a ladle for a customer, warm cream and blue tones.',
+    },
   ],
   characters: [
     {
@@ -726,6 +736,17 @@ export const napoli: CityPantry = {
       placeId: 'presepi-san-gregorio',
       personality: ['masterful', 'keeper of tradition'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly master craftsman with magnifying glasses, wise eyes, and delicate hands holding tiny figures. Minimal watercolor wash in warm Christmas tones. Intricate, reverent linework. The subject is a man.',
+    },
+    {
+      id: 'rosaria-mozzarella',
+      name: 'Rosaria',
+      gender: 'f',
+      age: 48,
+      role: 'lattaia',
+      placeId: 'mozzarella-spaccanapoli',
+      personality: ['warm', 'strict about freshness', 'funny'],
+      portraitPrompt: 'Pen and ink portrait on white paper of a 48-year-old woman with curly dark hair tied up, gold hoop earrings and a white apron, holding a ball of mozzarella in a ladle, minimal watercolor wash in cream and soft blue tones, detailed linework.',
+      here: 'You sell mozzarella di bufala, made this morning and brought in from Caserta, plus treccia and smoked provola; you tell people to eat it today, never from the fridge.',
     },
   ],
   food: [

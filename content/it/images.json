@@ -1042,6 +1042,11 @@
       "src": "ceb2bebc6330ae17",
       "bytes": 228488
     },
+    "places/caseificio-borderi": {
+      "key": "it/places/caseificio-borderi.adadde0782.webp",
+      "src": "aa35b3def413f163",
+      "bytes": 226902
+    },
     "places/castel-ovo": {
       "key": "it/places/castel-ovo.a8163152f7.webp",
       "src": "e5e9c6635d889145",
@@ -2127,6 +2132,11 @@
       "src": "a15b3f83de2a274c",
       "bytes": 218422
     },
+    "places/mozzarella-spaccanapoli": {
+      "key": "it/places/mozzarella-spaccanapoli.44e797d29c.webp",
+      "src": "ae28f1c649283e0d",
+      "bytes": 265250
+    },
     "places/museo-automobile": {
       "key": "it/places/museo-automobile.5998810c03.webp",
       "src": "e69f3ef6590e9f8e",
@@ -2811,6 +2821,11 @@
       "key": "it/places/pizzeria-vesuvio.9ec645bf1d.webp",
       "src": "44cf638795adac6b",
       "bytes": 249310
+    },
+    "places/pizzicheria-de-miccoli": {
+      "key": "it/places/pizzicheria-de-miccoli.1588bb7da2.webp",
+      "src": "015fb333a96becfe",
+      "bytes": 176478
     },
     "places/polenteria-valtellina": {
       "key": "it/places/polenteria-valtellina.b23136e1d7.webp",
@@ -3537,6 +3552,11 @@
       "src": "19a6282d5d90faaa",
       "bytes": 283404
     },
+    "places/volpetti-testaccio": {
+      "key": "it/places/volpetti-testaccio.6f7e625594.webp",
+      "src": "d257a2b47151727b",
+      "bytes": 229506
+    },
     "places/volume": {
       "key": "it/places/volume.1230e2f9d5.webp",
       "src": "082149892be26635",
@@ -3721,6 +3741,11 @@
       "key": "it/portraits/andrea-carli.60942759cc.webp",
       "src": "fa82b9e1ab9e7a4f",
       "bytes": 340234
+    },
+    "portraits/andrea-casaro": {
+      "key": "it/portraits/andrea-casaro.8f0f71b75a.webp",
+      "src": "71bd618ca5934bd3",
+      "bytes": 259596
     },
     "portraits/andrea-ceramista": {
       "key": "it/portraits/andrea-ceramista.04513f65af.webp",
@@ -4247,6 +4272,11 @@
       "src": "8a2cedf48702f231",
       "bytes": 284222
     },
+    "portraits/claudio-salumiere": {
+      "key": "it/portraits/claudio-salumiere.641e498cb6.webp",
+      "src": "0589214af2d298e4",
+      "bytes": 219300
+    },
     "portraits/claudio-vinaio": {
       "key": "it/portraits/claudio-vinaio.ab2192810d.webp",
       "src": "d91ea614ac68404a",
@@ -4526,6 +4556,11 @@
       "key": "it/portraits/dottoressa-valente.f59eb5071b.webp",
       "src": "d58cd778a6961031",
       "bytes": 190812
+    },
+    "portraits/duccio-pizzicagnolo": {
+      "key": "it/portraits/duccio-pizzicagnolo.1ac5dc512e.webp",
+      "src": "dc45140bd94d1179",
+      "bytes": 256862
     },
     "portraits/elena-bianchi": {
       "key": "it/portraits/elena-bianchi.51cf296cb8.webp",
@@ -6336,6 +6371,11 @@
       "key": "it/portraits/rosa-quispe.953c346a54.webp",
       "src": "8f2828b693303acd",
       "bytes": 281408
+    },
+    "portraits/rosaria-mozzarella": {
+      "key": "it/portraits/rosaria-mozzarella.c532302cae.webp",
+      "src": "ab9f2b900d36a0c0",
+      "bytes": 212882
     },
     "portraits/salvatore-bar": {
       "key": "it/portraits/salvatore-bar.df5154f2c7.webp",
