@@ -525,7 +525,7 @@ export const napoli: CityPantry = {
       role: 'fruttivendolo',
       placeId: 'mercato-pignasecca',
       personality: ['loud', 'generous'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a weathered man with expressive face, work-worn hands, and booming presence. Minimal watercolor wash in earthy vegetable greens and browns. Bold, energetic linework.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a Neapolitan fruit and vegetable seller in his fifties, a big warm grin, mid-shout as he calls out to customers, short grey curly hair, stubble, a canvas apron over a checked shirt, holding up a bunch of lemons with crates of fruit behind him. Minimal watercolor wash in lemon yellow, tomato red and leaf green. Bold, energetic linework. The subject is a man.',
     },
     {
       id: 'raffaele-bruno',
