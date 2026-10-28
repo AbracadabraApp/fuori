@@ -40,7 +40,7 @@ export const siena: CityPantry = {
       neighbourhood: 'Terzo di Camollia',
       real: true,
       characterId: 'lucia-bini',
-      imagePrompt: 'Soft pastel sketch on white paper of a traditional pasticceria with glass cases displaying ricciarelli and panforte, vintage tile floor, warm peachy-pink walls, morning sunlight streaming through windows, powdered sugar dusting the air, inviting and sweet.',
+      imagePrompt: 'a small old pastry shop in a narrow medieval street of the Terzo di Città, its window and counter stacked with Siena sweets: round panforte in paper, ricciarelli dusted with icing sugar, cavallucci and cantucci, a woman behind the counter wrapping a panforte for a customer.',
     },
     {
       id: 'forno-dei-galli',
@@ -85,7 +85,7 @@ export const siena: CityPantry = {
       neighbourhood: 'Terzo di Città',
       real: true,
       characterId: 'chiara-castellani',
-      imagePrompt: 'Soft pastel sketch on white paper of an elegant osteria interior with vaulted brick ceilings, white tablecloths, wine bottles lining stone walls, soft candlelight, warm sienna and cream colors, sophisticated yet welcoming atmosphere.',
+      imagePrompt: 'an osteria in what was an old grocery shop on a narrow brick street just below the Campo: the old wooden shop counter and glass-fronted cabinets full of wine bottles inside, tables set with white cloths, a few tables outside on the stone paving.',
     },
     {
       id: 'trattoria-papei',
@@ -139,7 +139,7 @@ export const siena: CityPantry = {
       neighbourhood: 'Piazza del Campo',
       real: true,
       characterId: 'leonardo-conti',
-      imagePrompt: 'Soft pastel sketch on white paper of the famous shell-shaped piazza sloping downward, Palazzo Pubblico and Torre del Mangia rising above, warm brick paving, people scattered across the campo, golden afternoon light, iconic and breathtaking.',
+      imagePrompt: 'Piazza del Campo: the great shell-shaped square of red brick sloping down in nine fan-shaped sections to the Palazzo Pubblico, its long curved Gothic brick front and the slender Torre del Mangia rising high above, the Fonte Gaia fountain at the top of the slope, people sitting and lying on the warm brick, curved rows of tall old palazzi around the square.',
     },
     {
       id: 'piazza-salimbeni',
@@ -295,7 +295,7 @@ export const siena: CityPantry = {
       neighbourhood: 'Terzo di Città',
       real: true,
       characterId: 'duccio-pizzicagnolo',
-      imagePrompt: "Soft pastel sketch on white paper of a narrow Sienese deli on Via di Città with a stuffed wild boar's head over the door, salami of cinta senese and hams hanging inside, a porchetta on the counter and panini being filled for people in the street, warm terracotta and stone tones. The only lettering is the shop sign, which reads \"Pizzicheria de' Miccoli\".",
+      imagePrompt: "a narrow old deli on the steep Via di Città with a stuffed wild boar's head over the door, salami of cinta senese and hams hanging in the doorway, wheels of pecorino, a porchetta on the counter and panini being filled for people in the street.",
     },
   ],
   characters: [
