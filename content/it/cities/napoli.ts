@@ -23,7 +23,7 @@ export const napoli: CityPantry = {
       neighbourhood: 'Chiaia',
       real: true,
       characterId: 'sofia-esposito',
-      imagePrompt: 'Soft pastel sketch on white paper of an elegant belle époque café with ornate gilded mirrors, marble-topped tables, and velvet chairs. Rich burgundy and gold tones, crystal chandeliers catching afternoon light, atmospheric and refined.',
+      imagePrompt: 'a grand belle époque café on the corner of the wide Piazza Trieste e Trento, gilded mirrors and chandeliers glimpsed through tall windows, tables outside full of people, waiters in white jackets; the Royal Palace and the Galleria Umberto across the busy square.',
     },
     {
       id: 'bar-mexico',
@@ -333,7 +333,7 @@ export const napoli: CityPantry = {
       neighbourhood: 'Centro Storico',
       real: true,
       characterId: 'roberto-albano',
-      imagePrompt: 'Soft pastel sketch on white paper of a grand railway station with vaulted ceilings, departure boards, and travelers with luggage moving through. Industrial grey and travel-worn tones, transient energy, bustling gateway.',
+      imagePrompt: 'Napoli Centrale, the long low modern station of glass and steel, seen across the huge busy Piazza Garibaldi: buses, taxis and scooters, travellers pulling suitcases, a few palm trees, the buildings of the old city around the square.',
     },
 
     // UNIQUE NAPLES CHARACTER (3)

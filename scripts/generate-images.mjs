@@ -36,8 +36,13 @@ const imageConfig = generation.images ?? {};
 const placeStyles = generation.placeStyles ?? {};
 const placeRules = generation.placeRules ?? '';
 // Where the camera stands, by place kind (Napoli, 2026-10-27): close for shops and food, wide for squares
+// wide for squares and landmarks; other places take the views in turn (Josh: "why not vary them")
 const placeFraming = generation.placeFraming;
-const framingFor = (kind) => placeFraming && (placeFraming.wideKinds.includes(kind) ? placeFraming.wide : placeFraming.close);
+function framingFor(kind, turn, id) {
+  if (!placeFraming) return undefined;
+  if (placeFraming.wideKinds.includes(kind) || placeFraming.wideIds?.includes(id)) return placeFraming.wide;
+  return placeFraming.views[turn % placeFraming.views.length];
+}
 const IMAGE_DIR = path.join(__dirname, '..', 'public', imageConfig.dir ?? 'images');
 const MANIFEST_PATH = path.join(__dirname, COUNTRY === 'it' ? 'image-generation-manifest.json' : `image-generation-manifest.${COUNTRY}.json`);
 
@@ -93,6 +98,7 @@ function parseCityContent(filePath) {
       neighbourhood: match[0].match(/neighbourhood:\s*['"]([^'"]+)['"]/)?.[1],
       kind: match[0].match(/kind:\s*['"]([^'"]+)['"]/)?.[1],
     });
+    images.at(-1).turn = images.filter((i) => i.type === 'place').length - 1;
   }
 
   // Extract character portraits
@@ -165,7 +171,7 @@ async function processCity(cityId, cityFile, manifest, options = {}) {
 
     // A city with its own place style: style + scene + the name as the only sign + rules
     const prompt = image.type === 'place' && placeStyles[cityId]
-      ? buildPlacePrompt({ style: placeStyles[cityId], scene: cleanScene(image.prompt), sign: image.name, rules: placeRules, neighbourhood: image.neighbourhood, framing: framingFor(image.kind) })
+      ? buildPlacePrompt({ style: placeStyles[cityId], scene: cleanScene(image.prompt), sign: image.name, rules: placeRules, neighbourhood: image.neighbourhood, framing: framingFor(image.kind, image.turn, image.id) })
       : image.prompt;
     if (options.dry) {
       console.log(`\n[${imageKey}]\n${prompt}`);

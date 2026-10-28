@@ -64,6 +64,12 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 ---
 
+
+## 2026-10-27: Naples place pictures in a new style (cloud session)
+- Done: Naples has its own place style and the camera varies by place (`content/it/generation.json` placeStyles.napoli and placeFraming; `scripts/generate-images.mjs`). New pictures for the 12 shown Naples places (`showcase.ts`), made on the laptop through the linked computer, committed in `public/images/places/`. Gambrinus and the station were redone: Gambrinus is on its piazza, the station is the modern Napoli Centrale on Piazza Garibaldi.
+- Not live yet: the R2 upload can't run from the linked computer's sandbox (R2 isn't on its network allowlist), so `content/it/images.json` still points at the old pictures. To go live, on the laptop: `npm run images:upload -- --only bar-nilo,caffe-gambrinus,pasticceria-poppella,mercato-pignasecca,pizzeria-sorbillo,piazza-bellini,enoteca-belledonne,libreria-dante-descartes,stazione-centrale-napoli,spaccanapoli-street,gay-odin,mozzarella-spaccanapoli`, then commit images.json.
+- Open: the language school (still in Naples' showcase) has no new picture; schools are moving into Learn.
+
 ## 2026-10-25: Diario mission-chip mockup (cloud session)
 - Done: Design canvas "Diario mission chips" (https://claude.ai/artifact/LGHnWtmpXQm7kcVtpYKaap), files in `design/missions/`: the chip wall from the A1–A2 syllabus units with short names, and the Introductions chip opened as four phrase cards. Noted in `docs/diario.md`.
 - Open: the opened chip shows phrases, while the direction in `docs/diario.md` says 3–5 missions; Josh to decide. "Flirting" (Josh's example) has no syllabus unit. Mockup only; no app code.
