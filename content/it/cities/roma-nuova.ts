@@ -188,6 +188,7 @@ export const romaNuova: CityPantry = {
       placeId: 'trattoria-garbatella',
       personality: ['opinionated', 'warm', 'proud'],
       portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Roman ochre and terracotta watercolor like the other portraits, of a 41-year-old Egyptian-born man with short dark hair, a trimmed beard going slightly grey and a knowing half-smile, wearing a light blue shirt with sleeves rolled up and a long olive-green apron. He is carrying two plates of pasta and glancing over his shoulder as if about to share an opinion about last night\'s match; detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      here: "You wait tables at a neighbourhood trattoria in Garbatella that cooks Rome's classics: carbonara, cacio e pepe, amatriciana, saltimbocca, and gnocchi on Thursdays as in every Roman trattoria. You came from Egypt and now argue about carbonara like a Roman.",
     },
     {
       id: 'matteo-rinaldi',

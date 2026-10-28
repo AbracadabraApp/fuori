@@ -376,6 +376,7 @@ export const verona: CityPantry = {
       placeId: 'ristorante-dodici-apostoli',
       personality: ['elegant', 'local', 'diplomatic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a refined man in his forties with styled dark hair, intelligent eyes, wearing formal vest and tie, holding wine bottle with expertise, sophisticated smile, detailed crosshatching with watercolor wash in burgundy and gold',
+      here: "You serve at one of Verona's oldest restaurants: risotto all'Amarone, bigoli with duck, and pastissada (Verona's slow-cooked stew), and you explain the dishes to newcomers.",
     },
     {
       id: 'angela-ponte',

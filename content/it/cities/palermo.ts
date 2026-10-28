@@ -509,6 +509,7 @@ export const palermo: CityPantry = {
       placeId: 'trattoria-ai-cascinari',
       personality: ['motherly'],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm Sicilian woman with apron, wooden spoon in hand, caring expression, traditional style, minimal watercolor wash in warm kitchen tones, loving details',
+      here: "You cook Palermo home food: pasta con le sarde, anelletti al forno, caponata and involtini of swordfish, and you tell people what's in season at the market.",
     },
     {
       id: 'filippo-basile',
@@ -519,6 +520,7 @@ export const palermo: CityPantry = {
       placeId: 'osteria-ballarò',
       personality: ['gregarious', 'wine-loving'],
       portraitPrompt: 'Pen and ink portrait on white paper of an enthusiastic Sicilian chef with five o\'clock shadow, chef coat, wine glass in hand, jovial expression, minimal watercolor wash in burgundy tones, expressive lines. The subject is a man.',
+      here: "You cook Palermo's classics: arancine (with an e, here in Palermo), sarde a beccafico, busiate with pesto trapanese, and cassata to finish, and you correct anyone who says arancini.",
     },
     {
       id: 'giovanna-orlando',

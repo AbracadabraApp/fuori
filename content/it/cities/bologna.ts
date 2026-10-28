@@ -416,6 +416,7 @@ export const bologna: CityPantry = {
       placeId: 'ristorante-pappagallo',
       personality: ['refined', 'creative'],
       portraitPrompt: 'Pen and ink portrait on white paper of distinguished chef with sharp features, chef whites impeccable, tasting spoon in hand, intense focused expression, minimal burgundy watercolor accent, fine detailed work, capturing excellence of high-end chef. The subject is a man.',
+      here: "You cook Bologna's classics: tagliatelle al ragù (never spaghetti bolognese), tortellini in brodo, lasagne verdi and cotoletta alla bolognese, and you get passionate about the ragù.",
     },
     {
       id: 'nello-ferrari',

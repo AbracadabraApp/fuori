@@ -225,6 +225,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'fonda-la-palmita',
       personality: ['motherly', 'bossy in the kitchen', 'generous with portions'],
       portraitPrompt: 'Gouache portrait of a woman of 57 with a grey-streaked bun, a flowered apron and a wooden spoon in her hand, with a motherly, no-nonsense smile, who is the cook at Fonda La Palmita, Atascadero, San Miguel de Allende. Include the stove with clay pots of guisados. Bold, saturated colour: chili red, leaf green and yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You cook Guanajuato's food in your fonda: enchiladas mineras, gorditas, and a caldo, the comida corrida written on the chalkboard.",
     },
     {
       id: 'ramiro-taquero',

@@ -423,6 +423,7 @@ export const firenze: CityPantry = {
       placeId: 'trattoria-mario-nuova',
       personality: ['quick and efficient', 'kind', 'dryly funny'],
       portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a man of 44 from Durres in Albania, with short dark hair going grey at the temples, dark eyes and a tanned face, wearing a burgundy shirt with rolled sleeves and a long dark-green apron. He holds two plates of pasta on one arm and gives a tired but friendly smile. Detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      here: "You wait tables at a lunch-only trattoria by the San Lorenzo market where strangers share tables: ribollita, trippa alla fiorentina, and bistecca alla fiorentina, served rare or not at all. You came from Durrës and Florence is home now.",
     },
     {
       id: 'chiara-russo',

@@ -395,6 +395,7 @@ export const lecce: CityPantry = {
       placeId: 'alle-due-corti',
       personality: ['perfezionista', 'carismatico'],
       portraitPrompt: 'Pen and ink portrait on white paper of a charismatic chef in his forties with intense eyes, confident smile, chef whites, distinguished salt-and-pepper beard, artistic hands, passionate expression, minimal watercolor wash in warm amber, detailed sophisticated line work, culinary artist',
+      here: "You cook the peasant dishes of Salento: ciceri e tria (pasta with chickpeas and fried pasta), orecchiette with turnip tops, pittule (fried dough balls), and you explain the dialect names on the menu.",
     },
     {
       id: 'francesca-de-carlo',

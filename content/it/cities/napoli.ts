@@ -556,6 +556,7 @@ export const napoli: CityPantry = {
       placeId: 'pizzeria-sorbillo',
       personality: ['charismatic', 'ambassador of pizza'],
       portraitPrompt: 'Pen and ink portrait on white paper of a vibrant man with intense eyes, animated expression, and flour on his face. Minimal watercolor wash in warm flame orange. Dynamic, passionate linework.',
+      here: "You make Neapolitan pizza on Via dei Tribunali, where the queue runs down the street: margherita, marinara and pizza fritta, and you love talking about the dough and the oven.",
     },
     {
       id: 'paolo-condurro',

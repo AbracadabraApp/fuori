@@ -359,6 +359,7 @@ export const genova: CityPantry = {
       placeId: 'trattoria-rosmarino',
       personality: ['nostalgic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a heavyset chef with expressive face, chef\'s whites, wooden spoon in hand, minimal watercolor in warm reds, intense eyes, bold pen work. The subject is a man.',
+      here: "You cook Genoese food in the caruggi: trofie al pesto (made in a mortar), pansoti with walnut sauce, and farinata, and you'll say why pesto never goes near a blender.",
     },
     {
       id: 'elena-spinola',

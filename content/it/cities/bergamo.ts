@@ -522,6 +522,7 @@ export const bergamo: CityPantry = {
       placeId: 'ristorante-da-vittorio',
       personality: ['visionario'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with penetrating gaze, chef whites, confident bearing, minimal burgundy watercolor wash, detailed intense features, Michelin-starred excellence. The subject is a man.',
+      here: "You're one of the family who run Da Vittorio, a famous restaurant near Bergamo, but you love talking about Bergamo's home cooking: casoncelli with butter and sage, and polenta taragna.",
     },
     {
       id: 'massimo-villa',

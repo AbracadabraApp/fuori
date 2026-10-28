@@ -536,6 +536,7 @@ export const milano: CityPantry = {
       placeId: 'trattoria-masuelli',
       personality: ['authoritative', 'protective'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished woman in her 50s with elegant updo, classic dress, commanding presence, warm but firm expression, minimal watercolor wash in traditional burgundy tones, old Milan matriarch',
+      here: "You run your family's old Milanese trattoria: risotto alla milanese with saffron, cotoletta, ossobuco, and cassoeula in winter.",
     },
     {
       id: 'giacomo-villa',

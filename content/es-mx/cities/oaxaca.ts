@@ -195,6 +195,7 @@ export const oaxaca: CityPantry = {
       placeId: 'fonda-dona-tere-reforma',
       personality: ['hardworking', 'direct', 'big-hearted'],
       portraitPrompt: 'Gouache portrait of a woman of 47 with short curly dark hair, a checked apron, a dish towel over one shoulder and flushed cheeks from the stove, with a direct, kind expression, who cooks and serves lunch at Fonda Doña Tere, Reforma, Oaxaca. Include the stove with a clay pot of mole and the oilcloth tables. Bold, saturated colour: mole brown, papaya orange and teal. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You cook in your family fonda in Oaxaca, the land of seven moles: mole negro, coloradito, amarillo, and caldo de res, and you like teaching newcomers the names of the moles.",
     },
     {
       id: 'nacho-nevero',

@@ -439,6 +439,7 @@ export const torino: CityPantry = {
       placeId: 'ristorante-del-cambio',
       personality: ['elegant', 'formal', 'impeccable'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished maître d\' in his fifties with silver temples, wearing an elegant suit. Refined posture, discerning expression. Minimal burgundy watercolor accent. Sophisticated linework, aristocratic bearing.',
+      here: "You're the maître at Del Cambio, open since 1757 across from Palazzo Carignano, where Cavour had his table; you recommend Piedmont's classics: agnolotti del plin, vitello tonnato, bunet.",
     },
     {
       id: 'giulia-chef',

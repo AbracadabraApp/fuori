@@ -509,6 +509,7 @@ export const mantova: CityPantry = {
       placeId: 'ristorante-cigno',
       personality: ['refined'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with serious expression, classical training evident, culinary pride. Master of tradition. Minimal watercolor wash in burgundy tones, detailed fine dining chef. The subject is a man.',
+      here: "You cook Mantova's dishes: tortelli di zucca (pumpkin, with mostarda and amaretti), risotto alla pilota, and sbrisolona to finish.",
     },
     {
       id: 'maria-cuoca',

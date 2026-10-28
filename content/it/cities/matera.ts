@@ -387,6 +387,7 @@ export const matera: CityPantry = {
       placeId: 'ristorante-francesca',
       personality: ['elegant', 'passionate about cuisine'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sophisticated Italian woman with styled short hair, chef\'s whites, refined features, minimal watercolor wash, white background, confident artistic expression, clean pen lines',
+      here: "You cook the food of Basilicata in your cave restaurant in the Sassi: crapiata (a soup of grains and pulses), orecchiette, peperoni cruschi and pane di Matera, and you tell people where each dish comes from.",
     },
     {
       id: 'marco-dibari',

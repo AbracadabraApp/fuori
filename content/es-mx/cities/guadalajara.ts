@@ -225,6 +225,7 @@ export const guadalajara: CityPantry = {
       placeId: 'fonda-dona-chuy',
       personality: ['warm', 'bossy', 'generous with portions'],
       portraitPrompt: 'Gouache portrait of a round-faced woman of 58 with rolled-up sleeves, a hairnet and a loud, warm laugh, wearing a checked apron, who cooks lunch at Cocina Económica Doña Chuy, Tlaquepaque, Guadalajara. Include her steaming clay pots and the oilcloth tables. Bold, saturated colour: chilli red, mustard and avocado green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You cook Jalisco's food in your fonda in Tlaquepaque: carne en su jugo, birria on weekends, and pozole, with an agua fresca.",
     },
     {
       id: 'rosa-estudiante',

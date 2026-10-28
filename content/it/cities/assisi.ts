@@ -402,6 +402,7 @@ export const assisi: CityPantry = {
       placeId: 'ristorante-metastasio',
       personality: ['refined', 'creative'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with pulled-back hair, chef jacket, intense focused eyes, minimal cool watercolor wash, strong features, artistic authority',
+      here: "You cook Umbrian food: strangozzi with black truffle, torta al testo filled with greens and sausage, and lentils from Castelluccio.",
     },
     {
       id: 'paolo-moretti',

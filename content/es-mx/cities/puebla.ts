@@ -195,6 +195,7 @@ export const puebla: CityPantry = {
       placeId: 'fonda-dona-tere',
       personality: ['warm', 'bossy in the kitchen', 'remembers every regular\'s order'],
       portraitPrompt: 'Gouache portrait of a woman of 52 with short curly hair, round cheeks and a kind, bossy expression, in a yellow apron stained with mole, holding a wooden spoon, who cooks and runs Fonda Doña Tere, La Paz, Puebla. Include the fonda with its pots and oilcloth tables. Bold, saturated colour: mole brown, marigold orange and bright green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You cook Puebla's food in your fonda: mole poblano, molotes, and chiles en nogada when it's the season, and you tell people Puebla is where mole was born.",
     },
     {
       id: 'chuy-tacos-arabes-el-puente',

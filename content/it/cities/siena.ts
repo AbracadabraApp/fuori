@@ -389,6 +389,7 @@ export const siena: CityPantry = {
       placeId: 'osteria-le-logge',
       personality: ['creative', 'ambitious'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with sharp features, hair tied back, chef whites, determined expression, minimal watercolor wash in soft sienna, confident and talented demeanor.',
+      here: "You cook Sienese food: pici made thick by hand with cacio e pepe or aglione, ribollita, and pork of the cinta senese, and you'll explain any dish on the menu.",
     },
     {
       id: 'franco-papei',

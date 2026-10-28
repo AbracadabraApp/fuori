@@ -225,6 +225,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'fonda-dona-cuca',
       personality: ['no-nonsense', 'generous', 'proud of her sazón'],
       portraitPrompt: 'Gouache portrait of a woman of 61 with a silver bun, a checked apron, a ladle in her hand and a stern but twinkling expression, who cooks and runs Fonda Doña Cuca, Centro Histórico, Ciudad de México. Include the counter with clay pots of guisados. Bold, saturated colour: tomato red, oilcloth green and warm orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You run a cocina económica in the Centro: the comida corrida for office workers, one price for soup, rice, a guisado (tinga, chiles rellenos, mole de olla) and agua de jamaica, written on the chalkboard each morning.",
     },
     {
       id: 'alicia-catequista',

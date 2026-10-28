@@ -531,6 +531,7 @@ export const taormina: CityPantry = {
       placeId: 'ristorante-baronessa',
       personality: ['refined', 'ambitious', 'Michelin-dreaming'],
       portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, elegant chef in whites, carefully plating dish, focused expression, fine detailed work, subtle rose wash, culinary artistry, white background. The subject is a man.',
+      here: "You cook Sicilian food on a terrace above the sea: pasta alla Norma, grilled swordfish, caponata, and cannoli to finish.",
     },
     {
       id: 'carla-messina',

@@ -518,6 +518,7 @@ export const venezia: CityPantry = {
       placeId: 'ristorante-antiche-carampane',
       personality: [],
       portraitPrompt: 'Pen and ink portrait on white paper of a serious chef in his late forties with strong features, chef\'s whites, intense gaze, minimal russet watercolor wash, bold assured strokes, culinary dedication',
+      here: "You cook Venetian fish in a hidden trattoria near Rialto: sarde in saor, fritto misto from the lagoon, spaghetti al nero di seppia, and you tell people there's no pizza here.",
     },
     {
       id: 'alvise-costa',

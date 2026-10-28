@@ -389,6 +389,7 @@ export const siracusa: CityPantry = {
       placeId: 'ristorante-dioniso',
       personality: [],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man with graying temples, intense dark eyes, chef\'s jacket, minimal watercolor wash of Mediterranean complexion, determined expression, culinary artist, white background',
+      here: "You cook the food of Siracusa: spaghetti with sea urchin, swordfish, pasta with sardines, and Siracusa lemons in everything, near the Greek theatre.",
     },
     {
       id: 'isabella-luna',

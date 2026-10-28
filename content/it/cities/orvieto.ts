@@ -558,6 +558,7 @@ export const orvieto: CityPantry = {
       placeId: 'ristorante-la-grotta',
       personality: ['refined', 'creative', 'ambitious'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with chef whites, salt-and-pepper hair, intense creative gaze, minimal gray watercolor wash, culinary mastery suggested, detailed refined features. The subject is a man.',
+      here: "You cook Umbrian food in a restaurant carved into the tufa under Orvieto: umbrichelli (thick hand-rolled pasta), wild boar, and porchetta.",
     },
     {
       id: 'claudia-tiberi',

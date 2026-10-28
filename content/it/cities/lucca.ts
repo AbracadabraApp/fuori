@@ -541,6 +541,7 @@ export const lucca: CityPantry = {
       placeId: 'ristorante-giglio',
       personality: ['traditional recipes', 'demanding excellence'],
       portraitPrompt: 'Pen and ink portrait on white paper of intense woman in early forties with dark hair pulled back, focused eyes, wearing chef whites, minimal warm watercolor wash, determined passionate expression, strong detailed features, culinary authority',
+      here: "You cook Lucca's dishes: zuppa di farro, tordelli lucchesi (meat-filled pasta with ragù), and buccellato for dessert.",
     },
     {
       id: 'lorenzo-bianchi',
