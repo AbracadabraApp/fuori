@@ -31,6 +31,8 @@ What Beginner level dialogue is for. The trial prompt is written against these, 
    - **Setting up the learner's turn:** what they're about to be asked, so they can answer in Italian.
    - **Help when they're lost or ask.**
 
+   Patterns and the best examples from the syllabus: [teaching-with-english.md](teaching-with-english.md).
+
    English that lowers it: saying in English what the beginner could have taken in Italian with a gloss (the order, the price, "here you are"); narration and chat that leads to no Italian; repeating in English what was just said in Italian.
 6. **Language a beginner can follow:** short, common words, present tense; the aim is 90% of words at the learner's level.
 7. **One thing at a time:** at most one question per turn. **The first turn may be the longest** (the place, the introduction, the first question); after it, turns stay short (Josh, 2026-10-25).
