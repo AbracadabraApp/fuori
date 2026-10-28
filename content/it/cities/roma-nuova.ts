@@ -40,7 +40,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Garbatella',
       real: false,
       characterId: 'mohamed-hassan',
-      imagePrompt: 'On an ordinary weekday in Garbatella, the trattoria occupies the ground floor of one of the 1920s garden-city buildings of the quarter, ochre and orange with arched doorways, little loggias and a courtyard with trees, with a few outdoor tables on the pavement, windows above hung with laundry, and neighbouring shopfronts on either side under a clear October sky. Mohamed Hassan, the cameriere, stands just outside by the tables with a tray and a cloth over his arm.',
+      imagePrompt: 'On an ordinary weekday in Garbatella, a 1920s garden-city quarter that feels like a village inside Rome: low three- and four-storey buildings in ochre and orange with arched doorways, little loggias and small towers, set around courtyards and gardens with trees. The trattoria occupies the ground floor of one of them, with a few outdoor tables on the pavement, windows above hung with laundry, and neighbouring shopfronts on either side under a clear October sky. Mohamed Hassan, the cameriere, stands just outside by the tables with a tray and a cloth over his arm.',
     },
     {
       id: 'pantheon-rotonda',
@@ -49,7 +49,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Centro Storico',
       real: true,
       characterId: 'matteo-rinaldi',
-      imagePrompt: 'The fountain steps in Piazza della Rotonda, the baroque fountain with its small Egyptian obelisk in the middle of the square, with the Pantheon\'s columns and great bronze doors behind and tall palazzi around the piazza, and tourists and pigeons crossing the square on an October weekday. Matteo sits on the edge of the fountain with a sketchbook on his knee, drawing the portico between tours.',
+      imagePrompt: 'The fountain steps in Piazza della Rotonda, the baroque fountain in the middle of the square topped by a small Egyptian obelisk, not much taller than the fountain itself, with the Pantheon\'s columns and great bronze doors behind and tall palazzi around the piazza, and tourists and pigeons crossing the square on an October weekday. Matteo sits on the edge of the fountain with a sketchbook on his knee, drawing the portico between tours.',
     },
     {
       id: 'gesu-piazza',
@@ -103,7 +103,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Esquilino',
       real: true,
       characterId: 'pietro-termini-nuova',
-      imagePrompt: 'The big concourse of Stazione Termini on a weekday, with travellers crossing under the departures board, a line of people at the ticket machines and the ticket office windows behind. Pietro serves a traveller at a ticket window.',
+      imagePrompt: 'The big modern hall of Stazione Termini, the long 1950s front of glass and travertine under its low wavy concrete canopy, travellers crossing under the departures board with suitcases, a line at the ticket machines and the ticket office windows behind. Pietro serves a traveller at a ticket window.',
     },
     // Brought back from roma.ts with their art (Josh, 2026-10-27: "add back the
     // pizza guy", "I miss the big old guy at the bar"); same ids, so the same
@@ -115,7 +115,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Monti',
       real: false,
       characterId: 'sandro-bar-angolo',
-      imagePrompt: 'Soft pastel sketch on white paper of a small corner bar on a sloping cobbled street in Monti, zinc counter, chrome espresso machine, glass case of cornetti, two locals chatting at the counter, ivy on the faded orange wall outside, soft morning light, ochre and sage tones, textured sketch style, loose watercolor washes, lots of white paper',
+      imagePrompt: 'a small corner bar on a sloping cobbled street in Monti, zinc counter, chrome espresso machine, a glass case of cornetti, two locals chatting at the counter, the faded orange palazzi of the quarter climbing the hill behind, soft morning light.',
     },
     {
       id: 'forno-trastevere',
@@ -124,7 +124,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Trastevere',
       real: false,
       characterId: 'dario-fornaio',
-      imagePrompt: 'Soft pastel sketch on white paper of a small Trastevere bakery with a wood-fired oven glowing in the back, trays of pizza bianca and pizza rossa sold by weight, baker in a white apron, paper-wrapped slices on the counter, warm golden tones, textured sketch style, loose watercolor washes, lots of white paper',
+      imagePrompt: 'a small bakery on a narrow street in Trastevere with a wood-fired oven glowing at the back, long trays of pizza bianca and pizza rossa sold by weight, the baker in a white apron cutting a slice, paper-wrapped slices on the counter and a queue of locals at the door.',
     },
     {
       id: 'sapienza-scalinata',
