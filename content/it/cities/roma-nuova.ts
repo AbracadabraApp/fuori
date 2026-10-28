@@ -40,7 +40,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Garbatella',
       real: false,
       characterId: 'mohamed-hassan',
-      imagePrompt: 'On an ordinary weekday in Garbatella, a 1920s garden-city quarter that feels like a village inside Rome: low three- and four-storey buildings in ochre and orange with arched doorways, little loggias and small towers, set around courtyards and gardens with trees. The trattoria occupies the ground floor of one of them, with a few outdoor tables on the pavement, windows above hung with laundry, and neighbouring shopfronts on either side under a clear October sky. Mohamed Hassan, the cameriere, stands just outside by the tables with a tray and a cloth over his arm.',
+      imagePrompt: 'On an ordinary weekday in Garbatella, a 1920s garden-city quarter that feels like a village inside Rome: low buildings of three storeys at most, never tall city palazzi, in ochre and orange with arched doorways, little loggias and small towers, set around open courtyards and gardens with trees and benches, more like a village square than a city street. The trattoria occupies the ground floor of one of them, facing a courtyard garden, with a few outdoor tables on the pavement, windows above hung with laundry, and neighbouring shopfronts on either side under a clear October sky. Mohamed Hassan, the cameriere, stands just outside by the tables with a tray and a cloth over his arm.',
     },
     {
       id: 'pantheon-rotonda',
@@ -49,7 +49,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Centro Storico',
       real: true,
       characterId: 'matteo-rinaldi',
-      imagePrompt: 'The fountain steps in Piazza della Rotonda, the baroque fountain in the middle of the square topped by a small Egyptian obelisk, not much taller than the fountain itself, with the Pantheon\'s columns and great bronze doors behind and tall palazzi around the piazza, and tourists and pigeons crossing the square on an October weekday. Matteo sits on the edge of the fountain with a sketchbook on his knee, drawing the portico between tours.',
+      imagePrompt: 'The fountain steps in Piazza della Rotonda, the baroque fountain in the middle of the square topped by a short Egyptian obelisk, only about twice the height of a person, well below the height of the Pantheon portico, with the Pantheon\'s columns and great bronze doors behind and tall palazzi around the piazza, and tourists and pigeons crossing the square on an October weekday. Matteo sits on the edge of the fountain with a sketchbook on his knee, drawing the portico between tours.',
     },
     {
       id: 'gesu-piazza',
