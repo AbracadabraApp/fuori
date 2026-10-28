@@ -17,6 +17,7 @@
 // Bakeries hidden (Josh, 2026-10-27: "the conversation is poor"), except
 // Dario's forno in Rome, brought back the same day, and the four pastry shops
 // that sell their city's own specialty (Siena, Napoli, Taormina, Genova)
+// Wine bars hidden (Josh, 2026-10-27: "not appropriate for all ages")
 export const showcase: Record<string, string[]> = {
   // Roma redone (Josh, 2026-10-22; docs/rome-redo.md): today's Rome beside the
   // original, to compare. No language school: schools move into Learn.
@@ -44,7 +45,6 @@ export const showcase: Record<string, string[]> = {
     'gelateria-artigiana',
     'piazza-vittorio',
     'bottega-artigiana',
-    'enoteca-lucania',
     'libreria-matera',
     'piazza-duomo', // M2: bench character Alberto (pensionato)
     'scuola-lingua-matera', // M2: language school with Magda
@@ -73,7 +73,6 @@ export const showcase: Record<string, string[]> = {
     'gelateria-brivido',
     'piazza-del-campo',
     'bottega-del-palio',
-    'enoteca-san-domenico',
     'libreria-senese',
     'piazza-salimbeni', // M2: bench character Beatrice (studentessa)
     'scuola-lingua-siena', // M2: language school with Magda
@@ -87,7 +86,6 @@ export const showcase: Record<string, string[]> = {
     'farmacia-morelli',
     'campo-santa-margherita',
     'squero-san-trovaso',
-    'enoteca-mascareta',
     'libreria-acqua-alta',
     'campo-dei-mori', // M2: bench character Dante (storico locale)
     'scuola-lingua-venezia', // M2: language school with Magda
@@ -103,7 +101,6 @@ export const showcase: Record<string, string[]> = {
     'caffe-gambrinus',
     'gay-odin',
     'piazza-bellini',
-    'enoteca-belledonne',
     'libreria-dante-descartes',
     'spaccanapoli-street', // M2: bench character Nonna Assunta (Via Spaccanapoli) (abitante del quartiere)
     'scuola-lingua-napoli', // M2: language school with Magda
@@ -118,7 +115,6 @@ export const showcase: Record<string, string[]> = {
     'farmacia-comunale',
     'piazza-maggiore',
     'salumeria-simoni',
-    'cantina-bentivoglio',
     'piazza-verdi', // M2: bench character Clara (studentessa)
     'scuola-lingua-bologna', // M2: language school with Magda
     'stazione-centrale', // M2: train station for travel
@@ -130,7 +126,6 @@ export const showcase: Record<string, string[]> = {
     'trattoria-ai-cascinari',
     'caffe-del-kassaro',
     'piazza-pretoria',
-    'enoteca-picone',
     'libreria-del-mare',
     'giardino-garibaldi',
     'osteria-ballarò',
@@ -150,7 +145,6 @@ export const showcase: Record<string, string[]> = {
     'farmacia-centrale-taormina',
     'piazza-ix-aprile',
     'salumeria-sicilia',
-    'enoteca-nero',
     'stazione-taormina-giardini', // station (2026-10-14)
   ],
   lecce: [
@@ -162,7 +156,6 @@ export const showcase: Record<string, string[]> = {
     'farmacia-centrale-lecce',
     'piazza-santoronzo',
     'bottega-cartapesta',
-    'enoteca-mamma-elvira',
     'stazione-lecce',
   ],
   milano: [
@@ -174,7 +167,6 @@ export const showcase: Record<string, string[]> = {
     'farmacia-centrale-milano',
     'piazza-santo-stefano',
     'peck',
-    'enoteca-brera',
     'scuola-lingua-milano',
     'stazione-porta-garibaldi',
   ],
@@ -187,7 +179,6 @@ export const showcase: Record<string, string[]> = {
     'farmacia-centrale-verona',
     'piazza-bra',
     'salumeria-albertini',
-    'enoteca-cangrande',
     'stazione-porta-nuova',
   ],
   assisi: [
@@ -199,7 +190,6 @@ export const showcase: Record<string, string[]> = {
     'farmacia-centrale',
     'piazza-comune',
     'tabaccheria-assisi',
-    'enoteca-properzio',
     'stazione-assisi', // station (2026-10-14)
   ],
   bergamo: [
@@ -209,7 +199,6 @@ export const showcase: Record<string, string[]> = {
     'bar-donizetti',
     'farmacia-centrale-bergamo',
     'piazza-vecchia',
-    'enoteca-del-malpaga',
     'libreria-sant-agostino',
     'parco-della-trucca',
     'stazione-bergamo', // station (2026-10-14)
@@ -222,7 +211,6 @@ export const showcase: Record<string, string[]> = {
     'guido-gobino',
     'piazza-castello',
     'casa-del-vermouth',
-    'enoteca-bacco-torino',
     'libreria-luxemburg',
     'scuola-lingua-torino',
     'stazione-porta-nuova-torino', // station (2026-10-14)
@@ -237,7 +225,6 @@ export const showcase: Record<string, string[]> = {
     'farmacia-apollo',
     'piazza-archimede',
     'laboratorio-papiro',
-    'enoteca-bacco',
     'stazione-siracusa',
   ],
   genova: [
@@ -250,7 +237,6 @@ export const showcase: Record<string, string[]> = {
     'farmacia-europa',
     'piazza-ferrari',
     'salumeria-fontana',
-    'enoteca-sola',
     'stazione-principe',
   ],
   lucca: [
@@ -261,7 +247,6 @@ export const showcase: Record<string, string[]> = {
     'farmacia-massei',
     'piazza-anfiteatro',
     'gastronomia-angeli',
-    'enoteca-vanni',
     'libreria-baroni',
     'stazione-lucca', // station (2026-10-14)
   ],
@@ -272,7 +257,6 @@ export const showcase: Record<string, string[]> = {
     'bar-duomo-orvieto',
     'piazza-del-popolo',
     'bottega-michelangeli',
-    'enoteca-al-pozzo',
     'libreria-del-duomo',
     'giardini-pubblici',
     'stazione-orvieto', // station (2026-10-14)
@@ -286,7 +270,6 @@ export const showcase: Record<string, string[]> = {
     'farmacia-gonzaga',
     'piazza-sordello',
     'salumeria-ducale',
-    'enoteca-cortile',
     'stazione-mantova',
   ],
 };
