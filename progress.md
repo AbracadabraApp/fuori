@@ -65,6 +65,13 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 ---
 
 
+## 2026-10-28: Flashcard feed, card look, Italy pilot deck (laptop session)
+
+- **Done:** flashcard feed rebuilt (endless, Anki-style spacing, every stage passed only by saying the word; `FlashcardSchedule`), installed on Josh's phone, not yet played. Card look decided (`docs/flashcards.md` → The look): tall 2:3 traditional cards, Italy carte napoletane + tarocchi mixed by id, Mexico lotería; the app draws the banner, its outline varying per card. Master deck pilot: `content/it/flashcard-deck.json` (59 nouns, units a1-01–a1-04) and `scripts/build-flashcard-deck.mjs`; drafts and contact sheet in `.flashcards-tmp/deck-it/` (not uploaded, no voice). Josh: "they look great"; five weak cards remade; bustina dropped (at the bar it's just zucchero).
+- **Measured:** syllabus vs game vocabulary on the replay test reports (5,707 character lines; production read was blocked): 70% of dialogue words are A1, 18% not in the syllabus (mostly grammar words the list lacks: che, ma, quale, al/alla; names; stall talk). The game uses 65% of A1 words, 36% of A2.
+- **Open ideas (Josh, not decided):** a phrase stage on cards ("Un ___, per favore"), which also separates look-alikes (via/strada/vicolo, formaggio/cacio/pecorino); questionable words flagged (signorina, aula, mensa, pagina, look-alike people cards, lavoro's toolbox), no cuts made. No city decks (Josh: "relax").
+- **Next:** the app's tall cards with the drawn banner; upload + voice for the pilot; Mexico pilot; the full A1 decks (about $25) await Josh's go.
+
 ## 2026-10-27: Naples place pictures in a new style (cloud session)
 - Done: Naples has its own place style and the camera varies by place (`content/it/generation.json` placeStyles.napoli and placeFraming; `scripts/generate-images.mjs`). New pictures for the 12 shown Naples places (`showcase.ts`), made on the laptop through the linked computer, committed in `public/images/places/`. Gambrinus and the station were redone: Gambrinus is on its piazza, the station is the modern Napoli Centrale on Piazza Garibaldi.
 - Not live yet: the R2 upload can't run from the linked computer's sandbox (R2 isn't on its network allowlist), so `content/it/images.json` still points at the old pictures. To go live, on the laptop: `npm run images:upload -- --only bar-nilo,caffe-gambrinus,pasticceria-poppella,mercato-pignasecca,pizzeria-sorbillo,piazza-bellini,enoteca-belledonne,libreria-dante-descartes,stazione-centrale-napoli,spaccanapoli-street,gay-odin,mozzarella-spaccanapoli`, then commit images.json.
