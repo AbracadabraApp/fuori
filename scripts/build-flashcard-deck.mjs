@@ -19,6 +19,8 @@
  *   COUNTRY=es-mx node --env-file=.env.local scripts/build-flashcard-deck.mjs
  *   … --redo caffe,cornetto     remake just these, picture and voice
  *   … --sheet                   only rebuild the contact sheet
+ *   … --keep                    after review: copy the drafts to public/…/cards/
+ *                               for `npm run images:upload` (commit them)
  *
  * Each word is also recorded once, with its article, in the deck's voice
  * (flashcard-deck.json → voice; Josh picked male voices, 2026-10-28), as
@@ -98,6 +100,18 @@ async function make(c) {
   const b64 = (await res.json()).data[0].b64_json;
   await sharp(Buffer.from(b64, 'base64')).resize(1000, 1500, { fit: 'cover' }).jpeg({ quality: 86 }).toFile(file(c));
   console.log(`made ${c.id} (${style})`);
+}
+
+if (args.includes('--keep')) {
+  const pub = path.join(ROOT, 'public', pack.images?.dir ?? 'images', 'cards');
+  fs.mkdirSync(pub, { recursive: true });
+  let kept = 0;
+  for (const c of deck) for (const f of [file(c), sound(c)]) {
+    const to = path.join(pub, path.basename(f));
+    if (fs.existsSync(f) && !fs.existsSync(to)) { fs.copyFileSync(f, to); kept++; }
+  }
+  console.log(`kept ${kept} file(s) in ${path.relative(ROOT, pub)}`);
+  process.exit(0);
 }
 
 if (!sheetOnly) {

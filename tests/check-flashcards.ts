@@ -1,6 +1,6 @@
 // Flashcards (lib/flashcards.ts, docs/flashcards.md): ids match the picture
 // files, the article joins as shown, pictured words come first
-import { flashcardId, withArticle, flashcards } from '@/lib/flashcards';
+import { flashcardId, withArticle, flashcards, deckCards } from '@/lib/flashcards';
 import { pack } from '@/content';
 
 const failures: string[] = [];
@@ -22,6 +22,18 @@ if (pack.id === 'it') {
   expect('none words have no picture', cards.find((c) => c.id === 'parola')?.picture, null);
 }
 expect('ids unique', new Set(cards.map((c) => c.id)).size, cards.length);
+
+// The master deck: only uploaded words, each with its picture and recording
+const up = (id: string) => (id === 'cards/caffe' || id === 'cards/caffe.mp3' ? `https://r2/${id}` : null);
+const deck = deckCards(up);
+if (pack.id === 'it') {
+  expect('deck: only uploaded words', deck.length, 1);
+  expect('deck: said with article', deck[0]?.said, 'il caffè');
+  expect('deck: recording', deck[0]?.audio, 'https://r2/cards/caffe.mp3');
+}
+const real = deckCards(() => 'x');
+expect('deck: 60 words', real.length, 60);
+expect('deck: ids unique', new Set(real.map((c) => c.id)).size, real.length);
 
 if (failures.length) { console.error(failures.join('\n')); process.exit(1); }
 console.log(`OK: flashcards (${pack.id}): ids, articles, ${cards.length} cards, pictured first`);

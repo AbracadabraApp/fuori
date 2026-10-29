@@ -34,3 +34,28 @@ export function flashcards(image: (id: string) => string | null): { id: string; 
   // Words with a picture first, so a first deck has pictures; then the list's order
   return [...cards.filter((c) => c.picture), ...cards.filter((c) => !c.picture)];
 }
+
+type DeckCard = { word: string; article: string; en: string };
+
+/**
+ * The master deck (content/<country>/flashcard-deck.json, docs/flashcards.md
+ * → The look): every word with its tall 2:3 picture and its recording, built
+ * once by scripts/build-flashcard-deck.mjs and uploaded as cards/<id> and
+ * cards/<id>.mp3. Only words whose picture is uploaded, in the deck's order.
+ * Served as `cards` next to the old starter `flashcards`, which app builds
+ * from before 2026-10-28 still read (their 2:1 frame would crop these).
+ */
+export function deckCards(image: (id: string) => string | null): { id: string; said: string; en: string; picture: string; audio: string | null }[] {
+  const path = join(process.cwd(), 'content', pack.id, 'flashcard-deck.json');
+  let list: { cards: DeckCard[] };
+  try {
+    list = JSON.parse(readFileSync(path, 'utf8'));
+  } catch {
+    return [];
+  }
+  return list.cards.flatMap((c) => {
+    const id = flashcardId(c.word);
+    const picture = image(`cards/${id}`);
+    return picture ? [{ id, said: withArticle(c.article, c.word), en: c.en, picture, audio: image(`cards/${id}.mp3`) }] : [];
+  });
+}

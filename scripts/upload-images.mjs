@@ -32,7 +32,9 @@ const ROOT = path.join(__dirname, '..');
 // country: the country's card picture (country/<country>.jpg), for the app's country choice
 // guide: the greeter's four poses (welcome, listen, talk, laugh) for onboarding
 // flashcards: one 2:1 picture per word (1600 × 800), named by the word's id (docs/flashcards.md)
-const KINDS = ['cities', 'places', 'portraits', 'country', 'guide', 'flashcards'];
+// cards: the master deck, a tall 2:3 picture (1000 × 1500) and the word's recording
+// (<id>.mp3, listed as cards/<id>.mp3) per word (scripts/build-flashcard-deck.mjs)
+const KINDS = ['cities', 'places', 'portraits', 'country', 'guide', 'flashcards', 'cards'];
 const WEBP_QUALITY = 80;
 const CONCURRENCY = 8;
 
@@ -57,19 +59,21 @@ export async function uploadImages({ country = process.env.COUNTRY || 'it', only
   for (const kind of KINDS) {
     const dir = path.join(imageDir, kind);
     if (!fs.existsSync(dir)) continue;
-    for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.jpg')).sort()) {
+    for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.jpg') || (kind === 'cards' && f.endsWith('.mp3'))).sort()) {
+      const audio = file.endsWith('.mp3');
       const id = file.slice(0, -4);
       if (only && !only.has(id)) continue;
       const jpg = fs.readFileSync(path.join(dir, file));
       const src = sha(jpg, 16);
-      if (list.images[`${kind}/${id}`]?.src === src) continue;
-      todo.push({ kind, id, jpg, src });
+      const name = audio ? `${kind}/${id}.mp3` : `${kind}/${id}`;
+      if (list.images[name]?.src === src) continue;
+      todo.push({ kind, id, jpg, src, audio, name });
     }
   }
 
   console.log(`${country}: ${todo.length} image(s) to upload${dry ? ' (dry run)' : ''}`);
   if (dry || todo.length === 0) {
-    for (const t of todo.slice(0, 20)) console.log(`  ${t.kind}/${t.id}`);
+    for (const t of todo.slice(0, 20)) console.log(`  ${t.name}`);
     return { uploaded: 0, failed: 0 };
   }
 
@@ -91,15 +95,16 @@ export async function uploadImages({ country = process.env.COUNTRY || 'it', only
   };
 
   async function one(t) {
-    const webp = await sharp(t.jpg).webp({ quality: WEBP_QUALITY }).toBuffer();
-    const key = `${country}/${t.kind}/${t.id}.${sha(webp, 10)}.webp`;
+    // A recording goes up as it is; a picture as WebP
+    const webp = t.audio ? t.jpg : await sharp(t.jpg).webp({ quality: WEBP_QUALITY }).toBuffer();
+    const key = `${country}/${t.kind}/${t.id}.${sha(webp, 10)}.${t.audio ? 'mp3' : 'webp'}`;
     const res = await r2.fetch(`${endpoint}/${key}`, {
       method: 'PUT',
       body: webp,
-      headers: { 'content-type': 'image/webp', 'cache-control': 'public, max-age=31536000, immutable' },
+      headers: { 'content-type': t.audio ? 'audio/mpeg' : 'image/webp', 'cache-control': 'public, max-age=31536000, immutable' },
     });
     if (!res.ok) throw new Error(`PUT ${key} → ${res.status} ${(await res.text()).slice(0, 200)}`);
-    list.images[`${t.kind}/${t.id}`] = { key, src: t.src, bytes: webp.length };
+    list.images[t.name] = { key, src: t.src, bytes: webp.length };
     uploaded++;
     inBytes += t.jpg.length;
     outBytes += webp.length;
@@ -116,7 +121,7 @@ export async function uploadImages({ country = process.env.COUNTRY || 'it', only
         try {
           await one(t);
         } catch (err) {
-          failed.push(`${t.kind}/${t.id}: ${err.message}`);
+          failed.push(`${t.name}: ${err.message}`);
         }
       }
     })
