@@ -279,11 +279,11 @@ private struct FlashcardRow: View {
 
     /// Stage 3's blank line, where the answer appears once said
     private var answerLine: some View {
-        VStack(spacing: 0) {
-            Spacer(minLength: lineSpace)
-            Rectangle().fill(Tokens.Colors.muted).frame(height: 2)
-        }
-        .frame(maxWidth: .infinity)
+        // A fixed height (a Spacer here grew the banner over the whole card)
+        Color.clear
+            .frame(maxWidth: .infinity)
+            .frame(height: lineSpace)
+            .overlay(alignment: .bottom) { Rectangle().fill(Tokens.Colors.muted).frame(height: 2) }
         .padding(.trailing, 8)
         .accessibilityHidden(true)
     }
