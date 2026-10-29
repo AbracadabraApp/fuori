@@ -20,8 +20,11 @@ import UIKit
 ///
 /// She always speaks the language being learned; English is only subtitles.
 /// Her line types out as she speaks; the English and the controls appear only
-/// when she has finished. The mic is always tap to talk here, even with
-/// Hands-free on. A recording with no voice in it doesn't move her on; on the
+/// when she has finished. The first answer starts with a tap; after it, the
+/// mic opens by itself when she has finished a line that wants a spoken
+/// answer, as in the game (Josh, 2026-10-29: hands-free), and closes after 5 s
+/// of nothing (it's still their turn, a tap away). Tap to talk under
+/// VoiceOver. A recording with no voice in it doesn't move her on; on the
 /// follow-up, that's when its English appears. A failed call shows its code
 /// with Try again, never a silent skip.
 ///
@@ -106,6 +109,12 @@ public final class OnboardingModel {
     private var generation = 0
     /// stop() ran since her last line started
     private var wasStopped = false
+    /// They've tapped the mic once: from then on it opens by itself (hands-free)
+    private var tappedOnce = false
+    /// Steps whose answer is spoken, where the mic opens by itself
+    private static let spokenSteps: [Step] = [.askName, .question, .followUp]
+    /// Nothing said this long after the mic opened by itself: it closes (as in the game)
+    private let firstWordWait: TimeInterval = 5
     /// What to retry after a failure
     private var retry: (() async -> Void)?
 
@@ -401,9 +410,12 @@ public final class OnboardingModel {
     /// silence sends the answer, or a second tap sends it sooner
     public func tapMic() async {
         switch phase {
-        case .ready, .micDenied: await startRecording()
+        case .ready, .micDenied:
+            tappedOnce = true
+            await startRecording()
         case .speaking where step == .hello:
             // Card 1 shows the mic while she speaks: a tap stops her and opens it
+            tappedOnce = true
             stopAudio()
             await startRecording()
         case .listening: await finishAnswer()
@@ -460,6 +472,10 @@ public final class OnboardingModel {
         revealTask?.cancel()
         shown = nil
         if phase == .speaking { phase = .ready }
+        // Hands-free after the first tap: her line wanted an answer, so listen
+        if phase == .ready, tappedOnce, endsOnSilence, !wasStopped, Self.spokenSteps.contains(step) {
+            await startRecording(byItself: true)
+        }
     }
 
     private func startReveal(_ text: String) {
@@ -482,7 +498,7 @@ public final class OnboardingModel {
 
     // MARK: - Their answers
 
-    private func startRecording() async {
+    private func startRecording(byItself: Bool = false) async {
         guard [.askName, .address, .question, .followUp, .hello, .gender].contains(step) else { return }
         guard await AudioSession.requestMicrophone() else {
             phase = .micDenied
@@ -505,6 +521,14 @@ public final class OnboardingModel {
                 guard let self, generation == self.generation, self.phase == .listening else { return }
                 let snapshot = self.gate.snapshot()
                 self.level = snapshot.level
+                // Opened by itself and nothing said: close it quietly; still their turn
+                if byItself, !snapshot.hasSpoken, ProcessInfo.processInfo.systemUptime - started >= self.firstWordWait {
+                    self.levelTask = nil
+                    if let url = self.recorder.stop("onboarding nothing said") { try? FileManager.default.removeItem(at: url) }
+                    self.level = 0
+                    self.phase = .ready
+                    return
+                }
                 let silenceEnded = self.endsOnSilence && snapshot.hasSpoken && snapshot.silence >= EndOfTurn.usual
                 if silenceEnded || ProcessInfo.processInfo.systemUptime - started >= self.longestAnswer {
                     self.levelTask = nil

@@ -31,8 +31,8 @@ export const onboarding = {
     },
     go: { line: 'Andiamo!', en: "Let's go!" },
     question: {
-      line: "Che bello che parli già italiano! Allora, raccontami: cosa ti piace dell'Italia? Tocca il microfono per parlare.",
-      en: 'How lovely that you already speak Italian! So, tell me: what do you like about Italy? Tap the microphone to talk.',
+      line: "Che bello che parli già italiano! Allora, raccontami: cosa ti piace dell'Italia?",
+      en: 'How lovely that you already speak Italian! So, tell me: what do you like about Italy?',
     },
     /** Name and address (docs/onboarding-design.md → Name and address): after the first tap. {name} is what Whisper heard */
     askName: { line: 'Come ti chiami? Tocca il microfono e dimmi il tuo nome.', en: "What's your name? Tap the microphone and tell me your name." },
@@ -74,8 +74,8 @@ export const onboarding = {
     /** Cards 4–7 (Josh, 2026-10-23: 7 cards). Card 4 opens with Perfetto!,
      *  after the level; levelSet stays for builds from before */
     trip: {
-      line: 'Perfetto! Fuori è un viaggio in Italia.',
-      en: 'Perfect! Fuori is a trip to Italy.',
+      line: 'Perfetto! Fuori è la tua vita in Italia.',
+      en: 'Perfect! Fuori is your life in Italy.',
       note: "You stay a while, go out and talk to people. No lessons, no scores: you learn by talking, and people help you the way they'd help any newcomer.",
     },
     sayIt: {

@@ -24,8 +24,8 @@ export const onboarding = {
     },
     go: { line: '¡Vamos!', en: "Let's go!" },
     question: {
-      line: '¡Qué padre que ya hables español! Entonces, cuéntame: ¿qué te gusta de México? Toca el micrófono para hablar.',
-      en: 'How great that you already speak Spanish! So, tell me: what do you like about Mexico? Tap the microphone to talk.',
+      line: '¡Qué padre que ya hables español! Entonces, cuéntame: ¿qué te gusta de México?',
+      en: 'How great that you already speak Spanish! So, tell me: what do you like about Mexico?',
     },
     /** Name and address (docs/onboarding-design.md → Name and address): after the first tap. {name} is what Whisper heard */
     askName: { line: '¿Cómo te llamas? Toca el micrófono y dime tu nombre.', en: "What's your name? Tap the microphone and tell me your name." },
@@ -67,8 +67,8 @@ export const onboarding = {
     /** Cards 4–7 (Josh, 2026-10-23: 7 cards). Card 4 opens with ¡Perfecto!,
      *  after the level; levelSet stays for builds from before */
     trip: {
-      line: '¡Perfecto! Afuera es un viaje a México.',
-      en: 'Perfect! Afuera is a trip to Mexico.',
+      line: '¡Perfecto! Afuera es tu vida en México.',
+      en: 'Perfect! Afuera is your life in Mexico.',
       note: "You stay a while, go out and talk to people. No lessons, no scores: you learn by talking, and people help you the way they'd help any newcomer.",
     },
     sayIt: {
