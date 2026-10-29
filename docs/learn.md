@@ -98,6 +98,21 @@ Claude's favourites: The word you were missing, What she meant, Next time try (s
 
 **First try:** `content/it/prompts/learn.md`, run by `tests/experiments/learn-page.mts` on the modelled month and on one of Josh's conversations (pages in `tests/experiments/out/`, off git).
 
+## A lesson: Magda teaches, characters practise, Magda reviews (Josh, 2026-10-28)
+
+Settled in conversation after a night of lesson mockups (the comic strip, a two-person scene, a watched Giorgia–Luisa dialogue); every version that made the learner watch two other people talk felt awkward. Content and presentation are separate decisions (Josh: "you are mixing content and presentation"): a lesson is written once as data, and both of its parts use the conversation screen.
+
+1. **Magda teaches,** on the conversation screen with her portrait, in English and Italian: the principle in one plain line, in a warm "here's how you…" tone (Josh: "here's how you always ask for things politely and how you say no thanks"). The learner repeats or answers her.
+2. **She sets up examples** in different places: e.g. ordering at a café, asking for pizza, buying a bus ticket.
+3. **Short practice dialogues** with the real characters of the city, in Italian and in role, two or three learner turns each. They count as visits: the character remembers the learner afterwards.
+4. **Back to Magda to review** what the learner actually said in the dialogues: what went well, one fix, a last "say it".
+
+**Ending a practice dialogue (agreed, not built):** a turn count, not detection. The server tells the character which learner turn it is and the limit ("turn 2 of 3; on the last turn, wrap up naturally"); the character closes in role; after her closing line the mic gives way to one button, Back to Magda or the next scene. Saved through the usual leave function. Later, if 3 turns feels long: a judge call that lets the character wrap up early once the lesson's phrase has been used (no phrase lists).
+
+**Tone and content decided along the way:** teach what to say, not what not to say (no *voglio* warning beside *vorrei* at A1, Josh: "why is voglio being discussed with vorrei"); *vorrei* stays a fixed phrase at A1 as the syllabus says, with the verb as an optional "why?" for learners who want it.
+
+**To square:** the provisional notes above say Magda stops being an in-game character and lean towards Learn having no teacher. This brings her back as a person reached from Learn, not on the map.
+
 ## The Learn area: the learner's history
 
 **Where:** the icon next to Settings, on every screen; it opens like Settings.

@@ -65,6 +65,12 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 ---
 
 
+
+## 2026-10-28: Lesson format decided in conversation (cloud session)
+- Decided with Josh (design only, nothing built): a lesson is Magda teaching on the conversation screen, short in-role practice dialogues of 2–3 turns with the city's characters (counted as visits), then Magda reviewing. Practice dialogues end on a turn count passed to the character, then a Back to Magda button. Written up in `docs/learn.md` → "A lesson".
+- Mockups from the evening (claude.ai artifacts): the lesson strip redone in Fuori's tokens, a two-person chat, and the scene in the game's layout with Magda's notes; superseded by the decision above.
+- Images still to upload from the laptop: Siena (12), pizza a portafoglio, Marco Chen, Rome (14); commands in the commits.
+
 ## 2026-10-28: Flashcard feed, card look, Italy pilot deck (laptop session)
 
 - **Done:** flashcard feed rebuilt (endless, Anki-style spacing, every stage passed only by saying the word; `FlashcardSchedule`), installed on Josh's phone, not yet played. Card look decided (`docs/flashcards.md` → The look): tall 2:3 traditional cards, Italy carte napoletane + tarocchi mixed by id, Mexico lotería; the app draws the banner, its outline varying per card. Master deck pilot: `content/it/flashcard-deck.json` (59 nouns, units a1-01–a1-04) and `scripts/build-flashcard-deck.mjs`; drafts and contact sheet in `.flashcards-tmp/deck-it/` (not uploaded, no voice). Josh: "they look great"; five weak cards remade; bustina dropped (at the bar it's just zucchero).
