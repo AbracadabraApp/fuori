@@ -9,6 +9,8 @@ The books are in `books-private/` in the repo folder on Josh's laptop (git-exclu
 
 ## Lessons and missions: the direction (Josh, 2026-10-27)
 
+**Superseded in part (2026-10-28):** the shape of a lesson is now [learn.md](learn.md) → "A lesson: Magda teaches, characters practise, Magda reviews": Magda teaches on the conversation screen, short practice dialogues with the city's characters (2–3 learner turns, ended by a turn count), Magda reviews. That replaces below: the comic strip, Magda's three fixed practice questions, and the recommended first slice. Still standing: lessons follow the syllabus one step at a time; missions; met / studied / solid. The 21 generated lessons (`content/it/lessons.json`) are usable as content for it (each step's phrases, places for the practice dialogues, context lines), but their notices still warn against *voglio*, which Josh ruled out ("teach what to say, not what not to say"): fix in `lesson-steps.md` before use.
+
 Agreed with Josh after a trial lesson (`content/it/prompts/lesson.md`, `tests/experiments/lesson.mts`, unit a1-15) and a comparison of four ways to make lessons:
 
 - **Lessons come from the syllabus, adapted to the game** (option D). The syllabus sets the order and the content (its frames, model exchanges, plain explanation, the real trap); a lesson is **one step** of a unit (a1-15 has four: *ho* + participle, the irregulars, *sono* for going, time words). The game supplies the people and places: the exchange's "barista" becomes a character the learner knows, in their voice. Lessons can be made ahead per country and checked once.
