@@ -163,7 +163,10 @@ private struct FlashcardRow: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 if let done = item.done {
-                    outcome(done.outcome)
+                    // Said with no help: a tick. After help, nothing: the
+                    // word on the card is enough (Josh: the return arrow
+                    // wasn't a clear visual)
+                    if done.outcome == .passed { outcome(done.outcome) }
                 } else {
                     VStack(spacing: 4) {
                         micButton
