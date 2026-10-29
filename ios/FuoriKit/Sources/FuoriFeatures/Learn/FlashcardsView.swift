@@ -12,6 +12,11 @@ import FuoriDesign
 struct FlashcardsView: View {
     let model: FlashcardsModel
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
+    @Environment(\.scenePhase) private var scenePhase
+    /// The card in the middle of the screen
+    @State private var current: UUID?
+    @State private var settling: Task<Void, Never>?
 
     var body: some View {
         ScrollView {
@@ -22,9 +27,18 @@ struct FlashcardsView: View {
                         .onAppear { if item.id == model.feed.dropLast(1).last?.id || item.id == model.feed.last?.id { model.more() } }
                 }
             }
+            .scrollTargetLayout()
             .padding(.horizontal, 24)
             .padding(.vertical, 16)
         }
+        .scrollPosition(id: $current, anchor: .center)
+        // Hands-free: a card that stays still for half a second starts by
+        // itself; any scrolling closes the mic
+        .onScrollPhaseChange { _, phase in
+            if phase == .idle { settleSoon() } else { settling?.cancel(); model.unsettle() }
+        }
+        .onAppear { if current == nil { current = model.feed.first?.id }; settleSoon() }
+        .onChange(of: scenePhase) { _, phase in if phase != .active { model.pause() } }
         .safeAreaInset(edge: .bottom) {
             if let note = model.note {
                 Text(note)
@@ -49,7 +63,16 @@ struct FlashcardsView: View {
                 }
             }
         }
-        .onDisappear { model.stop() }
+        .onDisappear { settling?.cancel(); model.stop() }
+    }
+
+    private func settleSoon() {
+        settling?.cancel()
+        settling = Task {
+            try? await Task.sleep(for: .milliseconds(500))
+            guard !Task.isCancelled, let id = current, let item = model.feed.first(where: { $0.id == id }) else { return }
+            await model.settle(item, voiceOver: voiceOver)
+        }
     }
 }
 
@@ -121,9 +144,11 @@ private struct FlashcardRow: View {
                     switch stage {
                     // A card without a picture already shows its cue large
                     // in the picture's place: not again in the banner
+                    // Stage 1 shows word and English together (Josh,
+                    // 2026-10-29: no separate reveal)
                     case .meet:
                         if card.picture != nil { word }
-                        if revealed { english }
+                        english
                     case .recall:
                         if card.picture != nil { english }
                         if revealed { word }
@@ -166,17 +191,15 @@ private struct FlashcardRow: View {
         }
     }
 
-    /// Stage 1 has no mic until the word has been said; stages 2 and 3 always do
-    private func showsMic(_ stage: FlashcardsModel.Stage) -> Bool {
-        stage != .meet || model.revealed.contains(item.id) || model.listening == item.id
-    }
+    /// Every stage has the mic (hands-free opens it; a tap works too)
+    private func showsMic(_ stage: FlashcardsModel.Stage) -> Bool { true }
 
     private func tappable(_ stage: FlashcardsModel.Stage) -> Bool { item.done == nil && stage != .say }
 
     private func hint(_ stage: FlashcardsModel.Stage) -> String {
         guard item.done == nil else { return "" }
         switch stage {
-        case .meet: return "Shows the English and says the word, then listens"
+        case .meet: return "Says the word, then listens"
         case .recall: return "Shows the word"
         case .say: return ""
         }

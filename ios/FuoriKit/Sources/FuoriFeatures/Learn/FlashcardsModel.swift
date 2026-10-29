@@ -1,4 +1,7 @@
 import Foundation
+#if os(iOS)
+import AVFoundation
+#endif
 import Observation
 import FuoriCore
 import FuoriNetworking
@@ -7,13 +10,19 @@ import FuoriAudio
 /// Flashcards (docs/flashcards.md; Josh, 2026-10-28): an endless feed, like
 /// Instagram's, where every word moves along only when you say it.
 ///
-///   1 · Meet it: picture + word, no mic. Tap: the English shows, the word is
-///       said, then the mic opens by itself; say it to move on (a miss: the
-///       word again, and the mic again)
+///   1 · Meet it: picture, word and English together; the word is said and
+///       the mic opens by itself; say it to move on (a miss: the word again,
+///       and the mic again)
 ///   2 · Recall it: picture + English, and the mic. Say the word; tapping the
 ///       card shows it, and counts as a miss
 ///   3 · Say it: picture only, and the mic, with the article. A pass makes the
 ///       word yours
+///
+/// Hands-free (Josh, 2026-10-29): when a card stops in the middle of the
+/// screen it starts by itself (stage 1 plays the word, then listens; stages
+/// 2 and 3 listen); scrolling on closes the mic. A tap still works. With
+/// VoiceOver on, or after a call, Siri or headphones coming out, it waits
+/// for a tap, as in conversations. No auto-advance: you scroll.
 ///
 /// What comes next is `FlashcardSchedule`: words come back a few cards later,
 /// a step further along; words that are yours after 1, 3, 7… days. Scrolling
@@ -61,11 +70,16 @@ final class FlashcardsModel {
     /// Silence after the word ends the turn, as in the game; shorter, since
     /// it's one word
     private let endOfWord: TimeInterval = 1.2
-    /// Nothing said for this long: the mic closes and the card waits for a tap
-    private let firstSoundWait: TimeInterval = 5
+    /// Nothing said for this long: the mic closes and the card waits for a
+    /// tap. Longer than a conversation's 5 s: recalling a word takes thought
+    private let firstSoundWait: TimeInterval = 8
     /// Whatever it hears (a room, a TV), the mic never stays open longer
     private let longest: TimeInterval = 8
     private let storeKey: String
+    /// The card that has stopped in the middle of the screen (hands-free
+    /// starts it once; it isn't started again until you scroll away and back)
+    private var settled: UUID?
+    @ObservationIgnored private var observers: [NSObjectProtocol] = []
 
     private struct Saved: Codable {
         var stages: [String: Stage]
@@ -83,6 +97,54 @@ final class FlashcardsModel {
         self.schedule = FlashcardSchedule()
         load()
         more()
+        observeInterruptions()
+    }
+
+    // MARK: Hands-free
+
+    /// A card has stopped in the middle: stage 1 plays the word and listens; stages 2 and 3 listen. Once per arrival
+    func settle(_ item: Item, voiceOver: Bool) async {
+        guard settled != item.id else { return }
+        settled = item.id
+        guard !voiceOver, item.done == nil, checking == nil, listening == nil else { return }
+        if stage(item) == .meet {
+            await say(item.card)
+            // Scrolled on while the word played: no mic
+            guard settled == item.id else { return }
+        }
+        await listen(item)
+    }
+
+    /// Scrolling: the mic closes without checking and the voice stops
+    func unsettle() {
+        settled = nil
+        note = nil
+        voice.stop()
+        if listening != nil { closeMic("flashcard, scrolled") }
+    }
+
+    /// Calls, Siri and headphones coming out: the mic closes and the card
+    /// waits for a tap (it stays settled, so nothing reopens by itself)
+    private func observeInterruptions() {
+        #if os(iOS)
+        let center = NotificationCenter.default
+        observers.append(center.addObserver(forName: AVAudioSession.interruptionNotification, object: nil, queue: .main) { [weak self] note in
+            let began = (note.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt) == AVAudioSession.InterruptionType.began.rawValue
+            if began { MainActor.assumeIsolated { self?.pause() } }
+        })
+        observers.append(center.addObserver(forName: AVAudioSession.routeChangeNotification, object: nil, queue: .main) { [weak self] note in
+            let reason = note.userInfo?[AVAudioSessionRouteChangeReasonKey] as? UInt
+            if reason == AVAudioSession.RouteChangeReason.oldDeviceUnavailable.rawValue {
+                MainActor.assumeIsolated { self?.pause() }
+            }
+        })
+        #endif
+    }
+
+    /// Stops sound and mic but keeps the card settled: it waits for a tap
+    func pause() {
+        voice.stop()
+        if listening != nil { closeMic("flashcard, interrupted") }
     }
 
     func stage(_ item: Item) -> Stage { item.done?.stage ?? schedule.stage(item.card.id) }
@@ -113,10 +175,15 @@ final class FlashcardsModel {
     /// Tapping the card. Stage 1: the English shows, the word is said, and the
     /// mic opens. Stage 2: the word shows and is said, a miss. Stage 3: nothing
     func tap(_ item: Item) async {
-        guard item.done == nil, listening != item.id, checking == nil else { return }
+        guard item.done == nil, checking == nil else { return }
+        // Hands-free means the mic may already be open: at stage 2 a tap
+        // still asks for the word (closing the mic); at stage 1 it's listening
+        if listening == item.id {
+            guard stage(item) == .recall else { return }
+            closeMic("flashcard, asked for the word")
+        }
         switch stage(item) {
         case .meet:
-            revealed.insert(item.id)
             await say(item.card)
             await listen(item)
         case .recall:
@@ -204,9 +271,11 @@ final class FlashcardsModel {
             try? await Task.sleep(for: .milliseconds(900))
             if passed == item.id { passed = nil }
         } else if stage == .meet {
-            // Stage 1 tries again at once: the word, then the mic
+            // Stage 1 tries again at once: the word, then the mic (unless
+            // scrolled away meanwhile)
             missed = item.id
             await say(item.card)
+            guard settled == nil || settled == item.id else { return }
             await listen(item)
         } else {
             // The answer shows and is said; the word comes back soon
@@ -303,6 +372,7 @@ final class FlashcardsModel {
     func stop() {
         voice.stop()
         if listening != nil { closeMic("flashcards closed") }
+        settled = nil
     }
 
     // MARK: Saving

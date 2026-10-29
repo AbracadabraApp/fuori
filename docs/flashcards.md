@@ -26,13 +26,15 @@ Every noun is shown, spoken and asked for with its article: *il banco*, *l'albic
 
 | Stage | The card shows | You | Moves on when |
 |---|---|---|---|
-| 1 · Meet it | Picture + the word in the language, **no mic** | Tap: the English appears, the word is said, then the mic opens by itself | You say the word (article not needed). A miss: the word again, the mic again |
+| 1 · Meet it | Picture, the word and the English together, and the mic (Josh, 2026-10-29: no separate reveal) | The word is said, then the mic opens | You say the word (article not needed). A miss: the word again, the mic again |
 | 2 · Recall it | Picture + the English, and the mic | Say the word. Tapping the card shows it and plays it, and counts as a miss | You say the word (article not needed) |
 | 3 · Say it | Picture only, and the mic | Say the word with its article | You say it right: the word is yours. A miss shows and plays the answer |
 
 Why (Josh, 2026-10-28): "if it's there it should be required". Until then stage 2 moved on with a tap and checked nothing, so after saying a word once a card reached the test, and stage 3 cards looked greyed out (iOS dims a disabled button); now no card is dimmed: taps where there's nothing to do are simply ignored.
 
-**The mic:** one tap (stage 1: by itself after the word); a short silence after the word (1.2 s) checks it, as in the game; a second tap checks at once; nothing said in 5 s closes it, and whatever it hears it never stays open more than 8 s (a noisy room once kept it listening). It checks what Whisper heard against the one word on the card (the app knows the answer, so no phrase lists): accents ignored, close spellings accepted. Whisper is weakest on a lone word; if that's a problem, ask for a short phrase (*al banco*).
+**Hands-free (Josh, 2026-10-29; no auto-advance):** when a card stays still in the middle of the screen for half a second it starts by itself (stage 1 plays the word, then listens; stages 2 and 3 listen); scrolling closes the mic without checking. Once per arrival: a card that closed its mic isn't reopened until you scroll away and back. With VoiceOver on, or after a call, Siri or headphones coming out, it waits for a tap, as in conversations. A tap at stage 2 while it listens still shows the word (a miss).
+
+**The mic:** opens by itself (hands-free) or with a tap; a short silence after the word (1.2 s) checks it, as in the game; a second tap checks at once; nothing said in 8 s closes it (longer than a conversation's 5 s: recalling a word takes thought), and whatever it hears it never stays open more than 8 s (a noisy room once kept it listening). It checks what Whisper heard against the one word on the card (the app knows the answer, so no phrase lists): accents ignored, close spellings accepted. Whisper is weakest on a lone word; if that's a problem, ask for a short phrase (*al banco*).
 
 ## The feed (Josh, 2026-10-28: "think of it like an instagram feed"; "endless with frequency"; Anki-style, Claude's recommendation)
 
