@@ -35,6 +35,8 @@ export const language = {
     whereTo: 'Dove vuoi andare?', // departures board title
     letsDoIt: 'Sì, dai', // Learn home: the Lessons card's button (canvas "Learn area", D3)
     howToSay: 'Come si dice:', // say it in English: the label on what the learner said
+    /** Flashcards (docs/flashcards.md → The banner and help): each stage's instruction, shown, not spoken */
+    cards: { repeat: "Ripeti", howDoYouSay: "Come si dice?", whatIsIt: "Che cos'è?" },
     youAreHere: 'Sei qui', // departures board: the current city
   },
 };

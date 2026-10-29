@@ -138,29 +138,43 @@ private struct FlashcardRow: View {
                 .accessibilityHint(hint(stage))
 
             // The banner the app draws over the picture's own empty one
-            // (docs/flashcards.md → The look): it grows with the words
+            // (docs/flashcards.md → The banner and help): the words on the
+            // left, the mic on the right; it grows with the words
             HStack(alignment: .center, spacing: 12) {
                 VStack(alignment: .leading, spacing: 2) {
+                    let helped = model.help[item.id] ?? 0
                     switch stage {
                     // A card without a picture already shows its cue large
                     // in the picture's place: not again in the banner
-                    // Stage 1 shows word and English together (Josh,
-                    // 2026-10-29: no separate reveal)
                     case .meet:
                         if card.picture != nil { word }
-                        english
+                        small(card.en)
                     case .recall:
-                        if card.picture != nil { english }
-                        if revealed { word }
+                        if let ask = model.words?.howDoYouSay { prompt(ask) }
+                        let (main, note) = Self.split(card.en)
+                        if card.picture != nil { large(main) }
+                        if let note { small(note) }
+                        if revealed { word } else if helped >= 1 { hintText }
                     case .say:
-                        if revealed { word; english }
+                        if let ask = model.words?.whatIsIt { prompt(ask) }
+                        // The blank line the answer goes on (Josh, 2026-10-29)
+                        if revealed { word } else if helped >= 1 { hintText } else { answerLine }
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 if let done = item.done {
                     outcome(done.outcome)
-                } else if showsMic(stage) {
-                    micButton
+                } else {
+                    VStack(spacing: 4) {
+                        micButton
+                        // Stage 1's instruction sits under the mic (row B)
+                        if stage == .meet, let say = model.words?.repeat {
+                            Text(inLanguage(say))
+                                .typeface(.label, 14, relativeTo: .caption, weight: .medium)
+                                .italic()
+                                .foregroundStyle(Tokens.Colors.green)
+                        }
+                    }
                 }
             }
             .padding(.horizontal, 22)
@@ -177,9 +191,6 @@ private struct FlashcardRow: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .shadow(color: .black.opacity(0.1), radius: 4, y: 2)
         .overlay {
-            if model.missed == item.id {
-                RoundedRectangle(cornerRadius: 16).stroke(Tokens.Colors.terracotta, lineWidth: 2)
-            }
             if model.passed == item.id {
                 ZStack {
                     RoundedRectangle(cornerRadius: 16).fill(Tokens.Colors.green.opacity(0.85))
@@ -191,19 +202,17 @@ private struct FlashcardRow: View {
         }
     }
 
-    /// Every stage has the mic (hands-free opens it; a tap works too)
-    private func showsMic(_ stage: FlashcardsModel.Stage) -> Bool { true }
-
-    private func tappable(_ stage: FlashcardsModel.Stage) -> Bool { item.done == nil && stage != .say }
+    /// Every card asks for help with a tap until it's answered
+    private func tappable(_ stage: FlashcardsModel.Stage) -> Bool { item.done == nil }
 
     private func hint(_ stage: FlashcardsModel.Stage) -> String {
         guard item.done == nil else { return "" }
-        switch stage {
-        case .meet: return "Says the word, then listens"
-        case .recall: return "Shows the word"
-        case .say: return ""
-        }
+        return stage == .meet ? "Says the word again" : "Double-tap for a hint"
     }
+
+    static func split(_ en: String) -> (String, String?) { FlashcardRowSplit.split(en) }
+
+    @ScaledMetric(relativeTo: .title) private var lineSpace: CGFloat = 34
 
     /// The picture: tall 2:3 in the master deck, 2:1 in the old starter
     /// words; without one, the card keeps its size and centres the English
@@ -228,16 +237,52 @@ private struct FlashcardRow: View {
             .clipped()
     }
 
+    /// The word in the language: large, medium weight (Josh, 2026-10-29:
+    /// more legible than heavy)
     private var word: some View {
         Text(inLanguage(card.said))
-            .typeface(.display, 30, relativeTo: .title, weight: .heavy)
+            .typeface(.display, 30, relativeTo: .title, weight: .medium)
             .foregroundStyle(Tokens.Colors.ink)
     }
 
-    private var english: some View {
-        Text(card.en)
+    /// The English cue at stage 2, set like the word
+    private func large(_ text: String) -> some View {
+        Text(text)
+            .typeface(.display, 30, relativeTo: .title, weight: .medium)
+            .foregroundStyle(Tokens.Colors.ink)
+    }
+
+    private func small(_ text: String) -> some View {
+        Text(text)
             .typeface(.label, 17, relativeTo: .body)
             .foregroundStyle(Tokens.Colors.text)
+    }
+
+    /// The card's instruction (Come si dice?, Che cos'è?): shown, not spoken
+    private func prompt(_ text: String) -> some View {
+        Text(inLanguage(text))
+            .typeface(.label, 16, relativeTo: .subheadline, weight: .medium)
+            .italic()
+            .foregroundStyle(Tokens.Colors.green)
+    }
+
+    /// The hint: the article and first letters, then a blank
+    private var hintText: some View {
+        Text(inLanguage(FlashcardsModel.hint(for: card.said)))
+            .typeface(.display, 30, relativeTo: .title, weight: .medium)
+            .foregroundStyle(Tokens.Colors.ink)
+            .accessibilityLabel(Text(inLanguage(FlashcardsModel.hint(for: card.said).replacingOccurrences(of: "___", with: ""))))
+    }
+
+    /// Stage 3's blank line, where the answer appears once said
+    private var answerLine: some View {
+        VStack(spacing: 0) {
+            Spacer(minLength: lineSpace)
+            Rectangle().fill(Tokens.Colors.muted).frame(height: 2)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.trailing, 8)
+        .accessibilityHidden(true)
     }
 
     /// An answered card: a tick, or the word to keep working on
@@ -283,5 +328,13 @@ private struct FlashcardRow: View {
         var s = AttributedString(text)
         s.languageIdentifier = model.speechLanguage
         return s
+    }
+}
+
+/// "coffee (an espresso)" → "coffee" large, "(an espresso)" small under it
+enum FlashcardRowSplit {
+    static func split(_ en: String) -> (String, String?) {
+        guard let r = en.range(of: " (") else { return (en, nil) }
+        return (String(en[..<r.lowerBound]), String(en[en.index(after: r.lowerBound)...]))
     }
 }

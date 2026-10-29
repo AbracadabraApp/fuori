@@ -54,7 +54,16 @@ public struct UIWords: Codable, Sendable, Equatable {
     public let howToSay: String?
     /// Learn home: the Lessons card's button ("Sì, dai"); nil from servers before 2026-10-26
     public let letsDoIt: String?
+    /// Flashcards: each stage's instruction ("Ripeti", "Come si dice?",
+    /// "Che cos'è?"); nil from servers before 2026-10-29
+    public let cards: CardWords?
     public let ticket: TicketWords
+}
+
+public struct CardWords: Codable, Sendable, Equatable {
+    public let `repeat`: String
+    public let howDoYouSay: String
+    public let whatIsIt: String
 }
 
 public struct TicketWords: Codable, Sendable, Equatable {

@@ -10,13 +10,18 @@ import FuoriAudio
 /// Flashcards (docs/flashcards.md; Josh, 2026-10-28): an endless feed, like
 /// Instagram's, where every word moves along only when you say it.
 ///
-///   1 · Meet it: picture, word and English together; the word is said and
-///       the mic opens by itself; say it to move on (a miss: the word again,
-///       and the mic again)
-///   2 · Recall it: picture + English, and the mic. Say the word; tapping the
-///       card shows it, and counts as a miss
-///   3 · Say it: picture only, and the mic, with the article. A pass makes the
-///       word yours
+///   1 · Meet it: picture, word and English; the word is said and the mic
+///       opens (Ripeti). Not heard: the word again, and the mic again
+///   2 · Recall it: picture + English (Come si dice?). Say the word
+///   3 · Say it: picture and a blank line (Che cos'è?). Say it with the
+///       article; it appears on the line and the word is yours
+///
+/// Two outcomes, as the learner sees it (Josh, 2026-10-29): I said it, or I
+/// need help. Help comes from a pause (about 4 s), a tap on the card, or a
+/// word that wasn't heard (wrong or misheard: never "wrong"): first the hint
+/// (article and first letters, il ca___), then the word played; then you say
+/// it. Said with no help, the card moves on; after help it stays at its
+/// stage and comes back a few cards later.
 ///
 /// Hands-free (Josh, 2026-10-29): when a card stops in the middle of the
 /// screen it starts by itself (stage 1 plays the word, then listens; stages
@@ -35,7 +40,8 @@ final class FlashcardsModel {
 
     /// One card in the feed. The same word can be in it more than once
     struct Item: Identifiable, Equatable {
-        enum Outcome: Equatable { case passed, missed }
+        /// passed: said with no help; helped: said after help (it comes back)
+        enum Outcome: Equatable { case passed, helped }
         let id = UUID()
         let card: Flashcard
         /// Once answered: how, and at which stage (the card stays as it was)
@@ -48,17 +54,19 @@ final class FlashcardsModel {
 
     private(set) var feed: [Item] = []
     private(set) var schedule: FlashcardSchedule
-    /// Cards whose answer is showing (stage 1's English, a missed or asked-for word)
+    /// Cards whose word is showing (after help, or once said)
     private(set) var revealed: Set<UUID> = []
+    /// Help given on a card: 1 the hint, 2 the word played
+    private(set) var help: [UUID: Int] = [:]
     private(set) var listening: UUID?
     private(set) var checking: UUID?
-    /// A miss on this card just now (stage 1, which tries again)
-    private(set) var missed: UUID?
     /// Just passed: the card's moment
     private(set) var passed: UUID?
     private(set) var note: String?
 
     let speechLanguage: String
+    /// Each stage's instruction, in the language (from /v1/content)
+    let words: CardWords?
     /// The master deck's tall 2:3 cards (false: the old 2:1 starter words)
     let tall: Bool
     private let pool: [Flashcard]
@@ -92,6 +100,7 @@ final class FlashcardsModel {
         self.pool = cards
         self.tall = tall
         self.speechLanguage = language.speechLang
+        self.words = language.ui.cards
         self.api = api
         self.storeKey = "flashcards.\(country)"
         self.schedule = FlashcardSchedule()
@@ -172,27 +181,18 @@ final class FlashcardsModel {
 
     // MARK: Taps
 
-    /// Tapping the card. Stage 1: the English shows, the word is said, and the
-    /// mic opens. Stage 2: the word shows and is said, a miss. Stage 3: nothing
+    /// Tapping the card asks for help: stage 1 plays the word again; stages
+    /// 2 and 3 give the next help (the hint, then the word). Then it listens
     func tap(_ item: Item) async {
         guard item.done == nil, checking == nil else { return }
-        // Hands-free means the mic may already be open: at stage 2 a tap
-        // still asks for the word (closing the mic); at stage 1 it's listening
-        if listening == item.id {
-            guard stage(item) == .recall else { return }
-            closeMic("flashcard, asked for the word")
-        }
-        switch stage(item) {
-        case .meet:
+        if listening == item.id { closeMic("flashcard, asked for help") }
+        if stage(item) == .meet {
             await say(item.card)
-            await listen(item)
-        case .recall:
-            finish(item, .missed)
-            revealed.insert(item.id)
-            await say(item.card)
-        case .say:
-            break
+        } else {
+            await giveHelp(item)
         }
+        guard settled == nil || settled == item.id else { return }
+        await listen(item)
     }
 
     /// The mic: a tap listens (a short silence after the word checks it);
@@ -207,6 +207,34 @@ final class FlashcardsModel {
             await listen(item)
         }
     }
+
+    /// The hint: the article and the word's first two letters ("il ca___",
+    /// "l'au___", "el ca___"); a word with no article, its first letters
+    nonisolated static func hint(for said: String) -> String {
+        var article = "", word = said
+        if let r = said.range(of: "'", options: .backwards) {
+            article = String(said[..<r.upperBound]); word = String(said[r.upperBound...])
+        } else if let space = said.firstIndex(of: " ") {
+            article = String(said[...space]); word = String(said[said.index(after: space)...])
+        }
+        return article + String(word.prefix(2)) + "___"
+    }
+
+    /// The next help on a stage 2 or 3 card: the hint, then the word shown
+    /// and played (again, if it was already)
+    private func giveHelp(_ item: Item) async {
+        let level = min((help[item.id] ?? 0) + 1, 2)
+        help[item.id] = level
+        if level == 2 {
+            revealed.insert(item.id)
+            await say(item.card)
+        }
+    }
+
+    /// Words not heard on a card in a row, after the word was played: past
+    /// this the mic stops reopening (a TV in the room) and the card waits
+    private var unheard: [UUID: Int] = [:]
+    private let unheardLimit = 3
 
     private func listen(_ item: Item) async {
         // Another card's mic closes without checking
@@ -238,15 +266,25 @@ final class FlashcardsModel {
                     await self.check(item)
                     return
                 }
+                // A pause at stages 2 and 3 brings help, then it listens again
+                if !snap.hasSpoken, open >= self.helpAfter, self.stage(item) != .meet, (self.help[item.id] ?? 0) < 2 {
+                    self.closeMic("flashcard, help after a pause")
+                    await self.giveHelp(item)
+                    guard self.settled == nil || self.settled == item.id else { return }
+                    await self.listen(item)
+                    return
+                }
                 if !snap.hasSpoken, open >= self.firstSoundWait {
                     // Nothing said: the mic closes; the card waits for a tap
                     self.closeMic("flashcard, nothing said")
-                    self.note = "Didn't catch that. Tap the mic to try again."
                     return
                 }
             }
         }
     }
+
+    /// A pause this long at stages 2 and 3 brings the next help
+    private let helpAfter: TimeInterval = 4
 
     private func closeMic(_ why: String) {
         listenTask?.cancel()
@@ -265,28 +303,30 @@ final class FlashcardsModel {
         checking = nil
         let stage = stage(item)
         if Self.matches(heard: heard, said: item.card.said, needArticle: stage == .say) {
-            missed = nil
-            finish(item, .passed)
+            // Said it. Stage 1 always moves on (it's meeting the word); later
+            // stages move on only without help
+            revealed.insert(item.id)
+            unheard[item.id] = nil
+            finish(item, stage == .meet || (help[item.id] ?? 0) == 0 ? .passed : .helped)
             passed = item.id
             try? await Task.sleep(for: .milliseconds(900))
             if passed == item.id { passed = nil }
-        } else if stage == .meet {
-            // Stage 1 tries again at once: the word, then the mic (unless
-            // scrolled away meanwhile)
-            missed = item.id
-            await say(item.card)
-            guard settled == nil || settled == item.id else { return }
-            await listen(item)
-        } else {
-            // The answer shows and is said; the word comes back soon
-            finish(item, .missed)
-            revealed.insert(item.id)
-            await say(item.card)
+            return
         }
+        // Not heard (a wrong word or misheard: the same to the learner): help
+        if stage == .meet || (help[item.id] ?? 0) >= 2 {
+            unheard[item.id, default: 0] += 1
+            guard unheard[item.id]! < unheardLimit else { unheard[item.id] = nil; return }
+            await say(item.card)
+        } else {
+            await giveHelp(item)
+        }
+        guard settled == nil || settled == item.id else { return }
+        await listen(item)
     }
 
     /// The card is answered: it stays in the feed as it was, and the word is
-    /// scheduled again
+    /// scheduled again (after help: same stage, back soon)
     private func finish(_ item: Item, _ outcome: Item.Outcome) {
         guard let index = feed.firstIndex(where: { $0.id == item.id }) else { return }
         let stage = stage(item)
@@ -296,7 +336,6 @@ final class FlashcardsModel {
         } else {
             schedule.missed(item.card.id, end: feed.count)
         }
-        if missed == item.id { missed = nil }
         save()
     }
 
