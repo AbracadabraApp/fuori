@@ -3,7 +3,7 @@ import FuoriCore
 import FuoriDesign
 
 /// The feed (docs/flashcards.md; Josh, 2026-10-28: "think of it like an
-/// instagram feed"): wide 2:1 cards in an endless scroll, more loading below.
+/// instagram feed"): tall 2:3 cards (the master deck) in an endless scroll, more loading below.
 /// Each card at its own stage, no helper words; a card moves along only when
 /// its word is said, and one scrolled past comes back later. Answered cards
 /// stay as they were. Nothing is dimmed: a card waiting for you looks alive.
@@ -85,13 +85,16 @@ private struct OwnWords: View {
 private struct FlashcardRow: View {
     let model: FlashcardsModel
     let item: FlashcardsModel.Item
+    /// The card's size, so the drawn banner covers the picture's own empty
+    /// one (about the bottom quarter of a tall card)
+    @State private var size: CGSize = .zero
 
     private var card: Flashcard { item.card }
 
     var body: some View {
         let stage = model.stage(item)
         let revealed = model.revealed.contains(item.id) || item.done != nil
-        VStack(alignment: .leading, spacing: 0) {
+        ZStack(alignment: .bottom) {
             // Taps are ignored where there's nothing to tap, never shown disabled
             picture(stage: stage)
                 .contentShape(Rectangle())
@@ -101,11 +104,13 @@ private struct FlashcardRow: View {
                 .accessibilityAddTraits(tappable(stage) ? .isButton : [])
                 .accessibilityHint(hint(stage))
 
+            // The banner the app draws over the picture's own empty one
+            // (docs/flashcards.md → The look): it grows with the words
             HStack(alignment: .center, spacing: 12) {
                 VStack(alignment: .leading, spacing: 2) {
                     switch stage {
                     // A card without a picture already shows its cue large
-                    // in the picture's place: not again underneath
+                    // in the picture's place: not again in the banner
                     case .meet:
                         if card.picture != nil { word }
                         if revealed { english }
@@ -123,11 +128,17 @@ private struct FlashcardRow: View {
                     micButton
                 }
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 22)
             .padding(.vertical, 12)
-            .frame(minHeight: 76)
+            .frame(minHeight: model.tall ? max(76, size.height * 0.24) : 76)
+            .background {
+                let shape = CardBanner(style: CardBanner.style(for: card.id))
+                shape.fill(Tokens.Colors.paper).overlay { shape.stroke(Tokens.Colors.ink, lineWidth: 1.5) }
+            }
+            .padding(.horizontal, model.tall ? size.width * 0.06 : 12)
+            .padding(.bottom, model.tall ? size.height * 0.04 : 12)
         }
-        .background(Tokens.Colors.card, in: RoundedRectangle(cornerRadius: 16))
+        .onGeometryChange(for: CGSize.self) { $0.size } action: { size = $0 }
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .shadow(color: .black.opacity(0.1), radius: 4, y: 2)
         .overlay {
@@ -161,11 +172,12 @@ private struct FlashcardRow: View {
         }
     }
 
-    /// The 2:1 picture; without one, the card keeps its size and centres the
-    /// English (the cue at stages 2 and 3) or the word (stage 1)
+    /// The picture: tall 2:3 in the master deck, 2:1 in the old starter
+    /// words; without one, the card keeps its size and centres the English
+    /// (the cue at stages 2 and 3) or the word (stage 1)
     @ViewBuilder private func picture(stage: FlashcardsModel.Stage) -> some View {
         Color.clear
-            .aspectRatio(2, contentMode: .fit)
+            .aspectRatio(model.tall ? 2.0 / 3.0 : 2, contentMode: .fit)
             .overlay {
                 if let url = card.picture {
                     AsyncImage(url: url) { $0.resizable().scaledToFill() } placeholder: { Tokens.Colors.sand }

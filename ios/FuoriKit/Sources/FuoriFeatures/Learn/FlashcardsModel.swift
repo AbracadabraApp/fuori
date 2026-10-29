@@ -50,6 +50,8 @@ final class FlashcardsModel {
     private(set) var note: String?
 
     let speechLanguage: String
+    /// The master deck's tall 2:3 cards (false: the old 2:1 starter words)
+    let tall: Bool
     private let pool: [Flashcard]
     private let api: APIClient
     private let voice = Voice()
@@ -72,8 +74,9 @@ final class FlashcardsModel {
         var mine: [String: FlashcardSchedule.Own]?
     }
 
-    init(cards: [Flashcard], language: Language, country: String, api: APIClient) {
+    init(cards: [Flashcard], language: Language, country: String, api: APIClient, tall: Bool = false) {
         self.pool = cards
+        self.tall = tall
         self.speechLanguage = language.speechLang
         self.api = api
         self.storeKey = "flashcards.\(country)"
@@ -265,16 +268,34 @@ final class FlashcardsModel {
 
     // MARK: Voice
 
-    /// The word in a native voice (the greeter's), the phone's own if that fails
+    /// The word as recorded once for the deck (a native male voice, Josh's
+    /// pick); without a recording, or if it fails, the server's voice, then
+    /// the phone's own
     func say(_ card: Flashcard) async {
         voice.stop()
         do {
             try AudioSession.activate()
-            let audio = try await api.speak(text: card.said, characterId: "guide", speed: 0.9)
+            let audio: Data
+            if let url = card.audio, let recorded = await recording(url) {
+                audio = recorded
+            } else {
+                audio = try await api.speak(text: card.said, characterId: "guide", speed: 0.9)
+            }
             try await voice.play(audio)
         } catch {
             await voice.speak(card.said, language: speechLanguage, rate: 0.9)
         }
+    }
+
+    /// Recordings fetched this session (a word comes back several times)
+    @ObservationIgnored private var recordings: [URL: Data] = [:]
+
+    private func recording(_ url: URL) async -> Data? {
+        if let data = recordings[url] { return data }
+        guard let (data, response) = try? await URLSession.shared.data(from: url),
+              (response as? HTTPURLResponse)?.statusCode == 200 else { return nil }
+        recordings[url] = data
+        return data
     }
 
     func stop() {

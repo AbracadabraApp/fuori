@@ -70,15 +70,15 @@ struct LearnArea: View {
         GlassCard(title: "Flashcards", line: "Words with pictures, to say out loud.", symbol: "rectangle.on.rectangle.angled.fill", tint: Tokens.Colors.flashcards, ink: .white)
     }
 
-    /// The deck (docs/flashcards.md), made when Learn opens, from the
-    /// country's starter words; nil from servers without them
+    /// The deck (docs/flashcards.md), made when Learn opens: the master deck,
+    /// or the old starter words from servers before it; nil from servers without either
     @State private var deckModel: FlashcardsModel?
     /// Debug: `-FuoriOpenFlashcards YES` opens the deck at launch
     @State private var showingDeck = false
 
     private func makeDeck() {
-        guard deckModel == nil, let content = model.content, let cards = content.flashcards, !cards.isEmpty, let api = model.api else { return }
-        deckModel = FlashcardsModel(cards: cards, language: content.language, country: content.country, api: api)
+        guard deckModel == nil, let content = model.content, let cards = (content.cards?.isEmpty == false ? content.cards : content.flashcards), !cards.isEmpty, let api = model.api else { return }
+        deckModel = FlashcardsModel(cards: cards, language: content.language, country: content.country, api: api, tall: content.cards?.isEmpty == false)
     }
 
     // MARK: Lessons
