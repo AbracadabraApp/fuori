@@ -1,6 +1,11 @@
 {
   "about": "The master flashcard deck for Mexico (docs/flashcards.md → Next; pilot, Josh 2026-10-28): one card per syllabus word, built once and shared by every learner. word + article as said, the English sense taught, and what the picture shows. Pictures are tall 2:3 lotería cards made by scripts/build-flashcard-deck.mjs. Pilot: 60 picturable nouns from units a1-01 to a1-07; alcohol left out. Not served by the app yet.",
   "language": "es-mx",
+  "voice": {
+    "elevenlabs": "W6Z2FAa578IKOGSVo2sA",
+    "name": "Alejandro",
+    "chosen": "Josh, 2026-10-28: male voices, not the greeter"
+  },
   "cards": [
     {
       "unit": "a1-01",

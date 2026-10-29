@@ -8,13 +8,21 @@
  * banner and writes in it.
  *
  * Drafts go to .flashcards-tmp/deck-<country>/ with a contact sheet
- * (sheet.jpg) for Josh to look at first. Words that already have a draft are
- * skipped, so a rerun only makes what's missing (delete a draft to remake it).
+ * (sheet.jpg) for Josh to look at first.
+ *
+ * It never remakes anything (Josh, 2026-10-28): a word whose picture or
+ * recording already exists, as a draft or uploaded (images.json → cards/<id>,
+ * cards/<id>.mp3), is skipped, so a rerun only makes new words. To remake one
+ * on purpose, name it with --redo.
  *
  *   node --env-file=.env.local scripts/build-flashcard-deck.mjs
  *   COUNTRY=es-mx node --env-file=.env.local scripts/build-flashcard-deck.mjs
- *   … --only caffe,cornetto     just these
+ *   … --redo caffe,cornetto     remake just these, picture and voice
  *   … --sheet                   only rebuild the contact sheet
+ *
+ * Each word is also recorded once, with its article, in the deck's voice
+ * (flashcard-deck.json → voice; Josh picked male voices, 2026-10-28), as
+ * <id>.mp3 next to its picture. Needs ELEVENLABS_API_KEY too.
  *
  * Needs XAI_API_KEY. About 2–3 cents a picture.
  */
@@ -27,7 +35,7 @@ import sharp from 'sharp';
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const country = process.env.COUNTRY || 'it';
 const args = process.argv.slice(2);
-const only = args.includes('--only') ? new Set(args[args.indexOf('--only') + 1].split(',')) : null;
+const redo = new Set(args.includes('--redo') ? args[args.indexOf('--redo') + 1].split(',') : []);
 const sheetOnly = args.includes('--sheet');
 
 // Same ids as lib/flashcards.ts
@@ -53,11 +61,30 @@ const STYLES = {
 const styles = STYLES[country];
 const names = Object.keys(styles);
 
-const deck = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', country, 'flashcard-deck.json'), 'utf8')).cards
-  .map((c) => ({ ...c, id: id(c.word) }));
+const deckFile = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', country, 'flashcard-deck.json'), 'utf8'));
+const deck = deckFile.cards.map((c) => ({ ...c, id: id(c.word) }));
+const said = (c) => (c.article.endsWith("'") ? `${c.article}${c.word}` : `${c.article} ${c.word}`);
 const out = path.join(ROOT, '.flashcards-tmp', `deck-${country}`);
 fs.mkdirSync(out, { recursive: true });
 const file = (c) => path.join(out, `${c.id}.jpg`);
+// Already uploaded: never made again
+const uploaded = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(ROOT, 'content', country, 'images.json'), 'utf8')).images ?? {}));
+const has = (c, local, key) => fs.existsSync(local) || uploaded.has(key);
+
+const sound = (c) => path.join(out, `${c.id}.mp3`);
+
+// The word as said, once: ElevenLabs' fuller model (not the game's fast one),
+// a little slower than speech
+async function record(c) {
+  const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${deckFile.voice.elevenlabs}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'xi-api-key': process.env.ELEVENLABS_API_KEY },
+    body: JSON.stringify({ text: said(c), model_id: 'eleven_multilingual_v2', voice_settings: { stability: 0.6, similarity_boost: 0.8, speed: 0.9 } }),
+  });
+  if (!res.ok) throw new Error(`${c.id}: ElevenLabs ${res.status} ${(await res.text()).slice(0, 160)}`);
+  fs.writeFileSync(sound(c), Buffer.from(await res.arrayBuffer()));
+  console.log(`recorded ${c.id}`);
+}
 
 async function make(c) {
   const style = names[pick(c.id, names.length)];
@@ -74,12 +101,17 @@ async function make(c) {
 }
 
 if (!sheetOnly) {
-  const todo = deck.filter((c) => (only ? only.has(c.id) : !fs.existsSync(file(c))));
+  const todo = deck.filter((c) => redo.has(c.id) || !has(c, file(c), `cards/${c.id}`));
   console.log(`${todo.length} to make, ${deck.length} in the deck (${pack.images?.dir ?? country})`);
   const failed = [];
   // A few at a time
   for (let i = 0; i < todo.length; i += 6) {
     const batch = await Promise.allSettled(todo.slice(i, i + 6).map(make));
+    batch.forEach((r) => { if (r.status === 'rejected') { failed.push(r.reason.message); console.log(r.reason.message); } });
+  }
+  const unsaid = deck.filter((c) => redo.has(c.id) || !has(c, sound(c), `cards/${c.id}.mp3`));
+  for (let i = 0; i < unsaid.length; i += 4) {
+    const batch = await Promise.allSettled(unsaid.slice(i, i + 4).map(record));
     batch.forEach((r) => { if (r.status === 'rejected') { failed.push(r.reason.message); console.log(r.reason.message); } });
   }
   if (failed.length) console.log(`${failed.length} failed; rerun to retry them`);
@@ -91,8 +123,7 @@ const W = 240, H = 360, L = 34, cols = 8;
 const rows = Math.ceil(done.length / cols);
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const tiles = await Promise.all(done.map(async (c, i) => {
-  const said = c.article.endsWith("'") ? `${c.article}${c.word}` : `${c.article} ${c.word}`;
-  const label = Buffer.from(`<svg width="${W}" height="${L}"><rect width="100%" height="100%" fill="#fff"/><text x="6" y="22" font-family="Helvetica" font-size="17" font-weight="bold">${esc(said)}</text><text x="${W - 6}" y="22" text-anchor="end" font-family="Helvetica" font-size="12" fill="#777">${names[pick(c.id, names.length)]}</text></svg>`);
+  const label = Buffer.from(`<svg width="${W}" height="${L}"><rect width="100%" height="100%" fill="#fff"/><text x="6" y="22" font-family="Helvetica" font-size="17" font-weight="bold">${esc(said(c))}</text><text x="${W - 6}" y="22" text-anchor="end" font-family="Helvetica" font-size="12" fill="#777">${names[pick(c.id, names.length)]}</text></svg>`);
   return [
     { input: await sharp(file(c)).resize(W, H).toBuffer(), left: (i % cols) * W, top: Math.floor(i / cols) * (H + L) },
     { input: label, left: (i % cols) * W, top: Math.floor(i / cols) * (H + L) + H },
