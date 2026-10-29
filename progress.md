@@ -69,7 +69,7 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 ## 2026-10-28: Lesson format decided in conversation (cloud session)
 - Decided with Josh (design only, nothing built): a lesson is Magda teaching on the conversation screen, short in-role practice dialogues of 2–3 turns with the city's characters (counted as visits), then Magda reviewing. Practice dialogues end on a turn count passed to the character, then a Back to Magda button. Written up in `docs/learn.md` → "A lesson".
 - Mockups from the evening (claude.ai artifacts): the lesson strip redone in Fuori's tokens, a two-person chat, and the scene in the game's layout with Magda's notes; superseded by the decision above.
-- Images still to upload from the laptop: Siena (12), pizza a portafoglio, Marco Chen, Rome (14); commands in the commits.
+- New place pictures for Naples, Palermo, Siena and Rome, and Marco Chen's portrait, are all uploaded (checked against content/it/images.json).
 
 ## 2026-10-28: Flashcard feed, card look, Italy pilot deck (laptop session)
 
