@@ -64,10 +64,20 @@ private struct OwnWords: View {
                     .foregroundStyle(Tokens.Colors.muted)
             }
             ForEach(model.own) { card in
-                HStack {
-                    Text(inLanguage(card.said)).typeface(.label, 17, relativeTo: .body, weight: .bold)
-                    Spacer()
-                    Text(card.en).typeface(.label, 15, relativeTo: .subheadline).foregroundStyle(Tokens.Colors.muted)
+                HStack(spacing: 12) {
+                    // The card's picture, small, so the word is found by sight
+                    if let url = card.picture {
+                        AsyncImage(url: url) { $0.resizable().scaledToFill() } placeholder: { Tokens.Colors.sand }
+                            .frame(width: 40, height: model.tall ? 60 : 20)
+                            .clipShape(RoundedRectangle(cornerRadius: 4))
+                            .accessibilityHidden(true)
+                    }
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(inLanguage(card.said)).typeface(.label, 17, relativeTo: .body, weight: .bold)
+                        Text(card.en).typeface(.label, 15, relativeTo: .subheadline).foregroundStyle(Tokens.Colors.muted)
+                    }
+                    .accessibilityElement(children: .combine)
+                    Spacer(minLength: 0)
                 }
                 .frame(minHeight: 44)
             }
