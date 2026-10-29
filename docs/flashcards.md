@@ -5,7 +5,13 @@
 ## The card
 
 - One picture per word, with no writing in it, showing the sense the card teaches.
-- **Wide and scrollable** (Josh, 2026-10-21): 2:1 cards in a scrolling list, about two on screen with the next peeking in (342 × 171 pt picture on a standard iPhone, the word below). Images generated 2:1 and saved 1600 × 800. Style not chosen yet (the icon's woodcut, the Italian places' pastel, or the Mexican places' photographic look). Picture ideas should lean to wide scenes, since a single object sits small in a wide frame.
+- ~~Wide and scrollable, 2:1~~ (2026-10-21; replaced 2026-10-28).
+- **The look (Josh, 2026-10-28, after a review of ten styles in the "Flashcard Art Review" artifact):** traditional printed cards, tall (2:3), one bold central figure with thick outlines and flat saturated colour on cream, a thin border and an **empty banner along the bottom**; no number, no lettering in the picture.
+  - **Mexico: lotería cards** ("best vertical").
+  - **Italy: carte napoletane and tarocchi, mixed fairly randomly** so the feed varies. The style is picked per word at build time (from the card's id, so every learner sees the same card).
+  - Tried and dropped: Italy's first pastel sketch (too faint on the phone), pencil and watercolour on cream (good, but plainer), cinema poster ("not unique at all"), figurina Liebig and ex-voto (passed on), majolica (liked, not picked); Mexico's flat gouache (already the current look), painterly objects on brushed or light grounds (good, but the lotería won).
+  - Prompts say the object is "as you'd find it in everyday life in <country>", with "no flags, souvenirs or postcard clichés" (Josh: say in Italy or in Mexico); the country comes from the content files.
+- **The banner is drawn by the app, not the picture** (Claude, 2026-10-28): generated banners vary in size and place, so the app draws one cream strip with a thin black border in the same place on every card and writes in it: the word at stage 1, the English at stage 2, nothing at stage 3 until it's said. The mic sits in the banner. Not built yet; the app's cards are still 2:1.
 - **No helper words** (Josh: "not sold on all the helper words"): a card shows only what its stage shows (picture, word, English, a mic icon). No "Tap to see the English", "What is this?", "Say it" or "You said it"; no counter like "3 of 20" in the list. Tapping reveals; the mic is an icon with a VoiceOver label. A card with no picture (a *none* word) keeps the card's size and centres the word in it, with the mic below (Josh).
 
 ## Words without a good picture (Josh, 2026-10-21)
