@@ -19,8 +19,8 @@
  *   COUNTRY=es-mx node --env-file=.env.local scripts/build-flashcard-deck.mjs
  *   … --redo caffe,cornetto     remake just these, picture and voice
  *   … --sheet                   only rebuild the contact sheet
- *   … --keep                    after review: copy the drafts to public/…/cards/
- *                               for `npm run images:upload` (commit them)
+ *   … --keep                    after review: copy new or --redo drafts to
+ *                               public/…/cards/ for `npm run images:upload` (commit them)
  *
  * Each word is also recorded once, with its article, in the deck's voice
  * (flashcard-deck.json → voice; Josh picked male voices, 2026-10-28), as
@@ -108,7 +108,8 @@ if (args.includes('--keep')) {
   let kept = 0;
   for (const c of deck) for (const f of [file(c), sound(c)]) {
     const to = path.join(pub, path.basename(f));
-    if (fs.existsSync(f) && !fs.existsSync(to)) { fs.copyFileSync(f, to); kept++; }
+    // New, or remade on purpose with --redo (the upload then sends the new one)
+    if (fs.existsSync(f) && (!fs.existsSync(to) || !fs.readFileSync(f).equals(fs.readFileSync(to)))) { fs.copyFileSync(f, to); kept++; }
   }
   console.log(`kept ${kept} file(s) in ${path.relative(ROOT, pub)}`);
   process.exit(0);

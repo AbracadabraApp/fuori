@@ -102,6 +102,8 @@ final class FlashcardsModel {
                   let card = pool.first(where: { $0.id == id }) else { return }
             schedule.shown(id, slot: feed.count)
             feed.append(Item(card: card))
+            // Fetched before the card is reached, so its word plays at once
+            if let url = card.audio, recordings[url] == nil { Task { _ = await recording(url) } }
         }
         save()
     }
