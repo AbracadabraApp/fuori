@@ -1,0 +1,426 @@
+{
+  "about": "The master flashcard deck for Mexico (docs/flashcards.md → Next; pilot, Josh 2026-10-28): one card per syllabus word, built once and shared by every learner. word + article as said, the English sense taught, and what the picture shows. Pictures are tall 2:3 lotería cards made by scripts/build-flashcard-deck.mjs. Pilot: 60 picturable nouns from units a1-01 to a1-07; alcohol left out. Not served by the app yet.",
+  "language": "es-mx",
+  "cards": [
+    {
+      "unit": "a1-01",
+      "word": "noche",
+      "article": "la",
+      "en": "night",
+      "picture": "rooftops of a Mexican town under a moon and stars"
+    },
+    {
+      "unit": "a1-01",
+      "word": "mañana",
+      "article": "la",
+      "en": "morning",
+      "picture": "a street at sunrise with a man sweeping in front of a shop"
+    },
+    {
+      "unit": "a1-01",
+      "word": "tarde",
+      "article": "la",
+      "en": "afternoon",
+      "picture": "a plaza in warm afternoon light with long shadows under a tree"
+    },
+    {
+      "unit": "a1-01",
+      "word": "señor",
+      "article": "el",
+      "en": "gentleman, Mr",
+      "picture": "an older man in a shirt and straw hat, half-length"
+    },
+    {
+      "unit": "a1-01",
+      "word": "señora",
+      "article": "la",
+      "en": "lady, Mrs",
+      "picture": "a woman with a shopping bag and a shawl, half-length"
+    },
+    {
+      "unit": "a1-02",
+      "word": "diccionario",
+      "article": "el",
+      "en": "dictionary",
+      "picture": "a thick closed dictionary, no lettering"
+    },
+    {
+      "unit": "a1-03",
+      "word": "calle",
+      "article": "la",
+      "en": "street",
+      "picture": "a street of colourful one-storey houses with a lamp post"
+    },
+    {
+      "unit": "a1-03",
+      "word": "ciudad",
+      "article": "la",
+      "en": "city",
+      "picture": "a city skyline with a cathedral dome and buildings"
+    },
+    {
+      "unit": "a1-03",
+      "word": "pueblo",
+      "article": "el",
+      "en": "town, village",
+      "picture": "a small village with a white church and a few houses on a hill"
+    },
+    {
+      "unit": "a1-03",
+      "word": "celular",
+      "article": "el",
+      "en": "mobile phone",
+      "picture": "a mobile phone with a blank screen"
+    },
+    {
+      "unit": "a1-03",
+      "word": "amigo",
+      "article": "el",
+      "en": "friend",
+      "picture": "two friends laughing with an arm round each other's shoulders"
+    },
+    {
+      "unit": "a1-03",
+      "word": "vecino",
+      "article": "el",
+      "en": "neighbour",
+      "picture": "a man waving from his doorway to the house next door"
+    },
+    {
+      "unit": "a1-03",
+      "word": "hombre",
+      "article": "el",
+      "en": "man",
+      "picture": "a man with a moustache in a work shirt, half-length"
+    },
+    {
+      "unit": "a1-03",
+      "word": "mujer",
+      "article": "la",
+      "en": "woman",
+      "picture": "a woman with a long braid in an everyday blouse, half-length"
+    },
+    {
+      "unit": "a1-04",
+      "word": "joven",
+      "article": "el",
+      "en": "young man (also how you call a waiter)",
+      "picture": "a young man in a cap and T-shirt, half-length"
+    },
+    {
+      "unit": "a1-04",
+      "word": "doña",
+      "article": "la",
+      "en": "Doña (an older woman, respectfully)",
+      "picture": "a grandmotherly woman with grey hair in an apron, half-length"
+    },
+    {
+      "unit": "a1-05",
+      "word": "taco",
+      "article": "el",
+      "en": "taco",
+      "picture": "two tacos on a small plate with onion, cilantro and a lime wedge"
+    },
+    {
+      "unit": "a1-05",
+      "word": "carnitas",
+      "article": "las",
+      "en": "carnitas (slow-cooked pork)",
+      "picture": "a heap of carnitas in a copper pot"
+    },
+    {
+      "unit": "a1-05",
+      "word": "quesadilla",
+      "article": "la",
+      "en": "quesadilla",
+      "picture": "a folded quesadilla on a comal with melted cheese showing"
+    },
+    {
+      "unit": "a1-05",
+      "word": "torta",
+      "article": "la",
+      "en": "torta (a filled bread roll)",
+      "picture": "a big torta sandwich with ham, avocado and tomato in a crusty roll"
+    },
+    {
+      "unit": "a1-05",
+      "word": "tortilla",
+      "article": "la",
+      "en": "tortilla",
+      "picture": "a stack of corn tortillas in a cloth basket"
+    },
+    {
+      "unit": "a1-05",
+      "word": "salsa",
+      "article": "la",
+      "en": "salsa",
+      "picture": "a clay bowl of red salsa next to a bowl of green salsa"
+    },
+    {
+      "unit": "a1-05",
+      "word": "cebolla",
+      "article": "la",
+      "en": "onion",
+      "picture": "a white onion with one half cut"
+    },
+    {
+      "unit": "a1-05",
+      "word": "cilantro",
+      "article": "el",
+      "en": "coriander",
+      "picture": "a bunch of fresh cilantro"
+    },
+    {
+      "unit": "a1-05",
+      "word": "limón",
+      "article": "el",
+      "en": "lime",
+      "picture": "a few green limes, one cut in half"
+    },
+    {
+      "unit": "a1-05",
+      "word": "chile",
+      "article": "el",
+      "en": "chili pepper",
+      "picture": "a few green and red chili peppers"
+    },
+    {
+      "unit": "a1-05",
+      "word": "queso",
+      "article": "el",
+      "en": "cheese",
+      "picture": "a round white fresh cheese with a wedge cut out"
+    },
+    {
+      "unit": "a1-05",
+      "word": "pollo",
+      "article": "el",
+      "en": "chicken (to eat)",
+      "picture": "a whole roast chicken on a plate"
+    },
+    {
+      "unit": "a1-05",
+      "word": "taquería",
+      "article": "la",
+      "en": "taco stand, taquería",
+      "picture": "a small taquería counter with a spinning spit of meat and stools"
+    },
+    {
+      "unit": "a1-05",
+      "word": "puesto",
+      "article": "el",
+      "en": "street stall",
+      "picture": "a street stall with a striped awning selling fruit"
+    },
+    {
+      "unit": "a1-05",
+      "word": "café",
+      "article": "el",
+      "en": "coffee",
+      "picture": "a cup of coffee on a saucer"
+    },
+    {
+      "unit": "a1-05",
+      "word": "café de olla",
+      "article": "el",
+      "en": "café de olla (spiced pot coffee)",
+      "picture": "a clay mug of café de olla with a cinnamon stick"
+    },
+    {
+      "unit": "a1-05",
+      "word": "agua",
+      "article": "el",
+      "en": "water",
+      "picture": "a glass of water beside a jug"
+    },
+    {
+      "unit": "a1-05",
+      "word": "agua fresca",
+      "article": "el",
+      "en": "agua fresca (fruit water)",
+      "picture": "big glass barrels of colourful aguas frescas with a ladle"
+    },
+    {
+      "unit": "a1-05",
+      "word": "horchata",
+      "article": "la",
+      "en": "horchata (rice drink)",
+      "picture": "a glass of milky horchata dusted with cinnamon"
+    },
+    {
+      "unit": "a1-05",
+      "word": "jamaica",
+      "article": "la",
+      "en": "hibiscus water",
+      "picture": "a glass of deep red hibiscus water with dried hibiscus flowers"
+    },
+    {
+      "unit": "a1-05",
+      "word": "jugo",
+      "article": "el",
+      "en": "juice",
+      "picture": "a glass of orange juice"
+    },
+    {
+      "unit": "a1-05",
+      "word": "naranja",
+      "article": "la",
+      "en": "orange",
+      "picture": "an orange with a leaf, one half cut"
+    },
+    {
+      "unit": "a1-05",
+      "word": "refresco",
+      "article": "el",
+      "en": "soft drink",
+      "picture": "a glass bottle of soda with a straw, no label"
+    },
+    {
+      "unit": "a1-05",
+      "word": "leche",
+      "article": "la",
+      "en": "milk",
+      "picture": "a glass of milk beside a carton, no lettering"
+    },
+    {
+      "unit": "a1-05",
+      "word": "hielo",
+      "article": "el",
+      "en": "ice",
+      "picture": "a glass full of ice cubes"
+    },
+    {
+      "unit": "a1-05",
+      "word": "servilleta",
+      "article": "la",
+      "en": "napkin",
+      "picture": "a stack of paper napkins in a holder"
+    },
+    {
+      "unit": "a1-05",
+      "word": "plato",
+      "article": "el",
+      "en": "plate",
+      "picture": "an empty painted plate"
+    },
+    {
+      "unit": "a1-05",
+      "word": "vaso",
+      "article": "el",
+      "en": "glass, cup (to drink from)",
+      "picture": "an empty drinking glass"
+    },
+    {
+      "unit": "a1-05",
+      "word": "mesa",
+      "article": "la",
+      "en": "table",
+      "picture": "a small wooden table with two chairs"
+    },
+    {
+      "unit": "a1-06",
+      "word": "billete",
+      "article": "el",
+      "en": "banknote",
+      "picture": "a small folded bundle of green and pink paper banknotes held by a money clip, clearly money and not playing cards, no numbers or lettering"
+    },
+    {
+      "unit": "a1-06",
+      "word": "moneda",
+      "article": "la",
+      "en": "coin",
+      "picture": "a small pile of coins, no numbers or lettering"
+    },
+    {
+      "unit": "a1-06",
+      "word": "tarjeta",
+      "article": "la",
+      "en": "card (bank card)",
+      "picture": "a bank card, no numbers or lettering"
+    },
+    {
+      "unit": "a1-06",
+      "word": "cajero",
+      "article": "el",
+      "en": "cash machine",
+      "picture": "a cash machine set in a wall, blank screen"
+    },
+    {
+      "unit": "a1-07",
+      "word": "tiendita",
+      "article": "la",
+      "en": "corner shop",
+      "picture": "a small corner shop with snacks hanging at the door"
+    },
+    {
+      "unit": "a1-07",
+      "word": "pan dulce",
+      "article": "el",
+      "en": "sweet bread",
+      "picture": "a tray of assorted Mexican sweet breads"
+    },
+    {
+      "unit": "a1-07",
+      "word": "concha",
+      "article": "la",
+      "en": "concha (sweet bun)",
+      "picture": "a concha sweet bun with a pink shell-patterned topping"
+    },
+    {
+      "unit": "a1-07",
+      "word": "bolillo",
+      "article": "el",
+      "en": "bread roll",
+      "picture": "a crusty bolillo bread roll"
+    },
+    {
+      "unit": "a1-07",
+      "word": "huevo",
+      "article": "el",
+      "en": "egg",
+      "picture": "a few brown eggs in a small basket"
+    },
+    {
+      "unit": "a1-07",
+      "word": "galleta",
+      "article": "la",
+      "en": "biscuit, cookie",
+      "picture": "a few round cookies on a plate"
+    },
+    {
+      "unit": "a1-07",
+      "word": "botella",
+      "article": "la",
+      "en": "bottle",
+      "picture": "a glass bottle of water, no label"
+    },
+    {
+      "unit": "a1-07",
+      "word": "bolsa",
+      "article": "la",
+      "en": "bag",
+      "picture": "a plastic shopping bag with bread sticking out"
+    },
+    {
+      "unit": "a1-07",
+      "word": "panadería",
+      "article": "la",
+      "en": "bakery",
+      "picture": "a bakery window full of breads and a tray with tongs"
+    },
+    {
+      "unit": "a1-07",
+      "word": "cuaderno",
+      "article": "el",
+      "en": "notebook",
+      "picture": "an exercise book with a plain cover"
+    },
+    {
+      "unit": "a1-07",
+      "word": "lápiz",
+      "article": "el",
+      "en": "pencil",
+      "picture": "a yellow pencil with an eraser"
+    }
+  ]
+}

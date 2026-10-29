@@ -47,7 +47,7 @@ const STYLES = {
     tarocchi: (o) => `An original card in the style of an old Italian tarot card (tarocchi): one bold central figure of ${o}, drawn with thick black outlines and flat colours (red, yellow, blue, flesh pink) on a plain cream background, inside a thin black border, with an empty plain name banner along the bottom. Old woodcut-printed look, hand-coloured, slight paper texture and imperfect registration. No mystical symbols. ${tail}`,
   },
   'es-mx': {
-    loteria: (o) => `An original card in the style of a traditional Mexican lotería card: one bold central figure of ${o}, drawn with thick black outlines and flat, saturated colours on a plain cream background, inside a thin black border, with an empty plain banner along the bottom. Old printed look, slightly naive drawing, worn paper texture. ${tail}`,
+    loteria: (o) => `An original card in the style of a traditional Mexican lotería card: one bold central figure of ${o}, drawn with thick black outlines and flat, saturated colours (red, yellow, green, blue, pink) on a plain cream background, inside a thin black border, with an empty plain banner along the bottom. Vintage printed look with slight paper texture and imperfect registration. ${tail}`,
   },
 };
 const styles = STYLES[country];
