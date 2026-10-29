@@ -32,7 +32,19 @@ Every noun is shown, spoken and asked for with its article: *il banco*, *l'albic
 
 Why (Josh, 2026-10-28): "if it's there it should be required". Until then stage 2 moved on with a tap and checked nothing, so after saying a word once a card reached the test, and stage 3 cards looked greyed out (iOS dims a disabled button); now no card is dimmed: taps where there's nothing to do are simply ignored.
 
-**The banner's layout (Josh, 2026-10-29, the "Flashcard Stages" mockup, https://claude.ai/artifact/FUNHhqHNmt5pAzSCfb3hkW → row B, "1 · Meet it" is the reference):** the banner holds only the words (word large, English under it); the mic sits on the right with a short instruction in the learned language under it as its caption (stage 1 *Ripeti*; being explored: stage 2 *Come si dice?*, stage 3 *Che cos'è?*; Mexico *Repite*, *¿Cómo se dice?*, *¿Qué es?*). The instructions are shown, not spoken, and come from /v1/content like every word in the language. Still open: a visible hint button (row A has a ?) or hints from a pause and a tap on the card (row B); the hint is the article and first letters (*il ca___*), then the word played. Not built.
+**The banner and help (Josh, 2026-10-29, the "Flashcard Stages" mockup, https://claude.ai/artifact/FUNHhqHNmt5pAzSCfb3hkW → row B). Not built yet:**
+
+| Stage | Left of the banner | Right |
+|---|---|---|
+| 1 · Meet it | the word, large (*il caffè*); the English small under it | the mic, *Ripeti* under it |
+| 2 · Recall it | *Come si dice?* small; the English large (*coffee*), its bracket small on its own line (*(an espresso)*) | the mic |
+| 3 · Say it | *Come si dice?* large | the mic |
+
+- The instructions are shown, not spoken, and come from /v1/content (Mexico *Repite*, *¿Cómo se dice?*). The only voice is the word.
+- English cues stay bare (*coffee*, not *a coffee*: the card's article marks gender, and *a* would invite *un caffè*); the bracket says what you're served. Not *espresso*: that's an Italian word too.
+- **Two outcomes, as the learner sees it:** I said it, or I need help. A word not heard (wrong word or misheard) gets help, never "wrong". Said with no help: the card moves on. After help: it stays at its stage and comes back a few cards later.
+- **Help, no button:** about 4 s of quiet, or a tap on the card, brings the hint (article and first letters, *il ca___*); again, and the word plays; then you say it. Stage 1's help is the word again. VoiceOver's hint on the card: "Double-tap for a hint". A small link can come later if waiting for help annoys (Josh: ok, 2026-10-29).
+- Measure: how often help was needed, per word and stage; keep what Whisper heard on helped attempts to spot words it keeps mishearing.
 
 **Hands-free (Josh, 2026-10-29; no auto-advance):** when a card stays still in the middle of the screen for half a second it starts by itself (stage 1 plays the word, then listens; stages 2 and 3 listen); scrolling closes the mic without checking. Once per arrival: a card that closed its mic isn't reopened until you scroll away and back. With VoiceOver on, or after a call, Siri or headphones coming out, it waits for a tap, as in conversations. A tap at stage 2 while it listens still shows the word (a miss).
 
