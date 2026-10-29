@@ -363,9 +363,17 @@ public actor APIClient {
 
     /// POST /v1/speak: the character's line in their voice, as MP3. Any error
     /// means "use the phone's own voice".
+    /// How long to wait for a character's voice before the phone's voice takes over
+    public static let speakTimeout: TimeInterval = 12
+
     public func speak(text: String, characterId: String, speed: Double) async throws -> Data {
         struct Body: Encodable { let text: String; let characterId: String; let speed: Double }
-        return try await sendData(post("v1/speak", json: Body(text: text, characterId: characterId, speed: speed)), signedIn: true)
+        var req = try post("v1/speak", json: Body(text: text, characterId: characterId, speed: speed))
+        // Callers fall back to the phone's voice when this fails, so fail soon
+        // rather than at the system's 60 s (onboarding froze on its first line,
+        // Josh, 2026-10-29)
+        req.timeoutInterval = Self.speakTimeout
+        return try await sendData(req, signedIn: true)
     }
 
     /// POST /v1/conversations/{id}/end: the character writes what they remember.

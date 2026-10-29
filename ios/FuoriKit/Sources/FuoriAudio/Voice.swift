@@ -7,6 +7,8 @@ public final class Voice: NSObject {
     private var player: AVAudioPlayer?
     private let synthesizer = AVSpeechSynthesizer()
     private var finished: CheckedContinuation<Void, Never>?
+    /// Bumped by each play or speak, so a late safety timer can't end a newer line
+    private var playing = 0
     /// The phone's voice: how far through the text it has spoken, and the length
     private var spokenUpTo = 0
     private var spokenLength = 0
@@ -43,6 +45,7 @@ public final class Voice: NSObject {
         await withCheckedContinuation { continuation in
             finished = continuation
             if !player.play() { finish() }
+            else { watch(Self.playDeadline(duration: player.duration)) }
         }
     }
 
@@ -57,11 +60,39 @@ public final class Voice: NSObject {
         await withCheckedContinuation { continuation in
             finished = continuation
             synthesizer.speak(utterance)
+            watch(Self.speakDeadline(characters: spokenLength, rate: rate))
+        }
+    }
+
+    /// Safety timers (2026-10-29): Josh saw onboarding freeze on its first
+    /// screen, her photo and no way on. If the player is interrupted, or the
+    /// phone's voice never says it finished (a missing voice, an audio
+    /// interruption), the line would wait forever. So a line ends after its
+    /// own length plus a margin, whatever the players report.
+    nonisolated static func playDeadline(duration: TimeInterval) -> TimeInterval {
+        max(duration, 0) + 3
+    }
+
+    /// The phone's voice speaks about 12 characters a second at rate 1; slower
+    /// rates take longer. Generous on purpose: it only has to catch a hang
+    nonisolated static func speakDeadline(characters: Int, rate: Float) -> TimeInterval {
+        let perSecond = 12 * Double(max(rate, 0.3))
+        return max(4, Double(characters) / perSecond * 1.5) + 3
+    }
+
+    private func watch(_ seconds: TimeInterval) {
+        playing += 1
+        let mine = playing
+        Task { @MainActor [weak self] in
+            try? await Task.sleep(for: .seconds(seconds))
+            guard let self, self.playing == mine, self.finished != nil else { return }
+            self.stop()
         }
     }
 
     /// Stops whatever is playing; a waiting `play` or `speak` returns
     public func stop() {
+        playing += 1
         player?.stop()
         player = nil
         if synthesizer.isSpeaking { synthesizer.stopSpeaking(at: .immediate) }
