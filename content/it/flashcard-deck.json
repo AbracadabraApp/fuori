@@ -1,5 +1,5 @@
 {
-  "about": "The master flashcard deck (docs/flashcards.md → Next; pilot, Josh 2026-10-28): one card per syllabus word, built once and shared by every learner. word + article as said, the English sense taught, and what the picture shows (object: the thing alone; scene; person). Pictures are tall 2:3 traditional cards (Italy: carte napoletane or tarocchi, picked from the id) made by scripts/build-flashcard-deck.mjs. Pilot: 60 picturable nouns from units a1-01 to a1-04; alcohol left out. Not served by the app yet.",
+  "about": "The master flashcard deck (docs/flashcards.md → Next; pilot, Josh 2026-10-28): one card per syllabus word, built once and shared by every learner. word + article as said, the English sense taught, and what the picture shows (object: the thing alone; scene; person). Pictures are tall 2:3 traditional cards (Italy: carte napoletane or tarocchi, picked from the id) made by scripts/build-flashcard-deck.mjs. Pilot: 60 picturable nouns from units a1-01 to a1-04; alcohol left out, and bustina (Josh: at the bar it's just zucchero; it may come back inside a phrase, una bustina di zucchero). Not served by the app yet.",
   "language": "it",
   "cards": [
     {
@@ -246,13 +246,6 @@
       "article": "la",
       "en": "brioche (a breakfast pastry)",
       "picture": "a round brioche with a top knob, golden and glossy"
-    },
-    {
-      "unit": "a1-04",
-      "word": "bustina",
-      "article": "la",
-      "en": "sachet (of sugar)",
-      "picture": "a small glass holder filled with a dozen small flat rectangular paper sugar sachets, each about the size of a matchbook, beside an espresso cup on its saucer for scale; the sachets are inside the holder, plain colours, no lettering"
     },
     {
       "unit": "a1-04",
