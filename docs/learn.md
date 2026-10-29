@@ -111,7 +111,7 @@ Settled in conversation after a night of lesson mockups (the comic strip, a two-
 
 **Tone and content decided along the way:** teach what to say, not what not to say (no *voglio* warning beside *vorrei* at A1, Josh: "why is voglio being discussed with vorrei"); *vorrei* stays a fixed phrase at A1 as the syllabus says, with the verb as an optional "why?" for learners who want it.
 
-**Missions are out of lessons for now (Josh, 2026-10-28):** "for now we pull missions as a feature out of lessons, though lessons will have assignments; for now let's leave missions to define its role as the second area of Learn." So a lesson doesn't end in a mission; it can give an assignment (what an assignment is, beyond the practice dialogues, is still to be defined). Missions stay the second area of Learn, beside Lessons, with their role to be worked out on their own. The `mission` field in `content/it/lessons.json` is unused.
+**Missions are out of lessons for now (Josh, 2026-10-28):** "for now we pull missions as a feature out of lessons, though lessons will have assignments; for now let's leave missions to define its role as the second area of Learn." So a lesson doesn't end in a mission. Its assignments are the practice dialogues (Josh: "assignments are the practice dialogues"): the short in-role conversations with the city's characters in step 3. Missions stay the second area of Learn, beside Lessons, with their role to be worked out on their own. The `mission` field in `content/it/lessons.json` is unused.
 
 **To square:** the provisional notes above say Magda stops being an in-game character and lean towards Learn having no teacher. This brings her back as a person reached from Learn, not on the map.
 
