@@ -50,7 +50,9 @@ export function deckCards(image: (id: string) => string | null): { id: string; s
   let list: { cards: DeckCard[] };
   try {
     list = JSON.parse(readFileSync(path, 'utf8'));
-  } catch {
+  } catch (err) {
+    // No deck means no flashcards in the app: say so (it was silent; scan, 2026-10-29)
+    console.error(JSON.stringify({ level: 'error', where: 'flashcard deck', path, message: err instanceof Error ? err.message : String(err) }));
     return [];
   }
   return list.cards.flatMap((c) => {

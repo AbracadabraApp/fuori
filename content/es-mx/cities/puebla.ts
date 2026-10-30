@@ -50,7 +50,7 @@ export const puebla: CityPantry = {
       neighbourhood: 'Barrio de Analco',
       real: false,
       characterId: 'lupe-cemitas-dona-lupe',
-      imagePrompt: 'Cemitas Doña Lupe, a market stall in Barrio de Analco, Puebla. A busy stall with sesame-seed rolls stacked high, hanging strings of chiles chipotles, bowls of papalo, quesillo and avocado, and a woman slicing meat for a hungry line of customers.',
+      imagePrompt: 'Cemitas Doña Lupe, a market stall in Barrio de Analco, Puebla. A busy stall with sesame-seed rolls stacked high, hanging strings of chiles chipotles, bowls of pápalo, quesillo and avocado, and a woman slicing meat for a hungry line of customers.',
     },
     {
       id: 'fonda-dona-tere',
@@ -292,7 +292,7 @@ export const puebla: CityPantry = {
     'pelonas',
     'tlacoyos',
     'quesillo',
-    'papalo',
+    'pápalo',
     'chiles chipotles',
   ],
   customs: [

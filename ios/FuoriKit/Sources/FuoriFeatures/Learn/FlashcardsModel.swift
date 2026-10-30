@@ -288,10 +288,18 @@ final class FlashcardsModel {
                 }
                 // A pause at stages 2 and 3 brings help, then it listens again
                 if !snap.hasSpoken, open >= self.helpAfter, self.stage(item) != .meet, (self.help[item.id] ?? 0) < 2 {
-                    self.closeMic("flashcard, help after a pause")
-                    await self.giveHelp(item)
-                    guard self.settled == nil || self.settled == item.id else { return }
-                    await self.listen(item)
+                    // Close the mic without cancelling this task (closeMic would):
+                    // the help ran inside it, so fetching the word's recording was
+                    // cancelled and the phone's voice said it (scan, 2026-10-29)
+                    self.listenTask = nil
+                    if let url = self.recorder.stop("flashcard, help after a pause") { try? FileManager.default.removeItem(at: url) }
+                    self.listening = nil
+                    Task { [weak self] in
+                        guard let self else { return }
+                        await self.giveHelp(item)
+                        guard self.settled == nil || self.settled == item.id else { return }
+                        await self.listen(item)
+                    }
                     return
                 }
                 if !snap.hasSpoken, open >= self.firstSoundWait {

@@ -107,7 +107,13 @@ public final class Voice: NSObject {
 
 extension Voice: AVAudioPlayerDelegate {
     nonisolated public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        Task { @MainActor in self.finish() }
+        // Only the player still playing ends the wait: a late report from a
+        // player already replaced cut the next word short (scan, 2026-10-29)
+        let finished = ObjectIdentifier(player)
+        Task { @MainActor in
+            guard let current = self.player, ObjectIdentifier(current) == finished else { return }
+            self.finish()
+        }
     }
 }
 

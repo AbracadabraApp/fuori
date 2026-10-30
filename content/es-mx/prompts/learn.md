@@ -11,8 +11,8 @@ notes the memory call already writes (memory.md → review).
 Used by POST /v1/learn (`lib/learn.ts`), when the learner opens the Learn
 sheet, and by `tests/experiments/learn-page.mts`.
 
-Mexico's copy of Italy's prompt (content/it/prompts/learn.md, version
-2026-10-21), which has no Italian in it: {language}, {city}, {name} and
+Mexico's copy of Italy's prompt (content/it/prompts/learn.md; both at
+2026-10-27 for the rules, Mexico's own examples since 2026-10-29), which has no Italian in its rules: {language}, {city}, {name} and
 {role} come from the pack. Keep the two in step when one changes.
 
 ## System prompt

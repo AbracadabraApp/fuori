@@ -93,7 +93,8 @@ export async function nameFromHeard(heard: string): Promise<{ name: string | nul
   const file = readPromptFile('name.md');
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
-    max_tokens: 1000,
+    // Thinking counts toward this; 600 failed before, and 1000 was tight (scan, 2026-10-29)
+    max_tokens: 4000,
     system: fill(file.block('System prompt'), { language: language.name }),
     messages: [{ role: 'user', content: heard }],
     output_config: { format: { type: 'json_schema', schema: { type: 'object', additionalProperties: false, properties: { name: { type: 'string' } }, required: ['name'] } } },

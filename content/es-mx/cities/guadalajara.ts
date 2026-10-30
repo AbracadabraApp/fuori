@@ -259,7 +259,7 @@ export const guadalajara: CityPantry = {
     'jericalla',
     'cazuelas (cocktail)',
     'tequila',
-    'tascalate',
+    'jericalla',
     'dulces de leche (cajeta)',
     'tostadas',
     'agua de jamaica',

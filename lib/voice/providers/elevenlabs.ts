@@ -1,3 +1,4 @@
+import { elevenLabsVoiceFor } from '@/content';
 /**
  * ElevenLabs TTS provider implementation
  */
@@ -53,9 +54,10 @@ export class ElevenLabsProvider implements VoiceProvider {
   private apiKey: string;
   private baseUrl = 'https://api.elevenlabs.io/v1';
 
-  // Fallback only. /api/speak picks per-character voices from content/it/voices.ts
+  // Fallback only, when no voice was picked: the country's own default voice
+  // (content/<country>/voices.ts), not the Italian one Mexico used to get
   private voiceMap: Record<string, string> = {
-    default: 'pFZP5JQG7iQjIQuC4Bku', // Lily - Velvety Actress (female, verified Italian)
+    default: elevenLabsVoiceFor(undefined, 'f') ?? 'pFZP5JQG7iQjIQuC4Bku',
   };
 
   constructor(apiKey?: string) {

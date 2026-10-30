@@ -9,7 +9,8 @@ public final class Recorder: @unchecked Sendable {
     public private(set) var url: URL?
     /// Buffers that couldn't be written to the file in this turn; the
     /// conversation reports a non-zero count instead of sending a broken file
-    public private(set) var writeFailures = 0
+    public var writeFailures: Int { pcmLock.withLock { failures } }
+    private var failures = 0
     /// True between a successful `start` and the next `stop`
     public private(set) var isRecording = false
     /// What stopped the last recording, and when (system uptime): for the
@@ -65,11 +66,17 @@ public final class Recorder: @unchecked Sendable {
             AVEncoderBitRateKey: 64_000,
         ]
         let mono = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: format.sampleRate, channels: 1, interleaved: false)!
-        file = try AVAudioFile(forWriting: url, settings: settings, commonFormat: .pcmFormatFloat32, interleaved: false)
+        // This recording's own file and converter, captured by its tap: the
+        // audio thread never reads them through self, so stop() and the next
+        // start() can't swap them while a buffer is being written (whole-app
+        // scan, 2026-10-29; Flashcards could start a second recording over
+        // the first). The file closes when the tap's last reference goes
+        let file = try AVAudioFile(forWriting: url, settings: settings, commonFormat: .pcmFormatFloat32, interleaved: false)
+        let converter = AVAudioConverter(from: mono, to: Self.pcmFormat)
+        self.file = file
         self.url = url
-        writeFailures = 0
-        converter = AVAudioConverter(from: mono, to: Self.pcmFormat)
-        pcmLock.withLock { pcm = Data() }
+        self.converter = converter
+        pcmLock.withLock { pcm = Data(); failures = 0 }
 
         input.removeTap(onBus: 0)
         input.installTap(onBus: 0, bufferSize: 1024, format: format) { [weak self] buffer, time in
@@ -81,8 +88,8 @@ public final class Recorder: @unchecked Sendable {
             if let copy = AVAudioPCMBuffer(pcmFormat: mono, frameCapacity: buffer.frameLength) {
                 copy.frameLength = buffer.frameLength
                 copy.floatChannelData![0].update(from: channel, count: Int(buffer.frameLength))
-                do { try self.file?.write(from: copy) } catch { self.writeFailures += 1 }
-                self.keep(copy)
+                do { try file.write(from: copy) } catch { self.pcmLock.withLock { self.failures += 1 } }
+                self.keep(copy, with: converter)
             }
         }
         engine.prepare()
@@ -91,7 +98,7 @@ public final class Recorder: @unchecked Sendable {
     }
 
     /// Adds a buffer to the 16 kHz copy (audio thread)
-    private func keep(_ buffer: AVAudioPCMBuffer) {
+    private func keep(_ buffer: AVAudioPCMBuffer, with converter: AVAudioConverter?) {
         guard let converter else { return }
         let capacity = AVAudioFrameCount(Double(buffer.frameLength) * Self.pcmFormat.sampleRate / buffer.format.sampleRate) + 32
         guard let out = AVAudioPCMBuffer(pcmFormat: Self.pcmFormat, frameCapacity: capacity) else { return }

@@ -28,6 +28,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { z } from 'zod';
 import { apiError, apiJson, withLearner } from '@/lib/api';
 import { sharedWhileRunning } from '@/lib/in-flight';
+import { ReplyStalled } from '@/lib/claude';
 import { allow } from '@/lib/rate-limit';
 import { parseTurnRequest, fitStoredTranscript, MAX_SAID_CHARS } from '@/lib/turn-request';
 import { loadConversationTurns } from '@/lib/recording';
@@ -181,7 +182,8 @@ export async function POST(request: Request) {
       } catch (err) {
         logServerError(request, 'v1 turn', err);
         // Claude busy or down: worth retrying; anything else isn't
-        if (err instanceof Anthropic.APIError && (err.status === 429 || err.status === 529 || (err.status ?? 0) >= 500)) {
+        // A reply that stalled (lib/claude.ts) is the same to the learner: busy, try again
+        if (err instanceof ReplyStalled || (err instanceof Anthropic.APIError && (err.status === 429 || err.status === 529 || (err.status ?? 0) >= 500))) {
           return { error: apiError('upstream_unavailable', 'Claude is busy or unavailable', 2000) };
         }
         return { error: apiError('server_error', `Something went wrong on the server${request.headers.get('x-fuori-id') ? ` (${request.headers.get('x-fuori-id')})` : ''}`) };

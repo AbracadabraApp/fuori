@@ -151,7 +151,7 @@ export const oaxaca: CityPantry = {
       name: 'Emiliano',
       gender: 'm',
       age: 28,
-      role: 'mezcalero',
+      role: 'cantinero',
       placeId: 'mezcaleria-los-amantes',
       personality: ['proud of his craft'],
       portraitPrompt: 'Gouache portrait of a man in his late 20s with a short beard and a woven bracelet, wearing a plain white T-shirt, who pours mezcal behind the bar at Mezcalería Los Amantes in Oaxaca. Include the bar. Bold, saturated colour: agave green, terracotta and turquoise. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',

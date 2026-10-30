@@ -34,8 +34,6 @@ Respond with JSON:
 Placeholders:
 - `{name}`, `{age}`, `{role}`, `{city}`: from the character sheet
 - `{setting}`: where they are right now ("place, neighbourhood")
-- `{formality}`: "tu (informal)" or "Lei (formal)"
-- `{english}`: "You speak fluent English." / "You speak basic English." / empty (line left out)
 - `{language}`: the language's name, from `content/it/language.ts`
 - `{person}`: what the character can see: "The person in front of you is a woman." / "… a man.", from the learner's record (`learners.addressed_as`). Line left out when it isn't known (every learner until they choose it), so the prompt is then exactly 2026-10-18b.
 - `{relationship}`: what this character knows about the person, from character memory (one of the two blocks below)
@@ -69,7 +67,6 @@ Someone approaches.
 They just said: "{learnerSaid}"
 ```
 
-- `{transcript}`: one line per turn, "You: …" for the character and "Them: …" for the learner
 
 ## Later turns: earlier in the conversation
 
