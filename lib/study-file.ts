@@ -69,11 +69,15 @@ export const writeStudyFileWithClaude: StudyFileWriter = async (input) => {
   const prompt = buildStudyFilePrompt(input);
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
-    max_tokens: 2048,
+    // The thinking counts toward this: at 2048 Magda's study file came back
+    // cut off ("Unterminated string in JSON", Josh's Mexico lesson,
+    // 2026-10-29, build 8; the roadmap's "study-file save failing in Mexico")
+    max_tokens: 8000,
     system: prompt.system,
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: outputSchema } },
   });
+  if (response.stop_reason === 'max_tokens') throw new Error(`Study file call hit max_tokens (${response.usage.output_tokens} tokens)`);
   const { notes } = Output.parse(JSON.parse(replyText(response)));
   return notes.map((n) => n.trim()).filter(Boolean).slice(0, STUDY_FILE_LINES);
 };

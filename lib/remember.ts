@@ -47,11 +47,17 @@ export const summarizeWithClaude: Summarizer = async (input) => {
   const prompt = buildMemoryPrompt(input);
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
-    max_tokens: 2048,
+    // The model thinks before answering and the thinking counts toward this
+    // limit: at 2048 a long conversation's notes came back cut off ("Unterminated
+    // string in JSON", Josh's Mexico conversation, 2026-10-29, build 8), so the
+    // character remembered nothing and the app said "send again". As the
+    // quality judge (4000) and the Learn page (8000)
+    max_tokens: 8000,
     system: prompt.system,
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: memoryOutputJsonSchema } },
   });
+  if (response.stop_reason === 'max_tokens') throw new Error(`Memory call hit max_tokens (${response.usage.output_tokens} tokens)`);
   const out = MemoryOutputSchema.parse(JSON.parse(replyText(response)));
   // The prompt asks for at most 10 short notes; hold to it so the character prompt stays short
   return { ...out, notes: out.notes.map((n) => n.trim()).filter(Boolean).slice(0, 10) };
