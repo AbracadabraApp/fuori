@@ -259,7 +259,7 @@ export const sanMiguelDeAllende: CityPantry = {
     },
     {
       id: 'marisol-tumbagones',
-      name: 'Marisol',
+      name: 'Rocío',
       gender: 'f',
       age: 34,
       role: 'dulcera',

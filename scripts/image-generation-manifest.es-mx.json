@@ -267,7 +267,7 @@
       "type": "portrait"
     },
     "guadalajara/jardin-de-san-francisco": {
-      "timestamp": "2026-10-15T00:42:41.681Z",
+      "timestamp": "2026-10-30T03:55:54.436Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/jardin-de-san-francisco.jpg",
       "type": "place"
     },
@@ -682,6 +682,6 @@
     "total": 135,
     "completed": 135,
     "failed": 0,
-    "lastRun": "2026-10-28T00:20:41.636Z"
+    "lastRun": "2026-10-30T03:55:57.468Z"
   }
 }

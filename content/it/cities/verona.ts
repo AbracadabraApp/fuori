@@ -4,7 +4,7 @@ export const verona: CityPantry = {
   id: 'verona',
   name: 'Verona',
   region: 'Veneto',
-  neighbourhoods: ['Centro Storico', 'Veronetta', 'Borgo Trento', 'San Zeno'],
+  neighbourhoods: ['Centro Storico', 'Veronetta', 'Borgo Trento', 'San Zeno', 'Porta Nuova'],
   places: [
     // BARS & CAFÉS (3)
     {
@@ -250,7 +250,7 @@ export const verona: CityPantry = {
       id: 'stazione-porta-nuova',
       name: 'Stazione di Verona Porta Nuova',
       kind: 'station',
-      neighbourhood: 'Borgo Trento',
+      neighbourhood: 'Porta Nuova',
       real: true,
       characterId: 'paolo-stazione',
       imagePrompt: 'Soft pastel sketch on white paper of a grand railway station with Art Nouveau details, travelers with luggage, departure boards, ticket windows, pigeons on the forecourt, gateway to the city atmosphere in warm stone, railway gray and soft gold',
@@ -539,7 +539,7 @@ export const verona: CityPantry = {
       name: "Sara Zanetti",
       gender: "f",
       age: 26,
-      role: "gelatiera",
+      role: "gelataia",
       placeId: 'gelateria-ponte-pietra',
       personality: ["cheerful", "innovative", "quick"],
       portraitPrompt: "Pen and ink portrait on white paper of a friendly woman in her twenties with warm smile, bright eyes, wearing casual gelato shop uniform, holding gelato scoop, enthusiastic expression, detailed linework with watercolor in pistachio green and cream",

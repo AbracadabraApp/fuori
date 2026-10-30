@@ -4,7 +4,7 @@ export const ciudadDeMexico: CityPantry = {
   id: 'ciudad-de-mexico',
   name: 'Ciudad de México',
   region: 'Ciudad de México',
-  neighbourhoods: ['Roma Norte', 'Condesa', 'Coyoacán', 'Centro Histórico'],
+  neighbourhoods: ['Roma Norte', 'Condesa', 'Coyoacán', 'Centro Histórico', 'Venustiano Carranza'],
   places: [
     {
       id: 'puesto-de-boleo-don-chucho',
@@ -119,7 +119,7 @@ export const ciudadDeMexico: CityPantry = {
       id: 'terminal-tapo',
       name: 'Terminal de Autobuses del Oriente (TAPO)',
       kind: 'bus-terminal',
-      neighbourhood: 'Centro Histórico',
+      neighbourhood: 'Venustiano Carranza',
       real: true,
       characterId: 'arturo-taquillero-cdmx',
       imagePrompt: 'a busy bus terminal in Ciudad de México. Travelers with bags at ticket counters, departure boards overhead, buses visible through glass doors, snack vendors, people waiting on benches.',

@@ -303,7 +303,7 @@ export const oaxaca: CityPantry = {
     'Día de Muertos, con altares, flores de cempasúchil y comparsas',
     'La Noche de Rábanos el 23 de diciembre',
     'Ir al mercado por días, con tianguis grandes cada semana en los pueblos de los Valles Centrales',
-    'Regatear con cariño en el mercado y pedir la ñapa',
+    'Regatear con cariño en el mercado y pedir el pilón',
     'Los cohetes y las campanas de las iglesias que anuncian las fiestas desde la mañana',
   ],
   localTouches: [

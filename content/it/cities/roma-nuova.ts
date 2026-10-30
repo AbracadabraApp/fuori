@@ -211,7 +211,7 @@ export const romaNuova: CityPantry = {
       placeId: 'gesu-piazza',
       personality: ['kind', 'precise', 'curious'],
       portraitPrompt: 'Pen and ink portrait on white paper of a 67-year-old woman with short silver hair, round glasses and a calm, attentive face, wearing a camel coat, a silk scarf and flat leather shoes. She is holding a worn leather handbag and a folded newspaper under her arm, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
-      here: 'You come to Il Gesù most mornings, and you like showing newcomers where to stand to see the painted ceiling.',
+      here: "You come to Il Gesù most mornings, and you like showing newcomers the painted ceiling, where the figures seem to tumble out of the frame into the church.",
     },
     {
       id: 'ettore-gentili-nuova',

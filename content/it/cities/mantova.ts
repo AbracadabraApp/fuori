@@ -349,7 +349,7 @@ export const mantova: CityPantry = {
       placeId: 'caffe-modi',
       personality: ["refined", "local", "dignified"],
       portraitPrompt: "Pen and ink portrait on white paper of a distinguished woman in her late fifties with silver hair, elegant posture, wearing a crisp white shirt and vest. Slight smile, knowing eyes. Minimal watercolor wash in warm sepia tones, detailed crosshatching showing refined café owner character.",
-      here: "You run this elegant café on Piazza delle Erbe, where Mantuans come for a morning coffee and, later in the day, for the aperitivo. Ask her what goes best with a slice of sbrisolona. Your background: Mantuan, from a family of the old town.",
+      here: "You run this elegant café on Piazza delle Erbe, where Mantuans come for a morning coffee and, later in the day, for the aperitivo. You'll tell anyone what goes best with a slice of sbrisolona. Your background: Mantuan, from a family of the old town.",
     },
     {
       id: 'silvia-barista',

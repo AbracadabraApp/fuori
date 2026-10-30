@@ -322,10 +322,10 @@ export const orvieto: CityPantry = {
     // CITY CHARACTER (3)
     {
       id: 'bottega-michelangeli',
-      name: 'Bottega Michelangeli',
+      name: 'La Bottega della Maiolica',
       kind: 'shop',
       neighbourhood: 'Duomo',
-      real: true,
+      real: false,
       characterId: 'pietro-michelangeli',
       imagePrompt: 'Soft pastel sketch on white paper of an artisan ceramics workshop with hand-painted majolica pottery, colorful Orvieto designs, potter at wheel, warm terracotta and cobalt blue tones, artistic tradition alive, textured clay and glazes',
     },
@@ -709,7 +709,7 @@ export const orvieto: CityPantry = {
     },
     {
       id: 'pietro-michelangeli',
-      name: "Marta Michelangeli",
+      name: "Marta Pieroni",
       gender: "f",
       age: 46,
       role: "maestra ceramista",

@@ -4,7 +4,7 @@ export const venezia: CityPantry = {
   id: 'venezia',
   name: 'Venezia',
   region: 'Veneto',
-  neighbourhoods: ['Cannaregio', 'Castello', 'Dorsoduro', 'San Marco'],
+  neighbourhoods: ['Cannaregio', 'Castello', 'Dorsoduro', 'San Marco', 'San Polo'],
   places: [
     // DAILY ROUTINE - Bars/Cafés (9)
     {
@@ -132,7 +132,7 @@ export const venezia: CityPantry = {
       id: 'mercato-rialto',
       name: 'Mercato di Rialto',
       kind: 'market',
-      neighbourhood: 'San Marco',
+      neighbourhood: 'San Polo',
       real: true,
       characterId: 'sergio-rialto',
       imagePrompt: 'The famous Rialto fish and produce market, vibrant seafood blues and vegetable greens, market stalls under white canopies, Grand Canal beyond, lively morning commerce, iconic Venetian scene.',
@@ -161,7 +161,7 @@ export const venezia: CityPantry = {
       id: 'ristorante-antiche-carampane',
       name: 'Antiche Carampane',
       kind: 'restaurant',
-      neighbourhood: 'San Marco',
+      neighbourhood: 'San Polo',
       real: true,
       characterId: 'lorenzo-carampane',
       imagePrompt: 'A hidden traditional restaurant in a quiet calle, white tablecloths glimpsed through windows, intimate dining room, classic Venetian elegance.',

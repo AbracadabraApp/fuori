@@ -103,7 +103,7 @@ export const guadalajara: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'rosa-estudiante',
-      imagePrompt: 'the Jardín de San Francisco, Centro, Guadalajara. A peaceful plaza with tall trees and stone benches beside the Templo Expiatorio, with a young woman sitting on a bench with textbooks and a laptop while pigeons wander and people pass through.',
+      imagePrompt: 'the Jardín de San Francisco, Centro, Guadalajara. A peaceful plaza with tall trees and stone benches beside the old Templo de San Francisco, with a young woman sitting on a bench with textbooks and a laptop while pigeons wander and people pass through.',
     },
     {
       id: 'escuela-lengua-guadalajara',

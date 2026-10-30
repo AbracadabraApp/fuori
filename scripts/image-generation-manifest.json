@@ -437,7 +437,7 @@
       "type": "place"
     },
     "bergamo/parco-della-trucca": {
-      "timestamp": "2026-10-10T04:34:49.364Z",
+      "timestamp": "2026-10-30T03:55:18.922Z",
       "path": "/Users/josh.petersen/fuori/public/images/places/parco-della-trucca.jpg",
       "type": "place"
     },
@@ -6882,6 +6882,6 @@
     "total": 1375,
     "completed": 1375,
     "failed": 0,
-    "lastRun": "2026-10-28T03:24:53.974Z"
+    "lastRun": "2026-10-30T03:55:21.964Z"
   }
 }
