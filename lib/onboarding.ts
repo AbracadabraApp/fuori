@@ -5,7 +5,7 @@
  * onboarding.ts). Used by the /v1/onboarding/* routes and tests.
  */
 import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
+import { anthropic, CLAUDE_MODEL, replyText, WAITING } from '@/lib/claude';
 import { onboarding, language } from '@/content';
 import { readPromptFile, fill } from '@/lib/prompts/template';
 import { buildOnboardingPrompt, type HeardAnswer } from '@/lib/prompts/build-onboarding-prompt';
@@ -30,7 +30,7 @@ async function ask<T>(step: 'follow-up' | 'send-off', answers: HeardAnswer[], sc
     system: prompt.system,
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema } },
-  });
+  }, WAITING);
   if (response.stop_reason === 'max_tokens') throw new Error(`Onboarding ${step} hit max_tokens`);
   return { ...parse(JSON.parse(replyText(response))), promptVersion: prompt.version };
 }
@@ -97,7 +97,7 @@ export async function nameFromHeard(heard: string): Promise<{ name: string | nul
     system: fill(file.block('System prompt'), { language: language.name }),
     messages: [{ role: 'user', content: heard }],
     output_config: { format: { type: 'json_schema', schema: { type: 'object', additionalProperties: false, properties: { name: { type: 'string' } }, required: ['name'] } } },
-  });
+  }, WAITING);
   if (response.stop_reason === 'max_tokens') throw new Error(`Name hit max_tokens (${response.usage.output_tokens} tokens)`);
   const name = z.object({ name: z.string() }).parse(JSON.parse(replyText(response))).name.trim();
   return { name: name || null, promptVersion: file.version };

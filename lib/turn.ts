@@ -36,6 +36,8 @@ export async function runTurn(params: {
   laps?: Laps;
   /** Called with the reply written so far, on every streamed chunk (/v1/turn's LineWatcher) */
   onText?: (snapshot: string) => void;
+  /** False once part of this reply was sent on: then a stall fails instead of retrying (lib/claude.ts) */
+  canRetry?: () => boolean;
 }): Promise<TurnReply> {
   const prompt = buildTurnPrompt(params);
 
@@ -71,7 +73,7 @@ export async function runTurn(params: {
     });
   }
   return stream;
-  });
+  }, undefined, undefined, { canRetry: params.canRetry });
   if (laps) {
     laps.facts.model = response.model;
     laps.facts.inputTokens = response.usage.input_tokens;

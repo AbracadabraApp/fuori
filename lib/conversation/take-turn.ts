@@ -44,6 +44,8 @@ export interface TakeTurnParams {
   saveAfterReply?: boolean;
   /** The reply written so far, on every streamed chunk (runTurn's onText) */
   onText?: (snapshot: string) => void;
+  /** False once part of the reply was sent on (its first sentence): a stall then fails instead of retrying */
+  canRetry?: () => boolean;
 }
 
 export interface TakeTurnResult {
@@ -103,7 +105,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   }
 
   const reply: TurnOutput = beginner
-    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText })
+    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry })
     : await runTurn({
     character,
     transcript,
@@ -115,6 +117,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     level,
     laps: p.laps,
     onText: p.onText,
+    canRetry: p.canRetry,
   });
   p.laps?.lap('claude');
 

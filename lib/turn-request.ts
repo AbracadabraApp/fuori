@@ -37,6 +37,21 @@ const TurnRequestSchema = z.object({
   conversationId: z.string().max(120).nullish(),
 });
 
+/**
+ * A conversation loaded from our own database, made to fit the caps above:
+ * the newest MAX_TURNS turns, each line cut at MAX_LINE_CHARS. The caps are
+ * for transcripts a browser sends; applied to a stored one they refused every
+ * turn after the 200th, for good (whole-app scan, 2026-10-29). The prompt
+ * uses the last 40 turns anyway (lib/prompts/build-turn-prompt.ts).
+ */
+export function fitStoredTranscript<T extends { transcript: string; translation?: string }>(turns: T[]): T[] {
+  return turns.slice(-MAX_TURNS).map((t) => ({
+    ...t,
+    transcript: t.transcript.slice(0, MAX_LINE_CHARS),
+    ...(t.translation !== undefined ? { translation: t.translation.slice(0, MAX_LINE_CHARS) } : {}),
+  }));
+}
+
 export type TurnRequest =
   | {
       ok: true;

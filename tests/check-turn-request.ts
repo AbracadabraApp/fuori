@@ -7,7 +7,7 @@ import { readFileSync } from 'fs';
 import { cities, tutor } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { departureFor } from '@/lib/travel/departure';
-import { parseTurnRequest, MAX_SAID_CHARS, MAX_TURNS } from '@/lib/turn-request';
+import { parseTurnRequest, fitStoredTranscript, MAX_SAID_CHARS, MAX_TURNS, MAX_LINE_CHARS } from '@/lib/turn-request';
 
 const problems: string[] = [];
 const check = (ok: boolean, msg: string) => { if (!ok) problems.push(msg); };
@@ -63,6 +63,19 @@ const screen = readFileSync('app/components/ConversationScreen.tsx', 'utf8');
 const bodies = [...screen.matchAll(/'\/api\/turn',[\s\S]*?body: JSON\.stringify\(\{([^}]*)\}\)/g)].map((m) => m[1]);
 check(bodies.length === 2, `expected two /api/turn calls in ConversationScreen, found ${bodies.length}`);
 for (const b of bodies) check(!/\bcharacter\b/.test(b) && /placeId/.test(b), `a /api/turn body still sends the sheet or lacks placeId: {${b}}`);
+
+// A long conversation loaded from the database fits the caps instead of being
+// refused for good after its 200th turn (whole-app scan, 2026-10-29)
+{
+  const city = cities.find((c) => c.places.some((p) => p.characterId && p.characterId !== tutor.id))!;
+  const place = city.places.find((p) => p.characterId && p.characterId !== tutor.id)!;
+  const stored = Array.from({ length: 250 }, (_, i) => ({ who: (i % 2 ? 'learner' : 'npc') as 'npc' | 'learner', transcript: i === 249 ? 'x'.repeat(3000) : `line ${i}` }));
+  const fitted = fitStoredTranscript(stored);
+  check(fitted.length === MAX_TURNS && fitted[0].transcript === 'line 50', 'a stored transcript keeps its newest MAX_TURNS turns');
+  check(fitted[fitted.length - 1].transcript.length === MAX_LINE_CHARS, 'a stored line over the cap is cut, not refused');
+  const r = parseTurnRequest({ cityId: city.id, placeId: place.id, learnerSaid: 'ciao', transcript: fitted });
+  check(r.ok, `a 250-turn stored conversation, fitted, is accepted: ${r.ok ? '' : r.error}`);
+}
 
 if (problems.length) {
   console.error(`FAIL: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);

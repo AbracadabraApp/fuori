@@ -19,6 +19,23 @@ function fake(ms: number, value: string, err?: Error) {
   };
 }
 
+/** A stream that sends text every `every` ms and answers after `ms`: a long reply still arriving */
+function talking(ms: number, every: number, value: string) {
+  const state = { aborted: false };
+  let listener: (() => void) | undefined;
+  return {
+    state,
+    stream: {
+      on: (_e: 'text', l: () => void) => { listener = l; },
+      finalMessage: () => new Promise<string>((resolve) => {
+        const tick = setInterval(() => listener?.(), every);
+        setTimeout(() => { clearInterval(tick); resolve(value); }, ms);
+      }),
+      abort: () => { state.aborted = true; },
+    },
+  };
+}
+
 async function main() {
   // Stalls once, then answers: retried, and the stalled attempt is aborted
   let attempts: ReturnType<typeof fake>[] = [];
@@ -45,6 +62,17 @@ async function main() {
   const bad = new Anthropic.BadRequestError(400, { type: 'error', error: { type: 'invalid_request_error', message: 'bad' } }, 'bad', new Headers());
   try { await finalWithDeadline(() => { const f = fake(5, 'x', bad); attempts.push(f); return f.stream; }, 100); } catch (e) { err = e; }
   check('400: not retried', err === bad && attempts.length === 1, attempts.length);
+
+  // A long reply still arriving isn't a stall: the limit is on going quiet (scan, 2026-10-29)
+  attempts = [];
+  got = await finalWithDeadline(() => { const f = talking(250, 30, 'long'); attempts.push(f as any); return f.stream as any; }, 100);
+  check('a long reply that keeps arriving: one attempt, not cut', got === 'long' && attempts.length === 1, `${got} after ${attempts.length}`);
+
+  // Once part of the reply was sent on, a stall fails instead of retrying
+  attempts = [];
+  err = undefined;
+  try { await finalWithDeadline(() => { const f = fake(500, 'never'); attempts.push(f); return f.stream; }, 50, 2, { canRetry: () => false }); } catch (e) { err = e; }
+  check('first sentence already sent: no retry', err instanceof ReplyStalled && attempts.length === 1, attempts.length);
 
   // A normal reply: one attempt
   attempts = [];

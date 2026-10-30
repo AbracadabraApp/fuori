@@ -10,7 +10,7 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL, replyText } from './claude';
+import { anthropic, CLAUDE_MODEL, replyText, WAITING_LONG } from './claude';
 import { readPromptFile, fill } from './prompts/template';
 import { learnOutputJsonSchema } from './prompts/learn-output-schema';
 import { language, pack } from '@/content';
@@ -79,7 +79,7 @@ export async function writeLearnPage(character: CharacterSheet, city: string, tr
     system: prompt.system,
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: learnOutputJsonSchema } },
-  });
+  }, WAITING_LONG);
   if (response.stop_reason === 'max_tokens') throw new Error(`Learn page hit max_tokens (${response.usage.output_tokens} tokens)`);
   return tidyLearnPage(LearnPageSchema.parse(JSON.parse(replyText(response))));
 }

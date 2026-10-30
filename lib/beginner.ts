@@ -215,7 +215,7 @@ export class PartsWatcher {
 }
 
 /** One Beginner turn: the parts, and the line and English derived from them */
-export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { laps?: Laps; onText?: (snapshot: string) => void }): Promise<{ line: string; en: string; parts: Part[] }> {
+export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { laps?: Laps; onText?: (snapshot: string) => void; canRetry?: () => boolean }): Promise<{ line: string; en: string; parts: Part[] }> {
   const prompt = buildBeginnerPrompt(p);
   const started = performance.now();
   // A deadline and one retry (lib/claude.ts): a stalled reply hung Doña Rosa
@@ -233,7 +233,7 @@ export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[
   if (p.laps) stream.once('text', () => p.laps!.mark('claudeFirstToken', performance.now() - started));
   if (p.onText) stream.on('text', (_delta, snapshot) => p.onText!(snapshot));
   return stream;
-  });
+  }, undefined, undefined, { canRetry: p.canRetry });
   if (response.stop_reason === 'max_tokens') throw new Error(`Beginner turn hit max_tokens (${response.usage.output_tokens} tokens)`);
   const parts = tidyParts(PartsSchema.parse(JSON.parse(replyText(response))).parts);
   if (!parts.length) throw new Error('Beginner turn came back with no parts');

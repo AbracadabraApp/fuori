@@ -27,7 +27,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { z } from 'zod';
 import { apiError, apiJson, withLearner } from '@/lib/api';
-import { parseTurnRequest, MAX_SAID_CHARS } from '@/lib/turn-request';
+import { parseTurnRequest, fitStoredTranscript, MAX_SAID_CHARS } from '@/lib/turn-request';
 import { loadConversationTurns } from '@/lib/recording';
 import { takeTurn } from '@/lib/conversation/take-turn';
 import { logServerError } from '@/lib/server-log';
@@ -68,7 +68,7 @@ export async function POST(request: Request) {
     laps.lap('load');
 
     // Same checks as the web: the character from ids, sizes capped
-    const parsed = parseTurnRequest({ ...body.data, transcript: transcript.map(({ who, transcript, translation }) => ({ who, transcript, translation })) });
+    const parsed = parseTurnRequest({ ...body.data, transcript: fitStoredTranscript(transcript.map(({ who, transcript, translation }) => ({ who, transcript, translation }))) });
     if (!parsed.ok) return apiError(parsed.status === 404 ? 'not_found' : 'bad_request', parsed.error);
 
     const speed = body.data.speed ?? DEFAULT_APP_SPEED;
@@ -85,9 +85,12 @@ export async function POST(request: Request) {
 
     /** The turn; onFirst, when streaming, gets the first sentence as soon as more follows it */
     const run = async (onFirst?: (first: string, parts?: Part[]) => void): Promise<{ body: object; headers: Record<string, string> } | { error: Response }> => {
+      // Once the first sentence has gone to the app, a retried reply couldn't follow it
+      let firstSent = false;
       const watcher = new LineWatcher({
         split: !!onFirst,
         onFirst: (first) => {
+          if (onFirst) firstSent = true;
           voice(first);
           onFirst?.(first);
         },
@@ -99,6 +102,7 @@ export async function POST(request: Request) {
       const partsWatcher = new PartsWatcher((first, leadParts) => {
         if (!onFirst) return; // the app doesn't stream: the whole line's voice is started below
         partsFirst = first;
+        firstSent = true;
         voice(first);
         onFirst(first, leadParts);
       });
@@ -119,6 +123,7 @@ export async function POST(request: Request) {
             watcher.feed(snapshot);
             partsWatcher.feed(snapshot);
           },
+          canRetry: () => !firstSent,
         });
         // Beginner: the voice for the rest (after the first parts), or the whole line
         if (result.reply.parts) {

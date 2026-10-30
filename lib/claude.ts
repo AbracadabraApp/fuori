@@ -10,9 +10,20 @@ export const CLAUDE_MODEL = process.env.CLAUDE_MODEL || 'claude-sonnet-5-5';
  *  Set TURN_MODEL in a test to try a faster model without changing the judge. */
 export const TURN_MODEL = process.env.TURN_MODEL || CLAUDE_MODEL;
 
+// Every call has a limit (whole-app scan, 2026-10-29): the SDK's default is
+// 10 minutes and two retries, so a stalled call could hang a screen for half
+// an hour. Background calls (memory, study file, judge, level) get 2 minutes
+// and one retry; calls a learner is waiting on pass a tighter limit below.
 export const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
+  timeout: 120_000,
+  maxRetries: 1,
 });
+
+/** For calls a learner waits on (say it, reply buttons, onboarding): a stall shows as an error they can retry */
+export const WAITING = { timeout: 20_000, maxRetries: 1 } as const;
+/** The Learn page writes more (up to 8000 tokens) */
+export const WAITING_LONG = { timeout: 45_000, maxRetries: 1 } as const;
 
 /** A character's reply takes 2–5 s; past this it has stalled */
 export const REPLY_DEADLINE_MS = 15_000;
@@ -27,19 +38,34 @@ export const REPLY_DEADLINE_MS = 15_000;
  * (a bad request) isn't retried.
  */
 export async function finalWithDeadline<M>(
-  start: () => { finalMessage(): Promise<M>; abort(): void },
+  start: () => { finalMessage(): Promise<M>; abort(): void; on?(event: 'text', listener: (...args: never[]) => void): unknown },
   ms = REPLY_DEADLINE_MS,
-  tries = 2
+  tries = 2,
+  opts: { canRetry?: () => boolean; totalMs?: number } = {}
 ): Promise<M> {
+  // `ms` is how long the reply may go quiet (before its first words, or
+  // between them), not its whole length: a long reply still arriving isn't
+  // a stall (whole-app scan, 2026-10-29). `totalMs` caps the whole attempt.
+  const totalMs = opts.totalMs ?? ms * 3;
   for (let attempt = 1; ; attempt++) {
     const stream = start();
-    let timer: ReturnType<typeof setTimeout> | undefined;
+    let quiet: ReturnType<typeof setTimeout> | undefined;
+    let whole: ReturnType<typeof setTimeout> | undefined;
+    let stalled: (e: Error) => void = () => {};
     const deadline = new Promise<never>((_, reject) => {
-      timer = setTimeout(() => {
-        stream.abort();
-        reject(new ReplyStalled(ms));
-      }, ms);
+      stalled = reject;
     });
+    const stall = (after: number) => {
+      stream.abort();
+      stalled(new ReplyStalled(after));
+    };
+    const arm = () => {
+      clearTimeout(quiet);
+      quiet = setTimeout(() => stall(ms), ms);
+    };
+    arm();
+    whole = setTimeout(() => stall(totalMs), totalMs);
+    stream.on?.('text', arm);
     try {
       return await Promise.race([stream.finalMessage(), deadline]);
     } catch (err) {
@@ -47,10 +73,15 @@ export async function finalWithDeadline<M>(
         err instanceof ReplyStalled ||
         err instanceof Anthropic.APIConnectionError ||
         (err instanceof Anthropic.APIError && (err.status === 429 || err.status === 529 || (err.status ?? 0) >= 500 || err.status === undefined));
-      if (!retryable || attempt >= tries) throw err;
+      // Once the caller has sent part of this reply on (its first sentence
+      // went to the app and its voice started), a retry would write a
+      // different reply that can't follow it: fail cleanly instead
+      const allowed = opts.canRetry ? opts.canRetry() : true;
+      if (!retryable || attempt >= tries || !allowed) throw err;
       console.error(JSON.stringify({ level: 'warn', where: 'claude reply', attempt, retrying: true, message: err instanceof Error ? err.message : String(err) }));
     } finally {
-      clearTimeout(timer);
+      clearTimeout(quiet);
+      clearTimeout(whole);
     }
   }
 }
