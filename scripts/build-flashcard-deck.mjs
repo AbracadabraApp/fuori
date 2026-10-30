@@ -24,7 +24,12 @@
  *
  * Each word is also recorded once, with its article, in the deck's voice
  * (flashcard-deck.json → voice; Josh picked male voices, 2026-10-28), as
- * <id>.mp3 next to its picture. Needs ELEVENLABS_API_KEY too.
+ * <id>.mp3 next to its picture, levelled to one loudness (-16 LUFS) so every
+ * deck plays as loud: Mexico's came out 5 dB quieter than Italy's and Josh
+ * found them soft (2026-10-29). Needs ELEVENLABS_API_KEY and ffmpeg.
+ *
+ *   … --level                   level the recordings already made (drafts and
+ *                               public/…/cards/), without recording again
  *
  * Needs XAI_API_KEY. About 2–3 cents a picture.
  */
@@ -32,6 +37,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { createHash } from 'crypto';
+import { execFileSync } from 'child_process';
 import sharp from 'sharp';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -85,7 +91,24 @@ async function record(c) {
   });
   if (!res.ok) throw new Error(`${c.id}: ElevenLabs ${res.status} ${(await res.text()).slice(0, 160)}`);
   fs.writeFileSync(sound(c), Buffer.from(await res.arrayBuffer()));
+  level(sound(c));
   console.log(`recorded ${c.id}`);
+}
+
+// One loudness for every recording (EBU R128, -16 LUFS, the usual level for
+// speech on phones), in place
+function level(file) {
+  const tmp = `${file}.level.mp3`;
+  execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', file, '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11', '-ar', '44100', '-b:a', '128k', tmp]);
+  fs.renameSync(tmp, file);
+}
+
+if (args.includes('--level')) {
+  const pub = path.join(ROOT, 'public', pack.images?.dir ?? 'images', 'cards');
+  let n = 0;
+  for (const c of deck) for (const f of [sound(c), path.join(pub, `${c.id}.mp3`)]) if (fs.existsSync(f)) { level(f); n++; }
+  console.log(`levelled ${n} recording(s)`);
+  process.exit(0);
 }
 
 async function make(c) {

@@ -13,14 +13,14 @@
       "bytes": 272188
     },
     "cards/agua-fresca.mp3": {
-      "key": "es-mx/cards/agua-fresca.248cfb4468.mp3",
-      "src": "248cfb4468253402",
-      "bytes": 22612
+      "key": "es-mx/cards/agua-fresca.4ecde4bafb.mp3",
+      "src": "4ecde4bafb37837d",
+      "bytes": 22613
     },
     "cards/agua.mp3": {
-      "key": "es-mx/cards/agua.f2f5b4fe75.mp3",
-      "src": "f2f5b4fe75c9d90f",
-      "bytes": 20523
+      "key": "es-mx/cards/agua.4efd33c3a9.mp3",
+      "src": "4efd33c3a9e326be",
+      "bytes": 20524
     },
     "cards/amigo": {
       "key": "es-mx/cards/amigo.ff906208ad.webp",
@@ -28,9 +28,9 @@
       "bytes": 260118
     },
     "cards/amigo.mp3": {
-      "key": "es-mx/cards/amigo.39f3c68cd4.mp3",
-      "src": "39f3c68cd4c23d22",
-      "bytes": 18851
+      "key": "es-mx/cards/amigo.0f7cd6f434.mp3",
+      "src": "0f7cd6f4343bb779",
+      "bytes": 18852
     },
     "cards/billete": {
       "key": "es-mx/cards/billete.7929eb59b7.webp",
@@ -38,9 +38,9 @@
       "bytes": 235932
     },
     "cards/billete.mp3": {
-      "key": "es-mx/cards/billete.6f91f58916.mp3",
-      "src": "6f91f5891626fb4a",
-      "bytes": 20523
+      "key": "es-mx/cards/billete.6c3bf9c4c3.mp3",
+      "src": "6c3bf9c4c3a417fa",
+      "bytes": 20524
     },
     "cards/bolillo": {
       "key": "es-mx/cards/bolillo.cf8063b442.webp",
@@ -48,9 +48,9 @@
       "bytes": 203150
     },
     "cards/bolillo.mp3": {
-      "key": "es-mx/cards/bolillo.df05681654.mp3",
-      "src": "df056816542974aa",
-      "bytes": 20523
+      "key": "es-mx/cards/bolillo.9ef1a22d72.mp3",
+      "src": "9ef1a22d72d244ec",
+      "bytes": 20524
     },
     "cards/bolsa": {
       "key": "es-mx/cards/bolsa.4835629190.webp",
@@ -58,9 +58,9 @@
       "bytes": 205050
     },
     "cards/bolsa.mp3": {
-      "key": "es-mx/cards/bolsa.89fdccc525.mp3",
-      "src": "89fdccc525a5f8ab",
-      "bytes": 17597
+      "key": "es-mx/cards/bolsa.5b9e5fc16d.mp3",
+      "src": "5b9e5fc16d9ea970",
+      "bytes": 17598
     },
     "cards/botella": {
       "key": "es-mx/cards/botella.2f0f05385c.webp",
@@ -68,9 +68,9 @@
       "bytes": 208442
     },
     "cards/botella.mp3": {
-      "key": "es-mx/cards/botella.511ba96f0a.mp3",
-      "src": "511ba96f0a6be4b1",
-      "bytes": 20941
+      "key": "es-mx/cards/botella.2223d5530f.mp3",
+      "src": "2223d5530f199503",
+      "bytes": 20942
     },
     "cards/cafe": {
       "key": "es-mx/cards/cafe.81489ed45c.webp",
@@ -83,14 +83,14 @@
       "bytes": 244618
     },
     "cards/cafe-de-olla.mp3": {
-      "key": "es-mx/cards/cafe-de-olla.c1a704e864.mp3",
-      "src": "c1a704e86439209e",
-      "bytes": 21776
+      "key": "es-mx/cards/cafe-de-olla.6b9d978228.mp3",
+      "src": "6b9d978228a979f7",
+      "bytes": 21777
     },
     "cards/cafe.mp3": {
-      "key": "es-mx/cards/cafe.3a03bfc52e.mp3",
-      "src": "3a03bfc52e3c7fde",
-      "bytes": 18851
+      "key": "es-mx/cards/cafe.ca57f2055f.mp3",
+      "src": "ca57f2055f9fb1dd",
+      "bytes": 18852
     },
     "cards/cajero": {
       "key": "es-mx/cards/cajero.f545f95fdd.webp",
@@ -98,9 +98,9 @@
       "bytes": 166096
     },
     "cards/cajero.mp3": {
-      "key": "es-mx/cards/cajero.4cacb07529.mp3",
-      "src": "4cacb075290c3850",
-      "bytes": 19687
+      "key": "es-mx/cards/cajero.7f3e0feae9.mp3",
+      "src": "7f3e0feae9c86e3e",
+      "bytes": 19688
     },
     "cards/calle": {
       "key": "es-mx/cards/calle.05c884bbe4.webp",
@@ -108,9 +108,9 @@
       "bytes": 218918
     },
     "cards/calle.mp3": {
-      "key": "es-mx/cards/calle.9233ba4094.mp3",
-      "src": "9233ba4094ea82db",
-      "bytes": 18851
+      "key": "es-mx/cards/calle.49105f2b33.mp3",
+      "src": "49105f2b33646d06",
+      "bytes": 18852
     },
     "cards/carnitas": {
       "key": "es-mx/cards/carnitas.8e0e80d3a0.webp",
@@ -118,9 +118,9 @@
       "bytes": 352418
     },
     "cards/carnitas.mp3": {
-      "key": "es-mx/cards/carnitas.220ac26a68.mp3",
-      "src": "220ac26a681384a9",
-      "bytes": 21776
+      "key": "es-mx/cards/carnitas.83c1749f7a.mp3",
+      "src": "83c1749f7a9d0ba6",
+      "bytes": 21777
     },
     "cards/cebolla": {
       "key": "es-mx/cards/cebolla.0731ac9f30.webp",
@@ -128,9 +128,9 @@
       "bytes": 157526
     },
     "cards/cebolla.mp3": {
-      "key": "es-mx/cards/cebolla.5404b14c8e.mp3",
-      "src": "5404b14c8ebd4732",
-      "bytes": 18015
+      "key": "es-mx/cards/cebolla.4d499af435.mp3",
+      "src": "4d499af435a1eea1",
+      "bytes": 18016
     },
     "cards/celular": {
       "key": "es-mx/cards/celular.e65838dff0.webp",
@@ -138,9 +138,9 @@
       "bytes": 102174
     },
     "cards/celular.mp3": {
-      "key": "es-mx/cards/celular.991439106f.mp3",
-      "src": "991439106fec7f05",
-      "bytes": 20523
+      "key": "es-mx/cards/celular.151d8a5e72.mp3",
+      "src": "151d8a5e72f34d3d",
+      "bytes": 20524
     },
     "cards/chile": {
       "key": "es-mx/cards/chile.484828cec6.webp",
@@ -148,9 +148,9 @@
       "bytes": 220662
     },
     "cards/chile.mp3": {
-      "key": "es-mx/cards/chile.cdc303dbb7.mp3",
-      "src": "cdc303dbb777d2a9",
-      "bytes": 19687
+      "key": "es-mx/cards/chile.76bbcf2eaf.mp3",
+      "src": "76bbcf2eafb3f7be",
+      "bytes": 19688
     },
     "cards/cilantro": {
       "key": "es-mx/cards/cilantro.33032eb4d3.webp",
@@ -158,9 +158,9 @@
       "bytes": 277402
     },
     "cards/cilantro.mp3": {
-      "key": "es-mx/cards/cilantro.16eab0e07d.mp3",
-      "src": "16eab0e07d64a8b9",
-      "bytes": 20941
+      "key": "es-mx/cards/cilantro.c6c4da2859.mp3",
+      "src": "c6c4da28597db111",
+      "bytes": 20942
     },
     "cards/ciudad": {
       "key": "es-mx/cards/ciudad.fe364b5d55.webp",
@@ -168,9 +168,9 @@
       "bytes": 209402
     },
     "cards/ciudad.mp3": {
-      "key": "es-mx/cards/ciudad.98e9ac1183.mp3",
-      "src": "98e9ac118303509e",
-      "bytes": 18851
+      "key": "es-mx/cards/ciudad.09de73daf7.mp3",
+      "src": "09de73daf718bc17",
+      "bytes": 18852
     },
     "cards/concha": {
       "key": "es-mx/cards/concha.cfc0dc8a22.webp",
@@ -178,9 +178,9 @@
       "bytes": 223280
     },
     "cards/concha.mp3": {
-      "key": "es-mx/cards/concha.729903d2a6.mp3",
-      "src": "729903d2a62829aa",
-      "bytes": 18015
+      "key": "es-mx/cards/concha.4275cc256f.mp3",
+      "src": "4275cc256fd72576",
+      "bytes": 18016
     },
     "cards/cuaderno": {
       "key": "es-mx/cards/cuaderno.1bbc20f920.webp",
@@ -188,9 +188,9 @@
       "bytes": 198970
     },
     "cards/cuaderno.mp3": {
-      "key": "es-mx/cards/cuaderno.07451ae617.mp3",
-      "src": "07451ae6171eb5b3",
-      "bytes": 20523
+      "key": "es-mx/cards/cuaderno.ad0146e7ba.mp3",
+      "src": "ad0146e7ba96f317",
+      "bytes": 20524
     },
     "cards/diccionario": {
       "key": "es-mx/cards/diccionario.0a1c4c24cd.webp",
@@ -198,9 +198,9 @@
       "bytes": 272534
     },
     "cards/diccionario.mp3": {
-      "key": "es-mx/cards/diccionario.6cfdb5de98.mp3",
-      "src": "6cfdb5de98b06013",
-      "bytes": 24284
+      "key": "es-mx/cards/diccionario.829fe39921.mp3",
+      "src": "829fe39921e60c05",
+      "bytes": 24285
     },
     "cards/dona": {
       "key": "es-mx/cards/dona.a815594205.webp",
@@ -208,9 +208,9 @@
       "bytes": 167642
     },
     "cards/dona.mp3": {
-      "key": "es-mx/cards/dona.0f823bb296.mp3",
-      "src": "0f823bb296777a7a",
-      "bytes": 18851
+      "key": "es-mx/cards/dona.edb860baea.mp3",
+      "src": "edb860baea7cc8cb",
+      "bytes": 18852
     },
     "cards/galleta": {
       "key": "es-mx/cards/galleta.f68851f712.webp",
@@ -218,9 +218,9 @@
       "bytes": 202102
     },
     "cards/galleta.mp3": {
-      "key": "es-mx/cards/galleta.c19ad5a9cc.mp3",
-      "src": "c19ad5a9cc7b8dc6",
-      "bytes": 20941
+      "key": "es-mx/cards/galleta.ea8fa809a4.mp3",
+      "src": "ea8fa809a4414b69",
+      "bytes": 20942
     },
     "cards/hielo": {
       "key": "es-mx/cards/hielo.555ed920ec.webp",
@@ -228,9 +228,9 @@
       "bytes": 174478
     },
     "cards/hielo.mp3": {
-      "key": "es-mx/cards/hielo.b0a822f2f3.mp3",
-      "src": "b0a822f2f3269c63",
-      "bytes": 18851
+      "key": "es-mx/cards/hielo.6831f5df5d.mp3",
+      "src": "6831f5df5df20e5c",
+      "bytes": 18852
     },
     "cards/hombre": {
       "key": "es-mx/cards/hombre.4b1da554cb.webp",
@@ -238,9 +238,9 @@
       "bytes": 246586
     },
     "cards/hombre.mp3": {
-      "key": "es-mx/cards/hombre.3334e6aeef.mp3",
-      "src": "3334e6aeefe77e90",
-      "bytes": 18851
+      "key": "es-mx/cards/hombre.5ca99ab3b2.mp3",
+      "src": "5ca99ab3b21416c0",
+      "bytes": 18852
     },
     "cards/horchata": {
       "key": "es-mx/cards/horchata.c6a78a9f31.webp",
@@ -248,9 +248,9 @@
       "bytes": 206184
     },
     "cards/horchata.mp3": {
-      "key": "es-mx/cards/horchata.73af58ef65.mp3",
-      "src": "73af58ef6515b567",
-      "bytes": 18851
+      "key": "es-mx/cards/horchata.045310197d.mp3",
+      "src": "045310197db9d988",
+      "bytes": 18852
     },
     "cards/huevo": {
       "key": "es-mx/cards/huevo.4e3bec7b95.webp",
@@ -258,9 +258,9 @@
       "bytes": 314900
     },
     "cards/huevo.mp3": {
-      "key": "es-mx/cards/huevo.a3f2b8a2c6.mp3",
-      "src": "a3f2b8a2c6460b4b",
-      "bytes": 18015
+      "key": "es-mx/cards/huevo.6317350ea9.mp3",
+      "src": "6317350ea9ca8044",
+      "bytes": 18016
     },
     "cards/jamaica": {
       "key": "es-mx/cards/jamaica.45a3a4a46b.webp",
@@ -268,9 +268,9 @@
       "bytes": 191520
     },
     "cards/jamaica.mp3": {
-      "key": "es-mx/cards/jamaica.810e4b2b88.mp3",
-      "src": "810e4b2b886ea526",
-      "bytes": 19687
+      "key": "es-mx/cards/jamaica.d89014a731.mp3",
+      "src": "d89014a731ae9bef",
+      "bytes": 19688
     },
     "cards/joven": {
       "key": "es-mx/cards/joven.8da42826cf.webp",
@@ -278,9 +278,9 @@
       "bytes": 329842
     },
     "cards/joven.mp3": {
-      "key": "es-mx/cards/joven.37038d1b18.mp3",
-      "src": "37038d1b1840690d",
-      "bytes": 19687
+      "key": "es-mx/cards/joven.4b85419a02.mp3",
+      "src": "4b85419a02bd7b00",
+      "bytes": 19688
     },
     "cards/jugo": {
       "key": "es-mx/cards/jugo.5fff0cf4ff.webp",
@@ -288,9 +288,9 @@
       "bytes": 196130
     },
     "cards/jugo.mp3": {
-      "key": "es-mx/cards/jugo.23c0ba902d.mp3",
-      "src": "23c0ba902da684d0",
-      "bytes": 18851
+      "key": "es-mx/cards/jugo.7983ae597f.mp3",
+      "src": "7983ae597fd99858",
+      "bytes": 18852
     },
     "cards/lapiz": {
       "key": "es-mx/cards/lapiz.2693997e92.webp",
@@ -298,9 +298,9 @@
       "bytes": 228288
     },
     "cards/lapiz.mp3": {
-      "key": "es-mx/cards/lapiz.ee2ead368a.mp3",
-      "src": "ee2ead368af6e804",
-      "bytes": 20523
+      "key": "es-mx/cards/lapiz.8344120e39.mp3",
+      "src": "8344120e397f1199",
+      "bytes": 20524
     },
     "cards/leche": {
       "key": "es-mx/cards/leche.eb1711888b.webp",
@@ -308,9 +308,9 @@
       "bytes": 272158
     },
     "cards/leche.mp3": {
-      "key": "es-mx/cards/leche.3b362ca193.mp3",
-      "src": "3b362ca19356e65d",
-      "bytes": 16761
+      "key": "es-mx/cards/leche.1aceaf3e72.mp3",
+      "src": "1aceaf3e724bc570",
+      "bytes": 16762
     },
     "cards/limon": {
       "key": "es-mx/cards/limon.c4606d9d10.webp",
@@ -318,9 +318,9 @@
       "bytes": 348866
     },
     "cards/limon.mp3": {
-      "key": "es-mx/cards/limon.97c8ef7b2e.mp3",
-      "src": "97c8ef7b2ef216b0",
-      "bytes": 19687
+      "key": "es-mx/cards/limon.b2961d1bd3.mp3",
+      "src": "b2961d1bd3c56ccd",
+      "bytes": 19688
     },
     "cards/manana": {
       "key": "es-mx/cards/manana.ba55ae04c1.webp",
@@ -328,9 +328,9 @@
       "bytes": 374734
     },
     "cards/manana.mp3": {
-      "key": "es-mx/cards/manana.863217becd.mp3",
-      "src": "863217becdc7b949",
-      "bytes": 18851
+      "key": "es-mx/cards/manana.5477ad3252.mp3",
+      "src": "5477ad3252d40fb4",
+      "bytes": 18852
     },
     "cards/mesa": {
       "key": "es-mx/cards/mesa.324d208adb.webp",
@@ -338,9 +338,9 @@
       "bytes": 322028
     },
     "cards/mesa.mp3": {
-      "key": "es-mx/cards/mesa.faaa0b99f5.mp3",
-      "src": "faaa0b99f5a864fa",
-      "bytes": 16761
+      "key": "es-mx/cards/mesa.69298f6445.mp3",
+      "src": "69298f6445df6dcf",
+      "bytes": 16762
     },
     "cards/moneda": {
       "key": "es-mx/cards/moneda.b0825dc425.webp",
@@ -348,9 +348,9 @@
       "bytes": 191406
     },
     "cards/moneda.mp3": {
-      "key": "es-mx/cards/moneda.c01278a203.mp3",
-      "src": "c01278a203f22f6e",
-      "bytes": 18851
+      "key": "es-mx/cards/moneda.18f8a1c385.mp3",
+      "src": "18f8a1c385da5f3f",
+      "bytes": 18852
     },
     "cards/mujer": {
       "key": "es-mx/cards/mujer.0fb7ba8a96.webp",
@@ -358,9 +358,9 @@
       "bytes": 280378
     },
     "cards/mujer.mp3": {
-      "key": "es-mx/cards/mujer.5acd86a837.mp3",
-      "src": "5acd86a837de6d1c",
-      "bytes": 18015
+      "key": "es-mx/cards/mujer.4ab17729b6.mp3",
+      "src": "4ab17729b6ebe4d1",
+      "bytes": 18016
     },
     "cards/naranja": {
       "key": "es-mx/cards/naranja.3701e79894.webp",
@@ -368,9 +368,9 @@
       "bytes": 178016
     },
     "cards/naranja.mp3": {
-      "key": "es-mx/cards/naranja.bbbc0953ff.mp3",
-      "src": "bbbc0953ff7f1294",
-      "bytes": 18851
+      "key": "es-mx/cards/naranja.d7e44fe85a.mp3",
+      "src": "d7e44fe85adf25e8",
+      "bytes": 18852
     },
     "cards/noche": {
       "key": "es-mx/cards/noche.8cbf6831c9.webp",
@@ -378,9 +378,9 @@
       "bytes": 267020
     },
     "cards/noche.mp3": {
-      "key": "es-mx/cards/noche.dc4bbc0461.mp3",
-      "src": "dc4bbc04614b0b83",
-      "bytes": 19687
+      "key": "es-mx/cards/noche.2912f6aecc.mp3",
+      "src": "2912f6aecc17454f",
+      "bytes": 19688
     },
     "cards/pan-dulce": {
       "key": "es-mx/cards/pan-dulce.f67442173a.webp",
@@ -388,9 +388,9 @@
       "bytes": 264446
     },
     "cards/pan-dulce.mp3": {
-      "key": "es-mx/cards/pan-dulce.6800cb08cb.mp3",
-      "src": "6800cb08cb733ece",
-      "bytes": 22612
+      "key": "es-mx/cards/pan-dulce.16a1bd8240.mp3",
+      "src": "16a1bd8240ff6d27",
+      "bytes": 22613
     },
     "cards/panaderia": {
       "key": "es-mx/cards/panaderia.1de1a39d82.webp",
@@ -398,9 +398,9 @@
       "bytes": 254176
     },
     "cards/panaderia.mp3": {
-      "key": "es-mx/cards/panaderia.a343dc08e7.mp3",
-      "src": "a343dc08e78c79ca",
-      "bytes": 20941
+      "key": "es-mx/cards/panaderia.ff0379f99e.mp3",
+      "src": "ff0379f99e11d71c",
+      "bytes": 20942
     },
     "cards/plato": {
       "key": "es-mx/cards/plato.47a3aa1114.webp",
@@ -408,9 +408,9 @@
       "bytes": 205262
     },
     "cards/plato.mp3": {
-      "key": "es-mx/cards/plato.d6f5ddb4cc.mp3",
-      "src": "d6f5ddb4cc3f2633",
-      "bytes": 18851
+      "key": "es-mx/cards/plato.c16234549b.mp3",
+      "src": "c16234549bf6c335",
+      "bytes": 18852
     },
     "cards/pollo": {
       "key": "es-mx/cards/pollo.c75847b226.webp",
@@ -418,9 +418,9 @@
       "bytes": 222984
     },
     "cards/pollo.mp3": {
-      "key": "es-mx/cards/pollo.abc900e378.mp3",
-      "src": "abc900e3787dab8a",
-      "bytes": 19687
+      "key": "es-mx/cards/pollo.3fe489ac81.mp3",
+      "src": "3fe489ac814413bd",
+      "bytes": 19688
     },
     "cards/pueblo": {
       "key": "es-mx/cards/pueblo.b1f961492e.webp",
@@ -428,9 +428,9 @@
       "bytes": 304544
     },
     "cards/pueblo.mp3": {
-      "key": "es-mx/cards/pueblo.5cc7d091c5.mp3",
-      "src": "5cc7d091c5d0c178",
-      "bytes": 20523
+      "key": "es-mx/cards/pueblo.a5a02d93fa.mp3",
+      "src": "a5a02d93fabdaac9",
+      "bytes": 20524
     },
     "cards/puesto": {
       "key": "es-mx/cards/puesto.6507091d3b.webp",
@@ -438,9 +438,9 @@
       "bytes": 246814
     },
     "cards/puesto.mp3": {
-      "key": "es-mx/cards/puesto.5159403945.mp3",
-      "src": "5159403945d4d345",
-      "bytes": 19687
+      "key": "es-mx/cards/puesto.eb391f3876.mp3",
+      "src": "eb391f3876ba7d20",
+      "bytes": 19688
     },
     "cards/quesadilla": {
       "key": "es-mx/cards/quesadilla.bcd127bcc1.webp",
@@ -448,9 +448,9 @@
       "bytes": 331270
     },
     "cards/quesadilla.mp3": {
-      "key": "es-mx/cards/quesadilla.288ffbb207.mp3",
-      "src": "288ffbb20797dd13",
-      "bytes": 19687
+      "key": "es-mx/cards/quesadilla.4f23b4d2a1.mp3",
+      "src": "4f23b4d2a1ad5e70",
+      "bytes": 19688
     },
     "cards/queso": {
       "key": "es-mx/cards/queso.d56f285d76.webp",
@@ -458,9 +458,9 @@
       "bytes": 150150
     },
     "cards/queso.mp3": {
-      "key": "es-mx/cards/queso.c1a52ad45c.mp3",
-      "src": "c1a52ad45cb2fc44",
-      "bytes": 18015
+      "key": "es-mx/cards/queso.20f410de73.mp3",
+      "src": "20f410de7306b8a3",
+      "bytes": 18016
     },
     "cards/refresco": {
       "key": "es-mx/cards/refresco.ef4fa076b1.webp",
@@ -468,9 +468,9 @@
       "bytes": 238512
     },
     "cards/refresco.mp3": {
-      "key": "es-mx/cards/refresco.23fb32ff12.mp3",
-      "src": "23fb32ff12f4ac06",
-      "bytes": 20523
+      "key": "es-mx/cards/refresco.e14e609c01.mp3",
+      "src": "e14e609c019f8c63",
+      "bytes": 20524
     },
     "cards/salsa": {
       "key": "es-mx/cards/salsa.7f93c034f6.webp",
@@ -478,9 +478,9 @@
       "bytes": 273014
     },
     "cards/salsa.mp3": {
-      "key": "es-mx/cards/salsa.d01774ebb0.mp3",
-      "src": "d01774ebb0b866a3",
-      "bytes": 19687
+      "key": "es-mx/cards/salsa.c476b3ca4e.mp3",
+      "src": "c476b3ca4eb2f2f1",
+      "bytes": 19688
     },
     "cards/senor": {
       "key": "es-mx/cards/senor.0b41b74937.webp",
@@ -488,9 +488,9 @@
       "bytes": 302682
     },
     "cards/senor.mp3": {
-      "key": "es-mx/cards/senor.3d9295d8dd.mp3",
-      "src": "3d9295d8ddb3b789",
-      "bytes": 19687
+      "key": "es-mx/cards/senor.01e98bf1b8.mp3",
+      "src": "01e98bf1b8ae9f27",
+      "bytes": 19688
     },
     "cards/senora": {
       "key": "es-mx/cards/senora.44c304cfa4.webp",
@@ -498,9 +498,9 @@
       "bytes": 250554
     },
     "cards/senora.mp3": {
-      "key": "es-mx/cards/senora.1555f112bf.mp3",
-      "src": "1555f112bf8a5fce",
-      "bytes": 19687
+      "key": "es-mx/cards/senora.85842cf2ee.mp3",
+      "src": "85842cf2ee69bab9",
+      "bytes": 19688
     },
     "cards/servilleta": {
       "key": "es-mx/cards/servilleta.75fb31fc83.webp",
@@ -508,9 +508,9 @@
       "bytes": 144954
     },
     "cards/servilleta.mp3": {
-      "key": "es-mx/cards/servilleta.bbee1837d2.mp3",
-      "src": "bbee1837d2086960",
-      "bytes": 21776
+      "key": "es-mx/cards/servilleta.781bc84709.mp3",
+      "src": "781bc8470967d183",
+      "bytes": 21777
     },
     "cards/taco": {
       "key": "es-mx/cards/taco.5b44e28ab3.webp",
@@ -518,9 +518,9 @@
       "bytes": 264300
     },
     "cards/taco.mp3": {
-      "key": "es-mx/cards/taco.5ddfab4bbd.mp3",
-      "src": "5ddfab4bbd77f4f5",
-      "bytes": 18851
+      "key": "es-mx/cards/taco.f8dbfd974e.mp3",
+      "src": "f8dbfd974eeba349",
+      "bytes": 18852
     },
     "cards/taqueria": {
       "key": "es-mx/cards/taqueria.141f6d409c.webp",
@@ -528,9 +528,9 @@
       "bytes": 210108
     },
     "cards/taqueria.mp3": {
-      "key": "es-mx/cards/taqueria.e6703d71fb.mp3",
-      "src": "e6703d71fb68076d",
-      "bytes": 19687
+      "key": "es-mx/cards/taqueria.a2a702a5eb.mp3",
+      "src": "a2a702a5eb43ee4e",
+      "bytes": 19688
     },
     "cards/tarde": {
       "key": "es-mx/cards/tarde.ec49746ec6.webp",
@@ -538,9 +538,9 @@
       "bytes": 346926
     },
     "cards/tarde.mp3": {
-      "key": "es-mx/cards/tarde.a2b333abae.mp3",
-      "src": "a2b333abae87c18c",
-      "bytes": 18015
+      "key": "es-mx/cards/tarde.d2a34719c7.mp3",
+      "src": "d2a34719c7e2e822",
+      "bytes": 18016
     },
     "cards/tarjeta": {
       "key": "es-mx/cards/tarjeta.5df705cac8.webp",
@@ -548,9 +548,9 @@
       "bytes": 185940
     },
     "cards/tarjeta.mp3": {
-      "key": "es-mx/cards/tarjeta.c01fefa11a.mp3",
-      "src": "c01fefa11a8c915a",
-      "bytes": 18851
+      "key": "es-mx/cards/tarjeta.18ac717219.mp3",
+      "src": "18ac7172197a3fdd",
+      "bytes": 18852
     },
     "cards/tiendita": {
       "key": "es-mx/cards/tiendita.b50188c299.webp",
@@ -558,9 +558,9 @@
       "bytes": 274538
     },
     "cards/tiendita.mp3": {
-      "key": "es-mx/cards/tiendita.992059052f.mp3",
-      "src": "992059052f1a6d79",
-      "bytes": 18851
+      "key": "es-mx/cards/tiendita.a5c947c682.mp3",
+      "src": "a5c947c682d92d5a",
+      "bytes": 18852
     },
     "cards/torta": {
       "key": "es-mx/cards/torta.3b5aff4627.webp",
@@ -568,9 +568,9 @@
       "bytes": 261202
     },
     "cards/torta.mp3": {
-      "key": "es-mx/cards/torta.5d8f5254d2.mp3",
-      "src": "5d8f5254d20496a4",
-      "bytes": 18015
+      "key": "es-mx/cards/torta.bbce6ba7f9.mp3",
+      "src": "bbce6ba7f918921e",
+      "bytes": 18016
     },
     "cards/tortilla": {
       "key": "es-mx/cards/tortilla.84cccb43bb.webp",
@@ -578,9 +578,9 @@
       "bytes": 281214
     },
     "cards/tortilla.mp3": {
-      "key": "es-mx/cards/tortilla.36334432f6.mp3",
-      "src": "36334432f67b9c0d",
-      "bytes": 19687
+      "key": "es-mx/cards/tortilla.ba72ad4fc5.mp3",
+      "src": "ba72ad4fc5066188",
+      "bytes": 19688
     },
     "cards/vaso": {
       "key": "es-mx/cards/vaso.a12a7d94f2.webp",
@@ -588,9 +588,9 @@
       "bytes": 156328
     },
     "cards/vaso.mp3": {
-      "key": "es-mx/cards/vaso.467769a7f0.mp3",
-      "src": "467769a7f063f420",
-      "bytes": 18015
+      "key": "es-mx/cards/vaso.fe0852dfa8.mp3",
+      "src": "fe0852dfa8325eeb",
+      "bytes": 18016
     },
     "cards/vecino": {
       "key": "es-mx/cards/vecino.cbbd3da09c.webp",
@@ -598,9 +598,9 @@
       "bytes": 211938
     },
     "cards/vecino.mp3": {
-      "key": "es-mx/cards/vecino.84dae7937d.mp3",
-      "src": "84dae7937d66579d",
-      "bytes": 18015
+      "key": "es-mx/cards/vecino.28f142ed64.mp3",
+      "src": "28f142ed64eb7184",
+      "bytes": 18016
     },
     "cities/ciudad-de-mexico": {
       "key": "es-mx/cities/ciudad-de-mexico.ce39388441.webp",
