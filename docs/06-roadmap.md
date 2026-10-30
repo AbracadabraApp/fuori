@@ -168,7 +168,7 @@ Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the sam
 - Parked tests: scripts as a tree with no joins; visits ordered so frames build up ("Vorrei…" before "Sono di…")
 
 ### Parity with the web — N5, before the web sunset
-- [ ] **Claude** Visit stamps redesigned (collectible, on the caption, not a number in a circle)
+- [ ] **Claude** Visit stamps redesigned: design locked 2026-10-29 (a scontrino pinned in the picture's corner, *già visto* then *di casa*; [visited-badge.md](visited-badge.md)); not built
 - [ ] **Josh** ⛔ Say what's wrong with the city picker; then **Claude** improves it
 - [ ] **Claude** Stations and ticket: departures board, the clerk names the platform, "Sali"
 
