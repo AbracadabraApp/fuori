@@ -63,7 +63,7 @@ Why (Josh, 2026-10-28): "if it's there it should be required". Until then stage 
 ### Next (agreed 2026-10-28, not built)
 - **One master deck per country, filtered per learner.** A build script collects the words on everyone's Learn pages (Things and Doing), most frequent first, writes cards (word, article, English, picture idea, base word), makes the pictures once and adds them for everyone. Each learner's new cards come first from their own Learn pages, then the starter words, then the rest. Matching by base word, which the build asks Claude for (nothing language-specific in code). No personal decks (Josh: "a bit fancy").
 
-## Plan under discussion (2026-10-29, proposed, not agreed, nothing built)
+## Plan under discussion (2026-10-29; steps 1, 4, 5 and 6 built the same day, 2 and 3 not yet)
 
 Prompted by Josh's Mexico session on 2026-10-29: the five-words-in-progress feed was "really boring" ("5 is not a feed"), about 1 in 4 words weren't heard or were misheard, and the mic is slow to be ready.
 

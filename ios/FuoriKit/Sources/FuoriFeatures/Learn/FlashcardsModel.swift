@@ -29,10 +29,10 @@ import FuoriAudio
 /// VoiceOver on, or after a call, Siri or headphones coming out, it waits
 /// for a tap, as in conversations. No auto-advance: you scroll.
 ///
-/// What comes next is `FlashcardSchedule`: words come back a few cards later,
-/// a step further along; words that are yours after 1, 3, 7… days. Scrolling
-/// past a card is fine: it comes back. Progress is kept on the phone, per
-/// country (the server keeps nothing yet).
+/// What comes next is `FlashcardSchedule`: new words keep coming, and words
+/// come back after gaps that stretch as they get easier (about 12 cards, 25,
+/// 50, then days). A card scrolled past untried waits its turn in the deck.
+/// Progress is kept on the phone, per country (the server keeps nothing yet).
 @MainActor
 @Observable
 final class FlashcardsModel {
@@ -90,10 +90,13 @@ final class FlashcardsModel {
     @ObservationIgnored private var observers: [NSObjectProtocol] = []
 
     private struct Saved: Codable {
-        var stages: [String: Stage]
-        /// Before 2026-10-28: the ids of words that are yours, without days
+        var words: [String: FlashcardSchedule.Word]?
+        /// Before 2026-10-29: stages of words in progress, and words that
+        /// were "yours" (as ids before 2026-10-28, then with their days)
+        var stages: [String: Stage]?
         var own: [String]?
-        var mine: [String: FlashcardSchedule.Own]?
+        var mine: [String: Mine]?
+        struct Mine: Codable { var due: Date; var step: Int }
     }
 
     init(cards: [Flashcard], language: Language, country: String, api: APIClient, tall: Bool = false) {
@@ -158,20 +161,12 @@ final class FlashcardsModel {
 
     func stage(_ item: Item) -> Stage { item.done?.stage ?? schedule.stage(item.card.id) }
 
-    /// Words that are yours, soonest check first
-    var own: [Flashcard] {
-        pool.filter { schedule.isOwn($0.id) }
-            .sorted { (schedule.own[$0.id]?.due ?? .distantPast) < (schedule.own[$1.id]?.due ?? .distantPast) }
-    }
-
     /// A few more cards at the end of the feed (it never runs out)
     func more(_ count: Int = 3) {
         let ids = pool.map(\.id)
         for _ in 0..<count {
-            let recent = feed.suffix(FlashcardSchedule.apart).map(\.card.id)
-            guard let id = schedule.next(from: ids, recent: recent, slot: feed.count, now: .now),
+            guard let id = schedule.next(from: ids, slot: feed.count, now: .now, random: { Double.random(in: 0..<1) }),
                   let card = pool.first(where: { $0.id == id }) else { return }
-            schedule.shown(id, slot: feed.count)
             feed.append(Item(card: card))
             // Fetched before the card is reached, so its word plays at once
             if let url = card.audio, recordings[url] == nil { Task { _ = await recording(url) } }
@@ -329,13 +324,8 @@ final class FlashcardsModel {
     /// scheduled again (after help: same stage, back soon)
     private func finish(_ item: Item, _ outcome: Item.Outcome) {
         guard let index = feed.firstIndex(where: { $0.id == item.id }) else { return }
-        let stage = stage(item)
-        feed[index].done = (outcome, stage)
-        if outcome == .passed {
-            schedule.passed(item.card.id, end: feed.count, now: .now)
-        } else {
-            schedule.missed(item.card.id, end: feed.count)
-        }
+        feed[index].done = (outcome, stage(item))
+        schedule.answered(item.card.id, helped: outcome == .helped, slot: index, now: .now, random: { Double.random(in: 0..<1) })
         save()
     }
 
@@ -419,15 +409,20 @@ final class FlashcardsModel {
     private func load() {
         guard let data = UserDefaults.standard.data(forKey: storeKey),
               let saved = try? JSONDecoder().decode(Saved.self, from: data) else { return }
-        var mine = saved.mine ?? [:]
-        // Words that were yours before the days came in: checked at once
-        for id in saved.own ?? [] where mine[id] == nil { mine[id] = .init(due: .now, step: 0) }
+        var words = saved.words ?? [:]
+        // The older format: words in progress keep their stage; words that
+        // were "yours" go on days, due now if they had no day
+        if saved.words == nil {
+            for (id, stage) in saved.stages ?? [:] { words[id] = .init(stage: stage, step: stage.rawValue - 1) }
+            for id in saved.own ?? [] { words[id] = .init(stage: .say, step: FlashcardSchedule.gaps.count, due: .now) }
+            for (id, mine) in saved.mine ?? [:] { words[id] = .init(stage: .say, step: FlashcardSchedule.gaps.count + mine.step, due: mine.due) }
+        }
         let ids = Set(pool.map(\.id))
-        schedule = FlashcardSchedule(stages: saved.stages.filter { ids.contains($0.key) && mine[$0.key] == nil }, own: mine.filter { ids.contains($0.key) })
+        schedule = FlashcardSchedule(words: words.filter { ids.contains($0.key) })
     }
 
     private func save() {
-        let saved = Saved(stages: schedule.stages, own: nil, mine: schedule.own)
+        let saved = Saved(words: schedule.words)
         if let data = try? JSONEncoder().encode(saved) { UserDefaults.standard.set(data, forKey: storeKey) }
     }
 }

@@ -5,10 +5,10 @@ import FuoriDesign
 /// The feed (docs/flashcards.md; Josh, 2026-10-28: "think of it like an
 /// instagram feed"): tall 2:3 cards (the master deck) in an endless scroll, more loading below.
 /// Each card at its own stage, no helper words; a card moves along only when
-/// its word is said, and one scrolled past comes back later. Answered cards
-/// stay as they were. Nothing is dimmed: a card waiting for you looks alive.
-/// A card with no picture keeps the card's size and centres its cue. Your
-/// words are in the toolbar.
+/// its word is said, and one scrolled past untried waits its turn in the deck.
+/// Answered cards stay as they were. Nothing is dimmed: a card waiting for
+/// you looks alive. A card with no picture keeps the card's size and centres
+/// its cue. No "your words" list (Josh, 2026-10-29).
 struct FlashcardsView: View {
     let model: FlashcardsModel
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -56,13 +56,6 @@ struct FlashcardsView: View {
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         #endif
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                NavigationLink { OwnWords(model: model) } label: {
-                    Text("Your words (\(model.own.count))")
-                }
-            }
-        }
         .onDisappear { settling?.cancel(); model.stop() }
     }
 
@@ -73,45 +66,6 @@ struct FlashcardsView: View {
             guard !Task.isCancelled, let id = current, let item = model.feed.first(where: { $0.id == id }) else { return }
             await model.settle(item, voiceOver: voiceOver)
         }
-    }
-}
-
-/// The words that are yours, with when each comes back as a check
-private struct OwnWords: View {
-    let model: FlashcardsModel
-
-    var body: some View {
-        List {
-            if model.own.isEmpty {
-                Text("Say a word right at the last stage and it's yours. It comes back now and then as a check.")
-                    .foregroundStyle(Tokens.Colors.muted)
-            }
-            ForEach(model.own) { card in
-                HStack(spacing: 12) {
-                    // The card's picture, small, so the word is found by sight
-                    if let url = card.picture {
-                        AsyncImage(url: url) { $0.resizable().scaledToFill() } placeholder: { Tokens.Colors.sand }
-                            .frame(width: 40, height: model.tall ? 60 : 20)
-                            .clipShape(RoundedRectangle(cornerRadius: 4))
-                            .accessibilityHidden(true)
-                    }
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(inLanguage(card.said)).typeface(.label, 17, relativeTo: .body, weight: .bold)
-                        Text(card.en).typeface(.label, 15, relativeTo: .subheadline).foregroundStyle(Tokens.Colors.muted)
-                    }
-                    .accessibilityElement(children: .combine)
-                    Spacer(minLength: 0)
-                }
-                .frame(minHeight: 44)
-            }
-        }
-        .navigationTitle("Your words")
-    }
-
-    private func inLanguage(_ text: String) -> AttributedString {
-        var s = AttributedString(text)
-        s.languageIdentifier = model.speechLanguage
-        return s
     }
 }
 

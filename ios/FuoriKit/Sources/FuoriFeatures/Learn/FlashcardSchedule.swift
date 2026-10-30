@@ -1,112 +1,147 @@
 import Foundation
 
-/// What comes next in the flashcard feed (docs/flashcards.md → Order; Josh,
-/// 2026-10-28: "endless with frequency", the way Anki does it). Spacing, not
-/// dice: a word you're working on comes back a set number of cards later, a
-/// step further along each time; a word that's yours comes back as a check
-/// after 1 day, then 3, 7, 16, 40, 90. A few new words at a time, so words in
-/// progress get finished before new ones crowd in.
+/// What comes next in the flashcard feed (docs/flashcards.md → Plan; Josh,
+/// 2026-10-29). Success is how long a visit lasts, then coming back, so the
+/// feed keeps changing: new words keep coming in, and words come back with
+/// decay, not on fixed slots ("some sort of decay on repetition / new cards -
+/// not a rigid repetition"). "5 is not a feed": there's no limit on words in
+/// play.
 ///
-/// Positions in the feed are "slots" (the feed's length when a card was
-/// added). Gaps within a session live only in memory; stages and the days of
-/// words that are yours are saved.
+/// - Each card is a weighted random pick. A word's pull to come back is zero
+///   for `apart` cards after it's shown, then grows, passing 1 at its gap and
+///   rising fast after it.
+/// - Gaps: about 12 cards after stage 1, 25 after stage 2, 50 after stage 3,
+///   then days (1, 3, 7, 16, 40, 90). Not equal for every word ("they
+///   shouldn't all go equal amounts back"): each pass without help stretches
+///   that word's gaps, each help shortens them, and every gap has a random
+///   spread. Help brings a word back after about 8, at the same stage.
+/// - New words weigh heavily at first and ease off as more words are in play,
+///   never to zero.
+/// - A card scrolled past untried isn't counted: the word waits its turn in
+///   the deck. Scroll through all 60 trying none and card 61 is card 1 again
+///   ("go through 60 cards (trying none) the 61 card is the 1st").
+/// - No "your words" (Josh: "i don't love the your words concept"): nothing
+///   leaves the feed; a word you know well just comes back rarely.
+///
+/// Positions in the feed are "slots" (a card's index). Where a word was last
+/// shown lives only in memory; each word's stage, step, ease and day are saved.
 struct FlashcardSchedule: Equatable {
     enum Stage: Int, Codable, Sendable { case meet = 1, recall = 2, say = 3 }
 
-    struct Own: Codable, Equatable, Sendable {
-        /// When it next comes back as a check
-        var due: Date
-        /// Index into `intervals`: how many checks it has passed
-        var step: Int
+    struct Word: Codable, Equatable, Sendable {
+        var stage: Stage = .meet
+        /// Passes so far: 1–3 come back within the visit, 4 on are days
+        var step = 0
+        /// How easily it goes: stretches or shortens its gaps
+        var ease = 1.0
+        /// From step 4 on: the day it comes back
+        var due: Date?
     }
 
-    /// Days until a word that's yours comes back, one step per pass
-    static let intervals = [1, 3, 7, 16, 40, 90]
-    /// Cards until a word comes back: after passing stage 1, after passing
-    /// stage 2, after a miss, and after scrolling past it without answering
-    static let afterMeet = 3, afterRecall = 6, afterMiss = 2, afterSkip = 5
-    /// Words in progress at once before a new one comes in
-    static let working = 5
+    /// Cards until a word comes back after passing stage 1, 2 and 3
+    static let gaps = [12, 25, 50]
+    /// Then days, one step further per pass
+    static let days = [1, 3, 7, 16, 40, 90]
+    /// Cards until a word comes back after help
+    static let afterHelp = 8
     /// The same word never closer than this many cards apart
-    static let apart = 4
+    static let apart = 6
+    static let easeRange = 0.6...1.6
 
-    /// Words in progress (met, not yet yours)
-    private(set) var stages: [String: Stage] = [:]
-    private(set) var own: [String: Own] = [:]
-    /// In this session: the slot from which a word in progress is due again
-    private(set) var dueAt: [String: Int] = [:]
+    private(set) var words: [String: Word] = [:]
+    /// In this visit: the slot a word was last shown at, and its gap in cards
+    private(set) var last: [String: Int] = [:]
+    private(set) var gap: [String: Int] = [:]
+    /// The next untried word is looked for from here, in the deck's order,
+    /// round and round
+    private(set) var cursor = 0
 
-    init(stages: [String: Stage] = [:], own: [String: Own] = [:]) {
-        self.stages = stages
-        self.own = own
+    init(words: [String: Word] = [:]) {
+        self.words = words
     }
 
-    func isOwn(_ id: String) -> Bool { own[id] != nil }
+    func stage(_ id: String) -> Stage { words[id]?.stage ?? .meet }
 
-    /// A word that's yours comes back at "say it"
-    func stage(_ id: String) -> Stage { isOwn(id) ? .say : (stages[id] ?? .meet) }
+    /// The next card for slot `slot` from `pool` (in the deck's order).
+    /// `random` gives a number in 0..<1 (seeded in tests)
+    mutating func next(from pool: [String], slot: Int, now: Date, random: () -> Double) -> String? {
+        guard !pool.isEmpty else { return nil }
+        let near = Set(last.filter { slot - $0.value < Self.apart }.keys)
 
-    /// The next card for slot `slot`, from `pool` (in the deck's order), never
-    /// one of `recent` (the cards just before it)
-    func next(from pool: [String], recent: [String], slot: Int, now: Date) -> String? {
-        let blocked = Set(recent)
-        let open = pool.filter { !blocked.contains($0) }
-        let working = open.filter { stages[$0] != nil }
-        let fresh = open.filter { stages[$0] == nil && own[$0] == nil }
-        let mine = open.filter { own[$0] != nil }
-        func due(_ id: String) -> Int { dueAt[id] ?? 0 }
-
-        // 1 · a word in progress whose gap is up (from an earlier session: at once)
-        if let id = working.filter({ due($0) <= slot }).min(by: { due($0) < due($1) }) { return id }
-        // 2 · a word that's yours, due for its check
-        if let id = mine.filter({ own[$0]!.due <= now }).min(by: { own[$0]!.due < own[$1]!.due }) { return id }
-        // 3 · a new word, if there's room
-        if stages.count < Self.working, let id = fresh.first { return id }
-        // 4 · otherwise the word in progress due soonest
-        if let id = working.min(by: { due($0) < due($1) }) { return id }
-        // 5 · a new word anyway, then yours early as extra practice
-        if let id = fresh.first { return id }
-        if let id = mine.min(by: { own[$0]!.due < own[$1]!.due }) { return id }
-        // A deck smaller than the spacing: anything but the card just before
-        return pool.first { $0 != recent.last } ?? pool.first
-    }
-
-    /// Added to the feed at `slot`: met, and back after a while if scrolled past
-    mutating func shown(_ id: String, slot: Int) {
-        if own[id] == nil, stages[id] == nil { stages[id] = .meet }
-        if own[id] == nil { dueAt[id] = slot + Self.afterSkip }
-    }
-
-    /// Said right. `end` is the feed's length now
-    mutating func passed(_ id: String, end: Int, now: Date) {
-        if let mine = own[id] {
-            let step = min(mine.step + 1, Self.intervals.count - 1)
-            own[id] = Own(due: Self.day(Self.intervals[step], after: now), step: step)
-            return
+        // The pull of each word you've tried
+        var pulls: [(String, Double)] = []
+        for id in pool where words[id] != nil && !near.contains(id) {
+            pulls.append((id, pull(id, slot: slot, now: now)))
         }
-        switch stage(id) {
-        case .meet:
-            stages[id] = .recall
-            dueAt[id] = end + Self.afterMeet
-        case .recall:
-            stages[id] = .say
-            dueAt[id] = end + Self.afterRecall
-        case .say:
-            stages[id] = nil
-            dueAt[id] = nil
-            own[id] = Own(due: Self.day(Self.intervals[0], after: now), step: 0)
+        // The next untried word, round the deck from the cursor
+        let start = cursor, tried = words
+        let fresh = (0..<pool.count).lazy.map { pool[(start + $0) % pool.count] }
+            .first { tried[$0] == nil && !near.contains($0) }
+        let inPlay = words.values.filter { $0.step < Self.gaps.count }.count
+        let freshWeight = fresh == nil ? 0 : max(0.35, 3 / (1 + Double(inPlay) / 4))
+
+        let total = pulls.reduce(0) { $0 + $1.1 } + freshWeight
+        var pick: String?
+        if total > 0 {
+            var r = random() * total
+            for (id, p) in pulls where p > 0 {
+                r -= p
+                if r < 0 { pick = id; break }
+            }
+            if pick == nil, let fresh { pick = fresh }
         }
+        // Nothing pulls and nothing's new (a small deck): whatever was shown longest ago
+        if pick == nil {
+            pick = pool.filter { !near.contains($0) }.min { (last[$0] ?? -1) < (last[$1] ?? -1) }
+                ?? pool.min { (last[$0] ?? -1) < (last[$1] ?? -1) }
+        }
+        guard let id = pick else { return nil }
+        if id == fresh, let at = pool.firstIndex(of: id) { cursor = (at + 1) % pool.count }
+        last[id] = slot
+        return id
     }
 
-    /// Missed (or the answer asked for): same stage, back soon. A word that
-    /// was yours goes back to "say it"
-    mutating func missed(_ id: String, end: Int) {
-        if own[id] != nil {
-            own[id] = nil
-            stages[id] = .say
+    /// How strongly a word wants to come back now. Zero within `apart` cards;
+    /// 1 at its gap; growing fast after it. Words from an earlier visit are
+    /// due at once if their step is still within a visit, and on their day after
+    func pull(_ id: String, slot: Int, now: Date) -> Double {
+        guard let word = words[id] else { return 0 }
+        if let due = word.due {
+            guard due <= now else { return 0 }
+            // Days overdue make it more urgent
+            return 1 + now.timeIntervalSince(due) / 86_400
         }
-        dueAt[id] = end + Self.afterMiss
+        guard let at = last[id], let gap = gap[id] else { return 1 }
+        let since = slot - at
+        guard since >= Self.apart else { return 0 }
+        return pow(Double(since) / Double(max(gap, 1)), 4)
     }
 
-    static func day(_ days: Int, after now: Date) -> Date { now.addingTimeInterval(Double(days) * 86_400) }
+    /// The card at `slot` was answered: said with no help, or after help.
+    /// `random` gives the spread (0..<1)
+    mutating func answered(_ id: String, helped: Bool, slot: Int, now: Date, random: () -> Double) {
+        var word = words[id] ?? Word()
+        let spread = 0.7 + random() * 0.8
+        last[id] = slot
+        if helped {
+            // Same stage, back soon; a word that was on days comes back into the visit
+            word.ease = max(Self.easeRange.lowerBound, word.ease - 0.25)
+            word.due = nil
+            word.step = min(word.step, Self.gaps.count)
+            gap[id] = max(Self.apart, Int((Double(Self.afterHelp) * spread).rounded()))
+        } else {
+            if word.step > 0 { word.ease = min(Self.easeRange.upperBound, word.ease + 0.15) }
+            if word.step < Self.gaps.count {
+                gap[id] = max(Self.apart, Int((Double(Self.gaps[word.step]) * word.ease * spread).rounded()))
+                word.due = nil
+            } else {
+                let days = Self.days[min(word.step - Self.gaps.count, Self.days.count - 1)]
+                word.due = now.addingTimeInterval(max(1, Double(days) * word.ease * spread) * 86_400)
+                gap[id] = nil
+            }
+            word.step += 1
+            word.stage = Stage(rawValue: min(word.stage.rawValue + 1, Stage.say.rawValue)) ?? .say
+        }
+        words[id] = word
+    }
 }
