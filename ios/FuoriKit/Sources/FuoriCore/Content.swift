@@ -18,6 +18,9 @@ public struct Content: Codable, Sendable, Equatable {
     /// The master deck: tall 2:3 pictures and a recording per word; nil from
     /// servers before 2026-10-28 (then the starter words above)
     public let cards: [Flashcard]?
+    /// The syllabus lessons for Learn's Lessons card (lib/lessons.ts); nil from
+    /// servers before 2026-10-29, empty where a country has none yet
+    public let lessons: [LessonUnit]?
     public let characters: [String: Character]
 
     public func city(_ id: String) -> City? { cities.first { $0.id == id } }
@@ -254,4 +257,27 @@ public struct Flashcard: Codable, Sendable, Equatable, Hashable, Identifiable {
     public init(id: String, said: String, en: String, picture: URL?, audio: URL? = nil) {
         self.id = id; self.said = said; self.en = en; self.picture = picture; self.audio = audio
     }
+}
+
+/// One syllabus unit's lessons, one per step (content/<country>/lessons.json;
+/// docs/learn.md, docs/teach-plan.md). Shown in Learn until Magda teaches them
+/// on the conversation screen (docs/learn.md → A lesson)
+public struct LessonUnit: Codable, Sendable, Equatable, Hashable, Identifiable {
+    public let id: String
+    public let title: String
+    public let steps: [LessonStep]
+}
+
+public struct LessonStep: Codable, Sendable, Equatable, Hashable, Identifiable {
+    public struct Line: Codable, Sendable, Equatable, Hashable { public let it: String; public let en: String }
+    public struct Example: Codable, Sendable, Equatable, Hashable { public let role: String; public let place: String; public let it: String; public let en: String }
+    public struct Practice: Codable, Sendable, Equatable, Hashable { public let ask: Line; public let answer: Line }
+    public let id: String
+    public let title: String
+    public let how_to: String
+    public let intro: String
+    public let examples: [Example]
+    public let notice: String
+    public let context: String
+    public let practice: [Practice]
 }

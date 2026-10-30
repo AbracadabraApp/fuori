@@ -1,6 +1,6 @@
 # Lessons from the syllabus, one step each
 
-version: 2026-10-28
+version: 2026-10-29
 
 Turns one syllabus unit into its lessons, one per step, made ahead and checked
 once (Josh, 2026-10-27: lessons come from the syllabus, adapted to the game;
@@ -24,7 +24,7 @@ Each lesson:
 - how_to: one sentence starting "How to"
 - intro: one or two sentences Magda says to open, in English: what they'll be able to say and when they'd say it here. About the language, never about them
 - examples: 3 or 4 short lines that show the pattern, as people here say them, each with the role of the person who says it (barista, shopkeeper, neighbour, waiter, ticket clerk, market vendor, pharmacist, student) and the kind of place (bar, market, shop, station, pharmacy, piazza, restaurant). Use the unit's frames and exchanges. Repeat the pattern's words across lines so they stick. Examples come before any rule
-- notice: one or two plain English sentences on what the examples share, said after them; no grammar terms, no tables; the unit's trap for English speakers when it applies to this step, said with the right phrase
+- notice: one or two plain English sentences on what the examples share, said after them; no grammar terms, no tables. Teach what to say, not what not to say: never warn against a form the learner hasn't used (no "don't say voglio"); give the right phrase. Mention the unit's trap only when an English speaker would naturally fall into it here, and then as the right phrase
 - context: at most one sentence of English from the unit's culture note that leads into one of the examples' phrases (a custom, when it's said, how it sounds), or empty
 - practice: 3 questions Magda asks aloud in {language}, each with its English and one model answer in {language} with its English that uses the step's pattern; simplest first. Answers about the learner leave their own facts blank as … ("Sono di …")
 - mission: one thing to go and do in the game with this step: where (a kind of place from the list above), the goal in one short English sentence ("Order a coffee at the counter"), the {language} phrase they should say, and listen_for: 1 to 3 short phrases in {language} that show they did it themselves
@@ -35,3 +35,4 @@ Every {language} line correct, natural and under 12 words, at the beginner level
 ## Changelog
 
 - 2026-10-28: first version. Josh, 2026-10-27/28: lessons from the syllabus, one step each, made ahead; Magda practises them live on rails (she gets the practice questions and model answers); each lesson has a mission (docs/teach-plan.md → Lessons and missions → recommended first slice). After the improvised trial (lesson.md) opened on Josh's mistakes, read like surveillance and taught too much at once.
+- 2026-10-29: teach what to say, not what not to say: no warnings against forms the learner hasn't used (Josh, 2026-10-28: "why is voglio being discussed with vorrei"); a trap only when an English speaker would naturally make it, said as the right phrase.

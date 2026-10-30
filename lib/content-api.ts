@@ -13,6 +13,7 @@
 import { createHash } from 'crypto';
 import { cities, country, language, onboarding, pack } from '@/content';
 import { flashcards, deckCards } from '@/lib/flashcards';
+import { lessonUnits } from '@/lib/lessons';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
 import { imageListFor } from '@/content';
@@ -136,6 +137,8 @@ export function buildContent(): Content {
     flashcards: flashcards(image),
     /** The master deck: tall pictures and a recording per word (app builds from 2026-10-28) */
     cards: deckCards(image),
+    /** The syllabus lessons for Learn's Lessons card (lib/lessons.ts; app builds from 2026-10-29) */
+    lessons: lessonUnits(),
     card: { ...language.card, image: image(`country/${country}`) },
     language: {
       code: language.code,

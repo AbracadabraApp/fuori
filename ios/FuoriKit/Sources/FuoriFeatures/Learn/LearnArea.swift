@@ -5,8 +5,9 @@ import FuoriNetworking
 
 /// The Learn home (docs/learn.md → The Learn area; canvas "Learn area", D3,
 /// Josh's pick on 2026-10-26): the book next to Settings opens three big
-/// cards. Lessons is Magda, not at a school or in a city (Josh), picking up
-/// your latest real mistake; Missions (the mission chips canvas) and
+/// cards. Lessons is Magda, not at a school or in a city (Josh): the syllabus
+/// lessons (Josh, 2026-10-29: "link lessons to the Learn home page"; before,
+/// and still where a country has none, your latest real mistake); Missions (the mission chips canvas) and
 /// Flashcards (the Flashcards canvas) come next. Until a lesson can be
 /// played, "Sì, dai" opens the conversation's Learn page, where the mistake
 /// is explained and said in the character's voice.
@@ -15,6 +16,8 @@ struct LearnArea: View {
     @Environment(\.dismiss) private var dismiss
     @State private var home: APIClient.LearnHome?
     @State private var open: PastConversationLearn?
+    @State private var showingLessons = false
+    @State private var lessonPlayer: LessonPlayer?
 
     var body: some View {
         NavigationStack {
@@ -37,6 +40,9 @@ struct LearnArea: View {
             .background { Wash() }
             .navigationDestination(isPresented: $showingDeck) {
                 if let deckModel { FlashcardsView(model: deckModel) }
+            }
+            .navigationDestination(isPresented: $showingLessons) {
+                if let lessonPlayer, let units = lessons { LessonsList(units: units, player: lessonPlayer) }
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -65,6 +71,18 @@ struct LearnArea: View {
     }
 
     private var magda: Character? { model.content?.characters.values.first { $0.tutor } }
+
+    /// The syllabus lessons, when the server has them for this country
+    private var lessons: [LessonUnit]? {
+        guard let units = model.content?.lessons, !units.isEmpty else { return nil }
+        return units
+    }
+
+    private func openLessons() {
+        guard let api = model.api, let language = model.content?.language else { return }
+        if lessonPlayer == nil { lessonPlayer = LessonPlayer(magda: magda, api: api, language: language) }
+        showingLessons = true
+    }
 
     private var flashcardsCard: some View {
         GlassCard(title: "Flashcards", line: "Words with pictures, to say out loud.", symbol: "rectangle.on.rectangle.angled.fill", tint: Tokens.Colors.flashcards, ink: .white)
@@ -112,7 +130,18 @@ struct LearnArea: View {
                 }
                 .foregroundStyle(.white)
                 Spacer(minLength: 8)
-                if let lesson, let button = model.content?.language.ui.letsDoIt {
+                if lessons != nil, let button = model.content?.language.ui.letsDoIt {
+                    Button { openLessons() } label: {
+                        Text(inLanguage(button))
+                            .typeface(.label, 16, relativeTo: .callout, weight: .bold)
+                            .padding(.horizontal, 6)
+                            .frame(minHeight: 36)
+                    }
+                    .buttonStyle(.glassProminent)
+                    .tint(.white)
+                    .foregroundStyle(Tokens.Colors.lessons)
+                    .accessibilityHint("Opens the lessons")
+                } else if let lesson, let button = model.content?.language.ui.letsDoIt {
                     Button { openLesson(lesson) } label: {
                         Text(inLanguage(button))
                             .typeface(.label, 16, relativeTo: .callout, weight: .bold)
@@ -133,6 +162,10 @@ struct LearnArea: View {
 
     /// Her offer: your latest mistake, or, before there is one, what lessons are
     private func lessonLine(_ lesson: APIClient.LearnHome.Lesson?) -> AttributedString {
+        if let units = lessons {
+            let count = units.reduce(0) { $0 + $1.steps.count }
+            return AttributedString("Short lessons with me, one thing at a time: \(count) so far, from saying hello to paying. Two minutes each.")
+        }
         guard let lesson else {
             return AttributedString("After a few conversations, I'll pick up something you said and go over it with you. Two minutes.")
         }

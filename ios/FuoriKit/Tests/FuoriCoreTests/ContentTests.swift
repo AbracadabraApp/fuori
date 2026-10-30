@@ -50,6 +50,25 @@ import Testing
         #expect(content.onboarding == nil)
     }
 
+    /// The syllabus lessons for Learn (lib/lessons.ts) as the server sends
+    /// them, and a server from before them still loads
+    @Test func decodesLessons() throws {
+        let url = try #require(Bundle.module.url(forResource: "content-it", withExtension: "json", subdirectory: "Fixtures"))
+        var json = try #require(try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        #expect(try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json)).lessons == nil)
+        json["lessons"] = [["id": "a1-04", "title": "Order at the bar", "steps": [[
+            "id": "a1-04-3", "title": "I'd like, politely", "how_to": "How to ask politely.", "intro": "You'll be able to ask for things.",
+            "examples": [["role": "barista", "place": "bar", "it": "Naturale o frizzante?", "en": "Still or sparkling?"]],
+            "notice": "Vorrei works for anything you ask for.", "context": "",
+            "practice": [["ask": ["it": "Cosa Le do?", "en": "What can I get you?"], "answer": ["it": "Vorrei un caffè.", "en": "I'd like a coffee."]]],
+        ]]]]
+        let content = try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json))
+        let step = try #require(content.lessons?.first?.steps.first)
+        #expect(step.title == "I'd like, politely")
+        #expect(step.practice.first?.answer.it == "Vorrei un caffè.")
+        #expect(step.examples.first?.role == "barista")
+    }
+
     /// Name and address (docs/onboarding-design.md): the six lines as the
     /// server sends them (content/<country>/onboarding.ts), and {name} filled
     /// in, or left out with its comma when they skipped the name

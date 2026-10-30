@@ -1,23 +1,17 @@
 {
-  "version": "2026-10-28",
+  "version": "2026-10-29",
   "units": {
     "a1-01": {
       "title": "Greet and take leave",
       "steps": [
         {
           "id": "a1-01-1",
-          "title": "Friendly or polite you",
-          "how_to": "How to ask how someone is and get their attention, with tu for friends and Lei for strangers.",
-          "intro": "Italian has a friendly you and a polite you. You'll be able to pick the right one when you greet a shopkeeper, a neighbour or a stranger.",
+          "title": "Tu or Lei greetings",
+          "how_to": "How to greet and stop people with the friendly tu or the polite Lei.",
+          "intro": "Italian has a friendly way and a polite way to say 'you'. You'll use them to greet friends, shopkeepers and strangers, and to get someone's attention.",
           "examples": [
             {
-              "role": "barista",
-              "place": "bar",
-              "it": "Buongiorno, come sta?",
-              "en": "Good morning, how are you?"
-            },
-            {
-              "role": "neighbour",
+              "role": "student",
               "place": "piazza",
               "it": "Ciao! Come stai?",
               "en": "Hi! How are you?"
@@ -25,29 +19,25 @@
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Bene, grazie. E Lei?",
-              "en": "Fine, thanks. And you?"
+              "it": "Buongiorno, come sta?",
+              "en": "Good morning, how are you?"
             },
             {
-              "role": "student",
+              "role": "neighbour",
               "place": "station",
               "it": "Senta, scusi...",
               "en": "Excuse me..."
+            },
+            {
+              "role": "student",
+              "place": "piazza",
+              "it": "Senti, scusa...",
+              "en": "Excuse me..."
             }
           ],
-          "notice": "Come sta, Senta, scusi and E Lei are the polite set for strangers, shopkeepers and older people. Come stai, Senti, scusa and E tu are for friends. Tu with a shopkeeper sounds overfamiliar, so use Lei until they offer tu.",
+          "notice": "With friends you say 'Come stai?' and 'Senti, scusa'. With shopkeepers and strangers you say 'Come sta?' and 'Senta, scusi'. If you're unsure, 'Salve!' is safe with anyone.",
           "context": "",
           "practice": [
-            {
-              "ask": {
-                "it": "Buongiorno, come sta?",
-                "en": "Good morning, how are you?"
-              },
-              "answer": {
-                "it": "Bene, grazie. E Lei?",
-                "en": "Fine, thanks. And you?"
-              }
-            },
             {
               "ask": {
                 "it": "Ciao! Come stai?",
@@ -60,8 +50,18 @@
             },
             {
               "ask": {
-                "it": "Un signore anziano è vicino a te. Cosa dici?",
-                "en": "An older gentleman is next to you. What do you say?"
+                "it": "Buongiorno, come sta?",
+                "en": "Good morning, how are you?"
+              },
+              "answer": {
+                "it": "Bene, grazie. E Lei?",
+                "en": "Fine, thanks. And you?"
+              }
+            },
+            {
+              "ask": {
+                "it": "Un signore anziano passa. Cosa dici per fermarlo?",
+                "en": "An older man walks by. What do you say to stop him?"
               },
               "answer": {
                 "it": "Senta, scusi...",
@@ -70,53 +70,62 @@
             }
           ],
           "mission": {
-            "place": "piazza",
-            "goal": "Get a stranger's attention politely.",
+            "place": "shop",
+            "goal": "Greet the shopkeeper politely and ask how they are",
             "say": {
-              "it": "Senta, scusi...",
-              "en": "Excuse me..."
+              "it": "Buongiorno, come sta?",
+              "en": "Good morning, how are you?"
             },
             "listen_for": [
-              "Senta, scusi",
-              "Come sta?",
-              "E Lei?"
+              "Bene, grazie",
+              "Buongiorno"
             ]
           }
         },
         {
           "id": "a1-01-2",
           "title": "Say how you are",
-          "how_to": "How to say you are well using sto, not sono.",
-          "intro": "Now you'll be able to answer when someone asks how you are. You'll say it in a shop, at a bar or in the piazza.",
+          "how_to": "How to say how you are and ask the other person back.",
+          "intro": "After 'How are you?' you'll want to answer and ask in return. This is what you say in a shop, on the stairs or anywhere you chat.",
           "examples": [
             {
-              "role": "shopkeeper",
-              "place": "shop",
-              "it": "Come sta, signora?",
-              "en": "How are you, madam?"
-            },
-            {
               "role": "student",
-              "place": "piazza",
+              "place": "shop",
               "it": "Sto bene, grazie. E Lei?",
               "en": "I'm well, thanks. And you?"
             },
             {
-              "role": "neighbour",
+              "role": "student",
               "place": "piazza",
-              "it": "Non c'è male, grazie.",
-              "en": "Not bad, thanks."
+              "it": "Bene, grazie. E tu?",
+              "en": "Fine, thanks. And you?"
             },
             {
               "role": "shopkeeper",
               "place": "shop",
               "it": "Bene, bene, grazie.",
               "en": "Fine, fine, thanks."
+            },
+            {
+              "role": "neighbour",
+              "place": "piazza",
+              "it": "Non c'è male, grazie.",
+              "en": "Not bad, thanks."
             }
           ],
-          "notice": "To say how you are, Italian uses sto. English 'I am fine' tempts you to say 'sono bene', which is wrong. Say 'sto bene'.",
+          "notice": "To say how you are, Italian uses 'sto': 'Sto bene, grazie.' Then you hand the question back with 'E Lei?' or 'E tu?'.",
           "context": "",
           "practice": [
+            {
+              "ask": {
+                "it": "Come sta?",
+                "en": "How are you? (polite)"
+              },
+              "answer": {
+                "it": "Sto bene, grazie. E Lei?",
+                "en": "I'm well, thanks. And you?"
+              }
+            },
             {
               "ask": {
                 "it": "Ciao! Come stai?",
@@ -129,43 +138,33 @@
             },
             {
               "ask": {
-                "it": "Come sta, signora?",
-                "en": "How are you, madam?"
-              },
-              "answer": {
-                "it": "Sto bene, grazie. E Lei?",
-                "en": "I'm well, thanks. And you?"
-              }
-            },
-            {
-              "ask": {
                 "it": "Buongiorno! Come sta?",
                 "en": "Good morning! How are you?"
               },
               "answer": {
-                "it": "Sto bene, grazie.",
-                "en": "I'm well, thanks."
+                "it": "Non c'è male, grazie. E Lei?",
+                "en": "Not bad, thanks. And you?"
               }
             }
           ],
           "mission": {
-            "place": "shop",
-            "goal": "Tell the shopkeeper you are well and ask back.",
+            "place": "piazza",
+            "goal": "Tell a neighbour you're well and ask how they are",
             "say": {
-              "it": "Sto bene, grazie. E Lei?",
+              "it": "Sto bene, grazie. E tu?",
               "en": "I'm well, thanks. And you?"
             },
             "listen_for": [
-              "Sto bene",
-              "E Lei?"
+              "Bene",
+              "Non c'è male"
             ]
           }
         },
         {
           "id": "a1-01-3",
-          "title": "Hello at any hour",
-          "how_to": "How to greet people with buongiorno, buonasera or salve at the right time of day.",
-          "intro": "You'll be able to say hello at the right hour when you walk into a bar, a shop or a pharmacy. You'll also have one greeting for when you're unsure.",
+          "title": "Greetings by time of day",
+          "how_to": "How to pick buongiorno or buonasera for the time of day.",
+          "intro": "You'll greet people every time you walk into a shop or bar. Here is how to choose the right greeting for the hour.",
           "examples": [
             {
               "role": "barista",
@@ -174,31 +173,31 @@
               "en": "Good morning!"
             },
             {
+              "role": "market vendor",
+              "place": "market",
+              "it": "Buongiorno, signora!",
+              "en": "Good morning, madam!"
+            },
+            {
               "role": "shopkeeper",
               "place": "shop",
               "it": "Buonasera, signora.",
               "en": "Good evening, madam."
             },
             {
-              "role": "pharmacist",
-              "place": "pharmacy",
-              "it": "Salve!",
-              "en": "Hello!"
-            },
-            {
-              "role": "student",
+              "role": "neighbour",
               "place": "piazza",
               "it": "Buonanotte, a domani!",
               "en": "Good night, see you tomorrow!"
             }
           ],
-          "notice": "Buongiorno lasts until lunch or early afternoon, and buonasera covers the rest of the day. Buonanotte is only for bedtime, so say Buonasera when you walk into a bar at 9 p.m. Salve is safe when you don't know whether to use tu or Lei.",
-          "context": "Buonasera starts surprisingly early, around 3 or 4 p.m.",
+          "notice": "Buongiorno works until lunch or early afternoon. Buonasera takes over from mid-afternoon, much earlier than English 'good evening'. Buonanotte is only for when someone is going to bed.",
+          "context": "Italians greet when they walk into a shop or bar, and Buonasera starts surprisingly early, around 3 or 4 p.m.",
           "practice": [
             {
               "ask": {
-                "it": "Sono le dieci del mattino. Cosa dici entrando?",
-                "en": "It's ten in the morning. What do you say when you walk in?"
+                "it": "Sono le dieci. Entri in un bar. Cosa dici?",
+                "en": "It's ten o'clock. You walk into a bar. What do you say?"
               },
               "answer": {
                 "it": "Buongiorno!",
@@ -207,44 +206,43 @@
             },
             {
               "ask": {
-                "it": "Sono le cinque del pomeriggio. Come saluti la signora?",
-                "en": "It's five in the afternoon. How do you greet the lady?"
+                "it": "Sono le cinque. Entri in farmacia. Cosa dici?",
+                "en": "It's five o'clock. You walk into a pharmacy. What do you say?"
               },
               "answer": {
-                "it": "Buonasera, signora.",
-                "en": "Good evening, madam."
+                "it": "Buonasera!",
+                "en": "Good evening!"
               }
             },
             {
               "ask": {
-                "it": "Non sai se dare del tu o del Lei. Cosa dici?",
-                "en": "You don't know whether to use tu or Lei. What do you say?"
+                "it": "Sono le nove di sera. Entri in un bar. Cosa dici?",
+                "en": "It's nine in the evening. You walk into a bar. What do you say?"
               },
               "answer": {
-                "it": "Salve!",
-                "en": "Hello!"
+                "it": "Buonasera!",
+                "en": "Good evening!"
               }
             }
           ],
           "mission": {
             "place": "bar",
-            "goal": "Greet the barista when you walk in.",
+            "goal": "Greet the barista with the right greeting for the time of day",
             "say": {
               "it": "Buongiorno!",
               "en": "Good morning!"
             },
             "listen_for": [
               "Buongiorno",
-              "Buonasera",
-              "Salve"
+              "Buonasera"
             ]
           }
         },
         {
           "id": "a1-01-4",
-          "title": "Say goodbye nicely",
-          "how_to": "How to say goodbye and wish someone a good day or evening.",
-          "intro": "You'll be able to leave a shop or say goodbye to a neighbour with a warm wish. You'll also know how to answer when someone wishes you the same.",
+          "title": "Saying goodbye well",
+          "how_to": "How to say goodbye and answer a good wish.",
+          "intro": "When you leave a shop or meet a neighbour again, you'll say goodbye with a good wish. You'll also answer one when you get it.",
           "examples": [
             {
               "role": "student",
@@ -271,51 +269,50 @@
               "en": "Thanks, you too! See you!"
             }
           ],
-          "notice": "Buona giornata is for the day and buona serata is for the evening. To answer, say Altrettanto to anyone, or Anche a Lei or Anche a te depending on who you're talking to.",
-          "context": "Italians say goodbye when they leave a shop or a bar, and walking out in silence comes across as rude.",
+          "notice": "In the day you wish 'Buona giornata', in the evening 'Buona serata'. You answer 'Altrettanto!', or 'Anche a Lei!' (polite) or 'Anche a te!' (friendly). 'A domani!' and 'Ci vediamo!' are for people you'll see again.",
+          "context": "Italians say goodbye when they leave a shop or bar, and walking out in silence comes across as rude.",
           "practice": [
             {
               "ask": {
-                "it": "Arrivederci, buona giornata!",
-                "en": "Goodbye, have a good day!"
+                "it": "Esci dal negozio la mattina. Cosa dici?",
+                "en": "You leave a shop in the morning. What do you say?"
               },
               "answer": {
-                "it": "Grazie, altrettanto! Arrivederci!",
-                "en": "Thanks, same to you! Goodbye!"
+                "it": "Arrivederci, buona giornata!",
+                "en": "Goodbye, have a good day!"
               }
             },
             {
               "ask": {
-                "it": "Ciao! Buona serata!",
-                "en": "Bye! Have a nice evening!"
+                "it": "Il negoziante dice: Buona giornata! Tu rispondi?",
+                "en": "The shopkeeper says: Have a good day! What do you answer?"
+              },
+              "answer": {
+                "it": "Grazie, altrettanto!",
+                "en": "Thanks, same to you!"
+              }
+            },
+            {
+              "ask": {
+                "it": "Un amico dice: Buona serata! Tu rispondi?",
+                "en": "A friend says: Have a nice evening! What do you answer?"
               },
               "answer": {
                 "it": "Grazie, anche a te! Ci vediamo!",
                 "en": "Thanks, you too! See you!"
               }
-            },
-            {
-              "ask": {
-                "it": "È sera. Esci da un negozio. Cosa dici?",
-                "en": "It's evening. You're leaving a shop. What do you say?"
-              },
-              "answer": {
-                "it": "Arrivederci, buona serata!",
-                "en": "Goodbye, have a nice evening!"
-              }
             }
           ],
           "mission": {
-            "place": "shop",
-            "goal": "Say goodbye to the shopkeeper as you leave.",
+            "place": "pharmacy",
+            "goal": "Say goodbye with a good wish as you leave",
             "say": {
               "it": "Arrivederci, buona giornata!",
               "en": "Goodbye, have a good day!"
             },
             "listen_for": [
-              "Arrivederci",
-              "Buona giornata",
-              "Altrettanto"
+              "Altrettanto",
+              "Grazie, arrivederci"
             ]
           }
         }
@@ -327,8 +324,8 @@
         {
           "id": "a1-02-1",
           "title": "Saying you didn't understand",
-          "how_to": "How to say you didn't catch something, and that you got it.",
-          "intro": "You'll be able to tell someone you didn't understand and say when you finally do. You'll use it any time a conversation goes too fast, like at a shop counter.",
+          "how_to": "How to say you missed something, and tell people when you've got it.",
+          "intro": "Here you'll learn to say you didn't catch what someone said, and to say \"got it\" when you do. You'll use it at any counter or in any chat that moves too fast.",
           "examples": [
             {
               "role": "shopkeeper",
@@ -338,13 +335,13 @@
             },
             {
               "role": "student",
-              "place": "shop",
+              "place": "piazza",
               "it": "Scusi, non ho capito.",
               "en": "Sorry, I didn't understand."
             },
             {
-              "role": "student",
-              "place": "shop",
+              "role": "neighbour",
+              "place": "piazza",
               "it": "Ah, ho capito, grazie!",
               "en": "Ah, got it, thanks!"
             },
@@ -355,8 +352,8 @@
               "en": "I only speak a little Italian."
             }
           ],
-          "notice": "To say no, put non right before the verb: non ho capito, with no word for \"did\". For something just said, use non ho capito, not non capisco.",
-          "context": "Most people are pleased that you're trying, so say it with a smile.",
+          "notice": "For something someone has just said, the phrases are ho capito and non ho capito, with non right before ho. Use them as two ready-made phrases.",
+          "context": "Most people are pleased that you're trying, so telling them you only speak a little Italian goes down well.",
           "practice": [
             {
               "ask": {
@@ -370,6 +367,16 @@
             },
             {
               "ask": {
+                "it": "Sono quattro euro e cinquanta. Ha capito?",
+                "en": "That's four euros fifty. Did you understand?"
+              },
+              "answer": {
+                "it": "Scusi, non ho capito.",
+                "en": "Sorry, I didn't understand."
+              }
+            },
+            {
+              "ask": {
                 "it": "Parla italiano?",
                 "en": "Do you speak Italian?"
               },
@@ -377,69 +384,60 @@
                 "it": "Parlo solo un po' d'italiano.",
                 "en": "I only speak a little Italian."
               }
-            },
-            {
-              "ask": {
-                "it": "Sono tre euro e venti. Ha capito?",
-                "en": "That's three euros twenty. Did you understand?"
-              },
-              "answer": {
-                "it": "No, scusi, non ho capito.",
-                "en": "No, sorry, I didn't understand."
-              }
             }
           ],
           "mission": {
             "place": "shop",
-            "goal": "Tell the shopkeeper you didn't understand the price.",
+            "goal": "Tell the shopkeeper you didn't catch the price.",
             "say": {
               "it": "Scusi, non ho capito.",
               "en": "Sorry, I didn't understand."
             },
             "listen_for": [
-              "Tre euro e venti.",
-              "Ha capito?"
+              "non ho capito",
+              "ho capito",
+              "un po' d'italiano"
             ]
           }
         },
         {
           "id": "a1-02-2",
-          "title": "Asking to repeat or slow down",
-          "how_to": "How to politely ask someone to repeat or speak more slowly.",
-          "intro": "You'll be able to ask someone to say it again, or slower. Use it at a counter when you've missed the price.",
+          "title": "Asking someone to repeat",
+          "how_to": "How to ask someone politely to repeat or to speak more slowly.",
+          "intro": "Now you'll be able to ask people to say it again, or more slowly. You'll use it whenever a price or an answer goes by too fast.",
           "examples": [
             {
               "role": "student",
-              "place": "shop",
+              "place": "piazza",
               "it": "Può ripetere, per favore?",
               "en": "Could you repeat that, please?"
             },
             {
-              "role": "student",
-              "place": "shop",
+              "role": "ticket clerk",
+              "place": "station",
               "it": "Più piano, per favore.",
               "en": "More slowly, please."
             },
             {
-              "role": "student",
-              "place": "piazza",
-              "it": "Puoi ripetere?",
-              "en": "Could you repeat that? (to a friend)"
-            },
-            {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Tre... euro... e venti.",
-              "en": "Three... euros... twenty."
+              "it": "Può parlare più piano?",
+              "en": "Could you speak more slowly?"
+            },
+            {
+              "role": "neighbour",
+              "place": "piazza",
+              "it": "Puoi ripetere?",
+              "en": "Could you repeat that?"
             }
           ],
-          "notice": "Può plus a basic verb makes a polite request, with no \"to\" in between: può ripetere. With a friend, change può to puoi.",
+          "notice": "Può and a basic verb together make a polite request, with nothing in between: può ripetere. With a friend, say puoi ripetere.",
           "context": "Many people speed up or switch to English, so a friendly \"più piano, per favore\" is normal and expected.",
           "practice": [
             {
               "ask": {
-                "it": "Sono tre euro e venti.",
-                "en": "That's three euros twenty."
+                "it": "Come chiede di ripetere, in modo cortese?",
+                "en": "How do you politely ask someone to repeat?"
               },
               "answer": {
                 "it": "Può ripetere, per favore?",
@@ -448,8 +446,8 @@
             },
             {
               "ask": {
-                "it": "Tre euro e venti!",
-                "en": "Three euros twenty! (said fast)"
+                "it": "Come chiede di parlare più piano?",
+                "en": "How do you ask someone to speak more slowly?"
               },
               "answer": {
                 "it": "Più piano, per favore.",
@@ -458,40 +456,35 @@
             },
             {
               "ask": {
-                "it": "Hai capito?",
-                "en": "Did you understand? (friend)"
+                "it": "E con un amico, come chiede di ripetere?",
+                "en": "And with a friend, how do you ask them to repeat?"
               },
               "answer": {
-                "it": "No, puoi ripetere?",
-                "en": "No, could you repeat that?"
+                "it": "Puoi ripetere?",
+                "en": "Could you repeat that?"
               }
             }
           ],
           "mission": {
-            "place": "shop",
-            "goal": "Ask the shopkeeper to repeat the price.",
+            "place": "station",
+            "goal": "Ask the ticket clerk to repeat and slow down.",
             "say": {
-              "it": "Scusi, può ripetere, per favore?",
-              "en": "Sorry, could you repeat that, please?"
+              "it": "Può ripetere, per favore?",
+              "en": "Could you repeat that, please?"
             },
             "listen_for": [
-              "Tre euro e venti.",
-              "Ha capito?"
+              "può ripetere",
+              "più piano",
+              "per favore"
             ]
           }
         },
         {
           "id": "a1-02-3",
           "title": "Asking about a word",
-          "how_to": "How to ask what a word means or how to say and spell it.",
-          "intro": "You'll be able to ask what an Italian word means, how to say something in Italian, and how to spell it. You'll use it when a word stops you at the bar or in a shop.",
+          "how_to": "How to ask what a word means, how to say it in Italian, and how to spell it.",
+          "intro": "You'll learn three short questions for words you don't know. They help in a shop, at a bar, or anywhere a new word comes up.",
           "examples": [
-            {
-              "role": "barista",
-              "place": "bar",
-              "it": "Vuole lo scontrino?",
-              "en": "Do you want the receipt?"
-            },
             {
               "role": "student",
               "place": "bar",
@@ -505,56 +498,63 @@
               "en": "How do you say “receipt” in Italian?"
             },
             {
+              "role": "shopkeeper",
+              "place": "shop",
+              "it": "Si dice “scontrino”.",
+              "en": "You say “scontrino”."
+            },
+            {
               "role": "student",
               "place": "shop",
               "it": "Come si scrive?",
               "en": "How do you spell it?"
             }
           ],
-          "notice": "Cosa vuol dire? has no word for \"does\". Come si dice? and come si scrive? are fixed phrases, so just say them as they are.",
-          "context": "Italians say \"Come?\" or \"Scusi?\" for \"Sorry?\", because a bare \"Cosa?\" can sound blunt.",
+          "notice": "Cosa vuol dire asks what a word means, come si dice asks for the Italian word, and come si scrive asks for the spelling. Each one is complete as it stands, with no extra word.",
+          "context": "",
           "practice": [
             {
               "ask": {
-                "it": "Vuole lo scontrino?",
-                "en": "Do you want the receipt?"
+                "it": "Come chiede il significato di “scontrino”?",
+                "en": "How do you ask what “scontrino” means?"
               },
               "answer": {
-                "it": "Scusi, cosa vuol dire “scontrino”?",
-                "en": "Sorry, what does “scontrino” mean?"
+                "it": "Cosa vuol dire “scontrino”?",
+                "en": "What does “scontrino” mean?"
               }
             },
             {
               "ask": {
-                "it": "Si dice “scontrino”.",
-                "en": "You say “scontrino”."
+                "it": "Come chiede la parola italiana per “receipt”?",
+                "en": "How do you ask for the Italian word for “receipt”?"
+              },
+              "answer": {
+                "it": "Come si dice “receipt” in italiano?",
+                "en": "How do you say “receipt” in Italian?"
+              }
+            },
+            {
+              "ask": {
+                "it": "E come chiede l'ortografia?",
+                "en": "And how do you ask for the spelling?"
               },
               "answer": {
                 "it": "Come si scrive?",
                 "en": "How do you spell it?"
               }
-            },
-            {
-              "ask": {
-                "it": "Parla italiano?",
-                "en": "Do you speak Italian?"
-              },
-              "answer": {
-                "it": "Un po'. Come si dice “receipt” in italiano?",
-                "en": "A little. How do you say “receipt” in Italian?"
-              }
             }
           ],
           "mission": {
-            "place": "bar",
-            "goal": "Ask what a word means.",
+            "place": "shop",
+            "goal": "Ask the shopkeeper how to say a word in Italian.",
             "say": {
-              "it": "Scusi, cosa vuol dire “scontrino”?",
-              "en": "Sorry, what does “scontrino” mean?"
+              "it": "Scusi, come si dice “receipt” in italiano?",
+              "en": "Excuse me, how do you say “receipt” in Italian?"
             },
             "listen_for": [
-              "Si dice “scontrino”.",
-              "In inglese"
+              "come si dice",
+              "cosa vuol dire",
+              "come si scrive"
             ]
           }
         }
@@ -566,79 +566,79 @@
         {
           "id": "a1-03-1",
           "title": "Say your name",
-          "how_to": "How to give your name and ask for someone else's.",
-          "intro": "You'll be able to say your name and ask for theirs when you meet someone new. It works with your neighbour, in a bar, or on your first day of class.",
+          "how_to": "How to give your name and ask for theirs.",
+          "intro": "You'll be able to say your name and ask for someone else's. You'd use it the first time you meet a neighbour or a classmate.",
           "examples": [
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Piacere, Rosa. E Lei, come si chiama?",
-              "en": "Nice to meet you, I'm Rosa. And what's your name?"
+              "it": "Mi chiamo Rosa. E Lei, come si chiama?",
+              "en": "My name's Rosa. And what's your name?"
             },
             {
               "role": "student",
-              "place": "bar",
-              "it": "Ciao, io sono Marco. E tu, come ti chiami?",
-              "en": "Hi, I'm Marco. And what's your name?"
-            },
-            {
-              "role": "student",
-              "place": "bar",
-              "it": "Mi chiamo Tom. Piacere!",
-              "en": "My name's Tom. Nice to meet you!"
+              "place": "piazza",
+              "it": "Mi chiamo Marco. E tu, come ti chiami?",
+              "en": "My name's Marco. And what's your name?"
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Mi chiamo Anna. Piacere!",
-              "en": "My name's Anna. Nice to meet you!"
+              "it": "Piacere, Rosa. Come si chiama?",
+              "en": "Nice to meet you, I'm Rosa. What's your name?"
+            },
+            {
+              "role": "student",
+              "place": "piazza",
+              "it": "Mi chiamo Tom. Piacere!",
+              "en": "My name's Tom. Nice to meet you!"
             }
           ],
-          "notice": "You give your name with mi chiamo and then just the name, nothing in between. The question starts with come, never cosa: Come ti chiami? or Come si chiama? for someone older.",
+          "notice": "Mi chiamo and your name is the whole sentence. Ask with come si chiama for an older person or a stranger, and come ti chiami for a friend or classmate. Add piacere when you hear the name.",
           "context": "",
           "practice": [
-            {
-              "ask": {
-                "it": "Piacere, io sono Marco.",
-                "en": "Nice to meet you, I'm Marco."
-              },
-              "answer": {
-                "it": "Piacere! Mi chiamo …",
-                "en": "Nice to meet you! My name's …"
-              }
-            },
             {
               "ask": {
                 "it": "Come ti chiami?",
                 "en": "What's your name?"
               },
               "answer": {
-                "it": "Mi chiamo …",
-                "en": "My name's …"
+                "it": "Mi chiamo ….",
+                "en": "My name's …."
               }
             },
             {
               "ask": {
-                "it": "E Lei, come si chiama?",
-                "en": "And what's your name? (polite)"
+                "it": "Mi chiamo Magda. E Lei, come si chiama?",
+                "en": "My name's Magda. And what's your name?"
               },
               "answer": {
-                "it": "Mi chiamo … Piacere!",
-                "en": "My name's … Nice to meet you!"
+                "it": "Mi chiamo …. Piacere!",
+                "en": "My name's …. Nice to meet you!"
+              }
+            },
+            {
+              "ask": {
+                "it": "Come si chiama, scusi?",
+                "en": "What's your name, excuse me?"
+              },
+              "answer": {
+                "it": "Mi chiamo …, piacere.",
+                "en": "My name's …, nice to meet you."
               }
             }
           ],
           "mission": {
             "place": "piazza",
-            "goal": "Tell someone your name and ask theirs.",
+            "goal": "Tell a neighbour your name and ask for theirs",
             "say": {
-              "it": "Mi chiamo … E Lei, come si chiama?",
-              "en": "My name's … And what's your name?"
+              "it": "Mi chiamo …. E Lei, come si chiama?",
+              "en": "My name's …. And what's your name?"
             },
             "listen_for": [
-              "Piacere",
               "Mi chiamo",
-              "Come si chiama?"
+              "Come si chiama",
+              "Piacere"
             ]
           }
         },
@@ -646,7 +646,7 @@
           "id": "a1-03-2",
           "title": "Say where you're from",
           "how_to": "How to say your nationality and your city, and ask the same back.",
-          "intro": "You'll be able to say where you come from and ask someone else. It's one of the first questions people ask you here.",
+          "intro": "You'll be able to say where you're from and ask someone else. People ask this early in almost every first chat.",
           "examples": [
             {
               "role": "neighbour",
@@ -662,19 +662,19 @@
             },
             {
               "role": "student",
-              "place": "bar",
-              "it": "No, sono americano, di Denver. E tu, di dove sei?",
-              "en": "No, I'm American, from Denver. And where are you from?"
+              "place": "piazza",
+              "it": "Sono americano, di Denver. E tu, di dove sei?",
+              "en": "I'm American, from Denver. And where are you from?"
             },
             {
               "role": "student",
-              "place": "bar",
+              "place": "piazza",
               "it": "Sono di Napoli.",
               "en": "I'm from Naples."
             }
           ],
-          "notice": "Just say sono, with no io in front. A woman says americana, and for the city you always use di, never da: Sono di Boston.",
-          "context": "'Di dove sei?' is one of the first things Italians ask, because where you come from matters a lot here.",
+          "notice": "Sono and your nationality, then di and your city. A man says americano and a woman says americana. Ask di dove sei with tu and di dov'è with Lei.",
+          "context": "Di dove sei? is one of the first things Italians ask, because where you come from matters a lot here.",
           "practice": [
             {
               "ask": {
@@ -682,18 +682,18 @@
                 "en": "Where are you from?"
               },
               "answer": {
-                "it": "Sono di …",
-                "en": "I'm from …"
+                "it": "Sono di ….",
+                "en": "I'm from …."
               }
             },
             {
               "ask": {
                 "it": "Di dov'è?",
-                "en": "Where are you from? (polite)"
+                "en": "Where are you from? (Lei)"
               },
               "answer": {
-                "it": "Sono americano, di …",
-                "en": "I'm American, from …"
+                "it": "Sono americano, di ….",
+                "en": "I'm American, from …. (a woman says americana)"
               }
             },
             {
@@ -702,30 +702,30 @@
                 "en": "Are you English?"
               },
               "answer": {
-                "it": "No, sono americana, di …",
-                "en": "No, I'm American, from …"
+                "it": "No, sono americano, di ….",
+                "en": "No, I'm American, from …. (a woman says americana)"
               }
             }
           ],
           "mission": {
             "place": "piazza",
-            "goal": "Say where you're from and ask the other person.",
+            "goal": "Say where you're from and ask a classmate the same",
             "say": {
-              "it": "Sono americano, di … E tu, di dove sei?",
-              "en": "I'm American, from … And where are you from?"
+              "it": "Sono americano, di …. E tu, di dove sei?",
+              "en": "I'm American, from …. And where are you from?"
             },
             "listen_for": [
-              "Sono di",
-              "Di dove sei?",
-              "Di dov'è?"
+              "Sono",
+              "di",
+              "Di dove sei"
             ]
           }
         },
         {
           "id": "a1-03-3",
           "title": "Say where you live",
-          "how_to": "How to say you live here and not on holiday.",
-          "intro": "You'll be able to say that you live here and give your street or city. It's what you say when someone takes you for a tourist.",
+          "how_to": "How to say you live here and not just on holiday.",
+          "intro": "You'll be able to say that you live here and where. You'd use it when someone asks if you're on holiday.",
           "examples": [
             {
               "role": "neighbour",
@@ -740,21 +740,31 @@
               "en": "No, I live here!"
             },
             {
-              "role": "neighbour",
-              "place": "piazza",
-              "it": "Dove abita?",
-              "en": "Where do you live?"
-            },
-            {
               "role": "student",
               "place": "piazza",
-              "it": "Abito qui, in via …",
-              "en": "I live here, in … Street."
+              "it": "Abito qui, in via Mazzini.",
+              "en": "I live here, in Mazzini Street."
+            },
+            {
+              "role": "neighbour",
+              "place": "piazza",
+              "it": "Dove abita? Abito a Firenze.",
+              "en": "Where do you live? I live in Florence."
             }
           ],
-          "notice": "Abito ends in -o because it's you. Someone older asks Dove abita?, with -a, while a friend asks Dove abiti? For a city you say a: Abito a Firenze, not in Firenze.",
+          "notice": "Abito means I live. Say abito qui for here, in via and the street, or a and a city. Ask dove abita with Lei and dove abiti with tu.",
           "context": "Saying you live here, not that you're on holiday, changes the conversation: people start treating you as a neighbour.",
           "practice": [
+            {
+              "ask": {
+                "it": "Dove abiti?",
+                "en": "Where do you live? (tu)"
+              },
+              "answer": {
+                "it": "Abito qui, in via ….",
+                "en": "I live here, in … Street."
+              }
+            },
             {
               "ask": {
                 "it": "È qui in vacanza?",
@@ -767,81 +777,71 @@
             },
             {
               "ask": {
-                "it": "Dove abiti?",
-                "en": "Where do you live? (friendly)"
-              },
-              "answer": {
-                "it": "Abito in via …",
-                "en": "I live in … Street."
-              }
-            },
-            {
-              "ask": {
                 "it": "Dove abita?",
-                "en": "Where do you live? (polite)"
+                "en": "Where do you live? (Lei)"
               },
               "answer": {
-                "it": "Abito a …",
-                "en": "I live in …"
+                "it": "Abito a ….",
+                "en": "I live in …."
               }
             }
           ],
           "mission": {
             "place": "piazza",
-            "goal": "Tell someone you live here, not on holiday.",
+            "goal": "Tell someone you live here, not on holiday",
             "say": {
               "it": "No, abito qui!",
               "en": "No, I live here!"
             },
             "listen_for": [
               "Abito qui",
-              "Dove abita?",
-              "In vacanza"
+              "in via",
+              "Abito a"
             ]
           }
         },
         {
           "id": "a1-03-4",
-          "title": "Say how long you've been here",
-          "how_to": "How to say how long you've been in Italy.",
-          "intro": "You'll be able to say how long you've been here, and understand the welcome people give you. It's what you say right after telling someone you live here.",
+          "title": "Say how long and why",
+          "how_to": "How to say how long you've been here and why you came.",
+          "intro": "You'll be able to say how long you've been in Italy and why you're here. You'd use it when someone asks about your stay.",
           "examples": [
             {
               "role": "neighbour",
+              "place": "piazza",
+              "it": "Sei qui per lavoro?",
+              "en": "Are you here for work?"
+            },
+            {
+              "role": "student",
+              "place": "piazza",
+              "it": "Sono qui per imparare l'italiano.",
+              "en": "I'm here to learn Italian."
+            },
+            {
+              "role": "student",
               "place": "piazza",
               "it": "Sono in Italia da tre settimane.",
               "en": "I've been in Italy for three weeks."
             },
             {
-              "role": "neighbour",
-              "place": "piazza",
-              "it": "Ah, allora ben arrivata!",
-              "en": "Oh, welcome then!"
-            },
-            {
-              "role": "shopkeeper",
-              "place": "shop",
-              "it": "Ben arrivato!",
-              "en": "Welcome!"
-            },
-            {
               "role": "student",
-              "place": "bar",
+              "place": "piazza",
               "it": "Studio l'italiano da un mese.",
               "en": "I've been studying Italian for a month."
             }
           ],
-          "notice": "Italian uses the plain present with da for something that's still going on: Sono qui da tre settimane. Sono stato qui per tre settimane would mean the stay is over. People say ben arrivato to a man and ben arrivata to a woman.",
+          "notice": "Say sono qui per and what you want to do to give the reason. For how long you've been here, say da and the time: sono in Italia da tre settimane.",
           "context": "",
           "practice": [
             {
               "ask": {
-                "it": "Sei in Italia da tre settimane?",
-                "en": "Have you been in Italy for three weeks?"
+                "it": "Sei qui per lavoro?",
+                "en": "Are you here for work?"
               },
               "answer": {
-                "it": "Sì, sono in Italia da tre settimane.",
-                "en": "Yes, I've been in Italy for three weeks."
+                "it": "No, sono qui per imparare l'italiano.",
+                "en": "No, I'm here to learn Italian."
               }
             },
             {
@@ -850,14 +850,14 @@
                 "en": "Are you here on holiday?"
               },
               "answer": {
-                "it": "No, sono qui da tre settimane.",
-                "en": "No, I've been here for three weeks."
+                "it": "No, sono in Italia da … settimane.",
+                "en": "No, I've been in Italy for … weeks."
               }
             },
             {
               "ask": {
-                "it": "Studi l'italiano da un mese?",
-                "en": "Have you been studying Italian for a month?"
+                "it": "Studi l'italiano?",
+                "en": "Are you studying Italian?"
               },
               "answer": {
                 "it": "Sì, studio l'italiano da un mese.",
@@ -867,51 +867,50 @@
           ],
           "mission": {
             "place": "piazza",
-            "goal": "Tell someone how long you've been in Italy.",
+            "goal": "Tell a classmate why you're here and for how long",
             "say": {
-              "it": "Sono in Italia da … settimane.",
-              "en": "I've been in Italy for … weeks."
+              "it": "Sono qui per imparare l'italiano. Sono in Italia da tre settimane.",
+              "en": "I'm here to learn Italian. I've been in Italy for three weeks."
             },
             "listen_for": [
-              "Ben arrivato",
-              "Ben arrivata",
+              "Sono qui per",
               "Sono in Italia da"
             ]
           }
         },
         {
           "id": "a1-03-5",
-          "title": "Say why you're here",
-          "how_to": "How to say why you're in Italy and what you do.",
-          "intro": "You'll be able to say that you're here to learn Italian, and whether you're retired or working. People ask this when they get to know you.",
+          "title": "Say what you do",
+          "how_to": "How to say your work or that you're retired, and understand a welcome.",
+          "intro": "You'll be able to say what you do and understand when people welcome you. You'd use it when a new acquaintance asks about your life here.",
           "examples": [
             {
               "role": "student",
-              "place": "bar",
-              "it": "Sei qui per lavoro?",
-              "en": "Are you here for work?"
+              "place": "piazza",
+              "it": "Sono in pensione.",
+              "en": "I'm retired."
             },
             {
               "role": "student",
-              "place": "bar",
-              "it": "Sono qui per imparare l'italiano.",
-              "en": "I'm here to learn Italian."
-            },
-            {
-              "role": "student",
-              "place": "bar",
-              "it": "No, sono in pensione.",
-              "en": "No, I'm retired."
+              "place": "piazza",
+              "it": "Lavoro come ….",
+              "en": "I work as a …."
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Lavoro come …",
-              "en": "I work as a …"
+              "it": "Ah, allora ben arrivata!",
+              "en": "Oh, welcome then!"
+            },
+            {
+              "role": "student",
+              "place": "piazza",
+              "it": "Grazie, ma sto imparando!",
+              "en": "Thanks, but I'm learning!"
             }
           ],
-          "notice": "Sono qui per, plus a verb like imparare, tells why you're here. To say what you do, use Sono in pensione or Lavoro come and your job.",
-          "context": "",
+          "notice": "Sono in pensione says you're retired. Lavoro come and your job says what you do. Ben arrivato is welcome to a man and ben arrivata to a woman.",
+          "context": "If people compliment your Italian, you can just say Grazie, ma sto imparando!",
           "practice": [
             {
               "ask": {
@@ -925,35 +924,34 @@
             },
             {
               "ask": {
-                "it": "Sei qui per imparare l'italiano?",
-                "en": "Are you here to learn Italian?"
-              },
-              "answer": {
-                "it": "Sì, sono qui per imparare l'italiano.",
-                "en": "Yes, I'm here to learn Italian."
-              }
-            },
-            {
-              "ask": {
                 "it": "Sei qui per lavoro?",
                 "en": "Are you here for work?"
               },
               "answer": {
-                "it": "Sì, lavoro come …",
-                "en": "Yes, I work as a …"
+                "it": "Sì, lavoro come ….",
+                "en": "Yes, I work as a …."
+              }
+            },
+            {
+              "ask": {
+                "it": "Ben arrivato! Sei qui per lavoro?",
+                "en": "Welcome! Are you here for work?"
+              },
+              "answer": {
+                "it": "No, sono in pensione.",
+                "en": "No, I'm retired."
               }
             }
           ],
           "mission": {
-            "place": "bar",
-            "goal": "Tell someone why you're in Italy.",
+            "place": "piazza",
+            "goal": "Tell a neighbour what you do",
             "say": {
-              "it": "Sono qui per imparare l'italiano.",
-              "en": "I'm here to learn Italian."
+              "it": "Lavoro come …. E Lei?",
+              "en": "I work as a …. And you?"
             },
             "listen_for": [
-              "Sono qui per",
-              "Imparare l'italiano",
+              "Lavoro come",
               "Sono in pensione"
             ]
           }
@@ -965,9 +963,9 @@
       "steps": [
         {
           "id": "a1-04-1",
-          "title": "A coffee, a croissant",
-          "how_to": "How to say \"a\" or \"an\" with food and drinks.",
-          "intro": "You'll be able to name what you want at the bar, with the right word for \"a\". You'll use it every time you order at the counter.",
+          "title": "Asking for a drink",
+          "how_to": "How to ask for one drink or snack with the right word for \"a\".",
+          "intro": "Let's start with the simplest order: one coffee, one juice, one spritz. You'll use this every time you step up to the counter.",
           "examples": [
             {
               "role": "student",
@@ -978,29 +976,29 @@
             {
               "role": "neighbour",
               "place": "bar",
-              "it": "Un cappuccino e un cornetto, per favore.",
-              "en": "A cappuccino and a croissant, please."
-            },
-            {
-              "role": "student",
-              "place": "bar",
               "it": "Uno spritz, per favore.",
               "en": "A spritz, please."
             },
             {
               "role": "student",
               "place": "bar",
-              "it": "Una spremuta d'arancia, per favore.",
-              "en": "A fresh orange juice, please."
+              "it": "Una spremuta, per favore.",
+              "en": "A fresh juice, please."
+            },
+            {
+              "role": "student",
+              "place": "bar",
+              "it": "Un'aranciata, per favore.",
+              "en": "An orangeade, please."
             }
           ],
-          "notice": "\"A\" changes with the word: un for most masculine words, uno before s plus a consonant, una for feminine ones. Un with an apostrophe, like un'aranciata, is only for feminine words, so say \"uno spritz\", not \"un spritz\".",
-          "context": "Cappuccino is a morning drink; after lunch Italians order an espresso.",
+          "notice": "Most words take un, but uno goes before s plus a consonant, and una or un' go with feminine words. Learn each word with its little word, and for a milky coffee ask for un latte macchiato.",
+          "context": "Un caffè always means an espresso.",
           "practice": [
             {
               "ask": {
-                "it": "Cosa Le do?",
-                "en": "What can I get you?"
+                "it": "Un caffè o un cappuccino?",
+                "en": "An espresso or a cappuccino?"
               },
               "answer": {
                 "it": "Un caffè, per favore.",
@@ -1009,56 +1007,44 @@
             },
             {
               "ask": {
-                "it": "Cosa Le do?",
-                "en": "What can I get you?"
+                "it": "Una spremuta o un'aranciata?",
+                "en": "A fresh juice or an orangeade?"
               },
               "answer": {
-                "it": "Una spremuta d'arancia, per favore.",
-                "en": "A fresh orange juice, please."
+                "it": "Un'aranciata, per favore.",
+                "en": "An orangeade, please."
               }
             },
             {
               "ask": {
-                "it": "Cosa Le do?",
-                "en": "What can I get you?"
+                "it": "Un cornetto o un latte macchiato?",
+                "en": "A croissant or a latte macchiato?"
               },
               "answer": {
-                "it": "Uno spritz, per favore.",
-                "en": "A spritz, please."
+                "it": "Un latte macchiato, per favore.",
+                "en": "A latte macchiato, please."
               }
             }
           ],
           "mission": {
             "place": "bar",
-            "goal": "Order a coffee at the counter.",
+            "goal": "Order a spritz at the counter.",
             "say": {
-              "it": "Un caffè, per favore.",
-              "en": "An espresso, please."
+              "it": "Uno spritz, per favore.",
+              "en": "A spritz, please."
             },
             "listen_for": [
-              "Un caffè",
-              "per favore"
+              "Uno spritz",
+              "Aperol o Campari?"
             ]
           }
         },
         {
           "id": "a1-04-2",
-          "title": "Two coffees, two croissants",
-          "how_to": "How to order more than one thing.",
-          "intro": "You'll be able to order for two or more people at the bar. It's what you say when you're out with a friend.",
+          "title": "Ordering for two",
+          "how_to": "How to order more than one of the same thing.",
+          "intro": "When you're with a friend, you'll ask for two of something. Here is how the words change for two coffees, two croissants or two juices.",
           "examples": [
-            {
-              "role": "student",
-              "place": "bar",
-              "it": "Due cappuccini e due cornetti, per favore.",
-              "en": "Two cappuccinos and two croissants, please."
-            },
-            {
-              "role": "neighbour",
-              "place": "bar",
-              "it": "Due spremute, per favore.",
-              "en": "Two fresh juices, please."
-            },
             {
               "role": "student",
               "place": "bar",
@@ -1068,17 +1054,29 @@
             {
               "role": "neighbour",
               "place": "bar",
+              "it": "Due cappuccini e due cornetti, per favore.",
+              "en": "Two cappuccinos and two croissants, please."
+            },
+            {
+              "role": "student",
+              "place": "bar",
+              "it": "Due spremute, per favore.",
+              "en": "Two fresh juices, please."
+            },
+            {
+              "role": "neighbour",
+              "place": "bar",
               "it": "Due tè e due spritz, per favore.",
               "en": "Two teas and two spritzes, please."
             }
           ],
-          "notice": "Most words change their last vowel: cappuccino becomes cappuccini, cornetto becomes cornetti, spremuta becomes spremute. Words ending in an accented letter, like caffè and tè, or in a consonant, like spritz, stay the same. Never add an English s: say \"due caffè\", not \"due caffès\".",
+          "notice": "Words ending in -o change to -i, and words ending in -a change to -e. Words ending in an accented vowel or a consonant stay the same: due caffè, due spritz.",
           "context": "",
           "practice": [
             {
               "ask": {
-                "it": "Cosa Le do?",
-                "en": "What can I get you?"
+                "it": "Quanti caffè, uno o due?",
+                "en": "How many espressos, one or two?"
               },
               "answer": {
                 "it": "Due caffè, per favore.",
@@ -1087,43 +1085,43 @@
             },
             {
               "ask": {
-                "it": "Cosa Le do?",
-                "en": "What can I get you?"
+                "it": "Cappuccini o spremute?",
+                "en": "Cappuccinos or fresh juices?"
               },
               "answer": {
-                "it": "Due cornetti, per favore.",
-                "en": "Two croissants, please."
+                "it": "Due cappuccini, per favore.",
+                "en": "Two cappuccinos, please."
               }
             },
             {
               "ask": {
-                "it": "Cosa Le do?",
-                "en": "What can I get you?"
+                "it": "Due tè o due spritz?",
+                "en": "Two teas or two spritzes?"
               },
               "answer": {
-                "it": "Due cappuccini e due spremute, per favore.",
-                "en": "Two cappuccinos and two fresh juices, please."
+                "it": "Due spritz, per favore.",
+                "en": "Two spritzes, please."
               }
             }
           ],
           "mission": {
             "place": "bar",
-            "goal": "Order two cappuccinos for you and a friend.",
+            "goal": "Order two espressos at the counter.",
             "say": {
-              "it": "Due cappuccini, per favore.",
-              "en": "Two cappuccinos, please."
+              "it": "Due caffè, per favore.",
+              "en": "Two espressos, please."
             },
             "listen_for": [
-              "Due cappuccini",
-              "per favore"
+              "Due caffè",
+              "Ecco"
             ]
           }
         },
         {
           "id": "a1-04-3",
-          "title": "I'd like, politely",
-          "how_to": "How to ask for something politely with vorrei.",
-          "intro": "You'll be able to ask politely for a drink, a glass of water or anything at the bar. You'll also hear the questions the barista asks back.",
+          "title": "Saying I'd like",
+          "how_to": "How to ask politely with vorrei or per me.",
+          "intro": "Here are two polite ways to start an order. You can use them for anything, from a juice to a glass of water.",
           "examples": [
             {
               "role": "student",
@@ -1132,103 +1130,104 @@
               "en": "I'd like a fresh orange juice."
             },
             {
-              "role": "student",
+              "role": "neighbour",
               "place": "bar",
               "it": "Vorrei un bicchiere d'acqua, per favore.",
               "en": "I'd like a glass of water, please."
             },
             {
-              "role": "barista",
+              "role": "student",
               "place": "bar",
-              "it": "Naturale o frizzante?",
-              "en": "Still or sparkling?"
+              "it": "Per me un cappuccino e un cornetto.",
+              "en": "A cappuccino and a croissant for me."
             },
             {
-              "role": "barista",
+              "role": "student",
               "place": "bar",
-              "it": "Al banco o al tavolo?",
-              "en": "At the counter or at a table?"
+              "it": "Vorrei uno spritz, per favore.",
+              "en": "I'd like a spritz, please."
             }
           ],
-          "notice": "Vorrei means \"I'd like\" and works for anything you ask for. Don't say \"voglio\", \"I want\": it sounds pushy at a counter. Say vorrei, per me, or just the item and per favore.",
-          "context": "Standing at the banco is cheaper than sitting at a table, where there may be table service at a higher price.",
+          "notice": "Vorrei means \"I'd like\" and sounds polite at any counter. Per me plus the item works too, and so does the item plus per favore.",
+          "context": "Cappuccino is a morning drink; after lunch Italians order an espresso.",
           "practice": [
             {
               "ask": {
-                "it": "Cosa Le do?",
-                "en": "What can I get you?"
+                "it": "Buongiorno! Cosa Le do?",
+                "en": "Good morning! What can I get you?"
+              },
+              "answer": {
+                "it": "Vorrei un caffè, per favore.",
+                "en": "I'd like an espresso, please."
+              }
+            },
+            {
+              "ask": {
+                "it": "Prego! Cosa Le do?",
+                "en": "Yes? What can I get you?"
+              },
+              "answer": {
+                "it": "Per me un cappuccino e un cornetto.",
+                "en": "A cappuccino and a croissant for me."
+              }
+            },
+            {
+              "ask": {
+                "it": "Buonasera! Cosa Le do?",
+                "en": "Good evening! What can I get you?"
               },
               "answer": {
                 "it": "Vorrei un bicchiere d'acqua, per favore.",
                 "en": "I'd like a glass of water, please."
               }
-            },
-            {
-              "ask": {
-                "it": "Naturale o frizzante?",
-                "en": "Still or sparkling?"
-              },
-              "answer": {
-                "it": "Naturale, grazie.",
-                "en": "Still, thanks."
-              }
-            },
-            {
-              "ask": {
-                "it": "Al banco o al tavolo?",
-                "en": "At the counter or at a table?"
-              },
-              "answer": {
-                "it": "Al banco, grazie.",
-                "en": "At the counter, thanks."
-              }
             }
           ],
           "mission": {
             "place": "bar",
-            "goal": "Ask politely for a glass of water.",
+            "goal": "Ask politely for a fresh orange juice.",
             "say": {
-              "it": "Vorrei un bicchiere d'acqua, per favore.",
-              "en": "I'd like a glass of water, please."
+              "it": "Vorrei una spremuta d'arancia.",
+              "en": "I'd like a fresh orange juice."
             },
             "listen_for": [
               "Vorrei",
-              "un bicchiere d'acqua"
+              "Una spremuta",
+              "Ecco a Lei"
             ]
           }
         },
         {
           "id": "a1-04-4",
-          "title": "What are you having?",
-          "how_to": "How to ask what someone is having, and say what you'll have.",
-          "intro": "You'll be able to ask a friend or a stranger what they're having, say what you'll have, and offer to pay. You'll use it whenever you go to the bar with someone.",
+          "title": "Saying what you're having",
+          "how_to": "How to say what you're having and ask a friend the same.",
+          "intro": "In Italy you \"take\" your coffee, so one little verb covers it. You'll use it to say what you're having and to ask someone else.",
           "examples": [
             {
-              "role": "friend",
+              "role": "neighbour",
               "place": "bar",
               "it": "Cosa prendi?",
               "en": "What are you having?"
             },
             {
-              "role": "neighbour",
+              "role": "barista",
               "place": "bar",
               "it": "Cosa prende?",
-              "en": "What are you having? (polite)"
+              "en": "What are you having?"
+            },
+            {
+              "role": "neighbour",
+              "place": "bar",
+              "it": "Prendo un caffè macchiato.",
+              "en": "I'll have a macchiato."
             },
             {
               "role": "student",
               "place": "bar",
-              "it": "Prendo un cornetto.",
-              "en": "I'll have a croissant."
-            },
-            {
-              "role": "student",
-              "place": "bar",
-              "it": "Prendo anch'io un caffè. Offro io!",
-              "en": "I'll have a coffee too. It's on me!"
+              "it": "Prendo anch'io un caffè.",
+              "en": "I'll have a coffee too."
             }
           ],
-          "notice": "Italians \"take\" food and drink, so use prendo, not \"ho\". \"Ho un caffè\" means \"I've got a coffee\". Use prendi with a friend and prende with someone you address politely.",
+          "notice": "Prendo means \"I'll have\" when you order. Ask a friend Cosa prendi? and someone you address formally Cosa prende?",
           "context": "",
           "practice": [
             {
@@ -1244,11 +1243,11 @@
             {
               "ask": {
                 "it": "Cosa prende?",
-                "en": "What are you having? (polite)"
+                "en": "What are you having? (formal)"
               },
               "answer": {
-                "it": "Prendo un cornetto, grazie.",
-                "en": "I'll have a croissant, thanks."
+                "it": "Prendo un cornetto.",
+                "en": "I'll have a croissant."
               }
             },
             {
@@ -1257,21 +1256,99 @@
                 "en": "I'm having an espresso. And you?"
               },
               "answer": {
-                "it": "Prendo anch'io un caffè. Offro io!",
-                "en": "I'll have a coffee too. It's on me!"
+                "it": "Prendo anch'io un caffè.",
+                "en": "I'll have a coffee too."
               }
             }
           ],
           "mission": {
             "place": "bar",
-            "goal": "Say what you'll have and offer to pay for a friend.",
+            "goal": "Ask a friend what they're having.",
             "say": {
-              "it": "Prendo un caffè. Offro io!",
-              "en": "I'll have an espresso. It's on me!"
+              "it": "Cosa prendi?",
+              "en": "What are you having?"
             },
             "listen_for": [
-              "Prendo",
-              "Offro io"
+              "Prendo un…",
+              "Prendo anch'io"
+            ]
+          }
+        },
+        {
+          "id": "a1-04-5",
+          "title": "Answering the barista",
+          "how_to": "How to understand the barista's questions and answer them.",
+          "intro": "The barista will often give you two choices. Once you know these questions, you can answer quickly with just one word and grazie.",
+          "examples": [
+            {
+              "role": "barista",
+              "place": "bar",
+              "it": "Prego! Cosa Le do?",
+              "en": "Yes? What can I get you?"
+            },
+            {
+              "role": "barista",
+              "place": "bar",
+              "it": "Al banco o al tavolo?",
+              "en": "At the counter or at a table?"
+            },
+            {
+              "role": "barista",
+              "place": "bar",
+              "it": "Naturale o frizzante?",
+              "en": "Still or sparkling?"
+            },
+            {
+              "role": "barista",
+              "place": "bar",
+              "it": "Il cornetto semplice o alla crema?",
+              "en": "Plain croissant or with custard?"
+            }
+          ],
+          "notice": "Each question offers two choices, so answer with the one you want and add grazie. If you're treating a friend, say Offro io!",
+          "context": "Standing at the banco is cheaper than sitting at a table.",
+          "practice": [
+            {
+              "ask": {
+                "it": "Naturale o frizzante?",
+                "en": "Still or sparkling?"
+              },
+              "answer": {
+                "it": "Naturale, grazie.",
+                "en": "Still, thanks."
+              }
+            },
+            {
+              "ask": {
+                "it": "Il cornetto semplice o alla crema?",
+                "en": "Plain croissant or with custard?"
+              },
+              "answer": {
+                "it": "Semplice, grazie.",
+                "en": "Plain, thanks."
+              }
+            },
+            {
+              "ask": {
+                "it": "Al banco o al tavolo?",
+                "en": "At the counter or at a table?"
+              },
+              "answer": {
+                "it": "Al banco, grazie. Offro io!",
+                "en": "At the counter, thanks. It's on me!"
+              }
+            }
+          ],
+          "mission": {
+            "place": "bar",
+            "goal": "Ask for a glass of water and say still.",
+            "say": {
+              "it": "Un bicchiere d'acqua, per favore.",
+              "en": "A glass of water, please."
+            },
+            "listen_for": [
+              "Naturale o frizzante?",
+              "Naturale, grazie"
             ]
           }
         }
@@ -1282,13 +1359,13 @@
       "steps": [
         {
           "id": "a1-05-1",
-          "title": "Numbers up to 2,000",
-          "how_to": "How to say numbers from twenty to two thousand.",
-          "intro": "You'll be able to understand and say prices with bigger numbers. You'll need them at every till.",
+          "title": "Numbers up to thousands",
+          "how_to": "How to say and understand numbers, from twenty to two thousand.",
+          "intro": "You'll be able to hear and say prices like twenty-one or two hundred euros. You'll need this at every till, ticket window and market stall.",
           "examples": [
             {
-              "role": "shopkeeper",
-              "place": "shop",
+              "role": "ticket clerk",
+              "place": "station",
               "it": "Sono ventuno euro.",
               "en": "That's twenty-one euros."
             },
@@ -1301,100 +1378,101 @@
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Sono ventitré euro.",
-              "en": "That's twenty-three euros."
+              "it": "Sono ventitré euro e cinquanta.",
+              "en": "That's twenty-three euros fifty."
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Sono trentuno euro.",
-              "en": "That's thirty-one euros."
+              "it": "Sono duecento euro.",
+              "en": "That's two hundred euros."
             }
           ],
-          "notice": "Numbers are built just like in English, but the tens lose their last vowel before uno and otto: ventuno, ventotto, never ventiuno. Ventitré and trentatré take an accent, and two thousand is duemila, not duemille.",
+          "notice": "Numbers are built just like in English, but the tens lose their last vowel before uno and otto: ventuno, ventotto, trentuno. Ventitré and trentatré take an accent. For thousands, say mille, then duemila.",
           "context": "",
           "practice": [
             {
               "ask": {
-                "it": "Quant'è?",
-                "en": "How much is that?"
+                "it": "Quanto costa il biglietto? Sono 21 euro.",
+                "en": "How much is the ticket? It's 21 euros."
               },
               "answer": {
-                "it": "Sono ventitré euro.",
-                "en": "That's twenty-three euros."
+                "it": "Sono ventuno euro.",
+                "en": "It's twenty-one euros."
               }
             },
             {
               "ask": {
-                "it": "Quant'è?",
-                "en": "How much is that?"
+                "it": "Quanto costa la borsa? Dica 28 euro.",
+                "en": "How much is the bag? Say 28 euros."
               },
               "answer": {
-                "it": "Sono trentuno euro.",
-                "en": "That's thirty-one euros."
+                "it": "Sono ventotto euro.",
+                "en": "It's twenty-eight euros."
               }
             },
             {
               "ask": {
-                "it": "Quanto costano?",
-                "en": "How much are they?"
+                "it": "Quanto costa il tavolo? Dica 2000 euro.",
+                "en": "How much is the table? Say 2,000 euros."
               },
               "answer": {
-                "it": "Costano duecento euro.",
-                "en": "They cost two hundred euros."
+                "it": "Sono duemila euro.",
+                "en": "It's two thousand euros."
               }
             }
           ],
           "mission": {
-            "place": "shop",
-            "goal": "Ask the total and listen for the number.",
+            "place": "station",
+            "goal": "Ask the price of a ticket and listen for the number.",
             "say": {
-              "it": "Quant'è?",
-              "en": "How much is that?"
+              "it": "Quanto costa il biglietto?",
+              "en": "How much is the ticket?"
             },
             "listen_for": [
-              "Quant'è?"
+              "Quanto costa",
+              "il biglietto"
             ]
           }
         },
         {
           "id": "a1-05-2",
-          "title": "Saying prices in euros",
-          "how_to": "How to say and understand a price in euros and cents.",
-          "intro": "You'll be able to say a price out loud and follow it when someone tells you. You'd use it at the bar, at the bakery and at the market.",
+          "title": "Understanding prices in euro",
+          "how_to": "How to understand a spoken price in euros and cents.",
+          "intro": "You'll be able to follow what the cashier says when they tell you the price. You'll hear it every time you pay at the bar, the bakery or a shop.",
           "examples": [
-            {
-              "role": "shopkeeper",
-              "place": "shop",
-              "it": "Un euro.",
-              "en": "One euro."
-            },
-            {
-              "role": "shopkeeper",
-              "place": "shop",
-              "it": "Due euro.",
-              "en": "Two euros."
-            },
             {
               "role": "barista",
               "place": "bar",
-              "it": "Due euro e settanta.",
-              "en": "Two euros seventy."
+              "it": "Sono due euro e settanta.",
+              "en": "That's two euros seventy."
+            },
+            {
+              "role": "ticket clerk",
+              "place": "station",
+              "it": "Sono tre euro e venti.",
+              "en": "That's three euros twenty."
             },
             {
               "role": "shopkeeper",
               "place": "shop",
               "it": "Sono quattro euro e cinquanta.",
               "en": "That's four euros fifty."
+            },
+            {
+              "role": "shopkeeper",
+              "place": "shop",
+              "it": "Due euro.",
+              "en": "Two euros."
             }
           ],
-          "notice": "Euro never changes: it's due euro, never 'due euros'. The cents usually go unsaid, so quattro e cinquanta means 4.50. If a price sounds odd, just ask again.",
+          "notice": "Euro stays the same whether it's one or many: un euro, due euro. The number after e is the cents, and people often leave the word out.",
           "context": "",
           "practice": [
             {
               "ask": {
-                "it": "Come si dice 2 euro?",
-                "en": "How do you say 2 euros?"
+                "it": "Quanto costa il giornale?",
+                "en": "How much is the newspaper?"
               },
               "answer": {
                 "it": "Due euro.",
@@ -1403,35 +1481,35 @@
             },
             {
               "ask": {
-                "it": "Come si dice 3,20 euro?",
-                "en": "How do you say 3.20 euros?"
+                "it": "Quanto costa il caffè?",
+                "en": "How much is the espresso?"
               },
               "answer": {
-                "it": "Tre euro e venti.",
-                "en": "Three euros twenty."
+                "it": "Un euro e venti.",
+                "en": "One euro twenty."
               }
             },
             {
               "ask": {
-                "it": "Come si dice 4,50 euro?",
-                "en": "How do you say 4.50 euros?"
+                "it": "Quanto costa il pane?",
+                "en": "How much is the bread?"
               },
               "answer": {
-                "it": "Quattro euro e cinquanta.",
-                "en": "Four euros fifty."
+                "it": "Sono tre euro e venti.",
+                "en": "That's three euros twenty."
               }
             }
           ],
           "mission": {
-            "place": "bar",
-            "goal": "Order, ask the total, and repeat the price you hear.",
+            "place": "shop",
+            "goal": "Ask the price of the bread and listen for the euros.",
             "say": {
-              "it": "Un caffè e un cornetto. Quant'è?",
-              "en": "An espresso and a croissant. How much is that?"
+              "it": "Quanto costa il pane?",
+              "en": "How much is the bread?"
             },
             "listen_for": [
-              "Quant'è?",
-              "Due euro e settanta."
+              "Quanto costa",
+              "il pane"
             ]
           }
         },
@@ -1439,22 +1517,22 @@
           "id": "a1-05-3",
           "title": "Asking how much",
           "how_to": "How to ask the price of one thing, several things, or the total.",
-          "intro": "You'll be able to ask what things cost at a stall or a counter. You'd say it before you buy.",
+          "intro": "You'll be able to ask what something costs, and what your whole order comes to. You'll say it at the market, in a shop or at the bar till.",
           "examples": [
             {
-              "role": "student",
-              "place": "market",
+              "role": "neighbour",
+              "place": "shop",
               "it": "Quanto costa il pane?",
               "en": "How much is the bread?"
             },
             {
-              "role": "student",
-              "place": "market",
+              "role": "neighbour",
+              "place": "shop",
               "it": "Quanto costano i biscotti?",
               "en": "How much are the biscuits?"
             },
             {
-              "role": "student",
+              "role": "neighbour",
               "place": "market",
               "it": "Quanto costano le pesche?",
               "en": "How much are the peaches?"
@@ -1466,23 +1544,13 @@
               "en": "An espresso and a croissant. How much is that?"
             }
           ],
-          "notice": "One thing takes costa and several things take costano. There's no word for 'it': you just say Quanto costa? For the total of everything, use Quant'è?",
+          "notice": "Say costa for one thing and costano for several, with the thing you're asking about coming after. To ask about the whole order, say Quant'è?",
           "context": "",
           "practice": [
             {
               "ask": {
-                "it": "Come chiede il totale?",
-                "en": "How do you ask the total?"
-              },
-              "answer": {
-                "it": "Quant'è?",
-                "en": "How much is that?"
-              }
-            },
-            {
-              "ask": {
-                "it": "Come chiede il prezzo del pane?",
-                "en": "How do you ask the price of the bread?"
+                "it": "Un pane: come chiedi il prezzo?",
+                "en": "One loaf: how do you ask the price?"
               },
               "answer": {
                 "it": "Quanto costa il pane?",
@@ -1491,33 +1559,43 @@
             },
             {
               "ask": {
-                "it": "Come chiede il prezzo delle pesche?",
-                "en": "How do you ask the price of the peaches?"
+                "it": "Le pesche: come chiedi il prezzo?",
+                "en": "The peaches: how do you ask the price?"
               },
               "answer": {
                 "it": "Quanto costano le pesche?",
                 "en": "How much are the peaches?"
               }
+            },
+            {
+              "ask": {
+                "it": "Un caffè e un cornetto: come chiedi il totale?",
+                "en": "An espresso and a croissant: how do you ask the total?"
+              },
+              "answer": {
+                "it": "Quant'è?",
+                "en": "How much is that?"
+              }
             }
           ],
           "mission": {
             "place": "market",
-            "goal": "Ask the price of several things at a stall.",
+            "goal": "Ask the price of some peaches.",
             "say": {
               "it": "Quanto costano le pesche?",
               "en": "How much are the peaches?"
             },
             "listen_for": [
               "Quanto costano",
-              "Quanto costa"
+              "le pesche"
             ]
           }
         },
         {
           "id": "a1-05-4",
           "title": "Paying by card or cash",
-          "how_to": "How to ask to pay by card and say you'll pay cash.",
-          "intro": "You'll be able to choose how you pay and hand over your money politely. You'd say it at any till.",
+          "how_to": "How to ask to pay by card or say you'll pay cash.",
+          "intro": "You'll be able to ask if you can pay by card, or say you'll pay cash and hand over the money. You'll say it at the till of any bar, bakery or shop.",
           "examples": [
             {
               "role": "student",
@@ -1526,10 +1604,10 @@
               "en": "Can I pay by card?"
             },
             {
-              "role": "student",
+              "role": "shopkeeper",
               "place": "shop",
-              "it": "Posso pagare in contanti?",
-              "en": "Can I pay cash?"
+              "it": "Sì, certo.",
+              "en": "Yes, of course."
             },
             {
               "role": "student",
@@ -1538,29 +1616,19 @@
               "en": "I'll pay cash. Here you are."
             },
             {
-              "role": "shopkeeper",
-              "place": "shop",
-              "it": "Grazie. Ecco lo scontrino.",
-              "en": "Thank you. Here's the receipt."
+              "role": "student",
+              "place": "market",
+              "it": "Posso pagare in contanti?",
+              "en": "Can I pay cash?"
             }
           ],
-          "notice": "After posso, the next verb stays in its basic form: posso pagare, never posso pago. Ecco a Lei is polite; with a friend say Ecco a te, or just Ecco.",
-          "context": "Take the scontrino when it's handed to you.",
+          "notice": "After Posso, use pagare, just like that. When you hand over the money, say Ecco a Lei, or just Ecco.",
+          "context": "Small shops and market stalls still prefer cash for small amounts, so Pago in contanti is a very useful thing to say.",
           "practice": [
             {
               "ask": {
-                "it": "Come dice che paga in contanti?",
-                "en": "How do you say you'll pay cash?"
-              },
-              "answer": {
-                "it": "Pago in contanti.",
-                "en": "I'll pay cash."
-              }
-            },
-            {
-              "ask": {
-                "it": "Come chiede di pagare con la carta?",
-                "en": "How do you ask to pay by card?"
+                "it": "Vuoi pagare con la carta. Che cosa chiedi?",
+                "en": "You want to pay by card. What do you ask?"
               },
               "answer": {
                 "it": "Posso pagare con la carta?",
@@ -1569,8 +1637,18 @@
             },
             {
               "ask": {
-                "it": "Come dà i soldi al cassiere?",
-                "en": "How do you hand the money to the cashier?"
+                "it": "Vuoi pagare in contanti. Che cosa dici?",
+                "en": "You want to pay cash. What do you say?"
+              },
+              "answer": {
+                "it": "Pago in contanti.",
+                "en": "I'll pay cash."
+              }
+            },
+            {
+              "ask": {
+                "it": "Dai i soldi alla cassiera. Che cosa dici?",
+                "en": "You hand the money to the cashier. What do you say?"
               },
               "answer": {
                 "it": "Ecco a Lei.",
@@ -1586,16 +1664,16 @@
               "en": "Can I pay by card?"
             },
             "listen_for": [
-              "Posso pagare con la carta?",
-              "Ecco."
+              "Posso pagare",
+              "con la carta"
             ]
           }
         },
         {
           "id": "a1-05-5",
-          "title": "When you have no change",
-          "how_to": "How to answer when the shopkeeper asks if you have change.",
-          "intro": "You'll be able to understand Ha moneta? and say you haven't got small coins. It happens when you pay with a big note.",
+          "title": "Talking about change",
+          "how_to": "How to answer when the cashier asks if you have change.",
+          "intro": "You'll be able to understand when someone asks for coins, and tell them politely that you have none. You'll need it when you pay with a big note.",
           "examples": [
             {
               "role": "shopkeeper",
@@ -1622,19 +1700,9 @@
               "en": "That's fine. Here's your change: eight euros."
             }
           ],
-          "notice": "Ha moneta? and Ha spiccioli? mean the same thing, and you only need to understand them. Your answer is Mi dispiace, non ho spiccioli.",
-          "context": "Cashiers often ask 'Ha moneta?' to avoid breaking a big note.",
+          "notice": "Ha moneta? and Ha spiccioli? ask the same thing. If you have no coins, say Mi dispiace, non ho spiccioli. When you get your change, take the scontrino, the receipt, too.",
+          "context": "Cashiers often ask Ha moneta? to avoid breaking a big note.",
           "practice": [
-            {
-              "ask": {
-                "it": "Come dice 'Here you are, ten euros'?",
-                "en": "How do you say 'Here you are, ten euros'?"
-              },
-              "answer": {
-                "it": "Ecco a Lei, dieci euro.",
-                "en": "Here you are, ten euros."
-              }
-            },
             {
               "ask": {
                 "it": "Ha moneta?",
@@ -1647,12 +1715,22 @@
             },
             {
               "ask": {
-                "it": "Il giornale costa due euro. Ha spiccioli?",
-                "en": "The newspaper is two euros. Have you got any coins?"
+                "it": "Ha spiccioli?",
+                "en": "Have you got any coins?"
               },
               "answer": {
-                "it": "Mi dispiace, non ho spiccioli. Ecco dieci euro.",
-                "en": "Sorry, I haven't got any change. Here's ten euros."
+                "it": "Mi dispiace, non ho spiccioli. Ecco a Lei.",
+                "en": "Sorry, I haven't got any change. Here you are."
+              }
+            },
+            {
+              "ask": {
+                "it": "Ecco il resto e lo scontrino.",
+                "en": "Here's your change and the receipt."
+              },
+              "answer": {
+                "it": "Grazie, buona giornata!",
+                "en": "Thanks, have a good day!"
               }
             }
           ],
@@ -1660,12 +1738,12 @@
             "place": "shop",
             "goal": "Pay for a newspaper with a ten-euro note and say you have no change.",
             "say": {
-              "it": "Ecco a Lei, dieci euro.",
-              "en": "Here you are, ten euros."
+              "it": "Mi dispiace, non ho spiccioli.",
+              "en": "Sorry, I haven't got any change."
             },
             "listen_for": [
-              "Mi dispiace, non ho spiccioli.",
-              "Ecco a Lei"
+              "Ecco a Lei",
+              "non ho spiccioli"
             ]
           }
         }

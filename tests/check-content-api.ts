@@ -1,3 +1,5 @@
+import { existsSync } from 'fs';
+import { join } from 'path';
 // What the app downloads (GET /v1/content, lib/content-api.ts): every shown
 // city, place and person has an R2 image address, every place's person is in
 // the people list, hidden cities and places are left out, and nothing the
@@ -19,6 +21,15 @@ for (const field of ['imagePrompt', 'portraitPrompt', 'personality', 'traits', '
 const base = /^https:\/\/[^/]+\/.+\.webp$/;
 const shownCities = cities.filter((x) => !x.hidden);
 check(c.cities.length === shownCities.length && c.cities.length > 0, `expected ${shownCities.length} shown cities, got ${c.cities.length}`);
+// The syllabus lessons for Learn (lib/lessons.ts), without their missions (out of lessons for now)
+{
+  const lessons = (c as unknown as { lessons?: { id: string; steps: { id: string; practice: unknown[]; mission?: unknown }[] }[] }).lessons;
+  check(Array.isArray(lessons), 'content should have a lessons list (empty where a country has none yet)');
+  if (existsSync(join(process.cwd(), 'content', pack.id, 'lessons.json'))) {
+    check(!!lessons?.length && lessons.every((u) => u.steps.length > 0), 'lessons.json exists but no lessons are served');
+    check(!!lessons?.every((u) => u.steps.every((st) => st.practice.length > 0 && st.mission === undefined)), 'each lesson needs practice, and no mission');
+  }
+}
 check(Object.values(c.characters).some((x) => x.tutor && base.test(x.portrait ?? '')), 'Magda (the tutor) should be in characters with her portrait, for Learn');
 for (const city of c.cities) {
   check(!city.places.some((p) => p.characterId === pack.tutor.id), `city ${city.id} still shows a language school`);
