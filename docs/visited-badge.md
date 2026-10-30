@@ -15,6 +15,12 @@
 1. **Visited** after the first conversation there.
 2. **Regular** from the third visit (Josh, 2026-10-29: "I think 3").
 
+## Cities (Josh, 2026-10-29)
+
+- **City cards** on the list of cities get the same corner badge with a different paper: a **train ticket stub** (you arrive in a city by train), stamped *già visto* with the green stripe and Visited under it.
+- **Only one stage:** visited, after the first conversation anywhere in that city (Josh: "maybe just visited"). No regular or home city.
+- **Place cards** on a city's page carry the scontrino as above.
+
 ## Rules it has to follow
 
 - The Italian words (*già visto*, *di casa*) and the English labels come from `/v1/content`, never from Swift: Mexico gets its own (e.g. *ya fuiste*, *de casa*).
