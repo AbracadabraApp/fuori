@@ -74,7 +74,8 @@ Prompted by Josh's Mexico session on 2026-10-29: the five-words-in-progress feed
 3. **The mic ready when the card settles,** not half a second later plus start-up: keep the recorder running between cards.
 4. **Spacing with decay, not slots (Josh: "some sort of decay on repetition / new cards - not a rigid repetition"):** each word's pull to come back drops to nothing after it's shown and grows again; the next card is a weighted random pick. New words weigh heavily at first and ease off as more words are in play, never to zero. Never the same word within 6 cards.
    - **Longer gaps, not equal for every word (Josh, 2026-10-29: "they shouldn't all go equal amounts back"; 3 cards was "too fast"):** about 12 cards, then 25, then 50+, then another day. Each pass without help stretches that word's later gaps, each help shortens them (ease 0.6–1.6×), and every gap has a random spread (0.7–1.5×). Help brings a word back after about 6–12 cards at the same stage.
-5. **Endless, and a skipped card waits its turn (Josh, 2026-10-29: "go through 60 cards (trying none) the 61 card is the 1st"):** a card scrolled past without trying isn't counted as seen and doesn't come back early; it goes to the back of the deck. Scroll through all 60 trying none and card 61 is card 1 again, in the same order. Words you've tried come back by their gaps, mixed in.
+5. **No "your words" (Josh, 2026-10-29: "i don't love the your words concept"):** no finish line, no list in the toolbar, nothing leaves the feed. After stage 3 a word stays at stage 3 and keeps coming back, its gaps stretching as it gets easier (50+ cards, then days); a word you know well turns up rarely, but never stops. Where it came from: the 2026-10-21 design had "a list of 'own' words" (credited to Josh, "nothing more for now"); the name, the toolbar list and stage 3 as a finish line were Claude's, in version 1 (2026-10-27). The built app still has them, to be removed with this plan.
+6. **Endless, and a skipped card waits its turn (Josh, 2026-10-29: "go through 60 cards (trying none) the 61 card is the 1st"):** a card scrolled past without trying isn't counted as seen and doesn't come back early; it goes to the back of the deck. Scroll through all 60 trying none and card 61 is card 1 again, in the same order. Words you've tried come back by their gaps, mixed in.
 
 **A full 60-card run** (Mexico deck, simulated with rule 4 and 1 in 4 stage-2/3 answers needing help, the rate Josh saw; every card tried; `Then` is the gap the card schedules):
 
@@ -141,14 +142,14 @@ Prompted by Josh's Mexico session on 2026-10-29: the five-words-in-progress feed
 | 59 | el amigo | 3 say | 28 | back ~52 |
 | 60 | la doña | 3 say | 19 | back ~70 |
 
-What the run shows: 20 new words in 60 cards (about 20 averaged over ten runs; 15 with equal gaps of 8/12/30); returns land 6 to 44 cards later; no word reaches "yours" inside 60 cards, since the stage 3 checks fall 50–90 cards out, in the next visit.
+What the run shows: 20 new words in 60 cards (about 20 averaged over ten runs; 15 with equal gaps of 8/12/30); returns land 6 to 44 cards later; the stage 3 returns fall 50–90 cards out, in the next visit.
 
 ## Motion (agreed 2026-10-21)
 
 - Revealing an answer: no flip. The card grows a little and the new line fades in; the picture never moves.
 - Mic stages: the picture or word fades in after you say it.
 - A new word joining the deck slides in from the bottom of the list; a card moving to its next stage changes in place.
-- A card that passes stage 3 lifts away toward the own-words list: the one moment of celebration.
+- ~~A card that passes stage 3 lifts away toward the own-words list~~ (no own-words list, 2026-10-29).
 - Reduce Motion: every one of these is a cross-fade.
 
 ## Sound (proposed 2026-10-21)
