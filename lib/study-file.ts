@@ -18,6 +18,30 @@ import { language, tutor } from '@/content';
 import type { CharacterSheet } from './types';
 import type { ConversationTurn, ReviewLog } from './memory';
 
+/**
+ * Study files being rewritten after a conversation, by learner (lib/remember.ts
+ * runs it after the end call has answered): Magda's next turn waits for it,
+ * so a lesson started straight after a conversation knows about it (the live
+ * test's lesson came before the update, 2026-10-29). One process per country.
+ */
+const studyFileWrites = new Map<string, Promise<void>>();
+
+/** Record a study file rewrite in progress for this learner */
+export function trackStudyFileWrite(learnerId: string, write: Promise<void>): void {
+  studyFileWrites.set(learnerId, write);
+  const clear = () => {
+    if (studyFileWrites.get(learnerId) === write) studyFileWrites.delete(learnerId);
+  };
+  write.then(clear, clear);
+}
+
+/** Resolves when no rewrite is in progress for this learner (at most `ms`) */
+export async function studyFileReady(learnerId: string, ms = 30_000): Promise<void> {
+  const pending = studyFileWrites.get(learnerId);
+  if (!pending) return;
+  await Promise.race([pending.catch(() => {}), new Promise((r) => setTimeout(r, ms))]);
+}
+
 /** The study file stays short enough to sit in every lesson prompt */
 export const STUDY_FILE_LINES = 20;
 

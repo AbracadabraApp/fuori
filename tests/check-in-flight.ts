@@ -1,6 +1,7 @@
 // A turn resent while the first copy is being answered gets the same answer,
 // not a second one (lib/in-flight.ts; whole-app scan, 2026-10-29)
 import { sharedWhileRunning } from '@/lib/in-flight';
+import { trackStudyFileWrite, studyFileReady } from '@/lib/study-file';
 
 const problems: string[] = [];
 const check = (ok: boolean, msg: string) => { if (!ok) problems.push(msg); };
@@ -21,6 +22,14 @@ async function main() {
   const failing = sharedWhileRunning(running, 'f', () => Promise.reject(new Error('boom')));
   await failing.catch(() => {});
   check(running.size === 0, 'cleared after a failure too');
+  // Magda's first turn waits for a study file still being rewritten (the live test's lesson came first)
+  let written = false;
+  trackStudyFileWrite('L1', new Promise<void>((r) => setTimeout(() => { written = true; r(); }, 40)));
+  await studyFileReady('L1');
+  check(written, "Magda's turn waits for the study file rewrite in progress");
+  const t0 = Date.now();
+  await studyFileReady('L2');
+  check(Date.now() - t0 < 20, 'nothing in progress: no wait');
   if (problems.length) { console.error('FAIL:\n  ' + problems.join('\n  ')); process.exit(1); }
   console.log('OK: a turn resent while the first is answered gets the same answer; cleared after');
 }

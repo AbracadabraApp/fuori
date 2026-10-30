@@ -21,7 +21,7 @@ import { claimForMemory, releaseMemoryClaim, saveConversationMemory, loadCharact
 import { recordingEnabled } from './recording';
 import { characterForPlace } from './characters/for-place';
 import { cities, tutor } from '@/content';
-import { writeStudyFileWithClaude, saveStudyFile, type StudyFileWriter } from './study-file';
+import { writeStudyFileWithClaude, saveStudyFile, trackStudyFileWrite, type StudyFileWriter } from './study-file';
 import type { CharacterSheet } from './types';
 import { scoreConversation, saveConversationScore, judgeWithClaude, type Judge } from './quality';
 import { checkLearnerLevel } from './learner-level';
@@ -132,14 +132,19 @@ export async function rememberConversation(
       const claim = done;
       // Fold the learning notes into Magda's study file, so it's ready when the
       // learner walks into the school. A problem here is logged; memory stays saved.
-      try {
-        const current = await loadCharacterMemory(learnerId, tutor.id);
-        const studyFile = await writeStudyFile({ after: 'conversation', studyFile: current.notes, character, learningNotes: out.review });
-        await saveStudyFile(learnerId, studyFile);
-        console.log(JSON.stringify({ level: 'info', event: 'study file', after: 'conversation', conversationId, lines: studyFile.length }));
-      } catch (err) {
-        logError('study file', err, conversationId);
-      }
+      const studyFileWrite = (async () => {
+        try {
+          const current = await loadCharacterMemory(learnerId, tutor.id);
+          const studyFile = await writeStudyFile({ after: 'conversation', studyFile: current.notes, character, learningNotes: out.review });
+          await saveStudyFile(learnerId, studyFile);
+          console.log(JSON.stringify({ level: 'info', event: 'study file', after: 'conversation', conversationId, lines: studyFile.length }));
+        } catch (err) {
+          logError('study file', err, conversationId);
+        }
+      })();
+      // Magda's next turn waits for it (lib/study-file.ts studyFileReady)
+      trackStudyFileWrite(learnerId, studyFileWrite);
+      await studyFileWrite;
 
       // Score it for the dialogue scorecard (lib/quality.ts). Separate from memory:
       // a scoring problem is logged and memory stays saved.

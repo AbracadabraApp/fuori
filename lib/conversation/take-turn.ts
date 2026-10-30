@@ -12,6 +12,7 @@ import { buildTutorPrompt, repliesSoFar } from '@/lib/prompts/build-tutor-prompt
 import { recordTurn, saveLater } from '@/lib/recording';
 import { trialLevel } from '@/lib/conversation/level-trial';
 import { loadCharacterMemory, loadMemoryAtStart, type CharacterMemory } from '@/lib/memory';
+import { studyFileReady } from '@/lib/study-file';
 import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
@@ -67,6 +68,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   let addressedAs: Gender | undefined;
   if (learnerId) {
     try {
+      // Magda: a study file still being rewritten after the last conversation is waited for
+      if (character.id === tutor.id && !conversationId) await studyFileReady(learnerId);
       memory =
         (conversationId ? await loadMemoryAtStart(conversationId, learnerId) : null) ??
         (await loadCharacterMemory(learnerId, character.id));
