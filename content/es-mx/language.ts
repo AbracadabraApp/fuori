@@ -32,11 +32,11 @@ export const language = {
       fare: 'Sencillo',
       board: 'Subir',
     },
-    whereTo: '¿A dónde quiere ir?', // departures board title
+    whereTo: '¿A dónde quieres ir?', // departures board title
     letsDoIt: '¡Sí, va!', // Learn home: the Lessons card's button (canvas "Learn area", D3)
-    howToSay: '¿Cómo se dice?', // say it in English: the label on what the learner said
+    howToSay: 'Cómo se dice:', // say it in English: the label on what the learner said
     /** Flashcards (docs/flashcards.md → The banner and help): each stage's instruction, shown, not spoken */
     cards: { repeat: "Repite", howDoYouSay: "¿Cómo se dice?", whatIsIt: "¿Qué es?" },
-    youAreHere: 'Está aquí', // departures board: the current city
+    youAreHere: 'Estás aquí', // departures board: the current city
   },
 };

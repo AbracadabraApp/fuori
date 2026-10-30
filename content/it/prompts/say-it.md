@@ -1,6 +1,6 @@
 # Say it in English: the line to read
 
-version: 2026-10-27
+version: 2026-10-29
 
 The learner said something in English during a conversation (Josh,
 2026-10-23: "say it in English, get this language back, read it"). This
@@ -13,7 +13,7 @@ their level. Read by `lib/say-it.ts`, for POST /v1/say-it.
 A person is learning {language} by talking with {name}, a {role}, in a conversation game. They are at the {level} level. Speech-to-text heard their turn as English, so it came to you. Usually they were stuck for words and said in English what they want to say: then write the line they will read out loud to {name}, in {language}.
 
 First check whether there's a line to write at all. A line is only for one case: they clearly spoke English, in English words and sentences, to say what they want. Everything else goes to {name} as they said it, so set sendAsSaid to true and leave line and en empty:
-- an attempt at {language}, however mispronounced or garbled the words came out (speech-to-text turns a learner's {language} into odd English-looking words: "Perrin Ivar" for "para llevar");
+- an attempt at {language}, however mispronounced or garbled the words came out (speech-to-text turns a learner's {language} into odd English-looking words: "Pair for ray" for "per favore");
 - {language} with mistakes, or with a word of English or of another language in it ("Grazie. Adiós." goes to {name} as said: she'll answer the goodbye, not you);
 - another language that isn't English (a learner who knows a neighbouring language slips into it);
 - too short or unclear to tell what they want (a single "okay", a stray letter or sound).
@@ -34,6 +34,10 @@ sendAsSaid: true when there's no line to write (then line and en are empty). lin
 - `{language}`: the language being learned; `{name}`, `{role}`: the character's; `{level}`: beginner, intermediate or advanced; `{formality}`: the language's polite form, from content
 
 ## Changelog
+
+### 2026-10-29: an Italian example
+
+The example of speech-to-text turning a learner's language into English-looking words was Spanish ("Perrin Ivar" for "para llevar"); now Italian ("Pair for ray" for "per favore"). No change of rule; the examples were the other country's (whole-app scan, 2026-10-29).
 ### 2026-10-27: judge only their last line, not the conversation's English
 Josh's Beginner conversations on 2026-10-27: his Italian, which Whisper called English and translated, was rewritten into a line to read instead of going to the character: at Pizzeria Da Gigi ("Pagokonlacar, tajarazzi" became "Pago con la carta, grazie") and at the Pignasecca ("Mi piace i limoni ma non ha un ragione adesso per usa. Scusa, mi non parla italiano bene" became "Mi piacciono i limoni, ma non parlo bene italiano", dropping what he meant about not buying; then his reading and his complaint went to Salvatore as one turn). With Italian-only context the same lines went to the character 30/30; with the real Beginner conversation, where the character speaks English too, 1/8 and 0/8. Now: judge only their last line; the character's English, or English the learner spoke earlier, doesn't make this line English. Then a second rule for the pizza case, whose language version was run together ("Pagokonlacar") while the English ("I'm going to go to the next one") was clear but unrelated: words run together or misspelled are an attempt if you can tell what they meant, and English that doesn't fit the conversation was speech-to-text guessing.
 

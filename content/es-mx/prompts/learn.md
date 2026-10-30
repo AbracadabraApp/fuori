@@ -1,6 +1,6 @@
 # Learn page (conversation review)
 
-version: 2026-10-27
+version: 2026-10-29
 
 The Learn page: a sheet over the conversation, written from it (Josh,
 2026-10-20 and 21; docs/learn.md → The page). Corrections as tap-to-fix
@@ -25,7 +25,7 @@ Judge their level from their own lines. Everything on the page is one step beyon
 The page has three parts. Leave a part empty when the conversation has nothing for it; less is better than more.
 
 corrections: their most useful mistakes, at most 3, the form of address included (familiar with a stranger, formal with a friend). Only mistakes worth stopping for: ones that changed the meaning or that they'll make again and again. Skip a small slip (an ending, an article, one letter) that happened once. Never correct what is already correct and natural, even if you'd say it another way: a correction is only for a real mistake. Keep their meaning: the right version adds nothing they didn't mean (no "very" they didn't say). Their lines come through speech-to-text: when part of a line makes no sense as {language} (words that don't fit together, a sentence that goes nowhere), it was most likely misheard, not their mistake; leave it out rather than correct it.
-- said: what they said. When the fix is small inside a long sentence, only the part that changes ("questo è la mia terza volta", not the whole sentence), so the point is easy to see.
+- said: what they said. When the fix is small inside a long sentence, only the part that changes ("es la mi tercera vez", not the whole sentence), so the point is easy to see.
 - why: one plain line in English, no grammar terms for a beginner, naming exactly what was wrong (a missing word, the wrong form). If you can't name it, it isn't a mistake: leave the correction out. Never a rule about word order or "what people usually say" for something that was already fine.
 - right: the same part said right: what someone here would actually say, as simply as possible, not their sentence with the errors patched. If the fully correct form is beyond their level, the simple natural phrase that does the job (a short fixed phrase is fine). {name} will say it aloud, so it's {language} only, no English or notes.
 
@@ -87,3 +87,6 @@ Josh: "is learn ready for mexico? it is great in italy". It wasn't: Afuera had n
 
 ### 2026-10-27: no correcting what's right, or what speech-to-text garbled (and the why names the mistake)
 Josh's Learn page for Salvatore (Napoli, 2026-10-27) corrected "non parlo bene italiano", which is fine Italian (the page made up a rule about word order and added "molto"), and "corrected" lines speech-to-text had garbled ("questo non è la stessa punta", "non ha giusto ragione per comprare": Josh had just told Salvatore the system changed his sentence). Now: never correct what's already correct and natural; keep their meaning; a stretch that makes no sense as the language was most likely misheard, so leave it out. On that conversation, 3 runs before: "non parlo bene" corrected 3/3, the garbled lines 3/3 and 2/3. After the first change: the garbled lines 0/3 and 2/3, but "non parlo bene italiano" still 3/3, with invented reasons ("people usually put bene after the language") and once "molto" again; so the why must name exactly what was wrong, or there's no correction.
+
+### 2026-10-29: a Spanish example
+The example of showing only the part that changes was Italian; now Spanish. No change of rule; the examples were the other country's (whole-app scan, 2026-10-29).

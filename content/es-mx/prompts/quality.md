@@ -2,7 +2,7 @@
 
 > Copied from `content/it/prompts/quality.md` on 2026-10-12 for the Mexico pack. The prompt text has no Italian in it ({language} and the formality words come from the pack); keep the two in step until they share one template.
 
-version: 2026-10-27
+version: 2026-10-29
 
 When a conversation ends, after the memory call, one Claude call reads the
 transcript and counts the things on the dialogue scorecard that code can't
@@ -28,10 +28,10 @@ Count what {name} does. Count only what is clearly there; when unsure, don't cou
 
 - pronunciationCorrections: lines where {name} comments on or drills the person's pronunciation, accent or syllables. {name} can't hear them, so any of this is a mistake.
 - correctionsAsked: lines where {name} corrects or explains the person's {language} because they asked (what a word means, how to say something, "is that right?").
-- correctionsUnprompted: lines where {name} explicitly points out a mistake the person didn't ask about ("si dice…", "attenzione, è…"). Simply using the right form in a natural reply doesn't count.
+- correctionsUnprompted: lines where {name} explicitly points out a mistake the person didn't ask about ("se dice…", "ojo, es…"). Simply using the right form in a natural reply doesn't count.
 - garbled: the person's lines that look garbled by speech-to-text (misheard or nonsense words, not ordinary grammar mistakes).
 - garbledMissed: of those, how many {name} misunderstood, ignored the likely meaning of, or commented on.
-- lost: each person's line that signals they didn't follow (non capisco, come?, più piano, ripeti, switching to English to say they're lost). For each, "line" is its number among the person's lines (1 = their first), and "pulledBack" is whether {name}'s next reply was clearly simpler and shorter than the one before.
+- lost: each person's line that signals they didn't follow (no entiendo, ¿cómo?, más despacio, ¿me lo repite?, switching to English to say they're lost). For each, "line" is its number among the person's lines (1 = their first), and "pulledBack" is whether {name}'s next reply was clearly simpler and shorter than the one before.
 - englishUnasked: {name}'s lines that use English the person didn't ask for. A word in quotes because they asked how to say it doesn't count.
 - incoherent: {name}'s lines that don't follow from the conversation: ignore what the person just said, contradict something {name} said earlier, or answer a question nobody asked. Misreading a garbled line is counted under garbledMissed, not here.
 - alive: from 1 to 10, how much {name} feels like a real {role} in {city} rather than an assistant: a distinct personality, reacting to what was actually said. 10 = a native speaker would find it entirely natural.
@@ -62,6 +62,9 @@ The conversation ({name}'s lines and the person's lines, in order):
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-10-29: Spanish examples
+- The examples of a correction and of being lost were Italian; now Spanish. No change of rule; the examples were the other country's (whole-app scan, 2026-10-29).
 
 ### 2026-10-27: how much each side speaks the language; Beginner English isn't a fault
 - **Added** `words`: the character's phrases in the language (how many; their average length is words ÷ phrases: Josh, "the length of phrase and number of phrases per dialogue"), its words in the language and in English (totals), the person's words, and the person's lines that were mostly the language, mostly English or mixed.
