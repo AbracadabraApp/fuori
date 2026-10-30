@@ -1683,3 +1683,15 @@ Design only; nothing built. Decisions are Josh's unless marked.
 - **Laptop keys are stale:** `.env.local` ANTHROPIC_API_KEY and ELEVENLABS_API_KEY predate the rotation; experiments borrowed Railway's for the run.
 - **Seen, not looked into:** Luisa calls Josh "Gabriele" (she heard "Ancchiele" on 10-24 and kept it).
 - **Next:** a lesson straight from a syllabus step to compare; TestFlight build 7 with the speed and hands-free changes; Josh plays hands-free.
+
+## 2026-10-28 to 10-29 (laptop): Rome's cast, places, measures, lessons, the scan
+
+- **Places and people:** bakeries and Italy's wine bars hidden (Josh doesn't drink); specialty pastry shops, delis, street food, and restaurants with their city's dishes; Mexico's panaderías replaced by each city's own food (El Moro, Calle Mina, La Gran Fama, Casa del Tumbagón); Italy's cast rebalanced (half women, city-life ages, residents of foreign origin) with a `here` line for every shown person; the City Pantry Formula rewritten at its source (generation.json).
+- **Prompts:** Beginner turns get the setting (kind of place, why the person is there); the learner's own facts are left blank ("Sono di …"); say it no longer rewrites Italian that Whisper called English in Beginner talk; the Learn page no longer corrects what's right or what speech-to-text garbled; each country's prompts use their own examples.
+- **Measures:** every conversation now records the character's phrases in the language and the learner's lines by language (quality.md 2026-10-27); Beginner replies are saved with their parts. Ideas documented: English that teaches (docs/beginner-scaffolding.md 5b, 12c; docs/teaching-with-english.md).
+- **Learn:** lessons from the syllabus (content/it/lessons.json, 21 lessons; lesson-steps.md), shown from the Lessons card (interim view); the agreed shape is Magda teaching, practice dialogues as assignments, her review (docs/learn.md); missions out of lessons for now.
+- **Recordings:** kept for Josh's three learners and Sophia's (R2_ACCOUNT_ID was missing until 2026-10-29).
+- **Whole-app scan (2026-10-29), fixed:** every Claude call has a time limit; long conversations past 200 turns; no garbled retries, the reply limit is on quiet time; memory and Magda's study file cut off at 2048 tokens (now 8000); Flashcards' mic (one recording at a time, never reopening by itself), transcribe limit 15 s, top-bar Learn and Settings pause a conversation; voice playback can't hang (onboarding froze); wrong place facts and words; lessons (tu, no warnings).
+- **Not a crash:** the 2026-10-29 8:13 pm black screen was another session installing a build mid-session. Rule: ask Josh before installing on his phone.
+- **TestFlight:** builds 7 and 8 uploaded; the app fixes since build 8 need build 9.
+- **Open:** the scan's lower items (the end route runs four calls in a row; two saving races; no usage limit on turns; hard-coded colours and sizes in Flashcards and Onboarding; less certain neighbourhoods); build 8 skips the greeter, so new players start without a level.
