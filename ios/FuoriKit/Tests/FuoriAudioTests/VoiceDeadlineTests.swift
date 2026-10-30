@@ -24,4 +24,9 @@ import Testing
     @Test func characterVoiceGivesUpWellBeforeTheSystemDefault() {
         #expect(APIClient.speakTimeout <= 15)
     }
+
+    /// A stalled transcription froze every flashcard for 60 s (scan, 2026-10-29)
+    @Test func transcriptionGivesUpWellBeforeTheSystemDefault() {
+        #expect(APIClient.transcribeTimeout <= 20)
+    }
 }

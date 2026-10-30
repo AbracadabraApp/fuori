@@ -118,6 +118,8 @@ final class FlashcardsModel {
     func settle(_ item: Item, voiceOver: Bool) async {
         guard settled != item.id else { return }
         settled = item.id
+        // A new card reached by scrolling: hands-free again
+        held = false
         guard !voiceOver, item.done == nil, checking == nil, listening == nil else { return }
         if stage(item) == .meet {
             await say(item.card)
@@ -155,6 +157,7 @@ final class FlashcardsModel {
 
     /// Stops sound and mic but keeps the card settled: it waits for a tap
     func pause() {
+        held = true
         voice.stop()
         if listening != nil { closeMic("flashcard, interrupted") }
     }
@@ -180,6 +183,7 @@ final class FlashcardsModel {
     /// 2 and 3 give the next help (the hint, then the word). Then it listens
     func tap(_ item: Item) async {
         guard item.done == nil, checking == nil else { return }
+        held = false
         if listening == item.id { closeMic("flashcard, asked for help") }
         if stage(item) == .meet {
             await say(item.card)
@@ -187,19 +191,20 @@ final class FlashcardsModel {
             await giveHelp(item)
         }
         guard settled == nil || settled == item.id else { return }
-        await listen(item)
+        await listen(item, byItself: false)
     }
 
     /// The mic: a tap listens (a short silence after the word checks it);
     /// tapping it again while listening checks at once
     func mic(_ item: Item) async {
         guard item.done == nil, checking == nil else { return }
+        held = false
         if listening == item.id {
             listenTask?.cancel()
             listenTask = nil
             await check(item)
         } else {
-            await listen(item)
+            await listen(item, byItself: false)
         }
     }
 
@@ -230,8 +235,21 @@ final class FlashcardsModel {
     /// this the mic stops reopening (a TV in the room) and the card waits
     private var unheard: [UUID: Int] = [:]
     private let unheardLimit = 3
+    /// The mic is being opened: a second open waits its turn (two at once
+    /// could start two recordings over each other: a tap as a card listens by
+    /// itself; scan, 2026-10-29; the conversation screen guards the same way)
+    private var openingMic = false
+    /// Paused by a call, Siri, AirPods out, Control Center or leaving: the mic
+    /// opens again only on a tap or a new card (CLAUDE.md: never by itself)
+    private var held = false
 
-    private func listen(_ item: Item) async {
+    /// `byItself`: opened by the app (after the word, after help, after a
+    /// miss) rather than by a tap; not while held
+    private func listen(_ item: Item, byItself: Bool = true) async {
+        if byItself, held { return }
+        guard !openingMic else { return }
+        openingMic = true
+        defer { openingMic = false }
         // Another card's mic closes without checking
         if listening != nil { closeMic("flashcard, another card") }
         guard await AudioSession.requestMicrophone() else {
@@ -245,6 +263,11 @@ final class FlashcardsModel {
             try recorder.start { [gate] level, time in gate.process(level: level, at: time) }
         } catch {
             note = "The microphone didn't start. Try again."
+            return
+        }
+        // Paused or left while permission was asked: don't open after all
+        if byItself, held {
+            _ = recorder.stop("flashcard, held while opening")
             return
         }
         listening = item.id
@@ -311,7 +334,7 @@ final class FlashcardsModel {
         // Not heard (a wrong word or misheard: the same to the learner): help
         if stage == .meet || (help[item.id] ?? 0) >= 2 {
             unheard[item.id, default: 0] += 1
-            guard unheard[item.id]! < unheardLimit else { unheard[item.id] = nil; return }
+            guard unheard[item.id, default: 0] < unheardLimit, !held else { unheard[item.id] = nil; return }
             await say(item.card)
         } else {
             await giveHelp(item)
@@ -399,6 +422,7 @@ final class FlashcardsModel {
     }
 
     func stop() {
+        held = true
         voice.stop()
         if listening != nil { closeMic("flashcards closed") }
         settled = nil

@@ -44,7 +44,7 @@ struct SettingsToolbar: ViewModifier {
                 // 2026-10-26); not during onboarding, which has nothing to learn yet
                 if model.phase == .ready {
                     ToolbarItem(placement: .primaryAction) {
-                        Button { learning = true } label: {
+                        Button { NotificationCenter.default.post(name: .fuoriSheetOpening, object: nil); learning = true } label: {
                             Image(systemName: "character.book.closed")
                         }
                         .accessibilityLabel("Learn")
@@ -52,7 +52,7 @@ struct SettingsToolbar: ViewModifier {
                     }
                 }
                 ToolbarItem(placement: .primaryAction) {
-                    Button { showing = true } label: {
+                    Button { NotificationCenter.default.post(name: .fuoriSheetOpening, object: nil); showing = true } label: {
                         SettingsIcon()
                     }
                     .accessibilityLabel("Settings")
@@ -276,3 +276,11 @@ private extension UIFont {
     func bold() -> UIFont { UIFont(descriptor: fontDescriptor.withSymbolicTraits(.traitBold) ?? fontDescriptor, size: 0) }
 }
 #endif
+
+extension Notification.Name {
+    /// Learn or Settings is opening over the screen: a live conversation pauses
+    /// (in hands-free it kept listening behind the sheet and sent the
+    /// flashcard words as a turn; scan, 2026-10-29). The bottom-bar Learn link
+    /// already paused it
+    static let fuoriSheetOpening = Notification.Name("fuori.sheetOpening")
+}

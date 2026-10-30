@@ -270,6 +270,9 @@ public actor APIClient {
         body.append(audio)
         body.append(Data("\r\n--\(boundary)--\r\n".utf8))
         var req = request("v1/transcribe")
+        // Fail soon rather than at the system's 60 s: a stalled transcription
+        // froze every flashcard (and the turn) meanwhile (scan, 2026-10-29)
+        req.timeoutInterval = Self.transcribeTimeout
         req.httpMethod = "POST"
         req.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         req.httpBody = body
@@ -363,6 +366,9 @@ public actor APIClient {
 
     /// POST /v1/speak: the character's line in their voice, as MP3. Any error
     /// means "use the phone's own voice".
+    /// How long to wait for speech to text
+    public static let transcribeTimeout: TimeInterval = 15
+
     /// How long to wait for a character's voice before the phone's voice takes over
     public static let speakTimeout: TimeInterval = 12
 

@@ -1040,6 +1040,9 @@ public final class ConversationModel {
         // Once per conversation (a retried opening calls start() again)
         guard observers.isEmpty else { return }
         let center = NotificationCenter.default
+        observers.append(center.addObserver(forName: .fuoriSheetOpening, object: nil, queue: .main) { [weak self] _ in
+            MainActor.assumeIsolated { self?.openLearn() }
+        })
         observers.append(center.addObserver(forName: AVAudioSession.interruptionNotification, object: nil, queue: .main) { [weak self] note in
             let began = (note.userInfo?[AVAudioSessionInterruptionTypeKey] as? UInt) == AVAudioSession.InterruptionType.began.rawValue
             if began { MainActor.assumeIsolated { self?.interrupt() } }
