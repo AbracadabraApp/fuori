@@ -4,7 +4,7 @@ export const lecce: CityPantry = {
   id: 'lecce',
   name: 'Lecce',
   region: 'Puglia',
-  neighbourhoods: ['Centro Storico', "Piazza Sant'Oronzo", 'Porta Napoli', 'Santa Croce'],
+  neighbourhoods: ['Centro Storico', "Piazza Sant'Oronzo", 'Porta Napoli', 'Santa Croce', 'Stazione'],
   places: [
     // BARS & CAFÉS (3)
     {
@@ -231,7 +231,7 @@ export const lecce: CityPantry = {
       id: 'stazione-lecce',
       name: 'Stazione di Lecce',
       kind: 'station',
-      neighbourhood: 'Porta Napoli',
+      neighbourhood: 'Stazione',
       real: true,
       characterId: 'carlo-ferraro',
       imagePrompt: 'Soft pastel sketch on white paper of a regional train station with travelers with luggage, departure boards, arched architecture, functional yet historic character, morning commuters, warm neutral tones, gateway to city, textured platforms, bustling transportation hub atmosphere',

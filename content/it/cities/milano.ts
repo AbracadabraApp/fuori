@@ -4,7 +4,7 @@ export const milano: CityPantry = {
   id: 'milano',
   name: 'Milano',
   region: 'Lombardia',
-  neighbourhoods: ['Navigli', 'Brera', 'Porta Romana', 'Isola'],
+  neighbourhoods: ['Navigli', 'Brera', 'Porta Romana', 'Isola', 'Duomo'],
   places: [
     // BARS/CAFÉS (9 places - 2-3 per neighborhood)
     {
@@ -199,7 +199,7 @@ export const milano: CityPantry = {
       id: 'peck',
       name: 'Peck',
       kind: 'gastronomia',
-      neighbourhood: 'Brera',
+      neighbourhood: 'Duomo',
       real: true,
       characterId: 'lorenzo-peck',
       imagePrompt: 'Soft pastel sketch on white paper of a legendary Milanese delicatessen with glass cases of prepared foods, hanging prosciutto, cheese counter, wine cellar entrance, elegant shoppers, luxurious gourmet atmosphere, rich warm tones',
@@ -264,7 +264,7 @@ export const milano: CityPantry = {
       id: 'piazza-santo-stefano',
       name: 'Piazza Santo Stefano',
       kind: 'piazza',
-      neighbourhood: 'Navigli',
+      neighbourhood: 'Duomo',
       real: false,
       characterId: 'giovanna-sartori',
       imagePrompt: 'Soft pastel sketch on white paper of a charming neighborhood square with outdoor cafés, cobblestones, church facade, people meeting, bicycles, market flowers, warm community gathering place',

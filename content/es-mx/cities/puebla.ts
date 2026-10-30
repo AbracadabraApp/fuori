@@ -101,7 +101,7 @@ export const puebla: CityPantry = {
       id: 'jardin-del-carmen',
       name: 'Jardín del Carmen',
       kind: 'plaza',
-      neighbourhood: 'Barrio de Analco',
+      neighbourhood: 'Centro Histórico',
       real: true,
       characterId: 'beatriz-abuela',
       imagePrompt: 'the Jardín del Carmen, Barrio de Analco, Puebla. A small neighbourhood plaza with jacaranda trees, iron benches and a fountain, the baroque church of El Carmen in the background. An elderly woman sits knitting on a bench while children play nearby.',
@@ -129,6 +129,7 @@ export const puebla: CityPantry = {
       id: 'la-gran-fama-dulces',
       name: 'La Gran Fama, Calle de los Dulces',
       kind: 'sweet-shop',
+      hidden: true, // two near-identical sweet shops on the Calle de los Dulces: Sofia's (Dulces La Gloria) stays, Sophia knows her (Josh, 2026-10-29: "hide one")
       neighbourhood: 'Centro Histórico',
       real: true,
       characterId: 'amparo-dulcera',

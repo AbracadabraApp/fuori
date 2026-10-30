@@ -37,7 +37,7 @@ export const siena: CityPantry = {
       id: 'pasticceria-bini',
       name: 'Pasticceria Bini',
       kind: 'bakery',
-      neighbourhood: 'Terzo di Camollia',
+      neighbourhood: 'Terzo di Città',
       real: true,
       characterId: 'lucia-bini',
       imagePrompt: 'a small old pastry shop in a narrow medieval street of the Terzo di Città, its window and counter stacked with Siena sweets: round panforte in paper, ricciarelli dusted with icing sugar, cavallucci and cantucci, a woman behind the counter wrapping a panforte for a customer.',

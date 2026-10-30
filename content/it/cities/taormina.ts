@@ -4,7 +4,7 @@ export const taormina: CityPantry = {
   id: 'taormina',
   name: 'Taormina',
   region: 'Sicilia',
-  neighbourhoods: ['Centro Storico', 'Corso Umberto', 'Teatro Greco', 'Castelmola'],
+  neighbourhoods: ['Centro Storico', 'Corso Umberto', 'Teatro Greco', 'Castelmola', 'Giardini Naxos'],
   places: [
     // BARS/CAFÉS (9)
     {
@@ -132,7 +132,7 @@ export const taormina: CityPantry = {
       id: 'mercato-giardini',
       name: 'Mercato di Giardini Naxos',
       kind: 'market',
-      neighbourhood: 'Centro Storico',
+      neighbourhood: 'Giardini Naxos',
       real: false,
       characterId: 'filippo-verde',
       imagePrompt: 'Soft pastel sketch on white paper, vibrant Sicilian market, rich greens and reds of produce, citrus pyramids, tomatoes, eggplants, fresh fish on ice, vendor stalls with striped awnings, bustling morning energy, textured, sensory abundance',

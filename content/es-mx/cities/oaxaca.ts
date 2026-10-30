@@ -65,7 +65,7 @@ export const oaxaca: CityPantry = {
       id: 'jardin-conzatti-reforma',
       name: 'Jardín Conzatti',
       kind: 'plaza',
-      neighbourhood: 'Reforma',
+      neighbourhood: 'Centro',
       real: true,
       characterId: 'nacho-nevero',
       imagePrompt: 'the Jardín Conzatti, Reforma, Oaxaca. A shady garden square with tall flamboyán trees, iron benches, children playing, and a nieves cart with tubs of tuna and leche quemada ice cream beside the path.',
