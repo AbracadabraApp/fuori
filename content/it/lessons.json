@@ -13,25 +13,25 @@
             {
               "role": "student",
               "place": "piazza",
-              "it": "Ciao! Come stai?",
+              "said": "Ciao! Come stai?",
               "en": "Hi! How are you?"
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Buongiorno, come sta?",
+              "said": "Buongiorno, come sta?",
               "en": "Good morning, how are you?"
             },
             {
               "role": "neighbour",
               "place": "station",
-              "it": "Senta, scusi...",
+              "said": "Senta, scusi...",
               "en": "Excuse me..."
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Senti, scusa...",
+              "said": "Senti, scusa...",
               "en": "Excuse me..."
             }
           ],
@@ -40,31 +40,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Ciao! Come stai?",
+                "said": "Ciao! Come stai?",
                 "en": "Hi! How are you?"
               },
               "answer": {
-                "it": "Bene, grazie. E tu?",
+                "said": "Bene, grazie. E tu?",
                 "en": "Fine, thanks. And you?"
               }
             },
             {
               "ask": {
-                "it": "Buongiorno, come sta?",
+                "said": "Buongiorno, come sta?",
                 "en": "Good morning, how are you?"
               },
               "answer": {
-                "it": "Bene, grazie. E Lei?",
+                "said": "Bene, grazie. E Lei?",
                 "en": "Fine, thanks. And you?"
               }
             },
             {
               "ask": {
-                "it": "Un signore anziano passa. Cosa dici per fermarlo?",
+                "said": "Un signore anziano passa. Cosa dici per fermarlo?",
                 "en": "An older man walks by. What do you say to stop him?"
               },
               "answer": {
-                "it": "Senta, scusi...",
+                "said": "Senta, scusi...",
                 "en": "Excuse me..."
               }
             }
@@ -73,7 +73,7 @@
             "place": "shop",
             "goal": "Greet the shopkeeper politely and ask how they are",
             "say": {
-              "it": "Buongiorno, come sta?",
+              "said": "Buongiorno, come sta?",
               "en": "Good morning, how are you?"
             },
             "listen_for": [
@@ -91,25 +91,25 @@
             {
               "role": "student",
               "place": "shop",
-              "it": "Sto bene, grazie. E Lei?",
+              "said": "Sto bene, grazie. E Lei?",
               "en": "I'm well, thanks. And you?"
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Bene, grazie. E tu?",
+              "said": "Bene, grazie. E tu?",
               "en": "Fine, thanks. And you?"
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Bene, bene, grazie.",
+              "said": "Bene, bene, grazie.",
               "en": "Fine, fine, thanks."
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Non c'è male, grazie.",
+              "said": "Non c'è male, grazie.",
               "en": "Not bad, thanks."
             }
           ],
@@ -118,31 +118,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Come sta?",
+                "said": "Come sta?",
                 "en": "How are you? (polite)"
               },
               "answer": {
-                "it": "Sto bene, grazie. E Lei?",
+                "said": "Sto bene, grazie. E Lei?",
                 "en": "I'm well, thanks. And you?"
               }
             },
             {
               "ask": {
-                "it": "Ciao! Come stai?",
+                "said": "Ciao! Come stai?",
                 "en": "Hi! How are you?"
               },
               "answer": {
-                "it": "Sto bene, grazie. E tu?",
+                "said": "Sto bene, grazie. E tu?",
                 "en": "I'm well, thanks. And you?"
               }
             },
             {
               "ask": {
-                "it": "Buongiorno! Come sta?",
+                "said": "Buongiorno! Come sta?",
                 "en": "Good morning! How are you?"
               },
               "answer": {
-                "it": "Non c'è male, grazie. E Lei?",
+                "said": "Non c'è male, grazie. E Lei?",
                 "en": "Not bad, thanks. And you?"
               }
             }
@@ -151,7 +151,7 @@
             "place": "piazza",
             "goal": "Tell a neighbour you're well and ask how they are",
             "say": {
-              "it": "Sto bene, grazie. E tu?",
+              "said": "Sto bene, grazie. E tu?",
               "en": "I'm well, thanks. And you?"
             },
             "listen_for": [
@@ -169,25 +169,25 @@
             {
               "role": "barista",
               "place": "bar",
-              "it": "Buongiorno!",
+              "said": "Buongiorno!",
               "en": "Good morning!"
             },
             {
               "role": "market vendor",
               "place": "market",
-              "it": "Buongiorno, signora!",
+              "said": "Buongiorno, signora!",
               "en": "Good morning, madam!"
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Buonasera, signora.",
+              "said": "Buonasera, signora.",
               "en": "Good evening, madam."
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Buonanotte, a domani!",
+              "said": "Buonanotte, a domani!",
               "en": "Good night, see you tomorrow!"
             }
           ],
@@ -196,31 +196,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Sono le dieci. Entri in un bar. Cosa dici?",
+                "said": "Sono le dieci. Entri in un bar. Cosa dici?",
                 "en": "It's ten o'clock. You walk into a bar. What do you say?"
               },
               "answer": {
-                "it": "Buongiorno!",
+                "said": "Buongiorno!",
                 "en": "Good morning!"
               }
             },
             {
               "ask": {
-                "it": "Sono le cinque. Entri in farmacia. Cosa dici?",
+                "said": "Sono le cinque. Entri in farmacia. Cosa dici?",
                 "en": "It's five o'clock. You walk into a pharmacy. What do you say?"
               },
               "answer": {
-                "it": "Buonasera!",
+                "said": "Buonasera!",
                 "en": "Good evening!"
               }
             },
             {
               "ask": {
-                "it": "Sono le nove di sera. Entri in un bar. Cosa dici?",
+                "said": "Sono le nove di sera. Entri in un bar. Cosa dici?",
                 "en": "It's nine in the evening. You walk into a bar. What do you say?"
               },
               "answer": {
-                "it": "Buonasera!",
+                "said": "Buonasera!",
                 "en": "Good evening!"
               }
             }
@@ -229,7 +229,7 @@
             "place": "bar",
             "goal": "Greet the barista with the right greeting for the time of day",
             "say": {
-              "it": "Buongiorno!",
+              "said": "Buongiorno!",
               "en": "Good morning!"
             },
             "listen_for": [
@@ -247,25 +247,25 @@
             {
               "role": "student",
               "place": "shop",
-              "it": "Arrivederci, buona giornata!",
+              "said": "Arrivederci, buona giornata!",
               "en": "Goodbye, have a good day!"
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Grazie, altrettanto! Arrivederci!",
+              "said": "Grazie, altrettanto! Arrivederci!",
               "en": "Thanks, same to you! Goodbye!"
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Buona serata!",
+              "said": "Buona serata!",
               "en": "Have a nice evening!"
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Grazie, anche a te! Ci vediamo!",
+              "said": "Grazie, anche a te! Ci vediamo!",
               "en": "Thanks, you too! See you!"
             }
           ],
@@ -274,31 +274,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Esci dal negozio la mattina. Cosa dici?",
+                "said": "Esci dal negozio la mattina. Cosa dici?",
                 "en": "You leave a shop in the morning. What do you say?"
               },
               "answer": {
-                "it": "Arrivederci, buona giornata!",
+                "said": "Arrivederci, buona giornata!",
                 "en": "Goodbye, have a good day!"
               }
             },
             {
               "ask": {
-                "it": "Il negoziante dice: Buona giornata! Tu rispondi?",
+                "said": "Il negoziante dice: Buona giornata! Tu rispondi?",
                 "en": "The shopkeeper says: Have a good day! What do you answer?"
               },
               "answer": {
-                "it": "Grazie, altrettanto!",
+                "said": "Grazie, altrettanto!",
                 "en": "Thanks, same to you!"
               }
             },
             {
               "ask": {
-                "it": "Un amico dice: Buona serata! Tu rispondi?",
+                "said": "Un amico dice: Buona serata! Tu rispondi?",
                 "en": "A friend says: Have a nice evening! What do you answer?"
               },
               "answer": {
-                "it": "Grazie, anche a te! Ci vediamo!",
+                "said": "Grazie, anche a te! Ci vediamo!",
                 "en": "Thanks, you too! See you!"
               }
             }
@@ -307,7 +307,7 @@
             "place": "pharmacy",
             "goal": "Say goodbye with a good wish as you leave",
             "say": {
-              "it": "Arrivederci, buona giornata!",
+              "said": "Arrivederci, buona giornata!",
               "en": "Goodbye, have a good day!"
             },
             "listen_for": [
@@ -330,25 +330,25 @@
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Ha capito?",
+              "said": "Ha capito?",
               "en": "Did you understand?"
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Scusi, non ho capito.",
+              "said": "Scusi, non ho capito.",
               "en": "Sorry, I didn't understand."
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Ah, ho capito, grazie!",
+              "said": "Ah, ho capito, grazie!",
               "en": "Ah, got it, thanks!"
             },
             {
               "role": "student",
               "place": "bar",
-              "it": "Parlo solo un po' d'italiano.",
+              "said": "Parlo solo un po' d'italiano.",
               "en": "I only speak a little Italian."
             }
           ],
@@ -357,31 +357,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Ha capito?",
+                "said": "Ha capito?",
                 "en": "Did you understand?"
               },
               "answer": {
-                "it": "Sì, ho capito, grazie!",
+                "said": "Sì, ho capito, grazie!",
                 "en": "Yes, I got it, thanks!"
               }
             },
             {
               "ask": {
-                "it": "Sono quattro euro e cinquanta. Ha capito?",
+                "said": "Sono quattro euro e cinquanta. Ha capito?",
                 "en": "That's four euros fifty. Did you understand?"
               },
               "answer": {
-                "it": "Scusi, non ho capito.",
+                "said": "Scusi, non ho capito.",
                 "en": "Sorry, I didn't understand."
               }
             },
             {
               "ask": {
-                "it": "Parla italiano?",
+                "said": "Parla italiano?",
                 "en": "Do you speak Italian?"
               },
               "answer": {
-                "it": "Parlo solo un po' d'italiano.",
+                "said": "Parlo solo un po' d'italiano.",
                 "en": "I only speak a little Italian."
               }
             }
@@ -390,7 +390,7 @@
             "place": "shop",
             "goal": "Tell the shopkeeper you didn't catch the price.",
             "say": {
-              "it": "Scusi, non ho capito.",
+              "said": "Scusi, non ho capito.",
               "en": "Sorry, I didn't understand."
             },
             "listen_for": [
@@ -409,25 +409,25 @@
             {
               "role": "student",
               "place": "piazza",
-              "it": "Può ripetere, per favore?",
+              "said": "Può ripetere, per favore?",
               "en": "Could you repeat that, please?"
             },
             {
               "role": "ticket clerk",
               "place": "station",
-              "it": "Più piano, per favore.",
+              "said": "Più piano, per favore.",
               "en": "More slowly, please."
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Può parlare più piano?",
+              "said": "Può parlare più piano?",
               "en": "Could you speak more slowly?"
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Puoi ripetere?",
+              "said": "Puoi ripetere?",
               "en": "Could you repeat that?"
             }
           ],
@@ -436,31 +436,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Come chiede di ripetere, in modo cortese?",
+                "said": "Come chiede di ripetere, in modo cortese?",
                 "en": "How do you politely ask someone to repeat?"
               },
               "answer": {
-                "it": "Può ripetere, per favore?",
+                "said": "Può ripetere, per favore?",
                 "en": "Could you repeat that, please?"
               }
             },
             {
               "ask": {
-                "it": "Come chiede di parlare più piano?",
+                "said": "Come chiede di parlare più piano?",
                 "en": "How do you ask someone to speak more slowly?"
               },
               "answer": {
-                "it": "Più piano, per favore.",
+                "said": "Più piano, per favore.",
                 "en": "More slowly, please."
               }
             },
             {
               "ask": {
-                "it": "E con un amico, come chiede di ripetere?",
+                "said": "E con un amico, come chiede di ripetere?",
                 "en": "And with a friend, how do you ask them to repeat?"
               },
               "answer": {
-                "it": "Puoi ripetere?",
+                "said": "Puoi ripetere?",
                 "en": "Could you repeat that?"
               }
             }
@@ -469,7 +469,7 @@
             "place": "station",
             "goal": "Ask the ticket clerk to repeat and slow down.",
             "say": {
-              "it": "Può ripetere, per favore?",
+              "said": "Può ripetere, per favore?",
               "en": "Could you repeat that, please?"
             },
             "listen_for": [
@@ -488,25 +488,25 @@
             {
               "role": "student",
               "place": "bar",
-              "it": "Scusi, cosa vuol dire “scontrino”?",
+              "said": "Scusi, cosa vuol dire “scontrino”?",
               "en": "Sorry, what does “scontrino” mean?"
             },
             {
               "role": "student",
               "place": "shop",
-              "it": "Come si dice “receipt” in italiano?",
+              "said": "Come si dice “receipt” in italiano?",
               "en": "How do you say “receipt” in Italian?"
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Si dice “scontrino”.",
+              "said": "Si dice “scontrino”.",
               "en": "You say “scontrino”."
             },
             {
               "role": "student",
               "place": "shop",
-              "it": "Come si scrive?",
+              "said": "Come si scrive?",
               "en": "How do you spell it?"
             }
           ],
@@ -515,31 +515,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Come chiede il significato di “scontrino”?",
+                "said": "Come chiede il significato di “scontrino”?",
                 "en": "How do you ask what “scontrino” means?"
               },
               "answer": {
-                "it": "Cosa vuol dire “scontrino”?",
+                "said": "Cosa vuol dire “scontrino”?",
                 "en": "What does “scontrino” mean?"
               }
             },
             {
               "ask": {
-                "it": "Come chiede la parola italiana per “receipt”?",
+                "said": "Come chiede la parola italiana per “receipt”?",
                 "en": "How do you ask for the Italian word for “receipt”?"
               },
               "answer": {
-                "it": "Come si dice “receipt” in italiano?",
+                "said": "Come si dice “receipt” in italiano?",
                 "en": "How do you say “receipt” in Italian?"
               }
             },
             {
               "ask": {
-                "it": "E come chiede l'ortografia?",
+                "said": "E come chiede l'ortografia?",
                 "en": "And how do you ask for the spelling?"
               },
               "answer": {
-                "it": "Come si scrive?",
+                "said": "Come si scrive?",
                 "en": "How do you spell it?"
               }
             }
@@ -548,7 +548,7 @@
             "place": "shop",
             "goal": "Ask the shopkeeper how to say a word in Italian.",
             "say": {
-              "it": "Scusi, come si dice “receipt” in italiano?",
+              "said": "Scusi, come si dice “receipt” in italiano?",
               "en": "Excuse me, how do you say “receipt” in Italian?"
             },
             "listen_for": [
@@ -572,25 +572,25 @@
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Mi chiamo Rosa. E Lei, come si chiama?",
+              "said": "Mi chiamo Rosa. E Lei, come si chiama?",
               "en": "My name's Rosa. And what's your name?"
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Mi chiamo Marco. E tu, come ti chiami?",
+              "said": "Mi chiamo Marco. E tu, come ti chiami?",
               "en": "My name's Marco. And what's your name?"
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Piacere, Rosa. Come si chiama?",
+              "said": "Piacere, Rosa. Come si chiama?",
               "en": "Nice to meet you, I'm Rosa. What's your name?"
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Mi chiamo Tom. Piacere!",
+              "said": "Mi chiamo Tom. Piacere!",
               "en": "My name's Tom. Nice to meet you!"
             }
           ],
@@ -599,31 +599,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Come ti chiami?",
+                "said": "Come ti chiami?",
                 "en": "What's your name?"
               },
               "answer": {
-                "it": "Mi chiamo ….",
+                "said": "Mi chiamo ….",
                 "en": "My name's …."
               }
             },
             {
               "ask": {
-                "it": "Mi chiamo Magda. E Lei, come si chiama?",
+                "said": "Mi chiamo Magda. E Lei, come si chiama?",
                 "en": "My name's Magda. And what's your name?"
               },
               "answer": {
-                "it": "Mi chiamo …. Piacere!",
+                "said": "Mi chiamo …. Piacere!",
                 "en": "My name's …. Nice to meet you!"
               }
             },
             {
               "ask": {
-                "it": "Come si chiama, scusi?",
+                "said": "Come si chiama, scusi?",
                 "en": "What's your name, excuse me?"
               },
               "answer": {
-                "it": "Mi chiamo …, piacere.",
+                "said": "Mi chiamo …, piacere.",
                 "en": "My name's …, nice to meet you."
               }
             }
@@ -632,7 +632,7 @@
             "place": "piazza",
             "goal": "Tell a neighbour your name and ask for theirs",
             "say": {
-              "it": "Mi chiamo …. E Lei, come si chiama?",
+              "said": "Mi chiamo …. E Lei, come si chiama?",
               "en": "My name's …. And what's your name?"
             },
             "listen_for": [
@@ -651,25 +651,25 @@
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Di dov'è?",
+              "said": "Di dov'è?",
               "en": "Where are you from?"
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Sono americana, di Boston.",
+              "said": "Sono americana, di Boston.",
               "en": "I'm American, from Boston."
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Sono americano, di Denver. E tu, di dove sei?",
+              "said": "Sono americano, di Denver. E tu, di dove sei?",
               "en": "I'm American, from Denver. And where are you from?"
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Sono di Napoli.",
+              "said": "Sono di Napoli.",
               "en": "I'm from Naples."
             }
           ],
@@ -678,31 +678,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Di dove sei?",
+                "said": "Di dove sei?",
                 "en": "Where are you from?"
               },
               "answer": {
-                "it": "Sono di ….",
+                "said": "Sono di ….",
                 "en": "I'm from …."
               }
             },
             {
               "ask": {
-                "it": "Di dov'è?",
+                "said": "Di dov'è?",
                 "en": "Where are you from? (Lei)"
               },
               "answer": {
-                "it": "Sono americano, di ….",
+                "said": "Sono americano, di ….",
                 "en": "I'm American, from …. (a woman says americana)"
               }
             },
             {
               "ask": {
-                "it": "Sei inglese?",
+                "said": "Sei inglese?",
                 "en": "Are you English?"
               },
               "answer": {
-                "it": "No, sono americano, di ….",
+                "said": "No, sono americano, di ….",
                 "en": "No, I'm American, from …. (a woman says americana)"
               }
             }
@@ -711,7 +711,7 @@
             "place": "piazza",
             "goal": "Say where you're from and ask a classmate the same",
             "say": {
-              "it": "Sono americano, di …. E tu, di dove sei?",
+              "said": "Sono americano, di …. E tu, di dove sei?",
               "en": "I'm American, from …. And where are you from?"
             },
             "listen_for": [
@@ -730,25 +730,25 @@
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Ed è qui in vacanza?",
+              "said": "Ed è qui in vacanza?",
               "en": "And are you here on holiday?"
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "No, abito qui!",
+              "said": "No, abito qui!",
               "en": "No, I live here!"
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Abito qui, in via Mazzini.",
+              "said": "Abito qui, in via Mazzini.",
               "en": "I live here, in Mazzini Street."
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Dove abita? Abito a Firenze.",
+              "said": "Dove abita? Abito a Firenze.",
               "en": "Where do you live? I live in Florence."
             }
           ],
@@ -757,31 +757,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Dove abiti?",
+                "said": "Dove abiti?",
                 "en": "Where do you live? (tu)"
               },
               "answer": {
-                "it": "Abito qui, in via ….",
+                "said": "Abito qui, in via ….",
                 "en": "I live here, in … Street."
               }
             },
             {
               "ask": {
-                "it": "È qui in vacanza?",
+                "said": "È qui in vacanza?",
                 "en": "Are you here on holiday?"
               },
               "answer": {
-                "it": "No, abito qui!",
+                "said": "No, abito qui!",
                 "en": "No, I live here!"
               }
             },
             {
               "ask": {
-                "it": "Dove abita?",
+                "said": "Dove abita?",
                 "en": "Where do you live? (Lei)"
               },
               "answer": {
-                "it": "Abito a ….",
+                "said": "Abito a ….",
                 "en": "I live in …."
               }
             }
@@ -790,7 +790,7 @@
             "place": "piazza",
             "goal": "Tell someone you live here, not on holiday",
             "say": {
-              "it": "No, abito qui!",
+              "said": "No, abito qui!",
               "en": "No, I live here!"
             },
             "listen_for": [
@@ -809,25 +809,25 @@
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Sei qui per lavoro?",
+              "said": "Sei qui per lavoro?",
               "en": "Are you here for work?"
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Sono qui per imparare l'italiano.",
+              "said": "Sono qui per imparare l'italiano.",
               "en": "I'm here to learn Italian."
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Sono in Italia da tre settimane.",
+              "said": "Sono in Italia da tre settimane.",
               "en": "I've been in Italy for three weeks."
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Studio l'italiano da un mese.",
+              "said": "Studio l'italiano da un mese.",
               "en": "I've been studying Italian for a month."
             }
           ],
@@ -836,31 +836,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Sei qui per lavoro?",
+                "said": "Sei qui per lavoro?",
                 "en": "Are you here for work?"
               },
               "answer": {
-                "it": "No, sono qui per imparare l'italiano.",
+                "said": "No, sono qui per imparare l'italiano.",
                 "en": "No, I'm here to learn Italian."
               }
             },
             {
               "ask": {
-                "it": "Sei qui in vacanza?",
+                "said": "Sei qui in vacanza?",
                 "en": "Are you here on holiday?"
               },
               "answer": {
-                "it": "No, sono in Italia da … settimane.",
+                "said": "No, sono in Italia da … settimane.",
                 "en": "No, I've been in Italy for … weeks."
               }
             },
             {
               "ask": {
-                "it": "Studi l'italiano?",
+                "said": "Studi l'italiano?",
                 "en": "Are you studying Italian?"
               },
               "answer": {
-                "it": "Sì, studio l'italiano da un mese.",
+                "said": "Sì, studio l'italiano da un mese.",
                 "en": "Yes, I've been studying Italian for a month."
               }
             }
@@ -869,7 +869,7 @@
             "place": "piazza",
             "goal": "Tell a classmate why you're here and for how long",
             "say": {
-              "it": "Sono qui per imparare l'italiano. Sono in Italia da tre settimane.",
+              "said": "Sono qui per imparare l'italiano. Sono in Italia da tre settimane.",
               "en": "I'm here to learn Italian. I've been in Italy for three weeks."
             },
             "listen_for": [
@@ -887,25 +887,25 @@
             {
               "role": "student",
               "place": "piazza",
-              "it": "Sono in pensione.",
+              "said": "Sono in pensione.",
               "en": "I'm retired."
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Lavoro come ….",
+              "said": "Lavoro come ….",
               "en": "I work as a …."
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "it": "Ah, allora ben arrivata!",
+              "said": "Ah, allora ben arrivata!",
               "en": "Oh, welcome then!"
             },
             {
               "role": "student",
               "place": "piazza",
-              "it": "Grazie, ma sto imparando!",
+              "said": "Grazie, ma sto imparando!",
               "en": "Thanks, but I'm learning!"
             }
           ],
@@ -914,31 +914,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Sei in pensione?",
+                "said": "Sei in pensione?",
                 "en": "Are you retired?"
               },
               "answer": {
-                "it": "Sì, sono in pensione.",
+                "said": "Sì, sono in pensione.",
                 "en": "Yes, I'm retired."
               }
             },
             {
               "ask": {
-                "it": "Sei qui per lavoro?",
+                "said": "Sei qui per lavoro?",
                 "en": "Are you here for work?"
               },
               "answer": {
-                "it": "Sì, lavoro come ….",
+                "said": "Sì, lavoro come ….",
                 "en": "Yes, I work as a …."
               }
             },
             {
               "ask": {
-                "it": "Ben arrivato! Sei qui per lavoro?",
+                "said": "Ben arrivato! Sei qui per lavoro?",
                 "en": "Welcome! Are you here for work?"
               },
               "answer": {
-                "it": "No, sono in pensione.",
+                "said": "No, sono in pensione.",
                 "en": "No, I'm retired."
               }
             }
@@ -947,7 +947,7 @@
             "place": "piazza",
             "goal": "Tell a neighbour what you do",
             "say": {
-              "it": "Lavoro come …. E Lei?",
+              "said": "Lavoro come …. E Lei?",
               "en": "I work as a …. And you?"
             },
             "listen_for": [
@@ -970,25 +970,25 @@
             {
               "role": "student",
               "place": "bar",
-              "it": "Un caffè, per favore.",
+              "said": "Un caffè, per favore.",
               "en": "An espresso, please."
             },
             {
               "role": "neighbour",
               "place": "bar",
-              "it": "Uno spritz, per favore.",
+              "said": "Uno spritz, per favore.",
               "en": "A spritz, please."
             },
             {
               "role": "student",
               "place": "bar",
-              "it": "Una spremuta, per favore.",
+              "said": "Una spremuta, per favore.",
               "en": "A fresh juice, please."
             },
             {
               "role": "student",
               "place": "bar",
-              "it": "Un'aranciata, per favore.",
+              "said": "Un'aranciata, per favore.",
               "en": "An orangeade, please."
             }
           ],
@@ -997,31 +997,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Un caffè o un cappuccino?",
+                "said": "Un caffè o un cappuccino?",
                 "en": "An espresso or a cappuccino?"
               },
               "answer": {
-                "it": "Un caffè, per favore.",
+                "said": "Un caffè, per favore.",
                 "en": "An espresso, please."
               }
             },
             {
               "ask": {
-                "it": "Una spremuta o un'aranciata?",
+                "said": "Una spremuta o un'aranciata?",
                 "en": "A fresh juice or an orangeade?"
               },
               "answer": {
-                "it": "Un'aranciata, per favore.",
+                "said": "Un'aranciata, per favore.",
                 "en": "An orangeade, please."
               }
             },
             {
               "ask": {
-                "it": "Un cornetto o un latte macchiato?",
+                "said": "Un cornetto o un latte macchiato?",
                 "en": "A croissant or a latte macchiato?"
               },
               "answer": {
-                "it": "Un latte macchiato, per favore.",
+                "said": "Un latte macchiato, per favore.",
                 "en": "A latte macchiato, please."
               }
             }
@@ -1030,7 +1030,7 @@
             "place": "bar",
             "goal": "Order a spritz at the counter.",
             "say": {
-              "it": "Uno spritz, per favore.",
+              "said": "Uno spritz, per favore.",
               "en": "A spritz, please."
             },
             "listen_for": [
@@ -1048,25 +1048,25 @@
             {
               "role": "student",
               "place": "bar",
-              "it": "Due caffè, per favore.",
+              "said": "Due caffè, per favore.",
               "en": "Two espressos, please."
             },
             {
               "role": "neighbour",
               "place": "bar",
-              "it": "Due cappuccini e due cornetti, per favore.",
+              "said": "Due cappuccini e due cornetti, per favore.",
               "en": "Two cappuccinos and two croissants, please."
             },
             {
               "role": "student",
               "place": "bar",
-              "it": "Due spremute, per favore.",
+              "said": "Due spremute, per favore.",
               "en": "Two fresh juices, please."
             },
             {
               "role": "neighbour",
               "place": "bar",
-              "it": "Due tè e due spritz, per favore.",
+              "said": "Due tè e due spritz, per favore.",
               "en": "Two teas and two spritzes, please."
             }
           ],
@@ -1075,31 +1075,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Quanti caffè, uno o due?",
+                "said": "Quanti caffè, uno o due?",
                 "en": "How many espressos, one or two?"
               },
               "answer": {
-                "it": "Due caffè, per favore.",
+                "said": "Due caffè, per favore.",
                 "en": "Two espressos, please."
               }
             },
             {
               "ask": {
-                "it": "Cappuccini o spremute?",
+                "said": "Cappuccini o spremute?",
                 "en": "Cappuccinos or fresh juices?"
               },
               "answer": {
-                "it": "Due cappuccini, per favore.",
+                "said": "Due cappuccini, per favore.",
                 "en": "Two cappuccinos, please."
               }
             },
             {
               "ask": {
-                "it": "Due tè o due spritz?",
+                "said": "Due tè o due spritz?",
                 "en": "Two teas or two spritzes?"
               },
               "answer": {
-                "it": "Due spritz, per favore.",
+                "said": "Due spritz, per favore.",
                 "en": "Two spritzes, please."
               }
             }
@@ -1108,7 +1108,7 @@
             "place": "bar",
             "goal": "Order two espressos at the counter.",
             "say": {
-              "it": "Due caffè, per favore.",
+              "said": "Due caffè, per favore.",
               "en": "Two espressos, please."
             },
             "listen_for": [
@@ -1126,25 +1126,25 @@
             {
               "role": "student",
               "place": "bar",
-              "it": "Vorrei una spremuta d'arancia.",
+              "said": "Vorrei una spremuta d'arancia.",
               "en": "I'd like a fresh orange juice."
             },
             {
               "role": "neighbour",
               "place": "bar",
-              "it": "Vorrei un bicchiere d'acqua, per favore.",
+              "said": "Vorrei un bicchiere d'acqua, per favore.",
               "en": "I'd like a glass of water, please."
             },
             {
               "role": "student",
               "place": "bar",
-              "it": "Per me un cappuccino e un cornetto.",
+              "said": "Per me un cappuccino e un cornetto.",
               "en": "A cappuccino and a croissant for me."
             },
             {
               "role": "student",
               "place": "bar",
-              "it": "Vorrei uno spritz, per favore.",
+              "said": "Vorrei uno spritz, per favore.",
               "en": "I'd like a spritz, please."
             }
           ],
@@ -1153,31 +1153,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Buongiorno! Cosa Le do?",
+                "said": "Buongiorno! Cosa Le do?",
                 "en": "Good morning! What can I get you?"
               },
               "answer": {
-                "it": "Vorrei un caffè, per favore.",
+                "said": "Vorrei un caffè, per favore.",
                 "en": "I'd like an espresso, please."
               }
             },
             {
               "ask": {
-                "it": "Prego! Cosa Le do?",
+                "said": "Prego! Cosa Le do?",
                 "en": "Yes? What can I get you?"
               },
               "answer": {
-                "it": "Per me un cappuccino e un cornetto.",
+                "said": "Per me un cappuccino e un cornetto.",
                 "en": "A cappuccino and a croissant for me."
               }
             },
             {
               "ask": {
-                "it": "Buonasera! Cosa Le do?",
+                "said": "Buonasera! Cosa Le do?",
                 "en": "Good evening! What can I get you?"
               },
               "answer": {
-                "it": "Vorrei un bicchiere d'acqua, per favore.",
+                "said": "Vorrei un bicchiere d'acqua, per favore.",
                 "en": "I'd like a glass of water, please."
               }
             }
@@ -1186,7 +1186,7 @@
             "place": "bar",
             "goal": "Ask politely for a fresh orange juice.",
             "say": {
-              "it": "Vorrei una spremuta d'arancia.",
+              "said": "Vorrei una spremuta d'arancia.",
               "en": "I'd like a fresh orange juice."
             },
             "listen_for": [
@@ -1205,25 +1205,25 @@
             {
               "role": "neighbour",
               "place": "bar",
-              "it": "Cosa prendi?",
+              "said": "Cosa prendi?",
               "en": "What are you having?"
             },
             {
               "role": "barista",
               "place": "bar",
-              "it": "Cosa prende?",
+              "said": "Cosa prende?",
               "en": "What are you having?"
             },
             {
               "role": "neighbour",
               "place": "bar",
-              "it": "Prendo un caffè macchiato.",
+              "said": "Prendo un caffè macchiato.",
               "en": "I'll have a macchiato."
             },
             {
               "role": "student",
               "place": "bar",
-              "it": "Prendo anch'io un caffè.",
+              "said": "Prendo anch'io un caffè.",
               "en": "I'll have a coffee too."
             }
           ],
@@ -1232,31 +1232,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Cosa prendi?",
+                "said": "Cosa prendi?",
                 "en": "What are you having?"
               },
               "answer": {
-                "it": "Prendo un caffè.",
+                "said": "Prendo un caffè.",
                 "en": "I'll have an espresso."
               }
             },
             {
               "ask": {
-                "it": "Cosa prende?",
+                "said": "Cosa prende?",
                 "en": "What are you having? (formal)"
               },
               "answer": {
-                "it": "Prendo un cornetto.",
+                "said": "Prendo un cornetto.",
                 "en": "I'll have a croissant."
               }
             },
             {
               "ask": {
-                "it": "Io prendo un caffè. E tu?",
+                "said": "Io prendo un caffè. E tu?",
                 "en": "I'm having an espresso. And you?"
               },
               "answer": {
-                "it": "Prendo anch'io un caffè.",
+                "said": "Prendo anch'io un caffè.",
                 "en": "I'll have a coffee too."
               }
             }
@@ -1265,7 +1265,7 @@
             "place": "bar",
             "goal": "Ask a friend what they're having.",
             "say": {
-              "it": "Cosa prendi?",
+              "said": "Cosa prendi?",
               "en": "What are you having?"
             },
             "listen_for": [
@@ -1283,25 +1283,25 @@
             {
               "role": "barista",
               "place": "bar",
-              "it": "Prego! Cosa Le do?",
+              "said": "Prego! Cosa Le do?",
               "en": "Yes? What can I get you?"
             },
             {
               "role": "barista",
               "place": "bar",
-              "it": "Al banco o al tavolo?",
+              "said": "Al banco o al tavolo?",
               "en": "At the counter or at a table?"
             },
             {
               "role": "barista",
               "place": "bar",
-              "it": "Naturale o frizzante?",
+              "said": "Naturale o frizzante?",
               "en": "Still or sparkling?"
             },
             {
               "role": "barista",
               "place": "bar",
-              "it": "Il cornetto semplice o alla crema?",
+              "said": "Il cornetto semplice o alla crema?",
               "en": "Plain croissant or with custard?"
             }
           ],
@@ -1310,31 +1310,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Naturale o frizzante?",
+                "said": "Naturale o frizzante?",
                 "en": "Still or sparkling?"
               },
               "answer": {
-                "it": "Naturale, grazie.",
+                "said": "Naturale, grazie.",
                 "en": "Still, thanks."
               }
             },
             {
               "ask": {
-                "it": "Il cornetto semplice o alla crema?",
+                "said": "Il cornetto semplice o alla crema?",
                 "en": "Plain croissant or with custard?"
               },
               "answer": {
-                "it": "Semplice, grazie.",
+                "said": "Semplice, grazie.",
                 "en": "Plain, thanks."
               }
             },
             {
               "ask": {
-                "it": "Al banco o al tavolo?",
+                "said": "Al banco o al tavolo?",
                 "en": "At the counter or at a table?"
               },
               "answer": {
-                "it": "Al banco, grazie. Offro io!",
+                "said": "Al banco, grazie. Offro io!",
                 "en": "At the counter, thanks. It's on me!"
               }
             }
@@ -1343,7 +1343,7 @@
             "place": "bar",
             "goal": "Ask for a glass of water and say still.",
             "say": {
-              "it": "Un bicchiere d'acqua, per favore.",
+              "said": "Un bicchiere d'acqua, per favore.",
               "en": "A glass of water, please."
             },
             "listen_for": [
@@ -1366,25 +1366,25 @@
             {
               "role": "ticket clerk",
               "place": "station",
-              "it": "Sono ventuno euro.",
+              "said": "Sono ventuno euro.",
               "en": "That's twenty-one euros."
             },
             {
               "role": "market vendor",
               "place": "market",
-              "it": "Sono ventotto euro.",
+              "said": "Sono ventotto euro.",
               "en": "That's twenty-eight euros."
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Sono ventitré euro e cinquanta.",
+              "said": "Sono ventitré euro e cinquanta.",
               "en": "That's twenty-three euros fifty."
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Sono duecento euro.",
+              "said": "Sono duecento euro.",
               "en": "That's two hundred euros."
             }
           ],
@@ -1393,31 +1393,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Quanto costa il biglietto? Sono 21 euro.",
+                "said": "Quanto costa il biglietto? Sono 21 euro.",
                 "en": "How much is the ticket? It's 21 euros."
               },
               "answer": {
-                "it": "Sono ventuno euro.",
+                "said": "Sono ventuno euro.",
                 "en": "It's twenty-one euros."
               }
             },
             {
               "ask": {
-                "it": "Quanto costa la borsa? Dica 28 euro.",
+                "said": "Quanto costa la borsa? Dica 28 euro.",
                 "en": "How much is the bag? Say 28 euros."
               },
               "answer": {
-                "it": "Sono ventotto euro.",
+                "said": "Sono ventotto euro.",
                 "en": "It's twenty-eight euros."
               }
             },
             {
               "ask": {
-                "it": "Quanto costa il tavolo? Dica 2000 euro.",
+                "said": "Quanto costa il tavolo? Dica 2000 euro.",
                 "en": "How much is the table? Say 2,000 euros."
               },
               "answer": {
-                "it": "Sono duemila euro.",
+                "said": "Sono duemila euro.",
                 "en": "It's two thousand euros."
               }
             }
@@ -1426,7 +1426,7 @@
             "place": "station",
             "goal": "Ask the price of a ticket and listen for the number.",
             "say": {
-              "it": "Quanto costa il biglietto?",
+              "said": "Quanto costa il biglietto?",
               "en": "How much is the ticket?"
             },
             "listen_for": [
@@ -1444,25 +1444,25 @@
             {
               "role": "barista",
               "place": "bar",
-              "it": "Sono due euro e settanta.",
+              "said": "Sono due euro e settanta.",
               "en": "That's two euros seventy."
             },
             {
               "role": "ticket clerk",
               "place": "station",
-              "it": "Sono tre euro e venti.",
+              "said": "Sono tre euro e venti.",
               "en": "That's three euros twenty."
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Sono quattro euro e cinquanta.",
+              "said": "Sono quattro euro e cinquanta.",
               "en": "That's four euros fifty."
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Due euro.",
+              "said": "Due euro.",
               "en": "Two euros."
             }
           ],
@@ -1471,31 +1471,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Quanto costa il giornale?",
+                "said": "Quanto costa il giornale?",
                 "en": "How much is the newspaper?"
               },
               "answer": {
-                "it": "Due euro.",
+                "said": "Due euro.",
                 "en": "Two euros."
               }
             },
             {
               "ask": {
-                "it": "Quanto costa il caffè?",
+                "said": "Quanto costa il caffè?",
                 "en": "How much is the espresso?"
               },
               "answer": {
-                "it": "Un euro e venti.",
+                "said": "Un euro e venti.",
                 "en": "One euro twenty."
               }
             },
             {
               "ask": {
-                "it": "Quanto costa il pane?",
+                "said": "Quanto costa il pane?",
                 "en": "How much is the bread?"
               },
               "answer": {
-                "it": "Sono tre euro e venti.",
+                "said": "Sono tre euro e venti.",
                 "en": "That's three euros twenty."
               }
             }
@@ -1504,7 +1504,7 @@
             "place": "shop",
             "goal": "Ask the price of the bread and listen for the euros.",
             "say": {
-              "it": "Quanto costa il pane?",
+              "said": "Quanto costa il pane?",
               "en": "How much is the bread?"
             },
             "listen_for": [
@@ -1522,25 +1522,25 @@
             {
               "role": "neighbour",
               "place": "shop",
-              "it": "Quanto costa il pane?",
+              "said": "Quanto costa il pane?",
               "en": "How much is the bread?"
             },
             {
               "role": "neighbour",
               "place": "shop",
-              "it": "Quanto costano i biscotti?",
+              "said": "Quanto costano i biscotti?",
               "en": "How much are the biscuits?"
             },
             {
               "role": "neighbour",
               "place": "market",
-              "it": "Quanto costano le pesche?",
+              "said": "Quanto costano le pesche?",
               "en": "How much are the peaches?"
             },
             {
               "role": "student",
               "place": "bar",
-              "it": "Un caffè e un cornetto. Quant'è?",
+              "said": "Un caffè e un cornetto. Quant'è?",
               "en": "An espresso and a croissant. How much is that?"
             }
           ],
@@ -1549,31 +1549,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Un pane: come chiedi il prezzo?",
+                "said": "Un pane: come chiedi il prezzo?",
                 "en": "One loaf: how do you ask the price?"
               },
               "answer": {
-                "it": "Quanto costa il pane?",
+                "said": "Quanto costa il pane?",
                 "en": "How much is the bread?"
               }
             },
             {
               "ask": {
-                "it": "Le pesche: come chiedi il prezzo?",
+                "said": "Le pesche: come chiedi il prezzo?",
                 "en": "The peaches: how do you ask the price?"
               },
               "answer": {
-                "it": "Quanto costano le pesche?",
+                "said": "Quanto costano le pesche?",
                 "en": "How much are the peaches?"
               }
             },
             {
               "ask": {
-                "it": "Un caffè e un cornetto: come chiedi il totale?",
+                "said": "Un caffè e un cornetto: come chiedi il totale?",
                 "en": "An espresso and a croissant: how do you ask the total?"
               },
               "answer": {
-                "it": "Quant'è?",
+                "said": "Quant'è?",
                 "en": "How much is that?"
               }
             }
@@ -1582,7 +1582,7 @@
             "place": "market",
             "goal": "Ask the price of some peaches.",
             "say": {
-              "it": "Quanto costano le pesche?",
+              "said": "Quanto costano le pesche?",
               "en": "How much are the peaches?"
             },
             "listen_for": [
@@ -1600,25 +1600,25 @@
             {
               "role": "student",
               "place": "shop",
-              "it": "Posso pagare con la carta?",
+              "said": "Posso pagare con la carta?",
               "en": "Can I pay by card?"
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Sì, certo.",
+              "said": "Sì, certo.",
               "en": "Yes, of course."
             },
             {
               "role": "student",
               "place": "bar",
-              "it": "Pago in contanti. Ecco a Lei.",
+              "said": "Pago in contanti. Ecco a Lei.",
               "en": "I'll pay cash. Here you are."
             },
             {
               "role": "student",
               "place": "market",
-              "it": "Posso pagare in contanti?",
+              "said": "Posso pagare in contanti?",
               "en": "Can I pay cash?"
             }
           ],
@@ -1627,31 +1627,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Vuoi pagare con la carta. Che cosa chiedi?",
+                "said": "Vuoi pagare con la carta. Che cosa chiedi?",
                 "en": "You want to pay by card. What do you ask?"
               },
               "answer": {
-                "it": "Posso pagare con la carta?",
+                "said": "Posso pagare con la carta?",
                 "en": "Can I pay by card?"
               }
             },
             {
               "ask": {
-                "it": "Vuoi pagare in contanti. Che cosa dici?",
+                "said": "Vuoi pagare in contanti. Che cosa dici?",
                 "en": "You want to pay cash. What do you say?"
               },
               "answer": {
-                "it": "Pago in contanti.",
+                "said": "Pago in contanti.",
                 "en": "I'll pay cash."
               }
             },
             {
               "ask": {
-                "it": "Dai i soldi alla cassiera. Che cosa dici?",
+                "said": "Dai i soldi alla cassiera. Che cosa dici?",
                 "en": "You hand the money to the cashier. What do you say?"
               },
               "answer": {
-                "it": "Ecco a Lei.",
+                "said": "Ecco a Lei.",
                 "en": "Here you are."
               }
             }
@@ -1660,7 +1660,7 @@
             "place": "shop",
             "goal": "Ask to pay by card at the till.",
             "say": {
-              "it": "Posso pagare con la carta?",
+              "said": "Posso pagare con la carta?",
               "en": "Can I pay by card?"
             },
             "listen_for": [
@@ -1678,25 +1678,25 @@
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Ha moneta?",
+              "said": "Ha moneta?",
               "en": "Have you got any change?"
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Ha spiccioli?",
+              "said": "Ha spiccioli?",
               "en": "Have you got any coins?"
             },
             {
               "role": "student",
               "place": "shop",
-              "it": "Mi dispiace, non ho spiccioli.",
+              "said": "Mi dispiace, non ho spiccioli.",
               "en": "Sorry, I haven't got any change."
             },
             {
               "role": "shopkeeper",
               "place": "shop",
-              "it": "Va bene. Ecco il resto: otto euro.",
+              "said": "Va bene. Ecco il resto: otto euro.",
               "en": "That's fine. Here's your change: eight euros."
             }
           ],
@@ -1705,31 +1705,31 @@
           "practice": [
             {
               "ask": {
-                "it": "Ha moneta?",
+                "said": "Ha moneta?",
                 "en": "Have you got any change?"
               },
               "answer": {
-                "it": "Mi dispiace, non ho spiccioli.",
+                "said": "Mi dispiace, non ho spiccioli.",
                 "en": "Sorry, I haven't got any change."
               }
             },
             {
               "ask": {
-                "it": "Ha spiccioli?",
+                "said": "Ha spiccioli?",
                 "en": "Have you got any coins?"
               },
               "answer": {
-                "it": "Mi dispiace, non ho spiccioli. Ecco a Lei.",
+                "said": "Mi dispiace, non ho spiccioli. Ecco a Lei.",
                 "en": "Sorry, I haven't got any change. Here you are."
               }
             },
             {
               "ask": {
-                "it": "Ecco il resto e lo scontrino.",
+                "said": "Ecco il resto e lo scontrino.",
                 "en": "Here's your change and the receipt."
               },
               "answer": {
-                "it": "Grazie, buona giornata!",
+                "said": "Grazie, buona giornata!",
                 "en": "Thanks, have a good day!"
               }
             }
@@ -1738,7 +1738,7 @@
             "place": "shop",
             "goal": "Pay for a newspaper with a ten-euro note and say you have no change.",
             "say": {
-              "it": "Mi dispiace, non ho spiccioli.",
+              "said": "Mi dispiace, non ho spiccioli.",
               "en": "Sorry, I haven't got any change."
             },
             "listen_for": [

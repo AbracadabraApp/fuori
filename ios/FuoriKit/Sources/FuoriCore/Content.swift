@@ -269,8 +269,9 @@ public struct LessonUnit: Codable, Sendable, Equatable, Hashable, Identifiable {
 }
 
 public struct LessonStep: Codable, Sendable, Equatable, Hashable, Identifiable {
-    public struct Line: Codable, Sendable, Equatable, Hashable { public let it: String; public let en: String }
-    public struct Example: Codable, Sendable, Equatable, Hashable { public let role: String; public let place: String; public let it: String; public let en: String }
+    /// `said` is in the language being learned
+    public struct Line: Codable, Sendable, Equatable, Hashable { public let said: String; public let en: String }
+    public struct Example: Codable, Sendable, Equatable, Hashable { public let role: String; public let place: String; public let said: String; public let en: String }
     public struct Practice: Codable, Sendable, Equatable, Hashable { public let ask: Line; public let answer: Line }
     public let id: String
     public let title: String

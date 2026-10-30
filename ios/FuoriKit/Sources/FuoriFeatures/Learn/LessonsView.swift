@@ -70,7 +70,7 @@ struct LessonView: View {
             }
             Section("Listen") {
                 ForEach(Array(step.examples.enumerated()), id: \.offset) { _, example in
-                    PlayRow(said: example.it, english: example.en, caption: example.role.capitalized, player: player)
+                    PlayRow(said: example.said, english: example.en, caption: example.role.capitalized, player: player)
                 }
             }
             Section("Notice") {
@@ -86,8 +86,8 @@ struct LessonView: View {
             Section {
                 ForEach(Array(step.practice.enumerated()), id: \.offset) { _, item in
                     VStack(alignment: .leading, spacing: 8) {
-                        PlayRow(said: item.ask.it, english: item.ask.en, caption: player.magda?.name ?? "Magda", player: player)
-                        PlayRow(said: item.answer.it, english: item.answer.en, caption: "You say", player: player)
+                        PlayRow(said: item.ask.said, english: item.ask.en, caption: player.magda?.name ?? "Magda", player: player)
+                        PlayRow(said: item.answer.said, english: item.answer.en, caption: "You say", player: player)
                     }
                 }
             } header: {

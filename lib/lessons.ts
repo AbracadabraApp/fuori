@@ -12,13 +12,14 @@ import { existsSync, readFileSync } from 'fs';
 import { join } from 'path';
 import { pack } from '@/content';
 
-type Line = { it: string; en: string };
+/** `said` is the line in the language being learned */
+type Line = { said: string; en: string };
 export interface LessonStep {
   id: string;
   title: string;
   how_to: string;
   intro: string;
-  examples: { role: string; place: string; it: string; en: string }[];
+  examples: { role: string; place: string; said: string; en: string }[];
   notice: string;
   context: string;
   practice: { ask: Line; answer: Line }[];

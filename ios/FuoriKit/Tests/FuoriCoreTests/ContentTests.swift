@@ -58,14 +58,14 @@ import Testing
         #expect(try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json)).lessons == nil)
         json["lessons"] = [["id": "a1-04", "title": "Order at the bar", "steps": [[
             "id": "a1-04-3", "title": "I'd like, politely", "how_to": "How to ask politely.", "intro": "You'll be able to ask for things.",
-            "examples": [["role": "barista", "place": "bar", "it": "Naturale o frizzante?", "en": "Still or sparkling?"]],
+            "examples": [["role": "barista", "place": "bar", "said": "Naturale o frizzante?", "en": "Still or sparkling?"]],
             "notice": "Vorrei works for anything you ask for.", "context": "",
-            "practice": [["ask": ["it": "Cosa Le do?", "en": "What can I get you?"], "answer": ["it": "Vorrei un caffè.", "en": "I'd like a coffee."]]],
+            "practice": [["ask": ["said": "Cosa Le do?", "en": "What can I get you?"], "answer": ["said": "Vorrei un caffè.", "en": "I'd like a coffee."]]],
         ]]]]
         let content = try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json))
         let step = try #require(content.lessons?.first?.steps.first)
         #expect(step.title == "I'd like, politely")
-        #expect(step.practice.first?.answer.it == "Vorrei un caffè.")
+        #expect(step.practice.first?.answer.said == "Vorrei un caffè.")
         #expect(step.examples.first?.role == "barista")
     }
 

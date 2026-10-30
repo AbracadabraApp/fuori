@@ -20,7 +20,8 @@ const syllabus = JSON.parse(readFileSync(join(dir, 'syllabus.json'), 'utf8'));
 const out = join(dir, 'lessons.json');
 const all: { version: string; units: Record<string, unknown> } = existsSync(out) ? JSON.parse(readFileSync(out, 'utf8')) : { version: '', units: {} };
 
-const line = { type: 'object', additionalProperties: false, properties: { it: { type: 'string' }, en: { type: 'string' } }, required: ['it', 'en'] };
+// `said` is the line in the language being learned (any country)
+const line = { type: 'object', additionalProperties: false, properties: { said: { type: 'string' }, en: { type: 'string' } }, required: ['said', 'en'] };
 const schema = {
   type: 'object',
   additionalProperties: false,
@@ -34,7 +35,7 @@ const schema = {
           title: { type: 'string' },
           how_to: { type: 'string' },
           intro: { type: 'string' },
-          examples: { type: 'array', items: { type: 'object', additionalProperties: false, properties: { role: { type: 'string' }, place: { type: 'string' }, it: { type: 'string' }, en: { type: 'string' } }, required: ['role', 'place', 'it', 'en'] } },
+          examples: { type: 'array', items: { type: 'object', additionalProperties: false, properties: { role: { type: 'string' }, place: { type: 'string' }, said: { type: 'string' }, en: { type: 'string' } }, required: ['role', 'place', 'said', 'en'] } },
           notice: { type: 'string' },
           context: { type: 'string' },
           practice: { type: 'array', items: { type: 'object', additionalProperties: false, properties: { ask: line, answer: line }, required: ['ask', 'answer'] } },
