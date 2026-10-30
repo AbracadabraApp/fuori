@@ -25,5 +25,11 @@ for (const dir of ['lib', 'app']) {
   for (const f of walk(dir)) if (f !== join('lib', 'claude.ts')) check(!readFileSync(f, 'utf8').includes('new Anthropic('), `${f} makes its own Claude client`);
 }
 
+// Every route that costs money per call (Claude, speech to text, voice) has a per-device limit
+for (const route of ['turn', 'transcribe', 'speak', 'say-it', 'replies', 'learn', 'onboarding/name', 'onboarding/follow-up', 'onboarding/send-off']) {
+  const src = readFileSync(join('app', 'v1', route, 'route.ts'), 'utf8');
+  check(/\ballow\(/.test(src), `app/v1/${route} has no per-device limit (lib/rate-limit.ts allow)`);
+}
+
 if (problems.length) { console.error('FAIL:\n  ' + problems.join('\n  ')); process.exit(1); }
-console.log('OK: every Claude call has a limit (client 2 min, 1 retry; waiting calls tighter)');
+console.log('OK: every Claude call has a time limit (client 2 min, 1 retry; waiting calls tighter), and every costly route a per-device limit');

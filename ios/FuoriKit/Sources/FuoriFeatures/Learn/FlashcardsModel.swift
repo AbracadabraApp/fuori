@@ -116,6 +116,8 @@ final class FlashcardsModel {
 
     /// A card has stopped in the middle: stage 1 plays the word and listens; stages 2 and 3 listen. Once per arrival
     func settle(_ item: Item, voiceOver: Bool) async {
+        // Back on the cards after leaving them
+        if observers.isEmpty { observeInterruptions() }
         guard settled != item.id else { return }
         settled = item.id
         // A new card reached by scrolling: hands-free again
@@ -307,14 +309,16 @@ final class FlashcardsModel {
     private func closeMic(_ why: String) {
         listenTask?.cancel()
         listenTask = nil
-        _ = recorder.stop(why)
+        // Not checked: its file goes too (they piled up in tmp)
+        if let url = recorder.stop(why) { try? FileManager.default.removeItem(at: url) }
         listening = nil
     }
 
     private func check(_ item: Item) async {
         let url = recorder.stop("flashcard")
         listening = nil
-        guard let url, let audio = try? Data(contentsOf: url) else { return }
+        guard let url else { return }
+        guard let audio = try? Data(contentsOf: url) else { try? FileManager.default.removeItem(at: url); return }
         try? FileManager.default.removeItem(at: url)
         checking = item.id
         let heard = (try? await api.transcribe(audio: audio)) ?? ""
@@ -426,6 +430,12 @@ final class FlashcardsModel {
         voice.stop()
         if listening != nil { closeMic("flashcards closed") }
         settled = nil
+        // Leaving the cards: stop listening for interruptions (they were added
+        // again on every visit) and let other apps' sound come back
+        let center = NotificationCenter.default
+        observers.forEach { center.removeObserver($0) }
+        observers.removeAll()
+        AudioSession.deactivate()
     }
 
     // MARK: Saving

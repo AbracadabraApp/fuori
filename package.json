@@ -47,6 +47,7 @@
     "test:beginner": "tsx tests/check-beginner.ts",
     "test:reply-deadline": "tsx tests/check-reply-deadline.ts",
     "test:claude-limits": "tsx tests/check-claude-limits.ts",
+    "test:in-flight": "tsx tests/check-in-flight.ts",
     "test:learn-ahead": "tsx tests/check-learn-ahead.ts",
     "test:stats": "tsx tests/check-dialogue-stats.ts",
     "test:memory": "tsx tests/check-memory.ts",

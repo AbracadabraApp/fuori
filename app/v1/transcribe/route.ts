@@ -16,6 +16,7 @@
 import { after } from 'next/server';
 import { country } from '@/content';
 import { apiError, apiJson, withLearner } from '@/lib/api';
+import { allow } from '@/lib/rate-limit';
 import { logServerError } from '@/lib/server-log';
 import { Laps } from '@/lib/timing';
 import { hearRecording } from '@/lib/speech/hear-recording';
@@ -27,6 +28,10 @@ export async function POST(request: Request) {
   const laps = new Laps();
   return withLearner(request, 'v1 transcribe', async (learnerId) => {
     laps.lap('auth');
+    // A ceiling per device (whole-app scan, 2026-10-29): flashcards send one per card, turns one each
+    if (!allow(`transcribe:${learnerId}`, 240, 10 * 60 * 1000) || !allow(`transcribe-day:${learnerId}`, 4000, 24 * 60 * 60 * 1000)) {
+      return apiError('rate_limited', 'Too many recordings; wait a minute', 60_000);
+    }
     const form = await request.formData().catch(() => null);
     const audio = form?.get('audio');
     if (!(audio instanceof File) || audio.size === 0) return apiError('bad_audio', 'Send the recording as multipart field "audio"');

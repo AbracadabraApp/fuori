@@ -27,6 +27,8 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { z } from 'zod';
 import { apiError, apiJson, withLearner } from '@/lib/api';
+import { sharedWhileRunning } from '@/lib/in-flight';
+import { allow } from '@/lib/rate-limit';
 import { parseTurnRequest, fitStoredTranscript, MAX_SAID_CHARS } from '@/lib/turn-request';
 import { loadConversationTurns } from '@/lib/recording';
 import { takeTurn } from '@/lib/conversation/take-turn';
@@ -51,12 +53,28 @@ const Body = z.object({
   speed: z.number().min(0.5).max(2).optional(),
 });
 
+/**
+ * Turns being answered, by learner, conversation and what they said: the app
+ * resends a turn after a dropped connection, and both copies were answered
+ * and saved (the learner's line twice, two replies; whole-app scan,
+ * 2026-10-29). A copy that arrives while the first is still being answered
+ * waits for it and gets the same reply. One server process per country
+ * (Railway), so memory covers every request.
+ */
+type Settled = { body: object; headers: Record<string, string> } | { status: number; error: object };
+const inFlight = new Map<string, Promise<Settled>>();
+
 export async function POST(request: Request) {
   const laps = new Laps();
   return withLearner(request, 'v1 turn', async (learnerId) => {
     laps.lap('auth');
     const body = Body.safeParse(await request.json().catch(() => null));
     if (!body.success) return apiError('bad_request', body.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; '));
+    // A ceiling per device (whole-app scan, 2026-10-29: turns had none):
+    // hands-free at full speed is about one every 8 s, so real play stays far below
+    if (!allow(`turn:${learnerId}`, 90, 10 * 60 * 1000) || !allow(`turn-day:${learnerId}`, 1500, 24 * 60 * 60 * 1000)) {
+      return apiError('rate_limited', 'Too many turns; wait a minute', 60_000);
+    }
     const { conversationId, learnerSaid } = body.data;
 
     let transcript: Awaited<ReturnType<typeof loadConversationTurns>> = [];
@@ -170,9 +188,17 @@ export async function POST(request: Request) {
       }
     };
 
+    // The same turn already being answered: wait for it and send the same reply
+    const key = conversationId && learnerSaid ? `${learnerId}|${conversationId}|${learnerSaid}` : null;
+    const settle = async (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> => {
+      const r = await run(onFirst);
+      return 'error' in r ? { status: r.error.status, error: await r.error.json() } : r;
+    };
+    const answer = (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> => sharedWhileRunning(inFlight, key, () => settle(onFirst));
+
     if (!request.headers.get('accept')?.includes(NDJSON)) {
-      const r = await run();
-      return 'error' in r ? r.error : apiJson(r.body, { headers: r.headers });
+      const r = await answer();
+      return 'error' in r ? Response.json(r.error, { status: r.status, headers: { 'cache-control': 'no-store' } }) : apiJson(r.body, { headers: r.headers });
     }
 
     // Streamed: one JSON object per line. { first } as soon as the first
@@ -188,8 +214,8 @@ export async function POST(request: Request) {
             // The app went away (left or paused the scene); the turn is still saved
           }
         };
-        const r = await run((first, parts) => send(parts ? { first, parts } : { first }));
-        if ('error' in r) send({ ...(await r.error.json()), status: r.error.status });
+        const r = await answer((first, parts) => send(parts ? { first, parts } : { first }));
+        if ('error' in r) send({ ...r.error, status: r.status });
         else send({ reply: r.body });
         try {
           controller.close();

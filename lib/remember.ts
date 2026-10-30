@@ -81,7 +81,12 @@ export async function rememberConversation(
   learnerId: string,
   summarize: Summarizer = summarizeWithClaude,
   judge: Judge = judgeWithClaude,
-  writeStudyFile: StudyFileWriter = writeStudyFileWithClaude
+  writeStudyFile: StudyFileWriter = writeStudyFileWithClaude,
+  /** Runs the follow-ups (study file, quality score, level check) after the
+   *  caller has answered, e.g. Next's after(): the app waited for all four
+   *  calls in a row, a minute or more (whole-app scan, 2026-10-29). Without
+   *  it they run before returning, as the tests expect */
+  later?: (work: () => Promise<void>) => void
 ): Promise<RememberResult> {
   if (!recordingEnabled()) return 'nothing new';
   let claim: Awaited<ReturnType<typeof claimForMemory>> = null;
@@ -121,35 +126,42 @@ export async function rememberConversation(
     });
     console.log(JSON.stringify({ level: 'info', event: 'memory', conversationId, character: claim.characterId, notes: out.notes.length, firstTime: claim.firstTime }));
 
-    // Fold the learning notes into Magda's study file, so it's ready when the
-    // learner walks into the school. A problem here is logged; memory stays saved.
-    try {
-      const current = await loadCharacterMemory(learnerId, tutor.id);
-      const studyFile = await writeStudyFile({ after: 'conversation', studyFile: current.notes, character, learningNotes: out.review });
-      await saveStudyFile(learnerId, studyFile);
-      console.log(JSON.stringify({ level: 'info', event: 'study file', after: 'conversation', conversationId, lines: studyFile.length }));
-    } catch (err) {
-      logError('study file', err, conversationId);
-    }
+    // The follow-ups: each logs its own problem; memory is already saved
+    const done = claim;
+    const followUps = async () => {
+      const claim = done;
+      // Fold the learning notes into Magda's study file, so it's ready when the
+      // learner walks into the school. A problem here is logged; memory stays saved.
+      try {
+        const current = await loadCharacterMemory(learnerId, tutor.id);
+        const studyFile = await writeStudyFile({ after: 'conversation', studyFile: current.notes, character, learningNotes: out.review });
+        await saveStudyFile(learnerId, studyFile);
+        console.log(JSON.stringify({ level: 'info', event: 'study file', after: 'conversation', conversationId, lines: studyFile.length }));
+      } catch (err) {
+        logError('study file', err, conversationId);
+      }
 
-    // Score it for the dialogue scorecard (lib/quality.ts). Separate from memory:
-    // a scoring problem is logged and memory stays saved.
-    try {
-      // Beginner dialogue (lib/beginner.ts) speaks English by design; its turns carry a beginner- prompt version
-      const score = await scoreConversation(character, claim.turns, judge, { beginner: !!claim.promptVersion?.startsWith('beginner-') });
-      await saveConversationScore(conversationId, score);
-      console.log(JSON.stringify({ level: 'info', event: 'quality', conversationId, character: claim.characterId, median: score.stats.wordsMedian, unprompted: score.judge.correctionsUnprompted, pronunciation: score.judge.pronunciationCorrections, words: score.judge.words }));
-    } catch (err) {
-      logError('quality', err, conversationId);
-    }
+      // Score it for the dialogue scorecard (lib/quality.ts). Separate from memory:
+      // a scoring problem is logged and memory stays saved.
+      try {
+        // Beginner dialogue (lib/beginner.ts) speaks English by design; its turns carry a beginner- prompt version
+        const score = await scoreConversation(character, claim.turns, judge, { beginner: !!claim.promptVersion?.startsWith('beginner-') });
+        await saveConversationScore(conversationId, score);
+        console.log(JSON.stringify({ level: 'info', event: 'quality', conversationId, character: claim.characterId, median: score.stats.wordsMedian, unprompted: score.judge.correctionsUnprompted, pronunciation: score.judge.pronunciationCorrections, words: score.judge.words }));
+      } catch (err) {
+        logError('quality', err, conversationId);
+      }
 
-    // The level check (lib/learner-level.ts): only when LEVEL_CHECK is on, for
-    // the first few conversations. A problem is logged; memory stays saved.
-    try {
-      await checkLearnerLevel(conversationId, learnerId);
-    } catch (err) {
-      logError('level check', err, conversationId);
-    }
+      // The level check (lib/learner-level.ts): only when LEVEL_CHECK is on, for
+      // the first few conversations. A problem is logged; memory stays saved.
+      try {
+        await checkLearnerLevel(conversationId, learnerId);
+      } catch (err) {
+        logError('level check', err, conversationId);
+      }
+    };
+    if (later) later(followUps);
+    else await followUps();
     return 'saved';
   } catch (err) {
     logError('memory', err, conversationId);
