@@ -45,17 +45,30 @@ export function recordingsBucket() {
   };
 }
 
-/** Store the recording and what was heard; throws if either upload fails */
-export async function keepRecording(p: { country: string; learnerId: string; audio: File; heard: Heard; at?: Date }): Promise<string> {
+/**
+ * One PUT with the length stated. R2 refuses an upload without
+ * Content-Length (411), and on Railway nearly every audio PUT went out
+ * without one (19 of 20 on 2026-10-29): `client.fetch` hands fetch a
+ * Request, whose body can be sent as a stream of unknown length. So it signs
+ * the request, then sends the bytes itself with the length set. `send` is
+ * for the test.
+ */
+export async function putObject(key: string, bytes: Uint8Array<ArrayBuffer>, type: string, send: typeof fetch = fetch): Promise<void> {
   const { client, url } = recordingsBucket();
+  const length = String(bytes.byteLength);
+  const signed = await client.sign(`${url}/${key}`, { method: 'PUT', body: bytes, headers: { 'content-type': type, 'content-length': length } });
+  const headers = new Headers(signed.headers);
+  headers.set('content-length', length);
+  const res = await send(signed.url, { method: 'PUT', body: bytes, headers });
+  if (!res.ok) throw new Error(`R2 PUT ${key}: ${res.status} ${await res.text()}`);
+}
+
+/** Store the recording and what was heard; throws if either upload fails */
+export async function keepRecording(p: { country: string; learnerId: string; audio: File; heard: Heard; at?: Date; send?: typeof fetch }): Promise<string> {
   const at = p.at ?? new Date();
   const keys = recordingKeys(p.country, p.learnerId, at, crypto.randomUUID().slice(0, 8), p.audio.name);
-  const put = async (key: string, body: BodyInit, type: string) => {
-    const res = await client.fetch(`${url}/${key}`, { method: 'PUT', body, headers: { 'content-type': type } });
-    if (!res.ok) throw new Error(`R2 PUT ${key}: ${res.status} ${await res.text()}`);
-  };
-  await put(keys.audio, await p.audio.arrayBuffer(), p.audio.type || 'audio/mp4');
+  await putObject(keys.audio, new Uint8Array(await p.audio.arrayBuffer()), p.audio.type || 'audio/mp4', p.send);
   const meta = { at: at.toISOString(), country: p.country, learnerId: p.learnerId, audio: keys.audio, bytes: p.audio.size, ...p.heard };
-  await put(keys.meta, JSON.stringify(meta, null, 2), 'application/json');
+  await putObject(keys.meta, new TextEncoder().encode(JSON.stringify(meta, null, 2)), 'application/json', p.send);
   return keys.audio;
 }

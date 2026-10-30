@@ -17,6 +17,24 @@ const keys = recordingKeys('it', 'L1', new Date('2026-10-26T18:00:00.123Z'), 'r4
 check('audio key', keys.audio === 'it/L1/2026-10-26T18-00-00-123Z-r4nd.m4a', keys.audio);
 check('what was heard sits beside it', keys.meta === 'it/L1/2026-10-26T18-00-00-123Z-r4nd.json', keys.meta);
 
+// Every PUT states its length: R2 answers 411 without it, which lost 19 of
+// 20 recordings on 2026-10-29. A stand-in fetch records what would be sent
+{
+  const env = { ...process.env };
+  Object.assign(process.env, { R2_ACCOUNT_ID: process.env.R2_ACCOUNT_ID || 'acct', R2_ACCESS_KEY_ID: process.env.R2_ACCESS_KEY_ID || 'id', R2_SECRET_ACCESS_KEY: process.env.R2_SECRET_ACCESS_KEY || 'secret', RECORDINGS_BUCKET: process.env.RECORDINGS_BUCKET || 'bucket' });
+  const sent: { length: string | null; bytes: number }[] = [];
+  const send = (async (_url: unknown, init?: RequestInit) => {
+    sent.push({ length: new Headers(init?.headers).get('content-length'), bytes: (init?.body as Uint8Array).byteLength });
+    return new Response('', { status: 200 });
+  }) as typeof fetch;
+  const audio = new File([new Uint8Array(73124)], 'speech.m4a', { type: 'audio/mp4' });
+  await keepRecording({ country: 'test', learnerId: 'L1', audio, heard: { mode: 'target', text: 'x', language: 'es' }, send });
+  check('two PUTs, audio and what was heard', sent.length === 2, sent);
+  check('every PUT states its length, and it is right', sent.every((s) => s.length === String(s.bytes)), sent);
+  check('the audio goes whole', sent[0]?.bytes === 73124, sent[0]);
+  process.env = env;
+}
+
 if (process.env.RECORDINGS_BUCKET && process.env.R2_ACCESS_KEY_ID) {
   const audio = new File([new Uint8Array([1, 2, 3, 4])], 'speech.m4a', { type: 'audio/mp4' });
   const key = await keepRecording({ country: 'test', learnerId: 'check-keep-recording', audio, heard: { mode: 'turn', text: 'ciao', language: 'it' } });
