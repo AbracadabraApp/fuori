@@ -63,6 +63,84 @@ Why (Josh, 2026-10-28): "if it's there it should be required". Until then stage 
 ### Next (agreed 2026-10-28, not built)
 - **One master deck per country, filtered per learner.** A build script collects the words on everyone's Learn pages (Things and Doing), most frequent first, writes cards (word, article, English, picture idea, base word), makes the pictures once and adds them for everyone. Each learner's new cards come first from their own Learn pages, then the starter words, then the rest. Matching by base word, which the build asks Claude for (nothing language-specific in code). No personal decks (Josh: "a bit fancy").
 
+## Plan under discussion (2026-10-29, proposed, not agreed, nothing built)
+
+Prompted by Josh's Mexico session on 2026-10-29: the five-words-in-progress feed was "really boring" ("5 is not a feed"), about 1 in 4 words weren't heard or were misheard, and the mic is slow to be ready.
+
+**What success means (Josh, 2026-10-29):** #1 length of visit, #2 repeat visits. Claude had proposed "words still said unaided days later"; Josh disagreed.
+
+1. **Fix keeping recordings.** 19 of the 20 recordings from that session failed to save (R2 answered 411 MissingContentLength), so what Whisper heard can't be reviewed. Fix, with a test; Josh plays ~10 cards; review each.
+2. **Tell Whisper the word to expect.** The app knows the card's answer, so it can go to Whisper as a prompt (works in any language). The one recording kept was heard as "Gracias.", not a deck word: Whisper's best-known invention on short, quiet clips. Risk: a near miss might be accepted. Compare on the kept recordings with and without before shipping.
+3. **The mic ready when the card settles,** not half a second later plus start-up: keep the recorder running between cards.
+4. **Spacing with decay, not slots (Josh: "some sort of decay on repetition / new cards - not a rigid repetition"):** each word's pull to come back drops to nothing after it's shown and grows again; the next card is a weighted random pick. Returns about 8 cards later, then about 12, then 30+ (Josh, 2026-10-29: 3 was "too fast"), then another day; never within 6 cards. New words weigh heavily at first and ease off as more words are in play, never to zero. Help brings a word back after about 8 at the same stage.
+
+**A full 60-card run** (Mexico deck, simulated with these rules and 1 in 4 stage-2/3 answers needing help, the rate Josh saw; `Then` is what the card schedules):
+
+| # | Card | Stage | Cards since last | Then |
+|---|---|---|---|---|
+| 1 | la noche | 1 meet |  | back ~8 |
+| 2 | la mañana | 1 meet |  | back ~8 |
+| 3 | la tarde | 1 meet |  | back ~8 |
+| 4 | el señor | 1 meet |  | back ~8 |
+| 5 | la señora | 1 meet |  | back ~8 |
+| 6 | el diccionario | 1 meet |  | back ~8 |
+| 7 | la calle | 1 meet |  | back ~8 |
+| 8 | la ciudad | 1 meet |  | back ~8 |
+| 9 | la noche | 2 recall | 8 | back ~12 |
+| 10 | la mañana | 2 recall | 8 | help → back ~8, same stage |
+| 11 | el pueblo | 1 meet |  | back ~8 |
+| 12 | la tarde | 2 recall | 9 | back ~12 |
+| 13 | el señor | 2 recall | 9 | help → back ~8, same stage |
+| 14 | la calle | 2 recall | 7 | back ~12 |
+| 15 | la ciudad | 2 recall | 7 | back ~12 |
+| 16 | la señora | 2 recall | 11 | back ~12 |
+| 17 | el diccionario | 2 recall | 11 | help → back ~8, same stage |
+| 18 | el celular | 1 meet |  | back ~8 |
+| 19 | la noche | 3 say | 10 | back ~30 |
+| 20 | la mañana | 2 recall | 10 | help → back ~8, same stage |
+| 21 | el pueblo | 2 recall | 10 | back ~12 |
+| 22 | el amigo | 1 meet |  | back ~8 |
+| 23 | la ciudad | 3 say | 8 | back ~30 |
+| 24 | el diccionario | 2 recall | 7 | help → back ~8, same stage |
+| 25 | el señor | 2 recall | 12 | help → back ~8, same stage |
+| 26 | la calle | 3 say | 12 | back ~30 |
+| 27 | la tarde | 3 say | 15 | back ~30 |
+| 28 | la señora | 3 say | 12 | back ~30 |
+| 29 | el celular | 2 recall | 11 | help → back ~8, same stage |
+| 30 | la mañana | 2 recall | 10 | back ~12 |
+| 31 | el amigo | 2 recall | 9 | back ~12 |
+| 32 | el vecino | 1 meet |  | back ~8 |
+| 33 | la calle | 3 check | 7 | yours → back tomorrow |
+| 34 | el pueblo | 3 say | 13 | back ~30 |
+| 35 | el diccionario | 2 recall | 11 | back ~12 |
+| 36 | el señor | 2 recall | 11 | help → back ~8, same stage |
+| 37 | el celular | 2 recall | 8 | back ~12 |
+| 38 | el vecino | 2 recall | 6 | back ~12 |
+| 39 | el amigo | 3 say | 8 | help → back ~8, same stage |
+| 40 | el hombre | 1 meet |  | back ~8 |
+| 41 | la mañana | 3 say | 11 | help → back ~8, same stage |
+| 42 | la mujer | 1 meet |  | back ~8 |
+| 43 | la ciudad | 3 check | 20 | yours → back tomorrow |
+| 44 | el joven | 1 meet |  | back ~8 |
+| 45 | el señor | 2 recall | 9 | back ~12 |
+| 46 | el diccionario | 3 say | 11 | back ~30 |
+| 47 | el vecino | 3 say | 9 | help → back ~8, same stage |
+| 48 | la mañana | 3 say | 7 | back ~30 |
+| 49 | la noche | 3 check | 30 | yours → back tomorrow |
+| 50 | el hombre | 2 recall | 10 | back ~12 |
+| 51 | el amigo | 3 say | 12 | back ~30 |
+| 52 | la mujer | 2 recall | 10 | back ~12 |
+| 53 | el celular | 3 say | 16 | back ~30 |
+| 54 | el pueblo | 3 check | 20 | yours → back tomorrow |
+| 55 | la tarde | 3 check | 28 | yours → back tomorrow |
+| 56 | el joven | 2 recall | 12 | back ~12 |
+| 57 | el señor | 3 say | 12 | back ~30 |
+| 58 | el vecino | 3 say | 11 | help → back ~8, same stage |
+| 59 | la señora | 3 check | 31 | yours → back tomorrow |
+| 60 | la mujer | 3 say | 8 | help → back ~8, same stage |
+
+What the run shows: 15 new words in 60 cards; after the first ten cards, about 3 in 4 cards are returns. With four showings per word in a session (meet, recall, say, check), that's close to the most the rules allow. Averaged over ten runs: gaps 8/12/30 give about 17 new words per 60 cards; 8/12 (no 30 check) about 20; a single return at 8 about 28.
+
 ## Motion (agreed 2026-10-21)
 
 - Revealing an answer: no flip. The card grows a little and the new line fades in; the picture never moves.
