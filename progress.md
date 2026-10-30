@@ -66,6 +66,10 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-10-29: Visited badge locked (cloud session)
+- Decided with Josh (design only, not built): the place card's visit mark is a scontrino pinned in the picture's top right corner, end-of-the-roll stripe green then red, round ink stamp *già visto* then *di casa*, Visited or Regular under it; regular from the third visit. Spec: `docs/visited-badge.md`; roadmap item updated.
+- Talked through, not decided: onboarding as the game's first scene (or no onboarding at all, the first character setting you up), a tourist/expat split (Josh leaned to expat only, with tourist guide content and curated YouTube as the way in), lotería-style flashcards for Mexico.
+
 ## 2026-10-28: Lesson format decided in conversation (cloud session)
 - Decided with Josh (design only, nothing built): a lesson is Magda teaching on the conversation screen, short in-role practice dialogues of 2–3 turns with the city's characters (counted as visits), then Magda reviewing. Practice dialogues end on a turn count passed to the character, then a Back to Magda button. Written up in `docs/learn.md` → "A lesson".
 - Mockups from the evening (claude.ai artifacts): the lesson strip redone in Fuori's tokens, a two-person chat, and the scene in the game's layout with Magda's notes; superseded by the decision above.
