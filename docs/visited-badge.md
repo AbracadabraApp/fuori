@@ -13,7 +13,7 @@
 ## Stages
 
 1. **Visited** after the first conversation there.
-2. **Regular** after about five visits (the number is a proposal; Josh to confirm).
+2. **Regular** from the third visit (Josh, 2026-10-29: "I think 3").
 
 ## Rules it has to follow
 
