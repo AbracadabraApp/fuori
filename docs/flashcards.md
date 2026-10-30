@@ -72,74 +72,76 @@ Prompted by Josh's Mexico session on 2026-10-29: the five-words-in-progress feed
 1. **Fix keeping recordings.** 19 of the 20 recordings from that session failed to save (R2 answered 411 MissingContentLength), so what Whisper heard can't be reviewed. Fix, with a test; Josh plays ~10 cards; review each.
 2. **Tell Whisper the word to expect.** The app knows the card's answer, so it can go to Whisper as a prompt (works in any language). The one recording kept was heard as "Gracias.", not a deck word: Whisper's best-known invention on short, quiet clips. Risk: a near miss might be accepted. Compare on the kept recordings with and without before shipping.
 3. **The mic ready when the card settles,** not half a second later plus start-up: keep the recorder running between cards.
-4. **Spacing with decay, not slots (Josh: "some sort of decay on repetition / new cards - not a rigid repetition"):** each word's pull to come back drops to nothing after it's shown and grows again; the next card is a weighted random pick. Returns about 8 cards later, then about 12, then 30+ (Josh, 2026-10-29: 3 was "too fast"), then another day; never within 6 cards. New words weigh heavily at first and ease off as more words are in play, never to zero. Help brings a word back after about 8 at the same stage.
+4. **Spacing with decay, not slots (Josh: "some sort of decay on repetition / new cards - not a rigid repetition"):** each word's pull to come back drops to nothing after it's shown and grows again; the next card is a weighted random pick. New words weigh heavily at first and ease off as more words are in play, never to zero. Never the same word within 6 cards.
+   - **Longer gaps, not equal for every word (Josh, 2026-10-29: "they shouldn't all go equal amounts back"; 3 cards was "too fast"):** about 12 cards, then 25, then 50+, then another day. Each pass without help stretches that word's later gaps, each help shortens them (ease 0.6–1.6×), and every gap has a random spread (0.7–1.5×). Help brings a word back after about 6–12 cards at the same stage.
+5. **Endless, and a skipped card waits its turn (Josh, 2026-10-29: "go through 60 cards (trying none) the 61 card is the 1st"):** a card scrolled past without trying isn't counted as seen and doesn't come back early; it goes to the back of the deck. Scroll through all 60 trying none and card 61 is card 1 again, in the same order. Words you've tried come back by their gaps, mixed in.
 
-**A full 60-card run** (Mexico deck, simulated with these rules and 1 in 4 stage-2/3 answers needing help, the rate Josh saw; `Then` is what the card schedules):
+**A full 60-card run** (Mexico deck, simulated with rule 4 and 1 in 4 stage-2/3 answers needing help, the rate Josh saw; every card tried; `Then` is the gap the card schedules):
 
 | # | Card | Stage | Cards since last | Then |
 |---|---|---|---|---|
-| 1 | la noche | 1 meet |  | back ~8 |
-| 2 | la mañana | 1 meet |  | back ~8 |
-| 3 | la tarde | 1 meet |  | back ~8 |
-| 4 | el señor | 1 meet |  | back ~8 |
-| 5 | la señora | 1 meet |  | back ~8 |
-| 6 | el diccionario | 1 meet |  | back ~8 |
-| 7 | la calle | 1 meet |  | back ~8 |
-| 8 | la ciudad | 1 meet |  | back ~8 |
-| 9 | la noche | 2 recall | 8 | back ~12 |
-| 10 | la mañana | 2 recall | 8 | help → back ~8, same stage |
-| 11 | el pueblo | 1 meet |  | back ~8 |
-| 12 | la tarde | 2 recall | 9 | back ~12 |
-| 13 | el señor | 2 recall | 9 | help → back ~8, same stage |
-| 14 | la calle | 2 recall | 7 | back ~12 |
-| 15 | la ciudad | 2 recall | 7 | back ~12 |
-| 16 | la señora | 2 recall | 11 | back ~12 |
-| 17 | el diccionario | 2 recall | 11 | help → back ~8, same stage |
-| 18 | el celular | 1 meet |  | back ~8 |
-| 19 | la noche | 3 say | 10 | back ~30 |
-| 20 | la mañana | 2 recall | 10 | help → back ~8, same stage |
-| 21 | el pueblo | 2 recall | 10 | back ~12 |
-| 22 | el amigo | 1 meet |  | back ~8 |
-| 23 | la ciudad | 3 say | 8 | back ~30 |
-| 24 | el diccionario | 2 recall | 7 | help → back ~8, same stage |
-| 25 | el señor | 2 recall | 12 | help → back ~8, same stage |
-| 26 | la calle | 3 say | 12 | back ~30 |
-| 27 | la tarde | 3 say | 15 | back ~30 |
-| 28 | la señora | 3 say | 12 | back ~30 |
-| 29 | el celular | 2 recall | 11 | help → back ~8, same stage |
-| 30 | la mañana | 2 recall | 10 | back ~12 |
-| 31 | el amigo | 2 recall | 9 | back ~12 |
-| 32 | el vecino | 1 meet |  | back ~8 |
-| 33 | la calle | 3 check | 7 | yours → back tomorrow |
-| 34 | el pueblo | 3 say | 13 | back ~30 |
-| 35 | el diccionario | 2 recall | 11 | back ~12 |
-| 36 | el señor | 2 recall | 11 | help → back ~8, same stage |
-| 37 | el celular | 2 recall | 8 | back ~12 |
-| 38 | el vecino | 2 recall | 6 | back ~12 |
-| 39 | el amigo | 3 say | 8 | help → back ~8, same stage |
-| 40 | el hombre | 1 meet |  | back ~8 |
-| 41 | la mañana | 3 say | 11 | help → back ~8, same stage |
-| 42 | la mujer | 1 meet |  | back ~8 |
-| 43 | la ciudad | 3 check | 20 | yours → back tomorrow |
-| 44 | el joven | 1 meet |  | back ~8 |
-| 45 | el señor | 2 recall | 9 | back ~12 |
-| 46 | el diccionario | 3 say | 11 | back ~30 |
-| 47 | el vecino | 3 say | 9 | help → back ~8, same stage |
-| 48 | la mañana | 3 say | 7 | back ~30 |
-| 49 | la noche | 3 check | 30 | yours → back tomorrow |
-| 50 | el hombre | 2 recall | 10 | back ~12 |
-| 51 | el amigo | 3 say | 12 | back ~30 |
-| 52 | la mujer | 2 recall | 10 | back ~12 |
-| 53 | el celular | 3 say | 16 | back ~30 |
-| 54 | el pueblo | 3 check | 20 | yours → back tomorrow |
-| 55 | la tarde | 3 check | 28 | yours → back tomorrow |
-| 56 | el joven | 2 recall | 12 | back ~12 |
-| 57 | el señor | 3 say | 12 | back ~30 |
-| 58 | el vecino | 3 say | 11 | help → back ~8, same stage |
-| 59 | la señora | 3 check | 31 | yours → back tomorrow |
-| 60 | la mujer | 3 say | 8 | help → back ~8, same stage |
+| 1 | la noche | 1 meet |  | back ~11 |
+| 2 | la mañana | 1 meet |  | back ~18 |
+| 3 | la tarde | 1 meet |  | back ~13 |
+| 4 | el señor | 1 meet |  | back ~17 |
+| 5 | la señora | 1 meet |  | back ~18 |
+| 6 | el diccionario | 1 meet |  | back ~10 |
+| 7 | la calle | 1 meet |  | back ~9 |
+| 8 | la ciudad | 1 meet |  | back ~9 |
+| 9 | la noche | 2 recall | 8 | back ~41 |
+| 10 | el pueblo | 1 meet |  | back ~16 |
+| 11 | la tarde | 2 recall | 8 | back ~32 |
+| 12 | el diccionario | 2 recall | 6 | back ~22 |
+| 13 | el celular | 1 meet |  | back ~10 |
+| 14 | la mañana | 2 recall | 12 | back ~37 |
+| 15 | el amigo | 1 meet |  | back ~16 |
+| 16 | el vecino | 1 meet |  | back ~16 |
+| 17 | el señor | 2 recall | 13 | back ~24 |
+| 18 | la ciudad | 2 recall | 10 | back ~27 |
+| 19 | el pueblo | 2 recall | 9 | back ~40 |
+| 20 | la calle | 2 recall | 13 | help → back ~9, same stage |
+| 21 | el celular | 2 recall | 8 | back ~27 |
+| 22 | el hombre | 1 meet |  | back ~14 |
+| 23 | la señora | 2 recall | 18 | back ~34 |
+| 24 | la mujer | 1 meet |  | back ~14 |
+| 25 | el amigo | 2 recall | 10 | help → back ~9, same stage |
+| 26 | el joven | 1 meet |  | back ~13 |
+| 27 | la calle | 2 recall | 7 | back ~17 |
+| 28 | la doña | 1 meet |  | back ~10 |
+| 29 | el señor | 3 say | 12 | back ~77 |
+| 30 | el vecino | 2 recall | 14 | back ~26 |
+| 31 | el amigo | 2 recall | 6 | back ~27 |
+| 32 | la mujer | 2 recall | 8 | help → back ~7, same stage |
+| 33 | el hombre | 2 recall | 11 | help → back ~7, same stage |
+| 34 | el taco | 1 meet |  | back ~16 |
+| 35 | el diccionario | 3 say | 23 | back ~72 |
+| 36 | la tarde | 3 say | 25 | back ~89 |
+| 37 | la ciudad | 3 say | 19 | back ~49 |
+| 38 | las carnitas | 1 meet |  | back ~15 |
+| 39 | la mujer | 2 recall | 7 | help → back ~11, same stage |
+| 40 | el hombre | 2 recall | 7 | help → back ~9, same stage |
+| 41 | la doña | 2 recall | 13 | back ~20 |
+| 42 | el joven | 2 recall | 16 | help → back ~12, same stage |
+| 43 | la señora | 3 say | 20 | back ~76 |
+| 44 | la quesadilla | 1 meet |  | back ~15 |
+| 45 | la torta | 1 meet |  | back ~11 |
+| 46 | la mañana | 3 say | 32 | back ~66 |
+| 47 | la mujer | 2 recall | 8 | back ~27 |
+| 48 | el hombre | 2 recall | 8 | back ~27 |
+| 49 | la calle | 3 say | 22 | back ~74 |
+| 50 | el celular | 3 say | 29 | back ~84 |
+| 51 | la torta | 2 recall | 6 | back ~24 |
+| 52 | el pueblo | 3 say | 33 | back ~48 |
+| 53 | la noche | 3 say | 44 | back ~88 |
+| 54 | el joven | 2 recall | 12 | back ~21 |
+| 55 | el vecino | 3 say | 25 | back ~79 |
+| 56 | la quesadilla | 2 recall | 12 | back ~26 |
+| 57 | las carnitas | 2 recall | 19 | help → back ~11, same stage |
+| 58 | el taco | 2 recall | 24 | back ~36 |
+| 59 | el amigo | 3 say | 28 | back ~52 |
+| 60 | la doña | 3 say | 19 | back ~70 |
 
-What the run shows: 15 new words in 60 cards; after the first ten cards, about 3 in 4 cards are returns. With four showings per word in a session (meet, recall, say, check), that's close to the most the rules allow. Averaged over ten runs: gaps 8/12/30 give about 17 new words per 60 cards; 8/12 (no 30 check) about 20; a single return at 8 about 28.
+What the run shows: 20 new words in 60 cards (about 20 averaged over ten runs; 15 with equal gaps of 8/12/30); returns land 6 to 44 cards later; no word reaches "yours" inside 60 cards, since the stage 3 checks fall 50–90 cards out, in the next visit.
 
 ## Motion (agreed 2026-10-21)
 
