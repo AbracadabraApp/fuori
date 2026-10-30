@@ -1,0 +1,1978 @@
+{
+  "version": "2026-10-29",
+  "units": {
+    "a1-01": {
+      "title": "Greet and take leave",
+      "steps": [
+        {
+          "id": "a1-01-1",
+          "title": "Polite or friendly you",
+          "how_to": "How to greet and ask after someone politely or in a friendly way.",
+          "intro": "You'll learn two ways to say 'How are you?', one polite and one friendly. You'll use the polite one with most adults you meet at the shop or market.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "Buenos días, señora. ¿Cómo está?",
+              "en": "Good morning, ma'am. How are you?"
+            },
+            {
+              "role": "shopkeeper",
+              "place": "shop",
+              "said": "Muy bien, gracias. ¿Y usted?",
+              "en": "Very well, thanks. And you?"
+            },
+            {
+              "role": "neighbour",
+              "place": "plaza",
+              "said": "¿Qué tal? ¿Cómo estás?",
+              "en": "How's it going? How are you?"
+            },
+            {
+              "role": "newcomer",
+              "place": "plaza",
+              "said": "Bien, gracias. ¿Y tú?",
+              "en": "Fine, thanks. And you?"
+            }
+          ],
+          "notice": "With shopkeepers, older people and strangers, you say «¿Cómo está?» and «¿Y usted?». With friends, children and people your age who use tú with you first, it's «¿Cómo estás?» and «¿Y tú?». Wait until the other person says tú to you.",
+          "context": "In Mexico, using usted is a sign of respect, not distance.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Cómo saludas a una señora mayor?",
+                "en": "How do you greet an older lady?"
+              },
+              "answer": {
+                "said": "Buenos días, señora. ¿Cómo está?",
+                "en": "Good morning, ma'am. How are you?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo le preguntas a un amigo cómo está?",
+                "en": "How do you ask a friend how he is?"
+              },
+              "answer": {
+                "said": "¿Cómo estás?",
+                "en": "How are you?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo te despides de una señora mayor?",
+                "en": "How do you say goodbye to an older lady?"
+              },
+              "answer": {
+                "said": "Hasta luego. Que le vaya bien.",
+                "en": "Bye. Have a good day."
+              }
+            }
+          ],
+          "mission": {
+            "place": "shop",
+            "goal": "Greet the shopkeeper politely and ask how they are.",
+            "say": {
+              "said": "Buenos días, señora. ¿Cómo está?",
+              "en": "Good morning, ma'am. How are you?"
+            },
+            "listen_for": [
+              "Muy bien, gracias",
+              "¿Y usted?"
+            ]
+          }
+        },
+        {
+          "id": "a1-01-2",
+          "title": "Saying how you are",
+          "how_to": "How to say how you are feeling.",
+          "intro": "You'll be able to answer when someone asks how you are. People ask this in shops, cafés and on the stairs.",
+          "examples": [
+            {
+              "role": "café waiter",
+              "place": "café",
+              "said": "¿Cómo está, señor?",
+              "en": "How are you, sir?"
+            },
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "Estoy bien, gracias.",
+              "en": "I'm fine, thanks."
+            },
+            {
+              "role": "neighbour",
+              "place": "plaza",
+              "said": "Estoy un poco cansado.",
+              "en": "I'm a bit tired."
+            }
+          ],
+          "notice": "To say how you are, you use «estoy», and the question uses «está» or «estás». «Estoy bien, gracias» is the phrase to remember.",
+          "context": "",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Cómo estás?",
+                "en": "How are you?"
+              },
+              "answer": {
+                "said": "Estoy …, gracias.",
+                "en": "I'm …, thanks."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo estás hoy?",
+                "en": "How are you today?"
+              },
+              "answer": {
+                "said": "Estoy un poco …",
+                "en": "I'm a bit …"
+              }
+            },
+            {
+              "ask": {
+                "said": "Soy una señora. ¿Cómo me preguntas cómo estoy?",
+                "en": "I'm a lady. How do you ask me how I am?"
+              },
+              "answer": {
+                "said": "¿Cómo está, señora?",
+                "en": "How are you, ma'am?"
+              }
+            }
+          ],
+          "mission": {
+            "place": "café",
+            "goal": "Answer when someone asks how you are.",
+            "say": {
+              "said": "Estoy bien, gracias. ¿Y usted?",
+              "en": "I'm fine, thanks. And you?"
+            },
+            "listen_for": [
+              "¿Cómo está?",
+              "Muy bien, gracias"
+            ]
+          }
+        },
+        {
+          "id": "a1-01-3",
+          "title": "Hello at any hour",
+          "how_to": "How to greet people in the morning, afternoon or evening.",
+          "intro": "You'll be able to say hello at the right time of day, or with one short word that works at any time. You'll use it every time you walk into a shop.",
+          "examples": [
+            {
+              "role": "shopkeeper",
+              "place": "shop",
+              "said": "¡Buenos días!",
+              "en": "Good morning!"
+            },
+            {
+              "role": "pharmacist",
+              "place": "pharmacy",
+              "said": "¡Buenas tardes!",
+              "en": "Good afternoon!"
+            },
+            {
+              "role": "taquero",
+              "place": "taquería",
+              "said": "¡Buenas noches!",
+              "en": "Good evening!"
+            },
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "Buenas.",
+              "en": "Hi."
+            }
+          ],
+          "notice": "Buenos días goes until about noon. Buenas tardes starts at noon and lasts until dark. Buenas noches is the hello once it's dark, and also a goodbye. «Buenas» works at any hour.",
+          "context": "A quick «buenas» is enough when you walk into a small shop.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Cómo saludas a las diez de la mañana?",
+                "en": "How do you greet people at ten in the morning?"
+              },
+              "answer": {
+                "said": "Buenos días.",
+                "en": "Good morning."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo saludas a la una de la tarde?",
+                "en": "How do you greet people at one in the afternoon?"
+              },
+              "answer": {
+                "said": "Buenas tardes.",
+                "en": "Good afternoon."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo saludas a las ocho de la noche?",
+                "en": "How do you greet people at eight at night?"
+              },
+              "answer": {
+                "said": "Buenas noches.",
+                "en": "Good evening."
+              }
+            }
+          ],
+          "mission": {
+            "place": "shop",
+            "goal": "Greet the shopkeeper as you walk in.",
+            "say": {
+              "said": "Buenas tardes.",
+              "en": "Good afternoon."
+            },
+            "listen_for": [
+              "Buenas tardes",
+              "Buenas",
+              "Buenos días"
+            ]
+          }
+        },
+        {
+          "id": "a1-01-4",
+          "title": "Greeting a whole group",
+          "how_to": "How to greet and ask after two or more people.",
+          "intro": "You'll be able to talk to a group, like a family or a shop full of people. In Mexico any group gets the same form.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "Buenas tardes a todos.",
+              "en": "Good afternoon, everyone."
+            },
+            {
+              "role": "café waiter",
+              "place": "café",
+              "said": "¿Cómo están?",
+              "en": "How are you?"
+            },
+            {
+              "role": "neighbour",
+              "place": "plaza",
+              "said": "¿Cómo están?",
+              "en": "How are you?"
+            },
+            {
+              "role": "pharmacist",
+              "place": "pharmacy",
+              "said": "Que les vaya bien.",
+              "en": "Have a good day."
+            }
+          ],
+          "notice": "For two or more people, you say «están» and «les». Mexicans do this even with friends and children.",
+          "context": "",
+          "practice": [
+            {
+              "ask": {
+                "said": "Entras a una tienda llena de gente a las cuatro. ¿Cómo saludas?",
+                "en": "You walk into a shop full of people at four. How do you greet them?"
+              },
+              "answer": {
+                "said": "Buenas tardes a todos.",
+                "en": "Good afternoon, everyone."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo les preguntas a dos amigos cómo están?",
+                "en": "How do you ask two friends how they are?"
+              },
+              "answer": {
+                "said": "¿Cómo están?",
+                "en": "How are you?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo te despides de un grupo?",
+                "en": "How do you say goodbye to a group?"
+              },
+              "answer": {
+                "said": "Que les vaya bien.",
+                "en": "Have a good day."
+              }
+            }
+          ],
+          "mission": {
+            "place": "shop",
+            "goal": "Greet everyone in a shop with several people.",
+            "say": {
+              "said": "Buenas tardes a todos.",
+              "en": "Good afternoon, everyone."
+            },
+            "listen_for": [
+              "Buenas tardes",
+              "¿Cómo están?"
+            ]
+          }
+        },
+        {
+          "id": "a1-01-5",
+          "title": "A Mexican goodbye",
+          "how_to": "How to say goodbye with «Que le vaya bien».",
+          "intro": "You'll be able to leave a shop or say goodbye to a neighbour the way people do here. You'll also know how to answer when someone says it to you.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "Hasta luego. Que le vaya bien.",
+              "en": "Bye. Have a good day."
+            },
+            {
+              "role": "shopkeeper",
+              "place": "shop",
+              "said": "Igualmente. Hasta luego.",
+              "en": "Same to you. Bye."
+            },
+            {
+              "role": "neighbour",
+              "place": "plaza",
+              "said": "Que te vaya bien.",
+              "en": "Have a good day."
+            },
+            {
+              "role": "newcomer",
+              "place": "plaza",
+              "said": "Gracias, igualmente.",
+              "en": "Thanks, same to you."
+            }
+          ],
+          "notice": "Learn «Que le vaya bien» as one whole phrase and only change «le» to «te» for a friend or «les» for a group. When someone says it to you, answer «Gracias, igualmente».",
+          "context": "People say goodbye when they leave a small shop.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Cómo te despides de una señora en una tienda?",
+                "en": "How do you say goodbye to a lady in a shop?"
+              },
+              "answer": {
+                "said": "Hasta luego. Que le vaya bien.",
+                "en": "Bye. Have a good day."
+              }
+            },
+            {
+              "ask": {
+                "said": "Un amigo te dice «Que te vaya bien». ¿Qué respondes?",
+                "en": "A friend says «Que te vaya bien» to you. What do you answer?"
+              },
+              "answer": {
+                "said": "Gracias, igualmente.",
+                "en": "Thanks, same to you."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo te despides de un amigo?",
+                "en": "How do you say goodbye to a friend?"
+              },
+              "answer": {
+                "said": "Que te vaya bien.",
+                "en": "Have a good day."
+              }
+            }
+          ],
+          "mission": {
+            "place": "shop",
+            "goal": "Say goodbye to the shopkeeper as you leave.",
+            "say": {
+              "said": "Hasta luego. Que le vaya bien.",
+              "en": "Bye. Have a good day."
+            },
+            "listen_for": [
+              "Igualmente",
+              "Hasta luego"
+            ]
+          }
+        }
+      ]
+    },
+    "a1-02": {
+      "title": "When you don't understand",
+      "steps": [
+        {
+          "id": "a1-02-1",
+          "title": "Say you didn't understand",
+          "how_to": "How to tell someone you didn't understand and ask them to slow down.",
+          "intro": "You'll learn three short phrases to use the moment someone speaks too fast. You can say them at a taco stand, a shop or anywhere else.",
+          "examples": [
+            {
+              "role": "taquero",
+              "place": "taquería",
+              "said": "¿De qué quiere los tacos?",
+              "en": "What do you want in your tacos?"
+            },
+            {
+              "role": "newcomer",
+              "place": "taquería",
+              "said": "Perdón, no entendí.",
+              "en": "Sorry, I didn't understand."
+            },
+            {
+              "role": "newcomer",
+              "place": "taquería",
+              "said": "Más despacio, por favor.",
+              "en": "More slowly, please."
+            },
+            {
+              "role": "newcomer",
+              "place": "market stall",
+              "said": "Otra vez, por favor.",
+              "en": "Again, please."
+            }
+          ],
+          "notice": "Each phrase works exactly as it is, from your very first day. Say it in Spanish just as you heard it here.",
+          "context": "Newcomers are expected to ask, and most people slow down and rephrase gladly.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Qué dices si no entiendes?",
+                "en": "What do you say if you don't understand?"
+              },
+              "answer": {
+                "said": "Perdón, no entendí.",
+                "en": "Sorry, I didn't understand."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Qué dices si alguien habla muy rápido?",
+                "en": "What do you say if someone speaks very fast?"
+              },
+              "answer": {
+                "said": "Más despacio, por favor.",
+                "en": "More slowly, please."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo pides que lo digan otra vez?",
+                "en": "How do you ask them to say it again?"
+              },
+              "answer": {
+                "said": "Otra vez, por favor.",
+                "en": "Again, please."
+              }
+            }
+          ],
+          "mission": {
+            "place": "taquería",
+            "goal": "Tell the taquero you didn't understand and ask for slower.",
+            "say": {
+              "said": "Perdón, no entendí. Más despacio, por favor.",
+              "en": "Sorry, I didn't understand. More slowly, please."
+            },
+            "listen_for": [
+              "no entendí",
+              "más despacio"
+            ]
+          }
+        },
+        {
+          "id": "a1-02-2",
+          "title": "Saying pardon the Mexican way",
+          "how_to": "How to use ¿Mande? to ask for a repeat and to answer when someone calls you.",
+          "intro": "You'll learn one polite word that does two jobs. You can say it when you missed something, or when someone calls to you.",
+          "examples": [
+            {
+              "role": "market vendor",
+              "place": "market stall",
+              "said": "¡Joven!",
+              "en": "Excuse me!"
+            },
+            {
+              "role": "newcomer",
+              "place": "market stall",
+              "said": "¿Mande?",
+              "en": "Yes?"
+            },
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "¿Mande? No le entendí.",
+              "en": "Sorry? I didn't catch that."
+            },
+            {
+              "role": "shopkeeper",
+              "place": "shop",
+              "said": "Señora…",
+              "en": "Madam…"
+            }
+          ],
+          "notice": "¿Mande? asks for a repeat and also answers a call. With older people, ¿mande? or ¿perdón? sounds polite.",
+          "context": "Asking ¿mande? is normal for a newcomer and people take it well.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Cómo pides que repitan algo, con una palabra?",
+                "en": "How do you ask for a repeat with one word?"
+              },
+              "answer": {
+                "said": "¿Mande?",
+                "en": "Pardon?"
+              }
+            },
+            {
+              "ask": {
+                "said": "Si un vendedor te llama, ¿qué contestas?",
+                "en": "If a vendor calls you, what do you answer?"
+              },
+              "answer": {
+                "said": "¿Mande?",
+                "en": "Yes?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Qué le dices a una señora si no la entendiste?",
+                "en": "What do you say to a woman if you didn't understand her?"
+              },
+              "answer": {
+                "said": "¿Mande? No le entendí.",
+                "en": "Sorry? I didn't catch that."
+              }
+            }
+          ],
+          "mission": {
+            "place": "market stall",
+            "goal": "Ask a vendor to repeat what they said.",
+            "say": {
+              "said": "¿Mande? No le entendí.",
+              "en": "Sorry? I didn't catch that."
+            },
+            "listen_for": [
+              "¿Mande?",
+              "no le entendí"
+            ]
+          }
+        },
+        {
+          "id": "a1-02-3",
+          "title": "Asking someone to repeat it",
+          "how_to": "How to ask someone to repeat or write something using me lo.",
+          "intro": "You'll learn a polite request that works for repeating, writing and saying again. You can use it whenever you miss a word.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "¿Me lo puede repetir, por favor?",
+              "en": "Could you say that again, please?"
+            },
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "¿Me lo puede escribir?",
+              "en": "Could you write it for me?"
+            },
+            {
+              "role": "newcomer",
+              "place": "market stall",
+              "said": "¿Me lo dice otra vez?",
+              "en": "Could you tell me again?"
+            },
+            {
+              "role": "newcomer",
+              "place": "plaza",
+              "said": "¿Me lo puedes repetir?",
+              "en": "Can you say it again? (to a neighbour)"
+            }
+          ],
+          "notice": "Me lo always stays together, right before the verb. With a neighbour or a friend, use puedes instead of puede.",
+          "context": "¿Me lo repite? is a normal request, and people take it well.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Qué dices para pedir que repitan algo?",
+                "en": "What do you say to ask someone to repeat something?"
+              },
+              "answer": {
+                "said": "¿Me lo puede repetir, por favor?",
+                "en": "Could you say that again, please?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo pides que lo escriban?",
+                "en": "How do you ask them to write it down?"
+              },
+              "answer": {
+                "said": "¿Me lo puede escribir?",
+                "en": "Could you write it for me?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo le pides a un vecino que lo repita?",
+                "en": "How do you ask a neighbour to repeat it?"
+              },
+              "answer": {
+                "said": "¿Me lo puedes repetir?",
+                "en": "Can you say it again?"
+              }
+            }
+          ],
+          "mission": {
+            "place": "shop",
+            "goal": "Ask the shopkeeper to say it again.",
+            "say": {
+              "said": "¿Me lo puede repetir, por favor?",
+              "en": "Could you say that again, please?"
+            },
+            "listen_for": [
+              "me lo puede repetir",
+              "por favor"
+            ]
+          }
+        },
+        {
+          "id": "a1-02-4",
+          "title": "Polite requests with puede",
+          "how_to": "How to ask someone politely to do something with ¿Me puede…?",
+          "intro": "You'll learn a simple pattern for polite requests. You can use it to ask for help or for a slower pace.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "¿Me puede repetir?",
+              "en": "Could you repeat?"
+            },
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "¿Puede hablar más despacio?",
+              "en": "Could you speak more slowly?"
+            },
+            {
+              "role": "newcomer",
+              "place": "bus terminal",
+              "said": "¿Me puede ayudar?",
+              "en": "Could you help me?"
+            },
+            {
+              "role": "newcomer",
+              "place": "plaza",
+              "said": "¿Me puedes ayudar?",
+              "en": "Can you help me? (to a neighbour)"
+            }
+          ],
+          "notice": "Use puede for someone you address as usted and puedes for a neighbour. The next verb always ends in -r, as in repetir, hablar and ayudar. So you say ¿Puede repetir, por favor?",
+          "context": "",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Cómo le pides ayuda a un vecino?",
+                "en": "How do you ask a neighbour for help?"
+              },
+              "answer": {
+                "said": "¿Me puedes ayudar?",
+                "en": "Can you help me?"
+              }
+            },
+            {
+              "ask": {
+                "said": "Si alguien habla rápido, ¿qué le preguntas, con usted?",
+                "en": "If someone speaks fast, what do you ask them, politely?"
+              },
+              "answer": {
+                "said": "¿Puede hablar más despacio?",
+                "en": "Could you speak more slowly?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo le pides a la señora de la tienda que repita?",
+                "en": "How do you ask the shop lady to repeat?"
+              },
+              "answer": {
+                "said": "¿Puede repetir, por favor?",
+                "en": "Could you repeat, please?"
+              }
+            }
+          ],
+          "mission": {
+            "place": "bus terminal",
+            "goal": "Ask the ticket clerk to speak more slowly.",
+            "say": {
+              "said": "¿Puede hablar más despacio?",
+              "en": "Could you speak more slowly?"
+            },
+            "listen_for": [
+              "puede hablar",
+              "más despacio"
+            ]
+          }
+        },
+        {
+          "id": "a1-02-5",
+          "title": "Spelling words out loud",
+          "how_to": "How to spell words aloud with Spanish letter names.",
+          "intro": "You'll learn how to spell your name and ask how a word is spelled. You'll use it for forms, orders and new words.",
+          "examples": [
+            {
+              "role": "pharmacist",
+              "place": "pharmacy",
+              "said": "¿Me deletrea su apellido, por favor?",
+              "en": "Could you spell your surname, please?"
+            },
+            {
+              "role": "newcomer",
+              "place": "pharmacy",
+              "said": "Doble u, e, be grande, be grande.",
+              "en": "W, E, B, B."
+            },
+            {
+              "role": "newcomer",
+              "place": "plaza",
+              "said": "¿Cómo se escribe? ¿Con be grande?",
+              "en": "How do you spell it? With a B?"
+            },
+            {
+              "role": "neighbour",
+              "place": "plaza",
+              "said": "Sí: be grande, a, ene, cu, u, e, te, a.",
+              "en": "Yes: B, A, N, Q, U, E, T, A."
+            }
+          ],
+          "notice": "Spanish letters have their own names, and the vowels sound like eh and ee. Say doble u for W, be grande for B and ve chica for V. 'Webb' is doble u, e, be grande, be grande.",
+          "context": "B and V sound the same, so Mexicans say be grande and ve chica to tell them apart.",
+          "practice": [
+            {
+              "ask": {
+                "said": "Cuando deletreas, ¿cómo dices la V?",
+                "en": "When you spell, how do you say V?"
+              },
+              "answer": {
+                "said": "Ve chica.",
+                "en": "Little V."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo deletreas «Webb»?",
+                "en": "How do you spell 'Webb'?"
+              },
+              "answer": {
+                "said": "Doble u, e, be grande, be grande.",
+                "en": "W, E, B, B."
+              }
+            },
+            {
+              "ask": {
+                "said": "Para saber si lleva B o V, ¿qué preguntas?",
+                "en": "To find out if it has a B or a V, what do you ask?"
+              },
+              "answer": {
+                "said": "¿Cómo se escribe? ¿Con be grande o con ve chica?",
+                "en": "How do you spell it? With a B or a V?"
+              }
+            }
+          ],
+          "mission": {
+            "place": "plaza",
+            "goal": "Ask a neighbour how a word is spelled.",
+            "say": {
+              "said": "¿Cómo se escribe? ¿Con be grande o con ve chica?",
+              "en": "How do you spell it? With a B or a V?"
+            },
+            "listen_for": [
+              "be grande",
+              "ve chica"
+            ]
+          }
+        }
+      ]
+    },
+    "a1-03": {
+      "title": "Introduce yourself as a newcomer",
+      "steps": [
+        {
+          "id": "a1-03-1",
+          "title": "Say and ask names",
+          "how_to": "How to say your name and ask someone else's.",
+          "intro": "Now you'll be able to give your name and ask for theirs when you meet a neighbour or someone new. You'll use it the moment you're introduced.",
+          "examples": [
+            {
+              "role": "neighbour",
+              "place": "plaza",
+              "said": "¿Cómo se llama usted?",
+              "en": "What's your name? (usted)"
+            },
+            {
+              "role": "newcomer",
+              "place": "plaza",
+              "said": "Me llamo Sam. ¿Y usted?",
+              "en": "My name's Sam. And you?"
+            },
+            {
+              "role": "neighbour",
+              "place": "plaza",
+              "said": "Me llamo Rosa. Mucho gusto.",
+              "en": "My name's Rosa. Nice to meet you."
+            },
+            {
+              "role": "neighbour",
+              "place": "café",
+              "said": "Hola, soy Diego. ¿Cómo te llamas?",
+              "en": "Hi, I'm Diego. What's your name? (tú)"
+            }
+          ],
+          "notice": "Names go with me llamo, with the me always there. Ask with ¿cómo se llama? for usted and ¿cómo te llamas? for tú. Answer mucho gusto with igualmente.",
+          "context": "",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Cómo te llamas?",
+                "en": "What's your name?"
+              },
+              "answer": {
+                "said": "Me llamo …",
+                "en": "My name is …"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo le preguntas el nombre a una señora mayor?",
+                "en": "How do you ask an older lady her name?"
+              },
+              "answer": {
+                "said": "¿Cómo se llama usted?",
+                "en": "What's your name? (usted)"
+              }
+            },
+            {
+              "ask": {
+                "said": "Te dicen «mucho gusto». ¿Qué contestas?",
+                "en": "They say 'nice to meet you'. What do you answer?"
+              },
+              "answer": {
+                "said": "Igualmente.",
+                "en": "Likewise."
+              }
+            }
+          ],
+          "mission": {
+            "place": "plaza",
+            "goal": "Tell a neighbour your name and ask theirs.",
+            "say": {
+              "said": "Me llamo …. ¿Y usted?",
+              "en": "My name is …. And you?"
+            },
+            "listen_for": [
+              "Me llamo",
+              "Mucho gusto",
+              "Igualmente"
+            ]
+          }
+        },
+        {
+          "id": "a1-03-2",
+          "title": "Say where you're from",
+          "how_to": "How to say which place you come from.",
+          "intro": "You'll be able to say where you're from and ask others the same. People will ask you this early on, so it's worth having ready.",
+          "examples": [
+            {
+              "role": "neighbour",
+              "place": "plaza",
+              "said": "¿De dónde es usted?",
+              "en": "Where are you from? (usted)"
+            },
+            {
+              "role": "newcomer",
+              "place": "plaza",
+              "said": "Soy de Toronto.",
+              "en": "I'm from Toronto."
+            },
+            {
+              "role": "neighbour",
+              "place": "café",
+              "said": "¿De dónde eres?",
+              "en": "Where are you from? (tú)"
+            },
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "Soy de Chicago, pero ahora vivo aquí.",
+              "en": "I'm from Chicago, but I live here now."
+            }
+          ],
+          "notice": "Soy de plus a place tells where you come from, and the question starts with de dónde. Use a city or a country: Soy de Canadá.",
+          "context": "",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿De dónde eres?",
+                "en": "Where are you from?"
+              },
+              "answer": {
+                "said": "Soy de …",
+                "en": "I'm from …"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo le preguntas a una señora de dónde es?",
+                "en": "How do you ask a lady where she's from?"
+              },
+              "answer": {
+                "said": "¿De dónde es usted?",
+                "en": "Where are you from? (usted)"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Eres de aquí?",
+                "en": "Are you from here?"
+              },
+              "answer": {
+                "said": "No, soy de …, pero ahora vivo aquí.",
+                "en": "No, I'm from …, but I live here now."
+              }
+            }
+          ],
+          "mission": {
+            "place": "plaza",
+            "goal": "Tell a neighbour where you're from and that you live here now.",
+            "say": {
+              "said": "Soy de …, pero ahora vivo aquí.",
+              "en": "I'm from …, but I live here now."
+            },
+            "listen_for": [
+              "Soy de",
+              "ahora vivo aquí"
+            ]
+          }
+        },
+        {
+          "id": "a1-03-3",
+          "title": "Say where you live",
+          "how_to": "How to say and ask where someone lives.",
+          "intro": "You'll be able to say which neighbourhood you live in and ask others where they live. It comes up with neighbours and at any counter where they take your details.",
+          "examples": [
+            {
+              "role": "neighbour",
+              "place": "plaza",
+              "said": "¿Dónde vive usted?",
+              "en": "Where do you live? (usted)"
+            },
+            {
+              "role": "newcomer",
+              "place": "plaza",
+              "said": "Vivo en la colonia Centro.",
+              "en": "I live in the Centro neighbourhood."
+            },
+            {
+              "role": "neighbour",
+              "place": "café",
+              "said": "¿Dónde vives?",
+              "en": "Where do you live? (tú)"
+            },
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "Vivo aquí, cerca del mercado.",
+              "en": "I live here, near the market."
+            }
+          ],
+          "notice": "Vivo is for I, vives for tú and vive for usted. Add en and the place: vivo en esta colonia.",
+          "context": "Every address includes the colonia, which matters more than the street name for finding a place.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Dónde vives?",
+                "en": "Where do you live?"
+              },
+              "answer": {
+                "said": "Vivo en la colonia …",
+                "en": "I live in the … neighbourhood."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo le preguntas a una vecina mayor dónde vive?",
+                "en": "How do you ask an older neighbour where she lives?"
+              },
+              "answer": {
+                "said": "¿Dónde vive usted?",
+                "en": "Where do you live? (usted)"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Vives aquí?",
+                "en": "Do you live here?"
+              },
+              "answer": {
+                "said": "Sí, vivo aquí, en la colonia …",
+                "en": "Yes, I live here, in the … neighbourhood."
+              }
+            }
+          ],
+          "mission": {
+            "place": "plaza",
+            "goal": "Tell someone which neighbourhood you live in.",
+            "say": {
+              "said": "Vivo en la colonia …",
+              "en": "I live in the … neighbourhood."
+            },
+            "listen_for": [
+              "Vivo en la colonia",
+              "Vivo aquí"
+            ]
+          }
+        },
+        {
+          "id": "a1-03-4",
+          "title": "Say how long you've been here",
+          "how_to": "How to say how much time you've spent in Mexico.",
+          "intro": "You'll be able to say how long you've been here and understand when someone asks. Neighbours and new friends ask this early on.",
+          "examples": [
+            {
+              "role": "neighbour",
+              "place": "plaza",
+              "said": "¿Cuánto tiempo lleva aquí?",
+              "en": "How long have you been here? (usted)"
+            },
+            {
+              "role": "newcomer",
+              "place": "plaza",
+              "said": "Tengo dos semanas aquí.",
+              "en": "I've been here two weeks."
+            },
+            {
+              "role": "neighbour",
+              "place": "café",
+              "said": "¿Cuánto tiempo llevas en México?",
+              "en": "How long have you been in Mexico? (tú)"
+            },
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "Llevo un mes en México.",
+              "en": "I've been in Mexico a month."
+            }
+          ],
+          "notice": "Say llevo or tengo plus the time, then aquí or en México. Llevo dos semanas aquí works just as well as tengo dos semanas aquí.",
+          "context": "People here often ask early on how long you've been here.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Llevas mucho tiempo aquí?",
+                "en": "Have you been here a long time?"
+              },
+              "answer": {
+                "said": "No, llevo … semanas aquí.",
+                "en": "No, I've been here … weeks."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cuánto tiempo llevas en México?",
+                "en": "How long have you been in Mexico?"
+              },
+              "answer": {
+                "said": "Tengo … aquí.",
+                "en": "I've been here …"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo le preguntas a una vecina desde cuándo está aquí?",
+                "en": "How do you ask a neighbour since when she's been here?"
+              },
+              "answer": {
+                "said": "¿Cuánto tiempo lleva aquí?",
+                "en": "How long have you been here? (usted)"
+              }
+            }
+          ],
+          "mission": {
+            "place": "plaza",
+            "goal": "Tell a neighbour how long you've been here.",
+            "say": {
+              "said": "Tengo … semanas aquí.",
+              "en": "I've been here … weeks."
+            },
+            "listen_for": [
+              "Tengo",
+              "Llevo"
+            ]
+          }
+        },
+        {
+          "id": "a1-03-5",
+          "title": "Ask the key questions",
+          "how_to": "How to ask someone's name, origin, home and time here.",
+          "intro": "You'll be able to ask the main getting-to-know-you questions yourself, with tú, to someone your age. Use them to keep a chat going after you've answered.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "¿Cómo te llamas?",
+              "en": "What's your name?"
+            },
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "¿De dónde eres?",
+              "en": "Where are you from?"
+            },
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "¿Dónde vives?",
+              "en": "Where do you live?"
+            },
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "¿Cuánto tiempo llevas aquí?",
+              "en": "How long have you been here?"
+            }
+          ],
+          "notice": "The question word comes first and has a written accent: cómo, dónde, cuánto. For origin the de goes in front: ¿de dónde eres? Ask a name with cómo: ¿cómo te llamas?",
+          "context": "",
+          "practice": [
+            {
+              "ask": {
+                "said": "Quieres saber el nombre de un chico en una fiesta. ¿Qué le preguntas?",
+                "en": "You want to know a guy's name at a party. What do you ask him?"
+              },
+              "answer": {
+                "said": "¿Cómo te llamas?",
+                "en": "What's your name?"
+              }
+            },
+            {
+              "ask": {
+                "said": "Quieres saber la ciudad de origen de un amigo. ¿Qué le preguntas?",
+                "en": "You want to know where a friend comes from. What do you ask?"
+              },
+              "answer": {
+                "said": "¿De dónde eres?",
+                "en": "Where are you from?"
+              }
+            },
+            {
+              "ask": {
+                "said": "Quieres saber desde cuándo está aquí un amigo. ¿Qué le preguntas?",
+                "en": "You want to know since when a friend has been here. What do you ask?"
+              },
+              "answer": {
+                "said": "¿Cuánto tiempo llevas aquí?",
+                "en": "How long have you been here?"
+              }
+            }
+          ],
+          "mission": {
+            "place": "café",
+            "goal": "Ask someone their name and where they're from.",
+            "say": {
+              "said": "¿Cómo te llamas? ¿De dónde eres?",
+              "en": "What's your name? Where are you from?"
+            },
+            "listen_for": [
+              "Me llamo",
+              "Soy de"
+            ]
+          }
+        }
+      ]
+    },
+    "a1-04": {
+      "title": "Everyday courtesy",
+      "steps": [
+        {
+          "id": "a1-04-1",
+          "title": "Excuse me, sorry, thanks",
+          "how_to": "How to use the right polite phrase for getting past, getting attention and saying sorry.",
+          "intro": "English uses one phrase, excuse me, where Spanish uses three. You'll be able to move through a crowded bus, call someone over, or say sorry after a bump.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "bus terminal",
+              "said": "Con permiso… con permiso.",
+              "en": "Excuse me… excuse me."
+            },
+            {
+              "role": "passenger",
+              "place": "bus terminal",
+              "said": "Pásele.",
+              "en": "Go ahead."
+            },
+            {
+              "role": "newcomer",
+              "place": "bus terminal",
+              "said": "Ay, perdón.",
+              "en": "Oh, sorry."
+            },
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "Disculpe, ¿me ayuda con algo?",
+              "en": "Excuse me, could you help me with something?"
+            }
+          ],
+          "notice": "Con permiso is for getting past or leaving. Disculpe gets someone's attention. Perdón is for after a bump or a mistake.",
+          "context": "Mexican courtesy is constant and small, and people say con permiso whenever they pass someone or leave a table.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Qué dices para pasar entre la gente?",
+                "en": "What do you say to get past people?"
+              },
+              "answer": {
+                "said": "Con permiso.",
+                "en": "Excuse me."
+              }
+            },
+            {
+              "ask": {
+                "said": "Chocas con alguien sin querer. ¿Qué dices?",
+                "en": "You bump into someone by accident. What do you say?"
+              },
+              "answer": {
+                "said": "Ay, perdón.",
+                "en": "Oh, sorry."
+              }
+            },
+            {
+              "ask": {
+                "said": "Necesitas ayuda en una tienda. ¿Qué dices?",
+                "en": "You need help in a shop. What do you say?"
+              },
+              "answer": {
+                "said": "Disculpe, ¿me ayuda con algo?",
+                "en": "Excuse me, could you help me with something?"
+              }
+            }
+          ],
+          "mission": {
+            "place": "bus terminal",
+            "goal": "Ask to get past people.",
+            "say": {
+              "said": "Con permiso.",
+              "en": "Excuse me."
+            },
+            "listen_for": [
+              "Pásele",
+              "Propio",
+              "No pasa nada"
+            ]
+          }
+        },
+        {
+          "id": "a1-04-2",
+          "title": "Disculpe or disculpa",
+          "how_to": "How to get someone's attention politely with disculpe, disculpa or disculpen.",
+          "intro": "You'll be able to call someone over politely, whether it's a stranger, a friend or a whole group. You'll use it in shops, in the plaza and at market stalls.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "Disculpe, señor.",
+              "en": "Excuse me, sir."
+            },
+            {
+              "role": "newcomer",
+              "place": "market stall",
+              "said": "Disculpe, ¿me ayuda con algo?",
+              "en": "Excuse me, could you help me with something?"
+            },
+            {
+              "role": "newcomer",
+              "place": "plaza",
+              "said": "Disculpa, ¿me ayudas?",
+              "en": "Excuse me, can you help me?"
+            },
+            {
+              "role": "newcomer",
+              "place": "plaza",
+              "said": "Disculpen.",
+              "en": "Excuse me. (to a group)"
+            }
+          ],
+          "notice": "With a shopkeeper or a stranger, say disculpe and ¿me ayuda? With friends and people your age who use tú, say disculpa and ¿me ayudas? To a group, say disculpen.",
+          "context": "",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Qué dices para llamar a un señor en la calle?",
+                "en": "What do you say to call over a man in the street?"
+              },
+              "answer": {
+                "said": "Disculpe, señor.",
+                "en": "Excuse me, sir."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo pides ayuda a un amigo?",
+                "en": "How do you ask a friend for help?"
+              },
+              "answer": {
+                "said": "Disculpa, ¿me ayudas?",
+                "en": "Excuse me, can you help me?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Qué dices para llamar la atención de un grupo?",
+                "en": "What do you say to get a group's attention?"
+              },
+              "answer": {
+                "said": "Disculpen.",
+                "en": "Excuse me."
+              }
+            }
+          ],
+          "mission": {
+            "place": "market stall",
+            "goal": "Get a vendor's attention and ask for help.",
+            "say": {
+              "said": "Disculpe, ¿me ayuda con algo?",
+              "en": "Excuse me, could you help me with something?"
+            },
+            "listen_for": [
+              "A sus órdenes",
+              "¿Qué se le ofrece?"
+            ]
+          }
+        },
+        {
+          "id": "a1-04-3",
+          "title": "Softening with a little -ito",
+          "how_to": "How to make a request sound softer with momentito, poquito and ahorita.",
+          "intro": "You'll be able to ask for a moment or say a little bit in a friendly, polite way. You'll use it at the pharmacy, at the taquería and when someone is waiting for you.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "pharmacy",
+              "said": "Un momentito, por favor.",
+              "en": "Just a moment, please."
+            },
+            {
+              "role": "market vendor",
+              "place": "market stall",
+              "said": "Un momentito, joven.",
+              "en": "Just a moment, young man."
+            },
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "Un poquito.",
+              "en": "A little bit."
+            },
+            {
+              "role": "taquero",
+              "place": "taquería",
+              "said": "Ahorita.",
+              "en": "Right now. / In a little while."
+            }
+          ],
+          "notice": "Adding -ito makes a request or an amount sound smaller and politer. It isn't literal: un momentito can be several minutes, and ahorita can mean now, soon or later.",
+          "context": "",
+          "practice": [
+            {
+              "ask": {
+                "said": "Necesitas tiempo para buscar tu dinero. ¿Qué dices?",
+                "en": "You need time to find your money. What do you say?"
+              },
+              "answer": {
+                "said": "Un momentito, por favor.",
+                "en": "Just a moment, please."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Hablas español?",
+                "en": "Do you speak Spanish?"
+              },
+              "answer": {
+                "said": "Un poquito.",
+                "en": "A little bit."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cuándo pagas?",
+                "en": "When are you paying?"
+              },
+              "answer": {
+                "said": "Ahorita.",
+                "en": "In a little while."
+              }
+            }
+          ],
+          "mission": {
+            "place": "pharmacy",
+            "goal": "Ask the pharmacist to wait a moment.",
+            "say": {
+              "said": "Un momentito, por favor.",
+              "en": "Just a moment, please."
+            },
+            "listen_for": [
+              "Un momentito",
+              "Ahorita"
+            ]
+          }
+        },
+        {
+          "id": "a1-04-4",
+          "title": "Calling people by title",
+          "how_to": "How to address people with joven, señora, don and doña.",
+          "intro": "You'll be able to speak to people the way Mexicans do, with a title instead of a name. You'll use it with strangers, shopkeepers and older neighbours.",
+          "examples": [
+            {
+              "role": "market vendor",
+              "place": "market stall",
+              "said": "¡Pásele, güera!",
+              "en": "Come in, blondie!"
+            },
+            {
+              "role": "newcomer",
+              "place": "plaza",
+              "said": "Joven, ¿me ayuda?",
+              "en": "Excuse me, young man, could you help me?"
+            },
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "Disculpe, señora.",
+              "en": "Excuse me, madam."
+            },
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "Buenas tardes, doña Lupita.",
+              "en": "Good afternoon, doña Lupita."
+            }
+          ],
+          "notice": "Use joven, señor or señora for people you don't know. Use don or doña with the first name for older people you know, like doña Lupita.",
+          "context": "Market staff often call you joven, señorita, güero or güera as they call you over, and it's friendly sales talk.",
+          "practice": [
+            {
+              "ask": {
+                "said": "Necesitas ayuda de un chico en la calle. ¿Qué dices?",
+                "en": "You need help from a young guy in the street. What do you say?"
+              },
+              "answer": {
+                "said": "Joven, ¿me ayuda?",
+                "en": "Excuse me, young man, could you help me?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo llamas a una mujer mayor que no conoces?",
+                "en": "How do you address an older woman you don't know?"
+              },
+              "answer": {
+                "said": "Disculpe, señora.",
+                "en": "Excuse me, madam."
+              }
+            },
+            {
+              "ask": {
+                "said": "Tu vecina mayor se llama Lupita. ¿Cómo le das las gracias?",
+                "en": "Your older neighbour is called Lupita. How do you thank her?"
+              },
+              "answer": {
+                "said": "Gracias, doña Lupita.",
+                "en": "Thank you, doña Lupita."
+              }
+            }
+          ],
+          "mission": {
+            "place": "shop",
+            "goal": "Greet the shopkeeper with a polite title.",
+            "say": {
+              "said": "Buenas tardes, señora.",
+              "en": "Good afternoon, madam."
+            },
+            "listen_for": [
+              "Pásele",
+              "A sus órdenes"
+            ]
+          }
+        },
+        {
+          "id": "a1-04-5",
+          "title": "What shop staff ask you",
+          "how_to": "How to understand and answer ¿Qué buscaba? in a shop.",
+          "intro": "You'll be able to answer when shop staff call you in and ask what you need. You'll hear it at shops and market stalls.",
+          "examples": [
+            {
+              "role": "shopkeeper",
+              "place": "shop",
+              "said": "¡Pásele, joven! ¿Qué buscaba?",
+              "en": "Come in! What were you looking for?"
+            },
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "Unas pilas.",
+              "en": "Some batteries."
+            },
+            {
+              "role": "shopkeeper",
+              "place": "shop",
+              "said": "¿Qué necesitaba?",
+              "en": "What did you need?"
+            },
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "Nada más estoy viendo, gracias.",
+              "en": "I'm just looking, thanks."
+            }
+          ],
+          "notice": "Shop staff ask in the past to sound softer. You just answer in the present: say what you want, or say you're just looking.",
+          "context": "Shop and market staff call out ¡pásele! to bring you in.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Qué buscas en la tienda?",
+                "en": "What are you looking for in the shop?"
+              },
+              "answer": {
+                "said": "Unas pilas.",
+                "en": "Some batteries."
+              }
+            },
+            {
+              "ask": {
+                "said": "Entras a una tienda y solo quieres mirar. ¿Qué dices?",
+                "en": "You go into a shop and only want to look. What do you say?"
+              },
+              "answer": {
+                "said": "Nada más estoy viendo, gracias.",
+                "en": "I'm just looking, thanks."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Qué necesitas hoy?",
+                "en": "What do you need today?"
+              },
+              "answer": {
+                "said": "Unas pilas, por favor.",
+                "en": "Some batteries, please."
+              }
+            }
+          ],
+          "mission": {
+            "place": "shop",
+            "goal": "Tell the shopkeeper you're just looking.",
+            "say": {
+              "said": "Nada más estoy viendo, gracias.",
+              "en": "I'm just looking, thanks."
+            },
+            "listen_for": [
+              "¿Qué buscaba?",
+              "Pásele",
+              "A sus órdenes"
+            ]
+          }
+        }
+      ]
+    },
+    "a1-05": {
+      "title": "Order food and drink",
+      "steps": [
+        {
+          "id": "a1-05-1",
+          "title": "Order food politely",
+          "how_to": "How to ask for food and drinks politely with me da.",
+          "intro": "In this step you'll learn the phrase you'll use at every counter, taco stand and café. It lets you ask for what you want in a polite way.",
+          "examples": [
+            {
+              "role": "taquero",
+              "place": "taquería",
+              "said": "¡Buenas! ¿Qué le damos?",
+              "en": "Hi! What can I get you?"
+            },
+            {
+              "role": "newcomer",
+              "place": "taquería",
+              "said": "Me da tres tacos de pastor, por favor.",
+              "en": "Can I have three al pastor tacos, please?"
+            },
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "Me da un café, por favor.",
+              "en": "Can I have a coffee, please?"
+            },
+            {
+              "role": "newcomer",
+              "place": "market stall",
+              "said": "Me da una torta para llevar.",
+              "en": "Can I have a torta to go?"
+            }
+          ],
+          "notice": "Every order starts with me da, then what you want, and por favor goes with it. Me da with por favor is the polite way to order from a stranger.",
+          "context": "Orders usually start with a greeting such as Buenas tardes.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Qué quieres comer en la taquería?",
+                "en": "What do you want to eat at the taquería?"
+              },
+              "answer": {
+                "said": "Me da tres tacos de pastor, por favor.",
+                "en": "Can I have three al pastor tacos, please?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Qué pides en un café por la mañana?",
+                "en": "What do you order at a café in the morning?"
+              },
+              "answer": {
+                "said": "Me da un café, por favor.",
+                "en": "Can I have a coffee, please?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo pides una torta si no te quedas a comer?",
+                "en": "How do you ask for a torta if you're not staying to eat?"
+              },
+              "answer": {
+                "said": "Me da una torta para llevar, por favor.",
+                "en": "Can I have a torta to go, please?"
+              }
+            }
+          ],
+          "mission": {
+            "place": "taquería",
+            "goal": "Order three tacos at the stand.",
+            "say": {
+              "said": "Buenas tardes. Me da tres tacos de pastor, por favor.",
+              "en": "Good afternoon. Can I have three al pastor tacos, please?"
+            },
+            "listen_for": [
+              "Me da",
+              "por favor"
+            ]
+          }
+        },
+        {
+          "id": "a1-05-2",
+          "title": "Counting what you order",
+          "how_to": "How to say one, a or several of what you order.",
+          "intro": "Here you'll learn to order one thing or more than one. You'll say it every time you ask for tacos, a torta or a drink.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "taquería",
+              "said": "Me da dos tacos de bistec, por favor.",
+              "en": "Can I have two steak tacos, please?"
+            },
+            {
+              "role": "newcomer",
+              "place": "market stall",
+              "said": "Me da una torta de milanesa.",
+              "en": "Can I have a milanesa torta?"
+            },
+            {
+              "role": "newcomer",
+              "place": "fonda",
+              "said": "Un agua de horchata y un café de olla, por favor.",
+              "en": "An horchata and a café de olla, please."
+            },
+            {
+              "role": "newcomer",
+              "place": "taquería",
+              "said": "Me da dos limones, por favor.",
+              "en": "Can I have two limes, please?"
+            }
+          ],
+          "notice": "Use un for one and una for a feminine word like torta. To make more than one, add -s after a vowel, as in tacos, and -es after a consonant, as in limones. For agua the phrase is un agua de horchata.",
+          "context": "Limón in Mexico is the small green lime.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Cuántos tacos quieres?",
+                "en": "How many tacos do you want?"
+              },
+              "answer": {
+                "said": "Me da dos tacos, por favor.",
+                "en": "Can I have two tacos, please?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cuántas tortas quieres?",
+                "en": "How many tortas do you want?"
+              },
+              "answer": {
+                "said": "Me da una torta, por favor.",
+                "en": "Can I have one torta, please?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Qué bebida pides?",
+                "en": "What drink do you order?"
+              },
+              "answer": {
+                "said": "Un agua de horchata, por favor.",
+                "en": "An horchata, please."
+              }
+            }
+          ],
+          "mission": {
+            "place": "market stall",
+            "goal": "Order a torta and a water.",
+            "say": {
+              "said": "Me da una torta y un agua de jamaica, por favor.",
+              "en": "Can I have a torta and a jamaica water, please?"
+            },
+            "listen_for": [
+              "una torta",
+              "un agua de"
+            ]
+          }
+        },
+        {
+          "id": "a1-05-3",
+          "title": "Name the filling",
+          "how_to": "How to say what a taco, torta or drink is filled with or made of.",
+          "intro": "You'll learn how to name the filling or flavour of what you order. You'll use it at the taco stand, the torta stand and the agua fresca counter.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "taquería",
+              "said": "Me da tres tacos de pastor, por favor.",
+              "en": "Can I have three al pastor tacos, please?"
+            },
+            {
+              "role": "newcomer",
+              "place": "taquería",
+              "said": "Me da dos tacos de bistec.",
+              "en": "Can I have two steak tacos?"
+            },
+            {
+              "role": "market vendor",
+              "place": "market stall",
+              "said": "¿Una torta de milanesa?",
+              "en": "A milanesa torta?"
+            },
+            {
+              "role": "newcomer",
+              "place": "market stall",
+              "said": "Un agua de jamaica, por favor.",
+              "en": "A jamaica water, please."
+            }
+          ],
+          "notice": "The food comes first, then de, then the filling or flavour: tacos de pastor, torta de jamón, agua de jamaica. Spanish puts the filling after the food, the other way round from English.",
+          "context": "People also say tacos al pastor.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Qué tacos quieres?",
+                "en": "Which tacos do you want?"
+              },
+              "answer": {
+                "said": "Tacos de pastor, por favor.",
+                "en": "Al pastor tacos, please."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Qué torta pides?",
+                "en": "Which torta do you order?"
+              },
+              "answer": {
+                "said": "Una torta de jamón, por favor.",
+                "en": "A ham torta, please."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Qué agua fresca pides?",
+                "en": "Which agua fresca do you order?"
+              },
+              "answer": {
+                "said": "Un agua de jamaica, por favor.",
+                "en": "A jamaica water, please."
+              }
+            }
+          ],
+          "mission": {
+            "place": "taquería",
+            "goal": "Order tacos with a filling you choose.",
+            "say": {
+              "said": "Me da dos tacos de bistec, por favor.",
+              "en": "Can I have two steak tacos, please?"
+            },
+            "listen_for": [
+              "tacos de",
+              "de bistec"
+            ]
+          }
+        },
+        {
+          "id": "a1-05-4",
+          "title": "With or without",
+          "how_to": "How to say with or without something when you order.",
+          "intro": "This step gives you two small words that let you say how you want your food or drink. You'll use them when the taquero or the barista asks what goes in it.",
+          "examples": [
+            {
+              "role": "taquero",
+              "place": "taquería",
+              "said": "¿Con todo?",
+              "en": "With everything?"
+            },
+            {
+              "role": "newcomer",
+              "place": "taquería",
+              "said": "Sin cebolla, por favor.",
+              "en": "No onion, please."
+            },
+            {
+              "role": "café waiter",
+              "place": "café",
+              "said": "¿Con leche?",
+              "en": "With milk?"
+            },
+            {
+              "role": "newcomer",
+              "place": "café",
+              "said": "Un café sin azúcar.",
+              "en": "A coffee without sugar."
+            }
+          ],
+          "notice": "Con means with and sin means without. Both go straight before the food: con todo, sin cebolla, sin azúcar.",
+          "context": "Con todo means with onion and cilantro.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Cómo quieres los tacos?",
+                "en": "How do you want your tacos?"
+              },
+              "answer": {
+                "said": "Con todo, por favor.",
+                "en": "With everything, please."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Qué no quieres en tus tacos?",
+                "en": "What don't you want in your tacos?"
+              },
+              "answer": {
+                "said": "Sin cebolla, por favor.",
+                "en": "No onion, please."
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo tomas el café?",
+                "en": "How do you take your coffee?"
+              },
+              "answer": {
+                "said": "Un café sin azúcar, por favor.",
+                "en": "A coffee without sugar, please."
+              }
+            }
+          ],
+          "mission": {
+            "place": "taquería",
+            "goal": "Order tacos and say what you don't want on them.",
+            "say": {
+              "said": "Sin cebolla, por favor.",
+              "en": "No onion, please."
+            },
+            "listen_for": [
+              "Sin cebolla",
+              "con todo"
+            ]
+          }
+        },
+        {
+          "id": "a1-05-5",
+          "title": "Ask for small extras",
+          "how_to": "How to ask for small things like a napkin with me regala.",
+          "intro": "You'll learn a soft way to ask for little extras at a stand or counter. It helps when you need a napkin, a bag or a water.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "taquería",
+              "said": "¿Me regala una servilleta?",
+              "en": "Could I have a napkin?"
+            },
+            {
+              "role": "taquero",
+              "place": "taquería",
+              "said": "Sí, ahí tiene.",
+              "en": "Sure, there you go."
+            },
+            {
+              "role": "newcomer",
+              "place": "market stall",
+              "said": "¿Me regala un agua natural?",
+              "en": "Could I have a still water?"
+            },
+            {
+              "role": "newcomer",
+              "place": "shop",
+              "said": "¿Me regala una bolsita?",
+              "en": "Could I have a little bag?"
+            }
+          ],
+          "notice": "Say ¿Me regala…? and then the small thing you need. It does not mean the thing is free, and you still pay for what has a price. If you're ever unsure, ¿Me da…? works everywhere.",
+          "context": "In central Mexico, ¿me regala…? is a soft way to ask for small things.",
+          "practice": [
+            {
+              "ask": {
+                "said": "¿Qué pides si necesitas limpiarte las manos?",
+                "en": "What do you ask for if you need to wipe your hands?"
+              },
+              "answer": {
+                "said": "¿Me regala una servilleta?",
+                "en": "Could I have a napkin?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Cómo pides una bolsa pequeña?",
+                "en": "How do you ask for a small bag?"
+              },
+              "answer": {
+                "said": "¿Me regala una bolsita?",
+                "en": "Could I have a little bag?"
+              }
+            },
+            {
+              "ask": {
+                "said": "¿Qué pides si quieres un agua sin sabor?",
+                "en": "What do you ask for if you want a water with no flavour?"
+              },
+              "answer": {
+                "said": "¿Me regala un agua natural?",
+                "en": "Could I have a still water?"
+              }
+            }
+          ],
+          "mission": {
+            "place": "taquería",
+            "goal": "Ask the taquero for a napkin.",
+            "say": {
+              "said": "¿Me regala una servilleta?",
+              "en": "Could I have a napkin?"
+            },
+            "listen_for": [
+              "Me regala",
+              "una servilleta"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
