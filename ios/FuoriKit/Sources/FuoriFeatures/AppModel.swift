@@ -152,6 +152,10 @@ public final class AppModel {
         await load()
     }
 
+    /// The greeter's tour after the country choice: off until a better
+    /// onboarding is built (Josh, 2026-10-29)
+    static let greeterTour = false
+
     /// Onboarding done: start with the settings for the level
     /// (SettingsKey.applyDefaults; English on also slows the voice). The
     /// learner can change them in Settings.
@@ -234,13 +238,20 @@ public final class AppModel {
             addressedAs = me.addressedAs
             level = me.level
             retryPendingSaves()
-            // Not placed yet in this country: the greeter first (existing
-            // learners too, once: Josh, 2026-10-16)
-            if me.onboarded == false, let content, let greeter = content.onboarding {
+            // Not placed yet in this country. The greeter's tour is switched
+            // off (Josh, 2026-10-29: "short circuit the onboarding path so
+            // users just go to the choose Mexico/Italy screen. We will build a
+            // better one"): the learner starts as a Beginner, the server is
+            // told the same way the tour's beginner path tells it, and the
+            // characters ask their name. OnboardingModel stays for the next one.
+            if me.onboarded == false, Self.greeterTour, let content, let greeter = content.onboarding {
                 onboarding = OnboardingModel(onboarding: greeter, language: content.language, api: api, askAddress: addressOn) { [weak self] level in
                     self?.finishOnboarding(level: level)
                 }
                 phase = .onboarding
+            } else if me.onboarded == false {
+                try await api.onboardingDone()
+                finishOnboarding(level: "beginner")
             } else {
                 phase = .ready
             }
