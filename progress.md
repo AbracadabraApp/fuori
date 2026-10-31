@@ -66,6 +66,14 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-10-30/31: N6 plan, visit stamps, transcription measure, Mexico reasons to be there (laptop session)
+- Release plans reorganised with Josh: N5 has nothing left; skipped the orientation tour, Try Magda, Learn L1–L3 and the smaller world for beginners; everything else open moved to N6, ordered 1–13. Shareable plan: `docs/n6-release-plan.md`. Open N6 blockers on Josh: the level-question yes or no, the finish-link word, "go" for TestFlight build 9.
+- Visit stamps built (4271418): scontrino on place cards (già visto, di casa from the third visit), ticket stub on city cards; words from /v1/content, colours and sizes from tokens. Swift tests and simulator build pass; **not yet on Josh's phone** (install waits on his yes; AX5, VoiceOver and real pictures still to check there).
+- Transcription measured on the 31 kept recordings (all Josh's; Sophia's conversations have no learner turns): Groq turbo gets every article right, about 7 of 28 nouns wrong; large-v3 no better and breaks articles. No switch. Sending recordings to a new outside service (ElevenLabs Scribe) was blocked; not retried.
+- Mexico: trial (778f676) of a reason to be there for the 50 people without one: with won 34 of 50, specific 38 vs 31. Lines rewritten into Italy's form, unconfirmed facts dropped, applied (1c35809). All 61 shown Mexico people now have one.
+- Live tests: two runs hung five minutes on one request ("fetch failed"), Italy and Mexico; not reproduced in five later runs; server answered turns in 2–3 s. smoke:live now times a call out after a minute and names it (de51e0c). Final runs on 2026-10-31: both countries pass end to end.
+- Next: install the stamps build on Josh's phone (ask first); Josh to confirm the N6 order and the three blockers.
+
 ## 2026-10-30: N6 themes, goodbye rule, Missions placeholder (cloud session)
 - Reviewed the N6 plan for themes that join items (in conversation, not written into the plan): one level system (1, 5, 8, the per-level wait in 6); the first session (the level question asked in character by the onboarding script, then the city picker); the syllabus as the spine of lessons and missions; one decision on data kept in play (6, 8, 9, 13) and one privacy policy.
 - Goodbye rule: Josh, "a lot of code for not a clear problem (lessons are different)". Drop it from N6; only the lesson practice keeps a turn-count end. Roadmap item 4 not yet edited.
