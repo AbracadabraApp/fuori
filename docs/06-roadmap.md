@@ -18,13 +18,13 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
   - Say it, the Learn page and Beginner answers stop rewriting the learner's Italian or inventing facts about them.
   - How much of the language is spoken, measured per conversation (the quality judge's `words`).
   - Build 8 skips the greeter's tour.
+  - Josh played the Beginner level, hands-free and the new places (done, Josh 2026-10-30).
   - The whole-app scan, three rounds: every Claude call has a time limit, a resent turn is answered once, per-learner caps on every route, fixes to the recorder, the voice and Flashcards.
 
 **Next (N5)**
 1. **TestFlight build 9** with the scan's app fixes (Flashcards, the recorder, the voice, Learn pausing the conversation). **Josh** says when.
 2. **The lesson shape** ([teach-plan.md](teach-plan.md)): Magda teaches on the conversation screen, a practice dialogue as the assignment, then her review.
-3. **Josh** plays the Beginner level in both countries, hands-free and the new places, on Wi-Fi and on cellular; then what to change.
-4. `here` lines for Mexico's people.
+3. `here` lines for Mexico's people.
 
 **Skipped or moved** (Claude proposed, Josh decided 2026-10-30)
 - **Skipped (Josh, 2026-10-30):** the orientation tour (build 8 dropped the greeter; item 2 above covers the level it asked); "Try Magda in the app" and Learn L1–L3 (the lessons replaced them); the smaller world for beginners (the Beginner level dialogue does much of its job).
@@ -133,7 +133,7 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 - [x] **Josh + Claude** Goals (2026-10-25)
 - [x] **Claude** Trial prompt, three versions on Josh's real conversations and a simulated beginner (docs/prompt-trials.md)
 - [x] **Claude** First playable version (aff1c7e, 2026-10-25): Beginners get the turn in parts (English heard, words and question as bubbles, answers to say back); live in both countries (smoke:live), on Josh's phone
-- [ ] **Josh** Play it in both countries; then what to change
+- [x] **Josh** Play it in both countries; then what to change (played, Josh 2026-10-30)
 - [ ] **Josh + Claude** Getting harder over time (Josh, 2026-10-25, a plan, not built): slower and staggered, a stage per conversation: 1,1,1,1,1 · 1,2,1,1,2 · 2,2,2,3,3, then on to Intermediate. Stages fade the English echo, the answers to say back (two, one, a frame, none), the bubbles, and raise her Italian and the questions (this-or-that, one fact, open). Principles: count practice, not visits (conversations where the learner said enough); fade one support at a time; stretch, then consolidate (the staggering); advance on mastery (answering in their own words) with the count as the default
 - [ ] **N6 (moved from N5, Josh 2026-10-30)** **Claude** The English fading over time, by count (part of the plan above)
 - [x] **Josh + Claude** Hands-free as the default (on for everyone 2026-10-26, Josh: "hands free on 5s": the mic opens after she speaks and closes after 5 s with nothing said, still your turn; tap-to-talk under VoiceOver; Josh to play it on the phone) (Josh, 2026-10-25: "creeping in as a better UI than clicking the microphone"): she speaks, the mic opens by itself, silence sends. Room noise or a covered mic misfires today with or without the tap, so only the tap changes. Try it on Josh's phone first (a developer switch), Beginner conversations with and without the tap
