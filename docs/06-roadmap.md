@@ -6,15 +6,43 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases** (updated 2026-10-27):
+The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases** (reorganized 2026-10-30 at Josh's request into done, next, and what to skip or move; the skip-or-move list is Claude's proposal until Josh decides each line):
 
-- **N4 is done** (Josh, 2026-10-25): TestFlight build 0.1.0 (5), with scaffolding, say it in English, one tap per turn, the bottom bar, the launch screen and country choice, faster replies, Learn in both countries. Build 6 uploaded since. Open N4 work moved to N5, each item marked "N5 (from N4)".
-- **N5 is about the Beginner level** (Josh, 2026-10-25): Beginner level dialogue with spoken English as support, and CLAUDE.md's teaching rules varying by level.
-  - *Done so far:* Beginner dialogue live in both countries and as fast as other turns (tap to first word ~1.8 s); hands-free for everyone (mic closes after 5 s of nothing); the device checks (Josh: "works"); recordings of Josh's turns kept 30 days (on since 2026-10-27, R2_ACCOUNT_ID); say it and the Learn page stop rewriting Josh's Italian; places with their city's own food (delis, street food, restaurants, specialty pastry shops; bakeries and Italy's wine bars hidden); Italy's cast rebalanced with a reason to be there for everyone; the City Pantry Formula rewritten.
-  - *Next:* TestFlight build 7 (the family is on build 6); Josh plays hands-free and the new places, on Wi-Fi and on cellular; measure transcription on the kept recordings; a log of every turn's timings, phone and server, kept across deploys (typical and worst 1 in 20, counted from after the end-of-turn wait); `here` lines for Mexico's people; the English fading over time (Josh's staggered plan).
-  - *Then, as Josh places them:* Learn lessons from the syllabus with missions after them ([teach-plan.md](teach-plan.md) → Lessons and missions), Magda into Learn and the schools hidden; adventures ([adventures.md](adventures.md)); the orientation tour; the Diario.
-  - *Before testers outside the family:* a usage limit per device (speech, turns, voice); Josh decides whose recordings are kept and for how long; a privacy policy naming Groq, Anthropic and ElevenLabs; the App Store items under Release; then the web sunset.
-- **N6:** a framework for level, repeatable and improving (placement, moving up, level in the prompt); the conversation library beyond Josh's own recordings; a shorter end-of-turn wait for Intermediate and Advanced (Beginners keep 2.5 s), tuned from the recordings.
+**Done**
+- **N4** (Josh, 2026-10-25): TestFlight 0.1.0 (5): scaffolding, say it in English, one tap per turn, the bottom bar, the launch screen and country choice, faster replies, Learn in both countries.
+- **N5 so far** (TestFlight builds 6, 7 and 8; the family is on 8):
+  - Beginner level dialogue live in both countries, tap to first word ~1.8 s; hands-free for everyone (mic closes after 5 s of nothing); the device checks (Josh: "works").
+  - Lessons from the syllabus (21 for Italy, 25 for Mexico), opened from the Learn home's Lessons card; the schools taken out of the world; missions out of lessons, the assignments are the practice dialogues (Josh, 2026-10-29).
+  - Recordings kept 30 days for Josh's learners and Sophia's (Josh's yes, 2026-10-29).
+  - Places with their city's own food (delis, street food, restaurants, specialty pastry shops; bakeries and Italy's wine bars hidden); the City Pantry Formula rewritten; Italy's cast rebalanced with a `here` line for everyone; the Beginner prompt told the kind of place and why the person is there; neighbourhoods checked one by one.
+  - Say it, the Learn page and Beginner answers stop rewriting the learner's Italian or inventing facts about them.
+  - How much of the language is spoken, measured per conversation (the quality judge's `words`).
+  - Build 8 skips the greeter's tour.
+  - The whole-app scan, three rounds: every Claude call has a time limit, a resent turn is answered once, per-learner caps on every route, fixes to the recorder, the voice and Flashcards.
+
+**Next (N5)**
+1. **TestFlight build 9** with the scan's app fixes (Flashcards, the recorder, the voice, Learn pausing the conversation). **Josh** says when.
+2. **A level for new players.** Build 8 skips the greeter, so a new player starts with no level (Sophia's first three conversations were Beginner-format). Proposed: one level question by buttons after the country choice, until N6's placement. **Josh** decides.
+3. **The lesson shape** ([teach-plan.md](teach-plan.md)): Magda teaches on the conversation screen, a practice dialogue as the assignment, then her review.
+4. **The goodbye rule** (Josh, 2026-10-23; not built): her goodbye ends the conversation and a finish link replaces the mic. **Josh** picks the word (→ Ending a conversation).
+5. **Josh** plays the Beginner level in both countries, hands-free and the new places, on Wi-Fi and on cellular; then what to change.
+6. `here` lines for Mexico's people.
+7. The English fading over time (Josh's staggered plan, → Beginner level dialogue).
+8. Transcription measured on the kept recordings (`npm run replay:recordings`; 23 Mexico, 1 Italy so far).
+
+**Proposed: skip or move** (Claude's proposals; each is Josh's call)
+- *Skip:* the orientation tour. Build 8 dropped the greeter; item 2 above covers the level it asked.
+- *Skip:* "Try Magda in the app" and Learn L1–L3. Superseded: Learn shipped on (no test flags), the lessons are built and the schools are out.
+- *Move to N6:* the turn-timings log kept across deploys. Turns are ~2 s and `measure:turn` covers spot checks.
+- *Move to N6:* visit stamps (designed, not built), stations and ticket, and the city picker (waits on Josh).
+- *Move to N6:* adventures (ideas still forming, [adventures.md](adventures.md)).
+- *Move to N6:* the missions prototype (P1–P4) and card maker v2: missions were taken out of lessons to find their own role in Learn.
+- *Move to Later:* the smaller world for beginners (on hold without a spec; the Beginner level dialogue does much of its job).
+- *Keep deferred:* hands-free extras and the night-paper palette (→ Next release).
+
+**Before testers outside the family** (the list is Stage 2 under Release, below): App Attest; a daily usage budget per learner that survives deploys (today's caps live in the server's memory and reset on every deploy); the image domain; a privacy policy naming Groq, Anthropic and ElevenLabs; the App Privacy label; tester notes. The tester questions need updating first: the wait is now ~2 s, not ~4 s; the Beginner level exists; it's hands-free, not "tap again when you're done". Then Stage 3, the App Store, and the web sunset.
+
+- **N6:** a framework for level, repeatable and improving (placement, moving up, level in the prompt); the conversation library beyond Josh's and Sophia's recordings; a shorter end-of-turn wait for Intermediate and Advanced (Beginners keep 2.5 s), tuned from the recordings; plus whatever moves here from the list above.
 - **Later:** prompt caching (speed and cost only, no quality change: the turn prompt is ~140 tokens, the Beginner prompt ~1,400); real accounts, when someone needs Fuori on more than one device.
 
 ### ⛔ Blockers: what's waiting on Josh
@@ -86,7 +114,7 @@ Goal: 90% of the character's words at the learner's level (Josh; the [research](
 
 ### Conversation library — N6 (Josh, 2026-10-23)
 Real learner speech kept as a test set, so changes can be replayed on the same input. Today only the text Whisper returned is saved; the app deletes each recording, so nothing real can be transcribed again.
-- [ ] **Josh** Decide: whose recordings are kept (Josh, family, later testers), for how long, and whether and how they're told (N5's privacy policy covers testers)
+- [x] **Josh** Decided: Josh's learners and Sophia's, 30 days (Josh, 2026-10-26 and 10-29); testers wait for the privacy policy (N5, Stage 2)
 - [x] **Claude** Smallest version (2026-10-26, Josh: "ok" to only his own recordings, 30 days): `/v1/transcribe` keeps the recordings of the learners in `KEEP_RECORDINGS_FOR` (Josh's Italy and Mexico learners) in the private R2 bucket `fuori-recordings` (deleted after 30 days by a lifecycle rule) with what was heard (`lib/speech/keep-recording.ts`); `npm run replay:recordings` runs them through today's speech to text and routing and lists what changed. Not yet: what happened next (sent, say it, "didn't catch that") beside each, family and testers
 - [ ] **Claude** Keep each turn's recording with its transcript, the language Whisper heard and what happened next (sent, say it in English, "didn't catch that"), e.g. in R2 beside the images
 - [ ] **Claude** Replay tools: run the library through another speech-to-text provider, the language routing (say it in English), or the end-of-turn silence, and compare with what happened
@@ -158,7 +186,7 @@ Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens 
 
 ### Adventures ([adventures.md](adventures.md); Josh, 2026-10-27: ideas forming) — N5
 - [ ] **Josh** Play the current places (Rome first) and note who and where feels off
-- [ ] **Claude** Then: the Beginner prompt told the kind of place and why the person is there (no invented jobs: a student selling pizza, a woman in a square making coffee); check every city for customers placed in shops
+- [x] **Claude** Then (done 2026-10-29): the Beginner prompt told the kind of place and why the person is there (no invented jobs: a student selling pizza, a woman in a square making coffee); check every city for customers placed in shops
 - [ ] **Josh + Claude** Adventures: places where something happens, people with something to show (scholar, priest, docent, professor, journalist, archaeologist), and a mystery to solve across days and places; Rome first
 
 ### Smaller world for beginners: on hold until there's a spec (Josh, 2026-10-18) — N5
