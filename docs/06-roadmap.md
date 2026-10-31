@@ -30,7 +30,7 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
 
 **Before testers outside the family** (the list is Stage 2 under Release, below): App Attest; a daily usage budget per learner that survives deploys (today's caps live in the server's memory and reset on every deploy); the image domain; a privacy policy naming Groq, Anthropic and ElevenLabs; the App Privacy label; tester notes. The tester questions need updating first: the wait is now ~2 s, not ~4 s; the Beginner level exists; it's hands-free, not "tap again when you're done". Then Stage 3, the App Store, and the web sunset.
 
-- **N6**, in order (order proposed by Claude 2026-10-30, Josh to confirm; learning first, then what every new player meets, then the rest):
+- **N6**, in order (plan to share: [n6-release-plan.md](n6-release-plan.md); order proposed by Claude 2026-10-30, Josh to confirm; learning first, then what every new player meets, then the rest):
   1. **A level for new players.** Build 8 skips the greeter, so a new player starts with none and gets Beginner-format conversations. Claude's proposal: one level question by buttons after the country choice (→ Learner level). Small, and every new player meets it.
   2. **The lesson shape** ([teach-plan.md](teach-plan.md)): Magda teaches on the conversation screen, a practice dialogue as the assignment, then her review. The biggest teaching gain left.
   3. **TestFlight build 9**, carrying 1 and 2 plus the scan's app fixes (Flashcards, the recorder, the voice, Learn pausing the conversation).
