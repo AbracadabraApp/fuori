@@ -24,13 +24,9 @@ struct LearnArea: View {
             ScrollView {
                 VStack(spacing: 14) {
                     lessonsCard
-                    if let units = lessons {
-                        NavigationLink { MissionsView(units: units) } label: { missionsCard }
-                            .buttonStyle(.plain)
-                            .accessibilityHint("Opens your missions")
-                    } else {
-                        missionsCard
-                    }
+                    NavigationLink { MissionsView() } label: { missionsCard }
+                        .buttonStyle(.plain)
+                        .accessibilityHint("Opens a mockup of missions")
                     if let deck = deckModel {
                         NavigationLink { FlashcardsView(model: deck) } label: { flashcardsCard }
                             .buttonStyle(.plain)
@@ -203,7 +199,7 @@ struct LearnArea: View {
 // MARK: - The other cards
 
 /// A Learn card in glass: a tinted symbol in a glass circle, the title and one
-/// line. Missions opens a placeholder chip wall (MissionsView)
+/// line. Missions opens a picture of the chip wall mockup (MissionsView)
 private struct GlassCard: View {
     let title: String
     let line: String
