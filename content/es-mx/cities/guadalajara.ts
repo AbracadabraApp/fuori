@@ -134,6 +134,7 @@ export const guadalajara: CityPantry = {
       placeId: 'tejuino-san-juan-de-dios',
       personality: ['cheerful', 'generous'],
       portraitPrompt: 'Gouache portrait of a man in his 40s with a broad grin and a baseball cap, wearing a polo shirt, who sells tejuino from a cart near the Mercado San Juan de Dios in Guadalajara. Include the cart. Bold, saturated colour: teal, mustard and terracotta. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You run your tejuino cart next to the Mercado San Juan de Dios, serving the cold drink of fermented corn with lime, salt and ice that is so typical of Jalisco. You like explaining how people prefer it, for example with a scoop of lime nieve.",
     },
     {
       id: 'ximena-ceramica',
@@ -144,6 +145,7 @@ export const guadalajara: CityPantry = {
       placeId: 'taller-ceramica-tlaquepaque',
       personality: ['creative', 'proud of her craft'],
       portraitPrompt: 'Gouache portrait of a woman in her late 20s with long straight hair and a clay-smudged apron, who throws pots at a ceramics workshop in Tlaquepaque, Guadalajara. Include the workshop. Bold, saturated colour: terracotta, sky blue and ochre. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You work in your ceramics workshop in Tlaquepaque, a place famous for its pottery, shaping clay and painting your pieces. You like explaining what you make, like cazuelas, jarros and plates, and how to tell a handmade piece.",
     },
     {
       id: 'rigoberto-cantinero',
@@ -154,6 +156,7 @@ export const guadalajara: CityPantry = {
       placeId: 'cantina-la-fuente',
       personality: ['dry-humoured', 'discreet', 'knows everyone\u2019s story'],
       portraitPrompt: 'Gouache portrait of a man of 57 with a grey moustache, slicked-back hair and a tired but kind smile, wearing a white shirt, black waistcoat and bow tie, who tends the bar at Cantina La Fuente, Centro, Guadalajara. Include the wooden bar and the bottles behind it. Bold, saturated colour: deep red, agave green and warm yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You tend the bar at Cantina La Fuente, a traditional cantina in the Centro of Guadalajara, pouring tequila while the table fills with botanas to share. You like explaining what people drink here and which botana goes best with it.",
     },
     {
       id: 'valeria-barista',
@@ -164,6 +167,7 @@ export const guadalajara: CityPantry = {
       placeId: 'cafe-tinta',
       personality: ['friendly', 'a little shy at first'],
       portraitPrompt: 'Gouache portrait of a woman of 27 with a short dark bob, round glasses and a warm smile, wearing a linen apron over a striped shirt, who makes coffee at Café Tinta, Colonia Americana, Guadalajara. Include the café counter and espresso machine. Bold, saturated colour: coffee brown, violet and cream. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You work at Café Tinta in the Colonia Americana, a neighborhood of tree-lined streets and many cafés, making coffee, maybe with a concha or something sweet. You like giving recommendations and talking about whether you prefer café de olla or specialty coffee.",
     },
     {
       id: 'efren-panadero',
@@ -185,6 +189,7 @@ export const guadalajara: CityPantry = {
       placeId: 'parque-revolucion',
       personality: ['old-fashioned', 'sharp-eyed'],
       portraitPrompt: 'Gouache portrait of a thin man of 72 with deep smile lines, a straw hat and round spectacles, wearing a faded guayabera and a leather apron, with a twinkle in his eye, who shines shoes at Parque Revolución, Colonia Americana, Guadalajara. Include his wooden shoeshine stand and a park bench. Bold, saturated colour: leafy green, sky blue and orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You are in Parque Revolución with your cajón and brushes, boleando shoes as you have for years while people stroll by. You like talking about how to care for shoes and how the park has changed, especially on the afternoon walks when the heat drops.",
     },
     {
       id: 'nacho-taquero',
@@ -195,6 +200,7 @@ export const guadalajara: CityPantry = {
       placeId: 'tacos-el-compa-nacho',
       personality: ['quick', 'joking', 'a perfectionist about his salsa'],
       portraitPrompt: 'Gouache portrait of a broad-shouldered man of 35 with a short beard, a bandana on his head and a big laugh, wearing a stained apron over a t-shirt, who serves tacos at Tacos El Compa Nacho, Chapultepec, Guadalajara. Include the stand with its steaming pot and salsas. Bold, saturated colour: chilli red, turquoise and golden yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You work in your taquería in Chapultepec, making tacos dorados and taking great care of your salsa, which never leaves without being tasted. Late-night tacos after going out are a custom here, and you like asking people whether they can handle the picante.",
     },
     {
       id: 'mari-tendera',
@@ -205,6 +211,7 @@ export const guadalajara: CityPantry = {
       placeId: 'abarrotes-la-esquinita',
       personality: ['nosy in a kind way', 'practical', 'remembers every customer'],
       portraitPrompt: 'Gouache portrait of a woman of 52 with dark hair in a tight bun, reading glasses on a chain and a knowing smile, wearing a floral blouse and a pocketed apron, who runs the corner shop Abarrotes La Esquinita, Chapultepec, Guadalajara. Include the shop counter and shelves of snacks. Bold, saturated colour: cobalt blue, lime green and red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You run your corner abarrotes in Chapultepec and greet everyone who walks in with a buenos días or buenas tardes. You sell the basics of the day, like tortillas, jamaica for agua fresca or bread for breakfast, and you like asking customers where they are from.",
     },
     {
       id: 'lupita-sacristana',
@@ -215,6 +222,7 @@ export const guadalajara: CityPantry = {
       placeId: 'parroquia-san-pedro-tlaquepaque',
       personality: ['calm', 'devout', 'organised'],
       portraitPrompt: 'Gouache portrait of a woman of 49 with a grey-streaked braid and a serene expression, wearing a long dark skirt and a cardigan with a small cross pin, who looks after the Parroquia de San Pedro, Tlaquepaque, Guadalajara. Include the church door and bell tower. Bold, saturated colour: rose pink, cobalt blue and warm gold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You prepare the Parroquia de San Pedro, in the center of Tlaquepaque, for Mass, making sure there are candles and everything is in order for the neighbors who come. You like telling people about Mass times and about Sundays, when many families go to Mass and then stroll around the plaza.",
     },
     {
       id: 'chuy-cocinera',
@@ -236,6 +244,7 @@ export const guadalajara: CityPantry = {
       placeId: 'jardin-de-san-francisco',
       personality: ['friendly', 'studious', 'always has a smile', 'loves practicing languages'],
       portraitPrompt: 'Gouache portrait of a woman of 22 with long dark hair in a ponytail, a university hoodie, round earrings and a warm, friendly smile, sitting with textbooks and a laptop open beside her, who is a university student studying at the Jardín de San Francisco, Centro, Guadalajara. Include the plaza with trees and stone benches. Bold, saturated colour: ash tree green, stone pink and notebook blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You are a university student who comes to the Jardín de San Francisco in the Centro to rest between classes and go over your notes under the trees. You love practicing languages and like talking about what you study and where to eat nearby, maybe a torta ahogada.",
     },
     {
       id: 'carlos-taquillero-gdl',
@@ -246,6 +255,7 @@ export const guadalajara: CityPantry = {
       placeId: 'terminal-nueva',
       personality: ['cheerful', 'efficient', 'knows all the connections'],
       portraitPrompt: 'Gouache portrait of a man of 41 with short hair, a neatly trimmed mustache, a company polo shirt and a friendly, professional smile, who sells bus tickets at the Terminal Nueva, Tlaquepaque, Guadalajara. Include the ticket counter and digital departure board. Bold, saturated colour: travel blue, sunset orange and warm yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You sell tickets at the Terminal Nueva, the big bus station in Tlaquepaque, and you know which buses leave for other cities and at what time. You like helping people work out how to get to Tequila or another nearby place, which ticket suits them and how long the trip takes.",
     },
   ],
   food: [

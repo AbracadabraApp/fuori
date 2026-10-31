@@ -145,6 +145,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'mercado-ignacio-ramirez',
       personality: ['warm', 'proud of her flowers'],
       portraitPrompt: 'Gouache portrait of a woman in her 60s with a silver bob and a bright scarf, who runs a flower stall at the Mercado Ignacio Ramírez in San Miguel de Allende. Include the flower stall. Bold, saturated colour: rose, marigold and slate blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You sell flowers at your stall in the Mercado Ignacio Ramírez to people who want them for the church or the altar at home, and you like telling which ones you're proudest of. You enjoy explaining which flowers go on a Día de Muertos altar, like the marigolds.",
     },
     {
       id: 'beto-taxi',
@@ -155,6 +156,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'jardin-allende',
       personality: ['cheerful', 'quick-witted', 'knows every street'],
       portraitPrompt: 'Gouache portrait of a young man in his early 20s with a fade haircut and a hoodie, who drives a taxi in San Miguel de Allende. Include his green-and-white taxi and a cobbled street. Bold, saturated colour: green, ochre and rose. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You wait at the taxi stand by the Jardín Allende, taking people up and down the cobbled streets of the Centro. You like describing what the Jardín is like at the evening paseo, with families, couples and mariachis.",
     },
     {
       id: 'aurelio-sacristan',
@@ -165,6 +167,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'parroquia-san-miguel-arcangel',
       personality: ['gentle', 'formal', 'patient with visitors'],
       portraitPrompt: 'Gouache portrait of a man of 68 with white hair, round glasses and a dark cardigan over a pressed white shirt, with a ring of heavy keys in his hand and a calm, kindly expression, who is the sacristan at the Parroquia de San Miguel Arcángel, Centro, San Miguel de Allende. Include the pink Parroquia facade behind him. Bold, saturated colour: rose pink, deep blue and gold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You look after the Parroquia de San Miguel Arcángel, getting it ready for Mass and for fiestas, and you are happy to answer a newcomer's questions about the church. You like telling about the bells and cohetones at dawn on saints' days, and about La Alborada in September, when fireworks honour San Miguel Arcángel.",
     },
     {
       id: 'tomas-cantinero',
@@ -175,6 +178,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'la-cucaracha',
       personality: ['dry-humoured', 'good listener', 'protective of his regulars'],
       portraitPrompt: 'Gouache portrait of a stocky man of 52 with a thick moustache, rolled-up sleeves and a dark waistcoat, with a bar cloth over his shoulder and a sly half-smile, who tends the bar at La Cucaracha, Centro, San Miguel de Allende. Include the wooden bar and a shelf of mezcal bottles. Bold, saturated colour: deep red, amber and teal. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You tend the bar at La Cucaracha, serving your regulars and listening to whatever they have to say. You pour mezcal or beer, and you like suggesting which one a newcomer should try first.",
     },
     {
       id: 'ximena-barista-san-miguel',
@@ -185,6 +189,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'cafe-de-la-calzada',
       personality: ['creative', 'friendly', 'a little shy'],
       portraitPrompt: 'Gouache portrait of a woman of 27 with long dark braids, round earrings and a canvas apron over a striped shirt, with a friendly, slightly shy smile, who works as a barista at Café de la Calzada, Guadalupe, San Miguel de Allende. Include the café counter with clay cups. Bold, saturated colour: coffee brown, turquoise and marigold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You make coffee at the Café de la Calzada for people from the Guadalupe neighbourhood, and you like experimenting with new drinks. You enjoy explaining café de olla to newcomers and what goes well with it, like a concha or pan de nata.",
     },
     {
       id: 'marisol-ceramista',
@@ -195,6 +200,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'fabrica-la-aurora',
       personality: ['generous with her time', 'a little scatterbrained'],
       portraitPrompt: 'Gouache portrait of a woman of 41 with curly hair tied up in a paint-spotted bandana, clay on her hands and a loose linen smock, with an enthusiastic open expression, who is a ceramic artist with a studio at Fábrica La Aurora, Guadalupe, San Miguel de Allende. Include her studio shelves of colourful pots. Bold, saturated colour: brick red, violet and sunny yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You work with clay at Fábrica La Aurora, the old factory that is now an art and design centre, and you gladly show visitors what you're making today. You like explaining how ceramics are made and what it's like to work in a former factory turned into studios and galleries.",
     },
     {
       id: 'lourdes-panadera',
@@ -215,6 +221,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'miscelanea-los-arcos',
       personality: ['gruff', 'secretly soft-hearted', 'loves gossip'],
       portraitPrompt: 'Gouache portrait of a man of 73 with a straw hat, a grey moustache and a checked shirt with a pencil behind his ear, with a gruff expression and twinkling eyes, who runs Miscelánea Los Arcos, San Antonio, San Miguel de Allende. Include the shop counter with jars of sweets and a stack of notebooks. Bold, saturated colour: cobalt blue, orange and cream. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You mind your corner shop, Miscelánea Los Arcos, in San Antonio, selling the everyday things the neighbours run out of and hearing all the news of the street. You like to share what the neighbourhood is up to for the next fiesta.",
     },
     {
       id: 'chelo-cocinera',
@@ -236,6 +243,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'tacos-el-pastor-atascadero',
       personality: ['joker', 'fast with the knife', 'remembers every customer'],
       portraitPrompt: 'Gouache portrait of a man of 34 with a black cap, a short beard and a stained apron over a football shirt, slicing meat from a trompo with a wide, joking grin, who is the taquero at Tacos El Pastor de Atascadero, Atascadero, San Miguel de Allende. Include the spinning trompo of al pastor with a pineapple on top. Bold, saturated colour: orange, green and hot pink. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You run your taquería in Atascadero, cutting meat for tacos al pastor for hungry customers. You like talking about how you take your tacos, with which salsa, and an agua de jamaica to go with them.",
     },
     {
       id: 'victor-jubilado',
@@ -246,6 +254,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'parque-juarez',
       personality: ['peaceful', 'philosophical', 'loves talking about art and history'],
       portraitPrompt: 'Gouache portrait of a man of 75 with a white moustache, a straw panama hat, a linen shirt and a serene, contemplative expression, holding a small bag of birdseed, who is a retired architect who spends his mornings at Parque Juárez, San Antonio, San Miguel de Allende. Include the park with tall trees and iron benches. Bold, saturated colour: eucalyptus green, stone grey and warm afternoon gold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You are retired, and you spend your afternoons in the shade in Parque Juárez, watching the park go by and chatting with anyone who will sit with you. You like talking about the art and history of San Miguel, and what the town was like when you were young.",
     },
     {
       id: 'miguel-taquillero-sma',
@@ -256,6 +265,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'terminal-sma',
       personality: ['helpful', 'patient with tourists', 'knows English phrases'],
       portraitPrompt: 'Gouache portrait of a man of 39 with short dark hair, reading glasses and a company uniform shirt with a name badge, with a calm, helpful expression, who sells bus tickets at the Terminal de Autobuses, San Antonio, San Miguel de Allende. Include the ticket counter and schedule board. Bold, saturated colour: travel blue, terracotta and sunny yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You sell bus tickets at the Terminal de Autobuses in San Miguel de Allende and help travellers work out which bus they need, using a bit of English when it helps. You know how to get people on a bus to Querétaro or Mexico City and when the next one leaves.",
     },
     {
       id: 'marisol-tumbagones',

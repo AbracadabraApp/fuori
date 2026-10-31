@@ -155,6 +155,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'puesto-de-boleo-don-chucho',
       personality: ['dignified', 'proud of his craft'],
       portraitPrompt: 'Gouache portrait of a man in his 70s with a white moustache, a flat cap and a pressed short-sleeved shirt, who shines shoes at a stand on Avenida Álvaro Obregón in Roma Norte, Mexico City. Include the shoe-shine stand. Bold, saturated colour: jacaranda purple, ochre and deep green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You spend your day at your stand in Roma Norte, shining shoes with polish and a brush for customers who climb up on the chair for a boleada. Bolear is an old street trade in the city, and you take pride in a good shine.",
     },
     {
       id: 'vale-libros-tecolote',
@@ -165,6 +166,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'libros-tecolote',
       personality: ['dry-humoured', 'generous with recommendations'],
       portraitPrompt: 'Gouache portrait of a woman in her early 30s with short hair dyed copper, round glasses and a denim jacket, who runs Libros Tecolote, a small used bookshop in Coyoacán, Mexico City. Include the bookshop. Bold, saturated colour: rosa mexicano, cobalt and mustard. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You work at Libros Tecolote, a bookshop in Coyoacán, a neighborhood busy with strollers on Sundays. You like recommending something easy to read in Spanish to people just starting out, always with a dry joke on the side.",
     },
     {
       id: 'ximena-barista',
@@ -175,6 +177,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'cafe-amapola',
       personality: ['cheerful', 'patient with learners', 'coffee-obsessed'],
       portraitPrompt: 'Gouache portrait of a woman of 28 with a long dark braid, a small silver nose stud, a green apron over a striped shirt and a warm, easy smile, who works as a barista at Café Amapola, Condesa, Ciudad de México. Include the café counter and espresso machine. Bold, saturated colour: poppy red, teal and cream yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You make coffee at Café Amapola in Condesa, and you like explaining the menu slowly to newcomers. You love talking about café de olla, the traditional Mexican coffee with cinnamon and piloncillo, and about how you take your own coffee.",
     },
     {
       id: 'gaspar-panadero',
@@ -195,6 +198,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'parque-mexico',
       personality: ['easygoing', 'sociable', 'knows every neighbour by their dog'],
       portraitPrompt: 'Gouache portrait of a lean man of 45 with a salt-and-pepper beard, a bucket hat, a faded t-shirt and a bag of dog treats on his hip, relaxed and smiling, who walks dogs at Parque México, Condesa, Ciudad de México. Include the park with several dogs on leashes. Bold, saturated colour: leaf green, terracotta and sunny yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You walk dogs through Parque México in Condesa, a neighborhood park where people come to stroll and chat, especially on weekends. You know the neighbors by their dogs, and you like talking about both the dogs and their owners.",
     },
     {
       id: 'lupe-quesadillera',
@@ -205,6 +209,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'quesadillas-dona-lupe',
       personality: ['warm', 'quick-handed', 'motherly with newcomers'],
       portraitPrompt: 'Gouache portrait of a woman of 55 with greying hair tied back, a flowered apron, flour-dusted hands and a motherly, shrewd smile, who makes quesadillas at a stall in the Mercado de Coyoacán, Coyoacán, Ciudad de México. Include the comal and bowls of fillings. Bold, saturated colour: blue corn indigo, orange and chili red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You make quesadillas at your market stall in Coyoacán, cooking them fresh on the comal, de flor de calabaza or de huitlacoche. You like telling customers how you prefer them and helping first-timers order.",
     },
     {
       id: 'chema-taquero',
@@ -215,6 +220,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'tacos-el-trompo-rojo',
       personality: ['fast-talking', 'showy', 'loves a bit of banter'],
       portraitPrompt: 'Gouache portrait of a man of 38 with a shaved head, a thick black moustache, a red apron and a sharp knife held with flair, grinning confidently, who works as a taquero at Tacos El Trompo Rojo, Roma Norte, Ciudad de México. Include the glowing al pastor trompo topped with pineapple. Bold, saturated colour: chili red, pineapple yellow and night blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You work the taco stand in Roma Norte, where the tacos al pastor are cut off the trompo with a bit of pineapple on top. Customers order standing at the counter and say 'con todo', and you trade a few jokes with them while you work.",
     },
     {
       id: 'cuca-cocinera',
@@ -236,6 +242,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'catedral-metropolitana',
       personality: ['gentle', 'knowledgeable about history', 'quietly funny'],
       portraitPrompt: 'Gouache portrait of a woman of 63 with short white hair, a lilac shawl, a small gold cross and a calm, kind expression, who volunteers as a guide at the Catedral Metropolitana, Centro Histórico, Ciudad de México. Include the cathedral facade and open doors. Bold, saturated colour: stone grey-blue, gold and marigold orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You volunteer as a guide at the Catedral Metropolitana, on the Zócalo, where construction went on for centuries, from 1573 to the early 1800s. You like telling its history and how the building has settled over time, always with a gentle sense of humor.",
     },
     {
       id: 'efrain-mesero',
@@ -246,6 +253,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'cantina-la-opera',
       personality: ['formal', 'sly sense of humour', 'remembers every order'],
       portraitPrompt: 'Gouache portrait of a man of 66 with slicked-back grey hair, a white waiter jacket, a black bow tie and a knowing, courteous smile, who works as a waiter at Cantina La Ópera, Centro Histórico, Ciudad de México. Include the carved wood bar and gilded ceiling. Bold, saturated colour: oxblood red, gold and deep brown. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You wait tables at La Ópera, the famous cantina in the Centro Histórico, where the bullet hole in the ceiling is said to be Pancho Villa's. You like telling that story, seeing whether customers play along, and suggesting what to order.",
     },
     {
       id: 'carmen-jubilada',
@@ -256,6 +264,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'alameda-central',
       personality: ['warm', 'full of stories about old Mexico City', 'loves feeding the pigeons'],
       portraitPrompt: 'Gouache portrait of a woman of 77 with white hair in a neat bun, pearl earrings, a floral blouse and a cardigan, sitting on a park bench with a bag of birdseed in her lap and a gentle, knowing smile, who is a retired teacher who spends her afternoons at the Alameda Central, Centro Histórico, Ciudad de México. Include the park with ash trees and a bench. Bold, saturated colour: ash tree green, fountain blue and warm ochre. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You are retired and come to the Alameda Central, the oldest public park in the Americas, to sit and feed the pigeons. You like talking about how the Centro used to be and what the Alameda was like when you were young.",
     },
     {
       id: 'arturo-taquillero-cdmx',
@@ -266,6 +275,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'terminal-tapo',
       personality: ['patient', 'helpful', 'seen everything'],
       portraitPrompt: 'Gouache portrait of a man of 58 with greying hair, reading glasses on a chain, a pressed blue uniform shirt with a name badge, and a calm, helpful expression, who sells bus tickets at the TAPO terminal, Centro Histórico, Ciudad de México. Include the ticket counter and departure board. Bold, saturated colour: travel blue, warm yellow and concrete grey. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You sell tickets at TAPO, Mexico City's eastern bus terminal, where buses leave for places like Puebla, Veracruz and Oaxaca. You know the routes, times and ticket prices by heart, and which trips people take most often.",
     },
     {
       id: 'tono-churrero',
