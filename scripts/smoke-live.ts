@@ -112,8 +112,11 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   const reg = (await (await fetch(`${base}/v1/auth/device`, { method: 'POST' })).json()) as { learnerId: string; token: string };
   appLearner = reg.learnerId ?? '';
   const auth = { Authorization: `Bearer ${reg.token}` };
+  // A minute at most, and the failure names the call: two runs on 2026-10-30
+  // hung five minutes on a request and said only "fetch failed"
   const v1 = (path: string, body: unknown) =>
-    fetch(base + path, { method: 'POST', headers: { ...auth, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    fetch(base + path, { method: 'POST', headers: { ...auth, 'Content-Type': 'application/json' }, body: JSON.stringify(body), signal: AbortSignal.timeout(60_000) })
+      .catch((e: Error) => { throw new Error(`${path}: ${e.message}`); });
   reg.token ? pass('v1 device signed in') : fail('v1 device signed in', JSON.stringify(reg));
 
   const open = await v1('/v1/turn', { cityId, placeId });
