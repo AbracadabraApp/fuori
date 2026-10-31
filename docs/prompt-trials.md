@@ -202,3 +202,13 @@ Josh, 2026-10-27: both sides matter, character and speaker; for the character no
 | 2026-10-16 (no Beginner block) | 36 ("a bilingual assistant") | 4 | — / 430 / 570 | 35 / 0 / 0 | Beginner English counted as a fault |
 | **2026-10-27, Beginner block + words, two runs** | 0, 0 | 5, 5 | 105, 105 / 520, 360 / 470, 440 | 35 / 0 / 0, twice | **Kept.** Phrase and line counts steady; word counts swing (±20%), so Beginner phrases are also counted exactly in code from the saved parts (`phraseStats`, from 2026-10-27 on) |
 
+
+### A reason to be there for Mexico's people (experiment `tests/experiments/mexico-here-trial.mts`, 2026-10-30)
+Josh: "run tests on Mexico getting here lines". 50 shown Mexico people without a `here` line; a candidate line written for each with Italy's instruction (cast-rebalance.mts, adapted to Mexico); each person played with and without it at Beginner and Intermediate (opening, then "Hola. ¿Qué haces aquí?"); a blind judge (random A/B) per pair.
+
+| Version | Invented a job or reason | Something specific to talk about | Judge's pick |
+|---|---|---|---|
+| Without (today) | 0 | 31 of 50 | 16 |
+| With a reason to be there | 1 (Don Rubén "in Xochimilco": the judge took it for Mexico City's; it is also a barrio of Oaxaca, so likely not a fault) | 38 of 50 | **34** |
+
+By city, with/without: Mexico City 9/1, Guadalajara 7/3, Oaxaca 7/3, Puebla 6/4, San Miguel 5/5. **Not applied:** the lines are in the run's output only; Josh decides. Without a line nobody invented a job (Mexico's cast was generated with "at a business, someone who works there"), so the gain is something to talk about, not a fix. The judge's "without" picks were mostly the without version happening to name a place detail anyway, or the with version's Beginner reply repeating the name question.
