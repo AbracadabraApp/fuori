@@ -37,6 +37,8 @@ export const language = {
     howToSay: 'Cómo se dice:', // say it in English: the label on what the learner said
     /** Flashcards (docs/flashcards.md → The banner and help): each stage's instruction, shown, not spoken */
     cards: { repeat: "Repite", howDoYouSay: "¿Cómo se dice?", whatIsIt: "¿Qué es?" },
+    /** Visit stamps on place and city cards (docs/visited-badge.md): the stamp's words, then the English label under it */
+    stamp: { visited: 'ya fuiste', regular: 'de casa', visitedLabel: 'Visited', regularLabel: 'Regular' },
     youAreHere: 'Estás aquí', // departures board: the current city
   },
 };

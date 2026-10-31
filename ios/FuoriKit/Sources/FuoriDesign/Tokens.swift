@@ -17,6 +17,10 @@ public enum Tokens {
         public static let lessons = Color(red: 0.8235, green: 0.0392, blue: 0.0392) // #d20a0a
         public static let missions = Color(red: 1.0000, green: 0.8235, blue: 0.0000) // #ffd200
         public static let flashcards = Color(red: 0.0000, green: 0.2431, blue: 0.5059) // #003e81
+        public static let receipt = Color(red: 1.0000, green: 0.9922, blue: 0.9686) // #fffdf7
+        public static let rollNew = Color(red: 0.4902, green: 0.5490, blue: 0.2745) // #7d8c46
+        public static let rollRegular = Color(red: 0.8863, green: 0.3412, blue: 0.2980) // #e2574c
+        public static let terracottaInk = Color(red: 0.6588, green: 0.3098, blue: 0.1725) // #a84f2c
     }
 
     public enum FontFamily {
@@ -33,6 +37,10 @@ public enum Tokens {
         public static let personName: CGFloat = 31
         public static let personRole: CGFloat = 19
         public static let badge: CGFloat = 15
+        public static let stamp: CGFloat = 76
+        public static let stampWord: CGFloat = 11
+        public static let stampLabel: CGFloat = 12
+        public static let stampStripe: CGFloat = 7
     }
 
     public enum Space {
@@ -48,5 +56,6 @@ public enum Tokens {
 
     public enum Shadow {
         public static let card = (x: CGFloat(0), y: CGFloat(2), radius: CGFloat(4), opacity: 0.1)
+        public static let stamp = (x: CGFloat(0), y: CGFloat(3), radius: CGFloat(4), opacity: 0.25)
     }
 }

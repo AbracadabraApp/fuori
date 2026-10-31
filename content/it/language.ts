@@ -37,6 +37,8 @@ export const language = {
     howToSay: 'Come si dice:', // say it in English: the label on what the learner said
     /** Flashcards (docs/flashcards.md → The banner and help): each stage's instruction, shown, not spoken */
     cards: { repeat: "Ripeti", howDoYouSay: "Come si dice?", whatIsIt: "Che cos'è?" },
+    /** Visit stamps on place and city cards (docs/visited-badge.md): the stamp's words, then the English label under it */
+    stamp: { visited: 'già visto', regular: 'di casa', visitedLabel: 'Visited', regularLabel: 'Regular' },
     youAreHere: 'Sei qui', // departures board: the current city
   },
 };

@@ -60,7 +60,18 @@ public struct UIWords: Codable, Sendable, Equatable {
     /// Flashcards: each stage's instruction ("Ripeti", "Come si dice?",
     /// "Che cos'è?"); nil from servers before 2026-10-29
     public let cards: CardWords?
+    /// Visit stamps on place and city cards; nil from servers before 2026-10-30
+    public let stamp: StampWords?
     public let ticket: TicketWords
+}
+
+/// The visit stamp's words (docs/visited-badge.md): in the language on the
+/// stamp, the English label under it
+public struct StampWords: Codable, Sendable, Equatable {
+    public let visited: String
+    public let regular: String
+    public let visitedLabel: String
+    public let regularLabel: String
 }
 
 public struct CardWords: Codable, Sendable, Equatable {

@@ -14,6 +14,10 @@
   --lessons: #d20a0a;
   --missions: #ffd200;
   --flashcards: #003e81;
+  --receipt: #fffdf7;
+  --roll-new: #7d8c46;
+  --roll-regular: #e2574c;
+  --terracotta-ink: #a84f2c;
   --font-display: "Alegreya", Georgia, serif;
   --font-label: "Alegreya Sans", "Gill Sans", sans-serif;
   --size-card-title: 32px;
@@ -22,10 +26,15 @@
   --size-person-name: 31px;
   --size-person-role: 19px;
   --size-badge: 15px;
+  --size-stamp: 76px;
+  --size-stamp-word: 11px;
+  --size-stamp-label: 12px;
+  --size-stamp-stripe: 7px;
   --space-gutter: 16px;
   --space-card-gap: 20px;
   --space-caption-padding: 16px;
   --space-band: 12px;
   --radius-card: 8px;
   --shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-stamp: 0px 3px 8px rgba(0, 0, 0, 0.25);
 }

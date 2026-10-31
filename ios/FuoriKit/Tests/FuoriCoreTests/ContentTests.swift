@@ -69,6 +69,25 @@ import Testing
         #expect(step.examples.first?.role == "barista")
     }
 
+    /// The visit stamp's words (content/<country>/language.ts → ui.stamp), and a
+    /// server from before them still loads (no stamps then)
+    @Test func decodesStampWords() throws {
+        let url = try #require(Bundle.module.url(forResource: "content-it", withExtension: "json", subdirectory: "Fixtures"))
+        var json = try #require(try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        var language = try #require(json["language"] as? [String: Any])
+        var ui = try #require(language["ui"] as? [String: Any])
+        ui["stamp"] = nil
+        language["ui"] = ui
+        json["language"] = language
+        #expect(try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json)).language.ui.stamp == nil)
+        ui["stamp"] = ["visited": "già visto", "regular": "di casa", "visitedLabel": "Visited", "regularLabel": "Regular"]
+        language["ui"] = ui
+        json["language"] = language
+        let stamp = try #require(try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json)).language.ui.stamp)
+        #expect(stamp.regular == "di casa")
+        #expect(stamp.visitedLabel == "Visited")
+    }
+
     /// Name and address (docs/onboarding-design.md): the six lines as the
     /// server sends them (content/<country>/onboarding.ts), and {name} filled
     /// in, or left out with its comma when they skipped the name

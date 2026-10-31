@@ -1,6 +1,6 @@
 # The visited badge
 
-2026-10-29 · Josh · **Locked** (Josh: "keep the circle - its all locked"). Replaces today's green circle with a number on the place card. Mockup with every exploration: the "Visited Badges" artifact in the Claude app (https://claude.ai/artifact/7cDsHADmkNh6GwRsmsLt5U); the final, at phone-card size: [design/visited-badge/final.png](../design/visited-badge/final.png). Not built.
+2026-10-29 · Josh · **Locked** (Josh: "keep the circle - its all locked"). Replaces today's green circle with a number on the place card. Mockup with every exploration: the "Visited Badges" artifact in the Claude app (https://claude.ai/artifact/7cDsHADmkNh6GwRsmsLt5U); the final, at phone-card size: [design/visited-badge/final.png](../design/visited-badge/final.png). **Built 2026-10-30** (`ios/FuoriKit/Sources/FuoriDesign/VisitStamp.swift`; words in `content/<country>/language.ts` → `ui.stamp`); not yet seen on Josh's phone.
 
 ## The badge
 
@@ -23,6 +23,7 @@
 
 ## Rules it has to follow
 
-- The Italian words (*già visto*, *di casa*) and the English labels come from `/v1/content`, never from Swift: Mexico gets its own (e.g. *ya fuiste*, *de casa*).
+- The Italian words (*già visto*, *di casa*) and the English labels come from `/v1/content`, never from Swift: Mexico gets its own: *ya fuiste*, *de casa* (the examples above, used as they are until Josh says otherwise).
+- Contrast: terracotta (#c0603a) on the receipt is 4.1:1, under the 4.5:1 text needs, so the regular stamp's words use a darker terracotta (#a84f2c, `terracottaInk`, 5.4:1); the rings keep #c0603a. Olive is 6.4:1.
 - Text sizes from text styles, so the badge scales with Dynamic Type; VoiceOver reads "Visited" or "Regular".
 - Explored and set aside (see the artifact): a seal across the edge (Josh's least favourite), the badge in the caption or the title, a paper tag, a ticket stub, other papers (kraft, pink and yellow carbon, stripes, city tints), other stamp shapes (rectangular timbro, marca da bollo, octagon).

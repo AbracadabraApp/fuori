@@ -15,7 +15,6 @@ struct PlaceListView: View {
     let city: City
     let content: Content
     @Environment(AppModel.self) private var model
-    @ScaledMetric(relativeTo: .footnote) private var badgeSize: CGFloat = 32
 
     var body: some View {
         ScrollView {
@@ -50,16 +49,15 @@ struct PlaceListView: View {
         return "\(person.name), \(person.role) · \(place.neighbourhood)"
     }
 
-    /// Visits so far; the stamp design comes with the M3 redesign
+    /// The scontrino in the picture's corner (docs/visited-badge.md):
+    /// visited after the first conversation there, regular from the third
     @ViewBuilder private func visitBadge(_ place: Place) -> some View {
-        if let count = model.visits[place.id], count > 0 {
-            Text("\(count)")
-                .typeface(.label, Tokens.Size.badge, relativeTo: .footnote, weight: .bold)
-                .foregroundStyle(Tokens.Colors.card)
-                .frame(minWidth: badgeSize, minHeight: badgeSize)
-                .background(Tokens.Colors.green, in: Circle())
-                .padding(12)
-                .accessibilityLabel("Visited \(count) times")
+        if let words = content.language.ui.stamp, let stage = VisitStamp.Stage(visits: model.visits[place.id] ?? 0) {
+            VisitStamp(paper: .receipt, stage: stage,
+                       word: stage == .regular ? words.regular : words.visited,
+                       label: stage == .regular ? words.regularLabel : words.visitedLabel,
+                       seed: place.id)
+                .padding(10)
         }
     }
 }
