@@ -66,6 +66,11 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-10-30: N6 themes, goodbye rule, Missions placeholder (cloud session)
+- Reviewed the N6 plan for themes that join items (in conversation, not written into the plan): one level system (1, 5, 8, the per-level wait in 6); the first session (the level question asked in character by the onboarding script, then the city picker); the syllabus as the spine of lessons and missions; one decision on data kept in play (6, 8, 9, 13) and one privacy policy.
+- Goodbye rule: Josh, "a lot of code for not a clear problem (lessons are different)". Drop it from N6; only the lesson practice keeps a turn-count end. Roadmap item 4 not yet edited.
+- Missions card in Learn now opens a placeholder chip wall (MissionsView): one chip per syllabus unit from /v1/content's lessons; no heat, chips don't open. iOS CI passed; not run on the phone.
+
 ## 2026-10-29: Visited badge locked (cloud session)
 - Decided with Josh (design only, not built): the place card's visit mark is a scontrino pinned in the picture's top right corner, end-of-the-roll stripe green then red, round ink stamp *già visto* then *di casa*, Visited or Regular under it; regular from the third visit. Spec: `docs/visited-badge.md`; roadmap item updated.
 - Talked through, not decided: onboarding as the game's first scene (or no onboarding at all, the first character setting you up), a tourist/expat split (Josh leaned to expat only, with tourist guide content and curated YouTube as the way in), lotería-style flashcards for Mexico.
