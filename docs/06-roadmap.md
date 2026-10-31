@@ -31,8 +31,7 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
 8. Transcription measured on the kept recordings (`npm run replay:recordings`; 23 Mexico, 1 Italy so far).
 
 **Proposed: skip or move** (Claude's proposals; each is Josh's call)
-- *Skip:* the orientation tour. Build 8 dropped the greeter; item 2 above covers the level it asked.
-- *Skip:* "Try Magda in the app" and Learn L1–L3. Superseded: Learn shipped on (no test flags), the lessons are built and the schools are out.
+- **Skipped (Josh, 2026-10-30):** the orientation tour (build 8 dropped the greeter; item 2 above covers the level it asked); "Try Magda in the app" and Learn L1–L3 (the lessons replaced them).
 - *Move to N6:* the turn-timings log kept across deploys. Turns are ~2 s and `measure:turn` covers spot checks.
 - *Move to N6:* visit stamps (designed, not built), stations and ticket, and the city picker (waits on Josh).
 - *Move to N6:* adventures (ideas still forming, [adventures.md](adventures.md)).
@@ -58,7 +57,7 @@ Claude can't move these until Josh does:
 - [x] **Claude** The mic tap plainly registers (Josh chose the states, 2026-10-18): cream with a waveform while the character speaks, cream with a mic on your turn, green with live dots and a stop as soon as you tap (before the mic is ready), terracotta once sent, taps ignored. **Josh** to check on the next TestFlight build
 - [x] **Claude** "No such file" errors at step transcribe on that build: a second tap while the mic was opening started a second recording, and the orphaned watcher later finished the turn again with the file already deleted. Fixed in the next build
 - [x] **Josh** Try today's build: pick a country on first launch; Settings → switch country and back; Settings → Privacy; touch and hold Version → Learner shows 3c544022, debug panel; someone you met on the web remembers you; a typed reply with the mic off Josh, 2026-10-23: good (country choice on a fresh install, switching country, Privacy)
-- [ ] **N5 (moved from N4, Josh 2026-10-23: leave Magda where she is; she becomes Learn and Teach in N5)** **Josh** Try Magda in the app
+- ~~**N5 (moved from N4, Josh 2026-10-23: leave Magda where she is; she becomes Learn and Teach in N5)** **Josh** Try Magda in the app~~: skipped (Josh, 2026-10-30: the lessons replaced it)
 - [x] **Claude** Bottom bar: one circle in two colours, no Pause or Play (Josh, 2026-10-22; [bottom-bar.md](bottom-bar.md)): green mic and your wave, terracotta sending dots and her wave; interruptions return to your turn; the Learn link on the right, centred on the circle Built 0dde6b8 (2026-10-22), on Josh's phone
 - [x] **Josh** Bottom bar on the phone: the four states in both countries: good (Josh, 2026-10-23) (a call, Siri, AirPods and backgrounding: N6, Josh 2026-10-23)
 - [x] **Josh** A long conversation on prompt 2026-10-18 (characters now see the whole conversation): does anyone still repeat their introduction or ask where you're from twice? Josh, 2026-10-23: no
@@ -132,10 +131,10 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 - [ ] **Claude** Moving up later: when 90% of the learner's speech is at the next level, across several conversations (Josh, 2026-10-15). Magda suggests it, the learner decides
 - [ ] **Claude** Level and settings saved with the learner (speed, default subtitles); then turn on the greyed-out level control in Settings
 
-### Onboarding ([onboarding-design.md](onboarding-design.md)) — N4 done; the orientation tour is N5
+### Onboarding ([onboarding-design.md](onboarding-design.md)) — N4 done; the orientation tour skipped (Josh, 2026-10-30)
 - [x] **Josh + Claude** Flow, engineering needs, built and tried in both countries (2026-10-17)
 - [x] **Claude** The send-off failed on mixed answers (one English, one fluent): fixed 2026-10-18
-- [ ] **N5 (from N4)** **Josh + Claude** Orientation tour to replace onboarding ([orientation-script.md](orientation-script.md), draft, 2026-10-23): the greeter's tour in 7 cards, mixed Italian and English (name by mic, Masculine/Feminine and level by buttons, what Fuori is, say it in English as an example, getting help with Learn, off you go; mock-ups on the canvas, row H). The game's rules don't apply to onboarding (Josh). Depends on say it in English
+- ~~**N5 (from N4)** **Josh + Claude** Orientation tour to replace onboarding ([orientation-script.md](orientation-script.md), draft, 2026-10-23): the greeter's tour in 7 cards, mixed Italian and English (name by mic, Masculine/Feminine and level by buttons, what Fuori is, say it in English as an example, getting help with Learn, off you go; mock-ups on the canvas, row H). The game's rules don't apply to onboarding (Josh). Depends on say it in English~~: skipped (Josh, 2026-10-30: build 8 dropped the greeter; the level question in Next covers what it asked)
 - [x] **Claude** Launch and opening moment: built 2d2c660 (2026-10-23), on Josh's phone; the first-launch choice not yet seen. **Josh** to look: (Josh, 2026-10-22: "a strong intro"; canvas "Launch screen", https://claude.ai/artifact/5mTwgS9R8CubVMyUKaXoJZ). The system launch screen is paper with the icon (a `LaunchBackground` colour set named in `UILaunchScreen`, fixing the white flash, iOS conventions A13); the app's first view matches it exactly and holds the large picture for about a second at least (longer only while content loads), then fades to where the learner left off. A tap skips it. On first launch it stays and becomes the country choice, Fuori | Afuera (board 2), replacing today's two-card screen. Reduce Motion: plain crossfade. Check in both countries, AX5, VoiceOver
 
 ### Beginner level dialogue — N5 ([beginner-scaffolding.md](beginner-scaffolding.md) → Beginner level dialogue)
@@ -180,9 +179,9 @@ Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens 
 
 ### Learn and Teach: the teacher outside the world ([learn.md](learn.md), [teach-plan.md](teach-plan.md); Josh, 2026-10-19, option D for Magda) — N5
 - [ ] **Josh + Claude** Lessons from the syllabus, one step each, voiced by people the learner knows; missions after them, built on what the learner can say (Josh, 2026-10-27: [teach-plan.md](teach-plan.md) → Lessons and missions). Next: one lesson made straight from a unit's step (a1-15 step 1) to compare with the improvised trial; split units into steps; a "can say" record in the memory notes
-- [ ] **Claude** L1: the Learn prompt as a trial file, Ask and Lesson runs with simulated learners (bars in learn.md)
-- [ ] **Claude** L2: Learn behind a setting (off by default): an icon left of the Diario opens the teacher, English and the language both ways (`mode: "any"`); next build
-- [ ] **Josh** L3: keep it and take the school out of the world, or change it; name, icon, whether she stays Magda
+- ~~**Claude** L1: the Learn prompt as a trial file, Ask and Lesson runs with simulated learners (bars in learn.md)~~: skipped (Josh, 2026-10-30: the lessons replaced it)
+- ~~**Claude** L2: Learn behind a setting (off by default): an icon left of the Diario opens the teacher, English and the language both ways (`mode: "any"`); next build~~: skipped (Josh, 2026-10-30: the lessons replaced it)
+- ~~**Josh** L3: keep it and take the school out of the world, or change it; name, icon, whether she stays Magda~~: skipped (Josh, 2026-10-30: the lessons replaced it)
 
 ### Adventures ([adventures.md](adventures.md); Josh, 2026-10-27: ideas forming) — N5
 - [ ] **Josh** Play the current places (Rome first) and note who and where feels off
