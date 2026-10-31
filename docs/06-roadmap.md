@@ -32,16 +32,13 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
 
 **Proposed: skip or move** (Claude's proposals; each is Josh's call)
 - **Skipped (Josh, 2026-10-30):** the orientation tour (build 8 dropped the greeter; item 2 above covers the level it asked); "Try Magda in the app" and Learn L1–L3 (the lessons replaced them).
-- *Move to N6:* the turn-timings log kept across deploys. Turns are ~2 s and `measure:turn` covers spot checks.
-- *Move to N6:* visit stamps (designed, not built), stations and ticket, and the city picker (waits on Josh).
-- *Move to N6:* adventures (ideas still forming, [adventures.md](adventures.md)).
-- *Move to N6:* the missions prototype (P1–P4) and card maker v2: missions were taken out of lessons to find their own role in Learn.
+- **Moved to N6 (Josh, 2026-10-30):** the turn-timings log; visit stamps, stations and ticket, the city picker; adventures; the missions prototype (P1–P4) and card maker v2.
 - *Move to Later:* the smaller world for beginners (on hold without a spec; the Beginner level dialogue does much of its job).
 - *Keep deferred:* hands-free extras and the night-paper palette (→ Next release).
 
 **Before testers outside the family** (the list is Stage 2 under Release, below): App Attest; a daily usage budget per learner that survives deploys (today's caps live in the server's memory and reset on every deploy); the image domain; a privacy policy naming Groq, Anthropic and ElevenLabs; the App Privacy label; tester notes. The tester questions need updating first: the wait is now ~2 s, not ~4 s; the Beginner level exists; it's hands-free, not "tap again when you're done". Then Stage 3, the App Store, and the web sunset.
 
-- **N6:** a framework for level, repeatable and improving (placement, moving up, level in the prompt); the conversation library beyond Josh's and Sophia's recordings; a shorter end-of-turn wait for Intermediate and Advanced (Beginners keep 2.5 s), tuned from the recordings; plus whatever moves here from the list above.
+- **N6:** a framework for level, repeatable and improving (placement, moving up, level in the prompt); the conversation library beyond Josh's and Sophia's recordings; a shorter end-of-turn wait for Intermediate and Advanced (Beginners keep 2.5 s), tuned from the recordings. Moved here from N5 (Josh, 2026-10-30): a log of every turn's timings, phone and server, kept across deploys (typical and worst 1 in 20, counted from after the end-of-turn wait); visit stamps, stations and ticket, the city picker (→ Parity with the web); adventures; the missions prototype and card maker v2 (→ Diario).
 - **Later:** prompt caching (speed and cost only, no quality change: the turn prompt is ~140 tokens, the Beginner prompt ~1,400); real accounts, when someone needs Fuori on more than one device.
 
 ### ⛔ Blockers: what's waiting on Josh
@@ -168,9 +165,9 @@ Onboarding, then reply buttons for the first turns of each conversation (stage A
 ### Diario: the review place ([diario.md](diario.md); card screens in [beginner-scaffolding.md](beginner-scaffolding.md)) — N5
 Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens phrase cards from your own conversations, at each phrase's own beginner level.
 - [x] **Claude** Card test (round 17, [level-judge-test.md](level-judge-test.md)): today's review phrases are mostly the character's lines (18–22% card-worthy); a card maker passes 69–78% of cards on 9 checks; level is the weak spot (about half the lines at 90% of words)
-- [ ] **Claude** Missions prototype P1–P3 first ([diario.md](diario.md) → Prototype first; Josh, 2026-10-19: prototype before building the whole feature)
+- [ ] **N6 (moved from N5, Josh 2026-10-30)** **Claude** Missions prototype P1–P3 first ([diario.md](diario.md) → Prototype first; Josh, 2026-10-19: prototype before building the whole feature)
 - [ ] **Josh** P4: after playing the prototype, build the whole chips-and-missions feature, change it, or drop it
-- [ ] **Claude** Card maker v2 (on hold until P4: chips with missions may replace cards)
+- [ ] **N6 (moved from N5, Josh 2026-10-30)** **Claude** Card maker v2 (on hold until P4: chips with missions may replace cards)
 - [ ] **Josh** Decide: does the 90%-of-words bar apply to the whole card, or to the frame and the character's line (the slot noun comes from the learner's own scene, with English on levels 1–2)?
 - [ ] **Claude** Cards from their own step after each conversation (round 17: today's review phrases mostly can't be cards)
 - [ ] **Claude** A judge call per conversation: did the learner say a card's phrase themselves (retires it). No phrase matching
@@ -183,7 +180,7 @@ Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens 
 - ~~**Claude** L2: Learn behind a setting (off by default): an icon left of the Diario opens the teacher, English and the language both ways (`mode: "any"`); next build~~: skipped (Josh, 2026-10-30: the lessons replaced it)
 - ~~**Josh** L3: keep it and take the school out of the world, or change it; name, icon, whether she stays Magda~~: skipped (Josh, 2026-10-30: the lessons replaced it)
 
-### Adventures ([adventures.md](adventures.md); Josh, 2026-10-27: ideas forming) — N5
+### Adventures ([adventures.md](adventures.md); Josh, 2026-10-27: ideas forming) — N6 (moved from N5, Josh 2026-10-30)
 - [ ] **Josh** Play the current places (Rome first) and note who and where feels off
 - [x] **Claude** Then (done 2026-10-29): the Beginner prompt told the kind of place and why the person is there (no invented jobs: a student selling pizza, a woman in a square making coffee); check every city for customers placed in shops
 - [ ] **Josh + Claude** Adventures: places where something happens, people with something to show (scholar, priest, docent, professor, journalist, archaeologist), and a mystery to solve across days and places; Rome first
@@ -194,7 +191,7 @@ Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the sam
 - What the tests found: a scripted neighbourhood is cheap to write (24 characters, about 50 scripts, minutes) and the easiest dialogue yet (70–84% of lines a beginner can follow), but where both replies must lead to the same next line, one path ignores the learner's answer; forcing a this-or-that choice at every join made it a quiz (round 13)
 - Parked tests: scripts as a tree with no joins; visits ordered so frames build up ("Vorrei…" before "Sono di…")
 
-### Parity with the web — N5, before the web sunset
+### Parity with the web — N6 (moved from N5, Josh 2026-10-30)
 - [ ] **Claude** Visit stamps redesigned: design locked 2026-10-29 (a scontrino pinned in the picture's corner, *già visto* then *di casa*; [visited-badge.md](visited-badge.md)); not built
 - [ ] **Josh** ⛔ Say what's wrong with the city picker; then **Claude** improves it
 - [ ] **Claude** Stations and ticket: departures board, the clerk names the platform, "Sali"
