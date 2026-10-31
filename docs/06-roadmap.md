@@ -21,17 +21,29 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
   - Josh played the Beginner level, hands-free and the new places (done, Josh 2026-10-30).
   - The whole-app scan, three rounds: every Claude call has a time limit, a resent turn is answered once, per-learner caps on every route, fixes to the recorder, the voice and Flashcards.
 
-**Next (N5)**
-1. **The lesson shape** ([teach-plan.md](teach-plan.md)): Magda teaches on the conversation screen, a practice dialogue as the assignment, then her review.
+**Next (N5)**: nothing left; everything open moved to N6 (Josh, 2026-10-30).
 
 **Skipped or moved** (Claude proposed, Josh decided 2026-10-30)
 - **Skipped (Josh, 2026-10-30):** the orientation tour (build 8 dropped the greeter; item 2 above covers the level it asked); "Try Magda in the app" and Learn L1–L3 (the lessons replaced them); the smaller world for beginners (the Beginner level dialogue does much of its job).
-- **Moved to N6 (Josh, 2026-10-30):** TestFlight build 9; a reason to be there for Mexico's people; the turn-timings log; visit stamps, stations and ticket, the city picker; adventures; the missions prototype (P1–P4) and card maker v2; then a level for new players, the goodbye rule, the English fading over time, and transcription measured on the kept recordings.
+- **Moved to N6 (Josh, 2026-10-30):** the lesson shape; TestFlight build 9; a reason to be there for Mexico's people; the turn-timings log; visit stamps, stations and ticket, the city picker; adventures; the missions prototype (P1–P4) and card maker v2; then a level for new players, the goodbye rule, the English fading over time, and transcription measured on the kept recordings.
 - *Keep deferred:* hands-free extras and the night-paper palette (→ Next release).
 
 **Before testers outside the family** (the list is Stage 2 under Release, below): App Attest; a daily usage budget per learner that survives deploys (today's caps live in the server's memory and reset on every deploy); the image domain; a privacy policy naming Groq, Anthropic and ElevenLabs; the App Privacy label; tester notes. The tester questions need updating first: the wait is now ~2 s, not ~4 s; the Beginner level exists; it's hands-free, not "tap again when you're done". Then Stage 3, the App Store, and the web sunset.
 
-- **N6:** a framework for level, repeatable and improving (placement, moving up, level in the prompt); the conversation library beyond Josh's and Sophia's recordings; a shorter end-of-turn wait for Intermediate and Advanced (Beginners keep 2.5 s), tuned from the recordings. Moved here from N5 (Josh, 2026-10-30): TestFlight build 9 with the scan's app fixes (Flashcards, the recorder, the voice, Learn pausing the conversation); **a reason to be there for Mexico's people** (one sentence per character on why they're at their place today and what they do there, the `here` line Italy's whole cast has; 11 of Mexico's 65 have one, the rest get only the place's name, kind and neighbourhood); a log of every turn's timings, phone and server, kept across deploys (typical and worst 1 in 20, counted from after the end-of-turn wait); visit stamps, stations and ticket, the city picker (→ Parity with the web); adventures; the missions prototype and card maker v2 (→ Diario); a level for new players (build 8 skips the greeter, so a new player starts with none; Claude's proposal: one level question by buttons after the country choice, → Learner level); the goodbye rule (→ Ending a conversation; **Josh** picks the word); the English fading over time (→ Beginner level dialogue); transcription measured on the kept recordings (`npm run replay:recordings`; 23 Mexico, 1 Italy so far).
+- **N6**, in order (order proposed by Claude 2026-10-30, Josh to confirm; learning first, then what every new player meets, then the rest):
+  1. **A level for new players.** Build 8 skips the greeter, so a new player starts with none and gets Beginner-format conversations. Claude's proposal: one level question by buttons after the country choice (→ Learner level). Small, and every new player meets it.
+  2. **The lesson shape** ([teach-plan.md](teach-plan.md)): Magda teaches on the conversation screen, a practice dialogue as the assignment, then her review. The biggest teaching gain left.
+  3. **TestFlight build 9**, carrying 1 and 2 plus the scan's app fixes (Flashcards, the recorder, the voice, Learn pausing the conversation).
+  4. **The goodbye rule** (→ Ending a conversation): her goodbye ends the conversation, a finish link replaces the mic. **Josh** picks the word.
+  5. **The English fading over time** (Josh's staggered plan, → Beginner level dialogue).
+  6. **Transcription measured on the kept recordings** (`npm run replay:recordings`; 23 Mexico, 1 Italy so far), then a shorter end-of-turn wait for Intermediate and Advanced tuned from them (Beginners keep 2.5 s).
+  7. **A reason to be there for Mexico's people**: one sentence per character on why they're at their place today and what they do there (the `here` line Italy's whole cast has; 11 of Mexico's 65 have one, the rest get only the place's name, kind and neighbourhood).
+  8. **The level framework**, repeatable and improving: placement, moving up, level in the prompt (→ Learner level).
+  9. **The conversation library** beyond Josh's and Sophia's recordings.
+  10. **Adventures** ([adventures.md](adventures.md)).
+  11. **The missions prototype and card maker v2** (→ Diario).
+  12. **Parity with the web:** visit stamps, stations and ticket, the city picker.
+  13. **A log of every turn's timings**, phone and server, kept across deploys (typical and worst 1 in 20, counted from after the end-of-turn wait).
 - **Later:** prompt caching (speed and cost only, no quality change: the turn prompt is ~140 tokens, the Beginner prompt ~1,400); real accounts, when someone needs Fuori on more than one device.
 
 ### ⛔ Blockers: what's waiting on Josh
