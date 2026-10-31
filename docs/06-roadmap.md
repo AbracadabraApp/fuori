@@ -30,10 +30,9 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
 7. The English fading over time (Josh's staggered plan, → Beginner level dialogue).
 8. Transcription measured on the kept recordings (`npm run replay:recordings`; 23 Mexico, 1 Italy so far).
 
-**Proposed: skip or move** (Claude's proposals; each is Josh's call)
-- **Skipped (Josh, 2026-10-30):** the orientation tour (build 8 dropped the greeter; item 2 above covers the level it asked); "Try Magda in the app" and Learn L1–L3 (the lessons replaced them).
+**Skipped or moved** (Claude proposed, Josh decided 2026-10-30)
+- **Skipped (Josh, 2026-10-30):** the orientation tour (build 8 dropped the greeter; item 2 above covers the level it asked); "Try Magda in the app" and Learn L1–L3 (the lessons replaced them); the smaller world for beginners (the Beginner level dialogue does much of its job).
 - **Moved to N6 (Josh, 2026-10-30):** the turn-timings log; visit stamps, stations and ticket, the city picker; adventures; the missions prototype (P1–P4) and card maker v2.
-- *Move to Later:* the smaller world for beginners (on hold without a spec; the Beginner level dialogue does much of its job).
 - *Keep deferred:* hands-free extras and the night-paper palette (→ Next release).
 
 **Before testers outside the family** (the list is Stage 2 under Release, below): App Attest; a daily usage budget per learner that survives deploys (today's caps live in the server's memory and reset on every deploy); the image domain; a privacy policy naming Groq, Anthropic and ElevenLabs; the App Privacy label; tester notes. The tester questions need updating first: the wait is now ~2 s, not ~4 s; the Beginner level exists; it's hands-free, not "tap again when you're done". Then Stage 3, the App Store, and the web sunset.
@@ -44,7 +43,7 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
 ### ⛔ Blockers: what's waiting on Josh
 Claude can't move these until Josh does:
 1. ~~Play Afuera with the level trial on~~: done 2026-10-19 (Chucho, 23 turns; reviewed under Scaffolding)
-2. **Spec for the smaller world** (→ Smaller world, on hold)
+2. ~~Spec for the smaller world~~: skipped (Josh, 2026-10-30)
 3. **Feedback on the city picker**: what's wrong with it (→ Parity with the web)
 4. ~~Device checks on the iPhone~~: done (Josh, 2026-10-27: "works")
 5. **Record the speech-to-text test set** on the iPhone: about 20 short turns per language (hesitant and wrong ones included) plus 30–50 typical English and mixed requests; one set for both jobs (→ Faster and reliable replies; Scaffolding → Measure English transcription). Superseded: Josh's real turns are kept since 2026-10-27 (conversation library, smallest version)
@@ -185,9 +184,9 @@ Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens 
 - [x] **Claude** Then (done 2026-10-29): the Beginner prompt told the kind of place and why the person is there (no invented jobs: a student selling pizza, a woman in a square making coffee); check every city for customers placed in shops
 - [ ] **Josh + Claude** Adventures: places where something happens, people with something to show (scholar, priest, docent, professor, journalist, archaeologist), and a mystery to solve across days and places; Rome first
 
-### Smaller world for beginners: on hold until there's a spec (Josh, 2026-10-18) — N5
+### Smaller world for beginners — skipped (Josh, 2026-10-30; had been on hold for a spec since 2026-10-18)
 Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the same for every learner, in one neighbourhood until level 4. Explored in rounds 11–13 ([level-judge-test.md](level-judge-test.md)); described in [beginner-scaffolding.md](beginner-scaffolding.md) → "On hold". No work on it until the spec exists.
-- [ ] **Josh** ⛔ Spec: what's fixed and what's generated; which neighbourhood(s) per country; how many visits and in what order; what earns leaving it; how it fits levels 1–3; whether audio is recorded once
+- ~~**Josh** ⛔ Spec: what's fixed and what's generated; which neighbourhood(s) per country; how many visits and in what order; what earns leaving it; how it fits levels 1–3; whether audio is recorded once~~: skipped (Josh, 2026-10-30)
 - What the tests found: a scripted neighbourhood is cheap to write (24 characters, about 50 scripts, minutes) and the easiest dialogue yet (70–84% of lines a beginner can follow), but where both replies must lead to the same next line, one path ignores the learner's answer; forcing a this-or-that choice at every join made it a quiz (round 13)
 - Parked tests: scripts as a tree with no joins; visits ordered so frames build up ("Vorrei…" before "Sono di…")
 
