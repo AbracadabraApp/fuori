@@ -50,6 +50,8 @@ A thread that runs across days and places, so the city becomes a story the learn
 - **It runs across cities (Josh):** one mystery, a chapter per city. Rome finds the photo; Naples has the family; Florence has the painter who made the portrait; Venice has the last letter. Each city adds its own people and places to the story, and the trail gives the game's change of scenery a reason (CLAUDE.md: every day comes with a change of scenery).
 - **It ends somewhere:** a person found, a story told, a place opened. Then another begins.
 
+Ideas for how a mystery runs in play (the rumour, a showrunner, two modes): [mystery.md](mystery.md).
+
 ## Geography along the way (Josh)
 
 A mystery or an adventure can teach where things are, a little at a time:
