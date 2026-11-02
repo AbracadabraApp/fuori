@@ -1,10 +1,12 @@
 # Leveling prototype prompts (trial, Italy)
 
-version: 2026-11-02c
+version: 2026-11-02d
 
 Prompts for the leveling prototype (tests/experiments/leveling/, designs A, B
-and C in docs/research/leveling/05-designs.md). Test-only: nothing in the app
-reads this file. The ladder (tests/experiments/leveling/ladder.ts) names the
+and C in docs/research/leveling/05-designs.md), and since 2026-11-02d the
+app's path (lib/path.ts, the leveling model v0 in
+docs/research/leveling/07-model.md), which reads the Talk, Language 2 and 4,
+Answers and Echo: new words blocks for its stages S1–S3. The ladder (tests/experiments/leveling/ladder.ts) names the
 blocks; the B1 block for Intermediate is in levels.md ("Intermediate: B1").
 
 - **Talk** blocks: how the person talks at each Beginner stage, in the CEFR's
@@ -163,6 +165,10 @@ Reply with JSON: level ("pre-A1", "A1", "A2", "B1" or "not enough to tell"), rea
 ```
 
 ## Changelog
+
+### 2026-11-02d: in the app, for the path
+
+Josh, 2026-11-02: yes to replacing the Beginner level with the leveling model's path (lib/path.ts). The app now reads Talk: stage 1–3, Talk: support back, Language: 2 and 4, Answers: two, one and frame, and Echo: new words for the path's stages S1–S3; no block's text changed. The rest (Language 1 and 3, Echo: off, the speaking judge and its examples, design C's check and regenerate) stay test-only.
 
 ### 2026-11-02c: Language blocks, a dial for how much and how hard
 

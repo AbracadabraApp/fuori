@@ -23,6 +23,7 @@
     "test:proxy": "tsx tests/check-proxy.ts",
     "test:say-it": "tsx tests/check-say-it.ts",
     "test:scaffold": "tsx tests/check-scaffold.ts",
+    "test:path": "tsx tests/check-path.ts && COUNTRY=es-mx tsx tests/check-path.ts",
     "test:reply": "tsx tests/check-reply-text.ts",
     "test:images": "tsx tests/check-images.ts",
     "test:image-list": "tsx tests/check-image-list.ts",

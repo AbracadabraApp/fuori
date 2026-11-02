@@ -14,7 +14,9 @@
  * learner ids by number of conversations, to find whose export to make.
  * format=errors&since=…&limit=50 lists the iPhone app's error reports, every
  * country, newest first (lib/app-errors.ts). format=sayit&since=… lists every
- * say it in English decision (lib/say-it-log.ts).
+ * say it in English decision (lib/say-it-log.ts). format=records gives
+ * words spoken per learner per week, every country, with the path's steps
+ * (lib/conversation-record.ts).
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
@@ -24,6 +26,7 @@ import type { ConversationScore } from '@/lib/quality';
 import { learnersWithConversations, loadStudyExport, studyExportMarkdown } from '@/lib/study-export';
 import { recentAppErrors, appErrorsAsText } from '@/lib/app-errors';
 import { recentSayIts, sayItsAsText } from '@/lib/say-it-log';
+import { recordsByWeek } from '@/lib/conversation-record';
 
 function allowed(given: string | null): boolean {
   const key = process.env.ADMIN_KEY;
@@ -41,6 +44,11 @@ export async function GET(request: NextRequest) {
   }
   if (url.searchParams.get('format') === 'learners') {
     return new NextResponse((await learnersWithConversations()) || 'No conversations yet.', {
+      headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
+    });
+  }
+  if (url.searchParams.get('format') === 'records') {
+    return new NextResponse((await recordsByWeek(Number(url.searchParams.get('weeks') ?? 8) || 8)) || 'No records yet.', {
       headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
     });
   }

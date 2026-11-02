@@ -112,3 +112,23 @@ Read (Claude):
 | 5 | character.md (Intermediate) | 100% | ~46% |
 
 The biggest single step is 3 → 4, where the echo goes. In the model that's the learner's number at work: by step 4 they should know more of the words than the newcomer listener does, and the subtitle and help remain. Real play decides whether it's too big; "Language 4, echo off" is a measured setting that could sit between (57–60% known).
+
+## Mexico (2026-11-02)
+
+The same dials, Mexico's 10 people ([report](../../../tests/experiments/leveling/results/2026-11-02-22-09-dials-es-mx.md), 1,075 calls, about $9):
+
+| Dial | In the language | Known, with echo | Without echo |
+|---|---|---|---|
+| Stage 1 | 47% | 94% | 75% |
+| Talk: stage 2 | 48% | 90% | 77% |
+| Echo off | 54% | 70% | 70% |
+| Language 2 / 3 / 4 | 52% / 48% / 59% | 91–93% | 69–72% |
+| Language 4, echo new words | 59% | 93% | 67% |
+| character.md + "Beginner: still you, ask" | 100% | 64% | 64% |
+| character.md (Intermediate today) | 100% | 54% | 54% |
+
+Read (Claude): the same shape as Italy. The echo turns (−24), the talk block doesn't, the character prompt with a Beginner block keeps words easier than Intermediate (64% vs 54%). Two differences: Mexico's stage 1 already has more Spanish (47% vs 40%) and its words are easier for a newcomer (75% vs 59% known without the echo: many Spanish words are close to English), so the Language dial moves less (47% → 59%). The path holds in both countries.
+
+## In the app (2026-11-02)
+
+Josh: "go" to build 9, the record table and replacing the Beginner level. Version 0 is `lib/path.ts` (the steps and stages, RULES, moving up) and `lib/conversation-record.ts` (the record of every ended conversation, the path's state with it). Placement is still the onboarding level (Beginner or none → step 1); the finer placement by *Parli italiano?* (nothing → 1, a little → 3) is next. Silence isn't in the record: the server doesn't see it.

@@ -17,6 +17,8 @@ import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion } from '@/lib/beginner';
+import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
+import { pathState } from '@/lib/conversation-record';
 import type { Gender } from '@/lib/types';
 import type { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
 import type { Laps } from '@/lib/timing';
@@ -96,19 +98,23 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const level = tutorPrompt ? undefined : trialLevel(learnerId);
 
   // Beginner level dialogue (lib/beginner.ts; Josh, 2026-10-25): a Beginner,
-  // or a learner with no level yet, gets the parts reply; never Magda
-  let beginner = false;
+  // or a learner with no level yet, is on the path (lib/path.ts; Josh,
+  // 2026-11-02): the stage sets the parts reply's settings, or from step 4
+  // the character prompt with a Beginner block; never Magda
+  let onPath: { stage: Stage; supportBack: boolean } | null = null;
   if (learnerId && !isTutor) {
     try {
       const { level: learnerLevel } = await onboardingState(learnerId);
-      beginner = learnerLevel === 'beginner' || learnerLevel === null;
+      if (learnerLevel === 'beginner' || learnerLevel === null) onPath = stageFor(await pathState(learnerId));
     } catch (err) {
       p.onSoftError('learner level', err);
     }
   }
+  const beginner = onPath?.stage.path === 'beginner';
+  const pathLevel = onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
 
-  const reply: TurnOutput = beginner
-    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry })
+  const reply: TurnOutput = beginner && onPath
+    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: stageText(onPath.stage, character.role), maxAnswers: onPath.stage.answers })
     : await runTurn({
     character,
     transcript,
@@ -117,7 +123,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     addressedAs,
     system: tutorPrompt?.system,
     firstTurn: tutorPrompt?.firstTurn,
-    level,
+    level: pathLevel ?? level,
     laps: p.laps,
     onText: p.onText,
     canRetry: p.canRetry,
@@ -125,7 +131,9 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   p.laps?.lap('claude');
 
   // One line per turn so any reply can be traced to the prompt version that produced it
-  const version = tutorPrompt ? `magda-${tutorPrompt.version}` : beginner ? beginnerPromptVersion() : promptVersion(level);
+  const version = tutorPrompt
+    ? `magda-${tutorPrompt.version}`
+    : `${beginner ? beginnerPromptVersion() : promptVersion(pathLevel ?? level)}${onPath ? stageTag(onPath.stage, onPath.supportBack) : ''}`;
   console.log(
     JSON.stringify({
       level: 'info',

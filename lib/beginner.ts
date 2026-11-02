@@ -141,6 +141,8 @@ export function buildBeginnerPrompt(p: {
   memory?: RememberedLearner;
   addressedAs?: Gender;
   now?: Date;
+  /** The path's stage (lib/path.ts → stageText): leveling.md blocks added after the system prompt */
+  stageText?: string;
 }): { system: string; messages: { role: 'user' | 'assistant'; content: string }[] } {
   const { character } = p;
   const city = cities.find((c) => c.places.some((pl) => pl.id === character.placeId));
@@ -151,7 +153,7 @@ export function buildBeginnerPrompt(p: {
     personLine(p.addressedAs),
     relationshipLine(t, p.memory, p.now ?? new Date()),
   ].filter(Boolean).join(' ');
-  const system = fill(readPromptFile('beginner.md').block('System prompt'), {
+  const base = fill(readPromptFile('beginner.md').block('System prompt'), {
     name: character.name,
     role: character.role,
     // The place with its kind and neighbourhood, and why they're there (lib/characters/for-place.ts)
@@ -161,6 +163,7 @@ export function buildBeginnerPrompt(p: {
     language: language.name,
     formality: `the polite form ("${language.formality.formal}") unless you already use the familiar one ("${language.formality.informal}")`,
   });
+  const system = p.stageText ? `${base}\n\n${p.stageText}` : base;
   // The conversation so far as plain lines; two in a row from one side become one message
   const messages: { role: 'user' | 'assistant'; content: string }[] = [];
   const push = (role: 'user' | 'assistant', content: string) => {
@@ -215,7 +218,7 @@ export class PartsWatcher {
 }
 
 /** One Beginner turn: the parts, and the line and English derived from them */
-export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { laps?: Laps; onText?: (snapshot: string) => void; canRetry?: () => boolean }): Promise<{ line: string; en: string; parts: Part[] }> {
+export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { laps?: Laps; onText?: (snapshot: string) => void; canRetry?: () => boolean; /** The stage's answers to say back, at most (lib/path.ts) */ maxAnswers?: number }): Promise<{ line: string; en: string; parts: Part[] }> {
   const prompt = buildBeginnerPrompt(p);
   const started = performance.now();
   // A deadline and one retry (lib/claude.ts): a stalled reply hung Doña Rosa
@@ -235,7 +238,8 @@ export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[
   return stream;
   }, undefined, undefined, { canRetry: p.canRetry });
   if (response.stop_reason === 'max_tokens') throw new Error(`Beginner turn hit max_tokens (${response.usage.output_tokens} tokens)`);
-  const parts = tidyParts(PartsSchema.parse(JSON.parse(replyText(response))).parts);
+  let answers = 0;
+  const parts = tidyParts(PartsSchema.parse(JSON.parse(replyText(response))).parts).filter((x) => x.kind !== 'answer' || p.maxAnswers === undefined || ++answers <= p.maxAnswers);
   if (!parts.length) throw new Error('Beginner turn came back with no parts');
   return { ...lineFromParts(parts), parts };
 }
