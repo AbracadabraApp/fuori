@@ -1708,3 +1708,11 @@ Design only; nothing built. Decisions are Josh's unless marked.
 - **Not a crash:** the 2026-10-29 8:13 pm black screen was another session installing a build mid-session. Rule: ask Josh before installing on his phone.
 - **TestFlight:** builds 7 and 8 uploaded; the app fixes since build 8 need build 9.
 - **Open:** the scan's lower items (the end route runs four calls in a row; two saving races; no usage limit on turns; hard-coded colours and sizes in Flashcards and Onboarding; less certain neighbourhoods); build 8 skips the greeter, so new players start without a level.
+
+## 2026-11-02 (cloud session): leveling prototype harness, not yet run against Claude
+
+- **Built** `tests/experiments/leveling/` (README there): designs A, B and C from docs/research/leveling/05-designs.md as one command, `npx tsx --env-file=.env.local tests/experiments/leveling/run.mts --design=all --country=all`. A four-step ladder (Josh's 1,1,1,1,1 · 1,2,1,1,2 · 2,2,2,3,3, then Intermediate), stage talk and support blocks in a new `content/<country>/prompts/leveling.md`, and the first **Intermediate B1 block** in `levels.md` (both countries, version 2026-11-02). Four simulated learners over 15 conversations; a per-conversation record with no extra call; the three controllers; scoring by the level.md and quality.md judges, blind to the design; a markdown report per run in `results/`.
+- **Verified here:** `npx tsc --noEmit`; `check.mts` (record, controller moves, Josh's pattern, every prompt block fills) in both countries; `test:level-prompt` in both; the whole loop in `--dry` mode (canned replies) for all designs and both countries. The check caught a bug in the dry run: NFKD turned "…" into dots, so frames ("Mi chiamo …") were never recognised as said back; now NFD.
+- **Not run against Claude:** no API key in the cloud session. The dry run counts about 7,900 calls for the full run (~$25 at $3/$15 per million tokens before the judges' thinking; probably $40–80).
+- **Next:** Josh's laptop runs it (start small: `--country=it --learners=improving-first,flat --conversations=8`), reads the traces, then the full run; add rows to docs/prompt-trials.md with the results. Not built: replaying Josh's real conversations through the steps.
+

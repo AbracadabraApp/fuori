@@ -29,6 +29,7 @@ Run from the repo root with the API key: `npx tsx --env-file=.env.local tests/ex
 | `word-list-level.py` + `word-list-level.mts` | "Lines a beginner can follow" by a fixed word list (the syllabus's `level-words-it.csv`, lemmas from spaCy's large Italian model; needs a venv, see the script) against the level.md judge run three times | — | 23 |
 | `learner-address.mts` | Whether characters get the learner's gender right (benvenuto / benvenuta): women and men, gender unknown and known (character.md `{person}`), first and return visits; a judge lists every gendered word for the learner | — | gender 1 |
 | `voice-speed.mts` | Speed of speech in (Groq Whisper, ElevenLabs Scribe) and speech out (ElevenLabs models, whole file and first streamed byte), short to long lines, both languages; laptop network | — | voice 1 |
+| `leveling/run.mts` (folder with its own README) | The leveling prototype: designs A, B and C (docs/research/leveling/05-designs.md) on simulated learners over 15 conversations, both countries; lines followable at the step, climbs, alive, seconds and calls; `--dry` runs without a key | — | leveling 1 |
 | `on-hold/smaller-world.mts` | Scripted two-visit conversations per character in one neighbourhood, checked and rewritten. On hold until the smaller world has a spec | — | 12–13 |
 
 Reports come from `npm run test:conversations` and `npm run test:replay` (`tests/conversations/reports/`); the replay set from `npm run test:replay -- --refresh`.

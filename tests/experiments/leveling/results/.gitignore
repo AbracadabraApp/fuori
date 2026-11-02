@@ -1,0 +1,3 @@
+# Dry runs and the raw JSON stay local; commit the .md reports of real runs
+*-dry*
+*.json

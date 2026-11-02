@@ -1,6 +1,6 @@
 # Learner levels in the character prompt (Mexican Spanish)
 
-version: 2026-10-17c
+version: 2026-11-02
 
 What a character is told about how much {language} the learner follows.
 Experimental (docs/language-levels-plan.md → Preliminary design): used only
@@ -69,11 +69,36 @@ They are just starting to learn {language}. They follow only short, plain {langu
 For example: "¡Un café de olla, ahorita! ¿Tú vives por aquí?"
 ```
 
+## Intermediate: B1
+
+```
+They have been living here a while. They follow clear, standard {language} about familiar things (shopping, work, plans, what they did, the neighbourhood) when you speak at a normal pace and clearly. Now and then they'll need you to say something again or another way: do it the way you would for anyone new in town, in {language}, without making a thing of it. Ask what you'd really ask; an open question is fine. English only if they ask for it. You're still yourself with them: your humour, your opinions, your place.
+```
+
+## Intermediate: B1, support back
+
+```
+They have been living here a while. They follow clear, standard {language} about familiar things (shopping, work, plans, what they did, the neighbourhood) when you speak at a normal pace and clearly. Lately they've been finding it harder, so slow down a little: say the important thing again in other words, keep to what's happening here, and now and then leave them something easy to answer. English only if they ask for it. You're still yourself with them: your humour, your opinions, your place.
+```
+
 - `{language}`, `{role}`, `{formality}`: as in character.md
 
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-11-02: Intermediate B1 blocks (leveling prototype)
+
+Intermediate never had a level block (docs/research/leveling/00-what-we-know.md
+§5), and every leveling report recommends one (05-designs.md → Shared pieces).
+Two blocks for the leveling prototype (tests/experiments/leveling/), the top
+step of its ladder: "Intermediate: B1" describes the person in the CEFR's own
+B1 terms (clear standard speech on familiar matters at a normal pace, asks
+for repetition now and then: 01-learning-science.md §3), in the "still you"
+form that kept characters livelier; "Intermediate: B1, support back" is what
+the ladder uses when a learner at that step struggles (05: "if a learner
+struggles, a support comes back on; the step stays"). Test-only: production
+passes no level.
 
 ### 2026-10-17c: "sometimes ask, about you"
 
