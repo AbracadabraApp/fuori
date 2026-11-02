@@ -50,3 +50,8 @@ Same inputs for all three: simulated learners at the first Beginner stage, mid-B
 - added seconds per turn and cost
 
 Simulated learners are too competent and too even (02), so the numbers compare designs; they don't predict real learners. Real play decides.
+
+## Josh's idea: context, and asking (2026-11-02)
+
+- **Context counts as level.** Someone who's lived in Italy, or knows food and customs, follows more with the same words: a known topic makes listening easier. A traveller and a first-time tourist at the same A2 are different learners.
+- **The game can ask.** Characters can ask what real people ask a newcomer (*sei mai stato in Italia? quanto ti fermi?*) and, when it fits, *parlo troppo veloce?* The answers feed the learner's profile and the ladder directly, instead of only inferring them. Keep it occasional, so a conversation never turns into an intake form.
