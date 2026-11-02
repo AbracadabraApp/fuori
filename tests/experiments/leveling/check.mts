@@ -60,7 +60,7 @@ ok(pattern.join(',') === '1,2,1,1,2', `step 2 plays 1,2,1,1,2 (got ${pattern.joi
 
 // Every block the ladder and harness name exists and fills, in this country
 const f = readPromptFile('leveling.md');
-for (const b of ['Talk: stage 1', 'Talk: stage 2', 'Talk: stage 3', 'Talk: support back', 'Answers: two', 'Answers: one', 'Answers: frame', 'Echo: new words', 'Echo: off', 'Say it again', 'Line check', 'Speaking judge', 'Speaking examples']) {
+for (const b of ['Talk: stage 1', 'Talk: stage 2', 'Talk: stage 3', 'Talk: support back', 'Language: 1', 'Language: 2', 'Language: 3', 'Language: 4', 'Answers: two', 'Answers: one', 'Answers: frame', 'Echo: new words', 'Echo: off', 'Say it again', 'Line check', 'Speaking judge', 'Speaking examples']) {
   try {
     const text = fill(f.block(b), { language: language.name, role: 'barista', line: 'x', talk: 'x', record: 'x', conversation: 'x', examples: 'x', n: '5', minOwn: '5' });
     ok(!/\{\w+\}/.test(text), `${b}: unfilled placeholder`);

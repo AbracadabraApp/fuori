@@ -29,6 +29,8 @@ export interface Stage {
   path: 'beginner' | 'character';
   /** beginner path: the talk block in leveling.md; character path: the levels.md block */
   talk: string;
+  /** beginner path: more leveling.md blocks added after the talk block (the dial test's Language blocks) */
+  extra?: string[];
   /** character path: the levels.md block used when a support comes back on */
   talkSupportBack?: string;
   supports: Supports;

@@ -63,3 +63,25 @@ Read (Claude):
 - Liveliness: stage 1 the flattest (4.8), Intermediate the liveliest (6.0).
 
 For the model: the difficulty of the language itself has no working dial below Intermediate. Next: give it one that's concrete enough to obey (the share of each turn in the language, phrase length, how many new words a turn), measure it the same way, and look for settings that fill the gap between stage 1 and Intermediate.
+
+## The Language dial (leveling.md 2026-11-02c, Italy, 2026-11-02)
+
+Same test, same 10 people ([report](../../../tests/experiments/leveling/results/2026-11-02-20-47-dials-it.md), 960 calls, about $8). Four Language blocks that give how much of the turn is in the language and how hard, in numbers, and say they replace beginner.md's guidance:
+
+| Dial | Share of the line in the language | Words in the language per line | Known, with echo (Δ vs stage 1) | Without echo (Δ) |
+|---|---|---|---|---|
+| Stage 1 | 40% | 12.6 | 92% | 59% |
+| Language 1 | 34% | 7.7 | −5 ±2 | −4 ±2 |
+| Language 2 | 52% | 14.3 | −1 ±2 | +2 ±2 |
+| Language 3 | 54% | 16.4 | +0 ±2 | +1 ±3 |
+| Language 4 | 70% | 18.6 | −6 ±2 | −2 ±3 |
+| Language 3, echo new words | 53% | 14.9 | +0 ±2 | +1 ±3 |
+| Language 4, echo new words | 58% | 16.3 | −1 ±2 | +0 ±2 |
+| Intermediate (B1) | 100% | 20.0 | −49 ±2 | −17 ±3 |
+
+Read (Claude):
+- **The dial turns how much, not how hard.** The share of the line in the language goes 34% → 52% → 54% → 70%, and its words per line more than double. But the words stay as easy as stage 1: known without the echo stays 55–62% at every level, against 43% at Intermediate. Inside beginner.md the model keeps beginner words whatever it's told about sentence length, tenses and new words.
+- So there are two working dials and one missing: **amount** (Language blocks) and **echo** (on, new words, off); **word difficulty** moves only when the prompt changes from beginner.md to character.md.
+- A path from stage 1 to Intermediate can be built from what turns: more of the language (1 → 4), then the echo fading (all → new words → off). The step that's left is the words themselves (about 60% → 43% known to a newcomer), which only the switch to the character prompt makes.
+
+Next: approach the gap from above: character.md with levels.md's existing Beginner blocks (situation, still you, can answer, …), which never had the Beginner parts, to see whether word difficulty moves between 60% and 43% there.

@@ -38,6 +38,9 @@ const DIALS: Dial[] = [
   { id: 'echoOff', what: 'Echo: off', stage: s1, supports: { ...base, echo: 'off' } },
   { id: 'answers1', what: 'Answers: one', stage: s1, supports: { ...base, answers: 1 } },
   { id: 'frame', what: 'Answers: a frame', stage: s1, supports: { ...base, answers: 'frame' } },
+  // The Language dial (leveling.md 2026-11-02c): how much of the turn is in the language and how hard
+  ...[1, 2, 3, 4].map((n) => ({ id: `lang${n}`, what: `Language: ${n} (echo all)`, stage: { ...s1, extra: [`Language: ${n}`] }, supports: base })),
+  ...[3, 4].map((n) => ({ id: `lang${n}new`, what: `Language: ${n}, echo for new words only`, stage: { ...s1, extra: [`Language: ${n}`] }, supports: { ...base, echo: 'new' as const } })),
   { id: 'B1', what: 'Intermediate (character.md + B1), for reference', stage: STAGES.B1, supports: STAGES.B1.supports },
 ];
 const only = flag('dials')?.split(',');
@@ -47,7 +50,7 @@ const people = cast();
 const rng = seeded('dials', pack.id);
 const chosen = Array.from({ length: PEOPLE }, () => people[Math.floor(rng() * people.length)]);
 
-interface Row { dial: string; person: string; known: number | null; knownBare: number | null; alive: number | null; words: number; lines: number; ms: number; learnerWords: number; lost: number; error?: string; transcript: string }
+interface Row { dial: string; person: string; known: number | null; knownBare: number | null; alive: number | null; words: number; /** Every word said, English included (echo too) */ allWords: number; lines: number; ms: number; learnerWords: number; lost: number; error?: string; transcript: string }
 
 async function play(d: Dial, k: number, meters: Meters): Promise<Row> {
   const { character, city } = chosen[k];
@@ -68,7 +71,7 @@ async function play(d: Dial, k: number, meters: Meters): Promise<Row> {
       turns.push({ who: 'npc', npc });
     }
   } catch (e) {
-    return { dial: d.id, person: character.name, known: null, knownBare: null, alive: null, words: 0, lines: 0, ms: 0, learnerWords: 0, lost: 0, error: e instanceof Error ? e.message : String(e), transcript: '' };
+    return { dial: d.id, person: character.name, known: null, knownBare: null, alive: null, words: 0, allWords: 0, lines: 0, ms: 0, learnerWords: 0, lost: 0, error: e instanceof Error ? e.message : String(e), transcript: '' };
   }
   const record = recordOf(turns.flatMap((t) => (t.who === 'learner' ? [t.learner] : [])));
   // Scored at the stage-1 listener for every dial, so the numbers compare
@@ -78,6 +81,7 @@ async function play(d: Dial, k: number, meters: Meters): Promise<Row> {
   return {
     dial: d.id, person: character.name, known: score.known, knownBare: score.knownBare, alive: score.alive,
     words: npcs.reduce((n, x) => n + x.languageText.split(/\s+/).filter(Boolean).length, 0), lines: npcs.length,
+    allWords: npcs.reduce((n, x) => n + x.line.split(/\s+/).filter(Boolean).length, 0),
     ms: npcs.reduce((n, x) => n + x.ms, 0), learnerWords: record.wordsTarget, lost: record.lost,
     transcript: turns.map((t) => (t.who === 'npc' ? `${character.name}: ${t.npc.line}` : `Learner${t.learner.help ? ' [help]' : ''}: ${t.learner.said || '(silent)'}`)).join('\n'),
   };
@@ -93,12 +97,12 @@ const cost = Object.values(meters).reduce((a, m) => a + (m.inTokens * 3 + m.outT
 const calls = Object.values(meters).reduce((a, m) => a + m.calls, 0);
 
 const table = [
-  '| Dial | What changes | Words known, with echo | Without echo | Words in the language per line | Learner words in the language | Learner lost (turns) | Alive | s/line | Errors |',
-  '|---|---|---|---|---|---|---|---|---|---|',
+  '| Dial | What changes | Words known, with echo | Without echo | Words in the language per line | Share of the line in the language | Learner words in the language | Learner lost (turns) | Alive | s/line | Errors |',
+  '|---|---|---|---|---|---|---|---|---|---|---|',
   ...dials.map((d) => {
     const rs = rows.filter((r) => r.dial === d.id && !r.error);
     const lines = rs.reduce((n, r) => n + r.lines, 0);
-    return `| ${d.id} | ${d.what} | ${pct(mean(rs.map((r) => r.known)))} | ${pct(mean(rs.map((r) => r.knownBare)))} | ${f1(lines ? rs.reduce((n, r) => n + r.words, 0) / lines : NaN)} | ${f1(mean(rs.map((r) => r.learnerWords)))} | ${f1(mean(rs.map((r) => r.lost)))} | ${f1(mean(rs.map((r) => r.alive)))} | ${f1(lines ? rs.reduce((n, r) => n + r.ms, 0) / lines / 1000 : NaN)} | ${rows.filter((r) => r.dial === d.id && r.error).length} |`;
+    return `| ${d.id} | ${d.what} | ${pct(mean(rs.map((r) => r.known)))} | ${pct(mean(rs.map((r) => r.knownBare)))} | ${f1(lines ? rs.reduce((n, r) => n + r.words, 0) / lines : NaN)} | ${pct(rs.reduce((n, r) => n + r.words, 0) / rs.reduce((n, r) => n + r.allWords, 0))} | ${f1(mean(rs.map((r) => r.learnerWords)))} | ${f1(mean(rs.map((r) => r.lost)))} | ${f1(mean(rs.map((r) => r.alive)))} | ${f1(lines ? rs.reduce((n, r) => n + r.ms, 0) / lines / 1000 : NaN)} | ${rows.filter((r) => r.dial === d.id && r.error).length} |`;
   }),
 ];
 const report = [

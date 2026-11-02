@@ -1,6 +1,6 @@
 # Leveling prototype prompts (trial, Mexico)
 
-version: 2026-11-02b
+version: 2026-11-02c
 
 Prompts for the leveling prototype (tests/experiments/leveling/, designs A, B
 and C in docs/research/leveling/05-designs.md). Test-only: nothing in the app
@@ -11,6 +11,9 @@ blocks; the B1 block for Intermediate is in levels.md ("Intermediate: B1").
   own terms (pace, repeat and rephrase, kind of question, English heard;
   01-learning-science.md §3). Added at the end of beginner.md's system prompt; "Talk: support back"
   is added too when a learner has had 2 hard conversations in a row.
+- **Language** blocks 1–4: how much of the turn is in the language and how
+  hard, in numbers; a dial for the model in docs/research/leveling/07-model.md
+  (measured by dials.mts, not yet on the ladder).
 - **Answers** and **Echo** blocks: which Beginner supports are on (Josh's
   fading plan, docs/06-roadmap.md → Beginner level dialogue). Added after the
   talk block. Code also enforces them on the parts (answers trimmed, glosses
@@ -42,6 +45,30 @@ Where they are now: they know a little. Speak slowly and clearly, in short sente
 
 ```
 Where they are now: finding their feet. Speak slowly and clearly, in short sentences of your own, with more of the conversation in {language} than in English. If they don't follow, rephrase in {language} first. Ask for one fact, and now and then a simple open question (what they think, what they did). English only when they ask, or for a word they can't get from the scene.
+```
+
+## Language: 1
+
+```
+How much {language} (this replaces the guidance above on how much {language} to use and how hard): English carries the turn. In {language}, only your question and at most one short phrase of up to 5 words, using the most common words. Present tense only.
+```
+
+## Language: 2
+
+```
+How much {language} (this replaces the guidance above on how much {language} to use and how hard): about half of what you say is in {language}. Two or three phrases of 5 to 8 words each, plus your question; English at most one short sentence. Common everyday words, present tense, at most two words a turn they probably haven't heard.
+```
+
+## Language: 3
+
+```
+How much {language} (this replaces the guidance above on how much {language} to use and how hard): most of what you say is in {language}; English only for a word they can't get from the scene, or when they ask. Whole sentences of up to 12 words, joined with simple words like and, but, because, when. Present tense, and the past for what just happened. Up to three words a turn they probably haven't heard.
+```
+
+## Language: 4
+
+```
+How much {language} (this replaces the guidance above on how much {language} to use and how hard): everything you say is in {language}, as you'd say it to a newcomer who manages: natural sentences of up to 15 words, any common tense, a few less common words when the place needs them. English only if they ask.
 ```
 
 ## Talk: support back
@@ -136,6 +163,10 @@ Reply with JSON: level ("pre-A1", "A1", "A2", "B1" or "not enough to tell"), rea
 ```
 
 ## Changelog
+
+### 2026-11-02c: Language blocks, a dial for how much and how hard
+
+The dial test (docs/research/leveling/07-model.md): the Talk blocks for stages 2 and 3 left the {language} as easy as stage 1 (within ±3 points of words known), since beginner.md's own rules win, and Intermediate was 45 points harder with nothing in between. The Language blocks say how much of the turn is in the language and how hard, in numbers (phrases, words per sentence, new words a turn, tenses), and say they replace beginner.md's guidance on it. To be measured with dials.mts.
 
 ### 2026-11-02b: the speaking judge reads five conversations, leans lower, has examples
 

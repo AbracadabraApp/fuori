@@ -76,7 +76,7 @@ const leveling = () => readPromptFile('leveling.md');
 /** The step's talk and supports as text, added to beginner.md's system prompt */
 function beginnerStageText(stage: Stage, supports: Supports, supportBack: boolean, role: string): string {
   const f = leveling();
-  const blocks = [stage.talk];
+  const blocks = [stage.talk, ...(stage.extra ?? [])];
   if (supportBack) blocks.push('Talk: support back');
   if (supports.answers === 2) blocks.push('Answers: two');
   else if (supports.answers === 1) blocks.push('Answers: one');
