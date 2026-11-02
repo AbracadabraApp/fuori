@@ -47,4 +47,10 @@ The mic doesn't open: the answer is a click (Josh, 2026-11-02). A button, *Andia
 - *Non ancora* → Beginner; *Sì, abbastanza bene* → Intermediate (Josh: Intermediate is more than OK, so "fairly well").
 
 ## Meeting her again (Josh, 2026-11-02)
-Onboarding writes to her memory, so when the player later meets her in her city she recognises them (*Ah, {name}! Com'è andata?*). Which Giulia (there's one in ten cities, probably Rome's) is still to name.
+Onboarding writes to her memory, so when the player later meets her in her city she recognises them (*Ah, {name}! Com'è andata?*). She is Rome's Giulia.
+
+## Decided (Josh, 2026-11-02)
+- **Mic refused:** if the player taps "Don't Allow", they can tap an answer bubble instead, and she says once that the mic can be turned on in Settings.
+- **Shown once means finished:** it counts as shown only when the player reaches the last button. Leave partway and it starts again at the next launch.
+- **Everyone goes through it once**, including players who already play (those who arrived during the skip have no name, gender or level). Settings' "start over" replays it.
+- **Which Giulia:** Rome's (`giulia`, 32, barista, Bar Trastevere).
