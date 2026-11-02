@@ -40,3 +40,26 @@ All of it is stage 1. With the echo, stage 1 sits in the 90–95% target; withou
 1. **Measure the dials** (`tests/experiments/leveling/dials.mts`, to build): each setting on and off, about 10 characters each, scored with and without the echo and for liveliness.
 2. **The learner signals on real conversations:** the record for Josh's and Sophia's conversations.
 3. **Ask Josh** for the per-conversation storage (loop 2's data).
+
+## Do the dials turn? First measure (Italy, 2026-11-02)
+
+`dials.mts`: 10 people × 9 dials, an opening and 3 replies each, the same people for every dial, an A1 learner in their own words; scored at the stage-1 listener ([report](../../../tests/experiments/leveling/results/2026-11-02-20-40-dials-it.md), 1,080 calls, about $9). Change against stage 1, per person (± one standard error):
+
+| Dial | Words known, with echo | Without echo |
+|---|---|---|
+| Talk: stage 2 | +0 ±2 | +6 ±3 |
+| Talk: stage 3 | −2 ±2 | +3 ±3 |
+| Support back | −1 ±2 | −2 ±2 |
+| Echo: new words only | −0 ±2 | +4 ±3 |
+| **Echo: off** | **−31 ±3** | +1 ±3 |
+| Answers: one | −0 ±1 | +5 ±2 |
+| Answers: a frame | +1 ±2 | +6 ±3 |
+| **Intermediate (B1)** | **−45 ±3** | **−14 ±4** |
+
+Read (Claude):
+- **One Beginner dial turns: the English echo** (−31). The rest don't move the Italian: the talk blocks for stages 2 and 3 and "support back" leave it as easy as stage 1 (if anything easier). The talk block is a paragraph added after beginner.md, whose own rules ("a beginner can follow: short, common words, present tense") win.
+- **Then a cliff:** Intermediate is 45 points harder with the echo gone and 14 harder in the Italian alone. Between stage 1 and Intermediate there is no measured middle.
+- The answers dials can't show here: they change what the learner can say, and this learner always used their own words. The simulated A1 learner was never lost, even at 60% known: too competent, as research 02 warned, so its turns are no measure of difficulty.
+- Liveliness: stage 1 the flattest (4.8), Intermediate the liveliest (6.0).
+
+For the model: the difficulty of the language itself has no working dial below Intermediate. Next: give it one that's concrete enough to obey (the share of each turn in the language, phrase length, how many new words a turn), measure it the same way, and look for settings that fill the gap between stage 1 and Intermediate.

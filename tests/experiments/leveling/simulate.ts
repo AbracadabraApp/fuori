@@ -64,7 +64,7 @@ export interface LearnerRun {
 }
 
 /** People the game shows (as tests/conversations/run.ts samples them) */
-function cast(): { character: CharacterSheet; city: string }[] {
+export function cast(): { character: CharacterSheet; city: string }[] {
   return cities
     .filter((c) => !c.hidden)
     .flatMap((city) => city.places.filter((p) => !p.hidden).map((p) => ({ character: characterForPlace(city, p), city: city.name })))
@@ -104,7 +104,7 @@ function enforceSupports(parts: Part[], s: Supports): Part[] {
     .map((p) => (s.echo === 'off' ? { ...p, gloss: '' } : p));
 }
 
-interface Ctx {
+export interface Ctx {
   brain: Brain;
   meters: Meters;
   design: Design;
@@ -145,7 +145,7 @@ async function characterOnce(ctx: Ctx, transcript: Turn[], said: string | undefi
 }
 
 /** One character turn; design C checks it first and regenerates a clear miss once */
-async function characterTurn(ctx: Ctx, transcript: Turn[], said?: string): Promise<NpcLine> {
+export async function characterTurn(ctx: Ctx, transcript: Turn[], said?: string): Promise<NpcLine> {
   const first = await characterOnce(ctx, transcript, said);
   if (ctx.design !== 'C') return { ...first, addedMs: 0 };
   const talk = talkText(ctx.stage, ctx.supports, ctx.supportBack, ctx.character);
@@ -179,7 +179,7 @@ function heard(turns: ConversationRun['turns'], name: string): string {
     .join('\n');
 }
 
-async function learnerTurn(brain: Brain, meters: Meters, intent: Intent, ability: number, demand: number, ctx: { name: string; role: string; city: string }, turns: ConversationRun['turns'], offered: string[], roll: number): Promise<LearnerTurn> {
+export async function learnerTurn(brain: Brain, meters: Meters, intent: Intent, ability: number, demand: number, ctx: { name: string; role: string; city: string }, turns: ConversationRun['turns'], offered: string[], roll: number): Promise<LearnerTurn> {
   if (intent === 'silent') return { said: '', lang: 'none', help: false, offered };
   if (intent === 'say back') {
     const answer = offered[Math.floor(roll * offered.length)];
