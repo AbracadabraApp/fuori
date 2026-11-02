@@ -93,17 +93,17 @@ Goal: reply under 2 s, 4 s at most. Measured 2026-10-18 (`npm run measure:turn`,
 - [ ] **Claude** Test speech-to-text alternatives to Whisper on Groq: Deepgram Nova-3, AssemblyAI, OpenAI `gpt-4o-transcribe` / `gpt-4o-mini-transcribe`, ElevenLabs Scribe, Speechmatics and Google Chirp. Measure on one fixed set of real learner recordings in Italian and Mexican Spanish: errors on a beginner's accent and mistakes (the transcript must keep the learner's mistakes, not fix them), behaviour on silence and noise, speed and price per minute. **Josh** ⛔ records the set (about 20 short turns per language, including hesitant and wrong ones). Apple's on-device recognition is out of scope unless Josh reopens it (CLAUDE.md: speech in is Whisper on the server)
 
 ### Core behaviours (round 18) — N5
-- [ ] **Josh** Decide: when a learner asks "say it in English", is the translation shown under the line enough? Today the character repeats in the language and never speaks English (on every prompt tested)
-- [ ] **Claude** Recasting mistakes fell with the short prompt (13–19% of replies, from 31–44%): try one short line in the prompt, gated on this test and the replay (speed, words, alive)
+- [x] **Josh** Decide: when a learner asks "say it in English", is the translation shown under the line enough? Today the character repeats in the language and never speaks English (on every prompt tested) · closed (Josh, 2026-11-02)
+- [x] **Claude** Recasting mistakes fell with the short prompt (13–19% of replies, from 31–44%): try one short line in the prompt, gated on this test and the replay (speed, words, alive) · closed (Josh, 2026-11-02)
 
 ### Characters feel alive — N5
 Goal: alive 7 (today about 6 in real conversations, 5–7 with simulated learners). Order decided by Claude, judged by Josh (2026-10-18); one change at a time through the replay gate.
 - [x] **Claude** Real conversations sorted by what goes wrong (round 15): the worst were characters repeating themselves; the order form ("X o Y?") is rare in real play (8–15% of lines)
 - [x] **Claude** Characters see the whole conversation, not the last 6 messages (prompt 2026-10-18): repeats halved (4.4% → 2.4% of lines)
-- [ ] **Claude** One concrete detail per character (an opinion, something they care about): only 15 of 703 characters have more than role, traits and setting. Generate it for the characters in the replay set, put it in the prompt, replay; keep it if alive rises and lines a beginner can follow don't drop
-- [ ] **Claude** Separately, "react before asking" in the prompt, with a count of repeated patterns (rules like it made tics before, round 5)
-- [ ] **Claude** If it passes: generate details for the remaining ~680 characters, check a sample, fix only what's terrible
-- [ ] **Claude** A replay set for Mexico (the replay set is one file and holds only Italy's conversations today)
+- [x] **Claude** One concrete detail per character (an opinion, something they care about): only 15 of 703 characters have more than role, traits and setting. Generate it for the characters in the replay set, put it in the prompt, replay; keep it if alive rises and lines a beginner can follow don't drop · closed (Josh, 2026-11-02)
+- [x] **Claude** Separately, "react before asking" in the prompt, with a count of repeated patterns (rules like it made tics before, round 5) · closed (Josh, 2026-11-02)
+- [x] **Claude** If it passes: generate details for the remaining ~680 characters, check a sample, fix only what's terrible · closed (Josh, 2026-11-02)
+- [x] **Claude** A replay set for Mexico (the replay set is one file and holds only Italy's conversations today) · closed (Josh, 2026-11-02)
 
 ### Language level of the dialogue (what characters say) ([language-levels-plan.md](language-levels-plan.md)) — N6, the level framework
 Goal: 90% of the character's words at the learner's level (Josh; the [research](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech) suggests 95% for easy listening). Today a beginner can follow about 25% of lines on today's prompt.
@@ -159,7 +159,7 @@ Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level 
 - [x] **Claude** One tap per turn (built 2026-10-23; finished sentences end sooner, 015f3ac): tap once; English ends on silence, the mic reopens for the reading (waits for speech to start, closed while hear-it plays), the reading ends on silence and is sent; tap again next turn
 - [x] **Claude** Beginner opener hint: built 10537a1 (2026-10-23), on Josh's phone. Was:: her first line in each conversation ends with a small mic and "Answer in <language> or English" (G1); nothing above the mic
 - [ ] **Tabled (Josh, 2026-10-23: English gets help first; correcting the learner's language waits)** Claude (laptop): test Claude's take for the learner's spoken language (Italian or Spanish) on logged learner turns (what they meant, clean, at their level; none when unclear); Josh reads it beside Whisper's text before anything's built
-- [ ] **N5 (from N4)** **Josh** Play the rough version with a family beginner; then decide whether the reply panel goes (Josh, 2026-10-23, on his phone: "reply panel good")
+- [x] **N5 (from N4)** **Josh** Play the rough version with a family beginner; then decide whether the reply panel goes (Josh, 2026-10-23, on his phone: "reply panel good") · closed (Josh, 2026-11-02)
 Onboarding, then reply buttons for the first turns of each conversation (stage A, built 2026-10-21, server-decided, no switch), then the mic. Stages B and C proposed; the rest not settled.
 - [x] **Claude** Reply buttons from a separate call (`lib/replies.ts`, test-only): sensible 97–100%, ready before the character finishes speaking
 - [x] **Josh** Played Afuera with the level trial on: Chucho the shoeshiner, 23 turns (2026-10-19, prompt `2026-10-18b+Beginner: still you, sometimes ask`)
@@ -174,11 +174,6 @@ Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens 
 - [ ] **N6 (moved from N5, Josh 2026-10-30)** **Claude** Missions prototype P1–P3 first ([diario.md](diario.md) → Prototype first; Josh, 2026-10-19: prototype before building the whole feature)
 - [ ] **Josh** P4: after playing the prototype, build the whole chips-and-missions feature, change it, or drop it
 - [ ] **N6 (moved from N5, Josh 2026-10-30)** **Claude** Card maker v2 (on hold until P4: chips with missions may replace cards)
-- [ ] **Josh** Decide: does the 90%-of-words bar apply to the whole card, or to the frame and the character's line (the slot noun comes from the learner's own scene, with English on levels 1–2)?
-- [ ] **Claude** Cards from their own step after each conversation (round 17: today's review phrases mostly can't be cards)
-- [ ] **Claude** A judge call per conversation: did the learner say a card's phrase themselves (retires it). No phrase matching
-- [ ] **Josh** Decide: the learner's voice for their replies (one voice per country, or matched to the learner); whether the book shows during a conversation (diario.md suggests not)
-- [ ] **Claude** Build after reply buttons (levels 1–3), since the cards are those screens
 
 ### Learn and Teach: the teacher outside the world ([learn.md](learn.md), [teach-plan.md](teach-plan.md); Josh, 2026-10-19, option D for Magda) — N5
 - [ ] **Josh + Claude** Lessons from the syllabus, one step each, voiced by people the learner knows; missions after them, built on what the learner can say (Josh, 2026-10-27: [teach-plan.md](teach-plan.md) → Lessons and missions). Next: one lesson made straight from a unit's step (a1-15 step 1) to compare with the improvised trial; split units into steps; a "can say" record in the memory notes
