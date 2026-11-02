@@ -55,7 +55,7 @@ Simulated learners are too competent and too even (02), so the numbers compare d
 
 - **Context counts as level.** Someone who's lived in Italy, or knows food and customs, follows more with the same words: a known topic makes listening easier. A traveller and a first-time tourist at the same A2 are different learners.
 - **The game can ask.** Characters can ask what real people ask a newcomer (*sei mai stato in Italia? quanto ti fermi?*) and, when it fits, *parlo troppo veloce?* The answers feed the learner's profile and the ladder directly, instead of only inferring them. Keep it occasional, so a conversation never turns into an intake form.
-- **The simplest form (Josh):** a character asks how it's going: *Come va con l'italiano? Troppo difficile o va bene?* (*¿Cómo vas con el español?* in Mexico; the words come from content). Read it asymmetrically: "too hard" turns a support back on right away; "easy" counts as one vote toward stepping up, since beginners overrate themselves (04).
+- **The simplest form (Josh):** a character asks how it's going: *Come va con l'italiano? Troppo difficile o va bene?* (*¿Cómo vas con el español?* in Mexico; the words come from content). Read it asymmetrically: "too hard" turns a support back on; "easy" counts as one vote toward stepping up, since beginners overrate themselves (04). (That "too hard" is the more trustworthy answer is Claude's assumption, not from the research.)
 
 ### A small set of questions with a metric each (Josh, 2026-11-02; Claude's draft)
 
@@ -70,3 +70,16 @@ Simulated learners are too competent and too even (02), so the numbers compare d
 - Asked by whoever it fits; Beginners get the answers as bubbles to say back.
 - The answer is read by the call that already runs when a conversation ends (memory), so no new call and no keyword matching.
 - Words come from content, so Mexico gets its own.
+
+### Weighed against everything else (2026-11-02, at Josh's request: no special weight for his ideas)
+
+Ranked by evidence and cost, the asks sit in the middle and at the bottom:
+
+1. **Strong evidence, small cost:** the B1 Intermediate prompt; moving level between conversations on a 5-conversation window; the counts (English share, help asks, own words vs said back); asking characters to repeat and rephrase; measuring live lines.
+2. **Good evidence, one call:** the end-of-conversation speaking judge (design B).
+3. **Cheap, weak as a measure of level:** the comfort question. Self-rating tracks tested speaking only loosely (r ≈ 0.44, 04). Keep it as a tiebreaker and an early warning, not a driver.
+4. **Plausible, small:** the background question, once. Knowing the topic helps listening, but it's general knowledge, not in the four reports, and a learner who has lived there usually places higher anyway. Could live in onboarding.
+5. **Costly per turn:** the line check (design C); the prototype decides.
+6. **Drop for leveling:** the pace question (the counts already show struggle, and speed is better set by measuring speech rate); the purpose question (useful for topics and lessons, but it isn't leveling: move it to Learn or memory).
+
+Net: the asks add little that the counts don't already give. Keep the comfort question as one cheap extra input; leave the rest out of the leveling design.
