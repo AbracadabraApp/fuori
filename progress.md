@@ -83,6 +83,12 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 - Live tests: two runs hung five minutes on one request ("fetch failed"), Italy and Mexico; not reproduced in five later runs; server answered turns in 2–3 s. smoke:live now times a call out after a minute and names it (de51e0c). Final runs on 2026-10-31: both countries pass end to end.
 - Next: install the stamps build on Josh's phone (ask first); Josh to confirm the N6 order and the three blockers.
 
+## 2026-11-02: Leveling research, onboarding scripts, N5 closed (cloud session)
+- **Leveling research** (`docs/level-research-plan.md`, `docs/research/leveling/00–06`): what we know, four research reports, three designs, the prototype harness (`tests/experiments/leveling/`), the first run read (the measure, not the dialogue, was wrong). Josh's framing ("one equation"), words spoken as the main signal, and the in-role questions weighed (comfort question only, as a tiebreaker) are in 05-designs.md. The laptop session took it on from there (07-model.md, the path live).
+- **Onboarding scripts agreed:** Rome's Giulia (`docs/onboarding-giulia.md`) and Oaxaca's Doña Chela (`docs/onboarding-chela.md`): name, masculine or feminine, first time in the country, level (*Non ancora* / *Sì, abbastanza bene*), cities and asking for help, a button to the city list. Claude plays her from the script; answers read at the end; mic refused → tap answers; shown once means finished; everyone goes through it once; she recognises the player later. N6 item 3b. Not built.
+- **Other:** mystery notes (`docs/mystery.md`); N5 loose ends closed or deleted (Josh); the Missions card shows the chip mockup as a picture.
+- **Open:** build the onboarding (both countries); the laptop's leveling next steps (07-model.md).
+
 ## 2026-10-30: N6 themes, goodbye rule, Missions placeholder (cloud session)
 - Reviewed the N6 plan for themes that join items (in conversation, not written into the plan): one level system (1, 5, 8, the per-level wait in 6); the first session (the level question asked in character by the onboarding script, then the city picker); the syllabus as the spine of lessons and missions; one decision on data kept in play (6, 8, 9, 13) and one privacy policy.
 - Goodbye rule: Josh, "a lot of code for not a clear problem (lessons are different)". Drop it from N6; only the lesson practice keeps a turn-count end. Roadmap item 4 not yet edited.
