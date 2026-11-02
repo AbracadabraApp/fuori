@@ -85,3 +85,30 @@ Read (Claude):
 - A path from stage 1 to Intermediate can be built from what turns: more of the language (1 → 4), then the echo fading (all → new words → off). The step that's left is the words themselves (about 60% → 43% known to a newcomer), which only the switch to the character prompt makes.
 
 Next: approach the gap from above: character.md with levels.md's existing Beginner blocks (situation, still you, can answer, …), which never had the Beginner parts, to see whether word difficulty moves between 60% and 43% there.
+
+## From above: the character prompt with Beginner blocks (Italy, 2026-11-02)
+
+Same 10 people ([report](../../../tests/experiments/leveling/results/2026-11-02-20-50-dials-it.md), 600 calls, about $3): character.md with levels.md's existing Beginner blocks, all in the language, no Beginner parts or echo. Known to the newcomer listener, against stage 1's 59% (Δ per person):
+
+| Dial | Known (all in the language) | Δ vs stage 1 | Words per line | Alive |
+|---|---|---|---|---|
+| character.md + Beginner: situation, still you | 55% | −4 ±3 | 11.4 | 5.8 |
+| character.md + Beginner: still you, ask | 59% | −1 ±3 | 12.7 | 5.6 |
+| character.md + Beginner: shape | 55% | −5 ±2 | 16.0 | 4.8 |
+| character.md, no level block (Intermediate today) | 46% | −14 ±3 | 18.3 | 6.1 |
+| character.md + Intermediate: B1 | 49% | −10 ±3 | 20.5 | 6.4 |
+
+Read (Claude):
+- **Word difficulty does turn, from above.** A Beginner block in the character prompt keeps the words as easy as stage 1 (55–59%) while everything is in the language and the conversation is livelier (5.6–5.8 against stage 1's 4.9). Without a block, or with the B1 one, the words are about 10–14 points harder.
+- The B1 block isn't harder than no block (49% vs 46%, within the noise between runs: B1 measured 43% and 45% earlier). It works as a "still you" reminder, not a dial.
+- So every step from stage 1 to Intermediate now has a setting that moves it, measured:
+
+| Step | Prompt and settings | In the language | Known, with what they hear |
+|---|---|---|---|
+| 1 | beginner.md, stage 1, echo all, two answers | ~40% | ~92% |
+| 2 | beginner.md + Language 2–3, echo all | ~53% | ~90% |
+| 3 | beginner.md + Language 4, echo new words only | ~60–70% | ~90% |
+| 4 | character.md + "Beginner: still you, ask" (English subtitle after each line, as the app shows) | 100% | ~57% (easy words, no echo) |
+| 5 | character.md (Intermediate) | 100% | ~46% |
+
+The biggest single step is 3 → 4, where the echo goes. In the model that's the learner's number at work: by step 4 they should know more of the words than the newcomer listener does, and the subtitle and help remain. Real play decides whether it's too big; "Language 4, echo off" is a measured setting that could sit between (57–60% known).

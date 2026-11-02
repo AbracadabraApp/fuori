@@ -41,6 +41,9 @@ const DIALS: Dial[] = [
   // The Language dial (leveling.md 2026-11-02c): how much of the turn is in the language and how hard
   ...[1, 2, 3, 4].map((n) => ({ id: `lang${n}`, what: `Language: ${n} (echo all)`, stage: { ...s1, extra: [`Language: ${n}`] }, supports: base })),
   ...[3, 4].map((n) => ({ id: `lang${n}new`, what: `Language: ${n}, echo for new words only`, stage: { ...s1, extra: [`Language: ${n}`] }, supports: { ...base, echo: 'new' as const } })),
+  // From above: the character prompt (character.md) with levels.md's Beginner blocks, no Beginner parts or echo
+  ...([['charSituation', 'Beginner: situation, still you'], ['charAsk', 'Beginner: still you, ask'], ['charShape', 'Beginner: shape']] as const).map(([id, block]) => ({ id, what: `character.md + ${block}`, stage: { ...STAGES.B1, talk: block, talkSupportBack: undefined }, supports: STAGES.B1.supports })),
+  { id: 'charPlain', what: 'character.md, no level block (Intermediate in the app today)', stage: { ...STAGES.B1, talk: '', talkSupportBack: undefined }, supports: STAGES.B1.supports },
   { id: 'B1', what: 'Intermediate (character.md + B1), for reference', stage: STAGES.B1, supports: STAGES.B1.supports },
 ];
 const only = flag('dials')?.split(',');
