@@ -36,8 +36,9 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
   3. **The leveling model v0 in the app** (server only). Merges the old items 1 (a level for new players), 5 (English fading) and 8 (the level framework). Josh: "go" (2026-11-02).
      - [x] Mexico measured: the same shape as Italy (07-model.md).
      - [x] The path live (7ac9c66, `lib/path.ts`): steps 1–4 with Josh's fading pattern, then Intermediate; moving up by counts; a support back after two hard conversations. Live tests pass in both countries; the first records were written.
-     - [ ] Placement by the onboarding's *Parli italiano?* (nothing → step 1, a little → step 3); today the onboarding level places (Beginner or none → step 1).
+     - [ ] Placement by the new onboarding's level question (Josh, 2026-11-02): *Non ancora* / *Todavía no* → step 1; *Sì, abbastanza bene* / *Sí, bastante bien* → Intermediate, a first guess the path corrects; today the onboarding level places (Beginner or none → step 1).
      - [ ] **Josh and Sophia** play it; words spoken per week in the admin shows whether it works.
+  3b. **The new onboarding** (Josh, 2026-11-02): Rome's Giulia and Oaxaca's Doña Chela, played by Claude from a script; name, masculine or feminine, first time in the country, level; ends on a button to the city list; she recognises the player later. Everyone goes through it once; it counts as shown only when finished; answers can be tapped if the mic is refused. Scripts: [onboarding-giulia.md](onboarding-giulia.md), [onboarding-chela.md](onboarding-chela.md).
   4. **The lesson shape** ([teach-plan.md](teach-plan.md)). **Josh** approves the screen design.
   5. **A shorter end-of-turn wait** for Intermediate and Advanced (Beginners keep 2.5 s).
   6. **Parity with the web:** stations and ticket, the city picker.
