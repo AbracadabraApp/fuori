@@ -41,6 +41,7 @@ Answers: *Sto iniziando.* (I'm just starting.) / *Lo parlo da un po'.* (I've bee
 Ends on the city list.
 
 ## What the answers set
-- Name; masculine or feminine (how characters address the learner). "Either is fine", non-binary or no clear answer → feminine (Josh, 2026-11-02); changeable in Settings.
+- Name. If she gets it wrong, the learner just corrects her (*No, mi chiamo…* or in English) at any turn; she apologises, uses the new name and asks her question again (Josh, 2026-11-02). Settings edits it if Whisper never gets it.
+- Masculine or feminine (how characters address the learner). "Either is fine", non-binary or no clear answer → feminine (Josh, 2026-11-02); changeable in Settings.
 - First time in Italy or not: into Giulia's memory of the learner.
 - *Sto iniziando* → Beginner; *Lo parlo da un po'* → Intermediate.
