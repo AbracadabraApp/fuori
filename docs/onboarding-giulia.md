@@ -34,7 +34,7 @@ Answers: *Sto iniziando.* (I'm just starting.) / *Lo parlo da un po'.* (I've bee
 > *Ogni città è diversa.* (Every city is different.)
 >
 > "And whenever you need help, just ask in English or try your best in Italian. People are friendly."
-> *Siamo gentili!* (We're friendly!)
+> *Siamo molto simpatici!* (We're very friendly!)
 >
 > *Allora, dove andiamo?* (So, where shall we go?)
 
