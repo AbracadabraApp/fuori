@@ -30,21 +30,18 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
 
 **Before testers outside the family** (the list is Stage 2 under Release, below): App Attest; a daily usage budget per learner that survives deploys (today's caps live in the server's memory and reset on every deploy); the image domain; a privacy policy naming Groq, Anthropic and ElevenLabs; the App Privacy label; tester notes. The tester questions need updating first: the wait is now ~2 s, not ~4 s; the Beginner level exists; it's hands-free, not "tap again when you're done". Then Stage 3, the App Store, and the web sunset.
 
-- **N6**, in order (plan to share: [n6-release-plan.md](n6-release-plan.md); order proposed by Claude 2026-10-30, Josh to confirm; learning first, then what every new player meets, then the rest):
-  1. **A level for new players.** Build 8 skips the greeter, so a new player starts with none and gets Beginner-format conversations. Claude's proposal: one level question by buttons after the country choice (→ Learner level). Small, and every new player meets it.
-  2. **The lesson shape** ([teach-plan.md](teach-plan.md)): Magda teaches on the conversation screen, a practice dialogue as the assignment, then her review. The biggest teaching gain left.
-  3. **TestFlight build 9**, carrying 1 and 2 plus the scan's app fixes (Flashcards, the recorder, the voice, Learn pausing the conversation).
-  4. **The goodbye rule** (→ Ending a conversation): her goodbye ends the conversation, a finish link replaces the mic. **Josh** picks the word.
-  5. **The English fading over time** (Josh's staggered plan, → Beginner level dialogue).
-  6. **Transcription measured on the kept recordings** (`npm run replay:recordings`; 23 Mexico, 1 Italy so far), then a shorter end-of-turn wait for Intermediate and Advanced tuned from them (Beginners keep 2.5 s).
-     *First measure (2026-10-30, `tests/experiments/transcription-models.mts`):* 31 kept recordings, all Josh's (Sophia hasn't spoken yet: her four conversations hold only the character's opening line); 28 are Mexico Flashcards answers, 2 are conversation turns, 1 Italian. On the Flashcards answers, where the deck says what was meant, Whisper turbo (the app's) got the article right in all of them but the noun wrong in about 7 of 28 (*la calle* came back as "La Calé", "La Calais", "La cahier"; *la ciudad* as "Leí a ver, papá"). Groq's larger Whisper fixed some of those but broke the article ("Le tarde" twice, "El Ceyular") and added words ("La Señora Yorah"): no better overall, and worse on the article, which is what Flashcards judges. No switch. Two conversation turns are too few to say anything about conversations; that needs more of them kept. Nothing else was tried: sending the recordings to another service (ElevenLabs Scribe) was held back, since the voices would go somewhere new
-  7. ~~**A reason to be there for Mexico's people**: one sentence per character on why they're at their place today and what they do there (the `here` line Italy's whole cast has; 11 of Mexico's 65 have one, the rest get only the place's name, kind and neighbourhood).~~ Done 2026-10-30: trial, with wins 34 of 50 (docs/prompt-trials.md); all 61 shown people now have one (Josh: "so lets add it?")
-  8. **The level framework**, repeatable and improving: placement, moving up, level in the prompt (→ Learner level).
-  9. **The conversation library** beyond Josh's and Sophia's recordings.
-  10. **Adventures** ([adventures.md](adventures.md)).
-  11. **The missions prototype and card maker v2** (→ Diario).
-  12. **Parity with the web:** visit stamps, stations and ticket, the city picker.
-  13. **A log of every turn's timings**, phone and server, kept across deploys (typical and worst 1 in 20, counted from after the end-of-turn wait).
+- **N6**, rewritten 2026-11-02 (Josh: "rewrite N6 to meet relevant goals and fold in the proposed leveling work"; plan to share: [n6-release-plan.md](n6-release-plan.md); order proposed by Claude, Josh to confirm). Main goal: every learner at the right level, the level moving as they improve (the leveling model, [research/leveling/07-model.md](research/leveling/07-model.md)); measured by words spoken per conversation (Josh).
+  1. **TestFlight build 9**: the scan's app fixes, visit stamps, the Missions placeholder. **Josh**: "go".
+  2. **A record of each conversation**: step played, words spoken (in the language, own words), help asks, silences; one table, numbers only; words spoken per player per week in the admin. **Josh**: yes to the database change.
+  3. **The leveling model v0 in the app** (server only): Mexico measured first; the measured five-step path from stage 1 to Intermediate; placement by the onboarding's *Parli italiano?* (replaces "a level for new players" by buttons); moving up by counts, supports back after two hard conversations. **Josh**: yes to replacing today's Beginner level. Merges the old items 1 (a level for new players), 5 (English fading) and 8 (the level framework).
+  4. **The lesson shape** ([teach-plan.md](teach-plan.md)). **Josh** approves the screen design.
+  5. **A shorter end-of-turn wait** for Intermediate and Advanced (Beginners keep 2.5 s).
+  6. **Parity with the web:** stations and ticket, the city picker.
+  7. **Adventures** ([adventures.md](adventures.md)).
+  8. **Missions**, once defined, and card maker v2 (→ Diario).
+  9. **The conversation library and the turn-timings log** (words, audio, timings beyond the family): a privacy decision first.
+  - **Done in N6:** visit stamps built (2026-10-30, ship in build 9); transcription measured on the kept recordings: Whisper turbo stays (2026-10-30, `tests/experiments/transcription-models.mts`: articles right in all 28 Flashcards answers, about 7 nouns wrong; Groq's larger Whisper no better and worse on articles); a reason to be there for all 61 of Mexico's shown people (2026-10-30, wins 34 of 50); the leveling measurements (2026-11-02, 07-model.md).
+  - **Dropped from N6:** the goodbye rule (Josh, 2026-10-30: "a lot of code for not a clear problem"; lessons keep their turn-count end); the level question by buttons (placement is a conversation, item 3).
 - **Later:** prompt caching (speed and cost only, no quality change: the turn prompt is ~140 tokens, the Beginner prompt ~1,400); real accounts, when someone needs Fuori on more than one device.
 
 ### ⛔ Blockers: what's waiting on Josh
