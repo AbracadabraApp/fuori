@@ -27,7 +27,7 @@ Answers: *Sí, es mi primera vez.* / *No, no es mi primera vez.*
 >
 > *¿Ya hablas español?* (Do you already speak Spanish?)
 
-Answers: *Todavía no.* (Not yet.) / *Sí, bastante.* (Yes, quite a bit.)
+Answers: *Todavía no.* (Not yet.) / *Sí, bastante bien.* (Yes, fairly well.)
 
 ## 4 · What Afuera is
 > "In Afuera you can visit lots of cities and talk with interesting people: at the market, the fonda, the zócalo."
@@ -41,7 +41,7 @@ Answers: *Todavía no.* (Not yet.) / *Sí, bastante.* (Yes, quite a bit.)
 The mic doesn't open. A button, *¡Vámonos!* (Let's go!), opens the city list.
 
 ## What the answers set
-Same as Giulia's: name; masculine or feminine; first time in Mexico, into her memory and the onboarding record; *Todavía no* → Beginner, *Sí, bastante* → Intermediate (a first guess; when in doubt, Beginner).
+Same as Giulia's: name; masculine or feminine; first time in Mexico, into her memory and the onboarding record; *Todavía no* → Beginner, *Sí, bastante bien* → Intermediate (a first guess; when in doubt, Beginner).
 
 ## Choices made for Mexico (Claude)
 - *Me dicen Doña Chela*: "Doña" is a title others give her, so she says what people call her rather than *Soy Doña Chela*.
