@@ -278,7 +278,9 @@ export async function recordsByWeek(weeks = 8): Promise<string> {
          array_remove(array_agg(DISTINCT step), NULL) AS steps,
          count(*) FILTER (WHERE felt = 'easy')::int AS easy, count(*) FILTER (WHERE felt = 'hard')::int AS hard,
          count(*) FILTER (WHERE moved)::int AS moved
-       FROM conversation_records WHERE at > now() - make_interval(weeks => $1)
+       FROM conversation_records r
+       -- Only learners who still exist: the live tests' learners are deleted when they finish
+       WHERE at > now() - make_interval(weeks => $1) AND EXISTS (SELECT 1 FROM learners l WHERE l.id = r.learner_id)
        GROUP BY learner_id, country, week ORDER BY week DESC, words DESC`,
       [weeks]
     )
