@@ -209,8 +209,11 @@ export function stageInVersion(version: string | null): { stage: string; support
  */
 export async function pathState(learnerId: string): Promise<PathState> {
   await ensureTable();
+  // Records from before the welcome placed them (lib/welcome.ts → placedAt) don't count
   const r = await query<{ state: PathState }>(
-    'SELECT state FROM conversation_records WHERE learner_id = $1 AND state IS NOT NULL ORDER BY at DESC LIMIT 1',
+    `SELECT state FROM conversation_records r WHERE learner_id = $1 AND state IS NOT NULL
+       AND at > COALESCE((SELECT (onboarding->>'placedAt')::timestamptz FROM learners WHERE id = $1), 'epoch')
+     ORDER BY at DESC LIMIT 1`,
     [learnerId]
   );
   const s = r.rows[0]?.state;

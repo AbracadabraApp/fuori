@@ -19,6 +19,7 @@ import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion } from '@/lib/beginner';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
 import { pathState } from '@/lib/conversation-record';
+import { welcomeBrief, welcomeContent, welcomed, welcomeVersion } from '@/lib/welcome';
 import type { Gender } from '@/lib/types';
 import type { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
 import type { Laps } from '@/lib/timing';
@@ -49,6 +50,10 @@ export interface TakeTurnParams {
   onText?: (snapshot: string) => void;
   /** False once part of the reply was sent on (its first sentence): a stall then fails instead of retrying */
   canRetry?: () => boolean;
+  /** The app can't use the mic (refused): in the welcome, she says once where to turn it on */
+  micOff?: boolean;
+  /** The app opened this conversation as the welcome (lib/welcome.ts); older apps never do, so a visit to her stays a visit */
+  welcome?: boolean;
 }
 
 export interface TakeTurnResult {
@@ -110,10 +115,21 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       p.onSoftError('learner level', err);
     }
   }
-  const beginner = onPath?.stage.path === 'beginner';
-  const pathLevel = onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
+  // The welcome (lib/welcome.ts): its character, for a learner who hasn't finished it, plays it in the Beginner format
+  let welcome = false;
+  if (p.welcome && learnerId && !isTutor && character.id === welcomeContent()?.characterId) {
+    try {
+      welcome = !(await welcomed(learnerId));
+    } catch (err) {
+      p.onSoftError('welcome', err);
+    }
+  }
+  const beginner = !welcome && onPath?.stage.path === 'beginner';
+  const pathLevel = !welcome && onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
 
-  const reply: TurnOutput = beginner && onPath
+  const reply: TurnOutput = welcome
+    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: welcomeBrief(!!p.micOff), withDone: true })
+    : beginner && onPath
     ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: stageText(onPath.stage, character.role), maxAnswers: onPath.stage.answers })
     : await runTurn({
     character,
@@ -133,6 +149,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // One line per turn so any reply can be traced to the prompt version that produced it
   const version = tutorPrompt
     ? `magda-${tutorPrompt.version}`
+    : welcome
+    ? welcomeVersion()
     : `${beginner ? beginnerPromptVersion() : promptVersion(pathLevel ?? level)}${onPath ? stageTag(onPath.stage, onPath.supportBack) : ''}`;
   console.log(
     JSON.stringify({

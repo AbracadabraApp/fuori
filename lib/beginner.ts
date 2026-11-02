@@ -58,6 +58,13 @@ export const partsJsonSchema = {
   },
 };
 
+/** The welcome's turns (lib/welcome.ts): the parts, then whether this is its last turn (after the parts, so streaming the parts is unchanged) */
+export const partsWithDoneJsonSchema = {
+  ...partsJsonSchema,
+  required: ['parts', 'done'],
+  properties: { ...partsJsonSchema.properties, done: { type: 'boolean' } },
+};
+
 export function beginnerPromptVersion(): string {
   return `beginner-${readPromptFile('beginner.md').version}`;
 }
@@ -218,7 +225,7 @@ export class PartsWatcher {
 }
 
 /** One Beginner turn: the parts, and the line and English derived from them */
-export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { laps?: Laps; onText?: (snapshot: string) => void; canRetry?: () => boolean; /** The stage's answers to say back, at most (lib/path.ts) */ maxAnswers?: number }): Promise<{ line: string; en: string; parts: Part[] }> {
+export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { laps?: Laps; onText?: (snapshot: string) => void; canRetry?: () => boolean; /** The stage's answers to say back, at most (lib/path.ts) */ maxAnswers?: number; /** The welcome (lib/welcome.ts): the reply also says whether this is its last turn */ withDone?: boolean }): Promise<{ line: string; en: string; parts: Part[]; done?: boolean }> {
   const prompt = buildBeginnerPrompt(p);
   const started = performance.now();
   // A deadline and one retry (lib/claude.ts): a stalled reply hung Doña Rosa
@@ -231,15 +238,16 @@ export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[
     thinking: { type: 'between_tools' },
     system: prompt.system,
     messages: prompt.messages,
-    output_config: { format: { type: 'json_schema', schema: partsJsonSchema } },
+    output_config: { format: { type: 'json_schema', schema: p.withDone ? partsWithDoneJsonSchema : partsJsonSchema } },
   } as Parameters<typeof anthropic.messages.stream>[0]);
   if (p.laps) stream.once('text', () => p.laps!.mark('claudeFirstToken', performance.now() - started));
   if (p.onText) stream.on('text', (_delta, snapshot) => p.onText!(snapshot));
   return stream;
   }, undefined, undefined, { canRetry: p.canRetry });
   if (response.stop_reason === 'max_tokens') throw new Error(`Beginner turn hit max_tokens (${response.usage.output_tokens} tokens)`);
+  const json = JSON.parse(replyText(response));
   let answers = 0;
-  const parts = tidyParts(PartsSchema.parse(JSON.parse(replyText(response))).parts).filter((x) => x.kind !== 'answer' || p.maxAnswers === undefined || ++answers <= p.maxAnswers);
+  const parts = tidyParts(PartsSchema.parse(json).parts).filter((x) => x.kind !== 'answer' || p.maxAnswers === undefined || ++answers <= p.maxAnswers);
   if (!parts.length) throw new Error('Beginner turn came back with no parts');
-  return { ...lineFromParts(parts), parts };
+  return { ...lineFromParts(parts), parts, ...(p.withDone ? { done: json.done === true } : {}) };
 }

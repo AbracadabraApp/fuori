@@ -1,5 +1,5 @@
 /**
- * GET /v1/me → { learnerId, country, visits: { placeId: count }, level, onboarded, addressOn, addressedAs? }
+ * GET /v1/me → { learnerId, country, visits: { placeId: count }, level, onboarded, welcomed, addressOn, addressedAs? }
  *
  * The signed-in learner, how many conversations they've had at each place
  * (the visit stamps), their level (null until the greeter has placed them)
@@ -7,7 +7,8 @@
  * Settings join this in M3 item 3. addressedAs ("f" or "m") once they've
  * chosen how characters address them, while LEARNER_ADDRESS is on;
  * addressOn says whether it is, so the app asks in onboarding and shows the
- * Settings row only then.
+ * Settings row only then. welcomed: the welcome conversation is finished
+ * (lib/welcome.ts); apps from build 10 show it until it is.
  */
 import { country } from '@/content';
 import { apiJson, withLearner } from '@/lib/api';

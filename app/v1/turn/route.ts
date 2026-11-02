@@ -52,6 +52,10 @@ const Body = z.object({
   learnerSaid: z.string().max(MAX_SAID_CHARS).optional(),
   /** The speed the app will ask /v1/speak for; the voice is started early at it */
   speed: z.number().min(0.5).max(2).optional(),
+  /** The app can't use the mic (refused): the welcome says once where to turn it on (lib/welcome.ts) */
+  micOff: z.boolean().optional(),
+  /** This conversation is the welcome (lib/welcome.ts; apps from build 10) */
+  welcome: z.boolean().optional(),
 });
 
 /**
@@ -143,6 +147,8 @@ export async function POST(request: Request) {
             partsWatcher.feed(snapshot);
           },
           canRetry: () => !firstSent,
+          micOff: body.data.micOff,
+          welcome: body.data.welcome,
         });
         // Beginner: the voice for the rest (after the first parts), or the whole line
         if (result.reply.parts) {

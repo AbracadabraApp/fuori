@@ -12,6 +12,7 @@
 
 import { createHash } from 'crypto';
 import { cities, country, language, onboarding, pack } from '@/content';
+import { welcomeContent } from '@/lib/welcome';
 import { flashcards, deckCards } from '@/lib/flashcards';
 import { lessonUnits } from '@/lib/lessons';
 import { characterForPlace } from '@/lib/characters/for-place';
@@ -58,6 +59,7 @@ export interface ContentOnboarding {
   lines: typeof onboarding.lines;
   /** The orientation tour's lines (docs/orientation-script.md), steps 1–3 */
   orientation: typeof onboarding.orientation;
+  welcome: { characterId: string; cityId: string; placeId: string; go: { line: string; en: string } } | null;
 }
 
 export interface Content {
@@ -161,6 +163,8 @@ export function buildContent(): Content {
       },
       lines: onboarding.lines,
       orientation: onboarding.orientation,
+      // The welcome conversation (lib/welcome.ts): who plays it, where, and the last button's words
+      welcome: welcomeContent(),
     },
     cities: out,
     characters,

@@ -55,16 +55,18 @@ export async function writeSendOff(answers: HeardAnswer[]) {
  * greeter). Restart onboarding leaves a record ({ path: "reset" }), so it
  * still brings her back for them.
  */
-export async function onboardingState(learnerId: string): Promise<{ level: Level | null; onboarded: boolean }> {
-  const r = await query<{ level: Level | null; onboarded_at: Date | null; has_record: boolean; has_played: boolean }>(
+export async function onboardingState(learnerId: string): Promise<{ level: Level | null; onboarded: boolean; welcomed: boolean }> {
+  const r = await query<{ level: Level | null; onboarded_at: Date | null; has_record: boolean; has_played: boolean; welcomed: boolean }>(
     `SELECT level, onboarded_at, onboarding IS NOT NULL AS has_record,
+       COALESCE((onboarding->>'welcomed')::boolean, false) AS welcomed,
        EXISTS (SELECT 1 FROM conversations c WHERE c.learner_id = learners.id
                AND EXISTS (SELECT 1 FROM jsonb_array_elements(c.turns) t WHERE t->>'who' = 'learner')) AS has_played
      FROM learners WHERE id = $1`,
     [learnerId]
   );
   const row = r.rows[0];
-  return { level: row?.level ?? null, onboarded: !!row?.onboarded_at || (!row?.has_record && !!row?.has_played) };
+  // welcomed: the new welcome conversation finished (lib/welcome.ts); everyone goes through it once
+  return { level: row?.level ?? null, onboarded: !!row?.onboarded_at || (!row?.has_record && !!row?.has_played), welcomed: !!row?.welcomed };
 }
 
 /** Onboarding finished: the level, and for the speaker path what was said and why it was placed there */
