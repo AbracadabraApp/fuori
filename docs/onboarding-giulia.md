@@ -41,7 +41,7 @@ Answers: *Sto iniziando.* (I'm just starting.) / *Lo parlo da un po'.* (I've bee
 Ends on the city list.
 
 ## What the answers set
-- Name. If she gets it wrong, the learner just corrects her (*No, mi chiamo…* or in English) at any turn; she apologises, uses the new name and asks her question again (Josh, 2026-11-02). Settings edits it if Whisper never gets it.
+- Name. A misheard name is corrected the way you'd correct a person (*No, mi chiamo…*); it just works because Claude plays Giulia with this script as her brief, and the answers are read from the whole conversation when it ends, not one by one (Josh, 2026-11-02). A name Whisper can't transcribe stays wrong: accepted.
 - Masculine or feminine (how characters address the learner). "Either is fine", non-binary or no clear answer → feminine (Josh, 2026-11-02); changeable in Settings.
 - First time in Italy or not: into Giulia's memory of the learner.
 - *Sto iniziando* → Beginner; *Lo parlo da un po'* → Intermediate.
