@@ -45,3 +45,6 @@ The mic doesn't open: the answer is a click (Josh, 2026-11-02). A button, *Andia
 - Masculine or feminine (how characters address the learner). "Either is fine", non-binary or no clear answer → feminine (Josh, 2026-11-02); changeable in Settings.
 - First time in Italy or not: into Giulia's memory of the learner.
 - *Non ancora* → Beginner; *Sì, abbastanza bene* → Intermediate (Josh: Intermediate is more than OK, so "fairly well").
+
+## Meeting her again (Josh, 2026-11-02)
+Onboarding writes to her memory, so when the player later meets her in her city she recognises them (*Ah, {name}! Com'è andata?*). Which Giulia (there's one in ten cities, probably Rome's) is still to name.

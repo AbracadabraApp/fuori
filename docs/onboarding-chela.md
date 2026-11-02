@@ -48,3 +48,6 @@ Same as Giulia's: name; masculine or feminine; first time in Mexico, into her me
 - *Tú* throughout: an older market woman talking to a newcomer, motherly.
 - *¡Qué padre!* and *buena onda*: everyday Mexican, where Italy has *Che bello!* and *simpatici*.
 - Places named: market, fonda, zócalo, where Italy has bar, market, piazza.
+
+## Meeting her again (Josh, 2026-11-02)
+Onboarding writes to her memory, so when the player later visits her stall in the Mercado Benito Juárez she recognises them (*¡Ay, {name}! ¿Cómo te ha ido?*), as Giulia does in Italy.
