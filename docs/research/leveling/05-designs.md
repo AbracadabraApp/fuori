@@ -94,3 +94,9 @@ Claude's reading, as the rating systems in [02](02-products.md) work (Elo, Math 
 - **Dynamic, the teaching:** a difficulty number for the conversation, the sum of its settings (vocabulary, complexity, speed, question kind, minus the supports: English echo, answers to say back, subtitles).
 - **The equation:** pick the settings so the predicted chance of following sits at a target (research: around 90–95% of words; Math Garden aims at 75% correct). Learner up → settings get harder; a hard conversation → the learner number drops a little and a support comes back.
 - **Two loops:** per learner after every conversation (the learner number); across all learners, now and then (how much each setting really adds, fitted from everyone's results). The research sets the starting weights.
+
+## Josh: turns and use as the signal (2026-11-02)
+
+Josh: number of turns may be the strongest indicator, of growing immersion and use if not of learning; and if learners don't use it, that's a clear signal too.
+
+Claude's read: the strongest **outcome** signal for the system (free, unbiased by Whisper, any language), weaker as a **level** signal on its own: more turns can also mean struggling (*come?*, repeats), and turns depend on the character and the scene. Sharper versions: turns in the learner's own words, and their trend over conversations. Proposed use: coming back and own-words turns as the goal the cross-learner loop tunes for; the level measures as guardrails.
