@@ -83,3 +83,14 @@ Ranked by evidence and cost, the asks sit in the middle and at the bottom:
 6. **Drop for leveling:** the pace question (the counts already show struggle, and speed is better set by measuring speech rate); the purpose question (useful for topics and lessons, but it isn't leveling: move it to Learn or memory).
 
 Net: the asks add little that the counts don't already give. Keep the comfort question as one cheap extra input; leave the rest out of the leveling design.
+
+## Josh's framing: one equation (2026-11-02)
+
+Josh: "a static model of language but dynamic measure of proficiency and dynamic measure of teaching (UI, speed, vocabulary, complexity, etc). Some simultaneous equation that makes the conversation flow at the right level."
+
+Claude's reading, as the rating systems in [02](02-products.md) work (Elo, Math Garden, Duolingo):
+- **Static:** the map of the language: syllabus units and CEFR steps, the same for everyone.
+- **Dynamic, the learner:** one ability number, updated after each conversation from what happened (followed, help asked, own words).
+- **Dynamic, the teaching:** a difficulty number for the conversation, the sum of its settings (vocabulary, complexity, speed, question kind, minus the supports: English echo, answers to say back, subtitles).
+- **The equation:** pick the settings so the predicted chance of following sits at a target (research: around 90–95% of words; Math Garden aims at 75% correct). Learner up → settings get harder; a hard conversation → the learner number drops a little and a support comes back.
+- **Two loops:** per learner after every conversation (the learner number); across all learners, now and then (how much each setting really adds, fitted from everyone's results). The research sets the starting weights.
