@@ -38,7 +38,7 @@ Answers: *Sto iniziando.* (I'm just starting.) / *Lo parlo da un po'.* (I've bee
 >
 > *Allora, dove andiamo?* (So, where shall we go?)
 
-Ends on the city list.
+The mic doesn't open: the answer is a click (Josh, 2026-11-02). A button, *Andiamo!* (Let's go!; words from content), opens the city list.
 
 ## What the answers set
 - Name. A misheard name is corrected the way you'd correct a person (*No, mi chiamo…*); it just works because Claude plays Giulia with this script as her brief, and the answers are read from the whole conversation when it ends, not one by one (Josh, 2026-11-02). A name Whisper can't transcribe stays wrong: accepted.
