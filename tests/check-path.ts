@@ -5,7 +5,7 @@
 // lines; the stage read back from a prompt version. Run for each country (the
 // leveling.md blocks must exist in both).
 import { pack } from '@/content';
-import { decide, INTERMEDIATE_STEP, STAGES, STEPS, stageFor, stageTag, stageText, startAt, type PathState } from '@/lib/path';
+import { decide, INTERMEDIATE_STEP, placement, STAGES, STEPS, stageFor, stageTag, stageText, startAt, type PathState } from '@/lib/path';
 import { countsOf, feltOf, isSaidBack, stageInVersion, type LabelledLine } from '@/lib/conversation-record';
 
 const failures: string[] = [];
@@ -30,6 +30,11 @@ expect('a support back after 2 hard', back.supportsBack, true);
 expect('with a support back, S2 plays S1', stageFor({ ...back, atStep: 1 }).stage.id, 'S1');
 expect('with a support back, S1 adds the support-back talk', stageFor({ ...startAt(1), supportsBack: true }).stage.blocks.includes('Talk: support back'), true);
 expect('the support goes after 2 not hard', play(back, ['neither', 'neither']).s.supportsBack, false);
+
+// Placement by onboarding: fairly well → Intermediate; not yet → step 1, or step 3 in their own words
+expect('fairly well', placement({ speaks: true, ownWords: true }), { level: 'intermediate', startStep: 5 });
+expect('not yet, said back', placement({ speaks: false, ownWords: false }), { level: 'beginner', startStep: 1 });
+expect('not yet, own words', placement({ speaks: false, ownWords: true }), { level: 'beginner', startStep: 3 });
 
 // The stage in the prompt version, both ways
 expect('stage tag read back', stageInVersion(`beginner-2026-10-29${stageTag(STAGES.S2, true)}`), { stage: 'S2', supportBack: true });

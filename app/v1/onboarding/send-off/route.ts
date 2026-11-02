@@ -12,6 +12,7 @@ import { apiError, apiJson, withLearner } from '@/lib/api';
 import { allow } from '@/lib/rate-limit';
 import { finishOnboarding, writeSendOff } from '@/lib/onboarding';
 import { Answer, badRequest, claudeFailed } from '@/lib/onboarding-api';
+import { placement } from '@/lib/path';
 
 const Body = z.object({ answers: z.array(Answer).min(1).max(2) });
 
@@ -28,6 +29,8 @@ export async function POST(request: Request) {
     }
     await finishOnboarding(learnerId, reply.level, {
       path: 'speaker',
+      // They chose to speak and answered in their own words: a Beginner starts at step 3 (lib/path.ts → placement)
+      ...(reply.level === 'beginner' ? { startStep: placement({ speaks: false, ownWords: true }).startStep } : {}),
       answers: body.data.answers,
       level: reply.level,
       reason: reply.reason,

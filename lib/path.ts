@@ -17,7 +17,11 @@
  * counts from each conversation's record (lib/conversation-record.ts): 4 easy
  * of the last 5 counted conversations at a step; after 2 hard in a row a
  * support comes back (the stage below) until 2 aren't hard; the step never
- * moves down. The state after each conversation is kept with its record.
+ * moves down within the path. An Intermediate learner (placed there, or
+ * arrived) goes back to step 4 after 2 hard conversations in a row, leaving
+ * without a word included (Josh, 2026-11-02: "make all your changes"; Sophia
+ * left four Intermediate conversations without a word). The state after each
+ * conversation is kept with its record.
  * Every threshold is in RULES, to tune from play.
  */
 import { language } from '@/content';
@@ -54,8 +58,22 @@ export const STEPS: StageId[][] = [
 /** Past the last step: Intermediate (learners.level), the character prompt as it is */
 export const INTERMEDIATE_STEP = STEPS.length + 1;
 
+/**
+ * Where onboarding places a learner (docs/onboarding-giulia.md → What the
+ * answers set; Josh, 2026-11-02): "fairly well" → Intermediate, a first guess
+ * the record corrects (RULES.backFromIntermediate); "not yet" → the path, at
+ * step 3 when they answered in their own words rather than saying back an
+ * offered answer (they're past saying back), else step 1.
+ */
+export function placement(p: { speaks: boolean; ownWords: boolean }): { level: 'beginner' | 'intermediate'; startStep: number } {
+  if (p.speaks) return { level: 'intermediate', startStep: INTERMEDIATE_STEP };
+  return { level: 'beginner', startStep: p.ownWords ? 3 : 1 };
+}
+
 /** The rules, as numbers to tune from play */
 export const RULES = {
+  /** An Intermediate learner goes back to the path's last step after this many hard conversations in a row (leaving without a word counts as hard) */
+  backFromIntermediate: 2,
   /** A conversation counts toward moving up with this many turns in the learner's own words */
   countedOwnTurns: 3,
   /** Up when this many of the last `window` counted conversations at the step were easy */

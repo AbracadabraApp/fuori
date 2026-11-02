@@ -54,3 +54,8 @@ Onboarding writes to her memory, so when the player later meets her in her city 
 - **Shown once means finished:** it counts as shown only when the player reaches the last button. Leave partway and it starts again at the next launch.
 - **Everyone goes through it once**, including players who already play (those who arrived during the skip have no name, gender or level). Settings' "start over" replays it.
 - **Which Giulia:** Rome's (`giulia`, 32, barista, Bar Trastevere).
+
+## Placement and the record (Josh, 2026-11-02: "make all your changes")
+- **Placement by how they answer, not only what** (`lib/path.ts` → `placement`): *Non ancora* read back from the offered answer → the path's step 1; the same answer in their own words (anything more than the offered sentence) → step 3, since they're past saying back; *Sì, abbastanza bene* → Intermediate. Said back or own words is told apart in code, as the record does (`isSaidBack`). Stored as `startStep` in the learner's onboarding record.
+- **Intermediate is a first guess the record corrects:** two hard conversations in a row at Intermediate (leaving without a word counts as hard) put them back on the path's last step.
+- **Not in the record:** the onboarding conversation's prompt version starts with `onboarding`, so it isn't counted as a conversation on the path.

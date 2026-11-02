@@ -214,13 +214,28 @@ export async function pathState(learnerId: string): Promise<PathState> {
     [learnerId]
   );
   const s = r.rows[0]?.state;
-  return s && s.step < INTERMEDIATE_STEP ? s : startAt(1);
+  if (s) return s.step < INTERMEDIATE_STEP ? s : startAt(1);
+  // Nothing recorded on the path yet: where onboarding placed them (lib/path.ts → placement)
+  const placed = await query<{ step: number | null }>("SELECT (onboarding->>'startStep')::int AS step FROM learners WHERE id = $1", [learnerId]);
+  const step = placed.rows[0]?.step;
+  return startAt(step && step >= 1 && step < INTERMEDIATE_STEP ? step : 1);
+}
+
+/** An Intermediate learner's run of hard conversations, from their last record */
+async function intermediateState(learnerId: string): Promise<PathState> {
+  const r = await query<{ state: PathState }>(
+    'SELECT state FROM conversation_records WHERE learner_id = $1 AND state IS NOT NULL ORDER BY at DESC LIMIT 1',
+    [learnerId]
+  );
+  const s = r.rows[0]?.state;
+  return s && s.step === INTERMEDIATE_STEP ? s : startAt(INTERMEDIATE_STEP);
 }
 
 /**
  * Write the record of an ended conversation, once (a conversation ended
  * again keeps its first record, so the path moves once per conversation).
- * Magda's lessons and conversations with no learner lines have none.
+ * Magda's lessons and the onboarding conversation have none; one left
+ * without a word has a record of zeros.
  */
 export async function recordConversation(conversationId: string, learnerId: string): Promise<'saved' | 'none'> {
   await ensureTable();
@@ -231,20 +246,30 @@ export async function recordConversation(conversationId: string, learnerId: stri
     [conversationId, learnerId]
   );
   const row = r.rows[0];
-  if (!row || row.has || row.character_id === tutor?.id || !row.turns.some((t) => t.who === 'learner')) return 'none';
+  // Magda's lessons and the onboarding conversation aren't play: no record
+  if (!row || row.has || row.character_id === tutor?.id || row.prompt_version?.startsWith('onboarding')) return 'none';
 
   const name = cities.flatMap((c) => c.characters ?? []).find((c) => c.id === row.character_id)?.name ?? 'Them';
-  const counts = countsOf(await labelLines(row.turns, name));
+  // Left without a word: a record of zeros, no call (for an Intermediate learner it counts as hard)
+  const silent = !row.turns.some((t) => t.who === 'learner');
+  const counts = silent ? countsOf([]) : countsOf(await labelLines(row.turns, name));
 
   // On the path: a Beginner, or no level yet, whose conversation played a stage
   const played = stageInVersion(row.prompt_version);
   const onPath = played && (row.level === 'beginner' || row.level === null);
   let path: { step: number; felt: Felt; why: string; moved: boolean; state: PathState } | null = null;
-  if (onPath) {
+  if (onPath && !silent) {
     const before = await pathState(learnerId);
     const { felt, why, counted } = feltOf(counts);
     const { next, moved } = decide(before, felt, counted);
     path = { step: before.step, felt, why, moved, state: next };
+  } else if (row.level === 'intermediate' && !played) {
+    // Intermediate: back to the path's last step after RULES.backFromIntermediate hard conversations in a row
+    const before = await intermediateState(learnerId);
+    const { felt, why } = silent ? { felt: 'hard' as const, why: 'left without a word' } : feltOf(counts);
+    const hardRun = felt === 'hard' ? before.hardRun + 1 : 0;
+    const back = hardRun >= RULES.backFromIntermediate;
+    path = { step: INTERMEDIATE_STEP, felt, why, moved: back, state: back ? startAt(INTERMEDIATE_STEP - 1) : { ...before, hardRun } };
   }
 
   const inserted = await query(
@@ -254,8 +279,9 @@ export async function recordConversation(conversationId: string, learnerId: stri
     [conversationId, learnerId, country, row.character_id, row.prompt_version, counts.learnerTurns, counts.words, counts.wordsLanguage, counts.wordsOwn, counts.ownTurns, counts.saidBack, counts.english, counts.helpWord, counts.helpWhole,
       path?.step ?? null, played ? `${played.stage}${played.supportBack ? '+back' : ''}` : null, path?.felt ?? null, path?.why ?? null, path?.moved ?? null, path ? JSON.stringify(path.state) : null]
   );
-  // Past the last step: Intermediate, the character prompt as it is
-  if (inserted.rowCount && path?.state.step === INTERMEDIATE_STEP) await setLevel(learnerId, 'intermediate');
+  // Past the last step: Intermediate, the character prompt as it is; back from it: Beginner, on the path's last step
+  if (inserted.rowCount && path?.moved && path.state.step === INTERMEDIATE_STEP) await setLevel(learnerId, 'intermediate');
+  if (inserted.rowCount && path?.moved && path.step === INTERMEDIATE_STEP) await setLevel(learnerId, 'beginner');
   console.log(JSON.stringify({ level: 'info', event: 'record', conversationId, words: counts.words, wordsLanguage: counts.wordsLanguage, wordsOwn: counts.wordsOwn, ...(path ? { step: path.step, felt: path.felt, why: path.why, moved: path.moved, stepAfter: path.state.step } : {}) }));
   return 'saved';
 }
