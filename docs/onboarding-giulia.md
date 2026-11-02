@@ -27,7 +27,7 @@ Answers: *Sì, è la prima volta.* / *No, non è la prima volta.*
 >
 > *Parli già italiano?* (Do you already speak Italian?)
 
-Answers: *Sto iniziando.* (I'm just starting.) / *Lo parlo da un po'.* (I've been speaking it for a while.)
+Answers: *Non ancora.* (Not yet.) / *Sì, abbastanza bene.* (Yes, fairly well.)
 
 ## 4 · What Fuori is
 > "In Fuori you can visit lots of cities and talk with interesting people: at the bar, the market, the piazza."
@@ -44,4 +44,4 @@ The mic doesn't open: the answer is a click (Josh, 2026-11-02). A button, *Andia
 - Name. A misheard name is corrected the way you'd correct a person (*No, mi chiamo…*); it just works because Claude plays Giulia with this script as her brief, and the answers are read from the whole conversation when it ends, not one by one (Josh, 2026-11-02). A name Whisper can't transcribe stays wrong: accepted.
 - Masculine or feminine (how characters address the learner). "Either is fine", non-binary or no clear answer → feminine (Josh, 2026-11-02); changeable in Settings.
 - First time in Italy or not: into Giulia's memory of the learner.
-- *Sto iniziando* → Beginner; *Lo parlo da un po'* → Intermediate.
+- *Non ancora* → Beginner; *Sì, abbastanza bene* → Intermediate (Josh: Intermediate is more than OK, so "fairly well").
