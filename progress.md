@@ -66,6 +66,15 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-02: the leveling model, N6 rewritten, build 9, the path and the record live (laptop session)
+- Leveling prototype run (Italy, A/B/C, ~$10): the measure was wrong for Beginner talk (a word given with its English counted unknown); re-scored, 94–96% of words known with the echo, 64–67% without. Design C dropped (89% of lines regenerated, +4.3 s).
+- Josh asked whether the evaluator was heading where he wanted; Claude: the simulated learners climbing tested our own numbers, not his model. Josh: "if you are willing to sign up for that table as a leveling model I'm good going forward under your lead". The model and its first tests: `docs/research/leveling/07-model.md`.
+- Dial tests (dials.mts, Italy and Mexico, ~$30 in all): the echo turns (−24 to −31 points); talk blocks don't; a Language block turns how much is in the language, not how hard; the character prompt with a Beginner block keeps words easy in all-language talk. Every step from stage 1 to Intermediate now has a measured setting.
+- N6 rewritten around the leveling model (82ef9ac): build 9, the record, the path, then the lesson shape, the shorter wait, parity, adventures, missions, the library.
+- Josh: "go" to all three. Build 9 uploaded (c3d3916). The path and the record live (7ac9c66, 97d0c79): `lib/path.ts`, `lib/conversation-record.ts`, `record.md`; live tests pass in both countries; the first records written; Josh's weekly view at `/api/admin/conversations?format=records`.
+- `.env.local`'s Anthropic key was stale; replaced with Railway's (Josh's request).
+- Next: placement by the onboarding conversation (step 1 or 3); Josh and Sophia play build 9 and the path; check the stamps on a phone (AX5, VoiceOver).
+
 ## 2026-10-30/31: N6 plan, visit stamps, transcription measure, Mexico reasons to be there (laptop session)
 - Release plans reorganised with Josh: N5 has nothing left; skipped the orientation tour, Try Magda, Learn L1–L3 and the smaller world for beginners; everything else open moved to N6, ordered 1–13. Shareable plan: `docs/n6-release-plan.md`. Open N6 blockers on Josh: the level-question yes or no, the finish-link word, "go" for TestFlight build 9.
 - Visit stamps built (4271418): scontrino on place cards (già visto, di casa from the third visit), ticket stub on city cards; words from /v1/content, colours and sizes from tokens. Swift tests and simulator build pass; **not yet on Josh's phone** (install waits on his yes; AX5, VoiceOver and real pictures still to check there).
