@@ -17,12 +17,12 @@
 | Measure | Where | Numbers |
 |---|---|---|
 | **Lines a beginner can follow** (90%+ of words known by "listener 1–2", `level.md`, `lib/level.ts`) | Replay and `test:conversations` only; not real play | Baseline prompt: Italy 23–27%, Mexico 24–51% (rounds 1–4). Grader baseline 10% Italy, 11% Mexico (roadmap). Short prompt 18b: 37%. Beginner "still you, sometimes ask": Italy 62–68%, Mexico 80–91% (round 6). Target 90% |
-| CEFR judge accuracy | level-judge-test rounds 1–2 | Haiku, CEFR named, on exam lines: 66% exact, 100% within one level, rank correlation 0.89. On graded readers 0.84, but **rates too easy**, more so higher up |
-| Today's characters by CEFR judge | same | Mostly A2–B1, while Josh's teacher heard B2+ |
-| Question kind per turn (`question-kinds.mts`) | rounds 5–10 | "Sometimes ask": 77–100% of turns answerable; choice questions on 43% of Italy turns (round 9) |
-| Alive (`quality.md`) | rounds 8–10 | About 5 in both countries; target 7 |
-| Language phrases and English words per conversation (`phraseStats`) | live since 2026-10-27 | Beatrice (Beginner): ~105 phrases, ~3 a reply |
-| Placement (`placement.mts`) | round 14, simulated | Onboarding wrong 18/18 when the learner didn't answer as themselves; one conversation corrected all |
+| CEFR judge accuracy | level-judge-test r1–2 | Haiku on exam lines: 66% exact, 100% within one level, rank correlation 0.89. On graded readers 0.84, but **rates too easy** |
+| Today's characters, CEFR judge | same | Mostly A2–B1; Josh's teacher heard B2+ |
+| Question kind per turn | r5–10 | "Sometimes ask": 77–100% answerable; choice questions on 43% of Italy turns |
+| Alive (`quality.md`) | r8–10 | About 5 in both countries; target 7 |
+| Phrases in the language per conversation (`phraseStats`) | live since 10-27 | Beatrice (Beginner): ~105, ~3 a reply |
+| Placement | r14, simulated | Onboarding wrong 18/18 when the learner didn't answer as themselves; one conversation fixed all |
 
 Not found: any measure of the live Beginner format against the 90% word target, or any level score on real play (cost: one call per line).
 
@@ -47,17 +47,15 @@ Not found: any measure of the live Beginner format against the 90% word target, 
 
 ## 4. Decisions already made by Josh
 
-- Three levels, Beginner/Intermediate/Advanced; Beginner is one level, no hidden steps (10-15).
-- Put the tier in the prompt every turn, in role (10-15). Not yet done for Intermediate.
-- Targets: 90% of a character's words at the learner's level; move up when 90% of the learner's speech is at the next level over several conversations; the game suggests, the learner decides (10-15).
-- Measure with a judge calibrated on exam material; teacher and Josh are spot checks only (10-15).
+- Three levels; Beginner is one level, no hidden steps. Tier in the prompt every turn, in role (10-15; not done for Intermediate).
+- Targets: 90% of a character's words at level; move up when 90% of the learner's speech is at the next level over several conversations; the game suggests, the learner decides (10-15). A judge calibrated on exam material; teacher and Josh are spot checks (10-15).
 - What they hear (level) and how they take part (scaffolding) are separate; listening sets how characters talk, speaking decides moving up (10-16, 10-21).
-- No fixed word lists in the prompt; nothing language-specific in code; no phrase lists (10-16, CLAUDE.md).
-- What characters ask is the clearest difference between levels: choice, then one fact, then open (10-17).
-- Onboarding is a first guess; the first conversations correct it (10-18). No level = Beginner (10-22).
-- Scaffolding is decided by counting, not a judge or a setting (10-21). The English fades by count (10-25).
-- Staged plan to Intermediate: 1,1,1,1,1 · 1,2,1,1,2 · 2,2,2,3,3; count practice, not visits; fade one support at a time; advance on mastery, with the count as default (10-25, not built).
-- English is for teaching, not instead of it (10-27). Teaching wins over speed and liveliness (10-19).
+- No word lists in the prompt; nothing language-specific in code; no phrase lists (10-16, CLAUDE.md).
+- Questions mark the levels: choice, then one fact, then open (10-17).
+- Onboarding is a first guess, conversations correct it (10-18); no level = Beginner (10-22).
+- Scaffolding and the fading English go by counting, not a judge or a setting (10-21, 10-25).
+- Staged plan to Intermediate: 1,1,1,1,1 · 1,2,1,1,2 · 2,2,2,3,3; count practice, not visits; fade one support at a time; advance on mastery, count as default (10-25, not built).
+- English teaches, never replaces (10-27). Teaching wins over speed and liveliness (10-19).
 
 ## 5. Open problems and known failure modes
 

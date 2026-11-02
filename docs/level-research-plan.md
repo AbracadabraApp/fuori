@@ -20,7 +20,7 @@ One scale for both sides: the syllabus. The learner's level is where they are in
 
 ## How I'd run it
 
-**Phase 0 · What we know (Claude, one session).** Read the docs, trials and judge rounds above; write one page: what's been tried, what worked, what failed and why (e.g. the tier in the prompt is ignored; characters drift up mid-conversation). Every later agent gets this page, so nobody repeats a dead end.
+**Phase 0 · What we know (Claude, one session).** Read the docs, trials and judge rounds above; write one page: what's been tried, what worked, what failed and why (e.g. characters drift up mid-conversation; Phase 0 found that no tier reaches the Intermediate prompt at all). Every later agent gets this page, so nobody repeats a dead end.
 
 **Phase 1 · Research (four agents in parallel).** Each returns ranked ideas with evidence, cost and fit with Fuori's rules (any language, no phrase lists for predicting speech, short prompt):
 1. **Learning science:** comprehensible input and "a little above", word coverage (95–98%), CEFR descriptors, fading support, what predicts readiness to move up.
