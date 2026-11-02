@@ -26,3 +26,7 @@ No learner moved a step in 8 conversations. The flat learner got supports back, 
 1. **Fix the measure before comparing anything:** a word given with its English in the same line counts as known; score a conversation's Italian as a whole, not line by line (short lines make 90% a coin flip). Then re-score this run's saved conversations: no new character calls needed.
 2. **Drop C.**
 3. **Run A and B for real:** 15 conversations, all four learners, both countries.
+
+## Re-scored (2026-11-02, later)
+
+With the measure fixed (a word said with its English counts as known; each conversation also scored as a whole), the same saved conversations: 94–96% of a conversation's words known with the echo, 64–67% without, 74–83% of lines followable. Read in [07-model.md](07-model.md), which also records the model Josh and Claude settled on and why the ladder comparison is no longer the main test.

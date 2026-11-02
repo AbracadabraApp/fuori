@@ -8,7 +8,7 @@ import { promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { readPromptFile } from '@/lib/prompts/template';
 import { pool } from '../common.mjs';
 import { dryBrain, emptyMeters, liveBrain } from './brain';
-import { DESIGNS, type Design } from './controllers';
+import { ALL_DESIGNS, DESIGNS, type Design } from './controllers';
 import { persona, PERSONAS } from './learners';
 import { scoreRun } from './score';
 import { runLearner } from './simulate';
@@ -17,7 +17,7 @@ const flag = (name: string) => process.argv.find((a) => a.startsWith(`--${name}=
 const DRY = process.argv.includes('--dry');
 const NO_SCORE = process.argv.includes('--no-score');
 const designArg = (flag('design') ?? 'all').toUpperCase();
-const designs: Design[] = designArg === 'ALL' ? DESIGNS : (designArg.split(',') as Design[]);
+const designs: Design[] = designArg === 'ALL' ? ALL_DESIGNS : (designArg.split(',') as Design[]);
 for (const d of designs) if (!DESIGNS.includes(d)) throw new Error(`Unknown design ${d} (A, B, C or all)`);
 const learnerArg = flag('learners') ?? 'all';
 const learners = learnerArg === 'all' ? PERSONAS : learnerArg.split(',').map(persona);

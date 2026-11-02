@@ -14,6 +14,8 @@ export interface LearnerTurn {
   lang: 'target' | 'english' | 'none';
   /** They asked for help (a help tap, or asking to repeat or for English) */
   help: boolean;
+  /** What the help was for: one word (what's *panna*?, how do I say…) or the whole line (repeat, slower, didn't understand). In the app: a tap on a bubble vs "say it in English" */
+  helpKind?: 'word' | 'whole';
   /** The answers to say back shown on this turn (from the character's last reply) */
   offered: string[];
 }
@@ -26,7 +28,17 @@ export interface ConversationRecord {
   /** English turns ÷ turns with speech */
   englishShare: number;
   helpAsks: number;
+  /** Help asks about one word: normal learning, not struggle */
+  wordHelps: number;
+  /** Turns where they were lost: English instead of an answer, asking for the whole line again, or silence */
+  lost: number;
   silent: number;
+  /** Words spoken, any language (Josh, 2026-11-02: the main engagement signal) */
+  words: number;
+  /** Of those, in the language */
+  wordsTarget: number;
+  /** Of those, in their own words (not said back) */
+  wordsOwn: number;
   /** Words per own-words turn */
   ownWordsLength: number;
   /** 3+ own-words turns: counts toward moving up */
@@ -82,6 +94,10 @@ export function recordOf(turns: LearnerTurn[]): ConversationRecord {
   const spoke = turns.filter((t) => t.lang !== 'none' && t.said.trim());
   const own = turns.filter((_, i) => kinds[i] === 'own');
   const ownWords = own.length;
+  const count = (t: LearnerTurn) => t.said.split(/\s+/).filter(Boolean).length;
+  const sum = (ts: LearnerTurn[]) => ts.reduce((n, t) => n + count(t), 0);
+  // An old run's help turns have no kind: counted as whole-line asks
+  const whole = turns.filter((t) => t.help && t.helpKind !== 'word').length;
   return {
     learnerTurns: turns.length,
     ownWords,
@@ -89,6 +105,11 @@ export function recordOf(turns: LearnerTurn[]): ConversationRecord {
     english: spoke.filter((t) => t.lang === 'english').length,
     englishShare: spoke.length ? spoke.filter((t) => t.lang === 'english').length / spoke.length : 0,
     helpAsks: turns.filter((t) => t.help).length,
+    wordHelps: turns.filter((t) => t.help && t.helpKind === 'word').length,
+    lost: kinds.filter((k) => k === 'silent' || k === 'english').length + whole,
+    words: sum(spoke),
+    wordsTarget: sum(spoke.filter((t) => t.lang === 'target')),
+    wordsOwn: sum(own),
     silent: kinds.filter((k) => k === 'silent').length,
     ownWordsLength: ownWords ? own.reduce((n, t) => n + t.said.split(/\s+/).filter(Boolean).length, 0) / ownWords : 0,
     counted: ownWords >= RULES.countedOwnWords,
@@ -96,13 +117,26 @@ export function recordOf(turns: LearnerTurn[]): ConversationRecord {
   };
 }
 
-/** Easy, hard or neither, by the counts alone (design A's whole signal) */
-export function feltLike(r: ConversationRecord): 'easy' | 'hard' | 'neither' {
-  const ownShare = r.learnerTurns ? r.ownWords / r.learnerTurns : 0;
-  const silentShare = r.learnerTurns ? r.silent / r.learnerTurns : 1;
+/**
+ * Easy, hard or neither, by the counts alone (design A's whole signal), and
+ * which signal decided it. Hard means lost (English instead of an answer, the
+ * whole line again, silence); a help ask about one word is learning, not
+ * struggle (cloud session's notes, 2026-11-02).
+ */
+export function feltLike(r: ConversationRecord): { felt: 'easy' | 'hard' | 'neither'; why: string } {
+  const n = r.learnerTurns || 1;
+  const lostShare = r.lost / n;
+  const ownShare = r.ownWords / n;
   const h = RULES.hard;
-  if (r.englishShare >= h.minEnglishShare || r.helpAsks >= h.minHelpAsks || silentShare >= h.minSilentShare) return 'hard';
+  const lostWhy = `lost ${r.lost}/${n} (English ${r.english}, whole-line help ${r.helpAsks - r.wordHelps}, silent ${r.silent})`;
+  if (lostShare >= h.minLostShare) return { felt: 'hard', why: lostWhy };
   const e = RULES.easy;
-  if (r.counted && r.englishShare <= e.maxEnglishShare && r.helpAsks <= e.maxHelpAsks && ownShare >= e.minOwnShare && r.silent <= e.maxSilent) return 'easy';
-  return 'neither';
+  const misses = [
+    !r.counted && `own ${r.ownWords} < ${RULES.countedOwnWords} (not counted)`,
+    r.lost > e.maxLost && lostWhy,
+    r.wordHelps > e.maxWordHelps && `word help ${r.wordHelps} > ${e.maxWordHelps}`,
+    ownShare < e.minOwnShare && `own ${r.ownWords}/${n} < ${Math.round(e.minOwnShare * 100)}%`,
+  ].filter(Boolean);
+  if (!misses.length) return { felt: 'easy', why: `own ${r.ownWords}/${n}, lost ${r.lost}, word help ${r.wordHelps}` };
+  return { felt: 'neither', why: misses.join('; ') };
 }

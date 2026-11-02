@@ -6,7 +6,7 @@ import { pack, language } from '@/content';
 import { readPromptFile, fill } from '@/lib/prompts/template';
 import { decide, nextConversation, startAt, type Design, type LadderState } from './controllers';
 import { LADDER, STAGES, TOP, type SpeakingVerdict } from './ladder';
-import { isSaidBack, recordOf, type LearnerTurn } from './record';
+import { feltLike, isSaidBack, recordOf, type LearnerTurn } from './record';
 
 const failures: string[] = [];
 const ok = (cond: boolean, what: string) => { if (!cond) failures.push(what); };
@@ -23,6 +23,11 @@ const easy = recordOf([turn('uno due tre'), turn('quattro cinque'), turn('sei se
 const hard = recordOf([turn('what?', { lang: 'english' }), turn('sorry', { lang: 'english', help: true }), turn(''), turn('again?', { help: true }), turn('help', { help: true }), turn('')]);
 ok(easy.counted && easy.ownWords === 6, 'six own-words turns are counted');
 ok(hard.helpAsks === 3 && hard.silent === 2 && hard.english === 2, 'hard record counts');
+ok(feltLike(hard).felt === 'hard', 'lost on most turns is hard');
+// One-word help asks are learning, not struggle: four own turns and two "what's panna?" is easy
+const wordHelp = recordOf([turn('uno due'), turn('cosa è panna?', { help: true, helpKind: 'word' }), turn('tre quattro'), turn('cinque'), turn('che vuol dire contanti?', { help: true, helpKind: 'word' }), turn('sei sette')]);
+ok(feltLike(wordHelp).felt === 'easy', `one-word help asks don't make it hard (got ${feltLike(wordHelp).felt}: ${feltLike(wordHelp).why})`);
+ok(easy.words === 11 && easy.wordsOwn === 11 && easy.wordsTarget === 11, 'words spoken counted');
 
 function play(design: Design, start: number, records: ReturnType<typeof recordOf>[], verdicts: SpeakingVerdict[] = []): { steps: number[]; states: LadderState[] } {
   let s = startAt(start);
@@ -55,9 +60,9 @@ ok(pattern.join(',') === '1,2,1,1,2', `step 2 plays 1,2,1,1,2 (got ${pattern.joi
 
 // Every block the ladder and harness name exists and fills, in this country
 const f = readPromptFile('leveling.md');
-for (const b of ['Talk: stage 1', 'Talk: stage 2', 'Talk: stage 3', 'Talk: support back', 'Answers: two', 'Answers: one', 'Answers: frame', 'Echo: new words', 'Echo: off', 'Say it again', 'Line check', 'Speaking judge']) {
+for (const b of ['Talk: stage 1', 'Talk: stage 2', 'Talk: stage 3', 'Talk: support back', 'Answers: two', 'Answers: one', 'Answers: frame', 'Echo: new words', 'Echo: off', 'Say it again', 'Line check', 'Speaking judge', 'Speaking examples']) {
   try {
-    const text = fill(f.block(b), { language: language.name, role: 'barista', line: 'x', talk: 'x', record: 'x', conversation: 'x' });
+    const text = fill(f.block(b), { language: language.name, role: 'barista', line: 'x', talk: 'x', record: 'x', conversation: 'x', examples: 'x', n: '5', minOwn: '5' });
     ok(!/\{\w+\}/.test(text), `${b}: unfilled placeholder`);
   } catch (e) { failures.push(String(e)); }
 }

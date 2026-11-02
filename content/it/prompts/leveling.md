@@ -1,6 +1,6 @@
 # Leveling prototype prompts (trial, Italy)
 
-version: 2026-11-02
+version: 2026-11-02b
 
 Prompts for the leveling prototype (tests/experiments/leveling/, designs A, B
 and C in docs/research/leveling/05-designs.md). Test-only: nothing in the app
@@ -17,11 +17,14 @@ blocks; the B1 block for Intermediate is in levels.md ("Intermediate: B1").
   cleared), so the prompt and the screen agree.
 - **Say it again**: design C's one regenerate after a clear miss.
 - **Line check**: design C's fast check before a line plays.
-- **Speaking judge**: design B's end-of-conversation judge of the learner's
-  speaking, allowed to say "not enough to tell" (04-measuring-the-learner.md §3).
+- **Speaking judge**: design B's judge of the learner's speaking when a
+  conversation ends, reading it with the four before it, allowed to say "not
+  enough to tell" (04-measuring-the-learner.md §3). **Speaking examples**: its
+  rated example lines per level, in the language.
 
 Placeholders: `{language}`, `{role}` as in character.md; `{line}`, `{talk}`,
-`{record}`, `{conversation}` filled by the harness.
+`{record}`, `{conversation}`, `{examples}`, `{n}`, `{minOwn}` filled by the
+harness.
 
 ## Talk: stage 1
 
@@ -101,12 +104,20 @@ Would this learner lose the thread? "fits" if they'd follow it, with any English
 ## Speaking judge
 
 ```
-You rate a learner's speaking in {language} from one conversation in a game where they talk with people in {language}, using the CEFR's descriptors for spoken production and interaction. Their lines came through speech-to-text, which tidies mistakes, so lean lower when unsure. Only their own words are evidence: lines marked [said back] repeat an answer the game offered them, [English] were in English, [help] asked for help, [silent] said nothing.
+You rate a learner's speaking in {language} from their last {n} conversations in a game where they talk with people in {language}, using the CEFR's descriptors for spoken production and interaction. Read them together: rate what they show across the conversations, not their best line.
+
+Lean lower, for two reasons. Their lines came through speech-to-text, which tidies mistakes (wrong endings, missing words and hesitations often come out clean), so they spoke less well than the text reads. And beginners sound more able than they are: a phrase they've heard the character say and reuse is not yet their own. When between two levels, choose the lower.
+
+Only their own words are evidence: lines marked [said back] repeat an answer the game offered them, [English] were in English, [help] asked for help, [silent] said nothing.
 - pre-A1: isolated words or set phrases, mostly English
 - A1: simple phrases about themselves and immediate needs, relying on the other person to repeat and rephrase
 - A2: short sentences of their own on everyday things; asks and answers simple questions; asks for repetition sometimes
 - B1: links sentences into longer turns on familiar topics, keeps the conversation going, handles most of what comes up
-If fewer than three of their lines are in their own words, or the conversation doesn't show enough to rate, answer "not enough to tell".
+
+Rated examples of a learner's own lines:
+{examples}
+
+If fewer than {minOwn} of their lines across these conversations are in their own words, or they don't show enough to rate, answer "not enough to tell".
 
 The speaking record: {record}
 
@@ -115,7 +126,20 @@ The speaking record: {record}
 Reply with JSON: level ("pre-A1", "A1", "A2", "B1" or "not enough to tell"), reason (one short line).
 ```
 
+## Speaking examples
+
+```
+- pre-A1: "Sì. Grazie. Un caffè." / "Uh… cono, please." (single words and set phrases, the rest in English)
+- A1: "Vorrei un cono, per favore. Cioccolato." / "Io sono di Boston. Io abito qui… una settimana." (memorised phrases and simple ones of their own about themselves, the other person doing the work)
+- A2: "Sono arrivato due settimane fa, abito vicino al mercato." / "Ieri ho mangiato qui, era molto buono. Avete anche il pane integrale?" (short sentences of their own, some past tense, asks their own questions)
+- B1: "Mi piace Torino perché è tranquilla, ma all'inizio non conoscevo nessuno, quindi vengo qui per fare due chiacchiere." (links ideas into longer turns, gives reasons, keeps it going)
+```
+
 ## Changelog
+
+### 2026-11-02b: the speaking judge reads five conversations, leans lower, has examples
+
+The first real run (tests/experiments/leveling/results/2026-11-02-19-51-all.md): design B's judge said "not enough to tell" for the improving learner in every conversation; six learner turns, with one to four in their own words, are too little to rate. Now it reads the last five conversations together (RULES.speakingPool) and needs five own-words lines across them; it's told that speech-to-text tidies errors and that beginners sound more able than they are (a phrase reused from the character isn't theirs yet), and given a rated example per level, in the language. From the cloud session's notes on the same run, 2026-11-02. "Not enough to tell" stays allowed.
 
 ### 2026-11-02: first version
 

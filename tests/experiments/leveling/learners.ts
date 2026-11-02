@@ -118,14 +118,15 @@ export function learnerPrompt(intent: Exclude<Intent, 'silent' | 'say back'>, ab
         : `This turn, you answer in your own ${L}, only as well as your level allows (mistakes welcome; don't read back a sentence you were shown). Be honest about comprehension: if the last line was too long, fast or complex for you, ask for help instead (in ${L} or English) and say so in the JSON.`;
   return `You are role-playing a learner of ${L} in a test. ${abilityText(ability)} They've come to live here; ${where}
 ${what}
-Reply with JSON: said (ONLY what they say, as speech-to-text would hear it: one or two short sentences, no quotes or stage directions), lang ("target" if it's mostly ${L}, "english" if mostly English), help (true if it asks for help).`;
+You speak to the person directly ("you"), never about them ("is she asking…").
+Reply with JSON: said (ONLY what they say, as speech-to-text would hear it: one or two short sentences, no quotes or stage directions), lang ("target" if it's mostly ${L}, "english" if mostly English), help (true if it asks for help), helpKind ("word" if the help asked is about one word or how to say one thing; "whole" if it asks to repeat, to go slower, or says they didn't understand; "none" if no help).`;
 }
 
 export const learnerSchema = {
   type: 'object',
   additionalProperties: false,
-  required: ['said', 'lang', 'help'],
-  properties: { said: { type: 'string' }, lang: { type: 'string', enum: ['target', 'english'] }, help: { type: 'boolean' } },
+  required: ['said', 'lang', 'help', 'helpKind'],
+  properties: { said: { type: 'string' }, lang: { type: 'string', enum: ['target', 'english'] }, help: { type: 'boolean' }, helpKind: { type: 'string', enum: ['word', 'whole', 'none'] } },
 };
 
 /** Seeded random numbers (tests/conversations/run.ts's mulberry32), so every design sees the same draws */

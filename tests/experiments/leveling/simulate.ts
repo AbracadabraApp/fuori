@@ -15,7 +15,7 @@ import { readPromptFile, fill } from '@/lib/prompts/template';
 import type { CharacterSheet, Turn } from '@/lib/types';
 import { emptyMeters, type Brain, type Meters } from './brain';
 import { decide, nextConversation, startAt, type Decision, type Design, type LadderState } from './controllers';
-import { type SpeakingVerdict, type Stage, type Supports } from './ladder';
+import { RULES, type SpeakingVerdict, type Stage, type Supports } from './ladder';
 import { intentFor, learnerAt, learnerPrompt, learnerSchema, seeded, type Intent, type Persona } from './learners';
 import { recordOf, type ConversationRecord, type LearnerTurn } from './record';
 
@@ -27,6 +27,8 @@ export interface NpcLine {
   languageText: string;
   /** Beginner: every phrase and question had its English echo said after it */
   echoed: boolean;
+  /** Beginner: the phrases and questions said with their English echo (their words count as known when scoring) */
+  glossed: string[];
   answers: string[];
   bubbles: string[];
   /** Design C */
@@ -130,6 +132,7 @@ async function characterOnce(ctx: Ctx, transcript: Turn[], said: string | undefi
       en,
       languageText: phrases.map((x) => x.text).join(' '),
       echoed: phrases.length > 0 && phrases.every((x) => !!x.gloss),
+      glossed: phrases.filter((x) => !!x.gloss).map((x) => x.text),
       answers: parts.filter((x) => x.kind === 'answer').map((x) => x.text),
       bubbles: supports.bubbles ? phrases.map((x) => x.text) : [],
       ms: r.ms,
@@ -138,7 +141,7 @@ async function characterOnce(ctx: Ctx, transcript: Turn[], said: string | undefi
   const p = buildTurnPrompt({ character, transcript, learnerSaid: said ?? '', level: ctx.supportBack && stage.talkSupportBack ? stage.talkSupportBack : stage.talk });
   const r = await brain.call({ kind: missed ? 'retry' : 'character', system: p.system + retry, messages: p.messages, schema: turnOutputJsonSchema, meta }, meters);
   const { line, en } = JSON.parse(r.text) as { line: string; en: string };
-  return { line, en, languageText: line, echoed: false, answers: [], bubbles: [], ms: r.ms };
+  return { line, en, languageText: line, echoed: false, glossed: [], answers: [], bubbles: [], ms: r.ms };
 }
 
 /** One character turn; design C checks it first and regenerates a clear miss once */
@@ -193,8 +196,8 @@ async function learnerTurn(brain: Brain, meters: Meters, intent: Intent, ability
     },
     meters
   );
-  const j = JSON.parse(r.text) as { said: string; lang: 'target' | 'english'; help: boolean };
-  return { said: j.said.trim(), lang: j.said.trim() ? j.lang : 'none', help: j.help, offered };
+  const j = JSON.parse(r.text) as { said: string; lang: 'target' | 'english'; help: boolean; helpKind: 'word' | 'whole' | 'none' };
+  return { said: j.said.trim(), lang: j.said.trim() ? j.lang : 'none', help: j.help, ...(j.help ? { helpKind: j.helpKind === 'word' ? 'word' : 'whole' } : {}), offered };
 }
 
 const SPEAKING_SCHEMA = {
@@ -204,16 +207,28 @@ const SPEAKING_SCHEMA = {
   properties: { level: { type: 'string', enum: ['pre-A1', 'A1', 'A2', 'B1', 'not enough to tell'] }, reason: { type: 'string' } },
 };
 
-/** Design B and C: one judge of the learner's speaking when the conversation ends */
-async function speakingJudge(brain: Brain, meters: Meters, run: Omit<ConversationRun, 'verdict' | 'decision'>, ability: number): Promise<ConversationRun['verdict']> {
-  const r = run.record;
-  const record = `${r.learnerTurns} turns: ${r.ownWords} in their own words (about ${r.ownWordsLength.toFixed(1)} words each), ${r.saidBack} said back, ${r.english} in English, ${r.helpAsks} asking for help, ${r.silent} silent.`;
+type Judged = Omit<ConversationRun, 'verdict' | 'decision'>;
+
+/** One conversation as the judge reads it: the learner's lines marked by kind */
+function judgeText(run: Judged, n: number): string {
   let k = 0;
-  const conversation = run.turns
-    .map((t) => (t.who === 'npc' ? `${run.character.name}: ${t.npc.line}` : `Learner${(() => { const kind = r.kinds[k++]; return kind === 'own' ? '' : ` [${kind}]`; })()}: ${t.learner.said}`))
-    .join('\n');
-  const user = fill(leveling().block('Speaking judge'), { language: language.name, record, conversation });
-  const res = await brain.call({ kind: 'speaking', messages: [{ role: 'user', content: user }], schema: SPEAKING_SCHEMA, meta: { ownWords: r.ownWords, ability } }, meters);
+  const lines = run.turns.map((t) => (t.who === 'npc' ? `${run.character.name}: ${t.npc.line}` : `Learner${(() => { const kind = run.record.kinds[k++]; return kind === 'own' ? '' : ` [${kind}]`; })()}: ${t.learner.said}`));
+  return [`### Conversation ${n} (${run.character.name}, ${run.character.role})`, ...lines].join('\n');
+}
+
+/**
+ * Design B and C: one judge of the learner's speaking when a conversation
+ * ends, reading it together with the ones before it (RULES.speakingPool).
+ */
+async function speakingJudge(brain: Brain, meters: Meters, pooled: Judged[], ability: number): Promise<ConversationRun['verdict']> {
+  const sum = (f: (r: ConversationRecord) => number) => pooled.reduce((n, c) => n + f(c.record), 0);
+  const own = sum((r) => r.ownWords);
+  const ownLen = own ? sum((r) => r.ownWordsLength * r.ownWords) / own : 0;
+  const record = `${pooled.length} conversations, ${sum((r) => r.learnerTurns)} turns: ${own} in their own words (about ${ownLen.toFixed(1)} words each), ${sum((r) => r.saidBack)} said back, ${sum((r) => r.english)} in English, ${sum((r) => r.helpAsks)} asking for help, ${sum((r) => r.silent)} silent.`;
+  const conversation = pooled.map((c, i) => judgeText(c, i + 1)).join('\n\n');
+  const examples = leveling().block('Speaking examples');
+  const user = fill(leveling().block('Speaking judge'), { language: language.name, record, conversation, examples, n: String(pooled.length), minOwn: String(RULES.speakingMinOwn) });
+  const res = await brain.call({ kind: 'speaking', messages: [{ role: 'user', content: user }], schema: SPEAKING_SCHEMA, meta: { ownWords: own, minOwn: RULES.speakingMinOwn, ability } }, meters);
   const j = JSON.parse(res.text) as { level: SpeakingVerdict; reason: string };
   return { ...j, ms: res.ms };
 }
@@ -256,12 +271,13 @@ export async function runLearner(brain: Brain, design: Design, p: Persona, conve
     }
     const record = recordOf(learnerTurns);
     const base = { i, step: state.step, stage: stage.id, path: stage.path, listener: stage.listener, supports, supportBack, character: who, turns, record, error };
-    const verdict = design !== 'A' && !error ? await speakingJudge(brain, meters, base, ability).catch((e) => ({ level: 'not enough to tell' as const, reason: `judge failed: ${e instanceof Error ? e.message : e}`, ms: 0 })) : undefined;
+    const pooled = [...out.filter((c) => !c.error), base].slice(-RULES.speakingPool);
+    const verdict = design !== 'A' && !error ? await speakingJudge(brain, meters, pooled, ability).catch((e) => ({ level: 'not enough to tell' as const, reason: `judge failed: ${e instanceof Error ? e.message : e}`, ms: 0 })) : undefined;
     // A failed conversation doesn't move the ladder
     const d = error ? null : decide(design, state, record, verdict?.level);
-    const { next, ...decision } = d ?? { next: state, felt: 'neither' as const, easyInWindow: '', moved: false };
+    const { next, ...decision } = d ?? { next: state, felt: 'neither' as const, feltWhy: 'error', easyInWindow: '', moved: false };
     out.push({ ...base, verdict, decision: { ...decision, stepAfter: next.step } });
-    log(`${design} ${p.id} #${i + 1}: step ${state.step} stage ${stage.id}${supportBack ? '+' : ''} · own ${record.ownWords} back ${record.saidBack} en ${record.english} help ${record.helpAsks} silent ${record.silent} → ${decision.felt}${verdict ? ` · judge ${verdict.level}` : ''}${decision.moved ? ` · UP to ${next.step}` : ''}${decision.heldBy ? ` · held (${decision.heldBy})` : ''}${error ? ` · ERROR ${error}` : ''}`);
+    log(`${design} ${p.id} #${i + 1}: step ${state.step} stage ${stage.id}${supportBack ? '+' : ''} · words ${record.words} (${record.wordsTarget} ${language.name}, ${record.wordsOwn} own) · own ${record.ownWords} back ${record.saidBack} en ${record.english} help ${record.helpAsks} silent ${record.silent} → ${decision.felt} (${decision.feltWhy})${verdict ? ` · judge ${verdict.level}` : ''}${decision.moved ? ` · UP to ${next.step}` : ''}${decision.heldBy ? ` · held (${decision.heldBy})` : ''}${error ? ` · ERROR ${error}` : ''}`);
     state = next;
   }
   return { design, persona: p.id, startStep: p.startStep, conversations: out, meters };

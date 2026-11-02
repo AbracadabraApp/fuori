@@ -83,10 +83,14 @@ export const RULES = {
   window: 5,
   /** Supports back on after this many hard conversations in a row; off again after this many not hard */
   hardInARow: 2,
-  /** "Easy": low English share, few help asks, mostly own words */
-  easy: { maxEnglishShare: 0.2, maxHelpAsks: 1, minOwnShare: 0.5, maxSilent: 1 },
-  /** "Hard": any of these (saying back an offered answer isn't struggling: it's the support working) */
-  hard: { minEnglishShare: 0.4, minHelpAsks: 3, minSilentShare: 0.3 },
+  /** "Easy": counted, mostly own words, lost at most once; a couple of one-word help asks are fine */
+  easy: { maxLost: 1, maxWordHelps: 2, minOwnShare: 0.5 },
+  /** "Hard": lost on this share of turns (English instead of an answer, the whole line again, silence). Saying back an offered answer isn't struggling, and neither is asking what one word means (2026-11-02: the first run marked 26 of 48 hard, mostly for one-word help) */
+  hard: { minLostShare: 0.4 },
+  /** Design B and C: the speaking judge reads this many conversations together, the latest and the ones before it (one conversation rarely had enough of the learner's own words: 2026-11-02, "not enough to tell" every time) */
+  speakingPool: 5,
+  /** … and at the end of the pool needs this many lines in their own words to rate at all */
+  speakingMinOwn: 5,
   /** Design B and C: the speaking judge must say at least this … */
   speakingReady: 'A2' as const,
   /** … on this many of the last `speakingWindow` conversations it could rate, for the step into Intermediate */

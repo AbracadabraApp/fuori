@@ -46,6 +46,9 @@ function summary(runs: Run[]) {
   const endStep = (r: Run) => r.conversations[r.conversations.length - 1]?.decision.stepAfter ?? r.startStep;
   return {
     followable: share(lines.map((l) => l.followable)),
+    known: mean(runs.flatMap((r) => r.scores.map((s) => s.known).filter((k): k is number => typeof k === 'number'))),
+    knownBare: mean(runs.flatMap((r) => r.scores.map((s) => s.knownBare).filter((k): k is number => typeof k === 'number'))),
+    convFollowable: share(runs.flatMap((r) => r.scores.map((s) => (typeof s.known === 'number' ? s.known >= 0.9 : null)))),
     withHelp: share(lines.map((l) => l.withHelp)),
     climbs: `${improvers.filter((r) => endStep(r) > r.startStep).length}/${improvers.length}`,
     flatStays: `${flat.filter((r) => endStep(r) === r.startStep).length}/${flat.length}`,
@@ -70,16 +73,28 @@ function byStage(runs: Run[]): string {
   return [...rows].sort().map(([k, v]) => `${k}: ${pct(share(v.f))} / ${pct(share(v.h))} (${v.f.filter((x) => x !== null).length} lines)`).join(' · ');
 }
 
+/** Words spoken per conversation, and the shares in the language and in their own words, first half vs second half of the run (Josh, 2026-11-02: the main engagement and progress signals) */
+function wordsTrend(r: Run): string {
+  const half = (cs: Run['conversations']) => {
+    const w = cs.reduce((n, c) => n + (c.record.words ?? 0), 0);
+    const t = cs.reduce((n, c) => n + (c.record.wordsTarget ?? 0), 0);
+    const o = cs.reduce((n, c) => n + (c.record.wordsOwn ?? 0), 0);
+    return `${f1(cs.length ? w / cs.length : NaN)} words, ${pct(w ? t / w : null)} in the language, ${pct(w ? o / w : null)} own`;
+  };
+  const k = Math.ceil(r.conversations.length / 2);
+  return `${half(r.conversations.slice(0, k))} → ${half(r.conversations.slice(k))}`;
+}
+
 function trace(r: Run): string[] {
   return [
-    `| # | Step | Stage | Supports | Person | Own / back / English / help / silent | Felt | Easy (window) | Judge | Followable | Move |`,
-    `|---|---|---|---|---|---|---|---|---|---|---|`,
+    `| # | Step | Stage | Supports | Person | Words (language / own) | Own / back / English / help / silent | Felt | Why | Easy (window) | Judge | Followable lines | Conversation known | Move |`,
+    `|---|---|---|---|---|---|---|---|---|---|---|---|---|---|`,
     ...r.conversations.map((c, i) => {
       const s = r.scores[i];
       const sup = `echo ${c.supports.echo}, answers ${c.supports.answers}${c.supportBack ? ', **back**' : ''}`;
       const rec = c.record;
       const move = c.error ? `error: ${c.error}` : c.decision.moved ? `**up → ${c.decision.stepAfter}**` : c.decision.heldBy ? `held: ${c.decision.heldBy}` : c.decision.supportBackChanged ? `supports ${c.decision.supportBackChanged}` : '';
-      return `| ${i + 1} | ${c.step} | ${c.stage} | ${sup} | ${c.character.name} | ${rec.ownWords} / ${rec.saidBack} / ${rec.english} / ${rec.helpAsks} / ${rec.silent} | ${c.decision.felt} | ${c.decision.easyInWindow} | ${c.verdict?.level ?? ''} | ${s ? `${pct(share(s.lines.map((l) => l.followable)))} / ${pct(share(s.lines.map((l) => l.withHelp)))}` : ''} | ${move} |`;
+      return `| ${i + 1} | ${c.step} | ${c.stage} | ${sup} | ${c.character.name} | ${rec.words ?? '–'} (${rec.wordsTarget ?? '–'} / ${rec.wordsOwn ?? '–'}) | ${rec.ownWords} / ${rec.saidBack} / ${rec.english} / ${rec.helpAsks} / ${rec.silent} | ${c.decision.felt} | ${c.decision.feltWhy ?? ''} | ${c.decision.easyInWindow} | ${c.verdict?.level ?? ''} | ${s ? `${pct(share(s.lines.map((l) => l.followable)))} / ${pct(share(s.lines.map((l) => l.withHelp)))}` : ''} | ${s ? pct(s.known ?? null) : ''} | ${move} |`;
     }),
   ];
 }
@@ -117,14 +132,14 @@ export function buildReport(design: string, results: CountryResult[]): string {
     ...(dry ? ['> **Dry run: every model call was a stub with canned replies.** The numbers below exercise the code and count calls; they say nothing about Claude or the designs.', ''] : []),
     '## Comparison',
     '',
-    '| Design | Country | Lines followable at the step (no help) | With help | Improvers climb | Flat stays | Alive | Character s/line | Added s/line | Judge s/conversation (off the critical path) | Calls per line | Lines regenerated | Errors |',
-    '|---|---|---|---|---|---|---|---|---|---|---|---|---|',
+    '| Design | Country | Lines followable at the step (no help) | With help | Conversation: words known (with echo) | Without echo | Conversations 90%+ known | Improvers climb | Flat stays | Alive | Character s/line | Added s/line | Judge s/conversation (off the critical path) | Calls per line | Lines regenerated | Errors |',
+    '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|',
   ];
   for (const d of designs) for (const r of results) {
     const s = summary(r.runs.filter((x) => x.design === d));
-    out.push(`| ${d} | ${r.country} | ${pct(s.followable)} | ${pct(s.withHelp)} | ${s.climbs} | ${s.flatStays} | ${f1(s.alive)} | ${f1(s.charS)} | ${f1(s.addedS)} | ${f1(s.judgeS)} | ${f1(s.callsPerLine)} | ${pct(s.retried)} | ${s.errors} |`);
+    out.push(`| ${d} | ${r.country} | ${pct(s.followable)} | ${pct(s.withHelp)} | ${pct(s.known)} | ${pct(s.knownBare)} | ${pct(s.convFollowable)} | ${s.climbs} | ${s.flatStays} | ${f1(s.alive)} | ${f1(s.charS)} | ${f1(s.addedS)} | ${f1(s.judgeS)} | ${f1(s.callsPerLine)} | ${pct(s.retried)} | ${s.errors} |`);
   }
-  out.push('', '_Followable: the level.md judge, 90%+ of the words in the language known by the stage\'s listener (stages 1–2: listener 1, stage 3: listener 2, B1: listener 3). With help: also counts a line whose every phrase had its English echo, or one the learner asked help on whose next line was followable. Climb: ends above its start step. Calls per line: character + check + regenerate, per character line (the speaking judge is one more per conversation for B and C)._', '');
+  out.push('', '_Followable: the level.md judge, 90%+ of the words in the language known by the stage\'s listener (stages 1–2: listener 1, stage 3: listener 2, B1: listener 3); a word said with its English echo counts as known. Conversation: the same over all of a conversation\'s words at once (one new word swings a short line). With help: also counts a line whose every phrase had its English echo, or one the learner asked help on whose next line was followable. Climb: ends above its start step. Calls per line: character + check + regenerate, per character line (the speaking judge is one more per conversation for B and C)._', '');
 
   out.push('## Ladder per learner', '', '| Design | Country | Learner | Steps by conversation | Moves at conversation | Supports back at |', '|---|---|---|---|---|---|');
   for (const d of designs) for (const r of results) for (const run of r.runs.filter((x) => x.design === d)) {
@@ -134,6 +149,10 @@ export function buildReport(design: string, results: CountryResult[]): string {
     out.push(`| ${d} | ${r.country} | ${run.persona} | ${steps} | ${moves} | ${back} |`);
   }
   out.push('', '_"+" marks a conversation with a support back on._', '');
+
+  out.push('## Words spoken per conversation (first half → second half)', '');
+  for (const d of designs) for (const r of results) for (const run of r.runs.filter((x) => x.design === d)) out.push(`- **${d}, ${r.country}, ${run.persona}:** ${wordsTrend(run)}`);
+  out.push('');
 
   out.push('## Followable by stage (no help / with help)', '');
   for (const d of designs) for (const r of results) out.push(`- **${d}, ${r.country}:** ${byStage(r.runs.filter((x) => x.design === d))}`);
@@ -170,6 +189,6 @@ export function consoleSummary(results: CountryResult[]): string {
   return designs.flatMap((d) => results.map((r) => {
     const s = summary(r.runs.filter((x) => x.design === d));
     const ladders = r.runs.filter((x) => x.design === d).map((run) => `${run.persona} ${run.startStep}→${run.conversations[run.conversations.length - 1]?.decision.stepAfter ?? run.startStep}`).join(', ');
-    return `${d} ${r.country}: followable ${pct(s.followable)} (with help ${pct(s.withHelp)}) · climbs ${s.climbs} · flat stays ${s.flatStays} · alive ${f1(s.alive)} · added ${f1(s.addedS)} s/line · ${f1(s.callsPerLine)} calls/line · ${ladders}`;
+    return `${d} ${r.country}: followable ${pct(s.followable)} (with help ${pct(s.withHelp)}; conversation ${pct(s.known)} known (${pct(s.knownBare)} without echo), ${pct(s.convFollowable)} of conversations 90%+) · climbs ${s.climbs} · flat stays ${s.flatStays} · alive ${f1(s.alive)} · added ${f1(s.addedS)} s/line · ${f1(s.callsPerLine)} calls/line · ${ladders}`;
   })).join('\n');
 }

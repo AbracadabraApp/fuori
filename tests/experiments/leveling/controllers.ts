@@ -17,6 +17,8 @@ import { feltLike, type ConversationRecord } from './record';
 
 export type Design = 'A' | 'B' | 'C';
 export const DESIGNS: Design[] = ['A', 'B', 'C'];
+/** What --design=all runs: C dropped after the first run (2026-11-02: its check regenerated 89% of lines, +4.3 s a line; even working it adds a call to every turn). Still runs with --design=C. */
+export const ALL_DESIGNS: Design[] = ['A', 'B'];
 
 export interface LadderState {
   step: number;
@@ -45,7 +47,9 @@ export function nextConversation(s: LadderState): { stage: Stage; supports: Supp
 const atLeast = (v: SpeakingVerdict, min: (typeof CEFR)[number]) => v !== 'not enough to tell' && CEFR.indexOf(v) >= CEFR.indexOf(min);
 
 export interface Decision {
-  felt: ReturnType<typeof feltLike>;
+  felt: ReturnType<typeof feltLike>['felt'];
+  /** Which signal made it easy, hard or neither (to tune RULES from the traces) */
+  feltWhy: string;
   /** Easy conversations in the last window of counted ones, e.g. "3/5" */
   easyInWindow: string;
   /** B, C, step into Intermediate: ready verdicts in the last judged ones, e.g. "2/4" */
@@ -58,7 +62,7 @@ export interface Decision {
 }
 
 export function decide(design: Design, s: LadderState, record: ConversationRecord, verdict?: SpeakingVerdict): Decision {
-  const felt = feltLike(record);
+  const { felt, why: feltWhy } = feltLike(record);
   const window = record.counted ? [...s.window, felt === 'easy'] : s.window;
   const speaking = verdict ? [...s.speaking, verdict] : s.speaking;
   const lastCounted = window.slice(-RULES.window);
@@ -89,5 +93,5 @@ export function decide(design: Design, s: LadderState, record: ConversationRecor
     ? startAt(s.step + 1)
     : { step: s.step, atStep: s.atStep + 1, window, speaking, supportsBack: supportsBackOn, hardRun, notHardRun };
   if (next.step < s.step) throw new Error('the label never moves down'); // 05: never move the label down by itself
-  return { felt, easyInWindow: `${easy}/${lastCounted.length}`, speakingInWindow, moved: up, heldBy, supportBackChanged: up ? undefined : changed, next };
+  return { felt, feltWhy, easyInWindow: `${easy}/${lastCounted.length}`, speakingInWindow, moved: up, heldBy, supportBackChanged: up ? undefined : changed, next };
 }

@@ -122,11 +122,11 @@ function stubReply(req: CallRequest): object {
     }
     case 'learner': {
       const ability = Number(m.ability ?? 0);
-      if (m.intent === 'english') return { said: 'Sorry, how do I say that?', lang: 'english', help: false };
-      if (m.intent === 'help') return { said: `${L} please again slowly`, lang: 'target', help: true };
+      if (m.intent === 'english') return { said: 'Sorry, how do I say that?', lang: 'english', help: false, helpKind: 'none' };
+      if (m.intent === 'help') return { said: `${L} please again slowly`, lang: 'target', help: true, helpKind: rnd() < 0.5 ? 'word' : 'whole' };
       // An honest learner who didn't follow asks for help instead
-      if (demand - ability > 0.25 && rnd() < 0.5) return { said: `${L} sorry I don't follow`, lang: 'target', help: true };
-      return { said: words(2 + Math.round(ability * 8 + rnd() * 2), `${L}-own-`), lang: 'target', help: false };
+      if (demand - ability > 0.25 && rnd() < 0.5) return { said: `${L} sorry I don't follow`, lang: 'target', help: true, helpKind: 'whole' };
+      return { said: words(2 + Math.round(ability * 8 + rnd() * 2), `${L}-own-`), lang: 'target', help: false, helpKind: 'none' };
     }
     case 'check': {
       const n = String(m.line ?? '').split(/\s+/).length;
@@ -134,7 +134,7 @@ function stubReply(req: CallRequest): object {
       return { verdict: n > limit ? 'clear miss' : rnd() < 0.15 ? 'unsure' : 'fits', reason: 'stub' };
     }
     case 'speaking': {
-      if (Number(m.ownWords ?? 0) < 3) return { level: 'not enough to tell', reason: 'stub: too few own words' };
+      if (Number(m.ownWords ?? 0) < Number(m.minOwn ?? 3)) return { level: 'not enough to tell', reason: 'stub: too few own words' };
       const a = Number(m.ability ?? 0) + (rnd() - 0.5) * 0.25;
       return { level: a < 0.15 ? 'pre-A1' : a < 0.4 ? 'A1' : a < 0.8 ? 'A2' : 'B1', reason: 'stub' };
     }

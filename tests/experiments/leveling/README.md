@@ -19,9 +19,13 @@ The Phase 2 prototype of [docs/research/leveling/05-designs.md](../../../docs/re
 npx tsx --env-file=.env.local tests/experiments/leveling/run.mts --design=all --country=all
 ```
 
-Options: `--design=A|B|C|all`, `--country=it|es-mx|all`, `--learners=improving-first,flat` (default all four), `--conversations=15`, `--turns=6` (learner turns per conversation), `--parallel=4` (learner runs at once per country), `--no-score` (skip the scoring judges), `--dry` (stub, no key). `CHECK_MODEL=<model id>` runs design C's check on a faster model (thinking left at that model's default); `TURN_MODEL` and `CLAUDE_MODEL` work as everywhere (`lib/claude.ts`). A first, cheaper look: `--design=all --country=it --learners=improving-first,flat --conversations=8`.
+Options: `--design=A|B|C|all` (`all` is A and B: C was dropped after the first run, see docs/research/leveling/07-model.md), `--country=it|es-mx|all`, `--learners=improving-first,flat` (default all four), `--conversations=15`, `--turns=6` (learner turns per conversation), `--parallel=4` (learner runs at once per country), `--no-score` (skip the scoring judges), `--dry` (stub, no key). `CHECK_MODEL=<model id>` runs design C's check on a faster model (thinking left at that model's default); `TURN_MODEL` and `CLAUDE_MODEL` work as everywhere (`lib/claude.ts`). A first, cheaper look: `--design=all --country=it --learners=improving-first,flat --conversations=8`.
 
 Without a key: `npx tsx tests/experiments/leveling/run.mts --design=all --country=all --dry` runs the whole loop with canned replies in about 3 seconds. Its numbers only show the code works.
+
+Re-score a saved run with the current measures, no new character calls: `COUNTRY=it npx tsx --env-file=.env.local tests/experiments/leveling/rescore.mts tests/experiments/leveling/results/<run>-it.json`.
+
+**Where this is going:** [07-model.md](../../../docs/research/leveling/07-model.md). The ladder is v0 of one equation (learner number, conversation difficulty as the sum of its settings, a target of about 90–95% followable); the next test is whether each setting turns the difficulty, not whether simulated learners climb.
 
 ## Calls and cost
 
