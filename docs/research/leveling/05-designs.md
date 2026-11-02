@@ -56,3 +56,17 @@ Simulated learners are too competent and too even (02), so the numbers compare d
 - **Context counts as level.** Someone who's lived in Italy, or knows food and customs, follows more with the same words: a known topic makes listening easier. A traveller and a first-time tourist at the same A2 are different learners.
 - **The game can ask.** Characters can ask what real people ask a newcomer (*sei mai stato in Italia? quanto ti fermi?*) and, when it fits, *parlo troppo veloce?* The answers feed the learner's profile and the ladder directly, instead of only inferring them. Keep it occasional, so a conversation never turns into an intake form.
 - **The simplest form (Josh):** a character asks how it's going: *Come va con l'italiano? Troppo difficile o va bene?* (*¿Cómo vas con el español?* in Mexico; the words come from content). Read it asymmetrically: "too hard" turns a support back on right away; "easy" counts as one vote toward stepping up, since beginners overrate themselves (04).
+
+### A small set of questions with a metric each (Josh, 2026-11-02; Claude's draft)
+
+| Question, in role | When | Metric | Feeds |
+|---|---|---|---|
+| *Come va con l'italiano? Difficile o va bene?* | About every 3rd conversation | Comfort: hard / fine / easy, as a trend | Supports back on, or a vote to step up |
+| *Parlo troppo veloce?* | When the counts are mixed (some English, some help asks) | Pace: too fast / fine | Speech speed and repeating |
+| *Sei mai stato in Italia? Quanto ti fermi?* | Once, early | Context: first time / visited / lived there | Starting step; how much is explained |
+| *Cosa ti porta qui?* | Once, early | Purpose: moving, family, work, love of it | Topics and which lessons come first |
+
+- One question per conversation at most; the background ones only once. Never a survey.
+- Asked by whoever it fits; Beginners get the answers as bubbles to say back.
+- The answer is read by the call that already runs when a conversation ends (memory), so no new call and no keyword matching.
+- Words come from content, so Mexico gets its own.
