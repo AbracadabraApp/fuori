@@ -1,0 +1,9 @@
+[
+  {
+    "lesson": "b1-06-2",
+    "field": "practice[2].ask.said",
+    "text": "Ieri c'era sciopero dei treni. Cosa hai fatto?",
+    "why": "Minor, borderline. A bare 'c'è sciopero' is normal spoken Italian, but once the noun takes a 'di' phrase that makes it specific ('dei treni'), it needs an article: 'lo sciopero' or 'uno sciopero'. Without one it reads like a headline.",
+    "fix": "Ieri c'era lo sciopero dei treni. Cosa hai fatto?"
+  }
+]
