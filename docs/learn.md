@@ -119,6 +119,13 @@ Settled in conversation after a night of lesson mockups (the comic strip, a two-
 
 **Lessons without an index; a scoreboard (Josh, 2026-11-02; ideas, not built).** Magda picks the next lesson each time (syllabus order, adjusted by the learner's record); there's no lesson index to browse. A finished lesson earns a stamp, in the same style as the visited badges, kept in one place in Learn with a scoreboard: cities visited, people met, lessons completed, words spoken (`conversation_records`), and flashcard words that have passed stage 3 (counted on the phone, where flashcard stages are saved). No level on it (Josh). Replacing the chip wall (Missions placeholder) and the missions idea is Claude's suggestion, not yet decided.
 
+**Lesson chips, Italy A1 (Josh, 2026-11-03).** The 21 lessons become 14, in four areas, each chip named for what the lesson lets you do, not its content:
+- Meeting people: Hello · How are you · Be polite
+- About you: Name · Where you're from (merges I am, nationality, where you live and from: *sono di…*, *sono americano/a*, *abito a…*) · Time here
+- Getting by: When you're lost (merges not understanding and asking to repeat) · Got it · Ask for a word
+- Ordering and paying: Order one or two (merges a/an and more than one) · Order politely (merges *vorrei* and *prendo*) · How much · Hear a price (merges numbers) · Card or cash
+Waits for the Beginner rewrite Josh put on hold (it changes `lessons.json`, which the app and the lesson flow read); the judges' fixes (`tests/experiments/lesson-judges/results/it-a1-fixed-lessons.json`) go into the same rewrite.
+
 **Tone and content decided along the way:** teach what to say, not what not to say (no *voglio* warning beside *vorrei* at A1, Josh: "why is voglio being discussed with vorrei"); *vorrei* stays a fixed phrase at A1 as the syllabus says, with the verb as an optional "why?" for learners who want it.
 
 **Missions are out of lessons for now (Josh, 2026-10-28):** "for now we pull missions as a feature out of lessons, though lessons will have assignments; for now let's leave missions to define its role as the second area of Learn." So a lesson doesn't end in a mission. Its assignments are the practice dialogues (Josh: "assignments are the practice dialogues"): the short in-role conversations with the city's characters in step 3. Missions stay the second area of Learn, beside Lessons, with their role to be worked out on their own. The `mission` field in `content/it/lessons.json` is unused.
