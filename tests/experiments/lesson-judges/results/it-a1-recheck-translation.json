@@ -1,0 +1,23 @@
+[
+  {
+    "lesson": "a1-01-1",
+    "field": "practice[1].ask.en",
+    "text": "A friend says, 'Hi, how are you?' What do you say?",
+    "why": "British-style single quotes around the quoted speech; American English uses double quotes (as the a1-02-4 line with “receipt.” already does). Wording is fine.",
+    "fix": "A friend says, “Hi, how are you?” What do you say?"
+  },
+  {
+    "lesson": "a1-01-1",
+    "field": "practice[2].ask.en",
+    "text": "An older lady says, 'How are you?' What do you say?",
+    "why": "British-style single quotes around the quoted speech; American English uses double quotes (as the a1-02-4 line with “receipt.” already does). Wording is fine.",
+    "fix": "An older lady says, “How are you?” What do you say?"
+  },
+  {
+    "lesson": "a1-01-2",
+    "field": "practice[1].ask.en",
+    "text": "A shopkeeper says, 'How are you?' What do you say?",
+    "why": "British-style single quotes around the quoted speech; American English uses double quotes (as the a1-02-4 line with “receipt.” already does). Wording is fine.",
+    "fix": "A shopkeeper says, “How are you?” What do you say?"
+  }
+]
