@@ -1,0 +1,86 @@
+[
+  {
+    "lesson": "b1-02-4",
+    "field": "practice[0].answer",
+    "text": "Un amico sa già la notizia. Cosa gli chiedi? -> Chi te l'ha detto?",
+    "why": "The lesson's point is that the participle matches the thing (data for la chiave), but the thing here is la notizia and the model answer says detto. The answer shows the opposite of what the notice just taught.",
+    "fix": "Use a question whose thing is masculine, e.g. 'Un amico ha il tuo libro. Chi gliel'ha dato?' -> 'Gliel'ho dato io.', or keep the news and answer 'Chi te l'ha detta?'"
+  },
+  {
+    "lesson": "b1-02-6",
+    "field": "examples[3]",
+    "text": "Se n'è andato presto.",
+    "why": "The notice says ne stands for 'about it' with dimenticarsi/ricordarsi; in andarsene ne doesn't mean 'about it' (it's the pronominal verb from b1-05). The example doesn't show the point and contradicts the notice.",
+    "fix": "Replace with a ricordarsi/dimenticarsi line, e.g. 'Non se n'è ricordato nessuno.' or 'Se n'è dimenticata anche lei.'"
+  },
+  {
+    "lesson": "b1-02-6",
+    "field": "practice[2]",
+    "text": "Il tuo amico non è più alla festa. Cosa è successo? -> Se n'è andato presto.",
+    "why": "Practises andarsene, not ne meaning 'about it' with a reflexive verb, so the third practice answer doesn't use the step's pattern.",
+    "fix": "Ask something that calls for ricordarsene/dimenticarsene, e.g. 'Marco doveva comprare il pane. L'ha comprato?' -> 'No, se n'è dimenticato.'"
+  },
+  {
+    "lesson": "b1-04-3",
+    "field": "practice[0]",
+    "text": "Da quanto tempo abiti qui? -> Abito qui da … mesi.",
+    "why": "The step teaches sono/è X che + present, but the question invites da and the model answer uses da, so the learner doesn't practise the step's pattern.",
+    "fix": "Model answer 'Sono … mesi che abito qui.' (or ask 'È tanto che abiti qui?' -> 'Sono … mesi che abito qui.')"
+  },
+  {
+    "lesson": "b1-04-3",
+    "field": "examples[2]",
+    "text": "Abito qui da sei mesi.",
+    "why": "Doesn't show sono... che, the lesson's title pattern; it brings in da + present, which is taught as its own point in b1-10-2.",
+    "fix": "Replace with another sono/è... che line from the unit, e.g. 'Sono sei mesi che abito qui.'"
+  },
+  {
+    "lesson": "b1-04-2",
+    "field": "practice[2]",
+    "text": "E l'appartamento vicino al mercato, com'era? -> Era pessimo.",
+    "why": "Pessimo is never shown in the examples or explained in the notice (only migliore is), and the question can't lead the learner to it; it tests a form the lesson didn't teach.",
+    "fix": "Use a taught form: 'Era il più rumoroso di tutti.' or 'Era bruttissimo.', or add pessimo to an example and the notice."
+  },
+  {
+    "lesson": "b1-07-5",
+    "field": "examples[0], examples[2]",
+    "text": "I biglietti costano tanto? / Viene anche lui?",
+    "why": "Half the examples are the prompting questions and show no short answer; only two lines show penso di sì / credo di no.",
+    "fix": "Make each example a full exchange in one line or replace the questions with answers, e.g. 'Spero di sì!' and 'Credo di no, ha da fare.'"
+  },
+  {
+    "lesson": "b1-03-2",
+    "field": "examples[3]",
+    "text": "Il titolare è la persona alla quale è intestata la carta.",
+    "why": "Slips in a second point (il quale in formal texts, its own syllabus item) into a lesson titled con cui, di cui and per cui; the notice then has to explain it too.",
+    "fix": "Replace with a preposition + cui line, e.g. 'È la persona a cui è intestata la carta.', and drop the alla quale clause from the notice."
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice",
+    "text": "Cosa ti dice l'impiegata... -> Compili il modulo e firmi qui in fondo. / Torni con la ricevuta fra trenta giorni.",
+    "why": "All three answers are the examples repeated word for word, and for an understand-only point the learner is asked to guess the clerk's exact line ('La tua pratica non è finita' can only be answered by recalling 'fra trenta giorni'). Nothing is in the learner's own words and understanding isn't tested.",
+    "fix": "Give the clerk's command and ask what the learner does: 'L'impiegata dice: Prenda il numero. Cosa fai?' -> 'Prendo il numero e aspetto.'"
+  },
+  {
+    "lesson": "b1-13-1",
+    "field": "practice[2]",
+    "text": "Il mercante lasciò tutto alla città. Chi ha avuto tutto? -> La città",
+    "why": "The question contains its own answer (alla città), so it doesn't check that the learner understood lasciò.",
+    "fix": "Ask about the verb: 'Il mercante lasciò tutto alla città. Cosa ha fatto il mercante?' -> 'Ha lasciato tutto alla città.'"
+  },
+  {
+    "lesson": "b1-13-2",
+    "field": "practice[2]",
+    "text": "Questo quadro è di Caravaggio. Come lo dici con 'dipinto'? -> Il quadro è stato dipinto da Caravaggio.",
+    "why": "A transformation drill that hands over the word and the painter; not an open question answered in the learner's own words.",
+    "fix": "Ask openly: 'Un amico ti chiede chi ha fatto questo quadro. Cosa gli dici?' -> 'È stato dipinto da Caravaggio.'"
+  },
+  {
+    "lesson": "b1-03-5",
+    "field": "practice[1]",
+    "text": "Cosa ti serve per aprire un conto? -> Prima di aprire il conto, mi serve il codice fiscale.",
+    "why": "The question (per aprire) doesn't call for 'before'; prima di is bolted on and the answer just mangles the clerk's line from examples[1], so the learner isn't using the pattern for a real reason.",
+    "fix": "Ask something with a natural sequence: 'Cosa fai prima di firmare un contratto?' -> 'Prima di firmare, leggo tutto.'"
+  }
+]

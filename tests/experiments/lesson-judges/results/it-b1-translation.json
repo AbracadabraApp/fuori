@@ -1,0 +1,142 @@
+[
+  {
+    "lesson": "b1-01-1",
+    "field": "practice[2].ask",
+    "text": "Per il permesso di soggiorno, cosa porti in questura?",
+    "why": "'the questura' is left in Italian in the English line, so the English doesn't translate it; an American learner doesn't know the word.",
+    "fix": "For your residence permit, what do you bring to the police headquarters (questura)?"
+  },
+  {
+    "lesson": "b1-02-2",
+    "field": "examples[0]",
+    "text": "Glielo dico io.",
+    "why": "Drops the emphasis of the stressed 'io' (I'll be the one to tell him); 'I'll tell him' loses it.",
+    "fix": "I'll tell him myself."
+  },
+  {
+    "lesson": "b1-02-2",
+    "field": "mission.say",
+    "text": "Non ti preoccupare, glielo dico io.",
+    "why": "Same: the stressed 'io' is the point of the reassurance and the English drops it.",
+    "fix": "Don't worry, I'll tell him myself."
+  },
+  {
+    "lesson": "b1-03-2",
+    "field": "examples[3]",
+    "text": "Il titolare è la persona alla quale è intestata la carta.",
+    "why": "'account holder' adds meaning; the sentence is about the card, so titolare here is the cardholder.",
+    "fix": "The cardholder is the person whose name is on the card."
+  },
+  {
+    "lesson": "b1-03-5",
+    "field": "examples[1]",
+    "text": "Prima di aprire il conto, mi serve il Suo codice fiscale.",
+    "why": "'tax code' is not American for a personal number; in the US 'tax code' means tax law. Americans say tax ID number.",
+    "fix": "Before we open the account, I need your tax ID number."
+  },
+  {
+    "lesson": "b1-03-5",
+    "field": "practice[1].answer",
+    "text": "Prima di aprire il conto, mi serve il codice fiscale.",
+    "why": "Same 'tax code' problem.",
+    "fix": "Before I open the account, I need my tax ID number."
+  },
+  {
+    "lesson": "b1-06-4",
+    "field": "practice[0].ask",
+    "text": "Hai detto che il corso è pesante. È difficile?",
+    "why": "'heavy going' is British; an American wouldn't say it.",
+    "fix": "You said the course is a grind. Is it hard?"
+  },
+  {
+    "lesson": "b1-08-1",
+    "field": "examples[0]",
+    "text": "È meglio che Lei non beva caffè dopo pranzo.",
+    "why": "'You'd better' is a warning in American English, stronger than the gentle advice of 'è meglio che', and loses the formal Lei register.",
+    "fix": "It's best if you don't have coffee after lunch."
+  },
+  {
+    "lesson": "b1-08-1",
+    "field": "practice[0].answer",
+    "text": "È meglio che tu non beva caffè la sera.",
+    "why": "'You'd better' sounds like a warning; è meglio che is friendly advice.",
+    "fix": "It's better if you don't drink coffee in the evening."
+  },
+  {
+    "lesson": "b1-08-1",
+    "field": "mission.say",
+    "text": "È meglio che tu non beva caffè la sera.",
+    "why": "Same: 'You'd better' reads as a threat or warning, not advice.",
+    "fix": "It's better if you don't drink coffee in the evening."
+  },
+  {
+    "lesson": "b1-08-2",
+    "field": "practice[0].answer",
+    "text": "Te la presto, purché tu me la riporti stasera.",
+    "why": "Drops 'Te la presto' (I'll lend it to you) and adds 'Sure'; the English no longer says what the Italian says.",
+    "fix": "I'll lend it to you, as long as you bring it back tonight."
+  },
+  {
+    "lesson": "b1-08-2",
+    "field": "practice[2].answer",
+    "text": "Te la presto, purché tu me la riporti domenica.",
+    "why": "Drops 'Te la presto' and replaces it with 'Sure'.",
+    "fix": "I'll lend it to you, as long as you bring it back on Sunday."
+  },
+  {
+    "lesson": "b1-08-2",
+    "field": "mission.say",
+    "text": "Te la presto, purché tu me la riporti stasera.",
+    "why": "Drops 'Te la presto'; the learner says a sentence the English doesn't match.",
+    "fix": "I'll lend it to you, as long as you bring it back tonight."
+  },
+  {
+    "lesson": "b1-09-5",
+    "field": "examples[2]",
+    "text": "Ognuno ha il suo numero: adesso tocca al quarantadue.",
+    "why": "\"it's forty-two's turn\" is not how Americans say it; we call the number.",
+    "fix": "Everyone has a number, and now it's number forty-two's turn."
+  },
+  {
+    "lesson": "b1-09-5",
+    "field": "practice[1].ask",
+    "text": "Fa freddo e sei al bar. Cosa vuoi bere?",
+    "why": "An Italian bar is a café; in American English 'the bar' means a place for alcohol, which clashes with ordering something hot.",
+    "fix": "It's cold and you're at the café. What do you want to drink?"
+  },
+  {
+    "lesson": "b1-10-4",
+    "field": "examples[0]",
+    "text": "Gentile dottoressa Rossi,",
+    "why": "'Dr.' adds meaning: dottoressa is a courtesy title for any graduate, and an American reads Dr. as an MD or PhD. For a school office, Ms. is the equivalent.",
+    "fix": "Dear Ms. Rossi,"
+  },
+  {
+    "lesson": "b1-10-4",
+    "field": "practice[0].answer",
+    "text": "Gentile dottoressa Rossi,",
+    "why": "Same 'Dr.' problem.",
+    "fix": "Dear Ms. Rossi,"
+  },
+  {
+    "lesson": "b1-10-4",
+    "field": "mission.say",
+    "text": "Gentile dottoressa Rossi, Le scrivo per chiedere informazioni sul corso.",
+    "why": "Same 'Dr.' problem.",
+    "fix": "Dear Ms. Rossi, I'm writing to ask for information about the course."
+  },
+  {
+    "lesson": "b1-13-1",
+    "field": "practice[2].answer",
+    "text": "La città: il mercante le ha lasciato tutto.",
+    "why": "'left it everything' is word-for-word and awkward English.",
+    "fix": "The town. The merchant left everything to it."
+  },
+  {
+    "lesson": "b1-13-4",
+    "field": "practice[1].ask",
+    "text": "Vuoi fotografare un affresco. Cosa chiedi al custode?",
+    "why": "In American English 'custodian' means a janitor; in a church or museum the custode is the attendant or guard.",
+    "fix": "You want to photograph a fresco. What do you ask the attendant?"
+  }
+]
