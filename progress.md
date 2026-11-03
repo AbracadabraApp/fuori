@@ -66,6 +66,12 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-03: Lessons pass 1 on Josh's phone (laptop session)
+
+- **Lessons pass 1** (N6 item 4, 467ab10): Magda teaches a step on the conversation screen (Beginner format, ends when she says so, at most four turns), three practice scenes with people whose role fits (forced end on the third learner turn), her review of the learner's practice lines. Lesson conversations have prompt versions `lesson-…`, so they're neither visits nor path records. `smoke:live` passed in Italy and Mexico, including the new lesson checks.
+- Installed on Josh's iPhone as a Debug build (his yes; not TestFlight).
+- Next: Josh plays a lesson; then pass 2 (Magda picks the next lesson). Open: Josh to confirm "done" = reaching the review. The cloud's welcome rework (`claude/welcome-goals`) and `fix/beginner-repeats` wait for the laptop checks listed below.
+
 ## 2026-11-03: Welcome rework, on branch `claude/welcome-goals` (cloud session; not on main)
 
 Josh's list after playing the welcome (N6 3b). Done on the branch, **not verified** (no API key, no Mac, no Railway in the cloud session):
