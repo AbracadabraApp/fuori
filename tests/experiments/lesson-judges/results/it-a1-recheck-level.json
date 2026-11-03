@@ -1,0 +1,9 @@
+[
+  {
+    "lesson": "a1-02-2",
+    "field": "practice[0].ask.said",
+    "text": "Sei con un amico. Non hai sentito. Cosa dici?",
+    "why": "'Non hai sentito' is a passato prossimo of a new verb (sentire), and the syllabus teaches the past tense at a1-15. In a1-02 only ho capito / hai capito are allowed, as fixed phrases. Sentito isn't given with its English in the lesson, so a listener hearing it once at A1 won't catch it.",
+    "fix": "Sei con un amico. Non hai capito. Cosa dici?"
+  }
+]

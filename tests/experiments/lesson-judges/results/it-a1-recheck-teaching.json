@@ -1,0 +1,51 @@
+[
+  {
+    "lesson": "a1-02-1",
+    "field": "examples[3]",
+    "text": "Scusi, non sono di qui. / Sorry, I'm not from here.",
+    "why": "The lesson's point is saying you didn't understand or don't speak much Italian. This example is fine Italian but shows neither; it only fits the notice's grammar aside about non before the verb, so it drifts the lesson toward negation in general.",
+    "fix": "Use a line that shows the point, e.g. \"Scusi, parlo solo un po' di italiano.\" / \"Sorry, I only speak a little Italian.\""
+  },
+  {
+    "lesson": "a1-02-2",
+    "field": "examples[3]",
+    "text": "Può scrivere il prezzo, per favore? / Could you write down the price, please?",
+    "why": "The lesson teaches asking someone to repeat or speak more slowly. Asking someone to write something down is a different request, so this slips in a second point that no practice question uses.",
+    "fix": "Replace with a repeat/slow-down line, e.g. \"Scusi, può ripetere più piano?\" / \"Sorry, could you repeat that more slowly?\""
+  },
+  {
+    "lesson": "a1-03-1",
+    "field": "practice[0].answer",
+    "text": "No, sono qui per imparare l'italiano.",
+    "why": "The model answer expects 'per imparare l'italiano', which no example or notice gives. The learner can't build it from the lesson.",
+    "fix": "Ask something the examples cover, e.g. ask \"Sei americano?\", answer \"Sì, sono americano.\"; or add an example with \"Sono qui per imparare l'italiano.\""
+  },
+  {
+    "lesson": "a1-03-1",
+    "field": "practice[1].answer",
+    "text": "No, sono in pensione.",
+    "why": "'In pensione' isn't given anywhere in the lesson before this question, so the answer depends on a phrase the learner hasn't been taught. (practice[2] then simply hands it back: 'Sei in pensione?' → 'Sì, sono in pensione.')",
+    "fix": "Add an example with \"Sono in pensione.\" or change the question to one answerable with taught words, e.g. \"Sei qui in vacanza?\" → \"No, sono qui per lavoro.\" only if 'per lavoro' is shown in an example."
+  },
+  {
+    "lesson": "a1-03-1",
+    "field": "practice",
+    "text": "All three questions are 'Sei …?' answered with 'sono …'.",
+    "why": "The how_to promises asking someone else with sei and è, but no practice question has the learner ask. Half the point is shown in examples and never practised.",
+    "fix": "Make one question a prompt to ask, e.g. \"Una signora anziana è nuova qui. Cosa chiedi?\" → \"È qui in vacanza?\""
+  },
+  {
+    "lesson": "a1-03-6",
+    "field": "notice",
+    "text": "Italian says it in the present: sono, then da and the time.",
+    "why": "The notice ties the pattern to sono only, but examples[3] uses studio and the practice answers use abito and studio. The notice doesn't explain what all the examples share: any present-tense verb plus da.",
+    "fix": "\"Italian says it in the present: the verb, then da and the time — sono qui da tre settimane, studio l'italiano da un mese. The time is still going, so it stays in the present.\""
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "practice[2].answer",
+    "text": "Posso pagare io? / Can I get this one?",
+    "why": "The lesson teaches posso pagare con la carta / in contanti. Putting io after the verb to mean 'my treat' is a second point the lesson never shows, so the learner can't arrive at this answer.",
+    "fix": "Ask something the lesson covers, e.g. \"Hai il bancomat. Cosa chiedi alla cassa?\" → \"Posso pagare con il bancomat?\""
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "lesson": "a1-03-3",
+    "field": "practice[1].ask.said",
+    "text": "Una signora anziana è nuova qui. Cosa chiedi?",
+    "why": "\"È nuova qui\" for a person who just moved in is a calque of English \"she's new here\"; a teacher would say she's new to the neighbourhood or has just moved here.",
+    "fix": "Una signora anziana è nuova del quartiere. Cosa chiedi?"
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "practice[1].ask.said",
+    "text": "Al mercato hai solo monete. Cosa chiedi?",
+    "why": "Nobody holding only coins at a market stall would ask \"Posso pagare in contanti?\": coins are cash and cash is the default at markets, so a teacher wouldn't set up the question this way. The scene needs to make asking about cash sensible.",
+    "fix": "Al mercato vuoi pagare in contanti, non con la carta. Cosa chiedi?"
+  }
+]
