@@ -92,6 +92,18 @@ check('the place is named', prompt.system.includes(place.name));
 check('messages alternate, starting with the person', prompt.messages[0].role === 'user' && prompt.messages.every((m, i) => i === 0 || m.role !== prompt.messages[i - 1].role), prompt.messages.map((m) => m.role));
 check('two learner lines in a row become one message', prompt.messages[2].content === 'Ciao\nVorrei\nun caffè', prompt.messages[2]?.content);
 
+// She says each sentence once a turn (Josh, 2026-11-02, on his phone: "Buongiorno! Benvenuto!" then "Buongiorno! Come sta oggi?")
+const repeated = tidyParts([
+  { kind: 'word', text: 'Buongiorno! Benvenuto!', en: 'Good morning! Welcome!', gloss: '' },
+  { kind: 'question', text: 'Buongiorno! Come sta oggi?', en: 'Good morning! How are you today?', gloss: 'how are you?' },
+  { kind: 'answer', text: 'Benvenuto.', en: 'Benvenuto.' },
+  { kind: 'answer', text: 'Sto bene, grazie.', en: "I'm fine, thanks." },
+]);
+check('a sentence already said this turn is dropped, with its English', repeated[1].text === 'Come sta oggi?' && repeated[1].en === 'How are you today?', repeated[1]);
+check('the first time stays', repeated[0].text === 'Buongiorno! Benvenuto!', repeated[0].text);
+check("an answer's English that repeats it is dropped", repeated[2].en === '' && repeated[3].en === "I'm fine, thanks.", repeated.slice(2));
+check('a part that only repeats is dropped', tidyParts([{ kind: 'word', text: 'Ciao!', en: 'Hi!', gloss: '' }, { kind: 'word', text: 'Ciao!', en: 'Hi!', gloss: '' }]).length === 1);
+
 if (problems.length) {
   console.error(problems.join('\n'));
   process.exit(1);
