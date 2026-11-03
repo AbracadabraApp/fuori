@@ -266,7 +266,7 @@ export async function recordConversation(conversationId: string, learnerId: stri
     const { felt, why, counted } = feltOf(counts);
     const { next, moved } = decide(before, felt, counted);
     path = { step: before.step, felt, why, moved, state: next };
-  } else if (row.level === 'intermediate' && !played) {
+  } else if (row.level === 'intermediate' && !played && !row.prompt_version?.startsWith('lesson-')) {
     // Intermediate: back to the path's last step after RULES.backFromIntermediate hard conversations in a row
     const before = await intermediateState(learnerId);
     const { felt, why } = silent ? { felt: 'hard' as const, why: 'left without a word' } : feltOf(counts);

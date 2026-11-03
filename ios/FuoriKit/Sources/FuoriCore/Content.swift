@@ -62,7 +62,23 @@ public struct UIWords: Codable, Sendable, Equatable {
     public let cards: CardWords?
     /// Visit stamps on place and city cards; nil from servers before 2026-10-30
     public let stamp: StampWords?
+    /// A lesson's buttons; nil from servers before 2026-11-02
+    public let lesson: LessonWords?
     public let ticket: TicketWords
+}
+
+/// A lesson's buttons (lib/lesson.ts), in the language, with their English
+/// for VoiceOver: after Magda teaches, between practice scenes, back to her
+/// review, at the end
+public struct LessonWords: Codable, Sendable, Equatable {
+    public let go: String
+    public let next: String
+    public let back: String
+    public let done: String
+    public let goLabel: String
+    public let nextLabel: String
+    public let backLabel: String
+    public let doneLabel: String
 }
 
 /// The visit stamp's words (docs/visited-badge.md): in the language on the

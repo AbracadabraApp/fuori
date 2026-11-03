@@ -232,22 +232,26 @@ public final class ConversationModel {
 
     /// This conversation is the welcome (lib/welcome.ts): the server plays it
     /// from the agreed script, and its last turn ends on a button
-    public var welcome: Bool { welcomeGo != nil }
-    /// The welcome's button words, in the language (/v1/content onboarding.welcome.go)
-    public let welcomeGo: Onboarding.Line?
-    /// Called when the welcome's button has been answered by the server, with the level it placed them at
-    private let onWelcomed: ((APIClient.Welcomed) -> Void)?
-    /// The welcome's last turn has been said: the button shows
+    public let welcome: Bool
+    /// A lesson's part (lib/lesson.ts), sent with every turn; its last turn ends on a button too
+    public let lesson: APIClient.LessonTurn?
+    /// The button that replaces the mic once the last turn is said, in the language (line) with its English (en)
+    public let endButton: Onboarding.Line?
+    /// What the button does (the welcome: place them; a lesson: the next part)
+    private let onEnd: (@MainActor (ConversationModel) async throws -> Void)?
+    /// The last turn has been said: the button shows
     public private(set) var finished = false
     /// The mic was refused in the welcome: she says once where to turn it on (the next turn only)
     private var micOffToSay = false
 
     /// `beginner`: the learner's level is Beginner, or not set yet (the opener hint, the longer end-of-turn wait).
-    /// `welcomeGo`: this is the welcome conversation, with its button's words; `onWelcomed` when its button is done
-    public init(city: City, place: Place, character: Character, language: Language, api: APIClient, beginner: Bool = false, welcomeGo: Onboarding.Line? = nil, onWelcomed: ((APIClient.Welcomed) -> Void)? = nil, onSave: @escaping (String) -> Void) {
+    /// `welcome` or `lesson`: a conversation that ends on `endButton`, which runs `onEnd`
+    public init(city: City, place: Place, character: Character, language: Language, api: APIClient, beginner: Bool = false, welcome: Bool = false, lesson: APIClient.LessonTurn? = nil, endButton: Onboarding.Line? = nil, onEnd: (@MainActor (ConversationModel) async throws -> Void)? = nil, onSave: @escaping (String) -> Void) {
         self.beginner = beginner
-        self.welcomeGo = welcomeGo
-        self.onWelcomed = onWelcomed
+        self.welcome = welcome
+        self.lesson = lesson
+        self.endButton = endButton
+        self.onEnd = onEnd
         self.city = city
         self.place = place
         self.character = character
@@ -278,7 +282,7 @@ public final class ConversationModel {
     /// Show and speak a line, then open the learner's turn
     private func present(_ reply: APIClient.TurnReply, generation: Int) async {
         guard generation == self.generation else { return }
-        if welcome, reply.done == true { finished = true }
+        if endButton != nil, reply.done == true { finished = true }
         scaffolding = reply.replies == true
         // An older server sends no stage (or "tap", now gone): two good answers
         stage = scaffolding ? (reply.stage.flatMap(Stage.init(rawValue:)) ?? .read) : nil
@@ -370,7 +374,7 @@ public final class ConversationModel {
         let generation = self.generation
         let micOff = micOffToSay ? true : nil
         micOffToSay = false
-        return try await api.turnStreamed(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome ? true : nil, micOff: micOff) { [weak self] first, parts in
+        return try await api.turnStreamed(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome ? true : nil, micOff: micOff, lesson: lesson) { [weak self] first, parts in
             Task { @MainActor in self?.startHead(first, parts: parts, generation: generation) }
         }
     }
@@ -902,21 +906,19 @@ public final class ConversationModel {
         await sendChosen(line, generation: generation, how: "tapped answer")
     }
 
-    /// The welcome's button: the server reads the answers and places them;
-    /// then the conversation is saved (her memory of them) and the app moves on
+    /// The end button: what it does (the welcome: the server places them; a
+    /// lesson: the next part), then the conversation is saved and the app moves on
     public private(set) var finishing = false
-    public func finishWelcome() async {
-        guard welcome, phase == .finished, !finishing, let conversationId else { return }
+    public func finishEnding() async {
+        guard phase == .finished, !finishing, let onEnd else { return }
         finishing = true
         note = nil
         do {
-            let placed = try await api.welcomed(conversationId: conversationId)
-            leave()
-            onWelcomed?(placed)
+            try await onEnd(self)
         } catch {
             finishing = false
-            let code = report(error, step: "welcomed")
-            note = ErrorCode.message("Couldn't finish. Tap again.", code: code)
+            let code = report(error, step: welcome ? "welcomed" : "lesson next")
+            note = ErrorCode.message("Couldn't go on. Tap again.", code: code)
         }
     }
 

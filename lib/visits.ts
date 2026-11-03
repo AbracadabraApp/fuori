@@ -11,6 +11,8 @@ export async function visitCounts(learnerId: string, cityId?: string): Promise<R
      FROM conversations
      WHERE learner_id = $1 AND ($2::text IS NULL OR city_id = $2)
        AND EXISTS (SELECT 1 FROM jsonb_array_elements(turns) t WHERE t->>'who' = 'learner')
+       -- A lesson's practice dialogues are examples, not visits (lib/lesson.ts; Josh, 2026-11-02)
+       AND COALESCE(prompt_version, '') NOT LIKE 'lesson-%'
      GROUP BY place_id`,
     [learnerId, cityId ?? null]
   );

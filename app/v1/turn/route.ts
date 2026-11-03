@@ -56,6 +56,13 @@ const Body = z.object({
   micOff: z.boolean().optional(),
   /** This conversation is the welcome (lib/welcome.ts; apps from build 10) */
   welcome: z.boolean().optional(),
+  /** A lesson's turn (lib/lesson.ts) */
+  lesson: z.object({
+    stepId: z.string().max(80),
+    part: z.enum(['teach', 'practice', 'review']),
+    scene: z.number().int().min(0).max(5).optional(),
+    practiceIds: z.array(z.string().uuid()).max(5).optional(),
+  }).optional(),
 });
 
 /**
@@ -149,6 +156,7 @@ export async function POST(request: Request) {
           canRetry: () => !firstSent,
           micOff: body.data.micOff,
           welcome: body.data.welcome,
+          lesson: body.data.lesson,
         });
         // Beginner: the voice for the rest (after the first parts), or the whole line
         if (result.reply.parts) {

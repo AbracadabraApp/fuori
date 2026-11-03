@@ -72,6 +72,38 @@ public actor APIClient {
         return try await send(post("v1/onboarding/welcomed", json: Body(conversationId: conversationId)), signedIn: true)
     }
 
+    // MARK: - Lessons
+
+    /// Which part of a lesson a turn belongs to (lib/lesson.ts)
+    public struct LessonTurn: Codable, Sendable, Equatable {
+        public let stepId: String
+        /// teach, practice or review
+        public let part: String
+        public let scene: Int?
+        public let practiceIds: [String]?
+        public init(stepId: String, part: String, scene: Int? = nil, practiceIds: [String]? = nil) {
+            self.stepId = stepId; self.part = part; self.scene = scene; self.practiceIds = practiceIds
+        }
+    }
+
+    /// Where a lesson's parts happen (POST /v1/lesson/start): Magda, then the practice scenes
+    public struct LessonPlan: Codable, Sendable, Equatable {
+        public struct Scene: Codable, Sendable, Equatable {
+            public let city: City
+            public let place: Place
+            public let characterId: String
+        }
+        public let stepId: String
+        public let title: String
+        public let magda: Scene
+        public let practice: [Scene]
+    }
+
+    public func lessonStart(stepId: String) async throws -> LessonPlan {
+        struct Body: Encodable { let stepId: String }
+        return try await send(post("v1/lesson/start", json: Body(stepId: stepId)), signedIn: true)
+    }
+
     // MARK: - Conversation
 
     public struct TurnReply: Codable, Sendable, Equatable {
@@ -127,10 +159,10 @@ public actor APIClient {
     /// that doesn't stream, gives no `onFirst`.
     /// `onFirst` also gets the first parts of a Beginner turn (nil otherwise),
     /// so they show as bubbles while they're said
-    /// `welcome`: this conversation is the welcome (lib/welcome.ts); `micOff`: the mic was refused, she says once where to turn it on
-    public func turnStreamed(cityId: String, placeId: String, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, welcome: Bool? = nil, micOff: Bool? = nil, onFirst: @escaping @Sendable (String, [TurnPart]?) -> Void) async throws -> TurnReply {
-        struct Body: Encodable { let cityId: String; let placeId: String; let conversationId: String?; let learnerSaid: String?; let speed: Double?; let welcome: Bool?; let micOff: Bool? }
-        var req = try post("v1/turn", json: Body(cityId: cityId, placeId: placeId, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome, micOff: micOff))
+    /// `welcome`: this conversation is the welcome (lib/welcome.ts); `micOff`: the mic was refused, she says once where to turn it on; `lesson`: a lesson's turn (lib/lesson.ts)
+    public func turnStreamed(cityId: String, placeId: String, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, welcome: Bool? = nil, micOff: Bool? = nil, lesson: LessonTurn? = nil, onFirst: @escaping @Sendable (String, [TurnPart]?) -> Void) async throws -> TurnReply {
+        struct Body: Encodable { let cityId: String; let placeId: String; let conversationId: String?; let learnerSaid: String?; let speed: Double?; let welcome: Bool?; let micOff: Bool?; let lesson: LessonTurn? }
+        var req = try post("v1/turn", json: Body(cityId: cityId, placeId: placeId, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome, micOff: micOff, lesson: lesson))
         req.setValue("application/x-ndjson", forHTTPHeaderField: "Accept")
         req.setValue("Bearer \(try await ensureToken())", forHTTPHeaderField: "Authorization")
         let requestId = ErrorCode.make()

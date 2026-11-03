@@ -39,6 +39,8 @@ export const language = {
     cards: { repeat: "Repite", howDoYouSay: "¿Cómo se dice?", whatIsIt: "¿Qué es?" },
     /** Visit stamps on place and city cards (docs/visited-badge.md): the stamp's words, then the English label under it */
     stamp: { visited: 'ya fuiste', regular: 'de casa', visitedLabel: 'Visited', regularLabel: 'Regular' },
+    /** A lesson's buttons (lib/lesson.ts): after Magda teaches, between practice scenes, back to her review, at the end; the English for VoiceOver's hint */
+    lesson: { go: '¡Vámonos!', next: 'Siguiente', back: 'Con Magda', done: '¡Listo!', goLabel: "Let's go", nextLabel: 'Next', backLabel: 'Back to Magda', doneLabel: 'Done' },
     youAreHere: 'Estás aquí', // departures board: the current city
   },
 };

@@ -20,6 +20,7 @@ import { runBeginnerTurn, beginnerPromptVersion } from '@/lib/beginner';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
 import { pathState } from '@/lib/conversation-record';
 import { welcomeBrief, welcomeContent, welcomed, welcomeVersion } from '@/lib/welcome';
+import { lessonBrief, lessonVersion, type LessonTurn } from '@/lib/lesson';
 import type { Gender } from '@/lib/types';
 import type { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
 import type { Laps } from '@/lib/timing';
@@ -54,6 +55,8 @@ export interface TakeTurnParams {
   micOff?: boolean;
   /** The app opened this conversation as the welcome (lib/welcome.ts); older apps never do, so a visit to her stays a visit */
   welcome?: boolean;
+  /** A lesson's turn (lib/lesson.ts): Magda teaching or reviewing, or a practice dialogue */
+  lesson?: LessonTurn;
 }
 
 export interface TakeTurnResult {
@@ -127,7 +130,15 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const beginner = !welcome && onPath?.stage.path === 'beginner';
   const pathLevel = !welcome && onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
 
-  const reply: TurnOutput = welcome
+  // A lesson (lib/lesson.ts): every part in the Beginner format with its brief, Magda included
+  const lessonBriefed = p.lesson && learnerId ? await lessonBrief(p.lesson, learnerId, transcript, learnerSaid) : null;
+
+  const reply: TurnOutput = lessonBriefed
+    ? await (async () => {
+        const r = await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: lessonBriefed.brief, withDone: lessonBriefed.askDone });
+        return { ...r, done: lessonBriefed.forcedDone || r.done === true };
+      })()
+    : welcome
     ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: welcomeBrief(!!p.micOff), withDone: true })
     : beginner && onPath
     ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: stageText(onPath.stage, character.role), maxAnswers: onPath.stage.answers })
@@ -147,7 +158,9 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   p.laps?.lap('claude');
 
   // One line per turn so any reply can be traced to the prompt version that produced it
-  const version = tutorPrompt
+  const version = lessonBriefed && p.lesson
+    ? lessonVersion(p.lesson.part)
+    : tutorPrompt
     ? `magda-${tutorPrompt.version}`
     : welcome
     ? welcomeVersion()

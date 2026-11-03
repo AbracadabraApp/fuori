@@ -361,7 +361,10 @@ public final class AppModel {
               let city = content.cities.first(where: { $0.id == w.cityId }),
               let place = city.places.first(where: { $0.id == w.placeId }),
               let character = content.character(w.characterId) else { return nil }
-        return ConversationModel(city: city, place: place, character: character, language: content.language, api: api, beginner: true, welcomeGo: w.go, onWelcomed: { [weak self] placed in
+        return ConversationModel(city: city, place: place, character: character, language: content.language, api: api, beginner: true, welcome: true, endButton: w.go, onEnd: { [weak self] model in
+            guard let id = model.conversationId else { return }
+            let placed = try await api.welcomed(conversationId: id)
+            model.leave()
             self?.finishWelcome(placed)
         }) { [weak self] id in
             self?.save(conversationId: id, on: (api, server))
@@ -375,6 +378,14 @@ public final class AppModel {
         if let api { Task { addressedAs = (try? await api.me())?.addressedAs ?? addressedAs } }
         welcome = nil
         phase = .ready
+    }
+
+    /// One part of a lesson (lib/lesson.ts) on the conversation screen, saved like any conversation
+    func lessonConversation(city: City, place: Place, character: Character, lesson: APIClient.LessonTurn, button: Onboarding.Line, onEnd: @escaping @MainActor (ConversationModel) async throws -> Void) -> ConversationModel? {
+        guard let content, let api, let server else { return nil }
+        return ConversationModel(city: city, place: place, character: character, language: content.language, api: api, beginner: true, lesson: lesson, endButton: button, onEnd: onEnd) { [weak self] id in
+            self?.save(conversationId: id, on: (api, server))
+        }
     }
 
     func conversation(city: City, place: Place, character: Character) -> ConversationModel? {

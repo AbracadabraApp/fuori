@@ -80,8 +80,15 @@ export interface Content {
   characters: Record<string, ContentCharacter>;
 }
 
+/** A picture's public URL from this country's image list, or null */
+export function imageUrl(id: string): string | null {
+  const list = imageListFor(country);
+  const entry = list?.images[id];
+  return entry ? `${list.base}/${entry.key}` : null;
+}
+
 /** Same test as the web's city screen (app/page.tsx) */
-const isStation = (placeId: string) => placeId.startsWith('stazione-') || placeId.startsWith('terminal-');
+export const isStation = (placeId: string) => placeId.startsWith('stazione-') || placeId.startsWith('terminal-');
 
 export function buildContent(): Content {
   const list = imageListFor(country);

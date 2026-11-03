@@ -42,7 +42,7 @@ struct ConversationControls: View {
                                      onSay: model.answersAreButtons ? { answer in Task { await model.sayAnswer(answer) } } : nil)
                             .transition(.opacity)
                     }
-                    if model.phase == .finished, let go = model.welcomeGo {
+                    if model.phase == .finished, let go = model.endButton {
                         goButton(go)
                     } else {
                         controls
@@ -78,13 +78,14 @@ struct ConversationControls: View {
         }
     }
 
-    // MARK: The welcome's last button
+    // MARK: The end button
 
     /// In place of the mic at the end of the welcome (docs/onboarding-giulia.md:
-    /// the last question is answered with a button): its words in the language
+    /// the last question is answered with a button) and of each part of a
+    /// lesson (docs/learn.md → Ending a practice dialogue): its words in the language
     private func goButton(_ go: Onboarding.Line) -> some View {
         VStack(spacing: 6) {
-            Button { Task { await model.finishWelcome() } } label: {
+            Button { Task { await model.finishEnding() } } label: {
                 Group {
                     if model.finishing { ProgressView().tint(Tokens.Colors.card) } else { Text(go.line) }
                 }
@@ -96,7 +97,7 @@ struct ConversationControls: View {
             .tint(Tokens.Colors.green)
             .disabled(model.finishing)
             .accessibilityLabel(Text(inLanguage(go.line)))
-            .accessibilityHint("\(go.en) Opens the list of cities")
+            .accessibilityHint(go.en)
         }
         .padding(.horizontal, 24)
         .transition(.opacity)

@@ -16,6 +16,7 @@
  */
 import { execFileSync } from 'child_process';
 import { cities, tutor, language, country } from '@/content';
+import { lessonUnits } from '@/lib/lessons';
 import { characterForPlace } from '@/lib/characters/for-place';
 import type { CharacterSheet, Turn } from '@/lib/types';
 
@@ -197,6 +198,34 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   const nextLesson = await v1('/v1/turn', { cityId, placeId: schoolId });
   const sf2 = nextLesson.headers.get('x-study-file') ?? '';
   /^[1-9]\d* lines, 1 lessons$/.test(sf2) ? pass(`v1 study file updated after the lesson (${sf2})`) : fail('v1 study file updated after the lesson', `x-study-file "${sf2}"`);
+
+  // A lesson on the conversation screen (lib/lesson.ts, N6 item 4 pass 1):
+  // its plan, Magda teaching in parts, a practice dialogue that ends on its
+  // third learner turn and isn't a visit, and her review of it
+  const stepId = lessonUnits()[0]?.steps[0]?.id;
+  if (stepId) {
+    const plan = (await (await v1('/v1/lesson/start', { stepId })).json()) as { magda?: { city: { id: string }; place: { id: string } }; practice?: { city: { id: string }; place: { id: string }; characterId: string }[] };
+    plan.magda && plan.practice?.length === 3 ? pass(`v1 lesson plan (${stepId}: ${plan.practice.map((x) => x.characterId).join(', ')})`) : fail('v1 lesson plan', JSON.stringify(plan).slice(0, 200));
+    if (plan.magda && plan.practice?.length) {
+      const teach = (await (await v1('/v1/turn', { cityId: plan.magda.city.id, placeId: plan.magda.place.id, lesson: { stepId, part: 'teach' } })).json()) as { parts?: unknown[]; promptVersion?: string };
+      teach.parts?.length && teach.promptVersion?.startsWith('lesson-') && teach.promptVersion.endsWith('-teach') ? pass(`v1 lesson: Magda teaches in parts (${teach.promptVersion})`) : fail('v1 lesson: Magda teaches', JSON.stringify(teach).slice(0, 200));
+      const pr = plan.practice[0];
+      const opening = (await (await v1('/v1/turn', { cityId: pr.city.id, placeId: pr.place.id, lesson: { stepId, part: 'practice', scene: 0 } })).json()) as { conversationId?: string; done?: boolean };
+      let done: boolean | undefined;
+      const said: boolean[] = [];
+      for (let k = 0; k < 3; k++) {
+        const r = (await (await v1('/v1/turn', { cityId: pr.city.id, placeId: pr.place.id, conversationId: opening.conversationId, learnerSaid: LESSON_LINES[language.code][k % LESSON_LINES[language.code].length], lesson: { stepId, part: 'practice', scene: 0 } })).json()) as { done?: boolean };
+        said.push(!!r.done);
+        done = r.done;
+      }
+      !opening.done && said[0] === false && said[1] === false && done === true ? pass('v1 lesson: practice ends on the third learner turn') : fail('v1 lesson: practice ends on the third learner turn', `opening done ${opening.done}, after each turn ${said.join(', ')}`);
+      await v1(`/v1/conversations/${opening.conversationId}/end`, {});
+      const meAfter = (await (await fetch(`${base}/v1/me`, { headers: auth })).json()) as { visits?: Record<string, number> };
+      !meAfter.visits?.[pr.place.id] ? pass('v1 lesson: practice is not a visit') : fail('v1 lesson: practice is not a visit', JSON.stringify(meAfter.visits));
+      const review = (await (await v1('/v1/turn', { cityId: plan.magda.city.id, placeId: plan.magda.place.id, lesson: { stepId, part: 'review', practiceIds: [opening.conversationId] } })).json()) as { parts?: unknown[]; promptVersion?: string };
+      review.parts?.length && review.promptVersion?.endsWith('-review') ? pass('v1 lesson: Magda reviews') : fail('v1 lesson: Magda reviews', JSON.stringify(review).slice(0, 200));
+    }
+  }
 
   const speak = await v1('/v1/speak', { text: o.line.split(/(?<=[.!?])\s/)[0], characterId });
   const audio = speak.ok ? await speak.blob() : null;
