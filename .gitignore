@@ -16,3 +16,6 @@ docs/reference/hig/
 
 # Experiment outputs (tests/experiments): several quote Josh's real lines
 tests/experiments/out/
+
+# Downloaded word-frequency lists (FrequencyWords, OpenSubtitles 2018), fetched on demand
+tests/experiments/lesson-judges/data/
