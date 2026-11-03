@@ -1,0 +1,1069 @@
+[
+  {
+    "lesson": "a1-01-1",
+    "field": "practice[0].ask.said",
+    "before": "Cosa chiedi a un amico quando lo vedi?",
+    "after": "Vedi un amico. Cosa chiedi?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "a1-01-1",
+    "field": "practice[0].ask.en",
+    "before": "What do you ask a friend when you see him?",
+    "after": "You see a friend. What do you ask?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "a1-01-1",
+    "field": "practice[1].ask.en",
+    "before": "A friend says to you: 'Hi, how are you?' What do you answer?",
+    "after": "A friend says, 'Hi, how are you?' What do you say?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-01-1",
+    "field": "practice[2].ask.en",
+    "before": "An older lady says to you: 'How are you?' What do you answer?",
+    "after": "An older lady says, 'How are you?' What do you say?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-01-2",
+    "field": "practice[1].ask.en",
+    "before": "A shopkeeper says to you: 'How are you?' What do you answer?",
+    "after": "A shopkeeper says, 'How are you?' What do you say?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-01-2",
+    "field": "practice[2].ask.said",
+    "before": "Come stai oggi? Chiedi anche a me.",
+    "after": "Ciao! Come stai oggi?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "a1-01-2",
+    "field": "practice[2].ask.en",
+    "before": "How are you today? Ask me too.",
+    "after": "Hi! How are you today?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "a1-01-3",
+    "field": "examples[1].en",
+    "before": "Good evening, madam.",
+    "after": "Good evening, ma'am.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-01-3",
+    "field": "practice[1].answer.en",
+    "before": "Good evening, madam!",
+    "after": "Good evening, ma'am!",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-01-3",
+    "field": "practice[2].ask.said",
+    "before": "Cosa dici a un vicino prima di andare a letto?",
+    "after": "Un vicino va a letto. Cosa dici?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "a1-01-3",
+    "field": "practice[2].ask.en",
+    "before": "What do you say to a neighbour before going to bed?",
+    "after": "A neighbor is going to bed. What do you say?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "a1-02-1",
+    "field": "examples[3].said",
+    "before": "Scusi, non ho capito.",
+    "after": "Scusi, non sono di qui.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-02-1",
+    "field": "examples[3].en",
+    "before": "Sorry, I didn't understand.",
+    "after": "Sorry, I'm not from here.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-02-2",
+    "field": "examples[2].en",
+    "before": "Could you repeat that? (to a friend)",
+    "after": "Could you repeat that?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-02-2",
+    "field": "examples[3].said",
+    "before": "Può dirlo in inglese?",
+    "after": "Può scrivere il prezzo, per favore?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-02-2",
+    "field": "examples[3].en",
+    "before": "Could you say it in English?",
+    "after": "Could you write down the price, please?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-02-2",
+    "field": "practice[0].ask.said",
+    "before": "Come chiedi a un amico di ripetere?",
+    "after": "Sei con un amico. Non hai sentito. Cosa dici?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "a1-02-2",
+    "field": "practice[0].ask.en",
+    "before": "How do you ask a friend to repeat?",
+    "after": "You're with a friend. You didn't catch it. What do you say?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "a1-02-2",
+    "field": "practice[2].ask.said",
+    "before": "Il barista parla veloce. Cosa gli chiedi?",
+    "after": "Il barista parla veloce. Cosa dici?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "a1-02-2",
+    "field": "practice[2].ask.en",
+    "before": "The barista speaks fast. What do you ask him?",
+    "after": "The barista is talking fast. What do you say?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "a1-02-3",
+    "field": "examples[1].said",
+    "before": "Ha capito?",
+    "after": "Tutto chiaro?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "a1-02-3",
+    "field": "examples[1].en",
+    "before": "Did you understand?",
+    "after": "All clear?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "a1-02-3",
+    "field": "notice",
+    "before": "Ho capito means you got it, and non ho capito means you didn't. For something someone has just said, these are the phrases to use. To ask someone else, say Ha capito?, or Hai capito? to a friend.",
+    "after": "Ho capito means you got it, and non ho capito means you didn't. For something someone has just said, these are the phrases to use.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "a1-02-3",
+    "field": "practice[1].ask.said",
+    "before": "Cosa dici quando capisci finalmente?",
+    "after": "Cosa dici quando finalmente capisci?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "a1-02-4",
+    "field": "context",
+    "before": "To say “Sorry?” Italians say Come? or Scusi?",
+    "after": "",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-02-4",
+    "field": "practice[1].ask.said",
+    "before": "Non sai dire una parola in italiano. Cosa chiedi?",
+    "after": "Cerchi la parola italiana per “receipt”. Cosa chiedi?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-02-4",
+    "field": "practice[1].ask.en",
+    "before": "You can't say a word in Italian. What do you ask?",
+    "after": "You need the Italian word for “receipt.” What do you ask?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-02-4",
+    "field": "practice[2].ask.said",
+    "before": "Vuoi scrivere una parola nuova. Cosa chiedi?",
+    "after": "Vuoi sapere le lettere di una parola. Cosa chiedi?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-02-4",
+    "field": "practice[2].ask.en",
+    "before": "You want to write a new word. What do you ask?",
+    "after": "You want to know how a word is spelled. What do you ask?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-1",
+    "field": "examples[2].en",
+    "before": "Are you here on holiday?",
+    "after": "Are you here on vacation?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-1",
+    "field": "practice[0].ask.en",
+    "before": "Are you here on holiday?",
+    "after": "Are you here on vacation?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-1",
+    "field": "practice[1].ask.said",
+    "before": "Di dove sei?",
+    "after": "Sei qui per lavoro?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-1",
+    "field": "practice[1].ask.en",
+    "before": "Where are you from?",
+    "after": "Are you here for work?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-1",
+    "field": "practice[1].answer.said",
+    "before": "Sono di …",
+    "after": "No, sono in pensione.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-1",
+    "field": "practice[1].answer.en",
+    "before": "I'm from …",
+    "after": "No, I'm retired.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-2",
+    "field": "examples[2].said",
+    "before": "Piacere, Rosa.",
+    "after": "Piacere, mi chiamo Rosa.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-2",
+    "field": "examples[2].en",
+    "before": "Nice to meet you, I'm Rosa.",
+    "after": "Nice to meet you. My name's Rosa.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "examples[0].said",
+    "before": "È qui in vacanza?",
+    "after": "Ciao! Abiti qui?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "examples[0].en",
+    "before": "Are you here on holiday?",
+    "after": "Hi! Do you live here?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "examples[1].said",
+    "before": "No, abito qui!",
+    "after": "Sì, abito qui!",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "examples[1].en",
+    "before": "No, I live here!",
+    "after": "Yes, I live here!",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "examples[3].en",
+    "before": "I live here, in … Street.",
+    "after": "I live here, on … Street.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "practice[0].ask.en",
+    "before": "Are you here on holiday?",
+    "after": "Are you here on vacation?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "practice[1].ask.said",
+    "before": "Abiti qui?",
+    "after": "Una signora anziana è nuova qui. Cosa chiedi?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "practice[1].ask.en",
+    "before": "Do you live here?",
+    "after": "An older lady is new here. What do you ask her?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "practice[1].answer.said",
+    "before": "Sì, abito qui.",
+    "after": "Dove abita?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "practice[1].answer.en",
+    "before": "Yes, I live here.",
+    "after": "Where do you live?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "practice[2].answer.en",
+    "before": "I live in … Street.",
+    "after": "I live on … Street.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "examples[0].en",
+    "before": "I'm American. (a man says this)",
+    "after": "I'm American.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "examples[1].en",
+    "before": "I'm American. (a woman says this)",
+    "after": "I'm American.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "examples[3].en",
+    "before": "I'm English. (a man or a woman)",
+    "after": "I'm English.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "practice[0].ask.said",
+    "before": "Sei americano?",
+    "after": "Marco è di New York. È italiano?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "practice[0].ask.en",
+    "before": "Are you American?",
+    "after": "Marco is from New York. Is he Italian?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "practice[0].answer.said",
+    "before": "Sì, sono americano.",
+    "after": "No, è americano.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "practice[0].answer.en",
+    "before": "Yes, I'm American.",
+    "after": "No, he's American.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "practice[1].ask.said",
+    "before": "Sei inglese?",
+    "after": "Anna è di Chicago. È inglese?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "practice[1].ask.en",
+    "before": "Are you English?",
+    "after": "Anna is from Chicago. Is she English?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "practice[1].answer.said",
+    "before": "No, sono americana.",
+    "after": "No, è americana.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "practice[1].answer.en",
+    "before": "No, I'm American.",
+    "after": "No, she's American.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "practice[2].ask.said",
+    "before": "Sei italiana?",
+    "after": "Kate è di Londra. È americana?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "practice[2].ask.en",
+    "before": "Are you Italian?",
+    "after": "Kate is from London. Is she American?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "practice[2].answer.said",
+    "before": "No, sono americana.",
+    "after": "No, è inglese.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "practice[2].answer.en",
+    "before": "No, I'm American.",
+    "after": "No, she's English.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-5",
+    "field": "practice[2].ask.said",
+    "before": "In quale paese abiti?",
+    "after": "Abiti ancora a Chicago?",
+    "for": [
+      "naturalness",
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-5",
+    "field": "practice[2].ask.en",
+    "before": "In which country do you live?",
+    "after": "Do you still live in Chicago?",
+    "for": [
+      "naturalness",
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-5",
+    "field": "practice[2].answer.en",
+    "before": "I live in Italy.",
+    "after": "No, I live in Italy.",
+    "for": [
+      "naturalness",
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-5",
+    "field": "practice[2].answer.said",
+    "before": "Abito in Italia.",
+    "after": "No, abito in Italia.",
+    "for": [
+      "naturalness",
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-03-6",
+    "field": "examples[0].said",
+    "before": "Ed è qui in vacanza?",
+    "after": "Da quanto tempo è in Italia?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-6",
+    "field": "examples[0].en",
+    "before": "And are you here on holiday?",
+    "after": "How long have you been in Italy?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-03-6",
+    "field": "intro",
+    "before": "You'll be able to say how long you've been here and why you came. It's a good answer when a neighbour is curious about you.",
+    "after": "You'll be able to say how long you've been here. It's a good answer when a neighbor is curious about you.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "examples[3].en",
+    "before": "An orangeade, please.",
+    "after": "An orange soda, please.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "notice",
+    "before": "Most words take un, like un caffè. Spritz takes uno, spremuta takes una, and aranciata takes un' with an apostrophe. Learn each word together with its little word.",
+    "after": "Most words take un, as in un caffè, and words starting with z or with s plus a consonant take uno, as in uno spritz. Most words ending in -a take una, or un' before a vowel: una spremuta, un'aranciata.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "practice[0].ask.said",
+    "before": "Cosa prendi la mattina al bar?",
+    "after": "Spremuta. Cosa dici al barista?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "practice[0].ask.en",
+    "before": "What do you have in the morning at the bar?",
+    "after": "Fresh juice. What do you say to the barista?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "practice[0].answer.said",
+    "before": "Un caffè, per favore.",
+    "after": "Una spremuta, per favore.",
+    "for": [
+      "teaching",
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "practice[0].answer.en",
+    "before": "An espresso, please.",
+    "after": "A fresh juice, please.",
+    "for": [
+      "teaching",
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "practice[1].ask.said",
+    "before": "E per l'aperitivo, cosa prendi?",
+    "after": "E adesso: spritz. Cosa dici?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "practice[1].ask.en",
+    "before": "And for an aperitivo, what do you have?",
+    "after": "And now: spritz. What do you say?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "practice[2].ask.said",
+    "before": "Hai sete. Cosa chiedi al barista?",
+    "after": "Adesso: aranciata. Cosa dici?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "practice[2].ask.en",
+    "before": "You're thirsty. What do you ask the barista for?",
+    "after": "Now: orange soda. What do you say?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "practice[2].answer.said",
+    "before": "Una spremuta, per favore.",
+    "after": "Un'aranciata, per favore.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "practice[2].answer.en",
+    "before": "A fresh juice, please.",
+    "after": "An orange soda, please.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-2",
+    "field": "context",
+    "before": "Standing at the banco costs less than sitting at a table.",
+    "after": "",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-2",
+    "field": "practice[1].ask.en",
+    "before": "In the morning, what do you ask for to drink for the two of you?",
+    "after": "In the morning, what drinks do you order for the two of you?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-04-3",
+    "field": "examples[3].said",
+    "before": "Per me un cappuccino e un cornetto.",
+    "after": "Vorrei un cappuccino e un cornetto.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-3",
+    "field": "examples[3].en",
+    "before": "A cappuccino and a croissant for me.",
+    "after": "I'd like a cappuccino and a croissant.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-3",
+    "field": "notice",
+    "before": "Vorrei plus the item is a polite way to ask for anything, and you can use it just as it is. Per me plus the item is another friendly way to order.",
+    "after": "Vorrei plus the item is a polite way to ask for anything, and you can use it just as it is.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-3",
+    "field": "context",
+    "before": "Italians have cappuccino in the morning, so it's a breakfast order.",
+    "after": "",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-04-3",
+    "field": "practice[1].ask.said",
+    "before": "Vuoi qualcosa di fresco da bere. Cosa chiedi?",
+    "after": "Fa caldo e hai sete. Cosa chiedi?",
+    "for": [
+      "level",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-04-3",
+    "field": "practice[1].ask.en",
+    "before": "You want something fresh to drink. What do you ask for?",
+    "after": "It's hot and you're thirsty. What do you ask for?",
+    "for": [
+      "level",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-04-3",
+    "field": "practice[2].ask.said",
+    "before": "Al barista chiedi anche dell'acqua. Come dici?",
+    "after": "Vuoi anche un po' d'acqua. Cosa dici al barista?",
+    "for": [
+      "grammar",
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "a1-04-3",
+    "field": "practice[2].ask.en",
+    "before": "You also ask the barista for water. What do you say?",
+    "after": "You also want some water. What do you say to the barista?",
+    "for": [
+      "grammar",
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "a1-04-4",
+    "field": "practice[1].ask.said",
+    "before": "Il tuo amico ordina un caffè. Tu prendi la stessa cosa. Cosa dici?",
+    "after": "Un amico prende un caffè, e anche tu. Cosa dici?",
+    "for": [
+      "level",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-04-4",
+    "field": "practice[1].ask.en",
+    "before": "Your friend orders a coffee. You have the same. What do you say?",
+    "after": "A friend is having a coffee, and so are you. What do you say?",
+    "for": [
+      "level",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-04-4",
+    "field": "practice[2].ask.said",
+    "before": "Come chiedi a un amico cosa vuole ordinare?",
+    "after": "Un amico guarda il menù. Cosa chiedi?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "a1-04-4",
+    "field": "practice[2].ask.en",
+    "before": "How do you ask a friend what they want to order?",
+    "after": "A friend is looking at the menu. What do you ask?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "a1-05-1",
+    "field": "examples[2].said",
+    "before": "Sono trentatré euro.",
+    "after": "Sono mille euro.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-05-1",
+    "field": "examples[2].en",
+    "before": "That's thirty-three euros.",
+    "after": "That's a thousand euros.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-05-3",
+    "field": "examples[2].en",
+    "before": "How much are the biscuits?",
+    "after": "How much are the cookies?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-05-3",
+    "field": "notice",
+    "before": "One thing is costa, several things are costano, and the thing you're asking about comes after. If you just point, say Quanto costa? with nothing before it.",
+    "after": "One thing is costa, several things are costano, and the thing you're asking about comes after. If you just point, say Quanto costa? with nothing after it.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "intro",
+    "before": "You'll be able to ask to pay the way you like, and answer when the cashier asks for change. You'll use it at every till.",
+    "after": "You'll be able to ask if you can pay the way you like. You'll use it at every checkout and market stall.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "examples[2].said",
+    "before": "Ha moneta?",
+    "after": "Certo, può pagare in contanti.",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "examples[2].en",
+    "before": "Have you got any change?",
+    "after": "Sure, you can pay cash.",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "examples[3].said",
+    "before": "Mi dispiace, non ho spiccioli.",
+    "after": "Posso pagare con il bancomat?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "examples[3].en",
+    "before": "Sorry, I haven't got any change.",
+    "after": "Can I pay with my debit card?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "notice",
+    "before": "Posso means can I, and the next word keeps its basic form: posso pagare. You can also just say Pago in contanti, and hand over the money with Ecco a Lei.",
+    "after": "Posso means can I, and the verb after it keeps its basic form: posso pagare. The answer you hear back is può pagare.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "context",
+    "before": "Cashiers at small shops and market stalls often ask Ha moneta? to avoid breaking a big note.",
+    "after": "Shops take cards, but small shops and market stalls prefer cash for small amounts.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "practice[0].ask.said",
+    "before": "Come chiedi se puoi pagare con la carta?",
+    "after": "Hai solo la carta. Cosa chiedi alla cassa?",
+    "for": [
+      "level",
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "practice[0].ask.en",
+    "before": "How do you ask if you can pay by card?",
+    "after": "You only have your card. What do you ask at the register?",
+    "for": [
+      "level",
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "practice[1].ask.said",
+    "before": "Come chiedi se puoi pagare in contanti?",
+    "after": "Al mercato hai solo monete. Cosa chiedi?",
+    "for": [
+      "level",
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "practice[1].ask.en",
+    "before": "How do you ask if you can pay cash?",
+    "after": "At the market you only have coins. What do you ask?",
+    "for": [
+      "level",
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "practice[2].ask.said",
+    "before": "Il cassiere chiede: Ha moneta? Tu non hai spiccioli. Cosa rispondi?",
+    "after": "Vuoi offrire il caffè a un amico. Cosa dici?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "practice[2].ask.en",
+    "before": "The cashier asks if you have change. You have none. What do you answer?",
+    "after": "You want to buy a friend a coffee. What do you say?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "practice[2].answer.said",
+    "before": "Mi dispiace, non ho spiccioli.",
+    "after": "Posso pagare io?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "practice[2].answer.en",
+    "before": "Sorry, I haven't got any change.",
+    "after": "Can I get this one?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  }
+]
