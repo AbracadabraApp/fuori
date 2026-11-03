@@ -110,6 +110,21 @@ Still to do, on the laptop (needs keys, Railway, the Mac):
 - Live tests: two runs hung five minutes on one request ("fetch failed"), Italy and Mexico; not reproduced in five later runs; server answered turns in 2–3 s. smoke:live now times a call out after a minute and names it (de51e0c). Final runs on 2026-10-31: both countries pass end to end.
 - Next: install the stamps build on Josh's phone (ask first); Josh to confirm the N6 order and the three blockers.
 
+## Next, by session (2026-11-03, Josh)
+**Mac (Claude Code in the fuori folder; the only one that can call the API and build for the phone):**
+1. `git pull` on main.
+2. Welcome: try branch `claude/welcome-goals` in both countries, then merge it.
+3. Repeat fix: `smoke:live` in both countries on branch `fix/beginner-repeats`, then merge it.
+4. Don Nacho's "Speech to text unavailable (E-7WCH)": `railway logs | grep E-7WCH`, find and fix the cause.
+5. A build for Josh's phone with the above, through the iOS checks.
+6. Then the Learn page (roadmap N6 item 4, "The Learn page"), then lessons passes 2 and 3.
+
+**The cloud session that wrote `claude/welcome-goals`:** open the pull request only if Josh says yes; otherwise done. Leave lessons and the Learn page alone.
+
+**This cloud session (lesson content only):** Intermediate lessons: re-run the grammar and level judges, fix the 50 flagged lines, recheck once (`content/it/lessons-b1.json`, not served). The Beginner rewrite (21 → 14 chips, with the judges' fixes) waits for Josh's go.
+
+**Josh:** yes or no to the pull request; confirm "done = reaching Magda's review"; when to release the Beginner rewrite; play the welcome once it's merged.
+
 ## 2026-11-02/03: Lesson judges, Intermediate lessons, Learn page, welcome rework (cloud session)
 - **Lesson judges** (docs/lesson-judges.md; Josh's design: five separate judges, no human proofreading, no outside tools, one bounded pass). Run on Italy's 21 A1 lessons and on 60 new B1 lessons. Everything in tests/experiments/lesson-judges/README.md. A1 fixes held by Josh (live lessons unchanged); B1 draft in content/it/lessons-b1.json, not served.
 - **Lesson-writing prompt** 2026-11-02: one point per lesson, level-held practice questions, American English; an Intermediate prompt.
