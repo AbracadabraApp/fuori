@@ -110,6 +110,14 @@ Still to do, on the laptop (needs keys, Railway, the Mac):
 - Live tests: two runs hung five minutes on one request ("fetch failed"), Italy and Mexico; not reproduced in five later runs; server answered turns in 2–3 s. smoke:live now times a call out after a minute and names it (de51e0c). Final runs on 2026-10-31: both countries pass end to end.
 - Next: install the stamps build on Josh's phone (ask first); Josh to confirm the N6 order and the three blockers.
 
+## 2026-11-02/03: Lesson judges, Intermediate lessons, Learn page, welcome rework (cloud session)
+- **Lesson judges** (docs/lesson-judges.md; Josh's design: five separate judges, no human proofreading, no outside tools, one bounded pass). Run on Italy's 21 A1 lessons and on 60 new B1 lessons. Everything in tests/experiments/lesson-judges/README.md. A1 fixes held by Josh (live lessons unchanged); B1 draft in content/it/lessons-b1.json, not served.
+- **Lesson-writing prompt** 2026-11-02: one point per lesson, level-held practice questions, American English; an Intermediate prompt.
+- **Lesson chips:** Italy's A1 lessons as 14 chips in four areas, named for what each lets you do (learn.md → Lesson chips). Waits for the held rewrite.
+- **Learn page** designed with Josh (History with split-flap numbers on terracotta; Lessons as chips on gold; Flashcards banner with real cards): learn.md → The Learn page, design/learn/, roadmap N6 item 4.
+- **Welcome rework after Josh's play:** a plain Beginner conversation with three goals, English carrying it; start after the country choice; Beginner answers one idea each; repeat fix on branch fix/beginner-repeats (needs smoke:live, then merge). Handed to the laptop.
+- **Lesson mockup** (design/lessons/) and the lesson flow handoff; practice dialogues are examples, not visits (Josh).
+
 ## 2026-11-02: Leveling research, onboarding scripts, N5 closed (cloud session)
 - **Leveling research** (`docs/level-research-plan.md`, `docs/research/leveling/00–06`): what we know, four research reports, three designs, the prototype harness (`tests/experiments/leveling/`), the first run read (the measure, not the dialogue, was wrong). Josh's framing ("one equation"), words spoken as the main signal, and the in-role questions weighed (comfort question only, as a tiebreaker) are in 05-designs.md. The laptop session took it on from there (07-model.md, the path live).
 - **Onboarding scripts agreed:** Rome's Giulia (`docs/onboarding-giulia.md`) and Oaxaca's Doña Chela (`docs/onboarding-chela.md`): name, masculine or feminine, first time in the country, level (*Non ancora* / *Sì, abbastanza bene*), cities and asking for help, a button to the city list. Claude plays her from the script; answers read at the end; mic refused → tap answers; shown once means finished; everyone goes through it once; she recognises the player later. N6 item 3b. Not built.
