@@ -104,7 +104,7 @@ Settled in conversation after a night of lesson mockups (the comic strip, a two-
 
 1. **Magda teaches,** on the conversation screen with her portrait, in English and Italian: the principle in one plain line, in a warm "here's how you…" tone (Josh: "here's how you always ask for things politely and how you say no thanks"). The learner repeats or answers her.
 2. **She sets up examples** in different places: e.g. ordering at a café, asking for pizza, buying a bus ticket.
-3. **Short practice dialogues** with the real characters of the city, in Italian and in role, two or three learner turns each. They count as visits: the character remembers the learner afterwards.
+3. **Short practice dialogues** with characters whose role fits each example (from any city; Josh, 2026-11-02: practising where you are doesn't matter), in Italian and in role, two or three learner turns each. They are examples, not visits (Josh, 2026-11-02): no visit stamp; memory may happen but doesn't matter.
 4. **Back to Magda to review** what the learner actually said in the dialogues: what went well, one fix, a last "say it".
 
 **Ending a practice dialogue (agreed, not built):** a turn count, not detection. The server tells the character which learner turn it is and the limit ("turn 2 of 3; on the last turn, wrap up naturally"); the character closes in role; after her closing line the mic gives way to one button, Back to Magda or the next scene. Saved through the usual leave function. Later, if 3 turns feels long: a judge call that lets the character wrap up early once the lesson's phrase has been used (no phrase lists).
