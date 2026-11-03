@@ -1,0 +1,9 @@
+[
+  {"lesson": "a1-01-2", "field": "practice[2].ask.said", "text": "Come stai oggi? Chiedi anche a me.", "why": "Without the object pronoun it sounds clipped; a teacher would say 'chiedilo' or spell out the request.", "fix": "Come stai oggi? E poi chiedilo anche a me."},
+  {"lesson": "a1-02-3", "field": "examples[1].said", "text": "Ha capito?", "why": "A barista saying a bare 'Ha capito?' to a customer sounds like a teacher checking a pupil; behind a counter you'd hear a softer check.", "fix": "Tutto chiaro?"},
+  {"lesson": "a1-02-3", "field": "practice[1].ask.said", "text": "Cosa dici quando capisci finalmente?", "why": "'finalmente' after the verb follows English word order; in speech it comes first.", "fix": "Cosa dici quando finalmente capisci?"},
+  {"lesson": "a1-03-5", "field": "practice[2].ask.said", "text": "In quale paese abiti?", "why": "'In quale paese' sounds bookish here; in speech people say 'in che paese'.", "fix": "In che paese abiti?"},
+  {"lesson": "a1-04-1", "field": "practice[0].answer.said", "text": "Un caffè, per favore.", "why": "The teacher is asking what the student usually has, not taking an order, so 'per favore' to the teacher sounds wrong.", "fix": "Prendo un caffè."},
+  {"lesson": "a1-04-1", "field": "practice[1].answer.said", "text": "Uno spritz, per favore.", "why": "The answer is to a question about habit, not an order, so 'per favore' doesn't belong.", "fix": "Prendo uno spritz."},
+  {"lesson": "a1-04-3", "field": "practice[2].ask.said", "text": "Al barista chiedi anche dell'acqua. Come dici?", "why": "'Come dici?' in speech means 'What did you say?', not 'How do you say it?'", "fix": "Vuoi anche dell'acqua. Cosa chiedi al barista?"}
+]
