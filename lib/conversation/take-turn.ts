@@ -19,7 +19,7 @@ import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion } from '@/lib/beginner';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
 import { pathState } from '@/lib/conversation-record';
-import { welcomeBrief, welcomeContent, welcomed, welcomeVersion } from '@/lib/welcome';
+import { welcomeContent, welcomed, welcomeTurnBrief, welcomeVersion } from '@/lib/welcome';
 import { lessonBrief, lessonVersion, type LessonTurn } from '@/lib/lesson';
 import type { Gender } from '@/lib/types';
 import type { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
@@ -138,8 +138,14 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         const r = await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: lessonBriefed.brief, withDone: lessonBriefed.askDone });
         return { ...r, done: lessonBriefed.forcedDone || r.done === true };
       })()
-    : welcome
-    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: welcomeBrief(!!p.micOff), withDone: true })
+    : welcome && learnerId
+    ? await (async () => {
+        const w = await welcomeTurnBrief({ conversationId: conversationId ?? null, learnerId, characterId: character.id, transcript, learnerSaid, micOff: !!p.micOff });
+        p.laps?.lap('welcome-check');
+        const r = await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: w.brief, withDone: true });
+        // Asking once more is never the last turn: they need the mic to answer
+        return w.askedAgain ? { ...r, done: false, askedAgain: true } : r;
+      })()
     : beginner && onPath
     ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: stageText(onPath.stage, character.role), maxAnswers: onPath.stage.answers })
     : await runTurn({

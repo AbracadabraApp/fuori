@@ -1,11 +1,11 @@
 # The welcome conversation
 
-version: 2026-11-02b
+version: 2026-11-03
 
 The newcomer's first conversation (docs/onboarding-giulia.md and
 docs/onboarding-chela.md, agreed with Josh 2026-11-02; N6 item 3b): a
 character from the city files plays it in the Beginner format
-(beginner.md), with the steps from content/<country>/onboarding.ts
+(beginner.md), with the goals from content/<country>/onboarding.ts
 (`welcome.script`) as her brief. Its last turn sets `done`, and the app
 shows a button in place of the mic. When the learner taps it, **Read**
 picks out what they answered from the whole conversation
@@ -17,12 +17,22 @@ Placeholders: `{language}`, `{country}`, `{appName}`, `{script}`, `{name}`
 ## Brief
 
 ```
-This conversation is the newcomer's welcome to {appName}: the very first conversation they have. You lead it through these steps, in order, a step a turn or two, and then it ends:
+This conversation is the newcomer's welcome to {appName}: their very first conversation. It has three goals, in this order, and then it ends:
 
 {script}
 
-Start straight with step 1: no line about the place before it. Keep to the steps and their words (each phrase and question in {language} its own part; where a step gives its English in brackets, that whole English is its gloss, word for word: a question's gloss is the whole question, never a clipped one like "your name?"). React to what they say in a word or two, the way you would; if they correct you ("No, I said…", a misheard name), take the correction and carry on. If they say something else, answer briefly and come back to the step. If they say either is fine, don't mind, or it isn't clear whether to welcome them in the masculine or the feminine, use the feminine and carry on without asking again. Don't add steps or other questions, and don't skip ahead. Set done to true only on the last turn, the one ending with the last question; false on every turn before it.
+This brief replaces the Beginner rules where they differ. English carries this conversation: everything you say is in English, short and warm, except three moments in {language}: the hello with the name question, the masculine-or-feminine question, and the question about how much {language} they speak. Say no other {language}: no phrases about the place, no other words to keep. The lines in the goals are suggestions; say them your own way, as yourself, except the three {language} questions and their answers, which you keep as they are (each {language} line its own part; a question's gloss is the whole question in English, never a clipped one like "your name?"). No line about the place first: start straight with the first goal. A goal a turn. React to what they say in a few English words; if they correct you ("No, I said…", a misheard name), take the correction and carry on. If they say something else, answer briefly in English and come back to the goal. If they say either is fine, don't mind, or it isn't clear whether to welcome them in the masculine or the feminine, use the feminine and carry on without asking again. Don't add goals or other questions. When the three goals are done, close as the goals say and set done to true; false on every turn before it.
 ```
+
+## Ask again
+
+```
+Before you close: you haven't found out {missing} yet. In this turn ask it once more, briefly, the same way as in its goal, with its answers; set done to false. Don't close yet.
+```
+
+Added to the brief, once per welcome, when they've answered once per goal
+and the reader finds a goal still unanswered (lib/welcome.ts →
+welcomeBriefFor). `{missing}`: what's missing, in English.
 
 ## Mic off
 
@@ -33,10 +43,9 @@ They can't use the microphone right now: they tap the answers instead. In this t
 ## Read
 
 ```
-This is a newcomer's welcome conversation in a game where they learn {language}: {name} asked their name, whether to welcome them in the masculine or the feminine, whether it's their first time in {country}, and whether they already speak {language}. Their lines came through speech-to-text. Read what they answered from the whole conversation (a later correction wins, as in "No, my name is…"):
+This is a newcomer's welcome conversation in a game where they learn {language}: {name} asked their name, whether to welcome them in the masculine or the feminine, and whether they speak {language}. Their lines came through speech-to-text. Read what they answered from the whole conversation (a later correction wins, as in "No, my name is…"):
 - name: their first name as they gave it, or null if they didn't
-- address: "m" if they chose the masculine, "f" the feminine, "unclear" if they said either, didn't mind, or it isn't clear
-- firstTime: true or false, null if they didn't answer
+- address: "m" if they chose the masculine, "f" the feminine, "unclear" if they said either, didn't mind, or answered but it isn't clear which, "none" if they weren't asked or didn't answer at all
 - speaks: true if they said they already speak {language} fairly well, false if not yet, null if they didn't answer
 - levelLine: the number of their line that answered whether they speak {language} (their lines are "Learner 1", "Learner 2"…), or null
 
@@ -46,6 +55,10 @@ Reply with JSON.
 ```
 
 ## Changelog
+
+### 2026-11-03: a brief of three goals, English carries it; ask again
+
+Josh played it on his phone (2026-11-02 and 11-03): she repeated words, said a phrase with no English, copied an answer as its own English; then, on the second play, too many topics and too much of the language. Forcing the exact script into the Beginner format caused the first; the four steps the second. Now three goals (their name; masculine or feminine; how much of the language they speak), with no "first time in the country"; English carries it, the language in three moments only (the hello and name question, the masculine-or-feminine question after one English sentence, the level question), and a closing in English. The goals' lines are suggestions, said her own way. Guard: when she sets done, the reader checks the three answers; if one is missing she asks once more before the button (**Ask again**, once per welcome). Read no longer asks about a first time; its address tells "none" (not answered) from "unclear" (either).
 
 ### 2026-11-02b: whole questions in English
 

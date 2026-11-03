@@ -150,6 +150,8 @@ public final class AppModel {
         api = makeAPI(country.server)
         onboarding?.stop()
         onboarding = nil
+        // Another country's welcome is another character: load() builds it again
+        welcome = nil
         content = nil
         visits = [:]
         learnerId = nil
