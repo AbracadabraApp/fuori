@@ -280,4 +280,6 @@ export interface TurnOutput {
   parts?: import('@/lib/beginner').Part[];
   /** The welcome (lib/welcome.ts): its last turn; the app shows the button in place of the mic */
   done?: boolean;
+  /** The welcome: the turn where she asked a missing goal once more (stored, so it's once) */
+  askedAgain?: boolean;
 }

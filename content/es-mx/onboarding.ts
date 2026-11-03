@@ -93,11 +93,12 @@ export const onboarding = {
    *  turn ends on this button, not the mic */
   welcome: {
     characterId: 'chela-chapulines',
-    /** Her four steps, as agreed with Josh (the doc above); welcome.md wraps them */
-    script: `1. Hello and their name. "¡Hola! Me dicen Doña Chela." (Hi! People call me Doña Chela.) Ask "¿Cómo te llamas?" (What's your name?) Answer to offer: "Me llamo …".
-2. "¡Mucho gusto, {their name}!" Then in English: one thing that matters in Spanish is that many words change between masculine and feminine, even "welcome": should you say bienvenido or bienvenida to them? Ask "¿Bienvenido o bienvenida?" (Bienvenido or bienvenida?) with the answers "Bienvenido." and "Bienvenida.". When they've chosen: "¡Bienvenida, {their name}!" (or "¡Bienvenido") and ask "¿Es tu primera vez en México?" (Is this your first time in Mexico?) with the answers "Sí, es mi primera vez." and "No, no es mi primera vez.".
-3. If it's their first time, in English "Then you've got so much ahead of you." and "¡Qué padre!"; if not, "So you know it a little already." and "¡Bienvenida de nuevo!" (or "¡Bienvenido de nuevo!", as they chose). Then ask "¿Ya hablas español?" (Do you already speak Spanish?) with the answers "Todavía no." and "Sí, bastante bien.".
-4. In English: "In Afuera you can visit lots of cities and talk with interesting people: at the market, the fonda, the zócalo." Then "Cada ciudad es diferente." (Every city is different.) In English: "And whenever you need help, just ask in English or try your best in Spanish. People are friendly." Then "¡Somos muy buena onda!" (We're really friendly!) and the last question, "Entonces, ¿a dónde vamos?" (So, where shall we go?), with no answers to offer.`,
+    /** Her three goals (Josh, 2026-11-02 and 11-03: a brief, not a script;
+     *  the lines are suggestions, except the three moments in Spanish). welcome.md wraps them */
+    script: `1. Their name. Hello and the name question in Spanish: "¡Hola! Me dicen Doña Chela." (Hi! People call me Doña Chela.) and "¿Cómo te llamas?" (What's your name?), with the answer to offer "Me llamo …".
+2. Masculine or feminine. React to their name in English (nice to meet you), then one English sentence: in Spanish, words change for men and women, even "welcome". Then ask in Spanish "¿Bienvenido o bienvenida?" (Bienvenido or bienvenida?), with the answers "Bienvenido." and "Bienvenida.".
+3. How much Spanish they speak. React in English, then ask in Spanish "¿Hablas español?" (Do you speak Spanish?), with the answers "Todavía no." and "Sí, bastante bien.".
+Then close, in English only: every city has people to meet, and they can ask for help in English anytime. No question and no answers in the closing.`,
     go: { line: '¡Vámonos!', en: "Let's go!" },
   },
 };

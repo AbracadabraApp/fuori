@@ -135,10 +135,40 @@ export function tidyParts(parts: Part[]): Part[] {
     .map((p) => (p.kind === 'word' && /\?["'»”’)]*$/.test(p.text.trim()) ? { ...p, kind: 'question' as PartKind } : p))
     .map((p) => {
       const glossed = (p.kind === 'word' || p.kind === 'question') && p.gloss?.trim();
-      const text = decodeEscapes(p.text.trim());
+      // Spoken English belongs in text; a turn that's all English (the welcome's
+      // closing, 2026-11-03) sometimes came with it in en and text empty, and
+      // the turn was dropped as having no parts
+      const text = decodeEscapes((p.kind === 'english' && !p.text.trim() ? p.en : p.text).trim());
       return { ...p, text, en: decodeEscapes(p.en.trim()), gloss: glossed ? withoutNames(decodeEscapes(p.gloss!), text) : '' };
     })
+    .filter((p) => p.text)
+    .map(withoutRepeats(new Set()))
     .filter((p) => p.text);
+}
+
+/** Sentences of a part, split after . ! ? or … (any language) */
+const sentences = (s: string) => s.split(/(?<=[.!?…])\s+/).map((x) => x.trim()).filter(Boolean);
+const sameWords = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\p{M}\p{P}\p{S}]/gu, '').replace(/\s+/g, ' ').trim();
+
+/**
+ * She says each sentence once a turn (Josh, 2026-11-02: "Often characters
+ * repeat words": "Buongiorno! Benvenuto!" then "Buongiorno! Come sta oggi?").
+ * A word or question sentence already said earlier in the turn is dropped,
+ * with its English when the English has the same number of sentences. And an
+ * answer's English that only repeats it ("Benvenuto." under "Benvenuto.") is
+ * dropped, so the bubble shows it once. By comparing text, so any language.
+ */
+function withoutRepeats(said: Set<string>) {
+  return (p: Part): Part => {
+    if (p.kind === 'answer') return sameWords(p.en) === sameWords(p.text) ? { ...p, en: '' } : p;
+    if (p.kind !== 'word' && p.kind !== 'question') return p;
+    const s = sentences(p.text);
+    const keep = s.map((x) => !said.has(sameWords(x)) && !!sameWords(x));
+    s.forEach((x) => said.add(sameWords(x)));
+    if (keep.every(Boolean)) return p;
+    const en = sentences(p.en);
+    return { ...p, text: s.filter((_, i) => keep[i]).join(' '), en: en.length === s.length ? en.filter((_, i) => keep[i]).join(' ') : p.en };
+  };
 }
 
 export function buildBeginnerPrompt(p: {
