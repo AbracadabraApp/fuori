@@ -46,12 +46,12 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
      - [ ] Stamps and a scoreboard in Learn: a stamp per finished lesson (visited-badge style); cities visited, people met, lessons completed, words spoken, flashcard words through stage 3. No level. Replaces the Missions placeholder.
      - [ ] **Intermediate lessons** (Claude's proposal, 2026-11-02, after the Beginner passes; Josh to review). Same shape (Magda teaches, practice, review), changed for the level:
        - Content: lessons for the B1 units (13 in Italy's syllabus); today `lessons.json` has A1 only, so they're made ahead the same way (`scripts/make-lessons.mts`). No human proofreading (Josh, 2026-11-02): checked by machine. Separate judges, each with narrow criteria and its known blind spots written into them (Josh, 2026-11-02), every one with worked pass and fail examples; a lesson ships only when all pass; a failure is rewritten and checked again, and a lesson that keeps failing is dropped:
-         - Grammar: agreement, articles, pronoun placement, when the subjunctive is required; blind spot: accepting stiff or old-fashioned forms. Backed by a rule-based checker (LanguageTool).
-         - Naturalness: would someone in the city say it this way; blind spots: textbook register, word-for-word calques from English, Spain's Spanish in Mexico. Backed by how often the phrase occurs in real speech (film and TV subtitles).
+         - Grammar: agreement, articles, pronoun placement, when the subjunctive is required; blind spot: accepting stiff or old-fashioned forms.
+         - Naturalness: would someone in the city say it this way; blind spots: textbook register, word-for-word calques from English, Spain's Spanish in Mexico.
          - Level: the words fit the learner's step (`level.md`); blind spot: it rates lines too easy for listening (found in the level tests), so it's told to.
          - Teaching: teaches the lesson's one point, the examples show it, nothing extra (teach what to say, not what not to say).
          - Translation: the English says what the Italian says, naturally, not word for word.
-         Then real play flags any lesson learners keep stumbling on.
+         Then real play flags any lesson learners keep stumbling on. No outside tools (Josh, 2026-11-02: LanguageTool caught no Italian grammar errors in a test; subtitle lists count words, not phrases); if a shared blind spot shows up, add a judge from a different model.
        - Magda: in the language, English only when asked (the Intermediate rule everywhere); a short "why" for the grammar (B1 brings combined pronouns, the subjunctive, the Lei imperative, hypotheses), still one point per lesson.
        - Practice: longer (3–5 learner turns) and in the learner's own words: no answers to say back; a frame only if they're stuck.
        - Review: what they said, one fix (a recast, not a rule), one sentence to say again in their own words.
