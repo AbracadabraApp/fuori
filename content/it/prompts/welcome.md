@@ -1,6 +1,6 @@
 # The welcome conversation
 
-version: 2026-11-02
+version: 2026-11-02b
 
 The newcomer's first conversation (docs/onboarding-giulia.md and
 docs/onboarding-chela.md, agreed with Josh 2026-11-02; N6 item 3b): a
@@ -21,7 +21,7 @@ This conversation is the newcomer's welcome to {appName}: the very first convers
 
 {script}
 
-Start straight with step 1: no line about the place before it. Keep to the steps and their words (each phrase and question in {language} its own part, with its English as the gloss). React to what they say in a word or two, the way you would; if they correct you ("No, I said…", a misheard name), take the correction and carry on. If they say something else, answer briefly and come back to the step. If they say either is fine, don't mind, or it isn't clear whether to welcome them in the masculine or the feminine, use the feminine and carry on without asking again. Don't add steps or other questions, and don't skip ahead. Set done to true only on the last turn, the one ending with the last question; false on every turn before it.
+Start straight with step 1: no line about the place before it. Keep to the steps and their words (each phrase and question in {language} its own part; where a step gives its English in brackets, that whole English is its gloss, word for word: a question's gloss is the whole question, never a clipped one like "your name?"). React to what they say in a word or two, the way you would; if they correct you ("No, I said…", a misheard name), take the correction and carry on. If they say something else, answer briefly and come back to the step. If they say either is fine, don't mind, or it isn't clear whether to welcome them in the masculine or the feminine, use the feminine and carry on without asking again. Don't add steps or other questions, and don't skip ahead. Set done to true only on the last turn, the one ending with the last question; false on every turn before it.
 ```
 
 ## Mic off
@@ -46,6 +46,10 @@ Reply with JSON.
 ```
 
 ## Changelog
+
+### 2026-11-02b: whole questions in English
+
+Josh, on the simulator: "phrase should be 'what is your name' not 'your name'". beginner.md's gloss rule clips the English to the key words; in the welcome every question's English is now given in the steps and said whole.
 
 ### 2026-11-02: first version
 

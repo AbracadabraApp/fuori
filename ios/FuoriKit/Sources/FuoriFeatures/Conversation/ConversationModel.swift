@@ -222,7 +222,8 @@ public final class ConversationModel {
 
     /// Beginner dialogue: the answers to say back, on the learner's turn
     public var answersToSay: [APIClient.TurnPart] {
-        guard let parts, sayIt == nil, [.tapToTalk, .listening, .hearing].contains(phase) else { return [] }
+        // With the mic off they're the way to answer (tapped: AnswersToSay.onSay)
+        guard let parts, sayIt == nil, [.tapToTalk, .listening, .hearing, .micDenied].contains(phase) else { return [] }
         return parts.filter(\.isAnswer)
     }
 
