@@ -1,0 +1,191 @@
+[
+  {
+    "lesson": "a1-04-3",
+    "field": "practice[1].ask.en",
+    "text": "Vuoi qualcosa di fresco da bere. Cosa chiedi? → You want something fresh to drink. What do you ask for?",
+    "why": "'Fresco' here means cool or cold, not fresh; the English points the learner at the wrong meaning.",
+    "fix": "You want something cold to drink. What do you ask for?"
+  },
+  {
+    "lesson": "a1-02-4",
+    "field": "practice[1].ask.en",
+    "text": "Non sai dire una parola in italiano. Cosa chiedi? → You can't say a word in Italian. What do you ask?",
+    "why": "In English 'You can't say a word in Italian' means you can't speak any Italian at all, not that one word is missing.",
+    "fix": "There's a word you don't know how to say in Italian. What do you ask?"
+  },
+  {
+    "lesson": "a1-05-3",
+    "field": "examples[2].en",
+    "text": "Quanto costano i biscotti? → How much are the biscuits?",
+    "why": "To the American learner, 'biscuits' are a bread roll; biscotti here are cookies.",
+    "fix": "How much are the cookies?"
+  },
+  {
+    "lesson": "a1-04-1",
+    "field": "examples[3].en",
+    "text": "Un'aranciata, per favore. → An orangeade, please.",
+    "why": "'Orangeade' is rare in American English; an aranciata is an orange soda.",
+    "fix": "An orange soda, please."
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "examples[3].en",
+    "text": "Abito qui, in via … → I live here, in … Street.",
+    "why": "British usage; American English lives 'on' a street.",
+    "fix": "I live here, on … Street."
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "practice[2].answer.en",
+    "text": "Abito in via … → I live in … Street.",
+    "why": "British usage; American English lives 'on' a street.",
+    "fix": "I live on … Street."
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "examples[2].en",
+    "text": "Ha moneta? → Have you got any change?",
+    "why": "British phrasing for an American learner.",
+    "fix": "Do you have any change?"
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "examples[3].en",
+    "text": "Mi dispiace, non ho spiccioli. → Sorry, I haven't got any change.",
+    "why": "British phrasing for an American learner.",
+    "fix": "Sorry, I don't have any change."
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "practice[2].answer.en",
+    "text": "Mi dispiace, non ho spiccioli. → Sorry, I haven't got any change.",
+    "why": "British phrasing for an American learner.",
+    "fix": "Sorry, I don't have any change."
+  },
+  {
+    "lesson": "a1-03-1",
+    "field": "examples[2].en",
+    "text": "È qui in vacanza? → Are you here on holiday?",
+    "why": "'On holiday' is British; an American says 'on vacation'.",
+    "fix": "Are you here on vacation?"
+  },
+  {
+    "lesson": "a1-03-1",
+    "field": "practice[0].ask.en",
+    "text": "Sei qui in vacanza? → Are you here on holiday?",
+    "why": "'On holiday' is British; an American says 'on vacation'.",
+    "fix": "Are you here on vacation?"
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "examples[0].en",
+    "text": "È qui in vacanza? → Are you here on holiday?",
+    "why": "'On holiday' is British; an American says 'on vacation'.",
+    "fix": "Are you here on vacation?"
+  },
+  {
+    "lesson": "a1-03-3",
+    "field": "practice[0].ask.en",
+    "text": "Sei qui in vacanza? → Are you here on holiday?",
+    "why": "'On holiday' is British; an American says 'on vacation'.",
+    "fix": "Are you here on vacation?"
+  },
+  {
+    "lesson": "a1-03-6",
+    "field": "examples[0].en",
+    "text": "Ed è qui in vacanza? → And are you here on holiday?",
+    "why": "'On holiday' is British; an American says 'on vacation'.",
+    "fix": "And are you here on vacation?"
+  },
+  {
+    "lesson": "a1-01-3",
+    "field": "examples[1].en",
+    "text": "Buonasera, signora. → Good evening, madam.",
+    "why": "'Madam' is far stiffer in English than everyday 'signora'.",
+    "fix": "Good evening, ma'am."
+  },
+  {
+    "lesson": "a1-01-3",
+    "field": "practice[1].answer.en",
+    "text": "Buonasera, signora! → Good evening, madam!",
+    "why": "'Madam' is far stiffer in English than everyday 'signora'.",
+    "fix": "Good evening, ma'am!"
+  },
+  {
+    "lesson": "a1-02-2",
+    "field": "examples[2].en",
+    "text": "Puoi ripetere? → Could you repeat that? (to a friend)",
+    "why": "The parenthetical explains instead of translating; it belongs in a note, not the English line.",
+    "fix": "Could you repeat that?"
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "examples[0].en",
+    "text": "Sono americano. → I'm American. (a man says this)",
+    "why": "The parenthetical explains instead of translating; it belongs in a note.",
+    "fix": "I'm American."
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "examples[1].en",
+    "text": "Sono americana. → I'm American. (a woman says this)",
+    "why": "The parenthetical explains instead of translating; it belongs in a note.",
+    "fix": "I'm American."
+  },
+  {
+    "lesson": "a1-03-4",
+    "field": "examples[3].en",
+    "text": "Sono inglese. → I'm English. (a man or a woman)",
+    "why": "The parenthetical explains instead of translating; it belongs in a note.",
+    "fix": "I'm English."
+  },
+  {
+    "lesson": "a1-04-2",
+    "field": "practice[1].ask.en",
+    "text": "Di mattina, cosa chiedi da bere per voi due? → In the morning, what do you ask for to drink for the two of you?",
+    "why": "Word-for-word and clumsy, with a doubled 'for'.",
+    "fix": "It's morning. What do you order for the two of you to drink?"
+  },
+  {
+    "lesson": "a1-03-5",
+    "field": "practice[2].ask.en",
+    "text": "In quale paese abiti? → In which country do you live?",
+    "why": "Stiff word order that follows the Italian.",
+    "fix": "Which country do you live in?"
+  },
+  {
+    "lesson": "a1-01-1",
+    "field": "practice[1].ask.en",
+    "text": "Un amico ti dice: «Ciao, come stai?» Cosa rispondi? → A friend says to you: 'Hi, how are you?' What do you answer?",
+    "why": "'What do you answer?' and 'says to you:' copy the Italian; English says 'What do you say?'.",
+    "fix": "A friend says, 'Hi, how are you?' What do you say?"
+  },
+  {
+    "lesson": "a1-01-1",
+    "field": "practice[2].ask.en",
+    "text": "Una signora anziana ti dice: «Come sta?» Cosa rispondi? → An older lady says to you: 'How are you?' What do you answer?",
+    "why": "'What do you answer?' and 'says to you:' copy the Italian; English says 'What do you say?'.",
+    "fix": "An older lady says, 'How are you?' What do you say?"
+  },
+  {
+    "lesson": "a1-01-2",
+    "field": "practice[1].ask.en",
+    "text": "Un negoziante ti dice: «Come sta?» Cosa rispondi? → A shopkeeper says to you: 'How are you?' What do you answer?",
+    "why": "'What do you answer?' and 'says to you:' copy the Italian; English says 'What do you say?'.",
+    "fix": "A shopkeeper says, 'How are you?' What do you say?"
+  },
+  {
+    "lesson": "a1-05-4",
+    "field": "practice[2].ask.en",
+    "text": "Il cassiere chiede: Ha moneta? Tu non hai spiccioli. Cosa rispondi? → The cashier asks if you have change. You have none. What do you answer?",
+    "why": "'What do you answer?' and 'says to you:' copy the Italian; English says 'What do you say?'.",
+    "fix": "The cashier asks, 'Do you have any change?' You don't. What do you say?"
+  },
+  {
+    "lesson": "a1-04-4",
+    "field": "practice[1].ask.en",
+    "text": "Il tuo amico ordina un caffè. Tu prendi la stessa cosa. Cosa dici? → Your friend orders a coffee. You have the same. What do you say?",
+    "why": "'You have the same' is unclear in English; it means you want the same thing.",
+    "fix": "Your friend orders a coffee. You want the same. What do you say?"
+  }
+]
