@@ -1,0 +1,16 @@
+[
+  {
+    "lesson": "b1-07-5",
+    "field": "intro",
+    "text": "When someone asks a yes-or-no question and you're not sure, you'll be able to answer in a few words: penso di sì, credo di no. You'll also hear penso che è in relaxed speech, but careful speakers use the subjunctive.",
+    "why": "The second sentence slips in a second point (penso che è versus penso che sia) that no example, notice or practice shows, and it steers the learner away from a form instead of teaching the one this lesson is about: short answers with di sì / di no.",
+    "fix": "When someone asks a yes-or-no question and you're not sure, you'll be able to answer in a few words: penso di sì, credo di no, spero di sì."
+  },
+  {
+    "lesson": "b1-08-5",
+    "field": "examples[2]",
+    "text": "Anche se piove, vado a correre. / Even if it rains, I'm going running.",
+    "why": "The lesson teaches 'even though' (doing something despite a reason not to), but the English makes this a hypothetical 'even if', a different meaning, so the example doesn't show the point and blurs the notice's 'both mean even though'.",
+    "fix": "said: \"Anche se piove, vado a correre lo stesso.\" en: \"Even though it's raining, I'm going running anyway.\""
+  }
+]

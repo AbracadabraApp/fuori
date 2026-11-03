@@ -1,0 +1,16 @@
+[
+  {
+    "lesson": "b1-02-4",
+    "field": "practice[0].answer.said",
+    "text": "Chi te l'ha detta?",
+    "why": "Asking a friend who told them the news, Italians say 'Chi te l'ha detto?' with a neutral lo; agreeing with 'la notizia' (detta) is correct on paper but sounds odd out loud.",
+    "fix": "Chi te l'ha data, questa notizia?"
+  },
+  {
+    "lesson": "b1-07-3",
+    "field": "examples[2].said",
+    "text": "Credo di capire.",
+    "why": "Said on its own at a bar, it sounds bookish. A newcomer checking they've followed would say they think they've understood.",
+    "fix": "Sì, credo di aver capito."
+  }
+]
