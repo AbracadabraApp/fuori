@@ -1,0 +1,9 @@
+[
+  {
+    "lesson": "a1-04-3",
+    "field": "practice[2].ask.said",
+    "text": "Al barista chiedi anche dell'acqua. Come dici?",
+    "why": "Transitive 'dire' needs an object here; bare 'Come dici?' is the fixed phrase for 'Pardon?/What did you say?', not 'How do you say it?'.",
+    "fix": "Al barista chiedi anche dell'acqua. Cosa dici?"
+  }
+]
