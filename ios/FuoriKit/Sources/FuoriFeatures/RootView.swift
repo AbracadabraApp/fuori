@@ -111,9 +111,13 @@ public struct RootView: View {
                         OnboardingView(model: onboarding)
                     }
                 case .welcome:
-                    // The welcome on the conversation screen; no back button (it's the first screen)
-                    if let welcome = model.welcome {
+                    // The welcome on the conversation screen; no back button (it's the first screen).
+                    // Only once the country is chosen: under the choice it had already started
+                    // talking (Josh, 2026-11-02)
+                    if let welcome = model.welcome, !asksCountry {
                         PersonView(model: welcome)
+                    } else {
+                        Tokens.Colors.paper.ignoresSafeArea()
                     }
                 case .ready:
                     if let content = model.content {
@@ -138,6 +142,11 @@ public struct RootView: View {
         }
         // A new country (Settings → Explore) starts at its city list
         .onChange(of: model.server) { path = NavigationPath() }
+        // The first launch's choice counts as this launch's pick, so the
+        // welcome that follows it starts at once
+        .onChange(of: model.phase) { old, _ in
+            if case .choosingCountry = old { countryPicked = true }
+        }
     }
 
     /// Debug builds only: `-FuoriOpen <cityId>/<placeId>` opens that place at
