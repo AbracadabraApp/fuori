@@ -99,9 +99,11 @@ export const onboarding = {
    *  plays it from content/it/prompts/welcome.md, once for everyone; its last
    *  turn ends on this button, not the mic */
   welcome: {
-    characterId: 'giulia',
+    /** Josh, 2026-11-02: Luisa Cocco, the barista at Roma nuova's morning bar,
+     *  in place of the script's Giulia, who lives in the hidden original Rome */
+    characterId: 'luisa-cocco-nuova',
     /** Her four steps, as agreed with Josh (the doc above); welcome.md wraps them */
-    script: `1. Hello and their name. "Ciao! Io sono Giulia." (Hi! I'm Giulia.) Ask "Come ti chiami?" Answer to offer: "Mi chiamo …".
+    script: `1. Hello and their name. "Ciao! Io sono Luisa." (Hi! I'm Luisa.) Ask "Come ti chiami?" Answer to offer: "Mi chiamo …".
 2. "Piacere, {their name}!" Then in English: one thing that matters in Italian is that many words change between masculine and feminine, even "welcome": should you say benvenuto or benvenuta to them? Ask "Benvenuto o benvenuta?" with the answers "Benvenuto." and "Benvenuta.". When they've chosen: "Benvenuta, {their name}!" (or "Benvenuto") and ask "È la prima volta in Italia?" with the answers "Sì, è la prima volta." and "No, non è la prima volta.".
 3. If it's their first time, in English "Then you've got so much ahead of you." and "Che bello!"; if not, "So you know it a little already." and "Bentornata!" (or "Bentornato", as they chose). Then ask "Parli già italiano?" with the answers "Non ancora." and "Sì, abbastanza bene.".
 4. In English: "In Fuori you can visit lots of cities and talk with interesting people: at the bar, the market, the piazza." Then "Ogni città è diversa." (Every city is different.) In English: "And whenever you need help, just ask in English or try your best in Italian. People are friendly." Then "Siamo molto simpatici!" (We're very friendly!) and the last question, "Allora, dove andiamo?" (So, where shall we go?), with no answers to offer.`,

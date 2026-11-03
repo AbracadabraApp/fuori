@@ -49,11 +49,27 @@ public actor APIClient {
         public let addressOn: Bool?
         /// "f" or "m" once they've chosen; nil until then
         public let addressedAs: String?
+        /// false: show the welcome conversation (lib/welcome.ts); nil from servers before 2026-11-02
+        public let welcomed: Bool?
     }
 
     /// GET /v1/me: the learner and their visit counts per place
     public func me() async throws -> Me {
         try await send(request("v1/me", timeout: Self.loadTimeout), signedIn: true)
+    }
+
+    /// What the welcome placed them at (POST /v1/onboarding/welcomed)
+    public struct Welcomed: Codable, Sendable, Equatable {
+        /// beginner or intermediate
+        public let level: String
+        public let startStep: Int
+        public let name: String?
+    }
+
+    /// The welcome's last button: the server reads the answers, places them and marks the welcome done
+    public func welcomed(conversationId: String) async throws -> Welcomed {
+        struct Body: Encodable { let conversationId: String }
+        return try await send(post("v1/onboarding/welcomed", json: Body(conversationId: conversationId)), signedIn: true)
     }
 
     // MARK: - Conversation
@@ -65,6 +81,8 @@ public actor APIClient {
         /// The recorded conversation; nil when the server couldn't record it
         public let conversationId: String?
         public let promptVersion: String
+        /// The welcome's last turn (lib/welcome.ts): the button replaces the mic. Nil otherwise
+        public let done: Bool?
         /// The learner's next turn uses two reply buttons (/v1/replies)
         /// instead of the mic: new learners, first turns of their first
         /// conversations. Nil from a server older than that
@@ -109,9 +127,10 @@ public actor APIClient {
     /// that doesn't stream, gives no `onFirst`.
     /// `onFirst` also gets the first parts of a Beginner turn (nil otherwise),
     /// so they show as bubbles while they're said
-    public func turnStreamed(cityId: String, placeId: String, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, onFirst: @escaping @Sendable (String, [TurnPart]?) -> Void) async throws -> TurnReply {
-        struct Body: Encodable { let cityId: String; let placeId: String; let conversationId: String?; let learnerSaid: String?; let speed: Double? }
-        var req = try post("v1/turn", json: Body(cityId: cityId, placeId: placeId, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed))
+    /// `welcome`: this conversation is the welcome (lib/welcome.ts); `micOff`: the mic was refused, she says once where to turn it on
+    public func turnStreamed(cityId: String, placeId: String, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, welcome: Bool? = nil, micOff: Bool? = nil, onFirst: @escaping @Sendable (String, [TurnPart]?) -> Void) async throws -> TurnReply {
+        struct Body: Encodable { let cityId: String; let placeId: String; let conversationId: String?; let learnerSaid: String?; let speed: Double?; let welcome: Bool?; let micOff: Bool? }
+        var req = try post("v1/turn", json: Body(cityId: cityId, placeId: placeId, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome, micOff: micOff))
         req.setValue("application/x-ndjson", forHTTPHeaderField: "Accept")
         req.setValue("Bearer \(try await ensureToken())", forHTTPHeaderField: "Authorization")
         let requestId = ErrorCode.make()

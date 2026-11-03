@@ -29,11 +29,13 @@ struct BeginnerBubbles: View {
 struct AnswersToSay: View {
     let answers: [APIClient.TurnPart]
     let speechLanguage: String
+    /// Where the mic can't be used (refused, VoiceOver): a tap says the answer instead of showing its English
+    var onSay: ((APIClient.TurnPart) -> Void)? = nil
 
     var body: some View {
         VStack(alignment: .trailing, spacing: 8) {
             ForEach(Array(answers.enumerated()), id: \.offset) { _, answer in
-                PartBubble(part: answer, speechLanguage: speechLanguage, question: false, label: "Say:")
+                PartBubble(part: answer, speechLanguage: speechLanguage, question: false, label: onSay == nil ? "Say:" : "Tap:", onTap: onSay.map { say in { say(answer) } })
             }
         }
         .frame(maxWidth: .infinity, alignment: .trailing)
@@ -47,12 +49,14 @@ private struct PartBubble: View {
     let speechLanguage: String
     let question: Bool
     var label: String? = nil
+    /// Instead of showing the English: say it (AnswersToSay.onSay)
+    var onTap: (() -> Void)? = nil
     @State private var showsEnglish = false
     @ScaledMetric(relativeTo: .body) private var size: CGFloat = 18
     @ScaledMetric(relativeTo: .callout) private var englishSize: CGFloat = 15
 
     var body: some View {
-        Button { showsEnglish.toggle() } label: {
+        Button { if let onTap { onTap() } else { showsEnglish.toggle() } } label: {
             VStack(alignment: .leading, spacing: 4) {
                 (label.map { Text("\($0) ").foregroundStyle(Tokens.Colors.muted).font(.system(size: englishSize)) } ?? Text(""))
                     + Text(target(part.text))
@@ -73,7 +77,7 @@ private struct PartBubble: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel(Text(target(part.text)))
-        .accessibilityHint(showsEnglish ? "Hides the English" : "Shows the English")
+        .accessibilityHint(onTap != nil ? "Says it" : showsEnglish ? "Hides the English" : "Shows the English")
     }
 
     /// Words in the language being learned, tagged so VoiceOver reads them in it

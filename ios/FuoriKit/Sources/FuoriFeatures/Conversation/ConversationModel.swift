@@ -40,6 +40,9 @@ public final class ConversationModel {
         /// while they're still being written
         case choosing
         case micDenied
+        /// The welcome's last turn is over (lib/welcome.ts): the button
+        /// replaces the mic, and the mic never opens again
+        case finished
     }
 
     public private(set) var phase: Phase = .starting {
@@ -226,9 +229,24 @@ public final class ConversationModel {
     /// Speed as on the web: slower with English on
     private var speed: Double { UserDefaults.standard.bool(forKey: SettingsKey.english) ? 0.7 : 0.9 }
 
-    /// `beginner`: the learner's level is Beginner (for the opener hint)
-    public init(city: City, place: Place, character: Character, language: Language, api: APIClient, beginner: Bool = false, onSave: @escaping (String) -> Void) {
+    /// This conversation is the welcome (lib/welcome.ts): the server plays it
+    /// from the agreed script, and its last turn ends on a button
+    public var welcome: Bool { welcomeGo != nil }
+    /// The welcome's button words, in the language (/v1/content onboarding.welcome.go)
+    public let welcomeGo: Onboarding.Line?
+    /// Called when the welcome's button has been answered by the server, with the level it placed them at
+    private let onWelcomed: ((APIClient.Welcomed) -> Void)?
+    /// The welcome's last turn has been said: the button shows
+    public private(set) var finished = false
+    /// The mic was refused in the welcome: she says once where to turn it on (the next turn only)
+    private var micOffToSay = false
+
+    /// `beginner`: the learner's level is Beginner (for the opener hint).
+    /// `welcomeGo`: this is the welcome conversation, with its button's words; `onWelcomed` when its button is done
+    public init(city: City, place: Place, character: Character, language: Language, api: APIClient, beginner: Bool = false, welcomeGo: Onboarding.Line? = nil, onWelcomed: ((APIClient.Welcomed) -> Void)? = nil, onSave: @escaping (String) -> Void) {
         self.beginner = beginner
+        self.welcomeGo = welcomeGo
+        self.onWelcomed = onWelcomed
         self.city = city
         self.place = place
         self.character = character
@@ -259,6 +277,7 @@ public final class ConversationModel {
     /// Show and speak a line, then open the learner's turn
     private func present(_ reply: APIClient.TurnReply, generation: Int) async {
         guard generation == self.generation else { return }
+        if welcome, reply.done == true { finished = true }
         scaffolding = reply.replies == true
         // An older server sends no stage (or "tap", now gone): two good answers
         stage = scaffolding ? (reply.stage.flatMap(Stage.init(rawValue:)) ?? .read) : nil
@@ -348,7 +367,9 @@ public final class ConversationModel {
         awaitingReply = true
         defer { awaitingReply = false }
         let generation = self.generation
-        return try await api.turnStreamed(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed) { [weak self] first, parts in
+        let micOff = micOffToSay ? true : nil
+        micOffToSay = false
+        return try await api.turnStreamed(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome ? true : nil, micOff: micOff) { [weak self] first, parts in
             Task { @MainActor in self?.startHead(first, parts: parts, generation: generation) }
         }
     }
@@ -476,6 +497,11 @@ public final class ConversationModel {
     /// `micClosed`: after an interruption the mic waits for a tap, hands-free too
     private func openTurn(micClosed: Bool = false) async {
         ring = 0
+        // The welcome's last line has been said: the button, never the mic
+        if finished {
+            phase = .finished
+            return
+        }
         if scaffolding, repliesTask != nil {
             // Under VoiceOver the answers are buttons: wait for a tap on one
             if isVoiceOverRunning {
@@ -511,6 +537,7 @@ public final class ConversationModel {
         // Paused or left while the mic was opening: it stays closed
         guard opening == generation, phase == .listening else { return }
         guard allowed else {
+            if welcome, phase != .micDenied { micOffToSay = true }
             phase = .micDenied
             return
         }
@@ -861,6 +888,35 @@ public final class ConversationModel {
         phase = .tapToTalk
     }
 
+    /// A tap on an answer to say back, where answers are buttons (VoiceOver,
+    /// the mic off; Josh, 2026-11-02: the welcome with the mic refused): it
+    /// goes to the character as if the learner had said it. A blank (…) is
+    /// left for her to ask about again
+    public func sayAnswer(_ answer: APIClient.TurnPart) async {
+        guard [.tapToTalk, .micDenied].contains(phase) else { return }
+        note = nil
+        let line = answer.text.replacingOccurrences(of: " …", with: "").replacingOccurrences(of: "…", with: "")
+        await sendChosen(line, generation: generation, how: "tapped answer")
+    }
+
+    /// The welcome's button: the server reads the answers and places them;
+    /// then the conversation is saved (her memory of them) and the app moves on
+    public private(set) var finishing = false
+    public func finishWelcome() async {
+        guard welcome, phase == .finished, !finishing, let conversationId else { return }
+        finishing = true
+        note = nil
+        do {
+            let placed = try await api.welcomed(conversationId: conversationId)
+            leave()
+            onWelcomed?(placed)
+        } catch {
+            finishing = false
+            let code = report(error, step: "welcomed")
+            note = ErrorCode.message("Couldn't finish. Tap again.", code: code)
+        }
+    }
+
     /// A tap on an answer, where answers are buttons (VoiceOver, mic off):
     /// it goes to the character as if the learner had said it
     public func choose(_ reply: APIClient.ReplyOption) async {
@@ -868,16 +924,16 @@ public final class ConversationModel {
         chosen = reply
         note = nil
         UserDefaults.standard.set(true, forKey: Self.answersIntroduced)
-        await sendChosen(reply, generation: generation, how: "tapped")
+        await sendChosen(reply.line, generation: generation, how: "tapped")
     }
 
-    private func sendChosen(_ reply: APIClient.ReplyOption, generation: Int, how: String) async {
+    private func sendChosen(_ line: String, generation: Int, how: String) async {
         phase = .thinking
         repliesTask = nil
         do {
-            debug.heard = "(\(how)) \(reply.line)"
+            debug.heard = "(\(how)) \(line)"
             let started = Self.now()
-            let next = try await requestTurn(learnerSaid: reply.line)
+            let next = try await requestTurn(learnerSaid: line)
             learnerLines += 1
             time("turn", since: started)
             debug.promptVersion = next.promptVersion

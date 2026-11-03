@@ -248,10 +248,21 @@ public struct Onboarding: Codable, Sendable, Equatable {
         public let go: Card?
     }
 
+    /// The welcome conversation (lib/welcome.ts; docs/onboarding-giulia.md):
+    /// who plays it, where, and the last button's words, in the language
+    public struct Welcome: Codable, Sendable, Equatable {
+        public let characterId: String
+        public let cityId: String
+        public let placeId: String
+        public let go: Line
+    }
+
     public let guide: Guide
     public let lines: Lines
     /// nil from servers before 2026-10-23: today's onboarding then
     public let orientation: Orientation?
+    /// nil from servers before 2026-11-02, or a country without one
+    public let welcome: Welcome?
 }
 
 /// A flashcard (docs/flashcards.md): the word as shown and said, with its

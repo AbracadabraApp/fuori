@@ -45,7 +45,8 @@ struct PersonView: View {
                     } else {
                         Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note, hint: model.openerHint)
                     }
-                    ConversationControls(model: model, onLearn: openLearn)
+                    // No Learn link in the welcome: it's not a conversation to go over
+                    ConversationControls(model: model, onLearn: learnAction)
                 }
                 .padding(.horizontal, Tokens.Space.gutter)
             }
@@ -65,6 +66,12 @@ struct PersonView: View {
         .onChange(of: scenePhase) { _, phase in
             if phase == .background { model.backgrounded() }
         }
+    }
+
+    /// The Learn link's action; none in the welcome
+    private var learnAction: (() -> Void)? {
+        if model.welcome { return nil }
+        return { openLearn() }
     }
 
     /// The Learn link: pause the scene, then the Learn sheet over it

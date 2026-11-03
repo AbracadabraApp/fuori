@@ -110,6 +110,11 @@ public struct RootView: View {
                     if let onboarding = model.onboarding {
                         OnboardingView(model: onboarding)
                     }
+                case .welcome:
+                    // The welcome on the conversation screen; no back button (it's the first screen)
+                    if let welcome = model.welcome {
+                        PersonView(model: welcome)
+                    }
                 case .ready:
                     if let content = model.content {
                         CityListView(content: content)

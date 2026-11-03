@@ -88,6 +88,22 @@ import Testing
         #expect(stamp.visitedLabel == "Visited")
     }
 
+    /// The welcome (lib/welcome.ts): who plays it, where, and the last
+    /// button's words; a server from before it still loads (no welcome then)
+    @Test func decodesWelcome() throws {
+        let url = try #require(Bundle.module.url(forResource: "content-it", withExtension: "json", subdirectory: "Fixtures"))
+        var json = try #require(try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        var onboarding = try #require(json["onboarding"] as? [String: Any])
+        onboarding["welcome"] = nil
+        json["onboarding"] = onboarding
+        #expect(try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json)).onboarding?.welcome == nil)
+        onboarding["welcome"] = ["characterId": "giulia", "cityId": "roma", "placeId": "bar-trastevere", "go": ["line": "Andiamo!", "en": "Let's go!"]]
+        json["onboarding"] = onboarding
+        let welcome = try #require(try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json)).onboarding?.welcome)
+        #expect(welcome.characterId == "giulia")
+        #expect(welcome.go.line == "Andiamo!")
+    }
+
     /// Name and address (docs/onboarding-design.md): the six lines as the
     /// server sends them (content/<country>/onboarding.ts), and {name} filled
     /// in, or left out with its comma when they skipped the name

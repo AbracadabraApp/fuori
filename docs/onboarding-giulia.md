@@ -53,7 +53,7 @@ Onboarding writes to her memory, so when the player later meets her in her city 
 - **Mic refused:** if the player taps "Don't Allow", they can tap an answer bubble instead, and she says once that the mic can be turned on in Settings.
 - **Shown once means finished:** it counts as shown only when the player reaches the last button. Leave partway and it starts again at the next launch.
 - **Everyone goes through it once**, including players who already play (those who arrived during the skip have no name, gender or level). Settings' "start over" replays it.
-- **Which Giulia:** Rome's (`giulia`, 32, barista, Bar Trastevere).
+- **Which Giulia:** Rome's (`giulia`, 32, barista, Bar Trastevere). **Changed (Josh, 2026-11-02): Luisa Cocco** (`luisa-cocco-nuova`, 39, barista at Roma nuova's morning bar) plays it, since Giulia lives in the original Rome, which players no longer see, so they could never meet her again. The script is the same with her name.
 
 ## Placement and the record (Josh, 2026-11-02: "make all your changes")
 - **Placement by how they answer, not only what** (`lib/path.ts` → `placement`): *Non ancora* read back from the offered answer → the path's step 1; the same answer in their own words (anything more than the offered sentence) → step 3, since they're past saying back; *Sì, abbastanza bene* → Intermediate. Said back or own words is told apart in code, as the record does (`isSaidBack`). Stored as `startStep` in the learner's onboarding record.

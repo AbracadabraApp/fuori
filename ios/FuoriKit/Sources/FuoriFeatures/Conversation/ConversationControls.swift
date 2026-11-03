@@ -1,5 +1,6 @@
 import SwiftUI
 import FuoriDesign
+import FuoriCore
 
 /// The bottom bar (docs/bottom-bar.md; Josh, 2026-10-22): one circle in two
 /// colours, green for the learner (mic, then their wave) and terracotta for
@@ -35,11 +36,17 @@ struct ConversationControls: View {
                         SayItBubbles(model: model, sayIt: sayIt)
                             .transition(.opacity)
                     } else if !model.answersToSay.isEmpty {
-                        // Beginner dialogue: what to say back, on the learner's turn
-                        AnswersToSay(answers: model.answersToSay, speechLanguage: model.speechLanguage)
+                        // Beginner dialogue: what to say back, on the learner's turn;
+                        // where the mic can't be used, a tap says it (Josh, 2026-11-02)
+                        AnswersToSay(answers: model.answersToSay, speechLanguage: model.speechLanguage,
+                                     onSay: model.answersAreButtons ? { answer in Task { await model.sayAnswer(answer) } } : nil)
                             .transition(.opacity)
                     }
-                    controls
+                    if model.phase == .finished, let go = model.welcomeGo {
+                        goButton(go)
+                    } else {
+                        controls
+                    }
                 }
             }
         }
@@ -69,6 +76,37 @@ struct ConversationControls: View {
             }
             .padding(.horizontal, 6)
         }
+    }
+
+    // MARK: The welcome's last button
+
+    /// In place of the mic at the end of the welcome (docs/onboarding-giulia.md:
+    /// the last question is answered with a button): its words in the language
+    private func goButton(_ go: Onboarding.Line) -> some View {
+        VStack(spacing: 6) {
+            Button { Task { await model.finishWelcome() } } label: {
+                Group {
+                    if model.finishing { ProgressView().tint(Tokens.Colors.card) } else { Text(go.line) }
+                }
+                .font(.title2.weight(.semibold))
+                .frame(maxWidth: .infinity, minHeight: 44)
+            }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+            .tint(Tokens.Colors.green)
+            .disabled(model.finishing)
+            .accessibilityLabel(Text(inLanguage(go.line)))
+            .accessibilityHint("\(go.en) Opens the list of cities")
+        }
+        .padding(.horizontal, 24)
+        .transition(.opacity)
+    }
+
+    /// Read by VoiceOver in the language
+    private func inLanguage(_ text: String) -> AttributedString {
+        var s = AttributedString(text)
+        s.languageIdentifier = model.speechLanguage
+        return s
     }
 
     // MARK: Learn
@@ -131,6 +169,8 @@ struct ConversationControls: View {
             Wave(level: { model.voiceLevel }, still: reduceMotion)
         case .starting:
             ProgressView().tint(Tokens.Colors.card)
+        case .finished:
+            EmptyView()
         }
     }
 
@@ -149,6 +189,7 @@ struct ConversationControls: View {
         case .tapToTalk: "Tap to talk"
         case .choosing: "Choose an answer"
         case .micDenied: "Microphone off in Settings"
+        case .finished: "Done"
         }
     }
 

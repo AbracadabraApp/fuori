@@ -22,6 +22,8 @@ public final class AppModel {
         case loading
         /// The greeter, after the country is loaded, until a level is stored
         case onboarding
+        /// The welcome conversation (lib/welcome.ts), until its last button
+        case welcome
         case ready
         case failed(String)
         /// The server no longer accepts this build (426): only an update helps
@@ -56,6 +58,8 @@ public final class AppModel {
     public private(set) var levelError: String?
     /// The greeter's screen while phase is .onboarding
     public private(set) var onboarding: OnboardingModel?
+    /// The welcome conversation while phase is .welcome
+    public private(set) var welcome: ConversationModel?
 
     private(set) var api: APIClient?
     private let servers: [URL]
@@ -244,7 +248,13 @@ public final class AppModel {
             // better one"): the learner starts as a Beginner, the server is
             // told the same way the tour's beginner path tells it, and the
             // characters ask their name. OnboardingModel stays for the next one.
-            if me.onboarded == false, Self.greeterTour, let content, let greeter = content.onboarding {
+            // The welcome conversation, once for everyone, players who already
+            // play included (Josh, 2026-11-02; docs/onboarding-giulia.md); a
+            // server without it says nothing and the older paths below apply
+            if me.welcomed == false, let welcome = welcomeConversation() {
+                self.welcome = welcome
+                phase = .welcome
+            } else if me.onboarded == false, Self.greeterTour, let content, let greeter = content.onboarding {
                 onboarding = OnboardingModel(onboarding: greeter, language: content.language, api: api, askAddress: addressOn) { [weak self] level in
                     self?.finishOnboarding(level: level)
                 }
@@ -343,6 +353,28 @@ public final class AppModel {
         let report = APIClient.ErrorReport(id: code, step: step, error: error, context: context)
         Task { await client.report(report) }
         return code
+    }
+
+    /// The welcome on the conversation screen, with its character from the city files
+    private func welcomeConversation() -> ConversationModel? {
+        guard let content, let api, let server, let w = content.onboarding?.welcome,
+              let city = content.cities.first(where: { $0.id == w.cityId }),
+              let place = city.places.first(where: { $0.id == w.placeId }),
+              let character = content.character(w.characterId) else { return nil }
+        return ConversationModel(city: city, place: place, character: character, language: content.language, api: api, beginner: true, welcomeGo: w.go, onWelcomed: { [weak self] placed in
+            self?.finishWelcome(placed)
+        }) { [weak self] id in
+            self?.save(conversationId: id, on: (api, server))
+        }
+    }
+
+    /// The welcome's button: the level it placed them at, then the city list
+    private func finishWelcome(_ placed: APIClient.Welcomed) {
+        level = placed.level
+        SettingsKey.applyDefaults(forLevel: placed.level)
+        if let api { Task { addressedAs = (try? await api.me())?.addressedAs ?? addressedAs } }
+        welcome = nil
+        phase = .ready
     }
 
     func conversation(city: City, place: Place, character: Character) -> ConversationModel? {
