@@ -60,6 +60,7 @@ The biggest step is from 3 to 4, where the echo goes. "Mostly the language, echo
 | 3 | **The leveling model, version 0, in the app** (server only: it ships with a deploy, not a build). Details below. | Level | Yes to replacing today's Beginner level |
 | 4 | **The lesson shape** ([teach-plan.md](teach-plan.md)): Magda teaches on the conversation screen, a practice dialogue is the assignment, then her review. The biggest teaching gain left. | Teaching | Approve the screen design |
 | 5 | **A shorter end-of-turn wait** for Intermediate and Advanced; Beginners keep 2.5 s. The transcription measure is done, so this is only the tuning. | Speed | The wait, before it ships |
+| 5b | **Faster replies:** prompt caching (0.1–0.3 s, no change to what she says); finding the 0.4 s Beginner turns lost since 10-26 (2.3 s Italy, 2.1 s Mexico today); preparing her reply during the silence (up to ~1 s). Added 2026-11-02, not started. | Speed | A go for preparing the reply during the silence |
 | 6 | **Parity with the web:** stations and ticket, the city picker. | World | Stations' design; what's wrong with the picker |
 | 7 | **Adventures** ([adventures.md](adventures.md)): places where something happens, people with something to show, a mystery across days and places. | World | Your ideas, still forming |
 | 8 | **Missions**, once they're defined; the placeholder ships in build 9. The card maker waits on them. | Teaching | What missions are for |
