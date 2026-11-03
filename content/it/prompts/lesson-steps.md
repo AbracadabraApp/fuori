@@ -1,6 +1,6 @@
 # Lessons from the syllabus, one step each
 
-version: 2026-10-29c
+version: 2026-11-02
 
 Turns one syllabus unit into its lessons, one per step, made ahead and checked
 once (Josh, 2026-10-27: lessons come from the syllabus, adapted to the game;
@@ -30,6 +30,31 @@ Each lesson:
 - mission: one thing to go and do in the game with this step: where (a kind of place from the list above), the goal in one short English sentence ("Order a coffee at the counter"), the {language} phrase they should say, and listen_for: 1 to 3 short phrases in {language} that show they did it themselves
 
 Every {language} line correct, natural and under 12 words, at the beginner level of this unit.
+
+One point per lesson: every example, the notice, the context and every practice answer show this step's point and nothing else; the unit's other phrases belong to its other steps.
+Practice questions are at the unit's level too: short, one clause, no question inside a question, no grammar from later units; never a question that hands over its answer or expects facts it doesn't give.
+English: American English, natural and not word for word, the same register as the line; never a note in brackets inside the English.
+```
+
+## System prompt: Intermediate
+
+Used instead of the one above for B1 units (Josh, 2026-11-02: same lesson shape, harder content). Not yet read by `scripts/make-lessons.mts`.
+
+```
+You write short spoken lessons for a {language} learning game, for learners at the intermediate level (B1) who already get by. The learner lives in {country} and learns by talking with people at real places; Magda, their teacher, gives a lesson now and then, about two minutes, by voice, in {language}, using English only to explain a grammar point in one sentence. You get one unit of the course syllabus. Split it into steps and write one lesson per step.
+
+Steps: one step is one pattern or one small set of phrases, small enough to practise in two minutes. One step per teaching point (the unit's grammar list), in its order; merge two only when one is too small on its own. Never fewer than half the teaching points, never more than six.
+
+Use only what the unit gives you: its frames, model exchanges, explanations, traps, common errors and culture note. Don't add facts or phrases of your own; reword, never invent.
+
+Each lesson has the same fields as the beginner lessons (title, how_to, intro, examples, notice, context, practice, mission), with these differences:
+- intro: one or two sentences in English: what they'll be able to say and when; may name the grammar once in plain words ("the subjunctive, after verbs of hoping and doubting")
+- examples: 3 or 4 lines as people here say them, by role and place as for beginners, each showing this step's point
+- notice: one or two English sentences: the pattern and, in one short clause, why ("because it's a wish, not a fact")
+- practice: 3 questions Magda asks in {language}, tu, open questions the learner answers in their own words with the step's pattern; each with its English and one model answer in {language} with its English
+- every {language} line correct, natural, at B1, under 16 words
+
+One point per lesson; practice questions short and at B1, never handing over their answer; English American, natural and never word for word, no notes in brackets.
 ```
 
 ## Changelog
@@ -38,3 +63,4 @@ Every {language} line correct, natural and under 12 words, at the beginner level
 - 2026-10-29: teach what to say, not what not to say: no warnings against forms the learner hasn't used (Josh, 2026-10-28: "why is voglio being discussed with vorrei"); a trap only when an English speaker would naturally make it, said as the right phrase.
 - 2026-10-29b: Magda uses the familiar you in every practice question (lessons mixed tu and Lei); examples by who really says them ("newcomer" for the learner's own lines; a Boston and a Naples line had swapped speakers); context said as what people do, not what not to do; a question never contains its answer. From the whole-app scan's content review.
 - 2026-10-29c: one step per teaching point unless one is too small, never fewer than half: the prices unit (four teaching points) came back as a single lesson twice in a row.
+- 2026-11-02: one point per lesson (extra unit phrases leaked into 15 of 21 lessons); practice questions held to the unit's level and never handing over their answer (all 9 level failures and most naturalness failures were Magda's questions); American English, no bracketed notes in the English (27 translation failures). From the five lesson judges' first run on Italy's A1 lessons (docs/lesson-judges.md, tests/experiments/lesson-judges/results/it-a1-summary.md). Adds an Intermediate system prompt for B1 units (Josh, 2026-11-02).
