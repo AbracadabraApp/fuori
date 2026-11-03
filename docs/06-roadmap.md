@@ -46,7 +46,7 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
      - [ ] Stamps and a scoreboard in Learn: a stamp per finished lesson (visited-badge style); cities visited, people met, lessons completed, words spoken, flashcard words through stage 3. No level. Replaces the Missions placeholder.
      - [ ] **Intermediate lessons** (Claude's proposal, 2026-11-02, after the Beginner passes; Josh to review). Same shape (Magda teaches, practice, review), changed for the level:
        - Content: lessons for the B1 units (13 in Italy's syllabus); today `lessons.json` has A1 only, so they're made ahead the same way (`scripts/make-lessons.mts`).
-       - Magda: in the language, English only when asked (the Intermediate rule everywhere); a short "why" for the grammar (B1 brings the past tenses, the conditional, pronouns), still one point per lesson.
+       - Magda: in the language, English only when asked (the Intermediate rule everywhere); a short "why" for the grammar (B1 brings combined pronouns, the subjunctive, the Lei imperative, hypotheses), still one point per lesson.
        - Practice: longer (3–5 learner turns) and in the learner's own words: no answers to say back; a frame only if they're stuck.
        - Review: what they said, one fix (a recast, not a rule), one sentence to say again in their own words.
        - Choosing: Magda leans more on the learner's real mistakes from conversations (as the Learn card's offer already does), less on syllabus order.
