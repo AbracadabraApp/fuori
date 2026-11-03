@@ -135,7 +135,10 @@ export function tidyParts(parts: Part[]): Part[] {
     .map((p) => (p.kind === 'word' && /\?["'»”’)]*$/.test(p.text.trim()) ? { ...p, kind: 'question' as PartKind } : p))
     .map((p) => {
       const glossed = (p.kind === 'word' || p.kind === 'question') && p.gloss?.trim();
-      const text = decodeEscapes(p.text.trim());
+      // Spoken English belongs in text; a turn that's all English (the welcome's
+      // closing, 2026-11-03) sometimes came with it in en and text empty, and
+      // the turn was dropped as having no parts
+      const text = decodeEscapes((p.kind === 'english' && !p.text.trim() ? p.en : p.text).trim());
       return { ...p, text, en: decodeEscapes(p.en.trim()), gloss: glossed ? withoutNames(decodeEscapes(p.gloss!), text) : '' };
     })
     .filter((p) => p.text)

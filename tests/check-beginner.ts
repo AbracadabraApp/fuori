@@ -36,6 +36,8 @@ let firstSaid: string | undefined;
 let firstParts: Part[] = [];
 const pw = new PartsWatcher((f, ps) => { if (firstSaid === undefined) { firstSaid = f; firstParts = ps; } });
 for (let n = 1; n <= json.length; n++) pw.feed(json.slice(0, n));
+const allEnglish = tidyParts([{ kind: 'english', text: '', en: 'Every city has people to meet.', gloss: '' }]);
+check('an English part with its words in en keeps them', allEnglish.length === 1 && allEnglish[0].text === 'Every city has people to meet.', JSON.stringify(allEnglish));
 const whole = lineFromParts(tidyParts(streamed)).line;
 check('streamed: a first piece is sent', firstSaid !== undefined);
 check('streamed: the line starts with it', !!firstSaid && whole.startsWith(firstSaid), `${firstSaid} | ${whole}`);
