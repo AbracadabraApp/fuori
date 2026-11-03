@@ -1,0 +1,23 @@
+[
+  {
+    "lesson": "b1-12-2",
+    "field": "practice[1].ask",
+    "text": "La padrona di casa di un'amica vuole aumentare l'affitto. Cosa le consigli?",
+    "why": "Too nested to follow by ear: a stacked possessive (la padrona di casa di un'amica) puts the landlady first, so a listener hearing it once takes 'le' to mean the landlady rather than the friend, and the question seems to ask what to advise the landlady.",
+    "fix": "Un'amica deve pagare un affitto più alto. Cosa le consigli?"
+  },
+  {
+    "lesson": "b1-03-1",
+    "field": "practice[2].ask",
+    "text": "Quale carta ti ha mangiato il bancomat?",
+    "why": "Hard to follow by ear: the object comes first and the subject comes after the verb, in a figurative use of mangiare. A B1 listener hears 'which card ate you...' before 'il bancomat' arrives. The syllabus frame is the plain order: Il bancomat mi ha mangiato la carta.",
+    "fix": "Il bancomat ti ha mangiato la carta. Quale carta era?"
+  },
+  {
+    "lesson": "b1-07-3",
+    "field": "examples[2]",
+    "text": "Credo di aver capito.",
+    "why": "The past infinitive (di aver capito) is a later structure: the grammar inventory puts it at B2 (b2-10), where this exact sentence is the teaching example. Here it sits among present infinitives (di tornare, di restare), and the step's note never explains it, so the learner hears an untaught form. The b1-07 syllabus frames include the sentence, but the inventory contradicts them.",
+    "fix": "Credo di capire."
+  }
+]
