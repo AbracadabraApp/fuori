@@ -66,6 +66,14 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-02 (evening): the welcome built, the shorter wait, build 10 (laptop session)
+- The new onboarding built from the cloud session's scripts (Josh: "point it at docs/onboarding-giulia.md, docs/onboarding-chela.md and N6 item 3b"): `lib/welcome.ts`, `welcome.md`, `/v1/onboarding/welcomed`; the app opens it before the city list for everyone once; ends on Andiamo! / ¡Vámonos!; places the learner on the path (said back → step 1, own words → step 3, fairly well → Intermediate). Italy's is played by Luisa Cocco (Josh): Giulia lives in the hidden original Rome. Trial 8/8 both countries; whole English for each question (Josh: "what is your name", not "your name"); seen in the simulator up to her first turn with the mic off.
+- Path: back from Intermediate after two hard conversations (leaving without a word counts); onboarding kept out of the record; Doña Chela's *¡Bienvenido de nuevo!*. No reset of players (Josh: wait for the new onboarding).
+- Shorter end-of-turn wait for Intermediate and Advanced: 2.0 / 0.9 / 2.8 s (Beginners 2.5 / 1.2 / 3.5); Josh: yes.
+- Reply times: today 2.3 s Italy, 2.1 s Mexico (Beginner, end of turn to first word) against 1.9 / 1.7 s on 10-26; Railway keeps about a week of timing logs. Three speed items added to N6 as 5b, not started (Josh).
+- TestFlight build 0.1.0 (10) uploaded: the welcome, the shorter wait. Not installed on a phone (ask Josh first).
+- Next: Josh and Sophia play build 10 (the welcome, then the path); stamps and the welcome checked on a phone.
+
 ## 2026-11-02: the leveling model, N6 rewritten, build 9, the path and the record live (laptop session)
 - Leveling prototype run (Italy, A/B/C, ~$10): the measure was wrong for Beginner talk (a word given with its English counted unknown); re-scored, 94–96% of words known with the echo, 64–67% without. Design C dropped (89% of lines regenerated, +4.3 s).
 - Josh asked whether the evaluator was heading where he wanted; Claude: the simulated learners climbing tested our own numbers, not his model. Josh: "if you are willing to sign up for that table as a leveling model I'm good going forward under your lead". The model and its first tests: `docs/research/leveling/07-model.md`.
