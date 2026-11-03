@@ -30,7 +30,11 @@ Files: `results/it-a1-{grammar,naturalness,level,teaching,translation}.json` (fi
 | Teaching | 12 in 10 lessons |
 | Translation | 20 in 11 lessons |
 
-**Status: judged once, not yet fixed.** The judges' written summaries were lost in a restart; the result files survived. Zero grammar and level failures across 60 B1 lessons is better than expected: re-run those two judges before trusting it. Next: fix the 50 flagged lines, recheck once, drop any lesson still failing.
+**Second runs of grammar and level** (the first found nothing): grammar 1 minor (a missing article), level 3 mild; the first run's zeros were close to right. The level judge also found the syllabus contradicts itself: some B1 unit frames use forms its own grammar inventory places at B2 or C1 (*magari* + imperfect subjunctive, *il quale*, impersonal *si*, the past infinitive). A syllabus question for later.
+
+**Fixed and rechecked once (2026-11-03):** 110 changes in 27 lessons (`it-b1-changes.json`); one role changed (b1-13-1: a newcomer reading a plaque). Recheck of the changed lines: grammar 0, level 0, translation 0, naturalness 2, teaching 2. By the rule, the four lessons still failing were **dropped**: b1-02-4 (*Chi te l'ha detta?* sounds odd aloud), b1-07-3 (level and naturalness pulled one example opposite ways), b1-07-5 (intro slips in a second point), b1-08-5 (an example showed "even if", not "even though"). **56 lessons remain**, ready but not served.
+
+Build note: some learner lines have gendered forms (*sono venuto*, *sia stanca*); before these go live, lines the learner says back need the form that matches the learner.
 
 Files: `results/it-b1-*.json`.
 
