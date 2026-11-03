@@ -41,7 +41,7 @@ The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). 
      - [ ] **Josh and Sophia** play it; words spoken per week in the admin shows whether it works.
   3b. **Built 2026-11-02** (32f73fc, 2cfc3f2, 060a0aa; server live, app in build 10, not yet uploaded): `lib/welcome.ts`; Italy's is played by **Luisa Cocco** (Josh: Giulia lives in the hidden original Rome). Trial 8/8 both countries; seen in the simulator up to her first turn; not on a phone. **The new onboarding** (Josh, 2026-11-02): Rome's Giulia and Oaxaca's Doña Chela, played by Claude from a script; name, masculine or feminine, first time in the country, level; ends on a button to the city list; she recognises the player later. Everyone goes through it once; it counts as shown only when finished; answers can be tapped if the mic is refused. Scripts: [onboarding-giulia.md](onboarding-giulia.md), [onboarding-chela.md](onboarding-chela.md).
   4. **The lesson shape** ([teach-plan.md](teach-plan.md)). **Josh** approves the screen design.
-  5. **A shorter end-of-turn wait** for Intermediate and Advanced (Beginners keep 2.5 s).
+  5. **A shorter end-of-turn wait** for Intermediate and Advanced (Beginners keep 2.5 s). Built 2026-11-02 for build 10 (`EndOfTurn.speaking`): 2.0 s before anything's heard (2.5), 0.9 s after a finished sentence (1.2), 2.8 s when it trails off (3.5). Not tuned from recordings: only two conversation turns are kept. **Josh** says yes to the numbers before build 10 ships.
   6. **Parity with the web:** stations and ticket, the city picker.
   7. **Adventures** ([adventures.md](adventures.md)).
   8. **Missions**, once defined, and card maker v2 (→ Diario).

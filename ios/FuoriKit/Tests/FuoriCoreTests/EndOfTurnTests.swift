@@ -21,4 +21,14 @@ import Testing
     @Test func nothingHeardIsUsual() {
         #expect(EndOfTurn.silence(after: "  ") == EndOfTurn.usual)
     }
+
+    /// Intermediate and Advanced wait less, in every case; Beginners keep 2.5 s (N6 item 5)
+    @Test func shorterForSpeakers() {
+        let speaking = EndOfTurn.waits(beginner: false)
+        #expect(EndOfTurn.waits(beginner: true).usual == 2.5)
+        #expect(EndOfTurn.silence(after: "", waits: speaking) < EndOfTurn.silence(after: ""))
+        #expect(EndOfTurn.silence(after: "Vorrei un caffè, per favore.", waits: speaking) < EndOfTurn.finished)
+        #expect(EndOfTurn.silence(after: "Vorrei un…", waits: speaking) < EndOfTurn.trailing)
+        #expect(EndOfTurn.silence(after: "Vorrei un…", waits: speaking) > EndOfTurn.silence(after: "Vorrei un caffè.", waits: speaking))
+    }
 }

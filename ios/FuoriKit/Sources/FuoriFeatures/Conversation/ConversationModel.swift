@@ -242,7 +242,7 @@ public final class ConversationModel {
     /// The mic was refused in the welcome: she says once where to turn it on (the next turn only)
     private var micOffToSay = false
 
-    /// `beginner`: the learner's level is Beginner (for the opener hint).
+    /// `beginner`: the learner's level is Beginner, or not set yet (the opener hint, the longer end-of-turn wait).
     /// `welcomeGo`: this is the welcome conversation, with its button's words; `onWelcomed` when its button is done
     public init(city: City, place: Place, character: Character, language: Language, api: APIClient, beginner: Bool = false, welcomeGo: Onboarding.Line? = nil, onWelcomed: ((APIClient.Welcomed) -> Void)? = nil, onSave: @escaping (String) -> Void) {
         self.beginner = beginner
@@ -615,12 +615,14 @@ public final class ConversationModel {
     private var early: Task<APIClient.Heard?, Never>?
     private var earlyHeard: APIClient.Heard?
     private var silenceTarget: TimeInterval = EndOfTurn.usual
+    /// Shorter for Intermediate and Advanced (EndOfTurn.speaking)
+    private var waits: EndOfTurn.Waits { EndOfTurn.waits(beginner: beginner) }
 
     private func resetEarly() {
         early?.cancel()
         early = nil
         earlyHeard = nil
-        silenceTarget = EndOfTurn.usual
+        silenceTarget = waits.usual
     }
 
     private func startEarly() {
@@ -636,7 +638,7 @@ public final class ConversationModel {
             let heard = await task.value
             guard let self, self.early == task, let heard else { return }
             self.earlyHeard = heard
-            self.silenceTarget = EndOfTurn.silence(after: heard.text)
+            self.silenceTarget = EndOfTurn.silence(after: heard.text, waits: self.waits)
         }
     }
 
