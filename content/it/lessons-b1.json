@@ -62,7 +62,7 @@
             {
               "ask": {
                 "said": "Per il permesso di soggiorno, cosa porti in questura?",
-                "en": "For your residence permit, what do you bring to the questura?"
+                "en": "For your residence permit, what do you bring to the police headquarters?"
               },
               "answer": {
                 "said": "Servono la ricevuta e quattro fototessere.",
@@ -274,32 +274,32 @@
           "practice": [
             {
               "ask": {
-                "said": "Cosa ti dice l'impiegata quando ti dà il modulo?",
-                "en": "What does the clerk tell you when she hands you the form?"
+                "said": "L'impiegata dice: \"Compili il modulo e firmi qui.\" Cosa fai?",
+                "en": "The clerk says, \"Fill out the form and sign here.\" What do you do?"
               },
               "answer": {
-                "said": "Compili il modulo e firmi qui in fondo.",
-                "en": "Fill out the form and sign here at the bottom."
+                "said": "Compilo il modulo e poi lo firmo.",
+                "en": "I fill out the form and then sign it."
               }
             },
             {
               "ask": {
-                "said": "All'anagrafe c'è la fila. Cosa ti dice l'impiegato?",
-                "en": "There's a line at the registry office. What does the clerk tell you?"
+                "said": "All'anagrafe l'impiegato dice: \"Prenda il numero e aspetti.\" Cosa fai?",
+                "en": "At the registry office the clerk says, \"Take a ticket and wait.\" What do you do?"
               },
               "answer": {
-                "said": "Prenda il numero e aspetti.",
-                "en": "Take a ticket and wait."
+                "said": "Prendo il numero e aspetto il mio turno.",
+                "en": "I take a ticket and wait my turn."
               }
             },
             {
               "ask": {
-                "said": "La tua pratica non è finita. Cosa ti dice l'impiegato?",
-                "en": "Your application isn't done yet. What does the clerk tell you?"
+                "said": "L'impiegato dice: \"Torni con la ricevuta fra trenta giorni.\" Cosa fai?",
+                "en": "The clerk says, \"Come back with the receipt in thirty days.\" What do you do?"
               },
               "answer": {
-                "said": "Torni con la ricevuta fra trenta giorni.",
-                "en": "Come back with the receipt in thirty days."
+                "said": "Tengo la ricevuta e torno fra un mese.",
+                "en": "I hang on to the receipt and come back in a month."
               }
             }
           ],
@@ -486,7 +486,7 @@
               "role": "newcomer",
               "place": "home",
               "said": "Glielo dico io.",
-              "en": "I'll tell him."
+              "en": "I'll tell him myself."
             },
             {
               "role": "shopkeeper",
@@ -527,7 +527,7 @@
               },
               "answer": {
                 "said": "Glielo dico io.",
-                "en": "I'll tell him."
+                "en": "I'll tell him myself."
               }
             },
             {
@@ -546,7 +546,7 @@
             "goal": "Offer to pass a message on to someone.",
             "say": {
               "said": "Non ti preoccupare, glielo dico io.",
-              "en": "Don't worry, I'll tell him."
+              "en": "Don't worry, I'll tell him myself."
             },
             "listen_for": [
               "glielo"
@@ -671,7 +671,7 @@
                 "en": "A friend already knows the news. What do you ask him?"
               },
               "answer": {
-                "said": "Chi te l'ha detto?",
+                "said": "Chi te l'ha detta?",
                 "en": "Who told you?"
               }
             },
@@ -814,8 +814,8 @@
             {
               "role": "neighbour",
               "place": "home",
-              "said": "Se n'è andato presto.",
-              "en": "He left early."
+              "said": "Se n'è dimenticata anche lei.",
+              "en": "She forgot about it too."
             }
           ],
           "notice": "Ne stands for \"about it,\" so me ne, te ne and se ne come before the verb even where English has nothing; a woman says dimenticata.",
@@ -843,12 +843,12 @@
             },
             {
               "ask": {
-                "said": "Il tuo amico non è più alla festa. Cosa è successo?",
-                "en": "Your friend isn't at the party anymore. What happened?"
+                "said": "Marco doveva comprare il pane. L'ha comprato?",
+                "en": "Marco was supposed to buy bread. Did he?"
               },
               "answer": {
-                "said": "Se n'è andato presto.",
-                "en": "He left early."
+                "said": "No, se n'è dimenticato.",
+                "en": "No, he forgot all about it."
               }
             }
           ],
@@ -925,8 +925,8 @@
             },
             {
               "ask": {
-                "said": "Quale carta ti ha mangiato il bancomat?",
-                "en": "Which card did the ATM eat?"
+                "said": "Il bancomat ti ha mangiato la carta. Quale carta era?",
+                "en": "The ATM ate your card. Which card was it?"
               },
               "answer": {
                 "said": "Quella che mi ha dato la banca la settimana scorsa.",
@@ -973,11 +973,11 @@
             {
               "role": "clerk",
               "place": "bank",
-              "said": "Il titolare è la persona alla quale è intestata la carta.",
-              "en": "The account holder is the person whose name is on the card."
+              "said": "Il titolare è la persona a cui è intestata la carta.",
+              "en": "The cardholder is the person whose name is on the card."
             }
           ],
-          "notice": "The little word comes first and cui follows, because an Italian sentence never ends on con or di; contracts write alla quale where people say a cui.",
+          "notice": "The little word comes first and cui follows, because an Italian sentence never ends on con or di.",
           "context": "",
           "practice": [
             {
@@ -992,12 +992,12 @@
             },
             {
               "ask": {
-                "said": "Perché sei in banca oggi?",
-                "en": "Why are you at the bank today?"
+                "said": "L'impiegato ti chiede se vuoi aprire un conto. Cosa rispondi?",
+                "en": "The clerk asks if you want to open an account. What do you say?"
               },
               "answer": {
-                "said": "Il motivo per cui sono qui è aprire un conto.",
-                "en": "The reason I'm here is to open an account."
+                "said": "Sì, è proprio il motivo per cui sono venuto.",
+                "en": "Yes, that's exactly why I came."
               }
             },
             {
@@ -1006,8 +1006,8 @@
                 "en": "To open the account, what do you ask the clerk?"
               },
               "answer": {
-                "said": "Qual è il documento di cui ho bisogno?",
-                "en": "Which document do I need?"
+                "said": "Sono questi i documenti di cui ha bisogno?",
+                "en": "Are these the documents you need?"
               }
             }
           ],
@@ -1188,7 +1188,7 @@
               "role": "clerk",
               "place": "bank",
               "said": "Prima di aprire il conto, mi serve il Suo codice fiscale.",
-              "en": "Before we open the account, I need your tax code."
+              "en": "Before we open the account, I need your tax ID number."
             },
             {
               "role": "newcomer",
@@ -1212,12 +1212,12 @@
             },
             {
               "ask": {
-                "said": "Cosa ti serve per aprire un conto?",
-                "en": "What do you need to open an account?"
+                "said": "Vuoi cambiare banca. Cosa fai prima?",
+                "en": "You want to switch banks. What do you do first?"
               },
               "answer": {
-                "said": "Prima di aprire il conto, mi serve il codice fiscale.",
-                "en": "Before I open the account, I need my tax code."
+                "said": "Prima di aprire un conto nuovo, chiudo quello vecchio.",
+                "en": "Before I open a new account, I close the old one."
               }
             },
             {
@@ -1264,8 +1264,8 @@
             {
               "role": "friend",
               "place": "home",
-              "said": "Sì, ma è più piccolo di questo.",
-              "en": "Yes, but it's smaller than this one."
+              "said": "Sì, ma è anche più piccolo dell'altro.",
+              "en": "Yes, but it's also smaller than the other one."
             },
             {
               "role": "newcomer",
@@ -1387,8 +1387,8 @@
                 "en": "And the apartment near the market, what was it like?"
               },
               "answer": {
-                "said": "Era pessimo.",
-                "en": "It was terrible."
+                "said": "Era il più rumoroso di tutti.",
+                "en": "It was the noisiest one of all."
               }
             }
           ],
@@ -1426,21 +1426,21 @@
             {
               "role": "newcomer",
               "place": "home",
-              "said": "Abito qui da sei mesi.",
+              "said": "Sono sei mesi che abito qui.",
               "en": "I've lived here for six months."
             }
           ],
-          "notice": "For something that started in the past and is still going on, Italian uses the present, because it isn't over: sono due settimane che aspetto, or aspetto da due settimane; with one week or month, it's è.",
+          "notice": "For something that started in the past and is still going on, Italian uses the present, because it isn't over: sono due settimane che aspetto; with one week or month, it's è.",
           "context": "",
           "practice": [
             {
               "ask": {
-                "said": "Da quanto tempo abiti qui?",
-                "en": "How long have you lived here?"
+                "said": "È tanto che abiti qui?",
+                "en": "Have you lived here long?"
               },
               "answer": {
-                "said": "Abito qui da … mesi.",
-                "en": "I've lived here for … months."
+                "said": "Sono quasi otto mesi che abito qui.",
+                "en": "I've lived here for almost eight months."
               }
             },
             {
@@ -2008,7 +2008,7 @@
             },
             {
               "ask": {
-                "said": "Ieri c'era sciopero dei treni. Cosa hai fatto?",
+                "said": "Ieri c'era lo sciopero dei treni. Cosa hai fatto?",
                 "en": "There was a train strike yesterday. What did you do?"
               },
               "answer": {
@@ -2146,7 +2146,7 @@
             {
               "ask": {
                 "said": "Hai detto che il corso è pesante. È difficile?",
-                "en": "You said the course is heavy going. Is it hard?"
+                "en": "You said the course is a grind. Is it hard?"
               },
               "answer": {
                 "said": "No, cioè, voglio dire che è stancante.",
@@ -2372,8 +2372,8 @@
             {
               "role": "newcomer",
               "place": "bar",
-              "said": "Credo di aver capito.",
-              "en": "I think I've got it."
+              "said": "Credo di capire.",
+              "en": "I think I understand."
             },
             {
               "role": "newcomer",
@@ -2516,8 +2516,8 @@
             {
               "role": "friend",
               "place": "piazza",
-              "said": "I biglietti costano tanto?",
-              "en": "Are the tickets expensive?"
+              "said": "Spero di sì!",
+              "en": "I hope so!"
             },
             {
               "role": "newcomer",
@@ -2528,8 +2528,8 @@
             {
               "role": "neighbour",
               "place": "piazza",
-              "said": "Viene anche lui?",
-              "en": "Is he coming too?"
+              "said": "Penso di no, stasera lavora.",
+              "en": "I don't think so. He's working tonight."
             },
             {
               "role": "newcomer",
@@ -2595,13 +2595,13 @@
           "id": "b1-08-1",
           "title": "Giving someone advice",
           "how_to": "How to give advice to one person, or general advice to anyone.",
-          "intro": "You'll be able to give advice, and follow a pharmacist's: you'd better not, it's important that you. For one person it's che plus the subjunctive; for anyone at all, just the infinitive.",
+          "intro": "You'll be able to give advice, and follow a pharmacist's: it's best if you don't, it's important that you. For one person it's che plus the subjunctive; for anyone at all, just the infinitive.",
           "examples": [
             {
               "role": "pharmacist",
               "place": "pharmacy",
               "said": "È meglio che Lei non beva caffè dopo pranzo.",
-              "en": "You'd better not have coffee after lunch."
+              "en": "It's best if you don't have coffee after lunch."
             },
             {
               "role": "pharmacist",
@@ -2612,8 +2612,8 @@
             {
               "role": "friend",
               "place": "bar",
-              "said": "È importante che tu faccia almeno mezz'ora di movimento al giorno.",
-              "en": "It's important that you get at least half an hour of exercise a day."
+              "said": "Dai, è importante che tu ti muova un po' ogni giorno.",
+              "en": "Come on, it's important for you to move around a bit every day."
             },
             {
               "role": "friend",
@@ -2632,7 +2632,7 @@
               },
               "answer": {
                 "said": "È meglio che tu non beva caffè la sera.",
-                "en": "You'd better not drink coffee in the evening."
+                "en": "It's better if you don't drink coffee in the evening."
               }
             },
             {
@@ -2641,8 +2641,8 @@
                 "en": "A friend never exercises. What do you tell her?"
               },
               "answer": {
-                "said": "È importante che tu faccia almeno mezz'ora di movimento al giorno.",
-                "en": "It's important that you get at least half an hour of exercise a day."
+                "said": "Dai, è importante che tu faccia un po' di movimento, anche mezz'ora al giorno.",
+                "en": "Come on, it's important for you to get some exercise, even just half an hour a day."
               }
             },
             {
@@ -2661,7 +2661,7 @@
             "goal": "Give a friend advice about sleeping better.",
             "say": {
               "said": "È meglio che tu non beva caffè la sera.",
-              "en": "You'd better not drink coffee in the evening."
+              "en": "It's better if you don't drink coffee in the evening."
             },
             "listen_for": [
               "è meglio che",
@@ -2704,7 +2704,7 @@
               },
               "answer": {
                 "said": "Te la presto, purché tu me la riporti stasera.",
-                "en": "Sure, as long as you bring it back tonight."
+                "en": "I'll lend it to you, as long as you bring it back tonight."
               }
             },
             {
@@ -2724,7 +2724,7 @@
               },
               "answer": {
                 "said": "Te la presto, purché tu me la riporti domenica.",
-                "en": "Sure, as long as you bring it back on Sunday."
+                "en": "I'll lend it to you, as long as you bring it back on Sunday."
               }
             }
           ],
@@ -2733,7 +2733,7 @@
             "goal": "Lend a friend something on a condition.",
             "say": {
               "said": "Te la presto, purché tu me la riporti stasera.",
-              "en": "Sure, as long as you bring it back tonight."
+              "en": "I'll lend it to you, as long as you bring it back tonight."
             },
             "listen_for": [
               "purché",
@@ -2919,8 +2919,8 @@
             {
               "role": "newcomer",
               "place": "bar",
-              "said": "Vado a correre tre volte a settimana, benché faccia freddo.",
-              "en": "I go running three times a week, even though it's cold."
+              "said": "Benché sia stanca, stasera vado in palestra lo stesso.",
+              "en": "Even though I'm tired, I'm still going to the gym tonight."
             }
           ],
           "notice": "Anche se keeps the usual verb (fa, piove), and benché takes the subjunctive (faccia), because benché is one of the words that always needs it.",
@@ -3002,8 +3002,8 @@
             {
               "role": "ticket clerk",
               "place": "station",
-              "said": "Prenda il primo autobus.",
-              "en": "Take the first bus."
+              "said": "Prenda il primo autobus che passa.",
+              "en": "Take the first bus that comes."
             }
           ],
           "notice": "With Lei, verbs ending in -are take an -i (giri) and the others take an -a (prenda), the opposite of the tu forms; andare becomes vada. That's because this command is really the subjunctive.",
@@ -3035,8 +3035,8 @@
                 "en": "A woman wants to take the bus downtown. What do you tell her?"
               },
               "answer": {
-                "said": "Prenda il primo autobus.",
-                "en": "Take the first bus."
+                "said": "Prenda il primo autobus che passa: vanno tutti in centro.",
+                "en": "Take the first bus that comes. They all go downtown."
               }
             }
           ],
@@ -3267,8 +3267,8 @@
                 "en": "An older woman has a heavy bag. What do you offer her?"
               },
               "answer": {
-                "said": "Mi dia pure la borsa, gliela tengo io.",
-                "en": "Go ahead and give me your bag, I'll hold it for you."
+                "said": "Mi dia pure la borsa, gliela porto io.",
+                "en": "Go ahead and give me your bag, I'll carry it for you."
               }
             }
           ],
@@ -3294,8 +3294,8 @@
             {
               "role": "clerk",
               "place": "office",
-              "said": "Aspetti qualche minuto, arrivo subito.",
-              "en": "Wait a few minutes, I'll be right with you."
+              "said": "Aspetti qualche minuto, per favore, c'è un po' di fila.",
+              "en": "Please wait a few minutes, there's a bit of a line."
             },
             {
               "role": "clerk",
@@ -3307,7 +3307,7 @@
               "role": "newcomer",
               "place": "office",
               "said": "Ognuno ha il suo numero: adesso tocca al quarantadue.",
-              "en": "Everyone has a number, and now it's forty-two's turn."
+              "en": "Everyone has a number, and now they're on forty-two."
             },
             {
               "role": "waiter",
@@ -3332,7 +3332,7 @@
             {
               "ask": {
                 "said": "Fa freddo e sei al bar. Cosa vuoi bere?",
-                "en": "It's cold and you're at the bar. What do you want to drink?"
+                "en": "It's cold and you're at the café. What do you want to drink?"
               },
               "answer": {
                 "said": "Vorrei qualcosa di caldo.",
@@ -3376,8 +3376,8 @@
             {
               "role": "clerk",
               "place": "office",
-              "said": "Quali sono i Suoi punti di forza?",
-              "en": "What are your strengths?"
+              "said": "Quali sono le Sue difficoltà con l'italiano?",
+              "en": "What do you struggle with in Italian?"
             },
             {
               "role": "neighbour",
@@ -3398,7 +3398,7 @@
               "en": "How long is the course, and how much does it cost?"
             }
           ],
-          "notice": "Quali sono asks \"what are\" when you choose from a set, like strengths. Come mai means \"how come,\" and da quanto tempo asks how long something has been going on.",
+          "notice": "Quali sono asks \"what are\" about more than one thing, like your difficulties. Come mai means \"how come,\" and da quanto tempo asks how long something has been going on.",
           "context": "",
           "practice": [
             {
@@ -3611,7 +3611,7 @@
               "role": "newcomer",
               "place": "office",
               "said": "Gentile dottoressa Rossi,",
-              "en": "Dear Dr. Rossi,"
+              "en": "Dear Ms. Rossi,"
             },
             {
               "role": "newcomer",
@@ -3642,7 +3642,7 @@
               },
               "answer": {
                 "said": "Gentile dottoressa Rossi,",
-                "en": "Dear Dr. Rossi,"
+                "en": "Dear Ms. Rossi,"
               }
             },
             {
@@ -3671,7 +3671,7 @@
             "goal": "Dictate the opening of an email asking about a course.",
             "say": {
               "said": "Gentile dottoressa Rossi, Le scrivo per chiedere informazioni sul corso.",
-              "en": "Dear Dr. Rossi, I'm writing to ask for information about the course."
+              "en": "Dear Ms. Rossi, I'm writing to ask for information about the course."
             },
             "listen_for": [
               "Gentile",
@@ -4120,8 +4120,8 @@
             },
             {
               "ask": {
-                "said": "La padrona di casa di un'amica vuole aumentare l'affitto. Cosa le consigli?",
-                "en": "A friend's landlady wants to raise the rent. What do you suggest?"
+                "said": "Un'amica deve pagare un affitto più alto. Cosa le consigli?",
+                "en": "A friend has to pay more rent. What do you suggest?"
               },
               "answer": {
                 "said": "Se fossi in te, cercherei un'altra casa.",
@@ -4386,14 +4386,14 @@
             {
               "role": "neighbour",
               "place": "piazza",
-              "said": "Questa piazza nacque nel Medioevo come mercato.",
-              "en": "This square started out in the Middle Ages as a market."
+              "said": "Mio nonno raccontava che la piazza nacque nel Medioevo, come mercato.",
+              "en": "My grandfather used to say the square started out as a market in the Middle Ages."
             },
             {
-              "role": "neighbour",
+              "role": "newcomer",
               "place": "piazza",
-              "said": "Michelangelo nacque a Caprese nel 1475 e morì nel 1564.",
-              "en": "Michelangelo was born in Caprese in 1475 and died in 1564."
+              "said": "Qui c'è scritto che Michelangelo nacque a Caprese nel 1475.",
+              "en": "It says here Michelangelo was born in Caprese in 1475."
             },
             {
               "role": "neighbour",
@@ -4433,12 +4433,12 @@
             },
             {
               "ask": {
-                "said": "Il mercante lasciò tutto alla città. Chi ha avuto tutto?",
-                "en": "The merchant left everything to the town. Who got everything?"
+                "said": "Il mercante lasciò tutto alla città. Cosa ha fatto il mercante?",
+                "en": "The merchant left everything to the town. What did the merchant do?"
               },
               "answer": {
-                "said": "La città: il mercante le ha lasciato tutto.",
-                "en": "The town did. The merchant left it everything."
+                "said": "Ha lasciato tutto alla città.",
+                "en": "He left everything to the town."
               }
             }
           ],
@@ -4482,8 +4482,8 @@
             {
               "role": "neighbour",
               "place": "piazza",
-              "said": "Il quadro è stato dipinto da Caravaggio.",
-              "en": "The painting was done by Caravaggio."
+              "said": "Sa che questo palazzo è stato costruito da una famiglia di banchieri?",
+              "en": "Did you know this building was built by a family of bankers?"
             }
           ],
           "notice": "Each line uses è stata or è stato with costruita or dipinto, matching la chiesa or l'affresco, and the painter comes after da, because the line is about the thing, not the person.",
@@ -4511,12 +4511,12 @@
             },
             {
               "ask": {
-                "said": "Questo quadro è di Caravaggio. Come lo dici con 'dipinto'?",
-                "en": "This painting is a Caravaggio. How would you say that with 'dipinto'?"
+                "said": "Un amico ti chiede chi ha fatto questo quadro. Cosa gli dici?",
+                "en": "A friend asks you who did this painting. What do you tell him?"
               },
               "answer": {
-                "said": "Il quadro è stato dipinto da Caravaggio.",
-                "en": "The painting was done by Caravaggio."
+                "said": "È stato dipinto da Caravaggio.",
+                "en": "It was painted by Caravaggio."
               }
             }
           ],
@@ -4542,14 +4542,14 @@
             {
               "role": "neighbour",
               "place": "piazza",
-              "said": "Fu costruita nel Trecento e restaurata nell'Ottocento.",
-              "en": "It was built in the 1300s and restored in the 1800s."
+              "said": "È stata costruita nel Trecento, poi l'hanno restaurata nell'Ottocento.",
+              "en": "It was built in the 1300s, then restored in the 1800s."
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "said": "Nel Cinquecento una famiglia di banchieri trasformò la piazza.",
-              "en": "In the 1500s a family of bankers transformed the square."
+              "said": "Nel Cinquecento una famiglia di banchieri ha rifatto tutta la piazza.",
+              "en": "In the 1500s a family of bankers rebuilt the whole square."
             },
             {
               "role": "newcomer",
@@ -4639,8 +4639,8 @@
             {
               "role": "neighbour",
               "place": "piazza",
-              "said": "Durante la messa non si può visitare la chiesa.",
-              "en": "You can't tour the church during mass."
+              "said": "Però durante la messa non si può girare per la chiesa.",
+              "en": "But you can't walk around the church during mass."
             }
           ],
           "notice": "Si può with a verb asks or says what anyone may do there; with a plural like foto it becomes si possono, because the verb matches the plural.",
@@ -4659,7 +4659,7 @@
             {
               "ask": {
                 "said": "Vuoi fotografare un affresco. Cosa chiedi al custode?",
-                "en": "You want to photograph a fresco. What do you ask the custodian?"
+                "en": "You want to photograph a fresco. What do you ask the attendant?"
               },
               "answer": {
                 "said": "Si possono fare foto?",

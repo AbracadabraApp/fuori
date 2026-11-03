@@ -1,0 +1,1003 @@
+[
+  {
+    "lesson": "b1-01-1",
+    "field": "practice[2].ask.en",
+    "before": "For your residence permit, what do you bring to the questura?",
+    "after": "For your residence permit, what do you bring to the police headquarters?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice[0].ask.said",
+    "before": "Cosa ti dice l'impiegata quando ti dà il modulo?",
+    "after": "L'impiegata dice: \"Compili il modulo e firmi qui.\" Cosa fai?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice[0].ask.en",
+    "before": "What does the clerk tell you when she hands you the form?",
+    "after": "The clerk says, \"Fill out the form and sign here.\" What do you do?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice[0].answer.said",
+    "before": "Compili il modulo e firmi qui in fondo.",
+    "after": "Compilo il modulo e poi lo firmo.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice[0].answer.en",
+    "before": "Fill out the form and sign here at the bottom.",
+    "after": "I fill out the form and then sign it.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice[1].ask.said",
+    "before": "All'anagrafe c'è la fila. Cosa ti dice l'impiegato?",
+    "after": "All'anagrafe l'impiegato dice: \"Prenda il numero e aspetti.\" Cosa fai?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice[1].ask.en",
+    "before": "There's a line at the registry office. What does the clerk tell you?",
+    "after": "At the registry office the clerk says, \"Take a ticket and wait.\" What do you do?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice[1].answer.said",
+    "before": "Prenda il numero e aspetti.",
+    "after": "Prendo il numero e aspetto il mio turno.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice[1].answer.en",
+    "before": "Take a ticket and wait.",
+    "after": "I take a ticket and wait my turn.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice[2].ask.said",
+    "before": "La tua pratica non è finita. Cosa ti dice l'impiegato?",
+    "after": "L'impiegato dice: \"Torni con la ricevuta fra trenta giorni.\" Cosa fai?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice[2].ask.en",
+    "before": "Your application isn't done yet. What does the clerk tell you?",
+    "after": "The clerk says, \"Come back with the receipt in thirty days.\" What do you do?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice[2].answer.said",
+    "before": "Torni con la ricevuta fra trenta giorni.",
+    "after": "Tengo la ricevuta e torno fra un mese.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-01-4",
+    "field": "practice[2].answer.en",
+    "before": "Come back with the receipt in thirty days.",
+    "after": "I hang on to the receipt and come back in a month.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-02-2",
+    "field": "examples[0].en",
+    "before": "I'll tell him.",
+    "after": "I'll tell him myself.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-02-2",
+    "field": "practice[1].answer.en",
+    "before": "I'll tell him.",
+    "after": "I'll tell him myself.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-02-4",
+    "field": "practice[0].answer.said",
+    "before": "Chi te l'ha detto?",
+    "after": "Chi te l'ha detta?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-02-6",
+    "field": "examples[3].said",
+    "before": "Se n'è andato presto.",
+    "after": "Se n'è dimenticata anche lei.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-02-6",
+    "field": "examples[3].en",
+    "before": "He left early.",
+    "after": "She forgot about it too.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-02-6",
+    "field": "practice[2].ask.said",
+    "before": "Il tuo amico non è più alla festa. Cosa è successo?",
+    "after": "Marco doveva comprare il pane. L'ha comprato?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-02-6",
+    "field": "practice[2].ask.en",
+    "before": "Your friend isn't at the party anymore. What happened?",
+    "after": "Marco was supposed to buy bread. Did he?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-02-6",
+    "field": "practice[2].answer.said",
+    "before": "Se n'è andato presto.",
+    "after": "No, se n'è dimenticato.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-02-6",
+    "field": "practice[2].answer.en",
+    "before": "He left early.",
+    "after": "No, he forgot all about it.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-03-1",
+    "field": "practice[2].ask.said",
+    "before": "Quale carta ti ha mangiato il bancomat?",
+    "after": "Il bancomat ti ha mangiato la carta. Quale carta era?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "b1-03-1",
+    "field": "practice[2].ask.en",
+    "before": "Which card did the ATM eat?",
+    "after": "The ATM ate your card. Which card was it?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "b1-03-2",
+    "field": "examples[3].said",
+    "before": "Il titolare è la persona alla quale è intestata la carta.",
+    "after": "Il titolare è la persona a cui è intestata la carta.",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-03-2",
+    "field": "examples[3].en",
+    "before": "The account holder is the person whose name is on the card.",
+    "after": "The cardholder is the person whose name is on the card.",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-03-2",
+    "field": "notice",
+    "before": "The little word comes first and cui follows, because an Italian sentence never ends on con or di; contracts write alla quale where people say a cui.",
+    "after": "The little word comes first and cui follows, because an Italian sentence never ends on con or di.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-03-2",
+    "field": "practice[1].ask.said",
+    "before": "Perché sei in banca oggi?",
+    "after": "L'impiegato ti chiede se vuoi aprire un conto. Cosa rispondi?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-03-2",
+    "field": "practice[1].ask.en",
+    "before": "Why are you at the bank today?",
+    "after": "The clerk asks if you want to open an account. What do you say?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-03-2",
+    "field": "practice[1].answer.said",
+    "before": "Il motivo per cui sono qui è aprire un conto.",
+    "after": "Sì, è proprio il motivo per cui sono venuto.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-03-2",
+    "field": "practice[1].answer.en",
+    "before": "The reason I'm here is to open an account.",
+    "after": "Yes, that's exactly why I came.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-03-2",
+    "field": "practice[2].answer.said",
+    "before": "Qual è il documento di cui ho bisogno?",
+    "after": "Sono questi i documenti di cui ha bisogno?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-03-2",
+    "field": "practice[2].answer.en",
+    "before": "Which document do I need?",
+    "after": "Are these the documents you need?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-03-5",
+    "field": "examples[1].en",
+    "before": "Before we open the account, I need your tax code.",
+    "after": "Before we open the account, I need your tax ID number.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-03-5",
+    "field": "practice[1].ask.said",
+    "before": "Cosa ti serve per aprire un conto?",
+    "after": "Vuoi cambiare banca. Cosa fai prima?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-03-5",
+    "field": "practice[1].ask.en",
+    "before": "What do you need to open an account?",
+    "after": "You want to switch banks. What do you do first?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-03-5",
+    "field": "practice[1].answer.said",
+    "before": "Prima di aprire il conto, mi serve il codice fiscale.",
+    "after": "Prima di aprire un conto nuovo, chiudo quello vecchio.",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-03-5",
+    "field": "practice[1].answer.en",
+    "before": "Before I open the account, I need my tax code.",
+    "after": "Before I open a new account, I close the old one.",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-04-1",
+    "field": "examples[1].said",
+    "before": "Sì, ma è più piccolo di questo.",
+    "after": "Sì, ma è anche più piccolo dell'altro.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-04-1",
+    "field": "examples[1].en",
+    "before": "Yes, but it's smaller than this one.",
+    "after": "Yes, but it's also smaller than the other one.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-04-2",
+    "field": "practice[2].answer.said",
+    "before": "Era pessimo.",
+    "after": "Era il più rumoroso di tutti.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-04-2",
+    "field": "practice[2].answer.en",
+    "before": "It was terrible.",
+    "after": "It was the noisiest one of all.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-04-3",
+    "field": "examples[2].said",
+    "before": "Abito qui da sei mesi.",
+    "after": "Sono sei mesi che abito qui.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-04-3",
+    "field": "notice",
+    "before": "For something that started in the past and is still going on, Italian uses the present, because it isn't over: sono due settimane che aspetto, or aspetto da due settimane; with one week or month, it's è.",
+    "after": "For something that started in the past and is still going on, Italian uses the present, because it isn't over: sono due settimane che aspetto; with one week or month, it's è.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-04-3",
+    "field": "practice[0].ask.said",
+    "before": "Da quanto tempo abiti qui?",
+    "after": "È tanto che abiti qui?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-04-3",
+    "field": "practice[0].ask.en",
+    "before": "How long have you lived here?",
+    "after": "Have you lived here long?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-04-3",
+    "field": "practice[0].answer.said",
+    "before": "Abito qui da … mesi.",
+    "after": "Sono quasi otto mesi che abito qui.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-04-3",
+    "field": "practice[0].answer.en",
+    "before": "I've lived here for … months.",
+    "after": "I've lived here for almost eight months.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-06-2",
+    "field": "practice[2].ask.said",
+    "before": "Ieri c'era sciopero dei treni. Cosa hai fatto?",
+    "after": "Ieri c'era lo sciopero dei treni. Cosa hai fatto?",
+    "for": [
+      "naturalness",
+      "grammar"
+    ]
+  },
+  {
+    "lesson": "b1-06-4",
+    "field": "practice[0].ask.en",
+    "before": "You said the course is heavy going. Is it hard?",
+    "after": "You said the course is a grind. Is it hard?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-07-3",
+    "field": "examples[2].said",
+    "before": "Credo di aver capito.",
+    "after": "Credo di capire.",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "b1-07-3",
+    "field": "examples[2].en",
+    "before": "I think I've got it.",
+    "after": "I think I understand.",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "b1-07-5",
+    "field": "examples[0].said",
+    "before": "I biglietti costano tanto?",
+    "after": "Spero di sì!",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-07-5",
+    "field": "examples[0].en",
+    "before": "Are the tickets expensive?",
+    "after": "I hope so!",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-07-5",
+    "field": "examples[2].said",
+    "before": "Viene anche lui?",
+    "after": "Penso di no, stasera lavora.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-07-5",
+    "field": "examples[2].en",
+    "before": "Is he coming too?",
+    "after": "I don't think so. He's working tonight.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-08-1",
+    "field": "intro",
+    "before": "You'll be able to give advice, and follow a pharmacist's: you'd better not, it's important that you. For one person it's che plus the subjunctive; for anyone at all, just the infinitive.",
+    "after": "You'll be able to give advice, and follow a pharmacist's: it's best if you don't, it's important that you. For one person it's che plus the subjunctive; for anyone at all, just the infinitive.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-08-1",
+    "field": "examples[0].en",
+    "before": "You'd better not have coffee after lunch.",
+    "after": "It's best if you don't have coffee after lunch.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-08-1",
+    "field": "examples[2].said",
+    "before": "È importante che tu faccia almeno mezz'ora di movimento al giorno.",
+    "after": "Dai, è importante che tu ti muova un po' ogni giorno.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-08-1",
+    "field": "examples[2].en",
+    "before": "It's important that you get at least half an hour of exercise a day.",
+    "after": "Come on, it's important for you to move around a bit every day.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-08-1",
+    "field": "practice[0].answer.en",
+    "before": "You'd better not drink coffee in the evening.",
+    "after": "It's better if you don't drink coffee in the evening.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-08-1",
+    "field": "practice[1].answer.said",
+    "before": "È importante che tu faccia almeno mezz'ora di movimento al giorno.",
+    "after": "Dai, è importante che tu faccia un po' di movimento, anche mezz'ora al giorno.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-08-1",
+    "field": "practice[1].answer.en",
+    "before": "It's important that you get at least half an hour of exercise a day.",
+    "after": "Come on, it's important for you to get some exercise, even just half an hour a day.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-08-2",
+    "field": "practice[0].answer.en",
+    "before": "Sure, as long as you bring it back tonight.",
+    "after": "I'll lend it to you, as long as you bring it back tonight.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-08-2",
+    "field": "practice[2].answer.en",
+    "before": "Sure, as long as you bring it back on Sunday.",
+    "after": "I'll lend it to you, as long as you bring it back on Sunday.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-08-5",
+    "field": "examples[3].said",
+    "before": "Vado a correre tre volte a settimana, benché faccia freddo.",
+    "after": "Benché sia stanca, stasera vado in palestra lo stesso.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-08-5",
+    "field": "examples[3].en",
+    "before": "I go running three times a week, even though it's cold.",
+    "after": "Even though I'm tired, I'm still going to the gym tonight.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-09-1",
+    "field": "examples[3].said",
+    "before": "Prenda il primo autobus.",
+    "after": "Prenda il primo autobus che passa.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-09-1",
+    "field": "examples[3].en",
+    "before": "Take the first bus.",
+    "after": "Take the first bus that comes.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-09-1",
+    "field": "practice[2].answer.said",
+    "before": "Prenda il primo autobus.",
+    "after": "Prenda il primo autobus che passa: vanno tutti in centro.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-09-1",
+    "field": "practice[2].answer.en",
+    "before": "Take the first bus.",
+    "after": "Take the first bus that comes. They all go downtown.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-09-4",
+    "field": "practice[2].answer.said",
+    "before": "Mi dia pure la borsa, gliela tengo io.",
+    "after": "Mi dia pure la borsa, gliela porto io.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-09-4",
+    "field": "practice[2].answer.en",
+    "before": "Go ahead and give me your bag, I'll hold it for you.",
+    "after": "Go ahead and give me your bag, I'll carry it for you.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-09-5",
+    "field": "examples[0].said",
+    "before": "Aspetti qualche minuto, arrivo subito.",
+    "after": "Aspetti qualche minuto, per favore, c'è un po' di fila.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-09-5",
+    "field": "examples[0].en",
+    "before": "Wait a few minutes, I'll be right with you.",
+    "after": "Please wait a few minutes, there's a bit of a line.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-09-5",
+    "field": "examples[2].en",
+    "before": "Everyone has a number, and now it's forty-two's turn.",
+    "after": "Everyone has a number, and now they're on forty-two.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-09-5",
+    "field": "practice[1].ask.en",
+    "before": "It's cold and you're at the bar. What do you want to drink?",
+    "after": "It's cold and you're at the café. What do you want to drink?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-10-1",
+    "field": "examples[0].said",
+    "before": "Quali sono i Suoi punti di forza?",
+    "after": "Quali sono le Sue difficoltà con l'italiano?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-10-1",
+    "field": "examples[0].en",
+    "before": "What are your strengths?",
+    "after": "What do you struggle with in Italian?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-10-1",
+    "field": "notice",
+    "before": "Quali sono asks \"what are\" when you choose from a set, like strengths. Come mai means \"how come,\" and da quanto tempo asks how long something has been going on.",
+    "after": "Quali sono asks \"what are\" about more than one thing, like your difficulties. Come mai means \"how come,\" and da quanto tempo asks how long something has been going on.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-10-4",
+    "field": "examples[0].en",
+    "before": "Dear Dr. Rossi,",
+    "after": "Dear Ms. Rossi,",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-10-4",
+    "field": "practice[0].answer.en",
+    "before": "Dear Dr. Rossi,",
+    "after": "Dear Ms. Rossi,",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-12-2",
+    "field": "practice[1].ask.said",
+    "before": "La padrona di casa di un'amica vuole aumentare l'affitto. Cosa le consigli?",
+    "after": "Un'amica deve pagare un affitto più alto. Cosa le consigli?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "b1-12-2",
+    "field": "practice[1].ask.en",
+    "before": "A friend's landlady wants to raise the rent. What do you suggest?",
+    "after": "A friend has to pay more rent. What do you suggest?",
+    "for": [
+      "level"
+    ]
+  },
+  {
+    "lesson": "b1-13-1",
+    "field": "examples[0].said",
+    "before": "Questa piazza nacque nel Medioevo come mercato.",
+    "after": "Mio nonno raccontava che la piazza nacque nel Medioevo, come mercato.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-1",
+    "field": "examples[0].en",
+    "before": "This square started out in the Middle Ages as a market.",
+    "after": "My grandfather used to say the square started out as a market in the Middle Ages.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-1",
+    "field": "examples[1].role",
+    "before": "neighbour",
+    "after": "newcomer",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-1",
+    "field": "examples[1].said",
+    "before": "Michelangelo nacque a Caprese nel 1475 e morì nel 1564.",
+    "after": "Qui c'è scritto che Michelangelo nacque a Caprese nel 1475.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-1",
+    "field": "examples[1].en",
+    "before": "Michelangelo was born in Caprese in 1475 and died in 1564.",
+    "after": "It says here Michelangelo was born in Caprese in 1475.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-1",
+    "field": "practice[2].ask.said",
+    "before": "Il mercante lasciò tutto alla città. Chi ha avuto tutto?",
+    "after": "Il mercante lasciò tutto alla città. Cosa ha fatto il mercante?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-13-1",
+    "field": "practice[2].ask.en",
+    "before": "The merchant left everything to the town. Who got everything?",
+    "after": "The merchant left everything to the town. What did the merchant do?",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-13-1",
+    "field": "practice[2].answer.said",
+    "before": "La città: il mercante le ha lasciato tutto.",
+    "after": "Ha lasciato tutto alla città.",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-13-1",
+    "field": "practice[2].answer.en",
+    "before": "The town did. The merchant left it everything.",
+    "after": "He left everything to the town.",
+    "for": [
+      "teaching",
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-13-2",
+    "field": "examples[3].said",
+    "before": "Il quadro è stato dipinto da Caravaggio.",
+    "after": "Sa che questo palazzo è stato costruito da una famiglia di banchieri?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-2",
+    "field": "examples[3].en",
+    "before": "The painting was done by Caravaggio.",
+    "after": "Did you know this building was built by a family of bankers?",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-2",
+    "field": "practice[2].ask.said",
+    "before": "Questo quadro è di Caravaggio. Come lo dici con 'dipinto'?",
+    "after": "Un amico ti chiede chi ha fatto questo quadro. Cosa gli dici?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-13-2",
+    "field": "practice[2].ask.en",
+    "before": "This painting is a Caravaggio. How would you say that with 'dipinto'?",
+    "after": "A friend asks you who did this painting. What do you tell him?",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-13-2",
+    "field": "practice[2].answer.said",
+    "before": "Il quadro è stato dipinto da Caravaggio.",
+    "after": "È stato dipinto da Caravaggio.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-13-2",
+    "field": "practice[2].answer.en",
+    "before": "The painting was done by Caravaggio.",
+    "after": "It was painted by Caravaggio.",
+    "for": [
+      "teaching"
+    ]
+  },
+  {
+    "lesson": "b1-13-3",
+    "field": "examples[0].said",
+    "before": "Fu costruita nel Trecento e restaurata nell'Ottocento.",
+    "after": "È stata costruita nel Trecento, poi l'hanno restaurata nell'Ottocento.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-3",
+    "field": "examples[0].en",
+    "before": "It was built in the 1300s and restored in the 1800s.",
+    "after": "It was built in the 1300s, then restored in the 1800s.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-3",
+    "field": "examples[1].said",
+    "before": "Nel Cinquecento una famiglia di banchieri trasformò la piazza.",
+    "after": "Nel Cinquecento una famiglia di banchieri ha rifatto tutta la piazza.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-3",
+    "field": "examples[1].en",
+    "before": "In the 1500s a family of bankers transformed the square.",
+    "after": "In the 1500s a family of bankers rebuilt the whole square.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-4",
+    "field": "examples[3].said",
+    "before": "Durante la messa non si può visitare la chiesa.",
+    "after": "Però durante la messa non si può girare per la chiesa.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-4",
+    "field": "examples[3].en",
+    "before": "You can't tour the church during mass.",
+    "after": "But you can't walk around the church during mass.",
+    "for": [
+      "naturalness"
+    ]
+  },
+  {
+    "lesson": "b1-13-4",
+    "field": "practice[1].ask.en",
+    "before": "You want to photograph a fresco. What do you ask the custodian?",
+    "after": "You want to photograph a fresco. What do you ask the attendant?",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-02-2",
+    "field": "mission.say.en",
+    "before": "Don't worry, I'll tell him.",
+    "after": "Don't worry, I'll tell him myself.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-08-1",
+    "field": "mission.say.en",
+    "before": "You'd better not drink coffee in the evening.",
+    "after": "It's better if you don't drink coffee in the evening.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-08-2",
+    "field": "mission.say.en",
+    "before": "Sure, as long as you bring it back tonight.",
+    "after": "I'll lend it to you, as long as you bring it back tonight.",
+    "for": [
+      "translation"
+    ]
+  },
+  {
+    "lesson": "b1-10-4",
+    "field": "mission.say.en",
+    "before": "Dear Dr. Rossi, I'm writing to ask for information about the course.",
+    "after": "Dear Ms. Rossi, I'm writing to ask for information about the course.",
+    "for": [
+      "translation"
+    ]
+  }
+]
