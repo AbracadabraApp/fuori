@@ -66,6 +66,19 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-03: Welcome rework, on branch `claude/welcome-goals` (cloud session; not on main)
+
+Josh's list after playing the welcome (N6 3b). Done on the branch, **not verified** (no API key, no Mac, no Railway in the cloud session):
+- **Welcome as a brief of three goals** (name; masculine or feminine; how much of the language), English carries it, the language in three moments only, a closing in English; no "first time". welcome.md 2026-11-03, goals in `content/<country>/onboarding.ts`. **Guard:** once they've answered once per goal, the reader checks the three answers before her next turn; a missing one gets "Ask again", once per welcome (stored as `askedAgain`). `npm run test:welcome`.
+- **Welcome only after the country is chosen** (iOS): the welcome's PersonView was built under the country-choice overlay and started talking; the first-launch choice never set `countryPicked`.
+- **beginner.md 2026-11-03:** one idea per answer, the shortest whole sentence. Rows in prompt-trials.md (not run).
+
+Still to do, on the laptop (needs keys, Railway, the Mac):
+1. `COUNTRY=it` and `COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/welcome-trial.mts` on `claude/welcome-goals`; `beginner-dialogue.mts` before and after for answer length. Then merge to main.
+2. `fix/beginner-repeats`: `smoke:live` in both countries (against a local server on the branch, `--url=http://localhost:3000`), then merge.
+3. `railway logs | grep E-7WCH` (Don Nacho, "Speech to text unavailable": /v1/transcribe's catch, the Groq call threw). Fix the cause once it's known.
+4. iOS CI on the branch (runs on a PR or main), then a build for Josh's phone.
+
 ## 2026-11-02 (evening): the welcome built, the shorter wait, build 10 (laptop session)
 - The new onboarding built from the cloud session's scripts (Josh: "point it at docs/onboarding-giulia.md, docs/onboarding-chela.md and N6 item 3b"): `lib/welcome.ts`, `welcome.md`, `/v1/onboarding/welcomed`; the app opens it before the city list for everyone once; ends on Andiamo! / ¡Vámonos!; places the learner on the path (said back → step 1, own words → step 3, fairly well → Intermediate). Italy's is played by Luisa Cocco (Josh): Giulia lives in the hidden original Rome. Trial 8/8 both countries; whole English for each question (Josh: "what is your name", not "your name"); seen in the simulator up to her first turn with the mic off.
 - Path: back from Intermediate after two hard conversations (leaving without a word counts); onboarding kept out of the record; Doña Chela's *¡Bienvenido de nuevo!*. No reset of players (Josh: wait for the new onboarding).
