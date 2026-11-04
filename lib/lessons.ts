@@ -28,22 +28,30 @@ export interface LessonUnit { id: string; title: string; steps: LessonStep[] }
 
 let cached: LessonUnit[] | null = null;
 
+/**
+ * Every served lesson: lessons.json, then lessons-b1.json where a country has
+ * it (the Intermediate lessons, served as the Learn page's sets 2 and 3:
+ * Josh, 2026-11-03). The lesson flow finds any of them by step id.
+ */
 export function lessonUnits(): LessonUnit[] {
   if (cached) return cached;
-  const path = join(process.cwd(), 'content', pack.id, 'lessons.json');
-  if (!existsSync(path)) return (cached = []);
-  const file = JSON.parse(readFileSync(path, 'utf8')) as { units: Record<string, { title: string; steps: (LessonStep & { mission?: unknown })[] }> };
-  cached = Object.entries(file.units).map(([id, u]) => ({
-    id,
-    title: u.title,
-    steps: u.steps.map(({ mission: _mission, ...step }) => step),
-  }));
+  cached = ['lessons.json', 'lessons-b1.json'].flatMap((name) => {
+    const path = join(process.cwd(), 'content', pack.id, name);
+    if (!existsSync(path)) return [];
+    const file = JSON.parse(readFileSync(path, 'utf8')) as { units: Record<string, { title: string; steps: (LessonStep & { mission?: unknown })[] }> };
+    return Object.entries(file.units).map(([id, u]) => ({
+      id,
+      title: u.title,
+      steps: u.steps.map(({ mission: _mission, ...step }) => step),
+    }));
+  });
   return cached;
 }
 
 /** A chip on the Learn page: a lesson, named for what it lets you do */
 export interface LessonChip { step: string; name: string }
-export interface LessonArea { name: string; chips: LessonChip[] }
+/** `set`: the Learn page shows one set at a time, the next once every chip in it is green (Josh, 2026-11-03) */
+export interface LessonArea { name: string; set: number; chips: LessonChip[] }
 
 let areasCached: LessonArea[] | null = null;
 
@@ -59,7 +67,23 @@ export function lessonAreas(): LessonArea[] {
   const steps = new Set(lessonUnits().flatMap((u) => u.steps.map((s) => s.id)));
   const file = JSON.parse(readFileSync(path, 'utf8')) as { areas: LessonArea[] };
   areasCached = file.areas
-    .map((a) => ({ name: a.name, chips: a.chips.filter((c) => steps.has(c.step)).map((c) => ({ step: c.step, name: c.name })) }))
+    .map((a) => ({ name: a.name, set: a.set ?? 1, chips: a.chips.filter((c) => steps.has(c.step)).map((c) => ({ step: c.step, name: c.name })) }))
     .filter((a) => a.chips.length);
   return areasCached;
+}
+
+/**
+ * The set the Learn page shows (docs/learn.md → Lessons come in sets): the
+ * first set not yet all done, from set 2 for a learner at Intermediate or
+ * above (the welcome placed them there; the earlier sets stay reachable);
+ * the last set once every set is done.
+ */
+export function currentLessonSet(done: Set<string>, level: string | null): number {
+  const sets = [...new Set(lessonAreas().map((a) => a.set))].sort((a, b) => a - b);
+  if (!sets.length) return 1;
+  const from = level === 'intermediate' || level === 'advanced' ? 2 : 1;
+  // A country with no set that high (Mexico has one) shows what it has
+  const pool = sets.some((n) => n >= from) ? sets.filter((n) => n >= from) : sets;
+  const open = (n: number) => lessonAreas().some((a) => a.set === n && a.chips.some((c) => !done.has(c.step)));
+  return pool.find(open) ?? pool[pool.length - 1];
 }

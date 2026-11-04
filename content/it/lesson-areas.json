@@ -1,8 +1,9 @@
 {
-  "about": "The Learn page's lesson chips in four areas (Josh, 2026-11-03; docs/learn.md → Lesson chips). Each chip is named for what the lesson lets you do; one chip per lesson in content/it/lessons.json (the Beginner rewrite's 14).",
+  "about": "The Learn page's lessons as chips in areas, in sets shown one at a time (Josh, 2026-11-03; docs/learn.md → Lesson chips, Lessons come in sets). Set 1 is the 14 lessons in lessons.json; sets 2 and 3 are lessons-b1.json's four areas, named by its lesson titles. No level names anywhere the learner sees.",
   "areas": [
     {
       "name": "Meeting people",
+      "set": 1,
       "chips": [
         {
           "step": "meeting-people-1",
@@ -20,6 +21,7 @@
     },
     {
       "name": "About you",
+      "set": 1,
       "chips": [
         {
           "step": "about-you-1",
@@ -37,6 +39,7 @@
     },
     {
       "name": "Getting by",
+      "set": 1,
       "chips": [
         {
           "step": "getting-by-1",
@@ -54,6 +57,7 @@
     },
     {
       "name": "Ordering and paying",
+      "set": 1,
       "chips": [
         {
           "step": "ordering-paying-1",
@@ -74,6 +78,182 @@
         {
           "step": "ordering-paying-5",
           "name": "Card or cash"
+        }
+      ]
+    },
+    {
+      "name": "Sort things out",
+      "set": 2,
+      "chips": [
+        {
+          "step": "b1-sort-1",
+          "name": "I need…"
+        },
+        {
+          "step": "b1-sort-2",
+          "name": "How much?"
+        },
+        {
+          "step": "b1-sort-3",
+          "name": "Instructions"
+        },
+        {
+          "step": "b1-sort-4",
+          "name": "How come?"
+        },
+        {
+          "step": "b1-sort-5",
+          "name": "Describe it"
+        },
+        {
+          "step": "b1-sort-6",
+          "name": "Which one?"
+        },
+        {
+          "step": "b1-sort-7",
+          "name": "What?"
+        },
+        {
+          "step": "b1-sort-8",
+          "name": "Better?"
+        },
+        {
+          "step": "b1-sort-9",
+          "name": "How long"
+        },
+        {
+          "step": "b1-sort-10",
+          "name": "OK?"
+        }
+      ]
+    },
+    {
+      "name": "Get things done with people",
+      "set": 2,
+      "chips": [
+        {
+          "step": "b1-people-1",
+          "name": "Give it to me"
+        },
+        {
+          "step": "b1-people-2",
+          "name": "Do it for someone"
+        },
+        {
+          "step": "b1-people-3",
+          "name": "More?"
+        },
+        {
+          "step": "b1-people-4",
+          "name": "I forgot"
+        },
+        {
+          "step": "b1-people-5",
+          "name": "Polite commands"
+        },
+        {
+          "step": "b1-people-6",
+          "name": "Invite politely"
+        },
+        {
+          "step": "b1-people-7",
+          "name": "Some, every"
+        },
+        {
+          "step": "b1-people-8",
+          "name": "My work"
+        }
+      ]
+    },
+    {
+      "name": "Tell what happened",
+      "set": 3,
+      "chips": [
+        {
+          "step": "b1-story-1",
+          "name": "Then suddenly"
+        },
+        {
+          "step": "b1-story-2",
+          "name": "Already"
+        },
+        {
+          "step": "b1-story-3",
+          "name": "Because"
+        },
+        {
+          "step": "b1-story-4",
+          "name": "Nobody"
+        },
+        {
+          "step": "b1-story-5",
+          "name": "I'll manage"
+        },
+        {
+          "step": "b1-story-6",
+          "name": "I mean…"
+        },
+        {
+          "step": "b1-story-7",
+          "name": "Local history"
+        },
+        {
+          "step": "b1-story-8",
+          "name": "Who made it?"
+        },
+        {
+          "step": "b1-story-9",
+          "name": "Before!"
+        }
+      ]
+    },
+    {
+      "name": "Opinions and feelings",
+      "set": 3,
+      "chips": [
+        {
+          "step": "b1-opinions-1",
+          "name": "I think"
+        },
+        {
+          "step": "b1-opinions-2",
+          "name": "It's true"
+        },
+        {
+          "step": "b1-opinions-3",
+          "name": "Give advice"
+        },
+        {
+          "step": "b1-opinions-4",
+          "name": "As long as"
+        },
+        {
+          "step": "b1-opinions-5",
+          "name": "Hope it went well"
+        },
+        {
+          "step": "b1-opinions-6",
+          "name": "Say how you feel"
+        },
+        {
+          "step": "b1-opinions-7",
+          "name": "How great!"
+        },
+        {
+          "step": "b1-opinions-8",
+          "name": "Good luck"
+        },
+        {
+          "step": "b1-opinions-9",
+          "name": "Imagine"
+        },
+        {
+          "step": "b1-opinions-10",
+          "name": "I'd like you to"
+        },
+        {
+          "step": "b1-opinions-11",
+          "name": "If only"
         }
       ]
     }

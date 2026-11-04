@@ -76,10 +76,20 @@ function sceneJson(cityId: string, placeId: string) {
 
 const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '').trim();
 
-/** The examples said by someone other than the learner, one per place, in order */
+/**
+ * The examples to practise from, one per place, in order: those said by
+ * someone other than the learner; where every example is the newcomer's own
+ * line (asking someone to repeat, the key questions), those, and the partner
+ * is someone at that kind of place. Before, those lessons found nobody and
+ * went from teaching straight to the review (5 of Mexico's 25, 2026-11-03).
+ */
 function practiceExamples(step: LessonStep) {
-  const seen = new Set<string>();
-  return step.examples.filter((e) => norm(e.role) !== 'newcomer' && !seen.has(norm(e.place)) && seen.add(norm(e.place)));
+  const byPlace = (list: LessonStep['examples']) => {
+    const seen = new Set<string>();
+    return list.filter((e) => !seen.has(norm(e.place)) && seen.add(norm(e.place)));
+  };
+  const others = byPlace(step.examples.filter((e) => norm(e.role) !== 'newcomer'));
+  return others.length ? others : byPlace(step.examples);
 }
 
 /**
@@ -87,7 +97,7 @@ function practiceExamples(step: LessonStep) {
  * whose role fits (the role named, else the kind of place), each a different
  * person; seeded by the learner so the same lesson isn't always the same
  * people. Fewer fitting examples than SCENES: the first ones again, with
- * other people.
+ * other people. Nobody fits at all: anyone in a shown city.
  */
 export function practicePartners(step: LessonStep, seed: string) {
   const shown = cities.filter((c) => !c.hidden).flatMap((city) =>
@@ -102,7 +112,9 @@ export function practicePartners(step: LessonStep, seed: string) {
     const e = examples[k % examples.length];
     const fits = (x: (typeof shown)[number]) => !used.has(x.person!.id) && norm(x.person!.role).includes(norm(e.role));
     const byKind = (x: (typeof shown)[number]) => !used.has(x.person!.id) && norm(x.place.kind ?? '').includes(norm(e.place));
-    const pool = shown.filter(fits).length ? shown.filter(fits) : shown.filter(byKind);
+    // No one in the world has the role or the kind of place (the Intermediate
+    // lessons' clerks, offices and homes): anyone, still a different person a scene
+    const pool = shown.filter(fits).length ? shown.filter(fits) : shown.filter(byKind).length ? shown.filter(byKind) : shown.filter((x) => !used.has(x.person!.id));
     if (!pool.length) continue;
     const pick = pool[(h + k * 7) % pool.length];
     used.add(pick.person!.id);

@@ -78,12 +78,14 @@ import Testing
         json["lessons"] = [["id": "a1-04", "title": "Order at the bar", "steps": [[
             "id": "a1-04-3", "title": "I'd like, politely", "how_to": "", "intro": "", "examples": [], "notice": "", "context": "", "practice": [],
         ]]]]
-        json["lessonAreas"] = [["name": "Ordering and paying", "chips": [["step": "a1-04-3", "name": "Order politely"]]]]
+        json["lessonAreas"] = [["name": "Ordering and paying", "chips": [["step": "a1-04-3", "name": "Order politely"]]], ["name": "Sort things out", "set": 2, "chips": [["step": "b1-sort-1", "name": "I need…"]]]]
         let content = try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json))
         let chip = try #require(content.lessonAreas?.first?.chips.first)
         #expect(chip.name == "Order politely")
         #expect(content.lessonStep(chip.step)?.title == "I'd like, politely")
         #expect(content.lessonStep("a1-99-9") == nil)
+        // Sets: an area without one (servers before sets) is in the first
+        #expect(content.lessonAreas?.map(\.lessonSet) == [1, 2])
     }
 
     /// The visit stamp's words (content/<country>/language.ts → ui.stamp), and a

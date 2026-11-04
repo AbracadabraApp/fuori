@@ -15,12 +15,14 @@ import Testing
     /// GET /v1/learn/home: the Learn page's History and finished lessons, and
     /// a server from before them (only the mistake)
     @Test func readsLearnHome() throws {
-        let now = Data(#"{"lesson":null,"history":{"cities":3,"people":14,"conversations":27},"lessonsDone":["a1-01-1"]}"#.utf8)
+        let now = Data(#"{"lesson":null,"history":{"cities":3,"people":14,"conversations":27},"lessonsDone":["a1-01-1"],"lessonSet":2}"#.utf8)
         let home = try JSONDecoder().decode(APIClient.LearnHome.self, from: now)
         #expect(home.history?.people == 14)
         #expect(home.lessonsDone == ["a1-01-1"])
+        #expect(home.lessonSet == 2)
         let before = try JSONDecoder().decode(APIClient.LearnHome.self, from: Data(#"{"lesson":null}"#.utf8))
         #expect(before.history == nil)
         #expect(before.lessonsDone == nil)
+        #expect(before.lessonSet == nil)
     }
 }

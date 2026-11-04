@@ -542,6 +542,8 @@ public actor APIClient {
         public let history: History?
         /// Lessons finished: those whose review was reached (servers from 2026-11-03)
         public let lessonsDone: [String]?
+        /// The set of lessons to show: the first not yet all done (servers from 2026-11-03, sets)
+        public let lessonSet: Int?
     }
 
     /// GET /v1/learn/home

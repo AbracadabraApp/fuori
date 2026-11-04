@@ -225,8 +225,10 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
       const review = (await (await v1('/v1/turn', { cityId: plan.magda.city.id, placeId: plan.magda.place.id, lesson: { stepId, part: 'review', practiceIds: [opening.conversationId] } })).json()) as { parts?: unknown[]; promptVersion?: string };
       review.parts?.length && review.promptVersion?.endsWith(`-review:${stepId}`) ? pass(`v1 lesson: Magda reviews (${review.promptVersion})`) : fail('v1 lesson: Magda reviews', JSON.stringify(review).slice(0, 200));
       // Reaching the review is a finished lesson (Josh, 2026-11-03): the Learn page's chip turns green
-      const home = (await (await fetch(`${base}/v1/learn/home`, { headers: auth })).json()) as { lessonsDone?: string[]; history?: { cities: number; people: number; conversations: number } };
+      const home = (await (await fetch(`${base}/v1/learn/home`, { headers: auth })).json()) as { lessonsDone?: string[]; lessonSet?: number; history?: { cities: number; people: number; conversations: number } };
       home.lessonsDone?.includes(stepId) && home.history && home.history.conversations >= 1 ? pass(`v1 learn home: the lesson is done; history ${JSON.stringify(home.history)}`) : fail('v1 learn home: the lesson is done', JSON.stringify(home).slice(0, 300));
+      // One lesson done of the first set: still the first set (lib/lessons.ts → currentLessonSet)
+      home.lessonSet === 1 ? pass('v1 learn home: the first set of lessons') : fail('v1 learn home: the first set of lessons', `lessonSet ${home.lessonSet}`);
     }
   }
 

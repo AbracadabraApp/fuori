@@ -317,7 +317,11 @@ public struct LessonUnit: Codable, Sendable, Equatable, Hashable, Identifiable {
 public struct LessonArea: Codable, Sendable, Equatable, Hashable {
     public struct Chip: Codable, Sendable, Equatable, Hashable { public let step: String; public let name: String }
     public let name: String
+    /// The Learn page shows one set at a time (Josh, 2026-11-03); nil from servers before sets: 1
+    public let set: Int?
     public let chips: [Chip]
+
+    public var lessonSet: Int { self.set ?? 1 }
 }
 
 public struct LessonStep: Codable, Sendable, Equatable, Hashable, Identifiable {

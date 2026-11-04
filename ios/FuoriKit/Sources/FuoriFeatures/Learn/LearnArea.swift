@@ -22,6 +22,7 @@ struct LearnArea: View {
     /// or the old starter words from servers before it; nil from servers without either
     @State private var deckModel: FlashcardsModel?
     @State private var showingDeck = false
+    @State private var showingEarlier = false
 
     var body: some View {
         NavigationStack {
@@ -30,7 +31,7 @@ struct LearnArea: View {
                 VStack(alignment: .leading, spacing: 14) {
                     historySection
                     if let areas = model.content?.lessonAreas, !areas.isEmpty {
-                        lessonsSection(areas)
+                        lessonsSection(areas.filter { $0.lessonSet == currentSet(areas) }, earlier: areas.filter { $0.lessonSet < currentSet(areas) })
                     }
                     if let deckModel {
                         Button { showingDeck = true } label: { FlashcardsBanner(learned: deckModel.wordsLearned, pictures: deckModel.bannerPictures) }
@@ -58,6 +59,13 @@ struct LearnArea: View {
             }
             .navigationDestination(item: $lesson) { step in
                 LessonFlowView(step: step, app: model)
+            }
+            .navigationDestination(isPresented: $showingEarlier) {
+                if let areas = model.content?.lessonAreas {
+                    EarlierLessons(areas: areas.filter { $0.lessonSet < currentSet(areas) }, done: Set(home?.lessonsDone ?? [])) { step in
+                        lesson = model.content?.lessonStep(step)
+                    }
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -130,7 +138,15 @@ struct LearnArea: View {
 
     // MARK: Lessons
 
-    private func lessonsSection(_ areas: [LessonArea]) -> some View {
+    /// The set the server says to show (the first not all done); until it
+    /// answers, the first; a set the content doesn't have, the last it has
+    private func currentSet(_ areas: [LessonArea]) -> Int {
+        let sets = Set(areas.map(\.lessonSet))
+        let wanted = home?.lessonSet ?? 1
+        return sets.contains(wanted) ? wanted : (sets.max() ?? 1)
+    }
+
+    private func lessonsSection(_ areas: [LessonArea], earlier: [LessonArea]) -> some View {
         let done = Set(home?.lessonsDone ?? [])
         let all = areas.flatMap(\.chips)
         let count = all.filter { done.contains($0.step) }.count
@@ -143,21 +159,21 @@ struct LearnArea: View {
                     .foregroundStyle(Tokens.Colors.lessonsFieldInk)
                     .accessibilityLabel("\(count) of \(all.count) done")
             }
-            ForEach(areas, id: \.name) { area in
-                VStack(alignment: .leading, spacing: 6) {
-                    Text(area.name.uppercased())
-                        .typeface(.label, 12, relativeTo: .caption, weight: .bold)
-                        .tracking(1.2)
-                        .foregroundStyle(Tokens.Colors.lessonsAreaInk)
-                        .accessibilityAddTraits(.isHeader)
-                    ChipFlow(spacing: 7) {
-                        ForEach(area.chips, id: \.step) { chip in
-                            LessonChip(name: chip.name, done: done.contains(chip.step)) {
-                                lesson = model.content?.lessonStep(chip.step)
-                            }
-                        }
+            ChipAreas(areas: areas, done: done) { step in lesson = model.content?.lessonStep(step) }
+            // Finished sets stay reachable (Josh, 2026-11-03); no level names
+            if !earlier.isEmpty {
+                Button { showingEarlier = true } label: {
+                    HStack(spacing: 4) {
+                        Text("Earlier lessons")
+                        Image(systemName: "chevron.right").imageScale(.small)
                     }
+                    .typeface(.label, 15, relativeTo: .subheadline, weight: .bold)
+                    .foregroundStyle(Tokens.Colors.lessonsAreaInk)
+                    .frame(minHeight: 44)
+                    .contentShape(Rectangle())
                 }
+                .buttonStyle(PressableStyle())
+                .accessibilityHint("Shows the lessons you've done before")
             }
         }
         .padding(.horizontal, 16)
@@ -168,6 +184,59 @@ struct LearnArea: View {
 }
 
 // MARK: - Pieces
+
+/// A set's areas, each with its chips
+private struct ChipAreas: View {
+    let areas: [LessonArea]
+    let done: Set<String>
+    let open: (String) -> Void
+
+    var body: some View {
+        ForEach(areas, id: \.name) { area in
+            VStack(alignment: .leading, spacing: 6) {
+                Text(area.name.uppercased())
+                    .typeface(.label, 12, relativeTo: .caption, weight: .bold)
+                    .tracking(1.2)
+                    .foregroundStyle(Tokens.Colors.lessonsAreaInk)
+                    .accessibilityAddTraits(.isHeader)
+                ChipFlow(spacing: 7) {
+                    ForEach(area.chips, id: \.step) { chip in
+                        LessonChip(name: chip.name, done: done.contains(chip.step)) { open(chip.step) }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/// The sets before the one shown, on the same gold, newest first; a chip still starts its lesson
+private struct EarlierLessons: View {
+    let areas: [LessonArea]
+    let done: Set<String>
+    let open: (String) -> Void
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 14) {
+                ForEach(Array(Set(areas.map(\.lessonSet))).sorted(by: >), id: \.self) { n in
+                    VStack(alignment: .leading, spacing: 12) {
+                        ChipAreas(areas: areas.filter { $0.lessonSet == n }, done: done, open: open)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(16)
+                    .background(Tokens.Colors.lessonsField, in: RoundedRectangle(cornerRadius: 22))
+                }
+            }
+            .padding(.horizontal, Tokens.Space.gutter)
+            .padding(.vertical, 8)
+        }
+        .background(Tokens.Colors.paper)
+        .navigationTitle("Earlier lessons")
+        #if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
+        #endif
+    }
+}
 
 private struct SectionTitle: View {
     let text: String

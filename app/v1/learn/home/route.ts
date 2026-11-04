@@ -1,13 +1,14 @@
 /**
  * GET /v1/learn/home → { lesson: { conversationId, cityId, placeId, characterId, said, better, why } | null,
- *   history: { cities, people, conversations }, lessonsDone: [stepId] }
+ *   history: { cities, people, conversations }, lessonsDone: [stepId], lessonSet }
  *
  * The Learn page (Josh, 2026-11-03; docs/learn.md → The Learn page): its
  * History counts and which lesson chips are done. History counts what the
  * visit stamps count (lib/visits.ts): conversations where the learner said
  * something, Magda and lessons left out (a lesson's practice dialogues are
  * examples, not visits). A lesson is done once its review was reached
- * (lib/lesson.ts → lessonsDone). `lesson`, Magda's offer of the latest
+ * (lib/lesson.ts → lessonsDone). lessonSet: the set of chips to show, the
+ * first not yet all done (lib/lessons.ts → currentLessonSet). `lesson`, Magda's offer of the latest
  * mistake, stays for app builds before 2026-11-03.
  *
  * The Learn home (docs/learn.md → The Learn area; canvas "Learn area", D3;
@@ -20,6 +21,7 @@ import { apiJson, withLearner } from '@/lib/api';
 import { query } from '@/lib/db';
 import { tutor } from '@/content';
 import { lessonsDone } from '@/lib/lesson';
+import { currentLessonSet } from '@/lib/lessons';
 
 type Mistake = { said?: string; better?: string; why?: string };
 
@@ -43,6 +45,8 @@ export async function GET(request: Request) {
       [learnerId, tutor.id]
     );
     const history = { cities: Number(h.rows[0]?.cities ?? 0), people: Number(h.rows[0]?.people ?? 0), conversations: Number(h.rows[0]?.conversations ?? 0) };
+    const done = await lessonsDone(learnerId);
+    const lv = await query<{ level: string | null }>('SELECT level FROM learners WHERE id = $1', [learnerId]);
     const c = r.rows[0];
     const m = c?.mistakes.find((x) => x.said?.trim() && x.better?.trim());
     return apiJson({
@@ -50,7 +54,8 @@ export async function GET(request: Request) {
         ? { conversationId: c.id, cityId: c.city_id, placeId: c.place_id, characterId: c.character_id, said: m.said, better: m.better, why: m.why ?? '' }
         : null,
       history,
-      lessonsDone: await lessonsDone(learnerId),
+      lessonsDone: done,
+      lessonSet: currentLessonSet(new Set(done), lv.rows[0]?.level ?? null),
     });
   });
 }
