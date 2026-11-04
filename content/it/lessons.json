@@ -127,8 +127,8 @@
             },
             {
               "ask": {
-                "said": "Un negoziante ti dice: «Come sta?» Cosa rispondi?",
-                "en": "A shopkeeper says, “How are you?” What do you say?"
+                "said": "Un negoziante chiede: «Come sta?» Cosa rispondi?",
+                "en": "A shopkeeper asks, “How are you?” What do you say?"
               },
               "answer": {
                 "said": "Sto bene, grazie. E Lei?",
@@ -137,8 +137,8 @@
             },
             {
               "ask": {
-                "said": "Ciao! Come stai oggi?",
-                "en": "Hi! How are you today?"
+                "said": "Ehi, ciao! Come stai?",
+                "en": "Hey, hi! How are you?"
               },
               "answer": {
                 "said": "Sto bene, grazie. E tu?",
@@ -166,28 +166,28 @@
           "intro": "There are two ways to say 'how are you?': one for friends and one for shopkeepers and older people. You'll use them every time you greet someone here.",
           "examples": [
             {
-              "role": "barista",
-              "place": "bar",
-              "said": "Buongiorno, come sta?",
-              "en": "Good morning, how are you?"
+              "role": "newcomer",
+              "place": "shop",
+              "said": "Buongiorno, signor Rossi! Come sta?",
+              "en": "Good morning, Mr. Rossi! How are you?"
+            },
+            {
+              "role": "shopkeeper",
+              "place": "shop",
+              "said": "Benissimo, grazie. E Lei?",
+              "en": "Very well, thanks. And you?"
             },
             {
               "role": "newcomer",
-              "place": "bar",
-              "said": "Bene, grazie. E Lei?",
-              "en": "Fine, thanks. And you?"
+              "place": "piazza",
+              "said": "Ciao, Giulia! Come stai?",
+              "en": "Hi, Giulia! How are you?"
             },
             {
               "role": "neighbour",
               "place": "piazza",
-              "said": "Ciao! Come stai?",
-              "en": "Hi! How are you?"
-            },
-            {
-              "role": "newcomer",
-              "place": "piazza",
-              "said": "Bene, grazie. E tu?",
-              "en": "Fine, thanks. And you?"
+              "said": "Bene! E tu?",
+              "en": "Good! And you?"
             }
           ],
           "notice": "With a friend you say 'come stai' and 'e tu'. With a shopkeeper or an older person you say 'come sta' and 'e Lei'. When you're unsure, use Lei until they offer tu.",
@@ -205,8 +205,8 @@
             },
             {
               "ask": {
-                "said": "Un amico ti dice: «Ciao, come stai?» Cosa rispondi?",
-                "en": "A friend says, “Hi, how are you?” What do you say?"
+                "said": "Un amico chiede: «Ciao, come stai?» Cosa rispondi?",
+                "en": "A friend asks, “Hi, how are you?” What do you say?"
               },
               "answer": {
                 "said": "Bene, grazie. E tu?",
@@ -215,8 +215,8 @@
             },
             {
               "ask": {
-                "said": "Una signora anziana ti dice: «Come sta?» Cosa rispondi?",
-                "en": "An older lady says, “How are you?” What do you say?"
+                "said": "Una signora anziana chiede: «Come sta?» Cosa rispondi?",
+                "en": "An older lady asks, “How are you?” What do you say?"
               },
               "answer": {
                 "said": "Bene, grazie. E Lei?",
@@ -351,7 +351,7 @@
               "en": "No, I live here, in Florence."
             }
           ],
-          "notice": "Where you come from starts with sono: sono americano, sono di Chicago. Where you live now starts with abito: abito qui, abito a Firenze. A woman says americana; inglese stays the same for everyone.",
+          "notice": "Where you come from starts with sono: sono americano, sono di Chicago. Where you live now starts with abito: abito qui, abito a Firenze. A woman says sono americana.",
           "context": "'Di dove sei?' is one of the first things Italians ask, because where you come from matters a lot here.",
           "practice": [
             {
@@ -394,8 +394,8 @@
             },
             "listen_for": [
               "Di dov'è?",
-              "Ben arrivato",
-              "Ben arrivata"
+              "Benvenuto",
+              "Benvenuta"
             ]
           }
         },
@@ -472,8 +472,8 @@
               "en": "I've been in Italy for three weeks."
             },
             "listen_for": [
-              "Ben arrivato",
-              "Ben arrivata"
+              "Benvenuto",
+              "Benvenuta"
             ]
           }
         }
@@ -538,8 +538,8 @@
             },
             {
               "ask": {
-                "said": "Il farmacista ripete, ma è ancora veloce. Cosa chiedi?",
-                "en": "The pharmacist says it again, but it's still fast. What do you ask?"
+                "said": "Il farmacista ripete, ma parla ancora troppo veloce. Cosa chiedi?",
+                "en": "The pharmacist says it again, but he's still talking too fast. What do you ask?"
               },
               "answer": {
                 "said": "Può ripetere più piano, per favore?",
@@ -606,8 +606,8 @@
             },
             {
               "ask": {
-                "said": "Il cassiere ripete il prezzo, piano. Cosa dici?",
-                "en": "The cashier says the price again, slowly. What do you say?"
+                "said": "Il cassiere ripete il prezzo più piano. Cosa dici?",
+                "en": "The cashier says the price again more slowly. What do you say?"
               },
               "answer": {
                 "said": "Ah, ho capito, grazie!",
@@ -621,7 +621,7 @@
               },
               "answer": {
                 "said": "Sì, sì, ho capito. Grazie!",
-                "en": "Yes, yes, got it. Thanks!"
+                "en": "Yes, I've got it now. Thanks!"
               }
             }
           ],
@@ -747,11 +747,11 @@
             {
               "role": "waiter",
               "place": "restaurant",
-              "said": "Allora, due panini e un'aranciata.",
-              "en": "So, two sandwiches and an orange soda."
+              "said": "Allora, due pizze e un'aranciata.",
+              "en": "So, two pizzas and an orange soda."
             }
           ],
-          "notice": "For one, say un or una with the item: un caffè, una spremuta, un'aranciata, and uno spritz. For two, say due and change the last letter, -o to -i and -a to -e, while caffè stays the same: due cappuccini, due spremute, due caffè.",
+          "notice": "For one, say un or una with the item: un caffè, una spremuta, and un' before a vowel: un'aranciata. For two, say due and change the last letter, -o to -i and -a to -e, while caffè stays the same: due cappuccini, due spremute, due caffè.",
           "context": "",
           "practice": [
             {
@@ -913,22 +913,22 @@
           "practice": [
             {
               "ask": {
-                "said": "Vuoi il giornale. Cosa chiedi?",
-                "en": "You want the newspaper. What do you ask?"
+                "said": "Vuoi un biglietto dell'autobus. Cosa chiedi?",
+                "en": "You want a bus ticket. What do you ask?"
               },
               "answer": {
-                "said": "Quanto costa il giornale?",
-                "en": "How much is the newspaper?"
+                "said": "Quanto costa il biglietto?",
+                "en": "How much is the ticket?"
               }
             },
             {
               "ask": {
-                "said": "Al mercato guardi le pesche. Cosa chiedi?",
-                "en": "At the market you're looking at the peaches. What do you ask?"
+                "said": "Al mercato guardi i pomodori. Cosa chiedi?",
+                "en": "At the market you're looking at the tomatoes. What do you ask?"
               },
               "answer": {
-                "said": "Quanto costano le pesche?",
-                "en": "How much are the peaches?"
+                "said": "Quanto costano i pomodori?",
+                "en": "How much are the tomatoes?"
               }
             },
             {
@@ -1012,7 +1012,7 @@
             {
               "ask": {
                 "said": "Quanto costano un caffè e un cornetto?",
-                "en": "How much are an espresso and a croissant?"
+                "en": "How much for an espresso and a croissant?"
               },
               "answer": {
                 "said": "Due euro e settanta.",
@@ -1048,8 +1048,8 @@
             {
               "role": "shopkeeper",
               "place": "shop",
-              "said": "Sì, certo, può pagare con la carta.",
-              "en": "Yes, of course, you can pay by card."
+              "said": "Sì, certo, può pagare anche con la carta.",
+              "en": "Yes, of course, you can pay by card too."
             },
             {
               "role": "newcomer",
@@ -1060,8 +1060,8 @@
             {
               "role": "market vendor",
               "place": "market",
-              "said": "Certo, può pagare in contanti.",
-              "en": "Sure, you can pay cash."
+              "said": "Certo, può pagare in contanti, nessun problema.",
+              "en": "Sure, you can pay cash, no problem."
             }
           ],
           "notice": "Posso pagare asks if you can pay, and then you add how: con la carta or in contanti. The answer you hear back is può pagare.",
