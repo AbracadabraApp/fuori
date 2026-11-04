@@ -34,19 +34,23 @@ Dropped: "stories" as a sixth topic (Josh: "dubious"); writers, songs and films 
 
 #### Campanilismo
 
-- **Between cities:** Bologna and Modena (*La secchia rapita*, the bucket Modena took in 1325), Siena and Firenze (Montaperti, 1260), Palermo and Catania (arancina or arancino), Lucca and Pisa, Verona and the rest of the Veneto (*"Veneziani gran signori, Padovani gran dotori, Vicentini magnagati, Veronesi tuti mati"*), Torino and Milano, north and south. Mexico: chilangos, regios and tapatíos.
+- **Between cities:** Bologna and Modena (*La secchia rapita*, the bucket Modena took in 1325), Siena and Firenze (Montaperti, 1260), Palermo and Catania (arancina or arancino), Lucca and Pisa, Verona and the rest of the Veneto (the old rhyme *"Veneziani gran signori, Padovani gran dotori, Vicentini magnagati, Veronesi tuti mati"*, in dialect: something a character quotes and explains, not words for the learner to pick up), Torino and Milano, north and south. Mexico: chilangos, regios and tapatíos.
 - **Inside a city (Josh):** Rome's quartieri (Trastevere's *noantri*, Roma and Lazio), Siena's contrade (each has its rival), Venice's sestieri (Castellani and Nicolotti, who fought on the bridges).
 - **Who:** characters whose role gives them little to say (Josh: "pharmacist, bar, person at bus stop") become the ones with opinions.
-- **When:** leaving ("A Firenze? Portati il sale, il pane non ce l'hanno!"), arriving (where have you come from?), and any time the learner mentions another city or neighbourhood. Reacting to the learner's route needs the cities they've lived in; today characters don't know it.
+- **When:** leaving ("A Firenze? Portati il sale, il pane non ce l'hanno!"), arriving (where have you come from?), and any time the learner mentions another city or neighbourhood. Reacting to the learner's route needs the cities they've lived in: every conversation already stores its city, but no prompt reads it (and `citiesVisited` on `JourneyState` is never filled).
 - **Tone:** teasing and affectionate, never mean.
 
 #### Food
 
 - **All food is local, and comes with some education** (Josh). Characters talk about their city's dishes, not generic Italian food, and say why.
-- **Eating rules, corrected in character**, the way language mistakes are recast: no cappuccino after lunch, no Parmesan on fish, don't cut the spaghetti ("Ma no! Il cappuccino a quest'ora?!"), with the reason.
+- **Eating customs, as what people do**, never a correction of the learner (the lessons' rule: customs are described as what people do, with no warnings): the barista who stops making cappuccino after eleven and says why, the cook who never puts Parmesan on fish. The custom is the character's own habit and its reason.
 - **Food is geography**: butter and rice in the north, olive oil in the south; pistachios from Bronte, buffalo mozzarella from Campania.
 - **What's in season** at the market: the vendor says what's good this week and how to cook it.
 - **Cooking**: a nonna or a cook teaches a dish step by step; the imperative in real use.
+
+#### Beginners (from a review)
+
+Teaching wins, and a Beginner can't follow a story in the language. Beginner characters already speak in parts: a sentence or two of spoken English to set the scene, then the words worth keeping in the language ([CLAUDE.md](../CLAUDE.md), `lib/beginner.ts`). The culture goes in those parts: the story in English (why mortadella has pistachios), then the one word worth keeping in the language (*la sfoglia*). Intermediate and Advanced hear it in the language.
 
 ## What exists today
 
@@ -54,13 +58,13 @@ Dropped: "stories" as a sixth topic (Josh: "dubious"); writers, songs and films 
 
 Each city character can have a `here` line (`lib/types.ts`, `CityCharacter.here`). `lib/characters/for-place.ts` adds it to the place's name and kind, and the result fills `{setting}` in the character prompt ("where I am"; `content/it/prompts/character.md`) and the Beginner prompt (`lib/beginner.ts`). Nothing else cultural reaches a character.
 
-**Coverage, Italy (2026-11-03):** every shown place has one: 203 of 211, the 8 without are Magda's language schools. Across all characters, shown or not, 199 of 672 have one; the hidden ones have none.
+**Coverage, Italy (2026-11-03):** every shown place has one except Magda's 8 language schools (203 of 211). Across all characters, shown or not, 199 of 672 have one; the hidden ones have none.
 
 **Quality (Claude's reading of all 199):** most are good and already local pride. The best give a specific local thing, its reason, and something the character would say:
 - Palermo's meusaro: *"schietta o maritata?"*
 - Torino: the bicerin *"must never be stirred"*
 - Genova: *"pesto never goes near a blender"*
-- Palermo's chef: arancina *"with an e, here in Palermo"*
+- Palermo's chef: *"arancine (with an e, here in Palermo)"*, correcting anyone who says arancini
 - Venezia: why a coffee at a table at Florian costs more than at the bar
 - Napoli: the caffè sospeso and the Maradona shrine at Bar Nilo
 
@@ -76,7 +80,7 @@ Weaker kinds:
 | Folklore and traditions | decent: Festa della Bruna, Calendimaggio, the Palio, Santa Lucia, Sant'Oronzo, the passeggiata |
 | History | some: Prati and 1871, Siena's university (1240), the Cassaro's Arabic name |
 | Art | thin: Il Gesù's ceiling, Signorelli in Orvieto, Monteverdi in Mantova, Brunelleschi |
-| Campanilismo | almost none: arancina "with an e" is the only real rivalry |
+| Campanilismo | almost none: arancine against arancini is the only real rivalry |
 
 **Mexico (2026-11-03):** 5 cities; every shown place has a line (60 of 65; the 5 without are the language schools), and 61 of 65 characters overall. Not yet read for quality; first impressions are local and specific (the tejuino cart by San Juan de Dios, mezcal with sal de gusano, Talavera cups in Puebla). Rivalries: chilangos, regios and tapatíos; Puebla and its mole poblano against Oaxaca's seven moles.
 
@@ -121,7 +125,7 @@ Thinner (Siena has no contrada, Lucca's walls are only in bar names, Milano and 
 3. **Give the weak roles campanilismo** (Josh): pharmacists, baristas, people at stops, pensioners; between cities everywhere, between neighbourhoods in Rome, Siena and Venice.
 4. **Use the city lists**: write each city's `here` lines from its `food`, `customs` and `localTouches`, so the material in the files reaches the characters.
 5. **Balance the topics per city**: today it's mostly food; aim for every city to have someone for history, traditions, art and campanilismo among its shown places.
-6. **Facts are checked** before they ship: lines are generated, someone who knows the place (Josh, or a native speaker) reads them once. Well-known facts only.
+6. **Facts are checked by a judge**, not a person (Josh: no human proofreading, as for lessons, [lesson-judges.md](lesson-judges.md)): a narrow fact judge on the lesson judges' pattern that fails any claim it can't confirm. Standard: well-known facts only. Same bounded pass: write, judge once, fix failed lines, recheck once, drop what still fails.
 7. **Both countries the same way** (Josh: culture is a goal for both): local pride is data, not code, so nothing changes in the prompts. Mexico's five cities get the same pass; their lines are already nearly complete, so it's a quality and topic-balance pass, not a fill.
 
 ## Weather
@@ -134,10 +138,11 @@ Thinner (Siena has no contrada, Lucca's walls are only in bar names, Milano and 
 
 ## Open questions
 
-- **Does local pride stay in `here`, or move to `caresAbout`?** `caresAbout` is free to use (checked 2026-11-03): it's on the character sheet (`lib/types.ts`), every city character gets it empty (`lib/characters/for-place.ts`), only Magda's two sheets fill it, no prompt reads it, and `tests/check-content-api.ts` keeps it out of what's sent to the app (`tests/check-turn-request.ts` uses it empty as test data). Using it means a small change to how the prompt is built, and gives tests and suggestions one place to look.
+- **Does local pride stay in `here`, or move to `caresAbout`?** `caresAbout` is free to use (checked 2026-11-03): it's on the character sheet (`lib/types.ts`), every city character gets it empty (`lib/characters/for-place.ts`), only Magda's two sheets fill it, no prompt reads it, and `tests/check-content-api.ts` keeps it out of what's sent to the app (`tests/check-turn-request.ts` uses it empty as test data). Using it means a small change to how the prompt is built, and gives tests and suggestions one place to look. The other option (from a review): a new `pride` field, so the fact judge and tests check it apart from the setting. Either way it's a separate field; the choice is the name.
 - **How it comes up:** does the character bring their topic up unprompted, or only when it fits? The character prompt says "describe the situation, not how to talk", so the line describes what they care about and leaves the rest to them.
 - **How the learner finds who knows what:** daily suggestions could point at it ("Ask the sfoglina how she rolls the dough").
 - **Geography** beyond food and weather (the sea, the lakes, the mountains, `dayTrips`): part of local pride, or its own topic?
 - **Craft and sport** (football especially): topics of their own, or inside traditions and campanilismo?
-- **The learner's route** for campanilismo between cities: characters would need the cities the learner has lived in.
-- **How we'd know it works:** a judge in `npm run test:conversations` for "the learner heard something specific about this city", alongside the existing scores.
+- **The learner's route** for campanilismo between cities: the cities are in the conversation records; wiring them into the prompt is the open part.
+- **How we'd know it works:** a judge in `npm run test:conversations` for "the learner heard something specific about this city", and that the learner kept a word from it (a language goal, not trivia), alongside the existing scores.
+- **Prompt length:** whichever field holds it, the culture reaches the prompt as one line, not a new block.
