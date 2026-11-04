@@ -158,6 +158,14 @@ Each city's file has 30–40 places but the app shows about 10 (`content/it/show
 
 **Cities after "Mostra altro"** (13 places): Lecce, Museo Faggiano (the owner who found the city under his house); Taormina, Ceramiche Siciliane d'Arte (the *teste di moro*); Siracusa, Antica Giudecca (the historian); Genova, Focacceria Genovese (a city specialty, like the pastry shops kept) and La Lanterna (the keeper); Milano, the Duomo (the priest); Verona, Casa di Giulietta (the custodian); Assisi, the Basilica di San Francesco (the friar); Bergamo, Teatro Donizetti (the conductor); Torino, Museo dell'Automobile (the curator); Lucca, the Duomo (the Volto Santo); Orvieto, the Duomo (the priest); Mantova, Palazzo Te (the art historian).
 
+**More hidden places, of kinds left out above** (markets, parks; Josh: add): Siracusa, Parco Archeologico della Neapolis (an archaeologist: the Greek theatre); Firenze, Giardino di Boboli (the head gardener: the Medici gardens); Matera, Parco della Murgia (the ranger: the cave churches facing the Sassi); Palermo, Mercato della Vucciria (the fishmonger: the city's most famous old market); Assisi, Frantoio Assisi (the olive-oil maker: the November harvest); Torino, Mercato del Balon (the antiques dealer: the old flea market).
+
+**Hidden places whose person is a tour guide** (Josh: fine to change): recast as someone who lives or works there, the way the Colosseo got Serena: the Arena di Verona, the Teatro Antico in Taormina, Castel dell'Ovo, the Belvedere dei Sassi in Matera, the Mole Antonelliana. A preference, not a rule: Rome's Matteo is a part-time guide (Josh's wording) and works; the learner isn't a tourist, and a guide's job is to treat them as one.
+
+**Famous places with nobody there** (in the files, no character): the Duomo in Florence, the Basilica di San Marco, the Martorana and the Cathedral in Palermo, the Pinacoteca di Brera. Each would need a new person. Open.
+
+**Waiting (Josh): important things not in the files at all**: a contrada in Siena, a glass furnace on Murano, the Maradona mural in Naples, someone on Lucca's walls, La Scala; in Mexico, Rivera's murals at the Palacio Nacional, mariachi in Guadalajara, lucha libre at the Arena México.
+
 **Mexico** shows nearly everything already; two hidden places add culture: Panadería El Trigal (Oaxaca) and La Gran Fama on Calle de los Dulces (Puebla).
 
 ## Proposals
