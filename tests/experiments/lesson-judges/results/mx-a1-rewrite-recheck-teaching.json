@@ -1,0 +1,37 @@
+[
+  {
+    "id": "about-you-1",
+    "field": "examples.3.said",
+    "text": "Me llamo Diego. ¿Cómo te llamas?",
+    "why": "The new example hands over practice.2's answer: 'Hola, ¿cómo te llamas?' (unchanged) is now this example's second sentence with Hola added, i.e. a shortened copy.",
+    "fix": "Mucho gusto. Me llamo Diego. (en: Nice to meet you. My name's Diego.) ¿cómo te llamas? stays taught by the notice and practice.0's ask."
+  },
+  {
+    "id": "getting-by-3",
+    "field": "practice.2.ask.said",
+    "text": "Tienes muchas bolsas y no puedes abrir la puerta. ¿Qué pides?",
+    "why": "The question contains its answer: 'puedes abrir la puerta' gives the learner the verb, the object and almost the form of '¿Me puede abrir la puerta?'.",
+    "fix": "Tienes las manos llenas de bolsas y la puerta está cerrada. ¿Qué pides? (en: Your hands are full of bags and the door is closed. What do you ask?)"
+  },
+  {
+    "id": "meeting-people-4",
+    "field": "practice.1.ask.said",
+    "text": "En la farmacia hay un señor. Es la tarde. ¿Qué dices?",
+    "why": "The lesson teaches choosing the title; saying 'un señor' in the question gives away the title in the answer 'Buenas tardes, señor' (the other two asks use chico and vecina mayor instead).",
+    "fix": "En la farmacia hay un hombre. Es de tarde. ¿Qué dices? (en: There's a man at the pharmacy. It's afternoon. What do you say?)"
+  },
+  {
+    "id": "ordering-paying-2",
+    "field": "examples.3.said",
+    "text": "Aquí tiene: dos mangos.",
+    "why": "Broke the unchanged notice: with limones replaced by mangos (here and in practice.2), no example or answer shows the -es plural the notice teaches ('-es after a consonant: tacos, limones'); every plural is now -s.",
+    "fix": "Aquí tiene: dos melones. (en: Here you go: two melons.)"
+  },
+  {
+    "id": "ordering-paying-2",
+    "field": "context",
+    "text": "Limón in Mexico is the small green lime.",
+    "why": "Broke the unchanged context: limón no longer appears anywhere in the lesson, so this note explains nothing the learner hears.",
+    "fix": "(empty) — or, if the notice keeps 'limones' as its -es example, leave the notice and drop only this context line."
+  }
+]

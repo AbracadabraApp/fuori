@@ -59,3 +59,17 @@ Most recheck failures were left-overs of applying the fixes (a role not changed 
 Josh's calls on the teaching judge's held suggestions (2026-11-03): "Everyone" → "Some, every"; "How much?", "How come?" and "Polite commands" stay as they are.
 
 The writing instructions need the lesson the teaching numbers show: practice answers must use the point in a new sentence, never an example's. Files: `results/it-b1-rewrite-*.json`.
+
+## 4 · Mexico's Beginner rewrite: 25 lessons become 23 chips (2026-11-03, branch `claude/mexico-rewrite`)
+
+Josh's chips (docs/learn.md → Lesson chips, Mexico A1): the 25 merged into 20, plus three paying lessons from syllabus unit a1-06. The first lessons written under `lesson-steps.md` 2026-11-03 (practice answers as new sentences).
+
+| Judge | First pass | Recheck of the 27 changed values |
+|---|---|---|
+| Grammar | 0 | 0 |
+| Naturalness | 4 (limes aren't bought by twos; *¿me regala?* is for small free things) | 4 |
+| Level | 3 (*pisar*, *oír*, *atender* in practice prompts) | 0 |
+| Teaching | 11 (3 practice answers copying examples, against 31 in Italy's B1 rewrite) | 5 |
+| Translation | 3 | 2 |
+
+The recheck's 11 were wording slips in the fixes and two unchanged fields the fixes broke (a notice's *-es* plural lost with the limes; a context about limes); all fixed with the judges' fixes or a simpler line where a fix brought in an A2 pronoun, as in the other passes; no lesson dropped. Files: `results/mx-a1-rewrite-*.json`.

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "meeting-people-2",
+    "field": "examples.0.said",
+    "text": "Estoy contento, gracias.",
+    "why": "A shopkeeper answering how he is wouldn't normally say 'estoy contento'; it sounds like a statement about mood, not the everyday reply.",
+    "fix": "Estoy bien, gracias a Dios. (en: I'm well, thank God.)"
+  },
+  {
+    "id": "getting-by-2",
+    "field": "practice.2.ask.said",
+    "text": "Una señora en el mercado habla y no entiendes. ¿Qué dices?",
+    "why": "'Habla y no entiendes' is clipped; in Mexico it's 'te dice algo' / 'no le entiendes' (the lesson's own example uses 'No le entendí').",
+    "fix": "Una señora en el mercado te habla y no le entiendes. ¿Qué dices? (en: A woman at the market is talking to you and you don't understand. What do you say?)"
+  },
+  {
+    "id": "meeting-people-4",
+    "field": "practice.1.ask.said",
+    "text": "En la farmacia hay un señor. Es la tarde. ¿Qué dices?",
+    "why": "'Es la tarde' isn't how a Mexican says it's afternoon; it's 'Es de tarde' or 'Son las cuatro'.",
+    "fix": "En la farmacia hay un hombre. Es de tarde. ¿Qué dices?"
+  },
+  {
+    "id": "ordering-paying-7",
+    "field": "practice.2.ask.said",
+    "text": "Te gusta un sombrero en el mercado. ¿Qué preguntas?",
+    "why": "'Te gusta un sombrero en el mercado' reads like a word-for-word copy of the English; a teacher would set the scene differently.",
+    "fix": "Quieres comprar un sombrero en el mercado. ¿Qué preguntas? (en: You want to buy a hat at the market. What do you ask?)"
+  }
+]

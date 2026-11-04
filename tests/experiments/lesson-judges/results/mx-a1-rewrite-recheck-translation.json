@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ordering-paying-6",
+    "field": "practice.1.ask.en",
+    "text": "What are you looking for?",
+    "why": "Drops 'joven', which the Spanish line says out loud.",
+    "fix": "What are you looking for, young man?"
+  },
+  {
+    "id": "meeting-people-4",
+    "field": "practice.1.ask.en",
+    "text": "There's a man at the pharmacy. It's the afternoon. What do you say?",
+    "why": "'It's the afternoon' is unnatural American English for stating the time of day.",
+    "fix": "There's a man at the pharmacy. It's afternoon. What do you say?"
+  }
+]
