@@ -9,7 +9,7 @@ Italy looks like a stereotype of tourist Rome (Josh). The tests showed where it 
 - **The scenes and the cast.** Each place's `imagePrompt` was written once by the city generator (`scripts/generate-city-content.mjs`) from the "City Pantry Formula" and the pastel template in `content/it/generation.json`, with style and scene mixed in one sentence. The people at Rome's shown places are mostly older Romans in aprons (youngest 34).
 - **The place list.** Most shown places are food counters (bar, bakery, market, enoteca, trattoria, gelateria): they look alike and the conversation is the same short transaction.
 
-What worked: the same places with **scenes generated again** from one generic instruction (an ordinary weekday today, as someone who lives in the neighbourhood sees it), drawn with Mexico's builder. Test images on the laptop in `.flashcards-tmp/rome-scene/`, `rome-fine/`, `rome-new/`, `rome-media/`.
+What worked: the same places with **scenes generated again** from one generic instruction (an ordinary weekday today, as someone who lives in the neighbourhood sees it), drawn with Mexico's builder. The test images (laptop, `.flashcards-tmp/rome-*`) were deleted to free disk space (Josh, 2026-11-04).
 
 ## Decisions (Josh)
 
