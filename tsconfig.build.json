@@ -1,0 +1,5 @@
+{
+  "//": "next build's type check (next.config.ts → typescript.tsconfigPath): only the code that ships. Railway's watch patterns skip tests/ and scripts/, so a type error there broke every production build without a push there ever starting one (2026-11-04: two experiment scripts, b3bac4b to 5ba75cf). npx tsc --noEmit still checks everything (tsconfig.json).",
+  "extends": "./tsconfig.json",
+  "exclude": ["node_modules", "tests", "scripts", "sketches", "prototype", "style-test", "ios"]
+}
