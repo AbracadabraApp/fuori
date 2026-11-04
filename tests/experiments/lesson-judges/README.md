@@ -18,6 +18,20 @@ What it showed: the Italian is mostly right; problems cluster in Magda's practic
 
 Files: `results/it-a1-{grammar,naturalness,level,teaching,translation}.json` (first pass), `it-a1-summary.md`, `it-a1-changes.json` (every change, before and after), `it-a1-recheck-*.json`, `it-a1-fixed-lessons.json`.
 
+### The Beginner rewrite: 14 lessons, one per chip (2026-11-03, branch `claude/beginner-rewrite`)
+
+Written from the 21 with the held fixes carried over, then judged once:
+
+| Judge | First pass | Recheck of the 29 changed values |
+|---|---|---|
+| Grammar | 0 | 0 |
+| Naturalness | 8 | 0 |
+| Level | 3 (*ti dice*: indirect *ti* is A2) | 0 |
+| Teaching | 5 | 1 (a notice said "un' before a vowel"; only *una* shortens) |
+| Translation | 3 | 1 ("Hey, hi!") |
+
+The two recheck failures were one-line wording slips with the judge's own fix, applied as in the first A1 pass, rather than dropping two of the 14 chips (*Order one or two*, *How are you*). Josh can overrule. Left open: the recheck noticed, outside its scope, that two *How are you* practice answers repeat its examples word for word. Files: `results/it-a1-rewrite-*.json`.
+
 ## 2 · Italy's 60 Intermediate (B1) lessons, a draft the app doesn't read (`content/it/lessons-b1.json`)
 
 13 B1 units, written by four agents from the syllabus with the Intermediate prompt (Josh signed off on the level, 2026-11-02).

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "meeting-people-2",
+    "field": "practice[1].ask.said",
+    "text": "Un negoziante ti dice: «Come sta?» Cosa rispondi?",
+    "why": "ti dice uses the indirect object pronoun ti, taught at A2 (a2-07); hard to catch heard once at speed.",
+    "fix": "Un negoziante chiede: «Come sta?» Cosa rispondi?"
+  },
+  {
+    "id": "meeting-people-3",
+    "field": "practice[1].ask.said",
+    "text": "Un amico ti dice: «Ciao, come stai?» Cosa rispondi?",
+    "why": "ti dice uses the indirect object pronoun ti, taught at A2 (a2-07).",
+    "fix": "Un amico chiede: «Ciao, come stai?» Cosa rispondi?"
+  },
+  {
+    "id": "meeting-people-3",
+    "field": "practice[2].ask.said",
+    "text": "Una signora anziana ti dice: «Come sta?» Cosa rispondi?",
+    "why": "ti dice uses the indirect object pronoun ti, taught at A2 (a2-07).",
+    "fix": "Una signora anziana chiede: «Come sta?» Cosa rispondi?"
+  }
+]

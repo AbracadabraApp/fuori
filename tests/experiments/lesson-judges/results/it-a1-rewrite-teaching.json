@@ -1,0 +1,42 @@
+[
+  {
+    "id": "meeting-people-3",
+    "field": "examples",
+    "text": "Buongiorno, come sta? / Bene, grazie. E Lei? / Ciao! Come stai? / Bene, grazie. E tu?",
+    "why": "The four examples nearly repeat meeting-people-2's (Come sta? ... E Lei? / Ciao! Come stai? ... E tu?), so the later lesson adds nothing new to look at. Here the newcomer should be the one asking, using names, so tu and Lei are shown from the asking side.",
+    "fix": [
+      {"role": "newcomer", "place": "shop", "said": "Buongiorno, signor Rossi! Come sta?", "en": "Good morning, Mr Rossi! How are you?"},
+      {"role": "shopkeeper", "place": "shop", "said": "Benissimo, grazie. E Lei?", "en": "Very well, thanks. And you?"},
+      {"role": "newcomer", "place": "piazza", "said": "Ciao, Giulia! Come stai?", "en": "Hi, Giulia! How are you?"},
+      {"role": "neighbour", "place": "piazza", "said": "Bene! E tu?", "en": "Good! And you?"}
+    ]
+  },
+  {
+    "id": "about-you-2",
+    "field": "notice",
+    "text": "Where you come from starts with sono: sono americano, sono di Chicago. Where you live now starts with abito: abito qui, abito a Firenze. A woman says americana; inglese stays the same for everyone.",
+    "why": "Slips in a second grammar point, adjective classes (inglese doesn't change), with a form no example shows.",
+    "fix": "Where you come from starts with sono: sono americano, sono di Chicago. Where you live now starts with abito: abito qui, abito a Firenze. A woman says sono americana."
+  },
+  {
+    "id": "ordering-paying-1",
+    "field": "notice",
+    "text": "For one, say un or una with the item: un caffè, una spremuta, un'aranciata, and uno spritz. For two, say due and change the last letter, -o to -i and -a to -e, while caffè stays the same: due cappuccini, due spremute, due caffè.",
+    "why": "Uno spritz brings in a fourth article form that no example or practice answer uses.",
+    "fix": "For one, say un or una with the item: un caffè, una spremuta, and un' before a vowel: un'aranciata. For two, say due and change the last letter, -o to -i and -a to -e, while caffè stays the same: due cappuccini, due spremute, due caffè."
+  },
+  {
+    "id": "ordering-paying-3",
+    "field": "practice[0]",
+    "text": "Vuoi il giornale. Cosa chiedi? => Quanto costa il giornale?",
+    "why": "The answer copies example 1 word for word, so it tests recall of the example rather than using quanto costa with something new.",
+    "fix": {"ask": {"said": "Vuoi un biglietto dell'autobus. Cosa chiedi?", "en": "You want a bus ticket. What do you ask?"}, "answer": {"said": "Quanto costa il biglietto?", "en": "How much is the ticket?"}}
+  },
+  {
+    "id": "ordering-paying-3",
+    "field": "practice[1]",
+    "text": "Al mercato guardi le pesche. Cosa chiedi? => Quanto costano le pesche?",
+    "why": "The answer copies example 3 word for word, so it doesn't make the learner apply quanto costano to a new item.",
+    "fix": {"ask": {"said": "Al mercato guardi i pomodori. Cosa chiedi?", "en": "At the market you're looking at the tomatoes. What do you ask?"}, "answer": {"said": "Quanto costano i pomodori?", "en": "How much are the tomatoes?"}}
+  }
+]

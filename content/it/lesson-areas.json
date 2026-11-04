@@ -1,34 +1,81 @@
 {
-  "about": "The Learn page's lesson chips in four areas (Josh, 2026-11-03; docs/learn.md → Lesson chips). Each chip is named for what the lesson lets you do. Until the held Beginner rewrite merges the 21 lessons into 14, the 21 live ones are mapped here; the rewrite replaces this file with Josh's 14.",
+  "about": "The Learn page's lesson chips in four areas (Josh, 2026-11-03; docs/learn.md → Lesson chips). Each chip is named for what the lesson lets you do; one chip per lesson in content/it/lessons.json (the Beginner rewrite's 14).",
   "areas": [
-    { "name": "Meeting people", "chips": [
-      { "step": "a1-01-3", "name": "Hello" },
-      { "step": "a1-01-2", "name": "How are you" },
-      { "step": "a1-01-1", "name": "Be polite" }
-    ] },
-    { "name": "About you", "chips": [
-      { "step": "a1-03-2", "name": "Name" },
-      { "step": "a1-03-1", "name": "I am" },
-      { "step": "a1-03-4", "name": "Nationality" },
-      { "step": "a1-03-5", "name": "Where you're from" },
-      { "step": "a1-03-3", "name": "Where you live" },
-      { "step": "a1-03-6", "name": "Time here" }
-    ] },
-    { "name": "Getting by", "chips": [
-      { "step": "a1-02-1", "name": "When you're lost" },
-      { "step": "a1-02-2", "name": "Say it again" },
-      { "step": "a1-02-3", "name": "Got it" },
-      { "step": "a1-02-4", "name": "Ask for a word" }
-    ] },
-    { "name": "Ordering and paying", "chips": [
-      { "step": "a1-04-1", "name": "Order one" },
-      { "step": "a1-04-2", "name": "Order two" },
-      { "step": "a1-04-3", "name": "Order politely" },
-      { "step": "a1-04-4", "name": "What you'll have" },
-      { "step": "a1-05-3", "name": "How much" },
-      { "step": "a1-05-1", "name": "Numbers" },
-      { "step": "a1-05-2", "name": "Hear a price" },
-      { "step": "a1-05-4", "name": "Card or cash" }
-    ] }
+    {
+      "name": "Meeting people",
+      "chips": [
+        {
+          "step": "meeting-people-1",
+          "name": "Hello"
+        },
+        {
+          "step": "meeting-people-2",
+          "name": "How are you"
+        },
+        {
+          "step": "meeting-people-3",
+          "name": "Be polite"
+        }
+      ]
+    },
+    {
+      "name": "About you",
+      "chips": [
+        {
+          "step": "about-you-1",
+          "name": "Name"
+        },
+        {
+          "step": "about-you-2",
+          "name": "Where you're from"
+        },
+        {
+          "step": "about-you-3",
+          "name": "Time here"
+        }
+      ]
+    },
+    {
+      "name": "Getting by",
+      "chips": [
+        {
+          "step": "getting-by-1",
+          "name": "When you're lost"
+        },
+        {
+          "step": "getting-by-2",
+          "name": "Got it"
+        },
+        {
+          "step": "getting-by-3",
+          "name": "Ask for a word"
+        }
+      ]
+    },
+    {
+      "name": "Ordering and paying",
+      "chips": [
+        {
+          "step": "ordering-paying-1",
+          "name": "Order one or two"
+        },
+        {
+          "step": "ordering-paying-2",
+          "name": "Order politely"
+        },
+        {
+          "step": "ordering-paying-3",
+          "name": "How much"
+        },
+        {
+          "step": "ordering-paying-4",
+          "name": "Hear a price"
+        },
+        {
+          "step": "ordering-paying-5",
+          "name": "Card or cash"
+        }
+      ]
+    }
   ]
 }

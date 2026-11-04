@@ -1,0 +1,9 @@
+[
+  {
+    "id": "ordering-paying-1",
+    "field": "notice",
+    "text": "For one, say un or una with the item: un caffè, una spremuta, and un' before a vowel: un'aranciata. For two, say due and change the last letter, -o to -i and -a to -e, while caffè stays the same: due cappuccini, due spremute, due caffè.",
+    "why": "The notice teaches a wrong rule: \"un' before a vowel\" would give *un'amico*. Only una shortens to un' before a vowel; un stays un (un amico). The learner would take a false rule from the explanation.",
+    "fix": "For one, say un or una with the item: un caffè, una spremuta, and una becomes un' before a vowel: un'aranciata. For two, say due and change the last letter, -o to -i and -a to -e, while caffè stays the same: due cappuccini, due spremute, due caffè."
+  }
+]
