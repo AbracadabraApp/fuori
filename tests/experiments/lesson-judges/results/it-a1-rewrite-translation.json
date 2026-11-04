@@ -1,0 +1,5 @@
+[
+  {"id": "getting-by-1", "field": "practice[2].ask.en", "text": "The pharmacist says it again, but it's still fast. What do you ask?", "why": "\"è ancora veloce\" is about the pharmacist (he's still fast); \"it's still fast\" is unnatural English", "fix": "The pharmacist says it again, but he's still talking fast. What do you ask?"},
+  {"id": "getting-by-2", "field": "practice[2].answer.en", "text": "Yes, yes, got it. Thanks!", "why": "Italian \"sì, sì\" is warm reassurance; English \"Yes, yes\" reads as impatient, which changes the register", "fix": "Yes, I've got it now. Thanks!"},
+  {"id": "ordering-paying-4", "field": "practice[2].ask.en", "text": "How much are an espresso and a croissant?", "why": "Word-for-word from \"quanto costano\"; not natural English", "fix": "How much for an espresso and a croissant?"}
+]

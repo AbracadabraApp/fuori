@@ -1,0 +1,264 @@
+[
+  {
+    "id": "getting-by-1",
+    "field": "practice.2.ask.en",
+    "before": "The pharmacist says it again, but it's still fast. What do you ask?",
+    "after": "The pharmacist says it again, but he's still talking too fast. What do you ask?"
+  },
+  {
+    "id": "getting-by-2",
+    "field": "practice.2.answer.en",
+    "before": "Yes, yes, got it. Thanks!",
+    "after": "Yes, I've got it now. Thanks!"
+  },
+  {
+    "id": "ordering-paying-4",
+    "field": "practice.2.ask.en",
+    "before": "How much are an espresso and a croissant?",
+    "after": "How much for an espresso and a croissant?"
+  },
+  {
+    "id": "meeting-people-2",
+    "field": "practice.2.ask.said",
+    "before": "Ciao! Come stai oggi?",
+    "after": "Ehi, ciao! Come stai?"
+  },
+  {
+    "id": "about-you-2",
+    "field": "mission.listen_for",
+    "before": [
+      "Di dov'è?",
+      "Ben arrivato",
+      "Ben arrivata"
+    ],
+    "after": [
+      "Di dov'è?",
+      "Benvenuto",
+      "Benvenuta"
+    ]
+  },
+  {
+    "id": "about-you-3",
+    "field": "mission.listen_for",
+    "before": [
+      "Ben arrivato",
+      "Ben arrivata"
+    ],
+    "after": [
+      "Benvenuto",
+      "Benvenuta"
+    ]
+  },
+  {
+    "id": "getting-by-1",
+    "field": "practice.2.ask.said",
+    "before": "Il farmacista ripete, ma è ancora veloce. Cosa chiedi?",
+    "after": "Il farmacista ripete, ma parla ancora troppo veloce. Cosa chiedi?"
+  },
+  {
+    "id": "getting-by-2",
+    "field": "practice.1.ask.said",
+    "before": "Il cassiere ripete il prezzo, piano. Cosa dici?",
+    "after": "Il cassiere ripete il prezzo più piano. Cosa dici?"
+  },
+  {
+    "id": "getting-by-2",
+    "field": "practice.1.ask.en",
+    "before": "The cashier says the price again, slowly. What do you say?",
+    "after": "The cashier says the price again more slowly. What do you say?"
+  },
+  {
+    "id": "ordering-paying-1",
+    "field": "examples.3.said",
+    "before": "Allora, due panini e un'aranciata.",
+    "after": "Allora, due pizze e un'aranciata."
+  },
+  {
+    "id": "ordering-paying-5",
+    "field": "examples.1.said",
+    "before": "Sì, certo, può pagare con la carta.",
+    "after": "Sì, certo, può pagare anche con la carta."
+  },
+  {
+    "id": "ordering-paying-5",
+    "field": "examples.3.said",
+    "before": "Certo, può pagare in contanti.",
+    "after": "Certo, può pagare in contanti, nessun problema."
+  },
+  {
+    "id": "meeting-people-2",
+    "field": "practice.1.ask.said",
+    "before": "Un negoziante ti dice: «Come sta?» Cosa rispondi?",
+    "after": "Un negoziante chiede: «Come sta?» Cosa rispondi?"
+  },
+  {
+    "id": "meeting-people-3",
+    "field": "practice.1.ask.said",
+    "before": "Un amico ti dice: «Ciao, come stai?» Cosa rispondi?",
+    "after": "Un amico chiede: «Ciao, come stai?» Cosa rispondi?"
+  },
+  {
+    "id": "meeting-people-3",
+    "field": "practice.2.ask.said",
+    "before": "Una signora anziana ti dice: «Come sta?» Cosa rispondi?",
+    "after": "Una signora anziana chiede: «Come sta?» Cosa rispondi?"
+  },
+  {
+    "id": "meeting-people-2",
+    "field": "practice.1.ask.en",
+    "before": "A shopkeeper says, “How are you?” What do you say?",
+    "after": "A shopkeeper asks, “How are you?” What do you say?"
+  },
+  {
+    "id": "meeting-people-3",
+    "field": "practice.1.ask.en",
+    "before": "A friend says, “Hi, how are you?” What do you say?",
+    "after": "A friend asks, “Hi, how are you?” What do you say?"
+  },
+  {
+    "id": "meeting-people-3",
+    "field": "practice.2.ask.en",
+    "before": "An older lady says, “How are you?” What do you say?",
+    "after": "An older lady asks, “How are you?” What do you say?"
+  },
+  {
+    "id": "meeting-people-3",
+    "field": "examples",
+    "before": [
+      {
+        "role": "barista",
+        "place": "bar",
+        "said": "Buongiorno, come sta?",
+        "en": "Good morning, how are you?"
+      },
+      {
+        "role": "newcomer",
+        "place": "bar",
+        "said": "Bene, grazie. E Lei?",
+        "en": "Fine, thanks. And you?"
+      },
+      {
+        "role": "neighbour",
+        "place": "piazza",
+        "said": "Ciao! Come stai?",
+        "en": "Hi! How are you?"
+      },
+      {
+        "role": "newcomer",
+        "place": "piazza",
+        "said": "Bene, grazie. E tu?",
+        "en": "Fine, thanks. And you?"
+      }
+    ],
+    "after": [
+      {
+        "role": "newcomer",
+        "place": "shop",
+        "said": "Buongiorno, signor Rossi! Come sta?",
+        "en": "Good morning, Mr. Rossi! How are you?"
+      },
+      {
+        "role": "shopkeeper",
+        "place": "shop",
+        "said": "Benissimo, grazie. E Lei?",
+        "en": "Very well, thanks. And you?"
+      },
+      {
+        "role": "newcomer",
+        "place": "piazza",
+        "said": "Ciao, Giulia! Come stai?",
+        "en": "Hi, Giulia! How are you?"
+      },
+      {
+        "role": "neighbour",
+        "place": "piazza",
+        "said": "Bene! E tu?",
+        "en": "Good! And you?"
+      }
+    ]
+  },
+  {
+    "id": "about-you-2",
+    "field": "notice",
+    "before": "Where you come from starts with sono: sono americano, sono di Chicago. Where you live now starts with abito: abito qui, abito a Firenze. A woman says americana; inglese stays the same for everyone.",
+    "after": "Where you come from starts with sono: sono americano, sono di Chicago. Where you live now starts with abito: abito qui, abito a Firenze. A woman says sono americana."
+  },
+  {
+    "id": "ordering-paying-1",
+    "field": "notice",
+    "before": "For one, say un or una with the item: un caffè, una spremuta, un'aranciata, and uno spritz. For two, say due and change the last letter, -o to -i and -a to -e, while caffè stays the same: due cappuccini, due spremute, due caffè.",
+    "after": "For one, say un or una with the item: un caffè, una spremuta, and un' before a vowel: un'aranciata. For two, say due and change the last letter, -o to -i and -a to -e, while caffè stays the same: due cappuccini, due spremute, due caffè."
+  },
+  {
+    "id": "ordering-paying-3",
+    "field": "practice.0",
+    "before": {
+      "ask": {
+        "said": "Vuoi il giornale. Cosa chiedi?",
+        "en": "You want the newspaper. What do you ask?"
+      },
+      "answer": {
+        "said": "Quanto costa il giornale?",
+        "en": "How much is the newspaper?"
+      }
+    },
+    "after": {
+      "ask": {
+        "said": "Vuoi un biglietto dell'autobus. Cosa chiedi?",
+        "en": "You want a bus ticket. What do you ask?"
+      },
+      "answer": {
+        "said": "Quanto costa il biglietto?",
+        "en": "How much is the ticket?"
+      }
+    }
+  },
+  {
+    "id": "ordering-paying-3",
+    "field": "practice.1",
+    "before": {
+      "ask": {
+        "said": "Al mercato guardi le pesche. Cosa chiedi?",
+        "en": "At the market you're looking at the peaches. What do you ask?"
+      },
+      "answer": {
+        "said": "Quanto costano le pesche?",
+        "en": "How much are the peaches?"
+      }
+    },
+    "after": {
+      "ask": {
+        "said": "Al mercato guardi i pomodori. Cosa chiedi?",
+        "en": "At the market you're looking at the tomatoes. What do you ask?"
+      },
+      "answer": {
+        "said": "Quanto costano i pomodori?",
+        "en": "How much are the tomatoes?"
+      }
+    }
+  },
+  {
+    "id": "ordering-paying-1",
+    "field": "examples.3.en",
+    "before": "So, two sandwiches and an orange soda.",
+    "after": "So, two pizzas and an orange soda."
+  },
+  {
+    "id": "ordering-paying-5",
+    "field": "examples.1.en",
+    "before": "Yes, of course, you can pay by card.",
+    "after": "Yes, of course, you can pay by card too."
+  },
+  {
+    "id": "ordering-paying-5",
+    "field": "examples.3.en",
+    "before": "Sure, you can pay cash.",
+    "after": "Sure, you can pay cash, no problem."
+  },
+  {
+    "id": "meeting-people-2",
+    "field": "practice.2.ask.en",
+    "before": "Hi! How are you today?",
+    "after": "Hey, hi! How are you?"
+  }
+]

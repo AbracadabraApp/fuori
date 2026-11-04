@@ -1,0 +1,58 @@
+[
+  {
+    "id": "meeting-people-2",
+    "field": "practice[2].ask.said",
+    "text": "Ciao! Come stai oggi?",
+    "why": "Copy of English 'how are you today?'; as a greeting Italians don't add oggi.",
+    "fix": "Ehi, ciao! Come stai?"
+  },
+  {
+    "id": "about-you-2",
+    "field": "mission.listen_for[1-2]",
+    "text": "Ben arrivato / Ben arrivata",
+    "why": "Ben arrivato greets someone who has just got off a trip; to someone who says they live here now, a neighbour says benvenuto.",
+    "fix": "Benvenuto! / Benvenuta!"
+  },
+  {
+    "id": "about-you-3",
+    "field": "mission.listen_for[0-1]",
+    "text": "Ben arrivato / Ben arrivata",
+    "why": "After three weeks in Italy nobody says ben arrivato any more; the natural welcome is benvenuto.",
+    "fix": "Benvenuto! / Benvenuta!"
+  },
+  {
+    "id": "getting-by-1",
+    "field": "practice[2].ask.said",
+    "text": "Il farmacista ripete, ma è ancora veloce. Cosa chiedi?",
+    "why": "The person isn't 'veloce'; you'd say he still talks too fast.",
+    "fix": "Il farmacista ripete, ma parla ancora troppo veloce. Cosa chiedi?"
+  },
+  {
+    "id": "getting-by-2",
+    "field": "practice[1].ask.said",
+    "text": "Il cassiere ripete il prezzo, piano. Cosa dici?",
+    "why": "', piano' tacked on after a comma is awkward in speech; a teacher would say 'più piano'.",
+    "fix": "Il cassiere ripete il prezzo più piano. Cosa dici?"
+  },
+  {
+    "id": "ordering-paying-1",
+    "field": "examples[3].said",
+    "text": "Allora, due panini e un'aranciata.",
+    "why": "A restaurant waiter doesn't take an order for panini; that's bar food.",
+    "fix": "Allora, due pizze e un'aranciata."
+  },
+  {
+    "id": "ordering-paying-5",
+    "field": "examples[1].said",
+    "text": "Sì, certo, può pagare con la carta.",
+    "why": "Textbook echo of the whole question; a shopkeeper says 'Sì, certo' and at most a short follow-up.",
+    "fix": "Sì, certo, può pagare anche con la carta."
+  },
+  {
+    "id": "ordering-paying-5",
+    "field": "examples[3].said",
+    "text": "Certo, può pagare in contanti.",
+    "why": "A market vendor asked about cash wouldn't repeat the question back; it sounds scripted.",
+    "fix": "Certo, può pagare in contanti, nessun problema."
+  }
+]
