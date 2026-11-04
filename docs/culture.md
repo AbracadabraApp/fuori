@@ -247,6 +247,8 @@ Lessons about a piece of culture, not about the language, in Learn. Learn's less
 
 **A fresh conversation each time, held to the facts** (not a fixed script: over-scripting has failed in good conversations). Beginners: mostly English, with the word or two in the language. Checked by the fact judge before it ships. About five chips per set, in their own tint, outside the lesson sets so they never block progress (from the other session).
 
+**The chips (Josh, 2026-11-03: option B; mockup: canvas "Learn area" → G1 and G2, https://claude.ai/artifact/W9EnaGyLAU8TEh67LH6vHk):** a **Culture** row inside the gold Lessons field, each chip with a faceted gem before its name. To do: pale teal (#e4f0ef, teal border #8cbfbf, dark teal text #12393d). Done: deep teal (#1d5c63, white text and gem), so a finished culture chip reads differently from a finished lesson (olive). Not counted in "N of M". Build notes: the teal pair becomes design tokens; the gem is an inline icon, hidden from VoiceOver, and the chip's label says "Culture: …".
+
 **Candidate chips, Italy:**
 
 | Chip | Topic | Teacher |
