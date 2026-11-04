@@ -614,8 +614,12 @@ public final class ConversationModel {
     /// After this much silence the turn so far is sent to speech to text, so
     /// its words are ready when the turn ends and their punctuation sets how
     /// long a silence ends it (EndOfTurn: sooner after a finished sentence,
-    /// longer when it trails off)
-    private let earlyAfter: TimeInterval = 0.6
+    /// longer when it trails off). 1.0 s, was 0.6 (Josh, 2026-11-03): each
+    /// pause sent a recording, about two a turn, and Groq's free tier allows
+    /// 20 calls a minute for everyone (E-7WCH); short breaths mid-sentence no
+    /// longer send one. A finished sentence now ends the turn after about
+    /// 1.5 s rather than the 1.2 s (0.9 s speaking) EndOfTurn asks for
+    private let earlyAfter: TimeInterval = 1.0
     private var early: Task<APIClient.Heard?, Never>?
     private var earlyHeard: APIClient.Heard?
     private var silenceTarget: TimeInterval = EndOfTurn.usual
