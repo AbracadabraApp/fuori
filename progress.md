@@ -75,6 +75,13 @@ Brainstorm only; nothing built (Josh: "get brainstorming out before building").
 - **Open:** branch `rome-local-pride-draft` (four places from old Roma, Serena at the Colosseo, campanilismo lines) is not verified and puts culture in `here`; redo it into `caresAbout` when building. A half-filled shared web copy of the doc exists (https://claude.ai/artifact/Xw4276rw1xSnxsR2UCbNQQ); delete or finish.
 - **Next:** build Rome first: wire `caresAbout` into the character prompt as one line of facts, write Rome's pride items from its lists, judge them, play.
 
+## 2026-11-04 (night): culture data and code, names, the build fix (laptop session)
+
+- **Names:** every shown person has a unique full name, Mexico 60 (33c519f) and Italy 199 (b3bac4b); ids kept; `npm run test:names`.
+- **Cultural lessons** (7c12a45; docs/culture.md): `culture.md` prompts, `scripts/make-culture.mts` (pick, fact judge, one fix, drop), `content/<country>/culture.json` (Italy 29 items, Mexico 18, a first set of six each), a one-part "story" lesson told by the teller (Beginner format for Beginners, the language otherwise), a Culture section on the Learn page. Nothing about culture reaches ordinary visits (the other session's test: a pride line was ignored and took from the errand). Teller turns average about 62 words: for Josh.
+- **Production build fixed:** builds failed from b3bac4b to 5ba75cf on two experiment scripts' imports; tests-only pushes are SKIPPED by Railway, so the fix didn't deploy. Now `next build` checks only shipped code (tsconfig.build.json, 39ab580). smoke:live passes in production in both countries after it.
+- **Next:** weather with both filters, `knows` (each measured with the errand-leads replay before shipping); Josh's yes to install the build.
+
 ## 2026-11-03 (evening): welcome merged, the Learn page, Groq's limit (laptop session)
 
 - **Merged and live:** the cloud's welcome rework and the repeat fix (e98bb91), after welcome trials, beginner-dialogue before and after, and smoke:live on a local server; plus a fix for all-English Beginner turns coming back with their words in `en` (876eeda).
