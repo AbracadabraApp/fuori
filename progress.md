@@ -66,6 +66,12 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-03 (night): culture chips among the lessons (laptop session)
+
+- **Done:** the Learn page's separate teal Culture section and its "1 of 6" are gone; each culture chip now sits among the lesson chips of the current set (chip k in area k mod n, every second place, the same order every visit). A gem comes before the name; pale teal to do (#e4f0ef, border #8cbfbf, text #12393d), deep teal done (#1d5c63, white text and gem). The gem is hidden from VoiceOver; the label reads "Culture: <name>" (", done" once done). Culture chips don't count in "N of M". New tokens `cultureChip`, `cultureEdge`, `cultureInk`, `cultureDone`, `cultureGem`, `cultureGemDone`; `cultureField` removed. Test: `CultureChipPlacementTests`.
+- **Checked:** `make build`, all 75 package tests, `test:tokens`; the chips rendered off-device and match mockup G1. **Not checked:** the live page on the phone or simulator (the simulator was on fresh onboarding and UI tapping isn't enabled), AX5 or a VoiceOver pass.
+- **Open:** the culture chips don't appear on the Earlier lessons screen (they only show with the current set).
+
 ## 2026-11-03 (late): culture brainstorm, docs/culture.md (laptop session)
 
 Brainstorm only; nothing built (Josh: "get brainstorming out before building").

@@ -29,9 +29,12 @@ public enum Tokens {
         public static let flapTile = Color(red: 0.1216, green: 0.1216, blue: 0.1216) // #1f1f1f
         public static let flapInk = Color(red: 0.9608, green: 0.9451, blue: 0.9294) // #f5f1ed
         public static let flapHinge = Color(red: 0.2353, green: 0.2353, blue: 0.2353) // #3c3c3c
-        public static let cultureField = Color(red: 0.8510, green: 0.9255, blue: 0.9020) // #d9ece6
-        public static let cultureInk = Color(red: 0.1137, green: 0.2902, blue: 0.2471) // #1d4a3f
-        public static let cultureDone = Color(red: 0.1843, green: 0.4196, blue: 0.3608) // #2f6b5c
+        public static let cultureChip = Color(red: 0.8941, green: 0.9412, blue: 0.9373) // #e4f0ef
+        public static let cultureEdge = Color(red: 0.5490, green: 0.7490, blue: 0.7490) // #8cbfbf
+        public static let cultureInk = Color(red: 0.0706, green: 0.2235, blue: 0.2392) // #12393d
+        public static let cultureDone = Color(red: 0.1137, green: 0.3608, blue: 0.3882) // #1d5c63
+        public static let cultureGem = Color(red: 0.6235, green: 0.8275, blue: 0.8196) // #9fd3d1
+        public static let cultureGemDone = Color(red: 0.7490, green: 0.8902, blue: 0.8824) // #bfe3e1
     }
 
     public enum FontFamily {

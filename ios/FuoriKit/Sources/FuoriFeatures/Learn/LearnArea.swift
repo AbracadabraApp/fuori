@@ -8,7 +8,8 @@ import FuoriNetworking
 /// screen, opened from the book next to Settings. History (the visited stamp,
 /// then cities, people and conversations as split-flap numbers on
 /// terracotta); Lessons (the lessons as chips in their areas, green once
-/// done, a tap starts one: Magda teaches, practice, her review, LessonFlow);
+/// done, a tap starts one: Magda teaches, practice, her review, LessonFlow;
+/// the cultural lessons' teal gem chips sprinkled among them);
 /// Flashcards (a banner with three of the deck's cards and the words learned;
 /// the whole banner opens the deck). It replaces the three Learn cards and
 /// the Missions placeholder. A lesson is done once its review was reached
@@ -34,10 +35,7 @@ struct LearnArea: View {
                     historySection
                     // After the server says which set (or fails), so the set doesn't jump
                     if homeTried, let areas = model.content?.lessonAreas, !areas.isEmpty {
-                        lessonsSection(areas.filter { $0.lessonSet == currentSet(areas) }, earlier: areas.filter { $0.lessonSet < currentSet(areas) })
-                    }
-                    if homeTried, let culture = model.content?.culture, !culture.isEmpty {
-                        cultureSection(culture)
+                        lessonsSection(areas.filter { $0.lessonSet == currentSet(areas) }, earlier: areas.filter { $0.lessonSet < currentSet(areas) }, culture: model.content?.culture ?? [])
                     }
                     if let deckModel {
                         Button { showingDeck = true } label: { FlashcardsBanner(learned: deckModel.wordsLearned, pictures: deckModel.bannerPictures) }
@@ -153,7 +151,8 @@ struct LearnArea: View {
         return sets.contains(wanted) ? wanted : (sets.max() ?? 1)
     }
 
-    private func lessonsSection(_ areas: [LessonArea], earlier: [LessonArea]) -> some View {
+    /// "N of M" counts the set's lessons only; the culture chips don't count
+    private func lessonsSection(_ areas: [LessonArea], earlier: [LessonArea], culture: [CultureChip]) -> some View {
         let done = Set(home?.lessonsDone ?? [])
         let all = areas.flatMap(\.chips)
         let count = all.filter { done.contains($0.step) }.count
@@ -166,7 +165,7 @@ struct LearnArea: View {
                     .foregroundStyle(Tokens.Colors.lessonsFieldInk)
                     .accessibilityLabel("\(count) of \(all.count) done")
             }
-            ChipAreas(areas: areas, done: done) { step in lesson = step }
+            ChipAreas(areas: areas, culture: culture, done: done) { step in lesson = step }
             // Finished sets stay reachable (Josh, 2026-11-03); no level names
             if !earlier.isEmpty {
                 Button { showingEarlier = true } label: {
@@ -190,45 +189,40 @@ struct LearnArea: View {
     }
 }
 
-// MARK: - Culture
-
-extension LearnArea {
-    /// Cultural lessons (docs/culture.md; Josh, 2026-11-03): one particular
-    /// thing about a city, told by the person there whose pride it is; chips
-    /// in their own tint, outside the lesson sets, so they never hold one up
-    func cultureSection(_ chips: [CultureChip]) -> some View {
-        let done = Set(home?.lessonsDone ?? [])
-        return VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .firstTextBaseline) {
-                SectionTitle("Culture")
-                Spacer(minLength: 8)
-                Text("\(chips.filter { done.contains($0.id) }.count) of \(chips.count)")
-                    .typeface(.label, 16, relativeTo: .callout, weight: .bold)
-                    .foregroundStyle(Tokens.Colors.cultureInk)
-            }
-            ChipFlow(spacing: 7) {
-                ForEach(chips) { chip in
-                    LessonChip(name: chip.chip, done: done.contains(chip.id), doneColor: Tokens.Colors.cultureDone, edge: Tokens.Colors.cultureInk.opacity(0.35)) { lesson = chip.id }
-                }
-            }
-        }
-        .padding(.horizontal, 16)
-        .padding(.top, 16)
-        .padding(.bottom, 18)
-        .background(Tokens.Colors.cultureField, in: RoundedRectangle(cornerRadius: 22))
-    }
-}
-
 // MARK: - Pieces
 
-/// A set's areas, each with its chips
-private struct ChipAreas: View {
+/// A set's areas, each with its chips, and the cultural lessons sprinkled
+/// among them (docs/culture.md → The chips; Josh, 2026-11-03: no section of
+/// their own, any area will do)
+struct ChipAreas: View {
     let areas: [LessonArea]
+    var culture: [CultureChip] = []
     let done: Set<String>
     let open: (String) -> Void
 
+    enum Item: Hashable {
+        case lesson(LessonArea.Chip)
+        case culture(CultureChip)
+        var id: String { switch self { case .lesson(let c): c.step; case .culture(let c): c.id } }
+    }
+
+    /// Culture chip k goes to area k mod n, every second place along; the
+    /// same order every time, so a chip doesn't move between visits
+    nonisolated static func items(_ areas: [LessonArea], culture: [CultureChip]) -> [[Item]] {
+        var rows = areas.map { $0.chips.map(Item.lesson) }
+        guard !rows.isEmpty else { return rows }
+        var placed = Array(repeating: 0, count: rows.count)
+        for (k, chip) in culture.enumerated() {
+            let a = k % rows.count
+            rows[a].insert(.culture(chip), at: min(1 + placed[a] * 2, rows[a].count))
+            placed[a] += 1
+        }
+        return rows
+    }
+
     var body: some View {
-        ForEach(areas, id: \.name) { area in
+        let rows = Self.items(areas, culture: culture)
+        ForEach(Array(areas.enumerated()), id: \.element.name) { i, area in
             VStack(alignment: .leading, spacing: 6) {
                 Text(area.name.uppercased())
                     .typeface(.label, 12, relativeTo: .caption, weight: .bold)
@@ -236,8 +230,11 @@ private struct ChipAreas: View {
                     .foregroundStyle(Tokens.Colors.lessonsAreaInk)
                     .accessibilityAddTraits(.isHeader)
                 ChipFlow(spacing: 7) {
-                    ForEach(area.chips, id: \.step) { chip in
-                        LessonChip(name: chip.name, done: done.contains(chip.step)) { open(chip.step) }
+                    ForEach(rows[i], id: \.id) { item in
+                        switch item {
+                        case .lesson(let chip): LessonChip(name: chip.name, done: done.contains(chip.step)) { open(chip.step) }
+                        case .culture(let chip): CultureChipButton(name: chip.chip, done: done.contains(chip.id)) { open(chip.id) }
+                        }
                     }
                 }
             }
@@ -365,9 +362,9 @@ private struct FlapTile: View {
 private struct LessonChip: View {
     let name: String
     let done: Bool
-    var doneColor: Color = Tokens.Colors.green
-    var edge: Color = Tokens.Colors.chipBorder
     let action: () -> Void
+    private let doneColor = Tokens.Colors.green
+    private let edge = Tokens.Colors.chipBorder
 
     var body: some View {
         Button(action: action) {
@@ -383,6 +380,63 @@ private struct LessonChip: View {
         .buttonStyle(PressableStyle())
         .accessibilityLabel(done ? "\(name), done" : name)
         .accessibilityHint("Starts this lesson")
+    }
+}
+
+/// A cultural lesson (docs/culture.md → The chips; mockup G1): a gem before
+/// the name; pale teal to do, deep teal with white words and gem once done
+private struct CultureChipButton: View {
+    let name: String
+    let done: Bool
+    let action: () -> Void
+    @ScaledMetric(relativeTo: .callout) private var gem: CGFloat = 18
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 7) {
+                Gem(fill: done ? .white : Tokens.Colors.cultureGem, line: done ? Tokens.Colors.cultureGemDone : Tokens.Colors.cultureDone)
+                    .frame(width: gem, height: gem)
+                    .accessibilityHidden(true)
+                Text(name)
+                    .typeface(.label, 16, relativeTo: .callout, weight: .bold)
+                    .foregroundStyle(done ? Color.white : Tokens.Colors.cultureInk)
+            }
+            .padding(.leading, 11)
+            .padding(.trailing, 14)
+            .padding(.vertical, 9)
+            .frame(minHeight: 44)
+            .background(done ? Tokens.Colors.cultureDone : Tokens.Colors.cultureChip, in: Capsule())
+            .overlay { Capsule().strokeBorder(done ? Tokens.Colors.cultureDone : Tokens.Colors.cultureEdge, lineWidth: 2) }
+        }
+        .buttonStyle(PressableStyle())
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(done ? "Culture: \(name), done" : "Culture: \(name)")
+        .accessibilityAddTraits(.isButton)
+        .accessibilityHint("Starts this lesson")
+    }
+}
+
+/// A faceted gem, drawn on a 24-point grid (mockup G1's icon)
+private struct Gem: View {
+    let fill: Color
+    let line: Color
+
+    var body: some View {
+        Canvas { context, size in
+            let k = min(size.width, size.height) / 24
+            func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint { CGPoint(x: x * k, y: y * k) }
+            var outline = Path()
+            outline.addLines([p(6, 3), p(18, 3), p(22, 9), p(12, 21), p(2, 9)])
+            outline.closeSubpath()
+            context.fill(outline, with: .color(fill))
+            context.stroke(outline, with: .color(line), style: StrokeStyle(lineWidth: 1.6 * k, lineJoin: .round))
+            var facets = Path()
+            facets.move(to: p(2, 9)); facets.addLine(to: p(22, 9))
+            facets.move(to: p(9, 3)); facets.addLine(to: p(12, 9)); facets.addLine(to: p(15, 3))
+            facets.move(to: p(12, 9)); facets.addLine(to: p(12, 21))
+            facets.move(to: p(7.5, 9)); facets.addLine(to: p(12, 21)); facets.addLine(to: p(16.5, 9))
+            context.stroke(facets, with: .color(line), style: StrokeStyle(lineWidth: 1.1 * k, lineJoin: .round))
+        }
     }
 }
 
