@@ -117,7 +117,7 @@ Still to do, on the laptop (needs keys, Railway, the Mac):
 3. ✅ Repeat fix: `smoke:live` in both countries on branch `fix/beginner-repeats`, then merge it. *Done: smoke:live passed on a local server (fuori_test database), then on production after the deploy, both countries.*
 4. Don Nacho's "Speech to text unavailable (E-7WCH)": `railway logs | grep E-7WCH`, find and fix the cause. *Cause found: Groq's free tier, 20 Whisper requests a minute for the whole account (both countries, everyone), and each recording costs two (as heard, and as the learned language). Fix waits on Josh: Groq's paid Dev tier, or a retry after Groq's stated wait.*
 5. A build for Josh's phone with the above, through the iOS checks. *iOS CI passed on e98bb91; a Debug build made; installing waits on Josh's yes.*
-6. Then the Learn page (roadmap N6 item 4, "The Learn page"), then lessons passes 2 and 3.
+6. Then the Learn page (roadmap N6 item 4, "The Learn page"), then lessons passes 2 and 3. *The Learn page built 2026-11-03 (see the roadmap); passes 2 and 3 next, after Josh plays a lesson.*
 
 **The cloud session that wrote `claude/welcome-goals`:** open the pull request only if Josh says yes; otherwise done. Leave lessons and the Learn page alone.
 

@@ -25,6 +25,7 @@ struct LearnArea: View {
 
     var body: some View {
         NavigationStack {
+            ScrollViewReader { scroller in
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {
                     historySection
@@ -35,6 +36,7 @@ struct LearnArea: View {
                         Button { showingDeck = true } label: { FlashcardsBanner(learned: deckModel.wordsLearned, pictures: deckModel.bannerPictures) }
                             .buttonStyle(PressableStyle())
                             .accessibilityHint("Opens your flashcards")
+                            .id("flashcards")
                     }
                 }
                 .padding(.horizontal, Tokens.Space.gutter)
@@ -42,6 +44,15 @@ struct LearnArea: View {
                 .padding(.bottom, 24)
             }
             .background(Tokens.Colors.paper)
+            #if DEBUG
+            // `-FuoriLearnBottom YES` scrolls to the Flashcards banner, for simulator checks without swiping
+            .task(id: deckModel != nil) {
+                guard UserDefaults.standard.bool(forKey: "FuoriLearnBottom"), deckModel != nil else { return }
+                try? await Task.sleep(for: .seconds(1))
+                scroller.scrollTo("flashcards", anchor: .bottom)
+            }
+            #endif
+            }
             .navigationDestination(isPresented: $showingDeck) {
                 if let deckModel { FlashcardsView(model: deckModel) }
             }
@@ -197,7 +208,7 @@ private struct MiniStamp: View {
             .frame(width: size, height: size)
             .rotationEffect(.degrees(-4))
             .accessibilityElement()
-            .accessibilityLabel(Text(label) + Text(", ") + Text(spoken))
+            .accessibilityLabel(Text(AttributedString("\(label), ") + spoken))
     }
 }
 
@@ -326,8 +337,9 @@ private struct FlashcardsBanner: View {
                 Text("Flashcards")
                     .typeface(.display, 26, relativeTo: .title2, weight: .bold)
                 Spacer(minLength: 8)
+                // Oswald's lining figures: Alegreya's old-style 0 reads as an o
                 Text("\(learned)")
-                    .typeface(.display, 30, relativeTo: .title, weight: .bold)
+                    .typeface(.flip, 32, relativeTo: .title, weight: .semibold)
                 Text(learned == 1 ? "word learned" : "words learned")
                     .typeface(.label, 14, relativeTo: .subheadline)
             }
