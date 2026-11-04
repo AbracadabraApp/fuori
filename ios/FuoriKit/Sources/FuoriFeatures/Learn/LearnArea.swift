@@ -23,6 +23,7 @@ struct LearnArea: View {
     @State private var deckModel: FlashcardsModel?
     @State private var showingDeck = false
     @State private var showingEarlier = false
+    @State private var homeTried = false
 
     var body: some View {
         NavigationStack {
@@ -30,7 +31,8 @@ struct LearnArea: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {
                     historySection
-                    if let areas = model.content?.lessonAreas, !areas.isEmpty {
+                    // After the server says which set (or fails), so the set doesn't jump
+                    if homeTried, let areas = model.content?.lessonAreas, !areas.isEmpty {
                         lessonsSection(areas.filter { $0.lessonSet == currentSet(areas) }, earlier: areas.filter { $0.lessonSet < currentSet(areas) })
                     }
                     if let deckModel {
@@ -96,6 +98,7 @@ struct LearnArea: View {
 
     private func reload() async {
         if let fresh = try? await model.api?.learnHome() { home = fresh }
+        homeTried = true
     }
 
     private func makeDeck() {
