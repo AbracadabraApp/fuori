@@ -16,25 +16,27 @@ public enum Tokens {
         public static let errorInk = Color(red: 0.4471, green: 0.1098, blue: 0.1412) // #721c24
         public static let lessons = Color(red: 0.8235, green: 0.0392, blue: 0.0392) // #d20a0a
         public static let missions = Color(red: 1.0000, green: 0.8235, blue: 0.0000) // #ffd200
-        public static let flashcards = Color(red: 0.0000, green: 0.2431, blue: 0.5059) // #003e81
+        public static let flashcards = Color(red: 0.2471, green: 0.3020, blue: 0.3608) // #3f4d5c
         public static let receipt = Color(red: 1.0000, green: 0.9922, blue: 0.9686) // #fffdf7
         public static let rollNew = Color(red: 0.4902, green: 0.5490, blue: 0.2745) // #7d8c46
         public static let rollRegular = Color(red: 0.8863, green: 0.3412, blue: 0.2980) // #e2574c
         public static let terracottaInk = Color(red: 0.6588, green: 0.3098, blue: 0.1725) // #a84f2c
-        public static let lessonsField = Color(red: 0.9647, green: 0.9059, blue: 0.6784) // #f6e7ad
+        public static let lessonsField = Color(red: 0.9333, green: 0.9020, blue: 0.8392) // #eee6d6
         public static let lessonsFieldInk = Color(red: 0.2902, green: 0.2275, blue: 0.0196) // #4a3a05
         public static let lessonsAreaInk = Color(red: 0.3608, green: 0.2902, blue: 0.0627) // #5c4a10
-        public static let chip = Color(red: 1.0000, green: 0.9922, blue: 0.9608) // #fffdf5
-        public static let chipBorder = Color(red: 0.8510, green: 0.7843, blue: 0.5255) // #d9c886
-        public static let flapTile = Color(red: 0.1216, green: 0.1216, blue: 0.1216) // #1f1f1f
+        public static let chip = Color(red: 0.9843, green: 0.9725, blue: 0.9490) // #fbf8f2
+        public static let chipBorder = Color(red: 0.8392, green: 0.7922, blue: 0.7020) // #d6cab3
+        public static let flapTile = Color(red: 0.2275, green: 0.2118, blue: 0.2039) // #3a3634
         public static let flapInk = Color(red: 0.9608, green: 0.9451, blue: 0.9294) // #f5f1ed
-        public static let flapHinge = Color(red: 0.2353, green: 0.2353, blue: 0.2353) // #3c3c3c
-        public static let cultureChip = Color(red: 0.8941, green: 0.9412, blue: 0.9373) // #e4f0ef
-        public static let cultureEdge = Color(red: 0.5490, green: 0.7490, blue: 0.7490) // #8cbfbf
-        public static let cultureInk = Color(red: 0.0706, green: 0.2235, blue: 0.2392) // #12393d
-        public static let cultureDone = Color(red: 0.1137, green: 0.3608, blue: 0.3882) // #1d5c63
-        public static let cultureGem = Color(red: 0.6235, green: 0.8275, blue: 0.8196) // #9fd3d1
-        public static let cultureGemDone = Color(red: 0.7490, green: 0.8902, blue: 0.8824) // #bfe3e1
+        public static let flapHinge = Color(red: 0.3020, green: 0.2824, blue: 0.2706) // #4d4845
+        public static let cultureChip = Color(red: 0.9098, green: 0.9255, blue: 0.9059) // #e8ece7
+        public static let cultureEdge = Color(red: 0.6784, green: 0.7373, blue: 0.6980) // #adbcb2
+        public static let cultureInk = Color(red: 0.1725, green: 0.2392, blue: 0.2118) // #2c3d36
+        public static let cultureDone = Color(red: 0.2941, green: 0.3882, blue: 0.3451) // #4b6358
+        public static let cultureGem = Color(red: 0.7373, green: 0.7961, blue: 0.7529) // #bccbc0
+        public static let cultureGemDone = Color(red: 0.8039, green: 0.8471, blue: 0.8157) // #cdd8d0
+        public static let historyField = Color(red: 0.9137, green: 0.8667, blue: 0.8157) // #e9ddd0
+        public static let historyInk = Color(red: 0.2902, green: 0.2275, blue: 0.1882) // #4a3a30
     }
 
     public enum FontFamily {

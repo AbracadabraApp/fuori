@@ -6,10 +6,10 @@ import FuoriNetworking
 /// The Learn page (Josh, 2026-11-03; docs/learn.md → The Learn page; mockup
 /// design/learn/learn-home.dc.html, canvas "Learn area" F6): one compact
 /// screen, opened from the book next to Settings. History (the visited stamp,
-/// then cities, people and conversations as split-flap numbers on
-/// terracotta); Lessons (the lessons as chips in their areas, green once
+/// then cities, people and conversations as split-flap numbers on warm sand;
+/// hidden for now, Josh, 2026-11-04); Lessons (the lessons as chips in their areas, green once
 /// done, a tap starts one: Magda teaches, practice, her review, LessonFlow;
-/// the cultural lessons' teal gem chips sprinkled among them);
+/// the cultural lessons' sage gem chips sprinkled among them);
 /// Flashcards (a banner with three of the deck's cards and the words learned;
 /// the whole banner opens the deck). It replaces the three Learn cards and
 /// the Missions placeholder. A lesson is done once its review was reached
@@ -26,13 +26,16 @@ struct LearnArea: View {
     @State private var showingDeck = false
     @State private var showingEarlier = false
     @State private var homeTried = false
+    private static let showsHistory = false
 
     var body: some View {
         NavigationStack {
             ScrollViewReader { scroller in
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {
-                    historySection
+                    // History hidden for now (Josh, 2026-11-04: "Remove the scorecard
+                    // for now"); the section below stays so it can come back
+                    if Self.showsHistory { historySection }
                     // After the server says which set (or fails), so the set doesn't jump
                     if homeTried, let areas = model.content?.lessonAreas, !areas.isEmpty {
                         lessonsSection(areas.filter { $0.lessonSet == currentSet(areas) }, earlier: areas.filter { $0.lessonSet < currentSet(areas) }, culture: model.content?.culture ?? [])
@@ -127,7 +130,7 @@ struct LearnArea: View {
             .padding(.horizontal, 10)
             .padding(.top, 16)
             .padding(.bottom, 14)
-            .background(Tokens.Colors.terracotta, in: RoundedRectangle(cornerRadius: 18))
+            .background(Tokens.Colors.historyField, in: RoundedRectangle(cornerRadius: 18))
         }
     }
 
@@ -314,8 +317,8 @@ private struct MiniStamp: View {
     }
 }
 
-/// A number as split-flap tiles over its label, white on terracotta (labels
-/// 19 pt bold: large text, which passes at 4.2:1). Up to four digits; a dash
+/// A number as split-flap tiles over its label, dark on warm sand (toned
+/// down from white on terracotta, Josh, 2026-11-04). Up to four digits; a dash
 /// until the server answers
 private struct FlipCounter: View {
     let value: Int?
@@ -329,7 +332,7 @@ private struct FlipCounter: View {
             }
             Text(value == 1 ? one : label)
                 .typeface(.label, 19, relativeTo: .headline, weight: .bold)
-                .foregroundStyle(.white)
+                .foregroundStyle(Tokens.Colors.historyInk)
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
         }
@@ -485,7 +488,7 @@ private struct ChipFlow: Layout {
     }
 }
 
-/// Flashcards: three of the deck's cards fanned on blue, the words learned
+/// Flashcards: three of the deck's cards fanned on slate, the words learned
 private struct FlashcardsBanner: View {
     let learned: Int
     let pictures: [URL]
@@ -495,8 +498,11 @@ private struct FlashcardsBanner: View {
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
             VStack(alignment: .leading) {
+                // One line: at 26 pt it broke mid-word beside the cards
                 Text("Flashcards")
                     .typeface(.display, 26, relativeTo: .title2, weight: .bold)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
                 Spacer(minLength: 8)
                 // Oswald's lining figures: Alegreya's old-style 0 reads as an o
                 Text("\(learned)")
@@ -517,7 +523,7 @@ private struct FlashcardsBanner: View {
         .frame(maxWidth: .infinity, minHeight: height, alignment: .leading)
         .background(Tokens.Colors.flashcards, in: RoundedRectangle(cornerRadius: 22))
         .clipShape(RoundedRectangle(cornerRadius: 22))
-        .shadow(color: Tokens.Colors.flashcards.opacity(0.25), radius: 9, y: 6)
+        .shadow(color: Tokens.Colors.flashcards.opacity(0.15), radius: 6, y: 4)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Flashcards, \(learned) \(learned == 1 ? "word" : "words") learned")
         .accessibilityAddTraits(.isButton)
