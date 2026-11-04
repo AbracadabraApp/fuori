@@ -201,6 +201,7 @@ Prompted by `outdoors`: other facts on places and people that could matter. **Th
 
 ## Dropped in the brainstorm
 
+- **Day trips: parked, nothing to do now (Josh).** Every city file has a `dayTrips` list (Bologna to Modena for balsamic vinegar, Napoli to Pompei) that no code reads. A character offering to take the learner there would be a day out of the city; left for later.
 - a city calendar of feast days (Josh: "you have to be at the right place at the right time"), time of day and day of the week (Josh: "not going to hit most users"), anything in the Diario (it isn't built).
 
 ## Open questions
@@ -209,7 +210,7 @@ Prompted by `outdoors`: other facts on places and people that could matter. **Th
 - **How the pride field reaches the prompt:** one line of facts in the character prompt (a placeholder filled from `caresAbout`), with a version bump and changelog entry as `character.md` requires. Left out when empty, so characters without pride are unchanged.
 - ~~**How it comes up**~~ Decided: no rules; the character has the facts and decides.
 - **How the learner finds who knows what:** partly decided: characters know who else in the city knows something (`knows`), and lessons pick partners by topic. Daily suggestions could point at it too ("Ask the sfoglina how she rolls the dough").
-- **Geography** beyond food and weather (the sea, the lakes, the mountains, `dayTrips`): part of local pride, or its own topic?
+- **Geography** beyond food and weather (the sea, the lakes, the mountains; day trips are parked): part of local pride, or its own topic?
 - **Craft and sport** (football especially): topics of their own, or inside traditions and campanilismo?
 - **The learner's route** for campanilismo between cities: the cities are in the conversation records; wiring them into the prompt is the open part.
 - **How we'd know it works:** a judge in `npm run test:conversations` for "the learner heard something specific about this city", and that the learner kept a word from it (a language goal, not trivia), alongside the existing scores.
