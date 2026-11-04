@@ -1,13 +1,13 @@
 {
   "version": "2026-11-04",
-  "prompt": "2026-11-04",
+  "prompt": "2026-11-04c",
   "set": [
-    "venezia-the-ombra-de-vin",
     "palermo-schietta-or-maritata",
     "napoli-greek-walls-under-piazza",
     "siena-the-painted-drappellone",
     "bologna-the-stolen-bucket",
-    "matera-the-tearing-of-the-cart"
+    "matera-the-tearing-of-the-cart",
+    "venezia-sior-rioba-s-iron-nose"
   ],
   "items": [
     {
@@ -239,25 +239,6 @@
       "placeId": "santo-spirito-scalini"
     },
     {
-      "chip": "Ricciarelli with vin santo",
-      "teller": "lucia-bini",
-      "topic": "food",
-      "facts": "Ricciarelli are soft, diamond-shaped almond biscuits, chewy inside and dusted with icing sugar. They are made from almond paste, sugar and egg white, often on a thin wafer base. Sienese families put them on the table at Christmas, and many people dip them in vin santo. At Pasticceria Bini we tell newcomers to try one first because it shows the Sienese way with almonds and sugar: simple, old and not too sweet.",
-      "words": [
-        {
-          "said": "ricciarelli",
-          "en": "soft almond biscuits"
-        },
-        {
-          "said": "vin santo",
-          "en": "sweet dessert wine"
-        }
-      ],
-      "id": "siena-ricciarelli-with-vin-santo",
-      "cityId": "siena",
-      "placeId": "pasticceria-bini"
-    },
-    {
       "chip": "The painted drappellone",
       "teller": "giovanni-bacci",
       "topic": "art",
@@ -294,25 +275,6 @@
       "id": "siena-the-bank-of-siena",
       "cityId": "siena",
       "placeId": "piazza-salimbeni"
-    },
-    {
-      "chip": "The ombra de vin",
-      "teller": "marco-timon",
-      "topic": "traditions",
-      "facts": "In Venice you don't ask for a glass of wine, you ask for an ombra, which means a shadow. The story goes that wine sellers in Piazza San Marco kept moving their stalls to stay in the shade of the bell tower, so a glass of wine became an ombra. Today an ombra is a small glass of house wine, drunk standing or sitting by the canal with a few cicchetti. Locals do a giro d'ombre, hopping from one bar to the next at aperitivo hour, and the point is to chat and see friends, not to get drunk.",
-      "words": [
-        {
-          "said": "ombra",
-          "en": "shade; a small glass of wine"
-        },
-        {
-          "said": "cicchetti",
-          "en": "small bar snacks"
-        }
-      ],
-      "id": "venezia-the-ombra-de-vin",
-      "cityId": "venezia",
-      "placeId": "bar-al-timon"
     },
     {
       "chip": "Sarde in saor",

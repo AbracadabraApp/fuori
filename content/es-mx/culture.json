@@ -1,6 +1,6 @@
 {
   "version": "2026-11-04",
-  "prompt": "2026-11-04",
+  "prompt": "2026-11-04c",
   "set": [
     "ciudad-de-mexico-guajolota-for-breakfast",
     "puebla-papalo-on-the-cemita",
@@ -142,25 +142,6 @@
       "id": "oaxaca-cochineal-the-red-from-cactus",
       "cityId": "oaxaca",
       "placeId": "jardin-etnobotanico-oaxaca"
-    },
-    {
-      "chip": "Mezcal, not tequila",
-      "teller": "emiliano-los-amantes",
-      "topic": "rivalry",
-      "facts": "People in Oaxaca like to say mezcal is not just tequila's cousin. Tequila comes from the blue agave, mostly in Jalisco, while mezcal can be made from many kinds of agave, and espadín is the most common one. Many mezcales get their smoky taste because the agave hearts are roasted in an earthen pit. That is why people here sip it slowly, with orange and sal de gusano, and are proud that Oaxaca makes most of the country's mezcal.",
-      "words": [
-        {
-          "said": "espadín",
-          "en": "the most common agave for mezcal"
-        },
-        {
-          "said": "sal de gusano",
-          "en": "salt mixed with ground agave worm and chile"
-        }
-      ],
-      "id": "oaxaca-mezcal-not-tequila",
-      "cityId": "oaxaca",
-      "placeId": "mezcaleria-los-amantes"
     },
     {
       "chip": "Romería of the Generala",
