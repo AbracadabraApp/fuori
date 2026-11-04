@@ -121,9 +121,9 @@ Settled in conversation after a night of lesson mockups (the comic strip, a two-
 
 **Lesson chips, Italy A1 (Josh, 2026-11-03).** The 21 lessons become 14, in four areas, each chip named for what the lesson lets you do, not its content:
 - Meeting people: Hello · How are you · Be polite
-- About you: Name · Where you're from (merges I am, nationality, where you live and from: *sono di…*, *sono americano/a*, *abito a…*) · Time here
-- Getting by: When you're lost (merges not understanding and asking to repeat) · Got it · Ask for a word
-- Ordering and paying: Order one or two (merges a/an and more than one) · Order politely (merges *vorrei* and *prendo*) · How much · Hear a price (merges numbers) · Card or cash
+- About you: Name · Who are you (merges I am, nationality, where you live and from: *sono di…*, *sono americano/a*, *abito a…*) · Time here
+- Getting by: Slower, please (merges not understanding and asking to repeat) · Got it · Ask for a word
+- Ordering and paying: How many (merges a/an and more than one) · Order politely (merges *vorrei* and *prendo*) · How much · Hear a price (merges numbers) · Card or cash
 Waits for the Beginner rewrite Josh put on hold (it changes `lessons.json`, which the app and the lesson flow read); the judges' fixes (`tests/experiments/lesson-judges/results/it-a1-fixed-lessons.json`) go into the same rewrite.
 
 **Lesson chips, Italy B1 (Josh, 2026-11-03).** The 56 judged Intermediate lessons (`content/it/lessons-b1.json`) become 38 chips in four areas, short names in the learner's voice (Josh's style: "How long", "OK?", "Before!"). Old lesson ids in brackets:
@@ -132,6 +132,15 @@ Waits for the Beginner rewrite Josh put on hold (it changes `lessons.json`, whic
 - Tell what happened: Then suddenly (05-4 + 06-3) · Already (06-1) · Because (06-2) · Nobody (05-3) · I'll manage (05-2) · I mean… (06-4) · Local history (13-1 + 13-3) · Who made it? (13-2) · Before! (03-5 + 08-3; in the third set because *prima che* takes the subjunctive)
 - Opinions and feelings: I think (07-1 + 07-2) · It's true (07-4) · Give advice (08-1 + 12-2) · As long as (08-2) · Hope it went well (08-4) · Say how you feel (11-1 + 11-2) · How great! (11-3) · Good luck (11-4) · Imagine (12-1 + 12-3) · I'd like you to (12-4) · If only (12-5)
 Dropped: Writing to an office (10-4; email doesn't fit a voice game). Rewritten by the cloud session, then the five judges once, as for the Beginner rewrite. Still not served.
+
+**Chip names are navigational links (Josh, 2026-11-03):** short and plain; a bad name is needlessly long or tries to be clever ("we aren't trying to be clever").
+
+**Lesson chips, Mexico A1 (Josh, 2026-11-03).** The 25 lessons become 20 in four areas:
+- Meeting people: Hello (01-3 + 01-4) · How are you (01-2) · Be polite (01-1, *tú* or *usted*) · Titles (04-4, *joven*, *don*, *doña*) · Goodbye (01-5)
+- About you: Name (03-1) · Who are you (03-2 + 03-3, where you're from and where you live) · Time here (03-4); "Ask the key questions" (03-5) dropped as a chip, since each of these teaches asking back
+- Getting by: Slower, please (02-1 + 02-3) · Pardon? (02-2, *¿Mande?*) · Ask politely (02-4) · Spell it (02-5) · Excuse me (04-1 + 04-2) · Say it softly (04-3)
+- Ordering: Order politely (05-1) · How many (05-2) · Name the filling (05-3) · With or without (05-4) · A little extra (05-5) · When they ask (04-5, *¿Qué buscaba?*)
+Mexico has no paying lessons (Italy's How much, Hear a price, Card or cash); adding three from Mexico's syllabus is open (Josh).
 
 **Lessons come in sets; no levels shown (Josh, 2026-11-03: "when all lessons are turned green on first group - go to next ... users don't need to learn our levels").** The Learn page shows one set of chips at a time; when every chip in it is green, the next set takes its place. No "Beginner" or "Intermediate" anywhere the learner sees. Italy has three sets of two areas or four:
 1. Meeting people · About you · Getting by · Ordering and paying (the 14 Beginner lessons)
