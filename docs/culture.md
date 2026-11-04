@@ -22,6 +22,8 @@ Two ideas carry it:
 
 **The test for a `here` line** (Claude's, from Josh's Ettore question "what's the cultural literacy angle?"): does it give the learner something real a local would talk about, that they couldn't get from any park, bar or stop elsewhere? Atmosphere alone fails. Standing facts only, never "tonight" or "today"; checked by the fact judge (`content/<country>/prompts/facts.md`, `scripts/fact-check.mts`).
 
+**Mexico: evaluate before changing anything** (Josh, 2026-11-04: "Mexico's characters already do a good job with cultural topics - we should evaluate the differences before changing here in Mexico"). Rome's rewrite is not a template for Mexico; compare first.
+
 **More cultural and open places** carry the rest: the four drafted from old Rome (all cultural or open), and the particular places listed below under "Showing the places that carry the most culture".
 
 ## Decisions (Josh, 2026-11-03, with the cloud session)
