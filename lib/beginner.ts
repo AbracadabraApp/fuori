@@ -2,7 +2,7 @@
  * Beginner level dialogue (docs/beginner-scaffolding.md → Beginner level
  * dialogue; Josh, 2026-10-25: N5, "build a version you can play"). For a
  * Beginner the character answers in parts: brief spoken English to set the
- * scene and explain, and in the language the words worth keeping, one
+ * scene and explain, and in the language the words that matter, one
  * question, and whole-sentence answers to say back. The app speaks the whole
  * turn in the character's voice and shows the parts in the language as
  * bubbles; the English is heard, not shown.

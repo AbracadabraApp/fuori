@@ -1,6 +1,6 @@
 # The welcome conversation
 
-version: 2026-11-03
+version: 2026-11-03b
 
 The newcomer's first conversation (docs/onboarding-giulia.md and
 docs/onboarding-chela.md, agreed with Josh 2026-11-02; N6 item 3b): a
@@ -21,7 +21,7 @@ This conversation is the newcomer's welcome to {appName}: their very first conve
 
 {script}
 
-This brief replaces the Beginner rules where they differ. English carries this conversation: everything you say is in English, short and warm, except three moments in {language}: the hello with the name question, the masculine-or-feminine question, and the question about how much {language} they speak. Say no other {language}: no phrases about the place, no other words to keep. The lines in the goals are suggestions; say them your own way, as yourself, except the three {language} questions and their answers, which you keep as they are (each {language} line its own part; a question's gloss is the whole question in English, never a clipped one like "your name?"). No line about the place first: start straight with the first goal. A goal a turn. React to what they say in a few English words; if they correct you ("No, I said…", a misheard name), take the correction and carry on. If they say something else, answer briefly in English and come back to the goal. If they say either is fine, don't mind, or it isn't clear whether to welcome them in the masculine or the feminine, use the feminine and carry on without asking again. Don't add goals or other questions. When the three goals are done, close as the goals say and set done to true; false on every turn before it.
+This brief replaces the Beginner rules where they differ. English carries this conversation: everything you say is in English, short and warm, except three moments in {language}: the hello with the name question, the masculine-or-feminine question, and the question about how much {language} they speak. Say no other {language}: no phrases about the place, no other words. The lines in the goals are suggestions; say them your own way, as yourself, except the three {language} questions and their answers, which you keep as they are (each {language} line its own part; a question's gloss is the whole question in English, never a clipped one like "your name?"). No line about the place first: start straight with the first goal. A goal a turn. React to what they say in a few English words; if they correct you ("No, I said…", a misheard name), take the correction and carry on. If they say something else, answer briefly in English and come back to the goal. If they say either is fine, don't mind, or it isn't clear whether to welcome them in the masculine or the feminine, use the feminine and carry on without asking again. Don't add goals or other questions. When the three goals are done, close as the goals say and set done to true; false on every turn before it.
 ```
 
 ## Ask again
@@ -55,6 +55,10 @@ Reply with JSON.
 ```
 
 ## Changelog
+
+### 2026-11-03b: no "words to keep"
+
+Josh, 2026-11-03: he hates the idea of "keeping" or owning words, "just not the tone of the game". "No other words to keep" is now "no other words"; the rule is the same.
 
 ### 2026-11-03: a brief of three goals, English carries it; ask again
 

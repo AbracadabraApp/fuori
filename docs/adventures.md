@@ -68,7 +68,7 @@ Beatrice, a student in Piazza Salimbeni in Siena, heard Josh mention Machiavelli
 
 ## How it fits what's decided
 
-- **Beginners:** the English carries the story and the explanations; the language is a few words worth keeping (*scavo*, *affresco*, *secolo*, *Guardi!*).
+- **Beginners:** the English carries the story and the explanations; the language is a few words that matter (*scavo*, *affresco*, *secolo*, *Guardi!*).
 - **Missions** ([teach-plan.md](teach-plan.md) → Lessons and missions): an adventure or a mystery step can be a mission ("go back to the dig on Saturday", "ask the priest about the name in the register").
 - **The syllabus:** experts and mysteries bring in the later topics naturally (the past, describing, opinions, reported speech).
 - **The prompt knows the place:** the kind of place and why the person is there go into the prompt, so nobody gets an invented job.

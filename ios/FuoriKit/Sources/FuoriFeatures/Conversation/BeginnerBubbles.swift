@@ -4,7 +4,7 @@ import FuoriNetworking
 
 /// Beginner level dialogue (docs/beginner-scaffolding.md; Josh, 2026-10-25):
 /// her English is heard, not shown; what she says in the language shows as
-/// bubbles as it's said, each its own bubble: the words to keep, then her
+/// bubbles as it's said, each its own bubble: the words that matter, then her
 /// question. A tap on a bubble shows its English. Her side, on the left.
 struct BeginnerBubbles: View {
     let parts: [APIClient.TurnPart]

@@ -1,6 +1,6 @@
 # Cultural lessons
 
-version: 2026-11-04
+version: 2026-11-04b
 
 Cultural lessons (docs/culture.md → Cultural lessons; Josh, 2026-11-03): one
 particular thing about a city, told by the shown person whose pride it is, in
@@ -21,7 +21,7 @@ You help make a language-learning game set in today's {city}. A newcomer who has
 
 Each item is one particular thing, small enough to tell in two minutes: one story, one reason. It must be typical, not a stereotype: something people who live here would talk about in an ordinary week and be proud of, not what a visitor expects (nothing like "this city is famous for…", no must-see landmarks for their own sake). Only well-known facts you're sure of. Pick the teller it fits: their place, their role, their age. A different teller for each item.
 
-For each item: chip (its name, at most four English words, that fits only this thing), teller (the person's id), topic (food, history, traditions, art or rivalry), facts (three or four sentences: the story and the reason, in English), words (one or two {language} words worth keeping, with their English).
+For each item: chip (its name, at most four English words, that fits only this thing), teller (the person's id), topic (food, history, traditions, art or rivalry), facts (three or four sentences: the story and the reason, in English), words (the one or two {language} words the story turns on, with their English).
 ```
 
 ## Facts
@@ -55,19 +55,19 @@ Tell it the way someone who loves it would, in three short turns: at most three 
 ## Story: Beginner
 
 ```
-They're a Beginner: the story goes in your English parts, short and simple; the words worth keeping ({words}) are your {language} word parts, offered as answers to say back when they fit.
+They're a Beginner: the story goes in your English parts, short and simple; the {language} words the story turns on ({words}) are your {language} word parts, offered as answers to say back when they fit.
 ```
 
 ## Story: speaking
 
 ```
-Tell it in simple, clear {language} they can follow; English only if they ask or are lost. Bring in the words worth keeping ({words}) as they come up.
+Tell it in simple, clear {language} they can follow; English only if they ask or are lost. Use the words the story turns on ({words}) as they come up, the way you always would; never point one out as something to learn or remember.
 ```
 
 ## Story: last turn
 
 ```
-This is the last turn: finish the story with the word worth keeping and say goodbye. No question.
+This is the last turn: finish the story and say goodbye. No question, and no word to remember or lesson summed up.
 ```
 
 ## Changelog
@@ -75,3 +75,7 @@ This is the last turn: finish the story with the word worth keeping and say good
 ### 2026-11-04: first version
 
 Josh, 2026-11-03: "handle all the data and code work" for culture. From the other session's tested prompts (tests/experiments/culture-lesson.mts; Rome: six items, all passed the fact judge, tipico; two played as lessons), made language-neutral (the language and the city come from the content), with a Fix and a Choose step for the bounded pass the doc decided (write, judge once, fix the failures, recheck once, drop what still fails), and two changes from the review of that trial: each turn is capped at three or four short sentences (the trial's Intermediate turns ran to about 90 words, a lot to follow by ear) and the teller keeps to the checked facts. Beginners hear the story in the Beginner format's English parts, with the words as word parts.
+
+### 2026-11-04b: no "word worth keeping"
+
+Josh, 2026-11-03: he hates the idea of "keeping" or owning words, "so weird and just not the tone of the game. Are you supposed to own Rome or Claudio too?" (it came up with flashcards too), and "this keep thing is not my creation". In the trial the last-turn line made tellers say it out loud ("Ti lascio una parola da ricordare", "that is the word worth keeping"). The words are now just the ones the story turns on, used the way the teller always would; the last turn ends the story without a takeaway. The learning is following the story in the language and answering.

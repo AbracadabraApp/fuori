@@ -28,7 +28,7 @@ export interface CultureItem {
   topic: 'food' | 'history' | 'traditions' | 'art' | 'rivalry';
   /** The checked facts the teller keeps to, in English */
   facts: string;
-  /** One or two words worth keeping, in the language */
+  /** The one or two words the story turns on, in the language */
   words: { said: string; en: string }[];
 }
 

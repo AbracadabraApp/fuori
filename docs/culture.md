@@ -13,7 +13,7 @@ Two ideas carry it:
 - **No new rules in the character prompt.** Characters get facts, not instructions. How and when they bring their pride up is left to them, as the prompt's principle says ("describe the situation, not how to talk").
 - **Each character gets a pride field**, reusing `caresAbout` (empty and unread today; see Open questions for what uses it). It holds:
     - what they care about and why;
-    - one or two words worth keeping;
+    - the one or two words it turns on;
     - who else in the city knows something ("Gino at the salumeria: mortadella"). Proposed: this becomes `knows` (below), one list of people for both.
 - **The rest comes from what exists, or from code:**
     - Memory: the end-of-conversation notes (`content/it/prompts/memory.md`) record what the learner asked about and anything promised, so a character can pick a topic up next time. What the character *told* the learner isn't on the memory prompt's list; check this in a test before relying on it.
@@ -63,7 +63,7 @@ Dropped: "stories" as a sixth topic (Josh: "dubious"); writers, songs and films 
 
 #### Beginners (from a review)
 
-Teaching wins, and a Beginner can't follow a story in the language. Beginner characters already speak in parts: a sentence or two of spoken English to set the scene, then the words worth keeping in the language ([CLAUDE.md](../CLAUDE.md), `lib/beginner.ts`). The culture goes in those parts: the story in English (why mortadella has pistachios), then the one word worth keeping in the language (*la sfoglia*). Intermediate and Advanced hear it in the language.
+Teaching wins, and a Beginner can't follow a story in the language. Beginner characters already speak in parts: a sentence or two of spoken English to set the scene, then the words that matter in the language ([CLAUDE.md](../CLAUDE.md), `lib/beginner.ts`). The culture goes in those parts: the story in English (why mortadella has pistachios), then the word it turns on in the language (*la sfoglia*). Intermediate and Advanced hear it in the language.
 
 ## What exists today
 
@@ -225,7 +225,7 @@ Not yet language-neutral: "Italian" and "Rome is famous for…" are written in; 
 
 ## Proposals
 
-1. **Every shown character owns one or two things,** in their pride field (decided above): a specific thing from one topic, the reason behind it, and the words worth keeping. `here` stays what it is: why they're at that place. Each item has one owner in the city, so topics spread across people and the learner has reasons to visit different ones.
+1. **Every shown character owns one or two things,** in their pride field (decided above): a specific thing from one topic, the reason behind it, and the words it turns on. `here` stays what it is: why they're at that place. Each item has one owner in the city, so topics spread across people and the learner has reasons to visit different ones.
 2. **Raise the weak lines to that standard**, menus and job-only lines first, starting with Rome.
 3. **Give the weak roles campanilismo** (Josh): pharmacists, baristas, people at stops, pensioners; between cities everywhere, between neighbourhoods in Rome, Siena and Venice.
 4. **Use the city lists** (decided): write each city's pride items from its `food`, `customs` and `localTouches`, so the material in the files reaches the characters.
@@ -237,13 +237,13 @@ Not yet language-neutral: "Italian" and "Rome is famous for…" are written in; 
 
 Lessons about a piece of culture, not about the language, in Learn. Learn's lessons are national, so this is one set per country; an ordinary character teaches each one as a conversation (no Magda). Shaped with another session; Josh's corrections below.
 
-**Size (Josh):** "opera" or "neorealism" is too global for a 2–4 minute session; it comes out as a summary. Each chip is one particular thing. **Work backwards from the chip's name:** if it can't be named in about three words that fit only that thing, it's too broad. One story, one reason, one or two words worth keeping.
+**Size (Josh):** "opera" or "neorealism" is too global for a 2–4 minute session; it comes out as a summary. Each chip is one particular thing. **Work backwards from the chip's name:** if it can't be named in about three words that fit only that thing, it's too broad. One story, one reason.
 
 **Who teaches:**
 - **A thing with a home city** → the shown character there whose pride it is (opera arrives as Verona's candles, not as "opera").
 - **A thing that's particular but national** (la scarpetta, Ferragosto) → a shown retired character (Josh: "if retired characters are accessible they can teach"). Shown today: Italy, Ettore and Franca (Roma), Lorenzo (Firenze), Alberto (Matera, Siracusa), the nonna on Spaccanapoli (Napoli); Mexico, the retired doña on the Alameda (CDMX), the retired dons on Oaxaca's Zócalo and in Parque Juárez (San Miguel), the abuela in the Jardín del Carmen (Puebla).
 
-**How it plays: mostly listening** (Josh: "not passing back and forth as much"). The character tells the story in two or three turns, and each turn ends with a personal question along the way (Josh): "Sei mai stato all'opera?", "Hai mai mangiato il guanciale?" Not a quiz: the questions a person telling you about their city would ask. The learner answers, the character carries on; the last turn ends with the word worth keeping. About 2–3 learner turns, 2–3 minutes. It uses the conversation screen as it is (the mic opens after each question), so nothing changes in the app. Bonus for learning: "have you ever…?" is how textbooks teach talking about experiences (*sei mai stato/stata*, *hai mai…*).
+**How it plays: mostly listening** (Josh: "not passing back and forth as much"). The character tells the story in two or three turns, and each turn ends with a personal question along the way (Josh): "Sei mai stato all'opera?", "Hai mai mangiato il guanciale?" Not a quiz: the questions a person telling you about their city would ask. The learner answers, the character carries on; the last turn ends the story, with no word to remember and nothing summed up (Josh: no "keeping" words, 2026-11-03). About 2–3 learner turns, 2–3 minutes. It uses the conversation screen as it is (the mic opens after each question), so nothing changes in the app. Bonus for learning: "have you ever…?" is how textbooks teach talking about experiences (*sei mai stato/stata*, *hai mai…*).
 
 **A fresh conversation each time, held to the facts** (not a fixed script: over-scripting has failed in good conversations). Beginners: mostly English, with the word or two in the language. Checked by the fact judge before it ships. About five chips per set, in their own tint, outside the lesson sets so they never block progress (from the other session).
 
@@ -350,5 +350,5 @@ Prompted by `outdoors`: other facts on places and people that could matter. **Th
 - **Geography** beyond food and weather (the sea, the lakes, the mountains; day trips are parked): part of local pride, or its own topic?
 - **Craft and sport** (football especially): topics of their own, or inside traditions and campanilismo?
 - **The learner's route** for campanilismo between cities: the cities are in the conversation records; wiring them into the prompt is the open part.
-- **How we'd know it works:** a judge in `npm run test:conversations` for "the learner heard something specific about this city", and that the learner kept a word from it (a language goal, not trivia), alongside the existing scores.
+- **How we'd know it works:** a judge in `npm run test:conversations` for "the learner heard something specific about this city", and that they followed it in the language and answered (a language goal, not trivia), alongside the existing scores.
 - **Prompt length:** whichever field holds it, the culture reaches the prompt as one line, not a new block.
