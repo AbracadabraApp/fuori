@@ -65,6 +65,7 @@ The biggest step is from 3 to 4, where the echo goes. "Mostly the language, echo
 | 7 | **Adventures** ([adventures.md](adventures.md)): places where something happens, people with something to show, a mystery across days and places. | World | Your ideas, still forming |
 | 8 | **Missions**, once they're defined; the placeholder ships in build 9. The card maker waits on them. | Teaching | What missions are for |
 | 9 | **The conversation library and the turn-timings log:** words, audio and timings kept beyond the family's recordings. | Speed | A privacy decision; each further learner, one at a time |
+| 10 | **The full A1 flashcard decks** ([flashcards.md](flashcards.md)): the 60-card pilots (picturable nouns from the first A1 units) grown to the A1 words that can be pictured, about 400–500 a country (the syllabus has 520 A1 nouns for Italy, 410 for Mexico). Claude writes the card list, Josh reviews it, then pictures, voices and a contact sheet for Josh, and the upload. Content and R2 only: it ships with a deploy, not a build. About $25 for both countries. More words in play is what the feed was missing (Josh's Mexico session: "5 is not a feed"). Added 2026-11-04. | Teaching | A go; whether verbs get scene cards; keep or cut the pilot's flagged words (signorina, aula, mensa, pagina) |
 
 Items 1–3 can run at the same time: build 9 is the app, items 2 and 3 are the server.
 
