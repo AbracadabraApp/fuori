@@ -121,9 +121,11 @@ Still to do, on the laptop (needs keys, Railway, the Mac):
 
 **The cloud session that wrote `claude/welcome-goals`:** open the pull request only if Josh says yes; otherwise done. Leave lessons and the Learn page alone.
 
-**This cloud session (lesson content only):** Intermediate lessons: re-run the grammar and level judges, fix the 50 flagged lines, recheck once (`content/it/lessons-b1.json`, not served). The Beginner rewrite (21 → 14 chips, with the judges' fixes) waits for Josh's go.
+**This cloud session (lesson content only):** ✅ Beginner rewrite written and judged on branch `claude/beginner-rewrite` (14 lessons, `lesson-areas.json` for the 14; check-lesson-areas passes). ✅ Intermediate: 56 → 38 chips in `content/it/lessons-b1.json`, judged and fixed (README §3), not served. Next: tighten the writing prompt (practice answers copied examples: 31 of 46 teaching failures).
 
-**Josh:** yes or no to the pull request; confirm "done = reaching Magda's review"; when to release the Beginner rewrite; play the welcome once it's merged.
+**Mac, added 2026-11-03:** run `smoke:live` on `claude/beginner-rewrite`, then merge (lessons finished under the old a1-* ids won't show as done). Then lesson sets on the Learn page (learn.md → "Lessons come in sets"): one set at a time, the next when all green, an "earlier lessons" link, no level names; serve the Intermediate lessons as sets 2 and 3.
+
+**Josh:** Groq paid tier or a retry for E-7WCH; yes to installing the phone build; four Intermediate calls from the teaching judge (titles "How much?", "How come?", "Everyone"; drop "Polite commands" or keep it); whether Mexico gets the same lesson rewrite.
 
 ## 2026-11-02/03: Lesson judges, Intermediate lessons, Learn page, welcome rework (cloud session)
 - **Lesson judges** (docs/lesson-judges.md; Josh's design: five separate judges, no human proofreading, no outside tools, one bounded pass). Run on Italy's 21 A1 lessons and on 60 new B1 lessons. Everything in tests/experiments/lesson-judges/README.md. A1 fixes held by Josh (live lessons unchanged); B1 draft in content/it/lessons-b1.json, not served.
