@@ -135,12 +135,11 @@ Dropped: Writing to an office (10-4; email doesn't fit a voice game). Rewritten 
 
 **Chip names are navigational links (Josh, 2026-11-03):** short and plain; a bad name is needlessly long or tries to be clever ("we aren't trying to be clever").
 
-**Lesson chips, Mexico A1 (Josh, 2026-11-03).** The 25 lessons become 20 in four areas:
+**Lesson chips, Mexico A1 (Josh, 2026-11-03).** The 25 lessons become 20, plus three on paying, 23 in four areas:
 - Meeting people: Hello (01-3 + 01-4) · How are you (01-2) · Be polite (01-1, *tú* or *usted*) · Titles (04-4, *joven*, *don*, *doña*) · Goodbye (01-5)
 - About you: Name (03-1) · Who are you (03-2 + 03-3, where you're from and where you live) · Time here (03-4); "Ask the key questions" (03-5) dropped as a chip, since each of these teaches asking back
 - Getting by: Slower, please (02-1 + 02-3) · Pardon? (02-2, *¿Mande?*) · Ask politely (02-4) · Spell it (02-5) · Excuse me (04-1 + 04-2) · Say it softly (04-3)
-- Ordering: Order politely (05-1) · How many (05-2) · Name the filling (05-3) · With or without (05-4) · A little extra (05-5) · When they ask (04-5, *¿Qué buscaba?*)
-Mexico has no paying lessons (Italy's How much, Hear a price, Card or cash); adding three from Mexico's syllabus is open (Josh).
+- Ordering and paying: Order politely (05-1) · How many (05-2) · Name the filling (05-3) · With or without (05-4) · A little extra (05-5) · When they ask (04-5, *¿Qué buscaba?*) · How much · Hear a price · Card or cash (three new, from syllabus unit a1-06, Josh: yes)
 
 **Lessons come in sets; no levels shown (Josh, 2026-11-03: "when all lessons are turned green on first group - go to next ... users don't need to learn our levels").** The Learn page shows one set of chips at a time; when every chip in it is green, the next set takes its place. No "Beginner" or "Intermediate" anywhere the learner sees. Italy has three sets of two areas or four:
 1. Meeting people · About you · Getting by · Ordering and paying (the 14 Beginner lessons)
