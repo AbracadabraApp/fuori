@@ -143,7 +143,19 @@ Thinner (Siena has no contrada, Lucca's walls are only in bar names, Milano and 
 
 ## Weather
 
-- **Kept** (Josh: "weather is always happening wherever you are"): the city's real weather as one line in the prompt; characters bring it up, remember it the next day, and use the region's weather words. Free source: Open-Meteo, server-side. Its own doc when built.
+Kept (Josh: "weather is always happening wherever you are"). **People talk about it; nothing on screen** (cloud session, 2026-11-03): no overlay, no card, nothing added to the iPhone app. Weather matters only if it gets the learner talking.
+
+**What the learner learns:** the weather words textbooks teach early (*fa caldo, piove, c'è nebbia, tira vento*), heard again and again in real use, and a region's own words (scirocco in Sicily, nebbia in the Po valley).
+
+**How it would work:**
+1. **Once a day per city** the server fetches the forecast from Open-Meteo (free, no key, free tier for non-commercial use) and keeps it for the day.
+2. **One line goes into each character's setting**: "Today in Bologna: rain, high of 14°C, wind from the northeast." A fact, not an instruction, so no rule about bringing it up.
+3. **Characters mention it when it fits.** Regional words come from them reading the real weather for their city.
+4. **The next day:** memory notes save plans, promises and personal things, not the weather, so "yesterday's storm" only carries over when it became part of the conversation (getting soaked, a plan rained off). Check in a test.
+5. **If the fetch fails** the line is left out and the failure is logged; characters never guess the weather.
+6. **Measure it:** the conversation tests check that weather comes up sometimes, not every time.
+
+If weather is ever shown on screen, it would go in the city's daily suggestions ("Rainy today: a good day for the bookshop"). Those aren't built: `Suggestion` exists only as a type in `lib/types.ts`, and the app shows no daily suggestions today.
 
 ## Dropped in the brainstorm
 
