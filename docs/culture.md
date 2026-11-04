@@ -14,7 +14,7 @@ Two ideas carry it:
 - **Each character gets a pride field**, reusing `caresAbout` (empty and unread today; see Open questions for what uses it). It holds:
     - what they care about and why;
     - one or two words worth keeping;
-    - who else in the city knows something ("Gino at the salumeria: mortadella").
+    - who else in the city knows something ("Gino at the salumeria: mortadella"). Proposed: this becomes `knows` (below), one list of people for both.
 - **The rest comes from what exists, or from code:**
     - Memory: the end-of-conversation notes (`content/it/prompts/memory.md`) record what the learner asked about and anything promised, so a character can pick a topic up next time. What the character *told* the learner isn't on the memory prompt's list; check this in a test before relying on it.
     - Lessons pick practice partners by pride topic (code).
@@ -172,12 +172,28 @@ Prompted by `outdoors`: other facts on places and people that could matter. **Th
 |---|---|---|---|
 | `outdoors` | place | open air or inside | the weather line (above) |
 | `from` | character | hometown when it isn't this city (today buried in `here`: "Your background: from Tirana") | campanilismo from inside: a Neapolitan vendor in Milan comparing the two |
-| `knows` | character | people they're connected to: a cousin, a rival, a regular (overlaps "who else knows" in the pride field) | the city joins up; reasons to go places |
 | `formality` | character | tu or Lei for this person; exists, always "formal" today | the learner hears both: Lei from the pharmacist, tu from the student |
 | `regionalisms` | character | how much local speech they use; exists, always empty | Gina speaks Roman and explains it; the pharmacist speaks standard Italian |
 | neighbourhood line | place | one sentence about the quartiere | campanilismo inside a city |
 | `nearby` | place | the places next door | directions vocabulary, a reason to walk on |
 | `english` | character | how much English they really have | real people differ; would touch the rule that characters help in English when asked |
+
+### `knows`: characters who know each other
+
+**Why it matters (Josh):** most characters never mention other characters. Each one is alone in its prompt: Sandro's has Sandro, his bar and the learner, so as far as he knows nobody else in Rome exists.
+
+**What it is:** one or two real people from the same city's file, each with a relationship and a line. Merged with the pride field's "who else knows something", so one list carries both:
+- Sandro → Gina Proietti, Trastevere: "my late wife's sister; never stops talking"
+- Gina → Don Paolo: "says Mass too fast"
+- Mohamed → Claudio at Volpetti: "where the trattoria buys its guanciale"
+
+**What the learner learns:** talking about other people: third-person verbs (*lui è, lei fa*), describing someone, gender agreement (*simpatico, simpatica*); relationship words (*cugino, vicina, cognata, un cliente*); directions when someone says where to find a person.
+
+**What the game gets:** the city joins up; referrals come from people, giving reasons to go somewhere new; arriving at Gina's having heard of her from Sandro ("Sandro mi ha parlato di Lei") is what being a newcomer who belongs feels like.
+
+**How:** links come from the city files, real characters only, and go both ways (if Sandro knows Gina, Gina knows Sandro). Generated, then judged for consistency, like the pride items. Facts, not rules: the character decides whether to mention anyone.
+
+**Later, not now:** gossip, where Gina knows Sandro sent you. That needs memory shared between characters; today each character's memory is its own.
 
 **Dropped:** `menu` (real items and prices): it scripts the conversation, and characters already get roughly right what their place sells. `pace` (quick counter or slow chat) leans the same way.
 
@@ -190,7 +206,7 @@ Prompted by `outdoors`: other facts on places and people that could matter. **Th
 - ~~**Does local pride stay in `here`, or move to `caresAbout`?**~~ Decided: `caresAbout`, as the pride field. What uses it today: `caresAbout` is free to use (checked 2026-11-03): it's on the character sheet (`lib/types.ts`), every city character gets it empty (`lib/characters/for-place.ts`), only Magda's two sheets fill it, no prompt reads it, and `tests/check-content-api.ts` keeps it out of what's sent to the app (`tests/check-turn-request.ts` uses it empty as test data). Using it means a small change to how the prompt is built, and gives tests and suggestions one place to look. The other option (from a review): a new `pride` field, so the fact judge and tests check it apart from the setting. Either way it's a separate field; the choice is the name.
 - **How the pride field reaches the prompt:** one line of facts in the character prompt (a placeholder filled from `caresAbout`), with a version bump and changelog entry as `character.md` requires. Left out when empty, so characters without pride are unchanged.
 - ~~**How it comes up**~~ Decided: no rules; the character has the facts and decides.
-- **How the learner finds who knows what:** partly decided: characters know who else in the city knows something (the pride field), and lessons pick partners by topic. Daily suggestions could point at it too ("Ask the sfoglina how she rolls the dough").
+- **How the learner finds who knows what:** partly decided: characters know who else in the city knows something (`knows`), and lessons pick partners by topic. Daily suggestions could point at it too ("Ask the sfoglina how she rolls the dough").
 - **Geography** beyond food and weather (the sea, the lakes, the mountains, `dayTrips`): part of local pride, or its own topic?
 - **Craft and sport** (football especially): topics of their own, or inside traditions and campanilismo?
 - **The learner's route** for campanilismo between cities: the cities are in the conversation records; wiring them into the prompt is the open part.
