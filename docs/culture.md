@@ -1,20 +1,26 @@
-# Local pride
+# Culture
 
 2026-11-03 · Josh · Draft for review: ideas from a brainstorm with Josh, nothing built yet. What's decided is marked (Josh); everything else is a proposal.
 
-## The idea
+**Culture is an overall goal for both countries (Josh, 2026-11-03).** The learner should come away knowing what makes each city itself: its food and why it's made that way, its history, its traditions and legends, its art, and what it thinks of the next town. This doc covers both Italy and Mexico; the examples are mostly Italian because Italy was audited first.
+
+Two ideas carry it:
+- **Local pride** (the main one, most of this doc): every character cares about one part of their city's culture and is proud of it.
+- **Weather** (separate, below): the city's real weather, which is always happening wherever the learner is.
+
+## Local pride
 
 Every character cares about one part of their city's culture and is proud of it: a dish and why it's made that way, a legend, a painting, a festa, or the town down the road that gets it all wrong. The learner learns a city's culture from the people who care about it, one person at a time, in the language.
 
 It answers Josh's ask to "thicken the game's awareness of culture, tradition, geography: what makes each city unique". It follows the existing rules: characters teach in role, never like a teacher with a lesson plan ([CLAUDE.md](../CLAUDE.md)); nothing scripted, the character only knows what it cares about and the conversation goes where it goes.
 
 **What the learner learns:**
-- **Culture they can talk about**: why mortadella has pistachios, what the hypogeum was, why there's no salt in Tuscan bread. Something to bring up with the next person ("Hai visto i mosaici?").
-- **Words that come with a place**: dish and ingredient names, local words (*daje*, *babbo*), weather words that belong to a region (scirocco, bora, nebbia).
+- **Culture they can talk about**: why mortadella has pistachios, what the hypogeum was, why there's no salt in Tuscan bread, what goes into a mole. Something to bring up with the next person ("Hai visto i mosaici?").
+- **Words that come with a place**: dish and ingredient names, local words (*daje*, *babbo*; *chido*, *padre* in Mexico), weather words that belong to a region (scirocco, bora, nebbia).
 - **Grammar that comes up by itself**: comparatives and superlatives from campanilismo (*più buono di, meglio, il migliore*), the imperative from someone teaching a recipe (*taglia, metti, mescola*), the past from legends and history.
 - **The map**: what grows where, which towns are rivals, what the sea, the lakes or the mountains do to a city.
 
-## The five topics (Josh)
+### The five topics (Josh)
 
 | Topic | What it covers | Who naturally owns it |
 |---|---|---|
@@ -26,7 +32,7 @@ It answers Josh's ask to "thicken the game's awareness of culture, tradition, ge
 
 Dropped: "stories" as a sixth topic (Josh: "dubious"); writers, songs and films sit under art.
 
-### Campanilismo
+#### Campanilismo
 
 - **Between cities:** Bologna and Modena (*La secchia rapita*, the bucket Modena took in 1325), Siena and Firenze (Montaperti, 1260), Palermo and Catania (arancina or arancino), Lucca and Pisa, Verona and the rest of the Veneto (*"Veneziani gran signori, Padovani gran dotori, Vicentini magnagati, Veronesi tuti mati"*), Torino and Milano, north and south. Mexico: chilangos, regios and tapatíos.
 - **Inside a city (Josh):** Rome's quartieri (Trastevere's *noantri*, Roma and Lazio), Siena's contrade (each has its rival), Venice's sestieri (Castellani and Nicolotti, who fought on the bridges).
@@ -34,7 +40,7 @@ Dropped: "stories" as a sixth topic (Josh: "dubious"); writers, songs and films 
 - **When:** leaving ("A Firenze? Portati il sale, il pane non ce l'hanno!"), arriving (where have you come from?), and any time the learner mentions another city or neighbourhood. Reacting to the learner's route needs the cities they've lived in; today characters don't know it.
 - **Tone:** teasing and affectionate, never mean.
 
-### Food
+#### Food
 
 - **All food is local, and comes with some education** (Josh). Characters talk about their city's dishes, not generic Italian food, and say why.
 - **Eating rules, corrected in character**, the way language mistakes are recast: no cappuccino after lunch, no Parmesan on fish, don't cut the spaghetti ("Ma no! Il cappuccino a quest'ora?!"), with the reason.
@@ -72,9 +78,11 @@ Weaker kinds:
 | Art | thin: Il Gesù's ceiling, Signorelli in Orvieto, Monteverdi in Mantova, Brunelleschi |
 | Campanilismo | almost none: arancina "with an e" is the only real rivalry |
 
+**Mexico (2026-11-03):** 5 cities; every shown place has a line (60 of 65; the 5 without are the language schools), and 61 of 65 characters overall. Not yet read for quality; first impressions are local and specific (the tejuino cart by San Juan de Dios, mezcal with sal de gusano, Talavera cups in Puebla). Rivalries: chilangos, regios and tapatíos; Puebla and its mole poblano against Oaxaca's seven moles.
+
 ### City lists nobody reads
 
-Every city file has `food` (~15–29 dishes), `customs` (~7–15), `localTouches` (~5–15) and `dayTrips`. No code reads them. Bologna's, for example: *tirare la sfoglia*, "la dotta, la grassa, la rossa", the towers as symbols of medieval family power, the Portico di San Luca. They're the material local pride would draw from.
+In both countries every city file has `food` (~15–29 dishes), `customs` (~7–15), `localTouches` (~5–15) and `dayTrips`. No code reads them. Bologna's, for example: *tirare la sfoglia*, "la dotta, la grassa, la rossa", the towers as symbols of medieval family power, the Portico di San Luca. They're the material local pride would draw from.
 
 ### Places and roles
 
@@ -114,12 +122,15 @@ Thinner (Siena has no contrada, Lucca's walls are only in bar names, Milano and 
 4. **Use the city lists**: write each city's `here` lines from its `food`, `customs` and `localTouches`, so the material in the files reaches the characters.
 5. **Balance the topics per city**: today it's mostly food; aim for every city to have someone for history, traditions, art and campanilismo among its shown places.
 6. **Facts are checked** before they ship: lines are generated, someone who knows the place (Josh, or a native speaker) reads them once. Well-known facts only.
-7. **Mexico the same way**: local pride is data, not code, so nothing changes in the prompts; Mexico's cities get the same pass (not audited yet).
+7. **Both countries the same way** (Josh: culture is a goal for both): local pride is data, not code, so nothing changes in the prompts. Mexico's five cities get the same pass; their lines are already nearly complete, so it's a quality and topic-balance pass, not a fill.
 
-## Related, separate ideas from the same brainstorm
+## Weather
 
-- **Weather** (kept): the city's real weather as one line in the prompt; characters bring it up, remember it the next day, and use the region's weather words. Free source: Open-Meteo, server-side. Its own doc when built.
-- **Dropped:** a city calendar of feast days (Josh: "you have to be at the right place at the right time"), time of day and day of the week (Josh: "not going to hit most users"), anything in the Diario (it isn't built).
+- **Kept** (Josh: "weather is always happening wherever you are"): the city's real weather as one line in the prompt; characters bring it up, remember it the next day, and use the region's weather words. Free source: Open-Meteo, server-side. Its own doc when built.
+
+## Dropped in the brainstorm
+
+- a city calendar of feast days (Josh: "you have to be at the right place at the right time"), time of day and day of the week (Josh: "not going to hit most users"), anything in the Diario (it isn't built).
 
 ## Open questions
 
