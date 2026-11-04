@@ -31,6 +31,10 @@ export const showcase: Record<string, string[]> = {
     'trattoria-garbatella',
     'pantheon-rotonda',
     'gesu-piazza',
+    'piazza-navona', // art: Tommaso, from roma.ts (Josh, 2026-11-03)
+    'piazza-santa-maria-trastevere', // traditions: Gina, from roma.ts
+    'basilica-santa-maria', // art and history: Don Paolo, from roma.ts
+    'colosseo', // history: Serena, archaeologist (new)
     'villa-borghese-nuova',
     'tram-porta-maggiore',
     'tabaccheria-pigneto',
@@ -279,10 +283,10 @@ export const homeCities = ['roma-nuova', 'matera', 'firenze', 'siena', 'venezia'
 
 /**
  * Hidden for now, not deleted (Josh, 2026-10-22: "hide old Rome for now,
- * don't lose it"): the original Roma's shown places, while Roma nuova is
- * tried (docs/rome-redo.md). roma.ts, its people and their memories are
- * untouched. To bring it back, move this list into showcase as `roma` and
- * put 'roma' back at the front of homeCities.
+ * don't lose it"): the original Roma's shown places, while Roma nuova was
+ * tried (docs/rome-redo.md). Retired 2026-11-03 (Josh: "nuova rome is the
+ * only rome"); Sandro, Dario, Tommaso, Gina and Don Paolo moved to Roma nuova
+ * with their ids. roma.ts, its people and their memories stay in the data.
  */
 export const hiddenForNow: Record<string, string[]> = {
   firenze: [ // replaced 2026-10-23
