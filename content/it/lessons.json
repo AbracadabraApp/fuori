@@ -138,7 +138,7 @@
             {
               "ask": {
                 "said": "Ehi, ciao! Come stai?",
-                "en": "Hey, hi! How are you?"
+                "en": "Hey there! How are you?"
               },
               "answer": {
                 "said": "Sto bene, grazie. E tu?",
@@ -751,7 +751,7 @@
               "en": "So, two pizzas and an orange soda."
             }
           ],
-          "notice": "For one, say un or una with the item: un caffè, una spremuta, and un' before a vowel: un'aranciata. For two, say due and change the last letter, -o to -i and -a to -e, while caffè stays the same: due cappuccini, due spremute, due caffè.",
+          "notice": "For one, say un or una with the item: un caffè, una spremuta, and una becomes un' before a vowel: un'aranciata. For two, say due and change the last letter, -o to -i and -a to -e, while caffè stays the same: due cappuccini, due spremute, due caffè.",
           "context": "",
           "practice": [
             {

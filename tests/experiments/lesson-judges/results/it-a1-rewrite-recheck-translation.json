@@ -1,0 +1,9 @@
+[
+  {
+    "id": "meeting-people-2",
+    "field": "practice.2.ask.en",
+    "text": "Hey, hi! How are you?",
+    "why": "\"Hey, hi!\" is a word-for-word copy of \"Ehi, ciao!\"; American English doesn't stack two greetings like that.",
+    "fix": "Hey there! How are you?"
+  }
+]
