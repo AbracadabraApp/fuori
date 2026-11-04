@@ -66,6 +66,12 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-04: cultural lessons fixed, no "words worth keeping" (laptop session)
+
+- **No "keeping" words (Josh: "so weird and just not the tone of the game. Are you supposed to own Rome or Claudio too?"; "this keep thing is not my creation").** Tellers no longer end on a word to remember; the wording is gone from CLAUDE.md, docs/culture.md, beginner-scaffolding, adventures, the welcome prompt and code comments (d00f55a). Still in `content/*/prompts/beginner.md` ("everything you want them to keep", "a word or two worth having"): instruction only, not said aloud; left for Josh to decide.
+- **Cultural lessons, "fix all the what's wrong" (cdca2ad, culture.md 2026-11-04c):** Intermediate mistakes recast as the teller reacts (20 of 24, none pointed out); the Story brief's "rules above don't apply" line, which switched off the Beginner rules, is gone, so every Beginner turn has a line of the story in the language; no alcohol (ombra, ricciarelli with vin santo, mezcal dropped; Sior Rioba in Italy's set); no dates a listener can't hold. Check: `tests/experiments/culture-check.mts`.
+- **Next:** confirm the Railway deploy (`railway status` gave nothing); Josh to play a cultural lesson on the phone; decide on beginner.md's "keep" wording.
+
 ## 2026-11-03 (night): culture chips among the lessons (laptop session)
 
 - **Done:** the Learn page's separate teal Culture section and its "1 of 6" are gone; each culture chip now sits among the lesson chips of the current set (chip k in area k mod n, every second place, the same order every visit). A gem comes before the name; pale teal to do (#e4f0ef, border #8cbfbf, text #12393d), deep teal done (#1d5c63, white text and gem). The gem is hidden from VoiceOver; the label reads "Culture: <name>" (", done" once done). Culture chips don't count in "N of M". New tokens `cultureChip`, `cultureEdge`, `cultureInk`, `cultureDone`, `cultureGem`, `cultureGemDone`; `cultureField` removed. Test: `CultureChipPlacementTests`.
