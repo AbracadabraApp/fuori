@@ -139,11 +139,27 @@ export function tidyParts(parts: Part[]): Part[] {
       // closing, 2026-11-03) sometimes came with it in en and text empty, and
       // the turn was dropped as having no parts
       const text = decodeEscapes((p.kind === 'english' && !p.text.trim() ? p.en : p.text).trim());
-      return { ...p, text, en: decodeEscapes(p.en.trim()), gloss: glossed ? withoutNames(decodeEscapes(p.gloss!), text) : '' };
+      const gloss = glossed ? withoutNames(decodeEscapes(p.gloss!), text) : '';
+      return { ...p, text, en: decodeEscapes(p.en.trim()), gloss: glossEchoes(gloss, text) ? '' : gloss };
     })
     .filter((p) => p.text)
     .map(withoutRepeats(new Set()))
     .filter((p) => p.text);
+}
+
+/**
+ * A gloss that mostly repeats its own phrase adds nothing heard: "Benvenuto o
+ * benvenuta?" glossed "Benvenuto or benvenuta?" was said twice in a row (Josh,
+ * 2026-11-04, the welcome; Mexico's "¿Bienvenido o bienvenida?" the same).
+ * Half or more of the gloss's words already in the phrase: not said. By
+ * comparing words, so any language; a real translation shares none.
+ */
+export function glossEchoes(gloss: string, text: string): boolean {
+  const words = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\p{M}]/gu, '').split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+  const g = words(gloss);
+  if (!g.length) return false;
+  const t = new Set(words(text));
+  return g.filter((w) => t.has(w)).length / g.length >= 0.5;
 }
 
 /** Sentences of a part, split after . ! ? or … (any language) */

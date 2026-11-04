@@ -1,7 +1,7 @@
 // Beginner level dialogue (lib/beginner.ts): the line and English come from the
 // parts in order, empty parts are dropped, and the prompt fills every
 // placeholder with the character, the place and the conversation. No API calls.
-import { lineFromParts, tidyParts, buildBeginnerPrompt, withoutNames, PartsWatcher, type Part } from '@/lib/beginner';
+import { lineFromParts, tidyParts, buildBeginnerPrompt, withoutNames, PartsWatcher, glossEchoes, type Part } from '@/lib/beginner';
 import { cities, pack } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 
@@ -38,6 +38,11 @@ const pw = new PartsWatcher((f, ps) => { if (firstSaid === undefined) { firstSai
 for (let n = 1; n <= json.length; n++) pw.feed(json.slice(0, n));
 const allEnglish = tidyParts([{ kind: 'english', text: '', en: 'Every city has people to meet.', gloss: '' }]);
 check('an English part with its words in en keeps them', allEnglish.length === 1 && allEnglish[0].text === 'Every city has people to meet.', JSON.stringify(allEnglish));
+// A gloss that only repeats its phrase isn't said (the welcome's "Benvenuto o benvenuta? Benvenuto or benvenuta?", Josh, 2026-11-04)
+const echo = tidyParts([{ kind: 'question', text: 'Benvenuto o benvenuta?', en: 'Welcome, masculine or feminine?', gloss: 'Benvenuto or benvenuta?' }]);
+check('a gloss that repeats the phrase is dropped', echo[0].gloss === '' && !/Benvenuto or benvenuta/.test(lineFromParts(echo).line), lineFromParts(echo).line);
+check('a real translation is kept', !glossEchoes('Welcome, masculine or feminine?', 'Benvenuto o benvenuta?') && !glossEchoes('Hi Marco, how are you?', 'Ciao Marco, come stai?'));
+check('Mexico too', glossEchoes('Bienvenido or bienvenida?', '¿Bienvenido o bienvenida?'));
 const whole = lineFromParts(tidyParts(streamed)).line;
 check('streamed: a first piece is sent', firstSaid !== undefined);
 check('streamed: the line starts with it', !!firstSaid && whole.startsWith(firstSaid), `${firstSaid} | ${whole}`);
