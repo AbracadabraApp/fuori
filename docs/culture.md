@@ -193,7 +193,9 @@ Prompted by `outdoors`: other facts on places and people that could matter. **Th
 
 **How:** links come from the city files, real characters only, and go both ways (if Sandro knows Gina, Gina knows Sandro). Generated, then judged for consistency, like the pride items. Facts, not rules: the character decides whether to mention anyone.
 
-**Later, not now:** gossip, where Gina knows Sandro sent you. That needs memory shared between characters; today each character's memory is its own.
+**Who mentioned you (Josh, 2026-11-03):** `knows` is the conduit. When the learner meets someone, the prompt adds a fact for each person on that character's `knows` list the learner has already talked to: "Sandro at Bar Angolo has mentioned you." Who, not what: no name, nothing the learner said. Worked out when the prompt is built from the visits already recorded (`character_memories`), so no shared memory is needed. The character decides whether to say "Sandro mi ha parlato di te".
+
+**Not taken:** a general memory every character reads (name, where you live, how long you've been here, words you're learning, what's going on in your life). Josh: most of these break the game's rules or were tried before. Gender (`learners.addressed_as`) stays the only thing every character knows.
 
 **Dropped:** `menu` (real items and prices): it scripts the conversation, and characters already get roughly right what their place sells. `pace` (quick counter or slow chat) leans the same way.
 
