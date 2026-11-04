@@ -131,6 +131,35 @@ Thinner (Siena has no contrada, Lucca's walls are only in bar names, Milano and 
 - **Four places come over from it** (Josh): Piazza Navona and the street painter (art), Piazza Santa Maria in Trastevere and the nonna (traditions, Roman words), the Basilica di Santa Maria in Trastevere and the parish priest (mosaics, history), and the Colosseo with someone who isn't guiding tourists (history).
 - **Drafted, not committed** (stopped for this review): the four places with the same ids (portraits and memory carry over) and new scenes; Serena Lupi, 36, archaeologist, at the Colosseo in place of the tour guide; `here` lines for all four in the local-pride style; campanilismo added to Ettore (a lifelong romanista from Testaccio), Daniele (friends who moved to Milan) and Marco (Pigneto against the centro). Place images and Serena's portrait not yet drawn.
 
+## Showing the places that carry the most culture (Josh, 2026-11-03: add them all)
+
+Each city's file has 30–40 places but the app shows about 10 (`content/it/showcase.ts`); many of the hidden ones are the city's strongest local pride, with a person already written. **Add them, don't swap** (Josh). Each still needs a pride line, the fact judge, and a picture in the city's current style. Left out: people guiding tourists, places with nobody there, and the kinds hidden on purpose (bakeries, wine bars, language schools).
+
+**Storytellers first, not salespeople (Josh).** In Florence the jeweller and the leather craftsman were "lame experiences because they acted just like a vegetable salesperson" ("how often do you buy jewelry or leather goods?"). Their prompt put them in a shop, so the learner became a customer. These characters are storytellers first, and not hawkers of the city's stereotypes. Done with facts, not rules:
+- **Their `here` line says they're working, not selling**: at the bench resizing a ring, stitching, painting a mask; people come in to watch and talk, nobody's expected to buy.
+- **Their pride is a story, not the stereotype**: the jeweller tells why the Medici put goldsmiths on the Ponte Vecchio in place of the butchers, not "Florence is famous for gold".
+- **Played before done**: a conversation that opens with "Cosa desidera?" or a price fails.
+
+**First-screen cities** (8 places, plus Rome's four drafted):
+
+| City | Add | Who |
+|---|---|---|
+| Bologna | Sfoglia Rina | the sfoglina |
+| Bologna | Le Due Torri | the historian |
+| Napoli | Via San Gregorio Armeno | the nativity-scene craftsman |
+| Palermo | Catacombe dei Cappuccini | the Capuchin friar |
+| Palermo | Cappella Palatina | the art historian |
+| Venezia | Atelier della Maschera | the mask maker |
+| Firenze | Ponte Vecchio | the jeweller (as a storyteller) |
+| Firenze | Scuola del Cuoio | the leather craftsman (as a storyteller) |
+| Siena | Antica Drogheria Manganelli | the owner (panforte) |
+| Matera | Casa Grotta di Vico Solitario | the museum guide |
+| Roma | Piazza Navona, Piazza Santa Maria in Trastevere, the basilica, the Colosseo | drafted (see Rome) |
+
+**Cities after "Mostra altro"** (15 places): Lecce, Museo Faggiano (the owner who found the city under his house); Taormina, Ceramiche Siciliane d'Arte (the *teste di moro*); Siracusa, Antica Giudecca (the historian); Genova, Focacceria Genovese (a city specialty, like the pastry shops kept) and La Lanterna (the keeper); Milano, the Duomo (the priest); Verona, Casa di Giulietta (the custodian); Assisi, the Basilica di San Francesco (the friar); Bergamo, Teatro Donizetti (the conductor); Torino, Museo dell'Automobile (the curator); Lucca, the Duomo (the Volto Santo); Orvieto, the Duomo (the priest); Mantova, Palazzo Te (the art historian).
+
+**Mexico** shows nearly everything already; two hidden places add culture: Panadería El Trigal (Oaxaca) and La Gran Fama on Calle de los Dulces (Puebla).
+
 ## Proposals
 
 1. **Every shown character owns one or two things,** in their pride field (decided above): a specific thing from one topic, the reason behind it, and the words worth keeping. `here` stays what it is: why they're at that place. Each item has one owner in the city, so topics spread across people and the learner has reasons to visit different ones.
