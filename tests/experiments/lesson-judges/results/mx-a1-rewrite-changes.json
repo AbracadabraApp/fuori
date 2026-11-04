@@ -1,0 +1,351 @@
+[
+  {
+    "judge": "teaching",
+    "id": "meeting-people-2",
+    "field": "examples.0",
+    "before": {
+      "role": "café waiter",
+      "place": "café",
+      "said": "Buenos días. ¿Cómo está?",
+      "en": "Good morning. How are you?"
+    },
+    "after": {
+      "role": "shopkeeper",
+      "place": "shop",
+      "said": "Estoy contento, gracias.",
+      "en": "I'm happy, thanks."
+    }
+  },
+  {
+    "judge": "teaching",
+    "id": "about-you-1",
+    "field": "examples.3",
+    "before": {
+      "role": "neighbour",
+      "place": "café",
+      "said": "Soy Diego, ¿y tú?",
+      "en": "I'm Diego. And you?"
+    },
+    "after": {
+      "role": "neighbour",
+      "place": "café",
+      "said": "Me llamo Diego. ¿Cómo te llamas?",
+      "en": "My name's Diego. What's yours?"
+    }
+  },
+  {
+    "judge": "teaching",
+    "id": "about-you-3",
+    "field": "practice.0.ask",
+    "before": {
+      "said": "¿Cuánto tiempo llevas aquí?",
+      "en": "How long have you been here?"
+    },
+    "after": {
+      "said": "¿Eres nuevo en el barrio?",
+      "en": "Are you new in the neighborhood?"
+    }
+  },
+  {
+    "judge": "teaching",
+    "id": "getting-by-3",
+    "field": "practice.2",
+    "before": {
+      "ask": {
+        "said": "La señora de la tienda habla rápido. ¿Qué pides?",
+        "en": "The lady at the store talks fast. What do you ask?"
+      },
+      "answer": {
+        "said": "¿Puede repetir, por favor?",
+        "en": "Could you repeat that, please?"
+      }
+    },
+    "after": {
+      "ask": {
+        "said": "Tienes muchas bolsas y no puedes abrir la puerta. ¿Qué pides?",
+        "en": "You've got lots of bags and can't open the door. What do you ask?"
+      },
+      "answer": {
+        "said": "¿Me puede abrir la puerta, por favor?",
+        "en": "Could you open the door for me, please?"
+      }
+    }
+  },
+  {
+    "judge": "teaching",
+    "id": "getting-by-3",
+    "field": "mission",
+    "before": {
+      "place": "bus terminal",
+      "goal": "Ask the ticket clerk to speak more slowly.",
+      "say": {
+        "said": "¿Puede hablar más despacio?",
+        "en": "Could you speak more slowly?"
+      },
+      "listen_for": [
+        "puede hablar",
+        "más despacio"
+      ]
+    },
+    "after": {
+      "place": "bus terminal",
+      "goal": "Ask the ticket clerk to help you.",
+      "say": {
+        "said": "¿Me puede ayudar, por favor?",
+        "en": "Could you help me, please?"
+      },
+      "listen_for": [
+        "me puede",
+        "ayudar"
+      ]
+    }
+  },
+  {
+    "judge": "teaching",
+    "id": "ordering-paying-1",
+    "field": "examples.0",
+    "before": {
+      "role": "taquero",
+      "place": "taquería",
+      "said": "¡Buenas! ¿Qué le damos?",
+      "en": "Hi! What can I get you?"
+    },
+    "after": {
+      "role": "newcomer",
+      "place": "café",
+      "said": "Me da un pan dulce, por favor.",
+      "en": "Can I have a pan dulce, please?"
+    }
+  },
+  {
+    "judge": "teaching",
+    "id": "ordering-paying-4",
+    "field": "practice.0",
+    "before": {
+      "ask": {
+        "said": "¿Cómo quieres los tacos?",
+        "en": "How do you want your tacos?"
+      },
+      "answer": {
+        "said": "Con todo, por favor.",
+        "en": "With everything, please."
+      }
+    },
+    "after": {
+      "ask": {
+        "said": "¿Quieres salsa en tu torta?",
+        "en": "Do you want salsa on your torta?"
+      },
+      "answer": {
+        "said": "Sí, con salsa, por favor.",
+        "en": "Yes, with salsa, please."
+      }
+    }
+  },
+  {
+    "judge": "teaching",
+    "id": "ordering-paying-6",
+    "field": "practice.0.ask",
+    "before": {
+      "said": "¿Qué buscas en la farmacia?",
+      "en": "What are you looking for at the pharmacy?"
+    },
+    "after": {
+      "said": "Buenas tardes, ¿qué buscaba?",
+      "en": "Good afternoon, what are you looking for?"
+    }
+  },
+  {
+    "judge": "teaching",
+    "id": "ordering-paying-6",
+    "field": "practice.1",
+    "before": {
+      "ask": {
+        "said": "Solo quieres mirar en la tienda. ¿Qué dices?",
+        "en": "You just want to browse in the store. What do you say?"
+      },
+      "answer": {
+        "said": "Solo estoy viendo, gracias.",
+        "en": "Just looking, thanks."
+      }
+    },
+    "after": {
+      "ask": {
+        "said": "¿Qué buscaba, joven?",
+        "en": "What are you looking for?"
+      },
+      "answer": {
+        "said": "Solo estoy viendo la fruta, gracias.",
+        "en": "Just looking at the fruit, thanks."
+      }
+    }
+  },
+  {
+    "judge": "teaching",
+    "id": "ordering-paying-6",
+    "field": "practice.2.ask",
+    "before": {
+      "said": "¿Qué necesitas hoy en el mercado?",
+      "en": "What do you need at the market today?"
+    },
+    "after": {
+      "said": "Buenos días, ¿qué necesitaba hoy?",
+      "en": "Good morning, what do you need today?"
+    }
+  },
+  {
+    "judge": "teaching",
+    "id": "ordering-paying-7",
+    "field": "practice.2",
+    "before": {
+      "ask": {
+        "said": "Una torta cuesta cincuenta pesos. ¿Cuánto cuestan dos?",
+        "en": "One torta is fifty pesos. How much are two?"
+      },
+      "answer": {
+        "said": "Cuestan cien pesos.",
+        "en": "They're a hundred pesos."
+      }
+    },
+    "after": {
+      "ask": {
+        "said": "Te gusta un sombrero en el mercado. ¿Qué preguntas?",
+        "en": "You like a hat at the market. What do you ask?"
+      },
+      "answer": {
+        "said": "¿Cuánto cuesta el sombrero?",
+        "en": "How much is the hat?"
+      }
+    }
+  },
+  {
+    "judge": "translation",
+    "id": "meeting-people-2",
+    "field": "practice.2.ask.en",
+    "before": "You walk all day. How are you?",
+    "after": "You've been walking all day. How are you?"
+  },
+  {
+    "judge": "translation",
+    "id": "getting-by-4",
+    "field": "practice.0.answer.en",
+    "before": "V.",
+    "after": "Little V."
+  },
+  {
+    "judge": "translation",
+    "id": "ordering-paying-5",
+    "field": "examples.3.en",
+    "before": "Could I get a still water?",
+    "after": "Could I get a plain water?"
+  },
+  {
+    "judge": "naturalness",
+    "id": "meeting-people-1",
+    "field": "practice.1.ask.said",
+    "before": "Entras a un café lleno a la una. ¿Qué dices?",
+    "after": "Entras a la sala de espera del doctor a la una. ¿Qué dices?"
+  },
+  {
+    "judge": "naturalness",
+    "id": "ordering-paying-2",
+    "field": "examples.3.said",
+    "before": "Aquí tiene: dos limones.",
+    "after": "Aquí tiene: dos mangos."
+  },
+  {
+    "judge": "naturalness",
+    "id": "ordering-paying-2",
+    "field": "practice.2",
+    "before": {
+      "ask": {
+        "said": "Quieres limones para tus tacos. ¿Qué pides?",
+        "en": "You want limes for your tacos. What do you ask for?"
+      },
+      "answer": {
+        "said": "Me da tres limones, por favor.",
+        "en": "Can I have three limes, please?"
+      }
+    },
+    "after": {
+      "ask": {
+        "said": "Quieres mangos en el mercado. ¿Qué pides?",
+        "en": "You want mangoes at the market. What do you ask for?"
+      },
+      "answer": {
+        "said": "Me da tres mangos, por favor.",
+        "en": "Can I have three mangoes, please?"
+      }
+    }
+  },
+  {
+    "judge": "naturalness",
+    "id": "ordering-paying-5",
+    "field": "examples.3.said",
+    "before": "¿Me regala un agua natural?",
+    "after": "¿Me regala un popote?"
+  },
+  {
+    "judge": "level",
+    "id": "getting-by-5",
+    "field": "practice.1.ask.said",
+    "before": "Pisas a un señor en el mercado. ¿Qué dices?",
+    "after": "Chocas con un señor en el mercado. ¿Qué dices?"
+  },
+  {
+    "judge": "level",
+    "id": "getting-by-2",
+    "field": "practice.2.ask.said",
+    "before": "No oyes bien a una señora en el mercado. ¿Qué dices?",
+    "after": "Una señora en el mercado habla y no entiendes. ¿Qué dices?"
+  },
+  {
+    "judge": "level",
+    "id": "meeting-people-4",
+    "field": "practice.1.ask.said",
+    "before": "En la farmacia atiende un señor. Es la tarde. ¿Qué dices?",
+    "after": "En la farmacia hay un señor. Es la tarde. ¿Qué dices?"
+  },
+  {
+    "judge": "follow-on",
+    "id": "ordering-paying-2",
+    "field": "examples.3.en",
+    "before": "Here you go: two limes.",
+    "after": "Here you go: two mangoes."
+  },
+  {
+    "judge": "follow-on",
+    "id": "ordering-paying-5",
+    "field": "examples.3.en",
+    "before": "Could I get a plain water?",
+    "after": "Could I get a straw?"
+  },
+  {
+    "judge": "follow-on",
+    "id": "meeting-people-1",
+    "field": "practice.1.ask.en",
+    "before": "You walk into a packed café at one. What do you say?",
+    "after": "You walk into the doctor's waiting room at one o'clock. What do you say?"
+  },
+  {
+    "judge": "follow-on",
+    "id": "getting-by-5",
+    "field": "practice.1.ask.en",
+    "before": "You step on a man's foot at the market. What do you say?",
+    "after": "You bump into a man at the market. What do you say?"
+  },
+  {
+    "judge": "follow-on",
+    "id": "getting-by-2",
+    "field": "practice.2.ask.en",
+    "before": "You can't quite hear a lady at the market. What do you say?",
+    "after": "A woman at the market is talking and you don't understand. What do you say?"
+  },
+  {
+    "judge": "follow-on",
+    "id": "meeting-people-4",
+    "field": "practice.1.ask.en",
+    "before": "A man is working at the pharmacy. It's the afternoon. What do you say?",
+    "after": "There's a man at the pharmacy. It's the afternoon. What do you say?"
+  }
+]

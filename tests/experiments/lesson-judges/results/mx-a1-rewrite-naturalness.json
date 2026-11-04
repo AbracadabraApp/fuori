@@ -1,0 +1,6 @@
+[
+ {"id":"meeting-people-1","field":"practice[1].ask.said","text":"Entras a un café lleno a la una. ¿Qué dices?","why":"Nobody greets a packed café 'a todos'; a group greeting is said in a small room where everyone notices you come in (a waiting room, a small shop).","fix":"Entras a la sala de espera del doctor a la una. ¿Qué dices?"},
+ {"id":"ordering-paying-2","field":"examples[3].said","text":"Aquí tiene: dos limones.","why":"Market vendors sell limes by the kilo or by the peso's worth, not two at a time; handing over two limes doesn't happen at a stall.","fix":"Aquí tiene: dos mangos."},
+ {"id":"ordering-paying-2","field":"practice[2]","text":"Quieres limones para tus tacos. ¿Qué pides? → Me da tres limones, por favor.","why":"Limes come free with tacos, and at a market you'd ask for 'diez pesos de limón' or 'un kilo', not three limes.","fix":"Quieres mangos en el mercado. ¿Qué pides? → Me da tres mangos, por favor. (Can I have three mangoes, please?)"},
+ {"id":"ordering-paying-5","field":"examples[3].said","text":"¿Me regala un agua natural?","why":"In Mexico 'me regala' is for small things that come free (a napkin, a bag, your name); for bottled water you pay for at a stall, Mexicans say 'Me da'. 'Me regala' for purchases sounds Colombian.","fix":"¿Me regala un popote?"}
+]

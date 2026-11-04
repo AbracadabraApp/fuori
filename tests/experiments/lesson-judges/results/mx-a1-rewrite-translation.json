@@ -1,0 +1,5 @@
+[
+  {"id": "meeting-people-2", "field": "practice[2].ask.en", "text": "You walk all day. How are you?", "why": "Word-for-word: the Spanish present 'Caminas todo el día' sets a scene (you've been walking all day); 'You walk all day' reads as a habit and sounds odd in English.", "fix": "You've been walking all day. How are you?"},
+  {"id": "getting-by-4", "field": "practice[0].answer.en", "text": "V.", "why": "Drops the meaning: the answer is the letter's Spanish name 've chica' (little v), so 'V.' makes the exchange circular ('how do you say V?' 'V').", "fix": "Little V."},
+  {"id": "ordering-paying-5", "field": "examples[3].en", "text": "Could I get a still water?", "why": "'Agua natural' in Mexico means plain water (not agua fresca or mineral water); 'still water' is a British/restaurant term and shifts the meaning.", "fix": "Could I get a plain water?"}
+]

@@ -1,0 +1,5 @@
+[
+ {"id":"getting-by-5","field":"practice[1].ask.said","text":"Pisas a un señor en el mercado. ¿Qué dices?","why":"pisar (step on someone's foot) is not A1 and isn't glossed in the lesson; heard once, the learner loses the whole situation the answer depends on.","fix":"Chocas con un señor en el mercado. ¿Qué dices?"},
+ {"id":"getting-by-2","field":"practice[2].ask.said","text":"No oyes bien a una señora en el mercado. ¿Qué dices?","why":"Irregular oyes (oír) plus personal a is not taught at A1 and isn't glossed; at speed 'no oyes bien' is hard to catch, and it carries the situation.","fix":"Una señora en el mercado habla y no entiendes. ¿Qué dices?"},
+ {"id":"meeting-people-4","field":"practice[1].ask.said","text":"En la farmacia atiende un señor. Es la tarde. ¿Qué dices?","why":"atender (to serve, work the counter) is above A1 and unglossed; with the subject after the verb it is hard to parse when heard once.","fix":"En la farmacia hay un señor. Es la tarde. ¿Qué dices?"}
+]
