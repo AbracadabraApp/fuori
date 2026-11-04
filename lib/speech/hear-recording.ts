@@ -6,7 +6,7 @@
  */
 import { language as learning } from '@/content';
 import { getSpeechProvider } from '@/lib/speech/providers';
-import type { ProviderName } from '@/lib/speech/providers/types';
+import type { ProviderName, SpeechProvider } from '@/lib/speech/providers/types';
 import { spokenLanguage, sameWords } from '@/lib/speech/spoken-language';
 import type { Laps } from '@/lib/timing';
 
@@ -19,8 +19,8 @@ export interface HeardRecording {
   heard?: string;
 }
 
-export async function hearRecording(p: { audio: File; mode?: string; laps?: Laps; provider?: ProviderName }): Promise<HeardRecording> {
-  const speech = getSpeechProvider(p.provider);
+export async function hearRecording(p: { audio: File; mode?: string; laps?: Laps; provider?: ProviderName; /** tests: a stand-in for Whisper */ speech?: SpeechProvider }): Promise<HeardRecording> {
+  const speech = p.speech ?? getSpeechProvider(p.provider);
   const { mode } = p;
   const lang = mode === 'any' || mode === 'turn' ? undefined : mode === 'en' ? 'en' : learning.code;
   // No prompt: Whisper echoes it into short or quiet recordings (tests/check-transcribe.ts)
@@ -32,7 +32,11 @@ export async function hearRecording(p: { audio: File; mode?: string; laps?: Laps
     const said = spokenLanguage(result.language, learning.code);
     heard = said;
     if (said === 'other') {
-      result = { ...(await speech.transcribe({ audio: p.audio, language: learning.code })), language: learning.code };
+      // A second call that fails (Groq's free tier allows 20 a minute for the
+      // whole account: E-7WCH, 2026-11-03) keeps the first hearing rather than
+      // losing the learner's turn
+      const again = await secondHearing(() => speech.transcribe({ audio: p.audio, language: learning.code }));
+      result = again ? { ...again, language: learning.code } : { ...result, language: learning.code };
       p.laps?.lap('again');
     } else {
       result = { ...result, language: said === 'en' ? 'en' : learning.code };
@@ -43,10 +47,11 @@ export async function hearRecording(p: { audio: File; mode?: string; laps?: Laps
     // 2026-10-23). The same recording heard as the learned language goes
     // with it, so say it can tell a translation from real English
     if (said === 'en') {
-      learned = (await speech.transcribe({ audio: p.audio, language: learning.code })).text;
+      // Failed: the turn goes on as English, with no translation check this once
+      learned = (await secondHearing(() => speech.transcribe({ audio: p.audio, language: learning.code })))?.text;
       p.laps?.lap('as-learned');
       // Heard the same both ways: it was the learned language (no say it needed)
-      if (sameWords(learned, result.text)) {
+      if (learned !== undefined && sameWords(learned, result.text)) {
         result = { ...result, language: learning.code };
         learned = undefined;
         heard = 'learned (same both ways)';
@@ -54,4 +59,14 @@ export async function hearRecording(p: { audio: File; mode?: string; laps?: Laps
     }
   }
   return { text: result.text, language: result.language, ...(learned !== undefined ? { learned } : {}), ...(heard ? { heard } : {}) };
+}
+
+/** A recording's second hearing, or undefined if it failed (logged, never thrown: the first hearing stands) */
+async function secondHearing<T>(call: () => Promise<T>): Promise<T | undefined> {
+  try {
+    return await call();
+  } catch (err) {
+    console.error(JSON.stringify({ level: 'error', where: 'second hearing', message: err instanceof Error ? err.message : String(err), at: new Date().toISOString() }));
+    return undefined;
+  }
 }
