@@ -138,7 +138,7 @@ export const sanMiguelDeAllende: CityPantry = {
   characters: [
     {
       id: 'rosa-flores-ignacio-ramirez',
-      name: 'Doña Rosa',
+      name: 'Doña Rosa Ledesma',
       gender: 'f',
       age: 64,
       role: 'florista',
@@ -149,7 +149,7 @@ export const sanMiguelDeAllende: CityPantry = {
     },
     {
       id: 'beto-taxi',
-      name: 'Beto',
+      name: 'Beto Rangel',
       gender: 'm',
       age: 22,
       role: 'taxista',
@@ -225,7 +225,7 @@ export const sanMiguelDeAllende: CityPantry = {
     },
     {
       id: 'chelo-cocinera',
-      name: 'Doña Chelo',
+      name: 'Doña Chelo Guerrero',
       gender: 'f',
       age: 57,
       role: 'cocinera',
@@ -247,7 +247,7 @@ export const sanMiguelDeAllende: CityPantry = {
     },
     {
       id: 'victor-jubilado',
-      name: 'Don Víctor',
+      name: 'Don Víctor Arteaga',
       gender: 'm',
       age: 75,
       role: 'jubilado',
@@ -258,7 +258,7 @@ export const sanMiguelDeAllende: CityPantry = {
     },
     {
       id: 'miguel-taquillero-sma',
-      name: 'Miguel',
+      name: 'Miguel Sauceda',
       gender: 'm',
       age: 39,
       role: 'taquillero',
@@ -269,7 +269,7 @@ export const sanMiguelDeAllende: CityPantry = {
     },
     {
       id: 'marisol-tumbagones',
-      name: 'Rocío',
+      name: 'Rocío Mancera',
       gender: 'f',
       age: 34,
       role: 'dulcera',

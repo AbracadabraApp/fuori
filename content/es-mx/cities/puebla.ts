@@ -139,7 +139,7 @@ export const puebla: CityPantry = {
   characters: [
     {
       id: 'sofia-dulces-la-gloria',
-      name: 'Sofía',
+      name: 'Sofía Quintero',
       gender: 'f',
       age: 16,
       role: 'ayuda en la dulcería de su familia',
@@ -150,7 +150,7 @@ export const puebla: CityPantry = {
     },
     {
       id: 'padre-tomas-santo-domingo',
-      name: 'Padre Tomás',
+      name: 'Padre Tomás Herrera',
       gender: 'm',
       age: 63,
       role: 'sacerdote',
@@ -161,7 +161,7 @@ export const puebla: CityPantry = {
     },
     {
       id: 'mateo-cafe-cielo-rojo',
-      name: 'Mateo',
+      name: 'Mateo Lozano',
       gender: 'm',
       age: 27,
       role: 'barista',
@@ -182,7 +182,7 @@ export const puebla: CityPantry = {
     },
     {
       id: 'lupe-cemitas-dona-lupe',
-      name: 'Lupe',
+      name: 'Lupe Rojas',
       gender: 'f',
       age: 46,
       role: 'cemitera',
@@ -193,7 +193,7 @@ export const puebla: CityPantry = {
     },
     {
       id: 'tere-fonda-dona-tere',
-      name: 'Doña Tere',
+      name: 'Doña Tere Sánchez',
       gender: 'f',
       age: 52,
       role: 'cocinera y dueña',
@@ -204,7 +204,7 @@ export const puebla: CityPantry = {
     },
     {
       id: 'chuy-tacos-arabes-el-puente',
-      name: 'Chuy',
+      name: 'Chuy Haddad',
       gender: 'm',
       age: 38,
       role: 'taquero',
@@ -215,7 +215,7 @@ export const puebla: CityPantry = {
     },
     {
       id: 'efrain-zocalo-de-puebla',
-      name: 'Don Efraín',
+      name: 'Don Efraín Tlapale',
       gender: 'm',
       age: 71,
       role: 'bolero',
@@ -226,7 +226,7 @@ export const puebla: CityPantry = {
     },
     {
       id: 'ruben-la-pasita',
-      name: 'Don Rubén',
+      name: 'Don Rubén Contreras',
       gender: 'm',
       age: 55,
       role: 'cantinero',
@@ -237,7 +237,7 @@ export const puebla: CityPantry = {
     },
     {
       id: 'daniela-farmacia-san-rafael',
-      name: 'Daniela',
+      name: 'Daniela Pacheco',
       gender: 'f',
       age: 31,
       role: 'farmacéutica',
@@ -248,7 +248,7 @@ export const puebla: CityPantry = {
     },
     {
       id: 'beatriz-abuela',
-      name: 'Doña Beatriz',
+      name: 'Doña Beatriz Ávila',
       gender: 'f',
       age: 79,
       role: 'abuela del barrio',
@@ -259,7 +259,7 @@ export const puebla: CityPantry = {
     },
     {
       id: 'jorge-taquillero-puebla',
-      name: 'Jorge',
+      name: 'Jorge Ramos',
       gender: 'm',
       age: 52,
       role: 'taquillero',

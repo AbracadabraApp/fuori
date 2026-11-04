@@ -148,7 +148,7 @@ export const ciudadDeMexico: CityPantry = {
   characters: [
     {
       id: 'chucho-lustrabotas',
-      name: 'Don Chucho',
+      name: 'Don Chucho Mendoza',
       gender: 'm',
       age: 74,
       role: 'bolero',
@@ -159,7 +159,7 @@ export const ciudadDeMexico: CityPantry = {
     },
     {
       id: 'vale-libros-tecolote',
-      name: 'Vale',
+      name: 'Vale Ortiz',
       gender: 'f',
       age: 31,
       role: 'librera',
@@ -170,7 +170,7 @@ export const ciudadDeMexico: CityPantry = {
     },
     {
       id: 'ximena-barista',
-      name: 'Ximena',
+      name: 'Ximena Castañeda',
       gender: 'f',
       age: 28,
       role: 'barista',
@@ -191,7 +191,7 @@ export const ciudadDeMexico: CityPantry = {
     },
     {
       id: 'beto-paseador',
-      name: 'Beto',
+      name: 'Beto Salinas',
       gender: 'm',
       age: 45,
       role: 'paseador de perros',
@@ -202,7 +202,7 @@ export const ciudadDeMexico: CityPantry = {
     },
     {
       id: 'lupe-quesadillera',
-      name: 'Doña Lupe',
+      name: 'Doña Lupe Hernández',
       gender: 'f',
       age: 55,
       role: 'quesadillera',
@@ -213,7 +213,7 @@ export const ciudadDeMexico: CityPantry = {
     },
     {
       id: 'chema-taquero',
-      name: 'Chema',
+      name: 'Chema Rosales',
       gender: 'm',
       age: 38,
       role: 'taquero',
@@ -224,7 +224,7 @@ export const ciudadDeMexico: CityPantry = {
     },
     {
       id: 'cuca-cocinera',
-      name: 'Doña Cuca',
+      name: 'Doña Cuca Villanueva',
       gender: 'f',
       age: 61,
       role: 'cocinera y dueña',
@@ -235,7 +235,7 @@ export const ciudadDeMexico: CityPantry = {
     },
     {
       id: 'alicia-catequista',
-      name: 'Alicia',
+      name: 'Alicia Paredes',
       gender: 'f',
       age: 63,
       role: 'voluntaria y guía de la iglesia',
@@ -246,7 +246,7 @@ export const ciudadDeMexico: CityPantry = {
     },
     {
       id: 'efrain-mesero',
-      name: 'Don Efraín',
+      name: 'Don Efraín Olvera',
       gender: 'm',
       age: 66,
       role: 'mesero',
@@ -257,7 +257,7 @@ export const ciudadDeMexico: CityPantry = {
     },
     {
       id: 'carmen-jubilada',
-      name: 'Doña Carmen',
+      name: 'Doña Carmen Ibarra',
       gender: 'f',
       age: 77,
       role: 'jubilada',
@@ -268,7 +268,7 @@ export const ciudadDeMexico: CityPantry = {
     },
     {
       id: 'arturo-taquillero-cdmx',
-      name: 'Don Arturo',
+      name: 'Don Arturo Navarrete',
       gender: 'm',
       age: 58,
       role: 'taquillero',
@@ -279,7 +279,7 @@ export const ciudadDeMexico: CityPantry = {
     },
     {
       id: 'tono-churrero',
-      name: 'Toño',
+      name: 'Toño Gallardo',
       gender: 'm',
       age: 44,
       role: 'churrero',
@@ -290,7 +290,7 @@ export const ciudadDeMexico: CityPantry = {
     },
     {
       id: 'fidel-tamalero',
-      name: 'Fidel',
+      name: 'Fidel Zárate',
       gender: 'm',
       age: 50,
       role: 'tamalero',

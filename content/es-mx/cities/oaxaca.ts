@@ -138,7 +138,7 @@ export const oaxaca: CityPantry = {
   characters: [
     {
       id: 'ofelia-tlayudas',
-      name: 'Doña Ofelia',
+      name: 'Doña Ofelia Santiago',
       gender: 'f',
       age: 56,
       role: 'tlayudera',
@@ -149,7 +149,7 @@ export const oaxaca: CityPantry = {
     },
     {
       id: 'emiliano-los-amantes',
-      name: 'Emiliano',
+      name: 'Emiliano Matus',
       gender: 'm',
       age: 28,
       role: 'cantinero',
@@ -160,7 +160,7 @@ export const oaxaca: CityPantry = {
     },
     {
       id: 'marisol-cafe-pocito',
-      name: 'Marisol',
+      name: 'Marisol Ruiz',
       gender: 'f',
       age: 26,
       role: 'barista',
@@ -181,7 +181,7 @@ export const oaxaca: CityPantry = {
     },
     {
       id: 'chela-chapulines',
-      name: 'Doña Chela',
+      name: 'Doña Chela Martínez',
       gender: 'f',
       age: 63,
       role: 'vendedora del mercado',
@@ -192,7 +192,7 @@ export const oaxaca: CityPantry = {
     },
     {
       id: 'tere-fonda',
-      name: 'Doña Tere',
+      name: 'Doña Tere Jiménez',
       gender: 'f',
       age: 47,
       role: 'cocinera y dueña de la fonda',
@@ -203,7 +203,7 @@ export const oaxaca: CityPantry = {
     },
     {
       id: 'nacho-nevero',
-      name: 'Don Nacho',
+      name: 'Don Nacho Vásquez',
       gender: 'm',
       age: 64,
       role: 'nevero',
@@ -214,7 +214,7 @@ export const oaxaca: CityPantry = {
     },
     {
       id: 'concha-sacristana',
-      name: 'Doña Concha',
+      name: 'Doña Concha Cruz',
       gender: 'f',
       age: 70,
       role: 'sacristana',
@@ -225,7 +225,7 @@ export const oaxaca: CityPantry = {
     },
     {
       id: 'ruben-abarrotes',
-      name: 'Don Rubén',
+      name: 'Don Rubén Bautista',
       gender: 'm',
       age: 58,
       role: 'tendero',
@@ -236,7 +236,7 @@ export const oaxaca: CityPantry = {
     },
     {
       id: 'luis-guia-jardin',
-      name: 'Luis',
+      name: 'Luis Aquino',
       gender: 'm',
       age: 34,
       role: 'guía del jardín',
@@ -247,7 +247,7 @@ export const oaxaca: CityPantry = {
     },
     {
       id: 'arturo-jubilado',
-      name: 'Don Arturo',
+      name: 'Don Arturo López',
       gender: 'm',
       age: 73,
       role: 'jubilado',
@@ -258,7 +258,7 @@ export const oaxaca: CityPantry = {
     },
     {
       id: 'ricardo-taquillero-oaxaca',
-      name: 'Ricardo',
+      name: 'Ricardo Morales',
       gender: 'm',
       age: 45,
       role: 'taquillero',
@@ -269,7 +269,7 @@ export const oaxaca: CityPantry = {
     },
     {
       id: 'rufina-molinera',
-      name: 'Doña Rufina',
+      name: 'Doña Rufina García',
       gender: 'f',
       age: 52,
       role: 'molinera de chocolate',

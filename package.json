@@ -25,6 +25,7 @@
     "test:scaffold": "tsx tests/check-scaffold.ts",
     "test:path": "tsx tests/check-path.ts && COUNTRY=es-mx tsx tests/check-path.ts",
     "test:hear-recording": "tsx tests/check-hear-recording.mts",
+    "test:names": "COUNTRY=es-mx tsx tests/check-names.ts",
     "test:lesson-areas": "tsx tests/check-lesson-areas.ts && COUNTRY=es-mx tsx tests/check-lesson-areas.ts",
     "test:reply": "tsx tests/check-reply-text.ts",
     "test:images": "tsx tests/check-images.ts",

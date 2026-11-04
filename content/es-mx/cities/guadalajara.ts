@@ -127,7 +127,7 @@ export const guadalajara: CityPantry = {
   characters: [
     {
       id: 'memo-tejuino',
-      name: 'Memo',
+      name: 'Memo Orozco',
       gender: 'm',
       age: 44,
       role: 'tejuinero',
@@ -138,7 +138,7 @@ export const guadalajara: CityPantry = {
     },
     {
       id: 'ximena-ceramica',
-      name: 'Ximena',
+      name: 'Ximena Godínez',
       gender: 'f',
       age: 28,
       role: 'alfarera',
@@ -149,7 +149,7 @@ export const guadalajara: CityPantry = {
     },
     {
       id: 'rigoberto-cantinero',
-      name: 'Rigoberto',
+      name: 'Rigoberto Plascencia',
       gender: 'm',
       age: 57,
       role: 'cantinero',
@@ -160,7 +160,7 @@ export const guadalajara: CityPantry = {
     },
     {
       id: 'valeria-barista',
-      name: 'Valeria',
+      name: 'Valeria Cortés',
       gender: 'f',
       age: 27,
       role: 'barista',
@@ -171,7 +171,7 @@ export const guadalajara: CityPantry = {
     },
     {
       id: 'efren-panadero',
-      name: 'Don Efrén',
+      name: 'Don Efrén Arreola',
       gender: 'm',
       age: 61,
       role: 'panadero',
@@ -182,7 +182,7 @@ export const guadalajara: CityPantry = {
     },
     {
       id: 'lalo-bolero',
-      name: 'Don Lalo',
+      name: 'Don Lalo Gutiérrez',
       gender: 'm',
       age: 72,
       role: 'bolero',
@@ -193,7 +193,7 @@ export const guadalajara: CityPantry = {
     },
     {
       id: 'nacho-taquero',
-      name: 'Nacho',
+      name: 'Nacho Robles',
       gender: 'm',
       age: 35,
       role: 'taquero',
@@ -204,7 +204,7 @@ export const guadalajara: CityPantry = {
     },
     {
       id: 'mari-tendera',
-      name: 'Doña Mari',
+      name: 'Doña Mari Esparza',
       gender: 'f',
       age: 52,
       role: 'tendera',
@@ -215,7 +215,7 @@ export const guadalajara: CityPantry = {
     },
     {
       id: 'lupita-sacristana',
-      name: 'Lupita',
+      name: 'Lupita Barajas',
       gender: 'f',
       age: 49,
       role: 'sacristana',
@@ -226,7 +226,7 @@ export const guadalajara: CityPantry = {
     },
     {
       id: 'chuy-cocinera',
-      name: 'Doña Chuy',
+      name: 'Doña Chuy Hermosillo',
       gender: 'f',
       age: 58,
       role: 'cocinera',
@@ -237,7 +237,7 @@ export const guadalajara: CityPantry = {
     },
     {
       id: 'rosa-estudiante',
-      name: 'Rosa',
+      name: 'Rosa Núñez',
       gender: 'f',
       age: 22,
       role: 'estudiante universitaria',
@@ -248,7 +248,7 @@ export const guadalajara: CityPantry = {
     },
     {
       id: 'carlos-taquillero-gdl',
-      name: 'Carlos',
+      name: 'Carlos Partida',
       gender: 'm',
       age: 41,
       role: 'taquillero',
