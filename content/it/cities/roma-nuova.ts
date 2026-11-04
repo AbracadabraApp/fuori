@@ -138,7 +138,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Centro Storico',
       real: true,
       characterId: 'tommaso-pittore',
-      imagePrompt: "Piazza Navona on a weekday afternoon: the long oval of ochre and pink palazzi, Bernini's Fountain of the Four Rivers with its obelisk in the middle, the curved front and dome of Sant'Agnese in Agone behind it, Romans crossing the square on their way somewhere, a few café tables at the edge and a short row of painters' easels. Tommaso stands at his easel near the fountain, brush in hand.",
+      imagePrompt: "Piazza Navona on a weekday afternoon: the long oval of ochre and pink palazzi, Bernini's Fountain of the Four Rivers with its obelisk in the middle, the curved front and dome of Sant'Agnese in Agone behind it, Romans crossing the square on foot on their way somewhere, a few café tables at the edge and a short row of painters' easels. A pedestrian square: no cars, buses, taxis or scooters anywhere in the piazza. Tommaso stands at his easel near the fountain, brush in hand.",
     },
     {
       id: 'piazza-santa-maria-trastevere',
@@ -147,7 +147,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Trastevere',
       real: true,
       characterId: 'nonna-gina',
-      imagePrompt: 'The Piazza di Santa Maria in Trastevere on an ordinary afternoon: the old fountain in the middle with people sitting on its steps, ochre and orange houses with green shutters all round the square, children running, neighbours talking, a man walking a dog. Gina sits on the fountain steps with her shopping bag beside her, talking to whoever sits down.',
+      imagePrompt: 'The Piazza di Santa Maria in Trastevere on an ordinary afternoon: the old fountain in the middle with people sitting on its steps, ochre and orange houses with green shutters all round the square, and on one side the basilica of Santa Maria in Trastevere: a plain Romanesque front with a band of gold mosaics of the Madonna across the top, a portico below, and a tall brick bell tower. Children running, neighbours talking, a man walking a dog. A pedestrian square: no cars, buses, taxis or scooters. Gina sits on the fountain steps with her shopping bag beside her, talking to whoever sits down.',
     },
     {
       id: 'basilica-santa-maria',

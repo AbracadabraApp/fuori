@@ -6877,12 +6877,12 @@
       "type": "portrait"
     },
     "roma-nuova/piazza-navona": {
-      "timestamp": "2026-11-04T06:21:41.014Z",
+      "timestamp": "2026-11-04T06:36:06.922Z",
       "path": "/Users/josh.petersen/fuori/public/images/places/piazza-navona.jpg",
       "type": "place"
     },
     "roma-nuova/piazza-santa-maria-trastevere": {
-      "timestamp": "2026-11-04T06:22:01.578Z",
+      "timestamp": "2026-11-04T06:36:26.366Z",
       "path": "/Users/josh.petersen/fuori/public/images/places/piazza-santa-maria-trastevere.jpg",
       "type": "place"
     },
@@ -6907,6 +6907,6 @@
     "total": 1380,
     "completed": 1380,
     "failed": 0,
-    "lastRun": "2026-11-04T06:23:05.550Z"
+    "lastRun": "2026-11-04T06:36:29.370Z"
   }
 }
