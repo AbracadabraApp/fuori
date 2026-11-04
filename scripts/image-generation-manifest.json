@@ -6875,13 +6875,38 @@
       "timestamp": "2026-10-28T00:19:44.718Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/mirella-grattachecca.jpg",
       "type": "portrait"
+    },
+    "roma-nuova/piazza-navona": {
+      "timestamp": "2026-11-04T06:21:41.014Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/piazza-navona.jpg",
+      "type": "place"
+    },
+    "roma-nuova/piazza-santa-maria-trastevere": {
+      "timestamp": "2026-11-04T06:22:01.578Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/piazza-santa-maria-trastevere.jpg",
+      "type": "place"
+    },
+    "roma-nuova/basilica-santa-maria": {
+      "timestamp": "2026-11-04T06:22:21.181Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/basilica-santa-maria.jpg",
+      "type": "place"
+    },
+    "roma-nuova/colosseo": {
+      "timestamp": "2026-11-04T06:22:39.974Z",
+      "path": "/Users/josh.petersen/fuori/public/images/places/colosseo.jpg",
+      "type": "place"
+    },
+    "roma-nuova/serena-archeologa": {
+      "timestamp": "2026-11-04T06:23:02.533Z",
+      "path": "/Users/josh.petersen/fuori/public/images/portraits/serena-archeologa.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 1375,
-    "completed": 1375,
+    "total": 1380,
+    "completed": 1380,
     "failed": 0,
-    "lastRun": "2026-10-30T03:55:21.964Z"
+    "lastRun": "2026-11-04T06:23:05.550Z"
   }
 }

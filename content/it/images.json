@@ -1268,9 +1268,9 @@
       "bytes": 212950
     },
     "places/basilica-santa-maria": {
-      "key": "it/places/basilica-santa-maria.260a2bfb59.webp",
-      "src": "cadeb88f845b835a",
-      "bytes": 213018
+      "key": "it/places/basilica-santa-maria.039c33829f.webp",
+      "src": "d3de1b6e2346f6b9",
+      "bytes": 268178
     },
     "places/basilica-santa-maria-maggiore": {
       "key": "it/places/basilica-santa-maria-maggiore.73e40a1497.webp",
@@ -1708,9 +1708,9 @@
       "bytes": 273576
     },
     "places/colosseo": {
-      "key": "it/places/colosseo.4aa239107d.webp",
-      "src": "db2d6db2fbf22141",
-      "bytes": 224978
+      "key": "it/places/colosseo.513d61b837.webp",
+      "src": "0bfd64a42df6be3b",
+      "bytes": 265766
     },
     "places/consorzio-agrario": {
       "key": "it/places/consorzio-agrario.68a3791e8f.webp",
@@ -3288,9 +3288,9 @@
       "bytes": 203294
     },
     "places/piazza-navona": {
-      "key": "it/places/piazza-navona.dc625c5b1b.webp",
-      "src": "353c49a3d0907edc",
-      "bytes": 181112
+      "key": "it/places/piazza-navona.bd3e3ba44e.webp",
+      "src": "b3320f3175a6aa59",
+      "bytes": 279004
     },
     "places/piazza-pretoria": {
       "key": "it/places/piazza-pretoria.f82065b9c3.webp",
@@ -3313,9 +3313,9 @@
       "bytes": 215724
     },
     "places/piazza-santa-maria-trastevere": {
-      "key": "it/places/piazza-santa-maria-trastevere.0dcd331788.webp",
-      "src": "bc9be1ace10f43de",
-      "bytes": 241686
+      "key": "it/places/piazza-santa-maria-trastevere.20ba223e65.webp",
+      "src": "fccdfaf915ada873",
+      "bytes": 280944
     },
     "places/piazza-santo-spirito": {
       "key": "it/places/piazza-santo-spirito.912181c4b7.webp",
@@ -7061,6 +7061,11 @@
       "key": "it/portraits/saverio-gattini.d499f8d965.webp",
       "src": "f91197b4da97ab07",
       "bytes": 267518
+    },
+    "portraits/serena-archeologa": {
+      "key": "it/portraits/serena-archeologa.ffb648a992.webp",
+      "src": "64dd5b37558e40ab",
+      "bytes": 220746
     },
     "portraits/sergio-di-simo": {
       "key": "it/portraits/sergio-di-simo.d9e42db524.webp",

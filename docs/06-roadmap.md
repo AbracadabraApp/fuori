@@ -135,6 +135,7 @@ Goal: alive 7 (today about 6 in real conversations, 5–7 with simulated learner
 - [x] **Claude** Separately, "react before asking" in the prompt, with a count of repeated patterns (rules like it made tics before, round 5) · closed (Josh, 2026-11-02)
 - [x] **Claude** If it passes: generate details for the remaining ~680 characters, check a sample, fix only what's terrible · closed (Josh, 2026-11-02)
 - [x] **Claude** A replay set for Mexico (the replay set is one file and holds only Italy's conversations today) · closed (Josh, 2026-11-02)
+- [ ] **Later (Josh, 2026-11-04): characters make up their own details and don't keep them.** In three visits with memory, Ettore's career changed every visit (bank clerk, accountant, ministry clerk) and Serena lived in Monti on one visit and San Lorenzo on another (tests/experiments/here-topic-vs-specific.mts). A separate consistency issue from culture: a fact or two of backstory in `here` (what they did for a living, where they live), or memory keeping what they said about themselves, are the options to look at.
 
 ### Language level of the dialogue (what characters say) ([language-levels-plan.md](language-levels-plan.md)) — N6, the level framework
 Goal: 90% of the character's words at the learner's level (Josh; the [research](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech) suggests 95% for easy listening). Today a beginner can follow about 25% of lines on today's prompt.

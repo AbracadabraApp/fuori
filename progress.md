@@ -87,6 +87,13 @@ Brainstorm only; nothing built (Josh: "get brainstorming out before building").
 - **Open:** branch `rome-local-pride-draft` (four places from old Roma, Serena at the Colosseo, campanilismo lines) is not verified and puts culture in `here`; redo it into `caresAbout` when building. A half-filled shared web copy of the doc exists (https://claude.ai/artifact/Xw4276rw1xSnxsR2UCbNQQ); delete or finish.
 - **Next:** build Rome first: wire `caresAbout` into the character prompt as one line of facts, write Rome's pride items from its lists, judge them, play.
 
+## 2026-11-04 (later): culture comes from the settings; Rome's new places and here lines (laptop session)
+
+- **Pride and `knows` built, measured in Rome and dropped** (Josh: "take it out"; "I think pride is a dead idea"): a pride line for everyone barely raised culture and took from the errand; written as a situation it became invented news; `knows` never came up. Lesson (Josh): "increase culture by increasing cultural settings". docs/culture.md → Culture comes from the settings.
+- **The goal in Josh's words** in CLAUDE.md, the vision and the glossary: learn the country, Italy or Mexico, its language and culture.
+- **Rome:** the four places from old Rome joined (Navona's painter, Gina in Trastevere, Don Paolo at the basilica, Serena at the Colosseo; the other session's branch), with new pictures in Rome's style and Serena's portrait. Places sorted transactional, cultural, open; open characters and the fact-heavy cultural ones get a topic with one example ("Rome's history and legends… Pasquino") rather than specific facts (tested: fewer stories retold, as particular, fewer slips). The test for a here line (Josh): something very particular to Italy that a local would talk about, its folklore, religious traditions, food, history, art. Lines checked by the fact judge (scripts/fact-check.mts).
+- **Next:** the phone build with the welcome, the Learn page and lessons (Josh reviews the cultural lessons on the phone); characters inventing inconsistent backstory (roadmap, later).
+
 ## 2026-11-04 (night): culture data and code, names, the build fix (laptop session)
 
 - **Names:** every shown person has a unique full name, Mexico 60 (33c519f) and Italy 199 (b3bac4b); ids kept; `npm run test:names`.
