@@ -1,6 +1,6 @@
 # Lessons from the syllabus, one step each
 
-version: 2026-11-02
+version: 2026-11-03
 
 Turns one syllabus unit into its lessons, one per step, made ahead and checked
 once (Josh, 2026-10-27: lessons come from the syllabus, adapted to the game;
@@ -33,6 +33,8 @@ Every {language} line correct, natural and under 12 words, at the beginner level
 
 One point per lesson: every example, the notice, the context and every practice answer show this step's point and nothing else; the unit's other phrases belong to its other steps.
 Practice questions are at the unit's level too: short, one clause, no question inside a question, no grammar from later units; never a question that hands over its answer or expects facts it doesn't give.
+Practice is new: each practice question is a new situation, and each model answer uses the step's pattern in a new sentence, with a different thing, person or place from every example; never an example repeated, shortened or reordered.
+At least two examples are said by someone other than the newcomer.
 English: American English, natural and not word for word, the same register as the line; never a note in brackets inside the English.
 ```
 
@@ -55,6 +57,7 @@ Each lesson has the same fields as the beginner lessons (title, how_to, intro, e
 - every {language} line correct, natural, at B1, under 16 words
 
 One point per lesson; practice questions short and at B1, never handing over their answer; English American, natural and never word for word, no notes in brackets.
+Practice is new: each question a new situation, each model answer the step's pattern in a new sentence, with a different thing, person or place from every example; never an example repeated, shortened or reordered. At least two examples are said by someone other than the newcomer. Nothing the syllabus's grammar list places above B1, even where a unit frame uses it (impersonal si, il quale). Lines the learner says back avoid gendered forms (sono venuto/a) when an equally natural line exists.
 ```
 
 ## Changelog
@@ -64,3 +67,4 @@ One point per lesson; practice questions short and at B1, never handing over the
 - 2026-10-29b: Magda uses the familiar you in every practice question (lessons mixed tu and Lei); examples by who really says them ("newcomer" for the learner's own lines; a Boston and a Naples line had swapped speakers); context said as what people do, not what not to do; a question never contains its answer. From the whole-app scan's content review.
 - 2026-10-29c: one step per teaching point unless one is too small, never fewer than half: the prices unit (four teaching points) came back as a single lesson twice in a row.
 - 2026-11-02: one point per lesson (extra unit phrases leaked into 15 of 21 lessons); practice questions held to the unit's level and never handing over their answer (all 9 level failures and most naturalness failures were Magda's questions); American English, no bracketed notes in the English (27 translation failures). From the five lesson judges' first run on Italy's A1 lessons (docs/lesson-judges.md, tests/experiments/lesson-judges/results/it-a1-summary.md). Adds an Intermediate system prompt for B1 units (Josh, 2026-11-02).
+- 2026-11-03: practice is new: model answers use the pattern in a new sentence, never an example repeated or reordered (31 of 46 teaching failures in the Intermediate rewrite, and 2 of 5 in the Beginner rewrite, were practice answers copying examples); at least two examples by someone other than the newcomer (writers kept having to add them); for B1, nothing the grammar list places above B1 (impersonal si slipped in through a frame) and learner lines without gendered forms where possible. From the five judges on the rewrites (tests/experiments/lesson-judges/README.md §1 and §3).
