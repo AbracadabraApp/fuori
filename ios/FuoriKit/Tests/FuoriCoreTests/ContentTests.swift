@@ -86,6 +86,10 @@ import Testing
         #expect(content.lessonStep("a1-99-9") == nil)
         // Sets: an area without one (servers before sets) is in the first
         #expect(content.lessonAreas?.map(\.lessonSet) == [1, 2])
+        #expect(content.culture == nil)
+        json["culture"] = [["id": "napoli-the-suspended-coffee", "chip": "Coffee for a stranger", "topic": "traditions"]]
+        let withCulture = try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json))
+        #expect(withCulture.culture?.first?.chip == "Coffee for a stranger")
     }
 
     /// The visit stamp's words (content/<country>/language.ts → ui.stamp), and a

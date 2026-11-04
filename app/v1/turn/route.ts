@@ -59,7 +59,7 @@ const Body = z.object({
   /** A lesson's turn (lib/lesson.ts) */
   lesson: z.object({
     stepId: z.string().max(80),
-    part: z.enum(['teach', 'practice', 'review']),
+    part: z.enum(['teach', 'practice', 'review', 'story']),
     scene: z.number().int().min(0).max(5).optional(),
     practiceIds: z.array(z.string().uuid()).max(5).optional(),
   }).optional(),

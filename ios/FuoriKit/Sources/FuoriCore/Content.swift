@@ -24,6 +24,8 @@ public struct Content: Codable, Sendable, Equatable {
     /// The Learn page's lessons as chips in their areas (lib/lessons.ts →
     /// lessonAreas); nil from servers before 2026-11-03
     public let lessonAreas: [LessonArea]?
+    /// The Learn page's cultural lessons, outside the lesson sets (lib/culture.ts); nil from servers before 2026-11-04
+    public let culture: [CultureChip]?
     public let characters: [String: Character]
 
     /// A lesson by its step id
@@ -310,6 +312,15 @@ public struct LessonUnit: Codable, Sendable, Equatable, Hashable, Identifiable {
     public let id: String
     public let title: String
     public let steps: [LessonStep]
+}
+
+/// A cultural lesson on the Learn page: one particular thing about a city,
+/// told by the person there whose pride it is (docs/culture.md)
+public struct CultureChip: Codable, Sendable, Equatable, Hashable, Identifiable {
+    public let id: String
+    /// At most four English words
+    public let chip: String
+    public let topic: String
 }
 
 /// The Learn page's lessons in an area (Josh, 2026-11-03): each chip is a

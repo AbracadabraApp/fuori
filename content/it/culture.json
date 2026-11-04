@@ -1,0 +1,565 @@
+{
+  "version": "2026-11-04",
+  "prompt": "2026-11-04",
+  "set": [
+    "venezia-the-ombra-de-vin",
+    "palermo-schietta-or-maritata",
+    "napoli-greek-walls-under-piazza",
+    "siena-the-painted-drappellone",
+    "bologna-the-stolen-bucket",
+    "matera-the-tearing-of-the-cart"
+  ],
+  "items": [
+    {
+      "chip": "Prati, built for ministries",
+      "teller": "silvia-bruni-nuova",
+      "topic": "history",
+      "facts": "Prati means meadows. This area near Castel Sant'Angelo was open, flood-prone land by the Tiber. When Rome became capital of Italy in 1871, the state needed housing for officials and clerks. The district was laid out on a regular grid from the 1880s, which is why it feels so different from the winding old centre. People in Prati still live between ministries, courts and offices.",
+      "words": [
+        {
+          "said": "prati",
+          "en": "meadows"
+        },
+        {
+          "said": "la capitale",
+          "en": "the capital"
+        }
+      ],
+      "id": "roma-nuova-prati-built-for-ministries",
+      "cityId": "roma-nuova",
+      "placeId": "farmacia-prati"
+    },
+    {
+      "chip": "Ceiling that spills over",
+      "teller": "franca-mattei",
+      "topic": "art",
+      "facts": "The ceiling of Il Gesù was painted by Giovanni Battista Gaulli, called Baciccio, and finished in 1679. It shows the Triumph of the Name of Jesus, and the painted figures look like they tumble out of the frame. Stucco figures are mixed with painted ones, so the eye cannot tell where one ends and the other begins. The effect is deliberate: the Jesuits wanted worshippers to feel heaven opening above them.",
+      "words": [
+        {
+          "said": "il soffitto",
+          "en": "the ceiling"
+        },
+        {
+          "said": "l'affresco",
+          "en": "the fresco"
+        }
+      ],
+      "id": "roma-nuova-ceiling-that-spills-over",
+      "cityId": "roma-nuova",
+      "placeId": "gesu-piazza"
+    },
+    {
+      "chip": "Two clubs, one stadium",
+      "teller": "ettore-gentili-nuova",
+      "topic": "rivalry",
+      "facts": "Rome has two big football clubs: Lazio, founded in 1900 with sky-blue and white colours, and Roma, founded in 1927 with yellow and red. Today both play at the Stadio Olimpico, so the same stands fill with different fans every other week. The match between them is the Derby della Capitale, and families in Rome are often split by it. Roma's early home was Campo Testaccio, in the working-class district of that name, and older fans still remember that.",
+      "words": [
+        {
+          "said": "il tifoso",
+          "en": "the fan"
+        },
+        {
+          "said": "giallorossi",
+          "en": "yellow-reds (Roma)"
+        }
+      ],
+      "id": "roma-nuova-two-clubs-one-stadium",
+      "cityId": "roma-nuova",
+      "placeId": "villa-borghese-nuova"
+    },
+    {
+      "chip": "Testaccio's fifth quarter",
+      "teller": "claudio-salumiere",
+      "topic": "food",
+      "facts": "Testaccio grew up around Rome's municipal slaughterhouse, the Mattatoio, which operated until 1975. The best cuts of beef went to the wealthy, and workers were often paid partly in the leftovers: tripe, tail, offal. They are called the quinto quarto, the fifth quarter. Local cooks turned them into dishes like coda alla vaccinara and trippa alla romana, which families in the neighbourhood still cook and argue over.",
+      "words": [
+        {
+          "said": "quinto quarto",
+          "en": "fifth quarter (offal)"
+        },
+        {
+          "said": "trippa",
+          "en": "tripe"
+        }
+      ],
+      "id": "roma-nuova-testaccio-s-fifth-quarter",
+      "cityId": "roma-nuova",
+      "placeId": "volpetti-testaccio"
+    },
+    {
+      "chip": "Crunchy dried peppers",
+      "teller": "carmela-gentile",
+      "topic": "food",
+      "facts": "Peperoni cruschi are sweet red peppers that are dried in the sun, which is how they were kept through the winter when fresh food was scarce. Just before eating, you fry them for a few seconds in hot oil until they turn crisp and crackle. People crumble them over pasta, beans or eggs, or eat them as a salty snack. At my stall, locals buy them every week, and a pasta dish feels plain to us without that crunch.",
+      "words": [
+        {
+          "said": "peperoni cruschi",
+          "en": "crunchy dried peppers"
+        },
+        {
+          "said": "croccante",
+          "en": "crunchy, crisp"
+        }
+      ],
+      "id": "matera-crunchy-dried-peppers",
+      "cityId": "matera",
+      "placeId": "mercato-piccianello"
+    },
+    {
+      "chip": "From shame to heritage",
+      "teller": "beatrice-loperfido",
+      "topic": "history",
+      "facts": "For centuries many poor families lived in the cave homes of the Sassi, often with their animals and with little water or light. After Carlo Levi wrote about them in his book and the politician Palmiro Togliatti called the Sassi a national shame, the state moved the families to new housing in the 1950s. For years the old districts stayed almost empty. Then they were restored, and in 1993 UNESCO recognised them as a World Heritage Site. The old people of Matera still remember the shame, and the young are proud of the change.",
+      "words": [
+        {
+          "said": "vergogna",
+          "en": "shame"
+        },
+        {
+          "said": "sfollati",
+          "en": "people who were moved out of their homes"
+        }
+      ],
+      "id": "matera-from-shame-to-heritage",
+      "cityId": "matera",
+      "placeId": "libreria-matera"
+    },
+    {
+      "chip": "The rooster whistle",
+      "teller": "maurizio-stigliano",
+      "topic": "art",
+      "facts": "The cucù is a small terracotta whistle shaped like a rooster, shaped by hand and painted in bright colours. In Matera people give it as a gift for good luck and good wishes, for example at weddings or when someone starts a new life. You blow into the tail, and it makes a sharp little sound. Every family I know has one on a shelf, and I make them the same way people here have always made them, from clay.",
+      "words": [
+        {
+          "said": "fischietto",
+          "en": "whistle"
+        },
+        {
+          "said": "argilla",
+          "en": "clay"
+        }
+      ],
+      "id": "matera-the-rooster-whistle",
+      "cityId": "matera",
+      "placeId": "bottega-artigiana"
+    },
+    {
+      "chip": "Tearing the Bruna cart",
+      "teller": "alberto-rizzi",
+      "topic": "traditions",
+      "facts": "On 2 July Matera celebrates the Madonna della Bruna, its patron saint. A huge decorated cart, made of papier-mâché, is paraded through the streets as part of the festival procession. When it reaches the square, the crowd rushes in and tears it to pieces, and everyone wants a piece to take home for good luck. The cart is built new every year, and the whole town waits all year for that moment.",
+      "words": [
+        {
+          "said": "lo strazzo",
+          "en": "the tearing apart of the cart"
+        },
+        {
+          "said": "il carro",
+          "en": "the cart"
+        }
+      ],
+      "id": "matera-the-tearing-of-the-cart",
+      "cityId": "matera",
+      "placeId": "piazza-duomo"
+    },
+    {
+      "chip": "Lampredotto, dipped bread",
+      "teller": "andrea-becattini",
+      "topic": "food",
+      "facts": "Lampredotto is the fourth stomach of the cow, simmered slowly for hours in a broth with tomato, onion, celery and parsley. It was working people's food, sold from street carts by the trippai, who used the cheaper cuts that nobody else wanted. You eat it in a bread roll, and you ask for it 'bagnato', meaning the top half of the roll is dipped in the broth. Then comes green sauce, or sometimes a little spicy sauce. Taxi drivers, market workers and office workers all stop at the stalls for a quick, cheap lunch they eat standing up.",
+      "words": [
+        {
+          "said": "bagnato",
+          "en": "dipped, wet (the roll dipped in the broth)"
+        },
+        {
+          "said": "panino",
+          "en": "bread roll, sandwich"
+        }
+      ],
+      "id": "firenze-lampredotto-dipped-bread",
+      "cityId": "firenze",
+      "placeId": "lampredotto-pollini"
+    },
+    {
+      "chip": "Calcio Storico in June",
+      "teller": "lorenzo-marchi",
+      "topic": "traditions",
+      "facts": "Every June, sand is spread over Piazza Santa Croce for the Calcio Storico, an old, rough Florentine ball game. Four teams play, one for each historic quarter of the city: Santa Croce, Santa Maria Novella, San Giovanni and Santo Spirito. The final is traditionally played on 24 June, the feast day of San Giovanni, the patron saint of Florence. Locals remember the famous match of 1530, played in defiance of the imperial troops besieging the city, and the game was revived in the 1930s. Santa Croce's team plays in blue, so for people in the neighbourhood the sand and the colours feel personal.",
+      "words": [
+        {
+          "said": "calcio storico",
+          "en": "historic football"
+        },
+        {
+          "said": "sabbia",
+          "en": "sand"
+        }
+      ],
+      "id": "firenze-calcio-storico-in-june",
+      "cityId": "firenze",
+      "placeId": "santa-croce-piazza"
+    },
+    {
+      "chip": "Viola against Juventus",
+      "teller": "graziella-nesi",
+      "topic": "rivalry",
+      "facts": "Fiorentina fans wear purple, called viola, and no rival is more disliked than Juventus. The bad feeling is old. In 1982 Fiorentina lost the league title to Juventus by a single point, in a finish many Florentines still call unfair. In 1990 the star player Roberto Baggio was sold to Juventus, and fans rioted in the streets of Florence. On match days the neighbourhood around the stadium in Campo di Marte fills with purple scarves, and every customer has an opinion about Juventus.",
+      "words": [
+        {
+          "said": "viola",
+          "en": "purple (and the name of Fiorentina)"
+        },
+        {
+          "said": "tifoso",
+          "en": "fan, supporter"
+        }
+      ],
+      "id": "firenze-viola-against-juventus",
+      "cityId": "firenze",
+      "placeId": "tabaccheria-nesi"
+    },
+    {
+      "chip": "Santo Spirito's plain facade",
+      "teller": "chiara-russo",
+      "topic": "art",
+      "facts": "The facade of Santo Spirito was never decorated, and it still stands smooth and pale above the square. Brunelleschi designed the church, but he died in 1446, before it was built, and the work carried on without him. Inside, the grey stone columns and arches stand out against the white walls, so the whole space feels clear and ordered. Students of art and architecture come to sketch here because the proportions are so easy to read. In the Oltrarno the plain facade is part of the square's character, with the steps used as a place to sit, meet and draw.",
+      "words": [
+        {
+          "said": "facciata",
+          "en": "facade"
+        },
+        {
+          "said": "pietra serena",
+          "en": "grey-blue stone used in Florentine buildings"
+        }
+      ],
+      "id": "firenze-santo-spirito-s-plain-facade",
+      "cityId": "firenze",
+      "placeId": "santo-spirito-scalini"
+    },
+    {
+      "chip": "Ricciarelli with vin santo",
+      "teller": "lucia-bini",
+      "topic": "food",
+      "facts": "Ricciarelli are soft, diamond-shaped almond biscuits, chewy inside and dusted with icing sugar. They are made from almond paste, sugar and egg white, often on a thin wafer base. Sienese families put them on the table at Christmas, and many people dip them in vin santo. At Pasticceria Bini we tell newcomers to try one first because it shows the Sienese way with almonds and sugar: simple, old and not too sweet.",
+      "words": [
+        {
+          "said": "ricciarelli",
+          "en": "soft almond biscuits"
+        },
+        {
+          "said": "vin santo",
+          "en": "sweet dessert wine"
+        }
+      ],
+      "id": "siena-ricciarelli-with-vin-santo",
+      "cityId": "siena",
+      "placeId": "pasticceria-bini"
+    },
+    {
+      "chip": "The painted drappellone",
+      "teller": "giovanni-bacci",
+      "topic": "art",
+      "facts": "The prize of the Palio is not money but the drappellone, a large banner painted anew for every race. An artist is chosen each time, so no two are alike. The banner for 2 July honours the Madonna di Provenzano and the one for 16 August honours the Assunta. The winning contrada takes it home and keeps it in its museum, so it becomes part of the district's memory. I work in a shop on the Campo, and each year people argue about whether the new painting is beautiful.",
+      "words": [
+        {
+          "said": "drappellone",
+          "en": "the large painted Palio banner"
+        },
+        {
+          "said": "cencio",
+          "en": "Sienese word for the Palio banner, literally rag"
+        }
+      ],
+      "id": "siena-the-painted-drappellone",
+      "cityId": "siena",
+      "placeId": "bottega-del-palio"
+    },
+    {
+      "chip": "The bank of Siena",
+      "teller": "beatrice-salvi",
+      "topic": "history",
+      "facts": "Palazzo Salimbeni, on the square where I read, is the seat of Monte dei Paschi di Siena. The bank began in 1472 as a Monte di Pietà, a public fund to lend money to poor people at fair terms. Later it was backed by the revenues of the Maremma pastures, the pascoli, and that is where the name Paschi comes from. It is among the oldest banks in the world still operating, and Sienesi, including many students, talk about it as part of the city's identity, with pride and also with worry about its recent troubles.",
+      "words": [
+        {
+          "said": "banca",
+          "en": "bank"
+        },
+        {
+          "said": "pascoli",
+          "en": "pastures"
+        }
+      ],
+      "id": "siena-the-bank-of-siena",
+      "cityId": "siena",
+      "placeId": "piazza-salimbeni"
+    },
+    {
+      "chip": "The ombra de vin",
+      "teller": "marco-timon",
+      "topic": "traditions",
+      "facts": "In Venice you don't ask for a glass of wine, you ask for an ombra, which means a shadow. The story goes that wine sellers in Piazza San Marco kept moving their stalls to stay in the shade of the bell tower, so a glass of wine became an ombra. Today an ombra is a small glass of house wine, drunk standing or sitting by the canal with a few cicchetti. Locals do a giro d'ombre, hopping from one bar to the next at aperitivo hour, and the point is to chat and see friends, not to get drunk.",
+      "words": [
+        {
+          "said": "ombra",
+          "en": "shade; a small glass of wine"
+        },
+        {
+          "said": "cicchetti",
+          "en": "small bar snacks"
+        }
+      ],
+      "id": "venezia-the-ombra-de-vin",
+      "cityId": "venezia",
+      "placeId": "bar-al-timon"
+    },
+    {
+      "chip": "Sarde in saor",
+      "teller": "lorenzo-carampane",
+      "topic": "food",
+      "facts": "Sarde in saor is fried sardines left to rest in a sweet-and-sour mix of soft onions, vinegar, raisins and pine nuts. Tradition says it began as a way to keep fish for days, which would have suited Venetian sailors on long voyages, because the vinegar and onions help preserve it. Sardines are cheap, local lagoon and Adriatic fish, so it stayed a humble dish that Venetians still eat at home and in trattorie. It tastes better the day after it is made, so a good cook always prepares it ahead.",
+      "words": [
+        {
+          "said": "saor",
+          "en": "sweet-and-sour onion marinade, in Venetian"
+        },
+        {
+          "said": "sarde",
+          "en": "sardines"
+        }
+      ],
+      "id": "venezia-sarde-in-saor",
+      "cityId": "venezia",
+      "placeId": "ristorante-antiche-carampane"
+    },
+    {
+      "chip": "Sior Rioba's iron nose",
+      "teller": "dante-mori",
+      "topic": "history",
+      "facts": "Campo dei Mori is traditionally said to be named after merchants who came to Venice from the Morea, in Greece. Their statues are said to stand on the corner of the old Palazzo Mastelli and on the walls around the campo. One figure is known as Sior Rioba, and by tradition his nose is made of iron, said to replace a stone nose he lost. Venetians have always liked stories about these merchants, so people here still call the figures by name as if they were old neighbours.",
+      "words": [
+        {
+          "said": "mercante",
+          "en": "merchant"
+        },
+        {
+          "said": "naso",
+          "en": "nose"
+        }
+      ],
+      "id": "venezia-sior-rioba-s-iron-nose",
+      "cityId": "venezia",
+      "placeId": "campo-dei-mori"
+    },
+    {
+      "chip": "Eight woods, one gondola",
+      "teller": "andrea-gondola",
+      "topic": "art",
+      "facts": "A gondola is built by hand from around 280 pieces of several woods, such as oak, walnut, cherry, larch, fir, elm and lime. Each wood is chosen for its job: some are strong, some bend well, some resist water. The hull is deliberately asymmetrical, wider on the left, so that a gondolier rowing from one side can still move in a straight line. The squero in Dorsoduro, a boatyard that looks like a mountain chalet, is one of the places where this craft is kept alive.",
+      "words": [
+        {
+          "said": "squero",
+          "en": "boatyard where gondolas are built and repaired"
+        },
+        {
+          "said": "forcola",
+          "en": "carved wooden oarlock of the gondola"
+        }
+      ],
+      "id": "venezia-a-gondola-of-eight-woods",
+      "cityId": "venezia",
+      "placeId": "squero-san-trovaso"
+    },
+    {
+      "chip": "Coffee for a stranger",
+      "teller": "carmine-russo",
+      "topic": "traditions",
+      "facts": "When a Neapolitan is happy about something, like a win, a birth or a bit of luck, he sometimes pays for two coffees and drinks only one. The second is the caffè sospeso, left at the bar for the next person who walks in and can't afford it. Nobody asks who takes it, and the barista simply serves it to whoever needs it. It is a small piece of the city's solidarity, and the habit is still alive in many bars.",
+      "words": [
+        {
+          "said": "caffè sospeso",
+          "en": "suspended coffee, paid in advance for a stranger"
+        },
+        {
+          "said": "al banco",
+          "en": "at the bar, standing"
+        }
+      ],
+      "id": "napoli-the-suspended-coffee",
+      "cityId": "napoli",
+      "placeId": "bar-nilo"
+    },
+    {
+      "chip": "Greek walls under Naples",
+      "teller": "davide-amato",
+      "topic": "history",
+      "facts": "Naples began as a Greek city. Its name, Neapolis, means 'new city', and it was founded next to an older settlement called Parthenope. In Piazza Bellini you can still see stretches of the original Greek walls, made of big tuff blocks, a few metres below street level. The straight streets of the old centre, including Spaccanapoli, still follow the grid the Greeks laid out, so students now sit at café tables over a wall more than 2,000 years old.",
+      "words": [
+        {
+          "said": "le mura",
+          "en": "the walls"
+        },
+        {
+          "said": "il decumano",
+          "en": "main east-west street of the old Greek and Roman grid"
+        }
+      ],
+      "id": "napoli-greek-walls-under-piazza",
+      "cityId": "napoli",
+      "placeId": "piazza-bellini"
+    },
+    {
+      "chip": "Riccia or frolla",
+      "teller": "ciro-poppella",
+      "topic": "food",
+      "facts": "The sfogliatella comes in two kinds, and every Neapolitan has a favourite. The riccia is made of many thin crisp layers shaped like a shell. The frolla is rounder and softer, made of shortcrust pastry. Both are filled with semolina, ricotta, sugar and candied citrus, and people say you should eat them warm, straight from the oven, when the filling is at its best.",
+      "words": [
+        {
+          "said": "la riccia",
+          "en": "the crisp, layered sfogliatella"
+        },
+        {
+          "said": "la frolla",
+          "en": "the soft shortcrust sfogliatella"
+        }
+      ],
+      "id": "napoli-riccia-or-frolla",
+      "cityId": "napoli",
+      "placeId": "pasticceria-poppella"
+    },
+    {
+      "chip": "Puffy crust, not Roman",
+      "teller": "gino-sorbillo",
+      "topic": "rivalry",
+      "facts": "Neapolitans and Romans love to tease each other about pizza. In Rome many people like a thin, crisp base. In Naples the pizza is soft and elastic, and the edge puffs up in the very hot oven. We say that raised edge is the sign of a well-made dough that has risen slowly. The teasing is friendly, but we are convinced that pizza from Naples is the real one.",
+      "words": [
+        {
+          "said": "il cornicione",
+          "en": "the raised edge of the pizza"
+        },
+        {
+          "said": "l'impasto",
+          "en": "the dough"
+        }
+      ],
+      "id": "napoli-puffy-crust-versus-roman-thin",
+      "cityId": "napoli",
+      "placeId": "pizzeria-sorbillo"
+    },
+    {
+      "chip": "Ragù belongs on tagliatelle",
+      "teller": "chef-matteo-ricci",
+      "topic": "food",
+      "facts": "In Bologna ragù is served with tagliatelle, never with spaghetti, which is why \"spaghetti bolognese\" makes us wince. Fresh egg pasta is rough and porous, and its wide ribbons hold the slow-cooked sauce of beef, a little pork, soffritto and a touch of tomato. Ragù simmers for hours, and every family says its own version is the right one. Bolognese care about this because it is the Sunday table, a dish passed from grandmother to grandchild.",
+      "words": [
+        {
+          "said": "ragù",
+          "en": "slow-cooked meat sauce"
+        },
+        {
+          "said": "tagliatelle",
+          "en": "long flat egg pasta ribbons"
+        }
+      ],
+      "id": "bologna-ragu-belongs-on-tagliatelle",
+      "cityId": "bologna",
+      "placeId": "ristorante-pappagallo"
+    },
+    {
+      "chip": "Gelato under the porticoes",
+      "teller": "michele-gelataio",
+      "topic": "traditions",
+      "facts": "In the evening Bolognese take a gelato and stroll slowly under the porticoes, with no destination. The porticoes began in the Middle Ages, when the city grew and students needed rooms, so buildings extended over the street to make space. Today they mean you can walk in the centre in rain or in strong sun without an umbrella. That is why the evening passeggiata with a cone happens in every season, and I have taken it as my own habit after ten years here.",
+      "words": [
+        {
+          "said": "passeggiata",
+          "en": "leisurely stroll"
+        },
+        {
+          "said": "portici",
+          "en": "porticoes, covered arcades"
+        }
+      ],
+      "id": "bologna-gelato-under-the-porticoes",
+      "cityId": "bologna",
+      "placeId": "cremeria-funivia"
+    },
+    {
+      "chip": "The stolen bucket",
+      "teller": "paolo-venturi",
+      "topic": "rivalry",
+      "facts": "The old rivalry between Bologna and Modena has a famous story: in 1325 Modena won the battle of Zappolino against Bologna. The Modenese carried off a wooden bucket from a Bolognese well as a trophy, and Modena keeps it as a symbol to this day. Alessandro Tassoni later turned it into a comic poem, La secchia rapita. We still joke about it at the market, and the teasing carries over to whose mortadella, tortellini and cars are better.",
+      "words": [
+        {
+          "said": "la secchia",
+          "en": "the bucket"
+        },
+        {
+          "said": "campanilismo",
+          "en": "fierce local pride and rivalry between towns"
+        }
+      ],
+      "id": "bologna-the-stolen-bucket",
+      "cityId": "bologna",
+      "placeId": "mercato-mezzo"
+    },
+    {
+      "chip": "Schietta or maritata",
+      "teller": "toto-meusaro",
+      "topic": "food",
+      "facts": "Pani ca' meusa is veal spleen simmered and fried in lard, then stuffed into a soft sesame bun called a vastedda. It began as poor people's food, because offal was cheap and nothing was wasted. At the stall you must answer one question: schietta, plain with a squeeze of lemon, or maritata, 'married' with ricotta and caciocavallo. People eat it standing, with their hands, and each has a firm opinion on which version is right.",
+      "words": [
+        {
+          "said": "schietta",
+          "en": "plain, single (no cheese)"
+        },
+        {
+          "said": "maritata",
+          "en": "married (with ricotta and cheese)"
+        }
+      ],
+      "id": "palermo-schietta-or-maritata",
+      "cityId": "palermo",
+      "placeId": "pani-ca-meusa-ballaro"
+    },
+    {
+      "chip": "The Leopard's Palermo",
+      "teller": "beatrice-amato",
+      "topic": "art",
+      "facts": "Il Gattopardo was written by Giuseppe Tomasi di Lampedusa, a Palermo aristocrat who was born in the city in 1896. Publishers turned it down and it came out in 1958, after his death. The novel follows a Sicilian prince around the time of Garibaldi's landing in 1860 and the unification of Italy. Its best-known idea is that everything must change so that everything can stay the same. Palermitans quote it when talking about their city, which is why it is the first novel I put in a newcomer's hands.",
+      "words": [
+        {
+          "said": "il romanzo",
+          "en": "the novel"
+        },
+        {
+          "said": "il gattopardo",
+          "en": "the leopard (the title)"
+        }
+      ],
+      "id": "palermo-the-leopard-s-palermo",
+      "cityId": "palermo",
+      "placeId": "libreria-del-mare"
+    },
+    {
+      "chip": "Arancina, not arancino",
+      "teller": "filippo-basile",
+      "topic": "rivalry",
+      "facts": "In Palermo it is arancina, feminine, like the orange (arancia) it is named after. It is round and golden, usually filled with ragù and peas or with ham and cheese. In Catania, on the other side of Sicily, they say arancino and make it in a cone shape, like Mount Etna. Both words are accepted, but the argument between the two cities never ends, and I correct anyone who gets it wrong in my osteria.",
+      "words": [
+        {
+          "said": "arancina",
+          "en": "Palermo rice ball (feminine)"
+        },
+        {
+          "said": "arancino",
+          "en": "the Catania form (masculine)"
+        }
+      ],
+      "id": "palermo-arancina-not-arancino",
+      "cityId": "palermo",
+      "placeId": "osteria-ballarò"
+    }
+  ]
+}

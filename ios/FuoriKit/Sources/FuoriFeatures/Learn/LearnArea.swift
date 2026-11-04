@@ -17,7 +17,8 @@ struct LearnArea: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dismiss) private var dismiss
     @State private var home: APIClient.LearnHome?
-    @State private var lesson: LessonStep?
+    /// The lesson (or cultural lesson) open: its id
+    @State private var lesson: String?
     /// The deck (docs/flashcards.md), made when Learn opens: the master deck,
     /// or the old starter words from servers before it; nil from servers without either
     @State private var deckModel: FlashcardsModel?
@@ -34,6 +35,9 @@ struct LearnArea: View {
                     // After the server says which set (or fails), so the set doesn't jump
                     if homeTried, let areas = model.content?.lessonAreas, !areas.isEmpty {
                         lessonsSection(areas.filter { $0.lessonSet == currentSet(areas) }, earlier: areas.filter { $0.lessonSet < currentSet(areas) })
+                    }
+                    if homeTried, let culture = model.content?.culture, !culture.isEmpty {
+                        cultureSection(culture)
                     }
                     if let deckModel {
                         Button { showingDeck = true } label: { FlashcardsBanner(learned: deckModel.wordsLearned, pictures: deckModel.bannerPictures) }
@@ -59,13 +63,13 @@ struct LearnArea: View {
             .navigationDestination(isPresented: $showingDeck) {
                 if let deckModel { FlashcardsView(model: deckModel) }
             }
-            .navigationDestination(item: $lesson) { step in
-                LessonFlowView(step: step, app: model)
+            .navigationDestination(item: $lesson) { id in
+                LessonFlowView(stepId: id, app: model)
             }
             .navigationDestination(isPresented: $showingEarlier) {
                 if let areas = model.content?.lessonAreas {
                     EarlierLessons(areas: areas.filter { $0.lessonSet < currentSet(areas) }, done: Set(home?.lessonsDone ?? [])) { step in
-                        lesson = model.content?.lessonStep(step)
+                        lesson = step
                     }
                 }
             }
@@ -162,7 +166,7 @@ struct LearnArea: View {
                     .foregroundStyle(Tokens.Colors.lessonsFieldInk)
                     .accessibilityLabel("\(count) of \(all.count) done")
             }
-            ChipAreas(areas: areas, done: done) { step in lesson = model.content?.lessonStep(step) }
+            ChipAreas(areas: areas, done: done) { step in lesson = step }
             // Finished sets stay reachable (Josh, 2026-11-03); no level names
             if !earlier.isEmpty {
                 Button { showingEarlier = true } label: {
@@ -183,6 +187,35 @@ struct LearnArea: View {
         .padding(.top, 16)
         .padding(.bottom, 18)
         .background(Tokens.Colors.lessonsField, in: RoundedRectangle(cornerRadius: 22))
+    }
+}
+
+// MARK: - Culture
+
+extension LearnArea {
+    /// Cultural lessons (docs/culture.md; Josh, 2026-11-03): one particular
+    /// thing about a city, told by the person there whose pride it is; chips
+    /// in their own tint, outside the lesson sets, so they never hold one up
+    func cultureSection(_ chips: [CultureChip]) -> some View {
+        let done = Set(home?.lessonsDone ?? [])
+        return VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .firstTextBaseline) {
+                SectionTitle("Culture")
+                Spacer(minLength: 8)
+                Text("\(chips.filter { done.contains($0.id) }.count) of \(chips.count)")
+                    .typeface(.label, 16, relativeTo: .callout, weight: .bold)
+                    .foregroundStyle(Tokens.Colors.cultureInk)
+            }
+            ChipFlow(spacing: 7) {
+                ForEach(chips) { chip in
+                    LessonChip(name: chip.chip, done: done.contains(chip.id), doneColor: Tokens.Colors.cultureDone, edge: Tokens.Colors.cultureInk.opacity(0.35)) { lesson = chip.id }
+                }
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 16)
+        .padding(.bottom, 18)
+        .background(Tokens.Colors.cultureField, in: RoundedRectangle(cornerRadius: 22))
     }
 }
 
@@ -332,6 +365,8 @@ private struct FlapTile: View {
 private struct LessonChip: View {
     let name: String
     let done: Bool
+    var doneColor: Color = Tokens.Colors.green
+    var edge: Color = Tokens.Colors.chipBorder
     let action: () -> Void
 
     var body: some View {
@@ -342,8 +377,8 @@ private struct LessonChip: View {
                 .padding(.horizontal, 14)
                 .padding(.vertical, 9)
                 .frame(minHeight: 44)
-                .background(done ? Tokens.Colors.green : Tokens.Colors.chip, in: Capsule())
-                .overlay { Capsule().strokeBorder(done ? Tokens.Colors.green : Tokens.Colors.chipBorder, lineWidth: 2) }
+                .background(done ? doneColor : Tokens.Colors.chip, in: Capsule())
+                .overlay { Capsule().strokeBorder(done ? doneColor : edge, lineWidth: 2) }
         }
         .buttonStyle(PressableStyle())
         .accessibilityLabel(done ? "\(name), done" : name)

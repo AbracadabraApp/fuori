@@ -132,7 +132,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
 
   // A lesson (lib/lesson.ts): every part in the Beginner format with its brief, Magda included;
   // the Intermediate lessons in the speaking mode, the character prompt with its brief
-  const lessonBriefed = p.lesson && learnerId ? await lessonBrief(p.lesson, learnerId, transcript, learnerSaid) : null;
+  // A cultural lesson (part story) follows the learner's level: the Beginner format below Intermediate
+  const lessonBriefed = p.lesson && learnerId ? await lessonBrief(p.lesson, learnerId, transcript, learnerSaid, undefined, p.lesson.part !== 'story' || onPath !== null) : null;
 
   const reply: TurnOutput = lessonBriefed?.speaking
     ? // The Intermediate lessons (Josh, 2026-11-03): the character prompt with the lesson's brief, no answers to say back

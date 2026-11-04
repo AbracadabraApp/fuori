@@ -26,6 +26,9 @@
   --flap-tile: #1f1f1f;
   --flap-ink: #f5f1ed;
   --flap-hinge: #3c3c3c;
+  --culture-field: #d9ece6;
+  --culture-ink: #1d4a3f;
+  --culture-done: #2f6b5c;
   --font-display: "Alegreya", Georgia, serif;
   --font-label: "Alegreya Sans", "Gill Sans", sans-serif;
   --font-flip: "Oswald", "Gill Sans", sans-serif;

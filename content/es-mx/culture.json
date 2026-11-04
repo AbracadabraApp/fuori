@@ -1,0 +1,356 @@
+{
+  "version": "2026-11-04",
+  "prompt": "2026-11-04",
+  "set": [
+    "ciudad-de-mexico-guajolota-for-breakfast",
+    "puebla-papalo-on-the-cemita",
+    "oaxaca-cochineal-the-red-from-cactus",
+    "guadalajara-romeria-of-the-generala",
+    "ciudad-de-mexico-the-cathedral-that-sinks",
+    "san-miguel-de-allende-who-began-independence"
+  ],
+  "items": [
+    {
+      "chip": "The cathedral that sinks",
+      "teller": "alicia-catequista",
+      "topic": "history",
+      "facts": "The Catedral Metropolitana took from 1573 to the early 1800s to build, and it stands on what used to be the soft lakebed of Lake Texcoco. Its weight, together with the soft ground, made it sink unevenly over the centuries, so parts of it lean. In the 1990s engineers carefully removed soil from under the higher parts to even it out and slow the problem. People here say the building has been settling for as long as the city has been growing, and we keep an eye on it.",
+      "words": [
+        {
+          "said": "hundirse",
+          "en": "to sink"
+        },
+        {
+          "said": "el suelo",
+          "en": "the ground"
+        }
+      ],
+      "id": "ciudad-de-mexico-the-cathedral-that-sinks",
+      "cityId": "ciudad-de-mexico",
+      "placeId": "catedral-metropolitana"
+    },
+    {
+      "chip": "The bolero's chair",
+      "teller": "chucho-lustrabotas",
+      "topic": "traditions",
+      "facts": "Bolear, shining shoes, is an old street trade in Mexico City, and a bolero works from a stand with a raised chair. The customer climbs up, the bolero brushes off the dust, rubs in the polish and buffs the leather with a cloth until it shines. Many people have a bolero they go back to again and again, and they chat while they sit up there, so the stand is also a place for talk. Plenty of people still like to shine their shoes before a wedding, an interview or an important day.",
+      "words": [
+        {
+          "said": "bolear",
+          "en": "to shine shoes"
+        },
+        {
+          "said": "la boleada",
+          "en": "a shoe shine"
+        }
+      ],
+      "id": "ciudad-de-mexico-the-boleada-on-the-chair",
+      "cityId": "ciudad-de-mexico",
+      "placeId": "puesto-de-boleo-don-chucho"
+    },
+    {
+      "chip": "Guajolota for breakfast",
+      "teller": "fidel-tamalero",
+      "topic": "food",
+      "facts": "A guajolota is a tamal tucked inside a bolillo, the crusty white roll, and people in Mexico City eat it as a quick morning meal. It is cheap, heavy and filling, so it suits anyone rushing to work or school before the day gets going. I sell it from my tricycle with a cup of atole, a warm, thick drink, and the sweet or savory filling is up to you.",
+      "words": [
+        {
+          "said": "guajolota",
+          "en": "a tamal inside a bolillo roll"
+        },
+        {
+          "said": "atole",
+          "en": "warm, thick corn drink"
+        }
+      ],
+      "id": "ciudad-de-mexico-guajolota-for-breakfast",
+      "cityId": "ciudad-de-mexico",
+      "placeId": "tamales-oaxaquenos-bici"
+    },
+    {
+      "chip": "Pumas against América",
+      "teller": "vale-libros-tecolote",
+      "topic": "rivalry",
+      "facts": "Pumas and América are two of Mexico City's best-known football clubs, and their meeting is often called the Clásico Capitalino. Pumas is the team of the national university, UNAM, and its stadium is in Ciudad Universitaria in the south of the city, in Coyoacán. América is one of the most successful clubs in the Mexican league, and many people love it and many others can't stand it. Families here are often split between the two, and the argument at the table can last longer than the match.",
+      "words": [
+        {
+          "said": "la afición",
+          "en": "the fans"
+        },
+        {
+          "said": "el clásico",
+          "en": "the big rivalry match"
+        }
+      ],
+      "id": "ciudad-de-mexico-pumas-against-america",
+      "cityId": "ciudad-de-mexico",
+      "placeId": "libros-tecolote"
+    },
+    {
+      "chip": "Chocolate ground to order",
+      "teller": "rufina-molinera",
+      "topic": "food",
+      "facts": "In Oaxaca, chocolate is ground fresh from cacao beans with sugar and cinnamon, and often almonds, and each customer asks for the mix they like. At the mill the paste is pressed into tablets, which people take home to dissolve in hot water or milk. It is whisked until frothy with a wooden molinillo. Many people prefer it as chocolate de agua, with a piece of pan de yema to dunk in it, and it is an everyday drink, not just a treat for festivals.",
+      "words": [
+        {
+          "said": "molinillo",
+          "en": "wooden whisk for frothing chocolate"
+        },
+        {
+          "said": "chocolate de agua",
+          "en": "hot chocolate made with water"
+        }
+      ],
+      "id": "oaxaca-chocolate-ground-to-order",
+      "cityId": "oaxaca",
+      "placeId": "chocolate-mayordomo-mina"
+    },
+    {
+      "chip": "Calenda before the fiesta",
+      "teller": "concha-sacristana",
+      "topic": "traditions",
+      "facts": "Before a barrio fiesta, a calenda winds through the neighborhood streets. It is a procession with a brass band, dancing, and big paper-and-cane puppets that people carry. Bells and cohetes from early morning tell everyone that the fiesta of the neighborhood's patron saint has begun. The whole barrio helps prepare it: the flowers, the church, the food and the music. The fiesta belongs to the neighbors as much as to the church.",
+      "words": [
+        {
+          "said": "calenda",
+          "en": "festive procession with band and puppets"
+        },
+        {
+          "said": "cohetes",
+          "en": "firecrackers or rockets set off for celebrations"
+        }
+      ],
+      "id": "oaxaca-calenda-before-the-fiesta",
+      "cityId": "oaxaca",
+      "placeId": "templo-san-matias-jalatlaco"
+    },
+    {
+      "chip": "Red from a cactus",
+      "teller": "luis-guia-jardin",
+      "topic": "art",
+      "facts": "Cochineal is a small insect that lives on nopal cactus pads. When it is dried and crushed, it gives a deep red dye. Oaxacan weavers, such as those in Teotitlán del Valle, have long used it to dye wool for their rugs, and they get different shades by mixing it with lemon or other plants. In the garden we show it on the cactus so that people understand that the colors of the rugs come from the land.",
+      "words": [
+        {
+          "said": "cochinilla",
+          "en": "cochineal, an insect used for red dye"
+        },
+        {
+          "said": "nopal",
+          "en": "prickly pear cactus"
+        }
+      ],
+      "id": "oaxaca-cochineal-the-red-from-cactus",
+      "cityId": "oaxaca",
+      "placeId": "jardin-etnobotanico-oaxaca"
+    },
+    {
+      "chip": "Mezcal, not tequila",
+      "teller": "emiliano-los-amantes",
+      "topic": "rivalry",
+      "facts": "People in Oaxaca like to say mezcal is not just tequila's cousin. Tequila comes from the blue agave, mostly in Jalisco, while mezcal can be made from many kinds of agave, and espadín is the most common one. Many mezcales get their smoky taste because the agave hearts are roasted in an earthen pit. That is why people here sip it slowly, with orange and sal de gusano, and are proud that Oaxaca makes most of the country's mezcal.",
+      "words": [
+        {
+          "said": "espadín",
+          "en": "the most common agave for mezcal"
+        },
+        {
+          "said": "sal de gusano",
+          "en": "salt mixed with ground agave worm and chile"
+        }
+      ],
+      "id": "oaxaca-mezcal-not-tequila",
+      "cityId": "oaxaca",
+      "placeId": "mezcaleria-los-amantes"
+    },
+    {
+      "chip": "Romería of the Generala",
+      "teller": "lupita-sacristana",
+      "topic": "traditions",
+      "facts": "Every 12 October, the image of the Virgen de Zapopan is carried from the Cathedral in Guadalajara to her basilica in Zapopan. This is the Romería, and the people of the city call the Virgin la Generala. Huge crowds walk along the route, and families wait on the streets to see her pass. Many people go every year because it is a promise they keep or a habit passed down from their parents.",
+      "words": [
+        {
+          "said": "romería",
+          "en": "pilgrimage procession"
+        },
+        {
+          "said": "la Generala",
+          "en": "the General (nickname of the Virgen de Zapopan)"
+        }
+      ],
+      "id": "guadalajara-romeria-of-the-generala",
+      "cityId": "guadalajara",
+      "placeId": "parroquia-san-pedro-tlaquepaque"
+    },
+    {
+      "chip": "Chivas against Atlas",
+      "teller": "rigoberto-cantinero",
+      "topic": "rivalry",
+      "facts": "The Clásico Tapatío is the match between Chivas, in red and white, and Atlas, in red and black, the two big football teams of Guadalajara. Chivas are loved across Mexico, while Atlas fans are proud of being the local underdogs. In 2021 Atlas won the league title after waiting about seventy years, and many fans cried in the streets and in the cantinas. A table of friends who support different teams will argue happily all through the game, usually over tequila and botanas.",
+      "words": [
+        {
+          "said": "tapatío",
+          "en": "person or thing from Guadalajara"
+        },
+        {
+          "said": "botana",
+          "en": "snack to share with drinks"
+        }
+      ],
+      "id": "guadalajara-chivas-against-atlas",
+      "cityId": "guadalajara",
+      "placeId": "cantina-la-fuente"
+    },
+    {
+      "chip": "Birote for torta ahogada",
+      "teller": "efren-panadero",
+      "topic": "food",
+      "facts": "Birote salado is the crusty roll of Guadalajara, with a hard crust and a soft, dense crumb inside. That is why tradition holds it to be the right bread for a torta ahogada, which is a roll filled with meat and then drowned in salsa. A soft roll would turn to mush, but a good birote keeps its shape under all that sauce.",
+      "words": [
+        {
+          "said": "birote",
+          "en": "crusty Guadalajara bread roll"
+        },
+        {
+          "said": "torta ahogada",
+          "en": "drowned sandwich"
+        }
+      ],
+      "id": "guadalajara-birote-for-torta-ahogada",
+      "cityId": "guadalajara",
+      "placeId": "panaderia-la-espiga"
+    },
+    {
+      "chip": "Café de olla",
+      "teller": "ximena-barista-san-miguel",
+      "topic": "food",
+      "facts": "Café de olla is coffee brewed with cinnamon and piloncillo, unrefined cane sugar, traditionally in a clay pot. The clay keeps the heat and gives the drink a slightly earthy taste. In the neighbourhood people have it with breakfast or a late-afternoon snack, alongside a concha or a pan de nata. The sweetness and spice are why it feels like home to so many families.",
+      "words": [
+        {
+          "said": "piloncillo",
+          "en": "unrefined cane sugar"
+        },
+        {
+          "said": "olla",
+          "en": "pot"
+        }
+      ],
+      "id": "san-miguel-de-allende-cafe-de-olla",
+      "cityId": "san-miguel-de-allende",
+      "placeId": "cafe-de-la-calzada"
+    },
+    {
+      "chip": "Mill turned art studios",
+      "teller": "marisol-ceramista",
+      "topic": "art",
+      "facts": "Fábrica La Aurora was a textile factory where cotton cloth was woven for decades. After it closed, the big halls were turned into studios, galleries and design shops. Today a ceramist can work in a place built for looms, with high ceilings and plenty of light. For the people who work there, it is proud proof that the town can give an old building a new life.",
+      "words": [
+        {
+          "said": "barro",
+          "en": "clay"
+        },
+        {
+          "said": "fábrica",
+          "en": "factory"
+        }
+      ],
+      "id": "san-miguel-de-allende-mill-turned-art-studios",
+      "cityId": "san-miguel-de-allende",
+      "placeId": "fabrica-la-aurora"
+    },
+    {
+      "chip": "Who began independence?",
+      "teller": "victor-jubilado",
+      "topic": "rivalry",
+      "facts": "Ignacio Allende was born in San Miguel, and the town added his name to its own in his honour. The Grito of 1810 was given by Father Hidalgo in nearby Dolores, which is now called Dolores Hidalgo. Each town likes to say it was the true cradle of independence: San Miguel because Allende and the plotters were from here, and Dolores because the call was made there. It is a friendly argument that old men like to have in the park, and each side has its proof.",
+      "words": [
+        {
+          "said": "el Grito",
+          "en": "the cry of independence"
+        },
+        {
+          "said": "cuna",
+          "en": "cradle"
+        }
+      ],
+      "id": "san-miguel-de-allende-who-began-independence",
+      "cityId": "san-miguel-de-allende",
+      "placeId": "parque-juarez"
+    },
+    {
+      "chip": "Pápalo on the cemita",
+      "teller": "lupe-cemitas-dona-lupe",
+      "topic": "food",
+      "facts": "The cemita poblana takes its name from the sesame-seed roll it is served on. It is filled with meat such as milanesa, plus avocado, quesillo, onion and chipotle. What makes it a cemita is pápalo, a strong-tasting herb that is usually added fresh and raw. Some people love it and some people ask for it on the side, which is why Lupe always asks how you like yours.",
+      "words": [
+        {
+          "said": "cemita",
+          "en": "sesame roll sandwich from Puebla"
+        },
+        {
+          "said": "pápalo",
+          "en": "strong-flavored herb used fresh on cemitas"
+        }
+      ],
+      "id": "puebla-papalo-on-the-cemita",
+      "cityId": "puebla",
+      "placeId": "cemitas-dona-lupe-analco"
+    },
+    {
+      "chip": "Mole rivalry with Oaxaca",
+      "teller": "tere-fonda-dona-tere",
+      "topic": "rivalry",
+      "facts": "Puebla and Oaxaca both take great pride in their moles, and people from each place will happily argue that theirs is better. Mole poblano is a dark, rich sauce made with dried chiles, chocolate, spices and sesame seeds. Oaxaca is known for having several different moles. A well-known legend says mole poblano was first made in a convent in Puebla, and that is why Doña Tere says mole was born here.",
+      "words": [
+        {
+          "said": "mole",
+          "en": "rich sauce of chiles, spices and chocolate"
+        },
+        {
+          "said": "poblano",
+          "en": "from Puebla"
+        }
+      ],
+      "id": "puebla-mole-rivalry-with-oaxaca",
+      "cityId": "puebla",
+      "placeId": "fonda-dona-tere"
+    },
+    {
+      "chip": "Battle of Puebla parade",
+      "teller": "efrain-zocalo-de-puebla",
+      "topic": "history",
+      "facts": "On 5 May 1862 the Mexican army under General Ignacio Zaragoza defeated a French force near Puebla, at the forts of Loreto and Guadalupe. The French came back the next year and took the city, so the victory was not the end of the war. It was still a proud moment, and the city's official name includes Zaragoza's. Every year Puebla marks the date with a civic parade, and for locals it is about their own history, more than about anything else.",
+      "words": [
+        {
+          "said": "desfile",
+          "en": "parade"
+        },
+        {
+          "said": "batalla",
+          "en": "battle"
+        }
+      ],
+      "id": "puebla-battle-of-puebla-parade",
+      "cityId": "puebla",
+      "placeId": "zocalo-de-puebla"
+    },
+    {
+      "chip": "Blue-and-white Talavera",
+      "teller": "mateo-cafe-cielo-rojo",
+      "topic": "art",
+      "facts": "Talavera is hand-painted tin-glazed pottery, and Puebla has been making it since colonial times. The technique came from Spain, and the craft is named after Talavera de la Reina. Real Talavera from Puebla and nearby Tlaxcala has an official designation of origin and is made by hand. Many workshops still paint the classic blue-and-white designs on tiles and cups. So a cup at a Puebla café may sometimes be a small piece of local craftwork.",
+      "words": [
+        {
+          "said": "talavera",
+          "en": "hand-painted glazed pottery of Puebla"
+        },
+        {
+          "said": "azulejo",
+          "en": "decorative glazed tile"
+        }
+      ],
+      "id": "puebla-blue-and-white-talavera",
+      "cityId": "puebla",
+      "placeId": "cafe-cielo-rojo"
+    }
+  ]
+}

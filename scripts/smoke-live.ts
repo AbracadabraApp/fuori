@@ -236,6 +236,19 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
           ? pass(`v1 lesson: an Intermediate lesson in the speaking mode (${speakingStep}: "${st.line.slice(0, 50)}…")`)
           : fail('v1 lesson: an Intermediate lesson in the speaking mode', JSON.stringify({ speaking: sp.speaking, ...st }).slice(0, 300));
       }
+      // A cultural lesson (lib/culture.ts): the teller's story, one part; reaching it turns the chip green
+      const content = (await (await fetch(`${base}/v1/content`)).json()) as { culture?: { id: string }[] };
+      const cultureId = content.culture?.[0]?.id;
+      if (cultureId) {
+        const cp = (await (await v1('/v1/lesson/start', { stepId: cultureId })).json()) as { story?: boolean; practice?: unknown[]; magda?: { city: { id: string }; place: { id: string } } };
+        const told = cp.magda ? ((await (await v1('/v1/turn', { cityId: cp.magda.city.id, placeId: cp.magda.place.id, lesson: { stepId: cultureId, part: 'story' } })).json()) as { line?: string; promptVersion?: string }) : {};
+        const after = (await (await fetch(`${base}/v1/learn/home`, { headers: auth })).json()) as { lessonsDone?: string[] };
+        cp.story === true && cp.practice?.length === 0 && told.line && told.promptVersion?.endsWith(`-story:${cultureId}`) && after.lessonsDone?.includes(cultureId)
+          ? pass(`v1 culture: the story is told and the chip is done (${cultureId})`)
+          : fail('v1 culture: the story is told and the chip is done', JSON.stringify({ story: cp.story, ...told, done: after.lessonsDone }).slice(0, 300));
+      } else {
+        fail('v1 culture: the content lists cultural lessons', 'none in /v1/content');
+      }
       // One lesson done of the first set: still the first set (lib/lessons.ts → currentLessonSet)
       home.lessonSet === 1 ? pass('v1 learn home: the first set of lessons') : fail('v1 learn home: the first set of lessons', `lessonSet ${home.lessonSet}`);
     }

@@ -5,7 +5,8 @@ import FuoriNetworking
 
 /// A lesson on the conversation screen (docs/learn.md → A lesson; lib/lesson.ts;
 /// N6 item 4, pass 1): Magda teaches one step, three short practice dialogues
-/// with characters whose role fits, then her review. Each part ends on a
+/// with characters whose role fits, then her review. A cultural lesson
+/// (docs/culture.md; lib/culture.ts) is one part: its teller's story. Each part ends on a
 /// button in place of the mic, which opens the next part. Leaving partway
 /// (back, swipe) saves what was said, and the lesson starts over next time
 /// (Josh, 2026-11-02).
@@ -17,22 +18,23 @@ final class LessonFlow {
     /// The conversation on screen
     private(set) var current: ConversationModel?
 
-    let step: LessonStep
+    /// A lesson's step id, or a cultural lesson's id (one part, the story)
+    let stepId: String
     private let app: AppModel
     private var plan: APIClient.LessonPlan?
     /// The practice dialogues' conversations, for her review
     private var practiceIds: [String] = []
     private var index = 0
 
-    init(step: LessonStep, app: AppModel) {
-        self.step = step
+    init(stepId: String, app: AppModel) {
+        self.stepId = stepId
         self.app = app
     }
 
     func start() async {
         guard stage == .loading, plan == nil, let api = app.api else { return }
         do {
-            plan = try await api.lessonStart(stepId: step.id)
+            plan = try await api.lessonStart(stepId: stepId)
             open(0)
         } catch {
             stage = .failed((error as? APIError)?.message ?? "Couldn't start the lesson. Try again.")
@@ -47,21 +49,26 @@ final class LessonFlow {
         let scene: APIClient.LessonPlan.Scene
         let turn: APIClient.LessonTurn
         let button: Onboarding.Line
-        if k == 0 {
+        if plan.story == true {
+            // A cultural lesson: the teller tells it, and the button ends it
             scene = plan.magda
-            turn = .init(stepId: step.id, part: "teach")
+            turn = .init(stepId: stepId, part: "story")
+            button = .init(line: words.done, en: words.doneLabel)
+        } else if k == 0 {
+            scene = plan.magda
+            turn = .init(stepId: stepId, part: "teach")
             button = .init(line: words.go, en: words.goLabel)
         } else if k <= practice {
             scene = plan.practice[k - 1]
-            turn = .init(stepId: step.id, part: "practice", scene: k - 1)
+            turn = .init(stepId: stepId, part: "practice", scene: k - 1)
             button = k < practice ? .init(line: words.next, en: words.nextLabel) : .init(line: words.back, en: words.backLabel)
         } else {
             scene = plan.magda
-            turn = .init(stepId: step.id, part: "review", practiceIds: practiceIds)
+            turn = .init(stepId: stepId, part: "review", practiceIds: practiceIds)
             button = .init(line: words.done, en: words.doneLabel)
         }
         guard let character = content.character(scene.characterId) else { stage = .failed("Someone in this lesson is missing."); return }
-        current = app.lessonConversation(city: scene.city, place: scene.place, character: character, lesson: turn, speaking: plan.speaking ?? false, button: button) { [weak self] model in
+        current = app.lessonConversation(city: scene.city, place: scene.place, character: character, lesson: turn, speaking: plan.story == true ? !(app.level == "beginner" || app.level == nil) : (plan.speaking ?? false), button: button) { [weak self] model in
             self?.next(after: model)
         }
         stage = .part(k)
@@ -72,7 +79,7 @@ final class LessonFlow {
         if model.lesson?.part == "practice", let id = model.conversationId { practiceIds.append(id) }
         model.leave()
         guard let plan else { return }
-        if index > plan.practice.count {
+        if plan.story == true || index > plan.practice.count {
             current = nil
             stage = .done
         } else {
@@ -86,8 +93,8 @@ struct LessonFlowView: View {
     @State private var flow: LessonFlow
     @Environment(\.dismiss) private var dismiss
 
-    init(step: LessonStep, app: AppModel) {
-        _flow = State(initialValue: LessonFlow(step: step, app: app))
+    init(stepId: String, app: AppModel) {
+        _flow = State(initialValue: LessonFlow(stepId: stepId, app: app))
     }
 
     var body: some View {

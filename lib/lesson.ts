@@ -20,6 +20,7 @@ import { imageUrl, isStation } from '@/lib/content-api';
 import { lessonUnits, type LessonStep } from '@/lib/lessons';
 import { language } from '@/content';
 import { query } from '@/lib/db';
+import { cultureItem, cultureVersion, storyBrief, STORY_TURNS } from '@/lib/culture';
 import type { Turn } from '@/lib/types';
 
 /** Learner turns in each practice dialogue */
@@ -34,7 +35,8 @@ export const REVIEW_TURNS = 1;
 export const SPEAKING_TEACH_TURNS = 3;
 export const SPEAKING_PRACTICE_TURNS = 4;
 
-export type LessonPart = 'teach' | 'practice' | 'review';
+/** story: a cultural lesson's one part, told by the teller (lib/culture.ts) */
+export type LessonPart = 'teach' | 'practice' | 'review' | 'story';
 /** What /v1/turn is told about a lesson turn (the app sends it with every turn of a lesson) */
 export interface LessonTurn {
   stepId: string;
@@ -52,14 +54,17 @@ export interface LessonTurn {
  * finished lessons from the conversations, with no table of its own
  * (lessonsDone).
  */
-export const lessonVersion = (part: LessonPart, stepId?: string) => `lesson-${readPromptFile('lesson-flow.md').version}-${part}${part === 'review' && stepId ? `:${stepId}` : ''}`;
+export const lessonVersion = (part: LessonPart, stepId?: string) =>
+  part === 'story'
+    ? `lesson-${cultureVersion()}-story${stepId ? `:${stepId}` : ''}`
+    : `lesson-${readPromptFile('lesson-flow.md').version}-${part}${part === 'review' && stepId ? `:${stepId}` : ''}`;
 
-/** The lessons this learner has finished: those whose review they reached */
+/** The lessons this learner has finished: those whose review they reached, and cultural lessons they started (one part, the story) */
 export async function lessonsDone(learnerId: string): Promise<string[]> {
   const r = await query<{ step: string }>(
     `SELECT DISTINCT split_part(prompt_version, ':', 2) AS step
        FROM conversations
-      WHERE learner_id = $1 AND prompt_version LIKE 'lesson-%-review:%'`,
+      WHERE learner_id = $1 AND (prompt_version LIKE 'lesson-%-review:%' OR prompt_version LIKE 'lesson-%-story:%')`,
     [learnerId]
   );
   return r.rows.map((x) => x.step).filter(Boolean);
@@ -128,6 +133,13 @@ export function practicePartners(step: LessonStep, seed: string) {
 
 /** The lesson's plan for the app: where Magda is, and the practice scenes */
 export function lessonPlan(stepId: string, seed: string) {
+  // A cultural lesson: one part, at the teller's place (the plan's magda is the teller's scene; no practice)
+  const item = cultureItem(stepId);
+  if (item) {
+    const city = cities.find((c) => c.id === item.cityId);
+    if (!city?.places.some((p) => p.id === item.placeId && p.characterId === item.teller)) return null;
+    return { stepId, title: item.chip, magda: sceneJson(item.cityId, item.placeId), practice: [], speaking: false, story: true };
+  }
   const step = findStep(stepId);
   if (!step) return null;
   const tutorCity = cities.find((c) => c.places.some((p) => p.characterId === tutor?.id));
@@ -151,7 +163,13 @@ const learnerTurns = (transcript: Turn[], learnerSaid?: string) => transcript.fi
  * turn ends the part (practice and review by count; teaching by her done, or
  * the cap). `forcedDone`: the turn ends the part whatever the model says.
  */
-export async function lessonBrief(l: LessonTurn, learnerId: string, transcript: Turn[], learnerSaid?: string, practiceLines?: string[]): Promise<{ brief: string; forcedDone: boolean; askDone: boolean; speaking: boolean }> {
+export async function lessonBrief(l: LessonTurn, learnerId: string, transcript: Turn[], learnerSaid?: string, practiceLines?: string[], beginner = true): Promise<{ brief: string; forcedDone: boolean; askDone: boolean; speaking: boolean }> {
+  if (l.part === 'story') {
+    const item = cultureItem(l.stepId);
+    if (!item) throw new Error(`No cultural lesson ${l.stepId}`);
+    const { brief, last } = storyBrief(item, learnerTurns(transcript, learnerSaid), beginner);
+    return { brief, forcedDone: last, askDone: false, speaking: !beginner };
+  }
   const step = findStep(l.stepId);
   if (!step) throw new Error(`No lesson step ${l.stepId}`);
   const f = readPromptFile('lesson-flow.md');

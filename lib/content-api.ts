@@ -15,6 +15,7 @@ import { cities, country, language, onboarding, pack } from '@/content';
 import { welcomeContent } from '@/lib/welcome';
 import { flashcards, deckCards } from '@/lib/flashcards';
 import { lessonUnits, lessonAreas } from '@/lib/lessons';
+import { cultureSet } from '@/lib/culture';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
 import { imageListFor } from '@/content';
@@ -150,6 +151,8 @@ export function buildContent(): Content {
     lessons: lessonUnits(),
     /** The Learn page's lessons as chips in their areas (lib/lessons.ts → lessonAreas; app builds from 2026-11-03) */
     lessonAreas: lessonAreas(),
+    /** The Learn page's cultural lessons, outside the lesson sets (lib/culture.ts; app builds from 2026-11-04) */
+    culture: cultureSet().map(({ id, chip, topic }) => ({ id, chip, topic })),
     card: { ...language.card, image: image(`country/${country}`) },
     language: {
       code: language.code,
