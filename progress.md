@@ -66,6 +66,14 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-03 (evening): welcome merged, the Learn page, Groq's limit (laptop session)
+
+- **Merged and live:** the cloud's welcome rework and the repeat fix (e98bb91), after welcome trials, beginner-dialogue before and after, and smoke:live on a local server; plus a fix for all-English Beginner turns coming back with their words in `en` (876eeda).
+- **The Learn page** (812f647, 4c4be0f): History, lessons as chips in four areas (green once done), the Flashcards banner. Done = reaching Magda's review (Josh: yes), read from the review's prompt version (`lesson-…-review:<step>`), no new table. Italy's chips map the live 21 onto Josh's four areas until the Beginner rewrite brings his 14 (`test:lesson-areas` fails until `content/it/lesson-areas.json` matches the new lessons). Mexico's areas and names are Claude's draft. Simulator-checked in both countries and at AX5; not yet on a phone.
+- **Groq's free limit** (E-7WCH): 20 Whisper calls a minute for the whole account; the app sends about two recordings a turn and most are heard twice. A failed second hearing now keeps the first (d9cd684, live, `test:hear-recording`); the app transcribes during a pause after 1.0 s instead of 0.6 s (68e05de, Josh's choice; next phone build). Josh isn't paying for Groq yet.
+- smoke:live passes in production in both countries after each change.
+- **Next:** install the build on Josh's phone (built, waiting on his yes); speed (N6 5b): measure the 0.4 s, then prompt caching, then the reply prepared during the silence (Josh: go); merge the Beginner rewrite when the cloud's branch is ready.
+
 ## 2026-11-03: Lessons pass 1 on Josh's phone (laptop session)
 
 - **Lessons pass 1** (N6 item 4, 467ab10): Magda teaches a step on the conversation screen (Beginner format, ends when she says so, at most four turns), three practice scenes with people whose role fits (forced end on the third learner turn), her review of the learner's practice lines. Lesson conversations have prompt versions `lesson-…`, so they're neither visits nor path records. `smoke:live` passed in Italy and Mexico, including the new lesson checks.
