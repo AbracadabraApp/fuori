@@ -20,7 +20,7 @@ export const voices = {
       'twZzvyYIl5ntDHC1Vatv', // Angelica - friendly, energetic, Mexican, 30.6K uses
     ],
     m: [
-      'HIkzxzvsigFIynXHHKhU', // Hugo M - deep & mysterious, native Mexican, 10.1K uses
+      'ojGau167OE7nUATM1xDa', // Marto - warm and natural, Mexican Spanish, conversational; replaced Hugo M (2026-11-04: Hugo measured -26.0 LUFS, too quiet; Marto -14.3)
       'gbTn1bmCvNgk0QEAVyfM', // Eduardo - warm, clear & mellow, native Mexican, 6.9K uses
       'W6Z2FAa578IKOGSVo2sA', // Alejandro Ballesteros - warm & joyful, Mexican, 98.8K uses
       'LegCbmbXKbT5PUp3QFWv', // Jhony - calm, measured, sincere, Mexican, 6.1K uses

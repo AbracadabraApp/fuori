@@ -41,6 +41,10 @@ public final class Voice: NSObject {
         let player = try AVAudioPlayer(data: data)
         player.delegate = self
         player.isMeteringEnabled = true
+        // Every recording at about the same loudness (Josh, 2026-11-04: "Valeria
+        // is very loud"): ElevenLabs' voices differ by 20 dB and more, and a
+        // voice's clips by a few; a loud clip is turned down to the target
+        if let loudness = Self.loudness(of: data) { player.volume = Self.volume(loudness: loudness) }
         self.player = player
         await withCheckedContinuation { continuation in
             finished = continuation
@@ -62,6 +66,32 @@ public final class Voice: NSObject {
             synthesizer.speak(utterance)
             watch(Self.speakDeadline(characters: spokenLength, rate: rate))
         }
+    }
+
+    /// The loudness every recording is played at, in dB (RMS of the decoded
+    /// samples, which matched LUFS within half a dB on 48 clips of the game's
+    /// 16 voices). Quieter clips play at full volume: the player can't boost
+    nonisolated static let targetLoudness = -20.0
+
+    /// The player's volume for a clip this loud: turned down to the target, never up
+    nonisolated static func volume(loudness: Double, target: Double = targetLoudness) -> Float {
+        Float(min(1, pow(10, (target - loudness) / 20)))
+    }
+
+    /// How loud a recording is (RMS of its samples, dBFS), or nil if it can't
+    /// be read. Decodes the clip once (a few milliseconds for a line)
+    nonisolated static func loudness(of data: Data) -> Double? {
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("loudness-\(UUID().uuidString).mp3")
+        defer { try? FileManager.default.removeItem(at: url) }
+        guard (try? data.write(to: url)) != nil,
+              let file = try? AVAudioFile(forReading: url),
+              let buffer = AVAudioPCMBuffer(pcmFormat: file.processingFormat, frameCapacity: AVAudioFrameCount(file.length)),
+              (try? file.read(into: buffer)) != nil,
+              let samples = buffer.floatChannelData?[0], buffer.frameLength > 0 else { return nil }
+        var sum = 0.0
+        for i in 0..<Int(buffer.frameLength) { sum += Double(samples[i]) * Double(samples[i]) }
+        let rms = (sum / Double(buffer.frameLength)).squareRoot()
+        return rms > 0 ? 20 * log10(rms) : nil
     }
 
     /// Safety timers (2026-10-29): Josh saw onboarding freeze on its first

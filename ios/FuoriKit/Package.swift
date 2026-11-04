@@ -22,7 +22,7 @@ let package = Package(
         .target(name: "FuoriFeatures", dependencies: ["FuoriCore", "FuoriNetworking", "FuoriDesign", "FuoriAudio"]),
         .testTarget(name: "FuoriCoreTests", dependencies: ["FuoriCore"], resources: [.copy("Fixtures")]),
         .testTarget(name: "FuoriNetworkingTests", dependencies: ["FuoriNetworking"]),
-        .testTarget(name: "FuoriAudioTests", dependencies: ["FuoriAudio"]),
+        .testTarget(name: "FuoriAudioTests", dependencies: ["FuoriAudio"], resources: [.copy("Fixtures")]),
         .testTarget(name: "FuoriFeaturesTests", dependencies: ["FuoriFeatures"]),
     ]
 )

@@ -22,7 +22,7 @@ export const voices = {
       'covxL85MSd0uUrktE45z', // Adriatico - warm narrator, explicitly native Italian, 4.7K uses
       'f8NAZK1ciwrVujah7clz', // Valerio - warm storyteller, native Italian (Romanesco), 13.6K uses
       'mcMi8FJDhg35bMpWHv2R', // Paolo - dynamic radio voice, native Italian, 6.8K uses
-      'UCeW7wElM5dxewmr4a8l', // Max - natural storyteller, native Italian, modern
+      'GcAgjAjkhWsmUd4GlPiv', // Marco - friendly, calm and warm, conversational, native Italian; replaced Max (2026-11-04: Max measured -36.8 LUFS, far too quiet; Marco -16.8)
     ],
   },
 
