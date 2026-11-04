@@ -73,6 +73,7 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 - **Groq's free limit** (E-7WCH): 20 Whisper calls a minute for the whole account; the app sends about two recordings a turn and most are heard twice. A failed second hearing now keeps the first (d9cd684, live, `test:hear-recording`); the app transcribes during a pause after 1.0 s instead of 0.6 s (68e05de, Josh's choice; next phone build). Josh isn't paying for Groq yet.
 - smoke:live passes in production in both countries after each change.
 - **Later the same evening:** the Beginner rewrite merged (29e470c, Italy's 14; live test first); lessons in sets with the Intermediate lessons as sets 2 and 3 (08738fb, 57ef3c4); five Mexican lessons that skipped practice fixed. smoke:live passes in production.
+- **The speaking mode for the Intermediate lessons** (fb8148f, pushed under a placeholder "wip" message; the full explanation is in the commit that adds this line): Josh, "an intermediate mode for intermediate lessons". Character prompt plus ", speaking" briefs in lesson-flow.md 2026-11-03; Magda in the language; practice 4 turns in the learner's own words, no answers to say back; review recasts one fix. Trials on six lessons and smoke:live (local) pass.
 - **Next:** install the build on Josh's phone (built, waiting on his yes); speed (N6 5b): measure the 0.4 s, then prompt caching, then the reply prepared during the silence (Josh: go); merge the Beginner rewrite when the cloud's branch is ready.
 
 ## 2026-11-03: Lessons pass 1 on Josh's phone (laptop session)
