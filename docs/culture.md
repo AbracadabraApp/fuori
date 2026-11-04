@@ -140,31 +140,29 @@ Each city's file has 30–40 places but the app shows about 10 (`content/it/show
 - **Their pride is a story, not the stereotype**: the jeweller tells why the Medici put goldsmiths on the Ponte Vecchio in place of the butchers, not "Florence is famous for gold".
 - **Played before done**: a conversation that opens with "Cosa desidera?" or a price fails.
 
-**First-screen cities** (10 places, plus Rome's four drafted):
+**Tipico, not stereotypical (Josh).** *Tipico* is what people there live (the sfoglina making Sunday's tortellini, lampredotto at lunch); a stereotype is what a visitor expects to find (Florentine leather, Venetian masks). A better storyteller doesn't fix a stereotype. Test: would a local go there, or talk about it, in an ordinary week, and would they be proud of it or roll their eyes? Must-see landmarks fail it too (Josh: "that's what I don't love about needing the Duomo or Lucca's walls"). Dropped for this: the Ponte Vecchio jeweller, the Scuola del Cuoio, the Venetian mask maker, the Capuchin catacombs, Juliet's house. Borderline places stay unless there's a strong substitute (Josh).
+
+**First-screen cities** (6 places, plus Rome's four drafted):
 
 | City | Add | Who |
 |---|---|---|
 | Bologna | Sfoglia Rina | the sfoglina |
 | Bologna | Le Due Torri | the historian |
 | Napoli | Via San Gregorio Armeno | the nativity-scene craftsman |
-| Palermo | Catacombe dei Cappuccini | the Capuchin friar |
 | Palermo | Cappella Palatina | the art historian |
-| Venezia | Atelier della Maschera | the mask maker |
-| Firenze | Ponte Vecchio | the jeweller (as a storyteller) |
-| Firenze | Scuola del Cuoio | the leather craftsman (as a storyteller) |
 | Siena | Antica Drogheria Manganelli | the owner (panforte) |
 | Matera | Casa Grotta di Vico Solitario | the museum guide |
 | Roma | Piazza Navona, Piazza Santa Maria in Trastevere, the basilica, the Colosseo | drafted (see Rome) |
 
-**Cities after "Mostra altro"** (13 places): Lecce, Museo Faggiano (the owner who found the city under his house); Taormina, Ceramiche Siciliane d'Arte (the *teste di moro*); Siracusa, Antica Giudecca (the historian); Genova, Focacceria Genovese (a city specialty, like the pastry shops kept) and La Lanterna (the keeper); Milano, the Duomo (the priest); Verona, Casa di Giulietta (the custodian); Assisi, the Basilica di San Francesco (the friar); Bergamo, Teatro Donizetti (the conductor); Torino, Museo dell'Automobile (the curator); Lucca, the Duomo (the Volto Santo); Orvieto, the Duomo (the priest); Mantova, Palazzo Te (the art historian).
+**Cities after "Mostra altro"** (12 places): Lecce, Museo Faggiano (the owner who found the city under his house); Taormina, Ceramiche Siciliane d'Arte (the *teste di moro*); Siracusa, Antica Giudecca (the historian); Genova, Focacceria Genovese (a city specialty, like the pastry shops kept) and La Lanterna (the keeper); Milano, the Duomo (the priest); Assisi, the Basilica di San Francesco (the friar); Bergamo, Teatro Donizetti (the conductor); Torino, Museo dell'Automobile (the curator); Lucca, the Duomo (the Volto Santo); Orvieto, the Duomo (the priest); Mantova, Palazzo Te (the art historian).
 
-**More hidden places, of kinds left out above** (markets, parks; Josh: add): Siracusa, Parco Archeologico della Neapolis (an archaeologist: the Greek theatre); Firenze, Giardino di Boboli (the head gardener: the Medici gardens); Matera, Parco della Murgia (the ranger: the cave churches facing the Sassi); Palermo, Mercato della Vucciria (the fishmonger: the city's most famous old market); Assisi, Frantoio Assisi (the olive-oil maker: the November harvest); Torino, Mercato del Balon (the antiques dealer: the old flea market).
+**More hidden places, of kinds left out above** (markets, parks; Josh: add): Siracusa, Parco Archeologico della Neapolis (an archaeologist: the Greek theatre); Firenze, Giardino di Boboli (the head gardener: the Medici gardens); Matera, Parco della Murgia (the ranger: the cave churches facing the Sassi); Palermo, Mercato del Capo (the cheese seller: a working neighbourhood market, in place of the Vucciria, now mostly nightlife); Assisi, Frantoio Assisi (the olive-oil maker: the November harvest); Torino, Mercato del Balon (the antiques dealer: the old flea market).
 
 **Hidden places whose person is a tour guide** (Josh: fine to change): recast as someone who lives or works there, the way the Colosseo got Serena: the Arena di Verona, the Teatro Antico in Taormina, Castel dell'Ovo, the Belvedere dei Sassi in Matera, the Mole Antonelliana. A preference, not a rule: Rome's Matteo is a part-time guide (Josh's wording) and works; the learner isn't a tourist, and a guide's job is to treat them as one.
 
-**Famous places with nobody there** (in the files, no character): the Duomo in Florence, the Basilica di San Marco, the Martorana and the Cathedral in Palermo, the Pinacoteca di Brera. Each would need a new person. Open.
+**Famous places with nobody there** (the Duomo in Florence, San Marco, the Martorana, Palermo's cathedral, Brera): dropped, must-sees (Josh).
 
-**Waiting (Josh): important things not in the files at all**: a contrada in Siena, a glass furnace on Murano, the Maradona mural in Naples, someone on Lucca's walls, La Scala; in Mexico, Rivera's murals at the Palacio Nacional, mariachi in Guadalajara, lucha libre at the Arena México.
+**Waiting (Josh): important things not in the files at all**: a contrada in Siena, a glass furnace on Murano, the Maradona mural in Naples (Lucca's walls and La Scala dropped as must-sees); in Mexico, Rivera's murals at the Palacio Nacional, mariachi in Guadalajara, lucha libre at the Arena México.
 
 **Mexico** shows nearly everything already; two hidden places add culture: Panadería El Trigal (Oaxaca) and La Gran Fama on Calle de los Dulces (Puebla).
 
