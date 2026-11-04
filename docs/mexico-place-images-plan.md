@@ -39,7 +39,7 @@ Found 2026-10-14:
 - **39 image files nothing uses (about 24 MB).** Italy: 29 old city-card variants (`*-backup`, `*-atmospheric`, `*-no-hints`), 4 places (`assisi.jpg`, `scuola.jpg`, `stazione.jpg`, `bar-trastevere-giulia-pastel.jpg`), 4 portraits (`luca-barista`, `maria-vendor`, `magda-italian`, `ticket-seller-italian`). Mexico: `places/escuela.jpg`, `places/terminal.jpg`, `portraits/magda-mexican.jpg`, `portraits/ticket-seller-mexican.jpg`. No code refers to any of them (checked). Delete; git keeps them.
 - **Oversized files.** Mexican places average about 1 MB each at 1200 × 1200, and 6 are still 1024 × 1024. Resizing only works on a Mac today (`sips`). Use `sharp` (already installed with Next) to resize and save at JPEG quality ~82 everywhere: roughly half the size, no visible loss at phone size. Apply to the regenerated Mexican places; Italy's 1,300 images (750 MB) can follow separately.
 - **Manifest.** Reset the Mexican place entries in `scripts/image-generation-manifest.es-mx.json` so it matches what was regenerated.
-- **Style-test leftovers.** Delete the laptop's `style-test/` folder once the regeneration is approved (not in git). Keep `style-test.mjs` and its config as the record of what was tried.
+- **Style-test leftovers.** The laptop's `style-test/` folder (not in git) was deleted 2026-11-04. Keep `style-test.mjs` and its config as the record of what was tried.
 - **Stop it piling up again.** Extend `npm run test:images` to fail on image files no city, place or person uses.
 
 ## Status (2026-10-14)
