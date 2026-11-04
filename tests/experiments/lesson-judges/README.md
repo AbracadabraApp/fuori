@@ -56,6 +56,6 @@ Josh's four areas and chip names (docs/learn.md → Lesson chips, Italy B1); wri
 
 Most recheck failures were left-overs of applying the fixes (a role not changed with its line, an English line not changed with its Italian, a mission still listening for the old phrase); all nine were fixed with the judge's own fix, as in the A1 passes, and no lesson was dropped. Cut to keep one point a lesson: *stavo per* from "Then suddenly", century names from "Local history", *te lo* with *posso* from "Do it for someone".
 
-Held for Josh: the teaching judge's title changes ("How much?" → "What it takes", "How come?" → "Ask exactly", "Everyone" → "Some, every") and its call to drop "Polite commands" as a repeat of "Instructions" (Claude's view: keep both; one understands a clerk's commands, the other gives them).
+Josh's calls on the teaching judge's held suggestions (2026-11-03): "Everyone" → "Some, every"; "How much?", "How come?" and "Polite commands" stay as they are.
 
 The writing instructions need the lesson the teaching numbers show: practice answers must use the point in a new sentence, never an example's. Files: `results/it-b1-rewrite-*.json`.

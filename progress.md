@@ -133,7 +133,7 @@ Still to do, on the laptop (needs keys, Railway, the Mac):
 
 **Mac, added 2026-11-03:** run `smoke:live` on `claude/beginner-rewrite`, then merge (lessons finished under the old a1-* ids won't show as done). Then lesson sets on the Learn page (learn.md → "Lessons come in sets"): one set at a time, the next when all green, an "earlier lessons" link, no level names; serve the Intermediate lessons as sets 2 and 3.
 
-**Josh:** Groq paid tier or a retry for E-7WCH; yes to installing the phone build; four Intermediate calls from the teaching judge (titles "How much?", "How come?", "Everyone"; drop "Polite commands" or keep it); whether Mexico gets the same lesson rewrite.
+**Josh:** Groq paid tier or a retry for E-7WCH; yes to installing the phone build; whether Mexico gets the same lesson rewrite.
 
 ## 2026-11-02/03: Lesson judges, Intermediate lessons, Learn page, welcome rework (cloud session)
 - **Lesson judges** (docs/lesson-judges.md; Josh's design: five separate judges, no human proofreading, no outside tools, one bounded pass). Run on Italy's 21 A1 lessons and on 60 new B1 lessons. Everything in tests/experiments/lesson-judges/README.md. A1 fixes held by Josh (live lessons unchanged); B1 draft in content/it/lessons-b1.json, not served.
