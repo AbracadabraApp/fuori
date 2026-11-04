@@ -149,11 +149,13 @@ Kept (Josh: "weather is always happening wherever you are"). **People talk about
 
 **How it would work:**
 1. **Once a day per city** the server fetches the forecast from Open-Meteo (free, no key, free tier for non-commercial use) and keeps it for the day.
-2. **One line goes into each character's setting**: "Today in Bologna: rain, high of 14°C, wind from the northeast." A fact, not an instruction, so no rule about bringing it up.
+2. **One line goes into the setting of the characters it touches**: "Today in Bologna: rain, high of 14°C, wind from the northeast." A fact, not an instruction, so no rule about bringing it up. Two filters in code, so not everyone talks about the weather (Josh's worry, 2026-11-03: "everyone will talk about the weather"):
+    - **Only weather worth mentioning:** rain, a storm, fog, heat, the first cold day, a strong wind. Mild ordinary weather gets no line, so on many days nobody hears about it. Decided from the forecast's numbers (rain, wind, temperature against the season's normal), which works in any language.
+    - **Only characters the weather touches:** people who work outdoors or on the street (the market, the gelateria, the tram stop, a kiosk, a piazza or a park). Inside a pharmacy or a church nobody gets the line; the learner can still bring it up.
 3. **Characters mention it when it fits.** Regional words come from them reading the real weather for their city.
 4. **The next day:** memory notes save plans, promises and personal things, not the weather, so "yesterday's storm" only carries over when it became part of the conversation (getting soaked, a plan rained off). Check in a test.
 5. **If the fetch fails** the line is left out and the failure is logged; characters never guess the weather.
-6. **Measure it:** the conversation tests check that weather comes up sometimes, not every time.
+6. **Measure before shipping:** replay real conversations with the weather line and count how often it comes up; aim for about one conversation in four on a day with notable weather. Too often → tighten the filters, never the prompt.
 
 If weather is ever shown on screen, it would go in the city's daily suggestions ("Rainy today: a good day for the bookshop"). Those aren't built: `Suggestion` exists only as a type in `lib/types.ts`, and the app shows no daily suggestions today.
 
