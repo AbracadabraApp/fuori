@@ -11,7 +11,7 @@ import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { cities } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
-import { ask, OUT } from './common.mts';
+import { ask, OUT } from './common.mjs';
 
 const city = cities.find((c) => c.id === 'roma-nuova')!;
 const people = city.places.filter((p) => !p.hidden && p.characterId).map((place) => {

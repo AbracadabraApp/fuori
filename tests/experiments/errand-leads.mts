@@ -15,7 +15,7 @@ import { characterForPlace } from '@/lib/characters/for-place';
 import { runTurn } from '@/lib/turn';
 import type { CharacterSheet, Turn } from '@/lib/types';
 import { learners } from '../conversations/learners';
-import { ask, OUT, pool } from './common.mts';
+import { ask, OUT, pool } from './common.mjs';
 
 const TURNS = 5;
 const WEATHER = 'Today in Rome: heavy rain since this morning, 12°C, a cold wind.';
