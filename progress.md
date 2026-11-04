@@ -66,6 +66,15 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-03 (late): culture brainstorm, docs/culture.md (laptop session)
+
+Brainstorm only; nothing built (Josh: "get brainstorming out before building").
+- **Done:** `docs/culture.md`, the design doc: culture is an overall goal for both countries (also a line in `docs/01-vision.md`, principle 4). Local pride (food, history, folklore and traditions, art, campanilismo), the pride field (`caresAbout`), `knows` and "who mentioned you", weather (notable weather only, outdoor characters only), cultural lessons (particular chips; retired characters teach national ones; mostly listening, personal questions along the way), hidden places to show (storytellers, tipico not stereotypical).
+- **Decisions (Josh):** Roma nuova is the only Rome (old `roma.ts` retired, already hidden); no new rules in the character prompt, facts only; facts checked by a judge, no human proofreading; dropped: city calendar, time of day and week, a general learner memory, `menu`, stereotype and must-see places.
+- **Found:** every shown place has a `here` line (Italy 203 of 211, Mexico 60 of 65; the rest are language schools); the city files' `food`, `customs`, `localTouches`, `dayTrips` are never read; `caresAbout` is empty and unread; `JourneyState.citiesVisited` is never filled; daily suggestions aren't built.
+- **Open:** branch `rome-local-pride-draft` (four places from old Roma, Serena at the Colosseo, campanilismo lines) is not verified and puts culture in `here`; redo it into `caresAbout` when building. A half-filled shared web copy of the doc exists (https://claude.ai/artifact/Xw4276rw1xSnxsR2UCbNQQ); delete or finish.
+- **Next:** build Rome first: wire `caresAbout` into the character prompt as one line of facts, write Rome's pride items from its lists, judge them, play.
+
 ## 2026-11-03 (evening): welcome merged, the Learn page, Groq's limit (laptop session)
 
 - **Merged and live:** the cloud's welcome rework and the repeat fix (e98bb91), after welcome trials, beginner-dialogue before and after, and smoke:live on a local server; plus a fix for all-English Beginner turns coming back with their words in `en` (876eeda).
