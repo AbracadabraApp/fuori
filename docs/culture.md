@@ -134,7 +134,7 @@ Thinner (Siena has no contrada, Lucca's walls are only in bar names, Milano and 
 
 ## Open questions
 
-- **Does local pride stay in `here`,** or get its own field (`pride`, or the empty `caresAbout` on the character sheet; check what uses it first)? A separate field would let tests and suggestions see it.
+- **Does local pride stay in `here`, or move to `caresAbout`?** `caresAbout` is free to use (checked 2026-11-03): it's on the character sheet (`lib/types.ts`), every city character gets it empty (`lib/characters/for-place.ts`), only Magda's two sheets fill it, no prompt reads it, and `tests/check-content-api.ts` keeps it out of what's sent to the app (`tests/check-turn-request.ts` uses it empty as test data). Using it means a small change to how the prompt is built, and gives tests and suggestions one place to look.
 - **How it comes up:** does the character bring their topic up unprompted, or only when it fits? The character prompt says "describe the situation, not how to talk", so the line describes what they care about and leaves the rest to them.
 - **How the learner finds who knows what:** daily suggestions could point at it ("Ask the sfoglina how she rolls the dough").
 - **Geography** beyond food and weather (the sea, the lakes, the mountains, `dayTrips`): part of local pride, or its own topic?
