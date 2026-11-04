@@ -42,6 +42,7 @@ The engine scales up by following CEFR levels, not by rewriting content (see [Le
 
 ## What success looks like
 
+- **The learner knows the country, Italy or Mexico** (Josh, 2026-11-04: "to learn Italy, its language and culture"; "of course Mexico for that one"): they can talk with people about real things, what's in a dish and why, a town's rivalry, a festa, its history and where things come from, in the language.
 - After a week of play, the learner can handle a bar, a market, a station and a short chat with a stranger without freezing.
 - They choose where to go each day, and want to see what's next.
 - They look forward to seeing specific characters again.

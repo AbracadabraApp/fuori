@@ -4,6 +4,7 @@
 
 ## Settled
 
+- **Fluency** (Josh, 2026-11-04): knowing the country, Italy or Mexico, its language and its culture (food, traditions, history, geography), well enough to discuss real things with real people in their language. What "what the learner learns" means everywhere; not grammar alone ("We aren't building Duolingo").
 - **Learn** (Josh, 2026-10-21): everything taught outside the world. Magda, the scuole, the Diario and missions all fall into Learn; tutor, school, study file, Diario, chips and missions are older names for its parts. See [learn.md](learn.md). Its parts:
   - **Learn area**: the "home" for structured, scripted, comprehensive learning (Josh, 2026-10-21): what Italian learners need, in course order, aware of the learner's whole conversation history. The book icon in the nav bar, next to Settings; where Magda, the Diario and missions live. Not built.
   - **Learn agent**: the "co-pilot" of each conversation (Josh, 2026-10-21): it reviews that one conversation and writes its Learn sheet (`prompts/learn.md`). Reached from the conversation (the Learn link), not from the book: the book is the area.

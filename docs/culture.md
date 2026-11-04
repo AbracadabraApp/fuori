@@ -17,7 +17,6 @@ Two ideas carry it:
     - who else in the city knows something ("Gino at the salumeria: mortadella"). Proposed: this becomes `knows` (below), one list of people for both.
 - **The rest comes from what exists, or from code:**
     - Memory: the end-of-conversation notes (`content/it/prompts/memory.md`) record what the learner asked about and anything promised, so a character can pick a topic up next time. What the character *told* the learner isn't on the memory prompt's list; check this in a test before relying on it.
-    - Lessons pick practice partners by pride topic (code).
 - **Pride items are written from each city's unused lists** (`food`, `customs`, `localTouches`) and checked by judges, including a fact judge; no human proofreading.
 - **Rome first.**
 
@@ -27,11 +26,10 @@ Every character cares about one part of their city's culture and is proud of it:
 
 It answers Josh's ask to "thicken the game's awareness of culture, tradition, geography: what makes each city unique". It follows the existing rules: characters teach in role, never like a teacher with a lesson plan ([CLAUDE.md](../CLAUDE.md)); nothing scripted, the character only knows what it cares about and the conversation goes where it goes.
 
-**What the learner learns:**
-- **Culture they can talk about**: why mortadella has pistachios, what the hypogeum was, why there's no salt in Tuscan bread, what goes into a mole. Something to bring up with the next person ("Hai visto i mosaici?").
-- **Words that come with a place**: dish and ingredient names, local words (*daje*, *babbo*; *chido*, *padre* in Mexico), weather words that belong to a region (scirocco, bora, nebbia).
-- **Grammar that comes up by itself**: comparatives and superlatives from campanilismo (*più buono di, meglio, il migliore*), the imperative from someone teaching a recipe (*taglia, metti, mescola*), the past from legends and history.
+**What the learner learns** (the goal is to learn the country, its language and its culture: Josh, 2026-11-04):
+- **The country itself, enough to talk about it**: why mortadella has pistachios, what the hypogeum was, why there's no salt in Tuscan bread, what goes into a mole. Something to bring up with the next person ("Hai visto i mosaici?").
 - **The map**: what grows where, which towns are rivals, what the sea, the lakes or the mountains do to a city.
+- **The language that comes with it**: dish and ingredient names, local words (*daje*, *babbo*; *chido*, *padre* in Mexico), weather words that belong to a region (scirocco, bora, nebbia), and the grammar these talks need (comparatives from campanilismo, the imperative from a recipe, the past from legends and history).
 
 ### The five topics (Josh)
 
@@ -243,7 +241,7 @@ Lessons about a piece of culture, not about the language, in Learn. Learn's less
 - **A thing with a home city** → the shown character there whose pride it is (opera arrives as Verona's candles, not as "opera").
 - **A thing that's particular but national** (la scarpetta, Ferragosto) → a shown retired character (Josh: "if retired characters are accessible they can teach"). Shown today: Italy, Ettore and Franca (Roma), Lorenzo (Firenze), Alberto (Matera, Siracusa), the nonna on Spaccanapoli (Napoli); Mexico, the retired doña on the Alameda (CDMX), the retired dons on Oaxaca's Zócalo and in Parque Juárez (San Miguel), the abuela in the Jardín del Carmen (Puebla).
 
-**How it plays: mostly listening** (Josh: "not passing back and forth as much"). The character tells the story in two or three turns, and each turn ends with a personal question along the way (Josh): "Sei mai stato all'opera?", "Hai mai mangiato il guanciale?" Not a quiz: the questions a person telling you about their city would ask. The learner answers, the character carries on; the last turn ends the story, with no word to remember and nothing summed up (Josh: no "keeping" words, 2026-11-03). About 2–3 learner turns, 2–3 minutes. It uses the conversation screen as it is (the mic opens after each question), so nothing changes in the app. Bonus for learning: "have you ever…?" is how textbooks teach talking about experiences (*sei mai stato/stata*, *hai mai…*).
+**How it plays: mostly listening** (Josh: "not passing back and forth as much"). The character tells the story in two or three turns, and each turn ends with a personal question along the way (Josh): "Sei mai stato all'opera?", "Hai mai mangiato il guanciale?" Not a quiz: the questions a person telling you about their city would ask. The learner answers, the character carries on; the last turn ends the story, with no word to remember and nothing summed up (Josh: no "keeping" words, 2026-11-03). About 2–3 learner turns, 2–3 minutes. It uses the conversation screen as it is (the mic opens after each question), so nothing changes in the app.
 
 **A fresh conversation each time, held to the facts** (not a fixed script: over-scripting has failed in good conversations). Beginners: mostly English, with the word or two in the language. Checked by the fact judge before it ships. About five chips per set, in their own tint, outside the lesson sets so they never block progress (from the other session).
 
@@ -350,5 +348,5 @@ Prompted by `outdoors`: other facts on places and people that could matter. **Th
 - **Geography** beyond food and weather (the sea, the lakes, the mountains; day trips are parked): part of local pride, or its own topic?
 - **Craft and sport** (football especially): topics of their own, or inside traditions and campanilismo?
 - **The learner's route** for campanilismo between cities: the cities are in the conversation records; wiring them into the prompt is the open part.
-- **How we'd know it works:** a judge in `npm run test:conversations` for "the learner heard something specific about this city", and that they followed it in the language and answered (a language goal, not trivia), alongside the existing scores.
+- **How we'd know it works:** a judge in `npm run test:conversations` for "the learner heard something specific about this city", and that they followed it in the language and answered, alongside the existing scores.
 - **Prompt length:** whichever field holds it, the culture reaches the prompt as one line, not a new block.
