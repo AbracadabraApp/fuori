@@ -1,0 +1,9 @@
+[
+  {
+    "id": "b1-sort-4",
+    "field": "examples[1]",
+    "text": "Quali documenti ha portato? / What do you struggle with in Italian?",
+    "why": "The Italian was replaced but the English still translates the old line.",
+    "fix": "Which documents did you bring?"
+  }
+]

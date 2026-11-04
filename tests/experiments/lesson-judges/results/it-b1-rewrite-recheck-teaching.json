@@ -1,0 +1,54 @@
+[
+  {
+    "id": "b1-people-2",
+    "field": "mission.listen_for",
+    "text": [
+      "portartelo",
+      "te lo posso",
+      "glielo"
+    ],
+    "why": "The lesson is now only glielo, but the mission still listens for the te lo forms that were taken out.",
+    "fix": [
+      "glielo porto",
+      "glielo"
+    ]
+  },
+  {
+    "id": "b1-opinions-2",
+    "field": "notice",
+    "text": "So che, è vero che and secondo me present something as a fact or a plain view, so the verb stays as usual: è chiuso, cenano.",
+    "why": "Cites cenano, which appears in no line; every changed line says la gente cena (singular), so the notice points at a form the learner never hears.",
+    "fix": "So che, è vero che and secondo me present something as a fact or a plain view, so the verb stays as usual: è chiuso, cena."
+  },
+  {
+    "id": "b1-sort-5",
+    "field": "mission.say.said",
+    "text": "È la banca che la padrona di casa mi ha consigliato.",
+    "why": "The reordered line no longer contains the mission's listen_for 'che mi ha consigliato', so saying the target line would not register.",
+    "fix": {
+      "listen_for": [
+        "la banca che",
+        "mi ha consigliato"
+      ]
+    }
+  },
+  {
+    "id": "b1-story-4",
+    "field": "practice[2].answer.said",
+    "text": "Nessuno! Sono sceso io a prenderli.",
+    "why": "Nessuno stands alone as a one-word reply, so the answer practises neither pattern the lesson teaches (nessuno before the verb, or non … nessuno after it).",
+    "fix": {
+      "said": "Non è salito nessuno: sono sceso io a prenderli.",
+      "en": "Nobody came up. I went down and got them myself."
+    }
+  },
+  {
+    "id": "b1-opinions-10",
+    "field": "examples[2]",
+    "text": "Vorrei che mi chiamassi quando arrivi.",
+    "why": "Replacing the fosse example leaves the notice ('like venissi or fosse') naming a form no example shows.",
+    "fix": {
+      "notice": "After vorrei che the verb takes the -ssi form, like venissi or chiamassi, because it's a wish, not a fact."
+    }
+  }
+]

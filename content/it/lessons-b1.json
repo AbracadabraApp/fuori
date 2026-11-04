@@ -253,7 +253,7 @@
               "role": "clerk",
               "place": "office",
               "said": "Quali documenti ha portato?",
-              "en": "What do you struggle with in Italian?"
+              "en": "Which documents did you bring?"
             },
             {
               "role": "neighbour",
@@ -388,7 +388,8 @@
               "en": "It's the bank my landlady recommended."
             },
             "listen_for": [
-              "che mi ha consigliato"
+              "la banca che",
+              "mi ha consigliato"
             ]
           }
         },
@@ -945,7 +946,7 @@
           "id": "b1-people-2",
           "title": "Do it for someone",
           "how_to": "How to offer to do something for someone with glielo and with posso.",
-          "intro": "Glielo means \"it to him,\" \"it to her,\" or \"it to you\" when you're being polite, and with posso these pairs make an offer: posso portartelo. You'll use them to offer to do things for people.",
+          "intro": "Glielo means \"it to him,\" \"it to her,\" or \"it to you\" when you're being polite. You'll use it to offer to do things for people: glielo porto, glielo prendo io.",
           "examples": [
             {
               "role": "shopkeeper",
@@ -960,7 +961,7 @@
               "en": "I can order it for you. It'll be here in two days."
             },
             {
-              "role": "friend",
+              "role": "neighbour",
               "place": "home",
               "said": "Se vuole, glielo porto stasera.",
               "en": "If you like, I'll bring it to you tonight."
@@ -1014,8 +1015,7 @@
               "en": "If you like, I'll bring it to you tonight."
             },
             "listen_for": [
-              "portartelo",
-              "te lo posso",
+              "glielo porto",
               "glielo"
             ]
           }
@@ -1356,9 +1356,9 @@
               "en": "Everyone has a number, and now they're on forty-two."
             },
             {
-              "role": "waiter",
-              "place": "restaurant",
-              "said": "(barista@bar) Vuole qualcosa di caldo?",
+              "role": "barista",
+              "place": "bar",
+              "said": "Vuole qualcosa di caldo?",
               "en": "Would you like something hot?"
             }
           ],
@@ -1781,8 +1781,8 @@
                 "en": "There were no towels in the room. Who brought you some?"
               },
               "answer": {
-                "said": "Nessuno! Sono sceso io a prenderli.",
-                "en": "Nobody! I went down and got them myself."
+                "said": "Non è salito nessuno: sono sceso io a prenderli.",
+                "en": "Nobody came up, so I went down to get them myself."
               }
             }
           ],
@@ -1972,8 +1972,8 @@
             {
               "role": "neighbour",
               "place": "piazza",
-              "said": "Dicono che nel Cinquecento una famiglia di banchieri rifece tutta la piazza.",
-              "en": "They say a family of bankers rebuilt the whole square in the 1500s."
+              "said": "Dicono che una famiglia di banchieri rifece tutta la piazza.",
+              "en": "They say a family of bankers rebuilt the whole square."
             },
             {
               "role": "newcomer",
@@ -2085,8 +2085,8 @@
                 "en": "You like a statue, but you don't know who made it. What do you ask?"
               },
               "answer": {
-                "said": "Da chi è stata fatta questa statua?",
-                "en": "Who made this statue?"
+                "said": "Scusi, sa da chi è stata scolpita questa statua?",
+                "en": "Excuse me, do you know who sculpted this statue?"
               }
             },
             {
@@ -2228,7 +2228,7 @@
               "en": "If you ask me, it's a little expensive."
             }
           ],
-          "notice": "So che, è vero che and secondo me present something as a fact or a plain view, so the verb stays as usual: è chiuso, cenano.",
+          "notice": "So che, è vero che and secondo me present something as a fact or a plain view, so the verb stays as usual: è chiuso, cena.",
           "context": "",
           "practice": [
             {
@@ -2838,7 +2838,7 @@
               "en": "I'd like you to call me when you get there."
             }
           ],
-          "notice": "After vorrei che the verb takes the -ssi form, like venissi or fosse, because it's a wish, not a fact.",
+          "notice": "After vorrei che the verb takes the -ssi form, like venissi or chiamassi, because it's a wish, not a fact.",
           "context": "",
           "practice": [
             {

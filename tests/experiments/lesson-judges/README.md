@@ -41,3 +41,21 @@ Files: `results/it-b1-*.json`.
 ## Gaps found along the way
 - The game has no roles or places for some units: taxi driver, hotel receptionist, church custodian or guide; hotel, church, museum. Writers stretched existing ones.
 - LanguageTool caught no Italian grammar errors in a test; subtitle word lists count words, not phrases. Both dropped.
+
+## 3 · Italy's Intermediate rewrite: 56 lessons become 38 chips (2026-11-03, `content/it/lessons-b1.json`, not served)
+
+Josh's four areas and chip names (docs/learn.md → Lesson chips, Italy B1); written by four agents from the judged 56, then judged once:
+
+| Judge | First pass | Recheck of the 57 changed values |
+|---|---|---|
+| Grammar | 0 | 0 |
+| Naturalness | 5 | 3 |
+| Level | 8 (impersonal *si*, B2; a relative with the subject after the verb) | 0 |
+| Teaching | 46 in 22 lessons (31 practice answers copying examples) | 5 |
+| Translation | 2 | 1 |
+
+Most recheck failures were left-overs of applying the fixes (a role not changed with its line, an English line not changed with its Italian, a mission still listening for the old phrase); all nine were fixed with the judge's own fix, as in the A1 passes, and no lesson was dropped. Cut to keep one point a lesson: *stavo per* from "Then suddenly", century names from "Local history", *te lo* with *posso* from "Do it for someone".
+
+Held for Josh: the teaching judge's title changes ("How much?" → "What it takes", "How come?" → "Ask exactly", "Everyone" → "Some, every") and its call to drop "Polite commands" as a repeat of "Instructions" (Claude's view: keep both; one understands a clerk's commands, the other gives them).
+
+The writing instructions need the lesson the teaching numbers show: practice answers must use the point in a new sentence, never an example's. Files: `results/it-b1-rewrite-*.json`.

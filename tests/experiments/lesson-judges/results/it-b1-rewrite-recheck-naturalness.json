@@ -1,0 +1,36 @@
+[
+  {
+    "id": "b1-people-7",
+    "field": "examples[3]",
+    "text": "(barista@bar) Vuole qualcosa di caldo?",
+    "why": "The fix put the role and place inside the spoken line, so it would be read aloud, and the example's role and place are still waiter at a restaurant, where 'something hot' to drink is odd.",
+    "fix": {
+      "role": "barista",
+      "place": "bar",
+      "said": "Vuole qualcosa di caldo?",
+      "en": "Would you like something hot?"
+    }
+  },
+  {
+    "id": "b1-people-2",
+    "field": "examples[2]",
+    "text": "Se vuole, glielo porto stasera.",
+    "why": "The role is still 'friend', and a friend at home doesn't call you Lei; the mission now says it's a neighbour you call Lei.",
+    "fix": {
+      "role": "neighbour",
+      "place": "home",
+      "said": "Se vuole, glielo porto stasera.",
+      "en": "If you like, I'll bring it to you tonight."
+    }
+  },
+  {
+    "id": "b1-story-8",
+    "field": "practice[1].answer.said",
+    "text": "Da chi è stata fatta questa statua?",
+    "why": "Passive 'è stata fatta' for a statue sounds stiff out loud; a visitor asking a local would say scolpita, or 'chi l'ha fatta'. In doubt, so a fail.",
+    "fix": {
+      "said": "Scusi, sa da chi è stata scolpita questa statua?",
+      "en": "Excuse me, do you know who sculpted this statue?"
+    }
+  }
+]
