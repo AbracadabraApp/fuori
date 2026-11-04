@@ -7,7 +7,10 @@
 import { cities, pack } from '@/content';
 
 const shown = new Set(cities.filter((c) => !c.hidden).flatMap((c) => c.places.filter((p) => !p.hidden && p.characterId).map((p) => p.characterId!)));
-const people = cities.flatMap((c) => (c.characters ?? []).filter((ch) => shown.has(ch.id)).map((ch) => ({ city: c.id, id: ch.id, name: ch.name })));
+// From shown cities only, once per id (old Rome's file still holds Sandro and Dario, the same people)
+const byId = new Map<string, { city: string; id: string; name: string }>();
+for (const c of cities.filter((x) => !x.hidden)) for (const ch of c.characters ?? []) if (shown.has(ch.id) && !byId.has(ch.id)) byId.set(ch.id, { city: c.id, id: ch.id, name: ch.name });
+const people = [...byId.values()];
 const problems: string[] = [];
 const words = (n: string) => n.replace(/^(Don|Doña|Padre|Fra|Suor|Don|Zia|Zio|Nonna|Nonno)\s+/i, '').trim().split(/\s+/).filter(Boolean);
 for (const p of people) if (words(p.name).length < 2) problems.push(`${p.city}/${p.id}: "${p.name}" needs a surname`);

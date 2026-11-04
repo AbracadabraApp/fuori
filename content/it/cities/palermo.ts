@@ -701,7 +701,7 @@ export const palermo: CityPantry = {
     },
     {
       id: 'toto-meusaro',
-      name: 'Totò',
+      name: 'Totò Lo Cascio',
       gender: 'm',
       age: 63,
       role: 'meusaro',

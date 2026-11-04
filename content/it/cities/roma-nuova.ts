@@ -303,7 +303,7 @@ export const romaNuova: CityPantry = {
     },
     {
       id: 'mirella-grattachecca',
-      name: 'Mirella',
+      name: 'Mirella Ceccarelli',
       gender: 'f',
       age: 70,
       role: 'grattacheccara',

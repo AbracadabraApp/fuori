@@ -611,7 +611,7 @@ export const siracusa: CityPantry = {
     },
     {
       id: 'andrea-casaro',
-      name: 'Andrea',
+      name: 'Andrea Gulino',
       gender: 'm',
       age: 45,
       role: 'casaro',

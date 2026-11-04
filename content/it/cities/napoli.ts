@@ -726,7 +726,7 @@ export const napoli: CityPantry = {
     },
     {
       id: 'nonna-assunta',
-      name: 'Nonna Assunta',
+      name: 'Nonna Assunta Capuano',
       gender: 'f',
       age: 81,
       role: 'abitante del quartiere',
@@ -758,7 +758,7 @@ export const napoli: CityPantry = {
     },
     {
       id: 'rosaria-mozzarella',
-      name: 'Rosaria',
+      name: 'Rosaria Iovine',
       gender: 'f',
       age: 48,
       role: 'lattaia',
@@ -769,7 +769,7 @@ export const napoli: CityPantry = {
     },
     {
       id: 'gennaro-pizzaiolo',
-      name: 'Gennaro',
+      name: 'Gennaro Amitrano',
       gender: 'm',
       age: 29,
       role: 'pizzaiolo',
