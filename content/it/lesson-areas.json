@@ -27,7 +27,7 @@
         },
         {
           "step": "about-you-2",
-          "name": "Where you're from"
+          "name": "Who are you"
         },
         {
           "step": "about-you-3",
@@ -40,7 +40,7 @@
       "chips": [
         {
           "step": "getting-by-1",
-          "name": "When you're lost"
+          "name": "Slower, please"
         },
         {
           "step": "getting-by-2",
@@ -57,7 +57,7 @@
       "chips": [
         {
           "step": "ordering-paying-1",
-          "name": "Order one or two"
+          "name": "How many"
         },
         {
           "step": "ordering-paying-2",
