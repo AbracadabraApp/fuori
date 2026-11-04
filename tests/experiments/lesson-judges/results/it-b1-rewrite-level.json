@@ -1,0 +1,10 @@
+[
+ {"id":"b1-sort-5","field":"examples[0].said","text":"È la banca che mi ha consigliato la padrona di casa.","why":"Object relative with the subject moved to the end: heard once at speed, a B1 listener parses 'the bank that recommended the landlady to me'. The B1 point is che for objects, not inverted subjects.","fix":"È la banca che la padrona di casa mi ha consigliato."},
+ {"id":"b1-sort-5","field":"practice[2].answer.said","text":"Chiamo l'idraulico che mi ha consigliato la padrona di casa.","why":"Same inverted subject after object che; ambiguous by ear at B1 (the plumber recommended the landlady?).","fix":"Chiamo l'idraulico che la padrona di casa mi ha consigliato."},
+ {"id":"b1-sort-5","field":"mission.say","text":"È la banca che mi ha consigliato la padrona di casa.","why":"Same inverted subject as the example; the line the learner must say should use the plain order taught at B1.","fix":"È la banca che la padrona di casa mi ha consigliato."},
+ {"id":"b1-opinions-2","field":"notice","text":"...so the verb stays as usual: è chiuso, si cena.","why":"Impersonal si (si cena) is B2 in the syllabus inventory (b2-02); B1 has only si può / si possono.","fix":"So che, è vero che and secondo me present something as a fact or a plain view, so the verb stays as usual: è chiuso, cenano."},
+ {"id":"b1-opinions-2","field":"examples[2].said","text":"È vero che qui si cena tardi.","why":"Impersonal si (si cena) is B2 (b2-02), above B1.","fix":"È vero che qui la gente cena tardi."},
+ {"id":"b1-opinions-2","field":"practice[0].answer.said","text":"Secondo me è un po' caro, ma si mangia bene.","why":"Impersonal si (si mangia bene) is B2 (b2-02), above B1.","fix":"Secondo me è un po' caro, ma la cucina è buona."},
+ {"id":"b1-opinions-2","field":"practice[2].ask.said","text":"A che ora si cena al sud?","why":"Impersonal si (si cena) is B2 (b2-02), above B1.","fix":"A che ora cena la gente al sud?"},
+ {"id":"b1-opinions-2","field":"practice[2].answer.said","text":"So che al sud si cena verso le nove o le dieci.","why":"Impersonal si (si cena) is B2 (b2-02), above B1.","fix":"So che al sud la gente cena verso le nove o le dieci."}
+]

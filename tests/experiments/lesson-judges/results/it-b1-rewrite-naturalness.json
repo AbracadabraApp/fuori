@@ -1,0 +1,7 @@
+[
+  {"id":"b1-sort-2","field":"examples[1].said","text":"Sì, basta la fotocopia, e bastano due fototessere.","why":"A clerk wouldn't tack an unasked second 'bastano' onto the answer like a drill; the repeated pattern sounds built for the lesson.","fix":"Sì, basta la fotocopia. E di fototessere ne bastano due."},
+  {"id":"b1-sort-4","field":"examples[1].said","text":"Quali sono le Sue difficoltà con l'italiano?","why":"Stiff, questionnaire register; a clerk at an office (or school desk) wouldn't ask this out loud.","fix":"Quali documenti ha portato?"},
+  {"id":"b1-people-7","field":"examples[3].said","text":"Desidera qualcosa di caldo?","why":"A restaurant waiter doesn't offer 'something hot' and 'Desidera' sounds formal-written here; this is a bar line.","fix":"(barista@bar) Vuole qualcosa di caldo?"},
+  {"id":"b1-story-1","field":"examples[3].said","text":"Il treno stava per partire quando ho trovato il binario.","why":"'Ho trovato il binario' is an odd way to say you got to the platform; people say 'sono arrivato al binario'.","fix":"Il treno stava per partire quando sono arrivato al binario."},
+  {"id":"b1-story-2","field":"practice[0].answer.said","text":"Quando ho trovato il binario, il treno era già partito.","why":"Same calque-like 'ho trovato il binario'; the natural phrasing is arriving at the platform.","fix":"Quando sono arrivato al binario, il treno era già partito."}
+]

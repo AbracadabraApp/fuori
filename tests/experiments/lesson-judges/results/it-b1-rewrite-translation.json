@@ -1,0 +1,16 @@
+[
+  {
+    "id": "b1-opinions-9",
+    "field": "practice[0].answer.en",
+    "text": "Se ho tempo, vengo volentieri. | If I have time, I'd love to come.",
+    "why": "The Italian is se + present with a plain present (vengo), the 'likely' case this lesson teaches; \"I'd love to\" is the English conditional, the very form the lesson contrasts it with (se avessi tempo, verrei).",
+    "fix": "If I have time, I'll be happy to come."
+  },
+  {
+    "id": "b1-people-3",
+    "field": "intro",
+    "text": "Me ne dà means \"could you give me some\" or \"could you give me two.\"",
+    "why": "Me ne dà alone never means \"give me two\"; the number comes from a word that isn't quoted (due), so the gloss adds meaning.",
+    "fix": "Me ne dà? means \"could you give me some?\", and with a number, me ne dà due? means \"could you give me two?\" It's what you say at the deli counter when you want more."
+  }
+]

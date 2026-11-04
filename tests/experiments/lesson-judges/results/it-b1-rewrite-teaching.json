@@ -1,0 +1,974 @@
+[
+ {
+  "id": "b1-sort-2",
+  "field": "title",
+  "text": "How much?",
+  "why": "'How much?' doesn't match the lesson: it teaches whether something is enough (basta) and what it takes (ci vuole), mostly time.",
+  "fix": "What it takes"
+ },
+ {
+  "id": "b1-sort-4",
+  "field": "title",
+  "text": "How come?",
+  "why": "'How come?' names only come mai; the lesson teaches quale, come mai and quanto as a set of exact questions.",
+  "fix": "Ask exactly"
+ },
+ {
+  "id": "b1-sort-8",
+  "field": "practice[2]",
+  "text": {
+   "ask": {
+    "said": "La tua amica ti ha prestato la bici. Quando gliela riporti?",
+    "en": "Your friend lent you her bike. When will you bring it back to her?"
+   },
+   "answer": {
+    "said": "Gliela riporto prima che faccia buio.",
+    "en": "I'll bring it back to her before it gets dark."
+   }
+  },
+  "why": "The answer copies the example 'Te la riporto prima che faccia buio' almost word for word, and adds gliela, a pronoun pair not taught until b1-people-2.",
+  "fix": {
+   "ask": {
+    "said": "La tua amica ti ha prestato la bici. Quando la riporti?",
+    "en": "Your friend lent you her bike. When are you bringing it back?"
+   },
+   "answer": {
+    "said": "La riporto prima che lei esca stasera.",
+    "en": "I'll bring it back before she goes out tonight."
+   }
+  }
+ },
+ {
+  "id": "b1-sort-10",
+  "field": "practice[1]",
+  "text": {
+   "ask": {
+    "said": "È tanto che studi l'italiano?",
+    "en": "Have you been studying Italian long?"
+   },
+   "answer": {
+    "said": "Sono … mesi che studio l'italiano.",
+    "en": "I've been studying Italian for … months."
+   }
+  },
+  "why": "The question 'È tanto che studi l'italiano?' already hands over the è … che studi frame the answer needs.",
+  "fix": {
+   "ask": {
+    "said": "Studi l'italiano da molto?",
+    "en": "Have you been studying Italian long?"
+   },
+   "answer": {
+    "said": "Sono … mesi che studio l'italiano.",
+    "en": "I've been studying Italian for … months."
+   }
+  }
+ },
+ {
+  "id": "b1-people-2",
+  "field": "notice",
+  "text": "Gli, le and Le all become glie- and join the thing as one word, so glielo can mean to him, to her or to you. With posso, the pair goes before it or joins the end of the infinitive: te lo posso portare, posso portartelo.",
+  "why": "Two lessons glued together: the glie- forms, and where any pronoun pair goes with posso (te lo posso portare / posso portartelo, which is people-1's te lo). Keep posso only as a place for glielo.",
+  "fix": "Gli, le and Le all become glie- and join lo, la, li or le as one word, so glielo can mean it to him, to her or to you. With posso, glielo goes before it or joins the end of the verb: glielo posso ordinare, posso ordinarglielo."
+ },
+ {
+  "id": "b1-people-2",
+  "field": "examples[2]",
+  "text": {
+   "role": "friend",
+   "place": "home",
+   "said": "Posso portartelo stasera, se vuoi.",
+   "en": "I can bring it over tonight if you want."
+  },
+  "why": "Posso portartelo shows te lo with posso, not glielo, so it teaches the second point instead of the title's.",
+  "fix": {
+   "role": "friend",
+   "place": "home",
+   "said": "Se vuole, glielo porto stasera.",
+   "en": "If you like, I'll bring it to you tonight."
+  }
+ },
+ {
+  "id": "b1-people-2",
+  "field": "practice[1]",
+  "text": {
+   "ask": {
+    "said": "Un'amica ha bisogno del tuo caricabatterie stasera. Cosa le dici?",
+    "en": "A friend needs your charger tonight. What do you tell her?"
+   },
+   "answer": {
+    "said": "Te lo posso portare stasera, se vuoi.",
+    "en": "I can bring it to you tonight if you want."
+   }
+  },
+  "why": "The answer uses te lo, not glielo, so it practices people-1's point.",
+  "fix": {
+   "ask": {
+    "said": "Il tuo vicino cerca un libro che hai tu. Cosa gli dici?",
+    "en": "Your neighbor is looking for a book you have. What do you tell him?"
+   },
+   "answer": {
+    "said": "Glielo presto volentieri.",
+    "en": "I'm happy to lend it to you."
+   }
+  }
+ },
+ {
+  "id": "b1-people-2",
+  "field": "mission",
+  "text": {
+   "place": "home",
+   "goal": "Offer to bring something over to a friend.",
+   "say": {
+    "said": "Posso portartelo stasera, se vuoi.",
+    "en": "I can bring it over tonight if you want."
+   },
+   "listen_for": [
+    "portartelo",
+    "te lo posso",
+    "glielo"
+   ]
+  },
+  "why": "The mission line 'Posso portartelo stasera' uses te lo, not the glielo the lesson is named for.",
+  "fix": {
+   "place": "home",
+   "goal": "Offer to bring something over to a neighbor you call Lei.",
+   "say": {
+    "said": "Se vuole, glielo porto stasera.",
+    "en": "If you like, I'll bring it to you tonight."
+   },
+   "listen_for": [
+    "portartelo",
+    "te lo posso",
+    "glielo"
+   ]
+  }
+ },
+ {
+  "id": "b1-people-5",
+  "field": "title",
+  "text": "Polite commands",
+  "why": "Teaches the same thing as b1-sort-3 (the Lei command: -i for -are verbs, -a for the others). Same forms, same notice; only non and vada are new. Fail the later one: drop it, or fold its non and vada lines into b1-sort-3.",
+  "fix": "Drop this lesson; add 'Non prenda il 40, oggi non passa.' and 'Vada sempre dritto' to b1-sort-3, with 'To say don't, put non in front; andare becomes vada.' in its notice."
+ },
+ {
+  "id": "b1-people-7",
+  "field": "title",
+  "text": "Everyone",
+  "why": "'Everyone' names only ognuno; the lesson also teaches qualche and qualcosa di.",
+  "fix": "Some, every"
+ },
+ {
+  "id": "b1-story-1",
+  "field": "notice",
+  "text": "Era, faceva and stavo cucinando set the scene, and stavo per means it was just about to; è saltata and ho trovato tell what happened, because it's one event at one moment.",
+  "why": "A second point slipped in: stavo per ('was about to') is its own construction, not scene-versus-event.",
+  "fix": "Era, faceva and stavo cucinando set the scene; è saltata and siamo arrivati tell what happened, because it's one event at one moment."
+ },
+ {
+  "id": "b1-story-1",
+  "field": "examples[1]",
+  "text": {
+   "role": "neighbour",
+   "place": "home",
+   "said": "Io stavo per andare a letto quando è saltata la luce.",
+   "en": "I was about to go to bed when the power went out."
+  },
+  "why": "Shows stavo per, the slipped-in second point, not scene plus event.",
+  "fix": {
+   "role": "neighbour",
+   "place": "home",
+   "said": "Leggevo a letto quando è suonato il telefono.",
+   "en": "I was reading in bed when the phone rang."
+  }
+ },
+ {
+  "id": "b1-story-1",
+  "field": "examples[3]",
+  "text": {
+   "role": "friend",
+   "place": "station",
+   "said": "Il treno stava per partire quando ho trovato il binario.",
+   "en": "The train was about to leave when I found the platform."
+  },
+  "why": "Shows stavo per, the slipped-in second point.",
+  "fix": {
+   "role": "friend",
+   "place": "station",
+   "said": "Pioveva forte quando siamo usciti dal museo.",
+   "en": "It was pouring when we came out of the museum."
+  }
+ },
+ {
+  "id": "b1-story-1",
+  "field": "practice[1]",
+  "text": {
+   "ask": {
+    "said": "Ti ho chiamato alle undici. Dormivi già?",
+    "en": "I called you at eleven. Were you already asleep?"
+   },
+   "answer": {
+    "said": "No, ma stavo per andare a dormire.",
+    "en": "No, but I was about to go to sleep."
+   }
+  },
+  "why": "The answer practices stavo per instead of scene plus event.",
+  "fix": {
+   "ask": {
+    "said": "Ti ho chiamato alle undici. Cosa facevi?",
+    "en": "I called you at eleven. What were you doing?"
+   },
+   "answer": {
+    "said": "Facevo la doccia quando hai chiamato.",
+    "en": "I was in the shower when you called."
+   }
+  }
+ },
+ {
+  "id": "b1-story-2",
+  "field": "practice[0]",
+  "text": {
+   "ask": {
+    "said": "Ieri hai perso il treno. Perché?",
+    "en": "You missed your train yesterday. Why?"
+   },
+   "answer": {
+    "said": "Quando ho trovato il binario, il treno era già partito.",
+    "en": "By the time I found the platform, the train had already left."
+   }
+  },
+  "why": "The answer copies the example's main clause 'il treno era già partito' word for word.",
+  "fix": {
+   "ask": {
+    "said": "Ieri hai perso il treno. Perché?",
+    "en": "You missed your train yesterday. Why?"
+   },
+   "answer": {
+    "said": "Quando sono arrivato al binario, avevano già chiuso le porte.",
+    "en": "When I got to the platform, they'd already closed the doors."
+   }
+  }
+ },
+ {
+  "id": "b1-story-2",
+  "field": "practice[1]",
+  "text": {
+   "ask": {
+    "said": "Sul treno hai aperto lo zaino. Cosa mancava?",
+    "en": "On the train you opened your backpack. What was missing?"
+   },
+   "answer": {
+    "said": "Avevo dimenticato il caricabatterie a casa.",
+    "en": "I'd left my charger at home."
+   }
+  },
+  "why": "The answer 'Avevo dimenticato il caricabatterie a casa' is copied word for word from an example.",
+  "fix": {
+   "ask": {
+    "said": "Sul treno hai aperto lo zaino. Cosa mancava?",
+    "en": "On the train you opened your backpack. What was missing?"
+   },
+   "answer": {
+    "said": "Avevo lasciato gli occhiali sul tavolo.",
+    "en": "I'd left my glasses on the table."
+   }
+  }
+ },
+ {
+  "id": "b1-story-2",
+  "field": "practice[2]",
+  "text": {
+   "ask": {
+    "said": "Cosa hai visto qui in Italia per la prima volta?",
+    "en": "What did you see here in Italy for the first time?"
+   },
+   "answer": {
+    "said": "Non avevo mai visto tanta gente in piazza.",
+    "en": "I'd never seen so many people in a piazza."
+   }
+  },
+  "why": "The answer is the example 'Non avevo mai visto tanta gente' with 'in piazza' added.",
+  "fix": {
+   "ask": {
+    "said": "Cosa hai provato qui in Italia per la prima volta?",
+    "en": "What did you try here in Italy for the first time?"
+   },
+   "answer": {
+    "said": "Non avevo mai mangiato una pizza così buona.",
+    "en": "I'd never had such good pizza."
+   }
+  }
+ },
+ {
+  "id": "b1-story-3",
+  "field": "practice[0]",
+  "text": {
+   "ask": {
+    "said": "Ieri pioveva tanto. Come hai fatto a tornare a casa?",
+    "en": "It poured yesterday. How did you get home?"
+   },
+   "answer": {
+    "said": "Siccome pioveva, ho preso un taxi.",
+    "en": "Since it was raining, I took a taxi."
+   }
+  },
+  "why": "The answer copies the example 'Siccome pioveva, abbiamo preso un taxi' almost word for word.",
+  "fix": {
+   "ask": {
+    "said": "Ieri pioveva tanto. Come hai fatto a tornare a casa?",
+    "en": "It poured yesterday. How did you get home?"
+   },
+   "answer": {
+    "said": "Siccome non avevo l'ombrello, ho preso l'autobus.",
+    "en": "Since I didn't have an umbrella, I took the bus."
+   }
+  }
+ },
+ {
+  "id": "b1-story-4",
+  "field": "practice[0]",
+  "text": {
+   "ask": {
+    "said": "Quando hai fatto il check-in, chi c'era alla reception?",
+    "en": "When you checked in, who was at the front desk?"
+   },
+   "answer": {
+    "said": "Alla reception non c'era nessuno.",
+    "en": "There was nobody at the front desk."
+   }
+  },
+  "why": "The answer 'Alla reception non c'era nessuno' is the example 'Non c'era nessuno alla reception' reordered, and the question names the reception for it.",
+  "fix": {
+   "ask": {
+    "said": "Hai lasciato un messaggio al proprietario. Ti ha risposto qualcuno?",
+    "en": "You left the owner a message. Did anyone get back to you?"
+   },
+   "answer": {
+    "said": "No, non mi ha risposto nessuno.",
+    "en": "No, nobody got back to me."
+   }
+  }
+ },
+ {
+  "id": "b1-story-4",
+  "field": "practice[2]",
+  "text": {
+   "ask": {
+    "said": "E dopo la seconda telefonata, è venuto qualcuno?",
+    "en": "And after the second call, did anyone come?"
+   },
+   "answer": {
+    "said": "No, non è venuto nessuno.",
+    "en": "No, nobody came."
+   }
+  },
+  "why": "The answer 'non è venuto nessuno' copies the example 'E poi non è venuto nessuno?' word for word, and the question gives è venuto.",
+  "fix": {
+   "ask": {
+    "said": "In camera mancavano gli asciugamani. Chi te li ha portati?",
+    "en": "There were no towels in the room. Who brought you some?"
+   },
+   "answer": {
+    "said": "Nessuno! Sono sceso io a prenderli.",
+    "en": "Nobody! I went down and got them myself."
+   }
+  }
+ },
+ {
+  "id": "b1-story-6",
+  "field": "practice[2]",
+  "text": {
+   "ask": {
+    "said": "Il tuo amico non ha ancora capito. Cosa dici?",
+    "en": "Your friend still doesn't get it. What do you say?"
+   },
+   "answer": {
+    "said": "Mi spiego meglio: sono tante ore, senza pausa.",
+    "en": "Let me put it another way: it's a lot of hours, with no break."
+   }
+  },
+  "why": "The answer copies the example 'Mi spiego meglio: sono quattro ore di fila, senza pausa' nearly word for word.",
+  "fix": {
+   "ask": {
+    "said": "Il tuo amico non ha ancora capito perché il corso è stancante. Cosa dici?",
+    "en": "Your friend still doesn't get why the course is tiring. What do you say?"
+   },
+   "answer": {
+    "said": "Mi spiego meglio: dopo il corso devo anche lavorare.",
+    "en": "Let me put it another way: after the course I still have to work."
+   }
+  }
+ },
+ {
+  "id": "b1-story-7",
+  "field": "notice",
+  "text": "Nacque, morì and lasciò are the past tense of stories about long ago, and mean the same as è nato, è morto and ha lasciato. A century goes by its hundreds, so il Cinquecento is the 1500s, the sixteenth century.",
+  "why": "Two lessons glued together: recognizing the passato remoto, and naming centuries (il Cinquecento). Keep the verbs, which the title and how_to are about.",
+  "fix": "Nacque, morì and lasciò are the past tense of stories about long ago, and mean the same as è nato, è morto and ha lasciato. You only need to recognize them; when you answer, your usual past tense is fine."
+ },
+ {
+  "id": "b1-story-7",
+  "field": "intro",
+  "text": "When a local tells you a place's history, you'll hear a past tense kept for long-ago events, like nacque and morì, and centuries named by their hundreds, like il Trecento for the 1300s. You mainly need to recognize the verbs; when you speak, your usual past tense is fine.",
+  "why": "Introduces century names as a second point.",
+  "fix": "When a local tells you a place's history, you'll hear a past tense kept for long-ago events, like nacque and morì. You mainly need to recognize the verbs; when you speak, your usual past tense is fine."
+ },
+ {
+  "id": "b1-story-7",
+  "field": "examples[2]",
+  "text": {
+   "role": "newcomer",
+   "place": "piazza",
+   "said": "Il Cinquecento è il sedicesimo secolo, vero?",
+   "en": "The Cinquecento is the sixteenth century, right?"
+  },
+  "why": "About century names, not the passato remoto.",
+  "fix": {
+   "role": "newcomer",
+   "place": "piazza",
+   "said": "Ah, quindi la piazza è nata come mercato?",
+   "en": "Oh, so the square started out as a market?"
+  }
+ },
+ {
+  "id": "b1-story-7",
+  "field": "practice[0]",
+  "text": {
+   "ask": {
+    "said": "Questo affresco è del 1350. Di che secolo è?",
+    "en": "This fresco is from 1350. What century is that?"
+   },
+   "answer": {
+    "said": "È del Trecento.",
+    "en": "It's from the 1300s."
+   }
+  },
+  "why": "Practices century names, not the past tense the lesson is about.",
+  "fix": {
+   "ask": {
+    "said": "Senti: 'Il pittore morì giovane.' Cosa vuol dire?",
+    "en": "Listen: 'Il pittore morì giovane.' What does that mean?"
+   },
+   "answer": {
+    "said": "Vuol dire che il pittore è morto giovane.",
+    "en": "It means the painter died young."
+   }
+  }
+ },
+ {
+  "id": "b1-story-7",
+  "field": "practice[2]",
+  "text": {
+   "ask": {
+    "said": "Senti: 'Michelangelo nacque nel 1475.' Cosa vuol dire?",
+    "en": "Listen: 'Michelangelo nacque nel 1475.' What does that mean?"
+   },
+   "answer": {
+    "said": "Vuol dire che Michelangelo è nato nel 1475, nel Quattrocento.",
+    "en": "It means Michelangelo was born in 1475, in the 1400s."
+   }
+  },
+  "why": "The answer adds 'nel Quattrocento', practicing the century point again.",
+  "fix": {
+   "ask": {
+    "said": "Senti: 'Michelangelo nacque nel 1475.' Cosa vuol dire?",
+    "en": "Listen: 'Michelangelo nacque nel 1475.' What does that mean?"
+   },
+   "answer": {
+    "said": "Vuol dire che Michelangelo è nato nel 1475.",
+    "en": "It means Michelangelo was born in 1475."
+   }
+  }
+ },
+ {
+  "id": "b1-story-8",
+  "field": "practice[0]",
+  "text": {
+   "ask": {
+    "said": "Vedi una chiesa antica. Cosa chiedi?",
+    "en": "You see an old church. What do you ask?"
+   },
+   "answer": {
+    "said": "Scusi, sa quando è stata costruita questa chiesa?",
+    "en": "Excuse me, do you know when this church was built?"
+   }
+  },
+  "why": "The answer copies the example 'Scusi, quando è stata costruita questa chiesa?' with only 'sa' added.",
+  "fix": {
+   "ask": {
+    "said": "Vedi un ponte molto antico. Cosa chiedi?",
+    "en": "You see a very old bridge. What do you ask?"
+   },
+   "answer": {
+    "said": "Scusi, sa quando è stato costruito questo ponte?",
+    "en": "Excuse me, do you know when this bridge was built?"
+   }
+  }
+ },
+ {
+  "id": "b1-story-8",
+  "field": "practice[1]",
+  "text": {
+   "ask": {
+    "said": "Ti piace un affresco, ma non conosci il pittore. Cosa chiedi?",
+    "en": "You like a fresco, but you don't know the painter. What do you ask?"
+   },
+   "answer": {
+    "said": "Da chi è stato dipinto questo affresco?",
+    "en": "Who painted this fresco?"
+   }
+  },
+  "why": "The answer is the example 'E questo affresco, da chi è stato dipinto?' reordered word for word.",
+  "fix": {
+   "ask": {
+    "said": "Ti piace una statua, ma non sai chi l'ha fatta. Cosa chiedi?",
+    "en": "You like a statue, but you don't know who made it. What do you ask?"
+   },
+   "answer": {
+    "said": "Da chi è stata fatta questa statua?",
+    "en": "Who made this statue?"
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-2",
+  "field": "practice[0]",
+  "text": {
+   "ask": {
+    "said": "Secondo te, quel ristorante è caro?",
+    "en": "Do you think that restaurant is expensive?"
+   },
+   "answer": {
+    "said": "Secondo me è un po' caro, ma si mangia bene.",
+    "en": "If you ask me, it's a little pricey, but the food is good."
+   }
+  },
+  "why": "The question 'Secondo te, quel ristorante è caro?' contains the answer, which also copies the example 'Secondo me è un po' caro.'",
+  "fix": {
+   "ask": {
+    "said": "Cosa pensi di quel ristorante in piazza?",
+    "en": "What do you think of that restaurant on the square?"
+   },
+   "answer": {
+    "said": "Secondo me si mangia bene, ma il servizio è lento.",
+    "en": "If you ask me, the food is good, but the service is slow."
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-2",
+  "field": "practice[1]",
+  "text": {
+   "ask": {
+    "said": "Hai controllato gli orari del museo. È aperto il martedì?",
+    "en": "You checked the museum's hours. Is it open on Tuesdays?"
+   },
+   "answer": {
+    "said": "No, so che è chiuso il martedì.",
+    "en": "No, I know it's closed on Tuesdays."
+   }
+  },
+  "why": "The answer copies the example 'So che è chiuso il lunedì' with only the day changed.",
+  "fix": {
+   "ask": {
+    "said": "Un amico vuole andare in banca sabato pomeriggio. Cosa gli dici?",
+    "en": "A friend wants to go to the bank on Saturday afternoon. What do you tell him?"
+   },
+   "answer": {
+    "said": "So che il sabato pomeriggio le banche sono chiuse.",
+    "en": "I know banks are closed on Saturday afternoons."
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-4",
+  "field": "practice[0]",
+  "text": {
+   "ask": {
+    "said": "Un'amica ti chiede la bici. Cosa le rispondi?",
+    "en": "A friend asks to borrow your bike. What do you tell her?"
+   },
+   "answer": {
+    "said": "Te la presto, purché tu me la riporti stasera.",
+    "en": "I'll lend it to you, as long as you bring it back tonight."
+   }
+  },
+  "why": "The answer copies the example 'Ti presto la bici, purché tu me la riporti stasera' almost word for word.",
+  "fix": {
+   "ask": {
+    "said": "Un'amica ti chiede la bici. Cosa le rispondi?",
+    "en": "A friend asks to borrow your bike. What do you tell her?"
+   },
+   "answer": {
+    "said": "Te la presto, purché tu la chiuda col lucchetto.",
+    "en": "I'll lend it to you, as long as you lock it up."
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-4",
+  "field": "practice[1]",
+  "text": {
+   "ask": {
+    "said": "Domani andiamo al mare?",
+    "en": "Should we go to the beach tomorrow?"
+   },
+   "answer": {
+    "said": "Sì, a meno che non piova.",
+    "en": "Yes, unless it rains."
+   }
+  },
+  "why": "The answer copies the example 'A meno che non piova' word for word, in the same beach scene.",
+  "fix": {
+   "ask": {
+    "said": "Sabato facciamo un picnic al parco?",
+    "en": "Shall we have a picnic in the park on Saturday?"
+   },
+   "answer": {
+    "said": "Sì, a meno che non faccia troppo freddo.",
+    "en": "Yes, unless it's too cold."
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-4",
+  "field": "practice[2]",
+  "text": {
+   "ask": {
+    "said": "Un amico vuole la tua macchina per il weekend. Cosa gli dici?",
+    "en": "A friend wants your car for the weekend. What do you tell him?"
+   },
+   "answer": {
+    "said": "Te la presto, purché tu me la riporti domenica.",
+    "en": "I'll lend it to you, as long as you bring it back on Sunday."
+   }
+  },
+  "why": "The answer repeats 'purché tu me la riporti' from the example with only the day changed.",
+  "fix": {
+   "ask": {
+    "said": "Un amico vuole la tua macchina per il weekend. Cosa gli dici?",
+    "en": "A friend wants your car for the weekend. What do you tell him?"
+   },
+   "answer": {
+    "said": "Va bene, purché tu faccia il pieno prima di riportarla.",
+    "en": "Okay, as long as you fill the tank before you bring it back."
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-5",
+  "field": "practice[0]",
+  "text": {
+   "ask": {
+    "said": "Un'amica ieri sera era molto stanca. Cosa le dici stamattina?",
+    "en": "A friend was really tired last night. What do you say to her this morning?"
+   },
+   "answer": {
+    "said": "Ciao! Spero che tu abbia riposato bene.",
+    "en": "Hi! I hope you got some good rest."
+   }
+  },
+  "why": "The answer is the example 'Spero che tu abbia dormito bene' with one word swapped.",
+  "fix": {
+   "ask": {
+    "said": "Ieri un'amica aveva un colloquio di lavoro. Cosa le scrivi oggi?",
+    "en": "A friend had a job interview yesterday. What do you text her today?"
+   },
+   "answer": {
+    "said": "Spero che il colloquio sia andato bene!",
+    "en": "I hope the interview went well!"
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-5",
+  "field": "practice[1]",
+  "text": {
+   "ask": {
+    "said": "Anna doveva arrivare alle dieci. Dov'è, secondo te?",
+    "en": "Anna was supposed to arrive at ten. Where do you think she is?"
+   },
+   "answer": {
+    "said": "Penso che sia già arrivata a casa.",
+    "en": "I think she's already gotten home."
+   }
+  },
+  "why": "The answer copies the example 'Credo che sia già arrivata' nearly word for word.",
+  "fix": {
+   "ask": {
+    "said": "Marco e Luisa dovevano partire stamattina. Sono ancora qui?",
+    "en": "Marco and Luisa were supposed to leave this morning. Are they still here?"
+   },
+   "answer": {
+    "said": "No, penso che siano già partiti.",
+    "en": "No, I think they've already left."
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-5",
+  "field": "practice[2]",
+  "text": {
+   "ask": {
+    "said": "Hai spiegato la strada a due turisti. Hanno capito?",
+    "en": "You gave two tourists directions. Did they understand?"
+   },
+   "answer": {
+    "said": "Non credo che abbiano capito bene.",
+    "en": "I don't think they really understood."
+   }
+  },
+  "why": "The answer copies the example 'Non penso che abbiano capito' nearly word for word.",
+  "fix": {
+   "ask": {
+    "said": "Hai scritto a Luca stamattina, ma non risponde. Perché, secondo te?",
+    "en": "You texted Luca this morning, but he isn't answering. Why do you think?"
+   },
+   "answer": {
+    "said": "Credo che non abbia ancora letto il messaggio.",
+    "en": "I don't think he's read the message yet."
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-6",
+  "field": "practice[0]",
+  "text": {
+   "ask": {
+    "said": "Una tua amica è malata. Cosa le dici?",
+    "en": "A friend of yours is sick. What do you say to her?"
+   },
+   "answer": {
+    "said": "Mi dispiace che tu stia male.",
+    "en": "I'm sorry you're not feeling well."
+   }
+  },
+  "why": "The answer copies the example 'Mi dispiace molto che stia male' nearly word for word.",
+  "fix": {
+   "ask": {
+    "said": "Un amico si trasferisce a Milano. Cosa gli dici?",
+    "en": "A friend is moving to Milan. What do you tell him?"
+   },
+   "answer": {
+    "said": "Mi dispiace che tu vada via.",
+    "en": "I'm sorry you're leaving."
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-6",
+  "field": "practice[1]",
+  "text": {
+   "ask": {
+    "said": "Un amico ti invita a cena, ma hai già un impegno. Cosa gli dici?",
+    "en": "A friend invites you to dinner, but you already have plans. What do you tell him?"
+   },
+   "answer": {
+    "said": "Mi dispiace di non poter venire, ho già un impegno.",
+    "en": "I'm sorry I can't come, I already have plans."
+   }
+  },
+  "why": "The answer copies the example 'Mi dispiace di non poter venire' word for word.",
+  "fix": {
+   "ask": {
+    "said": "Un amico ti presenta sua sorella. Cosa le dici?",
+    "en": "A friend introduces you to his sister. What do you say to her?"
+   },
+   "answer": {
+    "said": "Sono contento di conoscerti!",
+    "en": "I'm so glad to meet you!"
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-7",
+  "field": "practice[0]",
+  "text": {
+   "ask": {
+    "said": "Un'amica ha trovato lavoro a Milano. Cosa le dici?",
+    "en": "A friend has found a job in Milan. What do you say to her?"
+   },
+   "answer": {
+    "said": "Ma che bella notizia!",
+    "en": "Oh, what great news!"
+   }
+  },
+  "why": "The answer 'Ma che bella notizia!' copies the example 'Che bella notizia!' word for word.",
+  "fix": {
+   "ask": {
+    "said": "Un'amica ha trovato lavoro a Milano. Cosa le dici?",
+    "en": "A friend has found a job in Milan. What do you say to her?"
+   },
+   "answer": {
+    "said": "Che bella opportunità!",
+    "en": "What a great opportunity!"
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-7",
+  "field": "practice[1]",
+  "text": {
+   "ask": {
+    "said": "Un amico non può venire alla tua festa. Cosa dici?",
+    "en": "A friend can't come to your party. What do you say?"
+   },
+   "answer": {
+    "said": "Oh, che peccato!",
+    "en": "Oh, what a shame!"
+   }
+  },
+  "why": "The answer 'Oh, che peccato!' copies the example 'Che peccato!' word for word.",
+  "fix": {
+   "ask": {
+    "said": "Un amico ha perso il treno per un minuto. Cosa dici?",
+    "en": "A friend missed his train by a minute. What do you say?"
+   },
+   "answer": {
+    "said": "Che sfortuna!",
+    "en": "What bad luck!"
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-7",
+  "field": "practice[2]",
+  "text": {
+   "ask": {
+    "said": "Un amico ha trovato una casa in centro a buon prezzo. Cosa dici?",
+    "en": "A friend found a place downtown at a good price. What do you say?"
+   },
+   "answer": {
+    "said": "Che fortuna! E a buon prezzo!",
+    "en": "How lucky! And at a good price!"
+   }
+  },
+  "why": "The answer 'Che fortuna!' copies the example word for word.",
+  "fix": {
+   "ask": {
+    "said": "Un amico ha trovato una casa in centro a buon prezzo. Cosa dici?",
+    "en": "A friend found a place downtown at a good price. What do you say?"
+   },
+   "answer": {
+    "said": "Che affare!",
+    "en": "What a deal!"
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-10",
+  "field": "examples[2]",
+  "text": {
+   "role": "friend",
+   "place": "home",
+   "said": "Vorrei che fosse tutto più semplice!",
+   "en": "I wish it were all simpler!"
+  },
+  "why": "'Vorrei che fosse tutto più semplice' wishes about a situation, not what someone else should do, so it doesn't show the title's point (and overlaps magari in opinions-11).",
+  "fix": {
+   "role": "friend",
+   "place": "home",
+   "said": "Vorrei che mi chiamassi quando arrivi.",
+   "en": "I'd like you to call me when you get there."
+  }
+ },
+ {
+  "id": "b1-opinions-10",
+  "field": "practice[0]",
+  "text": {
+   "ask": {
+    "said": "Sabato vai a Firenze. Cosa dici a un amico?",
+    "en": "You're going to Florence on Saturday. What do you tell a friend?"
+   },
+   "answer": {
+    "said": "Vorrei che tu venissi con me.",
+    "en": "I'd like you to come with me."
+   }
+  },
+  "why": "The answer 'Vorrei che tu venissi con me' copies the first example word for word.",
+  "fix": {
+   "ask": {
+    "said": "Il tuo coinquilino lascia sempre i piatti nel lavandino. Cosa gli dici?",
+    "en": "Your roommate always leaves the dishes in the sink. What do you tell him?"
+   },
+   "answer": {
+    "said": "Vorrei che lavassi i piatti ogni tanto.",
+    "en": "I'd like you to do the dishes once in a while."
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-10",
+  "field": "practice[1]",
+  "text": {
+   "ask": {
+    "said": "Hai una settimana difficile. Cosa vorresti?",
+    "en": "You're having a hard week. What would you like?"
+   },
+   "answer": {
+    "said": "Vorrei che la settimana fosse più tranquilla.",
+    "en": "I wish this week were calmer."
+   }
+  },
+  "why": "The answer wishes about the week, not what someone else should do.",
+  "fix": {
+   "ask": {
+    "said": "Tua sorella ti parla sempre in inglese. Cosa le dici?",
+    "en": "Your sister always talks to you in English. What do you tell her?"
+   },
+   "answer": {
+    "said": "Vorrei che mi parlassi in italiano.",
+    "en": "I'd like you to talk to me in Italian."
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-11",
+  "field": "practice[0]",
+  "text": {
+   "ask": {
+    "said": "Pensi di vincere alla lotteria?",
+    "en": "Do you think you'll win the lottery?"
+   },
+   "answer": {
+    "said": "Magari! Ma prima dovrei comprare un biglietto.",
+    "en": "If only! But first I'd have to buy a ticket."
+   }
+  },
+  "why": "The answer copies the example 'Magari! Ma prima dovremmo comprare un biglietto' nearly word for word, in the same lottery scene.",
+  "fix": {
+   "ask": {
+    "said": "Dicono che domani c'è il sole. Andiamo al mare?",
+    "en": "They say it'll be sunny tomorrow. Shall we go to the beach?"
+   },
+   "answer": {
+    "said": "Magari! Ma devo lavorare.",
+    "en": "If only! But I have to work."
+   }
+  }
+ },
+ {
+  "id": "b1-opinions-11",
+  "field": "practice[1]",
+  "text": {
+   "ask": {
+    "said": "Hai abbastanza tempo per studiare?",
+    "en": "Do you have enough time to study?"
+   },
+   "answer": {
+    "said": "No, magari avessi più tempo per studiare!",
+    "en": "No, I wish I had more time to study!"
+   }
+  },
+  "why": "The answer copies the example 'Magari avessi più tempo!' word for word.",
+  "fix": {
+   "ask": {
+    "said": "Hai abbastanza tempo per studiare?",
+    "en": "Do you have enough time to study?"
+   },
+   "answer": {
+    "said": "No, magari potessi studiare di più!",
+    "en": "No, I wish I could study more!"
+   }
+  }
+ }
+]
