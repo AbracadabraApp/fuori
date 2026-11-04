@@ -141,6 +141,47 @@ Thinner (Siena has no contrada, Lucca's walls are only in bar names, Milano and 
 6. **Facts are checked by a judge**, not a person (Josh: no human proofreading, as for lessons, [lesson-judges.md](lesson-judges.md)): a narrow fact judge on the lesson judges' pattern that fails any claim it can't confirm. Standard: well-known facts only. Same bounded pass: write, judge once, fix failed lines, recheck once, drop what still fails.
 7. **Both countries the same way** (Josh: culture is a goal for both): local pride is data, not code, and the prompt only gains the pride facts (no new rules). Mexico's five cities get the same pass; their lines are already nearly complete, so it's a quality and topic-balance pass, not a fill.
 
+## Cultural lessons (brainstorm, 2026-11-03)
+
+Lessons about a piece of culture, not about the language, in Learn. Learn's lessons are national, so this is one set per country; an ordinary character teaches each one as a conversation (no Magda). Shaped with another session; Josh's corrections below.
+
+**Size (Josh):** "opera" or "neorealism" is too global for a 2–4 minute session; it comes out as a summary. Each chip is one particular thing. **Work backwards from the chip's name:** if it can't be named in about three words that fit only that thing, it's too broad. One story, one reason, one or two words worth keeping.
+
+**Who teaches:**
+- **A thing with a home city** → the shown character there whose pride it is (opera arrives as Verona's candles, not as "opera").
+- **A thing that's particular but national** (la scarpetta, Ferragosto) → a shown retired character (Josh: "if retired characters are accessible they can teach"). Shown today: Italy, Ettore and Franca (Roma), Lorenzo (Firenze), Alberto (Matera, Siracusa), the nonna on Spaccanapoli (Napoli); Mexico, the retired doña on the Alameda (CDMX), the retired dons on Oaxaca's Zócalo and in Parque Juárez (San Miguel), the abuela in the Jardín del Carmen (Puebla).
+
+**A fresh conversation each time, held to the facts** (not a fixed script: over-scripting has failed in good conversations). Beginners: mostly English, with the word or two in the language. Checked by the fact judge before it ships. About five chips per set, in their own tint, outside the lesson sets so they never block progress (from the other session).
+
+**Candidate chips, Italy:**
+
+| Chip | Topic | Teacher |
+|---|---|---|
+| Never spaghetti bolognese | food | Matteo, chef, Bologna |
+| Cavour's table | history | Stefano, maître at Del Cambio, Torino |
+| Coffee for a stranger | traditions | Carmine, Bar Nilo, Napoli (caffè sospeso) |
+| Candles at the Arena | art | Moussa, violinist in Piazza Bra, Verona |
+| Arancina, not arancino | campanilismo | Filippo, chef, Palermo |
+| Venice's ombra | food | Marta, Al Timon, Venezia |
+| Aperitivo hour | food | Antonio, Casa del Vermouth, Torino |
+| One hand gesture | traditions | Carmine or the nonna, Napoli |
+| The Befana | traditions | Tommaso, Piazza Navona, Roma (if Navona comes over) |
+| The moka pot, la scarpetta, Ferragosto | national | a retired character |
+
+**Candidate chips, Mexico** (teachers are shown; these stories aren't in their lines yet):
+
+| Chip | Topic | Teacher |
+|---|---|---|
+| Chocolate on the stone | food | the molinera at Chocolate Mayordomo, Oaxaca |
+| Nixtamal | food | the molinera or the tlayudera, Oaxaca |
+| Allende's town / the Grito | history | the retired don in Parque Juárez, San Miguel |
+| Radish night | traditions | the retired don on the Zócalo, Oaxaca |
+| The Guelaguetza | traditions | the retired don on the Zócalo, Oaxaca |
+| Talavera blue | art | Mateo, Café Cielo Rojo, Puebla |
+| Alebrijes | art | Oaxaca (no shown maker yet) |
+| Chilangos | campanilismo | Nacho, taquero, Guadalajara |
+| Pan de muerto, lotería cards | national | a retired character |
+
 ## Weather
 
 Kept (Josh: "weather is always happening wherever you are"). **People talk about it; nothing on screen** (cloud session, 2026-11-03): no overlay, no card, nothing added to the iPhone app. Weather matters only if it gets the learner talking.
