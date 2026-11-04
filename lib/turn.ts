@@ -32,6 +32,8 @@ export async function runTurn(params: {
   /** Experimental level block (tests and the level trial; see buildTurnPrompt) */
   level?: string;
   levelAt?: 'system' | 'last';
+  /** A lesson's brief (lib/lesson.ts, the speaking mode), added after the character prompt */
+  brief?: string;
   /** Records Claude's first token and token counts (the speed work) */
   laps?: Laps;
   /** Called with the reply written so far, on every streamed chunk (/v1/turn's LineWatcher) */

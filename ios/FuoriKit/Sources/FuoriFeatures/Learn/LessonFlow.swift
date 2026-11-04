@@ -61,7 +61,7 @@ final class LessonFlow {
             button = .init(line: words.done, en: words.doneLabel)
         }
         guard let character = content.character(scene.characterId) else { stage = .failed("Someone in this lesson is missing."); return }
-        current = app.lessonConversation(city: scene.city, place: scene.place, character: character, lesson: turn, button: button) { [weak self] model in
+        current = app.lessonConversation(city: scene.city, place: scene.place, character: character, lesson: turn, speaking: plan.speaking ?? false, button: button) { [weak self] model in
             self?.next(after: model)
         }
         stage = .part(k)

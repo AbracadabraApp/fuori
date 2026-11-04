@@ -166,7 +166,8 @@ export async function POST(request: Request) {
         const facts = await scaffoldFacts(learnerId, result.conversationId ?? null, tutor.id);
         const learnerTurns = parsed.transcript.filter((t) => t.who === 'learner').length + (learnerSaid ? 1 : 0);
         // Beginner level dialogue offers its own answers to say back: no answer panel with it
-        const stage = result.reply.parts ? null : scaffoldStage({ ...facts, learnerTurns, isTutor: result.isTutor });
+        // A lesson's parts end on their own button; the speaking mode's practice is in their own words (no panel)
+        const stage = result.reply.parts || body.data.lesson ? null : scaffoldStage({ ...facts, learnerTurns, isTutor: result.isTutor });
         const replies = stage !== null;
         laps.lap('scaffold');
         // The Learn page for the conversation as it now stands, written while

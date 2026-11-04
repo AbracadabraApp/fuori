@@ -383,9 +383,9 @@ public final class AppModel {
     }
 
     /// One part of a lesson (lib/lesson.ts) on the conversation screen, saved like any conversation
-    func lessonConversation(city: City, place: Place, character: Character, lesson: APIClient.LessonTurn, button: Onboarding.Line, onEnd: @escaping @MainActor (ConversationModel) async throws -> Void) -> ConversationModel? {
+    func lessonConversation(city: City, place: Place, character: Character, lesson: APIClient.LessonTurn, speaking: Bool = false, button: Onboarding.Line, onEnd: @escaping @MainActor (ConversationModel) async throws -> Void) -> ConversationModel? {
         guard let content, let api, let server else { return nil }
-        return ConversationModel(city: city, place: place, character: character, language: content.language, api: api, beginner: true, lesson: lesson, endButton: button, onEnd: onEnd) { [weak self] id in
+        return ConversationModel(city: city, place: place, character: character, language: content.language, api: api, beginner: !speaking, lesson: lesson, endButton: button, onEnd: onEnd) { [weak self] id in
             self?.save(conversationId: id, on: (api, server))
         }
     }

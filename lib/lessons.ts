@@ -23,6 +23,8 @@ export interface LessonStep {
   notice: string;
   context: string;
   practice: { ask: Line; answer: Line }[];
+  /** An Intermediate lesson (lessons-b1.json): taught in the speaking mode, not the Beginner format (lib/lesson.ts) */
+  speaking?: boolean;
 }
 export interface LessonUnit { id: string; title: string; steps: LessonStep[] }
 
@@ -42,7 +44,7 @@ export function lessonUnits(): LessonUnit[] {
     return Object.entries(file.units).map(([id, u]) => ({
       id,
       title: u.title,
-      steps: u.steps.map(({ mission: _mission, ...step }) => step),
+      steps: u.steps.map(({ mission: _mission, ...step }) => (name === 'lessons-b1.json' ? { ...step, speaking: true } : step)),
     }));
   });
   return cached;

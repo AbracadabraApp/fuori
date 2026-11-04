@@ -97,6 +97,9 @@ public actor APIClient {
         public let title: String
         public let magda: Scene
         public let practice: [Scene]
+        /// An Intermediate lesson, in the speaking mode: no answers to say back,
+        /// the Intermediate end-of-turn wait (servers from 2026-11-03)
+        public let speaking: Bool?
     }
 
     public func lessonStart(stepId: String) async throws -> LessonPlan {

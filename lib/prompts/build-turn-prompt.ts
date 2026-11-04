@@ -59,6 +59,8 @@ interface BuildTurnPromptParams {
   /** Where the level block goes: the end of the system prompt (default) or
    *  the start of the newest message, closest to the reply (tests only) */
   levelAt?: 'system' | 'last';
+  /** A lesson's brief (lib/lesson.ts, the speaking mode), at the end of the system prompt */
+  brief?: string;
 }
 
 interface TurnPrompt {
@@ -158,7 +160,8 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
         formality: language.formality[character.speech.formality],
       })
     : '';
-  const levelled = levelBlock && params.levelAt !== 'last' ? `${system}\n\n${levelBlock}` : system;
+  const withLevel = levelBlock && params.levelAt !== 'last' ? `${system}\n\n${levelBlock}` : system;
+  const levelled = params.brief ? `${withLevel}\n\n${params.brief}` : withLevel;
 
   const messages: PromptMessage[] =
     transcript.length > 0 ? recentMessages(t, transcript, learnerSaid ?? '') : [{ role: 'user', content: t.firstTurn.trim() }];

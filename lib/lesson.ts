@@ -30,6 +30,9 @@ export const SCENES = 3;
 export const TEACH_MAX_TURNS = 4;
 /** The review: her feedback, they say it once more, her goodbye */
 export const REVIEW_TURNS = 1;
+/** The speaking mode (the Intermediate lessons): learner turns in teaching and in each practice dialogue */
+export const SPEAKING_TEACH_TURNS = 3;
+export const SPEAKING_PRACTICE_TURNS = 4;
 
 export type LessonPart = 'teach' | 'practice' | 'review';
 /** What /v1/turn is told about a lesson turn (the app sends it with every turn of a lesson) */
@@ -136,6 +139,8 @@ export function lessonPlan(stepId: string, seed: string) {
     title: step.title,
     magda: sceneJson(tutorCity.id, tutorPlace.id),
     practice: scenes.map((s) => sceneJson(s.cityId, s.placeId)),
+    /** The speaking mode: the app treats it as an Intermediate conversation (its end-of-turn wait) */
+    speaking: !!step.speaking,
   };
 }
 
@@ -146,12 +151,44 @@ const learnerTurns = (transcript: Turn[], learnerSaid?: string) => transcript.fi
  * turn ends the part (practice and review by count; teaching by her done, or
  * the cap). `forcedDone`: the turn ends the part whatever the model says.
  */
-export async function lessonBrief(l: LessonTurn, learnerId: string, transcript: Turn[], learnerSaid?: string, practiceLines?: string[]): Promise<{ brief: string; forcedDone: boolean; askDone: boolean }> {
+export async function lessonBrief(l: LessonTurn, learnerId: string, transcript: Turn[], learnerSaid?: string, practiceLines?: string[]): Promise<{ brief: string; forcedDone: boolean; askDone: boolean; speaking: boolean }> {
   const step = findStep(l.stepId);
   if (!step) throw new Error(`No lesson step ${l.stepId}`);
   const f = readPromptFile('lesson-flow.md');
   const n = learnerTurns(transcript, learnerSaid);
   const base = { language: language.name, how_to: step.how_to };
+  const speaking = !!step.speaking;
+  // The speaking mode (Josh, 2026-11-03): the character prompt with the ", speaking" briefs, every part ending by count
+  if (speaking && l.part !== 'review') {
+    const teach = l.part === 'teach';
+    const of = teach ? SPEAKING_TEACH_TURNS : SPEAKING_PRACTICE_TURNS;
+    const last = n >= of;
+    const partners = practicePartners(step, learnerId);
+    const scene = partners[l.scene ?? 0];
+    const turn = String(Math.min(n + 1, of + 1));
+    const brief = teach
+      ? fill(f.block('Teach, speaking'), {
+          ...base,
+          intro: step.intro,
+          examples: step.examples.map((e) => `- ${e.role}: ${e.said} (${e.en})`).join('\n'),
+          notice: step.notice,
+          turn,
+          of: String(of + 1),
+          last: last
+            ? fill(f.block('Teach: last turn, speaking'), {
+                places: [...new Set(partners.map((s) => cities.find((c) => c.id === s.cityId)?.places.find((p) => p.id === s.placeId)?.kind ?? '').filter(Boolean))].join(', ') || 'town',
+              })
+            : '',
+        })
+      : fill(f.block('Practice, speaking'), {
+          ...base,
+          example: scene ? `${scene.example.said} (${scene.example.en})` : step.examples[0] ? `${step.examples[0].said} (${step.examples[0].en})` : '',
+          turn,
+          of: String(of + 1),
+          last: last ? f.block('Practice: last turn') : '',
+        });
+    return { brief, forcedDone: last, askDone: false, speaking };
+  }
   if (l.part === 'teach') {
     const places = practicePartners(step, learnerId).map((s) => cities.find((c) => c.id === s.cityId)?.places.find((p) => p.id === s.placeId)?.kind ?? '').filter(Boolean);
     const brief = fill(f.block('Teach'), {
@@ -161,7 +198,7 @@ export async function lessonBrief(l: LessonTurn, learnerId: string, transcript: 
       notice: step.notice,
       places: [...new Set(places)].join(', ') || 'town',
     });
-    return { brief, forcedDone: n >= TEACH_MAX_TURNS, askDone: true };
+    return { brief, forcedDone: n >= TEACH_MAX_TURNS, askDone: true, speaking };
   }
   if (l.part === 'practice') {
     const scene = practicePartners(step, learnerId)[l.scene ?? 0];
@@ -173,7 +210,7 @@ export async function lessonBrief(l: LessonTurn, learnerId: string, transcript: 
       of: String(PRACTICE_TURNS),
       last: last ? f.block('Practice: last turn') : '',
     });
-    return { brief, forcedDone: last, askDone: false };
+    return { brief, forcedDone: last, askDone: false, speaking };
   }
   // The review: the learner's lines from the practice dialogues, read from their own conversations
   // (or given, by tests/experiments/lesson-trial.mts)
@@ -188,6 +225,6 @@ export async function lessonBrief(l: LessonTurn, learnerId: string, transcript: 
       return (row?.turns ?? []).filter((t) => t.who === 'learner').map((t) => `Scene ${k + 1}: ${t.text}`);
     });
   }
-  const brief = fill(f.block('Review'), { ...base, scenes: String(ids.length || SCENES), lines: lines.join('\n') || '(nothing recorded)' });
-  return { brief, forcedDone: n >= REVIEW_TURNS, askDone: false };
+  const brief = fill(f.block(speaking ? 'Review, speaking' : 'Review'), { ...base, scenes: String(ids.length || SCENES), lines: lines.join('\n') || '(nothing recorded)' });
+  return { brief, forcedDone: n >= REVIEW_TURNS, askDone: false, speaking };
 }

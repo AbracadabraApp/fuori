@@ -130,10 +130,14 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const beginner = !welcome && onPath?.stage.path === 'beginner';
   const pathLevel = !welcome && onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
 
-  // A lesson (lib/lesson.ts): every part in the Beginner format with its brief, Magda included
+  // A lesson (lib/lesson.ts): every part in the Beginner format with its brief, Magda included;
+  // the Intermediate lessons in the speaking mode, the character prompt with its brief
   const lessonBriefed = p.lesson && learnerId ? await lessonBrief(p.lesson, learnerId, transcript, learnerSaid) : null;
 
-  const reply: TurnOutput = lessonBriefed
+  const reply: TurnOutput = lessonBriefed?.speaking
+    ? // The Intermediate lessons (Josh, 2026-11-03): the character prompt with the lesson's brief, no answers to say back
+      { ...(await runTurn({ character, transcript, learnerSaid, memory, addressedAs, brief: lessonBriefed.brief, laps: p.laps, onText: p.onText, canRetry: p.canRetry })), done: lessonBriefed.forcedDone }
+    : lessonBriefed
     ? await (async () => {
         const r = await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: lessonBriefed.brief, withDone: lessonBriefed.askDone });
         return { ...r, done: lessonBriefed.forcedDone || r.done === true };

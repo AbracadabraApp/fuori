@@ -11,7 +11,8 @@ import { anthropic, TURN_MODEL, replyText } from '@/lib/claude';
 import { cities, language, pack, tutor } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { runBeginnerTurn } from '@/lib/beginner';
-import { lessonBrief, lessonPlan, PRACTICE_TURNS, TEACH_MAX_TURNS, type LessonTurn } from '@/lib/lesson';
+import { runTurn } from '@/lib/turn';
+import { lessonBrief, lessonPlan, PRACTICE_TURNS, TEACH_MAX_TURNS, SPEAKING_PRACTICE_TURNS, SPEAKING_TEACH_TURNS, type LessonTurn } from '@/lib/lesson';
 import type { CharacterSheet, Turn } from '@/lib/types';
 
 const [stepId, out] = process.argv.slice(2);
@@ -21,9 +22,12 @@ if (!plan) throw new Error(`No lesson ${stepId}`);
 const sheet = (cityId: string, placeId: string) => { const c = cities.find((x) => x.id === cityId)!; return characterForPlace(c, c.places.find((p) => p.id === placeId)!)! as CharacterSheet; };
 
 async function learner(conv: string, answers: string[], slip: boolean): Promise<string> {
+  const who = plan!.speaking
+    ? `an intermediate learner of ${language.name} in a test, called Sam. Answer in your own words in ${language.name}, one or two sentences, trying to use what the lesson is about${slip ? ', with one mistake an intermediate learner makes (a wrong ending, the wrong mood or tense)' : ''}`
+    : `a beginner in ${language.name} in a test, called Sam. You read back one of the answers shown to you${slip ? ', but with one small mistake a beginner makes (a wrong ending or a missing word)' : ', exactly'}; if none is shown, say a few words of ${language.name} that fit, or ask in English`;
   const r = await anthropic.messages.create({
     model: TURN_MODEL, max_tokens: 300, temperature: 1, thinking: { type: 'between_tools' },
-    system: `You role-play a beginner in ${language.name} in a test, called Sam. You read back one of the answers shown to you${slip ? ', but with one small mistake a beginner makes (a wrong ending or a missing word)' : ', exactly'}; if none is shown, say a few words of ${language.name} that fit, or ask in English. Reply with JSON: said.`,
+    system: `You role-play ${who}. Reply with JSON: said.`,
     messages: [{ role: 'user', content: `${conv}\n\nAnswers shown to you: ${answers.join(' | ') || '(none)'}\n\nWhat do you say?` }],
     output_config: { format: { type: 'json_schema', schema: { type: 'object', additionalProperties: false, required: ['said'], properties: { said: { type: 'string' } } } } },
   } as Parameters<typeof anthropic.messages.create>[0]);
@@ -37,7 +41,10 @@ async function part(character: CharacterSheet, l: LessonTurn, practiceLines?: st
   let turns = 0;
   for (let i = 0; i < 8; i++) {
     const b = await lessonBrief(l, seed, transcript, said, practiceLines);
-    const r = await runBeginnerTurn({ character, transcript, learnerSaid: said, stageText: b.brief, withDone: b.askDone });
+    // The same choice as lib/conversation/take-turn.ts: the speaking mode is the character prompt with the brief
+    const r = b.speaking
+      ? { ...(await runTurn({ character, transcript, learnerSaid: said, brief: b.brief })), parts: [] as { kind: string; text: string }[], done: false }
+      : await runBeginnerTurn({ character, transcript, learnerSaid: said, stageText: b.brief, withDone: b.askDone });
     if (said) { transcript.push({ who: 'learner', transcript: said }); lines.push(`Learner: ${said}`); }
     transcript.push({ who: 'npc', transcript: r.line, translation: r.en });
     const answers = r.parts.filter((x) => x.kind === 'answer').map((x) => x.text);
@@ -57,8 +64,8 @@ for (let k = 0; k < plan.practice.length; k++) practice.push(await part(sheet(pl
 const review = await part(magda, { stepId, part: 'review' }, practice.flatMap((p, k) => p.learnerLines.map((l) => `Scene ${k + 1}: ${l}`)));
 
 const checks = {
-  teach: teach.turns >= 1 && teach.turns <= TEACH_MAX_TURNS,
-  practice: practice.every((p) => p.turns === PRACTICE_TURNS),
+  teach: plan.speaking ? teach.turns === SPEAKING_TEACH_TURNS : teach.turns >= 1 && teach.turns <= TEACH_MAX_TURNS,
+  practice: practice.every((p) => p.turns === (plan.speaking ? SPEAKING_PRACTICE_TURNS : PRACTICE_TURNS)),
   scenes: practice.length === 3,
   review: review.turns === 1,
 };

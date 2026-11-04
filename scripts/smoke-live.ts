@@ -227,6 +227,15 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
       // Reaching the review is a finished lesson (Josh, 2026-11-03): the Learn page's chip turns green
       const home = (await (await fetch(`${base}/v1/learn/home`, { headers: auth })).json()) as { lessonsDone?: string[]; lessonSet?: number; history?: { cities: number; people: number; conversations: number } };
       home.lessonsDone?.includes(stepId) && home.history && home.history.conversations >= 1 ? pass(`v1 learn home: the lesson is done; history ${JSON.stringify(home.history)}`) : fail('v1 learn home: the lesson is done', JSON.stringify(home).slice(0, 300));
+      // An Intermediate lesson, where a country has them: the speaking mode (Josh, 2026-11-03), no answers to say back
+      const speakingStep = lessonUnits().flatMap((u) => u.steps).find((x) => x.speaking)?.id;
+      if (speakingStep) {
+        const sp = (await (await v1('/v1/lesson/start', { stepId: speakingStep })).json()) as { speaking?: boolean; magda?: { city: { id: string }; place: { id: string } } };
+        const st = sp.magda ? ((await (await v1('/v1/turn', { cityId: sp.magda.city.id, placeId: sp.magda.place.id, lesson: { stepId: speakingStep, part: 'teach' } })).json()) as { line?: string; parts?: unknown[]; replies?: boolean; promptVersion?: string }) : {};
+        sp.speaking === true && st.line && !st.parts && !st.replies && st.promptVersion?.endsWith('-teach')
+          ? pass(`v1 lesson: an Intermediate lesson in the speaking mode (${speakingStep}: "${st.line.slice(0, 50)}…")`)
+          : fail('v1 lesson: an Intermediate lesson in the speaking mode', JSON.stringify({ speaking: sp.speaking, ...st }).slice(0, 300));
+      }
       // One lesson done of the first set: still the first set (lib/lessons.ts → currentLessonSet)
       home.lessonSet === 1 ? pass('v1 learn home: the first set of lessons') : fail('v1 learn home: the first set of lessons', `lessonSet ${home.lessonSet}`);
     }
