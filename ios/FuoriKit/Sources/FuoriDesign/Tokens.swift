@@ -21,6 +21,14 @@ public enum Tokens {
         public static let rollNew = Color(red: 0.4902, green: 0.5490, blue: 0.2745) // #7d8c46
         public static let rollRegular = Color(red: 0.8863, green: 0.3412, blue: 0.2980) // #e2574c
         public static let terracottaInk = Color(red: 0.6588, green: 0.3098, blue: 0.1725) // #a84f2c
+        public static let lessonsField = Color(red: 0.9647, green: 0.9059, blue: 0.6784) // #f6e7ad
+        public static let lessonsFieldInk = Color(red: 0.2902, green: 0.2275, blue: 0.0196) // #4a3a05
+        public static let lessonsAreaInk = Color(red: 0.3608, green: 0.2902, blue: 0.0627) // #5c4a10
+        public static let chip = Color(red: 1.0000, green: 0.9922, blue: 0.9608) // #fffdf5
+        public static let chipBorder = Color(red: 0.8510, green: 0.7843, blue: 0.5255) // #d9c886
+        public static let flapTile = Color(red: 0.1216, green: 0.1216, blue: 0.1216) // #1f1f1f
+        public static let flapInk = Color(red: 0.9608, green: 0.9451, blue: 0.9294) // #f5f1ed
+        public static let flapHinge = Color(red: 0.2353, green: 0.2353, blue: 0.2353) // #3c3c3c
     }
 
     public enum FontFamily {
@@ -28,6 +36,8 @@ public enum Tokens {
         public static let display = "Alegreya"
         /// bands, captions, buttons
         public static let label = "Alegreya Sans"
+        /// the Learn page's split-flap numbers (Josh, 2026-11-03)
+        public static let flip = "Oswald"
     }
 
     public enum Size {

@@ -1,0 +1,38 @@
+{
+  "about": "The Learn page's lesson chips in four areas, as Italy's (docs/learn.md → Lesson chips). Mexico's areas and chip names are Claude's draft (2026-11-03), for Josh to approve or change; the 25 lessons are the live ones.",
+  "areas": [
+    { "name": "Meeting people", "chips": [
+      { "step": "a1-01-3", "name": "Hello" },
+      { "step": "a1-01-2", "name": "How are you" },
+      { "step": "a1-01-1", "name": "Be polite" },
+      { "step": "a1-01-4", "name": "Hello, everyone" },
+      { "step": "a1-01-5", "name": "Goodbye" },
+      { "step": "a1-04-4", "name": "Señor, señora" }
+    ] },
+    { "name": "About you", "chips": [
+      { "step": "a1-03-1", "name": "Name" },
+      { "step": "a1-03-2", "name": "Where you're from" },
+      { "step": "a1-03-3", "name": "Where you live" },
+      { "step": "a1-03-4", "name": "Time here" },
+      { "step": "a1-03-5", "name": "Ask about them" }
+    ] },
+    { "name": "Getting by", "chips": [
+      { "step": "a1-02-1", "name": "When you're lost" },
+      { "step": "a1-02-2", "name": "Pardon?" },
+      { "step": "a1-02-3", "name": "Say it again" },
+      { "step": "a1-02-4", "name": "Ask politely" },
+      { "step": "a1-02-5", "name": "Spell it" },
+      { "step": "a1-04-1", "name": "Thanks and sorry" },
+      { "step": "a1-04-2", "name": "Excuse me" },
+      { "step": "a1-04-3", "name": "Say it softly" }
+    ] },
+    { "name": "Ordering", "chips": [
+      { "step": "a1-05-1", "name": "Order politely" },
+      { "step": "a1-05-2", "name": "Order two" },
+      { "step": "a1-05-3", "name": "Name the filling" },
+      { "step": "a1-05-4", "name": "With or without" },
+      { "step": "a1-05-5", "name": "A little extra" },
+      { "step": "a1-04-5", "name": "When they ask you" }
+    ] }
+  ]
+}

@@ -112,6 +112,16 @@ final class FlashcardsModel {
         observeInterruptions()
     }
 
+    /// Words through stage 3 (said without help at every stage): the Learn
+    /// page's "words learned"
+    var wordsLearned: Int { schedule.words.values.filter { $0.step >= FlashcardSchedule.gaps.count }.count }
+
+    /// Three pictures for the Learn page's banner: words in play first, then the deck's first
+    var bannerPictures: [URL] {
+        let played = pool.filter { schedule.words[$0.id] != nil }
+        return Array((played + pool).compactMap(\.picture).reduce(into: [URL]()) { if !$0.contains($1) { $0.append($1) } }.prefix(3))
+    }
+
     // MARK: Hands-free
 
     /// A card has stopped in the middle: stage 1 plays the word and listens; stages 2 and 3 listen. Once per arrival

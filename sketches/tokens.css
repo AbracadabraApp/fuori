@@ -18,8 +18,17 @@
   --roll-new: #7d8c46;
   --roll-regular: #e2574c;
   --terracotta-ink: #a84f2c;
+  --lessons-field: #f6e7ad;
+  --lessons-field-ink: #4a3a05;
+  --lessons-area-ink: #5c4a10;
+  --chip: #fffdf5;
+  --chip-border: #d9c886;
+  --flap-tile: #1f1f1f;
+  --flap-ink: #f5f1ed;
+  --flap-hinge: #3c3c3c;
   --font-display: "Alegreya", Georgia, serif;
   --font-label: "Alegreya Sans", "Gill Sans", sans-serif;
+  --font-flip: "Oswald", "Gill Sans", sans-serif;
   --size-card-title: 32px;
   --size-card-subtitle: 17px;
   --size-body: 17px;

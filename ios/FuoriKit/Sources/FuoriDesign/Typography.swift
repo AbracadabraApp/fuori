@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// The app's two typefaces (design/tokens.json), bundled with the app
+/// The app's typefaces (design/tokens.json), bundled with the app
 /// (ios/Fuori/Resources/Fonts, UIAppFonts in project.yml).
 ///
 /// Every size is tied to a system text style, so it grows and shrinks with the
@@ -12,11 +12,14 @@ public enum Typeface: Sendable {
     case display
     /// Alegreya Sans: captions, labels, buttons
     case label
+    /// Oswald: the Learn page's split-flap numbers
+    case flip
 
     var family: String {
         switch self {
         case .display: Tokens.FontFamily.display
         case .label: Tokens.FontFamily.label
+        case .flip: Tokens.FontFamily.flip
         }
     }
 }

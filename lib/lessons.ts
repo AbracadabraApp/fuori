@@ -40,3 +40,26 @@ export function lessonUnits(): LessonUnit[] {
   }));
   return cached;
 }
+
+/** A chip on the Learn page: a lesson, named for what it lets you do */
+export interface LessonChip { step: string; name: string }
+export interface LessonArea { name: string; chips: LessonChip[] }
+
+let areasCached: LessonArea[] | null = null;
+
+/**
+ * The Learn page's lessons as chips in their areas (Josh, 2026-11-03;
+ * docs/learn.md → Lesson chips): content/<country>/lesson-areas.json, only
+ * chips whose lesson exists. Empty where a country has none.
+ */
+export function lessonAreas(): LessonArea[] {
+  if (areasCached) return areasCached;
+  const path = join(process.cwd(), 'content', pack.id, 'lesson-areas.json');
+  if (!existsSync(path)) return (areasCached = []);
+  const steps = new Set(lessonUnits().flatMap((u) => u.steps.map((s) => s.id)));
+  const file = JSON.parse(readFileSync(path, 'utf8')) as { areas: LessonArea[] };
+  areasCached = file.areas
+    .map((a) => ({ name: a.name, chips: a.chips.filter((c) => steps.has(c.step)).map((c) => ({ step: c.step, name: c.name })) }))
+    .filter((a) => a.chips.length);
+  return areasCached;
+}

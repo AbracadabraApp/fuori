@@ -42,7 +42,25 @@ export interface LessonTurn {
   practiceIds?: string[];
 }
 
-export const lessonVersion = (part: LessonPart) => `lesson-${readPromptFile('lesson-flow.md').version}-${part}`;
+/**
+ * The prompt version a lesson's conversations are saved with. The review's
+ * names its step ("lesson-2026-11-02b-review:a1-01-1"): reaching the review
+ * is what makes a lesson done (Josh, 2026-11-03), so the Learn page reads
+ * finished lessons from the conversations, with no table of its own
+ * (lessonsDone).
+ */
+export const lessonVersion = (part: LessonPart, stepId?: string) => `lesson-${readPromptFile('lesson-flow.md').version}-${part}${part === 'review' && stepId ? `:${stepId}` : ''}`;
+
+/** The lessons this learner has finished: those whose review they reached */
+export async function lessonsDone(learnerId: string): Promise<string[]> {
+  const r = await query<{ step: string }>(
+    `SELECT DISTINCT split_part(prompt_version, ':', 2) AS step
+       FROM conversations
+      WHERE learner_id = $1 AND prompt_version LIKE 'lesson-%-review:%'`,
+    [learnerId]
+  );
+  return r.rows.map((x) => x.step).filter(Boolean);
+}
 
 export function findStep(stepId: string): LessonStep | undefined {
   return lessonUnits().flatMap((u) => u.steps).find((s) => s.id === stepId);

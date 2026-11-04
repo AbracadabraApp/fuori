@@ -21,7 +21,13 @@ public struct Content: Codable, Sendable, Equatable {
     /// The syllabus lessons for Learn's Lessons card (lib/lessons.ts); nil from
     /// servers before 2026-10-29, empty where a country has none yet
     public let lessons: [LessonUnit]?
+    /// The Learn page's lessons as chips in their areas (lib/lessons.ts →
+    /// lessonAreas); nil from servers before 2026-11-03
+    public let lessonAreas: [LessonArea]?
     public let characters: [String: Character]
+
+    /// A lesson by its step id
+    public func lessonStep(_ id: String) -> LessonStep? { lessons?.lazy.flatMap(\.steps).first { $0.id == id } }
 
     public func city(_ id: String) -> City? { cities.first { $0.id == id } }
     public func character(_ id: String?) -> Character? { id.flatMap { characters[$0] } }
@@ -304,6 +310,14 @@ public struct LessonUnit: Codable, Sendable, Equatable, Hashable, Identifiable {
     public let id: String
     public let title: String
     public let steps: [LessonStep]
+}
+
+/// The Learn page's lessons in an area (Josh, 2026-11-03): each chip is a
+/// lesson, named for what it lets you do (content/<country>/lesson-areas.json)
+public struct LessonArea: Codable, Sendable, Equatable, Hashable {
+    public struct Chip: Codable, Sendable, Equatable, Hashable { public let step: String; public let name: String }
+    public let name: String
+    public let chips: [Chip]
 }
 
 public struct LessonStep: Codable, Sendable, Equatable, Hashable, Identifiable {

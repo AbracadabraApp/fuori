@@ -223,7 +223,10 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
       const meAfter = (await (await fetch(`${base}/v1/me`, { headers: auth })).json()) as { visits?: Record<string, number> };
       !meAfter.visits?.[pr.place.id] ? pass('v1 lesson: practice is not a visit') : fail('v1 lesson: practice is not a visit', JSON.stringify(meAfter.visits));
       const review = (await (await v1('/v1/turn', { cityId: plan.magda.city.id, placeId: plan.magda.place.id, lesson: { stepId, part: 'review', practiceIds: [opening.conversationId] } })).json()) as { parts?: unknown[]; promptVersion?: string };
-      review.parts?.length && review.promptVersion?.endsWith('-review') ? pass('v1 lesson: Magda reviews') : fail('v1 lesson: Magda reviews', JSON.stringify(review).slice(0, 200));
+      review.parts?.length && review.promptVersion?.endsWith(`-review:${stepId}`) ? pass(`v1 lesson: Magda reviews (${review.promptVersion})`) : fail('v1 lesson: Magda reviews', JSON.stringify(review).slice(0, 200));
+      // Reaching the review is a finished lesson (Josh, 2026-11-03): the Learn page's chip turns green
+      const home = (await (await fetch(`${base}/v1/learn/home`, { headers: auth })).json()) as { lessonsDone?: string[]; history?: { cities: number; people: number; conversations: number } };
+      home.lessonsDone?.includes(stepId) && home.history && home.history.conversations >= 1 ? pass(`v1 learn home: the lesson is done; history ${JSON.stringify(home.history)}`) : fail('v1 learn home: the lesson is done', JSON.stringify(home).slice(0, 300));
     }
   }
 

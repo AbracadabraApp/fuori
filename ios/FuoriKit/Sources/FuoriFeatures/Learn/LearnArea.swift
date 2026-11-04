@@ -3,48 +3,50 @@ import FuoriCore
 import FuoriDesign
 import FuoriNetworking
 
-/// The Learn home (docs/learn.md → The Learn area; canvas "Learn area", D3,
-/// Josh's pick on 2026-10-26): the book next to Settings opens three big
-/// cards. Lessons is Magda, not at a school or in a city (Josh): the syllabus
-/// lessons (Josh, 2026-10-29: "link lessons to the Learn home page"; before,
-/// and still where a country has none, your latest real mistake); Missions (the mission chips canvas) and
-/// Flashcards (the Flashcards canvas) come next. Until a lesson can be
-/// played, "Sì, dai" opens the conversation's Learn page, where the mistake
-/// is explained and said in the character's voice.
+/// The Learn page (Josh, 2026-11-03; docs/learn.md → The Learn page; mockup
+/// design/learn/learn-home.dc.html, canvas "Learn area" F6): one compact
+/// screen, opened from the book next to Settings. History (the visited stamp,
+/// then cities, people and conversations as split-flap numbers on
+/// terracotta); Lessons (the lessons as chips in their areas, green once
+/// done, a tap starts one: Magda teaches, practice, her review, LessonFlow);
+/// Flashcards (a banner with three of the deck's cards and the words learned;
+/// the whole banner opens the deck). It replaces the three Learn cards and
+/// the Missions placeholder. A lesson is done once its review was reached
+/// (Josh, 2026-11-03); the server says which (/v1/learn/home).
 struct LearnArea: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dismiss) private var dismiss
     @State private var home: APIClient.LearnHome?
-    @State private var open: PastConversationLearn?
-    @State private var showingLessons = false
-    @State private var lessonPlayer: LessonPlayer?
+    @State private var lesson: LessonStep?
+    /// The deck (docs/flashcards.md), made when Learn opens: the master deck,
+    /// or the old starter words from servers before it; nil from servers without either
+    @State private var deckModel: FlashcardsModel?
+    @State private var showingDeck = false
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 14) {
-                    lessonsCard
-                    NavigationLink { MissionsView() } label: { missionsCard }
-                        .buttonStyle(.plain)
-                        .accessibilityHint("Opens a mockup of missions")
-                    if let deck = deckModel {
-                        NavigationLink { FlashcardsView(model: deck) } label: { flashcardsCard }
-                            .buttonStyle(.plain)
+                VStack(alignment: .leading, spacing: 14) {
+                    historySection
+                    if let areas = model.content?.lessonAreas, !areas.isEmpty {
+                        lessonsSection(areas)
+                    }
+                    if let deckModel {
+                        Button { showingDeck = true } label: { FlashcardsBanner(learned: deckModel.wordsLearned, pictures: deckModel.bannerPictures) }
+                            .buttonStyle(PressableStyle())
                             .accessibilityHint("Opens your flashcards")
-                    } else {
-                        flashcardsCard
                     }
                 }
                 .padding(.horizontal, Tokens.Space.gutter)
                 .padding(.top, 4)
                 .padding(.bottom, 24)
             }
-            .background { Wash() }
+            .background(Tokens.Colors.paper)
             .navigationDestination(isPresented: $showingDeck) {
                 if let deckModel { FlashcardsView(model: deckModel) }
             }
-            .navigationDestination(isPresented: $showingLessons) {
-                if let lessonPlayer, let units = lessons { LessonsList(units: units, player: lessonPlayer) }
+            .navigationDestination(item: $lesson) { step in
+                LessonFlowView(step: step, app: model)
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -67,185 +69,300 @@ struct LearnArea: View {
             #if DEBUG
             if UserDefaults.standard.bool(forKey: "FuoriOpenFlashcards"), deckModel != nil { showingDeck = true }
             #endif
-            home = try? await model.api?.learnHome()
+            await reload()
         }
-        .sheet(item: $open) { past in LearnSheet(model: past) }
+        // Back from a lesson or the deck: a chip may have turned green, the words learned grown
+        .onChange(of: lesson) { _, now in if now == nil { Task { await reload() } } }
     }
 
-    private var magda: Character? { model.content?.characters.values.first { $0.tutor } }
-
-    /// The syllabus lessons, when the server has them for this country
-    private var lessons: [LessonUnit]? {
-        guard let units = model.content?.lessons, !units.isEmpty else { return nil }
-        return units
+    private func reload() async {
+        if let fresh = try? await model.api?.learnHome() { home = fresh }
     }
-
-    private func openLessons() {
-        guard let api = model.api, let language = model.content?.language else { return }
-        if lessonPlayer == nil { lessonPlayer = LessonPlayer(magda: magda, api: api, language: language) }
-        showingLessons = true
-    }
-
-    private var missionsCard: some View {
-        GlassCard(title: "Missions", line: "Things to do in town, one at a time.", symbol: "basket.fill", tint: Tokens.Colors.missions, ink: Tokens.Colors.ink)
-    }
-
-    private var flashcardsCard: some View {
-        GlassCard(title: "Flashcards", line: "Words with pictures, to say out loud.", symbol: "rectangle.on.rectangle.angled.fill", tint: Tokens.Colors.flashcards, ink: .white)
-    }
-
-    /// The deck (docs/flashcards.md), made when Learn opens: the master deck,
-    /// or the old starter words from servers before it; nil from servers without either
-    @State private var deckModel: FlashcardsModel?
-    /// Debug: `-FuoriOpenFlashcards YES` opens the deck at launch
-    @State private var showingDeck = false
 
     private func makeDeck() {
         guard deckModel == nil, let content = model.content, let cards = (content.cards?.isEmpty == false ? content.cards : content.flashcards), !cards.isEmpty, let api = model.api else { return }
         deckModel = FlashcardsModel(cards: cards, language: content.language, country: content.country, api: api, tall: content.cards?.isEmpty == false)
     }
 
+    // MARK: History
+
+    private var historySection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 12) {
+                if let stamp = model.content?.language.ui.stamp {
+                    MiniStamp(word: stamp.visited, label: stamp.visitedLabel, language: model.content?.language.speechLang)
+                }
+                SectionTitle("History")
+            }
+            let h = home?.history
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .top) { counters(h) }
+                VStack(spacing: 14) { counters(h) }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 10)
+            .padding(.top, 16)
+            .padding(.bottom, 14)
+            .background(Tokens.Colors.terracotta, in: RoundedRectangle(cornerRadius: 18))
+        }
+    }
+
+    @ViewBuilder private func counters(_ h: APIClient.LearnHome.History?) -> some View {
+        Spacer(minLength: 0)
+        FlipCounter(value: h?.cities, label: "cities", one: "city")
+        Spacer(minLength: 0)
+        FlipCounter(value: h?.people, label: "people", one: "person")
+        Spacer(minLength: 0)
+        FlipCounter(value: h?.conversations, label: "conversations", one: "conversation")
+        Spacer(minLength: 0)
+    }
+
     // MARK: Lessons
 
-    /// Glass over the terracotta wash (Josh, 2026-10-26: "a modern look - less
-    /// construction paper more glass"): her portrait, her offer in a glass
-    /// bubble, and Sì, dai as a prominent glass button
-    private var lessonsCard: some View {
-        let lesson = home?.lesson
-        return VStack(alignment: .leading, spacing: 16) {
-            HStack(alignment: .top, spacing: 12) {
-                AsyncImage(url: magda?.portrait) { $0.resizable().scaledToFill() } placeholder: { Tokens.Colors.sand }
-                    .frame(width: 64, height: 64)
-                    .clipShape(Circle())
-                    .overlay { Circle().stroke(.white.opacity(0.8), lineWidth: 2) }
-                    .accessibilityHidden(true)
-                Text(lessonLine(lesson))
-                    .typeface(.label, 16, relativeTo: .callout)
-                    .foregroundStyle(Tokens.Colors.ink)
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 12)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(.white, in: UnevenRoundedRectangle(topLeadingRadius: 16, bottomLeadingRadius: 4, bottomTrailingRadius: 16, topTrailingRadius: 16))
-            }
-            HStack(alignment: .bottom) {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Lessons")
-                        .typeface(.display, 28, relativeTo: .title, weight: .bold)
-                    Text("with \(magda?.name ?? "Magda")")
-                        .typeface(.label, 15, relativeTo: .subheadline)
-                }
-                .foregroundStyle(.white)
+    private func lessonsSection(_ areas: [LessonArea]) -> some View {
+        let done = Set(home?.lessonsDone ?? [])
+        let all = areas.flatMap(\.chips)
+        let count = all.filter { done.contains($0.step) }.count
+        return VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .firstTextBaseline) {
+                SectionTitle("Lessons")
                 Spacer(minLength: 8)
-                if lessons != nil, let button = model.content?.language.ui.letsDoIt {
-                    Button { openLessons() } label: {
-                        Text(inLanguage(button))
-                            .typeface(.label, 16, relativeTo: .callout, weight: .bold)
-                            .padding(.horizontal, 6)
-                            .frame(minHeight: 36)
+                Text("\(count) of \(all.count)")
+                    .typeface(.label, 16, relativeTo: .callout, weight: .bold)
+                    .foregroundStyle(Tokens.Colors.lessonsFieldInk)
+                    .accessibilityLabel("\(count) of \(all.count) done")
+            }
+            ForEach(areas, id: \.name) { area in
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(area.name.uppercased())
+                        .typeface(.label, 12, relativeTo: .caption, weight: .bold)
+                        .tracking(1.2)
+                        .foregroundStyle(Tokens.Colors.lessonsAreaInk)
+                        .accessibilityAddTraits(.isHeader)
+                    ChipFlow(spacing: 7) {
+                        ForEach(area.chips, id: \.step) { chip in
+                            LessonChip(name: chip.name, done: done.contains(chip.step)) {
+                                lesson = model.content?.lessonStep(chip.step)
+                            }
+                        }
                     }
-                    .buttonStyle(.glassProminent)
-                    .tint(.white)
-                    .foregroundStyle(Tokens.Colors.lessons)
-                    .accessibilityHint("Opens the lessons")
-                } else if let lesson, let button = model.content?.language.ui.letsDoIt {
-                    Button { openLesson(lesson) } label: {
-                        Text(inLanguage(button))
-                            .typeface(.label, 16, relativeTo: .callout, weight: .bold)
-                            .padding(.horizontal, 6)
-                            .frame(minHeight: 36)
-                    }
-                    .buttonStyle(.glassProminent)
-                    .tint(.white)
-                    .foregroundStyle(Tokens.Colors.lessons)
-                    .accessibilityHint("Goes over this mistake")
                 }
             }
         }
-        .padding(18)
-        .frame(maxWidth: .infinity, alignment: .topLeading)
-        .glassEffect(.regular.tint(Tokens.Colors.lessons.opacity(0.92)), in: RoundedRectangle(cornerRadius: 26))
-    }
-
-    /// Her offer: your latest mistake, or, before there is one, what lessons are
-    private func lessonLine(_ lesson: APIClient.LearnHome.Lesson?) -> AttributedString {
-        if let units = lessons {
-            let count = units.reduce(0) { $0 + $1.steps.count }
-            return AttributedString("Short lessons with me, one thing at a time: \(count) so far, from saying hello to paying. Two minutes each.")
-        }
-        guard let lesson else {
-            return AttributedString("After a few conversations, I'll pick up something you said and go over it with you. Two minutes.")
-        }
-        var said = AttributedString(lesson.said)
-        said.languageIdentifier = model.content?.language.speechLang
-        said.inlinePresentationIntent = .emphasized
-        return AttributedString("You said “") + said + AttributedString("”. Want to see why? Two minutes.")
-    }
-
-    private func openLesson(_ lesson: APIClient.LearnHome.Lesson) {
-        guard let content = model.content, let api = model.api,
-              let place = content.city(lesson.cityId)?.places.first(where: { $0.id == lesson.placeId }),
-              let character = content.character(lesson.characterId) else { return }
-        let past = APIClient.PastConversation(id: lesson.conversationId, cityId: lesson.cityId, placeId: lesson.placeId, characterId: lesson.characterId, startedAt: "", lines: 0)
-        open = PastConversationLearn(conversation: past, character: character, place: place, language: content.language, api: api)
-    }
-
-    private func inLanguage(_ text: String) -> AttributedString {
-        var s = AttributedString(text)
-        s.languageIdentifier = model.content?.language.speechLang
-        return s
+        .padding(.horizontal, 16)
+        .padding(.top, 16)
+        .padding(.bottom, 18)
+        .background(Tokens.Colors.lessonsField, in: RoundedRectangle(cornerRadius: 22))
     }
 }
 
-// MARK: - The other cards
+// MARK: - Pieces
 
-/// A Learn card in glass: a tinted symbol in a glass circle, the title and one
-/// line. Missions opens a picture of the chip wall mockup (MissionsView)
-private struct GlassCard: View {
-    let title: String
-    let line: String
-    let symbol: String
-    let tint: Color
-    /// Text and symbol: white on terracotta and azure, ink on gold (white on
-    /// gold is under the 4.5:1 contrast the app keeps)
-    let ink: Color
-
+private struct SectionTitle: View {
+    let text: String
+    init(_ text: String) { self.text = text }
     var body: some View {
-        HStack(alignment: .center, spacing: 14) {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(title)
-                    .typeface(.display, 28, relativeTo: .title, weight: .bold)
-                Text(line)
-                    .typeface(.label, 15, relativeTo: .subheadline)
-            }
-            .foregroundStyle(ink)
-            Spacer(minLength: 8)
-            Image(systemName: symbol)
-                .font(.system(size: 30, weight: .semibold))
-                .foregroundStyle(ink)
-                .frame(width: 72, height: 72)
-                .glassEffect(.regular.tint(.white.opacity(0.25)), in: Circle())
-                .accessibilityHidden(true)
-        }
-        .padding(18)
-        .frame(maxWidth: .infinity, minHeight: 130, alignment: .leading)
-        .glassEffect(.regular.tint(tint.opacity(0.92)), in: RoundedRectangle(cornerRadius: 26))
-        .accessibilityElement(children: .combine)
+        Text(text)
+            .typeface(.display, 26, relativeTo: .title2, weight: .bold)
+            .foregroundStyle(Tokens.Colors.ink)
+            .accessibilityAddTraits(.isHeader)
     }
 }
 
-/// Behind the glass: soft blurred washes of the three cards' colours on paper
-private struct Wash: View {
+/// The visited stamp before History: the visit stamp's ring and words
+/// (docs/visited-badge.md), small and tilted; the words from /v1/content
+private struct MiniStamp: View {
+    let word: String
+    let label: String
+    let language: String?
+    @ScaledMetric(relativeTo: .title2) private var size: CGFloat = 52
+
     var body: some View {
-        GeometryReader { geo in
-            ZStack {
-                Tokens.Colors.paper
-                Circle().fill(Tokens.Colors.lessons.opacity(0.35)).frame(width: geo.size.width * 0.9).offset(x: -geo.size.width * 0.25, y: -geo.size.height * 0.28)
-                Circle().fill(Tokens.Colors.missions.opacity(0.35)).frame(width: geo.size.width * 0.85).offset(x: geo.size.width * 0.3, y: geo.size.height * 0.02)
-                Circle().fill(Tokens.Colors.flashcards.opacity(0.3)).frame(width: geo.size.width * 0.9).offset(x: -geo.size.width * 0.15, y: geo.size.height * 0.32)
+        var spoken = AttributedString(word)
+        spoken.languageIdentifier = language
+        return Circle()
+            .strokeBorder(Tokens.Colors.rollNew, lineWidth: 2.5)
+            .overlay {
+                Circle()
+                    .strokeBorder(Tokens.Colors.rollNew, lineWidth: 1.2)
+                    .padding(5)
+                Text(word.uppercased())
+                    .typeface(.label, 9, relativeTo: .caption2, weight: .bold)
+                    .tracking(0.5)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(Tokens.Colors.green)
+                    .minimumScaleFactor(0.6)
+                    .padding(9)
             }
-            .blur(radius: 60)
+            .frame(width: size, height: size)
+            .rotationEffect(.degrees(-4))
+            .accessibilityElement()
+            .accessibilityLabel(Text(label) + Text(", ") + Text(spoken))
+    }
+}
+
+/// A number as split-flap tiles over its label, white on terracotta (labels
+/// 19 pt bold: large text, which passes at 4.2:1). Up to four digits; a dash
+/// until the server answers
+private struct FlipCounter: View {
+    let value: Int?
+    let label: String
+    let one: String
+
+    var body: some View {
+        VStack(spacing: 6) {
+            HStack(spacing: 4) {
+                ForEach(Array(digits.enumerated()), id: \.offset) { _, d in FlapTile(char: d) }
+            }
+            Text(value == 1 ? one : label)
+                .typeface(.label, 19, relativeTo: .headline, weight: .bold)
+                .foregroundStyle(.white)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
         }
-        .ignoresSafeArea()
-        .accessibilityHidden(true)
+        .accessibilityElement()
+        .accessibilityLabel(value.map { "\($0) \($0 == 1 ? one : label)" } ?? "\(label), loading")
+    }
+
+    private var digits: [Swift.Character] {
+        guard let value else { return ["–"] }
+        return Array(String(min(value, 9999)))
+    }
+}
+
+private struct FlapTile: View {
+    let char: Swift.Character
+    @ScaledMetric(relativeTo: .largeTitle) private var height: CGFloat = 50
+
+    var body: some View {
+        Text(String(char))
+            .typeface(.flip, 40, relativeTo: .largeTitle, weight: .semibold)
+            .foregroundStyle(Tokens.Colors.flapInk)
+            .frame(width: height * 0.68, height: height)
+            .background(Tokens.Colors.flapTile, in: RoundedRectangle(cornerRadius: 5))
+            .overlay { Rectangle().fill(Tokens.Colors.flapHinge).frame(height: 2) }
+            .minimumScaleFactor(0.5)
+    }
+}
+
+/// A lesson: green with white words once done, paper with a gold edge before
+private struct LessonChip: View {
+    let name: String
+    let done: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text(name)
+                .typeface(.label, 16, relativeTo: .callout, weight: .bold)
+                .foregroundStyle(done ? Color.white : Tokens.Colors.text)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 9)
+                .frame(minHeight: 44)
+                .background(done ? Tokens.Colors.green : Tokens.Colors.chip, in: Capsule())
+                .overlay { Capsule().strokeBorder(done ? Tokens.Colors.green : Tokens.Colors.chipBorder, lineWidth: 2) }
+        }
+        .buttonStyle(PressableStyle())
+        .accessibilityLabel(done ? "\(name), done" : name)
+        .accessibilityHint("Starts this lesson")
+    }
+}
+
+/// Chips left to right, wrapping onto new lines
+private struct ChipFlow: Layout {
+    var spacing: CGFloat
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let rows = arrange(width: proposal.width ?? .infinity, subviews: subviews)
+        let width = rows.map { $0.width }.max() ?? 0
+        let height = rows.reduce(0) { $0 + $1.height } + spacing * CGFloat(max(rows.count - 1, 0))
+        return CGSize(width: proposal.width ?? width, height: height)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        var y = bounds.minY
+        for row in arrange(width: bounds.width, subviews: subviews) {
+            var x = bounds.minX
+            for i in row.items {
+                let size = subviews[i].sizeThatFits(.init(width: bounds.width, height: nil))
+                subviews[i].place(at: CGPoint(x: x, y: y), proposal: .init(width: min(size.width, bounds.width), height: size.height))
+                x += min(size.width, bounds.width) + spacing
+            }
+            y += row.height + spacing
+        }
+    }
+
+    private struct Row { var items: [Int] = []; var width: CGFloat = 0; var height: CGFloat = 0 }
+
+    private func arrange(width: CGFloat, subviews: Subviews) -> [Row] {
+        var rows: [Row] = []
+        var row = Row()
+        for i in subviews.indices {
+            let size = subviews[i].sizeThatFits(.init(width: width, height: nil))
+            let w = min(size.width, width)
+            if !row.items.isEmpty, row.width + spacing + w > width {
+                rows.append(row)
+                row = Row()
+            }
+            row.width += (row.items.isEmpty ? 0 : spacing) + w
+            row.height = max(row.height, size.height)
+            row.items.append(i)
+        }
+        if !row.items.isEmpty { rows.append(row) }
+        return rows
+    }
+}
+
+/// Flashcards: three of the deck's cards fanned on blue, the words learned
+private struct FlashcardsBanner: View {
+    let learned: Int
+    let pictures: [URL]
+    @ScaledMetric(relativeTo: .title) private var height: CGFloat = 168
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    var body: some View {
+        HStack(alignment: .center, spacing: 8) {
+            VStack(alignment: .leading) {
+                Text("Flashcards")
+                    .typeface(.display, 26, relativeTo: .title2, weight: .bold)
+                Spacer(minLength: 8)
+                Text("\(learned)")
+                    .typeface(.display, 30, relativeTo: .title, weight: .bold)
+                Text(learned == 1 ? "word learned" : "words learned")
+                    .typeface(.label, 14, relativeTo: .subheadline)
+            }
+            .foregroundStyle(.white)
+            .padding(18)
+            Spacer(minLength: 0)
+            // At the accessibility text sizes the words need the room
+            if !typeSize.isAccessibilitySize {
+                fan
+                    .frame(width: 200, height: 168)
+                    .accessibilityHidden(true)
+            }
+        }
+        .frame(maxWidth: .infinity, minHeight: height, alignment: .leading)
+        .background(Tokens.Colors.flashcards, in: RoundedRectangle(cornerRadius: 22))
+        .clipShape(RoundedRectangle(cornerRadius: 22))
+        .shadow(color: Tokens.Colors.flashcards.opacity(0.25), radius: 9, y: 6)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Flashcards, \(learned) \(learned == 1 ? "word" : "words") learned")
+        .accessibilityAddTraits(.isButton)
+    }
+
+    /// Left card tilted one way, right the other, the middle one on top
+    private var fan: some View {
+        ZStack {
+            ForEach(Array(pictures.enumerated()), id: \.offset) { k, url in
+                let spot: (x: CGFloat, angle: Double, z: Double, scale: CGFloat) = [(-48, -10, 0, 0.92), (48, 10, 1, 0.92), (0, 0, 2, 1)][min(k, 2)]
+                AsyncImage(url: url) { $0.resizable().scaledToFill() } placeholder: { Tokens.Colors.sand }
+                    .frame(width: 100 * spot.scale, height: 150 * spot.scale)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .shadow(color: .black.opacity(0.3), radius: 6, y: 4)
+                    .rotationEffect(.degrees(spot.angle))
+                    .offset(x: spot.x, y: k == 2 ? -4 : 6)
+                    .zIndex(spot.z)
+            }
+        }
     }
 }

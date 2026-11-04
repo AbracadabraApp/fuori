@@ -69,6 +69,23 @@ import Testing
         #expect(step.examples.first?.role == "barista")
     }
 
+    /// The Learn page's lesson chips (lib/lessons.ts → lessonAreas), and a
+    /// server from before them still loads; a chip finds its lesson
+    @Test func decodesLessonAreas() throws {
+        let url = try #require(Bundle.module.url(forResource: "content-it", withExtension: "json", subdirectory: "Fixtures"))
+        var json = try #require(try JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        #expect(try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json)).lessonAreas == nil)
+        json["lessons"] = [["id": "a1-04", "title": "Order at the bar", "steps": [[
+            "id": "a1-04-3", "title": "I'd like, politely", "how_to": "", "intro": "", "examples": [], "notice": "", "context": "", "practice": [],
+        ]]]]
+        json["lessonAreas"] = [["name": "Ordering and paying", "chips": [["step": "a1-04-3", "name": "Order politely"]]]]
+        let content = try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json))
+        let chip = try #require(content.lessonAreas?.first?.chips.first)
+        #expect(chip.name == "Order politely")
+        #expect(content.lessonStep(chip.step)?.title == "I'd like, politely")
+        #expect(content.lessonStep("a1-99-9") == nil)
+    }
+
     /// The visit stamp's words (content/<country>/language.ts → ui.stamp), and a
     /// server from before them still loads (no stamps then)
     @Test func decodesStampWords() throws {

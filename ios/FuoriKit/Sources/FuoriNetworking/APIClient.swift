@@ -532,6 +532,16 @@ public actor APIClient {
             public let why: String
         }
         public let lesson: Lesson?
+        /// The Learn page's History: cities, people and conversations so far
+        /// (servers from 2026-11-03)
+        public struct History: Codable, Sendable, Equatable {
+            public let cities: Int
+            public let people: Int
+            public let conversations: Int
+        }
+        public let history: History?
+        /// Lessons finished: those whose review was reached (servers from 2026-11-03)
+        public let lessonsDone: [String]?
     }
 
     /// GET /v1/learn/home

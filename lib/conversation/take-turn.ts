@@ -165,7 +165,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
 
   // One line per turn so any reply can be traced to the prompt version that produced it
   const version = lessonBriefed && p.lesson
-    ? lessonVersion(p.lesson.part)
+    ? lessonVersion(p.lesson.part, p.lesson.stepId)
     : tutorPrompt
     ? `magda-${tutorPrompt.version}`
     : welcome
