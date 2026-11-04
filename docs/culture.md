@@ -8,16 +8,32 @@ Two ideas carry it:
 - **Local pride** (the main one, most of this doc): every character cares about one part of their city's culture and is proud of it.
 - **Weather** (separate, below): the city's real weather, which is always happening wherever the learner is.
 
+## Culture comes from the settings (Josh, 2026-11-04)
+
+**The lesson: "increase culture by increasing cultural settings."** Not by adding to every character's prompt. Measured in Rome on 2026-11-04 (laptop session; simulated learners, the real turn code):
+- **A pride line for everyone** ("What you care about: …", 14 Rome people, fact-judged) barely raised culture in ordinary visits (5–7% of character lines to 7–17%) and took from the errand (about 68% to 59–61%); the forced lines were at errand places (Pasolini dropped into a correction at the tabaccheria). Written as a situation, it was played as today: Luisa announced yesterday's derby and once invented the score. Rewritten as standing facts, the invented news went (0 of 16) but it still added little. **Dropped** (Josh: "I think pride is a dead idea").
+- **`knows`** (three planted pairs, and "X has mentioned them to you"): in 38 conversations no character mentioned anyone they knew. **Dropped** (Josh: "take it out").
+- What worked was already there: `here`, the scene the character is in. The best lines put the culture inside the work (Dario's pizza bianca cut with scissors, Mirella's hand-shaved ice).
+
+**Places, in three kinds** (Rome sorted 2026-11-04; Josh moved the trattoria to cultural):
+- **Transactional** (5 in Rome: two bars, the tabaccheria, the pharmacy, Termini): the errand leads; culture in passing, as their `here` lines already do.
+- **Cultural** (6: Trattoria Da Nino, the Pantheon, Il Gesù, the forno, Volpetti, the grattachecca kiosk): the place is particular to the city, and its `here` says what's particular about it. A place that serves or makes the city's own food, the way it's done there, counts.
+- **Open** (3: Villa Borghese, the tram stop, the Sapienza steps): no errand, so the story can lead. These get the thickest `here`: the character pursues a cultural interest of their own (history, art, music, food, travel, folklore), not tied to the spot, and gets talking about it ("When someone sits down on your bench, you get talking about the park and its history"). Josh: "I want the culture to come up".
+
+**The test for a `here` line** (Claude's, from Josh's Ettore question "what's the cultural literacy angle?"): does it give the learner something real a local would talk about, that they couldn't get from any park, bar or stop elsewhere? Atmosphere alone fails. Standing facts only, never "tonight" or "today"; checked by the fact judge (`content/<country>/prompts/facts.md`, `scripts/fact-check.mts`).
+
+**More cultural and open places** carry the rest: the four drafted from old Rome (all cultural or open), and the particular places listed below under "Showing the places that carry the most culture".
+
 ## Decisions (Josh, 2026-11-03, with the cloud session)
 
 - **No new rules in the character prompt.** Characters get facts, not instructions. How and when they bring their pride up is left to them, as the prompt's principle says ("describe the situation, not how to talk").
-- **Each character gets a pride field**, reusing `caresAbout` (empty and unread today; see Open questions for what uses it). It holds:
+- ~~**Each character gets a pride field**~~ (dropped 2026-11-04, see above), reusing `caresAbout` (empty and unread today; see Open questions for what uses it). It holds:
     - what they care about and why;
     - the one or two words it turns on;
     - who else in the city knows something ("Gino at the salumeria: mortadella"). Proposed: this becomes `knows` (below), one list of people for both.
 - **The rest comes from what exists, or from code:**
     - Memory: the end-of-conversation notes (`content/it/prompts/memory.md`) record what the learner asked about and anything promised, so a character can pick a topic up next time. What the character *told* the learner isn't on the memory prompt's list; check this in a test before relying on it.
-- **Pride items are written from each city's unused lists** (`food`, `customs`, `localTouches`) and checked by judges, including a fact judge; no human proofreading.
+- ~~**Pride items are written from each city's unused lists**~~ (dropped with pride; the lists also proved generic) (`food`, `customs`, `localTouches`) and checked by judges, including a fact judge; no human proofreading.
 - **Rome first.**
 
 ## Local pride
@@ -223,6 +239,8 @@ Not yet language-neutral: "Italian" and "Rome is famous for…" are written in; 
 
 ## Proposals
 
+*Superseded on 2026-11-04 by "Culture comes from the settings" above: pride is dropped; 2, 3 and 5 live on as thicker `here` lines for open and cultural places.*
+
 1. **Every shown character owns one or two things,** in their pride field (decided above): a specific thing from one topic, the reason behind it, and the words it turns on. `here` stays what it is: why they're at that place. Each item has one owner in the city, so topics spread across people and the learner has reasons to visit different ones.
 2. **Raise the weak lines to that standard**, menus and job-only lines first, starting with Rome.
 3. **Give the weak roles campanilismo** (Josh): pharmacists, baristas, people at stops, pensioners; between cities everywhere, between neighbourhoods in Rome, Siena and Venice.
@@ -315,6 +333,8 @@ Prompted by `outdoors`: other facts on places and people that could matter. **Th
 
 ### `knows`: characters who know each other
 
+*Built and measured in Rome on 2026-11-04 and dropped (see "Culture comes from the settings"): no character ever mentioned anyone they knew.*
+
 **Why it matters (Josh):** most characters never mention other characters. Each one is alone in its prompt: Sandro's has Sandro, his bar and the learner, so as far as he knows nobody else in Rome exists.
 
 **What it is:** one or two real people from the same city's file, each with a relationship and a line. Merged with the pride field's "who else knows something", so one list carries both:
@@ -341,8 +361,8 @@ Prompted by `outdoors`: other facts on places and people that could matter. **Th
 
 ## Open questions
 
-- ~~**Does local pride stay in `here`, or move to `caresAbout`?**~~ Decided: `caresAbout`, as the pride field. What uses it today: `caresAbout` is free to use (checked 2026-11-03): it's on the character sheet (`lib/types.ts`), every city character gets it empty (`lib/characters/for-place.ts`), only Magda's two sheets fill it, no prompt reads it, and `tests/check-content-api.ts` keeps it out of what's sent to the app (`tests/check-turn-request.ts` uses it empty as test data). Using it means a small change to how the prompt is built, and gives tests and suggestions one place to look. The other option (from a review): a new `pride` field, so the fact judge and tests check it apart from the setting. Either way it's a separate field; the choice is the name.
-- **How the pride field reaches the prompt:** one line of facts in the character prompt (a placeholder filled from `caresAbout`), with a version bump and changelog entry as `character.md` requires. Left out when empty, so characters without pride are unchanged.
+- ~~**Does local pride stay in `here`, or move to `caresAbout`?**~~ Moot: pride was dropped on 2026-11-04 and `caresAbout` stays unused. (Was decided: `caresAbout`, as the pride field.) What uses it today: `caresAbout` is free to use (checked 2026-11-03): it's on the character sheet (`lib/types.ts`), every city character gets it empty (`lib/characters/for-place.ts`), only Magda's two sheets fill it, no prompt reads it, and `tests/check-content-api.ts` keeps it out of what's sent to the app (`tests/check-turn-request.ts` uses it empty as test data). Using it means a small change to how the prompt is built, and gives tests and suggestions one place to look. The other option (from a review): a new `pride` field, so the fact judge and tests check it apart from the setting. Either way it's a separate field; the choice is the name.
+- ~~**How the pride field reaches the prompt:**~~ (dropped with pride; built and removed 2026-11-04) one line of facts in the character prompt (a placeholder filled from `caresAbout`), with a version bump and changelog entry as `character.md` requires. Left out when empty, so characters without pride are unchanged.
 - ~~**How it comes up**~~ Decided: no rules; the character has the facts and decides.
 - **How the learner finds who knows what:** partly decided: characters know who else in the city knows something (`knows`), and lessons pick partners by topic. Daily suggestions could point at it too ("Ask the sfoglina how she rolls the dough").
 - **Geography** beyond food and weather (the sea, the lakes, the mountains; day trips are parked): part of local pride, or its own topic?
