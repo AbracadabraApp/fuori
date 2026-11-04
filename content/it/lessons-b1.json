@@ -549,84 +549,6 @@
         },
         {
           "id": "b1-sort-8",
-          "title": "Before!",
-          "how_to": "How to say before, with prima di when it's you and prima che when it's someone else.",
-          "intro": "Italian says \"before\" two ways: prima di plus a verb when you do both things, and prima che when the other action is someone else's. You'll use them at the bank and with friends.",
-          "examples": [
-            {
-              "role": "newcomer",
-              "place": "bank",
-              "said": "Prima di firmare, vorrei leggere le condizioni.",
-              "en": "Before I sign, I'd like to read the terms."
-            },
-            {
-              "role": "clerk",
-              "place": "bank",
-              "said": "Prima di aprire il conto, mi serve il Suo codice fiscale.",
-              "en": "Before we open the account, I need your tax ID number."
-            },
-            {
-              "role": "friend",
-              "place": "piazza",
-              "said": "Prima che tu parta, ti do il mio numero.",
-              "en": "Before you leave, I'll give you my number."
-            },
-            {
-              "role": "friend",
-              "place": "piazza",
-              "said": "Te la riporto prima che faccia buio.",
-              "en": "I'll bring it back before it gets dark."
-            }
-          ],
-          "notice": "When the same person does both things, it's prima di plus the -re form; when the other part is about someone else, or the weather, it's prima che plus the subjunctive, as in prima che tu parta.",
-          "context": "",
-          "practice": [
-            {
-              "ask": {
-                "said": "L'impiegato ti dà il contratto. Cosa gli dici?",
-                "en": "The clerk hands you the contract. What do you tell him?"
-              },
-              "answer": {
-                "said": "Prima di firmare, vorrei leggere bene il contratto.",
-                "en": "Before I sign, I'd like to read the contract carefully."
-              }
-            },
-            {
-              "ask": {
-                "said": "Parti domani. Cosa fai stasera?",
-                "en": "You're leaving tomorrow. What are you doing tonight?"
-              },
-              "answer": {
-                "said": "Prima di partire, faccio la valigia.",
-                "en": "I'm packing before I leave."
-              }
-            },
-            {
-              "ask": {
-                "said": "La tua amica ti ha prestato la bici. Quando la riporti?",
-                "en": "Your friend lent you her bike. When are you bringing it back?"
-              },
-              "answer": {
-                "said": "La riporto prima che lei esca stasera.",
-                "en": "I'll bring it back before she goes out tonight."
-              }
-            }
-          ],
-          "mission": {
-            "place": "piazza",
-            "goal": "Tell a friend you'll give them your number before they leave.",
-            "say": {
-              "said": "Prima che tu parta, ti do il mio numero.",
-              "en": "Before you leave, I'll give you my number."
-            },
-            "listen_for": [
-              "prima che",
-              "prima di"
-            ]
-          }
-        },
-        {
-          "id": "b1-sort-9",
           "title": "Better?",
           "how_to": "How to compare two options and say which one is the best.",
           "intro": "You'll be able to weigh two apartments, or the train against the bus, and then say which one is the best. Italian uses più for \"more\" and il più for \"the most.\"",
@@ -704,7 +626,7 @@
           }
         },
         {
-          "id": "b1-sort-10",
+          "id": "b1-sort-9",
           "title": "How long",
           "how_to": "How to say how long something has been going on, with da or sono … che.",
           "intro": "To say how long something has been going on, Italian uses the present tense, with da or with sono … che. You'll use it to say how long you've lived here, or to chase a repair.",
@@ -782,7 +704,7 @@
           }
         },
         {
-          "id": "b1-sort-11",
+          "id": "b1-sort-10",
           "title": "OK?",
           "how_to": "How to ask what you're allowed to do with si può and si possono.",
           "intro": "To ask if something's allowed, say si può and a verb; when a plural word follows, it becomes si possono: si possono fare foto?",
@@ -2110,6 +2032,84 @@
             "listen_for": [
               "è stata costruita",
               "è stato dipinto"
+            ]
+          }
+        },
+        {
+          "id": "b1-story-9",
+          "title": "Before!",
+          "how_to": "How to say before, with prima di when it's you and prima che when it's someone else.",
+          "intro": "Italian says \"before\" two ways: prima di plus a verb when you do both things, and prima che when the other action is someone else's. You'll use them at the bank and with friends.",
+          "examples": [
+            {
+              "role": "newcomer",
+              "place": "bank",
+              "said": "Prima di firmare, vorrei leggere le condizioni.",
+              "en": "Before I sign, I'd like to read the terms."
+            },
+            {
+              "role": "clerk",
+              "place": "bank",
+              "said": "Prima di aprire il conto, mi serve il Suo codice fiscale.",
+              "en": "Before we open the account, I need your tax ID number."
+            },
+            {
+              "role": "friend",
+              "place": "piazza",
+              "said": "Prima che tu parta, ti do il mio numero.",
+              "en": "Before you leave, I'll give you my number."
+            },
+            {
+              "role": "friend",
+              "place": "piazza",
+              "said": "Te la riporto prima che faccia buio.",
+              "en": "I'll bring it back before it gets dark."
+            }
+          ],
+          "notice": "When the same person does both things, it's prima di plus the -re form; when the other part is about someone else, or the weather, it's prima che plus the subjunctive, as in prima che tu parta.",
+          "context": "",
+          "practice": [
+            {
+              "ask": {
+                "said": "L'impiegato ti dà il contratto. Cosa gli dici?",
+                "en": "The clerk hands you the contract. What do you tell him?"
+              },
+              "answer": {
+                "said": "Prima di firmare, vorrei leggere bene il contratto.",
+                "en": "Before I sign, I'd like to read the contract carefully."
+              }
+            },
+            {
+              "ask": {
+                "said": "Parti domani. Cosa fai stasera?",
+                "en": "You're leaving tomorrow. What are you doing tonight?"
+              },
+              "answer": {
+                "said": "Prima di partire, faccio la valigia.",
+                "en": "I'm packing before I leave."
+              }
+            },
+            {
+              "ask": {
+                "said": "La tua amica ti ha prestato la bici. Quando la riporti?",
+                "en": "Your friend lent you her bike. When are you bringing it back?"
+              },
+              "answer": {
+                "said": "La riporto prima che lei esca stasera.",
+                "en": "I'll bring it back before she goes out tonight."
+              }
+            }
+          ],
+          "mission": {
+            "place": "piazza",
+            "goal": "Tell a friend you'll give them your number before they leave.",
+            "say": {
+              "said": "Prima che tu parta, ti do il mio numero.",
+              "en": "Before you leave, I'll give you my number."
+            },
+            "listen_for": [
+              "prima che",
+              "prima di"
             ]
           }
         }

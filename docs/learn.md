@@ -127,18 +127,18 @@ Settled in conversation after a night of lesson mockups (the comic strip, a two-
 Waits for the Beginner rewrite Josh put on hold (it changes `lessons.json`, which the app and the lesson flow read); the judges' fixes (`tests/experiments/lesson-judges/results/it-a1-fixed-lessons.json`) go into the same rewrite.
 
 **Lesson chips, Italy B1 (Josh, 2026-11-03).** The 56 judged Intermediate lessons (`content/it/lessons-b1.json`) become 38 chips in four areas, short names in the learner's voice (Josh's style: "How long", "OK?", "Before!"). Old lesson ids in brackets:
-- Sort things out: I need… (01-1) · How much? (01-2 + 01-3, *basta*, *ci vuole*) · Instructions (01-4) · How come? (01-5 + 10-1) · Describe it (03-1 + 04-4) · Which one? (03-2 + 03-3) · What? (03-4, *quello che*) · Before! (03-5 + 08-3) · Better? (04-1 + 04-2 + 05-1) · How long (04-3 + 10-2) · OK? (13-4, *si può*)
+- Sort things out: I need… (01-1) · How much? (01-2 + 01-3, *basta*, *ci vuole*) · Instructions (01-4) · How come? (01-5 + 10-1) · Describe it (03-1 + 04-4) · Which one? (03-2 + 03-3) · What? (03-4, *quello che*) · Better? (04-1 + 04-2 + 05-1) · How long (04-3 + 10-2) · OK? (13-4, *si può*)
 - Get things done with people: Give it to me (02-1) · Do it for someone (02-2 + 02-5) · More? (02-3) · I forgot (02-6) · Polite commands (09-1 + 09-3) · Invite politely (09-2 + 09-4) · Everyone (09-5) · My work (10-3)
-- Tell what happened: Then suddenly (05-4 + 06-3) · Already (06-1) · Because (06-2) · Nobody (05-3) · I'll manage (05-2) · I mean… (06-4) · Local history (13-1 + 13-3) · Who made it? (13-2)
+- Tell what happened: Then suddenly (05-4 + 06-3) · Already (06-1) · Because (06-2) · Nobody (05-3) · I'll manage (05-2) · I mean… (06-4) · Local history (13-1 + 13-3) · Who made it? (13-2) · Before! (03-5 + 08-3; in the third set because *prima che* takes the subjunctive)
 - Opinions and feelings: I think (07-1 + 07-2) · It's true (07-4) · Give advice (08-1 + 12-2) · As long as (08-2) · Hope it went well (08-4) · Say how you feel (11-1 + 11-2) · How great! (11-3) · Good luck (11-4) · Imagine (12-1 + 12-3) · I'd like you to (12-4) · If only (12-5)
 Dropped: Writing to an office (10-4; email doesn't fit a voice game). Rewritten by the cloud session, then the five judges once, as for the Beginner rewrite. Still not served.
 
 **Lessons come in sets; no levels shown (Josh, 2026-11-03: "when all lessons are turned green on first group - go to next ... users don't need to learn our levels").** The Learn page shows one set of chips at a time; when every chip in it is green, the next set takes its place. No "Beginner" or "Intermediate" anywhere the learner sees. Italy has three sets of two areas or four:
 1. Meeting people · About you · Getting by · Ordering and paying (the 14 Beginner lessons)
-2. Sort things out · Get things done with people (19)
-3. Tell what happened · Opinions and feelings (19)
+2. Sort things out · Get things done with people (18)
+3. Tell what happened · Opinions and feelings (20)
 
-Build notes (Claude): "N of M" counts the current set. A learner placed at Intermediate by the welcome starts on set 2. To decide: whether finished sets stay reachable (e.g. a small "earlier lessons" link), and whether "Before!" (*prima che* + subjunctive) moves to set 3, where the subjunctive is taught ("I think").
+Build notes (Claude): "N of M" counts the current set. A learner placed at Intermediate by the welcome starts on set 2. Finished sets stay reachable through a small "earlier lessons" link (Josh, 2026-11-03). "Before!" (*prima che* + subjunctive) moved to "Tell what happened" in set 3, where the subjunctive is taught (Josh: yes).
 
 **The Learn page (Josh, 2026-11-03; mockup: canvas "Learn area" → F6, https://claude.ai/artifact/W9EnaGyLAU8TEh67LH6vHk; source `design/learn/learn-home.dc.html`).** One compact screen, top to bottom: **History** (the visited stamp before the header; a terracotta field with cities, people and conversations as split-flap numbers); **Lessons** (a pale gold field, "6 of 14" by the header, the chips in their four areas; green when done; tapping a chip starts it; no lessons home, no emphasis on Magda's pick); **Flashcards** (a blue banner with three real cards fanned and the count of words learned; the whole banner is the button). Build notes (Claude): keep the game's terracotta (#c0603a; one colour, Josh) and make the white labels large text, at least 19 pt bold, which passes (large text needs 3:1; white on terracotta is 4.2:1); split-flap tiles fit four digits and wrap at the largest text sizes, each number with a spoken label; the flip font (Oswald) becomes a design token; the stamp's words come from content (Mexico's own).
 
