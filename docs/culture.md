@@ -162,6 +162,25 @@ Kept (Josh: "weather is always happening wherever you are"). **People talk about
 
 If weather is ever shown on screen, it would go in the city's daily suggestions ("Rainy today: a good day for the bookshop"). Those aren't built: `Suggestion` exists only as a type in `lib/types.ts`, and the app shows no daily suggestions today.
 
+## Other fields (brainstorm, 2026-11-03)
+
+Prompted by `outdoors`: other facts on places and people that could matter. **The test (Josh): over-scripting has failed in good conversations.** A field describes who someone is or where they are; it doesn't script what they say.
+
+**Candidates:**
+
+| Field | On | What it is | What it teaches |
+|---|---|---|---|
+| `outdoors` | place | open air or inside | the weather line (above) |
+| `from` | character | hometown when it isn't this city (today buried in `here`: "Your background: from Tirana") | campanilismo from inside: a Neapolitan vendor in Milan comparing the two |
+| `knows` | character | people they're connected to: a cousin, a rival, a regular (overlaps "who else knows" in the pride field) | the city joins up; reasons to go places |
+| `formality` | character | tu or Lei for this person; exists, always "formal" today | the learner hears both: Lei from the pharmacist, tu from the student |
+| `regionalisms` | character | how much local speech they use; exists, always empty | Gina speaks Roman and explains it; the pharmacist speaks standard Italian |
+| neighbourhood line | place | one sentence about the quartiere | campanilismo inside a city |
+| `nearby` | place | the places next door | directions vocabulary, a reason to walk on |
+| `english` | character | how much English they really have | real people differ; would touch the rule that characters help in English when asked |
+
+**Dropped:** `menu` (real items and prices): it scripts the conversation, and characters already get roughly right what their place sells. `pace` (quick counter or slow chat) leans the same way.
+
 ## Dropped in the brainstorm
 
 - a city calendar of feast days (Josh: "you have to be at the right place at the right time"), time of day and day of the week (Josh: "not going to hit most users"), anything in the Diario (it isn't built).
