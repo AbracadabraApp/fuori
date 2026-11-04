@@ -95,7 +95,17 @@ Weaker kinds:
 | Art | thin: Il Gesù's ceiling, Signorelli in Orvieto, Monteverdi in Mantova, Brunelleschi |
 | Campanilismo | almost none: arancine against arancini is the only real rivalry |
 
-**Mexico (2026-11-03):** 5 cities; every shown place has a line (60 of 65; the 5 without are the language schools), and 61 of 65 characters overall. Not yet read for quality; first impressions are local and specific (the tejuino cart by San Juan de Dios, mezcal with sal de gusano, Talavera cups in Puebla). Rivalries: chilangos, regios and tapatíos; Puebla and its mole poblano against Oaxaca's seven moles.
+**Mexico (2026-11-03):** 5 cities, 60 shown people, every one with a line (the 5 language schools are Magda's and hidden from the app since 2026-10-27). Rivalries to draw on: chilangos, regios and tapatíos; Puebla and its mole poblano against Oaxaca's seven moles.
+
+**Quality (Claude's reading of all 60, 2026-11-03, laptop session):**
+- **Strong, about 22:** a specific thing with a story. Pancho Villa's bullet hole at La Ópera; the tamalero's recorded call and the guajolota; birote, "the only bread for tortas ahogadas"; the tumbagón that tells if your partner is faithful; La Alborada in San Miguel; the sinking cathedral; mezcal with sal de gusano; the cempasúchil on a Día de Muertos altar.
+- **A menu, about 5:** Doña Chuy, Doña Chelo, the Puebla dulcería, Doña Lupe's quesadillas.
+- **A job, little culture, about 33:** all five bus-ticket sellers (routes and times only); the baristas of Condesa, Guadalajara and San Miguel; the dog walker, the taxi driver, the student, the corner shops, a sacristana, two of the three boleros.
+- **By topic:** food even more dominant than in Italy; history 3 (the cathedral, La Ópera, the Alameda), folklore 4–5, art and craft 4, campanilismo 1 (Puebla's Doña Tere: "Puebla is where mole was born"; Oaxaca's Doña Tere has the seven moles, and neither knows the other).
+- **Repeats:** café de olla in four cities' cafés, the generic "Mexican café" line. Two places are both "Fonda Doña Tere" (Oaxaca and Puebla).
+- **Missing reasons that would make good lines:** Puebla's tacos árabes came with Lebanese families (and led to al pastor); each ticket seller could be proud of one trip from their city (Tequila from Guadalajara; the Guelaguetza is already in Oaxaca's).
+
+**Names (Josh, 2026-11-03: "unique full names - parts can repeat"; done, 33c519f):** every shown person in Mexico has a given name and a surname, in the form players know (Don Nacho Vásquez, Vale Ortiz, Chuy Haddad at the tacos árabes); ids kept, so portraits and memories carry over; `npm run test:names` checks it. About 20 are nicknames (Chema for José María, Toño, Memo, Nacho, Chucho and Chuy, Lalo, Chela, Chelo, Concha, Cuca, Lupe, Tere, Beto, Vale), but no line says the given name behind one. Characters already use diminutives on their own (about one line in five: *ahorita, poquito, calientito, picosita*); vendors call the learner *güerita* (real market talk, but it assumes how the learner looks). Italy isn't checked yet: Mirella, Nonna Assunta, Rosaria, Gennaro, Totò and Andrea have no surname, and Sandro Pieri and Dario Ferri are in both Romes.
 
 ### City lists nobody reads
 
