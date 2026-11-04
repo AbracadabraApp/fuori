@@ -8,6 +8,19 @@ Two ideas carry it:
 - **Local pride** (the main one, most of this doc): every character cares about one part of their city's culture and is proud of it.
 - **Weather** (separate, below): the city's real weather, which is always happening wherever the learner is.
 
+## Decisions (Josh, 2026-11-03, with the cloud session)
+
+- **No new rules in the character prompt.** Characters get facts, not instructions. How and when they bring their pride up is left to them, as the prompt's principle says ("describe the situation, not how to talk").
+- **Each character gets a pride field**, reusing `caresAbout` (empty and unread today; see Open questions for what uses it). It holds:
+    - what they care about and why;
+    - one or two words worth keeping;
+    - who else in the city knows something ("Gino at the salumeria: mortadella").
+- **The rest comes from what exists, or from code:**
+    - Memory: the end-of-conversation notes (`content/it/prompts/memory.md`) record what the learner asked about and anything promised, so a character can pick a topic up next time. What the character *told* the learner isn't on the memory prompt's list; check this in a test before relying on it.
+    - Lessons pick practice partners by pride topic (code).
+- **Pride items are written from each city's unused lists** (`food`, `customs`, `localTouches`) and checked by judges, including a fact judge; no human proofreading.
+- **Rome first.**
+
 ## Local pride
 
 Every character cares about one part of their city's culture and is proud of it: a dish and why it's made that way, a legend, a painting, a festa, or the town down the road that gets it all wrong. The learner learns a city's culture from the people who care about it, one person at a time, in the language.
@@ -120,13 +133,13 @@ Thinner (Siena has no contrada, Lucca's walls are only in bar names, Milano and 
 
 ## Proposals
 
-1. **Every shown character owns one or two things.** Written into their `here` line: a specific thing from one topic, the reason behind it, and the line they'd say. Each item has one owner in the city, so topics spread across people and the learner has reasons to visit different ones.
+1. **Every shown character owns one or two things,** in their pride field (decided above): a specific thing from one topic, the reason behind it, and the words worth keeping. `here` stays what it is: why they're at that place. Each item has one owner in the city, so topics spread across people and the learner has reasons to visit different ones.
 2. **Raise the weak lines to that standard**, menus and job-only lines first, starting with Rome.
 3. **Give the weak roles campanilismo** (Josh): pharmacists, baristas, people at stops, pensioners; between cities everywhere, between neighbourhoods in Rome, Siena and Venice.
-4. **Use the city lists**: write each city's `here` lines from its `food`, `customs` and `localTouches`, so the material in the files reaches the characters.
+4. **Use the city lists** (decided): write each city's pride items from its `food`, `customs` and `localTouches`, so the material in the files reaches the characters.
 5. **Balance the topics per city**: today it's mostly food; aim for every city to have someone for history, traditions, art and campanilismo among its shown places.
 6. **Facts are checked by a judge**, not a person (Josh: no human proofreading, as for lessons, [lesson-judges.md](lesson-judges.md)): a narrow fact judge on the lesson judges' pattern that fails any claim it can't confirm. Standard: well-known facts only. Same bounded pass: write, judge once, fix failed lines, recheck once, drop what still fails.
-7. **Both countries the same way** (Josh: culture is a goal for both): local pride is data, not code, so nothing changes in the prompts. Mexico's five cities get the same pass; their lines are already nearly complete, so it's a quality and topic-balance pass, not a fill.
+7. **Both countries the same way** (Josh: culture is a goal for both): local pride is data, not code, and the prompt only gains the pride facts (no new rules). Mexico's five cities get the same pass; their lines are already nearly complete, so it's a quality and topic-balance pass, not a fill.
 
 ## Weather
 
@@ -138,9 +151,10 @@ Thinner (Siena has no contrada, Lucca's walls are only in bar names, Milano and 
 
 ## Open questions
 
-- **Does local pride stay in `here`, or move to `caresAbout`?** `caresAbout` is free to use (checked 2026-11-03): it's on the character sheet (`lib/types.ts`), every city character gets it empty (`lib/characters/for-place.ts`), only Magda's two sheets fill it, no prompt reads it, and `tests/check-content-api.ts` keeps it out of what's sent to the app (`tests/check-turn-request.ts` uses it empty as test data). Using it means a small change to how the prompt is built, and gives tests and suggestions one place to look. The other option (from a review): a new `pride` field, so the fact judge and tests check it apart from the setting. Either way it's a separate field; the choice is the name.
-- **How it comes up:** does the character bring their topic up unprompted, or only when it fits? The character prompt says "describe the situation, not how to talk", so the line describes what they care about and leaves the rest to them.
-- **How the learner finds who knows what:** daily suggestions could point at it ("Ask the sfoglina how she rolls the dough").
+- ~~**Does local pride stay in `here`, or move to `caresAbout`?**~~ Decided: `caresAbout`, as the pride field. What uses it today: `caresAbout` is free to use (checked 2026-11-03): it's on the character sheet (`lib/types.ts`), every city character gets it empty (`lib/characters/for-place.ts`), only Magda's two sheets fill it, no prompt reads it, and `tests/check-content-api.ts` keeps it out of what's sent to the app (`tests/check-turn-request.ts` uses it empty as test data). Using it means a small change to how the prompt is built, and gives tests and suggestions one place to look. The other option (from a review): a new `pride` field, so the fact judge and tests check it apart from the setting. Either way it's a separate field; the choice is the name.
+- **How the pride field reaches the prompt:** one line of facts in the character prompt (a placeholder filled from `caresAbout`), with a version bump and changelog entry as `character.md` requires. Left out when empty, so characters without pride are unchanged.
+- ~~**How it comes up**~~ Decided: no rules; the character has the facts and decides.
+- **How the learner finds who knows what:** partly decided: characters know who else in the city knows something (the pride field), and lessons pick partners by topic. Daily suggestions could point at it too ("Ask the sfoglina how she rolls the dough").
 - **Geography** beyond food and weather (the sea, the lakes, the mountains, `dayTrips`): part of local pride, or its own topic?
 - **Craft and sport** (football especially): topics of their own, or inside traditions and campanilismo?
 - **The learner's route** for campanilismo between cities: the cities are in the conversation records; wiring them into the prompt is the open part.
