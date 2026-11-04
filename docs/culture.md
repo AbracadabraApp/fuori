@@ -151,6 +151,8 @@ Lessons about a piece of culture, not about the language, in Learn. Learn's less
 - **A thing with a home city** → the shown character there whose pride it is (opera arrives as Verona's candles, not as "opera").
 - **A thing that's particular but national** (la scarpetta, Ferragosto) → a shown retired character (Josh: "if retired characters are accessible they can teach"). Shown today: Italy, Ettore and Franca (Roma), Lorenzo (Firenze), Alberto (Matera, Siracusa), the nonna on Spaccanapoli (Napoli); Mexico, the retired doña on the Alameda (CDMX), the retired dons on Oaxaca's Zócalo and in Parque Juárez (San Miguel), the abuela in the Jardín del Carmen (Puebla).
 
+**How it plays: mostly listening** (Josh: "not passing back and forth as much"). The character tells the story in two or three turns, and each turn ends with a personal question along the way (Josh): "Sei mai stato all'opera?", "Hai mai mangiato il guanciale?" Not a quiz: the questions a person telling you about their city would ask. The learner answers, the character carries on; the last turn ends with the word worth keeping. About 2–3 learner turns, 2–3 minutes. It uses the conversation screen as it is (the mic opens after each question), so nothing changes in the app. Bonus for learning: "have you ever…?" is how textbooks teach talking about experiences (*sei mai stato/stata*, *hai mai…*).
+
 **A fresh conversation each time, held to the facts** (not a fixed script: over-scripting has failed in good conversations). Beginners: mostly English, with the word or two in the language. Checked by the fact judge before it ships. About five chips per set, in their own tint, outside the lesson sets so they never block progress (from the other session).
 
 **Candidate chips, Italy:**
