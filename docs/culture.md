@@ -140,7 +140,7 @@ Each city's file has 30–40 places but the app shows about 10 (`content/it/show
 - **Their pride is a story, not the stereotype**: the jeweller tells why the Medici put goldsmiths on the Ponte Vecchio in place of the butchers, not "Florence is famous for gold".
 - **Played before done**: a conversation that opens with "Cosa desidera?" or a price fails.
 
-**First-screen cities** (8 places, plus Rome's four drafted):
+**First-screen cities** (10 places, plus Rome's four drafted):
 
 | City | Add | Who |
 |---|---|---|
@@ -156,7 +156,7 @@ Each city's file has 30–40 places but the app shows about 10 (`content/it/show
 | Matera | Casa Grotta di Vico Solitario | the museum guide |
 | Roma | Piazza Navona, Piazza Santa Maria in Trastevere, the basilica, the Colosseo | drafted (see Rome) |
 
-**Cities after "Mostra altro"** (15 places): Lecce, Museo Faggiano (the owner who found the city under his house); Taormina, Ceramiche Siciliane d'Arte (the *teste di moro*); Siracusa, Antica Giudecca (the historian); Genova, Focacceria Genovese (a city specialty, like the pastry shops kept) and La Lanterna (the keeper); Milano, the Duomo (the priest); Verona, Casa di Giulietta (the custodian); Assisi, the Basilica di San Francesco (the friar); Bergamo, Teatro Donizetti (the conductor); Torino, Museo dell'Automobile (the curator); Lucca, the Duomo (the Volto Santo); Orvieto, the Duomo (the priest); Mantova, Palazzo Te (the art historian).
+**Cities after "Mostra altro"** (13 places): Lecce, Museo Faggiano (the owner who found the city under his house); Taormina, Ceramiche Siciliane d'Arte (the *teste di moro*); Siracusa, Antica Giudecca (the historian); Genova, Focacceria Genovese (a city specialty, like the pastry shops kept) and La Lanterna (the keeper); Milano, the Duomo (the priest); Verona, Casa di Giulietta (the custodian); Assisi, the Basilica di San Francesco (the friar); Bergamo, Teatro Donizetti (the conductor); Torino, Museo dell'Automobile (the curator); Lucca, the Duomo (the Volto Santo); Orvieto, the Duomo (the priest); Mantova, Palazzo Te (the art historian).
 
 **Mexico** shows nearly everything already; two hidden places add culture: Panadería El Trigal (Oaxaca) and La Gran Fama on Calle de los Dulces (Puebla).
 
