@@ -2,6 +2,17 @@
 
 Status (Josh, 2026-10-15): **"not great yet, getting better."** Working designs, not final. Mockups: the "Country choice: onboarding and settings" canvas in Josh's claude.ai artifacts (https://claude.ai/artifact/VAa17eWjDDcwnbyALZ45Fk). Pictures: `design/country-cards/`.
 
+## The welcome, redone (Josh, 2026-11-05; decided, not yet built)
+
+**This replaces the three-goal welcome (name, masculine or feminine, how much they speak; 2026-11-03).** Josh: "we need to rewrite the onboarding too, just have a simple assignment. Explain a bit about the country, places, and capture masculine/feminine. The whole thing about benvenuto is confusing; we just need to know which gender to use."
+
+1. **She explains, in English:** a little about the country, and the places and people they'll meet.
+2. **Masculine or feminine** (Josh: "say masculine or feminine, explain it's part of the language"): she says that in the language words change to match the person they're about, then asks which to use. The learner taps one of two buttons, Masculine or Feminine (no speech-to-text to mishear). No benvenuto/benvenuta step.
+3. **"Do you have any questions, or are you ready to go?"** (Josh): the mic is open for questions about the country or the game, and she answers; the done button already shows, so they can skip it.
+4. **Done:** they start at Beginner S1 (docs/dialogue-model.md: everyone starts at Beginner; Settings changes the level).
+
+Dropped: the name (no character is ever given it; each learns it when told, docs/dialogue-model.md), the "do you speak it" question and the placement from how they answered. Wording comes from content per country, as now.
+
 ## Restated vision (Josh, voice conversation, written up 2026-10-15)
 
 An attempt to give an overview of onboarding in Josh's words. It sits **on top of** the work below and in [language-levels-plan.md](language-levels-plan.md); nothing here replaces or deletes it. Art is already in progress by the laptop session (country cards and greeters in `design/country-cards/`). Josh: "this captures about 50% of it"; the exact step-by-step isn't settled.
