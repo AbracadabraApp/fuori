@@ -33,7 +33,7 @@ doc "The dialogue model" (https://claude.ai/artifact/XvRja1uP7z4L8WxieCU44R).
   spoken by the character or listed underneath the italian within the answer
   bubble." Whether it's needed, and at which levels, is not decided. Nothing is
   shown on tap: the tap for English on Beginner bubbles (built 2026-10-25,
-  never chosen) goes.
+  never chosen) is gone from the next phone build.
 - **Questions** (Josh, 2026-11-05, "ok"): at S1–S3 every turn ends with one
   question, except the goodbye; a Beginner can't start talk unprompted, and a
   turn with nothing to answer is a dead end. From S4 up a question isn't
@@ -61,7 +61,10 @@ doc "The dialogue model" (https://claude.ai/artifact/XvRja1uP7z4L8WxieCU44R).
   every answer bubble shows its English under the Italian, always; it goes
   when answers go (S4). Style: light italic (Josh: "light italics or
   parentheses or both"; Claude: italic in the muted ink, no parentheses, at
-  least 4.5:1 contrast).
+  least 4.5:1 contrast). Built 2026-11-05 for the next phone build
+  (BeginnerBubbles.swift): light italic in muted #666666 (5.7:1 on the white
+  answer bubble); her bubbles show no English and nothing happens on a tap,
+  except where the answer is a tap (mic off, VoiceOver, the welcome's buttons).
 
 - **Everyone starts at Beginner** (Josh, 2026-11-05: "for now everyone starts
   at beginner"), at S1; Settings → level changes it (Beginner, Intermediate,

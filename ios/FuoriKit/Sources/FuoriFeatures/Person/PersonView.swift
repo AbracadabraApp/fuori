@@ -6,8 +6,9 @@ import FuoriDesign
 /// form; docs/13-ios-conventions.md R2, R14): the standard navigation bar with
 /// the back button and the settings button, a paper band with the name and
 /// "Role, neighbourhood", then the portrait running to the bottom edge, with
-/// the subtitles and the conversation controls over its lower part. Nothing
-/// scrolls, so the portrait never slides away. Opening the screen starts the
+/// the subtitles and the conversation controls over its lower part. The
+/// portrait never scrolls, so it never slides away; at the largest text sizes
+/// the subtitles and controls scroll over it. Opening the screen starts the
 /// conversation (hands-free); leaving it saves.
 struct PersonView: View {
     @State private var model: ConversationModel
@@ -33,22 +34,14 @@ struct PersonView: View {
                         .padding(.horizontal, Tokens.Space.gutter)
                         .padding(.top, 8)
                 }
-                VStack(spacing: 8) {
-                    // While scaffolding: the words and the English always
-                    // (docs/beginner-scaffolding.md)
-                    let showLine = model.scaffolding || subtitles
-                    let showEnglish = model.scaffolding || english
-                    if model.parts != nil {
-                        // Beginner dialogue: her English is heard, her words in the language are bubbles
-                        BeginnerBubbles(parts: model.shownParts, speechLanguage: model.speechLanguage)
-                        if let note { Subtitles(line: nil, shown: nil, english: nil, note: note) }
-                    } else {
-                        Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note, hint: model.openerHint)
-                    }
-                    // No Learn link in the welcome: it's not a conversation to go over
-                    ConversationControls(model: model, onLearn: learnAction)
+                // Over the portrait; when it doesn't fit (the largest text
+                // sizes), it scrolls from the bottom, and the portrait stays put
+                ViewThatFits(in: .vertical) {
+                    overlay
+                    ScrollView { overlay }
+                        .defaultScrollAnchor(.bottom)
+                        .scrollIndicators(.hidden)
                 }
-                .padding(.horizontal, Tokens.Space.gutter)
             }
         }
         .background(Tokens.Colors.paper)
@@ -66,6 +59,26 @@ struct PersonView: View {
         .onChange(of: scenePhase) { _, phase in
             if phase == .background { model.backgrounded() }
         }
+    }
+
+    /// The bubbles or subtitles and the controls
+    private var overlay: some View {
+        VStack(spacing: 8) {
+            // While scaffolding: the words and the English always
+            // (docs/beginner-scaffolding.md)
+            let showLine = model.scaffolding || subtitles
+            let showEnglish = model.scaffolding || english
+            if model.parts != nil {
+                // Beginner dialogue: her English is heard, her words in the language are bubbles
+                BeginnerBubbles(parts: model.shownParts, speechLanguage: model.speechLanguage)
+                if let note { Subtitles(line: nil, shown: nil, english: nil, note: note) }
+            } else {
+                Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note, hint: model.openerHint)
+            }
+            // No Learn link in the welcome: it's not a conversation to go over
+            ConversationControls(model: model, onLearn: learnAction)
+        }
+        .padding(.horizontal, Tokens.Space.gutter)
     }
 
     /// The Learn link's action; none in the welcome
