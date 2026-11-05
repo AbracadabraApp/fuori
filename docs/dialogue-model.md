@@ -63,6 +63,12 @@ doc "The dialogue model" (https://claude.ai/artifact/XvRja1uP7z4L8WxieCU44R).
   parentheses or both"; Claude: italic in the muted ink, no parentheses, at
   least 4.5:1 contrast).
 
+- **Everyone starts at Beginner** (Josh, 2026-11-05: "for now everyone starts
+  at beginner"), at S1; Settings → level changes it (Beginner, Intermediate,
+  Advanced). Not yet built: today the welcome places a learner from their
+  answer to "do you speak it" (lib/path.ts → placement). Faster assessment
+  later: docs/ideas.md → Assessing level faster.
+
 ## Not decided yet
 
 - **Whether English is needed** anywhere else on screen: at S4 (today an

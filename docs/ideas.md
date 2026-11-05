@@ -424,3 +424,14 @@ Prompted by "help more beginner level people". Rule behind all three: **everyone
 
 Claude's proposal (2026-11-04, from a Karpathy-inspired prompt template Josh shared). For a batch of generated content across many cities (here lines, culture items, a new city's places): draft, then the fact judge (`facts.md`), then a check that it's particular to the place, then a repeat test over several visits; a city's content goes in only when every step passes, with a checks file recording each verdict. `scripts/make-culture.mts` is already a two-step version. Worth it for a big batch (every city in both countries, or a new country), not for one city. Not a fit for scripted dialogue: scenes stay generated.
 
+
+## Assessing level faster (Claude, 2026-11-05; Josh: "keep those notes")
+
+For now everyone starts at Beginner and Settings changes the level (docs/dialogue-model.md). Ways the app could place a learner faster, all language-neutral, most trusted first:
+
+1. **Turn by turn, not conversation by conversation.** The record already counts each reply (own words or a read-out answer, words, English or the language, help asked); two or three turns of real own words could move the stage up mid-conversation, instead of 4 easy conversations of 5.
+2. **How they speak, from the mic:** time to the first word, how long they talk, how much they stall. Not thrown by speech-to-text mishearings.
+3. **The level check already built** (lib/learner-level.ts, off; waits for 3 conversations): run it after the first.
+4. **One open question in the welcome** for someone who says they can chat, answered in the language.
+
+Also from the same talk: Intermediate is very different from Beginner (Josh), so a wrong placement there is costly (Sophia, placed Intermediate, left four conversations without a word); S4 is the bridge, and moving up from it could be quicker (2 easy in a row rather than 4 of 5).
