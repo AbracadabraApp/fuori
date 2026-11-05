@@ -2,6 +2,8 @@
 
 Ideas worth keeping that are **not part of the current plan**. Nothing here is scheduled or implemented. Move an idea into the numbered docs and the roadmap only once it's decided.
 
+Ideas about how conversations go (when the learner speaks, characters stepping away, corrections, voices) are in [Dialogue ideas](dialogue-ideas.md).
+
 **Adopted on 2026-10-09** and moved into the numbered docs: the open-ended world, Magda the tutor, dialect that grows with level, generated characters, and the Instagram-style interface (see [Game design](02-game-design.md)). Real photos for places and food are in [Visuals](07-visuals.md).
 
 ## Four poses per character (tested 2026-10-16)
