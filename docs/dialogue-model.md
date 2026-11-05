@@ -65,8 +65,8 @@ doc "The dialogue model" (https://claude.ai/artifact/XvRja1uP7z4L8WxieCU44R).
 
 - **Everyone starts at Beginner** (Josh, 2026-11-05: "for now everyone starts
   at beginner"), at S1; Settings → level changes it (Beginner, Intermediate,
-  Advanced). Not yet built: today the welcome places a learner from their
-  answer to "do you speak it" (lib/path.ts → placement). Faster assessment
+  Advanced). Built 2026-11-05: the welcome's button starts everyone at S1
+  (lib/welcome.ts → finishWelcome). Faster assessment
   later: docs/ideas.md → Assessing level faster.
 
 ## Not decided yet

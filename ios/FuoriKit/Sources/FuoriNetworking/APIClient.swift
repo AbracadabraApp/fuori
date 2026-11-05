@@ -132,6 +132,12 @@ public actor APIClient {
         /// `line` is all of them in order, which is what the voice says;
         /// nil for other levels and from older servers
         public var parts: [TurnPart]? = nil
+        /// The welcome's opening (lib/welcome.ts): the answers are buttons to
+        /// tap (masculine or feminine) and the mic stays closed. Nil otherwise
+        public var tapAnswers: Bool? = nil
+        /// The welcome after the tap: the end button shows beside the mic, so
+        /// they can go any time. Nil otherwise
+        public var canEnd: Bool? = nil
     }
 
     /// A part of a Beginner turn: English heard (not shown), or a word, the

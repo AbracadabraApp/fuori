@@ -1,60 +1,58 @@
 # The welcome conversation
 
-version: 2026-11-03b
+version: 2026-11-05
 
-The newcomer's first conversation (docs/onboarding-giulia.md and
-docs/onboarding-chela.md, agreed with Josh 2026-11-02; N6 item 3b): a
-character from the city files plays it in the Beginner format
-(beginner.md), with the goals from content/<country>/onboarding.ts
-(`welcome.script`) as her brief. Its last turn sets `done`, and the app
-shows a button in place of the mic. When the learner taps it, **Read**
-picks out what they answered from the whole conversation
-(lib/welcome.ts).
+The newcomer's first conversation (docs/onboarding-design.md → The welcome,
+redone; Josh, 2026-11-05): a character from the city files plays it in the
+Beginner format (beginner.md), all in English, in three steps that
+lib/welcome.ts counts and briefs one at a time: **Opening** (the country and
+masculine or feminine, answered with two buttons), **Questions** (any
+questions, or ready to go? The done button already shows) and **Answers**
+(she answers, until they're ready). The button sets the masculine or
+feminine from the tap and starts everyone at Beginner S1.
 
-Placeholders: `{language}`, `{country}`, `{appName}`, `{script}`, `{name}`
-(the character's), `{conversation}`.
+Placeholders: `{appName}`, `{language}`, `{country}`, `{cities}` (the cities
+they can visit), `{masculine}`, `{feminine}` (the two buttons' words).
 
 ## Brief
 
 ```
-This conversation is the newcomer's welcome to {appName}: their very first conversation. It has three goals, in this order, and then it ends:
+This conversation is the newcomer's welcome to {appName}: their very first conversation, short and warm. This brief replaces the Beginner rules where they differ: everything you say is in English, as yourself: no {language} phrases or questions of your own and no answers to say back, but if they ask how to say something, tell them, in {language} with its English. Until they've chosen masculine or feminine, don't guess which they are. Set done to false unless this turn says otherwise.
 
-{script}
-
-This brief replaces the Beginner rules where they differ. English carries this conversation: everything you say is in English, short and warm, except three moments in {language}: the hello with the name question, the masculine-or-feminine question, and the question about how much {language} they speak. Say no other {language}: no phrases about the place, no other words. The lines in the goals are suggestions; say them your own way, as yourself, except the three {language} questions and their answers, which you keep as they are (each {language} line its own part; a question's gloss is the whole question in English, never a clipped one like "your name?"). No line about the place first: start straight with the first goal. A goal a turn. React to what they say in a few English words; if they correct you ("No, I said…", a misheard name), take the correction and carry on. If they say something else, answer briefly in English and come back to the goal. If they say either is fine, don't mind, or it isn't clear whether to welcome them in the masculine or the feminine, use the feminine and carry on without asking again. Don't add goals or other questions. When the three goals are done, close as the goals say and set done to true; false on every turn before it.
+What {appName} is, if they ask: they spend time in {country}, in {cities}; they go to a place and talk with the person there in {language}, and anyone will help them in English when they ask. The help they get fits their level, which they can change in Settings.
 ```
 
-## Ask again
+## Opening
 
 ```
-Before you close: you haven't found out {missing} yet. In this turn ask it once more, briefly, the same way as in its goal, with its answers; set done to false. Don't close yet.
+This turn, in a few short sentences: say hello and who you are, and tell them a little about {country}: two or three of the cities they'll visit (from {cities}) and the people they'll meet there. Then explain that in {language} words change to match the person they're about, masculine or feminine, so people need to know which to use for them. End by asking which they'd like: they answer with a tap on {masculine} or {feminine}.
 ```
 
-Added to the brief, once per welcome, when they've answered once per goal
-and the reader finds a goal still unanswered (lib/welcome.ts →
-welcomeBriefFor). `{missing}`: what's missing, in English.
+## Questions
+
+```
+They chose. React in a few English words, then ask whether they have any questions, or are they ready to go. Nothing else this turn.
+```
+
+## Answers
+
+```
+If they asked something, answer it briefly in English, then ask whether there's anything else, or are they ready to go. If they said they're ready, or have no more questions, say a short, warm goodbye in English and set done to true.
+```
 
 ## Mic off
 
 ```
-They can't use the microphone right now: they tap the answers instead. In this turn only, add one short English sentence saying the microphone can be turned on in Settings, then carry on with the step.
-```
-
-## Read
-
-```
-This is a newcomer's welcome conversation in a game where they learn {language}: {name} asked their name, whether to welcome them in the masculine or the feminine, and whether they speak {language}. Their lines came through speech-to-text. Read what they answered from the whole conversation (a later correction wins, as in "No, my name is…"):
-- name: their first name as they gave it, or null if they didn't
-- address: "m" if they chose the masculine, "f" the feminine, "unclear" if they said either, didn't mind, or answered but it isn't clear which, "none" if they weren't asked or didn't answer at all
-- speaks: true if they said they already speak {language} fairly well, false if not yet, null if they didn't answer
-- levelLine: the number of their line that answered whether they speak {language} (their lines are "Learner 1", "Learner 2"…), or null
-
-{conversation}
-
-Reply with JSON.
+They can't use the microphone right now. In this turn only, add one short English sentence saying the microphone can be turned on in Settings, then carry on.
 ```
 
 ## Changelog
+
+### 2026-11-05: three steps, all in English, everyone starts at Beginner S1
+
+Trial (tests/experiments/welcome-trial.mts, 4 newcomers in each country): English only, the buttons, done and the tap all right; three fixes before shipping: she named all 20 Italian cities (now two or three), refused "how do you say thank you" by mentioning her notes (now she tells them), and Chela said "mijo, mijita" before they'd chosen (now she doesn't guess).
+
+Josh, 2026-11-05: "we need to rewrite the onboarding too, just have a simple assignment. Explain a bit about the country, places, and capture masculine/feminine — the whole thing about benvenuto is confusing, we just need to know which gender to use — we could use the microphone to let people ask questions? still needs done button"; "say masculine or feminine, explain it's part of the language"; "maybe just do you have any questions or are you ready to go". The three goals (name, masculine or feminine, how much they speak), the three moments in the language, Ask again and Read are gone: the name was never given to a character, and everyone now starts at Beginner S1. The steps are counted in code (lib/welcome.ts), not left to her, so the buttons and the done button come at the right turn. The goals script in content/<country>/onboarding.ts is gone with them; the cities come from the city files.
 
 ### 2026-11-03b: no "words to keep"
 

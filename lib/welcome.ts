@@ -1,30 +1,35 @@
 /**
- * The welcome: the newcomer's first conversation (docs/onboarding-giulia.md,
- * docs/onboarding-chela.md; Josh, 2026-11-02; N6 item 3b). A character from
- * the city files (content/<country>/onboarding.ts → welcome) plays it in the
- * Beginner format from her goals (welcome.md → Brief) when the app
- * opens it as the welcome (/v1/turn welcome: true), on the normal
+ * The welcome: the newcomer's first conversation (docs/onboarding-design.md →
+ * The welcome, redone; Josh, 2026-11-05). A character from the city files
+ * (content/<country>/onboarding.ts → welcome) plays it in English when the
+ * app opens it as the welcome (/v1/turn welcome: true), on the normal
  * conversation screen, as a normal recorded conversation: so she remembers
- * the player afterwards like anyone they've met. Its last turn sets `done`
- * and the app shows a button in place of the mic; the button calls
- * finishWelcome, which reads the answers from the whole conversation
- * (welcome.md → Read) and places the learner (lib/path.ts → placement).
+ * the player afterwards like anyone they've met.
+ *
+ * Its steps are counted here, not left to her (welcome.md):
+ * 1. **Opening:** a little about the country and its places, then masculine
+ *    or feminine, explained as part of the language; the learner taps one of
+ *    two buttons (`tapAnswers`: no speech-to-text to mishear).
+ * 2. **Questions:** "do you have any questions, or are you ready to go?", the
+ *    mic open and the done button already showing (`canEnd`).
+ * 3. **Answers:** she answers in English and asks again, the button still
+ *    there; when they say they're ready she says goodbye and sets `done`.
+ * The button calls finishWelcome: the masculine or feminine from the tap, and
+ * Beginner S1 for everyone (docs/dialogue-model.md → Everyone starts at Beginner).
  *
  * Everyone goes through it once, players who already play included: it's
- * done when learners.onboarding has `welcomed`, which only the last button
- * sets (leave partway and it starts again). Settings → start over clears it
+ * done when learners.onboarding has `welcomed`, which only the button sets
+ * (leave partway and it starts again). Settings → start over clears it
  * (lib/onboarding.ts → resetOnboarding). Its prompt version starts with
  * "onboarding", so it gets no record (lib/conversation-record.ts).
  */
-import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL, replyText, WAITING } from '@/lib/claude';
 import { cities, language, onboarding } from '@/content';
 import { query } from '@/lib/db';
 import { readPromptFile, fill } from '@/lib/prompts/template';
 import { finishOnboarding } from '@/lib/onboarding';
 import { chooseAddressedAs, learnerAddressOn } from '@/lib/learner-address';
-import { isSaidBack } from '@/lib/conversation-record';
-import { placement } from '@/lib/path';
+import { readHeard } from '@/lib/dialogue/heard';
+import type { Part } from '@/lib/beginner';
 import type { Turn } from '@/lib/types';
 
 /** Who plays the welcome in this country, where, and the last button's words; null if this country has none */
@@ -43,137 +48,73 @@ export async function welcomed(learnerId: string): Promise<boolean> {
   return r.rows[0]?.welcomed ?? false;
 }
 
-/** The brief added to beginner.md's system prompt for a welcome turn */
-export function welcomeBrief(micOff: boolean): string {
+/** The two buttons (Josh, 2026-11-05: "say masculine or feminine"): interface words, English in every country */
+export const ADDRESS_BUTTONS: Record<'m' | 'f', string> = { m: 'Masculine', f: 'Feminine' };
+
+export type WelcomeStep = 'opening' | 'questions' | 'answers';
+
+/** The step, from how many times the learner has answered (the tap is the first) */
+export function welcomeStep(learnerLines: number): WelcomeStep {
+  return learnerLines === 0 ? 'opening' : learnerLines === 1 ? 'questions' : 'answers';
+}
+
+/** The brief added to beginner.md's system prompt for this step of the welcome */
+export function welcomeBrief(step: WelcomeStep, micOff: boolean): string {
   const f = readPromptFile('welcome.md');
-  // The script's "{their name}" is the learner's, for her to fill from what they said
-  const brief = fill(f.block('Brief'), { appName: language.appName, language: language.name, script: onboarding.welcome.script });
-  return micOff ? `${brief}\n\n${f.block('Mic off')}` : brief;
+  const block = { opening: 'Opening', questions: 'Questions', answers: 'Answers' }[step];
+  const vars = {
+    appName: language.appName,
+    language: language.name,
+    country: language.card.country,
+    // The cities the learner can visit (hidden ones left out)
+    cities: cities.filter((c) => !c.hidden).map((c) => c.name).join(', '),
+    masculine: ADDRESS_BUTTONS.m,
+    feminine: ADDRESS_BUTTONS.f,
+  };
+  const brief = `${fill(f.block('Brief'), vars)}\n\n${fill(f.block(block), vars)}`;
+  return micOff && step !== 'opening' ? `${brief}\n\n${f.block('Mic off')}` : brief;
 }
 
-// address: "unclear" (either, didn't mind) is the feminine without asking
-// again (Josh, 2026-11-02); "none" (never answered) is a goal still missing
-const Read = z.object({
-  name: z.string().nullable(),
-  address: z.enum(['m', 'f', 'unclear', 'none']),
-  speaks: z.boolean().nullable(),
-  levelLine: z.number().nullable(),
-});
-const readJsonSchema = {
-  type: 'object', additionalProperties: false, required: ['name', 'address', 'speaks', 'levelLine'],
-  properties: {
-    name: { type: ['string', 'null'] },
-    address: { type: 'string', enum: ['m', 'f', 'unclear', 'none'] },
-    speaks: { type: ['boolean', 'null'] },
-    levelLine: { type: ['integer', 'null'] },
-  },
-};
+/** The opening's two buttons, as answer parts the app shows to tap */
+export const addressAnswers = (): Part[] => (['m', 'f'] as const).map((g) => ({ kind: 'answer', text: ADDRESS_BUTTONS[g], en: '' }));
 
-/** `askedAgain`: the turn where she asked a missing goal once more (missingGoals) */
-export type StoredTurn = { who: 'npc' | 'learner'; text: string; parts?: { kind: string; text: string }[]; askedAgain?: boolean };
+/** What the app is told about the learner's next turn at this step */
+export function welcomeTurnFlags(step: WelcomeStep): { tapAnswers?: true; canEnd?: true } {
+  return step === 'opening' ? { tapAnswers: true } : { canEnd: true };
+}
 
-/** The masculine or feminine they chose; either, unclear or no answer is the feminine (Josh, 2026-11-02) */
-const addressOf = (a: z.infer<typeof Read>['address']): 'm' | 'f' => (a === 'm' ? 'm' : 'f');
+/** The masculine or feminine from their first line (the tap); anything else is the feminine (Josh, 2026-11-02) */
+export function addressFrom(firstLine: string | undefined): 'm' | 'f' {
+  if (!firstLine) return 'f';
+  return readHeard(firstLine, [ADDRESS_BUTTONS.m]) === 'said-back' && readHeard(firstLine, [ADDRESS_BUTTONS.f]) !== 'said-back' ? 'm' : 'f';
+}
+
+/** The learner's lines so far in this welcome, the one just said included */
+export const learnerLines = (transcript: Turn[], learnerSaid?: string): string[] => [
+  ...transcript.filter((t) => t.who === 'learner').map((t) => t.transcript),
+  ...(learnerSaid ? [learnerSaid] : []),
+];
 
 /**
- * The guard on her last turn (Josh, 2026-11-02): when she sets done, the
- * three goals are read from what they've said; a goal with no answer comes
- * back as what to ask once more ("their name"), or null when all are there
- * or she has already asked once more in this welcome. The answers are read
- * again at the button (finishWelcome), so this only decides whether she asks.
+ * The button: the masculine or feminine they tapped, Beginner S1, and the
+ * welcome marked done.
  */
-export async function missingGoals(turns: StoredTurn[], characterId: string): Promise<string | null> {
-  if (turns.some((t) => t.askedAgain)) return null;
-  const { read } = await readWelcome(turns, characterId);
-  const missing = [
-    !read.name?.trim() && 'their name',
-    read.address === 'none' && 'whether to welcome them in the masculine or the feminine',
-    read.speaks === null && `how much ${language.name} they speak`,
-  ].filter(Boolean);
-  return missing.length ? missing.join(' and ') : null;
-}
-
-/** Learner lines before the check runs: one for each goal (name, masculine or feminine, level) */
-export const WELCOME_GOALS = 3;
-
-/**
- * The brief for this welcome turn. Once they've answered as many times as
- * there are goals, her next turn is likely the closing, so the goals are
- * checked first (a reply can't be redone once its first words have gone
- * out): one still unanswered, and she hasn't asked once more yet, gets
- * **Ask again** added. `askedAgain` marks that turn, so it's once.
- */
-export async function welcomeTurnBrief(p: { conversationId: string | null; learnerId: string; characterId: string; transcript: Turn[]; learnerSaid?: string; micOff: boolean }): Promise<{ brief: string; askedAgain: boolean }> {
-  const turns: StoredTurn[] = [...p.transcript.map((t) => ({ who: t.who, text: t.transcript })), ...(p.learnerSaid ? [{ who: 'learner' as const, text: p.learnerSaid }] : [])];
-  const due = !!p.conversationId && turns.filter((t) => t.who === 'learner').length >= WELCOME_GOALS;
-  const asked = due ? (await query<{ asked: boolean }>(`SELECT turns @> '[{"askedAgain":true}]'::jsonb AS asked FROM conversations WHERE id = $1 AND learner_id = $2`, [p.conversationId, p.learnerId])).rows[0]?.asked === true : false;
-  return welcomeBriefFor({ turns, askedBefore: asked, characterId: p.characterId, micOff: p.micOff });
-}
-
-/** The same without the database: `turns` so far, ending with what they just said (tests/experiments/welcome-trial.mts uses it too) */
-export async function welcomeBriefFor(p: { turns: StoredTurn[]; askedBefore: boolean; characterId: string; micOff: boolean }): Promise<{ brief: string; askedAgain: boolean }> {
-  const brief = welcomeBrief(p.micOff);
-  if (p.askedBefore || p.turns.some((t) => t.askedAgain) || p.turns.filter((t) => t.who === 'learner').length < WELCOME_GOALS) return { brief, askedAgain: false };
-  const missing = await missingGoals(p.turns, p.characterId);
-  return missing ? { brief: `${brief}\n\n${askAgainBrief(missing)}`, askedAgain: true } : { brief, askedAgain: false };
-}
-
-/** What's added to the brief for the turn where she asks once more */
-export function askAgainBrief(missing: string): string {
-  return fill(readPromptFile('welcome.md').block('Ask again'), { missing });
-}
-
-/**
- * The last button: read the answers, place the learner, mark the welcome
- * done. Placement: "fairly well" → Intermediate; "not yet" said back → the
- * path's step 1, in their own words → step 3; no answer → step 1 (when in
- * doubt, Beginner: onboarding-chela.md). "Either", unclear or no answer to
- * masculine or feminine → feminine (Josh, 2026-11-02).
- */
-export async function finishWelcome(learnerId: string, conversationId: string): Promise<{ level: 'beginner' | 'intermediate'; startStep: number; name: string | null }> {
-  const r = await query<{ turns: StoredTurn[]; character_id: string }>('SELECT turns, character_id FROM conversations WHERE id = $1 AND learner_id = $2', [conversationId, learnerId]);
+export async function finishWelcome(learnerId: string, conversationId: string): Promise<{ level: 'beginner'; startStep: number; name: null }> {
+  const r = await query<{ turns: { who: 'npc' | 'learner'; text: string }[] }>('SELECT turns FROM conversations WHERE id = $1 AND learner_id = $2', [conversationId, learnerId]);
   const row = r.rows[0];
   if (!row) throw new Error('No such conversation for this learner');
-  const { read, ownWords, placed } = await readWelcome(row.turns, row.character_id);
-  await finishOnboarding(learnerId, placed.level, {
+  const address = addressFrom(row.turns.find((t) => t.who === 'learner')?.text);
+  const startStep = 1;
+  await finishOnboarding(learnerId, 'beginner', {
     path: 'welcome',
     welcomed: true,
     conversationId,
-    name: read.name,
-    speaks: read.speaks,
-    ownWords,
-    startStep: placed.startStep,
+    startStep,
     // The path starts again from here, whatever was recorded before (lib/conversation-record.ts → pathState)
     placedAt: new Date().toISOString(),
     promptVersion: welcomeVersion(),
   });
-  if (learnerAddressOn()) await chooseAddressedAs(learnerId, addressOf(read.address), read.name ?? undefined);
-  console.log(JSON.stringify({ level: 'info', event: 'welcomed', conversationId, placed: placed.level, startStep: placed.startStep, ownWords, address: addressOf(read.address) }));
-  return { ...placed, name: read.name };
-}
-
-/** What they answered, read from the whole conversation, and where that places them (no database: tests/experiments/welcome-trial.mts uses it too) */
-export async function readWelcome(turns: StoredTurn[], characterId: string): Promise<{ read: z.infer<typeof Read>; address: 'm' | 'f'; ownWords: boolean; placed: ReturnType<typeof placement> }> {
-  const row = { turns };
-  const characterName = cities.flatMap((c) => c.characters ?? []).find((c) => c.id === characterId)?.name ?? 'She';
-  let k = 0;
-  const conversation = row.turns.map((t) => (t.who === 'learner' ? `Learner ${++k}: ${t.text}` : `${characterName}: ${t.text}`)).join('\n');
-  const user = fill(readPromptFile('welcome.md').block('Read'), { language: language.name, country: language.card.country, name: characterName, conversation });
-  const response = await anthropic.messages.create(
-    { model: CLAUDE_MODEL, max_tokens: 3000, messages: [{ role: 'user', content: user }], output_config: { format: { type: 'json_schema', schema: readJsonSchema } } } as Parameters<typeof anthropic.messages.create>[0],
-    WAITING
-  );
-  const read = Read.parse(JSON.parse(replyText(response as Parameters<typeof replyText>[0])));
-
-  // Said back or own words: the line that answered, against the answers shown before it
-  let ownWords = false;
-  if (read.levelLine) {
-    let n = 0;
-    let offered: string[] = [];
-    for (const t of row.turns) {
-      if (t.who === 'npc') { offered = (t.parts ?? []).filter((p) => p.kind === 'answer').map((p) => p.text); continue; }
-      if (++n === read.levelLine) { ownWords = !isSaidBack(t.text, offered); break; }
-    }
-  }
-  return { read, address: addressOf(read.address), ownWords, placed: placement({ speaks: read.speaks === true, ownWords }) };
+  if (learnerAddressOn()) await chooseAddressedAs(learnerId, address);
+  console.log(JSON.stringify({ level: 'info', event: 'welcomed', conversationId, placed: 'beginner', startStep, address }));
+  return { level: 'beginner', startStep, name: null };
 }

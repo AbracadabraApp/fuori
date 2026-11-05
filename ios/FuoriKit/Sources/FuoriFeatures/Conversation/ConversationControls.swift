@@ -42,9 +42,13 @@ struct ConversationControls: View {
                                      onSay: model.answersAreButtons ? { answer in Task { await model.sayAnswer(answer) } } : nil)
                             .transition(.opacity)
                     }
-                    if model.phase == .finished, let go = model.endButton {
+                    // The end button: in place of the mic at the end; beside it
+                    // (above) when they can go any time, as after the welcome's tap
+                    if model.showsEndButton, let go = model.endButton {
                         goButton(go)
-                    } else {
+                    }
+                    // Masculine or feminine is a tap: no mic on that turn
+                    if model.phase != .finished, !model.tapAnswers {
                         controls
                     }
                 }

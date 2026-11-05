@@ -102,12 +102,6 @@ export const onboarding = {
     /** Josh, 2026-11-02: Luisa Cocco, the barista at Roma nuova's morning bar,
      *  in place of the script's Giulia, who lives in the hidden original Rome */
     characterId: 'luisa-cocco-nuova',
-    /** Her three goals (Josh, 2026-11-02 and 11-03: a brief, not a script;
-     *  the lines are suggestions, except the three moments in Italian). welcome.md wraps them */
-    script: `1. Their name. Hello and the name question in Italian: "Ciao! Io sono Luisa." (Hi! I'm Luisa.) and "Come ti chiami?" (What's your name?), with the answer to offer "Mi chiamo …".
-2. Masculine or feminine. React to their name in English (nice to meet you), then one English sentence: in Italian, words change for men and women, even "welcome". Then ask in Italian "Benvenuto o benvenuta?" (Benvenuto or benvenuta?), with the answers "Benvenuto." and "Benvenuta.".
-3. How much Italian they speak. React in English, then ask in Italian "Parli italiano?" (Do you speak Italian?), with the answers "Non ancora." and "Sì, abbastanza bene.".
-Then close, in English only: every city has people to meet, and they can ask for help in English anytime. No question and no answers in the closing.`,
     go: { line: 'Andiamo!', en: "Let's go!" },
   },
 };

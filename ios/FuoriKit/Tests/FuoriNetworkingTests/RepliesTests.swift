@@ -44,6 +44,19 @@ import Testing
         #expect(line.send == nil)
     }
 
+    /// The welcome (lib/welcome.ts): the opening's answers are taps; after the
+    /// tap the end button shows beside the mic. Both absent elsewhere
+    @Test func readsWelcomeFlags() throws {
+        let opening = Data(#"{"line":"Hi!","en":"","conversationId":"c","promptVersion":"v","tapAnswers":true,"parts":[{"kind":"answer","text":"Masculine","en":""},{"kind":"answer","text":"Feminine","en":""}]}"#.utf8)
+        let questions = Data(#"{"line":"Any questions?","en":"","conversationId":"c","promptVersion":"v","canEnd":true}"#.utf8)
+        let plain = Data(#"{"line":"Ciao","en":"Hi","conversationId":"c","promptVersion":"v"}"#.utf8)
+        let a = try JSONDecoder().decode(APIClient.TurnReply.self, from: opening)
+        #expect(a.tapAnswers == true && a.canEnd == nil && a.parts?.map(\.text) == ["Masculine", "Feminine"])
+        #expect(try JSONDecoder().decode(APIClient.TurnReply.self, from: questions).canEnd == true)
+        let c = try JSONDecoder().decode(APIClient.TurnReply.self, from: plain)
+        #expect(c.tapAnswers == nil && c.canEnd == nil)
+    }
+
     /// From Intermediate no line to read: the server says what goes to the character
     @Test func readsSayItSend() throws {
         let body = Data(#"{"sendAsSaid":true,"line":"","en":"","send":"What does ribollita mean?","promptVersion":"v"}"#.utf8)

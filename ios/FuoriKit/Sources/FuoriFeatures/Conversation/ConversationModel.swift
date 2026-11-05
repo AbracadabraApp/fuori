@@ -167,7 +167,19 @@ public final class ConversationModel {
 
     /// Answers as buttons that send the line, where reading aloud can't work:
     /// VoiceOver (it would be recorded) or the mic off
-    public var answersAreButtons: Bool { isVoiceOverRunning || phase == .micDenied || phase == .choosing }
+    public var answersAreButtons: Bool { isVoiceOverRunning || phase == .micDenied || phase == .choosing || tapAnswers }
+
+    /// The welcome's opening: masculine or feminine is a tap, never the mic
+    /// (lib/welcome.ts: no speech-to-text to mishear)
+    public private(set) var tapAnswers = false
+    /// The welcome after the tap: the end button shows beside the mic while
+    /// it's the learner's turn ("do you have any questions, or are you ready to go?")
+    public private(set) var canEnd = false
+    /// The end button shows: in place of the mic at the end, or beside it when they can go any time
+    public var showsEndButton: Bool {
+        guard endButton != nil else { return false }
+        return phase == .finished || (canEnd && [.tapToTalk, .listening, .hearing, .micDenied].contains(phase))
+    }
 
     /// The answers panel shows from the learner's turn until the character answers
     public var showsAnswers: Bool {
@@ -285,6 +297,8 @@ public final class ConversationModel {
     private func present(_ reply: APIClient.TurnReply, generation: Int) async {
         guard generation == self.generation else { return }
         if endButton != nil, reply.done == true { finished = true }
+        tapAnswers = reply.tapAnswers == true
+        canEnd = endButton != nil && reply.canEnd == true
         scaffolding = reply.replies == true
         // An older server sends no stage (or "tap", now gone): two good answers
         stage = scaffolding ? (reply.stage.flatMap(Stage.init(rawValue:)) ?? .read) : nil
@@ -518,7 +532,7 @@ public final class ConversationModel {
             // Otherwise the answers fill the panel above the usual mic
             Task { await self.loadReplies() }
         }
-        if tapMode || micClosed {
+        if tapMode || micClosed || tapAnswers {
             phase = .tapToTalk
             return
         }
@@ -916,9 +930,19 @@ public final class ConversationModel {
     /// lesson: the next part), then the conversation is saved and the app moves on
     public private(set) var finishing = false
     public func finishEnding() async {
-        guard phase == .finished, !finishing, let onEnd else { return }
+        guard showsEndButton, !finishing, let onEnd else { return }
         finishing = true
         note = nil
+        // Tapped while the mic was open: what they were saying isn't sent
+        if phase != .finished {
+            generation += 1
+            listenTask?.cancel()
+            listenTask = nil
+            recorder.stop("end button")
+            ring = 0
+            level = 0
+            phase = .finished
+        }
         do {
             try await onEnd(self)
         } catch {

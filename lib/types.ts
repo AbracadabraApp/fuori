@@ -282,6 +282,8 @@ export interface TurnOutput {
   parts?: import('@/lib/beginner').Part[];
   /** The welcome (lib/welcome.ts): its last turn; the app shows the button in place of the mic */
   done?: boolean;
-  /** The welcome: the turn where she asked a missing goal once more (stored, so it's once) */
-  askedAgain?: boolean;
+  /** The welcome's opening: the answers are buttons to tap, and the mic stays closed */
+  tapAnswers?: boolean;
+  /** The welcome after the tap: the end button shows beside the mic, so they can go any time */
+  canEnd?: boolean;
 }

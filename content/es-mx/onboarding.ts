@@ -89,16 +89,10 @@ export const onboarding = {
     go: { line: '¡Vámonos!', en: "Let's go!" },
   },
   /** The welcome (docs/onboarding-chela.md; Josh, 2026-11-02): a character from the city files
-   *  plays it from content/es-mx/prompts/welcome.md, once for everyone; its last
-   *  turn ends on this button, not the mic */
+   *  plays it from content/es-mx/prompts/welcome.md, once for everyone, in three
+   *  steps (lib/welcome.ts); it ends on this button */
   welcome: {
     characterId: 'chela-chapulines',
-    /** Her three goals (Josh, 2026-11-02 and 11-03: a brief, not a script;
-     *  the lines are suggestions, except the three moments in Spanish). welcome.md wraps them */
-    script: `1. Their name. Hello and the name question in Spanish: "¡Hola! Me dicen Doña Chela." (Hi! People call me Doña Chela.) and "¿Cómo te llamas?" (What's your name?), with the answer to offer "Me llamo …".
-2. Masculine or feminine. React to their name in English (nice to meet you), then one English sentence: in Spanish, words change for men and women, even "welcome". Then ask in Spanish "¿Bienvenido o bienvenida?" (Bienvenido or bienvenida?), with the answers "Bienvenido." and "Bienvenida.".
-3. How much Spanish they speak. React in English, then ask in Spanish "¿Hablas español?" (Do you speak Spanish?), with the answers "Todavía no." and "Sí, bastante bien.".
-Then close, in English only: every city has people to meet, and they can ask for help in English anytime. No question and no answers in the closing.`,
     go: { line: '¡Vámonos!', en: "Let's go!" },
   },
 };
