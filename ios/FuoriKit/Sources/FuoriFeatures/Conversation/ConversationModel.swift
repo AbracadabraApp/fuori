@@ -227,8 +227,10 @@ public final class ConversationModel {
         return parts.filter(\.isAnswer)
     }
 
-    /// Speed as on the web: slower with English on
-    private var speed: Double { UserDefaults.standard.bool(forKey: SettingsKey.english) ? 0.7 : 0.9 }
+    /// Slower for a Beginner (Settings: "People speak slowly"), set by the level,
+    /// not the English switch (Josh, 2026-11-05: "separate, speed"). The welcome
+    /// keeps the usual speed, as before: no level is set yet when it plays.
+    private var speed: Double { beginner && !welcome ? 0.7 : 0.9 }
 
     /// This conversation is the welcome (lib/welcome.ts): the server plays it
     /// from the agreed script, and its last turn ends on a button

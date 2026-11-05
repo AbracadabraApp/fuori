@@ -86,6 +86,7 @@ struct SettingsSheet: View {
     @AppStorage(SettingsKey.debug) private var debug = false
     @Environment(\.dismiss) private var dismiss
     @State private var confirmingRestart = false
+    private static let showsSubtitles = false
 
     private enum Level: String, CaseIterable, Identifiable {
         case beginner = "Beginner", intermediate = "Intermediate", advanced = "Advanced"
@@ -159,6 +160,10 @@ struct SettingsSheet: View {
                 }
                 // No masculine/feminine row (Josh, 2026-10-23: removed
                 // entirely); it's chosen in the orientation tour
+                // Subtitles hidden for now (Josh, 2026-11-05: "lets hide subtitles
+                // in settings for now"): a Beginner's bubbles ignore both switches,
+                // so they did nothing there. The level still sets them (applyDefaults).
+                if Self.showsSubtitles {
                 Section {
                     Toggle("Show \(language) words", isOn: $subtitles)
                     Toggle("Show English translation", isOn: $english)
@@ -169,6 +174,7 @@ struct SettingsSheet: View {
                     Text("Subtitles")
                 } footer: {
                     Text("Set for your level; change them any time.")
+                }
                 }
                 // Restart, below the subtitles (Josh, 2026-10-23): a new player
                 // in this country, after a confirmation

@@ -163,7 +163,7 @@ public final class AppModel {
     static let greeterTour = false
 
     /// Onboarding done: start with the settings for the level
-    /// (SettingsKey.applyDefaults; English on also slows the voice). The
+    /// (SettingsKey.applyDefaults; a Beginner's voices are slower, by level). The
     /// learner can change them in Settings.
     private func finishOnboarding(level: String) {
         self.level = level
