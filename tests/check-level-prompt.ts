@@ -6,6 +6,7 @@ import { join } from 'path';
 import { cities, pack } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
+import { withDialogueRules } from '@/lib/dialogue/rules';
 
 const failures: string[] = [];
 const md = readFileSync(join(process.cwd(), 'content', pack.id, 'prompts', 'levels.md'), 'utf8');
@@ -33,9 +34,9 @@ const atLast = buildTurnPrompt({ character, transcript: [], level: blocks[0], le
 if (atLast.system !== plain.system) failures.push('levelAt last should leave the system prompt unchanged');
 if (!atLast.messages[atLast.messages.length - 1].content.startsWith('(')) failures.push('levelAt last should open the newest message');
 
-// Magda's own prompt never gets the block
+// Magda's own prompt never gets the block; it does get the shared dialogue rules (lib/dialogue)
 const magda = buildTurnPrompt({ character, transcript: [], system: 'X', level: blocks[0] });
-if (magda.system !== 'X') failures.push("a level block was added to Magda's prompt");
+if (magda.system !== withDialogueRules('X')) failures.push("a level block was added to Magda's prompt");
 
 if (failures.length) { console.error(failures.join('\n')); process.exit(1); }
 console.log(`OK: ${blocks.length} level blocks (${blocks.join(', ')}); no level leaves the prompt unchanged`);
