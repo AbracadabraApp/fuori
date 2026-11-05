@@ -26,3 +26,23 @@ Josh, 2026-11-04: "its ok not to get corrected all the time - also when that cor
 Josh, 2026-11-04: "Lorenzo's voice seemed to shift between two people". Each line is voiced in two parts (the first sentence early, for speed, then the rest), and the second part already gets the first part's text (`previous_text`). Re-voicing four of his lines: the two parts are within 3 dB in loudness; pitch not measured.
 
 - **Claude's proposal:** if listening to the clip pairs confirms the shift is at the join, try a steadier voice setting (stability 0.5 → about 0.7), at some cost to liveliness.
+
+## "Say this" adds things the learner didn't say
+
+Josh, 2026-11-04: "with Lorenzo corrected to say something I didn't want to say - that this was my first time in Italy"; earlier, "when that correction line comes up it doesn't always hear well". The line is "say it in English"'s *say this* (`format=sayit` in the admin route).
+
+Two examples from his Florence evening (learner 3c544022):
+- 04:30 UTC, Lorenzo had asked "è la prima volta in Italia?". Josh answered in Italian (roughly "Piove come Londra… molto per qualche mese, ma non per un anno"); the English hearing came back as "The city is a little bit like London…". Shown: "Sì, è la prima volta. Seattle è un po' come Londra: piove molto, ma qui c'è il sole!": it answered Lorenzo's question for him, wrongly.
+- 04:24 UTC, trattoria: heard "And now it's time to ask." Shown: "Mi scusi, posso farle una domanda?", which he didn't mean.
+
+Two problems, each needing more examples before any change (Josh: "add everything to your list until you have more examples"):
+1. It fires on mishearings: Josh was speaking Italian, and speech-to-text turned it into English.
+2. It adds content: even when the hearing is right, *say this* should put the learner's own words into the language, never answer the character's question for them.
+
+## A correction for something the learner said right
+
+Josh, 2026-11-04: "i got corrected with the ribollita". The transcript has "Si, vorrei la ribaletta" (speech-to-text) and Ardit's recast "Ribollita, ottima scelta!". If Josh said it right, the recast corrected a mishearing. Collect more examples before deciding anything.
+
+## Long replies in open-ended talk
+
+Lorenzo, Piazza Santa Croce, 2026-11-04: median reply 28.5 words (Ardit at the trattoria: 14). Observed by Claude, not raised by Josh; listed to see whether it comes up in more conversations.
