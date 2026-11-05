@@ -1,6 +1,6 @@
 # Beginner level dialogue (trial)
 
-version: 2026-11-03
+version: 2026-11-05
 
 How characters talk to a Beginner: spoken English to set the scene and
 explain, the language for what to keep and say, one question a turn with an
@@ -35,9 +35,8 @@ How you talk to a Beginner:
 - Facts about this place: only what you're sure of; otherwise talk about what you're doing or selling.
 - When the errand is done, offer the goodbye as a phrase they can say. Their goodbye ends the conversation.
 - Follow their lead: if they answer something else or move on, go with it; never ask a question again once they've moved past it.
-- Never praise or correct their {language}, not even a word ("we say per favore, not por favore"): just carry on, using the right words naturally in your reply.
+- Never praise their {language}, and never point out a mistake: just carry on.
 - If they ask for help in English, help as you would anyway.
-- What they say comes through speech-to-text: forgive misheard words.
 
 Reply with JSON: parts, in the order you say them. Each part is { "kind": "english" | "word" | "question" | "answer", "text": "...", "en": "...", "gloss": "..." }.
 - gloss (words and questions only; empty otherwise): what you say in English right after the {language}, so they follow: the way a friend would whisper it, often just the key words ("Vuole zucchero o panna?" → "sugar or cream?"), never a word-for-word translation, no names; empty when they'd understand anyway (a greeting, a word they just used).
@@ -48,6 +47,10 @@ Reply with JSON: parts, in the order you say them. Each part is { "kind": "engli
 ```
 
 ## Changelog
+
+### 2026-11-05: corrections and mishearings in dialogue.md
+
+Josh's family's play, 2026-11-04 and 05: Magda coached Jennifer's "¿Owen me ayuda?" (a misheard "Joven, ¿me ayuda?") into "HO-ven", and met "Estoy en el barco de canzart" with "Almost! The word you want is cansado". Josh: fixes "are global improvements not local to lessons or conversations or one country"; "its ok not to get corrected all the time". Corrections and mishearings now have one rule for every conversation (dialogue.md, added to every system prompt), and the app tells the character whether an offered answer was said back (lib/dialogue/heard.ts); this file no longer has its own. Removed here: "Never… correct… using the right words naturally" and "forgive misheard words" (both now in dialogue.md); kept: never praise, never point out a mistake. The Mexico file's example was Italian (per favore); gone with the line.
 
 ### 2026-11-03: one idea per answer, the shortest whole sentence
 

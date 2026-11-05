@@ -786,7 +786,7 @@ public final class ConversationModel {
             // Already in the language (Whisper mislabelled it) or too unclear
             // to tell: it goes to her as said. When in doubt, the character
             if line.sendAsSaid == true || line.line.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                let said = asLearned.flatMap { Heard.hasWords($0) ? $0 : nil } ?? english
+                let said = line.send.flatMap { Heard.hasWords($0) ? $0 : nil } ?? asLearned.flatMap { Heard.hasWords($0) ? $0 : nil } ?? english
                 debug.heard = (debug.heard ?? "") + " → to her as said: \(said)"
                 try await sendTurn(said, generation: generation)
                 return

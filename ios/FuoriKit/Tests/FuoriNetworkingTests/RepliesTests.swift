@@ -41,5 +41,13 @@ import Testing
         let body = Data(#"{"line":"Vorrei un caffè.","en":"I'd like a coffee.","promptVersion":"v"}"#.utf8)
         let line = try JSONDecoder().decode(APIClient.SayItLine.self, from: body)
         #expect(line.line == "Vorrei un caffè." && line.en == "I'd like a coffee.")
+        #expect(line.send == nil)
+    }
+
+    /// From Intermediate no line to read: the server says what goes to the character
+    @Test func readsSayItSend() throws {
+        let body = Data(#"{"sendAsSaid":true,"line":"","en":"","send":"What does ribollita mean?","promptVersion":"v"}"#.utf8)
+        let line = try JSONDecoder().decode(APIClient.SayItLine.self, from: body)
+        #expect(line.sendAsSaid == true && line.send == "What does ribollita mean?")
     }
 }

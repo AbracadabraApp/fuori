@@ -178,6 +178,8 @@ export interface Turn {
   transcript: string;
   understood?: string;
   translation?: string;
+  /** A character's turn: the answers to say back she offered, as shown (Beginner parts; lib/dialogue/heard.ts) */
+  offered?: string[];
 }
 
 export interface SceneRun {

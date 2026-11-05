@@ -1,6 +1,6 @@
 # Say it in English: the line to read
 
-version: 2026-10-29
+version: 2026-11-05
 
 The learner said something in English during a conversation (Josh,
 2026-10-23: "say it in English, get this language back, read it"). This
@@ -24,7 +24,7 @@ Judge only their own last line. {name}'s lines may mix English with {language} (
 Speech-to-text sometimes translates a learner's {language} into English instead of writing it down. So you may also get the same recording heard as {language}. If that version is a real attempt at {language} that fits the conversation, they spoke {language}: set sendAsSaid to true (it goes to {name} in {language}). Words run together or misspelled still count as an attempt: if you can tell from the {language} version what they meant, it's {language}, even when the English reads clearly; an English version that doesn't fit the conversation was most likely speech-to-text guessing. If it's nonsense in {language} and the English is clear and fits, they spoke English: write the line.
 
 - Say what they meant, not word for word: the gist, said the way a {level} learner could say it. Something complicated becomes simple; rambling becomes its point. If they said several things, say the one that matters most right now. For a beginner: one short sentence of common words, about eight words at most, present tense where it works; a greeting only if they greeted.
-- It fits the conversation: it answers or follows {name}'s last line, and speaks to {name} the way a newcomer politely would ({formality}).
+- Only what they said: never answer {name}'s question for them or add anything they didn't say. It speaks to {name} the way a newcomer politely would ({formality}).
 - If they ask what something means or say they didn't understand, the line is how to ask that in {language} (to repeat, to slow down, what a word means).
 - Natural, correct {language}, never a mix of languages. Nothing else: no quotes, no notes.
 
@@ -34,6 +34,10 @@ sendAsSaid: true when there's no line to write (then line and en are empty). lin
 - `{language}`: the language being learned; `{name}`, `{role}`: the character's; `{level}`: beginner, intermediate or advanced; `{formality}`: the language's polite form, from content
 
 ## Changelog
+
+### 2026-11-05: only what they said
+
+Josh, 2026-11-05, Florence: Lorenzo asked "è la prima volta in Italia?"; Josh's Italian came back from Whisper as English ("The city is a little bit like London…") and the line to read began "Sì, è la prima volta", which he hadn't said ("corrected to say something I didn't want to say"). The cause was the line "It fits the conversation: it answers or follows {name}'s last line". Now the line is only what they said, never an answer to her question. Also from today: the line is for Beginners only (app/v1/say-it; Josh: "corrections bubbles are beginner only").
 
 ### 2026-10-29: an Italian example
 

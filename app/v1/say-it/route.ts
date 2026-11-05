@@ -51,7 +51,14 @@ export async function POST(request: Request) {
 
     try {
       const started = Date.now();
-      const line = await writeSayIt(parsed.character, transcript, heard, level, heardAsLearned);
+      const written = await writeSayIt(parsed.character, transcript, heard, level, heardAsLearned);
+      // The "say this" line is for Beginners only (Josh, 2026-11-05: "corrections bubbles are beginner only").
+      // From Intermediate the turn goes to the character as said, and she helps in English as asked
+      // (CLAUDE.md). `send` says what she gets: the English when they spoke English, the hearing in
+      // the language when it was really the language (Whisper mislabels it). Apps before `send` use
+      // the hearing in the language whenever there is one.
+      const beginner = level === 'beginner' || level === null;
+      const line = beginner ? written : { sendAsSaid: true, line: '', en: '', send: written.sendAsSaid ? (heardAsLearned?.trim() || heard) : heard };
       // Every decision kept, to measure routing on real play (lib/say-it-log.ts)
       try {
         await saveSayIt({ learnerId, conversationId: conversationId ?? null, heard: heardAsLearned ? `${heard} | as the language: ${heardAsLearned}` : heard, sendAsSaid: line.sendAsSaid, line: line.line, ms: Date.now() - started, promptVersion: sayItPromptVersion() });

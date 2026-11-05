@@ -76,7 +76,8 @@
     "test:turn-request": "tsx tests/check-turn-request.ts",
     "test:app-log": "tsx tests/check-app-log.ts",
     "test:app-version": "tsx tests/check-app-version.ts",
-    "style-test": "node --env-file-if-exists=.env.local scripts/style-test.mjs"
+    "style-test": "node --env-file-if-exists=.env.local scripts/style-test.mjs",
+    "test:dialogue": "tsx tests/check-dialogue.ts && COUNTRY=es-mx tsx tests/check-dialogue.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

@@ -9,6 +9,7 @@
 import { readPromptFile, fill } from './template';
 import { language } from '@/content';
 import type { CharacterSheet, Gender, Turn } from '../types';
+import { withDialogueRules } from '@/lib/dialogue/rules';
 
 /** What the character remembers about this learner (from character_memories) */
 export interface RememberedLearner {
@@ -160,7 +161,9 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
         formality: language.formality[character.speech.formality],
       })
     : '';
-  const withLevel = levelBlock && params.levelAt !== 'last' ? `${system}\n\n${levelBlock}` : system;
+  // The rules every conversation follows (docs/dialogue-model.md), whatever prompt this is
+  const ruled = withDialogueRules(system);
+  const withLevel = levelBlock && params.levelAt !== 'last' ? `${ruled}\n\n${levelBlock}` : ruled;
   const levelled = params.brief ? `${withLevel}\n\n${params.brief}` : withLevel;
 
   const messages: PromptMessage[] =

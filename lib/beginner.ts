@@ -20,6 +20,8 @@ import { loadTemplate, relationshipLine, personLine, type RememberedLearner } fr
 import { cities, language } from '@/content';
 import type { CharacterSheet, Gender, Turn } from '@/lib/types';
 import type { Laps } from '@/lib/timing';
+import { withDialogueRules, heardNote } from '@/lib/dialogue/rules';
+import { readHeard } from '@/lib/dialogue/heard';
 
 export const PART_KINDS = ['english', 'word', 'question', 'answer'] as const;
 export type PartKind = (typeof PART_KINDS)[number];
@@ -216,7 +218,9 @@ export function buildBeginnerPrompt(p: {
     language: language.name,
     formality: `the polite form ("${language.formality.formal}") unless you already use the familiar one ("${language.formality.informal}")`,
   });
-  const system = p.stageText ? `${base}\n\n${p.stageText}` : base;
+  // The rules every conversation follows, then the stage's or the kind's brief (docs/dialogue-model.md)
+  const ruled = withDialogueRules(base);
+  const system = p.stageText ? `${ruled}\n\n${p.stageText}` : ruled;
   // The conversation so far as plain lines; two in a row from one side become one message
   const messages: { role: 'user' | 'assistant'; content: string }[] = [];
   const push = (role: 'user' | 'assistant', content: string) => {
@@ -226,7 +230,12 @@ export function buildBeginnerPrompt(p: {
   };
   push('user', '(The person has just come in.)');
   for (const turn of p.transcript) push(turn.who === 'npc' ? 'assistant' : 'user', turn.transcript);
-  if (p.learnerSaid) push('user', p.learnerSaid);
+  if (p.learnerSaid) {
+    // Whether they said back one of the answers she offered, worked out here, not by her (lib/dialogue/heard.ts)
+    const lastNpc = [...p.transcript].reverse().find((t) => t.who === 'npc');
+    const heard = readHeard(p.learnerSaid, lastNpc?.offered ?? []);
+    push('user', heard ? `${p.learnerSaid}\n${heardNote(heard)}` : p.learnerSaid);
+  }
   return { system, messages };
 }
 

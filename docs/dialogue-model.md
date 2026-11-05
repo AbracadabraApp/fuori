@@ -76,3 +76,14 @@ doc "The dialogue model" (https://claude.ai/artifact/XvRja1uP7z4L8WxieCU44R).
 - **The screen:** subtitles or bubbles, and what the subtitle line shows. Josh
   is working this out; the one global subtitle setting is hidden in Settings
   for now (2026-11-05).
+
+## How the code is organised (Claude, 2026-11-05; Josh: "think about ways the code should be written to make changes to dialogue issues consistent as well as changes to dialogue scaffolding")
+
+Today `lib/conversation/take-turn.ts` picks one of five prompt paths by kind of conversation, and each path's prompt file carries its own rules about English, answers and corrections, so a fix in one never reaches the others. The target:
+
+- **`lib/dialogue/`: the one place dialogue behaviour lives.**
+  - `rules.ts` with `content/<country>/prompts/dialogue.md`: the rules that hold in every conversation (corrections, mishearings, and later questions and answers by level), added to every system prompt by one function. A fix to how characters handle the learner goes here, once.
+  - `heard.ts`: reads what the learner said against what was offered (any language, no phrase list) and adds a short note to their message for the character. The said-back fact.
+  - `level.ts` (later): the learner's place on the path resolved once, setting the reply form (parts or a line), the stage blocks and the answer limit. Scaffolding changes go here and reach every kind.
+- **Kinds supply briefs only:** a lesson, a cultural story or the welcome gives its topic and when it ends; its prompt file says nothing about English, answers or corrections.
+- **A test** builds the prompt for every kind and checks the shared rules are in each, so a new kind or a new prompt can't miss them.

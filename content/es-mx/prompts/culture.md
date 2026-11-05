@@ -1,6 +1,6 @@
 # Cultural lessons
 
-version: 2026-11-04c
+version: 2026-11-05
 
 Cultural lessons (docs/culture.md → Cultural lessons; Josh, 2026-11-03): one
 particular thing about a city, told by the shown person whose pride it is, in
@@ -61,7 +61,7 @@ They're a Beginner: everything about how you talk to a Beginner holds, with the 
 ## Story: speaking
 
 ```
-Tell it in simple, clear {language} they can follow; English only if they ask or are lost. Use the words the story turns on ({words}) as they come up, the way you always would; never point one out as something to learn or remember. When they get something wrong, use the right form yourself as you react, the way a friend would, without pointing it out or explaining it.
+Tell it in simple, clear {language} they can follow; English only if they ask or are lost. Use the words the story turns on ({words}) as they come up, the way you always would; never point one out as something to learn or remember.
 ```
 
 ## Story: last turn
@@ -87,3 +87,7 @@ Josh asked whether the lessons had the right shape and spirit, then "fix all the
 - **Beginner lessons were about 80% English.** The Story brief opened with "the rules above about the conversation don't apply in it", which also switched off the Beginner rules (English at most two short sentences a turn, phrases in the language). That line is gone; the turn may be a little longer since they asked to listen. The Beginner part says the Beginner rules hold, the English carries the story in at most three short sentences, and every turn has one line of the story in the language as a word part.
 - **The ombra item was about wine**, with the teller offering "la tua prima ombra"; wine bars are hidden as not appropriate for all ages (Josh, 2026-10-27). Pick and Choose now leave out alcohol; the ombra, ricciarelli-with-vin-santo and mezcal items were dropped from culture.json.
 - **Dates and names a listener can't hold** (1325, the Madonna di Provenzano): the teller now leaves them out.
+
+### 2026-11-05: corrections in dialogue.md
+
+Josh's family's play, 2026-11-04 and 05: Magda coached Jennifer's "¿Owen me ayuda?" (a misheard "Joven, ¿me ayuda?") into "HO-ven", and met "Estoy en el barco de canzart" with "Almost! The word you want is cansado". Josh: fixes "are global improvements not local to lessons or conversations or one country"; "its ok not to get corrected all the time". Corrections and mishearings now have one rule for every conversation (dialogue.md, added to every system prompt), and the app tells the character whether an offered answer was said back (lib/dialogue/heard.ts); this file no longer has its own. Removed: the speaking part's recast line (dialogue.md has the same rule, for every conversation).

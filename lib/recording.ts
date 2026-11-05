@@ -102,13 +102,17 @@ export async function recordTurn(p: RecordTurnParams): Promise<string | null> {
  */
 export async function loadConversationTurns(conversationId: string, learnerId: string): Promise<Turn[] | null> {
   await savesDone(conversationId);
-  const result = await query<{ turns: { who: 'npc' | 'learner'; text: string; en?: string }[] }>(
+  const result = await query<{ turns: { who: 'npc' | 'learner'; text: string; en?: string; parts?: { kind: string; text: string }[] }[] }>(
     'SELECT turns FROM conversations WHERE id = $1 AND learner_id = $2',
     [conversationId, learnerId]
   );
   const row = result.rows[0];
   if (!row) return null;
-  return row.turns.map((t) => ({ who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}) }));
+  return row.turns.map((t) => {
+    // The answers she offered, so the next turn can tell whether they were said back (lib/dialogue/heard.ts)
+    const offered = (t.parts ?? []).filter((x) => x.kind === 'answer').map((x) => x.text);
+    return { who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}), ...(offered.length ? { offered } : {}) };
+  });
 }
 
 /** Mark a conversation as ended (the learner left the screen). Never throws. */

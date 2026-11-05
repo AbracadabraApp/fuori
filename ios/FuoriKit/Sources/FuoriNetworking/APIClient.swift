@@ -362,6 +362,12 @@ public actor APIClient {
         public let sendAsSaid: Bool?
         public let line: String
         public let en: String
+        /// With sendAsSaid: what goes to the character, chosen by the server (the
+        /// English when they spoke English, the hearing in the language when it
+        /// was the language). From Intermediate there's no line to read (Josh,
+        /// 2026-11-05: "corrections bubbles are beginner only"). Nil from a
+        /// server before 2026-11-05: the app picks, as before
+        public var send: String? = nil
     }
 
     /// POST /v1/say-it: what the learner said in English on their turn → the
