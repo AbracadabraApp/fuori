@@ -50,16 +50,23 @@ doc "The dialogue model" (https://claude.ai/artifact/XvRja1uP7z4L8WxieCU44R).
      never answers the character's question for them (cause: say-it.md, "it
      answers or follows {name}'s last line"; Lorenzo, 2026-11-05).
 
+- **Answers to say back** (Claude's proposal; Josh, 2026-11-05: "fine"): the
+  question decides the form, two real choices or a frame about the learner;
+  never a single answer to read out (it can put words in their mouth); the
+  stages fade the help (S1 the most, S4 none); the character models the
+  sentence in her own line. In Magda's teaching she says the phrase and the
+  learner repeats it, not an answer bubble. Replaces S1 two answers, S2 one,
+  S3 a frame (never chosen as such).
+- **English in answer bubbles** (Claude's proposal; Josh, 2026-11-05: "fine"):
+  every answer bubble shows its English under the Italian, always; it goes
+  when answers go (S4). Style: light italic (Josh: "light italics or
+  parentheses or both"; Claude: italic in the muted ink, no parentheses, at
+  least 4.5:1 contrast).
+
 ## Not decided yet
 
-- **Answers to say back.** Proposal (Claude, 2026-11-05): the question decides
-  the form (two real choices, or a frame about the learner), never a single
-  answer to read out (it can put words in their mouth), the stages fade the
-  help, and the character models the sentence in her own line. Magda's
-  teaching: she says the phrase and the learner repeats it, not an answer
-  bubble. Today: S1 two answers, S2 one, S3 a frame, never chosen as such.
-- **Whether English is needed** under answers, or at S4 (today an English line
-  under hers), or anywhere on screen.
+- **Whether English is needed** anywhere else on screen: at S4 (today an
+  English line under hers) or under her lines at any level.
 - **The screen:** subtitles or bubbles, and what the subtitle line shows. Josh
   is working this out; the one global subtitle setting is hidden in Settings
   for now (2026-11-05).
