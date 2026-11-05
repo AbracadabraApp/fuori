@@ -359,7 +359,7 @@ Prompted by `outdoors`: other facts on places and people that could matter. **Th
 ## Dropped in the brainstorm
 
 - **Day trips: parked, nothing to do now (Josh).** Every city file has a `dayTrips` list (Bologna to Modena for balsamic vinegar, Napoli to Pompei) that no code reads. A character offering to take the learner there would be a day out of the city; left for later.
-- a city calendar of feast days (Josh: "you have to be at the right place at the right time"), time of day and day of the week (Josh: "not going to hit most users"), anything in the Diario (it isn't built).
+- a city calendar of feast days (Josh: "you have to be at the right place at the right time"), time of day (Josh: "not going to hit most users"; the day of the week and the month came back on 2026-11-05: characters know them, `lib/today.ts`), anything in the Diario (it isn't built).
 
 ## Open questions
 

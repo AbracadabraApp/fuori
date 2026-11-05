@@ -6,6 +6,8 @@ export const language = {
   code: 'it',
   name: 'Italian',
   speechLang: 'it-IT',
+  /** The country's clock, for the day of the week and the month characters know (lib/today.ts) */
+  timeZone: 'Europe/Rome',
 
   /** The app's name in this country (header, messages) */
   appName: 'Fuori',

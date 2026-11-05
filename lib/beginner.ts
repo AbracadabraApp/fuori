@@ -22,6 +22,7 @@ import type { CharacterSheet, Gender, Turn } from '@/lib/types';
 import type { Laps } from '@/lib/timing';
 import { withDialogueRules, heardNote } from '@/lib/dialogue/rules';
 import { readHeard } from '@/lib/dialogue/heard';
+import { withToday } from '@/lib/today';
 
 export const PART_KINDS = ['english', 'word', 'question', 'answer'] as const;
 export type PartKind = (typeof PART_KINDS)[number];
@@ -212,7 +213,7 @@ export function buildBeginnerPrompt(p: {
     name: character.name,
     role: character.role,
     // The place with its kind and neighbourhood, and why they're there (lib/characters/for-place.ts)
-    setting: (character.appearance?.setting ?? place?.name ?? '').replace(/([^.!?])$/, '$1.'),
+    setting: withToday((character.appearance?.setting ?? place?.name ?? '').replace(/([^.!?])$/, '$1.'), p.now ?? new Date()),
     city: city?.name ?? character.city,
     character: about,
     language: language.name,
