@@ -6,6 +6,8 @@ export const language = {
   code: 'es',
   name: 'Spanish',
   speechLang: 'es-MX',
+  /** The country's clock, for the day of the week and the month characters know (lib/today.ts) */
+  timeZone: 'America/Mexico_City',
 
   /** The app's name in this country (lead candidate, docs/mexico-version.md) */
   appName: 'Afuera',
