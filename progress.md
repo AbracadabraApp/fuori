@@ -66,6 +66,14 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-04 (late night): build 11, voices, the Learn page toned down, dialogue ideas (laptop session)
+- **Shipped:** TestFlight build 11 (34a3852); the doubled "benvenuto/a" gloss fixed (4a26656, live, smoke OK both countries); voices at an even loudness (6cde9f9: the app turns loud clips down, needs a build; Max → Marco in Italy, Hugo M → Marto in Mexico, live on the server).
+- **Learn page** (5bdbb29, app only, needs a build): colours toned down (Josh: "all of the page needs to get toned down in colors"; parchment lessons field, sage culture chips, slate Flashcards banner), "Flashcards" no longer breaks mid-word, History hidden for now (Josh: "Remove the scorecard for now"). Checked: make build, test:tokens; Josh saw a mockup (https://claude.ai/artifact/QYkEBrrwfTqnPyCxgfC4YV). **Not checked on a device** (the simulator is on a fresh learner).
+- **Jennifer's lessons reviewed:** the cultural lesson (guajolota, Fidel) worked; Magda's Beginner lesson stalled on one phrase (phrase not spoken, "Joven" misheard, pronunciation coaching, 4 turns used). Fixes listed; Josh hasn't chosen now vs the lessons redo.
+- **Dialogue ideas list** started (`docs/dialogue-ideas.md`, 8708f86, 3014eee) from Josh's Florence evening: a character who steps away should come back, not wait for chitchat; open-ended talk needs no question every turn; corrections not every time; "say this" put "Sì, è la prima volta" in his mouth; Lorenzo's voice seeming to change mid-line. Josh: "add everything to your list until you have more examples", so nothing there is being fixed yet.
+- **Dropped:** "Always leave them something to answer." in the character prompt (`tests/experiments/dead-ends.mts`: no-question lines 26% → 4%, dead ends 14 → 1, two-question 16% → 18%). Josh: the waiter should come back, not chat.
+- **Next:** build 12 (loudness leveling, the Learn page) on Josh's phone, with his yes; Magda's lesson fixes when he chooses; more examples for the dialogue list.
+
 ## 2026-11-04: cultural lessons fixed, no "words worth keeping" (laptop session)
 
 - **No "keeping" words (Josh: "so weird and just not the tone of the game. Are you supposed to own Rome or Claudio too?"; "this keep thing is not my creation").** Tellers no longer end on a word to remember; the wording is gone from CLAUDE.md, docs/culture.md, beginner-scaffolding, adventures, the welcome prompt and code comments (d00f55a). Still in `content/*/prompts/beginner.md` ("everything you want them to keep", "a word or two worth having"): instruction only, not said aloud; left for Josh to decide.
