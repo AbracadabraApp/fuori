@@ -46,3 +46,7 @@ Josh, 2026-11-04: "i got corrected with the ribollita". The transcript has "Si, 
 ## Long replies in open-ended talk
 
 Lorenzo, Piazza Santa Croce, 2026-11-04: median reply 28.5 words (Ardit at the trattoria: 14). Observed by Claude, not raised by Josh; listed to see whether it comes up in more conversations.
+
+## The examples become a replay set
+
+Claude's proposal (2026-11-04, from a Karpathy-inspired prompt template Josh shared; Josh: "Worth saving any notes/ideas?"): once this list has a dozen or so real examples, turn them into a fixed replay set: the conversation up to the moment, and what should or shouldn't happen next (the waiter comes back; *say this* doesn't answer for the learner; no recast of a mishearing). Any change to the character prompt or to *say this* is then measured against the same cases before it ships, alongside `test:conversations`.

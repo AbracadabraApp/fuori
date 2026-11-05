@@ -419,3 +419,8 @@ Prompted by "help more beginner level people". Rule behind all three: **everyone
 - Old songs locals really sing, public domain: *O sole mio*, *Santa Lucia* (Italy); *Cielito lindo*, *La cucaracha* (Mexico).
 - A chorus that comes back across places, so the words stick; melody helps memory.
 - A short a cappella line in the character's own voice may sound more natural than a produced track (ElevenLabs has a music model; untested).
+
+## Generated city content as a small graph of checked steps
+
+Claude's proposal (2026-11-04, from a Karpathy-inspired prompt template Josh shared). For a batch of generated content across many cities (here lines, culture items, a new city's places): draft, then the fact judge (`facts.md`), then a check that it's particular to the place, then a repeat test over several visits; a city's content goes in only when every step passes, with a checks file recording each verdict. `scripts/make-culture.mts` is already a two-step version. Worth it for a big batch (every city in both countries, or a new country), not for one city. Not a fit for scripted dialogue: scenes stay generated.
+
