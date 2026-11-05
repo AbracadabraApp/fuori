@@ -8,6 +8,20 @@
       "Bash(railway status *)",
       "Bash(railway logs)",
       "Bash(railway logs *)"
+    ],
+    "deny": [
+      "Bash(git commit --amend*)",
+      "Bash(git commit * --amend*)",
+      "Bash(git stash*)",
+      "Bash(git clean*)",
+      "Bash(git checkout -- *)",
+      "Bash(git checkout .)",
+      "Bash(git restore .)",
+      "Bash(git reset --hard*)"
+    ],
+    "ask": [
+      "Bash(xcrun devicectl device install*)",
+      "Bash(devicectl device install*)"
     ]
   }
 }
