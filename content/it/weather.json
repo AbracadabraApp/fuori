@@ -1,0 +1,2276 @@
+{
+  "roma-nuova": {
+    "1": [
+      "cool and clear",
+      "rain",
+      "tramontana, cold and bright",
+      "chilly morning",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "mild",
+      "rain",
+      "clear and cool",
+      "grey",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild and sunny",
+      "showers",
+      "breezy",
+      "warm sun",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "warm",
+      "showers",
+      "sunny",
+      "mild",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "warm",
+      "afternoon shower",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot",
+      "sunny",
+      "hot and dry",
+      "ponentino in the evening",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot",
+      "hot and still",
+      "scorching",
+      "ponentino in the evening",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "scorching",
+      "hot and still",
+      "very hot",
+      "heavy heat",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm",
+      "thunderstorm",
+      "sunny",
+      "warm and humid",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "rain",
+      "mild",
+      "scirocco blowing",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "rain",
+      "heavy rain",
+      "mild and grey",
+      "rain",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "cool",
+      "rain",
+      "clear and cold",
+      "grey",
+      "",
+      "",
+      ""
+    ]
+  },
+  "matera": {
+    "1": [
+      "cold and clear",
+      "cold wind",
+      "rain",
+      "frost this morning",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "cold",
+      "rain",
+      "windy",
+      "grey",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild",
+      "showers",
+      "windy",
+      "cool",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "mild and sunny",
+      "showers",
+      "breezy",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "warm",
+      "afternoon shower",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and dry",
+      "hot",
+      "sunny",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot",
+      "hot and dry",
+      "scorching",
+      "hot wind",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "scorching",
+      "hot and dry",
+      "very hot",
+      "thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm",
+      "sunny",
+      "thunderstorm",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "mild",
+      "rain",
+      "cool morning",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "rain",
+      "cold and grey",
+      "fog in the ravine",
+      "wet",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "cold",
+      "rain",
+      "cold wind",
+      "light snow",
+      "",
+      "",
+      ""
+    ]
+  },
+  "firenze": {
+    "1": [
+      "cold and clear",
+      "frost",
+      "grey and rainy",
+      "damp cold",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "cold",
+      "rain",
+      "clear and crisp",
+      "frost this morning",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild",
+      "showers",
+      "windy",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "mild and sunny",
+      "rain",
+      "showers",
+      "fresh",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "afternoon thunderstorm",
+      "warm",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot",
+      "sunny",
+      "hot and dry",
+      "afternoon thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot",
+      "hot and still",
+      "heavy heat",
+      "hot and dry",
+      "airless heat in the city",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "scorching",
+      "hot and still",
+      "thunderstorm",
+      "very hot",
+      "airless heat",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm",
+      "rain",
+      "golden and mild",
+      "thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "rain",
+      "mild",
+      "misty morning",
+      "sunny and cool",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "rain",
+      "rain",
+      "grey",
+      "cool and damp",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "cold",
+      "rain",
+      "frost",
+      "cold and clear",
+      "",
+      "",
+      ""
+    ]
+  },
+  "siena": {
+    "1": [
+      "cold and clear",
+      "frost",
+      "grey and rainy",
+      "damp cold",
+      "wind on the hill",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "cold",
+      "rain",
+      "clear and crisp",
+      "frost this morning",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild",
+      "showers",
+      "windy",
+      "sunny",
+      "wind on the hill",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "mild and sunny",
+      "rain",
+      "showers",
+      "fresh",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "afternoon thunderstorm",
+      "warm",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot",
+      "sunny",
+      "hot and dry",
+      "afternoon thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot",
+      "hot and still",
+      "heavy heat",
+      "hot and dry",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "scorching",
+      "hot and still",
+      "thunderstorm",
+      "very hot",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm",
+      "rain",
+      "golden and mild",
+      "thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "rain",
+      "mild",
+      "misty morning",
+      "sunny and cool",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "rain",
+      "rain",
+      "grey",
+      "cool and damp",
+      "fog in the valleys",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "cold",
+      "rain",
+      "frost",
+      "cold and clear",
+      "",
+      "",
+      ""
+    ]
+  },
+  "venezia": {
+    "1": [
+      "fog on the lagoon",
+      "fog",
+      "cold and damp",
+      "bora blowing",
+      "clear and icy",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "fog",
+      "damp and chilly",
+      "bora wind",
+      "grey",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild",
+      "misty",
+      "showers",
+      "sunny and breezy",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "mild and sunny",
+      "showers",
+      "breezy",
+      "soft light on the water",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm",
+      "humid",
+      "sunny",
+      "afternoon thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and humid",
+      "sunny",
+      "still and muggy",
+      "evening thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "hot and humid",
+      "mosquitoes out",
+      "still and muggy",
+      "evening thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "hot and humid",
+      "sticky heat",
+      "mosquitoes out",
+      "thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm",
+      "rain",
+      "sunny and calm",
+      "misty morning",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "acqua alta",
+      "rain",
+      "scirocco blowing",
+      "misty",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "acqua alta",
+      "acqua alta",
+      "rain",
+      "fog",
+      "scirocco and damp",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "acqua alta",
+      "fog",
+      "cold and damp",
+      "bora blowing",
+      "",
+      "",
+      ""
+    ]
+  },
+  "napoli": {
+    "1": [
+      "mild and sunny",
+      "rain",
+      "windy",
+      "cool and grey",
+      "clear, vesuvius in view",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "rain",
+      "mild",
+      "windy",
+      "showers",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "scirocco blowing",
+      "mild and sunny",
+      "showers",
+      "windy",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "scirocco, warm and hazy",
+      "warm and sunny",
+      "showers",
+      "mild",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "warm",
+      "scirocco, hot and hazy",
+      "sea breeze",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and dry",
+      "hot",
+      "sunny",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot",
+      "hot and dry",
+      "hot and still",
+      "scorching",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "scorching",
+      "hot and dry",
+      "hot and still",
+      "very hot",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "hot",
+      "warm and sunny",
+      "thunderstorm",
+      "humid",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "scirocco blowing",
+      "warm",
+      "rain",
+      "scirocco, sticky and hazy",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "rain",
+      "heavy rain",
+      "scirocco blowing",
+      "mild and grey",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "rain",
+      "mild",
+      "windy",
+      "cool and clear",
+      "clear, vesuvius in view",
+      "",
+      "",
+      ""
+    ]
+  },
+  "bologna": {
+    "1": [
+      "fog",
+      "fog",
+      "cold and grey",
+      "frost on the cars",
+      "cold and damp",
+      "clear and freezing",
+      "",
+      ""
+    ],
+    "2": [
+      "fog",
+      "cold and grey",
+      "frost this morning",
+      "cold and clear",
+      "damp and chilly",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild and sunny",
+      "grey and drizzly",
+      "windy",
+      "cool morning",
+      "showers",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "spring showers",
+      "mild and sunny",
+      "rain",
+      "fresh and breezy",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "afternoon thunderstorm",
+      "humid",
+      "rain",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and humid",
+      "afternoon thunderstorm",
+      "warm and sunny",
+      "muggy",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "hot and muggy",
+      "very hot",
+      "evening thunderstorm",
+      "hazy heat",
+      "hot and still",
+      "hot under the porticoes",
+      "",
+      ""
+    ],
+    "8": [
+      "hot and muggy",
+      "very hot",
+      "evening thunderstorm",
+      "sticky heat",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm and pleasant",
+      "cooler mornings",
+      "rain",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "morning fog",
+      "rain",
+      "grey and mild",
+      "damp",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "fog",
+      "fog",
+      "rain",
+      "grey and damp",
+      "cold and wet",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "fog",
+      "fog",
+      "cold and grey",
+      "frost",
+      "freezing fog",
+      "",
+      "",
+      ""
+    ]
+  },
+  "palermo": {
+    "1": [
+      "mild and sunny",
+      "rain",
+      "windy",
+      "cool and grey",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "rain",
+      "mild",
+      "windy",
+      "showers",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "scirocco blowing",
+      "mild and sunny",
+      "showers",
+      "windy",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "scirocco, warm and hazy",
+      "warm and sunny",
+      "showers",
+      "mild",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "warm",
+      "scirocco, hot and hazy",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and dry",
+      "hot",
+      "sunny",
+      "scirocco, hot and dusty",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot",
+      "hot and dry",
+      "hot and still",
+      "scorching",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "scorching",
+      "hot and dry",
+      "hot and still",
+      "very hot",
+      "scirocco, hot and dusty",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "hot",
+      "warm and sunny",
+      "thunderstorm",
+      "humid",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "scirocco blowing",
+      "warm",
+      "rain",
+      "scirocco, sticky and hazy",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "rain",
+      "heavy rain",
+      "scirocco blowing",
+      "mild and grey",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "rain",
+      "mild",
+      "windy",
+      "cool and clear",
+      "",
+      "",
+      ""
+    ]
+  },
+  "taormina": {
+    "1": [
+      "mild and sunny",
+      "rain",
+      "windy",
+      "cool and grey",
+      "snow on etna",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "rain",
+      "mild",
+      "windy",
+      "showers",
+      "snow on etna",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "scirocco blowing",
+      "mild and sunny",
+      "showers",
+      "windy",
+      "clear, etna in view",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "scirocco, warm and hazy",
+      "warm and sunny",
+      "showers",
+      "mild",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "warm",
+      "scirocco, hot and hazy",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and dry",
+      "hot",
+      "sunny",
+      "sea breeze",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot",
+      "hot and dry",
+      "hot and still",
+      "scorching",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "scorching",
+      "hot and dry",
+      "hot and still",
+      "very hot",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "hot",
+      "warm and sunny",
+      "thunderstorm",
+      "humid",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "scirocco blowing",
+      "warm",
+      "rain",
+      "scirocco, sticky and hazy",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "rain",
+      "heavy rain",
+      "scirocco blowing",
+      "mild and grey",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "rain",
+      "mild",
+      "windy",
+      "cool and clear",
+      "",
+      "",
+      ""
+    ]
+  },
+  "lecce": {
+    "1": [
+      "mild and sunny",
+      "rain",
+      "windy",
+      "cool and grey",
+      "tramontana, cold and bright",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "rain",
+      "mild",
+      "windy",
+      "showers",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "scirocco blowing",
+      "mild and sunny",
+      "showers",
+      "windy",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "scirocco, warm and hazy",
+      "warm and sunny",
+      "showers",
+      "mild",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "warm",
+      "scirocco, hot and hazy",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and dry",
+      "hot",
+      "sunny",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot",
+      "hot and dry",
+      "hot and still",
+      "scorching",
+      "dry wind",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "scorching",
+      "hot and dry",
+      "hot and still",
+      "very hot",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "hot",
+      "warm and sunny",
+      "thunderstorm",
+      "humid",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "scirocco blowing",
+      "warm",
+      "rain",
+      "scirocco, sticky and hazy",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "rain",
+      "heavy rain",
+      "scirocco blowing",
+      "mild and grey",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "rain",
+      "mild",
+      "windy",
+      "cool and clear",
+      "tramontana blowing",
+      "",
+      "",
+      ""
+    ]
+  },
+  "milano": {
+    "1": [
+      "fog",
+      "fog",
+      "cold and grey",
+      "frost on the cars",
+      "cold and damp",
+      "clear and freezing",
+      "smoggy and hazy",
+      "",
+      ""
+    ],
+    "2": [
+      "fog",
+      "cold and grey",
+      "frost this morning",
+      "cold and clear",
+      "damp and chilly",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild and sunny",
+      "grey and drizzly",
+      "windy",
+      "cool morning",
+      "showers",
+      "clear, the alps in view",
+      "",
+      ""
+    ],
+    "4": [
+      "spring showers",
+      "mild and sunny",
+      "rain",
+      "fresh and breezy",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "afternoon thunderstorm",
+      "humid",
+      "rain",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and humid",
+      "afternoon thunderstorm",
+      "warm and sunny",
+      "muggy",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "hot and muggy",
+      "very hot",
+      "evening thunderstorm",
+      "hazy heat",
+      "hot and still",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "hot and muggy",
+      "very hot",
+      "evening thunderstorm",
+      "sticky heat",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm and pleasant",
+      "cooler mornings",
+      "rain",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "morning fog",
+      "rain",
+      "grey and mild",
+      "damp",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "fog",
+      "fog",
+      "rain",
+      "grey and damp",
+      "cold and wet",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "fog",
+      "fog",
+      "cold and grey",
+      "frost",
+      "freezing fog",
+      "smoggy and hazy",
+      "",
+      ""
+    ]
+  },
+  "verona": {
+    "1": [
+      "fog",
+      "fog",
+      "cold and grey",
+      "frost on the cars",
+      "cold and damp",
+      "clear and freezing",
+      "",
+      ""
+    ],
+    "2": [
+      "fog",
+      "cold and grey",
+      "frost this morning",
+      "cold and clear",
+      "damp and chilly",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild and sunny",
+      "grey and drizzly",
+      "windy",
+      "cool morning",
+      "showers",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "spring showers",
+      "mild and sunny",
+      "rain",
+      "fresh and breezy",
+      "breeze off the lake",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "afternoon thunderstorm",
+      "humid",
+      "rain",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and humid",
+      "afternoon thunderstorm",
+      "warm and sunny",
+      "muggy",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "hot and muggy",
+      "very hot",
+      "evening thunderstorm",
+      "hazy heat",
+      "hot and still",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "hot and muggy",
+      "very hot",
+      "evening thunderstorm",
+      "sticky heat",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm and pleasant",
+      "cooler mornings",
+      "rain",
+      "sunny",
+      "mist on the adige",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "morning fog",
+      "rain",
+      "grey and mild",
+      "damp",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "fog",
+      "fog",
+      "rain",
+      "grey and damp",
+      "cold and wet",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "fog",
+      "fog",
+      "cold and grey",
+      "frost",
+      "freezing fog",
+      "",
+      "",
+      ""
+    ]
+  },
+  "assisi": {
+    "1": [
+      "cold and clear",
+      "frost",
+      "grey and rainy",
+      "damp cold",
+      "light snow",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "cold",
+      "rain",
+      "clear and crisp",
+      "frost this morning",
+      "light snow",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild",
+      "showers",
+      "windy",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "mild and sunny",
+      "rain",
+      "showers",
+      "fresh",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "afternoon thunderstorm",
+      "warm",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot",
+      "sunny",
+      "hot and dry",
+      "afternoon thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot",
+      "hot and still",
+      "heavy heat",
+      "hot and dry",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "scorching",
+      "hot and still",
+      "thunderstorm",
+      "very hot",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm",
+      "rain",
+      "golden and mild",
+      "thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "rain",
+      "mild",
+      "misty morning",
+      "sunny and cool",
+      "mist in the valley",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "rain",
+      "rain",
+      "grey",
+      "cool and damp",
+      "mist in the valley",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "cold",
+      "rain",
+      "frost",
+      "light snow",
+      "mist in the valley",
+      "",
+      "",
+      ""
+    ]
+  },
+  "bergamo": {
+    "1": [
+      "fog",
+      "fog",
+      "cold and grey",
+      "frost on the cars",
+      "cold and damp",
+      "clear and freezing",
+      "light snow",
+      "",
+      ""
+    ],
+    "2": [
+      "fog",
+      "cold and grey",
+      "frost this morning",
+      "cold and clear",
+      "damp and chilly",
+      "snow on the mountains",
+      "",
+      ""
+    ],
+    "3": [
+      "mild and sunny",
+      "grey and drizzly",
+      "windy",
+      "cool morning",
+      "showers",
+      "clear, mountains in view",
+      "",
+      ""
+    ],
+    "4": [
+      "spring showers",
+      "mild and sunny",
+      "rain",
+      "fresh and breezy",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "afternoon thunderstorm",
+      "humid",
+      "rain",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and humid",
+      "afternoon thunderstorm",
+      "warm and sunny",
+      "muggy",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "hot and muggy",
+      "very hot",
+      "evening thunderstorm",
+      "hazy heat",
+      "hot and still",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "hot and muggy",
+      "very hot",
+      "evening thunderstorm",
+      "sticky heat",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm and pleasant",
+      "cooler mornings",
+      "rain",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "morning fog",
+      "rain",
+      "grey and mild",
+      "damp",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "fog",
+      "fog",
+      "rain",
+      "grey and damp",
+      "cold and wet",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "fog",
+      "fog",
+      "cold and grey",
+      "frost",
+      "freezing fog",
+      "light snow",
+      "",
+      ""
+    ]
+  },
+  "torino": {
+    "1": [
+      "fog",
+      "fog",
+      "cold and grey",
+      "frost on the cars",
+      "cold and damp",
+      "clear and freezing",
+      "snow",
+      "clear, the alps in view",
+      "",
+      ""
+    ],
+    "2": [
+      "fog",
+      "cold and grey",
+      "frost this morning",
+      "cold and clear",
+      "damp and chilly",
+      "light snow",
+      "snow on the alps",
+      "",
+      ""
+    ],
+    "3": [
+      "mild and sunny",
+      "grey and drizzly",
+      "windy",
+      "cool morning",
+      "showers",
+      "clear, the alps in view",
+      "",
+      ""
+    ],
+    "4": [
+      "spring showers",
+      "mild and sunny",
+      "rain",
+      "fresh and breezy",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "afternoon thunderstorm",
+      "humid",
+      "rain",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and humid",
+      "afternoon thunderstorm",
+      "warm and sunny",
+      "muggy",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "hot and muggy",
+      "very hot",
+      "evening thunderstorm",
+      "hazy heat",
+      "hot and still",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "hot and muggy",
+      "very hot",
+      "evening thunderstorm",
+      "sticky heat",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm and pleasant",
+      "cooler mornings",
+      "rain",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "morning fog",
+      "rain",
+      "grey and mild",
+      "damp",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "fog",
+      "rain",
+      "grey and damp",
+      "cold and wet",
+      "snow on the alps",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "fog",
+      "fog",
+      "cold and grey",
+      "frost",
+      "freezing fog",
+      "snow",
+      "",
+      ""
+    ]
+  },
+  "siracusa": {
+    "1": [
+      "mild and sunny",
+      "rain",
+      "windy",
+      "cool and grey",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "rain",
+      "mild",
+      "windy",
+      "showers",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "scirocco blowing",
+      "mild and sunny",
+      "showers",
+      "windy",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "scirocco, warm and hazy",
+      "warm and sunny",
+      "showers",
+      "mild",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "warm",
+      "scirocco, hot and hazy",
+      "sea breeze",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and dry",
+      "hot",
+      "sunny",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot",
+      "hot and dry",
+      "hot and still",
+      "scorching",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "scorching",
+      "hot and dry",
+      "hot and still",
+      "very hot",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "hot",
+      "warm and sunny",
+      "thunderstorm",
+      "humid",
+      "sea breeze",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "scirocco blowing",
+      "warm",
+      "rain",
+      "scirocco, sticky and hazy",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "rain",
+      "heavy rain",
+      "scirocco blowing",
+      "mild and grey",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "rain",
+      "mild",
+      "windy",
+      "cool and clear",
+      "",
+      "",
+      ""
+    ]
+  },
+  "genova": {
+    "1": [
+      "tramontana blowing",
+      "cold and clear",
+      "rain",
+      "windy",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "tramontana, clear and cold",
+      "clear and windy",
+      "rain",
+      "mild",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "showers",
+      "mild",
+      "windy",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "mild",
+      "rain",
+      "sunny",
+      "sea breeze",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm",
+      "sea breeze",
+      "sunny",
+      "hazy",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "warm and sunny",
+      "humid",
+      "sea breeze",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "hot and humid",
+      "sea breeze",
+      "sunny",
+      "sticky",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "hot and humid",
+      "thunderstorm",
+      "sticky",
+      "still",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm",
+      "rain",
+      "sunny",
+      "thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "heavy rain",
+      "rain",
+      "scirocco blowing",
+      "mild",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "heavy rain",
+      "rain",
+      "grey",
+      "mild and damp",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "tramontana blowing",
+      "cold and clear",
+      "rain",
+      "grey",
+      "",
+      "",
+      ""
+    ]
+  },
+  "lucca": {
+    "1": [
+      "cold and clear",
+      "frost",
+      "grey and rainy",
+      "damp cold",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "cold",
+      "rain",
+      "clear and crisp",
+      "frost this morning",
+      "drizzle",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild",
+      "showers",
+      "windy",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "mild and sunny",
+      "rain",
+      "showers",
+      "fresh",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "afternoon thunderstorm",
+      "warm",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot",
+      "sunny",
+      "hot and dry",
+      "afternoon thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot",
+      "hot and still",
+      "heavy heat",
+      "hot and dry",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "scorching",
+      "hot and still",
+      "thunderstorm",
+      "very hot",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm",
+      "rain",
+      "golden and mild",
+      "thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "rain",
+      "mild",
+      "misty morning",
+      "sunny and cool",
+      "heavy rain",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "rain",
+      "rain",
+      "grey",
+      "cool and damp",
+      "heavy rain",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "cold",
+      "rain",
+      "frost",
+      "cold and clear",
+      "",
+      "",
+      ""
+    ]
+  },
+  "orvieto": {
+    "1": [
+      "cold and clear",
+      "frost",
+      "grey and rainy",
+      "damp cold",
+      "light snow",
+      "fog in the valley below",
+      "",
+      ""
+    ],
+    "2": [
+      "cold",
+      "rain",
+      "clear and crisp",
+      "frost this morning",
+      "light snow",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild",
+      "showers",
+      "windy",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "mild and sunny",
+      "rain",
+      "showers",
+      "fresh",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "afternoon thunderstorm",
+      "warm",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot",
+      "sunny",
+      "hot and dry",
+      "afternoon thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot",
+      "hot and still",
+      "heavy heat",
+      "hot and dry",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "scorching",
+      "hot and still",
+      "thunderstorm",
+      "very hot",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm",
+      "rain",
+      "golden and mild",
+      "thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "rain",
+      "mild",
+      "misty morning",
+      "sunny and cool",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "rain",
+      "rain",
+      "grey",
+      "cool and damp",
+      "fog in the valley below",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "cold",
+      "rain",
+      "frost",
+      "cold and clear",
+      "fog in the valley below",
+      "",
+      "",
+      ""
+    ]
+  },
+  "mantova": {
+    "1": [
+      "fog",
+      "fog",
+      "cold and grey",
+      "frost on the cars",
+      "cold and damp",
+      "clear and freezing",
+      "thick fog over the lakes",
+      "",
+      ""
+    ],
+    "2": [
+      "fog",
+      "cold and grey",
+      "frost this morning",
+      "cold and clear",
+      "damp and chilly",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild and sunny",
+      "grey and drizzly",
+      "windy",
+      "cool morning",
+      "showers",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "spring showers",
+      "mild and sunny",
+      "rain",
+      "fresh and breezy",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and sunny",
+      "afternoon thunderstorm",
+      "humid",
+      "rain",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and humid",
+      "afternoon thunderstorm",
+      "warm and sunny",
+      "muggy",
+      "mosquitoes out",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "hot and muggy",
+      "very hot",
+      "evening thunderstorm",
+      "hazy heat",
+      "hot and still",
+      "mosquitoes out",
+      "",
+      ""
+    ],
+    "8": [
+      "hot and muggy",
+      "very hot",
+      "evening thunderstorm",
+      "sticky heat",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "warm and pleasant",
+      "cooler mornings",
+      "rain",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "morning fog",
+      "rain",
+      "grey and mild",
+      "damp",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "fog",
+      "fog",
+      "rain",
+      "grey and damp",
+      "cold and wet",
+      "thick fog over the lakes",
+      "",
+      ""
+    ],
+    "12": [
+      "fog",
+      "fog",
+      "cold and grey",
+      "frost",
+      "freezing fog",
+      "thick fog over the lakes",
+      "",
+      ""
+    ]
+  }
+}

@@ -15,7 +15,8 @@ const c = buildContent();
 const text = JSON.stringify(c);
 
 for (const field of ['imagePrompt', 'portraitPrompt', 'personality', 'traits', 'caresAbout', 'speech', 'voice', 'prompt', 'appearance', 'food', 'customs']) {
-  check(!text.includes(`"${field}"`), `content must not include "${field}"`);
+  // As a key, not a value: the cultural chips carry topic "food" (lib/culture.ts)
+  check(!text.includes(`"${field}":`), `content must not include "${field}"`);
 }
 
 const base = /^https:\/\/[^/]+\/.+\.webp$/;

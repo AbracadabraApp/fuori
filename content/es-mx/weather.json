@@ -1,0 +1,556 @@
+{
+  "ciudad-de-mexico": {
+    "1": [
+      "cold morning, warm afternoon",
+      "clear and dry",
+      "hazy",
+      "chilly evening",
+      "clear, the volcanoes in view",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "dry and sunny",
+      "hazy",
+      "windy and dusty",
+      "cold morning",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "hazy",
+      "warm and dry",
+      "dusty wind",
+      "hazy sky",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "hot and dry",
+      "hazy",
+      "hot afternoon",
+      "dry and dusty",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "hot and dry",
+      "hazy",
+      "first rain of the season",
+      "hot afternoon",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "afternoon thunderstorm",
+      "afternoon thunderstorm",
+      "clear morning",
+      "rain in the evening",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "afternoon downpour",
+      "afternoon thunderstorm",
+      "clear morning",
+      "drizzle",
+      "cool and green",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "afternoon downpour",
+      "afternoon thunderstorm",
+      "clear morning",
+      "hail this afternoon",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "afternoon thunderstorm",
+      "heavy rain",
+      "clear morning",
+      "rain in the evening",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "last rains",
+      "cool and clear",
+      "mild",
+      "clear, the volcanoes in view",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "clear and cool",
+      "cold morning",
+      "dry",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "cold morning",
+      "clear and dry",
+      "chilly evening",
+      "hazy",
+      "",
+      "",
+      ""
+    ]
+  },
+  "oaxaca": {
+    "1": [
+      "warm and sunny",
+      "cool night",
+      "dry",
+      "clear sky",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "warm and dry",
+      "sunny",
+      "cool morning",
+      "dusty",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "hot and dry",
+      "sunny",
+      "warm",
+      "dusty wind",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "very hot",
+      "hot and dry",
+      "hot afternoon",
+      "dusty",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "very hot",
+      "hot and dry",
+      "first rain of the season",
+      "humid",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "afternoon thunderstorm",
+      "afternoon thunderstorm",
+      "clear morning",
+      "humid",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "afternoon rain",
+      "afternoon thunderstorm",
+      "clear morning",
+      "green and fresh",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "afternoon rain",
+      "afternoon thunderstorm",
+      "clear morning",
+      "humid",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "afternoon thunderstorm",
+      "heavy rain",
+      "clear morning",
+      "humid",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "last rains",
+      "warm and sunny",
+      "mild",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "warm and sunny",
+      "dry",
+      "cool night",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "sunny",
+      "cool morning",
+      "dry",
+      "cool night",
+      "",
+      "",
+      ""
+    ]
+  },
+  "guadalajara": {
+    "1": [
+      "mild and sunny",
+      "cool morning",
+      "dry",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "warm and sunny",
+      "dry",
+      "cool morning",
+      "hazy",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "warm and dry",
+      "hazy",
+      "sunny",
+      "dusty",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "hot and dry",
+      "very hot",
+      "hazy",
+      "dusty",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "very hot",
+      "hot and dry",
+      "hazy",
+      "first rain of the season",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "afternoon thunderstorm",
+      "afternoon thunderstorm",
+      "humid",
+      "evening downpour",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "afternoon thunderstorm",
+      "evening downpour",
+      "clear morning",
+      "humid",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "afternoon thunderstorm",
+      "evening downpour",
+      "clear morning",
+      "heavy rain",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "afternoon thunderstorm",
+      "rain",
+      "clear morning",
+      "humid",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "last rains",
+      "warm and sunny",
+      "mild",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "mild and sunny",
+      "dry",
+      "cool morning",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "cool morning",
+      "mild and sunny",
+      "dry",
+      "clear",
+      "",
+      "",
+      ""
+    ]
+  },
+  "san-miguel-de-allende": {
+    "1": [
+      "cold morning",
+      "cold morning, sunny afternoon",
+      "clear and dry",
+      "chilly night",
+      "frost this morning",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "cold morning",
+      "dry and sunny",
+      "windy",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "warm and dry",
+      "windy and dusty",
+      "sunny",
+      "cool morning",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "hot and dry",
+      "dusty",
+      "hot afternoon",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "hot and dry",
+      "hot afternoon",
+      "first rain of the season",
+      "dusty",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "afternoon thunderstorm",
+      "clear morning",
+      "rain in the evening",
+      "cooler",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "afternoon rain",
+      "clear morning",
+      "afternoon thunderstorm",
+      "green hills",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "afternoon rain",
+      "clear morning",
+      "afternoon thunderstorm",
+      "mild",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "afternoon thunderstorm",
+      "clear morning",
+      "rain",
+      "mild",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "mild and sunny",
+      "cool morning",
+      "last rains",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "cold morning",
+      "clear and dry",
+      "sunny",
+      "chilly night",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "cold morning",
+      "clear and dry",
+      "chilly night",
+      "frost this morning",
+      "",
+      "",
+      ""
+    ]
+  },
+  "puebla": {
+    "1": [
+      "cold morning",
+      "clear, the volcanoes in view",
+      "dry and sunny",
+      "chilly night",
+      "frost this morning",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "cold morning",
+      "dry and sunny",
+      "windy",
+      "clear, the volcanoes in view",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "warm and dry",
+      "windy and dusty",
+      "hazy",
+      "cool morning",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "hot and dry",
+      "hazy",
+      "warm afternoon",
+      "dusty",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and dry",
+      "hazy",
+      "first rain of the season",
+      "hot afternoon",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "afternoon thunderstorm",
+      "afternoon thunderstorm",
+      "clear morning",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "afternoon rain",
+      "afternoon thunderstorm",
+      "clear morning",
+      "drizzle",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "afternoon rain",
+      "afternoon thunderstorm",
+      "clear morning",
+      "hail this afternoon",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "afternoon thunderstorm",
+      "heavy rain",
+      "clear morning",
+      "cool and damp",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "last rains",
+      "cool and clear",
+      "mild",
+      "clear, the volcanoes in view",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "cold morning",
+      "clear and dry",
+      "sunny",
+      "chilly night",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "cold morning",
+      "clear and dry",
+      "chilly night",
+      "frost this morning",
+      "",
+      "",
+      ""
+    ]
+  }
+}
