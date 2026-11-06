@@ -675,13 +675,113 @@
       "timestamp": "2026-10-28T00:20:38.625Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/fidel-tamalero.jpg",
       "type": "portrait"
+    },
+    "ciudad-de-mexico/murales-palacio-nacional": {
+      "timestamp": "2026-11-06T23:42:11.901Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/places/murales-palacio-nacional.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/jardin-centenario-coyoacan": {
+      "timestamp": "2026-11-06T23:42:36.892Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/places/jardin-centenario-coyoacan.jpg",
+      "type": "place"
+    },
+    "ciudad-de-mexico/renata-restauradora": {
+      "timestamp": "2026-11-06T23:42:59.353Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/portraits/renata-restauradora.jpg",
+      "type": "portrait"
+    },
+    "ciudad-de-mexico/elvira-coyoacan": {
+      "timestamp": "2026-11-06T23:43:21.971Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/portraits/elvira-coyoacan.jpg",
+      "type": "portrait"
+    },
+    "guadalajara/hospicio-cabanas": {
+      "timestamp": "2026-11-06T23:43:47.243Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/places/hospicio-cabanas.jpg",
+      "type": "place"
+    },
+    "guadalajara/plaza-de-los-mariachis": {
+      "timestamp": "2026-11-06T23:44:12.868Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/places/plaza-de-los-mariachis.jpg",
+      "type": "place"
+    },
+    "guadalajara/andres-cabanas": {
+      "timestamp": "2026-11-06T23:44:40.362Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/portraits/andres-cabanas.jpg",
+      "type": "portrait"
+    },
+    "guadalajara/chuy-mariachi": {
+      "timestamp": "2026-11-06T23:45:01.729Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/portraits/chuy-mariachi.jpg",
+      "type": "portrait"
+    },
+    "oaxaca/monte-alban": {
+      "timestamp": "2026-11-06T23:45:30.432Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/places/monte-alban.jpg",
+      "type": "place"
+    },
+    "oaxaca/andador-macedonio-alcala": {
+      "timestamp": "2026-11-06T23:45:56.277Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/places/andador-macedonio-alcala.jpg",
+      "type": "place"
+    },
+    "oaxaca/efren-monte-alban": {
+      "timestamp": "2026-11-06T23:46:25.254Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/portraits/efren-monte-alban.jpg",
+      "type": "portrait"
+    },
+    "oaxaca/lucia-grabadora": {
+      "timestamp": "2026-11-06T23:46:50.305Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/portraits/lucia-grabadora.jpg",
+      "type": "portrait"
+    },
+    "puebla/biblioteca-palafoxiana": {
+      "timestamp": "2026-11-06T23:47:13.450Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/places/biblioteca-palafoxiana.jpg",
+      "type": "place"
+    },
+    "puebla/barrio-xanenetla": {
+      "timestamp": "2026-11-06T23:47:38.495Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/places/barrio-xanenetla.jpg",
+      "type": "place"
+    },
+    "puebla/mariana-palafoxiana": {
+      "timestamp": "2026-11-06T23:48:04.370Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/portraits/mariana-palafoxiana.jpg",
+      "type": "portrait"
+    },
+    "puebla/hugo-muralista": {
+      "timestamp": "2026-11-06T23:48:28.821Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/portraits/hugo-muralista.jpg",
+      "type": "portrait"
+    },
+    "san-miguel-de-allende/casa-de-allende": {
+      "timestamp": "2026-11-06T23:48:54.676Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/places/casa-de-allende.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/el-mirador-san-miguel": {
+      "timestamp": "2026-11-06T23:49:15.188Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/places/el-mirador-san-miguel.jpg",
+      "type": "place"
+    },
+    "san-miguel-de-allende/gabriela-maestra": {
+      "timestamp": "2026-11-06T23:49:39.027Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/portraits/gabriela-maestra.jpg",
+      "type": "portrait"
+    },
+    "san-miguel-de-allende/ramon-mirador": {
+      "timestamp": "2026-11-06T23:50:03.571Z",
+      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/portraits/ramon-mirador.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 135,
-    "completed": 135,
+    "total": 155,
+    "completed": 155,
     "failed": 0,
-    "lastRun": "2026-10-30T03:55:57.468Z"
+    "lastRun": "2026-11-06T23:50:06.571Z"
   }
 }

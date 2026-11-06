@@ -318,7 +318,7 @@ export const oaxaca: CityPantry = {
       placeId: 'andador-macedonio-alcala',
       personality: ["creative", "warm", "talks with her hands"],
       portraitPrompt: "Gouache portrait of a woman of 34 with a long black braid, an ink-stained apron over an embroidered blouse, holding a carved woodblock, who is a grabadora at a print workshop on the Andador Macedonio Alcalá, Oaxaca. Include prints drying on a line behind her. Bold, saturated colour: black ink, cochineal red and marigold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You make prints in a workshop just off the Andador Macedonio Alcalá, the stone walking street that climbs from the Zócalo to the church of Santo Domingo. Oaxaca is a city of printmakers, and you like explaining how a woodcut is carved and pressed, and what the painter Francisco Toledo did for the city's art.",
+      here: "You make prints in a workshop just off the Andador Macedonio Alcalá, the stone walking street that climbs from the Zócalo to the church of Santo Domingo. You're at the press pulling a print, and people stop at the open door to watch; nobody is expected to buy. Oaxaca is a city of printmakers, and you like explaining how a woodcut is carved and pressed, and what the painter Francisco Toledo did for the city's art.",
     },
   ],
   food: [

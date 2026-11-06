@@ -722,6 +722,21 @@
       "src": "d4b19a92f07e1ccb",
       "bytes": 382372
     },
+    "places/andador-macedonio-alcala": {
+      "key": "es-mx/places/andador-macedonio-alcala.d38b157dbe.webp",
+      "src": "e5b4439cd2811690",
+      "bytes": 294116
+    },
+    "places/barrio-xanenetla": {
+      "key": "es-mx/places/barrio-xanenetla.0d9501a9a1.webp",
+      "src": "939f82e8399ee6e3",
+      "bytes": 413998
+    },
+    "places/biblioteca-palafoxiana": {
+      "key": "es-mx/places/biblioteca-palafoxiana.d167a6a566.webp",
+      "src": "dafffde07826480c",
+      "bytes": 372108
+    },
     "places/cafe-amapola": {
       "key": "es-mx/places/cafe-amapola.0f3491e53f.webp",
       "src": "31146e643537ef8f",
@@ -757,6 +772,11 @@
       "src": "f4f9f9d1a923e722",
       "bytes": 239328
     },
+    "places/casa-de-allende": {
+      "key": "es-mx/places/casa-de-allende.20f3c05c40.webp",
+      "src": "7904c48895c6b247",
+      "bytes": 186220
+    },
     "places/casa-del-tumbagon": {
       "key": "es-mx/places/casa-del-tumbagon.7e72d77d6c.webp",
       "src": "807a52d5855856ac",
@@ -786,6 +806,11 @@
       "key": "es-mx/places/dulces-tipicos-la-gloria.fa82204f21.webp",
       "src": "91390000f2a14019",
       "bytes": 410012
+    },
+    "places/el-mirador-san-miguel": {
+      "key": "es-mx/places/el-mirador-san-miguel.67170bebf8.webp",
+      "src": "6090ecb7eb9c8f45",
+      "bytes": 136482
     },
     "places/escuela-lengua-cdmx": {
       "key": "es-mx/places/escuela-lengua-cdmx.01e402e5e3.webp",
@@ -847,10 +872,20 @@
       "src": "9e2b890f0067c0f6",
       "bytes": 186330
     },
+    "places/hospicio-cabanas": {
+      "key": "es-mx/places/hospicio-cabanas.4758261576.webp",
+      "src": "9e469b2fa68c4650",
+      "bytes": 383950
+    },
     "places/jardin-allende": {
       "key": "es-mx/places/jardin-allende.1de7a4f247.webp",
       "src": "24b323d26eca5a0d",
       "bytes": 239040
+    },
+    "places/jardin-centenario-coyoacan": {
+      "key": "es-mx/places/jardin-centenario-coyoacan.4b8b5d9948.webp",
+      "src": "163141aced39277c",
+      "bytes": 430082
     },
     "places/jardin-conzatti-reforma": {
       "key": "es-mx/places/jardin-conzatti-reforma.d24fcddb75.webp",
@@ -907,6 +942,16 @@
       "src": "733001712e5a973b",
       "bytes": 152190
     },
+    "places/monte-alban": {
+      "key": "es-mx/places/monte-alban.943f218a97.webp",
+      "src": "e37fb86a7675d41d",
+      "bytes": 314480
+    },
+    "places/murales-palacio-nacional": {
+      "key": "es-mx/places/murales-palacio-nacional.8c71d26a6b.webp",
+      "src": "894f8347a48932f6",
+      "bytes": 345582
+    },
     "places/panaderia-el-trigal-xochimilco": {
       "key": "es-mx/places/panaderia-el-trigal-xochimilco.353d94aaad.webp",
       "src": "1f8e0d35140e9688",
@@ -956,6 +1001,11 @@
       "key": "es-mx/places/parroquia-san-pedro-tlaquepaque.6a6101cde6.webp",
       "src": "e8218b86d189d1ea",
       "bytes": 399494
+    },
+    "places/plaza-de-los-mariachis": {
+      "key": "es-mx/places/plaza-de-los-mariachis.819349e567.webp",
+      "src": "2344b10762b4bc16",
+      "bytes": 406866
     },
     "places/puesto-chapulines-mercado-benito-juarez": {
       "key": "es-mx/places/puesto-chapulines-mercado-benito-juarez.e2c02efd7e.webp",
@@ -1067,6 +1117,11 @@
       "src": "933aca3ab0f222b7",
       "bytes": 360228
     },
+    "portraits/andres-cabanas": {
+      "key": "es-mx/portraits/andres-cabanas.a0f77e289b.webp",
+      "src": "51040645f496892f",
+      "bytes": 248152
+    },
     "portraits/arturo-jubilado": {
       "key": "es-mx/portraits/arturo-jubilado.b1e34d8327.webp",
       "src": "7682246236b22391",
@@ -1137,6 +1192,11 @@
       "src": "e0b81db096e5f505",
       "bytes": 336128
     },
+    "portraits/chuy-mariachi": {
+      "key": "es-mx/portraits/chuy-mariachi.f25ca1cba0.webp",
+      "src": "59d3940fc2d0beb4",
+      "bytes": 255650
+    },
     "portraits/chuy-tacos-arabes-el-puente": {
       "key": "es-mx/portraits/chuy-tacos-arabes-el-puente.6c4b4beeed.webp",
       "src": "ad7a6d0c39c57795",
@@ -1172,10 +1232,20 @@
       "src": "b7ccdee56e586872",
       "bytes": 363526
     },
+    "portraits/efren-monte-alban": {
+      "key": "es-mx/portraits/efren-monte-alban.572b6aa936.webp",
+      "src": "1ced8abda7ce1bf4",
+      "bytes": 292626
+    },
     "portraits/efren-panadero": {
       "key": "es-mx/portraits/efren-panadero.cb4ecd7df6.webp",
       "src": "fd475acf52d6c798",
       "bytes": 301510
+    },
+    "portraits/elvira-coyoacan": {
+      "key": "es-mx/portraits/elvira-coyoacan.14549eb523.webp",
+      "src": "6f0733c1c864f2af",
+      "bytes": 375492
     },
     "portraits/emiliano-los-amantes": {
       "key": "es-mx/portraits/emiliano-los-amantes.bd4b7d7152.webp",
@@ -1187,10 +1257,20 @@
       "src": "a6abdde1ceb81a41",
       "bytes": 338340
     },
+    "portraits/gabriela-maestra": {
+      "key": "es-mx/portraits/gabriela-maestra.d4c1868979.webp",
+      "src": "d2d173b1953413b6",
+      "bytes": 276954
+    },
     "portraits/gaspar-panadero": {
       "key": "es-mx/portraits/gaspar-panadero.dcda8eb984.webp",
       "src": "e2fb68cd6fefaf1b",
       "bytes": 336238
+    },
+    "portraits/hugo-muralista": {
+      "key": "es-mx/portraits/hugo-muralista.3882c915ec.webp",
+      "src": "e8f92311cd747dd3",
+      "bytes": 369392
     },
     "portraits/jorge-taquillero-puebla": {
       "key": "es-mx/portraits/jorge-taquillero-puebla.72d4ab02b9.webp",
@@ -1206,6 +1286,11 @@
       "key": "es-mx/portraits/lourdes-panadera.dde5441b50.webp",
       "src": "13c6e5818f02aaed",
       "bytes": 312364
+    },
+    "portraits/lucia-grabadora": {
+      "key": "es-mx/portraits/lucia-grabadora.67413613d0.webp",
+      "src": "03358c0dae65b5a5",
+      "bytes": 346860
     },
     "portraits/luis-guia-jardin": {
       "key": "es-mx/portraits/luis-guia-jardin.cd851267f4.webp",
@@ -1236,6 +1321,11 @@
       "key": "es-mx/portraits/mari-tendera.f0f27f1c5d.webp",
       "src": "cce34cbbea703a42",
       "bytes": 359796
+    },
+    "portraits/mariana-palafoxiana": {
+      "key": "es-mx/portraits/mariana-palafoxiana.f33dd9d23e.webp",
+      "src": "b5d148fa414de55d",
+      "bytes": 301710
     },
     "portraits/marisol-cafe-pocito": {
       "key": "es-mx/portraits/marisol-cafe-pocito.1f4179cb7d.webp",
@@ -1292,10 +1382,20 @@
       "src": "605623e18445a4c0",
       "bytes": 370776
     },
+    "portraits/ramon-mirador": {
+      "key": "es-mx/portraits/ramon-mirador.84d8a39a68.webp",
+      "src": "09495ddf827e4a8b",
+      "bytes": 249360
+    },
     "portraits/remedios-panaderia-la-espiga": {
       "key": "es-mx/portraits/remedios-panaderia-la-espiga.55f90bff03.webp",
       "src": "999e0a3a46851b57",
       "bytes": 331752
+    },
+    "portraits/renata-restauradora": {
+      "key": "es-mx/portraits/renata-restauradora.57a847f0b0.webp",
+      "src": "f2989a0cff2d4451",
+      "bytes": 359354
     },
     "portraits/ricardo-taquillero-oaxaca": {
       "key": "es-mx/portraits/ricardo-taquillero-oaxaca.9571760ece.webp",
