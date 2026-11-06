@@ -16,6 +16,14 @@ export const romaNuova: CityPantry = {
 
   places: [
     {
+      id: 'cinema-trastevere',
+      name: 'Cinema Trastevere',
+      kind: 'cinema',
+      neighbourhood: 'Trastevere',
+      real: false,
+      imagePrompt: "A small single-screen neighbourhood cinema on a narrow cobbled street in Trastevere in the early evening: an old marquee over the door, film posters in glass cases on either side, ivy and ochre walls, string lights across the street, a few people queuing with phones and a couple sharing a supplì. The sign over the door reads \"Cinema Trastevere\" and that is the only lettering in the picture: the posters are a blur, no other words, titles or prices. Contemporary clothes and objects.",
+    },
+    {
       id: 'bar-mattina-nuova',
       name: 'Bar Mattina',
       kind: 'bar',
