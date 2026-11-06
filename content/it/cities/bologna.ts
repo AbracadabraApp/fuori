@@ -591,11 +591,11 @@ export const bologna: CityPantry = {
       name: "Blerta Gjoka",
       gender: "f",
       age: 38,
-      role: "capotrena",
+      role: 'bigliettaia',
       placeId: 'stazione-centrale',
       personality: ["punctual", "helpful", "experienced"],
       portraitPrompt: "Pen and ink portrait on white paper of woman in conductor uniform with cap, whistle around neck, checking watch, professional friendly expression, minimal navy blue watercolor accent, structured line work, showing railway expertise",
-      here: "You work on the trains at Bologna Centrale, one of Italy's main rail junctions, where high-speed trains between Milan, Florence and Rome meet, and you help travelers find the right platform. Your background: from Tirana, Albania, here 15 years.",
+      here: "You sell tickets at Bologna Centrale, one of Italy's main rail junctions, where high-speed trains between Milan, Florence and Rome meet, and you help travelers find the right platform. Your background: from Tirana, Albania, here 15 years.",
     },
     {
       id: 'pilgrim-angela',
