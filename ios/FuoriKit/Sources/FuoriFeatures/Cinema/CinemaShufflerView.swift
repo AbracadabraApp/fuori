@@ -174,8 +174,8 @@ struct FilmPage: View {
             VStack(alignment: .leading, spacing: 24) {
                 NavigationLink(value: FilmRoute(film: film)) { HeroPoster(film: film) }
                     .buttonStyle(PressableStyle())
-                    // MovieGenius's hero: nearly the full width (350 of 390 pt)
-                    .containerRelativeFrame(.horizontal) { width, _ in width * 0.9 }
+                    // MovieGenius's hero is 350 pt wide on every phone (MoviePosterView), not a share of the screen
+                    .containerRelativeFrame(.horizontal) { width, _ in min(350, width * 0.9) }
                     .frame(maxWidth: .infinity)
                     .padding(.top, 12)
                 if let why = film.whyWatch {
