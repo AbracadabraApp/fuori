@@ -115,7 +115,7 @@ export const showcase: Record<string, string[]> = {
     'portici-san-luca', // city pass 2026-11-05: replaces Mercato di Mezzo (a second mortadella seller)
     'ristorante-pappagallo',
     'sfoglia-rina', // city pass: replaces Bar Senza Nome (a generic student bar)
-    'cremeria-funivia',
+    'sorbetteria-castiglione', // city pass: replaces Cremeria Funivia (Josh's photo, 2026-11-05)
     'santo-stefano', // city pass: replaces the pharmacy
     'piazza-maggiore',
     'salumeria-simoni',

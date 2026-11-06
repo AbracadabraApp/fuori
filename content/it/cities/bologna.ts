@@ -14,7 +14,7 @@ export const bologna: CityPantry = {
       neighbourhood: 'Centro Storico',
       real: true,
       characterId: 'marco-terzi',
-      imagePrompt: 'Soft pastel sketch on white paper of a historic coffee bar with gleaming espresso machines, shelves of coffee beans in burlap sacks, marble counter with pastries under glass domes, warm amber and cream tones, morning light streaming through large windows, textured walls with vintage coffee posters, inviting and aromatic atmosphere',
+      imagePrompt: "Ink and watercolour like Rome's place pictures, rich and warm, never pale. Bologna, la rossa, today, a university town: saffron, ochre and brick-red palazzi; endless porticoes with vaulted ochre ceilings, red ribs and iron tie-rods across the arches; trolleybus wires overhead; brick gothic churches with pinnacles; narrow lanes of saffron, rust and red plaster with green shutters. Present-day Bologna full of students: backpacks and phones, bikes and scooters parked under the arches, contemporary clothes and objects. A narrow, dark-wood coffee bar under a portico on a narrow street, sacks of coffee beans and a roaster behind the counter. Marco Terzi, the roaster, at the counter; two students drink an espresso standing up. The sign reads \"Caffè Terzi\". The place's own sign is the only legible lettering in the picture: no other words, menus, prices or posters (any poster is a blur).",
     },
     {
       id: 'bar-senza-nome',
@@ -92,7 +92,7 @@ export const bologna: CityPantry = {
       neighbourhood: 'Centro Storico',
       real: false,
       characterId: 'chef-matteo-ricci',
-      imagePrompt: 'Soft pastel sketch on white paper of an elegant restaurant dining room with white tablecloths, frescoed ceiling details, wine glasses catching candlelight, classic Bolognese decor, deep burgundy and cream tones, intimate evening lighting, sophisticated and traditional atmosphere',
+      imagePrompt: "Ink and watercolour like Rome's place pictures, rich and warm, never pale. Bologna, la rossa, today, a university town: saffron, ochre and brick-red palazzi; endless porticoes with vaulted ochre ceilings, red ribs and iron tie-rods across the arches; trolleybus wires overhead; brick gothic churches with pinnacles; narrow lanes of saffron, rust and red plaster with green shutters. Present-day Bologna full of students: backpacks and phones, bikes and scooters parked under the arches, contemporary clothes and objects. A restaurant in an old palazzo with a vaulted ceiling and white tablecloths. Matteo, the chef, at the pass with a plate of tagliatelle al ragù in his hands. The sign reads \"I Carracci\". The place's own sign is the only legible lettering in the picture: no other words, menus, prices or posters (any poster is a blur).",
     },
     {
       id: 'ristorante-da-nello',
@@ -143,7 +143,7 @@ export const bologna: CityPantry = {
       neighbourhood: 'Santo Stefano',
       real: true,
       characterId: 'don-giuseppe',
-      imagePrompt: 'Soft pastel sketch on white paper of the seven churches complex with Romanesque arches, peaceful courtyard with well, ancient brickwork, pilgrims walking through cloisters, soft rose and stone gray tones, dappled sunlight, serene and sacred atmosphere',
+      imagePrompt: "Ink and watercolour like Rome's place pictures, rich and warm, never pale. Bologna, la rossa, today, a university town: saffron, ochre and brick-red palazzi; endless porticoes with vaulted ochre ceilings, red ribs and iron tie-rods across the arches; trolleybus wires overhead; brick gothic churches with pinnacles; narrow lanes of saffron, rust and red plaster with green shutters. Present-day Bologna full of students: backpacks and phones, bikes and scooters parked under the arches, contemporary clothes and objects. Piazza Santo Stefano: a wide open piazza paved in smooth pale stone with a long curved line, a row of grey stone spheres set along it, one with a child sitting on top. Across the piazza, red-brick palazzi with deep arcades on pointed arches and red-shuttered windows; a few low steps; people strolling under the arcades and crossing on bikes. The churches' plain brick façade with its arched doorway; Don Giuseppe, a priest of 59, sits on the low wall beside it. No sign. The place's own sign is the only legible lettering in the picture: no other words, menus, prices or posters (any poster is a blur).",
     },
     {
       id: 'san-petronio',
@@ -174,7 +174,7 @@ export const bologna: CityPantry = {
       neighbourhood: 'Centro Storico',
       real: true,
       characterId: 'street-musician-franco',
-      imagePrompt: 'Soft pastel sketch on white paper of Bologna\'s grand central square with Palazzo d\'Accursio, Neptune fountain, people gathered on steps, students crossing through, pigeons taking flight, warm stone colors and blue sky, afternoon bustle, heart of the city atmosphere',
+      imagePrompt: "Ink and watercolour like Rome's place pictures, rich and warm, never pale. Bologna, la rossa, today, a university town: saffron, ochre and brick-red palazzi; endless porticoes with vaulted ochre ceilings, red ribs and iron tie-rods across the arches; trolleybus wires overhead; brick gothic churches with pinnacles; narrow lanes of saffron, rust and red plaster with green shutters. Present-day Bologna full of students: backpacks and phones, bikes and scooters parked under the arches, contemporary clothes and objects. Piazza Maggiore: a vast open piazza paved in big grey slabs. The Basilica di San Petronio fills one side, its façade white and pink marble with arched doorways on the lower part and bare rough brick above, never finished. Beside it, the brick Palazzo d'Accursio with its battlements; the dark bronze Neptune fountain with people sitting on its steps; café tables with black folding chairs and white cloths; cyclists crossing; someone with a gelato. Franco plays guitar at the edge of the piazza, an evening crowd around. No sign. The place's own sign is the only legible lettering in the picture: no other words, menus, prices or posters (any poster is a blur).",
     },
     {
       id: 'piazza-verdi',
@@ -183,7 +183,7 @@ export const bologna: CityPantry = {
       neighbourhood: 'Quartiere Universitario',
       real: true,
       characterId: 'student-clara',
-      imagePrompt: 'Soft pastel sketch on white paper of lively university square with students sitting on low walls, Teatro Comunale in background, bicycles parked everywhere, young people with books and coffee, vibrant greens and warm tones, evening light, youthful and energetic feel',
+      imagePrompt: "Ink and watercolour like Rome's place pictures, rich and warm, never pale. Bologna, la rossa, today, a university town: saffron, ochre and brick-red palazzi; endless porticoes with vaulted ochre ceilings, red ribs and iron tie-rods across the arches; trolleybus wires overhead; brick gothic churches with pinnacles; narrow lanes of saffron, rust and red plaster with green shutters. Present-day Bologna full of students: backpacks and phones, bikes and scooters parked under the arches, contemporary clothes and objects. Piazza Verdi in the university quarter at dusk: arcades, students sitting on low walls with phones and bottles of water, bikes everywhere, a lively crowd. Clara, a student of 22, with friends on the wall. No sign. The place's own sign is the only legible lettering in the picture: no other words, menus, prices or posters (any poster is a blur).",
     },
     
     // WINE BARS/APERITIVO (2)
@@ -225,7 +225,7 @@ export const bologna: CityPantry = {
       neighbourhood: 'Centro Storico',
       real: true,
       characterId: 'bruno-simoni',
-      imagePrompt: 'Soft pastel sketch on white paper of traditional salumeria with hanging mortadella and prosciutto, wheels of Parmigiano-Reggiano stacked high, glass cases of fresh pasta and tortellini, vintage slicer on counter, rich pinks and golds, aromatic and traditional feel',
+      imagePrompt: "Ink and watercolour like Rome's place pictures, rich and warm, never pale. Bologna, la rossa, today, a university town: saffron, ochre and brick-red palazzi; endless porticoes with vaulted ochre ceilings, red ribs and iron tie-rods across the arches; trolleybus wires overhead; brick gothic churches with pinnacles; narrow lanes of saffron, rust and red plaster with green shutters. Present-day Bologna full of students: backpacks and phones, bikes and scooters parked under the arches, contemporary clothes and objects. A salumeria in the Quadrilatero's narrow market streets under a portico: hams and mortadella hanging, wheels of Parmigiano Reggiano, fresh tortellini on trays. Bruno Simoni slices mortadella by hand at the counter. The sign reads \"Salumeria Simoni\". The place's own sign is the only legible lettering in the picture: no other words, menus, prices or posters (any poster is a blur).",
     },
     {
       id: 'bottega-portici',
@@ -246,6 +246,16 @@ export const bologna: CityPantry = {
       real: true,
       characterId: 'michele-gelataio',
       imagePrompt: 'Soft pastel sketch on white paper of artisanal gelato shop with display case of colorful gelato, metal pozzetti containers, customers at counter choosing flavors, vintage gelato-making equipment, pastel rainbow of colors, summer afternoon light, sweet and cheerful atmosphere',
+    },
+    {
+      id: 'sorbetteria-castiglione',
+      name: 'La Sorbetteria Castiglione',
+      kind: 'gelateria',
+      neighbourhood: 'Santo Stefano',
+      real: true,
+      characterId: 'sara-sorbetteria',
+      imagePrompt: "Ink and watercolour like Rome's place pictures, rich and warm, never pale. Bologna, la rossa, today, a university town: saffron, ochre and brick-red palazzi; endless porticoes with vaulted ochre ceilings, red ribs and iron tie-rods across the arches; trolleybus wires overhead; brick gothic churches with pinnacles; narrow lanes of saffron, rust and red plaster with green shutters. Present-day Bologna full of students: backpacks and phones, bikes and scooters parked under the arches, contemporary clothes and objects. A bright gelato counter in a shop under a portico arch on Via Castiglione in the evening, a cream sign over the window, people with cones strolling past under the arches. A blank board on the wall for the flavours. The gelataia, Sara, behind the counter. The sign reads \"La Sorbetteria Castiglione\". The place's own sign is the only legible lettering in the picture: no other words, menus, prices or posters (any poster is a blur).",
+      menu: ['Dolce Emma', 'Michelangelo', 'Nocciola', 'Pistacchio', 'Cioccolato', 'Frutta di stagione'],
     },
     
     // PRACTICAL - Pharmacy (1)
@@ -278,7 +288,7 @@ export const bologna: CityPantry = {
       neighbourhood: 'Centro Storico',
       real: true,
       characterId: 'conductor-davide',
-      imagePrompt: 'Soft pastel sketch on white paper of grand railway station with vaulted iron and glass ceiling, departure boards clicking, travelers with luggage, newsstand and café visible, trains on platforms, industrial grays and warm lighting, busy travel atmosphere',
+      imagePrompt: "Ink and watercolour like Rome's place pictures, rich and warm, never pale. Bologna, la rossa, today, a university town: saffron, ochre and brick-red palazzi; endless porticoes with vaulted ochre ceilings, red ribs and iron tie-rods across the arches; trolleybus wires overhead; brick gothic churches with pinnacles; narrow lanes of saffron, rust and red plaster with green shutters. Present-day Bologna full of students: backpacks and phones, bikes and scooters parked under the arches, contemporary clothes and objects. The ticket office of Bologna Centrale: old brick and modern departure boards (their text a blur). Blerta, the ticket seller, at her window with a traveller and a suitcase. The sign reads \"Stazione di Bologna Centrale\". The place's own sign is the only legible lettering in the picture: no other words, menus, prices or posters (any poster is a blur).",
     },
     
     // CITY CHARACTER - Porticoes (unique to Bologna)
@@ -289,7 +299,7 @@ export const bologna: CityPantry = {
       neighbourhood: 'Saragozza',
       real: true,
       characterId: 'pilgrim-angela',
-      imagePrompt: 'Soft pastel sketch on white paper of the world\'s longest portico winding up hillside, 666 arches stretching into distance, pilgrims and walkers ascending, terracotta and cream arches, dappled sunlight through columns, peaceful views over Bologna, meditative and grand atmosphere',
+      imagePrompt: "Ink and watercolour like Rome's place pictures, rich and warm, never pale. Bologna, la rossa, today, a university town: saffron, ochre and brick-red palazzi; endless porticoes with vaulted ochre ceilings, red ribs and iron tie-rods across the arches; trolleybus wires overhead; brick gothic churches with pinnacles; narrow lanes of saffron, rust and red plaster with green shutters. Present-day Bologna full of students: backpacks and phones, bikes and scooters parked under the arches, contemporary clothes and objects. The Portico di San Luca: a long arched covered walk climbing the green hill, arch after arch, the sanctuary of the Madonna di San Luca at the top. Angela, 58, walks up with two walkers in trainers. No sign. The place's own sign is the only legible lettering in the picture: no other words, menus, prices or posters (any poster is a blur).",
     },
     
     // PASTA SHOP (Bologna specialty - fresh pasta)
@@ -300,7 +310,7 @@ export const bologna: CityPantry = {
       neighbourhood: 'Quartiere Universitario',
       real: false,
       characterId: 'nonna-rina',
-      imagePrompt: 'Soft pastel sketch on white paper of fresh pasta laboratory with sfoglina rolling out pasta dough with long rolling pin, trays of handmade tortellini, tagliatelle hanging to dry, flour-dusted marble table, golden pasta colors and warm wood tones, artisanal and authentic feel',
+      imagePrompt: "Ink and watercolour like Rome's place pictures, rich and warm, never pale. Bologna, la rossa, today, a university town: saffron, ochre and brick-red palazzi; endless porticoes with vaulted ochre ceilings, red ribs and iron tie-rods across the arches; trolleybus wires overhead; brick gothic churches with pinnacles; narrow lanes of saffron, rust and red plaster with green shutters. Present-day Bologna full of students: backpacks and phones, bikes and scooters parked under the arches, contemporary clothes and objects. A small pasta shop under an old wooden portico, its dark timber posts and brackets on brick, terracotta pots, a cobbled street. In the window, sheets of sfoglia and trays of tortellini; Nonna Rina, 74, rolls the dough with a long wooden mattarello while someone watches from the street. The sign reads \"Sfoglia Rina\". The place's own sign is the only legible lettering in the picture: no other words, menus, prices or posters (any poster is a blur).",
     },
     
     // UNIVERSITY (City character)
@@ -575,6 +585,17 @@ export const bologna: CityPantry = {
       personality: ["creative", "cheerful", "hardworking"],
       portraitPrompt: "Pen and ink portrait on white paper of young woman with dark hair tied back, bright eyes, white gelato uniform, holding spatula, enthusiastic smile, minimal pastel watercolor accents, clean fresh line work, capturing artisan gelato passion",
       here: "You make and serve gelato at Cremeria Funivia, a well-known artisan gelateria in the centre, and you know Bolognese take a cone along on the evening stroll under the porticoes. Your background: from Iași, Romania, here 10 years.",
+    },
+    {
+      id: 'sara-sorbetteria',
+      name: 'Sara Bertolini',
+      gender: 'f',
+      age: 45,
+      role: 'gelataia',
+      placeId: 'sorbetteria-castiglione',
+      personality: ['enthusiastic', 'chatty', 'precise'],
+      portraitPrompt: "Pen and ink portrait on white paper, washed with warm Bologna ochre and brick-red watercolor like the other portraits, of a Bolognese woman of 45 with short dark curly hair and laughing eyes, in a white shirt and a cream apron, holding a gelato spatula and leaning on the counter as if asking which flavour you'd like to try; detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.",
+      here: "You have worked behind the counter at La Sorbetteria Castiglione, on Via Castiglione near Piazza Santo Stefano, for twenty years, and you would rather talk about flavours than scoop them. The shop has been here since 1994 and has its own house flavours: Dolce Emma (ricotta and figs) and Michelangelo (almonds), with nocciola, pistacchio, cioccolato and fruit of the season beside them. You want to know which the newcomer has tried, you offer a taste on a little spoon, and you say that nocciola is how you judge a gelateria.",
     },
     {
       id: 'dottoressa-lombardi',
