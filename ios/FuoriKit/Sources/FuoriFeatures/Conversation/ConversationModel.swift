@@ -170,7 +170,9 @@ public final class ConversationModel {
     /// (lib/welcome.ts: no speech-to-text to mishear)
     public private(set) var tapAnswers = false
     /// The welcome after the tap: the end button shows beside the mic while
-    /// it's the learner's turn ("do you have any questions, or are you ready to go?")
+    /// it's the learner's turn ("do you have any questions, or are you ready to go?");
+    /// at the station, from the start: the learner boards whenever they choose
+    /// (docs/station-feature-decision.md: the app never decides the talk is over)
     public private(set) var canEnd = false
     /// The end button shows: in place of the mic at the end, or beside it when they can go any time
     public var showsEndButton: Bool {
@@ -243,6 +245,9 @@ public final class ConversationModel {
     public let welcome: Bool
     /// A lesson's part (lib/lesson.ts), sent with every turn; its last turn ends on a button too
     public let lesson: APIClient.LessonTurn?
+    /// At the station: the ticket bought on the departures board, sent with every
+    /// call so the seller knows where you're going; boarding ("Sali") is the end button
+    public let trip: Trip?
     /// The button that replaces the mic once the last turn is said, in the language (line) with its English (en)
     public let endButton: Onboarding.Line?
     /// What the button does (the welcome: place them; a lesson: the next part)
@@ -254,10 +259,11 @@ public final class ConversationModel {
 
     /// `beginner`: the learner's level is Beginner, or not set yet (the opener hint, the longer end-of-turn wait).
     /// `welcome` or `lesson`: a conversation that ends on `endButton`, which runs `onEnd`
-    public init(city: City, place: Place, character: Character, language: Language, api: APIClient, beginner: Bool = false, welcome: Bool = false, lesson: APIClient.LessonTurn? = nil, endButton: Onboarding.Line? = nil, onEnd: (@MainActor (ConversationModel) async throws -> Void)? = nil, onSave: @escaping (String) -> Void) {
+    public init(city: City, place: Place, character: Character, language: Language, api: APIClient, beginner: Bool = false, welcome: Bool = false, lesson: APIClient.LessonTurn? = nil, trip: Trip? = nil, endButton: Onboarding.Line? = nil, onEnd: (@MainActor (ConversationModel) async throws -> Void)? = nil, onSave: @escaping (String) -> Void) {
         self.beginner = beginner
         self.welcome = welcome
         self.lesson = lesson
+        self.trip = trip
         self.endButton = endButton
         self.onEnd = onEnd
         self.city = city
@@ -292,7 +298,7 @@ public final class ConversationModel {
         guard generation == self.generation else { return }
         if endButton != nil, reply.done == true { finished = true }
         tapAnswers = reply.tapAnswers == true
-        canEnd = endButton != nil && reply.canEnd == true
+        canEnd = endButton != nil && (trip != nil || reply.canEnd == true)
         scaffolding = reply.replies == true
         // An older server sends no stage (or "tap", now gone): two good answers
         stage = scaffolding ? (reply.stage.flatMap(Stage.init(rawValue:)) ?? .read) : nil
@@ -383,7 +389,7 @@ public final class ConversationModel {
         let generation = self.generation
         let micOff = micOffToSay ? true : nil
         micOffToSay = false
-        return try await api.turnStreamed(cityId: city.id, placeId: place.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome ? true : nil, micOff: micOff, lesson: lesson) { [weak self] first, parts in
+        return try await api.turnStreamed(cityId: city.id, placeId: place.id, tripTo: trip?.to.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome ? true : nil, micOff: micOff, lesson: lesson) { [weak self] first, parts in
             Task { @MainActor in self?.startHead(first, parts: parts, generation: generation) }
         }
     }
@@ -786,7 +792,7 @@ public final class ConversationModel {
     private func sayItInEnglish(_ english: String, asLearned: String? = nil, generation: Int) async {
         do {
             let started = Self.now()
-            let line = try await api.sayIt(cityId: city.id, placeId: place.id, conversationId: conversationId, heard: english, heardAsLearned: asLearned)
+            let line = try await api.sayIt(cityId: city.id, placeId: place.id, tripTo: trip?.to.id, conversationId: conversationId, heard: english, heardAsLearned: asLearned)
             time("say-it", since: started)
             guard generation == self.generation else { return }
             // Already in the language (Whisper mislabelled it) or too unclear
@@ -843,7 +849,7 @@ public final class ConversationModel {
         let stage = stage?.rawValue
         repliesTask = Task { [api, city, place] in
             do {
-                let replies = try await api.replies(cityId: city.id, placeId: place.id, conversationId: conversationId, stage: stage)
+                let replies = try await api.replies(cityId: city.id, placeId: place.id, tripTo: trip?.to.id, conversationId: conversationId, stage: stage)
                 return .success(replies)
             } catch {
                 return .failure(error)
@@ -947,7 +953,7 @@ public final class ConversationModel {
             try await onEnd(self)
         } catch {
             finishing = false
-            let code = report(error, step: welcome ? "welcomed" : "lesson next")
+            let code = report(error, step: welcome ? "welcomed" : trip != nil ? "board" : "lesson next")
             note = ErrorCode.message("Couldn't go on. Tap again.", code: code)
         }
     }
@@ -998,7 +1004,7 @@ public final class ConversationModel {
         let started = Self.now()
         defer { time("learn", since: started) }
         do {
-            return try await api.learn(cityId: city.id, placeId: place.id, conversationId: conversationId)
+            return try await api.learn(cityId: city.id, placeId: place.id, tripTo: trip?.to.id, conversationId: conversationId)
         } catch {
             _ = report(error, step: "learn")
             throw error
@@ -1223,4 +1229,16 @@ struct PhaseLog {
 /// The Learn sheet was opened before the server had saved the conversation
 private struct NoConversationYet: LocalizedError {
     var errorDescription: String? { "Say something first, then open Learn." }
+}
+
+/// A ticket from the departures board: where to, and its platform and seat
+public struct Trip: Equatable, Hashable, Sendable {
+    public let from: City
+    public let to: City
+    public let departure: Departure
+    public init(from: City, to: City) {
+        self.from = from
+        self.to = to
+        departure = Departure(from: from.id, to: to.id)
+    }
 }

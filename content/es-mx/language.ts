@@ -32,7 +32,7 @@ export const language = {
       seat: 'Asiento',
       fareLabel: 'Boleto',
       fare: 'Sencillo',
-      board: 'Subir',
+      board: 'Súbete', // tú, like Italy's "Sali" and "¿A dónde quieres ir?" (2026-11-05)
     },
     whereTo: '¿A dónde quieres ir?', // departures board title
     letsDoIt: '¡Sí, va!', // Learn home: the Lessons card's button (canvas "Learn area", D3)

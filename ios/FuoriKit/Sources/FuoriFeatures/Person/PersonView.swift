@@ -17,6 +17,7 @@ struct PersonView: View {
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.debug) private var debug = false
     @State private var showingLearn = false
+    @Environment(AppModel.self) private var appModel
 
     init(model: ConversationModel) {
         _model = State(initialValue: model)
@@ -74,6 +75,10 @@ struct PersonView: View {
                 if let note { Subtitles(line: nil, shown: nil, english: nil, note: note) }
             } else {
                 Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note, hint: model.openerHint)
+            }
+            // At the station: your ticket, just above the talking controls (as on the web)
+            if let trip = model.trip, let content = appModel.content {
+                TicketStrip(trip: trip, words: content.language.ui.ticket, theme: content.ticketTheme)
             }
             // No Learn link in the welcome: it's not a conversation to go over
             ConversationControls(model: model, onLearn: learnAction)

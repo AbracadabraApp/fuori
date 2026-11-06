@@ -147,6 +147,15 @@ public struct RootView: View {
         }
         // A new country (Settings → Explore) starts at its city list
         .onChange(of: model.server) { path = NavigationPath() }
+        // Boarded at the station ("Sali"): the conversation was saved on the
+        // way out; arrive at the destination's places, back leads to the cities
+        .onChange(of: model.arrival) { _, city in
+            guard let city else { return }
+            var arrived = NavigationPath()
+            arrived.append(city)
+            path = arrived
+            model.arrived()
+        }
         // The first launch's choice counts as this launch's pick, so the
         // welcome that follows it starts at once
         .onChange(of: model.phase) { old, _ in

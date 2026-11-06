@@ -171,9 +171,9 @@ public actor APIClient {
     /// `onFirst` also gets the first parts of a Beginner turn (nil otherwise),
     /// so they show as bubbles while they're said
     /// `welcome`: this conversation is the welcome (lib/welcome.ts); `micOff`: the mic was refused, she says once where to turn it on; `lesson`: a lesson's turn (lib/lesson.ts)
-    public func turnStreamed(cityId: String, placeId: String, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, welcome: Bool? = nil, micOff: Bool? = nil, lesson: LessonTurn? = nil, onFirst: @escaping @Sendable (String, [TurnPart]?) -> Void) async throws -> TurnReply {
-        struct Body: Encodable { let cityId: String; let placeId: String; let conversationId: String?; let learnerSaid: String?; let speed: Double?; let welcome: Bool?; let micOff: Bool?; let lesson: LessonTurn? }
-        var req = try post("v1/turn", json: Body(cityId: cityId, placeId: placeId, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome, micOff: micOff, lesson: lesson))
+    public func turnStreamed(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, welcome: Bool? = nil, micOff: Bool? = nil, lesson: LessonTurn? = nil, onFirst: @escaping @Sendable (String, [TurnPart]?) -> Void) async throws -> TurnReply {
+        struct Body: Encodable { let cityId: String; let placeId: String; let tripTo: String?; let conversationId: String?; let learnerSaid: String?; let speed: Double?; let welcome: Bool?; let micOff: Bool?; let lesson: LessonTurn? }
+        var req = try post("v1/turn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome, micOff: micOff, lesson: lesson))
         req.setValue("application/x-ndjson", forHTTPHeaderField: "Accept")
         req.setValue("Bearer \(try await ensureToken())", forHTTPHeaderField: "Authorization")
         let requestId = ErrorCode.make()
