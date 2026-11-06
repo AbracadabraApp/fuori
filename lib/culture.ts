@@ -65,6 +65,7 @@ export function storyBrief(item: CultureItem, n: number, beginner: boolean): { b
     facts: item.facts,
     turn: String(Math.min(n + 1, STORY_TURNS + 1)),
     of: String(STORY_TURNS + 1),
+    first: n === 0 ? `${f.block('Story: first turn')} ` : '',
     last: last ? f.block('Story: last turn') : '',
     level: fill(f.block(beginner ? 'Story: Beginner' : 'Story: speaking'), { words, language: language.name }),
   });

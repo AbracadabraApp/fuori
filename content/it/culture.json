@@ -434,9 +434,9 @@
     },
     {
       "chip": "Gelato under the porticoes",
-      "teller": "michele-gelataio",
+      "teller": "sara-sorbetteria",
       "topic": "traditions",
-      "facts": "In the evening Bolognese take a gelato and stroll slowly under the porticoes, with no destination. The porticoes began in the Middle Ages, when the city grew and students needed rooms, so buildings extended over the street to make space. Today they mean you can walk in the centre in rain or in strong sun without an umbrella. That is why the evening passeggiata with a cone happens in every season, and I have taken it as my own habit after ten years here.",
+      "facts": "In the evening Bolognese take a gelato and stroll slowly under the porticoes, with no destination. The porticoes began in the Middle Ages, when the city grew and students needed rooms, so buildings extended over the street to make space. Today they mean you can walk in the centre in rain or in strong sun without an umbrella. That is why the evening passeggiata with a cone happens in every season, and most of my customers walk off with their cone under the arches.",
       "words": [
         {
           "said": "passeggiata",
@@ -449,13 +449,13 @@
       ],
       "id": "bologna-gelato-under-the-porticoes",
       "cityId": "bologna",
-      "placeId": "cremeria-funivia"
+      "placeId": "sorbetteria-castiglione"
     },
     {
       "chip": "The stolen bucket",
-      "teller": "paolo-venturi",
+      "teller": "bruno-simoni",
       "topic": "rivalry",
-      "facts": "The old rivalry between Bologna and Modena has a famous story: in 1325 Modena won the battle of Zappolino against Bologna. The Modenese carried off a wooden bucket from a Bolognese well as a trophy, and Modena keeps it as a symbol to this day. Alessandro Tassoni later turned it into a comic poem, La secchia rapita. We still joke about it at the market, and the teasing carries over to whose mortadella, tortellini and cars are better.",
+      "facts": "The old rivalry between Bologna and Modena has a famous story: in 1325 Modena won the battle of Zappolino against Bologna. The Modenese carried off a wooden bucket from a Bolognese well as a trophy, and Modena keeps it as a symbol to this day. Alessandro Tassoni later turned it into a comic poem, La secchia rapita. We still joke about it in the shop, and the teasing carries over to whose mortadella, tortellini and cars are better.",
       "words": [
         {
           "said": "la secchia",
@@ -468,7 +468,7 @@
       ],
       "id": "bologna-the-stolen-bucket",
       "cityId": "bologna",
-      "placeId": "mercato-mezzo"
+      "placeId": "salumeria-simoni"
     },
     {
       "chip": "Schietta or maritata",

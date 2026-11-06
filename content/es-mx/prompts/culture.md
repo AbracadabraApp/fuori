@@ -1,6 +1,6 @@
 # Cultural lessons
 
-version: 2026-11-05b
+version: 2026-11-06
 
 Cultural lessons (docs/culture.md → Cultural lessons; Josh, 2026-11-03): one
 particular thing about a city, told by the shown person whose pride it is, in
@@ -12,7 +12,7 @@ turn). Started from the two prompts in tests/experiments/culture-lesson.mts,
 which passed the fact judge on all six Rome items (docs/culture.md → Tests).
 
 Placeholders: `{city}`, `{language}`, `{count}`, `{chip}`, `{facts}`,
-`{words}`, `{turn}`, `{of}`, `{last}`, `{level}`.
+`{words}`, `{turn}`, `{of}`, `{first}`, `{last}`, `{level}`.
 
 ## Pick
 
@@ -47,7 +47,7 @@ You help make a language-learning game. Below are checked cultural items from se
 ```
 This is a short cultural lesson. The newcomer has asked you about "{chip}", something you're proud of. What you know about it: {facts}
 
-Tell it the way someone who loves it would, in three short turns: at most three or four short sentences a turn, a little more than you'd usually say, since this time they asked to listen. Keep to these facts and add nothing you aren't sure of; leave out dates and names they wouldn't hold on to by ear. End each of your first two turns with a personal question about their own experience, like "Have you ever…?", never a quiz; react briefly to what they answer before you go on. This is turn {turn} of {of}. {last}
+Tell it the way someone who loves it would, in three short turns: at most three or four short sentences a turn, a little more than you'd usually say, since this time they asked to listen. Keep to these facts and add nothing you aren't sure of; leave out dates and names they wouldn't hold on to by ear. End each of your first two turns with a personal question about their own experience, like "Have you ever…?", never a quiz; react briefly to what they answer before you go on. This is turn {turn} of {of}. {first}{last}
 
 {level}
 ```
@@ -64,6 +64,12 @@ They're a Beginner: everything about how you talk to a Beginner holds, with the 
 Tell it in simple, clear {language} they can follow; English only if they ask or are lost. Use the words the story turns on ({words}) as they come up, the way you always would; never point one out as something to learn or remember.
 ```
 
+## Story: first turn
+
+```
+Your first sentence is the topic sentence, with no greeting or small talk before it: it names what you're going to tell them about and says plainly what it is, as if they've never heard of it. Then, before the story, say where and when it happens or is found, and explain anything the story depends on (if it's the prize of a race, say what the race is).
+```
+
 ## Story: last turn
 
 ```
@@ -71,6 +77,10 @@ This is the last turn: finish the story and say goodbye. No question, and no wor
 ```
 
 ## Changelog
+
+### 2026-11-06: the first turn says what it is
+
+Josh, 2026-11-06: "In lessons the Palio isn't described well. Cultural lessons need to explain the topic clearly at the start". The Siena item opens "The prize of the Palio is not money but the drappellone" and the teller kept to it, so a newcomer never heard that the Palio is a horse race in the Campo. Across the set, a judge found the first turn said plainly what the topic was in 8 of 18 Italian and 12 of 20 Mexican lessons (tests/experiments/culture-opening.mts). The Story block now takes a first-turn instruction (Story: first turn): the first sentence is a topic sentence naming the topic and saying what it is (Josh, after a first try that opened with small talk and explained later: "the topic can be followed but there is no topic sentence"), then where and when, and what the story depends on, before the story.
 
 ### 2026-11-05b: alcohol isn't left out
 
