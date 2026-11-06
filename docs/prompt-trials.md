@@ -288,3 +288,16 @@ C's threads: mentioned on 55–65% of the days they're drawn (Italy 18/33 Beginn
 | | Italy · Intermediate (vs baseline) | 2.6 / 3.4 s | 32 | **47%** | 5/24 | 15/24 | 8/8, 7/8 | 0.8 | 1/5 | Purchase a little down, told again back to baseline (C: 1.4); town same, still below Mexico's 15–19/21 |
 
 Nino, the limited-transaction reference, in this run: purchase 0–17% of his lines, but told again 4 (Beginner) and 2 (Intermediate): the menu, dish by dish, on every visit. Even the role that works repeats itself.
+
+References (`PLACES=ref`): the bar a shop has to beat (Josh: "why is the shop better than a cultural focus, open space, role with limited transaction (nino in rome)"). Italy: the Colosseum, the Pantheon, Piazza del Campo, Santa Maria in Trastevere's fountain steps, Nino; Mexico: the Catedral Metropolitana, the Parroquia in San Miguel, the Zócalo in Oaxaca, the Jardín del Carmen in Puebla. Commit 9dca7b6.
+
+| References | Country · level | Reply time | Words a line | Purchase lines | Visits with a cliché | Something particular to the town | Told again |
+|---|---|---|---|---|---|---|---|
+| | Italy · Beginner | 2.8 / 3.2 s | 26 | 11% | 1/15 | 10/15 | 3.0 |
+| | Italy · Intermediate | 3.0 / 3.7 s | 44 | 3% | 0/15 | 14/15 | 1.0 |
+| | Mexico · Beginner | 2.8 / 3.3 s | 27 | 4% | 1/12 | 9/12 | 0.5 |
+| | Mexico · Intermediate | 3.1 / 3.7 s | 45 | 0% | 0/12 | 11/12 | 1.3 |
+
+The references talk about the town in 67–93% of visits against shops' 8–33% (Beginner) and 63–90% (Intermediate), with almost no purchase; their lines are longer (26 and 44 words against 20 and 32) and replies about 0.2–0.4 s slower. They repeat as much as shops (Italy Beginner 3.0): repeats are a memory problem, not a place problem.
+
+Threads (C) dropped, 2026-11-06: planting with dice (Josh: "is planting ideas the right approach"); the code was removed before merging.

@@ -1,28 +1,60 @@
 # Dialogue variety
 
-Plan, 2026-11-06, revised the same day. Each step waits for Josh's go.
+## Context
 
-## The frame (Josh, 2026-11-06)
+Josh, 2026-11-06: conversations at shops all go "how much, card or cash, thank you, bye", and the same kinds of place repeat in every town. Then: "the issue is not just transactions - we should frame it for all dialogue -- the easiest way to correct commerce is correct the places where it happens"; "is planting ideas the right approach"; "I honestly can't tell your plans". This plan was approved by Josh on 2026-11-06 and replaces the earlier versions below; it doesn't change without his say.
 
-"The issue is not just transactions - we should frame it for all dialogue -- the easiest way to correct commerce is correct the places where it happens."
+**Goal:** every conversation gives the learner something true and particular to this town and this person, and a second visit isn't a rerun of the first.
 
-- **The problem, everywhere:** conversations are thin and alike across visits and places: the same planted idea every visit (Nino's menu, the marigolds, the Maradona shrine), national clichés, the same shape at every place of a kind. The transaction is the loudest case because shops are about two-thirds of what a learner can visit (Italy 5–9 of 9–13 shown places per city; Mexico 7–9 of 12–14).
-- **The goal:** every conversation gives the learner something true and particular to this town and this person, and a second visit isn't a rerun of the first.
-- **The order, cheapest lever first:** 1. places (fewer shops: one bar per city, pharmacies out, the city's own landmarks, open spaces and Nino-style roles in; a shop stays only if it beats those on the gate); 2. lines (every shown character's `here` written the Mexican way: what this place is and why it's local, no clichés); 3. talk (memory of what was already told; threads drawn with odds if they still help; A, already live).
-- **The measure, for every kind of place:** the variety gate (`tests/experiments/variety.mts`, `docs/prompt-trials.md` → Conversation variety gate) with shops, landmarks, open spaces and Nino-style roles; each kind's numbers are the bar for the others.
+**What we know** (variety gate, `tests/experiments/variety.mts`, results in `docs/prompt-trials.md`):
+- About two-thirds of the places a learner can visit are shops (Italy 5–9 of ~10 per city, Mexico 7–9 of 12–14).
+- Mexico was better than Italy on culture, because its `here` lines say what the place is and why it's local (café de olla, the seven moles, Talavera, the marigolds).
+- But whatever is in a `here` line gets said on every visit, Mexico's included (Josh: "even Mexico here drives repeats (cafe de olla)": Café Amapola's café de olla and piloncillo on visits 1, 2 and 3; the marigolds; Talavera). Planted talking points are the same, worse: ignored, forced, invented news, or said every visit (cappuccino, Nino's menu, the weather in 24 of 24 openings).
+- So better lines bring culture, not variety. Repeats come from the character not knowing what they already told this learner, whatever the line says (Nino repeats his menu too). That needs memory, and it applies to every place in both countries, so it comes before the lines.
 
-### Steps from here
+## The approach: three levers, each for its own problem, no planting
 
-1. Gate the references: a landmark, an open space and Nino in each country, beside the current shops.
-2. Josh approves the swap list; its landmarks and open spaces go in; a shop only if it beats the references.
-3. Gate the swapped cities.
-4. Remaining `here` lines rewritten the Mexican way, city by city, gated.
-5. Memory ("you've already told them about X"), then threads, gated.
-6. Josh plays it on the phone.
+1. **Places → too much buying.** Fewer shops, more of each city's own places (Josh: "the easiest way to correct commerce is correct the places where it happens"). Which places change is Josh's decision, not yet made. My draft, for him to change or reject: one bar per city (two in Rome, Venice, Naples, Taormina and Turin), pharmacies out except Rome's, and the city's landmarks and open spaces in (already written, hidden by `content/it/showcase.ts`). Josh's rule, decided: a shop brought in has to prove it beats a cultural place, an open space and a role like Nino's on the gate. **Mexico, decided (Josh): add 2 cultural or open places to each Mexican city** (5 cities, 10 places). Mexico has almost nothing hidden, so these are new: place, person, a `here` line written the Mexican way, fact-checked, and pictures in the Mexico style (`docs/mexico-version.md` → Visual style), which Josh approves.
+2. **Memory → repeats.** After a visit, the memory notes also record what the character told the learner (`content/*/prompts/memory.md`; notes are free lines, no new column). The character and Beginner prompts say: you've already told them about these; don't tell them again; ask how it went, or tell something new. Every place, both countries.
+3. **Lines → too little culture (Italy).** Shown Italian characters' `here` lines written the Mexican way: what this place is and why it's local, the culture inside the work; for open places, the person's own interest with one example. No talking points, no national clichés (cappuccino hours, pay first). Lines don't fix repeats; memory does.
 
-Done so far: the baseline gate (Mexico better than Italy on almost every measure); A, live (Beginner purchase 65–79% → 51–60%); on the `variety-threads` branch, Italy's lines the Mexican way (4 lines) and threads with odds. The original plan below stays as the record of how we got here.
+Dropped: threads drawn with odds (planting with dice), the pride line, a generated situation for each visit, missions.
+
+## Steps
+
+Each step is measured on the gate (purchase lines, something particular to the town, clichés, told again, reply time, words a line) against the baseline, and needs Josh's go.
+
+0. **Tidy up (no change to the game).** Let the reference run finish and record it (it's the bar for shops). On the `variety-threads` branch, remove the threads code (`lib/today.ts` threadsToday, `lib/types.ts` threads, `lib/characters/for-place.ts`, the two prompt builders, the `test:today` thread checks); keep the gate test, the docs and Italy's four Mexican-style lines (tested: purchase down at both levels, no extra repeats). Merge that into `main`, push, smoke:live both countries.
+1. **Swap list: not approved.** Josh goes through the draft list (in the conversation, not written into any file as decided) and changes, approves or rejects it city by city. Nothing in `showcase.ts` changes before that. Then: landmarks and open spaces he approves go in after a play at both levels and a picture check; any shop he approves goes through the gate and comes in only if it passes the bar from step 0.
+1b. **Mexico's new places.** I bring Josh a draft pair per city to change or approve before anything is written, for example (my suggestions, not decided):
+   - Ciudad de México: the Casa Azul (Frida Kahlo's house, Coyoacán); the embarcadero at Xochimilco (trajineras).
+   - Oaxaca: Monte Albán; the Andador Macedonio Alcalá (the walking street up to Santo Domingo).
+   - Guadalajara: the Hospicio Cabañas (Orozco's murals); the Plaza de los Mariachis.
+   - San Miguel de Allende: the Casa de Allende museum; El Charco del Ingenio (the botanical garden and canyon).
+   - Puebla: the Biblioteca Palafoxiana; the Callejón de los Sapos.
+   Then for each approved place: the person and line, fact check, played at both levels, pictures for Josh's approval, then shown.
+2. **Memory.** `memory.md`, `character.md` and `beginner.md` changes (version bump, changelog, trials row), gated at both levels in both countries on today's content. Success: told again on a later visit well below the baseline (Italy 2.0–2.5 Beginner, Mexico 1.1–1.3; Café Amapola's café de olla no longer on every visit), culture and purchase no worse.
+3. **Lines.** Rewrite the remaining shown Italian lines the Mexican way, a few cities at a time, fact-checked (`scripts/fact-check.mts`), gated. Mexico's lines stay; its duplicate "Fonda Doña Tere" (Oaxaca and Puebla) gets fixed.
+4. **Josh plays it on the phone:** a bar, a market and a landmark in two cities, after his yes to install.
+
+Later, not in this plan: new Mexican shops (a palenque, a talavera workshop), which would have to pass the shop bar.
+
+## Where things stand
+
+- Live on `main`: A (Beginner errand is a turn or two), the bar rules (order, own place's ways), receipts at five bars, and Italy's four Mexican-style lines (Ditta Artigianale, Bar Rita, Farmacia Molteni, Farmacia Centrale Verona; Bar Nilo without "talk football").
+- Step 0 done: the reference gate recorded (`docs/prompt-trials.md`); the threads code removed, never merged.
+- Next: step 1 (Josh's call on the swap list) and step 1b (a draft pair of new places per Mexican city for Josh).
+
+## Verification
+
+- The gate (`COUNTRY=it|es-mx npx tsx --env-file=.env.local tests/experiments/variety.mts <label>`, `PLACES=ref` for the references, `LEVELS=Beginner` for Beginner-only changes): a step is kept only if no level falls below the baseline noise and its target measure moves beyond it; a row in `docs/prompt-trials.md` each time.
+- `npx tsc --noEmit`, `npm run test:today`, `test:prompt`, `test:weather` after code changes.
+- After each push: `node scripts/deploy-wait.mjs <sha>` from `~/fuori`, then `npm run smoke:live` and `COUNTRY=es-mx npm run smoke:live`.
+- Josh's play on the phone is the last check.
 
 ---
+
+# Earlier versions (the record)
 
 ## The first plan (2026-11-06, morning)
 

@@ -225,7 +225,7 @@ export function buildBeginnerPrompt(p: {
     name: character.name,
     role: character.role,
     // The place with its kind and neighbourhood, and why they're there (lib/characters/for-place.ts)
-    setting: withToday((character.appearance?.setting ?? place?.name ?? '').replace(/([^.!?])$/, '$1.'), p.now ?? new Date(), city?.id, character.id, character.appearance?.threads),
+    setting: withToday((character.appearance?.setting ?? place?.name ?? '').replace(/([^.!?])$/, '$1.'), p.now ?? new Date(), city?.id, character.id),
     city: city?.name ?? character.city,
     character: about,
     language: language.name,
