@@ -13,11 +13,11 @@ export function todayLine(now: Date = new Date(), timeZone: string = language.ti
   return `It's ${weekday}, in ${month}.`;
 }
 
-/** The setting, then the day and, when the city has some today, the weather (lib/weather.ts):
+/** The setting, then the day and, for a character who drew it, the city's weather today (lib/weather.ts):
  *  "Bar Angolo, a bar in Testaccio. It's Thursday, in November. Today's weather: fog." */
-export function withToday(setting: string, now: Date = new Date(), cityId?: string): string {
+export function withToday(setting: string, now: Date = new Date(), cityId?: string, characterId?: string): string {
   const s = setting.trim();
-  const day = [todayLine(now), weatherLine(cityId, now)].filter(Boolean).join(' ');
+  const day = [todayLine(now), weatherLine(cityId, now, characterId)].filter(Boolean).join(' ');
   if (!s) return day;
   return `${/[.!?]$/.test(s) ? s : `${s}.`} ${day}`;
 }

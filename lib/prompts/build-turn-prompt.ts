@@ -149,7 +149,7 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
     role: character.role,
     city: character.city,
     language: language.name,
-    setting: withToday(character.appearance?.setting ?? '', now, cityIdFor(character)),
+    setting: withToday(character.appearance?.setting ?? '', now, cityIdFor(character), character.id),
     traits: character.personality.traits.join(', '),
     formality: `${language.formality[character.speech.formality]} (${character.speech.formality})`,
     english,

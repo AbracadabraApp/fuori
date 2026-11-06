@@ -41,9 +41,22 @@ export function weatherToday(cityId: string, now: Date = new Date(), timeZone: s
   return days.length ? days[hash(`${cityId}:${date}`) % days.length].trim() : '';
 }
 
-/** "Today's weather: fog." or '' */
-export function weatherLine(cityId: string | undefined, now: Date = new Date()): string {
-  const w = cityId ? weatherToday(cityId, now) : '';
+/**
+ * The odds that a character is given the day's weather (Josh, 2026-11-05: "just
+ * set the odds - a bar can talk about the weather, a market can ignore it").
+ * Given the line, characters bring it up almost every time (test:conversations,
+ * 8 of 8 on a weather day), so 1 in 4 aims at about one conversation in four.
+ */
+export const WEATHER_ODDS = 0.25;
+
+/** Whether this character is given the weather today: seeded by them and the local date, so it holds all day */
+export function hasWeather(characterId: string, now: Date = new Date(), timeZone: string = language.timeZone): boolean {
+  return hash(`${characterId}:${localDay(now, timeZone).date}`) % 1000 < WEATHER_ODDS * 1000;
+}
+
+/** "Today's weather: fog." or '': only for a character who drew it today */
+export function weatherLine(cityId: string | undefined, now: Date = new Date(), characterId?: string): string {
+  const w = cityId && characterId && hasWeather(characterId, now) ? weatherToday(cityId, now) : '';
   return w ? `Today's weather: ${w.replace(/[.!?]$/, '')}.` : '';
 }
 

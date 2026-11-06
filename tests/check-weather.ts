@@ -2,7 +2,7 @@
 // local day, the same all day for everyone, and every shown city has all
 // twelve months in content/<country>/weather.json. No API calls.
 import { cities, language, pack } from '@/content';
-import { weatherData, weatherToday, weatherLine } from '@/lib/weather';
+import { weatherData, weatherToday, weatherLine, hasWeather, WEATHER_ODDS } from '@/lib/weather';
 import { withToday } from '@/lib/today';
 
 const problems: string[] = [];
@@ -26,16 +26,28 @@ check('different days can differ', seen.size > 1, [...seen]);
 check('local day', weatherToday('town', new Date('2026-11-05T23:30:00Z'), 'Europe/Rome', fake) === weatherToday('town', new Date('2026-11-06T10:00:00Z'), 'Europe/Rome', fake));
 // An empty entry adds nothing
 check('empty entry is nothing', weatherToday('still', morning, 'Europe/Rome', fake) === '');
-check('unknown city adds nothing', weatherLine('nowhere', morning) === '');
+check('unknown city adds nothing', weatherLine('nowhere', morning, 'anyone') === '');
+check('no character adds nothing', weatherLine(cities[0].id, morning) === '');
 check('no city adds nothing', withToday('At the bar.', morning) === withToday('At the bar.', morning, undefined) && !withToday('At the bar.', morning).includes('weather'));
-// A real city on a weather day gets the line after the day, in the setting
+// The odds: about WEATHER_ODDS of characters draw the weather on a given day,
+// a character's draw holds all day, and it changes from day to day
+const people = cities.flatMap((c) => c.places.filter((p) => p.characterId).map((p) => p.characterId!));
+const drew = people.filter((id) => hasWeather(id, morning, 'Europe/Rome')).length / people.length;
+check(`about ${WEATHER_ODDS} of characters draw the weather`, Math.abs(drew - WEATHER_ODDS) < 0.08, drew);
+check('a draw holds all day', people.every((id) => hasWeather(id, morning, 'Europe/Rome') === hasWeather(id, night, 'Europe/Rome')));
+const someone = people[0];
+check('a draw changes across days', new Set(Array.from({ length: 30 }, (_, i) => hasWeather(someone, new Date(Date.UTC(2026, 10, 1 + i, 12)), 'Europe/Rome'))).size === 2);
+// A real city on a weather day, for a character who drew it: the line after the day, in the setting
 const city = cities.find((c) => !c.hidden && data[c.id])!;
-const day = Array.from({ length: 60 }, (_, i) => new Date(Date.UTC(2026, 0, 1 + i * 6, 12))).find((d) => weatherToday(city.id, d, tz) !== '');
-check(`${city.id} has a weather day`, !!day);
+const days = Array.from({ length: 365 }, (_, i) => new Date(Date.UTC(2026, 0, 1 + i, 12)));
+const day = days.find((d) => weatherToday(city.id, d, tz) !== '' && hasWeather(someone, d));
+check(`${city.id} has a weather day someone drew`, !!day);
 if (day) {
-  const s = withToday('At the bar.', day, city.id);
+  const s = withToday('At the bar.', day, city.id, someone);
   check('weather follows the day line', /^At the bar\. It's \w+, in \w+\. Today's weather: [^.]+\.$/.test(s), s);
 }
+const off = days.find((d) => weatherToday(city.id, d, tz) !== '' && !hasWeather(someone, d));
+check('a character who did not draw it gets no weather', !!off && !withToday('At the bar.', off, city.id, someone).includes('weather'));
 
 if (problems.length) { console.error(`FAIL (${pack.id}):\n${problems.slice(0, 20).join('\n')}`); process.exit(1); }
 console.log(`OK (${pack.id}): weather for ${cities.filter((x) => !x.hidden).length} shown cities, 12 months each, one pick per city per local day`);
