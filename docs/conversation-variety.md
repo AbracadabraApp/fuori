@@ -37,6 +37,7 @@ Tried 2026-11-04 (`docs/prompt-trials.md`, `character.md` pride line): culture 7
 ### C. Richer `here` lines, with Nino's moment (content)
 
 - Every shown character's `here` line is rewritten, the way Nino's was: a cultural setting only this place has (its history, its product and why the town cares about it, its regulars), and, for many, a moment when nothing can be sold (before opening, the kitchen closed after lunch, a delivery being unpacked, stocking up for a festival). The moment is part of the line, not a separate field or a draw.
+- No national clichés in `here` lines (Josh, 2026-11-06: "Watch out for cappuccinos in the morning"). Shown today: Luisa (Testaccio), Sandro (Monti), Bar Rita (Milan) and Pasticceria Marchesi (Milan) all carry cappuccino-in-the-morning, and city `customs` lists repeat it (Rome, Milan). Each such custom appears at one place in the country at most, where it's that person's own thing (Sandro's kind grumble), and is cut from the rest. Same for pay first, standing is cheaper, coffee at the counter. The replay judge counts them.
 - Generated drafts against the city file, a fact judge (`facts.md`), then played: two cities first (Florence and Mexico City), measured, then the rest.
 - No new prompt rule: facts in the setting work, rules don't (culture.md).
 
