@@ -5,7 +5,8 @@ import FuoriDesign
 /// Where you're living, Fuori or Afuera (canvas "Launch screen", board 2;
 /// Josh, 2026-10-22). The launch picture moves up from the middle of the
 /// screen and two cards come in under it, each from that country's
-/// /v1/content: its app name, "Italy · learn Italian". At every launch
+/// /v1/content: its app name, "Explore Italy" (Josh, 2026-11-06: no
+/// "Where are you living?" over them). At every launch
 /// (Josh, 2026-10-23: the one-second picture "pops and goes"; "start with
 /// A"); the chosen country loads behind it, so picking it again is
 /// immediate.
@@ -23,11 +24,6 @@ struct CountryChoiceView: View {
                     // The art's top edge 64 pt down; the picture has 24 pt of room for its shadow
                     .padding(.top, 40)
                 VStack(alignment: .leading, spacing: 14) {
-                    Text("Where are you living?")
-                        .typeface(.label, 17, relativeTo: .body)
-                        .foregroundStyle(Tokens.Colors.muted)
-                        .padding(.horizontal, 4)
-                        .accessibilityAddTraits(.isHeader)
                     ForEach(model.countries) { country in
                         Button {
                             onPick?()
@@ -95,10 +91,10 @@ private struct CountryPick: View {
         return s
     }
 
-    /// "Italy · learn Italian"
+    /// "Explore Italy" (Josh, 2026-11-06: the game is learning the country)
     private var subtitle: String {
         guard let card = content.card else { return "" }
-        return "\(card.country) · \(card.learn.prefix(1).lowercased())\(card.learn.dropFirst())"
+        return "Explore \(card.country)"
     }
 }
 
