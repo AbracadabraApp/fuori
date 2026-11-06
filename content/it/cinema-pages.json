@@ -1,5 +1,5 @@
 {
- "about": "The film page's words (Josh, 2026-11-06: MovieGenius's movie page, its tools and style, in Italian and curated). whyWatch: MovieGenius's WhyWatch v3 prompt (scripts/v3-generate.cjs there) in Italian: YES or NO, 2-3 reasons of 5-8 words, 30-50 words of context, its banned words in Italian. moreIdeas: MovieGenius's More Ideas prompt (scripts/backfill-more-ideas-haiku.js there) with Italian criteria: 10 Italian films, a reason under 20 words. Written by Claude in the cloud session for every film in the library (91, then the 77 the ideas added); a fact-judge sweep is still to run (Josh: 'use fact judge for later sweep'). The page shows only the ideas whose film is in cinema-library.json. whyWatch.en: the English for the translate link (Josh, 2026-11-06: one link, on WhyWatch only; 'you never try to read the Other Ideas text'), written in the cloud session.",
+ "about": "The film page's words (Josh, 2026-11-06: MovieGenius's movie page, its tools and style, in Italian and curated). whyWatch: MovieGenius's WhyWatch v3 prompt (scripts/v3-generate.cjs there) in Italian: YES or NO, 2-3 reasons of 5-8 words, 30-50 words of context, its banned words in Italian. moreIdeas: MovieGenius's More Ideas prompt (scripts/backfill-more-ideas-haiku.js there) with Italian criteria: 10 Italian films, a reason under 20 words. Written by Claude in the cloud session for every film in the library (91, then the 77 the ideas added); a fact-judge sweep is still to run (Josh: 'use fact judge for later sweep'). The page shows only the ideas whose film is in cinema-library.json. whyWatch.en: the English for the translate link (Josh, 2026-11-06: one link, on WhyWatch only; 'you never try to read the Other Ideas text'), written in the cloud session. Fact-judged 2026-11-06 (scripts/cinema-fact-check.mts, 125 of 2,101 flagged); the cloud session corrected what was likely wrong and left matters of taste (Josh: \"a medium to low bar on corrections\").",
  "labels": {
   "yes": "Consigliato",
   "no": "Non consigliato",
@@ -524,7 +524,7 @@
     {
      "title": "C'era una volta il West",
      "year": 1968,
-     "connection": "Leone e un altro carillon, ancora una vendetta",
+     "connection": "Leone, un'altra vendetta e un tema che ritorna",
      "tmdbId": 335
     },
     {
@@ -834,7 +834,7 @@
     {
      "title": "Roma città aperta",
      "year": 1945,
-     "connection": "Rossellini apre il neorealismo, Roma occupata e attori quasi tutti veri",
+     "connection": "Rossellini apre il neorealismo, Roma occupata",
      "tmdbId": 307
     },
     {
@@ -951,7 +951,7 @@
     {
      "title": "La grande bellezza",
      "year": 2013,
-     "connection": "Sorrentino, un altro uomo che non crea più, erede dichiarato",
+     "connection": "Sorrentino, un altro uomo che non crea più, erede di Fellini",
      "tmdbId": 179144
     },
     {
@@ -1008,7 +1008,7 @@
     {
      "title": "Suburra",
      "year": 2015,
-     "connection": "La Roma criminale vista dall'alto, stessi quartieri",
+     "connection": "Sollima, la Roma criminale presa sul serio",
      "tmdbId": 356296
     },
     {
@@ -1387,14 +1387,14 @@
      "Un viaggio da Milano alla Puglia",
      "Una scultura con una gamba di legno"
     ],
-    "context": "Tre amici devono portare in macchina una scultura a forma di gamba fino a Gallipoli, dove Giacomo si sposa. Lungo la strada niente va come previsto. Il trio comico di Mai dire Gol passa al cinema, ed è un successo enorme.",
+    "context": "Tre amici devono portare in macchina una scultura a forma di gamba fino in Puglia, dove Giacomo si sposa. Lungo la strada niente va come previsto. Il trio comico di Mai dire Gol passa al cinema, ed è un successo enorme.",
     "en": {
      "reasons": [
       "Aldo, Giovanni and Giacomo, their debut",
       "A road trip from Milan to Puglia",
       "A sculpture with a wooden leg"
      ],
-     "context": "Three friends have to drive a leg-shaped sculpture to Gallipoli, where Giacomo is getting married. Along the way nothing goes as planned. The comedy trio from Mai dire Gol moves to cinema, and it's a huge hit."
+     "context": "Three friends have to drive a leg-shaped sculpture to Puglia, where Giacomo is getting married. Along the way nothing goes as planned. The comedy trio from Mai dire Gol moves to cinema, and it's a huge hit."
     }
    },
    "moreIdeas": [
@@ -1626,14 +1626,14 @@
    "whyWatch": {
     "recommendation": "YES",
     "reasons": [
-     "Claudio Bisio, milanese trasferito in Cilento",
+     "Claudio Bisio, brianzolo trasferito in Cilento",
      "Alessandro Siani, postino napoletano simpatico",
      "Castellabate, il paese diventato famoso"
     ],
     "context": "Un direttore di posta brianzolo viene mandato per punizione in un paese vicino a Salerno. Parte con il giubbotto antiproiettile e trova sole, pranzi infiniti e amici. È il rifacimento del francese Giù al Nord, adattato all'Italia.",
     "en": {
      "reasons": [
-      "Claudio Bisio, a Milanese sent to Cilento",
+      "Claudio Bisio, from Brianza, sent to Cilento",
       "Alessandro Siani, a likeable Neapolitan postman",
       "Castellabate, the village it made famous"
      ],
@@ -2241,7 +2241,7 @@
     {
      "title": "Sei donne per l'assassino",
      "year": 1964,
-     "connection": "Bava, il giallo nasce qui",
+     "connection": "Bava, il giallo a colori",
      "tmdbId": 28055
     },
     {
@@ -2334,7 +2334,7 @@
     {
      "title": "Io non ho paura",
      "year": 2003,
-     "connection": "Un bambino e la paura del buio",
+     "connection": "Un bambino e un segreto",
      "tmdbId": 25300
     },
     {
@@ -2403,7 +2403,7 @@
     {
      "title": "La leggenda di Al, John e Jack",
      "year": 2002,
-     "connection": "Aldo Giovanni e Giacomo, tre guardie del corpo",
+     "connection": "Il trio, gangster per ridere",
      "tmdbId": 38397
     },
     {
@@ -2553,7 +2553,7 @@
     {
      "title": "...altrimenti ci arrabbiamo!",
      "year": 1974,
-     "connection": "Hill e Spencer, una dune buggy e cori di cattivi",
+     "connection": "Hill e Spencer, una dune buggy e un coro famoso",
      "tmdbId": 6916
     },
     {
@@ -2583,7 +2583,7 @@
     {
      "title": "Django",
      "year": 1966,
-     "connection": "Corbucci, il western all'italiana più cupo",
+     "connection": "Corbucci, uno dei western all'italiana più cupi",
      "tmdbId": 10772
     },
     {
@@ -2761,17 +2761,17 @@
     "recommendation": "YES",
     "reasons": [
      "Aldo, Giovanni e Giacomo in fuga",
-     "Un poliziotto, un detenuto, un ostaggio",
+     "Tre sconosciuti in fuga insieme",
      "Gag a ritmo di road movie"
     ],
-    "context": "Per una serie di equivoci un detenuto, un poliziotto e un passante si ritrovano in fuga insieme, inseguiti da tutti. Il secondo film del trio, diretto con Massimo Venier, viaggia per il Nord Italia tra una risata e l'altra.",
+    "context": "Per una serie di equivoci tre uomini diversissimi si ritrovano in fuga insieme. Il secondo film del trio, diretto con Massimo Venier, va avanti di risata in risata.",
     "en": {
      "reasons": [
       "Aldo, Giovanni and Giacomo on the run",
-      "A policeman, a prisoner, a hostage",
+      "Three strangers on the run together",
       "Gags at road-movie pace"
      ],
-     "context": "Through a series of misunderstandings a prisoner, a policeman and a passer-by end up on the run together, chased by everyone. The trio's second film, directed with Massimo Venier, travels across northern Italy from one laugh to the next."
+     "context": "Through a series of misunderstandings three very different men end up on the run together. The trio's second film, directed with Massimo Venier, moves from one laugh to the next."
     }
    },
    "moreIdeas": [
@@ -3629,7 +3629,7 @@
     {
      "title": "Django",
      "year": 1966,
-     "connection": "Corbucci, il western all'italiana più violento",
+     "connection": "Corbucci, uno dei western all'italiana più violenti",
      "tmdbId": 10772
     },
     {
@@ -4059,14 +4059,14 @@
      "Tre amici arrestati la vigilia di Natale",
      "Un interrogatorio raccontato a pezzi"
     ],
-    "context": "La notte di Natale tre amici travestiti da Babbo Natale vengono arrestati per furto. In commissariato ognuno racconta la sua versione. Una commedia natalizia del trio, con le loro mogli e amanti a complicare tutto.",
+    "context": "Tre amici travestiti da Babbo Natale finiscono in commissariato, e ognuno racconta la sua versione. Una commedia natalizia del trio, con le loro mogli e amanti a complicare tutto.",
     "en": {
      "reasons": [
       "Aldo, Giovanni and Giacomo dressed as Santa",
       "Three friends arrested on Christmas Eve",
       "An interrogation told in pieces"
      ],
-     "context": "On Christmas night three friends dressed as Santa Claus are arrested for theft. At the police station each tells his own version. A Christmas comedy from the trio, with their wives and lovers complicating everything."
+     "context": "Three friends dressed as Santa Claus end up at the police station, and each tells his own version. A Christmas comedy from the trio, with their wives and lovers complicating everything."
     }
    },
    "moreIdeas": [
@@ -4221,14 +4221,14 @@
      "Giorgio Faletti, professore temuto",
      "Musica italiana anni Ottanta ovunque"
     ],
-    "context": "Luca ha insultato il professore che ora gli farà l'esame di maturità, e si innamora di una ragazza che non sa chi sia. Fausto Brizzi racconta un'estate romana di diciottenni. Un grande successo, con seguiti.",
+    "context": "Luca ha insultato il professore che ora gli farà l'esame di maturità, e si innamora di una ragazza che non sa chi sia. Fausto Brizzi racconta un'estate romana di diciottenni. Un grande successo, con un seguito.",
     "en": {
      "reasons": [
       "The night before the final exams, 1989",
       "Giorgio Faletti, a feared teacher",
       "1980s Italian music everywhere"
      ],
-     "context": "Luca has insulted the teacher who will now examine him for his school-leaving exam, and he falls for a girl who doesn't know who he is. Fausto Brizzi tells of a Roman summer of eighteen-year-olds. A big hit, with sequels."
+     "context": "Luca has insulted the teacher who will now examine him for his school-leaving exam, and he falls for a girl who doesn't know who he is. Fausto Brizzi tells of a Roman summer of eighteen-year-olds. A big hit, with a sequel."
     }
    },
    "moreIdeas": [
@@ -4241,7 +4241,7 @@
     {
      "title": "Notte prima degli esami - Oggi",
      "year": 2007,
-     "connection": "Il seguito, stessi ragazzi nel 2006",
+     "connection": "Il seguito, nel 2006",
      "tmdbId": 54309
     },
     {
@@ -4433,7 +4433,7 @@
     {
      "title": "Che bella giornata",
      "year": 2011,
-     "connection": "Zalone scambiato per qualcuno che non è",
+     "connection": "Zalone, un ingenuo tra i terroristi",
      "tmdbId": 53319
     },
     {
@@ -4464,14 +4464,14 @@
      "Paola Cortellesi è Claudia",
      "Tre uomini, una donna, Milano"
     ],
-    "context": "Un tassista, un uomo appena lasciato e un pubblicitario si ritrovano tutti legati alla stessa donna, Claudia. Il trio recita per una volta separato, con storie che si incrociano. Più commedia sentimentale che comica.",
+    "context": "Un tassista, un uomo appena lasciato e un pubblicitario si ritrovano tutti legati alla stessa donna, Claudia. Il trio racconta tre storie che si incrociano. Più commedia sentimentale che comica.",
     "en": {
      "reasons": [
       "Aldo, Giovanni and Giacomo in three separate stories",
       "Paola Cortellesi is Claudia",
       "Three men, one woman, Milan"
      ],
-     "context": "A taxi driver, a man just dumped and an advertising man all find themselves tied to the same woman, Claudia. For once the trio act apart, in stories that cross. More romantic comedy than slapstick."
+     "context": "A taxi driver, a man just dumped and an advertising man all find themselves tied to the same woman, Claudia. The trio tell three stories that cross. More romantic comedy than slapstick."
     }
    },
    "moreIdeas": [
@@ -4704,14 +4704,14 @@
     "recommendation": "YES",
     "reasons": [
      "Franco Nero trascina una bara nel fango",
-     "Sergio Corbucci, il western più violento",
+     "Sergio Corbucci, uno dei western più violenti",
      "Ha ispirato decine di imitazioni"
     ],
     "context": "Un ex soldato arriva in una città di confine piena di fango con una bara dietro di sé, in mezzo a una guerra tra razzisti incappucciati e banditi messicani. Corbucci fa un western cupo e sporco. Tarantino lo cita in Django Unchained.",
     "en": {
      "reasons": [
       "Franco Nero drags a coffin through the mud",
-      "Sergio Corbucci, the most violent western",
+      "Sergio Corbucci, one of the most violent westerns",
       "It inspired dozens of imitations"
      ],
      "context": "An ex-soldier arrives in a muddy border town dragging a coffin behind him, in the middle of a war between hooded racists and Mexican bandits. Corbucci makes a dark, dirty western. Tarantino nods to it in Django Unchained."
@@ -4733,7 +4733,7 @@
     {
      "title": "Il buono, il brutto, il cattivo",
      "year": 1966,
-     "connection": "Leone, il western all'italiana più famoso",
+     "connection": "Leone, il western all'italiana più conosciuto",
      "tmdbId": 429
     },
     {
@@ -5110,14 +5110,14 @@
      "Gabriele Salvatores prova il fantastico",
      "Ludovico Girardello, timido e invisibile"
     ],
-    "context": "Michele, tredici anni, si scopre invisibile dopo una festa in maschera. Mentre i compagni spariscono, capisce di non essere l'unico con un potere. Salvatores fa un film per ragazzi con la Trieste d'inverno come sfondo. C'è un seguito.",
+    "context": "Michele, tredici anni, scopre di poter diventare invisibile, e capisce presto di non essere l'unico con un potere. Salvatores fa un film per ragazzi con la Trieste d'inverno come sfondo. C'è un seguito.",
     "en": {
      "reasons": [
       "A thirteen-year-old superhero in Trieste",
       "Gabriele Salvatores tries fantasy",
       "Ludovico Girardello, shy and invisible"
      ],
-     "context": "Michele, thirteen, finds he is invisible after a costume party. As classmates disappear, he realizes he's not the only one with a power. Salvatores makes a film for young people with wintry Trieste as the backdrop. There's a sequel."
+     "context": "Michele, thirteen, discovers he can turn invisible, and soon realizes he's not the only one with a power. Salvatores makes a film for young people with wintry Trieste as the backdrop. There's a sequel."
     }
    },
    "moreIdeas": [
@@ -5188,14 +5188,14 @@
     "recommendation": "YES",
     "reasons": [
      "Burt Lancaster, principe che vede finire un mondo",
-     "Il ballo finale dura quasi un'ora",
+     "Il ballo finale dura tre quarti d'ora",
      "Claudia Cardinale e Alain Delon giovanissimi"
     ],
     "context": "Sicilia, 1860: arrivano i garibaldini, e il principe di Salina capisce che la sua classe deve adattarsi per sopravvivere. Suo nipote Tancredi sposa la figlia di un nuovo ricco. Visconti dal romanzo di Tomasi di Lampedusa, Palma d'oro a Cannes.",
     "en": {
      "reasons": [
       "Burt Lancaster, a prince watching a world end",
-      "The final ball lasts almost an hour",
+      "The final ball lasts three quarters of an hour",
       "Claudia Cardinale and Alain Delon, very young"
      ],
      "context": "Sicily, 1860: Garibaldi's men arrive, and the Prince of Salina understands that his class must adapt to survive. His nephew Tancredi marries the daughter of a newly rich man. Visconti from Tomasi di Lampedusa's novel, Palme d'Or at Cannes."
@@ -5270,14 +5270,14 @@
     "reasons": [
      "Un bambino scopre un segreto in un buco",
      "Campi di grano del Sud, estate 1978",
-     "Da Niccolò Ammaniti, sceneggiatura sua"
+     "Dal romanzo di Niccolò Ammaniti"
     ],
     "context": "In un paese isolato del Sud, Michele, dieci anni, trova un bambino incatenato in fondo a una buca. Capisce piano piano che gli adulti del paese, anche suo padre, sanno tutto. Salvatores gira un thriller con gli occhi di un bambino.",
     "en": {
      "reasons": [
       "A boy finds a secret in a hole",
       "Southern wheat fields, summer 1978",
-      "From Niccolò Ammaniti, who wrote the script"
+      "From Niccolò Ammaniti's novel"
      ],
      "context": "In an isolated village in the South, ten-year-old Michele finds a boy chained at the bottom of a pit. Slowly he realizes that the village adults, his father too, know everything. Salvatores shoots a thriller through a child's eyes."
     }
@@ -5351,14 +5351,14 @@
     "reasons": [
      "Matilda De Angelis, pilota di 17 anni",
      "Stefano Accorsi, ex campione tossicodipendente",
-     "Corse vere tra Imola e il Mugello"
+     "Corse vere sui circuiti italiani"
     ],
     "context": "Giulia corre nel campionato GT e alla morte del padre deve salvare la casa e il fratellino. Arriva il fratello maggiore Loris, ex pilota rovinato dalla droga, che diventa il suo allenatore. Matteo Rovere, ispirato alla vita di Carlo Capone.",
     "en": {
      "reasons": [
       "Matilda De Angelis, a 17-year-old racing driver",
       "Stefano Accorsi, an ex-champion and drug addict",
-      "Real races at Imola and Mugello"
+      "Real races on Italian circuits"
      ],
      "context": "Giulia races in the GT championship, and when her father dies she must save the house and her little brother. Her older brother Loris arrives, an ex-driver ruined by drugs, and becomes her coach. Matteo Rovere, inspired by the life of Carlo Capone."
     }
@@ -5490,7 +5490,7 @@
     {
      "title": "C'è ancora domani",
      "year": 2023,
-     "connection": "Roma negli anni della guerra",
+     "connection": "Roma subito dopo la guerra",
      "tmdbId": 1026227
     },
     {
@@ -5515,14 +5515,14 @@
      "Valeria Bruni Tedeschi, moglie ricca e sola",
      "Fabrizio Bentivoglio, padre che vuole arricchirsi"
     ],
-    "context": "In Brianza, la notte prima di Natale, un SUV investe un cameriere in bicicletta. Il film racconta i giorni prima e dopo dal punto di vista di tre personaggi, due famiglie e una ragazza. Paolo Virzì sui soldi e su quanto vale una vita.",
+    "context": "In Brianza, una notte d'inverno, un SUV investe un cameriere in bicicletta. Il film racconta i giorni prima e dopo dal punto di vista di tre personaggi, due famiglie e una ragazza. Paolo Virzì sui soldi e su quanto vale una vita.",
     "en": {
      "reasons": [
       "A cyclist run over, three points of view",
       "Valeria Bruni Tedeschi, a rich and lonely wife",
       "Fabrizio Bentivoglio, a father who wants to get rich"
      ],
-     "context": "In Brianza, the night before Christmas, an SUV runs over a waiter on a bicycle. The film tells the days before and after from three viewpoints: two families and a girl. Paolo Virzì on money and what a life is worth."
+     "context": "In Brianza, one winter night, an SUV runs over a waiter on a bicycle. The film tells the days before and after from three viewpoints: two families and a girl. Paolo Virzì on money and what a life is worth."
     }
    },
    "moreIdeas": [
@@ -6001,21 +6001,21 @@
      "La canzone degli Oliver Onions",
      "Pugni a ritmo, nessuno si fa male"
     ],
-    "context": "Due piloti vincono a pari merito una dune buggy rossa e gialla, ma gli scagnozzi di un costruttore la distruggono. Pretendono una macchina nuova, altrimenti si arrabbiano. Un film per famiglie, tutto risse e inseguimenti.",
+    "context": "Due piloti vincono a pari merito una dune buggy rossa e gialla, ma gli scagnozzi di un boss la distruggono. Pretendono una macchina nuova, altrimenti si arrabbiano. Un film per famiglie, tutto risse e inseguimenti.",
     "en": {
      "reasons": [
       "Hill and Spencer want their dune buggy",
       "The Oliver Onions song",
       "Punches in rhythm, nobody gets hurt"
      ],
-     "context": "Two drivers tie for first place and win a red and yellow dune buggy, but a developer's thugs destroy it. They demand a new car, or else they'll get angry. A family film, all brawls and chases."
+     "context": "Two drivers tie for first place and win a red and yellow dune buggy, but a boss's thugs destroy it. They demand a new car, or else they'll get angry. A family film, all brawls and chases."
     }
    },
    "moreIdeas": [
     {
      "title": "Lo chiamavano Trinità...",
      "year": 1970,
-     "connection": "Hill e Spencer, il primo grande successo",
+     "connection": "Hill e Spencer, il loro successo più grande",
      "tmdbId": 9394
     },
     {
@@ -6161,16 +6161,16 @@
     "reasons": [
      "Aldo, Giovanni e Giacomo dopo la crisi",
      "Un finanziere perde tutto in un giorno",
-     "Il maggiordomo Aldo, servo e padrone"
+     "Il ricco, il povero e il maggiordomo"
     ],
-    "context": "Giacomo, finanziere ricco, perde tutto e deve vivere con il suo autista Giovanni e il suo maggiordomo Aldo, venditore ambulante abusivo. I ruoli si invertono. Una commedia sulla crisi economica, non tra le migliori del trio.",
+    "context": "Giacomo, finanziere ricco, perde tutto, e il suo maggiordomo e un venditore ambulante abusivo si ritrovano a fare i conti con lui. I ruoli si invertono. Una commedia sulla crisi economica, non tra le migliori del trio.",
     "en": {
      "reasons": [
       "Aldo, Giovanni and Giacomo after the crash",
       "A financier loses everything in a day",
-      "Aldo the butler, servant and master"
+      "The rich man, the poor man and the butler"
      ],
-     "context": "Giacomo, a rich financier, loses everything and has to live with his driver Giovanni and his butler Aldo, an unlicensed street vendor. The roles are reversed. A comedy about the economic crisis, not among the trio's best."
+     "context": "Giacomo, a rich financier, loses everything, and his butler and an unlicensed street vendor have to deal with him. The roles are reversed. A comedy about the economic crisis, not among the trio's best."
     }
    },
    "moreIdeas": [
@@ -7820,7 +7820,7 @@
     {
      "title": "Il gattopardo",
      "year": 1963,
-     "connection": "Visconti, il suo film più grande",
+     "connection": "Visconti, il suo film più famoso",
      "tmdbId": 1040
     },
     {
@@ -8343,16 +8343,16 @@
     "reasons": [
      "Due famiglie opposte a Ventotene",
      "Silvio Orlando di sinistra, Ennio Fantastichini di destra",
-     "Paolo Virzì prima del successo"
+     "Il terzo film di Paolo Virzì"
     ],
-    "context": "Un giornalista intellettuale e un commerciante romano rumoroso passano le vacanze di agosto in due case vicine su un'isola. Si odiano, si spiano, si mescolano. Virzì racconta l'Italia degli anni Novanta in una sola estate.",
+    "context": "Uno scrittore intellettuale e un commerciante romano rumoroso passano le vacanze di agosto in due case vicine su un'isola. Si odiano, si spiano, si mescolano. Virzì racconta l'Italia degli anni Novanta in una sola estate.",
     "en": {
      "reasons": [
       "Two opposite families on Ventotene",
       "Silvio Orlando on the left, Ennio Fantastichini on the right",
-      "Paolo Virzì before success"
+      "Paolo Virzì's third film"
      ],
-     "context": "An intellectual journalist and a loud Roman shopkeeper spend their August holidays in two neighbouring houses on an island. They hate each other, spy on each other, mix. Virzì portrays 1990s Italy in a single summer."
+     "context": "An intellectual writer and a loud Roman shopkeeper spend their August holidays in two neighbouring houses on an island. They hate each other, spy on each other, mix. Virzì portrays 1990s Italy in a single summer."
     }
    },
    "moreIdeas": [
@@ -8585,14 +8585,14 @@
      "Infiltrati per caso nella polizia",
      "Pugni, inseguimenti e risate"
     ],
-    "context": "Due disoccupati si arruolano in polizia per errore e vengono mandati insieme per le strade di Miami contro una banda di falsari. Diretto da E.B. Clucher, uno dei loro film più amati fuori dal western.",
+    "context": "Due disoccupati finiscono per caso a fare i poliziotti a Miami, e si ritrovano contro una banda di criminali. Diretto da E.B. Clucher, uno dei loro film più amati fuori dal western.",
     "en": {
      "reasons": [
       "Terence Hill and Bud Spencer, cops in Miami",
       "Joining the police by accident",
       "Punches, chases and laughs"
      ],
-     "context": "Two unemployed men join the police by mistake and are sent onto the streets of Miami together against a gang of counterfeiters. Directed by E.B. Clucher, one of their best-loved films outside the western."
+     "context": "Two unemployed men end up as police officers in Miami by chance, and find themselves up against a criminal gang. Directed by E.B. Clucher, one of their best-loved films outside the western."
     }
    },
    "moreIdeas": [
@@ -8647,7 +8647,7 @@
     {
      "title": "Che bella giornata",
      "year": 2011,
-     "connection": "Zalone guardia per sbaglio",
+     "connection": "Zalone guardia giurata",
      "tmdbId": 53319
     },
     {
@@ -8934,7 +8934,7 @@
     {
      "title": "Il traditore",
      "year": 2019,
-     "connection": "Bellocchio, il primo pentito",
+     "connection": "Bellocchio, il grande pentito",
      "tmdbId": 575452
     },
     {
@@ -9546,14 +9546,14 @@
     "reasons": [
      "Susan Strasberg, ragazza ebrea nel lager",
      "Per sopravvivere diventa kapò",
-     "Il primo film di Gillo Pontecorvo"
+     "Gillo Pontecorvo prima di Algeri"
     ],
     "context": "Edith, quattordici anni, deportata, si salva fingendosi una prigioniera politica e diventa una sorvegliante delle altre detenute. L'amore per un prigioniero russo la cambia. Candidato all'Oscar, discusso per anni per una sola inquadratura.",
     "en": {
      "reasons": [
       "Susan Strasberg, a Jewish girl in a camp",
       "To survive she becomes a kapo",
-      "Gillo Pontecorvo's first film"
+      "Gillo Pontecorvo before Algiers"
      ],
      "context": "Edith, fourteen, deported, survives by posing as a political prisoner and becomes a guard over the other inmates. Her love for a Russian prisoner changes her. Oscar nominee, debated for years over a single shot."
     }
@@ -9627,14 +9627,14 @@
      "Ernesto Mahieux, attore perfetto e sconosciuto",
      "Ispirato a un fatto di cronaca napoletana"
     ],
-    "context": "Peppino, imbalsamatore di animali che lavora anche per la camorra, prende con sé Valerio, un ragazzo alto e bello. Il legame tra loro diventa possesso, gelosia e pericolo. Il film che ha fatto conoscere Matteo Garrone.",
+    "context": "Peppino, imbalsamatore di animali che lavora anche per la camorra, prende con sé Valerio, un ragazzo alto e bello. Il legame tra loro diventa possesso, gelosia e pericolo. Matteo Garrone, prima di Gomorra.",
     "en": {
      "reasons": [
       "A dwarf taxidermist and a young waiter",
       "Ernesto Mahieux, a perfect unknown actor",
       "Inspired by a Neapolitan crime story"
      ],
-     "context": "Peppino, an animal taxidermist who also works for the camorra, takes in Valerio, a tall, handsome young man. Their bond becomes possession, jealousy and danger. The film that made Matteo Garrone known."
+     "context": "Peppino, an animal taxidermist who also works for the camorra, takes in Valerio, a tall, handsome young man. Their bond becomes possession, jealousy and danger. Matteo Garrone, before Gomorrah."
     }
    },
    "moreIdeas": [
@@ -9683,7 +9683,7 @@
     {
      "title": "Io capitano",
      "year": 2023,
-     "connection": "Garrone, il suo film più recente",
+     "connection": "Garrone, vent'anni dopo",
      "tmdbId": 937746
     },
     {
@@ -10405,7 +10405,7 @@
     {
      "title": "Roma città aperta",
      "year": 1945,
-     "connection": "Roma nel 1943",
+     "connection": "Roma occupata",
      "tmdbId": 307
     },
     {
@@ -10911,14 +10911,14 @@
      "Un gruppo di amici gay a Roma",
      "Margherita Buy e Stefano Accorsi"
     ],
-    "context": "Antonia perde il marito in un incidente e scopre che da anni aveva un amante, Michele. Va a cercarlo in un quartiere di Roma e trova una famiglia di amici che non sapeva esistesse. Ferzan Özpetek, il film che lo ha fatto conoscere.",
+    "context": "Antonia perde il marito in un incidente e scopre che da anni aveva un amante, Michele. Va a cercarlo in un quartiere di Roma e trova una famiglia di amici che non sapeva esistesse. Ferzan Özpetek, il suo primo grande successo.",
     "en": {
      "reasons": [
       "A widow discovers her husband's lover",
       "A group of gay friends in Rome",
       "Margherita Buy and Stefano Accorsi"
      ],
-     "context": "Antonia loses her husband in an accident and discovers that for years he had a lover, Michele. She goes looking for him in a Rome neighbourhood and finds a family of friends she never knew existed. Ferzan Özpetek, the film that made him known."
+     "context": "Antonia loses her husband in an accident and discovers that for years he had a lover, Michele. She goes looking for him in a Rome neighbourhood and finds a family of friends she never knew existed. Ferzan Özpetek, his first big hit."
     }
    },
    "moreIdeas": [
@@ -10991,14 +10991,14 @@
      "Un palazzo crolla nei vicoli di Napoli",
      "Leone d'oro a Venezia"
     ],
-    "context": "A Napoli un palazzo crolla per colpa di un cantiere vicino, e il costruttore Nottola, che siede in consiglio comunale, fa di tutto per insabbiare. Francesco Rosi gira tra macerie e aule vere. Sulla speculazione edilizia non è invecchiato.",
+    "context": "A Napoli un palazzo crolla per colpa di un cantiere vicino, e il costruttore Nottola, che siede in consiglio comunale, fa di tutto per insabbiare. Francesco Rosi, con il suo stile da inchiesta. Sulla speculazione edilizia non è invecchiato.",
     "en": {
      "reasons": [
       "Rod Steiger, builder and city councillor",
       "A building collapses in the Naples alleys",
       "Golden Lion at Venice"
      ],
-     "context": "In Naples a building collapses because of a nearby construction site, and the builder Nottola, who sits on the city council, does everything to cover it up. Francesco Rosi shoots among real rubble and real council chambers. On property speculation it hasn't aged."
+     "context": "In Naples a building collapses because of a nearby construction site, and the builder Nottola, who sits on the city council, does everything to cover it up. Francesco Rosi, in his investigative style. On property speculation it hasn't aged."
     }
    },
    "moreIdeas": [
@@ -11550,14 +11550,14 @@
    "whyWatch": {
     "recommendation": "YES",
     "reasons": [
-     "Robert De Niro e Gérard Depardieu nati lo stesso giorno",
+     "De Niro e Depardieu, due bambini nati lo stesso giorno",
      "Mezzo secolo d'Italia in Emilia",
      "Più di cinque ore, in due atti"
     ],
     "context": "Alfredo è figlio del padrone, Olmo di un bracciante: nascono nel 1901 nella stessa tenuta e restano legati fino al 1945. Intorno a loro scioperi, fascismo, guerra e liberazione. Bernardo Bertolucci, epico e politico, con Donald Sutherland fascista feroce.",
     "en": {
      "reasons": [
-      "Robert De Niro and Gérard Depardieu, born the same day",
+      "De Niro and Depardieu, two boys born the same day",
       "Half a century of Italy in Emilia",
       "More than five hours, in two acts"
      ],
@@ -11793,14 +11793,14 @@
      "Scommesse, partite e pugni",
      "Bud Spencer camionista e giocatore"
     ],
-    "context": "Un ufficiale di marina viene mandato a smascherare un boss delle scommesse, e per farlo deve convincere il fratellastro, ex campione di carte, a tornare a giocare. Sergio Corbucci dirige la coppia in una commedia d'azione per tutti.",
+    "context": "Due fratellastri, uno marinaio e uno giocatore, si alleano contro un boss delle scommesse a Miami. Sergio Corbucci dirige la coppia in una commedia d'azione per tutti.",
     "en": {
      "reasons": [
       "Terence Hill and Bud Spencer, brothers in Miami",
       "Bets, games and punches",
       "Bud Spencer a trucker and gambler"
      ],
-     "context": "A navy officer is sent to expose a betting boss, and to do it he has to persuade his half-brother, a former card champion, to play again. Sergio Corbucci directs the pair in an action comedy for everyone."
+     "context": "Two half-brothers, one a sailor and one a gambler, team up against a betting boss in Miami. Sergio Corbucci directs the pair in an action comedy for everyone."
     }
    },
    "moreIdeas": [
@@ -11955,14 +11955,14 @@
      "Quattro signore anziane in un appartamento",
      "Trastevere a Ferragosto, quasi vuota"
     ],
-    "context": "Gianni, cinquantenne pieno di debiti, vive con la madre a Trastevere. Per pagare il condominio accetta di tenere a Ferragosto la madre dell'amministratore, poi altre due anziane. Un piccolo film gentile, girato in casa, premiato a Venezia.",
+    "context": "Gianni, cinquantenne senza soldi, vive con la madre a Trastevere. Per pagare il condominio accetta di tenere a Ferragosto la madre dell'amministratore, poi altre due anziane. Un piccolo film gentile, girato in casa, premiato a Venezia.",
     "en": {
      "reasons": [
       "Gianni Di Gregorio, son and director",
       "Four elderly ladies in one flat",
       "Trastevere on Ferragosto, almost empty"
      ],
-     "context": "Gianni, fifty and in debt, lives with his mother in Trastevere. To pay the building fees he agrees to look after the administrator's mother over Ferragosto, then two more old ladies. A small, kind film shot at home, awarded at Venice."
+     "context": "Gianni, fifty and broke, lives with his mother in Trastevere. To pay the building fees he agrees to look after the administrator's mother over Ferragosto, then two more old ladies. A small, kind film shot at home, awarded at Venice."
     }
    },
    "moreIdeas": [
@@ -12136,7 +12136,7 @@
     {
      "title": "Kapò",
      "year": 1960,
-     "connection": "Pontecorvo, il primo film",
+     "connection": "Pontecorvo, prima di Algeri",
      "tmdbId": 45884
     },
     {
@@ -12320,7 +12320,7 @@
     {
      "title": "Ecce bombo",
      "year": 1978,
-     "connection": "Moretti, un altro esordio",
+     "connection": "Moretti, un altro giovane regista",
      "tmdbId": 48282
     },
     {
@@ -12371,7 +12371,7 @@
     {
      "title": "Il gattopardo",
      "year": 1963,
-     "connection": "Visconti, il suo film più grande",
+     "connection": "Visconti, il suo film più famoso",
      "tmdbId": 1040
     },
     {
@@ -12435,14 +12435,14 @@
     "reasons": [
      "Il bandito Giuliano si vede solo da morto",
      "Montelepre e Portella della Ginestra",
-     "Francesco Rosi inventa il film inchiesta"
+     "Francesco Rosi, il cinema come inchiesta"
     ],
     "context": "Nel 1950 il corpo di Salvatore Giuliano viene trovato in un cortile di Castelvetrano. Rosi ricostruisce a pezzi gli anni del separatismo, della strage di Portella e dei rapporti tra banditi, mafia e Stato. Girato nei luoghi veri, con i siciliani veri.",
     "en": {
      "reasons": [
       "The bandit Giuliano is seen only dead",
       "Montelepre and Portella della Ginestra",
-      "Francesco Rosi invents the investigative film"
+      "Francesco Rosi, cinema as investigation"
      ],
      "context": "In 1950 Salvatore Giuliano's body is found in a courtyard in Castelvetrano. Rosi reconstructs, piece by piece, the years of separatism, the Portella massacre and the ties between bandits, mafia and the state. Shot in the real places, with real Sicilians."
     }
@@ -12759,14 +12759,14 @@
      "Rossi, verdi e blu fortissimi",
      "Mario Bava inventa il giallo a colori"
     ],
-    "context": "In una casa di moda romana una modella viene uccisa da un uomo senza volto, e il suo diario fa paura a tutte le altre. Bava gira il primo vero giallo all'italiana: trama semplice, immagini studiate, violenza stilizzata. Argento partirà da qui.",
+    "context": "In una casa di moda una modella viene uccisa da un uomo senza volto, e il suo diario fa paura a tutte le altre. Bava gira uno dei primi gialli all'italiana: trama semplice, immagini studiate, violenza stilizzata. Argento partirà da qui.",
     "en": {
      "reasons": [
       "A fashion house and a masked killer",
       "Very strong reds, greens and blues",
       "Mario Bava invents the colour giallo"
      ],
-     "context": "In a Roman fashion house a model is killed by a faceless man, and her diary terrifies all the others. Bava makes the first true giallo: a simple plot, studied images, stylized violence. Argento starts from here."
+     "context": "In a fashion house a model is killed by a faceless man, and her diary terrifies all the others. Bava makes one of the first gialli: a simple plot, studied images, stylized violence. Argento starts from here."
     }
    },
    "moreIdeas": [
@@ -13077,14 +13077,14 @@
      "Gian Maria Volonté imita Aldo Moro",
      "Da Leonardo Sciascia"
     ],
-    "context": "Durante un'epidemia, i potenti del partito di governo si ritirano per esercizi spirituali in un albergo-eremo guidato da un prete ambiguo, Marcello Mastroianni. Cominciano a morire uno a uno. Elio Petri, satira cupa, ritirata presto dalle sale.",
+    "context": "Durante un'epidemia, i potenti del partito di governo si ritirano per esercizi spirituali in un albergo-eremo guidato da un prete ambiguo, Marcello Mastroianni. Cominciano a morire uno a uno. Elio Petri, satira cupa.",
     "en": {
      "reasons": [
       "Christian Democrat politicians shut in a hermitage",
       "Gian Maria Volonté imitates Aldo Moro",
       "From Leonardo Sciascia"
      ],
-     "context": "During an epidemic, the powerful men of the ruling party retreat for spiritual exercises in a hotel-hermitage run by an ambiguous priest, Marcello Mastroianni. They begin to die one by one. Elio Petri, dark satire, soon pulled from cinemas."
+     "context": "During an epidemic, the powerful men of the ruling party retreat for spiritual exercises in a hotel-hermitage run by an ambiguous priest, Marcello Mastroianni. They begin to die one by one. Elio Petri, dark satire."
     }
    },
    "moreIdeas": [
@@ -13155,14 +13155,14 @@
     "reasons": [
      "Una laureata in filosofia in un call center",
      "Sabrina Ferilli, capa che motiva con le canzoni",
-     "Isabella Ragonese al primo ruolo importante"
+     "Isabella Ragonese protagonista"
     ],
     "context": "Marta si laurea con lode e finisce a vendere elettrodomestici al telefono, in un'azienda dove le venditrici vengono premiate e umiliate ogni mattina. Paolo Virzì racconta il lavoro precario con una commedia che fa anche paura.",
     "en": {
      "reasons": [
       "A philosophy graduate in a call centre",
       "Sabrina Ferilli, a boss who motivates with songs",
-      "Isabella Ragonese's first big role"
+      "Isabella Ragonese in the lead"
      ],
      "context": "Marta graduates with honours and ends up selling appliances by phone, in a company where saleswomen are rewarded and humiliated every morning. Paolo Virzì portrays precarious work with a comedy that is also frightening."
     }
@@ -13573,7 +13573,7 @@
     {
      "title": "L'ultimo bacio",
      "year": 2001,
-     "connection": "Muccino, gli stessi ragazzi qualche anno dopo",
+     "connection": "Muccino, la giovinezza qualche anno dopo",
      "tmdbId": 12308
     },
     {
@@ -13603,7 +13603,7 @@
     {
      "title": "La meglio gioventù",
      "year": 2003,
-     "connection": "Giordana, il '68 nelle scuole",
+     "connection": "Giordana, ragazzi e politica",
      "tmdbId": 11659
     },
     {
@@ -13640,14 +13640,14 @@
      "Diego Abatantuono e Sergio Castellitto",
      "Le leggi razziali entrano in una strada"
     ],
-    "context": "Umberto vende stoffe, Leone abiti da uomo: due negozi vicini e sempre in lite. Quando le leggi razziali colpiscono Leone, che è ebreo, la rivalità diventa un'altra cosa. Ettore Scola racconta la grande storia dentro una piccola via.",
+    "context": "Umberto e Leone hanno due negozi vicini e sono sempre in lite. Quando le leggi razziali colpiscono Leone, che è ebreo, la rivalità diventa un'altra cosa. Ettore Scola racconta la grande storia dentro una piccola via.",
     "en": {
      "reasons": [
       "Two rival shopkeepers in Rome, 1938",
       "Diego Abatantuono and Sergio Castellitto",
       "The racial laws reach one street"
      ],
-     "context": "Umberto sells fabric, Leone sells men's suits: two shops side by side, always quarrelling. When the racial laws strike Leone, who is Jewish, the rivalry becomes something else. Ettore Scola tells history on a grand scale inside one small street."
+     "context": "Umberto and Leone have shops side by side and are always quarrelling. When the racial laws strike Leone, who is Jewish, the rivalry becomes something else. Ettore Scola tells history on a grand scale inside one small street."
     }
    },
    "moreIdeas": [
@@ -14202,14 +14202,14 @@
      "Nanni Moretti, ministro senza scrupoli",
      "Prima di Tangentopoli, la racconta già"
     ],
-    "context": "Luciano, professore di lettere a Napoli, accetta di scrivere i discorsi di un giovane ministro socialista e si ritrova dentro un sistema di favori e ricatti. Daniele Luchetti racconta la politica italiana poco prima che crollasse.",
+    "context": "Luciano, professore di lettere, accetta di scrivere i discorsi di un giovane ministro socialista e si ritrova dentro un sistema di favori e ricatti. Daniele Luchetti racconta la politica italiana poco prima che crollasse.",
     "en": {
      "reasons": [
       "Silvio Orlando, a teacher who writes for a minister",
       "Nanni Moretti, an unscrupulous minister",
       "Before Tangentopoli, it already tells it"
      ],
-     "context": "Luciano, a literature teacher in Naples, agrees to write speeches for a young Socialist minister and finds himself inside a system of favours and blackmail. Daniele Luchetti portrays Italian politics shortly before it collapsed."
+     "context": "Luciano, a literature teacher, agrees to write speeches for a young Socialist minister and finds himself inside a system of favours and blackmail. Daniele Luchetti portrays Italian politics shortly before it collapsed."
     }
    },
    "moreIdeas": [
@@ -14524,14 +14524,14 @@
      "Tratto dai ricordi di Jona Oberski",
      "Roberto Faenza, sguardo all'altezza di un bambino"
     ],
-    "context": "Jona ha quattro anni ad Amsterdam quando la sua famiglia viene deportata. Attraverso i campi, fino alla liberazione, il film racconta quello che un bambino vede e capisce. Girato in inglese da Roberto Faenza, con una grande sensibilità.",
+    "context": "Jona è un bambino ad Amsterdam quando la sua famiglia viene deportata. Attraverso i campi, fino alla liberazione, il film racconta quello che un bambino vede e capisce. Girato in inglese da Roberto Faenza, con una grande sensibilità.",
     "en": {
      "reasons": [
       "A Dutch Jewish boy in the camps",
       "Based on the memories of Jona Oberski",
       "Roberto Faenza, a gaze at a child's height"
      ],
-     "context": "Jona is four in Amsterdam when his family is deported. Through the camps, until liberation, the film tells what a child sees and understands. Shot in English by Roberto Faenza, with great sensitivity."
+     "context": "Jona is a small boy in Amsterdam when his family is deported. Through the camps, until liberation, the film tells what a child sees and understands. Shot in English by Roberto Faenza, with great sensitivity."
     }
    },
    "moreIdeas": [
@@ -14920,17 +14920,17 @@
     "recommendation": "YES",
     "reasons": [
      "Bud Spencer, ex campione di football americano",
-     "Una partita contro i marines a Livorno",
+     "Una partita contro i marines americani",
      "Pugni e gentilezza"
     ],
-    "context": "Bulldozer, un tempo campione di football americano, ora fa il pescatore a Livorno. Un gruppo di ragazzi del quartiere gli chiede di allenarli per una partita contro i soldati americani della base. Michele Lupo, per famiglie.",
+    "context": "Bulldozer, un tempo campione di football americano, ora fa il pescatore. Un gruppo di ragazzi del quartiere gli chiede di allenarli per una partita contro i soldati americani della base. Michele Lupo, per famiglie.",
     "en": {
      "reasons": [
       "Bud Spencer, a former American football champion",
-      "A match against the Marines in Livorno",
+      "A match against the American Marines",
       "Punches and kindness"
      ],
-     "context": "Bulldozer, once an American football champion, now fishes in Livorno. A group of local young men ask him to coach them for a match against the American soldiers from the base. Michele Lupo, for families."
+     "context": "Bulldozer, once an American football champion, now works as a fisherman. A group of local young men ask him to coach them for a match against the American soldiers from the base. Michele Lupo, for families."
     }
    },
    "moreIdeas": [
