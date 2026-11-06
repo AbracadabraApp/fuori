@@ -49,7 +49,6 @@ struct CinemaView: View {
 /// no title under it (Josh: the posters have the name on them). VoiceOver reads title and year
 private struct PosterCard: View {
     let film: Film
-    @ScaledMetric(relativeTo: .title) private var play: CGFloat = 56
 
     var body: some View {
         AsyncImage(url: film.poster) { $0.resizable().scaledToFill() } placeholder: { Tokens.Colors.sand }
@@ -57,15 +56,21 @@ private struct PosterCard: View {
             .frame(maxWidth: .infinity)
             .clipShape(RoundedRectangle(cornerRadius: Tokens.Radius.card))
             .shadow(color: .black.opacity(Tokens.Shadow.card.opacity), radius: Tokens.Shadow.card.radius, y: Tokens.Shadow.card.y)
-            .overlay(alignment: .bottomTrailing) {
-                ZStack {
-                    Circle().fill(.ultraThinMaterial).frame(width: play, height: play)
-                    Image(systemName: "play.circle.fill")
-                        .font(.system(size: play * 0.79))
+            // MovieGenius's play button, in proportion: there the poster is full width and the
+            // 56 pt button about 16% of it, 16 pt in from the corner (Josh: same button, not too big)
+            .overlay {
+                GeometryReader { g in
+                    let d = g.size.width * 0.16
+                    // Translucent glass (Josh, 2026-11-05): iOS's own Liquid Glass, a white triangle on it
+                    Image(systemName: "play.fill")
+                        .font(.system(size: d * 0.38))
                         .foregroundStyle(.white)
-                        .shadow(color: .black.opacity(0.25), radius: 3, y: 1)
+                        .offset(x: d * 0.03)
+                        .frame(width: d, height: d)
+                        .glassEffect(.clear, in: .circle)
+                        .padding(g.size.width * 0.046)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                 }
-                .padding(Tokens.Space.gutter)
             }
             .contentShape(Rectangle())
             .accessibilityElement(children: .ignore)
