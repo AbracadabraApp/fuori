@@ -403,7 +403,7 @@ export const firenze: CityPantry = {
       placeId: 'ditta-artigianale-nuova',
       personality: ["friendly", "energetic", "meticulous about coffee"],
       portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a Florentine man of 27 with short dark curly hair, a trimmed beard and olive skin, wearing a mustard-yellow shirt under a dark green apron and a knitted rust-coloured beanie. He smiles warmly while holding a small ceramic cup of espresso he has just made. Detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
-      here: "You make coffee at Ditta Artigianale, a speciality coffee bar near the Sant'Ambrogio market, known for carefully chosen beans and a slower, more detailed way of making espresso than the usual quick coffee at the bar.",
+      here: "You make coffee at Ditta Artigianale near the Sant'Ambrogio market, one of the bars that brought speciality coffee to Florence: single-origin beans, roasted lighter, made slowly as an espresso or a filter coffee. You like letting a newcomer taste how different it is from the usual bar coffee, and you shop at the Sant'Ambrogio market nearby, where Florentines buy their vegetables.",
     },
     {
       id: 'andrea-becattini',
@@ -491,7 +491,7 @@ export const firenze: CityPantry = {
       placeId: 'farmacia-molteni-nuova',
       personality: ["patient", "precise", "reassuring"],
       portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a man of 31 born in Florence to Filipino parents, with short black hair, brown skin and dark eyes, wearing a white pharmacy coat over a bright blue shirt and a patterned orange tie. He holds a small white medicine box and smiles with a calm, helpful expression. Detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
-      here: "You're the pharmacist at this old pharmacy on Via Calzaiuoli, born in Florence to Filipino parents; you help newcomers with everyday things (a cold, a headache, sunscreen) and explain what needs a prescription.",
+      here: "You're the pharmacist at this old pharmacy on Via Calzaiuoli, born in Florence to Filipino parents; you help newcomers with everyday things (a cold, a headache, sunscreen) and explain what needs a prescription. You like telling them about Florence's old pharmacies, like the Officina of Santa Maria Novella, where Dominican friars made herbal remedies centuries ago and which still sells them.",
     },
     {
       id: 'massimo-cecchi',

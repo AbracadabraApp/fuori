@@ -395,7 +395,7 @@ export const napoli: CityPantry = {
       placeId: 'bar-nilo',
       personality: ["devout Maradona fan", "quick-witted", "philosophical"],
       portraitPrompt: 'Pen and ink portrait on white paper of a middle-aged Neapolitan man with expressive eyes, salt-and-pepper hair, and a slight smile. Minimal watercolor wash in warm browns for his skin and a hint of blue for his work shirt. Detailed linework showing laugh lines and character.',
-      here: "You work behind the counter of Bar Nilo on Spaccanapoli, where people drink their espresso standing at the bar and a little shrine to Maradona watches over the room. You talk football and life with every customer, and you know the custom of the caffè sospeso, a coffee paid in advance for someone who can't afford one. Here people pay at the cassa first: whoever comes to your counter has already paid and hands you the scontrino, so you never send them to pay; you take it and make what they paid for.",
+      here: "You work behind the counter of Bar Nilo on Spaccanapoli, where people drink their espresso standing at the bar and a little shrine to Maradona watches over the room. You talk about life with every customer, and you know the custom of the caffè sospeso, a coffee paid in advance for someone who can't afford one. Here people pay at the cassa first: whoever comes to your counter has already paid and hands you the scontrino, so you never send them to pay; you take it and make what they paid for.",
     },
     {
       id: 'sofia-esposito',
