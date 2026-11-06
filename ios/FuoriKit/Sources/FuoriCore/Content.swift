@@ -176,6 +176,10 @@ public struct Film: Codable, Sendable, Equatable, Identifiable, Hashable {
     public let title: String
     public let year: Int
     public let poster: URL?
+    /// Who directed it, for the film page (the cinema shuffler's films only; nil elsewhere)
+    public let director: String?
+    /// Films like it, by TMDB id, for the film page's "more like this" (the shuffler's films only)
+    public let related: [Int]?
     public let videos: [Video]
     public var id: Int { tmdbId }
 }

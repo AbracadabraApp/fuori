@@ -180,5 +180,7 @@ import Testing
         #expect(cinema.shelves.count == 2)
         #expect(cinema.shelves.allSatisfy { !$0.title.isEmpty && $0.films.count == 2 })
         #expect(cinema.shelves.flatMap(\.films).allSatisfy { $0.poster != nil && !$0.videos.isEmpty })
+        // The film page: its director and "more like this"
+        #expect(cinema.shelves.flatMap(\.films).allSatisfy { $0.director != nil && !($0.related ?? []).isEmpty })
     }
 }

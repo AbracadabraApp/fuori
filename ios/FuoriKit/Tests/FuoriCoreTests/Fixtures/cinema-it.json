@@ -8,6 +8,7 @@
      "tmdbId": 11216,
      "title": "Nuovo Cinema Paradiso",
      "year": 1988,
+     "director": "Giuseppe Tornatore",
      "poster": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/posters/11216.d8e7446ac1.webp",
      "videos": [
       {
@@ -28,12 +29,14 @@
        "name": "Cinema Paradiso Official 25th Anniversary trailer from Arrow Films",
        "language": "en"
       }
-     ]
+     ],
+     "related": []
     },
     {
      "tmdbId": 381341,
      "title": "Perfetti sconosciuti",
      "year": 2016,
+     "director": "Paolo Genovese",
      "poster": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/posters/381341.426001ebb9.webp",
      "videos": [
       {
@@ -54,6 +57,11 @@
        "name": "PERFECT STRANGERS (2017) - Official HD Trailer - A film by Paolo Genovese",
        "language": "en"
       }
+     ],
+     "related": [
+      179144,
+      10867,
+      364433
      ]
     }
    ]
@@ -66,6 +74,7 @@
      "tmdbId": 307,
      "title": "Roma città aperta",
      "year": 1945,
+     "director": "Roberto Rossellini",
      "poster": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/posters/307.e385525b49.webp",
      "videos": [
       {
@@ -110,12 +119,18 @@
        "name": "'Rome, Open City' | Critic's Picks | The New York Times",
        "language": "en"
       }
+     ],
+     "related": [
+      11906,
+      5156,
+      422
      ]
     },
     {
      "tmdbId": 5156,
      "title": "Ladri di biciclette",
      "year": 1948,
+     "director": "Vittorio De Sica",
      "poster": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/posters/5156.5620713a9f.webp",
      "videos": [
       {
@@ -154,6 +169,11 @@
        "name": "Enzo Staiola on BICYCLE THIEVES",
        "language": "en"
       }
+     ],
+     "related": [
+      11906,
+      422,
+      20126
      ]
     }
    ]

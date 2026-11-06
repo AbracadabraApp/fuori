@@ -36,8 +36,7 @@ extension EnvironmentValues {
 /// reference movie genius home"): shelves of posters,
 /// each scrolling sideways, as on MovieGenius's home. The shelves and the posters on
 /// them come in a new order each time the page opens, and again on pull to refresh.
-/// A poster opens the film's videos (TrailerView): the trailer first, then the full
-/// film when there is one
+/// A poster opens the film's page (FilmPage); its poster opens the videos
 struct CinemaShufflerView: View {
     let api: APIClient
 
@@ -78,9 +77,16 @@ struct CinemaShufflerView: View {
         .toolbarColorScheme(.dark, for: .navigationBar)
         #endif
         .navigationDestination(for: FilmRoute.self) { route in TrailerView(film: route.film) }
+        .navigationDestination(for: FilmPageRoute.self) { route in FilmPage(film: route.film, related: related(route.film)) }
         // Once per visit: coming back from a trailer keeps the order
         .task { if rows.isEmpty { await load() } }
         .refreshable { await load() }
+    }
+
+    /// "More like this": the server's list for the film, a dozen in a new order each time
+    private func related(_ film: Film) -> [Film] {
+        let all = Dictionary(rows.flatMap(\.films).map { ($0.tmdbId, $0) }, uniquingKeysWith: { a, _ in a })
+        return Array((film.related ?? []).compactMap { all[$0] }.shuffled().prefix(12))
     }
 
     private func load() async {
@@ -112,7 +118,7 @@ private struct ShelfView: View {
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 10) {
                     ForEach(films) { film in
-                        NavigationLink(value: FilmRoute(film: film)) { ShelfPoster(film: film) }
+                        NavigationLink(value: FilmPageRoute(film: film)) { ShelfPoster(film: film) }
                             .buttonStyle(PressableStyle())
                             .frame(width: posterWidth)
                     }
@@ -138,6 +144,91 @@ private struct ShelfPoster: View {
             .clipShape(RoundedRectangle(cornerRadius: Tokens.Radius.poster, style: .continuous))
             .shadow(color: Tokens.Colors.cinemaGlow.opacity(0.25), radius: 6)
             .shadow(color: .black.opacity(0.6), radius: 10, y: 6)
+            .contentShape(Rectangle())
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("\(film.title), \(film.year)")
+            .accessibilityHint("Opens the film")
+            .accessibilityAddTraits(.isButton)
+    }
+}
+
+/// Where a shelf poster leads: the film's page
+struct FilmPageRoute: Hashable {
+    let film: Film
+}
+
+/// A film's page, as MovieGenius's movie page, pared down (Josh, 2026-11-06: "build
+/// movie page… moviegenius already has tools/styles - use them"; no synopsis, the
+/// critic will live in the cinema): the big poster with MovieGenius's play button,
+/// which opens the trailer and the film's other videos; the year and director;
+/// then "more like this" from the library's own shelves, not TMDB's suggestions
+struct FilmPage: View {
+    let film: Film
+    let related: [Film]
+
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 0) {
+                NavigationLink(value: FilmRoute(film: film)) { HeroPoster(film: film) }
+                    .buttonStyle(PressableStyle())
+                    // MovieGenius's hero: nearly the full width (350 of 390 pt)
+                    .containerRelativeFrame(.horizontal) { width, _ in width * 0.9 }
+                    .padding(.top, 12)
+                Text(credit)
+                    .typeface(.label, Tokens.Size.body, relativeTo: .body)
+                    .foregroundStyle(Tokens.Colors.sand)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, Tokens.Space.gutter)
+                    .padding(.top, 16)
+                if !related.isEmpty {
+                    ShelfView(title: "More like this", films: related)
+                        .padding(.top, 32)
+                }
+            }
+            .padding(.bottom, 24)
+        }
+        .background(Tokens.Colors.ink)
+        .navigationTitle(film.title)
+        #if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Tokens.Colors.ink, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        #endif
+    }
+
+    /// "1994 · Michael Radford"
+    private var credit: String {
+        [String(film.year), film.director].compactMap { $0 }.joined(separator: " · ")
+    }
+}
+
+/// The film page's poster: MovieGenius's hero, its corners, light and play button
+private struct HeroPoster: View {
+    let film: Film
+
+    var body: some View {
+        AsyncImage(url: film.poster) { $0.resizable().scaledToFill() } placeholder: { Tokens.Colors.flapTile }
+            .aspectRatio(2 / 3, contentMode: .fit)
+            .frame(maxWidth: .infinity)
+            .clipShape(RoundedRectangle(cornerRadius: Tokens.Radius.poster, style: .continuous))
+            .shadow(color: Tokens.Colors.cinemaGlow.opacity(0.3), radius: 8)
+            .shadow(color: Tokens.Colors.cinemaGlow.opacity(0.2), radius: 20)
+            .shadow(color: .black.opacity(0.6), radius: 16, y: 8)
+            .shadow(color: .black.opacity(0.4), radius: 32, y: 16)
+            // MovieGenius's play button: 56 pt on a 350 pt poster, 16 pt in from the corner
+            .overlay {
+                GeometryReader { g in
+                    let d = g.size.width * 0.16
+                    Image(systemName: "play.fill")
+                        .font(.system(size: d * 0.38))
+                        .foregroundStyle(.white)
+                        .offset(x: d * 0.03)
+                        .frame(width: d, height: d)
+                        .glassEffect(.clear, in: .circle)
+                        .padding(g.size.width * 0.046)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                }
+            }
             .contentShape(Rectangle())
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("\(film.title), \(film.year)")

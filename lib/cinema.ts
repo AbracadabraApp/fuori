@@ -33,8 +33,8 @@ export function cinemaFilms(cityId: string, placeId: string): CinemaFilm[] | nul
  * 2026-11-06, experimental and not linked from the game): rows of posters, as
  * on MovieGenius home. `fullFilm` is a full-length YouTube upload of the film.
  */
-export interface LibraryFilm { tmdbId: number; title: string; year: number; posterUrl: string | null; videos: CinemaVideo[]; fullFilm: { youtube: string; language: string | null } | null }
-export interface CinemaLibrary { fullFilmName: string; shelves: { id: string; title: string; films: number[] }[]; films: LibraryFilm[] }
+export interface LibraryFilm { tmdbId: number; title: string; year: number; director: string | null; posterUrl: string | null; videos: CinemaVideo[]; fullFilm: { youtube: string; language: string | null } | null }
+export interface CinemaLibrary { fullFilmName: string; shelves: { id: string; title: string; similar?: boolean; films: number[] }[]; films: LibraryFilm[] }
 
 let library: CinemaLibrary | null | undefined;
 /** The country's library, or null if it has none */
