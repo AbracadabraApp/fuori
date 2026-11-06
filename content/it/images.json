@@ -797,6 +797,41 @@
       "src": "99d48aef863aff71",
       "bytes": 123698
     },
+    "pictures/osteria-da-nino-amatriciana": {
+      "key": "it/pictures/osteria-da-nino-amatriciana.7110d19a67.webp",
+      "src": "4da2b486d3d4b902",
+      "bytes": 245086
+    },
+    "pictures/osteria-da-nino-cacio-e-pepe": {
+      "key": "it/pictures/osteria-da-nino-cacio-e-pepe.d18d21ba31.webp",
+      "src": "2e133348ab10d3b4",
+      "bytes": 228108
+    },
+    "pictures/osteria-da-nino-carbonara": {
+      "key": "it/pictures/osteria-da-nino-carbonara.f7be7b8f5d.webp",
+      "src": "88fbba16043012d5",
+      "bytes": 241136
+    },
+    "pictures/osteria-da-nino-carciofi-alla-romana": {
+      "key": "it/pictures/osteria-da-nino-carciofi-alla-romana.43718a50db.webp",
+      "src": "6b03d3a18c74d383",
+      "bytes": 252822
+    },
+    "pictures/osteria-da-nino-gnocchi": {
+      "key": "it/pictures/osteria-da-nino-gnocchi.70246cafdc.webp",
+      "src": "a9f6980636a7950a",
+      "bytes": 252092
+    },
+    "pictures/osteria-da-nino-gricia": {
+      "key": "it/pictures/osteria-da-nino-gricia.48ce8fd164.webp",
+      "src": "d723be38c391289d",
+      "bytes": 261172
+    },
+    "pictures/osteria-da-nino-room": {
+      "key": "it/pictures/osteria-da-nino-room.e91fbf86e0.webp",
+      "src": "d4dbc343da933e27",
+      "bytes": 253104
+    },
     "places/accademia-carrara": {
       "key": "it/places/accademia-carrara.a4e2a12e2b.webp",
       "src": "1a57a9fdab71d9f0",
