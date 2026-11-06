@@ -42,6 +42,7 @@ public enum Tokens {
         public static let youBubble = Color(red: 0.8588, green: 0.8902, blue: 0.7686) // #dbe3c4
         public static let youEdge = Color(red: 0.7098, green: 0.7608, blue: 0.5765) // #b5c293
         public static let youInk = Color(red: 0.2471, green: 0.2902, blue: 0.1333) // #3f4a22
+        public static let cinemaGlow = Color(red: 1.0000, green: 0.8392, blue: 0.0000) // #ffd600
     }
 
     public enum FontFamily {
@@ -75,6 +76,7 @@ public enum Tokens {
 
     public enum Radius {
         public static let card: CGFloat = 8
+        public static let poster: CGFloat = 16
     }
 
     public enum Shadow {

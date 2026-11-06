@@ -54,8 +54,15 @@ private struct PosterCard: View {
         AsyncImage(url: film.poster) { $0.resizable().scaledToFill() } placeholder: { Tokens.Colors.sand }
             .aspectRatio(2 / 3, contentMode: .fit)
             .frame(maxWidth: .infinity)
-            .clipShape(RoundedRectangle(cornerRadius: Tokens.Radius.card))
-            .shadow(color: .black.opacity(Tokens.Shadow.card.opacity), radius: Tokens.Shadow.card.radius, y: Tokens.Shadow.card.y)
+            // MovieGenius's corners: 16 pt, continuous
+            .clipShape(RoundedRectangle(cornerRadius: Tokens.Radius.poster, style: .continuous))
+            // MovieGenius's poster light (mgCinematicGlow, then mgElevationHigh; dark-mode values):
+            // a gold rim glow, deep shadows and a faint gold halo, so the poster floats on the black
+            .shadow(color: Tokens.Colors.cinemaGlow.opacity(0.3), radius: 8)
+            .shadow(color: Tokens.Colors.cinemaGlow.opacity(0.2), radius: 20)
+            .shadow(color: .black.opacity(0.6), radius: 16, y: 8)
+            .shadow(color: .black.opacity(0.4), radius: 32, y: 16)
+            .shadow(color: Tokens.Colors.cinemaGlow.opacity(0.1), radius: 40, y: 20)
             // MovieGenius's play button, in proportion: there the poster is full width and the
             // 56 pt button about 16% of it, 16 pt in from the corner (Josh: same button, not too big)
             .overlay {
