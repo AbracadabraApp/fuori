@@ -66,6 +66,14 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-06 (afternoon): the film page, 191 films, fact-swept (cloud session)
+
+- **Done:** a shelf poster opens FilmPage, MovieGenius's movie page in Italian (Josh: "moviegenius already has tools/styles - use them"): the 350 pt hero with its glow, halo and play button (opens the trailer screen); a WhyWatch card (MovieGenius's v3 prompt in Italian, "Consigliato"/"Non consigliato"); More Ideas one under another (MovieGenius's prompt with Italian criteria, 10 per film, only those in the library shown, 9.1 on average). An "English" link at the card's bottom right swaps the card's text in place (Josh: "just swap text"); no translation on More Ideas.
+- **Library:** 191 films (`content/it/cinema-library.json`), every one with a page (`cinema-pages.json`, all with English). Rule (Josh agreed): in only with at least one Italian video, trailer or full film. Adults-only films are listed under `excluded`. `scripts/cinema-check-films.mjs` checks candidates (trailers, full upload, spoken language; the language step needs the laptop); `scripts/cinema-fact-check.mts` runs the fact judge over the pages (the laptop ran it: 125 of 2,101 flagged; corrected at Josh's "medium to low bar").
+- **Release needed:** `npm run release` from the laptop. Live still serves 168 films without the last 23 or the fact fixes.
+- **Open:** 8 films have a full upload whose language YouTube won't report (Mediterraneo, L'uomo delle stelle, L'albero degli zoccoli, Il Decameron, Intervista, Allonsanfàn, Compagni di scuola, Splendor): in only if someone confirms the upload is Italian. A weekly check that drops dead or unembeddable full-film links isn't built. Build 13 for Josh's phone (with his yes) carries the cinema, the film page and Nino's chalk menu.
+- **Next (agreed earlier):** the critic lives in the city cinema, a person you talk about films with; the reel stays for browsing.
+
 ## 2026-11-06: the cinema shuffler and the film reel (cloud session)
 
 - **Done:** a film library (`content/it/cinema-library.json`, 95 Italian films: Italian titles, posters on R2, TMDB videos with Italian first, 52 with a full-length YouTube upload) served at `GET /v1/cinema` as eight shelves named in Italian. iPhone: `CinemaShufflerView`, MovieGenius home's layout on the cinema's dark room, shelves and posters shuffled per visit and on pull to refresh. A film reel (`film`) before Learn opens it as a sheet; only shown when `/v1/content` says `cinema: true` (Italy). `-FuoriOpenCinema YES` opens it in a debug build. Full film plays as the second video, after the trailer.
