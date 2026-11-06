@@ -66,6 +66,14 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-05 (night): the Rome cinema, live (laptop session)
+
+- **Live** (fd3a0ac, both services): Cinema Pigneto in Rome, a place with no person. Its card opens a feed of the 11 films' posters on a black screen (67% of the width, a Liquid Glass play button in the corner, no title); a poster opens the trailer screen, dark like MovieGenius's: the official trailer plays inline, the film's other videos below (name, kind, language), the title once, in the bar. TMDB's credit is in Settings → About. Josh approved the place picture; "we call trailers done for now".
+- **Built:** `scripts/cinema-posters.mjs` (TMDB posters → R2 as `posters/<tmdbId>`), `lib/cinema.ts`, films on the place in `/v1/content`, `check-content-api` checks it; iPhone `Place.films`, `CinemaView`/`TrailerView`, MovieGenius's `YouTubePlayerView` on Google's youtube-ios-player-helper 1.0.4 (iPhone only). `-FuoriOpen roma-nuova/cinema-pigneto[/<tmdbId>]` opens it in a debug build.
+- **Checked:** tsc, test:content-api (both countries), swift test (84), make build, iOS CI, the simulator against a local server (posters, a trailer playing, switching videos, AX5), production serves the films, logs clean. **Not checked:** Josh's phone (needs a new build; ask before installing), VoiceOver.
+- **Ideas Josh floated, not built:** none left open; his calls on poster size and the black screen were built.
+- **Lesson (Josh):** start from MovieGenius's screens and adapt, rather than rebuilding them; a lot of back-and-forth came from not doing that. Also: reset the simulator's text size after an AX5 check.
+
 ## 2026-11-05: food culture chips merged and live; laptop storage cleared (laptop session)
 
 - **Food chips** (branch `claude/food-chips` from the cloud session, merged as 11ec6cc, live on both services; Learn sets 6 → 10). Italy: Osteria, trattoria, ristorante · How a meal goes · Slow food · DOP and DOC. Mexico: Fonda, puesto, restaurante · Comida corrida · Why tortillas use lime · Mezcal's own origin label (Josh, asked about Mezcal given no alcohol elsewhere: "merge all eight").
