@@ -692,8 +692,8 @@
       "type": "place"
     },
     "bologna/ristorante-pappagallo": {
-      "timestamp": "2026-10-10T04:51:00.300Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/ristorante-pappagallo.jpg",
+      "timestamp": "2026-11-06T05:37:25.850Z",
+      "path": "/home/claude/fuori-bologna/public/images/places/ristorante-pappagallo.jpg",
       "type": "place"
     },
     "bologna/ristorante-da-nello": {
@@ -717,8 +717,8 @@
       "type": "place"
     },
     "bologna/santo-stefano": {
-      "timestamp": "2026-10-10T04:52:28.510Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/santo-stefano.jpg",
+      "timestamp": "2026-11-06T05:44:29.735Z",
+      "path": "/home/claude/fuori-bologna/public/images/places/santo-stefano.jpg",
       "type": "place"
     },
     "bologna/san-petronio": {
@@ -732,13 +732,13 @@
       "type": "place"
     },
     "bologna/piazza-maggiore": {
-      "timestamp": "2026-10-10T04:53:16.368Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/piazza-maggiore.jpg",
+      "timestamp": "2026-11-06T05:37:45.991Z",
+      "path": "/home/claude/fuori-bologna/public/images/places/piazza-maggiore.jpg",
       "type": "place"
     },
     "bologna/piazza-verdi": {
-      "timestamp": "2026-10-10T04:53:36.249Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/piazza-verdi.jpg",
+      "timestamp": "2026-11-06T05:38:06.101Z",
+      "path": "/home/claude/fuori-bologna/public/images/places/piazza-verdi.jpg",
       "type": "place"
     },
     "bologna/enoteca-italiana": {
@@ -757,8 +757,8 @@
       "type": "place"
     },
     "bologna/salumeria-simoni": {
-      "timestamp": "2026-10-10T04:54:51.917Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/salumeria-simoni.jpg",
+      "timestamp": "2026-11-06T05:38:24.572Z",
+      "path": "/home/claude/fuori-bologna/public/images/places/salumeria-simoni.jpg",
       "type": "place"
     },
     "bologna/bottega-portici": {
@@ -777,18 +777,18 @@
       "type": "place"
     },
     "bologna/stazione-centrale": {
-      "timestamp": "2026-10-10T04:56:10.057Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/stazione-centrale.jpg",
+      "timestamp": "2026-11-06T05:40:46.797Z",
+      "path": "/home/claude/fuori-bologna/public/images/places/stazione-centrale.jpg",
       "type": "place"
     },
     "bologna/portici-san-luca": {
-      "timestamp": "2026-10-10T04:56:23.826Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/portici-san-luca.jpg",
+      "timestamp": "2026-11-06T05:39:27.142Z",
+      "path": "/home/claude/fuori-bologna/public/images/places/portici-san-luca.jpg",
       "type": "place"
     },
     "bologna/sfoglia-rina": {
-      "timestamp": "2026-10-10T04:56:41.089Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/sfoglia-rina.jpg",
+      "timestamp": "2026-11-06T05:39:50.608Z",
+      "path": "/home/claude/fuori-bologna/public/images/places/sfoglia-rina.jpg",
       "type": "place"
     },
     "bologna/archiginnasio": {
@@ -6202,9 +6202,9 @@
       "skipped": true
     },
     "bologna/caffe-terzi": {
-      "timestamp": "2026-10-11T04:05:57.603Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/caffe-terzi.jpg",
-      "skipped": true
+      "timestamp": "2026-11-06T05:37:02.041Z",
+      "path": "/home/claude/fuori-bologna/public/images/places/caffe-terzi.jpg",
+      "type": "place"
     },
     "firenze/caffe-rivoire": {
       "timestamp": "2026-10-11T04:05:57.605Z",
@@ -6900,13 +6900,28 @@
       "timestamp": "2026-11-04T06:23:02.533Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/serena-archeologa.jpg",
       "type": "portrait"
+    },
+    "bologna/sorbetteria-castiglione": {
+      "timestamp": "2026-11-06T05:38:46.393Z",
+      "path": "/home/claude/fuori-bologna/public/images/places/sorbetteria-castiglione.jpg",
+      "type": "place"
+    },
+    "bologna/sara-sorbetteria": {
+      "timestamp": "2026-11-06T05:41:23.353Z",
+      "path": "/home/claude/fuori-bologna/public/images/portraits/sara-sorbetteria.jpg",
+      "type": "portrait"
     }
   },
-  "failed": {},
+  "failed": {
+    "bologna/stazione-centrale": {
+      "timestamp": "2026-11-06T05:39:04.017Z",
+      "error": "fetch failed"
+    }
+  },
   "stats": {
-    "total": 1380,
-    "completed": 1380,
-    "failed": 0,
-    "lastRun": "2026-11-04T06:36:29.370Z"
+    "total": 1383,
+    "completed": 1382,
+    "failed": 1,
+    "lastRun": "2026-11-06T05:44:32.742Z"
   }
 }

@@ -1558,9 +1558,9 @@
       "bytes": 241502
     },
     "places/caffe-terzi": {
-      "key": "it/places/caffe-terzi.bcb06091ea.webp",
-      "src": "f9d2f09db6896fb3",
-      "bytes": 266830
+      "key": "it/places/caffe-terzi.9d4d230267.webp",
+      "src": "968cf11d8a42b5aa",
+      "bytes": 230904
     },
     "places/caffe-toledo": {
       "key": "it/places/caffe-toledo.1c0e4e2379.webp",
@@ -3283,9 +3283,9 @@
       "bytes": 212022
     },
     "places/piazza-maggiore": {
-      "key": "it/places/piazza-maggiore.38b04f2061.webp",
-      "src": "2fdee271f57e6d43",
-      "bytes": 203294
+      "key": "it/places/piazza-maggiore.16522d5322.webp",
+      "src": "0187a89987665ef1",
+      "bytes": 246340
     },
     "places/piazza-navona": {
       "key": "it/places/piazza-navona.d73b4e93df.webp",
@@ -3353,9 +3353,9 @@
       "bytes": 241076
     },
     "places/piazza-verdi": {
-      "key": "it/places/piazza-verdi.a1b44deb64.webp",
-      "src": "c041d92ff2c0d78b",
-      "bytes": 313342
+      "key": "it/places/piazza-verdi.13b6551399.webp",
+      "src": "67694a2dd5cc2774",
+      "bytes": 248514
     },
     "places/piazza-vittorio": {
       "key": "it/places/piazza-vittorio.5f68ed14d8.webp",
@@ -3468,9 +3468,9 @@
       "bytes": 290930
     },
     "places/portici-san-luca": {
-      "key": "it/places/portici-san-luca.bd0b33241e.webp",
-      "src": "1e0e76f5f725686e",
-      "bytes": 71332
+      "key": "it/places/portici-san-luca.5ad7f8d898.webp",
+      "src": "f29dd4e5dcf1fa47",
+      "bytes": 271008
     },
     "places/porto-antico": {
       "key": "it/places/porto-antico.c2b8329412.webp",
@@ -3603,9 +3603,9 @@
       "bytes": 163816
     },
     "places/ristorante-pappagallo": {
-      "key": "it/places/ristorante-pappagallo.8b120192b6.webp",
-      "src": "6843ed3039e938ff",
-      "bytes": 286388
+      "key": "it/places/ristorante-pappagallo.e7237ddb31.webp",
+      "src": "5f5b1f3213965c60",
+      "bytes": 249696
     },
     "places/ristorante-soul": {
       "key": "it/places/ristorante-soul.36ef116543.webp",
@@ -3668,9 +3668,9 @@
       "bytes": 319562
     },
     "places/salumeria-simoni": {
-      "key": "it/places/salumeria-simoni.9ac6c98339.webp",
-      "src": "c46d1f3152644708",
-      "bytes": 247138
+      "key": "it/places/salumeria-simoni.11def4a573.webp",
+      "src": "6d87424750c46812",
+      "bytes": 251478
     },
     "places/salumeria-upnea": {
       "key": "it/places/salumeria-upnea.a0ef9a214a.webp",
@@ -3708,9 +3708,9 @@
       "bytes": 268496
     },
     "places/santo-stefano": {
-      "key": "it/places/santo-stefano.712bf61eeb.webp",
-      "src": "154d51c50e1c2f48",
-      "bytes": 223464
+      "key": "it/places/santo-stefano.5d65722262.webp",
+      "src": "7526bdd1991220a4",
+      "bytes": 242332
     },
     "places/santuario-madonna": {
       "key": "it/places/santuario-madonna.100a030e68.webp",
@@ -3793,9 +3793,14 @@
       "bytes": 235252
     },
     "places/sfoglia-rina": {
-      "key": "it/places/sfoglia-rina.13de777229.webp",
-      "src": "bf00e9ded5b3364c",
-      "bytes": 225946
+      "key": "it/places/sfoglia-rina.327bc19d23.webp",
+      "src": "2b7a07c883c9dbb4",
+      "bytes": 274760
+    },
+    "places/sorbetteria-castiglione": {
+      "key": "it/places/sorbetteria-castiglione.5a44a29eee.webp",
+      "src": "5fa338fb7e736be1",
+      "bytes": 253122
     },
     "places/spaccanapoli-street": {
       "key": "it/places/spaccanapoli-street.ab68b3b69d.webp",
@@ -3818,9 +3823,9 @@
       "bytes": 186032
     },
     "places/stazione-centrale": {
-      "key": "it/places/stazione-centrale.925f047885.webp",
-      "src": "ebe3900e4e6388c3",
-      "bytes": 271920
+      "key": "it/places/stazione-centrale.08fa513a0e.webp",
+      "src": "9232fe064f02c9ee",
+      "bytes": 237390
     },
     "places/stazione-centrale-napoli": {
       "key": "it/places/stazione-centrale-napoli.2305e6e709.webp",
@@ -7056,6 +7061,11 @@
       "key": "it/portraits/sara-bigliettaia-bergamo.cb6810d043.webp",
       "src": "5735a66f8ee4ba05",
       "bytes": 311758
+    },
+    "portraits/sara-sorbetteria": {
+      "key": "it/portraits/sara-sorbetteria.c4584f81ca.webp",
+      "src": "8517ce7e1cf9874a",
+      "bytes": 238520
     },
     "portraits/saverio-gattini": {
       "key": "it/portraits/saverio-gattini.d499f8d965.webp",
