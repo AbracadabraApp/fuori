@@ -55,7 +55,7 @@ export interface FilmPageWords {
   /** tmdbId when the idea was matched on TMDB (scripts/cinema-check-films.mjs); otherwise found by title and year */
   moreIdeas: { title: string; year: number; connection: string; tmdbId?: number }[];
 }
-export interface CinemaPages { labels: { yes: string; no: string; moreIdeas: string }; films: Record<string, FilmPageWords> }
+export interface CinemaPages { labels: { yes: string; no: string; moreIdeas: string; original?: string }; films: Record<string, FilmPageWords> }
 
 let pages: CinemaPages | null | undefined;
 export function cinemaPages(): CinemaPages | null {

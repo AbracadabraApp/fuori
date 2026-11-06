@@ -16,7 +16,7 @@ type Film = {
   whyWatch?: { recommendation: 'YES' | 'NO'; reasons: string[]; context: string };
   moreIdeas?: Idea[];
 };
-type Labels = { yes: string; no: string; moreIdeas: string };
+type Labels = { yes: string; no: string; moreIdeas: string; original?: string };
 let cached: { labels?: Labels; shelves: { id: string; title: string; films: Film[] }[] } | null = null;
 
 /** Titles compared without accents, case or punctuation, so "Malèna" finds "Malena" */

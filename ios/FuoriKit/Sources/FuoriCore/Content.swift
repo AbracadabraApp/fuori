@@ -219,6 +219,8 @@ public struct CinemaShelves: Codable, Sendable, Equatable {
         public let yes: String
         public let no: String
         public let moreIdeas: String
+        /// The language's own name, for the link back from English ("Italiano"); nil from servers before 2026-11-06
+        public let original: String?
     }
     public let labels: Labels?
     public let shelves: [Shelf]

@@ -219,7 +219,7 @@ struct FilmPage: View {
 private struct WhyWatchCard: View {
     let why: Film.WhyWatch
     let labels: CinemaShelves.Labels?
-    /// The English under the Italian (Josh, 2026-11-06: one translate link, on WhyWatch only)
+    /// The card in English instead of the learned language (Josh, 2026-11-06: one translate link, on WhyWatch only, swapping the text)
     @State private var english = false
 
     var body: some View {
@@ -238,48 +238,35 @@ private struct WhyWatchCard: View {
                 ForEach(Array(why.reasons.enumerated()), id: \.offset) { i, reason in
                     HStack(alignment: .firstTextBaseline, spacing: 8) {
                         Text("•").accessibilityHidden(true)
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(reason)
-                            if english, let en = why.en?.reasons[safe: i] { translation(en) }
-                        }
+                        // The English replaces the Italian in place (Josh: "should just swap text")
+                        Text(english ? (why.en?.reasons[safe: i] ?? reason) : reason)
+                            .fixedSize(horizontal: false, vertical: true)
                     }
                 }
             }
             .typeface(.label, Tokens.Size.body, relativeTo: .body)
             .foregroundStyle(Tokens.Colors.flapInk)
-            VStack(alignment: .leading, spacing: 6) {
-                Text(why.context)
-                    .typeface(.label, Tokens.Size.body, relativeTo: .body)
-                    .foregroundStyle(Tokens.Colors.sand)
-                    .fixedSize(horizontal: false, vertical: true)
-                if english, let en = why.en?.context { translation(en) }
-            }
+            Text(english ? (why.en?.context ?? why.context) : why.context)
+                .typeface(.label, Tokens.Size.body, relativeTo: .body)
+                .foregroundStyle(Tokens.Colors.sand)
+                .fixedSize(horizontal: false, vertical: true)
             if why.en != nil {
-                Button { english.toggle() } label: {
-                    Text(english ? "Hide English" : "English")
+                // No animation: the words change where they are, nothing slides or reloads
+                Button { var t = Transaction(); t.disablesAnimations = true; withTransaction(t) { english.toggle() } } label: {
+                    Text(english ? (labels?.original ?? "Original") : "English")
                         .typeface(.label, Tokens.Size.body, relativeTo: .body, weight: .bold)
                         .foregroundStyle(Tokens.Colors.cinemaGlow)
                         .frame(minHeight: 44)
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(PressableStyle())
-                .accessibilityHint(english ? "Hides the translation" : "Shows the translation under the Italian")
+                .accessibilityHint(english ? "Shows the original" : "Shows it in English")
             }
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Tokens.Colors.flapTile, in: RoundedRectangle(cornerRadius: Tokens.Radius.card))
         .padding(.horizontal, Tokens.Space.gutter)
-    }
-
-    /// The English, smaller and muted under the Italian, as subtitles
-    private func translation(_ text: String) -> some View {
-        Text(text)
-            .typeface(.label, Tokens.Size.badge, relativeTo: .subheadline)
-            .italic()
-            .foregroundStyle(Tokens.Colors.sand)
-            .fixedSize(horizontal: false, vertical: true)
-            .environment(\.locale, Locale(identifier: "en"))
     }
 }
 
