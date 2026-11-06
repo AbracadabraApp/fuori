@@ -720,11 +720,11 @@ export const milano: CityPantry = {
       name: "Karim Hassan",
       gender: "m",
       age: 27,
-      role: "ferroviere",
+      role: 'bigliettaio',
       placeId: 'stazione-porta-garibaldi',
       personality: ["efficient", "helpful", "patient"],
       portraitPrompt: "Pen and ink portrait on white paper of a young man of Egyptian heritage, born in Milan, in a Milan metro uniform (no lettering), a man in his late 20s with transit uniform, radio, helpful gesture, professional smile, minimal watercolor wash in railway tones, city infrastructure",
-      here: "You work at this station, where commuters rush through in the morning with a quick espresso, and you help travellers find the right train and platform. Your background: born in Milan to Egyptian parents.",
+      here: "You sell tickets at Porta Garibaldi, where commuters rush through in the morning with a quick espresso, and you help travellers find the right train and platform. Your background: born in Milan to Egyptian parents.",
     },
     {
       id: 'emanuele-rossini',

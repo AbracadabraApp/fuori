@@ -530,11 +530,11 @@ export const matera: CityPantry = {
       name: 'Roberto Nardella',
       gender: 'm',
       age: 51,
-      role: 'capostazione',
+      role: 'bigliettaio',
       placeId: 'stazione-fal',
       personality: ["punctual", "helpful", "knows all schedules"],
       portraitPrompt: 'Pen and ink portrait on white paper of an Italian man in railway uniform, cap, whistle, clipboard, minimal blue watercolor wash, white background, reliable efficient expression, structured pen work',
-      here: "You run the station of the FAL, the regional railway, where the trains to Bari leave, and you help the tourists who arrive with their luggage to see the Sassi.",
+      here: "You sell tickets at the station of the FAL, the regional railway, where the trains to Bari leave, and you help the tourists who arrive with their luggage to see the Sassi.",
     },
     {
       id: 'simone-lasorella',

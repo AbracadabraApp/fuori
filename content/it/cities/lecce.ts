@@ -537,11 +537,11 @@ export const lecce: CityPantry = {
       name: 'Carlo Ferraro',
       gender: 'm',
       age: 55,
-      role: 'capostazione',
+      role: 'bigliettaio',
       placeId: 'stazione-lecce',
       personality: ["puntuale", "serio", "rispettoso"],
       portraitPrompt: 'Pen and ink portrait on white paper of a railway station master in his fifties with dignified bearing, uniform cap, serious but kind face, mustache, watch chain visible, responsible expression, minimal watercolor wash in railway blue and grey, detailed authoritative line work, keeper of schedules',
-      here: "You oversee the station near Porta Napoli, where trains from Bari and the rest of Puglia arrive, and you help travelers with platforms and tickets and tell them where to find a rustico leccese for the road.",
+      here: "You sell tickets at the station near Porta Napoli, where trains from Bari and the rest of Puglia arrive, and you help travelers with platforms and tell them where to find a rustico leccese for the road.",
     },
     {
       id: 'maestro-orlando',
