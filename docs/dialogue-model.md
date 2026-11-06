@@ -65,6 +65,7 @@ some principles of dialogue we've learned"). Results are in
 - **Shortest rule first.** Try the fewest words that could work before
   adding cases (Josh, 2026-11-06: "maybe as simple as stay in your role";
   "even that is repetitive").
+- **Small tests first.** Try an idea on the two or three places that show the problem, one level, one or two visits; widen to the full gate only when it shows promise (Josh, 2026-11-06: "smaller tests that show promise before going broader").
 - **Measure against noise.** Run today's code twice before a change, one
   change per row, the same cases and judges, with prompt versions, commit and
   reply time recorded; a change counts only if it moves a number beyond the
