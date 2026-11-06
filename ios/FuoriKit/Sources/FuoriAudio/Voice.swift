@@ -35,9 +35,20 @@ public final class Voice: NSObject {
         synthesizer.delegate = self
     }
 
+    /// Debug only: `-FuoriMute YES` skips every line at once, so simulator
+    /// screenshots don't wait for the voice (2026-11-05)
+    nonisolated static var muted: Bool {
+        #if DEBUG
+        UserDefaults.standard.bool(forKey: "FuoriMute")
+        #else
+        false
+        #endif
+    }
+
     /// Plays MP3 data and returns when it has finished (or was stopped)
     public func play(_ data: Data) async throws {
         stop()
+        if Self.muted { return }
         let player = try AVAudioPlayer(data: data)
         player.delegate = self
         player.isMeteringEnabled = true
@@ -56,6 +67,7 @@ public final class Voice: NSObject {
     /// The phone's own voice: `language` is the pack's speech code (e.g. it-IT, es-MX)
     public func speak(_ text: String, language: String, rate: Float) async {
         stop()
+        if Self.muted { return }
         spokenUpTo = 0
         spokenLength = (text as NSString).length
         let utterance = AVSpeechUtterance(string: text)
