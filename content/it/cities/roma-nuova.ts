@@ -48,7 +48,7 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Garbatella',
       real: false,
       characterId: 'nino-garbatella',
-      imagePrompt: "Inside Osteria da Nino, a small old osteria in Garbatella at lunchtime: a low ceiling, white walls with a few framed photos, shared wooden tables with white paper tablecloths and carafes of water. On the wall, a large plain dark-green blackboard with nothing written on it, clearly visible and taking up a good part of the picture. Nino, the old oste, 74, white hair and a brown cardigan, sits at his small table by the blackboard, turned towards the viewer with his hands open, as if about to start talking about food. A few locals eat in the background.",
+      imagePrompt: "A wooden A-frame sandwich board standing on the cobbles outside Osteria da Nino in Garbatella, seen straight on and close, filling most of the picture from top to bottom. Its dark-green chalkboard face is completely blank, clean and flat, square to the viewer, with a plain wooden frame. Behind it, a little out of focus, a Roman street at lunchtime: ochre and terracotta houses, the osteria's open door with tables outside, a Vespa, a few people.",
       menu: ['Carciofi alla romana', 'Cacio e pepe', 'Gricia', 'Amatriciana', 'Carbonara', 'Giovedì: gnocchi'],
       pictures: [
               {
@@ -74,7 +74,7 @@ export const romaNuova: CityPantry = {
               {
                       "id": "osteria-da-nino-carbonara",
                       "shows": "carbonara",
-                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of spaghetti alla carbonara, golden with egg yolk and pecorino, crisp guanciale and black pepper, no cream, on a table with a white paper tablecloth, a fork and a glass of water beside it, in a small osteria. No people, no lettering anywhere in the picture."
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of spaghetti alla carbonara, glossy and golden from egg and pecorino mixed through the pasta, crisp guanciale and black pepper, no raw yolk on top, no cream, on a table with a white paper tablecloth, a fork and a glass of water beside it, in a small osteria. No people, no lettering anywhere in the picture."
               },
               {
                       "id": "osteria-da-nino-gnocchi",
