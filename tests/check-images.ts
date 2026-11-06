@@ -3,30 +3,38 @@
 // places with no image description (Roma). Fix: npm run images -- --city <id>
 // Also fails on image files nothing uses (39 old variants, 24 MB, found 2026-10-14),
 // so they don't pile up again. A file named anywhere in app/, lib/ or content/ counts as used.
+// The JPEG masters aren't in git any more (2026-11-06, scripts/image-masters.mjs keeps
+// them in R2), so an image counts as there when this machine has its JPEG or
+// content/<country>/images.json lists it: that list is what the app loads.
 import { existsSync, readdirSync, readFileSync, statSync } from 'fs';
 import { join } from 'path';
-import { cities, pack, tutor } from '@/content';
+import { cities, pack, tutor, country } from '@/content';
+
+const listPath = `content/${country}/images.json`;
+const listed = new Set(Object.keys(existsSync(listPath) ? (JSON.parse(readFileSync(listPath, 'utf8')) as { images: Record<string, unknown> }).images : {}));
+/** The JPEG on this machine, or the uploaded image in the list */
+const has = (rel: string) => existsSync(`public${pack.images}/${rel}`) || listed.has(rel.replace(/\.jpg$/, ''));
 
 const used = new Set<string>();
 
 const missing: string[] = [];
 for (const city of cities) {
   used.add(`cities/${city.id}.jpg`);
-  if (!existsSync(`public${pack.images}/cities/${city.id}.jpg`)) missing.push(`cities/${city.id}.jpg`);
+  if (!has(`cities/${city.id}.jpg`)) missing.push(`cities/${city.id}.jpg`);
   for (const place of city.places) {
     used.add(`places/${place.id}.jpg`);
-    if (!existsSync(`public${pack.images}/places/${place.id}.jpg`)) {
+    if (!has(`places/${place.id}.jpg`)) {
       missing.push(`places/${place.id}.jpg (${city.id}${place.imagePrompt ? '' : ', no imagePrompt'})`);
     }
   }
   for (const person of city.characters ?? []) {
     used.add(`portraits/${person.id}.jpg`);
-    if (!existsSync(`public${pack.images}/portraits/${person.id}.jpg`)) missing.push(`portraits/${person.id}.jpg (${city.id})`);
+    if (!has(`portraits/${person.id}.jpg`)) missing.push(`portraits/${person.id}.jpg (${city.id})`);
   }
 }
 
 used.add(`portraits/${tutor.id}.jpg`);
-if (!existsSync(`public${pack.images}/portraits/${tutor.id}.jpg`)) missing.push(`portraits/${tutor.id}.jpg (tutor)`);
+if (!has(`portraits/${tutor.id}.jpg`)) missing.push(`portraits/${tutor.id}.jpg (tutor)`);
 
 // Source text, to catch images referred to by full path rather than by id
 function sourceText(dir: string): string {

@@ -8,7 +8,9 @@
  *
  * Only images whose JPEG changed since the last upload are converted and sent,
  * so it's quick to re-run. Old files stay in R2 (old app versions may still
- * point at them). The web app keeps serving public/images; nothing is removed.
+ * point at them). The JPEGs aren't in git (2026-11-06): after uploading, run
+ * scripts/image-masters.mjs --untrack, which backs them up to R2 at masters/
+ * and takes any that were committed out of git again.
  *
  *   npm run images:upload                 Italy
  *   COUNTRY=es-mx npm run images:upload   Mexico
