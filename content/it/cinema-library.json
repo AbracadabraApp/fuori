@@ -101,7 +101,6 @@
     56784,
     28055,
     47096,
-    1643,
     833
    ]
   },
@@ -160,7 +159,6 @@
     43469,
     28055,
     47096,
-    1643,
     833,
     10376
    ]
@@ -304,7 +302,6 @@
     359156,
     25300,
     24382,
-    85739,
     59037,
     58658,
     574436,
@@ -3499,27 +3496,6 @@
    }
   },
   {
-   "tmdbId": 85739,
-   "title": "A.C.A.B. - All Cops Are Bastards",
-   "year": 2012,
-   "posterUrl": "https://image.tmdb.org/t/p/w500/enDjrsiC8HEosnUolhUAI8uOF7u.jpg",
-   "videos": [
-    {
-     "youtube": "DWxFIFjHMrQ",
-     "type": "Trailer",
-     "name": "Trailer",
-     "language": "it"
-    },
-    {
-     "youtube": "XSXy30lqvtw",
-     "type": "Trailer",
-     "name": "Trailer Ufficiale",
-     "language": "it"
-    }
-   ],
-   "fullFilm": null
-  },
-  {
    "tmdbId": 12491,
    "title": "Accattone",
    "year": 1961,
@@ -5329,54 +5305,6 @@
    "fullFilm": null
   },
   {
-   "tmdbId": 1643,
-   "title": "Ultimo tango a Parigi",
-   "year": 1972,
-   "posterUrl": "https://image.tmdb.org/t/p/w500/qX0Chw8rJP1RwcXEVAvMCPanGR2.jpg",
-   "videos": [
-    {
-     "youtube": "L9kt3JsfXnU",
-     "type": "Trailer",
-     "name": "Ultimo tango a Parigi Trailer.avi",
-     "language": "it"
-    },
-    {
-     "youtube": "_0Vj-B6JVmQ",
-     "type": "Trailer",
-     "name": "Distribpix & Mélusine 4K UHD + Blu-ray Promo Trailer",
-     "language": "en"
-    },
-    {
-     "youtube": "hKzMnrktrvw",
-     "type": "Trailer",
-     "name": "LAST TANGO IN PARIS Original Trailer [1972] Marlon Brando",
-     "language": "en"
-    },
-    {
-     "youtube": "JzoLxy0j_hU",
-     "type": "Trailer",
-     "name": "Last Tango in Paris 1972 Trailer | Marlon Brando | Maria Schneider",
-     "language": "en"
-    },
-    {
-     "youtube": "2uia_rSeL2Y",
-     "type": "Featurette",
-     "name": "Marlon Brando On The Dick Cavett Show",
-     "language": "en"
-    },
-    {
-     "youtube": "TqvyIm5jvnI",
-     "type": "Featurette",
-     "name": "Larry Karaszewski on LAST TANGO IN PARIS",
-     "language": "en"
-    }
-   ],
-   "fullFilm": {
-    "youtube": "SwiITSYcU7M",
-    "language": null
-   }
-  },
-  {
    "tmdbId": 833,
    "title": "Umberto D.",
    "year": 1952,
@@ -5462,6 +5390,33 @@
     }
    ],
    "fullFilm": null
+  }
+ ],
+ "excluded": [
+  {
+   "tmdbId": 1643,
+   "title": "Ultimo tango a Parigi",
+   "why": "adults only (TMDB), left out of the library"
+  },
+  {
+   "tmdbId": 85739,
+   "title": "A.C.A.B. - All Cops Are Bastards",
+   "why": "adults only (TMDB), left out of the library"
+  },
+  {
+   "tmdbId": 5336,
+   "title": "Salò o le 120 giornate di Sodoma",
+   "why": "adults only (TMDB), left out of the library"
+  },
+  {
+   "tmdbId": 8689,
+   "title": "Cannibal Holocaust",
+   "why": "adults only (TMDB), left out of the library"
+  },
+  {
+   "tmdbId": 8984,
+   "title": "Caligola",
+   "why": "adults only (TMDB), left out of the library"
   }
  ]
 }
