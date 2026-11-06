@@ -16,6 +16,7 @@ import { welcomeContent } from '@/lib/welcome';
 import { flashcards, deckCards } from '@/lib/flashcards';
 import { lessonUnits, lessonAreas } from '@/lib/lessons';
 import { cultureSet } from '@/lib/culture';
+import { cinemaFilms } from '@/lib/cinema';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
 import { imageListFor } from '@/content';
@@ -98,6 +99,10 @@ export function buildContent(): Content {
     return entry ? `${list.base}/${entry.key}` : null;
   };
 
+  const films = (cityId: string, placeId: string) => {
+    const list = cinemaFilms(cityId, placeId);
+    return list && { films: list.map((f) => ({ tmdbId: f.tmdbId, title: f.title, year: f.year, poster: image(`posters/${f.tmdbId}`), videos: f.videos })) };
+  };
   const characters: Record<string, ContentCharacter> = {};
   const shown = cities.filter((c) => !c.hidden);
   const out: ContentCity[] = shown.map((city) => ({
@@ -129,6 +134,8 @@ export function buildContent(): Content {
         station: isStation(place.id),
         ...(person ? { characterId: person.id } : {}),
         image: image(`places/${place.id}`),
+        // A cinema (lib/cinema.ts): its films, posters from R2 (app builds from 2026-11-06)
+        ...(films(city.id, place.id) ?? {}),
       };
     }),
   }));
