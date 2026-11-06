@@ -120,7 +120,12 @@ public struct RootView: View {
                         Tokens.Colors.paper.ignoresSafeArea()
                     }
                 case .ready:
-                    if let content = model.content {
+                    #if DEBUG
+                    if let page = UserDefaults.standard.string(forKey: "FuoriBubbles"), let gallery = model.bubbleGallery() {
+                        BubbleGallery(page: page, model: gallery, language: gallery.speechLanguage)
+                    }
+                    #endif
+                    if let content = model.content, !Self.galleryOn {
                         CityListView(content: content)
                             .navigationDestination(for: City.self) { city in
                                 PlaceListView(city: city, content: content)
@@ -151,6 +156,15 @@ public struct RootView: View {
 
     /// Debug builds only: `-FuoriOpen <cityId>/<placeId>` opens that place at
     /// launch, for screenshots and simulator checks without tapping.
+    /// The bubble gallery replaces the city list (debug only)
+    private static var galleryOn: Bool {
+        #if DEBUG
+        UserDefaults.standard.string(forKey: "FuoriBubbles") != nil
+        #else
+        false
+        #endif
+    }
+
     private func openFromLaunchArgument() {
         #if DEBUG
         guard let target = UserDefaults.standard.string(forKey: "FuoriOpen"),

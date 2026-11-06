@@ -21,6 +21,8 @@ Josh, 2026-11-04: "its ok not to get corrected all the time - also when that cor
 
 - Open: when a character does correct something that was misheard, find the moment in the transcript and see what speech-to-text heard.
 
+- **Fixed 2026-11-05 (6aae025), every conversation, both countries:** one shared rule (`content/<country>/prompts/dialogue.md`): recast only when clearly heard, not every time, never pronunciation; the character is told when the learner said an offered answer back (close counts). Replay (`tests/experiments/heard-replay.mts`): Magda coaching Jennifer's misheard lines 8/8 → 0/8.
+
 ## A voice that seems to change mid-line
 
 Josh, 2026-11-04: "Lorenzo's voice seemed to shift between two people". Each line is voiced in two parts (the first sentence early, for speed, then the rest), and the second part already gets the first part's text (`previous_text`). Re-voicing four of his lines: the two parts are within 3 dB in loudness; pitch not measured.
@@ -39,13 +41,33 @@ Two problems, each needing more examples before any change (Josh: "add everythin
 1. It fires on mishearings: Josh was speaking Italian, and speech-to-text turned it into English.
 2. It adds content: even when the hearing is right, *say this* should put the learner's own words into the language, never answer the character's question for them.
 
+- **Fixed 2026-11-05 (6aae025):** *say this* only puts the learner's own words into the language and never answers the character's question (say-it.md); it's Beginner only, so from Intermediate what they said goes to the character as said. Lorenzo's "prima volta" didn't come back in the replay on either the old or the new code (0/4 both), so the fix is not measured.
+
 ## A correction for something the learner said right
 
 Josh, 2026-11-04: "i got corrected with the ribollita". The transcript has "Si, vorrei la ribaletta" (speech-to-text) and Ardit's recast "Ribollita, ottima scelta!". If Josh said it right, the recast corrected a mishearing. Collect more examples before deciding anything.
 
+- **Covered 2026-11-05 (6aae025)** by the shared rule above (recast only when clearly heard). Not reproduced in the replay on the old code (0/4), so not measured.
+
 ## Long replies in open-ended talk
 
 Lorenzo, Piazza Santa Croce, 2026-11-04: median reply 28.5 words (Ardit at the trattoria: 14). Observed by Claude, not raised by Josh; listed to see whether it comes up in more conversations.
+
+## A Beginner turn says the same thing three times, with no pauses
+
+Josh, 2026-11-05, hearing Luisa's opening on the simulator (laptop fallback voice): "totally incoherent, repetitive with no pauses"; "it was a total wipeout"; and "cafe, coffee, cafe". Her one turn, as the voice reads it (S1, local server, beginner.md 2026-11-05b):
+
+> "This is Bar Mattina, a corner bar in Testaccio, the old slaughterhouse district. Here you pay at the cassa first, then you come to the counter. Buongiorno! Sono Luisa. Prima la cassa, per favore. first, the cashier Vuole un cappuccino o un caffè? cappuccino or coffee?"
+
+On screen: "Un cappuccino, per favore." / "Un caffè, per favore." with "An espresso, please." under the second.
+
+What went wrong, as observed:
+1. The same thing three times: "pay at the cassa first" in English, "Prima la cassa" in the language, then the gloss "first, the cashier".
+2. caffè, coffee, caffè: the question, its gloss, then the answer; and the English disagrees ("coffee" in the gloss, "An espresso" under the answer).
+3. No pauses: the parts are joined into one string for the voice, and the glosses have no punctuation, so it runs straight on ("per favore. first, the cashier Vuole").
+4. On the laptop the fallback voice reads both languages in one accent, which makes it worse; on the phone ElevenLabs reads the same string.
+
+Not from today's answer change: every Beginner turn has been built this way since 2026-10-25 (English intro, a part in the language, a whispered gloss).
 
 ## The examples become a replay set
 

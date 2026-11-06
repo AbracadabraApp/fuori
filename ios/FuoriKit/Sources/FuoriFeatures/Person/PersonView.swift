@@ -124,7 +124,7 @@ struct PersonView: View {
 /// The 2:3 portrait, anchored at the top, always at least 124% of the screen
 /// width (Josh, 2026-10-13: the same framing on every phone), so the sides are
 /// trimmed alike and a short phone loses a little at the bottom instead.
-private struct Portrait: View {
+struct Portrait: View {
     let url: URL?
     let name: String
 

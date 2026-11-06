@@ -162,9 +162,6 @@ public final class ConversationModel {
     /// The line is being played (hear it), so the mic is closed for it
     public private(set) var hearingLine = false
 
-    /// The panel's extra line, on the learner's first scaffolded turn ever
-    public private(set) var firstTime = false
-
     /// Answers as buttons that send the line, where reading aloud can't work:
     /// VoiceOver (it would be recorded) or the mic off
     public var answersAreButtons: Bool { isVoiceOverRunning || phase == .micDenied || phase == .choosing || tapAnswers }
@@ -185,18 +182,6 @@ public final class ConversationModel {
     public var showsAnswers: Bool {
         guard scaffolding, replies != nil, sayIt == nil else { return false }
         return [.tapToTalk, .listening, .hearing, .thinking, .choosing, .micDenied].contains(phase)
-    }
-
-    /// The how-to above the mic in the answers panel (interface text, English)
-    public var instruction: String? {
-        guard showsAnswers else { return nil }
-        switch phase {
-        case .tapToTalk: return firstTime ? "Tap the mic, then read one out loud" : "Tap, then read one out loud"
-        case .listening, .hearing: return "Read one out loud"
-        case .thinking: return "Sent"
-        case .choosing, .micDenied: return "Tap one to say it"
-        default: return nil
-        }
     }
 
     /// How loud the character's voice is now (0...1), nil when it can't be
@@ -310,7 +295,6 @@ public final class ConversationModel {
             stage = forced
         }
         #endif
-        firstTime = scaffolding && !UserDefaults.standard.bool(forKey: Self.answersIntroduced)
         sayIt = nil
         if interrupted {
             // Something cut in while it was on its way: show it, don't say it,
@@ -725,7 +709,6 @@ public final class ConversationModel {
             return
         }
         note = nil
-        if showsAnswers { UserDefaults.standard.set(true, forKey: Self.answersIntroduced) }
         var step = "transcribe"
         do {
             let started = Self.now()
@@ -863,8 +846,6 @@ public final class ConversationModel {
         }
     }
 
-    /// Set once the learner has answered with the panel for the first time
-    static let answersIntroduced = "scaffold.answersIntroduced"
 
     /// The answers for the panel, once written, without changing the turn:
     /// the mic is already the learner's. If writing them failed, the turn
@@ -926,6 +907,16 @@ public final class ConversationModel {
         await sendChosen(line, generation: generation, how: "tapped answer")
     }
 
+    #if DEBUG
+    /// The bubble gallery (BubbleGallery): two suggested replies on the learner's turn
+    func showGalleryReplies(_ json: String) {
+        replies = try? JSONDecoder().decode([APIClient.ReplyOption].self, from: Data(json.utf8))
+        scaffolding = true
+        stage = .read
+        phase = .tapToTalk
+    }
+    #endif
+
     /// The end button: what it does (the welcome: the server places them; a
     /// lesson: the next part), then the conversation is saved and the app moves on
     public private(set) var finishing = false
@@ -958,7 +949,6 @@ public final class ConversationModel {
         guard phase == .choosing || phase == .micDenied, replies?.contains(reply) == true else { return }
         chosen = reply
         note = nil
-        UserDefaults.standard.set(true, forKey: Self.answersIntroduced)
         await sendChosen(reply.line, generation: generation, how: "tapped")
     }
 

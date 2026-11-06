@@ -37,6 +37,11 @@ public enum Tokens {
         public static let cultureGemDone = Color(red: 0.8039, green: 0.8471, blue: 0.8157) // #cdd8d0
         public static let historyField = Color(red: 0.9137, green: 0.8667, blue: 0.8157) // #e9ddd0
         public static let historyInk = Color(red: 0.2902, green: 0.2275, blue: 0.1882) // #4a3a30
+        public static let herBubble = Color(red: 0.9333, green: 0.9020, blue: 0.8392) // #eee6d6
+        public static let herEdge = Color(red: 0.8392, green: 0.7922, blue: 0.7020) // #d6cab3
+        public static let youBubble = Color(red: 0.8588, green: 0.8902, blue: 0.7686) // #dbe3c4
+        public static let youEdge = Color(red: 0.7098, green: 0.7608, blue: 0.5765) // #b5c293
+        public static let youInk = Color(red: 0.2471, green: 0.2902, blue: 0.1333) // #3f4a22
     }
 
     public enum FontFamily {

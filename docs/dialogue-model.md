@@ -66,6 +66,8 @@ doc "The dialogue model" (https://claude.ai/artifact/XvRja1uP7z4L8WxieCU44R).
   answer bubble); her bubbles show no English and nothing happens on a tap,
   except where the answer is a tap (mic off, VoiceOver, the welcome's buttons).
 
+- **Who is talking, at a glance** (Josh, 2026-11-05: "I'm interested in if a user can tell who is talking"; "Beginner always being different is not a goal"): one bubble for her and one for the learner, the same on every screen and at every level. Hers on the left in warm parchment (#eee6d6, the Learn page's lessons field) with a thin #d6cab3 edge; the learner's on the right in solid olive (#dbe3c4, the old onboarding answers' green, made solid), its English in dark olive (#3f4a22). Solid, no transparency, so they read over any picture. No tails (Josh: "the left and right are clear and the tails look messy"). Josh: "colors are good". Not built yet.
+
 - **Everyone starts at Beginner** (Josh, 2026-11-05: "for now everyone starts
   at beginner"), at S1; Settings → level changes it (Beginner, Intermediate,
   Advanced). Built 2026-11-05: the welcome's button starts everyone at S1

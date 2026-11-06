@@ -187,8 +187,7 @@ public final class AppModel {
             phase = .failed(ErrorCode.message(message, code: code))
             return
         }
-        // The panel's first-time line and the level's settings come back with the new player
-        UserDefaults.standard.removeObject(forKey: "scaffold.answersIntroduced")
+        // The level's settings come back with the new player
         onboarding?.stop()
         onboarding = nil
         content = nil
@@ -356,6 +355,19 @@ public final class AppModel {
         Task { await client.report(report) }
         return code
     }
+
+    #if DEBUG
+    /// The bubble gallery (-FuoriBubbles): a conversation model for the welcome's character, never started
+    func bubbleGallery() -> ConversationModel? {
+        guard let content, let api, let w = content.onboarding?.welcome,
+              let city = content.cities.first(where: { $0.id == w.cityId }),
+              let place = city.places.first(where: { $0.id == w.placeId }),
+              let character = content.character(w.characterId) else { return nil }
+        let m = ConversationModel(city: city, place: place, character: character, language: content.language, api: api) { _ in }
+        m.showGalleryReplies(#"[{"line":"Un caffè, per favore.","en":"A coffee, please."},{"line":"Un cappuccino, per favore.","en":"A cappuccino, please."}]"#)
+        return m
+    }
+    #endif
 
     /// The welcome on the conversation screen, with its character from the city files
     private func welcomeConversation() -> ConversationModel? {

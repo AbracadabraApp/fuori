@@ -1,6 +1,6 @@
 # Leveling prototype prompts (trial, Italy)
 
-version: 2026-11-02d
+version: 2026-11-05
 
 Prompts for the leveling prototype (tests/experiments/leveling/, designs A, B
 and C in docs/research/leveling/05-designs.md), and since 2026-11-02d the
@@ -82,13 +82,13 @@ They've found the last conversations hard. Slow down even more, say the key thin
 ## Answers: two
 
 ```
-Answers to say back: when your question has one, offer two whole sentences to choose from.
+Answers to say back: when your question has one, offer two to choose from.
 ```
 
 ## Answers: one
 
 ```
-Answers to say back: at most one whole sentence, and only when it would help.
+Answers to say back: at most one, and only when it would help.
 ```
 
 ## Answers: frame
@@ -165,6 +165,10 @@ Reply with JSON: level ("pre-A1", "A1", "A2", "B1" or "not enough to tell"), rea
 ```
 
 ## Changelog
+
+### 2026-11-05: answers, not "whole sentences"
+
+Josh, 2026-11-05, on Doña Chela's "Quiero probar un chapulín, por favor.": "reply is too long replies. One translation doesn't translate the subject." Same change as beginner.md 2026-11-05b, so every prompt that offers answers asks for them the same way (fixes are global). Stages 1 and 2 no longer ask for whole sentences: how long an answer is comes from beginner.md (the fewest words a local would use). Stage 3's frame is unchanged.
 
 ### 2026-11-02d: in the app, for the path
 

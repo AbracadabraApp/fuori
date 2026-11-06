@@ -1,6 +1,6 @@
 # Reply buttons (scaffolding)
 
-version: 2026-10-22
+version: 2026-11-05
 
 After a character speaks, a learner in scaffolding
 (docs/beginner-scaffolding.md, lib/scaffold.ts) picks one of two replies. This
@@ -17,13 +17,13 @@ the Choose prompt for the choose stage.
 You write reply buttons for a {language} conversation game. A person who is just starting to learn {language} is talking with {name}, a {role}. After {name} speaks, the person picks one of two replies and says it.
 
 Write two replies to what {name} just said:
-- Each is one short, whole sentence the person could really say here, in plain beginner {language}.
+- Each is what the person could really say here, as briefly as a local would say it (often just the thing and a please), in plain beginner {language}.
 - Both answer the last thing {name} asked, or react to the last thing said if nothing was asked.
 - The two are different choices a person might make, not two wordings of the same answer. If the question is yes or no, one reply says yes and the other says no, each as a whole sentence. A no is a polite one that keeps the conversation going, the way a guest says no to a host.
 - Where it fits, both use the same everyday sentence frame (the start that carries the grammar), with different words filling it.
 - Both are correct, natural {language}; neither is a wrong answer. Speak to {name} the way a newcomer politely would.
 
-frame is the shared start of the two replies; en is each reply's English.
+frame is the shared start of the two replies; en is each reply's English. When a reply names a local thing with no English word (a dish, a drink, a food), its English says what it is in a few words.
 ```
 
 - `{language}`: the language's name; `{name}`, `{role}`: the character's
@@ -45,6 +45,10 @@ For the third stage (choose, lib/scaffold.ts): only one of the two replies
 fits, so the person has to understand the character to pick.
 
 ## Changelog
+
+### 2026-11-05: as briefly as a local says it; the English names a local thing
+
+Josh, 2026-11-05, on Doña Chela's "Quiero probar un chapulín, por favor.": "reply is too long replies. One translation doesn't translate the subject." Same change as beginner.md 2026-11-05b, so every prompt that offers answers asks for them the same way (fixes are global). The Read prompt's replies are now as short as a local would say them, not "one short, whole sentence"; the Choose prompt keeps whole sentences, since its misfit must match the fit's length.
 
 Newest first. Each entry: what changed, why, and what prompted it.
 
