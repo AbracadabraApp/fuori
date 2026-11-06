@@ -1,0 +1,20 @@
+# What Railway leaves out of the server build (Railpack reads this file).
+# The server runs `next build` / `next start` and reads only content/ at run
+# time; pictures come from R2 (content/<country>/images.json), and proxy.ts
+# answers 404 to everything but /v1, /api/admin and /healthz, so nothing here
+# is ever served. public/images alone was 868 MB, copied, packed and pushed on
+# every deploy of both services (Josh, 2026-11-06: "how can we speed up that
+# deploy?", "why have them in the build at all").
+node_modules
+.git
+.next
+public/images
+ios
+design
+docs
+tests
+scripts
+prototype
+materials
+Claude outputs
+*.xcarchive
