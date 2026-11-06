@@ -66,6 +66,14 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-06: the cinema shuffler and the film reel (cloud session)
+
+- **Done:** a film library (`content/it/cinema-library.json`, 95 Italian films: Italian titles, posters on R2, TMDB videos with Italian first, 52 with a full-length YouTube upload) served at `GET /v1/cinema` as eight shelves named in Italian. iPhone: `CinemaShufflerView`, MovieGenius home's layout on the cinema's dark room, shelves and posters shuffled per visit and on pull to refresh. A film reel (`film`) before Learn opens it as a sheet; only shown when `/v1/content` says `cinema: true` (Italy). `-FuoriOpenCinema YES` opens it in a debug build. Full film plays as the second video, after the trailer.
+- **Decisions (Josh):** a reel next to Learn, tried with the family; the Rome cinema place stays as it is; city cinemas opening the shuffler waits. Reel before the book was my suggestion, taken.
+- **Checked:** tsc, the route run directly, a decode test from its real output, iOS CI (PR #2). **Not seen** in a simulator or on the phone.
+- **Laptop, next:** look at it in the simulator (`-FuoriOpenCinema YES`, both countries: no reel in Mexico), then build 13 for Josh's phone with his yes. Also in build 13: the chalk menu on Nino's board.
+- **Open:** full-film uploads are mostly individuals' and can disappear; a weekly check that drops dead or unembeddable ones isn't built.
+
 ## 2026-11-06: Bologna pass and Osteria da Nino live; the menu is open (laptop session)
 - **Merged and live:** `claude/bologna-pass` with `claude/osteria-nino` (ae9932f). smoke:live passed at Portici di San Luca, Sfoglia Rina, Santo Stefano, La Sorbetteria Castiglione, Osteria da Nino and Mexico (`smoke:live` now takes `--city=<id> --place=<id>`). Nino's portrait and board picture from the cloud session (92e8350).
 - **The menu, open (Josh: "The menu concept needs work"):** tried a menu card over the portrait on the conversation screen (one column, then two with "Menu" above); on Josh's phone it covered Nino's face and crowded his bubble ("This looks like crap"), so it's gone (2f93fdf). What's left: Nino's six dishes in chalk on the blank board in his place card (1440ced; the board's position is `Place.menuBoard` in content). Not decided: what the menu is for and where it lives; start from what the learner should get. Cut-aways (`show`) not built (Josh: later).
