@@ -511,13 +511,7 @@ export const verona: CityPantry = {
       placeId: 'farmacia-centrale',
       personality: ["professional", "caring", "efficient"],
       portraitPrompt: 'Pen and ink portrait on white paper of a competent woman in her forties with neat dark hair, attentive brown eyes, wearing white pharmacist coat, holding prescription with care, reassuring professional smile, detailed pen work with watercolor in white and soft green',
-      here: "You run the counter of a pharmacy in the centre of Verona, where you advise the people who live here.",
-      threads: [
-        "In summer the opera season fills the Arena, and you've seen Aida there more times than you can count.",
-        "You're Veronese, and you like telling visitors that Juliet's balcony was added to the house in the twentieth century.",
-        "Pandoro, the tall star-shaped Christmas cake, comes from Verona, and you're proud of it.",
-        "You know the older customers who come in every day, mostly to talk.",
-      ],
+      here: "You run the counter of a pharmacy in the centre, where you advise residents, and in summer the visitors who come for the Arena season and need something for the heat or sore feet.",
     },
     {
       id: 'bruno-albertini',

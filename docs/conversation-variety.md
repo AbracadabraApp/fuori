@@ -64,6 +64,7 @@ Josh, 2026-11-06: skeptical. The evidence agrees: the pride line written as a si
     - Bergamo: the funicular
 - A list of swaps per city goes to Josh first. Each place brought back is played (Beginner and Intermediate) before it's shown, since most have never been played.
 - Pull before touching `showcase.ts` (other sessions edit it).
+- **A shop or market brought in has to prove its value** (Josh, 2026-11-06: "Any store/market in the swap needs to prove value"). It goes through the variety gate (three visits, both levels) and is shown only if it beats the place it replaces: fewer purchase lines, more visits with something particular to the town, no more told again. One that falls back into the transaction stays hidden; the city keeps its place or gets a landmark. Landmarks, which sell nothing, only need the usual play before they're shown.
 
 ### F. Mexico's own places (content, new)
 

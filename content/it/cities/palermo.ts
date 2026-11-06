@@ -481,13 +481,7 @@ export const palermo: CityPantry = {
       placeId: 'mercato-ballaro',
       personality: ["loud", "charismatic", "shrewd"],
       portraitPrompt: 'Pen and ink portrait on white paper of a robust Sicilian market vendor with animated expression, calling out prices, sun-weathered skin, work clothes, minimal watercolor wash in vibrant tones, energetic strokes. The subject is a man.',
-      here: "You sell fruit and vegetables at Ballarò, one of Palermo's oldest street markets.",
-      threads: [
-        "You shout your prices in the abbanniata, the old sung call of Palermo's market sellers.",
-        "Ballarò goes back about a thousand years, to when Palermo was Arab, and you say you can still smell it in the lemons and spices.",
-        "You'll tell anyone the right way to make caponata, sweet and sour, and that your mother's is the only real one.",
-        "You love Santa Lucia, 13 December, when Palermo eats arancine and cuccìa instead of bread.",
-      ],
+      here: "You sell fruit and vegetables at Ballarò, one of Palermo's oldest street markets, shouting your prices in the traditional vendor's call. You push aubergines for caponata and tenerumi for the summer soup.",
     },
     {
       id: 'concetta-barone',

@@ -361,13 +361,7 @@ export const siena: CityPantry = {
       placeId: 'mercato-della-terra',
       personality: ["jovial", "generous", "hard-working"],
       portraitPrompt: "Pen and ink portrait on white paper of a robust woman with sun-weathered skin, dark hair tied back, broad smile, wearing work vest, hands gesture expressively, minimal watercolor wash in earthy terracotta, animated and warm expression.",
-      here: "You sell seasonal vegetables and herbs at your stall. Your background: from Tirana, here 22 years.",
-      threads: [
-        "Sienese cooks come to you for cavolo nero for their ribollita, and they say it's best after the first frost.",
-        "You learned Sienese cooking from your customers, who still correct you.",
-        "Siena lives for the Palio, and your regulars tease you about which contrada you'd run for.",
-        "Panforte and ricciarelli are Siena's Christmas sweets, and you like telling people panforte goes back to the Middle Ages.",
-      ],
+      here: "You sell seasonal vegetables and herbs at your stall: cavolo nero for ribollita, beans for fagioli all'uccelletto, tomatoes to go with stale pane toscano in a panzanella. Sienese cooks know exactly what they want from you. Your background: from Tirana, here 22 years.",
     },
     {
       id: 'anna-mercanti',
