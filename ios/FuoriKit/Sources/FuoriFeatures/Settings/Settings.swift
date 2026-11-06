@@ -36,10 +36,24 @@ struct SettingsToolbar: ViewModifier {
     @Environment(AppModel.self) private var model
     @State private var showing = false
     @State private var learning = false
+    @State private var watching = false
+    /// Inside the cinema already: no film reel to open it again
+    @Environment(\.insideCinema) private var insideCinema
 
     func body(content: Content) -> some View {
         content
             .toolbar {
+                // The cinema shuffler, before Learn (Josh, 2026-11-06: a film reel next to
+                // Learn, a trial with the family); only for a country with a film library
+                if model.phase == .ready, model.content?.cinema == true, !insideCinema {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button { NotificationCenter.default.post(name: .fuoriSheetOpening, object: nil); watching = true } label: {
+                            Image(systemName: "film")
+                        }
+                        .accessibilityLabel("Cinema")
+                        .accessibilityHint("Trailers and films")
+                    }
+                }
                 // The Learn area, next to Settings (docs/learn.md; Josh,
                 // 2026-10-26); not during onboarding, which has nothing to learn yet
                 if model.phase == .ready {
@@ -59,11 +73,14 @@ struct SettingsToolbar: ViewModifier {
                 }
             }
             .sheet(isPresented: $learning) { LearnArea() }
+            .sheet(isPresented: $watching) { CinemaSheet() }
             // A country picked in the sheet is applied only once it has closed
             .sheet(isPresented: $showing, onDismiss: { Task { await model.applyPendingCountry() } }) { SettingsSheet() }
             #if DEBUG
             // `-FuoriOpenSettings YES` opens Settings at launch, for simulator checks without tapping
             .onAppear { if UserDefaults.standard.bool(forKey: "FuoriOpenSettings") { showing = true } }
+            // `-FuoriOpenCinema YES` opens the cinema shuffler at launch
+            .onAppear { if UserDefaults.standard.bool(forKey: "FuoriOpenCinema"), model.phase == .ready, model.content?.cinema == true { watching = true } }
             // `-FuoriOpenLearn YES` opens the Learn area at launch
             .onAppear { if UserDefaults.standard.bool(forKey: "FuoriOpenLearn"), model.phase == .ready { learning = true } }
             #endif

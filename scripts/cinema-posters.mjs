@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * The cinemas' film posters (content/<country>/cinema.json): downloads each
+ * The cinemas' film posters (content/<country>/cinema.json and cinema-library.json): downloads each
  * film's TMDB poster into public/…/posters/<tmdbId>.jpg, so `npm run
  * images:upload` puts it on R2 like any other picture (posters/<tmdbId> in
  * images.json). Only posters not downloaded yet are fetched. No TMDB key
@@ -24,6 +24,9 @@ const dir = path.join(ROOT, 'public', generation.images?.dir ?? 'images', 'poste
 fs.mkdirSync(dir, { recursive: true });
 
 const films = Object.values(JSON.parse(fs.readFileSync(file, 'utf8')).cinemas).flatMap((c) => c.films);
+// The cinema shuffler's library (content/<country>/cinema-library.json, lib/cinema.ts), poster links in posterUrl
+const library = path.join(ROOT, 'content', country, 'cinema-library.json');
+if (fs.existsSync(library)) for (const f of JSON.parse(fs.readFileSync(library, 'utf8')).films) if (f.posterUrl) films.push({ ...f, poster: f.posterUrl });
 let fetched = 0;
 for (const f of films) {
   const out = path.join(dir, `${f.tmdbId}.jpg`);

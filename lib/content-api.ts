@@ -16,7 +16,7 @@ import { welcomeContent } from '@/lib/welcome';
 import { flashcards, deckCards } from '@/lib/flashcards';
 import { lessonUnits, lessonAreas } from '@/lib/lessons';
 import { cultureSet } from '@/lib/culture';
-import { cinemaFilms } from '@/lib/cinema';
+import { cinemaFilms, cinemaLibrary } from '@/lib/cinema';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
 import { imageListFor } from '@/content';
@@ -166,6 +166,8 @@ export function buildContent(): Content {
     lessonAreas: lessonAreas(),
     /** The Learn page's cultural lessons, outside the lesson sets (lib/culture.ts; app builds from 2026-11-04) */
     culture: cultureSet().map(({ id, chip, topic }) => ({ id, chip, topic })),
+    /** The country has a cinema shuffler (GET /v1/cinema; the film reel by Learn, Josh, 2026-11-06; app builds from 2026-11-06) */
+    cinema: cinemaLibrary() !== null,
     card: { ...language.card, image: image(`country/${country}`) },
     language: {
       code: language.code,

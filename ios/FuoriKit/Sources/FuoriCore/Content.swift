@@ -26,6 +26,8 @@ public struct Content: Codable, Sendable, Equatable {
     public let lessonAreas: [LessonArea]?
     /// The Learn page's cultural lessons, outside the lesson sets (lib/culture.ts); nil from servers before 2026-11-04
     public let culture: [CultureChip]?
+    /// The country has a cinema shuffler (GET /v1/cinema), opened by the film reel by Learn; nil from servers before 2026-11-06
+    public let cinema: Bool?
     public let characters: [String: Character]
 
     /// A lesson by its step id
@@ -176,6 +178,18 @@ public struct Film: Codable, Sendable, Equatable, Identifiable, Hashable {
     public let poster: URL?
     public let videos: [Video]
     public var id: Int { tmdbId }
+}
+
+/// The cinema shuffler's shelves (GET /v1/cinema; Josh, 2026-11-06, experimental,
+/// not linked from the game yet): rows of films, each film as at a cinema
+public struct CinemaShelves: Codable, Sendable, Equatable {
+    public struct Shelf: Codable, Sendable, Equatable, Identifiable, Hashable {
+        public let id: String
+        /// The shelf's name, in the learned language, from the server
+        public let title: String
+        public let films: [Film]
+    }
+    public let shelves: [Shelf]
 }
 
 public struct Character: Codable, Sendable, Equatable, Identifiable, Hashable {
