@@ -1,4 +1,9 @@
 {
+ "labels": {
+  "yes": "Da vedere",
+  "no": "Si può saltare",
+  "moreIdeas": "Altre idee"
+ },
  "shelves": [
   {
    "id": "full",
@@ -28,6 +33,25 @@
        "name": "Cinema Paradiso Official 25th Anniversary trailer from Arrow Films",
        "language": "en"
       }
+     ],
+     "whyWatch": {
+      "recommendation": "YES",
+      "reasons": [
+       "Philippe Noiret, proiezionista burbero e tenero",
+       "I baci tagliati dal prete, montati alla fine",
+       "Oscar per il miglior film straniero"
+      ],
+      "context": "Un regista famoso torna in Sicilia per il funerale di Alfredo, il proiezionista che lo ha cresciuto nella cabina del cinema del paese. Tornatore racconta un'infanzia, un amore perduto e la fine delle sale di paese. Musica di Ennio e Andrea Morricone."
+     },
+     "moreIdeas": [
+      {
+       "tmdbId": 10376,
+       "connection": "Tornatore e Morricone, un pianista che non scende mai dalla nave"
+      },
+      {
+       "tmdbId": 152742,
+       "connection": "Tornatore in inglese, un banditore d'aste e un mistero"
+      }
      ]
     },
     {
@@ -53,6 +77,25 @@
        "type": "Trailer",
        "name": "PERFECT STRANGERS (2017) - Official HD Trailer - A film by Paolo Genovese",
        "language": "en"
+      }
+     ],
+     "whyWatch": {
+      "recommendation": "YES",
+      "reasons": [
+       "Una cena, sette amici, telefoni sul tavolo",
+       "Giallini, Mastandrea e Rohrwacher in gran forma",
+       "Il film più rifatto della storia"
+      ],
+      "context": "Sette amici a cena decidono di leggere ad alta voce ogni messaggio e rispondere in vivavoce a ogni chiamata. Dovrebbe essere un gioco. Quasi tutto in una sola stanza, e dal film di Paolo Genovese sono nati più di venti remake nel mondo."
+     },
+     "moreIdeas": [
+      {
+       "tmdbId": 468198,
+       "connection": "Genovese di nuovo, un uomo seduto a un tavolino e i desideri di chi passa"
+      },
+      {
+       "tmdbId": 56909,
+       "connection": "Genovese, ex compagni di scuola devono rifare la maturità"
       }
      ]
     }
@@ -110,6 +153,25 @@
        "name": "'Rome, Open City' | Critic's Picks | The New York Times",
        "language": "en"
       }
+     ],
+     "whyWatch": {
+      "recommendation": "YES",
+      "reasons": [
+       "Anna Magnani corre dietro al camion",
+       "Aldo Fabrizi, prete della Resistenza",
+       "Girato a Roma pochi mesi dopo la liberazione"
+      ],
+      "context": "Roma, inverno 1944, sotto l'occupazione tedesca: un ingegnere comunista, un prete e una vedova incinta nascondono e aiutano la Resistenza. Rossellini gira con poca pellicola e attori presi ovunque. Tra gli sceneggiatori c'è il giovane Fellini."
+     },
+     "moreIdeas": [
+      {
+       "tmdbId": 5156,
+       "connection": "De Sica, la Roma del dopoguerra"
+      },
+      {
+       "tmdbId": 1026227,
+       "connection": "Cortellesi, Roma un anno dopo"
+      }
      ]
     },
     {
@@ -153,6 +215,25 @@
        "type": "Featurette",
        "name": "Enzo Staiola on BICYCLE THIEVES",
        "language": "en"
+      }
+     ],
+     "whyWatch": {
+      "recommendation": "YES",
+      "reasons": [
+       "Attori presi dalla strada, mai recitato prima",
+       "Roma del dopoguerra, girata nelle sue vie",
+       "Il finale tra padre e figlio pesa"
+      ],
+      "context": "Antonio ha appena trovato lavoro ad attaccare manifesti, ma il primo giorno gli rubano la bicicletta. Una domenica a cercarla per Roma con il figlio Bruno. Lamberto Maggiorani era un operaio, non un attore. Novanta minuti, nessuna scena di troppo."
+     },
+     "moreIdeas": [
+      {
+       "tmdbId": 307,
+       "connection": "Rossellini apre il neorealismo, Roma occupata e attori quasi tutti veri"
+      },
+      {
+       "tmdbId": 1026227,
+       "connection": "Cortellesi gira la Roma del 1946 in bianco e nero"
       }
      ]
     }
