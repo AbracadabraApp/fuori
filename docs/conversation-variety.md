@@ -39,6 +39,33 @@ Each step is measured on the gate (purchase lines, something particular to the t
 
 Later, not in this plan: new Mexican shops (a palenque, a talavera workshop), which would have to pass the shop bar.
 
+## Italy swap list: DRAFT, not approved
+
+Josh's decisions so far (2026-11-06): cut 2–5 businesses per city; only generic ones go (second bars, pharmacies, tabaccherie, ordinary bookshops and gelaterie), never a business unique to its city; no Florence shops (no Officina, no Scuola del Cuoio); Siena gets a mum with kids, not the Drogheria; Genoa no focacceria (generic); Mantua's Palazzo Te not an art historian with a cheesy name; people named after their place get real local surnames. 🛒 = a shop, which must pass the gate. Shops = businesses shown, now → after. Every new role and fact is fact-checked before it's written. Venice, Naples, Bologna and Turin drop by less than 2: what's left there is unique.
+
+| City | Shops | Hide | Add | Person |
+|---|---|---|---|---|
+| Rome | 8 → 6 | Farmacia Prati, Tabaccheria Zhou | — | — |
+| Matera | 7 → 4 | Bar Vitantonio, Libreria Matera, Gelateria I Vizi degli Angeli | Casa Grotta | Teresa Morelli, 47: knowledgeable local, grew up in the Sassi |
+| Florence | 5 → 3 | Farmacia Molteni, Tabaccheria Nesi | Giardino di Boboli · Piazza della Signoria | Giuseppe Bardini, 63: head gardener who talks to his plants · Carlo Medici, 35: meets his friends under the Loggia every evening |
+| Siena | 9 → 6 | Caffè Fiorella, Libreria Senese, Gelateria Brivido | Orto de' Pecci | a Sienese mum, ~38, kids playing, talks about their contrada (new person) |
+| Venice | 6 → 5 | Farmacia Morelli | — | — |
+| Naples | 9 → 9 | Libreria Dante & Descartes | 🛒 Via San Gregorio Armeno | Maestro Ferrigno, 70: master nativity maker |
+| Bologna | 5 → 4 | Ristorante I Carracci | — | — |
+| Palermo | 7 → 4 | Caffè del Kassaro, Libreria del Mare, Osteria Ballarò | Cappella Palatina | Giuseppe Randazzo, 56: restorer of the mosaics |
+| Taormina | 8 → 5 | Farmacia Centrale, Gelateria Il Paradiso, Salumeria Sicilia | Teatro Antico | Dario Storia (rename), 53: actor in the summer season |
+| Lecce | 7 → 5 | Bar della Vittoria, Farmacia Centrale, Gelateria Natale | 🛒 Rusticceria Santa Croce · Basilica di Santa Croce | Giuseppe Taurino, 33: fry cook · Padre Roberto, 56: knows every carved figure on the façade |
+| Milan | 7 → 5 | Farmacia Centrale, Gelateria della Conca | Duomo | Padre Stefano, 67: has watched the cathedral's restorations |
+| Verona | 7 → 5 | Bar ai Scalzi, Farmacia Centrale, Gelateria Ponte Pietra | Arena · 🛒 Acetaia Veneta | Silvia Arena (rename), 29: chorus singer · Ornella Acetaia (rename), 51: ages vinegar for decades |
+| Assisi | 7 → 4 | Bar Senso, Farmacia Centrale, Tabaccheria del Centro, Gelateria Santa Maria | Basilica di San Francesco · 🛒 Laboratorio Ceramiche | Padre Giovanni, 67: Franciscan friar · Marco Angelini, 37: potter |
+| Bergamo | 6 → 4 | Bar Donizetti, Farmacia Centrale | Funicolare · Cappella Colleoni | Michele Pezzotta, 51: funicular driver, doesn't sell tickets · Anna Santoro, 41: violinist at the chapel's concerts |
+| Turin | 7 → 7 | — | — | — |
+| Syracuse | 8 → 5 | Caffè Archimede, Farmacia Apollo, Gelateria Nettuno | Giudecca · Fonte Aretusa | Davide Levi, 64: historian of the Jewish quarter · Elena Ragusa, 29: fisherman's daughter from Ortigia |
+| Genoa | 8 → 5 | Caffè degli Specchi, Farmacia Europa, Gelateria Profumo | Piazzetta di Boccadasse · Lanterna | Diego Vento (rename, e.g. Parodi), 71: fisherman · Andrea Colombo (rename), 55: lighthouse keeper |
+| Lucca | 7 → 4 | Bar Il Fortino, Farmacia Massei, Libreria Baroni | Torre Guinigi · Duomo di San Martino | Alessio Martinelli, 26: looks after the oaks on the roof · Padre Augusto, 68: parish priest |
+| Orvieto | 6 → 4 | Bar Duomo, Libreria del Duomo | Pozzo di San Patrizio | Matteo Galeotti, 28: runs the well's 248 steps every morning |
+| Mantua | 7 → 5 | Bar delle Erbe, Farmacia Gonzaga | Palazzo Te · Palazzo Ducale | a Festivaletteratura volunteer (new person; police officer as fallback) · Marcello Andreoli, 43: custodian who opens the rooms each morning |
+
 ## Where things stand
 
 - Live on `main`: A (Beginner errand is a turn or two), the bar rules (order, own place's ways), receipts at five bars, and Italy's four Mexican-style lines (Ditta Artigianale, Bar Rita, Farmacia Molteni, Farmacia Centrale Verona; Bar Nilo without "talk football").
