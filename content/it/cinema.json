@@ -1,0 +1,215 @@
+{
+  "about": "Cinemas: a place with no person; tapping it shows a scroll of posters, and a poster plays its trailer (Italian first) with the film's other videos below, as in MovieGenius (Josh, 2026-11-05). Data from TMDB (posters, YouTube ids), fetched once; posters to be copied to R2 like other images. TMDB credit belongs in Settings → About.",
+  "cinemas": {
+    "roma-nuova": {
+      "films": [
+        {
+          "tmdbId": 307,
+          "title": "Roma città aperta",
+          "year": 1945,
+          "poster": "https://image.tmdb.org/t/p/w500/8MmGEkPc8jlpkHJpx7g02UmtLzw.jpg",
+          "trailer": {
+            "youtube": "ei-b4kl3rU8",
+            "name": "ROMA CITTÀ APERTA - Trailer (Il Cinema Ritrovato al cinema)",
+            "language": "it"
+          },
+          "extras": [
+            {
+              "youtube": "5uzXxXnGfVs",
+              "type": "Trailer",
+              "name": "Rome, Open City (Roma Città Aperta) - back in cinemas 17 May 2024 | BFI",
+              "language": "en"
+            },
+            {
+              "youtube": "JM_KpDmdF98",
+              "type": "Trailer",
+              "name": "Roberto Rossellini: The War Trilogy - trailer | BFI Blu-ray",
+              "language": "en"
+            },
+            {
+              "youtube": "c1P1JRSJT6Q",
+              "type": "Trailer",
+              "name": "Trailer [Subtitled]",
+              "language": "en"
+            },
+            {
+              "youtube": "hgS4KEDZ0PE",
+              "type": "Featurette",
+              "name": "Mark Kermode reviews Rome, Open City (1945) | BFI Player",
+              "language": "en"
+            },
+            {
+              "youtube": "OeBleS8PzlE",
+              "type": "Featurette",
+              "name": "'Rome, Open City' | Critic's Picks | The New York Times",
+              "language": "en"
+            }
+          ]
+        },
+        {
+          "tmdbId": 5156,
+          "title": "Ladri di biciclette",
+          "year": 1948,
+          "poster": "https://image.tmdb.org/t/p/w500/wgQ2WD0mIgCjIkKvUea6oWXZ95B.jpg",
+          "trailer": {
+            "youtube": "_I_LgU9Hw5s",
+            "name": "Ladri di biciclette (Vittorio De Sica, 1948) Trailer Originale Italiano d'epoca",
+            "language": "it"
+          },
+          "extras": [
+            {
+              "youtube": "lP-TVGL7d8g",
+              "type": "Trailer",
+              "name": "LADRI DI BICICLETTE di Vittorio De Sica - Trailer (Il Cinema Ritrovato al cinema)",
+              "language": "it"
+            },
+            {
+              "youtube": "H2P4xo9kmPM",
+              "type": "Trailer",
+              "name": "Bicycle Thieves (1948) Trailer #1",
+              "language": "en"
+            },
+            {
+              "youtube": "d2Gs37JdQak",
+              "type": "Featurette",
+              "name": "Suso Cecchi D'Amico on BICYCLES THIEVES",
+              "language": "en"
+            },
+            {
+              "youtube": "NAvd8gFRfSQ",
+              "type": "Featurette",
+              "name": "Enzo Staiola on BICYCLE THIEVES",
+              "language": "en"
+            }
+          ]
+        },
+        {
+          "tmdbId": 179144,
+          "title": "La grande bellezza",
+          "year": 2013,
+          "poster": "https://image.tmdb.org/t/p/w500/oSIo4cCNEzV5zGu6Vavq2IorJR5.jpg",
+          "trailer": {
+            "youtube": "cJ8O-Y2CXk8",
+            "name": "La Grande Bellezza - Trailer Ufficiale",
+            "language": "it"
+          },
+          "extras": [
+            {
+              "youtube": "koxRDhAQOpw",
+              "type": "Trailer",
+              "name": "THE GREAT BEAUTY - Official HD Trailer",
+              "language": "en"
+            }
+          ]
+        },
+        {
+          "tmdbId": 1026227,
+          "title": "C'è ancora domani",
+          "year": 2023,
+          "poster": "https://image.tmdb.org/t/p/w500/hc9SHN0vB6iyr6MBYI6bKrpDHvJ.jpg",
+          "trailer": {
+            "youtube": "dD8ru7mFXuo",
+            "name": "C'è ancora domani (2023) - Trailer ufficiale",
+            "language": "it"
+          },
+          "extras": [
+            {
+              "youtube": "Z5hAvdF6xQA",
+              "type": "Trailer",
+              "name": "Official US Trailer [Subtitled]",
+              "language": "en"
+            },
+            {
+              "youtube": "nNREdtrrQyk",
+              "type": "Trailer",
+              "name": "Trailer [Subtitled]",
+              "language": "en"
+            }
+          ]
+        },
+        {
+          "tmdbId": 381341,
+          "title": "Perfetti sconosciuti",
+          "year": 2016,
+          "poster": "https://image.tmdb.org/t/p/w500/iiqiAMaBm4S62311XaqpIKuDDX.jpg",
+          "trailer": {
+            "youtube": "Kp8JX3-b9tw",
+            "name": "Perfetti Sconosciuti - Trailer Ufficiale",
+            "language": "it"
+          },
+          "extras": [
+            {
+              "youtube": "-lOUnBsjGuY",
+              "type": "Trailer",
+              "name": "PERFECT STRANGERS (2017) - Official HD Trailer - A film by Paolo Genovese",
+              "language": "en"
+            }
+          ]
+        },
+        {
+          "tmdbId": 24188,
+          "title": "Il sorpasso",
+          "year": 1962,
+          "poster": "https://image.tmdb.org/t/p/w500/9vumJKydNxcFtcFNYPIvFeHXVBQ.jpg",
+          "trailer": {
+            "youtube": "X5Tjj5B7Kbc",
+            "name": "Il Sorpasso - Trailer",
+            "language": "en"
+          },
+          "extras": [
+            {
+              "youtube": "bFf2VID8-qg",
+              "type": "Trailer",
+              "name": "IL SORPASSO - U.S. Re-release Trailer",
+              "language": "en"
+            }
+          ]
+        },
+        {
+          "tmdbId": 364433,
+          "title": "Lo chiamavano Jeeg Robot",
+          "year": 2016,
+          "poster": "https://image.tmdb.org/t/p/w500/yBH2xA38BfJep4oa3AbBFSRDtZO.jpg",
+          "trailer": {
+            "youtube": "y8nHHmSiKzM",
+            "name": "LO CHIAMAVANO JEEG ROBOT - TRAILER UFFICIALE [HD]",
+            "language": "it"
+          },
+          "extras": [
+            {
+              "youtube": "AY1Ws1_r_X0",
+              "type": "Trailer",
+              "name": "Trailer",
+              "language": "en"
+            }
+          ]
+        },
+        {
+          "tmdbId": 40794,
+          "title": "Mine vaganti",
+          "year": 2010,
+          "poster": "https://image.tmdb.org/t/p/w500/jd0tAmKLVVRtdS1NBQuvB5tOyeC.jpg",
+          "trailer": {
+            "youtube": "ODqAi4wCGu0",
+            "name": "Mine vaganti - Trailer",
+            "language": "it"
+          },
+          "extras": [
+            {
+              "youtube": "C2lQOhQ2es8",
+              "type": "Trailer",
+              "name": "Mine Vaganti Trailer",
+              "language": "it"
+            },
+            {
+              "youtube": "XoHtIKBZUbM",
+              "type": "Trailer",
+              "name": "Trailer",
+              "language": "en"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
