@@ -101,7 +101,30 @@
     56784,
     28055,
     47096,
-    833
+    833,
+    53915,
+    58509,
+    20271,
+    48282,
+    12548,
+    36102,
+    62382,
+    43100,
+    57110,
+    31742,
+    37769,
+    16395,
+    57250,
+    23832,
+    42595,
+    46979,
+    58451,
+    11144,
+    47796,
+    28049,
+    11035,
+    42790,
+    43195
    ]
   },
   {
@@ -160,7 +183,17 @@
     28055,
     47096,
     833,
-    10376
+    10376,
+    36102,
+    62382,
+    43100,
+    31742,
+    57250,
+    42595,
+    46979,
+    47796,
+    28049,
+    43195
    ]
   },
   {
@@ -239,7 +272,19 @@
     56784,
     51917,
     162282,
-    56343
+    56343,
+    53915,
+    58509,
+    20271,
+    48282,
+    12548,
+    57110,
+    37769,
+    23832,
+    58451,
+    11144,
+    11035,
+    42790
    ]
   },
   {
@@ -283,7 +328,9 @@
     29161,
     28055,
     600184,
-    47096
+    47096,
+    16395,
+    28049
    ]
   },
   {
@@ -308,7 +355,9 @@
     11367,
     8422,
     27523,
-    28055
+    28055,
+    20271,
+    36102
    ]
   },
   {
@@ -5390,6 +5439,374 @@
     }
    ],
    "fullFilm": null
+  },
+  {
+   "tmdbId": 53915,
+   "title": "Come te nessuno mai",
+   "year": 1999,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/jSCsgdAdGUPy6nr5W5cy4Lp8NU7.jpg",
+   "videos": [
+    {
+     "youtube": "qh6NUQuiTa0",
+     "type": "Trailer",
+     "name": "But Forever In My Mind Trailer - www.ComingOfAgeMovies.com",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "LyIEk_9hYIY",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 58509,
+   "title": "Concorrenza sleale",
+   "year": 2001,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/opLzBKoGIxfGEpZXsBxRtiWqyrU.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "Nhq6Ge4Iqxc",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 20271,
+   "title": "Divorzio all'italiana",
+   "year": 1961,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/1yYsJHPt2MOr0dve9sG4U6CLJ1V.jpg",
+   "videos": [
+    {
+     "youtube": "uA4zc03bx7o",
+     "type": "Clip",
+     "name": "M. Mastroiani wearing a great suit",
+     "language": "en"
+    },
+    {
+     "youtube": "mDQj_kgEw0Y",
+     "type": "Featurette",
+     "name": "\"To  Kill a Mockingbird\" and \"Divorce--Italian Style\" winning Writing Oscars®",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "ipSJyQliO5w",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 48282,
+   "title": "Ecce Bombo",
+   "year": 1978,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/c7t4aNyvRkLFVAE4XiPiY2U6RpP.jpg",
+   "videos": [
+    {
+     "youtube": "asmOOr15rB0",
+     "type": "Trailer",
+     "name": "Ecce Bombo - TRAILER - Nanni Moretti",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "PatM-OipNZM",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 12548,
+   "title": "I vitelloni",
+   "year": 1953,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/kl2KAv0WGJjRAZeiMLHqNtsG9AC.jpg",
+   "videos": [
+    {
+     "youtube": "ZI40T1YNXXc",
+     "type": "Trailer",
+     "name": "I Vitelloni (1953) ORIGINAL TRAILER",
+     "language": "en"
+    },
+    {
+     "youtube": "L76OA8LzGjk",
+     "type": "Teaser",
+     "name": "I Vitelloni Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "Fa5z7rCLQNY",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 36102,
+   "title": "Il bidone",
+   "year": 1955,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/e20GAZi3xCdZLDQmLxVkIL7n5vY.jpg",
+   "videos": [
+    {
+     "youtube": "ctmQQQhg1VQ",
+     "type": "Trailer",
+     "name": "Il Bidone (1955) ORIGINAL TRAILER",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "S8cdmtZiMUM",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 62382,
+   "title": "Il caso Mattei",
+   "year": 1972,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/vJRI66CCv4VG2SNrpEwTXdyk1Lq.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "e5ciw3yUxI0",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 43100,
+   "title": "Il generale Della Rovere",
+   "year": 1959,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/cQc1g3dKNH08mPQnKP564rk8vaG.jpg",
+   "videos": [
+    {
+     "youtube": "E6yrmhGGL5Y",
+     "type": "Trailer",
+     "name": "Il Generale Della Rovere (1959) ORIGINAL TRAILER",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "6iBvuBrmGNw",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 57110,
+   "title": "Il portaborse",
+   "year": 1991,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/TSJBG8fBaoQz6inumXsc3S5K22.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "ro3gW4a1eIc",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 31742,
+   "title": "Il posto",
+   "year": 1961,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/gK3FME6INHTtGjaPLD9Us4e6vQk.jpg",
+   "videos": [
+    {
+     "youtube": "iYJwm4DlKU0",
+     "type": "Trailer",
+     "name": "il posto trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "KpEELIGhblI",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 37769,
+   "title": "Il secondo tragico Fantozzi",
+   "year": 1976,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/tRnpCGMe5kvzkX8g9qdTO2F2vKO.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "FHoTB9TbEas",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 16395,
+   "title": "Inferno",
+   "year": 1980,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/lcToa0CfkuUaRjQjhhtLh3zmVXS.jpg",
+   "videos": [
+    {
+     "youtube": "wg75f-38L3E",
+     "type": "Trailer",
+     "name": "Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "VEQZ4aIkRSw",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 57250,
+   "title": "Jona che visse nella balena",
+   "year": 1993,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/DS1YqqlQcwbJAQIuUIII8D2FjE.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "16SmzeDDSPc",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 23832,
+   "title": "L'armata Brancaleone",
+   "year": 1966,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/g9PXpTeZwjhgRRlx4bk9qUz3EzO.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "wntd725cwBI",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 42595,
+   "title": "Strategia del ragno",
+   "year": 1970,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/qxg1zB70olHgLuZPemVGYKBfwu8.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "anZHVE_a9Yk",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 46979,
+   "title": "Le amiche",
+   "year": 1955,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/z6UZUi8rEeHLxTktfjXsCVIijcp.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "c374OJbbJMk",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 58451,
+   "title": "Le avventure di Pinocchio",
+   "year": 1972,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/9D02hsrYot66bUyaVDBo1bzj3lM.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "Ae4f1RYUFK0",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 11144,
+   "title": "Lo chiamavano Bulldozer",
+   "year": 1978,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/68OVqIvg1yMW4gliOgpWZ8ReN11.jpg",
+   "videos": [
+    {
+     "youtube": "gZzr4m8BKd8",
+     "type": "Trailer",
+     "name": "Bud Spencer: \"Sie nannten ihn Mücke\" - Trailer (1978)",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "CT9Bfsk2DIs",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 47796,
+   "title": "Mamma Roma",
+   "year": 1962,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/8ueRp1xACnhWCc9pmgimugBsSTc.jpg",
+   "videos": [
+    {
+     "youtube": "dMNlwanLUZ8",
+     "type": "Trailer",
+     "name": "Mamma Roma - Nederlands ondertitelde trailer digitale 4K-restauratie",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "CmSpqH7ffvg",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 28049,
+   "title": "Operazione paura",
+   "year": 1966,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3djhLfQPnQf5cQ30FPWscvEMsJw.jpg",
+   "videos": [
+    {
+     "youtube": "a1RULhoVSMc",
+     "type": "Trailer",
+     "name": "Kill, Baby... Kill! Original Trailer (Mario Bava, 1966)",
+     "language": "en"
+    },
+    {
+     "youtube": "Uy2WfCtVD70",
+     "type": "Trailer",
+     "name": "Kill, Baby, Kill! (1966) ORIGINAL TRAILER [HD 1080p]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "g1oT4sV7BbM",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 11035,
+   "title": "Roma",
+   "year": 1972,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/vtlWdzyeV9oZp9ick82O2SX3o96.jpg",
+   "videos": [
+    {
+     "youtube": "O_NAlPgwiSg",
+     "type": "Trailer",
+     "name": "Roma (1972) ORIGINAL TRAILER [HD 1080p]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "VCjL5yMxFcw",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 42790,
+   "title": "Sedotta e abbandonata",
+   "year": 1964,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/eh28VoeMrAkBPH1mQjQNcthzhJ3.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "KAsVLrfmblY",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 43195,
+   "title": "Senso",
+   "year": 1954,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/qLwENVUnmb6ULiUKAh6dzDTwxUI.jpg",
+   "videos": [
+    {
+     "youtube": "6vJ3DEujOpI",
+     "type": "Trailer",
+     "name": "Senso - Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "nPUXybdZ0fQ",
+     "type": "Featurette",
+     "name": "Three Reasons: Senso - The Criterion Collection",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "Ev8mF_kwYLs",
+    "language": "it"
+   }
   }
  ],
  "excluded": [
