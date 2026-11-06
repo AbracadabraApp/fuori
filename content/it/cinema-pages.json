@@ -1,0 +1,5743 @@
+{
+ "about": "The film page's words (Josh, 2026-11-06: MovieGenius's movie page, its tools and style, in Italian and curated). whyWatch: MovieGenius's WhyWatch v3 prompt (scripts/v3-generate.cjs there) in Italian: YES or NO, 2-3 reasons of 5-8 words, 30-50 words of context, its banned words in Italian. moreIdeas: MovieGenius's More Ideas prompt (scripts/backfill-more-ideas-haiku.js there) with Italian criteria: 10 Italian films, a reason under 20 words. Written by Claude in the cloud session for all 91 films; a fact-judge sweep is still to run (Josh: 'use fact judge for later sweep'). The page shows only the ideas whose film is in cinema-library.json.",
+ "labels": {
+  "yes": "Da vedere",
+  "no": "Si può saltare",
+  "moreIdeas": "Altre idee"
+ },
+ "films": {
+  "637": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Benigni fa ridere anche dentro un lager",
+     "Tre Oscar, tra cui miglior attore",
+     "Nicoletta Braschi, moglie anche nella vita"
+    ],
+    "context": "Guido, cameriere ebreo ad Arezzo, conquista Dora con mille trucchi. Poi la guerra li porta in un campo di concentramento, e lui convince il figlio che è tutto un gioco a punti. La prima metà è commedia pura, la seconda si regge su quel gioco."
+   },
+   "moreIdeas": [
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni comico puro: un autista scambiato per un boss mafioso a Palermo"
+    },
+    {
+     "title": "Il mostro",
+     "year": 1994,
+     "connection": "Benigni regista e protagonista, equivoci a catena e Nicoletta Braschi accanto"
+    },
+    {
+     "title": "Non ci resta che piangere",
+     "year": 1984,
+     "connection": "Benigni con Troisi, finiti per sbaglio nel Quattrocento toscano"
+    },
+    {
+     "title": "Pinocchio",
+     "year": 2002,
+     "connection": "Benigni regista e burattino, la favola di Collodi in costume"
+    },
+    {
+     "title": "Il giardino dei Finzi-Contini",
+     "year": 1970,
+     "connection": "De Sica racconta una famiglia ebrea di Ferrara prima delle leggi razziali"
+    },
+    {
+     "title": "Concorrenza sleale",
+     "year": 2001,
+     "connection": "Scola, due negozianti romani e le leggi razziali del 1938"
+    },
+    {
+     "title": "Jona che visse nella balena",
+     "year": 1993,
+     "connection": "Un bambino ebreo nei campi visto con gli occhi dell'infanzia"
+    },
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Un'altra storia di affetto tra un adulto e un bambino, premiata con l'Oscar"
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "Commedia e malinconia insieme, con un finale che pesa"
+    },
+    {
+     "title": "C'è ancora domani",
+     "year": 2023,
+     "connection": "Una famiglia romana nel dopoguerra, dolore raccontato con il sorriso"
+    }
+   ]
+  },
+  "429": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Il triello finale nel cimitero di Sad Hill",
+     "La musica di Morricone, fischi e cori",
+     "Eli Wallach ruba la scena come Tuco"
+    ],
+    "context": "Tre uomini cercano un tesoro di monete sepolto durante la guerra civile americana. Leone chiude la trilogia del dollaro con quasi tre ore di primi piani, attese e deserto, girate in Spagna. Il terzo film con Clint Eastwood."
+   },
+   "moreIdeas": [
+    {
+     "title": "Per un pugno di dollari",
+     "year": 1964,
+     "connection": "Il primo della trilogia del dollaro, Eastwood senza nome contro due bande"
+    },
+    {
+     "title": "Per qualche dollaro in più",
+     "year": 1965,
+     "connection": "Il secondo della trilogia, due cacciatori di taglie e un bandito"
+    },
+    {
+     "title": "C'era una volta il West",
+     "year": 1968,
+     "connection": "Leone dopo la trilogia, ancora più lento e ancora più Morricone"
+    },
+    {
+     "title": "Giù la testa",
+     "year": 1971,
+     "connection": "Leone porta il western nella rivoluzione messicana"
+    },
+    {
+     "title": "Il mio nome è Nessuno",
+     "year": 1973,
+     "connection": "Prodotto da Leone, un omaggio ironico al suo stesso western"
+    },
+    {
+     "title": "Django",
+     "year": 1966,
+     "connection": "Corbucci, il western all'italiana più cupo e fangoso"
+    },
+    {
+     "title": "Il grande silenzio",
+     "year": 1968,
+     "connection": "Corbucci, un pistolero muto nella neve e un finale amarissimo"
+    },
+    {
+     "title": "Faccia a faccia",
+     "year": 1967,
+     "connection": "Sollima, un professore e un bandito si scambiano i ruoli"
+    },
+    {
+     "title": "La resa dei conti",
+     "year": 1966,
+     "connection": "Sollima, una caccia all'uomo con Tomas Milian e Lee Van Cleef"
+    },
+    {
+     "title": "Lo chiamavano Trinità...",
+     "year": 1970,
+     "connection": "La parodia che prende in giro proprio questi western"
+    }
+   ]
+  },
+  "335": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Claudia Cardinale regge il film da sola",
+     "Henry Fonda, per una volta il cattivo",
+     "L'armonica di Morricone ad ogni ritorno"
+    ],
+    "context": "Una donna arriva in un posto sperduto del West e trova la famiglia del marito uccisa. Intorno a lei, la ferrovia che avanza e tre uomini con conti in sospeso. Leone allunga i silenzi fino al limite: l'inizio alla stazione dura dieci minuti quasi senza parole."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il buono, il brutto, il cattivo",
+     "year": 1966,
+     "connection": "Leone e Morricone al massimo, la caccia a un tesoro"
+    },
+    {
+     "title": "Giù la testa",
+     "year": 1971,
+     "connection": "Il film che Leone gira subito dopo, rivoluzione e amicizia"
+    },
+    {
+     "title": "Per qualche dollaro in più",
+     "year": 1965,
+     "connection": "Leone, una vendetta legata a un carillon"
+    },
+    {
+     "title": "Per un pugno di dollari",
+     "year": 1964,
+     "connection": "Dove Leone comincia, con Eastwood"
+    },
+    {
+     "title": "Il mio nome è Nessuno",
+     "year": 1973,
+     "connection": "Henry Fonda di nuovo, nel western che saluta il western"
+    },
+    {
+     "title": "Il grande silenzio",
+     "year": 1968,
+     "connection": "Corbucci, un western di neve senza lieto fine"
+    },
+    {
+     "title": "Django",
+     "year": 1966,
+     "connection": "Corbucci, violenza e fango nel western italiano"
+    },
+    {
+     "title": "Il gattopardo",
+     "year": 1963,
+     "connection": "Claudia Cardinale in un altro grande ruolo, un mondo che finisce"
+    },
+    {
+     "title": "La resa dei conti",
+     "year": 1966,
+     "connection": "Sollima, un western politico con Lee Van Cleef"
+    },
+    {
+     "title": "Faccia a faccia",
+     "year": 1967,
+     "connection": "Sollima, il West come luogo dove si cambia identità"
+    }
+   ]
+  },
+  "11216": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Philippe Noiret, proiezionista burbero e tenero",
+     "I baci tagliati dal prete, montati alla fine",
+     "Oscar per il miglior film straniero"
+    ],
+    "context": "Un regista famoso torna in Sicilia per il funerale di Alfredo, il proiezionista che lo ha cresciuto nella cabina del cinema del paese. Tornatore racconta un'infanzia, un amore perduto e la fine delle sale di paese. Musica di Ennio e Andrea Morricone."
+   },
+   "moreIdeas": [
+    {
+     "title": "L'uomo delle stelle",
+     "year": 1995,
+     "connection": "Tornatore di nuovo in Sicilia, un truffatore che promette provini di cinema"
+    },
+    {
+     "title": "Malèna",
+     "year": 2000,
+     "connection": "Tornatore, un ragazzo siciliano e la donna di cui è innamorato"
+    },
+    {
+     "title": "La leggenda del pianista sull'oceano",
+     "year": 1998,
+     "connection": "Tornatore e Morricone, un pianista che non scende mai dalla nave"
+    },
+    {
+     "title": "La migliore offerta",
+     "year": 2013,
+     "connection": "Tornatore in inglese, un banditore d'aste e un mistero"
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "Un'amicizia tra un uomo semplice e un maestro, su un'isola"
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini ricorda la sua infanzia in un paese di provincia"
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Commedia e malinconia, un padre e un figlio"
+    },
+    {
+     "title": "Bellissima",
+     "year": 1951,
+     "connection": "Visconti, una madre che sogna il cinema per la figlia"
+    },
+    {
+     "title": "Splendor",
+     "year": 1989,
+     "connection": "Scola, la storia di un cinema di provincia che chiude"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Un'infanzia nel Sud raccontata con gli occhi di un bambino"
+    }
+   ]
+  },
+  "391": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Il primo western di Leone con Eastwood",
+     "Rifà La sfida del samurai di Kurosawa",
+     "Morricone inventa il suono del genere"
+    ],
+    "context": "Uno straniero arriva in un villaggio al confine messicano diviso tra due famiglie e le mette l'una contro l'altra. Girato in Spagna con pochi soldi, ha fatto nascere il western all'italiana. Kurosawa fece causa e ottenne una parte degli incassi."
+   },
+   "moreIdeas": [
+    {
+     "title": "Per qualche dollaro in più",
+     "year": 1965,
+     "connection": "Il seguito diretto, di nuovo Eastwood e Leone"
+    },
+    {
+     "title": "Il buono, il brutto, il cattivo",
+     "year": 1966,
+     "connection": "Il capitolo finale della trilogia del dollaro"
+    },
+    {
+     "title": "C'era una volta il West",
+     "year": 1968,
+     "connection": "Leone più ambizioso, stesso deserto"
+    },
+    {
+     "title": "Django",
+     "year": 1966,
+     "connection": "Corbucci, un altro straniero tra due bande in un villaggio di fango"
+    },
+    {
+     "title": "Il grande silenzio",
+     "year": 1968,
+     "connection": "Corbucci, un western che rovescia ogni regola"
+    },
+    {
+     "title": "Faccia a faccia",
+     "year": 1967,
+     "connection": "Sollima, il western all'italiana diventa riflessione politica"
+    },
+    {
+     "title": "La resa dei conti",
+     "year": 1966,
+     "connection": "Sollima, caccia all'uomo nel deserto"
+    },
+    {
+     "title": "Giù la testa",
+     "year": 1971,
+     "connection": "Leone, dinamite e rivoluzione"
+    },
+    {
+     "title": "Il mio nome è Nessuno",
+     "year": 1973,
+     "connection": "La fine del western visto con ironia"
+    },
+    {
+     "title": "Lo chiamavano Trinità...",
+     "year": 1970,
+     "connection": "Quando il genere comincia a ridere di sé"
+    }
+   ]
+  },
+  "381341": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Una cena, sette amici, telefoni sul tavolo",
+     "Giallini, Mastandrea e Rohrwacher in gran forma",
+     "Il film più rifatto della storia"
+    ],
+    "context": "Sette amici a cena decidono di leggere ad alta voce ogni messaggio e rispondere in vivavoce a ogni chiamata. Dovrebbe essere un gioco. Quasi tutto in una sola stanza, e dal film di Paolo Genovese sono nati più di venti remake nel mondo."
+   },
+   "moreIdeas": [
+    {
+     "title": "The Place",
+     "year": 2017,
+     "connection": "Genovese di nuovo, un uomo seduto a un tavolino e i desideri di chi passa"
+    },
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Genovese, ex compagni di scuola devono rifare la maturità"
+    },
+    {
+     "title": "Tutta colpa di Freud",
+     "year": 2014,
+     "connection": "Genovese, un padre analista alle prese con le tre figlie"
+    },
+    {
+     "title": "Una famiglia perfetta",
+     "year": 2012,
+     "connection": "Genovese, una famiglia affittata per Natale"
+    },
+    {
+     "title": "Il nome del figlio",
+     "year": 2015,
+     "connection": "Archibugi, una cena tra parenti in cui escono i segreti"
+    },
+    {
+     "title": "La cena",
+     "year": 1998,
+     "connection": "Scola, una sera in un ristorante romano, tavolo dopo tavolo"
+    },
+    {
+     "title": "La terrazza",
+     "year": 1980,
+     "connection": "Scola, amici a cena e i loro fallimenti"
+    },
+    {
+     "title": "Pranzo di ferragosto",
+     "year": 2008,
+     "connection": "Di Gregorio, un pranzo con quattro anziane a Roma"
+    },
+    {
+     "title": "L'ultimo bacio",
+     "year": 2001,
+     "connection": "Muccino, trentenni e coppie in crisi"
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, famiglie e segreti dietro un incidente"
+    }
+   ]
+  },
+  "938": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Lee Van Cleef, colonnello con un carillon",
+     "Gian Maria Volonté, bandito drogato e crudele",
+     "Il duello finale scandito dalla musica"
+    ],
+    "context": "Due cacciatori di taglie, Eastwood e Van Cleef, si alleano per catturare l'Indio, un bandito appena evaso. Uno lo fa per soldi, l'altro per un motivo che si capisce solo alla fine. Il secondo film della trilogia del dollaro, più ricco e più cupo del primo."
+   },
+   "moreIdeas": [
+    {
+     "title": "Per un pugno di dollari",
+     "year": 1964,
+     "connection": "Il primo film della trilogia, dove nasce l'uomo senza nome"
+    },
+    {
+     "title": "Il buono, il brutto, il cattivo",
+     "year": 1966,
+     "connection": "Il terzo, di nuovo Eastwood e Van Cleef"
+    },
+    {
+     "title": "C'era una volta il West",
+     "year": 1968,
+     "connection": "Leone e un altro carillon, ancora una vendetta"
+    },
+    {
+     "title": "La resa dei conti",
+     "year": 1966,
+     "connection": "Van Cleef di nuovo cacciatore, con Tomas Milian"
+    },
+    {
+     "title": "Faccia a faccia",
+     "year": 1967,
+     "connection": "Sollima, Gian Maria Volonté professore che diventa bandito"
+    },
+    {
+     "title": "Quién sabe?",
+     "year": 1966,
+     "connection": "Damiani, Volonté in un western politico sulla rivoluzione messicana"
+    },
+    {
+     "title": "Django",
+     "year": 1966,
+     "connection": "Corbucci, l'altro grande western di quegli anni"
+    },
+    {
+     "title": "Il grande silenzio",
+     "year": 1968,
+     "connection": "Corbucci, cacciatori di taglie nella neve"
+    },
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Gian Maria Volonté protagonista, stesso talento per i cattivi"
+    },
+    {
+     "title": "Giù la testa",
+     "year": 1971,
+     "connection": "Leone, il suo ultimo western vero"
+    }
+   ]
+  },
+  "179144": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Toni Servillo, ironico e stanco, è Jep",
+     "Roma di notte, tra terrazze e chiostri",
+     "Oscar per il miglior film straniero"
+    ],
+    "context": "Jep Gambardella compie 65 anni con una festa sulla terrazza davanti al Colosseo. Ha scritto un solo romanzo, da giovane, e da allora frequenta salotti. Il film lo segue mentre si chiede cosa sia rimasto. Lungo, lento, pieno di Roma."
+   },
+   "moreIdeas": [
+    {
+     "title": "La dolce vita",
+     "year": 1960,
+     "connection": "Fellini, un giornalista tra le feste romane, il modello dichiarato"
+    },
+    {
+     "title": "8½",
+     "year": 1963,
+     "connection": "Fellini, un regista in crisi tra ricordi e sogni"
+    },
+    {
+     "title": "La notte",
+     "year": 1961,
+     "connection": "Antonioni, uno scrittore e il vuoto di una festa borghese"
+    },
+    {
+     "title": "Roma",
+     "year": 1972,
+     "connection": "Fellini racconta la città tra ricordo e cronaca"
+    },
+    {
+     "title": "La terrazza",
+     "year": 1980,
+     "connection": "Scola, intellettuali romani delusi a una cena su una terrazza"
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino e Servillo, un uomo che ha smesso di vivere"
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino e Servillo, Andreotti e la Roma del potere"
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "Sorrentino, due amici anziani fanno i conti con il tempo"
+    },
+    {
+     "title": "Loro",
+     "year": 2018,
+     "connection": "Sorrentino e Servillo, feste e potere intorno a Berlusconi"
+    },
+    {
+     "title": "È stata la mano di Dio",
+     "year": 2021,
+     "connection": "Sorrentino torna alla sua Napoli e alla sua giovinezza"
+    }
+   ]
+  },
+  "11906": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Colori rosso e blu quasi accecanti",
+     "La musica dei Goblin, ossessiva e sussurrata",
+     "Una scuola di danza piena di streghe"
+    ],
+    "context": "Una ballerina americana arriva in una scuola di danza a Friburgo in una notte di pioggia, e cominciano le morti. Dario Argento lascia il giallo per l'orrore puro. La trama conta poco: contano la luce, il suono e la paura."
+   },
+   "moreIdeas": [
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento subito prima, il suo giallo più famoso con i Goblin"
+    },
+    {
+     "title": "Inferno",
+     "year": 1980,
+     "connection": "Argento, il secondo film delle Tre Madri"
+    },
+    {
+     "title": "L'uccello dalle piume di cristallo",
+     "year": 1970,
+     "connection": "Il primo film di Argento, dove nasce il suo giallo"
+    },
+    {
+     "title": "Phenomena",
+     "year": 1985,
+     "connection": "Argento, un'altra ragazza in un collegio svizzero e gli insetti"
+    },
+    {
+     "title": "Tenebre",
+     "year": 1982,
+     "connection": "Argento, un giallo luminoso e violentissimo a Roma"
+    },
+    {
+     "title": "La maschera del demonio",
+     "year": 1960,
+     "connection": "Bava, l'horror gotico italiano in bianco e nero"
+    },
+    {
+     "title": "Sei donne per l'assassino",
+     "year": 1964,
+     "connection": "Bava, un atelier di moda e i colori che Argento erediterà"
+    },
+    {
+     "title": "Operazione paura",
+     "year": 1966,
+     "connection": "Bava, un paese maledetto e una bambina fantasma"
+    },
+    {
+     "title": "A Classic Horror Story",
+     "year": 2021,
+     "connection": "Un horror italiano di oggi che gioca con il genere"
+    },
+    {
+     "title": "La casa dalle finestre che ridono",
+     "year": 1976,
+     "connection": "Avati, l'horror nella campagna emiliana"
+    }
+   ]
+  },
+  "152742": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Geoffrey Rush, banditore solitario e maniaco",
+     "Un mistero costruito pezzo per pezzo",
+     "Musica di Ennio Morricone"
+    ],
+    "context": "Virgil Oldman, esperto d'arte che non tocca nessuno, viene chiamato a valutare la collezione di una giovane donna che non esce mai dalla sua villa. Tornatore gira in inglese, tra Trieste, Vienna e Praga. Va visto fino all'ultima scena."
+   },
+   "moreIdeas": [
+    {
+     "title": "La sconosciuta",
+     "year": 2006,
+     "connection": "Tornatore, un altro thriller su una donna dal passato nascosto"
+    },
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Tornatore e Morricone, il loro film più amato"
+    },
+    {
+     "title": "La leggenda del pianista sull'oceano",
+     "year": 1998,
+     "connection": "Tornatore, un uomo che vive chiuso nel suo mondo"
+    },
+    {
+     "title": "La corrispondenza",
+     "year": 2016,
+     "connection": "Tornatore, un amore a distanza e un enigma"
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Un giallo italiano costruito su chi mente e chi no"
+    },
+    {
+     "title": "L'uomo delle stelle",
+     "year": 1995,
+     "connection": "Tornatore, un truffatore che vende sogni"
+    },
+    {
+     "title": "The Place",
+     "year": 2017,
+     "connection": "Un uomo misterioso a un tavolino, un altro gioco di inganni"
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino, un uomo solo e metodico che si apre"
+    },
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento, un mistero che si risolve con un dettaglio visto"
+    },
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Petri, un uomo di potere e un gioco di indizi"
+    }
+   ]
+  },
+  "5156": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Attori presi dalla strada, mai recitato prima",
+     "Roma del dopoguerra, girata nelle sue vie",
+     "Il finale tra padre e figlio pesa"
+    ],
+    "context": "Antonio ha appena trovato lavoro ad attaccare manifesti, ma il primo giorno gli rubano la bicicletta. Una domenica a cercarla per Roma con il figlio Bruno. Lamberto Maggiorani era un operaio, non un attore. Novanta minuti, nessuna scena di troppo."
+   },
+   "moreIdeas": [
+    {
+     "title": "Roma città aperta",
+     "year": 1945,
+     "connection": "Rossellini apre il neorealismo, Roma occupata e attori quasi tutti veri"
+    },
+    {
+     "title": "Sciuscià",
+     "year": 1946,
+     "connection": "De Sica e Zavattini, bambini lustrascarpe nella Roma del dopoguerra"
+    },
+    {
+     "title": "Paisà",
+     "year": 1946,
+     "connection": "Rossellini segue l'avanzata alleata in sei episodi, dalla Sicilia al Po"
+    },
+    {
+     "title": "Miracolo a Milano",
+     "year": 1951,
+     "connection": "De Sica e Zavattini di nuovo, poveri e baracche ma con una favola"
+    },
+    {
+     "title": "Bellissima",
+     "year": 1951,
+     "connection": "Visconti, una madre romana sogna Cinecittà per la figlia"
+    },
+    {
+     "title": "Umberto D.",
+     "year": 1952,
+     "connection": "De Sica, un pensionato solo con il suo cane, stessa asciuttezza"
+    },
+    {
+     "title": "Accattone",
+     "year": 1961,
+     "connection": "Pasolini porta la periferia romana sullo schermo, attori non professionisti"
+    },
+    {
+     "title": "Mamma Roma",
+     "year": 1962,
+     "connection": "Pasolini, una madre e un figlio tra le borgate romane"
+    },
+    {
+     "title": "Il ladro di bambini",
+     "year": 1992,
+     "connection": "Amelio, un carabiniere e due bambini in viaggio, erede del neorealismo"
+    },
+    {
+     "title": "C'è ancora domani",
+     "year": 2023,
+     "connection": "Cortellesi gira la Roma del 1946 in bianco e nero"
+    }
+   ]
+  },
+  "422": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Mastroianni è Guido, regista senza idee",
+     "Sogni, ricordi e set che si mescolano",
+     "Musica di Nino Rota per il girotondo finale"
+    ],
+    "context": "Un regista famoso deve cominciare un film e non sa più quale. Si rifugia alle terme tra produttori, amanti, la moglie e i ricordi d'infanzia. Fellini fa un film sul non riuscire a fare un film, e il titolo conta i suoi film fino a quel momento."
+   },
+   "moreIdeas": [
+    {
+     "title": "La dolce vita",
+     "year": 1960,
+     "connection": "Fellini e Mastroianni subito prima, Roma e le sue notti"
+    },
+    {
+     "title": "Le notti di Cabiria",
+     "year": 1957,
+     "connection": "Fellini, Giulietta Masina e una speranza che non muore"
+    },
+    {
+     "title": "La strada",
+     "year": 1954,
+     "connection": "Fellini, un circo ambulante e la Masina"
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini torna ai ricordi della sua Rimini"
+    },
+    {
+     "title": "Giulietta degli spiriti",
+     "year": 1965,
+     "connection": "Fellini dopo 8½, i sogni visti da una moglie"
+    },
+    {
+     "title": "Roma",
+     "year": 1972,
+     "connection": "Fellini, la città come un sogno"
+    },
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Sorrentino, un altro uomo che non crea più, erede dichiarato"
+    },
+    {
+     "title": "La notte",
+     "year": 1961,
+     "connection": "Antonioni, Mastroianni scrittore in crisi"
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "Sorrentino, un regista anziano e il suo ultimo film"
+    },
+    {
+     "title": "Intervista",
+     "year": 1987,
+     "connection": "Fellini racconta Cinecittà e il suo modo di fare cinema"
+    }
+   ]
+  },
+  "364433": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un supereroe nella periferia di Tor Bella Monaca",
+     "Luca Marinelli, cattivo che canta Anna Oxa",
+     "Claudio Santamaria ingrassato, solo e burbero"
+    ],
+    "context": "Enzo, ladruncolo romano, cade nel Tevere e ne esce con una forza sovrumana. La usa per rubare, finché incontra Alessia, che crede che sia il protagonista di un cartone giapponese. Gabriele Mainetti prende il film di supereroi e lo porta a Roma."
+   },
+   "moreIdeas": [
+    {
+     "title": "Freaks Out",
+     "year": 2021,
+     "connection": "Mainetti di nuovo, poteri e circo nella Roma occupata"
+    },
+    {
+     "title": "Il ragazzo invisibile",
+     "year": 2014,
+     "connection": "Salvatores, un supereroe ragazzino a Trieste"
+    },
+    {
+     "title": "Suburra",
+     "year": 2015,
+     "connection": "La Roma criminale vista dall'alto, stessi quartieri"
+    },
+    {
+     "title": "Non essere cattivo",
+     "year": 2015,
+     "connection": "Caligari, la periferia di Ostia senza poteri"
+    },
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone, un uomo mite e un violento in una periferia sul mare"
+    },
+    {
+     "title": "Smetto quando voglio",
+     "year": 2014,
+     "connection": "Una banda di ricercatori romani, genere americano portato a Roma"
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, la criminalità di Scampia vista da vicino"
+    },
+    {
+     "title": "Veloce come il vento",
+     "year": 2016,
+     "connection": "Rovere, corse d'auto e un fratello difficile, Stefano Accorsi"
+    },
+    {
+     "title": "Accattone",
+     "year": 1961,
+     "connection": "Pasolini, la stessa Roma di borgata cinquant'anni prima"
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone, il fantastico italiano preso sul serio"
+    }
+   ]
+  },
+  "10376": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Tim Roth, pianista nato e mai sceso",
+     "Il duello al pianoforte con Jelly Roll Morton",
+     "Musica di Ennio Morricone"
+    ],
+    "context": "Un bambino trovato su un transatlantico cresce a bordo e diventa il più grande pianista del mondo senza mai mettere piede a terra. Lo racconta il suo amico trombettista. Tornatore dal monologo Novecento di Baricco, in inglese."
+   },
+   "moreIdeas": [
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Tornatore e Morricone, un altro racconto di memoria e amicizia"
+    },
+    {
+     "title": "La migliore offerta",
+     "year": 2013,
+     "connection": "Tornatore, un uomo chiuso nel suo mondo d'arte"
+    },
+    {
+     "title": "L'uomo delle stelle",
+     "year": 1995,
+     "connection": "Tornatore, la Sicilia e il sogno del cinema"
+    },
+    {
+     "title": "Malèna",
+     "year": 2000,
+     "connection": "Tornatore e Morricone, un ricordo d'infanzia"
+    },
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, un secolo italiano attraverso due uomini nati lo stesso giorno"
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "Un'altra amicizia tra un uomo semplice e l'arte"
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Una favola triste raccontata con dolcezza"
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, i ricordi trasformati in leggenda"
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino, un uomo che vive dentro un albergo"
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "Sorrentino, un musicista anziano e la sua opera"
+    }
+   ]
+  },
+  "483184": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Marcello Fonte, toelettatore mite, premiato a Cannes",
+     "Ispirato a un fatto di cronaca romana",
+     "Una periferia sul mare quasi deserta"
+    ],
+    "context": "Marcello tosa cani in un paese di periferia ed è amato da tutti. Simoncino, un ex pugile violento, lo usa e lo umilia finché qualcosa si spezza. Garrone gira a Castel Volturno: niente musica facile, molta pietà."
+   },
+   "moreIdeas": [
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, la violenza quotidiana del Sud"
+    },
+    {
+     "title": "L'imbalsamatore",
+     "year": 2002,
+     "connection": "Garrone, un altro uomo piccolo e un legame che diventa pericoloso"
+    },
+    {
+     "title": "Reality",
+     "year": 2012,
+     "connection": "Garrone, un pescivendolo napoletano ossessionato dalla televisione"
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, due ragazzi senegalesi in viaggio verso l'Italia"
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone nel fantastico, sempre con creature e mostri"
+    },
+    {
+     "title": "Pinocchio",
+     "year": 2019,
+     "connection": "Garrone, la favola di Collodi con un realismo crudo"
+    },
+    {
+     "title": "Non essere cattivo",
+     "year": 2015,
+     "connection": "Caligari, amicizia e violenza nella periferia di Ostia"
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Un altro uomo solo della periferia romana"
+    },
+    {
+     "title": "Accattone",
+     "year": 1961,
+     "connection": "Pasolini, gli ultimi delle borgate"
+    },
+    {
+     "title": "Sulla mia pelle",
+     "year": 2018,
+     "connection": "Un'altra storia vera di violenza e silenzio"
+    }
+   ]
+  },
+  "310593": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Michael Caine e Harvey Keitel, vecchi amici",
+     "Un albergo termale sulle Alpi svizzere",
+     "Simple Songs, la canzone attesa tutto il film"
+    ],
+    "context": "Un compositore in pensione e un regista ancora al lavoro passano l'estate in un albergo di lusso tra le montagne. Uno non vuole più dirigere la sua musica, l'altro scrive il suo ultimo film. Sorrentino in inglese, tra bellezza e malinconia."
+   },
+   "moreIdeas": [
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Sorrentino, un altro uomo anziano che guarda indietro"
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino, un albergo svizzero e un uomo che vive in attesa"
+    },
+    {
+     "title": "This Must Be the Place",
+     "year": 2011,
+     "connection": "Sorrentino in inglese, una rockstar invecchiata in viaggio"
+    },
+    {
+     "title": "È stata la mano di Dio",
+     "year": 2021,
+     "connection": "Sorrentino racconta la propria giovinezza a Napoli"
+    },
+    {
+     "title": "8½",
+     "year": 1963,
+     "connection": "Fellini, un regista in crisi tra ricordi e set"
+    },
+    {
+     "title": "La notte",
+     "year": 1961,
+     "connection": "Antonioni, un artista e il vuoto intorno"
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino, il potere che invecchia"
+    },
+    {
+     "title": "Parthenope",
+     "year": 2024,
+     "connection": "Sorrentino, una vita intera raccontata tra bellezza e tempo"
+    },
+    {
+     "title": "La leggenda del pianista sull'oceano",
+     "year": 1998,
+     "connection": "Un musicista che vive fuori dal mondo"
+    },
+    {
+     "title": "Le otto montagne",
+     "year": 2022,
+     "connection": "Un'amicizia lunga una vita, tra le montagne"
+    }
+   ]
+  },
+  "374416": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Checco Zalone difende il posto fisso",
+     "Dal Sud al circolo polare norvegese",
+     "Il maggiore incasso del cinema italiano"
+    ],
+    "context": "Checco ha il posto fisso alla provincia e non vuole lasciarlo per nessun motivo. Una dirigente decisa a farlo dimettere lo trasferisce sempre più lontano, fino in Norvegia oltre il circolo polare. Gennaro Nunziante e Zalone ridono degli italiani con affetto e cattiveria."
+   },
+   "moreIdeas": [
+    {
+     "title": "Sole a catinelle",
+     "year": 2013,
+     "connection": "Zalone e Nunziante, un padre senza soldi e una vacanza promessa"
+    },
+    {
+     "title": "Cado dalle nubi",
+     "year": 2009,
+     "connection": "Il primo film di Zalone, dalla Puglia a Milano"
+    },
+    {
+     "title": "Che bella giornata",
+     "year": 2011,
+     "connection": "Zalone guardia giurata al Duomo di Milano"
+    },
+    {
+     "title": "Tolo Tolo",
+     "year": 2020,
+     "connection": "Zalone regista, un imprenditore fallito in fuga in Africa"
+    },
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Un impiegato del Nord trasferito al Sud, pregiudizi a confronto"
+    },
+    {
+     "title": "Benvenuti al Nord",
+     "year": 2012,
+     "connection": "Il seguito, stesso gioco al contrario"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Aldo Giovanni e Giacomo, soldi e ruoli sociali ribaltati"
+    },
+    {
+     "title": "Fantozzi",
+     "year": 1975,
+     "connection": "Villaggio, l'impiegato italiano per eccellenza"
+    },
+    {
+     "title": "Il posto",
+     "year": 1961,
+     "connection": "Olmi, un ragazzo e il suo primo impiego fisso a Milano"
+    },
+    {
+     "title": "L'ora legale",
+     "year": 2017,
+     "connection": "Ficarra e Picone, un paese siciliano e il rispetto delle regole"
+    }
+   ]
+  },
+  "38286": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Aldo, Giovanni e Giacomo, il loro esordio",
+     "Un viaggio da Milano alla Puglia",
+     "Una scultura con una gamba di legno"
+    ],
+    "context": "Tre amici devono portare in macchina una scultura a forma di gamba fino a Gallipoli, dove Giacomo si sposa. Lungo la strada niente va come previsto. Il trio comico di Mai dire Gol passa al cinema, ed è un successo enorme."
+   },
+   "moreIdeas": [
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Il trio di nuovo, un'altra fuga a tre"
+    },
+    {
+     "title": "Chiedimi se sono felice",
+     "year": 2000,
+     "connection": "Il trio, un'amicizia che si rompe per una donna"
+    },
+    {
+     "title": "La leggenda di Al, John e Jack",
+     "year": 2002,
+     "connection": "Il trio nella New York dei gangster"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Il trio più tardi, soldi e crisi"
+    },
+    {
+     "title": "Non ci resta che piangere",
+     "year": 1984,
+     "connection": "Benigni e Troisi, un viaggio sbagliato nel tempo"
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni, equivoci a catena"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi, l'Italia vista da una macchina in viaggio"
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Salvatores, un gruppo di uomini e l'amicizia lontano da casa"
+    },
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Nord e Sud, pregiudizi e risate"
+    },
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone, la commedia italiana di oggi"
+    }
+   ]
+  },
+  "439": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Anita Ekberg nella Fontana di Trevi",
+     "Mastroianni giornalista tra feste e vuoto",
+     "Da qui nasce la parola paparazzo"
+    ],
+    "context": "Sette giorni e sette notti di Marcello, cronista mondano a Roma, tra dive, nobili, intellettuali e un falso miracolo. Fellini racconta la città del boom e la sua noia. Palma d'oro a Cannes, tre ore che passano in fretta."
+   },
+   "moreIdeas": [
+    {
+     "title": "8½",
+     "year": 1963,
+     "connection": "Fellini e Mastroianni di nuovo, un regista in crisi"
+    },
+    {
+     "title": "Le notti di Cabiria",
+     "year": 1957,
+     "connection": "Fellini, l'altra Roma, quella della periferia"
+    },
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Sorrentino rifà la Roma notturna di Fellini cinquant'anni dopo"
+    },
+    {
+     "title": "La notte",
+     "year": 1961,
+     "connection": "Antonioni, Mastroianni e una festa senza senso"
+    },
+    {
+     "title": "Roma",
+     "year": 1972,
+     "connection": "Fellini, la città come la ricorda"
+    },
+    {
+     "title": "I vitelloni",
+     "year": 1953,
+     "connection": "Fellini, giovani di provincia che non crescono"
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, la sua Rimini"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi, l'Italia del boom in macchina"
+    },
+    {
+     "title": "Divorzio all'italiana",
+     "year": 1961,
+     "connection": "Germi, Mastroianni e la commedia nera"
+    },
+    {
+     "title": "La terrazza",
+     "year": 1980,
+     "connection": "Scola, intellettuali romani anni dopo"
+    }
+   ]
+  },
+  "538362": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Alessandro Borghi è Stefano Cucchi",
+     "Gli ultimi sette giorni di una vita",
+     "Una storia vera arrivata fino in tribunale"
+    ],
+    "context": "Nel 2009 Stefano Cucchi viene arrestato a Roma per droga e muore una settimana dopo, in custodia. Il film segue quei giorni senza alzare la voce. Alessio Cremonini, Jasmine Trinca nel ruolo della sorella Ilaria."
+   },
+   "moreIdeas": [
+    {
+     "title": "Diaz – Don't Clean Up This Blood",
+     "year": 2012,
+     "connection": "Vicari, le violenze della polizia al G8 di Genova"
+    },
+    {
+     "title": "Non essere cattivo",
+     "year": 2015,
+     "connection": "Caligari, Alessandro Borghi nella periferia di Ostia"
+    },
+    {
+     "title": "Suburra",
+     "year": 2015,
+     "connection": "Borghi di nuovo, la Roma criminale"
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, un'altra storia vera di giustizia"
+    },
+    {
+     "title": "La meglio gioventù",
+     "year": 2003,
+     "connection": "Giordana, quarant'anni d'Italia attraverso una famiglia"
+    },
+    {
+     "title": "I cento passi",
+     "year": 2000,
+     "connection": "Giordana, Peppino Impastato contro la mafia"
+    },
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone, violenza e debolezza in una periferia"
+    },
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Petri, il potere della polizia senza controlli"
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, un'Italia che i telegiornali non mostrano"
+    },
+    {
+     "title": "La mafia uccide solo d'estate",
+     "year": 2013,
+     "connection": "Pif, la storia vera raccontata con leggerezza"
+    }
+   ]
+  },
+  "48415": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Claudio Bisio, milanese trasferito in Cilento",
+     "Alessandro Siani, postino napoletano simpatico",
+     "Castellabate, il paese diventato famoso"
+    ],
+    "context": "Un direttore di posta brianzolo viene mandato per punizione in un paese vicino a Salerno. Parte con il giubbotto antiproiettile e trova sole, pranzi infiniti e amici. È il rifacimento del francese Giù al Nord, adattato all'Italia."
+   },
+   "moreIdeas": [
+    {
+     "title": "Benvenuti al Nord",
+     "year": 2012,
+     "connection": "Il seguito, questa volta il postino del Sud va a Milano"
+    },
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone, un impiegato pubblico trasferito ovunque"
+    },
+    {
+     "title": "Cado dalle nubi",
+     "year": 2009,
+     "connection": "Zalone, un pugliese a Milano"
+    },
+    {
+     "title": "Che bella giornata",
+     "year": 2011,
+     "connection": "Zalone, il Sud che arriva al Nord"
+    },
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Da Milano alla Puglia in macchina"
+    },
+    {
+     "title": "L'ora legale",
+     "year": 2017,
+     "connection": "Ficarra e Picone, un paese del Sud e le regole"
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "Un postino e un'isola del Sud"
+    },
+    {
+     "title": "Mine vaganti",
+     "year": 2010,
+     "connection": "Özpetek, una famiglia di Lecce e i suoi segreti"
+    },
+    {
+     "title": "Sole a catinelle",
+     "year": 2013,
+     "connection": "Zalone, il Sud e il Nord in vacanza"
+    },
+    {
+     "title": "Pane e tulipani",
+     "year": 2000,
+     "connection": "Una donna trova un'altra vita in una città nuova"
+    }
+   ]
+  },
+  "250219": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Ricercatori precari diventano spacciatori",
+     "Edoardo Leo guida una banda di professori",
+     "Colori acidi e ritmo da serie americana"
+    ],
+    "context": "Pietro, neurobiologo licenziato, mette insieme amici laureati e disoccupati per produrre una droga ancora legale. Sydney Sibilia ride dei cervelli italiani sprecati, costretti a lavare piatti o a scappare all'estero. Il primo di tre film."
+   },
+   "moreIdeas": [
+    {
+     "title": "Smetto quando voglio - Masterclass",
+     "year": 2017,
+     "connection": "Il seguito, la banda lavora per la polizia"
+    },
+    {
+     "title": "Smetto quando voglio - Ad honorem",
+     "year": 2017,
+     "connection": "Il capitolo finale della trilogia"
+    },
+    {
+     "title": "L'incredibile storia dell'Isola delle Rose",
+     "year": 2020,
+     "connection": "Sibilia, un ingegnere crea uno Stato nel mare"
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli, una banda di dilettanti e un colpo sbagliato"
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Un genere americano portato a Roma"
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Un gruppo di amici e un gioco che va storto"
+    },
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Quarantenni romani che devono rifare la maturità"
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, soldi e ambizione nell'Italia di oggi"
+    },
+    {
+     "title": "Tutta la vita davanti",
+     "year": 2008,
+     "connection": "Virzì, una laureata precaria in un call center"
+    },
+    {
+     "title": "Suburra",
+     "year": 2015,
+     "connection": "La Roma della droga, ma senza ridere"
+    }
+   ]
+  },
+  "722778": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Maradona arriva a Napoli, tutti impazziscono",
+     "Filippo Scotti è il giovane Sorrentino",
+     "Toni Servillo e Teresa Saponangelo, genitori allegri"
+    ],
+    "context": "Napoli, anni Ottanta. Fabietto vive in una famiglia rumorosa e affettuosa e aspetta Maradona. Poi arriva una tragedia che cambia tutto. Sorrentino racconta la sua adolescenza: il film più personale e più semplice che abbia fatto."
+   },
+   "moreIdeas": [
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, la sua adolescenza a Rimini"
+    },
+    {
+     "title": "Parthenope",
+     "year": 2024,
+     "connection": "Sorrentino torna a Napoli con una donna e una vita"
+    },
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Sorrentino, Roma e il tempo che passa"
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "Sorrentino, l'età e la memoria"
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino e Servillo, la politica"
+    },
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Un ragazzo, una famiglia e il cinema nel Sud"
+    },
+    {
+     "title": "Ricomincio da tre",
+     "year": 1981,
+     "connection": "Troisi, un napoletano che cerca la sua strada"
+    },
+    {
+     "title": "L'oro di Napoli",
+     "year": 1954,
+     "connection": "De Sica, episodi di vita napoletana"
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino, un uomo chiuso nel suo dolore"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Un'estate d'infanzia nel Sud che cambia tutto"
+    }
+   ]
+  },
+  "314405": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Tre favole di Basile, crude e meravigliose",
+     "Salma Hayek mangia il cuore di un mostro",
+     "Castelli veri del Sud e della Toscana"
+    ],
+    "context": "Una regina che vuole un figlio a ogni costo, un re che alleva una pulce gigante, due vecchie sorelle e un re che le desidera. Garrone porta sullo schermo Lo cunto de li cunti del Seicento napoletano, in inglese."
+   },
+   "moreIdeas": [
+    {
+     "title": "Pinocchio",
+     "year": 2019,
+     "connection": "Garrone di nuovo nella favola, con Benigni Geppetto"
+    },
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone nel realismo, un'altra favola nera"
+    },
+    {
+     "title": "Freaks Out",
+     "year": 2021,
+     "connection": "Il fantastico italiano di oggi, mostri e circo"
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Un genere straniero rifatto in Italia"
+    },
+    {
+     "title": "Il ragazzo invisibile",
+     "year": 2014,
+     "connection": "Salvatores, un ragazzo con un potere"
+    },
+    {
+     "title": "Suspiria",
+     "year": 1977,
+     "connection": "Argento, una fiaba di streghe"
+    },
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Rohrwacher, una favola contadina e un santo"
+    },
+    {
+     "title": "Il Decameron",
+     "year": 1971,
+     "connection": "Pasolini, racconti antichi del Sud, crudi e allegri"
+    },
+    {
+     "title": "La strada",
+     "year": 1954,
+     "connection": "Fellini, una favola triste on the road"
+    },
+    {
+     "title": "Pinocchio",
+     "year": 2002,
+     "connection": "Benigni, un'altra favola italiana"
+    }
+   ]
+  },
+  "231176": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Zalone promette al figlio una vacanza da sogno",
+     "Debiti, banche e venditori di aspirapolvere",
+     "Una gag su ogni luogo comune"
+    ],
+    "context": "Checco vende aspirapolvere porta a porta e ha promesso al figlio una vacanza bellissima se prende tutti dieci. Il figlio ci riesce, i soldi non ci sono. Il secondo grande successo di Zalone e Nunziante."
+   },
+   "moreIdeas": [
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone e Nunziante, il posto fisso"
+    },
+    {
+     "title": "Cado dalle nubi",
+     "year": 2009,
+     "connection": "Il primo film di Zalone"
+    },
+    {
+     "title": "Che bella giornata",
+     "year": 2011,
+     "connection": "Zalone guardia giurata a Milano"
+    },
+    {
+     "title": "Tolo Tolo",
+     "year": 2020,
+     "connection": "Zalone dirige se stesso, in Africa"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Aldo Giovanni e Giacomo, ricchezza e crisi"
+    },
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Pregiudizi e affetto tra Nord e Sud"
+    },
+    {
+     "title": "Fantozzi",
+     "year": 1975,
+     "connection": "Villaggio, la sfortuna dell'italiano medio"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Una vacanza italiana che va oltre"
+    },
+    {
+     "title": "Notte prima degli esami",
+     "year": 2006,
+     "connection": "Un'estate di ragazzi, scuola e voti"
+    },
+    {
+     "title": "L'ora legale",
+     "year": 2017,
+     "connection": "Ficarra e Picone, la commedia sociale di oggi"
+    }
+   ]
+  },
+  "50531": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Aldo, Giovanni e Giacomo, amicizia e rancore",
+     "Marina Massironi tra i tre amici",
+     "Uno spettacolo da Cyrano mai andato in scena"
+    ],
+    "context": "Tre amici di Milano, che sognavano di mettere in scena Cyrano, non si parlano più da anni per colpa di una donna. Una notizia improvvisa li rimette insieme. Il film più malinconico del trio, e per molti il più bello."
+   },
+   "moreIdeas": [
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Il primo film del trio"
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Il trio in fuga"
+    },
+    {
+     "title": "La leggenda di Al, John e Jack",
+     "year": 2002,
+     "connection": "Il trio tra i gangster americani"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Il trio anni dopo"
+    },
+    {
+     "title": "Pane e tulipani",
+     "year": 2000,
+     "connection": "Soldini, amicizie e seconde possibilità"
+    },
+    {
+     "title": "L'ultimo bacio",
+     "year": 2001,
+     "connection": "Muccino, amici trentenni in crisi"
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Salvatores, un gruppo di amici lontano da casa"
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Amici che si scoprono diversi"
+    },
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Ex compagni di scuola si ritrovano"
+    },
+    {
+     "title": "Le fate ignoranti",
+     "year": 2001,
+     "connection": "Özpetek, amicizia e lutto a Roma"
+    }
+   ]
+  },
+  "35554": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Checco Zalone al suo primo film",
+     "Un pugliese ingenuo nella Milano leghista",
+     "Canzoni scritte e cantate da Zalone"
+    ],
+    "context": "Checco, aspirante cantante di Polignano, viene lasciato dalla fidanzata e va a Milano da un cugino. Si innamora di una ragazza il cui padre odia i meridionali. Gennaro Nunziante dirige, e nasce il fenomeno Zalone."
+   },
+   "moreIdeas": [
+    {
+     "title": "Che bella giornata",
+     "year": 2011,
+     "connection": "Zalone di nuovo a Milano, subito dopo"
+    },
+    {
+     "title": "Sole a catinelle",
+     "year": 2013,
+     "connection": "Zalone padre senza soldi"
+    },
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone e il posto fisso"
+    },
+    {
+     "title": "Tolo Tolo",
+     "year": 2020,
+     "connection": "Zalone regista"
+    },
+    {
+     "title": "Benvenuti al Nord",
+     "year": 2012,
+     "connection": "Un meridionale a Milano"
+    },
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Un milanese al Sud"
+    },
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Da Milano alla Puglia"
+    },
+    {
+     "title": "Rocco e i suoi fratelli",
+     "year": 1960,
+     "connection": "Visconti, una famiglia del Sud a Milano, senza ridere"
+    },
+    {
+     "title": "Mine vaganti",
+     "year": 2010,
+     "connection": "Özpetek, una famiglia pugliese e i suoi segreti"
+    },
+    {
+     "title": "Ricomincio da tre",
+     "year": 1981,
+     "connection": "Troisi, un napoletano a Firenze"
+    }
+   ]
+  },
+  "20126": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Il giallo più famoso di Dario Argento",
+     "La musica dei Goblin ancora ti insegue",
+     "Torino buia, una villa e una cantilena"
+    ],
+    "context": "Un pianista inglese a Torino vede uccidere una medium e prova a capire chi è stato, insieme a una giornalista. Argento costruisce il mistero su un dettaglio visto e dimenticato. David Hemmings e Daria Nicolodi."
+   },
+   "moreIdeas": [
+    {
+     "title": "L'uccello dalle piume di cristallo",
+     "year": 1970,
+     "connection": "Il primo giallo di Argento, un testimone e un dettaglio"
+    },
+    {
+     "title": "Suspiria",
+     "year": 1977,
+     "connection": "Argento subito dopo, dal giallo all'orrore"
+    },
+    {
+     "title": "Tenebre",
+     "year": 1982,
+     "connection": "Argento, un giallo luminoso a Roma"
+    },
+    {
+     "title": "Il gatto a nove code",
+     "year": 1971,
+     "connection": "Argento, il secondo dei suoi gialli"
+    },
+    {
+     "title": "4 mosche di velluto grigio",
+     "year": 1971,
+     "connection": "Argento, il terzo, un musicista perseguitato"
+    },
+    {
+     "title": "Sei donne per l'assassino",
+     "year": 1964,
+     "connection": "Bava, il giallo nasce qui"
+    },
+    {
+     "title": "La ragazza che sapeva troppo",
+     "year": 1963,
+     "connection": "Bava, il primo giallo italiano"
+    },
+    {
+     "title": "La casa dalle finestre che ridono",
+     "year": 1976,
+     "connection": "Avati, un mistero nella campagna"
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Un giallo italiano di oggi"
+    },
+    {
+     "title": "Non si sevizia un paperino",
+     "year": 1972,
+     "connection": "Fulci, un giallo nel Sud rurale"
+    }
+   ]
+  },
+  "413518": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Roberto Benigni è un Geppetto commovente",
+     "Trucco e creature quasi senza computer",
+     "Il Pinocchio fedele a Collodi"
+    ],
+    "context": "Matteo Garrone racconta la storia di Collodi senza addolcirla: povertà, fame, paura e un burattino che non sa ancora come si vive. La Toscana e la Puglia di fine Ottocento, il Gatto, la Volpe e la Fata, Federico Ielapi è Pinocchio."
+   },
+   "moreIdeas": [
+    {
+     "title": "Pinocchio",
+     "year": 2002,
+     "connection": "Benigni, il suo Pinocchio da regista"
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone, favole antiche e crude"
+    },
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone, un uomo piccolo in un mondo duro"
+    },
+    {
+     "title": "Le avventure di Pinocchio",
+     "year": 1972,
+     "connection": "Comencini, la serie diventata film, Nino Manfredi Geppetto"
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Benigni, un padre e un figlio"
+    },
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Rohrwacher, una favola contadina"
+    },
+    {
+     "title": "Freaks Out",
+     "year": 2021,
+     "connection": "Mainetti, creature e meraviglia"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Un bambino e la paura del buio"
+    },
+    {
+     "title": "La strada",
+     "year": 1954,
+     "connection": "Fellini, artisti girovaghi e povertà"
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, un viaggio pericoloso come quello di Pinocchio"
+    }
+   ]
+  },
+  "53319": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Zalone guardia giurata al Duomo di Milano",
+     "Una terrorista si innamora di lui",
+     "Battute sui pregiudizi di ogni tipo"
+    ],
+    "context": "Checco vuole fare il carabiniere ma finisce a fare la guardia nel Duomo. Una ragazza araba lo seduce per arrivare alla Madonnina con una bomba. La terza commedia di Zalone e Nunziante, un altro record d'incassi."
+   },
+   "moreIdeas": [
+    {
+     "title": "Cado dalle nubi",
+     "year": 2009,
+     "connection": "Il primo film di Zalone, sempre a Milano"
+    },
+    {
+     "title": "Sole a catinelle",
+     "year": 2013,
+     "connection": "Zalone e la vacanza promessa"
+    },
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone e il posto fisso"
+    },
+    {
+     "title": "Tolo Tolo",
+     "year": 2020,
+     "connection": "Zalone e l'immigrazione"
+    },
+    {
+     "title": "Benvenuti al Nord",
+     "year": 2012,
+     "connection": "Un meridionale nella Milano che lavora"
+    },
+    {
+     "title": "La leggenda di Al, John e Jack",
+     "year": 2002,
+     "connection": "Aldo Giovanni e Giacomo, tre guardie del corpo"
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni, un ingenuo scambiato per un altro"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Commedia sui soldi a Milano"
+    },
+    {
+     "title": "Fantozzi",
+     "year": 1975,
+     "connection": "La sfortuna come comicità"
+    },
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Commedia italiana di oggi"
+    }
+   ]
+  },
+  "1026227": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Paola Cortellesi dirige e recita Delia",
+     "Roma 1946, in bianco e nero",
+     "Un finale che nessuno si aspetta"
+    ],
+    "context": "Delia vive in un seminterrato di Roma con un marito violento, tre figli e un suocero malato, e trova sempre il modo di andare avanti. Cortellesi racconta la violenza con passi di danza e ironia. Il film più visto in Italia nel 2023."
+   },
+   "moreIdeas": [
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica, la Roma povera del dopoguerra vista da vicino"
+    },
+    {
+     "title": "Roma città aperta",
+     "year": 1945,
+     "connection": "Rossellini, Anna Magnani e le donne della Roma in guerra"
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, una casalinga romana e un vicino solo, nel 1938"
+    },
+    {
+     "title": "Mamma Roma",
+     "year": 1962,
+     "connection": "Pasolini, Anna Magnani madre in lotta per il figlio"
+    },
+    {
+     "title": "Bellissima",
+     "year": 1951,
+     "connection": "Visconti, una madre romana e i suoi sogni"
+    },
+    {
+     "title": "La ciociara",
+     "year": 1960,
+     "connection": "De Sica, Sophia Loren madre nella guerra"
+    },
+    {
+     "title": "Divorzio all'italiana",
+     "year": 1961,
+     "connection": "Germi, il matrimonio italiano preso in giro"
+    },
+    {
+     "title": "La pazza gioia",
+     "year": 2016,
+     "connection": "Virzì, due donne in fuga dalle loro vite"
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, famiglie e soldi nell'Italia di oggi"
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Il dolore raccontato con un sorriso"
+    }
+   ]
+  },
+  "9394": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Terence Hill e Bud Spencer, coppia perfetta",
+     "Parodia del western: schiaffi invece di pistole",
+     "La scena dei fagioli in padella"
+    ],
+    "context": "Trinità, pigro e velocissimo con la pistola, ritrova il fratello Bambino, che si finge sceriffo. Insieme difendono una comunità di mormoni da un proprietario prepotente. Enzo Barboni prende in giro i western all'italiana, ed è il loro film più famoso."
+   },
+   "moreIdeas": [
+    {
+     "title": "...continuavano a chiamarlo Trinità",
+     "year": 1971,
+     "connection": "Il seguito, stessi fratelli, ancora più schiaffi"
+    },
+    {
+     "title": "Dio perdona... io no!",
+     "year": 1967,
+     "connection": "Il primo film di Hill e Spencer insieme, ancora un western serio"
+    },
+    {
+     "title": "Il mio nome è Nessuno",
+     "year": 1973,
+     "connection": "Terence Hill con Henry Fonda, il western che saluta il western"
+    },
+    {
+     "title": "...altrimenti ci arrabbiamo!",
+     "year": 1974,
+     "connection": "Hill e Spencer, una dune buggy e cori di cattivi"
+    },
+    {
+     "title": "Lo chiamavano Bulldozer",
+     "year": 1978,
+     "connection": "Bud Spencer da solo, pugni e cuore"
+    },
+    {
+     "title": "Pari e dispari",
+     "year": 1978,
+     "connection": "Hill e Spencer fratelli di nuovo, a Miami"
+    },
+    {
+     "title": "Per un pugno di dollari",
+     "year": 1964,
+     "connection": "Leone, il western all'italiana preso sul serio"
+    },
+    {
+     "title": "Il buono, il brutto, il cattivo",
+     "year": 1966,
+     "connection": "Leone, il western che Trinità prende in giro"
+    },
+    {
+     "title": "Django",
+     "year": 1966,
+     "connection": "Corbucci, il western all'italiana più cupo"
+    },
+    {
+     "title": "I due superpiedi quasi piatti",
+     "year": 1977,
+     "connection": "Hill e Spencer poliziotti, stessa formula"
+    }
+   ]
+  },
+  "575452": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Pierfrancesco Favino è Tommaso Buscetta",
+     "Il maxiprocesso di Palermo, urla in aula",
+     "Il rapporto tra Buscetta e Falcone"
+    ],
+    "context": "Negli anni Ottanta Tommaso Buscetta, uomo di Cosa Nostra fuggito in Brasile, decide di parlare con il giudice Giovanni Falcone. Marco Bellocchio racconta il primo grande pentito e il prezzo che paga. Favino recita anche in portoghese e siciliano."
+   },
+   "moreIdeas": [
+    {
+     "title": "I cento passi",
+     "year": 2000,
+     "connection": "Giordana, Peppino Impastato contro la mafia di Cinisi"
+    },
+    {
+     "title": "La mafia uccide solo d'estate",
+     "year": 2013,
+     "connection": "Pif, gli anni delle stragi visti da un bambino"
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino, Andreotti e i processi"
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, la camorra di oggi"
+    },
+    {
+     "title": "Suburra",
+     "year": 2015,
+     "connection": "Sollima, Favino politico corrotto a Roma"
+    },
+    {
+     "title": "Salvatore Giuliano",
+     "year": 1962,
+     "connection": "Rosi, il bandito siciliano e lo Stato"
+    },
+    {
+     "title": "Il giorno della civetta",
+     "year": 1968,
+     "connection": "Damiani, la mafia di un paese siciliano"
+    },
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Petri, il potere e la giustizia"
+    },
+    {
+     "title": "Vincere",
+     "year": 2009,
+     "connection": "Bellocchio, la donna nascosta di Mussolini"
+    },
+    {
+     "title": "Esterno notte",
+     "year": 2022,
+     "connection": "Bellocchio, il rapimento di Aldo Moro"
+    }
+   ]
+  },
+  "636565": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Elio Germano, ingegnere sognatore di Bologna",
+     "Una storia vera del 1968",
+     "Una piattaforma diventa Stato nel mare"
+    ],
+    "context": "Giorgio Rosa costruisce una piattaforma in acque internazionali davanti a Rimini e la dichiara una nazione indipendente, con lingua e francobolli. Il governo italiano non la prende bene. Sydney Sibilia racconta una follia vera con leggerezza."
+   },
+   "moreIdeas": [
+    {
+     "title": "Smetto quando voglio",
+     "year": 2014,
+     "connection": "Sibilia, ricercatori geniali e fuorilegge"
+    },
+    {
+     "title": "Smetto quando voglio - Masterclass",
+     "year": 2017,
+     "connection": "Sibilia, il seguito"
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, la Rimini di qualche decennio prima"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi, l'Italia degli anni Sessanta in vacanza"
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Salvatores, un'isola fuori dal mondo"
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Un altro sognatore in un'Italia che non ci crede"
+    },
+    {
+     "title": "Notte prima degli esami",
+     "year": 2006,
+     "connection": "Giovinezza e libertà, in un'estate"
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli, un piano folle di gente comune"
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, l'Italia di oggi e i suoi sogni"
+    },
+    {
+     "title": "Veloce come il vento",
+     "year": 2016,
+     "connection": "Rovere, una storia vera di corse e famiglia in Emilia"
+    }
+   ]
+  },
+  "38396": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Aldo, Giovanni e Giacomo in fuga",
+     "Un poliziotto, un detenuto, un ostaggio",
+     "Gag a ritmo di road movie"
+    ],
+    "context": "Per una serie di equivoci un detenuto, un poliziotto e un passante si ritrovano in fuga insieme, inseguiti da tutti. Il secondo film del trio, diretto con Massimo Venier, viaggia per il Nord Italia tra una risata e l'altra."
+   },
+   "moreIdeas": [
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Il primo film del trio, un altro viaggio"
+    },
+    {
+     "title": "Chiedimi se sono felice",
+     "year": 2000,
+     "connection": "Il trio, amicizia e malinconia"
+    },
+    {
+     "title": "La leggenda di Al, John e Jack",
+     "year": 2002,
+     "connection": "Il trio tra i gangster"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Il trio e la crisi"
+    },
+    {
+     "title": "Non ci resta che piangere",
+     "year": 1984,
+     "connection": "Benigni e Troisi, due amici nei guai"
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni, scambi di persona"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi, la strada italiana"
+    },
+    {
+     "title": "Lo chiamavano Trinità...",
+     "year": 1970,
+     "connection": "Due compari, risse e simpatia"
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli, criminali da ridere"
+    },
+    {
+     "title": "Benvenuti al Nord",
+     "year": 2012,
+     "connection": "Commedia tra Nord e Sud"
+    }
+   ]
+  },
+  "85038": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Siani, postino napoletano trasferito a Milano",
+     "Bisio e Siani ancora insieme",
+     "Pregiudizi rovesciati: ora è il Nord"
+    ],
+    "context": "Mattia, che non ha voglia di lavorare, viene trasferito alle Poste centrali di Milano, dove trova orari, efficienza e un amico che ora deve aiutarlo. Il seguito di Benvenuti al sud è meno sorprendente, ma regge per i due protagonisti."
+   },
+   "moreIdeas": [
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Il primo film, Bisio al Sud"
+    },
+    {
+     "title": "Cado dalle nubi",
+     "year": 2009,
+     "connection": "Zalone, un pugliese a Milano"
+    },
+    {
+     "title": "Che bella giornata",
+     "year": 2011,
+     "connection": "Zalone a Milano"
+    },
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone e il lavoro pubblico"
+    },
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Milano e il Sud in macchina"
+    },
+    {
+     "title": "Rocco e i suoi fratelli",
+     "year": 1960,
+     "connection": "Visconti, una famiglia del Sud a Milano"
+    },
+    {
+     "title": "Ricomincio da tre",
+     "year": 1981,
+     "connection": "Troisi, un napoletano lontano da casa"
+    },
+    {
+     "title": "L'ora legale",
+     "year": 2017,
+     "connection": "Ficarra e Picone, regole e furbizie"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Milano e i soldi"
+    },
+    {
+     "title": "Fantozzi",
+     "year": 1975,
+     "connection": "Villaggio, l'impiegato italiano"
+    }
+   ]
+  },
+  "8882": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Cinque storie dentro la camorra di Scampia",
+     "Attori veri del posto, dialetto stretto",
+     "Dal libro di Roberto Saviano"
+    ],
+    "context": "Due ragazzi che giocano ai gangster, un sarto, un contabile della camorra, un ragazzino e i rifiuti tossici della provincia di Caserta. Garrone filma senza musica e senza eroi. Gran premio della giuria a Cannes."
+   },
+   "moreIdeas": [
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone, la violenza in una periferia"
+    },
+    {
+     "title": "L'imbalsamatore",
+     "year": 2002,
+     "connection": "Garrone, un Sud nero e strano"
+    },
+    {
+     "title": "Reality",
+     "year": 2012,
+     "connection": "Garrone, Napoli e la televisione"
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, un viaggio di migranti"
+    },
+    {
+     "title": "Suburra",
+     "year": 2015,
+     "connection": "Sollima, la criminalità romana"
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, la mafia siciliana"
+    },
+    {
+     "title": "La paranza dei bambini",
+     "year": 2019,
+     "connection": "Giovannesi da Saviano, ragazzini camorristi a Napoli"
+    },
+    {
+     "title": "Salvatore Giuliano",
+     "year": 1962,
+     "connection": "Rosi, il Sud e il potere"
+    },
+    {
+     "title": "Le mani sulla città",
+     "year": 1963,
+     "connection": "Rosi, la speculazione edilizia a Napoli"
+    },
+    {
+     "title": "Non essere cattivo",
+     "year": 2015,
+     "connection": "Caligari, droga e periferia"
+    }
+   ]
+  },
+  "356296": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Roma tra Vaticano, Parlamento e Ostia",
+     "Favino, Borghi e Amendola tutti cattivi",
+     "Sette giorni prima di un'apocalisse annunciata"
+    ],
+    "context": "Un politico, un boss di Ostia, un capo di zingari e un vecchio criminale chiamato Samurai si contendono un affare sul litorale di Roma. Stefano Sollima, già regista di Romanzo criminale, racconta una città dove tutti sono in vendita. Da qui la serie Netflix."
+   },
+   "moreIdeas": [
+    {
+     "title": "Romanzo criminale",
+     "year": 2005,
+     "connection": "Placido, la banda della Magliana nella Roma degli anni Settanta"
+    },
+    {
+     "title": "Non essere cattivo",
+     "year": 2015,
+     "connection": "Caligari, Borghi a Ostia"
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Mainetti, la periferia romana con un supereroe"
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, la camorra"
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, Favino pentito di mafia"
+    },
+    {
+     "title": "Sulla mia pelle",
+     "year": 2018,
+     "connection": "Borghi è Stefano Cucchi"
+    },
+    {
+     "title": "A.C.A.B. - All Cops Are Bastards",
+     "year": 2012,
+     "connection": "Sollima, il primo film, i celerini romani"
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino, la Roma della politica"
+    },
+    {
+     "title": "Accattone",
+     "year": 1961,
+     "connection": "Pasolini, la Roma dei marginali"
+    },
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone, il crimine in una periferia sul mare"
+    }
+   ]
+  },
+  "593402": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Zalone fugge dai debiti fino in Africa",
+     "Il viaggio dei migranti visto da dentro",
+     "Il primo film diretto da Zalone"
+    ],
+    "context": "Checco apre un ristorante sushi in Puglia, fallisce e scappa in Kenya. Quando scoppia una guerra si ritrova sulla rotta dei migranti verso l'Italia. Satira su razzismo e furbizia, più amara dei film precedenti e meno riuscita."
+   },
+   "moreIdeas": [
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone e Nunziante, il loro successo più grande"
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, lo stesso viaggio raccontato senza ridere"
+    },
+    {
+     "title": "Sole a catinelle",
+     "year": 2013,
+     "connection": "Zalone e i debiti"
+    },
+    {
+     "title": "Che bella giornata",
+     "year": 2011,
+     "connection": "Zalone e il terrorismo"
+    },
+    {
+     "title": "Cado dalle nubi",
+     "year": 2009,
+     "connection": "Il primo Zalone"
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Salvatores, italiani lontano da casa"
+    },
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Pregiudizi e incontri"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Commedia sulla crisi"
+    },
+    {
+     "title": "L'ora legale",
+     "year": 2017,
+     "connection": "Ficarra e Picone, satira sul Sud"
+    },
+    {
+     "title": "Fantozzi",
+     "year": 1975,
+     "connection": "La sfortuna come specchio dell'Italia"
+    }
+   ]
+  },
+  "468198": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Valerio Mastandrea fermo a un tavolino",
+     "Ogni desiderio ha un prezzo terribile",
+     "Tutto in un solo bar"
+    ],
+    "context": "In un bar chiamato The Place un uomo misterioso riceve persone che desiderano qualcosa e assegna a ognuna un compito per ottenerlo. Paolo Genovese dopo Perfetti sconosciuti, di nuovo un luogo solo e un cast corale."
+   },
+   "moreIdeas": [
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Genovese, una cena e i segreti di tutti"
+    },
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Genovese, quarantenni che rifanno la maturità"
+    },
+    {
+     "title": "Tutta colpa di Freud",
+     "year": 2014,
+     "connection": "Genovese, padre e figlie"
+    },
+    {
+     "title": "Una famiglia perfetta",
+     "year": 2012,
+     "connection": "Genovese, una famiglia in affitto"
+    },
+    {
+     "title": "Il nome del figlio",
+     "year": 2015,
+     "connection": "Archibugi, una cena tra parenti"
+    },
+    {
+     "title": "La migliore offerta",
+     "year": 2013,
+     "connection": "Tornatore, un gioco di inganni"
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Carrisi, un mistero e un uomo che manipola"
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, scelte e colpe"
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino, un uomo misterioso in un albergo"
+    },
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Petri, potere e colpa"
+    }
+   ]
+  },
+  "11010": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Troisi, già malato, nella sua ultima parte",
+     "Noiret fa un Neruda ironico e affettuoso",
+     "Musica di Bacalov, premiata con l'Oscar"
+    ],
+    "context": "Un postino di un'isola porta la posta a un solo cliente, Pablo Neruda in esilio, e scopre che le metafore servono anche a conquistare una ragazza. Troisi morì il giorno dopo la fine delle riprese. Girato tra Procida e Salina."
+   },
+   "moreIdeas": [
+    {
+     "title": "Ricomincio da tre",
+     "year": 1981,
+     "connection": "Il primo film di Troisi da regista, timido e napoletano come Mario"
+    },
+    {
+     "title": "Scusate il ritardo",
+     "year": 1983,
+     "connection": "Troisi di nuovo regista e attore, una storia d'amore impacciata a Napoli"
+    },
+    {
+     "title": "Non ci resta che piangere",
+     "year": 1984,
+     "connection": "Troisi e Benigni insieme, finiti per sbaglio nel Quattrocento"
+    },
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Un ragazzo e il suo maestro anziano, in un paese siciliano"
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Soldati dimenticati su un'isola greca, vita lenta e nostalgia"
+    },
+    {
+     "title": "Caro diario",
+     "year": 1993,
+     "connection": "Moretti gira le isole Eolie in traghetto, Salina compresa"
+    },
+    {
+     "title": "L'uomo delle stelle",
+     "year": 1995,
+     "connection": "Tornatore, la Sicilia anni Cinquanta e il sogno del cinema"
+    },
+    {
+     "title": "Malèna",
+     "year": 2000,
+     "connection": "Tornatore, un ragazzo innamorato in un paese di mare durante la guerra"
+    },
+    {
+     "title": "Pane e tulipani",
+     "year": 2000,
+     "connection": "Una casalinga si perde a Venezia e trova un'altra vita"
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Commedia e dolore nello stesso film, come qui"
+    }
+   ]
+  },
+  "7857": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Fellini ricorda la sua Rimini anni Trenta",
+     "Il transatlantico Rex di notte sul mare",
+     "Un pavone nella neve, la Gradisca, lo zio"
+    ],
+    "context": "Un anno nella vita di un paese di mare durante il fascismo, visto dal ragazzo Titta e dalla sua famiglia rumorosa. Scuola, preti, gerarchi, primi desideri. Il titolo è romagnolo: a m'arcord, mi ricordo. Oscar per il miglior film straniero."
+   },
+   "moreIdeas": [
+    {
+     "title": "I vitelloni",
+     "year": 1953,
+     "connection": "Fellini, gli stessi luoghi vent'anni dopo, giovani che non crescono"
+    },
+    {
+     "title": "8½",
+     "year": 1963,
+     "connection": "Fellini, ricordi e sogni di un regista"
+    },
+    {
+     "title": "Roma",
+     "year": 1972,
+     "connection": "Fellini subito prima, la città dei suoi ricordi"
+    },
+    {
+     "title": "La dolce vita",
+     "year": 1960,
+     "connection": "Fellini, Roma e le sue notti"
+    },
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Un paese, un ragazzo e la memoria"
+    },
+    {
+     "title": "È stata la mano di Dio",
+     "year": 2021,
+     "connection": "Sorrentino, la sua adolescenza a Napoli"
+    },
+    {
+     "title": "Il giardino dei Finzi-Contini",
+     "year": 1970,
+     "connection": "De Sica, gli anni del fascismo in provincia"
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, il fascismo dentro una casa"
+    },
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, l'Emilia e il fascismo"
+    },
+    {
+     "title": "Malèna",
+     "year": 2000,
+     "connection": "Tornatore, un ragazzo e un paese di mare in guerra"
+    }
+   ]
+  },
+  "406385": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "La banda di ricercatori lavora per la polizia",
+     "Più azione, stesso cinismo sul lavoro precario",
+     "Un treno da assaltare come in un western"
+    ],
+    "context": "La polizia offre alla banda di Pietro la fedina pulita in cambio di un lavoro: scovare le nuove droghe legali in circolazione. Il secondo capitolo della trilogia di Sydney Sibilia è più grande e più veloce, e prepara il finale."
+   },
+   "moreIdeas": [
+    {
+     "title": "Smetto quando voglio",
+     "year": 2014,
+     "connection": "Il primo capitolo, dove nasce la banda"
+    },
+    {
+     "title": "Smetto quando voglio - Ad honorem",
+     "year": 2017,
+     "connection": "Il terzo e ultimo capitolo"
+    },
+    {
+     "title": "L'incredibile storia dell'Isola delle Rose",
+     "year": 2020,
+     "connection": "Sibilia, un'altra banda di sognatori"
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli, la banda di dilettanti originale"
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Il cinema di genere a Roma"
+    },
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Amici romani alle prese con la vita adulta"
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Un gruppo e i suoi segreti"
+    },
+    {
+     "title": "Suburra",
+     "year": 2015,
+     "connection": "La droga a Roma, ma sul serio"
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, soldi e ambizioni"
+    },
+    {
+     "title": "Il ragazzo invisibile",
+     "year": 2014,
+     "connection": "Supereroi all'italiana"
+    }
+   ]
+  },
+  "38397": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Aldo, Giovanni e Giacomo gangster a New York",
+     "Anni Cinquanta, completi e cappelli",
+     "Uno dei tre perde la memoria"
+    ],
+    "context": "Tre piccoli mafiosi italoamericani devono eliminare un traditore, ma uno dei tre perde la memoria e si dimentica pure di essere un gangster. Il trio cambia ambientazione e gioca con i film di mafia americani."
+   },
+   "moreIdeas": [
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Il primo film del trio"
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Il trio in fuga"
+    },
+    {
+     "title": "Chiedimi se sono felice",
+     "year": 2000,
+     "connection": "Il trio subito prima, più malinconico"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Il trio anni dopo"
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni e la mafia presa in giro"
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli, criminali goffi"
+    },
+    {
+     "title": "Che bella giornata",
+     "year": 2011,
+     "connection": "Zalone tra criminali per sbaglio"
+    },
+    {
+     "title": "La mafia uccide solo d'estate",
+     "year": 2013,
+     "connection": "Pif, la mafia raccontata con l'ironia"
+    },
+    {
+     "title": "Lo chiamavano Trinità...",
+     "year": 1970,
+     "connection": "Il genere americano rifatto per ridere"
+    },
+    {
+     "title": "Il mio nome è Nessuno",
+     "year": 1973,
+     "connection": "Un altro omaggio ironico ai miti americani"
+    }
+   ]
+  },
+  "336": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Rod Steiger bandito, James Coburn dinamitardo",
+     "La rivoluzione messicana vista da Leone",
+     "Morricone e il coro: Sean, Sean"
+    ],
+    "context": "Juan, bandito messicano, vuole rapinare una banca e incontra John, un esperto di esplosivi irlandese in fuga. Si ritrovano dentro la rivoluzione senza averlo scelto. L'ultimo western diretto da Leone, il più politico e il più amaro."
+   },
+   "moreIdeas": [
+    {
+     "title": "C'era una volta il West",
+     "year": 1968,
+     "connection": "Leone subito prima, il suo western più grande"
+    },
+    {
+     "title": "Il buono, il brutto, il cattivo",
+     "year": 1966,
+     "connection": "Leone, l'avventura e la guerra"
+    },
+    {
+     "title": "Per qualche dollaro in più",
+     "year": 1965,
+     "connection": "Leone, due uomini diversi che si alleano"
+    },
+    {
+     "title": "Quién sabe?",
+     "year": 1966,
+     "connection": "Damiani, un altro western sulla rivoluzione messicana"
+    },
+    {
+     "title": "Faccia a faccia",
+     "year": 1967,
+     "connection": "Sollima, western e politica"
+    },
+    {
+     "title": "Il mio nome è Nessuno",
+     "year": 1973,
+     "connection": "Prodotto da Leone, l'addio ironico al genere"
+    },
+    {
+     "title": "Il grande silenzio",
+     "year": 1968,
+     "connection": "Corbucci, un western cupo e politico"
+    },
+    {
+     "title": "Django",
+     "year": 1966,
+     "connection": "Corbucci, il western all'italiana più violento"
+    },
+    {
+     "title": "La battaglia di Algeri",
+     "year": 1966,
+     "connection": "Pontecorvo, una rivoluzione vera raccontata da vicino"
+    },
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, contadini e rivoluzione in Emilia"
+    }
+   ]
+  },
+  "405": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Giulietta Masina, Gelsomina dagli occhi enormi",
+     "Anthony Quinn, Zampanò forzuto e brutale",
+     "Il tema di Nino Rota alla tromba"
+    ],
+    "context": "Una ragazza povera viene venduta a un artista di strada che spezza catene col petto, e lo segue per l'Italia del dopoguerra. Incontrano il Matto, un equilibrista. Fellini prima del Fellini barocco: semplice, crudele, commovente. Il primo Oscar per il film straniero."
+   },
+   "moreIdeas": [
+    {
+     "title": "Le notti di Cabiria",
+     "year": 1957,
+     "connection": "Fellini e la Masina di nuovo, un'altra anima ingenua"
+    },
+    {
+     "title": "I vitelloni",
+     "year": 1953,
+     "connection": "Fellini subito prima, la provincia e i sogni"
+    },
+    {
+     "title": "Il bidone",
+     "year": 1955,
+     "connection": "Fellini, truffatori in giro per l'Italia"
+    },
+    {
+     "title": "La dolce vita",
+     "year": 1960,
+     "connection": "Fellini, Roma e il suo vuoto"
+    },
+    {
+     "title": "8½",
+     "year": 1963,
+     "connection": "Fellini, il circo finale"
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, la memoria e la provincia"
+    },
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica, la povertà del dopoguerra"
+    },
+    {
+     "title": "Umberto D.",
+     "year": 1952,
+     "connection": "De Sica, un uomo solo e un cane"
+    },
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Rohrwacher, un'anima innocente in un mondo crudele"
+    },
+    {
+     "title": "Freaks Out",
+     "year": 2021,
+     "connection": "Mainetti, artisti di circo in un'Italia in guerra"
+    }
+   ]
+  },
+  "8832": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Toni Servillo, Andreotti immobile e ironico",
+     "La corrente di Andreotti come una banda",
+     "Il trucco di Servillo, candidato all'Oscar"
+    ],
+    "context": "Giulio Andreotti all'inizio degli anni Novanta, mentre forma il suo settimo governo e poi affronta il processo per mafia. Sorrentino lo racconta come un personaggio da fumetto, con musica pop, rallentatori e battute taglienti. Premio della giuria a Cannes."
+   },
+   "moreIdeas": [
+    {
+     "title": "Loro",
+     "year": 2018,
+     "connection": "Sorrentino e Servillo, Berlusconi dopo Andreotti"
+    },
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Sorrentino e Servillo, la Roma del potere mondano"
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino e Servillo, un uomo chiuso nel silenzio"
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, gli stessi anni dal lato della mafia"
+    },
+    {
+     "title": "Todo modo",
+     "year": 1976,
+     "connection": "Petri, potenti della Democrazia cristiana chiusi in un eremo"
+    },
+    {
+     "title": "Il caso Mattei",
+     "year": 1972,
+     "connection": "Rosi, il petrolio e la morte di un uomo di Stato"
+    },
+    {
+     "title": "Esterno notte",
+     "year": 2022,
+     "connection": "Bellocchio, il caso Moro"
+    },
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Petri, un potere che si crede intoccabile"
+    },
+    {
+     "title": "Il portaborse",
+     "year": 1991,
+     "connection": "Luchetti, un ministro e il suo scrittore"
+    },
+    {
+     "title": "La mafia uccide solo d'estate",
+     "year": 2013,
+     "connection": "Pif, Andreotti visto da un bambino palermitano"
+    }
+   ]
+  },
+  "27670": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Benigni e Troisi insieme, unica volta",
+     "Finiti nel 1492, vogliono fermare Colombo",
+     "La lettera a Savonarola"
+    ],
+    "context": "Un maestro e un bidello rimangono bloccati con l'auto a un passaggio a livello in Toscana e si ritrovano nel Quattrocento. Decidono di fermare Colombo per salvare l'America, o almeno di non annoiarsi. Molte scene sono improvvisate."
+   },
+   "moreIdeas": [
+    {
+     "title": "Ricomincio da tre",
+     "year": 1981,
+     "connection": "Troisi, il suo primo film"
+    },
+    {
+     "title": "Scusate il ritardo",
+     "year": 1983,
+     "connection": "Troisi, l'amore impacciato a Napoli"
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "L'ultimo film di Troisi"
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni, equivoci a Palermo"
+    },
+    {
+     "title": "Il piccolo diavolo",
+     "year": 1988,
+     "connection": "Benigni, un diavoletto e un prete"
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Benigni, il suo film più famoso"
+    },
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Un altro viaggio comico sbagliato"
+    },
+    {
+     "title": "L'armata Brancaleone",
+     "year": 1966,
+     "connection": "Monicelli, un Medioevo comico e straccione"
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Il trio in fuga, coppie comiche che funzionano"
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli, la commedia all'italiana"
+    }
+   ]
+  },
+  "239877": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Pif, regista e protagonista, racconta Palermo",
+     "Le stragi viste da un bambino innamorato",
+     "Andreotti come idolo di un ragazzino"
+    ],
+    "context": "Arturo nasce a Palermo nel giorno di un omicidio di mafia e cresce tra gli anni Settanta e il 1992, innamorato di una compagna di scuola. Intorno a lui la mafia uccide magistrati e poliziotti, e gli adulti fanno finta di niente. Si ride, poi non più."
+   },
+   "moreIdeas": [
+    {
+     "title": "I cento passi",
+     "year": 2000,
+     "connection": "Giordana, Peppino Impastato contro la mafia"
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, Buscetta e il maxiprocesso"
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni, la mafia e Palermo per ridere"
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino, Andreotti"
+    },
+    {
+     "title": "L'ora legale",
+     "year": 2017,
+     "connection": "Ficarra e Picone, la Sicilia e le regole"
+    },
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Un'infanzia siciliana"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Un bambino e un crimine più grande di lui"
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, la camorra"
+    },
+    {
+     "title": "Il giorno della civetta",
+     "year": 1968,
+     "connection": "Damiani, la mafia di paese"
+    },
+    {
+     "title": "Salvatore Giuliano",
+     "year": 1962,
+     "connection": "Rosi, la Sicilia e lo Stato"
+    }
+   ]
+  },
+  "9474": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Terence Hill giovane, Henry Fonda leggenda stanca",
+     "Prodotto da Leone, diretto da Tonino Valerii",
+     "Morricone cita Wagner per il Mucchio selvaggio"
+    ],
+    "context": "Un pistolero famoso vuole ritirarsi in Europa, ma un giovane sconosciuto che lo ammira vuole fargli affrontare da solo 150 banditi a cavallo. Commedia e malinconia insieme: è l'addio al western all'italiana."
+   },
+   "moreIdeas": [
+    {
+     "title": "Lo chiamavano Trinità...",
+     "year": 1970,
+     "connection": "Terence Hill, il western per ridere"
+    },
+    {
+     "title": "...continuavano a chiamarlo Trinità",
+     "year": 1971,
+     "connection": "Il seguito con Bud Spencer"
+    },
+    {
+     "title": "C'era una volta il West",
+     "year": 1968,
+     "connection": "Leone e Henry Fonda cattivo"
+    },
+    {
+     "title": "Il buono, il brutto, il cattivo",
+     "year": 1966,
+     "connection": "Leone al massimo"
+    },
+    {
+     "title": "Giù la testa",
+     "year": 1971,
+     "connection": "Leone, l'ultimo western diretto da lui"
+    },
+    {
+     "title": "Per qualche dollaro in più",
+     "year": 1965,
+     "connection": "Leone, un vecchio e un giovane pistolero"
+    },
+    {
+     "title": "Il grande silenzio",
+     "year": 1968,
+     "connection": "Corbucci, la fine dell'eroe"
+    },
+    {
+     "title": "Django",
+     "year": 1966,
+     "connection": "Corbucci, il western cupo"
+    },
+    {
+     "title": "...altrimenti ci arrabbiamo!",
+     "year": 1974,
+     "connection": "Hill e Spencer fuori dal western"
+    },
+    {
+     "title": "Pari e dispari",
+     "year": 1978,
+     "connection": "Hill e Spencer fratelli"
+    }
+   ]
+  },
+  "58013": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Aldo, Giovanni e Giacomo vestiti da Babbo Natale",
+     "Tre amici arrestati la vigilia di Natale",
+     "Un interrogatorio raccontato a pezzi"
+    ],
+    "context": "La notte di Natale tre amici travestiti da Babbo Natale vengono arrestati per furto. In commissariato ognuno racconta la sua versione. Una commedia natalizia del trio, con le loro mogli e amanti a complicare tutto."
+   },
+   "moreIdeas": [
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Il primo film del trio"
+    },
+    {
+     "title": "Chiedimi se sono felice",
+     "year": 2000,
+     "connection": "Il trio e l'amicizia"
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Il trio in fuga"
+    },
+    {
+     "title": "La leggenda di Al, John e Jack",
+     "year": 2002,
+     "connection": "Il trio tra i gangster"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Il trio dopo"
+    },
+    {
+     "title": "Una famiglia perfetta",
+     "year": 2012,
+     "connection": "Genovese, un Natale in affitto"
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Amici e segreti"
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli, ladri dilettanti"
+    },
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Amici che non crescono"
+    },
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Commedia italiana di successo"
+    }
+   ]
+  },
+  "468202": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Toni Servillo, ispettore che manipola i media",
+     "Una ragazza scompare in un paese di montagna",
+     "Donato Carrisi dirige il suo romanzo"
+    ],
+    "context": "In un paese delle Alpi sparisce una ragazza alla vigilia di Natale. L'ispettore Vogel usa la televisione per trovare un colpevole, e lo trova in un professore. Un giallo freddo e cupo, con Jean Reno e Alessio Boni."
+   },
+   "moreIdeas": [
+    {
+     "title": "L'uomo del labirinto",
+     "year": 2019,
+     "connection": "Carrisi di nuovo, un altro rapimento e Servillo"
+    },
+    {
+     "title": "La migliore offerta",
+     "year": 2013,
+     "connection": "Tornatore, un mistero e un inganno"
+    },
+    {
+     "title": "The Place",
+     "year": 2017,
+     "connection": "Genovese, un uomo che manipola chi gli sta davanti"
+    },
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento, un giallo da risolvere con un dettaglio"
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, un fatto di cronaca e le colpe di tutti"
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino e Servillo, un uomo misterioso"
+    },
+    {
+     "title": "La sconosciuta",
+     "year": 2006,
+     "connection": "Tornatore, un passato nascosto"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Salvatores, un bambino rapito"
+    },
+    {
+     "title": "La casa dalle finestre che ridono",
+     "year": 1976,
+     "connection": "Avati, un mistero di paese"
+    },
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Petri, un poliziotto che si crede sopra la legge"
+    }
+   ]
+  },
+  "33365": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "La notte prima della maturità, 1989",
+     "Giorgio Faletti, professore temuto",
+     "Musica italiana anni Ottanta ovunque"
+    ],
+    "context": "Luca ha insultato il professore che ora gli farà l'esame di maturità, e si innamora di una ragazza che non sa chi sia. Fausto Brizzi racconta un'estate romana di diciottenni. Un grande successo, con seguiti."
+   },
+   "moreIdeas": [
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Genovese, quarantenni che rifanno la maturità"
+    },
+    {
+     "title": "Notte prima degli esami - Oggi",
+     "year": 2007,
+     "connection": "Il seguito, stessi ragazzi nel 2006"
+    },
+    {
+     "title": "Come te nessuno mai",
+     "year": 1999,
+     "connection": "Muccino, adolescenti romani e il primo amore"
+    },
+    {
+     "title": "L'ultimo bacio",
+     "year": 2001,
+     "connection": "Muccino, la paura di diventare grandi"
+    },
+    {
+     "title": "Ecce bombo",
+     "year": 1978,
+     "connection": "Moretti, studenti senza direzione"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Un'estate che cambia tutto"
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, adolescenza e scuola"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Un ragazzo timido e un'estate"
+    },
+    {
+     "title": "Tutta colpa di Freud",
+     "year": 2014,
+     "connection": "Genovese, amori e figlie"
+    },
+    {
+     "title": "Odio l'estate",
+     "year": 2020,
+     "connection": "Aldo Giovanni e Giacomo, una vacanza di famiglia"
+    }
+   ]
+  },
+  "768334": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Cinque estranei, un camper, un bosco calabrese",
+     "Gioca con i cliché dell'horror americano",
+     "Le leggende di Osso, Mastrosso e Carcagnosso"
+    ],
+    "context": "Cinque viaggiatori in car sharing si schiantano e si risvegliano davanti a una casa nel bosco, in Calabria. Roberto De Feo e Paolo Strippoli mescolano horror e leggende sulle origini delle mafie del Sud. Su Netflix."
+   },
+   "moreIdeas": [
+    {
+     "title": "Suspiria",
+     "year": 1977,
+     "connection": "Argento, l'horror italiano al massimo"
+    },
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento, paura e mistero"
+    },
+    {
+     "title": "La casa dalle finestre che ridono",
+     "year": 1976,
+     "connection": "Avati, la paura in campagna"
+    },
+    {
+     "title": "The Nest – Il nido",
+     "year": 2019,
+     "connection": "De Feo, una villa isolata e un segreto"
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone, favole crude"
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, la criminalità organizzata"
+    },
+    {
+     "title": "La maschera del demonio",
+     "year": 1960,
+     "connection": "Bava, l'horror gotico italiano"
+    },
+    {
+     "title": "L'uccello dalle piume di cristallo",
+     "year": 1970,
+     "connection": "Argento, il primo giallo"
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Un genere straniero rifatto in Italia"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Un bambino, un buco e un segreto"
+    }
+   ]
+  },
+  "12776": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Benigni ha due ruoli: autista e boss",
+     "Palermo, cocaina e una banana",
+     "Nicoletta Braschi, moglie del boss"
+    ],
+    "context": "Dante, autista di scuolabus ingenuo, è identico a un boss mafioso che vuole sparire. La moglie del boss lo porta a Palermo per farlo uccidere al suo posto. Benigni ride della mafia e dei luoghi comuni sulla Sicilia."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il mostro",
+     "year": 1994,
+     "connection": "Benigni, un altro innocente scambiato per colpevole"
+    },
+    {
+     "title": "Non ci resta che piangere",
+     "year": 1984,
+     "connection": "Benigni e Troisi"
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Benigni, il suo film più famoso"
+    },
+    {
+     "title": "Il piccolo diavolo",
+     "year": 1988,
+     "connection": "Benigni e Walter Matthau"
+    },
+    {
+     "title": "La mafia uccide solo d'estate",
+     "year": 2013,
+     "connection": "Pif, la mafia raccontata con ironia"
+    },
+    {
+     "title": "La leggenda di Al, John e Jack",
+     "year": 2002,
+     "connection": "Gangster da ridere"
+    },
+    {
+     "title": "Che bella giornata",
+     "year": 2011,
+     "connection": "Zalone scambiato per qualcuno che non è"
+    },
+    {
+     "title": "L'ora legale",
+     "year": 2017,
+     "connection": "Ficarra e Picone, la Sicilia per ridere"
+    },
+    {
+     "title": "Pinocchio",
+     "year": 2002,
+     "connection": "Benigni burattino"
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli, criminali goffi"
+    }
+   ]
+  },
+  "57112": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Aldo, Giovanni e Giacomo divisi in tre storie",
+     "Paola Cortellesi è Claudia",
+     "Tre uomini, una donna, Milano"
+    ],
+    "context": "Un tassista, un uomo appena lasciato e un pubblicitario si ritrovano tutti legati alla stessa donna, Claudia. Il trio recita per una volta separato, con storie che si incrociano. Più commedia sentimentale che comica."
+   },
+   "moreIdeas": [
+    {
+     "title": "Chiedimi se sono felice",
+     "year": 2000,
+     "connection": "Il trio, amicizia e una donna in mezzo"
+    },
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Il primo film del trio"
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Il trio in fuga"
+    },
+    {
+     "title": "La banda dei Babbi Natale",
+     "year": 2010,
+     "connection": "Il trio a Natale"
+    },
+    {
+     "title": "C'è ancora domani",
+     "year": 2023,
+     "connection": "Paola Cortellesi regista"
+    },
+    {
+     "title": "L'ultimo bacio",
+     "year": 2001,
+     "connection": "Muccino, coppie in crisi"
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Coppie e segreti"
+    },
+    {
+     "title": "Pane e tulipani",
+     "year": 2000,
+     "connection": "Una donna e una vita nuova"
+    },
+    {
+     "title": "Le fate ignoranti",
+     "year": 2001,
+     "connection": "Özpetek, un amore scoperto dopo"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Il trio a Milano"
+    }
+   ]
+  },
+  "359156": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Luca Marinelli e Alessandro Borghi, amici veri",
+     "Ostia, anni Novanta, droga e lealtà",
+     "L'ultimo film di Claudio Caligari"
+    ],
+    "context": "Cesare e Vittorio sono cresciuti insieme a Ostia tra spaccio e notti senza fine. Uno prova a cambiare vita, l'altro no. Caligari morì prima dell'uscita e Valerio Mastandrea lo portò a termine. Due attori che poi sono diventati famosi."
+   },
+   "moreIdeas": [
+    {
+     "title": "Amore tossico",
+     "year": 1983,
+     "connection": "Caligari, il primo film, l'eroina a Ostia con attori veri"
+    },
+    {
+     "title": "Suburra",
+     "year": 2015,
+     "connection": "Sollima, Borghi a Ostia"
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Marinelli cattivo nella periferia romana"
+    },
+    {
+     "title": "Sulla mia pelle",
+     "year": 2018,
+     "connection": "Borghi è Stefano Cucchi"
+    },
+    {
+     "title": "Accattone",
+     "year": 1961,
+     "connection": "Pasolini, la vita di borgata"
+    },
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone, un'amicizia malata in periferia"
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, ragazzi e criminalità"
+    },
+    {
+     "title": "Romanzo criminale",
+     "year": 2005,
+     "connection": "Placido, la Roma criminale"
+    },
+    {
+     "title": "Mamma Roma",
+     "year": 1962,
+     "connection": "Pasolini, un figlio della periferia"
+    },
+    {
+     "title": "Il ragazzo invisibile",
+     "year": 2014,
+     "connection": "Un ragazzo e un mondo duro"
+    }
+   ]
+  },
+  "250235": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Marco Giallini, psicanalista padre di tre figlie",
+     "Tre storie d'amore sbagliate a Roma",
+     "Una commedia di Genovese"
+    ],
+    "context": "Francesco, psicanalista separato, cresce da solo tre figlie, ognuna innamorata della persona sbagliata. Prova ad aiutarle con il suo mestiere e non funziona. Una commedia leggera con Vittoria Puccini e Anna Foglietta."
+   },
+   "moreIdeas": [
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Genovese, Giallini e il suo cast"
+    },
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Genovese, amici quarantenni"
+    },
+    {
+     "title": "The Place",
+     "year": 2017,
+     "connection": "Genovese, desideri e prezzi"
+    },
+    {
+     "title": "Una famiglia perfetta",
+     "year": 2012,
+     "connection": "Genovese, famiglie e finzioni"
+    },
+    {
+     "title": "L'ultimo bacio",
+     "year": 2001,
+     "connection": "Muccino, amori a Roma"
+    },
+    {
+     "title": "Mine vaganti",
+     "year": 2010,
+     "connection": "Özpetek, una famiglia e una verità"
+    },
+    {
+     "title": "Notte prima degli esami",
+     "year": 2006,
+     "connection": "Amori adolescenti a Roma"
+    },
+    {
+     "title": "Il nome del figlio",
+     "year": 2015,
+     "connection": "Archibugi, una famiglia a cena"
+    },
+    {
+     "title": "Tu la conosci Claudia?",
+     "year": 2004,
+     "connection": "Amori incrociati a Milano"
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, padri e figlie"
+    }
+   ]
+  },
+  "10772": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Franco Nero trascina una bara nel fango",
+     "Sergio Corbucci, il western più violento",
+     "Ha ispirato decine di imitazioni"
+    ],
+    "context": "Un ex soldato arriva in una città di confine piena di fango con una bara dietro di sé, in mezzo a una guerra tra razzisti incappucciati e banditi messicani. Corbucci fa un western cupo e sporco. Tarantino lo cita in Django Unchained."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il grande silenzio",
+     "year": 1968,
+     "connection": "Corbucci, la neve al posto del fango"
+    },
+    {
+     "title": "Per un pugno di dollari",
+     "year": 1964,
+     "connection": "Leone, uno straniero tra due bande"
+    },
+    {
+     "title": "Il buono, il brutto, il cattivo",
+     "year": 1966,
+     "connection": "Leone, il western all'italiana più famoso"
+    },
+    {
+     "title": "Faccia a faccia",
+     "year": 1967,
+     "connection": "Sollima, il western che pensa"
+    },
+    {
+     "title": "La resa dei conti",
+     "year": 1966,
+     "connection": "Sollima, una caccia all'uomo"
+    },
+    {
+     "title": "Il mercenario",
+     "year": 1968,
+     "connection": "Corbucci, Franco Nero nella rivoluzione messicana"
+    },
+    {
+     "title": "Quién sabe?",
+     "year": 1966,
+     "connection": "Damiani, western e politica"
+    },
+    {
+     "title": "Giù la testa",
+     "year": 1971,
+     "connection": "Leone, la rivoluzione"
+    },
+    {
+     "title": "Lo chiamavano Trinità...",
+     "year": 1970,
+     "connection": "La parodia di questi western"
+    },
+    {
+     "title": "C'era una volta il West",
+     "year": 1968,
+     "connection": "Leone, la vendetta"
+    }
+   ]
+  },
+  "11829": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Trinità e Bambino di nuovo insieme",
+     "Il pranzo al ristorante elegante",
+     "Più comico e meno western del primo"
+    ],
+    "context": "Il padre morente chiede ai due figli di diventare veri banditi. Loro ci provano, ma finiscono per fare i buoni contro una banda di trafficanti d'armi. Il seguito fu un successo ancora più grande del primo film."
+   },
+   "moreIdeas": [
+    {
+     "title": "Lo chiamavano Trinità...",
+     "year": 1970,
+     "connection": "Il primo film dei due fratelli"
+    },
+    {
+     "title": "Il mio nome è Nessuno",
+     "year": 1973,
+     "connection": "Terence Hill e l'addio al western"
+    },
+    {
+     "title": "...altrimenti ci arrabbiamo!",
+     "year": 1974,
+     "connection": "Hill e Spencer, una dune buggy rossa"
+    },
+    {
+     "title": "Pari e dispari",
+     "year": 1978,
+     "connection": "Hill e Spencer, scommesse a Miami"
+    },
+    {
+     "title": "Lo chiamavano Bulldozer",
+     "year": 1978,
+     "connection": "Bud Spencer da solo"
+    },
+    {
+     "title": "I due superpiedi quasi piatti",
+     "year": 1977,
+     "connection": "Hill e Spencer poliziotti"
+    },
+    {
+     "title": "Dio perdona... io no!",
+     "year": 1967,
+     "connection": "Il primo film della coppia"
+    },
+    {
+     "title": "Django",
+     "year": 1966,
+     "connection": "Il western che qui si prende in giro"
+    },
+    {
+     "title": "Per un pugno di dollari",
+     "year": 1964,
+     "connection": "Leone, l'inizio di tutto"
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Un'altra coppia comica in fuga"
+    }
+   ]
+  },
+  "606954": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Aldo, Giovanni e Giacomo con le famiglie",
+     "Tre famiglie nella stessa casa al mare",
+     "Più tenero che comico"
+    ],
+    "context": "Per un errore di prenotazione tre famiglie molto diverse si ritrovano nella stessa casa per le vacanze estive. All'inizio si odiano, poi no. Il ritorno del trio con Massimo Venier, dopo anni di film meno riusciti, è una commedia gentile sulle famiglie."
+   },
+   "moreIdeas": [
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Il trio e Venier, il loro primo film insieme"
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Il trio in viaggio"
+    },
+    {
+     "title": "Chiedimi se sono felice",
+     "year": 2000,
+     "connection": "Il trio e l'amicizia"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Il trio e la crisi"
+    },
+    {
+     "title": "Sole a catinelle",
+     "year": 2013,
+     "connection": "Zalone, una vacanza promessa"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi, l'estate italiana"
+    },
+    {
+     "title": "Notte prima degli esami",
+     "year": 2006,
+     "connection": "Un'estate di ragazzi"
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Famiglie e segreti"
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Un'estate fuori dal tempo"
+    },
+    {
+     "title": "Ferie d'agosto",
+     "year": 1996,
+     "connection": "Virzì, due famiglie opposte in vacanza a Ventotene"
+    }
+   ]
+  },
+  "307": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Anna Magnani corre dietro al camion",
+     "Aldo Fabrizi, prete della Resistenza",
+     "Girato a Roma pochi mesi dopo la liberazione"
+    ],
+    "context": "Roma, inverno 1944, sotto l'occupazione tedesca: un ingegnere comunista, un prete e una vedova incinta nascondono e aiutano la Resistenza. Rossellini gira con poca pellicola e attori presi ovunque. Tra gli sceneggiatori c'è il giovane Fellini."
+   },
+   "moreIdeas": [
+    {
+     "title": "Paisà",
+     "year": 1946,
+     "connection": "Rossellini, la liberazione in sei storie"
+    },
+    {
+     "title": "Germania anno zero",
+     "year": 1948,
+     "connection": "Rossellini, la Berlino distrutta, terzo film della trilogia"
+    },
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica, la Roma del dopoguerra"
+    },
+    {
+     "title": "Sciuscià",
+     "year": 1946,
+     "connection": "De Sica, ragazzi nella Roma liberata"
+    },
+    {
+     "title": "Mamma Roma",
+     "year": 1962,
+     "connection": "Pasolini, Anna Magnani di nuovo madre"
+    },
+    {
+     "title": "Bellissima",
+     "year": 1951,
+     "connection": "Visconti, Anna Magnani e il cinema"
+    },
+    {
+     "title": "La ciociara",
+     "year": 1960,
+     "connection": "De Sica, la guerra vista da una madre"
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, Roma sotto il fascismo"
+    },
+    {
+     "title": "Il generale Della Rovere",
+     "year": 1959,
+     "connection": "Rossellini, un truffatore nella Genova occupata"
+    },
+    {
+     "title": "C'è ancora domani",
+     "year": 2023,
+     "connection": "Cortellesi, Roma un anno dopo"
+    }
+   ]
+  },
+  "1127166": {
+   "whyWatch": {
+    "recommendation": "NO",
+    "reasons": [
+     "Romanzo per ragazzi diventato film Netflix",
+     "Dialoghi scritti, personaggi poco credibili",
+     "Visto da milioni, stroncato dai critici"
+    ],
+    "context": "Nica e Rigel crescono nello stesso orfanotrofio e vengono adottati dalla stessa famiglia. Tra loro odio e attrazione, con un segreto del passato. Fenomeno tra gli adolescenti, ma come film è costruito con i luoghi comuni del genere. Utile solo per l'italiano parlato giovane."
+   },
+   "moreIdeas": [
+    {
+     "title": "Notte prima degli esami",
+     "year": 2006,
+     "connection": "Brizzi, un amore adolescente romano meglio raccontato"
+    },
+    {
+     "title": "Come te nessuno mai",
+     "year": 1999,
+     "connection": "Muccino, adolescenti veri"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Salvatores, un'infanzia e un segreto"
+    },
+    {
+     "title": "Il ragazzo invisibile",
+     "year": 2014,
+     "connection": "Salvatores, un adolescente e un potere"
+    },
+    {
+     "title": "Tutta colpa di Freud",
+     "year": 2014,
+     "connection": "Genovese, amori complicati"
+    },
+    {
+     "title": "L'ultimo bacio",
+     "year": 2001,
+     "connection": "Muccino, amori in crisi"
+    },
+    {
+     "title": "Le otto montagne",
+     "year": 2022,
+     "connection": "Un legame lungo una vita"
+    },
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Un ragazzo e una famiglia che lo usa"
+    },
+    {
+     "title": "Pinocchio",
+     "year": 2019,
+     "connection": "Un orfano di legno e il suo padre"
+    },
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Un ragazzo e il suo primo amore"
+    }
+   ]
+  },
+  "303542": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un supereroe tredicenne a Trieste",
+     "Gabriele Salvatores prova il fantastico",
+     "Ludovico Girardello, timido e invisibile"
+    ],
+    "context": "Michele, tredici anni, si scopre invisibile dopo una festa in maschera. Mentre i compagni spariscono, capisce di non essere l'unico con un potere. Salvatores fa un film per ragazzi con la Trieste d'inverno come sfondo. C'è un seguito."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il ragazzo invisibile - Seconda generazione",
+     "year": 2018,
+     "connection": "Il seguito diretto"
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Mainetti, un supereroe nella periferia romana"
+    },
+    {
+     "title": "Freaks Out",
+     "year": 2021,
+     "connection": "Mainetti, poteri e circo"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Salvatores, un bambino e un segreto"
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Salvatores, il suo Oscar"
+    },
+    {
+     "title": "Pinocchio",
+     "year": 2019,
+     "connection": "Garrone, un ragazzo diverso dagli altri"
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone, il fantastico italiano"
+    },
+    {
+     "title": "Notte prima degli esami",
+     "year": 2006,
+     "connection": "Adolescenza e scuola"
+    },
+    {
+     "title": "Nirvana",
+     "year": 1997,
+     "connection": "Salvatores, un videogioco che prende vita"
+    },
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Rohrwacher, un ragazzo fuori dal tempo"
+    }
+   ]
+  },
+  "1040": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Burt Lancaster, principe che vede finire un mondo",
+     "Il ballo finale dura quasi un'ora",
+     "Claudia Cardinale e Alain Delon giovanissimi"
+    ],
+    "context": "Sicilia, 1860: arrivano i garibaldini, e il principe di Salina capisce che la sua classe deve adattarsi per sopravvivere. Suo nipote Tancredi sposa la figlia di un nuovo ricco. Visconti dal romanzo di Tomasi di Lampedusa, Palma d'oro a Cannes."
+   },
+   "moreIdeas": [
+    {
+     "title": "Senso",
+     "year": 1954,
+     "connection": "Visconti, il Risorgimento e un amore che tradisce"
+    },
+    {
+     "title": "Rocco e i suoi fratelli",
+     "year": 1960,
+     "connection": "Visconti, una famiglia del Sud a Milano"
+    },
+    {
+     "title": "La terra trema",
+     "year": 1948,
+     "connection": "Visconti, pescatori siciliani"
+    },
+    {
+     "title": "Il giardino dei Finzi-Contini",
+     "year": 1970,
+     "connection": "De Sica, una famiglia aristocratica che finisce"
+    },
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, padroni e contadini in un secolo"
+    },
+    {
+     "title": "Il conformista",
+     "year": 1971,
+     "connection": "Bertolucci, la borghesia sotto il fascismo"
+    },
+    {
+     "title": "Allonsanfàn",
+     "year": 1974,
+     "connection": "Taviani, un rivoluzionario stanco del Risorgimento"
+    },
+    {
+     "title": "C'era una volta il West",
+     "year": 1968,
+     "connection": "Claudia Cardinale in un altro mondo che cambia"
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino, il potere che resta"
+    },
+    {
+     "title": "Noi credevamo",
+     "year": 2010,
+     "connection": "Martone, il Risorgimento visto dal basso"
+    }
+   ]
+  },
+  "25300": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un bambino scopre un segreto in un buco",
+     "Campi di grano del Sud, estate 1978",
+     "Da Niccolò Ammaniti, sceneggiatura sua"
+    ],
+    "context": "In un paese isolato del Sud, Michele, dieci anni, trova un bambino incatenato in fondo a una buca. Capisce piano piano che gli adulti del paese, anche suo padre, sanno tutto. Salvatores gira un thriller con gli occhi di un bambino."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il ragazzo invisibile",
+     "year": 2014,
+     "connection": "Salvatores, un altro ragazzino e un mistero"
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Salvatores, il suo film più famoso"
+    },
+    {
+     "title": "Come Dio comanda",
+     "year": 2008,
+     "connection": "Salvatores e Ammaniti di nuovo, un padre e un figlio"
+    },
+    {
+     "title": "La mafia uccide solo d'estate",
+     "year": 2013,
+     "connection": "Pif, il crimine visto da un bambino"
+    },
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Un'infanzia nel Sud"
+    },
+    {
+     "title": "Il ladro di bambini",
+     "year": 1992,
+     "connection": "Amelio, bambini e adulti in viaggio nel Sud"
+    },
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Rohrwacher, campagna e ingiustizia"
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Un paese e una scomparsa"
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, un ragazzo e un viaggio terribile"
+    },
+    {
+     "title": "È stata la mano di Dio",
+     "year": 2021,
+     "connection": "Sorrentino, un ragazzo e un dolore"
+    }
+   ]
+  },
+  "375572": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Matilda De Angelis, pilota di 17 anni",
+     "Stefano Accorsi, ex campione tossicodipendente",
+     "Corse vere tra Imola e il Mugello"
+    ],
+    "context": "Giulia corre nel campionato GT e alla morte del padre deve salvare la casa e il fratellino. Arriva il fratello maggiore Loris, ex pilota rovinato dalla droga, che diventa il suo allenatore. Matteo Rovere, ispirato alla vita di Carlo Capone."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il primo re",
+     "year": 2019,
+     "connection": "Rovere, Romolo e Remo parlano protolatino"
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Un altro genere americano portato in Italia"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi, l'Italia in macchina"
+    },
+    {
+     "title": "Non essere cattivo",
+     "year": 2015,
+     "connection": "Caligari, droga e fratellanza"
+    },
+    {
+     "title": "L'incredibile storia dell'Isola delle Rose",
+     "year": 2020,
+     "connection": "Sibilia, un sognatore nell'Italia degli anni Sessanta"
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, una famiglia e i soldi"
+    },
+    {
+     "title": "La pazza gioia",
+     "year": 2016,
+     "connection": "Virzì, una fuga e una seconda possibilità"
+    },
+    {
+     "title": "Mine vaganti",
+     "year": 2010,
+     "connection": "Özpetek, famiglia e verità"
+    },
+    {
+     "title": "Le otto montagne",
+     "year": 2022,
+     "connection": "Un legame difficile tra due uomini"
+    },
+    {
+     "title": "Il ragazzo invisibile",
+     "year": 2014,
+     "connection": "Un ragazzo che cresce in fretta"
+    }
+   ]
+  },
+  "571468": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Quattro freak di un circo nella Roma del 1943",
+     "Franz Rogowski, nazista pianista che vede il futuro",
+     "Effetti grandi per un film italiano"
+    ],
+    "context": "Il circo di Israel viene distrutto dalla guerra e i suoi quattro artisti, ognuno con un potere, restano soli nella Roma occupata. Un circo nazista vuole catturarli. Gabriele Mainetti dopo Jeeg Robot, più grande e più ambizioso."
+   },
+   "moreIdeas": [
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Mainetti, il suo primo film"
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Benigni, la guerra e l'invenzione"
+    },
+    {
+     "title": "Roma città aperta",
+     "year": 1945,
+     "connection": "Rossellini, la stessa Roma occupata, vera"
+    },
+    {
+     "title": "Il ragazzo invisibile",
+     "year": 2014,
+     "connection": "Salvatores, supereroi all'italiana"
+    },
+    {
+     "title": "La strada",
+     "year": 1954,
+     "connection": "Fellini, artisti di strada"
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone, mostri e meraviglie"
+    },
+    {
+     "title": "Pinocchio",
+     "year": 2019,
+     "connection": "Garrone, creature e trucco"
+    },
+    {
+     "title": "C'è ancora domani",
+     "year": 2023,
+     "connection": "Roma negli anni della guerra"
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, Roma sotto il fascismo"
+    },
+    {
+     "title": "8½",
+     "year": 1963,
+     "connection": "Fellini, il circo come vita"
+    }
+   ]
+  },
+  "244088": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un ciclista investito, tre punti di vista",
+     "Valeria Bruni Tedeschi, moglie ricca e sola",
+     "Fabrizio Bentivoglio, padre che vuole arricchirsi"
+    ],
+    "context": "In Brianza, la notte prima di Natale, un SUV investe un cameriere in bicicletta. Il film racconta i giorni prima e dopo dal punto di vista di tre personaggi, due famiglie e una ragazza. Paolo Virzì sui soldi e su quanto vale una vita."
+   },
+   "moreIdeas": [
+    {
+     "title": "La pazza gioia",
+     "year": 2016,
+     "connection": "Virzì, Valeria Bruni Tedeschi di nuovo"
+    },
+    {
+     "title": "Tutta la vita davanti",
+     "year": 2008,
+     "connection": "Virzì, il lavoro precario"
+    },
+    {
+     "title": "Ferie d'agosto",
+     "year": 1996,
+     "connection": "Virzì, due Italie in vacanza"
+    },
+    {
+     "title": "La prima cosa bella",
+     "year": 2010,
+     "connection": "Virzì, una madre e i figli a Livorno"
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Segreti tra persone vicine"
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Un fatto di cronaca e un paese"
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino, soldi e solitudine"
+    },
+    {
+     "title": "The Place",
+     "year": 2017,
+     "connection": "Scelte e prezzi"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi, la società italiana in un'auto"
+    },
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Sorrentino, la ricchezza vuota"
+    }
+   ]
+  },
+  "492282": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Antonio Albanese e Paola Cortellesi, opposti",
+     "Centro di Roma contro periferia di Bastogi",
+     "Due figli adolescenti innamorati"
+    ],
+    "context": "Giovanni lavora sull'integrazione delle periferie e vive in centro. Quando sua figlia si fidanza con un ragazzo di Bastogi, deve conoscere la madre, Monica, cassiera e tutt'altro che integrata. Riccardo Milani ride dei pregiudizi di tutti."
+   },
+   "moreIdeas": [
+    {
+     "title": "Come un gatto in tangenziale - Ritorno a Coccia di Morto",
+     "year": 2021,
+     "connection": "Il seguito, stessa coppia"
+    },
+    {
+     "title": "C'è ancora domani",
+     "year": 2023,
+     "connection": "Cortellesi regista"
+    },
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Pregiudizi e incontri"
+    },
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone, la satira sociale"
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, due famiglie di classi diverse"
+    },
+    {
+     "title": "L'ora legale",
+     "year": 2017,
+     "connection": "Ficarra e Picone, satira sociale"
+    },
+    {
+     "title": "Tolo Tolo",
+     "year": 2020,
+     "connection": "Zalone e il razzismo"
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Commedia corale romana"
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "La periferia romana"
+    },
+    {
+     "title": "Ferie d'agosto",
+     "year": 1996,
+     "connection": "Virzì, due Italie a confronto"
+    }
+   ]
+  },
+  "17295": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Sembra un documentario, ma è ricostruito",
+     "Algeri 1957, la Casbah contro i paracadutisti",
+     "Musica di Ennio Morricone e Pontecorvo"
+    ],
+    "context": "La guerra d'indipendenza algerina, dalla nascita della resistenza nella Casbah alla repressione dei paracadutisti francesi. Gillo Pontecorvo gira con attori non professionisti e quasi nessun eroe. Leone d'oro a Venezia; in Francia fu vietato per anni."
+   },
+   "moreIdeas": [
+    {
+     "title": "Queimada",
+     "year": 1969,
+     "connection": "Pontecorvo, Marlon Brando e una rivolta coloniale"
+    },
+    {
+     "title": "Kapò",
+     "year": 1960,
+     "connection": "Pontecorvo, un campo di concentramento"
+    },
+    {
+     "title": "Roma città aperta",
+     "year": 1945,
+     "connection": "Rossellini, la resistenza a Roma"
+    },
+    {
+     "title": "Paisà",
+     "year": 1946,
+     "connection": "Rossellini, la guerra vista da vicino"
+    },
+    {
+     "title": "Salvatore Giuliano",
+     "year": 1962,
+     "connection": "Rosi, la cronaca diventa cinema"
+    },
+    {
+     "title": "Le mani sulla città",
+     "year": 1963,
+     "connection": "Rosi, la politica e il cemento"
+    },
+    {
+     "title": "Il caso Mattei",
+     "year": 1972,
+     "connection": "Rosi, un'inchiesta filmata"
+    },
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Petri, il potere della polizia"
+    },
+    {
+     "title": "Giù la testa",
+     "year": 1971,
+     "connection": "Leone, una rivoluzione"
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, l'Africa e l'Europa oggi"
+    }
+   ]
+  },
+  "24653": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Toni Servillo, uomo immobile in un albergo svizzero",
+     "Un segreto custodito per otto anni",
+     "Il film che ha fatto conoscere Sorrentino"
+    ],
+    "context": "Titta Di Girolamo vive da anni in un albergo di Lugano, non parla con nessuno e ogni settimana riceve una valigia di soldi. Una giovane barista lo spinge, senza saperlo, a uscire dalla sua vita. Sorrentino costruisce il suo stile: lento, preciso, pieno di sorprese."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino e Servillo, un altro uomo di potere silenzioso"
+    },
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Sorrentino e Servillo, Roma"
+    },
+    {
+     "title": "L'uomo in più",
+     "year": 2001,
+     "connection": "Sorrentino, il primo film, due Antonio Pisapia"
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "Sorrentino, un albergo svizzero"
+    },
+    {
+     "title": "Loro",
+     "year": 2018,
+     "connection": "Sorrentino e Servillo, Berlusconi"
+    },
+    {
+     "title": "La migliore offerta",
+     "year": 2013,
+     "connection": "Tornatore, un uomo solo e metodico"
+    },
+    {
+     "title": "Le amiche",
+     "year": 1955,
+     "connection": "Antonioni, la borghesia e la solitudine"
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Servillo in un altro mistero"
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "La mafia e chi la serve"
+    },
+    {
+     "title": "L'eclisse",
+     "year": 1962,
+     "connection": "Antonioni, il vuoto dentro il benessere"
+    }
+   ]
+  },
+  "380225": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Valeria Bruni Tedeschi e Micaela Ramazzotti in fuga",
+     "Una comunità psichiatrica in Toscana",
+     "Ride e fa piangere nello stesso momento"
+    ],
+    "context": "Beatrice, contessa che parla senza sosta, e Donatella, giovane madre fragile, scappano da una comunità terapeutica. Due giorni di fuga in una Toscana d'estate, tra ricordi e figli perduti. Paolo Virzì, uno dei suoi film migliori."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, Valeria Bruni Tedeschi"
+    },
+    {
+     "title": "La prima cosa bella",
+     "year": 2010,
+     "connection": "Virzì, Micaela Ramazzotti madre"
+    },
+    {
+     "title": "Ferie d'agosto",
+     "year": 1996,
+     "connection": "Virzì, le vacanze di due Italie"
+    },
+    {
+     "title": "Tutta la vita davanti",
+     "year": 2008,
+     "connection": "Virzì, il lavoro di oggi"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi, una fuga in macchina"
+    },
+    {
+     "title": "C'è ancora domani",
+     "year": 2023,
+     "connection": "Cortellesi, una donna che resiste"
+    },
+    {
+     "title": "Pane e tulipani",
+     "year": 2000,
+     "connection": "Soldini, una donna che scappa dalla sua vita"
+    },
+    {
+     "title": "Le notti di Cabiria",
+     "year": 1957,
+     "connection": "Fellini, una donna fragile e ottimista"
+    },
+    {
+     "title": "Mine vaganti",
+     "year": 2010,
+     "connection": "Özpetek, una famiglia e le sue follie"
+    },
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Un viaggio comico e affettuoso"
+    }
+   ]
+  },
+  "26451": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Gian Maria Volonté, commissario che uccide",
+     "Il potere che non può essere colpevole",
+     "Oscar per il miglior film straniero"
+    ],
+    "context": "Il capo della squadra omicidi di Roma uccide la sua amante e lascia indizi ovunque, per dimostrare che nessuno oserà accusarlo. Elio Petri racconta la polizia degli anni Settanta come un potere senza controllo. Musica di Morricone."
+   },
+   "moreIdeas": [
+    {
+     "title": "La classe operaia va in paradiso",
+     "year": 1971,
+     "connection": "Petri e Volonté, un operaio e la fabbrica"
+    },
+    {
+     "title": "Todo modo",
+     "year": 1976,
+     "connection": "Petri e Volonté, il potere politico"
+    },
+    {
+     "title": "Il caso Mattei",
+     "year": 1972,
+     "connection": "Rosi e Volonté, un uomo di Stato"
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino, il potere che si crede intoccabile"
+    },
+    {
+     "title": "La battaglia di Algeri",
+     "year": 1966,
+     "connection": "Pontecorvo, polizia e repressione"
+    },
+    {
+     "title": "Sulla mia pelle",
+     "year": 2018,
+     "connection": "La violenza delle istituzioni, oggi"
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, giustizia e potere"
+    },
+    {
+     "title": "Per qualche dollaro in più",
+     "year": 1965,
+     "connection": "Volonté cattivo per Leone"
+    },
+    {
+     "title": "Salvatore Giuliano",
+     "year": 1962,
+     "connection": "Rosi, la verità nascosta dallo Stato"
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Un poliziotto che costruisce un colpevole"
+    }
+   ]
+  },
+  "6916": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Hill e Spencer vogliono la loro dune buggy",
+     "La canzone degli Oliver Onions",
+     "Pugni a ritmo, nessuno si fa male"
+    ],
+    "context": "Due piloti vincono a pari merito una dune buggy rossa e gialla, ma gli scagnozzi di un costruttore la distruggono. Pretendono una macchina nuova, altrimenti si arrabbiano. Un film per famiglie, tutto risse e inseguimenti."
+   },
+   "moreIdeas": [
+    {
+     "title": "Lo chiamavano Trinità...",
+     "year": 1970,
+     "connection": "Hill e Spencer, il primo grande successo"
+    },
+    {
+     "title": "...continuavano a chiamarlo Trinità",
+     "year": 1971,
+     "connection": "Il seguito"
+    },
+    {
+     "title": "Pari e dispari",
+     "year": 1978,
+     "connection": "Hill e Spencer, scommesse e risse"
+    },
+    {
+     "title": "I due superpiedi quasi piatti",
+     "year": 1977,
+     "connection": "Hill e Spencer poliziotti"
+    },
+    {
+     "title": "Lo chiamavano Bulldozer",
+     "year": 1978,
+     "connection": "Bud Spencer da solo"
+    },
+    {
+     "title": "Il mio nome è Nessuno",
+     "year": 1973,
+     "connection": "Terence Hill e Henry Fonda"
+    },
+    {
+     "title": "Dio perdona... io no!",
+     "year": 1967,
+     "connection": "Il primo film della coppia"
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Un'altra coppia comica"
+    },
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Avventura comica in macchina"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Una macchina come protagonista"
+    }
+   ]
+  },
+  "25606": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Paolo Villaggio, il ragioniere più sfortunato d'Italia",
+     "La nuvola dell'impiegato, il megadirettore",
+     "Parole entrate nella lingua: fantozziano"
+    ],
+    "context": "Ugo Fantozzi lavora in un'enorme azienda, subisce capi, colleghi e moglie, e ogni suo tentativo di vivere finisce in disastro. Luciano Salce e Villaggio portano al cinema i racconti del suo personaggio. Crudele e comico, è un pezzo di storia italiana."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il secondo tragico Fantozzi",
+     "year": 1976,
+     "connection": "Il seguito diretto, la Corazzata Potëmkin"
+    },
+    {
+     "title": "Fantozzi contro tutti",
+     "year": 1980,
+     "connection": "Il terzo film della serie"
+    },
+    {
+     "title": "Il posto",
+     "year": 1961,
+     "connection": "Olmi, il primo impiego in un'azienda di Milano"
+    },
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone, l'impiegato pubblico di oggi"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi, l'italiano medio in vacanza"
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli, la sfortuna di gente comune"
+    },
+    {
+     "title": "Amici miei",
+     "year": 1975,
+     "connection": "Monicelli, amici adulti che si divertono con scherzi crudeli"
+    },
+    {
+     "title": "La banda dei Babbi Natale",
+     "year": 2010,
+     "connection": "Il trio, uomini comuni nei guai"
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Il trio e i soldi"
+    },
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Un impiegato delle poste"
+    }
+   ]
+  },
+  "310126": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Aldo, Giovanni e Giacomo dopo la crisi",
+     "Un finanziere perde tutto in un giorno",
+     "Il maggiordomo Aldo, servo e padrone"
+    ],
+    "context": "Giacomo, finanziere ricco, perde tutto e deve vivere con il suo autista Giovanni e il suo maggiordomo Aldo, venditore ambulante abusivo. I ruoli si invertono. Una commedia sulla crisi economica, non tra le migliori del trio."
+   },
+   "moreIdeas": [
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Il primo film del trio"
+    },
+    {
+     "title": "Chiedimi se sono felice",
+     "year": 2000,
+     "connection": "Il trio, il più amato"
+    },
+    {
+     "title": "Odio l'estate",
+     "year": 2020,
+     "connection": "Il trio di nuovo in forma"
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Il trio in fuga"
+    },
+    {
+     "title": "Fantozzi",
+     "year": 1975,
+     "connection": "Il lavoro come tragedia comica"
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, i soldi e chi li perde"
+    },
+    {
+     "title": "Sole a catinelle",
+     "year": 2013,
+     "connection": "Zalone e i debiti"
+    },
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone e il lavoro"
+    },
+    {
+     "title": "Tutta la vita davanti",
+     "year": 2008,
+     "connection": "Virzì, la crisi e i precari"
+    },
+    {
+     "title": "Benvenuti al Nord",
+     "year": 2012,
+     "connection": "Milano e il lavoro"
+    }
+   ]
+  },
+  "24169": {
+   "whyWatch": {
+    "recommendation": "NO",
+    "reasons": [
+     "Quattro episodi, quasi tutti deboli",
+     "Aldo, Giovanni e Giacomo poco ispirati",
+     "Battute che si ripetono"
+    ],
+    "context": "Un monaco orientale lega quattro racconti in cui il trio interpreta personaggi diversi. Alcune idee funzionano, ma nel complesso è tra i film più fiacchi di Aldo, Giovanni e Giacomo. Meglio i loro primi tre."
+   },
+   "moreIdeas": [
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Il trio al suo meglio"
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Il trio in fuga"
+    },
+    {
+     "title": "Chiedimi se sono felice",
+     "year": 2000,
+     "connection": "Il trio, amicizia e malinconia"
+    },
+    {
+     "title": "La leggenda di Al, John e Jack",
+     "year": 2002,
+     "connection": "Il trio tra i gangster"
+    },
+    {
+     "title": "Odio l'estate",
+     "year": 2020,
+     "connection": "Il ritorno del trio"
+    },
+    {
+     "title": "Tu la conosci Claudia?",
+     "year": 2004,
+     "connection": "Il trio diviso in tre storie"
+    },
+    {
+     "title": "La banda dei Babbi Natale",
+     "year": 2010,
+     "connection": "Il trio a Natale"
+    },
+    {
+     "title": "I nuovi mostri",
+     "year": 1977,
+     "connection": "Risi, Monicelli e Scola, episodi comici sugli italiani"
+    },
+    {
+     "title": "L'oro di Napoli",
+     "year": 1954,
+     "connection": "De Sica, un film a episodi napoletano"
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni, commedia piena"
+    }
+   ]
+  },
+  "19426": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Giulietta Masina, prostituta che spera sempre",
+     "Il sorriso finale tra le lacrime",
+     "Oscar per il miglior film straniero"
+    ],
+    "context": "Cabiria vive in una baracca alla periferia di Roma e cerca qualcuno che la ami davvero: un attore famoso, una processione, un uomo gentile. Viene tradita più volte e ricomincia. Fellini e la Masina al loro meglio."
+   },
+   "moreIdeas": [
+    {
+     "title": "La strada",
+     "year": 1954,
+     "connection": "Fellini e la Masina, Gelsomina"
+    },
+    {
+     "title": "La dolce vita",
+     "year": 1960,
+     "connection": "Fellini, Roma dei ricchi"
+    },
+    {
+     "title": "Il bidone",
+     "year": 1955,
+     "connection": "Fellini, truffatori e povertà"
+    },
+    {
+     "title": "I vitelloni",
+     "year": 1953,
+     "connection": "Fellini, la provincia"
+    },
+    {
+     "title": "Giulietta degli spiriti",
+     "year": 1965,
+     "connection": "Fellini e la Masina, una moglie e i suoi sogni"
+    },
+    {
+     "title": "Mamma Roma",
+     "year": 1962,
+     "connection": "Pasolini, un'altra donna della periferia"
+    },
+    {
+     "title": "Accattone",
+     "year": 1961,
+     "connection": "Pasolini, la vita di borgata"
+    },
+    {
+     "title": "La pazza gioia",
+     "year": 2016,
+     "connection": "Virzì, donne fragili e speranzose"
+    },
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica, la Roma dei poveri"
+    },
+    {
+     "title": "Umberto D.",
+     "year": 1952,
+     "connection": "De Sica, la solitudine"
+    }
+   ]
+  },
+  "803700": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Luca Marinelli e Alessandro Borghi amici di montagna",
+     "Valle d'Aosta, una baita da ricostruire",
+     "Premio della giuria a Cannes"
+    ],
+    "context": "Pietro, ragazzo di città, e Bruno, l'ultimo bambino di un paese di montagna, si conoscono un'estate e restano legati per tutta la vita. Dal romanzo di Paolo Cognetti. Girato in un formato quasi quadrato, lento come le stagioni."
+   },
+   "moreIdeas": [
+    {
+     "title": "Non essere cattivo",
+     "year": 2015,
+     "connection": "Marinelli e Borghi, un'altra amicizia"
+    },
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Rohrwacher, la vita contadina che scompare"
+    },
+    {
+     "title": "L'albero degli zoccoli",
+     "year": 1978,
+     "connection": "Olmi, la vita contadina lombarda"
+    },
+    {
+     "title": "Il vento fa il suo giro",
+     "year": 2005,
+     "connection": "Diritti, un pastore francese in un paese di montagna"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Un'amicizia d'infanzia"
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "Sorrentino, amicizia e montagne"
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Un luogo lontano e la vita lenta"
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "Un'amicizia tra due mondi"
+    },
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Un'amicizia lunga una vita"
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Un paese di montagna"
+    }
+   ]
+  },
+  "24188": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Vittorio Gassman spaccone, Trintignant timido",
+     "Un Ferragosto in macchina lungo l'Aurelia",
+     "Il finale cambia tutto il film"
+    ],
+    "context": "Il giorno di Ferragosto Bruno, quarantenne sbruffone, trascina in giro in macchina Roberto, studente che vuole solo studiare. Due giorni di sorpassi, spiagge e musica. Dino Risi fotografa l'Italia del boom e la sua fretta."
+   },
+   "moreIdeas": [
+    {
+     "title": "I mostri",
+     "year": 1963,
+     "connection": "Risi e Gassman, episodi feroci sugli italiani"
+    },
+    {
+     "title": "Una vita difficile",
+     "year": 1961,
+     "connection": "Risi, Alberto Sordi dal dopoguerra al boom"
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli, Gassman ladro maldestro"
+    },
+    {
+     "title": "L'armata Brancaleone",
+     "year": 1966,
+     "connection": "Monicelli, Gassman cavaliere"
+    },
+    {
+     "title": "Profumo di donna",
+     "year": 1974,
+     "connection": "Risi e Gassman, un viaggio"
+    },
+    {
+     "title": "La dolce vita",
+     "year": 1960,
+     "connection": "Fellini, l'Italia del boom"
+    },
+    {
+     "title": "Divorzio all'italiana",
+     "year": 1961,
+     "connection": "Germi, la commedia all'italiana"
+    },
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Un viaggio in macchina"
+    },
+    {
+     "title": "Ferie d'agosto",
+     "year": 1996,
+     "connection": "Virzì, le vacanze degli italiani"
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Una corsa in macchina e le sue conseguenze"
+    }
+   ]
+  },
+  "20345": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Il primo film di Dario Argento",
+     "Un americano vede un'aggressione in una galleria",
+     "Musica di Ennio Morricone"
+    ],
+    "context": "Uno scrittore americano a Roma assiste a un'aggressione dietro una vetrata e non riesce a intervenire. Comincia a indagare e diventa il prossimo bersaglio. Argento inventa qui il suo giallo: un dettaglio visto e mal capito."
+   },
+   "moreIdeas": [
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento, il suo giallo più famoso"
+    },
+    {
+     "title": "Il gatto a nove code",
+     "year": 1971,
+     "connection": "Argento, il secondo film"
+    },
+    {
+     "title": "4 mosche di velluto grigio",
+     "year": 1971,
+     "connection": "Argento, il terzo"
+    },
+    {
+     "title": "Suspiria",
+     "year": 1977,
+     "connection": "Argento e l'orrore"
+    },
+    {
+     "title": "Tenebre",
+     "year": 1982,
+     "connection": "Argento, uno scrittore americano a Roma di nuovo"
+    },
+    {
+     "title": "La ragazza che sapeva troppo",
+     "year": 1963,
+     "connection": "Bava, il primo giallo italiano"
+    },
+    {
+     "title": "Sei donne per l'assassino",
+     "year": 1964,
+     "connection": "Bava, il giallo a colori"
+    },
+    {
+     "title": "Non si sevizia un paperino",
+     "year": 1972,
+     "connection": "Fulci, un giallo nel Sud"
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Un giallo italiano di oggi"
+    },
+    {
+     "title": "La migliore offerta",
+     "year": 2013,
+     "connection": "Tornatore, un mistero e uno sguardo"
+    }
+   ]
+  },
+  "937746": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Seydou Sarr, sedicenne, al primo film",
+     "Il viaggio da Dakar alla Libia, poi il mare",
+     "Candidato all'Oscar, Leone d'argento"
+    ],
+    "context": "Seydou e il cugino Moussa partono da Dakar per l'Europa senza dirlo alle madri. Attraversano il deserto, le prigioni libiche e il Mediterraneo. Garrone racconta il viaggio dei migranti come un'odissea, in wolof e francese con qualche momento di sogno."
+   },
+   "moreIdeas": [
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone, un uomo piccolo in un mondo violento"
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, il crimine organizzato"
+    },
+    {
+     "title": "Pinocchio",
+     "year": 2019,
+     "connection": "Garrone, un viaggio di un ragazzo"
+    },
+    {
+     "title": "Tolo Tolo",
+     "year": 2020,
+     "connection": "Zalone, la stessa rotta raccontata per ridere"
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Salvatores, il mare e chi resta"
+    },
+    {
+     "title": "La battaglia di Algeri",
+     "year": 1966,
+     "connection": "Pontecorvo, l'Africa e l'Europa"
+    },
+    {
+     "title": "Il ladro di bambini",
+     "year": 1992,
+     "connection": "Amelio, un viaggio attraverso l'Italia"
+    },
+    {
+     "title": "Lamerica",
+     "year": 1994,
+     "connection": "Amelio, l'Albania e il sogno italiano"
+    },
+    {
+     "title": "Terraferma",
+     "year": 2011,
+     "connection": "Crialese, pescatori e migranti a Linosa"
+    },
+    {
+     "title": "Fuocoammare",
+     "year": 2016,
+     "connection": "Rosi, un documentario su Lampedusa"
+    }
+   ]
+  },
+  "40794": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Una famiglia di pastifici a Lecce",
+     "Riccardo Scamarcio deve fare coming out",
+     "Ilaria Occhini, nonna indimenticabile"
+    ],
+    "context": "Tommaso torna a Lecce per dire alla famiglia che è gay e che non vuole lavorare nel pastificio. Ma il fratello lo precede, e il padre ha un malore. Ferzan Özpetek fa una commedia sulla famiglia del Sud, tra pranzi e segreti."
+   },
+   "moreIdeas": [
+    {
+     "title": "Le fate ignoranti",
+     "year": 2001,
+     "connection": "Özpetek, un amore nascosto scoperto dopo"
+    },
+    {
+     "title": "Saturno contro",
+     "year": 2007,
+     "connection": "Özpetek, un gruppo di amici e un lutto"
+    },
+    {
+     "title": "La finestra di fronte",
+     "year": 2003,
+     "connection": "Özpetek, una donna, un vecchio e un segreto"
+    },
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Il Sud visto con affetto"
+    },
+    {
+     "title": "Il nome del figlio",
+     "year": 2015,
+     "connection": "Archibugi, una famiglia a cena"
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Segreti a tavola"
+    },
+    {
+     "title": "Tutta colpa di Freud",
+     "year": 2014,
+     "connection": "Genovese, amori complicati in famiglia"
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, un uomo gay sotto il fascismo"
+    },
+    {
+     "title": "La pazza gioia",
+     "year": 2016,
+     "connection": "Virzì, famiglie e libertà"
+    },
+    {
+     "title": "Cado dalle nubi",
+     "year": 2009,
+     "connection": "Zalone, la Puglia"
+    }
+   ]
+  },
+  "56909": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Quarantenni devono rifare la maturità",
+     "Raoul Bova, Ricky Memphis, Barbora Bobulova",
+     "Vecchi amici, nuovi problemi"
+    ],
+    "context": "Un errore del ministero annulla la maturità di un'intera classe vent'anni dopo. Gli ex compagni devono ristudiare e rifare l'esame, e ritrovano le amicizie e gli amori lasciati a metà. Paolo Genovese, una commedia leggera con un seguito."
+   },
+   "moreIdeas": [
+    {
+     "title": "Notte prima degli esami",
+     "year": 2006,
+     "connection": "Brizzi, la maturità vista dai diciottenni"
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Genovese, amici a cena"
+    },
+    {
+     "title": "Tutta colpa di Freud",
+     "year": 2014,
+     "connection": "Genovese, amori e figlie"
+    },
+    {
+     "title": "The Place",
+     "year": 2017,
+     "connection": "Genovese, desideri e prezzi"
+    },
+    {
+     "title": "L'ultimo bacio",
+     "year": 2001,
+     "connection": "Muccino, la paura di crescere"
+    },
+    {
+     "title": "Smetto quando voglio",
+     "year": 2014,
+     "connection": "Ex compagni laureati e disoccupati"
+    },
+    {
+     "title": "Chiedimi se sono felice",
+     "year": 2000,
+     "connection": "Amici che si ritrovano"
+    },
+    {
+     "title": "Compagni di scuola",
+     "year": 1988,
+     "connection": "Verdone, una festa di ex compagni quindici anni dopo"
+    },
+    {
+     "title": "Ecce bombo",
+     "year": 1978,
+     "connection": "Moretti, giovani adulti romani"
+    },
+    {
+     "title": "La terrazza",
+     "year": 1980,
+     "connection": "Scola, amici di mezza età"
+    }
+   ]
+  },
+  "24382": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Gassman, Mastroianni, Totò: banda di dilettanti",
+     "Un colpo al Monte di Pietà finito male",
+     "La pasta e ceci alla fine"
+    ],
+    "context": "Un gruppo di ladruncoli romani prepara un furto perfetto in un monte di pietà, sfondando un muro. Tutto va storto, fino all'ultimo. Mario Monicelli inventa la commedia all'italiana: si ride, ma i personaggi sono poveri veri."
+   },
+   "moreIdeas": [
+    {
+     "title": "L'armata Brancaleone",
+     "year": 1966,
+     "connection": "Monicelli e Gassman, un Medioevo comico"
+    },
+    {
+     "title": "Amici miei",
+     "year": 1975,
+     "connection": "Monicelli, scherzi tra amici"
+    },
+    {
+     "title": "La grande guerra",
+     "year": 1959,
+     "connection": "Monicelli, Gassman e Sordi soldati"
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi e Gassman"
+    },
+    {
+     "title": "Smetto quando voglio",
+     "year": 2014,
+     "connection": "Sibilia, una banda di dilettanti oggi"
+    },
+    {
+     "title": "Audace colpo dei soliti ignoti",
+     "year": 1959,
+     "connection": "Il seguito diretto"
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni e il crimine per ridere"
+    },
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica, la povertà romana"
+    },
+    {
+     "title": "La leggenda di Al, John e Jack",
+     "year": 2002,
+     "connection": "Criminali da ridere"
+    },
+    {
+     "title": "Lo chiamavano Trinità...",
+     "year": 1970,
+     "connection": "Due compari maldestri"
+    }
+   ]
+  },
+  "1109255": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Celeste Dalla Porta, Parthenope da giovane",
+     "Napoli tra il 1950 e oggi",
+     "Sorrentino, bellezza e malinconia"
+    ],
+    "context": "Parthenope nasce nel mare di Napoli nel 1950 e cresce bellissima, corteggiata da tutti, mentre sceglie di studiare antropologia. Il film segue la sua vita fino alla vecchiaia, tra amori, dolori e la città. Divisivo: molti lo amano, altri lo trovano vuoto."
+   },
+   "moreIdeas": [
+    {
+     "title": "È stata la mano di Dio",
+     "year": 2021,
+     "connection": "Sorrentino, la sua giovinezza a Napoli"
+    },
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Sorrentino, Roma e il tempo"
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "Sorrentino, la vecchiaia"
+    },
+    {
+     "title": "L'oro di Napoli",
+     "year": 1954,
+     "connection": "De Sica, Napoli in episodi"
+    },
+    {
+     "title": "Ieri, oggi, domani",
+     "year": 1963,
+     "connection": "De Sica, Sophia Loren a Napoli"
+    },
+    {
+     "title": "Malèna",
+     "year": 2000,
+     "connection": "Tornatore, una donna bellissima guardata da tutti"
+    },
+    {
+     "title": "La dolce vita",
+     "year": 1960,
+     "connection": "Fellini, la bellezza e il vuoto"
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino, il suo stile all'inizio"
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, la memoria"
+    },
+    {
+     "title": "Ricomincio da tre",
+     "year": 1981,
+     "connection": "Troisi, la Napoli dei giovani"
+    }
+   ]
+  },
+  "10599": {
+   "whyWatch": {
+    "recommendation": "NO",
+    "reasons": [
+     "Benigni cinquantenne fa il burattino",
+     "Costoso e lento, poco Collodi",
+     "Fu un grande insuccesso di critica"
+    ],
+    "context": "Dopo l'Oscar, Benigni dirige e interpreta il suo Pinocchio, con scenografie enormi e Nicoletta Braschi Fata Turchina. In Italia lo videro in molti, ma il film è rigido e Benigni è troppo vecchio per il ruolo. Meglio il Pinocchio di Garrone."
+   },
+   "moreIdeas": [
+    {
+     "title": "Pinocchio",
+     "year": 2019,
+     "connection": "Garrone, il Pinocchio più fedele, con Benigni Geppetto"
+    },
+    {
+     "title": "Le avventure di Pinocchio",
+     "year": 1972,
+     "connection": "Comencini, il Pinocchio della televisione"
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Benigni al suo meglio"
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni comico"
+    },
+    {
+     "title": "Il mostro",
+     "year": 1994,
+     "connection": "Benigni e gli equivoci"
+    },
+    {
+     "title": "Non ci resta che piangere",
+     "year": 1984,
+     "connection": "Benigni e Troisi"
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone, favole antiche"
+    },
+    {
+     "title": "Il piccolo diavolo",
+     "year": 1988,
+     "connection": "Benigni diavoletto"
+    },
+    {
+     "title": "Freaks Out",
+     "year": 2021,
+     "connection": "Mainetti, la favola moderna"
+    },
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Rohrwacher, una favola di oggi"
+    }
+   ]
+  },
+  "481432": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Adriano Tardiolo, un santo contadino senza età",
+     "Una marchesa che sfrutta i contadini",
+     "Premio per la sceneggiatura a Cannes"
+    ],
+    "context": "Lazzaro, ragazzo buono e semplice, lavora in una tenuta di tabacco dove una marchesa tiene i contadini come servi senza che lo sappiano. Poi qualcosa cambia, e il film salta nel tempo. Alice Rohrwacher, a metà tra favola e realismo."
+   },
+   "moreIdeas": [
+    {
+     "title": "Le meraviglie",
+     "year": 2014,
+     "connection": "Rohrwacher, una famiglia di apicoltori"
+    },
+    {
+     "title": "La chimera",
+     "year": 2023,
+     "connection": "Rohrwacher, tombaroli etruschi"
+    },
+    {
+     "title": "L'albero degli zoccoli",
+     "year": 1978,
+     "connection": "Olmi, i contadini lombardi"
+    },
+    {
+     "title": "La strada",
+     "year": 1954,
+     "connection": "Fellini, un'anima innocente"
+    },
+    {
+     "title": "Miracolo a Milano",
+     "year": 1951,
+     "connection": "De Sica, una favola tra i poveri"
+    },
+    {
+     "title": "Le otto montagne",
+     "year": 2022,
+     "connection": "La vita contadina che scompare"
+    },
+    {
+     "title": "Pinocchio",
+     "year": 2019,
+     "connection": "Garrone, la favola e la povertà"
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone, il fantastico italiano"
+    },
+    {
+     "title": "Il vangelo secondo Matteo",
+     "year": 1964,
+     "connection": "Pasolini, il sacro con attori presi dalla strada"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "La campagna e i suoi segreti"
+    }
+   ]
+  },
+  "8416": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Jean-Louis Trintignant, fascista per conformismo",
+     "La fotografia di Vittorio Storaro",
+     "Da un romanzo di Alberto Moravia"
+    ],
+    "context": "Negli anni Trenta Marcello vuole solo essere normale e accetta di uccidere il suo vecchio professore antifascista, esule a Parigi. Bernardo Bertolucci racconta la borghesia che si adatta al potere. Luce, architetture e costumi straordinari."
+   },
+   "moreIdeas": [
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, il fascismo in Emilia"
+    },
+    {
+     "title": "Ultimo tango a Parigi",
+     "year": 1972,
+     "connection": "Bertolucci subito dopo, Parigi"
+    },
+    {
+     "title": "Il giardino dei Finzi-Contini",
+     "year": 1970,
+     "connection": "De Sica, la borghesia sotto le leggi razziali"
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, il fascismo e un uomo diverso"
+    },
+    {
+     "title": "Il gattopardo",
+     "year": 1963,
+     "connection": "Visconti, una classe che si adatta"
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, il fascismo di provincia"
+    },
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Petri, il potere e la colpa"
+    },
+    {
+     "title": "La notte",
+     "year": 1961,
+     "connection": "Antonioni, la borghesia e il vuoto"
+    },
+    {
+     "title": "Vincere",
+     "year": 2009,
+     "connection": "Bellocchio, Mussolini"
+    },
+    {
+     "title": "La strategia del ragno",
+     "year": 1970,
+     "connection": "Bertolucci, un figlio indaga sul padre antifascista"
+    }
+   ]
+  },
+  "435921": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Ficarra e Picone, cognati e commercianti",
+     "Un sindaco onesto rovina tutti",
+     "Satira sulla Sicilia e sull'Italia"
+    ],
+    "context": "In un paese siciliano vince le elezioni un professore onesto, contro ogni pronostico. Comincia a far rispettare le regole, e i cittadini che lo hanno votato si accorgono che non lo volevano davvero. Una commedia amara e molto riuscita."
+   },
+   "moreIdeas": [
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone, gli italiani e il posto fisso"
+    },
+    {
+     "title": "La mafia uccide solo d'estate",
+     "year": 2013,
+     "connection": "Pif, la Sicilia raccontata con ironia"
+    },
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Il Sud e i pregiudizi"
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni in Sicilia"
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, la Sicilia e la legge"
+    },
+    {
+     "title": "Divorzio all'italiana",
+     "year": 1961,
+     "connection": "Germi, satira su un paese siciliano"
+    },
+    {
+     "title": "Sedotta e abbandonata",
+     "year": 1964,
+     "connection": "Germi, l'onore in Sicilia"
+    },
+    {
+     "title": "Il giorno della civetta",
+     "year": 1968,
+     "connection": "Damiani, la mafia di paese"
+    },
+    {
+     "title": "Come un gatto in tangenziale",
+     "year": 2017,
+     "connection": "Milani, satira sociale"
+    },
+    {
+     "title": "Tolo Tolo",
+     "year": 2020,
+     "connection": "Zalone, satira e furbizie"
+    }
+   ]
+  }
+ }
+}

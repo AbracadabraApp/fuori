@@ -177,7 +177,25 @@ public struct Film: Codable, Sendable, Equatable, Identifiable, Hashable {
     public let year: Int
     public let poster: URL?
     public let videos: [Video]
+    /// The film page (the cinema shuffler's films only; nil elsewhere): MovieGenius's
+    /// WhyWatch in the learned language
+    public let whyWatch: WhyWatch?
+    /// The film page's More Ideas: films in the library, each with why it's like this one
+    public let moreIdeas: [Idea]?
     public var id: Int { tmdbId }
+
+    public struct WhyWatch: Codable, Sendable, Equatable, Hashable {
+        /// "YES" or "NO"
+        public let recommendation: String
+        public let reasons: [String]
+        public let context: String
+        public var recommended: Bool { recommendation == "YES" }
+    }
+
+    public struct Idea: Codable, Sendable, Equatable, Hashable {
+        public let tmdbId: Int
+        public let connection: String
+    }
 }
 
 /// The cinema shuffler's shelves (GET /v1/cinema; Josh, 2026-11-06, experimental,
@@ -189,6 +207,13 @@ public struct CinemaShelves: Codable, Sendable, Equatable {
         public let title: String
         public let films: [Film]
     }
+    /// The film page's words in the learned language, from the server
+    public struct Labels: Codable, Sendable, Equatable, Hashable {
+        public let yes: String
+        public let no: String
+        public let moreIdeas: String
+    }
+    public let labels: Labels?
     public let shelves: [Shelf]
 }
 

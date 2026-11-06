@@ -44,3 +44,22 @@ export function cinemaLibrary(): CinemaLibrary | null {
   library = existsSync(path) ? (JSON.parse(readFileSync(path, 'utf8')) as CinemaLibrary) : null;
   return library;
 }
+
+/**
+ * The film page's words (content/<country>/cinema-pages.json; Josh, 2026-11-06:
+ * MovieGenius's movie page in the learned language): a WhyWatch and ten More
+ * Ideas per film, and the page's labels.
+ */
+export interface FilmPageWords {
+  whyWatch: { recommendation: 'YES' | 'NO'; reasons: string[]; context: string };
+  moreIdeas: { title: string; year: number; connection: string }[];
+}
+export interface CinemaPages { labels: { yes: string; no: string; moreIdeas: string }; films: Record<string, FilmPageWords> }
+
+let pages: CinemaPages | null | undefined;
+export function cinemaPages(): CinemaPages | null {
+  if (pages !== undefined) return pages;
+  const path = join(process.cwd(), 'content', pack.id, 'cinema-pages.json');
+  pages = existsSync(path) ? (JSON.parse(readFileSync(path, 'utf8')) as CinemaPages) : null;
+  return pages;
+}
