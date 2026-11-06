@@ -1,5 +1,5 @@
 {
- "about": "The film page's words (Josh, 2026-11-06: MovieGenius's movie page, its tools and style, in Italian and curated). whyWatch: MovieGenius's WhyWatch v3 prompt (scripts/v3-generate.cjs there) in Italian: YES or NO, 2-3 reasons of 5-8 words, 30-50 words of context, its banned words in Italian. moreIdeas: MovieGenius's More Ideas prompt (scripts/backfill-more-ideas-haiku.js there) with Italian criteria: 10 Italian films, a reason under 20 words. Written by Claude in the cloud session for all 91 films; a fact-judge sweep is still to run (Josh: 'use fact judge for later sweep'). The page shows only the ideas whose film is in cinema-library.json.",
+ "about": "The film page's words (Josh, 2026-11-06: MovieGenius's movie page, its tools and style, in Italian and curated). whyWatch: MovieGenius's WhyWatch v3 prompt (scripts/v3-generate.cjs there) in Italian: YES or NO, 2-3 reasons of 5-8 words, 30-50 words of context, its banned words in Italian. moreIdeas: MovieGenius's More Ideas prompt (scripts/backfill-more-ideas-haiku.js there) with Italian criteria: 10 Italian films, a reason under 20 words. Written by Claude in the cloud session for every film in the library (91, then the 77 the ideas added); a fact-judge sweep is still to run (Josh: 'use fact judge for later sweep'). The page shows only the ideas whose film is in cinema-library.json.",
  "labels": {
   "yes": "Consigliato",
   "no": "Non consigliato",
@@ -6638,6 +6638,5536 @@
      "year": 2020,
      "connection": "Zalone, satira e furbizie",
      "tmdbId": 593402
+    }
+   ]
+  },
+  "30689": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un batterista perseguitato da un ricattatore",
+     "L'ultima immagine catturata dall'occhio",
+     "Chiude la trilogia degli animali di Argento"
+    ],
+    "context": "Roberto, batterista rock, uccide per sbaglio un uomo che lo seguiva, e qualcuno lo fotografa. Da quel momento qualcuno lo tormenta. Il terzo giallo di Dario Argento, più strano e ironico dei primi due, per anni quasi introvabile."
+   },
+   "moreIdeas": [
+    {
+     "title": "L'uccello dalle piume di cristallo",
+     "year": 1970,
+     "connection": "Il primo giallo di Argento",
+     "tmdbId": 20345
+    },
+    {
+     "title": "Il gatto a nove code",
+     "year": 1971,
+     "connection": "Il secondo, subito prima",
+     "tmdbId": 27431
+    },
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento, il giallo più famoso, un musicista indaga",
+     "tmdbId": 20126
+    },
+    {
+     "title": "Suspiria",
+     "year": 1977,
+     "connection": "Argento passa all'orrore",
+     "tmdbId": 11906
+    },
+    {
+     "title": "Phenomena",
+     "year": 1985,
+     "connection": "Argento, insetti e una ragazza in collegio",
+     "tmdbId": 29161
+    },
+    {
+     "title": "Sei donne per l'assassino",
+     "year": 1964,
+     "connection": "Bava, il giallo a colori",
+     "tmdbId": 28055
+    },
+    {
+     "title": "Non si sevizia un paperino",
+     "year": 1972,
+     "connection": "Fulci, il giallo nel Sud",
+     "tmdbId": 49361
+    },
+    {
+     "title": "La maschera del demonio",
+     "year": 1960,
+     "connection": "Bava, l'horror gotico",
+     "tmdbId": 27632
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Un giallo di oggi",
+     "tmdbId": 468202
+    },
+    {
+     "title": "La migliore offerta",
+     "year": 2013,
+     "connection": "Tornatore, un uomo e un inganno",
+     "tmdbId": 152742
+    }
+   ]
+  },
+  "12491": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Il primo film di Pier Paolo Pasolini",
+     "Franco Citti, magnaccia delle borgate romane",
+     "Bach sulle immagini della periferia"
+    ],
+    "context": "Vittorio, detto Accattone, vive sfruttando le donne nel Pigneto e non vuole lavorare. Quando perde l'ultima, prova a cambiare, ma non sa come. Pasolini usa ragazzi veri della periferia e la musica sacra per raccontare chi non conta niente."
+   },
+   "moreIdeas": [
+    {
+     "title": "Mamma Roma",
+     "year": 1962,
+     "connection": "Pasolini subito dopo, la stessa periferia"
+    },
+    {
+     "title": "Il vangelo secondo Matteo",
+     "year": 1965,
+     "connection": "Pasolini, il sacro con attori presi dalla strada",
+     "tmdbId": 24192
+    },
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica, la Roma dei poveri",
+     "tmdbId": 5156
+    },
+    {
+     "title": "Le notti di Cabiria",
+     "year": 1957,
+     "connection": "Fellini, la periferia romana di una prostituta",
+     "tmdbId": 19426
+    },
+    {
+     "title": "Non essere cattivo",
+     "year": 2015,
+     "connection": "Caligari, la periferia di Ostia",
+     "tmdbId": 359156
+    },
+    {
+     "title": "Amore tossico",
+     "year": 1983,
+     "connection": "Caligari, ragazzi veri e droga a Ostia",
+     "tmdbId": 59037
+    },
+    {
+     "title": "Bellissima",
+     "year": 1951,
+     "connection": "Visconti, una madre romana",
+     "tmdbId": 43372
+    },
+    {
+     "title": "Rocco e i suoi fratelli",
+     "year": 1960,
+     "connection": "Visconti, i poveri in città",
+     "tmdbId": 8422
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "La periferia romana di oggi",
+     "tmdbId": 364433
+    },
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone, gli ultimi in una periferia",
+     "tmdbId": 483184
+    }
+   ]
+  },
+  "20914": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Cinque amici fiorentini e i loro scherzi",
+     "Ugo Tognazzi, Philippe Noiret, Gastone Moschin",
+     "La supercazzola, entrata nella lingua"
+    ],
+    "context": "Cinque uomini di mezza età a Firenze passano il tempo in zingarate: scherzi crudeli a sconosciuti per non pensare alla vita. Mario Monicelli raccoglie un progetto di Pietro Germi. Si ride molto, poi arriva la malinconia."
+   },
+   "moreIdeas": [
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli, una banda di amici maldestri",
+     "tmdbId": 24382
+    },
+    {
+     "title": "La grande guerra",
+     "year": 1959,
+     "connection": "Monicelli, due vigliacchi simpatici",
+     "tmdbId": 55823
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi, la stessa commedia amara",
+     "tmdbId": 24188
+    },
+    {
+     "title": "I mostri",
+     "year": 1963,
+     "connection": "Risi, gli italiani presi in giro",
+     "tmdbId": 45005
+    },
+    {
+     "title": "Fantozzi",
+     "year": 1975,
+     "connection": "Lo stesso anno, un'altra Italia da ridere",
+     "tmdbId": 25606
+    },
+    {
+     "title": "Audace colpo dei soliti ignoti",
+     "year": 1959,
+     "connection": "Il seguito dei soliti ignoti",
+     "tmdbId": 62036
+    },
+    {
+     "title": "Profumo di donna",
+     "year": 1974,
+     "connection": "Risi, comicità e dolore",
+     "tmdbId": 47848
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Amici e segreti oggi",
+     "tmdbId": 381341
+    },
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Il trio, l'amicizia comica",
+     "tmdbId": 38286
+    },
+    {
+     "title": "Una vita difficile",
+     "year": 1961,
+     "connection": "Risi, un uomo nell'Italia che cambia",
+     "tmdbId": 56343
+    }
+   ]
+  },
+  "59037": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Ragazzi veri di Ostia, eroinomani veri",
+     "Il primo film di Claudio Caligari",
+     "Un documento crudo degli anni Ottanta"
+    ],
+    "context": "Una giornata di un gruppo di ragazzi di Ostia che cercano i soldi per la dose. Caligari gira con persone del posto, molte dipendenti davvero, e senza giudicarle. Durissimo, ma è un pezzo di storia della periferia romana."
+   },
+   "moreIdeas": [
+    {
+     "title": "Non essere cattivo",
+     "year": 2015,
+     "connection": "Caligari, trent'anni dopo, la stessa Ostia",
+     "tmdbId": 359156
+    },
+    {
+     "title": "Accattone",
+     "year": 1961,
+     "connection": "Pasolini, la borgata con attori presi dalla strada",
+     "tmdbId": 12491
+    },
+    {
+     "title": "Suburra",
+     "year": 2015,
+     "connection": "Sollima, Ostia e il crimine",
+     "tmdbId": 356296
+    },
+    {
+     "title": "Sulla mia pelle",
+     "year": 2018,
+     "connection": "La droga e lo Stato",
+     "tmdbId": 538362
+    },
+    {
+     "title": "Mamma Roma",
+     "year": 1962,
+     "connection": "Pasolini, un figlio della periferia"
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, ragazzi e criminalità",
+     "tmdbId": 8882
+    },
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone, una periferia sul mare",
+     "tmdbId": 483184
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "La periferia romana",
+     "tmdbId": 364433
+    },
+    {
+     "title": "La paranza dei bambini",
+     "year": 2019,
+     "connection": "Ragazzini e camorra",
+     "tmdbId": 574436
+    },
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "Il neorealismo da cui viene",
+     "tmdbId": 5156
+    }
+   ]
+  },
+  "62036": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Il seguito dei Soliti ignoti, a Milano",
+     "Gassman e la banda tornano al colpo",
+     "La partita di calcio come copertura"
+    ],
+    "context": "La banda di dilettanti romani viene chiamata a Milano per rapinare il furgone con gli incassi del Totocalcio, durante una partita della nazionale. Diretto da Nanni Loy. Meno famoso del primo, ma con lo stesso piacere per i personaggi."
+   },
+   "moreIdeas": [
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Il primo film della banda",
+     "tmdbId": 24382
+    },
+    {
+     "title": "Amici miei",
+     "year": 1975,
+     "connection": "Monicelli, amici e scherzi",
+     "tmdbId": 20914
+    },
+    {
+     "title": "La grande guerra",
+     "year": 1959,
+     "connection": "Gassman e Sordi soldati",
+     "tmdbId": 55823
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Gassman spaccone",
+     "tmdbId": 24188
+    },
+    {
+     "title": "Smetto quando voglio",
+     "year": 2014,
+     "connection": "Una banda di oggi",
+     "tmdbId": 250219
+    },
+    {
+     "title": "I mostri",
+     "year": 1963,
+     "connection": "Gassman e Tognazzi in episodi",
+     "tmdbId": 45005
+    },
+    {
+     "title": "Rocco e i suoi fratelli",
+     "year": 1960,
+     "connection": "Milano vista da chi arriva",
+     "tmdbId": 8422
+    },
+    {
+     "title": "La leggenda di Al, John e Jack",
+     "year": 2002,
+     "connection": "Criminali da ridere",
+     "tmdbId": 38397
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Il crimine per ridere",
+     "tmdbId": 12776
+    },
+    {
+     "title": "Il posto",
+     "year": 1961,
+     "connection": "Milano e il lavoro"
+    }
+   ]
+  },
+  "43372": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Anna Magnani, madre che sogna Cinecittà",
+     "Visconti guarda il cinema dall'esterno",
+     "Comico e crudele insieme"
+    ],
+    "context": "Maddalena, infermiera romana, porta la figlia a un provino per un film e spende tutto per farla diventare una star. Scopre come il cinema tratta chi sta fuori. Luchino Visconti, da un soggetto di Zavattini, con una Magnani straordinaria."
+   },
+   "moreIdeas": [
+    {
+     "title": "Roma città aperta",
+     "year": 1945,
+     "connection": "Rossellini, Anna Magnani",
+     "tmdbId": 307
+    },
+    {
+     "title": "Mamma Roma",
+     "year": 1962,
+     "connection": "Pasolini, la Magnani madre ancora"
+    },
+    {
+     "title": "La terra trema",
+     "year": 1948,
+     "connection": "Visconti, il neorealismo puro"
+    },
+    {
+     "title": "Rocco e i suoi fratelli",
+     "year": 1960,
+     "connection": "Visconti, una madre e i figli",
+     "tmdbId": 8422
+    },
+    {
+     "title": "Il gattopardo",
+     "year": 1963,
+     "connection": "Visconti, il suo film più grande",
+     "tmdbId": 1040
+    },
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica e Zavattini",
+     "tmdbId": 5156
+    },
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Il sogno del cinema",
+     "tmdbId": 11216
+    },
+    {
+     "title": "L'uomo delle stelle",
+     "year": 1995,
+     "connection": "Tornatore, falsi provini e sogni"
+    },
+    {
+     "title": "8½",
+     "year": 1963,
+     "connection": "Fellini, il cinema dall'interno",
+     "tmdbId": 422
+    },
+    {
+     "title": "C'è ancora domani",
+     "year": 2023,
+     "connection": "Una madre romana del dopoguerra",
+     "tmdbId": 1026227
+    }
+   ]
+  },
+  "25403": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Nanni Moretti in Vespa per Roma d'estate",
+     "Le isole Eolie viste da un traghetto",
+     "Racconta la sua malattia con ironia"
+    ],
+    "context": "Tre capitoli: Moretti gira Roma deserta d'agosto in Vespa, va per isole con un amico che odia la televisione, e racconta come ha scoperto un tumore. Un diario vero, buffo e intelligente. Premio per la regia a Cannes."
+   },
+   "moreIdeas": [
+    {
+     "title": "Ecce bombo",
+     "year": 1978,
+     "connection": "Moretti giovane, studenti senza direzione"
+    },
+    {
+     "title": "La stanza del figlio",
+     "year": 2001,
+     "connection": "Moretti, un lutto in famiglia, Palma d'oro"
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "Le isole e la poesia",
+     "tmdbId": 11010
+    },
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Roma vista da chi ci vive",
+     "tmdbId": 179144
+    },
+    {
+     "title": "Roma",
+     "year": 1972,
+     "connection": "Fellini, la città personale"
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, la memoria",
+     "tmdbId": 7857
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Roma d'estate in macchina",
+     "tmdbId": 24188
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Isole e lentezza"
+    },
+    {
+     "title": "Pane e tulipani",
+     "year": 2000,
+     "connection": "Una vita che cambia strada",
+     "tmdbId": 552
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "Il corpo e il tempo",
+     "tmdbId": 310593
+    }
+   ]
+  },
+  "24168": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Filippo Timi, padre violento e devoto",
+     "Un figlio che lo ama comunque",
+     "Salvatores di nuovo da Ammaniti"
+    ],
+    "context": "Rino, disoccupato e pieno di rabbia, cresce da solo il figlio Cristiano nella pianura friulana, con l'amico Quattro Formaggi. Una notte di tempesta succede qualcosa di terribile. Un thriller su un amore padre e figlio sbagliato."
+   },
+   "moreIdeas": [
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Salvatores e Ammaniti, il primo film insieme",
+     "tmdbId": 25300
+    },
+    {
+     "title": "Il ragazzo invisibile",
+     "year": 2014,
+     "connection": "Salvatores, un ragazzo e un segreto",
+     "tmdbId": 303542
+    },
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone, violenza e debolezza",
+     "tmdbId": 483184
+    },
+    {
+     "title": "L'imbalsamatore",
+     "year": 2002,
+     "connection": "Garrone, un legame che diventa pericoloso",
+     "tmdbId": 35265
+    },
+    {
+     "title": "Non essere cattivo",
+     "year": 2015,
+     "connection": "Caligari, amicizia e violenza",
+     "tmdbId": 359156
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Salvatores, il suo Oscar"
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Un giallo di provincia",
+     "tmdbId": 468202
+    },
+    {
+     "title": "Il ladro di bambini",
+     "year": 1992,
+     "connection": "Amelio, un adulto e due bambini",
+     "tmdbId": 47714
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Una provincia dura",
+     "tmdbId": 8882
+    },
+    {
+     "title": "Nirvana",
+     "year": 1997,
+     "connection": "Salvatores nel futuro",
+     "tmdbId": 8765
+    }
+   ]
+  },
+  "708577": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Albanese e Cortellesi di nuovo insieme",
+     "Monica in carcere, Giovanni la aiuta",
+     "Più farsa del primo"
+    ],
+    "context": "Monica finisce in prigione per colpa delle cugine e Giovanni, l'intellettuale, si ritrova a doverle dare una mano. Il seguito di Come un gatto in tangenziale gioca ancora sui due mondi di Roma, ma con meno sorprese."
+   },
+   "moreIdeas": [
+    {
+     "title": "Come un gatto in tangenziale",
+     "year": 2017,
+     "connection": "Il primo film della coppia",
+     "tmdbId": 492282
+    },
+    {
+     "title": "C'è ancora domani",
+     "year": 2023,
+     "connection": "Cortellesi regista",
+     "tmdbId": 1026227
+    },
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Satira sociale di oggi",
+     "tmdbId": 374416
+    },
+    {
+     "title": "L'ora legale",
+     "year": 2017,
+     "connection": "Ficarra e Picone, regole e furbizie",
+     "tmdbId": 435921
+    },
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Due Italie a confronto",
+     "tmdbId": 48415
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, classi diverse",
+     "tmdbId": 244088
+    },
+    {
+     "title": "Ferie d'agosto",
+     "year": 1996,
+     "connection": "Virzì, destra e sinistra in vacanza",
+     "tmdbId": 56399
+    },
+    {
+     "title": "Tutta la vita davanti",
+     "year": 2008,
+     "connection": "Virzì, il lavoro precario",
+     "tmdbId": 51917
+    },
+    {
+     "title": "Tolo Tolo",
+     "year": 2020,
+     "connection": "Zalone e i pregiudizi",
+     "tmdbId": 593402
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Commedia romana",
+     "tmdbId": 381341
+    }
+   ]
+  },
+  "96714": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "La scuola Diaz, Genova, luglio 2001",
+     "Ricostruito dagli atti dei processi",
+     "Elio Germano, giornalista nella notte"
+    ],
+    "context": "Dopo i giorni del G8 di Genova, la polizia entra di notte in una scuola dove dormono manifestanti e giornalisti e li picchia. Daniele Vicari ricostruisce i fatti dagli atti giudiziari. Difficile da guardare, importante da conoscere."
+   },
+   "moreIdeas": [
+    {
+     "title": "Sulla mia pelle",
+     "year": 2018,
+     "connection": "La violenza in custodia, storia vera",
+     "tmdbId": 538362
+    },
+    {
+     "title": "La meglio gioventù",
+     "year": 2003,
+     "connection": "Giordana, quarant'anni d'Italia",
+     "tmdbId": 11659
+    },
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Petri, la polizia senza controllo",
+     "tmdbId": 26451
+    },
+    {
+     "title": "La battaglia di Algeri",
+     "year": 1966,
+     "connection": "Pontecorvo, la repressione",
+     "tmdbId": 17295
+    },
+    {
+     "title": "I cento passi",
+     "year": 2000,
+     "connection": "Una storia vera di coraggio",
+     "tmdbId": 29458
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, giustizia e Stato",
+     "tmdbId": 575452
+    },
+    {
+     "title": "Esterno Notte - Prima Parte",
+     "year": 2022,
+     "connection": "Bellocchio, il caso Moro",
+     "tmdbId": 977487
+    },
+    {
+     "title": "Suburra",
+     "year": 2015,
+     "connection": "Il potere a Roma",
+     "tmdbId": 356296
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Un'Italia che non si vede",
+     "tmdbId": 8882
+    },
+    {
+     "title": "Salvatore Giuliano",
+     "year": 1962,
+     "connection": "Rosi, la verità nascosta",
+     "tmdbId": 27523
+    }
+   ]
+  },
+  "977487": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Il rapimento di Aldo Moro, 1978",
+     "Fabrizio Gifuni è Moro, quasi identico",
+     "Bellocchio torna sul caso dopo vent'anni"
+    ],
+    "context": "Il 16 marzo 1978 le Brigate Rosse rapiscono Aldo Moro a Roma. Il racconto cambia punto di vista a ogni capitolo: Moro, il ministro Cossiga, il papa, una brigatista, la moglie. Nato come serie, uscito in sala in due parti."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, Buscetta e la mafia",
+     "tmdbId": 575452
+    },
+    {
+     "title": "Vincere",
+     "year": 2009,
+     "connection": "Bellocchio, Mussolini",
+     "tmdbId": 30239
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino, la stessa classe politica",
+     "tmdbId": 8832
+    },
+    {
+     "title": "Todo modo",
+     "year": 1976,
+     "connection": "Petri, la Democrazia cristiana sotto accusa",
+     "tmdbId": 47096
+    },
+    {
+     "title": "La meglio gioventù",
+     "year": 2003,
+     "connection": "Gli anni di piombo in una famiglia",
+     "tmdbId": 11659
+    },
+    {
+     "title": "Diaz - Non pulire questo sangue",
+     "year": 2012,
+     "connection": "Lo Stato e la violenza",
+     "tmdbId": 96714
+    },
+    {
+     "title": "Il caso Mattei",
+     "year": 1972,
+     "connection": "Rosi, un altro mistero italiano"
+    },
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Il potere negli anni Settanta",
+     "tmdbId": 26451
+    },
+    {
+     "title": "I cento passi",
+     "year": 2000,
+     "connection": "Lo stesso 1978, in Sicilia",
+     "tmdbId": 29458
+    },
+    {
+     "title": "Salvatore Giuliano",
+     "year": 1962,
+     "connection": "Rosi, la storia italiana in inchiesta",
+     "tmdbId": 27523
+    }
+   ]
+  },
+  "41663": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Il terzo Fantozzi, sempre più surreale",
+     "La gara di ciclismo aziendale",
+     "Paolo Villaggio anche regista"
+    ],
+    "context": "Fantozzi deve sopportare un nuovo megadirettore, una dieta, la gara di bici dell'azienda e la solita nuvola. Il terzo film della serie, diretto da Villaggio con Neri Parenti. Le gag si ripetono, ma alcune sono tra le più famose."
+   },
+   "moreIdeas": [
+    {
+     "title": "Fantozzi",
+     "year": 1975,
+     "connection": "Il primo, il migliore",
+     "tmdbId": 25606
+    },
+    {
+     "title": "Il secondo tragico Fantozzi",
+     "year": 1976,
+     "connection": "Il seguito, la Corazzata"
+    },
+    {
+     "title": "Il posto",
+     "year": 1961,
+     "connection": "Olmi, l'impiegato vero"
+    },
+    {
+     "title": "Amici miei",
+     "year": 1975,
+     "connection": "Commedia crudele di quegli anni",
+     "tmdbId": 20914
+    },
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone, l'impiegato di oggi",
+     "tmdbId": 374416
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Il lavoro e i soldi",
+     "tmdbId": 310126
+    },
+    {
+     "title": "I mostri",
+     "year": 1963,
+     "connection": "Gli italiani visti senza pietà",
+     "tmdbId": 45005
+    },
+    {
+     "title": "Sole a catinelle",
+     "year": 2013,
+     "connection": "La sfortuna dell'italiano medio",
+     "tmdbId": 231176
+    },
+    {
+     "title": "La banda dei Babbi Natale",
+     "year": 2010,
+     "connection": "Uomini comuni nei guai",
+     "tmdbId": 58013
+    },
+    {
+     "title": "Una vita difficile",
+     "year": 1961,
+     "connection": "Un uomo che non si adatta",
+     "tmdbId": 56343
+    }
+   ]
+  },
+  "56399": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Due famiglie opposte a Ventotene",
+     "Silvio Orlando di sinistra, Ennio Fantastichini di destra",
+     "Paolo Virzì prima del successo"
+    ],
+    "context": "Un giornalista intellettuale e un commerciante romano rumoroso passano le vacanze di agosto in due case vicine su un'isola. Si odiano, si spiano, si mescolano. Virzì racconta l'Italia degli anni Novanta in una sola estate."
+   },
+   "moreIdeas": [
+    {
+     "title": "La prima cosa bella",
+     "year": 2010,
+     "connection": "Virzì, una famiglia a Livorno",
+     "tmdbId": 36940
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, due famiglie diverse",
+     "tmdbId": 244088
+    },
+    {
+     "title": "La pazza gioia",
+     "year": 2016,
+     "connection": "Virzì, una fuga in Toscana",
+     "tmdbId": 380225
+    },
+    {
+     "title": "Tutta la vita davanti",
+     "year": 2008,
+     "connection": "Virzì, il lavoro precario",
+     "tmdbId": 51917
+    },
+    {
+     "title": "Odio l'estate",
+     "year": 2020,
+     "connection": "Tre famiglie nella stessa casa",
+     "tmdbId": 606954
+    },
+    {
+     "title": "Come un gatto in tangenziale",
+     "year": 2017,
+     "connection": "Due Rome a confronto",
+     "tmdbId": 492282
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi, le vacanze degli italiani",
+     "tmdbId": 24188
+    },
+    {
+     "title": "Pranzo di ferragosto",
+     "year": 2008,
+     "connection": "Un ferragosto romano",
+     "tmdbId": 17631
+    },
+    {
+     "title": "Caro diario",
+     "year": 1993,
+     "connection": "Moretti e le isole",
+     "tmdbId": 25403
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Un'isola e un gruppo di italiani"
+    }
+   ]
+  },
+  "377151": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Lampedusa vista da un bambino e un medico",
+     "Documentario, niente attori",
+     "Orso d'oro a Berlino"
+    ],
+    "context": "Samuele, dodici anni, gioca con la fionda e va dal medico per un occhio pigro. Intanto, al largo, arrivano barconi di migranti, e il medico dell'isola li accoglie, vivi e morti. Gianfranco Rosi filma le due vite che si sfiorano senza toccarsi."
+   },
+   "moreIdeas": [
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, il viaggio dall'altra parte",
+     "tmdbId": 937746
+    },
+    {
+     "title": "Terraferma",
+     "year": 2011,
+     "connection": "Crialese, pescatori e migranti a Linosa",
+     "tmdbId": 73872
+    },
+    {
+     "title": "Tolo Tolo",
+     "year": 2020,
+     "connection": "Zalone, la stessa rotta con l'ironia",
+     "tmdbId": 593402
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Il mare e chi lo attraversa"
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "Un'isola e un uomo semplice",
+     "tmdbId": 11010
+    },
+    {
+     "title": "La terra trema",
+     "year": 1948,
+     "connection": "Visconti, pescatori siciliani veri"
+    },
+    {
+     "title": "Paisà",
+     "year": 1946,
+     "connection": "Rossellini, l'Italia vista da vicino",
+     "tmdbId": 8429
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Il realismo di oggi",
+     "tmdbId": 8882
+    },
+    {
+     "title": "La battaglia di Algeri",
+     "year": 1966,
+     "connection": "L'Africa e l'Europa",
+     "tmdbId": 17295
+    },
+    {
+     "title": "Le meraviglie",
+     "year": 2014,
+     "connection": "Rohrwacher, un'infanzia in campagna",
+     "tmdbId": 265226
+    }
+   ]
+  },
+  "29458": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Luigi Lo Cascio è Peppino Impastato",
+     "Una radio contro la mafia di Cinisi",
+     "Cento passi separano casa sua dal boss"
+    ],
+    "context": "Peppino, figlio di una famiglia mafiosa di Cinisi, si ribella al padre e prende in giro il boss Tano Badalamenti dalla sua radio libera. Viene ucciso nel 1978. Marco Tullio Giordana racconta una storia vera con passione e rabbia."
+   },
+   "moreIdeas": [
+    {
+     "title": "La meglio gioventù",
+     "year": 2003,
+     "connection": "Giordana, Lo Cascio di nuovo",
+     "tmdbId": 11659
+    },
+    {
+     "title": "La mafia uccide solo d'estate",
+     "year": 2013,
+     "connection": "Pif, la mafia raccontata con ironia",
+     "tmdbId": 239877
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, il pentito Buscetta",
+     "tmdbId": 575452
+    },
+    {
+     "title": "Il giorno della civetta",
+     "year": 1968,
+     "connection": "Damiani, la mafia di paese",
+     "tmdbId": 58658
+    },
+    {
+     "title": "Salvatore Giuliano",
+     "year": 1962,
+     "connection": "Rosi, la Sicilia e lo Stato",
+     "tmdbId": 27523
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "La camorra di oggi",
+     "tmdbId": 8882
+    },
+    {
+     "title": "Esterno Notte - Prima Parte",
+     "year": 2022,
+     "connection": "Lo stesso 1978, a Roma",
+     "tmdbId": 977487
+    },
+    {
+     "title": "Diaz - Non pulire questo sangue",
+     "year": 2012,
+     "connection": "Un'altra storia vera di violenza",
+     "tmdbId": 96714
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "La politica e la mafia",
+     "tmdbId": 8832
+    },
+    {
+     "title": "L'ora legale",
+     "year": 2017,
+     "connection": "La Sicilia e le regole",
+     "tmdbId": 435921
+    }
+   ]
+  },
+  "11689": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Terence Hill e Bud Spencer poliziotti a Miami",
+     "Infiltrati per caso nella polizia",
+     "Pugni, inseguimenti e risate"
+    ],
+    "context": "Due disoccupati si arruolano in polizia per errore e vengono mandati insieme per le strade di Miami contro una banda di falsari. Diretto da E.B. Clucher, uno dei loro film più amati fuori dal western."
+   },
+   "moreIdeas": [
+    {
+     "title": "Pari e dispari",
+     "year": 1978,
+     "connection": "Hill e Spencer di nuovo a Miami",
+     "tmdbId": 11367
+    },
+    {
+     "title": "...altrimenti ci arrabbiamo!",
+     "year": 1974,
+     "connection": "Hill e Spencer, la dune buggy",
+     "tmdbId": 6916
+    },
+    {
+     "title": "Lo chiamavano Trinità...",
+     "year": 1970,
+     "connection": "Hill e Spencer nel western",
+     "tmdbId": 9394
+    },
+    {
+     "title": "...continuavano a chiamarlo Trinità",
+     "year": 1971,
+     "connection": "Il seguito",
+     "tmdbId": 11829
+    },
+    {
+     "title": "Il mio nome è Nessuno",
+     "year": 1973,
+     "connection": "Terence Hill e Henry Fonda",
+     "tmdbId": 9474
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Un poliziotto e un detenuto in fuga",
+     "tmdbId": 38396
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Scambi di persona",
+     "tmdbId": 12776
+    },
+    {
+     "title": "La leggenda di Al, John e Jack",
+     "year": 2002,
+     "connection": "Italiani in America",
+     "tmdbId": 38397
+    },
+    {
+     "title": "Che bella giornata",
+     "year": 2011,
+     "connection": "Zalone guardia per sbaglio",
+     "tmdbId": 53319
+    },
+    {
+     "title": "Benvenuti al Nord",
+     "year": 2012,
+     "connection": "Due amici diversi",
+     "tmdbId": 85038
+    }
+   ]
+  },
+  "45005": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Venti episodi feroci sugli italiani del boom",
+     "Gassman e Tognazzi in decine di ruoli",
+     "Alcuni durano un minuto solo"
+    ],
+    "context": "Politici, preti, padri, mariti, tifosi: Dino Risi mette in fila piccoli ritratti di italiani meschini, furbi e ridicoli. Ogni episodio finisce con una battuta cattiva. Un catalogo della commedia all'italiana nella sua forma più breve."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi e Gassman, l'anno prima",
+     "tmdbId": 24188
+    },
+    {
+     "title": "Una vita difficile",
+     "year": 1961,
+     "connection": "Risi, un italiano che non si piega",
+     "tmdbId": 56343
+    },
+    {
+     "title": "Profumo di donna",
+     "year": 1974,
+     "connection": "Risi e Gassman, più tardi",
+     "tmdbId": 47848
+    },
+    {
+     "title": "Amici miei",
+     "year": 1975,
+     "connection": "Tognazzi e gli scherzi",
+     "tmdbId": 20914
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli e Gassman",
+     "tmdbId": 24382
+    },
+    {
+     "title": "L'oro di Napoli",
+     "year": 1954,
+     "connection": "De Sica, un film a episodi",
+     "tmdbId": 56122
+    },
+    {
+     "title": "La grande guerra",
+     "year": 1959,
+     "connection": "Monicelli, italiani in guerra",
+     "tmdbId": 55823
+    },
+    {
+     "title": "Fantozzi",
+     "year": 1975,
+     "connection": "L'italiano medio preso in giro",
+     "tmdbId": 25606
+    },
+    {
+     "title": "Divorzio all'italiana",
+     "year": 1961,
+     "connection": "Germi, satira feroce"
+    },
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone, gli italiani di oggi",
+     "tmdbId": 374416
+    }
+   ]
+  },
+  "27431": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Karl Malden, enigmista cieco che indaga",
+     "Un istituto di genetica e nove piste",
+     "Il secondo giallo di Dario Argento"
+    ],
+    "context": "Un ex giornalista cieco e un cronista indagano su una serie di omicidi legati a un istituto di ricerca genetica a Torino. Argento ha detto che è il suo film che ama meno, ma il ritmo e la tensione funzionano."
+   },
+   "moreIdeas": [
+    {
+     "title": "L'uccello dalle piume di cristallo",
+     "year": 1970,
+     "connection": "Il primo giallo di Argento",
+     "tmdbId": 20345
+    },
+    {
+     "title": "4 mosche di velluto grigio",
+     "year": 1971,
+     "connection": "Il terzo",
+     "tmdbId": 30689
+    },
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento, di nuovo Torino",
+     "tmdbId": 20126
+    },
+    {
+     "title": "Suspiria",
+     "year": 1977,
+     "connection": "Argento e l'orrore",
+     "tmdbId": 11906
+    },
+    {
+     "title": "Phenomena",
+     "year": 1985,
+     "connection": "Argento e la scienza",
+     "tmdbId": 29161
+    },
+    {
+     "title": "Sei donne per l'assassino",
+     "year": 1964,
+     "connection": "Bava, il giallo",
+     "tmdbId": 28055
+    },
+    {
+     "title": "Non si sevizia un paperino",
+     "year": 1972,
+     "connection": "Fulci, un giallo di paese",
+     "tmdbId": 49361
+    },
+    {
+     "title": "La maschera del demonio",
+     "year": 1960,
+     "connection": "Bava, l'horror gotico",
+     "tmdbId": 27632
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Un'indagine di oggi",
+     "tmdbId": 468202
+    },
+    {
+     "title": "L'uomo del labirinto",
+     "year": 2019,
+     "connection": "Carrisi, un mistero e un investigatore",
+     "tmdbId": 602545
+    }
+   ]
+  },
+  "4789": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Una famiglia ebrea di Ferrara prima della guerra",
+     "Il giardino come mondo chiuso",
+     "Oscar per il miglior film straniero"
+    ],
+    "context": "Ferrara, fine anni Trenta: Giorgio è innamorato di Micòl, figlia di una ricca famiglia ebrea che con le leggi razziali si chiude nel suo giardino. Vittorio De Sica dal romanzo di Giorgio Bassani. Bello e malinconico, sa già come finirà."
+   },
+   "moreIdeas": [
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Benigni, una famiglia ebrea e la deportazione",
+     "tmdbId": 637
+    },
+    {
+     "title": "Il conformista",
+     "year": 1971,
+     "connection": "Bertolucci, la borghesia sotto il fascismo",
+     "tmdbId": 8416
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, il fascismo dentro casa"
+    },
+    {
+     "title": "Il gattopardo",
+     "year": 1963,
+     "connection": "Visconti, un mondo che finisce",
+     "tmdbId": 1040
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, il fascismo di provincia",
+     "tmdbId": 7857
+    },
+    {
+     "title": "Kapò",
+     "year": 1960,
+     "connection": "Pontecorvo, una ragazza ebrea in un campo",
+     "tmdbId": 45884
+    },
+    {
+     "title": "La ciociara",
+     "year": 1960,
+     "connection": "De Sica, la guerra vista da una madre",
+     "tmdbId": 24167
+    },
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, l'Emilia e il fascismo",
+     "tmdbId": 3870
+    },
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica, il suo film più famoso",
+     "tmdbId": 5156
+    },
+    {
+     "title": "Concorrenza sleale",
+     "year": 2001,
+     "connection": "Scola, le leggi razziali a Roma"
+    }
+   ]
+  },
+  "58658": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Franco Nero, capitano del Nord in Sicilia",
+     "Claudia Cardinale, vedova che sa",
+     "Da Leonardo Sciascia"
+    ],
+    "context": "In un paese siciliano un imprenditore viene ucciso, e il capitano dei carabinieri venuto da Parma prova a trovare il colpevole. Tutti sanno, nessuno parla. Damiano Damiani dal romanzo di Sciascia, uno dei primi film a nominare la mafia."
+   },
+   "moreIdeas": [
+    {
+     "title": "Salvatore Giuliano",
+     "year": 1962,
+     "connection": "Rosi, la Sicilia e il silenzio",
+     "tmdbId": 27523
+    },
+    {
+     "title": "I cento passi",
+     "year": 2000,
+     "connection": "Giordana, chi parla contro la mafia",
+     "tmdbId": 29458
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, il primo pentito",
+     "tmdbId": 575452
+    },
+    {
+     "title": "La mafia uccide solo d'estate",
+     "year": 2013,
+     "connection": "Pif, la mafia vista da Palermo",
+     "tmdbId": 239877
+    },
+    {
+     "title": "Divorzio all'italiana",
+     "year": 1961,
+     "connection": "Germi, la Sicilia per ridere"
+    },
+    {
+     "title": "Sedotta e abbandonata",
+     "year": 1964,
+     "connection": "Germi, l'onore in Sicilia"
+    },
+    {
+     "title": "Il gattopardo",
+     "year": 1963,
+     "connection": "Visconti, la Sicilia che non cambia",
+     "tmdbId": 1040
+    },
+    {
+     "title": "Django",
+     "year": 1966,
+     "connection": "Franco Nero nel western",
+     "tmdbId": 10772
+    },
+    {
+     "title": "L'ora legale",
+     "year": 2017,
+     "connection": "La Sicilia e le regole oggi",
+     "tmdbId": 435921
+    },
+    {
+     "title": "Le mani sulla città",
+     "year": 1963,
+     "connection": "Rosi, potere e affari",
+     "tmdbId": 58383
+    }
+   ]
+  },
+  "47714": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un carabiniere accompagna due bambini",
+     "Da Milano alla Sicilia in treno",
+     "Gianni Amelio, erede del neorealismo"
+    ],
+    "context": "Antonio, giovane carabiniere, deve portare in un istituto due fratelli: lei costretta a prostituirsi dalla madre, lui muto. Il viaggio attraverso l'Italia li cambia tutti e tre. Gran premio della giuria a Cannes."
+   },
+   "moreIdeas": [
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica, un padre e un figlio",
+     "tmdbId": 5156
+    },
+    {
+     "title": "Sciuscià",
+     "year": 1946,
+     "connection": "De Sica, bambini abbandonati",
+     "tmdbId": 43469
+    },
+    {
+     "title": "Lamerica",
+     "year": 1994,
+     "connection": "Amelio, l'Albania e l'Italia"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Un bambino e un crimine",
+     "tmdbId": 25300
+    },
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Un adulto e un bambino in Sicilia",
+     "tmdbId": 11216
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "Un'amicizia semplice",
+     "tmdbId": 11010
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, ragazzi in viaggio",
+     "tmdbId": 937746
+    },
+    {
+     "title": "Umberto D.",
+     "year": 1952,
+     "connection": "De Sica, la solitudine",
+     "tmdbId": 833
+    },
+    {
+     "title": "Come Dio comanda",
+     "year": 2008,
+     "connection": "Un padre e un figlio",
+     "tmdbId": 24168
+    },
+    {
+     "title": "La strada",
+     "year": 1954,
+     "connection": "Fellini, il viaggio",
+     "tmdbId": 405
+    }
+   ]
+  },
+  "22826": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Benigni scambiato per un serial killer",
+     "Una poliziotta si finge sua amante",
+     "Equivoci a catena senza respiro"
+    ],
+    "context": "Loris, un uomo un po' scroccone, si comporta in modo strano e la polizia si convince che sia il mostro che uccide le donne. Una giovane agente va a vivere con lui per farlo scoprire. Una farsa costruita come un orologio."
+   },
+   "moreIdeas": [
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni scambiato per un boss",
+     "tmdbId": 12776
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Benigni, il suo film più famoso",
+     "tmdbId": 637
+    },
+    {
+     "title": "Non ci resta che piangere",
+     "year": 1984,
+     "connection": "Benigni e Troisi",
+     "tmdbId": 27670
+    },
+    {
+     "title": "Il piccolo diavolo",
+     "year": 1988,
+     "connection": "Benigni e Walter Matthau"
+    },
+    {
+     "title": "Pinocchio",
+     "year": 2019,
+     "connection": "Benigni Geppetto per Garrone",
+     "tmdbId": 413518
+    },
+    {
+     "title": "Che bella giornata",
+     "year": 2011,
+     "connection": "Zalone, equivoci e terrorismo",
+     "tmdbId": 53319
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Il trio in fuga per sbaglio",
+     "tmdbId": 38396
+    },
+    {
+     "title": "La leggenda di Al, John e Jack",
+     "year": 2002,
+     "connection": "Equivoci tra gangster",
+     "tmdbId": 38397
+    },
+    {
+     "title": "Ricomincio da tre",
+     "year": 1981,
+     "connection": "Troisi, un comico ingenuo",
+     "tmdbId": 13386
+    },
+    {
+     "title": "Il cosmo sul comò",
+     "year": 2008,
+     "connection": "Commedia a episodi",
+     "tmdbId": 24169
+    }
+   ]
+  },
+  "320028": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Una cena tra fratelli e amici a Roma",
+     "Alessandro Gassmann annuncia il nome del figlio",
+     "Francesca Archibugi rifà una commedia francese"
+    ],
+    "context": "Paolo, che aspetta un figlio, dice a cena come lo chiamerà, e la battuta scatena una serata di litigi e confessioni tra la sorella, il cognato e un amico d'infanzia. Tratto da una pièce francese, come Perfetti sconosciuti si regge su una tavola."
+   },
+   "moreIdeas": [
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Genovese, una cena e i segreti",
+     "tmdbId": 381341
+    },
+    {
+     "title": "La terrazza",
+     "year": 1980,
+     "connection": "Scola, intellettuali a cena"
+    },
+    {
+     "title": "The Place",
+     "year": 2017,
+     "connection": "Tutto intorno a un tavolo",
+     "tmdbId": 468198
+    },
+    {
+     "title": "Pranzo di ferragosto",
+     "year": 2008,
+     "connection": "Un pranzo romano",
+     "tmdbId": 17631
+    },
+    {
+     "title": "Mine vaganti",
+     "year": 2010,
+     "connection": "Özpetek, una cena di famiglia",
+     "tmdbId": 40794
+    },
+    {
+     "title": "Saturno contro",
+     "year": 2007,
+     "connection": "Özpetek, amici e un lutto",
+     "tmdbId": 22373
+    },
+    {
+     "title": "Le fate ignoranti",
+     "year": 2001,
+     "connection": "Özpetek, amicizia e segreti",
+     "tmdbId": 23550
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, famiglie e colpe",
+     "tmdbId": 244088
+    },
+    {
+     "title": "Tutta colpa di Freud",
+     "year": 2014,
+     "connection": "Famiglie romane",
+     "tmdbId": 250235
+    },
+    {
+     "title": "Ferie d'agosto",
+     "year": 1996,
+     "connection": "Virzì, due famiglie a confronto",
+     "tmdbId": 56399
+    }
+   ]
+  },
+  "565179": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Romolo e Remo, recitato in protolatino",
+     "Alessandro Borghi, fratello disposto a tutto",
+     "Natura, fango e luce naturale"
+    ],
+    "context": "Due fratelli pastori sopravvivono a un'esondazione e diventano prigionieri, poi capi di un gruppo di fuggitivi. Matteo Rovere racconta la fondazione di Roma senza mito, con una lingua inventata dagli studiosi e i sottotitoli."
+   },
+   "moreIdeas": [
+    {
+     "title": "Veloce come il vento",
+     "year": 2016,
+     "connection": "Rovere, due fratelli e una sfida",
+     "tmdbId": 375572
+    },
+    {
+     "title": "Non essere cattivo",
+     "year": 2015,
+     "connection": "Borghi, amicizia e destino",
+     "tmdbId": 359156
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone, l'antico crudo",
+     "tmdbId": 314405
+    },
+    {
+     "title": "Il vangelo secondo Matteo",
+     "year": 1965,
+     "connection": "Pasolini, il mito senza ornamenti",
+     "tmdbId": 24192
+    },
+    {
+     "title": "Suburra",
+     "year": 2015,
+     "connection": "Borghi e Roma, ma oggi",
+     "tmdbId": 356296
+    },
+    {
+     "title": "Le otto montagne",
+     "year": 2022,
+     "connection": "Due uomini e la natura",
+     "tmdbId": 803700
+    },
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Rohrwacher, un mito contadino",
+     "tmdbId": 481432
+    },
+    {
+     "title": "La chimera",
+     "year": 2023,
+     "connection": "Rohrwacher, l'Italia antica sotto terra",
+     "tmdbId": 837335
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, la sopravvivenza",
+     "tmdbId": 937746
+    },
+    {
+     "title": "Noi credevamo",
+     "year": 2010,
+     "connection": "Martone, la nascita dell'Italia",
+     "tmdbId": 56853
+    }
+   ]
+  },
+  "433150": {
+   "whyWatch": {
+    "recommendation": "NO",
+    "reasons": [
+     "Il seguito perde la sorpresa del primo",
+     "Troppa trama, poca emozione",
+     "Gli effetti non bastano"
+    ],
+    "context": "Michele, ora sedicenne, scopre di avere una madre e una sorella con poteri come i suoi, e insieme affrontano chi vuole usarli. Salvatores prova a fare una saga, ma il secondo capitolo è confuso e freddo. Meglio rivedere il primo."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il ragazzo invisibile",
+     "year": 2014,
+     "connection": "Il primo film, molto più riuscito",
+     "tmdbId": 303542
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Un supereroe italiano che funziona",
+     "tmdbId": 364433
+    },
+    {
+     "title": "Freaks Out",
+     "year": 2021,
+     "connection": "Mainetti, poteri e guerra",
+     "tmdbId": 571468
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Salvatores, un ragazzo e un segreto",
+     "tmdbId": 25300
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Salvatores, il suo Oscar"
+    },
+    {
+     "title": "Come Dio comanda",
+     "year": 2008,
+     "connection": "Salvatores, un padre e un figlio",
+     "tmdbId": 24168
+    },
+    {
+     "title": "Nirvana",
+     "year": 1997,
+     "connection": "Salvatores e la fantascienza",
+     "tmdbId": 8765
+    },
+    {
+     "title": "Pinocchio",
+     "year": 2019,
+     "connection": "Garrone, il fantastico per ragazzi",
+     "tmdbId": 413518
+    },
+    {
+     "title": "Notte prima degli esami",
+     "year": 2006,
+     "connection": "Adolescenti romani",
+     "tmdbId": 33365
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Il fantastico italiano",
+     "tmdbId": 314405
+    }
+   ]
+  },
+  "24192": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Pasolini, ateo, filma il Vangelo parola per parola",
+     "Contadini e intellettuali al posto degli attori",
+     "Matera e la Puglia come Palestina"
+    ],
+    "context": "La vita di Gesù secondo Matteo, con i dialoghi presi dal testo. Enrique Irazoqui, studente spagnolo, è un Cristo duro e arrabbiato; la Madonna anziana è la madre di Pasolini. Volti veri, musica di Bach e spiritual. Dedicato a papa Giovanni XXIII."
+   },
+   "moreIdeas": [
+    {
+     "title": "Accattone",
+     "year": 1961,
+     "connection": "Pasolini, il suo primo film",
+     "tmdbId": 12491
+    },
+    {
+     "title": "Mamma Roma",
+     "year": 1962,
+     "connection": "Pasolini, la madre e il figlio"
+    },
+    {
+     "title": "Il Decameron",
+     "year": 1971,
+     "connection": "Pasolini, il Sud e i racconti antichi"
+    },
+    {
+     "title": "Il primo re",
+     "year": 2019,
+     "connection": "Rovere, il mito senza ornamenti",
+     "tmdbId": 565179
+    },
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Rohrwacher, un santo contadino",
+     "tmdbId": 481432
+    },
+    {
+     "title": "La terra trema",
+     "year": 1948,
+     "connection": "Visconti, volti veri"
+    },
+    {
+     "title": "Le notti di Cabiria",
+     "year": 1957,
+     "connection": "Fellini, la fede e la speranza",
+     "tmdbId": 19426
+    },
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "Attori presi dalla strada",
+     "tmdbId": 5156
+    },
+    {
+     "title": "La strada",
+     "year": 1954,
+     "connection": "Fellini, un'anima pura",
+     "tmdbId": 405
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, un'odissea con attori veri",
+     "tmdbId": 937746
+    }
+   ]
+  },
+  "55717": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un pastore francese in un paese occitano",
+     "Una comunità che accoglie e poi rifiuta",
+     "Fatto da una cooperativa, girato con niente"
+    ],
+    "context": "Philippe, ex insegnante diventato pastore, arriva con la famiglia e le capre in un villaggio delle valli occitane del Piemonte. Il paese lo accoglie, poi cominciano i sospetti. Giorgio Diritti esordisce con un film distribuito a mano, diventato un caso."
+   },
+   "moreIdeas": [
+    {
+     "title": "Le otto montagne",
+     "year": 2022,
+     "connection": "La montagna e chi ci vive",
+     "tmdbId": 803700
+    },
+    {
+     "title": "L'albero degli zoccoli",
+     "year": 1978,
+     "connection": "Olmi, i contadini lombardi"
+    },
+    {
+     "title": "Le meraviglie",
+     "year": 2014,
+     "connection": "Rohrwacher, una famiglia di apicoltori",
+     "tmdbId": 265226
+    },
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "La campagna e gli estranei",
+     "tmdbId": 481432
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "Uno straniero e un piccolo paese",
+     "tmdbId": 11010
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Una comunità chiusa"
+    },
+    {
+     "title": "Benvenuti al sud",
+     "year": 2010,
+     "connection": "Un forestiero in un paese, per ridere",
+     "tmdbId": 48415
+    },
+    {
+     "title": "Pane e tulipani",
+     "year": 2000,
+     "connection": "Una vita nuova altrove",
+     "tmdbId": 552
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Un paese di montagna e i sospetti",
+     "tmdbId": 468202
+    },
+    {
+     "title": "Terraferma",
+     "year": 2011,
+     "connection": "Chi accoglie e chi respinge",
+     "tmdbId": 73872
+    }
+   ]
+  },
+  "45884": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Susan Strasberg, ragazza ebrea nel lager",
+     "Per sopravvivere diventa kapò",
+     "Il primo film di Gillo Pontecorvo"
+    ],
+    "context": "Edith, quattordici anni, deportata, si salva fingendosi una prigioniera politica e diventa una sorvegliante delle altre detenute. L'amore per un prigioniero russo la cambia. Candidato all'Oscar, discusso per anni per una sola inquadratura."
+   },
+   "moreIdeas": [
+    {
+     "title": "La battaglia di Algeri",
+     "year": 1966,
+     "connection": "Pontecorvo, il suo film più famoso",
+     "tmdbId": 17295
+    },
+    {
+     "title": "Queimada",
+     "year": 1969,
+     "connection": "Pontecorvo, una rivolta coloniale",
+     "tmdbId": 42617
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Benigni, il lager visto da un padre",
+     "tmdbId": 637
+    },
+    {
+     "title": "Il giardino dei Finzi Contini",
+     "year": 1970,
+     "connection": "De Sica, le leggi razziali",
+     "tmdbId": 4789
+    },
+    {
+     "title": "La ciociara",
+     "year": 1960,
+     "connection": "De Sica, la guerra e una donna",
+     "tmdbId": 24167
+    },
+    {
+     "title": "Roma città aperta",
+     "year": 1945,
+     "connection": "Rossellini, la Resistenza",
+     "tmdbId": 307
+    },
+    {
+     "title": "Paisà",
+     "year": 1946,
+     "connection": "Rossellini, la guerra",
+     "tmdbId": 8429
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, i perseguitati del fascismo"
+    },
+    {
+     "title": "Il conformista",
+     "year": 1971,
+     "connection": "Bertolucci, chi si adatta al potere",
+     "tmdbId": 8416
+    },
+    {
+     "title": "Germania anno zero",
+     "year": 1948,
+     "connection": "Rossellini, dopo la guerra"
+    }
+   ]
+  },
+  "35265": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un tassidermista nano e un giovane cameriere",
+     "Ernesto Mahieux, attore perfetto e sconosciuto",
+     "Ispirato a un fatto di cronaca napoletana"
+    ],
+    "context": "Peppino, imbalsamatore di animali che lavora anche per la camorra, prende con sé Valerio, un ragazzo alto e bello. Il legame tra loro diventa possesso, gelosia e pericolo. Il film che ha fatto conoscere Matteo Garrone."
+   },
+   "moreIdeas": [
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone, un altro legame che diventa violento",
+     "tmdbId": 483184
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, la camorra",
+     "tmdbId": 8882
+    },
+    {
+     "title": "Reality",
+     "year": 2012,
+     "connection": "Garrone, Napoli e la televisione",
+     "tmdbId": 103758
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone, mostri e favole",
+     "tmdbId": 314405
+    },
+    {
+     "title": "Come Dio comanda",
+     "year": 2008,
+     "connection": "Un legame sbagliato",
+     "tmdbId": 24168
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino, un uomo solo e la mafia",
+     "tmdbId": 24653
+    },
+    {
+     "title": "L'uomo in più",
+     "year": 2001,
+     "connection": "Sorrentino, il suo primo film",
+     "tmdbId": 53482
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, il suo film più recente",
+     "tmdbId": 937746
+    },
+    {
+     "title": "Pinocchio",
+     "year": 2019,
+     "connection": "Garrone, la favola",
+     "tmdbId": 413518
+    },
+    {
+     "title": "La paranza dei bambini",
+     "year": 2019,
+     "connection": "Napoli e la criminalità",
+     "tmdbId": 574436
+    }
+   ]
+  },
+  "56122": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Sei episodi di vita napoletana",
+     "Totò, Sophia Loren, De Sica stesso",
+     "La pizzaiola che perde l'anello"
+    ],
+    "context": "Un pagliaccio maltrattato da un boss, una pizzaiola infedele, un conte che perde a carte con un bambino, un funerale, una prostituta che si sposa, un professore di saggezza. Vittorio De Sica racconta Napoli con amore e ironia."
+   },
+   "moreIdeas": [
+    {
+     "title": "Ieri, oggi, domani",
+     "year": 1963,
+     "connection": "De Sica, Sophia Loren e Napoli"
+    },
+    {
+     "title": "Matrimonio all'italiana",
+     "year": 1964,
+     "connection": "De Sica, Loren e Mastroianni a Napoli"
+    },
+    {
+     "title": "È stata la mano di Dio",
+     "year": 2021,
+     "connection": "Sorrentino, la sua Napoli",
+     "tmdbId": 722778
+    },
+    {
+     "title": "Parthenope",
+     "year": 2024,
+     "connection": "Sorrentino, Napoli in una donna",
+     "tmdbId": 1109255
+    },
+    {
+     "title": "Ricomincio da tre",
+     "year": 1981,
+     "connection": "Troisi, un napoletano giovane",
+     "tmdbId": 13386
+    },
+    {
+     "title": "I mostri",
+     "year": 1963,
+     "connection": "Risi, film a episodi",
+     "tmdbId": 45005
+    },
+    {
+     "title": "La ciociara",
+     "year": 1960,
+     "connection": "De Sica e Loren",
+     "tmdbId": 24167
+    },
+    {
+     "title": "Le mani sulla città",
+     "year": 1963,
+     "connection": "Rosi, Napoli e il potere",
+     "tmdbId": 58383
+    },
+    {
+     "title": "Scusate il ritardo",
+     "year": 1983,
+     "connection": "Troisi a Napoli",
+     "tmdbId": 56784
+    },
+    {
+     "title": "Miracolo a Milano",
+     "year": 1951,
+     "connection": "De Sica, una favola tra i poveri",
+     "tmdbId": 43379
+    }
+   ]
+  },
+  "12308": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Stefano Accorsi ha paura di diventare padre",
+     "Trentenni che vogliono scappare",
+     "Gabriele Muccino al suo successo"
+    ],
+    "context": "Carlo sta per diventare padre e si innamora di una diciottenne; i suoi amici, tutti intorno ai trent'anni, sognano di partire per l'Africa. Muccino racconta una generazione che non vuole crescere, con un ritmo nervoso. Ha avuto un remake americano."
+   },
+   "moreIdeas": [
+    {
+     "title": "Come te nessuno mai",
+     "year": 1999,
+     "connection": "Muccino, gli adolescenti"
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Coppie in crisi a cena",
+     "tmdbId": 381341
+    },
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Genovese, chi non cresce",
+     "tmdbId": 56909
+    },
+    {
+     "title": "Le fate ignoranti",
+     "year": 2001,
+     "connection": "Özpetek, lo stesso anno, amori nascosti",
+     "tmdbId": 23550
+    },
+    {
+     "title": "Saturno contro",
+     "year": 2007,
+     "connection": "Özpetek, amici in crisi",
+     "tmdbId": 22373
+    },
+    {
+     "title": "Notte prima degli esami",
+     "year": 2006,
+     "connection": "Brizzi, la giovinezza",
+     "tmdbId": 33365
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, famiglie e scelte",
+     "tmdbId": 244088
+    },
+    {
+     "title": "Tu la conosci Claudia?",
+     "year": 2004,
+     "connection": "Amori incrociati",
+     "tmdbId": 57112
+    },
+    {
+     "title": "Tutta colpa di Freud",
+     "year": 2014,
+     "connection": "Amori complicati",
+     "tmdbId": 250235
+    },
+    {
+     "title": "La finestra di fronte",
+     "year": 2003,
+     "connection": "Özpetek, un matrimonio e un desiderio",
+     "tmdbId": 29987
+    }
+   ]
+  },
+  "602545": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Toni Servillo, investigatore privato morente",
+     "Dustin Hoffman, psicologo che interroga",
+     "Un rapimento lungo quindici anni"
+    ],
+    "context": "Samantha, rapita da bambina, viene ritrovata dopo quindici anni. Un investigatore malato e uno psicologo cercano l'uomo che l'ha tenuta prigioniera in un labirinto. Donato Carrisi dopo La ragazza nella nebbia, ancora più cupo."
+   },
+   "moreIdeas": [
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Carrisi, il suo primo film",
+     "tmdbId": 468202
+    },
+    {
+     "title": "La migliore offerta",
+     "year": 2013,
+     "connection": "Tornatore, un inganno",
+     "tmdbId": 152742
+    },
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento, un mistero",
+     "tmdbId": 20126
+    },
+    {
+     "title": "The Place",
+     "year": 2017,
+     "connection": "Un uomo misterioso",
+     "tmdbId": 468198
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Servillo e un segreto",
+     "tmdbId": 24653
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Un bambino rapito",
+     "tmdbId": 25300
+    },
+    {
+     "title": "Il gatto a nove code",
+     "year": 1971,
+     "connection": "Argento, un'indagine",
+     "tmdbId": 27431
+    },
+    {
+     "title": "La corrispondenza",
+     "year": 2016,
+     "connection": "Tornatore, un enigma",
+     "tmdbId": 315880
+    },
+    {
+     "title": "L'uccello dalle piume di cristallo",
+     "year": 1970,
+     "connection": "Argento, un testimone",
+     "tmdbId": 20345
+    },
+    {
+     "title": "A Classic Horror Story",
+     "year": 2021,
+     "connection": "Un incubo italiano di oggi",
+     "tmdbId": 768334
+    }
+   ]
+  },
+  "53482": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Due uomini con lo stesso nome",
+     "Toni Servillo, cantante pop in declino",
+     "Il primo film di Paolo Sorrentino"
+    ],
+    "context": "Napoli, anni Ottanta: Antonio Pisapia è un cantante famoso, l'altro Antonio Pisapia un calciatore. Le loro carriere crollano nello stesso periodo, e le loro vite si sfiorano. Sorrentino comincia qui il suo lavoro con Servillo."
+   },
+   "moreIdeas": [
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino e Servillo, subito dopo",
+     "tmdbId": 24653
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino e Servillo, Andreotti",
+     "tmdbId": 8832
+    },
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Sorrentino e Servillo, Roma",
+     "tmdbId": 179144
+    },
+    {
+     "title": "È stata la mano di Dio",
+     "year": 2021,
+     "connection": "Sorrentino torna alla Napoli degli anni Ottanta",
+     "tmdbId": 722778
+    },
+    {
+     "title": "This Must Be the Place",
+     "year": 2011,
+     "connection": "Sorrentino, una rockstar invecchiata",
+     "tmdbId": 53487
+    },
+    {
+     "title": "Parthenope",
+     "year": 2024,
+     "connection": "Sorrentino, Napoli e il tempo",
+     "tmdbId": 1109255
+    },
+    {
+     "title": "L'imbalsamatore",
+     "year": 2002,
+     "connection": "Garrone, lo stesso periodo, un'altra Napoli",
+     "tmdbId": 35265
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "Sorrentino, artisti e declino",
+     "tmdbId": 310593
+    },
+    {
+     "title": "Ricomincio da tre",
+     "year": 1981,
+     "connection": "Troisi, Napoli negli stessi anni",
+     "tmdbId": 13386
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "La caduta di un uomo",
+     "tmdbId": 575452
+    }
+   ]
+  },
+  "837335": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Josh O'Connor, archeologo inglese tombarolo",
+     "Tombe etrusche nella Tuscia anni Ottanta",
+     "Isabella Rossellini, madre di un amore perduto"
+    ],
+    "context": "Arthur esce di prigione e torna da una banda di tombaroli che saccheggiano le tombe etrusche, perché lui sente dove sono. Cerca anche la ragazza che ha perso. Alice Rohrwacher mescola favola, commedia e un'Italia che vende il suo passato."
+   },
+   "moreIdeas": [
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Rohrwacher, una favola contadina",
+     "tmdbId": 481432
+    },
+    {
+     "title": "Le meraviglie",
+     "year": 2014,
+     "connection": "Rohrwacher, una famiglia di apicoltori",
+     "tmdbId": 265226
+    },
+    {
+     "title": "Il primo re",
+     "year": 2019,
+     "connection": "L'Italia prima di Roma",
+     "tmdbId": 565179
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Una banda di ladri dilettanti",
+     "tmdbId": 24382
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone, il passato come favola",
+     "tmdbId": 314405
+    },
+    {
+     "title": "Le otto montagne",
+     "year": 2022,
+     "connection": "Un uomo e una terra che scompare",
+     "tmdbId": 803700
+    },
+    {
+     "title": "L'albero degli zoccoli",
+     "year": 1978,
+     "connection": "Olmi, la vita contadina"
+    },
+    {
+     "title": "Il vento fa il suo giro",
+     "year": 2006,
+     "connection": "Diritti, un paese e uno straniero",
+     "tmdbId": 55717
+    },
+    {
+     "title": "8½",
+     "year": 1963,
+     "connection": "Fellini, sogno e ricordo",
+     "tmdbId": 422
+    },
+    {
+     "title": "Il vangelo secondo Matteo",
+     "year": 1965,
+     "connection": "Pasolini, il sacro e la terra",
+     "tmdbId": 24192
+    }
+   ]
+  },
+  "24167": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Sophia Loren, Oscar per la migliore attrice",
+     "Una madre e una figlia in fuga dalla guerra",
+     "Da Alberto Moravia"
+    ],
+    "context": "1943: Cesira scappa dai bombardamenti di Roma con la figlia Rosetta e si rifugia in Ciociaria, tra i monti del Lazio. Lì aspettano gli Alleati, che invece portano un orrore. Vittorio De Sica, la prima attrice premiata con l'Oscar recitando non in inglese."
+   },
+   "moreIdeas": [
+    {
+     "title": "Roma città aperta",
+     "year": 1945,
+     "connection": "Rossellini, Roma in guerra",
+     "tmdbId": 307
+    },
+    {
+     "title": "Paisà",
+     "year": 1946,
+     "connection": "Rossellini, l'avanzata alleata",
+     "tmdbId": 8429
+    },
+    {
+     "title": "Ieri, oggi, domani",
+     "year": 1963,
+     "connection": "De Sica e Loren, tre storie"
+    },
+    {
+     "title": "L'oro di Napoli",
+     "year": 1954,
+     "connection": "De Sica e Loren",
+     "tmdbId": 56122
+    },
+    {
+     "title": "Il giardino dei Finzi Contini",
+     "year": 1970,
+     "connection": "De Sica, la guerra in arrivo",
+     "tmdbId": 4789
+    },
+    {
+     "title": "Kapò",
+     "year": 1960,
+     "connection": "Pontecorvo, la guerra e una ragazza",
+     "tmdbId": 45884
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, Loren e Mastroianni"
+    },
+    {
+     "title": "C'è ancora domani",
+     "year": 2023,
+     "connection": "Cortellesi, una madre romana nel dopoguerra",
+     "tmdbId": 1026227
+    },
+    {
+     "title": "Il conformista",
+     "year": 1971,
+     "connection": "Bertolucci, da Moravia",
+     "tmdbId": 8416
+    },
+    {
+     "title": "La grande guerra",
+     "year": 1959,
+     "connection": "Monicelli, la guerra precedente",
+     "tmdbId": 55823
+    }
+   ]
+  },
+  "56231": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Gian Maria Volonté, operaio stakanovista",
+     "Il cottimo e la fabbrica",
+     "Palma d'oro a Cannes"
+    ],
+    "context": "Lulù Massa è l'operaio più veloce della fabbrica e i colleghi lo odiano. Quando perde un dito alla macchina, comincia a vedere il lavoro in un altro modo e si avvicina agli studenti in lotta. Elio Petri racconta il '68 senza eroi."
+   },
+   "moreIdeas": [
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Petri e Volonté, il film prima",
+     "tmdbId": 26451
+    },
+    {
+     "title": "Todo modo",
+     "year": 1976,
+     "connection": "Petri e Volonté, la politica",
+     "tmdbId": 47096
+    },
+    {
+     "title": "Il posto",
+     "year": 1961,
+     "connection": "Olmi, il primo lavoro"
+    },
+    {
+     "title": "Tutta la vita davanti",
+     "year": 2008,
+     "connection": "Virzì, il lavoro di oggi",
+     "tmdbId": 51917
+    },
+    {
+     "title": "Fantozzi",
+     "year": 1975,
+     "connection": "Il lavoro in ufficio, per ridere",
+     "tmdbId": 25606
+    },
+    {
+     "title": "Rocco e i suoi fratelli",
+     "year": 1960,
+     "connection": "Visconti, operai del Sud a Milano",
+     "tmdbId": 8422
+    },
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, contadini e lotte",
+     "tmdbId": 3870
+    },
+    {
+     "title": "La meglio gioventù",
+     "year": 2003,
+     "connection": "Gli anni Sessanta e Settanta in una famiglia",
+     "tmdbId": 11659
+    },
+    {
+     "title": "Il caso Mattei",
+     "year": 1972,
+     "connection": "Rosi e Volonté"
+    },
+    {
+     "title": "Smetto quando voglio",
+     "year": 2014,
+     "connection": "Il lavoro precario oggi",
+     "tmdbId": 250219
+    }
+   ]
+  },
+  "315880": {
+   "whyWatch": {
+    "recommendation": "NO",
+    "reasons": [
+     "Messaggi da un amante già morto",
+     "Jeremy Irons e Olga Kurylenko poco credibili",
+     "Musica di Morricone, il meglio del film"
+    ],
+    "context": "Una studentessa continua a ricevere messaggi, video e regali dal professore che amava, morto da poco. Lui aveva preparato tutto. Tornatore gira in inglese un melodramma sentimentale che non convince: lungo, ripetitivo, troppo costruito."
+   },
+   "moreIdeas": [
+    {
+     "title": "La migliore offerta",
+     "year": 2013,
+     "connection": "Tornatore, un mistero riuscito",
+     "tmdbId": 152742
+    },
+    {
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "connection": "Tornatore e Morricone al meglio",
+     "tmdbId": 11216
+    },
+    {
+     "title": "La leggenda del pianista sull'oceano",
+     "year": 1998,
+     "connection": "Tornatore e Morricone",
+     "tmdbId": 10376
+    },
+    {
+     "title": "L'uomo delle stelle",
+     "year": 1995,
+     "connection": "Tornatore, la Sicilia"
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "Sorrentino, la fine di una vita",
+     "tmdbId": 310593
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Un amore impossibile",
+     "tmdbId": 24653
+    },
+    {
+     "title": "La finestra di fronte",
+     "year": 2003,
+     "connection": "Özpetek, un amore e la memoria",
+     "tmdbId": 29987
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "Lettere e amore",
+     "tmdbId": 11010
+    },
+    {
+     "title": "Saturno contro",
+     "year": 2007,
+     "connection": "Özpetek, un lutto",
+     "tmdbId": 22373
+    },
+    {
+     "title": "Le fate ignoranti",
+     "year": 2001,
+     "connection": "Özpetek, la vita segreta di un morto",
+     "tmdbId": 23550
+    }
+   ]
+  },
+  "29987": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Giovanna Mezzogiorno, moglie stanca e curiosa",
+     "Un vecchio senza memoria e un segreto del 1943",
+     "Il dirimpettaio Raoul Bova"
+    ],
+    "context": "Giovanna lavora in una fabbrica di polli e spia il vicino dalla finestra. Un giorno lei e il marito trovano per strada un anziano confuso. Il suo passato, legato al ghetto di Roma, cambia il modo in cui lei guarda la propria vita. Ferzan Özpetek."
+   },
+   "moreIdeas": [
+    {
+     "title": "Le fate ignoranti",
+     "year": 2001,
+     "connection": "Özpetek, un amore scoperto dopo",
+     "tmdbId": 23550
+    },
+    {
+     "title": "Saturno contro",
+     "year": 2007,
+     "connection": "Özpetek, amici e lutto",
+     "tmdbId": 22373
+    },
+    {
+     "title": "Mine vaganti",
+     "year": 2010,
+     "connection": "Özpetek, una famiglia del Sud",
+     "tmdbId": 40794
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, una casalinga e un vicino"
+    },
+    {
+     "title": "Il giardino dei Finzi Contini",
+     "year": 1970,
+     "connection": "La persecuzione degli ebrei italiani",
+     "tmdbId": 4789
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Gli ebrei e la guerra",
+     "tmdbId": 637
+    },
+    {
+     "title": "L'ultimo bacio",
+     "year": 2001,
+     "connection": "Coppie in crisi",
+     "tmdbId": 12308
+    },
+    {
+     "title": "Roma città aperta",
+     "year": 1945,
+     "connection": "Roma nel 1943",
+     "tmdbId": 307
+    },
+    {
+     "title": "La corrispondenza",
+     "year": 2016,
+     "connection": "Un amore e la memoria",
+     "tmdbId": 315880
+    },
+    {
+     "title": "C'è ancora domani",
+     "year": 2023,
+     "connection": "Una donna romana e la sua vita",
+     "tmdbId": 1026227
+    }
+   ]
+  },
+  "55823": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Alberto Sordi e Vittorio Gassman, due imboscati",
+     "La prima guerra mondiale senza retorica",
+     "Leone d'oro a Venezia"
+    ],
+    "context": "Un romano e un milanese cercano in ogni modo di evitare il fronte nella guerra del 1915-18. Ridono, rubano, scappano, finché la guerra li raggiunge. Mario Monicelli fece arrabbiare chi voleva solo eroi, e il finale è rimasto famoso."
+   },
+   "moreIdeas": [
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Monicelli e Gassman, l'anno prima",
+     "tmdbId": 24382
+    },
+    {
+     "title": "Amici miei",
+     "year": 1975,
+     "connection": "Monicelli, amici e cattiverie",
+     "tmdbId": 20914
+    },
+    {
+     "title": "Una vita difficile",
+     "year": 1961,
+     "connection": "Risi e Sordi",
+     "tmdbId": 56343
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi e Gassman",
+     "tmdbId": 24188
+    },
+    {
+     "title": "Paisà",
+     "year": 1946,
+     "connection": "Rossellini, l'altra guerra",
+     "tmdbId": 8429
+    },
+    {
+     "title": "La ciociara",
+     "year": 1960,
+     "connection": "De Sica, la guerra dei civili",
+     "tmdbId": 24167
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Soldati che non combattono"
+    },
+    {
+     "title": "I mostri",
+     "year": 1963,
+     "connection": "Gassman in tanti ruoli",
+     "tmdbId": 45005
+    },
+    {
+     "title": "Audace colpo dei soliti ignoti",
+     "year": 1959,
+     "connection": "Gassman e la banda",
+     "tmdbId": 62036
+    },
+    {
+     "title": "Profumo di donna",
+     "year": 1974,
+     "connection": "Gassman ex ufficiale",
+     "tmdbId": 47848
+    }
+   ]
+  },
+  "27632": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Barbara Steele, strega e principessa",
+     "Il bianco e nero più gotico del cinema",
+     "Il primo film diretto da Mario Bava"
+    ],
+    "context": "Nel Seicento una strega viene uccisa con una maschera chiodata e giura vendetta. Due secoli dopo due medici in viaggio la risvegliano per errore. Bava inventa l'horror gotico italiano: castelli, nebbia e una sola, indimenticabile attrice."
+   },
+   "moreIdeas": [
+    {
+     "title": "Sei donne per l'assassino",
+     "year": 1964,
+     "connection": "Bava, il giallo a colori",
+     "tmdbId": 28055
+    },
+    {
+     "title": "Operazione paura",
+     "year": 1966,
+     "connection": "Bava, un paese maledetto"
+    },
+    {
+     "title": "Suspiria",
+     "year": 1977,
+     "connection": "Argento, streghe e colori",
+     "tmdbId": 11906
+    },
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento, il giallo",
+     "tmdbId": 20126
+    },
+    {
+     "title": "Phenomena",
+     "year": 1985,
+     "connection": "Argento, una ragazza e un collegio",
+     "tmdbId": 29161
+    },
+    {
+     "title": "La casa dalle finestre che ridono",
+     "year": 1976,
+     "connection": "Avati, l'orrore di campagna"
+    },
+    {
+     "title": "A Classic Horror Story",
+     "year": 2021,
+     "connection": "L'horror italiano di oggi",
+     "tmdbId": 768334
+    },
+    {
+     "title": "The Nest (Il nido)",
+     "year": 2019,
+     "connection": "De Feo, una villa e un segreto",
+     "tmdbId": 600184
+    },
+    {
+     "title": "L'uccello dalle piume di cristallo",
+     "year": 1970,
+     "connection": "Argento, il primo film",
+     "tmdbId": 20345
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone, il gotico delle favole",
+     "tmdbId": 314405
+    }
+   ]
+  },
+  "11659": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Due fratelli dal 1966 al 2003",
+     "Luigi Lo Cascio e Alessio Boni",
+     "Sei ore che si guardano come una serie"
+    ],
+    "context": "Nicola e Matteo Carati seguono strade opposte: uno diventa psichiatra, l'altro poliziotto. Attraverso la loro famiglia passano l'alluvione di Firenze, il '68, il terrorismo, la mafia. Marco Tullio Giordana, nato per la televisione, premiato a Cannes."
+   },
+   "moreIdeas": [
+    {
+     "title": "I cento passi",
+     "year": 2000,
+     "connection": "Giordana e Lo Cascio",
+     "tmdbId": 29458
+    },
+    {
+     "title": "Esterno Notte - Prima Parte",
+     "year": 2022,
+     "connection": "Bellocchio, gli anni di piombo",
+     "tmdbId": 977487
+    },
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, un secolo in due vite",
+     "tmdbId": 3870
+    },
+    {
+     "title": "Rocco e i suoi fratelli",
+     "year": 1960,
+     "connection": "Visconti, fratelli e destini",
+     "tmdbId": 8422
+    },
+    {
+     "title": "La classe operaia va in paradiso",
+     "year": 1971,
+     "connection": "Il '68 in fabbrica",
+     "tmdbId": 56231
+    },
+    {
+     "title": "Le otto montagne",
+     "year": 2022,
+     "connection": "Due vite intere",
+     "tmdbId": 803700
+    },
+    {
+     "title": "Noi credevamo",
+     "year": 2010,
+     "connection": "Martone, l'Italia in più epoche",
+     "tmdbId": 56853
+    },
+    {
+     "title": "Diaz - Non pulire questo sangue",
+     "year": 2012,
+     "connection": "La polizia e la Storia",
+     "tmdbId": 96714
+    },
+    {
+     "title": "La prima cosa bella",
+     "year": 2010,
+     "connection": "Una famiglia in più decenni",
+     "tmdbId": 36940
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "La mafia e lo Stato",
+     "tmdbId": 575452
+    }
+   ]
+  },
+  "41050": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Marcello Mastroianni e Jeanne Moreau, coppia spenta",
+     "Una festa nella villa di un industriale",
+     "Milano moderna e vuota"
+    ],
+    "context": "Uno scrittore e sua moglie passano un giorno e una notte a Milano: un amico in ospedale, una festa in una villa, Monica Vitti. Michelangelo Antonioni racconta un matrimonio finito senza che nessuno lo dica. Orso d'oro a Berlino."
+   },
+   "moreIdeas": [
+    {
+     "title": "L'eclisse",
+     "year": 1962,
+     "connection": "Antonioni, Monica Vitti e il vuoto"
+    },
+    {
+     "title": "L'avventura",
+     "year": 1960,
+     "connection": "Antonioni, una scomparsa"
+    },
+    {
+     "title": "La dolce vita",
+     "year": 1960,
+     "connection": "Fellini, Mastroianni e le feste",
+     "tmdbId": 439
+    },
+    {
+     "title": "8½",
+     "year": 1963,
+     "connection": "Mastroianni in crisi",
+     "tmdbId": 422
+    },
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Sorrentino, feste e vuoto",
+     "tmdbId": 179144
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino, la solitudine",
+     "tmdbId": 24653
+    },
+    {
+     "title": "Il conformista",
+     "year": 1971,
+     "connection": "Bertolucci, la borghesia",
+     "tmdbId": 8416
+    },
+    {
+     "title": "Rocco e i suoi fratelli",
+     "year": 1960,
+     "connection": "Visconti, l'altra Milano",
+     "tmdbId": 8422
+    },
+    {
+     "title": "Il posto",
+     "year": 1961,
+     "connection": "Olmi, la Milano del lavoro"
+    },
+    {
+     "title": "Le amiche",
+     "year": 1955,
+     "connection": "Antonioni, la borghesia di Torino"
+    }
+   ]
+  },
+  "574436": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Ragazzini del rione Sanità diventano boss",
+     "Da Roberto Saviano, che lo ha scritto",
+     "Orso d'argento per la sceneggiatura"
+    ],
+    "context": "Nicola ha quindici anni e vuole proteggere il suo quartiere, il rione Sanità a Napoli. Con gli amici forma una banda, compra armi, scala la camorra. Claudio Giovannesi usa ragazzi non professionisti, e la velocità della loro caduta fa paura."
+   },
+   "moreIdeas": [
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, la camorra da Saviano",
+     "tmdbId": 8882
+    },
+    {
+     "title": "Fiore",
+     "year": 2016,
+     "connection": "Giovannesi, ragazzi in un carcere minorile"
+    },
+    {
+     "title": "L'imbalsamatore",
+     "year": 2002,
+     "connection": "Garrone, Napoli nera",
+     "tmdbId": 35265
+    },
+    {
+     "title": "Reality",
+     "year": 2012,
+     "connection": "Garrone, Napoli e la televisione",
+     "tmdbId": 103758
+    },
+    {
+     "title": "Accattone",
+     "year": 1961,
+     "connection": "Pasolini, ragazzi di borgata",
+     "tmdbId": 12491
+    },
+    {
+     "title": "Amore tossico",
+     "year": 1983,
+     "connection": "Caligari, attori veri",
+     "tmdbId": 59037
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "La mafia vista da dentro",
+     "tmdbId": 575452
+    },
+    {
+     "title": "Non essere cattivo",
+     "year": 2015,
+     "connection": "Amicizia e crimine",
+     "tmdbId": 359156
+    },
+    {
+     "title": "Suburra",
+     "year": 2015,
+     "connection": "Il crimine a Roma",
+     "tmdbId": 356296
+    },
+    {
+     "title": "È stata la mano di Dio",
+     "year": 2021,
+     "connection": "Un'altra adolescenza napoletana",
+     "tmdbId": 722778
+    }
+   ]
+  },
+  "36940": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Micaela Ramazzotti, madre bellissima e imbarazzante",
+     "Valerio Mastandrea, figlio depresso",
+     "Livorno dagli anni Settanta a oggi"
+    ],
+    "context": "Bruno torna a Livorno perché la madre Anna sta morendo, e ricorda un'infanzia passata a seguirla, sempre allegra, sempre troppo. Paolo Virzì racconta una famiglia in due tempi, comica e commovente. Tanti premi in Italia."
+   },
+   "moreIdeas": [
+    {
+     "title": "La pazza gioia",
+     "year": 2016,
+     "connection": "Virzì e Ramazzotti di nuovo",
+     "tmdbId": 380225
+    },
+    {
+     "title": "Ferie d'agosto",
+     "year": 1996,
+     "connection": "Virzì, le vacanze",
+     "tmdbId": 56399
+    },
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, famiglie e soldi",
+     "tmdbId": 244088
+    },
+    {
+     "title": "Tutta la vita davanti",
+     "year": 2008,
+     "connection": "Virzì, una laureata precaria",
+     "tmdbId": 51917
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, una famiglia e i ricordi",
+     "tmdbId": 7857
+    },
+    {
+     "title": "È stata la mano di Dio",
+     "year": 2021,
+     "connection": "Sorrentino, una madre e un figlio",
+     "tmdbId": 722778
+    },
+    {
+     "title": "Mamma Roma",
+     "year": 1962,
+     "connection": "Pasolini, una madre ingombrante"
+    },
+    {
+     "title": "Bellissima",
+     "year": 1952,
+     "connection": "Visconti, una madre che sogna",
+     "tmdbId": 43372
+    },
+    {
+     "title": "La meglio gioventù",
+     "year": 2003,
+     "connection": "Una famiglia in più decenni",
+     "tmdbId": 11659
+    },
+    {
+     "title": "Mine vaganti",
+     "year": 2010,
+     "connection": "Özpetek, una famiglia rumorosa",
+     "tmdbId": 40794
+    }
+   ]
+  },
+  "23550": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Una vedova scopre l'amante del marito",
+     "Un gruppo di amici gay a Roma",
+     "Margherita Buy e Stefano Accorsi"
+    ],
+    "context": "Antonia perde il marito in un incidente e scopre che da anni aveva un amante, Michele. Va a cercarlo in un quartiere di Roma e trova una famiglia di amici che non sapeva esistesse. Ferzan Özpetek, il film che lo ha fatto conoscere."
+   },
+   "moreIdeas": [
+    {
+     "title": "Saturno contro",
+     "year": 2007,
+     "connection": "Özpetek, amici e un lutto",
+     "tmdbId": 22373
+    },
+    {
+     "title": "La finestra di fronte",
+     "year": 2003,
+     "connection": "Özpetek, un segreto del passato",
+     "tmdbId": 29987
+    },
+    {
+     "title": "Mine vaganti",
+     "year": 2010,
+     "connection": "Özpetek, una famiglia del Sud",
+     "tmdbId": 40794
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, un uomo gay sotto il fascismo"
+    },
+    {
+     "title": "L'ultimo bacio",
+     "year": 2001,
+     "connection": "Muccino, lo stesso anno",
+     "tmdbId": 12308
+    },
+    {
+     "title": "La corrispondenza",
+     "year": 2016,
+     "connection": "Un amore dopo la morte",
+     "tmdbId": 315880
+    },
+    {
+     "title": "Il nome del figlio",
+     "year": 2015,
+     "connection": "Una cena e i segreti",
+     "tmdbId": 320028
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Segreti tra amici",
+     "tmdbId": 381341
+    },
+    {
+     "title": "La pazza gioia",
+     "year": 2016,
+     "connection": "Amicizia tra donne",
+     "tmdbId": 380225
+    },
+    {
+     "title": "Chiedimi se sono felice",
+     "year": 2000,
+     "connection": "Amici che si ritrovano",
+     "tmdbId": 50531
+    }
+   ]
+  },
+  "58383": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Rod Steiger, costruttore e consigliere comunale",
+     "Un palazzo crolla nei vicoli di Napoli",
+     "Leone d'oro a Venezia"
+    ],
+    "context": "A Napoli un palazzo crolla per colpa di un cantiere vicino, e il costruttore Nottola, che siede in consiglio comunale, fa di tutto per insabbiare. Francesco Rosi gira tra macerie e aule vere. Sulla speculazione edilizia non è invecchiato."
+   },
+   "moreIdeas": [
+    {
+     "title": "Salvatore Giuliano",
+     "year": 1962,
+     "connection": "Rosi, la Sicilia e il potere",
+     "tmdbId": 27523
+    },
+    {
+     "title": "Il caso Mattei",
+     "year": 1972,
+     "connection": "Rosi, un'inchiesta filmata"
+    },
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Petri, il potere intoccabile",
+     "tmdbId": 26451
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino, la politica",
+     "tmdbId": 8832
+    },
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, gli affari della camorra",
+     "tmdbId": 8882
+    },
+    {
+     "title": "Il giorno della civetta",
+     "year": 1968,
+     "connection": "Damiani, mafia e affari",
+     "tmdbId": 58658
+    },
+    {
+     "title": "L'oro di Napoli",
+     "year": 1954,
+     "connection": "De Sica, l'altra Napoli",
+     "tmdbId": 56122
+    },
+    {
+     "title": "Todo modo",
+     "year": 1976,
+     "connection": "Petri, i potenti",
+     "tmdbId": 47096
+    },
+    {
+     "title": "Giù la testa",
+     "year": 1971,
+     "connection": "Rod Steiger per Leone",
+     "tmdbId": 336
+    },
+    {
+     "title": "Suburra",
+     "year": 2015,
+     "connection": "Sollima, affari e politica a Roma",
+     "tmdbId": 356296
+    }
+   ]
+  },
+  "265226": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Una famiglia di apicoltori in Toscana",
+     "Gelsomina, dodici anni, regge tutto",
+     "Gran premio della giuria a Cannes"
+    ],
+    "context": "Una famiglia vive isolata in campagna producendo miele, governata da un padre duro e idealista. Gelsomina, la figlia più grande, iscrive tutti a un concorso televisivo. Alice Rohrwacher racconta la fine di un mondo contadino con tenerezza."
+   },
+   "moreIdeas": [
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Rohrwacher, una favola contadina",
+     "tmdbId": 481432
+    },
+    {
+     "title": "La chimera",
+     "year": 2023,
+     "connection": "Rohrwacher, tombaroli etruschi",
+     "tmdbId": 837335
+    },
+    {
+     "title": "L'albero degli zoccoli",
+     "year": 1978,
+     "connection": "Olmi, i contadini lombardi"
+    },
+    {
+     "title": "Il vento fa il suo giro",
+     "year": 2006,
+     "connection": "Diritti, la vita in montagna",
+     "tmdbId": 55717
+    },
+    {
+     "title": "Le otto montagne",
+     "year": 2022,
+     "connection": "Una vita lontano dalla città",
+     "tmdbId": 803700
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Un'infanzia in campagna",
+     "tmdbId": 25300
+    },
+    {
+     "title": "Reality",
+     "year": 2012,
+     "connection": "Garrone, il sogno della televisione",
+     "tmdbId": 103758
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, un'adolescenza",
+     "tmdbId": 7857
+    },
+    {
+     "title": "Bellissima",
+     "year": 1952,
+     "connection": "Visconti, una madre e il successo",
+     "tmdbId": 43372
+    },
+    {
+     "title": "Fuocoammare",
+     "year": 2016,
+     "connection": "Rosi, un ragazzino e un'isola",
+     "tmdbId": 377151
+    }
+   ]
+  },
+  "43379": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Totò il buono, trovato sotto un cavolo",
+     "Una baraccopoli di Milano e una colomba magica",
+     "Effetti speciali ingenui e poetici"
+    ],
+    "context": "Totò, cresciuto in un orfanotrofio, organizza una comunità di senzatetto in un campo alla periferia di Milano. Quando sotto il campo trovano il petrolio, arrivano i padroni. De Sica e Zavattini mescolano neorealismo e favola. Palma d'oro."
+   },
+   "moreIdeas": [
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica e Zavattini, il neorealismo",
+     "tmdbId": 5156
+    },
+    {
+     "title": "Umberto D.",
+     "year": 1952,
+     "connection": "De Sica e Zavattini, subito dopo",
+     "tmdbId": 833
+    },
+    {
+     "title": "Sciuscià",
+     "year": 1946,
+     "connection": "De Sica, bambini di strada",
+     "tmdbId": 43469
+    },
+    {
+     "title": "Lazzaro felice",
+     "year": 2018,
+     "connection": "Rohrwacher, un santo e i poveri",
+     "tmdbId": 481432
+    },
+    {
+     "title": "La strada",
+     "year": 1954,
+     "connection": "Fellini, un'anima ingenua",
+     "tmdbId": 405
+    },
+    {
+     "title": "Rocco e i suoi fratelli",
+     "year": 1960,
+     "connection": "Visconti, la Milano dei poveri",
+     "tmdbId": 8422
+    },
+    {
+     "title": "Le notti di Cabiria",
+     "year": 1957,
+     "connection": "Fellini, la speranza",
+     "tmdbId": 19426
+    },
+    {
+     "title": "L'oro di Napoli",
+     "year": 1954,
+     "connection": "De Sica, la Napoli povera",
+     "tmdbId": 56122
+    },
+    {
+     "title": "Il posto",
+     "year": 1961,
+     "connection": "Olmi, Milano e il lavoro"
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "Una favola nella tragedia",
+     "tmdbId": 637
+    }
+   ]
+  },
+  "8765": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Christopher Lambert, programmatore di videogiochi",
+     "Un personaggio che chiede di essere cancellato",
+     "Fantascienza italiana degli anni Novanta"
+    ],
+    "context": "Jimi sta finendo un videogioco quando scopre che il protagonista, Solo, ha preso coscienza e vuole morire. Per accontentarlo deve entrare nel sistema dell'azienda in una città del futuro. Gabriele Salvatores prova il cyberpunk con pochi mezzi."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il ragazzo invisibile",
+     "year": 2014,
+     "connection": "Salvatores e il fantastico",
+     "tmdbId": 303542
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Salvatores, il suo Oscar"
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Salvatores, un altro registro",
+     "tmdbId": 25300
+    },
+    {
+     "title": "Lo chiamavano Jeeg Robot",
+     "year": 2016,
+     "connection": "Un genere americano rifatto in Italia",
+     "tmdbId": 364433
+    },
+    {
+     "title": "Freaks Out",
+     "year": 2021,
+     "connection": "Mainetti, il fantastico di oggi",
+     "tmdbId": 571468
+    },
+    {
+     "title": "Come Dio comanda",
+     "year": 2008,
+     "connection": "Salvatores e Ammaniti",
+     "tmdbId": 24168
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Garrone, mondi inventati",
+     "tmdbId": 314405
+    },
+    {
+     "title": "8½",
+     "year": 1963,
+     "connection": "Fellini, un autore e i suoi personaggi",
+     "tmdbId": 422
+    },
+    {
+     "title": "The Place",
+     "year": 2017,
+     "connection": "Un uomo che decide le vite degli altri",
+     "tmdbId": 468198
+    },
+    {
+     "title": "A Classic Horror Story",
+     "year": 2021,
+     "connection": "Il cinema di genere italiano di oggi",
+     "tmdbId": 768334
+    }
+   ]
+  },
+  "56853": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Il Risorgimento visto da tre ragazzi del Sud",
+     "Toni Servillo è Mazzini",
+     "Quasi tre ore e mezza, in quattro capitoli"
+    ],
+    "context": "Tre giovani cilentani entrano nella Giovine Italia dopo la repressione del 1828 e attraversano trent'anni di congiure, prigioni e delusioni fino all'unità. Mario Martone mostra il Risorgimento senza gloria, con le sue divisioni."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il gattopardo",
+     "year": 1963,
+     "connection": "Visconti, il Risorgimento visto dai nobili",
+     "tmdbId": 1040
+    },
+    {
+     "title": "Senso",
+     "year": 1954,
+     "connection": "Visconti, il 1866 e un amore"
+    },
+    {
+     "title": "Allonsanfàn",
+     "year": 1974,
+     "connection": "Taviani, un rivoluzionario stanco"
+    },
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, l'Italia in una saga",
+     "tmdbId": 3870
+    },
+    {
+     "title": "La meglio gioventù",
+     "year": 2003,
+     "connection": "Giordana, decenni di storia in una famiglia",
+     "tmdbId": 11659
+    },
+    {
+     "title": "Il primo re",
+     "year": 2019,
+     "connection": "Rovere, una fondazione senza mito",
+     "tmdbId": 565179
+    },
+    {
+     "title": "Esterno Notte - Prima Parte",
+     "year": 2022,
+     "connection": "Bellocchio, la storia e la politica",
+     "tmdbId": 977487
+    },
+    {
+     "title": "Vincere",
+     "year": 2009,
+     "connection": "Bellocchio, la storia nascosta",
+     "tmdbId": 30239
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Servillo uomo di Stato",
+     "tmdbId": 8832
+    },
+    {
+     "title": "Queimada",
+     "year": 1969,
+     "connection": "Pontecorvo, rivoluzionari e potere",
+     "tmdbId": 42617
+    }
+   ]
+  },
+  "49361": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Omicidi di bambini in un paese lucano",
+     "Un giallo contro la superstizione e la Chiesa",
+     "Lucio Fulci prima dei suoi horror"
+    ],
+    "context": "In un paesino del Sud alcuni ragazzini vengono uccisi, e la folla cerca un colpevole tra la donna considerata strega e un prete. Un giornalista e una ragazza di città indagano. Duro e discusso, è il giallo più serio di Fulci."
+   },
+   "moreIdeas": [
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento, il giallo più famoso",
+     "tmdbId": 20126
+    },
+    {
+     "title": "L'uccello dalle piume di cristallo",
+     "year": 1970,
+     "connection": "Argento, il primo giallo",
+     "tmdbId": 20345
+    },
+    {
+     "title": "Sei donne per l'assassino",
+     "year": 1964,
+     "connection": "Bava, il giallo",
+     "tmdbId": 28055
+    },
+    {
+     "title": "La casa dalle finestre che ridono",
+     "year": 1976,
+     "connection": "Avati, il mistero di paese"
+    },
+    {
+     "title": "Il giorno della civetta",
+     "year": 1968,
+     "connection": "Il Sud che non parla",
+     "tmdbId": 58658
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Una sparizione in un paese",
+     "tmdbId": 468202
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Un crimine contro un bambino",
+     "tmdbId": 25300
+    },
+    {
+     "title": "A Classic Horror Story",
+     "year": 2021,
+     "connection": "Il Sud e i suoi incubi",
+     "tmdbId": 768334
+    },
+    {
+     "title": "4 mosche di velluto grigio",
+     "year": 1971,
+     "connection": "Argento, lo stesso periodo",
+     "tmdbId": 30689
+    },
+    {
+     "title": "Il gatto a nove code",
+     "year": 1971,
+     "connection": "Argento, un'indagine",
+     "tmdbId": 27431
+    }
+   ]
+  },
+  "54309": {
+   "whyWatch": {
+    "recommendation": "NO",
+    "reasons": [
+     "Il seguito spostato nel 2006",
+     "Stessi attori, idee più deboli",
+     "Più pubblicità che storia"
+    ],
+    "context": "Gli stessi attori del primo film interpretano altri ragazzi alla vigilia della maturità del 2006, tra telefonini e mondiali di calcio. Fausto Brizzi ripete la formula, ma senza la nostalgia che rendeva il primo simpatico."
+   },
+   "moreIdeas": [
+    {
+     "title": "Notte prima degli esami",
+     "year": 2006,
+     "connection": "Il primo film, molto meglio",
+     "tmdbId": 33365
+    },
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Genovese, la maturità da rifare",
+     "tmdbId": 56909
+    },
+    {
+     "title": "Come te nessuno mai",
+     "year": 1999,
+     "connection": "Muccino, adolescenti veri"
+    },
+    {
+     "title": "L'ultimo bacio",
+     "year": 2001,
+     "connection": "Muccino, la giovinezza che finisce",
+     "tmdbId": 12308
+    },
+    {
+     "title": "Ecce bombo",
+     "year": 1978,
+     "connection": "Moretti, ragazzi senza direzione"
+    },
+    {
+     "title": "Il ragazzo invisibile",
+     "year": 2014,
+     "connection": "Adolescenti a Trieste",
+     "tmdbId": 303542
+    },
+    {
+     "title": "Tutta colpa di Freud",
+     "year": 2014,
+     "connection": "Amori romani",
+     "tmdbId": 250235
+    },
+    {
+     "title": "Smetto quando voglio",
+     "year": 2014,
+     "connection": "Laureati e senza lavoro",
+     "tmdbId": 250219
+    },
+    {
+     "title": "Odio l'estate",
+     "year": 2020,
+     "connection": "Una vacanza di famiglia",
+     "tmdbId": 606954
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Commedia romana",
+     "tmdbId": 381341
+    }
+   ]
+  },
+  "3870": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Robert De Niro e Gérard Depardieu nati lo stesso giorno",
+     "Mezzo secolo d'Italia in Emilia",
+     "Più di cinque ore, in due atti"
+    ],
+    "context": "Alfredo è figlio del padrone, Olmo di un bracciante: nascono nel 1901 nella stessa tenuta e restano legati fino al 1945. Intorno a loro scioperi, fascismo, guerra e liberazione. Bernardo Bertolucci, epico e politico, con Donald Sutherland fascista feroce."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il conformista",
+     "year": 1971,
+     "connection": "Bertolucci, la borghesia e il fascismo",
+     "tmdbId": 8416
+    },
+    {
+     "title": "L'albero degli zoccoli",
+     "year": 1978,
+     "connection": "Olmi, i contadini lombardi"
+    },
+    {
+     "title": "La meglio gioventù",
+     "year": 2003,
+     "connection": "Due fratelli e la storia d'Italia",
+     "tmdbId": 11659
+    },
+    {
+     "title": "Il gattopardo",
+     "year": 1963,
+     "connection": "Visconti, padroni e cambiamento",
+     "tmdbId": 1040
+    },
+    {
+     "title": "La classe operaia va in paradiso",
+     "year": 1971,
+     "connection": "Petri, la lotta in fabbrica",
+     "tmdbId": 56231
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, il fascismo in provincia",
+     "tmdbId": 7857
+    },
+    {
+     "title": "Rocco e i suoi fratelli",
+     "year": 1960,
+     "connection": "Visconti, una famiglia contadina",
+     "tmdbId": 8422
+    },
+    {
+     "title": "Noi credevamo",
+     "year": 2010,
+     "connection": "Martone, l'Italia in più epoche",
+     "tmdbId": 56853
+    },
+    {
+     "title": "Il giardino dei Finzi Contini",
+     "year": 1970,
+     "connection": "De Sica, il fascismo e i ricchi",
+     "tmdbId": 4789
+    },
+    {
+     "title": "Le otto montagne",
+     "year": 2022,
+     "connection": "Due vite legate per sempre",
+     "tmdbId": 803700
+    }
+   ]
+  },
+  "8429": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Sei storie, dalla Sicilia al delta del Po",
+     "Soldati americani e italiani che non si capiscono",
+     "Roberto Rossellini, il neorealismo"
+    ],
+    "context": "L'avanzata alleata nel 1943-44, raccontata in sei episodi: una ragazza siciliana, un bambino napoletano che ruba, una prostituta romana, i partigiani a Firenze, frati in un convento, i combattenti nelle paludi. Paisà è come i soldati chiamavano gli italiani."
+   },
+   "moreIdeas": [
+    {
+     "title": "Roma città aperta",
+     "year": 1945,
+     "connection": "Rossellini, il film prima",
+     "tmdbId": 307
+    },
+    {
+     "title": "Germania anno zero",
+     "year": 1948,
+     "connection": "Rossellini, il terzo della trilogia"
+    },
+    {
+     "title": "La ciociara",
+     "year": 1960,
+     "connection": "De Sica, la guerra dei civili",
+     "tmdbId": 24167
+    },
+    {
+     "title": "Sciuscià",
+     "year": 1946,
+     "connection": "De Sica, lo stesso anno",
+     "tmdbId": 43469
+    },
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica, il dopoguerra",
+     "tmdbId": 5156
+    },
+    {
+     "title": "Il generale Della Rovere",
+     "year": 1959,
+     "connection": "Rossellini, la guerra e un truffatore"
+    },
+    {
+     "title": "Kapò",
+     "year": 1960,
+     "connection": "Pontecorvo, la guerra",
+     "tmdbId": 45884
+    },
+    {
+     "title": "La grande guerra",
+     "year": 1959,
+     "connection": "Monicelli, l'altra guerra",
+     "tmdbId": 55823
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Soldati italiani dimenticati"
+    },
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, la liberazione",
+     "tmdbId": 3870
+    }
+   ]
+  },
+  "552": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Licia Maglietta, casalinga che non torna",
+     "Bruno Ganz, cameriere islandese poeta",
+     "Venezia vista da chi ci lavora"
+    ],
+    "context": "Rosalba, dimenticata dalla famiglia in un autogrill durante una gita, decide di non tornare a Pescara e va a Venezia. Trova lavoro da un fioraio, una casa da un cameriere malinconico e una nuova vita. Silvio Soldini, dolce e ironico."
+   },
+   "moreIdeas": [
+    {
+     "title": "La pazza gioia",
+     "year": 2016,
+     "connection": "Virzì, due donne in fuga",
+     "tmdbId": 380225
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "Un uomo semplice e la poesia",
+     "tmdbId": 11010
+    },
+    {
+     "title": "Le fate ignoranti",
+     "year": 2001,
+     "connection": "Özpetek, una donna scopre un'altra vita",
+     "tmdbId": 23550
+    },
+    {
+     "title": "La finestra di fronte",
+     "year": 2003,
+     "connection": "Özpetek, una donna e un desiderio",
+     "tmdbId": 29987
+    },
+    {
+     "title": "Caro diario",
+     "year": 1993,
+     "connection": "Moretti, un viaggio personale",
+     "tmdbId": 25403
+    },
+    {
+     "title": "Il vento fa il suo giro",
+     "year": 2006,
+     "connection": "Una vita nuova altrove",
+     "tmdbId": 55717
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Salvatores, il desiderio di restare"
+    },
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Un viaggio che cambia",
+     "tmdbId": 38286
+    },
+    {
+     "title": "La prima cosa bella",
+     "year": 2010,
+     "connection": "Virzì, una madre libera",
+     "tmdbId": 36940
+    },
+    {
+     "title": "Chiedimi se sono felice",
+     "year": 2000,
+     "connection": "Il trio, amicizia e teatro",
+     "tmdbId": 50531
+    }
+   ]
+  },
+  "11367": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Terence Hill e Bud Spencer fratelli a Miami",
+     "Scommesse, partite e pugni",
+     "Bud Spencer camionista e giocatore"
+    ],
+    "context": "Un ufficiale di marina viene mandato a smascherare un boss delle scommesse, e per farlo deve convincere il fratellastro, ex campione di carte, a tornare a giocare. Sergio Corbucci dirige la coppia in una commedia d'azione per tutti."
+   },
+   "moreIdeas": [
+    {
+     "title": "I due superpiedi quasi piatti",
+     "year": 1977,
+     "connection": "Hill e Spencer, l'anno prima a Miami",
+     "tmdbId": 11689
+    },
+    {
+     "title": "...altrimenti ci arrabbiamo!",
+     "year": 1974,
+     "connection": "Hill e Spencer, la dune buggy",
+     "tmdbId": 6916
+    },
+    {
+     "title": "Lo chiamavano Trinità...",
+     "year": 1970,
+     "connection": "Hill e Spencer nel western",
+     "tmdbId": 9394
+    },
+    {
+     "title": "...continuavano a chiamarlo Trinità",
+     "year": 1971,
+     "connection": "Il seguito",
+     "tmdbId": 11829
+    },
+    {
+     "title": "Il mio nome è Nessuno",
+     "year": 1973,
+     "connection": "Terence Hill",
+     "tmdbId": 9474
+    },
+    {
+     "title": "Django",
+     "year": 1966,
+     "connection": "Corbucci, il western cupo",
+     "tmdbId": 10772
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Una banda e un colpo",
+     "tmdbId": 24382
+    },
+    {
+     "title": "La leggenda di Al, John e Jack",
+     "year": 2002,
+     "connection": "Italiani in America",
+     "tmdbId": 38397
+    },
+    {
+     "title": "Così è la vita",
+     "year": 1998,
+     "connection": "Una coppia in fuga",
+     "tmdbId": 38396
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Un ingenuo tra i criminali",
+     "tmdbId": 12776
+    }
+   ]
+  },
+  "29161": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Jennifer Connelly comunica con gli insetti",
+     "Un collegio svizzero e un assassino",
+     "Donald Pleasence, entomologo con una scimmia"
+    ],
+    "context": "Jennifer, figlia di un attore americano, arriva in un collegio femminile in Svizzera mentre un assassino uccide le studentesse. Scopre di poter parlare con gli insetti, e li usa per trovarlo. Dario Argento tra fiaba e orrore, con musica rock."
+   },
+   "moreIdeas": [
+    {
+     "title": "Suspiria",
+     "year": 1977,
+     "connection": "Argento, una ragazza e una scuola",
+     "tmdbId": 11906
+    },
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento, il giallo",
+     "tmdbId": 20126
+    },
+    {
+     "title": "4 mosche di velluto grigio",
+     "year": 1971,
+     "connection": "Argento, il terzo giallo",
+     "tmdbId": 30689
+    },
+    {
+     "title": "Il gatto a nove code",
+     "year": 1971,
+     "connection": "Argento e la scienza",
+     "tmdbId": 27431
+    },
+    {
+     "title": "L'uccello dalle piume di cristallo",
+     "year": 1970,
+     "connection": "Argento, il primo film",
+     "tmdbId": 20345
+    },
+    {
+     "title": "La maschera del demonio",
+     "year": 1960,
+     "connection": "Bava, l'horror gotico",
+     "tmdbId": 27632
+    },
+    {
+     "title": "Sei donne per l'assassino",
+     "year": 1964,
+     "connection": "Bava, il giallo",
+     "tmdbId": 28055
+    },
+    {
+     "title": "A Classic Horror Story",
+     "year": 2021,
+     "connection": "L'horror di oggi",
+     "tmdbId": 768334
+    },
+    {
+     "title": "The Nest (Il nido)",
+     "year": 2019,
+     "connection": "Un ragazzo in una villa",
+     "tmdbId": 600184
+    },
+    {
+     "title": "Non si sevizia un paperino",
+     "year": 1972,
+     "connection": "Fulci, il giallo",
+     "tmdbId": 49361
+    }
+   ]
+  },
+  "17631": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Gianni Di Gregorio, figlio e regista",
+     "Quattro signore anziane in un appartamento",
+     "Trastevere a Ferragosto, quasi vuota"
+    ],
+    "context": "Gianni, cinquantenne pieno di debiti, vive con la madre a Trastevere. Per pagare il condominio accetta di tenere a Ferragosto la madre dell'amministratore, poi altre due anziane. Un piccolo film gentile, girato in casa, premiato a Venezia."
+   },
+   "moreIdeas": [
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Un pasto e le persone intorno",
+     "tmdbId": 381341
+    },
+    {
+     "title": "Il nome del figlio",
+     "year": 2015,
+     "connection": "Una cena romana",
+     "tmdbId": 320028
+    },
+    {
+     "title": "La terrazza",
+     "year": 1980,
+     "connection": "Scola, cene romane"
+    },
+    {
+     "title": "Ferie d'agosto",
+     "year": 1996,
+     "connection": "Virzì, l'agosto degli italiani",
+     "tmdbId": 56399
+    },
+    {
+     "title": "Caro diario",
+     "year": 1993,
+     "connection": "Moretti, Roma d'agosto",
+     "tmdbId": 25403
+    },
+    {
+     "title": "Umberto D.",
+     "year": 1952,
+     "connection": "De Sica, la vecchiaia a Roma",
+     "tmdbId": 833
+    },
+    {
+     "title": "La prima cosa bella",
+     "year": 2010,
+     "connection": "Virzì, un figlio e la madre",
+     "tmdbId": 36940
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "La vecchiaia raccontata con dolcezza",
+     "tmdbId": 310593
+    },
+    {
+     "title": "Saturno contro",
+     "year": 2007,
+     "connection": "Özpetek, amici e cucina",
+     "tmdbId": 22373
+    },
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Il Ferragosto romano",
+     "tmdbId": 24188
+    }
+   ]
+  },
+  "47848": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Vittorio Gassman, capitano cieco e feroce",
+     "Un viaggio da Torino a Napoli",
+     "Premio per l'attore a Cannes"
+    ],
+    "context": "Un giovane soldato accompagna per una settimana Fausto, ex capitano reso cieco da un incidente, che vuole andare a Napoli per un motivo misterioso. Dino Risi da un romanzo di Arpino. Rifatto da Hollywood con Al Pacino."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi e Gassman, un viaggio",
+     "tmdbId": 24188
+    },
+    {
+     "title": "I mostri",
+     "year": 1963,
+     "connection": "Risi e Gassman",
+     "tmdbId": 45005
+    },
+    {
+     "title": "Una vita difficile",
+     "year": 1961,
+     "connection": "Risi, un uomo che non si arrende",
+     "tmdbId": 56343
+    },
+    {
+     "title": "I soliti ignoti",
+     "year": 1958,
+     "connection": "Gassman giovane",
+     "tmdbId": 24382
+    },
+    {
+     "title": "La grande guerra",
+     "year": 1959,
+     "connection": "Gassman soldato",
+     "tmdbId": 55823
+    },
+    {
+     "title": "Amici miei",
+     "year": 1975,
+     "connection": "Commedia amara degli stessi anni",
+     "tmdbId": 20914
+    },
+    {
+     "title": "Il ladro di bambini",
+     "year": 1992,
+     "connection": "Un militare e un viaggio in Italia",
+     "tmdbId": 47714
+    },
+    {
+     "title": "L'oro di Napoli",
+     "year": 1954,
+     "connection": "Napoli",
+     "tmdbId": 56122
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "Un uomo anziano e un segreto",
+     "tmdbId": 310593
+    },
+    {
+     "title": "Tre uomini e una gamba",
+     "year": 1997,
+     "connection": "Un viaggio lungo l'Italia",
+     "tmdbId": 38286
+    }
+   ]
+  },
+  "42617": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Marlon Brando, agente britannico cinico",
+     "Una rivolta in un'isola delle Antille",
+     "Musica di Ennio Morricone"
+    ],
+    "context": "Nell'Ottocento un inglese aiuta gli schiavi di un'isola portoghese a ribellarsi per conto dello zucchero britannico, poi torna anni dopo per schiacciarli. Gillo Pontecorvo dopo La battaglia di Algeri, sul colonialismo."
+   },
+   "moreIdeas": [
+    {
+     "title": "La battaglia di Algeri",
+     "year": 1966,
+     "connection": "Pontecorvo, una rivoluzione vera",
+     "tmdbId": 17295
+    },
+    {
+     "title": "Kapò",
+     "year": 1960,
+     "connection": "Pontecorvo, il primo film",
+     "tmdbId": 45884
+    },
+    {
+     "title": "Giù la testa",
+     "year": 1971,
+     "connection": "Leone, la rivoluzione",
+     "tmdbId": 336
+    },
+    {
+     "title": "Noi credevamo",
+     "year": 2010,
+     "connection": "Martone, rivoluzionari e potere",
+     "tmdbId": 56853
+    },
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, padroni e contadini",
+     "tmdbId": 3870
+    },
+    {
+     "title": "Il caso Mattei",
+     "year": 1972,
+     "connection": "Rosi, il petrolio e il potere"
+    },
+    {
+     "title": "Salvatore Giuliano",
+     "year": 1962,
+     "connection": "Rosi, la politica",
+     "tmdbId": 27523
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, l'Africa e l'Europa",
+     "tmdbId": 937746
+    },
+    {
+     "title": "Il gattopardo",
+     "year": 1963,
+     "connection": "Visconti, il potere che si adatta",
+     "tmdbId": 1040
+    },
+    {
+     "title": "Allonsanfàn",
+     "year": 1974,
+     "connection": "Taviani, un rivoluzionario"
+    }
+   ]
+  },
+  "103758": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un pescivendolo napoletano vuole entrare nel Grande Fratello",
+     "Aniello Arena, attore che era detenuto",
+     "Garrone tra commedia e incubo"
+    ],
+    "context": "Luciano vende pesce e fa piccole truffe; dopo un provino si convince che lo prenderanno nel reality più famoso d'Italia, e smette di vivere per aspettare la chiamata. Matteo Garrone, Gran premio della giuria a Cannes."
+   },
+   "moreIdeas": [
+    {
+     "title": "Gomorra",
+     "year": 2008,
+     "connection": "Garrone, Napoli e la camorra",
+     "tmdbId": 8882
+    },
+    {
+     "title": "L'imbalsamatore",
+     "year": 2002,
+     "connection": "Garrone, Napoli e un'ossessione",
+     "tmdbId": 35265
+    },
+    {
+     "title": "Dogman",
+     "year": 2018,
+     "connection": "Garrone, un uomo mite",
+     "tmdbId": 483184
+    },
+    {
+     "title": "Bellissima",
+     "year": 1952,
+     "connection": "Visconti, il sogno dello spettacolo",
+     "tmdbId": 43372
+    },
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Il vuoto della celebrità",
+     "tmdbId": 179144
+    },
+    {
+     "title": "L'uomo delle stelle",
+     "year": 1995,
+     "connection": "Tornatore, falsi provini"
+    },
+    {
+     "title": "Le meraviglie",
+     "year": 2014,
+     "connection": "Rohrwacher, un concorso televisivo",
+     "tmdbId": 265226
+    },
+    {
+     "title": "L'oro di Napoli",
+     "year": 1954,
+     "connection": "De Sica, Napoli",
+     "tmdbId": 56122
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Un uomo e la sua scelta",
+     "tmdbId": 575452
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, un altro viaggio verso un sogno",
+     "tmdbId": 937746
+    }
+   ]
+  },
+  "13386": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Il primo film di Massimo Troisi",
+     "Un napoletano a Firenze, stanco dei luoghi comuni",
+     "Dialoghi lenti, battute bellissime"
+    ],
+    "context": "Gaetano lascia Napoli per Firenze perché vuole vedere com'è il mondo, e tutti gli chiedono se è un emigrante. Si innamora di Marta, e non sa bene cosa fare. Troisi scrive, dirige e interpreta il suo esordio, un enorme successo."
+   },
+   "moreIdeas": [
+    {
+     "title": "Scusate il ritardo",
+     "year": 1983,
+     "connection": "Troisi, il film dopo",
+     "tmdbId": 56784
+    },
+    {
+     "title": "Non ci resta che piangere",
+     "year": 1984,
+     "connection": "Troisi e Benigni",
+     "tmdbId": 27670
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "L'ultimo film di Troisi",
+     "tmdbId": 11010
+    },
+    {
+     "title": "L'oro di Napoli",
+     "year": 1954,
+     "connection": "De Sica, Napoli",
+     "tmdbId": 56122
+    },
+    {
+     "title": "È stata la mano di Dio",
+     "year": 2021,
+     "connection": "Sorrentino, un giovane napoletano",
+     "tmdbId": 722778
+    },
+    {
+     "title": "Ecce bombo",
+     "year": 1978,
+     "connection": "Moretti, un altro esordio"
+    },
+    {
+     "title": "Cado dalle nubi",
+     "year": 2009,
+     "connection": "Zalone, un meridionale al Nord",
+     "tmdbId": 35554
+    },
+    {
+     "title": "Benvenuti al Nord",
+     "year": 2012,
+     "connection": "Un napoletano a Milano",
+     "tmdbId": 85038
+    },
+    {
+     "title": "L'uomo in più",
+     "year": 2001,
+     "connection": "Sorrentino, Napoli",
+     "tmdbId": 53482
+    },
+    {
+     "title": "Johnny Stecchino",
+     "year": 1991,
+     "connection": "Benigni, la comicità gentile",
+     "tmdbId": 12776
+    }
+   ]
+  },
+  "8422": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Alain Delon, il fratello buono",
+     "Una famiglia lucana a Milano",
+     "Annie Girardot, prostituta contesa"
+    ],
+    "context": "Rosaria arriva a Milano con quattro figli dalla Basilicata. Rocco e Simone diventano pugili e si innamorano della stessa donna, e la famiglia si spezza. Luchino Visconti racconta l'immigrazione interna come una tragedia. Tre ore."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il gattopardo",
+     "year": 1963,
+     "connection": "Visconti, il suo film più grande",
+     "tmdbId": 1040
+    },
+    {
+     "title": "Bellissima",
+     "year": 1952,
+     "connection": "Visconti, una madre e i sogni",
+     "tmdbId": 43372
+    },
+    {
+     "title": "La terra trema",
+     "year": 1948,
+     "connection": "Visconti, il Sud dei pescatori"
+    },
+    {
+     "title": "La notte",
+     "year": 1961,
+     "connection": "Antonioni, l'altra Milano",
+     "tmdbId": 41050
+    },
+    {
+     "title": "Il posto",
+     "year": 1961,
+     "connection": "Olmi, il lavoro a Milano"
+    },
+    {
+     "title": "Miracolo a Milano",
+     "year": 1951,
+     "connection": "De Sica, i poveri di Milano",
+     "tmdbId": 43379
+    },
+    {
+     "title": "La meglio gioventù",
+     "year": 2003,
+     "connection": "Due fratelli e la storia",
+     "tmdbId": 11659
+    },
+    {
+     "title": "Cado dalle nubi",
+     "year": 2009,
+     "connection": "Zalone, un meridionale a Milano, per ridere",
+     "tmdbId": 35554
+    },
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, una saga familiare",
+     "tmdbId": 3870
+    },
+    {
+     "title": "Benvenuti al Nord",
+     "year": 2012,
+     "connection": "Il Sud che arriva a Milano",
+     "tmdbId": 85038
+    }
+   ]
+  },
+  "27523": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Il bandito Giuliano si vede solo da morto",
+     "Montelepre e Portella della Ginestra",
+     "Francesco Rosi inventa il film inchiesta"
+    ],
+    "context": "Nel 1950 il corpo di Salvatore Giuliano viene trovato in un cortile di Castelvetrano. Rosi ricostruisce a pezzi gli anni del separatismo, della strage di Portella e dei rapporti tra banditi, mafia e Stato. Girato nei luoghi veri, con i siciliani veri."
+   },
+   "moreIdeas": [
+    {
+     "title": "Le mani sulla città",
+     "year": 1963,
+     "connection": "Rosi, il potere e Napoli",
+     "tmdbId": 58383
+    },
+    {
+     "title": "Il caso Mattei",
+     "year": 1972,
+     "connection": "Rosi, un altro mistero"
+    },
+    {
+     "title": "Il giorno della civetta",
+     "year": 1968,
+     "connection": "Damiani, la mafia di paese",
+     "tmdbId": 58658
+    },
+    {
+     "title": "I cento passi",
+     "year": 2000,
+     "connection": "Giordana, la mafia in Sicilia",
+     "tmdbId": 29458
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, la mafia vista da dentro",
+     "tmdbId": 575452
+    },
+    {
+     "title": "La battaglia di Algeri",
+     "year": 1966,
+     "connection": "Pontecorvo, la storia ricostruita",
+     "tmdbId": 17295
+    },
+    {
+     "title": "Il gattopardo",
+     "year": 1963,
+     "connection": "Visconti, la Sicilia del potere",
+     "tmdbId": 1040
+    },
+    {
+     "title": "La mafia uccide solo d'estate",
+     "year": 2013,
+     "connection": "Pif, la mafia raccontata ai ragazzi",
+     "tmdbId": 239877
+    },
+    {
+     "title": "Diaz - Non pulire questo sangue",
+     "year": 2012,
+     "connection": "Lo Stato sotto accusa",
+     "tmdbId": 96714
+    },
+    {
+     "title": "Paisà",
+     "year": 1946,
+     "connection": "Rossellini, la Sicilia in guerra",
+     "tmdbId": 8429
+    }
+   ]
+  },
+  "22373": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un gruppo di amici romani e un lutto",
+     "Pierfrancesco Favino, Stefano Accorsi, Margherita Buy",
+     "Cene lunghe e verità dette tardi"
+    ],
+    "context": "Un gruppo di amici quarantenni si ritrova spesso a cena da Davide e Lorenzo. Quando uno di loro sta male all'improvviso, ognuno deve fare i conti con la propria vita e con quello che non ha detto. Ferzan Özpetek, corale e commovente."
+   },
+   "moreIdeas": [
+    {
+     "title": "Le fate ignoranti",
+     "year": 2001,
+     "connection": "Özpetek, amici e un lutto",
+     "tmdbId": 23550
+    },
+    {
+     "title": "La finestra di fronte",
+     "year": 2003,
+     "connection": "Özpetek, una donna e un segreto",
+     "tmdbId": 29987
+    },
+    {
+     "title": "Mine vaganti",
+     "year": 2010,
+     "connection": "Özpetek, una famiglia del Sud",
+     "tmdbId": 40794
+    },
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Amici a cena e le verità",
+     "tmdbId": 381341
+    },
+    {
+     "title": "Il nome del figlio",
+     "year": 2015,
+     "connection": "Una cena che va storta",
+     "tmdbId": 320028
+    },
+    {
+     "title": "L'ultimo bacio",
+     "year": 2001,
+     "connection": "Muccino, amici e paure",
+     "tmdbId": 12308
+    },
+    {
+     "title": "Chiedimi se sono felice",
+     "year": 2000,
+     "connection": "Amici che si ritrovano",
+     "tmdbId": 50531
+    },
+    {
+     "title": "La terrazza",
+     "year": 1980,
+     "connection": "Scola, amici di mezza età"
+    },
+    {
+     "title": "Pranzo di ferragosto",
+     "year": 2008,
+     "connection": "Un pranzo romano",
+     "tmdbId": 17631
+    },
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Vecchi amici, vita adulta",
+     "tmdbId": 56909
+    }
+   ]
+  },
+  "43469": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Due lustrascarpe nella Roma liberata",
+     "Il carcere minorile e un cavallo bianco",
+     "Il primo Oscar onorario a un film straniero"
+    ],
+    "context": "Giuseppe e Pasquale fanno i lustrascarpe per i soldati americani e sognano di comprare un cavallo. Finiscono in un riformatorio per un furto non loro, e lì l'amicizia si rompe. Vittorio De Sica e Cesare Zavattini, prima di Ladri di biciclette."
+   },
+   "moreIdeas": [
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica e Zavattini, due anni dopo",
+     "tmdbId": 5156
+    },
+    {
+     "title": "Umberto D.",
+     "year": 1952,
+     "connection": "De Sica, la solitudine",
+     "tmdbId": 833
+    },
+    {
+     "title": "Miracolo a Milano",
+     "year": 1951,
+     "connection": "De Sica, una favola tra i poveri",
+     "tmdbId": 43379
+    },
+    {
+     "title": "Roma città aperta",
+     "year": 1945,
+     "connection": "Rossellini, Roma in guerra",
+     "tmdbId": 307
+    },
+    {
+     "title": "Paisà",
+     "year": 1946,
+     "connection": "Rossellini, lo stesso anno",
+     "tmdbId": 8429
+    },
+    {
+     "title": "Il ladro di bambini",
+     "year": 1992,
+     "connection": "Amelio, bambini e istituti",
+     "tmdbId": 47714
+    },
+    {
+     "title": "Germania anno zero",
+     "year": 1948,
+     "connection": "Rossellini, un bambino nella città distrutta"
+    },
+    {
+     "title": "La paranza dei bambini",
+     "year": 2019,
+     "connection": "Ragazzini e crimine oggi",
+     "tmdbId": 574436
+    },
+    {
+     "title": "Accattone",
+     "year": 1961,
+     "connection": "Pasolini, ragazzi di strada",
+     "tmdbId": 12491
+    },
+    {
+     "title": "Mamma Roma",
+     "year": 1962,
+     "connection": "Pasolini, un figlio perso"
+    }
+   ]
+  },
+  "56784": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Troisi innamorato e incapace di dirlo",
+     "Lello Arena, amico disperato",
+     "Napoli piccola e affettuosa"
+    ],
+    "context": "Vincenzo ha una storia con Anna ma non riesce mai a dirle che la ama, mentre il suo amico Tonino è stato lasciato e lo chiama a tutte le ore. Massimo Troisi racconta l'amore come una cosa difficile e un po' ridicola."
+   },
+   "moreIdeas": [
+    {
+     "title": "Ricomincio da tre",
+     "year": 1981,
+     "connection": "Troisi, il primo film",
+     "tmdbId": 13386
+    },
+    {
+     "title": "Non ci resta che piangere",
+     "year": 1984,
+     "connection": "Troisi e Benigni",
+     "tmdbId": 27670
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "L'ultimo film di Troisi",
+     "tmdbId": 11010
+    },
+    {
+     "title": "L'oro di Napoli",
+     "year": 1954,
+     "connection": "De Sica, Napoli",
+     "tmdbId": 56122
+    },
+    {
+     "title": "È stata la mano di Dio",
+     "year": 2021,
+     "connection": "Sorrentino, Napoli anni Ottanta",
+     "tmdbId": 722778
+    },
+    {
+     "title": "L'ultimo bacio",
+     "year": 2001,
+     "connection": "Muccino, la paura d'amare",
+     "tmdbId": 12308
+    },
+    {
+     "title": "Caro diario",
+     "year": 1993,
+     "connection": "Moretti, lo stesso tono personale",
+     "tmdbId": 25403
+    },
+    {
+     "title": "Tu la conosci Claudia?",
+     "year": 2004,
+     "connection": "Amori complicati",
+     "tmdbId": 57112
+    },
+    {
+     "title": "Ecce bombo",
+     "year": 1978,
+     "connection": "Moretti, giovani incerti"
+    },
+    {
+     "title": "L'uomo in più",
+     "year": 2001,
+     "connection": "Sorrentino, Napoli",
+     "tmdbId": 53482
+    }
+   ]
+  },
+  "28055": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un atelier di moda e un assassino mascherato",
+     "Rossi, verdi e blu fortissimi",
+     "Mario Bava inventa il giallo a colori"
+    ],
+    "context": "In una casa di moda romana una modella viene uccisa da un uomo senza volto, e il suo diario fa paura a tutte le altre. Bava gira il primo vero giallo all'italiana: trama semplice, immagini studiate, violenza stilizzata. Argento partirà da qui."
+   },
+   "moreIdeas": [
+    {
+     "title": "La maschera del demonio",
+     "year": 1960,
+     "connection": "Bava, l'horror gotico",
+     "tmdbId": 27632
+    },
+    {
+     "title": "La ragazza che sapeva troppo",
+     "year": 1963,
+     "connection": "Bava, il giallo in bianco e nero"
+    },
+    {
+     "title": "L'uccello dalle piume di cristallo",
+     "year": 1970,
+     "connection": "Argento, il suo primo giallo",
+     "tmdbId": 20345
+    },
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento, il giallo più famoso",
+     "tmdbId": 20126
+    },
+    {
+     "title": "Suspiria",
+     "year": 1977,
+     "connection": "Argento, i colori di Bava",
+     "tmdbId": 11906
+    },
+    {
+     "title": "Il gatto a nove code",
+     "year": 1971,
+     "connection": "Argento",
+     "tmdbId": 27431
+    },
+    {
+     "title": "4 mosche di velluto grigio",
+     "year": 1971,
+     "connection": "Argento",
+     "tmdbId": 30689
+    },
+    {
+     "title": "Non si sevizia un paperino",
+     "year": 1972,
+     "connection": "Fulci, il giallo",
+     "tmdbId": 49361
+    },
+    {
+     "title": "Phenomena",
+     "year": 1985,
+     "connection": "Argento, ragazze e un assassino",
+     "tmdbId": 29161
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Il giallo di oggi",
+     "tmdbId": 468202
+    }
+   ]
+  },
+  "73872": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Una famiglia di pescatori di Linosa",
+     "La legge del mare contro la legge dello Stato",
+     "Premio speciale della giuria a Venezia"
+    ],
+    "context": "Filippo, vent'anni, pesca con il nonno su una piccola isola siciliana che vive di turisti. Un giorno salvano dei migranti in mare e ne nascondono una donna incinta. Emanuele Crialese racconta chi accoglie e chi ha paura."
+   },
+   "moreIdeas": [
+    {
+     "title": "Fuocoammare",
+     "year": 2016,
+     "connection": "Rosi, Lampedusa e gli sbarchi",
+     "tmdbId": 377151
+    },
+    {
+     "title": "Io capitano",
+     "year": 2023,
+     "connection": "Garrone, il viaggio dall'Africa",
+     "tmdbId": 937746
+    },
+    {
+     "title": "Nuovomondo",
+     "year": 2006,
+     "connection": "Crialese, siciliani che emigrano in America"
+    },
+    {
+     "title": "Respiro",
+     "year": 2002,
+     "connection": "Crialese, Lampedusa e una madre libera"
+    },
+    {
+     "title": "La terra trema",
+     "year": 1948,
+     "connection": "Visconti, pescatori siciliani"
+    },
+    {
+     "title": "Mediterraneo",
+     "year": 1991,
+     "connection": "Il mare e i suoi abitanti"
+    },
+    {
+     "title": "Il postino",
+     "year": 1994,
+     "connection": "Un'isola e un uomo semplice",
+     "tmdbId": 11010
+    },
+    {
+     "title": "Tolo Tolo",
+     "year": 2020,
+     "connection": "La stessa rotta, per ridere",
+     "tmdbId": 593402
+    },
+    {
+     "title": "Il vento fa il suo giro",
+     "year": 2006,
+     "connection": "Una comunità e uno straniero",
+     "tmdbId": 55717
+    },
+    {
+     "title": "Le meraviglie",
+     "year": 2014,
+     "connection": "Una famiglia che lavora la terra",
+     "tmdbId": 265226
+    }
+   ]
+  },
+  "600184": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un ragazzo in carrozzina in una villa isolata",
+     "Una madre che non lo fa uscire",
+     "Il primo film di Roberto De Feo"
+    ],
+    "context": "Samuel non può camminare e vive con la madre in una grande villa nel bosco, da cui non è mai uscito. Quando arriva una ragazza nuova, comincia a farsi domande. Un horror gotico italiano, con un finale che rovescia tutto."
+   },
+   "moreIdeas": [
+    {
+     "title": "A Classic Horror Story",
+     "year": 2021,
+     "connection": "De Feo di nuovo, un bosco e un incubo",
+     "tmdbId": 768334
+    },
+    {
+     "title": "La maschera del demonio",
+     "year": 1960,
+     "connection": "Bava, il gotico italiano",
+     "tmdbId": 27632
+    },
+    {
+     "title": "Suspiria",
+     "year": 1977,
+     "connection": "Argento, una scuola stregata",
+     "tmdbId": 11906
+    },
+    {
+     "title": "Phenomena",
+     "year": 1985,
+     "connection": "Argento, una ragazza in collegio",
+     "tmdbId": 29161
+    },
+    {
+     "title": "La casa dalle finestre che ridono",
+     "year": 1976,
+     "connection": "Avati, il segreto di un paese"
+    },
+    {
+     "title": "Profondo rosso",
+     "year": 1975,
+     "connection": "Argento, una villa e un segreto",
+     "tmdbId": 20126
+    },
+    {
+     "title": "La ragazza nella nebbia",
+     "year": 2017,
+     "connection": "Un mistero isolato",
+     "tmdbId": 468202
+    },
+    {
+     "title": "L'uomo del labirinto",
+     "year": 2019,
+     "connection": "Una prigione e un segreto",
+     "tmdbId": 602545
+    },
+    {
+     "title": "Io non ho paura",
+     "year": 2003,
+     "connection": "Un ragazzo e un segreto",
+     "tmdbId": 25300
+    },
+    {
+     "title": "Il racconto dei racconti - Tale of Tales",
+     "year": 2015,
+     "connection": "Il gotico delle favole",
+     "tmdbId": 314405
+    }
+   ]
+  },
+  "53487": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Sean Penn, rockstar gotica in pensione",
+     "Un viaggio in America sulle tracce di un nazista",
+     "Musica di David Byrne"
+    ],
+    "context": "Cheyenne, ex rockstar annoiata che vive a Dublino, va a New York per la morte del padre e scopre che lui cercava da anni un ufficiale di Auschwitz. Decide di continuare la ricerca attraverso l'America. Sorrentino in inglese, strano e malinconico."
+   },
+   "moreIdeas": [
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "Sorrentino in inglese, artisti anziani",
+     "tmdbId": 310593
+    },
+    {
+     "title": "La grande bellezza",
+     "year": 2013,
+     "connection": "Sorrentino, Roma",
+     "tmdbId": 179144
+    },
+    {
+     "title": "Le conseguenze dell'amore",
+     "year": 2004,
+     "connection": "Sorrentino, un uomo immobile",
+     "tmdbId": 24653
+    },
+    {
+     "title": "L'uomo in più",
+     "year": 2001,
+     "connection": "Sorrentino, un cantante in declino",
+     "tmdbId": 53482
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino, il potere",
+     "tmdbId": 8832
+    },
+    {
+     "title": "La leggenda del pianista sull'oceano",
+     "year": 1998,
+     "connection": "Tornatore in inglese, un musicista",
+     "tmdbId": 10376
+    },
+    {
+     "title": "La migliore offerta",
+     "year": 2013,
+     "connection": "Tornatore in inglese",
+     "tmdbId": 152742
+    },
+    {
+     "title": "Parthenope",
+     "year": 2024,
+     "connection": "Sorrentino, una vita lunga",
+     "tmdbId": 1109255
+    },
+    {
+     "title": "Il giardino dei Finzi Contini",
+     "year": 1970,
+     "connection": "La memoria della Shoah",
+     "tmdbId": 4789
+    },
+    {
+     "title": "La vita è bella",
+     "year": 1997,
+     "connection": "La Shoah raccontata diversamente",
+     "tmdbId": 637
+    }
+   ]
+  },
+  "47096": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Politici democristiani chiusi in un eremo",
+     "Gian Maria Volonté imita Aldo Moro",
+     "Da Leonardo Sciascia"
+    ],
+    "context": "Durante un'epidemia, i potenti del partito di governo si ritirano per esercizi spirituali in un albergo-eremo guidato da un prete ambiguo, Marcello Mastroianni. Cominciano a morire uno a uno. Elio Petri, satira cupa, ritirata presto dalle sale."
+   },
+   "moreIdeas": [
+    {
+     "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+     "year": 1970,
+     "connection": "Petri e Volonté, il potere",
+     "tmdbId": 26451
+    },
+    {
+     "title": "La classe operaia va in paradiso",
+     "year": 1971,
+     "connection": "Petri e Volonté",
+     "tmdbId": 56231
+    },
+    {
+     "title": "Il Divo",
+     "year": 2008,
+     "connection": "Sorrentino, la Democrazia cristiana",
+     "tmdbId": 8832
+    },
+    {
+     "title": "Esterno Notte - Prima Parte",
+     "year": 2022,
+     "connection": "Bellocchio, Moro",
+     "tmdbId": 977487
+    },
+    {
+     "title": "Il caso Mattei",
+     "year": 1972,
+     "connection": "Rosi, Volonté e lo Stato"
+    },
+    {
+     "title": "Il giorno della civetta",
+     "year": 1968,
+     "connection": "Da Sciascia anche questo",
+     "tmdbId": 58658
+    },
+    {
+     "title": "Salvatore Giuliano",
+     "year": 1962,
+     "connection": "Rosi, la politica nascosta",
+     "tmdbId": 27523
+    },
+    {
+     "title": "Le mani sulla città",
+     "year": 1963,
+     "connection": "Rosi, i potenti",
+     "tmdbId": 58383
+    },
+    {
+     "title": "The Place",
+     "year": 2017,
+     "connection": "Un luogo chiuso e le colpe",
+     "tmdbId": 468198
+    },
+    {
+     "title": "Loro",
+     "year": 2018,
+     "connection": "Sorrentino, il potere"
+    }
+   ]
+  },
+  "51917": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Una laureata in filosofia in un call center",
+     "Sabrina Ferilli, capa che motiva con le canzoni",
+     "Isabella Ragonese al primo ruolo importante"
+    ],
+    "context": "Marta si laurea con lode e finisce a vendere elettrodomestici al telefono, in un'azienda dove le venditrici vengono premiate e umiliate ogni mattina. Paolo Virzì racconta il lavoro precario con una commedia che fa anche paura."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il capitale umano",
+     "year": 2013,
+     "connection": "Virzì, i soldi e il lavoro",
+     "tmdbId": 244088
+    },
+    {
+     "title": "La pazza gioia",
+     "year": 2016,
+     "connection": "Virzì, due donne",
+     "tmdbId": 380225
+    },
+    {
+     "title": "La prima cosa bella",
+     "year": 2010,
+     "connection": "Virzì, una famiglia",
+     "tmdbId": 36940
+    },
+    {
+     "title": "Ferie d'agosto",
+     "year": 1996,
+     "connection": "Virzì, due Italie",
+     "tmdbId": 56399
+    },
+    {
+     "title": "Smetto quando voglio",
+     "year": 2014,
+     "connection": "Laureati senza lavoro",
+     "tmdbId": 250219
+    },
+    {
+     "title": "La classe operaia va in paradiso",
+     "year": 1971,
+     "connection": "Petri, il lavoro in fabbrica",
+     "tmdbId": 56231
+    },
+    {
+     "title": "Il posto",
+     "year": 1961,
+     "connection": "Olmi, il primo lavoro"
+    },
+    {
+     "title": "Fantozzi",
+     "year": 1975,
+     "connection": "L'ufficio come tragedia comica",
+     "tmdbId": 25606
+    },
+    {
+     "title": "Quo vado?",
+     "year": 2016,
+     "connection": "Zalone, il lavoro",
+     "tmdbId": 374416
+    },
+    {
+     "title": "Come un gatto in tangenziale",
+     "year": 2017,
+     "connection": "Classi sociali a Roma",
+     "tmdbId": 492282
+    }
+   ]
+  },
+  "833": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Un pensionato solo e il suo cane Flaik",
+     "Carlo Battisti, professore, mai attore",
+     "La scena della serva in cucina"
+    ],
+    "context": "Umberto Domenico Ferrari, ex funzionario, non riesce a pagare l'affitto con la pensione e rischia lo sfratto. Gli restano il cane e una giovane domestica. De Sica lo dedicò al padre. Uno dei film più tristi e più belli del neorealismo."
+   },
+   "moreIdeas": [
+    {
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "connection": "De Sica, la povertà e la dignità",
+     "tmdbId": 5156
+    },
+    {
+     "title": "Sciuscià",
+     "year": 1946,
+     "connection": "De Sica, i ragazzi",
+     "tmdbId": 43469
+    },
+    {
+     "title": "Miracolo a Milano",
+     "year": 1951,
+     "connection": "De Sica, i poveri e la favola",
+     "tmdbId": 43379
+    },
+    {
+     "title": "Pranzo di ferragosto",
+     "year": 2008,
+     "connection": "La vecchiaia a Roma, con dolcezza",
+     "tmdbId": 17631
+    },
+    {
+     "title": "La strada",
+     "year": 1954,
+     "connection": "Fellini, solitudini",
+     "tmdbId": 405
+    },
+    {
+     "title": "Le notti di Cabiria",
+     "year": 1957,
+     "connection": "Fellini, una speranza ostinata",
+     "tmdbId": 19426
+    },
+    {
+     "title": "Il ladro di bambini",
+     "year": 1992,
+     "connection": "Amelio, erede del neorealismo",
+     "tmdbId": 47714
+    },
+    {
+     "title": "Accattone",
+     "year": 1961,
+     "connection": "Pasolini, gli ultimi",
+     "tmdbId": 12491
+    },
+    {
+     "title": "Youth – La giovinezza",
+     "year": 2015,
+     "connection": "La vecchiaia",
+     "tmdbId": 310593
+    },
+    {
+     "title": "L'oro di Napoli",
+     "year": 1954,
+     "connection": "De Sica, Napoli",
+     "tmdbId": 56122
+    }
+   ]
+  },
+  "162282": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Sergio Castellitto affitta una famiglia per Natale",
+     "Attori che recitano una famiglia vera",
+     "Paolo Genovese prima di Perfetti sconosciuti"
+    ],
+    "context": "Un uomo ricco e solo paga una compagnia di attori per fingere di essere la sua famiglia durante le feste di Natale. La recita si complica quando gli attori si affezionano. Rifacimento di un film spagnolo, una commedia gentile."
+   },
+   "moreIdeas": [
+    {
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "connection": "Genovese, il suo film più famoso",
+     "tmdbId": 381341
+    },
+    {
+     "title": "Immaturi",
+     "year": 2011,
+     "connection": "Genovese, ex compagni di scuola",
+     "tmdbId": 56909
+    },
+    {
+     "title": "Tutta colpa di Freud",
+     "year": 2014,
+     "connection": "Genovese, una famiglia complicata",
+     "tmdbId": 250235
+    },
+    {
+     "title": "The Place",
+     "year": 2017,
+     "connection": "Genovese, desideri e prezzi",
+     "tmdbId": 468198
+    },
+    {
+     "title": "La banda dei Babbi Natale",
+     "year": 2010,
+     "connection": "Un Natale per ridere",
+     "tmdbId": 58013
+    },
+    {
+     "title": "Il nome del figlio",
+     "year": 2015,
+     "connection": "Una famiglia a cena",
+     "tmdbId": 320028
+    },
+    {
+     "title": "Mine vaganti",
+     "year": 2010,
+     "connection": "Özpetek, una famiglia e una recita",
+     "tmdbId": 40794
+    },
+    {
+     "title": "Pranzo di ferragosto",
+     "year": 2008,
+     "connection": "Una famiglia improvvisata",
+     "tmdbId": 17631
+    },
+    {
+     "title": "Saturno contro",
+     "year": 2007,
+     "connection": "Una famiglia di amici",
+     "tmdbId": 22373
+    },
+    {
+     "title": "Il ricco, il povero e il maggiordomo",
+     "year": 2014,
+     "connection": "Un ricco e i suoi servi",
+     "tmdbId": 310126
+    }
+   ]
+  },
+  "56343": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "Alberto Sordi, partigiano che non si vende",
+     "Vent'anni d'Italia, dalla guerra al boom",
+     "Il ricevimento dei monarchici il 2 giugno"
+    ],
+    "context": "Silvio, giornalista ed ex partigiano, vuole restare onesto in un'Italia che premia chi si adatta. Perde lavoro, soldi e quasi la moglie. Dino Risi racconta il dopoguerra con Sordi nella sua parte più amara e più bella."
+   },
+   "moreIdeas": [
+    {
+     "title": "Il sorpasso",
+     "year": 1962,
+     "connection": "Risi, l'anno dopo",
+     "tmdbId": 24188
+    },
+    {
+     "title": "I mostri",
+     "year": 1963,
+     "connection": "Risi, gli italiani senza pietà",
+     "tmdbId": 45005
+    },
+    {
+     "title": "Profumo di donna",
+     "year": 1974,
+     "connection": "Risi e Gassman",
+     "tmdbId": 47848
+    },
+    {
+     "title": "La grande guerra",
+     "year": 1959,
+     "connection": "Monicelli e Sordi",
+     "tmdbId": 55823
+    },
+    {
+     "title": "La terrazza",
+     "year": 1980,
+     "connection": "Scola, intellettuali delusi"
+    },
+    {
+     "title": "La meglio gioventù",
+     "year": 2003,
+     "connection": "L'Italia in decenni",
+     "tmdbId": 11659
+    },
+    {
+     "title": "Il conformista",
+     "year": 1971,
+     "connection": "Chi si adatta e chi no",
+     "tmdbId": 8416
+    },
+    {
+     "title": "Roma città aperta",
+     "year": 1945,
+     "connection": "La Resistenza",
+     "tmdbId": 307
+    },
+    {
+     "title": "Amici miei",
+     "year": 1975,
+     "connection": "Commedia amara",
+     "tmdbId": 20914
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, il fascismo"
+    }
+   ]
+  },
+  "30239": {
+   "whyWatch": {
+    "recommendation": "YES",
+    "reasons": [
+     "La moglie segreta di Benito Mussolini",
+     "Giovanna Mezzogiorno, Ida Dalser che non si arrende",
+     "Filippo Timi è Mussolini giovane"
+    ],
+    "context": "Ida Dalser conosce Mussolini prima della Grande Guerra, gli dà tutto e un figlio. Quando lui diventa duce, la fa sparire in manicomio insieme al bambino. Marco Bellocchio racconta una storia vera nascosta per decenni, con immagini d'epoca."
+   },
+   "moreIdeas": [
+    {
+     "title": "Esterno Notte - Prima Parte",
+     "year": 2022,
+     "connection": "Bellocchio, il caso Moro",
+     "tmdbId": 977487
+    },
+    {
+     "title": "Il traditore",
+     "year": 2019,
+     "connection": "Bellocchio, Buscetta",
+     "tmdbId": 575452
+    },
+    {
+     "title": "Il conformista",
+     "year": 1971,
+     "connection": "Bertolucci, il fascismo",
+     "tmdbId": 8416
+    },
+    {
+     "title": "Una giornata particolare",
+     "year": 1977,
+     "connection": "Scola, il fascismo e due esclusi"
+    },
+    {
+     "title": "Novecento",
+     "year": 1976,
+     "connection": "Bertolucci, l'Emilia e il fascismo",
+     "tmdbId": 3870
+    },
+    {
+     "title": "Amarcord",
+     "year": 1973,
+     "connection": "Fellini, il fascismo di provincia",
+     "tmdbId": 7857
+    },
+    {
+     "title": "Il giardino dei Finzi Contini",
+     "year": 1970,
+     "connection": "De Sica, le leggi razziali",
+     "tmdbId": 4789
+    },
+    {
+     "title": "La pazza gioia",
+     "year": 2016,
+     "connection": "Donne e cura psichiatrica",
+     "tmdbId": 380225
+    },
+    {
+     "title": "Noi credevamo",
+     "year": 2010,
+     "connection": "Martone, la storia vista da chi perde",
+     "tmdbId": 56853
+    },
+    {
+     "title": "Come Dio comanda",
+     "year": 2008,
+     "connection": "Filippo Timi padre violento",
+     "tmdbId": 24168
     }
    ]
   }
