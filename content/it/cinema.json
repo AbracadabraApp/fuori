@@ -11,15 +11,15 @@
           "poster": "https://image.tmdb.org/t/p/w500/8MmGEkPc8jlpkHJpx7g02UmtLzw.jpg",
           "videos": [
             {
+              "youtube": "ei-b4kl3rU8",
+              "type": "Trailer",
+              "name": "ROMA CITTÀ APERTA - Trailer (Il Cinema Ritrovato al cinema)",
+              "language": "it"
+            },
+            {
               "youtube": "5uzXxXnGfVs",
               "type": "Trailer",
               "name": "Rome, Open City (Roma Città Aperta) - back in cinemas 17 May 2024 | BFI",
-              "language": "en"
-            },
-            {
-              "youtube": "hgS4KEDZ0PE",
-              "type": "Featurette",
-              "name": "Mark Kermode reviews Rome, Open City (1945) | BFI Player",
               "language": "en"
             },
             {
@@ -29,15 +29,15 @@
               "language": "en"
             },
             {
-              "youtube": "ei-b4kl3rU8",
-              "type": "Trailer",
-              "name": "ROMA CITTÀ APERTA - Trailer (Il Cinema Ritrovato al cinema)",
-              "language": "it"
-            },
-            {
               "youtube": "c1P1JRSJT6Q",
               "type": "Trailer",
               "name": "Trailer [Subtitled]",
+              "language": "en"
+            },
+            {
+              "youtube": "hgS4KEDZ0PE",
+              "type": "Featurette",
+              "name": "Mark Kermode reviews Rome, Open City (1945) | BFI Player",
               "language": "en"
             },
             {
@@ -87,93 +87,225 @@
           ]
         },
         {
-          "tmdbId": 24382,
-          "title": "I soliti ignoti",
-          "year": 1958,
-          "poster": "https://image.tmdb.org/t/p/w500/q9c85xYn4NPLJzHcWtboMdYBxWe.jpg",
+          "tmdbId": 19426,
+          "title": "Le notti di Cabiria",
+          "year": 1957,
+          "poster": "https://image.tmdb.org/t/p/w500/ezDW37MA8aZlOgJYO4mysjc949J.jpg",
           "videos": [
             {
-              "youtube": "hP8HX5bnQyo",
+              "youtube": "YO8PFBmkRSc",
               "type": "Trailer",
-              "name": "Big Deal On Madonna Street",
-              "language": "en"
-            }
-          ]
-        },
-        {
-          "tmdbId": 439,
-          "title": "La dolce vita",
-          "year": 1960,
-          "poster": "https://image.tmdb.org/t/p/w500/bT6bICAhQLY40Hrs7Lq2fnwNLsf.jpg",
-          "videos": [
+              "name": "Le Notti di Cabiria - Trailer",
+              "language": "it"
+            },
             {
-              "youtube": "yg3--NK-Xzo",
+              "youtube": "nG91owD7UjM",
               "type": "Trailer",
-              "name": "La Dolce Vita (1960) Original Trailer [FHD]",
+              "name": "NIGHTS OF CABIRIA Trailer",
               "language": "en"
             },
             {
-              "youtube": "1BeWEPXWDX4",
-              "type": "Teaser",
-              "name": "New trailer for Fellini's La dolce vita - back in cinemas 3 January 2020 | BFI",
-              "language": "en"
-            },
-            {
-              "youtube": "Nnh6NWlOF1U",
-              "type": "Featurette",
-              "name": "Three Reasons: La dolce vita",
-              "language": "en"
-            },
-            {
-              "youtube": "9ntan4GSOpI",
-              "type": "Featurette",
-              "name": "La Dolce Vita and West Side Story Win Costume Design: 1962 Oscars",
-              "language": "en"
-            }
-          ]
-        },
-        {
-          "tmdbId": 24188,
-          "title": "Il sorpasso",
-          "year": 1962,
-          "poster": "https://image.tmdb.org/t/p/w500/9vumJKydNxcFtcFNYPIvFeHXVBQ.jpg",
-          "videos": [
-            {
-              "youtube": "bFf2VID8-qg",
-              "type": "Trailer",
-              "name": "IL SORPASSO - U.S. Re-release Trailer",
-              "language": "en"
-            },
-            {
-              "youtube": "X5Tjj5B7Kbc",
-              "type": "Trailer",
-              "name": "Il Sorpasso - Trailer",
-              "language": "en"
-            }
-          ]
-        },
-        {
-          "tmdbId": 42229,
-          "title": "Una giornata particolare",
-          "year": 1977,
-          "poster": "https://image.tmdb.org/t/p/w500/xaiFqvBA0IYGFDu2sEAszAFl3nF.jpg",
-          "videos": [
-            {
-              "youtube": "i_9BAH_qO-4",
-              "type": "Trailer",
-              "name": "Original Trailer",
-              "language": "en"
-            },
-            {
-              "youtube": "KloWrqcHAF0",
+              "youtube": "OO6EmDhi2X0",
               "type": "Trailer",
               "name": "4K Restoration Trailer",
               "language": "en"
             },
             {
-              "youtube": "--Mxb3_xU9M",
+              "youtube": "eT_BH_W5H9g",
+              "type": "Clip",
+              "name": "\"The Mascara Tear\"",
+              "language": "en"
+            },
+            {
+              "youtube": "Mbtt05FWHaw",
               "type": "Featurette",
-              "name": "Sophia Loren on Working with Marcello Mastroianni",
+              "name": "NIGHTS OF CABIRIA - Phil Kemp Interview",
+              "language": "en"
+            },
+            {
+              "youtube": "atSWR5XYHA4",
+              "type": "Featurette",
+              "name": "Carol Morley on Federico Fellini's Nights of Cabiria",
+              "language": "en"
+            }
+          ]
+        },
+        {
+          "tmdbId": 422,
+          "title": "8½",
+          "year": 1963,
+          "poster": "https://image.tmdb.org/t/p/w500/ja0uRnwFwnVFJlNMYL10orpjWtq.jpg",
+          "videos": [
+            {
+              "youtube": "PTmiA-uNSD8",
+              "type": "Trailer",
+              "name": "Fellini's 8 1/2 Original Italian Trailer",
+              "language": "it"
+            },
+            {
+              "youtube": "yruJBocWfn4",
+              "type": "Trailer",
+              "name": "35mm Trailer [Subtitled]",
+              "language": "en"
+            },
+            {
+              "youtube": "RmIC9pQ80Fk",
+              "type": "Trailer",
+              "name": "Federico Fellini - 8 1/2 (New Trailer) - In UK cinemas 1 May 2015 | BFI Release",
+              "language": "en"
+            },
+            {
+              "youtube": "QU6IWDPw20E",
+              "type": "Trailer",
+              "name": "8 and a Half Trailer HD",
+              "language": "en"
+            },
+            {
+              "youtube": "4CjMvGBY_lI",
+              "type": "Trailer",
+              "name": "8 1/2 Trailer (1963) - The Criterion Collection",
+              "language": "en"
+            },
+            {
+              "youtube": "0dEKaNDqDmo",
+              "type": "Featurette",
+              "name": "Mark Kermode reviews 8½ (1963) | BFI Player",
+              "language": "en"
+            },
+            {
+              "youtube": "i4SJYkYtWcw",
+              "type": "Featurette",
+              "name": "Marcello Mastroianni’s guide to being cool | BFI",
+              "language": "en"
+            },
+            {
+              "youtube": "bqUZf7eIsXQ",
+              "type": "Featurette",
+              "name": "8 1/2 and Cleopatra Win Costume Design: 1964 Oscars",
+              "language": "en"
+            },
+            {
+              "youtube": "335fIxuPTkY",
+              "type": "Featurette",
+              "name": "Federico Fellini accepting Best Foreign Language Film for \"8 1/2\": 1964 Oscars",
+              "language": "en"
+            },
+            {
+              "youtube": "tyhGxakPe4s",
+              "type": "Featurette",
+              "name": "Allan Arkush on 8 1/2",
+              "language": "en"
+            }
+          ]
+        },
+        {
+          "tmdbId": 8832,
+          "title": "Il Divo",
+          "year": 2008,
+          "poster": "https://image.tmdb.org/t/p/w500/6Rb4Uel3gziuDEgJ71xfZelayVP.jpg",
+          "videos": [
+            {
+              "youtube": "T3AUilk7cvs",
+              "type": "Trailer",
+              "name": "Trailer",
+              "language": "it"
+            },
+            {
+              "youtube": "cw-qm-liCPA",
+              "type": "Trailer",
+              "name": "Official US IL DIVO Trailer",
+              "language": "en"
+            }
+          ]
+        },
+        {
+          "tmdbId": 571468,
+          "title": "Freaks Out",
+          "year": 2021,
+          "poster": "https://image.tmdb.org/t/p/w500/1TkkTo8UiRl5lWM5qkAISHXg0fU.jpg",
+          "videos": [
+            {
+              "youtube": "husPLaMJLpc",
+              "type": "Trailer",
+              "name": "FREAKS OUT di Gabriele Mainetti (2021) - Nuovo Trailer Ufficiale HD",
+              "language": "it"
+            },
+            {
+              "youtube": "WUXO7ECyUE0",
+              "type": "Trailer",
+              "name": "Freaks Out di Gabriele Mainetti in Concorso al Festival di Venezia 78 | Trailer ITA HD",
+              "language": "it"
+            },
+            {
+              "youtube": "7f7NuwKl4h0",
+              "type": "Teaser",
+              "name": "FREAKS OUT di Gabriele Mainetti - Teaser trailer ufficiale",
+              "language": "it"
+            },
+            {
+              "youtube": "Z0vfeyNUyGo",
+              "type": "Clip",
+              "name": "FREAKS OUT - Clip \"Treno\"",
+              "language": "it"
+            },
+            {
+              "youtube": "WW9wLw7ex-4",
+              "type": "Clip",
+              "name": "FREAKS OUT - Clip \"Baci proprio da schifo!\"",
+              "language": "it"
+            },
+            {
+              "youtube": "asnaKE4vwz4",
+              "type": "Clip",
+              "name": "Freaks Out di Gabriele Mainetti | Clip Franz Il Pianista che vede il futuro",
+              "language": "it"
+            },
+            {
+              "youtube": "0ErIJqm-zeE",
+              "type": "Trailer",
+              "name": "UK Trailer [Subtitled]",
+              "language": "en"
+            },
+            {
+              "youtube": "FU0zF5Pg3c4",
+              "type": "Trailer",
+              "name": "Official US Trailer [Subtitled]",
+              "language": "en"
+            },
+            {
+              "youtube": "Ja5hdZGgaeI",
+              "type": "Clip",
+              "name": "Mathilde is Found",
+              "language": "en"
+            },
+            {
+              "youtube": "wDxHjuOaOLM",
+              "type": "Clip",
+              "name": "Rounded Up",
+              "language": "en"
+            },
+            {
+              "youtube": "7JHjjv6rUT4",
+              "type": "Clip",
+              "name": "Temptations",
+              "language": "en"
+            },
+            {
+              "youtube": "cPdVRHFl7CE",
+              "type": "Clip",
+              "name": "'Time to Fight Back'",
+              "language": "en"
+            },
+            {
+              "youtube": "NIiByh_koTI",
+              "type": "Clip",
+              "name": "'He Has Gills'",
+              "language": "en"
+            },
+            {
+              "youtube": "6TghXVHBCRE",
+              "type": "Clip",
+              "name": "'Sweet Nazi O' Mine'",
               "language": "en"
             }
           ]
@@ -185,16 +317,16 @@
           "poster": "https://image.tmdb.org/t/p/w500/oSIo4cCNEzV5zGu6Vavq2IorJR5.jpg",
           "videos": [
             {
-              "youtube": "koxRDhAQOpw",
-              "type": "Trailer",
-              "name": "THE GREAT BEAUTY - Official HD Trailer",
-              "language": "en"
-            },
-            {
               "youtube": "cJ8O-Y2CXk8",
               "type": "Trailer",
               "name": "La Grande Bellezza - Trailer Ufficiale",
               "language": "it"
+            },
+            {
+              "youtube": "koxRDhAQOpw",
+              "type": "Trailer",
+              "name": "THE GREAT BEAUTY - Official HD Trailer",
+              "language": "en"
             }
           ]
         },
@@ -205,16 +337,16 @@
           "poster": "https://image.tmdb.org/t/p/w500/iiqiAMaBm4S62311XaqpIKuDDX.jpg",
           "videos": [
             {
-              "youtube": "-lOUnBsjGuY",
-              "type": "Trailer",
-              "name": "PERFECT STRANGERS (2017) - Official HD Trailer - A film by Paolo Genovese",
-              "language": "en"
-            },
-            {
               "youtube": "Kp8JX3-b9tw",
               "type": "Trailer",
               "name": "Perfetti Sconosciuti - Trailer Ufficiale",
               "language": "it"
+            },
+            {
+              "youtube": "-lOUnBsjGuY",
+              "type": "Trailer",
+              "name": "PERFECT STRANGERS (2017) - Official HD Trailer - A film by Paolo Genovese",
+              "language": "en"
             }
           ]
         },
@@ -245,10 +377,10 @@
           "poster": "https://image.tmdb.org/t/p/w500/jd0tAmKLVVRtdS1NBQuvB5tOyeC.jpg",
           "videos": [
             {
-              "youtube": "XoHtIKBZUbM",
+              "youtube": "C2lQOhQ2es8",
               "type": "Trailer",
-              "name": "Trailer",
-              "language": "en"
+              "name": "Mine Vaganti Trailer",
+              "language": "it"
             },
             {
               "youtube": "ODqAi4wCGu0",
@@ -257,10 +389,10 @@
               "language": "it"
             },
             {
-              "youtube": "C2lQOhQ2es8",
+              "youtube": "XoHtIKBZUbM",
               "type": "Trailer",
-              "name": "Mine Vaganti Trailer",
-              "language": "it"
+              "name": "Trailer",
+              "language": "en"
             }
           ]
         },
@@ -270,6 +402,12 @@
           "year": 2023,
           "poster": "https://image.tmdb.org/t/p/w500/hc9SHN0vB6iyr6MBYI6bKrpDHvJ.jpg",
           "videos": [
+            {
+              "youtube": "dD8ru7mFXuo",
+              "type": "Trailer",
+              "name": "C'è ancora domani (2023) - Trailer ufficiale",
+              "language": "it"
+            },
             {
               "youtube": "Z5hAvdF6xQA",
               "type": "Trailer",
@@ -281,12 +419,6 @@
               "type": "Trailer",
               "name": "Trailer [Subtitled]",
               "language": "en"
-            },
-            {
-              "youtube": "dD8ru7mFXuo",
-              "type": "Trailer",
-              "name": "C'è ancora domani (2023) - Trailer ufficiale",
-              "language": "it"
             }
           ]
         }

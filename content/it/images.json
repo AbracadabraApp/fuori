@@ -7632,6 +7632,11 @@
       "src": "865dd6db7a6a1f23",
       "bytes": 23980
     },
+    "posters/19426": {
+      "key": "it/posters/19426.8c8ef06e8d.webp",
+      "src": "1c3934c89ca688ca",
+      "bytes": 25956
+    },
     "posters/24188": {
       "key": "it/posters/24188.bb48c2f58e.webp",
       "src": "4fabd67d2a703e83",
@@ -7662,6 +7667,11 @@
       "src": "9374843464220587",
       "bytes": 55052
     },
+    "posters/422": {
+      "key": "it/posters/422.71931d7390.webp",
+      "src": "e399ae2953c2f846",
+      "bytes": 35146
+    },
     "posters/42229": {
       "key": "it/posters/42229.86650bcdc5.webp",
       "src": "756a6170b1b3964b",
@@ -7676,6 +7686,16 @@
       "key": "it/posters/5156.5620713a9f.webp",
       "src": "567d3a48e0a13440",
       "bytes": 57684
+    },
+    "posters/571468": {
+      "key": "it/posters/571468.1cef1253b1.webp",
+      "src": "1ca65766e56bc83a",
+      "bytes": 59520
+    },
+    "posters/8832": {
+      "key": "it/posters/8832.fe70593e28.webp",
+      "src": "a0dadd864a39b038",
+      "bytes": 24810
     }
   }
 }
