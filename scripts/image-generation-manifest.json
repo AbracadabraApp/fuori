@@ -6900,13 +6900,18 @@
       "timestamp": "2026-11-04T06:23:02.533Z",
       "path": "/Users/josh.petersen/fuori/public/images/portraits/serena-archeologa.jpg",
       "type": "portrait"
+    },
+    "roma-nuova/cinema-pigneto": {
+      "timestamp": "2026-11-06T04:12:42.478Z",
+      "path": "/Users/josh.petersen/fuori-cinema/public/images/places/cinema-pigneto.jpg",
+      "type": "place"
     }
   },
   "failed": {},
   "stats": {
-    "total": 1380,
-    "completed": 1380,
+    "total": 1381,
+    "completed": 1381,
     "failed": 0,
-    "lastRun": "2026-11-04T06:36:29.370Z"
+    "lastRun": "2026-11-06T04:12:45.514Z"
   }
 }

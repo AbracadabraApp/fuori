@@ -34,7 +34,8 @@ const ROOT = path.join(__dirname, '..');
 // flashcards: one 2:1 picture per word (1600 × 800), named by the word's id (docs/flashcards.md)
 // cards: the master deck, a tall 2:3 picture (1000 × 1500) and the word's recording
 // (<id>.mp3, listed as cards/<id>.mp3) per word (scripts/build-flashcard-deck.mjs)
-const KINDS = ['cities', 'places', 'portraits', 'country', 'guide', 'flashcards', 'cards'];
+// posters: a cinema's film posters, named by TMDB id (scripts/cinema-posters.mjs)
+const KINDS = ['cities', 'places', 'portraits', 'country', 'guide', 'flashcards', 'cards', 'posters'];
 const WEBP_QUALITY = 80;
 const CONCURRENCY = 8;
 
