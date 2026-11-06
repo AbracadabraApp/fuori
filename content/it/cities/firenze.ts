@@ -671,11 +671,11 @@ export const firenze: CityPantry = {
       name: "Carlo Bencini",
       gender: 'm',
       age: 35,
-      role: "impiegato",
+      role: "tamburino del Corteo Storico",
       placeId: 'piazza-signoria',
       personality: ["sociable", "history buff", "proud Florentine"],
       portraitPrompt: 'Pen and ink portrait on white paper of an animated young guide with expressive face, gesturing hand, casual professional attire, energetic eyes, minimal warm watercolor wash, passionate storyteller. The subject is a man.',
-      here: "You're a Florentine who works in an office nearby and meets your friends under the Loggia dei Lanzi most evenings. You love Piazza della Signoria, the political heart of Florence for seven centuries, and you like telling the story of Savonarola, burned here in 1498, and the plaque in the paving that marks the spot.",
+      here: "You drum in the Corteo Storico della Repubblica Fiorentina, the parade in sixteenth-century costume that marches through Florence for its great feasts, like the Calcio Storico in June. You love Piazza della Signoria, the political heart of Florence for centuries.",
     },
     {
       id: 'alessia-studente',

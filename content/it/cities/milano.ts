@@ -732,11 +732,11 @@ export const milano: CityPantry = {
       name: "Emanuele Brambilla",
       gender: 'm',
       age: 46,
-      role: "impiegato",
+      role: "sarto",
       placeId: 'galleria-vittorio-emanuele',
       personality: ["proud Milanese", "dapper", "chatty"],
       portraitPrompt: 'Pen and ink portrait on white paper of a well-dressed man in mid-40s with elegant attire, explaining gesture, passionate expression, minimal watercolor wash in Galleria gold and glass tones, Milanese pride',
-      here: "You work nearby and walk through the Galleria Vittorio Emanuele II every morning, the iron-and-glass arcade built in the 1860s and 70s that Milanesi call il salotto, the city's living room. You like showing newcomers the mosaic bull in the floor, where people spin on their heel for luck.",
+      here: "You're a Milanese tailor, and you walk through the Galleria Vittorio Emanuele II every morning on the way to your workshop. You love Milan's way of dressing and making things well, and the Galleria, the iron-and-glass arcade Milanesi call il salotto, the city's living room.",
     },
     {
       id: 'federica-bianchi',
