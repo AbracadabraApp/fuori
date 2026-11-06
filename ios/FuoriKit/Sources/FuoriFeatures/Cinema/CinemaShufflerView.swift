@@ -287,7 +287,8 @@ private struct IdeaRow: View {
     }
 }
 
-/// The film page's poster: MovieGenius's hero, its corners, light and play button
+/// The film page's poster: MovieGenius's hero exactly: 16 pt continuous corners (mgCornerLarge),
+/// mgCinematicGlow then mgElevationHigh in their dark-mode values, and its play button
 private struct HeroPoster: View {
     let film: Film
 
@@ -300,6 +301,8 @@ private struct HeroPoster: View {
             .shadow(color: Tokens.Colors.cinemaGlow.opacity(0.2), radius: 20)
             .shadow(color: .black.opacity(0.6), radius: 16, y: 8)
             .shadow(color: .black.opacity(0.4), radius: 32, y: 16)
+            // MovieGenius's atmospheric halo (the last shadow of mgElevationHigh)
+            .shadow(color: Tokens.Colors.cinemaGlow.opacity(0.1), radius: 40, y: 20)
             // MovieGenius's play button: 56 pt on a 350 pt poster, 16 pt in from the corner
             .overlay {
                 GeometryReader { g in
