@@ -100,6 +100,8 @@ struct ConversationControls: View {
             .controlSize(.large)
             .tint(Tokens.Colors.green)
             .disabled(model.finishing)
+            // Boarding at the station: a success haptic (R11)
+            .sensoryFeedback(.success, trigger: model.finishing) { _, now in now && model.trip != nil }
             .accessibilityLabel(Text(inLanguage(go.line)))
             .accessibilityHint(go.en)
         }

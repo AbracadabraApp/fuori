@@ -402,6 +402,27 @@ public final class AppModel {
         }
     }
 
+    /// The city the learner just travelled to: the screens go there (RootView)
+    /// and clear it with `arrived()`
+    public private(set) var arrival: City?
+    func arrived() { arrival = nil }
+
+    /// The ticket seller's screen with a ticket from the departures board. "Sali"
+    /// (the ticket's board word, from content) is the end button, beside the mic
+    /// from the start; it leaves through the one leave function, which saves,
+    /// then travels (docs/station-feature-decision.md: "Sali must save the
+    /// conversation, exactly like the back link")
+    func stationConversation(city: City, place: Place, character: Character, to destination: City) -> ConversationModel? {
+        guard let content, let api, let server else { return nil }
+        let board = Onboarding.Line(line: content.language.ui.ticket.board, en: "Board, to \(destination.name)")
+        return ConversationModel(city: city, place: place, character: character, language: content.language, api: api, beginner: level == "beginner" || level == nil, trip: Trip(from: city, to: destination), endButton: board, onEnd: { [weak self] model in
+            model.leave()
+            self?.arrival = destination
+        }) { [weak self] id in
+            self?.save(conversationId: id, on: (api, server))
+        }
+    }
+
     func conversation(city: City, place: Place, character: Character) -> ConversationModel? {
         guard let content, let api, let server else { return nil }
         // Saved by the server the conversation happened on, even after a country switch

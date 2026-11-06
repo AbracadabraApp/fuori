@@ -8,23 +8,39 @@ struct PersonRoute: Hashable {
     let place: Place
 }
 
+/// The ticket seller's screen with a ticket bought on the departures board
+struct TripRoute: Hashable {
+    let city: City
+    let place: Place
+    let trip: Trip
+}
+
 /// A city's places in the server's feed order, each with who you meet there.
-/// A card opens the person screen; stations open the departures board in N3,
-/// so until then their cards aren't buttons.
+/// A card opens the person screen; the station's card opens the departures
+/// board, and picking a city there opens the ticket seller with that ticket.
 struct PlaceListView: View {
     let city: City
     let content: Content
     @Environment(AppModel.self) private var model
+    /// The station whose departures board is open
+    @State private var board: Place?
+    /// The destination picked on the board, opened once the sheet has closed
+    @State private var picked: TripRoute?
+    @State private var trip: TripRoute?
 
     var body: some View {
         ScrollView {
             LazyVStack(spacing: Tokens.Space.cardGap) {
                 ForEach(city.places) { place in
-                    if !place.station, content.character(place.characterId) != nil {
+                    if content.character(place.characterId) == nil {
+                        card(place)
+                    } else if place.station {
+                        Button { board = place } label: { card(place) }
+                            .buttonStyle(PressableStyle())
+                            .accessibilityHint(content.language.ui.whereTo)
+                    } else {
                         NavigationLink(value: PersonRoute(city: city, place: place)) { card(place) }
                             .buttonStyle(PressableStyle())
-                    } else {
-                        card(place)
                     }
                 }
             }
@@ -37,6 +53,21 @@ struct PlaceListView: View {
         .background(Tokens.Colors.paper)
         .navigationTitle(city.name)
         .settingsToolbar()
+        // One sheet at a time, then the push (R10): the seller opens once the board has gone
+        .sheet(item: $board, onDismiss: {
+            trip = picked
+            picked = nil
+        }) { station in
+            DeparturesView(city: city, content: content) { destination in
+                picked = TripRoute(city: city, place: station, trip: Trip(from: city, to: destination))
+            }
+        }
+        .navigationDestination(item: $trip) { route in
+            if let seller = content.character(route.place.characterId),
+               let conversation = model.stationConversation(city: route.city, place: route.place, character: seller, to: route.trip.to) {
+                PersonView(model: conversation)
+            }
+        }
     }
 
     private func card(_ place: Place) -> some View {
