@@ -184,8 +184,9 @@ struct FilmPage: View {
                 if !ideas.isEmpty {
                     VStack(alignment: .leading, spacing: 12) {
                         if let title = labels?.moreIdeas {
+                            // The page's sans, as the WhyWatch verdict and the shelf names (Josh: the serif was jarring)
                             Text(title)
-                                .typeface(.display, Tokens.Size.personName, relativeTo: .title2, weight: .bold)
+                                .typeface(.label, Tokens.Size.personRole, relativeTo: .title3, weight: .bold)
                                 .foregroundStyle(Tokens.Colors.flapInk)
                                 .accessibilityAddTraits(.isHeader)
                         }
