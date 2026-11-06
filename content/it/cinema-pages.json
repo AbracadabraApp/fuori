@@ -1,8 +1,8 @@
 {
  "about": "The film page's words (Josh, 2026-11-06: MovieGenius's movie page, its tools and style, in Italian and curated). whyWatch: MovieGenius's WhyWatch v3 prompt (scripts/v3-generate.cjs there) in Italian: YES or NO, 2-3 reasons of 5-8 words, 30-50 words of context, its banned words in Italian. moreIdeas: MovieGenius's More Ideas prompt (scripts/backfill-more-ideas-haiku.js there) with Italian criteria: 10 Italian films, a reason under 20 words. Written by Claude in the cloud session for all 91 films; a fact-judge sweep is still to run (Josh: 'use fact judge for later sweep'). The page shows only the ideas whose film is in cinema-library.json.",
  "labels": {
-  "yes": "Da vedere",
-  "no": "Da evitare",
+  "yes": "Consigliato",
+  "no": "Non consigliato",
   "moreIdeas": "Altre idee"
  },
  "films": {
