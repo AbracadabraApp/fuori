@@ -3,6 +3,7 @@
  * Used by /api/turn and by tests/conversations, so tests exercise the real path.
  */
 
+import { fixMojibake } from '@/lib/mojibake';
 import { z } from 'zod';
 import { anthropic, TURN_MODEL, replyText, finalWithDeadline } from '@/lib/claude';
 import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
@@ -71,7 +72,7 @@ export async function runTurn(params: {
         lineAt = performance.now() - started;
         laps?.mark('claudeLine', lineAt);
       }
-      onText(snapshot);
+      onText(fixMojibake(snapshot));
     });
   }
   return stream;

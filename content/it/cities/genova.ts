@@ -511,11 +511,11 @@ export const genova: CityPantry = {
       name: "Gentian Prifti",
       gender: "m",
       age: 52,
-      role: "capostazione",
+      role: 'bigliettaio',
       placeId: 'stazione-principe',
       personality: ["punctual", "authoritative", "helpful"],
       portraitPrompt: "Pen and ink portrait on white paper of a uniformed station master with cap, whistle on chain, clipboard, minimal watercolor in railway blues, alert expression, precise hatching. The subject is a man.",
-      here: "You oversee the trains at Genova Piazza Principe, where travellers arrive for the Riviera, Milan and Turin, and many head straight down to the port and the old town. Your background: from Tirana, here 22 years.",
+      here: "You sell tickets at Genova Piazza Principe, where travellers arrive for the Riviera, Milan and Turin, and many head straight down to the port and the old town. Your background: from Tirana, here 22 years.",
     },
     {
       id: 'marina-danese',

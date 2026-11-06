@@ -26,6 +26,8 @@
     "test:path": "tsx tests/check-path.ts && COUNTRY=es-mx tsx tests/check-path.ts",
     "test:hear-recording": "tsx tests/check-hear-recording.mts",
     "test:today": "tsx tests/check-today.ts && COUNTRY=es-mx tsx tests/check-today.ts",
+    "test:weather": "tsx tests/check-weather.ts && COUNTRY=es-mx tsx tests/check-weather.ts",
+    "test:mojibake": "tsx tests/check-mojibake.ts",
     "test:culture": "tsx tests/check-culture.ts && COUNTRY=es-mx tsx tests/check-culture.ts",
     "test:names": "tsx tests/check-names.ts && COUNTRY=es-mx tsx tests/check-names.ts",
     "test:lesson-areas": "tsx tests/check-lesson-areas.ts && COUNTRY=es-mx tsx tests/check-lesson-areas.ts",

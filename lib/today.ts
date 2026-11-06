@@ -5,6 +5,7 @@
  * Added to the character's setting, a fact like the place, not a rule.
  */
 import { language } from '@/content';
+import { weatherLine } from '@/lib/weather';
 
 export function todayLine(now: Date = new Date(), timeZone: string = language.timeZone): string {
   const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone }).format(now);
@@ -12,9 +13,11 @@ export function todayLine(now: Date = new Date(), timeZone: string = language.ti
   return `It's ${weekday}, in ${month}.`;
 }
 
-/** The setting, then the day: "Bar Angolo, a bar in Testaccio. It's Thursday, in November." */
-export function withToday(setting: string, now: Date = new Date()): string {
+/** The setting, then the day and, for a character who drew it, the city's weather today (lib/weather.ts):
+ *  "Bar Angolo, a bar in Testaccio. It's Thursday, in November. Today's weather: fog." */
+export function withToday(setting: string, now: Date = new Date(), cityId?: string, characterId?: string): string {
   const s = setting.trim();
-  if (!s) return todayLine(now);
-  return `${/[.!?]$/.test(s) ? s : `${s}.`} ${todayLine(now)}`;
+  const day = [todayLine(now), weatherLine(cityId, now, characterId)].filter(Boolean).join(' ');
+  if (!s) return day;
+  return `${/[.!?]$/.test(s) ? s : `${s}.`} ${day}`;
 }

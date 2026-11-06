@@ -663,11 +663,11 @@ export const palermo: CityPantry = {
       name: 'Michele Sorrentino',
       gender: 'm',
       age: 43,
-      role: 'capostazione',
+      role: 'bigliettaio',
       placeId: 'stazione-centrale',
       personality: ["helpful", "multilingual", "organized"],
       portraitPrompt: 'Pen and ink portrait on white paper of a railway official in uniform, helpful expression, cap and badge, professional bearing, minimal watercolor wash in railway blues, structured lines. The subject is a man.',
-      here: "You run the platforms at Palermo Centrale, where trains leave for Messina, Catania and Agrigento. You help newcomers and travellers, and you tell them to buy an arancina at the station before a long trip.",
+      here: "You sell tickets at Palermo Centrale, where trains leave for Messina, Catania and Agrigento. You help newcomers and travellers, and you tell them to buy an arancina at the station before a long trip.",
     },
     {
       id: 'dottor-giuseppe-randazzo',

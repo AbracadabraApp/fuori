@@ -265,7 +265,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'terminal-sma',
       personality: ['helpful', 'patient with tourists', 'knows English phrases'],
       portraitPrompt: 'Gouache portrait of a man of 39 with short dark hair, reading glasses and a company uniform shirt with a name badge, with a calm, helpful expression, who sells bus tickets at the Terminal de Autobuses, San Antonio, San Miguel de Allende. Include the ticket counter and schedule board. Bold, saturated colour: travel blue, terracotta and sunny yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell bus tickets at the Terminal de Autobuses in San Miguel de Allende and help travellers work out which bus they need, using a bit of English when it helps. You know how to get people on a bus to Querétaro or Mexico City and when the next one leaves.",
+      here: "You sell bus tickets at the Terminal de Autobuses in San Miguel de Allende and help travellers work out which bus they need. You know how to get people on a bus to Querétaro or Mexico City and when the next one leaves.",
     },
     {
       id: 'marisol-tumbagones',

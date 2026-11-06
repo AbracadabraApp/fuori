@@ -23,6 +23,7 @@ import type { Laps } from '@/lib/timing';
 import { withDialogueRules, heardNote } from '@/lib/dialogue/rules';
 import { readHeard } from '@/lib/dialogue/heard';
 import { withToday } from '@/lib/today';
+import { fixMojibake } from '@/lib/mojibake';
 
 export const PART_KINDS = ['english', 'word', 'question', 'answer'] as const;
 export type PartKind = (typeof PART_KINDS)[number];
@@ -223,7 +224,7 @@ export function buildBeginnerPrompt(p: {
     name: character.name,
     role: character.role,
     // The place with its kind and neighbourhood, and why they're there (lib/characters/for-place.ts)
-    setting: withToday((character.appearance?.setting ?? place?.name ?? '').replace(/([^.!?])$/, '$1.'), p.now ?? new Date()),
+    setting: withToday((character.appearance?.setting ?? place?.name ?? '').replace(/([^.!?])$/, '$1.'), p.now ?? new Date(), city?.id, character.id),
     city: city?.name ?? character.city,
     character: about,
     language: language.name,
@@ -307,7 +308,7 @@ export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[
     output_config: { format: { type: 'json_schema', schema: p.withDone ? partsWithDoneJsonSchema : partsJsonSchema } },
   } as Parameters<typeof anthropic.messages.stream>[0]);
   if (p.laps) stream.once('text', () => p.laps!.mark('claudeFirstToken', performance.now() - started));
-  if (p.onText) stream.on('text', (_delta, snapshot) => p.onText!(snapshot));
+  if (p.onText) stream.on('text', (_delta, snapshot) => p.onText!(fixMojibake(snapshot)));
   return stream;
   }, undefined, undefined, { canRetry: p.canRetry });
   if (response.stop_reason === 'max_tokens') throw new Error(`Beginner turn hit max_tokens (${response.usage.output_tokens} tokens)`);

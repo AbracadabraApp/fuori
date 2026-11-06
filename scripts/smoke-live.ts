@@ -6,6 +6,7 @@
  *   npm run smoke:live                      # Italy, fuori-production
  *   COUNTRY=es-mx npm run smoke:live        # Mexico, afuera-production
  *   npm run smoke:live -- --url=http://localhost:3000 --keep
+ *   npm run smoke:live -- --place=stazione-fal   # a place in the smoke city (Matera; Mexico: terminal-tapo)
  *
  * Steps: the website is switched off (404); then the app's API: a conversation
  * is recorded; leaving writes memory and the study file; the visit is counted
@@ -72,7 +73,11 @@ async function main() {
 
   // A city with a school, and an ordinary character there
   const city = cities.find((c) => !c.hidden && c.places.some((p) => p.characterId === tutor.id)) ?? cities.find((c) => c.places.some((p) => p.characterId === tutor.id))!;
-  const place = city.places.find((p) => p.characterId && p.characterId !== tutor.id && characterForPlace(city, p)?.origin === 'generated')!;
+  // --place=<id>: play that place's person instead (a place in the same city, e.g. the station)
+  const chosen = arg('place');
+  const place = chosen
+    ? city.places.find((p) => p.id === chosen && p.characterId && p.characterId !== tutor.id) ?? (() => { throw new Error(`--place=${chosen}: no such place with a person in ${city.name}`); })()
+    : city.places.find((p) => p.characterId && p.characterId !== tutor.id && characterForPlace(city, p)?.origin === 'generated')!;
   const person = characterForPlace(city, place)!;
   const school = city.places.find((p) => p.characterId === tutor.id)!;
   const magda = characterForPlace(city, school)!;

@@ -2,8 +2,8 @@
   "about": "What a bus terminal's ticket seller knows: what each city is known for, and how long the trip takes from here (typical first-class bus time, rounded).",
   "cities": {
     "ciudad-de-mexico": "tacos al pastor off the trompo, and the Zócalo with its cathedral",
-    "oaxaca": "the land of seven moles, mezcal sipped slowly, and the Guelaguetza in July",
-    "guadalajara": "torta ahogada and birria, and tequila with mariachis in the plazas",
+    "oaxaca": "the land of seven moles, and the Guelaguetza in July",
+    "guadalajara": "torta ahogada and birria, and mariachis in the plazas",
     "san-miguel-de-allende": "the Parroquia over the Jardín, and the evening paseo with mariachis",
     "puebla": "mole poblano, born here by legend in a convent kitchen, and blue-and-white Talavera"
   },

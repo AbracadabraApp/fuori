@@ -718,11 +718,11 @@ export const napoli: CityPantry = {
       name: "Olena Kovalenko",
       gender: "f",
       age: 50,
-      role: "capostazione",
+      role: 'bigliettaia',
       placeId: 'stazione-centrale',
       personality: ["organized", "helpful", "seen-it-all"],
       portraitPrompt: "Pen and ink portrait on white paper of a uniformed woman with authoritative but kind face, cap, and efficient demeanor. Minimal watercolor wash in railway grey and navy. Solid, dependable linework.",
-      here: "You keep the trains moving at Napoli Centrale, on Piazza Garibaldi, where the fast trains to Rome and Salerno arrive and the Circumvesuviana to Pompei and Sorrento leaves from the level below. You answer newcomers' questions all day, and you tell them to always validate their ticket. Your background: from Lviv, in Naples for 25 years.",
+      here: "You sell tickets at Napoli Centrale, on Piazza Garibaldi, where the fast trains to Rome and Salerno arrive and the Circumvesuviana to Pompei and Sorrento leaves from the level below. You answer newcomers' questions all day, and you tell them to always validate their ticket. Your background: from Lviv, in Naples for 25 years.",
     },
     {
       id: 'nonna-assunta',

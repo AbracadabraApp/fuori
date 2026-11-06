@@ -10,7 +10,7 @@
 
 import { cities } from '@/content';
 import { characterForPlace } from './for-place';
-import { clerkSetting, departureFor } from '@/lib/travel/departure';
+import { clerkSetting, departureFor, tripFacts } from '@/lib/travel/departure';
 import type { CharacterSheet } from '@/lib/types';
 
 export function characterForVisit(cityId: string, placeId: string, tripTo?: string): CharacterSheet | undefined {
@@ -28,7 +28,7 @@ export function characterForVisit(cityId: string, placeId: string, tripTo?: stri
     ...sheet,
     appearance: {
       ...sheet.appearance,
-      setting: clerkSetting(sheet.appearance?.setting ?? '', destination.name, platform),
+      setting: clerkSetting(sheet.appearance?.setting ?? '', destination.name, platform, tripFacts(city.id, destination.id, destination.name)),
     },
   } as CharacterSheet;
 }
