@@ -22,7 +22,7 @@ export const showcase: Record<string, string[]> = {
   // Roma redone (Josh, 2026-10-22; docs/rome-redo.md): today's Rome beside the
   // original, to compare. No language school: schools move into Learn.
   'roma-nuova': [
-    'cinema-trastevere', // Rome cinema trial (Josh, 2026-11-05): posters and trailers, no person
+    'cinema-pigneto', // Rome cinema trial (Josh, 2026-11-05): posters and trailers, no person; Pigneto, Pasolini's neighbourhood
     'bar-mattina-nuova',
     'grattachecca-lungotevere', // street food only this city has (Josh, 2026-10-27)
     'bar-monti-corner', // Sandro, back from roma.ts (Josh, 2026-10-27)
