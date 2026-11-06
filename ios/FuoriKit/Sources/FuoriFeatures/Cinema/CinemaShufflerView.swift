@@ -251,6 +251,9 @@ private struct WhyWatchCard: View {
                 .foregroundStyle(Tokens.Colors.sand)
                 .fixedSize(horizontal: false, vertical: true)
             if why.en != nil {
+                // Bottom right of the card (Josh, 2026-11-06)
+                HStack {
+                    Spacer(minLength: 0)
                 // No animation: the words change where they are, nothing slides or reloads
                 Button { var t = Transaction(); t.disablesAnimations = true; withTransaction(t) { english.toggle() } } label: {
                     Text(english ? (labels?.original ?? "Original") : "English")
@@ -261,6 +264,7 @@ private struct WhyWatchCard: View {
                 }
                 .buttonStyle(PressableStyle())
                 .accessibilityHint(english ? "Shows the original" : "Shows it in English")
+                }
             }
         }
         .padding(16)
