@@ -184,10 +184,13 @@ Planned with Josh in the cloud session. Josh approves every piece of art twice: 
 **2 · Trials in Rome (then keep, change or drop; Josh plays them)**
 - [ ] Cinema, open to every level: place, person, a short list of Italian films with a line each (*Cloud*); art approved by Josh; trailer route on the server and the YouTube player copied from MovieGenius (*Mac*).
 - [ ] Sound: a loop for Rome's market; Josh listens and decides. *Mac*
-- [ ] Cut-away pictures at Trattoria Da Nino (the cacio e pepe, the room): the cloud picks 3–4 and a `show` field; the Mac generates them (Josh approves) and builds the cut.
+- [ ] Food in the world, with the cut-away pictures, at Da Nino: Rome's osteria (Josh: an osteria, not a trattoria or ristorante: the oste talks, a short local menu). The picture is the menu, the city's 5–6 dishes in Italian as text over the image, tap a dish to hear it; the owner explains a dish when asked and, out of pride, how it's made; no ordering or paying. The cut-away pictures show the plates. The cloud writes the menu and the owner's lines (fact judge); the Mac makes the menu picture and plates (Josh approves) and builds the cut. Mexico's equivalent is the fonda or market comedor.
+
+**Food in Learn (national; Josh, 2026-11-05)**
+- [ ] Food culture chips, the same teal gem as the culture chips (Learn is national, so only food that's true across the country): Osteria, trattoria, ristorante · How a meal goes · Slow food · DOP and DOC (with "Never spaghetti bolognese" already in the set). Mexico: fonda, puesto, restaurante · comida corrida · nixtamal · mezcal's denominación de origen. Each taught by a shown character in the city it belongs to. *Cloud* writes them, fact judge checks.
 
 **3 · City passes, one city at a time (order: Josh)**
-Each city: the cloud audits its open places, `here` lines and art (English or French signs, the pale generic look); proposes the open place to add and the errand it replaces (usually the second bar), the `here` lines to rewrite, the pictures to redraw and the city's look in a line (Josh approves); writes and judges the new place and lines; the Mac redraws the pictures (Josh approves); the city's cinema and sound join if the trials worked; Josh plays it.
+Each city: the cloud audits its open places, `here` lines and art (English or French signs, the pale generic look); proposes the open place to add and the errand it replaces (usually the second bar), the `here` lines to rewrite, the pictures to redraw and the city's look in a line (Josh approves); writes and judges the new place and lines; the Mac redraws the pictures (Josh approves); the city's osteria (or fonda) with its menu, if Da Nino works: turn the trattoria into one if it reads as one, or swap an errand for it; the city's cinema and sound join if the trials worked; Josh plays it.
 Found so far: the 12 "more" cities have 1 open place each (2 in Bergamo and Orvieto) against Rome's 7; many of their pictures are pale and generic, some with English or French signs ("Oakdale Pharmacy", "Gare de Belleville"); a count of all 288 is running.
 
 ## Next, by session (2026-11-03, Josh)
