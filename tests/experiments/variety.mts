@@ -17,6 +17,7 @@
 // Nothing is written to content.
 //   COUNTRY=it npx tsx --env-file=.env.local tests/experiments/variety.mts [label]
 //   COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/variety.mts [label]
+//   LEVELS=Beginner … for a change only Beginners read
 import { writeFileSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 import { readPromptFile } from '@/lib/prompts/template';
@@ -59,10 +60,11 @@ const picks = PLACES[pack.id].map(([kind, cityId, placeId]) => {
   return { kind, city, place, character: characterForPlace(city, place)! };
 });
 
+// LEVELS=Beginner for a change only Beginners read (beginner.md)
 const LEVELS = [
   { level: 'Beginner', learner: learners.find((l) => l.id === 'english-beginner')! },
   { level: 'Intermediate', learner: learners.find((l) => l.id === 'improving')! },
-];
+].filter((l) => !process.env.LEVELS || process.env.LEVELS.split(',').includes(l.level));
 
 const show = (t: Turn[], name: string) => t.map((x) => `${x.who === 'npc' ? name : 'Learner'}: ${x.transcript}`).join('\n');
 
@@ -136,7 +138,7 @@ const pairs = LEVELS.flatMap((lv) => {
 const swaps = await pool(pairs.map((pr) => async () => ({ ...pr, ...(JSON.parse(await ask(`Place A: ${pr.a.place.name}, ${pr.a.city.name}\n${show(pr.a.visits[0], pr.a.name)}\n\nPlace B: ${pr.b.place.name}, ${pr.b.city.name}\n${show(pr.b.visits[0], pr.b.name)}`, { system: SWAP_JUDGE, schema: swapSchema, max: 1000 })) as { swappable: boolean; why: string }) })), 6);
 
 const pct = (a: number, b: number) => `${b ? Math.round((100 * a) / b) : 0}%`;
-let md = `# Conversation variety, ${label}, ${pack.id}, ${new Date().toISOString().slice(0, 10)}\n\n${picks.length} places × ${VISITS} visits × 2 levels, up to ${TURNS} learner turns a visit, memory carried between visits. Reply time is the turn call alone, with 6 conversations at once per run (compare runs made the same way, not with the app).\n\nPrompts: ${versions}. Commit: ${commit}.\n\n`;
+let md = `# Conversation variety, ${label}, ${pack.id}, ${new Date().toISOString().slice(0, 10)}\n\n${picks.length} places × ${VISITS} visits × ${LEVELS.map((l) => l.level).join(' and ')}, up to ${TURNS} learner turns a visit, memory carried between visits. Reply time is the turn call alone, with 6 conversations at once per run (compare runs made the same way, not with the app).\n\nPrompts: ${versions}. Commit: ${commit}.\n\n`;
 const q = (xs: number[], f: number) => { const a = [...xs].sort((x, y) => x - y); return a.length ? a[Math.min(a.length - 1, Math.floor(f * a.length))] : 0; };
 const words = (t: string) => t.split(/\s+/).filter(Boolean).length;
 md += `| Level | Reply time, median / 90th | Words a line | Purchase lines | Clichés (visits with one) | Something particular to the town | Planted idea, visit 1 / visit 3 | Told again on a later visit (per character) | Swappable pairs |\n|---|---|---|---|---|---|---|---|---|\n`;
