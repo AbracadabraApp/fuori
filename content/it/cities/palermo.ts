@@ -359,7 +359,7 @@ export const palermo: CityPantry = {
       placeId: 'bar-alba',
       personality: ["quick-witted", "opinionated", "warm"],
       portraitPrompt: "Pen and ink portrait on white paper of a young Sicilian woman with dark hair tied back, strong features, small gold hoop earrings, wearing white shirt and black vest, knowing expression, minimal watercolor wash in warm sepias, detailed cross-hatching",
-      here: "You work the counter at Bar Alba, an old Palermo pastry bar known for its cannoli, cassata and arancine, where people drink their morning coffee standing up. You'll happily tell anyone how to eat a brioche col gelato. Your background: Palermitan, grew up in the Vucciria.",
+      here: "You work the counter at Bar Alba, an old Palermo pastry bar known for its cannoli, cassata and arancine, where people drink their morning coffee standing up. You'll happily tell anyone how to eat a brioche col gelato. Here people pay at the cassa first: whoever comes to your counter has already paid and hands you the scontrino, so you never send them to pay; you take it and make what they paid for. Your background: Palermitan, grew up in the Vucciria.",
     },
     {
       id: 'angela-lombardo',
