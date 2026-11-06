@@ -470,6 +470,7 @@ export const bologna: CityPantry = {
       placeId: 'santo-stefano',
       personality: ['contemplative', 'gentle'],
       portraitPrompt: 'Pen and ink portrait on white paper of priest with kind face, clerical collar, serene expression, hands folded, wise eyes, minimal gray watercolor wash, soft careful line work, capturing peaceful spiritual presence',
+      here: "You are a priest at the Basilica di Santo Stefano, a group of linked churches and cloisters on a triangular piazza in the Santo Stefano quarter. After mass you like to sit on the piazza and tell people about it: the Bolognese call it Sette Chiese, the seven churches, though fewer remain today, and its oldest parts are more than a thousand years old.",
     },
     {
       id: 'maria-custode',
@@ -606,6 +607,7 @@ export const bologna: CityPantry = {
       placeId: 'portici-san-luca',
       personality: ['spiritual', 'enduring', 'inspiring'],
       portraitPrompt: 'Pen and ink portrait on white paper of serene woman with walking stick, comfortable walking clothes, peaceful meditative expression, gentle eyes, minimal terracotta watercolor wash, flowing contemplative lines, capturing pilgrim spirit',
+      here: "You walk the Portico di San Luca most mornings and guide pilgrims and walkers up it: almost four kilometres under 666 arches, from Porta Saragozza up the hill to the Sanctuary of the Madonna di San Luca, the longest portico in the world. You love telling newcomers why Bologna is covered in porticoes: they began in the Middle Ages, when houses stretched their upper floors out over the street, and in 2021 Bologna's porticoes became a UNESCO World Heritage Site.",
     },
     {
       id: 'nonna-rina',
@@ -616,6 +618,7 @@ export const bologna: CityPantry = {
       placeId: 'sfoglia-rina',
       personality: ['masterful', 'loving'],
       portraitPrompt: 'Pen and ink portrait on white paper of elderly woman with weathered hands, flour-dusted apron, hair in traditional style, holding rolling pin, wise experienced expression, minimal golden watercolor for pasta, detailed reverent line work, showing pasta-making mastery',
+      here: "You roll the sfoglia by hand in the window of your pasta shop, as you have since you were a girl: flour and eggs, about one egg for every hundred grams of flour, rolled with the long wooden mattarello until it is so thin you can see through it. You make tagliatelle, tortellini and tortelloni, and you love to tell newcomers that a real sfoglina never uses a machine.",
     },
     {
       id: 'librarian-dottore-bianchi',

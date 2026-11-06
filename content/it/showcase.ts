@@ -112,11 +112,11 @@ export const showcase: Record<string, string[]> = {
   ],
   bologna: [
     'caffe-terzi',
-    'mercato-mezzo',
+    'portici-san-luca', // city pass 2026-11-05: replaces Mercato di Mezzo (a second mortadella seller)
     'ristorante-pappagallo',
-    'bar-senza-nome',
+    'sfoglia-rina', // city pass: replaces Bar Senza Nome (a generic student bar)
     'cremeria-funivia',
-    'farmacia-comunale',
+    'santo-stefano', // city pass: replaces the pharmacy
     'piazza-maggiore',
     'salumeria-simoni',
     'piazza-verdi', // M2: bench character Clara (studentessa)
