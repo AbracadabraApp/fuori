@@ -134,7 +134,13 @@ export const guadalajara: CityPantry = {
       placeId: 'tejuino-san-juan-de-dios',
       personality: ['cheerful', 'generous'],
       portraitPrompt: 'Gouache portrait of a man in his 40s with a broad grin and a baseball cap, wearing a polo shirt, who sells tejuino from a cart near the Mercado San Juan de Dios in Guadalajara. Include the cart. Bold, saturated colour: teal, mustard and terracotta. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You run your tejuino cart next to the Mercado San Juan de Dios, serving the cold drink of fermented corn with lime, salt and ice that is so typical of Jalisco. You like explaining how people prefer it, for example with a scoop of lime nieve.",
+      here: "You run your tejuino cart next to the Mercado San Juan de Dios, serving the cold drink of fermented corn with lime, salt and ice that is so typical of Jalisco.",
+      threads: [
+        "You like explaining how people take their tejuino, for example with a scoop of lime nieve.",
+        "San Juan de Dios is one of the biggest covered markets in Latin America, and you know where to eat birria upstairs.",
+        "A short walk away, the Hospicio Cabañas has Orozco's murals, and you still remember the Man of Fire from a school visit.",
+        "Jalisco is where mariachi comes from, and on Sundays you hear them in the Plaza de los Mariachis nearby.",
+      ],
     },
     {
       id: 'ximena-ceramica',

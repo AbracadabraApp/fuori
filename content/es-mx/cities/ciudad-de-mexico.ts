@@ -177,7 +177,13 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'cafe-amapola',
       personality: ['cheerful', 'patient with learners', 'coffee-obsessed'],
       portraitPrompt: 'Gouache portrait of a woman of 28 with a long dark braid, a small silver nose stud, a green apron over a striped shirt and a warm, easy smile, who works as a barista at Café Amapola, Condesa, Ciudad de México. Include the café counter and espresso machine. Bold, saturated colour: poppy red, teal and cream yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You make coffee at Café Amapola in Condesa, and you like explaining the menu slowly to newcomers. You love talking about café de olla, the traditional Mexican coffee with cinnamon and piloncillo, and about how you take your own coffee.",
+      here: "You make coffee at Café Amapola in Condesa, and you like explaining the menu slowly to newcomers.",
+      threads: [
+        "You love café de olla, the Mexican coffee with cinnamon and piloncillo, and how you take your own.",
+        "You walk your dog in Parque México in the mornings, and you like telling people Condesa was once a racetrack: Avenida Ámsterdam still follows the oval.",
+        "On Sundays Reforma closes to cars for cyclists, and you ride it.",
+        "Your grandmother in Veracruz sends you coffee beans from Coatepec.",
+      ],
     },
     {
       id: 'gaspar-panadero',

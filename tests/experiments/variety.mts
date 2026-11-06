@@ -28,6 +28,7 @@ import { runTurn } from '@/lib/turn';
 import { runBeginnerTurn } from '@/lib/beginner';
 import { STAGES, stageText } from '@/lib/path';
 import { summarizeWithClaude } from '@/lib/remember';
+import { threadsToday } from '@/lib/today';
 import type { CharacterSheet, Turn } from '@/lib/types';
 import { learners } from '../conversations/learners';
 import { ask, OUT, pool } from './common.mjs';
@@ -72,18 +73,24 @@ async function visits(p: typeof picks[number], lv: typeof LEVELS[number]) {
   const character: CharacterSheet = p.character;
   const beginner = lv.level === 'Beginner';
   const ms: number[] = [];
+  // Each visit on its own day, three days apart, the last one today, so the threads are drawn afresh (lib/today.ts)
+  const dayOf = (v: number) => new Date(Date.now() - 86_400_000 * 3 * (VISITS - 1 - v));
+  let now = dayOf(0);
+  const drawn: string[][] = [];
   const turn = async (transcript: Turn[], learnerSaid: string | undefined, memory: Parameters<typeof runTurn>[0]['memory']) => {
     const t0 = Date.now();
     const r = await (beginner
-      ? runBeginnerTurn({ character, transcript, learnerSaid, memory, stageText: stageText(STAGES.S2, character.role), maxAnswers: STAGES.S2.answers, withDone: true })
-      : runTurn({ character, transcript, learnerSaid, memory, withDone: true }));
+      ? runBeginnerTurn({ character, transcript, learnerSaid, memory, now, stageText: stageText(STAGES.S2, character.role), maxAnswers: STAGES.S2.answers, withDone: true })
+      : runTurn({ character, transcript, learnerSaid, memory, now, withDone: true }));
     ms.push(Date.now() - t0);
     return r;
   };
   let notes: string[] = [];
   const all: Turn[][] = [];
   for (let v = 0; v < VISITS; v++) {
-    const memory = v ? { visits: v, lastVisit: new Date(Date.now() - 86_400_000 * (VISITS - v)), notes } : undefined;
+    now = dayOf(v);
+    drawn.push(threadsToday(character.id, character.appearance?.threads, now));
+    const memory = v ? { visits: v, lastVisit: dayOf(v - 1), notes } : undefined;
     const transcript: Turn[] = [];
     const open = await turn([], undefined, memory);
     transcript.push({ who: 'npc', transcript: open.line, translation: open.en });
@@ -103,15 +110,16 @@ Be honest about comprehension. Write ONLY what you say next, as speech-to-text w
     const m = await summarizeWithClaude({ character: { name: character.name, age: character.age, role: character.role, city: character.city }, notes, turns: transcript.map((t) => ({ who: t.who, text: t.transcript })) });
     notes = m.notes;
   }
-  return { ...p, level: lv.level, name: character.name, here: character.appearance?.setting ?? '', visits: all, ms };
+  return { ...p, level: lv.level, name: character.name, here: character.appearance?.setting ?? '', visits: all, ms, drawn, threads: character.appearance?.threads ?? [] };
 }
 
 const VISIT_JUDGE = `You read one visit in a language-learning game: a learner talking to a person at a shop or bar. Judge the CHARACTER's lines (numbered):
 - purchase: the numbers of the lines that are mainly the purchase (what they'd like, choosing, how it's served, how much, paying, card or cash, the receipt, thanks for buying);
 - cliches: national customs the character tells that a newcomer hears at nearly every place of this kind in the country (what people drink at what hour, paying first, standing versus sitting, tipping), a few words each;
 - particular: true if the character says something true and particular to this town or this place (its history, its food, its people, its festivals), not something that could be said anywhere in the country;
-- planted: which ideas of the character's description (given) the character brought up, a few words each.`;
-const visitSchema = { type: 'object', additionalProperties: false, required: ['purchase', 'cliches', 'particular', 'planted'], properties: { purchase: { type: 'array', items: { type: 'integer' } }, cliches: { type: 'array', items: { type: 'string' } }, particular: { type: 'boolean' }, planted: { type: 'array', items: { type: 'string' } } } };
+- planted: which ideas of the character's description (given) the character brought up, a few words each;
+- threads: the numbers of the character's possible topics (given, numbered) that the character brought up.`;
+const visitSchema = { type: 'object', additionalProperties: false, required: ['purchase', 'cliches', 'particular', 'planted', 'threads'], properties: { threads: { type: 'array', items: { type: 'integer' } }, purchase: { type: 'array', items: { type: 'integer' } }, cliches: { type: 'array', items: { type: 'string' } }, particular: { type: 'boolean' }, planted: { type: 'array', items: { type: 'string' } } } };
 
 const REPEAT_JUDGE = `You read three visits, on different days, by the same learner to the same character. List the things the character brought up (a story, a fact, a topic, a joke, an offer), with the visit numbers each came up in, and count how many the character told again on a later visit as if new (picking up a thread the learner asked about doesn't count; the purchase itself doesn't count).`;
 const repeatSchema = { type: 'object', additionalProperties: false, required: ['things', 'repeated'], properties: { things: { type: 'array', items: { type: 'object', additionalProperties: false, required: ['thing', 'visits'], properties: { thing: { type: 'string' }, visits: { type: 'array', items: { type: 'integer' } } } } }, repeated: { type: 'integer' } } };
@@ -124,7 +132,7 @@ const runs = await pool(picks.flatMap((p) => LEVELS.map((lv) => () => visits(p, 
 const judged = await pool(runs.map((r) => async () => {
   const perVisit = await Promise.all(r.visits.map(async (t) => {
     const npc = t.filter((x) => x.who === 'npc');
-    const j = JSON.parse(await ask(`The character's description: ${r.here}\n\n${show(t, r.name)}\n\nThe character's lines, numbered:\n${npc.map((x, i) => `${i + 1}. ${x.transcript}`).join('\n')}`, { system: VISIT_JUDGE, schema: visitSchema, max: 2000 })) as { purchase: number[]; cliches: string[]; particular: boolean; planted: string[] };
+    const j = JSON.parse(await ask(`The character's description: ${r.here}\n\nThe character's possible topics, numbered:\n${r.threads.map((t, i) => `${i + 1}. ${t}`).join('\n') || '(none)'}\n\n${show(t, r.name)}\n\nThe character's lines, numbered:\n${npc.map((x, i) => `${i + 1}. ${x.transcript}`).join('\n')}`, { system: VISIT_JUDGE, schema: visitSchema, max: 2000 })) as { purchase: number[]; cliches: string[]; particular: boolean; planted: string[]; threads: number[] };
     return { ...j, lines: npc.length };
   }));
   const rep = JSON.parse(await ask(r.visits.map((t, i) => `Visit ${i + 1}:\n${show(t, r.name)}`).join('\n\n'), { system: REPEAT_JUDGE, schema: repeatSchema, max: 3000 })) as { things: { thing: string; visits: number[] }[]; repeated: number };
@@ -150,10 +158,16 @@ for (const lv of LEVELS) {
   const npcLines = rs.flatMap((r) => r.visits.flatMap((t) => t.filter((x) => x.who === 'npc')));
   md += `| ${lv.level} | ${(q(ms, 0.5) / 1000).toFixed(1)} / ${(q(ms, 0.9) / 1000).toFixed(1)} s | ${Math.round(npcLines.reduce((n, x) => n + words(x.transcript), 0) / npcLines.length)} | ${pct(vs.reduce((n, v) => n + v.purchase.length, 0), vs.reduce((n, v) => n + v.lines, 0))} | ${vs.filter((v) => v.cliches.length).length}/${vs.length} | ${vs.filter((v) => v.particular).length}/${vs.length} | ${rs.filter((r) => r.perVisit[0]?.planted.length).length}/${rs.length} / ${rs.filter((r) => r.perVisit[2]?.planted.length).length}/${rs.length} | ${(rs.reduce((n, r) => n + r.rep.repeated, 0) / rs.length).toFixed(1)} | ${sw.filter((s) => s.swappable).length}/${sw.length} |\n`;
 }
+const tm = (lv: string, wasDrawn: boolean) => {
+  let said = 0, of = 0;
+  for (const r of judged.filter((x) => x.level === lv)) r.perVisit.forEach((v, i) => r.threads.forEach((t, k) => { if (r.drawn[i].includes(t) === wasDrawn) { of++; if (v.threads.includes(k + 1)) said++; } }));
+  return `${said}/${of}`;
+};
+if (judged.some((r) => r.threads.length)) md += `\nThreads (docs/conversation-variety.md → C), mentioned when drawn / when not drawn: ${LEVELS.map((l) => `${l.level} ${tm(l.level, true)} / ${tm(l.level, false)}`).join(' · ')}\n`;
 md += `\n## Per character\n\n| Level | Place | Purchase lines | Clichés | Planted ideas by visit | Told again |\n|---|---|---|---|---|---|\n`;
 for (const r of judged) md += `| ${r.level} | ${r.place.name}, ${r.city.name} | ${r.perVisit.map((v) => pct(v.purchase.length, v.lines)).join(' · ')} | ${r.perVisit.flatMap((v) => v.cliches).join('; ') || '—'} | ${r.perVisit.map((v) => v.planted.join(', ') || '—').join(' · ')} | ${r.rep.repeated}: ${r.rep.things.filter((t) => t.visits.length > 1).map((t) => `${t.thing} (${t.visits.join(',')})`).join('; ')} |\n`;
 md += `\n## Swappable?\n\n${swaps.map((s) => `- ${s.level} · ${s.a.place.name} / ${s.b.place.name}: ${s.swappable ? '**swappable**' : 'distinct'}. ${s.why}`).join('\n')}\n\n## Conversations\n\n`;
-for (const r of judged) md += r.visits.map((t, i) => `### ${r.name} · ${r.place.name}, ${r.city.name} · ${r.level} · visit ${i + 1}\n\n\`\`\`\n${show(t, r.name)}\n\`\`\``).join('\n\n') + '\n\n';
+for (const r of judged) md += r.visits.map((t, i) => `### ${r.name} · ${r.place.name}, ${r.city.name} · ${r.level} · visit ${i + 1}${r.drawn[i]?.length ? ` · drawn: ${r.drawn[i].join(' / ')}` : ''}\n\n\`\`\`\n${show(t, r.name)}\n\`\`\``).join('\n\n') + '\n\n';
 const file = join(OUT, `variety-${pack.id}-${label}-${Date.now()}.md`);
 writeFileSync(file, md);
 console.log(md.split('\n## Swappable?')[0]);

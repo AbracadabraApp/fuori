@@ -167,7 +167,13 @@ export const oaxaca: CityPantry = {
       placeId: 'cafe-pocito-jalatlaco',
       personality: ['friendly', 'a bit shy about her English'],
       portraitPrompt: 'Gouache portrait of a woman of 26 with a long dark braid, round glasses, a mustard-yellow apron over a striped shirt and a bright, patient smile, who makes coffee as a barista at Café Pocito, Jalatlaco, Oaxaca. Include the espresso machine and the café window. Bold, saturated colour: mustard yellow, magenta and forest green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You make coffee at Café Pocito, a corner of Jalatlaco, a neighborhood of cobbled streets and colorful facades. You like serving a café de olla with a pan de yema to go with it.",
+      here: "You make coffee at Café Pocito, a corner of Jalatlaco, a neighborhood of cobbled streets and colorful facades.",
+      threads: [
+        "You like serving a café de olla with a pan de yema to dunk in it.",
+        "Oaxacan chocolate is ground with cinnamon and almonds at the mills on Calle Mina, and you make hot chocolate with water, the Oaxacan way.",
+        "Jalatlaco is one of Oaxaca's oldest barrios, and you know who painted the mural across the street.",
+        "Your cousin dances at the Guelaguetza in July, when dancers come from all eight regions of Oaxaca.",
+      ],
     },
     {
       id: 'beto-panadero',
@@ -199,7 +205,13 @@ export const oaxaca: CityPantry = {
       placeId: 'fonda-dona-tere-reforma',
       personality: ['hardworking', 'direct', 'big-hearted'],
       portraitPrompt: 'Gouache portrait of a woman of 47 with short curly dark hair, a checked apron, a dish towel over one shoulder and flushed cheeks from the stove, with a direct, kind expression, who cooks and serves lunch at Fonda Doña Tere, Reforma, Oaxaca. Include the stove with a clay pot of mole and the oilcloth tables. Bold, saturated colour: mole brown, papaya orange and teal. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You cook in your family fonda in Oaxaca, the land of seven moles: mole negro, coloradito, amarillo, and caldo de res, and you like teaching newcomers the names of the moles.",
+      here: "You cook in your family fonda in Oaxaca.",
+      threads: [
+        "Oaxaca is the land of seven moles, and you like teaching newcomers their names: mole negro, coloradito, amarillo.",
+        "You learned to cook from your mother, who ran the fonda before you.",
+        "You buy your chiles at the Mercado 20 de Noviembre, where people choose their meat and have it grilled in the smoke corridor.",
+        "At night you eat tlayudas, and you'll tell anyone where the good ones are.",
+      ],
     },
     {
       id: 'nacho-nevero',

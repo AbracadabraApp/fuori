@@ -387,7 +387,13 @@ export const milano: CityPantry = {
       placeId: 'bar-rita',
       personality: ["friendly", "local character", "talkative"],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm middle-aged man with salt-and-pepper hair, laugh lines, wearing casual button-down shirt, friendly open expression, minimal watercolor wash in warm ochre and red tones, detailed expressive features',
-      here: "You run the counter of this bar on the canal: quick espressos standing up and cappuccino only in the morning, then the aperitivo crowd from 6pm. Here people pay at the cassa first: whoever comes to your counter has already paid and hands you the scontrino, so you never send them to pay; you take it and make what they paid for.",
+      here: "You run the counter of this bar on the Naviglio. Here people pay at the cassa first: whoever comes to your counter has already paid and hands you the scontrino, so you never send them to pay; you take it and make what they paid for.",
+      threads: [
+        "The Naviglio Grande was dug centuries ago to bring marble for the Duomo by boat, and you like pointing at the water and saying so.",
+        "On the last Sunday of the month the antiques market runs the length of the canal, and the stallholders are your first customers at dawn.",
+        "At six the bar fills for aperitivo, and you're already getting tonight's food ready.",
+        "Risotto alla milanese, yellow with saffron, is your mother's Sunday dish, and you'll tell anyone how she makes it.",
+      ],
     },
     {
       id: 'vincenzo-romano',

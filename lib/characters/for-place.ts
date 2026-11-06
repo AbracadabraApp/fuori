@@ -35,7 +35,7 @@ export function cityCharacterToSheet(
       regionalisms: [],
       description: `${person.role} at ${where}`,
     },
-    appearance: { description: '', setting },
+    appearance: { description: '', setting, ...(person.threads?.length ? { threads: person.threads } : {}) },
     portrait: { kind: 'illustrated', prompt: person.portraitPrompt },
   };
 }

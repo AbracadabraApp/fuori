@@ -278,3 +278,9 @@ Josh, 2026-11-06: shops "all fall into exactly the same pattern… How much you 
 | | Mexico · Intermediate | 2.6 / 3.3 s · 2.6 / 3.3 s | 31 · 34 | 44% · 50% | 1/21 · 0/21 | 15/21 · 19/21 | 7/7, 7/7 · 7/7, 7/7 | 0.4 · 0.6 | 1/5 · 1/5 | — |
 | A: beginner.md 2026-11-06, the errand is a turn or two (commit after 7bd3ac2) | Italy · Beginner | 2.7 / 3.2 s | 20 | **51%** | 5/24 | **7/24** | 7/8, 6/8 | 2.0 | 2/5 | **Kept**: purchase down beyond noise, town up |
 | | Mexico · Beginner | 2.7 / 3.2 s | 22 | **60%** | 2/21 | **11/21** | 7/7, 7/7 | **2.6** | 1/5 | Kept; told again up beyond noise (the planted idea fills the visit: C) |
+| C: `here` core + threads drawn at 3 in 10 a day (`lib/today.ts` threadsToday), 14 gate characters (Nino unchanged); visits now on different days | Italy · Beginner (vs A) | 2.7 / 3.2 s | 21 | 45% | 6/24 | **15/24** | — | 1.6 | 1/5 | Better than A on town content |
+| | Italy · Intermediate (vs baseline) | 2.6 / 3.5 s | 33 | 53% | 7/24 | 17/24 | — | 1.4 | 1/5 | Within noise; told again a little up |
+| | Mexico · Beginner (vs A) | 2.7 / 3.2 s | 23 | 62% | 1/21 | 8/21 | — | 2.0 | 2/5 | Within noise of A |
+| | Mexico · Intermediate (vs baseline) | 2.6 / 3.2 s | 33 | 53% | 0/21 | **12/21** | — | **1.0** | 0/5 | Town down, told again up: held, not pushed |
+
+C's threads: mentioned on 55–65% of the days they're drawn (Italy 18/33 Beginner, 19/33 Intermediate; Mexico 20/31, 17/31) and 4–10% of the days they're not (2/51, 4/51; 3/53, 5/53, from memory). So the odds set how often a thread comes up. The planted-idea column no longer measures anything (the core line is the place itself). What's still told again on later visits is mostly not the threads: the character's own offers (molotes, cough syrup, a concha) and things the learner's memory notes carry.

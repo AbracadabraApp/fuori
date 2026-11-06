@@ -44,6 +44,8 @@ export async function runTurn(params: {
   canRetry?: () => boolean;
   /** An ordinary conversation: the reply also says whether it ends here (they said goodbye) */
   withDone?: boolean;
+  /** The day it is (tests replay visits on different days); defaults to now */
+  now?: Date;
 }): Promise<TurnReply> {
   const prompt = buildTurnPrompt(params);
 

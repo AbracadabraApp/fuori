@@ -145,7 +145,13 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'mercado-ignacio-ramirez',
       personality: ['warm', 'proud of her flowers'],
       portraitPrompt: 'Gouache portrait of a woman in her 60s with a silver bob and a bright scarf, who runs a flower stall at the Mercado Ignacio Ramírez in San Miguel de Allende. Include the flower stall. Bold, saturated colour: rose, marigold and slate blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell flowers at your stall in the Mercado Ignacio Ramírez to people who want them for the church or the altar at home, and you like telling which ones you're proudest of. You enjoy explaining which flowers go on a Día de Muertos altar, like the marigolds.",
+      here: "You sell flowers at your stall in the Mercado Ignacio Ramírez to people who want them for the church or the altar at home.",
+      threads: [
+        "You like explaining which flowers go on a Día de Muertos altar, like the marigolds, whose smell guides the dead home.",
+        "The pink towers of the Parroquia were built by a local stonemason, and people say he worked from postcards of European churches.",
+        "So many foreigners have moved to San Miguel that you've learned the names of your flowers in English.",
+        "In September comes the Alborada, fireworks before dawn for San Miguel Arcángel, the town's patron saint.",
+      ],
     },
     {
       id: 'beto-taxi',

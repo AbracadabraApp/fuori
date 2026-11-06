@@ -38,6 +38,8 @@ export interface CharacterSheet {
   appearance: {
     description: string;
     setting: string;
+    /** The city character's threads (CityCharacter.threads), drawn per day into the setting */
+    threads?: string[];
   };
 
   portrait: {
@@ -86,6 +88,13 @@ export interface CityCharacter {
    *  doesn't serve anyone gets an invented job (Josh, 2026-10-27: a student
    *  sold him pizza, a woman in a square made him coffee) */
   here?: string;
+  /** Things this person might bring up, each drawn on its own odds per day
+   *  (lib/today.ts → threadsToday), like the weather: a line in the setting is
+   *  said almost every time it's given, so the draw sets how often it comes up
+   *  (Josh, 2026-11-06: "the cappuccino line is also a warning about how these
+   *  planted lines echo"; "Note how weather creates odds of mention";
+   *  docs/conversation-variety.md → C). `here` keeps who, where and what they do. */
+  threads?: string[];
 }
 
 export interface CityPantry {

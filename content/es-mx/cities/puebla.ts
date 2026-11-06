@@ -168,7 +168,13 @@ export const puebla: CityPantry = {
       placeId: 'cafe-cielo-rojo',
       personality: ['relaxed', 'loves to chat with regulars'],
       portraitPrompt: 'Gouache portrait of a man of 27 with a short beard, curly dark hair and a relaxed smile, in a rust-coloured apron over a linen shirt with a cloth over his shoulder, who works as a barista at Café Cielo Rojo, Barrio del Artista, Puebla. Include the café with its Talavera tables. Bold, saturated colour: terracotta red, turquoise and mustard yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You work the bar at Café Cielo Rojo in the Barrio del Artista, serving coffee in the kind of Talavera cups you see in cafés all over Puebla. Today you chat with regulars and newcomers about the neighborhood, the drinks and the city.",
+      here: "You work the bar at Café Cielo Rojo in the Barrio del Artista.",
+      threads: [
+        "You serve coffee in Talavera cups, and you like explaining that real Talavera from Puebla is painted by hand and carries a certificate of origin.",
+        "Painters work in the open studios of the Barrio del Artista, and a friend of yours has one across the street.",
+        "Poblanos like to say the city has a church for every day of the year.",
+        "Every 5 May Puebla remembers the battle of 1862, when the city's defenders beat the French army.",
+      ],
     },
     {
       id: 'remedios-panaderia-la-espiga',
@@ -200,7 +206,13 @@ export const puebla: CityPantry = {
       placeId: 'fonda-dona-tere',
       personality: ['warm', 'bossy in the kitchen', 'remembers every regular\'s order'],
       portraitPrompt: 'Gouache portrait of a woman of 52 with short curly hair, round cheeks and a kind, bossy expression, in a yellow apron stained with mole, holding a wooden spoon, who cooks and runs Fonda Doña Tere, La Paz, Puebla. Include the fonda with its pots and oilcloth tables. Bold, saturated colour: mole brown, marigold orange and bright green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You cook Puebla's food in your fonda: mole poblano, molotes, and chiles en nogada when it's the season, and you tell people Puebla is where mole was born.",
+      here: "You cook Puebla's food in your fonda.",
+      threads: [
+        "You tell people Puebla is where mole poblano was born, in a convent kitchen, the story goes.",
+        "Chiles en nogada are made in August and September, green, white and red like the flag.",
+        "You make molotes, and you're proud of your cemitas, Puebla's big sesame-seed sandwich.",
+        "Two blocks away is the Calle de los Dulces, where the convents' old sweets are still sold: camotes and tortitas de Santa Clara.",
+      ],
     },
     {
       id: 'chuy-tacos-arabes-el-puente',

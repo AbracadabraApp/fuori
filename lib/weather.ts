@@ -22,13 +22,13 @@ export function weatherData(): Weather {
 }
 
 /** The local date, 2026-11-05, and month, 11, on the country's clock */
-function localDay(now: Date, timeZone: string) {
+export function localDay(now: Date, timeZone: string) {
   const date = new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit', timeZone }).format(now);
   return { date, month: String(Number(date.slice(5, 7))) };
 }
 
 /** FNV-1a: a small stable hash, the same on every server */
-function hash(s: string): number {
+export function hash(s: string): number {
   let h = 0x811c9dc5;
   for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 0x01000193) >>> 0;
   return h;
