@@ -58,6 +58,13 @@ export interface Place {
   imagePrompt?: string;
   /** Not shown in the feed (kept in the data, tests and memory). See content/it/showcase.ts */
   hidden?: boolean;
+  /** A food place's menu, in the language, shown as text over its picture
+   *  (Josh, 2026-11-05: Rome's osteria first; progress.md → Thickening place) */
+  menu?: string[];
+  /** Pictures the conversation can cut away to while the person talks about
+   *  them (a dish, the room); one per dish on the menu. Made ahead, Josh
+   *  approves each prompt and each picture */
+  pictures?: { id: string; shows: string; imagePrompt: string }[];
 }
 
 export type Gender = 'f' | 'm';
