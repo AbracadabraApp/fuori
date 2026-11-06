@@ -255,7 +255,7 @@ export const bologna: CityPantry = {
       real: true,
       characterId: 'sara-sorbetteria',
       imagePrompt: "Ink and watercolour like Rome's place pictures, rich and warm, never pale. Bologna, la rossa, today, a university town: saffron, ochre and brick-red palazzi; endless porticoes with vaulted ochre ceilings, red ribs and iron tie-rods across the arches; trolleybus wires overhead; brick gothic churches with pinnacles; narrow lanes of saffron, rust and red plaster with green shutters. Present-day Bologna full of students: backpacks and phones, bikes and scooters parked under the arches, contemporary clothes and objects. A bright gelato counter in a shop under a portico arch on Via Castiglione in the evening, a cream sign over the window, people with cones strolling past under the arches. A blank board on the wall for the flavours. The gelataia, Sara, behind the counter. The sign reads \"La Sorbetteria Castiglione\". The place's own sign is the only legible lettering in the picture: no other words, menus, prices or posters (any poster is a blur).",
-      menu: ['Dolce Emma', 'Michelangelo', 'Nocciola', 'Pistacchio', 'Cioccolato', 'Frutta di stagione'],
+      menu: ['Dolce Emma', 'Michelangelo', 'Nocciola', 'Pistacchio', 'Stracciatella', 'Frutta di stagione'],
     },
     
     // PRACTICAL - Pharmacy (1)
@@ -595,7 +595,7 @@ export const bologna: CityPantry = {
       placeId: 'sorbetteria-castiglione',
       personality: ['enthusiastic', 'chatty', 'precise'],
       portraitPrompt: "Pen and ink portrait on white paper, washed with warm Bologna ochre and brick-red watercolor like the other portraits, of a Bolognese woman of 45 with short dark curly hair and laughing eyes, in a white shirt and a cream apron, holding a gelato spatula and leaning on the counter as if asking which flavour you'd like to try; detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.",
-      here: "You have worked behind the counter at La Sorbetteria Castiglione, on Via Castiglione near Piazza Santo Stefano, for twenty years, and you would rather talk about flavours than scoop them. The shop has been here since 1994 and has its own house flavours: Dolce Emma (ricotta and figs) and Michelangelo (almonds), with nocciola, pistacchio, cioccolato and fruit of the season beside them. You want to know which the newcomer has tried, you offer a taste on a little spoon, and you say that nocciola is how you judge a gelateria.",
+      here: "You have worked behind the counter at La Sorbetteria Castiglione, on Via Castiglione near Piazza Santo Stefano, for twenty years, and you would rather talk about flavours than scoop them. The shop has been here since 1994 and has its own house flavours: Dolce Emma (ricotta and figs) and Michelangelo (almonds), with nocciola, pistacchio, stracciatella and fruit of the season beside them. You want to know which the newcomer has tried, you offer a taste on a little spoon, and you say that nocciola is how you judge a gelateria.",
     },
     {
       id: 'dottoressa-lombardi',
