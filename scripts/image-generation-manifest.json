@@ -717,7 +717,7 @@
       "type": "place"
     },
     "bologna/santo-stefano": {
-      "timestamp": "2026-11-06T05:36:25.592Z",
+      "timestamp": "2026-11-06T05:44:29.735Z",
       "path": "/home/claude/fuori-bologna/public/images/places/santo-stefano.jpg",
       "type": "place"
     },
@@ -6922,6 +6922,6 @@
     "total": 1383,
     "completed": 1382,
     "failed": 1,
-    "lastRun": "2026-11-06T05:41:26.360Z"
+    "lastRun": "2026-11-06T05:44:32.742Z"
   }
 }

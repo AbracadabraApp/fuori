@@ -143,7 +143,7 @@ export const bologna: CityPantry = {
       neighbourhood: 'Santo Stefano',
       real: true,
       characterId: 'don-giuseppe',
-      imagePrompt: "Piazza Santo Stefano, a long triangular piazza paved in smooth pale stone, closed at one end by the plain old brick fronts of the Basilica di Santo Stefano's linked churches, with arched doorways. A row of round grey stone spheres set in the paving in front of them, a child sitting on one. Along the sides, red-brick palazzi with deep arcades. Don Giuseppe, a priest of 59 in a dark cassock, sits on the low step by the church door talking with a passer-by.",
+      imagePrompt: "Piazza Santo Stefano, a long triangular piazza paved in smooth pale stone, closed at one end by the plain old brick fronts of the Basilica di Santo Stefano's linked churches, with arched doorways. The piazza is open paving, with no bollards, posts or stone balls anywhere. Along the sides, red-brick palazzi with deep arcades. Don Giuseppe, a priest of 59 in a dark cassock, sits on the low step by the church door talking with a passer-by.",
     },
     {
       id: 'san-petronio',
