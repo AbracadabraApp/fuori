@@ -4,7 +4,7 @@
 // character prompt with the brief), against a simulated learner. Reports
 // words per teller turn (the earlier trial's ran to about 90) and whether the
 // lesson ends on the third turn.
-//   COUNTRY=it npx tsx --env-file=.env.local tests/experiments/culture-story-trial.mts [items, default 2] [out dir]
+//   COUNTRY=it npx tsx --env-file=.env.local tests/experiments/culture-story-trial.mts [items, default 2, or an item id] [out dir]
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { anthropic, TURN_MODEL, replyText } from '@/lib/claude';
@@ -16,7 +16,7 @@ import { lessonBrief } from '@/lib/lesson';
 import { cultureSet } from '@/lib/culture';
 import type { Turn } from '@/lib/types';
 
-const n = Number(process.argv[2] ?? 2);
+const arg = process.argv[2] ?? '2';
 const out = process.argv[3];
 const words = (s: string) => s.split(/\s+/).filter(Boolean).length;
 
@@ -50,7 +50,8 @@ async function play(itemId: string, beginner: boolean) {
   return { id: it.id, chip: it.chip, level: beginner ? 'Beginner' : 'Intermediate', lengths, ended: endedAt === 2, lines };
 }
 
-const items = cultureSet().slice(0, n);
+// A number plays the set's first n items; an item id plays that item
+const items = /^\d+$/.test(arg) ? cultureSet().slice(0, Number(arg)) : cultureSet().filter((x) => x.id === arg);
 const results = await Promise.all(items.flatMap((it) => [play(it.id, false), play(it.id, true)]));
 const summary = results.map((r) => `${r.level} · ${r.chip}: words per turn ${r.lengths.join('/')} · ends on turn 3 ${r.ended ? 'ok' : 'FAIL'}`).join('\n');
 console.log(`[${pack.id}]\n${summary}`);
