@@ -1,0 +1,104 @@
+{
+  "at": "2026-11-06T01:48:16.074Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-21",
+  "repliesVersion": null,
+  "level": null,
+  "seed": "7",
+  "turns": 6,
+  "conversations": 5,
+  "grades": {
+    "language": 9,
+    "understands": 9.2,
+    "adapts": 8,
+    "alive": 6,
+    "regional": 8.6
+  },
+  "length": {
+    "openerWords": 14,
+    "replies": 35,
+    "wordsMedian": 20,
+    "wordsAvg": 27.8,
+    "wordsMax": 59,
+    "longShare": 0.34,
+    "questionsAvg": 0.9,
+    "multiQuestionShare": 0.06
+  },
+  "byCharacter": [
+    {
+      "id": "concha-sacristana",
+      "learner": "english-beginner",
+      "overall": 7.8,
+      "stats": {
+        "openerWords": 14,
+        "replies": 7,
+        "wordsMedian": 49,
+        "wordsAvg": 41.7,
+        "wordsMax": 59,
+        "longShare": 0.86,
+        "questionsAvg": 0.9,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "lupita-sacristana",
+      "learner": "improving",
+      "overall": 8.8,
+      "stats": {
+        "openerWords": 19,
+        "replies": 7,
+        "wordsMedian": 47,
+        "wordsAvg": 44.6,
+        "wordsMax": 56,
+        "longShare": 0.86,
+        "questionsAvg": 0.7,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "marisol-tumbagones",
+      "learner": "hesitant",
+      "overall": 7.8,
+      "stats": {
+        "openerWords": 22,
+        "replies": 7,
+        "wordsMedian": 20,
+        "wordsAvg": 18,
+        "wordsMax": 26,
+        "longShare": 0,
+        "questionsAvg": 1.1,
+        "multiQuestionShare": 0.14
+      }
+    },
+    {
+      "id": "magda",
+      "learner": "hesitant",
+      "overall": 7.8,
+      "stats": {
+        "openerWords": 14,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 15.6,
+        "wordsMax": 25,
+        "longShare": 0,
+        "questionsAvg": 1.1,
+        "multiQuestionShare": 0.14
+      }
+    },
+    {
+      "id": "chema-taquero",
+      "learner": "english-beginner",
+      "overall": 8.6,
+      "stats": {
+        "openerWords": 10,
+        "replies": 7,
+        "wordsMedian": 20,
+        "wordsAvg": 19,
+        "wordsMax": 27,
+        "longShare": 0,
+        "questionsAvg": 0.9,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}
