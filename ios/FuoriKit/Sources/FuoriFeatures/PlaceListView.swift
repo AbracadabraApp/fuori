@@ -77,7 +77,41 @@ struct PlaceListView: View {
 
     private func card(_ place: Place) -> some View {
         PolaroidCard(image: place.image, title: place.name, subtitle: subtitle(place))
+            .overlay(alignment: .top) { chalkMenu(place) }
             .overlay(alignment: .topTrailing) { visitBadge(place) }
+    }
+
+    /// The menu written in chalk on the picture's blank board (Josh,
+    /// 2026-11-06: "Blank board"; the picture was made with the board left
+    /// empty for it). The board's place comes from content; the picture is
+    /// the card's width square, so the fractions are of the card's width
+    @ViewBuilder private func chalkMenu(_ place: Place) -> some View {
+        if let menu = place.menu, let board = place.menuBoard {
+            GeometryReader { geo in
+                let side = geo.size.width
+                VStack(spacing: 4) {
+                    ForEach(menu, id: \.self) { dish in
+                        Text(chalk(dish))
+                            .typeface(.display, 16, relativeTo: .body, weight: .semibold)
+                            .foregroundStyle(Tokens.Colors.flapInk)
+                            .multilineTextAlignment(.center)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.5)
+                    }
+                }
+                .dynamicTypeSize(.large)
+                .frame(width: side * board.width, height: side * board.height)
+                .offset(x: side * board.x, y: side * board.y)
+            }
+            .aspectRatio(1, contentMode: .fit)
+            .allowsHitTesting(false)
+        }
+    }
+
+    private func chalk(_ dish: String) -> AttributedString {
+        var s = AttributedString(dish)
+        s.languageIdentifier = content.language.speechLang
+        return s
     }
 
     private func subtitle(_ place: Place) -> String {

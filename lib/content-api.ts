@@ -34,6 +34,8 @@ export interface ContentPlace {
   image: string | null;
   /** A food place's menu or board, in the language (Osteria da Nino, the Sorbetteria) */
   menu?: string[];
+  /** Where to write the menu on the place picture (fractions of the square picture) */
+  menuBoard?: { x: number; y: number; width: number; height: number };
 }
 
 export interface ContentCity {
@@ -137,6 +139,7 @@ export function buildContent(): Content {
         ...(person ? { characterId: person.id } : {}),
         image: image(`places/${place.id}`),
         ...(place.menu?.length ? { menu: place.menu } : {}),
+        ...(place.menu?.length && place.menuBoard ? { menuBoard: place.menuBoard } : {}),
         // A cinema (lib/cinema.ts): its films, posters from R2 (app builds from 2026-11-06)
         ...(films(city.id, place.id) ?? {}),
       };

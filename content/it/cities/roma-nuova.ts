@@ -50,6 +50,8 @@ export const romaNuova: CityPantry = {
       characterId: 'nino-garbatella',
       imagePrompt: "A wooden A-frame sandwich board standing on the cobbles outside Osteria da Nino in Garbatella, seen straight on and close, filling most of the picture from top to bottom. Its dark-green chalkboard face is completely blank, clean and flat, square to the viewer, with a plain wooden frame. Behind it, a little out of focus, a Roman street at lunchtime: ochre and terracotta houses, the osteria's open door with tables outside, a Vespa, a few people.",
       menu: ['Carciofi alla romana', 'Cacio e pepe', 'Gricia', 'Amatriciana', 'Carbonara', 'Giovedì: gnocchi'],
+      // The sandwich board's chalk face in the feed picture, where the app writes the menu
+      menuBoard: { x: 0.33, y: 0.29, width: 0.34, height: 0.5 },
       pictures: [
               {
                       "id": "osteria-da-nino-carciofi-alla-romana",

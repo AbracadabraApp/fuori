@@ -148,6 +148,16 @@ public struct Place: Codable, Sendable, Equatable, Identifiable, Hashable {
     public let films: [Film]?
     /// A food place's menu or board, in the language (Osteria da Nino, the Sorbetteria); nil elsewhere
     public let menu: [String]?
+    /// Where the picture's blank board is, as fractions of the square feed
+    /// picture: the menu is written on it (Osteria da Nino); nil elsewhere
+    public let menuBoard: Board?
+
+    public struct Board: Codable, Sendable, Equatable, Hashable {
+        public let x: Double
+        public let y: Double
+        public let width: Double
+        public let height: Double
+    }
 }
 
 /// A film showing at a cinema: its poster and its videos, the official trailer first (TMDB data, served by Fuori)

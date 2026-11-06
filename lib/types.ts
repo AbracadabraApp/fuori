@@ -61,6 +61,9 @@ export interface Place {
   /** A food place's menu, in the language, shown as text over its picture
    *  (Josh, 2026-11-05: Rome's osteria first; progress.md → Thickening place) */
   menu?: string[];
+  /** Where the place picture's blank board is, as fractions of the square
+   *  feed picture: the app writes the menu on it (Osteria da Nino) */
+  menuBoard?: { x: number; y: number; width: number; height: number };
   /** Pictures the conversation can cut away to while the person talks about
    *  them (a dish, the room); one per dish on the menu. Made ahead, Josh
    *  approves each prompt and each picture */
