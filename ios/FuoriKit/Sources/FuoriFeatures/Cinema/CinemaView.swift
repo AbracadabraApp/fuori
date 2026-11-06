@@ -25,17 +25,20 @@ struct CinemaView: View {
                 ForEach(place.films ?? []) { film in
                     NavigationLink(value: FilmRoute(film: film)) { PosterCard(film: film) }
                         .buttonStyle(PressableStyle())
-                        // 80% of the screen's width, the poster's own shape (Josh, 2026-11-05)
-                        .containerRelativeFrame(.horizontal) { width, _ in width * 0.8 }
+                        // 67% of the screen's width, the poster's own shape (Josh, 2026-11-05: 80%, 20% smaller, then 5% back)
+                        .containerRelativeFrame(.horizontal) { width, _ in width * 0.67 }
                 }
             }
             .padding(Tokens.Space.gutter)
         }
-        .background(Tokens.Colors.paper)
+        // A dark room, like a cinema (Josh, 2026-11-05), as the trailer screen
+        .background(Tokens.Colors.ink)
         // No title (Josh, 2026-11-05: the cinema's name over the posters read like a film's title
         // and told nothing new): just back and settings; the posters are the page
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Tokens.Colors.ink, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
         #endif
         .settingsToolbar()
         .navigationDestination(for: FilmRoute.self) { route in TrailerView(film: route.film) }
@@ -104,17 +107,6 @@ struct TrailerView: View {
                     .accessibilityElement(children: .contain)
                     .accessibilityLabel(video.name)
                 }
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(film.title)
-                        .typeface(.display, Tokens.Size.cardTitle, relativeTo: .title, weight: .bold)
-                        .foregroundStyle(Tokens.Colors.flapInk)
-                        .accessibilityAddTraits(.isHeader)
-                    Text(String(film.year))
-                        .typeface(.label, Tokens.Size.personRole, relativeTo: .title3)
-                        .foregroundStyle(Tokens.Colors.sand)
-                }
-                .padding(.horizontal, Tokens.Space.gutter)
-                .padding(.vertical, 14)
                 if film.videos.count > 1 {
                     VStack(spacing: 8) {
                         ForEach(film.videos) { video in
@@ -127,13 +119,14 @@ struct TrailerView: View {
                         }
                     }
                     .padding(.horizontal, Tokens.Space.gutter)
-                    .padding(.bottom, 32)
+                    .padding(.vertical, 16)
                 }
             }
         }
         // Dark, as a cinema (and MovieGenius's trailer screen): the video is the light
         .background(Tokens.Colors.ink)
-        // The title once, under the player (Josh, 2026-11-05): none in the bar, as on the posters
+        // The title once, in the bar (Josh, 2026-11-05); the videos start under the player
+        .navigationTitle(film.title)
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Tokens.Colors.ink, for: .navigationBar)
