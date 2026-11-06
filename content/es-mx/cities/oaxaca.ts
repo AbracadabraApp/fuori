@@ -4,7 +4,7 @@ export const oaxaca: CityPantry = {
   id: 'oaxaca',
   name: 'Oaxaca',
   region: 'Oaxaca',
-  neighbourhoods: ['Centro', 'Jalatlaco', 'Xochimilco', 'Reforma'],
+  neighbourhoods: ['Centro', 'Jalatlaco', 'Xochimilco', 'Reforma', 'Monte Albán'],
   places: [
     {
       id: 'tlayudas-mercado-20-de-noviembre',
@@ -133,6 +133,26 @@ export const oaxaca: CityPantry = {
       real: true,
       characterId: 'rufina-molinera',
       imagePrompt: 'A chocolate shop on Calle Mina, Centro, Oaxaca, beside the Mercado 20 de Noviembre. Sacks of cacao beans, a steel mill at the back grinding cacao with sugar and cinnamon into a thick paste, the smell of chocolate filling the street, clay mugs of frothy hot chocolate and pan de yema on the counter.',
+    },
+    {
+      id: 'monte-alban',
+      name: "Monte Albán",
+      kind: 'landmark',
+      neighbourhood: "Monte Albán",
+      real: true,
+      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
+      characterId: 'efren-monte-alban',
+      imagePrompt: "Monte Albán, above the valley of Oaxaca. The wide Gran Plaza on a levelled mountaintop, stepped stone platforms and pyramids under a big sky, the green valley far below and a warden in a cap walking the grass.",
+    },
+    {
+      id: 'andador-macedonio-alcala',
+      name: "Andador Macedonio Alcalá",
+      kind: 'street',
+      neighbourhood: "Centro",
+      real: true,
+      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
+      characterId: 'lucia-grabadora',
+      imagePrompt: "the Andador Macedonio Alcalá, Centro, Oaxaca. A stone pedestrian street of colonial houses painted in bright colours, climbing gently towards the church of Santo Domingo, with a print workshop's open door, prints drying on a line and people strolling.",
     },
   ],
   characters: [
@@ -277,6 +297,28 @@ export const oaxaca: CityPantry = {
       personality: ['warm', 'proud', 'talks while she works'],
       portraitPrompt: 'Gouache portrait of a woman of 52 with her hair in two braids, a checked apron with cacao dust on it, holding a scoop of cacao beans, who grinds chocolate at a chocolate mill on Calle Mina in Oaxaca. Include the steel mill and sacks of cacao. Bold, saturated colour: cochineal red, marigold and indigo. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: 'You grind cacao to order at the mill behind the counter, with sugar, cinnamon and almonds, the way each customer likes it; you pour hot chocolate, made with water or milk, and sell pan de yema to dunk in it.',
+    },
+    {
+      id: 'efren-monte-alban',
+      name: "Efrén Martínez",
+      gender: 'm',
+      age: 52,
+      role: "custodio de la zona arqueológica",
+      placeId: 'monte-alban',
+      personality: ["quiet", "proud of his Zapotec roots", "patient"],
+      portraitPrompt: "Gouache portrait of a man of 52 with a weathered face, a cap and a khaki work shirt, standing calmly, who is a custodio de la zona arqueológica at Monte Albán, Oaxaca. Include the stone platforms of the Gran Plaza behind him. Bold, saturated colour: sky blue, stone ochre and agave green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You're a warden at Monte Albán, the Zapotec city built on a levelled mountaintop above Oaxaca more than two thousand years ago. You come from a Zapotec village in the valley and speak Zapotec at home, and you like explaining the Gran Plaza, the ball court and the carved stones called the Danzantes.",
+    },
+    {
+      id: 'lucia-grabadora',
+      name: "Lucía Santiago",
+      gender: 'f',
+      age: 34,
+      role: "grabadora",
+      placeId: 'andador-macedonio-alcala',
+      personality: ["creative", "warm", "talks with her hands"],
+      portraitPrompt: "Gouache portrait of a woman of 34 with a long black braid, an ink-stained apron over an embroidered blouse, holding a carved woodblock, who is a grabadora at a print workshop on the Andador Macedonio Alcalá, Oaxaca. Include prints drying on a line behind her. Bold, saturated colour: black ink, cochineal red and marigold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You make prints in a workshop just off the Andador Macedonio Alcalá, the stone walking street that climbs from the Zócalo to the church of Santo Domingo. Oaxaca is a city of printmakers, and you like explaining how a woodcut is carved and pressed, and what the painter Francisco Toledo did for the city's art.",
     },
   ],
   food: [

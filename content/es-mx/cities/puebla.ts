@@ -4,7 +4,7 @@ export const puebla: CityPantry = {
   id: 'puebla',
   name: 'Puebla',
   region: 'Puebla',
-  neighbourhoods: ['Centro Histórico', 'Barrio de Analco', 'Barrio del Artista', 'La Paz'],
+  neighbourhoods: ['Centro Histórico', 'Barrio de Analco', 'Barrio del Artista', 'La Paz', 'Xanenetla'],
   places: [
     {
       id: 'dulces-tipicos-la-gloria',
@@ -54,12 +54,12 @@ export const puebla: CityPantry = {
     },
     {
       id: 'fonda-dona-tere',
-      name: 'Fonda Doña Tere',
+      name: 'Fonda La Poblanita',
       kind: 'fonda',
       neighbourhood: 'La Paz',
       real: false,
       characterId: 'tere-fonda-dona-tere',
-      imagePrompt: 'Fonda Doña Tere, La Paz, Puebla. A cocina económica at lunchtime, with oilcloth-covered tables, clay pots of mole poblano and rice, a chalkboard with the menú del día, and office workers eating the comida corrida.',
+      imagePrompt: 'Fonda La Poblanita, La Paz, Puebla. A cocina económica at lunchtime, with oilcloth-covered tables, clay pots of mole poblano and rice, a chalkboard with the menú del día, and office workers eating the comida corrida.',
     },
     {
       id: 'tacos-arabes-el-puente',
@@ -135,6 +135,26 @@ export const puebla: CityPantry = {
       characterId: 'amparo-dulcera',
       imagePrompt: 'La Gran Fama on the Calle de los Dulces, Centro Histórico, Puebla, beside the old convent of Santa Clara. Glass cases and talavera jars full of camotes wrapped in paper, tortitas de Santa Clara, jamoncillos and ates, an old wooden counter, a customer choosing a box of sweets.',
     },
+    {
+      id: 'biblioteca-palafoxiana',
+      name: "Biblioteca Palafoxiana",
+      kind: 'landmark',
+      neighbourhood: "Centro Histórico",
+      real: true,
+      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
+      characterId: 'mariana-palafoxiana',
+      imagePrompt: "the Biblioteca Palafoxiana, Centro Histórico, Puebla. A long vaulted reading room with three tiers of carved wooden shelves full of old leather books, a gilded altarpiece at the end and a restorer in white gloves at a small table.",
+    },
+    {
+      id: 'barrio-xanenetla',
+      name: "Barrio de Xanenetla",
+      kind: 'street',
+      neighbourhood: "Xanenetla",
+      real: true,
+      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
+      characterId: 'hugo-muralista',
+      imagePrompt: "the Barrio de Xanenetla, Puebla. A steep little street of old one-storey houses whose walls are covered in big colourful murals of neighbours' faces and stories, a muralist on a ladder with a paint can.",
+    },
   ],
   characters: [
     {
@@ -193,7 +213,7 @@ export const puebla: CityPantry = {
     },
     {
       id: 'tere-fonda-dona-tere',
-      name: 'Doña Tere Sánchez',
+      name: 'Doña Chayo Sánchez',
       gender: 'f',
       age: 52,
       role: 'cocinera y dueña',
@@ -278,6 +298,28 @@ export const puebla: CityPantry = {
       personality: ['storyteller', 'precise', 'sweet-toothed'],
       portraitPrompt: 'Gouache portrait of a woman of 66 with short silver hair, reading glasses on a chain and a lace collar, holding an open box of camotes poblanos (long, smooth candy sticks of sweet-potato paste in pastel colours, each wrapped in white paper; candies, not raw sweet potatoes), who sells sweets at La Gran Fama on the Calle de los Dulces in Puebla. Include the glass cases and talavera jars. Bold, saturated colour: cobalt, white and candy pink. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: 'You sell sweets at La Gran Fama, the oldest shop on the Calle de los Dulces: camotes, tortitas de Santa Clara, jamoncillo; you know the convent stories behind them and like telling newcomers which to try first.',
+    },
+    {
+      id: 'mariana-palafoxiana',
+      name: "Mariana Castañeda",
+      gender: 'f',
+      age: 48,
+      role: "restauradora de libros",
+      placeId: 'biblioteca-palafoxiana',
+      personality: ["meticulous", "gentle", "loves old paper"],
+      portraitPrompt: "Gouache portrait of a woman of 48 with silver-streaked hair, glasses and white cotton gloves, holding an old leather book, who is a restauradora de libros at the Biblioteca Palafoxiana, Puebla. Include tiers of carved wooden shelves behind her. Bold, saturated colour: warm wood brown, gold and parchment. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You restore old books at the Biblioteca Palafoxiana, which began in 1646, when Bishop Juan de Palafox gave his books to the city's seminary on condition that anyone could read them; Poblanos call it the first public library in the Americas. You like describing its reading room, three floors of carved wooden shelves, and what it takes to save a book that's four hundred years old.",
+    },
+    {
+      id: 'hugo-muralista',
+      name: "Hugo Sosa",
+      gender: 'm',
+      age: 31,
+      role: "muralista",
+      placeId: 'barrio-xanenetla',
+      personality: ["easygoing", "proud of his barrio", "paints every day"],
+      portraitPrompt: "Gouache portrait of a man of 31 with a short beard, a paint-spattered T-shirt and a cap on backwards, holding a brush, who is a muralista at the Barrio de Xanenetla, Puebla. Include a colourful mural on the wall behind him. Bold, saturated colour: turquoise, magenta and sunflower yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You grew up in Xanenetla, an old barrio of Puebla, and you're one of the artists who covered its walls with murals together with the neighbours, in the project they called Ciudad Mural. You like telling the stories of the families each mural shows.",
     },
   ],
   food: [

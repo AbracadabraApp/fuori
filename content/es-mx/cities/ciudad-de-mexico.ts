@@ -144,6 +144,26 @@ export const ciudadDeMexico: CityPantry = {
       characterId: 'fidel-tamalero',
       imagePrompt: "A tamales vendor's tricycle on a street corner in Coyoacán, Ciudad de México, at dusk: a big steaming pot of tamales, a pot of atole, bolillos for guajolotas, a loudspeaker on a pole, neighbours in sweaters gathering around under the street lamps.",
     },
+    {
+      id: 'murales-palacio-nacional',
+      name: "Murales de Diego Rivera, Palacio Nacional",
+      kind: 'landmark',
+      neighbourhood: "Centro Histórico",
+      real: true,
+      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
+      characterId: 'renata-restauradora',
+      imagePrompt: "the Diego Rivera murals in the Palacio Nacional, Centro Histórico, Mexico City. A grand stone staircase under arches, its walls covered with Rivera's crowded, colourful history of Mexico, a restorer on a low scaffold with a small brush and visitors looking up.",
+    },
+    {
+      id: 'jardin-centenario-coyoacan',
+      name: "Jardín Centenario",
+      kind: 'plaza',
+      neighbourhood: "Coyoacán",
+      real: true,
+      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
+      characterId: 'elvira-coyoacan',
+      imagePrompt: "the Jardín Centenario, Coyoacán, Mexico City. A leafy square with a bronze fountain of two coyotes, iron benches, children chasing pigeons and the arches of the old church behind, under tall trees.",
+    },
   ],
   characters: [
     {
@@ -298,6 +318,28 @@ export const ciudadDeMexico: CityPantry = {
       personality: ['patient', 'early riser', 'dry humour'],
       portraitPrompt: 'Gouache portrait of a man of 50 with a cap, a thick sweater and a moustache, lifting the lid of a steaming tamal pot on his tricycle, a loudspeaker on a pole behind him, who sells tamales from a tricycle in Coyoacán in Ciudad de México. Bold, saturated colour: jacaranda purple, ochre and deep green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: 'You ride your tricycle through the neighbourhood morning and night with the recorded call every Chilango knows, "ricos tamales oaxaqueños"; you sell tamales verdes, rojos, de rajas and de dulce, atole to drink, and the guajolota, a tamal inside a bolillo.',
+    },
+    {
+      id: 'renata-restauradora',
+      name: "Renata Villaseñor",
+      gender: 'f',
+      age: 41,
+      role: "restauradora de murales",
+      placeId: 'murales-palacio-nacional',
+      personality: ["patient", "precise", "proud of Rivera's work"],
+      portraitPrompt: "Gouache portrait of a woman of 41 with dark hair in a bun, reading glasses pushed up, a white work smock with paint marks, holding a fine brush, who is a restauradora de murales at the Diego Rivera murals in the Palacio Nacional, Mexico City. Include the painted staircase walls behind her. Bold, saturated colour: terracotta, ochre and deep blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You restore Diego Rivera's murals on the main staircase and corridors of the Palacio Nacional, on the Zócalo, painted between 1929 and 1951. You know every figure in his history of Mexico, from the great market of Tlatelolco to the Revolution, and you like pointing out the ones people miss.",
+    },
+    {
+      id: 'elvira-coyoacan',
+      name: "Doña Elvira Huerta",
+      gender: 'f',
+      age: 67,
+      role: "abuela",
+      placeId: 'jardin-centenario-coyoacan',
+      personality: ["chatty", "proud of Coyoacán", "keeps an eye on everyone"],
+      portraitPrompt: "Gouache portrait of a woman of 67 with short grey hair, a cardigan and a rebozo over her shoulders, smiling as she watches her grandchildren, who is a abuela at the Jardín Centenario, Mexico City. Include the coyote fountain behind her. Bold, saturated colour: leaf green, coral and cobalt. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You've lived in Coyoacán all your life, and most afternoons you sit in the Jardín Centenario while your grandchildren play by the fountain of the two coyotes. You like telling newcomers that Coyoacán means 'place of coyotes' in Nahuatl, and that Frida Kahlo grew up a few streets away, in the Casa Azul.",
     },
   ],
   food: [

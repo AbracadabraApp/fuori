@@ -123,6 +123,26 @@ export const guadalajara: CityPantry = {
       characterId: 'carlos-taquillero-gdl',
       imagePrompt: 'the Terminal Nueva bus station, Tlaquepaque, Guadalajara. Modern terminal with travelers at ticket windows, digital departure boards, buses outside, families with luggage, vendors selling tortas and drinks.',
     },
+    {
+      id: 'hospicio-cabanas',
+      name: "Hospicio Cabañas",
+      kind: 'landmark',
+      neighbourhood: "Centro",
+      real: true,
+      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
+      characterId: 'andres-cabanas',
+      imagePrompt: "the Hospicio Cabañas, Centro, Guadalajara. A long neoclassical building with a dome, and inside the chapel Orozco's fiery murals and the Man of Fire in the cupola, a student sketching on a bench below.",
+    },
+    {
+      id: 'plaza-de-los-mariachis',
+      name: "Plaza de los Mariachis",
+      kind: 'plaza',
+      neighbourhood: "Centro",
+      real: true,
+      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
+      characterId: 'chuy-mariachi',
+      imagePrompt: "the Plaza de los Mariachis, Centro, Guadalajara. A small square by the Mercado San Juan de Dios with café tables, mariachis in black charro suits with silver buttons resting between songs, a guitarrón leaning on a chair.",
+    },
   ],
   characters: [
     {
@@ -256,6 +276,28 @@ export const guadalajara: CityPantry = {
       personality: ['cheerful', 'efficient', 'knows all the connections'],
       portraitPrompt: 'Gouache portrait of a man of 41 with short hair, a neatly trimmed mustache, a company polo shirt and a friendly, professional smile, who sells bus tickets at the Terminal Nueva, Tlaquepaque, Guadalajara. Include the ticket counter and digital departure board. Bold, saturated colour: travel blue, sunset orange and warm yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: "You sell tickets at the Terminal Nueva, the big bus station in Tlaquepaque, and you know which buses leave for other cities and at what time. You like helping people work out how to get to Tequila or another nearby place, which ticket suits them and how long the trip takes.",
+    },
+    {
+      id: 'andres-cabanas',
+      name: "Andrés Ochoa",
+      gender: 'm',
+      age: 22,
+      role: "estudiante de arte",
+      placeId: 'hospicio-cabanas',
+      personality: ["curious", "earnest", "sketches everything"],
+      portraitPrompt: "Gouache portrait of a young man of 22 with curly hair, a denim jacket and a sketchbook open on his knee, who is a estudiante de arte at the Hospicio Cabañas, Guadalajara. Include Orozco's fiery murals behind him. Bold, saturated colour: flame orange, charcoal and deep red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You study art at the university and come to the Hospicio Cabañas to sketch José Clemente Orozco's murals, painted in the 1930s in the chapel of the old orphanage. You like showing people the Man of Fire in the dome, and explaining why Orozco painted Mexico's history so darkly.",
+    },
+    {
+      id: 'chuy-mariachi',
+      name: "Chuy Arellano",
+      gender: 'm',
+      age: 45,
+      role: "violinista de mariachi",
+      placeId: 'plaza-de-los-mariachis',
+      personality: ["proud", "joking", "loves the old songs"],
+      portraitPrompt: "Gouache portrait of a man of 45 with a moustache, in a black charro suit with silver buttons and a wide bow tie, his violin under his arm, who is a violinista de mariachi at the Plaza de los Mariachis, Guadalajara. Include other mariachis resting at the café tables behind him. Bold, saturated colour: black, silver and chili red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You play violin in a mariachi, and between sets you sit on a bench in the Plaza de los Mariachis, by the Mercado San Juan de Dios. Jalisco is where mariachi comes from, and you like explaining the instruments, the charro suit and the songs every Mexican knows.",
     },
   ],
   food: [

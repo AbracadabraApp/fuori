@@ -134,6 +134,26 @@ export const sanMiguelDeAllende: CityPantry = {
       characterId: 'marisol-tumbagones',
       imagePrompt: 'Casa del Tumbagón, a small sweet shop in the Centro of San Miguel de Allende, a few streets from the pink spires of the Parroquia. Shelves of tumbagones, crisp rolled sweets dusted with sugar and cinnamon, jars of cajeta and other dulces típicos, a colourful painted wall outside.',
     },
+    {
+      id: 'casa-de-allende',
+      name: "Museo Casa de Allende",
+      kind: 'museum',
+      neighbourhood: "Centro",
+      real: true,
+      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
+      characterId: 'gabriela-maestra',
+      imagePrompt: "the Museo Casa de Allende, Centro, San Miguel de Allende. A grand colonial house on the corner of the Jardín, with a carved stone doorway, iron balconies and a teacher leading a line of schoolchildren in uniform inside.",
+    },
+    {
+      id: 'el-mirador-san-miguel',
+      name: "El Mirador",
+      kind: 'landmark',
+      neighbourhood: "Centro",
+      real: true,
+      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
+      characterId: 'ramon-mirador',
+      imagePrompt: "El Mirador, San Miguel de Allende. A stone lookout above the town at sunset, the pink spires of the Parroquia rising from a sea of rooftops and domes, the hills beyond, and an old man leaning on the railing.",
+    },
   ],
   characters: [
     {
@@ -277,6 +297,28 @@ export const sanMiguelDeAllende: CityPantry = {
       personality: ['teasing', 'cheerful', 'knows every legend'],
       portraitPrompt: 'Gouache portrait of a woman of 34 with a high ponytail, embroidered blouse and a big laugh, holding a tray of tumbagones (thin, crisp wafers rolled into tubes like cigars, dusted with sugar and cinnamon; not doughnuts or rings), who sells sweets at the Casa del Tumbagón in San Miguel de Allende. Include the shelves of sweets. Bold, saturated colour: rose, marigold and slate blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: "You sell tumbagones, San Miguel's own sweet, near the Parroquia; you love the legend that the sweet tells you whether your partner is faithful, and you tease customers with it.",
+    },
+    {
+      id: 'gabriela-maestra',
+      name: "Gabriela Ramírez",
+      gender: 'f',
+      age: 39,
+      role: "maestra de historia",
+      placeId: 'casa-de-allende',
+      personality: ["energetic", "passionate about the independence", "good with kids"],
+      portraitPrompt: "Gouache portrait of a woman of 39 with a short bob, a blazer over a striped blouse and a lanyard, smiling with a folder under her arm, who is a maestra de historia at the Museo Casa de Allende, San Miguel de Allende. Include the carved stone doorway behind her. Bold, saturated colour: pink stone, ochre and teal. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You teach history at a secondary school and often bring your classes to the house on the Jardín where Ignacio Allende was born in 1769, now a museum. You like telling how Allende and Father Hidalgo started the fight for independence in 1810, and that the town added Allende's name to its own in 1826.",
+    },
+    {
+      id: 'ramon-mirador',
+      name: "Don Ramón Ledesma",
+      gender: 'm',
+      age: 74,
+      role: "jubilado",
+      placeId: 'el-mirador-san-miguel',
+      personality: ["calm", "nostalgic", "good storyteller"],
+      portraitPrompt: "Gouache portrait of a man of 74 with a white moustache, a straw hat and a light jacket, leaning on a cane, who is a jubilado at El Mirador above the town, San Miguel de Allende. Include the pink Parroquia spires and rooftops below. Bold, saturated colour: sunset pink, gold and dusky blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You walk up to El Mirador most evenings to watch the sun go down over San Miguel, with the pink Parroquia in the middle of the view. You were born here when it was a quiet town, and you like telling how the artists and foreigners came after the war and changed it.",
     },
   ],
   food: [
