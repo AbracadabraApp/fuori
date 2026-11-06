@@ -69,9 +69,15 @@ const show = (t: Turn[], name: string) => t.map((x) => `${x.who === 'npc' ? name
 async function visits(p: typeof picks[number], lv: typeof LEVELS[number]) {
   const character: CharacterSheet = p.character;
   const beginner = lv.level === 'Beginner';
-  const turn = (transcript: Turn[], learnerSaid: string | undefined, memory: Parameters<typeof runTurn>[0]['memory']) => beginner
-    ? runBeginnerTurn({ character, transcript, learnerSaid, memory, stageText: stageText(STAGES.S2, character.role), maxAnswers: STAGES.S2.answers, withDone: true })
-    : runTurn({ character, transcript, learnerSaid, memory, withDone: true });
+  const ms: number[] = [];
+  const turn = async (transcript: Turn[], learnerSaid: string | undefined, memory: Parameters<typeof runTurn>[0]['memory']) => {
+    const t0 = Date.now();
+    const r = await (beginner
+      ? runBeginnerTurn({ character, transcript, learnerSaid, memory, stageText: stageText(STAGES.S2, character.role), maxAnswers: STAGES.S2.answers, withDone: true })
+      : runTurn({ character, transcript, learnerSaid, memory, withDone: true }));
+    ms.push(Date.now() - t0);
+    return r;
+  };
   let notes: string[] = [];
   const all: Turn[][] = [];
   for (let v = 0; v < VISITS; v++) {
@@ -95,7 +101,7 @@ Be honest about comprehension. Write ONLY what you say next, as speech-to-text w
     const m = await summarizeWithClaude({ character: { name: character.name, age: character.age, role: character.role, city: character.city }, notes, turns: transcript.map((t) => ({ who: t.who, text: t.transcript })) });
     notes = m.notes;
   }
-  return { ...p, level: lv.level, name: character.name, here: character.appearance?.setting ?? '', visits: all };
+  return { ...p, level: lv.level, name: character.name, here: character.appearance?.setting ?? '', visits: all, ms };
 }
 
 const VISIT_JUDGE = `You read one visit in a language-learning game: a learner talking to a person at a shop or bar. Judge the CHARACTER's lines (numbered):
@@ -108,7 +114,7 @@ const visitSchema = { type: 'object', additionalProperties: false, required: ['p
 const REPEAT_JUDGE = `You read three visits, on different days, by the same learner to the same character. List the things the character brought up (a story, a fact, a topic, a joke, an offer), with the visit numbers each came up in, and count how many the character told again on a later visit as if new (picking up a thread the learner asked about doesn't count; the purchase itself doesn't count).`;
 const repeatSchema = { type: 'object', additionalProperties: false, required: ['things', 'repeated'], properties: { things: { type: 'array', items: { type: 'object', additionalProperties: false, required: ['thing', 'visits'], properties: { thing: { type: 'string' }, visits: { type: 'array', items: { type: 'integer' } } } } }, repeated: { type: 'integer' } } };
 
-const SWAP_JUDGE = `You read two first visits at the same kind of place in two different towns. swappable is true if, with the names of the people, places and towns changed, either conversation could just as well have happened at the other place. Then why, one sentence.`;
+const SWAP_JUDGE = `You read two first visits at the same kind of place in two different towns. Ignore the names of people, places and towns, and the local products named. Compare the beats: what each line of the character does (greeting, asking what they'd like, a choice, how it's served, the price, card or cash, the receipt, goodbye; or talk about something, and what). swappable is true if the two visits go through the same beats in much the same order, and whatever else was talked about could have been said at either place. Then why, one sentence.`;
 const swapSchema = { type: 'object', additionalProperties: false, required: ['swappable', 'why'], properties: { swappable: { type: 'boolean' }, why: { type: 'string' } } };
 
 const runs = await pool(picks.flatMap((p) => LEVELS.map((lv) => () => visits(p, lv))), 6);
@@ -130,13 +136,17 @@ const pairs = LEVELS.flatMap((lv) => {
 const swaps = await pool(pairs.map((pr) => async () => ({ ...pr, ...(JSON.parse(await ask(`Place A: ${pr.a.place.name}, ${pr.a.city.name}\n${show(pr.a.visits[0], pr.a.name)}\n\nPlace B: ${pr.b.place.name}, ${pr.b.city.name}\n${show(pr.b.visits[0], pr.b.name)}`, { system: SWAP_JUDGE, schema: swapSchema, max: 1000 })) as { swappable: boolean; why: string }) })), 6);
 
 const pct = (a: number, b: number) => `${b ? Math.round((100 * a) / b) : 0}%`;
-let md = `# Conversation variety, ${label}, ${pack.id}, ${new Date().toISOString().slice(0, 10)}\n\n${picks.length} places × ${VISITS} visits × 2 levels, up to ${TURNS} learner turns a visit, memory carried between visits.\n\nPrompts: ${versions}. Commit: ${commit}.\n\n`;
-md += `| Level | Purchase lines | Clichés (visits with one) | Something particular to the town | Planted idea, visit 1 / visit 3 | Told again on a later visit (per character) | Swappable pairs |\n|---|---|---|---|---|---|---|\n`;
+let md = `# Conversation variety, ${label}, ${pack.id}, ${new Date().toISOString().slice(0, 10)}\n\n${picks.length} places × ${VISITS} visits × 2 levels, up to ${TURNS} learner turns a visit, memory carried between visits. Reply time is the turn call alone, with 6 conversations at once per run (compare runs made the same way, not with the app).\n\nPrompts: ${versions}. Commit: ${commit}.\n\n`;
+const q = (xs: number[], f: number) => { const a = [...xs].sort((x, y) => x - y); return a.length ? a[Math.min(a.length - 1, Math.floor(f * a.length))] : 0; };
+const words = (t: string) => t.split(/\s+/).filter(Boolean).length;
+md += `| Level | Reply time, median / 90th | Words a line | Purchase lines | Clichés (visits with one) | Something particular to the town | Planted idea, visit 1 / visit 3 | Told again on a later visit (per character) | Swappable pairs |\n|---|---|---|---|---|---|---|---|---|\n`;
 for (const lv of LEVELS) {
   const rs = judged.filter((r) => r.level === lv.level);
   const vs = rs.flatMap((r) => r.perVisit);
   const sw = swaps.filter((s) => s.level === lv.level);
-  md += `| ${lv.level} | ${pct(vs.reduce((n, v) => n + v.purchase.length, 0), vs.reduce((n, v) => n + v.lines, 0))} | ${vs.filter((v) => v.cliches.length).length}/${vs.length} | ${vs.filter((v) => v.particular).length}/${vs.length} | ${rs.filter((r) => r.perVisit[0]?.planted.length).length}/${rs.length} / ${rs.filter((r) => r.perVisit[2]?.planted.length).length}/${rs.length} | ${(rs.reduce((n, r) => n + r.rep.repeated, 0) / rs.length).toFixed(1)} | ${sw.filter((s) => s.swappable).length}/${sw.length} |\n`;
+  const ms = rs.flatMap((r) => r.ms);
+  const npcLines = rs.flatMap((r) => r.visits.flatMap((t) => t.filter((x) => x.who === 'npc')));
+  md += `| ${lv.level} | ${(q(ms, 0.5) / 1000).toFixed(1)} / ${(q(ms, 0.9) / 1000).toFixed(1)} s | ${Math.round(npcLines.reduce((n, x) => n + words(x.transcript), 0) / npcLines.length)} | ${pct(vs.reduce((n, v) => n + v.purchase.length, 0), vs.reduce((n, v) => n + v.lines, 0))} | ${vs.filter((v) => v.cliches.length).length}/${vs.length} | ${vs.filter((v) => v.particular).length}/${vs.length} | ${rs.filter((r) => r.perVisit[0]?.planted.length).length}/${rs.length} / ${rs.filter((r) => r.perVisit[2]?.planted.length).length}/${rs.length} | ${(rs.reduce((n, r) => n + r.rep.repeated, 0) / rs.length).toFixed(1)} | ${sw.filter((s) => s.swappable).length}/${sw.length} |\n`;
 }
 md += `\n## Per character\n\n| Level | Place | Purchase lines | Clichés | Planted ideas by visit | Told again |\n|---|---|---|---|---|---|\n`;
 for (const r of judged) md += `| ${r.level} | ${r.place.name}, ${r.city.name} | ${r.perVisit.map((v) => pct(v.purchase.length, v.lines)).join(' · ')} | ${r.perVisit.flatMap((v) => v.cliches).join('; ') || '—'} | ${r.perVisit.map((v) => v.planted.join(', ') || '—').join(' · ')} | ${r.rep.repeated}: ${r.rep.things.filter((t) => t.visits.length > 1).map((t) => `${t.thing} (${t.visits.join(',')})`).join('; ')} |\n`;
