@@ -66,6 +66,7 @@ some principles of dialogue we've learned"). Results are in
   adding cases (Josh, 2026-11-06: "maybe as simple as stay in your role";
   "even that is repetitive").
 - **Small tests first.** Try an idea on the two or three places that show the problem, one level, one or two visits; widen to the full gate only when it shows promise (Josh, 2026-11-06: "smaller tests that show promise before going broader").
+- **Make sure the test can show the problem.** A simulated learner who asks for a ticket makes the character talk about tickets; a judge asked about "errands" counted Beto's "¿Quiere tacos o pizza?" as one, though he stayed a taxi driver (Josh: "he didn't change roles"). Test one fixed moment where the character alone decides, read every line before trusting a count, and pick approaches that differ in kind (a rule, a fact, a deletion) to learn the most (Josh, 2026-11-06: "every experiment should maximize learning, not results").
 - **Measure against noise.** Run today's code twice before a change, one
   change per row, the same cases and judges, with prompt versions, commit and
   reply time recorded; a change counts only if it moves a number beyond the
