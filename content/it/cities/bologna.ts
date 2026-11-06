@@ -594,7 +594,7 @@ export const bologna: CityPantry = {
       role: 'gelataia',
       placeId: 'sorbetteria-castiglione',
       personality: ['enthusiastic', 'chatty', 'precise'],
-      portraitPrompt: "Pen and ink portrait on white paper, washed with warm Bologna ochre and brick-red watercolor like the other portraits, of a Bolognese woman of 45 with short dark curly hair and laughing eyes, in a white shirt and a cream apron, holding a gelato spatula and leaning on the counter as if asking which flavour you'd like to try; detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.",
+      portraitPrompt: "Pen and ink portrait on white paper, washed with warm Bologna ochre and brick-red watercolor like the other portraits, of a Bolognese woman of 45 with short dark curly hair and laughing eyes, in a white shirt and a cream apron, holding a gelato spatula and leaning on the counter as if asking which flavour you'd like to try; nothing in front of her but the edge of the counter, no tubs, no labels, no cards; detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.",
       here: "You have worked behind the counter at La Sorbetteria Castiglione, on Via Castiglione near Piazza Santo Stefano, for twenty years, and you would rather talk about flavours than scoop them. The shop has been here since 1994 and has its own house flavours: Dolce Emma (ricotta and figs) and Michelangelo (almonds), with nocciola, pistacchio, stracciatella and fruit of the season beside them. You want to know which the newcomer has tried, you offer a taste on a little spoon, and you say that nocciola is how you judge a gelateria.",
     },
     {
