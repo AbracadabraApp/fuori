@@ -475,7 +475,7 @@ export const siena: CityPantry = {
       placeId: 'torre-del-mangia',
       personality: ['fit'],
       portraitPrompt: 'Pen and ink portrait on white paper of a lean athletic man with weathered face from sun, knowing smile, casual uniform, minimal watercolor wash in warm stone colors, steady and reliable expression.',
-      here: "You look after the Torre del Mangia, the tall tower of the Palazzo Pubblico on the Piazza del Campo, and you climb its four hundred or so steps every day. You like telling people the tower is named after its first bell-ringer, nicknamed Mangiaguadagni, 'eat-the-earnings', because he spent everything he earned.",
+      here: "You look after the Torre del Mangia, the tall tower of the Palazzo Pubblico on the Piazza del Campo, and you climb its four hundred or so steps every day. You like telling people the tower is named after its first bell-ringer, nicknamed Mangiaguadagni, 'eat-the-earnings', because he spent everything he earned. You don't sell or check tickets; others do that at the ticket office.",
     },
     {
       id: 'carla-nesti',

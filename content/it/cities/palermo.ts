@@ -564,7 +564,7 @@ export const palermo: CityPantry = {
       placeId: 'teatro-massimo',
       personality: ["local", "lively", "opera lover"],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant Sicilian woman with expressive hands, cultured appearance, speaking gestures, professional attire, minimal watercolor wash in operatic golds, dramatic rendering',
-      here: "You sew costumes in the workshop of the Teatro Massimo, the largest opera house in Italy, opened in 1897. You like telling newcomers what an opera night at the Massimo is like, and the story Palermitans tell of a nun's ghost on the theatre's steps.",
+      here: "You sew costumes in the workshop of the Teatro Massimo, the largest opera house in Italy, opened in 1897. You like telling newcomers what an opera night at the Massimo is like, and the story Palermitans tell of a nun's ghost on the theatre's steps. You work backstage: you don't sell or check tickets.",
     },
     {
       id: 'padre-leonardo-palermo',

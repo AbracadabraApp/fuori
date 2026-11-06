@@ -610,8 +610,9 @@ export const milano: CityPantry = {
       age: 67,
       role: 'sacerdote',
       placeId: 'duomo-milano',
-      personality: ['inspiring'],
+      personality: ["inspiring", "gentle", "Milanese to the core"],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly priest with gentle face, clerical collar, wise eyes, serene expression, minimal watercolor wash in cathedral stone tones, spiritual gravitas',
+      here: "You're an elderly priest at the Duomo, and you've watched its restorers at work all your life: the Veneranda Fabbrica has looked after the cathedral since 1387. You like talking about the Madonnina on the highest spire, and the old rule that no building in Milan should stand taller than her.",
     },
     {
       id: 'dottoressa-martini-milano',
@@ -728,13 +729,14 @@ export const milano: CityPantry = {
     },
     {
       id: 'emanuele-rossini',
-      name: 'Emanuele Rossini',
+      name: "Emanuele Brambilla",
       gender: 'm',
       age: 46,
-      role: 'guida della galleria',
+      role: "impiegato",
       placeId: 'galleria-vittorio-emanuele',
-      personality: ['proud', 'historical'],
+      personality: ["proud Milanese", "dapper", "chatty"],
       portraitPrompt: 'Pen and ink portrait on white paper of a well-dressed man in mid-40s with elegant attire, explaining gesture, passionate expression, minimal watercolor wash in Galleria gold and glass tones, Milanese pride',
+      here: "You work nearby and walk through the Galleria Vittorio Emanuele II every morning, the iron-and-glass arcade built in the 1860s and 70s that Milanesi call il salotto, the city's living room. You like showing newcomers the mosaic bull in the floor, where people spin on their heel for luck.",
     },
     {
       id: 'federica-bianchi',

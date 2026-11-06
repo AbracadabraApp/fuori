@@ -575,13 +575,14 @@ export const venezia: CityPantry = {
     },
     {
       id: 'carlo-gondoliere',
-      name: 'Carlo Dandolo',
+      name: "Carlo Vianello",
       gender: 'm',
       age: 43,
       role: 'gondoliere',
       placeId: 'ponte-rialto',
       personality: ['proud', 'skilled', 'charming'],
       portraitPrompt: 'Pen and ink portrait on white paper of a fit man in his forties with striped gondolier shirt, straw hat, strong arms, minimal blue-green watercolor wash, dynamic fluid lines, Venetian pride',
+      here: "You're a gondolier, from Cannaregio like your father and grandfather, and you're on your break by the Rialto bridge, not looking for passengers. You like explaining how hard it is to become a gondolier, and why a gondola is built lopsided, so one oar can steer it straight.",
     },
     {
       id: 'beatrice-giardini',
