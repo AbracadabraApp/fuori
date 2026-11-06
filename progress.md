@@ -170,6 +170,26 @@ Still to do, on the laptop (needs keys, Railway, the Mac):
 - Live tests: two runs hung five minutes on one request ("fetch failed"), Italy and Mexico; not reproduced in five later runs; server answered turns in 2–3 s. smoke:live now times a call out after a minute and names it (de51e0c). Final runs on 2026-10-31: both countries pass end to end.
 - Next: install the stamps build on Josh's phone (ask first); Josh to confirm the N6 order and the three blockers.
 
+## Thickening place: the plan (Josh, 2026-11-05)
+Planned with Josh in the cloud session. Josh approves every piece of art twice: the written look before generating, the pictures before they ship.
+
+**1 · First cut, every city**
+- [ ] Day and month: branch `claude/today-line`; live-test and merge. *Mac* (handed off)
+- [ ] Weather: `content/<country>/weather.json`, made-up seasonal lists per city and month. *Cloud* (writing now)
+- [ ] Weather: `lib/weather.ts`, a pick per city per day seeded by city and local date; a line after the day line; after `claude/today-line` merges. *Mac* (handed off)
+- [ ] Stations, every city: list which cities have one; write the missing ones, the clerk, and each station's destinations (city, its particular thing, travel time). *Cloud*
+- [ ] Station art: the look in words, Josh approves; then the pictures, Josh approves. *Cloud, then Mac*
+- [ ] Station in the app: departures board, ticket, Sali. *Mac*
+
+**2 · Trials in Rome (then keep, change or drop; Josh plays them)**
+- [ ] Cinema, open to every level: place, person, a short list of Italian films with a line each (*Cloud*); art approved by Josh; trailer route on the server and the YouTube player copied from MovieGenius (*Mac*).
+- [ ] Sound: a loop for Rome's market; Josh listens and decides. *Mac*
+- [ ] Cut-away pictures at Trattoria Da Nino (the cacio e pepe, the room): the cloud picks 3–4 and a `show` field; the Mac generates them (Josh approves) and builds the cut.
+
+**3 · City passes, one city at a time (order: Josh)**
+Each city: the cloud audits its open places, `here` lines and art (English or French signs, the pale generic look); proposes the open place to add and the errand it replaces (usually the second bar), the `here` lines to rewrite, the pictures to redraw and the city's look in a line (Josh approves); writes and judges the new place and lines; the Mac redraws the pictures (Josh approves); the city's cinema and sound join if the trials worked; Josh plays it.
+Found so far: the 12 "more" cities have 1 open place each (2 in Bergamo and Orvieto) against Rome's 7; many of their pictures are pale and generic, some with English or French signs ("Oakdale Pharmacy", "Gare de Belleville"); a count of all 288 is running.
+
 ## Next, by session (2026-11-03, Josh)
 **Mac (Claude Code in the fuori folder; the only one that can call the API and build for the phone):**
 1. `git pull` on main.
