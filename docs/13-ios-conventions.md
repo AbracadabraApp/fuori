@@ -186,7 +186,7 @@ Good already: one `NavigationStack` (`RootView.swift:11`), standard back swipe, 
 
 ## 6. Done checklist for any iOS screen
 
-Add to "Definition of done" for every Swift screen, and say in the commit which items were checked:
+**Replaced 2026-11-06 by CLAUDE.md → iPhone app → "Testing a screen"** (Josh: "we do not need to optimize for non mic and huge text - its slowing everything down"; "its a language app that uses the mic and voice"). The list below is kept as the HIG reference; follow CLAUDE.md for what to check before calling a screen done.
 
 1. Largest accessibility text size (AX5): nothing clipped or overlapping; order unchanged.
 2. Dark Mode and Increase Contrast (or the documented light-only exception while D1 is open).
