@@ -182,6 +182,14 @@ Still to do, on the laptop (needs keys, Railway, the Mac):
 - Live tests: two runs hung five minutes on one request ("fetch failed"), Italy and Mexico; not reproduced in five later runs; server answered turns in 2–3 s. smoke:live now times a call out after a minute and names it (de51e0c). Final runs on 2026-10-31: both countries pass end to end.
 - Next: install the stamps build on Josh's phone (ask first); Josh to confirm the N6 order and the three blockers.
 
+## For the Mac: branches waiting (cloud session, 2026-11-05 evening)
+Each is checked and pushed; run smoke:live on it, then merge. Josh approves every new picture before it ships.
+1. `claude/food-chips`: four food culture chips per country in content/<country>/culture.json (sets 6 → 10), fact-judged. Play one cultural lesson per country, then merge.
+2. `claude/mexico-rewrite`: Mexico's 25 Beginner lessons → 23 chips (three paying lessons added), judged. `COUNTRY=es-mx` smoke:live, then merge (lessons done under old ids won't show as done).
+3. `claude/osteria-nino` (Rome trial, Josh approved the 9 picture descriptions): Nino Ferretti (the oste, 74) at Osteria da Nino; `Place.menu` (six dishes) and `Place.pictures` (six plates and the room). To build: generate Nino's portrait, the place picture and the 7 cut-aways (Josh approves); the menu as very readable text over the picture (Josh: "must be very readable"; Dynamic Type to AX5, 4.5:1 or better, VoiceOver in Italian; no tapping, no ordering); the cut-away (`show` in the reply, this place's ids only, crossfade, plain swap with Reduce Motion). Tests: asking to order or pay keeps Nino himself.
+4. `claude/bologna-pass` (pilot city pass; includes osteria-nino): Portici di San Luca, Sfoglia Rina and Santo Stefano shown in place of Mercato di Mezzo, Bar Senza Nome and the pharmacy; La Sorbetteria Castiglione (Sara Bertolini, a board of six flavours, no cut-aways) in place of Cremeria Funivia; the city's look (from Josh's own photos) in all ten place prompts. To build: generate the ten pictures, the Sorbetteria's and Sara's portrait (Josh approves); the board uses Da Nino's menu display; smoke:live at the four new places; Josh plays Bologna.
+5. Station on the iPhone (port from the website, app/components/Ticket.tsx): the station card becomes a button → departures board → seller's screen with the ticket strip; Sali is the conversation screen's end button (endButton/onEnd, beside the mic from the start; label from content); onEnd travels through the one leave function.
+
 ## Thickening place: the plan (Josh, 2026-11-05)
 Planned with Josh in the cloud session. Josh approves every piece of art twice: the written look before generating, the pictures before they ship.
 
