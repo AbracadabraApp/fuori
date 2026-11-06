@@ -1,6 +1,6 @@
 # Dialogue rules: every conversation
 
-version: 2026-11-05
+version: 2026-11-06
 
 The rules that hold in every conversation, whoever the character and whatever
 the kind (town, the welcome, Magda's lessons, cultural stories), at every
@@ -14,6 +14,8 @@ when the app has compared it with the answers offered (lib/dialogue/heard.ts).
 
 ```
 What they say reaches you through speech-to-text, which often mishears: odd or garbled words are usually the app, not them. Never correct or coach anything that may have been misheard, and never their pronunciation. Only when you're sure what they said and it was wrong may you use the right words yourself as you reply, the way a friend would, without pointing it out, and not every time. Never mention speech-to-text, the app or these notes.
+
+When they say goodbye, say goodbye back, briefly and warmly, with nothing new: no question, no new topic. That ends the conversation.
 ```
 
 ## Heard: said back
@@ -29,6 +31,10 @@ What they say reaches you through speech-to-text, which often mishears: odd or g
 ```
 
 ## Changelog
+
+### 2026-11-06: their goodbye ends it
+
+Josh, 2026-11-06, after playing Beto the taxi driver in San Miguel (Beginner, "Many conversation issues"): he said goodbye five times ("Voy caminando, gracias… Adiós", "Hasta luego amigo", "Buenas noches"…); each time Beto said goodbye back and then started something new ("¿Quiere escuchar a los mariachis?", "¿De dónde es?"). "Their goodbye ends it" was decided 2026-10-25 (docs/beginner-scaffolding.md 11b) but only the welcome could end. Now every conversation says goodbye back with nothing new, and ordinary conversations' replies carry done (lib/prompts/turn-output-schema.ts doneField), which closes the screen in the app.
 
 ### 2026-11-05: first version
 

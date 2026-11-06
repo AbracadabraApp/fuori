@@ -6,7 +6,7 @@
 import { fixMojibake } from '@/lib/mojibake';
 import { z } from 'zod';
 import { anthropic, TURN_MODEL, replyText, finalWithDeadline } from '@/lib/claude';
-import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
+import { turnOutputJsonSchema, turnOutputWithDoneJsonSchema } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
 import type { CharacterSheet, Gender, Turn } from '@/lib/types';
 import type { Laps } from '@/lib/timing';
@@ -15,6 +15,7 @@ import { lineWhenWritten } from '@/lib/voice/early-voice';
 export const TurnOutputSchema = z.object({
   line: z.string().describe('What the character says, in the language the person is learning'),
   en: z.string().describe('English translation of the reply'),
+  done: z.boolean().optional(),
 });
 
 export type TurnReply = z.infer<typeof TurnOutputSchema>;
@@ -41,6 +42,8 @@ export async function runTurn(params: {
   onText?: (snapshot: string) => void;
   /** False once part of this reply was sent on: then a stall fails instead of retrying (lib/claude.ts) */
   canRetry?: () => boolean;
+  /** An ordinary conversation: the reply also says whether it ends here (they said goodbye) */
+  withDone?: boolean;
 }): Promise<TurnReply> {
   const prompt = buildTurnPrompt(params);
 
@@ -61,7 +64,7 @@ export async function runTurn(params: {
     system: prompt.system,
     messages: prompt.messages,
     output_config: {
-      format: { type: 'json_schema', schema: turnOutputJsonSchema },
+      format: { type: 'json_schema', schema: params.withDone ? turnOutputWithDoneJsonSchema : turnOutputJsonSchema },
     },
   });
   if (laps) stream.once('text', () => laps.mark('claudeFirstToken', performance.now() - started));

@@ -13,6 +13,7 @@
  * say back aren't in it) and `en` are derived from the parts, so saving,
  * memory, Learn and the voice work as for any turn.
  */
+import { doneField } from '@/lib/prompts/turn-output-schema';
 import { z } from 'zod';
 import { anthropic, TURN_MODEL, replyText, finalWithDeadline } from '@/lib/claude';
 import { readPromptFile, fill } from '@/lib/prompts/template';
@@ -66,7 +67,7 @@ export const partsJsonSchema = {
 export const partsWithDoneJsonSchema = {
   ...partsJsonSchema,
   required: ['parts', 'done'],
-  properties: { ...partsJsonSchema.properties, done: { type: 'boolean' } },
+  properties: { ...partsJsonSchema.properties, done: doneField },
 };
 
 export function beginnerPromptVersion(): string {
@@ -292,7 +293,7 @@ export class PartsWatcher {
 }
 
 /** One Beginner turn: the parts, and the line and English derived from them */
-export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { laps?: Laps; onText?: (snapshot: string) => void; canRetry?: () => boolean; /** The stage's answers to say back, at most (lib/path.ts) */ maxAnswers?: number; /** The welcome (lib/welcome.ts): the reply also says whether this is its last turn */ withDone?: boolean }): Promise<{ line: string; en: string; parts: Part[]; done?: boolean }> {
+export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { laps?: Laps; onText?: (snapshot: string) => void; canRetry?: () => boolean; /** The stage's answers to say back, at most (lib/path.ts) */ maxAnswers?: number; /** The reply also says whether this is its last turn (the welcome; an ordinary conversation, on their goodbye) */ withDone?: boolean }): Promise<{ line: string; en: string; parts: Part[]; done?: boolean }> {
   const prompt = buildBeginnerPrompt(p);
   const started = performance.now();
   // A deadline and one retry (lib/claude.ts): a stalled reply hung Doña Rosa

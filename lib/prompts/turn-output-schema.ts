@@ -19,3 +19,16 @@ export const turnOutputJsonSchema = {
   },
   required: ['line', 'en'],
 };
+
+/** What ends a conversation: their goodbye, said back (docs/beginner-scaffolding.md 11b; Josh, 2026-11-06, Beto) */
+export const doneField = {
+  type: 'boolean',
+  description: 'True only when this reply ends the conversation: they have said goodbye and you say goodbye back',
+};
+
+/** An ordinary conversation's reply: the line, its English, and whether it ends here */
+export const turnOutputWithDoneJsonSchema = {
+  ...turnOutputJsonSchema,
+  properties: { ...turnOutputJsonSchema.properties, done: doneField },
+  required: ['line', 'en', 'done'],
+};

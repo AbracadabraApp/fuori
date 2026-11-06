@@ -290,7 +290,8 @@ export interface TurnOutput {
   en: string;
   /** Beginner level dialogue (lib/beginner.ts): the turn in parts; `line` is them all, in order */
   parts?: import('@/lib/beginner').Part[];
-  /** The welcome (lib/welcome.ts): its last turn; the app shows the button in place of the mic */
+  /** The last turn: the welcome's (the app shows the button in place of the mic), a lesson's, or an
+   *  ordinary conversation's after their goodbye (the app closes the screen after it's said) */
   done?: boolean;
   /** The welcome's opening: the answers are buttons to tap, and the mic stays closed */
   tapAnswers?: boolean;

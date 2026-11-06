@@ -296,7 +296,9 @@ public final class ConversationModel {
     /// Show and speak a line, then open the learner's turn
     private func present(_ reply: APIClient.TurnReply, generation: Int) async {
         guard generation == self.generation else { return }
-        if endButton != nil, reply.done == true { finished = true }
+        // The last turn: the welcome's or a lesson's (the end button), or their
+        // goodbye said back in any other conversation (the screen closes)
+        if reply.done == true { finished = true }
         tapAnswers = reply.tapAnswers == true
         canEnd = endButton != nil && (trip != nil || reply.canEnd == true)
         scaffolding = reply.replies == true
@@ -517,7 +519,7 @@ public final class ConversationModel {
     /// `micClosed`: after an interruption the mic waits for a tap, hands-free too
     private func openTurn(micClosed: Bool = false) async {
         ring = 0
-        // The welcome's last line has been said: the button, never the mic
+        // The last line has been said: the end button, or the screen closes; never the mic
         if finished {
             phase = .finished
             return

@@ -18,6 +18,7 @@ struct PersonView: View {
     @AppStorage(SettingsKey.debug) private var debug = false
     @State private var showingLearn = false
     @Environment(AppModel.self) private var appModel
+    @Environment(\.dismiss) private var dismiss
 
     init(model: ConversationModel) {
         _model = State(initialValue: model)
@@ -59,6 +60,15 @@ struct PersonView: View {
         .onDisappear { model.leave() }
         .onChange(of: scenePhase) { _, phase in
             if phase == .background { model.backgrounded() }
+        }
+        // Their goodbye, said back, ends it (docs/beginner-scaffolding.md 11b):
+        // once it's been said, back to the place, saving as every exit does
+        .onChange(of: model.phase) { _, phase in
+            guard phase == .finished, model.endButton == nil else { return }
+            Task {
+                try? await Task.sleep(for: .seconds(1.5))
+                dismiss()
+            }
         }
     }
 

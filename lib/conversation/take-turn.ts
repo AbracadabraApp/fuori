@@ -152,7 +152,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         return { ...r, parts, done: step === 'answers' && r.done === true, ...welcomeTurnFlags(step) };
       })()
     : beginner && onPath
-    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: stageText(onPath.stage, character.role), maxAnswers: onPath.stage.answers })
+    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: stageText(onPath.stage, character.role), maxAnswers: onPath.stage.answers, withDone: true })
     : await runTurn({
     character,
     transcript,
@@ -165,6 +165,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     laps: p.laps,
     onText: p.onText,
     canRetry: p.canRetry,
+    // Their goodbye, said back, ends it (docs/beginner-scaffolding.md 11b)
+    withDone: true,
   });
   p.laps?.lap('claude');
 
