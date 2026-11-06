@@ -8,7 +8,7 @@ import Testing
         let cases: [(String, String, Int, Int)] = [
             ("roma-nuova", "firenze", 5, 65),
             ("matera", "napoli", 6, 82),
-            ("ciudad-de-mexico", "oaxaca", 8, 63),
+            ("east-terminal", "south-city", 2, 81),
             ("san-miguel-de-allende", "guadalajara", 12, 84),
             ("venezia", "bologna", 5, 70),
         ]
