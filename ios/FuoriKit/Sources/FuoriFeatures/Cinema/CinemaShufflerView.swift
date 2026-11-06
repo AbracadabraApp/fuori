@@ -3,11 +3,37 @@ import FuoriCore
 import FuoriDesign
 import FuoriNetworking
 
-/// Where the cinema shuffler is (debug builds only for now: `-FuoriOpen cinema`)
-struct CinemaShufflerRoute: Hashable {}
+/// The cinema, opened by the film reel before Learn (Josh, 2026-11-06: "Could also add
+/// a film reel icon next to learn", tried with the family): a sheet over the game,
+/// like Learn, closed with its X. `-FuoriOpenCinema YES` opens it at launch (debug)
+struct CinemaSheet: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            Group {
+                if let api = model.api { CinemaShufflerView(api: api) } else { Tokens.Colors.ink }
+            }
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button { dismiss() } label: { Image(systemName: "xmark") }
+                        .accessibilityLabel("Close")
+                }
+            }
+        }
+        // Its trailer screens keep Learn and Settings but not the reel: it's open already
+        .environment(\.insideCinema, true)
+    }
+}
+
+extension EnvironmentValues {
+    /// Inside the cinema sheet: the toolbar leaves out the film reel
+    @Entry var insideCinema = false
+}
 
 /// The cinema shuffler (Josh, 2026-11-06: "experimental - Netflix style shuffler -
-/// reference movie genius home", not linked from the game yet): shelves of posters,
+/// reference movie genius home"): shelves of posters,
 /// each scrolling sideways, as on MovieGenius's home. The shelves and the posters on
 /// them come in a new order each time the page opens, and again on pull to refresh.
 /// A poster opens the film's videos (TrailerView): the trailer first, then the full
@@ -51,7 +77,6 @@ struct CinemaShufflerView: View {
         .toolbarBackground(Tokens.Colors.ink, for: .navigationBar)
         .toolbarColorScheme(.dark, for: .navigationBar)
         #endif
-        .settingsToolbar()
         .navigationDestination(for: FilmRoute.self) { route in TrailerView(film: route.film) }
         // Once per visit: coming back from a trailer keeps the order
         .task { if rows.isEmpty { await load() } }

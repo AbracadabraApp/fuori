@@ -26,6 +26,8 @@ public struct Content: Codable, Sendable, Equatable {
     public let lessonAreas: [LessonArea]?
     /// The Learn page's cultural lessons, outside the lesson sets (lib/culture.ts); nil from servers before 2026-11-04
     public let culture: [CultureChip]?
+    /// The country has a cinema shuffler (GET /v1/cinema), opened by the film reel by Learn; nil from servers before 2026-11-06
+    public let cinema: Bool?
     public let characters: [String: Character]
 
     /// A lesson by its step id
