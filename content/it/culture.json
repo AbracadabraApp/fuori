@@ -7,7 +7,11 @@
     "siena-the-painted-drappellone",
     "bologna-the-stolen-bucket",
     "matera-the-tearing-of-the-cart",
-    "venezia-sior-rioba-s-iron-nose"
+    "venezia-sior-rioba-s-iron-nose",
+    "siena-osteria-trattoria-ristorante",
+    "palermo-how-a-meal-goes",
+    "torino-slow-food",
+    "bologna-dop-and-doc"
   ],
   "items": [
     {
@@ -522,6 +526,82 @@
       "id": "palermo-arancina-not-arancino",
       "cityId": "palermo",
       "placeId": "osteria-ballarò"
+    },
+    {
+      "chip": "Osteria, trattoria, ristorante",
+      "teller": "chiara-castellani",
+      "topic": "food",
+      "facts": "An osteria was historically a tavern where people came mainly to drink wine, and the oste, the host, served a few simple local dishes to go with it, from a short menu. A trattoria is usually family-run, with home cooking and a menu that often changes with the day. A ristorante is more formal, with waiters, tablecloths and a longer menu. Today the names blur, and many osterie like this one serve full meals, but an osteria or a trattoria is still where you go for local food at a fair price, and a ristorante is for a special occasion.",
+      "words": [
+        {
+          "said": "l'oste",
+          "en": "the host of an osteria"
+        },
+        {
+          "said": "la cucina casalinga",
+          "en": "home cooking"
+        }
+      ],
+      "id": "siena-osteria-trattoria-ristorante",
+      "cityId": "siena",
+      "placeId": "osteria-le-logge"
+    },
+    {
+      "chip": "How a meal goes",
+      "teller": "carmela-todaro",
+      "topic": "food",
+      "facts": "A full Italian meal starts with the antipasto, small starters like cured meats or vegetables. Then comes the primo, usually pasta, rice or soup, and then the secondo, meat or fish, served with a contorno, a side dish of vegetables. After that comes the dolce, the dessert, and the meal ends with a caffè, an espresso. Most days people do not eat every course: at a trattoria many order just a primo, or a secondo with a contorno. The whole meal is for Sundays, holidays and family gatherings.",
+      "words": [
+        {
+          "said": "il primo",
+          "en": "the first course"
+        },
+        {
+          "said": "il contorno",
+          "en": "the side dish"
+        }
+      ],
+      "id": "palermo-how-a-meal-goes",
+      "cityId": "palermo",
+      "placeId": "trattoria-ai-cascinari"
+    },
+    {
+      "chip": "Slow food",
+      "teller": "anna-fruttivendola",
+      "topic": "food",
+      "facts": "Slow Food grew out of a group Carlo Petrini started in the 1980s in Bra, a small town in Piedmont not far from Turin. It took off after protests in 1986 against a fast-food restaurant opening by the Spanish Steps in Rome. The movement stands for food that is good, clean and fair: it tastes good, it is grown without harming the land, and the people who grow it are paid fairly. It asks people to eat local food in its season, the way you shop at a market like Porta Palazzo. Its big food fair, Terra Madre Salone del Gusto, is held in Turin.",
+      "words": [
+        {
+          "said": "di stagione",
+          "en": "in season"
+        },
+        {
+          "said": "lento",
+          "en": "slow"
+        }
+      ],
+      "id": "torino-slow-food",
+      "cityId": "torino",
+      "placeId": "mercato-porta-palazzo"
+    },
+    {
+      "chip": "DOP and DOC",
+      "teller": "bruno-simoni",
+      "topic": "food",
+      "facts": "DOP stands for Denominazione di Origine Protetta, protected designation of origin: a food with this label must come from its own area and be made by set rules. Parmigiano Reggiano and Prosciutto di Parma are both DOP, so real Parmigiano can only come from a small area that includes Parma, Reggio Emilia, Modena and part of the province of Bologna. For wine the labels are DOC and DOCG, controlled origin, and DOCG adds a guarantee with stricter rules; Chianti is a DOCG wine. The labels protect both the people who make the food and the people who buy it.",
+      "words": [
+        {
+          "said": "l'origine",
+          "en": "the origin"
+        },
+        {
+          "said": "il marchio",
+          "en": "the mark, the brand"
+        }
+      ],
+      "id": "bologna-dop-and-doc",
+      "cityId": "bologna",
+      "placeId": "salumeria-simoni"
     }
   ]
 }

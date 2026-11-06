@@ -7,7 +7,11 @@
     "oaxaca-cochineal-the-red-from-cactus",
     "guadalajara-romeria-of-the-generala",
     "ciudad-de-mexico-the-cathedral-that-sinks",
-    "san-miguel-de-allende-who-began-independence"
+    "san-miguel-de-allende-who-began-independence",
+    "san-miguel-de-allende-fonda-puesto-restaurante",
+    "ciudad-de-mexico-comida-corrida",
+    "oaxaca-why-tortillas-use-lime",
+    "oaxaca-mezcal-s-own-origin-label"
   ],
   "items": [
     {
@@ -332,6 +336,82 @@
       "id": "puebla-blue-and-white-talavera",
       "cityId": "puebla",
       "placeId": "cafe-cielo-rojo"
+    },
+    {
+      "chip": "Fonda, puesto, restaurante",
+      "teller": "chelo-cocinera",
+      "topic": "food",
+      "facts": "A fonda is a small place, often run by a family, that serves the day's home cooking at a fair price, and many people eat there at midday. A puesto is a stall, in the street or in a market, where you stand or sit on a stool for tacos, quesadillas, tamales or a juice. A restaurante is a full sit-down place with waiters, a printed menu and higher prices, for a special meal or a long dinner. Mexicans eat at all three, and many say the best food is at the fonda or the puesto.",
+      "words": [
+        {
+          "said": "el puesto",
+          "en": "the stall"
+        },
+        {
+          "said": "la sazón",
+          "en": "the cook's touch"
+        }
+      ],
+      "id": "san-miguel-de-allende-fonda-puesto-restaurante",
+      "cityId": "san-miguel-de-allende",
+      "placeId": "fonda-la-palmita"
+    },
+    {
+      "chip": "Comida corrida",
+      "teller": "cuca-cocinera",
+      "topic": "food",
+      "facts": "The comida corrida is a set lunch served at fondas and cocinas económicas, usually from about one to five in the afternoon, when Mexicans eat their main meal of the day. For one price you get several courses in a row: first a soup, then rice or a sopa seca like pasta, then a main dish, the guisado, with tortillas. An agua fresca comes with it, and sometimes a small dessert like gelatina or arroz con leche. It is cheap and filling, which is why office workers and students eat it every day.",
+      "words": [
+        {
+          "said": "el guisado",
+          "en": "the stew (the main dish)"
+        },
+        {
+          "said": "el agua fresca",
+          "en": "the cold drink of fruit, flowers or rice"
+        }
+      ],
+      "id": "ciudad-de-mexico-comida-corrida",
+      "cityId": "ciudad-de-mexico",
+      "placeId": "fonda-dona-cuca"
+    },
+    {
+      "chip": "Why tortillas use lime",
+      "teller": "ofelia-tlayudas",
+      "topic": "food",
+      "facts": "Before corn becomes masa, it is cooked and soaked in water with cal, lime, which is calcium hydroxide. This is called nixtamalización, from the Nahuatl words for ash and dough. The lime loosens the tough skin of the kernel, so the corn can be ground into a dough that holds together for tortillas and tlayudas. It also makes the corn more nutritious, freeing niacin, a B vitamin, and adding calcium. People in Mesoamerica have made their corn this way for thousands of years.",
+      "words": [
+        {
+          "said": "la cal",
+          "en": "lime"
+        },
+        {
+          "said": "el nixtamal",
+          "en": "corn cooked with lime"
+        }
+      ],
+      "id": "oaxaca-why-tortillas-use-lime",
+      "cityId": "oaxaca",
+      "placeId": "tlayudas-mercado-20-de-noviembre"
+    },
+    {
+      "chip": "Mezcal's own origin label",
+      "teller": "emiliano-los-amantes",
+      "topic": "food",
+      "facts": "Mezcal has had its own denominación de origen since 1994, so only spirits from certain states can carry the name. By far the most mezcal comes from Oaxaca. It is made from the heart of the agave, the piña, cooked slowly, traditionally in a pit in the ground, which gives it its smoky taste; then it is crushed, fermented and distilled. Tequila is in fact a kind of mezcal, made only from blue agave, with its own denominación de origen centred on Jalisco.",
+      "words": [
+        {
+          "said": "el maguey",
+          "en": "the agave plant"
+        },
+        {
+          "said": "la piña",
+          "en": "the agave heart"
+        }
+      ],
+      "id": "oaxaca-mezcal-s-own-origin-label",
+      "cityId": "oaxaca",
+      "placeId": "mezcaleria-los-amantes"
     }
   ]
 }
