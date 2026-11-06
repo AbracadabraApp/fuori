@@ -11,6 +11,7 @@ import { language } from '@/content';
 import type { CharacterSheet, Gender, Turn } from '../types';
 import { withDialogueRules } from '@/lib/dialogue/rules';
 import { withToday } from '@/lib/today';
+import { cityIdFor } from '@/lib/weather';
 
 /** What the character remembers about this learner (from character_memories) */
 export interface RememberedLearner {
@@ -148,7 +149,7 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
     role: character.role,
     city: character.city,
     language: language.name,
-    setting: withToday(character.appearance?.setting ?? '', now),
+    setting: withToday(character.appearance?.setting ?? '', now, cityIdFor(character)),
     traits: character.personality.traits.join(', '),
     formality: `${language.formality[character.speech.formality]} (${character.speech.formality})`,
     english,
