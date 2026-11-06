@@ -1,5 +1,5 @@
 {
- "about": "The cinema shuffler (Josh, 2026-11-06, experimental, not linked from the game): rows of posters shuffled on each visit, as on MovieGenius home. Films from the 100 Italian films table (TMDB: Italian title, poster, videos with Italian first); fullFilm is a full-length YouTube upload found by searching YouTube, checked by title and running time, playable in other apps. Adults-only films are left out. Shelf titles are shown as written.",
+ "about": "The cinema shuffler (Josh, 2026-11-06, experimental, not linked from the game): rows of posters shuffled on each visit, as on MovieGenius home. Films from the 100 Italian films table (TMDB: Italian title, poster, videos with Italian first); fullFilm is a full-length YouTube upload found by searching YouTube, checked by title and running time, playable in other apps. Adults-only films are left out. Shelf titles are shown as written. The rule (Josh, 2026-11-06, agreed): a film is in only with at least one video in the learned language, its trailer or the full film; a full film is a bonus, not required.",
  "fullFilmName": "Film completo",
  "shelves": [
   {
@@ -36,7 +36,6 @@
     239877,
     9474,
     58013,
-    38251,
     768334,
     12776,
     359156,
@@ -91,7 +90,6 @@
     17295,
     26451,
     20345,
-    42229,
     8416
    ]
   },
@@ -124,14 +122,12 @@
     239877,
     9474,
     58013,
-    38251,
     33365,
     12776,
     57112,
     250235,
     11829,
     606954,
-    439584,
     492282,
     380225,
     6916,
@@ -205,7 +201,6 @@
    "films": [
     381341,
     179144,
-    10867,
     364433,
     538362,
     722778,
@@ -735,75 +730,6 @@
     "youtube": "6y6yHWGxt-g",
     "language": null
    }
-  },
-  {
-   "tmdbId": 10867,
-   "title": "Malèna",
-   "year": 2000,
-   "posterUrl": "https://image.tmdb.org/t/p/w500/p1DmuHTnvhsWFvWX0xnMWrLBVZ5.jpg",
-   "videos": [
-    {
-     "youtube": "73FrJrCgJCI",
-     "type": "Trailer",
-     "name": "Imprint Blu-ray Trailer",
-     "language": "en"
-    },
-    {
-     "youtube": "SxqUoUvNBXY",
-     "type": "Trailer",
-     "name": "Official Trailer",
-     "language": "en"
-    },
-    {
-     "youtube": "5Dd6bDz6pB8",
-     "type": "Trailer",
-     "name": "\"Malena\" Official Trailer HD",
-     "language": "en"
-    },
-    {
-     "youtube": "v2gYHJ6JLlo",
-     "type": "Clip",
-     "name": "‘Cheater’",
-     "language": "en"
-    },
-    {
-     "youtube": "HsHoMBPU8gY",
-     "type": "Clip",
-     "name": "‘By Your Side’",
-     "language": "en"
-    },
-    {
-     "youtube": "Rk5mVCU7C9s",
-     "type": "Clip",
-     "name": "‘Schoolboy’",
-     "language": "en"
-    },
-    {
-     "youtube": "KvauJa0qgec",
-     "type": "Clip",
-     "name": "‘Gawking’",
-     "language": "en"
-    },
-    {
-     "youtube": "1MNtOEYnCLA",
-     "type": "Clip",
-     "name": "‘Hard Times’",
-     "language": "en"
-    },
-    {
-     "youtube": "x_lpTmBnjnA",
-     "type": "Clip",
-     "name": "‘Long Pants’",
-     "language": "en"
-    },
-    {
-     "youtube": "D9RVooitft4",
-     "type": "Clip",
-     "name": "‘Beauty’",
-     "language": "en"
-    }
-   ],
-   "fullFilm": null
   },
   {
    "tmdbId": 5156,
@@ -2117,24 +2043,6 @@
    "fullFilm": null
   },
   {
-   "tmdbId": 38251,
-   "title": "Mediterraneo",
-   "year": 1991,
-   "posterUrl": "https://image.tmdb.org/t/p/w500/wfJ2flMchZPQCSdt8h3ZQNSW7Ym.jpg",
-   "videos": [
-    {
-     "youtube": "Q3WJvaEjAlU",
-     "type": "Trailer",
-     "name": "Mediterraneo - Trailer",
-     "language": "en"
-    }
-   ],
-   "fullFilm": {
-    "youtube": "-BCSiSUk2bE",
-    "language": null
-   }
-  },
-  {
    "tmdbId": 33365,
    "title": "Notte prima degli esami",
    "year": 2006,
@@ -2451,21 +2359,6 @@
     "youtube": "v5fEk1ih7I8",
     "language": "it"
    }
-  },
-  {
-   "tmdbId": 439584,
-   "title": "Smetto quando voglio - Ad honorem",
-   "year": 2017,
-   "posterUrl": "https://image.tmdb.org/t/p/w500/guhMZZFeBAQMiHsssbcOGPA1laN.jpg",
-   "videos": [
-    {
-     "youtube": "B6rIaWl3EBw",
-     "type": "Trailer",
-     "name": "CinemaItaliaUK \"I Can Quit Whenever I Want\" (Smetto Quando Voglio)",
-     "language": "en"
-    }
-   ],
-   "fullFilm": null
   },
   {
    "tmdbId": 1127166,
@@ -3237,33 +3130,6 @@
     "youtube": "UfF3c2N9kUM",
     "language": "it"
    }
-  },
-  {
-   "tmdbId": 42229,
-   "title": "Una giornata particolare",
-   "year": 1977,
-   "posterUrl": "https://image.tmdb.org/t/p/w500/xaiFqvBA0IYGFDu2sEAszAFl3nF.jpg",
-   "videos": [
-    {
-     "youtube": "i_9BAH_qO-4",
-     "type": "Trailer",
-     "name": "Original Trailer",
-     "language": "en"
-    },
-    {
-     "youtube": "KloWrqcHAF0",
-     "type": "Trailer",
-     "name": "4K Restoration Trailer",
-     "language": "en"
-    },
-    {
-     "youtube": "--Mxb3_xU9M",
-     "type": "Featurette",
-     "name": "Sophia Loren on Working with Marcello Mastroianni",
-     "language": "en"
-    }
-   ],
-   "fullFilm": null
   },
   {
    "tmdbId": 1109255,

@@ -4,7 +4,8 @@
  * for each "Title (Year)" it finds the TMDB film, whether it has a trailer in
  * the learned language and any trailer at all (TMDB videos), and whether
  * YouTube has a full-length upload that other apps may play (title matches,
- * length within 12% of the running time, embedding allowed). Prints a table
+ * length within 12% of the running time, embedding allowed) and its spoken
+ * language, then applies the library's rule (passes). Prints a table
  * and writes JSON next to the input, so a list of suggestions can be judged
  * before anything is added.
  *
@@ -65,6 +66,24 @@ async function youtubeSearch(q) {
   return out;
 }
 
+/**
+ * The language spoken in a video: YouTube's automatic captions are made in the
+ * language it hears, so their code is the audio's. Null when YouTube won't say
+ * (no automatic captions, or it refuses this network: from the cloud session it
+ * answers 429; run from the laptop). Never guessed from the title.
+ */
+async function spokenLanguage(id) {
+  try {
+    const res = await fetch(`https://www.youtube.com/watch?v=${id}&hl=${LANG}`, { headers: { 'User-Agent': 'Mozilla/5.0', 'Accept-Language': LANG } });
+    if (!res.ok) return null;
+    const html = await res.text();
+    const asr = html.match(/"languageCode":"([a-z-]+)"[^}]*?"kind":"asr"/);
+    return asr ? asr[1].slice(0, 2) : null;
+  } catch {
+    return null;
+  }
+}
+
 async function embeddable(id) {
   const res = await fetch(`https://www.youtube.com/oembed?${new URLSearchParams({ url: `https://www.youtube.com/watch?v=${id}`, format: 'json' })}`);
   return res.ok;
@@ -104,8 +123,20 @@ async function check(line) {
     poster: Boolean(details.poster_path),
     localTrailer: trailers(local).length > 0,
     anyTrailer: trailers(local).length + trailers(all).length > 0,
-    fullFilm: full && { youtube: full.id, channel: full.channel, length: full.length, title: full.title },
+    fullFilm: full && { youtube: full.id, channel: full.channel, length: full.length, title: full.title, language: await spokenLanguage(full.id) },
   };
+}
+
+/**
+ * The library's rule (Josh, 2026-11-06): in only with at least one video in the
+ * learned language, its trailer or the full film; a full film is a bonus.
+ * Null when only a full film of unknown language could let it in
+ */
+function passes(r) {
+  if (r.localTrailer) return true;
+  if (r.fullFilm?.language === LANG) return true;
+  if (r.fullFilm && r.fullFilm.language == null) return null;
+  return false;
 }
 
 const lines = fs.readFileSync(process.argv[2], 'utf8').split('\n').map((l) => l.trim()).filter(Boolean);
@@ -117,8 +148,8 @@ for (const line of lines) {
     results.push({ asked: line, error: String(err.message || err) });
   }
   const r = results.at(-1);
-  console.log([r.asked.padEnd(42), r.found === false ? 'not on TMDB' : r.error ?? `${r.localTrailer ? `${LANG} trailer` : r.anyTrailer ? 'trailer (other)' : 'no trailer'} | ${r.fullFilm ? `full: ${r.fullFilm.length} ${r.fullFilm.channel}` : 'no full film'}`].join(' '));
+  console.log([r.asked.padEnd(42), r.found === false ? 'not on TMDB' : r.error ?? `${r.localTrailer ? `${LANG} trailer` : r.anyTrailer ? 'trailer (other)' : 'no trailer'} | ${r.fullFilm ? `full: ${r.fullFilm.length} ${r.fullFilm.language ?? 'language unknown'} ${r.fullFilm.channel}` : 'no full film'} | ${passes(r) ? 'IN' : passes(r) === null ? 'check the full film\'s language' : 'out'}`].join(' '));
 }
 fs.writeFileSync(process.argv[2].replace(/\.\w+$/, '') + '.checked.json', JSON.stringify(results, null, 1));
 const ok = (r) => r.tmdbId;
-console.log(`\n${results.filter(ok).length} found; ${results.filter((r) => r.localTrailer).length} with a ${LANG} trailer; ${results.filter((r) => r.anyTrailer).length} with any trailer; ${results.filter((r) => r.fullFilm).length} with a full film; ${results.filter((r) => r.localTrailer && r.fullFilm).length} with both`);
+console.log(`\n${results.filter((r) => passes(r)).length} in by the rule; ${results.filter((r) => passes(r) === null).length} to check; ${results.filter(ok).length} found; ${results.filter((r) => r.localTrailer).length} with a ${LANG} trailer; ${results.filter((r) => r.anyTrailer).length} with any trailer; ${results.filter((r) => r.fullFilm).length} with a full film; ${results.filter((r) => r.localTrailer && r.fullFilm).length} with both`);
