@@ -3946,9 +3946,9 @@
       "path": "/Users/josh.petersen/fuori/public/images/places/trattoria-ai-cascinari.jpg",
       "type": "place"
     },
-    "palermo/osteria-ballar\u00f2": {
+    "palermo/osteria-ballarò": {
       "timestamp": "2026-10-10T08:12:31.659Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/osteria-ballar\u00f2.jpg",
+      "path": "/Users/josh.petersen/fuori/public/images/places/osteria-ballarò.jpg",
       "type": "place"
     },
     "palermo/antica-focacceria-san-francesco": {
@@ -4432,8 +4432,8 @@
       "type": "portrait"
     },
     "siena/carla-nesti": {
-      "timestamp": "2026-10-10T08:40:42.038Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/carla-nesti.jpg",
+      "timestamp": "2026-11-06T23:08:12.782Z",
+      "path": "/Users/josh.petersen/fuori-bologna/public/images/portraits/carla-nesti.jpg",
       "type": "portrait"
     },
     "siena/stefano-vini": {
@@ -4926,9 +4926,9 @@
       "path": "/Users/josh.petersen/fuori/public/images/places/piazza-ix-aprile.jpg",
       "type": "place"
     },
-    "taormina/chiesa-var\u00f2": {
+    "taormina/chiesa-varò": {
       "timestamp": "2026-10-10T09:10:29.748Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/chiesa-var\u00f2.jpg",
+      "path": "/Users/josh.petersen/fuori/public/images/places/chiesa-varò.jpg",
       "type": "place"
     },
     "taormina/enoteca-nero": {
@@ -6935,9 +6935,9 @@
     }
   },
   "stats": {
-    "total": 1382,
-    "completed": 1382,
-    "failed": 0,
-    "lastRun": "2026-11-06T05:54:02.702Z"
+    "total": 1386,
+    "completed": 1385,
+    "failed": 1,
+    "lastRun": "2026-11-06T23:08:15.796Z"
   }
 }
