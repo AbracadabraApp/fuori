@@ -25,6 +25,18 @@ if (!KEY || !process.argv[2]) {
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// Network hiccups through a proxy ("fetch failed") come in bursts: retry with a pause, then give up
+const fetchOnce = globalThis.fetch;
+globalThis.fetch = async (url, init) => {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      return await fetchOnce(url, init);
+    } catch (err) {
+      if (attempt >= 3) throw err;
+      await sleep(3000 * 2 ** attempt);
+    }
+  }
+};
 const norm = (s) => s.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
 const minutes = (len) => {
   const p = (len || '').split(':').map(Number);
