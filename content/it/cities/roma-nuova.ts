@@ -61,7 +61,7 @@ export const romaNuova: CityPantry = {
               {
                       "id": "osteria-da-nino-amatriciana",
                       "shows": "amatriciana",
-                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of bucatini all'amatriciana in a red tomato sauce with guanciale and pecorino, on a table with a white paper tablecloth, a fork and a glass of water beside it, in a small osteria. No people, no lettering anywhere in the picture."
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of bucatini all'amatriciana (thick hollow bucatini, not spaghetti) in a red tomato sauce with guanciale and pecorino, on a table with a white paper tablecloth, a fork and a glass of water beside it, in a small osteria. No people, no lettering anywhere in the picture."
               },
               {
                       "id": "osteria-da-nino-carbonara",
