@@ -38,7 +38,7 @@ struct PersonView: View {
                 VStack(spacing: 8) {
                     // A food place's menu at the top of the picture (MenuBoard)
                     if let menu = model.place.menu, !menu.isEmpty {
-                        MenuBoard(items: menu, speechLanguage: model.speechLanguage)
+                        MenuBoard(items: menu, title: appModel.content?.language.ui.menu, speechLanguage: model.speechLanguage)
                             .padding(.horizontal, Tokens.Space.gutter)
                             .padding(.top, 12)
                     }

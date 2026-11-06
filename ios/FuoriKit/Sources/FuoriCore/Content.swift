@@ -58,6 +58,8 @@ public struct Language: Codable, Sendable, Equatable {
 /// Interface words in the language being learned (content/<country>/language.ts)
 public struct UIWords: Codable, Sendable, Equatable {
     public let showMore: String
+    /// Over a food place's menu or board ("Menu"); nil from servers before 2026-11-06
+    public let menu: String?
     public let whereTo: String
     public let youAreHere: String
     /// Say it in English: the label on what the learner said ("Come si dice:");

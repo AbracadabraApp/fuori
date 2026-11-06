@@ -23,6 +23,7 @@ export const language = {
   /** Interface words */
   ui: {
     showMore: 'Mostra altro', // under the city and place feeds
+    menu: 'Menu', // over a food place's menu or board on the conversation screen
     /** The ticket at the station (app/components/Ticket.tsx) */
     ticket: {
       vehicle: 'train' as const,

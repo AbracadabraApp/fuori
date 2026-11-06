@@ -9,24 +9,45 @@ import FuoriDesign
 /// Nothing to tap: you order by talking.
 struct MenuBoard: View {
     let items: [String]
+    /// The word over it, in the language ("Menu"); none from older servers
+    let title: String?
     let speechLanguage: String
 
+    @Environment(\.dynamicTypeSize) private var typeSize
+
     var body: some View {
+        // Two columns so the card stays short and the face shows (Josh,
+        // 2026-11-06); one column at accessibility sizes, never cutting a name
+        let columns = typeSize.isAccessibilitySize ? 1 : 2
         VStack(alignment: .leading, spacing: 6) {
-            ForEach(items, id: \.self) { item in
-                Text(tagged(item))
-                    .typeface(.display, 20, relativeTo: .title3, weight: .semibold)
-                    .foregroundStyle(Tokens.Colors.ink)
-                    .fixedSize(horizontal: false, vertical: true)
+        if let title {
+            Text(tagged(title))
+                .typeface(.display, 15, relativeTo: .subheadline, weight: .bold)
+                .textCase(.uppercase)
+                .kerning(1)
+                .foregroundStyle(Tokens.Colors.muted)
+                .accessibilityAddTraits(.isHeader)
+        }
+        Grid(alignment: .leading, horizontalSpacing: 20, verticalSpacing: 6) {
+            ForEach(Array(stride(from: 0, to: items.count, by: columns)), id: \.self) { row in
+                GridRow {
+                    ForEach(row..<min(row + columns, items.count), id: \.self) { i in
+                        Text(tagged(items[i]))
+                            .typeface(.display, 20, relativeTo: .title3, weight: .semibold)
+                            .foregroundStyle(Tokens.Colors.ink)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, 14)
+        }
+        .padding(.vertical, 12)
         .padding(.horizontal, 16)
         .background(Tokens.Colors.paper, in: RoundedRectangle(cornerRadius: 12))
         .overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(Tokens.Colors.herEdge, lineWidth: 1))
+        // As wide as its names, on the left
+        .frame(maxWidth: .infinity, alignment: .leading)
         .accessibilityElement(children: .contain)
-        .accessibilityLabel("Menu")
     }
 
     private func tagged(_ item: String) -> AttributedString {
