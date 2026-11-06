@@ -31,6 +31,11 @@ public actor APIClient {
         try await send(request("v1/content", timeout: Self.loadTimeout), signedIn: false)
     }
 
+    /// The cinema shuffler's shelves (Josh, 2026-11-06, experimental); no sign-in, like content
+    public func cinema() async throws -> CinemaShelves {
+        try await send(request("v1/cinema", timeout: Self.loadTimeout), signedIn: false)
+    }
+
     /// Loading a country (content, then the learner) gives up after this, so a
     /// stalled connection shows "Can't reach the server" with Try Again rather
     /// than a spinner for a minute (URLSession's default)

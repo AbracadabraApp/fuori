@@ -1,5 +1,6 @@
 import SwiftUI
 import FuoriCore
+import FuoriNetworking
 import FuoriDesign
 
 /// Loading, then the city list; a failure shows the server's message and a
@@ -130,6 +131,10 @@ public struct RootView: View {
                             .navigationDestination(for: City.self) { city in
                                 PlaceListView(city: city, content: content)
                             }
+                            // The cinema shuffler: debug builds only for now (`-FuoriOpen cinema`), not linked from the game
+                            .navigationDestination(for: CinemaShufflerRoute.self) { _ in
+                                if let api = model.api { CinemaShufflerView(api: api) }
+                            }
                             .navigationDestination(for: PersonRoute.self) { route in
                                 if let person = content.character(route.place.characterId),
                                    let conversation = model.conversation(city: route.city, place: route.place, character: person) {
@@ -163,7 +168,7 @@ public struct RootView: View {
         }
     }
 
-    /// Debug builds only: `-FuoriOpen <cityId>/<placeId>[/<tmdbId>]` opens that place (a cinema: its films, or one film) at
+    /// Debug builds only: `-FuoriOpen <cityId>/<placeId>[/<tmdbId>]` opens that place (a cinema: its films, or one film), or `-FuoriOpen cinema` the cinema shuffler, at
     /// launch, for screenshots and simulator checks without tapping.
     /// The bubble gallery replaces the city list (debug only)
     private static var galleryOn: Bool {
@@ -178,6 +183,8 @@ public struct RootView: View {
         #if DEBUG
         guard let target = UserDefaults.standard.string(forKey: "FuoriOpen"),
               let content = model.content else { return }
+        // `cinema`: the cinema shuffler (experimental, Josh, 2026-11-06)
+        if target == "cinema" { path.append(CinemaShufflerRoute()); return }
         let parts = target.split(separator: "/").map(String.init)
         guard let city = content.city(parts[0]) else { return }
         path.append(city)

@@ -1,0 +1,3458 @@
+{
+ "about": "The cinema shuffler (Josh, 2026-11-06, experimental, not linked from the game): rows of posters shuffled on each visit, as on MovieGenius home. Films from the 100 Italian films table (TMDB: Italian title, poster, videos with Italian first); fullFilm is a full-length YouTube upload found by searching YouTube, checked by title and running time, playable in other apps. Adults-only films are left out. Shelf titles are shown as written.",
+ "fullFilmName": "Film completo",
+ "shelves": [
+  {
+   "id": "full",
+   "title": "Film interi",
+   "films": [
+    11216,
+    381341,
+    938,
+    11906,
+    152742,
+    5156,
+    364433,
+    483184,
+    38286,
+    439,
+    538362,
+    231176,
+    35554,
+    20126,
+    53319,
+    1026227,
+    9394,
+    85038,
+    356296,
+    593402,
+    468198,
+    11010,
+    7857,
+    336,
+    405,
+    8832,
+    27670,
+    239877,
+    9474,
+    58013,
+    38251,
+    768334,
+    12776,
+    359156,
+    10772,
+    11829,
+    307,
+    303542,
+    1040,
+    25300,
+    571468,
+    17295,
+    24653,
+    26451,
+    6916,
+    24169,
+    24188,
+    20345,
+    40794,
+    24382,
+    10599,
+    8416
+   ]
+  },
+  {
+   "id": "rome",
+   "title": "A Roma",
+   "films": [
+    307,
+    5156,
+    19426,
+    422,
+    8832,
+    571468,
+    179144,
+    381341,
+    364433,
+    40794,
+    1026227
+   ]
+  },
+  {
+   "id": "classics",
+   "title": "I grandi classici",
+   "films": [
+    11906,
+    5156,
+    422,
+    20126,
+    405,
+    307,
+    1040,
+    17295,
+    26451,
+    20345,
+    42229,
+    8416
+   ]
+  },
+  {
+   "id": "comedy",
+   "title": "Da ridere",
+   "films": [
+    637,
+    310593,
+    374416,
+    38286,
+    439,
+    48415,
+    250219,
+    231176,
+    50531,
+    35554,
+    53319,
+    1026227,
+    9394,
+    636565,
+    38396,
+    85038,
+    593402,
+    11010,
+    7857,
+    406385,
+    38397,
+    27670,
+    239877,
+    9474,
+    58013,
+    38251,
+    33365,
+    12776,
+    57112,
+    250235,
+    11829,
+    606954,
+    439584,
+    492282,
+    380225,
+    6916,
+    25606,
+    310126,
+    24169,
+    19426,
+    24188,
+    40794,
+    56909,
+    24382,
+    10599,
+    435921
+   ]
+  },
+  {
+   "id": "western",
+   "title": "Western all'italiana",
+   "films": [
+    429,
+    335,
+    391,
+    938,
+    9394,
+    336,
+    9474,
+    10772,
+    11829
+   ]
+  },
+  {
+   "id": "thrills",
+   "title": "Brividi",
+   "films": [
+    11906,
+    483184,
+    314405,
+    20126,
+    575452,
+    356296,
+    468198,
+    468202,
+    768334,
+    25300,
+    24653,
+    26451,
+    20345
+   ]
+  },
+  {
+   "id": "crime",
+   "title": "Mafia e malavita",
+   "films": [
+    152742,
+    483184,
+    575452,
+    8882,
+    356296,
+    406385,
+    38397,
+    239877,
+    468202,
+    359156,
+    25300,
+    24382
+   ]
+  },
+  {
+   "id": "today",
+   "title": "Storie di oggi",
+   "films": [
+    381341,
+    179144,
+    10867,
+    364433,
+    538362,
+    722778,
+    413518,
+    8832,
+    1127166,
+    375572,
+    571468,
+    244088,
+    803700,
+    937746,
+    1109255,
+    481432
+   ]
+  }
+ ],
+ "films": [
+  {
+   "tmdbId": 637,
+   "title": "La vita è bella",
+   "year": 1997,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/fuzbu9hFSDskrwjVKvcEUzp4DDH.jpg",
+   "videos": [
+    {
+     "youtube": "ao71lV1NJsc",
+     "type": "Trailer",
+     "name": "La Vita è bella - Trailer italiano",
+     "language": "it"
+    },
+    {
+     "youtube": "pAYEQP8gx3w",
+     "type": "Trailer",
+     "name": "Life is Beautiful (1998) Official Trailer - Robert Benigni Movie HD",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 429,
+   "title": "Il buono, il brutto, il cattivo",
+   "year": 1966,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/n9HRt5Uq6iY9u6rdaFUHCBg14sg.jpg",
+   "videos": [
+    {
+     "youtube": "qMrZBXMGDbU",
+     "type": "Trailer",
+     "name": "Il Buono Il Brutto Il Cattivo - Ver. Restaurata dal 17 Luglio al Cinema",
+     "language": "it"
+    },
+    {
+     "youtube": "tcOvFoSmuDI",
+     "type": "Clip",
+     "name": "Il buono, il brutto,  il cattivo (Film completo HD)",
+     "language": "it"
+    },
+    {
+     "youtube": "WCnRSl24FPA",
+     "type": "Trailer",
+     "name": "Official Sizzle",
+     "language": "en"
+    },
+    {
+     "youtube": "IFNUGzCOQoI",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "3VQjSSB78es",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "pyTW_E1st-w",
+     "type": "Clip",
+     "name": "Tuco's Ambush",
+     "language": "en"
+    },
+    {
+     "youtube": "00y8Oajzjs0",
+     "type": "Clip",
+     "name": "The Bounty Scheme",
+     "language": "en"
+    },
+    {
+     "youtube": "9sDUQt4suHk",
+     "type": "Clip",
+     "name": "Opening Scene",
+     "language": "en"
+    },
+    {
+     "youtube": "9aRhYxWC7bM",
+     "type": "Featurette",
+     "name": "Arrow UHD Unboxing",
+     "language": "en"
+    },
+    {
+     "youtube": "v0EOrGaQEW8",
+     "type": "Featurette",
+     "name": "Danny Trejo announces THE GOOD, THE BAD AND THE UGLY for AFI Movie Club",
+     "language": "en"
+    },
+    {
+     "youtube": "a2T_zJFZ3us",
+     "type": "Featurette",
+     "name": "2010 Governors Awards -- Clint Eastwood on Eli Wallach",
+     "language": "en"
+    },
+    {
+     "youtube": "OLNktcDs05Y",
+     "type": "Featurette",
+     "name": "Ernest Dickeron on THE GOOD, THE BAD, AND THE UGLY",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 335,
+   "title": "C'era una volta il West",
+   "year": 1968,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3MPqF2iK6ZBoagnB5H1pjImHpHc.jpg",
+   "videos": [
+    {
+     "youtube": "xTsbuHA5XqE",
+     "type": "Trailer",
+     "name": "C'era una volta il West (film 1968) TRAILER ITALIANO",
+     "language": "it"
+    },
+    {
+     "youtube": "Yw-Av9BpC-w",
+     "type": "Trailer",
+     "name": "Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "CPuHpKxo0A0",
+     "type": "Clip",
+     "name": "Epic Final Duel",
+     "language": "en"
+    },
+    {
+     "youtube": "Ar3sHQB_rbU",
+     "type": "Featurette",
+     "name": "John Landis on Once Upon a Time in the West",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 11216,
+   "title": "Nuovo Cinema Paradiso",
+   "year": 1988,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3hcXpztAe9L6VLpDGwohS01ZSxw.jpg",
+   "videos": [
+    {
+     "youtube": "JMyVSD6OvO8",
+     "type": "Trailer",
+     "name": "Cinema Paradiso Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "stLekU5BnbI",
+     "type": "Trailer",
+     "name": "Cinema Paradiso Official 25th Anniversary trailer from Arrow Films",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "a5ESbWUA0JY",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 391,
+   "title": "Per un pugno di dollari",
+   "year": 1964,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/zLt3exr82F2D3i3tDNvI6QGHFI5.jpg",
+   "videos": [
+    {
+     "youtube": "9mrKgY2XrY4",
+     "type": "Trailer",
+     "name": "'PER UN PUGNO DI DOLLARI' DI LEONE - dal 16 settembre nei cinema in versione restaurata (trailer)",
+     "language": "it"
+    },
+    {
+     "youtube": "8Eryqx8xQK8",
+     "type": "Trailer",
+     "name": "Per un Pugno di Dollari - Trailer 1 - Italiano",
+     "language": "it"
+    },
+    {
+     "youtube": "f_oZUWAdEe8",
+     "type": "Trailer",
+     "name": "Official Sizzle",
+     "language": "en"
+    },
+    {
+     "youtube": "aEkjT5A9iKc",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "RFWYI5buWlY",
+     "type": "Trailer",
+     "name": "4K Restoration Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "uHfvXu_Hv1s",
+     "type": "Clip",
+     "name": "Ramón Meets The Stranger",
+     "language": "en"
+    },
+    {
+     "youtube": "MdRfjPZ78VY",
+     "type": "Clip",
+     "name": "Looking For Anything?",
+     "language": "en"
+    },
+    {
+     "youtube": "rZ3sHPpiFhI",
+     "type": "Clip",
+     "name": "Get Rich Or Be Killed",
+     "language": "en"
+    },
+    {
+     "youtube": "mF15umGTscw",
+     "type": "Clip",
+     "name": "Shootout With the Guard",
+     "language": "en"
+    },
+    {
+     "youtube": "jYTLRo4fPUU",
+     "type": "Clip",
+     "name": "Rescuing the Family - Best Clint Eastwood Scene",
+     "language": "en"
+    },
+    {
+     "youtube": "SMAfLNTmsO0",
+     "type": "Clip",
+     "name": "Pistol vs. Rifle Scene",
+     "language": "en"
+    },
+    {
+     "youtube": "E6Hf0lsof-8",
+     "type": "Clip",
+     "name": "Get Three Coffins Ready",
+     "language": "en"
+    },
+    {
+     "youtube": "qaTWtrd5ryc",
+     "type": "Clip",
+     "name": "Final Duel",
+     "language": "en"
+    },
+    {
+     "youtube": "tokKPBMZ4As",
+     "type": "Featurette",
+     "name": "The Hero's Journey - Video Essay",
+     "language": "en"
+    },
+    {
+     "youtube": "FVBXBqfhbXU",
+     "type": "Featurette",
+     "name": "Arrow UHD Unboxing",
+     "language": "en"
+    },
+    {
+     "youtube": "UWR8E-WdZ8Q",
+     "type": "Featurette",
+     "name": "Fistful Of Dollars - Network Prologue",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 381341,
+   "title": "Perfetti sconosciuti",
+   "year": 2016,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/iiqiAMaBm4S62311XaqpIKuDDX.jpg",
+   "videos": [
+    {
+     "youtube": "Kp8JX3-b9tw",
+     "type": "Trailer",
+     "name": "Perfetti Sconosciuti - Trailer Ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "-lOUnBsjGuY",
+     "type": "Trailer",
+     "name": "PERFECT STRANGERS (2017) - Official HD Trailer - A film by Paolo Genovese",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "o6Ai2WPWHQ0",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 938,
+   "title": "Per qualche dollaro in più",
+   "year": 1965,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/xktkHWAdJ8kbVHrUxBnZkK3fb7z.jpg",
+   "videos": [
+    {
+     "youtube": "6yfCk2ugEf0",
+     "type": "Trailer",
+     "name": "Per Qualche Dollaro in Più (film 1965 ) TRAILER ITALIANO",
+     "language": "it"
+    },
+    {
+     "youtube": "Ku9NtEG6ivU",
+     "type": "Trailer",
+     "name": "per qualche dollaro in più trailer ita",
+     "language": "it"
+    },
+    {
+     "youtube": "xZm8i5sGlWI",
+     "type": "Trailer",
+     "name": "Official Sizzle",
+     "language": "en"
+    },
+    {
+     "youtube": "bNt9NcLteoU",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "flZ-im6YMGI",
+     "type": "Clip",
+     "name": "Mortimer Arrives in Town",
+     "language": "en"
+    },
+    {
+     "youtube": "NJ0tF1Vdy9U",
+     "type": "Clip",
+     "name": "Gunfight In The Church Scene",
+     "language": "en"
+    },
+    {
+     "youtube": "8edw1s8kEXk",
+     "type": "Clip",
+     "name": "Monco Shoots The Apple Tree",
+     "language": "en"
+    },
+    {
+     "youtube": "YxNtETgAkQ8",
+     "type": "Clip",
+     "name": "Monco Meets His Match",
+     "language": "en"
+    },
+    {
+     "youtube": "DoyP6LyJOas",
+     "type": "Clip",
+     "name": "Saloon Scene",
+     "language": "en"
+    },
+    {
+     "youtube": "oPV6APMgaPk",
+     "type": "Featurette",
+     "name": "Arrow UHD Unboxing",
+     "language": "en"
+    },
+    {
+     "youtube": "V0ploUdVBl0",
+     "type": "Featurette",
+     "name": "Best Shots in For a Few Dollars More (1965) | Compilation",
+     "language": "en"
+    },
+    {
+     "youtube": "cs1-y5E4UIE",
+     "type": "Featurette",
+     "name": "Ernest Dickerson on FOR A FEW DOLLARS MORE",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "5c45Eqgi9oY",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 179144,
+   "title": "La grande bellezza",
+   "year": 2013,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/oSIo4cCNEzV5zGu6Vavq2IorJR5.jpg",
+   "videos": [
+    {
+     "youtube": "cJ8O-Y2CXk8",
+     "type": "Trailer",
+     "name": "La Grande Bellezza - Trailer Ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "koxRDhAQOpw",
+     "type": "Trailer",
+     "name": "THE GREAT BEAUTY - Official HD Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 11906,
+   "title": "Suspiria",
+   "year": 1977,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/5ya8jTbNZTrCFUx9OwpNBjCivXY.jpg",
+   "videos": [
+    {
+     "youtube": "MVZ8-0qW59Q",
+     "type": "Trailer",
+     "name": "Suspiria (film 1977) TRAILER ITALIANO",
+     "language": "it"
+    },
+    {
+     "youtube": "x_FfT98QJks",
+     "type": "Trailer",
+     "name": "Suspiria - 4K Restoration Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "nhSzBqLJ1xg",
+     "type": "Trailer",
+     "name": "EYEBALL/SUSPIRIA - (1977) TV Trailer *DOUBLE BILL*",
+     "language": "en"
+    },
+    {
+     "youtube": "hPs2ExUL_bc",
+     "type": "Trailer",
+     "name": "Official Trailer: Suspiria (1977)",
+     "language": "en"
+    },
+    {
+     "youtube": "mSwMpktiQqU",
+     "type": "Clip",
+     "name": "Suspiria (1977) Discussing Witchcraft",
+     "language": "en"
+    },
+    {
+     "youtube": "Fl_QqXwlkv0",
+     "type": "Clip",
+     "name": "Suspiria (1977) Clip- Susie Escapes",
+     "language": "en"
+    },
+    {
+     "youtube": "GpIFLwyp5Ug",
+     "type": "Clip",
+     "name": "Suspiria - Helena Markos.mp4",
+     "language": "en"
+    },
+    {
+     "youtube": "PH9SO-fGAFI",
+     "type": "Featurette",
+     "name": "Dario Argento Introduces Suspiria",
+     "language": "en"
+    },
+    {
+     "youtube": "Fs4-DwhoG-c",
+     "type": "Featurette",
+     "name": "John Carpenter on Dario Argento",
+     "language": "en"
+    },
+    {
+     "youtube": "O3pDHxnZucg",
+     "type": "Featurette",
+     "name": "Suspiria reviewed by Mark Kermode",
+     "language": "en"
+    },
+    {
+     "youtube": "GCJkJ2c4E0Y",
+     "type": "Featurette",
+     "name": "Edgar Wright on SUSPIRIA (U.S. Trailer)",
+     "language": "en"
+    },
+    {
+     "youtube": "xCdJR1JwTI4",
+     "type": "Featurette",
+     "name": "Edgar Wright on SUSPIRIA (International Trailer)",
+     "language": "en"
+    },
+    {
+     "youtube": "Z2vre7RXndk",
+     "type": "Behind the Scenes",
+     "name": "Suspiria QnA with Jessica Harper 1 of 2",
+     "language": "en"
+    },
+    {
+     "youtube": "v0zyU3kjpvo",
+     "type": "Behind the Scenes",
+     "name": "Suspiria QnA with Jessica Harper 2 of 2",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "xb6FzZAj1vI",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 152742,
+   "title": "La migliore offerta",
+   "year": 2013,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/7rHT8tek4qXyVWiqOV3XphA7lz1.jpg",
+   "videos": [
+    {
+     "youtube": "rAvyBSxv_c0",
+     "type": "Trailer",
+     "name": "La Migliore Offerta di Giuseppe Tornatore - Trailer italiano ufficiale [HD]",
+     "language": "it"
+    },
+    {
+     "youtube": "zJGleGyahC8",
+     "type": "Trailer",
+     "name": "The Best Offer Official Trailer #1 (2013) - Geoffrey Rush, Jim Sturgess Movie HD",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "6y6yHWGxt-g",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 10867,
+   "title": "Malèna",
+   "year": 2000,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/p1DmuHTnvhsWFvWX0xnMWrLBVZ5.jpg",
+   "videos": [
+    {
+     "youtube": "73FrJrCgJCI",
+     "type": "Trailer",
+     "name": "Imprint Blu-ray Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "SxqUoUvNBXY",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "5Dd6bDz6pB8",
+     "type": "Trailer",
+     "name": "\"Malena\" Official Trailer HD",
+     "language": "en"
+    },
+    {
+     "youtube": "v2gYHJ6JLlo",
+     "type": "Clip",
+     "name": "‘Cheater’",
+     "language": "en"
+    },
+    {
+     "youtube": "HsHoMBPU8gY",
+     "type": "Clip",
+     "name": "‘By Your Side’",
+     "language": "en"
+    },
+    {
+     "youtube": "Rk5mVCU7C9s",
+     "type": "Clip",
+     "name": "‘Schoolboy’",
+     "language": "en"
+    },
+    {
+     "youtube": "KvauJa0qgec",
+     "type": "Clip",
+     "name": "‘Gawking’",
+     "language": "en"
+    },
+    {
+     "youtube": "1MNtOEYnCLA",
+     "type": "Clip",
+     "name": "‘Hard Times’",
+     "language": "en"
+    },
+    {
+     "youtube": "x_lpTmBnjnA",
+     "type": "Clip",
+     "name": "‘Long Pants’",
+     "language": "en"
+    },
+    {
+     "youtube": "D9RVooitft4",
+     "type": "Clip",
+     "name": "‘Beauty’",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 5156,
+   "title": "Ladri di biciclette",
+   "year": 1948,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/wgQ2WD0mIgCjIkKvUea6oWXZ95B.jpg",
+   "videos": [
+    {
+     "youtube": "_I_LgU9Hw5s",
+     "type": "Trailer",
+     "name": "Ladri di biciclette (Vittorio De Sica, 1948) Trailer Originale Italiano d'epoca",
+     "language": "it"
+    },
+    {
+     "youtube": "lP-TVGL7d8g",
+     "type": "Trailer",
+     "name": "LADRI DI BICICLETTE di Vittorio De Sica - Trailer (Il Cinema Ritrovato al cinema)",
+     "language": "it"
+    },
+    {
+     "youtube": "H2P4xo9kmPM",
+     "type": "Trailer",
+     "name": "Bicycle Thieves (1948) Trailer #1",
+     "language": "en"
+    },
+    {
+     "youtube": "d2Gs37JdQak",
+     "type": "Featurette",
+     "name": "Suso Cecchi D'Amico on BICYCLES THIEVES",
+     "language": "en"
+    },
+    {
+     "youtube": "NAvd8gFRfSQ",
+     "type": "Featurette",
+     "name": "Enzo Staiola on BICYCLE THIEVES",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "lwh0lG3gLg0",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 422,
+   "title": "8½",
+   "year": 1963,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/ja0uRnwFwnVFJlNMYL10orpjWtq.jpg",
+   "videos": [
+    {
+     "youtube": "PTmiA-uNSD8",
+     "type": "Trailer",
+     "name": "Fellini's 8 1/2 Original Italian Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "yruJBocWfn4",
+     "type": "Trailer",
+     "name": "35mm Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "RmIC9pQ80Fk",
+     "type": "Trailer",
+     "name": "Federico Fellini - 8 1/2 (New Trailer) - In UK cinemas 1 May 2015 | BFI Release",
+     "language": "en"
+    },
+    {
+     "youtube": "QU6IWDPw20E",
+     "type": "Trailer",
+     "name": "8 and a Half Trailer HD",
+     "language": "en"
+    },
+    {
+     "youtube": "4CjMvGBY_lI",
+     "type": "Trailer",
+     "name": "8 1/2 Trailer (1963) - The Criterion Collection",
+     "language": "en"
+    },
+    {
+     "youtube": "0dEKaNDqDmo",
+     "type": "Featurette",
+     "name": "Mark Kermode reviews 8½ (1963) | BFI Player",
+     "language": "en"
+    },
+    {
+     "youtube": "i4SJYkYtWcw",
+     "type": "Featurette",
+     "name": "Marcello Mastroianni’s guide to being cool | BFI",
+     "language": "en"
+    },
+    {
+     "youtube": "bqUZf7eIsXQ",
+     "type": "Featurette",
+     "name": "8 1/2 and Cleopatra Win Costume Design: 1964 Oscars",
+     "language": "en"
+    },
+    {
+     "youtube": "335fIxuPTkY",
+     "type": "Featurette",
+     "name": "Federico Fellini accepting Best Foreign Language Film for \"8 1/2\": 1964 Oscars",
+     "language": "en"
+    },
+    {
+     "youtube": "tyhGxakPe4s",
+     "type": "Featurette",
+     "name": "Allan Arkush on 8 1/2",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 364433,
+   "title": "Lo chiamavano Jeeg Robot",
+   "year": 2016,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/yBH2xA38BfJep4oa3AbBFSRDtZO.jpg",
+   "videos": [
+    {
+     "youtube": "y8nHHmSiKzM",
+     "type": "Trailer",
+     "name": "LO CHIAMAVANO JEEG ROBOT - TRAILER UFFICIALE [HD]",
+     "language": "it"
+    },
+    {
+     "youtube": "AY1Ws1_r_X0",
+     "type": "Trailer",
+     "name": "Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "skGkujMd03g",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 10376,
+   "title": "La leggenda del pianista sull'oceano",
+   "year": 1998,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/8rttNpb83qdHFMPMgFlcspVGaio.jpg",
+   "videos": [
+    {
+     "youtube": "ydM-MZjZZ4I",
+     "type": "Trailer",
+     "name": "La leggenda del pianista sull'oceano  Trailer italiano",
+     "language": "it"
+    },
+    {
+     "youtube": "jqhbOiF9-8g",
+     "type": "Trailer",
+     "name": "The Legend of 1900 (1998) ORIGINAL TRAILER [HQ]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 483184,
+   "title": "Dogman",
+   "year": 2018,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/70xnQgF7KGYaj3fp1uvZTyLi9VP.jpg",
+   "videos": [
+    {
+     "youtube": "eum93mpzpE0",
+     "type": "Trailer",
+     "name": "DOGMAN (2018) di Matteo Garrone - Trailer ufficiale HD",
+     "language": "it"
+    },
+    {
+     "youtube": "ewh0lBcEb2U",
+     "type": "Trailer",
+     "name": "Dogman - Official Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "rnrrWSNWpWQ",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 310593,
+   "title": "Youth – La giovinezza",
+   "year": 2015,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/bfJPsZDX4dbTM51X1yyPmZGEPIC.jpg",
+   "videos": [
+    {
+     "youtube": "mHnQNyI2ino",
+     "type": "Trailer",
+     "name": "YOUTH - La Giovinezza - TRAILER",
+     "language": "it"
+    },
+    {
+     "youtube": "pSvgKy90t4Y",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "r_InZqnQxJA",
+     "type": "Teaser",
+     "name": "YOUTH - Official Short Trailer - Starring Michael Caine",
+     "language": "en"
+    },
+    {
+     "youtube": "dAVzgOh6gxI",
+     "type": "Clip",
+     "name": "YOUTH: Spade",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 374416,
+   "title": "Quo vado?",
+   "year": 2016,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/t81E5XzBZ7OhJnYpUWvy2LNdv54.jpg",
+   "videos": [
+    {
+     "youtube": "Bc5ncNUB1j8",
+     "type": "Teaser",
+     "name": "Quo Vado di Checco Zalone Teaser 'Farmacia' 2016 HD",
+     "language": "it"
+    },
+    {
+     "youtube": "m6BXK--ACBI",
+     "type": "Teaser",
+     "name": "Quo Vado di Checco Zalone Teaser 'Psicologo' 2016 HD",
+     "language": "it"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 38286,
+   "title": "Tre uomini e una gamba",
+   "year": 1997,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/aUQhhVkB1XXUZ9MPGborY6MFYI8.jpg",
+   "videos": [
+    {
+     "youtube": "mODmZ_uNY4I",
+     "type": "Trailer",
+     "name": "Tre Uomini E Una Gamba trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "x8L6dcZCxnA",
+     "type": "Trailer",
+     "name": "Tre uomini e una gamba - Trailer | Aldo Giovanni e Giacomo",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "kJ-6--EV0wE",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 439,
+   "title": "La dolce vita",
+   "year": 1960,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/bT6bICAhQLY40Hrs7Lq2fnwNLsf.jpg",
+   "videos": [
+    {
+     "youtube": "yg3--NK-Xzo",
+     "type": "Trailer",
+     "name": "La Dolce Vita (1960) Original Trailer [FHD]",
+     "language": "en"
+    },
+    {
+     "youtube": "1BeWEPXWDX4",
+     "type": "Teaser",
+     "name": "New trailer for Fellini's La dolce vita - back in cinemas 3 January 2020 | BFI",
+     "language": "en"
+    },
+    {
+     "youtube": "Nnh6NWlOF1U",
+     "type": "Featurette",
+     "name": "Three Reasons: La dolce vita",
+     "language": "en"
+    },
+    {
+     "youtube": "9ntan4GSOpI",
+     "type": "Featurette",
+     "name": "La Dolce Vita and West Side Story Win Costume Design: 1962 Oscars",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "BouPJi3PfoI",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 538362,
+   "title": "Sulla mia pelle",
+   "year": 2018,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/jOvvIZjdbGVpPaQ8upPpZzttO3T.jpg",
+   "videos": [
+    {
+     "youtube": "nTimWFaTmgE",
+     "type": "Teaser",
+     "name": "Sulla Mia Pelle | Teaser [HD] | Netflix",
+     "language": "it"
+    },
+    {
+     "youtube": "tI9wa-Y9O8s",
+     "type": "Trailer",
+     "name": "On My Skin | Teaser [HD] | Netflix",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "sAxSzWjCjcw",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 48415,
+   "title": "Benvenuti al sud",
+   "year": 2010,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/cyLKnz3q0Qz8RDZMbqt38l8nq68.jpg",
+   "videos": [
+    {
+     "youtube": "3JtQfHPPGS8",
+     "type": "Trailer",
+     "name": "Benvenuti al Sud - Trailer Ufficiale (HD)",
+     "language": "it"
+    },
+    {
+     "youtube": "AaN4Qo-Ocnc",
+     "type": "Trailer",
+     "name": "Bienvenidos al Sur - Trailer en español",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 250219,
+   "title": "Smetto quando voglio",
+   "year": 2014,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/8yCx5OSw3ckFhZP4guriUFxqrDB.jpg",
+   "videos": [
+    {
+     "youtube": "seEhOShK0cc",
+     "type": "Trailer",
+     "name": "Smetto Quando Voglio - Trailer Ufficiale",
+     "language": "it"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 722778,
+   "title": "È stata la mano di Dio",
+   "year": 2021,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/i0X3iJGYcjkx7xoOAkTzo6Rg4ek.jpg",
+   "videos": [
+    {
+     "youtube": "M348a-Krlwo",
+     "type": "Trailer",
+     "name": "È stata la mano di Dio di Paolo Sorrentino - Candidato agli Oscar 2022 | Trailer Ufficiale HD",
+     "language": "it"
+    },
+    {
+     "youtube": "ahJbjvSjFGo",
+     "type": "Trailer",
+     "name": "È stata la mano di Dio | Trailer Ufficiale | Netflix Italia",
+     "language": "it"
+    },
+    {
+     "youtube": "i_1VW_0i6vo",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "CFUVnhUsNws",
+     "type": "Teaser",
+     "name": "Official Teaser",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 314405,
+   "title": "Il racconto dei racconti - Tale of Tales",
+   "year": 2015,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/fYf4Ni3pFDaRme4e9YsluHZE9ki.jpg",
+   "videos": [
+    {
+     "youtube": "L8e8S-4E7lY",
+     "type": "Trailer",
+     "name": "IL RACCONTO DEI RACCONTI (TALE OF TALES) di Matteo Garrone - Trailer italiano ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "Afup26-_3iw",
+     "type": "Trailer",
+     "name": "Tale of Tales - Official Trailer I HD I Sundance Selects",
+     "language": "en"
+    },
+    {
+     "youtube": "E6Znr0D3SFs",
+     "type": "Clip",
+     "name": "Tale of Tales - Clip \"When The Old Man\" I HD I Sundance Selects",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 231176,
+   "title": "Sole a catinelle",
+   "year": 2013,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/jI5WTCv0V3i4J6EcPWmxt4Da6sq.jpg",
+   "videos": [
+    {
+     "youtube": "5OdkqSQGyzc",
+     "type": "Trailer",
+     "name": "Checco Zalone - Sole a Catinelle -  Trailer Ufficiale 2013",
+     "language": "it"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "SzOPJ3CbnUA",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 50531,
+   "title": "Chiedimi se sono felice",
+   "year": 2000,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/7DtDnWwmZAI3dYUKNPsRy24SxV3.jpg",
+   "videos": [
+    {
+     "youtube": "NcsqPY9vXLw",
+     "type": "Trailer",
+     "name": "Chiedimi se sono felice - Trailer | Aldo Giovanni e Giacomo",
+     "language": "it"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 35554,
+   "title": "Cado dalle nubi",
+   "year": 2009,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/sKPtM6uyuTcBPuspPjgdG3g6dmn.jpg",
+   "videos": [
+    {
+     "youtube": "lioW61TXLv4",
+     "type": "Trailer",
+     "name": "Cado dalle nubi trailer - Checco Zalone",
+     "language": "it"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "wzEYFcpxdcw",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 20126,
+   "title": "Profondo rosso",
+   "year": 1975,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/wP6geQutTBbQcDY43ytGOTUVV9e.jpg",
+   "videos": [
+    {
+     "youtube": "55xnS3IIyas",
+     "type": "Trailer",
+     "name": "Profondo rosso (Trailer originale)",
+     "language": "it"
+    },
+    {
+     "youtube": "xg7b4eLCDPM",
+     "type": "Trailer",
+     "name": "Arrow Trailer [Dubbed]",
+     "language": "en"
+    },
+    {
+     "youtube": "cjvuQcoFpz8",
+     "type": "Trailer",
+     "name": "Official Theatrical Trailer [Dubbed]",
+     "language": "en"
+    },
+    {
+     "youtube": "wSgK9W9baN4",
+     "type": "Trailer",
+     "name": "Deep Red  | Official Trailer | 4K",
+     "language": "en"
+    },
+    {
+     "youtube": "rtmOly5SVgw",
+     "type": "Trailer",
+     "name": "US Trailer [Dubbed]",
+     "language": "en"
+    },
+    {
+     "youtube": "k6ukqfFDggs",
+     "type": "Trailer",
+     "name": "Arrow Teaser Trailer [Dubbed]",
+     "language": "en"
+    },
+    {
+     "youtube": "QR1PpHXu5Yo",
+     "type": "Trailer",
+     "name": "Deep Red ≣ 1975 ≣ Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "vWWNzP6RL98",
+     "type": "Clip",
+     "name": "Deep Red - Dario Argento (1975) Tallow doll - Memorias del Cine",
+     "language": "en"
+    },
+    {
+     "youtube": "foPXycmy08o",
+     "type": "Featurette",
+     "name": "Guillermo del Toro on Dario Argento and ‘Deep Red’ | Dario Argento Panico",
+     "language": "en"
+    },
+    {
+     "youtube": "eahU7Fg8EHQ",
+     "type": "Featurette",
+     "name": "Dario Argento on the Making of Deep Red",
+     "language": "en"
+    },
+    {
+     "youtube": "M2iKjqdkCsM",
+     "type": "Featurette",
+     "name": "Arrow Video Selects - Deep Red by Daniel Perry",
+     "language": "en"
+    },
+    {
+     "youtube": "fJruKVnmKTY",
+     "type": "Featurette",
+     "name": "The Arrow Video Story",
+     "language": "en"
+    },
+    {
+     "youtube": "iLUV9NuCybE",
+     "type": "Featurette",
+     "name": "Guillermo Del Toro praises Deep Red... in English",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "2C8RtMU-lo0",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 413518,
+   "title": "Pinocchio",
+   "year": 2019,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/9YSQeIudZWH8BrWZtVIIqJlKFYi.jpg",
+   "videos": [
+    {
+     "youtube": "gmwwrfzFDNs",
+     "type": "Trailer",
+     "name": "PINOCCHIO di Matteo Garrone (2019) - Trailer Ufficiale HD",
+     "language": "it"
+    },
+    {
+     "youtube": "XtrYzwbp4vE",
+     "type": "Teaser",
+     "name": "PINOCCHIO di Matteo Garrone (2019) - Teaser Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "H4YgkUDVDhE",
+     "type": "Trailer",
+     "name": "Official US Trailer [Dubbed]",
+     "language": "en"
+    },
+    {
+     "youtube": "yxqws07xGxg",
+     "type": "Trailer",
+     "name": "Official UK Trailer [Dubbed]",
+     "language": "en"
+    },
+    {
+     "youtube": "v1VH-8ezqTw",
+     "type": "Trailer",
+     "name": "Pinocchio | Trailer | Berlinale Special 2020",
+     "language": "en"
+    },
+    {
+     "youtube": "JiH7GzfIBY8",
+     "type": "Behind the Scenes",
+     "name": "Turning a real boy into a wooden puppet",
+     "language": "en"
+    },
+    {
+     "youtube": "5ySIYsxRdDo",
+     "type": "Behind the Scenes",
+     "name": "Creating Pinocchio, Snail and Tuna",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 53319,
+   "title": "Che bella giornata",
+   "year": 2011,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/mSufzIfdMQP3Cm9AR521gsIMxHg.jpg",
+   "videos": [
+    {
+     "youtube": "Yh_T2v6E4tQ",
+     "type": "Trailer",
+     "name": "Che bella giornata Trailer film di Checco Zalone   YouTube",
+     "language": "it"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "az6xQ5-BeeI",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 1026227,
+   "title": "C'è ancora domani",
+   "year": 2023,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/hc9SHN0vB6iyr6MBYI6bKrpDHvJ.jpg",
+   "videos": [
+    {
+     "youtube": "dD8ru7mFXuo",
+     "type": "Trailer",
+     "name": "C'è ancora domani (2023) - Trailer ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "Z5hAvdF6xQA",
+     "type": "Trailer",
+     "name": "Official US Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "nNREdtrrQyk",
+     "type": "Trailer",
+     "name": "Trailer [Subtitled]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "YAf7im935NE",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 9394,
+   "title": "Lo chiamavano Trinità...",
+   "year": 1970,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/27hmIsX2G82KnZJbIMp8bhKUNqk.jpg",
+   "videos": [
+    {
+     "youtube": "5d3mWRYQOOE",
+     "type": "Trailer",
+     "name": "Lo Chiamavano Trinità... (Trailer Italiano)",
+     "language": "it"
+    },
+    {
+     "youtube": "PbBQ1mPCG7Q",
+     "type": "Trailer",
+     "name": "They Call Me Trinity (Trailer)",
+     "language": "en"
+    },
+    {
+     "youtube": "pzNTQ-a_bUE",
+     "type": "Trailer",
+     "name": "Le llamaban Trinidad  Trailer en ingles",
+     "language": "en"
+    },
+    {
+     "youtube": "I2DScr9xhEw",
+     "type": "Featurette",
+     "name": "They Call Me Trinity Intro Theme Song",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "rQ9Ti-paedY",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 575452,
+   "title": "Il traditore",
+   "year": 2019,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/mS5ic1vxkT6z4eGbYxiqDsBJduS.jpg",
+   "videos": [
+    {
+     "youtube": "7nvYMRpKzak",
+     "type": "Trailer",
+     "name": "Trailer ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "AcbIieh9l-M",
+     "type": "Teaser",
+     "name": "Teaser",
+     "language": "it"
+    },
+    {
+     "youtube": "6LpphmAGlG8",
+     "type": "Featurette",
+     "name": "Pierfrancesco Favino e Marco Bellocchio",
+     "language": "it"
+    },
+    {
+     "youtube": "iQF1uhlQH5s",
+     "type": "Trailer",
+     "name": "Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 636565,
+   "title": "L'incredibile storia dell'Isola delle Rose",
+   "year": 2020,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/6Q5cfHddcKyC4KBKOzZeQ5hI55N.jpg",
+   "videos": [
+    {
+     "youtube": "I_bl2Dyu5Ig",
+     "type": "Trailer",
+     "name": "L'Incredibile storia dell'Isola Delle Rose | Trailer ufficiale | Netflix",
+     "language": "it"
+    },
+    {
+     "youtube": "qS2NtbEoIc8",
+     "type": "Trailer",
+     "name": "Rose Island | Official Trailer | Netflix",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 38396,
+   "title": "Così è la vita",
+   "year": 1998,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/zcZxzcl79S3gaWWDGGHcFkjT9m2.jpg",
+   "videos": [
+    {
+     "youtube": "4UNprG04LJk",
+     "type": "Trailer",
+     "name": "Così è la vita - Trailer | Aldo Giovanni e Giacomo",
+     "language": "it"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 85038,
+   "title": "Benvenuti al Nord",
+   "year": 2012,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/4diiuTdy1lCN1GU6fgg9aDOAH7J.jpg",
+   "videos": [
+    {
+     "youtube": "W3zShjpz1WE",
+     "type": "Trailer",
+     "name": "Benvenuti al Nord - Trailer Italiano",
+     "language": "it"
+    },
+    {
+     "youtube": "ocSf8m2xWiI",
+     "type": "Trailer",
+     "name": "Benvenuti al Nord   Trailer HD 2012   YouTube",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "9e388wdXICk",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 8882,
+   "title": "Gomorra",
+   "year": 2008,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/17TsPWnFoLOqzBkee5We1f1X1XX.jpg",
+   "videos": [
+    {
+     "youtube": "gfwP1Rth5Ic",
+     "type": "Trailer",
+     "name": "GOMORRA - Trailer Ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "MN7-tepnIfY",
+     "type": "Trailer",
+     "name": "US Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "HT7Wok6jPzI",
+     "type": "Trailer",
+     "name": "Official UK Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "p6Cnsoh3b74",
+     "type": "Featurette",
+     "name": "Mark Kermode reviews Gomorrah | BFI Player",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 356296,
+   "title": "Suburra",
+   "year": 2015,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/lxFuTect4eMOkydycNRCxZGpMz4.jpg",
+   "videos": [
+    {
+     "youtube": "bn6A5eivvu8",
+     "type": "Trailer",
+     "name": "SUBURRA (2015) di Stefano Sollima - Trailer ufficiale HD",
+     "language": "it"
+    },
+    {
+     "youtube": "vuuWTpYWFbo",
+     "type": "Teaser",
+     "name": "SUBURRA di Stefano Sollima - Teaser trailer ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "mJebQW__N7E",
+     "type": "Behind the Scenes",
+     "name": "SUBURRA di Stefano Sollima - Featurette \"Numero 8 e Viola\"",
+     "language": "it"
+    },
+    {
+     "youtube": "2ckyTSaGSGc",
+     "type": "Behind the Scenes",
+     "name": "SUBURRA di Stefano Sollima - Featurette \"Terra\"",
+     "language": "it"
+    },
+    {
+     "youtube": "gPfqyfStsDA",
+     "type": "Behind the Scenes",
+     "name": "SUBURRA di Stefano Sollima - Featurette \"Production Value\"",
+     "language": "it"
+    },
+    {
+     "youtube": "ne39e4W8iKA",
+     "type": "Behind the Scenes",
+     "name": "SUBURRA di Stefano Sollima - Featurette \"FUOCO\"",
+     "language": "it"
+    },
+    {
+     "youtube": "EmNHTGyPNbo",
+     "type": "Behind the Scenes",
+     "name": "SUBURRA di Stefano Sollima - Featurette \"ARIA\"",
+     "language": "it"
+    },
+    {
+     "youtube": "YpCJZ8N4hBQ",
+     "type": "Behind the Scenes",
+     "name": "SUBURRA di Stefano Sollima - Featurette \"ACQUA\"",
+     "language": "it"
+    },
+    {
+     "youtube": "AYwpxrt7ZLA",
+     "type": "Trailer",
+     "name": "Suburra - Official Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "BUFz1l6FspY",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 593402,
+   "title": "Tolo Tolo",
+   "year": 2020,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/CqUxog8F6aaK97RYh8YXhv3NDL.jpg",
+   "videos": [
+    {
+     "youtube": "vqsoZuI5Jns",
+     "type": "Trailer",
+     "name": "TOLO TOLO - Immigrato",
+     "language": "it"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "vYvusWKn1Cg",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 468198,
+   "title": "The Place",
+   "year": 2017,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/doGGzqZOJ7VZWVZdstRAs0i3de1.jpg",
+   "videos": [
+    {
+     "youtube": "RDQwNVp65HY",
+     "type": "Trailer",
+     "name": "The place - Trailer ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "a6td4T9F5L4",
+     "type": "Teaser",
+     "name": "The place - Teaser trailer ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "eje5MaWD7uE",
+     "type": "Behind the Scenes",
+     "name": "The place - Backstage",
+     "language": "it"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "ShrWeBN3YDY",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 11010,
+   "title": "Il postino",
+   "year": 1994,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/vCluZ0hOZZNbOEM8fR84kvPhXZV.jpg",
+   "videos": [
+    {
+     "youtube": "SELk0WdQ1ig",
+     "type": "Trailer",
+     "name": "il postino trailer ita",
+     "language": "it"
+    },
+    {
+     "youtube": "0or7hSz-7gc",
+     "type": "Trailer",
+     "name": "IL POSTINO TRAILER",
+     "language": "en"
+    },
+    {
+     "youtube": "SgbbmwHpoAA",
+     "type": "Trailer",
+     "name": "Il Postino (1994) ORIGINAL TRAILER [HD]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "h41pMWvOUsA",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 7857,
+   "title": "Amarcord",
+   "year": 1973,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/cRqiuvomxe1ZxXaqsYHBg6PXcyK.jpg",
+   "videos": [
+    {
+     "youtube": "fI1I_mcL3qo",
+     "type": "Trailer",
+     "name": "AMARCORD - Trailer (Il Cinema Ritrovato al cinema)",
+     "language": "it"
+    },
+    {
+     "youtube": "W5PsIpaRIFs",
+     "type": "Trailer",
+     "name": "Amarcord (1973) Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "BtG9ZM-ZHnY",
+     "type": "Trailer",
+     "name": "Amarcord Trailer (Federico Fellini, 1973)",
+     "language": "en"
+    },
+    {
+     "youtube": "DKP63_-R-qM",
+     "type": "Featurette",
+     "name": "Glenn Close Picks AMARCORD | Criterion Closet Picks",
+     "language": "en"
+    },
+    {
+     "youtube": "Q5iNjuZfYv0",
+     "type": "Featurette",
+     "name": "Three Reasons: Amarcord - The Criterion Collection",
+     "language": "en"
+    },
+    {
+     "youtube": "ceZZ5ZRKlQ0",
+     "type": "Featurette",
+     "name": "Bernard Rose on AMARCORD",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "txLvm2TE0kQ",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 406385,
+   "title": "Smetto quando voglio - Masterclass",
+   "year": 2017,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/dNjjYoG548jXR4GS5HfLQkVymid.jpg",
+   "videos": [
+    {
+     "youtube": "A5tMZXPOGJw",
+     "type": "Trailer",
+     "name": "SMETTO QUANDO VOGLIO Masterclass - Trailer (short version)",
+     "language": "it"
+    },
+    {
+     "youtube": "RR6d72Ko_QU",
+     "type": "Trailer",
+     "name": "Smetto Quando Voglio - Masterclass (2017) di Sydney Sibilia - Trailer Ufficiale HD",
+     "language": "it"
+    },
+    {
+     "youtube": "NH1n1NQmsfA",
+     "type": "Trailer",
+     "name": "Smetto quando voglio - Masterclass - Teaser trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "VAPaDtZTGOU",
+     "type": "Teaser",
+     "name": "Smetto Quando Voglio Reloaded - Teaser Trailer  Ufficiale #1 HD",
+     "language": "it"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 38397,
+   "title": "La leggenda di Al, John e Jack",
+   "year": 2002,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/t7Xb04P1uCUJ1LADWD5RfqWGyDu.jpg",
+   "videos": [
+    {
+     "youtube": "2ZhHCBcJBRk",
+     "type": "Trailer",
+     "name": "La leggenda di Al John e Jack - Trailer | Aldo Giovanni e Giacomo",
+     "language": "it"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 336,
+   "title": "Giù la testa",
+   "year": 1971,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/qTdmSJPOW3ts04BrBRTwieA3BY9.jpg",
+   "videos": [
+    {
+     "youtube": "b5cqMLgvSIk",
+     "type": "Trailer",
+     "name": "Giù la testa (film 1971) TRAILER ITALIANO",
+     "language": "it"
+    },
+    {
+     "youtube": "EccOlGxfwJI",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "bSgFupyWN_0",
+     "type": "Trailer",
+     "name": "A FISTFUL OF DYNAMITE (Masters of Cinema) Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "zlbkDgELdzQ",
+     "type": "Clip",
+     "name": "A FISTFUL OF DYNAMITE [Duck, You Sucker!] (1972) | Carriage Explosion Scene | MGM",
+     "language": "en"
+    },
+    {
+     "youtube": "SZUNsQdYSuQ",
+     "type": "Clip",
+     "name": "A FISTFUL OF DYNAMITE [Duck, You Sucker!] (1972) | James Coburn Scene | MGM",
+     "language": "en"
+    },
+    {
+     "youtube": "sjFbyCxWBIM",
+     "type": "Clip",
+     "name": "Duck, you sucker tribute",
+     "language": "en"
+    },
+    {
+     "youtube": "3jeJWvH0-zA",
+     "type": "Clip",
+     "name": "Duck, you sucker! (Class struggle 101 from Sergio Leone)",
+     "language": "en"
+    },
+    {
+     "youtube": "x4Ab7vNhd18",
+     "type": "Clip",
+     "name": "FISTFUL OF DYNAMITE - E Morricone/Edda Dell'Orso (Edit-wth-ending)",
+     "language": "en"
+    },
+    {
+     "youtube": "VtfCVq1ZH9k",
+     "type": "Behind the Scenes",
+     "name": "What \"DUCK, YOU SUCKER!\" was originally called but was too offensive for the American audiences!",
+     "language": "en"
+    },
+    {
+     "youtube": "eCsf9mPoPek",
+     "type": "Behind the Scenes",
+     "name": "duck you sucker or a fist full of dynamite  (documentary)",
+     "language": "en"
+    },
+    {
+     "youtube": "mNv6OGu4Ky8",
+     "type": "Behind the Scenes",
+     "name": "Brian Trenchard-Smith on DUCK, YOU SUCKER",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "7dXlg_pYMow",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 405,
+   "title": "La strada",
+   "year": 1954,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/kmWtXoqVDC9ICAoq286E0lUBYu6.jpg",
+   "videos": [
+    {
+     "youtube": "_DAa5SN0ffI",
+     "type": "Trailer",
+     "name": "\"La Strada\" di Federico Fellini - trailer ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "GrE7syApSkA",
+     "type": "Trailer",
+     "name": "La Strada (1954) Original Trailer [FHD]",
+     "language": "en"
+    },
+    {
+     "youtube": "jfRp_S-4nWQ",
+     "type": "Trailer",
+     "name": "LA STRADA Rerelease Trailer [1954]",
+     "language": "en"
+    },
+    {
+     "youtube": "CucHyXsxCU8",
+     "type": "Teaser",
+     "name": "LA STRADA - Official Trailer - Remastered and in cinemas May 19th",
+     "language": "en"
+    },
+    {
+     "youtube": "BAp4kOwuLwY",
+     "type": "Featurette",
+     "name": "John Landis on LA STRADA",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "aozEJkyW1gY",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 8832,
+   "title": "Il Divo",
+   "year": 2008,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/6Rb4Uel3gziuDEgJ71xfZelayVP.jpg",
+   "videos": [
+    {
+     "youtube": "T3AUilk7cvs",
+     "type": "Trailer",
+     "name": "Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "cw-qm-liCPA",
+     "type": "Trailer",
+     "name": "Official US IL DIVO Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "zT0jX3nyGio",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 27670,
+   "title": "Non ci resta che piangere",
+   "year": 1984,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/bCaBf3GcNKxI6sEU0foxXiLaHGa.jpg",
+   "videos": [
+    {
+     "youtube": "Yz_ON4JpPRY",
+     "type": "Trailer",
+     "name": "NON CI RESTA CHE PIANGERE - 1984 - Trailer Cinematografico",
+     "language": "it"
+    },
+    {
+     "youtube": "ezoVaby2rMg",
+     "type": "Trailer",
+     "name": "Nothing Left To Do But Cry (Non Ci Resta Che Piangere, 1984) - clip - English subtitles",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "64PW_09HQJg",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 239877,
+   "title": "La mafia uccide solo d'estate",
+   "year": 2013,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/iFMqSTW2hPZ8b8IYYX3npDFDI6K.jpg",
+   "videos": [
+    {
+     "youtube": "i7SfARhL9ws",
+     "type": "Trailer",
+     "name": "La mafia uccide solo d'estate - trailer ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "BRAkYEZIKgI",
+     "type": "Trailer",
+     "name": "The Mafia Only Kills in Summer - Official Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "criGHW_M-qY",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 9474,
+   "title": "Il mio nome è Nessuno",
+   "year": 1973,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/eb1kvIacJADms3MMVqeXy4c4Y4o.jpg",
+   "videos": [
+    {
+     "youtube": "F_z14DEfqfI",
+     "type": "Trailer",
+     "name": "Il mio nome è nessuno (film 1973) TRAILER ITALIANO",
+     "language": "it"
+    },
+    {
+     "youtube": "TMUX8y8bXWE",
+     "type": "Trailer",
+     "name": "MY NAME IS NOBODY - HD Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "nX59JyVRud4",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 58013,
+   "title": "La banda dei Babbi Natale",
+   "year": 2010,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/uPiRMJ2JrIy7ouEmoUcy7Q8rlub.jpg",
+   "videos": [
+    {
+     "youtube": "ZyI9EfRsn54",
+     "type": "Trailer",
+     "name": "La banda dei Babbi Natale - Trailer | Aldo Giovanni e Giacomo",
+     "language": "it"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "2Coi8MP7xlQ",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 468202,
+   "title": "La ragazza nella nebbia",
+   "year": 2017,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/cecVnQfwUgzsjR3VEZRDBcF3ejV.jpg",
+   "videos": [
+    {
+     "youtube": "jkvsniBTliQ",
+     "type": "Trailer",
+     "name": "La ragazza nella nebbia - Trailer ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "WyQw7Y6t36E",
+     "type": "Trailer",
+     "name": "The Girl in the Fog (La Ragazza nella nebbia) (Official US Trailer)",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 38251,
+   "title": "Mediterraneo",
+   "year": 1991,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/wfJ2flMchZPQCSdt8h3ZQNSW7Ym.jpg",
+   "videos": [
+    {
+     "youtube": "Q3WJvaEjAlU",
+     "type": "Trailer",
+     "name": "Mediterraneo - Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "-BCSiSUk2bE",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 33365,
+   "title": "Notte prima degli esami",
+   "year": 2006,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/d7IhjqqCQSQchXjoYGdFFZOhxvK.jpg",
+   "videos": [
+    {
+     "youtube": "EQQoFmU7Pmo",
+     "type": "Trailer",
+     "name": "NOTTE PRIMA DEGLI ESAMI - Trailer Ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "k4sr5T_f3BA",
+     "type": "Trailer",
+     "name": "NOTTE PRIMA DEGLI ESAMI | Trailer italiano",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 768334,
+   "title": "A Classic Horror Story",
+   "year": 2021,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3S0Bww8jLYDf1OIxMC8ZSUrVISb.jpg",
+   "videos": [
+    {
+     "youtube": "lBmmBimhT18",
+     "type": "Trailer",
+     "name": "Trailer Ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "dgWNuMGI49k",
+     "type": "Teaser",
+     "name": "Teaser Ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "dgxEQ-ilFY8",
+     "type": "Behind the Scenes",
+     "name": "Il backstage di un film horror",
+     "language": "it"
+    },
+    {
+     "youtube": "PHqyFhrb3uU",
+     "type": "Trailer",
+     "name": "A Classic Horror Story | Official Trailer | Netflix",
+     "language": "en"
+    },
+    {
+     "youtube": "cfYkvGfkMZs",
+     "type": "Teaser",
+     "name": "A Classic Horror Story | Official Teaser | Netflix",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "wFStgrO7AGQ",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 12776,
+   "title": "Johnny Stecchino",
+   "year": 1991,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/im7KfvlvYf8Grlemc9lOMqgt4cG.jpg",
+   "videos": [
+    {
+     "youtube": "9v_6oW_suyQ",
+     "type": "Trailer",
+     "name": "Johnny Stecchino trailer ita",
+     "language": "it"
+    },
+    {
+     "youtube": "x-J6XyNHM3I",
+     "type": "Trailer",
+     "name": "Johnny Stecchino Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "qfN4IQ1rwow",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 57112,
+   "title": "Tu la conosci Claudia?",
+   "year": 2004,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/4MbovTjSHv2AvcK39qUaEYeNuyl.jpg",
+   "videos": [
+    {
+     "youtube": "kRemv-CkUmY",
+     "type": "Trailer",
+     "name": "Tu la conosci Claudia? - Trailer | Aldo Giovanni e Giacomo",
+     "language": "it"
+    },
+    {
+     "youtube": "GAqv_5uTVZA",
+     "type": "Bloopers",
+     "name": "Tu la conosci Claudia? -  Errori sul set | Aldo Giovanni e Giacomo",
+     "language": "it"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 359156,
+   "title": "Non essere cattivo",
+   "year": 2015,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/hVuDIBxVxQbPRXhlzWQDgloEQ6L.jpg",
+   "videos": [
+    {
+     "youtube": "IdpqEuIw8kA",
+     "type": "Trailer",
+     "name": "NON ESSERE CATTIVO - Trailer Ufficiale HD",
+     "language": "it"
+    },
+    {
+     "youtube": "8WxlD7Wm2hE",
+     "type": "Trailer",
+     "name": "Film Trailer: Non essere cattivo / Don't Be Bad",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "pGtlBEPOLiA",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 250235,
+   "title": "Tutta colpa di Freud",
+   "year": 2014,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/opzHvkVNmnhABJM2iAkZdrVxsXd.jpg",
+   "videos": [
+    {
+     "youtube": "oeJfD52BA1Q",
+     "type": "Trailer",
+     "name": "Tutta colpa di Freud - Official Movie Trailer in Italiano - FULL HD",
+     "language": "it"
+    },
+    {
+     "youtube": "lyPzk_2t8ik",
+     "type": "Trailer",
+     "name": "TUTTA COLPA DI FREUD trailer ufficiale",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 10772,
+   "title": "Django",
+   "year": 1966,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/pYsDq0fTMC1XuEg63NOXfxzHBJY.jpg",
+   "videos": [
+    {
+     "youtube": "FaddlNxhCmw",
+     "type": "Trailer",
+     "name": "Django - Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "AzKW_pscs5A",
+     "type": "Trailer",
+     "name": "Django - Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "jLPFh4ObsJU",
+     "type": "Trailer",
+     "name": "Rialto Pictures Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "UHUbMhpXyp8",
+     "type": "Featurette",
+     "name": "Quentin Tarantino on Sergio Corbucci",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "R2sQrVNepus",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 11829,
+   "title": "...continuavano a chiamarlo Trinità",
+   "year": 1971,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/9q4GpLHAq0aTyPPSQOvFxLrmiDd.jpg",
+   "videos": [
+    {
+     "youtube": "pRwKywm7qh4",
+     "type": "Trailer",
+     "name": "TRINITY IS STILL MY NAME - TRAILER",
+     "language": "it"
+    },
+    {
+     "youtube": "fTAxSGO8F90",
+     "type": "Trailer",
+     "name": "TRINITY IS STILL MY NAME TRAILER",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "05-wsTFpiIM",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 606954,
+   "title": "Odio l'estate",
+   "year": 2020,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/xlNFFxOxAFXUqMYHFmBL1lJWeUn.jpg",
+   "videos": [
+    {
+     "youtube": "119pmODQUKU",
+     "type": "Trailer",
+     "name": "ODIO L'ESTATE - Trailer Ufficiale 60\"",
+     "language": "it"
+    },
+    {
+     "youtube": "Hp0RDp_gKEM",
+     "type": "Trailer",
+     "name": "Odio l'estate - Il nuovo film di Aldo, Giovanni e Giacomo | Dal 30 gennaio al cinema!",
+     "language": "it"
+    },
+    {
+     "youtube": "mbVuvaP8pv4",
+     "type": "Behind the Scenes",
+     "name": "Odio l'estate - Backstage con Annie Mazzola",
+     "language": "it"
+    },
+    {
+     "youtube": "OIb7-EynTiU",
+     "type": "Behind the Scenes",
+     "name": "Odio l'estate - Backstage | Aldo Giovanni e Giacomo raccontano i personaggi",
+     "language": "it"
+    },
+    {
+     "youtube": "rR1VhKw9q7o",
+     "type": "Behind the Scenes",
+     "name": "Odio l'estate - Backstage | Aldo Giovanni e Giacomo raccontano la trama",
+     "language": "it"
+    },
+    {
+     "youtube": "c0DuBKA-WkY",
+     "type": "Behind the Scenes",
+     "name": "Odio l'estate - Il backstage della locandina",
+     "language": "it"
+    },
+    {
+     "youtube": "TMTTA4GV2O0",
+     "type": "Behind the Scenes",
+     "name": "Odio l'estate - Il nuovo film di Aldo Giovanni e Giacomo - Backstage #2",
+     "language": "it"
+    },
+    {
+     "youtube": "n-uftuA6PCM",
+     "type": "Behind the Scenes",
+     "name": "Odio l'estate - Il nuovo film di Aldo Giovanni e Giacomo - Backstage #1",
+     "language": "it"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 307,
+   "title": "Roma città aperta",
+   "year": 1945,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/8MmGEkPc8jlpkHJpx7g02UmtLzw.jpg",
+   "videos": [
+    {
+     "youtube": "ei-b4kl3rU8",
+     "type": "Trailer",
+     "name": "ROMA CITTÀ APERTA - Trailer (Il Cinema Ritrovato al cinema)",
+     "language": "it"
+    },
+    {
+     "youtube": "5uzXxXnGfVs",
+     "type": "Trailer",
+     "name": "Rome, Open City (Roma Città Aperta) - back in cinemas 17 May 2024 | BFI",
+     "language": "en"
+    },
+    {
+     "youtube": "JM_KpDmdF98",
+     "type": "Trailer",
+     "name": "Roberto Rossellini: The War Trilogy - trailer | BFI Blu-ray",
+     "language": "en"
+    },
+    {
+     "youtube": "c1P1JRSJT6Q",
+     "type": "Trailer",
+     "name": "Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "hgS4KEDZ0PE",
+     "type": "Featurette",
+     "name": "Mark Kermode reviews Rome, Open City (1945) | BFI Player",
+     "language": "en"
+    },
+    {
+     "youtube": "OeBleS8PzlE",
+     "type": "Featurette",
+     "name": "'Rome, Open City' | Critic's Picks | The New York Times",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "v5fEk1ih7I8",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 439584,
+   "title": "Smetto quando voglio - Ad honorem",
+   "year": 2017,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/guhMZZFeBAQMiHsssbcOGPA1laN.jpg",
+   "videos": [
+    {
+     "youtube": "B6rIaWl3EBw",
+     "type": "Trailer",
+     "name": "CinemaItaliaUK \"I Can Quit Whenever I Want\" (Smetto Quando Voglio)",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 1127166,
+   "title": "Fabbricante di lacrime",
+   "year": 2024,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/zKClzN4PIzrh3kStNIDgoD3KI8d.jpg",
+   "videos": [
+    {
+     "youtube": "Rgpl6dG1xFQ",
+     "type": "Trailer",
+     "name": "FABBRICANTE DI LACRIME | Trailer Ufficiale | Netflix Italia",
+     "language": "it"
+    },
+    {
+     "youtube": "aa0QyC14ryc",
+     "type": "Teaser",
+     "name": "FABBRICANTE DI LACRIME | Teaser Ufficiale | Netflix Italia",
+     "language": "it"
+    },
+    {
+     "youtube": "qEh_90RnlD8",
+     "type": "Trailer",
+     "name": "Official Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "QZwwferT8p4",
+     "type": "Teaser",
+     "name": "Official Teaser [Subtitled]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 303542,
+   "title": "Il ragazzo invisibile",
+   "year": 2014,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/bYD9U89ub35M9Wy8RPcJhc8z4Sy.jpg",
+   "videos": [
+    {
+     "youtube": "fYZSjApokDk",
+     "type": "Trailer",
+     "name": "Il Ragazzo Invisibile - Trailer Ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "GAAbB2BATc8",
+     "type": "Teaser",
+     "name": "Invisible Boy - Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "wf9RYw2CTkU",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 1040,
+   "title": "Il gattopardo",
+   "year": 1963,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/oWOxb6FhkVXaUTt5pO2CQ6crvig.jpg",
+   "videos": [
+    {
+     "youtube": "7VeuKdnpqdE",
+     "type": "Trailer",
+     "name": "Il gattopardo trailer riedizione",
+     "language": "it"
+    },
+    {
+     "youtube": "rPMLWgu2kU4",
+     "type": "Trailer",
+     "name": "IL GATTOPARDO (1963) Trailer Italiano Originale",
+     "language": "it"
+    },
+    {
+     "youtube": "06f7f24lpUI",
+     "type": "Trailer",
+     "name": "The Leopard (1963) ORIGINAL TRAILER [HD]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "MbSPhz5OF90",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 25300,
+   "title": "Io non ho paura",
+   "year": 2003,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/1ZXyZePhPsgf6de13dSnPM3kTzm.jpg",
+   "videos": [
+    {
+     "youtube": "NecVm1MwJqg",
+     "type": "Trailer",
+     "name": "Io non ho paura / I'm not scared trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "aqv11VJVkf4",
+     "type": "Trailer",
+     "name": "I'm Not Scared Official Trailer!",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "CmtTgx5Tr68",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 375572,
+   "title": "Veloce come il vento",
+   "year": 2016,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/nicStobkEYh9iJO6CC3UqolQRsK.jpg",
+   "videos": [
+    {
+     "youtube": "gBye1KgIblk",
+     "type": "Trailer",
+     "name": "VELOCE COME IL VENTO (2016) di Matteo Rovere - Trailer ufficiale HD",
+     "language": "it"
+    },
+    {
+     "youtube": "LNFgbQF9HLY",
+     "type": "Trailer",
+     "name": "Veloce Come Il Vento (Italian Race)",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 571468,
+   "title": "Freaks Out",
+   "year": 2021,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/1TkkTo8UiRl5lWM5qkAISHXg0fU.jpg",
+   "videos": [
+    {
+     "youtube": "husPLaMJLpc",
+     "type": "Trailer",
+     "name": "FREAKS OUT di Gabriele Mainetti (2021) - Nuovo Trailer Ufficiale HD",
+     "language": "it"
+    },
+    {
+     "youtube": "WUXO7ECyUE0",
+     "type": "Trailer",
+     "name": "Freaks Out di Gabriele Mainetti in Concorso al Festival di Venezia 78 | Trailer ITA HD",
+     "language": "it"
+    },
+    {
+     "youtube": "7f7NuwKl4h0",
+     "type": "Teaser",
+     "name": "FREAKS OUT di Gabriele Mainetti - Teaser trailer ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "Z0vfeyNUyGo",
+     "type": "Clip",
+     "name": "FREAKS OUT - Clip \"Treno\"",
+     "language": "it"
+    },
+    {
+     "youtube": "WW9wLw7ex-4",
+     "type": "Clip",
+     "name": "FREAKS OUT - Clip \"Baci proprio da schifo!\"",
+     "language": "it"
+    },
+    {
+     "youtube": "asnaKE4vwz4",
+     "type": "Clip",
+     "name": "Freaks Out di Gabriele Mainetti | Clip Franz Il Pianista che vede il futuro",
+     "language": "it"
+    },
+    {
+     "youtube": "0ErIJqm-zeE",
+     "type": "Trailer",
+     "name": "UK Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "FU0zF5Pg3c4",
+     "type": "Trailer",
+     "name": "Official US Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "Ja5hdZGgaeI",
+     "type": "Clip",
+     "name": "Mathilde is Found",
+     "language": "en"
+    },
+    {
+     "youtube": "wDxHjuOaOLM",
+     "type": "Clip",
+     "name": "Rounded Up",
+     "language": "en"
+    },
+    {
+     "youtube": "7JHjjv6rUT4",
+     "type": "Clip",
+     "name": "Temptations",
+     "language": "en"
+    },
+    {
+     "youtube": "cPdVRHFl7CE",
+     "type": "Clip",
+     "name": "'Time to Fight Back'",
+     "language": "en"
+    },
+    {
+     "youtube": "NIiByh_koTI",
+     "type": "Clip",
+     "name": "'He Has Gills'",
+     "language": "en"
+    },
+    {
+     "youtube": "6TghXVHBCRE",
+     "type": "Clip",
+     "name": "'Sweet Nazi O' Mine'",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "89lsG-f6LbA",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 244088,
+   "title": "Il capitale umano",
+   "year": 2013,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/uMpamRAfW6dP10cEVFF9ti7w15q.jpg",
+   "videos": [
+    {
+     "youtube": "YlVQCw2C4wU",
+     "type": "Trailer",
+     "name": "Il capitale umano - Trailer ufficiale - Al cinema dal 09/01",
+     "language": "it"
+    },
+    {
+     "youtube": "gkt0wA4OLLA",
+     "type": "Trailer",
+     "name": "Human Capital - Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 492282,
+   "title": "Come un gatto in tangenziale",
+   "year": 2017,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/xfIfo2JTPpLL06njlaRBxWVH9kN.jpg",
+   "videos": [
+    {
+     "youtube": "PkGShSJaTo0",
+     "type": "Trailer",
+     "name": "Come un gatto in tangenziale (2017) - Trailer Ufficiale",
+     "language": "it"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 17295,
+   "title": "La battaglia di Algeri",
+   "year": 1966,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/ohqf21dJ8PBFmNLXwNCGAajJ1Tv.jpg",
+   "videos": [
+    {
+     "youtube": "Zgkj8eAVjwQ",
+     "type": "Trailer",
+     "name": "La battaglia di Algeri - Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "vhhoS3zOskE",
+     "type": "Trailer",
+     "name": "The Battle of Algiers - Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "cdF4eu56Pzo",
+     "type": "Featurette",
+     "name": "Oscar Nominee Paul Thomas Anderson Discusses \"The Battle of Algiers\" (Clip) | Guest Programmer",
+     "language": "en"
+    },
+    {
+     "youtube": "1KstueVVbgI",
+     "type": "Featurette",
+     "name": "Spike Lee, Mira Nair, and Steven Soderbergh on The Battle of Algiers",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "zpn4Htfrv88",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 24653,
+   "title": "Le conseguenze dell'amore",
+   "year": 2004,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/fTcvjEgAPyjUZYbNCFOk1dIwHB4.jpg",
+   "videos": [
+    {
+     "youtube": "UTDNw8RC39E",
+     "type": "Trailer",
+     "name": "Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "RihHjY1-_gs",
+     "type": "Trailer",
+     "name": "Consequences of Love Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "8rdDnOF3u9s",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 380225,
+   "title": "La pazza gioia",
+   "year": 2016,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/xOcKiBmOOiviDzEAzOzu3LATC88.jpg",
+   "videos": [
+    {
+     "youtube": "ikcsQBz8q4g",
+     "type": "Trailer",
+     "name": "La Pazza Gioia  Trailer #1",
+     "language": "it"
+    },
+    {
+     "youtube": "nrG6Zk7UV-U",
+     "type": "Trailer",
+     "name": "Official Australian Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 26451,
+   "title": "Indagine su un cittadino al di sopra di ogni sospetto",
+   "year": 1970,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/5eUBcyilUy0sy6AcqNpjgXQX4A4.jpg",
+   "videos": [
+    {
+     "youtube": "PfXZVqdLKcE",
+     "type": "Trailer",
+     "name": "Investigation of a Citizen Above Suspicion (1970) ORIGINAL TRAILER [HD 1080p]",
+     "language": "en"
+    },
+    {
+     "youtube": "Fw1ua8j7SnY",
+     "type": "Featurette",
+     "name": "Ennio Morricone on the Film Music",
+     "language": "en"
+    },
+    {
+     "youtube": "RMofSyukEo0",
+     "type": "Featurette",
+     "name": "Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "wtAbG3yrPwE",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 6916,
+   "title": "...altrimenti ci arrabbiamo!",
+   "year": 1974,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/27bKMOKfVtOicxZPP1Nk78WyCFE.jpg",
+   "videos": [
+    {
+     "youtube": "HBp-GAbDTYY",
+     "type": "Trailer",
+     "name": "altrimenti ci arrabbiamo trailer non ufficiale",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "mXowKJ449i8",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 25606,
+   "title": "Fantozzi",
+   "year": 1975,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/elGj4wK8fz5NT0weWitmfGizpr8.jpg",
+   "videos": [
+    {
+     "youtube": "-FxGBTHmm7c",
+     "type": "Trailer",
+     "name": "Fantozzi - Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "ST4PvYOXSvo",
+     "type": "Trailer",
+     "name": "'FANTOZZI' TORNA IN SALA - dal 27 marzo al cinema in versione restaurata (trailer)",
+     "language": "it"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 310126,
+   "title": "Il ricco, il povero e il maggiordomo",
+   "year": 2014,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/fjnOjxruO6rmUwF2nnnoynYhUHf.jpg",
+   "videos": [
+    {
+     "youtube": "bGJJSCpYHJg",
+     "type": "Trailer",
+     "name": "Il Ricco, il Povero e il Maggiordomo - Trailer | Aldo Giovanni e Giacomo",
+     "language": "it"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 24169,
+   "title": "Il cosmo sul comò",
+   "year": 2008,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/tKHHDq1M9xde3UBaefSdV7RZkVQ.jpg",
+   "videos": [
+    {
+     "youtube": "6_y5nUV7QP0",
+     "type": "Trailer",
+     "name": "Il Cosmo sul comò - Trailer | Aldo Giovanni e Giacomo",
+     "language": "it"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "MNNpjBtu1W0",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 19426,
+   "title": "Le notti di Cabiria",
+   "year": 1957,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/ezDW37MA8aZlOgJYO4mysjc949J.jpg",
+   "videos": [
+    {
+     "youtube": "YO8PFBmkRSc",
+     "type": "Trailer",
+     "name": "Le Notti di Cabiria - Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "nG91owD7UjM",
+     "type": "Trailer",
+     "name": "NIGHTS OF CABIRIA Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "OO6EmDhi2X0",
+     "type": "Trailer",
+     "name": "4K Restoration Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "eT_BH_W5H9g",
+     "type": "Clip",
+     "name": "\"The Mascara Tear\"",
+     "language": "en"
+    },
+    {
+     "youtube": "Mbtt05FWHaw",
+     "type": "Featurette",
+     "name": "NIGHTS OF CABIRIA - Phil Kemp Interview",
+     "language": "en"
+    },
+    {
+     "youtube": "atSWR5XYHA4",
+     "type": "Featurette",
+     "name": "Carol Morley on Federico Fellini's Nights of Cabiria",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 803700,
+   "title": "Le otto montagne",
+   "year": 2022,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/yzgP42SQVV9fy6habr2A7WyGkVr.jpg",
+   "videos": [
+    {
+     "youtube": "sq4Y8IB_jgA",
+     "type": "Trailer",
+     "name": "LE OTTO MONTAGNE (2022) - TRAILER UFFICIALE",
+     "language": "it"
+    },
+    {
+     "youtube": "4cvjTr1QPRs",
+     "type": "Teaser",
+     "name": "LE OTTO MONTAGNE (2022) - TEASER TRAILER UFFICIALE",
+     "language": "it"
+    },
+    {
+     "youtube": "ak4yBWxJDj8",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "ZypwY-hhI2c",
+     "type": "Trailer",
+     "name": "Official UK Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "8KHtZSKUDzk",
+     "type": "Teaser",
+     "name": "Official UK Trailer #2",
+     "language": "en"
+    },
+    {
+     "youtube": "69KicEQ5Ybc",
+     "type": "Clip",
+     "name": "Exclusive Clip - This is the One",
+     "language": "en"
+    },
+    {
+     "youtube": "_naxMNB01ik",
+     "type": "Featurette",
+     "name": "Mark Kermode reviews The Eight Mountains (2022) | BFI Player",
+     "language": "en"
+    },
+    {
+     "youtube": "Vgu3YpWyhfM",
+     "type": "Featurette",
+     "name": "The Eight Mountains Q&A with Felix Van Groeningen, Charlotte Vandermeersch, & Alessandro Borghi",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 24188,
+   "title": "Il sorpasso",
+   "year": 1962,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/9vumJKydNxcFtcFNYPIvFeHXVBQ.jpg",
+   "videos": [
+    {
+     "youtube": "bFf2VID8-qg",
+     "type": "Trailer",
+     "name": "IL SORPASSO - U.S. Re-release Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "X5Tjj5B7Kbc",
+     "type": "Trailer",
+     "name": "Il Sorpasso - Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "YwmINHqMRq8",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 20345,
+   "title": "L'uccello dalle piume di cristallo",
+   "year": 1970,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/msuebjNNzdfp56a3EzPiZGWBBLw.jpg",
+   "videos": [
+    {
+     "youtube": "0-MTKZugP1Y",
+     "type": "Trailer",
+     "name": "L'Uccello dalle Piume di Cristallo (Trailer Italiano)",
+     "language": "it"
+    },
+    {
+     "youtube": "UztVF1nJTBo",
+     "type": "Trailer",
+     "name": "The Bird with the Crystal Plumage Official Trailer 4K",
+     "language": "en"
+    },
+    {
+     "youtube": "8rWtIA-ogaI",
+     "type": "Trailer",
+     "name": "The Bird with the Crystal Plumage Original Trailer (Dario Argento, 1970) English Language",
+     "language": "en"
+    },
+    {
+     "youtube": "2H8N7wWvn0k",
+     "type": "Clip",
+     "name": "70's Mystery Thriller | The Bird With The Crystal Plumage | Full Movie",
+     "language": "en"
+    },
+    {
+     "youtube": "z_NJrf5hqos",
+     "type": "Featurette",
+     "name": "Dario Argento on His Directorial Debut The Bird with the Crystal Plumage",
+     "language": "en"
+    },
+    {
+     "youtube": "CZgUI_IkOb0",
+     "type": "Featurette",
+     "name": "Dario Argento Introduces The Bird with the Crystal Plumage",
+     "language": "en"
+    },
+    {
+     "youtube": "YDs18-h9COs",
+     "type": "Featurette",
+     "name": "Mark Kermode reviews The Bird with the Crystal Plumage | BFI Player",
+     "language": "en"
+    },
+    {
+     "youtube": "snjAEbkOZqM",
+     "type": "Featurette",
+     "name": "Quentin Tarantino on Italian Horror",
+     "language": "en"
+    },
+    {
+     "youtube": "kqQqSGHFUOs",
+     "type": "Featurette",
+     "name": "Darren Bousman on The Bird With The Crystal Plumage",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "2H8N7wWvn0k",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 937746,
+   "title": "Io capitano",
+   "year": 2023,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/iP6WtSOhlClcIxRUgbTpeFO2rMe.jpg",
+   "videos": [
+    {
+     "youtube": "idErmD0bA_M",
+     "type": "Trailer",
+     "name": "IO CAPITANO di Matteo Garrone (2023) - Trailer Ufficiale HD",
+     "language": "it"
+    },
+    {
+     "youtube": "ckUUeZM9_i8",
+     "type": "Trailer",
+     "name": "IO CAPITANO di Matteo Garrone (2023) - Trailer Ufficiale HD",
+     "language": "it"
+    },
+    {
+     "youtube": "5Mg_AiPGw-0",
+     "type": "Trailer",
+     "name": "Official US Trailer V2 [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "axfDLG7RSqw",
+     "type": "Trailer",
+     "name": "US Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "MyQUOeS4Vlg",
+     "type": "Trailer",
+     "name": "Official Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "5QWYMB5UD6U",
+     "type": "Teaser",
+     "name": "'Journey' Official TV Spot [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "aX6R9Re5TSk",
+     "type": "Teaser",
+     "name": "Official :30 Cutdown [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "5BhlaynrlMQ",
+     "type": "Teaser",
+     "name": "Official :15 Cutdown [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "2m2lK-Tv3zw",
+     "type": "Featurette",
+     "name": "Matteo Garrone Discusses His Film IO CAPITANO",
+     "language": "en"
+    },
+    {
+     "youtube": "XtBhtg2rQ20",
+     "type": "Featurette",
+     "name": "Me Captain Q&A - AFI Fest 2023",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 40794,
+   "title": "Mine vaganti",
+   "year": 2010,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/jd0tAmKLVVRtdS1NBQuvB5tOyeC.jpg",
+   "videos": [
+    {
+     "youtube": "C2lQOhQ2es8",
+     "type": "Trailer",
+     "name": "Mine Vaganti Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "ODqAi4wCGu0",
+     "type": "Trailer",
+     "name": "Mine vaganti - Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "XoHtIKBZUbM",
+     "type": "Trailer",
+     "name": "Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "8-VKfKbWEiI",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 56909,
+   "title": "Immaturi",
+   "year": 2011,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/7gEOz66EojBSDlOZWBQYz059tSv.jpg",
+   "videos": [
+    {
+     "youtube": "kZfcEFSCqd0",
+     "type": "Trailer",
+     "name": "Immaturi - Trailer Italiano",
+     "language": "it"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 24382,
+   "title": "I soliti ignoti",
+   "year": 1958,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/q9c85xYn4NPLJzHcWtboMdYBxWe.jpg",
+   "videos": [
+    {
+     "youtube": "hP8HX5bnQyo",
+     "type": "Trailer",
+     "name": "Big Deal On Madonna Street",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "UfF3c2N9kUM",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 42229,
+   "title": "Una giornata particolare",
+   "year": 1977,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/xaiFqvBA0IYGFDu2sEAszAFl3nF.jpg",
+   "videos": [
+    {
+     "youtube": "i_9BAH_qO-4",
+     "type": "Trailer",
+     "name": "Original Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "KloWrqcHAF0",
+     "type": "Trailer",
+     "name": "4K Restoration Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "--Mxb3_xU9M",
+     "type": "Featurette",
+     "name": "Sophia Loren on Working with Marcello Mastroianni",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 1109255,
+   "title": "Parthenope",
+   "year": 2024,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/1PrYlFquzqEEZOvBYGwnGXB8mti.jpg",
+   "videos": [
+    {
+     "youtube": "lPZ3cii_S8I",
+     "type": "Trailer",
+     "name": "Parthenope di Paolo Sorrentino | Trailer Ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "tqkmGS2MILw",
+     "type": "Teaser",
+     "name": "PARTHENOPE | Paolo Sorrentino | Teaser Trailer",
+     "language": "it"
+    },
+    {
+     "youtube": "AQBB13EI7vU",
+     "type": "Trailer",
+     "name": "Official UK Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "uT5PGHBugic",
+     "type": "Trailer",
+     "name": "Official US Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "Fli2VhuPApo",
+     "type": "Trailer",
+     "name": "Official Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "a_U7G9BQzx0",
+     "type": "Clip",
+     "name": "Question [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "YvXYf0nn7kI",
+     "type": "Clip",
+     "name": "Official Clip",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 10599,
+   "title": "Pinocchio",
+   "year": 2002,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/wZLKKiWCndimWyonI9IKskNc5Ef.jpg",
+   "videos": [
+    {
+     "youtube": "1AAVd0ecWYs",
+     "type": "Trailer",
+     "name": "Pinocchio di Benigni trailer ita",
+     "language": "it"
+    },
+    {
+     "youtube": "3-9WCVRqKKU",
+     "type": "Trailer",
+     "name": "Pinocchio (2002) Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "Z-W-jpm9aEc",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 481432,
+   "title": "Lazzaro felice",
+   "year": 2018,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/7i9Y24GDSQ7dkKBKdYP3gsgTI3L.jpg",
+   "videos": [
+    {
+     "youtube": "k5nM0w9Bq8c",
+     "type": "Trailer",
+     "name": "LAZZARO FELICE (2018) di Alice Rohrwacher - Trailer ufficiale HD",
+     "language": "it"
+    },
+    {
+     "youtube": "e3gS7BDmZlw",
+     "type": "Trailer",
+     "name": "Official UK Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "hNqLXid6WPI",
+     "type": "Trailer",
+     "name": "Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "e_GGIAkeTrE",
+     "type": "Clip",
+     "name": "Excerpt 3",
+     "language": "en"
+    },
+    {
+     "youtube": "gF0cd9zbeDs",
+     "type": "Clip",
+     "name": "Excerpt 2",
+     "language": "en"
+    },
+    {
+     "youtube": "P8DvUlDauo8",
+     "type": "Clip",
+     "name": "Excerpt 1",
+     "language": "en"
+    },
+    {
+     "youtube": "mgk5gO3_W7U",
+     "type": "Featurette",
+     "name": "HAPPY AS LAZZARO Official Competition | BFI London Film Festival 2018",
+     "language": "en"
+    },
+    {
+     "youtube": "O5qmnRI1jek",
+     "type": "Featurette",
+     "name": "Alice Rohrwacher on Writing 'Happy as Lazzaro' at FSLC and Returning to NYFF",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 8416,
+   "title": "Il conformista",
+   "year": 1971,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/cLguHl1zGwhAUjDG0VAxAuwVOxV.jpg",
+   "videos": [
+    {
+     "youtube": "hUBEB-Tv6AY",
+     "type": "Trailer",
+     "name": "Il Conformista, di Bernardo Bertolucci - Trailer by Film&Clips",
+     "language": "it"
+    },
+    {
+     "youtube": "04kMeEjVGIk",
+     "type": "Trailer",
+     "name": "The Conformist – 4K Re-Release Trailer – Bernardo Bertolucci, Jean-Louis Trintignant",
+     "language": "en"
+    },
+    {
+     "youtube": "w2djvGyhZ-k",
+     "type": "Trailer",
+     "name": "The Conformist (1970) Original Trailer [HD]",
+     "language": "en"
+    },
+    {
+     "youtube": "gZAd71lg6YQ",
+     "type": "Clip",
+     "name": "The Conformist - beginning (Bernardo Bertolucci, 1970)",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "HvFTCBfJ-X8",
+    "language": "it"
+   }
+  },
+  {
+   "tmdbId": 435921,
+   "title": "L'ora legale",
+   "year": 2017,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/wiYW7gBAF70aGiuYkfH928vfmng.jpg",
+   "videos": [
+    {
+     "youtube": "VV1zCcAgc7o",
+     "type": "Trailer",
+     "name": "L'Ora Legale - Trailer ufficiale",
+     "language": "it"
+    },
+    {
+     "youtube": "1c6QM4C4lE0",
+     "type": "Trailer",
+     "name": "L'ora Legale (It’s the Law) (Sub)",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  }
+ ]
+}

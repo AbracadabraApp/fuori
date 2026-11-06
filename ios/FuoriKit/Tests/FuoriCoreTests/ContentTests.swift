@@ -171,4 +171,14 @@ import Testing
         #expect(address.address.named(nil).line.hasPrefix("Piacere! A una donna"))
         #expect(address.address.named(nil).en.hasPrefix("Nice to meet you! To a woman"))
     }
+
+    /// The cinema shuffler (GET /v1/cinema, trimmed to two shelves of two films):
+    /// shelves decode with their films and posters as URLs
+    @Test func decodesCinemaShelves() throws {
+        let url = try #require(Bundle.module.url(forResource: "cinema-it", withExtension: "json", subdirectory: "Fixtures"))
+        let cinema = try JSONDecoder().decode(CinemaShelves.self, from: Data(contentsOf: url))
+        #expect(cinema.shelves.count == 2)
+        #expect(cinema.shelves.allSatisfy { !$0.title.isEmpty && $0.films.count == 2 })
+        #expect(cinema.shelves.flatMap(\.films).allSatisfy { $0.poster != nil && !$0.videos.isEmpty })
+    }
 }

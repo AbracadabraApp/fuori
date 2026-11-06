@@ -1,0 +1,162 @@
+{
+ "shelves": [
+  {
+   "id": "full",
+   "title": "Film interi",
+   "films": [
+    {
+     "tmdbId": 11216,
+     "title": "Nuovo Cinema Paradiso",
+     "year": 1988,
+     "poster": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/posters/11216.d8e7446ac1.webp",
+     "videos": [
+      {
+       "youtube": "JMyVSD6OvO8",
+       "type": "Trailer",
+       "name": "Cinema Paradiso Official Trailer",
+       "language": "en"
+      },
+      {
+       "youtube": "a5ESbWUA0JY",
+       "type": "Film completo",
+       "name": "Nuovo Cinema Paradiso (1988)",
+       "language": "it"
+      },
+      {
+       "youtube": "stLekU5BnbI",
+       "type": "Trailer",
+       "name": "Cinema Paradiso Official 25th Anniversary trailer from Arrow Films",
+       "language": "en"
+      }
+     ]
+    },
+    {
+     "tmdbId": 381341,
+     "title": "Perfetti sconosciuti",
+     "year": 2016,
+     "poster": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/posters/381341.426001ebb9.webp",
+     "videos": [
+      {
+       "youtube": "Kp8JX3-b9tw",
+       "type": "Trailer",
+       "name": "Perfetti Sconosciuti - Trailer Ufficiale",
+       "language": "it"
+      },
+      {
+       "youtube": "o6Ai2WPWHQ0",
+       "type": "Film completo",
+       "name": "Perfetti sconosciuti (2016)",
+       "language": "it"
+      },
+      {
+       "youtube": "-lOUnBsjGuY",
+       "type": "Trailer",
+       "name": "PERFECT STRANGERS (2017) - Official HD Trailer - A film by Paolo Genovese",
+       "language": "en"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rome",
+   "title": "A Roma",
+   "films": [
+    {
+     "tmdbId": 307,
+     "title": "Roma città aperta",
+     "year": 1945,
+     "poster": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/posters/307.e385525b49.webp",
+     "videos": [
+      {
+       "youtube": "ei-b4kl3rU8",
+       "type": "Trailer",
+       "name": "ROMA CITTÀ APERTA - Trailer (Il Cinema Ritrovato al cinema)",
+       "language": "it"
+      },
+      {
+       "youtube": "v5fEk1ih7I8",
+       "type": "Film completo",
+       "name": "Roma città aperta (1945)",
+       "language": "it"
+      },
+      {
+       "youtube": "5uzXxXnGfVs",
+       "type": "Trailer",
+       "name": "Rome, Open City (Roma Città Aperta) - back in cinemas 17 May 2024 | BFI",
+       "language": "en"
+      },
+      {
+       "youtube": "JM_KpDmdF98",
+       "type": "Trailer",
+       "name": "Roberto Rossellini: The War Trilogy - trailer | BFI Blu-ray",
+       "language": "en"
+      },
+      {
+       "youtube": "c1P1JRSJT6Q",
+       "type": "Trailer",
+       "name": "Trailer [Subtitled]",
+       "language": "en"
+      },
+      {
+       "youtube": "hgS4KEDZ0PE",
+       "type": "Featurette",
+       "name": "Mark Kermode reviews Rome, Open City (1945) | BFI Player",
+       "language": "en"
+      },
+      {
+       "youtube": "OeBleS8PzlE",
+       "type": "Featurette",
+       "name": "'Rome, Open City' | Critic's Picks | The New York Times",
+       "language": "en"
+      }
+     ]
+    },
+    {
+     "tmdbId": 5156,
+     "title": "Ladri di biciclette",
+     "year": 1948,
+     "poster": "https://pub-b5019d0e071d4916b9dbf0957cb6a6c0.r2.dev/it/posters/5156.5620713a9f.webp",
+     "videos": [
+      {
+       "youtube": "_I_LgU9Hw5s",
+       "type": "Trailer",
+       "name": "Ladri di biciclette (Vittorio De Sica, 1948) Trailer Originale Italiano d'epoca",
+       "language": "it"
+      },
+      {
+       "youtube": "lwh0lG3gLg0",
+       "type": "Film completo",
+       "name": "Ladri di biciclette (1948)",
+       "language": "it"
+      },
+      {
+       "youtube": "lP-TVGL7d8g",
+       "type": "Trailer",
+       "name": "LADRI DI BICICLETTE di Vittorio De Sica - Trailer (Il Cinema Ritrovato al cinema)",
+       "language": "it"
+      },
+      {
+       "youtube": "H2P4xo9kmPM",
+       "type": "Trailer",
+       "name": "Bicycle Thieves (1948) Trailer #1",
+       "language": "en"
+      },
+      {
+       "youtube": "d2Gs37JdQak",
+       "type": "Featurette",
+       "name": "Suso Cecchi D'Amico on BICYCLES THIEVES",
+       "language": "en"
+      },
+      {
+       "youtube": "NAvd8gFRfSQ",
+       "type": "Featurette",
+       "name": "Enzo Staiola on BICYCLE THIEVES",
+       "language": "en"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

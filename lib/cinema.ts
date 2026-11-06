@@ -27,3 +27,20 @@ export function cinemaFilms(cityId: string, placeId: string): CinemaFilm[] | nul
   const c = file().cinemas[cityId];
   return c && c.place === placeId ? c.films : null;
 }
+
+/**
+ * The cinema shuffler's library (content/<country>/cinema-library.json; Josh,
+ * 2026-11-06, experimental and not linked from the game): rows of posters, as
+ * on MovieGenius home. `fullFilm` is a full-length YouTube upload of the film.
+ */
+export interface LibraryFilm { tmdbId: number; title: string; year: number; posterUrl: string | null; videos: CinemaVideo[]; fullFilm: { youtube: string; language: string | null } | null }
+export interface CinemaLibrary { fullFilmName: string; shelves: { id: string; title: string; films: number[] }[]; films: LibraryFilm[] }
+
+let library: CinemaLibrary | null | undefined;
+/** The country's library, or null if it has none */
+export function cinemaLibrary(): CinemaLibrary | null {
+  if (library !== undefined) return library;
+  const path = join(process.cwd(), 'content', pack.id, 'cinema-library.json');
+  library = existsSync(path) ? (JSON.parse(readFileSync(path, 'utf8')) as CinemaLibrary) : null;
+  return library;
+}
