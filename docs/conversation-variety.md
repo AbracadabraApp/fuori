@@ -1,4 +1,31 @@
-# Conversation variety: every shop the same conversation
+# Dialogue variety
+
+Plan, 2026-11-06, revised the same day. Each step waits for Josh's go.
+
+## The frame (Josh, 2026-11-06)
+
+"The issue is not just transactions - we should frame it for all dialogue -- the easiest way to correct commerce is correct the places where it happens."
+
+- **The problem, everywhere:** conversations are thin and alike across visits and places: the same planted idea every visit (Nino's menu, the marigolds, the Maradona shrine), national clichés, the same shape at every place of a kind. The transaction is the loudest case because shops are about two-thirds of what a learner can visit (Italy 5–9 of 9–13 shown places per city; Mexico 7–9 of 12–14).
+- **The goal:** every conversation gives the learner something true and particular to this town and this person, and a second visit isn't a rerun of the first.
+- **The order, cheapest lever first:** 1. places (fewer shops: one bar per city, pharmacies out, the city's own landmarks, open spaces and Nino-style roles in; a shop stays only if it beats those on the gate); 2. lines (every shown character's `here` written the Mexican way: what this place is and why it's local, no clichés); 3. talk (memory of what was already told; threads drawn with odds if they still help; A, already live).
+- **The measure, for every kind of place:** the variety gate (`tests/experiments/variety.mts`, `docs/prompt-trials.md` → Conversation variety gate) with shops, landmarks, open spaces and Nino-style roles; each kind's numbers are the bar for the others.
+
+### Steps from here
+
+1. Gate the references: a landmark, an open space and Nino in each country, beside the current shops.
+2. Josh approves the swap list; its landmarks and open spaces go in; a shop only if it beats the references.
+3. Gate the swapped cities.
+4. Remaining `here` lines rewritten the Mexican way, city by city, gated.
+5. Memory ("you've already told them about X"), then threads, gated.
+6. Josh plays it on the phone.
+
+Done so far: the baseline gate (Mexico better than Italy on almost every measure); A, live (Beginner purchase 65–79% → 51–60%); on the `variety-threads` branch, Italy's lines the Mexican way (4 lines) and threads with odds. The original plan below stays as the record of how we got here.
+
+---
+
+## The first plan (2026-11-06, morning)
+
 
 Draft plan, 2026-11-06. Nothing here is built yet; each step waits for Josh's go.
 
