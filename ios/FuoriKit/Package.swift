@@ -14,15 +14,22 @@ let package = Package(
         .library(name: "FuoriAudio", targets: ["FuoriAudio"]),
         .library(name: "FuoriFeatures", targets: ["FuoriFeatures"]),
     ],
+    dependencies: [
+        // The cinema trailer player (as in MovieGenius): YouTube's embedded player, iPhone only
+        .package(url: "https://github.com/youtube/youtube-ios-player-helper.git", exact: "1.0.4"),
+    ],
     targets: [
         .target(name: "FuoriCore"),
         .target(name: "FuoriNetworking", dependencies: ["FuoriCore"]),
         .target(name: "FuoriDesign"),
         .target(name: "FuoriAudio"),
-        .target(name: "FuoriFeatures", dependencies: ["FuoriCore", "FuoriNetworking", "FuoriDesign", "FuoriAudio"]),
+        .target(name: "FuoriFeatures", dependencies: [
+            "FuoriCore", "FuoriNetworking", "FuoriDesign", "FuoriAudio",
+            .product(name: "YouTubeiOSPlayerHelper", package: "youtube-ios-player-helper", condition: .when(platforms: [.iOS])),
+        ]),
         .testTarget(name: "FuoriCoreTests", dependencies: ["FuoriCore"], resources: [.copy("Fixtures")]),
         .testTarget(name: "FuoriNetworkingTests", dependencies: ["FuoriNetworking"]),
-        .testTarget(name: "FuoriAudioTests", dependencies: ["FuoriAudio"], resources: [.copy("Fixtures")]),
+        .testTarget(name: "FuoriAudioTests", dependencies: ["FuoriAudio", "FuoriNetworking"], resources: [.copy("Fixtures")]),
         .testTarget(name: "FuoriFeaturesTests", dependencies: ["FuoriFeatures"]),
     ]
 )

@@ -163,7 +163,7 @@ public struct RootView: View {
         }
     }
 
-    /// Debug builds only: `-FuoriOpen <cityId>/<placeId>` opens that place at
+    /// Debug builds only: `-FuoriOpen <cityId>/<placeId>[/<tmdbId>]` opens that place (a cinema: its films, or one film) at
     /// launch, for screenshots and simulator checks without tapping.
     /// The bubble gallery replaces the city list (debug only)
     private static var galleryOn: Bool {
@@ -182,7 +182,13 @@ public struct RootView: View {
         guard let city = content.city(parts[0]) else { return }
         path.append(city)
         if parts.count > 1, let place = city.places.first(where: { $0.id == parts[1] }) {
-            path.append(PersonRoute(city: city, place: place))
+            if let films = place.films, !films.isEmpty {
+                // A cinema; `<cityId>/<placeId>/<tmdbId>` opens that film's videos too
+                path.append(CinemaRoute(place: place))
+                if parts.count > 2, let film = films.first(where: { String($0.tmdbId) == parts[2] }) { path.append(FilmRoute(film: film)) }
+            } else {
+                path.append(PersonRoute(city: city, place: place))
+            }
         }
         #endif
     }

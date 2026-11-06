@@ -1,0 +1,15 @@
+{
+  "originHash" : "63bd5e843a72617b1d45eeb0f3c2dfb1693dd46f9e91c495e1128f844d78215b",
+  "pins" : [
+    {
+      "identity" : "youtube-ios-player-helper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/youtube/youtube-ios-player-helper.git",
+      "state" : {
+        "revision" : "f57129cd4380ec0a74dd3a59da3270a1d653d59b",
+        "version" : "1.0.4"
+      }
+    }
+  ],
+  "version" : 3
+}

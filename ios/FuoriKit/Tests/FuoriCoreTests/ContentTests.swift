@@ -92,6 +92,24 @@ import Testing
         #expect(withCulture.culture?.first?.chip == "Coffee for a stranger")
     }
 
+    /// A cinema's films (lib/cinema.ts): optional on every place, so older servers still decode
+    @Test func cinemaFilmsDecode() throws {
+        let url = try #require(Bundle.module.url(forResource: "content-it", withExtension: "json", subdirectory: "Fixtures"))
+        var json = try #require(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        let plain = try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json))
+        #expect(plain.cities.allSatisfy { $0.places.allSatisfy { $0.films == nil } })
+        var cities = try #require(json["cities"] as? [[String: Any]])
+        var places = try #require(cities[0]["places"] as? [[String: Any]])
+        places[0]["films"] = [["tmdbId": 5156, "title": "Ladri di biciclette", "year": 1948, "poster": "https://example.r2.dev/it/posters/5156.abc.webp",
+                               "videos": [["youtube": "_I_LgU9Hw5s", "type": "Trailer", "name": "Trailer Originale", "language": "it"]]]]
+        cities[0]["places"] = places
+        json["cities"] = cities
+        let content = try JSONDecoder().decode(Content.self, from: JSONSerialization.data(withJSONObject: json))
+        let film = try #require(content.cities[0].places[0].films?.first)
+        #expect(film.title == "Ladri di biciclette" && film.year == 1948)
+        #expect(film.videos.first?.youtube == "_I_LgU9Hw5s")
+    }
+
     /// The visit stamp's words (content/<country>/language.ts → ui.stamp), and a
     /// server from before them still loads (no stamps then)
     @Test func decodesStampWords() throws {
