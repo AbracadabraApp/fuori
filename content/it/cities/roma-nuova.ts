@@ -35,12 +35,50 @@ export const romaNuova: CityPantry = {
     },
     {
       id: 'trattoria-garbatella',
-      name: 'Trattoria Da Nino',
-      kind: 'trattoria',
+      name: 'Osteria da Nino',
+      kind: 'osteria',
       neighbourhood: 'Garbatella',
       real: false,
-      characterId: 'mohamed-hassan',
-      imagePrompt: 'On an ordinary weekday in Garbatella, a 1920s garden-city quarter that feels like a village inside Rome: low buildings of three storeys at most, never tall city palazzi, in ochre and orange with arched doorways, little loggias and small towers, set around open courtyards and gardens with trees and benches, more like a village square than a city street. The trattoria occupies the ground floor of one of them, facing a courtyard garden, with a few outdoor tables on the pavement, windows above hung with laundry, and neighbouring shopfronts on either side under a clear October sky. Mohamed Hassan, the cameriere, stands just outside by the tables with a tray and a cloth over his arm.',
+      characterId: 'nino-garbatella',
+      imagePrompt: "On an ordinary weekday in Garbatella, a 1920s garden-city quarter that feels like a village inside Rome: low buildings of three storeys at most in ochre and orange, with arched doorways, little loggias and small towers, set around open courtyards and gardens with trees and benches. The osteria occupies the ground floor of one of them, facing a courtyard garden, with a few tables outside. By the door stands a blackboard on an easel, its surface left plain dark green with nothing written on it. Nino, the old oste, 74, sits at a table by the door with a glass of water, in a cardigan, turned towards the viewer as if about to start talking. The sign over the door reads \"Osteria da Nino\" and that is the only lettering in the picture: no other words, menus, prices or posters. Contemporary clothes and objects.",
+      menu: ['Carciofi alla romana', 'Cacio e pepe', 'Gricia', 'Amatriciana', 'Carbonara', 'Giovedì: gnocchi'],
+      pictures: [
+              {
+                      "id": "osteria-da-nino-carciofi-alla-romana",
+                      "shows": "carciofi alla romana",
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of two Roman artichokes braised whole with mint and garlic, stems up, glistening with olive oil, on a white plate, on a table with a white paper tablecloth, a fork and a glass beside it, in a small osteria. No people, no lettering anywhere in the picture."
+              },
+              {
+                      "id": "osteria-da-nino-cacio-e-pepe",
+                      "shows": "cacio e pepe",
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of tonnarelli cacio e pepe, creamy with pecorino and flecked with black pepper, on a table with a white paper tablecloth, a fork and a glass beside it, in a small osteria. No people, no lettering anywhere in the picture."
+              },
+              {
+                      "id": "osteria-da-nino-gricia",
+                      "shows": "gricia",
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of rigatoni alla gricia with crisp cubes of guanciale and grated pecorino, no tomato, on a table with a white paper tablecloth, a fork and a glass beside it, in a small osteria. No people, no lettering anywhere in the picture."
+              },
+              {
+                      "id": "osteria-da-nino-amatriciana",
+                      "shows": "amatriciana",
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of bucatini all'amatriciana in a red tomato sauce with guanciale and pecorino, on a table with a white paper tablecloth, a fork and a glass beside it, in a small osteria. No people, no lettering anywhere in the picture."
+              },
+              {
+                      "id": "osteria-da-nino-carbonara",
+                      "shows": "carbonara",
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of spaghetti alla carbonara, golden with egg yolk and pecorino, crisp guanciale and black pepper, no cream, on a table with a white paper tablecloth, a fork and a glass beside it, in a small osteria. No people, no lettering anywhere in the picture."
+              },
+              {
+                      "id": "osteria-da-nino-gnocchi",
+                      "shows": "gnocchi",
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of potato gnocchi in tomato sauce with grated cheese, the Thursday dish, on a table with a white paper tablecloth, a fork and a glass beside it, in a small osteria. No people, no lettering anywhere in the picture."
+              },
+              {
+                      "id": "osteria-da-nino-room",
+                      "shows": "the room",
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. Inside a small old osteria in Garbatella: a low ceiling, white walls with a few framed photos, shared wooden tables with white paper tablecloths, carafes of water and glasses, a counter with a till at the back and a doorway to the kitchen. A few locals eat at lunchtime. No lettering anywhere in the picture."
+              }
+      ],
     },
     {
       id: 'pantheon-rotonda',
@@ -231,6 +269,17 @@ export const romaNuova: CityPantry = {
       personality: ['opinionated', 'warm', 'proud'],
       portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Roman ochre and terracotta watercolor like the other portraits, of a 41-year-old Egyptian-born man with short dark hair, a trimmed beard going slightly grey and a knowing half-smile, wearing a light blue shirt with sleeves rolled up and a long olive-green apron. He is carrying two plates of pasta and glancing over his shoulder as if about to share an opinion about last night\'s match; detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
       here: "You wait tables at a neighbourhood trattoria in Garbatella that cooks Rome's classics: carbonara, cacio e pepe, amatriciana, saltimbocca, and gnocchi on Thursdays as in every Roman trattoria. You came from Egypt and now argue about carbonara like a Roman.",
+    },
+    {
+      id: 'nino-garbatella',
+      name: 'Nino Ferretti',
+      gender: 'm',
+      age: 74,
+      role: 'oste',
+      placeId: 'trattoria-garbatella',
+      personality: ['talkative', 'proud', 'teasing', 'generous'],
+      portraitPrompt: "Pen and ink portrait on white paper, washed with warm Roman ochre and terracotta watercolor like the other portraits, of a 74-year-old Roman man with thin white hair combed back, a broad face, bushy grey eyebrows and a big smile, wearing a brown cardigan over a checked shirt. He sits at a small table with his hands open mid-sentence, as if telling someone how a dish should be made; detailed crosshatching, no lettering anywhere in the picture. The subject is a man.",
+      here: "You are Nino, who opened this osteria in Garbatella in the 1970s and gave it your name. Your son Marco runs the kitchen now and takes the orders, Mohamed waits the tables, and the bill is paid at the counter. You sit at your table by the door every day, and you would rather talk about food than anything: you want to know what the newcomer has eaten in Rome, whether they have tried a real carbonara, and you can't help telling them how a dish should be made. On the board by the door: carciofi alla romana, cacio e pepe, gricia, amatriciana, carbonara, and gnocchi on Thursdays. Gricia is guanciale and pecorino; add tomato and it is amatriciana; add egg yolks instead and it is carbonara, never cream. Cacio e pepe is pecorino, black pepper and the starchy pasta water, stirred until creamy. The artichokes are braised with garlic and mint. Gnocchi on Thursday is an old Roman habit.",
     },
     {
       id: 'matteo-rinaldi',
