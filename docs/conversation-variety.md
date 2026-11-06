@@ -22,7 +22,7 @@ What has worked: **Nino** (Osteria da Nino, Rome). His `here` line puts him in t
 
 ## The plan
 
-Six pieces. A to D change the shared layer and reach every place in both countries; E and F are content, city by city. Strategy "arrive with a reason" (a mission from Magda or a neighbour) is out (Josh, 2026-11-06: "6 no").
+Four pieces: A (prompt, every place, both countries), C, E and F (content). B and D were considered and dropped. Strategy "arrive with a reason" (a mission from Magda or a neighbour) is out (Josh, 2026-11-06: "6 no").
 
 ### A. The errand stops leading (prompt)
 
@@ -30,47 +30,19 @@ Six pieces. A to D change the shared layer and reach every place in both countri
 - The same line in the shared `dialogue.md`, so Intermediate and Advanced follow it too (fixes are global).
 - Keep what works: react first, one question, answers to say back, never invent an errand where there isn't one.
 
-### B. What the town is proud of (content, one line per character)
+### B. Dropped: a pride line
 
-- A new field on the character, `pride`: one sentence of what their place or their product says about the town, with its history or its story. Examples:
-  - Florence's tripe stand: the family stand, and why Florentines eat lampredotto.
-  - Mantua's café: sbrisolona, Mantua's crumbly almond cake.
-  - Puebla's sweet shop: the convents where the sweets began.
-- Written for every shown character in both countries, about 250. A draft is generated, and a fact check (a judge with the city file) flags doubtful ones. Hand-written content stays data in `content/<country>/`.
-- The prompt says: this is what you'd love to tell a newcomer, when it fits; not all of it at once.
-- Not every visit opens with it (see D), so a second visit isn't the same speech.
+Tried 2026-11-04 (`docs/prompt-trials.md`, `character.md` pride line): culture 7% → 17%, but forced lines and the errand barely moved (68% → 59%). Josh: "I think pride is a dead idea"; "increase culture by increasing cultural settings". Culture goes in the `here` line instead (docs/culture.md → Culture comes from the settings), which is what C does.
 
-### C. A moment when the transaction can't happen (Nino's pattern)
+### C. Richer `here` lines, with Nino's moment (content)
 
-- Many characters get a `moment` alongside `here`, a time when nothing can be sold. Examples:
-  - before opening
-  - the delivery is late
-  - lunch break
-  - the stall is closing
-  - stocking up for a festival
-- Not every character, and not every visit. A moment comes up on some visits, picked the way the weather line is picked now (`weatherLine(cityId, now, characterId)`).
-- The prompt line is the same as Nino's: you can't sell right now, so you talk.
+- Every shown character's `here` line is rewritten, the way Nino's was: a cultural setting only this place has (its history, its product and why the town cares about it, its regulars), and, for many, a moment when nothing can be sold (before opening, the kitchen closed after lunch, a delivery being unpacked, stocking up for a festival). The moment is part of the line, not a separate field or a draw.
+- Generated drafts against the city file, a fact judge (`facts.md`), then played: two cities first (Florence and Mexico City), measured, then the rest.
+- No new prompt rule: facts in the setting work, rules don't (culture.md).
 
-### D. Something going on today, fresh for each visit (generated)
+### D. Dropped: a generated situation for each visit
 
-The open world rule: Claude generates scenes during play.
-
-- When a conversation starts, one short call (Haiku-class, through `lib/claude.ts`) writes one or two sentences of what's going on for this person today. It draws on:
-  - the character, `here`, `pride` and `moment`
-  - the city and its customs
-  - the day and the weather
-  - **what this learner already heard at places of the same kind**, from the character turns of their last few conversations at that kind (the `conversations` table has place and turns)
-
-  It is told to choose something different from those. Examples:
-  - a regular who's late
-  - tonight's match
-  - the first artichokes of the season
-  - a daughter's wedding
-  - the Palio next week
-- It goes into the setting like the weather does (`withToday`), as a fact, not a rule.
-- Stored on the conversation, so a replay or a debug view can see it.
-- Time added: one small call before the first turn. Measure it. If it adds noticeable wait, generate it while the place picture loads, or ahead for the shown places.
-- No new tools: one conversation per person stays (Josh, 2026-11-06).
+Josh, 2026-11-06: skeptical. The evidence agrees: the pride line written as a situation became invented news (Luisa's made-up derby score), and a weather line in the setting made all 24 openers talk about the weather (`docs/prompt-trials.md`, 2026-11-03 and 04). A situation per visit would likely do both.
 
 ### E. Show the distinctive places already written (content, Italy)
 
@@ -101,8 +73,8 @@ The open world rule: Claude generates scenes during play.
 
 ### Also, smaller
 
-- **Talk to a customer** (strategy 5): at some bars the person you meet is a regular at the counter, not the barista. That's content, a character whose role isn't the job, and fits B to D unchanged. Try it at one or two bars after E.
-- **Cultural items in ordinary visits** (strategy 7): `content/<country>/culture.json` stories already belong to places. D can draw one in as today's subject, once per learner, never repeated.
+- **Talk to a customer** (strategy 5): at some bars the person you meet is a regular at the counter, not the barista. That's content, a character whose role isn't the job, and needs no other change. Try it at one or two bars after E.
+- **Cultural items in ordinary visits** (strategy 7): `content/<country>/culture.json` stories already belong to places; a place's `here` line can carry its story's setting.
 
 ## How we'll know
 
@@ -124,15 +96,12 @@ Then Josh plays it on the phone: a bar, a pharmacy and a market in two cities.
 
 1. Baseline replay (no change to the game).
 2. A, the errand stops leading: a prompt change, measured.
-3. C and B for the shown characters in two cities first (Florence and Mexico City), measured, then everyone.
-4. D, today's situation, with what the learner already heard.
-5. E, Italy's showcase swaps, after Josh approves the list.
-6. F, Mexico's new places.
+3. C, richer `here` lines, in Florence and Mexico City first, measured, then everyone.
+4. E, Italy's showcase swaps, after Josh approves the list.
+5. F, Mexico's new places.
 
 Each step: smoke:live in both countries before it's called done; `progress.md` updated.
 
 ## Decisions for Josh
 
 - **E:** the swap list per city, sent before anything changes.
-- **B:** whether `pride` facts are generated and fact-checked, or each one approved.
-- **D:** whether waiting a moment longer at the start of a visit is fine, or the situation must be ready before you tap the place.
