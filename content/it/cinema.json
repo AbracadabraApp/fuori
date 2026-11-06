@@ -2,6 +2,7 @@
   "about": "Cinemas: a place with no person; tapping it shows a scroll of posters, and a poster plays its first video (an official trailer, in whatever language TMDB has) with the film's other videos below, as in MovieGenius (Josh, 2026-11-05: no level rules, culture as important as language). Data from TMDB (posters, YouTube ids), fetched once; posters to be copied to R2 like other images. TMDB credit belongs in Settings → About.",
   "cinemas": {
     "roma-nuova": {
+      "place": "cinema-pigneto",
       "films": [
         {
           "tmdbId": 307,
