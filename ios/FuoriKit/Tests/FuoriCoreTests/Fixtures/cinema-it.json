@@ -1,7 +1,7 @@
 {
  "labels": {
-  "yes": "Da vedere",
-  "no": "Si può saltare",
+  "yes": "Consigliato",
+  "no": "Non consigliato",
   "moreIdeas": "Altre idee"
  },
  "shelves": [
@@ -41,7 +41,15 @@
        "I baci tagliati dal prete, montati alla fine",
        "Oscar per il miglior film straniero"
       ],
-      "context": "Un regista famoso torna in Sicilia per il funerale di Alfredo, il proiezionista che lo ha cresciuto nella cabina del cinema del paese. Tornatore racconta un'infanzia, un amore perduto e la fine delle sale di paese. Musica di Ennio e Andrea Morricone."
+      "context": "Un regista famoso torna in Sicilia per il funerale di Alfredo, il proiezionista che lo ha cresciuto nella cabina del cinema del paese. Tornatore racconta un'infanzia, un amore perduto e la fine delle sale di paese. Musica di Ennio e Andrea Morricone.",
+      "en": {
+       "reasons": [
+        "Philippe Noiret, a gruff, tender projectionist",
+        "The kisses the priest cut, spliced together at the end",
+        "Oscar for best foreign film"
+       ],
+       "context": "A famous director returns to Sicily for the funeral of Alfredo, the projectionist who raised him in the village cinema's booth. Tornatore tells of a childhood, a lost love and the end of village cinemas. Music by Ennio and Andrea Morricone."
+      }
      },
      "moreIdeas": [
       {
@@ -86,7 +94,15 @@
        "Giallini, Mastandrea e Rohrwacher in gran forma",
        "Il film più rifatto della storia"
       ],
-      "context": "Sette amici a cena decidono di leggere ad alta voce ogni messaggio e rispondere in vivavoce a ogni chiamata. Dovrebbe essere un gioco. Quasi tutto in una sola stanza, e dal film di Paolo Genovese sono nati più di venti remake nel mondo."
+      "context": "Sette amici a cena decidono di leggere ad alta voce ogni messaggio e rispondere in vivavoce a ogni chiamata. Dovrebbe essere un gioco. Quasi tutto in una sola stanza, e dal film di Paolo Genovese sono nati più di venti remake nel mondo.",
+      "en": {
+       "reasons": [
+        "One dinner, seven friends, phones on the table",
+        "Giallini, Mastandrea and Rohrwacher at their best",
+        "The most remade film in history"
+       ],
+       "context": "Seven friends at dinner agree to read every message aloud and take every call on speaker. It's meant to be a game. Almost all in one room, Paolo Genovese's film has spawned more than twenty remakes around the world."
+      }
      },
      "moreIdeas": [
       {
@@ -161,16 +177,24 @@
        "Aldo Fabrizi, prete della Resistenza",
        "Girato a Roma pochi mesi dopo la liberazione"
       ],
-      "context": "Roma, inverno 1944, sotto l'occupazione tedesca: un ingegnere comunista, un prete e una vedova incinta nascondono e aiutano la Resistenza. Rossellini gira con poca pellicola e attori presi ovunque. Tra gli sceneggiatori c'è il giovane Fellini."
+      "context": "Roma, inverno 1944, sotto l'occupazione tedesca: un ingegnere comunista, un prete e una vedova incinta nascondono e aiutano la Resistenza. Rossellini gira con poca pellicola e attori presi ovunque. Tra gli sceneggiatori c'è il giovane Fellini.",
+      "en": {
+       "reasons": [
+        "Anna Magnani runs after the truck",
+        "Aldo Fabrizi, a priest in the Resistance",
+        "Shot in Rome a few months after liberation"
+       ],
+       "context": "Rome, winter 1944, under German occupation: a communist engineer, a priest and a pregnant widow hide and help the Resistance. Rossellini shoots with scraps of film and actors found anywhere. Among the screenwriters is a young Fellini."
+      }
      },
      "moreIdeas": [
       {
-       "tmdbId": 5156,
-       "connection": "De Sica, la Roma del dopoguerra"
+       "tmdbId": 8429,
+       "connection": "Rossellini, la liberazione in sei storie"
       },
       {
-       "tmdbId": 1026227,
-       "connection": "Cortellesi, Roma un anno dopo"
+       "tmdbId": 5156,
+       "connection": "De Sica, la Roma del dopoguerra"
       }
      ]
     },
@@ -224,7 +248,15 @@
        "Roma del dopoguerra, girata nelle sue vie",
        "Il finale tra padre e figlio pesa"
       ],
-      "context": "Antonio ha appena trovato lavoro ad attaccare manifesti, ma il primo giorno gli rubano la bicicletta. Una domenica a cercarla per Roma con il figlio Bruno. Lamberto Maggiorani era un operaio, non un attore. Novanta minuti, nessuna scena di troppo."
+      "context": "Antonio ha appena trovato lavoro ad attaccare manifesti, ma il primo giorno gli rubano la bicicletta. Una domenica a cercarla per Roma con il figlio Bruno. Lamberto Maggiorani era un operaio, non un attore. Novanta minuti, nessuna scena di troppo.",
+      "en": {
+       "reasons": [
+        "Actors taken off the street, never acted before",
+        "Postwar Rome, shot in its own streets",
+        "The ending between father and son hits hard"
+       ],
+       "context": "Antonio has just found work putting up posters, but on the first day his bicycle is stolen. One Sunday searching Rome for it with his son Bruno. Lamberto Maggiorani was a factory worker, not an actor. Ninety minutes, not one scene too many."
+      }
      },
      "moreIdeas": [
       {
@@ -232,8 +264,8 @@
        "connection": "Rossellini apre il neorealismo, Roma occupata e attori quasi tutti veri"
       },
       {
-       "tmdbId": 1026227,
-       "connection": "Cortellesi gira la Roma del 1946 in bianco e nero"
+       "tmdbId": 43469,
+       "connection": "De Sica e Zavattini, bambini lustrascarpe nella Roma del dopoguerra"
       }
      ]
     }

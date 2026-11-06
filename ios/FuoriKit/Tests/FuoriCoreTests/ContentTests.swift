@@ -183,5 +183,7 @@ import Testing
         // The film page: the labels, and each film's WhyWatch with its reasons
         #expect(cinema.labels != nil)
         #expect(cinema.shelves.flatMap(\.films).allSatisfy { ($0.whyWatch?.reasons.count ?? 0) >= 2 })
+        // The translate link: an English line for every reason, and the context
+        #expect(cinema.shelves.flatMap(\.films).allSatisfy { $0.whyWatch?.en?.reasons.count == $0.whyWatch?.reasons.count && !($0.whyWatch?.en?.context ?? "").isEmpty })
     }
 }

@@ -189,7 +189,14 @@ public struct Film: Codable, Sendable, Equatable, Identifiable, Hashable {
         public let recommendation: String
         public let reasons: [String]
         public let context: String
+        /// The English for the translate link (nil from servers before 2026-11-06)
+        public let en: Translation?
         public var recommended: Bool { recommendation == "YES" }
+
+        public struct Translation: Codable, Sendable, Equatable, Hashable {
+            public let reasons: [String]
+            public let context: String
+        }
     }
 
     public struct Idea: Codable, Sendable, Equatable, Hashable {

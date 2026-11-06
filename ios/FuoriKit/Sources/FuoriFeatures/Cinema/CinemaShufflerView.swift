@@ -219,6 +219,8 @@ struct FilmPage: View {
 private struct WhyWatchCard: View {
     let why: Film.WhyWatch
     let labels: CinemaShelves.Labels?
+    /// The English under the Italian (Josh, 2026-11-06: one translate link, on WhyWatch only)
+    @State private var english = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -233,25 +235,56 @@ private struct WhyWatchCard: View {
                 }
             }
             VStack(alignment: .leading, spacing: 8) {
-                ForEach(why.reasons, id: \.self) { reason in
+                ForEach(Array(why.reasons.enumerated()), id: \.offset) { i, reason in
                     HStack(alignment: .firstTextBaseline, spacing: 8) {
                         Text("•").accessibilityHidden(true)
-                        Text(reason)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(reason)
+                            if english, let en = why.en?.reasons[safe: i] { translation(en) }
+                        }
                     }
                 }
             }
             .typeface(.label, Tokens.Size.body, relativeTo: .body)
             .foregroundStyle(Tokens.Colors.flapInk)
-            Text(why.context)
-                .typeface(.label, Tokens.Size.body, relativeTo: .body)
-                .foregroundStyle(Tokens.Colors.sand)
-                .fixedSize(horizontal: false, vertical: true)
+            VStack(alignment: .leading, spacing: 6) {
+                Text(why.context)
+                    .typeface(.label, Tokens.Size.body, relativeTo: .body)
+                    .foregroundStyle(Tokens.Colors.sand)
+                    .fixedSize(horizontal: false, vertical: true)
+                if english, let en = why.en?.context { translation(en) }
+            }
+            if why.en != nil {
+                Button { english.toggle() } label: {
+                    Text(english ? "Hide English" : "English")
+                        .typeface(.label, Tokens.Size.body, relativeTo: .body, weight: .bold)
+                        .foregroundStyle(Tokens.Colors.cinemaGlow)
+                        .frame(minHeight: 44)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(PressableStyle())
+                .accessibilityHint(english ? "Hides the translation" : "Shows the translation under the Italian")
+            }
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Tokens.Colors.flapTile, in: RoundedRectangle(cornerRadius: Tokens.Radius.card))
         .padding(.horizontal, Tokens.Space.gutter)
     }
+
+    /// The English, smaller and muted under the Italian, as subtitles
+    private func translation(_ text: String) -> some View {
+        Text(text)
+            .typeface(.label, Tokens.Size.badge, relativeTo: .subheadline)
+            .italic()
+            .foregroundStyle(Tokens.Colors.sand)
+            .fixedSize(horizontal: false, vertical: true)
+            .environment(\.locale, Locale(identifier: "en"))
+    }
+}
+
+private extension Array {
+    subscript(safe index: Int) -> Element? { indices.contains(index) ? self[index] : nil }
 }
 
 /// One idea, as MovieGenius's More Ideas card: a small poster, the title and year, and why it's like this one
