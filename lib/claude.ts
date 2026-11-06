@@ -1,4 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
+import { fixMojibake } from '@/lib/mojibake';
 
 /**
  * Single entry point for Claude calls (see CLAUDE.md).
@@ -109,5 +110,6 @@ export function replyText(response: {
     const types = response.content.map((b) => b.type).join(', ') || 'none';
     throw new Error(`Claude returned no text (blocks: ${types}; stop: ${response.stop_reason ?? 'unknown'})`);
   }
-  return text;
+  // Text sometimes comes back double-encoded ("ÂżA dĂłnde"): put it back (lib/mojibake.ts)
+  return fixMojibake(text);
 }
