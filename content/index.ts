@@ -32,3 +32,6 @@ export const browserVoiceFor = pack.browserVoiceFor;
 
 /** Image addresses in Cloudflare R2, for the app's API (server only; content/images.ts) */
 export { imageListFor } from './images';
+
+/** What the ticket seller knows about a trip (content/stations.ts) */
+export { stationsFor, type Stations } from './stations';

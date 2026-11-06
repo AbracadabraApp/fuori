@@ -5,7 +5,9 @@
 // Also checks the station's departure details (platform and time).
 import { readFileSync } from 'fs';
 import { leaveConversation, sendConversationEnd } from '@/lib/conversation/leave';
-import { clerkSetting, departureFor } from '@/lib/travel/departure';
+import { clerkSetting, departureFor, tripFacts } from '@/lib/travel/departure';
+import { cities } from '@/content';
+import { characterForVisit } from '@/lib/characters/for-visit';
 
 const problems: string[] = [];
 const check = (ok: boolean, msg: string) => { if (!ok) problems.push(msg); };
@@ -47,7 +49,19 @@ check(!('time' in a), 'no departure time: it could contradict the ticket seller'
 // where you're going (they did with "is buying a ticket to", 2026-10-14)
 const said = clerkSetting('Stazione Termini, Esquilino', 'Firenze', a.platform);
 check(said.includes('Firenze') && said.includes(`platform ${a.platform}`), `seller knows destination and platform: ${said}`);
-check(/just told you/.test(said), 'the destination is framed as already said by the person');
+check(/just said: "A ticket to Firenze/.test(said), 'the destination is the person\'s own words, already said (sellers asked again otherwise)');
+check(!clerkSetting('At the station.', 'Firenze', 3).includes('..'), 'no doubled full stop after a setting that ends with one');
+// The seller knows the trip (content/<country>/stations.json): what the destination
+// is known for and how long it takes, for every pair of shown cities, either way round
+const shown = cities.filter((c) => !c.hidden);
+for (const from of shown) for (const to of shown) if (from.id !== to.id) {
+  const f = tripFacts(from.id, to.id, to.name);
+  if (!f.includes('known for') || !f.includes('takes')) { problems.push(`no trip facts for ${from.id} → ${to.id}: "${f}"`); break; }
+}
+const station = shown.flatMap((c) => c.places.filter((p) => !p.hidden && p.characterId && /station|terminal/.test(p.kind)).map((p) => ({ c, p })))[0];
+const other = shown.find((c) => c.id !== station?.c.id);
+const seller = station && other ? characterForVisit(station.c.id, station.p.id, other.id) : undefined;
+check(!!seller?.appearance?.setting?.includes('takes'), `the seller's setting carries the trip facts: ${seller?.appearance?.setting}`);
 // The seller's setting is built from ids (page and server alike) in for-visit.ts; the page passes the trip
 check(readFileSync('lib/characters/for-visit.ts', 'utf8').includes('clerkSetting('), 'the seller\'s setting is built with clerkSetting (lib/characters/for-visit.ts)');
 check(readFileSync('app/page.tsx', 'utf8').includes('characterForVisit(selectedCity, selectedPlace, trip?.to)'), 'the station screen passes the trip to characterForVisit');
