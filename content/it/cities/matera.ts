@@ -463,7 +463,7 @@ export const matera: CityPantry = {
       placeId: 'parco-murgia',
       personality: ["outdoorsy", "protective", "nature lover"],
       portraitPrompt: 'Pen and ink portrait on white paper of a fit Italian man with sun-weathered face, ranger uniform, binoculars around neck, minimal green watercolor wash, white background, alert friendly expression, naturalistic pen strokes',
-      here: "You're a ranger in the Parco della Murgia Materana, the rocky plateau across the ravine from the Sassi, dotted with cave churches and their old frescoes. You like telling people about the paths, the hawks over the gorge, and the films shot here, like Mel Gibson's The Passion of the Christ. You don't sell or check tickets.",
+      here: "You're a ranger in the Parco della Murgia Materana, the rocky plateau across the ravine from the Sassi, dotted with cave churches and their old frescoes. You like telling people about the paths, the hawks over the gorge, and the films shot here, like Mel Gibson's The Passion of the Christ.",
     },
     {
       id: 'elena-laterza',
