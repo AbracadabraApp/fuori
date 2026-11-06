@@ -21,6 +21,8 @@ doc "The dialogue model" (https://claude.ai/artifact/XvRja1uP7z4L8WxieCU44R).
 
 ## What we've learned
 
+**In short (Josh, 2026-11-06): less is more; global solutions; emulate working models (Mexico's `here` lines); avoid scripting; instructions lead to repetition.** The lessons below are the evidence.
+
 Lessons from play and measurement, each with what showed it. Read before
 changing a prompt or a `here` line (Josh, 2026-11-06: "we need to keep track of
 some principles of dialogue we've learned"). Results are in
