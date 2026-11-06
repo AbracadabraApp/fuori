@@ -7,6 +7,7 @@
  *   COUNTRY=es-mx npm run smoke:live        # Mexico, afuera-production
  *   npm run smoke:live -- --url=http://localhost:3000 --keep
  *   npm run smoke:live -- --place=stazione-fal   # a place in the smoke city (Matera; Mexico: terminal-tapo)
+ *   npm run smoke:live -- --city=bologna --place=sfoglia-rina   # a place in another city (Magda's lessons stay in the smoke city)
  *
  * Steps: the website is switched off (404); then the app's API: a conversation
  * is recorded; leaving writes memory and the study file; the visit is counted
@@ -72,16 +73,18 @@ async function main() {
   if (!lines) throw new Error(`no test lines for language ${language.code}; add them to LINES`);
 
   // A city with a school, and an ordinary character there
-  const city = cities.find((c) => !c.hidden && c.places.some((p) => p.characterId === tutor.id)) ?? cities.find((c) => c.places.some((p) => p.characterId === tutor.id))!;
+  const schoolCity = cities.find((c) => !c.hidden && c.places.some((p) => p.characterId === tutor.id)) ?? cities.find((c) => c.places.some((p) => p.characterId === tutor.id))!;
+  // --city=<id>: play a place in that city instead (with --place)
+  const city = arg('city') ? cities.find((c) => c.id === arg('city')) ?? (() => { throw new Error(`--city=${arg('city')}: no such city`); })() : schoolCity;
   // --place=<id>: play that place's person instead (a place in the same city, e.g. the station)
   const chosen = arg('place');
   const place = chosen
     ? city.places.find((p) => p.id === chosen && p.characterId && p.characterId !== tutor.id) ?? (() => { throw new Error(`--place=${chosen}: no such place with a person in ${city.name}`); })()
     : city.places.find((p) => p.characterId && p.characterId !== tutor.id && characterForPlace(city, p)?.origin === 'generated')!;
   const person = characterForPlace(city, place)!;
-  const school = city.places.find((p) => p.characterId === tutor.id)!;
+  const school = schoolCity.places.find((p) => p.characterId === tutor.id)!;
   const magda = characterForPlace(city, school)!;
-  console.log(`${base} · ${country} · ${person.name} (${place.name}) and Magda (${school.name}), ${city.name}\n`);
+  console.log(`${base} · ${country} · ${person.name} (${place.name}, ${city.name}) and Magda (${school.name}, ${schoolCity.name})\n`);
 
   // 1. The website is switched off (proxy.ts; Josh, 2026-10-26): its page and
   // its open /api routes are not found; the app's /v1 is served
@@ -90,7 +93,7 @@ async function main() {
   const webSpeak = await fetch(`${base}/api/speak`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'ciao' }) });
   webSpeak.status === 404 ? pass('web /api/speak not found (no voice without sign-in)') : fail('web /api/speak not found', `status ${webSpeak.status}`);
 
-  await appApi(city.id, place.id, person.id, lines, school.id);
+  await appApi(city.id, place.id, person.id, lines, school.id, schoolCity.id);
 }
 
 // The iPhone app's API (/v1, docs/12-native-app.md): sign in with a device
@@ -100,7 +103,7 @@ async function main() {
 let appLearner = '';
 let onboardingLearner = '';
 let restartedLearner = '';
-async function appApi(cityId: string, placeId: string, characterId: string, said: string[], schoolId: string) {
+async function appApi(cityId: string, placeId: string, characterId: string, said: string[], schoolId: string, schoolCityId: string) {
   const health = await fetch(`${base}/healthz`);
   const h = (await health.json().catch(() => ({}))) as { ok?: boolean; commit?: string; promptVersion?: string };
   h.ok ? pass(`healthz (commit ${h.commit}, prompt ${h.promptVersion})`) : fail('healthz', `status ${health.status}`);
@@ -193,14 +196,14 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   // Magda at the school, with the study file the conversation just fed; a
   // short lesson, then leaving, updates it and counts one lesson (moved from
   // the web half when the website was switched off, 2026-10-26)
-  const lesson = await v1('/v1/turn', { cityId, placeId: schoolId });
+  const lesson = await v1('/v1/turn', { cityId: schoolCityId, placeId: schoolId });
   const lj = (await lesson.json()) as { line?: string; conversationId?: string; promptVersion?: string };
   (lj.promptVersion ?? '').startsWith('magda-') ? pass(`v1 Magda found at the school (${lj.promptVersion})`) : fail('v1 Magda found at the school', `prompt version "${lj.promptVersion}"`);
   const sf = lesson.headers.get('x-study-file') ?? '';
   /^[1-9]\d* lines, 0 lessons$/.test(sf) ? pass(`v1 study file ready for the first lesson (${sf})`) : fail('v1 study file ready for the first lesson', `x-study-file "${sf}"`);
-  for (const line of LESSON_LINES[language.code]) await v1('/v1/turn', { cityId, placeId: schoolId, conversationId: lj.conversationId, learnerSaid: line });
+  for (const line of LESSON_LINES[language.code]) await v1('/v1/turn', { cityId: schoolCityId, placeId: schoolId, conversationId: lj.conversationId, learnerSaid: line });
   await v1(`/v1/conversations/${lj.conversationId}/end`, {});
-  const nextLesson = await v1('/v1/turn', { cityId, placeId: schoolId });
+  const nextLesson = await v1('/v1/turn', { cityId: schoolCityId, placeId: schoolId });
   const sf2 = nextLesson.headers.get('x-study-file') ?? '';
   /^[1-9]\d* lines, 1 lessons$/.test(sf2) ? pass(`v1 study file updated after the lesson (${sf2})`) : fail('v1 study file updated after the lesson', `x-study-file "${sf2}"`);
 

@@ -32,6 +32,8 @@ export interface ContentPlace {
   /** Who you meet here; absent when nobody is there yet */
   characterId?: string;
   image: string | null;
+  /** A food place's menu or board, in the language (Osteria da Nino, the Sorbetteria) */
+  menu?: string[];
 }
 
 export interface ContentCity {
@@ -134,6 +136,7 @@ export function buildContent(): Content {
         station: isStation(place.id),
         ...(person ? { characterId: person.id } : {}),
         image: image(`places/${place.id}`),
+        ...(place.menu?.length ? { menu: place.menu } : {}),
         // A cinema (lib/cinema.ts): its films, posters from R2 (app builds from 2026-11-06)
         ...(films(city.id, place.id) ?? {}),
       };

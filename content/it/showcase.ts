@@ -29,7 +29,7 @@ export const showcase: Record<string, string[]> = {
     'volpetti-testaccio', // a deli for the city's own food (Josh, 2026-10-27)
     'forno-trastevere', // Dario, back from roma.ts, in place of Pizzeria Da Gigi
     'sapienza-scalinata', // Giorgia, moved from Da Gigi
-    'trattoria-garbatella',
+    // 'trattoria-garbatella', // Osteria da Nino: hidden until Nino's portrait and the new place picture are on R2 (the cloud session is making them, 2026-11-06)
     'pantheon-rotonda',
     'gesu-piazza',
     'piazza-navona', // art: Tommaso, from roma.ts (Josh, 2026-11-03)

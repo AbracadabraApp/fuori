@@ -67,6 +67,12 @@ check(Object.values(c.characters).filter((p) => p.tutor).length === 1, 'exactly 
 check(!!c.language.ui.showMore && !!c.language.ui.ticket.board && !!c.language.speechLang, 'language words missing');
 check(/^[0-9a-f]{12}$/.test(c.version) && buildContent().version === c.version, 'version must be stable for the same content');
 
+// A place's menu or board is served as written, and only where it has one (Osteria da Nino, the Sorbetteria)
+for (const city of cities) for (const place of city.places) {
+  const served = c.cities.find((x) => x.id === city.id)?.places.find((p) => p.id === place.id);
+  if (served) check(JSON.stringify(served.menu ?? []) === JSON.stringify(place.menu ?? []), `${place.id}: menu not served as written`);
+}
+
 if (problems.length) {
   console.error(`FAIL (${country}): ${problems.length} problem(s)\n- ${problems.slice(0, 30).join('\n- ')}`);
   process.exit(1);
