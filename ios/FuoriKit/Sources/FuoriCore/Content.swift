@@ -144,6 +144,8 @@ public struct Place: Codable, Sendable, Equatable, Identifiable, Hashable {
     public let image: URL?
     /// A cinema's films (lib/cinema.ts); nil for every other place and from servers before 2026-11-06
     public let films: [Film]?
+    /// A food place's menu or board, in the language (Osteria da Nino, the Sorbetteria); nil elsewhere
+    public let menu: [String]?
 }
 
 /// A film showing at a cinema: its poster and its videos, the official trailer first (TMDB data, served by Fuori)
