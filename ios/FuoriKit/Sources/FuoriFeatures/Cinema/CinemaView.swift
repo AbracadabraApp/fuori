@@ -133,7 +133,7 @@ struct TrailerView: View {
         }
         // Dark, as a cinema (and MovieGenius's trailer screen): the video is the light
         .background(Tokens.Colors.ink)
-        .navigationTitle(film.title)
+        // The title once, under the player (Josh, 2026-11-05): none in the bar, as on the posters
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Tokens.Colors.ink, for: .navigationBar)
