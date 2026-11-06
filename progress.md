@@ -66,6 +66,14 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-06: Bologna pass and Osteria da Nino live; the menu is open (laptop session)
+- **Merged and live:** `claude/bologna-pass` with `claude/osteria-nino` (ae9932f). smoke:live passed at Portici di San Luca, Sfoglia Rina, Santo Stefano, La Sorbetteria Castiglione, Osteria da Nino and Mexico (`smoke:live` now takes `--city=<id> --place=<id>`). Nino's portrait and board picture from the cloud session (92e8350).
+- **The menu, open (Josh: "The menu concept needs work"):** tried a menu card over the portrait on the conversation screen (one column, then two with "Menu" above); on Josh's phone it covered Nino's face and crowded his bubble ("This looks like crap"), so it's gone (2f93fdf). What's left: Nino's six dishes in chalk on the blank board in his place card (1440ced; the board's position is `Place.menuBoard` in content). Not decided: what the menu is for and where it lives; start from what the learner should get. Cut-aways (`show`) not built (Josh: later).
+- **Country choice:** no "Where are you living?"; cards say "Explore Italy" / "Explore Mexico" (2afeaac, app only).
+- **Testing rule (Josh: "we do not need to optimize for non mic and huge text"):** CLAUDE.md → "Testing a screen" (d11a20c): test by talking, simulator at default size, phone with his yes; AX5, VoiceOver and the tap path only when asked. Target your own simulator by id, never `booted` (I changed another session's iPhone Air by mistake).
+- **Build 12** (403fcd7) archived; `make upload` fails with "Failed to Use Accounts" (Xcode's Apple ID sign-in), so Josh distributes from the Organizer. Build 13 would carry the country choice, the chalk board and the card removed.
+- **Open:** `test:language` fails on `ios/FuoriKit/Tests/FuoriCoreTests/ContentTests.swift:104` (the cinema's test data, from main). The Sorbetteria's picture has no board to write on.
+
 ## 2026-11-05 (night): the Rome cinema, live (laptop session)
 
 - **Live** (fd3a0ac, both services): Cinema Pigneto in Rome, a place with no person. Its card opens a feed of the 11 films' posters on a black screen (67% of the width, a Liquid Glass play button in the corner, no title); a poster opens the trailer screen, dark like MovieGenius's: the official trailer plays inline, the film's other videos below (name, kind, language), the title once, in the bar. TMDB's credit is in Settings → About. Josh approved the place picture; "we call trailers done for now".
