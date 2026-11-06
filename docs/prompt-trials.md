@@ -276,3 +276,5 @@ Josh, 2026-11-06: shops "all fall into exactly the same pattern… How much you 
 | | Italy · Intermediate | 2.7 / 3.3 s · 2.5 / 3.4 s | 31 · 31 | 53% · 51% | 7/24 · 6/24 | 16/24 · 16/24 | 8/8, 7/8 · 8/8, 8/8 | 0.8 · 0.9 | 1/5 · 0/5 | — |
 | | Mexico · Beginner | 2.7 / 3.1 s · 2.7 / 3.2 s | 21 · 22 | 79% · 79% | 0/21 · 1/21 | 4/21 · 7/21 | 7/7, 6/7 · 7/7, 7/7 | 1.3 · 1.1 | 0/5 · 0/5 | — |
 | | Mexico · Intermediate | 2.6 / 3.3 s · 2.6 / 3.3 s | 31 · 34 | 44% · 50% | 1/21 · 0/21 | 15/21 · 19/21 | 7/7, 7/7 · 7/7, 7/7 | 0.4 · 0.6 | 1/5 · 1/5 | — |
+| A: beginner.md 2026-11-06, the errand is a turn or two (commit after 7bd3ac2) | Italy · Beginner | 2.7 / 3.2 s | 20 | **51%** | 5/24 | **7/24** | 7/8, 6/8 | 2.0 | 2/5 | **Kept**: purchase down beyond noise, town up |
+| | Mexico · Beginner | 2.7 / 3.2 s | 22 | **60%** | 2/21 | **11/21** | 7/7, 7/7 | **2.6** | 1/5 | Kept; told again up beyond noise (the planted idea fills the visit: C) |
