@@ -16,7 +16,7 @@ struct TripRoute: Hashable {
 }
 
 /// A city's places in the server's feed order, each with who you meet there.
-/// A card opens the person screen; the station's card opens the departures
+/// A card opens the person screen; a cinema's card opens its films; the station's card opens the departures
 /// board, and picking a city there opens the ticket seller with that ticket.
 struct PlaceListView: View {
     let city: City
@@ -32,7 +32,11 @@ struct PlaceListView: View {
         ScrollView {
             LazyVStack(spacing: Tokens.Space.cardGap) {
                 ForEach(city.places) { place in
-                    if content.character(place.characterId) == nil {
+                    if place.films?.isEmpty == false {
+                        NavigationLink(value: CinemaRoute(place: place)) { card(place) }
+                            .buttonStyle(PressableStyle())
+                            .accessibilityHint("Shows the films")
+                    } else if content.character(place.characterId) == nil {
                         card(place)
                     } else if place.station {
                         Button { board = place } label: { card(place) }
@@ -62,6 +66,7 @@ struct PlaceListView: View {
                 picked = TripRoute(city: city, place: station, trip: Trip(from: city, to: destination))
             }
         }
+        .navigationDestination(for: CinemaRoute.self) { route in CinemaView(place: route.place) }
         .navigationDestination(item: $trip) { route in
             if let seller = content.character(route.place.characterId),
                let conversation = model.stationConversation(city: route.city, place: route.place, character: seller, to: route.trip.to) {

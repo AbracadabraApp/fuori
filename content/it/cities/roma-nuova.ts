@@ -16,6 +16,14 @@ export const romaNuova: CityPantry = {
 
   places: [
     {
+      id: 'cinema-pigneto',
+      name: 'Cinema Pigneto',
+      kind: 'cinema',
+      neighbourhood: 'Pigneto',
+      real: false,
+      imagePrompt: "A small single-screen neighbourhood cinema on Via del Pigneto in Rome in the early evening: the pedestrian street of low two- and three-storey buildings, bright murals on the walls, little bars with tables outside, string lights. An old marquee over the cinema door, film posters in glass cases on either side, a few people queuing with phones. The sign over the door reads \"Cinema Pigneto\" and that is the only lettering in the picture: the posters and murals have no readable words, no titles or prices. Contemporary clothes and objects.",
+    },
+    {
       id: 'bar-mattina-nuova',
       name: 'Bar Mattina',
       kind: 'bar',

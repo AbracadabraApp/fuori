@@ -142,6 +142,28 @@ public struct Place: Codable, Sendable, Equatable, Identifiable, Hashable {
     /// Who you meet here; nil when nobody is there yet
     public let characterId: String?
     public let image: URL?
+    /// A cinema's films (lib/cinema.ts); nil for every other place and from servers before 2026-11-06
+    public let films: [Film]?
+}
+
+/// A film showing at a cinema: its poster and its videos, the official trailer first (TMDB data, served by Fuori)
+public struct Film: Codable, Sendable, Equatable, Identifiable, Hashable {
+    public struct Video: Codable, Sendable, Equatable, Identifiable, Hashable {
+        /// The YouTube video id
+        public let youtube: String
+        /// TMDB's kind: Trailer, Teaser, Featurette, Clip
+        public let type: String
+        public let name: String
+        /// ISO 639-1 code of the video's language
+        public let language: String
+        public var id: String { youtube }
+    }
+    public let tmdbId: Int
+    public let title: String
+    public let year: Int
+    public let poster: URL?
+    public let videos: [Video]
+    public var id: Int { tmdbId }
 }
 
 public struct Character: Codable, Sendable, Equatable, Identifiable, Hashable {

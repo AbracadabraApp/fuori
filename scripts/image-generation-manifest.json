@@ -3946,9 +3946,9 @@
       "path": "/Users/josh.petersen/fuori/public/images/places/trattoria-ai-cascinari.jpg",
       "type": "place"
     },
-    "palermo/osteria-ballarò": {
+    "palermo/osteria-ballar\u00f2": {
       "timestamp": "2026-10-10T08:12:31.659Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/osteria-ballarò.jpg",
+      "path": "/Users/josh.petersen/fuori/public/images/places/osteria-ballar\u00f2.jpg",
       "type": "place"
     },
     "palermo/antica-focacceria-san-francesco": {
@@ -4926,9 +4926,9 @@
       "path": "/Users/josh.petersen/fuori/public/images/places/piazza-ix-aprile.jpg",
       "type": "place"
     },
-    "taormina/chiesa-varò": {
+    "taormina/chiesa-var\u00f2": {
       "timestamp": "2026-10-10T09:10:29.748Z",
-      "path": "/Users/josh.petersen/fuori/public/images/places/chiesa-varò.jpg",
+      "path": "/Users/josh.petersen/fuori/public/images/places/chiesa-var\u00f2.jpg",
       "type": "place"
     },
     "taormina/enoteca-nero": {
@@ -6910,6 +6910,11 @@
       "timestamp": "2026-11-06T05:41:23.353Z",
       "path": "/home/claude/fuori-bologna/public/images/portraits/sara-sorbetteria.jpg",
       "type": "portrait"
+    },
+    "roma-nuova/cinema-pigneto": {
+      "timestamp": "2026-11-06T04:12:42.478Z",
+      "path": "/Users/josh.petersen/fuori-cinema/public/images/places/cinema-pigneto.jpg",
+      "type": "place"
     }
   },
   "failed": {
@@ -6919,8 +6924,8 @@
     }
   },
   "stats": {
-    "total": 1383,
-    "completed": 1382,
+    "total": 1384,
+    "completed": 1383,
     "failed": 1,
     "lastRun": "2026-11-06T05:44:32.742Z"
   }

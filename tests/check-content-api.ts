@@ -31,6 +31,19 @@ check(c.cities.length === shownCities.length && c.cities.length > 0, `expected $
     check(!!lessons?.every((u) => u.steps.every((st) => st.practice.length > 0 && st.mission === undefined)), 'each lesson needs practice, and no mission');
   }
 }
+// Cinemas (lib/cinema.ts): the cinema place carries its films, each with a poster on R2 and a video to play first
+if (existsSync(join(process.cwd(), 'content', pack.id, 'cinema.json'))) {
+  type Film = { tmdbId: number; title: string; poster: string | null; videos: { youtube: string }[] };
+  const withFilms = c.cities.flatMap((x) => x.places as unknown as { id: string; films?: Film[] }[]).filter((p) => p.films);
+  check(withFilms.length > 0, 'cinema.json exists but no place carries films');
+  for (const p of withFilms) {
+    check(!!p.films?.length, `cinema ${p.id} has no films`);
+    for (const f of p.films ?? []) {
+      check(base.test(f.poster ?? ''), `cinema ${p.id}: ${f.title} has no poster on R2 (scripts/cinema-posters.mjs, then images:upload)`);
+      check(f.videos.length > 0 && /^[\w-]{11}$/.test(f.videos[0].youtube), `cinema ${p.id}: ${f.title} has no YouTube video to play first`);
+    }
+  }
+}
 check(Object.values(c.characters).some((x) => x.tutor && base.test(x.portrait ?? '')), 'Magda (the tutor) should be in characters with her portrait, for Learn');
 for (const city of c.cities) {
   check(!city.places.some((p) => p.characterId === pack.tutor.id), `city ${city.id} still shows a language school`);

@@ -1,6 +1,6 @@
 # Cultural lessons
 
-version: 2026-11-05
+version: 2026-11-05b
 
 Cultural lessons (docs/culture.md → Cultural lessons; Josh, 2026-11-03): one
 particular thing about a city, told by the shown person whose pride it is, in
@@ -19,7 +19,7 @@ Placeholders: `{city}`, `{language}`, `{count}`, `{chip}`, `{facts}`,
 ```
 You help make a language-learning game set in today's {city}. A newcomer who has come to live there learns its culture from its people. Below are the people the newcomer can meet. Pick {count} cultural items for the city, each told by one of these people, spread across food, history, folklore and traditions, art, and rivalry with other towns or neighbourhoods.
 
-Each item is one particular thing, small enough to tell in two minutes: one story, one reason. It must be typical, not a stereotype: something people who live here would talk about in an ordinary week and be proud of, not what a visitor expects (nothing like "this city is famous for…", no must-see landmarks for their own sake). Nothing about alcohol (wine, beer, spirits): the game is for all ages. Only well-known facts you're sure of. Pick the teller it fits: their place, their role, their age. A different teller for each item.
+Each item is one particular thing, small enough to tell in two minutes: one story, one reason. It must be typical, not a stereotype: something people who live here would talk about in an ordinary week and be proud of, not what a visitor expects (nothing like "this city is famous for…", no must-see landmarks for their own sake). Only well-known facts you're sure of. Pick the teller it fits: their place, their role, their age. A different teller for each item.
 
 For each item: chip (its name, at most four English words, that fits only this thing), teller (the person's id), topic (food, history, traditions, art or rivalry), facts (three or four sentences: the story and the reason, in English), words (the one or two {language} words the story turns on, with their English).
 ```
@@ -71,6 +71,10 @@ This is the last turn: finish the story and say goodbye. No question, and no wor
 ```
 
 ## Changelog
+
+### 2026-11-05b: alcohol isn't left out
+
+Josh, 2026-11-05: "its fine if alcohol comes into the game (like the mezcaleria)"; wine bars are hidden only because enotecas make dull scenes. The 2026-11-04c line "Nothing about alcohol (wine, beer, spirits): the game is for all ages" rested on a reason Josh had already corrected (not age), so it's gone; items about wine or mezcal can be picked again. The items dropped then (ombra, ricciarelli with vin santo, mezcal) are not put back by this change.
 
 ### 2026-11-04: first version
 

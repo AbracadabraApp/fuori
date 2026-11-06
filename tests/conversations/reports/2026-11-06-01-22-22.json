@@ -1,0 +1,208 @@
+{
+  "at": "2026-11-06T01:22:22.397Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "2026-10-21",
+  "repliesVersion": null,
+  "level": null,
+  "seed": "7",
+  "turns": 6,
+  "conversations": 12,
+  "grades": {
+    "language": 8.583333333333334,
+    "understands": 9.166666666666666,
+    "adapts": 7.083333333333333,
+    "alive": 5.916666666666667
+  },
+  "length": {
+    "openerWords": 12.5,
+    "replies": 84,
+    "wordsMedian": 16.5,
+    "wordsAvg": 22.7,
+    "wordsMax": 67,
+    "longShare": 0.26,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.07
+  },
+  "byCharacter": [
+    {
+      "id": "carmine-russo",
+      "learner": "hesitant",
+      "overall": 6.25,
+      "stats": {
+        "openerWords": 9,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 13,
+        "wordsMax": 15,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "magda",
+      "learner": "english-beginner",
+      "overall": 7.75,
+      "stats": {
+        "openerWords": 12,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 18.1,
+        "wordsMax": 32,
+        "longShare": 0.14,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0.14
+      }
+    },
+    {
+      "id": "pietro-termini-nuova",
+      "learner": "improving",
+      "overall": 8.5,
+      "stats": {
+        "openerWords": 6,
+        "replies": 7,
+        "wordsMedian": 44,
+        "wordsAvg": 41.1,
+        "wordsMax": 67,
+        "longShare": 0.86,
+        "questionsAvg": 0.9,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "dottoressa-morelli",
+      "learner": "english-beginner",
+      "overall": 7,
+      "stats": {
+        "openerWords": 6,
+        "replies": 7,
+        "wordsMedian": 10,
+        "wordsAvg": 11.7,
+        "wordsMax": 21,
+        "longShare": 0,
+        "questionsAvg": 1,
+        "multiQuestionShare": 0.29
+      }
+    },
+    {
+      "id": "salvatore-russo",
+      "learner": "hesitant",
+      "overall": 7.25,
+      "stats": {
+        "openerWords": 6,
+        "replies": 7,
+        "wordsMedian": 14,
+        "wordsAvg": 13.1,
+        "wordsMax": 17,
+        "longShare": 0,
+        "questionsAvg": 0.6,
+        "multiQuestionShare": 0.14
+      }
+    },
+    {
+      "id": "giulia-fortino",
+      "learner": "improving",
+      "overall": 9,
+      "stats": {
+        "openerWords": 6,
+        "replies": 7,
+        "wordsMedian": 32,
+        "wordsAvg": 27.1,
+        "wordsMax": 36,
+        "longShare": 0.57,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "lucia-greco",
+      "learner": "english-beginner",
+      "overall": 8.5,
+      "stats": {
+        "openerWords": 14,
+        "replies": 7,
+        "wordsMedian": 26,
+        "wordsAvg": 26.3,
+        "wordsMax": 40,
+        "longShare": 0.29,
+        "questionsAvg": 1.1,
+        "multiQuestionShare": 0.14
+      }
+    },
+    {
+      "id": "stefano-maitre",
+      "learner": "hesitant",
+      "overall": 6.75,
+      "stats": {
+        "openerWords": 13,
+        "replies": 7,
+        "wordsMedian": 16,
+        "wordsAvg": 17.9,
+        "wordsMax": 28,
+        "longShare": 0,
+        "questionsAvg": 0.9,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "magda",
+      "learner": "improving",
+      "overall": 8.5,
+      "stats": {
+        "openerWords": 14,
+        "replies": 7,
+        "wordsMedian": 27,
+        "wordsAvg": 26.6,
+        "wordsMax": 41,
+        "longShare": 0.43,
+        "questionsAvg": 0.7,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "elisa-bruni",
+      "learner": "english-beginner",
+      "overall": 7,
+      "stats": {
+        "openerWords": 22,
+        "replies": 7,
+        "wordsMedian": 17,
+        "wordsAvg": 18.1,
+        "wordsMax": 22,
+        "longShare": 0,
+        "questionsAvg": 0.9,
+        "multiQuestionShare": 0
+      }
+    },
+    {
+      "id": "alberto-chef",
+      "learner": "hesitant",
+      "overall": 7,
+      "stats": {
+        "openerWords": 22,
+        "replies": 7,
+        "wordsMedian": 16,
+        "wordsAvg": 18.7,
+        "wordsMax": 28,
+        "longShare": 0,
+        "questionsAvg": 1.1,
+        "multiQuestionShare": 0.14
+      }
+    },
+    {
+      "id": "beatrice-castelli",
+      "learner": "improving",
+      "overall": 8.75,
+      "stats": {
+        "openerWords": 21,
+        "replies": 7,
+        "wordsMedian": 39,
+        "wordsAvg": 40.9,
+        "wordsMax": 50,
+        "longShare": 0.86,
+        "questionsAvg": 0.4,
+        "multiQuestionShare": 0
+      }
+    }
+  ]
+}

@@ -1707,6 +1707,11 @@
       "src": "cdc5c11ca75b73ed",
       "bytes": 273576
     },
+    "places/cinema-pigneto": {
+      "key": "it/places/cinema-pigneto.37f5eb4d11.webp",
+      "src": "89fd4e03eb4b027d",
+      "bytes": 269006
+    },
     "places/colosseo": {
       "key": "it/places/colosseo.513d61b837.webp",
       "src": "0bfd64a42df6be3b",
@@ -7576,6 +7581,61 @@
       "key": "it/portraits/vittorio-pesce.0bac02b365.webp",
       "src": "d20b8f6e18755f41",
       "bytes": 285218
+    },
+    "posters/1026227": {
+      "key": "it/posters/1026227.e41a22d3d3.webp",
+      "src": "f516513dade400f0",
+      "bytes": 69072
+    },
+    "posters/179144": {
+      "key": "it/posters/179144.70edaf4c68.webp",
+      "src": "865dd6db7a6a1f23",
+      "bytes": 23980
+    },
+    "posters/24188": {
+      "key": "it/posters/24188.bb48c2f58e.webp",
+      "src": "4fabd67d2a703e83",
+      "bytes": 35028
+    },
+    "posters/24382": {
+      "key": "it/posters/24382.1e1e786dc0.webp",
+      "src": "605f30c1f8bcc0db",
+      "bytes": 73298
+    },
+    "posters/307": {
+      "key": "it/posters/307.e385525b49.webp",
+      "src": "0e1922430647df8d",
+      "bytes": 104206
+    },
+    "posters/364433": {
+      "key": "it/posters/364433.61a0226dbf.webp",
+      "src": "124d7883ce993783",
+      "bytes": 45784
+    },
+    "posters/381341": {
+      "key": "it/posters/381341.426001ebb9.webp",
+      "src": "c78a9e4cd01c96fc",
+      "bytes": 83250
+    },
+    "posters/40794": {
+      "key": "it/posters/40794.249255b151.webp",
+      "src": "9374843464220587",
+      "bytes": 55052
+    },
+    "posters/42229": {
+      "key": "it/posters/42229.86650bcdc5.webp",
+      "src": "756a6170b1b3964b",
+      "bytes": 78682
+    },
+    "posters/439": {
+      "key": "it/posters/439.f516eda5e0.webp",
+      "src": "6725ab561d04cff4",
+      "bytes": 42688
+    },
+    "posters/5156": {
+      "key": "it/posters/5156.5620713a9f.webp",
+      "src": "567d3a48e0a13440",
+      "bytes": 57684
     }
   }
 }

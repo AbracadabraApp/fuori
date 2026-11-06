@@ -39,6 +39,7 @@
   --you-bubble: #dbe3c4;
   --you-edge: #b5c293;
   --you-ink: #3f4a22;
+  --cinema-glow: #ffd600;
   --font-display: "Alegreya", Georgia, serif;
   --font-label: "Alegreya Sans", "Gill Sans", sans-serif;
   --font-flip: "Oswald", "Gill Sans", sans-serif;
@@ -57,6 +58,7 @@
   --space-caption-padding: 16px;
   --space-band: 12px;
   --radius-card: 8px;
+  --radius-poster: 16px;
   --shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-stamp: 0px 3px 8px rgba(0, 0, 0, 0.25);
 }
