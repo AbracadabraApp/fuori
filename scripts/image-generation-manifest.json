@@ -6902,7 +6902,7 @@
       "type": "portrait"
     },
     "roma-nuova/trattoria-garbatella": {
-      "timestamp": "2026-11-06T05:48:22.365Z",
+      "timestamp": "2026-11-06T05:53:59.695Z",
       "path": "/home/claude/fuori-nino/public/images/places/trattoria-garbatella.jpg",
       "type": "place"
     },
@@ -6917,6 +6917,6 @@
     "total": 1382,
     "completed": 1382,
     "failed": 0,
-    "lastRun": "2026-11-06T05:48:52.077Z"
+    "lastRun": "2026-11-06T05:54:02.702Z"
   }
 }
