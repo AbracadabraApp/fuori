@@ -207,14 +207,23 @@ public final class ConversationModel {
         guard let parts else { return [] }
         var start = 0
         var out: [APIClient.TurnPart] = []
+        // With answers shown, her question's gloss isn't said (lib/beginner.ts → lineFromParts)
+        let answered = parts.contains { $0.isAnswer && !$0.text.trimmingCharacters(in: .whitespaces).isEmpty }
         // The answers aren't in `line` (she doesn't say them): they don't count
         for part in parts where !part.isAnswer {
             if !part.isEnglish, shown.map({ $0 > start }) ?? true { out.append(part) }
-            start += part.text.count + 1
+            start += Self.spokenLength(part.text) + 1
             // A word or question is followed in the line by its gloss, said (lib/beginner.ts)
-            if let gloss = part.gloss, !gloss.isEmpty { start += gloss.count + 1 }
+            if let gloss = part.gloss, !gloss.isEmpty, !(part.kind == "question" && answered) { start += Self.spokenLength(gloss) + 1 }
         }
         return out
+    }
+
+    /// A piece's length in `line`: the server ends each piece on a sentence
+    /// break, adding a full stop when it has none (lib/beginner.ts → sentence)
+    nonisolated static func spokenLength(_ piece: String) -> Int {
+        let p = piece.trimmingCharacters(in: .whitespacesAndNewlines)
+        return p.count + (p.range(of: #"[.!?…:;]["'»”’)]*$"#, options: .regularExpression) == nil ? 1 : 0)
     }
 
     /// Beginner dialogue: the answers to say back, on the learner's turn

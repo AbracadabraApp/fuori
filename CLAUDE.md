@@ -42,6 +42,11 @@ One app for every country (Fuori in Italy, Afuera in Mexico; the country is chos
 - Several Claude sessions work on this repo: Claude Code on Josh's laptop (sometimes two at once, in the same folder) and a cloud session in the Claude app's "Fuori" project. None can see another's uncommitted work.
 - Start every session with `git pull --rebase origin main`. End every session by committing and pushing to `main`, and update `progress.md`.
 - Never leave work unpushed overnight. If it isn't on GitHub, the other session and Railway can't see it.
+- Coordinating laptop sessions (Claude, 2026-11-05, Josh: "this is your domain"; prompted by deploys cancelling each other: two sessions pushed server changes minutes apart, and Railway builds only the newest push, so of six deploys one finished):
+  - Each laptop session works in its own git worktree (`git worktree add ../fuori-<topic> -b <topic>`), not in `~/fuori` alongside another session, so local servers, half-done files and `next-env.d.ts` don't collide. Merge into `main` and push when a piece of work is done; delete the worktree when the topic is.
+  - Push server changes (app/, lib/, content/, package files) once a piece of work is finished and checked, not after each step. Railway's watch patterns already skip commits that only touch docs, tests, scripts, `progress.md` and the iPhone app.
+  - After a push, confirm the live deploy includes your commit (`git merge-base --is-ancestor <yours> <deployed>`), not that it is your commit: another session's later push replaces yours and carries it.
+  - Before merging a change to a shared file (`docs/prompt-trials.md`, `progress.md`, a prompt file), tell the other laptop session (ListAgents, SendMessage) so it isn't surprised by the conflict.
 - Model IDs live only in `lib/claude.ts`. Don't hard-code them elsewhere.
 - Before writing a new prompt, read `docs/prompt-trials.md`: reuse an existing prompt if it does the job, and check whether the idea was already tried. Add a row there for every prompt trial, kept or dropped, in the same commit.
 - The character prompt lives in `content/it/prompts/character.md`, not in code. To change it: edit it, bump its `version`, and add a changelog entry at the bottom saying what changed, why, and what prompted it. `npm run test:prompt` enforces the changelog. Compare with `npm run test:conversations`.

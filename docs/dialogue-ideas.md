@@ -69,6 +69,14 @@ What went wrong, as observed:
 
 Not from today's answer change: every Beginner turn has been built this way since 2026-10-25 (English intro, a part in the language, a whispered gloss).
 
+- **Fixed 2026-11-05:** say each thing once, greet in one language, a name once, no doubled key word at stage 1 (beginner.md 2026-11-05c, leveling.md 2026-11-05b); a sentence break after every spoken piece, and no English echo of her question when answers are shown (lib/beginner.ts → lineFromParts). Replay set: repeats Italy 12/12 → 2/12, Mexico 15/16 → 0/16; run-on 4/12 → 1/12 and 9/16 → 0/16.
+
+## Magda says "Almost!" to a line that wasn't the offered answer
+
+Seen by Claude in the replay set (2026-11-05, 1 of 4 runs): after Jennifer's "¿Cómo me ayuda?" (the offered answer was "Joven, ¿me ayuda?"), Magda opened "Almost! Now you're asking a stranger for help." The shared rule says to carry on without correcting or commenting. One example; listed to see whether it comes up again.
+
 ## The examples become a replay set
+
+- **Started 2026-11-05:** `tests/experiments/replay-set.mts` replays Luisa's and Doña Chela's openings, Jennifer's Magda lesson and two more stage 1 openings per country, with a judge on what the voice says (repeats, run-on). `tests/experiments/heard-replay.mts` replays the mishearing cases (Magda's coaching, Ardit's ribollita, Lorenzo's *say this*). New examples go into one of the two.
 
 Claude's proposal (2026-11-04, from a Karpathy-inspired prompt template Josh shared; Josh: "Worth saving any notes/ideas?"): once this list has a dozen or so real examples, turn them into a fixed replay set: the conversation up to the moment, and what should or shouldn't happen next (the waiter comes back; *say this* doesn't answer for the learner; no recast of a mishearing). Any change to the character prompt or to *say this* is then measured against the same cases before it ships, alongside `test:conversations`.

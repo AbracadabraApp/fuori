@@ -20,7 +20,8 @@ const tidy = tidyParts(parts);
 check('empty parts dropped', tidy.length === 5, tidy.length);
 check('parts trimmed', tidy[4].text === 'Mi piace il pesce.', tidy[4].text);
 const { line, en } = lineFromParts(tidy);
-check('line is what she says, in order: each phrase then its gloss (none when empty); no answers', line === 'Welcome to the market! il pesce fish Le piace il pesce? do you like it? Ciao!', line);
+check('line is what she says, in order: each phrase then its gloss (none when empty), each ending on a sentence break; no answers; no question gloss when answers are shown', line === 'Welcome to the market! il pesce. fish. Le piace il pesce? Ciao!', line);
+check('with no answers shown, the question keeps its gloss', lineFromParts(tidy.filter((p) => p.kind !== 'answer')).line === 'Welcome to the market! il pesce. fish. Le piace il pesce? do you like it? Ciao!', lineFromParts(tidy.filter((p) => p.kind !== 'answer')).line);
 check('a gloss loses the name', tidyParts([{ kind: 'word', text: 'Piacere, Joshua!', en: 'Nice to meet you, Joshua!', gloss: 'nice to meet you, Joshua' }])[0].gloss === 'nice to meet you', tidyParts([{ kind: 'word', text: 'Piacere, Joshua!', en: 'Nice to meet you, Joshua!', gloss: 'nice to meet you, Joshua' }])[0].gloss);
 check('en is the English of what she says', en === 'Welcome to the market! the fish Do you like fish? Hi!', en);
 

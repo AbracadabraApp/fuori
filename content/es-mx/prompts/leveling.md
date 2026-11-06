@@ -1,6 +1,6 @@
 # Leveling prototype prompts (trial, Mexico)
 
-version: 2026-11-05
+version: 2026-11-05b
 
 Prompts for the leveling prototype (tests/experiments/leveling/, designs A, B
 and C in docs/research/leveling/05-designs.md), and since 2026-11-02d the
@@ -34,7 +34,7 @@ harness.
 ## Talk: stage 1
 
 ```
-Where they are now: at the very start. Speak very slowly and carefully, one idea at a time, and say the key word again without being asked. Ask only yes-or-no or this-or-that questions. Your English sets the scene, up to two short sentences.
+Where they are now: at the very start. Speak very slowly and carefully, one idea at a time. Ask only yes-or-no or this-or-that questions. Your English sets the scene, up to two short sentences.
 ```
 
 ## Talk: stage 2
@@ -165,6 +165,10 @@ Reply with JSON: level ("pre-A1", "A1", "A2", "B1" or "not enough to tell"), rea
 ```
 
 ## Changelog
+
+### 2026-11-05b: stage 1 doesn't say the key word twice
+
+Josh, 2026-11-05, hearing Beginner openings: "totally incoherent, repetitive with no pauses". Stage 1 asked to "say the key word again without being asked", which gave "Nieve. Nieve de tuna. ¿Quiere nieve de tuna…?" (tests/experiments/replay-set.mts). Dropped; the rest of the stage is unchanged. With beginner.md 2026-11-05c (say each thing once).
 
 ### 2026-11-05: answers, not "whole sentences"
 

@@ -85,10 +85,20 @@ export function lineFromParts(parts: Part[]): { line: string; en: string } {
   // it and the model left it out, so it's added here, from the part's English
   // The question too: in the language first, then its English (Josh,
   // 2026-10-25: "ti piace la musica italiana? do you like italian music?")
-  const said = spoken.flatMap((p) => [p.text.trim(), p.gloss?.trim() ?? '']).filter(Boolean);
+  // Each piece ends on a sentence break, so the voice pauses between them
+  // (Josh, 2026-11-05: "repetitive with no pauses"; a gloss like "first, the
+  // cashier" ran straight into the next phrase). Punctuation, so any language
+  // Her question's English isn't said when answers are shown: their English,
+  // under each answer, already says what she asked (Josh, 2026-11-05:
+  // "cafe, coffee, cafe"). With no answers on screen it's said, as before
+  const answered = parts.some((p) => p.kind === 'answer' && p.text.trim());
+  const said = spoken.flatMap((p) => [p.text.trim(), p.kind === 'question' && answered ? '' : p.gloss?.trim() ?? '']).filter(Boolean).map(sentence);
   const en = spoken.map((p) => (p.kind === 'english' ? p.text : p.en).trim()).filter(Boolean);
   return { line: said.join(' '), en: en.join(' ') };
 }
+
+/** A piece of speech ending on a sentence break: a full stop added when it has none */
+export const sentence = (piece: string): string => (/[.!?…:;]["'»”’)]*$/.test(piece) ? piece : `${piece}.`);
 
 /**
  * The English said after a phrase, without the names it addresses: the name
