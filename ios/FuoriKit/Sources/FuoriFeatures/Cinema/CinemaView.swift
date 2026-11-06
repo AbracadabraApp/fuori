@@ -17,51 +17,58 @@ struct FilmRoute: Hashable {
 /// language rules: the titles are the films' own
 struct CinemaView: View {
     let place: Place
-    @ScaledMetric(relativeTo: .body) private var posterWidth: CGFloat = 150
 
     var body: some View {
+        // A feed, as on Instagram (Josh, 2026-11-05): one big poster after another
         ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: posterWidth), spacing: 14, alignment: .top)], spacing: 20) {
+            LazyVStack(spacing: 20) {
                 ForEach(place.films ?? []) { film in
                     NavigationLink(value: FilmRoute(film: film)) { PosterCard(film: film) }
                         .buttonStyle(PressableStyle())
+                        // 80% of the screen's width, the poster's own shape (Josh, 2026-11-05)
+                        .containerRelativeFrame(.horizontal) { width, _ in width * 0.8 }
                 }
             }
             .padding(Tokens.Space.gutter)
         }
         .background(Tokens.Colors.paper)
-        .navigationTitle(place.name)
+        // No title (Josh, 2026-11-05: the cinema's name over the posters read like a film's title
+        // and told nothing new): just back and settings; the posters are the page
+        #if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
+        #endif
         .settingsToolbar()
         .navigationDestination(for: FilmRoute.self) { route in TrailerView(film: route.film) }
     }
 }
 
-/// A poster with the film's title and year under it
+/// A poster, MovieGenius's play button in its corner;
+/// no title under it (Josh: the posters have the name on them). VoiceOver reads title and year
 private struct PosterCard: View {
     let film: Film
+    @ScaledMetric(relativeTo: .title) private var play: CGFloat = 56
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            AsyncImage(url: film.poster) { $0.resizable().scaledToFill() } placeholder: { Tokens.Colors.sand }
-                .aspectRatio(2 / 3, contentMode: .fit)
-                .clipShape(RoundedRectangle(cornerRadius: Tokens.Radius.card))
-                .shadow(color: .black.opacity(Tokens.Shadow.card.opacity), radius: Tokens.Shadow.card.radius, y: Tokens.Shadow.card.y)
-                .accessibilityHidden(true)
-            Text(film.title)
-                .typeface(.display, 18, relativeTo: .headline, weight: .bold)
-                .foregroundStyle(Tokens.Colors.ink)
-                .multilineTextAlignment(.leading)
-                .fixedSize(horizontal: false, vertical: true)
-            Text(String(film.year))
-                .typeface(.label, 15, relativeTo: .subheadline)
-                .foregroundStyle(Tokens.Colors.muted)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .contentShape(Rectangle())
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(film.title), \(film.year)")
-        .accessibilityHint("Plays its trailer")
-        .accessibilityAddTraits(.isButton)
+        AsyncImage(url: film.poster) { $0.resizable().scaledToFill() } placeholder: { Tokens.Colors.sand }
+            .aspectRatio(2 / 3, contentMode: .fit)
+            .frame(maxWidth: .infinity)
+            .clipShape(RoundedRectangle(cornerRadius: Tokens.Radius.card))
+            .shadow(color: .black.opacity(Tokens.Shadow.card.opacity), radius: Tokens.Shadow.card.radius, y: Tokens.Shadow.card.y)
+            .overlay(alignment: .bottomTrailing) {
+                ZStack {
+                    Circle().fill(.ultraThinMaterial).frame(width: play, height: play)
+                    Image(systemName: "play.circle.fill")
+                        .font(.system(size: play * 0.79))
+                        .foregroundStyle(.white)
+                        .shadow(color: .black.opacity(0.25), radius: 3, y: 1)
+                }
+                .padding(Tokens.Space.gutter)
+            }
+            .contentShape(Rectangle())
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("\(film.title), \(film.year)")
+            .accessibilityHint("Plays its trailer")
+            .accessibilityAddTraits(.isButton)
     }
 }
 
@@ -99,12 +106,12 @@ struct TrailerView: View {
                 }
                 VStack(alignment: .leading, spacing: 4) {
                     Text(film.title)
-                        .typeface(.display, 28, relativeTo: .title2, weight: .bold)
-                        .foregroundStyle(Tokens.Colors.ink)
+                        .typeface(.display, Tokens.Size.cardTitle, relativeTo: .title, weight: .bold)
+                        .foregroundStyle(Tokens.Colors.flapInk)
                         .accessibilityAddTraits(.isHeader)
                     Text(String(film.year))
-                        .typeface(.label, 17, relativeTo: .body)
-                        .foregroundStyle(Tokens.Colors.muted)
+                        .typeface(.label, Tokens.Size.personRole, relativeTo: .title3)
+                        .foregroundStyle(Tokens.Colors.sand)
                 }
                 .padding(.horizontal, Tokens.Space.gutter)
                 .padding(.vertical, 14)
@@ -120,14 +127,17 @@ struct TrailerView: View {
                         }
                     }
                     .padding(.horizontal, Tokens.Space.gutter)
-                    .padding(.bottom, 24)
+                    .padding(.bottom, 32)
                 }
             }
         }
-        .background(Tokens.Colors.paper)
+        // Dark, as a cinema (and MovieGenius's trailer screen): the video is the light
+        .background(Tokens.Colors.ink)
         .navigationTitle(film.title)
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Tokens.Colors.ink, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
         #endif
         .settingsToolbar()
     }
@@ -144,24 +154,24 @@ private struct VideoRow: View {
             HStack(alignment: .firstTextBaseline, spacing: 12) {
                 Image(systemName: playing ? "play.circle.fill" : "play.circle")
                     .imageScale(.large)
-                    .foregroundStyle(playing ? Tokens.Colors.green : Tokens.Colors.muted)
+                    .foregroundStyle(playing ? Tokens.Colors.rollNew : Tokens.Colors.sand)
                     .accessibilityHidden(true)
                 VStack(alignment: .leading, spacing: 3) {
                     Text(video.name)
-                        .typeface(.label, 17, relativeTo: .body, weight: .bold)
-                        .foregroundStyle(Tokens.Colors.text)
+                        .typeface(.label, Tokens.Size.personRole, relativeTo: .title3, weight: .bold)
+                        .foregroundStyle(Tokens.Colors.flapInk)
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)
                     Text(detail)
-                        .typeface(.label, 15, relativeTo: .subheadline)
-                        .foregroundStyle(Tokens.Colors.muted)
+                        .typeface(.label, Tokens.Size.body, relativeTo: .body)
+                        .foregroundStyle(Tokens.Colors.sand)
                 }
                 Spacer(minLength: 0)
             }
             .padding(12)
             .frame(minHeight: 44)
-            .background(playing ? Tokens.Colors.youBubble : Tokens.Colors.card, in: RoundedRectangle(cornerRadius: Tokens.Radius.card))
-            .overlay { RoundedRectangle(cornerRadius: Tokens.Radius.card).strokeBorder(playing ? Tokens.Colors.youEdge : Tokens.Colors.chipBorder, lineWidth: 1.5) }
+            .background(Tokens.Colors.flapTile, in: RoundedRectangle(cornerRadius: Tokens.Radius.card))
+            .overlay { RoundedRectangle(cornerRadius: Tokens.Radius.card).strokeBorder(playing ? Tokens.Colors.rollNew : .clear, lineWidth: 2) }
             .contentShape(Rectangle())
         }
         .buttonStyle(PressableStyle())
