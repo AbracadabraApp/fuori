@@ -39,7 +39,7 @@ Each step is measured on the gate (purchase lines, something particular to the t
 
 Later, not in this plan: new Mexican shops (a palenque, a talavera workshop), which would have to pass the shop bar.
 
-## Italy swap list: DRAFT, not approved
+## Italy swap list: approved (Josh, 2026-11-06: "looks good")
 
 Josh's decisions so far (2026-11-06): cut 2–5 businesses per city; only generic ones go (second bars, pharmacies, tabaccherie, ordinary bookshops and gelaterie), never a business unique to its city; no Florence shops (no Officina, no Scuola del Cuoio); Siena gets a mum with kids, not the Drogheria; Genoa no focacceria (generic); Mantua's Palazzo Te not an art historian with a cheesy name; people named after their place get real local surnames. 🛒 = a shop, which must pass the gate. Shops = businesses shown, now → after. Every new role and fact is fact-checked before it's written. Venice, Naples, Bologna and Turin drop by less than 2: what's left there is unique.
 
@@ -65,6 +65,35 @@ Josh's decisions so far (2026-11-06): cut 2–5 businesses per city; only generi
 | Lucca | 7 → 4 | Bar Il Fortino, Farmacia Massei, Libreria Baroni | Torre Guinigi · Duomo di San Martino | Alessio Martinelli, 26: looks after the oaks on the roof · Padre Augusto, 68: parish priest |
 | Orvieto | 6 → 4 | Bar Duomo, Libreria del Duomo | Pozzo di San Patrizio | Matteo Galeotti, 28: runs the well's 248 steps every morning |
 | Mantua | 7 → 5 | Bar delle Erbe, Farmacia Gonzaga | Palazzo Te · Palazzo Ducale | a Festivaletteratura volunteer (new person; police officer as fallback) · Marcello Andreoli, 43: custodian who opens the rooms each morning |
+
+### Also added, to bring every city to 10–15 places (approved with the list; Rome stays at 17)
+
+Josh: "the cuts are fine - we should rationalize what we are adding -- how many places per city total? 10-15 range"; "rome is fine - looks good". From the good hidden places only, all non-shops; left out: Casa di Giulietta (tourist cliché), the Capuchin catacombs (heavy), Orvieto's funicular and Taormina's cable car (ticket sellers), Sant'Andrea in Mantua (nobody written). These were already wanted on 2026-11-03 (docs/culture.md → Showing the places that carry the most culture: "add them, don't swap").
+
+| City | After the swap list | Add | Total |
+|---|---|---|---|
+| Rome | 17 | — | 17 |
+| Matera | 9 | Belvedere dei Sassi · Parco della Murgia | 11 |
+| Florence | 10 | Ponte Vecchio (the jeweller as storyteller) | 11 |
+| Siena | 11 | Torre del Mangia | 12 |
+| Venice | 10 | Ponte di Rialto | 11 |
+| Naples | 13 | Castel dell'Ovo | 14 |
+| Bologna | 10 | Le Due Torri · Archiginnasio | 12 |
+| Palermo | 9 | Teatro Massimo · Quattro Canti | 11 |
+| Taormina | 8 | Villa Comunale · Terrazza dei Poeti | 10 |
+| Lecce | 8 | Museo Faggiano · Anfiteatro Romano | 10 |
+| Milan | 9 | Galleria Vittorio Emanuele II | 10 |
+| Verona | 8 | Teatro Romano · Piazza dei Signori | 10 |
+| Assisi | 7 | Eremo delle Carceri · Rocca Maggiore · Piazza San Rufino | 10 |
+| Bergamo | 9 | Teatro Donizetti | 10 |
+| Turin | 10 | Mole Antonelliana · Parco del Valentino | 12 |
+| Syracuse | 9 | Neapolis archaeological park | 10 |
+| Genoa | 9 | Via Garibaldi, the Palazzi dei Rolli | 10 |
+| Lucca | 8 | Piazza San Michele · Orto Botanico | 10 |
+| Orvieto | 8 | the Duomo · Teatro Mancinelli | 10 |
+| Mantua | 9 | Parco di Palazzo Te | 10 |
+
+Every person on an added place is recast where their role is generic (guide, gardener, priest, curator): someone who lives or works there, with a real local surname, a `here` line written the Mexican way, fact-checked, played at both levels before it's shown; shops (🛒) also pass the gate.
 
 ## Where things stand
 
