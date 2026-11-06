@@ -82,6 +82,7 @@
     "style-test": "node --env-file-if-exists=.env.local scripts/style-test.mjs",
     "test:dialogue": "tsx tests/check-dialogue.ts && COUNTRY=es-mx tsx tests/check-dialogue.ts",
     "deploy:wait": "node scripts/deploy-wait.mjs",
+    "release": "node scripts/release.mjs",
     "dev:sim": "zsh scripts/dev-sim.sh"
   },
   "dependencies": {
