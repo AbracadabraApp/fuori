@@ -18,6 +18,8 @@
 //   COUNTRY=it npx tsx --env-file=.env.local tests/experiments/variety.mts [label]
 //   COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/variety.mts [label]
 import { writeFileSync } from 'node:fs';
+import { execSync } from 'node:child_process';
+import { readPromptFile } from '@/lib/prompts/template';
 import { join } from 'node:path';
 import { cities, pack } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
@@ -30,6 +32,9 @@ import { learners } from '../conversations/learners';
 import { ask, OUT, pool } from './common.mjs';
 
 const label = process.argv[2] ?? 'baseline';
+// What this run measured: the prompt versions and the commit (content has no version of its own)
+const versions = ['beginner.md', 'dialogue.md', 'character.md'].map((f) => `${f} ${readPromptFile(f).version}`).join(', ');
+const commit = execSync('git rev-parse --short HEAD').toString().trim() + (execSync('git status --porcelain content lib').toString().trim() ? ' + uncommitted changes in content/ or lib/' : '');
 const TURNS = 5;
 const VISITS = 3;
 
@@ -125,7 +130,7 @@ const pairs = LEVELS.flatMap((lv) => {
 const swaps = await pool(pairs.map((pr) => async () => ({ ...pr, ...(JSON.parse(await ask(`Place A: ${pr.a.place.name}, ${pr.a.city.name}\n${show(pr.a.visits[0], pr.a.name)}\n\nPlace B: ${pr.b.place.name}, ${pr.b.city.name}\n${show(pr.b.visits[0], pr.b.name)}`, { system: SWAP_JUDGE, schema: swapSchema, max: 1000 })) as { swappable: boolean; why: string }) })), 6);
 
 const pct = (a: number, b: number) => `${b ? Math.round((100 * a) / b) : 0}%`;
-let md = `# Conversation variety, ${label}, ${pack.id}, ${new Date().toISOString().slice(0, 10)}\n\n${picks.length} places × ${VISITS} visits × 2 levels, up to ${TURNS} learner turns a visit, memory carried between visits.\n\n`;
+let md = `# Conversation variety, ${label}, ${pack.id}, ${new Date().toISOString().slice(0, 10)}\n\n${picks.length} places × ${VISITS} visits × 2 levels, up to ${TURNS} learner turns a visit, memory carried between visits.\n\nPrompts: ${versions}. Commit: ${commit}.\n\n`;
 md += `| Level | Purchase lines | Clichés (visits with one) | Something particular to the town | Planted idea, visit 1 / visit 3 | Told again on a later visit (per character) | Swappable pairs |\n|---|---|---|---|---|---|---|\n`;
 for (const lv of LEVELS) {
   const rs = judged.filter((r) => r.level === lv.level);
