@@ -197,6 +197,8 @@ struct SettingsSheet: View {
                 Section("About") {
                     Text("Everyone you meet in \(appName) is played by an AI.")
                     NavigationLink("Privacy") { PrivacyView(appName: appName) }
+                    // TMDB's required credit: the cinemas' films and posters come from it (lib/cinema.ts)
+                    Text("Film posters and trailers come from TMDB. This product uses the TMDB API but is not endorsed or certified by TMDB.")
                     // Touch and hold for the developer rows (hidden, as the web's ?debug=1).
                     // They appear below, so nothing moves under the finger
                     LabeledContent("Version", value: version)
