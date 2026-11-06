@@ -1,5 +1,5 @@
 {
-  "about": "Cinemas: a place with no person; tapping it shows a scroll of posters, and a poster plays its trailer (Italian first) with the film's other videos below, as in MovieGenius (Josh, 2026-11-05). Data from TMDB (posters, YouTube ids), fetched once; posters to be copied to R2 like other images. TMDB credit belongs in Settings → About.",
+  "about": "Cinemas: a place with no person; tapping it shows a scroll of posters, and a poster plays its first video (an official trailer, in whatever language TMDB has) with the film's other videos below, as in MovieGenius (Josh, 2026-11-05: no level rules, culture as important as language). Data from TMDB (posters, YouTube ids), fetched once; posters to be copied to R2 like other images. TMDB credit belongs in Settings → About.",
   "cinemas": {
     "roma-nuova": {
       "films": [
@@ -8,16 +8,17 @@
           "title": "Roma città aperta",
           "year": 1945,
           "poster": "https://image.tmdb.org/t/p/w500/8MmGEkPc8jlpkHJpx7g02UmtLzw.jpg",
-          "trailer": {
-            "youtube": "ei-b4kl3rU8",
-            "name": "ROMA CITTÀ APERTA - Trailer (Il Cinema Ritrovato al cinema)",
-            "language": "it"
-          },
-          "extras": [
+          "videos": [
             {
               "youtube": "5uzXxXnGfVs",
               "type": "Trailer",
               "name": "Rome, Open City (Roma Città Aperta) - back in cinemas 17 May 2024 | BFI",
+              "language": "en"
+            },
+            {
+              "youtube": "hgS4KEDZ0PE",
+              "type": "Featurette",
+              "name": "Mark Kermode reviews Rome, Open City (1945) | BFI Player",
               "language": "en"
             },
             {
@@ -27,15 +28,15 @@
               "language": "en"
             },
             {
+              "youtube": "ei-b4kl3rU8",
+              "type": "Trailer",
+              "name": "ROMA CITTÀ APERTA - Trailer (Il Cinema Ritrovato al cinema)",
+              "language": "it"
+            },
+            {
               "youtube": "c1P1JRSJT6Q",
               "type": "Trailer",
               "name": "Trailer [Subtitled]",
-              "language": "en"
-            },
-            {
-              "youtube": "hgS4KEDZ0PE",
-              "type": "Featurette",
-              "name": "Mark Kermode reviews Rome, Open City (1945) | BFI Player",
               "language": "en"
             },
             {
@@ -51,12 +52,13 @@
           "title": "Ladri di biciclette",
           "year": 1948,
           "poster": "https://image.tmdb.org/t/p/w500/wgQ2WD0mIgCjIkKvUea6oWXZ95B.jpg",
-          "trailer": {
-            "youtube": "_I_LgU9Hw5s",
-            "name": "Ladri di biciclette (Vittorio De Sica, 1948) Trailer Originale Italiano d'epoca",
-            "language": "it"
-          },
-          "extras": [
+          "videos": [
+            {
+              "youtube": "_I_LgU9Hw5s",
+              "type": "Trailer",
+              "name": "Ladri di biciclette (Vittorio De Sica, 1948) Trailer Originale Italiano d'epoca",
+              "language": "it"
+            },
             {
               "youtube": "lP-TVGL7d8g",
               "type": "Trailer",
@@ -84,64 +86,47 @@
           ]
         },
         {
-          "tmdbId": 179144,
-          "title": "La grande bellezza",
-          "year": 2013,
-          "poster": "https://image.tmdb.org/t/p/w500/oSIo4cCNEzV5zGu6Vavq2IorJR5.jpg",
-          "trailer": {
-            "youtube": "cJ8O-Y2CXk8",
-            "name": "La Grande Bellezza - Trailer Ufficiale",
-            "language": "it"
-          },
-          "extras": [
+          "tmdbId": 24382,
+          "title": "I soliti ignoti",
+          "year": 1958,
+          "poster": "https://image.tmdb.org/t/p/w500/q9c85xYn4NPLJzHcWtboMdYBxWe.jpg",
+          "videos": [
             {
-              "youtube": "koxRDhAQOpw",
+              "youtube": "hP8HX5bnQyo",
               "type": "Trailer",
-              "name": "THE GREAT BEAUTY - Official HD Trailer",
+              "name": "Big Deal On Madonna Street",
               "language": "en"
             }
           ]
         },
         {
-          "tmdbId": 1026227,
-          "title": "C'è ancora domani",
-          "year": 2023,
-          "poster": "https://image.tmdb.org/t/p/w500/hc9SHN0vB6iyr6MBYI6bKrpDHvJ.jpg",
-          "trailer": {
-            "youtube": "dD8ru7mFXuo",
-            "name": "C'è ancora domani (2023) - Trailer ufficiale",
-            "language": "it"
-          },
-          "extras": [
+          "tmdbId": 439,
+          "title": "La dolce vita",
+          "year": 1960,
+          "poster": "https://image.tmdb.org/t/p/w500/bT6bICAhQLY40Hrs7Lq2fnwNLsf.jpg",
+          "videos": [
             {
-              "youtube": "Z5hAvdF6xQA",
+              "youtube": "yg3--NK-Xzo",
               "type": "Trailer",
-              "name": "Official US Trailer [Subtitled]",
+              "name": "La Dolce Vita (1960) Original Trailer [FHD]",
               "language": "en"
             },
             {
-              "youtube": "nNREdtrrQyk",
-              "type": "Trailer",
-              "name": "Trailer [Subtitled]",
+              "youtube": "1BeWEPXWDX4",
+              "type": "Teaser",
+              "name": "New trailer for Fellini's La dolce vita - back in cinemas 3 January 2020 | BFI",
               "language": "en"
-            }
-          ]
-        },
-        {
-          "tmdbId": 381341,
-          "title": "Perfetti sconosciuti",
-          "year": 2016,
-          "poster": "https://image.tmdb.org/t/p/w500/iiqiAMaBm4S62311XaqpIKuDDX.jpg",
-          "trailer": {
-            "youtube": "Kp8JX3-b9tw",
-            "name": "Perfetti Sconosciuti - Trailer Ufficiale",
-            "language": "it"
-          },
-          "extras": [
+            },
             {
-              "youtube": "-lOUnBsjGuY",
-              "type": "Trailer",
-              "name": "PERFECT STRANGERS (2017) - Official HD Trailer - A film by Paolo Genovese",
+              "youtube": "Nnh6NWlOF1U",
+              "type": "Featurette",
+              "name": "Three Reasons: La dolce vita",
+              "language": "en"
+            },
+            {
+              "youtube": "9ntan4GSOpI",
+              "type": "Featurette",
+              "name": "La Dolce Vita and West Side Story Win Costume Design: 1962 Oscars",
               "language": "en"
             }
           ]
@@ -151,17 +136,84 @@
           "title": "Il sorpasso",
           "year": 1962,
           "poster": "https://image.tmdb.org/t/p/w500/9vumJKydNxcFtcFNYPIvFeHXVBQ.jpg",
-          "trailer": {
-            "youtube": "X5Tjj5B7Kbc",
-            "name": "Il Sorpasso - Trailer",
-            "language": "en"
-          },
-          "extras": [
+          "videos": [
             {
               "youtube": "bFf2VID8-qg",
               "type": "Trailer",
               "name": "IL SORPASSO - U.S. Re-release Trailer",
               "language": "en"
+            },
+            {
+              "youtube": "X5Tjj5B7Kbc",
+              "type": "Trailer",
+              "name": "Il Sorpasso - Trailer",
+              "language": "en"
+            }
+          ]
+        },
+        {
+          "tmdbId": 42229,
+          "title": "Una giornata particolare",
+          "year": 1977,
+          "poster": "https://image.tmdb.org/t/p/w500/xaiFqvBA0IYGFDu2sEAszAFl3nF.jpg",
+          "videos": [
+            {
+              "youtube": "i_9BAH_qO-4",
+              "type": "Trailer",
+              "name": "Original Trailer",
+              "language": "en"
+            },
+            {
+              "youtube": "KloWrqcHAF0",
+              "type": "Trailer",
+              "name": "4K Restoration Trailer",
+              "language": "en"
+            },
+            {
+              "youtube": "--Mxb3_xU9M",
+              "type": "Featurette",
+              "name": "Sophia Loren on Working with Marcello Mastroianni",
+              "language": "en"
+            }
+          ]
+        },
+        {
+          "tmdbId": 179144,
+          "title": "La grande bellezza",
+          "year": 2013,
+          "poster": "https://image.tmdb.org/t/p/w500/oSIo4cCNEzV5zGu6Vavq2IorJR5.jpg",
+          "videos": [
+            {
+              "youtube": "koxRDhAQOpw",
+              "type": "Trailer",
+              "name": "THE GREAT BEAUTY - Official HD Trailer",
+              "language": "en"
+            },
+            {
+              "youtube": "cJ8O-Y2CXk8",
+              "type": "Trailer",
+              "name": "La Grande Bellezza - Trailer Ufficiale",
+              "language": "it"
+            }
+          ]
+        },
+        {
+          "tmdbId": 381341,
+          "title": "Perfetti sconosciuti",
+          "year": 2016,
+          "poster": "https://image.tmdb.org/t/p/w500/iiqiAMaBm4S62311XaqpIKuDDX.jpg",
+          "videos": [
+            {
+              "youtube": "-lOUnBsjGuY",
+              "type": "Trailer",
+              "name": "PERFECT STRANGERS (2017) - Official HD Trailer - A film by Paolo Genovese",
+              "language": "en"
+            },
+            {
+              "youtube": "Kp8JX3-b9tw",
+              "type": "Trailer",
+              "name": "Perfetti Sconosciuti - Trailer Ufficiale",
+              "language": "it"
             }
           ]
         },
@@ -170,12 +222,13 @@
           "title": "Lo chiamavano Jeeg Robot",
           "year": 2016,
           "poster": "https://image.tmdb.org/t/p/w500/yBH2xA38BfJep4oa3AbBFSRDtZO.jpg",
-          "trailer": {
-            "youtube": "y8nHHmSiKzM",
-            "name": "LO CHIAMAVANO JEEG ROBOT - TRAILER UFFICIALE [HD]",
-            "language": "it"
-          },
-          "extras": [
+          "videos": [
+            {
+              "youtube": "y8nHHmSiKzM",
+              "type": "Trailer",
+              "name": "LO CHIAMAVANO JEEG ROBOT - TRAILER UFFICIALE [HD]",
+              "language": "it"
+            },
             {
               "youtube": "AY1Ws1_r_X0",
               "type": "Trailer",
@@ -189,23 +242,50 @@
           "title": "Mine vaganti",
           "year": 2010,
           "poster": "https://image.tmdb.org/t/p/w500/jd0tAmKLVVRtdS1NBQuvB5tOyeC.jpg",
-          "trailer": {
-            "youtube": "ODqAi4wCGu0",
-            "name": "Mine vaganti - Trailer",
-            "language": "it"
-          },
-          "extras": [
-            {
-              "youtube": "C2lQOhQ2es8",
-              "type": "Trailer",
-              "name": "Mine Vaganti Trailer",
-              "language": "it"
-            },
+          "videos": [
             {
               "youtube": "XoHtIKBZUbM",
               "type": "Trailer",
               "name": "Trailer",
               "language": "en"
+            },
+            {
+              "youtube": "ODqAi4wCGu0",
+              "type": "Trailer",
+              "name": "Mine vaganti - Trailer",
+              "language": "it"
+            },
+            {
+              "youtube": "C2lQOhQ2es8",
+              "type": "Trailer",
+              "name": "Mine Vaganti Trailer",
+              "language": "it"
+            }
+          ]
+        },
+        {
+          "tmdbId": 1026227,
+          "title": "C'è ancora domani",
+          "year": 2023,
+          "poster": "https://image.tmdb.org/t/p/w500/hc9SHN0vB6iyr6MBYI6bKrpDHvJ.jpg",
+          "videos": [
+            {
+              "youtube": "Z5hAvdF6xQA",
+              "type": "Trailer",
+              "name": "Official US Trailer [Subtitled]",
+              "language": "en"
+            },
+            {
+              "youtube": "nNREdtrrQyk",
+              "type": "Trailer",
+              "name": "Trailer [Subtitled]",
+              "language": "en"
+            },
+            {
+              "youtube": "dD8ru7mFXuo",
+              "type": "Trailer",
+              "name": "C'è ancora domani (2023) - Trailer ufficiale",
+              "language": "it"
             }
           ]
         }
