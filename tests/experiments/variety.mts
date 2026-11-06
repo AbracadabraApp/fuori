@@ -19,6 +19,7 @@
 //   COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/variety.mts [label]
 //   LEVELS=Beginner … for a change only Beginners read
 //   PLACES=ref … the reference places (landmarks, open spaces, Nino) instead of the shops
+//   PLACE_IDS=bologna/due-torri,… any places, shown or hidden
 import { writeFileSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 import { readPromptFile } from '@/lib/prompts/template';
@@ -66,7 +67,9 @@ const REF: Record<string, [string, string, string][]> = {
     ['plaza', 'oaxaca', 'zocalo-oaxaca'], ['plaza', 'puebla', 'jardin-del-carmen'],
   ],
 };
-const picks = (process.env.PLACES === 'ref' ? REF : PLACES)[pack.id].map(([kind, cityId, placeId]) => {
+// PLACE_IDS=city/place,city/place: any places, shown or hidden (new places before they're shown)
+const listed: [string, string, string][] | undefined = process.env.PLACE_IDS?.split(',').map((x) => { const [c, p] = x.split('/'); return [cities.find((y) => y.id === c)!.places.find((y) => y.id === p)!.kind, c, p]; });
+const picks = (listed ?? (process.env.PLACES === 'ref' ? REF : PLACES)[pack.id]).map(([kind, cityId, placeId]) => {
   const city = cities.find((c) => c.id === cityId)!;
   const place = placeId ? city.places.find((p) => p.id === placeId)! : city.places.find((p) => !p.hidden && p.kind.toLowerCase() === kind)!;
   if (!place) throw new Error(`no shown ${kind} in ${cityId}`);
