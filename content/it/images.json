@@ -4038,9 +4038,9 @@
       "bytes": 253706
     },
     "places/trattoria-garbatella": {
-      "key": "it/places/trattoria-garbatella.ae1dc66385.webp",
-      "src": "6180c28d321a3acc",
-      "bytes": 251072
+      "key": "it/places/trattoria-garbatella.40a1574a5a.webp",
+      "src": "f50850e89572e0aa",
+      "bytes": 234616
     },
     "places/trattoria-isola": {
       "key": "it/places/trattoria-isola.5c8b070a66.webp",
@@ -6551,6 +6551,11 @@
       "key": "it/portraits/nicolo-bacaro.5116558f18.webp",
       "src": "ab5489372c6b828b",
       "bytes": 300916
+    },
+    "portraits/nino-garbatella": {
+      "key": "it/portraits/nino-garbatella.adccbdf25c.webp",
+      "src": "c9a650b3d944de7b",
+      "bytes": 286714
     },
     "portraits/nonna-assunta": {
       "key": "it/portraits/nonna-assunta.d0f9623572.webp",
