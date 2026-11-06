@@ -52,7 +52,8 @@ export function cinemaLibrary(): CinemaLibrary | null {
  */
 export interface FilmPageWords {
   whyWatch: { recommendation: 'YES' | 'NO'; reasons: string[]; context: string };
-  moreIdeas: { title: string; year: number; connection: string }[];
+  /** tmdbId when the idea was matched on TMDB (scripts/cinema-check-films.mjs); otherwise found by title and year */
+  moreIdeas: { title: string; year: number; connection: string; tmdbId?: number }[];
 }
 export interface CinemaPages { labels: { yes: string; no: string; moreIdeas: string }; films: Record<string, FilmPageWords> }
 

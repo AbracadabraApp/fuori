@@ -20,52 +20,62 @@
     {
      "title": "Johnny Stecchino",
      "year": 1991,
-     "connection": "Benigni comico puro: un autista scambiato per un boss mafioso a Palermo"
+     "connection": "Benigni comico puro: un autista scambiato per un boss mafioso a Palermo",
+     "tmdbId": 12776
     },
     {
      "title": "Il mostro",
      "year": 1994,
-     "connection": "Benigni regista e protagonista, equivoci a catena e Nicoletta Braschi accanto"
+     "connection": "Benigni regista e protagonista, equivoci a catena e Nicoletta Braschi accanto",
+     "tmdbId": 22826
     },
     {
      "title": "Non ci resta che piangere",
      "year": 1984,
-     "connection": "Benigni con Troisi, finiti per sbaglio nel Quattrocento toscano"
+     "connection": "Benigni con Troisi, finiti per sbaglio nel Quattrocento toscano",
+     "tmdbId": 27670
     },
     {
      "title": "Pinocchio",
      "year": 2002,
-     "connection": "Benigni regista e burattino, la favola di Collodi in costume"
+     "connection": "Benigni regista e burattino, la favola di Collodi in costume",
+     "tmdbId": 10599
     },
     {
      "title": "Il giardino dei Finzi-Contini",
      "year": 1970,
-     "connection": "De Sica racconta una famiglia ebrea di Ferrara prima delle leggi razziali"
+     "connection": "De Sica racconta una famiglia ebrea di Ferrara prima delle leggi razziali",
+     "tmdbId": 4789
     },
     {
      "title": "Concorrenza sleale",
      "year": 2001,
-     "connection": "Scola, due negozianti romani e le leggi razziali del 1938"
+     "connection": "Scola, due negozianti romani e le leggi razziali del 1938",
+     "tmdbId": 58509
     },
     {
      "title": "Jona che visse nella balena",
      "year": 1993,
-     "connection": "Un bambino ebreo nei campi visto con gli occhi dell'infanzia"
+     "connection": "Un bambino ebreo nei campi visto con gli occhi dell'infanzia",
+     "tmdbId": 57250
     },
     {
      "title": "Nuovo Cinema Paradiso",
      "year": 1988,
-     "connection": "Un'altra storia di affetto tra un adulto e un bambino, premiata con l'Oscar"
+     "connection": "Un'altra storia di affetto tra un adulto e un bambino, premiata con l'Oscar",
+     "tmdbId": 11216
     },
     {
      "title": "Il postino",
      "year": 1994,
-     "connection": "Commedia e malinconia insieme, con un finale che pesa"
+     "connection": "Commedia e malinconia insieme, con un finale che pesa",
+     "tmdbId": 11010
     },
     {
      "title": "C'è ancora domani",
      "year": 2023,
-     "connection": "Una famiglia romana nel dopoguerra, dolore raccontato con il sorriso"
+     "connection": "Una famiglia romana nel dopoguerra, dolore raccontato con il sorriso",
+     "tmdbId": 1026227
     }
    ]
   },
@@ -83,42 +93,50 @@
     {
      "title": "Per un pugno di dollari",
      "year": 1964,
-     "connection": "Il primo della trilogia del dollaro, Eastwood senza nome contro due bande"
+     "connection": "Il primo della trilogia del dollaro, Eastwood senza nome contro due bande",
+     "tmdbId": 391
     },
     {
      "title": "Per qualche dollaro in più",
      "year": 1965,
-     "connection": "Il secondo della trilogia, due cacciatori di taglie e un bandito"
+     "connection": "Il secondo della trilogia, due cacciatori di taglie e un bandito",
+     "tmdbId": 938
     },
     {
      "title": "C'era una volta il West",
      "year": 1968,
-     "connection": "Leone dopo la trilogia, ancora più lento e ancora più Morricone"
+     "connection": "Leone dopo la trilogia, ancora più lento e ancora più Morricone",
+     "tmdbId": 335
     },
     {
      "title": "Giù la testa",
      "year": 1971,
-     "connection": "Leone porta il western nella rivoluzione messicana"
+     "connection": "Leone porta il western nella rivoluzione messicana",
+     "tmdbId": 336
     },
     {
      "title": "Il mio nome è Nessuno",
      "year": 1973,
-     "connection": "Prodotto da Leone, un omaggio ironico al suo stesso western"
+     "connection": "Prodotto da Leone, un omaggio ironico al suo stesso western",
+     "tmdbId": 9474
     },
     {
      "title": "Django",
      "year": 1966,
-     "connection": "Corbucci, il western all'italiana più cupo e fangoso"
+     "connection": "Corbucci, il western all'italiana più cupo e fangoso",
+     "tmdbId": 10772
     },
     {
      "title": "Il grande silenzio",
      "year": 1968,
-     "connection": "Corbucci, un pistolero muto nella neve e un finale amarissimo"
+     "connection": "Corbucci, un pistolero muto nella neve e un finale amarissimo",
+     "tmdbId": 9028
     },
     {
      "title": "Faccia a faccia",
      "year": 1967,
-     "connection": "Sollima, un professore e un bandito si scambiano i ruoli"
+     "connection": "Sollima, un professore e un bandito si scambiano i ruoli",
+     "tmdbId": 45211
     },
     {
      "title": "La resa dei conti",
@@ -128,7 +146,8 @@
     {
      "title": "Lo chiamavano Trinità...",
      "year": 1970,
-     "connection": "La parodia che prende in giro proprio questi western"
+     "connection": "La parodia che prende in giro proprio questi western",
+     "tmdbId": 9394
     }
    ]
   },
@@ -146,42 +165,50 @@
     {
      "title": "Il buono, il brutto, il cattivo",
      "year": 1966,
-     "connection": "Leone e Morricone al massimo, la caccia a un tesoro"
+     "connection": "Leone e Morricone al massimo, la caccia a un tesoro",
+     "tmdbId": 429
     },
     {
      "title": "Giù la testa",
      "year": 1971,
-     "connection": "Il film che Leone gira subito dopo, rivoluzione e amicizia"
+     "connection": "Il film che Leone gira subito dopo, rivoluzione e amicizia",
+     "tmdbId": 336
     },
     {
      "title": "Per qualche dollaro in più",
      "year": 1965,
-     "connection": "Leone, una vendetta legata a un carillon"
+     "connection": "Leone, una vendetta legata a un carillon",
+     "tmdbId": 938
     },
     {
      "title": "Per un pugno di dollari",
      "year": 1964,
-     "connection": "Dove Leone comincia, con Eastwood"
+     "connection": "Dove Leone comincia, con Eastwood",
+     "tmdbId": 391
     },
     {
      "title": "Il mio nome è Nessuno",
      "year": 1973,
-     "connection": "Henry Fonda di nuovo, nel western che saluta il western"
+     "connection": "Henry Fonda di nuovo, nel western che saluta il western",
+     "tmdbId": 9474
     },
     {
      "title": "Il grande silenzio",
      "year": 1968,
-     "connection": "Corbucci, un western di neve senza lieto fine"
+     "connection": "Corbucci, un western di neve senza lieto fine",
+     "tmdbId": 9028
     },
     {
      "title": "Django",
      "year": 1966,
-     "connection": "Corbucci, violenza e fango nel western italiano"
+     "connection": "Corbucci, violenza e fango nel western italiano",
+     "tmdbId": 10772
     },
     {
      "title": "Il gattopardo",
      "year": 1963,
-     "connection": "Claudia Cardinale in un altro grande ruolo, un mondo che finisce"
+     "connection": "Claudia Cardinale in un altro grande ruolo, un mondo che finisce",
+     "tmdbId": 1040
     },
     {
      "title": "La resa dei conti",
@@ -191,7 +218,8 @@
     {
      "title": "Faccia a faccia",
      "year": 1967,
-     "connection": "Sollima, il West come luogo dove si cambia identità"
+     "connection": "Sollima, il West come luogo dove si cambia identità",
+     "tmdbId": 45211
     }
    ]
   },
@@ -209,52 +237,62 @@
     {
      "title": "L'uomo delle stelle",
      "year": 1995,
-     "connection": "Tornatore di nuovo in Sicilia, un truffatore che promette provini di cinema"
+     "connection": "Tornatore di nuovo in Sicilia, un truffatore che promette provini di cinema",
+     "tmdbId": 37975
     },
     {
      "title": "Malèna",
      "year": 2000,
-     "connection": "Tornatore, un ragazzo siciliano e la donna di cui è innamorato"
+     "connection": "Tornatore, un ragazzo siciliano e la donna di cui è innamorato",
+     "tmdbId": 10867
     },
     {
      "title": "La leggenda del pianista sull'oceano",
      "year": 1998,
-     "connection": "Tornatore e Morricone, un pianista che non scende mai dalla nave"
+     "connection": "Tornatore e Morricone, un pianista che non scende mai dalla nave",
+     "tmdbId": 10376
     },
     {
      "title": "La migliore offerta",
      "year": 2013,
-     "connection": "Tornatore in inglese, un banditore d'aste e un mistero"
+     "connection": "Tornatore in inglese, un banditore d'aste e un mistero",
+     "tmdbId": 152742
     },
     {
      "title": "Il postino",
      "year": 1994,
-     "connection": "Un'amicizia tra un uomo semplice e un maestro, su un'isola"
+     "connection": "Un'amicizia tra un uomo semplice e un maestro, su un'isola",
+     "tmdbId": 11010
     },
     {
      "title": "Amarcord",
      "year": 1973,
-     "connection": "Fellini ricorda la sua infanzia in un paese di provincia"
+     "connection": "Fellini ricorda la sua infanzia in un paese di provincia",
+     "tmdbId": 7857
     },
     {
      "title": "La vita è bella",
      "year": 1997,
-     "connection": "Commedia e malinconia, un padre e un figlio"
+     "connection": "Commedia e malinconia, un padre e un figlio",
+     "tmdbId": 637
     },
     {
      "title": "Bellissima",
      "year": 1951,
-     "connection": "Visconti, una madre che sogna il cinema per la figlia"
+     "connection": "Visconti, una madre che sogna il cinema per la figlia",
+     "tmdbId": 43372
     },
     {
      "title": "Splendor",
      "year": 1989,
-     "connection": "Scola, la storia di un cinema di provincia che chiude"
+     "connection": "Scola, la storia di un cinema di provincia che chiude",
+     "tmdbId": 58526
     },
     {
      "title": "Io non ho paura",
      "year": 2003,
-     "connection": "Un'infanzia nel Sud raccontata con gli occhi di un bambino"
+     "connection": "Un'infanzia nel Sud raccontata con gli occhi di un bambino",
+     "tmdbId": 25300
     }
    ]
   },
@@ -272,32 +310,38 @@
     {
      "title": "Per qualche dollaro in più",
      "year": 1965,
-     "connection": "Il seguito diretto, di nuovo Eastwood e Leone"
+     "connection": "Il seguito diretto, di nuovo Eastwood e Leone",
+     "tmdbId": 938
     },
     {
      "title": "Il buono, il brutto, il cattivo",
      "year": 1966,
-     "connection": "Il capitolo finale della trilogia del dollaro"
+     "connection": "Il capitolo finale della trilogia del dollaro",
+     "tmdbId": 429
     },
     {
      "title": "C'era una volta il West",
      "year": 1968,
-     "connection": "Leone più ambizioso, stesso deserto"
+     "connection": "Leone più ambizioso, stesso deserto",
+     "tmdbId": 335
     },
     {
      "title": "Django",
      "year": 1966,
-     "connection": "Corbucci, un altro straniero tra due bande in un villaggio di fango"
+     "connection": "Corbucci, un altro straniero tra due bande in un villaggio di fango",
+     "tmdbId": 10772
     },
     {
      "title": "Il grande silenzio",
      "year": 1968,
-     "connection": "Corbucci, un western che rovescia ogni regola"
+     "connection": "Corbucci, un western che rovescia ogni regola",
+     "tmdbId": 9028
     },
     {
      "title": "Faccia a faccia",
      "year": 1967,
-     "connection": "Sollima, il western all'italiana diventa riflessione politica"
+     "connection": "Sollima, il western all'italiana diventa riflessione politica",
+     "tmdbId": 45211
     },
     {
      "title": "La resa dei conti",
@@ -307,17 +351,20 @@
     {
      "title": "Giù la testa",
      "year": 1971,
-     "connection": "Leone, dinamite e rivoluzione"
+     "connection": "Leone, dinamite e rivoluzione",
+     "tmdbId": 336
     },
     {
      "title": "Il mio nome è Nessuno",
      "year": 1973,
-     "connection": "La fine del western visto con ironia"
+     "connection": "La fine del western visto con ironia",
+     "tmdbId": 9474
     },
     {
      "title": "Lo chiamavano Trinità...",
      "year": 1970,
-     "connection": "Quando il genere comincia a ridere di sé"
+     "connection": "Quando il genere comincia a ridere di sé",
+     "tmdbId": 9394
     }
    ]
   },
@@ -335,52 +382,62 @@
     {
      "title": "The Place",
      "year": 2017,
-     "connection": "Genovese di nuovo, un uomo seduto a un tavolino e i desideri di chi passa"
+     "connection": "Genovese di nuovo, un uomo seduto a un tavolino e i desideri di chi passa",
+     "tmdbId": 468198
     },
     {
      "title": "Immaturi",
      "year": 2011,
-     "connection": "Genovese, ex compagni di scuola devono rifare la maturità"
+     "connection": "Genovese, ex compagni di scuola devono rifare la maturità",
+     "tmdbId": 56909
     },
     {
      "title": "Tutta colpa di Freud",
      "year": 2014,
-     "connection": "Genovese, un padre analista alle prese con le tre figlie"
+     "connection": "Genovese, un padre analista alle prese con le tre figlie",
+     "tmdbId": 250235
     },
     {
      "title": "Una famiglia perfetta",
      "year": 2012,
-     "connection": "Genovese, una famiglia affittata per Natale"
+     "connection": "Genovese, una famiglia affittata per Natale",
+     "tmdbId": 162282
     },
     {
      "title": "Il nome del figlio",
      "year": 2015,
-     "connection": "Archibugi, una cena tra parenti in cui escono i segreti"
+     "connection": "Archibugi, una cena tra parenti in cui escono i segreti",
+     "tmdbId": 320028
     },
     {
      "title": "La cena",
      "year": 1998,
-     "connection": "Scola, una sera in un ristorante romano, tavolo dopo tavolo"
+     "connection": "Scola, una sera in un ristorante romano, tavolo dopo tavolo",
+     "tmdbId": 65485
     },
     {
      "title": "La terrazza",
      "year": 1980,
-     "connection": "Scola, amici a cena e i loro fallimenti"
+     "connection": "Scola, amici a cena e i loro fallimenti",
+     "tmdbId": 77334
     },
     {
      "title": "Pranzo di ferragosto",
      "year": 2008,
-     "connection": "Di Gregorio, un pranzo con quattro anziane a Roma"
+     "connection": "Di Gregorio, un pranzo con quattro anziane a Roma",
+     "tmdbId": 17631
     },
     {
      "title": "L'ultimo bacio",
      "year": 2001,
-     "connection": "Muccino, trentenni e coppie in crisi"
+     "connection": "Muccino, trentenni e coppie in crisi",
+     "tmdbId": 12308
     },
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Virzì, famiglie e segreti dietro un incidente"
+     "connection": "Virzì, famiglie e segreti dietro un incidente",
+     "tmdbId": 244088
     }
    ]
   },
@@ -398,17 +455,20 @@
     {
      "title": "Per un pugno di dollari",
      "year": 1964,
-     "connection": "Il primo film della trilogia, dove nasce l'uomo senza nome"
+     "connection": "Il primo film della trilogia, dove nasce l'uomo senza nome",
+     "tmdbId": 391
     },
     {
      "title": "Il buono, il brutto, il cattivo",
      "year": 1966,
-     "connection": "Il terzo, di nuovo Eastwood e Van Cleef"
+     "connection": "Il terzo, di nuovo Eastwood e Van Cleef",
+     "tmdbId": 429
     },
     {
      "title": "C'era una volta il West",
      "year": 1968,
-     "connection": "Leone e un altro carillon, ancora una vendetta"
+     "connection": "Leone e un altro carillon, ancora una vendetta",
+     "tmdbId": 335
     },
     {
      "title": "La resa dei conti",
@@ -418,7 +478,8 @@
     {
      "title": "Faccia a faccia",
      "year": 1967,
-     "connection": "Sollima, Gian Maria Volonté professore che diventa bandito"
+     "connection": "Sollima, Gian Maria Volonté professore che diventa bandito",
+     "tmdbId": 45211
     },
     {
      "title": "Quién sabe?",
@@ -428,22 +489,26 @@
     {
      "title": "Django",
      "year": 1966,
-     "connection": "Corbucci, l'altro grande western di quegli anni"
+     "connection": "Corbucci, l'altro grande western di quegli anni",
+     "tmdbId": 10772
     },
     {
      "title": "Il grande silenzio",
      "year": 1968,
-     "connection": "Corbucci, cacciatori di taglie nella neve"
+     "connection": "Corbucci, cacciatori di taglie nella neve",
+     "tmdbId": 9028
     },
     {
      "title": "Indagine su un cittadino al di sopra di ogni sospetto",
      "year": 1970,
-     "connection": "Gian Maria Volonté protagonista, stesso talento per i cattivi"
+     "connection": "Gian Maria Volonté protagonista, stesso talento per i cattivi",
+     "tmdbId": 26451
     },
     {
      "title": "Giù la testa",
      "year": 1971,
-     "connection": "Leone, il suo ultimo western vero"
+     "connection": "Leone, il suo ultimo western vero",
+     "tmdbId": 336
     }
    ]
   },
@@ -461,52 +526,62 @@
     {
      "title": "La dolce vita",
      "year": 1960,
-     "connection": "Fellini, un giornalista tra le feste romane, il modello dichiarato"
+     "connection": "Fellini, un giornalista tra le feste romane, il modello dichiarato",
+     "tmdbId": 439
     },
     {
      "title": "8½",
      "year": 1963,
-     "connection": "Fellini, un regista in crisi tra ricordi e sogni"
+     "connection": "Fellini, un regista in crisi tra ricordi e sogni",
+     "tmdbId": 422
     },
     {
      "title": "La notte",
      "year": 1961,
-     "connection": "Antonioni, uno scrittore e il vuoto di una festa borghese"
+     "connection": "Antonioni, uno scrittore e il vuoto di una festa borghese",
+     "tmdbId": 41050
     },
     {
      "title": "Roma",
      "year": 1972,
-     "connection": "Fellini racconta la città tra ricordo e cronaca"
+     "connection": "Fellini racconta la città tra ricordo e cronaca",
+     "tmdbId": 11035
     },
     {
      "title": "La terrazza",
      "year": 1980,
-     "connection": "Scola, intellettuali romani delusi a una cena su una terrazza"
+     "connection": "Scola, intellettuali romani delusi a una cena su una terrazza",
+     "tmdbId": 77334
     },
     {
      "title": "Le conseguenze dell'amore",
      "year": 2004,
-     "connection": "Sorrentino e Servillo, un uomo che ha smesso di vivere"
+     "connection": "Sorrentino e Servillo, un uomo che ha smesso di vivere",
+     "tmdbId": 24653
     },
     {
      "title": "Il Divo",
      "year": 2008,
-     "connection": "Sorrentino e Servillo, Andreotti e la Roma del potere"
+     "connection": "Sorrentino e Servillo, Andreotti e la Roma del potere",
+     "tmdbId": 8832
     },
     {
      "title": "Youth – La giovinezza",
      "year": 2015,
-     "connection": "Sorrentino, due amici anziani fanno i conti con il tempo"
+     "connection": "Sorrentino, due amici anziani fanno i conti con il tempo",
+     "tmdbId": 310593
     },
     {
      "title": "Loro",
      "year": 2018,
-     "connection": "Sorrentino e Servillo, feste e potere intorno a Berlusconi"
+     "connection": "Sorrentino e Servillo, feste e potere intorno a Berlusconi",
+     "tmdbId": 541660
     },
     {
      "title": "È stata la mano di Dio",
      "year": 2021,
-     "connection": "Sorrentino torna alla sua Napoli e alla sua giovinezza"
+     "connection": "Sorrentino torna alla sua Napoli e alla sua giovinezza",
+     "tmdbId": 722778
     }
    ]
   },
@@ -524,52 +599,62 @@
     {
      "title": "Profondo rosso",
      "year": 1975,
-     "connection": "Argento subito prima, il suo giallo più famoso con i Goblin"
+     "connection": "Argento subito prima, il suo giallo più famoso con i Goblin",
+     "tmdbId": 20126
     },
     {
      "title": "Inferno",
      "year": 1980,
-     "connection": "Argento, il secondo film delle Tre Madri"
+     "connection": "Argento, il secondo film delle Tre Madri",
+     "tmdbId": 16395
     },
     {
      "title": "L'uccello dalle piume di cristallo",
      "year": 1970,
-     "connection": "Il primo film di Argento, dove nasce il suo giallo"
+     "connection": "Il primo film di Argento, dove nasce il suo giallo",
+     "tmdbId": 20345
     },
     {
      "title": "Phenomena",
      "year": 1985,
-     "connection": "Argento, un'altra ragazza in un collegio svizzero e gli insetti"
+     "connection": "Argento, un'altra ragazza in un collegio svizzero e gli insetti",
+     "tmdbId": 29161
     },
     {
      "title": "Tenebre",
      "year": 1982,
-     "connection": "Argento, un giallo luminoso e violentissimo a Roma"
+     "connection": "Argento, un giallo luminoso e violentissimo a Roma",
+     "tmdbId": 29702
     },
     {
      "title": "La maschera del demonio",
      "year": 1960,
-     "connection": "Bava, l'horror gotico italiano in bianco e nero"
+     "connection": "Bava, l'horror gotico italiano in bianco e nero",
+     "tmdbId": 27632
     },
     {
      "title": "Sei donne per l'assassino",
      "year": 1964,
-     "connection": "Bava, un atelier di moda e i colori che Argento erediterà"
+     "connection": "Bava, un atelier di moda e i colori che Argento erediterà",
+     "tmdbId": 28055
     },
     {
      "title": "Operazione paura",
      "year": 1966,
-     "connection": "Bava, un paese maledetto e una bambina fantasma"
+     "connection": "Bava, un paese maledetto e una bambina fantasma",
+     "tmdbId": 28049
     },
     {
      "title": "A Classic Horror Story",
      "year": 2021,
-     "connection": "Un horror italiano di oggi che gioca con il genere"
+     "connection": "Un horror italiano di oggi che gioca con il genere",
+     "tmdbId": 768334
     },
     {
      "title": "La casa dalle finestre che ridono",
      "year": 1976,
-     "connection": "Avati, l'horror nella campagna emiliana"
+     "connection": "Avati, l'horror nella campagna emiliana",
+     "tmdbId": 57447
     }
    ]
   },
@@ -587,52 +672,62 @@
     {
      "title": "La sconosciuta",
      "year": 2006,
-     "connection": "Tornatore, un altro thriller su una donna dal passato nascosto"
+     "connection": "Tornatore, un altro thriller su una donna dal passato nascosto",
+     "tmdbId": 10886
     },
     {
      "title": "Nuovo Cinema Paradiso",
      "year": 1988,
-     "connection": "Tornatore e Morricone, il loro film più amato"
+     "connection": "Tornatore e Morricone, il loro film più amato",
+     "tmdbId": 11216
     },
     {
      "title": "La leggenda del pianista sull'oceano",
      "year": 1998,
-     "connection": "Tornatore, un uomo che vive chiuso nel suo mondo"
+     "connection": "Tornatore, un uomo che vive chiuso nel suo mondo",
+     "tmdbId": 10376
     },
     {
      "title": "La corrispondenza",
      "year": 2016,
-     "connection": "Tornatore, un amore a distanza e un enigma"
+     "connection": "Tornatore, un amore a distanza e un enigma",
+     "tmdbId": 315880
     },
     {
      "title": "La ragazza nella nebbia",
      "year": 2017,
-     "connection": "Un giallo italiano costruito su chi mente e chi no"
+     "connection": "Un giallo italiano costruito su chi mente e chi no",
+     "tmdbId": 468202
     },
     {
      "title": "L'uomo delle stelle",
      "year": 1995,
-     "connection": "Tornatore, un truffatore che vende sogni"
+     "connection": "Tornatore, un truffatore che vende sogni",
+     "tmdbId": 37975
     },
     {
      "title": "The Place",
      "year": 2017,
-     "connection": "Un uomo misterioso a un tavolino, un altro gioco di inganni"
+     "connection": "Un uomo misterioso a un tavolino, un altro gioco di inganni",
+     "tmdbId": 468198
     },
     {
      "title": "Le conseguenze dell'amore",
      "year": 2004,
-     "connection": "Sorrentino, un uomo solo e metodico che si apre"
+     "connection": "Sorrentino, un uomo solo e metodico che si apre",
+     "tmdbId": 24653
     },
     {
      "title": "Profondo rosso",
      "year": 1975,
-     "connection": "Argento, un mistero che si risolve con un dettaglio visto"
+     "connection": "Argento, un mistero che si risolve con un dettaglio visto",
+     "tmdbId": 20126
     },
     {
      "title": "Indagine su un cittadino al di sopra di ogni sospetto",
      "year": 1970,
-     "connection": "Petri, un uomo di potere e un gioco di indizi"
+     "connection": "Petri, un uomo di potere e un gioco di indizi",
+     "tmdbId": 26451
     }
    ]
   },
@@ -650,52 +745,62 @@
     {
      "title": "Roma città aperta",
      "year": 1945,
-     "connection": "Rossellini apre il neorealismo, Roma occupata e attori quasi tutti veri"
+     "connection": "Rossellini apre il neorealismo, Roma occupata e attori quasi tutti veri",
+     "tmdbId": 307
     },
     {
      "title": "Sciuscià",
      "year": 1946,
-     "connection": "De Sica e Zavattini, bambini lustrascarpe nella Roma del dopoguerra"
+     "connection": "De Sica e Zavattini, bambini lustrascarpe nella Roma del dopoguerra",
+     "tmdbId": 43469
     },
     {
      "title": "Paisà",
      "year": 1946,
-     "connection": "Rossellini segue l'avanzata alleata in sei episodi, dalla Sicilia al Po"
+     "connection": "Rossellini segue l'avanzata alleata in sei episodi, dalla Sicilia al Po",
+     "tmdbId": 8429
     },
     {
      "title": "Miracolo a Milano",
      "year": 1951,
-     "connection": "De Sica e Zavattini di nuovo, poveri e baracche ma con una favola"
+     "connection": "De Sica e Zavattini di nuovo, poveri e baracche ma con una favola",
+     "tmdbId": 43379
     },
     {
      "title": "Bellissima",
      "year": 1951,
-     "connection": "Visconti, una madre romana sogna Cinecittà per la figlia"
+     "connection": "Visconti, una madre romana sogna Cinecittà per la figlia",
+     "tmdbId": 43372
     },
     {
      "title": "Umberto D.",
      "year": 1952,
-     "connection": "De Sica, un pensionato solo con il suo cane, stessa asciuttezza"
+     "connection": "De Sica, un pensionato solo con il suo cane, stessa asciuttezza",
+     "tmdbId": 833
     },
     {
      "title": "Accattone",
      "year": 1961,
-     "connection": "Pasolini porta la periferia romana sullo schermo, attori non professionisti"
+     "connection": "Pasolini porta la periferia romana sullo schermo, attori non professionisti",
+     "tmdbId": 12491
     },
     {
      "title": "Mamma Roma",
      "year": 1962,
-     "connection": "Pasolini, una madre e un figlio tra le borgate romane"
+     "connection": "Pasolini, una madre e un figlio tra le borgate romane",
+     "tmdbId": 47796
     },
     {
      "title": "Il ladro di bambini",
      "year": 1992,
-     "connection": "Amelio, un carabiniere e due bambini in viaggio, erede del neorealismo"
+     "connection": "Amelio, un carabiniere e due bambini in viaggio, erede del neorealismo",
+     "tmdbId": 47714
     },
     {
      "title": "C'è ancora domani",
      "year": 2023,
-     "connection": "Cortellesi gira la Roma del 1946 in bianco e nero"
+     "connection": "Cortellesi gira la Roma del 1946 in bianco e nero",
+     "tmdbId": 1026227
     }
    ]
   },
@@ -713,52 +818,62 @@
     {
      "title": "La dolce vita",
      "year": 1960,
-     "connection": "Fellini e Mastroianni subito prima, Roma e le sue notti"
+     "connection": "Fellini e Mastroianni subito prima, Roma e le sue notti",
+     "tmdbId": 439
     },
     {
      "title": "Le notti di Cabiria",
      "year": 1957,
-     "connection": "Fellini, Giulietta Masina e una speranza che non muore"
+     "connection": "Fellini, Giulietta Masina e una speranza che non muore",
+     "tmdbId": 19426
     },
     {
      "title": "La strada",
      "year": 1954,
-     "connection": "Fellini, un circo ambulante e la Masina"
+     "connection": "Fellini, un circo ambulante e la Masina",
+     "tmdbId": 405
     },
     {
      "title": "Amarcord",
      "year": 1973,
-     "connection": "Fellini torna ai ricordi della sua Rimini"
+     "connection": "Fellini torna ai ricordi della sua Rimini",
+     "tmdbId": 7857
     },
     {
      "title": "Giulietta degli spiriti",
      "year": 1965,
-     "connection": "Fellini dopo 8½, i sogni visti da una moglie"
+     "connection": "Fellini dopo 8½, i sogni visti da una moglie",
+     "tmdbId": 19120
     },
     {
      "title": "Roma",
      "year": 1972,
-     "connection": "Fellini, la città come un sogno"
+     "connection": "Fellini, la città come un sogno",
+     "tmdbId": 11035
     },
     {
      "title": "La grande bellezza",
      "year": 2013,
-     "connection": "Sorrentino, un altro uomo che non crea più, erede dichiarato"
+     "connection": "Sorrentino, un altro uomo che non crea più, erede dichiarato",
+     "tmdbId": 179144
     },
     {
      "title": "La notte",
      "year": 1961,
-     "connection": "Antonioni, Mastroianni scrittore in crisi"
+     "connection": "Antonioni, Mastroianni scrittore in crisi",
+     "tmdbId": 41050
     },
     {
      "title": "Youth – La giovinezza",
      "year": 2015,
-     "connection": "Sorrentino, un regista anziano e il suo ultimo film"
+     "connection": "Sorrentino, un regista anziano e il suo ultimo film",
+     "tmdbId": 310593
     },
     {
      "title": "Intervista",
      "year": 1987,
-     "connection": "Fellini racconta Cinecittà e il suo modo di fare cinema"
+     "connection": "Fellini racconta Cinecittà e il suo modo di fare cinema",
+     "tmdbId": 47715
     }
    ]
   },
@@ -776,52 +891,62 @@
     {
      "title": "Freaks Out",
      "year": 2021,
-     "connection": "Mainetti di nuovo, poteri e circo nella Roma occupata"
+     "connection": "Mainetti di nuovo, poteri e circo nella Roma occupata",
+     "tmdbId": 571468
     },
     {
      "title": "Il ragazzo invisibile",
      "year": 2014,
-     "connection": "Salvatores, un supereroe ragazzino a Trieste"
+     "connection": "Salvatores, un supereroe ragazzino a Trieste",
+     "tmdbId": 303542
     },
     {
      "title": "Suburra",
      "year": 2015,
-     "connection": "La Roma criminale vista dall'alto, stessi quartieri"
+     "connection": "La Roma criminale vista dall'alto, stessi quartieri",
+     "tmdbId": 356296
     },
     {
      "title": "Non essere cattivo",
      "year": 2015,
-     "connection": "Caligari, la periferia di Ostia senza poteri"
+     "connection": "Caligari, la periferia di Ostia senza poteri",
+     "tmdbId": 359156
     },
     {
      "title": "Dogman",
      "year": 2018,
-     "connection": "Garrone, un uomo mite e un violento in una periferia sul mare"
+     "connection": "Garrone, un uomo mite e un violento in una periferia sul mare",
+     "tmdbId": 483184
     },
     {
      "title": "Smetto quando voglio",
      "year": 2014,
-     "connection": "Una banda di ricercatori romani, genere americano portato a Roma"
+     "connection": "Una banda di ricercatori romani, genere americano portato a Roma",
+     "tmdbId": 250219
     },
     {
      "title": "Gomorra",
      "year": 2008,
-     "connection": "Garrone, la criminalità di Scampia vista da vicino"
+     "connection": "Garrone, la criminalità di Scampia vista da vicino",
+     "tmdbId": 8882
     },
     {
      "title": "Veloce come il vento",
      "year": 2016,
-     "connection": "Rovere, corse d'auto e un fratello difficile, Stefano Accorsi"
+     "connection": "Rovere, corse d'auto e un fratello difficile, Stefano Accorsi",
+     "tmdbId": 375572
     },
     {
      "title": "Accattone",
      "year": 1961,
-     "connection": "Pasolini, la stessa Roma di borgata cinquant'anni prima"
+     "connection": "Pasolini, la stessa Roma di borgata cinquant'anni prima",
+     "tmdbId": 12491
     },
     {
      "title": "Il racconto dei racconti - Tale of Tales",
      "year": 2015,
-     "connection": "Garrone, il fantastico italiano preso sul serio"
+     "connection": "Garrone, il fantastico italiano preso sul serio",
+     "tmdbId": 314405
     }
    ]
   },
@@ -839,52 +964,62 @@
     {
      "title": "Nuovo Cinema Paradiso",
      "year": 1988,
-     "connection": "Tornatore e Morricone, un altro racconto di memoria e amicizia"
+     "connection": "Tornatore e Morricone, un altro racconto di memoria e amicizia",
+     "tmdbId": 11216
     },
     {
      "title": "La migliore offerta",
      "year": 2013,
-     "connection": "Tornatore, un uomo chiuso nel suo mondo d'arte"
+     "connection": "Tornatore, un uomo chiuso nel suo mondo d'arte",
+     "tmdbId": 152742
     },
     {
      "title": "L'uomo delle stelle",
      "year": 1995,
-     "connection": "Tornatore, la Sicilia e il sogno del cinema"
+     "connection": "Tornatore, la Sicilia e il sogno del cinema",
+     "tmdbId": 37975
     },
     {
      "title": "Malèna",
      "year": 2000,
-     "connection": "Tornatore e Morricone, un ricordo d'infanzia"
+     "connection": "Tornatore e Morricone, un ricordo d'infanzia",
+     "tmdbId": 10867
     },
     {
      "title": "Novecento",
      "year": 1976,
-     "connection": "Bertolucci, un secolo italiano attraverso due uomini nati lo stesso giorno"
+     "connection": "Bertolucci, un secolo italiano attraverso due uomini nati lo stesso giorno",
+     "tmdbId": 3870
     },
     {
      "title": "Il postino",
      "year": 1994,
-     "connection": "Un'altra amicizia tra un uomo semplice e l'arte"
+     "connection": "Un'altra amicizia tra un uomo semplice e l'arte",
+     "tmdbId": 11010
     },
     {
      "title": "La vita è bella",
      "year": 1997,
-     "connection": "Una favola triste raccontata con dolcezza"
+     "connection": "Una favola triste raccontata con dolcezza",
+     "tmdbId": 637
     },
     {
      "title": "Amarcord",
      "year": 1973,
-     "connection": "Fellini, i ricordi trasformati in leggenda"
+     "connection": "Fellini, i ricordi trasformati in leggenda",
+     "tmdbId": 7857
     },
     {
      "title": "Le conseguenze dell'amore",
      "year": 2004,
-     "connection": "Sorrentino, un uomo che vive dentro un albergo"
+     "connection": "Sorrentino, un uomo che vive dentro un albergo",
+     "tmdbId": 24653
     },
     {
      "title": "Youth – La giovinezza",
      "year": 2015,
-     "connection": "Sorrentino, un musicista anziano e la sua opera"
+     "connection": "Sorrentino, un musicista anziano e la sua opera",
+     "tmdbId": 310593
     }
    ]
   },
@@ -902,52 +1037,62 @@
     {
      "title": "Gomorra",
      "year": 2008,
-     "connection": "Garrone, la violenza quotidiana del Sud"
+     "connection": "Garrone, la violenza quotidiana del Sud",
+     "tmdbId": 8882
     },
     {
      "title": "L'imbalsamatore",
      "year": 2002,
-     "connection": "Garrone, un altro uomo piccolo e un legame che diventa pericoloso"
+     "connection": "Garrone, un altro uomo piccolo e un legame che diventa pericoloso",
+     "tmdbId": 35265
     },
     {
      "title": "Reality",
      "year": 2012,
-     "connection": "Garrone, un pescivendolo napoletano ossessionato dalla televisione"
+     "connection": "Garrone, un pescivendolo napoletano ossessionato dalla televisione",
+     "tmdbId": 103758
     },
     {
      "title": "Io capitano",
      "year": 2023,
-     "connection": "Garrone, due ragazzi senegalesi in viaggio verso l'Italia"
+     "connection": "Garrone, due ragazzi senegalesi in viaggio verso l'Italia",
+     "tmdbId": 937746
     },
     {
      "title": "Il racconto dei racconti - Tale of Tales",
      "year": 2015,
-     "connection": "Garrone nel fantastico, sempre con creature e mostri"
+     "connection": "Garrone nel fantastico, sempre con creature e mostri",
+     "tmdbId": 314405
     },
     {
      "title": "Pinocchio",
      "year": 2019,
-     "connection": "Garrone, la favola di Collodi con un realismo crudo"
+     "connection": "Garrone, la favola di Collodi con un realismo crudo",
+     "tmdbId": 413518
     },
     {
      "title": "Non essere cattivo",
      "year": 2015,
-     "connection": "Caligari, amicizia e violenza nella periferia di Ostia"
+     "connection": "Caligari, amicizia e violenza nella periferia di Ostia",
+     "tmdbId": 359156
     },
     {
      "title": "Lo chiamavano Jeeg Robot",
      "year": 2016,
-     "connection": "Un altro uomo solo della periferia romana"
+     "connection": "Un altro uomo solo della periferia romana",
+     "tmdbId": 364433
     },
     {
      "title": "Accattone",
      "year": 1961,
-     "connection": "Pasolini, gli ultimi delle borgate"
+     "connection": "Pasolini, gli ultimi delle borgate",
+     "tmdbId": 12491
     },
     {
      "title": "Sulla mia pelle",
      "year": 2018,
-     "connection": "Un'altra storia vera di violenza e silenzio"
+     "connection": "Un'altra storia vera di violenza e silenzio",
+     "tmdbId": 538362
     }
    ]
   },
@@ -965,52 +1110,62 @@
     {
      "title": "La grande bellezza",
      "year": 2013,
-     "connection": "Sorrentino, un altro uomo anziano che guarda indietro"
+     "connection": "Sorrentino, un altro uomo anziano che guarda indietro",
+     "tmdbId": 179144
     },
     {
      "title": "Le conseguenze dell'amore",
      "year": 2004,
-     "connection": "Sorrentino, un albergo svizzero e un uomo che vive in attesa"
+     "connection": "Sorrentino, un albergo svizzero e un uomo che vive in attesa",
+     "tmdbId": 24653
     },
     {
      "title": "This Must Be the Place",
      "year": 2011,
-     "connection": "Sorrentino in inglese, una rockstar invecchiata in viaggio"
+     "connection": "Sorrentino in inglese, una rockstar invecchiata in viaggio",
+     "tmdbId": 53487
     },
     {
      "title": "È stata la mano di Dio",
      "year": 2021,
-     "connection": "Sorrentino racconta la propria giovinezza a Napoli"
+     "connection": "Sorrentino racconta la propria giovinezza a Napoli",
+     "tmdbId": 722778
     },
     {
      "title": "8½",
      "year": 1963,
-     "connection": "Fellini, un regista in crisi tra ricordi e set"
+     "connection": "Fellini, un regista in crisi tra ricordi e set",
+     "tmdbId": 422
     },
     {
      "title": "La notte",
      "year": 1961,
-     "connection": "Antonioni, un artista e il vuoto intorno"
+     "connection": "Antonioni, un artista e il vuoto intorno",
+     "tmdbId": 41050
     },
     {
      "title": "Il Divo",
      "year": 2008,
-     "connection": "Sorrentino, il potere che invecchia"
+     "connection": "Sorrentino, il potere che invecchia",
+     "tmdbId": 8832
     },
     {
      "title": "Parthenope",
      "year": 2024,
-     "connection": "Sorrentino, una vita intera raccontata tra bellezza e tempo"
+     "connection": "Sorrentino, una vita intera raccontata tra bellezza e tempo",
+     "tmdbId": 1109255
     },
     {
      "title": "La leggenda del pianista sull'oceano",
      "year": 1998,
-     "connection": "Un musicista che vive fuori dal mondo"
+     "connection": "Un musicista che vive fuori dal mondo",
+     "tmdbId": 10376
     },
     {
      "title": "Le otto montagne",
      "year": 2022,
-     "connection": "Un'amicizia lunga una vita, tra le montagne"
+     "connection": "Un'amicizia lunga una vita, tra le montagne",
+     "tmdbId": 803700
     }
    ]
   },
@@ -1028,52 +1183,62 @@
     {
      "title": "Sole a catinelle",
      "year": 2013,
-     "connection": "Zalone e Nunziante, un padre senza soldi e una vacanza promessa"
+     "connection": "Zalone e Nunziante, un padre senza soldi e una vacanza promessa",
+     "tmdbId": 231176
     },
     {
      "title": "Cado dalle nubi",
      "year": 2009,
-     "connection": "Il primo film di Zalone, dalla Puglia a Milano"
+     "connection": "Il primo film di Zalone, dalla Puglia a Milano",
+     "tmdbId": 35554
     },
     {
      "title": "Che bella giornata",
      "year": 2011,
-     "connection": "Zalone guardia giurata al Duomo di Milano"
+     "connection": "Zalone guardia giurata al Duomo di Milano",
+     "tmdbId": 53319
     },
     {
      "title": "Tolo Tolo",
      "year": 2020,
-     "connection": "Zalone regista, un imprenditore fallito in fuga in Africa"
+     "connection": "Zalone regista, un imprenditore fallito in fuga in Africa",
+     "tmdbId": 593402
     },
     {
      "title": "Benvenuti al sud",
      "year": 2010,
-     "connection": "Un impiegato del Nord trasferito al Sud, pregiudizi a confronto"
+     "connection": "Un impiegato del Nord trasferito al Sud, pregiudizi a confronto",
+     "tmdbId": 48415
     },
     {
      "title": "Benvenuti al Nord",
      "year": 2012,
-     "connection": "Il seguito, stesso gioco al contrario"
+     "connection": "Il seguito, stesso gioco al contrario",
+     "tmdbId": 85038
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Aldo Giovanni e Giacomo, soldi e ruoli sociali ribaltati"
+     "connection": "Aldo Giovanni e Giacomo, soldi e ruoli sociali ribaltati",
+     "tmdbId": 310126
     },
     {
      "title": "Fantozzi",
      "year": 1975,
-     "connection": "Villaggio, l'impiegato italiano per eccellenza"
+     "connection": "Villaggio, l'impiegato italiano per eccellenza",
+     "tmdbId": 25606
     },
     {
      "title": "Il posto",
      "year": 1961,
-     "connection": "Olmi, un ragazzo e il suo primo impiego fisso a Milano"
+     "connection": "Olmi, un ragazzo e il suo primo impiego fisso a Milano",
+     "tmdbId": 31742
     },
     {
      "title": "L'ora legale",
      "year": 2017,
-     "connection": "Ficarra e Picone, un paese siciliano e il rispetto delle regole"
+     "connection": "Ficarra e Picone, un paese siciliano e il rispetto delle regole",
+     "tmdbId": 435921
     }
    ]
   },
@@ -1091,52 +1256,62 @@
     {
      "title": "Così è la vita",
      "year": 1998,
-     "connection": "Il trio di nuovo, un'altra fuga a tre"
+     "connection": "Il trio di nuovo, un'altra fuga a tre",
+     "tmdbId": 38396
     },
     {
      "title": "Chiedimi se sono felice",
      "year": 2000,
-     "connection": "Il trio, un'amicizia che si rompe per una donna"
+     "connection": "Il trio, un'amicizia che si rompe per una donna",
+     "tmdbId": 50531
     },
     {
      "title": "La leggenda di Al, John e Jack",
      "year": 2002,
-     "connection": "Il trio nella New York dei gangster"
+     "connection": "Il trio nella New York dei gangster",
+     "tmdbId": 38397
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Il trio più tardi, soldi e crisi"
+     "connection": "Il trio più tardi, soldi e crisi",
+     "tmdbId": 310126
     },
     {
      "title": "Non ci resta che piangere",
      "year": 1984,
-     "connection": "Benigni e Troisi, un viaggio sbagliato nel tempo"
+     "connection": "Benigni e Troisi, un viaggio sbagliato nel tempo",
+     "tmdbId": 27670
     },
     {
      "title": "Johnny Stecchino",
      "year": 1991,
-     "connection": "Benigni, equivoci a catena"
+     "connection": "Benigni, equivoci a catena",
+     "tmdbId": 12776
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Risi, l'Italia vista da una macchina in viaggio"
+     "connection": "Risi, l'Italia vista da una macchina in viaggio",
+     "tmdbId": 24188
     },
     {
      "title": "Mediterraneo",
      "year": 1991,
-     "connection": "Salvatores, un gruppo di uomini e l'amicizia lontano da casa"
+     "connection": "Salvatores, un gruppo di uomini e l'amicizia lontano da casa",
+     "tmdbId": 38251
     },
     {
      "title": "Benvenuti al sud",
      "year": 2010,
-     "connection": "Nord e Sud, pregiudizi e risate"
+     "connection": "Nord e Sud, pregiudizi e risate",
+     "tmdbId": 48415
     },
     {
      "title": "Quo vado?",
      "year": 2016,
-     "connection": "Zalone, la commedia italiana di oggi"
+     "connection": "Zalone, la commedia italiana di oggi",
+     "tmdbId": 374416
     }
    ]
   },
@@ -1154,52 +1329,62 @@
     {
      "title": "8½",
      "year": 1963,
-     "connection": "Fellini e Mastroianni di nuovo, un regista in crisi"
+     "connection": "Fellini e Mastroianni di nuovo, un regista in crisi",
+     "tmdbId": 422
     },
     {
      "title": "Le notti di Cabiria",
      "year": 1957,
-     "connection": "Fellini, l'altra Roma, quella della periferia"
+     "connection": "Fellini, l'altra Roma, quella della periferia",
+     "tmdbId": 19426
     },
     {
      "title": "La grande bellezza",
      "year": 2013,
-     "connection": "Sorrentino rifà la Roma notturna di Fellini cinquant'anni dopo"
+     "connection": "Sorrentino rifà la Roma notturna di Fellini cinquant'anni dopo",
+     "tmdbId": 179144
     },
     {
      "title": "La notte",
      "year": 1961,
-     "connection": "Antonioni, Mastroianni e una festa senza senso"
+     "connection": "Antonioni, Mastroianni e una festa senza senso",
+     "tmdbId": 41050
     },
     {
      "title": "Roma",
      "year": 1972,
-     "connection": "Fellini, la città come la ricorda"
+     "connection": "Fellini, la città come la ricorda",
+     "tmdbId": 11035
     },
     {
      "title": "I vitelloni",
      "year": 1953,
-     "connection": "Fellini, giovani di provincia che non crescono"
+     "connection": "Fellini, giovani di provincia che non crescono",
+     "tmdbId": 12548
     },
     {
      "title": "Amarcord",
      "year": 1973,
-     "connection": "Fellini, la sua Rimini"
+     "connection": "Fellini, la sua Rimini",
+     "tmdbId": 7857
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Risi, l'Italia del boom in macchina"
+     "connection": "Risi, l'Italia del boom in macchina",
+     "tmdbId": 24188
     },
     {
      "title": "Divorzio all'italiana",
      "year": 1961,
-     "connection": "Germi, Mastroianni e la commedia nera"
+     "connection": "Germi, Mastroianni e la commedia nera",
+     "tmdbId": 20271
     },
     {
      "title": "La terrazza",
      "year": 1980,
-     "connection": "Scola, intellettuali romani anni dopo"
+     "connection": "Scola, intellettuali romani anni dopo",
+     "tmdbId": 77334
     }
    ]
   },
@@ -1217,52 +1402,62 @@
     {
      "title": "Diaz – Don't Clean Up This Blood",
      "year": 2012,
-     "connection": "Vicari, le violenze della polizia al G8 di Genova"
+     "connection": "Vicari, le violenze della polizia al G8 di Genova",
+     "tmdbId": 96714
     },
     {
      "title": "Non essere cattivo",
      "year": 2015,
-     "connection": "Caligari, Alessandro Borghi nella periferia di Ostia"
+     "connection": "Caligari, Alessandro Borghi nella periferia di Ostia",
+     "tmdbId": 359156
     },
     {
      "title": "Suburra",
      "year": 2015,
-     "connection": "Borghi di nuovo, la Roma criminale"
+     "connection": "Borghi di nuovo, la Roma criminale",
+     "tmdbId": 356296
     },
     {
      "title": "Il traditore",
      "year": 2019,
-     "connection": "Bellocchio, un'altra storia vera di giustizia"
+     "connection": "Bellocchio, un'altra storia vera di giustizia",
+     "tmdbId": 575452
     },
     {
      "title": "La meglio gioventù",
      "year": 2003,
-     "connection": "Giordana, quarant'anni d'Italia attraverso una famiglia"
+     "connection": "Giordana, quarant'anni d'Italia attraverso una famiglia",
+     "tmdbId": 11659
     },
     {
      "title": "I cento passi",
      "year": 2000,
-     "connection": "Giordana, Peppino Impastato contro la mafia"
+     "connection": "Giordana, Peppino Impastato contro la mafia",
+     "tmdbId": 29458
     },
     {
      "title": "Dogman",
      "year": 2018,
-     "connection": "Garrone, violenza e debolezza in una periferia"
+     "connection": "Garrone, violenza e debolezza in una periferia",
+     "tmdbId": 483184
     },
     {
      "title": "Indagine su un cittadino al di sopra di ogni sospetto",
      "year": 1970,
-     "connection": "Petri, il potere della polizia senza controlli"
+     "connection": "Petri, il potere della polizia senza controlli",
+     "tmdbId": 26451
     },
     {
      "title": "Gomorra",
      "year": 2008,
-     "connection": "Garrone, un'Italia che i telegiornali non mostrano"
+     "connection": "Garrone, un'Italia che i telegiornali non mostrano",
+     "tmdbId": 8882
     },
     {
      "title": "La mafia uccide solo d'estate",
      "year": 2013,
-     "connection": "Pif, la storia vera raccontata con leggerezza"
+     "connection": "Pif, la storia vera raccontata con leggerezza",
+     "tmdbId": 239877
     }
    ]
   },
@@ -1280,52 +1475,62 @@
     {
      "title": "Benvenuti al Nord",
      "year": 2012,
-     "connection": "Il seguito, questa volta il postino del Sud va a Milano"
+     "connection": "Il seguito, questa volta il postino del Sud va a Milano",
+     "tmdbId": 85038
     },
     {
      "title": "Quo vado?",
      "year": 2016,
-     "connection": "Zalone, un impiegato pubblico trasferito ovunque"
+     "connection": "Zalone, un impiegato pubblico trasferito ovunque",
+     "tmdbId": 374416
     },
     {
      "title": "Cado dalle nubi",
      "year": 2009,
-     "connection": "Zalone, un pugliese a Milano"
+     "connection": "Zalone, un pugliese a Milano",
+     "tmdbId": 35554
     },
     {
      "title": "Che bella giornata",
      "year": 2011,
-     "connection": "Zalone, il Sud che arriva al Nord"
+     "connection": "Zalone, il Sud che arriva al Nord",
+     "tmdbId": 53319
     },
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Da Milano alla Puglia in macchina"
+     "connection": "Da Milano alla Puglia in macchina",
+     "tmdbId": 38286
     },
     {
      "title": "L'ora legale",
      "year": 2017,
-     "connection": "Ficarra e Picone, un paese del Sud e le regole"
+     "connection": "Ficarra e Picone, un paese del Sud e le regole",
+     "tmdbId": 435921
     },
     {
      "title": "Il postino",
      "year": 1994,
-     "connection": "Un postino e un'isola del Sud"
+     "connection": "Un postino e un'isola del Sud",
+     "tmdbId": 11010
     },
     {
      "title": "Mine vaganti",
      "year": 2010,
-     "connection": "Özpetek, una famiglia di Lecce e i suoi segreti"
+     "connection": "Özpetek, una famiglia di Lecce e i suoi segreti",
+     "tmdbId": 40794
     },
     {
      "title": "Sole a catinelle",
      "year": 2013,
-     "connection": "Zalone, il Sud e il Nord in vacanza"
+     "connection": "Zalone, il Sud e il Nord in vacanza",
+     "tmdbId": 231176
     },
     {
      "title": "Pane e tulipani",
      "year": 2000,
-     "connection": "Una donna trova un'altra vita in una città nuova"
+     "connection": "Una donna trova un'altra vita in una città nuova",
+     "tmdbId": 552
     }
    ]
   },
@@ -1343,52 +1548,62 @@
     {
      "title": "Smetto quando voglio - Masterclass",
      "year": 2017,
-     "connection": "Il seguito, la banda lavora per la polizia"
+     "connection": "Il seguito, la banda lavora per la polizia",
+     "tmdbId": 406385
     },
     {
      "title": "Smetto quando voglio - Ad honorem",
      "year": 2017,
-     "connection": "Il capitolo finale della trilogia"
+     "connection": "Il capitolo finale della trilogia",
+     "tmdbId": 439584
     },
     {
      "title": "L'incredibile storia dell'Isola delle Rose",
      "year": 2020,
-     "connection": "Sibilia, un ingegnere crea uno Stato nel mare"
+     "connection": "Sibilia, un ingegnere crea uno Stato nel mare",
+     "tmdbId": 636565
     },
     {
      "title": "I soliti ignoti",
      "year": 1958,
-     "connection": "Monicelli, una banda di dilettanti e un colpo sbagliato"
+     "connection": "Monicelli, una banda di dilettanti e un colpo sbagliato",
+     "tmdbId": 24382
     },
     {
      "title": "Lo chiamavano Jeeg Robot",
      "year": 2016,
-     "connection": "Un genere americano portato a Roma"
+     "connection": "Un genere americano portato a Roma",
+     "tmdbId": 364433
     },
     {
      "title": "Perfetti sconosciuti",
      "year": 2016,
-     "connection": "Un gruppo di amici e un gioco che va storto"
+     "connection": "Un gruppo di amici e un gioco che va storto",
+     "tmdbId": 381341
     },
     {
      "title": "Immaturi",
      "year": 2011,
-     "connection": "Quarantenni romani che devono rifare la maturità"
+     "connection": "Quarantenni romani che devono rifare la maturità",
+     "tmdbId": 56909
     },
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Virzì, soldi e ambizione nell'Italia di oggi"
+     "connection": "Virzì, soldi e ambizione nell'Italia di oggi",
+     "tmdbId": 244088
     },
     {
      "title": "Tutta la vita davanti",
      "year": 2008,
-     "connection": "Virzì, una laureata precaria in un call center"
+     "connection": "Virzì, una laureata precaria in un call center",
+     "tmdbId": 51917
     },
     {
      "title": "Suburra",
      "year": 2015,
-     "connection": "La Roma della droga, ma senza ridere"
+     "connection": "La Roma della droga, ma senza ridere",
+     "tmdbId": 356296
     }
    ]
   },
@@ -1406,52 +1621,62 @@
     {
      "title": "Amarcord",
      "year": 1973,
-     "connection": "Fellini, la sua adolescenza a Rimini"
+     "connection": "Fellini, la sua adolescenza a Rimini",
+     "tmdbId": 7857
     },
     {
      "title": "Parthenope",
      "year": 2024,
-     "connection": "Sorrentino torna a Napoli con una donna e una vita"
+     "connection": "Sorrentino torna a Napoli con una donna e una vita",
+     "tmdbId": 1109255
     },
     {
      "title": "La grande bellezza",
      "year": 2013,
-     "connection": "Sorrentino, Roma e il tempo che passa"
+     "connection": "Sorrentino, Roma e il tempo che passa",
+     "tmdbId": 179144
     },
     {
      "title": "Youth – La giovinezza",
      "year": 2015,
-     "connection": "Sorrentino, l'età e la memoria"
+     "connection": "Sorrentino, l'età e la memoria",
+     "tmdbId": 310593
     },
     {
      "title": "Il Divo",
      "year": 2008,
-     "connection": "Sorrentino e Servillo, la politica"
+     "connection": "Sorrentino e Servillo, la politica",
+     "tmdbId": 8832
     },
     {
      "title": "Nuovo Cinema Paradiso",
      "year": 1988,
-     "connection": "Un ragazzo, una famiglia e il cinema nel Sud"
+     "connection": "Un ragazzo, una famiglia e il cinema nel Sud",
+     "tmdbId": 11216
     },
     {
      "title": "Ricomincio da tre",
      "year": 1981,
-     "connection": "Troisi, un napoletano che cerca la sua strada"
+     "connection": "Troisi, un napoletano che cerca la sua strada",
+     "tmdbId": 13386
     },
     {
      "title": "L'oro di Napoli",
      "year": 1954,
-     "connection": "De Sica, episodi di vita napoletana"
+     "connection": "De Sica, episodi di vita napoletana",
+     "tmdbId": 56122
     },
     {
      "title": "Le conseguenze dell'amore",
      "year": 2004,
-     "connection": "Sorrentino, un uomo chiuso nel suo dolore"
+     "connection": "Sorrentino, un uomo chiuso nel suo dolore",
+     "tmdbId": 24653
     },
     {
      "title": "Io non ho paura",
      "year": 2003,
-     "connection": "Un'estate d'infanzia nel Sud che cambia tutto"
+     "connection": "Un'estate d'infanzia nel Sud che cambia tutto",
+     "tmdbId": 25300
     }
    ]
   },
@@ -1469,52 +1694,62 @@
     {
      "title": "Pinocchio",
      "year": 2019,
-     "connection": "Garrone di nuovo nella favola, con Benigni Geppetto"
+     "connection": "Garrone di nuovo nella favola, con Benigni Geppetto",
+     "tmdbId": 413518
     },
     {
      "title": "Dogman",
      "year": 2018,
-     "connection": "Garrone nel realismo, un'altra favola nera"
+     "connection": "Garrone nel realismo, un'altra favola nera",
+     "tmdbId": 483184
     },
     {
      "title": "Freaks Out",
      "year": 2021,
-     "connection": "Il fantastico italiano di oggi, mostri e circo"
+     "connection": "Il fantastico italiano di oggi, mostri e circo",
+     "tmdbId": 571468
     },
     {
      "title": "Lo chiamavano Jeeg Robot",
      "year": 2016,
-     "connection": "Un genere straniero rifatto in Italia"
+     "connection": "Un genere straniero rifatto in Italia",
+     "tmdbId": 364433
     },
     {
      "title": "Il ragazzo invisibile",
      "year": 2014,
-     "connection": "Salvatores, un ragazzo con un potere"
+     "connection": "Salvatores, un ragazzo con un potere",
+     "tmdbId": 303542
     },
     {
      "title": "Suspiria",
      "year": 1977,
-     "connection": "Argento, una fiaba di streghe"
+     "connection": "Argento, una fiaba di streghe",
+     "tmdbId": 11906
     },
     {
      "title": "Lazzaro felice",
      "year": 2018,
-     "connection": "Rohrwacher, una favola contadina e un santo"
+     "connection": "Rohrwacher, una favola contadina e un santo",
+     "tmdbId": 481432
     },
     {
      "title": "Il Decameron",
      "year": 1971,
-     "connection": "Pasolini, racconti antichi del Sud, crudi e allegri"
+     "connection": "Pasolini, racconti antichi del Sud, crudi e allegri",
+     "tmdbId": 33583
     },
     {
      "title": "La strada",
      "year": 1954,
-     "connection": "Fellini, una favola triste on the road"
+     "connection": "Fellini, una favola triste on the road",
+     "tmdbId": 405
     },
     {
      "title": "Pinocchio",
      "year": 2002,
-     "connection": "Benigni, un'altra favola italiana"
+     "connection": "Benigni, un'altra favola italiana",
+     "tmdbId": 10599
     }
    ]
   },
@@ -1532,52 +1767,62 @@
     {
      "title": "Quo vado?",
      "year": 2016,
-     "connection": "Zalone e Nunziante, il posto fisso"
+     "connection": "Zalone e Nunziante, il posto fisso",
+     "tmdbId": 374416
     },
     {
      "title": "Cado dalle nubi",
      "year": 2009,
-     "connection": "Il primo film di Zalone"
+     "connection": "Il primo film di Zalone",
+     "tmdbId": 35554
     },
     {
      "title": "Che bella giornata",
      "year": 2011,
-     "connection": "Zalone guardia giurata a Milano"
+     "connection": "Zalone guardia giurata a Milano",
+     "tmdbId": 53319
     },
     {
      "title": "Tolo Tolo",
      "year": 2020,
-     "connection": "Zalone dirige se stesso, in Africa"
+     "connection": "Zalone dirige se stesso, in Africa",
+     "tmdbId": 593402
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Aldo Giovanni e Giacomo, ricchezza e crisi"
+     "connection": "Aldo Giovanni e Giacomo, ricchezza e crisi",
+     "tmdbId": 310126
     },
     {
      "title": "Benvenuti al sud",
      "year": 2010,
-     "connection": "Pregiudizi e affetto tra Nord e Sud"
+     "connection": "Pregiudizi e affetto tra Nord e Sud",
+     "tmdbId": 48415
     },
     {
      "title": "Fantozzi",
      "year": 1975,
-     "connection": "Villaggio, la sfortuna dell'italiano medio"
+     "connection": "Villaggio, la sfortuna dell'italiano medio",
+     "tmdbId": 25606
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Una vacanza italiana che va oltre"
+     "connection": "Una vacanza italiana che va oltre",
+     "tmdbId": 24188
     },
     {
      "title": "Notte prima degli esami",
      "year": 2006,
-     "connection": "Un'estate di ragazzi, scuola e voti"
+     "connection": "Un'estate di ragazzi, scuola e voti",
+     "tmdbId": 33365
     },
     {
      "title": "L'ora legale",
      "year": 2017,
-     "connection": "Ficarra e Picone, la commedia sociale di oggi"
+     "connection": "Ficarra e Picone, la commedia sociale di oggi",
+     "tmdbId": 435921
     }
    ]
   },
@@ -1595,52 +1840,62 @@
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Il primo film del trio"
+     "connection": "Il primo film del trio",
+     "tmdbId": 38286
     },
     {
      "title": "Così è la vita",
      "year": 1998,
-     "connection": "Il trio in fuga"
+     "connection": "Il trio in fuga",
+     "tmdbId": 38396
     },
     {
      "title": "La leggenda di Al, John e Jack",
      "year": 2002,
-     "connection": "Il trio tra i gangster americani"
+     "connection": "Il trio tra i gangster americani",
+     "tmdbId": 38397
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Il trio anni dopo"
+     "connection": "Il trio anni dopo",
+     "tmdbId": 310126
     },
     {
      "title": "Pane e tulipani",
      "year": 2000,
-     "connection": "Soldini, amicizie e seconde possibilità"
+     "connection": "Soldini, amicizie e seconde possibilità",
+     "tmdbId": 552
     },
     {
      "title": "L'ultimo bacio",
      "year": 2001,
-     "connection": "Muccino, amici trentenni in crisi"
+     "connection": "Muccino, amici trentenni in crisi",
+     "tmdbId": 12308
     },
     {
      "title": "Mediterraneo",
      "year": 1991,
-     "connection": "Salvatores, un gruppo di amici lontano da casa"
+     "connection": "Salvatores, un gruppo di amici lontano da casa",
+     "tmdbId": 38251
     },
     {
      "title": "Perfetti sconosciuti",
      "year": 2016,
-     "connection": "Amici che si scoprono diversi"
+     "connection": "Amici che si scoprono diversi",
+     "tmdbId": 381341
     },
     {
      "title": "Immaturi",
      "year": 2011,
-     "connection": "Ex compagni di scuola si ritrovano"
+     "connection": "Ex compagni di scuola si ritrovano",
+     "tmdbId": 56909
     },
     {
      "title": "Le fate ignoranti",
      "year": 2001,
-     "connection": "Özpetek, amicizia e lutto a Roma"
+     "connection": "Özpetek, amicizia e lutto a Roma",
+     "tmdbId": 23550
     }
    ]
   },
@@ -1658,52 +1913,62 @@
     {
      "title": "Che bella giornata",
      "year": 2011,
-     "connection": "Zalone di nuovo a Milano, subito dopo"
+     "connection": "Zalone di nuovo a Milano, subito dopo",
+     "tmdbId": 53319
     },
     {
      "title": "Sole a catinelle",
      "year": 2013,
-     "connection": "Zalone padre senza soldi"
+     "connection": "Zalone padre senza soldi",
+     "tmdbId": 231176
     },
     {
      "title": "Quo vado?",
      "year": 2016,
-     "connection": "Zalone e il posto fisso"
+     "connection": "Zalone e il posto fisso",
+     "tmdbId": 374416
     },
     {
      "title": "Tolo Tolo",
      "year": 2020,
-     "connection": "Zalone regista"
+     "connection": "Zalone regista",
+     "tmdbId": 593402
     },
     {
      "title": "Benvenuti al Nord",
      "year": 2012,
-     "connection": "Un meridionale a Milano"
+     "connection": "Un meridionale a Milano",
+     "tmdbId": 85038
     },
     {
      "title": "Benvenuti al sud",
      "year": 2010,
-     "connection": "Un milanese al Sud"
+     "connection": "Un milanese al Sud",
+     "tmdbId": 48415
     },
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Da Milano alla Puglia"
+     "connection": "Da Milano alla Puglia",
+     "tmdbId": 38286
     },
     {
      "title": "Rocco e i suoi fratelli",
      "year": 1960,
-     "connection": "Visconti, una famiglia del Sud a Milano, senza ridere"
+     "connection": "Visconti, una famiglia del Sud a Milano, senza ridere",
+     "tmdbId": 8422
     },
     {
      "title": "Mine vaganti",
      "year": 2010,
-     "connection": "Özpetek, una famiglia pugliese e i suoi segreti"
+     "connection": "Özpetek, una famiglia pugliese e i suoi segreti",
+     "tmdbId": 40794
     },
     {
      "title": "Ricomincio da tre",
      "year": 1981,
-     "connection": "Troisi, un napoletano a Firenze"
+     "connection": "Troisi, un napoletano a Firenze",
+     "tmdbId": 13386
     }
    ]
   },
@@ -1721,52 +1986,62 @@
     {
      "title": "L'uccello dalle piume di cristallo",
      "year": 1970,
-     "connection": "Il primo giallo di Argento, un testimone e un dettaglio"
+     "connection": "Il primo giallo di Argento, un testimone e un dettaglio",
+     "tmdbId": 20345
     },
     {
      "title": "Suspiria",
      "year": 1977,
-     "connection": "Argento subito dopo, dal giallo all'orrore"
+     "connection": "Argento subito dopo, dal giallo all'orrore",
+     "tmdbId": 11906
     },
     {
      "title": "Tenebre",
      "year": 1982,
-     "connection": "Argento, un giallo luminoso a Roma"
+     "connection": "Argento, un giallo luminoso a Roma",
+     "tmdbId": 29702
     },
     {
      "title": "Il gatto a nove code",
      "year": 1971,
-     "connection": "Argento, il secondo dei suoi gialli"
+     "connection": "Argento, il secondo dei suoi gialli",
+     "tmdbId": 27431
     },
     {
      "title": "4 mosche di velluto grigio",
      "year": 1971,
-     "connection": "Argento, il terzo, un musicista perseguitato"
+     "connection": "Argento, il terzo, un musicista perseguitato",
+     "tmdbId": 30689
     },
     {
      "title": "Sei donne per l'assassino",
      "year": 1964,
-     "connection": "Bava, il giallo nasce qui"
+     "connection": "Bava, il giallo nasce qui",
+     "tmdbId": 28055
     },
     {
      "title": "La ragazza che sapeva troppo",
      "year": 1963,
-     "connection": "Bava, il primo giallo italiano"
+     "connection": "Bava, il primo giallo italiano",
+     "tmdbId": 28041
     },
     {
      "title": "La casa dalle finestre che ridono",
      "year": 1976,
-     "connection": "Avati, un mistero nella campagna"
+     "connection": "Avati, un mistero nella campagna",
+     "tmdbId": 57447
     },
     {
      "title": "La ragazza nella nebbia",
      "year": 2017,
-     "connection": "Un giallo italiano di oggi"
+     "connection": "Un giallo italiano di oggi",
+     "tmdbId": 468202
     },
     {
      "title": "Non si sevizia un paperino",
      "year": 1972,
-     "connection": "Fulci, un giallo nel Sud rurale"
+     "connection": "Fulci, un giallo nel Sud rurale",
+     "tmdbId": 49361
     }
    ]
   },
@@ -1784,52 +2059,62 @@
     {
      "title": "Pinocchio",
      "year": 2002,
-     "connection": "Benigni, il suo Pinocchio da regista"
+     "connection": "Benigni, il suo Pinocchio da regista",
+     "tmdbId": 10599
     },
     {
      "title": "Il racconto dei racconti - Tale of Tales",
      "year": 2015,
-     "connection": "Garrone, favole antiche e crude"
+     "connection": "Garrone, favole antiche e crude",
+     "tmdbId": 314405
     },
     {
      "title": "Dogman",
      "year": 2018,
-     "connection": "Garrone, un uomo piccolo in un mondo duro"
+     "connection": "Garrone, un uomo piccolo in un mondo duro",
+     "tmdbId": 483184
     },
     {
      "title": "Le avventure di Pinocchio",
      "year": 1972,
-     "connection": "Comencini, la serie diventata film, Nino Manfredi Geppetto"
+     "connection": "Comencini, la serie diventata film, Nino Manfredi Geppetto",
+     "tmdbId": 58451
     },
     {
      "title": "La vita è bella",
      "year": 1997,
-     "connection": "Benigni, un padre e un figlio"
+     "connection": "Benigni, un padre e un figlio",
+     "tmdbId": 637
     },
     {
      "title": "Lazzaro felice",
      "year": 2018,
-     "connection": "Rohrwacher, una favola contadina"
+     "connection": "Rohrwacher, una favola contadina",
+     "tmdbId": 481432
     },
     {
      "title": "Freaks Out",
      "year": 2021,
-     "connection": "Mainetti, creature e meraviglia"
+     "connection": "Mainetti, creature e meraviglia",
+     "tmdbId": 571468
     },
     {
      "title": "Io non ho paura",
      "year": 2003,
-     "connection": "Un bambino e la paura del buio"
+     "connection": "Un bambino e la paura del buio",
+     "tmdbId": 25300
     },
     {
      "title": "La strada",
      "year": 1954,
-     "connection": "Fellini, artisti girovaghi e povertà"
+     "connection": "Fellini, artisti girovaghi e povertà",
+     "tmdbId": 405
     },
     {
      "title": "Io capitano",
      "year": 2023,
-     "connection": "Garrone, un viaggio pericoloso come quello di Pinocchio"
+     "connection": "Garrone, un viaggio pericoloso come quello di Pinocchio",
+     "tmdbId": 937746
     }
    ]
   },
@@ -1847,52 +2132,62 @@
     {
      "title": "Cado dalle nubi",
      "year": 2009,
-     "connection": "Il primo film di Zalone, sempre a Milano"
+     "connection": "Il primo film di Zalone, sempre a Milano",
+     "tmdbId": 35554
     },
     {
      "title": "Sole a catinelle",
      "year": 2013,
-     "connection": "Zalone e la vacanza promessa"
+     "connection": "Zalone e la vacanza promessa",
+     "tmdbId": 231176
     },
     {
      "title": "Quo vado?",
      "year": 2016,
-     "connection": "Zalone e il posto fisso"
+     "connection": "Zalone e il posto fisso",
+     "tmdbId": 374416
     },
     {
      "title": "Tolo Tolo",
      "year": 2020,
-     "connection": "Zalone e l'immigrazione"
+     "connection": "Zalone e l'immigrazione",
+     "tmdbId": 593402
     },
     {
      "title": "Benvenuti al Nord",
      "year": 2012,
-     "connection": "Un meridionale nella Milano che lavora"
+     "connection": "Un meridionale nella Milano che lavora",
+     "tmdbId": 85038
     },
     {
      "title": "La leggenda di Al, John e Jack",
      "year": 2002,
-     "connection": "Aldo Giovanni e Giacomo, tre guardie del corpo"
+     "connection": "Aldo Giovanni e Giacomo, tre guardie del corpo",
+     "tmdbId": 38397
     },
     {
      "title": "Johnny Stecchino",
      "year": 1991,
-     "connection": "Benigni, un ingenuo scambiato per un altro"
+     "connection": "Benigni, un ingenuo scambiato per un altro",
+     "tmdbId": 12776
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Commedia sui soldi a Milano"
+     "connection": "Commedia sui soldi a Milano",
+     "tmdbId": 310126
     },
     {
      "title": "Fantozzi",
      "year": 1975,
-     "connection": "La sfortuna come comicità"
+     "connection": "La sfortuna come comicità",
+     "tmdbId": 25606
     },
     {
      "title": "Immaturi",
      "year": 2011,
-     "connection": "Commedia italiana di oggi"
+     "connection": "Commedia italiana di oggi",
+     "tmdbId": 56909
     }
    ]
   },
@@ -1910,52 +2205,62 @@
     {
      "title": "Ladri di biciclette",
      "year": 1948,
-     "connection": "De Sica, la Roma povera del dopoguerra vista da vicino"
+     "connection": "De Sica, la Roma povera del dopoguerra vista da vicino",
+     "tmdbId": 5156
     },
     {
      "title": "Roma città aperta",
      "year": 1945,
-     "connection": "Rossellini, Anna Magnani e le donne della Roma in guerra"
+     "connection": "Rossellini, Anna Magnani e le donne della Roma in guerra",
+     "tmdbId": 307
     },
     {
      "title": "Una giornata particolare",
      "year": 1977,
-     "connection": "Scola, una casalinga romana e un vicino solo, nel 1938"
+     "connection": "Scola, una casalinga romana e un vicino solo, nel 1938",
+     "tmdbId": 42229
     },
     {
      "title": "Mamma Roma",
      "year": 1962,
-     "connection": "Pasolini, Anna Magnani madre in lotta per il figlio"
+     "connection": "Pasolini, Anna Magnani madre in lotta per il figlio",
+     "tmdbId": 47796
     },
     {
      "title": "Bellissima",
      "year": 1951,
-     "connection": "Visconti, una madre romana e i suoi sogni"
+     "connection": "Visconti, una madre romana e i suoi sogni",
+     "tmdbId": 43372
     },
     {
      "title": "La ciociara",
      "year": 1960,
-     "connection": "De Sica, Sophia Loren madre nella guerra"
+     "connection": "De Sica, Sophia Loren madre nella guerra",
+     "tmdbId": 24167
     },
     {
      "title": "Divorzio all'italiana",
      "year": 1961,
-     "connection": "Germi, il matrimonio italiano preso in giro"
+     "connection": "Germi, il matrimonio italiano preso in giro",
+     "tmdbId": 20271
     },
     {
      "title": "La pazza gioia",
      "year": 2016,
-     "connection": "Virzì, due donne in fuga dalle loro vite"
+     "connection": "Virzì, due donne in fuga dalle loro vite",
+     "tmdbId": 380225
     },
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Virzì, famiglie e soldi nell'Italia di oggi"
+     "connection": "Virzì, famiglie e soldi nell'Italia di oggi",
+     "tmdbId": 244088
     },
     {
      "title": "La vita è bella",
      "year": 1997,
-     "connection": "Il dolore raccontato con un sorriso"
+     "connection": "Il dolore raccontato con un sorriso",
+     "tmdbId": 637
     }
    ]
   },
@@ -1973,52 +2278,62 @@
     {
      "title": "...continuavano a chiamarlo Trinità",
      "year": 1971,
-     "connection": "Il seguito, stessi fratelli, ancora più schiaffi"
+     "connection": "Il seguito, stessi fratelli, ancora più schiaffi",
+     "tmdbId": 11829
     },
     {
      "title": "Dio perdona... io no!",
      "year": 1967,
-     "connection": "Il primo film di Hill e Spencer insieme, ancora un western serio"
+     "connection": "Il primo film di Hill e Spencer insieme, ancora un western serio",
+     "tmdbId": 41608
     },
     {
      "title": "Il mio nome è Nessuno",
      "year": 1973,
-     "connection": "Terence Hill con Henry Fonda, il western che saluta il western"
+     "connection": "Terence Hill con Henry Fonda, il western che saluta il western",
+     "tmdbId": 9474
     },
     {
      "title": "...altrimenti ci arrabbiamo!",
      "year": 1974,
-     "connection": "Hill e Spencer, una dune buggy e cori di cattivi"
+     "connection": "Hill e Spencer, una dune buggy e cori di cattivi",
+     "tmdbId": 6916
     },
     {
      "title": "Lo chiamavano Bulldozer",
      "year": 1978,
-     "connection": "Bud Spencer da solo, pugni e cuore"
+     "connection": "Bud Spencer da solo, pugni e cuore",
+     "tmdbId": 11144
     },
     {
      "title": "Pari e dispari",
      "year": 1978,
-     "connection": "Hill e Spencer fratelli di nuovo, a Miami"
+     "connection": "Hill e Spencer fratelli di nuovo, a Miami",
+     "tmdbId": 11367
     },
     {
      "title": "Per un pugno di dollari",
      "year": 1964,
-     "connection": "Leone, il western all'italiana preso sul serio"
+     "connection": "Leone, il western all'italiana preso sul serio",
+     "tmdbId": 391
     },
     {
      "title": "Il buono, il brutto, il cattivo",
      "year": 1966,
-     "connection": "Leone, il western che Trinità prende in giro"
+     "connection": "Leone, il western che Trinità prende in giro",
+     "tmdbId": 429
     },
     {
      "title": "Django",
      "year": 1966,
-     "connection": "Corbucci, il western all'italiana più cupo"
+     "connection": "Corbucci, il western all'italiana più cupo",
+     "tmdbId": 10772
     },
     {
      "title": "I due superpiedi quasi piatti",
      "year": 1977,
-     "connection": "Hill e Spencer poliziotti, stessa formula"
+     "connection": "Hill e Spencer poliziotti, stessa formula",
+     "tmdbId": 11689
     }
    ]
   },
@@ -2036,52 +2351,62 @@
     {
      "title": "I cento passi",
      "year": 2000,
-     "connection": "Giordana, Peppino Impastato contro la mafia di Cinisi"
+     "connection": "Giordana, Peppino Impastato contro la mafia di Cinisi",
+     "tmdbId": 29458
     },
     {
      "title": "La mafia uccide solo d'estate",
      "year": 2013,
-     "connection": "Pif, gli anni delle stragi visti da un bambino"
+     "connection": "Pif, gli anni delle stragi visti da un bambino",
+     "tmdbId": 239877
     },
     {
      "title": "Il Divo",
      "year": 2008,
-     "connection": "Sorrentino, Andreotti e i processi"
+     "connection": "Sorrentino, Andreotti e i processi",
+     "tmdbId": 8832
     },
     {
      "title": "Gomorra",
      "year": 2008,
-     "connection": "Garrone, la camorra di oggi"
+     "connection": "Garrone, la camorra di oggi",
+     "tmdbId": 8882
     },
     {
      "title": "Suburra",
      "year": 2015,
-     "connection": "Sollima, Favino politico corrotto a Roma"
+     "connection": "Sollima, Favino politico corrotto a Roma",
+     "tmdbId": 356296
     },
     {
      "title": "Salvatore Giuliano",
      "year": 1962,
-     "connection": "Rosi, il bandito siciliano e lo Stato"
+     "connection": "Rosi, il bandito siciliano e lo Stato",
+     "tmdbId": 27523
     },
     {
      "title": "Il giorno della civetta",
      "year": 1968,
-     "connection": "Damiani, la mafia di un paese siciliano"
+     "connection": "Damiani, la mafia di un paese siciliano",
+     "tmdbId": 58658
     },
     {
      "title": "Indagine su un cittadino al di sopra di ogni sospetto",
      "year": 1970,
-     "connection": "Petri, il potere e la giustizia"
+     "connection": "Petri, il potere e la giustizia",
+     "tmdbId": 26451
     },
     {
      "title": "Vincere",
      "year": 2009,
-     "connection": "Bellocchio, la donna nascosta di Mussolini"
+     "connection": "Bellocchio, la donna nascosta di Mussolini",
+     "tmdbId": 30239
     },
     {
      "title": "Esterno notte",
      "year": 2022,
-     "connection": "Bellocchio, il rapimento di Aldo Moro"
+     "connection": "Bellocchio, il rapimento di Aldo Moro",
+     "tmdbId": 977487
     }
    ]
   },
@@ -2099,52 +2424,62 @@
     {
      "title": "Smetto quando voglio",
      "year": 2014,
-     "connection": "Sibilia, ricercatori geniali e fuorilegge"
+     "connection": "Sibilia, ricercatori geniali e fuorilegge",
+     "tmdbId": 250219
     },
     {
      "title": "Smetto quando voglio - Masterclass",
      "year": 2017,
-     "connection": "Sibilia, il seguito"
+     "connection": "Sibilia, il seguito",
+     "tmdbId": 406385
     },
     {
      "title": "Amarcord",
      "year": 1973,
-     "connection": "Fellini, la Rimini di qualche decennio prima"
+     "connection": "Fellini, la Rimini di qualche decennio prima",
+     "tmdbId": 7857
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Risi, l'Italia degli anni Sessanta in vacanza"
+     "connection": "Risi, l'Italia degli anni Sessanta in vacanza",
+     "tmdbId": 24188
     },
     {
      "title": "Mediterraneo",
      "year": 1991,
-     "connection": "Salvatores, un'isola fuori dal mondo"
+     "connection": "Salvatores, un'isola fuori dal mondo",
+     "tmdbId": 38251
     },
     {
      "title": "Lo chiamavano Jeeg Robot",
      "year": 2016,
-     "connection": "Un altro sognatore in un'Italia che non ci crede"
+     "connection": "Un altro sognatore in un'Italia che non ci crede",
+     "tmdbId": 364433
     },
     {
      "title": "Notte prima degli esami",
      "year": 2006,
-     "connection": "Giovinezza e libertà, in un'estate"
+     "connection": "Giovinezza e libertà, in un'estate",
+     "tmdbId": 33365
     },
     {
      "title": "I soliti ignoti",
      "year": 1958,
-     "connection": "Monicelli, un piano folle di gente comune"
+     "connection": "Monicelli, un piano folle di gente comune",
+     "tmdbId": 24382
     },
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Virzì, l'Italia di oggi e i suoi sogni"
+     "connection": "Virzì, l'Italia di oggi e i suoi sogni",
+     "tmdbId": 244088
     },
     {
      "title": "Veloce come il vento",
      "year": 2016,
-     "connection": "Rovere, una storia vera di corse e famiglia in Emilia"
+     "connection": "Rovere, una storia vera di corse e famiglia in Emilia",
+     "tmdbId": 375572
     }
    ]
   },
@@ -2162,52 +2497,62 @@
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Il primo film del trio, un altro viaggio"
+     "connection": "Il primo film del trio, un altro viaggio",
+     "tmdbId": 38286
     },
     {
      "title": "Chiedimi se sono felice",
      "year": 2000,
-     "connection": "Il trio, amicizia e malinconia"
+     "connection": "Il trio, amicizia e malinconia",
+     "tmdbId": 50531
     },
     {
      "title": "La leggenda di Al, John e Jack",
      "year": 2002,
-     "connection": "Il trio tra i gangster"
+     "connection": "Il trio tra i gangster",
+     "tmdbId": 38397
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Il trio e la crisi"
+     "connection": "Il trio e la crisi",
+     "tmdbId": 310126
     },
     {
      "title": "Non ci resta che piangere",
      "year": 1984,
-     "connection": "Benigni e Troisi, due amici nei guai"
+     "connection": "Benigni e Troisi, due amici nei guai",
+     "tmdbId": 27670
     },
     {
      "title": "Johnny Stecchino",
      "year": 1991,
-     "connection": "Benigni, scambi di persona"
+     "connection": "Benigni, scambi di persona",
+     "tmdbId": 12776
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Risi, la strada italiana"
+     "connection": "Risi, la strada italiana",
+     "tmdbId": 24188
     },
     {
      "title": "Lo chiamavano Trinità...",
      "year": 1970,
-     "connection": "Due compari, risse e simpatia"
+     "connection": "Due compari, risse e simpatia",
+     "tmdbId": 9394
     },
     {
      "title": "I soliti ignoti",
      "year": 1958,
-     "connection": "Monicelli, criminali da ridere"
+     "connection": "Monicelli, criminali da ridere",
+     "tmdbId": 24382
     },
     {
      "title": "Benvenuti al Nord",
      "year": 2012,
-     "connection": "Commedia tra Nord e Sud"
+     "connection": "Commedia tra Nord e Sud",
+     "tmdbId": 85038
     }
    ]
   },
@@ -2225,52 +2570,62 @@
     {
      "title": "Benvenuti al sud",
      "year": 2010,
-     "connection": "Il primo film, Bisio al Sud"
+     "connection": "Il primo film, Bisio al Sud",
+     "tmdbId": 48415
     },
     {
      "title": "Cado dalle nubi",
      "year": 2009,
-     "connection": "Zalone, un pugliese a Milano"
+     "connection": "Zalone, un pugliese a Milano",
+     "tmdbId": 35554
     },
     {
      "title": "Che bella giornata",
      "year": 2011,
-     "connection": "Zalone a Milano"
+     "connection": "Zalone a Milano",
+     "tmdbId": 53319
     },
     {
      "title": "Quo vado?",
      "year": 2016,
-     "connection": "Zalone e il lavoro pubblico"
+     "connection": "Zalone e il lavoro pubblico",
+     "tmdbId": 374416
     },
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Milano e il Sud in macchina"
+     "connection": "Milano e il Sud in macchina",
+     "tmdbId": 38286
     },
     {
      "title": "Rocco e i suoi fratelli",
      "year": 1960,
-     "connection": "Visconti, una famiglia del Sud a Milano"
+     "connection": "Visconti, una famiglia del Sud a Milano",
+     "tmdbId": 8422
     },
     {
      "title": "Ricomincio da tre",
      "year": 1981,
-     "connection": "Troisi, un napoletano lontano da casa"
+     "connection": "Troisi, un napoletano lontano da casa",
+     "tmdbId": 13386
     },
     {
      "title": "L'ora legale",
      "year": 2017,
-     "connection": "Ficarra e Picone, regole e furbizie"
+     "connection": "Ficarra e Picone, regole e furbizie",
+     "tmdbId": 435921
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Milano e i soldi"
+     "connection": "Milano e i soldi",
+     "tmdbId": 310126
     },
     {
      "title": "Fantozzi",
      "year": 1975,
-     "connection": "Villaggio, l'impiegato italiano"
+     "connection": "Villaggio, l'impiegato italiano",
+     "tmdbId": 25606
     }
    ]
   },
@@ -2288,52 +2643,62 @@
     {
      "title": "Dogman",
      "year": 2018,
-     "connection": "Garrone, la violenza in una periferia"
+     "connection": "Garrone, la violenza in una periferia",
+     "tmdbId": 483184
     },
     {
      "title": "L'imbalsamatore",
      "year": 2002,
-     "connection": "Garrone, un Sud nero e strano"
+     "connection": "Garrone, un Sud nero e strano",
+     "tmdbId": 35265
     },
     {
      "title": "Reality",
      "year": 2012,
-     "connection": "Garrone, Napoli e la televisione"
+     "connection": "Garrone, Napoli e la televisione",
+     "tmdbId": 103758
     },
     {
      "title": "Io capitano",
      "year": 2023,
-     "connection": "Garrone, un viaggio di migranti"
+     "connection": "Garrone, un viaggio di migranti",
+     "tmdbId": 937746
     },
     {
      "title": "Suburra",
      "year": 2015,
-     "connection": "Sollima, la criminalità romana"
+     "connection": "Sollima, la criminalità romana",
+     "tmdbId": 356296
     },
     {
      "title": "Il traditore",
      "year": 2019,
-     "connection": "Bellocchio, la mafia siciliana"
+     "connection": "Bellocchio, la mafia siciliana",
+     "tmdbId": 575452
     },
     {
      "title": "La paranza dei bambini",
      "year": 2019,
-     "connection": "Giovannesi da Saviano, ragazzini camorristi a Napoli"
+     "connection": "Giovannesi da Saviano, ragazzini camorristi a Napoli",
+     "tmdbId": 574436
     },
     {
      "title": "Salvatore Giuliano",
      "year": 1962,
-     "connection": "Rosi, il Sud e il potere"
+     "connection": "Rosi, il Sud e il potere",
+     "tmdbId": 27523
     },
     {
      "title": "Le mani sulla città",
      "year": 1963,
-     "connection": "Rosi, la speculazione edilizia a Napoli"
+     "connection": "Rosi, la speculazione edilizia a Napoli",
+     "tmdbId": 58383
     },
     {
      "title": "Non essere cattivo",
      "year": 2015,
-     "connection": "Caligari, droga e periferia"
+     "connection": "Caligari, droga e periferia",
+     "tmdbId": 359156
     }
    ]
   },
@@ -2351,52 +2716,62 @@
     {
      "title": "Romanzo criminale",
      "year": 2005,
-     "connection": "Placido, la banda della Magliana nella Roma degli anni Settanta"
+     "connection": "Placido, la banda della Magliana nella Roma degli anni Settanta",
+     "tmdbId": 14375
     },
     {
      "title": "Non essere cattivo",
      "year": 2015,
-     "connection": "Caligari, Borghi a Ostia"
+     "connection": "Caligari, Borghi a Ostia",
+     "tmdbId": 359156
     },
     {
      "title": "Lo chiamavano Jeeg Robot",
      "year": 2016,
-     "connection": "Mainetti, la periferia romana con un supereroe"
+     "connection": "Mainetti, la periferia romana con un supereroe",
+     "tmdbId": 364433
     },
     {
      "title": "Gomorra",
      "year": 2008,
-     "connection": "Garrone, la camorra"
+     "connection": "Garrone, la camorra",
+     "tmdbId": 8882
     },
     {
      "title": "Il traditore",
      "year": 2019,
-     "connection": "Bellocchio, Favino pentito di mafia"
+     "connection": "Bellocchio, Favino pentito di mafia",
+     "tmdbId": 575452
     },
     {
      "title": "Sulla mia pelle",
      "year": 2018,
-     "connection": "Borghi è Stefano Cucchi"
+     "connection": "Borghi è Stefano Cucchi",
+     "tmdbId": 538362
     },
     {
      "title": "A.C.A.B. - All Cops Are Bastards",
      "year": 2012,
-     "connection": "Sollima, il primo film, i celerini romani"
+     "connection": "Sollima, il primo film, i celerini romani",
+     "tmdbId": 85739
     },
     {
      "title": "Il Divo",
      "year": 2008,
-     "connection": "Sorrentino, la Roma della politica"
+     "connection": "Sorrentino, la Roma della politica",
+     "tmdbId": 8832
     },
     {
      "title": "Accattone",
      "year": 1961,
-     "connection": "Pasolini, la Roma dei marginali"
+     "connection": "Pasolini, la Roma dei marginali",
+     "tmdbId": 12491
     },
     {
      "title": "Dogman",
      "year": 2018,
-     "connection": "Garrone, il crimine in una periferia sul mare"
+     "connection": "Garrone, il crimine in una periferia sul mare",
+     "tmdbId": 483184
     }
    ]
   },
@@ -2414,52 +2789,62 @@
     {
      "title": "Quo vado?",
      "year": 2016,
-     "connection": "Zalone e Nunziante, il loro successo più grande"
+     "connection": "Zalone e Nunziante, il loro successo più grande",
+     "tmdbId": 374416
     },
     {
      "title": "Io capitano",
      "year": 2023,
-     "connection": "Garrone, lo stesso viaggio raccontato senza ridere"
+     "connection": "Garrone, lo stesso viaggio raccontato senza ridere",
+     "tmdbId": 937746
     },
     {
      "title": "Sole a catinelle",
      "year": 2013,
-     "connection": "Zalone e i debiti"
+     "connection": "Zalone e i debiti",
+     "tmdbId": 231176
     },
     {
      "title": "Che bella giornata",
      "year": 2011,
-     "connection": "Zalone e il terrorismo"
+     "connection": "Zalone e il terrorismo",
+     "tmdbId": 53319
     },
     {
      "title": "Cado dalle nubi",
      "year": 2009,
-     "connection": "Il primo Zalone"
+     "connection": "Il primo Zalone",
+     "tmdbId": 35554
     },
     {
      "title": "Mediterraneo",
      "year": 1991,
-     "connection": "Salvatores, italiani lontano da casa"
+     "connection": "Salvatores, italiani lontano da casa",
+     "tmdbId": 38251
     },
     {
      "title": "Benvenuti al sud",
      "year": 2010,
-     "connection": "Pregiudizi e incontri"
+     "connection": "Pregiudizi e incontri",
+     "tmdbId": 48415
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Commedia sulla crisi"
+     "connection": "Commedia sulla crisi",
+     "tmdbId": 310126
     },
     {
      "title": "L'ora legale",
      "year": 2017,
-     "connection": "Ficarra e Picone, satira sul Sud"
+     "connection": "Ficarra e Picone, satira sul Sud",
+     "tmdbId": 435921
     },
     {
      "title": "Fantozzi",
      "year": 1975,
-     "connection": "La sfortuna come specchio dell'Italia"
+     "connection": "La sfortuna come specchio dell'Italia",
+     "tmdbId": 25606
     }
    ]
   },
@@ -2477,52 +2862,62 @@
     {
      "title": "Perfetti sconosciuti",
      "year": 2016,
-     "connection": "Genovese, una cena e i segreti di tutti"
+     "connection": "Genovese, una cena e i segreti di tutti",
+     "tmdbId": 381341
     },
     {
      "title": "Immaturi",
      "year": 2011,
-     "connection": "Genovese, quarantenni che rifanno la maturità"
+     "connection": "Genovese, quarantenni che rifanno la maturità",
+     "tmdbId": 56909
     },
     {
      "title": "Tutta colpa di Freud",
      "year": 2014,
-     "connection": "Genovese, padre e figlie"
+     "connection": "Genovese, padre e figlie",
+     "tmdbId": 250235
     },
     {
      "title": "Una famiglia perfetta",
      "year": 2012,
-     "connection": "Genovese, una famiglia in affitto"
+     "connection": "Genovese, una famiglia in affitto",
+     "tmdbId": 162282
     },
     {
      "title": "Il nome del figlio",
      "year": 2015,
-     "connection": "Archibugi, una cena tra parenti"
+     "connection": "Archibugi, una cena tra parenti",
+     "tmdbId": 320028
     },
     {
      "title": "La migliore offerta",
      "year": 2013,
-     "connection": "Tornatore, un gioco di inganni"
+     "connection": "Tornatore, un gioco di inganni",
+     "tmdbId": 152742
     },
     {
      "title": "La ragazza nella nebbia",
      "year": 2017,
-     "connection": "Carrisi, un mistero e un uomo che manipola"
+     "connection": "Carrisi, un mistero e un uomo che manipola",
+     "tmdbId": 468202
     },
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Virzì, scelte e colpe"
+     "connection": "Virzì, scelte e colpe",
+     "tmdbId": 244088
     },
     {
      "title": "Le conseguenze dell'amore",
      "year": 2004,
-     "connection": "Sorrentino, un uomo misterioso in un albergo"
+     "connection": "Sorrentino, un uomo misterioso in un albergo",
+     "tmdbId": 24653
     },
     {
      "title": "Indagine su un cittadino al di sopra di ogni sospetto",
      "year": 1970,
-     "connection": "Petri, potere e colpa"
+     "connection": "Petri, potere e colpa",
+     "tmdbId": 26451
     }
    ]
   },
@@ -2540,52 +2935,62 @@
     {
      "title": "Ricomincio da tre",
      "year": 1981,
-     "connection": "Il primo film di Troisi da regista, timido e napoletano come Mario"
+     "connection": "Il primo film di Troisi da regista, timido e napoletano come Mario",
+     "tmdbId": 13386
     },
     {
      "title": "Scusate il ritardo",
      "year": 1983,
-     "connection": "Troisi di nuovo regista e attore, una storia d'amore impacciata a Napoli"
+     "connection": "Troisi di nuovo regista e attore, una storia d'amore impacciata a Napoli",
+     "tmdbId": 56784
     },
     {
      "title": "Non ci resta che piangere",
      "year": 1984,
-     "connection": "Troisi e Benigni insieme, finiti per sbaglio nel Quattrocento"
+     "connection": "Troisi e Benigni insieme, finiti per sbaglio nel Quattrocento",
+     "tmdbId": 27670
     },
     {
      "title": "Nuovo Cinema Paradiso",
      "year": 1988,
-     "connection": "Un ragazzo e il suo maestro anziano, in un paese siciliano"
+     "connection": "Un ragazzo e il suo maestro anziano, in un paese siciliano",
+     "tmdbId": 11216
     },
     {
      "title": "Mediterraneo",
      "year": 1991,
-     "connection": "Soldati dimenticati su un'isola greca, vita lenta e nostalgia"
+     "connection": "Soldati dimenticati su un'isola greca, vita lenta e nostalgia",
+     "tmdbId": 38251
     },
     {
      "title": "Caro diario",
      "year": 1993,
-     "connection": "Moretti gira le isole Eolie in traghetto, Salina compresa"
+     "connection": "Moretti gira le isole Eolie in traghetto, Salina compresa",
+     "tmdbId": 25403
     },
     {
      "title": "L'uomo delle stelle",
      "year": 1995,
-     "connection": "Tornatore, la Sicilia anni Cinquanta e il sogno del cinema"
+     "connection": "Tornatore, la Sicilia anni Cinquanta e il sogno del cinema",
+     "tmdbId": 37975
     },
     {
      "title": "Malèna",
      "year": 2000,
-     "connection": "Tornatore, un ragazzo innamorato in un paese di mare durante la guerra"
+     "connection": "Tornatore, un ragazzo innamorato in un paese di mare durante la guerra",
+     "tmdbId": 10867
     },
     {
      "title": "Pane e tulipani",
      "year": 2000,
-     "connection": "Una casalinga si perde a Venezia e trova un'altra vita"
+     "connection": "Una casalinga si perde a Venezia e trova un'altra vita",
+     "tmdbId": 552
     },
     {
      "title": "La vita è bella",
      "year": 1997,
-     "connection": "Commedia e dolore nello stesso film, come qui"
+     "connection": "Commedia e dolore nello stesso film, come qui",
+     "tmdbId": 637
     }
    ]
   },
@@ -2603,52 +3008,62 @@
     {
      "title": "I vitelloni",
      "year": 1953,
-     "connection": "Fellini, gli stessi luoghi vent'anni dopo, giovani che non crescono"
+     "connection": "Fellini, gli stessi luoghi vent'anni dopo, giovani che non crescono",
+     "tmdbId": 12548
     },
     {
      "title": "8½",
      "year": 1963,
-     "connection": "Fellini, ricordi e sogni di un regista"
+     "connection": "Fellini, ricordi e sogni di un regista",
+     "tmdbId": 422
     },
     {
      "title": "Roma",
      "year": 1972,
-     "connection": "Fellini subito prima, la città dei suoi ricordi"
+     "connection": "Fellini subito prima, la città dei suoi ricordi",
+     "tmdbId": 11035
     },
     {
      "title": "La dolce vita",
      "year": 1960,
-     "connection": "Fellini, Roma e le sue notti"
+     "connection": "Fellini, Roma e le sue notti",
+     "tmdbId": 439
     },
     {
      "title": "Nuovo Cinema Paradiso",
      "year": 1988,
-     "connection": "Un paese, un ragazzo e la memoria"
+     "connection": "Un paese, un ragazzo e la memoria",
+     "tmdbId": 11216
     },
     {
      "title": "È stata la mano di Dio",
      "year": 2021,
-     "connection": "Sorrentino, la sua adolescenza a Napoli"
+     "connection": "Sorrentino, la sua adolescenza a Napoli",
+     "tmdbId": 722778
     },
     {
      "title": "Il giardino dei Finzi-Contini",
      "year": 1970,
-     "connection": "De Sica, gli anni del fascismo in provincia"
+     "connection": "De Sica, gli anni del fascismo in provincia",
+     "tmdbId": 4789
     },
     {
      "title": "Una giornata particolare",
      "year": 1977,
-     "connection": "Scola, il fascismo dentro una casa"
+     "connection": "Scola, il fascismo dentro una casa",
+     "tmdbId": 42229
     },
     {
      "title": "Novecento",
      "year": 1976,
-     "connection": "Bertolucci, l'Emilia e il fascismo"
+     "connection": "Bertolucci, l'Emilia e il fascismo",
+     "tmdbId": 3870
     },
     {
      "title": "Malèna",
      "year": 2000,
-     "connection": "Tornatore, un ragazzo e un paese di mare in guerra"
+     "connection": "Tornatore, un ragazzo e un paese di mare in guerra",
+     "tmdbId": 10867
     }
    ]
   },
@@ -2666,52 +3081,62 @@
     {
      "title": "Smetto quando voglio",
      "year": 2014,
-     "connection": "Il primo capitolo, dove nasce la banda"
+     "connection": "Il primo capitolo, dove nasce la banda",
+     "tmdbId": 250219
     },
     {
      "title": "Smetto quando voglio - Ad honorem",
      "year": 2017,
-     "connection": "Il terzo e ultimo capitolo"
+     "connection": "Il terzo e ultimo capitolo",
+     "tmdbId": 439584
     },
     {
      "title": "L'incredibile storia dell'Isola delle Rose",
      "year": 2020,
-     "connection": "Sibilia, un'altra banda di sognatori"
+     "connection": "Sibilia, un'altra banda di sognatori",
+     "tmdbId": 636565
     },
     {
      "title": "I soliti ignoti",
      "year": 1958,
-     "connection": "Monicelli, la banda di dilettanti originale"
+     "connection": "Monicelli, la banda di dilettanti originale",
+     "tmdbId": 24382
     },
     {
      "title": "Lo chiamavano Jeeg Robot",
      "year": 2016,
-     "connection": "Il cinema di genere a Roma"
+     "connection": "Il cinema di genere a Roma",
+     "tmdbId": 364433
     },
     {
      "title": "Immaturi",
      "year": 2011,
-     "connection": "Amici romani alle prese con la vita adulta"
+     "connection": "Amici romani alle prese con la vita adulta",
+     "tmdbId": 56909
     },
     {
      "title": "Perfetti sconosciuti",
      "year": 2016,
-     "connection": "Un gruppo e i suoi segreti"
+     "connection": "Un gruppo e i suoi segreti",
+     "tmdbId": 381341
     },
     {
      "title": "Suburra",
      "year": 2015,
-     "connection": "La droga a Roma, ma sul serio"
+     "connection": "La droga a Roma, ma sul serio",
+     "tmdbId": 356296
     },
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Virzì, soldi e ambizioni"
+     "connection": "Virzì, soldi e ambizioni",
+     "tmdbId": 244088
     },
     {
      "title": "Il ragazzo invisibile",
      "year": 2014,
-     "connection": "Supereroi all'italiana"
+     "connection": "Supereroi all'italiana",
+     "tmdbId": 303542
     }
    ]
   },
@@ -2729,52 +3154,62 @@
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Il primo film del trio"
+     "connection": "Il primo film del trio",
+     "tmdbId": 38286
     },
     {
      "title": "Così è la vita",
      "year": 1998,
-     "connection": "Il trio in fuga"
+     "connection": "Il trio in fuga",
+     "tmdbId": 38396
     },
     {
      "title": "Chiedimi se sono felice",
      "year": 2000,
-     "connection": "Il trio subito prima, più malinconico"
+     "connection": "Il trio subito prima, più malinconico",
+     "tmdbId": 50531
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Il trio anni dopo"
+     "connection": "Il trio anni dopo",
+     "tmdbId": 310126
     },
     {
      "title": "Johnny Stecchino",
      "year": 1991,
-     "connection": "Benigni e la mafia presa in giro"
+     "connection": "Benigni e la mafia presa in giro",
+     "tmdbId": 12776
     },
     {
      "title": "I soliti ignoti",
      "year": 1958,
-     "connection": "Monicelli, criminali goffi"
+     "connection": "Monicelli, criminali goffi",
+     "tmdbId": 24382
     },
     {
      "title": "Che bella giornata",
      "year": 2011,
-     "connection": "Zalone tra criminali per sbaglio"
+     "connection": "Zalone tra criminali per sbaglio",
+     "tmdbId": 53319
     },
     {
      "title": "La mafia uccide solo d'estate",
      "year": 2013,
-     "connection": "Pif, la mafia raccontata con l'ironia"
+     "connection": "Pif, la mafia raccontata con l'ironia",
+     "tmdbId": 239877
     },
     {
      "title": "Lo chiamavano Trinità...",
      "year": 1970,
-     "connection": "Il genere americano rifatto per ridere"
+     "connection": "Il genere americano rifatto per ridere",
+     "tmdbId": 9394
     },
     {
      "title": "Il mio nome è Nessuno",
      "year": 1973,
-     "connection": "Un altro omaggio ironico ai miti americani"
+     "connection": "Un altro omaggio ironico ai miti americani",
+     "tmdbId": 9474
     }
    ]
   },
@@ -2792,17 +3227,20 @@
     {
      "title": "C'era una volta il West",
      "year": 1968,
-     "connection": "Leone subito prima, il suo western più grande"
+     "connection": "Leone subito prima, il suo western più grande",
+     "tmdbId": 335
     },
     {
      "title": "Il buono, il brutto, il cattivo",
      "year": 1966,
-     "connection": "Leone, l'avventura e la guerra"
+     "connection": "Leone, l'avventura e la guerra",
+     "tmdbId": 429
     },
     {
      "title": "Per qualche dollaro in più",
      "year": 1965,
-     "connection": "Leone, due uomini diversi che si alleano"
+     "connection": "Leone, due uomini diversi che si alleano",
+     "tmdbId": 938
     },
     {
      "title": "Quién sabe?",
@@ -2812,32 +3250,38 @@
     {
      "title": "Faccia a faccia",
      "year": 1967,
-     "connection": "Sollima, western e politica"
+     "connection": "Sollima, western e politica",
+     "tmdbId": 45211
     },
     {
      "title": "Il mio nome è Nessuno",
      "year": 1973,
-     "connection": "Prodotto da Leone, l'addio ironico al genere"
+     "connection": "Prodotto da Leone, l'addio ironico al genere",
+     "tmdbId": 9474
     },
     {
      "title": "Il grande silenzio",
      "year": 1968,
-     "connection": "Corbucci, un western cupo e politico"
+     "connection": "Corbucci, un western cupo e politico",
+     "tmdbId": 9028
     },
     {
      "title": "Django",
      "year": 1966,
-     "connection": "Corbucci, il western all'italiana più violento"
+     "connection": "Corbucci, il western all'italiana più violento",
+     "tmdbId": 10772
     },
     {
      "title": "La battaglia di Algeri",
      "year": 1966,
-     "connection": "Pontecorvo, una rivoluzione vera raccontata da vicino"
+     "connection": "Pontecorvo, una rivoluzione vera raccontata da vicino",
+     "tmdbId": 17295
     },
     {
      "title": "Novecento",
      "year": 1976,
-     "connection": "Bertolucci, contadini e rivoluzione in Emilia"
+     "connection": "Bertolucci, contadini e rivoluzione in Emilia",
+     "tmdbId": 3870
     }
    ]
   },
@@ -2855,52 +3299,62 @@
     {
      "title": "Le notti di Cabiria",
      "year": 1957,
-     "connection": "Fellini e la Masina di nuovo, un'altra anima ingenua"
+     "connection": "Fellini e la Masina di nuovo, un'altra anima ingenua",
+     "tmdbId": 19426
     },
     {
      "title": "I vitelloni",
      "year": 1953,
-     "connection": "Fellini subito prima, la provincia e i sogni"
+     "connection": "Fellini subito prima, la provincia e i sogni",
+     "tmdbId": 12548
     },
     {
      "title": "Il bidone",
      "year": 1955,
-     "connection": "Fellini, truffatori in giro per l'Italia"
+     "connection": "Fellini, truffatori in giro per l'Italia",
+     "tmdbId": 36102
     },
     {
      "title": "La dolce vita",
      "year": 1960,
-     "connection": "Fellini, Roma e il suo vuoto"
+     "connection": "Fellini, Roma e il suo vuoto",
+     "tmdbId": 439
     },
     {
      "title": "8½",
      "year": 1963,
-     "connection": "Fellini, il circo finale"
+     "connection": "Fellini, il circo finale",
+     "tmdbId": 422
     },
     {
      "title": "Amarcord",
      "year": 1973,
-     "connection": "Fellini, la memoria e la provincia"
+     "connection": "Fellini, la memoria e la provincia",
+     "tmdbId": 7857
     },
     {
      "title": "Ladri di biciclette",
      "year": 1948,
-     "connection": "De Sica, la povertà del dopoguerra"
+     "connection": "De Sica, la povertà del dopoguerra",
+     "tmdbId": 5156
     },
     {
      "title": "Umberto D.",
      "year": 1952,
-     "connection": "De Sica, un uomo solo e un cane"
+     "connection": "De Sica, un uomo solo e un cane",
+     "tmdbId": 833
     },
     {
      "title": "Lazzaro felice",
      "year": 2018,
-     "connection": "Rohrwacher, un'anima innocente in un mondo crudele"
+     "connection": "Rohrwacher, un'anima innocente in un mondo crudele",
+     "tmdbId": 481432
     },
     {
      "title": "Freaks Out",
      "year": 2021,
-     "connection": "Mainetti, artisti di circo in un'Italia in guerra"
+     "connection": "Mainetti, artisti di circo in un'Italia in guerra",
+     "tmdbId": 571468
     }
    ]
   },
@@ -2918,52 +3372,62 @@
     {
      "title": "Loro",
      "year": 2018,
-     "connection": "Sorrentino e Servillo, Berlusconi dopo Andreotti"
+     "connection": "Sorrentino e Servillo, Berlusconi dopo Andreotti",
+     "tmdbId": 541660
     },
     {
      "title": "La grande bellezza",
      "year": 2013,
-     "connection": "Sorrentino e Servillo, la Roma del potere mondano"
+     "connection": "Sorrentino e Servillo, la Roma del potere mondano",
+     "tmdbId": 179144
     },
     {
      "title": "Le conseguenze dell'amore",
      "year": 2004,
-     "connection": "Sorrentino e Servillo, un uomo chiuso nel silenzio"
+     "connection": "Sorrentino e Servillo, un uomo chiuso nel silenzio",
+     "tmdbId": 24653
     },
     {
      "title": "Il traditore",
      "year": 2019,
-     "connection": "Bellocchio, gli stessi anni dal lato della mafia"
+     "connection": "Bellocchio, gli stessi anni dal lato della mafia",
+     "tmdbId": 575452
     },
     {
      "title": "Todo modo",
      "year": 1976,
-     "connection": "Petri, potenti della Democrazia cristiana chiusi in un eremo"
+     "connection": "Petri, potenti della Democrazia cristiana chiusi in un eremo",
+     "tmdbId": 47096
     },
     {
      "title": "Il caso Mattei",
      "year": 1972,
-     "connection": "Rosi, il petrolio e la morte di un uomo di Stato"
+     "connection": "Rosi, il petrolio e la morte di un uomo di Stato",
+     "tmdbId": 62382
     },
     {
      "title": "Esterno notte",
      "year": 2022,
-     "connection": "Bellocchio, il caso Moro"
+     "connection": "Bellocchio, il caso Moro",
+     "tmdbId": 977487
     },
     {
      "title": "Indagine su un cittadino al di sopra di ogni sospetto",
      "year": 1970,
-     "connection": "Petri, un potere che si crede intoccabile"
+     "connection": "Petri, un potere che si crede intoccabile",
+     "tmdbId": 26451
     },
     {
      "title": "Il portaborse",
      "year": 1991,
-     "connection": "Luchetti, un ministro e il suo scrittore"
+     "connection": "Luchetti, un ministro e il suo scrittore",
+     "tmdbId": 57110
     },
     {
      "title": "La mafia uccide solo d'estate",
      "year": 2013,
-     "connection": "Pif, Andreotti visto da un bambino palermitano"
+     "connection": "Pif, Andreotti visto da un bambino palermitano",
+     "tmdbId": 239877
     }
    ]
   },
@@ -2981,52 +3445,62 @@
     {
      "title": "Ricomincio da tre",
      "year": 1981,
-     "connection": "Troisi, il suo primo film"
+     "connection": "Troisi, il suo primo film",
+     "tmdbId": 13386
     },
     {
      "title": "Scusate il ritardo",
      "year": 1983,
-     "connection": "Troisi, l'amore impacciato a Napoli"
+     "connection": "Troisi, l'amore impacciato a Napoli",
+     "tmdbId": 56784
     },
     {
      "title": "Il postino",
      "year": 1994,
-     "connection": "L'ultimo film di Troisi"
+     "connection": "L'ultimo film di Troisi",
+     "tmdbId": 11010
     },
     {
      "title": "Johnny Stecchino",
      "year": 1991,
-     "connection": "Benigni, equivoci a Palermo"
+     "connection": "Benigni, equivoci a Palermo",
+     "tmdbId": 12776
     },
     {
      "title": "Il piccolo diavolo",
      "year": 1988,
-     "connection": "Benigni, un diavoletto e un prete"
+     "connection": "Benigni, un diavoletto e un prete",
+     "tmdbId": 43645
     },
     {
      "title": "La vita è bella",
      "year": 1997,
-     "connection": "Benigni, il suo film più famoso"
+     "connection": "Benigni, il suo film più famoso",
+     "tmdbId": 637
     },
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Un altro viaggio comico sbagliato"
+     "connection": "Un altro viaggio comico sbagliato",
+     "tmdbId": 38286
     },
     {
      "title": "L'armata Brancaleone",
      "year": 1966,
-     "connection": "Monicelli, un Medioevo comico e straccione"
+     "connection": "Monicelli, un Medioevo comico e straccione",
+     "tmdbId": 23832
     },
     {
      "title": "Così è la vita",
      "year": 1998,
-     "connection": "Il trio in fuga, coppie comiche che funzionano"
+     "connection": "Il trio in fuga, coppie comiche che funzionano",
+     "tmdbId": 38396
     },
     {
      "title": "I soliti ignoti",
      "year": 1958,
-     "connection": "Monicelli, la commedia all'italiana"
+     "connection": "Monicelli, la commedia all'italiana",
+     "tmdbId": 24382
     }
    ]
   },
@@ -3044,52 +3518,62 @@
     {
      "title": "I cento passi",
      "year": 2000,
-     "connection": "Giordana, Peppino Impastato contro la mafia"
+     "connection": "Giordana, Peppino Impastato contro la mafia",
+     "tmdbId": 29458
     },
     {
      "title": "Il traditore",
      "year": 2019,
-     "connection": "Bellocchio, Buscetta e il maxiprocesso"
+     "connection": "Bellocchio, Buscetta e il maxiprocesso",
+     "tmdbId": 575452
     },
     {
      "title": "Johnny Stecchino",
      "year": 1991,
-     "connection": "Benigni, la mafia e Palermo per ridere"
+     "connection": "Benigni, la mafia e Palermo per ridere",
+     "tmdbId": 12776
     },
     {
      "title": "Il Divo",
      "year": 2008,
-     "connection": "Sorrentino, Andreotti"
+     "connection": "Sorrentino, Andreotti",
+     "tmdbId": 8832
     },
     {
      "title": "L'ora legale",
      "year": 2017,
-     "connection": "Ficarra e Picone, la Sicilia e le regole"
+     "connection": "Ficarra e Picone, la Sicilia e le regole",
+     "tmdbId": 435921
     },
     {
      "title": "Nuovo Cinema Paradiso",
      "year": 1988,
-     "connection": "Un'infanzia siciliana"
+     "connection": "Un'infanzia siciliana",
+     "tmdbId": 11216
     },
     {
      "title": "Io non ho paura",
      "year": 2003,
-     "connection": "Un bambino e un crimine più grande di lui"
+     "connection": "Un bambino e un crimine più grande di lui",
+     "tmdbId": 25300
     },
     {
      "title": "Gomorra",
      "year": 2008,
-     "connection": "Garrone, la camorra"
+     "connection": "Garrone, la camorra",
+     "tmdbId": 8882
     },
     {
      "title": "Il giorno della civetta",
      "year": 1968,
-     "connection": "Damiani, la mafia di paese"
+     "connection": "Damiani, la mafia di paese",
+     "tmdbId": 58658
     },
     {
      "title": "Salvatore Giuliano",
      "year": 1962,
-     "connection": "Rosi, la Sicilia e lo Stato"
+     "connection": "Rosi, la Sicilia e lo Stato",
+     "tmdbId": 27523
     }
    ]
   },
@@ -3107,52 +3591,62 @@
     {
      "title": "Lo chiamavano Trinità...",
      "year": 1970,
-     "connection": "Terence Hill, il western per ridere"
+     "connection": "Terence Hill, il western per ridere",
+     "tmdbId": 9394
     },
     {
      "title": "...continuavano a chiamarlo Trinità",
      "year": 1971,
-     "connection": "Il seguito con Bud Spencer"
+     "connection": "Il seguito con Bud Spencer",
+     "tmdbId": 11829
     },
     {
      "title": "C'era una volta il West",
      "year": 1968,
-     "connection": "Leone e Henry Fonda cattivo"
+     "connection": "Leone e Henry Fonda cattivo",
+     "tmdbId": 335
     },
     {
      "title": "Il buono, il brutto, il cattivo",
      "year": 1966,
-     "connection": "Leone al massimo"
+     "connection": "Leone al massimo",
+     "tmdbId": 429
     },
     {
      "title": "Giù la testa",
      "year": 1971,
-     "connection": "Leone, l'ultimo western diretto da lui"
+     "connection": "Leone, l'ultimo western diretto da lui",
+     "tmdbId": 336
     },
     {
      "title": "Per qualche dollaro in più",
      "year": 1965,
-     "connection": "Leone, un vecchio e un giovane pistolero"
+     "connection": "Leone, un vecchio e un giovane pistolero",
+     "tmdbId": 938
     },
     {
      "title": "Il grande silenzio",
      "year": 1968,
-     "connection": "Corbucci, la fine dell'eroe"
+     "connection": "Corbucci, la fine dell'eroe",
+     "tmdbId": 9028
     },
     {
      "title": "Django",
      "year": 1966,
-     "connection": "Corbucci, il western cupo"
+     "connection": "Corbucci, il western cupo",
+     "tmdbId": 10772
     },
     {
      "title": "...altrimenti ci arrabbiamo!",
      "year": 1974,
-     "connection": "Hill e Spencer fuori dal western"
+     "connection": "Hill e Spencer fuori dal western",
+     "tmdbId": 6916
     },
     {
      "title": "Pari e dispari",
      "year": 1978,
-     "connection": "Hill e Spencer fratelli"
+     "connection": "Hill e Spencer fratelli",
+     "tmdbId": 11367
     }
    ]
   },
@@ -3170,52 +3664,62 @@
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Il primo film del trio"
+     "connection": "Il primo film del trio",
+     "tmdbId": 38286
     },
     {
      "title": "Chiedimi se sono felice",
      "year": 2000,
-     "connection": "Il trio e l'amicizia"
+     "connection": "Il trio e l'amicizia",
+     "tmdbId": 50531
     },
     {
      "title": "Così è la vita",
      "year": 1998,
-     "connection": "Il trio in fuga"
+     "connection": "Il trio in fuga",
+     "tmdbId": 38396
     },
     {
      "title": "La leggenda di Al, John e Jack",
      "year": 2002,
-     "connection": "Il trio tra i gangster"
+     "connection": "Il trio tra i gangster",
+     "tmdbId": 38397
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Il trio dopo"
+     "connection": "Il trio dopo",
+     "tmdbId": 310126
     },
     {
      "title": "Una famiglia perfetta",
      "year": 2012,
-     "connection": "Genovese, un Natale in affitto"
+     "connection": "Genovese, un Natale in affitto",
+     "tmdbId": 162282
     },
     {
      "title": "Perfetti sconosciuti",
      "year": 2016,
-     "connection": "Amici e segreti"
+     "connection": "Amici e segreti",
+     "tmdbId": 381341
     },
     {
      "title": "I soliti ignoti",
      "year": 1958,
-     "connection": "Monicelli, ladri dilettanti"
+     "connection": "Monicelli, ladri dilettanti",
+     "tmdbId": 24382
     },
     {
      "title": "Immaturi",
      "year": 2011,
-     "connection": "Amici che non crescono"
+     "connection": "Amici che non crescono",
+     "tmdbId": 56909
     },
     {
      "title": "Benvenuti al sud",
      "year": 2010,
-     "connection": "Commedia italiana di successo"
+     "connection": "Commedia italiana di successo",
+     "tmdbId": 48415
     }
    ]
   },
@@ -3233,52 +3737,62 @@
     {
      "title": "L'uomo del labirinto",
      "year": 2019,
-     "connection": "Carrisi di nuovo, un altro rapimento e Servillo"
+     "connection": "Carrisi di nuovo, un altro rapimento e Servillo",
+     "tmdbId": 602545
     },
     {
      "title": "La migliore offerta",
      "year": 2013,
-     "connection": "Tornatore, un mistero e un inganno"
+     "connection": "Tornatore, un mistero e un inganno",
+     "tmdbId": 152742
     },
     {
      "title": "The Place",
      "year": 2017,
-     "connection": "Genovese, un uomo che manipola chi gli sta davanti"
+     "connection": "Genovese, un uomo che manipola chi gli sta davanti",
+     "tmdbId": 468198
     },
     {
      "title": "Profondo rosso",
      "year": 1975,
-     "connection": "Argento, un giallo da risolvere con un dettaglio"
+     "connection": "Argento, un giallo da risolvere con un dettaglio",
+     "tmdbId": 20126
     },
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Virzì, un fatto di cronaca e le colpe di tutti"
+     "connection": "Virzì, un fatto di cronaca e le colpe di tutti",
+     "tmdbId": 244088
     },
     {
      "title": "Le conseguenze dell'amore",
      "year": 2004,
-     "connection": "Sorrentino e Servillo, un uomo misterioso"
+     "connection": "Sorrentino e Servillo, un uomo misterioso",
+     "tmdbId": 24653
     },
     {
      "title": "La sconosciuta",
      "year": 2006,
-     "connection": "Tornatore, un passato nascosto"
+     "connection": "Tornatore, un passato nascosto",
+     "tmdbId": 10886
     },
     {
      "title": "Io non ho paura",
      "year": 2003,
-     "connection": "Salvatores, un bambino rapito"
+     "connection": "Salvatores, un bambino rapito",
+     "tmdbId": 25300
     },
     {
      "title": "La casa dalle finestre che ridono",
      "year": 1976,
-     "connection": "Avati, un mistero di paese"
+     "connection": "Avati, un mistero di paese",
+     "tmdbId": 57447
     },
     {
      "title": "Indagine su un cittadino al di sopra di ogni sospetto",
      "year": 1970,
-     "connection": "Petri, un poliziotto che si crede sopra la legge"
+     "connection": "Petri, un poliziotto che si crede sopra la legge",
+     "tmdbId": 26451
     }
    ]
   },
@@ -3296,52 +3810,62 @@
     {
      "title": "Immaturi",
      "year": 2011,
-     "connection": "Genovese, quarantenni che rifanno la maturità"
+     "connection": "Genovese, quarantenni che rifanno la maturità",
+     "tmdbId": 56909
     },
     {
      "title": "Notte prima degli esami - Oggi",
      "year": 2007,
-     "connection": "Il seguito, stessi ragazzi nel 2006"
+     "connection": "Il seguito, stessi ragazzi nel 2006",
+     "tmdbId": 54309
     },
     {
      "title": "Come te nessuno mai",
      "year": 1999,
-     "connection": "Muccino, adolescenti romani e il primo amore"
+     "connection": "Muccino, adolescenti romani e il primo amore",
+     "tmdbId": 53915
     },
     {
      "title": "L'ultimo bacio",
      "year": 2001,
-     "connection": "Muccino, la paura di diventare grandi"
+     "connection": "Muccino, la paura di diventare grandi",
+     "tmdbId": 12308
     },
     {
      "title": "Ecce bombo",
      "year": 1978,
-     "connection": "Moretti, studenti senza direzione"
+     "connection": "Moretti, studenti senza direzione",
+     "tmdbId": 48282
     },
     {
      "title": "Io non ho paura",
      "year": 2003,
-     "connection": "Un'estate che cambia tutto"
+     "connection": "Un'estate che cambia tutto",
+     "tmdbId": 25300
     },
     {
      "title": "Amarcord",
      "year": 1973,
-     "connection": "Fellini, adolescenza e scuola"
+     "connection": "Fellini, adolescenza e scuola",
+     "tmdbId": 7857
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Un ragazzo timido e un'estate"
+     "connection": "Un ragazzo timido e un'estate",
+     "tmdbId": 24188
     },
     {
      "title": "Tutta colpa di Freud",
      "year": 2014,
-     "connection": "Genovese, amori e figlie"
+     "connection": "Genovese, amori e figlie",
+     "tmdbId": 250235
     },
     {
      "title": "Odio l'estate",
      "year": 2020,
-     "connection": "Aldo Giovanni e Giacomo, una vacanza di famiglia"
+     "connection": "Aldo Giovanni e Giacomo, una vacanza di famiglia",
+     "tmdbId": 606954
     }
    ]
   },
@@ -3359,52 +3883,62 @@
     {
      "title": "Suspiria",
      "year": 1977,
-     "connection": "Argento, l'horror italiano al massimo"
+     "connection": "Argento, l'horror italiano al massimo",
+     "tmdbId": 11906
     },
     {
      "title": "Profondo rosso",
      "year": 1975,
-     "connection": "Argento, paura e mistero"
+     "connection": "Argento, paura e mistero",
+     "tmdbId": 20126
     },
     {
      "title": "La casa dalle finestre che ridono",
      "year": 1976,
-     "connection": "Avati, la paura in campagna"
+     "connection": "Avati, la paura in campagna",
+     "tmdbId": 57447
     },
     {
      "title": "The Nest – Il nido",
      "year": 2019,
-     "connection": "De Feo, una villa isolata e un segreto"
+     "connection": "De Feo, una villa isolata e un segreto",
+     "tmdbId": 600184
     },
     {
      "title": "Il racconto dei racconti - Tale of Tales",
      "year": 2015,
-     "connection": "Garrone, favole crude"
+     "connection": "Garrone, favole crude",
+     "tmdbId": 314405
     },
     {
      "title": "Gomorra",
      "year": 2008,
-     "connection": "Garrone, la criminalità organizzata"
+     "connection": "Garrone, la criminalità organizzata",
+     "tmdbId": 8882
     },
     {
      "title": "La maschera del demonio",
      "year": 1960,
-     "connection": "Bava, l'horror gotico italiano"
+     "connection": "Bava, l'horror gotico italiano",
+     "tmdbId": 27632
     },
     {
      "title": "L'uccello dalle piume di cristallo",
      "year": 1970,
-     "connection": "Argento, il primo giallo"
+     "connection": "Argento, il primo giallo",
+     "tmdbId": 20345
     },
     {
      "title": "Lo chiamavano Jeeg Robot",
      "year": 2016,
-     "connection": "Un genere straniero rifatto in Italia"
+     "connection": "Un genere straniero rifatto in Italia",
+     "tmdbId": 364433
     },
     {
      "title": "Io non ho paura",
      "year": 2003,
-     "connection": "Un bambino, un buco e un segreto"
+     "connection": "Un bambino, un buco e un segreto",
+     "tmdbId": 25300
     }
    ]
   },
@@ -3422,52 +3956,62 @@
     {
      "title": "Il mostro",
      "year": 1994,
-     "connection": "Benigni, un altro innocente scambiato per colpevole"
+     "connection": "Benigni, un altro innocente scambiato per colpevole",
+     "tmdbId": 22826
     },
     {
      "title": "Non ci resta che piangere",
      "year": 1984,
-     "connection": "Benigni e Troisi"
+     "connection": "Benigni e Troisi",
+     "tmdbId": 27670
     },
     {
      "title": "La vita è bella",
      "year": 1997,
-     "connection": "Benigni, il suo film più famoso"
+     "connection": "Benigni, il suo film più famoso",
+     "tmdbId": 637
     },
     {
      "title": "Il piccolo diavolo",
      "year": 1988,
-     "connection": "Benigni e Walter Matthau"
+     "connection": "Benigni e Walter Matthau",
+     "tmdbId": 43645
     },
     {
      "title": "La mafia uccide solo d'estate",
      "year": 2013,
-     "connection": "Pif, la mafia raccontata con ironia"
+     "connection": "Pif, la mafia raccontata con ironia",
+     "tmdbId": 239877
     },
     {
      "title": "La leggenda di Al, John e Jack",
      "year": 2002,
-     "connection": "Gangster da ridere"
+     "connection": "Gangster da ridere",
+     "tmdbId": 38397
     },
     {
      "title": "Che bella giornata",
      "year": 2011,
-     "connection": "Zalone scambiato per qualcuno che non è"
+     "connection": "Zalone scambiato per qualcuno che non è",
+     "tmdbId": 53319
     },
     {
      "title": "L'ora legale",
      "year": 2017,
-     "connection": "Ficarra e Picone, la Sicilia per ridere"
+     "connection": "Ficarra e Picone, la Sicilia per ridere",
+     "tmdbId": 435921
     },
     {
      "title": "Pinocchio",
      "year": 2002,
-     "connection": "Benigni burattino"
+     "connection": "Benigni burattino",
+     "tmdbId": 10599
     },
     {
      "title": "I soliti ignoti",
      "year": 1958,
-     "connection": "Monicelli, criminali goffi"
+     "connection": "Monicelli, criminali goffi",
+     "tmdbId": 24382
     }
    ]
   },
@@ -3485,52 +4029,62 @@
     {
      "title": "Chiedimi se sono felice",
      "year": 2000,
-     "connection": "Il trio, amicizia e una donna in mezzo"
+     "connection": "Il trio, amicizia e una donna in mezzo",
+     "tmdbId": 50531
     },
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Il primo film del trio"
+     "connection": "Il primo film del trio",
+     "tmdbId": 38286
     },
     {
      "title": "Così è la vita",
      "year": 1998,
-     "connection": "Il trio in fuga"
+     "connection": "Il trio in fuga",
+     "tmdbId": 38396
     },
     {
      "title": "La banda dei Babbi Natale",
      "year": 2010,
-     "connection": "Il trio a Natale"
+     "connection": "Il trio a Natale",
+     "tmdbId": 58013
     },
     {
      "title": "C'è ancora domani",
      "year": 2023,
-     "connection": "Paola Cortellesi regista"
+     "connection": "Paola Cortellesi regista",
+     "tmdbId": 1026227
     },
     {
      "title": "L'ultimo bacio",
      "year": 2001,
-     "connection": "Muccino, coppie in crisi"
+     "connection": "Muccino, coppie in crisi",
+     "tmdbId": 12308
     },
     {
      "title": "Perfetti sconosciuti",
      "year": 2016,
-     "connection": "Coppie e segreti"
+     "connection": "Coppie e segreti",
+     "tmdbId": 381341
     },
     {
      "title": "Pane e tulipani",
      "year": 2000,
-     "connection": "Una donna e una vita nuova"
+     "connection": "Una donna e una vita nuova",
+     "tmdbId": 552
     },
     {
      "title": "Le fate ignoranti",
      "year": 2001,
-     "connection": "Özpetek, un amore scoperto dopo"
+     "connection": "Özpetek, un amore scoperto dopo",
+     "tmdbId": 23550
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Il trio a Milano"
+     "connection": "Il trio a Milano",
+     "tmdbId": 310126
     }
    ]
   },
@@ -3548,52 +4102,62 @@
     {
      "title": "Amore tossico",
      "year": 1983,
-     "connection": "Caligari, il primo film, l'eroina a Ostia con attori veri"
+     "connection": "Caligari, il primo film, l'eroina a Ostia con attori veri",
+     "tmdbId": 59037
     },
     {
      "title": "Suburra",
      "year": 2015,
-     "connection": "Sollima, Borghi a Ostia"
+     "connection": "Sollima, Borghi a Ostia",
+     "tmdbId": 356296
     },
     {
      "title": "Lo chiamavano Jeeg Robot",
      "year": 2016,
-     "connection": "Marinelli cattivo nella periferia romana"
+     "connection": "Marinelli cattivo nella periferia romana",
+     "tmdbId": 364433
     },
     {
      "title": "Sulla mia pelle",
      "year": 2018,
-     "connection": "Borghi è Stefano Cucchi"
+     "connection": "Borghi è Stefano Cucchi",
+     "tmdbId": 538362
     },
     {
      "title": "Accattone",
      "year": 1961,
-     "connection": "Pasolini, la vita di borgata"
+     "connection": "Pasolini, la vita di borgata",
+     "tmdbId": 12491
     },
     {
      "title": "Dogman",
      "year": 2018,
-     "connection": "Garrone, un'amicizia malata in periferia"
+     "connection": "Garrone, un'amicizia malata in periferia",
+     "tmdbId": 483184
     },
     {
      "title": "Gomorra",
      "year": 2008,
-     "connection": "Garrone, ragazzi e criminalità"
+     "connection": "Garrone, ragazzi e criminalità",
+     "tmdbId": 8882
     },
     {
      "title": "Romanzo criminale",
      "year": 2005,
-     "connection": "Placido, la Roma criminale"
+     "connection": "Placido, la Roma criminale",
+     "tmdbId": 14375
     },
     {
      "title": "Mamma Roma",
      "year": 1962,
-     "connection": "Pasolini, un figlio della periferia"
+     "connection": "Pasolini, un figlio della periferia",
+     "tmdbId": 47796
     },
     {
      "title": "Il ragazzo invisibile",
      "year": 2014,
-     "connection": "Un ragazzo e un mondo duro"
+     "connection": "Un ragazzo e un mondo duro",
+     "tmdbId": 303542
     }
    ]
   },
@@ -3611,52 +4175,62 @@
     {
      "title": "Perfetti sconosciuti",
      "year": 2016,
-     "connection": "Genovese, Giallini e il suo cast"
+     "connection": "Genovese, Giallini e il suo cast",
+     "tmdbId": 381341
     },
     {
      "title": "Immaturi",
      "year": 2011,
-     "connection": "Genovese, amici quarantenni"
+     "connection": "Genovese, amici quarantenni",
+     "tmdbId": 56909
     },
     {
      "title": "The Place",
      "year": 2017,
-     "connection": "Genovese, desideri e prezzi"
+     "connection": "Genovese, desideri e prezzi",
+     "tmdbId": 468198
     },
     {
      "title": "Una famiglia perfetta",
      "year": 2012,
-     "connection": "Genovese, famiglie e finzioni"
+     "connection": "Genovese, famiglie e finzioni",
+     "tmdbId": 162282
     },
     {
      "title": "L'ultimo bacio",
      "year": 2001,
-     "connection": "Muccino, amori a Roma"
+     "connection": "Muccino, amori a Roma",
+     "tmdbId": 12308
     },
     {
      "title": "Mine vaganti",
      "year": 2010,
-     "connection": "Özpetek, una famiglia e una verità"
+     "connection": "Özpetek, una famiglia e una verità",
+     "tmdbId": 40794
     },
     {
      "title": "Notte prima degli esami",
      "year": 2006,
-     "connection": "Amori adolescenti a Roma"
+     "connection": "Amori adolescenti a Roma",
+     "tmdbId": 33365
     },
     {
      "title": "Il nome del figlio",
      "year": 2015,
-     "connection": "Archibugi, una famiglia a cena"
+     "connection": "Archibugi, una famiglia a cena",
+     "tmdbId": 320028
     },
     {
      "title": "Tu la conosci Claudia?",
      "year": 2004,
-     "connection": "Amori incrociati a Milano"
+     "connection": "Amori incrociati a Milano",
+     "tmdbId": 57112
     },
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Virzì, padri e figlie"
+     "connection": "Virzì, padri e figlie",
+     "tmdbId": 244088
     }
    ]
   },
@@ -3674,22 +4248,26 @@
     {
      "title": "Il grande silenzio",
      "year": 1968,
-     "connection": "Corbucci, la neve al posto del fango"
+     "connection": "Corbucci, la neve al posto del fango",
+     "tmdbId": 9028
     },
     {
      "title": "Per un pugno di dollari",
      "year": 1964,
-     "connection": "Leone, uno straniero tra due bande"
+     "connection": "Leone, uno straniero tra due bande",
+     "tmdbId": 391
     },
     {
      "title": "Il buono, il brutto, il cattivo",
      "year": 1966,
-     "connection": "Leone, il western all'italiana più famoso"
+     "connection": "Leone, il western all'italiana più famoso",
+     "tmdbId": 429
     },
     {
      "title": "Faccia a faccia",
      "year": 1967,
-     "connection": "Sollima, il western che pensa"
+     "connection": "Sollima, il western che pensa",
+     "tmdbId": 45211
     },
     {
      "title": "La resa dei conti",
@@ -3699,7 +4277,8 @@
     {
      "title": "Il mercenario",
      "year": 1968,
-     "connection": "Corbucci, Franco Nero nella rivoluzione messicana"
+     "connection": "Corbucci, Franco Nero nella rivoluzione messicana",
+     "tmdbId": 48169
     },
     {
      "title": "Quién sabe?",
@@ -3709,17 +4288,20 @@
     {
      "title": "Giù la testa",
      "year": 1971,
-     "connection": "Leone, la rivoluzione"
+     "connection": "Leone, la rivoluzione",
+     "tmdbId": 336
     },
     {
      "title": "Lo chiamavano Trinità...",
      "year": 1970,
-     "connection": "La parodia di questi western"
+     "connection": "La parodia di questi western",
+     "tmdbId": 9394
     },
     {
      "title": "C'era una volta il West",
      "year": 1968,
-     "connection": "Leone, la vendetta"
+     "connection": "Leone, la vendetta",
+     "tmdbId": 335
     }
    ]
   },
@@ -3737,52 +4319,62 @@
     {
      "title": "Lo chiamavano Trinità...",
      "year": 1970,
-     "connection": "Il primo film dei due fratelli"
+     "connection": "Il primo film dei due fratelli",
+     "tmdbId": 9394
     },
     {
      "title": "Il mio nome è Nessuno",
      "year": 1973,
-     "connection": "Terence Hill e l'addio al western"
+     "connection": "Terence Hill e l'addio al western",
+     "tmdbId": 9474
     },
     {
      "title": "...altrimenti ci arrabbiamo!",
      "year": 1974,
-     "connection": "Hill e Spencer, una dune buggy rossa"
+     "connection": "Hill e Spencer, una dune buggy rossa",
+     "tmdbId": 6916
     },
     {
      "title": "Pari e dispari",
      "year": 1978,
-     "connection": "Hill e Spencer, scommesse a Miami"
+     "connection": "Hill e Spencer, scommesse a Miami",
+     "tmdbId": 11367
     },
     {
      "title": "Lo chiamavano Bulldozer",
      "year": 1978,
-     "connection": "Bud Spencer da solo"
+     "connection": "Bud Spencer da solo",
+     "tmdbId": 11144
     },
     {
      "title": "I due superpiedi quasi piatti",
      "year": 1977,
-     "connection": "Hill e Spencer poliziotti"
+     "connection": "Hill e Spencer poliziotti",
+     "tmdbId": 11689
     },
     {
      "title": "Dio perdona... io no!",
      "year": 1967,
-     "connection": "Il primo film della coppia"
+     "connection": "Il primo film della coppia",
+     "tmdbId": 41608
     },
     {
      "title": "Django",
      "year": 1966,
-     "connection": "Il western che qui si prende in giro"
+     "connection": "Il western che qui si prende in giro",
+     "tmdbId": 10772
     },
     {
      "title": "Per un pugno di dollari",
      "year": 1964,
-     "connection": "Leone, l'inizio di tutto"
+     "connection": "Leone, l'inizio di tutto",
+     "tmdbId": 391
     },
     {
      "title": "Così è la vita",
      "year": 1998,
-     "connection": "Un'altra coppia comica in fuga"
+     "connection": "Un'altra coppia comica in fuga",
+     "tmdbId": 38396
     }
    ]
   },
@@ -3800,52 +4392,62 @@
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Il trio e Venier, il loro primo film insieme"
+     "connection": "Il trio e Venier, il loro primo film insieme",
+     "tmdbId": 38286
     },
     {
      "title": "Così è la vita",
      "year": 1998,
-     "connection": "Il trio in viaggio"
+     "connection": "Il trio in viaggio",
+     "tmdbId": 38396
     },
     {
      "title": "Chiedimi se sono felice",
      "year": 2000,
-     "connection": "Il trio e l'amicizia"
+     "connection": "Il trio e l'amicizia",
+     "tmdbId": 50531
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Il trio e la crisi"
+     "connection": "Il trio e la crisi",
+     "tmdbId": 310126
     },
     {
      "title": "Sole a catinelle",
      "year": 2013,
-     "connection": "Zalone, una vacanza promessa"
+     "connection": "Zalone, una vacanza promessa",
+     "tmdbId": 231176
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Risi, l'estate italiana"
+     "connection": "Risi, l'estate italiana",
+     "tmdbId": 24188
     },
     {
      "title": "Notte prima degli esami",
      "year": 2006,
-     "connection": "Un'estate di ragazzi"
+     "connection": "Un'estate di ragazzi",
+     "tmdbId": 33365
     },
     {
      "title": "Perfetti sconosciuti",
      "year": 2016,
-     "connection": "Famiglie e segreti"
+     "connection": "Famiglie e segreti",
+     "tmdbId": 381341
     },
     {
      "title": "Mediterraneo",
      "year": 1991,
-     "connection": "Un'estate fuori dal tempo"
+     "connection": "Un'estate fuori dal tempo",
+     "tmdbId": 38251
     },
     {
      "title": "Ferie d'agosto",
      "year": 1996,
-     "connection": "Virzì, due famiglie opposte in vacanza a Ventotene"
+     "connection": "Virzì, due famiglie opposte in vacanza a Ventotene",
+     "tmdbId": 56399
     }
    ]
   },
@@ -3863,52 +4465,62 @@
     {
      "title": "Paisà",
      "year": 1946,
-     "connection": "Rossellini, la liberazione in sei storie"
+     "connection": "Rossellini, la liberazione in sei storie",
+     "tmdbId": 8429
     },
     {
      "title": "Germania anno zero",
      "year": 1948,
-     "connection": "Rossellini, la Berlino distrutta, terzo film della trilogia"
+     "connection": "Rossellini, la Berlino distrutta, terzo film della trilogia",
+     "tmdbId": 8016
     },
     {
      "title": "Ladri di biciclette",
      "year": 1948,
-     "connection": "De Sica, la Roma del dopoguerra"
+     "connection": "De Sica, la Roma del dopoguerra",
+     "tmdbId": 5156
     },
     {
      "title": "Sciuscià",
      "year": 1946,
-     "connection": "De Sica, ragazzi nella Roma liberata"
+     "connection": "De Sica, ragazzi nella Roma liberata",
+     "tmdbId": 43469
     },
     {
      "title": "Mamma Roma",
      "year": 1962,
-     "connection": "Pasolini, Anna Magnani di nuovo madre"
+     "connection": "Pasolini, Anna Magnani di nuovo madre",
+     "tmdbId": 47796
     },
     {
      "title": "Bellissima",
      "year": 1951,
-     "connection": "Visconti, Anna Magnani e il cinema"
+     "connection": "Visconti, Anna Magnani e il cinema",
+     "tmdbId": 43372
     },
     {
      "title": "La ciociara",
      "year": 1960,
-     "connection": "De Sica, la guerra vista da una madre"
+     "connection": "De Sica, la guerra vista da una madre",
+     "tmdbId": 24167
     },
     {
      "title": "Una giornata particolare",
      "year": 1977,
-     "connection": "Scola, Roma sotto il fascismo"
+     "connection": "Scola, Roma sotto il fascismo",
+     "tmdbId": 42229
     },
     {
      "title": "Il generale Della Rovere",
      "year": 1959,
-     "connection": "Rossellini, un truffatore nella Genova occupata"
+     "connection": "Rossellini, un truffatore nella Genova occupata",
+     "tmdbId": 43100
     },
     {
      "title": "C'è ancora domani",
      "year": 2023,
-     "connection": "Cortellesi, Roma un anno dopo"
+     "connection": "Cortellesi, Roma un anno dopo",
+     "tmdbId": 1026227
     }
    ]
   },
@@ -3926,52 +4538,62 @@
     {
      "title": "Notte prima degli esami",
      "year": 2006,
-     "connection": "Brizzi, un amore adolescente romano meglio raccontato"
+     "connection": "Brizzi, un amore adolescente romano meglio raccontato",
+     "tmdbId": 33365
     },
     {
      "title": "Come te nessuno mai",
      "year": 1999,
-     "connection": "Muccino, adolescenti veri"
+     "connection": "Muccino, adolescenti veri",
+     "tmdbId": 53915
     },
     {
      "title": "Io non ho paura",
      "year": 2003,
-     "connection": "Salvatores, un'infanzia e un segreto"
+     "connection": "Salvatores, un'infanzia e un segreto",
+     "tmdbId": 25300
     },
     {
      "title": "Il ragazzo invisibile",
      "year": 2014,
-     "connection": "Salvatores, un adolescente e un potere"
+     "connection": "Salvatores, un adolescente e un potere",
+     "tmdbId": 303542
     },
     {
      "title": "Tutta colpa di Freud",
      "year": 2014,
-     "connection": "Genovese, amori complicati"
+     "connection": "Genovese, amori complicati",
+     "tmdbId": 250235
     },
     {
      "title": "L'ultimo bacio",
      "year": 2001,
-     "connection": "Muccino, amori in crisi"
+     "connection": "Muccino, amori in crisi",
+     "tmdbId": 12308
     },
     {
      "title": "Le otto montagne",
      "year": 2022,
-     "connection": "Un legame lungo una vita"
+     "connection": "Un legame lungo una vita",
+     "tmdbId": 803700
     },
     {
      "title": "Lazzaro felice",
      "year": 2018,
-     "connection": "Un ragazzo e una famiglia che lo usa"
+     "connection": "Un ragazzo e una famiglia che lo usa",
+     "tmdbId": 481432
     },
     {
      "title": "Pinocchio",
      "year": 2019,
-     "connection": "Un orfano di legno e il suo padre"
+     "connection": "Un orfano di legno e il suo padre",
+     "tmdbId": 413518
     },
     {
      "title": "Nuovo Cinema Paradiso",
      "year": 1988,
-     "connection": "Un ragazzo e il suo primo amore"
+     "connection": "Un ragazzo e il suo primo amore",
+     "tmdbId": 11216
     }
    ]
   },
@@ -3989,52 +4611,62 @@
     {
      "title": "Il ragazzo invisibile - Seconda generazione",
      "year": 2018,
-     "connection": "Il seguito diretto"
+     "connection": "Il seguito diretto",
+     "tmdbId": 433150
     },
     {
      "title": "Lo chiamavano Jeeg Robot",
      "year": 2016,
-     "connection": "Mainetti, un supereroe nella periferia romana"
+     "connection": "Mainetti, un supereroe nella periferia romana",
+     "tmdbId": 364433
     },
     {
      "title": "Freaks Out",
      "year": 2021,
-     "connection": "Mainetti, poteri e circo"
+     "connection": "Mainetti, poteri e circo",
+     "tmdbId": 571468
     },
     {
      "title": "Io non ho paura",
      "year": 2003,
-     "connection": "Salvatores, un bambino e un segreto"
+     "connection": "Salvatores, un bambino e un segreto",
+     "tmdbId": 25300
     },
     {
      "title": "Mediterraneo",
      "year": 1991,
-     "connection": "Salvatores, il suo Oscar"
+     "connection": "Salvatores, il suo Oscar",
+     "tmdbId": 38251
     },
     {
      "title": "Pinocchio",
      "year": 2019,
-     "connection": "Garrone, un ragazzo diverso dagli altri"
+     "connection": "Garrone, un ragazzo diverso dagli altri",
+     "tmdbId": 413518
     },
     {
      "title": "Il racconto dei racconti - Tale of Tales",
      "year": 2015,
-     "connection": "Garrone, il fantastico italiano"
+     "connection": "Garrone, il fantastico italiano",
+     "tmdbId": 314405
     },
     {
      "title": "Notte prima degli esami",
      "year": 2006,
-     "connection": "Adolescenza e scuola"
+     "connection": "Adolescenza e scuola",
+     "tmdbId": 33365
     },
     {
      "title": "Nirvana",
      "year": 1997,
-     "connection": "Salvatores, un videogioco che prende vita"
+     "connection": "Salvatores, un videogioco che prende vita",
+     "tmdbId": 8765
     },
     {
      "title": "Lazzaro felice",
      "year": 2018,
-     "connection": "Rohrwacher, un ragazzo fuori dal tempo"
+     "connection": "Rohrwacher, un ragazzo fuori dal tempo",
+     "tmdbId": 481432
     }
    ]
   },
@@ -4052,52 +4684,62 @@
     {
      "title": "Senso",
      "year": 1954,
-     "connection": "Visconti, il Risorgimento e un amore che tradisce"
+     "connection": "Visconti, il Risorgimento e un amore che tradisce",
+     "tmdbId": 43195
     },
     {
      "title": "Rocco e i suoi fratelli",
      "year": 1960,
-     "connection": "Visconti, una famiglia del Sud a Milano"
+     "connection": "Visconti, una famiglia del Sud a Milano",
+     "tmdbId": 8422
     },
     {
      "title": "La terra trema",
      "year": 1948,
-     "connection": "Visconti, pescatori siciliani"
+     "connection": "Visconti, pescatori siciliani",
+     "tmdbId": 43445
     },
     {
      "title": "Il giardino dei Finzi-Contini",
      "year": 1970,
-     "connection": "De Sica, una famiglia aristocratica che finisce"
+     "connection": "De Sica, una famiglia aristocratica che finisce",
+     "tmdbId": 4789
     },
     {
      "title": "Novecento",
      "year": 1976,
-     "connection": "Bertolucci, padroni e contadini in un secolo"
+     "connection": "Bertolucci, padroni e contadini in un secolo",
+     "tmdbId": 3870
     },
     {
      "title": "Il conformista",
      "year": 1971,
-     "connection": "Bertolucci, la borghesia sotto il fascismo"
+     "connection": "Bertolucci, la borghesia sotto il fascismo",
+     "tmdbId": 8416
     },
     {
      "title": "Allonsanfàn",
      "year": 1974,
-     "connection": "Taviani, un rivoluzionario stanco del Risorgimento"
+     "connection": "Taviani, un rivoluzionario stanco del Risorgimento",
+     "tmdbId": 49125
     },
     {
      "title": "C'era una volta il West",
      "year": 1968,
-     "connection": "Claudia Cardinale in un altro mondo che cambia"
+     "connection": "Claudia Cardinale in un altro mondo che cambia",
+     "tmdbId": 335
     },
     {
      "title": "Il Divo",
      "year": 2008,
-     "connection": "Sorrentino, il potere che resta"
+     "connection": "Sorrentino, il potere che resta",
+     "tmdbId": 8832
     },
     {
      "title": "Noi credevamo",
      "year": 2010,
-     "connection": "Martone, il Risorgimento visto dal basso"
+     "connection": "Martone, il Risorgimento visto dal basso",
+     "tmdbId": 56853
     }
    ]
   },
@@ -4115,52 +4757,62 @@
     {
      "title": "Il ragazzo invisibile",
      "year": 2014,
-     "connection": "Salvatores, un altro ragazzino e un mistero"
+     "connection": "Salvatores, un altro ragazzino e un mistero",
+     "tmdbId": 303542
     },
     {
      "title": "Mediterraneo",
      "year": 1991,
-     "connection": "Salvatores, il suo film più famoso"
+     "connection": "Salvatores, il suo film più famoso",
+     "tmdbId": 38251
     },
     {
      "title": "Come Dio comanda",
      "year": 2008,
-     "connection": "Salvatores e Ammaniti di nuovo, un padre e un figlio"
+     "connection": "Salvatores e Ammaniti di nuovo, un padre e un figlio",
+     "tmdbId": 24168
     },
     {
      "title": "La mafia uccide solo d'estate",
      "year": 2013,
-     "connection": "Pif, il crimine visto da un bambino"
+     "connection": "Pif, il crimine visto da un bambino",
+     "tmdbId": 239877
     },
     {
      "title": "Nuovo Cinema Paradiso",
      "year": 1988,
-     "connection": "Un'infanzia nel Sud"
+     "connection": "Un'infanzia nel Sud",
+     "tmdbId": 11216
     },
     {
      "title": "Il ladro di bambini",
      "year": 1992,
-     "connection": "Amelio, bambini e adulti in viaggio nel Sud"
+     "connection": "Amelio, bambini e adulti in viaggio nel Sud",
+     "tmdbId": 47714
     },
     {
      "title": "Lazzaro felice",
      "year": 2018,
-     "connection": "Rohrwacher, campagna e ingiustizia"
+     "connection": "Rohrwacher, campagna e ingiustizia",
+     "tmdbId": 481432
     },
     {
      "title": "La ragazza nella nebbia",
      "year": 2017,
-     "connection": "Un paese e una scomparsa"
+     "connection": "Un paese e una scomparsa",
+     "tmdbId": 468202
     },
     {
      "title": "Io capitano",
      "year": 2023,
-     "connection": "Garrone, un ragazzo e un viaggio terribile"
+     "connection": "Garrone, un ragazzo e un viaggio terribile",
+     "tmdbId": 937746
     },
     {
      "title": "È stata la mano di Dio",
      "year": 2021,
-     "connection": "Sorrentino, un ragazzo e un dolore"
+     "connection": "Sorrentino, un ragazzo e un dolore",
+     "tmdbId": 722778
     }
    ]
   },
@@ -4178,52 +4830,62 @@
     {
      "title": "Il primo re",
      "year": 2019,
-     "connection": "Rovere, Romolo e Remo parlano protolatino"
+     "connection": "Rovere, Romolo e Remo parlano protolatino",
+     "tmdbId": 565179
     },
     {
      "title": "Lo chiamavano Jeeg Robot",
      "year": 2016,
-     "connection": "Un altro genere americano portato in Italia"
+     "connection": "Un altro genere americano portato in Italia",
+     "tmdbId": 364433
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Risi, l'Italia in macchina"
+     "connection": "Risi, l'Italia in macchina",
+     "tmdbId": 24188
     },
     {
      "title": "Non essere cattivo",
      "year": 2015,
-     "connection": "Caligari, droga e fratellanza"
+     "connection": "Caligari, droga e fratellanza",
+     "tmdbId": 359156
     },
     {
      "title": "L'incredibile storia dell'Isola delle Rose",
      "year": 2020,
-     "connection": "Sibilia, un sognatore nell'Italia degli anni Sessanta"
+     "connection": "Sibilia, un sognatore nell'Italia degli anni Sessanta",
+     "tmdbId": 636565
     },
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Virzì, una famiglia e i soldi"
+     "connection": "Virzì, una famiglia e i soldi",
+     "tmdbId": 244088
     },
     {
      "title": "La pazza gioia",
      "year": 2016,
-     "connection": "Virzì, una fuga e una seconda possibilità"
+     "connection": "Virzì, una fuga e una seconda possibilità",
+     "tmdbId": 380225
     },
     {
      "title": "Mine vaganti",
      "year": 2010,
-     "connection": "Özpetek, famiglia e verità"
+     "connection": "Özpetek, famiglia e verità",
+     "tmdbId": 40794
     },
     {
      "title": "Le otto montagne",
      "year": 2022,
-     "connection": "Un legame difficile tra due uomini"
+     "connection": "Un legame difficile tra due uomini",
+     "tmdbId": 803700
     },
     {
      "title": "Il ragazzo invisibile",
      "year": 2014,
-     "connection": "Un ragazzo che cresce in fretta"
+     "connection": "Un ragazzo che cresce in fretta",
+     "tmdbId": 303542
     }
    ]
   },
@@ -4241,52 +4903,62 @@
     {
      "title": "Lo chiamavano Jeeg Robot",
      "year": 2016,
-     "connection": "Mainetti, il suo primo film"
+     "connection": "Mainetti, il suo primo film",
+     "tmdbId": 364433
     },
     {
      "title": "La vita è bella",
      "year": 1997,
-     "connection": "Benigni, la guerra e l'invenzione"
+     "connection": "Benigni, la guerra e l'invenzione",
+     "tmdbId": 637
     },
     {
      "title": "Roma città aperta",
      "year": 1945,
-     "connection": "Rossellini, la stessa Roma occupata, vera"
+     "connection": "Rossellini, la stessa Roma occupata, vera",
+     "tmdbId": 307
     },
     {
      "title": "Il ragazzo invisibile",
      "year": 2014,
-     "connection": "Salvatores, supereroi all'italiana"
+     "connection": "Salvatores, supereroi all'italiana",
+     "tmdbId": 303542
     },
     {
      "title": "La strada",
      "year": 1954,
-     "connection": "Fellini, artisti di strada"
+     "connection": "Fellini, artisti di strada",
+     "tmdbId": 405
     },
     {
      "title": "Il racconto dei racconti - Tale of Tales",
      "year": 2015,
-     "connection": "Garrone, mostri e meraviglie"
+     "connection": "Garrone, mostri e meraviglie",
+     "tmdbId": 314405
     },
     {
      "title": "Pinocchio",
      "year": 2019,
-     "connection": "Garrone, creature e trucco"
+     "connection": "Garrone, creature e trucco",
+     "tmdbId": 413518
     },
     {
      "title": "C'è ancora domani",
      "year": 2023,
-     "connection": "Roma negli anni della guerra"
+     "connection": "Roma negli anni della guerra",
+     "tmdbId": 1026227
     },
     {
      "title": "Una giornata particolare",
      "year": 1977,
-     "connection": "Scola, Roma sotto il fascismo"
+     "connection": "Scola, Roma sotto il fascismo",
+     "tmdbId": 42229
     },
     {
      "title": "8½",
      "year": 1963,
-     "connection": "Fellini, il circo come vita"
+     "connection": "Fellini, il circo come vita",
+     "tmdbId": 422
     }
    ]
   },
@@ -4304,52 +4976,62 @@
     {
      "title": "La pazza gioia",
      "year": 2016,
-     "connection": "Virzì, Valeria Bruni Tedeschi di nuovo"
+     "connection": "Virzì, Valeria Bruni Tedeschi di nuovo",
+     "tmdbId": 380225
     },
     {
      "title": "Tutta la vita davanti",
      "year": 2008,
-     "connection": "Virzì, il lavoro precario"
+     "connection": "Virzì, il lavoro precario",
+     "tmdbId": 51917
     },
     {
      "title": "Ferie d'agosto",
      "year": 1996,
-     "connection": "Virzì, due Italie in vacanza"
+     "connection": "Virzì, due Italie in vacanza",
+     "tmdbId": 56399
     },
     {
      "title": "La prima cosa bella",
      "year": 2010,
-     "connection": "Virzì, una madre e i figli a Livorno"
+     "connection": "Virzì, una madre e i figli a Livorno",
+     "tmdbId": 36940
     },
     {
      "title": "Perfetti sconosciuti",
      "year": 2016,
-     "connection": "Segreti tra persone vicine"
+     "connection": "Segreti tra persone vicine",
+     "tmdbId": 381341
     },
     {
      "title": "La ragazza nella nebbia",
      "year": 2017,
-     "connection": "Un fatto di cronaca e un paese"
+     "connection": "Un fatto di cronaca e un paese",
+     "tmdbId": 468202
     },
     {
      "title": "Le conseguenze dell'amore",
      "year": 2004,
-     "connection": "Sorrentino, soldi e solitudine"
+     "connection": "Sorrentino, soldi e solitudine",
+     "tmdbId": 24653
     },
     {
      "title": "The Place",
      "year": 2017,
-     "connection": "Scelte e prezzi"
+     "connection": "Scelte e prezzi",
+     "tmdbId": 468198
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Risi, la società italiana in un'auto"
+     "connection": "Risi, la società italiana in un'auto",
+     "tmdbId": 24188
     },
     {
      "title": "La grande bellezza",
      "year": 2013,
-     "connection": "Sorrentino, la ricchezza vuota"
+     "connection": "Sorrentino, la ricchezza vuota",
+     "tmdbId": 179144
     }
    ]
   },
@@ -4367,52 +5049,62 @@
     {
      "title": "Come un gatto in tangenziale - Ritorno a Coccia di Morto",
      "year": 2021,
-     "connection": "Il seguito, stessa coppia"
+     "connection": "Il seguito, stessa coppia",
+     "tmdbId": 708577
     },
     {
      "title": "C'è ancora domani",
      "year": 2023,
-     "connection": "Cortellesi regista"
+     "connection": "Cortellesi regista",
+     "tmdbId": 1026227
     },
     {
      "title": "Benvenuti al sud",
      "year": 2010,
-     "connection": "Pregiudizi e incontri"
+     "connection": "Pregiudizi e incontri",
+     "tmdbId": 48415
     },
     {
      "title": "Quo vado?",
      "year": 2016,
-     "connection": "Zalone, la satira sociale"
+     "connection": "Zalone, la satira sociale",
+     "tmdbId": 374416
     },
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Virzì, due famiglie di classi diverse"
+     "connection": "Virzì, due famiglie di classi diverse",
+     "tmdbId": 244088
     },
     {
      "title": "L'ora legale",
      "year": 2017,
-     "connection": "Ficarra e Picone, satira sociale"
+     "connection": "Ficarra e Picone, satira sociale",
+     "tmdbId": 435921
     },
     {
      "title": "Tolo Tolo",
      "year": 2020,
-     "connection": "Zalone e il razzismo"
+     "connection": "Zalone e il razzismo",
+     "tmdbId": 593402
     },
     {
      "title": "Perfetti sconosciuti",
      "year": 2016,
-     "connection": "Commedia corale romana"
+     "connection": "Commedia corale romana",
+     "tmdbId": 381341
     },
     {
      "title": "Lo chiamavano Jeeg Robot",
      "year": 2016,
-     "connection": "La periferia romana"
+     "connection": "La periferia romana",
+     "tmdbId": 364433
     },
     {
      "title": "Ferie d'agosto",
      "year": 1996,
-     "connection": "Virzì, due Italie a confronto"
+     "connection": "Virzì, due Italie a confronto",
+     "tmdbId": 56399
     }
    ]
   },
@@ -4430,52 +5122,62 @@
     {
      "title": "Queimada",
      "year": 1969,
-     "connection": "Pontecorvo, Marlon Brando e una rivolta coloniale"
+     "connection": "Pontecorvo, Marlon Brando e una rivolta coloniale",
+     "tmdbId": 42617
     },
     {
      "title": "Kapò",
      "year": 1960,
-     "connection": "Pontecorvo, un campo di concentramento"
+     "connection": "Pontecorvo, un campo di concentramento",
+     "tmdbId": 45884
     },
     {
      "title": "Roma città aperta",
      "year": 1945,
-     "connection": "Rossellini, la resistenza a Roma"
+     "connection": "Rossellini, la resistenza a Roma",
+     "tmdbId": 307
     },
     {
      "title": "Paisà",
      "year": 1946,
-     "connection": "Rossellini, la guerra vista da vicino"
+     "connection": "Rossellini, la guerra vista da vicino",
+     "tmdbId": 8429
     },
     {
      "title": "Salvatore Giuliano",
      "year": 1962,
-     "connection": "Rosi, la cronaca diventa cinema"
+     "connection": "Rosi, la cronaca diventa cinema",
+     "tmdbId": 27523
     },
     {
      "title": "Le mani sulla città",
      "year": 1963,
-     "connection": "Rosi, la politica e il cemento"
+     "connection": "Rosi, la politica e il cemento",
+     "tmdbId": 58383
     },
     {
      "title": "Il caso Mattei",
      "year": 1972,
-     "connection": "Rosi, un'inchiesta filmata"
+     "connection": "Rosi, un'inchiesta filmata",
+     "tmdbId": 62382
     },
     {
      "title": "Indagine su un cittadino al di sopra di ogni sospetto",
      "year": 1970,
-     "connection": "Petri, il potere della polizia"
+     "connection": "Petri, il potere della polizia",
+     "tmdbId": 26451
     },
     {
      "title": "Giù la testa",
      "year": 1971,
-     "connection": "Leone, una rivoluzione"
+     "connection": "Leone, una rivoluzione",
+     "tmdbId": 336
     },
     {
      "title": "Io capitano",
      "year": 2023,
-     "connection": "Garrone, l'Africa e l'Europa oggi"
+     "connection": "Garrone, l'Africa e l'Europa oggi",
+     "tmdbId": 937746
     }
    ]
   },
@@ -4493,52 +5195,62 @@
     {
      "title": "Il Divo",
      "year": 2008,
-     "connection": "Sorrentino e Servillo, un altro uomo di potere silenzioso"
+     "connection": "Sorrentino e Servillo, un altro uomo di potere silenzioso",
+     "tmdbId": 8832
     },
     {
      "title": "La grande bellezza",
      "year": 2013,
-     "connection": "Sorrentino e Servillo, Roma"
+     "connection": "Sorrentino e Servillo, Roma",
+     "tmdbId": 179144
     },
     {
      "title": "L'uomo in più",
      "year": 2001,
-     "connection": "Sorrentino, il primo film, due Antonio Pisapia"
+     "connection": "Sorrentino, il primo film, due Antonio Pisapia",
+     "tmdbId": 53482
     },
     {
      "title": "Youth – La giovinezza",
      "year": 2015,
-     "connection": "Sorrentino, un albergo svizzero"
+     "connection": "Sorrentino, un albergo svizzero",
+     "tmdbId": 310593
     },
     {
      "title": "Loro",
      "year": 2018,
-     "connection": "Sorrentino e Servillo, Berlusconi"
+     "connection": "Sorrentino e Servillo, Berlusconi",
+     "tmdbId": 541660
     },
     {
      "title": "La migliore offerta",
      "year": 2013,
-     "connection": "Tornatore, un uomo solo e metodico"
+     "connection": "Tornatore, un uomo solo e metodico",
+     "tmdbId": 152742
     },
     {
      "title": "Le amiche",
      "year": 1955,
-     "connection": "Antonioni, la borghesia e la solitudine"
+     "connection": "Antonioni, la borghesia e la solitudine",
+     "tmdbId": 46979
     },
     {
      "title": "La ragazza nella nebbia",
      "year": 2017,
-     "connection": "Servillo in un altro mistero"
+     "connection": "Servillo in un altro mistero",
+     "tmdbId": 468202
     },
     {
      "title": "Il traditore",
      "year": 2019,
-     "connection": "La mafia e chi la serve"
+     "connection": "La mafia e chi la serve",
+     "tmdbId": 575452
     },
     {
      "title": "L'eclisse",
      "year": 1962,
-     "connection": "Antonioni, il vuoto dentro il benessere"
+     "connection": "Antonioni, il vuoto dentro il benessere",
+     "tmdbId": 21135
     }
    ]
   },
@@ -4556,52 +5268,62 @@
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Virzì, Valeria Bruni Tedeschi"
+     "connection": "Virzì, Valeria Bruni Tedeschi",
+     "tmdbId": 244088
     },
     {
      "title": "La prima cosa bella",
      "year": 2010,
-     "connection": "Virzì, Micaela Ramazzotti madre"
+     "connection": "Virzì, Micaela Ramazzotti madre",
+     "tmdbId": 36940
     },
     {
      "title": "Ferie d'agosto",
      "year": 1996,
-     "connection": "Virzì, le vacanze di due Italie"
+     "connection": "Virzì, le vacanze di due Italie",
+     "tmdbId": 56399
     },
     {
      "title": "Tutta la vita davanti",
      "year": 2008,
-     "connection": "Virzì, il lavoro di oggi"
+     "connection": "Virzì, il lavoro di oggi",
+     "tmdbId": 51917
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Risi, una fuga in macchina"
+     "connection": "Risi, una fuga in macchina",
+     "tmdbId": 24188
     },
     {
      "title": "C'è ancora domani",
      "year": 2023,
-     "connection": "Cortellesi, una donna che resiste"
+     "connection": "Cortellesi, una donna che resiste",
+     "tmdbId": 1026227
     },
     {
      "title": "Pane e tulipani",
      "year": 2000,
-     "connection": "Soldini, una donna che scappa dalla sua vita"
+     "connection": "Soldini, una donna che scappa dalla sua vita",
+     "tmdbId": 552
     },
     {
      "title": "Le notti di Cabiria",
      "year": 1957,
-     "connection": "Fellini, una donna fragile e ottimista"
+     "connection": "Fellini, una donna fragile e ottimista",
+     "tmdbId": 19426
     },
     {
      "title": "Mine vaganti",
      "year": 2010,
-     "connection": "Özpetek, una famiglia e le sue follie"
+     "connection": "Özpetek, una famiglia e le sue follie",
+     "tmdbId": 40794
     },
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Un viaggio comico e affettuoso"
+     "connection": "Un viaggio comico e affettuoso",
+     "tmdbId": 38286
     }
    ]
   },
@@ -4619,52 +5341,62 @@
     {
      "title": "La classe operaia va in paradiso",
      "year": 1971,
-     "connection": "Petri e Volonté, un operaio e la fabbrica"
+     "connection": "Petri e Volonté, un operaio e la fabbrica",
+     "tmdbId": 56231
     },
     {
      "title": "Todo modo",
      "year": 1976,
-     "connection": "Petri e Volonté, il potere politico"
+     "connection": "Petri e Volonté, il potere politico",
+     "tmdbId": 47096
     },
     {
      "title": "Il caso Mattei",
      "year": 1972,
-     "connection": "Rosi e Volonté, un uomo di Stato"
+     "connection": "Rosi e Volonté, un uomo di Stato",
+     "tmdbId": 62382
     },
     {
      "title": "Il Divo",
      "year": 2008,
-     "connection": "Sorrentino, il potere che si crede intoccabile"
+     "connection": "Sorrentino, il potere che si crede intoccabile",
+     "tmdbId": 8832
     },
     {
      "title": "La battaglia di Algeri",
      "year": 1966,
-     "connection": "Pontecorvo, polizia e repressione"
+     "connection": "Pontecorvo, polizia e repressione",
+     "tmdbId": 17295
     },
     {
      "title": "Sulla mia pelle",
      "year": 2018,
-     "connection": "La violenza delle istituzioni, oggi"
+     "connection": "La violenza delle istituzioni, oggi",
+     "tmdbId": 538362
     },
     {
      "title": "Il traditore",
      "year": 2019,
-     "connection": "Bellocchio, giustizia e potere"
+     "connection": "Bellocchio, giustizia e potere",
+     "tmdbId": 575452
     },
     {
      "title": "Per qualche dollaro in più",
      "year": 1965,
-     "connection": "Volonté cattivo per Leone"
+     "connection": "Volonté cattivo per Leone",
+     "tmdbId": 938
     },
     {
      "title": "Salvatore Giuliano",
      "year": 1962,
-     "connection": "Rosi, la verità nascosta dallo Stato"
+     "connection": "Rosi, la verità nascosta dallo Stato",
+     "tmdbId": 27523
     },
     {
      "title": "La ragazza nella nebbia",
      "year": 2017,
-     "connection": "Un poliziotto che costruisce un colpevole"
+     "connection": "Un poliziotto che costruisce un colpevole",
+     "tmdbId": 468202
     }
    ]
   },
@@ -4682,52 +5414,62 @@
     {
      "title": "Lo chiamavano Trinità...",
      "year": 1970,
-     "connection": "Hill e Spencer, il primo grande successo"
+     "connection": "Hill e Spencer, il primo grande successo",
+     "tmdbId": 9394
     },
     {
      "title": "...continuavano a chiamarlo Trinità",
      "year": 1971,
-     "connection": "Il seguito"
+     "connection": "Il seguito",
+     "tmdbId": 11829
     },
     {
      "title": "Pari e dispari",
      "year": 1978,
-     "connection": "Hill e Spencer, scommesse e risse"
+     "connection": "Hill e Spencer, scommesse e risse",
+     "tmdbId": 11367
     },
     {
      "title": "I due superpiedi quasi piatti",
      "year": 1977,
-     "connection": "Hill e Spencer poliziotti"
+     "connection": "Hill e Spencer poliziotti",
+     "tmdbId": 11689
     },
     {
      "title": "Lo chiamavano Bulldozer",
      "year": 1978,
-     "connection": "Bud Spencer da solo"
+     "connection": "Bud Spencer da solo",
+     "tmdbId": 11144
     },
     {
      "title": "Il mio nome è Nessuno",
      "year": 1973,
-     "connection": "Terence Hill e Henry Fonda"
+     "connection": "Terence Hill e Henry Fonda",
+     "tmdbId": 9474
     },
     {
      "title": "Dio perdona... io no!",
      "year": 1967,
-     "connection": "Il primo film della coppia"
+     "connection": "Il primo film della coppia",
+     "tmdbId": 41608
     },
     {
      "title": "Così è la vita",
      "year": 1998,
-     "connection": "Un'altra coppia comica"
+     "connection": "Un'altra coppia comica",
+     "tmdbId": 38396
     },
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Avventura comica in macchina"
+     "connection": "Avventura comica in macchina",
+     "tmdbId": 38286
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Una macchina come protagonista"
+     "connection": "Una macchina come protagonista",
+     "tmdbId": 24188
     }
    ]
   },
@@ -4745,52 +5487,62 @@
     {
      "title": "Il secondo tragico Fantozzi",
      "year": 1976,
-     "connection": "Il seguito diretto, la Corazzata Potëmkin"
+     "connection": "Il seguito diretto, la Corazzata Potëmkin",
+     "tmdbId": 37769
     },
     {
      "title": "Fantozzi contro tutti",
      "year": 1980,
-     "connection": "Il terzo film della serie"
+     "connection": "Il terzo film della serie",
+     "tmdbId": 41663
     },
     {
      "title": "Il posto",
      "year": 1961,
-     "connection": "Olmi, il primo impiego in un'azienda di Milano"
+     "connection": "Olmi, il primo impiego in un'azienda di Milano",
+     "tmdbId": 31742
     },
     {
      "title": "Quo vado?",
      "year": 2016,
-     "connection": "Zalone, l'impiegato pubblico di oggi"
+     "connection": "Zalone, l'impiegato pubblico di oggi",
+     "tmdbId": 374416
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Risi, l'italiano medio in vacanza"
+     "connection": "Risi, l'italiano medio in vacanza",
+     "tmdbId": 24188
     },
     {
      "title": "I soliti ignoti",
      "year": 1958,
-     "connection": "Monicelli, la sfortuna di gente comune"
+     "connection": "Monicelli, la sfortuna di gente comune",
+     "tmdbId": 24382
     },
     {
      "title": "Amici miei",
      "year": 1975,
-     "connection": "Monicelli, amici adulti che si divertono con scherzi crudeli"
+     "connection": "Monicelli, amici adulti che si divertono con scherzi crudeli",
+     "tmdbId": 20914
     },
     {
      "title": "La banda dei Babbi Natale",
      "year": 2010,
-     "connection": "Il trio, uomini comuni nei guai"
+     "connection": "Il trio, uomini comuni nei guai",
+     "tmdbId": 58013
     },
     {
      "title": "Il ricco, il povero e il maggiordomo",
      "year": 2014,
-     "connection": "Il trio e i soldi"
+     "connection": "Il trio e i soldi",
+     "tmdbId": 310126
     },
     {
      "title": "Benvenuti al sud",
      "year": 2010,
-     "connection": "Un impiegato delle poste"
+     "connection": "Un impiegato delle poste",
+     "tmdbId": 48415
     }
    ]
   },
@@ -4808,52 +5560,62 @@
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Il primo film del trio"
+     "connection": "Il primo film del trio",
+     "tmdbId": 38286
     },
     {
      "title": "Chiedimi se sono felice",
      "year": 2000,
-     "connection": "Il trio, il più amato"
+     "connection": "Il trio, il più amato",
+     "tmdbId": 50531
     },
     {
      "title": "Odio l'estate",
      "year": 2020,
-     "connection": "Il trio di nuovo in forma"
+     "connection": "Il trio di nuovo in forma",
+     "tmdbId": 606954
     },
     {
      "title": "Così è la vita",
      "year": 1998,
-     "connection": "Il trio in fuga"
+     "connection": "Il trio in fuga",
+     "tmdbId": 38396
     },
     {
      "title": "Fantozzi",
      "year": 1975,
-     "connection": "Il lavoro come tragedia comica"
+     "connection": "Il lavoro come tragedia comica",
+     "tmdbId": 25606
     },
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Virzì, i soldi e chi li perde"
+     "connection": "Virzì, i soldi e chi li perde",
+     "tmdbId": 244088
     },
     {
      "title": "Sole a catinelle",
      "year": 2013,
-     "connection": "Zalone e i debiti"
+     "connection": "Zalone e i debiti",
+     "tmdbId": 231176
     },
     {
      "title": "Quo vado?",
      "year": 2016,
-     "connection": "Zalone e il lavoro"
+     "connection": "Zalone e il lavoro",
+     "tmdbId": 374416
     },
     {
      "title": "Tutta la vita davanti",
      "year": 2008,
-     "connection": "Virzì, la crisi e i precari"
+     "connection": "Virzì, la crisi e i precari",
+     "tmdbId": 51917
     },
     {
      "title": "Benvenuti al Nord",
      "year": 2012,
-     "connection": "Milano e il lavoro"
+     "connection": "Milano e il lavoro",
+     "tmdbId": 85038
     }
    ]
   },
@@ -4871,52 +5633,62 @@
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Il trio al suo meglio"
+     "connection": "Il trio al suo meglio",
+     "tmdbId": 38286
     },
     {
      "title": "Così è la vita",
      "year": 1998,
-     "connection": "Il trio in fuga"
+     "connection": "Il trio in fuga",
+     "tmdbId": 38396
     },
     {
      "title": "Chiedimi se sono felice",
      "year": 2000,
-     "connection": "Il trio, amicizia e malinconia"
+     "connection": "Il trio, amicizia e malinconia",
+     "tmdbId": 50531
     },
     {
      "title": "La leggenda di Al, John e Jack",
      "year": 2002,
-     "connection": "Il trio tra i gangster"
+     "connection": "Il trio tra i gangster",
+     "tmdbId": 38397
     },
     {
      "title": "Odio l'estate",
      "year": 2020,
-     "connection": "Il ritorno del trio"
+     "connection": "Il ritorno del trio",
+     "tmdbId": 606954
     },
     {
      "title": "Tu la conosci Claudia?",
      "year": 2004,
-     "connection": "Il trio diviso in tre storie"
+     "connection": "Il trio diviso in tre storie",
+     "tmdbId": 57112
     },
     {
      "title": "La banda dei Babbi Natale",
      "year": 2010,
-     "connection": "Il trio a Natale"
+     "connection": "Il trio a Natale",
+     "tmdbId": 58013
     },
     {
      "title": "I nuovi mostri",
      "year": 1977,
-     "connection": "Risi, Monicelli e Scola, episodi comici sugli italiani"
+     "connection": "Risi, Monicelli e Scola, episodi comici sugli italiani",
+     "tmdbId": 45004
     },
     {
      "title": "L'oro di Napoli",
      "year": 1954,
-     "connection": "De Sica, un film a episodi napoletano"
+     "connection": "De Sica, un film a episodi napoletano",
+     "tmdbId": 56122
     },
     {
      "title": "Johnny Stecchino",
      "year": 1991,
-     "connection": "Benigni, commedia piena"
+     "connection": "Benigni, commedia piena",
+     "tmdbId": 12776
     }
    ]
   },
@@ -4934,52 +5706,62 @@
     {
      "title": "La strada",
      "year": 1954,
-     "connection": "Fellini e la Masina, Gelsomina"
+     "connection": "Fellini e la Masina, Gelsomina",
+     "tmdbId": 405
     },
     {
      "title": "La dolce vita",
      "year": 1960,
-     "connection": "Fellini, Roma dei ricchi"
+     "connection": "Fellini, Roma dei ricchi",
+     "tmdbId": 439
     },
     {
      "title": "Il bidone",
      "year": 1955,
-     "connection": "Fellini, truffatori e povertà"
+     "connection": "Fellini, truffatori e povertà",
+     "tmdbId": 36102
     },
     {
      "title": "I vitelloni",
      "year": 1953,
-     "connection": "Fellini, la provincia"
+     "connection": "Fellini, la provincia",
+     "tmdbId": 12548
     },
     {
      "title": "Giulietta degli spiriti",
      "year": 1965,
-     "connection": "Fellini e la Masina, una moglie e i suoi sogni"
+     "connection": "Fellini e la Masina, una moglie e i suoi sogni",
+     "tmdbId": 19120
     },
     {
      "title": "Mamma Roma",
      "year": 1962,
-     "connection": "Pasolini, un'altra donna della periferia"
+     "connection": "Pasolini, un'altra donna della periferia",
+     "tmdbId": 47796
     },
     {
      "title": "Accattone",
      "year": 1961,
-     "connection": "Pasolini, la vita di borgata"
+     "connection": "Pasolini, la vita di borgata",
+     "tmdbId": 12491
     },
     {
      "title": "La pazza gioia",
      "year": 2016,
-     "connection": "Virzì, donne fragili e speranzose"
+     "connection": "Virzì, donne fragili e speranzose",
+     "tmdbId": 380225
     },
     {
      "title": "Ladri di biciclette",
      "year": 1948,
-     "connection": "De Sica, la Roma dei poveri"
+     "connection": "De Sica, la Roma dei poveri",
+     "tmdbId": 5156
     },
     {
      "title": "Umberto D.",
      "year": 1952,
-     "connection": "De Sica, la solitudine"
+     "connection": "De Sica, la solitudine",
+     "tmdbId": 833
     }
    ]
   },
@@ -4997,52 +5779,62 @@
     {
      "title": "Non essere cattivo",
      "year": 2015,
-     "connection": "Marinelli e Borghi, un'altra amicizia"
+     "connection": "Marinelli e Borghi, un'altra amicizia",
+     "tmdbId": 359156
     },
     {
      "title": "Lazzaro felice",
      "year": 2018,
-     "connection": "Rohrwacher, la vita contadina che scompare"
+     "connection": "Rohrwacher, la vita contadina che scompare",
+     "tmdbId": 481432
     },
     {
      "title": "L'albero degli zoccoli",
      "year": 1978,
-     "connection": "Olmi, la vita contadina lombarda"
+     "connection": "Olmi, la vita contadina lombarda",
+     "tmdbId": 31542
     },
     {
      "title": "Il vento fa il suo giro",
      "year": 2005,
-     "connection": "Diritti, un pastore francese in un paese di montagna"
+     "connection": "Diritti, un pastore francese in un paese di montagna",
+     "tmdbId": 55717
     },
     {
      "title": "Io non ho paura",
      "year": 2003,
-     "connection": "Un'amicizia d'infanzia"
+     "connection": "Un'amicizia d'infanzia",
+     "tmdbId": 25300
     },
     {
      "title": "Youth – La giovinezza",
      "year": 2015,
-     "connection": "Sorrentino, amicizia e montagne"
+     "connection": "Sorrentino, amicizia e montagne",
+     "tmdbId": 310593
     },
     {
      "title": "Mediterraneo",
      "year": 1991,
-     "connection": "Un luogo lontano e la vita lenta"
+     "connection": "Un luogo lontano e la vita lenta",
+     "tmdbId": 38251
     },
     {
      "title": "Il postino",
      "year": 1994,
-     "connection": "Un'amicizia tra due mondi"
+     "connection": "Un'amicizia tra due mondi",
+     "tmdbId": 11010
     },
     {
      "title": "Nuovo Cinema Paradiso",
      "year": 1988,
-     "connection": "Un'amicizia lunga una vita"
+     "connection": "Un'amicizia lunga una vita",
+     "tmdbId": 11216
     },
     {
      "title": "La ragazza nella nebbia",
      "year": 2017,
-     "connection": "Un paese di montagna"
+     "connection": "Un paese di montagna",
+     "tmdbId": 468202
     }
    ]
   },
@@ -5060,52 +5852,62 @@
     {
      "title": "I mostri",
      "year": 1963,
-     "connection": "Risi e Gassman, episodi feroci sugli italiani"
+     "connection": "Risi e Gassman, episodi feroci sugli italiani",
+     "tmdbId": 45005
     },
     {
      "title": "Una vita difficile",
      "year": 1961,
-     "connection": "Risi, Alberto Sordi dal dopoguerra al boom"
+     "connection": "Risi, Alberto Sordi dal dopoguerra al boom",
+     "tmdbId": 56343
     },
     {
      "title": "I soliti ignoti",
      "year": 1958,
-     "connection": "Monicelli, Gassman ladro maldestro"
+     "connection": "Monicelli, Gassman ladro maldestro",
+     "tmdbId": 24382
     },
     {
      "title": "L'armata Brancaleone",
      "year": 1966,
-     "connection": "Monicelli, Gassman cavaliere"
+     "connection": "Monicelli, Gassman cavaliere",
+     "tmdbId": 23832
     },
     {
      "title": "Profumo di donna",
      "year": 1974,
-     "connection": "Risi e Gassman, un viaggio"
+     "connection": "Risi e Gassman, un viaggio",
+     "tmdbId": 47848
     },
     {
      "title": "La dolce vita",
      "year": 1960,
-     "connection": "Fellini, l'Italia del boom"
+     "connection": "Fellini, l'Italia del boom",
+     "tmdbId": 439
     },
     {
      "title": "Divorzio all'italiana",
      "year": 1961,
-     "connection": "Germi, la commedia all'italiana"
+     "connection": "Germi, la commedia all'italiana",
+     "tmdbId": 20271
     },
     {
      "title": "Tre uomini e una gamba",
      "year": 1997,
-     "connection": "Un viaggio in macchina"
+     "connection": "Un viaggio in macchina",
+     "tmdbId": 38286
     },
     {
      "title": "Ferie d'agosto",
      "year": 1996,
-     "connection": "Virzì, le vacanze degli italiani"
+     "connection": "Virzì, le vacanze degli italiani",
+     "tmdbId": 56399
     },
     {
      "title": "Il capitale umano",
      "year": 2013,
-     "connection": "Una corsa in macchina e le sue conseguenze"
+     "connection": "Una corsa in macchina e le sue conseguenze",
+     "tmdbId": 244088
     }
    ]
   },
@@ -5123,52 +5925,62 @@
     {
      "title": "Profondo rosso",
      "year": 1975,
-     "connection": "Argento, il suo giallo più famoso"
+     "connection": "Argento, il suo giallo più famoso",
+     "tmdbId": 20126
     },
     {
      "title": "Il gatto a nove code",
      "year": 1971,
-     "connection": "Argento, il secondo film"
+     "connection": "Argento, il secondo film",
+     "tmdbId": 27431
     },
     {
      "title": "4 mosche di velluto grigio",
      "year": 1971,
-     "connection": "Argento, il terzo"
+     "connection": "Argento, il terzo",
+     "tmdbId": 30689
     },
     {
      "title": "Suspiria",
      "year": 1977,
-     "connection": "Argento e l'orrore"
+     "connection": "Argento e l'orrore",
+     "tmdbId": 11906
     },
     {
      "title": "Tenebre",
      "year": 1982,
-     "connection": "Argento, uno scrittore americano a Roma di nuovo"
+     "connection": "Argento, uno scrittore americano a Roma di nuovo",
+     "tmdbId": 29702
     },
     {
      "title": "La ragazza che sapeva troppo",
      "year": 1963,
-     "connection": "Bava, il primo giallo italiano"
+     "connection": "Bava, il primo giallo italiano",
+     "tmdbId": 28041
     },
     {
      "title": "Sei donne per l'assassino",
      "year": 1964,
-     "connection": "Bava, il giallo a colori"
+     "connection": "Bava, il giallo a colori",
+     "tmdbId": 28055
     },
     {
      "title": "Non si sevizia un paperino",
      "year": 1972,
-     "connection": "Fulci, un giallo nel Sud"
+     "connection": "Fulci, un giallo nel Sud",
+     "tmdbId": 49361
     },
     {
      "title": "La ragazza nella nebbia",
      "year": 2017,
-     "connection": "Un giallo italiano di oggi"
+     "connection": "Un giallo italiano di oggi",
+     "tmdbId": 468202
     },
     {
      "title": "La migliore offerta",
      "year": 2013,
-     "connection": "Tornatore, un mistero e uno sguardo"
+     "connection": "Tornatore, un mistero e uno sguardo",
+     "tmdbId": 152742
     }
    ]
   },
@@ -5186,52 +5998,62 @@
     {
      "title": "Dogman",
      "year": 2018,
-     "connection": "Garrone, un uomo piccolo in un mondo violento"
+     "connection": "Garrone, un uomo piccolo in un mondo violento",
+     "tmdbId": 483184
     },
     {
      "title": "Gomorra",
      "year": 2008,
-     "connection": "Garrone, il crimine organizzato"
+     "connection": "Garrone, il crimine organizzato",
+     "tmdbId": 8882
     },
     {
      "title": "Pinocchio",
      "year": 2019,
-     "connection": "Garrone, un viaggio di un ragazzo"
+     "connection": "Garrone, un viaggio di un ragazzo",
+     "tmdbId": 413518
     },
     {
      "title": "Tolo Tolo",
      "year": 2020,
-     "connection": "Zalone, la stessa rotta raccontata per ridere"
+     "connection": "Zalone, la stessa rotta raccontata per ridere",
+     "tmdbId": 593402
     },
     {
      "title": "Mediterraneo",
      "year": 1991,
-     "connection": "Salvatores, il mare e chi resta"
+     "connection": "Salvatores, il mare e chi resta",
+     "tmdbId": 38251
     },
     {
      "title": "La battaglia di Algeri",
      "year": 1966,
-     "connection": "Pontecorvo, l'Africa e l'Europa"
+     "connection": "Pontecorvo, l'Africa e l'Europa",
+     "tmdbId": 17295
     },
     {
      "title": "Il ladro di bambini",
      "year": 1992,
-     "connection": "Amelio, un viaggio attraverso l'Italia"
+     "connection": "Amelio, un viaggio attraverso l'Italia",
+     "tmdbId": 47714
     },
     {
      "title": "Lamerica",
      "year": 1994,
-     "connection": "Amelio, l'Albania e il sogno italiano"
+     "connection": "Amelio, l'Albania e il sogno italiano",
+     "tmdbId": 49133
     },
     {
      "title": "Terraferma",
      "year": 2011,
-     "connection": "Crialese, pescatori e migranti a Linosa"
+     "connection": "Crialese, pescatori e migranti a Linosa",
+     "tmdbId": 73872
     },
     {
      "title": "Fuocoammare",
      "year": 2016,
-     "connection": "Rosi, un documentario su Lampedusa"
+     "connection": "Rosi, un documentario su Lampedusa",
+     "tmdbId": 377151
     }
    ]
   },
@@ -5249,52 +6071,62 @@
     {
      "title": "Le fate ignoranti",
      "year": 2001,
-     "connection": "Özpetek, un amore nascosto scoperto dopo"
+     "connection": "Özpetek, un amore nascosto scoperto dopo",
+     "tmdbId": 23550
     },
     {
      "title": "Saturno contro",
      "year": 2007,
-     "connection": "Özpetek, un gruppo di amici e un lutto"
+     "connection": "Özpetek, un gruppo di amici e un lutto",
+     "tmdbId": 22373
     },
     {
      "title": "La finestra di fronte",
      "year": 2003,
-     "connection": "Özpetek, una donna, un vecchio e un segreto"
+     "connection": "Özpetek, una donna, un vecchio e un segreto",
+     "tmdbId": 29987
     },
     {
      "title": "Benvenuti al sud",
      "year": 2010,
-     "connection": "Il Sud visto con affetto"
+     "connection": "Il Sud visto con affetto",
+     "tmdbId": 48415
     },
     {
      "title": "Il nome del figlio",
      "year": 2015,
-     "connection": "Archibugi, una famiglia a cena"
+     "connection": "Archibugi, una famiglia a cena",
+     "tmdbId": 320028
     },
     {
      "title": "Perfetti sconosciuti",
      "year": 2016,
-     "connection": "Segreti a tavola"
+     "connection": "Segreti a tavola",
+     "tmdbId": 381341
     },
     {
      "title": "Tutta colpa di Freud",
      "year": 2014,
-     "connection": "Genovese, amori complicati in famiglia"
+     "connection": "Genovese, amori complicati in famiglia",
+     "tmdbId": 250235
     },
     {
      "title": "Una giornata particolare",
      "year": 1977,
-     "connection": "Scola, un uomo gay sotto il fascismo"
+     "connection": "Scola, un uomo gay sotto il fascismo",
+     "tmdbId": 42229
     },
     {
      "title": "La pazza gioia",
      "year": 2016,
-     "connection": "Virzì, famiglie e libertà"
+     "connection": "Virzì, famiglie e libertà",
+     "tmdbId": 380225
     },
     {
      "title": "Cado dalle nubi",
      "year": 2009,
-     "connection": "Zalone, la Puglia"
+     "connection": "Zalone, la Puglia",
+     "tmdbId": 35554
     }
    ]
   },
@@ -5312,52 +6144,62 @@
     {
      "title": "Notte prima degli esami",
      "year": 2006,
-     "connection": "Brizzi, la maturità vista dai diciottenni"
+     "connection": "Brizzi, la maturità vista dai diciottenni",
+     "tmdbId": 33365
     },
     {
      "title": "Perfetti sconosciuti",
      "year": 2016,
-     "connection": "Genovese, amici a cena"
+     "connection": "Genovese, amici a cena",
+     "tmdbId": 381341
     },
     {
      "title": "Tutta colpa di Freud",
      "year": 2014,
-     "connection": "Genovese, amori e figlie"
+     "connection": "Genovese, amori e figlie",
+     "tmdbId": 250235
     },
     {
      "title": "The Place",
      "year": 2017,
-     "connection": "Genovese, desideri e prezzi"
+     "connection": "Genovese, desideri e prezzi",
+     "tmdbId": 468198
     },
     {
      "title": "L'ultimo bacio",
      "year": 2001,
-     "connection": "Muccino, la paura di crescere"
+     "connection": "Muccino, la paura di crescere",
+     "tmdbId": 12308
     },
     {
      "title": "Smetto quando voglio",
      "year": 2014,
-     "connection": "Ex compagni laureati e disoccupati"
+     "connection": "Ex compagni laureati e disoccupati",
+     "tmdbId": 250219
     },
     {
      "title": "Chiedimi se sono felice",
      "year": 2000,
-     "connection": "Amici che si ritrovano"
+     "connection": "Amici che si ritrovano",
+     "tmdbId": 50531
     },
     {
      "title": "Compagni di scuola",
      "year": 1988,
-     "connection": "Verdone, una festa di ex compagni quindici anni dopo"
+     "connection": "Verdone, una festa di ex compagni quindici anni dopo",
+     "tmdbId": 56825
     },
     {
      "title": "Ecce bombo",
      "year": 1978,
-     "connection": "Moretti, giovani adulti romani"
+     "connection": "Moretti, giovani adulti romani",
+     "tmdbId": 48282
     },
     {
      "title": "La terrazza",
      "year": 1980,
-     "connection": "Scola, amici di mezza età"
+     "connection": "Scola, amici di mezza età",
+     "tmdbId": 77334
     }
    ]
   },
@@ -5375,52 +6217,62 @@
     {
      "title": "L'armata Brancaleone",
      "year": 1966,
-     "connection": "Monicelli e Gassman, un Medioevo comico"
+     "connection": "Monicelli e Gassman, un Medioevo comico",
+     "tmdbId": 23832
     },
     {
      "title": "Amici miei",
      "year": 1975,
-     "connection": "Monicelli, scherzi tra amici"
+     "connection": "Monicelli, scherzi tra amici",
+     "tmdbId": 20914
     },
     {
      "title": "La grande guerra",
      "year": 1959,
-     "connection": "Monicelli, Gassman e Sordi soldati"
+     "connection": "Monicelli, Gassman e Sordi soldati",
+     "tmdbId": 55823
     },
     {
      "title": "Il sorpasso",
      "year": 1962,
-     "connection": "Risi e Gassman"
+     "connection": "Risi e Gassman",
+     "tmdbId": 24188
     },
     {
      "title": "Smetto quando voglio",
      "year": 2014,
-     "connection": "Sibilia, una banda di dilettanti oggi"
+     "connection": "Sibilia, una banda di dilettanti oggi",
+     "tmdbId": 250219
     },
     {
      "title": "Audace colpo dei soliti ignoti",
      "year": 1959,
-     "connection": "Il seguito diretto"
+     "connection": "Il seguito diretto",
+     "tmdbId": 62036
     },
     {
      "title": "Johnny Stecchino",
      "year": 1991,
-     "connection": "Benigni e il crimine per ridere"
+     "connection": "Benigni e il crimine per ridere",
+     "tmdbId": 12776
     },
     {
      "title": "Ladri di biciclette",
      "year": 1948,
-     "connection": "De Sica, la povertà romana"
+     "connection": "De Sica, la povertà romana",
+     "tmdbId": 5156
     },
     {
      "title": "La leggenda di Al, John e Jack",
      "year": 2002,
-     "connection": "Criminali da ridere"
+     "connection": "Criminali da ridere",
+     "tmdbId": 38397
     },
     {
      "title": "Lo chiamavano Trinità...",
      "year": 1970,
-     "connection": "Due compari maldestri"
+     "connection": "Due compari maldestri",
+     "tmdbId": 9394
     }
    ]
   },
@@ -5438,52 +6290,62 @@
     {
      "title": "È stata la mano di Dio",
      "year": 2021,
-     "connection": "Sorrentino, la sua giovinezza a Napoli"
+     "connection": "Sorrentino, la sua giovinezza a Napoli",
+     "tmdbId": 722778
     },
     {
      "title": "La grande bellezza",
      "year": 2013,
-     "connection": "Sorrentino, Roma e il tempo"
+     "connection": "Sorrentino, Roma e il tempo",
+     "tmdbId": 179144
     },
     {
      "title": "Youth – La giovinezza",
      "year": 2015,
-     "connection": "Sorrentino, la vecchiaia"
+     "connection": "Sorrentino, la vecchiaia",
+     "tmdbId": 310593
     },
     {
      "title": "L'oro di Napoli",
      "year": 1954,
-     "connection": "De Sica, Napoli in episodi"
+     "connection": "De Sica, Napoli in episodi",
+     "tmdbId": 56122
     },
     {
      "title": "Ieri, oggi, domani",
      "year": 1963,
-     "connection": "De Sica, Sophia Loren a Napoli"
+     "connection": "De Sica, Sophia Loren a Napoli",
+     "tmdbId": 42801
     },
     {
      "title": "Malèna",
      "year": 2000,
-     "connection": "Tornatore, una donna bellissima guardata da tutti"
+     "connection": "Tornatore, una donna bellissima guardata da tutti",
+     "tmdbId": 10867
     },
     {
      "title": "La dolce vita",
      "year": 1960,
-     "connection": "Fellini, la bellezza e il vuoto"
+     "connection": "Fellini, la bellezza e il vuoto",
+     "tmdbId": 439
     },
     {
      "title": "Le conseguenze dell'amore",
      "year": 2004,
-     "connection": "Sorrentino, il suo stile all'inizio"
+     "connection": "Sorrentino, il suo stile all'inizio",
+     "tmdbId": 24653
     },
     {
      "title": "Amarcord",
      "year": 1973,
-     "connection": "Fellini, la memoria"
+     "connection": "Fellini, la memoria",
+     "tmdbId": 7857
     },
     {
      "title": "Ricomincio da tre",
      "year": 1981,
-     "connection": "Troisi, la Napoli dei giovani"
+     "connection": "Troisi, la Napoli dei giovani",
+     "tmdbId": 13386
     }
    ]
   },
@@ -5501,52 +6363,62 @@
     {
      "title": "Pinocchio",
      "year": 2019,
-     "connection": "Garrone, il Pinocchio più fedele, con Benigni Geppetto"
+     "connection": "Garrone, il Pinocchio più fedele, con Benigni Geppetto",
+     "tmdbId": 413518
     },
     {
      "title": "Le avventure di Pinocchio",
      "year": 1972,
-     "connection": "Comencini, il Pinocchio della televisione"
+     "connection": "Comencini, il Pinocchio della televisione",
+     "tmdbId": 58451
     },
     {
      "title": "La vita è bella",
      "year": 1997,
-     "connection": "Benigni al suo meglio"
+     "connection": "Benigni al suo meglio",
+     "tmdbId": 637
     },
     {
      "title": "Johnny Stecchino",
      "year": 1991,
-     "connection": "Benigni comico"
+     "connection": "Benigni comico",
+     "tmdbId": 12776
     },
     {
      "title": "Il mostro",
      "year": 1994,
-     "connection": "Benigni e gli equivoci"
+     "connection": "Benigni e gli equivoci",
+     "tmdbId": 22826
     },
     {
      "title": "Non ci resta che piangere",
      "year": 1984,
-     "connection": "Benigni e Troisi"
+     "connection": "Benigni e Troisi",
+     "tmdbId": 27670
     },
     {
      "title": "Il racconto dei racconti - Tale of Tales",
      "year": 2015,
-     "connection": "Garrone, favole antiche"
+     "connection": "Garrone, favole antiche",
+     "tmdbId": 314405
     },
     {
      "title": "Il piccolo diavolo",
      "year": 1988,
-     "connection": "Benigni diavoletto"
+     "connection": "Benigni diavoletto",
+     "tmdbId": 43645
     },
     {
      "title": "Freaks Out",
      "year": 2021,
-     "connection": "Mainetti, la favola moderna"
+     "connection": "Mainetti, la favola moderna",
+     "tmdbId": 571468
     },
     {
      "title": "Lazzaro felice",
      "year": 2018,
-     "connection": "Rohrwacher, una favola di oggi"
+     "connection": "Rohrwacher, una favola di oggi",
+     "tmdbId": 481432
     }
    ]
   },
@@ -5564,52 +6436,62 @@
     {
      "title": "Le meraviglie",
      "year": 2014,
-     "connection": "Rohrwacher, una famiglia di apicoltori"
+     "connection": "Rohrwacher, una famiglia di apicoltori",
+     "tmdbId": 265226
     },
     {
      "title": "La chimera",
      "year": 2023,
-     "connection": "Rohrwacher, tombaroli etruschi"
+     "connection": "Rohrwacher, tombaroli etruschi",
+     "tmdbId": 837335
     },
     {
      "title": "L'albero degli zoccoli",
      "year": 1978,
-     "connection": "Olmi, i contadini lombardi"
+     "connection": "Olmi, i contadini lombardi",
+     "tmdbId": 31542
     },
     {
      "title": "La strada",
      "year": 1954,
-     "connection": "Fellini, un'anima innocente"
+     "connection": "Fellini, un'anima innocente",
+     "tmdbId": 405
     },
     {
      "title": "Miracolo a Milano",
      "year": 1951,
-     "connection": "De Sica, una favola tra i poveri"
+     "connection": "De Sica, una favola tra i poveri",
+     "tmdbId": 43379
     },
     {
      "title": "Le otto montagne",
      "year": 2022,
-     "connection": "La vita contadina che scompare"
+     "connection": "La vita contadina che scompare",
+     "tmdbId": 803700
     },
     {
      "title": "Pinocchio",
      "year": 2019,
-     "connection": "Garrone, la favola e la povertà"
+     "connection": "Garrone, la favola e la povertà",
+     "tmdbId": 413518
     },
     {
      "title": "Il racconto dei racconti - Tale of Tales",
      "year": 2015,
-     "connection": "Garrone, il fantastico italiano"
+     "connection": "Garrone, il fantastico italiano",
+     "tmdbId": 314405
     },
     {
      "title": "Il vangelo secondo Matteo",
      "year": 1964,
-     "connection": "Pasolini, il sacro con attori presi dalla strada"
+     "connection": "Pasolini, il sacro con attori presi dalla strada",
+     "tmdbId": 24192
     },
     {
      "title": "Io non ho paura",
      "year": 2003,
-     "connection": "La campagna e i suoi segreti"
+     "connection": "La campagna e i suoi segreti",
+     "tmdbId": 25300
     }
    ]
   },
@@ -5627,52 +6509,62 @@
     {
      "title": "Novecento",
      "year": 1976,
-     "connection": "Bertolucci, il fascismo in Emilia"
+     "connection": "Bertolucci, il fascismo in Emilia",
+     "tmdbId": 3870
     },
     {
      "title": "Ultimo tango a Parigi",
      "year": 1972,
-     "connection": "Bertolucci subito dopo, Parigi"
+     "connection": "Bertolucci subito dopo, Parigi",
+     "tmdbId": 1643
     },
     {
      "title": "Il giardino dei Finzi-Contini",
      "year": 1970,
-     "connection": "De Sica, la borghesia sotto le leggi razziali"
+     "connection": "De Sica, la borghesia sotto le leggi razziali",
+     "tmdbId": 4789
     },
     {
      "title": "Una giornata particolare",
      "year": 1977,
-     "connection": "Scola, il fascismo e un uomo diverso"
+     "connection": "Scola, il fascismo e un uomo diverso",
+     "tmdbId": 42229
     },
     {
      "title": "Il gattopardo",
      "year": 1963,
-     "connection": "Visconti, una classe che si adatta"
+     "connection": "Visconti, una classe che si adatta",
+     "tmdbId": 1040
     },
     {
      "title": "Amarcord",
      "year": 1973,
-     "connection": "Fellini, il fascismo di provincia"
+     "connection": "Fellini, il fascismo di provincia",
+     "tmdbId": 7857
     },
     {
      "title": "Indagine su un cittadino al di sopra di ogni sospetto",
      "year": 1970,
-     "connection": "Petri, il potere e la colpa"
+     "connection": "Petri, il potere e la colpa",
+     "tmdbId": 26451
     },
     {
      "title": "La notte",
      "year": 1961,
-     "connection": "Antonioni, la borghesia e il vuoto"
+     "connection": "Antonioni, la borghesia e il vuoto",
+     "tmdbId": 41050
     },
     {
      "title": "Vincere",
      "year": 2009,
-     "connection": "Bellocchio, Mussolini"
+     "connection": "Bellocchio, Mussolini",
+     "tmdbId": 30239
     },
     {
      "title": "La strategia del ragno",
      "year": 1970,
-     "connection": "Bertolucci, un figlio indaga sul padre antifascista"
+     "connection": "Bertolucci, un figlio indaga sul padre antifascista",
+     "tmdbId": 42595
     }
    ]
   },
@@ -5690,52 +6582,62 @@
     {
      "title": "Quo vado?",
      "year": 2016,
-     "connection": "Zalone, gli italiani e il posto fisso"
+     "connection": "Zalone, gli italiani e il posto fisso",
+     "tmdbId": 374416
     },
     {
      "title": "La mafia uccide solo d'estate",
      "year": 2013,
-     "connection": "Pif, la Sicilia raccontata con ironia"
+     "connection": "Pif, la Sicilia raccontata con ironia",
+     "tmdbId": 239877
     },
     {
      "title": "Benvenuti al sud",
      "year": 2010,
-     "connection": "Il Sud e i pregiudizi"
+     "connection": "Il Sud e i pregiudizi",
+     "tmdbId": 48415
     },
     {
      "title": "Johnny Stecchino",
      "year": 1991,
-     "connection": "Benigni in Sicilia"
+     "connection": "Benigni in Sicilia",
+     "tmdbId": 12776
     },
     {
      "title": "Il traditore",
      "year": 2019,
-     "connection": "Bellocchio, la Sicilia e la legge"
+     "connection": "Bellocchio, la Sicilia e la legge",
+     "tmdbId": 575452
     },
     {
      "title": "Divorzio all'italiana",
      "year": 1961,
-     "connection": "Germi, satira su un paese siciliano"
+     "connection": "Germi, satira su un paese siciliano",
+     "tmdbId": 20271
     },
     {
      "title": "Sedotta e abbandonata",
      "year": 1964,
-     "connection": "Germi, l'onore in Sicilia"
+     "connection": "Germi, l'onore in Sicilia",
+     "tmdbId": 42790
     },
     {
      "title": "Il giorno della civetta",
      "year": 1968,
-     "connection": "Damiani, la mafia di paese"
+     "connection": "Damiani, la mafia di paese",
+     "tmdbId": 58658
     },
     {
      "title": "Come un gatto in tangenziale",
      "year": 2017,
-     "connection": "Milani, satira sociale"
+     "connection": "Milani, satira sociale",
+     "tmdbId": 492282
     },
     {
      "title": "Tolo Tolo",
      "year": 2020,
-     "connection": "Zalone, satira e furbizie"
+     "connection": "Zalone, satira e furbizie",
+     "tmdbId": 593402
     }
    ]
   }

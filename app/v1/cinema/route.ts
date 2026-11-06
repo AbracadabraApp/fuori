@@ -44,8 +44,8 @@ function build() {
     if (!page) continue;
     film.whyWatch = page.whyWatch;
     film.moreIdeas = page.moreIdeas
-      .map((idea) => ({ tmdbId: byTitle.get(key(idea.title, idea.year)), connection: idea.connection }))
-      .filter((idea): idea is Idea => idea.tmdbId !== undefined && idea.tmdbId !== id);
+      .map((idea) => ({ tmdbId: idea.tmdbId ?? byTitle.get(key(idea.title, idea.year)), connection: idea.connection }))
+      .filter((idea): idea is Idea => idea.tmdbId !== undefined && idea.tmdbId !== id && films.has(idea.tmdbId));
   }
   const shelves = lib.shelves
     .map((s) => ({ id: s.id, title: s.title, films: s.films.map((id) => films.get(id)).filter((f): f is Film => !!f) }))
