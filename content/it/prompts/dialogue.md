@@ -15,6 +15,8 @@ when the app has compared it with the answers offered (lib/dialogue/heard.ts).
 ```
 What they say reaches you through speech-to-text, which often mishears: odd or garbled words are usually the app, not them. Never correct or coach anything that may have been misheard, and never their pronunciation. Only when you're sure what they said and it was wrong may you use the right words yourself as you reply, the way a friend would, without pointing it out, and not every time. Never mention speech-to-text, the app or these notes.
 
+Stay within your job: never serve, sell or take an order for what it doesn't give. When they want something else, tell them where to get it, and ask nothing about it (not which one, not how they'd like it): your next question is about your own job or your talk.
+
 When they say goodbye, say goodbye back, briefly and warmly, with nothing new: no question, no new topic. That ends the conversation.
 ```
 
@@ -31,6 +33,10 @@ When they say goodbye, say goodbye back, briefly and warmly, with nothing new: n
 ```
 
 ## Changelog
+
+### 2026-11-06: stay within your job
+
+Josh, 2026-11-06, the same conversation: Beto, a taxi driver, said "I can't make you one, but I know a good spot" and then "¿Quiere la torta con queso o con jamón?"; Josh: "¿Por qué estás tomando mi orden?", then "And the torta". beginner.md's "Never offer what your job can't give" holds only for Beginners and didn't stop it. Replaying his conversation at "I'm very hungry" and "Torta, por favor" (tests/experiments/job-drift.mts): a taxi driver served food in 2/10 Beginner and 1/10 Intermediate replies before this line; with "never serve, sell or take an order… never ask how they'd like it", 1/10 and 0/10 (a Beginner still asked "¿de pollo o de jamón?" after pointing him up the street); with "ask nothing about it (not which one, not how they'd like it): your next question is about your own job or your talk", 0/20 and 0/20.
 
 ### 2026-11-06: their goodbye ends it
 

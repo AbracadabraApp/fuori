@@ -87,4 +87,4 @@ Josh: "The Palio guy is a good bad example. Check Jenn's transcript"; "Cultural 
 
 ## Beto, San Miguel (Josh, 2026-11-06, Beginner S2): "Many conversation issues"
 - **His goodbye didn't end it (fixed 2026-11-06).** Five goodbyes; each time Beto said goodbye back, then "¿Quiere escuchar a los mariachis?", "¿De dónde es?". Now the reply carries done, he says goodbye with nothing new, and the screen closes (dialogue.md 2026-11-06, `tests/experiments/goodbye-done.mts`).
-- **A taxi driver took a torta order.** "I can't make you one, but I know a good spot… ¿Quiere la torta con queso o con jamón?"; Josh: "¿Por qué estás tomando mi orden?". beginner.md already says "Never offer what your job can't give". Being worked on next.
+- **A taxi driver took a torta order.** "I can't make you one, but I know a good spot… ¿Quiere la torta con queso o con jamón?"; Josh: "¿Por qué estás tomando mi orden?". Fixed 2026-11-06: dialogue.md "Stay within your job" (served food 2/10 and 1/10 before, 0/20 and 0/20 after; `tests/experiments/job-drift.mts`).
