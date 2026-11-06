@@ -35,22 +35,13 @@ struct PersonView: View {
                         .padding(.horizontal, Tokens.Space.gutter)
                         .padding(.top, 8)
                 }
-                VStack(spacing: 8) {
-                    // A food place's menu at the top of the picture (MenuBoard)
-                    if let menu = model.place.menu, !menu.isEmpty {
-                        MenuBoard(items: menu, title: appModel.content?.language.ui.menu, speechLanguage: model.speechLanguage)
-                            .padding(.horizontal, Tokens.Space.gutter)
-                            .padding(.top, 12)
-                    }
-                    // Over the portrait; when it doesn't fit (the largest text
-                    // sizes), it scrolls from the bottom, and the portrait stays put
-                    ViewThatFits(in: .vertical) {
-                        overlay
-                        ScrollView { overlay }
-                            .defaultScrollAnchor(.bottom)
-                            .scrollIndicators(.hidden)
-                    }
-                    .frame(maxHeight: .infinity, alignment: .bottom)
+                // Over the portrait; when it doesn't fit (the largest text
+                // sizes), it scrolls from the bottom, and the portrait stays put
+                ViewThatFits(in: .vertical) {
+                    overlay
+                    ScrollView { overlay }
+                        .defaultScrollAnchor(.bottom)
+                        .scrollIndicators(.hidden)
                 }
             }
         }
