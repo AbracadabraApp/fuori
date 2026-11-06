@@ -66,6 +66,14 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-05: food culture chips merged and live; laptop storage cleared (laptop session)
+
+- **Food chips** (branch `claude/food-chips` from the cloud session, merged as 11ec6cc, live on both services; Learn sets 6 → 10). Italy: Osteria, trattoria, ristorante · How a meal goes · Slow food · DOP and DOC. Mexico: Fonda, puesto, restaurante · Comida corrida · Why tortillas use lime · Mezcal's own origin label (Josh, asked about Mezcal given no alcohol elsewhere: "merge all eight").
+- **Checked:** `test:culture` (31 / 10 Italy, 21 / 10 Mexico), tsc. One new chip played end to end as a fresh Beginner on a local server for each country (Siena osteria; San Miguel fonda): facts kept, both words came through, the story in English, done on turn 3. Learn page in the simulator via `scripts/sim-learner.mts`: ten gem chips sprinkled in both countries, culture not in "N of M", nothing clipped at AX5 (Mexico). Production `/v1/content` serves 10 chips each; logs clean.
+- **Found:** `deploy:wait` needs a Railway-linked folder (a new worktree isn't; run it from `~/fuori`), and macOS has no `timeout`. A local `next dev` won't run with a symlinked `node_modules` (Turbopack), so a worktree needs its own `npm ci`. Two dev servers in one folder share `.next`: run one country at a time.
+- **Laptop disk** (Josh): 193 MB → 30 GB free. Dev caches, simulators, old Node, old projects' `node_modules`, Spotify cache, `.flashcards-tmp` (decks were already uploaded; city art tests), `style-test/`, the moviegenius daily backup job (one snapshot kept in `~/.git-backups`), iCloud's stale cache pieces and an 11 GB screen recording.
+- **Open:** full A1 flashcard decks are item 10 in `docs/n6-release-plan.md`, waiting on Josh's go.
+
 ## 2026-11-05: day and weather, station sellers, garbled replies repaired, the iPhone station (laptop session)
 
 - **Day and month (cloud branch claude/today-line, merged 41552cc):** every character's setting ends "It's Thursday, in November." on the country's clock. Conversation test: mentioned naturally in about half the Italian conversations, no invented events. Both smoke tests passed.
