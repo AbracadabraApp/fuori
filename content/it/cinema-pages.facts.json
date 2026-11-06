@@ -1,0 +1,1030 @@
+{
+ "checked": 2101,
+ "failed": [
+  {
+   "id": "336:idea:7",
+   "pass": false,
+   "doubts": [
+    "il western all'italiana più violento"
+   ],
+   "text": "Django (1966), suggested to someone who liked Giù la testa (1971): Corbucci, il western all'italiana più violento"
+  },
+  {
+   "id": "422:idea:6",
+   "pass": false,
+   "doubts": [
+    "erede dichiarato"
+   ],
+   "text": "La grande bellezza (2013), suggested to someone who liked 8½ (1963): Sorrentino, un altro uomo che non crea più, erede dichiarato"
+  },
+  {
+   "id": "552:idea:5",
+   "pass": false,
+   "doubts": [
+    "Il vento fa il suo giro (2006)"
+   ],
+   "text": "Il vento fa il suo giro (2006), suggested to someone who liked Pane e tulipani (2000): Una vita nuova altrove"
+  },
+  {
+   "id": "938:idea:2",
+   "pass": false,
+   "doubts": [
+    "Leone e un altro carillon, ancora una vendetta"
+   ],
+   "text": "C'era una volta il West (1968), suggested to someone who liked Per qualche dollaro in più (1965): Leone e un altro carillon, ancora una vendetta"
+  },
+  {
+   "id": "1040:why",
+   "pass": false,
+   "doubts": [
+    "Il ballo finale dura quasi un'ora."
+   ],
+   "text": "About the film Il gattopardo (1963): Burt Lancaster, principe che vede finire un mondo. Il ballo finale dura quasi un'ora. Claudia Cardinale e Alain Delon giovanissimi. Sicilia, 1860: arrivano i garibaldini, e il principe di Salina capisce che la sua classe deve adattarsi per sopravvivere. Suo nipote Tancredi sposa la figlia di un nuovo ricco. Visconti dal romanzo di Tomasi di Lampedusa, Palma d'oro a Cannes."
+  },
+  {
+   "id": "1040:idea:5",
+   "pass": false,
+   "doubts": [
+    "Il conformista (1971)"
+   ],
+   "text": "Il conformista (1971), suggested to someone who liked Il gattopardo (1963): Bertolucci, la borghesia sotto il fascismo"
+  },
+  {
+   "id": "3870:why",
+   "pass": false,
+   "doubts": [
+    "Robert De Niro e Gérard Depardieu nati lo stesso giorno."
+   ],
+   "text": "About the film Novecento (1976): Robert De Niro e Gérard Depardieu nati lo stesso giorno. Mezzo secolo d'Italia in Emilia. Più di cinque ore, in due atti. Alfredo è figlio del padrone, Olmo di un bracciante: nascono nel 1901 nella stessa tenuta e restano legati fino al 1945. Intorno a loro scioperi, fascismo, guerra e liberazione. Bernardo Bertolucci, epico e politico, con Donald Sutherland fascista feroce."
+  },
+  {
+   "id": "3870:idea:0",
+   "pass": false,
+   "doubts": [
+    "Il conformista (1971)"
+   ],
+   "text": "Il conformista (1971), suggested to someone who liked Novecento (1976): Bertolucci, la borghesia e il fascismo"
+  },
+  {
+   "id": "4789:idea:1",
+   "pass": false,
+   "doubts": [
+    "Il conformista (1971)"
+   ],
+   "text": "Il conformista (1971), suggested to someone who liked Il giardino dei Finzi Contini (1970): Bertolucci, la borghesia sotto il fascismo"
+  },
+  {
+   "id": "5156:idea:0",
+   "pass": false,
+   "doubts": [
+    "attori quasi tutti veri"
+   ],
+   "text": "Roma città aperta (1945), suggested to someone who liked Ladri di biciclette (1948): Rossellini apre il neorealismo, Roma occupata e attori quasi tutti veri"
+  },
+  {
+   "id": "6916:why",
+   "pass": false,
+   "doubts": [
+    "Due piloti vincono a pari merito una dune buggy rossa e gialla, ma gli scagnozzi di un costruttore la distruggono."
+   ],
+   "text": "About the film ...altrimenti ci arrabbiamo! (1974): Hill e Spencer vogliono la loro dune buggy. La canzone degli Oliver Onions. Pugni a ritmo, nessuno si fa male. Due piloti vincono a pari merito una dune buggy rossa e gialla, ma gli scagnozzi di un costruttore la distruggono. Pretendono una macchina nuova, altrimenti si arrabbiano. Un film per famiglie, tutto risse e inseguimenti."
+  },
+  {
+   "id": "6916:idea:0",
+   "pass": false,
+   "doubts": [
+    "il primo grande successo"
+   ],
+   "text": "Lo chiamavano Trinità... (1970), suggested to someone who liked ...altrimenti ci arrabbiamo! (1974): Hill e Spencer, il primo grande successo"
+  },
+  {
+   "id": "6916:idea:7",
+   "pass": false,
+   "doubts": [
+    "Un'altra coppia comica"
+   ],
+   "text": "Così è la vita (1998), suggested to someone who liked ...altrimenti ci arrabbiamo! (1974): Un'altra coppia comica"
+  },
+  {
+   "id": "7857:idea:0",
+   "pass": false,
+   "doubts": [
+    "gli stessi luoghi vent'anni dopo"
+   ],
+   "text": "I vitelloni (1953), suggested to someone who liked Amarcord (1973): Fellini, gli stessi luoghi vent'anni dopo, giovani che non crescono"
+  },
+  {
+   "id": "8422:idea:0",
+   "pass": false,
+   "doubts": [
+    "il suo film più grande"
+   ],
+   "text": "Il gattopardo (1963), suggested to someone who liked Rocco e i suoi fratelli (1960): Visconti, il suo film più grande"
+  },
+  {
+   "id": "8765:idea:3",
+   "pass": false,
+   "doubts": [
+    "Lo chiamavano Jeeg Robot (2016)"
+   ],
+   "text": "Lo chiamavano Jeeg Robot (2016), suggested to someone who liked Nirvana (1997): Un genere americano rifatto in Italia"
+  },
+  {
+   "id": "8882:why",
+   "pass": false,
+   "doubts": [
+    "Garrone filma senza musica e senza eroi"
+   ],
+   "text": "About the film Gomorra (2008): Cinque storie dentro la camorra di Scampia. Attori veri del posto, dialetto stretto. Dal libro di Roberto Saviano. Due ragazzi che giocano ai gangster, un sarto, un contabile della camorra, un ragazzino e i rifiuti tossici della provincia di Caserta. Garrone filma senza musica e senza eroi. Gran premio della giuria a Cannes."
+  },
+  {
+   "id": "9394:idea:3",
+   "pass": false,
+   "doubts": [
+    "cori di cattivi"
+   ],
+   "text": "...altrimenti ci arrabbiamo! (1974), suggested to someone who liked Lo chiamavano Trinità... (1970): Hill e Spencer, una dune buggy e cori di cattivi"
+  },
+  {
+   "id": "9394:idea:8",
+   "pass": false,
+   "doubts": [
+    "il western all'italiana più cupo"
+   ],
+   "text": "Django (1966), suggested to someone who liked Lo chiamavano Trinità... (1970): Corbucci, il western all'italiana più cupo"
+  },
+  {
+   "id": "10772:why",
+   "pass": false,
+   "doubts": [
+    "Sergio Corbucci, il western più violento."
+   ],
+   "text": "About the film Django (1966): Franco Nero trascina una bara nel fango. Sergio Corbucci, il western più violento. Ha ispirato decine di imitazioni. Un ex soldato arriva in una città di confine piena di fango con una bara dietro di sé, in mezzo a una guerra tra razzisti incappucciati e banditi messicani. Corbucci fa un western cupo e sporco. Tarantino lo cita in Django Unchained."
+  },
+  {
+   "id": "10772:idea:2",
+   "pass": false,
+   "doubts": [
+    "il western all'italiana più famoso"
+   ],
+   "text": "Il buono, il brutto, il cattivo (1966), suggested to someone who liked Django (1966): Leone, il western all'italiana più famoso"
+  },
+  {
+   "id": "11144:why",
+   "pass": false,
+   "doubts": [
+    "Una partita contro i marines a Livorno.",
+    "ora fa il pescatore a Livorno"
+   ],
+   "text": "About the film Lo chiamavano Bulldozer (1978): Bud Spencer, ex campione di football americano. Una partita contro i marines a Livorno. Pugni e gentilezza. Bulldozer, un tempo campione di football americano, ora fa il pescatore a Livorno. Un gruppo di ragazzi del quartiere gli chiede di allenarli per una partita contro i soldati americani della base. Michele Lupo, per famiglie."
+  },
+  {
+   "id": "11367:why",
+   "pass": false,
+   "doubts": [
+    "Un ufficiale di marina viene mandato a smascherare un boss delle scommesse, e per farlo deve convincere il fratellastro, ex campione di carte, a tornare a giocare."
+   ],
+   "text": "About the film Pari e dispari (1978): Terence Hill e Bud Spencer fratelli a Miami. Scommesse, partite e pugni. Bud Spencer camionista e giocatore. Un ufficiale di marina viene mandato a smascherare un boss delle scommesse, e per farlo deve convincere il fratellastro, ex campione di carte, a tornare a giocare. Sergio Corbucci dirige la coppia in una commedia d'azione per tutti."
+  },
+  {
+   "id": "11367:idea:8",
+   "pass": false,
+   "doubts": [
+    "Una coppia in fuga"
+   ],
+   "text": "Così è la vita (1998), suggested to someone who liked Pari e dispari (1978): Una coppia in fuga"
+  },
+  {
+   "id": "11689:why",
+   "pass": false,
+   "doubts": [
+    "Due disoccupati si arruolano in polizia per errore e vengono mandati insieme per le strade di Miami contro una banda di falsari."
+   ],
+   "text": "About the film I due superpiedi quasi piatti (1977): Terence Hill e Bud Spencer poliziotti a Miami. Infiltrati per caso nella polizia. Pugni, inseguimenti e risate. Due disoccupati si arruolano in polizia per errore e vengono mandati insieme per le strade di Miami contro una banda di falsari. Diretto da E.B. Clucher, uno dei loro film più amati fuori dal western."
+  },
+  {
+   "id": "11689:idea:5",
+   "pass": false,
+   "doubts": [
+    "Un poliziotto e un detenuto in fuga"
+   ],
+   "text": "Così è la vita (1998), suggested to someone who liked I due superpiedi quasi piatti (1977): Un poliziotto e un detenuto in fuga"
+  },
+  {
+   "id": "11689:idea:8",
+   "pass": false,
+   "doubts": [
+    "Zalone guardia per sbaglio"
+   ],
+   "text": "Che bella giornata (2011), suggested to someone who liked I due superpiedi quasi piatti (1977): Zalone guardia per sbaglio"
+  },
+  {
+   "id": "11829:why",
+   "pass": false,
+   "doubts": [
+    "Il seguito fu un successo ancora più grande del primo film."
+   ],
+   "text": "About the film ...continuavano a chiamarlo Trinità (1971): Trinità e Bambino di nuovo insieme. Il pranzo al ristorante elegante. Più comico e meno western del primo. Il padre morente chiede ai due figli di diventare veri banditi. Loro ci provano, ma finiscono per fare i buoni contro una banda di trafficanti d'armi. Il seguito fu un successo ancora più grande del primo film."
+  },
+  {
+   "id": "11829:idea:7",
+   "pass": false,
+   "doubts": [
+    "Il western che qui si prende in giro"
+   ],
+   "text": "Django (1966), suggested to someone who liked ...continuavano a chiamarlo Trinità (1971): Il western che qui si prende in giro"
+  },
+  {
+   "id": "11829:idea:9",
+   "pass": false,
+   "doubts": [
+    "Un'altra coppia comica in fuga"
+   ],
+   "text": "Così è la vita (1998), suggested to someone who liked ...continuavano a chiamarlo Trinità (1971): Un'altra coppia comica in fuga"
+  },
+  {
+   "id": "12308:idea:7",
+   "pass": false,
+   "doubts": [
+    "Amori incrociati"
+   ],
+   "text": "Tu la conosci Claudia? (2004), suggested to someone who liked L'ultimo bacio (2001): Amori incrociati"
+  },
+  {
+   "id": "12491:idea:1",
+   "pass": false,
+   "doubts": [
+    "Il vangelo secondo Matteo (1965)"
+   ],
+   "text": "Il vangelo secondo Matteo (1965), suggested to someone who liked Accattone (1961): Pasolini, il sacro con attori presi dalla strada"
+  },
+  {
+   "id": "12776:why",
+   "pass": false,
+   "doubts": [
+    "Palermo, cocaina e una banana"
+   ],
+   "text": "About the film Johnny Stecchino (1991): Benigni ha due ruoli: autista e boss. Palermo, cocaina e una banana. Nicoletta Braschi, moglie del boss. Dante, autista di scuolabus ingenuo, è identico a un boss mafioso che vuole sparire. La moglie del boss lo porta a Palermo per farlo uccidere al suo posto. Benigni ride della mafia e dei luoghi comuni sulla Sicilia."
+  },
+  {
+   "id": "12776:idea:6",
+   "pass": false,
+   "doubts": [
+    "Zalone scambiato per qualcuno che non è"
+   ],
+   "text": "Che bella giornata (2011), suggested to someone who liked Johnny Stecchino (1991): Zalone scambiato per qualcuno che non è"
+  },
+  {
+   "id": "13386:idea:5",
+   "pass": false,
+   "doubts": [
+    "Moretti, un altro esordio"
+   ],
+   "text": "Ecce bombo (1978), suggested to someone who liked Ricomincio da tre (1981): Moretti, un altro esordio"
+  },
+  {
+   "id": "17631:why",
+   "pass": false,
+   "doubts": [
+    "Gianni, cinquantenne pieno di debiti"
+   ],
+   "text": "About the film Pranzo di ferragosto (2008): Gianni Di Gregorio, figlio e regista. Quattro signore anziane in un appartamento. Trastevere a Ferragosto, quasi vuota. Gianni, cinquantenne pieno di debiti, vive con la madre a Trastevere. Per pagare il condominio accetta di tenere a Ferragosto la madre dell'amministratore, poi altre due anziane. Un piccolo film gentile, girato in casa, premiato a Venezia."
+  },
+  {
+   "id": "20126:idea:5",
+   "pass": false,
+   "doubts": [
+    "il giallo nasce qui"
+   ],
+   "text": "Sei donne per l'assassino (1964), suggested to someone who liked Profondo rosso (1975): Bava, il giallo nasce qui"
+  },
+  {
+   "id": "20126:idea:6",
+   "pass": false,
+   "doubts": [
+    "il primo giallo italiano"
+   ],
+   "text": "La ragazza che sapeva troppo (1963), suggested to someone who liked Profondo rosso (1975): Bava, il primo giallo italiano"
+  },
+  {
+   "id": "20345:idea:5",
+   "pass": false,
+   "doubts": [
+    "Bava, il primo giallo italiano"
+   ],
+   "text": "La ragazza che sapeva troppo (1963), suggested to someone who liked L'uccello dalle piume di cristallo (1970): Bava, il primo giallo italiano"
+  },
+  {
+   "id": "22826:idea:6",
+   "pass": false,
+   "doubts": [
+    "Il trio in fuga per sbaglio"
+   ],
+   "text": "Così è la vita (1998), suggested to someone who liked Il mostro (1994): Il trio in fuga per sbaglio"
+  },
+  {
+   "id": "23550:why",
+   "pass": false,
+   "doubts": [
+    "Ferzan Özpetek, il film che lo ha fatto conoscere."
+   ],
+   "text": "About the film Le fate ignoranti (2001): Una vedova scopre l'amante del marito. Un gruppo di amici gay a Roma. Margherita Buy e Stefano Accorsi. Antonia perde il marito in un incidente e scopre che da anni aveva un amante, Michele. Va a cercarlo in un quartiere di Roma e trova una famiglia di amici che non sapeva esistesse. Ferzan Özpetek, il film che lo ha fatto conoscere."
+  },
+  {
+   "id": "23550:idea:9",
+   "pass": false,
+   "doubts": [
+    "Amici che si ritrovano"
+   ],
+   "text": "Chiedimi se sono felice (2000), suggested to someone who liked Le fate ignoranti (2001): Amici che si ritrovano"
+  },
+  {
+   "id": "24167:idea:8",
+   "pass": false,
+   "doubts": [
+    "Il conformista (1971)"
+   ],
+   "text": "Il conformista (1971), suggested to someone who liked La ciociara (1960): Bertolucci, da Moravia"
+  },
+  {
+   "id": "25300:why",
+   "pass": false,
+   "doubts": [
+    "Da Niccolò Ammaniti, sceneggiatura sua."
+   ],
+   "text": "About the film Io non ho paura (2003): Un bambino scopre un segreto in un buco. Campi di grano del Sud, estate 1978. Da Niccolò Ammaniti, sceneggiatura sua. In un paese isolato del Sud, Michele, dieci anni, trova un bambino incatenato in fondo a una buca. Capisce piano piano che gli adulti del paese, anche suo padre, sanno tutto. Salvatores gira un thriller con gli occhi di un bambino."
+  },
+  {
+   "id": "25606:why",
+   "pass": false,
+   "doubts": [
+    "La nuvola dell'impiegato, il megadirettore."
+   ],
+   "text": "About the film Fantozzi (1975): Paolo Villaggio, il ragioniere più sfortunato d'Italia. La nuvola dell'impiegato, il megadirettore. Parole entrate nella lingua: fantozziano. Ugo Fantozzi lavora in un'enorme azienda, subisce capi, colleghi e moglie, e ogni suo tentativo di vivere finisce in disastro. Luciano Salce e Villaggio portano al cinema i racconti del suo personaggio. Crudele e comico, è un pezzo di storia italiana."
+  },
+  {
+   "id": "27431:why",
+   "pass": false,
+   "doubts": [
+    "Argento ha detto che è il suo film che ama meno"
+   ],
+   "text": "About the film Il gatto a nove code (1971): Karl Malden, enigmista cieco che indaga. Un istituto di genetica e nove piste. Il secondo giallo di Dario Argento. Un ex giornalista cieco e un cronista indagano su una serie di omicidi legati a un istituto di ricerca genetica a Torino. Argento ha detto che è il suo film che ama meno, ma il ritmo e la tensione funzionano."
+  },
+  {
+   "id": "27523:why",
+   "pass": false,
+   "doubts": [
+    "Francesco Rosi inventa il film inchiesta."
+   ],
+   "text": "About the film Salvatore Giuliano (1962): Il bandito Giuliano si vede solo da morto. Montelepre e Portella della Ginestra. Francesco Rosi inventa il film inchiesta. Nel 1950 il corpo di Salvatore Giuliano viene trovato in un cortile di Castelvetrano. Rosi ricostruisce a pezzi gli anni del separatismo, della strage di Portella e dei rapporti tra banditi, mafia e Stato. Girato nei luoghi veri, con i siciliani veri."
+  },
+  {
+   "id": "27632:why",
+   "pass": false,
+   "doubts": [
+    "Bava inventa l'horror gotico italiano"
+   ],
+   "text": "About the film La maschera del demonio (1960): Barbara Steele, strega e principessa. Il bianco e nero più gotico del cinema. Il primo film diretto da Mario Bava. Nel Seicento una strega viene uccisa con una maschera chiodata e giura vendetta. Due secoli dopo due medici in viaggio la risvegliano per errore. Bava inventa l'horror gotico italiano: castelli, nebbia e una sola, indimenticabile attrice."
+  },
+  {
+   "id": "27670:idea:8",
+   "pass": false,
+   "doubts": [
+    "Il trio in fuga"
+   ],
+   "text": "Così è la vita (1998), suggested to someone who liked Non ci resta che piangere (1984): Il trio in fuga, coppie comiche che funzionano"
+  },
+  {
+   "id": "28055:why",
+   "pass": false,
+   "doubts": [
+    "Bava gira il primo vero giallo all'italiana",
+    "In una casa di moda romana"
+   ],
+   "text": "About the film Sei donne per l'assassino (1964): Un atelier di moda e un assassino mascherato. Rossi, verdi e blu fortissimi. Mario Bava inventa il giallo a colori. In una casa di moda romana una modella viene uccisa da un uomo senza volto, e il suo diario fa paura a tutte le altre. Bava gira il primo vero giallo all'italiana: trama semplice, immagini studiate, violenza stilizzata. Argento partirà da qui."
+  },
+  {
+   "id": "29987:idea:7",
+   "pass": false,
+   "doubts": [
+    "Roma nel 1943"
+   ],
+   "text": "Roma città aperta (1945), suggested to someone who liked La finestra di fronte (2003): Roma nel 1943"
+  },
+  {
+   "id": "30239:idea:2",
+   "pass": false,
+   "doubts": [
+    "Il conformista (1971)"
+   ],
+   "text": "Il conformista (1971), suggested to someone who liked Vincere (2009): Bertolucci, il fascismo"
+  },
+  {
+   "id": "30689:why",
+   "pass": false,
+   "doubts": [
+    "per anni quasi introvabile"
+   ],
+   "text": "About the film 4 mosche di velluto grigio (1971): Un batterista perseguitato da un ricattatore. L'ultima immagine catturata dall'occhio. Chiude la trilogia degli animali di Argento. Roberto, batterista rock, uccide per sbaglio un uomo che lo seguiva, e qualcuno lo fotografa. Da quel momento qualcuno lo tormenta. Il terzo giallo di Dario Argento, più strano e ironico dei primi due, per anni quasi introvabile."
+  },
+  {
+   "id": "33365:why",
+   "pass": false,
+   "doubts": [
+    "Un grande successo, con seguiti."
+   ],
+   "text": "About the film Notte prima degli esami (2006): La notte prima della maturità, 1989. Giorgio Faletti, professore temuto. Musica italiana anni Ottanta ovunque. Luca ha insultato il professore che ora gli farà l'esame di maturità, e si innamora di una ragazza che non sa chi sia. Fausto Brizzi racconta un'estate romana di diciottenni. Un grande successo, con seguiti."
+  },
+  {
+   "id": "33365:idea:1",
+   "pass": false,
+   "doubts": [
+    "Il seguito, stessi ragazzi nel 2006"
+   ],
+   "text": "Notte prima degli esami - Oggi (2007), suggested to someone who liked Notte prima degli esami (2006): Il seguito, stessi ragazzi nel 2006"
+  },
+  {
+   "id": "35265:why",
+   "pass": false,
+   "doubts": [
+    "Peppino, imbalsamatore di animali che lavora anche per la camorra",
+    "Il film che ha fatto conoscere Matteo Garrone."
+   ],
+   "text": "About the film L'imbalsamatore (2002): Un tassidermista nano e un giovane cameriere. Ernesto Mahieux, attore perfetto e sconosciuto. Ispirato a un fatto di cronaca napoletana. Peppino, imbalsamatore di animali che lavora anche per la camorra, prende con sé Valerio, un ragazzo alto e bello. Il legame tra loro diventa possesso, gelosia e pericolo. Il film che ha fatto conoscere Matteo Garrone."
+  },
+  {
+   "id": "35265:idea:7",
+   "pass": false,
+   "doubts": [
+    "Garrone, il suo film più recente"
+   ],
+   "text": "Io capitano (2023), suggested to someone who liked L'imbalsamatore (2002): Garrone, il suo film più recente"
+  },
+  {
+   "id": "35554:why",
+   "pass": false,
+   "doubts": [
+    "Si innamora di una ragazza il cui padre odia i meridionali"
+   ],
+   "text": "About the film Cado dalle nubi (2009): Checco Zalone al suo primo film. Un pugliese ingenuo nella Milano leghista. Canzoni scritte e cantate da Zalone. Checco, aspirante cantante di Polignano, viene lasciato dalla fidanzata e va a Milano da un cugino. Si innamora di una ragazza il cui padre odia i meridionali. Gennaro Nunziante dirige, e nasce il fenomeno Zalone."
+  },
+  {
+   "id": "35554:idea:6",
+   "pass": false,
+   "doubts": [
+    "Da Milano alla Puglia"
+   ],
+   "text": "Tre uomini e una gamba (1997), suggested to someone who liked Cado dalle nubi (2009): Da Milano alla Puglia"
+  },
+  {
+   "id": "37769:why",
+   "pass": false,
+   "doubts": [
+    "una partita a biliardo, una gita, una cena di gala"
+   ],
+   "text": "About the film Il secondo tragico Fantozzi (1976): La Corazzata Potëmkin è una cagata pazzesca. Fantozzi e il cineforum aziendale. Paolo Villaggio al massimo. Fantozzi deve sopravvivere a un'altra stagione in azienda: il circolo del cinema del capo, una partita a biliardo, una gita, una cena di gala. Luciano Salce dirige il seguito, con la battuta sul cinema più famosa della commedia italiana."
+  },
+  {
+   "id": "38286:why",
+   "pass": false,
+   "doubts": [
+    "Tre amici devono portare in macchina una scultura a forma di gamba fino a Gallipoli, dove Giacomo si sposa."
+   ],
+   "text": "About the film Tre uomini e una gamba (1997): Aldo, Giovanni e Giacomo, il loro esordio. Un viaggio da Milano alla Puglia. Una scultura con una gamba di legno. Tre amici devono portare in macchina una scultura a forma di gamba fino a Gallipoli, dove Giacomo si sposa. Lungo la strada niente va come previsto. Il trio comico di Mai dire Gol passa al cinema, ed è un successo enorme."
+  },
+  {
+   "id": "38396:why",
+   "pass": false,
+   "doubts": [
+    "Un poliziotto, un detenuto, un ostaggio.",
+    "Per una serie di equivoci un detenuto, un poliziotto e un passante si ritrovano in fuga insieme, inseguiti da tutti.",
+    "viaggia per il Nord Italia tra una risata e l'altra"
+   ],
+   "text": "About the film Così è la vita (1998): Aldo, Giovanni e Giacomo in fuga. Un poliziotto, un detenuto, un ostaggio. Gag a ritmo di road movie. Per una serie di equivoci un detenuto, un poliziotto e un passante si ritrovano in fuga insieme, inseguiti da tutti. Il secondo film del trio, diretto con Massimo Venier, viaggia per il Nord Italia tra una risata e l'altra."
+  },
+  {
+   "id": "38397:why",
+   "pass": false,
+   "doubts": [
+    "Anni Cinquanta, completi e cappelli.",
+    "Uno dei tre perde la memoria.",
+    "Tre piccoli mafiosi italoamericani devono eliminare un traditore, ma uno dei tre perde la memoria e si dimentica pure di essere un gangster."
+   ],
+   "text": "About the film La leggenda di Al, John e Jack (2002): Aldo, Giovanni e Giacomo gangster a New York. Anni Cinquanta, completi e cappelli. Uno dei tre perde la memoria. Tre piccoli mafiosi italoamericani devono eliminare un traditore, ma uno dei tre perde la memoria e si dimentica pure di essere un gangster. Il trio cambia ambientazione e gioca con i film di mafia americani."
+  },
+  {
+   "id": "41050:idea:6",
+   "pass": false,
+   "doubts": [
+    "Il conformista (1971)"
+   ],
+   "text": "Il conformista (1971), suggested to someone who liked La notte (1961): Bertolucci, la borghesia"
+  },
+  {
+   "id": "41663:why",
+   "pass": false,
+   "doubts": [
+    "Fantozzi deve sopportare un nuovo megadirettore, una dieta, la gara di bici dell'azienda e la solita nuvola."
+   ],
+   "text": "About the film Fantozzi contro tutti (1980): Il terzo Fantozzi, sempre più surreale. La gara di ciclismo aziendale. Paolo Villaggio anche regista. Fantozzi deve sopportare un nuovo megadirettore, una dieta, la gara di bici dell'azienda e la solita nuvola. Il terzo film della serie, diretto da Villaggio con Neri Parenti. Le gag si ripetono, ma alcune sono tra le più famose."
+  },
+  {
+   "id": "42595:idea:0",
+   "pass": false,
+   "doubts": [
+    "Il conformista (1971)",
+    "Bertolucci, lo stesso anno, il fascismo"
+   ],
+   "text": "Il conformista (1971), suggested to someone who liked Strategia del ragno (1970): Bertolucci, lo stesso anno, il fascismo"
+  },
+  {
+   "id": "42617:idea:1",
+   "pass": false,
+   "doubts": [
+    "Pontecorvo, il primo film"
+   ],
+   "text": "Kapò (1960), suggested to someone who liked Queimada (1969): Pontecorvo, il primo film"
+  },
+  {
+   "id": "43372:idea:4",
+   "pass": false,
+   "doubts": [
+    "il suo film più grande"
+   ],
+   "text": "Il gattopardo (1963), suggested to someone who liked Bellissima (1952): Visconti, il suo film più grande"
+  },
+  {
+   "id": "45884:why",
+   "pass": false,
+   "doubts": [
+    "Il primo film di Gillo Pontecorvo"
+   ],
+   "text": "About the film Kapò (1960): Susan Strasberg, ragazza ebrea nel lager. Per sopravvivere diventa kapò. Il primo film di Gillo Pontecorvo. Edith, quattordici anni, deportata, si salva fingendosi una prigioniera politica e diventa una sorvegliante delle altre detenute. L'amore per un prigioniero russo la cambia. Candidato all'Oscar, discusso per anni per una sola inquadratura."
+  },
+  {
+   "id": "46979:idea:2",
+   "pass": false,
+   "doubts": [
+    "Il conformista (1971)"
+   ],
+   "text": "Il conformista (1971), suggested to someone who liked Le amiche (1955): Bertolucci, la borghesia"
+  },
+  {
+   "id": "47096:why",
+   "pass": false,
+   "doubts": [
+    "Durante un'epidemia",
+    "ritirata presto dalle sale"
+   ],
+   "text": "About the film Todo modo (1976): Politici democristiani chiusi in un eremo. Gian Maria Volonté imita Aldo Moro. Da Leonardo Sciascia. Durante un'epidemia, i potenti del partito di governo si ritirano per esercizi spirituali in un albergo-eremo guidato da un prete ambiguo, Marcello Mastroianni. Cominciano a morire uno a uno. Elio Petri, satira cupa, ritirata presto dalle sale."
+  },
+  {
+   "id": "48415:why",
+   "pass": false,
+   "doubts": [
+    "Claudio Bisio, milanese trasferito in Cilento"
+   ],
+   "text": "About the film Benvenuti al sud (2010): Claudio Bisio, milanese trasferito in Cilento. Alessandro Siani, postino napoletano simpatico. Castellabate, il paese diventato famoso. Un direttore di posta brianzolo viene mandato per punizione in un paese vicino a Salerno. Parte con il giubbotto antiproiettile e trova sole, pranzi infiniti e amici. È il rifacimento del francese Giù al Nord, adattato all'Italia."
+  },
+  {
+   "id": "48415:idea:4",
+   "pass": false,
+   "doubts": [
+    "Da Milano alla Puglia in macchina"
+   ],
+   "text": "Tre uomini e una gamba (1997), suggested to someone who liked Benvenuti al sud (2010): Da Milano alla Puglia in macchina"
+  },
+  {
+   "id": "50531:why",
+   "pass": false,
+   "doubts": [
+    "Il film più malinconico del trio, e per molti il più bello.",
+    "Una notizia improvvisa li rimette insieme."
+   ],
+   "text": "About the film Chiedimi se sono felice (2000): Aldo, Giovanni e Giacomo, amicizia e rancore. Marina Massironi tra i tre amici. Uno spettacolo da Cyrano mai andato in scena. Tre amici di Milano, che sognavano di mettere in scena Cyrano, non si parlano più da anni per colpa di una donna. Una notizia improvvisa li rimette insieme. Il film più malinconico del trio, e per molti il più bello."
+  },
+  {
+   "id": "50531:idea:1",
+   "pass": false,
+   "doubts": [
+    "Il trio in fuga"
+   ],
+   "text": "Così è la vita (1998), suggested to someone who liked Chiedimi se sono felice (2000): Il trio in fuga"
+  },
+  {
+   "id": "51917:why",
+   "pass": false,
+   "doubts": [
+    "Isabella Ragonese al primo ruolo importante.",
+    "finisce a vendere elettrodomestici al telefono",
+    "in un'azienda dove le venditrici vengono premiate e umiliate ogni mattina"
+   ],
+   "text": "About the film Tutta la vita davanti (2008): Una laureata in filosofia in un call center. Sabrina Ferilli, capa che motiva con le canzoni. Isabella Ragonese al primo ruolo importante. Marta si laurea con lode e finisce a vendere elettrodomestici al telefono, in un'azienda dove le venditrici vengono premiate e umiliate ogni mattina. Paolo Virzì racconta il lavoro precario con una commedia che fa anche paura."
+  },
+  {
+   "id": "53319:why",
+   "pass": false,
+   "doubts": [
+    "La terza commedia di Zalone e Nunziante, un altro record d'incassi."
+   ],
+   "text": "About the film Che bella giornata (2011): Zalone guardia giurata al Duomo di Milano. Una terrorista si innamora di lui. Battute sui pregiudizi di ogni tipo. Checco vuole fare il carabiniere ma finisce a fare la guardia nel Duomo. Una ragazza araba lo seduce per arrivare alla Madonnina con una bomba. La terza commedia di Zalone e Nunziante, un altro record d'incassi."
+  },
+  {
+   "id": "53319:idea:5",
+   "pass": false,
+   "doubts": [
+    "Aldo Giovanni e Giacomo, tre guardie del corpo"
+   ],
+   "text": "La leggenda di Al, John e Jack (2002), suggested to someone who liked Che bella giornata (2011): Aldo Giovanni e Giacomo, tre guardie del corpo"
+  },
+  {
+   "id": "53319:idea:9",
+   "pass": false,
+   "doubts": [
+    "Commedia italiana di oggi"
+   ],
+   "text": "Immaturi (2011), suggested to someone who liked Che bella giornata (2011): Commedia italiana di oggi"
+  },
+  {
+   "id": "53482:idea:9",
+   "pass": false,
+   "doubts": [
+    "La caduta di un uomo"
+   ],
+   "text": "Il traditore (2019), suggested to someone who liked L'uomo in più (2001): La caduta di un uomo"
+  },
+  {
+   "id": "53915:why",
+   "pass": false,
+   "doubts": [
+    "Silvio ha sedici anni, va al liceo a Roma, è innamorato di un'amica e vorrebbe essere più grande."
+   ],
+   "text": "About the film Come te nessuno mai (1999): Liceali romani occupano la scuola. Silvio Muccino, sedicenne innamorato e confuso. Il primo successo di Gabriele Muccino. Silvio ha sedici anni, va al liceo a Roma, è innamorato di un'amica e vorrebbe essere più grande. Durante l'occupazione della scuola cambia qualcosa. Gabriele Muccino racconta l'adolescenza con ritmo veloce e dialoghi veri."
+  },
+  {
+   "id": "53915:idea:0",
+   "pass": false,
+   "doubts": [
+    "gli stessi ragazzi qualche anno dopo"
+   ],
+   "text": "L'ultimo bacio (2001), suggested to someone who liked Come te nessuno mai (1999): Muccino, gli stessi ragazzi qualche anno dopo"
+  },
+  {
+   "id": "53915:idea:5",
+   "pass": false,
+   "doubts": [
+    "il '68 nelle scuole"
+   ],
+   "text": "La meglio gioventù (2003), suggested to someone who liked Come te nessuno mai (1999): Giordana, il '68 nelle scuole"
+  },
+  {
+   "id": "54309:why",
+   "pass": false,
+   "doubts": [
+    "Gli stessi attori del primo film interpretano altri ragazzi alla vigilia della maturità del 2006"
+   ],
+   "text": "About the film Notte prima degli esami - Oggi (2007): Il seguito spostato nel 2006. Stessi attori, idee più deboli. Più pubblicità che storia. Gli stessi attori del primo film interpretano altri ragazzi alla vigilia della maturità del 2006, tra telefonini e mondiali di calcio. Fausto Brizzi ripete la formula, ma senza la nostalgia che rendeva il primo simpatico."
+  },
+  {
+   "id": "56399:why",
+   "pass": false,
+   "doubts": [
+    "Paolo Virzì prima del successo",
+    "Un giornalista intellettuale"
+   ],
+   "text": "About the film Ferie d'agosto (1996): Due famiglie opposte a Ventotene. Silvio Orlando di sinistra, Ennio Fantastichini di destra. Paolo Virzì prima del successo. Un giornalista intellettuale e un commerciante romano rumoroso passano le vacanze di agosto in due case vicine su un'isola. Si odiano, si spiano, si mescolano. Virzì racconta l'Italia degli anni Novanta in una sola estate."
+  },
+  {
+   "id": "56909:idea:6",
+   "pass": false,
+   "doubts": [
+    "Amici che si ritrovano"
+   ],
+   "text": "Chiedimi se sono felice (2000), suggested to someone who liked Immaturi (2011): Amici che si ritrovano"
+  },
+  {
+   "id": "57110:why",
+   "pass": false,
+   "doubts": [
+    "Luciano, professore di lettere a Napoli"
+   ],
+   "text": "About the film Il portaborse (1991): Silvio Orlando, professore che scrive per un ministro. Nanni Moretti, ministro senza scrupoli. Prima di Tangentopoli, la racconta già. Luciano, professore di lettere a Napoli, accetta di scrivere i discorsi di un giovane ministro socialista e si ritrova dentro un sistema di favori e ricatti. Daniele Luchetti racconta la politica italiana poco prima che crollasse."
+  },
+  {
+   "id": "57112:why",
+   "pass": false,
+   "doubts": [
+    "Un tassista, un uomo appena lasciato e un pubblicitario si ritrovano tutti legati alla stessa donna, Claudia.",
+    "Il trio recita per una volta separato, con storie che si incrociano."
+   ],
+   "text": "About the film Tu la conosci Claudia? (2004): Aldo, Giovanni e Giacomo divisi in tre storie. Paola Cortellesi è Claudia. Tre uomini, una donna, Milano. Un tassista, un uomo appena lasciato e un pubblicitario si ritrovano tutti legati alla stessa donna, Claudia. Il trio recita per una volta separato, con storie che si incrociano. Più commedia sentimentale che comica."
+  },
+  {
+   "id": "57112:idea:2",
+   "pass": false,
+   "doubts": [
+    "Il trio in fuga"
+   ],
+   "text": "Così è la vita (1998), suggested to someone who liked Tu la conosci Claudia? (2004): Il trio in fuga"
+  },
+  {
+   "id": "57250:why",
+   "pass": false,
+   "doubts": [
+    "Jona ha quattro anni ad Amsterdam quando la sua famiglia viene deportata."
+   ],
+   "text": "About the film Jona che visse nella balena (1993): Un bambino ebreo olandese nei campi. Tratto dai ricordi di Jona Oberski. Roberto Faenza, sguardo all'altezza di un bambino. Jona ha quattro anni ad Amsterdam quando la sua famiglia viene deportata. Attraverso i campi, fino alla liberazione, il film racconta quello che un bambino vede e capisce. Girato in inglese da Roberto Faenza, con una grande sensibilità."
+  },
+  {
+   "id": "58013:why",
+   "pass": false,
+   "doubts": [
+    "La notte di Natale tre amici travestiti da Babbo Natale vengono arrestati per furto.",
+    "In commissariato ognuno racconta la sua versione.",
+    "con le loro mogli e amanti a complicare tutto"
+   ],
+   "text": "About the film La banda dei Babbi Natale (2010): Aldo, Giovanni e Giacomo vestiti da Babbo Natale. Tre amici arrestati la vigilia di Natale. Un interrogatorio raccontato a pezzi. La notte di Natale tre amici travestiti da Babbo Natale vengono arrestati per furto. In commissariato ognuno racconta la sua versione. Una commedia natalizia del trio, con le loro mogli e amanti a complicare tutto."
+  },
+  {
+   "id": "58013:idea:2",
+   "pass": false,
+   "doubts": [
+    "Il trio in fuga"
+   ],
+   "text": "Così è la vita (1998), suggested to someone who liked La banda dei Babbi Natale (2010): Il trio in fuga"
+  },
+  {
+   "id": "58383:why",
+   "pass": false,
+   "doubts": [
+    "Francesco Rosi gira tra macerie e aule vere."
+   ],
+   "text": "About the film Le mani sulla città (1963): Rod Steiger, costruttore e consigliere comunale. Un palazzo crolla nei vicoli di Napoli. Leone d'oro a Venezia. A Napoli un palazzo crolla per colpa di un cantiere vicino, e il costruttore Nottola, che siede in consiglio comunale, fa di tutto per insabbiare. Francesco Rosi gira tra macerie e aule vere. Sulla speculazione edilizia non è invecchiato."
+  },
+  {
+   "id": "58509:why",
+   "pass": false,
+   "doubts": [
+    "Umberto vende stoffe, Leone abiti da uomo"
+   ],
+   "text": "About the film Concorrenza sleale (2001): Due negozianti rivali nella Roma del 1938. Diego Abatantuono e Sergio Castellitto. Le leggi razziali entrano in una strada. Umberto vende stoffe, Leone abiti da uomo: due negozi vicini e sempre in lite. Quando le leggi razziali colpiscono Leone, che è ebreo, la rivalità diventa un'altra cosa. Ettore Scola racconta la grande storia dentro una piccola via."
+  },
+  {
+   "id": "58658:idea:2",
+   "pass": false,
+   "doubts": [
+    "Bellocchio, il primo pentito"
+   ],
+   "text": "Il traditore (2019), suggested to someone who liked Il giorno della civetta (1968): Bellocchio, il primo pentito"
+  },
+  {
+   "id": "85038:why",
+   "pass": false,
+   "doubts": [
+    "Siani, postino napoletano trasferito a Milano",
+    "Mattia, che non ha voglia di lavorare, viene trasferito alle Poste centrali di Milano, dove trova orari, efficienza e un amico che ora deve aiutarlo"
+   ],
+   "text": "About the film Benvenuti al Nord (2012): Siani, postino napoletano trasferito a Milano. Bisio e Siani ancora insieme. Pregiudizi rovesciati: ora è il Nord. Mattia, che non ha voglia di lavorare, viene trasferito alle Poste centrali di Milano, dove trova orari, efficienza e un amico che ora deve aiutarlo. Il seguito di Benvenuti al sud è meno sorprendente, ma regge per i due protagonisti."
+  },
+  {
+   "id": "162282:why",
+   "pass": false,
+   "doubts": [
+    "Rifacimento di un film spagnolo"
+   ],
+   "text": "About the film Una famiglia perfetta (2012): Sergio Castellitto affitta una famiglia per Natale. Attori che recitano una famiglia vera. Paolo Genovese prima di Perfetti sconosciuti. Un uomo ricco e solo paga una compagnia di attori per fingere di essere la sua famiglia durante le feste di Natale. La recita si complica quando gli attori si affezionano. Rifacimento di un film spagnolo, una commedia gentile."
+  },
+  {
+   "id": "231176:why",
+   "pass": false,
+   "doubts": [
+    "Il secondo grande successo di Zalone e Nunziante."
+   ],
+   "text": "About the film Sole a catinelle (2013): Zalone promette al figlio una vacanza da sogno. Debiti, banche e venditori di aspirapolvere. Una gag su ogni luogo comune. Checco vende aspirapolvere porta a porta e ha promesso al figlio una vacanza bellissima se prende tutti dieci. Il figlio ci riesce, i soldi non ci sono. Il secondo grande successo di Zalone e Nunziante."
+  },
+  {
+   "id": "244088:why",
+   "pass": false,
+   "doubts": [
+    "In Brianza, la notte prima di Natale, un SUV investe un cameriere in bicicletta.",
+    "Il film racconta i giorni prima e dopo dal punto di vista di tre personaggi"
+   ],
+   "text": "About the film Il capitale umano (2013): Un ciclista investito, tre punti di vista. Valeria Bruni Tedeschi, moglie ricca e sola. Fabrizio Bentivoglio, padre che vuole arricchirsi. In Brianza, la notte prima di Natale, un SUV investe un cameriere in bicicletta. Il film racconta i giorni prima e dopo dal punto di vista di tre personaggi, due famiglie e una ragazza. Paolo Virzì sui soldi e su quanto vale una vita."
+  },
+  {
+   "id": "265226:why",
+   "pass": false,
+   "doubts": [
+    "Gelsomina, dodici anni, regge tutto."
+   ],
+   "text": "About the film Le meraviglie (2014): Una famiglia di apicoltori in Toscana. Gelsomina, dodici anni, regge tutto. Gran premio della giuria a Cannes. Una famiglia vive isolata in campagna producendo miele, governata da un padre duro e idealista. Gelsomina, la figlia più grande, iscrive tutti a un concorso televisivo. Alice Rohrwacher racconta la fine di un mondo contadino con tenerezza."
+  },
+  {
+   "id": "303542:why",
+   "pass": false,
+   "doubts": [
+    "Mentre i compagni spariscono, capisce di non essere l'unico con un potere.",
+    "Michele, tredici anni, si scopre invisibile dopo una festa in maschera.",
+    "Salvatores fa un film per ragazzi con la Trieste d'inverno come sfondo."
+   ],
+   "text": "About the film Il ragazzo invisibile (2014): Un supereroe tredicenne a Trieste. Gabriele Salvatores prova il fantastico. Ludovico Girardello, timido e invisibile. Michele, tredici anni, si scopre invisibile dopo una festa in maschera. Mentre i compagni spariscono, capisce di non essere l'unico con un potere. Salvatores fa un film per ragazzi con la Trieste d'inverno come sfondo. C'è un seguito."
+  },
+  {
+   "id": "310126:why",
+   "pass": false,
+   "doubts": [
+    "Giacomo, finanziere ricco, perde tutto e deve vivere con il suo autista Giovanni e il suo maggiordomo Aldo, venditore ambulante abusivo.",
+    "Il maggiordomo Aldo, servo e padrone.",
+    "Un finanziere perde tutto in un giorno.",
+    "Una commedia sulla crisi economica, non tra le migliori del trio."
+   ],
+   "text": "About the film Il ricco, il povero e il maggiordomo (2014): Aldo, Giovanni e Giacomo dopo la crisi. Un finanziere perde tutto in un giorno. Il maggiordomo Aldo, servo e padrone. Giacomo, finanziere ricco, perde tutto e deve vivere con il suo autista Giovanni e il suo maggiordomo Aldo, venditore ambulante abusivo. I ruoli si invertono. Una commedia sulla crisi economica, non tra le migliori del trio."
+  },
+  {
+   "id": "310126:idea:1",
+   "pass": false,
+   "doubts": [
+    "Il trio, il più amato"
+   ],
+   "text": "Chiedimi se sono felice (2000), suggested to someone who liked Il ricco, il povero e il maggiordomo (2014): Il trio, il più amato"
+  },
+  {
+   "id": "310126:idea:2",
+   "pass": false,
+   "doubts": [
+    "Il trio di nuovo in forma"
+   ],
+   "text": "Odio l'estate (2020), suggested to someone who liked Il ricco, il povero e il maggiordomo (2014): Il trio di nuovo in forma"
+  },
+  {
+   "id": "310126:idea:3",
+   "pass": false,
+   "doubts": [
+    "Il trio in fuga"
+   ],
+   "text": "Così è la vita (1998), suggested to someone who liked Il ricco, il povero e il maggiordomo (2014): Il trio in fuga"
+  },
+  {
+   "id": "314405:idea:7",
+   "pass": false,
+   "doubts": [
+    "Pasolini, racconti antichi del Sud, crudi e allegri"
+   ],
+   "text": "Il Decameron (1971), suggested to someone who liked Il racconto dei racconti - Tale of Tales (2015): Pasolini, racconti antichi del Sud, crudi e allegri"
+  },
+  {
+   "id": "364433:idea:2",
+   "pass": false,
+   "doubts": [
+    "stessi quartieri"
+   ],
+   "text": "Suburra (2015), suggested to someone who liked Lo chiamavano Jeeg Robot (2016): La Roma criminale vista dall'alto, stessi quartieri"
+  },
+  {
+   "id": "364433:idea:8",
+   "pass": false,
+   "doubts": [
+    "la stessa Roma di borgata cinquant'anni prima"
+   ],
+   "text": "Accattone (1961), suggested to someone who liked Lo chiamavano Jeeg Robot (2016): Pasolini, la stessa Roma di borgata cinquant'anni prima"
+  },
+  {
+   "id": "375572:why",
+   "pass": false,
+   "doubts": [
+    "Corse vere tra Imola e il Mugello"
+   ],
+   "text": "About the film Veloce come il vento (2016): Matilda De Angelis, pilota di 17 anni. Stefano Accorsi, ex campione tossicodipendente. Corse vere tra Imola e il Mugello. Giulia corre nel campionato GT e alla morte del padre deve salvare la casa e il fratellino. Arriva il fratello maggiore Loris, ex pilota rovinato dalla droga, che diventa il suo allenatore. Matteo Rovere, ispirato alla vita di Carlo Capone."
+  },
+  {
+   "id": "380225:why",
+   "pass": false,
+   "doubts": [
+    "Due giorni di fuga in una Toscana d'estate"
+   ],
+   "text": "About the film La pazza gioia (2016): Valeria Bruni Tedeschi e Micaela Ramazzotti in fuga. Una comunità psichiatrica in Toscana. Ride e fa piangere nello stesso momento. Beatrice, contessa che parla senza sosta, e Donatella, giovane madre fragile, scappano da una comunità terapeutica. Due giorni di fuga in una Toscana d'estate, tra ricordi e figli perduti. Paolo Virzì, uno dei suoi film migliori."
+  },
+  {
+   "id": "381341:why",
+   "pass": false,
+   "doubts": [
+    "dal film di Paolo Genovese sono nati più di venti remake nel mondo",
+    "Quasi tutto in una sola stanza"
+   ],
+   "text": "About the film Perfetti sconosciuti (2016): Una cena, sette amici, telefoni sul tavolo. Giallini, Mastandrea e Rohrwacher in gran forma. Il film più rifatto della storia. Sette amici a cena decidono di leggere ad alta voce ogni messaggio e rispondere in vivavoce a ogni chiamata. Dovrebbe essere un gioco. Quasi tutto in una sola stanza, e dal film di Paolo Genovese sono nati più di venti remake nel mondo."
+  },
+  {
+   "id": "406385:idea:7",
+   "pass": false,
+   "doubts": [
+    "La droga a Roma, ma sul serio"
+   ],
+   "text": "Suburra (2015), suggested to someone who liked Smetto quando voglio - Masterclass (2017): La droga a Roma, ma sul serio"
+  },
+  {
+   "id": "413518:why",
+   "pass": false,
+   "doubts": [
+    "La Toscana e la Puglia di fine Ottocento",
+    "Trucco e creature quasi senza computer"
+   ],
+   "text": "About the film Pinocchio (2019): Roberto Benigni è un Geppetto commovente. Trucco e creature quasi senza computer. Il Pinocchio fedele a Collodi. Matteo Garrone racconta la storia di Collodi senza addolcirla: povertà, fame, paura e un burattino che non sa ancora come si vive. La Toscana e la Puglia di fine Ottocento, il Gatto, la Volpe e la Fata, Federico Ielapi è Pinocchio."
+  },
+  {
+   "id": "413518:idea:7",
+   "pass": false,
+   "doubts": [
+    "Un bambino e la paura del buio"
+   ],
+   "text": "Io non ho paura (2003), suggested to someone who liked Pinocchio (2019): Un bambino e la paura del buio"
+  },
+  {
+   "id": "435921:why",
+   "pass": false,
+   "doubts": [
+    "Ficarra e Picone, cognati e commercianti."
+   ],
+   "text": "About the film L'ora legale (2017): Ficarra e Picone, cognati e commercianti. Un sindaco onesto rovina tutti. Satira sulla Sicilia e sull'Italia. In un paese siciliano vince le elezioni un professore onesto, contro ogni pronostico. Comincia a far rispettare le regole, e i cittadini che lo hanno votato si accorgono che non lo volevano davvero. Una commedia amara e molto riuscita."
+  },
+  {
+   "id": "492282:idea:0",
+   "pass": false,
+   "doubts": [
+    "Come un gatto in tangenziale - Ritorno a Coccia di Morto (2021)"
+   ],
+   "text": "Come un gatto in tangenziale - Ritorno a Coccia di Morto (2021), suggested to someone who liked Come un gatto in tangenziale (2017): Il seguito, stessa coppia"
+  },
+  {
+   "id": "538362:idea:9",
+   "pass": false,
+   "doubts": [
+    "la storia vera raccontata con leggerezza"
+   ],
+   "text": "La mafia uccide solo d'estate (2013), suggested to someone who liked Sulla mia pelle (2018): Pif, la storia vera raccontata con leggerezza"
+  },
+  {
+   "id": "565179:idea:3",
+   "pass": false,
+   "doubts": [
+    "Il vangelo secondo Matteo (1965)"
+   ],
+   "text": "Il vangelo secondo Matteo (1965), suggested to someone who liked Il primo re (2019): Pasolini, il mito senza ornamenti"
+  },
+  {
+   "id": "571468:idea:7",
+   "pass": false,
+   "doubts": [
+    "Roma negli anni della guerra"
+   ],
+   "text": "C'è ancora domani (2023), suggested to someone who liked Freaks Out (2021): Roma negli anni della guerra"
+  },
+  {
+   "id": "636565:idea:9",
+   "pass": false,
+   "doubts": [
+    "una storia vera di corse e famiglia in Emilia"
+   ],
+   "text": "Veloce come il vento (2016), suggested to someone who liked L'incredibile storia dell'Isola delle Rose (2020): Rovere, una storia vera di corse e famiglia in Emilia"
+  },
+  {
+   "id": "708577:why",
+   "pass": false,
+   "doubts": [
+    "Monica finisce in prigione per colpa delle cugine"
+   ],
+   "text": "About the film Come un gatto in tangenziale - Ritorno a Coccia di Morto (2021): Albanese e Cortellesi di nuovo insieme. Monica in carcere, Giovanni la aiuta. Più farsa del primo. Monica finisce in prigione per colpa delle cugine e Giovanni, l'intellettuale, si ritrova a doverle dare una mano. Il seguito di Come un gatto in tangenziale gioca ancora sui due mondi di Roma, ma con meno sorprese."
+  },
+  {
+   "id": "768334:why",
+   "pass": false,
+   "doubts": [
+    "Su Netflix."
+   ],
+   "text": "About the film A Classic Horror Story (2021): Cinque estranei, un camper, un bosco calabrese. Gioca con i cliché dell'horror americano. Le leggende di Osso, Mastrosso e Carcagnosso. Cinque viaggiatori in car sharing si schiantano e si risvegliano davanti a una casa nel bosco, in Calabria. Roberto De Feo e Paolo Strippoli mescolano horror e leggende sulle origini delle mafie del Sud. Su Netflix."
+  },
+  {
+   "id": "837335:idea:7",
+   "pass": false,
+   "doubts": [
+    "Il vento fa il suo giro (2006)"
+   ],
+   "text": "Il vento fa il suo giro (2006), suggested to someone who liked La chimera (2023): Diritti, un paese e uno straniero"
+  },
+  {
+   "id": "837335:idea:9",
+   "pass": false,
+   "doubts": [
+    "Il vangelo secondo Matteo (1965)"
+   ],
+   "text": "Il vangelo secondo Matteo (1965), suggested to someone who liked La chimera (2023): Pasolini, il sacro e la terra"
+  },
+  {
+   "id": "1127166:why",
+   "pass": false,
+   "doubts": [
+    "Visto da milioni, stroncato dai critici."
+   ],
+   "text": "About the film Fabbricante di lacrime (2024): Romanzo per ragazzi diventato film Netflix. Dialoghi scritti, personaggi poco credibili. Visto da milioni, stroncato dai critici. Nica e Rigel crescono nello stesso orfanotrofio e vengono adottati dalla stessa famiglia. Tra loro odio e attrazione, con un segreto del passato. Fenomeno tra gli adolescenti, ma come film è costruito con i luoghi comuni del genere. Utile solo per l'italiano parlato giovane."
+  }
+ ]
+}
