@@ -40,38 +40,38 @@ export const romaNuova: CityPantry = {
       neighbourhood: 'Garbatella',
       real: false,
       characterId: 'nino-garbatella',
-      imagePrompt: "On an ordinary weekday in Garbatella, a 1920s garden-city quarter that feels like a village inside Rome: low buildings of three storeys at most in ochre and orange, with arched doorways, little loggias and small towers, set around open courtyards and gardens with trees and benches. The osteria occupies the ground floor of one of them, facing a courtyard garden, with a few tables outside. By the door stands a blackboard on an easel, its surface left plain dark green with nothing written on it. Nino, the old oste, 74, sits at a table by the door with a glass of water, in a cardigan, turned towards the viewer as if about to start talking. The sign over the door reads \"Osteria da Nino\" and that is the only lettering in the picture: no other words, menus, prices or posters. Contemporary clothes and objects.",
+      imagePrompt: "Inside Osteria da Nino, a small old osteria in Garbatella at lunchtime: a low ceiling, white walls with a few framed photos, shared wooden tables with white paper tablecloths and carafes of water. On the wall, a large plain dark-green blackboard with nothing written on it, clearly visible and taking up a good part of the picture. Nino, the old oste, 74, white hair and a brown cardigan, sits at his small table by the blackboard, turned towards the viewer with his hands open, as if about to start talking about food. A few locals eat in the background.",
       menu: ['Carciofi alla romana', 'Cacio e pepe', 'Gricia', 'Amatriciana', 'Carbonara', 'Giovedì: gnocchi'],
       pictures: [
               {
                       "id": "osteria-da-nino-carciofi-alla-romana",
                       "shows": "carciofi alla romana",
-                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of two Roman artichokes braised whole with mint and garlic, stems up, glistening with olive oil, on a white plate, on a table with a white paper tablecloth, a fork and a glass beside it, in a small osteria. No people, no lettering anywhere in the picture."
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of two Roman artichokes braised whole with mint and garlic, stems up, glistening with olive oil, on a white plate, on a table with a white paper tablecloth, a fork and a glass of water beside it, in a small osteria. No people, no lettering anywhere in the picture."
               },
               {
                       "id": "osteria-da-nino-cacio-e-pepe",
                       "shows": "cacio e pepe",
-                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of tonnarelli cacio e pepe, creamy with pecorino and flecked with black pepper, on a table with a white paper tablecloth, a fork and a glass beside it, in a small osteria. No people, no lettering anywhere in the picture."
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of tonnarelli cacio e pepe, creamy with pecorino and flecked with black pepper, on a table with a white paper tablecloth, a fork and a glass of water beside it, in a small osteria. No people, no lettering anywhere in the picture."
               },
               {
                       "id": "osteria-da-nino-gricia",
                       "shows": "gricia",
-                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of rigatoni alla gricia with crisp cubes of guanciale and grated pecorino, no tomato, on a table with a white paper tablecloth, a fork and a glass beside it, in a small osteria. No people, no lettering anywhere in the picture."
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of rigatoni alla gricia with crisp cubes of guanciale and grated pecorino, no tomato, on a table with a white paper tablecloth, a fork and a glass of water beside it, in a small osteria. No people, no lettering anywhere in the picture."
               },
               {
                       "id": "osteria-da-nino-amatriciana",
                       "shows": "amatriciana",
-                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of bucatini all'amatriciana in a red tomato sauce with guanciale and pecorino, on a table with a white paper tablecloth, a fork and a glass beside it, in a small osteria. No people, no lettering anywhere in the picture."
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of bucatini all'amatriciana in a red tomato sauce with guanciale and pecorino, on a table with a white paper tablecloth, a fork and a glass of water beside it, in a small osteria. No people, no lettering anywhere in the picture."
               },
               {
                       "id": "osteria-da-nino-carbonara",
                       "shows": "carbonara",
-                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of spaghetti alla carbonara, golden with egg yolk and pecorino, crisp guanciale and black pepper, no cream, on a table with a white paper tablecloth, a fork and a glass beside it, in a small osteria. No people, no lettering anywhere in the picture."
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of spaghetti alla carbonara, golden with egg yolk and pecorino, crisp guanciale and black pepper, no cream, on a table with a white paper tablecloth, a fork and a glass of water beside it, in a small osteria. No people, no lettering anywhere in the picture."
               },
               {
                       "id": "osteria-da-nino-gnocchi",
                       "shows": "gnocchi",
-                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of potato gnocchi in tomato sauce with grated cheese, the Thursday dish, on a table with a white paper tablecloth, a fork and a glass beside it, in a small osteria. No people, no lettering anywhere in the picture."
+                      "imagePrompt": "Warm ochre and terracotta watercolor with ink, like Rome's other place pictures. A close-up of a plate of potato gnocchi in tomato sauce with grated cheese, the Thursday dish, on a table with a white paper tablecloth, a fork and a glass of water beside it, in a small osteria. No people, no lettering anywhere in the picture."
               },
               {
                       "id": "osteria-da-nino-room",
