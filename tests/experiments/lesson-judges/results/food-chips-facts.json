@@ -1,0 +1,30 @@
+[
+  {
+    "id": "torino-slow-food",
+    "field": "facts",
+    "text": "Slow Food began in 1986 in Bra, a small town in Piedmont not far from Turin, founded by Carlo Petrini.",
+    "why": "The date is disputed. In 1986 Petrini's group in Bra was Arcigola. Slow Food as an international movement was founded in 1989, the date Slow Food itself gives. Stating 1986 as the founding is not settled.",
+    "fix": "Slow Food grew out of a group Carlo Petrini started in the 1980s in Bra, a small town in Piedmont not far from Turin."
+  },
+  {
+    "id": "bologna-dop-and-doc",
+    "field": "words",
+    "text": "il marchio — the label",
+    "why": "Marchio means mark, brand or trademark. The word for label is l'etichetta. In 'marchio DOP' it is the protected mark.",
+    "fix": "il marchio — the mark, the brand"
+  },
+  {
+    "id": "ciudad-de-mexico-comida-corrida",
+    "field": "words",
+    "text": "el guisado — the main dish",
+    "why": "Guisado means a stew or braised dish. It is the main dish only in the comida corrida, so the gloss gives a context role as if it were the word's meaning.",
+    "fix": "el guisado — the stew (the main dish)"
+  },
+  {
+    "id": "ciudad-de-mexico-comida-corrida",
+    "field": "words",
+    "text": "el agua fresca — the fruit drink",
+    "why": "Aguas frescas are not only fruit. Common ones are jamaica (hibiscus) and horchata (rice).",
+    "fix": "el agua fresca — the cold drink of fruit, flowers or rice"
+  }
+]
