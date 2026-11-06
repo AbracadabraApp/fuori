@@ -19,6 +19,55 @@ doc "The dialogue model" (https://claude.ai/artifact/XvRja1uP7z4L8WxieCU44R).
   to show english its a decision, or suggest 2 answers rather than 1 or create
   a partial phrase"). No hidden taps or gestures.
 
+## What we've learned
+
+Lessons from play and measurement, each with what showed it. Read before
+changing a prompt or a `here` line (Josh, 2026-11-06: "we need to keep track of
+some principles of dialogue we've learned"). Results are in
+`docs/prompt-trials.md`; the gate is `tests/experiments/variety.mts`.
+
+- **Whatever is in the setting gets said, almost every visit.** The weather
+  line went into 24 of 24 openers; Luisa's cappuccino line, Nino's closed
+  kitchen and Mexico's café de olla come back on every visit (2026-11-06,
+  Josh: "these planted lines echo"). So a setting says what the place is,
+  not talking points; if something should come up only sometimes, give it
+  odds, as the weather has.
+- **Planted talking points don't work.** A pride line was ignored or
+  forced (Pasolini dropped into a correction); written as "today" it became
+  invented news (Luisa's derby score); a planted acquaintance was mentioned in
+  0 of 38 conversations (2026-11-04). Facts in the setting work; rules about
+  what to talk about don't.
+- **A scripted sequence makes every conversation the same.** "Let the errand
+  lead: what they'd like, how much, how it's served, paying, goodbye" made
+  every shop the same transaction (65–79% of a Beginner's lines); removing it
+  cut that to 51–60% (2026-11-06).
+- **With nothing to sell, characters invent something to sell.** Tickets at
+  a theatre and a park, a coffee on a park bench, a taxi driver taking a torta
+  order. A role gets an errand unless the shared rules say it has none
+  (2026-11-06, Josh: "this drift is a app wide problem").
+- **The place's own thing beats national customs.** Mexico's lines (café de
+  olla, the seven moles, Talavera) gave more town content and no clichés;
+  Italy's thin lines filled up with "cappuccino only in the morning" and "pay
+  first" at every bar (2026-11-06). Tipico, not stereotypical; storytellers,
+  not salespeople (Josh, 2026-11-03).
+- **Repeats come from memory, not content.** Even Nino, whose visits work,
+  tells the menu dish by dish every time; the character doesn't know what it
+  already told this learner (2026-11-06). Better lines don't fix that.
+- **The kind of place matters more than the prompt.** Landmarks, open spaces
+  and roles with little to sell talk about the town in 67–97% of visits with
+  almost no buying; shops in 8–33% (Beginner, 2026-11-06). The cheapest fix
+  for too much buying is fewer shops on the map.
+- **Fix once, on the shared layer.** A patch in three `here` lines hid a
+  problem every role has; the fix belongs in `dialogue.md` for every
+  conversation, both countries (Josh, 2026-11-05 and 2026-11-06).
+- **Shortest rule first.** Try the fewest words that could work before
+  adding cases (Josh, 2026-11-06: "maybe as simple as stay in your role";
+  "even that is repetitive").
+- **Measure against noise.** Run today's code twice before a change, one
+  change per row, the same cases and judges, with prompt versions, commit and
+  reply time recorded; a change counts only if it moves a number beyond the
+  gap between the two runs (2026-11-06).
+
 ## What there is
 
 - **Four kinds of conversation:** town, the welcome, Magda's lessons, cultural
