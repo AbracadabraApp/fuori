@@ -21,7 +21,11 @@ for (;;) {
     const ok = list.find((d) => d.status === 'SUCCESS');
     const hash = ok?.meta?.commitHash;
     if (hash && !includes(hash)) execFileSync('git', ['fetch', '-q']);
-    return { service, done: !!hash && includes(hash), newest: `${newest?.status} ${newest?.meta?.commitHash?.slice(0, 7) ?? ''}`, failed: newest?.status === 'FAILED' || newest?.status === 'CRASHED' };
+    // Railway skips a push when nothing it builds changed since its last deploy (the watch
+    // patterns): the running deploy is then already this code (2026-11-06: the first
+    // npm run release waited 15 minutes for a build that was rightly skipped)
+    const skipped = list.find((d) => d.status === 'SKIPPED' && d.meta?.commitHash && includes(d.meta.commitHash) && (!ok || new Date(d.createdAt) > new Date(ok.createdAt)));
+    return { service, done: (!!hash && includes(hash)) || !!skipped, newest: `${newest?.status} ${newest?.meta?.commitHash?.slice(0, 7) ?? ''}`, failed: newest?.status === 'FAILED' || newest?.status === 'CRASHED' };
   });
   const mins = ((Date.now() - started) / 60000).toFixed(1);
   console.log(`${mins} min: ${state.map((s) => `${s.service} ${s.done ? 'live' : s.newest}`).join(', ')}`);
