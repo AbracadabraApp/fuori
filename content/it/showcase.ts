@@ -178,6 +178,7 @@ export const showcase: Record<string, string[]> = {
     'basilica-santa-croce-lecce',
     'museo-faggiano',
     'anfiteatro-romano',
+    'rusticceria-santa-croce', // a shop: 5 Beginner openings, none started selling (2026-11-06)
   ],
   milano: [
     'pasticceria-marchesi',
@@ -215,6 +216,7 @@ export const showcase: Record<string, string[]> = {
     'eremo-carceri',
     'rocca-maggiore',
     'piazza-san-rufino',
+    'laboratorio-ceramiche', // a shop: 5 Beginner openings, none started selling (2026-11-06)
   ],
   bergamo: [
     'caffe-del-tasso',
