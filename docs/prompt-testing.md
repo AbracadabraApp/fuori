@@ -54,7 +54,7 @@ Tests to run, in order, each to become a full card before it runs. Who decides w
 
 | # | Question | Type | Unit | Waits on |
 |---|---|---|---|---|
-| Q1 | Build `moments.json`: the real turns behind recent complaints (Don Nacho's long answer, the cornetto at a pharmacy, the taxi driver's order, "cafe, coffee, cafe", a learner mistake to recast) | setup | — | — |
+| Q1 | Build `moments.json`: the real turns behind recent complaints. **Started 2026-11-07:** 10 moments gathered from the experiments that held them inline (Luisa and Doña Chela's openings, Carla's invented errand, Beto's torta, Ardit's ribollita, Magda's joven and cansado, Efrén's return visit); `tests/experiments/moments.mts` replays one through the server's turn code; `npm run test:moments` checks they still point at real places. Four complaints still need their real turns from the admin export (listed in the file: Don Nacho's long answer, the cornetto at a pharmacy, Luisa's cappuccino line, Giorgia's pizzeria), and Italy has only 3 | setup | — | the laptop, for the four turns |
 | Q2 | Calibrate the judges the queue needs (native-sounding; recast correct; at the learner's level) | setup | — | Josh marks ~20 replies each |
 | Q3 | The floor: the smallest Beginner prompt beside today's, on the stored moments | moment | whole beginner.md | Q1 |
 | Q4 | All examples out of beginner.md (one category) | moment | the examples inside B4, B11, B13… | Q1 |

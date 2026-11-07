@@ -1,0 +1,378 @@
+{
+ "about": "Fixed moments from real play (docs/prompt-testing.md, rules 5 and 20): each is one turn with everything fixed, the conversation so far, what the learner said, the stage or level, the memory notes, and what to watch. A test replays a moment with the code or prompt it's testing (tests/experiments/moments.mts). Add a moment before fixing a complaint. Checked against the content by tests/check-moments.ts.",
+ "moments": [
+  {
+   "id": "it-luisa-opening",
+   "country": "it",
+   "kind": "town",
+   "level": "beginner",
+   "stage": "S1",
+   "cityId": "roma-nuova",
+   "placeId": "bar-mattina-nuova",
+   "transcript": [],
+   "watch": "Says the same thing twice across English and Italian; runs on with no sentence breaks",
+   "was": "tests/experiments/replay-set.mts",
+   "from": {
+    "who": "Josh",
+    "date": "2026-11-05",
+    "quote": "totally incoherent, repetitive with no pauses; cafe, coffee, cafe"
+   }
+  },
+  {
+   "id": "it-carla-likes-siena",
+   "country": "it",
+   "kind": "town",
+   "level": "beginner",
+   "stage": "S2",
+   "cityId": "siena",
+   "placeId": "orto-de-pecci",
+   "transcript": [
+    {
+     "who": "npc",
+     "text": "Fog today, but the children still want to run around the park. Buongiorno! Io sono Carla. Oggi c'è molta nebbia. Come si chiama Lei?"
+    },
+    {
+     "who": "learner",
+     "text": "Mi chiamo Sam. Piacere!"
+    },
+    {
+     "who": "npc",
+     "text": "Piacere, Sam! Questi sono i miei bambini. Le piace Siena?"
+    }
+   ],
+   "said": "Sì, mi piace Siena! È molto bello, ma io non parlo bene italiano.",
+   "watch": "Invents an errand: a mum in a park offered \"un caffè o una passeggiata\"",
+   "was": "tests/experiments/invented-errand.mts",
+   "from": {
+    "who": "Josh",
+    "date": "2026-11-06",
+    "quote": "this drift is a app wide problem"
+   }
+  },
+  {
+   "id": "it-ardit-ribollita",
+   "country": "it",
+   "kind": "town",
+   "level": "intermediate",
+   "cityId": "firenze",
+   "placeId": "trattoria-mario-nuova",
+   "transcript": [
+    {
+     "who": "npc",
+     "text": "Buongiorno! Benvenuto da Mario. Siete in uno o aspettate qualcuno?"
+    },
+    {
+     "who": "learner",
+     "text": "Solo io, grazie."
+    },
+    {
+     "who": "npc",
+     "text": "Benissimo, si accomodi pure qui. Oggi abbiamo la ribollita, la trippa e la bistecca. Cosa le porto da bere intanto?"
+    },
+    {
+     "who": "learner",
+     "text": "Mi può spiegare cos'è la ribalita, per favore?"
+    },
+    {
+     "who": "npc",
+     "text": "Certo! La ribollita è una zuppa toscana di pane raffermo, fagioli, cavolo nero e verdure. Piatto povero, ma buonissimo. La assaggia?"
+    }
+   ],
+   "said": "Si, vorrei la ribaletta. Si, vorrei la ribaletta.",
+   "watch": "Treats a speech-to-text mishearing (ribollita heard as ribaletta) as the learner's mistake",
+   "was": "tests/experiments/heard-replay.mts",
+   "from": {
+    "who": "Josh",
+    "date": "2026-11-05",
+    "quote": "Ardit recast \"ribaletta\""
+   }
+  },
+  {
+   "id": "mx-chela-opening",
+   "country": "es-mx",
+   "kind": "town",
+   "level": "beginner",
+   "stage": "S1",
+   "cityId": "oaxaca",
+   "placeId": "puesto-chapulines-mercado-benito-juarez",
+   "transcript": [],
+   "watch": "Incoherent opening: repeats across English and Spanish, no sentence breaks",
+   "was": "tests/experiments/replay-set.mts",
+   "from": {
+    "who": "Josh",
+    "date": "2026-11-05",
+    "quote": "incoherent dialogue"
+   }
+  },
+  {
+   "id": "mx-beto-hungry",
+   "country": "es-mx",
+   "kind": "town",
+   "level": "beginner",
+   "stage": "S2",
+   "cityId": "san-miguel-de-allende",
+   "placeId": "jardin-allende",
+   "transcript": [
+    {
+     "who": "npc",
+     "text": "Buenas tardes, bienvenido. Me llamo Beto. Soy taxista. ¿Cómo se llama usted?",
+     "en": "Good afternoon, welcome. My name is Beto. I’m a taxi driver. What is your name?"
+    },
+    {
+     "who": "learner",
+     "text": "Mi llamo Joshua."
+    },
+    {
+     "who": "npc",
+     "text": "Mucho gusto, Joshua. Hoy hay mucha gente en el Jardín. ¿Quiere ir al Centro o a otra colonia?",
+     "en": "Nice to meet you, Joshua. Today there are lots of people in the Jardín. Do you want to go to the Centro or another neighborhood?"
+    },
+    {
+     "who": "learner",
+     "text": "No necesito un taxi, gracias."
+    },
+    {
+     "who": "npc",
+     "text": "Está bien, Joshua. Sin problema. Hay familias, parejas y mariachis. ¿Le gusta el Jardín Allende?",
+     "en": "That’s fine, Joshua. No problem. There are families, couples and mariachis. Do you like the Jardín Allende?"
+    }
+   ],
+   "said": "Si me gusta. I'm very hungry",
+   "watch": "A taxi driver offers food his job can't give (\"¿Quiere comer tacos o una torta?\")",
+   "was": "tests/experiments/job-drift.mts",
+   "from": {
+    "who": "Josh",
+    "date": "2026-11-06",
+    "quote": "¿Por qué estás tomando mi orden?"
+   }
+  },
+  {
+   "id": "mx-beto-torta",
+   "country": "es-mx",
+   "kind": "town",
+   "level": "beginner",
+   "stage": "S2",
+   "cityId": "san-miguel-de-allende",
+   "placeId": "jardin-allende",
+   "transcript": [
+    {
+     "who": "npc",
+     "text": "Buenas tardes, bienvenido. Me llamo Beto. Soy taxista. ¿Cómo se llama usted?",
+     "en": "Good afternoon, welcome. My name is Beto. I’m a taxi driver. What is your name?"
+    },
+    {
+     "who": "learner",
+     "text": "Mi llamo Joshua."
+    },
+    {
+     "who": "npc",
+     "text": "Mucho gusto, Joshua. Hoy hay mucha gente en el Jardín. ¿Quiere ir al Centro o a otra colonia?",
+     "en": "Nice to meet you, Joshua. Today there are lots of people in the Jardín. Do you want to go to the Centro or another neighborhood?"
+    },
+    {
+     "who": "learner",
+     "text": "No necesito un taxi, gracias."
+    },
+    {
+     "who": "npc",
+     "text": "Está bien, Joshua. Sin problema. Hay familias, parejas y mariachis. ¿Le gusta el Jardín Allende?",
+     "en": "That’s fine, Joshua. No problem. There are families, couples and mariachis. Do you like the Jardín Allende?"
+    },
+    {
+     "who": "learner",
+     "text": "Si me gusta. I'm very hungry"
+    },
+    {
+     "who": "npc",
+     "text": "¡Qué bien! Yo también tengo hambre. Hay tacos cerca del Jardín. ¿Quiere comer tacos o una torta?",
+     "en": "Great! I’m hungry too. There are tacos near the Jardín. Do you want to eat tacos or a torta?"
+    }
+   ],
+   "said": "Torta por favor.",
+   "watch": "A taxi driver takes a torta order (\"¿Con queso o con jamón?\")",
+   "was": "tests/experiments/job-drift.mts",
+   "from": {
+    "who": "Josh",
+    "date": "2026-11-06",
+    "quote": "And the torta"
+   }
+  },
+  {
+   "id": "mx-magda-joven",
+   "country": "es-mx",
+   "kind": "lesson",
+   "level": "beginner",
+   "lesson": {
+    "stepId": "a1-04-4",
+    "part": "teach"
+   },
+   "transcript": [
+    {
+     "who": "npc",
+     "text": "You'll be able to speak to people the way Mexicans do, with a title instead of a name. Let's start with how you ask a young man for help.",
+     "offered": [
+      "Joven, ¿me ayuda?"
+     ]
+    },
+    {
+     "who": "learner",
+     "text": "¿Cómo me ayuda?"
+    },
+    {
+     "who": "npc",
+     "text": "No worries, let me give you the whole sentence. You say it to a young man you don't know.",
+     "offered": [
+      "Joven, ¿me ayuda?"
+     ]
+    },
+    {
+     "who": "learner",
+     "text": "¿Cómo te ayudas?"
+    },
+    {
+     "who": "npc",
+     "text": "Joven, ¿me ayuda? young man, can you help me?",
+     "offered": [
+      "Joven, ¿me ayuda?"
+     ]
+    }
+   ],
+   "said": "¿Owen me ayuda?",
+   "watch": "Coaches a speech-to-text mishearing as a pronunciation mistake (\"HO-ven\")",
+   "was": "tests/experiments/heard-replay.mts",
+   "from": {
+    "who": "Jennifer",
+    "date": "2026-11-04",
+    "quote": "Magda coached \"¿Owen me ayuda?\" into \"HO-ven\""
+   }
+  },
+  {
+   "id": "mx-magda-cansado",
+   "country": "es-mx",
+   "kind": "lesson",
+   "level": "beginner",
+   "lesson": {
+    "stepId": "a1-01-2",
+    "part": "teach"
+   },
+   "transcript": [
+    {
+     "who": "npc",
+     "text": "You'll be able to answer when someone asks how you are. ¿Cómo está, señor? how are you?",
+     "offered": [
+      "Estoy bien, gracias."
+     ]
+    },
+    {
+     "who": "learner",
+     "text": "Estoy bien gracias."
+    },
+    {
+     "who": "npc",
+     "text": "Estoy bien, gracias. That's what you say to the café waiter. A neighbour might hear something different. Estoy un poco cansado. a bit tired",
+     "offered": [
+      "Estoy un poco cansado."
+     ]
+    }
+   ],
+   "said": "Estoy en el barco de canzart.",
+   "watch": "Corrects a mishearing (\"Almost! The word you want is cansado\")",
+   "was": "tests/experiments/heard-replay.mts",
+   "from": {
+    "who": "Josh's family",
+    "date": "2026-11-03",
+    "quote": "Almost! The word you want is cansado"
+   }
+  },
+  {
+   "id": "mx-efren-return-opener",
+   "country": "es-mx",
+   "kind": "town",
+   "level": "beginner",
+   "stage": "S2",
+   "cityId": "oaxaca",
+   "placeId": "monte-alban",
+   "transcript": [],
+   "memory": {
+    "visits": 1,
+    "daysAgo": 3,
+    "notes": [
+     "Their name is Sam.",
+     "Lives in Mexico City, in Roma, and has been in Mexico about two weeks.",
+     "From Canada; studying Spanish.",
+     "First visit to Monte Albán last time; liked the view of the valley."
+    ]
+   },
+   "watch": "Retells the Danzantes and the ball court on every visit",
+   "was": "tests/experiments/memory-told.mts (T4 M1)",
+   "from": {
+    "who": "Claude, T3",
+    "date": "2026-11-06",
+    "quote": "Even Nino tells the menu dish by dish every time"
+   }
+  },
+  {
+   "id": "mx-efren-return-reply",
+   "country": "es-mx",
+   "kind": "town",
+   "level": "beginner",
+   "stage": "S2",
+   "cityId": "oaxaca",
+   "placeId": "monte-alban",
+   "transcript": [
+    {
+     "who": "npc",
+     "text": "Hola, Sam. Bienvenido otra vez. Hoy hace sol en la plaza. ¿Cómo está hoy?",
+     "en": "Hi, Sam. Welcome back. It is sunny in the plaza today. How are you today?"
+    }
+   ],
+   "said": "Bien, gracias. Estudio mucho español esta semana.",
+   "memory": {
+    "visits": 1,
+    "daysAgo": 3,
+    "notes": [
+     "Their name is Sam.",
+     "Lives in Mexico City, in Roma, and has been in Mexico about two weeks.",
+     "From Canada; studying Spanish.",
+     "First visit to Monte Albán last time; liked the view of the valley."
+    ]
+   },
+   "watch": "Retells what he already told them, on a line that doesn't touch the ruins",
+   "was": "tests/experiments/memory-told.mts (T4 M2)",
+   "from": {
+    "who": "Claude, T3",
+    "date": "2026-11-06",
+    "quote": "repeats come from memory, not content"
+   }
+  }
+ ],
+ "toFetch": {
+  "about": "Complaints whose real turns aren't in the repo yet: pull each from the admin export (/api/admin/conversations) on the laptop and add it as a moment.",
+  "items": [
+   {
+    "what": "Don Nacho offered \"Estoy un poco cansado, pero contento\" to say back (answer too long)",
+    "who": "Josh",
+    "date": "2026-11-03",
+    "watch": "Answers to say back hold two ideas"
+   },
+   {
+    "what": "A cornetto offered at a pharmacy",
+    "who": "Josh",
+    "date": "2026-11-06",
+    "watch": "Examples in the prompt become content"
+   },
+   {
+    "what": "Luisa's planted cappuccino line said on every visit",
+    "who": "Josh",
+    "date": "2026-11-06",
+    "watch": "Planted setting lines echo"
+   },
+   {
+    "what": "Giorgia ran a pizza-by-the-slice shop as a sit-down pizzeria",
+    "who": "Josh",
+    "date": "2026-10-27",
+    "watch": "Invents a job the place doesn't have"
+   }
+  ]
+ }
+}
