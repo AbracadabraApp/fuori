@@ -305,6 +305,7 @@ export const siracusa: CityPantry = {
       name: "Giusy Scirè",
       gender: "f",
       age: 29,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: "proprietaria",
       placeId: 'bar-dolce-vita',
       personality: ["cheerful", "quick", "proud of her family's bar"],
@@ -316,6 +317,7 @@ export const siracusa: CityPantry = {
       name: 'Rosa Battaglia',
       gender: 'f',
       age: 38,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'barista',
       placeId: 'caffe-archimede',
       personality: ["efficient", "witty", "warm"],
@@ -327,6 +329,7 @@ export const siracusa: CityPantry = {
       name: 'Giuseppe Marino',
       gender: 'm',
       age: 67,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'barista',
       placeId: 'bar-apollo',
       personality: ['philosophical'],
@@ -337,6 +340,7 @@ export const siracusa: CityPantry = {
       name: 'Angela Fontana',
       gender: 'f',
       age: 45,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'fornaia',
       placeId: 'panificio-regina',
       personality: ['nurturing', 'proud', 'early-riser'],
@@ -347,6 +351,7 @@ export const siracusa: CityPantry = {
       name: 'Carmelo Russo',
       gender: 'm',
       age: 41,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'pasticciere',
       placeId: 'pasticceria-santa-lucia',
       personality: ['artistic'],
@@ -357,6 +362,7 @@ export const siracusa: CityPantry = {
       name: 'Pietro D\'Amico',
       gender: 'm',
       age: 58,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'venditore',
       placeId: 'mercato-ortigia',
       personality: ["boisterous", "honest", "humorous"],
@@ -368,6 +374,7 @@ export const siracusa: CityPantry = {
       name: 'Francesca Caruso',
       gender: 'f',
       age: 35,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'venditrice',
       placeId: 'mercato-acradina',
       personality: ['local', 'friendly'],
@@ -378,6 +385,7 @@ export const siracusa: CityPantry = {
       name: 'Tonino Sciacca',
       gender: 'm',
       age: 49,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'pescivendolo',
       placeId: 'pescheria-mare',
       personality: ['straightforward', 'maritime'],
@@ -388,6 +396,7 @@ export const siracusa: CityPantry = {
       name: 'Lorenzo Greco',
       gender: 'm',
       age: 44,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'chef',
       placeId: 'ristorante-dioniso',
       personality: [],
@@ -399,6 +408,7 @@ export const siracusa: CityPantry = {
       name: 'Isabella Caruso',
       gender: 'f',
       age: 36,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'proprietaria',
       placeId: 'ristorante-luna',
       personality: ['elegant', 'attentive', 'gracious'],
@@ -409,6 +419,7 @@ export const siracusa: CityPantry = {
       name: 'Maria Lombardo',
       gender: 'f',
       age: 61,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'cuoca',
       placeId: 'trattoria-aretusa',
       personality: ['motherly', 'no-nonsense', 'skilled'],
@@ -419,6 +430,7 @@ export const siracusa: CityPantry = {
       name: 'Vincenzo Catalano',
       gender: 'm',
       age: 55,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'oste',
       placeId: 'osteria-siciliana',
       personality: ['welcoming', 'wine-lover'],
@@ -429,6 +441,7 @@ export const siracusa: CityPantry = {
       name: 'Padre Antonio Serra',
       gender: 'm',
       age: 68,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'sacerdote',
       placeId: 'duomo-siracusa',
       personality: ['gentle', 'historical'],
@@ -439,6 +452,7 @@ export const siracusa: CityPantry = {
       name: "Elena Scirè",
       gender: 'f',
       age: 29,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: "ragazza di Ortigia",
       placeId: 'fonte-aretusa',
       personality: ["lively", "proud of Ortigia", "sea-loving"],
@@ -450,6 +464,7 @@ export const siracusa: CityPantry = {
       name: 'Marco Alberti',
       gender: 'm',
       age: 53,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'archeologo',
       placeId: 'parco-archeologico',
       personality: [],
@@ -461,6 +476,7 @@ export const siracusa: CityPantry = {
       name: 'Alberto Messina',
       gender: 'm',
       age: 72,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'pensionato',
       placeId: 'piazza-archimede',
       personality: ["sociable", "opinionated", "local fixture"],
@@ -472,6 +488,7 @@ export const siracusa: CityPantry = {
       name: 'Suor Gabriella',
       gender: 'f',
       age: 43,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'suora',
       placeId: 'santuario-madonna',
       personality: ['serene', 'compassionate', 'modern'],
@@ -482,6 +499,7 @@ export const siracusa: CityPantry = {
       name: 'Stefano Nicolosi',
       gender: 'm',
       age: 39,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'enotecario',
       placeId: 'enoteca-bacco',
       personality: ['sophisticated', 'local', 'discerning'],
@@ -492,6 +510,7 @@ export const siracusa: CityPantry = {
       name: 'Claudia Romano',
       gender: 'f',
       age: 33,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'sommelier',
       placeId: 'wine-bar-etna',
       personality: ['professional', 'adventurous'],
@@ -502,6 +521,7 @@ export const siracusa: CityPantry = {
       name: 'Beatrice Moretti',
       gender: 'f',
       age: 47,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'libraia',
       placeId: 'libreria-papiro',
       personality: ['literary', 'thoughtful', 'recommends well'],
@@ -512,6 +532,7 @@ export const siracusa: CityPantry = {
       name: "Dott.ssa Anca Ionescu",
       gender: "f",
       age: 34,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: "farmacista",
       placeId: 'farmacia-apollo',
       personality: ["trustworthy", "caring", "precise"],
@@ -523,6 +544,7 @@ export const siracusa: CityPantry = {
       name: 'Roberto Bianchi',
       gender: 'm',
       age: 50,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'bigliettaio',
       placeId: 'stazione-siracusa',
       personality: ["punctual", "helpful", "efficient"],
@@ -534,6 +556,7 @@ export const siracusa: CityPantry = {
       name: 'Davide Levi',
       gender: 'm',
       age: 64,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: "pensionato",
       placeId: 'antica-giudecca',
       personality: ["preservationist", "gentle", "proud of Ortigia"],
@@ -545,6 +568,7 @@ export const siracusa: CityPantry = {
       name: "Antonella Pappalardo",
       gender: "f",
       age: 63,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: "artigiana",
       placeId: 'laboratorio-papiro',
       personality: ["skilled", "patient teacher", "proud of the craft"],
@@ -556,6 +580,7 @@ export const siracusa: CityPantry = {
       name: 'Lucia Bellini',
       gender: 'f',
       age: 27,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'gelataia',
       placeId: 'gelateria-nettuno',
       personality: ["cheerful", "creative", "sunny"],
@@ -567,6 +592,7 @@ export const siracusa: CityPantry = {
       name: 'Giulia Terrana',
       gender: 'f',
       age: 42,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'ceramista',
       placeId: 'bottega-ceramica',
       personality: ['artistic', 'colorful'],
@@ -577,6 +603,7 @@ export const siracusa: CityPantry = {
       name: 'Salvatore Costa',
       gender: 'm',
       age: 46,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'chef',
       placeId: 'pescheria-antica',
       personality: ['seafood expert', 'straightforward'],
@@ -587,6 +614,7 @@ export const siracusa: CityPantry = {
       name: 'Filippo Salerno',
       gender: 'm',
       age: 63,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'barista',
       placeId: 'bar-minerva',
       personality: ['neighborhood fixture', 'card player'],
@@ -597,6 +625,7 @@ export const siracusa: CityPantry = {
       name: 'Gino Palmieri',
       gender: 'm',
       age: 59,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'giardiniere',
       placeId: 'orto-botanico',
       personality: ['nature-loving', 'quiet'],
@@ -607,6 +636,7 @@ export const siracusa: CityPantry = {
       name: 'Antonio Romano',
       gender: 'm',
       age: 51,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'macellaio',
       placeId: 'macelleria-tradizionale',
       personality: ['professional', 'third-generation'],
@@ -617,6 +647,7 @@ export const siracusa: CityPantry = {
       name: 'Andrea Gulino',
       gender: 'm',
       age: 45,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'casaro',
       placeId: 'caseificio-borderi',
       personality: ['showman', 'generous', 'talks while he works'],

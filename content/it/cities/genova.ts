@@ -274,6 +274,7 @@ export const genova: CityPantry = {
       name: 'Marco Venturi',
       gender: 'm',
       age: 42,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'proprietario',
       placeId: 'caffe-degli-specchi',
       personality: ["proud", "hospitable", "chatty"],
@@ -285,6 +286,7 @@ export const genova: CityPantry = {
       name: "Camila Andrade",
       gender: "f",
       age: 29,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: "barista",
       placeId: 'bar-boccadasse',
       personality: ["cheerful", "maritime", "warm"],
@@ -296,6 +298,7 @@ export const genova: CityPantry = {
       name: 'Roberto Grimaldi',
       gender: 'm',
       age: 56,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'barista',
       placeId: 'caffe-caruggi',
       personality: ['gruff', 'local', 'loyal'],
@@ -306,6 +309,7 @@ export const genova: CityPantry = {
       name: 'Anna Nervi',
       gender: 'f',
       age: 38,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'pasticciera',
       placeId: 'pasticceria-liquorosa',
       personality: ['artistic', 'refined'],
@@ -317,6 +321,7 @@ export const genova: CityPantry = {
       name: 'Francesco Parodi',
       gender: 'm',
       age: 51,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'fornaio',
       placeId: 'panificio-castelletto',
       personality: ['jovial', 'generous', 'early-riser'],
@@ -327,6 +332,7 @@ export const genova: CityPantry = {
       name: 'Paolo Doria',
       gender: 'm',
       age: 63,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'venditore',
       placeId: 'mercato-orientale',
       personality: ["boisterous", "shrewd", "talkative"],
@@ -338,6 +344,7 @@ export const genova: CityPantry = {
       name: 'Lucia Ferraro',
       gender: 'f',
       age: 45,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'pescatrice',
       placeId: 'mercato-boccadasse',
       personality: ['straightforward', 'humorous', 'hardworking'],
@@ -348,6 +355,7 @@ export const genova: CityPantry = {
       name: 'Teresa Brignole',
       gender: 'f',
       age: 67,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'proprietaria',
       placeId: 'bottega-caruggi',
       personality: ['mysterious', 'herbalist'],
@@ -358,6 +366,7 @@ export const genova: CityPantry = {
       name: 'Giovanni Repetto',
       gender: 'm',
       age: 58,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'cuoco',
       placeId: 'trattoria-rosmarino',
       personality: ['nostalgic'],
@@ -369,6 +378,7 @@ export const genova: CityPantry = {
       name: 'Elena Spinola',
       gender: 'f',
       age: 41,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'sommelier',
       placeId: 'ristorante-vista',
       personality: ['sophisticated', 'local', 'poised'],
@@ -379,6 +389,7 @@ export const genova: CityPantry = {
       name: 'Matteo Ghiglione',
       gender: 'm',
       age: 49,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'oste',
       placeId: 'antica-osteria',
       personality: ['convivial'],
@@ -389,6 +400,7 @@ export const genova: CityPantry = {
       name: 'Silvia Castagna',
       gender: 'f',
       age: 34,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'fornaia',
       placeId: 'focacceria-recco',
       personality: ['efficient', 'proud', 'focused'],
@@ -399,6 +411,7 @@ export const genova: CityPantry = {
       name: 'Chiara Grimaldi',
       gender: 'f',
       age: 31,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'guida turistica',
       placeId: 'palazzo-ducale',
       personality: ['enthusiastic', 'educated'],
@@ -409,6 +422,7 @@ export const genova: CityPantry = {
       name: "Andrea Ferrando",
       gender: 'm',
       age: 55,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'guardiano',
       placeId: 'lanterna',
       personality: ['solitary', 'maritime', 'philosophical'],
@@ -420,6 +434,7 @@ export const genova: CityPantry = {
       name: 'Padre Tommaso Ravasco',
       gender: 'm',
       age: 68,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'sacerdote',
       placeId: 'san-lorenzo',
       personality: ['gentle', 'devoted'],
@@ -430,6 +445,7 @@ export const genova: CityPantry = {
       name: 'Suor Margherita Doria',
       gender: 'f',
       age: 72,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'suora',
       placeId: 'santa-maria-castello',
       personality: ['peaceful', 'nurturing'],
@@ -440,6 +456,7 @@ export const genova: CityPantry = {
       name: 'Luca Traverso',
       gender: 'm',
       age: 44,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'giardiniere',
       placeId: 'villetta-dinegro',
       personality: ['local', 'nature-loving'],
@@ -450,6 +467,7 @@ export const genova: CityPantry = {
       name: 'Beatrice Ravenna',
       gender: 'f',
       age: 26,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'artista di strada',
       placeId: 'piazza-ferrari',
       personality: ["creative", "free-spirited", "curious"],
@@ -461,6 +479,7 @@ export const genova: CityPantry = {
       name: "Diego Parodi",
       gender: 'm',
       age: 71,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'pescatore',
       placeId: 'piazza-boccadasse',
       personality: ['taciturn', 'weather-wise'],
@@ -472,6 +491,7 @@ export const genova: CityPantry = {
       name: 'Alberto Molinari',
       gender: 'm',
       age: 47,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'enotecario',
       placeId: 'enoteca-sola',
       personality: ['sophisticated', 'discerning'],
@@ -482,6 +502,7 @@ export const genova: CityPantry = {
       name: 'Valeria Fieschi',
       gender: 'f',
       age: 36,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'proprietaria',
       placeId: 'wine-bar-castelletto',
       personality: ['modern', 'ambitious', 'social'],
@@ -492,6 +513,7 @@ export const genova: CityPantry = {
       name: 'Michele Barbieri',
       gender: 'm',
       age: 59,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'libraio',
       placeId: 'libreria-bozzi',
       personality: ['bibliophile', 'helpful'],
@@ -502,6 +524,7 @@ export const genova: CityPantry = {
       name: 'Dott.ssa Carla Olivieri',
       gender: 'f',
       age: 43,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'farmacista',
       placeId: 'farmacia-europa',
       personality: ["professional", "caring", "calm"],
@@ -513,6 +536,7 @@ export const genova: CityPantry = {
       name: "Gentian Prifti",
       gender: "m",
       age: 52,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'bigliettaio',
       placeId: 'stazione-principe',
       personality: ["punctual", "authoritative", "helpful"],
@@ -524,6 +548,7 @@ export const genova: CityPantry = {
       name: 'Marina Danese',
       gender: 'f',
       age: 39,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'guida museo',
       placeId: 'porto-antico',
       personality: ['maritime-expert', 'engaging', 'proud'],
@@ -534,6 +559,7 @@ export const genova: CityPantry = {
       name: 'Daniela Moretti',
       gender: 'f',
       age: 28,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'gelataia',
       placeId: 'gelateria-profumo',
       personality: ["sweet", "creative", "cheerful"],
@@ -545,6 +571,7 @@ export const genova: CityPantry = {
       name: 'Ezio Ruffini',
       gender: 'm',
       age: 64,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'salumiere',
       placeId: 'salumeria-fontana',
       personality: ["generous", "proud", "funny"],
@@ -556,6 +583,7 @@ export const genova: CityPantry = {
       name: "Vittorio Casella",
       gender: 'm',
       age: 66,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: "custode di palazzo",
       placeId: 'via-garibaldi',
       personality: ['distinguished'],
@@ -567,6 +595,7 @@ export const genova: CityPantry = {
       name: 'Tommaso Sacco',
       gender: 'm',
       age: 37,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'cantiniere',
       placeId: 'cantina-squarciafico',
       personality: ['local', 'convivial'],

@@ -345,6 +345,7 @@ export const torino: CityPantry = {
       name: 'Enrico Bosio',
       gender: 'm',
       age: 45,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'bigliettaio',
       placeId: 'stazione-porta-nuova-torino',
       personality: ["efficient", "dry humour", "patient"],
@@ -356,6 +357,7 @@ export const torino: CityPantry = {
       name: "Nadia Haddad",
       gender: "f",
       age: 26,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: "barista",
       placeId: 'caffe-san-carlo',
       personality: ["quick", "cheerful", "proud of her coffee"],
@@ -367,6 +369,7 @@ export const torino: CityPantry = {
       name: 'Franca Cavallo',
       gender: 'f',
       age: 68,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'proprietaria',
       placeId: 'bicerin-dal-1763',
       personality: ["warm", "local", "guardian of tradition"],
@@ -378,6 +381,7 @@ export const torino: CityPantry = {
       name: 'Roberto Allemandi',
       gender: 'm',
       age: 35,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'cameriere',
       placeId: 'caffe-mulassano',
       personality: ['efficient', 'charming', 'well-dressed'],
@@ -388,6 +392,7 @@ export const torino: CityPantry = {
       name: 'Giuseppe Rosso',
       gender: 'm',
       age: 51,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'fornaio',
       placeId: 'panetteria-borgo-antico',
       personality: ['hardworking', 'jovial', 'flour-dusted'],
@@ -398,6 +403,7 @@ export const torino: CityPantry = {
       name: 'Claudia Stratta',
       gender: 'f',
       age: 29,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'pasticciera',
       placeId: 'pasticceria-stratta',
       personality: ['artistic', 'sweet'],
@@ -408,6 +414,7 @@ export const torino: CityPantry = {
       name: 'Anna Bianchi',
       gender: 'f',
       age: 45,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'fruttivendola',
       placeId: 'mercato-porta-palazzo',
       personality: ["loud", "friendly", "no-nonsense"],
@@ -419,6 +426,7 @@ export const torino: CityPantry = {
       name: 'Paolo Marchetti',
       gender: 'm',
       age: 58,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'formaggiaio',
       placeId: 'mercato-crocetta',
       personality: ['generous with samples'],
@@ -429,6 +437,7 @@ export const torino: CityPantry = {
       name: 'Davide Olivetti',
       gender: 'm',
       age: 26,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'commesso',
       placeId: 'eataly-torino',
       personality: ['enthusiastic', 'foodie', 'helpful'],
@@ -439,6 +448,7 @@ export const torino: CityPantry = {
       name: 'Stefano Del Cambio',
       gender: 'm',
       age: 52,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'maître',
       placeId: 'ristorante-del-cambio',
       personality: ['elegant', 'formal', 'impeccable'],
@@ -450,6 +460,7 @@ export const torino: CityPantry = {
       name: 'Giulia Bergamasco',
       gender: 'f',
       age: 38,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'chef',
       placeId: 'ristorante-consorzio',
       personality: ['innovative', 'regional pride'],
@@ -460,6 +471,7 @@ export const torino: CityPantry = {
       name: 'Mario Gastaldi',
       gender: 'm',
       age: 62,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'oste',
       placeId: 'trattoria-valenza',
       personality: ['paternal', 'welcoming', 'wine-loving'],
@@ -470,6 +482,7 @@ export const torino: CityPantry = {
       name: 'Bruno Malvezzi',
       gender: 'm',
       age: 47,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'cuoco',
       placeId: 'osteria-antiche-sere',
       personality: ['gruff but kind', 'talented'],
@@ -480,6 +493,7 @@ export const torino: CityPantry = {
       name: "Elena Bertola",
       gender: 'f',
       age: 31,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: "addetta del Museo del Cinema",
       placeId: 'mole-antonelliana',
       personality: ['local', 'animated', 'city-proud'],
@@ -491,6 +505,7 @@ export const torino: CityPantry = {
       name: 'Padre Luca Molinari',
       gender: 'm',
       age: 55,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'sacerdote',
       placeId: 'duomo-torino',
       personality: ['serene', 'welcoming'],
@@ -501,6 +516,7 @@ export const torino: CityPantry = {
       name: 'Isabella Savoia',
       gender: 'f',
       age: 44,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'curatrice',
       placeId: 'palazzo-reale',
       personality: ['sophisticated', 'historian', 'detail-oriented'],
@@ -511,6 +527,7 @@ export const torino: CityPantry = {
       name: "Giacomo Bosio",
       gender: 'm',
       age: 59,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'giardiniere',
       placeId: 'parco-valentino',
       personality: ['nature-loving', 'philosophical'],
@@ -522,6 +539,7 @@ export const torino: CityPantry = {
       name: "Diego Quispe",
       gender: "m",
       age: 27,
+      voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
       role: "musicista di strada",
       placeId: 'piazza-castello',
       personality: ["artistic", "romantic", "free-spirited"],
@@ -533,6 +551,7 @@ export const torino: CityPantry = {
       name: 'Martina Fenoglio',
       gender: 'f',
       age: 27,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'artista di strada',
       placeId: 'piazza-vittorio-veneto',
       personality: ['creative', 'independent'],
@@ -543,6 +562,7 @@ export const torino: CityPantry = {
       name: 'Simone Barolo',
       gender: 'm',
       age: 41,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'sommelier',
       placeId: 'enoteca-bacco',
       personality: ['enthusiastic', 'regional pride'],
@@ -553,6 +573,7 @@ export const torino: CityPantry = {
       name: 'Valeria Morra',
       gender: 'f',
       age: 29,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'barista',
       placeId: 'aperitivo-cult',
       personality: ['social', 'trendy', 'mixology-skilled'],
@@ -563,6 +584,7 @@ export const torino: CityPantry = {
       name: 'Teresa Pavese',
       gender: 'f',
       age: 48,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'libraia',
       placeId: 'libreria-luxemburg',
       personality: ["literary", "thoughtful", "recommends perfectly"],
@@ -574,6 +596,7 @@ export const torino: CityPantry = {
       name: 'Dott.ssa Carla Boero',
       gender: 'f',
       age: 56,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'farmacista',
       placeId: 'farmacia-centrale',
       personality: ['professional', 'caring', 'local'],
@@ -584,6 +607,7 @@ export const torino: CityPantry = {
       name: 'Federico Costa',
       gender: 'm',
       age: 39,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'bigliettaio',
       placeId: 'porta-nuova',
       personality: ['efficient', 'multilingual', 'helpful'],
@@ -594,6 +618,7 @@ export const torino: CityPantry = {
       name: "Chiara Rinaldi",
       gender: "f",
       age: 36,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: "cioccolatiera",
       placeId: 'guido-gobino',
       personality: ["precise", "proud", "patient"],
@@ -605,6 +630,7 @@ export const torino: CityPantry = {
       name: 'Antonio Carpano',
       gender: 'm',
       age: 64,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'esperto di vermut',
       placeId: 'casa-del-vermouth',
       personality: ["botanical knowledge", "patient", "nostalgic"],
@@ -616,6 +642,7 @@ export const torino: CityPantry = {
       name: 'Lorenzo Bertone',
       gender: 'm',
       age: 43,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: "curatore del museo dell'auto",
       placeId: 'museo-automobile',
       personality: ['technical', 'nostalgic'],
@@ -626,6 +653,7 @@ export const torino: CityPantry = {
       name: 'Sofia Pepino',
       gender: 'f',
       age: 24,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'gelataia',
       placeId: 'gelateria-pepino',
       personality: ['cheerful', 'sweet'],
@@ -636,6 +664,7 @@ export const torino: CityPantry = {
       name: 'Alessandro Gallo',
       gender: 'm',
       age: 32,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'venditore ambulante',
       placeId: 'mercato-centrale-torino',
       personality: ['artisan', 'modern'],
@@ -646,6 +675,7 @@ export const torino: CityPantry = {
       name: 'Benedetta Fiorio',
       gender: 'f',
       age: 37,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'barista',
       placeId: 'caffe-fiorio',
       personality: ['elegant', 'historic knowledge', 'refined'],
@@ -656,6 +686,7 @@ export const torino: CityPantry = {
       name: 'Riccardo Balon',
       gender: 'm',
       age: 61,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'antiquario',
       placeId: 'balon-flea-market',
       personality: ['eccentric', 'treasure hunter'],
@@ -666,6 +697,7 @@ export const torino: CityPantry = {
       name: 'Matteo Rabezzana',
       gender: 'm',
       age: 50,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'proprietario',
       placeId: 'osteria-rabezzana',
       personality: ['family-oriented', 'generous', 'traditional cook'],

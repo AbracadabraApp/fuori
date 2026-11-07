@@ -11,7 +11,7 @@
  * /v1/speak simply makes the voice itself.
  */
 import { elevenLabsVoiceFor, language, onboarding } from '@/content';
-import { characterAge, characterGender } from '@/lib/characters/by-id';
+import { characterAge, characterGender, characterVoice } from '@/lib/characters/by-id';
 import { getVoiceProvider } from '@/lib/voice/providers';
 import type { SynthesisResult } from '@/lib/voice/providers/types';
 
@@ -22,9 +22,9 @@ const early = new Map<string, { result: Promise<SynthesisResult | null>; at: num
 /** The speed the app asks for when the learner hasn't said (English off: 0.9) */
 export const DEFAULT_APP_SPEED = 0.9;
 
-/** Which ElevenLabs voice says a character's lines: the greeter has her own, characters one by gender and age */
+/** Which ElevenLabs voice says a character's lines: the greeter has her own, characters their stored voice, or one by gender and age */
 export function voiceForCharacter(characterId: string): string | undefined {
-  return characterId === onboarding.guide.id ? onboarding.guide.voice : elevenLabsVoiceFor(characterId, characterGender(characterId), characterAge(characterId));
+  return characterId === onboarding.guide.id ? onboarding.guide.voice : characterVoice(characterId) ?? elevenLabsVoiceFor(characterId, characterGender(characterId), characterAge(characterId));
 }
 
 /** How the voice is delivered: the greeter's own settings (livelier), characters the defaults */

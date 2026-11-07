@@ -86,6 +86,10 @@ export interface CityCharacter {
    *  doesn't serve anyone gets an invented job (Josh, 2026-10-27: a student
    *  sold him pizza, a woman in a square made him coffee) */
   here?: string;
+  /** Their ElevenLabs voice, assigned once per city so neighbours differ and
+   *  stored so it never moves (scripts/assign-voices.mts; Josh, 2026-11-07).
+   *  Without it the voice is picked from content/<country>/voices.ts */
+  voice?: string;
 }
 
 export interface CityPantry {

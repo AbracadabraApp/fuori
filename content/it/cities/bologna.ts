@@ -342,6 +342,7 @@ export const bologna: CityPantry = {
       name: 'Marco Terzi',
       gender: 'm',
       age: 52,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'torrefattore',
       placeId: 'caffe-terzi',
       personality: ["local", "proud", "meticulous"],
@@ -353,6 +354,7 @@ export const bologna: CityPantry = {
       name: 'Giulia Morandi',
       gender: 'f',
       age: 28,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'barista',
       placeId: 'bar-senza-nome',
       personality: ["friendly", "artistic", "energetic"],
@@ -364,6 +366,7 @@ export const bologna: CityPantry = {
       name: 'Elena Quadri',
       gender: 'f',
       age: 45,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'pasticciera',
       placeId: 'pasticceria-regina',
       personality: ['elegant', 'gracious'],
@@ -374,6 +377,7 @@ export const bologna: CityPantry = {
       name: 'Roberto Brisa',
       gender: 'm',
       age: 58,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'fornaio',
       placeId: 'forno-brisa',
       personality: ['warm-hearted', 'early-riser'],
@@ -384,6 +388,7 @@ export const bologna: CityPantry = {
       name: 'Simona Atti',
       gender: 'f',
       age: 36,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'fornaia',
       placeId: 'panificio-atti',
       personality: ['cheerful', 'community-minded', 'hardworking'],
@@ -394,6 +399,7 @@ export const bologna: CityPantry = {
       name: 'Paolo Venturi',
       gender: 'm',
       age: 62,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'salumiere',
       placeId: 'mercato-mezzo',
       personality: ["boisterous", "generous", "talkative"],
@@ -405,6 +411,7 @@ export const bologna: CityPantry = {
       name: 'Franca Colombi',
       gender: 'f',
       age: 55,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'fruttivendola',
       placeId: 'mercato-erbe',
       personality: ['sharp', 'fair', 'local'],
@@ -415,6 +422,7 @@ export const bologna: CityPantry = {
       name: 'Antonio Bassi',
       gender: 'm',
       age: 48,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'casaro',
       placeId: 'mercatino-santo-stefano',
       personality: ['artisanal', 'proud'],
@@ -425,6 +433,7 @@ export const bologna: CityPantry = {
       name: 'Matteo Ricci',
       gender: 'm',
       age: 44,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'chef',
       placeId: 'ristorante-pappagallo',
       personality: ['refined', 'creative'],
@@ -436,6 +445,7 @@ export const bologna: CityPantry = {
       name: 'Nello Ferrari',
       gender: 'm',
       age: 71,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'proprietario',
       placeId: 'ristorante-da-nello',
       personality: ['charismatic', 'welcoming'],
@@ -446,6 +456,7 @@ export const bologna: CityPantry = {
       name: 'Margherita Rossi',
       gender: 'f',
       age: 67,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'cuoca',
       placeId: 'trattoria-meloncello',
       personality: ['maternal', 'no-nonsense', 'generous'],
@@ -456,6 +467,7 @@ export const bologna: CityPantry = {
       name: 'Luca Montanari',
       gender: 'm',
       age: 39,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'proprietario',
       placeId: 'osteria-bottega',
       personality: ['convivial', 'jovial'],
@@ -466,6 +478,7 @@ export const bologna: CityPantry = {
       name: 'Professor Alberti',
       gender: 'm',
       age: 68,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: "ingegnere in pensione",
       placeId: 'due-torri',
       personality: ["precise", "patient", "proud of Bologna"],
@@ -477,6 +490,7 @@ export const bologna: CityPantry = {
       name: 'Don Giuseppe Guidotti',
       gender: 'm',
       age: 59,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'sacerdote',
       placeId: 'santo-stefano',
       personality: ['contemplative', 'gentle'],
@@ -488,6 +502,7 @@ export const bologna: CityPantry = {
       name: 'Maria Custode',
       gender: 'f',
       age: 64,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'custode della chiesa',
       placeId: 'san-petronio',
       personality: ['devoted', 'protective'],
@@ -498,6 +513,7 @@ export const bologna: CityPantry = {
       name: 'Giorgio Bellini',
       gender: 'm',
       age: 53,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'giardiniere',
       placeId: 'giardini-margherita',
       personality: ['outdoorsy', 'contented'],
@@ -508,6 +524,7 @@ export const bologna: CityPantry = {
       name: 'Franco Melodia',
       gender: 'm',
       age: 42,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'musicista di strada',
       placeId: 'piazza-maggiore',
       personality: ["artistic", "free-spirited", "talented"],
@@ -519,6 +536,7 @@ export const bologna: CityPantry = {
       name: 'Clara Martinelli',
       gender: 'f',
       age: 22,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'studentessa',
       placeId: 'piazza-verdi',
       personality: ["social", "idealistic", "curious"],
@@ -530,6 +548,7 @@ export const bologna: CityPantry = {
       name: 'Andrea Sarti',
       gender: 'm',
       age: 37,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'sommelier',
       placeId: 'enoteca-italiana',
       personality: ['local', 'sophisticated'],
@@ -540,6 +559,7 @@ export const bologna: CityPantry = {
       name: 'Stefano Bentivoglio',
       gender: 'm',
       age: 56,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'proprietario',
       placeId: 'cantina-bentivoglio',
       personality: ['musical', 'atmospheric', 'cultured'],
@@ -550,6 +570,7 @@ export const bologna: CityPantry = {
       name: 'Anna Nanni',
       gender: 'f',
       age: 33,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'libraia',
       placeId: 'libreria-nanni',
       personality: ['literary', 'helpful'],
@@ -560,6 +581,7 @@ export const bologna: CityPantry = {
       name: 'Bruno Simoni',
       gender: 'm',
       age: 61,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'salumiere',
       placeId: 'salumeria-simoni',
       personality: ['proud'],
@@ -571,6 +593,7 @@ export const bologna: CityPantry = {
       name: 'Carla Gentile',
       gender: 'f',
       age: 50,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'negoziante',
       placeId: 'bottega-portici',
       personality: ['artisanal', 'welcoming', 'local-expert'],
@@ -581,6 +604,7 @@ export const bologna: CityPantry = {
       name: "Mihaela Popescu",
       gender: "f",
       age: 33,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: "gelataia",
       placeId: 'cremeria-funivia',
       personality: ["creative", "cheerful", "hardworking"],
@@ -592,6 +616,7 @@ export const bologna: CityPantry = {
       name: 'Sara Bertolini',
       gender: 'f',
       age: 45,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'gelataia',
       placeId: 'sorbetteria-castiglione',
       personality: ['enthusiastic', 'chatty', 'precise'],
@@ -603,6 +628,7 @@ export const bologna: CityPantry = {
       name: 'Dottoressa Lombardi',
       gender: 'f',
       age: 47,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'farmacista',
       placeId: 'farmacia-comunale',
       personality: ["professional", "caring", "precise"],
@@ -614,6 +640,7 @@ export const bologna: CityPantry = {
       name: "Blerta Gjoka",
       gender: "f",
       age: 38,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'bigliettaia',
       placeId: 'stazione-centrale',
       personality: ["punctual", "helpful", "experienced"],
@@ -625,6 +652,7 @@ export const bologna: CityPantry = {
       name: 'Angela Peregrino',
       gender: 'f',
       age: 58,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'guida dei pellegrini',
       placeId: 'portici-san-luca',
       personality: ['spiritual', 'enduring', 'inspiring'],
@@ -636,6 +664,7 @@ export const bologna: CityPantry = {
       name: 'Nonna Rina Fabbri',
       gender: 'f',
       age: 74,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'sfoglina',
       placeId: 'sfoglia-rina',
       personality: ['masterful', 'loving'],
@@ -647,6 +676,7 @@ export const bologna: CityPantry = {
       name: 'Dottore Bianchi',
       gender: 'm',
       age: 65,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'bibliotecario',
       placeId: 'archiginnasio',
       personality: ["dignified", "warm with newcomers"],
@@ -658,6 +688,7 @@ export const bologna: CityPantry = {
       name: 'Valentina Morandi',
       gender: 'f',
       age: 40,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'curatrice',
       placeId: 'museo-morandi',
       personality: ['artistic', 'insightful', 'contemplative'],

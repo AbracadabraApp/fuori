@@ -356,6 +356,7 @@ export const taormina: CityPantry = {
       name: 'Agata Spadaro',
       gender: 'f',
       age: 52,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'bigliettaia',
       placeId: 'stazione-taormina-giardini',
       personality: ["brisk", "warm", "patient"],
@@ -367,6 +368,7 @@ export const taormina: CityPantry = {
       name: "Paola Turrisi",
       gender: "f",
       age: 58,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: "proprietaria",
       placeId: 'bar-turrisi',
       personality: ["proud", "hospitable", "talkative"],
@@ -378,6 +380,7 @@ export const taormina: CityPantry = {
       name: 'Giuliana Rosi',
       gender: 'f',
       age: 42,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'barista',
       placeId: 'caffe-wunderbar',
       personality: ["elegant", "cultured", "precise"],
@@ -389,6 +392,7 @@ export const taormina: CityPantry = {
       name: 'Salvatore Messina',
       gender: 'm',
       age: 67,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'barista',
       placeId: 'bar-san-giorgio',
       personality: ['gruff but kind', 'local historian'],
@@ -399,6 +403,7 @@ export const taormina: CityPantry = {
       name: 'Alessia Morgana',
       gender: 'f',
       age: 29,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'barista',
       placeId: 'bar-morgana',
       personality: ['artistic', 'modern', 'passionate about granita'],
@@ -409,6 +414,7 @@ export const taormina: CityPantry = {
       name: 'Vincenzo Costa',
       gender: 'm',
       age: 55,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'proprietario',
       placeId: 'bar-panoramico',
       personality: ['philosophical', 'weathered', 'mountain lover'],
@@ -419,6 +425,7 @@ export const taormina: CityPantry = {
       name: 'Rosa Marino',
       gender: 'f',
       age: 38,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'cameriera',
       placeId: 'caffe-duomo',
       personality: ['gracious', 'romantic', 'devotional'],
@@ -429,6 +436,7 @@ export const taormina: CityPantry = {
       name: 'Marco Ferrara',
       gender: 'm',
       age: 44,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'barista',
       placeId: 'bar-etna',
       personality: ['jovial', 'neighborhood fixture'],
@@ -439,6 +447,7 @@ export const taormina: CityPantry = {
       name: 'Giancarlo Russo',
       gender: 'm',
       age: 51,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'proprietario',
       placeId: 'bar-timoleone',
       personality: ['theater lover', 'contemplative'],
@@ -449,6 +458,7 @@ export const taormina: CityPantry = {
       name: 'Francesca Marino',
       gender: 'f',
       age: 33,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'barista',
       placeId: 'bar-belvedere',
       personality: ['cheerful', 'health-conscious', 'sunrise enthusiast'],
@@ -459,6 +469,7 @@ export const taormina: CityPantry = {
       name: 'Antonio Messina',
       gender: 'm',
       age: 62,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'pasticciere',
       placeId: 'pasticceria-etna',
       personality: ['sweet-tempered', 'master craftsman'],
@@ -470,6 +481,7 @@ export const taormina: CityPantry = {
       name: 'Carmela Rizzo',
       gender: 'f',
       age: 56,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'fornaia',
       placeId: 'panificio-san-pancrazio',
       personality: ['nurturing', 'early riser', 'strong'],
@@ -480,6 +492,7 @@ export const taormina: CityPantry = {
       name: 'Giuseppe Greco',
       gender: 'm',
       age: 48,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'pasticciere',
       placeId: 'dolceria-naxos',
       personality: ['generous', 'family-focused'],
@@ -490,6 +503,7 @@ export const taormina: CityPantry = {
       name: 'Maria Costa',
       gender: 'f',
       age: 71,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'fornaia',
       placeId: 'forno-castelmola',
       personality: ['village matriarch', 'keeper of recipes'],
@@ -500,6 +514,7 @@ export const taormina: CityPantry = {
       name: "Mehdi Jlassi",
       gender: "m",
       age: 38,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: "fruttivendolo",
       placeId: 'mercato-giardini',
       personality: ["boisterous", "generous with samples", "produce expert"],
@@ -511,6 +526,7 @@ export const taormina: CityPantry = {
       name: 'Concetta Luciano',
       gender: 'f',
       age: 59,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'venditrice',
       placeId: 'mercato-corso',
       personality: ['shrewd', 'fair', 'herbalist knowledge'],
@@ -521,6 +537,7 @@ export const taormina: CityPantry = {
       name: 'Angelo Marina',
       gender: 'm',
       age: 52,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'pescivendolo',
       placeId: 'pescheria-sirena',
       personality: ['salty humor', 'fisherman heritage', 'weather predictor'],
@@ -531,6 +548,7 @@ export const taormina: CityPantry = {
       name: 'Stefano Barone',
       gender: 'm',
       age: 41,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'chef',
       placeId: 'ristorante-baronessa',
       personality: ['refined', 'ambitious', 'Michelin-dreaming'],
@@ -542,6 +560,7 @@ export const taormina: CityPantry = {
       name: 'Carla Messina',
       gender: 'f',
       age: 68,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'cuoca',
       placeId: 'trattoria-nonna',
       personality: ['motherly', 'no-nonsense', 'recipe guardian'],
@@ -552,6 +571,7 @@ export const taormina: CityPantry = {
       name: 'Domenico Greco',
       gender: 'm',
       age: 57,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'oste',
       placeId: 'osteria-antica',
       personality: ['storytelling', 'wine knowledgeable', 'history buff'],
@@ -562,6 +582,7 @@ export const taormina: CityPantry = {
       name: 'Emilia Valentino',
       gender: 'f',
       age: 39,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'chef',
       placeId: 'ristorante-bellavista',
       personality: ['ambitious', 'sunset-obsessed', 'seafood specialist'],
@@ -572,6 +593,7 @@ export const taormina: CityPantry = {
       name: 'Luca Forno',
       gender: 'm',
       age: 35,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'pizzaiolo',
       placeId: 'pizzeria-nettuno',
       personality: ['energetic', 'dough perfectionist'],
@@ -582,6 +604,7 @@ export const taormina: CityPantry = {
       name: 'Isabella Dolce',
       gender: 'f',
       age: 27,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'gelataia',
       placeId: 'gelateria-paradiso',
       personality: ["creative", "flavor experimenter", "Instagram savvy"],
@@ -593,6 +616,7 @@ export const taormina: CityPantry = {
       name: 'Roberto Salvo',
       gender: 'm',
       age: 64,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'salumiere',
       placeId: 'salumeria-sicilia',
       personality: ["proud Sicilian", "salumi poet", "unhurried"],
@@ -604,6 +628,7 @@ export const taormina: CityPantry = {
       name: "Dario Cacciola",
       gender: 'm',
       age: 53,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: "attore",
       placeId: 'teatro-greco',
       personality: ["dramatic", "warm", "classicist"],
@@ -615,6 +640,7 @@ export const taormina: CityPantry = {
       name: 'Padre Benedetto',
       gender: 'm',
       age: 66,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'sacerdote',
       placeId: 'duomo-taormina',
       personality: ['gentle', 'multilingual', 'art historian'],
@@ -625,6 +651,7 @@ export const taormina: CityPantry = {
       name: "Elena Moschella",
       gender: 'f',
       age: 46,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'giardiniera',
       placeId: "villa-comunale-taormina",
       personality: ['botanical expert', 'English garden lover'],
@@ -636,6 +663,7 @@ export const taormina: CityPantry = {
       name: "Massimo Piazza",
       gender: "m",
       age: 26,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: "musicista di strada",
       placeId: 'piazza-ix-aprile',
       personality: ["romantic", "mandolin virtuoso", "cheerful"],
@@ -647,6 +675,7 @@ export const taormina: CityPantry = {
       name: 'Suor Agata',
       gender: 'f',
       age: 72,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'suora',
       placeId: 'chiesa-varò',
       personality: ['serene', 'pilgrimage guide', 'contemplative'],
@@ -657,6 +686,7 @@ export const taormina: CityPantry = {
       name: 'Riccardo Vino',
       gender: 'm',
       age: 37,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'sommelier',
       placeId: 'enoteca-nero',
       personality: ['sophisticated', 'wine educator', 'Etna wine evangelist'],
@@ -667,6 +697,7 @@ export const taormina: CityPantry = {
       name: 'Valentina Somma',
       gender: 'f',
       age: 31,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'sommelier',
       placeId: 'wine-bar-dioniso',
       personality: ['local', 'aperitivo enthusiast', 'volcanic terroir expert'],
@@ -677,6 +708,7 @@ export const taormina: CityPantry = {
       name: 'Claudio Libri',
       gender: 'm',
       age: 61,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'libraio',
       placeId: 'libreria-taormina',
       personality: ['bibliophile', 'multilingual'],
@@ -687,6 +719,7 @@ export const taormina: CityPantry = {
       name: 'Dottoressa Laura Salerno',
       gender: 'f',
       age: 49,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'farmacista',
       placeId: 'farmacia-centrale',
       personality: ["professional", "trusted advisor", "herbal medicine advocate"],
@@ -698,6 +731,7 @@ export const taormina: CityPantry = {
       name: 'Pietro Cabina',
       gender: 'm',
       age: 54,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'operatore funivia',
       placeId: 'funivia-taormina',
       personality: ['height-loving', 'reassuring'],
@@ -708,6 +742,7 @@ export const taormina: CityPantry = {
       name: 'Andrea Ceramista',
       gender: 'm',
       age: 44,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'artigiano',
       placeId: 'ceramiche-siciliane',
       personality: ['artistic', 'traditional patterns master', 'patient teacher'],
@@ -718,6 +753,7 @@ export const taormina: CityPantry = {
       name: "Federico Lo Giudice",
       gender: 'm',
       age: 36,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'poeta locale',
       placeId: 'terrazza-panoramica',
       personality: ['dreamer', 'romantic', 'sunset worshipper'],

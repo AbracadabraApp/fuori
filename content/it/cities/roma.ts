@@ -280,6 +280,7 @@ export const roma: CityPantry = {
       name: 'Rita',
       gender: 'f',
       age: 58,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'host',
       placeId: 'apartment-trastevere-rita',
       personality: ['warm', 'practical', 'protective'],
@@ -290,6 +291,7 @@ export const roma: CityPantry = {
       name: 'Giulia',
       gender: 'f',
       age: 32,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'barista',
       placeId: 'bar-trastevere-giulia',
       personality: ['quick', 'funny', 'warm'],
@@ -300,6 +302,7 @@ export const roma: CityPantry = {
       name: 'Sandro Pieri',
       gender: 'm',
       age: 61,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'barista',
       placeId: 'bar-monti-corner',
       personality: ['gruff', 'loyal', 'dry humour'],
@@ -310,6 +313,7 @@ export const roma: CityPantry = {
       name: 'Luisa Cocco',
       gender: 'f',
       age: 39,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'barista',
       placeId: 'bar-testaccio-morning',
       personality: ['quick', 'cheerful', 'knows everyone'],
@@ -320,6 +324,7 @@ export const roma: CityPantry = {
       name: 'Franco Ceccarelli',
       gender: 'm',
       age: 57,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'fruttivendolo',
       placeId: 'mercato-san-cosimato',
       personality: ['loud', 'generous', 'teasing'],
@@ -330,6 +335,7 @@ export const roma: CityPantry = {
       name: 'Paola Mancini',
       gender: 'f',
       age: 48,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'formaggiaia',
       placeId: 'mercato-testaccio',
       personality: ['warm', 'opinionated about pecorino'],
@@ -340,6 +346,7 @@ export const roma: CityPantry = {
       name: 'Teresa Bonanni',
       gender: 'f',
       age: 66,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'fioraia',
       placeId: 'mercato-campo-fiori',
       personality: ['motherly', 'superstitious'],
@@ -350,6 +357,7 @@ export const roma: CityPantry = {
       name: 'Dario Ferri',
       gender: 'm',
       age: 34,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'fornaio',
       placeId: 'forno-trastevere',
       personality: ['early riser', 'shy', 'proud of his pizza bianca'],
@@ -360,6 +368,7 @@ export const roma: CityPantry = {
       name: 'Agnese Rinaldi',
       gender: 'f',
       age: 52,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'fornaia',
       placeId: 'forno-monti',
       personality: ['brisk', 'kind', 'old-fashioned'],
@@ -370,6 +379,7 @@ export const roma: CityPantry = {
       name: 'Luigi "Gigi" Marini',
       gender: 'm',
       age: 63,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'oste',
       placeId: 'trattoria-trastevere',
       personality: ['hospitable', 'loves to gossip'],
@@ -380,6 +390,7 @@ export const roma: CityPantry = {
       name: 'Marisa Tozzi',
       gender: 'f',
       age: 58,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'cuoca',
       placeId: 'trattoria-testaccio',
       personality: ['blunt', 'proud', 'secretly sentimental'],
@@ -390,6 +401,7 @@ export const roma: CityPantry = {
       name: 'Don Paolo Severi',
       gender: 'm',
       age: 70,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'parroco',
       placeId: 'basilica-santa-maria',
       personality: ['gentle'],
@@ -400,6 +412,7 @@ export const roma: CityPantry = {
       name: 'Valerio Conti',
       gender: 'm',
       age: 29,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'guida turistica',
       placeId: 'colosseo',
       personality: ['energetic', 'funny', 'loves gladiator stories'],
@@ -410,6 +423,7 @@ export const roma: CityPantry = {
       name: 'Chiara Rossetti',
       gender: 'f',
       age: 26,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'gelataia',
       placeId: 'fontana-trevi',
       personality: ['bubbly', 'curious about foreigners', 'romantic'],
@@ -420,6 +434,7 @@ export const roma: CityPantry = {
       name: 'Ettore Gentili',
       gender: 'm',
       age: 78,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'pensionato',
       placeId: 'villa-borghese',
       personality: ['nostalgic', 'talks about the old Rome'],
@@ -430,6 +445,7 @@ export const roma: CityPantry = {
       name: 'Gina Proietti',
       gender: 'f',
       age: 81,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'nonna del quartiere',
       placeId: 'piazza-santa-maria-trastevere',
       personality: ['affectionate', 'full of advice'],
@@ -440,6 +456,7 @@ export const roma: CityPantry = {
       name: 'Tommaso Ricci',
       gender: 'm',
       age: 45,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'pittore di strada',
       placeId: 'piazza-navona',
       personality: ['dreamy', 'charming', 'easily distracted'],
@@ -450,6 +467,7 @@ export const roma: CityPantry = {
       name: 'Elena Sartori',
       gender: 'f',
       age: 43,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'libraia',
       placeId: 'libreria-trastevere',
       personality: ['thoughtful', 'dry wit', 'recommends books unasked'],
@@ -460,6 +478,7 @@ export const roma: CityPantry = {
       name: 'Matteo Serra',
       gender: 'm',
       age: 37,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'libraio',
       placeId: 'libreria-monti',
       personality: ['enthusiastic', 'nerdy', 'loves Roman poetry'],
@@ -470,6 +489,7 @@ export const roma: CityPantry = {
       name: 'Roberta Valli',
       gender: 'f',
       age: 41,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'sommelier',
       placeId: 'enoteca-trastevere',
       personality: ['elegant', 'playful', 'loves to teach'],
@@ -480,6 +500,7 @@ export const roma: CityPantry = {
       name: 'Claudio Benedetti',
       gender: 'm',
       age: 50,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'vinaio',
       placeId: 'enoteca-monti',
       personality: ['laid-back', 'proud of Lazio wines'],
@@ -490,6 +511,7 @@ export const roma: CityPantry = {
       name: 'Dott.ssa Silvia Bruni',
       gender: 'f',
       age: 47,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'farmacista',
       placeId: 'farmacia-trastevere',
       personality: ['calm', 'reassuring'],
@@ -500,6 +522,7 @@ export const roma: CityPantry = {
       name: 'Alessia Moretti',
       gender: 'f',
       age: 33,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'commessa',
       placeId: 'negozio-abbigliamento',
       personality: ['stylish', 'honest'],
@@ -510,6 +533,7 @@ export const roma: CityPantry = {
       name: 'Pietro Lombardi',
       gender: 'm',
       age: 55,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'bigliettaio',
       placeId: 'stazione-termini',
       personality: ['methodical', 'tired but kind'],
@@ -520,6 +544,7 @@ export const roma: CityPantry = {
       name: 'Rosa Santini',
       gender: 'f',
       age: 60,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'edicolante',
       placeId: 'stazione-trastevere',
       personality: ['sharp', 'warm underneath'],

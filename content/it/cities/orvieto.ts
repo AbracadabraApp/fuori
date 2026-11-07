@@ -364,6 +364,7 @@ export const orvieto: CityPantry = {
       name: 'Gianni Fumi',
       gender: 'm',
       age: 58,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'bigliettaio',
       placeId: 'stazione-orvieto',
       personality: ["jovial", "punctual"],
@@ -375,6 +376,7 @@ export const orvieto: CityPantry = {
       name: "Sara El Amrani",
       gender: "f",
       age: 24,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: "barista",
       placeId: 'caffe-montanucci',
       personality: ["quick", "cheerful", "local"],
@@ -386,6 +388,7 @@ export const orvieto: CityPantry = {
       name: 'Giulia Ferretti',
       gender: 'f',
       age: 29,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'barista',
       placeId: 'bar-duomo',
       personality: ["friendly", "energetic", "multilingual"],
@@ -397,6 +400,7 @@ export const orvieto: CityPantry = {
       name: 'Marco Bianchi',
       gender: 'm',
       age: 67,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'proprietario',
       placeId: 'caffe-sant-angelo',
       personality: ['gruff', 'loyal'],
@@ -407,6 +411,7 @@ export const orvieto: CityPantry = {
       name: 'Alessia Romani',
       gender: 'f',
       age: 35,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'barista',
       placeId: 'bar-centrale',
       personality: ['warm'],
@@ -417,6 +422,7 @@ export const orvieto: CityPantry = {
       name: 'Roberto Tosi',
       gender: 'm',
       age: 42,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'proprietario',
       placeId: 'caffe-della-piazza',
       personality: ['sophisticated', 'cultured'],
@@ -427,6 +433,7 @@ export const orvieto: CityPantry = {
       name: 'Anna Grossi',
       gender: 'f',
       age: 51,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'barista',
       placeId: 'bar-del-corso',
       personality: ['efficient', 'no-nonsense', 'reliable'],
@@ -437,6 +444,7 @@ export const orvieto: CityPantry = {
       name: 'Stefano Marini',
       gender: 'm',
       age: 33,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'barista',
       placeId: 'caffe-cavour',
       personality: ['artistic'],
@@ -447,6 +455,7 @@ export const orvieto: CityPantry = {
       name: 'Lorenzo Sabbatini',
       gender: 'm',
       age: 44,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'proprietario',
       placeId: 'bar-della-rupe',
       personality: ['contemplative', 'philosophical', 'welcoming'],
@@ -457,6 +466,7 @@ export const orvieto: CityPantry = {
       name: 'Francesca Mieli',
       gender: 'f',
       age: 38,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'proprietaria',
       placeId: 'bar-sant-antonio',
       personality: ['maternal', 'generous', 'community-minded'],
@@ -467,6 +477,7 @@ export const orvieto: CityPantry = {
       name: 'Adriano Conti',
       gender: 'm',
       age: 55,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'pasticciere',
       placeId: 'pasticceria-adriano',
       personality: ['artistic'],
@@ -477,6 +488,7 @@ export const orvieto: CityPantry = {
       name: 'Elena Puccini',
       gender: 'f',
       age: 47,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'fornaia',
       placeId: 'forno-del-duomo',
       personality: ['strong', 'proud'],
@@ -487,6 +499,7 @@ export const orvieto: CityPantry = {
       name: 'Simone Neri',
       gender: 'm',
       age: 31,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'fornaio',
       placeId: 'panificio-moderna',
       personality: ['dedicated', 'humble', 'early-riser'],
@@ -497,6 +510,7 @@ export const orvieto: CityPantry = {
       name: 'Carla Benedetti',
       gender: 'f',
       age: 63,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'pasticciera',
       placeId: 'pasticceria-montanari',
       personality: ['nostalgic', 'sweet', 'grandmotherly'],
@@ -507,6 +521,7 @@ export const orvieto: CityPantry = {
       name: 'Giovanni Perugini',
       gender: 'm',
       age: 59,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'maestro fornaio',
       placeId: 'forno-san-giovenale',
       personality: ['gruff', 'skilled'],
@@ -517,6 +532,7 @@ export const orvieto: CityPantry = {
       name: 'Valentina Rossi',
       gender: 'f',
       age: 27,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'pasticciera',
       placeId: 'dolci-tentazioni',
       personality: ['innovative', 'Instagram-savvy'],
@@ -527,6 +543,7 @@ export const orvieto: CityPantry = {
       name: 'Mario Benedetti',
       gender: 'm',
       age: 71,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'fruttivendolo',
       placeId: 'mercato-coperto',
       personality: ["boisterous", "humorous", "generous"],
@@ -538,6 +555,7 @@ export const orvieto: CityPantry = {
       name: 'Teresa Campagnoli',
       gender: 'f',
       age: 54,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'contadina',
       placeId: 'mercato-contadino',
       personality: ['earthy', 'honest', 'hardworking'],
@@ -548,6 +566,7 @@ export const orvieto: CityPantry = {
       name: 'Federico Lunardi',
       gender: 'm',
       age: 45,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'negoziante',
       placeId: 'bottega-sapori-umbri',
       personality: ['local'],
@@ -558,6 +577,7 @@ export const orvieto: CityPantry = {
       name: 'Alberto Santini',
       gender: 'm',
       age: 52,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'chef',
       placeId: 'ristorante-la-grotta',
       personality: ['refined', 'creative', 'ambitious'],
@@ -569,6 +589,7 @@ export const orvieto: CityPantry = {
       name: 'Claudia Tiberi',
       gender: 'f',
       age: 39,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'ristoratrice',
       placeId: 'ristorante-zeppelin',
       personality: ['welcoming', 'organized', 'family-oriented'],
@@ -579,6 +600,7 @@ export const orvieto: CityPantry = {
       name: 'Bruno Matteini',
       gender: 'm',
       age: 68,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'chef e proprietario',
       placeId: 'trattoria-del-orso',
       personality: ['gruff', 'authentic', 'uncompromising'],
@@ -589,6 +611,7 @@ export const orvieto: CityPantry = {
       name: 'Luca Salvatori',
       gender: 'm',
       age: 41,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'chef',
       placeId: 'osteria-la-madia',
       personality: ['jovial', 'generous'],
@@ -599,6 +622,7 @@ export const orvieto: CityPantry = {
       name: 'Carlo Fabrizi',
       gender: 'm',
       age: 36,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'pizzaiolo',
       placeId: 'pizzeria-charlie',
       personality: ['energetic', 'skilled', 'entertaining'],
@@ -609,6 +633,7 @@ export const orvieto: CityPantry = {
       name: 'Don Michele Volpi',
       gender: 'm',
       age: 64,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'sacerdote',
       placeId: 'duomo-orvieto',
       personality: ['gentle', 'art-lover'],
@@ -620,6 +645,7 @@ export const orvieto: CityPantry = {
       name: 'Matteo Galeotti',
       gender: 'm',
       age: 28,
+      voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
       role: "custode del pozzo",
       placeId: 'pozzo-san-patrizio',
       personality: ['enthusiastic', 'local'],
@@ -631,6 +657,7 @@ export const orvieto: CityPantry = {
       name: 'Suor Beatrice',
       gender: 'f',
       age: 72,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'suora',
       placeId: 'chiesa-san-giovenale',
       personality: ['serene', 'devoted'],
@@ -641,6 +668,7 @@ export const orvieto: CityPantry = {
       name: 'Gino Marziani',
       gender: 'm',
       age: 76,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'giardiniere',
       placeId: 'giardini-pubblici',
       personality: ["gentle", "patient", "observant"],
@@ -652,6 +680,7 @@ export const orvieto: CityPantry = {
       name: 'Lucia Moretti',
       gender: 'f',
       age: 43,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'artista di strada',
       placeId: 'piazza-del-popolo',
       personality: ["bohemian", "social", "curious"],
@@ -663,6 +692,7 @@ export const orvieto: CityPantry = {
       name: 'Davide Piccioni',
       gender: 'm',
       age: 37,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'sommelier',
       placeId: 'enoteca-al-pozzo',
       personality: ['sophisticated', 'local'],
@@ -673,6 +703,7 @@ export const orvieto: CityPantry = {
       name: 'Elisa Bruni',
       gender: 'f',
       age: 32,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'libraia',
       placeId: 'libreria-del-duomo',
       personality: ["literary", "introverted", "recommender"],
@@ -684,6 +715,7 @@ export const orvieto: CityPantry = {
       name: 'Tommaso Fiorentini',
       gender: 'm',
       age: 49,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: "titolare dell'enoteca",
       placeId: 'vineria-del-corso',
       personality: ['romantic', 'poetic', 'wine-expert'],
@@ -694,6 +726,7 @@ export const orvieto: CityPantry = {
       name: 'Dottoressa Ricci',
       gender: 'f',
       age: 56,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'farmacista',
       placeId: 'farmacia-centrale',
       personality: ['professional', 'caring', 'local'],
@@ -704,6 +737,7 @@ export const orvieto: CityPantry = {
       name: 'Giuseppe Roscini',
       gender: 'm',
       age: 61,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'macchinista della funicolare',
       placeId: 'funicolare',
       personality: ['reliable', 'punctual', 'proud'],
@@ -714,6 +748,7 @@ export const orvieto: CityPantry = {
       name: "Marta Pieroni",
       gender: "f",
       age: 46,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: "maestra ceramista",
       placeId: 'bottega-michelangeli',
       personality: ["artistic", "patient", "proud"],
@@ -725,6 +760,7 @@ export const orvieto: CityPantry = {
       name: 'Maurizio Foresi',
       gender: 'm',
       age: 53,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'vignaiolo',
       placeId: 'cantina-foresi',
       personality: ['proud', 'local'],
@@ -735,6 +771,7 @@ export const orvieto: CityPantry = {
       name: 'Irene Vitali',
       gender: 'f',
       age: 34,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'regista teatrale',
       placeId: 'teatro-mancinelli',
       personality: ['visionary'],

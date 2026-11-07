@@ -372,6 +372,7 @@ export const milano: CityPantry = {
       name: 'Giulia Marchesi',
       gender: 'f',
       age: 42,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'pasticciera',
       placeId: 'pasticceria-marchesi',
       personality: ["elegant", "precise", "proud"],
@@ -383,6 +384,7 @@ export const milano: CityPantry = {
       name: 'Roberto Costa',
       gender: 'm',
       age: 55,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'barista',
       placeId: 'bar-rita',
       personality: ["friendly", "local character", "talkative"],
@@ -394,6 +396,7 @@ export const milano: CityPantry = {
       name: 'Vincenzo Romano',
       gender: 'm',
       age: 68,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'proprietario',
       placeId: 'caffe-napoli',
       personality: ['old-school', 'opinionated', 'loyal'],
@@ -404,6 +407,7 @@ export const milano: CityPantry = {
       name: 'Chiara Fontana',
       gender: 'f',
       age: 28,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'barista',
       placeId: 'bar-quadronno',
       personality: ['creative', 'modern'],
@@ -414,6 +418,7 @@ export const milano: CityPantry = {
       name: 'Marco Bellini',
       gender: 'm',
       age: 35,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'pasticciere',
       placeId: 'pasticceria-sant-ambrogio',
       personality: ['ambitious', 'charming'],
@@ -424,6 +429,7 @@ export const milano: CityPantry = {
       name: 'Elena Grassi',
       gender: 'f',
       age: 31,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'proprietaria',
       placeId: 'bar-della-darsena',
       personality: ['energetic', 'social', 'organized'],
@@ -434,6 +440,7 @@ export const milano: CityPantry = {
       name: 'Alessandro Gatti',
       gender: 'm',
       age: 26,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'barista',
       placeId: 'caffe-design',
       personality: ['minimalist', 'design-focused'],
@@ -444,6 +451,7 @@ export const milano: CityPantry = {
       name: 'Francesca Moretti',
       gender: 'f',
       age: 49,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'barista',
       placeId: 'bar-isola',
       personality: ['maternal', 'warm-hearted'],
@@ -454,6 +462,7 @@ export const milano: CityPantry = {
       name: 'Sofia Cucchi',
       gender: 'f',
       age: 38,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'responsabile',
       placeId: 'pasticceria-cucchi',
       personality: ['refined', 'local', 'gracious'],
@@ -464,6 +473,7 @@ export const milano: CityPantry = {
       name: 'Davide Longoni',
       gender: 'm',
       age: 45,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'fornaio',
       placeId: 'panificio-davide-longoni',
       personality: ['artisan', 'principled'],
@@ -474,6 +484,7 @@ export const milano: CityPantry = {
       name: 'Giuseppe Mancini',
       gender: 'm',
       age: 60,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'fornaio',
       placeId: 'forno-navigli',
       personality: ['generous', 'early-riser'],
@@ -484,6 +495,7 @@ export const milano: CityPantry = {
       name: 'Laura Conti',
       gender: 'f',
       age: 33,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'fornaia',
       placeId: 'panetteria-brera',
       personality: ['innovative', 'health-conscious', 'artistic'],
@@ -494,6 +506,7 @@ export const milano: CityPantry = {
       name: 'Andrea Bellini',
       gender: 'm',
       age: 52,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'fornaio',
       placeId: 'forno-sant-eustorgio',
       personality: ['family-oriented', 'nostalgic', 'reliable'],
@@ -504,6 +517,7 @@ export const milano: CityPantry = {
       name: "Mario Esposito",
       gender: "m",
       age: 66,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: "venditore",
       placeId: 'mercato-di-porta-romana',
       personality: ["boisterous", "humorous", "savvy"],
@@ -515,6 +529,7 @@ export const milano: CityPantry = {
       name: 'Rosa Ferrari',
       gender: 'f',
       age: 47,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'venditrice',
       placeId: 'mercato-comunale-isola',
       personality: ['sharp-witted', 'honest', 'hardworking'],
@@ -525,6 +540,7 @@ export const milano: CityPantry = {
       name: 'Carlo Brambilla',
       gender: 'm',
       age: 63,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'venditore',
       placeId: 'mercatino-navigli',
       personality: ['eccentric', 'collector'],
@@ -535,6 +551,7 @@ export const milano: CityPantry = {
       name: 'Anna Masuelli',
       gender: 'f',
       age: 56,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'proprietaria',
       placeId: 'trattoria-masuelli',
       personality: ['authoritative', 'protective'],
@@ -546,6 +563,7 @@ export const milano: CityPantry = {
       name: 'Giacomo Villa',
       gender: 'm',
       age: 44,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'chef',
       placeId: 'ristorante-brera',
       personality: ['sophisticated', 'talented'],
@@ -556,6 +574,7 @@ export const milano: CityPantry = {
       name: 'Paolo Russo',
       gender: 'm',
       age: 39,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'proprietario',
       placeId: 'osteria-navigli',
       personality: ['convivial', 'wine-loving', 'generous'],
@@ -566,6 +585,7 @@ export const milano: CityPantry = {
       name: 'Beatrice Galli',
       gender: 'f',
       age: 71,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'cuoca',
       placeId: 'trattoria-isola',
       personality: ['nonno-like', 'loving'],
@@ -576,6 +596,7 @@ export const milano: CityPantry = {
       name: 'Lorenzo Peck',
       gender: 'm',
       age: 51,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'responsabile di reparto',
       placeId: 'peck',
       personality: ["refined", "local", "discerning"],
@@ -587,6 +608,7 @@ export const milano: CityPantry = {
       name: 'Luca Spontini',
       gender: 'm',
       age: 29,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'pizzaiolo',
       placeId: 'pizzeria-spontini',
       personality: ['fast-paced', 'skilled', 'proud'],
@@ -597,6 +619,7 @@ export const milano: CityPantry = {
       name: 'Valentina Renzi',
       gender: 'f',
       age: 24,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'gelataia',
       placeId: 'gelateria-navigli',
       personality: ["sweet", "cheerful", "artistic"],
@@ -608,6 +631,7 @@ export const milano: CityPantry = {
       name: 'Padre Stefano Colombo',
       gender: 'm',
       age: 67,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'sacerdote',
       placeId: 'duomo-milano',
       personality: ["inspiring", "gentle", "Milanese to the core"],
@@ -619,6 +643,7 @@ export const milano: CityPantry = {
       name: 'Dottoressa Martini',
       gender: 'f',
       age: 43,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'curatrice',
       placeId: 'pinacoteca-brera',
       personality: [],
@@ -629,6 +654,7 @@ export const milano: CityPantry = {
       name: 'Suor Teresa',
       gender: 'f',
       age: 54,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'suora',
       placeId: 'basilica-sant-eustorgio',
       personality: ['peaceful', 'welcoming', 'devoted'],
@@ -639,6 +665,7 @@ export const milano: CityPantry = {
       name: 'Matteo Verdi',
       gender: 'm',
       age: 36,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'giardiniere',
       placeId: 'parco-sempione',
       personality: ['nature-loving', 'quiet'],
@@ -649,6 +676,7 @@ export const milano: CityPantry = {
       name: 'Giovanna Sartori',
       gender: 'f',
       age: 41,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'fioraia',
       placeId: 'piazza-santo-stefano',
       personality: ["romantic", "colorful", "kind"],
@@ -660,6 +688,7 @@ export const milano: CityPantry = {
       name: 'Fabio Cattaneo',
       gender: 'm',
       age: 32,
+      voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
       role: 'musicista di strada',
       placeId: 'piazza-xxv-aprile',
       personality: ['artistic', 'free-spirited', 'talented'],
@@ -670,6 +699,7 @@ export const milano: CityPantry = {
       name: 'Isabella Rizzi',
       gender: 'f',
       age: 37,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'bibliotecaria',
       placeId: 'biblioteca-isola',
       personality: ['helpful', 'bookish', 'community-minded'],
@@ -680,6 +710,7 @@ export const milano: CityPantry = {
       name: 'Massimo Riva',
       gender: 'm',
       age: 48,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'sommelier',
       placeId: 'enoteca-brera',
       personality: ['sophisticated', 'local', 'conversational'],
@@ -690,6 +721,7 @@ export const milano: CityPantry = {
       name: 'Silvia Neri',
       gender: 'f',
       age: 27,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'barista',
       placeId: 'mag-cafe',
       personality: ['hip', 'creative', 'social'],
@@ -700,6 +732,7 @@ export const milano: CityPantry = {
       name: 'Tommaso Berti',
       gender: 'm',
       age: 53,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'libraio',
       placeId: 'libreria-brera',
       personality: ['thoughtful', 'recommending'],
@@ -710,6 +743,7 @@ export const milano: CityPantry = {
       name: "Irina Constantin",
       gender: "f",
       age: 38,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: "farmacista",
       placeId: 'farmacia-centrale',
       personality: ["professional", "caring", "calm"],
@@ -721,6 +755,7 @@ export const milano: CityPantry = {
       name: "Karim Hassan",
       gender: "m",
       age: 27,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'bigliettaio',
       placeId: 'stazione-porta-garibaldi',
       personality: ["efficient", "helpful", "patient"],
@@ -732,6 +767,7 @@ export const milano: CityPantry = {
       name: "Emanuele Brambilla",
       gender: 'm',
       age: 46,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: "sarto",
       placeId: 'galleria-vittorio-emanuele',
       personality: ["proud Milanese", "dapper", "chatty"],
@@ -743,6 +779,7 @@ export const milano: CityPantry = {
       name: 'Federica Bianchi',
       gender: 'f',
       age: 40,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'stilista',
       placeId: 'atelier-moda',
       personality: ['stylish', 'visionary'],

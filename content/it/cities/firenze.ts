@@ -399,6 +399,7 @@ export const firenze: CityPantry = {
       name: 'Tommaso Bini',
       gender: 'm',
       age: 27,
+      voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
       role: 'barista',
       placeId: 'ditta-artigianale-nuova',
       personality: ["friendly", "energetic", "meticulous about coffee"],
@@ -410,6 +411,7 @@ export const firenze: CityPantry = {
       name: 'Andrea Becattini',
       gender: 'm',
       age: 61,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'tassista',
       placeId: 'lampredotto-pollini',
       personality: ["talkative", "good-humoured", "opinionated about food"],
@@ -421,6 +423,7 @@ export const firenze: CityPantry = {
       name: 'Ardit Hoxha',
       gender: 'm',
       age: 44,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'cameriere',
       placeId: 'trattoria-mario-nuova',
       personality: ['quick and efficient', 'kind', 'dryly funny'],
@@ -432,6 +435,7 @@ export const firenze: CityPantry = {
       name: 'Chiara Russo',
       gender: 'f',
       age: 22,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'studentessa',
       placeId: 'santo-spirito-scalini',
       personality: ["curious", "creative", "a little shy"],
@@ -443,6 +447,7 @@ export const firenze: CityPantry = {
       name: 'Lorenzo Marchi',
       gender: 'm',
       age: 76,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'pensionato',
       placeId: 'santa-croce-piazza',
       personality: ["gentle", "nostalgic", "proud of his craft"],
@@ -454,6 +459,7 @@ export const firenze: CityPantry = {
       name: 'Rosa Quispe',
       gender: 'f',
       age: 39,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'cuoca',
       placeId: 'parco-cascine',
       personality: ["warm", "hardworking", "protective"],
@@ -465,6 +471,7 @@ export const firenze: CityPantry = {
       name: 'Ioana Popescu',
       gender: 'f',
       age: 34,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'infermiera',
       placeId: 'tram-alamanni',
       personality: ["calm", "dutiful", "observant"],
@@ -476,6 +483,7 @@ export const firenze: CityPantry = {
       name: 'Graziella Nesi',
       gender: 'f',
       age: 66,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'tabaccaia',
       placeId: 'tabaccheria-nesi',
       personality: ["sharp-witted", "motherly", "knows everyone in the neighbourhood"],
@@ -487,6 +495,7 @@ export const firenze: CityPantry = {
       name: 'Mark Santos',
       gender: 'm',
       age: 31,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'farmacista',
       placeId: 'farmacia-molteni-nuova',
       personality: ["patient", "precise", "reassuring"],
@@ -498,6 +507,7 @@ export const firenze: CityPantry = {
       name: 'Massimo Cecchi',
       gender: 'm',
       age: 57,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'bigliettaio',
       placeId: 'stazione-smn-nuova',
       personality: ["dry-humoured", "patient", "seen it all"],
@@ -509,6 +519,7 @@ export const firenze: CityPantry = {
       name: 'Marco Guidotti',
       gender: 'm',
       age: 42,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'barista',
       placeId: 'caffe-rivoire',
       personality: ['refined', 'professional', 'proud of tradition'],
@@ -519,6 +530,7 @@ export const firenze: CityPantry = {
       name: 'Simona Martini',
       gender: 'f',
       age: 38,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'barista',
       placeId: 'bar-del-moro',
       personality: ['warm', 'knows everyone'],
@@ -529,6 +541,7 @@ export const firenze: CityPantry = {
       name: 'Francesco Sartiani',
       gender: 'm',
       age: 29,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'barista',
       placeId: 'ditta-artigianale',
       personality: ['innovative', 'passionate about coffee', 'hipster'],
@@ -539,6 +552,7 @@ export const firenze: CityPantry = {
       name: 'Alberto Galli',
       gender: 'm',
       age: 56,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'fornaio',
       placeId: 'forno-galli',
       personality: ['gruff but kind', 'early riser', 'master of schiacciata'],
@@ -549,6 +563,7 @@ export const firenze: CityPantry = {
       name: 'Giulia Nencioni',
       gender: 'f',
       age: 33,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'pasticciera',
       placeId: 'pasticceria-nencioni',
       personality: ['artistic', 'sweet-natured'],
@@ -559,6 +574,7 @@ export const firenze: CityPantry = {
       name: 'Paolo Benedetti',
       gender: 'm',
       age: 61,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'ortolano',
       placeId: 'mercato-centrale',
       personality: ['loud', 'jovial', 'generous with samples'],
@@ -569,6 +585,7 @@ export const firenze: CityPantry = {
       name: 'Rosa Lombardi',
       gender: 'f',
       age: 54,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'fruttivendola',
       placeId: 'mercato-santambrogio',
       personality: ['sharp-witted', 'fair', 'neighborhood institution'],
@@ -579,6 +596,7 @@ export const firenze: CityPantry = {
       name: 'Dario Rossi',
       gender: 'm',
       age: 44,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'artigiano',
       placeId: 'mercatino-santo-spirito',
       personality: ['creative', 'bohemian'],
@@ -589,6 +607,7 @@ export const firenze: CityPantry = {
       name: 'Mario Falorni',
       gender: 'm',
       age: 68,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'oste',
       placeId: 'trattoria-mario',
       personality: ['no-nonsense', 'quick service', 'heart of gold'],
@@ -599,6 +618,7 @@ export const firenze: CityPantry = {
       name: 'Benedetta Conti',
       gender: 'f',
       age: 41,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'chef',
       placeId: 'osteria-santo-spirito',
       personality: ['maternal'],
@@ -609,6 +629,7 @@ export const firenze: CityPantry = {
       name: 'Vincenzo Bianchi',
       gender: 'm',
       age: 47,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'venditore di cibo di strada',
       placeId: 'lampredotto-stand',
       personality: ['proud', 'authentic Florentine'],
@@ -619,6 +640,7 @@ export const firenze: CityPantry = {
       name: 'Elena Vivoli',
       gender: 'f',
       age: 36,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'gelataia',
       placeId: 'gelateria-vivoli',
       personality: ['cheerful', 'family-proud', 'precise with portions'],
@@ -629,6 +651,7 @@ export const firenze: CityPantry = {
       name: 'Padre Giovanni Bardi',
       gender: 'm',
       age: 59,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'sacerdote',
       placeId: 'duomo',
       personality: ['welcoming', 'loves architecture'],
@@ -639,6 +662,7 @@ export const firenze: CityPantry = {
       name: "Matteo Pagliai",
       gender: 'm',
       age: 52,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'gioielliere',
       placeId: 'ponte-vecchio',
       personality: ["reserved", "master craftsman", "storyteller"],
@@ -650,6 +674,7 @@ export const firenze: CityPantry = {
       name: 'Suor Teresa Alberti',
       gender: 'f',
       age: 45,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'suora',
       placeId: 'basilica-santa-croce',
       personality: ['serene', 'helpful', 'loves art history'],
@@ -660,6 +685,7 @@ export const firenze: CityPantry = {
       name: "Giuseppe Nocentini",
       gender: 'm',
       age: 63,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'capo giardiniere',
       placeId: 'giardino-boboli',
       personality: ['local', 'speaks to plants'],
@@ -671,6 +697,7 @@ export const firenze: CityPantry = {
       name: "Carlo Bencini",
       gender: 'm',
       age: 35,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: "tamburino del Corteo Storico",
       placeId: 'piazza-signoria',
       personality: ["sociable", "history buff", "proud Florentine"],
@@ -682,6 +709,7 @@ export const firenze: CityPantry = {
       name: 'Alessia Torelli',
       gender: 'f',
       age: 23,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: "studentessa d'arte",
       placeId: 'piazza-santo-spirito',
       personality: ['creative', 'social', 'always sketching'],
@@ -692,6 +720,7 @@ export const firenze: CityPantry = {
       name: 'Leonardo Antinori',
       gender: 'm',
       age: 49,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'sommelier',
       placeId: 'enoteca-alessi',
       personality: ['local', 'sophisticated', 'patient teacher'],
@@ -702,6 +731,7 @@ export const firenze: CityPantry = {
       name: 'Chiara Ferretti',
       gender: 'f',
       age: 31,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: "titolare dell'enoteca",
       placeId: 'volume',
       personality: ['hip', 'welcoming', 'curates natural wines'],
@@ -712,6 +742,7 @@ export const firenze: CityPantry = {
       name: 'Sofia Doni',
       gender: 'f',
       age: 39,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'libraia',
       placeId: 'libreria-brac',
       personality: ['warm', 'recommends perfect books'],
@@ -722,6 +753,7 @@ export const firenze: CityPantry = {
       name: 'James Cooper',
       gender: 'm',
       age: 58,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'libraio',
       placeId: 'paperback-exchange',
       personality: ['expat', 'literary', 'tea drinker'],
@@ -732,6 +764,7 @@ export const firenze: CityPantry = {
       name: 'Dott.ssa Anna Molteni',
       gender: 'f',
       age: 51,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'farmacista',
       placeId: 'farmacia-molteni',
       personality: ['professional', 'caring', 'trusted advisor'],
@@ -742,6 +775,7 @@ export const firenze: CityPantry = {
       name: 'Antonio Rosselli',
       gender: 'm',
       age: 44,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'bigliettaio',
       placeId: 'stazione-smn',
       personality: ['helpful', 'multilingual', 'patient with tourists'],
@@ -752,6 +786,7 @@ export const firenze: CityPantry = {
       name: 'Isabella Stefani',
       gender: 'f',
       age: 46,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'profumiera',
       placeId: 'officina-profumo',
       personality: ['elegant', 'local', 'speaks in whispers'],
@@ -762,6 +797,7 @@ export const firenze: CityPantry = {
       name: 'Marcello Gori',
       gender: 'm',
       age: 57,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'artigiano del cuoio',
       placeId: 'scuola-cuoio',
       personality: ['master craftsman', 'quiet', 'takes pride in teaching'],
@@ -772,6 +808,7 @@ export const firenze: CityPantry = {
       name: 'Sergio Benvenuti',
       gender: 'm',
       age: 64,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'orafo',
       placeId: 'bottega-orafa',
       personality: ['family secrets'],
@@ -782,6 +819,7 @@ export const firenze: CityPantry = {
       name: 'Tommaso Mazzanti',
       gender: 'm',
       age: 34,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'venditore di panini',
       placeId: 'all-antico-vinaio',
       personality: ['fast-working', 'charismatic', 'generous portions'],
@@ -792,6 +830,7 @@ export const firenze: CityPantry = {
       name: 'Emilio Cioni',
       gender: 'm',
       age: 53,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: "titolare dell'enoteca",
       placeId: 'le-volpi-uva',
       personality: ['discerning', 'intimate knowledge of wine', 'creates pairings'],

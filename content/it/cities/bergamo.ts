@@ -348,6 +348,7 @@ export const bergamo: CityPantry = {
       name: 'Sara Gamba',
       gender: 'f',
       age: 34,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'bigliettaia',
       placeId: 'stazione-bergamo',
       personality: ["diretta", "gentile", "paziente"],
@@ -359,6 +360,7 @@ export const bergamo: CityPantry = {
       name: 'Marco Villa',
       gender: 'm',
       age: 52,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'proprietario',
       placeId: 'caffe-del-tasso',
       personality: ["orgoglioso", "filosofico", "cordiale"],
@@ -370,6 +372,7 @@ export const bergamo: CityPantry = {
       name: 'Lucia Ferri',
       gender: 'f',
       age: 28,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'barista',
       placeId: 'bar-donizetti',
       personality: ["energica", "moderna", "chiacchierona"],
@@ -381,6 +384,7 @@ export const bergamo: CityPantry = {
       name: 'Giuseppe Carrara',
       gender: 'm',
       age: 67,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'cameriere storico',
       placeId: 'caffe-balzer',
       personality: ['elegante', 'discreto', 'memorabile'],
@@ -391,6 +395,7 @@ export const bergamo: CityPantry = {
       name: 'Angela Rossi',
       gender: 'f',
       age: 45,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'proprietaria',
       placeId: 'bar-milano',
       personality: ['materna', 'pratica', 'affettuosa'],
@@ -401,6 +406,7 @@ export const bergamo: CityPantry = {
       name: 'Stefano Moretti',
       gender: 'm',
       age: 38,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'pasticciere',
       placeId: 'pasticceria-caffe-nessi',
       personality: ['perfezionista', 'creativo', 'ambizioso'],
@@ -411,6 +417,7 @@ export const bergamo: CityPantry = {
       name: 'Rosa Colombo',
       gender: 'f',
       age: 59,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'barista',
       placeId: 'bar-centrale',
       personality: ['diretta', 'generosa'],
@@ -421,6 +428,7 @@ export const bergamo: CityPantry = {
       name: 'Alberto Bergamini',
       gender: 'm',
       age: 31,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'barista',
       placeId: 'caffe-della-funicolare',
       personality: ['cosmopolita'],
@@ -431,6 +439,7 @@ export const bergamo: CityPantry = {
       name: 'Chiara Galli',
       gender: 'f',
       age: 26,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'barista',
       placeId: 'bar-sant-alessandro',
       personality: ['artistica', 'tranquilla', 'pensierosa'],
@@ -441,6 +450,7 @@ export const bergamo: CityPantry = {
       name: 'Mario Biffi',
       gender: 'm',
       age: 55,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'proprietario',
       placeId: 'bar-polo',
       personality: ['schietto', 'leale', 'lavoratore'],
@@ -451,6 +461,7 @@ export const bergamo: CityPantry = {
       name: 'Elena Tresoldi',
       gender: 'f',
       age: 42,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'fornaia',
       placeId: 'panificio-tresoldi',
       personality: ['allegra', 'premurosa'],
@@ -461,6 +472,7 @@ export const bergamo: CityPantry = {
       name: 'Franco Locatelli',
       gender: 'm',
       age: 61,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'fornaio',
       placeId: 'forno-san-lorenzo',
       personality: ['rigoroso', 'orgoglioso'],
@@ -471,6 +483,7 @@ export const bergamo: CityPantry = {
       name: 'Silvia Pesenti',
       gender: 'f',
       age: 34,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'fornaia',
       placeId: 'panificio-moderno',
       personality: ['efficiente', 'sorridente', 'attenta'],
@@ -481,6 +494,7 @@ export const bergamo: CityPantry = {
       name: 'Paolo Cavalli',
       gender: 'm',
       age: 49,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'pasticciere maestro',
       placeId: 'pasticceria-cavour',
       personality: ['raffinato', 'rispettato'],
@@ -491,6 +505,7 @@ export const bergamo: CityPantry = {
       name: "Giovanni Rota",
       gender: "m",
       age: 67,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: "fruttivendolo",
       placeId: 'mercato-citta-alta',
       personality: ["vivace", "scherzoso", "generoso"],
@@ -502,6 +517,7 @@ export const bergamo: CityPantry = {
       name: 'Carla Ghisleni',
       gender: 'f',
       age: 52,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'commerciante',
       placeId: 'mercato-borgo-palazzo',
       personality: ['forte', 'competente', 'rispettata'],
@@ -512,6 +528,7 @@ export const bergamo: CityPantry = {
       name: 'Donato Zonca',
       gender: 'm',
       age: 71,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'negoziante',
       placeId: 'alimentari-donato',
       personality: ['narratore'],
@@ -522,6 +539,7 @@ export const bergamo: CityPantry = {
       name: 'Vittorio Cerea',
       gender: 'm',
       age: 56,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'chef stellato',
       placeId: 'ristorante-da-vittorio',
       personality: ['visionario'],
@@ -533,6 +551,7 @@ export const bergamo: CityPantry = {
       name: 'Massimo Villa',
       gender: 'm',
       age: 47,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'chef proprietario',
       placeId: 'ristorante-colleoni',
       personality: ['elegante', 'colto', 'diplomatico'],
@@ -543,6 +562,7 @@ export const bergamo: CityPantry = {
       name: 'Ornella Togni',
       gender: 'f',
       age: 63,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'cuoca e proprietaria',
       placeId: 'trattoria-del-teatro',
       personality: ['materna', 'accogliente'],
@@ -553,6 +573,7 @@ export const bergamo: CityPantry = {
       name: 'Fabio Previtali',
       gender: 'm',
       age: 44,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'oste',
       placeId: 'osteria-del-borgo',
       personality: ['conviviale', 'generoso'],
@@ -563,6 +584,7 @@ export const bergamo: CityPantry = {
       name: 'Bruno Arrigoni',
       gender: 'm',
       age: 66,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'cuoco specializzato',
       placeId: 'polenteria-valtellina',
       personality: ['rustico', 'autentico', 'diretto'],
@@ -573,6 +595,7 @@ export const bergamo: CityPantry = {
       name: 'Leonardo Marchesi',
       gender: 'm',
       age: 35,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'guida turistica',
       placeId: 'piazza-vecchia',
       personality: ["entusiasta", "loquace", "curioso"],
@@ -584,6 +607,7 @@ export const bergamo: CityPantry = {
       name: 'Padre Francesco',
       gender: 'm',
       age: 69,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'sacerdote',
       placeId: 'basilica-santa-maria-maggiore',
       personality: ['sereno', 'contemplativo', 'accogliente'],
@@ -594,6 +618,7 @@ export const bergamo: CityPantry = {
       name: 'Anna Santoro',
       gender: 'f',
       age: 41,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: "restauratrice",
       placeId: 'cappella-colleoni',
       personality: ['entusiasta'],
@@ -605,6 +630,7 @@ export const bergamo: CityPantry = {
       name: 'Pietro Conti',
       gender: 'm',
       age: 57,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'custode',
       placeId: 'rocca-di-bergamo',
       personality: ['protettivo', 'fiero'],
@@ -615,6 +641,7 @@ export const bergamo: CityPantry = {
       name: 'Giulia Mazzoleni',
       gender: 'f',
       age: 29,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'giardiniera comunale',
       placeId: 'parco-della-trucca',
       personality: ["attiva", "naturalista", "solare"],
@@ -626,6 +653,7 @@ export const bergamo: CityPantry = {
       name: 'Federico Ruggeri',
       gender: 'm',
       age: 33,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'musicista di strada',
       placeId: 'sentierone',
       personality: ['artistico', 'libero', 'socievole'],
@@ -636,6 +664,7 @@ export const bergamo: CityPantry = {
       name: 'Luca Belotti',
       gender: 'm',
       age: 39,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'sommelier',
       placeId: 'enoteca-del-malpaga',
       personality: ['raffinato', 'conoscitore'],
@@ -646,6 +675,7 @@ export const bergamo: CityPantry = {
       name: 'Antonio Cozzi',
       gender: 'm',
       age: 68,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'proprietario storico',
       placeId: 'vineria-cozzi',
       personality: ['nostalgico'],
@@ -656,6 +686,7 @@ export const bergamo: CityPantry = {
       name: 'Beatrice Castelli',
       gender: 'f',
       age: 36,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'libraia',
       placeId: 'libreria-sant-agostino',
       personality: ["cultured", "helpful", "reserved"],
@@ -667,6 +698,7 @@ export const bergamo: CityPantry = {
       name: "Elena Moraru",
       gender: "f",
       age: 48,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: "farmacista",
       placeId: 'farmacia-centrale',
       personality: ["professionale", "attenta", "rassicurante"],
@@ -678,6 +710,7 @@ export const bergamo: CityPantry = {
       name: 'Michele Pezzotta',
       gender: 'm',
       age: 51,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'macchinista della funicolare',
       placeId: 'funicolare-bergamo-alta',
       personality: ['orgoglioso', 'puntuale'],
@@ -689,6 +722,7 @@ export const bergamo: CityPantry = {
       name: 'Maestro Grassi',
       gender: 'm',
       age: 64,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'direttore d\'orchestra',
       placeId: 'teatro-donizetti',
       personality: [],
@@ -700,6 +734,7 @@ export const bergamo: CityPantry = {
       name: 'Clara Bellini',
       gender: 'f',
       age: 43,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'curatrice museale',
       placeId: 'accademia-carrara',
       personality: ['elegante', 'colta'],

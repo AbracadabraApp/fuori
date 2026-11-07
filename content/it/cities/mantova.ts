@@ -345,6 +345,7 @@ export const mantova: CityPantry = {
       name: "Giorgia Mantovani",
       gender: "f",
       age: 58,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: "proprietaria",
       placeId: 'caffe-modi',
       personality: ["refined", "local", "dignified"],
@@ -356,6 +357,7 @@ export const mantova: CityPantry = {
       name: 'Silvia Rossi',
       gender: 'f',
       age: 29,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'barista',
       placeId: 'bar-delle-erbe',
       personality: ["energetic", "social", "quick"],
@@ -367,6 +369,7 @@ export const mantova: CityPantry = {
       name: 'Franco Bertolini',
       gender: 'm',
       age: 65,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'proprietario',
       placeId: 'caffe-borsa',
       personality: ['opinionated', 'loyal'],
@@ -377,6 +380,7 @@ export const mantova: CityPantry = {
       name: 'Elena Conti',
       gender: 'f',
       age: 33,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'barista',
       placeId: 'bar-te',
       personality: ['modern', 'artistic', 'welcoming'],
@@ -387,6 +391,7 @@ export const mantova: CityPantry = {
       name: 'Massimo Guidetti',
       gender: 'm',
       age: 52,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'barista',
       placeId: 'bar-sport-cittadella',
       personality: ['gregarious', 'sports-loving', 'community-minded'],
@@ -397,6 +402,7 @@ export const mantova: CityPantry = {
       name: 'Anna Virgili',
       gender: 'f',
       age: 41,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'proprietaria',
       placeId: 'caffe-virgilio',
       personality: ['literary', 'thoughtful', 'cultured'],
@@ -407,6 +413,7 @@ export const mantova: CityPantry = {
       name: 'Roberto Donati',
       gender: 'm',
       age: 45,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'barista',
       placeId: 'bar-matilde',
       personality: ['hardworking', 'family-oriented', 'dependable'],
@@ -417,6 +424,7 @@ export const mantova: CityPantry = {
       name: 'Lucia Bianchi',
       gender: 'f',
       age: 37,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'barista',
       placeId: 'bar-aldega',
       personality: ['cheerful', 'outdoor-loving', 'energetic'],
@@ -427,6 +435,7 @@ export const mantova: CityPantry = {
       name: 'Davide Sartori',
       gender: 'm',
       age: 31,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'barista',
       placeId: 'bar-gonzaga',
       personality: ['professional', 'efficient'],
@@ -437,6 +446,7 @@ export const mantova: CityPantry = {
       name: 'Pietro Fornari',
       gender: 'm',
       age: 56,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'fornaio',
       placeId: 'panificio-pavesi',
       personality: ['skilled', 'early-rising'],
@@ -447,6 +457,7 @@ export const mantova: CityPantry = {
       name: 'Margherita Caravatti',
       gender: 'f',
       age: 44,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'pasticcera',
       placeId: 'pasticceria-caravatti',
       personality: ['creative', 'elegant'],
@@ -457,6 +468,7 @@ export const mantova: CityPantry = {
       name: 'Giovanni Prati',
       gender: 'm',
       age: 49,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'fornaio',
       placeId: 'forno-cittadella',
       personality: ['neighborhood fixture', 'jovial', 'generous'],
@@ -467,6 +479,7 @@ export const mantova: CityPantry = {
       name: 'Chiara Moretti',
       gender: 'f',
       age: 35,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'pasticcera',
       placeId: 'pasticceria-apollo',
       personality: ['innovative', 'ambitious', 'talented'],
@@ -477,6 +490,7 @@ export const mantova: CityPantry = {
       name: 'Stefano Gardoni',
       gender: 'm',
       age: 62,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'venditore',
       placeId: 'mercato-erbe',
       personality: ["proud", "weather-wise", "talkative"],
@@ -488,6 +502,7 @@ export const mantova: CityPantry = {
       name: 'Carla Montanari',
       gender: 'f',
       age: 51,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'venditrice',
       placeId: 'mercato-coperto',
       personality: ['local', 'warm', 'trusted'],
@@ -498,6 +513,7 @@ export const mantova: CityPantry = {
       name: 'Paolo Ferrarini',
       gender: 'm',
       age: 58,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'contadino',
       placeId: 'mercato-agricolo',
       personality: ['earthy', 'direct', 'seasonal'],
@@ -508,6 +524,7 @@ export const mantova: CityPantry = {
       name: 'Alberto Cignaroli',
       gender: 'm',
       age: 55,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'chef',
       placeId: 'ristorante-cigno',
       personality: ['refined'],
@@ -519,6 +536,7 @@ export const mantova: CityPantry = {
       name: 'Maria Zanardi',
       gender: 'f',
       age: 59,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'cuoca',
       placeId: 'trattoria-martini',
       personality: ['maternal'],
@@ -529,6 +547,7 @@ export const mantova: CityPantry = {
       name: 'Gianfranco Volta',
       gender: 'm',
       age: 67,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'oste',
       placeId: 'osteria-fragoletta',
       personality: ['storytelling', 'convivial', 'wine-loving'],
@@ -539,6 +558,7 @@ export const mantova: CityPantry = {
       name: "Daniela Munteanu",
       gender: "f",
       age: 47,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: "salumiera",
       placeId: 'salumeria-ducale',
       personality: ["meticulous", "friendly", "selective"],
@@ -550,6 +570,7 @@ export const mantova: CityPantry = {
       name: 'Simona Leoni',
       gender: 'f',
       age: 39,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'proprietaria',
       placeId: 'gastronomia-gonzaga',
       personality: ['efficient', 'modern'],
@@ -560,6 +581,7 @@ export const mantova: CityPantry = {
       name: 'Marcello Andreoli',
       gender: 'm',
       age: 43,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: "custode",
       placeId: "palazzo-ducale-mantova",
       personality: [],
@@ -571,6 +593,7 @@ export const mantova: CityPantry = {
       name: "Beatrice Zanetti",
       gender: 'f',
       age: 36,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: "insegnante e volontaria del Festivaletteratura",
       placeId: 'palazzo-te',
       personality: ['enthusiastic', 'detail-oriented'],
@@ -582,6 +605,7 @@ export const mantova: CityPantry = {
       name: 'Don Giuseppe Mazzini',
       gender: 'm',
       age: 68,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'parroco',
       placeId: 'duomo-mantova',
       personality: ['serene', 'community-caring'],
@@ -592,6 +616,7 @@ export const mantova: CityPantry = {
       name: 'Suor Maria Benedetta',
       gender: 'f',
       age: 54,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'suora',
       placeId: 'basilica-andrea',
       personality: ['devoted', 'gentle', 'helpful'],
@@ -602,6 +627,7 @@ export const mantova: CityPantry = {
       name: "Andrea Bellintani",
       gender: 'm',
       age: 50,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'giardiniere',
       placeId: 'parco-te',
       personality: ['nature-loving', 'seasonal'],
@@ -613,6 +639,7 @@ export const mantova: CityPantry = {
       name: 'Vincenzo Monteverdi',
       gender: 'm',
       age: 71,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'musicista',
       placeId: 'piazza-sordello',
       personality: ["artistic", "nostalgic", "romantic"],
@@ -624,6 +651,7 @@ export const mantova: CityPantry = {
       name: 'Tommaso Rubini',
       gender: 'm',
       age: 42,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'sommelier',
       placeId: 'enoteca-cortile',
       personality: ['refined'],
@@ -634,6 +662,7 @@ export const mantova: CityPantry = {
       name: 'Valentina Pellegrini',
       gender: 'f',
       age: 34,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'proprietaria',
       placeId: 'enoteca-lago',
       personality: ['sophisticated', 'social', 'modern'],
@@ -644,6 +673,7 @@ export const mantova: CityPantry = {
       name: 'Claudia Tassoni',
       gender: 'f',
       age: 38,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'libraia',
       placeId: 'libreria-nautilus',
       personality: ['literary', 'recommending', 'cultural'],
@@ -654,6 +684,7 @@ export const mantova: CityPantry = {
       name: 'Dott.ssa Laura Ferrari',
       gender: 'f',
       age: 46,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'farmacista',
       placeId: 'farmacia-gonzaga',
       personality: ["professional", "caring", "trusted"],
@@ -665,6 +696,7 @@ export const mantova: CityPantry = {
       name: 'Marco Scalvini',
       gender: 'm',
       age: 52,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'bigliettaio',
       placeId: 'stazione-mantova',
       personality: ["helpful", "local", "patient"],
@@ -676,6 +708,7 @@ export const mantova: CityPantry = {
       name: 'Elisabetta Gonzaga',
       gender: 'f',
       age: 44,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'artigiana',
       placeId: 'bottega-virgiliana',
       personality: ['creative', 'heritage-proud', 'skilled'],
@@ -686,6 +719,7 @@ export const mantova: CityPantry = {
       name: "Sofia Bushati",
       gender: "f",
       age: 25,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: "gelataia",
       placeId: 'gelateria-ducale',
       personality: ["creative", "cheerful", "curious"],
@@ -697,6 +731,7 @@ export const mantova: CityPantry = {
       name: 'Luca Pedali',
       gender: 'm',
       age: 36,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'meccanico',
       placeId: 'cicli-virgilio',
       personality: ['enthusiastic', 'technical', 'cycling-passionate'],

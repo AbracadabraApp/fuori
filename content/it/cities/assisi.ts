@@ -308,6 +308,7 @@ export const assisi: CityPantry = {
       name: "Andrei Popescu",
       gender: "m",
       age: 37,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: "bigliettaio",
       placeId: 'stazione-assisi',
       personality: ["calm", "helpful", "precise"],
@@ -319,6 +320,7 @@ export const assisi: CityPantry = {
       name: 'Marco Bartoli',
       gender: 'm',
       age: 42,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'barista',
       placeId: 'caffe-duomo',
       personality: ["philosophical", "warm", "patient"],
@@ -330,6 +332,7 @@ export const assisi: CityPantry = {
       name: 'Giulia Rossi',
       gender: 'f',
       age: 29,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'barista',
       placeId: 'bar-senso',
       personality: ["energetic", "friendly", "quick"],
@@ -341,6 +344,7 @@ export const assisi: CityPantry = {
       name: 'Alessandro Bianchi',
       gender: 'm',
       age: 55,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'proprietario',
       placeId: 'caffe-santa-chiara',
       personality: ['dignified', 'local'],
@@ -351,6 +355,7 @@ export const assisi: CityPantry = {
       name: 'Teresa Mancini',
       gender: 'f',
       age: 38,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'fornaia',
       placeId: 'forno-santa-maria',
       personality: ['nurturing', 'skilled', 'early-riser'],
@@ -361,6 +366,7 @@ export const assisi: CityPantry = {
       name: 'Roberto Falchi',
       gender: 'm',
       age: 46,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'pasticciere',
       placeId: 'pasticceria-san-francesco',
       personality: ['artistic', 'proud'],
@@ -371,6 +377,7 @@ export const assisi: CityPantry = {
       name: 'Vincenzo Monti',
       gender: 'm',
       age: 62,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'fruttivendolo',
       placeId: 'mercato-coperto',
       personality: ["jovial", "loud", "generous"],
@@ -382,6 +389,7 @@ export const assisi: CityPantry = {
       name: 'Anna Sabatini',
       gender: 'f',
       age: 51,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'venditrice al mercato',
       placeId: 'mercato-piazza',
       personality: ['shrewd', 'fair'],
@@ -392,6 +400,7 @@ export const assisi: CityPantry = {
       name: 'Franco Neri',
       gender: 'm',
       age: 58,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'negoziante',
       placeId: 'bottega-umbra',
       personality: ['local-proud'],
@@ -402,6 +411,7 @@ export const assisi: CityPantry = {
       name: 'Lucia Greco',
       gender: 'f',
       age: 44,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'chef',
       placeId: 'ristorante-metastasio',
       personality: ['refined', 'creative'],
@@ -413,6 +423,7 @@ export const assisi: CityPantry = {
       name: 'Paolo Moretti',
       gender: 'm',
       age: 50,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'chef e proprietario',
       placeId: 'ristorante-fortezza',
       personality: ['romantic', 'hospitable', 'ambitious'],
@@ -423,6 +434,7 @@ export const assisi: CityPantry = {
       name: 'Erminio Bruschi',
       gender: 'm',
       age: 71,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'proprietario',
       placeId: 'trattoria-erminio',
       personality: ['gruff-but-kind', 'family-oriented'],
@@ -433,6 +445,7 @@ export const assisi: CityPantry = {
       name: 'Silvia Fontana',
       gender: 'f',
       age: 36,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'chef',
       placeId: 'osteria-fontemaggiore',
       personality: ['earthy', 'humorous', 'authentic'],
@@ -443,6 +456,7 @@ export const assisi: CityPantry = {
       name: 'Padre Giovanni Mencarelli',
       gender: 'm',
       age: 67,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'frate',
       placeId: 'basilica-san-francesco',
       personality: ['serene', 'multilingual'],
@@ -454,6 +468,7 @@ export const assisi: CityPantry = {
       name: 'Suor Maria Chiara',
       gender: 'f',
       age: 45,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'suora',
       placeId: 'basilica-santa-chiara',
       personality: ['devoted', 'quiet', 'compassionate'],
@@ -464,6 +479,7 @@ export const assisi: CityPantry = {
       name: 'Dott. Stefano Alberti',
       gender: 'm',
       age: 53,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'storico',
       placeId: 'tempio-minerva',
       personality: ['enthusiastic', 'detailed'],
@@ -474,6 +490,7 @@ export const assisi: CityPantry = {
       name: 'Giorgio Benedetti',
       gender: 'm',
       age: 60,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'giardiniere',
       placeId: 'giardini-santa-chiara',
       personality: ['contemplative', 'local'],
@@ -484,6 +501,7 @@ export const assisi: CityPantry = {
       name: 'Isabella Conti',
       gender: 'f',
       age: 33,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'artista di strada',
       placeId: 'piazza-comune',
       personality: ["artistic", "free-spirited", "engaging"],
@@ -495,6 +513,7 @@ export const assisi: CityPantry = {
       name: 'Matteo Galli',
       gender: 'm',
       age: 28,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: "ragazzo del posto",
       placeId: 'piazza-san-rufino',
       personality: ["outgoing", "proud of Assisi", "sociable"],
@@ -506,6 +525,7 @@ export const assisi: CityPantry = {
       name: 'Andrea Carli',
       gender: 'm',
       age: 41,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'sommelier',
       placeId: 'enoteca-properzio',
       personality: ['sophisticated', 'discerning'],
@@ -516,6 +536,7 @@ export const assisi: CityPantry = {
       name: 'Valentina Toscano',
       gender: 'f',
       age: 31,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: "responsabile dell'enoteca",
       placeId: 'wine-bar-bibendum',
       personality: ['modern', 'sociable', 'trendsetting'],
@@ -526,6 +547,7 @@ export const assisi: CityPantry = {
       name: 'Elena Marchetti',
       gender: 'f',
       age: 56,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'libraia',
       placeId: 'libreria-san-francesco',
       personality: ['literary', 'gentle', 'thoughtful'],
@@ -536,6 +558,7 @@ export const assisi: CityPantry = {
       name: 'Dott.ssa Carla Martini',
       gender: 'f',
       age: 48,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'farmacista',
       placeId: 'farmacia-centrale',
       personality: ["professional", "caring", "calm"],
@@ -547,6 +570,7 @@ export const assisi: CityPantry = {
       name: 'Giuseppe Ricci',
       gender: 'm',
       age: 65,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'negoziante',
       placeId: 'tabaccheria-assisi',
       personality: ["cheerful", "chatty", "curious"],
@@ -558,6 +582,7 @@ export const assisi: CityPantry = {
       name: 'Alberto Ferretti',
       gender: 'm',
       age: 39,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: "custode della Rocca",
       placeId: 'rocca-maggiore',
       personality: ['historical', 'engaging'],
@@ -569,6 +594,7 @@ export const assisi: CityPantry = {
       name: 'Fra Antonio Marini',
       gender: 'm',
       age: 52,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'frate eremita',
       placeId: 'eremo-carceri',
       personality: ['contemplative', 'sparse-spoken', 'spiritual'],
@@ -580,6 +606,7 @@ export const assisi: CityPantry = {
       name: 'Clara Russo',
       gender: 'f',
       age: 43,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'curatrice museale',
       placeId: 'museo-diocesano',
       personality: ['local'],
@@ -590,6 +617,7 @@ export const assisi: CityPantry = {
       name: 'Marco Angelini',
       gender: 'm',
       age: 37,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'ceramista',
       placeId: 'laboratorio-ceramiche',
       personality: ['artistic'],
@@ -601,6 +629,7 @@ export const assisi: CityPantry = {
       name: 'Domenico Petrucci',
       gender: 'm',
       age: 59,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: "produttore d'olio",
       placeId: 'frantoi-assisi',
       personality: ['proud'],
@@ -611,6 +640,7 @@ export const assisi: CityPantry = {
       name: 'Federica Lenti',
       gender: 'f',
       age: 26,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'gelataia',
       placeId: 'gelateria-santa-maria',
       personality: ["sweet", "creative", "cheerful"],

@@ -354,6 +354,7 @@ export const venezia: CityPantry = {
       name: "Marta Zanon",
       gender: "f",
       age: 42,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: "proprietaria del bar",
       placeId: 'bar-al-timon',
       personality: ["gregarious", "generous", "quick-witted"],
@@ -365,6 +366,7 @@ export const venezia: CityPantry = {
       name: "Nusrat Rahman",
       gender: "f",
       age: 25,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: "cameriera",
       placeId: 'caffe-florian',
       personality: ["elegant", "hardworking", "friendly"],
@@ -376,6 +378,7 @@ export const venezia: CityPantry = {
       name: 'Giulia Leoni',
       gender: 'f',
       age: 29,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'barista',
       placeId: 'bar-ai-do-leoni',
       personality: ['energetic', 'warm'],
@@ -386,6 +389,7 @@ export const venezia: CityPantry = {
       name: 'Stefano Rosso',
       gender: 'm',
       age: 35,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'barista',
       placeId: 'caffe-rosso',
       personality: ['artistic', 'laid-back', 'philosophical'],
@@ -396,6 +400,7 @@ export const venezia: CityPantry = {
       name: 'Elena Vidal',
       gender: 'f',
       age: 52,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'proprietaria del bar',
       placeId: 'bar-alla-toletta',
       personality: ['motherly'],
@@ -406,6 +411,7 @@ export const venezia: CityPantry = {
       name: 'Roberto Martini',
       gender: 'm',
       age: 45,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'torrefattore',
       placeId: 'caffe-del-doge',
       personality: ['intense'],
@@ -416,6 +422,7 @@ export const venezia: CityPantry = {
       name: 'Chiara Ormesini',
       gender: 'f',
       age: 31,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'barista',
       placeId: 'bar-ai-ormesini',
       personality: ['efficient', 'humorous', 'down-to-earth'],
@@ -426,6 +433,7 @@ export const venezia: CityPantry = {
       name: 'Gino Battaglia',
       gender: 'm',
       age: 68,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'proprietario del bar',
       placeId: 'bar-da-gino',
       personality: ['gruff-but-kind', 'loyal'],
@@ -436,6 +444,7 @@ export const venezia: CityPantry = {
       name: 'Luciana Ferro',
       gender: 'f',
       age: 39,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'esperta di caffè',
       placeId: 'torrefazione-cannaregio',
       personality: ['local', 'enthusiastic'],
@@ -446,6 +455,7 @@ export const venezia: CityPantry = {
       name: 'Angela Volpe',
       gender: 'f',
       age: 56,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'fornaia',
       placeId: 'panificio-volpe',
       personality: ['hardworking', 'proud', 'generous'],
@@ -456,6 +466,7 @@ export const venezia: CityPantry = {
       name: 'Tommaso Dal Mas',
       gender: 'm',
       age: 33,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'pasticciere',
       placeId: 'pasticceria-dal-mas',
       personality: ['creative', 'proud'],
@@ -466,6 +477,7 @@ export const venezia: CityPantry = {
       name: 'Francesca Pane',
       gender: 'f',
       age: 44,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'fornaia',
       placeId: 'panificio-san-marco',
       personality: ['busy', 'cheerful', 'accommodating'],
@@ -476,6 +488,7 @@ export const venezia: CityPantry = {
       name: 'Paolo Rizzardini',
       gender: 'm',
       age: 61,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'maestro pasticciere',
       placeId: 'pasticceria-rizzardini',
       personality: ['respected'],
@@ -486,6 +499,7 @@ export const venezia: CityPantry = {
       name: "Mirela Dumitru",
       gender: "f",
       age: 55,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: "pescivendola",
       placeId: 'mercato-rialto',
       personality: ["boisterous", "hardworking", "direct"],
@@ -497,6 +511,7 @@ export const venezia: CityPantry = {
       name: 'Maria Cadore',
       gender: 'f',
       age: 48,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'fruttivendola',
       placeId: 'mercato-cannaregio',
       personality: ['forthright', 'fair', 'neighborhood-matriarch'],
@@ -507,6 +522,7 @@ export const venezia: CityPantry = {
       name: 'Vittorio Scarpa',
       gender: 'm',
       age: 59,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'pescivendolo',
       placeId: 'pescheria-castello',
       personality: ['quiet', 'reliable'],
@@ -517,6 +533,7 @@ export const venezia: CityPantry = {
       name: 'Lorenzo Carampane',
       gender: 'm',
       age: 47,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'chef e proprietario',
       placeId: 'ristorante-antiche-carampane',
       personality: [],
@@ -528,6 +545,7 @@ export const venezia: CityPantry = {
       name: 'Alvise Costa',
       gender: 'm',
       age: 52,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'ristoratore',
       placeId: 'ristorante-da-alvise',
       personality: ['hospitable', 'family-oriented', 'storytelling'],
@@ -538,6 +556,7 @@ export const venezia: CityPantry = {
       name: 'Michele Squero',
       gender: 'm',
       age: 36,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'oste',
       placeId: 'osteria-al-squero',
       personality: ['relaxed', 'wine-loving', 'sociable'],
@@ -548,6 +567,7 @@ export const venezia: CityPantry = {
       name: 'Isabella Trevisan',
       gender: 'f',
       age: 41,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'capocameriera',
       placeId: 'trattoria-alla-madonna',
       personality: ['no-nonsense', 'efficient', 'commanding'],
@@ -558,6 +578,7 @@ export const venezia: CityPantry = {
       name: 'Nicolò Bacaro',
       gender: 'm',
       age: 28,
+      voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
       role: "titolare dell'enoteca",
       placeId: 'bacaro-del-vin',
       personality: ['enthusiastic', 'local', 'modern-traditional'],
@@ -568,6 +589,7 @@ export const venezia: CityPantry = {
       name: 'Padre Giovanni Mocenigo',
       gender: 'm',
       age: 64,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'sacerdote',
       placeId: 'basilica-san-marco',
       personality: ['serene', 'guardian'],
@@ -578,6 +600,7 @@ export const venezia: CityPantry = {
       name: "Carlo Vianello",
       gender: 'm',
       age: 43,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'gondoliere',
       placeId: 'ponte-rialto',
       personality: ['proud', 'skilled', 'charming'],
@@ -589,6 +612,7 @@ export const venezia: CityPantry = {
       name: 'Beatrice Giardini',
       gender: 'f',
       age: 37,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'giardiniera',
       placeId: 'giardini-pubblici',
       personality: ['peaceful', 'nurturing', 'nature-loving'],
@@ -599,6 +623,7 @@ export const venezia: CityPantry = {
       name: 'Giovanna Rizzo',
       gender: 'f',
       age: 26,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'studentessa',
       placeId: 'campo-santa-margherita',
       personality: ["lively", "social", "optimistic"],
@@ -610,6 +635,7 @@ export const venezia: CityPantry = {
       name: 'Suora Teresa Venier',
       gender: 'f',
       age: 58,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'suora',
       placeId: 'chiesa-madonna-orto',
       personality: ['contemplative', 'artistic', 'gentle'],
@@ -620,6 +646,7 @@ export const venezia: CityPantry = {
       name: 'Dante Mori',
       gender: 'm',
       age: 72,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'storico locale',
       placeId: 'campo-dei-mori',
       personality: ["eccentric", "local", "nostalgic"],
@@ -631,6 +658,7 @@ export const venezia: CityPantry = {
       name: 'Matteo Vino',
       gender: 'm',
       age: 34,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'sommelier',
       placeId: 'enoteca-mascareta',
       personality: ['sophisticated', 'romantic', 'discerning'],
@@ -641,6 +669,7 @@ export const venezia: CityPantry = {
       name: 'Sandra Spade',
       gender: 'f',
       age: 50,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'proprietaria della cantina',
       placeId: 'cantina-do-spade',
       personality: ['witty', 'keeper-of-secrets'],
@@ -651,6 +680,7 @@ export const venezia: CityPantry = {
       name: 'Luigi Frizzo',
       gender: 'm',
       age: 66,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'libraio',
       placeId: 'libreria-acqua-alta',
       personality: ["eccentric", "literary", "whimsical"],
@@ -662,6 +692,7 @@ export const venezia: CityPantry = {
       name: 'Dottoressa Clara Morelli',
       gender: 'f',
       age: 45,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'farmacista',
       placeId: 'farmacia-morelli',
       personality: ["professional", "caring", "local"],
@@ -673,6 +704,7 @@ export const venezia: CityPantry = {
       name: 'Pietro Bellini',
       gender: 'm',
       age: 53,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'bigliettaio',
       placeId: 'stazione-santa-lucia',
       personality: ["helpful", "organized", "patient"],
@@ -684,6 +716,7 @@ export const venezia: CityPantry = {
       name: 'Andrea Tramontin',
       gender: 'm',
       age: 58,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'maestro squerarolo',
       placeId: 'squero-san-trovaso',
       personality: ["masterful", "patient", "proud"],
@@ -695,6 +728,7 @@ export const venezia: CityPantry = {
       name: 'Valentina Maschera',
       gender: 'f',
       age: 32,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'artigiana di maschere',
       placeId: 'atelier-maschera',
       personality: ['artistic', 'mysterious', 'creative'],
@@ -705,6 +739,7 @@ export const venezia: CityPantry = {
       name: 'Emilia Spezie',
       gender: 'f',
       age: 40,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'commerciante di spezie',
       placeId: 'fondaco-spezie',
       personality: ['exotic', 'local', 'merchant-heritage'],

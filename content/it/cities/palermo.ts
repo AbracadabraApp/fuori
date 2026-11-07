@@ -355,6 +355,7 @@ export const palermo: CityPantry = {
       name: "Giulia Cusimano",
       gender: "f",
       age: 26,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: "barista",
       placeId: 'bar-alba',
       personality: ["quick-witted", "opinionated", "warm"],
@@ -366,6 +367,7 @@ export const palermo: CityPantry = {
       name: 'Angela Lombardo',
       gender: 'f',
       age: 38,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'proprietaria',
       placeId: 'caffe-del-kassaro',
       personality: ["elegant", "cultured", "welcoming"],
@@ -377,6 +379,7 @@ export const palermo: CityPantry = {
       name: 'Roberto Di Maggio',
       gender: 'm',
       age: 29,
+      voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
       role: 'barista',
       placeId: 'bar-touring',
       personality: ['efficient', 'ambitious', 'modern'],
@@ -387,6 +390,7 @@ export const palermo: CityPantry = {
       name: 'Francesca Vitale',
       gender: 'f',
       age: 45,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'responsabile',
       placeId: 'antico-caffe-spinnato',
       personality: ['refined', 'detail-oriented', 'proud'],
@@ -397,6 +401,7 @@ export const palermo: CityPantry = {
       name: 'Pino Caruso',
       gender: 'm',
       age: 67,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'proprietario',
       placeId: 'bar-garibaldi',
       personality: ['humorous', 'neighborhood-fixture'],
@@ -407,6 +412,7 @@ export const palermo: CityPantry = {
       name: 'Lucia Messina',
       gender: 'f',
       age: 33,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'barista',
       placeId: 'caffe-mazzara',
       personality: ['generous', 'energetic'],
@@ -417,6 +423,7 @@ export const palermo: CityPantry = {
       name: 'Giuseppe Arena',
       gender: 'm',
       age: 58,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'barista',
       placeId: 'bar-marocco',
       personality: ['quiet', 'reliable'],
@@ -427,6 +434,7 @@ export const palermo: CityPantry = {
       name: 'Martina Greco',
       gender: 'f',
       age: 27,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'pasticciera',
       placeId: 'pasticceria-cappello',
       personality: ['creative'],
@@ -437,6 +445,7 @@ export const palermo: CityPantry = {
       name: 'Calogero Morello',
       gender: 'm',
       age: 61,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'maestro fornaio',
       placeId: 'panificio-morello',
       personality: ['skilled'],
@@ -447,6 +456,7 @@ export const palermo: CityPantry = {
       name: 'Rosa Graziano',
       gender: 'f',
       age: 55,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'fornaia',
       placeId: 'antico-forno-graziano',
       personality: ['matriarchal', 'no-nonsense', 'generous'],
@@ -457,6 +467,7 @@ export const palermo: CityPantry = {
       name: 'Tommaso Rizzo',
       gender: 'm',
       age: 42,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'fornaio',
       placeId: 'panificio-san-francesco',
       personality: ['friendly', 'hardworking', 'community-minded'],
@@ -467,6 +478,7 @@ export const palermo: CityPantry = {
       name: 'Daniela Costa',
       gender: 'f',
       age: 36,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'proprietaria',
       placeId: 'forno-santa-chiara',
       personality: ['innovative', 'business-savvy'],
@@ -477,6 +489,7 @@ export const palermo: CityPantry = {
       name: 'Vito Abbate',
       gender: 'm',
       age: 48,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'fruttivendolo',
       placeId: 'mercato-ballaro',
       personality: ["loud", "charismatic", "shrewd"],
@@ -488,6 +501,7 @@ export const palermo: CityPantry = {
       name: 'Concetta Barone',
       gender: 'f',
       age: 63,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'pescivendola',
       placeId: 'mercato-vucciria',
       personality: ['tough', 'local', 'respected'],
@@ -498,6 +512,7 @@ export const palermo: CityPantry = {
       name: 'Antonio Ferrara',
       gender: 'm',
       age: 51,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'formaggiaio',
       placeId: 'mercato-del-capo',
       personality: ['local', 'proud'],
@@ -508,6 +523,7 @@ export const palermo: CityPantry = {
       name: 'Carmela Todaro',
       gender: 'f',
       age: 59,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'cuoca e proprietaria',
       placeId: 'trattoria-ai-cascinari',
       personality: ['motherly'],
@@ -519,6 +535,7 @@ export const palermo: CityPantry = {
       name: 'Filippo Basile',
       gender: 'm',
       age: 44,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'chef e proprietario',
       placeId: 'osteria-ballarò',
       personality: ['gregarious', 'wine-loving'],
@@ -530,6 +547,7 @@ export const palermo: CityPantry = {
       name: 'Giovanna Orlando',
       gender: 'f',
       age: 37,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'cameriera',
       placeId: 'antica-focacceria-san-francesco',
       personality: ['efficient', 'proud-of-tradition', 'helpful'],
@@ -540,6 +558,7 @@ export const palermo: CityPantry = {
       name: 'Santo Lo Verde',
       gender: 'm',
       age: 34,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'friggitore',
       placeId: 'friggitoria-chiluzzo',
       personality: ['humorous', 'street-smart'],
@@ -550,6 +569,7 @@ export const palermo: CityPantry = {
       name: 'Marco Gentile',
       gender: 'm',
       age: 26,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'proprietario',
       placeId: 'ke-palle',
       personality: ['entrepreneurial', 'creative', 'trend-conscious'],
@@ -560,6 +580,7 @@ export const palermo: CityPantry = {
       name: 'Elena Bianchi',
       gender: 'f',
       age: 41,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: "sarta del teatro",
       placeId: 'teatro-massimo',
       personality: ["local", "lively", "opera lover"],
@@ -571,6 +592,7 @@ export const palermo: CityPantry = {
       name: 'Padre Francesco',
       gender: 'm',
       age: 68,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'sacerdote',
       placeId: 'chiesa-della-martorana',
       personality: ['gentle', 'multilingual'],
@@ -581,6 +603,7 @@ export const palermo: CityPantry = {
       name: 'Suor Anna',
       gender: 'f',
       age: 72,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'suora',
       placeId: 'cattedrale-di-palermo',
       personality: ['devout', 'welcoming', 'keeper-of-history'],
@@ -591,6 +614,7 @@ export const palermo: CityPantry = {
       name: 'Nunzio Palmeri',
       gender: 'm',
       age: 76,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'giardiniere',
       placeId: 'giardino-garibaldi',
       personality: ["loves-trees", "philosophical", "patient"],
@@ -602,6 +626,7 @@ export const palermo: CityPantry = {
       name: "Yasmine Trabelsi",
       gender: "f",
       age: 27,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: "artista di strada",
       placeId: 'piazza-pretoria',
       personality: ["artistic", "romantic", "curious"],
@@ -613,6 +638,7 @@ export const palermo: CityPantry = {
       name: 'Alberto Marino',
       gender: 'm',
       age: 54,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'fotografo',
       placeId: 'quattro-canti',
       personality: ["artistic", "observant", "unhurried"],
@@ -624,6 +650,7 @@ export const palermo: CityPantry = {
       name: 'Alessio Picone',
       gender: 'm',
       age: 39,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'sommelier',
       placeId: 'enoteca-picone',
       personality: ['local', 'discerning'],
@@ -634,6 +661,7 @@ export const palermo: CityPantry = {
       name: 'Beatrice Amato',
       gender: 'f',
       age: 47,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'libraia',
       placeId: 'libreria-del-mare',
       personality: ["literary", "thoughtful", "recommendative"],
@@ -645,6 +673,7 @@ export const palermo: CityPantry = {
       name: 'Davide Bruno',
       gender: 'm',
       age: 32,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'barista',
       placeId: 'corleone-wine-bar',
       personality: ['social', 'mixologist', 'night-owl'],
@@ -655,6 +684,7 @@ export const palermo: CityPantry = {
       name: 'Dottoressa Silvia Campisi',
       gender: 'f',
       age: 49,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'farmacista',
       placeId: 'farmacia-centrale',
       personality: ['professional', 'caring', 'local'],
@@ -665,6 +695,7 @@ export const palermo: CityPantry = {
       name: 'Michele Sorrentino',
       gender: 'm',
       age: 43,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'bigliettaio',
       placeId: 'stazione-centrale',
       personality: ["helpful", "multilingual", "organized"],
@@ -676,6 +707,7 @@ export const palermo: CityPantry = {
       name: "Giuseppe Randazzo",
       gender: 'm',
       age: 56,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: "restauratore di mosaici",
       placeId: 'cappella-palatina',
       personality: ["patient", "meticulous", "in love with his work"],
@@ -687,6 +719,7 @@ export const palermo: CityPantry = {
       name: 'Fra Massimo',
       gender: 'm',
       age: 53,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'frate cappuccino',
       placeId: 'catacombe-dei-cappuccini',
       personality: ['solemn', 'philosophical', 'humble'],
@@ -697,6 +730,7 @@ export const palermo: CityPantry = {
       name: 'Claudia Ferrante',
       gender: 'f',
       age: 35,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'curatrice museale',
       placeId: 'palazzo-abatellis',
       personality: ['local', 'preservation-focused'],
@@ -707,6 +741,7 @@ export const palermo: CityPantry = {
       name: 'Totò Lo Cascio',
       gender: 'm',
       age: 63,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'meusaro',
       placeId: 'pani-ca-meusa-ballaro',
       personality: ['loud', 'theatrical', 'proud of Palermo'],

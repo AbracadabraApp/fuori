@@ -3,6 +3,7 @@ import { cities, voices, elevenLabsVoiceFor, browserVoiceFor, language } from '@
 import { characterForPlace } from '@/lib/characters/for-place';
 import { elevenLabsError } from '@/lib/voice/providers/elevenlabs';
 import { voiceNote, FuoriError } from '@/lib/errors';
+import { voiceForCharacter } from '@/lib/voice/early-voice';
 
 const problems: string[] = [];
 let checked = 0;
@@ -14,7 +15,11 @@ for (const city of cities) {
     if (!c) continue;
     checked++;
     if (!c.gender) { problems.push(`${c.name} (${city.name}) has no gender`); continue; }
-    const v = elevenLabsVoiceFor(c.id, c.gender, c.age);
+    // The voice /v1/speak uses: the stored one, else picked by gender and age
+    const v = voiceForCharacter(c.id);
+    const stored = city.characters?.find((x) => x.id === c.id)?.voice;
+    if (stored && v !== stored) problems.push(`${c.name} (${city.name}): the server doesn't use their stored voice`);
+    if (!stored && v !== elevenLabsVoiceFor(c.id, c.gender, c.age)) problems.push(`${c.name} (${city.name}): no stored voice and the server picked another`);
     if (!v) { problems.push(`${c.name} (${city.name}) has no voice`); continue; }
     used.add(v);
     if (!voices.elevenlabs[c.gender].includes(v)) problems.push(`${c.name} (${city.name}) got a ${c.gender === 'f' ? 'male' : 'female'} voice`);
@@ -26,6 +31,10 @@ for (const city of cities) {
     }
   }
   if (checked > 5 && used.size < 2) problems.push(`${city.name}: every character has the same voice`);
+  // Stored voices are spread per city (scripts/assign-voices.mts): at most 3 people on one voice
+  const counts = new Map<string, number>();
+  for (const x of city.characters ?? []) if (x.voice) counts.set(x.voice, (counts.get(x.voice) ?? 0) + 1);
+  for (const [voice, n] of counts) if (n > 3) problems.push(`${city.name}: ${n} people share voice ${voice}`);
 }
 
 // Phone fallback: a stock iPhone has only Alice. A man must still be heard,

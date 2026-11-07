@@ -303,6 +303,7 @@ export const matera: CityPantry = {
       name: 'Antonio Russo',
       gender: 'm',
       age: 52,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'proprietario',
       placeId: 'caffe-schiuma',
       personality: ["warm", "philosophical", "proud of Matera heritage"],
@@ -314,6 +315,7 @@ export const matera: CityPantry = {
       name: 'Lucia Di Matteo',
       gender: 'f',
       age: 28,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'barista',
       placeId: 'bar-vitantonio',
       personality: ["energetic", "knows everyone", "quick-witted"],
@@ -325,6 +327,7 @@ export const matera: CityPantry = {
       name: 'Michele Lorusso',
       gender: 'm',
       age: 45,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'barista',
       placeId: 'caffe-degli-archi',
       personality: ['refined', 'attentive', 'coffee perfectionist'],
@@ -335,6 +338,7 @@ export const matera: CityPantry = {
       name: 'Rosa Palmieri',
       gender: 'f',
       age: 61,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'fornaia',
       placeId: 'panificio-del-sasso',
       personality: ['nurturing', 'early riser'],
@@ -345,6 +349,7 @@ export const matera: CityPantry = {
       name: 'Giuseppe Bruno',
       gender: 'm',
       age: 38,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'fornaio',
       placeId: 'forno-antico',
       personality: ['jovial', 'hardworking'],
@@ -355,6 +360,7 @@ export const matera: CityPantry = {
       name: 'Carmela Gentile',
       gender: 'f',
       age: 55,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'venditrice',
       placeId: 'mercato-piccianello',
       personality: ["loud", "generous", "negotiator"],
@@ -366,6 +372,7 @@ export const matera: CityPantry = {
       name: 'Pietro Volpe',
       gender: 'm',
       age: 67,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'negoziante',
       placeId: 'bottega-sassi',
       personality: ['local', 'guardian of traditions'],
@@ -376,6 +383,7 @@ export const matera: CityPantry = {
       name: 'Anna La Grotta',
       gender: 'f',
       age: 49,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'contadina',
       placeId: 'mercato-contadino',
       personality: ['earthy', 'honest', 'connected to land'],
@@ -386,6 +394,7 @@ export const matera: CityPantry = {
       name: 'Francesca Clemente',
       gender: 'f',
       age: 43,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'chef proprietaria',
       placeId: 'ristorante-francesca',
       personality: ['elegant', 'passionate about cuisine'],
@@ -397,6 +406,7 @@ export const matera: CityPantry = {
       name: 'Marco Di Bari',
       gender: 'm',
       age: 34,
+      voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
       role: 'chef',
       placeId: 'ristorante-soul',
       personality: ['innovative', 'ambitious'],
@@ -407,6 +417,7 @@ export const matera: CityPantry = {
       name: 'Donato Santoro',
       gender: 'm',
       age: 58,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'proprietario',
       placeId: 'trattoria-lucana',
       personality: ['hospitable', 'humorous', 'family-oriented'],
@@ -417,6 +428,7 @@ export const matera: CityPantry = {
       name: 'Isabella Greco',
       gender: 'f',
       age: 31,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'proprietaria',
       placeId: 'osteria-purgatorio',
       personality: ['warm', 'social', 'wine enthusiast'],
@@ -427,6 +439,7 @@ export const matera: CityPantry = {
       name: 'Giovanni Montemurro',
       gender: 'm',
       age: 71,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: "pensionato",
       placeId: 'sassi-belvedere',
       personality: ["gentle", "nostalgic", "local historian"],
@@ -438,6 +451,7 @@ export const matera: CityPantry = {
       name: 'Padre Leonardo',
       gender: 'm',
       age: 56,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'parroco',
       placeId: 'cattedrale',
       personality: ['serene', 'thoughtful', 'community leader'],
@@ -448,6 +462,7 @@ export const matera: CityPantry = {
       name: 'Teresa Morelli',
       gender: 'f',
       age: 47,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: "custode della Casa Grotta",
       placeId: 'casa-grotta',
       personality: ["detail-oriented", "warm", "keeper of memories"],
@@ -459,6 +474,7 @@ export const matera: CityPantry = {
       name: 'Saverio Gattini',
       gender: 'm',
       age: 39,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'guardiaparco',
       placeId: 'parco-murgia',
       personality: ["outdoorsy", "protective", "nature lover"],
@@ -470,6 +486,7 @@ export const matera: CityPantry = {
       name: 'Elena Laterza',
       gender: 'f',
       age: 26,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'studentessa e musicista',
       placeId: 'piazza-vittorio',
       personality: ["artistic", "social", "free-spirited"],
@@ -481,6 +498,7 @@ export const matera: CityPantry = {
       name: 'Alberto Rizzi',
       gender: 'm',
       age: 64,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'pensionato',
       placeId: 'piazza-duomo',
       personality: ["contemplative", "friendly", "daily routine"],
@@ -492,6 +510,7 @@ export const matera: CityPantry = {
       name: 'Vincenzo Pace',
       gender: 'm',
       age: 41,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'sommelier',
       placeId: 'enoteca-lucania',
       personality: ['local', 'discerning'],
@@ -502,6 +521,7 @@ export const matera: CityPantry = {
       name: 'Claudia Mastrangelo',
       gender: 'f',
       age: 29,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'barista',
       placeId: 'alle-fornaci',
       personality: ['stylish', 'mixologist', 'trendy'],
@@ -512,6 +532,7 @@ export const matera: CityPantry = {
       name: 'Beatrice Loperfido',
       gender: 'f',
       age: 36,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'libraia',
       placeId: 'libreria-matera',
       personality: ["literary", "recommends books", "thoughtful"],
@@ -523,6 +544,7 @@ export const matera: CityPantry = {
       name: 'Dott.ssa Elena Mancini',
       gender: 'f',
       age: 44,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'farmacista',
       placeId: 'farmacia-centrale',
       personality: ['professional', 'caring', 'trusted advisor'],
@@ -533,6 +555,7 @@ export const matera: CityPantry = {
       name: 'Roberto Nardella',
       gender: 'm',
       age: 51,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'bigliettaio',
       placeId: 'stazione-fal',
       personality: ["punctual", "helpful", "knows all schedules"],
@@ -544,6 +567,7 @@ export const matera: CityPantry = {
       name: 'Simone Lasorella',
       gender: 'm',
       age: 37,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'direttore',
       placeId: 'hotel-sassi',
       personality: ['sophisticated', 'multilingual', 'hospitality expert'],
@@ -554,6 +578,7 @@ export const matera: CityPantry = {
       name: 'Suor Rosa',
       gender: 'f',
       age: 69,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'suora',
       placeId: 'san-pietro-caveoso',
       personality: ['devout', 'gentle', 'community helper'],
@@ -564,6 +589,7 @@ export const matera: CityPantry = {
       name: 'Maurizio Stigliano',
       gender: 'm',
       age: 53,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'artigiano',
       placeId: 'bottega-artigiana',
       personality: ["creative", "master craftsman", "patient"],
@@ -575,6 +601,7 @@ export const matera: CityPantry = {
       name: 'Caterina Gallo',
       gender: 'f',
       age: 42,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'salumiera',
       placeId: 'salumeria-peperoni',
       personality: ['proud', 'loves to sample'],
@@ -585,6 +612,7 @@ export const matera: CityPantry = {
       name: "Arben Shehu",
       gender: "m",
       age: 32,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: "gelataio",
       placeId: 'gelateria-artigiana',
       personality: ["cheerful", "hard-working", "flavor innovator"],
@@ -596,6 +624,7 @@ export const matera: CityPantry = {
       name: 'Daniela Tataranni',
       gender: 'f',
       age: 40,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'ceramista',
       placeId: 'ceramiche-sassi',
       personality: ['artistic', 'traditional techniques'],

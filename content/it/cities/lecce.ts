@@ -311,6 +311,7 @@ export const lecce: CityPantry = {
       name: "Michela Alvino",
       gender: "f",
       age: 58,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: "proprietaria",
       placeId: 'caffe-alvino',
       personality: ["orgogliosa", "accogliente", "elegante"],
@@ -322,6 +323,7 @@ export const lecce: CityPantry = {
       name: "Elona Dervishi",
       gender: "f",
       age: 24,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: "barista",
       placeId: 'bar-della-vittoria',
       personality: ["energica", "affettuosa", "chiacchierona"],
@@ -333,6 +335,7 @@ export const lecce: CityPantry = {
       name: 'Antonio Greco',
       gender: 'm',
       age: 35,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'barista e poeta',
       placeId: 'caffe-letterario',
       personality: ['riflessivo', 'gentile'],
@@ -343,6 +346,7 @@ export const lecce: CityPantry = {
       name: 'Angela Fiore',
       gender: 'f',
       age: 51,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'fornaia',
       placeId: 'panificio-fiore',
       personality: ['laboriosa', 'premurosa', 'schietta'],
@@ -353,6 +357,7 @@ export const lecce: CityPantry = {
       name: 'Donato Natale',
       gender: 'm',
       age: 67,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'pasticciere',
       placeId: 'pasticceria-natale',
       personality: ['tradizionalista'],
@@ -363,6 +368,7 @@ export const lecce: CityPantry = {
       name: 'Salvatore Leone',
       gender: 'm',
       age: 54,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'venditore',
       placeId: 'mercato-comunale',
       personality: ["chiassoso", "simpatico", "generoso"],
@@ -374,6 +380,7 @@ export const lecce: CityPantry = {
       name: 'Teresa Maggio',
       gender: 'f',
       age: 46,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'contadina',
       placeId: 'mercato-contadino',
       personality: ['genuina', 'orgogliosa'],
@@ -384,6 +391,7 @@ export const lecce: CityPantry = {
       name: 'Paolo Marino',
       gender: 'm',
       age: 39,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'pescivendolo',
       placeId: 'pescheria-del-porto',
       personality: ['diretto', 'scherzoso'],
@@ -394,6 +402,7 @@ export const lecce: CityPantry = {
       name: 'Leonardo Rizzo',
       gender: 'm',
       age: 44,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'chef e proprietario',
       placeId: 'alle-due-corti',
       personality: ['perfezionista', 'carismatico'],
@@ -405,6 +414,7 @@ export const lecce: CityPantry = {
       name: 'Francesca De Carlo',
       gender: 'f',
       age: 38,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'chef',
       placeId: 'osteria-degli-spiriti',
       personality: ['creativa', 'determinata', 'cordiale'],
@@ -415,6 +425,7 @@ export const lecce: CityPantry = {
       name: 'Marietta Pellegrino',
       gender: 'f',
       age: 71,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'cuoca',
       placeId: 'trattoria-nonna-tetti',
       personality: ['materna', 'testarda', 'affettuosa'],
@@ -425,6 +436,7 @@ export const lecce: CityPantry = {
       name: 'Giuseppe Taurino',
       gender: 'm',
       age: 33,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'friggitore',
       placeId: 'rusticceria-santa-croce',
       personality: ['veloce', 'allegro'],
@@ -436,6 +448,7 @@ export const lecce: CityPantry = {
       name: 'Padre Roberto Quarta',
       gender: 'm',
       age: 56,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'sacerdote',
       placeId: "basilica-santa-croce-lecce",
       personality: ['contemplativo', 'colto', 'disponibile'],
@@ -447,6 +460,7 @@ export const lecce: CityPantry = {
       name: 'Suor Clara',
       gender: 'f',
       age: 48,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'suora',
       placeId: 'duomo-lecce',
       personality: ['serena', 'pratica', 'compassionevole'],
@@ -457,6 +471,7 @@ export const lecce: CityPantry = {
       name: "Rocco Melcarne",
       gender: 'm',
       age: 62,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: "custode del museo",
       placeId: 'museo-faggiano',
       personality: ["storyteller", "enthusiastic", "curious"],
@@ -468,6 +483,7 @@ export const lecce: CityPantry = {
       name: 'Enzo Palmieri',
       gender: 'm',
       age: 68,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'giardiniere',
       placeId: 'villa-comunale',
       personality: ['tranquillo'],
@@ -478,6 +494,7 @@ export const lecce: CityPantry = {
       name: 'Mario Santoro',
       gender: 'm',
       age: 45,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'musicista di strada',
       placeId: 'piazza-santoronzo',
       personality: ["espressivo", "bohémien", "ottimista"],
@@ -489,6 +506,7 @@ export const lecce: CityPantry = {
       name: 'Giulia Moretti',
       gender: 'f',
       age: 29,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'artista',
       placeId: 'piazzetta-falconieri',
       personality: ['sognatrice', 'sensibile'],
@@ -499,6 +517,7 @@ export const lecce: CityPantry = {
       name: 'Elvira Convertini',
       gender: 'f',
       age: 59,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'proprietaria',
       placeId: 'enoteca-mamma-elvira',
       personality: ['sofisticata', 'calorosa'],
@@ -509,6 +528,7 @@ export const lecce: CityPantry = {
       name: 'Stefano Bianchi',
       gender: 'm',
       age: 31,
+      voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
       role: 'barman',
       placeId: 'lounge-bar-matteotti',
       personality: ['moderno', 'socievole', 'professionale'],
@@ -519,6 +539,7 @@ export const lecce: CityPantry = {
       name: 'Anna Palmieri',
       gender: 'f',
       age: 52,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'libraia',
       placeId: 'libreria-palmieri',
       personality: ['colta', 'riservata'],
@@ -529,6 +550,7 @@ export const lecce: CityPantry = {
       name: 'Dottoressa Valente',
       gender: 'f',
       age: 43,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'farmacista',
       placeId: 'farmacia-centrale',
       personality: ["professionale", "premurosa", "affidabile"],
@@ -540,6 +562,7 @@ export const lecce: CityPantry = {
       name: 'Carlo Ferraro',
       gender: 'm',
       age: 55,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'bigliettaio',
       placeId: 'stazione-lecce',
       personality: ["puntuale", "serio", "rispettoso"],
@@ -551,6 +574,7 @@ export const lecce: CityPantry = {
       name: 'Maestro Orlando',
       gender: 'm',
       age: 64,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'artigiano di cartapesta',
       placeId: 'bottega-cartapesta',
       personality: ["creativo", "paziente", "fiero"],
@@ -562,6 +586,7 @@ export const lecce: CityPantry = {
       name: 'Luisa De Marco',
       gender: 'f',
       age: 37,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'ceramista',
       placeId: 'scuola-ceramica',
       personality: ['artistica', 'insegnante', 'innovativa'],
@@ -572,6 +597,7 @@ export const lecce: CityPantry = {
       name: 'Alessandra Ricci',
       gender: 'f',
       age: 34,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: "studentessa di archeologia",
       placeId: 'anfiteatro-romano',
       personality: ["enthusiastic", "curious", "talkative"],
@@ -583,6 +609,7 @@ export const lecce: CityPantry = {
       name: 'Vincenzo Longo',
       gender: 'm',
       age: 61,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'tabaccaio',
       placeId: 'tabaccheria-moderna',
       personality: ['amichevole'],
@@ -593,6 +620,7 @@ export const lecce: CityPantry = {
       name: 'Simona Bianco',
       gender: 'f',
       age: 28,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'gelataia',
       placeId: 'gelateria-natale',
       personality: ["allegra", "dolce", "solare"],
@@ -604,6 +632,7 @@ export const lecce: CityPantry = {
       name: 'Pino Grassi',
       gender: 'm',
       age: 57,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'salumiere',
       placeId: 'salumeria-del-corso',
       personality: ['generoso', 'conviviale'],
@@ -614,6 +643,7 @@ export const lecce: CityPantry = {
       name: 'Carmela Russo',
       gender: 'f',
       age: 49,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'fornaia',
       placeId: 'forno-santa-lucia',
       personality: ['mattiniera', 'robusta', 'affidabile'],

@@ -23,3 +23,12 @@ export function characterAge(id: string): number | undefined {
   }
   return undefined;
 }
+
+/** A city character's stored voice (scripts/assign-voices.mts), if they have one */
+export function characterVoice(id: string): string | undefined {
+  for (const city of cities) {
+    const person = city.characters?.find((c) => c.id === id);
+    if (person) return person.voice;
+  }
+  return undefined;
+}

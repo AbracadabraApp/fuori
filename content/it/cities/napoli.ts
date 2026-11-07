@@ -391,6 +391,7 @@ export const napoli: CityPantry = {
       name: 'Carmine Russo',
       gender: 'm',
       age: 58,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'barista',
       placeId: 'bar-nilo',
       personality: ["devout Maradona fan", "quick-witted", "philosophical"],
@@ -402,6 +403,7 @@ export const napoli: CityPantry = {
       name: 'Sofia Esposito',
       gender: 'f',
       age: 32,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'cameriera',
       placeId: 'caffe-gambrinus',
       personality: ["elegant", "attentive", "proud of tradition"],
@@ -413,6 +415,7 @@ export const napoli: CityPantry = {
       name: 'Gennaro De Luca',
       gender: 'm',
       age: 45,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'barista',
       placeId: 'bar-mexico',
       personality: ['energetic', 'knows everyone'],
@@ -423,6 +426,7 @@ export const napoli: CityPantry = {
       name: 'Mimmo Verde',
       gender: 'm',
       age: 67,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'proprietario',
       placeId: 'caffe-del-professore',
       personality: ['reserved'],
@@ -433,6 +437,7 @@ export const napoli: CityPantry = {
       name: 'Lucia Romano',
       gender: 'f',
       age: 29,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'barista',
       placeId: 'bar-vomero-alto',
       personality: ['modern', 'friendly', 'ambitious'],
@@ -443,6 +448,7 @@ export const napoli: CityPantry = {
       name: 'Antonio Casale',
       gender: 'm',
       age: 52,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'barista',
       placeId: 'bar-epoca',
       personality: ['nostalgic'],
@@ -453,6 +459,7 @@ export const napoli: CityPantry = {
       name: 'Rosa Marino',
       gender: 'f',
       age: 41,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'proprietaria',
       placeId: 'caffe-toledo',
       personality: ['warm', 'business-savvy'],
@@ -463,6 +470,7 @@ export const napoli: CityPantry = {
       name: 'Francesco Sorrentino',
       gender: 'm',
       age: 35,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'barista',
       placeId: 'bar-chiaia-sera',
       personality: ['sophisticated', 'charming', 'local'],
@@ -473,6 +481,7 @@ export const napoli: CityPantry = {
       name: 'Elena Vitale',
       gender: 'f',
       age: 27,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'barista',
       placeId: 'bar-piedigrotta',
       personality: ['breezy', 'optimistic', 'loves the sea'],
@@ -483,6 +492,7 @@ export const napoli: CityPantry = {
       name: 'Ciro Poppella',
       gender: 'm',
       age: 44,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'pasticciere',
       placeId: 'pasticceria-poppella',
       personality: ['proud', 'family-oriented'],
@@ -494,6 +504,7 @@ export const napoli: CityPantry = {
       name: 'Maria Attanasio',
       gender: 'f',
       age: 39,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'fornaia',
       placeId: 'forno-attanasio',
       personality: ['generous', 'early riser'],
@@ -504,6 +515,7 @@ export const napoli: CityPantry = {
       name: 'Giuseppe Capparelli',
       gender: 'm',
       age: 55,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'maestro pasticciere',
       placeId: 'pasticceria-capparelli',
       personality: ['refined', 'artistic'],
@@ -514,6 +526,7 @@ export const napoli: CityPantry = {
       name: 'Anna Greco',
       gender: 'f',
       age: 48,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'fornaia',
       placeId: 'panificio-vico',
       personality: ['motherly', 'knows the neighborhood'],
@@ -524,6 +537,7 @@ export const napoli: CityPantry = {
       name: 'Marco Chen',
       gender: 'm',
       age: 34,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'fruttivendolo',
       placeId: 'mercato-pignasecca',
       personality: ['loud', 'generous', 'quick-witted'],
@@ -535,6 +549,7 @@ export const napoli: CityPantry = {
       name: 'Raffaele Bruno',
       gender: 'm',
       age: 53,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'pescivendolo',
       placeId: 'mercato-antignano',
       personality: ['straightforward', 'fair', 'local'],
@@ -545,6 +560,7 @@ export const napoli: CityPantry = {
       name: 'Teresa Gargiulo',
       gender: 'f',
       age: 57,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'venditrice al mercato',
       placeId: 'mercato-porta-nolana',
       personality: ['tough', 'shrewd', 'protective'],
@@ -555,6 +571,7 @@ export const napoli: CityPantry = {
       name: 'Gino Sorbillo',
       gender: 'm',
       age: 49,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'pizzaiolo',
       placeId: 'pizzeria-sorbillo',
       personality: ['charismatic', 'ambassador of pizza'],
@@ -566,6 +583,7 @@ export const napoli: CityPantry = {
       name: 'Paolo Condurro',
       gender: 'm',
       age: 42,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'pizzaiolo',
       placeId: 'pizzeria-michele',
       personality: ['purist', 'focused', 'minimalist'],
@@ -576,6 +594,7 @@ export const napoli: CityPantry = {
       name: 'Antonio Starita',
       gender: 'm',
       age: 68,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'maestro pizzaiolo',
       placeId: 'pizzeria-starita',
       personality: ['legendary', 'innovative', 'teacher'],
@@ -586,6 +605,7 @@ export const napoli: CityPantry = {
       name: 'Nennella Russo',
       gender: 'f',
       age: 73,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'proprietaria',
       placeId: 'trattoria-nennella',
       personality: ['fiery', 'matriarchal', 'unforgettable'],
@@ -596,6 +616,7 @@ export const napoli: CityPantry = {
       name: 'Luca Petrucci',
       gender: 'm',
       age: 41,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'chef',
       placeId: 'ristorante-palazzo-petrucci',
       personality: ['innovative', 'respectful of tradition'],
@@ -606,6 +627,7 @@ export const napoli: CityPantry = {
       name: 'Vincenzo Ricci',
       gender: 'm',
       age: 56,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'salumiere',
       placeId: 'salumeria-upnea',
       personality: ['connoisseur'],
@@ -616,6 +638,7 @@ export const napoli: CityPantry = {
       name: 'Peppe Conte',
       gender: 'm',
       age: 34,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'friggitore',
       placeId: 'friggitoria-vico',
       personality: ['jovial', 'fast-moving', 'street-smart'],
@@ -626,6 +649,7 @@ export const napoli: CityPantry = {
       name: 'Padre Domenico',
       gender: 'm',
       age: 64,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'sacerdote',
       placeId: 'duomo-napoli',
       personality: ['devout', 'compassionate'],
@@ -636,6 +660,7 @@ export const napoli: CityPantry = {
       name: 'Marco Ferri',
       gender: 'm',
       age: 38,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: "pescatore",
       placeId: 'castel-ovo',
       personality: ["local", "cheerful", "storyteller"],
@@ -647,6 +672,7 @@ export const napoli: CityPantry = {
       name: 'Giulia Martino',
       gender: 'f',
       age: 31,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'giardiniera',
       placeId: 'villa-floridiana',
       personality: ['peaceful', 'nature-loving'],
@@ -657,6 +683,7 @@ export const napoli: CityPantry = {
       name: 'Davide Amato',
       gender: 'm',
       age: 26,
+      voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
       role: 'musicista di strada',
       placeId: 'piazza-bellini',
       personality: ["artistic", "bohemian", "idealistic"],
@@ -668,6 +695,7 @@ export const napoli: CityPantry = {
       name: 'Suor Caterina',
       gender: 'f',
       age: 47,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'suora',
       placeId: 'certosa-san-martino',
       personality: ['contemplative', 'welcoming'],
@@ -678,6 +706,7 @@ export const napoli: CityPantry = {
       name: 'Michele Improta',
       gender: 'm',
       age: 43,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'sommelier',
       placeId: 'enoteca-belledonne',
       personality: ['local', 'welcoming'],
@@ -688,6 +717,7 @@ export const napoli: CityPantry = {
       name: 'Claudia Cammarota',
       gender: 'f',
       age: 33,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'proprietaria',
       placeId: 'cammarota-spritz',
       personality: ['trendy', 'social', 'entrepreneurial'],
@@ -698,6 +728,7 @@ export const napoli: CityPantry = {
       name: 'Beatrice Longo',
       gender: 'f',
       age: 37,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'libraia',
       placeId: 'libreria-dante-descartes',
       personality: ["introverted", "passionate about literature", "generous with recommendations"],
@@ -709,6 +740,7 @@ export const napoli: CityPantry = {
       name: 'Dott.ssa Capasso',
       gender: 'f',
       age: 44,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'farmacista',
       placeId: 'farmacia-centrale',
       personality: ['helpful', 'professional', 'trustworthy'],
@@ -719,6 +751,7 @@ export const napoli: CityPantry = {
       name: "Olena Kovalenko",
       gender: "f",
       age: 50,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'bigliettaia',
       placeId: 'stazione-centrale',
       personality: ["organized", "helpful", "seen-it-all"],
@@ -730,6 +763,7 @@ export const napoli: CityPantry = {
       name: 'Nonna Assunta Capuano',
       gender: 'f',
       age: 81,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'abitante del quartiere',
       placeId: 'spaccanapoli-street',
       personality: ["watchful", "heart of the neighborhood", "talkative"],
@@ -741,6 +775,7 @@ export const napoli: CityPantry = {
       name: "Mariella Magliulo",
       gender: "f",
       age: 62,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: "cioccolatiera",
       placeId: 'gay-odin',
       personality: ["proud", "traditional craftsman", "patient"],
@@ -752,6 +787,7 @@ export const napoli: CityPantry = {
       name: "Maestro Gennaro Capuano",
       gender: 'm',
       age: 70,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'artigiano del presepe',
       placeId: 'presepi-san-gregorio',
       personality: ['masterful', 'keeper of tradition'],
@@ -763,6 +799,7 @@ export const napoli: CityPantry = {
       name: 'Rosaria Iovine',
       gender: 'f',
       age: 48,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'lattaia',
       placeId: 'mozzarella-spaccanapoli',
       personality: ['warm', 'strict about freshness', 'funny'],
@@ -774,6 +811,7 @@ export const napoli: CityPantry = {
       name: 'Gennaro Amitrano',
       gender: 'm',
       age: 29,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'pizzaiolo',
       placeId: 'pizza-a-portafoglio-tribunali',
       personality: ['fast', 'cheeky', 'proud of Naples'],

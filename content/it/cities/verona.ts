@@ -292,6 +292,7 @@ export const verona: CityPantry = {
       name: "Elena Wallner",
       gender: "f",
       age: 52,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: "proprietaria",
       placeId: 'caffe-wallner',
       personality: ["refined", "local", "proud"],
@@ -303,6 +304,7 @@ export const verona: CityPantry = {
       name: 'Lucia Scalzi',
       gender: 'f',
       age: 38,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'barista',
       placeId: 'bar-ai-scalzi',
       personality: ["friendly", "neighborhood-oriented", "chatty"],
@@ -314,6 +316,7 @@ export const verona: CityPantry = {
       name: 'Giovanni Dante',
       gender: 'm',
       age: 61,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'proprietario',
       placeId: 'caffe-dante',
       personality: ['philosophical', 'well-read'],
@@ -324,6 +327,7 @@ export const verona: CityPantry = {
       name: 'Alberta Mariga',
       gender: 'f',
       age: 45,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'fornaia',
       placeId: 'panificio-mariga',
       personality: ['hardworking', 'maternal'],
@@ -334,6 +338,7 @@ export const verona: CityPantry = {
       name: 'Fabio Cordioli',
       gender: 'm',
       age: 34,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'pasticciere',
       placeId: 'pasticceria-cordioli',
       personality: ['artistic', 'sweet-natured'],
@@ -344,6 +349,7 @@ export const verona: CityPantry = {
       name: 'Marco Verdure',
       gender: 'm',
       age: 48,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'fruttivendolo',
       placeId: 'mercato-piazza-erbe',
       personality: ["jovial", "loud", "generous"],
@@ -355,6 +361,7 @@ export const verona: CityPantry = {
       name: 'Rosa Mercato',
       gender: 'f',
       age: 67,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'venditrice',
       placeId: 'mercato-stadio',
       personality: ['no-nonsense', 'community-minded'],
@@ -365,6 +372,7 @@ export const verona: CityPantry = {
       name: 'Enrico Saporiti',
       gender: 'm',
       age: 56,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'proprietario',
       placeId: 'bottega-saporiti',
       personality: ['family-proud'],
@@ -375,6 +383,7 @@ export const verona: CityPantry = {
       name: 'Pietro Apostoli',
       gender: 'm',
       age: 43,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'sommelier',
       placeId: 'ristorante-dodici-apostoli',
       personality: ['elegant', 'local', 'diplomatic'],
@@ -386,6 +395,7 @@ export const verona: CityPantry = {
       name: 'Angela Ponte',
       gender: 'f',
       age: 58,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'cuoca',
       placeId: 'trattoria-ponte-pietra',
       personality: ['nurturing'],
@@ -396,6 +406,7 @@ export const verona: CityPantry = {
       name: 'Massimo Sottoriva',
       gender: 'm',
       age: 39,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'oste',
       placeId: 'osteria-sottoriva',
       personality: ['convivial', 'wine-loving'],
@@ -406,6 +417,7 @@ export const verona: CityPantry = {
       name: 'Tommaso Vesuvio',
       gender: 'm',
       age: 31,
+      voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
       role: 'pizzaiolo',
       placeId: 'pizzeria-vesuvio',
       personality: ['energetic', 'skilled', 'proud'],
@@ -416,6 +428,7 @@ export const verona: CityPantry = {
       name: "Silvia Bonomi",
       gender: 'f',
       age: 29,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: "corista",
       placeId: 'arena-verona',
       personality: ['enthusiastic', 'educated'],
@@ -427,6 +440,7 @@ export const verona: CityPantry = {
       name: 'Padre Matteo',
       gender: 'm',
       age: 64,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'sacerdote',
       placeId: 'basilica-san-zeno',
       personality: ['serene', 'welcoming'],
@@ -437,6 +451,7 @@ export const verona: CityPantry = {
       name: 'Valentina Giulietta',
       gender: 'f',
       age: 26,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'custode',
       placeId: 'casa-giulietta',
       personality: ['romantic', 'multilingual'],
@@ -447,6 +462,7 @@ export const verona: CityPantry = {
       name: 'Carlo Giusti',
       gender: 'm',
       age: 71,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'giardiniere',
       placeId: 'giardino-giusti',
       personality: ['local', 'peaceful'],
@@ -457,6 +473,7 @@ export const verona: CityPantry = {
       name: "Moussa Diop",
       gender: "m",
       age: 24,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: "musicista di strada",
       placeId: 'piazza-bra',
       personality: ["artistic", "charming", "easygoing"],
@@ -468,6 +485,7 @@ export const verona: CityPantry = {
       name: "Alessandra Pasetto",
       gender: 'f',
       age: 36,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'architetta',
       placeId: 'piazza-signori',
       personality: ['elegant'],
@@ -479,6 +497,7 @@ export const verona: CityPantry = {
       name: 'Riccardo Cangrande',
       gender: 'm',
       age: 49,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'sommelier',
       placeId: 'enoteca-cangrande',
       personality: ['refined'],
@@ -489,6 +508,7 @@ export const verona: CityPantry = {
       name: 'Greta Vino',
       gender: 'f',
       age: 33,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'proprietaria',
       placeId: 'osteria-vino-vino',
       personality: ['unpretentious', 'welcoming', 'local'],
@@ -499,6 +519,7 @@ export const verona: CityPantry = {
       name: 'Beatrice Libri',
       gender: 'f',
       age: 54,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'libraia',
       placeId: 'libreria-rinascimento',
       personality: ['literary', 'thoughtful', 'cultured'],
@@ -509,6 +530,7 @@ export const verona: CityPantry = {
       name: 'Dottoressa Marta Fontana',
       gender: 'f',
       age: 41,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'farmacista',
       placeId: 'farmacia-centrale',
       personality: ["professional", "caring", "efficient"],
@@ -520,6 +542,7 @@ export const verona: CityPantry = {
       name: 'Bruno Albertini',
       gender: 'm',
       age: 63,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'salumiere',
       placeId: 'salumeria-albertini',
       personality: ["generous", "traditional", "talkative"],
@@ -531,6 +554,7 @@ export const verona: CityPantry = {
       name: 'Irene Perlini',
       gender: 'f',
       age: 28,
+      voice: '3DPhHWXDY263XJ1d2EPN', // Linda Fiore
       role: 'pasticciera',
       placeId: 'pasticceria-perlini',
       personality: ['creative', 'cheerful', 'detail-oriented'],
@@ -541,6 +565,7 @@ export const verona: CityPantry = {
       name: "Sara Zanetti",
       gender: "f",
       age: 26,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: "gelataia",
       placeId: 'gelateria-ponte-pietra',
       personality: ["cheerful", "innovative", "quick"],
@@ -552,6 +577,7 @@ export const verona: CityPantry = {
       name: 'Paolo Zanetti',
       gender: 'm',
       age: 55,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'bigliettaio',
       placeId: 'stazione-porta-nuova',
       personality: ["punctual", "helpful", "organized"],
@@ -563,6 +589,7 @@ export const verona: CityPantry = {
       name: "Emilia Righetti",
       gender: 'f',
       age: 44,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'regista',
       placeId: 'teatro-romano',
       personality: ['visionary'],
@@ -574,6 +601,7 @@ export const verona: CityPantry = {
       name: 'Davide Ponte',
       gender: 'm',
       age: 69,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'storico locale',
       placeId: 'ponte-pietra',
       personality: ['nostalgic'],
@@ -584,6 +612,7 @@ export const verona: CityPantry = {
       name: "Ornella Zorzi",
       gender: 'f',
       age: 51,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'proprietaria',
       placeId: 'acetaia-veneta',
       personality: [],

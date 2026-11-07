@@ -347,6 +347,7 @@ export const lucca: CityPantry = {
       name: 'Marta Puccetti',
       gender: 'f',
       age: 40,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'bigliettaia',
       placeId: 'stazione-lucca',
       personality: ["friendly", "unhurried", "helpful"],
@@ -358,6 +359,7 @@ export const lucca: CityPantry = {
       name: "Sergio Di Simo",
       gender: "m",
       age: 66,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: "proprietario",
       placeId: 'caffe-di-simo',
       personality: ["refined", "local", "proud of tradition"],
@@ -369,6 +371,7 @@ export const lucca: CityPantry = {
       name: "Andrei Stan",
       gender: "m",
       age: 24,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: "barista",
       placeId: 'bar-il-fortino',
       personality: ["friendly", "energetic", "knows everyone"],
@@ -380,6 +383,7 @@ export const lucca: CityPantry = {
       name: 'Marco Traversi',
       gender: 'm',
       age: 45,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'proprietario',
       placeId: 'caffe-delle-mura',
       personality: ['calm', 'philosophical', 'nature-loving'],
@@ -390,6 +394,7 @@ export const lucca: CityPantry = {
       name: 'Anna Benedetti',
       gender: 'f',
       age: 50,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'barista',
       placeId: 'bar-duomo',
       personality: ['efficient', 'warm-hearted', 'devout'],
@@ -400,6 +405,7 @@ export const lucca: CityPantry = {
       name: 'Roberto Nannini',
       gender: 'm',
       age: 38,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'barista',
       placeId: 'bar-nannini',
       personality: ['artistic', 'community-minded'],
@@ -410,6 +416,7 @@ export const lucca: CityPantry = {
       name: 'Elena Moretti',
       gender: 'f',
       age: 62,
+      voice: 'MLpDWJvrjFIdb63xbJp8', // Angelina
       role: 'proprietaria',
       placeId: 'caffe-santa-zita',
       personality: ['maternal', 'generous'],
@@ -420,6 +427,7 @@ export const lucca: CityPantry = {
       name: 'Davide Russo',
       gender: 'm',
       age: 29,
+      voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
       role: 'barista',
       placeId: 'bar-anfiteatro',
       personality: ['ambitious', 'charming', 'social'],
@@ -430,6 +438,7 @@ export const lucca: CityPantry = {
       name: 'Chiara Carli',
       gender: 'f',
       age: 34,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'proprietaria',
       placeId: 'caffe-carli',
       personality: ['sophisticated', 'design-conscious'],
@@ -440,6 +449,7 @@ export const lucca: CityPantry = {
       name: 'Francesco Colombini',
       gender: 'm',
       age: 71,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'proprietario',
       placeId: 'bar-colombini',
       personality: ['opinionated', 'sharp-witted'],
@@ -450,6 +460,7 @@ export const lucca: CityPantry = {
       name: 'Amedeo Giusti',
       gender: 'm',
       age: 55,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'fornaio',
       placeId: 'forno-amedeo-giusti',
       personality: ['proud', 'third-generation baker'],
@@ -460,6 +471,7 @@ export const lucca: CityPantry = {
       name: 'Lucia Guidi',
       gender: 'f',
       age: 42,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'fornaia',
       placeId: 'panificio-guidi',
       personality: ['jovial', 'generous portions'],
@@ -470,6 +482,7 @@ export const lucca: CityPantry = {
       name: 'Paolo Bernardi',
       gender: 'm',
       age: 48,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'fornaio',
       placeId: 'forno-bernardi',
       personality: ['reliable', 'quiet', 'early-riser'],
@@ -480,6 +493,7 @@ export const lucca: CityPantry = {
       name: 'Stefania Mancini',
       gender: 'f',
       age: 36,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'fornaia',
       placeId: 'panificio-del-corso',
       personality: ['innovative', 'aesthetic-focused'],
@@ -490,6 +504,7 @@ export const lucca: CityPantry = {
       name: 'Giovanni Lippi',
       gender: 'm',
       age: 67,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'fornaio',
       placeId: 'forno-sant-anna',
       personality: ['gruff but kind', 'neighborhood fixture'],
@@ -500,6 +515,7 @@ export const lucca: CityPantry = {
       name: 'Mariella Pinelli',
       gender: 'f',
       age: 44,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'pasticciera',
       placeId: 'pasticceria-pinelli',
       personality: ['artistic', 'delicate touch'],
@@ -510,6 +526,7 @@ export const lucca: CityPantry = {
       name: 'Tommaso Venturi',
       gender: 'm',
       age: 53,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'venditore',
       placeId: 'mercato-del-carmine',
       personality: ["loud", "jovial", "generous with samples"],
@@ -521,6 +538,7 @@ export const lucca: CityPantry = {
       name: 'Alberta Rossi',
       gender: 'f',
       age: 59,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'venditrice',
       placeId: 'mercato-ortofrutticolo',
       personality: ['shrewd', 'knows produce', 'no-nonsense'],
@@ -531,6 +549,7 @@ export const lucca: CityPantry = {
       name: 'Renzo Fontana',
       gender: 'm',
       age: 65,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: 'antiquario',
       placeId: 'mercato-antiquario',
       personality: ['nostalgic'],
@@ -541,6 +560,7 @@ export const lucca: CityPantry = {
       name: 'Claudia Stefani',
       gender: 'f',
       age: 41,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'chef',
       placeId: 'ristorante-giglio',
       personality: ['traditional recipes', 'demanding excellence'],
@@ -552,6 +572,7 @@ export const lucca: CityPantry = {
       name: 'Lorenzo Bianchi',
       gender: 'm',
       age: 39,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'chef',
       placeId: 'ristorante-mecenate',
       personality: ['creative', 'modern approach', 'ambitious'],
@@ -562,6 +583,7 @@ export const lucca: CityPantry = {
       name: 'Leo Buralli',
       gender: 'm',
       age: 63,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'oste',
       placeId: 'trattoria-da-leo',
       personality: ['boisterous', 'generous', 'local character'],
@@ -572,6 +594,7 @@ export const lucca: CityPantry = {
       name: 'Simone Pieri',
       gender: 'm',
       age: 47,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'oste',
       placeId: 'osteria-via-fillungo',
       personality: ['convivial', 'wine enthusiast', 'raconteur'],
@@ -582,6 +605,7 @@ export const lucca: CityPantry = {
       name: 'Federico Moretti',
       gender: 'm',
       age: 35,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'pizzaiolo',
       placeId: 'pizzeria-santa-lucia',
       personality: ['skillful', 'quick-handed', 'competitive'],
@@ -592,6 +616,7 @@ export const lucca: CityPantry = {
       name: 'Beatrice Angeli',
       gender: 'f',
       age: 52,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'proprietaria',
       placeId: 'gastronomia-angeli',
       personality: ["local", "welcoming", "discerning"],
@@ -603,6 +628,7 @@ export const lucca: CityPantry = {
       name: 'Padre Augusto Del Carlo',
       gender: 'm',
       age: 68,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'parroco',
       placeId: 'duomo-san-martino',
       personality: ['gentle', 'art historian'],
@@ -614,6 +640,7 @@ export const lucca: CityPantry = {
       name: 'Suor Margherita',
       gender: 'f',
       age: 56,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'suora',
       placeId: 'basilica-san-frediano',
       personality: ['devoted', 'cheerful', 'community service'],
@@ -624,6 +651,7 @@ export const lucca: CityPantry = {
       name: 'Alessio Martinelli',
       gender: 'm',
       age: 26,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: "custode della torre",
       placeId: 'torre-guinigi',
       personality: ['enthusiastic', 'history buff', 'athletic'],
@@ -635,6 +663,7 @@ export const lucca: CityPantry = {
       name: 'Isabella Galli',
       gender: 'f',
       age: 61,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'botanica',
       placeId: 'orto-botanico',
       personality: ['nurturing'],
@@ -646,6 +675,7 @@ export const lucca: CityPantry = {
       name: "Matteo Fabbri",
       gender: "m",
       age: 26,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: "musicista di strada",
       placeId: 'piazza-anfiteatro',
       personality: ["artistic", "free-spirited", "crowd-pleaser"],
@@ -657,6 +687,7 @@ export const lucca: CityPantry = {
       name: 'Carla Innocenti',
       gender: 'f',
       age: 46,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: "insegnante di pianoforte",
       placeId: 'piazza-san-michele',
       personality: ["romantic", "musical", "warm"],
@@ -668,6 +699,7 @@ export const lucca: CityPantry = {
       name: 'Vanni Ceccarelli',
       gender: 'm',
       age: 57,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'sommelier',
       placeId: 'enoteca-vanni',
       personality: ['refined palate'],
@@ -678,6 +710,7 @@ export const lucca: CityPantry = {
       name: 'Andrea Lombardi',
       gender: 'm',
       age: 37,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'proprietario enoteca',
       placeId: 'wine-bar-delle-mura',
       personality: ['modern', 'social', 'wine passionate'],
@@ -688,6 +721,7 @@ export const lucca: CityPantry = {
       name: 'Silvia Baroni',
       gender: 'f',
       age: 43,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'libraia',
       placeId: 'libreria-baroni',
       personality: ["literary", "recommender", "quiet strength"],
@@ -699,6 +733,7 @@ export const lucca: CityPantry = {
       name: 'Dott.ssa Massei',
       gender: 'f',
       age: 54,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'farmacista',
       placeId: 'farmacia-massei',
       personality: ["professional", "caring", "trusted advisor"],

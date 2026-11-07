@@ -304,6 +304,7 @@ export const siena: CityPantry = {
       name: 'Marco Fiorella',
       gender: 'm',
       age: 42,
+      voice: 'HuK8QKF35exsCh2e7fLT', // Carmelo La Rosa
       role: 'proprietario',
       placeId: 'caffe-fiorella',
       personality: ["welcoming", "proud", "chatty"],
@@ -315,6 +316,7 @@ export const siena: CityPantry = {
       name: 'Giulia Neri',
       gender: 'f',
       age: 28,
+      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
       role: 'barista',
       placeId: 'bar-il-palio',
       personality: ["energetic", "loyal-to-her-contrada", "quick-witted"],
@@ -326,6 +328,7 @@ export const siena: CityPantry = {
       name: 'Alessandro Nannini',
       gender: 'm',
       age: 55,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'maestro caffettiere',
       placeId: 'caffe-nannini',
       personality: ['local'],
@@ -336,6 +339,7 @@ export const siena: CityPantry = {
       name: 'Lucia Bini',
       gender: 'f',
       age: 38,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'pasticciera',
       placeId: 'pasticceria-bini',
       personality: ['sweet', 'artistic'],
@@ -347,6 +351,7 @@ export const siena: CityPantry = {
       name: 'Roberto Galli',
       gender: 'm',
       age: 61,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'fornaio',
       placeId: 'forno-dei-galli',
       personality: ['gruff-but-kind', 'early-riser'],
@@ -357,6 +362,7 @@ export const siena: CityPantry = {
       name: "Elira Kola",
       gender: "f",
       age: 47,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: "venditrice",
       placeId: 'mercato-della-terra',
       personality: ["jovial", "generous", "hard-working"],
@@ -368,6 +374,7 @@ export const siena: CityPantry = {
       name: 'Anna Mercanti',
       gender: 'f',
       age: 52,
+      voice: 'MuTiG4dbrEGYEy3XP4iP', // Rossana
       role: 'venditrice di formaggi',
       placeId: 'mercato-coperto',
       personality: ['practical', 'no-nonsense', 'fair'],
@@ -378,6 +385,7 @@ export const siena: CityPantry = {
       name: 'Simone Guidi',
       gender: 'm',
       age: 44,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'proprietario',
       placeId: 'bottega-del-gusto',
       personality: ['particular'],
@@ -388,6 +396,7 @@ export const siena: CityPantry = {
       name: 'Chiara Castellani',
       gender: 'f',
       age: 35,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
       role: 'chef',
       placeId: 'osteria-le-logge',
       personality: ['creative', 'ambitious'],
@@ -399,6 +408,7 @@ export const siena: CityPantry = {
       name: 'Franco Papei',
       gender: 'm',
       age: 68,
+      voice: 'ipT4u0Omn6M1PjJcECNG', // Giuseppe Galassi
       role: 'proprietario',
       placeId: 'trattoria-papei',
       personality: ['humorous', 'grandfatherly'],
@@ -409,6 +419,7 @@ export const siena: CityPantry = {
       name: 'Vittorio Brunelli',
       gender: 'm',
       age: 41,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'sommelier',
       placeId: 'ristorante-mugolone',
       personality: ['sophisticated', 'attentive', 'cultivated'],
@@ -419,6 +430,7 @@ export const siena: CityPantry = {
       name: 'Davide Marino',
       gender: 'm',
       age: 29,
+      voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
       role: 'pizzaiolo',
       placeId: 'pizzeria-del-campo',
       personality: ['energetic', 'friendly', 'skillful'],
@@ -429,6 +441,7 @@ export const siena: CityPantry = {
       name: 'Padre Giuseppe',
       gender: 'm',
       age: 71,
+      voice: 'OcIrXHpOMgy1jqfJ2I8o', // Criss
       role: 'sacerdote',
       placeId: 'duomo-siena',
       personality: ['serene', 'gentle'],
@@ -439,6 +452,7 @@ export const siena: CityPantry = {
       name: 'Suor Maria Caterina',
       gender: 'f',
       age: 58,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'suora',
       placeId: 'basilica-san-domenico',
       personality: ['devoted', 'nurturing', 'quiet'],
@@ -449,6 +463,7 @@ export const siena: CityPantry = {
       name: "Karim Benali",
       gender: "m",
       age: 33,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: "guida turistica",
       placeId: 'piazza-del-campo',
       personality: ["proud-senese", "engaging", "contrada-loyal"],
@@ -460,6 +475,7 @@ export const siena: CityPantry = {
       name: 'Beatrice Salvi',
       gender: 'f',
       age: 26,
+      voice: 'zFA34HbdHBvF8WhlSusK', // Nora
       role: 'studentessa',
       placeId: 'piazza-salimbeni',
       personality: ["thoughtful", "romantic", "curious"],
@@ -471,6 +487,7 @@ export const siena: CityPantry = {
       name: "Matteo Bindi",
       gender: 'm',
       age: 45,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'custode',
       placeId: 'torre-del-mangia',
       personality: ['fit'],
@@ -482,6 +499,7 @@ export const siena: CityPantry = {
       name: 'Carla Nesti',
       gender: 'f',
       age: 38,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: "mamma",
       placeId: 'orto-de-pecci',
       personality: ["warm", "talkative", "proud of her contrada"],
@@ -493,6 +511,7 @@ export const siena: CityPantry = {
       name: 'Stefano Vini',
       gender: 'm',
       age: 50,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'sommelier',
       placeId: 'enoteca-italiana',
       personality: ['discerning', 'generous'],
@@ -503,6 +522,7 @@ export const siena: CityPantry = {
       name: 'Michele Vanni',
       gender: 'm',
       age: 39,
+      voice: 'mcMi8FJDhg35bMpWHv2R', // Paolo
       role: 'proprietario',
       placeId: 'enoteca-san-domenico',
       personality: ['warm', 'conversational', 'wine-enthusiast'],
@@ -513,6 +533,7 @@ export const siena: CityPantry = {
       name: 'Elisabetta Libri',
       gender: 'f',
       age: 43,
+      voice: 'ZPImQHFNyEPRDeECS4MX', // Vale
       role: 'libraia',
       placeId: 'libreria-senese',
       personality: ["literary", "helpful", "cultured"],
@@ -524,6 +545,7 @@ export const siena: CityPantry = {
       name: "Giovanni Bacci",
       gender: "m",
       age: 68,
+      voice: 'w3aQQZqtgGo2o2fsmvQ2', // Nonno Ben
       role: "artigiano",
       placeId: 'bottega-del-palio',
       personality: ["proud", "patient", "meticulous"],
@@ -535,6 +557,7 @@ export const siena: CityPantry = {
       name: 'Dottoressa Ricci',
       gender: 'f',
       age: 48,
+      voice: '201hPjDVu4Q5DUV7tMQJ', // Marcella
       role: 'farmacista',
       placeId: 'farmacia-centrale',
       personality: ['professional', 'caring'],
@@ -545,6 +568,7 @@ export const siena: CityPantry = {
       name: 'Alberto Fattori',
       gender: 'm',
       age: 59,
+      voice: 'f8NAZK1ciwrVujah7clz', // Valerio
       role: 'commesso',
       placeId: 'consorzio-agrario',
       personality: ['local', 'helpful'],
@@ -555,6 +579,7 @@ export const siena: CityPantry = {
       name: 'Claudia Manganelli',
       gender: 'f',
       age: 36,
+      voice: '8KInRSd4DtD5L5gK7itu', // Giusy
       role: 'proprietaria',
       placeId: 'antica-drogheria-manganelli',
       personality: ['tradition-keeper', 'gracious', 'particular'],
@@ -565,6 +590,7 @@ export const siena: CityPantry = {
       name: 'Andrea Brivido',
       gender: 'm',
       age: 31,
+      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
       role: 'gelatiere',
       placeId: 'gelateria-brivido',
       personality: ["creative", "cheerful", "innovative"],
@@ -576,6 +602,7 @@ export const siena: CityPantry = {
       name: 'Lorenzo Forti',
       gender: 'm',
       age: 37,
+      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
       role: 'custode',
       placeId: 'fortezza-medicea',
       personality: ['history-buff', 'serious'],
@@ -586,6 +613,7 @@ export const siena: CityPantry = {
       name: 'Fabio Rosso',
       gender: 'm',
       age: 25,
+      voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
       role: 'barista',
       placeId: 'caffe-del-corso',
       personality: ['social', 'quick', 'ambitious'],
@@ -596,6 +624,7 @@ export const siena: CityPantry = {
       name: 'Teresa Morbidi',
       gender: 'f',
       age: 67,
+      voice: 'V4hbKpM9VBIJ9lKaWBjM', // Lea
       role: 'proprietaria',
       placeId: 'alimentari-morbidi',
       personality: ['grandmotherly', 'generous'],
@@ -607,6 +636,7 @@ export const siena: CityPantry = {
       name: 'Franco Salvi',
       gender: 'm',
       age: 48,
+      voice: 'covxL85MSd0uUrktE45z', // Adriatico
       role: 'bigliettaio',
       placeId: 'stazione-siena',
       personality: ["efficient", "helpful", "patient"],
@@ -618,6 +648,7 @@ export const siena: CityPantry = {
       name: 'Duccio Ferri',
       gender: 'm',
       age: 40,
+      voice: 'GcAgjAjkhWsmUd4GlPiv', // Marco
       role: 'pizzicagnolo',
       placeId: 'pizzicheria-de-miccoli',
       personality: ['joking', 'proud of Siena', 'quick with a knife'],
