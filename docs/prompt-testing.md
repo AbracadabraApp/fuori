@@ -22,6 +22,7 @@ So the job now is less adding and more finding out what each part does.
 3. **One variable.** A test changes one thing. Two changes at once (a sentence and its example; a topic and an instruction) can't be told apart afterwards.
 4. **Write the card before running.** The question, the variable, what's held constant, the measure, the hypothesis with its threshold, and what each other outcome would mean. A threshold set after seeing the data isn't a threshold.
 5. **Fixed moments, not free play.** A unit is tested at the moment it acts, with the learner's lines fixed, taken from real conversations and stored once (`tests/experiments/moments.json`): an opener, the turn after "I'm very hungry", a turn where answers are offered. A simulated learner adds its own variation and can start the very thing being measured (asking about coffee in a café). Free play (the variety gate) is for checking a kept change, not for testing a unit.
+5b. **Two types of test** (Josh, 2026-11-06: "they can be different types of tests"). A **moment test** is one turn with everything fixed, the learner's line and the memory notes too: it shows what a unit does. A **visit test** is several visits in a row with memory written by the real summariser between them: it shows what carries over and repeats (T1). Visit tests still use fixed learner lines, not a free simulated learner. The card says which type.
 6. **Smallest size that can answer.** Start at Beginner, stage 2, one country, 2 moments × 5 runs per version. Run the control twice the first time a moment is used, to see the noise. Widen only when the result is close; stop when it's clearly no.
 7. **Count in code where possible.** Words, English sentences, questions per turn, answers offered, a word from a fixed list (the parts already carry their kinds). When a judge is needed: one yes/no question, its reason printed, and every line read before a count is believed.
 8. **Keep everything, read everything.** Every reply is saved to a file. Nothing is reported until the lines have been read. Report the numbers first, then what they mean.
@@ -38,6 +39,7 @@ Every test starts as this card, shown to Josh in this form and pasted into the l
 
 ```
 Test T<n>: <the question in one line>
+Type: moment / visit
 Unit: <inventory id and file>
 Variable: <the one thing that changes> (A: …, B: …)
 Held constant: <everything else, including the learner's lines>
