@@ -21,7 +21,7 @@ Check each, and say pass or what to change, in one line each:
 3. **The question can be answered.** The measure can show the difference the hypothesis expects. Look for ways the test can't show the problem: the learner's lines or the moment already name what's counted; the moment never gives the character the chance to fail; a ceiling or floor (both versions already at 10 of 10).
 4. **Threshold set in advance.** A number, written before running, and a check against noise (control run twice, within a stated gap).
 5. **Size.** The smallest size that can answer. For a yes/no measure with n runs per version, a difference smaller than about 2√n is usually noise (n = 10: about 6; n = 20: about 9; for proportions near the middle, more). Say the size you'd use and why, smaller if the expected effect is large, larger if the threshold is close to noise. Stop rules: say when to stop early.
-6. **Information value.** Can the outcome be predicted? Would each outcome change what we do? If every outcome leads to the same action, or the result is already known from prompt-trials.md, say so: the test isn't worth running. Prefer tests that pit different mechanisms against each other.
+6. **Information gain.** How much would the outcome change what we know and do, per run? Highest when the outcome is genuinely uncertain and the stakes are large: a test that could remove most of the prompt ("cut 80% and it still wins") beats one that adds a small fix for one moment, because a win rewrites everything after it, while a patch teaches one small thing. If every outcome leads to the same action, or the result is already known from prompt-trials.md, say so: not worth running. Prefer bold cuts and tests that pit different mechanisms against each other over patches.
 7. **The tools.** The judge used has passed its calibration (F1) or the card says it hasn't; the simulated learner, if any, has passed F2. A test that depends on an uncalibrated tool says so in its decision.
 8. **Guards.** Words per turn, reply time, language share, answers offered, and the learning guard where it applies.
 9. **Type.** Moment for an item one turn can show; dialogue (visit) for items 3, 4 (drift) and 7.
@@ -31,9 +31,10 @@ End with a verdict: **run as is**, **run with these changes** (the changed card)
 
 ## Reviewing the queue
 
-Order the tests for the most learning per run:
+Order the tests for the most information gain per run (Josh, 2026-11-07: a test that eliminates 80% of a prompt and wins is better than adding one more small thing to fix a moment):
 - Tools before tests that depend on them (F1, F2 first), method checks next (V1, V2), then prompt tests.
 - A test whose outcome decides whether others are needed goes before them.
+- Bold tests with a large possible payoff (the floor, a whole category cut) before patches for single moments.
 - Cheap tests that could make expensive ones unnecessary go first.
 - Group tests that share moments, judges or setup.
 - Say which tests are blocked on Josh (a decision, marking replies) and what can run meanwhile.
