@@ -117,6 +117,109 @@
    }
   },
   {
+   "id": "it-giorgia-opening-return",
+   "country": "it",
+   "kind": "town",
+   "level": "beginner",
+   "stage": "S2",
+   "cityId": "roma-nuova",
+   "placeId": "sapienza-scalinata",
+   "transcript": [],
+   "memory": {
+    "visits": 2,
+    "daysAgo": 2,
+    "notes": [
+     "Name is Sam.",
+     "Lives near Trastevere, in Rome for two months, staying two or three years."
+    ]
+   },
+   "watch": "Brings up the slice of pizza from her here line (\"I've got pizza\") and offers it, as if she sold it",
+   "was": "admin export c8287331 (2026-10-28, beginner-2026-10-27b) turn 0; the same in 811b6fb9 (2026-11-06, Intermediate)",
+   "from": {
+    "who": "Josh",
+    "date": "2026-11-07",
+    "quote": "there was a woman in Rome offernig pizza from the stairs of a piazzza"
+   }
+  },
+  {
+   "id": "it-giorgia-pizza-offer",
+   "country": "it",
+   "kind": "town",
+   "level": "beginner",
+   "stage": "S2",
+   "cityId": "roma-nuova",
+   "placeId": "sapienza-scalinata",
+   "transcript": [
+    {
+     "who": "npc",
+     "text": "Ciao, Joshua! Di nuovo qui! Come sit with me on the steps, I'm between lectures and I've got pizza. Oggi studio qui fuori. Come va oggi? Le piace Roma? how's it going, do you like Rome",
+     "en": "Hi, Joshua! Back again! Come sit with me on the steps, I'm between lectures and I've got pizza. Today I'm studying out here. How are you today? Do you like Rome?"
+    },
+    {
+     "who": "learner",
+     "text": "Sì, mi piace molto Roma."
+    },
+    {
+     "who": "npc",
+     "text": "Anche a me piace molto. San Lorenzo is the student quarter, so it's always lively around here. Il mio quartiere preferito. Qual è il Suo posto preferito a Roma? your favorite place",
+     "en": "I like it a lot too. San Lorenzo is the student quarter, so it's always lively around here. My favorite neighborhood. What is your favorite place in Rome?"
+    },
+    {
+     "who": "learner",
+     "text": "È difficile. Mi piace i quartieri trastevere. E anche mi piace la chiesa Santa Maria Supra Minerva."
+    },
+    {
+     "who": "npc",
+     "text": "Bella scelta! Trastevere è bellissimo. Santa Maria sopra Minerva is near the Pantheon, and its blue starry ceiling is something special. Abita vicino a Trastevere? near Trastevere?",
+     "en": "Great choice! Trastevere is beautiful. Santa Maria sopra Minerva is near the Pantheon, and its blue starry ceiling is something special. Do you live near Trastevere?"
+    },
+    {
+     "who": "learner",
+     "text": "Si."
+    },
+    {
+     "who": "npc",
+     "text": "Che bello! Un quartiere fantastico. I imagine you can walk everywhere from there. Da quanto tempo abita a Roma? how long in Rome",
+     "en": "How nice! A fantastic neighborhood. I imagine you can walk everywhere from there. How long have you lived in Rome?"
+    },
+    {
+     "who": "learner",
+     "text": "Ho arrivato due mesi fa, ma abita qui per due o tre anni, non so."
+    },
+    {
+     "who": "npc",
+     "text": "Due mesi, che bello! And planning two or three years is a great start. Roma is easier to love once you know a few streets. Roma è bella in primavera. Che cosa fa di bello a Roma? what do you do for fun",
+     "en": "Two months, how nice! And planning two or three years is a great start. Roma is easier to love once you know a few streets. Rome is beautiful in spring. What do you do that's nice in Rome?"
+    },
+    {
+     "who": "learner",
+     "text": "e camminare, mangiare, giocare, parlare con le donne belle."
+    },
+    {
+     "who": "npc",
+     "text": "Ah, che bella vita! Walking and eating are the best way to know Rome, and the pizza here is good too. Qual è il Suo piatto romano preferito? favorite Roman dish",
+     "en": "What a nice life! Walking and eating are the best way to know Rome, and the pizza here is good too. What is your favorite Roman dish?"
+    },
+    {
+     "who": "learner",
+     "text": "Il mio piatto preferito è cacio e pepe."
+    },
+    {
+     "who": "npc",
+     "text": "Ottima scelta! Cacio e pepe is just pasta, pecorino and pepper, but it's hard to get right. Io preferisco la carbonara. Dove mangia la cacio e pepe a Roma? where do you eat it",
+     "en": "Great choice! Cacio e pepe is just pasta, pecorino and pepper, but it's hard to get right. I prefer carbonara. Where do you eat cacio e pepe in Rome?"
+    }
+   ],
+   "said": "Ho trovato una osteria vicino a Campo dei Fiori. In vicino, lo stesso posto è un restaurante. Carbonara, supposito, è la prima.",
+   "watch": "Offers pizza a student on the steps can't give (\"Vuole mangiare la pizza con me?\")",
+   "was": "admin export c8287331 (2026-10-28, beginner-2026-10-27b) turn 14; then \"Vuole una fetta di pizza dopo?\" at turn 16",
+   "from": {
+    "who": "Josh",
+    "date": "2026-11-07",
+    "quote": "there was a woman in Rome offernig pizza from the stairs of a piazzza"
+   }
+  },
+  {
    "id": "mx-nacho-long-answer",
    "country": "es-mx",
    "kind": "town",
