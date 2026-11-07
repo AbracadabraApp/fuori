@@ -184,8 +184,10 @@ private struct VideoRow: View {
         .accessibilityValue(playing ? "Playing" : "")
     }
 
-    /// "Trailer · Italian": the video's language in the phone's own language
+    /// "Trailer · Italian": the video's language in the phone's own language; just
+    /// "Trailer" when the language isn't known ("und"), rather than a guess
     private var detail: String {
+        guard !video.language.isEmpty, video.language != "und" else { return video.type }
         let language = Locale.current.localizedString(forLanguageCode: video.language) ?? video.language
         return "\(video.type) · \(language)"
     }
