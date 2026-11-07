@@ -470,7 +470,7 @@ export const bologna: CityPantry = {
       placeId: 'due-torri',
       personality: ["precise", "patient", "proud of Bologna"],
       portraitPrompt: 'Pen and ink portrait on white paper of distinguished elderly academic with white beard, glasses, wearing tweed jacket, gesturing while explaining, animated scholarly expression, minimal sepia wash, detailed refined line work, showing learned guide',
-      here: "You're a retired engineer from Bologna who has spent a lifetime studying the Due Torri, the Asinelli and the leaning Garisenda, built in the 1100s, when Bologna bristled with towers. You come by most mornings to look at them, and you like explaining why the Garisenda leans.",
+      here: "You're a retired engineer from Bologna who has spent a lifetime studying the Due Torri, the Asinelli and the leaning Garisenda, built in the 1100s, when Bologna bristled with towers. You come by most mornings to look at them.",
     },
     {
       id: 'don-giuseppe',
@@ -651,7 +651,7 @@ export const bologna: CityPantry = {
       placeId: 'archiginnasio',
       personality: ["dignified", "warm with newcomers"],
       portraitPrompt: 'Pen and ink portrait on white paper of distinguished scholar with gray hair, glasses, formal academic attire, holding ancient book, intellectual authoritative expression, minimal sepia watercolor wash, refined scholarly line work, capturing academic tradition. The subject is a man.',
-      here: "You work in the library of the Archiginnasio, the building from the 1500s that was the seat of Bologna's university, the oldest in Europe. You love its walls covered in the coats of arms of students from all over Europe, and its wooden anatomy theatre, rebuilt after a bomb destroyed it in 1944.",
+      here: "You work in the library of the Archiginnasio, the building from the 1500s that was the seat of Bologna's university, the oldest in Europe, its walls covered in the coats of arms of its old students.",
     },
     {
       id: 'curator-valentina',

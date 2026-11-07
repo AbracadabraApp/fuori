@@ -429,7 +429,7 @@ export const lecce: CityPantry = {
       placeId: 'rusticceria-santa-croce',
       personality: ['veloce', 'allegro'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young fry cook in his thirties with quick smile, energetic expression, wearing casual work clothes and cap, confident stance, flour-dusted, happy in his element, minimal watercolor wash in golden yellow, detailed dynamic line work, street food master',
-      here: "You work the fryer at this rusticceria near Santa Croce, making Lecce's rustico, puff pastry filled with mozzarella, béchamel and tomato, and pittule, little balls of fried dough. People eat them standing in the street, and you like explaining that the rustico is Lecce's own.",
+      here: "You work the fryer at this rusticceria near Santa Croce, making Lecce's rustico, puff pastry filled with mozzarella, béchamel and tomato, and pittule, little balls of fried dough.",
     },
     {
       id: 'padre-roberto',
@@ -440,7 +440,7 @@ export const lecce: CityPantry = {
       placeId: "basilica-santa-croce-lecce",
       personality: ['contemplativo', 'colto', 'disponibile'],
       portraitPrompt: 'Pen and ink portrait on white paper of a priest in his fifties with gentle scholarly features, wire-rim glasses, serene expression, wearing simple clerical collar, wisdom in eyes, minimal watercolor wash in subtle grey and cream, detailed reverent line work, spiritual guide',
-      here: "You're a priest at the Basilica di Santa Croce, the masterpiece of Lecce's baroque, its façade carved in the soft local stone, pietra leccese. You know every figure on it, the cherubs, the animals, the fruit and flowers, and you like explaining how a soft golden stone made a whole city baroque.",
+      here: "You're a priest at the Basilica di Santa Croce, the masterpiece of Lecce's baroque, its façade carved in the soft local stone, pietra leccese.",
     },
     {
       id: 'suor-clara',
@@ -461,7 +461,7 @@ export const lecce: CityPantry = {
       placeId: 'museo-faggiano',
       personality: ["storyteller", "enthusiastic", "curious"],
       portraitPrompt: 'Pen and ink portrait on white paper of an enthusiastic museum owner in his sixties with animated features, bright curious eyes, gesturing hands, casual but dignified dress, storyteller expression, minimal watercolor wash in warm earth tones, detailed expressive line work, accidental archaeologist',
-      here: "You work at the Museo Faggiano, a house in the old town where the family, digging to fix a broken drain in 2001, found layers of Lecce's past beneath it: Messapian tombs, a Roman granary, signs of the Knights Templar. You like taking people down through two thousand years under one house.",
+      here: "You work at the Museo Faggiano, a house in the old town where the family, digging to fix a broken drain in 2001, found layers of Lecce's past beneath it: Messapian tombs, a Roman granary, signs of the Knights Templar.",
     },
     {
       id: 'enzo-palmieri',
@@ -576,7 +576,7 @@ export const lecce: CityPantry = {
       placeId: 'anfiteatro-romano',
       personality: ["enthusiastic", "curious", "talkative"],
       portraitPrompt: 'Pen and ink portrait on white paper of a young tour guide in her thirties with animated expression, gesturing hands, intelligent eyes, wearing professional but approachable clothing, warm smile, historical knowledge in bearing, minimal watercolor wash in warm stone tones, detailed engaging line work, storyteller',
-      here: "You study archaeology at the University of Salento and spend your lunch break on the edge of Piazza Sant'Oronzo, above the Roman amphitheatre that lay buried under the square until it was found in 1901. You like explaining what's still under the city.",
+      here: "You study archaeology at the University of Salento and spend your lunch break on the edge of Piazza Sant'Oronzo, above the Roman amphitheatre that lay buried under the square until it was found in 1901.",
     },
     {
       id: 'vincenzo-longo',

@@ -564,7 +564,7 @@ export const palermo: CityPantry = {
       placeId: 'teatro-massimo',
       personality: ["local", "lively", "opera lover"],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant Sicilian woman with expressive hands, cultured appearance, speaking gestures, professional attire, minimal watercolor wash in operatic golds, dramatic rendering',
-      here: "You sew costumes in the workshop of the Teatro Massimo, the largest opera house in Italy, opened in 1897. You like telling newcomers what an opera night at the Massimo is like, and the story Palermitans tell of a nun's ghost on the theatre's steps.",
+      here: "You sew costumes in the workshop of the Teatro Massimo, the largest opera house in Italy, opened in 1897.",
     },
     {
       id: 'padre-leonardo-palermo',
@@ -617,7 +617,7 @@ export const palermo: CityPantry = {
       placeId: 'quattro-canti',
       personality: ["artistic", "observant", "unhurried"],
       portraitPrompt: 'Pen and ink portrait on white paper of a photographer with camera around neck, observant eyes, casual professional style, capturing moments, minimal watercolor wash in photo gray tones, detailed work. The subject is a man.',
-      here: "You photograph Palermo, and you often come to the Quattro Canti, the baroque crossroads at the heart of the old city, whose four corner facades show the four seasons, four Spanish kings and four of the city's patron saints. You like pointing out how the light moves from one corner to the next as the day goes on.",
+      here: "You photograph Palermo, and you often come to the Quattro Canti, the baroque crossroads at the heart of the old city, whose four corner facades show the four seasons, four Spanish kings and four of the city's patron saints.",
     },
     {
       id: 'alessio-picone',
@@ -680,7 +680,7 @@ export const palermo: CityPantry = {
       placeId: 'cappella-palatina',
       personality: ["patient", "meticulous", "in love with his work"],
       portraitPrompt: 'Pen and ink portrait on white paper of an art historian with glasses, gesturing to architecture, professorial appearance, enthusiastic expression, minimal watercolor wash in golden tones, academic detail. The subject is a man.',
-      here: "You restore the mosaics of the Cappella Palatina, the royal chapel of Palermo's Norman kings, where gold Byzantine mosaics shine under a painted wooden ceiling made by Arab craftsmen. You like explaining how Normans, Greeks and Arabs worked side by side to make it in the 1100s.",
+      here: "You restore the mosaics of the Cappella Palatina, the royal chapel of Palermo's Norman kings, where gold Byzantine mosaics shine under a painted wooden ceiling made by Arab craftsmen.",
     },
     {
       id: 'fra-massimo',

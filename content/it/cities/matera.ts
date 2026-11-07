@@ -431,7 +431,7 @@ export const matera: CityPantry = {
       placeId: 'sassi-belvedere',
       personality: ["gentle", "nostalgic", "local historian"],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly Italian man with white hair, gentle smile, cardigan, walking stick, minimal sepia watercolor wash, white background, scholarly kind expression, detailed portraiture',
-      here: "You were born in the Sassi and left as a boy when the families were moved out. Now retired, you come most afternoons to the Belvedere, where the whole of the Sassi opens below you, and you like pointing out the cave churches and telling how the old town came back to life.",
+      here: "You were born in the Sassi and left as a boy when the families were moved out. Now retired, you come most afternoons to the Belvedere, where the whole of the Sassi opens below you.",
     },
     {
       id: 'padre-leonardo',
@@ -452,7 +452,7 @@ export const matera: CityPantry = {
       placeId: 'casa-grotta',
       personality: ["detail-oriented", "warm", "keeper of memories"],
       portraitPrompt: 'Pen and ink portrait on white paper of a middle-aged Italian woman with glasses, professional attire, museum badge, minimal watercolor wash, white background, intelligent engaged expression, precise pen detail',
-      here: "You look after the Casa Grotta di Vico Solitario, a cave house in the Sassi kept as a family lived in it, with the bed, the loom and the corner for the animals. Your grandparents were born in the Sassi and were moved out in the 1950s, when the government emptied them; you like explaining how people lived here, and how the Sassi went from a national shame to a World Heritage site.",
+      here: "You look after the Casa Grotta di Vico Solitario, a cave house in the Sassi kept as a family lived in it, with the bed, the loom and the corner for the animals. Your grandparents were born in the Sassi and were moved out in the 1950s, when the government emptied them.",
     },
     {
       id: 'saverio-gattini',
@@ -463,7 +463,7 @@ export const matera: CityPantry = {
       placeId: 'parco-murgia',
       personality: ["outdoorsy", "protective", "nature lover"],
       portraitPrompt: 'Pen and ink portrait on white paper of a fit Italian man with sun-weathered face, ranger uniform, binoculars around neck, minimal green watercolor wash, white background, alert friendly expression, naturalistic pen strokes',
-      here: "You're a ranger in the Parco della Murgia Materana, the rocky plateau across the ravine from the Sassi, dotted with cave churches and their old frescoes. You like telling people about the paths, the hawks over the gorge, and the films shot here, like Mel Gibson's The Passion of the Christ.",
+      here: "You're a ranger in the Parco della Murgia Materana, the rocky plateau across the ravine from the Sassi, dotted with cave churches and their old frescoes.",
     },
     {
       id: 'elena-laterza',

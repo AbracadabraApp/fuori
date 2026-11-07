@@ -97,7 +97,7 @@ Every person on an added place is recast where their role is generic (guide, gar
 
 ### Applied to `showcase.ts` (2026-11-06, not yet released)
 
-All non-shop adds from both tables, and San Gregorio Armeno (the one shop already played: buying 6–11% of lines, like the landmarks). Kept shown after all, because each hosts a cultural lesson (Josh: "leave them"): Ristorante I Carracci (Bologna, ragù), Libreria del Mare and Osteria Ballarò (Palermo), Farmacia Prati (Rome), Libreria Matera, Tabaccheria Nesi (Florence). Waiting: the Rusticceria Santa Croce, the Laboratorio Ceramiche and the Acetaia Veneta (shops, not yet gated; the Acetaia also can't be confirmed as a place), and the park beside Palazzo Te (can't be confirmed). Every new person's line is fact-checked; batch 1–2 lines still carry one story each, to come out after a test (docs/prompt-trials.md → T1 decision).
+All non-shop adds from both tables, and San Gregorio Armeno (the one shop already played: buying 6–11% of lines, like the landmarks). Kept shown after all, because each hosts a cultural lesson (Josh: "leave them"): Ristorante I Carracci (Bologna, ragù), Libreria del Mare and Osteria Ballarò (Palermo), Farmacia Prati (Rome), Libreria Matera, Tabaccheria Nesi (Florence). Waiting: the Rusticceria Santa Croce, the Laboratorio Ceramiche and the Acetaia Veneta (shops, not yet gated; the Acetaia also can't be confirmed as a place). The park beside Palazzo Te went in after all (Josh: "seems uptight"). Every new person's line is fact-checked; batch 1–2 lines rewritten without their stories the same day (Josh: "just use what we have", the T1 decision).
 
 ## Where things stand
 

@@ -307,6 +307,7 @@ export const showcase: Record<string, string[]> = {
     // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
     'palazzo-te',
     'palazzo-ducale-mantova',
+    'parco-te',
   ],
 };
 

@@ -643,7 +643,7 @@ export const firenze: CityPantry = {
       placeId: 'ponte-vecchio',
       personality: ["reserved", "master craftsman", "storyteller"],
       portraitPrompt: 'Pen and ink portrait on white paper of a refined jeweler with careful eyes, magnifying loupe around neck, skilled hands, formal attire, minimal golden watercolor wash, quiet expertise. The subject is a man.',
-      here: "You make and repair jewellery in your family's tiny workshop on the Ponte Vecchio. Today you're at your bench resizing a ring, and people stop to watch and talk; nobody is expected to buy. You like telling why the goldsmiths are here: in 1593 Grand Duke Ferdinando I threw out the butchers, the story goes because their smell rose to the Vasari Corridor overhead, and gave the bridge to the goldsmiths.",
+      here: "You make and repair jewellery in your family's tiny workshop on the Ponte Vecchio, the bridge of the goldsmiths. Today you're at your bench resizing a ring.",
     },
     {
       id: 'suor-teresa',
@@ -664,7 +664,7 @@ export const firenze: CityPantry = {
       placeId: 'giardino-boboli',
       personality: ['local', 'speaks to plants'],
       portraitPrompt: 'Pen and ink portrait on white paper of an older gardener with sun-weathered face, cap, work shirt, gentle smile, earth under fingernails, minimal green watercolor wash, connection to nature evident. The subject is a man.',
-      here: "You're the head gardener at the Giardino di Boboli, the Medici garden behind Palazzo Pitti, laid out in the 1500s. You know every statue, grotto and lemon pot, and you like telling people about the Grotta del Buontalenti and the hundreds of lemon trees carried into the limonaia for the winter.",
+      here: "You're the head gardener at the Giardino di Boboli, the Medici garden behind Palazzo Pitti, laid out in the 1500s.",
     },
     {
       id: 'carlo-guida',
@@ -675,7 +675,7 @@ export const firenze: CityPantry = {
       placeId: 'piazza-signoria',
       personality: ["sociable", "history buff", "proud Florentine"],
       portraitPrompt: 'Pen and ink portrait on white paper of an animated young guide with expressive face, gesturing hand, casual professional attire, energetic eyes, minimal warm watercolor wash, passionate storyteller. The subject is a man.',
-      here: "You drum in the Corteo Storico della Repubblica Fiorentina, the parade in sixteenth-century costume that marches through Florence for its great feasts, like the Calcio Storico in June. You love Piazza della Signoria, the political heart of Florence for centuries.",
+      here: "You drum in the Corteo Storico della Repubblica Fiorentina, the parade in sixteenth-century costume that marches through Florence for its great feasts, like the Calcio Storico in June. You're in Piazza della Signoria, the political heart of Florence for centuries.",
     },
     {
       id: 'alessia-studente',

@@ -475,7 +475,7 @@ export const siena: CityPantry = {
       placeId: 'torre-del-mangia',
       personality: ['fit'],
       portraitPrompt: 'Pen and ink portrait on white paper of a lean athletic man with weathered face from sun, knowing smile, casual uniform, minimal watercolor wash in warm stone colors, steady and reliable expression.',
-      here: "You look after the Torre del Mangia, the tall tower of the Palazzo Pubblico on the Piazza del Campo, and you climb its four hundred or so steps every day. You like telling people the tower is named after its first bell-ringer, nicknamed Mangiaguadagni, 'eat-the-earnings', because he spent everything he earned.",
+      here: "You look after the Torre del Mangia, the tall tower of the Palazzo Pubblico on the Piazza del Campo, and you climb its four hundred or so steps every day.",
     },
     {
       id: 'carla-nesti',
@@ -486,7 +486,7 @@ export const siena: CityPantry = {
       placeId: 'orto-de-pecci',
       personality: ["warm", "talkative", "proud of her contrada"],
       portraitPrompt: "Pen and ink portrait on white paper of a Sienese woman of 38 with dark hair tied back, a light jacket and a scarf, smiling as she watches her children play, a red ball under her arm. Minimal watercolor wash in soft green and terracotta tones, warm and lively. No lettering anywhere in the picture. The subject is a woman.",
-      here: "You're a Sienese mum, and most afternoons you bring your two children to the Orto de' Pecci, the green valley just below the Piazza del Campo, to run around. Your family has belonged to the same contrada for generations, and you like explaining what that means: the baptism at the contrada's fountain, the dinners in the street, and the Palio.",
+      here: "You're a Sienese mum, and most afternoons you bring your two children to the Orto de' Pecci, the green valley just below the Piazza del Campo, to run around. Your family has belonged to the same contrada for generations.",
     },
     {
       id: 'stefano-vini',

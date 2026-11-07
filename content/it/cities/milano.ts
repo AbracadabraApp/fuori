@@ -612,7 +612,7 @@ export const milano: CityPantry = {
       placeId: 'duomo-milano',
       personality: ["inspiring", "gentle", "Milanese to the core"],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly priest with gentle face, clerical collar, wise eyes, serene expression, minimal watercolor wash in cathedral stone tones, spiritual gravitas',
-      here: "You're an elderly priest at the Duomo, and you've watched its restorers at work all your life: the Veneranda Fabbrica has looked after the cathedral since 1387. You like talking about the Madonnina on the highest spire, and the old rule that no building in Milan should stand taller than her.",
+      here: "You're an elderly priest at the Duomo, and you've watched its restorers at work all your life: the Veneranda Fabbrica has looked after the cathedral since 1387.",
     },
     {
       id: 'dottoressa-martini-milano',
@@ -736,7 +736,7 @@ export const milano: CityPantry = {
       placeId: 'galleria-vittorio-emanuele',
       personality: ["proud Milanese", "dapper", "chatty"],
       portraitPrompt: 'Pen and ink portrait on white paper of a well-dressed man in mid-40s with elegant attire, explaining gesture, passionate expression, minimal watercolor wash in Galleria gold and glass tones, Milanese pride',
-      here: "You're a Milanese tailor, and you walk through the Galleria Vittorio Emanuele II every morning on the way to your workshop. You love Milan's way of dressing and making things well, and the Galleria, the iron-and-glass arcade Milanesi call il salotto, the city's living room.",
+      here: "You're a Milanese tailor, and you walk through the Galleria Vittorio Emanuele II every morning on the way to your workshop, the iron-and-glass arcade Milanesi call il salotto, the city's living room.",
     },
     {
       id: 'federica-bianchi',
