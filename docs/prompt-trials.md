@@ -342,3 +342,13 @@ Threads (C) dropped, 2026-11-06: planting with dice (Josh: "is planting ideas th
 - Read: all lines (tests/experiments/out/here-topic-T3-A/B-*.md). With the sentence, Monte Albán is the conversation (the Gran Plaza, the Danzantes as the region's oldest carvings, the ball court, his village in the valley) and it repeats ("¿Quiere ver los Danzantes o el juego de pelota?" on visit after visit). Without it, no repeat, but almost nothing particular to the place (weather, shade, benches, where the learner lives); in one set he serves the learner a coffee.
 - Gap in the card: no guard for culture. Unlike T1b (Ximena kept her local talk), at a cultural place the planted line is the culture. Reading only, not counted.
 - Decision: not the card's (cut every "you like explaining…"). Keep the lines; the repeat is a memory problem. Next: T4, a memory line ("you've already told them about…") on return visits, with a culture count fixed before the run. Card to Josh first.
+
+### T4 (2026-11-06): does telling the character what they already told stop the repeat, and keep the culture?
+- Unit: memory notes on a return visit (lib/remember.ts → the relationship line). Efrén Martínez at Monte Albán, his here line as written (with the Danzantes sentence). Card shown to Josh first.
+- Variable: one note, "Already told them about the Danzantes and the ball court." (A: without, B: with). Held: the other notes, the date, Beginner stage 2, the learner's line.
+- Moments (fixed, from T3's real visits): M1 the return visit's opener; M2 his reply after a fixed opener and "Bien, gracias. Estudio mucho español esta semana."
+- Size: 2 moments × 5 runs × 2 versions (the method's smallest size; T3 had been larger than needed). Harness tests/experiments/memory-told.mts.
+- Measures (code): repeat /danzante|juego de pelota|ball ?court/; culture from a list fixed before the run, leaving out every word in his line.
+- Hypothesis: B repeats ≤ 3/10, culture at least half of A's. Result: **repeat A 7/10 (M1 4/5, M2 3/5), B 0/10. Met.** Culture 0/10 both: uninformative, since A's culture is the repeated cluster itself (a flaw in the card). Words per reply 29 vs 26.
+- Read: all 20 lines. With the note he stops re-offering the Danzantes and the ball court, but nothing new comes: sun, shade, the view, twice "en mi casa hablamos zapoteco". One cluster to tell, and once it's told he runs dry.
+- Decision: the memory step is worth building (record what was told; carry it to the next visit). The repeats are partly thin material: cultural places need more than one thing to draw on, as facts, not "you like…". Next: T5, a fuller line with the same note. Card to Josh first.
