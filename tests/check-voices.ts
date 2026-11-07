@@ -14,10 +14,16 @@ for (const city of cities) {
     if (!c) continue;
     checked++;
     if (!c.gender) { problems.push(`${c.name} (${city.name}) has no gender`); continue; }
-    const v = elevenLabsVoiceFor(c.id, c.gender);
+    const v = elevenLabsVoiceFor(c.id, c.gender, c.age);
     if (!v) { problems.push(`${c.name} (${city.name}) has no voice`); continue; }
     used.add(v);
     if (!voices.elevenlabs[c.gender].includes(v)) problems.push(`${c.name} (${city.name}) got a ${c.gender === 'f' ? 'male' : 'female'} voice`);
+    // Where voices are grouped by age (Italy, 2026-11-07), a voice from the character's own group
+    const byAge = (voices as { byAge?: Record<string, Record<string, string[]>> }).byAge;
+    if (byAge && c.age !== undefined) {
+      const group = c.age < 35 ? 'young' : c.age >= 60 ? 'old' : 'middle';
+      if (!byAge[c.gender][group].includes(v)) problems.push(`${c.name} (${city.name}, ${c.age}) got a voice outside the ${group} group`);
+    }
   }
   if (checked > 5 && used.size < 2) problems.push(`${city.name}: every character has the same voice`);
 }

@@ -14,3 +14,12 @@ export function characterGender(id: string): Gender | undefined {
   }
   return undefined;
 }
+
+/** A city character's age, for picking a voice of the right age (content/<country>/voices.ts) */
+export function characterAge(id: string): number | undefined {
+  for (const city of cities) {
+    const person = city.characters?.find((c) => c.id === id);
+    if (person) return person.age;
+  }
+  return undefined;
+}

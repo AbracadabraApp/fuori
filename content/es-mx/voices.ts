@@ -41,7 +41,8 @@ function hash(s: string): number {
   return h;
 }
 
-export function elevenLabsVoiceFor(characterId?: string, gender?: Gender): string | undefined {
+/** `age`: not used yet in Mexico (Italy picks by age group) */
+export function elevenLabsVoiceFor(characterId?: string, gender?: Gender, _age?: number): string | undefined {
   const v = voices.elevenlabs;
   if (!gender) return undefined;
   const pool = v[gender];
