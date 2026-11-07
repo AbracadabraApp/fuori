@@ -594,10 +594,11 @@ export const bergamo: CityPantry = {
       name: 'Anna Santoro',
       gender: 'f',
       age: 41,
-      role: 'storica dell\'arte',
+      role: "restauratrice",
       placeId: 'cappella-colleoni',
       personality: ['entusiasta'],
       portraitPrompt: 'Pen and ink portrait on white paper of a scholarly woman with glasses, elegant scarf, notebook in hand suggested, minimal rose watercolor wash, detailed intelligent animated features, art historian passion',
+      here: "You restore the coloured marble of the Cappella Colleoni in Bergamo Alta, the chapel the condottiero Bartolomeo Colleoni built for his own tomb, with Tiepolo's paintings inside.",
     },
     {
       id: 'pietro-conti',
@@ -681,6 +682,7 @@ export const bergamo: CityPantry = {
       placeId: 'funicolare-bergamo-alta',
       personality: ['orgoglioso', 'puntuale'],
       portraitPrompt: 'Pen and ink portrait on white paper of a neat man in uniform cap, steady hands suggested, responsible expression, minimal red watercolor wash, detailed trustworthy features, funicular operator pride',
+      here: "You drive the funicular that has carried people between the lower town and Bergamo Alta since 1887, up through the Venetian walls.",
     },
     {
       id: 'maestro-grassi',
@@ -691,6 +693,7 @@ export const bergamo: CityPantry = {
       placeId: 'teatro-donizetti',
       personality: [],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished conductor with expressive hands mid-gesture, formal concert attire, intense musical gaze, minimal gold watercolor wash, detailed dramatic features, operatic passion. The subject is a man.',
+      here: "You conduct at the Teatro Donizetti, Bergamo's opera house, named after the composer born here, which the Donizetti Opera festival fills every autumn.",
     },
     {
       id: 'clara-bellini',

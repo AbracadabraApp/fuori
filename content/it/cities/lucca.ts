@@ -607,6 +607,7 @@ export const lucca: CityPantry = {
       placeId: 'duomo-san-martino',
       personality: ['gentle', 'art historian'],
       portraitPrompt: 'Pen and ink portrait on white paper of distinguished elderly priest in late sixties with gray hair, kind eyes behind glasses, wearing clerical collar, minimal purple watercolor wash, serene wise expression, detailed compassionate features, spiritual bearing',
+      here: "You're the parish priest at the Duomo di San Martino, which keeps the Volto Santo, the wooden crucifix that Lucca carries through the streets every 13 September.",
     },
     {
       id: 'suor-margherita-lucca',
@@ -623,10 +624,11 @@ export const lucca: CityPantry = {
       name: 'Alessio Martinelli',
       gender: 'm',
       age: 26,
-      role: 'guida turistica',
+      role: "custode della torre",
       placeId: 'torre-guinigi',
       personality: ['enthusiastic', 'history buff', 'athletic'],
       portraitPrompt: 'Pen and ink portrait on white paper of energetic young man in mid-twenties with bright eyes, animated expression, wearing casual tour guide attire, minimal green watercolor wash, passionate educator demeanor, detailed youthful features, storyteller energy',
+      here: "You look after the Torre Guinigi, the medieval tower with holm oaks growing on its roof, and you climb its steps every morning.",
     },
     {
       id: 'isabella-galli',
@@ -637,6 +639,7 @@ export const lucca: CityPantry = {
       placeId: 'orto-botanico',
       personality: ['nurturing'],
       portraitPrompt: 'Pen and ink portrait on white paper of intellectual woman in early sixties with silver hair, gentle features, wearing practical garden clothes, minimal green watercolor wash, wise nurturing expression, detailed observant eyes, nature connection',
+      here: "You look after the plants at the Orto Botanico of Lucca, the botanical garden from the 1800s against the city walls.",
     },
     {
       id: 'matteo-fabbri',
@@ -654,10 +657,11 @@ export const lucca: CityPantry = {
       name: 'Carla Innocenti',
       gender: 'f',
       age: 46,
-      role: 'fioraia',
+      role: "insegnante di pianoforte",
       placeId: 'piazza-san-michele',
-      personality: ['romantic', 'color-loving'],
+      personality: ["romantic", "musical", "warm"],
       portraitPrompt: 'Pen and ink portrait on white paper of graceful woman in mid-forties with flower in hair, warm smile, wearing colorful scarf, minimal floral watercolor wash, artistic romantic expression, detailed gentle features, creative hands',
+      here: "You teach piano in Lucca, Puccini's town; the house where he was born is a few steps from Piazza San Michele, the square on the old Roman forum.",
     },
     {
       id: 'vanni-ceccarelli',

@@ -406,13 +406,14 @@ export const genova: CityPantry = {
     },
     {
       id: 'andrea-colombo',
-      name: 'Andrea Colombo',
+      name: "Andrea Ferrando",
       gender: 'm',
       age: 55,
       role: 'guardiano',
       placeId: 'lanterna',
       personality: ['solitary', 'maritime', 'philosophical'],
       portraitPrompt: 'Pen and ink portrait on white paper of a weathered man with salt-and-pepper beard, sailor\'s sweater, far-seeing eyes, minimal watercolor in sea blues, contemplative expression, textured shading',
+      here: "You keep La Lanterna, Genoa's lighthouse at the harbour mouth, one of the oldest working lighthouses in the world and the symbol of the city.",
     },
     {
       id: 'padre-tommaso',
@@ -457,13 +458,14 @@ export const genova: CityPantry = {
     },
     {
       id: 'diego-vento',
-      name: 'Diego Vento',
+      name: "Diego Parodi",
       gender: 'm',
       age: 71,
       role: 'pescatore',
       placeId: 'piazza-boccadasse',
       personality: ['taciturn', 'weather-wise'],
       portraitPrompt: 'Pen and ink portrait on white paper of an old fisherman with deeply lined face, captain\'s cap, thick sweater, rope-scarred hands, minimal watercolor in faded blues, distant gaze, heavy crosshatching. The subject is a man.',
+      here: "You fish from Boccadasse, the old fishing village at the edge of Genoa, with its coloured houses around a little beach, as your father did.",
     },
     {
       id: 'alberto-molinari',
@@ -551,13 +553,14 @@ export const genova: CityPantry = {
     },
     {
       id: 'professor-casella',
-      name: 'Prof. Vittorio Casella',
+      name: "Vittorio Casella",
       gender: 'm',
       age: 66,
-      role: 'storico',
+      role: "custode di palazzo",
       placeId: 'via-garibaldi',
       personality: ['distinguished'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly professor with white hair, bow tie, tweed jacket, architectural drawings visible, minimal watercolor in stone grays, animated expression, scholarly detail. The subject is a man.',
+      here: "You work as an attendant in one of the Palazzi dei Rolli on Via Garibaldi, the street of palaces where Genoa's noble families once lodged visiting kings and popes.",
     },
     {
       id: 'tommaso-sacco',

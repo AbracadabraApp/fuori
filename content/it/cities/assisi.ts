@@ -447,6 +447,7 @@ export const assisi: CityPantry = {
       placeId: 'basilica-san-francesco',
       personality: ['serene', 'multilingual'],
       portraitPrompt: 'Pen and ink portrait on white paper of a gentle-faced friar in brown Franciscan robes, peaceful expression, kind eyes, minimal earth-tone watercolor wash, detailed habit folds, spiritual presence',
+      here: "You're a Franciscan friar at the Basilica di San Francesco, where Saint Francis is buried, and you've lived in the friary for forty years.",
     },
     {
       id: 'suor-maria',
@@ -494,10 +495,11 @@ export const assisi: CityPantry = {
       name: 'Matteo Galli',
       gender: 'm',
       age: 28,
-      role: 'guida locale',
+      role: "ragazzo del posto",
       placeId: 'piazza-san-rufino',
-      personality: ['outgoing', 'proud'],
+      personality: ["outgoing", "proud of Assisi", "sociable"],
       portraitPrompt: 'Pen and ink portrait on white paper of a young man with friendly face, casual professional attire, enthusiastic expression, minimal warm watercolor wash, open demeanor',
+      here: "You grew up in Assisi and meet your friends in Piazza San Rufino, in front of the cathedral where Saint Francis and Saint Clare were baptised.",
     },
     {
       id: 'andrea-carli',
@@ -556,10 +558,11 @@ export const assisi: CityPantry = {
       name: 'Alberto Ferretti',
       gender: 'm',
       age: 39,
-      role: 'guida del castello',
+      role: "custode della Rocca",
       placeId: 'rocca-maggiore',
       personality: ['historical', 'engaging'],
       portraitPrompt: 'Pen and ink portrait on white paper of a man with animated expression, gesturing hand, period-appropriate vest, minimal stone-gray watercolor wash, storyteller energy',
+      here: "You look after the Rocca Maggiore, the castle above Assisi, and from its walls you see the whole Umbrian valley.",
     },
     {
       id: 'fra-antonio',
@@ -570,6 +573,7 @@ export const assisi: CityPantry = {
       placeId: 'eremo-carceri',
       personality: ['contemplative', 'sparse-spoken', 'spiritual'],
       portraitPrompt: 'Pen and ink portrait on white paper of a friar with deep contemplative eyes, simple robes, peaceful weathered face, minimal forest-green watercolor wash, meditative presence',
+      here: "You live at the Eremo delle Carceri, the hermitage in the woods on Monte Subasio where Saint Francis came to pray.",
     },
     {
       id: 'clara-russo',
@@ -590,6 +594,7 @@ export const assisi: CityPantry = {
       placeId: 'laboratorio-ceramiche',
       personality: ['artistic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a man with clay-stained hands, artisan apron, focused creative eyes, minimal blue-and-yellow watercolor wash, craftsman pride',
+      here: "You make and paint ceramics by hand in your workshop in Assisi, in the Umbrian tradition of Deruta nearby; you're at the wheel.",
     },
     {
       id: 'domenico-petrucci',

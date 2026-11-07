@@ -613,16 +613,18 @@ export const orvieto: CityPantry = {
       placeId: 'duomo-orvieto',
       personality: ['gentle', 'art-lover'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished priest with kind eyes, clerical collar, intellectual bearing, peaceful expression, minimal gold watercolor wash, spiritual depth, detailed contemplative face',
+      here: "You're a priest at the Duomo of Orvieto, with its golden façade on the square; inside, the Cappella di San Brizio has Signorelli's frescoes of the end of the world.",
     },
     {
       id: 'matteo-galeotti',
       name: 'Matteo Galeotti',
       gender: 'm',
       age: 28,
-      role: 'guida turistica',
+      role: "custode del pozzo",
       placeId: 'pozzo-san-patrizio',
       personality: ['enthusiastic', 'local'],
       portraitPrompt: 'Pen and ink portrait on white paper of a young man with expressive gestures, bright eyes, casual professional attire, engaging smile, minimal stone-gray watercolor wash, passion for history, detailed animated features',
+      here: "You were born in Orvieto and look after the Pozzo di San Patrizio, the deep well dug for a pope in the 1500s, with two spiral staircases that never meet.",
     },
     {
       id: 'suor-beatrice',
@@ -737,6 +739,7 @@ export const orvieto: CityPantry = {
       placeId: 'teatro-mancinelli',
       personality: ['visionary'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with expressive gestures, artistic bearing, intense creative eyes, minimal crimson watercolor wash, theatrical spirit, detailed passionate animated features',
+      here: "You direct plays at the Teatro Mancinelli, Orvieto's nineteenth-century theatre, named after Luigi Mancinelli, the conductor born in the town.",
     },
   ],
   
