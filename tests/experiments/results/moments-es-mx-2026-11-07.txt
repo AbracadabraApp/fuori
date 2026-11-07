@@ -1,0 +1,28 @@
+mx-chela-opening (watch: Incoherent opening: repeats across English and Spanish, no sentence breaks)
+  This is my stall in the Benito Juárez market, and here you taste before you buy. Buenos días, pase, pase. ¿Quiere probar un chapulín o quesillo?
+  This is my stall in the Benito Juárez market, and I let you taste before you buy. Buenos días, pase, pase. ¿Quiere probar un chapulín o quesillo?
+  This is my stall in the Mercado Benito Juárez, and here you can taste before you buy. Buenas tardes, pase, pase. ¿Quiere probar un chapulín o quesillo?
+mx-beto-hungry (watch: A taxi driver offers food his job can't give ("¿Quiere comer tacos o una torta?"))
+  Ha, good timing. I drive, I don't cook, but the Jardín is full of food stands and restaurants. Hay mucha comida cerca de aquí. ¿Quiere comer tacos o algo dulce?
+  Ah, hungry! I can't feed you, but the streets around the Jardín are full of little places to eat. Tengo hambre. ¿Quiere comer tacos o algo más?
+  Ah, then you're in the right place, there's plenty to eat around the Jardín. Hay tacos y esquites aquí. ¿Quiere tacos o esquites?
+mx-beto-torta (watch: A taxi driver takes a torta order ("¿Con queso o con jamón?"))
+  I'm a taxi driver, so I can't make you a torta, but there are stalls on the streets right off the Jardín. Una torta es buena idea. ¿Usted vive aquí en San Miguel?
+  ¡Buena idea, Joshua! I'm a taxi driver, so I can't make you one, but there are plenty of food stands around the Jardín. Hay tortas muy ricas aquí cerca. ¿Quiere una torta de jamón o de pollo?
+  Muy bien, una torta. I only drive taxis, so I can't make it for you, but there are torta stands right around the plaza. Hay tortas muy buenas aquí cerca. ¿Le gusta la torta con jamón o con pollo?
+mx-magda-joven (watch: Coaches a speech-to-text mishearing as a pronunciation mistake ("HO-ven"))
+  Joven, ¿me ayuda? That's for a young man you don't know, like a stranger on the street. Now say it to a woman: this is for any woman you don't know. Disculpe, señora.
+  Joven, ¿me ayuda? Now one for a woman you don't know, like a lady at a shop or on the street. You say it to get her attention politely. Disculpe, señora.
+  Joven, ¿me ayuda? Now the next one. You say this to a woman you don't know, to get her attention politely. Disculpe, señora.
+mx-magda-cansado (watch: Corrects a mishearing ("Almost! The word you want is cansado"))
+  Now you can say how you are with «estoy», and the question uses «está» or «estás». «Estoy bien, gracias» is the one to remember. Now you'll try it out with people around town, in the café and the plaza.
+  That's what you'd tell a neighbour on the stairs, when you've had a long day. Estoy un poco cansado. Notice that you say estoy to talk about yourself, while the question uses está, or estás with friends. Estoy bien, gracias is the one to remember. Now you'll try it out with people around town, in the café and the plaza. Hasta luego, y buena suerte.
+  Good, that's the same «estoy» again. «Estoy» tells how you are, and the question is «¿Cómo está?» with a stranger or «¿Cómo estás?» with a friend. Estoy bien, gracias. That's the phrase to keep. Now you'll try it out with people around town, in the café and the plaza.
+mx-efren-return-opener (watch: Retells the Danzantes and the ball court on every visit)
+  ¡Hola, Sam! Qué gusto verlo. The plaza looks beautiful this morning, with the valley clear below. Hoy hace buen día aquí. ¿Le gusta la Gran Plaza?
+  Hola, Sam. Bienvenido otra vez. Good to see you again up here on the mountain. Hoy hay mucho sol en la plaza. ¿Le gusta la Gran Plaza?
+  Hola, Sam. Bienvenido otra vez. Good to see you again, the plaza is quiet this morning. Hoy hay poca gente en la plaza. ¿Le gusta más la plaza o las vistas?
+mx-efren-return-reply (watch: Retells what he already told them, on a line that doesn't touch the ruins)
+  Qué bueno, Sam. Muy bien. Hoy hay mucha gente aquí. ¿Le gusta más la plaza o el juego de pelota?
+  Qué bien, Sam. Aquí hablamos zapoteco y español. ¿Le gusta la Gran Plaza?
+  Qué bueno, Sam. Aquí hablo zapoteco y español. ¿Le gusta la Gran Plaza?

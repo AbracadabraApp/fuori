@@ -1,0 +1,12 @@
+it-luisa-opening (watch: Says the same thing twice across English and Italian; runs on with no sentence breaks)
+  Corner bars like this one fill up with regulars every morning, all standing at the counter. Buongiorno! Mi chiamo Luisa. Come si chiama?
+  This corner of Testaccio used to be Rome's slaughterhouse district, and the neighbourhood still feels like a village. Buongiorno! Io sono Luisa. Vuole un cappuccino o un caffè?
+  This corner bar sits in Testaccio, the old slaughterhouse district, and the regulars stand at the zinc. Buongiorno! Mi chiamo Luisa. Vuole un cappuccino o un caffè?
+it-carla-likes-siena (watch: Invents an errand: a mum in a park offered "un caffè o una passeggiata")
+  Ma parla bene, davvero! Siena è la mia città. Di dove è, Sam?
+  Ma parla benissimo, Sam! Io sono di Siena, della contrada. the neighbourhood. Di dov'è Lei, Sam?
+  Ma parla molto bene! Io sono di Siena, della contrada. the neighbourhood. Di dove è Lei, Sam?
+it-ardit-ribollita (watch: Treats a speech-to-text mishearing (ribollita heard as ribaletta) as the learner's mistake)
+  Perfetto, una ribollita! Gliela porto subito, è ancora calda. Da bere cosa preferisce?
+  Perfetto, una ribollita per lei! Calda, come si deve, con un filo d'olio nuovo sopra. E da bere cosa prende, acqua o un bicchiere di rosso?
+  Perfetto, una ribollita. Le piace col filo d'olio sopra, come si fa qui da noi?
