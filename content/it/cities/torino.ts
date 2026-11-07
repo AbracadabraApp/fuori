@@ -477,13 +477,14 @@ export const torino: CityPantry = {
     },
     {
       id: 'elena-guida',
-      name: 'Elena Agnelli',
+      name: "Elena Bertola",
       gender: 'f',
       age: 31,
-      role: 'guida turistica',
+      role: "addetta del Museo del Cinema",
       placeId: 'mole-antonelliana',
       personality: ['local', 'animated', 'city-proud'],
       portraitPrompt: 'Pen and ink portrait on white paper of an articulate young woman with expressive eyes, wearing professional but stylish clothing with a museum badge. Engaging expression, intelligent gaze. Minimal blue watercolor accent. Detailed, articulate lines.',
+      here: "You work at the Museo Nazionale del Cinema inside the Mole Antonelliana, the tower that is the symbol of Turin.",
     },
     {
       id: 'padre-luca',
@@ -507,13 +508,14 @@ export const torino: CityPantry = {
     },
     {
       id: 'giacomo-giardiniere',
-      name: 'Giacomo Valentino',
+      name: "Giacomo Bosio",
       gender: 'm',
       age: 59,
       role: 'giardiniere',
       placeId: 'parco-valentino',
       personality: ['nature-loving', 'philosophical'],
       portraitPrompt: 'Pen and ink portrait on white paper of a weathered gardener in his late fifties with sun-worn face, wearing work clothes and cap. Peaceful expression, knowing eyes. Minimal green watercolor wash. Organic lines, earthy character.',
+      here: "You're a gardener in the Parco del Valentino, Turin's big park along the Po, with the Castello del Valentino and the Borgo Medievale.",
     },
     {
       id: 'luca-musicista',

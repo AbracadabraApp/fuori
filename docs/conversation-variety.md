@@ -95,6 +95,10 @@ Josh: "the cuts are fine - we should rationalize what we are adding -- how many 
 
 Every person on an added place is recast where their role is generic (guide, gardener, priest, curator): someone who lives or works there, with a real local surname, a `here` line written the Mexican way, fact-checked, played at both levels before it's shown; shops (🛒) also pass the gate.
 
+### Applied to `showcase.ts` (2026-11-06, not yet released)
+
+All non-shop adds from both tables, and San Gregorio Armeno (the one shop already played: buying 6–11% of lines, like the landmarks). Kept shown after all, because each hosts a cultural lesson (Josh: "leave them"): Ristorante I Carracci (Bologna, ragù), Libreria del Mare and Osteria Ballarò (Palermo), Farmacia Prati (Rome), Libreria Matera, Tabaccheria Nesi (Florence). Waiting: the Rusticceria Santa Croce, the Laboratorio Ceramiche and the Acetaia Veneta (shops, not yet gated; the Acetaia also can't be confirmed as a place), and the park beside Palazzo Te (can't be confirmed). Every new person's line is fact-checked; batch 1–2 lines still carry one story each, to come out after a test (docs/prompt-trials.md → T1 decision).
+
 ## Where things stand
 
 - Live on `main`: A (Beginner errand is a turn or two), the bar rules (order, own place's ways), receipts at five bars, and Italy's four Mexican-style lines (Ditta Artigianale, Bar Rita, Farmacia Molteni, Farmacia Centrale Verona; Bar Nilo without "talk football").

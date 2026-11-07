@@ -38,22 +38,24 @@ export const showcase: Record<string, string[]> = {
     'colosseo', // history: Serena, archaeologist (new)
     'villa-borghese-nuova',
     'tram-porta-maggiore',
-    'tabaccheria-pigneto',
-    'farmacia-prati',
     'stazione-termini-nuova',
+    // Dialogue variety (Josh, 2026-11-06): generic businesses out
+    'farmacia-prati', // kept: it hosts a cultural lesson (Josh, 2026-11-06: "leave them")
   ],
   matera: [
     'caffe-schiuma',
     'mercato-piccianello',
     'ristorante-francesca',
-    'bar-vitantonio',
-    'gelateria-artigiana',
     'piazza-vittorio',
     'bottega-artigiana',
-    'libreria-matera',
     'piazza-duomo', // M2: bench character Alberto (pensionato)
     'scuola-lingua-matera', // M2: language school with Magda
     'stazione-fal', // M2: train station for travel
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'casa-grotta',
+    'sassi-belvedere',
+    'parco-murgia',
+    'libreria-matera', // kept: it hosts a cultural lesson (Josh, 2026-11-06: "leave them")
   ],
   firenze: [
     // Today's Florence (Josh, 2026-10-23): real places, everyday people
@@ -64,37 +66,41 @@ export const showcase: Record<string, string[]> = {
     'santa-croce-piazza',
     'parco-cascine',
     'tram-alamanni',
-    'tabaccheria-nesi',
-    'farmacia-molteni-nuova',
     'stazione-smn-nuova',
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'giardino-boboli',
+    'piazza-signoria',
+    'ponte-vecchio',
+    'tabaccheria-nesi', // kept: it hosts a cultural lesson (Josh, 2026-11-06: "leave them")
   ],
   siena: [
-    'caffe-fiorella',
     'pasticceria-bini', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
     'pizzicheria-de-miccoli', // a deli for the city's own food (Josh, 2026-10-27)
     'mercato-della-terra',
     'osteria-le-logge',
     'bar-il-palio',
-    'gelateria-brivido',
     'piazza-del-campo',
     'bottega-del-palio',
-    'libreria-senese',
     'piazza-salimbeni', // M2: bench character Beatrice (studentessa)
     'scuola-lingua-siena', // M2: language school with Magda
     'stazione-siena', // M2: train station for travel
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'orto-de-pecci',
+    'torre-del-mangia',
   ],
   venezia: [
     'bar-al-timon',
     'mercato-rialto',
     'ristorante-antiche-carampane',
     'caffe-florian',
-    'farmacia-morelli',
     'campo-santa-margherita',
     'squero-san-trovaso',
     'libreria-acqua-alta',
     'campo-dei-mori', // M2: bench character Dante (storico locale)
     'scuola-lingua-venezia', // M2: language school with Magda
     'stazione-santa-lucia', // M2: train station for travel
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'ponte-rialto',
   ],
   napoli: [
     'bar-nilo',
@@ -106,15 +112,16 @@ export const showcase: Record<string, string[]> = {
     'caffe-gambrinus',
     'gay-odin',
     'piazza-bellini',
-    'libreria-dante-descartes',
     'spaccanapoli-street', // M2: bench character Nonna Assunta (Via Spaccanapoli) (abitante del quartiere)
     'scuola-lingua-napoli', // M2: language school with Magda
     'stazione-centrale-napoli', // M2: train station for travel
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'presepi-san-gregorio',
+    'castel-ovo',
   ],
   bologna: [
     'caffe-terzi',
     'portici-san-luca', // city pass 2026-11-05: replaces Mercato di Mezzo (a second mortadella seller)
-    'ristorante-pappagallo',
     'sfoglia-rina', // city pass: replaces Bar Senza Nome (a generic student bar)
     'sorbetteria-castiglione', // city pass: replaces Cremeria Funivia (Josh's photo, 2026-11-05)
     'santo-stefano', // city pass: replaces the pharmacy
@@ -123,19 +130,26 @@ export const showcase: Record<string, string[]> = {
     'piazza-verdi', // M2: bench character Clara (studentessa)
     'scuola-lingua-bologna', // M2: language school with Magda
     'stazione-centrale', // M2: train station for travel
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'due-torri',
+    'archiginnasio',
+    'ristorante-pappagallo', // kept: it hosts a cultural lesson (Josh, 2026-11-06: "leave them")
   ],
   palermo: [
     'bar-alba',
     'pani-ca-meusa-ballaro', // street food only this city has (Josh, 2026-10-27)
     'mercato-ballaro',
     'trattoria-ai-cascinari',
-    'caffe-del-kassaro',
     'piazza-pretoria',
-    'libreria-del-mare',
     'giardino-garibaldi',
-    'osteria-ballarò',
     'scuola-lingua-palermo', // M2: language school with Magda
     'stazione-centrale-palermo', // M2: train station for travel
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'cappella-palatina',
+    'teatro-massimo',
+    'quattro-canti',
+    'libreria-del-mare', // kept: it hosts a cultural lesson (Josh, 2026-11-06: "leave them")
+    'osteria-ballarò', // kept: it hosts a cultural lesson (Josh, 2026-11-06: "leave them")
   ],
   // Not on the first screen of the city list: reached through "Mostra altro" or
   // the station (Josh, 2026-10-14). 10 places each, same mix, plus the station
@@ -146,67 +160,74 @@ export const showcase: Record<string, string[]> = {
     'mercato-giardini',
     'ristorante-baronessa',
     'caffe-wunderbar',
-    'gelateria-paradiso',
-    'farmacia-centrale-taormina',
     'piazza-ix-aprile',
-    'salumeria-sicilia',
     'stazione-taormina-giardini', // station (2026-10-14)
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'teatro-greco',
+    'villa-comunale-taormina',
+    'terrazza-panoramica',
   ],
   lecce: [
     'caffe-alvino',
     'mercato-comunale',
     'alle-due-corti',
-    'bar-della-vittoria',
-    'gelateria-natale',
-    'farmacia-centrale-lecce',
     'piazza-santoronzo',
     'bottega-cartapesta',
     'stazione-lecce',
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'basilica-santa-croce-lecce',
+    'museo-faggiano',
+    'anfiteatro-romano',
   ],
   milano: [
     'pasticceria-marchesi',
     'mercato-di-porta-romana',
     'trattoria-masuelli',
     'bar-rita',
-    'gelateria-navigli',
-    'farmacia-centrale-milano',
     'piazza-santo-stefano',
     'peck',
     'scuola-lingua-milano',
     'stazione-porta-garibaldi',
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'duomo-milano',
+    'galleria-vittorio-emanuele',
   ],
   verona: [
     'caffe-wallner',
     'mercato-piazza-erbe',
     'ristorante-dodici-apostoli',
-    'bar-ai-scalzi',
-    'gelateria-ponte-pietra',
-    'farmacia-centrale-verona',
     'piazza-bra',
     'salumeria-albertini',
     'stazione-porta-nuova',
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'arena-verona',
+    'teatro-romano',
+    'piazza-signori',
   ],
   assisi: [
     'caffe-duomo',
     'mercato-coperto',
     'ristorante-metastasio',
-    'bar-senso',
-    'gelateria-santa-maria',
-    'farmacia-centrale',
     'piazza-comune',
-    'tabaccheria-assisi',
     'stazione-assisi', // station (2026-10-14)
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'basilica-san-francesco',
+    'eremo-carceri',
+    'rocca-maggiore',
+    'piazza-san-rufino',
   ],
   bergamo: [
     'caffe-del-tasso',
     'mercato-citta-alta',
     'ristorante-da-vittorio',
-    'bar-donizetti',
-    'farmacia-centrale-bergamo',
     'piazza-vecchia',
     'libreria-sant-agostino',
     'parco-della-trucca',
     'stazione-bergamo', // station (2026-10-14)
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'funicolare-bergamo-alta',
+    'cappella-colleoni',
+    'teatro-donizetti',
   ],
   torino: [
     'caffe-san-carlo',
@@ -219,63 +240,73 @@ export const showcase: Record<string, string[]> = {
     'libreria-luxemburg',
     'scuola-lingua-torino',
     'stazione-porta-nuova-torino', // station (2026-10-14)
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'mole-antonelliana',
+    'parco-valentino',
   ],
   siracusa: [
     'bar-dolce-vita',
     'caseificio-borderi', // a deli for the city's own food (Josh, 2026-10-27)
     'mercato-ortigia',
     'ristorante-dioniso',
-    'caffe-archimede',
-    'gelateria-nettuno',
-    'farmacia-apollo',
     'piazza-archimede',
     'laboratorio-papiro',
     'stazione-siracusa',
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'antica-giudecca',
+    'fonte-aretusa',
+    'parco-archeologico',
   ],
   genova: [
-    'caffe-degli-specchi',
     'pasticceria-liquorosa', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
     'mercato-orientale',
     'trattoria-rosmarino',
     'bar-boccadasse',
-    'gelateria-profumo',
-    'farmacia-europa',
     'piazza-ferrari',
     'salumeria-fontana',
     'stazione-principe',
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'piazza-boccadasse',
+    'lanterna',
+    'via-garibaldi',
   ],
   lucca: [
     'caffe-di-simo',
     'mercato-del-carmine',
     'ristorante-giglio',
-    'bar-il-fortino',
-    'farmacia-massei',
     'piazza-anfiteatro',
     'gastronomia-angeli',
-    'libreria-baroni',
     'stazione-lucca', // station (2026-10-14)
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'torre-guinigi',
+    'duomo-san-martino',
+    'piazza-san-michele',
+    'orto-botanico',
   ],
   orvieto: [
     'caffe-montanucci',
     'mercato-coperto-orvieto',
     'ristorante-la-grotta',
-    'bar-duomo-orvieto',
     'piazza-del-popolo',
     'bottega-michelangeli',
-    'libreria-del-duomo',
     'giardini-pubblici',
     'stazione-orvieto', // station (2026-10-14)
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'pozzo-san-patrizio',
+    'duomo-orvieto',
+    'teatro-mancinelli',
   ],
   mantova: [
     'caffe-modi',
     'mercato-erbe-mantova',
     'ristorante-cigno',
-    'bar-delle-erbe',
     'gelateria-ducale',
-    'farmacia-gonzaga',
     'piazza-sordello',
     'salumeria-ducale',
     'stazione-mantova',
+    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    'palazzo-te',
+    'palazzo-ducale-mantova',
   ],
 };
 
