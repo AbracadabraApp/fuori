@@ -25,10 +25,12 @@ So the job now is less adding and more finding out what each part does.
 6. **Smallest size that can answer.** Start at Beginner, stage 2, one country, 2 moments × 5 runs per version. Run the control twice the first time a moment is used, to see the noise. Widen only when the result is close; stop when it's clearly no.
 7. **Count in code where possible.** Words, English sentences, questions per turn, answers offered, a word from a fixed list (the parts already carry their kinds). When a judge is needed: one yes/no question, its reason printed, and every line read before a count is believed.
 8. **Keep everything, read everything.** Every reply is saved to a file. Nothing is reported until the lines have been read. Report the numbers first, then what they mean.
-9. **Guards on every test.** Words per turn, reply time, how much of the turn is in the language, answers offered. A change that wins its measure and breaks a guard isn't kept.
-10. **One log.** `docs/prompt-trials.md`: every test is one entry, the card plus results, decision, output file and commit, written the same day whatever the outcome. A kept prompt change also bumps the version and adds a changelog entry (`npm run test:prompt`).
-11. **Beginner first, then the rest.** Josh plays Beginner. Fixes go on the shared layer for every character and both countries ("fixes are global"), but they're tested where the problem shows first.
-12. **Josh decides design, Claude decides tests.** Framings and goals ("stay in your job", "stay in your role" and "be yourself" are three different ideas) are Josh's to choose; the test design, running and reading are Claude's. A cut reaches the game only after Josh has seen its log entry, at the next release.
+9. **Fix what's counted before the run, and keep it clean.** A word list or set is written on the card before running, and leaves out every word that's already in the prompt or in the learner's lines: a place named in the character's own `here` line isn't something she brought up. The learner's lines (fixed or simulated) must not name what's being measured.
+10. **A result ends in a decision.** Every entry says what the result means for the prompt (cut, keep, rewrite, test further), in one line. A finding that changes nothing isn't finished.
+11. **Guards on every test.** Words per turn, reply time, how much of the turn is in the language, answers offered. A change that wins its measure and breaks a guard isn't kept.
+12. **One log.** `docs/prompt-trials.md`: every test is one entry, the card plus results, decision, output file and commit, written the same day whatever the outcome. A kept prompt change also bumps the version and adds a changelog entry (`npm run test:prompt`).
+13. **Beginner first, then the rest.** Josh plays Beginner. Fixes go on the shared layer for every character and both countries ("fixes are global"), but they're tested where the problem shows first.
+14. **Josh decides design, Claude decides tests.** Framings and goals ("stay in your job", "stay in your role" and "be yourself" are three different ideas) are Josh's to choose; the test design, running and reading are Claude's. A cut reaches the game only after Josh has seen its log entry, at the next release.
 
 ## The card
 
@@ -49,6 +51,23 @@ Result: <numbers, both control runs>
 Read: <yes, all lines; file>
 Decision: keep / cut / widen / drop, and why
 ```
+
+## What the first tests taught (2026-11-06)
+
+**T1:** a `here` line sentence telling the character what to talk about ("You love talking about café de olla…", Ximena, Café Amapola) was said on 15 of 15 visits; without it, 0 of 15. **T1b:** removing it didn't reduce her local talk (14 of 15 visits with it, 15 of 15 without). **Decision:** `here` lines say who the person is and what the place is, with no "you like telling…" or "you love talking about…"; that goes for every country and every new line.
+
+How the first tests went wrong, each now a rule above:
+- The plan came as an essay and a table of codes Josh couldn't read; the tests arrived undefined, and Josh had to ask for the variable, the result and the hypothesis one at a time (rule 4, the card; Talking about tests).
+- The first version of T1 changed two sentences at once (rule 3).
+- Hidden instructions inside `here` lines ("explaining the menu slowly") went unnoticed until Josh asked (rule 1: the inventory lists every instruction, including those inside `here` lines).
+- A second test was proposed that wasn't different from the first: a planted "story" is the same instruction as a planted "topic" (rule 4: the card's question has to say what it would teach that the last test didn't).
+- Results were reported from the first line of each visit, and the rest wasn't saved (rule 8).
+- The question changed after the data was seen, and the counted set was written afterwards and included Condesa, which is in her own line (rules 4 and 9).
+- A simulated learner chatted freely, against the plan's fixed moments, and its own prompt named Condesa (rules 5 and 9).
+- No threshold before running, and findings that went beyond the numbers ("crowds out", "no real culture") were logged, then withdrawn when Josh asked for the measurement (rules 4 and 8).
+- A second log was started (rule 12).
+- Results came without the decision they implied (rule 10).
+- The tests before these were too large (12 places × 3 visits × 2 levels) with a lenient judge (rule 6, rule 7).
 
 ## Taking a grown prompt back down
 
