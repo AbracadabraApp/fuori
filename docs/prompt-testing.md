@@ -64,6 +64,8 @@ Six changes to the rules above, from a cloud-session review. None is in force un
 21. **A category can be one variable.** "All examples out" or "the whole opener recipe out" is one variable: the kind of thing. Test the category first and split it only if it loses, instead of about 25 one-unit cuts that interact.
 22. **Rerun the control when the model changes.** Every card records the model id and settings; after a model change, old results are not trusted until the control has been run again on the new model.
 
+23. **Grammatical: a proposed ninth item** (Josh, 2026-11-07: "grammar would be proposed new variable"). The character's own language is correct, since the learner copies it. Prompted by V2: a character said "il gnocchi" (gli gnocchi), and no item covered it; item 2 (accurate) is about facts. Not in the eight until Josh says so; a card that tests it names it as item 9 (proposed).
+
 Smaller: a kept change gets a small check in the other country before it ships ("fixes are global"); the welcome counts as a kind of conversation and gets cards like the rest.
 
 ## Time box and better judges (2026-11-07)
