@@ -4,11 +4,9 @@ Draft, 2026-11-06, for Josh's review. Josh: "You need to organize work in a disc
 
 ## Our pedagogy and what we test (Josh, 2026-11-07)
 
-The goal is cultural fluency: talking with local people about their place, in Italy in Italian and in Mexico in Spanish. What's tipico, not stereotypical; local, not generic; and accurate. The place is part of what's learned. We wouldn't drop it even if the language were easier to teach without it.
+**Goal.** Cultural fluency: talking with local people about their place, in their language. Tipico, local and accurate.
 
-The learner learns through conversations with local people, Magda's lessons, flashcards and films. **These measures are for dialogue:** every conversation where a character talks with the learner (town conversations, the welcome, Magda in her lessons and their practice partners, cultural stories). In a dialogue the character is the part we control, so that's what we test. How we measure the learner's learning is a separate doc (to come).
-
-**What the character must do in a dialogue.** Every test card names the item it serves; how an item is judged (Magda's free English in lessons, mishearings, the speed target) goes on the card, not here.
+**What we test.** Dialogue: every conversation where a character talks with the learner. In each, the character:
 
 1. **At their level.** They can follow her.
 2. **Accurate.** Nothing invented.
@@ -18,6 +16,8 @@ The learner learns through conversations with local people, Magda's lessons, fla
 6. **Teaches in role.** Recasts, usable answers, no lectures.
 7. **Remembers.** No retelling; uses what she knows about them.
 8. **Brief.** Turns they can follow.
+
+Each test card names the item it serves; how it's judged goes on the card. Measuring the learner's learning is a separate doc (to come).
 
 ## Why: the Beginner prompt
 
