@@ -8,8 +8,9 @@
  * voices): 8 voices for 635 characters gave a 70-year-old a young radio voice
  * and ~80 people one voice; now 22, picked by the character's age. Chosen for
  * conversational delivery, and loudness from the library previews (ffmpeg EBU
- * R128): none quieter than about -21 LUFS, since the app turns loud clips down
- * to -20 but can't boost quiet ones (Voice.swift). Pool sizes follow the
+ * R128), then a game line each with the game's settings (2026-11-07): none
+ * quieter than about -24 LUFS, since the app turns loud clips down to -20 but
+ * can't boost quiet ones (Voice.swift). Pool sizes follow the
  * characters: women 74 young, 174 middle-aged, 32 older; men 43, 213, 99.
  * Run `npm run voices` to hear them.
  */
@@ -38,7 +39,7 @@ const byAge: Record<Gender, Record<AgeGroup, string[]>> = {
   },
   m: {
     young: [
-      'DTGwzA4YLrWB1FAT6Uas', // Lorenzo - youthful, conversational (-20.5)
+      '4YsN90HrCPrOCmBglwMA', // Danilo - Sicilian accent, casual, conversational (-13.4 in game; replaced Lorenzo, -27.3 in game, too quiet)
       'o4b57JYAECRMJyCEXyIE', // Brando Vox - pleasant, conversational (-18.3)
       'MTgv1KRJpUnc34UMGTHK', // Matteo - Venetian accent, conversational (-20.2)
     ],

@@ -651,7 +651,7 @@ export const lucca: CityPantry = {
       name: 'Alessio Martinelli',
       gender: 'm',
       age: 26,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: "custode della torre",
       placeId: 'torre-guinigi',
       personality: ['enthusiastic', 'history buff', 'athletic'],

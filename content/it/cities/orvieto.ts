@@ -499,7 +499,7 @@ export const orvieto: CityPantry = {
       name: 'Simone Neri',
       gender: 'm',
       age: 31,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'fornaio',
       placeId: 'panificio-moderna',
       personality: ['dedicated', 'humble', 'early-riser'],

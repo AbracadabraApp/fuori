@@ -495,7 +495,7 @@ export const firenze: CityPantry = {
       name: 'Mark Santos',
       gender: 'm',
       age: 31,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'farmacista',
       placeId: 'farmacia-molteni-nuova',
       personality: ["patient", "precise", "reassuring"],

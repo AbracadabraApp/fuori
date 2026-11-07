@@ -148,6 +148,7 @@ export const guadalajara: CityPantry = {
       name: 'Memo Orozco',
       gender: 'm',
       age: 44,
+      voice: 'ojGau167OE7nUATM1xDa', // Marto
       role: 'tejuinero',
       placeId: 'tejuino-san-juan-de-dios',
       personality: ['cheerful', 'generous'],
@@ -159,6 +160,7 @@ export const guadalajara: CityPantry = {
       name: 'Ximena Godínez',
       gender: 'f',
       age: 28,
+      voice: 'm7yTemJqdIqrcNleANfX', // Ana María
       role: 'alfarera',
       placeId: 'taller-ceramica-tlaquepaque',
       personality: ['creative', 'proud of her craft'],
@@ -170,6 +172,7 @@ export const guadalajara: CityPantry = {
       name: 'Rigoberto Plascencia',
       gender: 'm',
       age: 57,
+      voice: 'JgmJ33RuT4tPQOENamHR', // Julián A
       role: 'cantinero',
       placeId: 'cantina-la-fuente',
       personality: ['dry-humoured', 'discreet', 'knows everyone\u2019s story'],
@@ -181,6 +184,7 @@ export const guadalajara: CityPantry = {
       name: 'Valeria Cortés',
       gender: 'f',
       age: 27,
+      voice: '9Godp7dNohUvXk6qp0gS', // Regina
       role: 'barista',
       placeId: 'cafe-tinta',
       personality: ['friendly', 'a little shy at first'],
@@ -192,6 +196,7 @@ export const guadalajara: CityPantry = {
       name: 'Don Efrén Arreola',
       gender: 'm',
       age: 61,
+      voice: 'tI1Rufka5gOIKze9KhpE', // Francisco
       role: 'panadero',
       placeId: 'panaderia-la-espiga',
       personality: ['early-rising', 'proud', 'fatherly'],
@@ -203,6 +208,7 @@ export const guadalajara: CityPantry = {
       name: 'Don Lalo Gutiérrez',
       gender: 'm',
       age: 72,
+      voice: 'gUzzwyvvop8GQmnl2Akf', // Roberto
       role: 'bolero',
       placeId: 'parque-revolucion',
       personality: ['old-fashioned', 'sharp-eyed'],
@@ -214,6 +220,7 @@ export const guadalajara: CityPantry = {
       name: 'Nacho Robles',
       gender: 'm',
       age: 35,
+      voice: 'nmvA11Y688M5reLqDsVm', // Samuel Rosales
       role: 'taquero',
       placeId: 'tacos-el-compa-nacho',
       personality: ['quick', 'joking', 'a perfectionist about his salsa'],
@@ -225,6 +232,7 @@ export const guadalajara: CityPantry = {
       name: 'Doña Mari Esparza',
       gender: 'f',
       age: 52,
+      voice: '1VQaMRazTeAqnqdb5C33', // Monica Mendez
       role: 'tendera',
       placeId: 'abarrotes-la-esquinita',
       personality: ['nosy in a kind way', 'practical', 'remembers every customer'],
@@ -236,6 +244,7 @@ export const guadalajara: CityPantry = {
       name: 'Lupita Barajas',
       gender: 'f',
       age: 49,
+      voice: 'akOBlaKhFd59YlK6xz9u', // Lucia
       role: 'sacristana',
       placeId: 'parroquia-san-pedro-tlaquepaque',
       personality: ['calm', 'devout', 'organised'],
@@ -247,6 +256,7 @@ export const guadalajara: CityPantry = {
       name: 'Doña Chuy Hermosillo',
       gender: 'f',
       age: 58,
+      voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
       role: 'cocinera',
       placeId: 'fonda-dona-chuy',
       personality: ['warm', 'bossy', 'generous with portions'],
@@ -258,6 +268,7 @@ export const guadalajara: CityPantry = {
       name: 'Rosa Núñez',
       gender: 'f',
       age: 22,
+      voice: 'ewn5JTa3lNPY8QVuZJi6', // Ana Sofía
       role: 'estudiante universitaria',
       placeId: 'jardin-de-san-francisco',
       personality: ['friendly', 'studious', 'always has a smile', 'loves practicing languages'],
@@ -269,6 +280,7 @@ export const guadalajara: CityPantry = {
       name: 'Carlos Partida',
       gender: 'm',
       age: 41,
+      voice: 'gbTn1bmCvNgk0QEAVyfM', // Enrique M. Nieto
       role: 'taquillero',
       placeId: 'terminal-nueva',
       personality: ['cheerful', 'efficient', 'knows all the connections'],
@@ -280,6 +292,7 @@ export const guadalajara: CityPantry = {
       name: "Andrés Ochoa",
       gender: 'm',
       age: 22,
+      voice: 'lLu7VwiNjffLb7HZ3LFW', // Silverio
       role: "estudiante de arte",
       placeId: 'hospicio-cabanas',
       personality: ["curious", "earnest", "sketches everything"],
@@ -291,6 +304,7 @@ export const guadalajara: CityPantry = {
       name: "Chuy Arellano",
       gender: 'm',
       age: 45,
+      voice: 'lRf3yb6jZby4fn3q3Q7M', // Tony
       role: "violinista de mariachi",
       placeId: 'plaza-de-los-mariachis',
       personality: ["proud", "joking", "loves the old songs"],

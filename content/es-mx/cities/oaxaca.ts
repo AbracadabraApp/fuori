@@ -159,6 +159,7 @@ export const oaxaca: CityPantry = {
       name: 'Doña Ofelia Santiago',
       gender: 'f',
       age: 56,
+      voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
       role: 'tlayudera',
       placeId: 'tlayudas-mercado-20-de-noviembre',
       personality: ['warm', 'bossy', 'quick-witted'],
@@ -170,6 +171,7 @@ export const oaxaca: CityPantry = {
       name: 'Emiliano Matus',
       gender: 'm',
       age: 28,
+      voice: 'lLu7VwiNjffLb7HZ3LFW', // Silverio
       role: 'cantinero',
       placeId: 'mezcaleria-los-amantes',
       personality: ['proud of his craft'],
@@ -181,6 +183,7 @@ export const oaxaca: CityPantry = {
       name: 'Marisol Ruiz',
       gender: 'f',
       age: 26,
+      voice: 'm7yTemJqdIqrcNleANfX', // Ana María
       role: 'barista',
       placeId: 'cafe-pocito-jalatlaco',
       personality: ['friendly', 'a bit shy about her English'],
@@ -192,6 +195,7 @@ export const oaxaca: CityPantry = {
       name: 'Don Beto',
       gender: 'm',
       age: 61,
+      voice: '68nvxRVrtyK9nd4hTKmR', // Pablo Macias
       role: 'panadero',
       placeId: 'panaderia-el-trigal-xochimilco',
       personality: ['gruff', 'generous', 'early riser'],
@@ -202,6 +206,7 @@ export const oaxaca: CityPantry = {
       name: 'Doña Chela Martínez',
       gender: 'f',
       age: 63,
+      voice: 'D3ws14YxTqcjPaXEOehR', // Azu
       role: 'vendedora del mercado',
       placeId: 'puesto-chapulines-mercado-benito-juarez',
       personality: ['teasing', 'sharp with prices', 'motherly'],
@@ -213,6 +218,7 @@ export const oaxaca: CityPantry = {
       name: 'Doña Tere Jiménez',
       gender: 'f',
       age: 47,
+      voice: '1VQaMRazTeAqnqdb5C33', // Monica Mendez
       role: 'cocinera y dueña de la fonda',
       placeId: 'fonda-dona-tere-reforma',
       personality: ['hardworking', 'direct', 'big-hearted'],
@@ -224,6 +230,7 @@ export const oaxaca: CityPantry = {
       name: 'Don Nacho Vásquez',
       gender: 'm',
       age: 64,
+      voice: 'gUzzwyvvop8GQmnl2Akf', // Roberto
       role: 'nevero',
       placeId: 'jardin-conzatti-reforma',
       personality: ['calm', 'loves the neighbourhood kids'],
@@ -235,6 +242,7 @@ export const oaxaca: CityPantry = {
       name: 'Doña Concha Cruz',
       gender: 'f',
       age: 70,
+      voice: 'iBGVhgcEZS6A5gTOjqSJ', // Gabiyoya
       role: 'sacristana',
       placeId: 'templo-san-matias-jalatlaco',
       personality: ['devout', 'knows everyone in the barrio'],
@@ -246,6 +254,7 @@ export const oaxaca: CityPantry = {
       name: 'Don Rubén Bautista',
       gender: 'm',
       age: 58,
+      voice: 'JgmJ33RuT4tPQOENamHR', // Julián A
       role: 'tendero',
       placeId: 'abarrotes-los-tres-hermanos-xochimilco',
       personality: ['dry humour', 'keeps credit books for neighbours'],
@@ -257,6 +266,7 @@ export const oaxaca: CityPantry = {
       name: 'Luis Aquino',
       gender: 'm',
       age: 34,
+      voice: 'T0etfMyJ0xd14aP2WsOi', // Beto Viral
       role: 'guía del jardín',
       placeId: 'jardin-etnobotanico-oaxaca',
       personality: ['enthusiastic', 'loves explaining plants'],
@@ -268,6 +278,7 @@ export const oaxaca: CityPantry = {
       name: 'Don Arturo López',
       gender: 'm',
       age: 73,
+      voice: 'Rt1JHkPO27QCUX6Nd5bV', // Jorge
       role: 'jubilado',
       placeId: 'zocalo-oaxaca',
       personality: ['thoughtful', 'enjoys chatting with newcomers', 'knows Oaxaca history'],
@@ -279,6 +290,7 @@ export const oaxaca: CityPantry = {
       name: 'Ricardo Morales',
       gender: 'm',
       age: 45,
+      voice: 'nmvA11Y688M5reLqDsVm', // Samuel Rosales
       role: 'taquillero',
       placeId: 'terminal-ado-oaxaca',
       personality: ['efficient', 'friendly', 'knows all the routes'],
@@ -290,6 +302,7 @@ export const oaxaca: CityPantry = {
       name: 'Doña Rufina García',
       gender: 'f',
       age: 52,
+      voice: 'akOBlaKhFd59YlK6xz9u', // Lucia
       role: 'molinera de chocolate',
       placeId: 'chocolate-mayordomo-mina',
       personality: ['warm', 'proud', 'talks while she works'],
@@ -301,6 +314,7 @@ export const oaxaca: CityPantry = {
       name: "Efrén Martínez",
       gender: 'm',
       age: 52,
+      voice: 'gbTn1bmCvNgk0QEAVyfM', // Enrique M. Nieto
       role: "custodio de la zona arqueológica",
       placeId: 'monte-alban',
       personality: ["quiet", "proud of his Zapotec roots", "patient"],
@@ -312,6 +326,7 @@ export const oaxaca: CityPantry = {
       name: "Lucía Santiago",
       gender: 'f',
       age: 34,
+      voice: 'ewn5JTa3lNPY8QVuZJi6', // Ana Sofía
       role: "grabadora",
       placeId: 'andador-macedonio-alcala',
       personality: ["creative", "warm", "talks with her hands"],

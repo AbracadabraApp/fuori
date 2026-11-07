@@ -437,7 +437,7 @@ export const torino: CityPantry = {
       name: 'Davide Olivetti',
       gender: 'm',
       age: 26,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'commesso',
       placeId: 'eataly-torino',
       personality: ['enthusiastic', 'foodie', 'helpful'],

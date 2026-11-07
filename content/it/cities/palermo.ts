@@ -558,7 +558,7 @@ export const palermo: CityPantry = {
       name: 'Santo Lo Verde',
       gender: 'm',
       age: 34,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'friggitore',
       placeId: 'friggitoria-chiluzzo',
       personality: ['humorous', 'street-smart'],
@@ -673,7 +673,7 @@ export const palermo: CityPantry = {
       name: 'Davide Bruno',
       gender: 'm',
       age: 32,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'barista',
       placeId: 'corleone-wine-bar',
       personality: ['social', 'mixologist', 'night-owl'],

@@ -590,7 +590,7 @@ export const siena: CityPantry = {
       name: 'Andrea Brivido',
       gender: 'm',
       age: 31,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'gelatiere',
       placeId: 'gelateria-brivido',
       personality: ["creative", "cheerful", "innovative"],

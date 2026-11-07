@@ -357,7 +357,7 @@ export const roma: CityPantry = {
       name: 'Dario Ferri',
       gender: 'm',
       age: 34,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'fornaio',
       placeId: 'forno-trastevere',
       personality: ['early riser', 'shy', 'proud of his pizza bianca'],

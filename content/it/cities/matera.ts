@@ -612,7 +612,7 @@ export const matera: CityPantry = {
       name: "Arben Shehu",
       gender: "m",
       age: 32,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: "gelataio",
       placeId: 'gelateria-artigiana',
       personality: ["cheerful", "hard-working", "flavor innovator"],

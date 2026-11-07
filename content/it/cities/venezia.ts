@@ -466,7 +466,7 @@ export const venezia: CityPantry = {
       name: 'Tommaso Dal Mas',
       gender: 'm',
       age: 33,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'pasticciere',
       placeId: 'pasticceria-dal-mas',
       personality: ['creative', 'proud'],

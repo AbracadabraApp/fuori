@@ -169,6 +169,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Don Chucho Mendoza',
       gender: 'm',
       age: 74,
+      voice: 'tI1Rufka5gOIKze9KhpE', // Francisco
       role: 'bolero',
       placeId: 'puesto-de-boleo-don-chucho',
       personality: ['dignified', 'proud of his craft'],
@@ -180,6 +181,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Vale Ortiz',
       gender: 'f',
       age: 31,
+      voice: '9Godp7dNohUvXk6qp0gS', // Regina
       role: 'librera',
       placeId: 'libros-tecolote',
       personality: ['dry-humoured', 'generous with recommendations'],
@@ -191,6 +193,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Ximena Castañeda',
       gender: 'f',
       age: 28,
+      voice: 'm7yTemJqdIqrcNleANfX', // Ana María
       role: 'barista',
       placeId: 'cafe-amapola',
       personality: ['cheerful', 'patient with learners', 'coffee-obsessed'],
@@ -202,6 +205,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Don Gaspar',
       gender: 'm',
       age: 57,
+      voice: 'nmvA11Y688M5reLqDsVm', // Samuel Rosales
       role: 'panadero',
       placeId: 'panaderia-la-concha-de-oro',
       personality: ['early-rising', 'gruff but kind', 'jokes with regulars'],
@@ -212,6 +216,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Beto Salinas',
       gender: 'm',
       age: 45,
+      voice: 'ojGau167OE7nUATM1xDa', // Marto
       role: 'paseador de perros',
       placeId: 'parque-mexico',
       personality: ['easygoing', 'sociable', 'knows every neighbour by their dog'],
@@ -223,6 +228,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Doña Lupe Hernández',
       gender: 'f',
       age: 55,
+      voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
       role: 'quesadillera',
       placeId: 'quesadillas-dona-lupe',
       personality: ['warm', 'quick-handed', 'motherly with newcomers'],
@@ -234,6 +240,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Chema Rosales',
       gender: 'm',
       age: 38,
+      voice: 'lRf3yb6jZby4fn3q3Q7M', // Tony
       role: 'taquero',
       placeId: 'tacos-el-trompo-rojo',
       personality: ['showy', 'loves a bit of banter'],
@@ -245,6 +252,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Doña Cuca Villanueva',
       gender: 'f',
       age: 61,
+      voice: 'iBGVhgcEZS6A5gTOjqSJ', // Gabiyoya
       role: 'cocinera y dueña',
       placeId: 'fonda-dona-cuca',
       personality: ['no-nonsense', 'generous', 'proud of her sazón'],
@@ -256,6 +264,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Alicia Paredes',
       gender: 'f',
       age: 63,
+      voice: 'D3ws14YxTqcjPaXEOehR', // Azu
       role: 'voluntaria y guía de la iglesia',
       placeId: 'catedral-metropolitana',
       personality: ['gentle', 'knowledgeable about history', 'quietly funny'],
@@ -267,6 +276,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Don Efraín Olvera',
       gender: 'm',
       age: 66,
+      voice: '68nvxRVrtyK9nd4hTKmR', // Pablo Macias
       role: 'mesero',
       placeId: 'cantina-la-opera',
       personality: ['formal', 'sly sense of humour', 'remembers every order'],
@@ -278,6 +288,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Doña Carmen Ibarra',
       gender: 'f',
       age: 77,
+      voice: 'iBGVhgcEZS6A5gTOjqSJ', // Gabiyoya
       role: 'jubilada',
       placeId: 'alameda-central',
       personality: ['warm', 'full of stories about old Mexico City', 'loves feeding the pigeons'],
@@ -289,6 +300,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Don Arturo Navarrete',
       gender: 'm',
       age: 58,
+      voice: 'gbTn1bmCvNgk0QEAVyfM', // Enrique M. Nieto
       role: 'taquillero',
       placeId: 'terminal-tapo',
       personality: ['patient', 'helpful', 'seen everything'],
@@ -300,6 +312,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Toño Gallardo',
       gender: 'm',
       age: 44,
+      voice: 'gbTn1bmCvNgk0QEAVyfM', // Enrique M. Nieto
       role: 'churrero',
       placeId: 'churreria-el-moro',
       personality: ['night owl', 'quick-witted', 'proud of the place'],
@@ -311,6 +324,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Fidel Zárate',
       gender: 'm',
       age: 50,
+      voice: 'JgmJ33RuT4tPQOENamHR', // Julián A
       role: 'tamalero',
       placeId: 'tamales-oaxaquenos-bici',
       personality: ['patient', 'early riser', 'dry humour'],
@@ -322,6 +336,7 @@ export const ciudadDeMexico: CityPantry = {
       name: "Renata Villaseñor",
       gender: 'f',
       age: 41,
+      voice: 'akOBlaKhFd59YlK6xz9u', // Lucia
       role: "restauradora de murales",
       placeId: 'murales-palacio-nacional',
       personality: ["patient", "precise", "proud of Rivera's work"],
@@ -333,6 +348,7 @@ export const ciudadDeMexico: CityPantry = {
       name: "Doña Elvira Huerta",
       gender: 'f',
       age: 67,
+      voice: 'D3ws14YxTqcjPaXEOehR', // Azu
       role: "abuela",
       placeId: 'jardin-centenario-coyoacan',
       personality: ["chatty", "proud of Coyoacán", "keeps an eye on everyone"],

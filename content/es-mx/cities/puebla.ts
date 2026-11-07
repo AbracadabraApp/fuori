@@ -160,6 +160,7 @@ export const puebla: CityPantry = {
       name: 'Sofía Quintero',
       gender: 'f',
       age: 16,
+      voice: 'ewn5JTa3lNPY8QVuZJi6', // Ana Sofía
       role: 'ayuda en la dulcería de su familia',
       placeId: 'dulces-tipicos-la-gloria',
       personality: ['cheerful', 'proud of her family\'s sweets'],
@@ -171,6 +172,7 @@ export const puebla: CityPantry = {
       name: 'Padre Tomás Herrera',
       gender: 'm',
       age: 63,
+      voice: '68nvxRVrtyK9nd4hTKmR', // Pablo Macias
       role: 'sacerdote',
       placeId: 'templo-de-santo-domingo',
       personality: ['kind', 'tired', 'gently humorous'],
@@ -182,6 +184,7 @@ export const puebla: CityPantry = {
       name: 'Mateo Lozano',
       gender: 'm',
       age: 27,
+      voice: 'lLu7VwiNjffLb7HZ3LFW', // Silverio
       role: 'barista',
       placeId: 'cafe-cielo-rojo',
       personality: ['relaxed', 'loves to chat with regulars'],
@@ -193,6 +196,7 @@ export const puebla: CityPantry = {
       name: 'Doña Remedios',
       gender: 'f',
       age: 58,
+      voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
       role: 'panadera y dueña',
       placeId: 'panaderia-la-espiga-de-la-paz',
       personality: ['motherly', 'no-nonsense', 'generous with extras'],
@@ -203,6 +207,7 @@ export const puebla: CityPantry = {
       name: 'Lupe Rojas',
       gender: 'f',
       age: 46,
+      voice: 'akOBlaKhFd59YlK6xz9u', // Lucia
       role: 'cemitera',
       placeId: 'cemitas-dona-lupe-analco',
       personality: ['quick-witted', 'loud and friendly', 'perfectionist about her cemitas'],
@@ -214,6 +219,7 @@ export const puebla: CityPantry = {
       name: 'Doña Chayo Sánchez',
       gender: 'f',
       age: 52,
+      voice: 'CQLNn2VcdhTOSAfK3xmF', // Valentina
       role: 'cocinera y dueña',
       placeId: 'fonda-dona-tere',
       personality: ['warm', 'bossy in the kitchen', 'remembers every regular\'s order'],
@@ -225,6 +231,7 @@ export const puebla: CityPantry = {
       name: 'Chuy Haddad',
       gender: 'm',
       age: 38,
+      voice: 'nmvA11Y688M5reLqDsVm', // Samuel Rosales
       role: 'taquero',
       placeId: 'tacos-arabes-el-puente',
       personality: ['fast', 'joking', 'tireless on busy nights'],
@@ -236,6 +243,7 @@ export const puebla: CityPantry = {
       name: 'Don Efraín Tlapale',
       gender: 'm',
       age: 71,
+      voice: 'Rt1JHkPO27QCUX6Nd5bV', // Jorge
       role: 'bolero',
       placeId: 'zocalo-de-puebla',
       personality: ['nostalgic', 'knows all the city gossip'],
@@ -247,6 +255,7 @@ export const puebla: CityPantry = {
       name: 'Don Rubén Contreras',
       gender: 'm',
       age: 55,
+      voice: 'JgmJ33RuT4tPQOENamHR', // Julián A
       role: 'cantinero',
       placeId: 'la-pasita',
       personality: ['dry humour', 'a good listener'],
@@ -258,6 +267,7 @@ export const puebla: CityPantry = {
       name: 'Daniela Pacheco',
       gender: 'f',
       age: 31,
+      voice: 'm7yTemJqdIqrcNleANfX', // Ana María
       role: 'farmacéutica',
       placeId: 'farmacia-san-rafael',
       personality: ['quietly funny'],
@@ -269,6 +279,7 @@ export const puebla: CityPantry = {
       name: 'Doña Beatriz Ávila',
       gender: 'f',
       age: 79,
+      voice: 'D3ws14YxTqcjPaXEOehR', // Azu
       role: 'abuela del barrio',
       placeId: 'jardin-del-carmen',
       personality: ['affectionate', 'loves teaching kids Spanish', 'always knitting'],
@@ -280,6 +291,7 @@ export const puebla: CityPantry = {
       name: 'Jorge Ramos',
       gender: 'm',
       age: 52,
+      voice: 'ojGau167OE7nUATM1xDa', // Marto
       role: 'taquillero',
       placeId: 'terminal-capu',
       personality: ['patient', 'helpful with directions', 'knows the schedules by heart'],
@@ -291,6 +303,7 @@ export const puebla: CityPantry = {
       name: 'Doña Amparo',
       gender: 'f',
       age: 66,
+      voice: 'iBGVhgcEZS6A5gTOjqSJ', // Gabiyoya
       role: 'dulcera',
       placeId: 'la-gran-fama-dulces',
       personality: ['storyteller', 'precise', 'sweet-toothed'],
@@ -302,6 +315,7 @@ export const puebla: CityPantry = {
       name: "Mariana Castañeda",
       gender: 'f',
       age: 48,
+      voice: '1VQaMRazTeAqnqdb5C33', // Monica Mendez
       role: "restauradora de libros",
       placeId: 'biblioteca-palafoxiana',
       personality: ["meticulous", "gentle", "loves old paper"],
@@ -313,6 +327,7 @@ export const puebla: CityPantry = {
       name: "Hugo Sosa",
       gender: 'm',
       age: 31,
+      voice: 'T0etfMyJ0xd14aP2WsOi', // Beto Viral
       role: "muralista",
       placeId: 'barrio-xanenetla',
       personality: ["easygoing", "proud of his barrio", "paints every day"],

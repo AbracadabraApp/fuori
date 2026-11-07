@@ -638,7 +638,7 @@ export const napoli: CityPantry = {
       name: 'Peppe Conte',
       gender: 'm',
       age: 34,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'friggitore',
       placeId: 'friggitoria-vico',
       personality: ['jovial', 'fast-moving', 'street-smart'],
@@ -811,7 +811,7 @@ export const napoli: CityPantry = {
       name: 'Gennaro Amitrano',
       gender: 'm',
       age: 29,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'pizzaiolo',
       placeId: 'pizza-a-portafoglio-tribunali',
       personality: ['fast', 'cheeky', 'proud of Naples'],

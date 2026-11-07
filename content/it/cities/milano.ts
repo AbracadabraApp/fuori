@@ -608,7 +608,7 @@ export const milano: CityPantry = {
       name: 'Luca Spontini',
       gender: 'm',
       age: 29,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'pizzaiolo',
       placeId: 'pizzeria-spontini',
       personality: ['fast-paced', 'skilled', 'proud'],
@@ -755,7 +755,7 @@ export const milano: CityPantry = {
       name: "Karim Hassan",
       gender: "m",
       age: 27,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'bigliettaio',
       placeId: 'stazione-porta-garibaldi',
       personality: ["efficient", "helpful", "patient"],

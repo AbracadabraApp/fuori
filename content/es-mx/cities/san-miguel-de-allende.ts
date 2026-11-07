@@ -159,6 +159,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Doña Rosa Ledesma',
       gender: 'f',
       age: 64,
+      voice: 'iBGVhgcEZS6A5gTOjqSJ', // Gabiyoya
       role: 'florista',
       placeId: 'mercado-ignacio-ramirez',
       personality: ['warm', 'proud of her flowers'],
@@ -170,6 +171,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Beto Rangel',
       gender: 'm',
       age: 22,
+      voice: 'SR7nDRaowD2i3v2ycaDS', // Alejandro
       role: 'taxista',
       placeId: 'jardin-allende',
       personality: ['cheerful', 'quick-witted', 'knows every street'],
@@ -181,6 +183,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Don Aurelio Becerra',
       gender: 'm',
       age: 68,
+      voice: 'Rt1JHkPO27QCUX6Nd5bV', // Jorge
       role: 'sacristán',
       placeId: 'parroquia-san-miguel-arcangel',
       personality: ['gentle', 'formal', 'patient with visitors'],
@@ -192,6 +195,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Tomás Villagómez',
       gender: 'm',
       age: 52,
+      voice: 'gbTn1bmCvNgk0QEAVyfM', // Enrique M. Nieto
       role: 'cantinero',
       placeId: 'la-cucaracha',
       personality: ['dry-humoured', 'good listener', 'protective of his regulars'],
@@ -203,6 +207,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Ximena Ortega',
       gender: 'f',
       age: 27,
+      voice: 'ewn5JTa3lNPY8QVuZJi6', // Ana Sofía
       role: 'barista',
       placeId: 'cafe-de-la-calzada',
       personality: ['creative', 'friendly', 'a little shy'],
@@ -214,6 +219,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Marisol Aguilar',
       gender: 'f',
       age: 41,
+      voice: 'akOBlaKhFd59YlK6xz9u', // Lucia
       role: 'ceramista',
       placeId: 'fabrica-la-aurora',
       personality: ['generous with her time', 'a little scatterbrained'],
@@ -225,6 +231,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Lourdes Ramírez',
       gender: 'f',
       age: 38,
+      voice: '1VQaMRazTeAqnqdb5C33', // Monica Mendez
       role: 'panadera',
       placeId: 'panaderia-la-esperanza',
       personality: ['early-rising', 'brisk', 'quietly kind'],
@@ -235,6 +242,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Don Efraín Muñoz',
       gender: 'm',
       age: 73,
+      voice: 'tI1Rufka5gOIKze9KhpE', // Francisco
       role: 'tendero',
       placeId: 'miscelanea-los-arcos',
       personality: ['gruff', 'secretly soft-hearted', 'loves gossip'],
@@ -246,6 +254,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Doña Chelo Guerrero',
       gender: 'f',
       age: 57,
+      voice: 'CQLNn2VcdhTOSAfK3xmF', // Valentina
       role: 'cocinera',
       placeId: 'fonda-la-palmita',
       personality: ['motherly', 'bossy in the kitchen', 'generous with portions'],
@@ -257,6 +266,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Ramiro Cervantes',
       gender: 'm',
       age: 34,
+      voice: 'lLu7VwiNjffLb7HZ3LFW', // Silverio
       role: 'taquero',
       placeId: 'tacos-el-pastor-atascadero',
       personality: ['joker', 'fast with the knife', 'remembers every customer'],
@@ -268,6 +278,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Don Víctor Arteaga',
       gender: 'm',
       age: 75,
+      voice: '68nvxRVrtyK9nd4hTKmR', // Pablo Macias
       role: 'jubilado',
       placeId: 'parque-juarez',
       personality: ['peaceful', 'philosophical', 'loves talking about art and history'],
@@ -279,6 +290,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Miguel Sauceda',
       gender: 'm',
       age: 39,
+      voice: 'ojGau167OE7nUATM1xDa', // Marto
       role: 'taquillero',
       placeId: 'terminal-sma',
       personality: ['helpful', 'patient with tourists', 'knows English phrases'],
@@ -290,6 +302,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: 'Rocío Mancera',
       gender: 'f',
       age: 34,
+      voice: 'm7yTemJqdIqrcNleANfX', // Ana María
       role: 'dulcera',
       placeId: 'casa-del-tumbagon',
       personality: ['teasing', 'cheerful', 'knows every legend'],
@@ -301,6 +314,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: "Gabriela Ramírez",
       gender: 'f',
       age: 39,
+      voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
       role: "maestra de historia",
       placeId: 'casa-de-allende',
       personality: ["energetic", "passionate about the independence", "good with kids"],
@@ -312,6 +326,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: "Don Ramón Ledesma",
       gender: 'm',
       age: 74,
+      voice: 'gUzzwyvvop8GQmnl2Akf', // Roberto
       role: "jubilado",
       placeId: 'el-mirador-san-miguel',
       personality: ["calm", "nostalgic", "good storyteller"],

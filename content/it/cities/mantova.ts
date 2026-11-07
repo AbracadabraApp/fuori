@@ -435,7 +435,7 @@ export const mantova: CityPantry = {
       name: 'Davide Sartori',
       gender: 'm',
       age: 31,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'barista',
       placeId: 'bar-gonzaga',
       personality: ['professional', 'efficient'],

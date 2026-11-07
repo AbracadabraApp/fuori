@@ -513,7 +513,7 @@ export const assisi: CityPantry = {
       name: 'Matteo Galli',
       gender: 'm',
       age: 28,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: "ragazzo del posto",
       placeId: 'piazza-san-rufino',
       personality: ["outgoing", "proud of Assisi", "sociable"],

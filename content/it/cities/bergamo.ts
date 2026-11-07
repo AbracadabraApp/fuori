@@ -428,7 +428,7 @@ export const bergamo: CityPantry = {
       name: 'Alberto Bergamini',
       gender: 'm',
       age: 31,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: 'barista',
       placeId: 'caffe-della-funicolare',
       personality: ['cosmopolita'],

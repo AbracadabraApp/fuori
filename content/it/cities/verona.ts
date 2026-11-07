@@ -473,7 +473,7 @@ export const verona: CityPantry = {
       name: "Moussa Diop",
       gender: "m",
       age: 24,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: "musicista di strada",
       placeId: 'piazza-bra',
       personality: ["artistic", "charming", "easygoing"],

@@ -663,7 +663,7 @@ export const taormina: CityPantry = {
       name: "Massimo Piazza",
       gender: "m",
       age: 26,
-      voice: 'DTGwzA4YLrWB1FAT6Uas', // Lorenzo
+      voice: '4YsN90HrCPrOCmBglwMA', // Danilo
       role: "musicista di strada",
       placeId: 'piazza-ix-aprile',
       personality: ["romantic", "mandolin virtuoso", "cheerful"],
