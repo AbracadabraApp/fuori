@@ -2,6 +2,23 @@
 
 Draft, 2026-11-06, for Josh's review. Josh: "You need to organize work in a disciplined way. You need to enumerate the prompt and decide which parts to test. You need to pick the smallest effective test size. You need tests that favor information gathering not 'guessed right', you need to consistently log tests." Then: "a prompt that doubled in size and got worse."
 
+## Our pedagogy and what we test (Josh, 2026-11-07)
+
+The goal is cultural fluency: talking with local people about their place, in Italy in Italian and in Mexico in Spanish. What's tipico, not stereotypical; local, not generic; and accurate. The place is part of what's learned. We wouldn't drop it even if the language were easier to teach without it.
+
+The learner learns through conversations with local people, Magda's lessons, flashcards and films. **These measures are for dialogue:** every conversation where a character talks with the learner (town conversations, the welcome, Magda in her lessons and their practice partners, cultural stories). In a dialogue the character is the part we control, so that's what we test. How we measure the learner's learning is a separate doc (to come).
+
+**What the character must do in a dialogue.** Every test card names the item it serves; how an item is judged (Magda's free English in lessons, mishearings, the speed target) goes on the card, not here.
+
+1. **At their level.** They can follow her.
+2. **Accurate.** Nothing invented.
+3. **Local and tipico.** Her place, her town, her country, as a local tells it.
+4. **In character.** She stays her role.
+5. **Responds to English.** She helps when they need it.
+6. **Teaches in role.** Recasts, usable answers, no lectures.
+7. **Remembers.** No retelling; uses what she knows about them.
+8. **Brief.** Turns they can follow.
+
 ## Why: the Beginner prompt
 
 The Beginner system prompt (`content/*/prompts/beginner.md`) went from 504 words (2026-10-25b) to 1,245 (2026-11-06) in 18 versions over 12 days, and the shared rules (`dialogue.md`) and the stage text (`leveling.md`) are added on top. It shrank only twice. The pattern behind the growth:
@@ -68,6 +85,7 @@ Every test starts as this card, shown to Josh in this form and pasted into the l
 
 ```
 Test T<n>: <the question in one line>
+Serves: <item 1–8 from "What the character must do">
 Type: moment / visit
 Unit: <inventory id and file>
 Variable: <the one thing that changes> (A: …, B: …)
