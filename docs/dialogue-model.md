@@ -82,6 +82,8 @@ some principles of dialogue we've learned"). Results are in
 
 ## Decided
 
+- **Content and display are separate** (Josh, 2026-11-07: "We should separate content and display"). Content is what the character says, written by the prompt at every level: her words in each language, how much English, how hard the language, what she talks about, her question, the answers she'd accept, the English meaning of each phrase. Display is what the learner sees and hears of it, decided in code by level: how many answers are shown (or one turned into a frame), whether the English echo is spoken, whether and when a translation shows, bubbles, buttons, timing. The prompt doesn't mention the screen. Today's Beginner stages mix the two (answers two/one/frame and the echo are display; how much and how hard the language is content); separating them points to one prompt with one dial for the language, and display rules per step.
+
 - **Where English goes** (Josh, 2026-11-05): "if english is needed it should be
   spoken by the character or listed underneath the italian within the answer
   bubble." Whether it's needed, and at which levels, is not decided. Nothing is
