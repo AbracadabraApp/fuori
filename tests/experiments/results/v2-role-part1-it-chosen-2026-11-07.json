@@ -1,0 +1,87 @@
+[
+ {
+  "conversation": "c8287331-a3c1-42f0-85e8-7df37c72b194",
+  "character": "Giorgia Ferri",
+  "version": "beginner-2026-10-27b",
+  "marks": [
+   {
+    "turn": 16,
+    "line": "Ha ha, I only have my one slice, but that's kind of you. Let's see how your Italian is going to hold up for lunch. Sono qui fino alle due. until two Vuole una fetta di pizza dopo? a slice, later  [say back: Sì, volentieri. Vorrei una fetta di pizza margherita.]",
+    "byClaude": {
+     "turn": 16,
+     "quote": "Vuole una fetta di pizza dopo?",
+     "reason": "She offers the learner a slice of pizza as if she had food to give out, though she said she has only her one slice."
+    },
+    "byGrok": {
+     "turn": 16,
+     "quote": "Vuole una fetta di pizza dopo?",
+     "reason": "A student on the steps with only one slice offers him a slice of pizza later, as if she sold or served food she cannot provide."
+    },
+    "moment": {
+     "claude": {
+      "broken": false,
+      "quote": "Vuole una fetta di pizza dopo?",
+      "reason": "She asks if the learner wants a slice of pizza later, which reads as a friendly invitation to share lunch between lectures; she says she only has her own slice and does not sell or serve food, so she stays in role as a student."
+     },
+     "grok": {
+      "broken": true,
+      "quote": "Vuole una fetta di pizza dopo?",
+      "reason": "A student with one slice of pizza on the steps cannot offer or take an order for a slice of pizza as if she sold food."
+     }
+    }
+   },
+   {
+    "turn": 18,
+    "line": "Volentieri! Facciamo dopo la lezione. Mi piace la margherita. I love it too Beve acqua frizzante o naturale? sparkling or still water  [say back: Bevo acqua frizzante, grazie.]",
+    "byClaude": {
+     "turn": 18,
+     "quote": "Beve acqua frizzante o naturale?",
+     "reason": "She asks a waitress-style drink question, which a student sitting on the steps would not ask."
+    },
+    "byGrok": {
+     "turn": 18,
+     "quote": "Volentieri! Facciamo dopo la lezione. Beve acqua frizzante o naturale?",
+     "reason": "She accepts his pizza order and asks whether he wants sparkling or still water, acting as a waitress rather than a student."
+    },
+    "moment": {
+     "claude": {
+      "broken": false,
+      "quote": "Facciamo dopo la lezione. Mi piace la margherita. Beve acqua frizzante o naturale?",
+      "reason": "Giorgia stays a student sharing pizza and a drink between lectures as a friendly peer; she is not selling or taking an order, so it fits her role and place."
+     },
+     "grok": {
+      "broken": true,
+      "quote": "Beve acqua frizzante o naturale?",
+      "reason": "A student on the steps accepts the learner's pizza request and then takes a sparkling-or-still water order as if she served food and drinks, which her role and place cannot do."
+     }
+    }
+   },
+   {
+    "turn": 20,
+    "line": "Quale preferisce? which one  [say back: Preferisco l'acqua frizzante. | Preferisco l'acqua naturale.]",
+    "byClaude": {
+     "turn": 20,
+     "quote": "Quale preferisce?",
+     "reason": "She keeps taking a drink order like a waitress, which led the learner to ask why she was acting like one."
+    },
+    "byGrok": {
+     "turn": 20,
+     "quote": "Quale preferisce?",
+     "reason": "She continues taking his drink order like a server, which a student sitting between lectures cannot do."
+    },
+    "moment": {
+     "claude": {
+      "broken": true,
+      "quote": "Quale preferisce? which one [say back: Preferisco l'acqua frizzante. | Preferisco l'acqua naturale.]",
+      "reason": "Giorgia, a student on the steps, asks the learner which water they prefer as if she were a waiter taking a drink order, which her role can't give, and the question also ignores the learner's line about being confused."
+     },
+     "grok": {
+      "broken": true,
+      "quote": "Quale preferisce? which one [say back: Preferisco l'acqua frizzante. | Preferisco l'acqua naturale.]",
+      "reason": "A student on the steps is taking a drink order for sparkling or still water, which her place and role cannot provide."
+     }
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,160 @@
+[
+ {
+  "conversation": "a3d7e096-f41c-452e-a559-7cb6046f828c",
+  "character": "Memo Orozco",
+  "version": "beginner-2026-11-06+S2",
+  "marks": []
+ },
+ {
+  "conversation": "858fc586-d6b6-4a5c-8750-a0e4774a2f04",
+  "character": "Beto Rangel",
+  "version": "beginner-2026-11-05c+S2",
+  "marks": [
+   {
+    "turn": 6,
+    "line": "¡Qué bien! Yo también tengo hambre. Hay tacos cerca del Jardín. ¿Quiere comer tacos o una torta?  [say back: Tacos, por favor.]",
+    "byClaude": null,
+    "byGrok": {
+     "turn": 6,
+     "quote": "¿Quiere comer tacos o una torta?",
+     "reason": "Beto, a taxi driver, solicits a food order by asking the learner to choose tacos or a torta, which his job and the taxi stand cannot provide."
+    },
+    "moment": {
+     "claude": {
+      "broken": false,
+      "quote": "Hay tacos cerca del Jardín. ¿Quiere comer tacos o una torta?",
+      "reason": "Beto is a taxi driver recommending nearby food and asking the learner what she'd like to eat; he doesn't sell or take an order himself, so this stays in role as local conversation."
+     },
+     "grok": {
+      "broken": true,
+      "quote": "¿Quiere comer tacos o una torta? [say back: Tacos, por favor.]",
+      "reason": "A taxi driver taking a food order is doing something his job and the taxi stand cannot give."
+     }
+    }
+   },
+   {
+    "turn": 8,
+    "line": "¡Buena elección, Joshua! I can't make you one, but I know a good spot on the next street. Camine dos calles por aquí. ¿Quiere la torta con queso o con jamón?  [say back: Con queso, por favor.]",
+    "byClaude": {
+     "turn": 8,
+     "quote": "I can't make you one, but I know a good spot on the next street. Camine dos calles por aquí. ¿Quiere la torta con queso o con jamón?",
+     "reason": "As a taxi driver he goes on to take a torta order, asking about fillings as if he sold food, which his job and place can't give."
+    },
+    "byGrok": {
+     "turn": 8,
+     "quote": "¿Quiere la torta con queso o con jamón?",
+     "reason": "Even after saying he cannot make the torta, Beto takes the food order by asking whether the learner wants cheese or ham, acting as a vendor rather than a taxi driver."
+    },
+    "moment": {
+     "claude": {
+      "broken": false,
+      "quote": "I can't make you one, but I know a good spot on the next street.",
+      "reason": "Beto declines to make the torta and recommends a nearby place, which is allowed for a taxi driver; asking about cheese or ham is only a follow-up about the learner's preference, not him taking an order."
+     },
+     "grok": {
+      "broken": true,
+      "quote": "¿Quiere la torta con queso o con jamón?",
+      "reason": "A taxi driver asking the learner to choose cheese or ham and prompting a torta order is taking a food order his job and place cannot give."
+     }
+    }
+   },
+   {
+    "turn": 10,
+    "line": "¡Ja, con amor! Muy bien. Con queso o con jamón, también. cheese or ham. ¿Qué quiere en la torta?  [say back: Con jamón, por favor.]",
+    "byClaude": {
+     "turn": 10,
+     "quote": "Con queso o con jamón, también. cheese or ham. ¿Qué quiere en la torta?",
+     "reason": "He keeps taking a torta order and asks what she wants in it, like a food vendor rather than a taxi driver."
+    },
+    "byGrok": {
+     "turn": 10,
+     "quote": "¿Qué quiere en la torta?",
+     "reason": "Beto continues taking the learner's torta order by asking what they want on it, something a taxi driver cannot sell or prepare."
+    },
+    "moment": {
+     "claude": {
+      "broken": true,
+      "quote": "¿Qué quiere en la torta?",
+      "reason": "Beto is a taxi driver at a taxi stand, but he acts as a food vendor taking a torta order, which his job and place can't give."
+     },
+     "grok": {
+      "broken": true,
+      "quote": "Con queso o con jamón, también. cheese or ham. ¿Qué quiere en la torta?",
+      "reason": "A taxi driver at the taxi stand cannot take a food order for a torta with cheese or ham."
+     }
+    }
+   }
+  ]
+ },
+ {
+  "conversation": "ecc6d454-d6d3-4f90-9f72-f7900a6e911c",
+  "character": "Doña Lupe Hernández",
+  "version": "beginner-2026-11-05c+S2",
+  "marks": []
+ },
+ {
+  "conversation": "2d0744e8-1b1e-4968-a4a8-a437c6abe346",
+  "character": "Valeria Cortés",
+  "version": "beginner-2026-11-03+S2",
+  "marks": []
+ },
+ {
+  "conversation": "e1b64e1f-8088-4b47-91c3-45db506a0a86",
+  "character": "Memo Orozco",
+  "version": "beginner-2026-11-03+S2",
+  "marks": []
+ },
+ {
+  "conversation": "e5a252e1-803c-430e-939e-e84838bb2ffb",
+  "character": "Marisol Ruiz",
+  "version": "beginner-2026-10-27b",
+  "marks": []
+ },
+ {
+  "conversation": "b8375f5e-b7fb-446b-9f37-d5dac84dfa0b",
+  "character": "Don Chucho Mendoza",
+  "version": "beginner-2026-10-27b",
+  "marks": [
+   {
+    "turn": 14,
+    "line": "Gracias, don José María. Hasta la próxima. That's the end of the shine. When you leave, you can say goodbye like this.  [say back: Hasta luego, don Chucho. Muchas gracias.]",
+    "byClaude": {
+     "turn": 14,
+     "quote": "That's the end of the shine. When you leave, you can say goodbye like this.",
+     "reason": "Don Chucho steps out of character to speak as a game narrator or tutor, giving the learner instructions in English instead of speaking as the bolero."
+    },
+    "byGrok": null,
+    "moment": {
+     "claude": {
+      "broken": true,
+      "quote": "That's the end of the shine. When you leave, you can say goodbye like this.",
+      "reason": "Don Chucho steps out of the fiction to speak English as a tutor and coach the learner on what to say, which is not something a bolero would do in his role."
+     },
+     "grok": {
+      "broken": false,
+      "quote": "Gracias, don José María. Hasta la próxima.",
+      "reason": "He is only finishing a shoe-shine payment and saying goodbye, which his stand and job can do."
+     }
+    }
+   }
+  ]
+ },
+ {
+  "conversation": "d424961a-5048-426c-9db7-3d8d04861e5a",
+  "character": "Doña Rosa Ledesma",
+  "version": "beginner-2026-10-25j",
+  "marks": []
+ },
+ {
+  "conversation": "a8429c65-f8a0-4403-ade7-cce2374a1a02",
+  "character": "Doña Tere Jiménez",
+  "version": "beginner-2026-10-25j",
+  "marks": []
+ },
+ {
+  "conversation": "761d7b88-1c12-4984-b168-2007109ce64c",
+  "character": "Doña Ofelia Santiago",
+  "version": "beginner-2026-10-25j",
+  "marks": []
+ }
+]

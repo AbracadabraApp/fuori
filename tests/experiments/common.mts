@@ -60,3 +60,17 @@ export async function pool<T>(jobs: (() => Promise<T>)[], n = 6): Promise<T[]> {
 
 export const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / Math.max(1, xs.length);
 export const pct = (x: number) => `${Math.round(100 * x)}%`;
+
+/** One Grok call returning JSON for a schema (xAI, test scripts only: the game never calls Grok). Retries rate limits and overloads. */
+export async function askGrok<T>(content: string, schema: object, model = process.env.GROK_MODEL ?? 'grok-4.7'): Promise<T> {
+  for (let attempt = 0; ; attempt++) {
+    const r = await fetch('https://api.x.ai/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${process.env.XAI_API_KEY}` },
+      body: JSON.stringify({ model, messages: [{ role: 'user', content }], response_format: { type: 'json_schema', json_schema: { name: 'verdict', schema, strict: true } } }),
+    });
+    if (r.ok) return JSON.parse((await r.json()).choices[0].message.content) as T;
+    if (attempt >= 3 || (r.status !== 429 && r.status < 500)) throw new Error(`grok ${r.status}: ${await r.text()}`);
+    await new Promise((res) => setTimeout(res, 3000 * (attempt + 1)));
+  }
+}
