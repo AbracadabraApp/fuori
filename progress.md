@@ -66,6 +66,31 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-07 (afternoon): the testing plan, for the laptop to run (cloud session)
+
+**Start here:** `docs/prompt-testing.md` (goal, the eight things a character must do, the rules, the card, the queue), `docs/dialogue-model.md` (Decided), the test designer agent (`.claude/agents/test-designer.md`; every card goes through it), `tests/experiments/moments.json`.
+
+**Decided by Josh today:**
+- The goal and **eight items** a character must do in a dialogue (at their level, accurate, local and tipico, in character, responds to English, teaches in role, remembers, brief); every card names the item it serves. Measuring the learner's learning is a separate doc, not written yet.
+- **Character first:** test what the character does (we control it); the learner side (play, records) checks we were right.
+- **Content and display are separate** (dialogue-model.md): decided as the goal; the build has to win a test (CD1).
+- **Information gain first** (rule 11): a bold cut that wins beats a patch for one moment.
+- **Fix the tools, don't work around them:** F1 judges (one per item, 17 of 20 agreement with Josh's marks), F2 simulated learner.
+- **Tests over 5 minutes need Josh's yes** (rule 16a); every card has a Time line.
+- Pairs of parts covering for each other are a hypothesis (A1b), not built into A1.
+
+**Agreed in conversation, not yet written into the docs:**
+- **Intermediate is the base** for the global items (in character, accurate, local, remembers); S1 is the guard on every change; Beginner-only things (the language dial, display) are tested at S1. Josh: S4 is Intermediate plus one paragraph, and Advanced is the same prompt as Intermediate.
+- **Real play at Intermediate:** Josh plays Italy, Sophia and Chema play Mexico (Settings → Level → Intermediate); what bothers them becomes moments. A one-page "what to notice" sheet was offered, not written.
+- **Run, don't hypothesise more.** V2 first: real conversations from the admin export, a judge marks turns that break an item, each replayed as a moment. It ranks problems by how often they happen, finds new ones, checks moments isolate them, and gives F1 its lines to mark. Script not written yet.
+- **Tools to build:** eight judges with pass/fail examples; a marking page for Josh on the phone; the simulated learner spec; a **Test results** page (each test's card, numbers against threshold, A and B lines side by side, marking) with one standard result file per run. Proposed, not built.
+- Doc structure: move the goal and eight items to the top of dialogue-model.md (testing doc points to them); dialogue lessons out of the testing doc. Proposed, not done.
+- Candidate cards Josh hasn't approved: global fix at Intermediate carries to S1; global rules from beginner.md into dialogue.md; is S4 needed; the examples echo (counted on A1/Q4 runs); answers with the verb (needs Josh's framing); say-it routing replay.
+
+**Built today:** named prompt parts (beginner.md 23, character.md 5; byte-identical prompts; `test:prompt-parts`), `setPartsOff` and `tests/experiments/ablate.mts` (A1, `test:parts-off`), `tests/experiments/moments.mts` and `test:moments`, T8 and A1 in the queue.
+
+**In flight:** the laptop session (shimmying-fairy) is replaying every moment 3× per country, committing to `tests/experiments/results/` and messaging the cloud session back.
+
 ## 2026-11-07: Voices out (credits), Italy's voices by age and stored (cloud session)
 
 - **No voices since about Nov 6:** ElevenLabs credits used up, 121,029 of 121,029 (Creator; no overage allowed). Resets **Wed Nov 11, ~7:40 pm Pacific**. Every line falls back to the phone's voice. Big days: Nov 4 (20k, the loudness measurements) and Nov 6 (27k, every voice). Normal play is 2-5k a day, so Creator runs out with any spike. Josh made a new restricted key (in Railway on both services; also saved as this cloud environment's network secret for api.elevenlabs.io): TTS, Sound Effects, Music, Voice Generation, Voices write, Pronunciation write, User, Workspace Analytics, History read.
