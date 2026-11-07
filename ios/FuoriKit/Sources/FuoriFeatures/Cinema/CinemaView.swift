@@ -101,7 +101,7 @@ struct TrailerView: View {
                 if let video = playing ?? film.videos.first {
                     ZStack {
                         Color.black
-                        YouTubePlayerView(videoId: video.youtube, onReady: { ready = true }, onError: { problem = $0 })
+                        YouTubePlayerView(videoId: video.youtube, captions: video.language, onReady: { ready = true }, onError: { problem = $0 })
                             .id(video.youtube)
                             // Its web view is white until YouTube is ready: black and the spinner show instead
                             .opacity(ready ? 1 : 0)

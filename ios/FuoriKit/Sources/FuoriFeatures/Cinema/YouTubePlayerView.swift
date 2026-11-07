@@ -7,6 +7,9 @@ import YouTubeiOSPlayerHelper
 /// plays inline and starts by itself; a new id loads the new video
 struct YouTubePlayerView: UIViewRepresentable {
     let videoId: String
+    /// Captions on from the start, in this language when the video has them
+    /// (Josh, 2026-11-06: "Can we trigger cc"); the video's own language code
+    var captions: String? = nil
     var onReady: () -> Void = {}
     var onError: (String) -> Void = { _ in }
 
@@ -21,7 +24,13 @@ struct YouTubePlayerView: UIViewRepresentable {
     func updateUIView(_ player: YTPlayerView, context: Context) {
         guard context.coordinator.loaded != videoId else { return }
         context.coordinator.loaded = videoId
-        player.load(withVideoId: videoId, playerVars: ["playsinline": 1, "autoplay": 1, "rel": 0, "fs": 1])
+        var vars: [String: Any] = ["playsinline": 1, "autoplay": 1, "rel": 0, "fs": 1]
+        // cc_load_policy shows captions by default; cc_lang_pref picks their language when there are several
+        if let captions, !captions.isEmpty, captions != "und" {
+            vars["cc_load_policy"] = 1
+            vars["cc_lang_pref"] = captions
+        }
+        player.load(withVideoId: videoId, playerVars: vars)
     }
 
     final class Coordinator: NSObject, YTPlayerViewDelegate {
@@ -49,6 +58,7 @@ struct YouTubePlayerView: UIViewRepresentable {
 /// macOS (the package tests): no player
 struct YouTubePlayerView: View {
     let videoId: String
+    var captions: String? = nil
     var onReady: () -> Void = {}
     var onError: (String) -> Void = { _ in }
     var body: some View { Color.black }
