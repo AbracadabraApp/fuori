@@ -6,7 +6,7 @@ going too fast"). Every unit a Beginner turn is given, its size, where it came
 from (the dated problem it answered, from the changelogs and
 `docs/prompt-trials.md`), whether it was ever measured, and a hypothesis. **The
 hypotheses are guesses to test, not findings.** Tests are logged in
-`docs/prompt-tests.md`, each pointing back to a unit id here.
+`docs/prompt-trials.md`, each pointing back to a unit id here.
 
 Italy and Mexico have the same structure (`content/<country>/prompts/`). Words
 counted on Italy, 2026-11-06 (beginner.md 2026-11-06, dialogue.md

@@ -1,4 +1,4 @@
-// Test T1 (docs/prompt-tests.md): does naming a topic in a here line make
+// Test T1 (docs/prompt-trials.md): does naming a topic in a here line make
 // the character bring it up on almost every visit?
 // Variable: Ximena's here line (Café Amapola, Mexico City) with or without
 // "You love talking about café de olla…"; everything else the same.
