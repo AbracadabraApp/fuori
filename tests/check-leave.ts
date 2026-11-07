@@ -40,8 +40,8 @@ check(screen.includes('onBoard={() => leave(ticket.onBoard)}'), 'the ticket\'s b
 check(!/onClick=\{onBack\}|onClick=\{ticket\.onBoard\}/.test(screen), 'an exit calls onBack/onBoard directly, skipping the save');
 
 // Departures: same route, same platform and seat; no time on the ticket (Josh, 2026-10-14)
-const a = departureFor('roma', 'firenze');
-const b = departureFor('roma', 'firenze');
+const a = departureFor('roma-nuova', 'firenze');
+const b = departureFor('roma-nuova', 'firenze');
 check(a.platform === b.platform && a.seat === b.seat, 'platform and seat are fixed per route');
 check(a.platform >= 1 && a.platform <= 12 && a.seat >= 11 && a.seat <= 88, `platform 1–12, seat 11–88 (got ${a.platform}, ${a.seat})`);
 check(!('time' in a), 'no departure time: it could contradict the ticket seller');

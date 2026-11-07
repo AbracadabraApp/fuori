@@ -14,7 +14,7 @@ import type { Turn } from '@/lib/types';
 const failures: string[] = [];
 const check = (ok: boolean, msg: string) => { if (!ok) failures.push(msg); };
 
-const roma = cities.find((c) => c.id === 'roma')!;
+const roma = cities.find((c) => c.id === 'roma-nuova')!;
 const character = roma.places.map((p) => characterForPlace(roma, p)).find(Boolean)!;
 
 const lines: Turn[] = [{ who: 'npc', transcript: 'Buongiorno! Cosa ti preparo?', translation: 'Good morning!' }];

@@ -12,15 +12,16 @@
  *
  * Hidden on purpose (Josh, 2026-10-13): Rita's apartment (the game has no
  * time or rest, it's about going out to places) and Giulia's bar (no
- * character should be special). Both stay in roma.ts as ordinary characters.
+ * character should be special). They lived in the original Roma, removed
+ * 2026-11-07 (Josh: "purge the first Rome").
  */
 // Bakeries hidden (Josh, 2026-10-27: "the conversation is poor"), except
 // Dario's forno in Rome, brought back the same day, and the four pastry shops
 // that sell their city's own specialty (Siena, Napoli, Taormina, Genova)
 // Wine bars hidden (Josh, 2026-10-27: "not appropriate for all ages")
 export const showcase: Record<string, string[]> = {
-  // Roma redone (Josh, 2026-10-22; docs/rome-redo.md): today's Rome beside the
-  // original, to compare. No language school: schools move into Learn.
+  // Roma redone (Josh, 2026-10-22; docs/rome-redo.md); the only Rome since the
+  // original was removed (2026-11-07). Magda's school is in its file, not shown.
   'roma-nuova': [
     'cinema-pigneto', // Rome cinema trial (Josh, 2026-11-05): posters and trailers, no person; Pigneto, Pasolini's neighbourhood
     'bar-mattina-nuova',
@@ -321,7 +322,8 @@ export const homeCities = ['roma-nuova', 'matera', 'firenze', 'siena', 'venezia'
  * don't lose it"): the original Roma's shown places, while Roma nuova was
  * tried (docs/rome-redo.md). Retired 2026-11-03 (Josh: "nuova rome is the
  * only rome"); Sandro, Dario, Tommaso, Gina and Don Paolo moved to Roma nuova
- * with their ids. roma.ts, its people and their memories stay in the data.
+ * with their ids. roma.ts removed 2026-11-07 (Josh); its conversations and
+ * memories stay in the database, unread by the game.
  */
 export const hiddenForNow: Record<string, string[]> = {
   firenze: [ // replaced 2026-10-23
@@ -338,19 +340,5 @@ export const hiddenForNow: Record<string, string[]> = {
     'piazza-santo-spirito', // M2: bench character Alessia (studentessa d'arte)
     'scuola-lingua-firenze', // M2: language school with Magda
     'stazione-smn', // M2: train station for travel
-  ],
-  roma: [
-    'bar-monti-corner',
-    'bar-testaccio-morning',
-    'forno-trastevere',
-    'mercato-san-cosimato',
-    'trattoria-trastevere',
-    'farmacia-trastevere',
-    'piazza-santa-maria-trastevere',
-    'libreria-trastevere',
-    'enoteca-trastevere',
-    'villa-borghese',
-    'scuola-lingua-roma', // M2: language school with Magda
-    'stazione-termini', // M2: train station for travel
   ],
 };

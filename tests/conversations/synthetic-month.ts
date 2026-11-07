@@ -23,7 +23,7 @@ import type { CharacterSheet, Turn } from '@/lib/types';
 
 const REPLIES = 15;
 const L = language.name;
-const roma = cities.find((c) => c.id === 'roma')!;
+const roma = cities.find((c) => c.id === 'roma-nuova')!;
 // 30 visits: the corner bar most mornings, the market and bakery weekly, the rest now and then; the station near the end
 const PLAN = [
   'bar-monti-corner', 'forno-trastevere', 'mercato-san-cosimato', 'bar-monti-corner', 'piazza-santa-maria-trastevere',
