@@ -90,6 +90,7 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 **Built today:** named prompt parts (beginner.md 23, character.md 5; byte-identical prompts; `test:prompt-parts`), `setPartsOff` and `tests/experiments/ablate.mts` (A1, `test:parts-off`), `tests/experiments/moments.mts` and `test:moments`, T8 and A1 in the queue.
 
 **In flight:** the laptop session (shimmying-fairy) is replaying every moment 3× per country, committing to `tests/experiments/results/` and messaging the cloud session back.
+- **Later:** Josh asked how solid the path is. Direction solid, execution risky (judges, process weight, prompt not the only lever, noise). **Time box 1 to 3 days** for first results (Josh). Proposals for his decision, in prompt-testing.md → Time box and better judges: a second model as judge for subjective items; graded word lists (De Mauro VdB, Profilo; Cervantes PCIC) to count level in code; source-checked facts for accuracy; native dialogue as judge anchors; a native reader marking ~20 lines per country as the gold standard. Open: whether his 11-02 "no outside tools" covers these.
 
 ## 2026-11-07: Voices out (credits), Italy's voices by age and stored (cloud session)
 

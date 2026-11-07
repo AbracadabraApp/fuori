@@ -66,6 +66,21 @@ Six changes to the rules above, from a cloud-session review. None is in force un
 
 Smaller: a kept change gets a small check in the other country before it ships ("fixes are global"); the welcome counts as a kind of conversation and gets cards like the rest.
 
+## Time box and better judges (2026-11-07)
+
+**Time box: 1 to 3 days** (Josh, 2026-11-07: "I'm more inclined for a 1 to 3 day time box"). The first real results (V2, then A1) come within 1 to 3 days, with only the judges those tests need. If the process hasn't produced decisions by then, cut the process back rather than add to it. Suggested days (Claude): day 1, V2 on real conversations with a level count from word lists and Claude judges for the other items; day 2, a second model's judge where Claude's answers look shaky, and Josh marks the disagreements; day 3, decide what the results say and plan the next round.
+
+**Risks named (Claude's assessment, 2026-11-07):** judges are the weak link (Claude judging Claude, on soft items like local and native); process can outrun results; the prompt may not be the biggest lever (the kind of place, `here` lines, memory and the model are test variables too); the eight items stand in for learning, checked only by a few players; few runs means noise, so thresholds must be respected.
+
+**Proposals for better judges, for Josh's decision:**
+- **A second judge from another company's model** for the subjective items (sounds native, local and tipico, in character): agreement strengthens a verdict; disagreement marks the line for a human. Needs that provider's key, in test scripts only. The roadmap already allows it when a shared blind spot shows up.
+- **Native-language resources, so some judges become measurements:**
+  - At their level: official graded word lists, counted in code: Italian, De Mauro's *Nuovo vocabolario di base* and the *Profilo della lingua italiana* (already cited for CEFR levels); Spanish, the Instituto Cervantes *Plan Curricular*. Kept as content per language.
+  - Accurate: a judge that checks each claim against a source (the place's or dish's Italian or Spanish Wikipedia page), not the model's memory.
+  - Sounds native: the judge anchored with real native dialogue as examples (textbook dialogues, transcribed film and TV).
+- **A native reader as the gold standard:** about 20 lines marked once by an Italian and a Mexican reader (a friend or a paid tutor) calibrate every judge better than anything automatic.
+- **Open question for Josh:** on 2026-11-02 he ruled out outside tools ("LanguageTool caught no Italian grammar errors; subtitle lists count words, not phrases"). Graded level lists and source-checked facts are a different kind of resource; whether the ruling covers them is his call.
+
 ## The queue
 
 Tests to run, in order, each to become a full card before it runs. The tools come first: rules 5, 7 and 8 work around a simulated learner that steers and judges that were lenient or literal; F1 and F2 fix the tools themselves. Who decides what: design questions are Josh's (rule 16).
