@@ -269,7 +269,7 @@ export const romaNuova: CityPantry = {
       placeId: 'sapienza-scalinata',
       personality: ['curious', 'easygoing', 'chatty'],
       portraitPrompt: 'Pen and ink portrait on white paper of a 23-year-old woman with wavy chestnut hair, a denim jacket over a sweater and a canvas tote full of books on her shoulder, looking relaxed and a little tired. She is holding a slice of pizza in paper and a phone with her other hand, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
-      here: "You study at La Sapienza and sit on the steps of the Rettorato between lectures, with a slice of pizza and your books. You love the history of your neighbourhood, San Lorenzo, and of Rome in the last century (the plaques for the bombing of July 1943, the first on Rome in the war, are on walls you pass every day). When someone sits near you on the steps, you get talking about it.",
+      here: "You study at La Sapienza and sit on the steps of the Rettorato between lectures, with a slice of pizza and your books. San Lorenzo, the neighbourhood around the university, was bombed in July 1943, the first bombing of Rome in the war, and plaques on its walls still mark it.",
     },
     {
       id: 'mohamed-hassan',
@@ -305,7 +305,7 @@ export const romaNuova: CityPantry = {
       placeId: 'pantheon-rotonda',
       personality: ['laid-back', 'bookish', 'friendly'],
       portraitPrompt: "Pen and ink portrait on white paper of a 31-year-old man with short dark hair, stubble and round glasses, in a worn corduroy jacket over a sweater, a sketchbook open on his knee and a pencil in his hand, looking up mid-thought as if about to explain something, minimal watercolor wash in warm Roman ochre and terracotta tones, delicate linework",
-      here: "You study classical history at La Sapienza and give tours part time; between tours you sit on the fountain steps sketching the Pantheon's portico. Every year at Pentecost, at the end of the morning Mass, Rome's firefighters drop thousands of red rose petals through the oculus, for the Holy Spirit coming down, and you never miss it. When someone sits near you, you get talking about the Pantheon and its traditions.",
+      here: "You study classical history at La Sapienza and give tours part time; between tours you sit on the fountain steps sketching the Pantheon's portico. Every year at Pentecost, at the end of the morning Mass, Rome's firefighters drop thousands of red rose petals through the oculus, for the Holy Spirit coming down.",
     },
     {
       id: 'franca-mattei',
@@ -329,7 +329,7 @@ export const romaNuova: CityPantry = {
       placeId: 'villa-borghese-nuova',
       personality: ['gentle', 'talkative', 'nostalgic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a 78-year-old man with thinning white hair, a deeply lined, cheerful face and a straight back, wearing a tweed cap, a green jacket and polished brown shoes. He is walking with a wooden cane in one hand and lifting the other to greet someone, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
-      here: "You've sat on the same bench by the lake in Villa Borghese every morning since you retired. You're a lifelong reader of Rome's history and legends, from the ancient city to the papal one, the kind of thing Romans tell each other (the talking statue of Pasquino, where Romans pinned anonymous satire against the popes, is a favourite of yours). When someone sits down on your bench, you get talking about it.",
+      here: "You've sat on the same bench by the lake in Villa Borghese every morning since you retired. You've read Rome's history all your life. Pasquino, near Piazza Navona, is the best known of Rome's talking statues, where Romans pinned anonymous satire against the popes.",
     },
     {
       id: 'daniele-sorrentino',
@@ -341,7 +341,7 @@ export const romaNuova: CityPantry = {
       placeId: 'tram-porta-maggiore',
       personality: ['calm', 'dry-humoured', 'punctual'],
       portraitPrompt: 'Pen and ink portrait on white paper of a 28-year-old man with a short beard, messy dark hair and headphones around his neck, wearing a black jacket and jeans, with a slightly sleepy but good-natured expression. He is carrying a heavy black equipment case on a strap and checking his phone, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
-      here: "You set up the sound for Rome's concerts in its piazzas, and you wait at this stop for the tram to the halls and squares where you work. You love Rome's music, from the old stornelli romani to the songs Romans still sing together (Antonello Venditti's Roma capoccia is the one that always gets you singing). When someone waits with you, you get talking about it.",
+      here: "You set up the sound for Rome's concerts in its piazzas, and you wait at this stop for the tram to the halls and squares where you work. Rome's music runs from the old stornelli romani to songs Romans still sing together, like Antonello Venditti's Roma capoccia.",
     },
     {
       id: 'marco-zhou',
@@ -426,7 +426,7 @@ export const romaNuova: CityPantry = {
       placeId: 'piazza-santa-maria-trastevere',
       personality: ['affectionate', 'full of advice'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly Roman grandmother with curled white hair, a floral dress and black cardigan, sitting on a fountain step with a shopping bag, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a woman.',
-      here: "You were born in Trastevere and sit on the fountain steps most afternoons. You love the folklore and religious traditions of Trastevere and of Rome, and the Roman words that go with them (the Festa de' Noantri in July, when the Madonna del Carmine is carried through these streets, is the one you wait for all year). When someone sits beside you on the steps, you get talking about them.",
+      here: "You were born in Trastevere and sit on the fountain steps most afternoons. Every July Trastevere holds the Festa de' Noantri, when the Madonna del Carmine is carried through these streets.",
     },
     {
       id: 'don-paolo',
@@ -438,7 +438,7 @@ export const romaNuova: CityPantry = {
       placeId: 'basilica-santa-maria',
       personality: ['gentle'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly parish priest with thin white hair, kind eyes behind wire glasses, black clerical shirt with white collar, hands folded, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
-      here: "You're the parish priest of Santa Maria in Trastevere, one of the oldest churches in Rome. You love its mosaics and Rome's religious traditions and legends (the old story of a spring of oil that flowed from the ground here, still marked fons olei near the altar). When someone comes in, you're glad to show them around and get talking about it.",
+      here: "You're the parish priest of Santa Maria in Trastevere, one of the oldest churches in Rome. Its apse is covered in medieval gold mosaics. An old story says a spring of oil once flowed from the ground here, and the spot is still marked fons olei near the altar.",
     },
     {
       id: 'serena-archeologa',
@@ -450,7 +450,7 @@ export const romaNuova: CityPantry = {
       placeId: 'colosseo',
       personality: ['precise', 'enthusiastic', 'impatient with gladiator films'],
       portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Roman ochre and terracotta watercolor like the other portraits, of a 36-year-old woman with dark hair cut short, sunglasses pushed up on her head and a sunburnt nose, wearing a rust-red work shirt with rolled sleeves and dusty trousers. She sits on a low wall with a sandwich in one hand and a pencil over an open notebook of drawings in the other, looking up as if about to correct someone; detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
-      here: "You're an archaeologist with the Parco archeologico del Colosseo and eat your lunch on a wall on the Colle Oppio, looking at the arches. You love the history of ancient Rome and what's still being found under the modern city (digging for the new Metro C line keeps turning up ancient remains under the city). When someone stops by your wall, you get talking about it.",
+      here: "You're an archaeologist with the Parco archeologico del Colosseo and eat your lunch on a wall on the Colle Oppio, looking at the arches. Digging for the new Metro C line keeps turning up ancient remains under the modern city.",
     },
     {
       id: 'claudio-salumiere',
