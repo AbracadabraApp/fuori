@@ -1,0 +1,564 @@
+[
+ {
+  "label": "original",
+  "conversation": "e96ef008-043f-4e24-927e-0d318ab65f54",
+  "turn": 2,
+  "known": false,
+  "parts": [
+   {
+    "kind": "english",
+    "text": "No problem, it's a long way, so let me help you choose."
+   },
+   {
+    "kind": "question",
+    "text": "Vuole il treno veloce o il regionale?"
+   },
+   {
+    "kind": "answer",
+    "text": "Il treno veloce, per favore."
+   },
+   {
+    "kind": "answer",
+    "text": "Il regionale, per favore."
+   }
+  ],
+  "claude": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian is a short present-tense question ('Vuole il treno veloce o il regionale?') with simple vocabulary, and the answer options 'Il treno veloce' and 'Il regionale' make the choice clear."
+  },
+  "grok": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian uses only present-tense common verbs and short everyday phrases, and the on-screen answers make the choice fully followable."
+  }
+ },
+ {
+  "label": "planted",
+  "conversation": "e96ef008-043f-4e24-927e-0d318ab65f54",
+  "turn": 2,
+  "known": true,
+  "parts": [
+   {
+    "kind": "english",
+    "text": "No problem, it's a long way, so let me help you choose."
+   },
+   {
+    "kind": "question",
+    "text": "Voleva il treno veloce o il regionale?"
+   },
+   {
+    "kind": "answer",
+    "text": "Il treno veloce, per favore."
+   },
+   {
+    "kind": "answer",
+    "text": "Il regionale, per favore."
+   }
+  ],
+  "claude": {
+   "broken": false,
+   "quote": "Voleva il treno veloce o il regionale?",
+   "reason": "The question uses the imperfect 'voleva', which is slightly beyond a Beginner, but it is a short, simple sentence whose meaning is clear from the English setup and the two answer choices shown to say back."
+  },
+  "grok": {
+   "broken": true,
+   "quote": "Voleva",
+   "reason": "Voleva is the imperfect past of volere, a tense a Beginner who only knows the present is not expected to follow, and neither the English nor the answers explain that form."
+  }
+ },
+ {
+  "label": "original",
+  "conversation": "a2e629a8-429d-4145-8cbf-736f5652495e",
+  "turn": 2,
+  "known": false,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Piacere, Joshua!"
+   },
+   {
+    "kind": "english",
+    "text": "Come in, look around. The bed, the loom and the corner for the animals are all here, as the family left them."
+   },
+   {
+    "kind": "question",
+    "text": "È la prima volta qui a Matera?"
+   },
+   {
+    "kind": "answer",
+    "text": "Sì, è la prima volta."
+   },
+   {
+    "kind": "answer",
+    "text": "No, abito qui."
+   }
+  ],
+  "claude": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian is simple: 'Piacere, Joshua!' is a basic greeting, 'È la prima volta qui a Matera?' uses present tense and everyday words, and the answers ('Sì, è la prima volta.' / 'No, abito qui.') are short and model the question's key phrase, so nothing is beyond a Beginner."
+  },
+  "grok": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian is only a greeting and a short present-tense question, and the answers shown make it easy to follow."
+  }
+ },
+ {
+  "label": "planted",
+  "conversation": "a2e629a8-429d-4145-8cbf-736f5652495e",
+  "turn": 2,
+  "known": true,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Piacere, Joshua!"
+   },
+   {
+    "kind": "english",
+    "text": "Come in, look around. The bed, the loom and the corner for the animals are all here, as the family left them."
+   },
+   {
+    "kind": "question",
+    "text": "Sarà la prima volta qui a Matera?"
+   },
+   {
+    "kind": "answer",
+    "text": "Sì, è la prima volta."
+   },
+   {
+    "kind": "answer",
+    "text": "No, abito qui."
+   }
+  ],
+  "claude": {
+   "broken": false,
+   "quote": "Sarà la prima volta qui a Matera?",
+   "reason": "The future-tense 'Sarà' (conjecture) is beyond a Beginner, but the question is short and the answers 'Sì, è la prima volta' / 'No, abito qui' repeat 'la prima volta' and give clear options, so it is followable."
+  },
+  "grok": {
+   "broken": true,
+   "quote": "Sarà la prima volta qui a Matera?",
+   "reason": "The question uses the future tense Sarà, which a Beginner is not expected to know, and neither the English nor the present-tense answers explain that form."
+  }
+ },
+ {
+  "label": "original",
+  "conversation": "c9a43f4a-c741-47f4-8ec4-734c1270b7d3",
+  "turn": 2,
+  "known": false,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Subito, un caffè!"
+   },
+   {
+    "kind": "word",
+    "text": "Ecco il suo caffè, caldo."
+   },
+   {
+    "kind": "question",
+    "text": "Le piace Matera?"
+   },
+   {
+    "kind": "answer",
+    "text": "Sì, mi piace molto."
+   },
+   {
+    "kind": "answer",
+    "text": "Non lo so ancora."
+   }
+  ],
+  "claude": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian is short and simple (present tense, everyday words like caffè, caldo, Le piace Matera?), and the answers 'Sì, mi piace molto' and 'Non lo so ancora' model the response, so nothing is well beyond a Beginner."
+  },
+  "grok": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian is short present-tense cafe language and a simple like-question made followable by the sample answers."
+  }
+ },
+ {
+  "label": "planted",
+  "conversation": "c9a43f4a-c741-47f4-8ec4-734c1270b7d3",
+  "turn": 2,
+  "known": true,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Subito, un caffè!"
+   },
+   {
+    "kind": "word",
+    "text": "Ecco il suo caffè, caldo."
+   },
+   {
+    "kind": "question",
+    "text": "Le è piaciuta Matera?"
+   },
+   {
+    "kind": "answer",
+    "text": "Sì, mi piace molto."
+   },
+   {
+    "kind": "answer",
+    "text": "Non lo so ancora."
+   }
+  ],
+  "claude": {
+   "broken": true,
+   "quote": "Le è piaciuta Matera?",
+   "reason": "The question uses the passato prossimo of piacere with an indirect object pronoun and agreement (\"Le è piaciuta\"), which is well beyond a Beginner, and no English or answer option makes it followable, since the answers \"Sì, mi piace molto\" and \"Non lo so ancora\" don't help decode the past-tense question."
+  },
+  "grok": {
+   "broken": true,
+   "quote": "Le è piaciuta Matera?",
+   "reason": "The question uses the past tense of piacere (è piaciuta), beyond a Beginner limited to the present, and neither the English nor the present-tense answers make that form followable."
+  }
+ },
+ {
+  "label": "original",
+  "conversation": "d33221a6-0063-4df9-b87b-7bbe327a580e",
+  "turn": 2,
+  "known": false,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Un caffè, subito!"
+   },
+   {
+    "kind": "word",
+    "text": "Ecco il suo caffè."
+   },
+   {
+    "kind": "question",
+    "text": "Le piace Matera?"
+   },
+   {
+    "kind": "answer",
+    "text": "Sì, mi piace molto."
+   },
+   {
+    "kind": "answer",
+    "text": "Non lo so ancora."
+   }
+  ],
+  "claude": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian is short and simple: 'Un caffè, subito!', 'Ecco il suo caffè.', 'Le piace Matera?' and the answers use basic present-tense phrases a Beginner can follow, with the question's meaning supported by the answers."
+  },
+  "grok": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian uses short present-tense phrases with everyday words, and the answers model Le piace with mi piace."
+  }
+ },
+ {
+  "label": "planted",
+  "conversation": "d33221a6-0063-4df9-b87b-7bbe327a580e",
+  "turn": 2,
+  "known": true,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Un caffè, subito!"
+   },
+   {
+    "kind": "word",
+    "text": "Ecco il suo caffè."
+   },
+   {
+    "kind": "question",
+    "text": "Le è piaciuta Matera?"
+   },
+   {
+    "kind": "answer",
+    "text": "Sì, mi piace molto."
+   },
+   {
+    "kind": "answer",
+    "text": "Non lo so ancora."
+   }
+  ],
+  "claude": {
+   "broken": true,
+   "quote": "Le è piaciuta Matera?",
+   "reason": "The question uses the passato prossimo of piacere with an indirect object pronoun and formal register, which is well beyond a Beginner, and no English or answer option makes it followable (the answers use the present 'mi piace' and 'non lo so')."
+  },
+  "grok": {
+   "broken": true,
+   "quote": "Le è piaciuta Matera?",
+   "reason": "The question uses the passato prossimo of piacere (è piaciuta) plus formal Le, which is well beyond a Beginner’s present-tense range, and the answers stay in the present (mi piace) so they do not make that past form followable."
+  }
+ },
+ {
+  "label": "original",
+  "conversation": "23701beb-b2f3-4250-b0ea-d729fb51dadb",
+  "turn": 2,
+  "known": false,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Ecco il caffè, caldo e forte."
+   },
+   {
+    "kind": "english",
+    "text": "We drink it standing at the counter, quick, then look out at the ravine."
+   },
+   {
+    "kind": "question",
+    "text": "Le piace il caffè forte?"
+   },
+   {
+    "kind": "answer",
+    "text": "Sì, mi piace."
+   },
+   {
+    "kind": "answer",
+    "text": "No, non molto."
+   }
+  ],
+  "claude": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian is short and simple (present tense, basic words like caldo, forte, mi piace), and the English and the answers to say back make \"Le piace il caffè forte?\" followable for a Beginner."
+  },
+  "grok": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian uses only short present-tense phrases and everyday food words, and the suggested answers make the question followable."
+  }
+ },
+ {
+  "label": "planted",
+  "conversation": "23701beb-b2f3-4250-b0ea-d729fb51dadb",
+  "turn": 2,
+  "known": true,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Ecco il caffè, caldo e forte."
+   },
+   {
+    "kind": "english",
+    "text": "We drink it standing at the counter, quick, then look out at the ravine."
+   },
+   {
+    "kind": "question",
+    "text": "Le è piaciuto il caffè forte?"
+   },
+   {
+    "kind": "answer",
+    "text": "Sì, mi piace."
+   },
+   {
+    "kind": "answer",
+    "text": "No, non molto."
+   }
+  ],
+  "claude": {
+   "broken": true,
+   "quote": "Le è piaciuto il caffè forte?",
+   "reason": "The question uses the passato prossimo of piacere with an indirect object pronoun (\"Le è piaciuto\"), which is well beyond a Beginner, and the English does not explain it, though the answers \"Sì, mi piace\" and \"No, non molto\" are simple enough to say back."
+  },
+  "grok": {
+   "broken": true,
+   "quote": "Le è piaciuto il caffè forte?",
+   "reason": "The question uses the passato prossimo of piacere, which a Beginner who only knows the present tense cannot follow, and neither the English nor the present-tense answers explain that form."
+  }
+ },
+ {
+  "label": "original",
+  "conversation": "df4de626-0625-4630-9760-4bdea4728dc0",
+  "turn": 2,
+  "known": false,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Subito, un caffè!"
+   },
+   {
+    "kind": "english",
+    "text": "At my bar you drink it standing at the counter, quick and strong."
+   },
+   {
+    "kind": "question",
+    "text": "Lo vuole con zucchero o senza?"
+   },
+   {
+    "kind": "answer",
+    "text": "Con zucchero, per favore."
+   },
+   {
+    "kind": "answer",
+    "text": "Senza zucchero, grazie."
+   }
+  ],
+  "claude": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian is short and simple (Subito, un caffè! / Lo vuole con zucchero o senza?), uses only present tense and everyday words, and the answers to say back model the choice clearly."
+  },
+  "grok": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian uses short present-tense phrases and everyday food words, and the English plus the two answer options make subito, lo vuole, and senza followable."
+  }
+ },
+ {
+  "label": "planted",
+  "conversation": "df4de626-0625-4630-9760-4bdea4728dc0",
+  "turn": 2,
+  "known": true,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Subito, un caffè!"
+   },
+   {
+    "kind": "english",
+    "text": "At my bar you drink it standing at the counter, quick and strong."
+   },
+   {
+    "kind": "question",
+    "text": "Lo voleva con zucchero o senza?"
+   },
+   {
+    "kind": "answer",
+    "text": "Con zucchero, per favore."
+   },
+   {
+    "kind": "answer",
+    "text": "Senza zucchero, grazie."
+   }
+  ],
+  "claude": {
+   "broken": true,
+   "quote": "Lo voleva con zucchero o senza?",
+   "reason": "The question uses the imperfect tense with a direct object pronoun (\"Lo voleva\"), which is beyond a Beginner, and although the answers hint at sugar, nothing in the turn explains the verb form."
+  },
+  "grok": {
+   "broken": true,
+   "quote": "Lo voleva con zucchero o senza?",
+   "reason": "\"Voleva\" is the imperfect past of volere, beyond a Beginner who only knows the present tense, and the English line does not explain that question."
+  }
+ },
+ {
+  "label": "original",
+  "conversation": "aed34ea6-52f0-4114-9e12-cbc3fb9bfe68",
+  "turn": 2,
+  "known": false,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Un caffè, subito."
+   },
+   {
+    "kind": "english",
+    "text": "Here we drink it standing at the counter, nice and fast."
+   },
+   {
+    "kind": "question",
+    "text": "Vuole anche un cornetto?"
+   },
+   {
+    "kind": "answer",
+    "text": "Sì, un cornetto, per favore."
+   },
+   {
+    "kind": "answer",
+    "text": "No, grazie. Solo il caffè."
+   }
+  ],
+  "claude": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian parts (\"Un caffè, subito.\" and \"Vuole anche un cornetto?\") use simple present-tense and everyday café vocabulary, and the on-screen answers make the question easy to follow, so nothing is beyond a Beginner."
+  },
+  "grok": {
+   "broken": false,
+   "quote": "",
+   "reason": "The Italian is short present-tense café language (subito, anche, cornetto) that the English and the model answers make easy to follow."
+  }
+ },
+ {
+  "label": "planted",
+  "conversation": "aed34ea6-52f0-4114-9e12-cbc3fb9bfe68",
+  "turn": 2,
+  "known": true,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Un caffè, subito."
+   },
+   {
+    "kind": "english",
+    "text": "Here we drink it standing at the counter, nice and fast."
+   },
+   {
+    "kind": "question",
+    "text": "Voleva anche un cornetto?"
+   },
+   {
+    "kind": "answer",
+    "text": "Sì, un cornetto, per favore."
+   },
+   {
+    "kind": "answer",
+    "text": "No, grazie. Solo il caffè."
+   }
+  ],
+  "claude": {
+   "broken": false,
+   "quote": "Voleva anche un cornetto?",
+   "reason": "The imperfect 'voleva' is beyond a Beginner, but it is a short, common polite question, and the on-screen answers ('Sì, un cornetto, per favore' / 'No, grazie') make the meaning clear, so it is followable."
+  },
+  "grok": {
+   "broken": false,
+   "quote": "",
+   "reason": ""
+  }
+ },
+ {
+  "label": "real (V2b)",
+  "conversation": "56386f4b-c8fb-40c4-b5f9-897cb1139411",
+  "turn": 8,
+  "known": true,
+  "parts": [
+   {
+    "kind": "word",
+    "text": "Bene! Una carbonara stasera."
+   },
+   {
+    "kind": "english",
+    "text": "Nothing is cooking now, so no order yet. You pay at the counter after dinner, and tonight Marco will have your carbonara ready."
+   },
+   {
+    "kind": "question",
+    "text": "Ha mangiato una vera carbonara a Roma?"
+   },
+   {
+    "kind": "answer",
+    "text": "No, non ancora."
+   },
+   {
+    "kind": "answer",
+    "text": "Sì, una volta."
+   }
+  ],
+  "claude": {
+   "broken": true,
+   "quote": "Ha mangiato una vera carbonara a Roma?",
+   "reason": "The question uses the passato prossimo (\"Ha mangiato\"), a past tense beyond a Beginner, and neither her English nor the answers (\"No, non ancora\" / \"Sì, una volta\") make its meaning clear enough to follow."
+  },
+  "grok": {
+   "broken": true,
+   "quote": "Ha mangiato una vera carbonara a Roma?",
+   "reason": "The question uses passato prossimo (past tense), which a Beginner is not expected to know, and the English in the turn never glosses that meaning."
+  }
+ }
+]
