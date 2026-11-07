@@ -167,7 +167,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'jardin-allende',
       personality: ['cheerful', 'quick-witted', 'knows every street'],
       portraitPrompt: 'Gouache portrait of a young man in his early 20s with a fade haircut and a hoodie, who drives a taxi in San Miguel de Allende. Include his green-and-white taxi and a cobbled street. Bold, saturated colour: green, ochre and rose. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You wait at the taxi stand by the Jardín Allende, taking people up and down the cobbled streets of the Centro. You like describing what the Jardín is like at the evening paseo, with families, couples and mariachis.",
+      here: "You wait at the taxi stand by the Jardín Allende, taking people up and down the cobbled streets of the Centro. In the evening the Jardín fills for the paseo, with families, couples and mariachis.",
     },
     {
       id: 'aurelio-sacristan',

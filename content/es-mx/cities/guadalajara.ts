@@ -216,7 +216,7 @@ export const guadalajara: CityPantry = {
       placeId: 'tacos-el-compa-nacho',
       personality: ['quick', 'joking', 'a perfectionist about his salsa'],
       portraitPrompt: 'Gouache portrait of a broad-shouldered man of 35 with a short beard, a bandana on his head and a big laugh, wearing a stained apron over a t-shirt, who serves tacos at Tacos El Compa Nacho, Chapultepec, Guadalajara. Include the stand with its steaming pot and salsas. Bold, saturated colour: chilli red, turquoise and golden yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You work in your taquería in Chapultepec, making tacos dorados and taking great care of your salsa, which never leaves without being tasted. Late-night tacos after going out are a custom here, and you like asking people whether they can handle the picante.",
+      here: "You work in your taquería in Chapultepec, making tacos dorados and taking great care of your salsa, which never leaves without being tasted. Late-night tacos after going out are a custom here, and your salsa is hot.",
     },
     {
       id: 'mari-tendera',
@@ -228,7 +228,7 @@ export const guadalajara: CityPantry = {
       placeId: 'abarrotes-la-esquinita',
       personality: ['nosy in a kind way', 'practical', 'remembers every customer'],
       portraitPrompt: 'Gouache portrait of a woman of 52 with dark hair in a tight bun, reading glasses on a chain and a knowing smile, wearing a floral blouse and a pocketed apron, who runs the corner shop Abarrotes La Esquinita, Chapultepec, Guadalajara. Include the shop counter and shelves of snacks. Bold, saturated colour: cobalt blue, lime green and red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You run your corner abarrotes in Chapultepec and greet everyone who walks in with a buenos días or buenas tardes. You sell the basics of the day, like tortillas, jamaica for agua fresca or bread for breakfast, and you like asking customers where they are from.",
+      here: "You run your corner abarrotes in Chapultepec and greet everyone who walks in with a buenos días or buenas tardes. You sell the basics of the day, like tortillas, jamaica for agua fresca or bread for breakfast.",
     },
     {
       id: 'lupita-sacristana',
@@ -276,7 +276,7 @@ export const guadalajara: CityPantry = {
       placeId: 'terminal-nueva',
       personality: ['cheerful', 'efficient', 'knows all the connections'],
       portraitPrompt: 'Gouache portrait of a man of 41 with short hair, a neatly trimmed mustache, a company polo shirt and a friendly, professional smile, who sells bus tickets at the Terminal Nueva, Tlaquepaque, Guadalajara. Include the ticket counter and digital departure board. Bold, saturated colour: travel blue, sunset orange and warm yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell tickets at the Terminal Nueva, the big bus station in Tlaquepaque, and you know which buses leave for other cities and at what time. You like helping people work out how to get to Tequila or another nearby place, which ticket suits them and how long the trip takes.",
+      here: "You sell tickets at the Terminal Nueva, the big bus station in Tlaquepaque, and you know which buses leave for other cities and at what time. Buses leave from here for Tequila and other towns nearby.",
     },
     {
       id: 'andres-cabanas',

@@ -657,7 +657,7 @@ export const palermo: CityPantry = {
       placeId: 'libreria-del-mare',
       personality: ["literary", "thoughtful", "recommendative"],
       portraitPrompt: 'Pen and ink portrait on white paper of an intellectual Sicilian woman with reading glasses, book in hand, warm smile, surrounded by literature, minimal watercolor wash in book tones, thoughtful detail',
-      here: "You run a small bookshop of books about the sea and Sicily, close to the old harbour of the Cala. You like to recommend a Sicilian novel to anyone who comes in.",
+      here: "You run a small bookshop of books about the sea and Sicily, close to the old harbour of the Cala. Sicilian writers have a shelf of their own.",
     },
     {
       id: 'davide-bruno',

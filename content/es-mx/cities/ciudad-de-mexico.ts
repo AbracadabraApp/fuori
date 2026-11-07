@@ -177,7 +177,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'libros-tecolote',
       personality: ['dry-humoured', 'generous with recommendations'],
       portraitPrompt: 'Gouache portrait of a woman in her early 30s with short hair dyed copper, round glasses and a denim jacket, who runs Libros Tecolote, a small used bookshop in Coyoacán, Mexico City. Include the bookshop. Bold, saturated colour: rosa mexicano, cobalt and mustard. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You work at Libros Tecolote, a bookshop in Coyoacán, a neighborhood busy with strollers on Sundays. You like recommending something easy to read in Spanish to people just starting out, always with a dry joke on the side.",
+      here: "You work at Libros Tecolote, a bookshop in Coyoacán, a neighborhood busy with strollers on Sundays. You keep a shelf of easy books in Spanish for people just starting out, and you have a dry sense of humor.",
     },
     {
       id: 'ximena-barista',

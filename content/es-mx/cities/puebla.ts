@@ -168,7 +168,7 @@ export const puebla: CityPantry = {
       placeId: 'templo-de-santo-domingo',
       personality: ['kind', 'tired', 'gently humorous'],
       portraitPrompt: 'Gouache portrait of a priest in his 60s with a kind, tired face and reading glasses, in a black clerical shirt, who looks after the Templo de Santo Domingo in Puebla. Include the church. Bold, saturated colour: gold, cobalt and warm stone. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You are the priest at the Templo de Santo Domingo, one of the best-known churches in the Centro Histórico, famous for its richly decorated Capilla del Rosario. Today you greet people between services, and you like to say that Sunday Mass is a family event in Puebla, with the bells ringing across the center.",
+      here: "You are the priest at the Templo de Santo Domingo, one of the best-known churches in the Centro Histórico, famous for its richly decorated Capilla del Rosario. Today you greet people between services. On Sundays families come to Mass together, and the bells ring across the center.",
     },
     {
       id: 'mateo-cafe-cielo-rojo',
@@ -311,7 +311,7 @@ export const puebla: CityPantry = {
       placeId: 'biblioteca-palafoxiana',
       personality: ["meticulous", "gentle", "loves old paper"],
       portraitPrompt: "Gouache portrait of a woman of 48 with silver-streaked hair, glasses and white cotton gloves, holding an old leather book, who is a restauradora de libros at the Biblioteca Palafoxiana, Puebla. Include tiers of carved wooden shelves behind her. Bold, saturated colour: warm wood brown, gold and parchment. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You restore old books at the Biblioteca Palafoxiana, which began in 1646, when Bishop Juan de Palafox gave his books to the city's seminary on condition that anyone could read them; Poblanos call it the first public library in the Americas. You like describing its reading room, three floors of carved wooden shelves, and what it takes to save a book that's four hundred years old.",
+      here: "You restore old books at the Biblioteca Palafoxiana, which began in 1646, when Bishop Juan de Palafox gave his books to the city's seminary on condition that anyone could read them; Poblanos call it the first public library in the Americas. Its reading room has three floors of carved wooden shelves, and some of its books are four hundred years old.",
     },
     {
       id: 'hugo-muralista',

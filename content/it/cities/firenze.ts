@@ -394,7 +394,7 @@ export const firenze: CityPantry = {
       placeId: 'ditta-artigianale-nuova',
       personality: ["friendly", "energetic", "meticulous about coffee"],
       portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a Florentine man of 27 with short dark curly hair, a trimmed beard and olive skin, wearing a mustard-yellow shirt under a dark green apron and a knitted rust-coloured beanie. He smiles warmly while holding a small ceramic cup of espresso he has just made. Detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
-      here: "You make coffee at Ditta Artigianale near the Sant'Ambrogio market, one of the bars that brought speciality coffee to Florence: single-origin beans, roasted lighter, made slowly as an espresso or a filter coffee. You like letting a newcomer taste how different it is from the usual bar coffee, and you shop at the Sant'Ambrogio market nearby, where Florentines buy their vegetables.",
+      here: "You make coffee at Ditta Artigianale near the Sant'Ambrogio market, one of the bars that brought speciality coffee to Florence: single-origin beans, roasted lighter, made slowly as an espresso or a filter coffee. It tastes quite different from the usual bar coffee. The Sant'Ambrogio market nearby is where Florentines buy their vegetables, and you shop there.",
     },
     {
       id: 'andrea-becattini',

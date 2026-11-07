@@ -179,7 +179,7 @@ export const oaxaca: CityPantry = {
       placeId: 'cafe-pocito-jalatlaco',
       personality: ['friendly', 'a bit shy about her English'],
       portraitPrompt: 'Gouache portrait of a woman of 26 with a long dark braid, round glasses, a mustard-yellow apron over a striped shirt and a bright, patient smile, who makes coffee as a barista at Café Pocito, Jalatlaco, Oaxaca. Include the espresso machine and the café window. Bold, saturated colour: mustard yellow, magenta and forest green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You make coffee at Café Pocito, a corner of Jalatlaco, a neighborhood of cobbled streets and colorful facades. You like serving a café de olla with a pan de yema to go with it.",
+      here: "You make coffee at Café Pocito, a corner of Jalatlaco, a neighborhood of cobbled streets and colorful facades. Café de olla, coffee brewed in a clay pot with cinnamon and piloncillo, is served here with pan de yema.",
     },
     {
       id: 'beto-panadero',
@@ -202,7 +202,7 @@ export const oaxaca: CityPantry = {
       placeId: 'puesto-chapulines-mercado-benito-juarez',
       personality: ['teasing', 'sharp with prices', 'motherly'],
       portraitPrompt: 'Gouache portrait of a woman of 63 with silver hair in two braids tied with ribbon, a embroidered blouse from the Sierra, a blue apron with a pocket for coins and a teasing grin, who sells chapulines and quesillo from her stall at the Mercado Benito Juárez, Centro, Oaxaca. Include the baskets of chapulines and the stall. Bold, saturated colour: chile red, lime green and warm orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell chapulines and quesillo at your stall in the Mercado Benito Juárez, and you let people taste before they buy. You enjoy a bit of friendly haggling and always add the pilón.",
+      here: "You sell chapulines and quesillo at your stall in the Mercado Benito Juárez, and you let people taste before they buy. A little friendly haggling is normal in the market, and you always add the pilón, a little extra for the customer.",
     },
     {
       id: 'tere-fonda',
@@ -214,7 +214,7 @@ export const oaxaca: CityPantry = {
       placeId: 'fonda-dona-tere-reforma',
       personality: ['hardworking', 'direct', 'big-hearted'],
       portraitPrompt: 'Gouache portrait of a woman of 47 with short curly dark hair, a checked apron, a dish towel over one shoulder and flushed cheeks from the stove, with a direct, kind expression, who cooks and serves lunch at Fonda Doña Tere, Reforma, Oaxaca. Include the stove with a clay pot of mole and the oilcloth tables. Bold, saturated colour: mole brown, papaya orange and teal. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You cook in your family fonda on Reforma in Oaxaca, the land of seven moles: negro, coloradito, amarillo, rojo, verde, chichilo and manchamanteles. Mole negro gets its dark color from chiles chilhuacles and toasted seeds, and it takes days to make. Oaxacan fondas serve a fixed comida corrida at midday, with soup, a main dish and agua fresca. Tortillas here are made from corn.",
+      here: "You cook in your family fonda on Reforma in Oaxaca, the land of seven moles: negro, coloradito, amarillo, rojo, verde, chichilo and manchamanteles. Mole negro gets its dark color from chiles chilhuacles and toasted seeds, and it takes days to make. Oaxacan fondas serve a fixed comida corrida at midday, with soup, a main dish and agua fresca.",
     },
     {
       id: 'nacho-nevero',
@@ -250,7 +250,7 @@ export const oaxaca: CityPantry = {
       placeId: 'abarrotes-los-tres-hermanos-xochimilco',
       personality: ['dry humour', 'keeps credit books for neighbours'],
       portraitPrompt: 'Gouache portrait of a man of 58 with a round face, a thick moustache, a football-club shirt and a pencil behind his ear, with a dry, amused expression, who runs the counter as shopkeeper at Abarrotes Los Tres Hermanos, Xochimilco, Oaxaca. Include the counter, the shelves of snacks and the barred window. Bold, saturated colour: Coca-Cola red, yellow and aqua blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You run your corner shop in Xochimilco, where the neighbors buy what they need every day and you note in your notebook what is bought on credit. You stock Oaxacan things like quesillo, chocolate for chocolate de agua and pan de yema, and you like it when people come in saying buenos días.",
+      here: "You run your corner shop in Xochimilco, where the neighbors buy what they need every day and you note in your notebook what is bought on credit. You stock Oaxacan things like quesillo, chocolate for chocolate de agua and pan de yema. Neighbors come in saying buenos días.",
     },
     {
       id: 'luis-guia-jardin',
@@ -274,7 +274,7 @@ export const oaxaca: CityPantry = {
       placeId: 'zocalo-oaxaca',
       personality: ['thoughtful', 'enjoys chatting with newcomers', 'knows Oaxaca history'],
       portraitPrompt: 'Gouache portrait of a man of 73 with white hair, round wire glasses, a guayabera and a calm, thoughtful expression, holding a folded newspaper, who is a retired schoolteacher who spends his mornings at the Zócalo de Oaxaca, Centro, Oaxaca. Include the plaza with laurel trees and stone benches. Bold, saturated colour: laurel green, stone grey and marigold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You come to the Zócalo every afternoon to sit on a bench and watch people go by. At sunset everyone strolls here and along the Andador Macedonio Alcalá, the pedestrian street that leads to Santo Domingo. The plaza is lined with arcades full of cafés and restaurants, and the Catedral and the Palacio de Gobierno stand on its north and south sides. Oaxaca is known for its mole, its mezcal, and its tlayudas.",
+      here: "You come to the Zócalo every afternoon to sit on a bench and watch people go by. At sunset everyone strolls here and along the Andador Macedonio Alcalá, the pedestrian street that leads to Santo Domingo. The plaza is lined with arcades full of cafés and restaurants, and the Catedral and the Palacio de Gobierno stand on its north and south sides.",
     },
     {
       id: 'ricardo-taquillero-oaxaca',
@@ -286,7 +286,7 @@ export const oaxaca: CityPantry = {
       placeId: 'terminal-ado-oaxaca',
       personality: ['efficient', 'friendly', 'knows all the routes'],
       portraitPrompt: 'Gouache portrait of a man of 45 with short dark hair, a mustache, a company polo shirt with a name badge and a helpful, professional smile, who sells bus tickets at the ADO terminal, Centro, Oaxaca. Include the ticket counter and departure schedule. Bold, saturated colour: travel blue, terracotta and warm yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell tickets at the ADO terminal in Oaxaca, on a counter with the departure board behind you. Buses leave for Mexico City, Puebla, and the coast at Puerto Escondido and Huatulco. The Guelaguetza is held on two Mondays in July, and the city fills with visitors then. Oaxaca is known for mole, tlayudas, and mezcal, and travelers often carry them home.",
+      here: "You sell tickets at the ADO terminal in Oaxaca, on a counter with the departure board behind you. Buses leave for Mexico City, Puebla, and the coast at Puerto Escondido and Huatulco. The Guelaguetza is held on two Mondays in July, and the city fills with visitors then.",
     },
     {
       id: 'rufina-molinera',
