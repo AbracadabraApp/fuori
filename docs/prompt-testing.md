@@ -42,6 +42,7 @@ So the job now is less adding and more finding out what each part does.
 5b. **Two types of test** (Josh, 2026-11-06: "they can be different types of tests"). A **moment test** is one turn with everything fixed, the learner's line and the memory notes too: it shows what a unit does. A **visit test** is several visits in a row with memory written by the real summariser between them: it shows what carries over and repeats (T1). Visit tests still use fixed learner lines, not a free simulated learner. The card says which type.
 6. **Smallest size that can answer.** Start at Beginner, stage 2, one country, 2 moments × 5 runs per version. Run the control twice the first time a moment is used, to see the noise. Widen only when the result is close; stop when it's clearly no.
 7. **Count in code where possible.** Words, English sentences, questions per turn, answers offered, a word from a fixed list (the parts already carry their kinds). When a judge is needed: one yes/no question, its reason printed, and every line read before a count is believed.
+7b. **Facts first; a judgment is flagged** (Josh, 2026-11-07: "tests should be flagged if not easily measure with facts"). Every card says whether its measure is a **fact** (counted in code: words, sentences, questions, a word written on the card before the run, the same words in two openers) or a **judgment** (a judge decides). A judgment card is flagged as such on the card and in its log entry, and its result is read as weaker. Difficulty is a fact: the words in the language per turn, leaving out her English and the answers to say back (Josh, 2026-11-07: "a better way to test difficulty is number of words"); not a judge.
 8. **Keep everything, read everything.** Every reply is saved to a file. Nothing is reported until the lines have been read. Report the numbers first, then what they mean.
 9. **Fix what's counted before the run, and keep it clean.** A word list or set is written on the card before running, and leaves out every word that's already in the prompt or in the learner's lines: a place named in the character's own `here` line isn't something she brought up. The learner's lines (fixed or simulated) must not name what's being measured.
 10. **Define the behaviour, not a word.** A count by keyword measures the word, not the behaviour: "repeat" has to mean re-explaining as if new, not a recollection ("three days ago you saw the Danzantes") or a kept promise. When a keyword can't tell them apart, a judge with its reason shown does (T6 corrected).
@@ -123,6 +124,7 @@ Variable: <the one thing that changes> (A: …, B: …)
 Held constant: <everything else, including the learner's lines>
 Moments: <which, from moments.json>
 Measure: <what is counted, how (code or judge), out of how many>
+Fact or judgment: <fact (counted in code) / JUDGMENT (flagged: a judge decides)>
 Hypothesis: <expected result, with the threshold>
 Other outcomes: <what each would mean>
 Size: <moments × runs × versions>
