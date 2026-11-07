@@ -66,6 +66,12 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-07: Voices out (credits), Italy's voices by age and stored (cloud session)
+
+- **No voices since about Nov 6:** ElevenLabs credits used up, 121,029 of 121,029 (Creator; no overage allowed). Resets **Wed Nov 11, ~7:40 pm Pacific**. Every line falls back to the phone's voice. Big days: Nov 4 (20k, the loudness measurements) and Nov 6 (27k, every voice). Normal play is 2-5k a day, so Creator runs out with any spike. Josh made a new restricted key (in Railway on both services; also saved as this cloud environment's network secret for api.elevenlabs.io): TTS, Sound Effects, Music, Voice Generation, Voices write, Pronunciation write, User, Workspace Analytics, History read.
+- **Italy's voices** (Josh: "I think you can manage voices better than me"): 22 native Italian voices in age groups per gender (b745a19, 3a2cef3), 13 new ones added to the account; chosen for conversational delivery and loudness on the library previews (none quieter than ~-21 LUFS). Each character's voice assigned once and stored in the city file (`voice:`; `npm run voices:assign`), spread per city: at most 3 people on one voice in a city (10 before). 203 of 678 keep their old voice. On `main`, **not released** (Railway deploys `live`); not heard (no credits).
+- **Next:** release with the next one; listen after the reset; Mexico the same way if Josh wants (12 men on one voice).
+
 ## 2026-11-06 (evening): dialogue variety, Italy's own places, faster deploys (laptop session)
 
 **Released 2026-11-06 evening** (b7166ff live on both, smoke:live OK in Italy and Mexico; iOS build 13 on Josh's phone and uploaded to TestFlight, 943efa5; new portraits for Vittorio Casella and Carla Innocenti, 3d6cbed). Here-line rewrites, Italy and Mexico, are now the other laptop session's (~/fuori-mexico-places). **What went out** (Railway now deploys `live`; `npm run release` only with a phone/TestFlight build or when Josh says "release"):
