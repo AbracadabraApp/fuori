@@ -8,6 +8,8 @@
 // (lib/remember.ts), Beginner stage 2, four learner turns a visit. The
 // learner never mentions drinks or the menu, so any café de olla is hers.
 //   COUNTRY=es-mx VARIANT=A|B npx tsx --env-file=.env.local tests/experiments/here-topic.mts [sets]
+// Other characters (T3 on, docs/prompt-testing.md): TEST, CITY, PLACE, CUT (the sentence, with its leading space or comma), MATCH (a regex
+// counted in the character's lines), SCENE (where the learner is) and AVOID (what the learner never brings up); T1's values are the defaults.
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { cities } from '@/content';
@@ -20,14 +22,16 @@ import { ask, pool, OUT } from './common.mjs';
 
 const SETS = Number(process.argv[2] ?? 5);
 const VARIANT = process.env.VARIANT ?? 'A';
-const city = cities.find((c) => c.id === 'ciudad-de-mexico')!;
-const place = city.places.find((p) => p.id === 'cafe-amapola')!;
+const TEST = process.env.TEST ?? 'T1';
+const city = cities.find((c) => c.id === (process.env.CITY ?? 'ciudad-de-mexico'))!;
+const place = city.places.find((p) => p.id === (process.env.PLACE ?? 'cafe-amapola'))!;
 const base = characterForPlace(city, place)!;
 const A = base.appearance.setting;
-const cut = ' You love talking about café de olla, the traditional Mexican coffee with cinnamon and piloncillo, and about how you take your own coffee.';
-if (!A.includes(cut)) throw new Error('the café de olla sentence is not in her line as expected');
+const cut = process.env.CUT ?? ' You love talking about café de olla, the traditional Mexican coffee with cinnamon and piloncillo, and about how you take your own coffee.';
+if (!A.includes(cut)) throw new Error('the sentence to cut is not in the here line as written');
 const character: CharacterSheet = { ...base, appearance: { ...base.appearance, setting: VARIANT === 'B' ? A.replace(cut, '') : A } };
-const mentions = (t: string) => /olla/i.test(t);
+const MATCH = new RegExp(process.env.MATCH ?? 'olla', 'i');
+const mentions = (t: string) => MATCH.test(t);
 const show = (t: Turn[]) => t.map((x) => `${x.who === 'npc' ? character.name : 'Learner'}: ${x.transcript}`).join('\n');
 
 async function set() {
@@ -42,7 +46,7 @@ async function set() {
     t.push({ who: 'npc', transcript: open.line, translation: open.en });
     for (let i = 0; i < 4; i++) {
       const said = await ask(`Conversation so far:\n${show(t)}\n\nWhat do you say next?`, {
-        system: `You are role-playing a beginner learner of Spanish who has just moved to Mexico City, in a test. You're in a café in Condesa talking with ${character.name}. ${v ? `You've met before (visit ${v + 1}).` : 'You have never met.'} Answer what she asks, simply, the way a beginner would, mixing in English when stuck. Never bring up drinks, coffee or the menu yourself; if she offers something, answer briefly and talk about yourself, your week or the neighbourhood. Write ONLY what you say, one short sentence.`,
+        system: `You are role-playing a beginner learner of Spanish who has just moved to Mexico City, in a test. You're ${process.env.SCENE ?? 'in a café in Condesa'} talking with ${character.name}. ${v ? `You've met before (visit ${v + 1}).` : 'You have never met.'} Answer what she asks, simply, the way a beginner would, mixing in English when stuck. Never bring up ${process.env.AVOID ?? 'drinks, coffee or the menu'} yourself; if they offer something, answer briefly and talk about yourself, your week or the neighbourhood. Write ONLY what you say, one short sentence.`,
         max: 1500,
       });
       t.push({ who: 'learner', transcript: said });
@@ -59,9 +63,9 @@ async function set() {
 
 const sets = await pool(Array.from({ length: SETS }, () => set), 5);
 const all = sets.flat();
-console.log(`T1 variant ${VARIANT}: café de olla mentioned in ${all.filter((x) => x.mentioned).length}/${all.length} visits; by visit: ${[0, 1, 2].map((v) => `${sets.filter((s) => s[v].mentioned).length}/${SETS}`).join(' · ')}`);
-sets.forEach((s, i) => s.forEach((x, v) => console.log(`  set ${i + 1} visit ${v + 1} ${x.mentioned ? 'OLLA' : '-   '} ${x.lines[0].slice(0, 150)}`)));
+console.log(`${TEST} variant ${VARIANT}: ${MATCH.source} mentioned in ${all.filter((x) => x.mentioned).length}/${all.length} visits; by visit: ${[0, 1, 2].map((v) => `${sets.filter((s) => s[v].mentioned).length}/${SETS}`).join(' · ')}`);
+sets.forEach((s, i) => s.forEach((x, v) => console.log(`  set ${i + 1} visit ${v + 1} ${x.mentioned ? 'YES ' : '-   '} ${x.lines[0].slice(0, 150)}`)));
 // Every line kept: the whole transcript of every visit, for reading (Josh: "just read her answers")
-const file = join(OUT, `here-topic-${VARIANT}-${Date.now()}.md`);
-writeFileSync(file, sets.map((s, i) => s.map((x, v) => `## set ${i + 1}, visit ${v + 1}${x.mentioned ? ' (café de olla)' : ''}\n\n${x.transcript}\n`).join('\n')).join('\n'));
+const file = join(OUT, `here-topic-${TEST}-${VARIANT}-${Date.now()}.md`);
+writeFileSync(file, sets.map((s, i) => s.map((x, v) => `## set ${i + 1}, visit ${v + 1}${x.mentioned ? ` (${MATCH.source})` : ''}\n\n${x.transcript}\n`).join('\n')).join('\n'));
 console.log(file);
