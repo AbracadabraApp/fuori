@@ -35,6 +35,33 @@ So the job now is less adding and more finding out what each part does.
 15. **Beginner first, then the rest.** Josh plays Beginner. Fixes go on the shared layer for every character and both countries ("fixes are global"), but they're tested where the problem shows first.
 16. **Josh decides design, Claude decides tests.** Framings and goals ("stay in your job", "stay in your role" and "be yourself" are three different ideas) are Josh's to choose; the test design, running and reading are Claude's. A cut reaches the game only after Josh has seen its log entry, at the next release.
 
+## Proposed additions (Claude, 2026-11-07, for Josh's review)
+
+Six changes to the rules above, from a cloud-session review. None is in force until Josh says so.
+
+17. **A learning guard on every card.** Guards today are words per turn, reply time, language share and answers offered; none says what the learner learns, though teaching wins (CLAUDE.md). Add: the language is at the learner's level (the level judge), and where the moment holds a learner mistake, whether it was recast correctly. A change that wins its measure but makes the character harder to learn from fails.
+18. **Calibrate a judge before trusting it.** Claude judging Claude shares blind spots (the lenient drift judge, rule 7). Before a judge's count is used, Josh marks about 20 replies yes or no for the judge's question; the judge is kept only if it agrees on at least 17. Stored once per question (`tests/experiments/judges/<question>.json`) and reused.
+19. **A difference threshold written in advance.** With 10 runs, a gap of 2 or 3 is usually noise. Each card states its threshold before running, e.g. "B wins by at least 4 of 10, and the two control runs are within 2 of each other"; a close result is rerun, not read.
+20. **Every complaint becomes a moment first.** When Josh hits something in play, the exact turn (the learner's line, the memory notes, the stage) goes into `moments.json` before anyone fixes it. Every kept change is then rerun on all stored moments: a check between one-moment tests and the full variety gate, so an old problem can't come back unseen.
+21. **A category can be one variable.** "All examples out" or "the whole opener recipe out" is one variable: the kind of thing. Test the category first and split it only if it loses, instead of about 25 one-unit cuts that interact.
+22. **Rerun the control when the model changes.** Every card records the model id and settings; after a model change, old results are not trusted until the control has been run again on the new model.
+
+Smaller: a kept change gets a small check in the other country before it ships ("fixes are global"); the welcome counts as a kind of conversation and gets cards like the rest.
+
+## The queue
+
+Tests to run, in order, each to become a full card before it runs. Who decides what: design questions are Josh's (rule 16).
+
+| # | Question | Type | Unit | Waits on |
+|---|---|---|---|---|
+| Q1 | Build `moments.json`: the real turns behind recent complaints (Don Nacho's long answer, the cornetto at a pharmacy, the taxi driver's order, "cafe, coffee, cafe", a learner mistake to recast) | setup | — | — |
+| Q2 | Calibrate the judges the queue needs (native-sounding; recast correct; at the learner's level) | setup | — | Josh marks ~20 replies each |
+| Q3 | The floor: the smallest Beginner prompt beside today's, on the stored moments | moment | whole beginner.md | Q1 |
+| Q4 | All examples out of beginner.md (one category) | moment | the examples inside B4, B11, B13… | Q1 |
+| Q5 | B21 ("never point out a mistake") out, since dialogue.md's D1 already covers corrections | moment | B21 | Q1, Q2 (recast judge) |
+| Q6 | Answers outside an errand: as brief as a local says them, or a whole sentence with the question's verb | moment | the answer units | Josh decides the framing first |
+| Q7 | Intermediate prompt written in Italian (character.md translated; the JSON line stays English) | moment | character.md, whole | Q1, Q2 (native judge) |
+
 ## The card
 
 Every test starts as this card, shown to Josh in this form and pasted into the log:
