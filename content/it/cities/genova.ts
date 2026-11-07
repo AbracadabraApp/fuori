@@ -559,7 +559,7 @@ export const genova: CityPantry = {
       role: "custode di palazzo",
       placeId: 'via-garibaldi',
       personality: ['distinguished'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly professor with white hair, bow tie, tweed jacket, architectural drawings visible, minimal watercolor in stone grays, animated expression, scholarly detail. The subject is a man.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a Genoese man of 66 with white hair, a neat dark jacket and a lanyard with a museum pass, standing at the door of a frescoed palazzo, calm and courteous expression. Minimal watercolor wash in stone grays and warm ochre. No lettering anywhere in the picture. The subject is a man.',
       here: "You work as an attendant in one of the Palazzi dei Rolli on Via Garibaldi, the street of palaces where Genoa's noble families once lodged visiting kings and popes.",
     },
     {

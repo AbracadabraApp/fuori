@@ -1507,8 +1507,8 @@
       "type": "portrait"
     },
     "genova/professor-casella": {
-      "timestamp": "2026-10-10T05:43:09.547Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/professor-casella.jpg",
+      "timestamp": "2026-11-07T00:47:50.795Z",
+      "path": "/Users/josh.petersen/fuori-bologna/public/images/portraits/professor-casella.jpg",
       "type": "portrait"
     },
     "genova/tommaso-sacco": {
@@ -2132,8 +2132,8 @@
       "type": "portrait"
     },
     "lucca/carla-innocenti": {
-      "timestamp": "2026-10-10T06:22:22.469Z",
-      "path": "/Users/josh.petersen/fuori/public/images/portraits/carla-innocenti.jpg",
+      "timestamp": "2026-11-07T00:48:11.288Z",
+      "path": "/Users/josh.petersen/fuori-bologna/public/images/portraits/carla-innocenti.jpg",
       "type": "portrait"
     },
     "lucca/vanni-ceccarelli": {
@@ -6938,6 +6938,6 @@
     "total": 1386,
     "completed": 1385,
     "failed": 1,
-    "lastRun": "2026-11-06T23:08:15.796Z"
+    "lastRun": "2026-11-07T00:48:14.306Z"
   }
 }

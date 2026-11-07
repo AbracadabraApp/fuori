@@ -660,7 +660,7 @@ export const lucca: CityPantry = {
       role: "insegnante di pianoforte",
       placeId: 'piazza-san-michele',
       personality: ["romantic", "musical", "warm"],
-      portraitPrompt: 'Pen and ink portrait on white paper of graceful woman in mid-forties with flower in hair, warm smile, wearing colorful scarf, minimal floral watercolor wash, artistic romantic expression, detailed gentle features, creative hands',
+      portraitPrompt: 'Pen and ink portrait on white paper of a woman from Lucca in her mid-forties, a piano teacher, dark hair pinned up, warm smile, a colorful scarf, sheet music under her arm. Minimal watercolor wash in soft blues and ochre. No lettering anywhere in the picture. The subject is a woman',
       here: "You teach piano in Lucca, Puccini's town; the house where he was born is a few steps from Piazza San Michele, the square on the old Roman forum.",
     },
     {
