@@ -88,6 +88,52 @@
    }
   },
   {
+   "id": "it-luisa-return-usual",
+   "country": "it",
+   "kind": "town",
+   "level": "beginner",
+   "stage": "S1",
+   "cityId": "roma-nuova",
+   "placeId": "bar-mattina-nuova",
+   "transcript": [],
+   "memory": {
+    "visits": 4,
+    "daysAgo": 3,
+    "notes": [
+     "Name is Sam.",
+     "Regular order: cappuccino and cream-filled cornetto, 'il solito', three euro fifty.",
+     "New to the neighborhood, likes my bar a lot.",
+     "Says his day is perfect when it starts here.",
+     "Prefers cream cornetto over chocolate, same as me.",
+     "Gets stressed when rushed; go easy on him."
+    ]
+   },
+   "watch": "Opens every return visit with the cappuccino and cornetto (the place's planted line and the memory note), instead of something new",
+   "was": "admin export 29be8acb (2026-11-03, beginner-2026-10-29+S1); the same opener in 03210e5c, 66fe4b44, 718c32f4",
+   "from": {
+    "who": "Josh",
+    "date": "2026-11-06",
+    "quote": "Luisa's planted cappuccino line said on every visit"
+   }
+  },
+  {
+   "id": "mx-nacho-long-answer",
+   "country": "es-mx",
+   "kind": "town",
+   "level": "beginner",
+   "stage": "S1",
+   "cityId": "oaxaca",
+   "placeId": "jardin-conzatti-reforma",
+   "transcript": [],
+   "watch": "Answers to say back hold two ideas (\"Estoy un poco cansado, pero contento.\")",
+   "was": "admin export bb6802f1 (2026-11-03, lesson-2026-11-02b-practice, the opener); replayed as an S1 opening, since moments.mts has no lesson-practice path for town characters",
+   "from": {
+    "who": "Josh",
+    "date": "2026-11-03",
+    "quote": "Don Nacho offered \"Estoy un poco cansado, pero contento\" to say back (answer too long)"
+   }
+  },
+  {
    "id": "mx-chela-opening",
    "country": "es-mx",
    "kind": "town",
@@ -350,28 +396,18 @@
   "about": "Complaints whose real turns aren't in the repo yet: pull each from the admin export (/api/admin/conversations) on the laptop and add it as a moment.",
   "items": [
    {
-    "what": "Don Nacho offered \"Estoy un poco cansado, pero contento\" to say back (answer too long)",
-    "who": "Josh",
-    "date": "2026-11-03",
-    "watch": "Answers to say back hold two ideas"
-   },
-   {
     "what": "A cornetto offered at a pharmacy",
     "who": "Josh",
     "date": "2026-11-06",
-    "watch": "Examples in the prompt become content"
-   },
-   {
-    "what": "Luisa's planted cappuccino line said on every visit",
-    "who": "Josh",
-    "date": "2026-11-06",
-    "watch": "Planted setting lines echo"
+    "watch": "Examples in the prompt become content",
+    "note": "Not in the export (2026-11-07: 189 conversations since 2026-10-25, none at a pharmacy); needs Josh to say where it was"
    },
    {
     "what": "Giorgia ran a pizza-by-the-slice shop as a sit-down pizzeria",
     "who": "Josh",
     "date": "2026-10-27",
-    "watch": "Invents a job the place doesn't have"
+    "watch": "Invents a job the place doesn't have",
+    "note": "Found (ea4b339c, 2026-10-27), but the pizza shop is hidden since Giorgia moved to the Sapienza steps, so no one is there to replay; the complaint was fixed by moving her"
    }
   ]
  }

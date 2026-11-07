@@ -62,7 +62,12 @@ if (process.argv[1]?.endsWith('moments.mts')) {
   const [only, runsArg] = process.argv.slice(2);
   const runs = Number(runsArg ?? 3);
   for (const m of loadMoments().filter((x) => !only || x.id === only)) {
-    const lines = await Promise.all(Array.from({ length: runs }, async () => (await replay(m)).line));
+    // The answers to say back are shown, not spoken, so they aren't in the line; print them after it
+    const lines = await Promise.all(Array.from({ length: runs }, async () => {
+      const r = await replay(m);
+      const answers = ((r as { parts?: { kind: string; text: string }[] }).parts ?? []).filter((x) => x.kind === 'answer').map((x) => x.text);
+      return answers.length ? `${r.line}  [say back: ${answers.join(' | ')}]` : r.line;
+    }));
     console.log(`${m.id} (watch: ${m.watch})\n  ${lines.join('\n  ')}`);
   }
 }
