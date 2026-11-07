@@ -17,6 +17,17 @@ export interface PromptFile {
 
 const cache = new Map<string, PromptFile>();
 
+/**
+ * Parts switched off, for experiments only (leave-one-out, docs/prompt-testing.md
+ * → A1): "beginner.md" → part names to leave out of its blocks. Empty in the
+ * game; nothing in lib or app sets it.
+ */
+const partsOff = new Map<string, Set<string>>();
+export function setPartsOff(file: string, names: string[]): void {
+  if (names.length) partsOff.set(file, new Set(names));
+  else partsOff.delete(file);
+}
+
 export function readPromptFile(name: string): PromptFile {
   const hit = cache.get(name);
   if (hit) return hit;
@@ -36,7 +47,8 @@ export function readPromptFile(name: string): PromptFile {
     if (m) return m[1];
     const p = parts(heading);
     if (!p.length) throw new Error(`${name}: missing "## ${heading}" block`);
-    return p.map((x) => x.text).join('\n');
+    const off = partsOff.get(name);
+    return p.filter((x) => !off?.has(x.name)).map((x) => x.text).join('\n');
   };
   const file = { version, block, parts };
   cache.set(name, file);
