@@ -4,7 +4,8 @@
 // setPartsOff), for each part in turn. Every reply is saved, with what code
 // can count; the judges (F1) score the items afterwards from the saved file.
 // Parts that can't be left out (who she is, the learner, the reply format)
-// stay in every run. PAIRS adds overlapping parts switched off together.
+// stay in every run. Single parts only; pairs are a separate hypothesis (A1b),
+// run with PAIRS=1 only after singles show nothing where a part should matter.
 //   COUNTRY=it npx tsx --env-file=.env.local tests/experiments/ablate.mts [runs] [part name …]
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -13,7 +14,8 @@ import { readPromptFile, setPartsOff } from '@/lib/prompts/template';
 import { loadMoments, replay, type Moment } from './moments.mjs';
 
 const KEEP = new Set(['Who: you', 'Who: the learner', 'How you talk', 'Reply: parts format']);
-// Overlaps the inventory notes, switched off together as well as alone
+// A1b's hypothesis (Josh, 2026-11-07: covering for each other "is a hypothesis"):
+// overlaps the inventory guesses at, switched off together. Not part of A1
 const PAIRS: string[][] = [
   ['Answers: as a local says them', 'Answers: one idea'],
   ['English: brief', 'English: help when asked'],
@@ -24,7 +26,7 @@ const [runsArg, ...only] = process.argv.slice(2);
 const runs = Number(runsArg ?? 5);
 const all = readPromptFile('beginner.md').parts('System prompt').map((p) => p.name);
 const singles = (only.length ? only : all.filter((n) => !KEEP.has(n))).map((n) => [n]);
-const variants: string[][] = [[], ...singles, ...(only.length ? [] : PAIRS)];
+const variants: string[][] = [[], ...(process.env.PAIRS === '1' ? PAIRS : singles)];
 const moments = loadMoments().filter((m) => m.level === 'beginner' && m.kind !== 'lesson');
 
 const words = (s: string) => s.split(/\s+/).filter(Boolean).length;
