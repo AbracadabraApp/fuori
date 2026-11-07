@@ -10,6 +10,7 @@
  * conversation ends; a problem is logged there and nothing else is affected.
  */
 
+import { tutorSheet } from '@/lib/tutor';
 import { z } from 'zod';
 import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { readPromptFile, fill } from '@/lib/prompts/template';
@@ -106,6 +107,7 @@ export function conversationsToCheck<T extends { id: string; turns: { who: strin
 }
 
 function characterName(cityId: string, characterId: string): string {
+  if (characterId === tutorSheet().id) return tutorSheet().name;
   const city = cities.find((c) => c.id === cityId);
   const place = city?.places.find((p) => p.characterId === characterId);
   return (city && place && characterForPlace(city, place)?.name) || characterId;

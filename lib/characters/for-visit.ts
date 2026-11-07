@@ -8,12 +8,15 @@
  * Client-safe (no fs).
  */
 
+import { isTutorScene, tutorSheet } from '@/lib/tutor';
 import { cities } from '@/content';
 import { characterForPlace } from './for-place';
 import { clerkSetting, departureFor, tripFacts } from '@/lib/travel/departure';
 import type { CharacterSheet } from '@/lib/types';
 
 export function characterForVisit(cityId: string, placeId: string, tripTo?: string): CharacterSheet | undefined {
+  // Magda's studio: a lesson, in no city (lib/tutor.ts)
+  if (isTutorScene(cityId, placeId)) return tutorSheet();
   const city = cities.find((c) => c.id === cityId);
   const place = city?.places.find((p) => p.id === placeId);
   if (!city || !place) return undefined;

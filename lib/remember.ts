@@ -13,6 +13,7 @@
  * Server-side only.
  */
 
+import { tutorSheet } from '@/lib/tutor';
 import { z } from 'zod';
 import { anthropic, CLAUDE_MODEL, replyText } from './claude';
 import { buildMemoryPrompt, memoryPromptVersion, type MemoryPromptInput } from './prompts/build-memory-prompt';
@@ -65,6 +66,8 @@ export const summarizeWithClaude: Summarizer = async (input) => {
 
 /** The character sheet for a recorded conversation, from content. */
 export function findCharacter(cityId: string, characterId: string): CharacterSheet | undefined {
+  // Magda: in no city (her lessons, and older ones at a city's school)
+  if (characterId === tutor.id) return tutorSheet();
   const city = cities.find((c) => c.id === cityId);
   const place = city?.places.find((p) => p.characterId === characterId);
   return city && place ? characterForPlace(city, place) : undefined;

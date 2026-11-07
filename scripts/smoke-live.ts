@@ -11,7 +11,7 @@
  *
  * Steps: the website is switched off (404); then the app's API: a conversation
  * is recorded; leaving writes memory and the study file; the visit is counted
- * for the stamp; a second visit remembers the learner; Magda at the school has
+ * for the stamp; a second visit remembers the learner; Magda in her studio has
  * the study file and a short lesson updates it; onboarding. About 6 Claude replies
  * plus memory and the study file (a few minutes, a few cents). Deletes the test
  * learner afterwards through `railway ssh` (skip with --keep).
@@ -20,6 +20,7 @@ import { execFileSync } from 'child_process';
 import { cities, tutor, language, country } from '@/content';
 import { lessonUnits } from '@/lib/lessons';
 import { characterForPlace } from '@/lib/characters/for-place';
+import { tutorScene } from '@/lib/tutor';
 import type { CharacterSheet, Turn } from '@/lib/types';
 
 const LIVE: Record<string, string> = {
@@ -72,19 +73,19 @@ async function main() {
   const lines = LINES[language.code];
   if (!lines) throw new Error(`no test lines for language ${language.code}; add them to LINES`);
 
-  // A city with a school, and an ordinary character there
-  const schoolCity = cities.find((c) => !c.hidden && c.places.some((p) => p.characterId === tutor.id)) ?? cities.find((c) => c.places.some((p) => p.characterId === tutor.id))!;
+  // The first shown city, and an ordinary character there; Magda is in no city (lib/tutor.ts)
+  const firstCity = cities.find((c) => !c.hidden)!;
   // --city=<id>: play a place in that city instead (with --place)
-  const city = arg('city') ? cities.find((c) => c.id === arg('city')) ?? (() => { throw new Error(`--city=${arg('city')}: no such city`); })() : schoolCity;
+  const city = arg('city') ? cities.find((c) => c.id === arg('city')) ?? (() => { throw new Error(`--city=${arg('city')}: no such city`); })() : firstCity;
   // --place=<id>: play that place's person instead (a place in the same city, e.g. the station)
   const chosen = arg('place');
   const place = chosen
     ? city.places.find((p) => p.id === chosen && p.characterId && p.characterId !== tutor.id) ?? (() => { throw new Error(`--place=${chosen}: no such place with a person in ${city.name}`); })()
     : city.places.find((p) => p.characterId && p.characterId !== tutor.id && characterForPlace(city, p)?.origin === 'generated')!;
   const person = characterForPlace(city, place)!;
-  const school = schoolCity.places.find((p) => p.characterId === tutor.id)!;
-  const magda = characterForPlace(city, school)!;
-  console.log(`${base} · ${country} · ${person.name} (${place.name}, ${city.name}) and Magda (${school.name}, ${schoolCity.name})\n`);
+  // Magda's lessons happen in her studio, not a place in a city (Josh, 2026-11-07)
+  const studio = tutorScene();
+  console.log(`${base} · ${country} · ${person.name} (${place.name}, ${city.name}) and Magda (${studio.place.name})\n`);
 
   // 1. The website is switched off (proxy.ts; Josh, 2026-10-26): its page and
   // its open /api routes are not found; the app's /v1 is served
@@ -93,7 +94,7 @@ async function main() {
   const webSpeak = await fetch(`${base}/api/speak`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: 'ciao' }) });
   webSpeak.status === 404 ? pass('web /api/speak not found (no voice without sign-in)') : fail('web /api/speak not found', `status ${webSpeak.status}`);
 
-  await appApi(city.id, place.id, person.id, lines, school.id, schoolCity.id);
+  await appApi(city.id, place.id, person.id, lines, studio.place.id, studio.city.id);
 }
 
 // The iPhone app's API (/v1, docs/12-native-app.md): sign in with a device
@@ -193,12 +194,12 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   const mem = again.headers.get('x-memory') ?? '';
   /^1 visits, [1-9]/.test(mem) ? pass(`v1 character remembers (${mem})`) : fail('v1 character remembers', `x-memory "${mem}"`);
 
-  // Magda at the school, with the study file the conversation just fed; a
+  // Magda in her studio, with the study file the conversation just fed; a
   // short lesson, then leaving, updates it and counts one lesson (moved from
   // the web half when the website was switched off, 2026-10-26)
   const lesson = await v1('/v1/turn', { cityId: schoolCityId, placeId: schoolId });
   const lj = (await lesson.json()) as { line?: string; conversationId?: string; promptVersion?: string };
-  (lj.promptVersion ?? '').startsWith('magda-') ? pass(`v1 Magda found at the school (${lj.promptVersion})`) : fail('v1 Magda found at the school', `prompt version "${lj.promptVersion}"`);
+  (lj.promptVersion ?? '').startsWith('magda-') ? pass(`v1 Magda found in her studio (${lj.promptVersion})`) : fail('v1 Magda found in her studio', `prompt version "${lj.promptVersion}"`);
   const sf = lesson.headers.get('x-study-file') ?? '';
   /^[1-9]\d* lines, 0 lessons$/.test(sf) ? pass(`v1 study file ready for the first lesson (${sf})`) : fail('v1 study file ready for the first lesson', `x-study-file "${sf}"`);
   for (const line of LESSON_LINES[language.code]) await v1('/v1/turn', { cityId: schoolCityId, placeId: schoolId, conversationId: lj.conversationId, learnerSaid: line });

@@ -21,7 +21,7 @@
 // Wine bars hidden (Josh, 2026-10-27: "not appropriate for all ages")
 export const showcase: Record<string, string[]> = {
   // Roma redone (Josh, 2026-10-22; docs/rome-redo.md); the only Rome since the
-  // original was removed (2026-11-07). Magda's studio is in its file, not shown.
+  // original was removed (2026-11-07).
   'roma-nuova': [
     'cinema-pigneto', // Rome cinema trial (Josh, 2026-11-05): posters and trailers, no person; Pigneto, Pasolini's neighbourhood
     'bar-mattina-nuova',

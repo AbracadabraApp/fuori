@@ -4,6 +4,11 @@
 import { randomUUID } from 'crypto';
 import { cities, tutor } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
+import { characterForVisit } from '@/lib/characters/for-visit';
+import { tutorScene, tutorSheet } from '@/lib/tutor';
+import { findCharacter } from '@/lib/remember';
+import { lessonPlan } from '@/lib/lesson';
+import { lessonUnits } from '@/lib/lessons';
 import { buildTutorPrompt, repliesSoFar } from '@/lib/prompts/build-tutor-prompt';
 import { buildStudyFilePrompt, learningNotesAsLines, type StudyFileWriter, type StudyFileInput } from '@/lib/study-file';
 import type { Summarizer, MemoryOutput } from '@/lib/remember';
@@ -14,27 +19,21 @@ const problems: string[] = [];
 const check = (ok: boolean, msg: string) => { if (!ok) problems.push(msg); };
 const unfilled = (s: string) => [...s.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).filter((k) => k !== 'line' && k !== 'en');
 
-// --- Every school has the same Magda, placed in that school's city ---
-let schools = 0;
-for (const city of cities) {
-  for (const place of city.places.filter((p) => p.characterId === tutor.id)) {
-    schools++;
-    const c = characterForPlace(city, place);
-    check(c?.id === tutor.id, `${city.name}, ${place.name}: no Magda, or her id changed (her memory would split)`);
-    check(c?.city === city.name && !!c?.appearance.setting.includes(place.name), `${place.name}: Magda isn't placed in this school and city`);
-  }
-}
-check(schools > 0, 'no schools point to Magda');
-
-const school = cities.flatMap((c) => c.places.filter((p) => p.characterId === tutor.id).map((p) => ({ c, p })))[0];
-const magda = characterForPlace(school.c, school.p)!;
+// --- Magda is in no city: lessons happen in her studio (Josh, 2026-11-07: "Lessons shouldn't depend on places") ---
+const magdaPlaces = cities.flatMap((c) => c.places.filter((p) => p.characterId === tutor.id).map((p) => `${c.name}/${p.id}`));
+check(magdaPlaces.length === 0, `city places still point to Magda: ${magdaPlaces.join(', ')}`);
+const scene = tutorScene();
+const visited = characterForVisit(scene.city.id, scene.place.id);
+check(visited?.id === tutor.id, "a turn sent to Magda's studio doesn't find her (the turn route would answer 404)");
+check(findCharacter('roma', tutor.id)?.id === tutor.id, "a past lesson at a city's school doesn't find her (her memory wouldn't update)");
+check(lessonPlan(lessonUnits()[0].steps[0].id, 'seed')?.magda.place.id === scene.place.id, "a lesson's plan doesn't put Magda in her studio");
+const magda = tutorSheet();
 
 // --- Her prompt: study file, lesson count, reply count ---
 const studyFile = ['Level: A2, unsure', 'Recurring: third person with io ("io vuole")', 'Next: vorrei for ordering'];
 const p = buildTutorPrompt({ character: magda, memory: { visits: 2, lastVisit: new Date(), notes: studyFile }, replies: 7 });
 check(unfilled(p.system).length === 0, `Magda's prompt has unfilled placeholders: ${unfilled(p.system).join(', ')}`);
-// No schools in the game (Josh, 2026-11-07): she's in her own studio in the city
-check(p.system.includes(school.c.name), "Magda's prompt doesn't say which city");
+// No schools in the game (Josh, 2026-11-07): her own studio, in the country
 check(!/\bschool\b|scuola|escuela/i.test(p.system), "Magda's prompt still puts her in a school");
 check(studyFile.every((l) => p.system.includes(l)), "Magda's prompt is missing her study file");
 check(p.system.includes('twice') && p.system.includes('7 replies'), "Magda's prompt is missing the lesson count or reply count");
@@ -96,9 +95,8 @@ async function dbChecks() {
 
     // A lesson: the study file is updated from the lesson, it counts as a lesson, no memory call or scoring
     const before = { summarized: summarized.length, judged: judged.length };
-    const lessonCity = cities.find((c) => c.places.some((pl) => pl.characterId === tutor.id))!;
-    const lessonSchool = lessonCity.places.find((pl) => pl.characterId === tutor.id)!;
-    const lesson = await talk(characterForPlace(lessonCity, lessonSchool)!, lessonCity.id);
+    // In her studio, recorded under Learn, not a city (lib/tutor.ts)
+    const lesson = await talk(tutorSheet(), tutorScene().city.id);
     check((await rememberConversation(lesson, me, summarize, judge, write)) === 'saved', 'lesson not remembered');
     check(writes.at(-1)?.after === 'lesson' && writes.at(-1)?.studyFile.length === 2, 'study file not updated from the lesson');
     check(summarized.length === before.summarized && judged.length === before.judged, 'a lesson went through the character memory call or the scorecard');
@@ -137,5 +135,5 @@ main()
       console.error(problems.join('\n'));
       process.exit(1);
     }
-    console.log(`OK: Magda is at all ${schools} schools with one id; her prompt has the study file, lesson and reply counts; the study file is updated after conversations and lessons without touching memory`);
+    console.log(`OK: Magda is in no city, a turn and a lesson plan find her studio, past lessons find her; her prompt has the study file, lesson and reply counts; the study file is updated after conversations and lessons without touching memory`);
   });

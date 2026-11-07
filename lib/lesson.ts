@@ -13,6 +13,7 @@
  * with a prompt version starting "lesson-", which keeps them out of the visit
  * stamps and the path (lib/visits.ts, lib/conversation-record.ts).
  */
+import { tutorScene } from '@/lib/tutor';
 import { cities, tutor } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { readPromptFile, fill } from '@/lib/prompts/template';
@@ -142,14 +143,12 @@ export function lessonPlan(stepId: string, seed: string) {
   }
   const step = findStep(stepId);
   if (!step) return null;
-  const tutorCity = cities.find((c) => c.places.some((p) => p.characterId === tutor?.id));
-  const tutorPlace = tutorCity?.places.find((p) => p.characterId === tutor?.id);
-  if (!tutorCity || !tutorPlace) return null;
   const scenes = practicePartners(step, seed);
   return {
     stepId,
     title: step.title,
-    magda: sceneJson(tutorCity.id, tutorPlace.id),
+    // Magda's studio, not a place in any city (lib/tutor.ts; Josh, 2026-11-07)
+    magda: tutorScene(),
     practice: scenes.map((s) => sceneJson(s.cityId, s.placeId)),
     /** The speaking mode: the app treats it as an Intermediate conversation (its end-of-turn wait) */
     speaking: !!step.speaking,

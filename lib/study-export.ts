@@ -10,6 +10,8 @@
  * Server-side only.
  */
 
+import { tutorSheet } from '@/lib/tutor';
+import { tutorStudio } from '@/content';
 import { query } from './db';
 import { cities, language, tutor } from '@/content';
 import { characterForPlace } from './characters/for-place';
@@ -53,6 +55,12 @@ export async function loadStudyExport(learnerId: string, from: Date, to: Date): 
 
   const conversations: StudyConversation[] = [];
   for (const r of rows) {
+    // Magda's lessons: in no city (lib/tutor.ts)
+    if (r.character_id === tutorSheet().id && r.turns.some((t) => t.who === 'learner')) {
+      const m = tutorSheet();
+      conversations.push({ who: m.name, role: m.role, place: tutorStudio.name, neighbourhood: '', city: 'Learn', startedAt: new Date(r.started_at), turns: r.turns });
+      continue;
+    }
     const city = cities.find((c) => c.id === r.city_id);
     if (!city || !r.turns.some((t) => t.who === 'learner')) continue;
     const place = city.places.find((p) => p.id === r.place_id);

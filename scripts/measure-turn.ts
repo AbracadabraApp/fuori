@@ -113,7 +113,7 @@ async function main() {
   const lines = LINES[language.code];
   if (!lines) throw new Error(`no test lines for language ${language.code}; add them to LINES`);
   // The same city and person as smoke:live
-  const city = cities.find((c) => !c.hidden && c.places.some((p) => p.characterId === tutor.id)) ?? cities[0];
+  const city = cities.find((c) => !c.hidden) ?? cities[0];
   const place = city.places.find((p) => p.characterId && p.characterId !== tutor.id && characterForPlace(city, p)?.origin === 'generated')!;
   const person = characterForPlace(city, place)!;
 

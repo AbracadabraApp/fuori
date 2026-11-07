@@ -10,6 +10,7 @@
  * refresh its copy.
  */
 
+import { tutorSheet as magdaSheet } from '@/lib/tutor';
 import { createHash } from 'crypto';
 import { cities, country, language, onboarding, pack } from '@/content';
 import { welcomeContent } from '@/lib/welcome';
@@ -146,10 +147,8 @@ export function buildContent(): Content {
     }),
   }));
 
-  // Magda isn't in any city's places now, but Learn shows her (the Lessons card)
-  const tutorCity = cities.find((c) => c.places.some((p) => p.characterId === pack.tutor.id));
-  const tutorPlace = tutorCity?.places.find((p) => p.characterId === pack.tutor.id);
-  const tutorSheet = tutorCity && tutorPlace ? characterForPlace(tutorCity, tutorPlace) : null;
+  // Magda isn't in any city (lib/tutor.ts), but Learn shows her (the Lessons card)
+  const tutorSheet = magdaSheet();
   if (tutorSheet && !characters[tutorSheet.id]) {
     characters[tutorSheet.id] = { id: tutorSheet.id, name: tutorSheet.name, role: tutorSheet.role, ...(tutorSheet.gender ? { gender: tutorSheet.gender } : {}), tutor: true, portrait: image(`portraits/${tutorSheet.id}`) };
   }
