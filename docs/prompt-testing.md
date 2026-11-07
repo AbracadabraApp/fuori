@@ -85,6 +85,8 @@ Tests to run, in order, each to become a full card before it runs. The tools com
 
 ## The card
 
+Every card is reviewed by the **test designer** agent (`.claude/agents/test-designer.md`) before it runs: can it answer its question, the smallest size that can, what it would teach, and its place in the queue. Give it the card, or "the queue" to reorder (Josh, 2026-11-07).
+
 Every test starts as this card, shown to Josh in this form and pasted into the log:
 
 ```
