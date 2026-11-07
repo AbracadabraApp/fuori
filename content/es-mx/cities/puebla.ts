@@ -141,7 +141,6 @@ export const puebla: CityPantry = {
       kind: 'landmark',
       neighbourhood: "Centro Histórico",
       real: true,
-      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
       characterId: 'mariana-palafoxiana',
       imagePrompt: "the Biblioteca Palafoxiana, Centro Histórico, Puebla. A long vaulted reading room with three tiers of carved wooden shelves full of old leather books, a gilded altarpiece at the end and a restorer in white gloves at a small table.",
     },
@@ -151,7 +150,6 @@ export const puebla: CityPantry = {
       kind: 'street',
       neighbourhood: "Xanenetla",
       real: true,
-      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
       characterId: 'hugo-muralista',
       imagePrompt: "the Barrio de Xanenetla, Puebla. A steep little street of old one-storey houses whose walls are covered in big colourful murals of neighbours' faces and stories, a muralist on a ladder with a paint can.",
     },

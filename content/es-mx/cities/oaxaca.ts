@@ -140,7 +140,6 @@ export const oaxaca: CityPantry = {
       kind: 'landmark',
       neighbourhood: "Monte Albán",
       real: true,
-      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
       characterId: 'efren-monte-alban',
       imagePrompt: "Monte Albán, above the valley of Oaxaca. The wide Gran Plaza on a levelled mountaintop, stepped stone platforms and pyramids under a big sky, the green valley far below and a warden in a cap walking the grass.",
     },
@@ -150,7 +149,6 @@ export const oaxaca: CityPantry = {
       kind: 'street',
       neighbourhood: "Centro",
       real: true,
-      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
       characterId: 'lucia-grabadora',
       imagePrompt: "the Andador Macedonio Alcalá, Centro, Oaxaca. A stone pedestrian street of colonial houses painted in bright colours, climbing gently towards the church of Santo Domingo, with a print workshop's open door, prints drying on a line and people strolling.",
     },

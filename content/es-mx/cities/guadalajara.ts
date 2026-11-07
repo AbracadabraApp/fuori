@@ -129,7 +129,6 @@ export const guadalajara: CityPantry = {
       kind: 'landmark',
       neighbourhood: "Centro",
       real: true,
-      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
       characterId: 'andres-cabanas',
       imagePrompt: "the Hospicio Cabañas, Centro, Guadalajara. A long neoclassical building with a dome, and inside the chapel Orozco's fiery murals and the Man of Fire in the cupola, a student sketching on a bench below.",
     },
@@ -139,7 +138,6 @@ export const guadalajara: CityPantry = {
       kind: 'plaza',
       neighbourhood: "Centro",
       real: true,
-      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
       characterId: 'chuy-mariachi',
       imagePrompt: "the Plaza de los Mariachis, Centro, Guadalajara. A small square by the Mercado San Juan de Dios with café tables, mariachis in black charro suits with silver buttons resting between songs, a guitarrón leaning on a chair.",
     },

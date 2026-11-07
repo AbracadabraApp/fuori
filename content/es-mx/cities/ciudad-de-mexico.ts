@@ -150,7 +150,6 @@ export const ciudadDeMexico: CityPantry = {
       kind: 'landmark',
       neighbourhood: "Centro Histórico",
       real: true,
-      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
       characterId: 'renata-restauradora',
       imagePrompt: "the Diego Rivera murals in the Palacio Nacional, Centro Histórico, Mexico City. A grand stone staircase under arches, its walls covered with Rivera's crowded, colourful history of Mexico, a restorer on a low scaffold with a small brush and visitors looking up.",
     },
@@ -160,7 +159,6 @@ export const ciudadDeMexico: CityPantry = {
       kind: 'plaza',
       neighbourhood: "Coyoacán",
       real: true,
-      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
       characterId: 'elvira-coyoacan',
       imagePrompt: "the Jardín Centenario, Coyoacán, Mexico City. A leafy square with a bronze fountain of two coyotes, iron benches, children chasing pigeons and the arches of the old church behind, under tall trees.",
     },

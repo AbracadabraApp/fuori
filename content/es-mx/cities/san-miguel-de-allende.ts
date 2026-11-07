@@ -140,7 +140,6 @@ export const sanMiguelDeAllende: CityPantry = {
       kind: 'museum',
       neighbourhood: "Centro",
       real: true,
-      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
       characterId: 'gabriela-maestra',
       imagePrompt: "the Museo Casa de Allende, Centro, San Miguel de Allende. A grand colonial house on the corner of the Jardín, with a carved stone doorway, iron balconies and a teacher leading a line of schoolchildren in uniform inside.",
     },
@@ -150,7 +149,6 @@ export const sanMiguelDeAllende: CityPantry = {
       kind: 'landmark',
       neighbourhood: "Centro",
       real: true,
-      hidden: true, // new 2026-11-06 (docs/conversation-variety.md, Mexico's two places per city): shown once its pictures are approved and it has been played
       characterId: 'ramon-mirador',
       imagePrompt: "El Mirador, San Miguel de Allende. A stone lookout above the town at sunset, the pink spires of the Parroquia rising from a sea of rooftops and domes, the hills beyond, and an old man leaning on the railing.",
     },
