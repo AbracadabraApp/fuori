@@ -27,11 +27,13 @@ So the job now is less adding and more finding out what each part does.
 7. **Count in code where possible.** Words, English sentences, questions per turn, answers offered, a word from a fixed list (the parts already carry their kinds). When a judge is needed: one yes/no question, its reason printed, and every line read before a count is believed.
 8. **Keep everything, read everything.** Every reply is saved to a file. Nothing is reported until the lines have been read. Report the numbers first, then what they mean.
 9. **Fix what's counted before the run, and keep it clean.** A word list or set is written on the card before running, and leaves out every word that's already in the prompt or in the learner's lines: a place named in the character's own `here` line isn't something she brought up. The learner's lines (fixed or simulated) must not name what's being measured.
-10. **A result ends in a decision.** Every entry says what the result means for the prompt (cut, keep, rewrite, test further), in one line. A finding that changes nothing isn't finished.
-11. **Guards on every test.** Words per turn, reply time, how much of the turn is in the language, answers offered. A change that wins its measure and breaks a guard isn't kept.
-12. **One log.** `docs/prompt-trials.md`: every test is one entry, the card plus results, decision, output file and commit, written the same day whatever the outcome. A kept prompt change also bumps the version and adds a changelog entry (`npm run test:prompt`).
-13. **Beginner first, then the rest.** Josh plays Beginner. Fixes go on the shared layer for every character and both countries ("fixes are global"), but they're tested where the problem shows first.
-14. **Josh decides design, Claude decides tests.** Framings and goals ("stay in your job", "stay in your role" and "be yourself" are three different ideas) are Josh's to choose; the test design, running and reading are Claude's. A cut reaches the game only after Josh has seen its log entry, at the next release.
+10. **Define the behaviour, not a word.** A count by keyword measures the word, not the behaviour: "repeat" has to mean re-explaining as if new, not a recollection ("three days ago you saw the Danzantes") or a kept promise. When a keyword can't tell them apart, a judge with its reason shown does (T6 corrected).
+11. **Learning tests maximise information; guard checks stay small.** Run a test only when its outcome can't be predicted and each outcome would change what we do; a replication whose result is already known (T3 after T1) teaches little except by reading. Different mechanisms head to head teach the most. Before shipping, a small guard check still runs, though it teaches little.
+12. **A result ends in a decision.** Every entry says what the result means for the prompt (cut, keep, rewrite, test further), in one line. A finding that changes nothing isn't finished.
+13. **Guards on every test.** Words per turn, reply time, how much of the turn is in the language, answers offered. A change that wins its measure and breaks a guard isn't kept.
+14. **One log.** `docs/prompt-trials.md`: every test is one entry, the card plus results, decision, output file and commit, written the same day whatever the outcome. A kept prompt change also bumps the version and adds a changelog entry (`npm run test:prompt`).
+15. **Beginner first, then the rest.** Josh plays Beginner. Fixes go on the shared layer for every character and both countries ("fixes are global"), but they're tested where the problem shows first.
+16. **Josh decides design, Claude decides tests.** Framings and goals ("stay in your job", "stay in your role" and "be yourself" are three different ideas) are Josh's to choose; the test design, running and reading are Claude's. A cut reaches the game only after Josh has seen its log entry, at the next release.
 
 ## The card
 
@@ -67,8 +69,8 @@ How the first tests went wrong, each now a rule above:
 - The question changed after the data was seen, and the counted set was written afterwards and included Condesa, which is in her own line (rules 4 and 9).
 - A simulated learner chatted freely, against the plan's fixed moments, and its own prompt named Condesa (rules 5 and 9).
 - No threshold before running, and findings that went beyond the numbers ("crowds out", "no real culture") were logged, then withdrawn when Josh asked for the measurement (rules 4 and 8).
-- A second log was started (rule 12).
-- Results came without the decision they implied (rule 10).
+- A second log was started (rule 14).
+- Results came without the decision they implied (rule 12).
 - The tests before these were too large (12 places × 3 visits × 2 levels) with a lenient judge (rule 6, rule 7).
 
 ## Taking a grown prompt back down

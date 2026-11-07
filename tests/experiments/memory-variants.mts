@@ -26,11 +26,16 @@ import { pool, OUT } from './common.mjs';
 const RUNS = Number(process.argv[2] ?? 5);
 const city = cities.find((c) => c.id === 'oaxaca')!;
 const character = characterForPlace(city, city.places.find((p) => p.id === 'monte-alban')!)!;
-const REPEAT = /danzante/i;
+// Corrected T6: set 4, visit 1 (he tells the Danzantes, they arrive, the talk moves on), closed with a
+// hand-written goodbye so no thread is left open
+const SET = process.env.SET ?? '4';
+const REPEAT = /danzante|carved|tallad|piedras? (antiguas|con figuras)|oldest stones/i;
+const TOLD = /danzante|carved|stone|piedra/i;
 
 // The fixed first visit: set 1, visit 1 of T3's A run
 const src = readdirSync(OUT).find((f) => f.startsWith('here-topic-T3-A-'))!;
-const block = readFileSync(join(OUT, src), 'utf8').split('## set 1, visit 2')[0].split('\n').filter((l) => /^(Efrén Martínez|Learner): /.test(l));
+const block = readFileSync(join(OUT, src), 'utf8').split(`## set ${SET}, visit 1`)[1].split(`## set ${SET}, visit 2`)[0].split('\n').filter((l) => /^(Efrén Martínez|Learner): /.test(l));
+block.push('Learner: Gracias, Efrén. Me voy al centro. ¡Hasta luego!', 'Efrén Martínez: Hasta luego, Sam. Que le vaya bien.');
 const first = block.map((l) => ({ who: l.startsWith('Learner') ? 'learner' as const : 'npc' as const, text: l.replace(/^[^:]+: /, '') }));
 const hisLines = first.filter((t) => t.who === 'npc').map((t) => t.text);
 
@@ -57,7 +62,7 @@ const runs = await pool(VERSIONS.flatMap((v) => Array.from({ length: RUNS }, () 
   const base = await summarize(v === 'B');
   const notes = v === 'C' ? [...base, `Last time you said: ${hisLines.map((l) => `“${l}”`).join(' ')}`] : base;
   const [m1, m2] = await Promise.all([reply(notes, 'M1'), reply(notes, 'M2')]);
-  return { v, notes, told: base.some((n) => /told/i.test(n) && REPEAT.test(n)), name: base.some((n) => /sam/i.test(n)), replies: [m1.line, m2.line] };
+  return { v, notes, told: base.some((n) => /told/i.test(n) && TOLD.test(n)), name: base.some((n) => /sam/i.test(n)), replies: [m1.line, m2.line] };
 })), 6);
 
 for (const v of VERSIONS) {
@@ -65,6 +70,6 @@ for (const v of VERSIONS) {
   const lines = x.flatMap((r) => r.replies);
   console.log(`T6 ${v}: told line ${x.filter((r) => r.told).length}/${x.length} · repeat ${lines.filter((l) => REPEAT.test(l)).length}/${lines.length} · name kept ${x.filter((r) => r.name).length}/${x.length} · notes ${Math.round(x.reduce((n, r) => n + r.notes.length, 0) / x.length)} · words ${Math.round(lines.reduce((n, l) => n + l.split(/\s+/).length, 0) / lines.length)}`);
 }
-const file = join(OUT, `memory-variants-T6-${Date.now()}.md`);
+const file = join(OUT, `memory-variants-T6-set${SET}-${Date.now()}.md`);
 writeFileSync(file, runs.map((r) => `## ${r.v}${r.told ? ' (told line)' : ''}\nNotes:\n${r.notes.map((n) => `- ${n}`).join('\n')}\nM1${REPEAT.test(r.replies[0]) ? ' REPEAT' : ''}: ${r.replies[0]}\nM2${REPEAT.test(r.replies[1]) ? ' REPEAT' : ''}: ${r.replies[1]}\n`).join('\n'));
 console.log(file);
