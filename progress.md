@@ -66,6 +66,19 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-06 (evening): dialogue variety, Italy's own places, faster deploys (laptop session)
+
+**Done, on main, not yet released** (Railway now deploys `live`; `npm run release` only with a phone/TestFlight build or when Josh says "release"):
+- **Italy's places** (docs/conversation-variety.md, Josh's approved list): second bars, pharmacies, ordinary gelaterie and bookshops hidden; about 50 of each city's own places shown (landmarks, open spaces, San Gregorio Armeno, the Rusticceria, the ceramics workshop), every city 10–15 places (Rome 19). People recast where generic, renamed where named after the place, lines fact-checked, written as who the person is and what the place is (T1 decision). Six places kept because they host cultural lessons. Acetaia Veneta stays hidden. Three wrong-city links fixed (Taormina, Lecce, Mantua).
+- **Dialogue, live since this morning:** Beginner errand a turn or two (A), goodbye ends it, stay within your job, order of events and your own place's ways, receipts at five bars, four Italian lines the Mexican way.
+- **No speed of speech** in prompts (Josh's decision): leveling.md, Ximena, three personalities.
+- **Testing method:** docs/prompt-testing.md (cards, moment and visit tests, one log in docs/prompt-trials.md); docs/beginner-prompt-inventory.md (every unit of the Beginner prompt); docs/dialogue-model.md → What we've learned (less is more, global fixes, emulate what works, no scripting, small tests first).
+- **Tests:** T1 (a topic named in a here line is said on every visit: 15/15 vs 0/15), T1b (cutting it loses no local talk). Dropped: threads drawn with odds, the long "nothing to buy" rule (the drift came from the test setup).
+- **Deploys:** pictures out of the build (.dockerignore) and out of git (masters in R2 at masters/, scripts/image-masters.mjs); snapshot 916 MB → 33 MB; deploy ~4.4 → ~2.8 min; release step (npm run release; deploy-wait counts a skipped build as live).
+- **Testing rule:** no simulator by default (CLAUDE.md); a quick look to Josh before building a screen.
+
+**Open:** older here lines in ten cities still carry one "you like…" each; T2 (where "¿otra vez?" repeats come from: memory); Mexico's here lines and 10 new places (the other session); Bologna's Don Giuseppe and Nonna Rina need surnames (test:names); test:pack flags Rome's cinema (no person); test:language fails on the cinema's ContentTests.swift.
+
 ## 2026-11-06 (afternoon): the film page, 191 films, fact-swept (cloud session)
 
 - **Done:** a shelf poster opens FilmPage, MovieGenius's movie page in Italian (Josh: "moviegenius already has tools/styles - use them"): the 350 pt hero with its glow, halo and play button (opens the trailer screen); a WhyWatch card (MovieGenius's v3 prompt in Italian, "Consigliato"/"Non consigliato"); More Ideas one under another (MovieGenius's prompt with Italian criteria, 10 per film, only those in the library shown, 9.1 on average). An "English" link at the card's bottom right swaps the card's text in place (Josh: "just swap text"); no translation on More Ideas.
