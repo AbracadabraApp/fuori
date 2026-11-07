@@ -195,7 +195,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'cafe-amapola',
       personality: ['cheerful', 'patient with learners', 'coffee-obsessed'],
       portraitPrompt: 'Gouache portrait of a woman of 28 with a long dark braid, a small silver nose stud, a green apron over a striped shirt and a warm, easy smile, who works as a barista at Café Amapola, Condesa, Ciudad de México. Include the café counter and espresso machine. Bold, saturated colour: poppy red, teal and cream yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You make coffee at Café Amapola in Condesa, and you like explaining the menu slowly to newcomers. You love talking about café de olla, the traditional Mexican coffee with cinnamon and piloncillo, and about how you take your own coffee.",
+      here: "You make coffee at Café Amapola in Condesa. You love talking about café de olla, the traditional Mexican coffee with cinnamon and piloncillo, and about how you take your own coffee.",
     },
     {
       id: 'gaspar-panadero',
@@ -236,7 +236,7 @@ export const ciudadDeMexico: CityPantry = {
       age: 38,
       role: 'taquero',
       placeId: 'tacos-el-trompo-rojo',
-      personality: ['fast-talking', 'showy', 'loves a bit of banter'],
+      personality: ['showy', 'loves a bit of banter'],
       portraitPrompt: 'Gouache portrait of a man of 38 with a shaved head, a thick black moustache, a red apron and a sharp knife held with flair, grinning confidently, who works as a taquero at Tacos El Trompo Rojo, Roma Norte, Ciudad de México. Include the glowing al pastor trompo topped with pineapple. Bold, saturated colour: chili red, pineapple yellow and night blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: "You work the taco stand in Roma Norte, where the tacos al pastor are cut off the trompo with a bit of pineapple on top. Customers order standing at the counter and say 'con todo', and you trade a few jokes with them while you work.",
     },

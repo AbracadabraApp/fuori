@@ -542,7 +542,7 @@ export const palermo: CityPantry = {
       age: 34,
       role: 'friggitore',
       placeId: 'friggitoria-chiluzzo',
-      personality: ['fast-talking', 'humorous', 'street-smart'],
+      personality: ['humorous', 'street-smart'],
       portraitPrompt: 'Pen and ink portrait on white paper of a lively Sicilian man with bandana, quick smile, working the fryer, energetic presence, minimal watercolor wash in golden fried tones, dynamic strokes',
     },
     {

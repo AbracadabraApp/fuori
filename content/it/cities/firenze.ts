@@ -611,7 +611,7 @@ export const firenze: CityPantry = {
       age: 47,
       role: 'venditore di cibo di strada',
       placeId: 'lampredotto-stand',
-      personality: ['fast-talking', 'proud', 'authentic Florentine'],
+      personality: ['proud', 'authentic Florentine'],
       portraitPrompt: 'Pen and ink portrait on white paper of a street vendor with animated expression, chef\'s cap, ladle in hand, calling out to customers, minimal warm watercolor wash, energetic local character. The subject is a man.',
     },
     {

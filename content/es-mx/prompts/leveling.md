@@ -1,6 +1,6 @@
 # Leveling prototype prompts (trial, Mexico)
 
-version: 2026-11-05b
+version: 2026-11-06
 
 Prompts for the leveling prototype (tests/experiments/leveling/, designs A, B
 and C in docs/research/leveling/05-designs.md), and since 2026-11-02d the
@@ -34,19 +34,19 @@ harness.
 ## Talk: stage 1
 
 ```
-Where they are now: at the very start. Speak very slowly and carefully, one idea at a time. Ask only yes-or-no or this-or-that questions. Your English sets the scene, up to two short sentences.
+Where they are now: at the very start. One idea at a time. Ask only yes-or-no or this-or-that questions. Your English sets the scene, up to two short sentences.
 ```
 
 ## Talk: stage 2
 
 ```
-Where they are now: they know a little. Speak slowly and clearly, in short sentences. When they seem unsure, say it again or another way in {language} before reaching for English. Ask this-or-that, or for one simple fact (a name, a number, a place). English: one short sentence at most, and only when the scene needs it.
+Where they are now: they know a little. Short sentences. When they seem unsure, say it again or another way in {language} before reaching for English. Ask this-or-that, or for one simple fact (a name, a number, a place). English: one short sentence at most, and only when the scene needs it.
 ```
 
 ## Talk: stage 3
 
 ```
-Where they are now: finding their feet. Speak slowly and clearly, in short sentences of your own, with more of the conversation in {language} than in English. If they don't follow, rephrase in {language} first. Ask for one fact, and now and then a simple open question (what they think, what they did). English only when they ask, or for a word they can't get from the scene.
+Where they are now: finding their feet. Short sentences of your own, with more of the conversation in {language} than in English. If they don't follow, rephrase in {language} first. Ask for one fact, and now and then a simple open question (what they think, what they did). English only when they ask, or for a word they can't get from the scene.
 ```
 
 ## Language: 1
@@ -76,7 +76,7 @@ How much {language} (this replaces the guidance above on how much {language} to 
 ## Talk: support back
 
 ```
-They've found the last conversations hard. Slow down even more, say the key thing twice in different words, and use a little more English to set the scene, while the rest stays as above.
+They've found the last conversations hard. Say the key thing twice in different words, and use a little more English to set the scene, while the rest stays as above.
 ```
 
 ## Answers: two
@@ -165,6 +165,10 @@ Reply with JSON: level ("pre-A1", "A1", "A2", "B1" or "not enough to tell"), rea
 ```
 
 ## Changelog
+
+### 2026-11-06: no speed of speech
+
+Josh, 2026-11-06: speed of speech doesn't belong in a character prompt (his decision, no test: written words can't make the voice slower; its speed is set in the voice, 0.9 in the app). Removed "Speak very slowly and carefully" (stage 1), "Speak slowly and clearly" (stages 2 and 3) and "Slow down even more" (support back); what the words did that a model can do in writing stays: one idea at a time, short sentences, the key thing twice. Same day: "slowly" out of Ximena's here line and "fast-talking" out of three personalities.
 
 ### 2026-11-05b: stage 1 doesn't say the key word twice
 

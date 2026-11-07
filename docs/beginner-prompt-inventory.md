@@ -48,7 +48,7 @@ dialogue.md 216. About 1,590 words before the conversation itself.
 
 | Id | Words | Unit | Came from | Measured? | Hypothesis |
 |---|---|---|---|---|---|
-| S2a | 57 | Talk: slow, short sentences; say it again or another way before English; "ask this-or-that, or for one simple fact"; English one short sentence at most | leveling.md (stages, 10-29 onward) | No | Conflicts with B4 (two sentences) and repeats B12's this-or-that |
+| S2a | 52 | Talk: short sentences (no speed since 2026-11-06, Josh's decision); say it again or another way before English; "ask this-or-that, or for one simple fact"; English one short sentence at most | leveling.md (stages, 10-29 onward) | No | Conflicts with B4 (two sentences) and repeats B12's this-or-that |
 | S2b | 60 | Language: 2, how much language; "replaces the guidance above" | leveling.md | No | Replaces B6 and B17, which still stand above it |
 | S2c | 13 | Answers: at most one, only when it helps | leveling.md | No | Conflicts with B13 ("sometimes two") |
 
