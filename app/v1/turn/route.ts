@@ -100,6 +100,8 @@ export async function POST(request: Request) {
     // Same checks as the web: the character from ids, sizes capped
     const parsed = parseTurnRequest({ ...body.data, transcript: fitStoredTranscript(transcript.map(({ who, transcript, translation }) => ({ who, transcript, translation }))) });
     if (!parsed.ok) return apiError(parsed.status === 404 ? 'not_found' : 'bad_request', parsed.error);
+    // Magda only teaches in lessons (Josh, 2026-11-07): outside a lesson she isn't there
+    if (parsed.character.id === tutor.id && !body.data.lesson) return apiError('not_found', 'Magda only teaches in lessons');
 
     const speed = body.data.speed ?? DEFAULT_APP_SPEED;
     // Start the voice while the rest is still being written; /v1/speak takes it

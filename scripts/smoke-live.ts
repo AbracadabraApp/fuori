@@ -194,19 +194,26 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   const mem = again.headers.get('x-memory') ?? '';
   /^1 visits, [1-9]/.test(mem) ? pass(`v1 character remembers (${mem})`) : fail('v1 character remembers', `x-memory "${mem}"`);
 
-  // Magda in her studio, with the study file the conversation just fed; a
-  // short lesson, then leaving, updates it and counts one lesson (moved from
-  // the web half when the website was switched off, 2026-10-26)
-  const lesson = await v1('/v1/turn', { cityId: schoolCityId, placeId: schoolId });
-  const lj = (await lesson.json()) as { line?: string; conversationId?: string; promptVersion?: string };
-  (lj.promptVersion ?? '').startsWith('magda-') ? pass(`v1 Magda found in her studio (${lj.promptVersion})`) : fail('v1 Magda found in her studio', `prompt version "${lj.promptVersion}"`);
-  const sf = lesson.headers.get('x-study-file') ?? '';
-  /^[1-9]\d* lines, 0 lessons$/.test(sf) ? pass(`v1 study file ready for the first lesson (${sf})`) : fail('v1 study file ready for the first lesson', `x-study-file "${sf}"`);
-  for (const line of LESSON_LINES[language.code]) await v1('/v1/turn', { cityId: schoolCityId, placeId: schoolId, conversationId: lj.conversationId, learnerSaid: line });
-  await v1(`/v1/conversations/${lj.conversationId}/end`, {});
-  const nextLesson = await v1('/v1/turn', { cityId: schoolCityId, placeId: schoolId });
-  const sf2 = nextLesson.headers.get('x-study-file') ?? '';
-  /^[1-9]\d* lines, 1 lessons$/.test(sf2) ? pass(`v1 study file updated after the lesson (${sf2})`) : fail('v1 study file updated after the lesson', `x-study-file "${sf2}"`);
+  // Magda only in lessons (Josh, 2026-11-07): outside one she isn't there
+  const outside = await v1('/v1/turn', { cityId: schoolCityId, placeId: schoolId });
+  outside.status === 404 ? pass('v1 Magda only in lessons (no lesson: not found)') : fail('v1 Magda only in lessons', `status ${outside.status}`);
+
+  // Her teaching, with the study file the conversation just fed; leaving it
+  // updates the file and counts one lesson
+  const firstStep = lessonUnits()[0]?.steps[0]?.id;
+  if (firstStep) {
+    const teachPart = { stepId: firstStep, part: 'teach' };
+    const lesson = await v1('/v1/turn', { cityId: schoolCityId, placeId: schoolId, lesson: teachPart });
+    const lj = (await lesson.json()) as { line?: string; conversationId?: string; promptVersion?: string };
+    (lj.promptVersion ?? '').startsWith('lesson-') ? pass(`v1 Magda teaches in her studio (${lj.promptVersion})`) : fail('v1 Magda teaches in her studio', `prompt version "${lj.promptVersion}"`);
+    const sf = lesson.headers.get('x-study-file') ?? '';
+    /^[1-9]\d* lines, 0 lessons$/.test(sf) ? pass(`v1 study file ready for the first lesson (${sf})`) : fail('v1 study file ready for the first lesson', `x-study-file "${sf}"`);
+    for (const line of LESSON_LINES[language.code]) await v1('/v1/turn', { cityId: schoolCityId, placeId: schoolId, conversationId: lj.conversationId, learnerSaid: line, lesson: teachPart });
+    await v1(`/v1/conversations/${lj.conversationId}/end`, {});
+    const nextLesson = await v1('/v1/turn', { cityId: schoolCityId, placeId: schoolId, lesson: teachPart });
+    const sf2 = nextLesson.headers.get('x-study-file') ?? '';
+    /^[1-9]\d* lines, 1 lessons$/.test(sf2) ? pass(`v1 study file updated after the lesson (${sf2})`) : fail('v1 study file updated after the lesson', `x-study-file "${sf2}"`);
+  }
 
   // A lesson on the conversation screen (lib/lesson.ts, N6 item 4 pass 1):
   // its plan, Magda teaching in parts, a practice dialogue that ends on its
