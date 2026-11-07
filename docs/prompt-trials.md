@@ -352,3 +352,11 @@ Threads (C) dropped, 2026-11-06: planting with dice (Josh: "is planting ideas th
 - Hypothesis: B repeats ≤ 3/10, culture at least half of A's. Result: **repeat A 7/10 (M1 4/5, M2 3/5), B 0/10. Met.** Culture 0/10 both: uninformative, since A's culture is the repeated cluster itself (a flaw in the card). Words per reply 29 vs 26.
 - Read: all 20 lines. With the note he stops re-offering the Danzantes and the ball court, but nothing new comes: sun, shade, the view, twice "en mi casa hablamos zapoteco". One cluster to tell, and once it's told he runs dry.
 - Decision: the memory step is worth building (record what was told; carry it to the next visit). The repeats are partly thin material: cultural places need more than one thing to draw on, as facts, not "you like…". Next: T5, a fuller line with the same note. Card to Josh first.
+
+### T5 (2026-11-06): with more to draw on, does a told-already note lead to something new?
+- Unit: here line, Efrén Martínez at Monte Albán; both versions carry T4's note ("Already told them about the Danzantes and the ball court."). Card shown to Josh first.
+- Variable: his line as written (A) or with two more facts, fact-checked (B): "Tomb 7, opened in 1932, held one of the richest treasures ever found in Mexico, Mixtec gold and jewels now in the museum at Santo Domingo in Oaxaca. Building J is shaped like an arrowhead and set at an angle to all the other buildings, and is thought to have been used for watching the stars." No "you like…".
+- Moments, size, harness: as T4 (tests/experiments/memory-told.mts, TEST=T5).
+- Hypothesis: B new facts ≥ 5/10, A ≤ 1/10, repeats ≤ 2/10. Result: **new facts A 0/10, B 8/10; repeats A 1/10, B 0/10; words 26 vs 30. Met.**
+- Read: all 20 lines. B moves on to Building J (6) or Tomb 7 (1); A talks about the sun and his Zapotec at home. Building J is already the next candidate repeat, so the memory must keep recording what was told. Every opener in both versions mentions the sun: today's weather line, a separate echo (not this test).
+- Decision (T1–T5): here lines hold several facts about the place, not one, and no "you like telling…"; the memory notes record what the character told and carry it to the next visit. Next: the memory change (memory.md, character.md, beginner.md: version bumps, changelog), with a card to Josh first.
