@@ -11,6 +11,8 @@ import { pack } from '@/content';
 export interface PromptFile {
   version: string;
   block: (heading: string) => string;
+  /** A block's named parts ("## <heading> › <name>"), in file order; empty when it's one block */
+  parts: (heading: string) => { name: string; text: string }[];
 }
 
 const cache = new Map<string, PromptFile>();
@@ -21,13 +23,22 @@ export function readPromptFile(name: string): PromptFile {
   const md = readFileSync(join(process.cwd(), 'content', pack.id, 'prompts', name), 'utf8');
   const version = md.match(/^version:\s*(\S+)/m)?.[1];
   if (!version) throw new Error(`${name}: missing "version:" line`);
+  // A block can be written as named parts, "## <heading> › <part>", one fenced
+  // block each; the block is the parts joined in file order, so a prompt's text
+  // is the same whether it's one block or many (Josh, 2026-11-07: every part
+  // has a name, so a test can name the part it changes)
+  const named = [...md.matchAll(/^## (.+?)\s*\n+```\n([\s\S]*?)\n```/gm)].map((m) => ({ heading: m[1], text: m[2] }));
+  const parts = (heading: string) =>
+    named.filter((b) => b.heading.startsWith(`${heading} › `)).map((b) => ({ name: b.heading.slice(heading.length + 3), text: b.text }));
   const block = (heading: string) => {
     const re = new RegExp(`^## ${heading}\\s*\\n+\`\`\`\\n([\\s\\S]*?)\\n\`\`\``, 'm');
     const m = md.match(re);
-    if (!m) throw new Error(`${name}: missing "## ${heading}" block`);
-    return m[1];
+    if (m) return m[1];
+    const p = parts(heading);
+    if (!p.length) throw new Error(`${name}: missing "## ${heading}" block`);
+    return p.map((x) => x.text).join('\n');
   };
-  const file = { version, block };
+  const file = { version, block, parts };
   cache.set(name, file);
   return file;
 }

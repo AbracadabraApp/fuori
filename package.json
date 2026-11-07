@@ -56,6 +56,7 @@
     "test:beginner": "tsx tests/check-beginner.ts",
     "test:welcome": "tsx tests/check-welcome.ts",
     "test:moments": "tsx tests/check-moments.ts",
+    "test:prompt-parts": "tsx tests/check-prompt-parts.ts",
     "test:reply-deadline": "tsx tests/check-reply-deadline.ts",
     "test:claude-limits": "tsx tests/check-claude-limits.ts",
     "test:in-flight": "tsx tests/check-in-flight.ts",

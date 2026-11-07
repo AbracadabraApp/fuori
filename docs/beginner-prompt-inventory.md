@@ -18,31 +18,33 @@ dialogue.md 216. About 1,590 words before the conversation itself.
 
 ## beginner.md → System prompt
 
+Each unit is now a named part in the prompt file (`## System prompt › <name>`, 2026-11-07; Josh: every part has a name). The code joins the parts in order, so the prompt is word for word what it was; a test names the part it changes. `character.md` is split the same way: Who: you, Talk: turns, Who: the learner, Relationship, Reply: line format.
+
 | Id | Words | Unit (short) | Came from | Measured? | Hypothesis (to test) |
 |---|---|---|---|---|---|
-| B1 | 10 | "You are {name}, {role}, in {city}. You're at {setting} {character}" | 10-25; setting with the place's kind and `here` 10-27 (Giorgia ran a pizza-by-the-slice shop as a sit-down pizzeria; a woman in a square offered coffee) | The `here` echo: yes (2026-11-06, the planted idea comes up on nearly every visit) | Whatever the setting says gets said every visit |
-| B2 | 43 | A Beginner who has come to live here; "be the person you are, helpful the way someone in your job would be" | 10-25 first version | No | "someone in your job" gives every character a job, so an errand |
-| B3 | 6 | "How you talk to a Beginner:" | — | — | — |
-| B4 | 100 | English: at most two short sentences, one detail, heard not shown, say each thing once (two examples) | 10-25b (English ran 36–54 words a turn); 11-05c (Josh: "cafe, coffee, cafe", the same thing said three times) | Yes: 10-25b English 14–29 words a turn; 11-05c replay set | The examples ("Here you pay at the till first", "Welcome to my bar!") put bars and paying into every scene; overlaps S2a, which says one sentence |
-| B5 | 41 | What to keep or say is in the language, as its own part | 10-25 | — | Format; not to test |
-| B6 | 66 | Phrases of 4–8 words in the language in most turns, their English said by the game | 10-25e (Josh: "a bit more Italian phrase, 4-8 words") | Not measured on its own | Overlaps S2b "Language: 2", which replaces it |
-| B7 | 88 | First turn: one English line about the place, "vary it: sometimes what's special here, sometimes history, sometimes life or culture, sometimes the country, the region, the city or today's weather"; name only sometimes | 10-25b (Josh: the name only sometimes; history or culture), 10-25c (country, region, weather) | No | A script about how to vary; the list may itself make openers alike |
-| B8 | 141 | After the first turn: react first; the errand a turn or two; never invent one; never offer what the job can't give | 10-25c, 10-25d (Chiara offered coffee she couldn't make), 11-06 (A: the errand script removed) | Yes: A, purchase lines 65–79% → 51–60% | Longest unit; the errand half overlaps D2 |
-| B9 | 45 | Don't build every turn the same way; a word only when useful; sometimes no English; answers only when they help | 10-25c (every turn the same shape), 10-25d | No | Overlaps S2c "Answers: one" |
-| B10 | 47 | Everything is said aloud: no narration (examples: cornetto, Luisa, cappuccino) | 10-26 (the voice read "She slaps the tortilla…") | No (fixed by eye) | Examples put a bar into every scene |
-| B11 | 49 | A person, not a teacher: never announce, never explain how people talk (examples) | 10-25d, 10-27 ("here's a nice way to say goodbye") | No (fixed by eye) | — |
-| B12 | 59 | One question per turn, in the language; "prefer questions that make them use a useful verb (Le piace…? / Vuole…?)"; this-or-that or one fact fine | 10-25, 10-25g | No | "Vuole…?" and "this-or-that" breed offers and choice questions ("un caffè o una passeggiata?"); one question every turn makes it an interview; overlaps S2a "Ask this-or-that" |
-| B13 | 66 | Offer the answer, sometimes two; reuse the question's words when natural (four examples: Vuole → Vorrei…) | 10-25h (Sofia: "Desidero un caffè", "Voglio pagare") | No | Examples are all ordering; overlaps S2c (at most one answer) |
-| B14 | 76 | One idea per answer, fewest words a local would use (examples: cornetto, sono stanco) | 11-03 (Don Nacho's two-idea answer), 11-05b (Doña Chela) | Yes: answers 4.5 → 3.6 words (11-05b) | Examples are food and ordering |
-| B15 | 63 | Their own facts left blank as …, never made up | 10-27b (7 of 7 answers made up "Sono di Londra") | Yes: 10-27b | — |
-| B16 | 13 | Use a few words again later | 10-25 | No | May feed repetition |
-| B17 | 12 | Simple language, present tense, formality | 10-25 | No | Overlaps S2b |
-| B18 | 18 | Facts about the place: only what you're sure of; "otherwise talk about what you're doing or selling" | 10-25 | No | "or selling" points every role at selling |
-| B19 | 20 | Offer the goodbye as a phrase when the talk winds down; their goodbye ends it | 10-25, 11-06 | Goodbye: yes (goodbye-done.mts, 5/5) | Overlaps D5 |
-| B20 | 25 | Follow their lead; never ask a question again once they've moved on | 10-25b (Andrea asked the name three times) | No | — |
-| B21 | 14 | Never praise, never point out a mistake | 10-25b, 10-25d, 11-05 | No | Overlaps D1 |
-| B22 | 13 | Help in English when asked | 10-25 | No | — |
-| B23 | 228 | JSON parts; gloss rules (examples: "Vuole zucchero o panna?", "Vuole un caffè o un cappuccino?"); word, question, answer formats | 10-25f, 10-25g, 10-25i, 10-25j, 11-05b, 11-05c | Partly (11-05c replay set) | Format, but its examples are coffee and ordering |
+| B1 · Who: you | 10 | "You are {name}, {role}, in {city}. You're at {setting} {character}" | 10-25; setting with the place's kind and `here` 10-27 (Giorgia ran a pizza-by-the-slice shop as a sit-down pizzeria; a woman in a square offered coffee) | The `here` echo: yes (2026-11-06, the planted idea comes up on nearly every visit) | Whatever the setting says gets said every visit |
+| B2 · Who: the learner | 43 | A Beginner who has come to live here; "be the person you are, helpful the way someone in your job would be" | 10-25 first version | No | "someone in your job" gives every character a job, so an errand |
+| B3 · How you talk | 6 | "How you talk to a Beginner:" | — | — | — |
+| B4 · English: brief | 100 | English: at most two short sentences, one detail, heard not shown, say each thing once (two examples) | 10-25b (English ran 36–54 words a turn); 11-05c (Josh: "cafe, coffee, cafe", the same thing said three times) | Yes: 10-25b English 14–29 words a turn; 11-05c replay set | The examples ("Here you pay at the till first", "Welcome to my bar!") put bars and paying into every scene; overlaps S2a, which says one sentence |
+| B5 · Language: what to keep | 41 | What to keep or say is in the language, as its own part | 10-25 | — | Format; not to test |
+| B6 · Language: phrases | 66 | Phrases of 4–8 words in the language in most turns, their English said by the game | 10-25e (Josh: "a bit more Italian phrase, 4-8 words") | Not measured on its own | Overlaps S2b "Language: 2", which replaces it |
+| B7 · Opener: the place | 88 | First turn: one English line about the place, "vary it: sometimes what's special here, sometimes history, sometimes life or culture, sometimes the country, the region, the city or today's weather"; name only sometimes | 10-25b (Josh: the name only sometimes; history or culture), 10-25c (country, region, weather) | No | A script about how to vary; the list may itself make openers alike |
+| B8 · Flow: react, then move on | 141 | After the first turn: react first; the errand a turn or two; never invent one; never offer what the job can't give | 10-25c, 10-25d (Chiara offered coffee she couldn't make), 11-06 (A: the errand script removed) | Yes: A, purchase lines 65–79% → 51–60% | Longest unit; the errand half overlaps D2 |
+| B9 · Variety: not the same shape | 45 | Don't build every turn the same way; a word only when useful; sometimes no English; answers only when they help | 10-25c (every turn the same shape), 10-25d | No | Overlaps S2c "Answers: one" |
+| B10 · Voice: no narration | 47 | Everything is said aloud: no narration (examples: cornetto, Luisa, cappuccino) | 10-26 (the voice read "She slaps the tortilla…") | No (fixed by eye) | Examples put a bar into every scene |
+| B11 · Role: not a teacher | 49 | A person, not a teacher: never announce, never explain how people talk (examples) | 10-25d, 10-27 ("here's a nice way to say goodbye") | No (fixed by eye) | — |
+| B12 · Question: one | 59 | One question per turn, in the language; "prefer questions that make them use a useful verb (Le piace…? / Vuole…?)"; this-or-that or one fact fine | 10-25, 10-25g | No | "Vuole…?" and "this-or-that" breed offers and choice questions ("un caffè o una passeggiata?"); one question every turn makes it an interview; overlaps S2a "Ask this-or-that" |
+| B13 · Answers: as a local says them | 66 | Offer the answer, sometimes two; reuse the question's words when natural (four examples: Vuole → Vorrei…) | 10-25h (Sofia: "Desidero un caffè", "Voglio pagare") | No | Examples are all ordering; overlaps S2c (at most one answer) |
+| B14 · Answers: one idea | 76 | One idea per answer, fewest words a local would use (examples: cornetto, sono stanco) | 11-03 (Don Nacho's two-idea answer), 11-05b (Doña Chela) | Yes: answers 4.5 → 3.6 words (11-05b) | Examples are food and ordering |
+| B15 · Answers: their facts left blank | 63 | Their own facts left blank as …, never made up | 10-27b (7 of 7 answers made up "Sono di Londra") | Yes: 10-27b | — |
+| B16 · Words: reuse | 13 | Use a few words again later | 10-25 | No | May feed repetition |
+| B17 · Language: easy | 12 | Simple language, present tense, formality | 10-25 | No | Overlaps S2b |
+| B18 · Facts: only what you're sure of | 18 | Facts about the place: only what you're sure of; "otherwise talk about what you're doing or selling" | 10-25 | No | "or selling" points every role at selling |
+| B19 · Goodbye: offer it | 20 | Offer the goodbye as a phrase when the talk winds down; their goodbye ends it | 10-25, 11-06 | Goodbye: yes (goodbye-done.mts, 5/5) | Overlaps D5 |
+| B20 · Lead: follow theirs | 25 | Follow their lead; never ask a question again once they've moved on | 10-25b (Andrea asked the name three times) | No | — |
+| B21 · Mistakes: never point out | 14 | Never praise, never point out a mistake | 10-25b, 10-25d, 11-05 | No | Overlaps D1 |
+| B22 · English: help when asked | 13 | Help in English when asked | 10-25 | No | — |
+| B23 · Reply: parts format | 228 | JSON parts; gloss rules (examples: "Vuole zucchero o panna?", "Vuole un caffè o un cappuccino?"); word, question, answer formats | 10-25f, 10-25g, 10-25i, 10-25j, 11-05b, 11-05c | Partly (11-05c replay set) | Format, but its examples are coffee and ordering |
 
 ## Stage 2 (leveling.md, added for stage-2 Beginners)
 
