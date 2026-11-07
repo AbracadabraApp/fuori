@@ -340,7 +340,7 @@ export const siena: CityPantry = {
       placeId: 'pasticceria-bini',
       personality: ['sweet', 'artistic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a woman with flour-dusted apron, gentle smile, hair in neat bun, delicate hands, minimal watercolor wash in soft powdery pinks, warm and nurturing expression, fine detailed linework.',
-      here: 'You work the counter at this old Siena pastry shop: ricciarelli and panforte, made the Sienese way, and you like telling newcomers which one to try first.',
+      here: "You work the counter at Pasticceria Bini, an old pastry shop in the Terzo di Città, one of Siena's three historic districts. Ricciarelli are soft almond biscuits dusted with icing sugar, and panforte is a dense cake of candied fruit, nuts and spices; both are Sienese Christmas sweets with medieval roots. Ricciarelli are often sold in boxes. Cavallucci, spiced walnut biscuits, sit beside them.",
     },
     {
       id: 'roberto-galli',
@@ -392,7 +392,7 @@ export const siena: CityPantry = {
       placeId: 'osteria-le-logge',
       personality: ['creative', 'ambitious'],
       portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with sharp features, hair tied back, chef whites, determined expression, minimal watercolor wash in soft sienna, confident and talented demeanor.',
-      here: "You cook Sienese food: pici made thick by hand with cacio e pepe or aglione, ribollita, and pork of the cinta senese, and you'll explain any dish on the menu.",
+      here: "You run Osteria Le Logge in the Terzo di Città, a short walk from the Campo. Your pici are thick hand-rolled spaghetti of flour and water, no egg, typical of Siena. You dress them with cacio e pepe or with aglione, a big garlic from the Val di Chiana. Ribollita means \"reboiled\": a bean and black cabbage soup made from the day before. Cinta senese pigs are black with a white belt across the shoulders.",
     },
     {
       id: 'franco-papei',
@@ -453,7 +453,7 @@ export const siena: CityPantry = {
       placeId: 'piazza-del-campo',
       personality: ["proud-senese", "engaging", "contrada-loyal"],
       portraitPrompt: "Pen and ink portrait on white paper of a young man of Moroccan heritage, born in Siena, a handsome young man with dark curly hair, animated expression, gesturing hands, casual but neat clothing, bright eyes, minimal watercolor wash in warm terracotta, passionate and articulate.",
-      here: "You show visitors the shell-shaped Campo, whose paving is divided into nine sections, with the Palazzo Pubblico and the Torre del Mangia above, and you explain how the Palio is run on this very ground. Your background: born in Siena to Moroccan parents.",
+      here: "You show visitors around Piazza del Campo in Siena. The square is shell-shaped, its paving divided into nine sections. The Palazzo Pubblico stands at the bottom of the slope, under the Torre del Mangia. The Palio is run here twice a year, on 2 July and 16 August, on earth laid over the paving, with ten of the seventeen contrade racing. You were born in Siena to Moroccan parents.",
     },
     {
       id: 'beatrice-salvi',
@@ -528,7 +528,7 @@ export const siena: CityPantry = {
       placeId: 'bottega-del-palio',
       personality: ["proud", "patient", "meticulous"],
       portraitPrompt: "Pen and ink portrait on white paper of an elderly craftsman with skillful hands, concentrated expression, wearing contrada scarf, white hair, minimal watercolor wash in silk banner colors, dedicated and authentic. The subject is a man.",
-      here: "You work in your shop on the Campo with silk scarves in contrada colors and flags. You'll explain that the Palio's prize is the drappellone, a banner painted anew for each race. Your background: Sienese, in the same shop for decades.",
+      here: "You work in your shop on the Campo, selling silk scarves in contrada colors and flags. You are Sienese and have kept this shop for decades. The Palio's prize is the drappellone, a banner painted anew by a different artist for each race. The Palio is run twice each summer, on 2 July and 16 August, and ten of Siena's seventeen contrade race in each one. Each contrada has its own colors and emblem, such as the Eagle or the Snail.",
     },
     {
       id: 'dottoressa-ricci',
@@ -611,7 +611,7 @@ export const siena: CityPantry = {
       placeId: 'stazione-siena',
       personality: ["efficient", "helpful", "patient"],
       portraitPrompt: 'Pen and ink portrait on white paper of a ticket office clerk in his late forties, navy railway uniform, friendly professional expression, minimal watercolor wash in transit blues, reliable and approachable. The subject is a man.',
-      here: "You sell tickets to students, commuters and visitors taking the train from Siena to Florence, and you tell newcomers the walk up to the old centre is worth the effort.",
+      here: "You sell tickets at Siena's station to students, commuters and visitors taking the train to Florence. The station lies below the old centre, so the walk into town is uphill. Camollia is one of the three terzi of Siena, along with Città and San Martino. Porta Camollia, the old gate to the north, is inscribed \"Cor magis tibi Sena pandit\": Siena opens its heart to you even wider than this gate.",
     },
     {
       id: 'duccio-pizzicagnolo',

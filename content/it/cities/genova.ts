@@ -331,7 +331,7 @@ export const genova: CityPantry = {
       placeId: 'mercato-orientale',
       personality: ["boisterous", "shrewd", "talkative"],
       portraitPrompt: 'Pen and ink portrait on white paper of an animated older man with animated expression, weathered hands, flat cap, vest over shirt, minimal watercolor in earthy tones, twinkling eyes, expressive hatching',
-      here: "You sell produce at the Mercato Orientale, busiest on Saturday morning, and you'll tell customers which basil makes the best pesto, a topic Genoese love to argue about.",
+      here: "You sell produce at a stall in the Mercato Orientale, a market in Genoa. The market is housed in a former cloister. Genoese pesto is made with small-leaved basil from Prà, on the western edge of the city, which has a protected designation. Pesto is traditionally pounded in a marble mortar with a wooden pestle. Pine nuts and Parmigiano or pecorino go in too.",
     },
     {
       id: 'lucia-ferraro',

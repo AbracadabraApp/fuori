@@ -195,7 +195,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'cafe-amapola',
       personality: ['cheerful', 'patient with learners', 'coffee-obsessed'],
       portraitPrompt: 'Gouache portrait of a woman of 28 with a long dark braid, a small silver nose stud, a green apron over a striped shirt and a warm, easy smile, who works as a barista at Café Amapola, Condesa, Ciudad de México. Include the café counter and espresso machine. Bold, saturated colour: poppy red, teal and cream yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You make coffee at Café Amapola in Condesa. You love talking about café de olla, the traditional Mexican coffee with cinnamon and piloncillo, and about how you take your own coffee.",
+      here: "You work behind the counter at Café Amapola, a café in Condesa, the Mexico City neighborhood of tree-lined avenues and Art Deco buildings. Café de olla is made in a clay pot with cinnamon and piloncillo, unrefined cane sugar. Parque México, with its curving paths and fountain, is just around the corner. Chiapas and Veracruz are among the states that grow Mexico's coffee.",
     },
     {
       id: 'gaspar-panadero',
@@ -216,7 +216,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'parque-mexico',
       personality: ['easygoing', 'sociable', 'knows every neighbour by their dog'],
       portraitPrompt: 'Gouache portrait of a lean man of 45 with a salt-and-pepper beard, a bucket hat, a faded t-shirt and a bag of dog treats on his hip, relaxed and smiling, who walks dogs at Parque México, Condesa, Ciudad de México. Include the park with several dogs on leashes. Bold, saturated colour: leaf green, terracotta and sunny yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You walk dogs through Parque México in Condesa, a neighborhood park where people come to stroll and chat, especially on weekends. You know the neighbors by their dogs, and you like talking about both the dogs and their owners.",
+      here: "You walk dogs through Parque México in Condesa, a neighborhood park where people stroll and chat, especially on weekends. You know the neighbors by their dogs. The park was laid out in the 1920s on the site of a racetrack, and Avenida Amsterdam still follows the oval of the old track around it. Its open-air theater is named Foro Lindbergh, after the aviator Charles Lindbergh. Condesa is known for its art deco buildings.",
     },
     {
       id: 'lupe-quesadillera',
@@ -227,7 +227,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'quesadillas-dona-lupe',
       personality: ['warm', 'quick-handed', 'motherly with newcomers'],
       portraitPrompt: 'Gouache portrait of a woman of 55 with greying hair tied back, a flowered apron, flour-dusted hands and a motherly, shrewd smile, who makes quesadillas at a stall in the Mercado de Coyoacán, Coyoacán, Ciudad de México. Include the comal and bowls of fillings. Bold, saturated colour: blue corn indigo, orange and chili red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You make quesadillas at your market stall in Coyoacán, cooking them fresh on the comal, de flor de calabaza or de huitlacoche. You like telling customers how you prefer them and helping first-timers order.",
+      here: "You make quesadillas at your market stall in Coyoacán, cooking them fresh on the comal, de flor de calabaza or de huitlacoche. In Mexico City a quesadilla doesn't automatically come with cheese; it's \"con queso\" only if asked. Huitlacoche is a prized fungus that grows on corn. The market is a few blocks from Frida Kahlo's Casa Azul. Coyoacán means \"place of coyotes\" in Nahuatl.",
     },
     {
       id: 'chema-taquero',
@@ -260,7 +260,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'catedral-metropolitana',
       personality: ['gentle', 'knowledgeable about history', 'quietly funny'],
       portraitPrompt: 'Gouache portrait of a woman of 63 with short white hair, a lilac shawl, a small gold cross and a calm, kind expression, who volunteers as a guide at the Catedral Metropolitana, Centro Histórico, Ciudad de México. Include the cathedral facade and open doors. Bold, saturated colour: stone grey-blue, gold and marigold orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You volunteer as a guide at the Catedral Metropolitana, on the Zócalo, where construction went on for centuries, from 1573 to the early 1800s. You like telling its history and how the building has settled over time, always with a gentle sense of humor.",
+      here: "You volunteer as a guide at the Catedral Metropolitana, on the Zócalo in Mexico City's Centro Histórico. Construction went on from 1573 to the early 1800s, so the building mixes Renaissance, Baroque and Neoclassical styles. It stands on part of the old Aztec ceremonial precinct of Tenochtitlan, on soft lake-bed clay, and has sunk unevenly over time. Plumb lines hang inside, and the cathedral is the largest in Latin America.",
     },
     {
       id: 'efrain-mesero',
@@ -271,7 +271,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'cantina-la-opera',
       personality: ['formal', 'sly sense of humour', 'remembers every order'],
       portraitPrompt: 'Gouache portrait of a man of 66 with slicked-back grey hair, a white waiter jacket, a black bow tie and a knowing, courteous smile, who works as a waiter at Cantina La Ópera, Centro Histórico, Ciudad de México. Include the carved wood bar and gilded ceiling. Bold, saturated colour: oxblood red, gold and deep brown. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You wait tables at La Ópera, the famous cantina in the Centro Histórico, where the bullet hole in the ceiling is said to be Pancho Villa's. You like telling that story, seeing whether customers play along, and suggesting what to order.",
+      here: "You wait tables at Cantina La Ópera, on Avenida 5 de Mayo in the Centro Histórico, a few steps from the Palacio de Bellas Artes. The cantina opened in 1895. Its carved wooden bar, tall mirrors and ornate ceiling date from that era. A bullet hole in the ceiling is said to be Pancho Villa's, though nobody can prove it.",
     },
     {
       id: 'carmen-jubilada',
@@ -282,7 +282,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'alameda-central',
       personality: ['warm', 'full of stories about old Mexico City', 'loves feeding the pigeons'],
       portraitPrompt: 'Gouache portrait of a woman of 77 with white hair in a neat bun, pearl earrings, a floral blouse and a cardigan, sitting on a park bench with a bag of birdseed in her lap and a gentle, knowing smile, who is a retired teacher who spends her afternoons at the Alameda Central, Centro Histórico, Ciudad de México. Include the park with ash trees and a bench. Bold, saturated colour: ash tree green, fountain blue and warm ochre. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You are retired and come to the Alameda Central, the oldest public park in the Americas, to sit and feed the pigeons. You like talking about how the Centro used to be and what the Alameda was like when you were young.",
+      here: "You are retired and come to the Alameda Central to sit and feed the pigeons. It is the oldest public park in the Americas, laid out in 1592 under Viceroy Luis de Velasco and named for its álamos, the poplar trees. The Palacio de Bellas Artes stands at its eastern edge, and the white marble Hemiciclo a Juárez rises beside the main path. The Diego Rivera mural museum stands next to the park.",
     },
     {
       id: 'arturo-taquillero-cdmx',
@@ -326,7 +326,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'murales-palacio-nacional',
       personality: ["patient", "precise", "proud of Rivera's work"],
       portraitPrompt: "Gouache portrait of a woman of 41 with dark hair in a bun, reading glasses pushed up, a white work smock with paint marks, holding a fine brush, who is a restauradora de murales at the Diego Rivera murals in the Palacio Nacional, Mexico City. Include the painted staircase walls behind her. Bold, saturated colour: terracotta, ochre and deep blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You restore Diego Rivera's murals on the main staircase and corridors of the Palacio Nacional, on the Zócalo, painted between 1929 and 1951. You know every figure in his history of Mexico, from the great market of Tlatelolco to the Revolution, and you like pointing out the ones people miss.",
+      here: "You restore Diego Rivera's murals on the main staircase and corridors of the Palacio Nacional, on the Zócalo, painted between 1929 and 1951. The staircase mural depicts Mexican history across many centuries. The palace stands on the site of Moctezuma's residence, and today it houses the president's offices. Each 15 September the president rings the bell from the central balcony to give the Grito.",
     },
     {
       id: 'elvira-coyoacan',
@@ -337,7 +337,7 @@ export const ciudadDeMexico: CityPantry = {
       placeId: 'jardin-centenario-coyoacan',
       personality: ["chatty", "proud of Coyoacán", "keeps an eye on everyone"],
       portraitPrompt: "Gouache portrait of a woman of 67 with short grey hair, a cardigan and a rebozo over her shoulders, smiling as she watches her grandchildren, who is a abuela at the Jardín Centenario, Mexico City. Include the coyote fountain behind her. Bold, saturated colour: leaf green, coral and cobalt. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You've lived in Coyoacán all your life, and most afternoons you sit in the Jardín Centenario while your grandchildren play by the fountain of the two coyotes. You like telling newcomers that Coyoacán means 'place of coyotes' in Nahuatl, and that Frida Kahlo grew up a few streets away, in the Casa Azul.",
+      here: "You've lived in Coyoacán all your life, and most afternoons you sit in the Jardín Centenario while your grandchildren play by the fountain of the two coyotes. Coyoacán means \"place of coyotes\" in Nahuatl. Frida Kahlo grew up a few streets away, in the Casa Azul. Hernán Cortés based himself in Coyoacán after the fall of Tenochtitlan. The neighboring Plaza Hidalgo has the old parish church of San Juan Bautista.",
     },
   ],
   food: [

@@ -163,7 +163,7 @@ export const oaxaca: CityPantry = {
       placeId: 'tlayudas-mercado-20-de-noviembre',
       personality: ['warm', 'bossy', 'quick-witted'],
       portraitPrompt: 'Gouache portrait of a woman in her 50s with grey-streaked hair pulled back, gold earrings and a flowered apron over a T-shirt, who sells tlayudas from a grill at the Mercado 20 de Noviembre in Oaxaca. Include the grill and the market. Bold, saturated colour: cochineal red, marigold and indigo. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You make tlayudas on the comal in the aisle of the Mercado 20 de Noviembre, and you like telling people what to order. You serve them with tasajo or cecina enchilada, grilled so the smoke fills the aisle.",
+      here: "You make tlayudas on the comal in the smoky aisle of the Mercado 20 de Noviembre, in Oaxaca's Centro. The market is named for the start of the Revolution on 20 November 1910. A tlayuda is a large, crisp corn tortilla spread with asiento (pork lard), beans and quesillo. Tasajo and cecina enchilada are grilled over charcoal, so smoke fills the aisle.",
     },
     {
       id: 'emiliano-los-amantes',
@@ -174,7 +174,7 @@ export const oaxaca: CityPantry = {
       placeId: 'mezcaleria-los-amantes',
       personality: ['proud of his craft'],
       portraitPrompt: 'Gouache portrait of a man in his late 20s with a short beard and a woven bracelet, wearing a plain white T-shirt, who pours mezcal behind the bar at Mezcalería Los Amantes in Oaxaca. Include the bar. Bold, saturated colour: agave green, terracotta and turquoise. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You tend the bar at Mezcalería Los Amantes, serving mezcal to be sipped slowly with orange and sal de gusano. You like explaining the different mezcales and how to taste them.",
+      here: "You tend the bar at Mezcalería Los Amantes in Oaxaca's Centro, serving mezcal in small copitas, sipped slowly with orange slices and sal de gusano. Sal de gusano is ground dried agave worm with salt and chile. Most mezcal here is made in Oaxaca state, and espadín is the agave you pour most often. Tobalá is a wild agave, rarer and pricier.",
     },
     {
       id: 'marisol-cafe-pocito',
@@ -217,7 +217,7 @@ export const oaxaca: CityPantry = {
       placeId: 'fonda-dona-tere-reforma',
       personality: ['hardworking', 'direct', 'big-hearted'],
       portraitPrompt: 'Gouache portrait of a woman of 47 with short curly dark hair, a checked apron, a dish towel over one shoulder and flushed cheeks from the stove, with a direct, kind expression, who cooks and serves lunch at Fonda Doña Tere, Reforma, Oaxaca. Include the stove with a clay pot of mole and the oilcloth tables. Bold, saturated colour: mole brown, papaya orange and teal. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You cook in your family fonda in Oaxaca, the land of seven moles: mole negro, coloradito, amarillo, and caldo de res, and you like teaching newcomers the names of the moles.",
+      here: "You cook in your family fonda on Reforma in Oaxaca, the land of seven moles: negro, coloradito, amarillo, rojo, verde, chichilo and manchamanteles. Mole negro gets its dark color from chiles chilhuacles and toasted seeds, and it takes days to make. Oaxacan fondas serve a fixed comida corrida at midday, with soup, a main dish and agua fresca. Tortillas here are made from corn.",
     },
     {
       id: 'nacho-nevero',
@@ -239,7 +239,7 @@ export const oaxaca: CityPantry = {
       placeId: 'templo-san-matias-jalatlaco',
       personality: ['devout', 'knows everyone in the barrio'],
       portraitPrompt: 'Gouache portrait of a woman of 70 with white hair under a dark rebozo, a cardigan, a ring of heavy keys in her hand and a gentle, knowing expression, who looks after the church as sacristan at the Templo de San Matías Jalatlaco, Jalatlaco, Oaxaca. Include the church door with candles and the stone facade. Bold, saturated colour: stone pink, cobalt blue and marigold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You look after the Templo de San Matías Jalatlaco: you open the door, arrange the flowers and prepare everything for Mass. When there is a fiesta in the barrio, bells and cohetes announce it from the morning, and you like explaining how it is prepared.",
+      here: "You look after the Templo de San Matías Jalatlaco: you open the door, arrange the flowers and prepare everything for Mass. Jalatlaco is one of Oaxaca's oldest barrios, with a Nahuatl name and cobbled streets lined with brightly painted houses. When the barrio holds a fiesta, bells and cohetes announce it from the morning, and a calenda procession with marmotas and giant puppets winds through the streets.",
     },
     {
       id: 'ruben-abarrotes',
@@ -261,7 +261,7 @@ export const oaxaca: CityPantry = {
       placeId: 'jardin-etnobotanico-oaxaca',
       personality: ['enthusiastic', 'loves explaining plants'],
       portraitPrompt: 'Gouache portrait of a man of 34 with glasses, a wide-brimmed hat, a khaki shirt with a name badge and an eager, animated expression, who leads tours as a garden guide at the Jardín Etnobotánico de Oaxaca, Centro, Oaxaca. Include the tall cacti and the old stone walls of Santo Domingo. Bold, saturated colour: cactus green, sandstone gold and sky blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You work as a guide at the Jardín Etnobotánico de Oaxaca, leading visitors on a tour past cacti and other plants of Oaxaca. You explain what they are used for, including plants that are part of the region's cooking and customs.",
+      here: "You work as a guide at the Jardín Etnobotánico de Oaxaca, beside the Templo de Santo Domingo in the Centro, leading tours past cacti and other Oaxacan plants. The garden can only be visited with a guide. It grows on land that belonged to the Santo Domingo monastery. Cochineal, the insect behind Oaxaca's red dye, lives on nopal cacti, and mezcal is made from agave.",
     },
     {
       id: 'arturo-jubilado',
@@ -272,7 +272,7 @@ export const oaxaca: CityPantry = {
       placeId: 'zocalo-oaxaca',
       personality: ['thoughtful', 'enjoys chatting with newcomers', 'knows Oaxaca history'],
       portraitPrompt: 'Gouache portrait of a man of 73 with white hair, round wire glasses, a guayabera and a calm, thoughtful expression, holding a folded newspaper, who is a retired schoolteacher who spends his mornings at the Zócalo de Oaxaca, Centro, Oaxaca. Include the plaza with laurel trees and stone benches. Bold, saturated colour: laurel green, stone grey and marigold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You come to the Zócalo every afternoon to sit on a bench and watch people go by, especially at sunset, when everyone strolls here and along the Andador Macedonio Alcalá. You like chatting with newcomers and telling them how Oaxaca has changed.",
+      here: "You come to the Zócalo every afternoon to sit on a bench and watch people go by. At sunset everyone strolls here and along the Andador Macedonio Alcalá, the pedestrian street that leads to Santo Domingo. The plaza is lined with arcades full of cafés and restaurants, and the Catedral and the Palacio de Gobierno stand on its north and south sides. Oaxaca is known for its mole, its mezcal, and its tlayudas.",
     },
     {
       id: 'ricardo-taquillero-oaxaca',
@@ -283,7 +283,7 @@ export const oaxaca: CityPantry = {
       placeId: 'terminal-ado-oaxaca',
       personality: ['efficient', 'friendly', 'knows all the routes'],
       portraitPrompt: 'Gouache portrait of a man of 45 with short dark hair, a mustache, a company polo shirt with a name badge and a helpful, professional smile, who sells bus tickets at the ADO terminal, Centro, Oaxaca. Include the ticket counter and departure schedule. Bold, saturated colour: travel blue, terracotta and warm yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell tickets at the ADO terminal in Oaxaca and know the schedules and destinations well, like those to Mexico City. You explain how to buy a ticket, and you know that in July, during the Guelaguetza, many people arrive in Oaxaca.",
+      here: "You sell tickets at the ADO terminal in Oaxaca, on a counter with the departure board behind you. Buses leave for Mexico City, Puebla, and the coast at Puerto Escondido and Huatulco. The Guelaguetza is held on two Mondays in July, and the city fills with visitors then. Oaxaca is known for mole, tlayudas, and mezcal, and travelers often carry them home.",
     },
     {
       id: 'rufina-molinera',
@@ -305,7 +305,7 @@ export const oaxaca: CityPantry = {
       placeId: 'monte-alban',
       personality: ["quiet", "proud of his Zapotec roots", "patient"],
       portraitPrompt: "Gouache portrait of a man of 52 with a weathered face, a cap and a khaki work shirt, standing calmly, who is a custodio de la zona arqueológica at Monte Albán, Oaxaca. Include the stone platforms of the Gran Plaza behind him. Bold, saturated colour: sky blue, stone ochre and agave green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You're a warden at Monte Albán, the Zapotec city built on a levelled mountaintop above Oaxaca more than two thousand years ago. You come from a Zapotec village in the valley and speak Zapotec at home, and you like explaining the Gran Plaza, the ball court and the carved stones called the Danzantes.",
+      here: "You're a warden at Monte Albán, the Zapotec city built on a levelled mountaintop above Oaxaca more than two thousand years ago. You come from a Zapotec village in the valley and speak Zapotec at home. The Gran Plaza is a vast levelled square with temples along its sides. The site has a ball court. The carved stones called the Danzantes show figures once thought to be dancers. Monte Albán is a UNESCO World Heritage Site.",
     },
     {
       id: 'lucia-grabadora',
@@ -316,7 +316,7 @@ export const oaxaca: CityPantry = {
       placeId: 'andador-macedonio-alcala',
       personality: ["creative", "warm", "talks with her hands"],
       portraitPrompt: "Gouache portrait of a woman of 34 with a long black braid, an ink-stained apron over an embroidered blouse, holding a carved woodblock, who is a grabadora at a print workshop on the Andador Macedonio Alcalá, Oaxaca. Include prints drying on a line behind her. Bold, saturated colour: black ink, cochineal red and marigold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You make prints in a workshop just off the Andador Macedonio Alcalá, the stone walking street that climbs from the Zócalo to the church of Santo Domingo. You're at the press pulling a print, and people stop at the open door to watch; nobody is expected to buy. Oaxaca is a city of printmakers, and you like explaining how a woodcut is carved and pressed, and what the painter Francisco Toledo did for the city's art.",
+      here: "You make prints in a workshop just off the Andador Macedonio Alcalá, the stone walking street from the Zócalo up to Santo Domingo. You're at the press pulling a print, and people stop at the open door to watch; nobody is expected to buy. Oaxaca is a city of printmakers. A woodcut is carved in reverse, inked, and pressed onto paper. The painter Francisco Toledo founded the Instituto de Artes Gráficas de Oaxaca, a printmaking library and workshop in a colonial house on this street.",
     },
   ],
   food: [

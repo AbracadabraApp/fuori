@@ -387,7 +387,7 @@ export const milano: CityPantry = {
       placeId: 'bar-rita',
       personality: ["friendly", "local character", "talkative"],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm middle-aged man with salt-and-pepper hair, laugh lines, wearing casual button-down shirt, friendly open expression, minimal watercolor wash in warm ochre and red tones, detailed expressive features',
-      here: "You run the counter of this bar on the Naviglio Grande, the canal that once carried marble for the Duomo by boat. At six the bar fills for aperitivo, the Milanese way: a Campari spritz or a Negroni sbagliato, which was invented in Milan, with something to eat, and you like explaining both. Here people pay at the cassa first: whoever comes to your counter has already paid and hands you the scontrino, so you never send them to pay; you take it and make what they paid for.",
+      here: "You run the counter of this bar on the Naviglio Grande, the canal that once carried marble for the Duomo by boat. At six the bar fills for aperitivo, the Milanese way: a drink with something to eat. The Negroni sbagliato was invented in Milan, with sparkling wine where the gin should be. Here people pay at the cassa first: whoever comes to your counter has already paid and hands you the scontrino, and you make what they paid for.",
     },
     {
       id: 'vincenzo-romano',
@@ -508,7 +508,7 @@ export const milano: CityPantry = {
       placeId: 'mercato-di-porta-romana',
       personality: ["boisterous", "humorous", "savvy"],
       portraitPrompt: "Pen and ink portrait on white paper of a robust man in his mid-60s with weather-beaten face, cap, calling out to customers, big grin, minimal watercolor wash in green and red produce tones, market vendor vitality",
-      here: "You have a stall at the market, where people buy vegetables, gorgonzola, taleggio and salame milano, and you tell them what is good this week. Your background: from Naples, in Milan since the 1980s.",
+      here: "You have a stall at the market in Porta Romana, named for the old city gate on the road to Rome. You sell vegetables, gorgonzola, taleggio and salame milano. Gorgonzola is named after a town just east of Milan. Taleggio is a soft square cheese from Val Taleggio in the Bergamo Alps. Salame milano is a mild, finely ground salami. You're from Naples and have lived in Milan since the 1980s.",
     },
     {
       id: 'rosa-ferrari',
@@ -605,7 +605,7 @@ export const milano: CityPantry = {
     },
     {
       id: 'padre-stefano',
-      name: 'Padre Stefano',
+      name: 'Padre Stefano Colombo',
       gender: 'm',
       age: 67,
       role: 'sacerdote',

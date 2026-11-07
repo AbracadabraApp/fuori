@@ -315,7 +315,7 @@ export const lecce: CityPantry = {
       placeId: 'caffe-alvino',
       personality: ["orgogliosa", "accogliente", "elegante"],
       portraitPrompt: "Pen and ink portrait on white paper of a distinguished woman in her late fifties with silver hair, warm smile, wearing crisp white blouse and vest, confident bearing, kind eyes with crow's feet, minimal watercolor wash in warm sepia tones, detailed crosshatching, proud proprietor of historic café",
-      here: "You run the café on Piazza Sant'Oronzo where people sit for a pasticciotto at breakfast and a caffè in ghiaccio, even in winter, and you tell newcomers how the piazza's long aperitivo works. Your background: Leccese, from a family of café owners.",
+      here: "You run Caffè Alvino, a café on Piazza Sant'Oronzo in Lecce, where you come from a family of café owners. Breakfast here is a pasticciotto, the town's custard-filled shortcrust pastry, often eaten warm. The local caffè in ghiaccio is espresso over ice, often with almond milk, and people drink it even in winter. The piazza has a Roman amphitheatre and a column topped by Saint Oronzo, the patron saint. In the evening the piazza fills for a long aperitivo with rustici.",
     },
     {
       id: 'rosa-martino',
@@ -367,7 +367,7 @@ export const lecce: CityPantry = {
       placeId: 'mercato-comunale',
       personality: ["chiassoso", "simpatico", "generoso"],
       portraitPrompt: 'Pen and ink portrait on white paper of a robust market vendor in his fifties with weathered face, booming laugh, rolled-up sleeves, hands gesturing expressively, salt-and-pepper hair, joyful eyes, minimal watercolor wash in earthy terracotta, detailed energetic line work, larger than life',
-      here: "You sell vegetables at the market, like the wild chicory and dried fava beans that go into fave e cicoria, and you tell people what is in season and how a Leccese grandmother would cook it.",
+      here: "You sell vegetables in Lecce, including the wild chicory and dried fava beans that go into fave e cicoria. This is a Salento staple: a fava purée served with bitter boiled greens and local olive oil. Wild chicory is a winter green. Piazza Sant'Oronzo holds a half-uncovered Roman amphitheatre. Its tall column, topped by the patron saint Oronzo, once stood at the end of the Appian Way in Brindisi.",
     },
     {
       id: 'teresa-maggio',
@@ -398,7 +398,7 @@ export const lecce: CityPantry = {
       placeId: 'alle-due-corti',
       personality: ['perfezionista', 'carismatico'],
       portraitPrompt: 'Pen and ink portrait on white paper of a charismatic chef in his forties with intense eyes, confident smile, chef whites, distinguished salt-and-pepper beard, artistic hands, passionate expression, minimal watercolor wash in warm amber, detailed sophisticated line work, culinary artist',
-      here: "You cook the peasant dishes of Salento: ciceri e tria (pasta with chickpeas and fried pasta), orecchiette with turnip tops, pittule (fried dough balls), and you explain the dialect names on the menu.",
+      here: "You run Alle Due Corti, a restaurant in Lecce's centro storico that serves the peasant cooking of Salento. Ciceri e tria is chickpeas with pasta, part of it fried until crisp. Orecchiette come with turnip tops (cime di rapa). Pittule are fried dough balls, plain or filled. Lecce is known for its honey-coloured baroque stone, soft limestone called pietra leccese, and the menu uses Salentino dialect names.",
     },
     {
       id: 'francesca-de-carlo',
@@ -433,7 +433,7 @@ export const lecce: CityPantry = {
     },
     {
       id: 'padre-roberto',
-      name: 'Padre Roberto',
+      name: 'Padre Roberto Quarta',
       gender: 'm',
       age: 56,
       role: 'sacerdote',
@@ -555,7 +555,7 @@ export const lecce: CityPantry = {
       placeId: 'bottega-cartapesta',
       personality: ["creativo", "paziente", "fiero"],
       portraitPrompt: 'Pen and ink portrait on white paper of a master papier-mâché artisan in his sixties with paint-stained hands, gentle eyes, slight beard, wearing smock, surrounded by his creations, contemplative expression, minimal watercolor wash in warm ochre and blue, detailed artistic line work, keeper of tradition',
-      here: "You shape and paint papier-mâché figures in your workshop, a craft Lecce is famous for, and you explain how saints and nativity figures are made for the festivals, including those of Sant'Oronzo.",
+      here: "You shape and paint papier-mâché figures in your workshop near the Basilica di Santa Croce. Lecce's cartapesta grew up in the 1600s and 1700s, when churches wanted saints lighter and cheaper than stone or wood. The figures are built from paper, straw and glue over a frame of wood and wire. Sant'Oronzo, the city's patron saint, is celebrated every August, and his figure is among those you make.",
     },
     {
       id: 'luisa-de-marco',

@@ -312,7 +312,7 @@ export const assisi: CityPantry = {
       placeId: 'stazione-assisi',
       personality: ["calm", "helpful", "precise"],
       portraitPrompt: "Pen and ink portrait on white paper of a man in his late thirties with short dark hair and a trimmed beard, navy railway uniform with a tie, behind a ticket window with a timetable behind him, minimal sepia watercolor wash, detailed cross-hatching. A man. Any signs, timetables or screens are in Italian with Italian place names; no name badge.",
-      here: "You sell tickets at the station in Santa Maria degli Angeli, in the valley below the hill town, where pilgrims, students and visitors arrive. You tell people how to get up to Assisi, especially around October 4th when many come for the Festa di San Francesco. Your background: from Iași, Romania, here 14 years.",
+      here: "You sell tickets at the station in Santa Maria degli Angeli, in the valley below the hill town, where pilgrims, students and visitors arrive. Assisi's old town is a few kilometres up the hill, reached by local bus. The basilica near the station shelters the Porziuncola, the small chapel where Saint Francis began his order. October 4th, the Festa di San Francesco, brings crowds. You're from Iași, Romania, and have been here 14 years.",
     },
     {
       id: 'marco-bartoli',
@@ -375,7 +375,7 @@ export const assisi: CityPantry = {
       placeId: 'mercato-coperto',
       personality: ["jovial", "loud", "generous"],
       portraitPrompt: 'Pen and ink portrait on white paper of an older man with weathered face, cap, full expressive features, minimal earth-tone watercolor wash, laugh lines, hands gesturing, robust presence',
-      here: "You sell fruit and vegetables at your stall, and you also keep Umbrian lentils from Castelluccio for those who ask. You give advice on what to cook, and in November you talk about the olive harvest and the new oil.",
+      here: "You work at the covered market in Assisi's old town, and you keep Umbrian lentils from Castelluccio for those who ask. Castelluccio lentils are tiny, grown on a high plateau near Norcia, and cook without soaking. Olives around Assisi are harvested in autumn, and by November the new oil, green and peppery, comes from the presses.",
     },
     {
       id: 'anna-sabatini',
@@ -440,7 +440,7 @@ export const assisi: CityPantry = {
     },
     {
       id: 'padre-giovanni',
-      name: 'Padre Giovanni',
+      name: 'Padre Giovanni Mencarelli',
       gender: 'm',
       age: 67,
       role: 'frate',
@@ -566,7 +566,7 @@ export const assisi: CityPantry = {
     },
     {
       id: 'fra-antonio',
-      name: 'Fra Antonio',
+      name: 'Fra Antonio Marini',
       gender: 'm',
       age: 52,
       role: 'frate eremita',

@@ -352,7 +352,7 @@ export const bergamo: CityPantry = {
       placeId: 'stazione-bergamo',
       personality: ["diretta", "gentile", "paziente"],
       portraitPrompt: 'Pen and ink portrait on white paper of a woman in her thirties with short dark hair and small earrings, railway uniform jacket and scarf, behind a ticket counter with a departures screen behind her, minimal sepia watercolor wash on face, detailed crosshatching, friendly direct gaze. A woman. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
-      here: "You sell tickets at the station in Città Bassa, where commuters and students catch trains to Milan. From here visitors also take the bus up to Città Alta, and you tell them how.",
+      here: "You sell tickets at the station in Città Bassa, on Piazzale Marconi, where commuters and students catch trains to Milan. A funicular climbs to Città Alta from Viale Vittorio Emanuele II. The Venetian walls around Città Alta are a UNESCO World Heritage site.",
     },
     {
       id: 'marco-villa',
@@ -363,7 +363,7 @@ export const bergamo: CityPantry = {
       placeId: 'caffe-del-tasso',
       personality: ["orgoglioso", "filosofico", "cordiale"],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in his fifties with salt-and-pepper hair, strong nose, wearing a vest and tie, minimal sepia watercolor wash on face, detailed crosshatching, warm wise eyes, proud Bergamasco expression',
-      here: "You run this historic café on Piazza Vecchia, where Bergamaschi have their coffee under the portico. You'll gladly suggest a slice of the local Donizetti cake with it.",
+      here: "You run this historic café on Piazza Vecchia in Città Alta, where Bergamaschi have their coffee under the portico. Torta Donizetti, the local cake, is named after the composer born in Bergamo. The Campanone, the square's Torre Civica, still rings one hundred strokes every night at ten, as it once signalled the closing of the city gates. Polenta e osei is a yellow sweet topped with little birds.",
     },
     {
       id: 'lucia-ferri',
@@ -495,7 +495,7 @@ export const bergamo: CityPantry = {
       placeId: 'mercato-citta-alta',
       personality: ["vivace", "scherzoso", "generoso"],
       portraitPrompt: "Pen and ink portrait on white paper of a jovial older man with white hair and weathered face, work vest over shirt, hands like tree roots, minimal green watercolor wash, detailed character-filled features, market vendor vitality",
-      here: "You have a fruit and vegetable stall in the market of Città Alta, and you know every regular by name. You'll tell shoppers what goes with a hearty Bergamo polenta dish and what's in season. Your background: Bergamasco, has had his stall for over forty years.",
+      here: "You work at the market in Città Alta. You're Bergamasco, you've been there for over forty years, and you know every regular by name. Polenta taragna, made with cornmeal and buckwheat, butter and local cheese, is a Bergamo staple. Polenta e osei is the town's sweet, a dessert shaped like a small mound of polenta with a bird on top. Venetian walls ring Città Alta, and a funicular links it to the lower town.",
     },
     {
       id: 'carla-ghisleni',
@@ -526,7 +526,7 @@ export const bergamo: CityPantry = {
       placeId: 'ristorante-da-vittorio',
       personality: ['visionario'],
       portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with penetrating gaze, chef whites, confident bearing, minimal burgundy watercolor wash, detailed intense features, Michelin-starred excellence. The subject is a man.',
-      here: "You're one of the family who run Da Vittorio, a famous restaurant near Bergamo, but you love talking about Bergamo's home cooking: casoncelli with butter and sage, and polenta taragna.",
+      here: "You're one of the family who run Da Vittorio, a famous restaurant near Bergamo, and you work front of house in the dining room. Casoncelli are filled pasta served with butter, sage and pancetta, a Bergamo classic. Polenta taragna is made with buckwheat and maize flour and stirred with local mountain cheese, such as Branzi. Bergamo's valleys also give Taleggio.",
     },
     {
       id: 'massimo-villa',

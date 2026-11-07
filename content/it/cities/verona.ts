@@ -348,7 +348,7 @@ export const verona: CityPantry = {
       placeId: 'mercato-piazza-erbe',
       personality: ["jovial", "loud", "generous"],
       portraitPrompt: 'Pen and ink portrait on white paper of a robust man in his forties with weathered face, bright expressive eyes, wearing work apron, hands gesturing animatedly, big genuine smile, detailed ink work with watercolor wash in sun-bronzed tones and green',
-      here: "You sell fruit and vegetables at the market in Piazza delle Erbe, with the red radicchio rosso di Verona in winter and asparagus from Arcole in spring, and you'll tell shoppers what's best this week.",
+      here: "You sell fruit and vegetables at a stall in the Mercato di Piazza delle Erbe, in Verona's old centre. The square was the Roman forum, and the fountain in its middle carries the statue called Madonna Verona, which dates from Roman times. Red radicchio rosso di Verona is the winter crop. The stalls stand under big white umbrellas.",
     },
     {
       id: 'rosa-mercato',
@@ -379,7 +379,7 @@ export const verona: CityPantry = {
       placeId: 'ristorante-dodici-apostoli',
       personality: ['elegant', 'local', 'diplomatic'],
       portraitPrompt: 'Pen and ink portrait on white paper of a refined man in his forties with styled dark hair, intelligent eyes, wearing formal vest and tie, holding wine bottle with expertise, sophisticated smile, detailed crosshatching with watercolor wash in burgundy and gold',
-      here: "You serve at one of Verona's oldest restaurants: risotto all'Amarone, bigoli with duck, and pastissada (Verona's slow-cooked stew), and you explain the dishes to newcomers.",
+      here: "You wait tables at the Ristorante Dodici Apostoli, one of Verona's oldest restaurants, in the Centro Storico. The menu is local: risotto all'Amarone, made with the red wine of the Valpolicella hills just north of the city; bigoli, thick pasta pressed through a bronze die, served with duck; and pastissada de caval, a traditional Veronese stew of horse meat simmered in red wine, served with polenta.",
     },
     {
       id: 'angela-ponte',

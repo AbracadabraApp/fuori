@@ -504,7 +504,7 @@ export const taormina: CityPantry = {
       placeId: 'mercato-giardini',
       personality: ["boisterous", "generous with samples", "produce expert"],
       portraitPrompt: "Pen and ink portrait on white paper with minimal watercolor wash, of a Tunisian man from Sfax, market vendor with short dark hair and a trimmed beard, animated expression, holding citrus fruit, calling to customers, energetic pen strokes, vibrant green and orange wash, lively character, white background. The subject is a man.",
-      here: "You sell lemons, tomatoes, eggplants and capers at the market in Giardini Naxos, down by the sea, and hand out samples; you love explaining what goes into a good caponata. Your background: from Sfax, Tunisia, here 14 years.",
+      here: "You sell lemons, tomatoes, eggplants and capers at the market in Giardini Naxos, down by the sea, and hand out samples. Caponata here is fried eggplant with celery, olives and capers, in a sweet-and-sour sauce of vinegar and sugar. Giardini Naxos is where the Greeks founded their first colony in Sicily, Naxos, in 734 BC. Taormina sits on the hill above. You're from Sfax, Tunisia, and have been here 14 years.",
     },
     {
       id: 'concetta-luciano',

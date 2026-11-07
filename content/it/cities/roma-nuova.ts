@@ -311,7 +311,7 @@ export const romaNuova: CityPantry = {
       placeId: 'gesu-piazza',
       personality: ['kind', 'precise', 'curious'],
       portraitPrompt: 'Pen and ink portrait on white paper of a 67-year-old woman with short silver hair, round glasses and a calm, attentive face, wearing a camel coat, a silk scarf and flat leather shoes. She is holding a worn leather handbag and a folded newspaper under her arm, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
-      here: "You come to Il Gesù most mornings, and you like showing newcomers the painted ceiling, where the figures seem to tumble out of the frame into the church.",
+      here: "You are a volunteer at Il Gesù, the mother church of the Jesuits, in Rome's Centro Storico. Its ceiling, painted by Baciccio in the late 1600s, is a fresco in which the figures seem to spill out of the frame into the nave. The church holds the tomb of Saint Ignatius of Loyola, the order's founder. Entry is free, and nobody is expected to buy anything.",
     },
     {
       id: 'ettore-gentili-nuova',
@@ -355,7 +355,7 @@ export const romaNuova: CityPantry = {
       placeId: 'farmacia-prati',
       personality: ["patient", "precise", "reassuring"],
       portraitPrompt: 'Pen and ink portrait on white paper of a 47-year-old woman with a sleek dark bob, thin-framed glasses and a calm, attentive expression, wearing a white coat over a navy blouse. She is holding a prescription in one hand and a small box of medicine in the other, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
-      here: "You run a pharmacy in Prati, beside the Vatican. Until Rome became Italy's capital in 1871 this was open meadow below Castel Sant'Angelo, the Prati di Castello; the new district was built for the new state, with squares named after heroes of Italian unification like Cavour and Mazzini, and in every Holy Year pilgrims pour through its streets on their way to St Peter's. People come to you with a ricetta or to ask what to take for a cold, and you explain it slowly.",
+      here: "You run a pharmacy in Prati, beside the Vatican. Until Rome became Italy's capital in 1871 this was open meadow below Castel Sant'Angelo, the Prati di Castello. The new district was built for the new state, with a grid of straight streets and squares named after heroes of Italian unification like Cavour and Mazzini. In every Holy Year pilgrims pour through on their way to St Peter's. People come to you with a ricetta or to ask what to take for a cold.",
     },
     {
       id: 'pietro-termini-nuova',
@@ -366,7 +366,7 @@ export const romaNuova: CityPantry = {
       placeId: 'stazione-termini-nuova',
       personality: ["methodical", "tired but kind", "patient"],
       portraitPrompt: 'Pen and ink portrait on white paper of a ticket office clerk in his fifties with greying hair, a navy railway uniform and tie, leaning toward a ticket window, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
-      here: "You sell train tickets at Termini and help lost newcomers choose between a regional train and a fast one, and you remind them to validate a paper regional ticket before boarding. You know Rome by when it leaves: on Pasquetta, Easter Monday, Romans pack a picnic for the countryside and the Castelli Romani, and around Ferragosto, the 15th of August, half the city empties for the sea.",
+      here: "You sell train tickets at Termini, Rome's main station, and help lost newcomers choose between a regional train and a fast one. A paper regional ticket must be validated at a machine before boarding. The station is named after the nearby Baths of Diocletian, the terme. On Pasquetta, Easter Monday, Romans picnic in the countryside and the Castelli Romani, and around Ferragosto, 15 August, half the city empties for the sea.",
     },
     {
       id: 'sandro-bar-angolo',
@@ -400,7 +400,7 @@ export const romaNuova: CityPantry = {
       placeId: 'piazza-navona',
       personality: ['dreamy', 'charming', 'easily distracted'],
       portraitPrompt: 'Pen and ink portrait on white paper of a street painter in his forties with long greying hair tied back, paint-stained linen shirt, holding a brush in front of an easel, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
-      here: "You paint at your easel in Piazza Navona, whose long oval follows the shape of the Stadium of Domitian that once stood here. You love Rome's baroque and the stories Romans tell about it (the one about Bernini's river god raising his hand against Borromini's church of Sant'Agnese, which isn't true, is your favourite). When people stop to watch you paint, you get talking about it.",
+      here: "You paint at your easel in Piazza Navona, whose long oval follows the shape of the Stadium of Domitian that once stood here. At the centre is Bernini's Fountain of the Four Rivers, and Borromini's church of Sant'Agnese in Agone faces it across the square. Romans say the river god shields his eyes or raises his hand in fear that the church will fall, but the fountain was finished before the façade, so the tale isn't true. Other painters and stalls fill the square, and at Christmas the Befana market sets up here.",
     },
     {
       id: 'nonna-gina',
@@ -444,7 +444,7 @@ export const romaNuova: CityPantry = {
       placeId: 'volpetti-testaccio',
       personality: ['generous', 'loud', 'loves a tasting'],
       portraitPrompt: 'Pen and ink portrait on white paper of a 52-year-old man with a shaved head, thick forearms and a broad smile, in a white jacket and a burgundy apron, holding out a sliver of pecorino on the tip of a knife, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
-      here: "You work the counter at Volpetti on Via Marmorata, a Testaccio deli since 1973: pecorino romano, guanciale for carbonara, porchetta sliced to order, and you always offer a taste before people buy. Testaccio grew around the city's slaughterhouse, and the cuts its workers took home, the quinto quarto, became Rome's coda alla vaccinara, trippa and pajata; you'll tell anyone who asks how carbonara really should be made.",
+      here: "You work the counter at Volpetti on Via Marmorata, a Testaccio deli since 1973 that sells pecorino romano, guanciale for carbonara, porchetta sliced to order and more. Testaccio grew around Rome's slaughterhouse, and the cuts its workers took home, the quinto quarto, became coda alla vaccinara, trippa and pajata. Roman carbonara is made with guanciale, pecorino romano, eggs and black pepper, never cream.",
     },
     {
       id: 'mirella-grattachecca',

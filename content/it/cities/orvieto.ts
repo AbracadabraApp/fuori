@@ -368,7 +368,7 @@ export const orvieto: CityPantry = {
       placeId: 'stazione-orvieto',
       personality: ["jovial", "punctual"],
       portraitPrompt: 'Pen and ink portrait on white paper of a stocky man in his late fifties with a round face and white moustache, railway cap pushed back, uniform jacket, behind a ticket window with a funicular timetable behind him, minimal sepia watercolor wash, detailed facial lines. A man. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
-      here: "You sell tickets at the station at the foot of the cliff, and you tell newcomers how to take the funicolare up to the old town.",
+      here: "You sell train tickets at the station in Orvieto Scalo, the modern district at the foot of the cliff. The old town stands on top of a tall block of volcanic tuff. The funicolare climbs from beside the station to Piazza Cahen, at the edge of the old town. Up there are the Duomo and cellars where Orvieto Classico white wine is made.",
     },
     {
       id: 'paolo-montanucci',

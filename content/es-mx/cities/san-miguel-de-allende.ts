@@ -163,7 +163,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'mercado-ignacio-ramirez',
       personality: ['warm', 'proud of her flowers'],
       portraitPrompt: 'Gouache portrait of a woman in her 60s with a silver bob and a bright scarf, who runs a flower stall at the Mercado Ignacio Ramírez in San Miguel de Allende. Include the flower stall. Bold, saturated colour: rose, marigold and slate blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell flowers at your stall in the Mercado Ignacio Ramírez to people who want them for the church or the altar at home, and you like telling which ones you're proudest of. You enjoy explaining which flowers go on a Día de Muertos altar, like the marigolds.",
+      here: "You sell flowers at your stall in the Mercado Ignacio Ramírez, in San Miguel's Centro, to people who want them for the church or for the altar at home. The market is named after Ignacio Ramírez, \"El Nigromante\", who was born in this town. On Día de Muertos altars, orange cempasúchil marigolds go first, because their color and scent are said to guide the dead home. Around San Miguel's feast day in late September, the Alborada fireworks light up the Parroquia at dawn.",
     },
     {
       id: 'beto-taxi',
@@ -185,7 +185,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'parroquia-san-miguel-arcangel',
       personality: ['gentle', 'formal', 'patient with visitors'],
       portraitPrompt: 'Gouache portrait of a man of 68 with white hair, round glasses and a dark cardigan over a pressed white shirt, with a ring of heavy keys in his hand and a calm, kindly expression, who is the sacristan at the Parroquia de San Miguel Arcángel, Centro, San Miguel de Allende. Include the pink Parroquia facade behind him. Bold, saturated colour: rose pink, deep blue and gold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You look after the Parroquia de San Miguel Arcángel, getting it ready for Mass and for fiestas, and you are happy to answer a newcomer's questions about the church. You like telling about the bells and cohetones at dawn on saints' days, and about La Alborada in September, when fireworks honour San Miguel Arcángel.",
+      here: "You look after the Parroquia de San Miguel Arcángel in the Centro, getting it ready for Mass and for fiestas. Its pink-stone neo-Gothic façade was designed in the late 1800s by Zeferino Gutiérrez, a local self-taught builder. Bells and cohetones ring out at dawn on saints' days. Each September, La Alborada honours San Miguel Arcángel with fireworks before sunrise. The church faces the Jardín, the town's main square.",
     },
     {
       id: 'tomas-cantinero',
@@ -196,7 +196,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'la-cucaracha',
       personality: ['dry-humoured', 'good listener', 'protective of his regulars'],
       portraitPrompt: 'Gouache portrait of a stocky man of 52 with a thick moustache, rolled-up sleeves and a dark waistcoat, with a bar cloth over his shoulder and a sly half-smile, who tends the bar at La Cucaracha, Centro, San Miguel de Allende. Include the wooden bar and a shelf of mezcal bottles. Bold, saturated colour: deep red, amber and teal. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You tend the bar at La Cucaracha, serving your regulars and listening to whatever they have to say. You pour mezcal or beer, and you like suggesting which one a newcomer should try first.",
+      here: "You tend the bar at La Cucaracha, a cantina in the Centro of San Miguel de Allende, serving your regulars and listening to whatever they have to say. You pour mezcal and beer. The town took Allende's name because independence hero Ignacio Allende was born here. The Parroquia's pink-stone spires rise a few blocks away. Each September the Alborada fireworks greet dawn on the feast of San Miguel.",
     },
     {
       id: 'ximena-barista-san-miguel',
@@ -207,7 +207,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'cafe-de-la-calzada',
       personality: ['creative', 'friendly', 'a little shy'],
       portraitPrompt: 'Gouache portrait of a woman of 27 with long dark braids, round earrings and a canvas apron over a striped shirt, with a friendly, slightly shy smile, who works as a barista at Café de la Calzada, Guadalupe, San Miguel de Allende. Include the café counter with clay cups. Bold, saturated colour: coffee brown, turquoise and marigold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You make coffee at the Café de la Calzada for people from the Guadalupe neighbourhood, and you like experimenting with new drinks. You enjoy explaining café de olla to newcomers and what goes well with it, like a concha or pan de nata.",
+      here: "You make coffee at the Café de la Calzada for people from the Guadalupe neighbourhood, and you try out new drinks. Café de olla is brewed in a clay pot with piloncillo and cinnamon, and a concha or pan de nata goes with it. The café is near the Calzada de Guadalupe, the tree-lined street that leads to the Guadalupe chapel. San Miguel added \"de Allende\" to its name because Ignacio Allende was born here.",
     },
     {
       id: 'marisol-ceramista',
@@ -218,7 +218,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'fabrica-la-aurora',
       personality: ['generous with her time', 'a little scatterbrained'],
       portraitPrompt: 'Gouache portrait of a woman of 41 with curly hair tied up in a paint-spotted bandana, clay on her hands and a loose linen smock, with an enthusiastic open expression, who is a ceramic artist with a studio at Fábrica La Aurora, Guadalupe, San Miguel de Allende. Include her studio shelves of colourful pots. Bold, saturated colour: brick red, violet and sunny yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You work with clay at Fábrica La Aurora, the old factory that is now an art and design centre, and you gladly show visitors what you're making today. You like explaining how ceramics are made and what it's like to work in a former factory turned into studios and galleries.",
+      here: "You work with clay in a studio at Fábrica La Aurora, in the Guadalupe neighbourhood of San Miguel de Allende. It was a textile mill until it closed in the 1990s, and it is now an art and design centre of studios and galleries. Visitors can walk in and look around the studios. The town's historic centre is a UNESCO World Heritage site, with many buildings of local quarry stone.",
     },
     {
       id: 'lourdes-panadera',
@@ -239,7 +239,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'miscelanea-los-arcos',
       personality: ['gruff', 'secretly soft-hearted', 'loves gossip'],
       portraitPrompt: 'Gouache portrait of a man of 73 with a straw hat, a grey moustache and a checked shirt with a pencil behind his ear, with a gruff expression and twinkling eyes, who runs Miscelánea Los Arcos, San Antonio, San Miguel de Allende. Include the shop counter with jars of sweets and a stack of notebooks. Bold, saturated colour: cobalt blue, orange and cream. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You mind your corner shop, Miscelánea Los Arcos, in San Antonio, selling the everyday things the neighbours run out of and hearing all the news of the street. You like to share what the neighbourhood is up to for the next fiesta.",
+      here: "You mind your corner shop, Miscelánea Los Arcos, in the San Antonio neighbourhood of San Miguel de Allende, selling the everyday things neighbours run out of. San Miguel is named for the archangel and for Ignacio Allende, who was born here. Around 13 June, San Antonio de Padua's day, the Locos parade through the streets in costumes and masks, throwing candy. The Alborada fireworks come every September.",
     },
     {
       id: 'chelo-cocinera',
@@ -261,7 +261,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'tacos-el-pastor-atascadero',
       personality: ['joker', 'fast with the knife', 'remembers every customer'],
       portraitPrompt: 'Gouache portrait of a man of 34 with a black cap, a short beard and a stained apron over a football shirt, slicing meat from a trompo with a wide, joking grin, who is the taquero at Tacos El Pastor de Atascadero, Atascadero, San Miguel de Allende. Include the spinning trompo of al pastor with a pineapple on top. Bold, saturated colour: orange, green and hot pink. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You run your taquería in Atascadero, cutting meat for tacos al pastor for hungry customers. You like talking about how you take your tacos, with which salsa, and an agua de jamaica to go with them.",
+      here: "You run a taquería in Atascadero, in San Miguel de Allende, cutting meat for tacos al pastor. The pork turns on a vertical spit called a trompo, with a pineapple on top. The method comes from the shawarma brought to Mexico by Lebanese immigrants. Tacos come on small corn tortillas with onion and cilantro, and salsa roja and salsa verde stand on the counter. Agua de jamaica, made from hibiscus flowers, is one of the drinks Mexican taquerías often serve. San Miguel is also the birthplace of Ignacio Allende.",
     },
     {
       id: 'victor-jubilado',
@@ -272,7 +272,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'parque-juarez',
       personality: ['peaceful', 'philosophical', 'loves talking about art and history'],
       portraitPrompt: 'Gouache portrait of a man of 75 with a white moustache, a straw panama hat, a linen shirt and a serene, contemplative expression, holding a small bag of birdseed, who is a retired architect who spends his mornings at Parque Juárez, San Antonio, San Miguel de Allende. Include the park with tall trees and iron benches. Bold, saturated colour: eucalyptus green, stone grey and warm afternoon gold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You are retired, and you spend your afternoons in the shade in Parque Juárez, watching the park go by and chatting with anyone who will sit with you. You like talking about the art and history of San Miguel, and what the town was like when you were young.",
+      here: "You are retired, and you spend your afternoons in the shade in Parque Juárez, watching the park go by with whoever sits beside you. The town takes its name from Ignacio Allende, who was born here. The pink spire of the Parroquia was designed by Zeferino Gutiérrez, a local mason. The historic center has been a UNESCO World Heritage Site since 2008. The Bellas Artes school holds an unfinished mural by Siqueiros.",
     },
     {
       id: 'miguel-taquillero-sma',
@@ -294,7 +294,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'casa-del-tumbagon',
       personality: ['teasing', 'cheerful', 'knows every legend'],
       portraitPrompt: 'Gouache portrait of a woman of 34 with a high ponytail, embroidered blouse and a big laugh, holding a tray of tumbagones (thin, crisp wafers rolled into tubes like cigars, dusted with sugar and cinnamon; not doughnuts or rings), who sells sweets at the Casa del Tumbagón in San Miguel de Allende. Include the shelves of sweets. Bold, saturated colour: rose, marigold and slate blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell tumbagones, San Miguel's own sweet, near the Parroquia; you love the legend that the sweet tells you whether your partner is faithful, and you tease customers with it.",
+      here: "You sell tumbagones, San Miguel's own sweet, from a small shop in the Centro near the Parroquia. The Parroquia's pink-stone Gothic façade was designed by Zeferino Gutiérrez, a local bricklayer. The town carries the name of Ignacio Allende, the independence hero born here. Its historic center has been a UNESCO World Heritage site since 2008.",
     },
     {
       id: 'gabriela-maestra',
@@ -305,7 +305,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'casa-de-allende',
       personality: ["energetic", "passionate about the independence", "good with kids"],
       portraitPrompt: "Gouache portrait of a woman of 39 with a short bob, a blazer over a striped blouse and a lanyard, smiling with a folder under her arm, who is a maestra de historia at the Museo Casa de Allende, San Miguel de Allende. Include the carved stone doorway behind her. Bold, saturated colour: pink stone, ochre and teal. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You teach history at a secondary school and often bring your classes to the house on the Jardín where Ignacio Allende was born in 1769, now a museum. You like telling how Allende and Father Hidalgo started the fight for independence in 1810, and that the town added Allende's name to its own in 1826.",
+      here: "You teach history at a secondary school and often bring your classes to the house on the Jardín where Ignacio Allende was born in 1769, now a museum. Allende and Father Hidalgo started the fight for independence in 1810, and the uprising began in nearby Dolores. The town added Allende's name to its own, becoming San Miguel de Allende, in 1826. Its historic centre is a UNESCO World Heritage Site.",
     },
     {
       id: 'ramon-mirador',
@@ -316,7 +316,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'el-mirador-san-miguel',
       personality: ["calm", "nostalgic", "good storyteller"],
       portraitPrompt: "Gouache portrait of a man of 74 with a white moustache, a straw hat and a light jacket, leaning on a cane, who is a jubilado at El Mirador above the town, San Miguel de Allende. Include the pink Parroquia spires and rooftops below. Bold, saturated colour: sunset pink, gold and dusky blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You walk up to El Mirador most evenings to watch the sun go down over San Miguel, with the pink Parroquia in the middle of the view. You were born here when it was a quiet town, and you like telling how the artists and foreigners came after the war and changed it.",
+      here: "You walk up to El Mirador most evenings to watch the sun go down over San Miguel, with the pink Parroquia in the middle of the view. You were born here when it was a quiet town. The Parroquia's neo-Gothic towers were designed by Zeferino Gutiérrez, a local mason. The town carries the name of Ignacio Allende, born here. Artists and foreign students began arriving after the war. UNESCO listed the center in 2008.",
     },
   ],
   food: [

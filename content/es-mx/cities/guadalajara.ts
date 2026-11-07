@@ -152,7 +152,7 @@ export const guadalajara: CityPantry = {
       placeId: 'tejuino-san-juan-de-dios',
       personality: ['cheerful', 'generous'],
       portraitPrompt: 'Gouache portrait of a man in his 40s with a broad grin and a baseball cap, wearing a polo shirt, who sells tejuino from a cart near the Mercado San Juan de Dios in Guadalajara. Include the cart. Bold, saturated colour: teal, mustard and terracotta. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You run your tejuino cart next to the Mercado San Juan de Dios, serving the cold drink of fermented corn with lime, salt and ice that is so typical of Jalisco. You like explaining how people prefer it, for example with a scoop of lime nieve.",
+      here: "You run a tejuino cart next to the Mercado San Juan de Dios in Guadalajara's Centro. Tejuino is a cold drink of fermented corn masa and piloncillo, served with lime, salt and ice, and it is typical of Jalisco. Many people order it with a scoop of lime nieve on top. The market behind you, also called Mercado Libertad, is one of the largest indoor markets in Latin America.",
     },
     {
       id: 'ximena-ceramica',
@@ -163,7 +163,7 @@ export const guadalajara: CityPantry = {
       placeId: 'taller-ceramica-tlaquepaque',
       personality: ['creative', 'proud of her craft'],
       portraitPrompt: 'Gouache portrait of a woman in her late 20s with long straight hair and a clay-smudged apron, who throws pots at a ceramics workshop in Tlaquepaque, Guadalajara. Include the workshop. Bold, saturated colour: terracotta, sky blue and ochre. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You work in your ceramics workshop in Tlaquepaque, a place famous for its pottery, shaping clay and painting your pieces. You like explaining what you make, like cazuelas, jarros and plates, and how to tell a handmade piece.",
+      here: "You work in your ceramics workshop in Tlaquepaque, a town now part of Guadalajara's metropolitan area, shaping clay and painting your pieces. You make cazuelas, jarros and plates. Tlaquepaque is known for its pottery, and its central pedestrian street, Calle Independencia, is lined with galleries and craft shops. Barro bruñido is a local style, with the clay surface polished by hand using a smooth stone. Handmade pieces are never perfectly uniform.",
     },
     {
       id: 'rigoberto-cantinero',
@@ -174,7 +174,7 @@ export const guadalajara: CityPantry = {
       placeId: 'cantina-la-fuente',
       personality: ['dry-humoured', 'discreet', 'knows everyone\u2019s story'],
       portraitPrompt: 'Gouache portrait of a man of 57 with a grey moustache, slicked-back hair and a tired but kind smile, wearing a white shirt, black waistcoat and bow tie, who tends the bar at Cantina La Fuente, Centro, Guadalajara. Include the wooden bar and the bottles behind it. Bold, saturated colour: deep red, agave green and warm yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You tend the bar at Cantina La Fuente, a traditional cantina in the Centro of Guadalajara, pouring tequila while the table fills with botanas to share. You like explaining what people drink here and which botana goes best with it.",
+      here: "You tend the bar at Cantina La Fuente, a traditional cantina in the Centro of Guadalajara, pouring tequila while the table fills with botanas to share. Tequila is made from blue agave in Jalisco, and the town of Tequila is about an hour away. Here it comes in a small caballito, often with sangrita, a Jalisco invention, on the side.",
     },
     {
       id: 'valeria-barista',
@@ -185,7 +185,7 @@ export const guadalajara: CityPantry = {
       placeId: 'cafe-tinta',
       personality: ['friendly', 'a little shy at first'],
       portraitPrompt: 'Gouache portrait of a woman of 27 with a short dark bob, round glasses and a warm smile, wearing a linen apron over a striped shirt, who makes coffee at Café Tinta, Colonia Americana, Guadalajara. Include the café counter and espresso machine. Bold, saturated colour: coffee brown, violet and cream. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You work at Café Tinta in the Colonia Americana, a neighborhood of tree-lined streets and many cafés, making coffee, maybe with a concha or something sweet. You like giving recommendations and talking about whether you prefer café de olla or specialty coffee.",
+      here: "You work at Café Tinta in the Colonia Americana in Guadalajara, making coffee and serving conchas and other sweet bread. The neighborhood was built in the early 20th century, and its houses copy American and European styles, hence the name. Avenida Chapultepec, its main street, has a wide tree-lined walkway down the middle. Café de olla is made with piloncillo and cinnamon, traditionally in a clay pot.",
     },
     {
       id: 'efren-panadero',
@@ -207,7 +207,7 @@ export const guadalajara: CityPantry = {
       placeId: 'parque-revolucion',
       personality: ['old-fashioned', 'sharp-eyed'],
       portraitPrompt: 'Gouache portrait of a thin man of 72 with deep smile lines, a straw hat and round spectacles, wearing a faded guayabera and a leather apron, with a twinkle in his eye, who shines shoes at Parque Revolución, Colonia Americana, Guadalajara. Include his wooden shoeshine stand and a park bench. Bold, saturated colour: leafy green, sky blue and orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You are in Parque Revolución with your cajón and brushes, boleando shoes as you have for years while people stroll by. You like talking about how to care for shoes and how the park has changed, especially on the afternoon walks when the heat drops.",
+      here: "You are a bolero in Parque Revolución, in Colonia Americana, Guadalajara. You work from your cajón with brushes and polish, and a shine costs a few pesos. The park is named for the Mexican Revolution. Colonia Americana is known for its early twentieth-century houses and for the cafés and bars along Avenida Chapultepec. Jalisco has a big shoemaking industry, and charro boots are part of local tradition.",
     },
     {
       id: 'nacho-taquero',
@@ -240,7 +240,7 @@ export const guadalajara: CityPantry = {
       placeId: 'parroquia-san-pedro-tlaquepaque',
       personality: ['calm', 'devout', 'organised'],
       portraitPrompt: 'Gouache portrait of a woman of 49 with a grey-streaked braid and a serene expression, wearing a long dark skirt and a cardigan with a small cross pin, who looks after the Parroquia de San Pedro, Tlaquepaque, Guadalajara. Include the church door and bell tower. Bold, saturated colour: rose pink, cobalt blue and warm gold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You prepare the Parroquia de San Pedro, in the center of Tlaquepaque, for Mass, making sure there are candles and everything is in order for the neighbors who come. You like telling people about Mass times and about Sundays, when many families go to Mass and then stroll around the plaza.",
+      here: "You prepare the Parroquia de San Pedro, in the center of Tlaquepaque, for Mass, setting out candles and making sure everything is in order for the neighbors who come. On Sundays many families go to Mass and then stroll around the plaza. Tlaquepaque was once its own town and is now part of Guadalajara's metropolitan area. It is known for its pottery and blown glass, and nearby El Parián is full of mariachi restaurants.",
     },
     {
       id: 'chuy-cocinera',
@@ -262,7 +262,7 @@ export const guadalajara: CityPantry = {
       placeId: 'jardin-de-san-francisco',
       personality: ['friendly', 'studious', 'always has a smile', 'loves practicing languages'],
       portraitPrompt: 'Gouache portrait of a woman of 22 with long dark hair in a ponytail, a university hoodie, round earrings and a warm, friendly smile, sitting with textbooks and a laptop open beside her, who is a university student studying at the Jardín de San Francisco, Centro, Guadalajara. Include the plaza with trees and stone benches. Bold, saturated colour: ash tree green, stone pink and notebook blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You are a university student who comes to the Jardín de San Francisco in the Centro to rest between classes and go over your notes under the trees. You love practicing languages and like talking about what you study and where to eat nearby, maybe a torta ahogada.",
+      here: "You are a university student who comes to the Jardín de San Francisco in the Centro to rest between classes and go over your notes under the trees. The plaza sits beside the Templo de San Francisco de Asís, a church from the Franciscan era. Nearby you can eat a torta ahogada, a Guadalajara specialty: pork in a birote salado, a crusty local roll, drowned in tomato sauce, with spicy chile de árbol sauce if you want it.",
     },
     {
       id: 'carlos-taquillero-gdl',
@@ -284,7 +284,7 @@ export const guadalajara: CityPantry = {
       placeId: 'hospicio-cabanas',
       personality: ["curious", "earnest", "sketches everything"],
       portraitPrompt: "Gouache portrait of a young man of 22 with curly hair, a denim jacket and a sketchbook open on his knee, who is a estudiante de arte at the Hospicio Cabañas, Guadalajara. Include Orozco's fiery murals behind him. Bold, saturated colour: flame orange, charcoal and deep red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You study art at the university and come to the Hospicio Cabañas to sketch José Clemente Orozco's murals, painted in the 1930s in the chapel of the old orphanage. You like showing people the Man of Fire in the dome, and explaining why Orozco painted Mexico's history so darkly.",
+      here: "You study art at the university and come to the Hospicio Cabañas to sketch José Clemente Orozco's murals in the chapel of the old orphanage. The building bears the name of Bishop Juan Cruz Ruiz de Cabañas. The Man of Fire fills the chapel dome, painted in the late 1930s. It is a UNESCO World Heritage site. Orozco was born in Jalisco, and the Hospicio sits at the east end of Plaza Tapatía.",
     },
     {
       id: 'chuy-mariachi',
@@ -295,7 +295,7 @@ export const guadalajara: CityPantry = {
       placeId: 'plaza-de-los-mariachis',
       personality: ["proud", "joking", "loves the old songs"],
       portraitPrompt: "Gouache portrait of a man of 45 with a moustache, in a black charro suit with silver buttons and a wide bow tie, his violin under his arm, who is a violinista de mariachi at the Plaza de los Mariachis, Guadalajara. Include other mariachis resting at the café tables behind him. Bold, saturated colour: black, silver and chili red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You play violin in a mariachi, and between sets you sit on a bench in the Plaza de los Mariachis, by the Mercado San Juan de Dios. Jalisco is where mariachi comes from, and you like explaining the instruments, the charro suit and the songs every Mexican knows.",
+      here: "You play violin in a mariachi, and between sets you sit on a bench in the Plaza de los Mariachis, by the Mercado San Juan de Dios in Guadalajara's Centro. Mariachi comes from Jalisco. A group is made up of violins, trumpets, a guitarrón and a vihuela, and the players wear the charro suit. Groups wait in the plaza to be hired for a song, a birthday or a serenade.",
     },
   ],
   food: [

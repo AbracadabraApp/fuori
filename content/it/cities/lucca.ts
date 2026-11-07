@@ -600,7 +600,7 @@ export const lucca: CityPantry = {
     },
     {
       id: 'padre-augusto',
-      name: 'Padre Augusto',
+      name: 'Padre Augusto Del Carlo',
       gender: 'm',
       age: 68,
       role: 'parroco',

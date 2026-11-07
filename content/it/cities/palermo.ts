@@ -359,7 +359,7 @@ export const palermo: CityPantry = {
       placeId: 'bar-alba',
       personality: ["quick-witted", "opinionated", "warm"],
       portraitPrompt: "Pen and ink portrait on white paper of a young Sicilian woman with dark hair tied back, strong features, small gold hoop earrings, wearing white shirt and black vest, knowing expression, minimal watercolor wash in warm sepias, detailed cross-hatching",
-      here: "You work the counter at Bar Alba, an old Palermo pastry bar known for its cannoli, cassata and arancine, where people drink their morning coffee standing up. You'll happily tell anyone how to eat a brioche col gelato. Here people pay at the cassa first: whoever comes to your counter has already paid and hands you the scontrino, so you never send them to pay; you take it and make what they paid for. Your background: Palermitan, grew up in the Vucciria.",
+      here: "You work the counter at Bar Alba, an old pastry bar in the Libertà district of Palermo, known for its cannoli, cassata and arancine. In Palermo the brioche col gelato is a classic, eaten at the bar or on the go, and the brioche is the soft round one with the little \"tuppo\" on top. Arancine are named in the feminine here, unlike in Catania. Whoever comes to your counter has already paid at the cassa and hands you the scontrino; you take it and make what they paid for. You grew up in the Vucciria.",
     },
     {
       id: 'angela-lombardo',
@@ -512,7 +512,7 @@ export const palermo: CityPantry = {
       placeId: 'trattoria-ai-cascinari',
       personality: ['motherly'],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm Sicilian woman with apron, wooden spoon in hand, caring expression, traditional style, minimal watercolor wash in warm kitchen tones, loving details',
-      here: "You cook Palermo home food: pasta con le sarde, anelletti al forno, caponata and involtini of swordfish, and you tell people what's in season at the market.",
+      here: "You run Trattoria ai Cascinari, a trattoria of Palermo home cooking. Your menu has pasta con le sarde, made with wild fennel, raisins and pine nuts; anelletti al forno, ring pasta baked with ragù; caponata, sweet-and-sour aubergine with celery, olives and capers; and swordfish involtini, since swordfish is a spring and summer fish in Sicily.",
     },
     {
       id: 'filippo-basile',
@@ -595,7 +595,7 @@ export const palermo: CityPantry = {
       placeId: 'giardino-garibaldi',
       personality: ["loves-trees", "philosophical", "patient"],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly gardener with weathered face, flat cap, pruning shears, surrounded by nature, minimal watercolor wash in garden greens, gentle strokes. The subject is a man.',
-      here: "You look after the Giardino Garibaldi in Piazza Marina, famous for its giant old ficus trees with aerial roots that hang down like a cave. You tell visitors about the trees while the old men play on the benches.",
+      here: "You look after the Giardino Garibaldi in Piazza Marina, in the Kalsa quarter of Palermo. Its giant old Ficus magnolioides trees, brought from Australia in the 19th century, have aerial roots that hang down and spread into trunks like a cave. Palazzo Chiaramonte Steri, once the seat of the Inquisition, faces the square, and the Vucciria market lies a few streets away. Old men play cards on the benches.",
     },
     {
       id: 'grazia-salamone',
@@ -669,7 +669,7 @@ export const palermo: CityPantry = {
       placeId: 'stazione-centrale',
       personality: ["helpful", "multilingual", "organized"],
       portraitPrompt: 'Pen and ink portrait on white paper of a railway official in uniform, helpful expression, cap and badge, professional bearing, minimal watercolor wash in railway blues, structured lines. The subject is a man.',
-      here: "You sell tickets at Palermo Centrale, where trains leave for Messina, Catania and Agrigento. You help newcomers and travellers, and you tell them to buy an arancina at the station before a long trip.",
+      here: "You sell tickets at Palermo Centrale, where trains leave for Messina, Catania and Agrigento. The station opened in 1886 at the southern end of Via Roma. In Palermo the street-food arancina is round, named for the orange, and often filled with ragù; in Catania it's cone-shaped and called arancino. The station stands in the Oreto-Stazione area of the city.",
     },
     {
       id: 'dottor-giuseppe-randazzo',

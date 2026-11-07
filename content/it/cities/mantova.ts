@@ -349,7 +349,7 @@ export const mantova: CityPantry = {
       placeId: 'caffe-modi',
       personality: ["refined", "local", "dignified"],
       portraitPrompt: "Pen and ink portrait on white paper of a distinguished woman in her late fifties with silver hair, elegant posture, wearing a crisp white shirt and vest. Slight smile, knowing eyes. Minimal watercolor wash in warm sepia tones, detailed crosshatching showing refined café owner character.",
-      here: "You run this elegant café on Piazza delle Erbe, where Mantuans come for a morning coffee and, later in the day, for the aperitivo. You'll tell anyone what goes best with a slice of sbrisolona. Your background: Mantuan, from a family of the old town.",
+      here: "You run a café in Mantua's old town, close to Piazza delle Erbe, where Mantuans come for a morning coffee and, later in the day, for the aperitivo. The square is lined with the medieval Palazzo della Ragione, the Romanesque Rotonda di San Lorenzo and the Clock Tower. Sbrisolona, Mantua's crumbly almond cake, is broken by hand, not cut, and often comes with coffee or a sweet wine. You're Mantuan, from an old-town family.",
     },
     {
       id: 'silvia-barista',
@@ -669,7 +669,7 @@ export const mantova: CityPantry = {
       placeId: 'stazione-mantova',
       personality: ["helpful", "local", "patient"],
       portraitPrompt: 'Pen and ink portrait on white paper of a station worker with uniform, decades of travelers helped, connection point. Transportation wisdom. Minimal watercolor wash in railway blues, detailed station character. The subject is a man.',
-      here: "You work at the station, where trains arrive from Verona, Milan and Modena. You help newcomers with tickets and tell visitors that the flat city is best seen by bike.",
+      here: "You work at the station in Mantova, where trains arrive from Verona, Milan and Modena, and you help travellers with tickets. The city is flat and bordered by three lakes. The old centre is a short walk from the station. The Gonzaga family ruled Mantova for centuries and left the Palazzo Ducale and Palazzo Te.",
     },
     {
       id: 'elisabetta-artigiana',

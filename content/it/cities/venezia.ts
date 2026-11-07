@@ -369,7 +369,7 @@ export const venezia: CityPantry = {
       placeId: 'caffe-florian',
       personality: ["elegant", "hardworking", "friendly"],
       portraitPrompt: "Pen and ink portrait on white paper of a young South Asian woman of Bangladeshi heritage, born in Venice, a distinguished young woman in her mid twenties with neat dark hair tied back, bow tie and formal vest, subtle blue-grey watercolor wash, refined pen strokes, dignified bearing",
-      here: "You wait on tables at Caffè Florian, the historic café on Piazza San Marco open since 1720, and you explain to visitors that a coffee at a table costs far more than an espresso drunk standing at the bar. Your background: born in Venice to Bangladeshi parents.",
+      here: "You wait on tables at Caffè Florian, the historic café under the arcades of Piazza San Marco, open since 1720. It is named after its founder, Floriano Francesconi. A coffee at a table costs far more than an espresso drunk standing at the bar, and when the café's orchestra plays on the piazza, a music charge is added to the bill. Your background: born in Venice to Bangladeshi parents.",
     },
     {
       id: 'giulia-leoni',
@@ -490,7 +490,7 @@ export const venezia: CityPantry = {
       placeId: 'mercato-rialto',
       personality: ["boisterous", "hardworking", "direct"],
       portraitPrompt: "Pen and ink portrait on white paper of a robust woman in her fifties with ruddy complexion, rubber boots and apron, animated expression, minimal blue watercolor wash, bold energetic strokes, market vendor vitality",
-      here: "You sell fish at the Rialto market, where Venetians shop early in the morning for sarde, seppie and moleche, and you tell customers what came in from the lagoon today. Your background: from Constanța, here 15 years.",
+      here: "You sell fish at the Rialto market in San Polo, where Venetians shop early for sarde, seppie and moleche. The fish market is closed on Mondays. Moleche are lagoon crabs caught just as they shed their shell, only in certain seasons. Sarde in saor, sardines with sweet-sour onions, is an old Venetian dish. Your background: from Constanța, here 15 years.",
     },
     {
       id: 'maria-mercato',
@@ -521,7 +521,7 @@ export const venezia: CityPantry = {
       placeId: 'ristorante-antiche-carampane',
       personality: [],
       portraitPrompt: 'Pen and ink portrait on white paper of a serious chef in his late forties with strong features, chef\'s whites, intense gaze, minimal russet watercolor wash, bold assured strokes, culinary dedication',
-      here: "You cook Venetian fish in a hidden trattoria near Rialto: sarde in saor, fritto misto from the lagoon, spaghetti al nero di seppia, and you tell people there's no pizza here.",
+      here: "You cook Venetian fish in a hidden trattoria near Rialto, in San Polo. The menu has sarde in saor, sweet-and-sour with onions, pine nuts and raisins; fritto misto from the lagoon; and spaghetti al nero di seppia, black with cuttlefish ink. There is no pizza here. The street takes its name from the old Ca' Rampani, and the quarter was where the Republic of Venice once confined its prostitutes.",
     },
     {
       id: 'alvise-costa',
@@ -624,7 +624,7 @@ export const venezia: CityPantry = {
       placeId: 'campo-dei-mori',
       personality: ["eccentric", "local", "nostalgic"],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly man with wild white hair, tweedy jacket, animated expression, minimal terracotta watercolor wash, character-filled expressive lines, storyteller spirit',
-      here: "You sit in Campo dei Mori every day and tell anyone who stops about the statues of the merchants on the walls, including the one with the iron nose that Venetians know as Sior Rioba.",
+      here: "You sit in Campo dei Mori, a quiet square in Cannaregio. Its walls hold statues of merchants in oriental dress, said to be the Mastelli brothers, who came from the Morea and lived here in the twelfth century. One of them, Sior Rioba, has an iron nose, and Venetians count him among the city's \"talking statues\". The square lies near the house of Tintoretto, who lived by the Fondamenta dei Mori.",
     },
     {
       id: 'matteo-vino',

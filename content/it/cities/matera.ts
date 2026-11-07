@@ -390,7 +390,7 @@ export const matera: CityPantry = {
       placeId: 'ristorante-francesca',
       personality: ['elegant', 'passionate about cuisine'],
       portraitPrompt: 'Pen and ink portrait on white paper of a sophisticated Italian woman with styled short hair, chef\'s whites, refined features, minimal watercolor wash, white background, confident artistic expression, clean pen lines',
-      here: "You cook the food of Basilicata in your cave restaurant in the Sassi: crapiata (a soup of grains and pulses), orecchiette, peperoni cruschi and pane di Matera, and you tell people where each dish comes from.",
+      here: "You cook the food of Basilicata in your cave restaurant in the Civita, the oldest part of the Sassi, a UNESCO World Heritage site. Your menu has crapiata (a soup of grains and pulses), orecchiette, peperoni cruschi and pane di Matera. The bread is made with durum wheat semolina and has its own IGP label. Peperoni cruschi are sweet peppers dried in the sun, then briefly fried until crisp.",
     },
     {
       id: 'marco-dibari',
@@ -485,7 +485,7 @@ export const matera: CityPantry = {
       placeId: 'piazza-duomo',
       personality: ["contemplative", "friendly", "daily routine"],
       portraitPrompt: 'Pen and ink portrait on white paper of an elderly Italian man with cap, sport coat, newspaper tucked under arm, minimal watercolor wash, white background, contented peaceful expression, gentle pen work',
-      here: "You spend your mornings in the square by the cathedral, chatting with friends, and you love telling newcomers about the Festa della Bruna on 2 July, when the decorated carriage is torn apart by the crowd at the end.",
+      here: "You spend your mornings in the square by the cathedral in the Civita, the oldest part of Matera, where the Sassi houses are carved into the rock of the ravine. The cathedral is dedicated to the Madonna della Bruna, patron saint of the city. Her festa is on 2 July: a decorated papier-mâché carriage is pulled through the streets, and at the end the crowd tears it apart. Matera's Sassi are a UNESCO World Heritage site.",
     },
     {
       id: 'vincenzo-pace',

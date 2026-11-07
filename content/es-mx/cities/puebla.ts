@@ -164,7 +164,7 @@ export const puebla: CityPantry = {
       placeId: 'dulces-tipicos-la-gloria',
       personality: ['cheerful', 'proud of her family\'s sweets'],
       portraitPrompt: 'Gouache portrait of a girl of 16 in a school sweater with a ponytail and braces, who helps at her family\'s dulcería, Dulces Típicos La Gloria, on Calle de los Dulces in Puebla. Include the sweets shop. Bold, saturated colour: cobalt, white and candy pink. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You help out in your family's dulcería in the Centro Histórico, where people come to buy sweets to take home as gifts: camote poblano, tortitas de Santa Clara, muéganos and jamoncillo. You like telling customers which one is your favorite.",
+      here: "You help out in your family's dulcería on Calle 6 Oriente, the \"Calle de los Dulces\" in the Centro Histórico, where people buy sweets to take home as gifts: camote poblano, tortitas de Santa Clara, muéganos and jamoncillo. Camote is a sweet-potato candy, sold in fruit flavors. Tortitas de Santa Clara are made of pumpkin-seed paste and named after Puebla's Santa Clara convent. Muéganos are fried dough pieces bound with piloncillo syrup.",
     },
     {
       id: 'padre-tomas-santo-domingo',
@@ -218,7 +218,7 @@ export const puebla: CityPantry = {
       placeId: 'fonda-dona-tere',
       personality: ['warm', 'bossy in the kitchen', 'remembers every regular\'s order'],
       portraitPrompt: 'Gouache portrait of a woman of 52 with short curly hair, round cheeks and a kind, bossy expression, in a yellow apron stained with mole, holding a wooden spoon, who cooks and runs Fonda Doña Tere, La Paz, Puebla. Include the fonda with its pots and oilcloth tables. Bold, saturated colour: mole brown, marigold orange and bright green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You cook Puebla's food in your fonda: mole poblano, molotes, and chiles en nogada when it's the season, and you tell people Puebla is where mole was born.",
+      here: "You cook Puebla's food in your fonda in La Paz: mole poblano, molotes, and chiles en nogada when it's the season. Mole poblano was born in Puebla, in the convent of Santa Rosa, according to the local story. Chiles en nogada come in late summer, when walnuts and pomegranates are fresh, and their green, white and red match the Mexican flag. Puebla is also the home of cemitas and tacos árabes.",
     },
     {
       id: 'chuy-tacos-arabes-el-puente',
@@ -262,7 +262,7 @@ export const puebla: CityPantry = {
       placeId: 'farmacia-san-rafael',
       personality: ['quietly funny'],
       portraitPrompt: 'Gouache portrait of a woman of 31 with glasses, her dark hair pulled back, a calm, attentive expression, in a white coat with a name badge, who works as a pharmacist at Farmacia San Rafael, La Paz, Puebla. Include the pharmacy with its green cross and shelves of medicines. Bold, saturated colour: pharmacy green, white and warm orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You are the pharmacist at Farmacia San Rafael, a neighborhood pharmacy in La Paz, where people come in for medicine and advice. Customers greet you with 'buenas tardes' as they walk in, and you remind them that small shops like yours often can't change large bills.",
+      here: "You are the pharmacist at Farmacia San Rafael, a neighborhood pharmacy in La Paz, in Puebla, where people come in for medicine and advice. The volcano Popocatépetl sometimes dusts Puebla with ash, and then people ask for face masks and eye drops. Puebla's big local holiday is the 5th of May, for the 1862 battle.",
     },
     {
       id: 'beatriz-abuela',
@@ -273,7 +273,7 @@ export const puebla: CityPantry = {
       placeId: 'jardin-del-carmen',
       personality: ['affectionate', 'loves teaching kids Spanish', 'always knitting'],
       portraitPrompt: 'Gouache portrait of a woman of 79 with soft white curls, reading glasses on a chain, a lilac shawl over a flowered dress and knitting needles in her hands, with a warm, grandmotherly smile, who is a neighbourhood grandmother who sits at the Jardín del Carmen, Barrio de Analco, Puebla. Include the plaza with jacaranda trees and iron benches. Bold, saturated colour: jacaranda purple, fountain blue and warm terracotta. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You spend your days on a bench in the Jardín del Carmen, a plaza in the Centro Histórico, knitting and watching the neighborhood go by. Today you like to chat with newcomers and kids and teach them Spanish words, maybe over a bit of Puebla's famous sweets.",
+      here: "You spend your days on a bench in the Jardín del Carmen, a plaza in Puebla's Centro Histórico, knitting and watching the neighborhood go by. The historic center is a UNESCO World Heritage site. Puebla's camotes, sweet-potato candies, began in the convent of Santa Clara, and sweet shops still fill the Calle de los Dulces. Many church domes and façades here are covered in Talavera tile.",
     },
     {
       id: 'jorge-taquillero-puebla',
@@ -317,7 +317,7 @@ export const puebla: CityPantry = {
       placeId: 'barrio-xanenetla',
       personality: ["easygoing", "proud of his barrio", "paints every day"],
       portraitPrompt: "Gouache portrait of a man of 31 with a short beard, a paint-spattered T-shirt and a cap on backwards, holding a brush, who is a muralista at the Barrio de Xanenetla, Puebla. Include a colourful mural on the wall behind him. Bold, saturated colour: turquoise, magenta and sunflower yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You grew up in Xanenetla, an old barrio of Puebla, and you're one of the artists who covered its walls with murals together with the neighbours, in the project they called Ciudad Mural. You like telling the stories of the families each mural shows.",
+      here: "You grew up in Xanenetla, one of the oldest barrios of Puebla, just a short walk from the Barrio del Artista and the historic centre. You're one of the artists who painted its walls with the neighbours in Ciudad Mural. The murals cover the neighbours' own house fronts, painted together with the people who live behind them.",
     },
   ],
   food: [
