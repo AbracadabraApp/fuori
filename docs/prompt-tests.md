@@ -18,3 +18,15 @@ or the command's output, quoted here.
 - **Learned:** the line causes the repeat; the place alone doesn't (a Mexican café never brought up café de olla without it). Seen in the lines, not measured: without the topic she repeats the learner's last order instead ("¿Quiere un café con leche otra vez?" on most return visits), from memory; the weather ("Hoy hace mucho frío") opens many visits either way (unit C1).
 - **Decision:** a topic named in a `here` line is a repeat. Next questions: (1) does the same hold for a different kind of planted line (a story, not a topic)? (2) the "otra vez" repeat is memory (C3).
 - **Commit:** the one this entry is in.
+
+## T1b: without the planted topic, does she bring up other local things on her own?
+
+- **Date:** 2026-11-06
+- **Unit:** B1 (Ximena's `here` line), same variable as T1.
+- **Hypothesis:** cutting the planted topic also cuts what's particular to the place.
+- **Variable:** as T1, with or without "You love talking about café de olla…" (the line no longer has "slowly", Josh's decision the same day, in both versions).
+- **Result measured:** visits where she mentions anything in a set S fixed before reading, café de olla excluded: foods and drinks (pan dulce, conchas, tamales, chilaquiles, churros), places (Condesa, Parque México, Roma, Reforma, Zócalo), customs (Día de Muertos, posadas, quinceañeras), words (qué padre, ahorita, chilango); and those where she brings it up herself (the learner didn't say it in that visit). Counted in code on the full transcripts, then every line read.
+- **Setup:** T1 rerun with every line kept (T1 printed only first lines; Josh: "just read her answers"): `tests/experiments/here-topic.mts`, outputs `tests/experiments/out/here-topic-A-1794010664030.md`, `here-topic-B-1794010657046.md`. T1's own result reproduced: café de olla 15/15 with the sentence, 0/15 without.
+- **Result:** any S item: A 14/15, B 15/15. Brought up by her: A 4/15, B 10/15 (B: pan dulce 5, Parque México 6, ahorita 2; also Parque España, the curved streets around the park, coffee from Oaxaca and Chiapas, her dog Mole "like the sauce").
+- **Learned:** the planted topic crowds out the rest; without it she talks more about her neighbourhood on her own. Neither version has culture beyond the neighbourhood and its food (no customs, history or festivals in 30 visits). Both repeat the last order every return visit ("¿Quiere un café con leche otra vez?"), from memory and the errand, not the line.
+- **Decision:** cutting a planted topic costs nothing here. Open: where deeper culture should come from; the order repeat (memory, C3).
