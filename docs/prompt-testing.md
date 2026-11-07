@@ -50,6 +50,7 @@ So the job now is less adding and more finding out what each part does.
 13. **Guards on every test.** Words per turn, reply time, how much of the turn is in the language, answers offered. A change that wins its measure and breaks a guard isn't kept.
 14. **One log.** `docs/prompt-trials.md`: every test is one entry, the card plus results, decision, output file and commit, written the same day whatever the outcome. A kept prompt change also bumps the version and adds a changelog entry (`npm run test:prompt`).
 15. **Beginner first, then the rest.** Josh plays Beginner. Fixes go on the shared layer for every character and both countries ("fixes are global"), but they're tested where the problem shows first.
+16a. **Over 5 minutes needs Josh's approval** (Josh, 2026-11-07: "we should require approval for any test over 5 min"). Every card estimates its running time; a test expected to take longer than 5 minutes runs only after Josh says yes to that card. A test that turns out longer than its estimate stops at 5 minutes and asks.
 16. **Josh decides design, Claude decides tests.** Framings and goals ("stay in your job", "stay in your role" and "be yourself" are three different ideas) are Josh's to choose; the test design, running and reading are Claude's. A cut reaches the game only after Josh has seen its log entry, at the next release.
 
 ## Proposed additions (Claude, 2026-11-07, for Josh's review)
@@ -104,7 +105,8 @@ Moments: <which, from moments.json>
 Measure: <what is counted, how (code or judge), out of how many>
 Hypothesis: <expected result, with the threshold>
 Other outcomes: <what each would mean>
-Size: <moments × runs × versions, time>
+Size: <moments × runs × versions>
+Time: <estimated minutes; over 5 needs Josh's yes before running>
 Guards: words per turn, reply time, language share, answers offered
 Result: <numbers, both control runs>
 Read: <yes, all lines; file>

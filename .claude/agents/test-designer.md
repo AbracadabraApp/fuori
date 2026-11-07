@@ -25,7 +25,7 @@ Check each, and say pass or what to change, in one line each:
 7. **The tools.** The judge used has passed its calibration (F1) or the card says it hasn't; the simulated learner, if any, has passed F2. A test that depends on an uncalibrated tool says so in its decision.
 8. **Guards.** Words per turn, reply time, language share, answers offered, and the learning guard where it applies.
 9. **Type.** Moment for an item one turn can show; dialogue (visit) for items 3, 4 (drift) and 7.
-10. **Cost.** Replies × calls per reply; minutes. Flag anything over about 200 replies.
+10. **Cost and time.** Replies × calls per reply, and estimated minutes. Over 5 minutes needs Josh's approval before it runs (prompt-testing.md rule 16a): say so in the verdict, and offer a smaller version that fits in 5 if there is one.
 
 End with a verdict: **run as is**, **run with these changes** (the changed card), or **don't run** (why, and what to run instead).
 
