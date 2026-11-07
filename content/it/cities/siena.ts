@@ -267,16 +267,6 @@ export const siena: CityPantry = {
       characterId: 'teresa-morbidi',
       imagePrompt: 'Soft pastel sketch on white paper of a historic food shop with hanging salamis, shelves of pasta and preserves, wheels of pecorino, wooden counter worn smooth by time, warm golden light, traditional and beloved.',
     },
-    // M2: Language school
-    {
-      id: 'scuola-lingua-siena',
-      name: 'Scuola di Lingua Italiana Siena',
-      kind: 'language-school',
-      neighbourhood: 'Terzo di Città',
-      real: false,
-      characterId: 'magda',
-      imagePrompt: 'Soft pastel sketch on white paper of a language school in a medieval palazzo, vaulted ceilings, large windows overlooking Sienese rooftops, students at wooden tables, whiteboard with Italian lessons, warm ochre and burnt sienna tones, textured sketch style, loose watercolor washes, lots of white paper',
-    },
     // M2: Train station
     {
       id: 'stazione-siena',

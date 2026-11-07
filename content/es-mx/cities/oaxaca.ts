@@ -107,15 +107,6 @@ export const oaxaca: CityPantry = {
       imagePrompt: 'the Zócalo de Oaxaca, Centro, Oaxaca. A shady plaza with laurel trees, stone benches, a bandstand and the cathedral on one side. An elderly man sits on a bench reading a newspaper while children play and balloon sellers pass by.',
     },
     {
-      id: 'escuela-lengua-oaxaca',
-      name: 'Escuela de Español Oaxaca',
-      kind: 'language-school',
-      neighbourhood: 'Jalatlaco',
-      real: false,
-      characterId: 'magda',
-      imagePrompt: 'a language school in Jalatlaco, Oaxaca. A colonial building with a tiled courtyard, bright classroom with wooden tables, whiteboard with Spanish verbs, students with notebooks, bougainvillea climbing the walls.',
-    },
-    {
       id: 'terminal-ado-oaxaca',
       name: 'Terminal ADO',
       kind: 'bus-terminal',

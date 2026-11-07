@@ -15,16 +15,17 @@ export const romaNuova: CityPantry = {
   neighbourhoods: ['Testaccio', 'San Lorenzo', 'Garbatella', 'Centro Storico', 'Pinciano', 'Porta Maggiore', 'Pigneto', 'Prati', 'Esquilino', 'Trastevere', 'Monti'],
 
   places: [
-    // Magda's school, moved from the original Roma when it was removed (Josh, 2026-11-07):
-    // hidden (not in the showcase); lessons happen here until schools go into Learn
+    // Magda's studio, where Learn's lessons happen: never shown in the game (not in
+    // the showcase). No schools in the game (Josh, 2026-11-07); the id is kept
+    // for past lessons and the picture
     {
       id: 'scuola-lingua-roma',
-      name: 'Scuola di Lingua Italiana',
-      kind: 'language-school',
+      name: 'Lo studio di Magda',
+      kind: 'teacher-studio',
       neighbourhood: 'Centro Storico',
       real: false,
       characterId: 'magda',
-      imagePrompt: 'Soft pastel sketch on white paper of a language school classroom in a historic Roman building, wooden desks arranged in a semicircle, whiteboard with Italian verb conjugations, windows overlooking a courtyard, maps of Italy on the walls, warm daylight, cream and ochre tones, textured sketch style, loose watercolor washes, lots of white paper',
+      imagePrompt: 'Soft pastel sketch on white paper of a private teacher\'s study in a Roman flat: a small table with two chairs, books and a notebook, a window over the rooftops, warm daylight, cream and ochre tones, loose watercolor washes, lots of white paper',
     },
     {
       id: 'cinema-pigneto',

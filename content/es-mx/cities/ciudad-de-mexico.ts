@@ -107,13 +107,16 @@ export const ciudadDeMexico: CityPantry = {
       imagePrompt: 'the Alameda Central, Centro Histórico, Ciudad de México. Wide tree-lined paths with iron benches, a fountain in the background, and an elderly woman feeding pigeons while office workers and students pass by.',
     },
     {
+      // Magda's studio, where Learn's lessons happen: never shown in the game
+      // (the tutor's place is left out of the feed). No schools in the game
+      // (Josh, 2026-11-07); the id is kept for past lessons and the picture
       id: 'escuela-lengua-cdmx',
-      name: 'Escuela de Español para Extranjeros',
-      kind: 'language-school',
+      name: 'El estudio de Magda',
+      kind: 'teacher-studio',
       neighbourhood: 'Roma Norte',
       real: false,
       characterId: 'magda',
-      imagePrompt: 'a language school in Roma Norte, Ciudad de México. Bright classroom in a restored mansion with tall windows, students around a table with books, whiteboard with Spanish conjugations, bookshelves, potted plants, morning light.',
+      imagePrompt: 'a private teacher\'s study in Roma Norte, Ciudad de México: a small table with two chairs, books and a notebook, tall windows of a restored mansion, potted plants, morning light.',
     },
     {
       id: 'terminal-tapo',

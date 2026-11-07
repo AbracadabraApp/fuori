@@ -21,7 +21,7 @@
 // Wine bars hidden (Josh, 2026-10-27: "not appropriate for all ages")
 export const showcase: Record<string, string[]> = {
   // Roma redone (Josh, 2026-10-22; docs/rome-redo.md); the only Rome since the
-  // original was removed (2026-11-07). Magda's school is in its file, not shown.
+  // original was removed (2026-11-07). Magda's studio is in its file, not shown.
   'roma-nuova': [
     'cinema-pigneto', // Rome cinema trial (Josh, 2026-11-05): posters and trailers, no person; Pigneto, Pasolini's neighbourhood
     'bar-mattina-nuova',
@@ -50,7 +50,6 @@ export const showcase: Record<string, string[]> = {
     'piazza-vittorio',
     'bottega-artigiana',
     'piazza-duomo', // M2: bench character Alberto (pensionato)
-    'scuola-lingua-matera', // M2: language school with Magda
     'stazione-fal', // M2: train station for travel
     // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
     'casa-grotta',
@@ -83,7 +82,6 @@ export const showcase: Record<string, string[]> = {
     'piazza-del-campo',
     'bottega-del-palio',
     'piazza-salimbeni', // M2: bench character Beatrice (studentessa)
-    'scuola-lingua-siena', // M2: language school with Magda
     'stazione-siena', // M2: train station for travel
     // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
     'orto-de-pecci',
@@ -98,7 +96,6 @@ export const showcase: Record<string, string[]> = {
     'squero-san-trovaso',
     'libreria-acqua-alta',
     'campo-dei-mori', // M2: bench character Dante (storico locale)
-    'scuola-lingua-venezia', // M2: language school with Magda
     'stazione-santa-lucia', // M2: train station for travel
     // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
     'ponte-rialto',
@@ -114,7 +111,6 @@ export const showcase: Record<string, string[]> = {
     'gay-odin',
     'piazza-bellini',
     'spaccanapoli-street', // M2: bench character Nonna Assunta (Via Spaccanapoli) (abitante del quartiere)
-    'scuola-lingua-napoli', // M2: language school with Magda
     'stazione-centrale-napoli', // M2: train station for travel
     // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
     'presepi-san-gregorio',
@@ -129,7 +125,6 @@ export const showcase: Record<string, string[]> = {
     'piazza-maggiore',
     'salumeria-simoni',
     'piazza-verdi', // M2: bench character Clara (studentessa)
-    'scuola-lingua-bologna', // M2: language school with Magda
     'stazione-centrale', // M2: train station for travel
     // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
     'due-torri',
@@ -143,7 +138,6 @@ export const showcase: Record<string, string[]> = {
     'trattoria-ai-cascinari',
     'piazza-pretoria',
     'giardino-garibaldi',
-    'scuola-lingua-palermo', // M2: language school with Magda
     'stazione-centrale-palermo', // M2: train station for travel
     // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
     'cappella-palatina',
@@ -188,7 +182,6 @@ export const showcase: Record<string, string[]> = {
     'bar-rita',
     'piazza-santo-stefano',
     'peck',
-    'scuola-lingua-milano',
     'stazione-porta-garibaldi',
     // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
     'duomo-milano',
@@ -241,7 +234,6 @@ export const showcase: Record<string, string[]> = {
     'piazza-castello',
     'casa-del-vermouth',
     'libreria-luxemburg',
-    'scuola-lingua-torino',
     'stazione-porta-nuova-torino', // station (2026-10-14)
     // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
     'mole-antonelliana',
@@ -338,7 +330,6 @@ export const hiddenForNow: Record<string, string[]> = {
     'officina-profumo',
     'enoteca-alessi',
     'piazza-santo-spirito', // M2: bench character Alessia (studentessa d'arte)
-    'scuola-lingua-firenze', // M2: language school with Magda
     'stazione-smn', // M2: train station for travel
   ],
 };

@@ -301,15 +301,6 @@ export const venezia: CityPantry = {
       imagePrompt: 'A traditional pharmacy with antique wooden cabinets, glass bottles on shelves, professional neighborhood care.',
     },
     {
-      id: 'scuola-lingua-venezia',
-      name: 'Scuola Internazionale di Lingua',
-      kind: 'language-school',
-      neighbourhood: 'Dorsoduro',
-      real: false,
-      characterId: 'magda',
-      imagePrompt: 'A language school in a palazzo overlooking a canal, tall windows with water reflections, students at a round table, whiteboard with Italian verbs, Murano glass chandelier, textured sketch style, loose watercolor washes, lots of white paper.',
-    },
-    {
       id: 'stazione-santa-lucia',
       name: 'Stazione Santa Lucia',
       kind: 'station',

@@ -1,6 +1,6 @@
 /**
  * Magda's system prompt and first turn, from content/<country>/prompts/magda-teaching.md:
- * the school and city she's in, how many lessons she's taught the learner, her
+ * the city she's in, how many lessons she's taught the learner, her
  * study file on them (her memory: lib/study-file.ts), and how many replies
  * they've made this lesson (the one fact she gets each turn for pacing).
  *
@@ -30,12 +30,10 @@ export function buildTutorPrompt(params: {
 }): { system: string; firstTurn: string; version: string } {
   const { character, memory, replies, now = new Date() } = params;
   const f = readPromptFile('magda-teaching.md');
-  const [school] = (character.appearance?.setting ?? '').split(',');
   const lessons = memory?.visits ?? 0;
 
   const system = fill(f.block('System prompt'), {
     language: language.name,
-    school: school?.trim() || 'the language school',
     city: character.city,
     lessons:
       lessons < 1

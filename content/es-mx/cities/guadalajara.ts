@@ -106,15 +106,6 @@ export const guadalajara: CityPantry = {
       imagePrompt: 'the Jardín de San Francisco, Centro, Guadalajara. A peaceful plaza with tall trees and stone benches beside the old Templo de San Francisco, with a young woman sitting on a bench with textbooks and a laptop while pigeons wander and people pass through.',
     },
     {
-      id: 'escuela-lengua-guadalajara',
-      name: 'Centro de Español Guadalajara',
-      kind: 'language-school',
-      neighbourhood: 'Chapultepec',
-      real: false,
-      characterId: 'magda',
-      imagePrompt: 'a language school in Chapultepec, Guadalajara. A colonial-style building with a covered courtyard, bright classroom with wooden tables, whiteboard with Spanish verbs, students with notebooks, hanging plants.',
-    },
-    {
       id: 'terminal-nueva',
       name: 'Terminal Nueva',
       kind: 'bus-terminal',

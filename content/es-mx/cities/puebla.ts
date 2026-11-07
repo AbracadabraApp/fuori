@@ -107,15 +107,6 @@ export const puebla: CityPantry = {
       imagePrompt: 'the Jardín del Carmen, Barrio de Analco, Puebla. A small neighbourhood plaza with jacaranda trees, iron benches and a fountain, the baroque church of El Carmen in the background. An elderly woman sits knitting on a bench while children play nearby.',
     },
     {
-      id: 'escuela-lengua-puebla',
-      name: 'Instituto de Español Puebla',
-      kind: 'language-school',
-      neighbourhood: 'Centro Histórico',
-      real: false,
-      characterId: 'magda',
-      imagePrompt: 'a language school in Centro Histórico, Puebla. A colonial building with Talavera tile accents, bright classroom with arched windows, students at tables, whiteboard with Spanish grammar, view of the cathedral through windows.',
-    },
-    {
       id: 'terminal-capu',
       name: 'Central de Autobuses Puebla (CAPU)',
       kind: 'bus-terminal',

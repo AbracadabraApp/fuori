@@ -107,15 +107,6 @@ export const sanMiguelDeAllende: CityPantry = {
       imagePrompt: 'Parque Juárez, San Antonio, San Miguel de Allende. Curving paths under tall ash and eucalyptus trees, iron benches and a small fountain, with an elderly man sitting peacefully on a bench feeding pigeons while joggers and dog-walkers pass by.',
     },
     {
-      id: 'escuela-lengua-sma',
-      name: 'Instituto de Español San Miguel',
-      kind: 'language-school',
-      neighbourhood: 'Centro',
-      real: false,
-      characterId: 'magda',
-      imagePrompt: 'a language school in Centro, San Miguel de Allende. A colonial building with bright pink walls, cobblestone courtyard, bright classroom with wooden tables, whiteboard with Spanish grammar, students with books, bougainvillea climbing the walls.',
-    },
-    {
       id: 'terminal-sma',
       name: 'Terminal de Autobuses',
       kind: 'bus-terminal',

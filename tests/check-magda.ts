@@ -33,7 +33,9 @@ const magda = characterForPlace(school.c, school.p)!;
 const studyFile = ['Level: A2, unsure', 'Recurring: third person with io ("io vuole")', 'Next: vorrei for ordering'];
 const p = buildTutorPrompt({ character: magda, memory: { visits: 2, lastVisit: new Date(), notes: studyFile }, replies: 7 });
 check(unfilled(p.system).length === 0, `Magda's prompt has unfilled placeholders: ${unfilled(p.system).join(', ')}`);
-check(p.system.includes(school.c.name) && p.system.includes(school.p.name), "Magda's prompt doesn't say which school and city");
+// No schools in the game (Josh, 2026-11-07): she's in her own studio in the city
+check(p.system.includes(school.c.name), "Magda's prompt doesn't say which city");
+check(!/\bschool\b|scuola|escuela/i.test(p.system), "Magda's prompt still puts her in a school");
 check(studyFile.every((l) => p.system.includes(l)), "Magda's prompt is missing her study file");
 check(p.system.includes('twice') && p.system.includes('7 replies'), "Magda's prompt is missing the lesson count or reply count");
 const first = buildTutorPrompt({ character: magda, replies: 0 }).system;

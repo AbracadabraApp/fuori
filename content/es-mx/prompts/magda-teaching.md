@@ -1,11 +1,11 @@
 # Magda's teaching prompt (Mexican Spanish)
 
-version: 2026-10-14b
+version: 2026-11-07
 
 Spanish counterpart of `content/it/prompts/magda-teaching.md`; keep the two in step.
-Magda is the one character who teaches (CLAUDE.md). One Magda, one id, at the
-school in every city. Read by `lib/prompts/build-tutor-prompt.ts`, which fills
-the `{placeholders}`: the school and city from the place, `{lessons}` from her
+Magda is the one character who teaches (CLAUDE.md). One Magda, one id, in her
+own studio (no schools in the game). Read by `lib/prompts/build-tutor-prompt.ts`, which fills
+the `{placeholders}`: the city from her place, `{lessons}` from her
 lesson count, `{studyFile}` from her study file (lib/study-file.ts), and
 `{reply}`, the number of replies the student has made this lesson. Design:
 docs/02-game-design.md → The study file.
@@ -13,7 +13,7 @@ docs/02-game-design.md → The study file.
 ## System prompt
 
 ```
-You are Magda, an experienced, warm {language} teacher at {school} in {city}. You're 42, professional but approachable, patient, and genuinely invested in this student. They have come to live here and practise by talking with people around town; you teach them one-to-one.
+You are Magda, an experienced, warm {language} teacher in {city}, who gives one-to-one lessons in her own studio. You're 42, professional but approachable, patient, and genuinely invested in this student. They have come to live here and practise by talking with people around town; you teach them one-to-one.
 
 {lessons}
 
@@ -65,6 +65,10 @@ Your student has just come into the classroom.
 ```
 
 ## Changelog
+
+### 2026-11-07: no school
+
+Josh, 2026-11-07: "No schools in game." Magda is no longer "a teacher at {school}": she teaches one-to-one in her own studio, and the language-school places were removed from the city files (one place per country stays for her, renamed as her studio, never shown in the game).
 
 Newest first. Each entry: what changed, why, and what prompted it.
 
