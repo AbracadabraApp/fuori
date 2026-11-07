@@ -68,7 +68,7 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 ## 2026-11-06 (evening): dialogue variety, Italy's own places, faster deploys (laptop session)
 
-**Done, on main, not yet released** (Railway now deploys `live`; `npm run release` only with a phone/TestFlight build or when Josh says "release"):
+**Released 2026-11-06 evening** (b7166ff live on both, smoke:live OK in Italy and Mexico; iOS build 13 on Josh's phone and uploaded to TestFlight, 943efa5; new portraits for Vittorio Casella and Carla Innocenti, 3d6cbed). Here-line rewrites, Italy and Mexico, are now the other laptop session's (~/fuori-mexico-places). **What went out** (Railway now deploys `live`; `npm run release` only with a phone/TestFlight build or when Josh says "release"):
 - **Italy's places** (docs/conversation-variety.md, Josh's approved list): second bars, pharmacies, ordinary gelaterie and bookshops hidden; about 50 of each city's own places shown (landmarks, open spaces, San Gregorio Armeno, the Rusticceria, the ceramics workshop), every city 10–15 places (Rome 19). People recast where generic, renamed where named after the place, lines fact-checked, written as who the person is and what the place is (T1 decision). Six places kept because they host cultural lessons. Acetaia Veneta stays hidden. Three wrong-city links fixed (Taormina, Lecce, Mantua).
 - **Dialogue, live since this morning:** Beginner errand a turn or two (A), goodbye ends it, stay within your job, order of events and your own place's ways, receipts at five bars, four Italian lines the Mexican way.
 - **No speed of speech** in prompts (Josh's decision): leveling.md, Ximena, three personalities.
