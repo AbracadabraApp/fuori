@@ -72,7 +72,8 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 - **Italy's voices** (Josh: "I think you can manage voices better than me"): 22 native Italian voices in age groups per gender (b745a19, 3a2cef3), 13 new ones added to the account; chosen for conversational delivery and loudness on the library previews (none quieter than ~-21 LUFS). Each character's voice assigned once and stored in the city file (`voice:`; `npm run voices:assign`), spread per city: at most 3 people on one voice in a city (10 before). 203 of 678 keep their old voice. On `main`, **not released** (Railway deploys `live`); not heard (no credits).
 - **Later the same day:** Josh moved ElevenLabs to **Pro** (600k credits); voices back in both countries. **Mexico** done the same way: 21 voices by age, stored per character, at most 2 per voice in a city (42a62dc). Every voice in both countries said a game line in game settings and was measured: Lorenzo (-27.3) replaced by Danilo. Italy's older groups hold every usable older voice in the library (4 women, 3 men exist).
 - **The original Roma removed** (Josh: "purge the first Rome save nuovo"): roma.ts deleted; Magda's school moved into Roma nuova so her lessons stay in Rome. Old 'roma' conversations stay in the database, skipped by every lookup.
-- **Next:** smoke:live before the next release (Rome removal, voices); Josh listens to the new voices after the release and names any to swap.
+- **No schools in the game** (Josh): 13 school places removed; Magda keeps one hidden place per country, renamed her studio, so lessons still open; magda-teaching.md says studio, not school.
+- **Next:** smoke:live before the next release (Rome removal, voices, schools); Josh listens to the new voices after the release and names any to swap.
 
 ## 2026-11-06 (evening): dialogue variety, Italy's own places, faster deploys (laptop session)
 
