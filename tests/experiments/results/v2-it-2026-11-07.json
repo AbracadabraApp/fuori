@@ -1,0 +1,188 @@
+{
+ "questions": {
+  "1": "Would a learner at this level be unable to follow the parts of this reply in the language (words or grammar well beyond them)?",
+  "2": "Does the reply state something false or invented about the place, the town, its food or the country?",
+  "3": "Is the reply generic, with nothing of her place, town or country, at a turn where a local would naturally have said something of it?",
+  "4": "Does she step out of her role or her job: offering or doing what her job or her place can't give, or talking like a language teacher?",
+  "5": "Did the learner need help or ask for it (in English or the language), and the reply fails to give it?",
+  "6": "Does the reply lecture, point out a mistake like a teacher, or offer answers to say back that a learner couldn't use (too long, two ideas, not what a local would say)?",
+  "8": "Is the reply too long or too dense for a learner at this level to follow in one hearing?"
+ },
+ "today": [
+  "beginner-2026-11-06",
+  "2026-10-21"
+ ],
+ "marked": [
+  {
+   "kind": "marked",
+   "conversation": "ef6a34be-4b24-42fa-853b-ee4a06f990fd",
+   "character": "Gina Proietti",
+   "version": "2026-10-21",
+   "today": true,
+   "visit": "first",
+   "turn": 10,
+   "item": 1,
+   "quote": "Dio guarda il cuore, mica la pelle. Un tatuaggio così in chiesa ci sta benissimo.",
+   "reason": "The learner's garbled message was only about wearing a shirt or covering up, and her long idiomatic reply is above an intermediate learner's level and misreads his unclear request.",
+   "original": {
+    "line": "Ma certo che va bene, figliolo! La Madonna Addolorata sul braccio, che bellezza: Dio guarda il cuore, mica la pelle. Un tatuaggio così in chiesa ci sta benissimo. Se hai freddo con 'sta pioggia, mettiti pure la camicia, ma nessuno ti dirà niente. Fattelo vedere, quel tatuaggio!",
+    "words": 47,
+    "broken": true,
+    "reason": "The reply packs in idiomatic and advanced items such as \"mica\", \"ci sta benissimo\", \"Dio guarda il cuore, mica la pelle\", \"Addolorata\", and the double-clitic imperative \"Fattelo vedere\", which is well beyond a learner who still writes \"ho abito\" and has no gloss for any of it."
+   },
+   "replays": [
+    {
+     "line": "Ma certo che va bene, Joshua! La Madonna Addolorata sul braccio, che bella devozione! In chiesa conta il cuore, mica la pelle. Una camicia però non te la posso dare io, che sono una vecchia seduta sulle scale: se ti serve, in via della Lungaretta ci sono tanti negozietti. Ma dimmi, perché proprio l'Addolorata?",
+     "words": 54,
+     "broken": false,
+     "reason": "The reply uses mostly high-frequency, intermediate-level Italian (va bene, camicia, negozietti, dimmi, perché) with simple grammar, and the less common words (devozione, Addolorata, mica la pelle) are guessable from context or the learner's own mention of Madonna and tattoo."
+    },
+    {
+     "line": "Ma certo che va bene, figlio mio! Dentro è casa della Madonna, mica guardano i tatuaggi. E una Madonna Addolorata sul braccio, poi, fa solo piacere. La camicia, se vuoi, mettila per rispetto, ma non è un obbligo. Chi te l'ha fatta, quella Madonna?",
+     "words": 44,
+     "broken": false,
+     "reason": "The reply is mostly short, common Italian that an intermediate learner can follow, and it picks up the learner's own tattoo and shirt topics. Words like 'tatuaggi', 'Madonna', 'camicia' and 'rispetto' are familiar or transparent, and 'Addolorata' is a recognizable echo of the learner's 'Dolores'. The idioms 'mica guardano' and 'fa solo piacere', plus the imperative 'mettila', are slightly harder but guessable from context, so they don't block understanding."
+    },
+    {
+     "line": "Ma certo che va bene, figlio mio! Il Signore guarda il cuore, mica i tatuaggi, e una Madonna Addolorata sul braccio la rispetto assai. Se vuoi, per stare tranquillo, una camicia o un golfino leggero ci sta bene, ma nessuno ti caccia. Dimmi, perché proprio l'Addolorata?",
+     "words": 46,
+     "broken": true,
+     "reason": "The reply packs in several colloquial or idiomatic items an intermediate learner (whose own Italian is still very shaky) likely can't parse: 'mica', 'assai', 'nessuno ti caccia', 'ci sta bene', 'golfino' and 'Addolorata', which together obscure the main reassurance."
+    },
+    {
+     "line": "Ma certo che va bene, figliolo! Il Signore guarda il cuore, mica i tatuaggi, e la Madonna Addolorata sul braccio è una devozione bella. Una camicia, se vuoi, ma entra pure così. Dov'è che te la sei fatta, quella Madonna?",
+     "words": 40,
+     "broken": true,
+     "reason": "The reply is full of idiomatic, colloquial Italian that goes beyond this learner, who writes with many basic errors: \"Il Signore guarda il cuore, mica i tatuaggi\", \"mica\", \"figliolo\", \"Madonna Addolorata\", \"devozione\" and the reflexive-with-clitic \"Dov'è che te la sei fatta, quella Madonna?\" with its dislocated structure, none of which is glossed."
+    },
+    {
+     "line": "Ma certo che va bene, figlio mio! La Madonna non guarda i tatuaggi, guarda il cuore. E una Madonna Addolorata sul braccio, poi, è una bella devozione! Una camicia però non te la posso dare io, che sono qui a sedere sulle scale: ne trovi di belle ai negozietti di via della Lungaretta, qui dietro. Ma dimmi, perché proprio l'Addolorata?",
+     "words": 60,
+     "broken": true,
+     "reason": "The reply is a long, fast-paced block of idiomatic Italian, well beyond this learner, who writes in very broken Italian; it includes 'La Madonna non guarda i tatuaggi, guarda il cuore', 'devozione', 'Addolorata', 'non te la posso dare io, che sono qui a sedere sulle scale', 'negozietti', and 'qui dietro', and it is not scaffolded or simplified."
+    }
+   ],
+   "moment": {
+    "id": "v2-ef6a34be-10",
+    "country": "it",
+    "kind": "town",
+    "level": "intermediate",
+    "cityId": "roma-nuova",
+    "placeId": "piazza-santa-maria-trastevere",
+    "transcript": [
+     {
+      "who": "npc",
+      "text": "Ah, e chi sei tu, bello? Siediti qui vicino a me, sotto la tettoia, che piove a dirotto! Io sono Gina, e queste scale le conosco da ottant'anni.",
+      "en": "Ah, and who are you, handsome? Sit down here next to me, under the awning, because it's pouring! I'm Gina, and I've known these steps for eighty years."
+     },
+     {
+      "who": "learner",
+      "text": "My name is Joshua."
+     },
+     {
+      "who": "npc",
+      "text": "Joshua! Che bel nome, come quello della Bibbia. Piacere, Joshua. E dimmi, sei di Roma o vieni da lontano?",
+      "en": "Joshua! What a lovely name, like the one in the Bible. Nice to meet you, Joshua. And tell me, are you from Rome or do you come from far away?"
+     },
+     {
+      "who": "learner",
+      "text": "Sì, quasi lontano, ho abito qui per sei mesi."
+     },
+     {
+      "who": "npc",
+      "text": "Ah, abiti qui da sei mesi! Allora sei quasi un trasteverino anche tu. E ti piace il quartiere, con 'sta pioggia e tutto?",
+      "en": "Ah, you've been living here for six months! Then you're almost a Trastevere local yourself. And do you like the neighborhood, with this rain and everything?"
+     },
+     {
+      "who": "learner",
+      "text": "Si mi piace trastevo remoto, mangi bene e anche mi piace la chiesa."
+     },
+     {
+      "who": "npc",
+      "text": "Eh, la chiesa! Quella è Santa Maria, la più antica di Roma dedicata alla Madonna, e a luglio, per la Festa de' Noantri, portano la Madonna del Carmine proprio qui davanti. Ci sei già entrato, dentro?",
+      "en": "Eh, the church! That's Santa Maria, the oldest in Rome dedicated to the Madonna, and in July, for the Festa de' Noantri, they carry the Madonna del Carmine right here in front. Have you already been inside?"
+     },
+     {
+      "who": "learner",
+      "text": "Non ancora"
+     },
+     {
+      "who": "npc",
+      "text": "Non ancora? Allora devi entrare, Joshua! Ci sono i mosaici d'oro che luccicano, e con 'sta pioggia dentro si sta all'asciutto. Poi mi racconti.",
+      "en": "Not yet? Then you must go in, Joshua! There are golden mosaics that glitter, and with this rain it's dry inside. Then you tell me about it."
+     }
+    ],
+    "said": "E va bene entrata con mie braccia e molto tattoo, anche una tattoo di Madonna Santa Maria Dolores. E va bene? Vorrei una camicia.",
+    "watch": "The learner's garbled message was only about wearing a shirt or covering up, and her long idiomatic reply is above an intermediate learner's level and misreads his unclear request.",
+    "from": {
+     "who": "V2 judge",
+     "date": "2026-11-07",
+     "quote": "Dio guarda il cuore, mica la pelle. Un tatuaggio così in chiesa ci sta benissimo."
+    }
+   }
+  }
+ ],
+ "dropped": [
+  {
+   "conversation": "ef6a34be-4b24-42fa-853b-ee4a06f990fd",
+   "turn": 6,
+   "item": 2,
+   "quote": "la più antica di Roma dedicata alla Madonna",
+   "reason": "Santa Maria in Trastevere is commonly said to be the first church in Rome dedicated to Mary, but the Festa de' Noantri Madonna is the Madonna del Carmine, who is carried from Sant'Agata and not 'proprio qui davanti' from this church, so the festival detail is stated inaccurately.",
+   "why": "Santa Maria in Trastevere is traditionally called the oldest church in Rome dedicated to the Virgin, and the Festa de' Noantri is held in July with the Madonna del Carmine procession passing through the square, so nothing here is false."
+  },
+  {
+   "conversation": "ac9bddd0-4311-4b0c-b4d7-9cd92090faff",
+   "turn": 6,
+   "item": 2,
+   "quote": "Il giovedì c'è anche il gnocchi",
+   "reason": "Gnocchi is plural, so the correct form is \"i gnocchi\"; the character models incorrect Italian to a learner.",
+   "why": "The reply repeats the board items already mentioned, and the claims about Thursday gnocchi and carciofi alla romana with garlic and mint are accurate Roman traditions; the only slip is the grammatical 'il gnocchi' (should be 'gli gnocchi'), which is not a false claim about the place or its food."
+  }
+ ],
+ "base": [
+  {
+   "kind": "base",
+   "conversation": "ef6a34be-4b24-42fa-853b-ee4a06f990fd",
+   "character": "Gina Proietti",
+   "version": "2026-10-21",
+   "turn": 12,
+   "item": 1,
+   "original": {
+    "line": "Arrivederci, Joshua! Vai con Dio, e non scordarti i mosaici. Se mi trovi ancora qui sulle scale, mi racconti com'è andata."
+   },
+   "replays": [
+    {
+     "line": "Arrivederci, Joshua! Che la Madonna ti accompagni.",
+     "words": 7,
+     "broken": false,
+     "reason": "The reply is short and mostly familiar: 'Arrivederci, Joshua!' is a basic goodbye the learner just used, and 'Che la Madonna ti accompagni' is a simple, guessable blessing using the cognate 'accompagni', though the subjunctive is slightly advanced, it is understandable in context for an intermediate learner."
+    },
+    {
+     "line": "Arrivederci, Joshua, torna a trovarmi! Statte bbono.",
+     "words": 7,
+     "broken": false,
+     "reason": "The reply is mostly simple, familiar farewell language (Arrivederci, torna a trovarmi), and only the dialect closing 'Statte bbono' is unfamiliar, but it is a minor, guessable sign-off that doesn't block comprehension."
+    },
+    {
+     "line": "Arrivederci, Joshua! Stammi bene e buona giornata.",
+     "words": 7,
+     "broken": false,
+     "reason": "The reply is a short, common farewell. 'Arrivederci' and 'buona giornata' are basic phrases the learner already used or would know, and 'Stammi bene' is a simple idiomatic goodbye whose meaning is clear from context, so an intermediate learner can follow it."
+    },
+    {
+     "line": "Arrivederci, Joshua, e stammi bene!",
+     "words": 5,
+     "broken": false,
+     "reason": "The reply is a short, common farewell: 'Arrivederci' and the name are basic, and 'stammi bene' is a familiar idiom whose meaning (take care) is clear from context and easy for an intermediate learner to guess."
+    },
+    {
+     "line": "Arrivederci, Joshua! Stammi bene e torna a trovarmi.",
+     "words": 8,
+     "broken": false,
+     "reason": "The reply is a short, common farewell. 'Arrivederci', 'torna a trovarmi' and 'stammi bene' are mostly familiar, and the idiomatic 'stammi bene' is clear from context, so an intermediate learner can follow it."
+    }
+   ]
+  }
+ ]
+}

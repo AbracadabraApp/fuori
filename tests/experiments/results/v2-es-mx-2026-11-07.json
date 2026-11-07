@@ -1,0 +1,27 @@
+{
+ "questions": {
+  "1": "Would a learner at this level be unable to follow the parts of this reply in the language (words or grammar well beyond them)?",
+  "2": "Does the reply state something false or invented about the place, the town, its food or the country?",
+  "3": "Is the reply generic, with nothing of her place, town or country, at a turn where a local would naturally have said something of it?",
+  "4": "Does she step out of her role or her job: offering or doing what her job or her place can't give, or talking like a language teacher?",
+  "5": "Did the learner need help or ask for it (in English or the language), and the reply fails to give it?",
+  "6": "Does the reply lecture, point out a mistake like a teacher, or offer answers to say back that a learner couldn't use (too long, two ideas, not what a local would say)?",
+  "8": "Is the reply too long or too dense for a learner at this level to follow in one hearing?"
+ },
+ "today": [
+  "beginner-2026-11-06",
+  "2026-10-21"
+ ],
+ "marked": [],
+ "dropped": [
+  {
+   "conversation": "858fc586-d6b6-4a5c-8750-a0e4774a2f04",
+   "turn": 10,
+   "item": 2,
+   "quote": "Con queso o con jamón, también. cheese or ham. ¿Qué quiere en la torta?",
+   "reason": "Beto repeats the cheese-or-ham question the learner just answered ('Con el amor') and then asks an almost identical open question, which confuses a beginner and pushes the model answer back to 'Con jamón', so it fails to respond to what was said.",
+   "why": "The reply only jokes about the learner's 'con amor' answer and repeats the cheese-or-ham options; it makes no false or invented claims about the place, town, food or country."
+  }
+ ],
+ "base": []
+}

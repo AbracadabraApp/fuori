@@ -384,3 +384,28 @@ Threads (C) dropped, 2026-11-06: planting with dice (Josh: "is planting ideas th
 - Read: at shops the new facts are often the products (Simoni: mortadella by hand, Parmigiano at 24 or 36 months, tortellini in broth), and he offers each: 83–100% purchase. Lines that tell the place's story don't (Monte Albán 0%). Next, for a test of its own: shop lines with the place's story, not its catalogue.
 - Decision: kept. Live with the next release.
 - Before/after on the same six places (Josh: "so that's a double in selling isn't it?"), old lines from 283bdb6~1, Beginner, the same harness: Italy purchase 63% → 69% (Simoni 78 → 89, Le Logge 50 → 72, Bar Nilo 61 → 44), town 2/9 → 7/9, told again 1.0 → 2.7; Mexico purchase 52% → 41%, town 3/9 → 6/9, told again 2.0 → 1.0. Not a doubling (Italy +6 points, within the noise of one small run; Mexico −11), but Italy's food shops repeat their listed products: product facts act as a planted topic. Next test: shop lines with the place's story, not its catalogue (Simoni, Le Logge first).
+
+### Moments replay, first run (2026-11-07): every stored moment, 3 runs, both countries
+- No variable: today's prompts on the 10 stored moments, as a baseline and a check of `moments.mts`. Under a minute; no fix needed. Files: `tests/experiments/results/moments-{it,es-mx}-2026-11-07.txt` (350abcc).
+- Read: all 30 lines. Still there: Carla glosses in the Italian line as a broken fragment ("della contrada. the neighbourhood.", 2/3); Beto says he can't make a torta, then takes the order ("¿de jamón o de pollo?", 2/3); Magda's "the phrase to keep / to remember"; Efrén's unprompted "Aquí hablo zapoteco y español" (2/3); Chela's three openers near-identical. Gone: mishearings treated as the learner's mistakes (joven, cansado, ribollita); openers without sentence breaks.
+- Then (b7ced73): Luisa's usual and Don Nacho's opener added from the admin export. Luisa still opens with "Il solito, cappuccino e cornetto alla crema?" 3/3. Don Nacho's answers are one idea 5/5, but he no longer asks "¿Cómo está?", so the moment doesn't isolate the complaint. The pharmacy cornetto isn't in the export; Giorgia's pizza shop is hidden.
+- Decision: none to the prompts; these are the baseline the queue's tests compare against.
+
+### V2 (2026-11-07): can a problem seen in a real conversation be isolated as a moment?
+```
+Test V2: Can a problem seen in a real conversation be isolated as a moment?
+Serves: method (all eight items)
+Type: dialogue, then moment
+Variable: none; real turns replayed with today's prompts
+Moments: the 10 most recent town conversations since 11-01 with 3+ learner lines whose character is still there (6 Italy, 4 Mexico), at most 2 judge-marked turns each
+Measure: a judge marks turns that break an item; one fixed yes/no question per item (written before the run, in the results file) must say yes on the original or the mark is dropped; each kept turn replayed 5x and asked the same question. Base rate: up to 5 unmarked turns from the same conversations, same question. By prompt version (today's or older) and visit (first, or return: memory missing). Words per turn in code
+Hypothesis: >= 60% of kept marks come back in >= 2 of 5
+Other outcomes: fewer means those problems depend on context a moment doesn't fix (memory, earlier turns) and need visit tests
+Size: ~20 moments x 5 runs + base rate; Time: 6-8 min, stop at 7 per country (Josh's go)
+Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
+```
+- Reviewed by the test designer before running: fixed questions per item, the original-turn check, the base rate, the version and visit groups, words in code (all taken).
+- Result: **10 conversations, 4 marks, 1 kept, 1 came back (3/5); base rate 0/5. Not enough to answer.** Under a minute in all.
+- Read: all lines. Kept: Gina Proietti (Intermediate, today's character.md), item 1: idiomatic Italian above the learner ("Dio guarda il cuore, mica la pelle"), back 3/5, her goodbye 0/5 on the same question. Dropped: Beto taking the torta order, the known job problem, filed by the marker as item 2 (accurate) instead of 4 (in character), so item 2's question said no; Gina's church fact (checked, true); "il gnocchi", a real grammar slip by the character, which no item covers (item 2's question asks about facts).
+- Learned: the marking step is the weak link, not the replay. It marks little (4 in 10 conversations, 6 of them with Josh's known complaints) and files what it finds under the wrong item. The fixed questions worked: they caught the misfiled mark and kept the one real level problem, with a clean base rate.
+- Decision: drop the free-form marker. Next (card to Josh): V2b, the seven fixed questions asked of every character turn of the same conversations (no marker), then the flagged turns replayed 5x. Also for Josh: does item 2 (accurate) cover the character's own grammar ("il gnocchi"), or is that a ninth item?
