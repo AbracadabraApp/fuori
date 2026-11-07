@@ -10,7 +10,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pack } from '@/content';
 import { readPromptFile, setPartsOff } from '@/lib/prompts/template';
-import { loadMoments, replay, type Moment } from './moments.mts';
+import { loadMoments, replay, type Moment } from './moments.mjs';
 
 const KEEP = new Set(['Who: you', 'Who: the learner', 'How you talk', 'Reply: parts format']);
 // Overlaps the inventory notes, switched off together as well as alone
@@ -36,7 +36,7 @@ for (const off of variants) {
   for (const m of moments as Moment[]) {
     const replies = await Promise.all(Array.from({ length: runs }, () => replay(m)));
     replies.forEach((r, run) => {
-      const parts = (r.parts ?? []).map((p) => ({ kind: p.kind, text: p.text }));
+      const parts = ((r as { parts?: { kind: string; text: string }[] }).parts ?? []).map((p) => ({ kind: p.kind, text: p.text }));
       const english = parts.filter((p) => p.kind === 'english').map((p) => p.text).join(' ');
       const lang = parts.filter((p) => p.kind !== 'english' && p.kind !== 'answer').map((p) => p.text).join(' ');
       rows.push({
