@@ -531,3 +531,36 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Josh, 2026-11-07: "how can you not answer c4". C4's answer, from the reading: take the facts out; the same amount of local talk, a local's not a guidebook's. Italy to confirm, run once (Josh: "1 time"): Karim Benali at Piazza del Campo, Siena, A against B (B: his scene, the first sentence, and himself, the last: "You show visitors around Piazza del Campo in Siena. You were born in Siena to Moroccan parents."), 3 sets each, the same setup; read the same way, guidebook or a local's talk
 - Italy run (2026-11-07, Karim, 70 seconds): first visit A 5.50, B 3.83; new later 0.83 · 1.00; told again 2.33 · 1.67; no invented job (0/6 · 0/6); Sam named a listed thing first 0/48. Read: with A he unloads the Palazzo Pubblico, the Torre del Mangia and the Palio on the first visit and retells them; with B, less at first and more of his own life (his contrada, the Pantera, the contrada dinner, its museum). Smaller than Mexico (a tour guide talks the Palio either way), the same direction
 - **Decision (Claude, testing lead): applied in principle: here lines become the scene and the person, no facts.** The edit to the city files is next, a sample shown to Josh first
+
+### C5 (2026-11-07): memory records what he told them, fewer retellings?
+- Serves: 7 (remembers), 3 (local and tipico)
+- Type: visit (multi-turn, rule 5c)
+- Unit: the memory prompt's notes instruction (memory.md, both countries say the same); from C4: with the short line he still retells on the second visit (told again 1.3–2.3 per set) because his notes record Sam, not what he said
+- Variable: A: memory.md as it is ("notes: what {name} will remember about this person next time they meet, …"); B: the same with ", and what {name} told them" after "next time they meet" (setPromptOverride, in memory, nothing on disk)
+- Held constant: C4's setup with B's short line (the scene and himself), no level, "has come to live in {city}", Sam on Grok (fast model), 2 visits 3 days apart, the game's own summariser and relationship line, model and settings
+- Place: Don Ramón at El Mirador, Mexico (Josh, 2026-11-07: "Just 1 conversation; repeated 3 times")
+- Measure: **repeats** (Josh: "measure is no repeats"), called retellings in the script: things from visit 1 he tells again on visit 2 as if new (not a callback that refers back or asks about it), per set. Two judges, Claude and Grok, each read the set's two visits and list every thing from visit 1 that comes up again on visit 2, marked callback or retelling; a retelling counts when both say so
+- Fact or judgment: judgment (both judges, rule 5d; uncalibrated, F1, so every marked line is read)
+- Hypothesis: (from the goal, Josh: "measure is no repeats": what he told before comes back only as a callback, never told again as new; that he says something new each visit was Claude's wording, withdrawn: "new each visit is wrong measure") A retells in at least 2 of 3 sets; B in 0 of 3. A set retells when at least one thing is marked a retelling by both judges; the judges see only the two visits, never the version or the notes
+- Other outcomes: anything else (2 against 1, or A at 1 or fewer) shows no difference; nothing applied. Both retell in 2 or more: the notes don't stop it; the cause is elsewhere. Neither retells: no problem to fix at this size, nothing applied. Read: the notes themselves, saved. No count of new things (Josh, 2026-11-07: "new each visit is wrong measure. measure is no repeats")
+- Size: 1 place × 3 sets × A and B (6 sets); A's three at once, then B's (the override is global)
+- Time: about 2 minutes
+- Reviewed: test designer, 2026-11-07: B in 0 of 3, not at most 1 (a one-set difference is noise); a catch-all outcome; a set retells when both judges mark one; judges blind to version and notes; read B's notes from the first set before any count (if they don't record what he told, the variable never took effect). All taken
+- Script: tests/experiments/memory-told.mts
+- Not run: stopped by Josh before a result (2026-11-07); he asked instead for a test of how the trimmed here lines are drafted, measured by repeats (C6)
+
+### C6 (2026-11-07): drafting the trimmed here line: the scene alone, or the scene and himself?
+- Serves: 3 (local and tipico), 4 (in character)
+- Type: visit (multi-turn, rule 5c)
+- Unit: how a trimmed here line is drafted (Josh, 2026-11-07: "create a test of 2 here lines that meet the learnings of C4 but will direct how they are drafted"). Both versions follow C4 (no facts); they differ in the one choice the ~100 trims must make: whether the line says something about the person. C4's pilots and run: "born here when it was quiet" became the story Don Ramón told on every visit
+- Variable: A: the scene and himself (C4's short line: "You walk up to El Mirador most evenings to watch the sun go down over San Miguel, with the pink Parroquia in the middle of the view. You were born here when it was a quiet town."); B: the scene alone (its first sentence)
+- Held constant: C4's setup: no level, "has come to live in {city}", his age, role and traits, Sam on Grok (fast model), 2 visits 3 days apart, the game's own memory between them, model and settings
+- Place: Don Ramón at El Mirador, Mexico (Italy only to confirm a pass, rule 6)
+- Measure: **repeats** (Josh, 2026-11-07: "measure is no repeats"): things from visit 1 he tells again on visit 2 as if new, per set. Two judges, Claude and Grok, see only the two visits (never the version), list every thing from visit 1 that comes up on visit 2, marked callback (refers back or asks about it) or repeat; a repeat counts when both mark it; a thing Sam brings up again on visit 2 isn't a repeat
+- Fact or judgment: judgment (both judges, rule 5d; uncalibrated, F1, so every marked line is read)
+- Hypothesis: open, either way: one version has repeats in at least 2 of 3 sets and the other in 0 of 3
+- Other outcomes: anything else shows no difference: draft whichever is shorter (the scene alone). Both repeat in 2 or more of 3: the line isn't the cause (C4 already had A and B equal on told again, 1.33 · 1.33); the next test is C5 (memory records what he told), not a third line. Guard, a decision rule: any invented job or past contradicting his age and role in B's sets, even 1 of 3, means A is drafted
+- Size: 1 place × 3 sets × A and B (6 sets, all at once) (Josh: "Just 1 conversation; repeated 3 times")
+- Time: about 2 minutes
+- Reviewed: test designer, 2026-11-07: the guard made a decision rule (any invented job or contradicting past with the scene alone means A); both repeating names the cause as elsewhere, next C5; Sam's own repeats not counted. All taken
+- Script: tests/experiments/here-drafting.mts
