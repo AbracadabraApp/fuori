@@ -569,3 +569,4 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Time: about 2 minutes
 - Reviewed: test designer, 2026-11-07: the guard made a decision rule (any invented job or contradicting past with the scene alone means A); both repeating names the cause as elsewhere, next C5; Sam's own repeats not counted. All taken
 - Script: tests/experiments/here-drafting.mts
+- Deferred (Josh, 2026-11-07): runs after the here lines are trimmed (roadmap N6 item 12)
