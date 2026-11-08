@@ -204,8 +204,8 @@ const showVisits = (v: Visits, name: string) => v.map((x, i) => `Visit ${i + 1}:
 
 async function audit(name: string, runs: { version: string; visits: Visits; measures: Measures }[]) {
   const q = [
-    `Below are simulated conversations with ${name}, a character in a ${language.name}-learning game, each with the numbers counted from it. Repeats are sentences the character said again from an earlier visit; Culture is how many real things about ${language.card.country} a reader listed.`,
-    ...runs.flatMap((r) => ['', `Version ${r.version} (${fmt(r.measures)}):`, showVisits(r.visits, name)]),
+    `Below are simulated conversations with ${name}, a character in a ${language.name}-learning game, each with the numbers counted from it. Each version is a separate run from scratch, not a continuation: A is the game as it is, B the same with one change, and "A again" a second run of A, there to show how much the numbers move by chance. Within a version, the visits are the same learner coming back. Repeats are sentences the character said again from an earlier visit of the same version; Culture is how many real things about ${language.card.country} a reader listed.`,
+    ...runs.flatMap((r) => ['', `Version ${r.version === 'A2' ? 'A again' : r.version} (${fmt(r.measures)}):`, showVisits(r.visits, name)]),
     '', 'Read every line. Do the conversations bear out the numbers, and any difference between versions? Say what the numbers miss or get wrong: a replay they didn\'t count, a learner who sounds nothing like a real learner, an invented job, anything a newcomer would notice.',
     'Reply with JSON: agrees (true if the numbers are a fair account), note (two sentences).',
   ].join('\n');
