@@ -646,3 +646,5 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Time: about 3 minutes on the Mac mini
 - Reviewed: test designer, 2026-11-08: pass with two fixes, both taken: a words-per-line guard, and the card says the judges are uncalibrated; also taken: one failed character doesn't lose the other nine
 - Script: tests/experiments/here-visits.mts
+- Run (2026-11-08, Mac mini, 10 characters, 57 s): **shorter wins by the card's rule**: both judges picked the long line for 4 of 10 (Emiliano, Doña Rosa, Beto, Padre Tomás), the short for 2 (Vale, Ximena), split or same for 4. Words per line A 19.6 · B 18.1, so not a pick on length. Read: the long line's wins are on culture and words (mezcal served with orange and sal de gusano, joven against ahumado; nubes, gladiolas, nardos for altars); the short line's on talk about Sam's own life (Vale's Poniatowska, Ximena's questions answered). Claude alone leaned long (7 of 10). Sam's forced goodbye on the 4th turn cuts across his questions in both versions, and both judges noted it. File: `tests/experiments/results/c8-es-mx-2026-11-08T1809.md`
+- Decision: pending Josh
