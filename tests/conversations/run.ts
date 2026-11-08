@@ -11,14 +11,17 @@
  *   npm run test:conversations -- --null=3             # also run A twice for 3 characters: how much the numbers move on their own
  *   npm run test:conversations -- --pick=variant       # the characters the variant names (or first2: the first 2 in each city)
  *   npm run test:conversations -- --card="C11 (2026-11-08)"   # a test run: refuses without the reviewed card
- *   npm run test:conversations -- --no-culture --no-audit --dry
+ *   npm run test:conversations -- --audit              # Grok reads every transcript afterwards (off by default)
+ *   npm run test:conversations -- --no-culture --dry
  *   npm run test:conversations -- --level="Beginner: shape"   # experimental level block (content/<country>/prompts/levels.md)
  *
  * Josh, 2026-11-08: counts, not grades ("Prefer clear output measures over
  * judgement"); every run measures everything and keeps every transcript
  * (record.ts); Claude plays the learner by default, with Grok as a switch ("1
- * is a choice"); Grok reads every transcript afterwards and says whether they
- * bear out the numbers ("best as a check ... than inline tester").
+ * is a choice"). Grok's read-through of every transcript ("best as a check
+ * ... than inline tester") is opt-in, --audit: in its first runs it misread
+ * facts and its verdicts swung, so results are decided by the counts and the
+ * transcripts are read by whoever reports them.
  *
  * Measures (measure.ts): real play's scorecard rows that are counted, with the
  * scorecard's own code (reply length, opener, replies with 2+ questions, the
@@ -61,7 +64,8 @@ const LEVEL = flag('level');
 const LEVEL_AT = flag('level-at') as 'system' | 'last' | undefined;
 const DRY = has('dry');
 const CULTURE = !has('no-culture');
-const AUDIT = !has('no-audit') && !!process.env.XAI_API_KEY;
+// Off by default (Josh, 2026-11-08: "I am skeptical of grok"): uncalibrated, it misread facts (called a bookshop an invented job) and its verdicts swung between runs
+const AUDIT = has('audit') && !!process.env.XAI_API_KEY;
 const GROK = 'grok-4.20-0309-non-reasoning'; // fast; grok-4.7 took up to a minute a call under load (C4)
 const T0 = Date.now();
 
