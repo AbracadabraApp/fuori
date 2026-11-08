@@ -161,7 +161,7 @@ async function learnerLine(c: Case, earlier: string[], t: Turn[], last: boolean)
     'Don\'t repeat your own earlier lines or greetings.',
     ...(earlier.length ? ['', 'Your earlier visits with them:', ...earlier] : []),
     '', 'This conversation so far:', say(t, c.character.name), '',
-    last ? 'Answer what they asked if they asked something, then say goodbye, in one or two short sentences.' : 'What you say next: one or two short sentences, as speech-to-text would capture it. No quotes, no stage directions.',
+    last ? 'Answer what they asked if they asked something, then say goodbye, in a few words.' : 'What you say next: a few words, often less than a full sentence, the way real learners talk (they average about six words a line); as speech-to-text would capture it. No quotes, no stage directions.',
     'Reply with JSON: say.',
   ].join('\n');
   if (LEARNER === 'grok') return (await askGrok<{ say: string }>(q, SAY, GROK)).say;

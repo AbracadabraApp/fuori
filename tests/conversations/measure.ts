@@ -24,6 +24,8 @@ export interface Measures {
   questionsPerLine: number;
   /** Share of all words said by the learner (0–1) */
   learnerShare: number;
+  /** Average words per learner line: how much a real or simulated learner says at a time */
+  learnerWordsPerLine: number;
   /** Character sentences on visit 2 or later that closely match one he said on an earlier visit */
   repeats: number;
   /** The repeated sentences, for reading */
@@ -52,7 +54,8 @@ export function measure(visits: Visits): Measures {
   const all = visits.flat();
   const npc = all.filter((l) => l.who === 'npc');
   const npcWords = npc.reduce((n, l) => n + wordCount(l.text), 0);
-  const learnerWords = all.filter((l) => l.who === 'learner').reduce((n, l) => n + wordCount(l.text), 0);
+  const learnerLines = all.filter((l) => l.who === 'learner');
+  const learnerWords = learnerLines.reduce((n, l) => n + wordCount(l.text), 0);
   const repeated: Measures['repeated'] = [];
   visits.forEach((v, k) => {
     if (!k) return;
@@ -68,6 +71,7 @@ export function measure(visits: Visits): Measures {
     wordsPerLine: round2(npcWords / (npc.length || 1)),
     questionsPerLine: round2(npc.reduce((n, l) => n + questionCount(l.text), 0) / (npc.length || 1)),
     learnerShare: round2(learnerWords / (npcWords + learnerWords || 1)),
+    learnerWordsPerLine: round2(learnerWords / (learnerLines.length || 1)),
     repeats: repeated.length,
     repeated,
   };
@@ -88,5 +92,5 @@ export async function cultureCount(visits: Visits, who: string): Promise<string[
 
 /** The numbers shown in a report row, in order */
 export const COLUMNS: [keyof Measures, string][] = [
-  ['wordsPerLine', 'Words per line'], ['questionsPerLine', 'Questions per line'], ['learnerShare', 'Learner share'], ['repeats', 'Repeats'], ['culture', 'Culture'],
+  ['wordsPerLine', 'Words per line'], ['questionsPerLine', 'Questions per line'], ['learnerShare', 'Learner share'], ['learnerWordsPerLine', 'Learner words per line'], ['repeats', 'Repeats'], ['culture', 'Culture'],
 ];

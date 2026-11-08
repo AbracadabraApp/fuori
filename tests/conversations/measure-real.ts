@@ -48,7 +48,7 @@ async function main() {
   const all = measured.map((x) => x.m);
   const returns = measured.filter((x) => x.visits > 1).map((x) => x.m);
   console.log(`${rows.length} conversations, ${groups.size} learner-and-character pairs (${returns.length} with return visits)`);
-  console.log(`All: words per line ${avg(all, 'wordsPerLine')} · questions per line ${avg(all, 'questionsPerLine')} · learner share ${avg(all, 'learnerShare')}`);
+  console.log(`All: words per line ${avg(all, 'wordsPerLine')} · questions per line ${avg(all, 'questionsPerLine')} · learner share ${avg(all, 'learnerShare')} · learner words per line ${avg(all, 'learnerWordsPerLine')}`);
   console.log(`Return visits: repeats per pair ${avg(returns, 'repeats')}`);
   for (const p of [...new Set(measured.map((x) => x.prompt))].sort()) {
     const ms = measured.filter((x) => x.prompt === p).map((x) => x.m);
