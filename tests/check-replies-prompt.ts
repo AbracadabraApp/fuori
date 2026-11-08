@@ -1,5 +1,6 @@
 // The reply-buttons prompt (content/<country>/prompts/replies.md, lib/replies.ts)
 // fills every placeholder and its version has a changelog entry.
+import { readPromptWithChangelog } from './prompt-files';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { cities, pack } from '@/content';
@@ -7,7 +8,7 @@ import { characterForPlace } from '@/lib/characters/for-place';
 import { buildRepliesPrompt, shuffleChoice } from '@/lib/replies';
 
 const failures: string[] = [];
-const md = readFileSync(join(process.cwd(), 'content', pack.id, 'prompts', 'replies.md'), 'utf8');
+const md = readPromptWithChangelog(join(process.cwd(), 'content', pack.id, 'prompts', 'replies.md'));
 const version = md.match(/^version:\s*(\S+)/m)?.[1];
 const newest = (md.split('## Changelog')[1] ?? '').match(/^### ([^\s:]+)/m)?.[1];
 if (!version || newest !== version) failures.push(`replies.md: version ${version} but newest changelog entry ${newest ?? 'missing'}`);

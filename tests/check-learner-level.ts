@@ -5,6 +5,7 @@
 // rememberConversation's path. Run per country (COUNTRY=es-mx).
 //   DATABASE_URL=postgres://localhost/fuori_test node scripts/db-migrate.mjs, then
 //   DATABASE_URL=postgres://localhost/fuori_test npm run test:learner-level
+import { readPromptWithChangelog } from './prompt-files';
 import { randomUUID } from 'crypto';
 import { readFileSync } from 'fs';
 import { pack, tutor } from '@/content';
@@ -37,7 +38,7 @@ check(levelAfter('beginner', [b, b], 'intermediate') === 'beginner', 'one check 
 check(levelAfter('beginner', [b, i], 'intermediate') === 'intermediate', 'two checks in a row agree: moved');
 
 // The prompt: version and changelog, placeholders filled, lines labelled
-const md = readFileSync(`content/${pack.id}/prompts/learner-level.md`, 'utf8');
+const md = readPromptWithChangelog(`content/${pack.id}/prompts/learner-level.md`);
 const newest = (md.split('## Changelog')[1] ?? '').match(/^### ([^\s:]+)/m)?.[1];
 check(newest === learnerLevelPromptVersion(), `learner-level.md: version ${learnerLevelPromptVersion()} but newest changelog entry ${newest}`);
 const convs: CheckedConversation[] = [{ name: 'Rita', turns: [{ who: 'npc', text: 'Ciao!' }, { who: 'learner', text: 'Hi' }] }];

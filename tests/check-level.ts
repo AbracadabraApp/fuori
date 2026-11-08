@@ -2,6 +2,7 @@
 // scorecard row. Without an API key: version, placeholders, only character
 // lines judged, and the "Lines a beginner can follow" arithmetic. With one:
 // a plain line and a hard one, judged for real. Run per country (COUNTRY=es-mx).
+import { readPromptWithChangelog } from './prompt-files';
 import { readFileSync } from 'fs';
 import { pack, language } from '@/content';
 import { buildLevelPrompt, levelOfConversation, levelPromptVersion, beginnerKnows } from '@/lib/level';
@@ -11,7 +12,7 @@ import type { ConversationScore } from '@/lib/quality';
 const failures: string[] = [];
 const check = (ok: boolean, what: string) => { if (!ok) failures.push(what); };
 
-const md = readFileSync(`content/${pack.id}/prompts/level.md`, 'utf8');
+const md = readPromptWithChangelog(`content/${pack.id}/prompts/level.md`);
 const newest = (md.split('## Changelog')[1] ?? '').match(/^### ([^\s:]+)/m)?.[1];
 check(newest === levelPromptVersion(), `level.md: version ${levelPromptVersion()} but newest changelog entry ${newest}`);
 const p = buildLevelPrompt('LINE');

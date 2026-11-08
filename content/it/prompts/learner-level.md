@@ -34,7 +34,4 @@ Reply with JSON: level, reason (one short line in English).
 - `{onboarding}`: the two answers, numbered; "(none)" for a learner who started before onboarding existed
 - `{conversations}`: "Conversation 1:" and so on, each line as "Name: …" or "Learner: …"
 
-## Changelog
-
-### 2026-10-18: first version
-The judge from round 14 (`tests/experiments/placement.mts`), unchanged: the same three levels and wording as onboarding's placement, plus how well they follow, and "a single good line doesn't make a level". Prompted by Josh's Mexico learner, placed intermediate because someone else spoke the second onboarding answer; Josh chose to let the first conversations correct onboarding (option 2).
+The changelog is in `changelog/learner-level.md`.

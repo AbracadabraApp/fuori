@@ -1,6 +1,7 @@
 // The experimental level block (content/<country>/prompts/levels.md) changes
 // the prompt only when a level is passed: without one, production's prompt is
 // exactly today's. Every block fills all its placeholders.
+import { readPromptWithChangelog } from './prompt-files';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { cities, pack } from '@/content';
@@ -9,7 +10,7 @@ import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import { withDialogueRules } from '@/lib/dialogue/rules';
 
 const failures: string[] = [];
-const md = readFileSync(join(process.cwd(), 'content', pack.id, 'prompts', 'levels.md'), 'utf8');
+const md = readPromptWithChangelog(join(process.cwd(), 'content', pack.id, 'prompts', 'levels.md'));
 const blocks = [...md.matchAll(/^## (.+)\n+```/gm)].map((m) => m[1]);
 if (!blocks.length) failures.push('levels.md has no blocks');
 const version = md.match(/^version:\s*(\S+)/m)?.[1];

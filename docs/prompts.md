@@ -2,7 +2,7 @@
 
 Every prompt file the game loads, one row each (Italy's files; Mexico's are the same set). "Words" counts only what Claude can be sent (the fenced blocks); the rest of each file is its changelog and notes. Generated 2026-11-08 from `content/it/prompts/` and the code that loads each file; regenerate with the command at the bottom when a prompt is added or removed.
 
-| Prompt | What it's for (the file's own first line) | Loaded by | Words | Version | Changelog entries |
+| Prompt | What it's for (the file's own first line) | Loaded by | Words | Version | Changelog entries (now in `changelog/<name>.md`) |
 |---|---|---|---|---|---|
 | `beginner.md` | How characters talk to a Beginner: | lib/beginner.ts | 1245 | 2026-11-07a | 20 |
 | `lesson-steps.md` | Turns one syllabus unit into its lessons, one per step, made ahead and checked once (Josh, 2026-10-27: | scripts/make-lessons.mts | 1124 | 2026-11-03 | 0 |
@@ -33,8 +33,11 @@ Every prompt file the game loads, one row each (Italy's files; Mexico's are the 
 
 Moved out of `content/*/prompts/` on 2026-11-08 to `tests/archive/prompts/<country>/`: six trial copies of `character.md` (`character-english`, `-english2`, `-english3`, `character-teach`, `-teach2`, `-teach3`, about 2,400 words each, 14 changelog entries each) and Italy's `lesson.md` (nothing loaded it). Two experiment scripts (`tests/experiments/core-behaviours.mts`, `help-asks.mts`) can compare prompt files by name through `PROMPTS=`; to rerun one of the trial arms, copy its file back into `content/<country>/prompts/` first.
 
+## Changelogs
+
+Moved out of the live files on 2026-11-08 to `content/<country>/prompts/changelog/<name>.md` (44 files, about 23,900 words). A prompt file now holds only its version and what Claude can be sent. The checks that look for the newest changelog entry read it through `tests/prompt-files.ts`. Verified: for all 44 files the headings, fenced blocks and version line are identical before and after, so what Claude is sent did not change.
+
 ## Not yet done
 
-- Changelogs are about 73% of the words in these files; moving them out of the live files needs `npm run test:prompt` (which enforces a changelog in each file) changed first.
 - Whether the same rule sits in two files (commerce curbs in `dialogue.md` and `beginner.md`; `levels.md` and `leveling.md`) is not checked here.
 - Italy against Mexico: the file sets are the same apart from the archived `lesson.md`; their wording was not compared.

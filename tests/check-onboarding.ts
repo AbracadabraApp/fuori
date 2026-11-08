@@ -2,6 +2,7 @@
 // Without an API key: her lines, prompt, pictures and voice are wired up.
 // With ANTHROPIC_API_KEY: the placement judge on fixed answers, and her two
 // Claude-written lines. Run per country: COUNTRY=es-mx npm run test:onboarding
+import { readPromptWithChangelog } from './prompt-files';
 import { readFileSync } from 'fs';
 import { country, language, onboarding, pack } from '@/content';
 import { buildOnboardingPrompt, onboardingPromptVersion } from '@/lib/prompts/build-onboarding-prompt';
@@ -18,7 +19,7 @@ check(!!onboarding.lines.asWoman.line && !!onboarding.lines.asMan.line && !onboa
 check(!!onboarding.guide.voice && onboarding.guide.lift >= 0 && onboarding.guide.lift < 0.5, `${country}: guide needs a voice and a lift under 0.5`);
 
 // Prompt: version matches its newest changelog entry, both steps fill every placeholder
-const md = readFileSync(`content/${pack.id}/prompts/onboarding.md`, 'utf8');
+const md = readPromptWithChangelog(`content/${pack.id}/prompts/onboarding.md`);
 const newest = (md.split('## Changelog')[1] ?? '').match(/^### ([^\s:]+)/m)?.[1];
 check(newest === onboardingPromptVersion(), `onboarding.md: version ${onboardingPromptVersion()} but newest changelog entry ${newest}`);
 for (const step of ['follow-up', 'send-off'] as const) {

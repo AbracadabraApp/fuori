@@ -50,10 +50,4 @@ Update the file with what was practised and how far they got, what's next, and t
 - `{learningNotes}`: the conversation's learning notes as short lines (worth learning, mistakes said/better, not understood, fell back on English)
 - `{transcript}`: one line per turn, "Magda: …" and "Student: …"
 
-## Changelog
-
-Newest first. Each entry: what changed, why, and what prompted it.
-
-### 2026-10-14a: first version
-- Replaces the per-conversation M2 "Review": one short cumulative file, labelled lines, updated after conversations and lessons.
-- **Prompted by:** Josh, 2026-10-14: redesign Magda's teaching around a study file and one-goal lessons.
+The changelog is in `changelog/study-file.md`.

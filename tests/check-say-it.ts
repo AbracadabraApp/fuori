@@ -1,5 +1,6 @@
 // Say it in English (lib/say-it.ts, app/v1/transcribe mode "turn"): which
 // language a turn was spoken in, and the prompt fills every placeholder
+import { readPromptWithChangelog } from './prompt-files';
 import { readFileSync } from 'node:fs';
 import { spokenLanguage } from '@/lib/speech/spoken-language';
 import { buildSayItPrompt, sayItPromptVersion } from '@/lib/say-it';
@@ -27,7 +28,7 @@ const unfilled = [...p.system.matchAll(/\{(\w+)\}/g)].map((m) => m[1]);
 if (unfilled.length) failures.push(`say-it.md: unfilled ${unfilled.join(', ')}`);
 if (!p.system.includes(character.name)) failures.push('say-it.md: the character should be named');
 if (!p.user.includes("I'd like a coffee")) failures.push('the English should be in the message');
-const md = readFileSync(`content/${pack.id}/prompts/say-it.md`, 'utf8');
+const md = readPromptWithChangelog(`content/${pack.id}/prompts/say-it.md`);
 const newest = (md.split('## Changelog')[1] ?? '').match(/^### ([^\s:]+)/m)?.[1];
 if (newest !== sayItPromptVersion()) failures.push(`say-it.md: version ${sayItPromptVersion()} but newest changelog entry ${newest}`);
 
