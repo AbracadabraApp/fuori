@@ -36,7 +36,7 @@ async function timed<T>(what: string, f: () => Promise<T>): Promise<T> {
 // The card's lists, written before the run; the scene's own words (the Parroquia, Monte Albán) left out
 const PLACES = [
   {
-    city: 'san-miguel-de-allende', place: 'el-mirador-san-miguel', name: 'Don Ramón, El Mirador', role: 'jubilado',
+    city: 'san-miguel-de-allende', place: 'el-mirador-san-miguel', name: 'Don Ramón, El Mirador', role: 'jubilado', keep: [0, 1], standing: 'El Mirador and the Parroquia he looks at',
     knows: 'You have lived in San Miguel de Allende all your life and know it well.',
     items: {
       R1: /nac[ií] aqu[ií]|born here|pueblo tranquilo|quiet town/i, R2: /zeferino|neog[óo]tic|alba[ñn]il|mason/i,
@@ -51,7 +51,7 @@ const PLACES = [
     } as Record<string, RegExp>,
   },
   {
-    city: 'oaxaca', place: 'monte-alban', name: 'Efrén, Monte Albán', role: 'custodio de la zona arqueológica',
+    city: 'oaxaca', place: 'monte-alban', name: 'Efrén, Monte Albán', role: 'custodio de la zona arqueológica', keep: [0, 1], standing: 'Monte Albán',
     knows: 'You know Oaxaca and its valley well.',
     items: {
       E1: /hablo zapoteco|en zapoteco|mi pueblo|my village/i, E2: /gran plaza/i, E3: /juego de pelota|ball ?court/i, E4: /danzante/i, E5: /unesco|patrimonio/i,
@@ -63,12 +63,17 @@ const PLACES = [
       'Benito Juárez': /benito ju[áa]rez/i, 'Mixtec': /mixtec|mixteco/i,
     } as Record<string, RegExp>,
   },
+  {
+    // Italy, to confirm (rule 6): his scene is the first sentence and himself the last
+    city: 'siena', place: 'piazza-del-campo', name: 'Karim, Piazza del Campo', role: 'guida turistica', keep: [0, 4], standing: 'Piazza del Campo',
+    knows: '', items: {} as Record<string, RegExp>,
+  },
 ];
 type Place = typeof PLACES[number];
 type Version = 'A' | 'B';
 
 /** B: the line's first two sentences, the scene and himself, nothing rewritten */
-const short = (here: string) => here.split(/(?<=[.!?])\s+/).slice(0, 2).join(' ');
+const short = (here: string, keep: number[]) => { const s = here.split(/(?<=[.!?])\s+/); return keep.map((i) => s[i]).join(' '); };
 
 function sheet(p: Place, v: Version): CharacterSheet {
   const city = cities.find((c) => c.id === p.city)!;
@@ -76,7 +81,7 @@ function sheet(p: Place, v: Version): CharacterSheet {
   const here = city.characters!.find((c) => c.placeId === p.place)!.here!;
   if (!base.appearance.setting.endsWith(`. ${here}`)) throw new Error(`${p.name}: here line not at the end of the setting`);
   const where = base.appearance.setting.slice(0, -(here.length + 2));
-  const line = { A: here, B: short(here) }[v];
+  const line = { A: here, B: short(here, p.keep) }[v];
   // C keeps the role (in the sheet and the description); only the line goes
   return { ...base, appearance: { ...base.appearance, setting: line ? `${where}. ${line}` : where } };
 }
@@ -88,7 +93,7 @@ type Visit = { transcript: string; hits: { item: string; text: string }[]; samHi
 /** The invented-job guard, both judges on the whole visit (rule 5d) */
 async function judgeJob(p: Place, name: string, transcript: string) {
   const q = [
-    `${name} is a ${p.role} at this place. A newcomer learning Spanish is talking with him; the learner's lines are fixed and the same every visit.`, '', transcript, '',
+    `${name} is a ${p.role} at this place. A newcomer learning ${language.name} is talking with him; Sam is a learner who lives there.`, '', transcript, '',
     `Question: does ${name} act as if he has a job at this place other than ${p.role}: selling, serving food or drink, or taking orders? Talking about the place, recommending things, or walking someone around as part of his role does not count.`,
     'Answer invented true or false, with a one-sentence reason.',
   ].join('\n');
@@ -129,7 +134,7 @@ async function npcTurn(c: CharacterSheet, lines: Line[], memory: Parameters<type
 /** Sam, on Grok: the game's persona and nothing more; sees his earlier visits so he stays consistent */
 async function samTurn(c: CharacterSheet, earlier: string[], lines: Line[], last: boolean): Promise<string> {
   const q = [
-    `You are Sam, someone who loves Mexico and has come to live in ${c.city} for a while, not a tourist. You are learning ${language.name} and speak it simply, in short sentences.`,
+    `You are Sam, someone who loves ${language.card.country} and has come to live in ${c.city} for a while, not a tourist. You are learning ${language.name} and speak it simply, in short sentences.`,
     `You are talking with ${c.name}, ${c.role}, at ${c.appearance.setting.split('.')[0]}.`,
     'Answer what he asks truthfully, and stay consistent with anything you said before. Make up ordinary details about yourself if asked, and keep them.',
     'Never be the first to name a local place, food, drink, custom, festival or person; you may repeat something he named. Don\'t ask him about the town\'s culture or history.',
@@ -192,9 +197,9 @@ const NAMES: Record<string, string> = { A: "Today's line", B: 'Short' };
 const THINGS = { type: 'object', properties: { visit1: { type: 'array', items: { type: 'string' } }, visit2: { type: 'array', items: { type: 'string' } } }, required: ['visit1', 'visit2'], additionalProperties: false };
 type Things = { visit1: string[]; visit2: string[] };
 async function judgeThings(p: Place, visits: Visit[]) {
-  const where = p.place === 'monte-alban' ? 'Monte Albán' : 'El Mirador and the Parroquia he looks at';
+  const where = p.standing;
   const q = [
-    'Below are two visits, three days apart, between a local character in Mexico and Sam, a learner who lives there.',
+    `Below are two visits, three days apart, between a local character in ${language.card.country} and Sam, a learner who lives there.`,
     ...visits.flatMap((v, i) => ['', `Visit ${i + 1}:`, v.transcript]), '',
     `For each visit, list each specific local thing the character brings up himself: a place, street, building, dish, drink, craft, custom, festival, historical person or event. Use the same short name for the same thing on both visits. Leave out ${where} (where he is standing), and anything Sam named before he did. Empty if none.`,
     'Reply with JSON: visit1, visit2.',
@@ -209,7 +214,8 @@ const newLater = (t: Things) => { const v1 = new Set(t.visit1.map(norm)); return
 const toldAgain = (t: Things) => { const v1 = new Set(t.visit1.map(norm)); return [...new Set(t.visit2.map(norm).filter((x) => v1.has(x)))]; };
 const mean = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0);
 
-const jobs = PLACES.filter((p) => !ONLY || p.name.startsWith(ONLY)).flatMap((p) => labels.flatMap(({ label, version }) => Array.from({ length: SETS }, () => async (): Promise<Done> => {
+const here = PLACES.filter((p) => cities.some((c) => c.id === p.city) && (!ONLY || p.name.startsWith(ONLY)));
+const jobs = here.flatMap((p) => labels.flatMap(({ label, version }) => Array.from({ length: SETS }, () => async (): Promise<Done> => {
   const visits = await set(p, version);
   return { place: p.name, label, visits, things: await timed('things judges', () => judgeThings(p, visits)) };
 })));
@@ -224,7 +230,7 @@ const summary = [
   `| | ${labels.map(({ label }) => NAMES[label]).join(' | ')} |`, `|---|${labels.map(() => '---').join('|')}|`,
   row('**New later** (per set, mean of judges)', (l) => m(l, both(newLater)).toFixed(2)),
   row('  Claude · Grok', (l) => `${m(l, (d) => newLater(d.things.claude)).toFixed(2)} · ${m(l, (d) => newLater(d.things.grok)).toFixed(2)}`),
-  ...PLACES.filter((p) => !ONLY || p.name.startsWith(ONLY)).map((p) => row(`  ${p.name}`, (l) => m(l, both(newLater), p.name).toFixed(2))),
+  ...here.map((p) => row(`  ${p.name}`, (l) => m(l, both(newLater), p.name).toFixed(2))),
   row('First visit', (l) => m(l, both((t) => new Set(t.visit1.map(norm)).size)).toFixed(2)),
   row('Told again (read)', (l) => m(l, both((t) => toldAgain(t).length)).toFixed(2)),
   row('New later by keyword list (cross-check)', (l) => m(l, kwNew).toFixed(2)),
