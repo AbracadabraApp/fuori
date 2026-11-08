@@ -1,0 +1,291 @@
+{
+ "run": "2026-11-08-21-47-09-c12-short",
+ "at": "2026-11-08T21:47:09.640Z",
+ "label": "c12-short",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You spend your day at your stand, shining shoes with polish and a brush for customers who climb up on the chair for a boleada.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, siéntese en la silla y le doy una boleadita a esos zapatos. ¿Cómo los trae hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Mis zapatos están... sucio. Un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Ándele, pues, un poquito sucios nomás. Eso se arregla rápido con la grasa y el cepillo. Suba el pie aquí, en el cajón. ¿Son de cuero, verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son de cuero. Creo. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, sí, se ve que es buen cuero, aguanta muy bien la grasa. Ya empiezo con el cepillo para quitarle el polvo. ¿Usted es de por aquí, de la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, yo soy de Estados Unidos. Pero yo vivo aquí... en la Roma, sí."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno, entonces ya es vecino mío! Yo aquí llevo más de cuarenta años con mi puesto, en esta misma esquina. Mire, ya le quité el polvo, ahora le pongo la grasa. ¿Cuánto tiempo lleva viviendo en la colonia?"
+   },
+   {
+    "who": "learner",
+    "text": "Llevo... ocho meses aquí. Eh, un año no. Bueno, tengo que ir. Gracias, Don Chucho. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós, vecino! Que le vaya muy bien y aquí lo espero cuando quiera otra boleada."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, vecino! Qué bueno verlo otra vez por aquí. Pase, pase, aquí tengo su silla lista. ¿Cómo ha estado?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Don Chucho. Estoy bien, gracias. ¿Y usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Aquí andamos, gracias a Dios, con el fresquito de noviembre y los zapatos de la gente. Súbase, vecino, que hoy sí le termino la boleada con calma."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, gracias. Mis zapatos... eh... el mismo. Los zapatos son sucios hoy."
+   },
+   {
+    "who": "npc",
+    "text": "Ya los veo, vecino, traen polvito de la calle. No se preocupe, con un buen cepillado y la grasa quedan como nuevos. ¿Los quiere en el mismo color de siempre?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, el mismo color. Café, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Café, muy bien. Deje que les quito el polvo primero con el cepillo, y luego les doy su grasa. Ya verá cómo brillan."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, muy bien. Gracias, Don Chucho. Hasta luego, ¿sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, vecino, que le vaya muy bien. Aquí lo espero."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, vecino! Pásele, pásele, aquí está su silla. ¿Otra vez los zapatos de piel?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Don Chucho. Sí, otra vez los zapatos."
+   },
+   {
+    "who": "npc",
+    "text": "Ya se ve, vecino, hoy sí andan bien empolvados. Súbase, que yo le echo el cepillo primero. ¿Le sigo con el café de siempre?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, el café, por favor. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, vecino. Ahorita le doy su buena boleada, y esta vez no se me escapa antes de terminar."
+   },
+   {
+    "who": "learner",
+    "text": "Ja, sí. Hoy yo no tengo prisa."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, vecino, así queda mejor el trabajo. Un domingo en la Roma es para estar tranquilo. ¿Salió a pasear por el rumbo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un poco. Yo camino por la Roma. Hoy es un día bonito. Bueno, gracias, Don Chucho. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, vecino, aquí lo espero. Cuídese mucho."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 21,
+    "replies": 5,
+    "wordsMedian": 27,
+    "wordsAvg": 26.4,
+    "wordsMax": 39,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 11
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 22.2,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 18.2,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 23,
+  "openerWords": 20,
+  "multiQuestion": 0,
+  "learnerShare": 0.27,
+  "learnerWords": 10.200000000000001,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "boleadita",
+   "source": "line",
+   "said": "Pásele, pásele, siéntese en la silla y le doy una boleadita a esos zapatos."
+  },
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "Súbase, vecino, que hoy sí le termino la boleada con calma."
+  },
+  {
+   "word": "grasa",
+   "source": "line",
+   "said": "Eso se arregla rápido con la grasa y el cepillo."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "Pásele, pásele, siéntese en la silla y le doy una boleadita a esos zapatos."
+  },
+  {
+   "word": "ándele",
+   "source": "own",
+   "said": "Ándele, pues, un poquito sucios nomás."
+  },
+  {
+   "word": "nomás",
+   "source": "own",
+   "said": "Ándele, pues, un poquito sucios nomás."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita le doy su buena boleada, y esta vez no se me escapa antes de terminar."
+  },
+  {
+   "word": "rumbo",
+   "source": "own",
+   "said": "¿Salió a pasear por el rumbo hoy?"
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "boleadita",
+   "source": "line",
+   "said": "¡Buenas tardes, joven! Pásele, pásele, siéntese en la silla y le doy una boleadita a esos zapatos. ¿Cómo los trae hoy?"
+  },
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "Con mucho gusto, vecino. Ahorita le doy su buena boleada, y esta vez no se me escapa antes de terminar."
+  },
+  {
+   "word": "grasa",
+   "source": "line",
+   "said": "Ándele, pues, un poquito sucios nomás. Eso se arregla rápido con la grasa y el cepillo."
+  },
+  {
+   "word": "Pásele",
+   "source": "own",
+   "said": "¡Buenas tardes, joven! Pásele, pásele, siéntese en la silla y le doy una boleadita a esos zapatos. ¿Cómo los trae hoy?"
+  },
+  {
+   "word": "Ándele",
+   "source": "own",
+   "said": "Ándele, pues, un poquito sucios nomás. Eso se arregla rápido con la grasa y el cepillo."
+  },
+  {
+   "word": "nomás",
+   "source": "own",
+   "said": "Ándele, pues, un poquito sucios nomás. Eso se arregla rápido con la grasa y el cepillo."
+  },
+  {
+   "word": "Ahorita",
+   "source": "own",
+   "said": "Con mucho gusto, vecino. Ahorita le doy su buena boleada, y esta vez no se me escapa antes de terminar."
+  },
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "¿Cuánto tiempo lleva viviendo en la colonia?"
+  },
+  {
+   "word": "rumbo",
+   "source": "own",
+   "said": "Qué bueno, vecino, así queda mejor el trabajo. Un domingo en la Roma es para estar tranquilo. ¿Salió a pasear por el rumbo hoy?"
+  }
+ ]
+}

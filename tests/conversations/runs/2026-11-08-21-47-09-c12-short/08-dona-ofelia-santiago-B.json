@@ -1,0 +1,301 @@
+{
+ "run": "2026-11-08-21-47-09-c12-short",
+ "at": "2026-11-08T21:47:09.640Z",
+ "label": "c12-short",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "ofelia-tlayudas",
+  "name": "Doña Ofelia Santiago",
+  "role": "tlayudera",
+  "city": "Oaxaca",
+  "place": "Tlayudas del Mercado 20 de Noviembre"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You make tlayudas on the comal, spread with asiento, beans and quesillo, while tasajo and cecina enchilada grill over charcoal and smoke fills the aisle.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, pase, pase! Siéntese donde encuentre lugar, que ya se está calentando el comal."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, gracias. Huele muy rico aquí."
+   },
+   {
+    "who": "npc",
+    "text": "Ay, gracias, es el carbón y la cecina que ya van agarrando su punto. ¿Usted es de por aquí o anda de paso?"
+   },
+   {
+    "who": "learner",
+    "text": "No soy de aquí. Soy de Canadá, pero vivo en Oaxaca ahora."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno, bienvenido a Oaxaca! Y ya se le hizo costumbre el humo del mercado, ¿verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un poco. Llegué hace tres semanas."
+   },
+   {
+    "who": "npc",
+    "text": "Apenas tres semanitas, entonces todavía le falta mucho por probar. Aquí en mi comal, la tlayuda se hace con asiento, frijoles y quesillo, y la carne va aparte, sobre las brasas. ¿Ya había comido una tlayuda?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, comí una tlayuda la semana pasada con mi amigo, pero no era con cecina. Estaba muy rica. Bueno, gracias, doña Ofelia. Hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, que le vaya muy bien. Hasta luego."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, pase, pase! Qué bueno verle otra vez por aquí. Ya está calentito el comal."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, doña Ofelia. Hoy quiero una tlayuda con cecina."
+   },
+   {
+    "who": "npc",
+    "text": "Ahorita se la preparo, joven. Ya con su cecina, ahora sí la va a probar como debe ser. ¿La quiere con todo, con su asiento y su quesillo?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, con todo, por favor. Con asiento y quesillo."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, ya la pongo en el comal. La cecina ya está sobre las brasas, en un ratito le llega todo junto. Mientras, dígame, ¿ya ha recorrido el mercado?"
+   },
+   {
+    "who": "learner",
+    "text": "Un poco. Ayer caminé por el mercado, pero es muy grande."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, es enorme, uno se pierde entre tantos pasillos. Pero con el humo de mi parrilla ya sabe dónde me encuentra."
+   },
+   {
+    "who": "learner",
+    "text": "Jaja, sí, el humo me ayuda mucho. Bueno, muchas gracias, doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego, joven! Que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pásele, pásele, que ya está la brasa lista. ¿Qué le preparo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, doña Ofelia. Una tlayuda con cecina, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, ya se la preparo. Con su asiento, sus frijoles y su quesillo, como a usted le gusta. ¿Cómo le ha ido esta semana por Oaxaca?"
+   },
+   {
+    "who": "learner",
+    "text": "Muy bien, gracias. Esta semana caminé mucho."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, así se conoce Oaxaca, a pie. Aquí la cecina ya está en la brasa, no tarda. ¿Y a dónde fue a caminar?"
+   },
+   {
+    "who": "learner",
+    "text": "Caminé por el centro y por un parque. Y usted, ¿vive cerca del mercado?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, vivo a unas cuantas cuadras, camino todos los días hasta aquí. Mire, ya casi está su tlayuda, huele bien la cecina, ¿verdad? ¿Le gusta el picante?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gusta un poco el picante, pero no mucho. Y sí, la cecina huele muy rico. Bueno, muchas gracias, doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, que le aproveche y que tenga muy buen domingo."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 20,
+    "wordsMax": 36,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 12.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 20.4,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 11
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 24,
+    "wordsAvg": 20.8,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 13.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 21,
+  "openerWords": 15,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.32666666666666666,
+  "learnerWords": 12.433333333333332,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "comal",
+   "source": "line",
+   "said": "Siéntese donde encuentre lugar, que ya se está calentando el comal."
+  },
+  {
+   "word": "cecina",
+   "source": "line",
+   "said": "Ay, gracias, es el carbón y la cecina que ya van agarrando su punto."
+  },
+  {
+   "word": "tlayuda",
+   "source": "line",
+   "said": "Aquí en mi comal, la tlayuda se hace con asiento, frijoles y quesillo, y la carne va aparte, sobre las brasas."
+  },
+  {
+   "word": "asiento",
+   "source": "line",
+   "said": "Aquí en mi comal, la tlayuda se hace con asiento, frijoles y quesillo, y la carne va aparte, sobre las brasas."
+  },
+  {
+   "word": "quesillo",
+   "source": "line",
+   "said": "Aquí en mi comal, la tlayuda se hace con asiento, frijoles y quesillo, y la carne va aparte, sobre las brasas."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita se la preparo, joven."
+  },
+  {
+   "word": "Pásele",
+   "source": "own",
+   "said": "Pásele, pásele, que ya está la brasa lista."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "comal",
+   "source": "line",
+   "said": "Siéntese donde encuentre lugar, que ya se está calentando el comal."
+  },
+  {
+   "word": "cecina",
+   "source": "line",
+   "said": "Ay, gracias, es el carbón y la cecina que ya van agarrando su punto."
+  },
+  {
+   "word": "tlayuda",
+   "source": "line",
+   "said": "Aquí en mi comal, la tlayuda se hace con asiento, frijoles y quesillo, y la carne va aparte, sobre las brasas."
+  },
+  {
+   "word": "asiento",
+   "source": "line",
+   "said": "Aquí en mi comal, la tlayuda se hace con asiento, frijoles y quesillo, y la carne va aparte, sobre las brasas."
+  },
+  {
+   "word": "quesillo",
+   "source": "line",
+   "said": "Aquí en mi comal, la tlayuda se hace con asiento, frijoles y quesillo, y la carne va aparte, sobre las brasas."
+  },
+  {
+   "word": "brasas",
+   "source": "line",
+   "said": "Aquí en mi comal, la tlayuda se hace con asiento, frijoles y quesillo, y la carne va aparte, sobre las brasas."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita se la preparo, joven."
+  },
+  {
+   "word": "calentito",
+   "source": "own",
+   "said": "Qué bueno verle otra vez por aquí. Ya está calentito el comal."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "¡Buenas tardes! Pásele, pásele, que ya está la brasa lista."
+  },
+  {
+   "word": "brasa",
+   "source": "line",
+   "said": "¡Buenas tardes! Pásele, pásele, que ya está la brasa lista."
+  },
+  {
+   "word": "parrilla",
+   "source": "line",
+   "said": "Pero con el humo de mi parrilla ya sabe dónde me encuentra."
+  },
+  {
+   "word": "semanitas",
+   "source": "own",
+   "said": "Apenas tres semanitas, entonces todavía le falta mucho por probar."
+  }
+ ]
+}

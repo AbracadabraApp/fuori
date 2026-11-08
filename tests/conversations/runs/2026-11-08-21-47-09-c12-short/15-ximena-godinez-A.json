@@ -1,0 +1,275 @@
+{
+ "run": "2026-11-08-21-47-09-c12-short",
+ "at": "2026-11-08T21:47:09.640Z",
+ "label": "c12-short",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "ximena-ceramica",
+  "name": "Ximena Godínez",
+  "role": "alfarera",
+  "city": "Guadalajara",
+  "place": "Taller de Cerámica Barro Vivo"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas tardes! Pásale, pásale al taller. Ahorita estoy puliendo unas cazuelas."
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Gracias. ¿Puedo mirar?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, mira con calma. Las piezas de este estante ya están bruñidas; las del fondo todavía están húmedas, esas no las toques, ¿sí?"
+   },
+   {
+    "who": "learner",
+    "text": "Ok, no toco las del fondo. Qué bonitas las cazuelas."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias, qué amable. Cada una la pulo a mano con una piedra lisa, por eso brillan así. ¿Tú vives por aquí, en Tlaquepaque?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, vivo cerca. Llegué hace tres semanas."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bien, apenas llegaste. Pues bienvenido a Tlaquepaque, aquí el barro es lo nuestro. ¿Y ya conociste la calle Independencia?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, caminé por la calle Independencia el sábado. Me gustó mucho. Bueno, ya me voy. Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que te gustó! Gracias por venir, adiós, que te vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué gusto verte otra vez por aquí. Pásale, pásale, estoy pintando unos jarros."
+   },
+   {
+    "who": "learner",
+    "text": "Hola, gracias. ¿Puedo ver los jarros?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro, están ahí en la mesa. Los de la izquierda ya están secos, esos sí los puedes agarrar."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, gracias. Este azul es muy bonito. ¿Usted lo pintó hoy?"
+   },
+   {
+    "who": "npc",
+    "text": "Ese lo pinté ayer en la tarde, hoy nada más le di el último detalle. ¿Te gusta el azul?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gusta mucho. Es mi color favorito."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, entonces ese jarro te quedó hecho a la medida. El azul es de los colores que más me gusta mezclar."
+   },
+   {
+    "who": "learner",
+    "text": "Qué bien. No hay pregunta, pero me gusta mucho su trabajo. Bueno, ya me voy. Muchas gracias, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a ti, me da mucho gusto. Hasta luego, cuídate mucho."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas tardes! Pásale, pásale. ¿Cómo estás hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Estoy bien, gracias. ¿Y usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, gracias. Hoy está tranquilo el taller, es domingo. Qué bueno verte otra vez por aquí."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gusta venir aquí. ¿Usted trabaja todos los domingos?"
+   },
+   {
+    "who": "npc",
+    "text": "Casi todos, sí. Los domingos viene más gente a Tlaquepaque, y a mí me gusta pintar cuando hay poco ruido en el taller. ¿Y tú, qué haces los domingos?"
+   },
+   {
+    "who": "learner",
+    "text": "Los domingos camino y descanso. Ayer comí con amigos."
+   },
+   {
+    "who": "npc",
+    "text": "Qué rico, caminar y descansar es lo mejor. Y comer con amigos, más. Aquí en Tlaquepaque se come muy bien, ¿verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, se come muy bien aquí. Ayer comí mucho y estaba muy rico. Bueno, ya me voy. Muchas gracias, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Que te vaya muy bien, aquí te espero."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 19,
+    "wordsMax": 25,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 10
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 16.8,
+    "wordsMax": 22,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.34,
+    "wordsPerLine": 11
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 8,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 17,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 12
+   },
+   "repeats": [
+    {
+     "said": "Que te vaya muy bien, aquí te espero.",
+     "earlier": "Gracias por venir, adiós, que te vaya muy bien."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 18,
+  "openerWords": 12,
+  "multiQuestion": 0,
+  "learnerShare": 0.3333333333333333,
+  "learnerWords": 11,
+  "repeats": 0.5
+ },
+ "vocab": [
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita estoy puliendo unas cazuelas."
+  },
+  {
+   "word": "pásale",
+   "source": "own",
+   "said": "Pásale, pásale al taller."
+  },
+  {
+   "word": "puliendo",
+   "source": "line",
+   "said": "Ahorita estoy puliendo unas cazuelas."
+  },
+  {
+   "word": "cazuelas",
+   "source": "line",
+   "said": "Ahorita estoy puliendo unas cazuelas."
+  },
+  {
+   "word": "bruñidas",
+   "source": "line",
+   "said": "Las piezas de este estante ya están bruñidas; las del fondo todavía están húmedas, esas no las toques, ¿sí?"
+  },
+  {
+   "word": "barro",
+   "source": "line",
+   "said": "Pues bienvenido a Tlaquepaque, aquí el barro es lo nuestro."
+  },
+  {
+   "word": "jarros",
+   "source": "line",
+   "said": "Pásale, pásale, estoy pintando unos jarros."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "pásale",
+   "source": "own",
+   "said": "¡Hola, buenas tardes! Pásale, pásale al taller."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita estoy puliendo unas cazuelas."
+  },
+  {
+   "word": "cazuelas",
+   "source": "line",
+   "said": "Ahorita estoy puliendo unas cazuelas."
+  },
+  {
+   "word": "bruñidas",
+   "source": "line",
+   "said": "Las piezas de este estante ya están bruñidas; las del fondo todavía están húmedas, esas no las toques, ¿sí?"
+  },
+  {
+   "word": "barro",
+   "source": "line",
+   "said": "Pues bienvenido a Tlaquepaque, aquí el barro es lo nuestro."
+  },
+  {
+   "word": "jarros",
+   "source": "line",
+   "said": "¡Hola! Qué gusto verte otra vez por aquí. Pásale, pásale, estoy pintando unos jarros."
+  }
+ ]
+}

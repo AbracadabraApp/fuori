@@ -1,0 +1,215 @@
+{
+ "run": "2026-11-08-21-47-09-c12-short",
+ "at": "2026-11-08T21:47:09.640Z",
+ "label": "c12-short",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "vale-libros-tecolote",
+  "name": "Vale Ortiz",
+  "role": "librera",
+  "city": "Ciudad de México",
+  "place": "Libros Tecolote"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, bienvenida a Libros Tecolote. Si buscas algo fåcil para empezar en espaùol, tengo un estante ahí junto a la ventana."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, gracias. Busco... un libro fácil, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, entonces vas bien. En ese estante hay cuentos cortos, novelas con letra grande y hasta cómics. ¿Qué te gusta leer normalmente?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... yo... me gusta... cómics. Un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bien, los cómics son ideales para empezar, porque las imágenes te ayudan a entender. Mira, en la segunda repisa hay unos muy buenos de aventuras, con poco texto."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... segunda repisa... ¿aquí? Ok, gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, ahí mismo, a la altura de tus ojos. Tómate tu tiempo, no hay prisa. Si quieres, ábrelos y lee una página para ver si te gusta."
+   },
+   {
+    "who": "learner",
+    "text": "Ok... sí, gracias. Voy a leer una página. Ehm... adiós, gracias por todo."
+   },
+   {
+    "who": "npc",
+    "text": "De nada, que disfrutes la lectura. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué bueno verte otra vez. ¿Cómo te fue con los cómics de la segunda repisa?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Los cómics... ehm... están bien. Me gustan un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bien, un poco ya es un comienzo. ¿Pudiste leer alguna página sin tanto diccionario?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿diccionario? Perdón... ¿repite, por favor? Más lento."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. ¿Leíste una página... sin traducir cada palabra?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Una página. Pero... algunas palabras, no entiendo."
+   },
+   {
+    "who": "npc",
+    "text": "Eso es normal, todos empezamos así. Con los cómics, los dibujos ayudan mucho. ¿Te llevas uno hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, me llevo uno. Gracias. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! Gracias a ti. Hasta luego, que lo disfrutes."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Hola, buenas tardes. Qué bueno verte otra vez. Pasa, pasa, con calma. Aquí nadie te apura."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Gracias. Buenas tardes."
+   },
+   {
+    "who": "npc",
+    "text": "Hoy hay mucho coche de bebé en la calle, ¿verdad? Domingo en Coyoacán. ¿Cómo va el cómic?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... el cómic... está bien. Un poco difícil."
+   },
+   {
+    "who": "npc",
+    "text": "Normal, apenas empiezas. Mira, tengo otro en el estante de libros fáciles, con menos texto. ¿Quieres verlo?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, por favor. Menos texto... está bien."
+   },
+   {
+    "who": "npc",
+    "text": "Ven, está aquí, en el estante de la entrada. Es un cómic de un gato que no hace nada en todo el día. Muy realista, la verdad. Tómalo, échale un ojo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... un gato... ok. Me gusta. Gracias, me llevo este. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, que lo disfrutes. Adiós, hasta pronto."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 22,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 21.6,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 8.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 13.2,
+    "wordsMax": 17,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 17.6,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 8.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 17,
+  "openerWords": 16,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.29333333333333333,
+  "learnerWords": 8.866666666666667,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "apura",
+   "source": "own",
+   "said": "Aquí nadie te apura."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "échale",
+   "source": "own",
+   "said": "Tómalo, échale un ojo."
+  }
+ ]
+}

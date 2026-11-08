@@ -1,0 +1,296 @@
+{
+ "run": "2026-11-08-21-51-42-c12-rule",
+ "at": "2026-11-08T21:51:42.874Z",
+ "label": "c12-rule",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "rosa-flores-ignacio-ramirez",
+  "name": "Doña Rosa Ledesma",
+  "role": "florista",
+  "city": "San Miguel de Allende",
+  "place": "Puesto de flores, Mercado Ignacio Ramírez"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You sell flowers at your stall to people who want them for the church or for the altar at home. You ask what they're for, then pick the stems, trim them and wrap them in paper. For altars, the orange cempasúchil marigolds go first, and you tie them in bunches.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, pase, pase. ¿Para qué son las flores, para la iglesia o para un altar en su casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Um, para mi casa. Para la mesa."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, para la mesa. Entonces le armo un ramito con lo que tengo más fresco hoy. ¿Le gustan los colores fuertes o algo más suave?"
+   },
+   {
+    "who": "learner",
+    "text": "Colores fuertes, por favor. Me gusta el color rojo y amarillo."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, rojo y amarillo se ven bonito juntos. Tengo claveles rojos y unas margaritas amarillas muy lindas, déjeme escogerle los mejores y se los recorto. ¿Cuántos días quiere que le duren en la mesa?"
+   },
+   {
+    "who": "learner",
+    "text": "Um... ¿cuántos días? Una semana, es posible?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, claro, una semana les aguantan bien, sobre todo los claveles. Ya le estoy cortando los tallos en diagonal para que tomen más agua. ¿Quiere que se los envuelva en papel para llevárselos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, en papel, por favor. Gracias, señora. ¡Adiós, hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Aquí tiene, bien envueltito. Que le duren mucho en su mesa. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, joven. Ya regresó. ¿Cómo le fue con las flores de la mesa?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señora. Las flores son muy bonitas. Me gusta mucho."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, me da gusto. Hoy tengo mucho cempasúchil, está recién llegado. ¿Busca flores para un altar?"
+   },
+   {
+    "who": "learner",
+    "text": "No, para la mesa otra vez. Rojo y amarillo, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien. Tengo claveles rojos muy frescos y unas margaritas amarillas. Ahorita se los preparo, ¿quiere el ramito del mismo tamaño que el otro?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, el mismo tamaño, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto. Ya le corto los tallos y se los envuelvo en papel. Ahí tiene, joven, bien bonitos. Son cincuenta pesos."
+   },
+   {
+    "who": "learner",
+    "text": "Cincuenta pesos, sí. Aquí está. Gracias, señora. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted, joven. Hasta luego, que le duren mucho."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Qué gusto verle otra vez. ¿Qué flores le preparo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señora. Hoy, um, el rojo y amarillo otra vez, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, los claveles rojos y las margaritas amarillas. Ahorita se los corto y se los envuelvo en papel. ¿Para su mesa otra vez, o para algo diferente?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, para mi mesa. Es la, um, la rutina."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bonita rutina, así siempre tiene flores frescas en casa. Aquí tiene, ya están envueltas. Son cincuenta pesos."
+   },
+   {
+    "who": "learner",
+    "text": "Cincuenta pesos, sí. Aquí está. Gracias, señora."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted. Que le duren muchos días y que tenga buen domingo."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, señora. Usted también, ¡buen domingo! Hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, que le vaya muy bien."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 19,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 26,
+    "wordsMax": 35,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.21,
+    "wordsPerLine": 8.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 17,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 9.3
+   },
+   "repeats": [
+    {
+     "said": "Tengo claveles rojos muy frescos y unas margaritas amarillas.",
+     "earlier": "Tengo claveles rojos y unas margaritas amarillas muy lindas, déjeme escogerle los mejores y se los recorto."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 15.8,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 9.3
+   },
+   "repeats": [
+    {
+     "said": "Ahorita se los corto y se los envuelvo en papel.",
+     "earlier": "Ya le corto los tallos y se los envuelvo en papel."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 17,
+  "openerWords": 14,
+  "multiQuestion": 0,
+  "learnerShare": 0.27666666666666667,
+  "learnerWords": 9.133333333333335,
+  "repeats": 1
+ },
+ "vocab": [
+  {
+   "word": "cempasúchil",
+   "source": "line",
+   "said": "Hoy tengo mucho cempasúchil, está recién llegado."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita se los preparo, ¿quiere el ramito del mismo tamaño que el otro?"
+  },
+  {
+   "word": "claveles",
+   "source": "own",
+   "said": "Tengo claveles rojos y unas margaritas amarillas muy lindas, déjeme escogerle los mejores y se los recorto."
+  },
+  {
+   "word": "margaritas",
+   "source": "own",
+   "said": "Tengo claveles rojos y unas margaritas amarillas muy lindas, déjeme escogerle los mejores y se los recorto."
+  },
+  {
+   "word": "altar",
+   "source": "line",
+   "said": "¿Busca flores para un altar?"
+  },
+  {
+   "word": "ramito",
+   "source": "own",
+   "said": "Entonces le armo un ramito con lo que tengo más fresco hoy."
+  },
+  {
+   "word": "tallos",
+   "source": "own",
+   "said": "Ya le estoy cortando los tallos en diagonal para que tomen más agua."
+  },
+  {
+   "word": "envueltito",
+   "source": "line",
+   "said": "Aquí tiene, bien envueltito."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "cempasúchil",
+   "source": "line",
+   "said": "Hoy tengo mucho cempasúchil, está recién llegado."
+  },
+  {
+   "word": "claveles",
+   "source": "own",
+   "said": "Tengo claveles rojos y unas margaritas amarillas muy lindas, déjeme escogerle los mejores y se los recorto."
+  },
+  {
+   "word": "margaritas",
+   "source": "own",
+   "said": "Tengo claveles rojos y unas margaritas amarillas muy lindas, déjeme escogerle los mejores y se los recorto."
+  },
+  {
+   "word": "altar",
+   "source": "line",
+   "said": "¿Busca flores para un altar?"
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita se los preparo, ¿quiere el ramito del mismo tamaño que el otro?"
+  },
+  {
+   "word": "ramito",
+   "source": "own",
+   "said": "Entonces le armo un ramito con lo que tengo más fresco hoy."
+  },
+  {
+   "word": "tallos",
+   "source": "line",
+   "said": "Ya le estoy cortando los tallos en diagonal para que tomen más agua."
+  },
+  {
+   "word": "envueltito",
+   "source": "line",
+   "said": "Aquí tiene, bien envueltito."
+  }
+ ]
+}

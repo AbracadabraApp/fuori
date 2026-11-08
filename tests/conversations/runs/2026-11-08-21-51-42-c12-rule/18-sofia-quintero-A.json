@@ -1,0 +1,265 @@
+{
+ "run": "2026-11-08-21-51-42-c12-rule",
+ "at": "2026-11-08T21:51:42.874Z",
+ "label": "c12-rule",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "sofia-dulces-la-gloria",
+  "name": "Sofía Quintero",
+  "role": "ayuda en la dulcería de su familia",
+  "city": "Puebla",
+  "place": "Dulces Típicos La Gloria"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas tardes! Bienvenido a Dulces Típicos La Gloria. ¿Ya conoce los dulces de Puebla?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Un poco, llevo pocas semanas aquí."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que ya está por aquí! Si quiere, puede probar un poquito de camote, es lo más típico de la casa. ¿Le gustan los dulces de fruta?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gustan mucho. ¿El camote es de fruta?"
+   },
+   {
+    "who": "npc",
+    "text": "En realidad es de camote, que es como una batata, pero lo hacemos de sabores de fruta: piña, fresa, limón, guayaba. Aquí tiene un pedacito de fresa para probar."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. Mmm, está muy rico. Es dulce, pero me gusta."
+   },
+   {
+    "who": "npc",
+    "text": "¡Me da gusto que le guste! Sí, es bastante dulce, por eso lo vendemos en barritas y la gente se lleva varias de sabores distintos. ¿Quiere probar también uno de limón?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor, quiero probar el de limón. Después me llevo dos barritas, creo. ¡Gracias por todo, hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Aquí tiene el de limón, que le aproveche. Cuando quiera sus dos barritas, aquí le espero. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué gusto verte otra vez. ¿Vienes por tus dos barras de camote?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, sí. Hoy quiero de fresa y de piña, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro! Fresa y piña, muy buena elección. Ahorita te las preparo. ¿Quieres que te las ponga en una bolsita de regalo?"
+   },
+   {
+    "who": "learner",
+    "text": "No, gracias, una bolsa normal está bien. Son para mí."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, entonces van en bolsa normal. Aquí tienes tus dos barras, fresa y piña. Son cuarenta pesos en total. ¿Ya probaste también las tortitas de Santa Clara?"
+   },
+   {
+    "who": "learner",
+    "text": "No, todavía no. ¿Qué son las tortitas?"
+   },
+   {
+    "who": "npc",
+    "text": "Son unas galletitas redondas hechas con pasta de pepita de calabaza, y se llaman así por el convento de Santa Clara aquí en Puebla. No son tan dulces como el camote. Si quieres, te doy una para probar."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor, quiero probar una. Si me gusta, la próxima vez compro unas. Gracias por todo, ¡hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro, toma, aquí está tu tortita! Gracias a ti, nos vemos pronto. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué bueno verte otra vez. ¿Cómo te fue con los dulces que te llevaste?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola. Me gustaron mucho, ¡y la tortita también! Muy rica."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que te gustó! Hoy tenemos tortitas recién hechas. ¿Quieres llevarte unas?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, quiero seis tortitas, por favor. ¿Cuánto es?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro, seis tortitas. Son noventa pesos. ¿Las quieres en bolsa normal?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, bolsa normal, por favor. Aquí tiene."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias. Aquí tienes tus seis tortitas en su bolsita. ¡Que las disfrutes mucho!"
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, Sofía. Voy a comer una ahora, ¡huele muy rico! Hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Que tengas muy buen domingo."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 28,
+    "wordsAvg": 25.2,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 11.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 22.6,
+    "wordsMax": 38,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 11.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 11.8,
+    "wordsMax": 15,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.39,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 21,
+  "openerWords": 15,
+  "multiQuestion": 0,
+  "learnerShare": 0.3166666666666667,
+  "learnerWords": 10.966666666666669,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "camote",
+   "source": "line",
+   "said": "Si quiere, puede probar un poquito de camote, es lo más típico de la casa."
+  },
+  {
+   "word": "tortitas",
+   "source": "line",
+   "said": "¿Ya probaste también las tortitas de Santa Clara?"
+  },
+  {
+   "word": "pepita",
+   "source": "line",
+   "said": "Son unas galletitas redondas hechas con pasta de pepita de calabaza, y se llaman así por el convento de Santa Clara aquí en Puebla."
+  },
+  {
+   "word": "batata",
+   "source": "line",
+   "said": "En realidad es de camote, que es como una batata, pero lo hacemos de sabores de fruta: piña, fresa, limón, guayaba."
+  },
+  {
+   "word": "guayaba",
+   "source": "own",
+   "said": "En realidad es de camote, que es como una batata, pero lo hacemos de sabores de fruta: piña, fresa, limón, guayaba."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "¡Claro! Fresa y piña, muy buena elección. Ahorita te las preparo."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "camote",
+   "source": "line",
+   "said": "Si quiere, puede probar un poquito de camote, es lo más típico de la casa."
+  },
+  {
+   "word": "tortitas",
+   "source": "line",
+   "said": "¿Ya probaste también las tortitas de Santa Clara?"
+  },
+  {
+   "word": "pepita",
+   "source": "line",
+   "said": "Son unas galletitas redondas hechas con pasta de pepita de calabaza, y se llaman así por el convento de Santa Clara aquí en Puebla."
+  },
+  {
+   "word": "batata",
+   "source": "line",
+   "said": "En realidad es de camote, que es como una batata, pero lo hacemos de sabores de fruta: piña, fresa, limón, guayaba."
+  },
+  {
+   "word": "guayaba",
+   "source": "own",
+   "said": "En realidad es de camote, que es como una batata, pero lo hacemos de sabores de fruta: piña, fresa, limón, guayaba."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita te las preparo."
+  }
+ ]
+}

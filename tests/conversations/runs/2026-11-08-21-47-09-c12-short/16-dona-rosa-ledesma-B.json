@@ -1,0 +1,311 @@
+{
+ "run": "2026-11-08-21-47-09-c12-short",
+ "at": "2026-11-08T21:47:09.640Z",
+ "label": "c12-short",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "rosa-flores-ignacio-ramirez",
+  "name": "Doña Rosa Ledesma",
+  "role": "florista",
+  "city": "San Miguel de Allende",
+  "place": "Puesto de flores, Mercado Ignacio Ramírez"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You sell flowers at your stall, wrapping them in paper for people who want them for the church or for the altar at home.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, pase, pase. Mire nomás, hoy tengo cempasúchil muy fresco, de ese que llega para el altar."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Perdón, no entiendo. ¿Más despacio, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro, con gusto. Hoy tengo flores de cempasúchil. Son las flores amarillas para el altar."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, las flores amarillas. Son bonitas. ¿Cuánto cuesta?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, son muy bonitas. El manojo cuesta treinta pesos. ¿Quiere uno?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un manojo, por favor. Treinta pesos, ¿sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, treinta pesos. Ahorita se lo envuelvo en papel. Aquí tiene, cuídelo mucho."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, Doña Rosa. Aquí está, treinta pesos. Hasta luego, ¡adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted. Hasta luego, que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, bienvenido otra vez! Qué bueno verlo por aquí. ¿Qué flores anda buscando hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Doña Rosa. Hoy quiero... flores para mi casa."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, para su casa. Tengo cempasúchil fresquecito, y también alcatraces y gladiolas. ¿Cuál le late?"
+   },
+   {
+    "who": "learner",
+    "text": "Perdón, no entiendo. ¿Qué es \"le late\"?"
+   },
+   {
+    "who": "npc",
+    "text": "Ah, perdone, hablé muy rápido. Quiere decir: ¿cuál le gusta? ¿Cuál quiere llevar?"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok. Me gusta... las flores blancas. ¿Cómo se dice? ¿Alcatraces?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, alcatraces, así mero. Son blancos y muy bonitos. ¿Cuántos quiere?"
+   },
+   {
+    "who": "learner",
+    "text": "Tres, por favor. ¿Cuánto cuesta? Ah, gracias, Doña Rosa. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Son sesenta pesos los tres, joven. Aquí se los envuelvo en papel. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Qué gusto verlo otra vez por aquí. Pase, pase, hoy están muy bonitas las flores. ¿Qué anda buscando?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Doña Rosa. Hoy quiero flores rojas, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Mire, tengo claveles rojos y rosas rojas, todo muy fresquecito. ¿Cuáles le gustan más?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm, las rosas, por favor. ¿Cuánto cuesta la rosa?"
+   },
+   {
+    "who": "npc",
+    "text": "La rosa roja está a diez pesos cada una. ¿Cuántas quiere llevar?"
+   },
+   {
+    "who": "learner",
+    "text": "Cinco rosas, por favor. ¿Cuánto es?"
+   },
+   {
+    "who": "npc",
+    "text": "Son cincuenta pesos, joven. Se las envuelvo en papel, ¿verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, en papel, por favor. Aquí está, cincuenta pesos. Gracias, Doña Rosa. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted. Aquí tiene sus rosas, que le vaya muy bien. ¡Hasta luego!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 13.4,
+    "wordsMax": 18,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.34,
+    "wordsPerLine": 8.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 14.8,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 9.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 14,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 9.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 14,
+  "openerWords": 18,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.3499999999999999,
+  "learnerWords": 9.466666666666667,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "nomás",
+   "source": "own",
+   "said": "Mire nomás, hoy tengo cempasúchil muy fresco, de ese que llega para el altar."
+  },
+  {
+   "word": "cempasúchil",
+   "source": "own",
+   "said": "Mire nomás, hoy tengo cempasúchil muy fresco, de ese que llega para el altar."
+  },
+  {
+   "word": "manojo",
+   "source": "own",
+   "said": "El manojo cuesta treinta pesos. ¿Quiere uno?"
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Sí, treinta pesos. Ahorita se lo envuelvo en papel. Aquí tiene, cuídelo mucho."
+  },
+  {
+   "word": "alcatraces",
+   "source": "own",
+   "said": "Muy bien, para su casa. Tengo cempasúchil fresquecito, y también alcatraces y gladiolas. ¿Cuál le late?"
+  },
+  {
+   "word": "gladiolas",
+   "source": "own",
+   "said": "Muy bien, para su casa. Tengo cempasúchil fresquecito, y también alcatraces y gladiolas. ¿Cuál le late?"
+  },
+  {
+   "word": "le late",
+   "source": "own",
+   "said": "Muy bien, para su casa. Tengo cempasúchil fresquecito, y también alcatraces y gladiolas. ¿Cuál le late?"
+  },
+  {
+   "word": "así mero",
+   "source": "own",
+   "said": "Sí, alcatraces, así mero. Son blancos y muy bonitos. ¿Cuántos quiere?"
+  },
+  {
+   "word": "claveles",
+   "source": "own",
+   "said": "Mire, tengo claveles rojos y rosas rojas, todo muy fresquecito. ¿Cuáles le gustan más?"
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "cempasúchil",
+   "source": "own",
+   "said": "Mire nomás, hoy tengo cempasúchil muy fresco, de ese que llega para el altar."
+  },
+  {
+   "word": "altar",
+   "source": "line",
+   "said": "Mire nomás, hoy tengo cempasúchil muy fresco, de ese que llega para el altar."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Sí, treinta pesos. Ahorita se lo envuelvo en papel."
+  },
+  {
+   "word": "manojo",
+   "source": "own",
+   "said": "El manojo cuesta treinta pesos."
+  },
+  {
+   "word": "alcatraces",
+   "source": "own",
+   "said": "Tengo cempasúchil fresquecito, y también alcatraces y gladiolas."
+  },
+  {
+   "word": "gladiolas",
+   "source": "own",
+   "said": "Tengo cempasúchil fresquecito, y también alcatraces y gladiolas."
+  },
+  {
+   "word": "le late",
+   "source": "own",
+   "said": "¿Cuál le late?"
+  },
+  {
+   "word": "así mero",
+   "source": "own",
+   "said": "Sí, alcatraces, así mero."
+  },
+  {
+   "word": "claveles",
+   "source": "own",
+   "said": "Mire, tengo claveles rojos y rosas rojas, todo muy fresquecito."
+  },
+  {
+   "word": "fresquecito",
+   "source": "own",
+   "said": "Mire, tengo claveles rojos y rosas rojas, todo muy fresquecito."
+  },
+  {
+   "word": "mire nomás",
+   "source": "own",
+   "said": "Mire nomás, hoy tengo cempasúchil muy fresco, de ese que llega para el altar."
+  },
+  {
+   "word": "envuelvo",
+   "source": "line",
+   "said": "Sí, treinta pesos. Ahorita se lo envuelvo en papel."
+  }
+ ]
+}

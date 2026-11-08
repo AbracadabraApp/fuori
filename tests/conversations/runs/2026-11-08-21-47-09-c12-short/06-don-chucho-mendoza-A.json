@@ -1,0 +1,315 @@
+{
+ "run": "2026-11-08-21-47-09-c12-short",
+ "at": "2026-11-08T21:47:09.640Z",
+ "label": "c12-short",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pase, pase, suba a la silla. ¿Le doy una boleadita a esos zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Los zapatos son muy sucio."
+   },
+   {
+    "who": "npc",
+    "text": "Ándele, no se preocupe, que para eso estoy yo. Con un buen cepillado y su grasita, quedan como espejo. Ponga el pie aquí, en el cajón. ¿Usted es de por aquí, de la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, yo soy de Estados Unidos. Pero yo vivo en la Roma."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! Entonces ya es vecino mío, ¿verdad? Aquí llevo muchos años en mi puestito, y la Roma ha cambiado un montón. Mire, ya le estoy quitando el polvo con el cepillo. ¿Y hace mucho que vive por acá?"
+   },
+   {
+    "who": "learner",
+    "text": "Yo vivo aquí... un año. No, dos años."
+   },
+   {
+    "who": "npc",
+    "text": "Dos años, ya casi es un roma-norteño de a de veras. Ya se sabrá las mejores fondas y los mejores cafés, ¿no? Ahorita le voy dando la grasa, déjeme extenderla bien por todo el zapato. ¿Y qué es lo que más le gusta de vivir en México?"
+   },
+   {
+    "who": "learner",
+    "text": "Me gusta la comida y la gente es muy simpático. Bueno, gracias, Don Chucho. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted, joven, que le vaya muy bien. ¡Hasta luego y que Dios lo bendiga!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! ¿Qué onda? Pásele, pásele, aquí está la silla lista. ¿Quiere una boleada?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Hola, Don Chucho. Otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué gusto verlo otra vez! Suba, suba a la silla. Ahorita le dejo esos zapatos como espejo. ¿De qué color es su calzado hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Mis zapatos son negro. Los zapatos negro."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, zapatos negros, muy bien. Esos quedan bonitos con un buen lustre. Ahorita les doy su grasita y el cepillo, y van a brillar."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, Don Chucho. Muy bien."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto, joven. Mire, ya les estoy quitando el polvo primero con el trapo. ¿Y cómo le ha ido por la Roma esta semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Muy bien, gracias. Yo trabajo mucho esta semana. Bueno, gracias, Don Chucho. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós, joven! Que le vaya muy bien y cuídese mucho."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pase, pase, suba a la silla. ¿Qué tal los zapatos de hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, Don Chucho. Mis zapatos son marrón hoy. Un poco sucio."
+   },
+   {
+    "who": "npc",
+    "text": "¡Ándele, mi vecino! Café, entonces. Ponga el pie aquí en el descanso y le doy una buena limpiada. ¿Salió a caminar por la colonia hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo camino a la tienda. Un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Pues con tanta calle, el polvo se pega, joven. Ya con la grasa y el cepillo se las dejo como nuevas. Ahorita le doy la primera mano. ¿Qué compró en la tienda?"
+   },
+   {
+    "who": "learner",
+    "text": "Yo compro... agua y pan. Y un fruta."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, eso es comer sano. Ya casi le termino este zapato, ¿eh? Mire cómo le va saliendo el brillo."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, el brillo es muy bonito. Gracias, Don Chucho. Bueno, adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, joven. Adiós, hasta luego, que le vaya muy bien."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 34,
+    "wordsAvg": 30.4,
+    "wordsMax": 47,
+    "longShare": 0.6,
+    "questionsAvg": 1.2,
+    "multiQuestionShare": 0.4
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 10.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 24,
+    "wordsAvg": 19.4,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 8.3
+   },
+   "repeats": [
+    {
+     "said": "Mire, ya les estoy quitando el polvo primero con el trapo.",
+     "earlier": "Mire, ya le estoy quitando el polvo con el cepillo."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 20.8,
+    "wordsMax": 32,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 24,
+  "openerWords": 15,
+  "multiQuestion": 0.2,
+  "learnerShare": 0.25,
+  "learnerWords": 9.700000000000001,
+  "repeats": 0.5
+ },
+ "vocab": [
+  {
+   "word": "boleadita",
+   "source": "line",
+   "said": "¿Le doy una boleadita a esos zapatos?"
+  },
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "¿Quiere una boleada?"
+  },
+  {
+   "word": "grasita",
+   "source": "line",
+   "said": "Con un buen cepillado y su grasita, quedan como espejo."
+  },
+  {
+   "word": "grasa",
+   "source": "line",
+   "said": "Ahorita le voy dando la grasa, déjeme extenderla bien por todo el zapato."
+  },
+  {
+   "word": "lustre",
+   "source": "line",
+   "said": "Esos quedan bonitos con un buen lustre."
+  },
+  {
+   "word": "puestito",
+   "source": "line",
+   "said": "Aquí llevo muchos años en mi puestito, y la Roma ha cambiado un montón."
+  },
+  {
+   "word": "ándele",
+   "source": "own",
+   "said": "Ándele, no se preocupe, que para eso estoy yo."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "Pásele, pásele, aquí está la silla lista."
+  },
+  {
+   "word": "onda",
+   "source": "own",
+   "said": "¿Qué onda?"
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita le voy dando la grasa, déjeme extenderla bien por todo el zapato."
+  },
+  {
+   "word": "fondas",
+   "source": "own",
+   "said": "Ya se sabrá las mejores fondas y los mejores cafés, ¿no?"
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "boleadita",
+   "source": "line",
+   "said": "Ándele, no se preocupe, que para eso estoy yo."
+  },
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "¿Quiere una boleada?"
+  },
+  {
+   "word": "grasa",
+   "source": "line",
+   "said": "Ahorita le voy dando la grasa, déjeme extenderla bien por todo el zapato."
+  },
+  {
+   "word": "grasita",
+   "source": "line",
+   "said": "Ahorita les doy su grasita y el cepillo, y van a brillar."
+  },
+  {
+   "word": "puestito",
+   "source": "line",
+   "said": "Aquí llevo muchos años en mi puestito, y la Roma ha cambiado un montón."
+  },
+  {
+   "word": "ándele",
+   "source": "own",
+   "said": "Ándele, no se preocupe, que para eso estoy yo."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita le voy dando la grasa, déjeme extenderla bien por todo el zapato."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "¡Buenas tardes, joven! ¿Qué onda? Pásele, pásele, aquí está la silla lista."
+  },
+  {
+   "word": "onda",
+   "source": "own",
+   "said": "¡Buenas tardes, joven! ¿Qué onda? Pásele, pásele, aquí está la silla lista."
+  },
+  {
+   "word": "fondas",
+   "source": "own",
+   "said": "Ya se sabrá las mejores fondas y los mejores cafés, ¿no?"
+  }
+ ]
+}

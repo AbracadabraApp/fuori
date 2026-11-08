@@ -1,0 +1,270 @@
+{
+ "run": "2026-11-08-21-47-09-c12-short",
+ "at": "2026-11-08T21:47:09.640Z",
+ "label": "c12-short",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "rosa-flores-ignacio-ramirez",
+  "name": "Doña Rosa Ledesma",
+  "role": "florista",
+  "city": "San Miguel de Allende",
+  "place": "Puesto de flores, Mercado Ignacio Ramírez"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenos días, pase, pase! Mire qué cempasúchil tan bonito me llegó hoy. ¿Busca flores para su casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, flores para mi casa. Las flores son muy bonitas."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias, qué amable. Son de aquí cerquita, del campo. Para la casa le recomiendo el cempasúchil, que en noviembre no puede faltar. ¿Es para un altar?"
+   },
+   {
+    "who": "learner",
+    "text": "¿Altar? No entiendo. ¿Qué es altar?"
+   },
+   {
+    "who": "npc",
+    "text": "Un altar es una mesa donde ponemos fotos de nuestros muertos, con flores, velas y comida. Es para el Día de Muertos. El cempasúchil va primero, porque su color y su olor guían a los muertos a la casa."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, muertos... fotos y flores. No, no es para altar. Es para mi casa."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, entiendo, solo para adornar su casa. Entonces le doy un ramito de cempasúchil, que dura bastante y huele muy rico. ¿Y de qué color le gustan más las flores?"
+   },
+   {
+    "who": "learner",
+    "text": "Me gustan las flores amarillas. Gracias, señora. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto, joven. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, qué gusto verle otra vez! ¿Cómo le fue estos días con las flores amarillas?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señora. Las flores... muy bien. Están bonitas todavía."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, el cempasúchil aguanta bastante con este clima seco. Hoy tengo girasoles y unas margaritas amarillas muy frescas. ¿Qué anda buscando hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Hoy... quiero girasoles, por favor. Un ramo."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, aquí están, recién cortados. Son sesenta pesos el ramo. ¿Se los preparo con papel para que no se maltraten en el camino?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, con papel, por favor. Sesenta pesos, ¿sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, sesenta pesos. Ahí tiene, bien envueltitos. Cuidado con las puntas de las hojas, que a veces se doblan. ¿Los quiere para la mesa o para la ventana?"
+   },
+   {
+    "who": "learner",
+    "text": "Para la mesa, señora. Gracias. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, que le vaya muy bien. ¡Cuídese!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Qué gusto verle otra vez. Pase, pase. Hoy tengo girasoles frescos y margaritas amarillas, ¿qué se le antoja?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señora. Hoy... quiero margaritas, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, las margaritas amarillas están preciosas hoy. Se las preparo en un ramito, ¿cuántas quiere llevar?"
+   },
+   {
+    "who": "learner",
+    "text": "Un ramo, por favor. ¿Cuánto es?"
+   },
+   {
+    "who": "npc",
+    "text": "Un ramo de margaritas son cincuenta pesos. Se lo envuelvo en papel, como los girasoles. ¿Es para la mesa otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, para la mesa otra vez. Cincuenta pesos, ¿sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, cincuenta pesos. Aquí tiene su ramo, bien envuelto. Con estas margaritas y el cempasúchil, su mesa va a quedar muy alegre. ¿Y cómo le va en San Miguel?"
+   },
+   {
+    "who": "learner",
+    "text": "Muy bien, señora. San Miguel es bonito. Gracias por las flores. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que le guste. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 26,
+    "wordsAvg": 24.4,
+    "wordsMax": 39,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 9.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 19.8,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 19.8,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 9
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 23,
+  "openerWords": 17,
+  "multiQuestion": 0,
+  "learnerShare": 0.25,
+  "learnerWords": 8.933333333333334,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "cempasúchil",
+   "source": "line",
+   "said": "Mire qué cempasúchil tan bonito me llegó hoy."
+  },
+  {
+   "word": "altar",
+   "source": "line",
+   "said": "¿Es para un altar?"
+  },
+  {
+   "word": "Día de Muertos",
+   "source": "line",
+   "said": "Es para el Día de Muertos."
+  },
+  {
+   "word": "antoja",
+   "source": "own",
+   "said": "Hoy tengo girasoles frescos y margaritas amarillas, ¿qué se le antoja?"
+  },
+  {
+   "word": "envueltitos",
+   "source": "own",
+   "said": "Sí, sesenta pesos. Ahí tiene, bien envueltitos."
+  },
+  {
+   "word": "ramito",
+   "source": "own",
+   "said": "Entonces le doy un ramito de cempasúchil, que dura bastante y huele muy rico."
+  },
+  {
+   "word": "cerquita",
+   "source": "own",
+   "said": "Son de aquí cerquita, del campo."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "cempasúchil",
+   "source": "line",
+   "said": "Mire qué cempasúchil tan bonito me llegó hoy."
+  },
+  {
+   "word": "altar",
+   "source": "line",
+   "said": "Un altar es una mesa donde ponemos fotos de nuestros muertos, con flores, velas y comida."
+  },
+  {
+   "word": "Día de Muertos",
+   "source": "line",
+   "said": "Es para el Día de Muertos."
+  },
+  {
+   "word": "antoja",
+   "source": "own",
+   "said": "Hoy tengo girasoles frescos y margaritas amarillas, ¿qué se le antoja?"
+  },
+  {
+   "word": "cerquita",
+   "source": "own",
+   "said": "Son de aquí cerquita, del campo."
+  },
+  {
+   "word": "envueltitos",
+   "source": "own",
+   "said": "Ahí tiene, bien envueltitos."
+  }
+ ]
+}

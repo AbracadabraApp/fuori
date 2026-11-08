@@ -1,0 +1,275 @@
+{
+ "run": "2026-11-08-21-47-09-c12-short",
+ "at": "2026-11-08T21:47:09.640Z",
+ "label": "c12-short",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, joven! Pásele, pásele, siéntese en la silla y le dejo esos zapatos como espejo. ¿Es de por aquí?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas. Yo vivo aquí, pero soy de Estados Unidos."
+   },
+   {
+    "who": "npc",
+    "text": "¡Ándale, qué bueno! Pues bienvenido a la Roma, aquí tiene un amigo. Ya me va dando sus zapatos, que con este sol y el polvo de noviembre ya los necesitan. ¿Y cuánto tiempo lleva por acá?"
+   },
+   {
+    "who": "learner",
+    "text": "Llevo... seis meses. Eh, mis zapatos, aquí."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, medio año ya, ¡ya casi es de la casa! A ver, démelos... mire nomás, sí traen su buen polvito. Les voy a dar primero un buen cepillado para quitarles lo sucio, y luego la grasa y el brillo. Usted nomás póngase cómodo. ¿Son de cuero, verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son de cuero. Eh... son nuevo."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno, joven! El cuero nuevo es un gusto trabajarlo, agarra el brillo rapidito. Con una buena grasa se los dejo bien cuidados y le duran años. Ya nomás deme un ratito."
+   },
+   {
+    "who": "learner",
+    "text": "Está bien, gracias. Eh... ¿cuánto es? Bueno, adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Son sesenta pesos, joven. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, joven. Pase, pase, suba a la silla. ¿Ya me trae esos zapatos otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Sí, mis zapatos otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, así me gusta. Póngase cómodo, apoye el pie aquí, que le voy a sacar un brillo de espejo. ¿Café o negros hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Café, por favor. Los zapatos son café."
+   },
+   {
+    "who": "npc",
+    "text": "Café entonces, muy bien. Ya me acuerdo, son esos de piel nuevecita. Deje que les ponga la grasa primero y luego les paso el cepillo."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, está bien. Gracias, señor."
+   },
+   {
+    "who": "npc",
+    "text": "Para servirle, joven. Con la piel buena hay que ir despacito, así el brillo dura más. ¿Y usted a qué se dedica aquí en la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Eh... yo trabajo en una oficina. Soy profesor de inglés. Bueno, gracias, señor. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven, que le vaya muy bien. Aquí lo espero cuando quiera."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, joven! Pásele, pásele, suba a la silla. Aquí lo atiendo con gusto."
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas. Eh... mis zapatos, otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "¡Ah, el maestro de inglés! Qué gusto verlo otra vez. Ándele, póngase cómodo y deme esos zapatos cafés. ¿Le pongo el mismo betún de la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, el mismo, por favor. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, joven. Ya mero le empiezo con el cepillo para quitarle el polvo. Dígame, ¿cómo le fue esta semana en la escuela?"
+   },
+   {
+    "who": "learner",
+    "text": "Muy bien, gracias. Los estudiantes son... eh, simpático."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, joven, así da gusto trabajar. Yo llevo muchos años con mi cepillo y mi betún, y cuando la gente es amable, el día se pasa volando. Ya casi quedan sus zapatos."
+   },
+   {
+    "who": "learner",
+    "text": "Qué bien, gracias. Eh... ¿cuánto es? Bueno, adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Son treinta pesos, joven. Gracias a usted. Que le vaya muy bien, hasta luego."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 19,
+    "replies": 5,
+    "wordsMedian": 32,
+    "wordsAvg": 29,
+    "wordsMax": 47,
+    "longShare": 0.6,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.19,
+    "wordsPerLine": 8.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 24,
+    "wordsAvg": 20.8,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 9
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 22,
+    "wordsMax": 33,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 7.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 24,
+  "openerWords": 16,
+  "multiQuestion": 0,
+  "learnerShare": 0.22333333333333336,
+  "learnerWords": 8.433333333333334,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "betún",
+   "source": "line",
+   "said": "¿Le pongo el mismo betún de la otra vez?"
+  },
+  {
+   "word": "grasa",
+   "source": "own",
+   "said": "Les voy a dar primero un buen cepillado para quitarles lo sucio, y luego la grasa y el brillo."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "¡Buenas, joven! Pásele, pásele, siéntese en la silla y le dejo esos zapatos como espejo."
+  },
+  {
+   "word": "ándale",
+   "source": "own",
+   "said": "¡Ándale, qué bueno! Pues bienvenido a la Roma, aquí tiene un amigo."
+  },
+  {
+   "word": "ándele",
+   "source": "own",
+   "said": "Ándele, póngase cómodo y deme esos zapatos cafés."
+  },
+  {
+   "word": "nomás",
+   "source": "own",
+   "said": "Usted nomás póngase cómodo."
+  },
+  {
+   "word": "ya mero",
+   "source": "own",
+   "said": "Muy bien, joven. Ya mero le empiezo con el cepillo para quitarle el polvo."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "Pásele",
+   "source": "own",
+   "said": "Pásele, pásele, siéntese en la silla y le dejo esos zapatos como espejo."
+  },
+  {
+   "word": "Ándale",
+   "source": "own",
+   "said": "¡Ándale, qué bueno!"
+  },
+  {
+   "word": "Ándele",
+   "source": "own",
+   "said": "Ándele, póngase cómodo y deme esos zapatos cafés."
+  },
+  {
+   "word": "nomás",
+   "source": "own",
+   "said": "Usted nomás póngase cómodo."
+  },
+  {
+   "word": "mero",
+   "source": "own",
+   "said": "Ya mero le empiezo con el cepillo para quitarle el polvo."
+  },
+  {
+   "word": "betún",
+   "source": "line",
+   "said": "¿Le pongo el mismo betún de la otra vez?"
+  },
+  {
+   "word": "grasa",
+   "source": "own",
+   "said": "Les voy a dar primero un buen cepillado para quitarles lo sucio, y luego la grasa y el brillo."
+  }
+ ]
+}

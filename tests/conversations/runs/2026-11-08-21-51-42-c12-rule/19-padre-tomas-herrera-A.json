@@ -1,0 +1,270 @@
+{
+ "run": "2026-11-08-21-51-42-c12-rule",
+ "at": "2026-11-08T21:51:42.874Z",
+ "label": "c12-rule",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "padre-tomas-santo-domingo",
+  "name": "Padre Tomás Herrera",
+  "role": "sacerdote",
+  "city": "Puebla",
+  "place": "Templo de Santo Domingo"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, bienvenido al Templo de Santo Domingo. Pase, pase, con confianza."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, padre. Gracias. Es muy bonito, el iglesia."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias, qué amable. Y la Capilla del Rosario, al fondo, es lo más hermoso: todo cubierto de oro. ¿Es la primera vez que viene?"
+   },
+   {
+    "who": "learner",
+    "text": "No, es la segunda vez. Yo vivo aquí, en Puebla."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, entonces ya es casi vecino. Puebla es una ciudad muy linda para vivir. ¿Desde cuándo está por acá?"
+   },
+   {
+    "who": "learner",
+    "text": "Eh... seis meses. Yo estoy aquí seis meses."
+   },
+   {
+    "who": "npc",
+    "text": "Seis meses, ya se está acomodando bien, entonces. Aquí tenemos misa todos los días, y los domingos se llena de familias. Si algún día quiere venir, será bienvenido."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, padre. Quizás un domingo. Bueno, tengo que ir ahora. Adiós, y gracias, ¿eh?"
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto. Adiós, que Dios lo bendiga y que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, hijo, qué gusto verte otra vez por aquí. ¿Cómo has estado esta semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, padre. Estoy bien, gracias. ¿Y usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, gracias a Dios. Aquí entre una misa y otra, aprovechando el rato para saludar a la gente. ¿Y qué te trae hoy por el templo?"
+   },
+   {
+    "who": "learner",
+    "text": "Eh... quiero ver la iglesia otra vez. Es muy bonita."
+   },
+   {
+    "who": "npc",
+    "text": "Me da gusto, hijo. Pasa con calma, que a esta hora hay poca gente y se puede disfrutar mejor. ¿Qué fue lo que más te llamó la atención la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Eh... la capilla, con el oro. Es muy bonito."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, la Capilla del Rosario deja a todos sin palabras. Fíjate en las figuras y en los ángeles entre tanto dorado; cada rincón tiene algo que descubrir. ¿Tú crees que hoy te quedes un rato largo?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un rato. Quiero ver los ángeles. Bueno, ahora voy a la capilla. Gracias, padre. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Que Dios te acompañe, hijo. Adiós, que lo disfrutes mucho."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buenos días, qué gusto verlo de nuevo por aquí. Pase, pase, la misa está por comenzar y hoy hay muchas familias."
+   },
+   {
+    "who": "learner",
+    "text": "Buenos días, padre. Eh... gracias. Yo quiero ver la misa."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, me alegra mucho. Puede sentarse en cualquier banca, y si gusta, atrás hay lugar para ver con calma. ¿Es su primera misa en Puebla?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, es mi primera misa. Eh... en español."
+   },
+   {
+    "who": "npc",
+    "text": "Pues será una buena práctica. Escuche con tranquilidad; las palabras de la misa se repiten mucho y poco a poco se le van quedando."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sí, gracias, padre. Voy a escuchar con... calma."
+   },
+   {
+    "who": "npc",
+    "text": "Eso es, con calma. Ya sentirá cuando suenen las campanas que es hora de entrar. Que Dios lo acompañe, y al terminar me cuenta qué le pareció, ¿le parece?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, padre, está bien. Le cuento después. Gracias, y hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, que Dios lo bendiga."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 19.6,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 10.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 27,
+    "wordsAvg": 23.8,
+    "wordsMax": 36,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 10.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 21,
+    "replies": 5,
+    "wordsMedian": 24,
+    "wordsAvg": 21.2,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 9.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 24,
+  "openerWords": 15,
+  "multiQuestion": 0,
+  "learnerShare": 0.2733333333333334,
+  "learnerWords": 10.200000000000001,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "templo",
+   "source": "line",
+   "said": "Aquí entre una misa y otra, aprovechando el rato para saludar a la gente. ¿Y qué te trae hoy por el templo?"
+  },
+  {
+   "word": "misa",
+   "source": "line",
+   "said": "Aquí tenemos misa todos los días, y los domingos se llena de familias."
+  },
+  {
+   "word": "Capilla",
+   "source": "line",
+   "said": "Y la Capilla del Rosario, al fondo, es lo más hermoso: todo cubierto de oro."
+  },
+  {
+   "word": "campanas",
+   "source": "line",
+   "said": "Ya sentirá cuando suenen las campanas que es hora de entrar."
+  },
+  {
+   "word": "bendiga",
+   "source": "own",
+   "said": "Con mucho gusto. Adiós, que Dios lo bendiga y que le vaya muy bien."
+  },
+  {
+   "word": "banca",
+   "source": "own",
+   "said": "Puede sentarse en cualquier banca, y si gusta, atrás hay lugar para ver con calma."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "templo",
+   "source": "line",
+   "said": "Buenas tardes, bienvenido al Templo de Santo Domingo."
+  },
+  {
+   "word": "capilla",
+   "source": "line",
+   "said": "Y la Capilla del Rosario, al fondo, es lo más hermoso: todo cubierto de oro."
+  },
+  {
+   "word": "misa",
+   "source": "line",
+   "said": "Aquí tenemos misa todos los días, y los domingos se llena de familias."
+  },
+  {
+   "word": "campanas",
+   "source": "line",
+   "said": "Ya sentirá cuando suenen las campanas que es hora de entrar."
+  },
+  {
+   "word": "bendiga",
+   "source": "own",
+   "said": "Adiós, que Dios lo bendiga y que le vaya muy bien."
+  },
+  {
+   "word": "banca",
+   "source": "own",
+   "said": "Puede sentarse en cualquier banca, y si gusta, atrás hay lugar para ver con calma."
+  },
+  {
+   "word": "acá",
+   "source": "own",
+   "said": "¿Desde cuándo está por acá?"
+  }
+ ]
+}

@@ -1,0 +1,280 @@
+{
+ "run": "2026-11-08-21-51-42-c12-rule",
+ "at": "2026-11-08T21:51:42.874Z",
+ "label": "c12-rule",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele. Suba a la silla y le doy una boleada que va a quedar como espejo. ¿Trae zapatos de cuero?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Sí, yo tengo zapatos de cuero. Son marrón."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bueno, el marrón luce muy bonito cuando se le da su buen brillo. Póngase cómodo y deme el primer pie. ¿Es la primera vez que viene por aquí, por la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, es la segunda vez. Yo vivo cerca."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien, vecino! Entonces ya casi es de la colonia. Yo aquí llevo más de cincuenta años con mi puesto, y la Roma ha cambiado un montón desde entonces. ¿Cuánto tiempo lleva usted viviendo por aquí?"
+   },
+   {
+    "who": "learner",
+    "text": "Yo vivo aquí seis meses. Es muy bonito."
+   },
+   {
+    "who": "npc",
+    "text": "Seis meses, ya agarró el ritmo de la colonia entonces. Sí, es muy bonita, con sus árboles y sus casonas viejas. Ahorita le estoy untando la grasa al zapato, y en un ratito le saco el brillo con el cepillo. ¿Y de dónde es usted, de qué país?"
+   },
+   {
+    "who": "learner",
+    "text": "Soy de Estados Unidos. Gracias por el servicio, señor. ¡Adiós, hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, joven. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, aquí tiene su silla. ¿Otra boleadita para esos zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Otra vez los zapatos marrón."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, suba, suba. Primero les quito el polvo con el cepillo y luego les doy su grasita café. Se van a ver como nuevos. ¿Cómo le fue estos días por la colonia?"
+   },
+   {
+    "who": "learner",
+    "text": "Bien, gracias. Yo trabajo mucho esta semana."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bueno, el trabajo es bendición. Aquí se aprende que el que trabaja con ganas siempre sale adelante. ¿Y en qué trabaja usted, joven?"
+   },
+   {
+    "who": "learner",
+    "text": "Yo trabajo en una oficina. Es computadoras."
+   },
+   {
+    "who": "npc",
+    "text": "¡Ah, computadoras! Eso es el futuro, dicen. Yo con mis cepillos y mi betún me quedo, que no se descomponen. Ahorita le doy brillo a la punta, que es lo primero que se ve. ¿Y trabaja cerca de aquí, en la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, mi oficina es lejos. Yo tomo el metro. Bueno, gracias, señor. ¡Adiós, hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego, joven! Que le vaya muy bien, y aquí lo espero cuando quiera otra boleada."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, joven. Pase, pase, aquí tiene su lugar. ¿Cómo le fue en la semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Yo trabajo mucho, pero bien. ¿Y usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Aquí andamos, joven, con el trapo y el cepillo, como siempre. Los domingos hay buena gente por la Roma. ¿Hoy también trae los zapatos cafés?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, hoy yo tengo los zapatos marrón otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Pues súbase a la silla, que esos zapatos ya conocen mi mano. Les voy a dar un buen brillo."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, señor. Los zapatos están muy sucios hoy."
+   },
+   {
+    "who": "npc",
+    "text": "Ni se preocupe, joven, para eso estoy yo. Primero les quito el polvo con el cepillo y luego les pongo la grasa. ¿Usted caminó mucho hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo caminé mucho hoy. Por eso los zapatos están sucios. Gracias, señor. ¡Adiós, hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven, aquí lo espero. Que le vaya muy bien."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 24,
+    "replies": 5,
+    "wordsMedian": 33,
+    "wordsAvg": 30.4,
+    "wordsMax": 48,
+    "longShare": 0.6,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.2,
+    "wordsPerLine": 9.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 26,
+    "wordsMax": 42,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 19.2,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 10.5
+   },
+   "repeats": [
+    {
+     "said": "Primero les quito el polvo con el cepillo y luego les pongo la grasa.",
+     "earlier": "Primero les quito el polvo con el cepillo y luego les doy su grasita café."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 25,
+  "openerWords": 15,
+  "multiQuestion": 0,
+  "learnerShare": 0.24,
+  "learnerWords": 9.766666666666667,
+  "repeats": 0.5
+ },
+ "vocab": [
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "Suba a la silla y le doy una boleada que va a quedar como espejo."
+  },
+  {
+   "word": "boleadita",
+   "source": "line",
+   "said": "¿Otra boleadita para esos zapatos?"
+  },
+  {
+   "word": "betún",
+   "source": "line",
+   "said": "Yo con mis cepillos y mi betún me quedo, que no se descomponen."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita le estoy untando la grasa al zapato, y en un ratito le saco el brillo con el cepillo."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "¡Buenas tardes, joven! Pásele, pásele."
+  },
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "Entonces ya casi es de la colonia."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "Pásele, pásele. Suba a la silla y le doy una boleada que va a quedar como espejo."
+  },
+  {
+   "word": "boleadita",
+   "source": "line",
+   "said": "¿Otra boleadita para esos zapatos?"
+  },
+  {
+   "word": "grasa",
+   "source": "line",
+   "said": "Ahorita le estoy untando la grasa al zapato, y en un ratito le saco el brillo con el cepillo."
+  },
+  {
+   "word": "grasita",
+   "source": "line",
+   "said": "Primero les quito el polvo con el cepillo y luego les doy su grasita café."
+  },
+  {
+   "word": "betún",
+   "source": "line",
+   "said": "Yo con mis cepillos y mi betún me quedo, que no se descomponen."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "¡Buenas tardes, joven! Pásele, pásele. Suba a la silla y le doy una boleada que va a quedar como espejo."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita le estoy untando la grasa al zapato, y en un ratito le saco el brillo con el cepillo."
+  },
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "¡Qué bien, vecino! Entonces ya casi es de la colonia."
+  }
+ ]
+}

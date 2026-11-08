@@ -1,0 +1,305 @@
+{
+ "run": "2026-11-08-21-47-09-c12-short",
+ "at": "2026-11-08T21:47:09.640Z",
+ "label": "c12-short",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "memo-tejuino",
+  "name": "Memo Orozco",
+  "role": "tejuinero",
+  "city": "Guadalajara",
+  "place": "Carrito de tejuino junto al Mercado San Juan de Dios"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Bienvenido. ¿Un tejuino bien fríoo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, por favor. Un tejuino... ehm... pequeño."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, un chico. Aquí lo preparo con limón y sal, bien helado. ¿Le pongo una bolita de nieve de limón encima?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿nieve? Perdón... más lento, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, claro. Nieve... es helado. Una bolita de helado de limón, encima del tejuino. ¿Quiere?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, un helado. Sí, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto. Ya se lo preparo. Mire, primero el tejuino, luego el limón, la sal y el hielo. Y al final, la bolita de nieve. Aquí está su tejuino chico, con su nieve de limón. ¿Es la primera vez que lo prueba?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no, no es la primera vez. Ehm... yo vivo aquí. Me gusta. Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que le gusta! Gracias a usted, que le vaya muy bien. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Quihubo! ¿Otra vez por aquí? Qué bueno verte. ¿Lo de siempre, un chico con nieve de limón?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Lo de siempre, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Va, ya te lo preparo. Con su limón y su sal, ¿verdad? Ya hace fresquito en noviembre, pero el tejuino siempre cae bien."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, con limón y sal. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Aquí tienes, bien frío. Son treinta pesos. ¿Ya andas conociendo el mercado de aquí atrás?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... perdón... ¿repite, por favor? Más lento."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Son... treinta... pesos. Y te pregunto: ¿ya conoces... el mercado... aquí atrás?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, treinta pesos. Aquí tiene. Ehm... el mercado... sí, un poco. Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a ti. ¡Adiós, que te vaya bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Quihubo! Buenas, qué gusto verte otra vez. ¿Lo de siempre, un chico con nieve de limón?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, por favor. Lo de siempre."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, ya te lo preparo. Con limón y sal, como te gusta. Son treinta pesos. ¿Hoy sí vas a meterte al mercado?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Un poco. Hoy sí... voy al mercado."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! Aquí tienes tu tejuino, bien frío. Cuando entres, tienes que probar las tortas ahogadas, son de aquí de Guadalajara."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿tortas... ahogadas? Perdón... más lento, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Tortas... ahogadas. Es un pan con carne, y lleva salsa encima. Es muy rico."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ah, pan con carne y salsa. Sí, gracias. Voy a probar. Ehm... adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós! Que te vaya muy bien, aquí te espero."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 8,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 20.4,
+    "wordsMax": 41,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 9.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 15.2,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 8.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 16.6,
+    "wordsMax": 22,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 9.5
+   },
+   "repeats": [
+    {
+     "said": "¿Lo de siempre, un chico con nieve de limón?",
+     "earlier": "¿Lo de siempre, un chico con nieve de limón?"
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 15,
+  "openerWords": 16,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.30000000000000004,
+  "learnerWords": 9.200000000000001,
+  "repeats": 0.5
+ },
+ "vocab": [
+  {
+   "word": "tejuino",
+   "source": "line",
+   "said": "¡Buenas tardes! Bienvenido. ¿Un tejuino bien fríoo hoy?"
+  },
+  {
+   "word": "nieve",
+   "source": "line",
+   "said": "Claro que sí, un chico. Aquí lo preparo con limón y sal, bien helado. ¿Le pongo una bolita de nieve de limón encima?"
+  },
+  {
+   "word": "bolita",
+   "source": "own",
+   "said": "Claro que sí, un chico. Aquí lo preparo con limón y sal, bien helado. ¿Le pongo una bolita de nieve de limón encima?"
+  },
+  {
+   "word": "quihubo",
+   "source": "own",
+   "said": "¡Quihubo! ¿Otra vez por aquí? Qué bueno verte. ¿Lo de siempre, un chico con nieve de limón?"
+  },
+  {
+   "word": "va",
+   "source": "own",
+   "said": "Va, ya te lo preparo. Con su limón y su sal, ¿verdad? Ya hace fresquito en noviembre, pero el tejuino siempre cae bien."
+  },
+  {
+   "word": "tortas ahogadas",
+   "source": "own",
+   "said": "Cuando entres, tienes que probar las tortas ahogadas, son de aquí de Guadalajara."
+  },
+  {
+   "word": "limón",
+   "source": "line",
+   "said": "Claro que sí, un chico. Aquí lo preparo con limón y sal, bien helado. ¿Le pongo una bolita de nieve de limón encima?"
+  },
+  {
+   "word": "ya andas",
+   "source": "own",
+   "said": "Aquí tienes, bien frío. Son treinta pesos. ¿Ya andas conociendo el mercado de aquí atrás?"
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "tejuino",
+   "source": "line",
+   "said": "¡Buenas tardes! Bienvenido. ¿Un tejuino bien fríoo hoy?"
+  },
+  {
+   "word": "nieve",
+   "source": "line",
+   "said": "¿Le pongo una bolita de nieve de limón encima?"
+  },
+  {
+   "word": "quihubo",
+   "source": "own",
+   "said": "¡Quihubo! ¿Otra vez por aquí? Qué bueno verte."
+  },
+  {
+   "word": "va",
+   "source": "own",
+   "said": "Va, ya te lo preparo."
+  },
+  {
+   "word": "chico",
+   "source": "own",
+   "said": "Claro que sí, un chico."
+  },
+  {
+   "word": "bolita",
+   "source": "own",
+   "said": "¿Le pongo una bolita de nieve de limón encima?"
+  },
+  {
+   "word": "tortas ahogadas",
+   "source": "own",
+   "said": "Cuando entres, tienes que probar las tortas ahogadas, son de aquí de Guadalajara."
+  },
+  {
+   "word": "limón",
+   "source": "line",
+   "said": "Claro que sí, un chico. Aquí lo preparo con limón y sal, bien helado."
+  },
+  {
+   "word": "hielo",
+   "source": "line",
+   "said": "Mire, primero el tejuino, luego el limón, la sal y el hielo."
+  },
+  {
+   "word": "fresquito",
+   "source": "own",
+   "said": "Ya hace fresquito en noviembre, pero el tejuino siempre cae bien."
+  },
+  {
+   "word": "mercado",
+   "source": "line",
+   "said": "¿Ya andas conociendo el mercado de aquí atrás?"
+  }
+ ]
+}

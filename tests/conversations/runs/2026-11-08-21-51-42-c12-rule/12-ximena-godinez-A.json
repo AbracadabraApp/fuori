@@ -1,0 +1,275 @@
+{
+ "run": "2026-11-08-21-51-42-c12-rule",
+ "at": "2026-11-08T21:51:42.874Z",
+ "label": "c12-rule",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "ximena-ceramica",
+  "name": "Ximena Godínez",
+  "role": "alfarera",
+  "city": "Guadalajara",
+  "place": "Taller de Cerámica Barro Vivo"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas! Pásale, pásale, estoy puliendo unos jarros."
+   },
+   {
+    "who": "learner",
+    "text": "Hola, gracias. ¿Qué es \"pulir\"? Perdón, no sé la palabra."
+   },
+   {
+    "who": "npc",
+    "text": "Pulir es frotar el barro con una piedra lisa hasta que la superficie queda suave y brillosa. Mira, así, con la mano."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, entiendo. Es muy bonito. ¿Cuánto tiempo toma?"
+   },
+   {
+    "who": "npc",
+    "text": "Depende de la pieza. Un jarro como este me lleva como una hora, y hay que ir con calma para que no se raye el barro."
+   },
+   {
+    "who": "learner",
+    "text": "Una hora, qué mucho. ¿Usted hizo todos estos jarros?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, todos son hechos por mí, uno por uno. Por eso ninguno sale igual, cada uno tiene su detallito. ¿Ya habías visto barro bruñido?"
+   },
+   {
+    "who": "learner",
+    "text": "No, es la primera vez que veo barro bruñido. Es muy bonito, pero no sabía que tomaba tanto tiempo. Bueno, muchas gracias por todo. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Con gusto! Hasta luego, que te vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, qué gusto verte otra vez! Pasa, pasa, estoy pintando unos jarros. ¿Cómo has estado?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, estoy bien, gracias. Estos jarros son diferentes, ¿verdad?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, estos no son bruñidos, llevan pintura encima, con flores y hojitas. Cada uno me sale un poco distinto, porque todo va a mano."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, qué bonitas las flores. ¿Cuánto tiempo toma pintar uno?"
+   },
+   {
+    "who": "npc",
+    "text": "Pintar uno me lleva como tres horas, porque las flores tienen muchos detalles. ¿Tú has pintado alguna vez?"
+   },
+   {
+    "who": "learner",
+    "text": "No, nunca. Pero me gustaría. ¿Es difícil?"
+   },
+   {
+    "who": "npc",
+    "text": "Al principio la mano te tiembla un poco, pero con práctica se va soltando. Lo más difícil es tener paciencia con el pincel."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, entiendo. Yo no tengo mucha paciencia, pero quiero intentar. Muchas gracias, ¡hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Ya verás que sí puedes! Hasta luego, cuídate mucho."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, qué gusto verte otra vez por aquí! Pasa, pasa, estoy puliendo unos jarros con la piedra. ¿Cómo has estado?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, estoy muy bien, gracias. ¿Y usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, gracias, aquí con el barro como siempre. Hoy está tranquilo el taller, es domingo. ¿Ya conoces un poco más el centro de Tlaquepaque?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un poco. Ayer caminé por el centro."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! La calle Independencia está bonita en noviembre, con tanta gente paseando. Ahí hay muchas galerías, pero aquí hacemos todo a mano. ¿Qué te pareció?"
+   },
+   {
+    "who": "learner",
+    "text": "Me gustó mucho. Había mucha gente y muchas tiendas bonitas."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, siempre hay mucho movimiento, sobre todo en fin de semana. Yo prefiero quedarme aquí en el taller, donde se escucha solo el torno. Hoy estoy terminando unas cazuelas para un pedido. ¿Quieres ver cómo quedan?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gustaría ver las cazuelas. Son muy bonitas. Pero hoy tengo poco tiempo, ¡hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro, será otro día! Hasta luego, que te vaya muy bien."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 8,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 17.8,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.37,
+    "wordsPerLine": 13.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 17.8,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 23.6,
+    "wordsMax": 36,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 22,
+  "openerWords": 15,
+  "multiQuestion": 0,
+  "learnerShare": 0.3133333333333333,
+  "learnerWords": 11.200000000000001,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "pásale",
+   "source": "own",
+   "said": "¡Hola, buenas! Pásale, pásale, estoy puliendo unos jarros."
+  },
+  {
+   "word": "jarros",
+   "source": "line",
+   "said": "¡Hola, buenas! Pásale, pásale, estoy puliendo unos jarros."
+  },
+  {
+   "word": "pulir",
+   "source": "line",
+   "said": "Pulir es frotar el barro con una piedra lisa hasta que la superficie queda suave y brillosa."
+  },
+  {
+   "word": "barro",
+   "source": "line",
+   "said": "Pulir es frotar el barro con una piedra lisa hasta que la superficie queda suave y brillosa."
+  },
+  {
+   "word": "bruñido",
+   "source": "line",
+   "said": "¿Ya habías visto barro bruñido?"
+  },
+  {
+   "word": "torno",
+   "source": "own",
+   "said": "Yo prefiero quedarme aquí en el taller, donde se escucha solo el torno."
+  },
+  {
+   "word": "cazuelas",
+   "source": "line",
+   "said": "Hoy estoy terminando unas cazuelas para un pedido."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "pulir",
+   "source": "line",
+   "said": "Pulir es frotar el barro con una piedra lisa hasta que la superficie queda suave y brillosa."
+  },
+  {
+   "word": "barro",
+   "source": "line",
+   "said": "Pulir es frotar el barro con una piedra lisa hasta que la superficie queda suave y brillosa."
+  },
+  {
+   "word": "bruñido",
+   "source": "line",
+   "said": "¿Ya habías visto barro bruñido?"
+  },
+  {
+   "word": "jarros",
+   "source": "line",
+   "said": "¡Hola, buenas! Pásale, pásale, estoy puliendo unos jarros."
+  },
+  {
+   "word": "cazuelas",
+   "source": "line",
+   "said": "Hoy estoy terminando unas cazuelas para un pedido."
+  },
+  {
+   "word": "torno",
+   "source": "own",
+   "said": "Yo prefiero quedarme aquí en el taller, donde se escucha solo el torno."
+  },
+  {
+   "word": "pásale",
+   "source": "own",
+   "said": "¡Hola, buenas! Pásale, pásale, estoy puliendo unos jarros."
+  }
+ ]
+}

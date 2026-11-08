@@ -1,0 +1,305 @@
+{
+ "run": "2026-11-08-21-51-42-c12-rule",
+ "at": "2026-11-08T21:51:42.874Z",
+ "label": "c12-rule",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "emiliano-los-amantes",
+  "name": "Emiliano Matus",
+  "role": "cantinero",
+  "city": "Oaxaca",
+  "place": "Mezcalería Los Amantes"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You pour mezcal into small copitas and set them down with orange slices and sal de gusano, which you mix yourself from ground dried agave worm, salt and chile. You pour espadín most often. When a guest asks about tobalá, you explain that it comes from wild agave and tell them how it differs from espadín.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas noches! Pásale, pásale. Es lunes, así que está tranquilo. ¿Qué te sirvo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas noches. Um... ¿qué recomienda usted? Yo no sé mucho de mezcal."
+   },
+   {
+    "who": "npc",
+    "text": "Para empezar, te recomiendo el espadín, que es el que más sirvo. Es suave y redondo, perfecto para conocer el mezcal. Te lo pongo en copita, con naranja y sal de gusano, que la preparo yo mismo. ¿Te animas?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, sí, me animo. Gracias. ¿Es... fuerte?"
+   },
+   {
+    "who": "npc",
+    "text": "Tiene su fuerza, sí, como unos cuarenta y cinco grados. Pero el espadín es amable. Se toma despacito, en sorbitos, y entre sorbo y sorbo muerdes la naranja con la sal. Ahorita te lo sirvo."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, despacito. Gracias, señor."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto. Aquí tienes tu copita, con su naranja y su sal. ¿Y tú de dónde eres?"
+   },
+   {
+    "who": "learner",
+    "text": "Soy de Estados Unidos, de Texas. Vivo aquí en Oaxaca. Bueno, gracias por el mezcal. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno, bienvenido a Oaxaca! Cuídate mucho, y aquí te espero cuando quieras. ¡Adiós!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, bienvenido otra vez! Qué bueno verte de nuevo por aquí. Pasa, pasa, siéntate donde quieras."
+   },
+   {
+    "who": "learner",
+    "text": "Hola, gracias. Eh... buenas noches, señor. Otra vez yo aquí."
+   },
+   {
+    "who": "npc",
+    "text": "¡Aquí te esperaba! Ya eres de la casa. Esta noche está seca y fresca, de esas que piden un buen mezcal. ¿Te sirvo otro espadín, o quieres probar algo distinto?"
+   },
+   {
+    "who": "learner",
+    "text": "Otro espadín, por favor. Me gusta mucho."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que te gustó! Ahorita te lo sirvo, con su naranja y su sal de gusano como la vez pasada."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, señor. Muy amable."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto. Aquí tienes tu copita. Esta vez la sal te la preparé un poco más picosita. ¿Qué tal tu semana en Oaxaca?"
+   },
+   {
+    "who": "learner",
+    "text": "Mi semana está bien, gracias. Trabajo mucho, pero me gusta Oaxaca. Bueno, gracias por el mezcal. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno, me da gusto! Gracias a ti. ¡Hasta luego, cuídate mucho!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, bienvenido otra vez! Pásale, siéntate donde gustes. ¿Qué tal tu domingo?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas noches. Mi domingo está bien, gracias. Tranquilo."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, así es noviembre por aquí, con calma. Hoy tengo el espadín bien rico, ¿te sirvo uno como la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Otro espadín. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Va, ya te lo sirvo. Aquí tienes tu copita con naranja y la sal de gusano, que hoy me quedó bien rica. Salud. ¿Cómo la ves?"
+   },
+   {
+    "who": "learner",
+    "text": "Salud. Mmm, está muy rica. Me gusta la sal."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que te guste, la hago yo mismo con gusano molido, sal y chile. Le puse un poquito más de chile esta vez. ¿Sí lo sientes?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un poquito picante. Está bien, me gusta. Bueno, gracias por todo, señor. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que te gustó! Gracias a ti, cuídate mucho y aquí te espero. ¡Hasta luego!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 23.6,
+    "wordsMax": 39,
+    "longShare": 0.4,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 9.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 20.4,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 9.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 20.6,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 9.8
+   },
+   "repeats": [
+    {
+     "said": "Aquí tienes tu copita con naranja y la sal de gusano, que hoy me quedó bien rica.",
+     "earlier": "Aquí tienes tu copita, con su naranja y su sal."
+    },
+    {
+     "said": "Gracias a ti, cuídate mucho y aquí te espero.",
+     "earlier": "Cuídate mucho, y aquí te espero cuando quieras."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 21,
+  "openerWords": 13,
+  "multiQuestion": 0,
+  "learnerShare": 0.26666666666666666,
+  "learnerWords": 9.8,
+  "repeats": 1
+ },
+ "vocab": [
+  {
+   "word": "mezcal",
+   "source": "line",
+   "said": "Para empezar, te recomiendo el espadín, que es el que más sirvo. Es suave y redondo, perfecto para conocer el mezcal."
+  },
+  {
+   "word": "copita",
+   "source": "line",
+   "said": "Te lo pongo en copita, con naranja y sal de gusano, que la preparo yo mismo."
+  },
+  {
+   "word": "sal de gusano",
+   "source": "line",
+   "said": "Te lo pongo en copita, con naranja y sal de gusano, que la preparo yo mismo."
+  },
+  {
+   "word": "espadín",
+   "source": "line",
+   "said": "Para empezar, te recomiendo el espadín, que es el que más sirvo."
+  },
+  {
+   "word": "chile",
+   "source": "line",
+   "said": "Qué bueno que te guste, la hago yo mismo con gusano molido, sal y chile."
+  },
+  {
+   "word": "Pásale",
+   "source": "own",
+   "said": "¡Buenas noches! Pásale, pásale."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita te lo sirvo."
+  },
+  {
+   "word": "picosita",
+   "source": "own",
+   "said": "Esta vez la sal te la preparé un poco más picosita."
+  },
+  {
+   "word": "Va",
+   "source": "own",
+   "said": "Va, ya te lo sirvo."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "mezcal",
+   "source": "line",
+   "said": "Es suave y redondo, perfecto para conocer el mezcal."
+  },
+  {
+   "word": "copita",
+   "source": "line",
+   "said": "Te lo pongo en copita, con naranja y sal de gusano, que la preparo yo mismo."
+  },
+  {
+   "word": "sal de gusano",
+   "source": "line",
+   "said": "Te lo pongo en copita, con naranja y sal de gusano, que la preparo yo mismo."
+  },
+  {
+   "word": "espadín",
+   "source": "line",
+   "said": "Para empezar, te recomiendo el espadín, que es el que más sirvo."
+  },
+  {
+   "word": "chile",
+   "source": "line",
+   "said": "Qué bueno que te guste, la hago yo mismo con gusano molido, sal y chile."
+  },
+  {
+   "word": "pásale",
+   "source": "own",
+   "said": "¡Buenas noches! Pásale, pásale."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita te lo sirvo."
+  },
+  {
+   "word": "va",
+   "source": "own",
+   "said": "Va, ya te lo sirvo."
+  },
+  {
+   "word": "picosita",
+   "source": "own",
+   "said": "Esta vez la sal te la preparé un poco más picosita."
+  }
+ ]
+}

@@ -1,0 +1,315 @@
+{
+ "run": "2026-11-08-21-47-09-c12-short",
+ "at": "2026-11-08T21:47:09.640Z",
+ "label": "c12-short",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "ofelia-tlayudas",
+  "name": "Doña Ofelia Santiago",
+  "role": "tlayudera",
+  "city": "Oaxaca",
+  "place": "Tlayudas del Mercado 20 de Noviembre"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, pase, pase! Aquí estoy en el comal, con el humo y todo. ¿Qué se le antoja hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Mmm, ¿qué me recomienda usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Pues una tlayuda con tasajo, sin duda. La carne la asamos aquí mismo en el carbón, y con el asiento, los frijoles y el quesillo queda bien crujiente. ¿Le gusta el picante?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gusta un poco el picante."
+   },
+   {
+    "who": "npc",
+    "text": "Entonces le pongo la salsa de chile pasilla, que pica poquito y sabe a humo, como el tasajo. Si quiere más, la salsa va aparte."
+   },
+   {
+    "who": "learner",
+    "text": "Perfecto, la salsa aparte, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, ya se la preparo. Me va a tardar unos minutos, porque la tlayuda tiene que dorarse bien en el comal. ¿Usted es de por aquí o anda de visita?"
+   },
+   {
+    "who": "learner",
+    "text": "No, no soy de aquí. Vivo en Oaxaca desde hace unas semanas. Trabajo aquí y me gusta mucho. Bueno, gracias, ¡hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que le guste Oaxaca! Gracias a usted, que le vaya muy bien. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele. Qué bueno verlo otra vez por aquí. ¿Va a querer otra tlayuda hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Sí, otra tlayuda, por favor. Con tasajo, me gustó mucho."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto. Ya se la pongo en el comal, el tasajo va directo al carbón. ¿Le echo la salsa de pasilla al lado otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor, la salsa al lado."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, ya está en el fuego. Mientras se hace, dígame, ¿le ha tocado ya ver cómo se pone el mercado en estas fechas de noviembre?"
+   },
+   {
+    "who": "learner",
+    "text": "No, todavía no. ¿Cómo se pone el mercado?"
+   },
+   {
+    "who": "npc",
+    "text": "Se llena de gente, joven, y con los días de muertos se ve mucha flor de cempasúchil y pan de muerto por todos lados. Aquí en mi pasillo se junta más humo y más hambre. ¿Usted ya probó el pan de muerto?"
+   },
+   {
+    "who": "learner",
+    "text": "Todavía no, no probé el pan de muerto. Pero quiero probarlo. Bueno, muchas gracias, ¡hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven, que le vaya muy bien. ¡Aquí lo espero!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, joven! Pásele, pásele. El comal ya está bien caliente. ¿Qué le preparo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas. Una tlayuda con tasajo, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro que sí! Ahorita se la pongo en el carbón. Y su salsa de chile pasilla aparte, ¿verdad? Ya me la sé."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, gracias, la salsa aparte. ¡Usted tiene buena memoria!"
+   },
+   {
+    "who": "npc",
+    "text": "Pues ya van tres veces que viene, ¿cómo no me voy a acordar? Mire, ya se está dorando el tasajo, y el humo huele a gloria. Hoy el mercado está tranquilo todavía, pero en unos días no va a caber ni un alfiler. ¿Y usted cómo ha estado, en el trabajo?"
+   },
+   {
+    "who": "learner",
+    "text": "Bien, gracias. Trabajo mucho, pero estoy contento. ¿Y usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Ay, qué bueno que está contento. Yo aquí, de pie junto al comal desde temprano, pero me gusta mi trabajo. Ya casi está su tlayuda; tenga cuidado, que el plato quema. ¿Le pongo todo el quesillo?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, todo el quesillo, por favor. Muchas gracias, doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Aquí tiene, con todo su quesillo. ¡Buen provecho, joven! Hasta luego."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 19,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 24.6,
+    "wordsMax": 32,
+    "longShare": 0.4,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 10.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 26,
+    "wordsAvg": 24.6,
+    "wordsMax": 42,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 10.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 26.8,
+    "wordsMax": 51,
+    "longShare": 0.4,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 25,
+  "openerWords": 18,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.24333333333333332,
+  "learnerWords": 10.200000000000001,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "tlayuda",
+   "source": "line",
+   "said": "Pues una tlayuda con tasajo, sin duda."
+  },
+  {
+   "word": "comal",
+   "source": "line",
+   "said": "Aquí estoy en el comal, con el humo y todo."
+  },
+  {
+   "word": "tasajo",
+   "source": "line",
+   "said": "Pues una tlayuda con tasajo, sin duda."
+  },
+  {
+   "word": "asiento",
+   "source": "line",
+   "said": "La carne la asamos aquí mismo en el carbón, y con el asiento, los frijoles y el quesillo queda bien crujiente."
+  },
+  {
+   "word": "quesillo",
+   "source": "line",
+   "said": "La carne la asamos aquí mismo en el carbón, y con el asiento, los frijoles y el quesillo queda bien crujiente."
+  },
+  {
+   "word": "pasilla",
+   "source": "own",
+   "said": "Entonces le pongo la salsa de chile pasilla, que pica poquito y sabe a humo, como el tasajo."
+  },
+  {
+   "word": "días de muertos",
+   "source": "own",
+   "said": "Se llena de gente, joven, y con los días de muertos se ve mucha flor de cempasúchil y pan de muerto por todos lados."
+  },
+  {
+   "word": "cempasúchil",
+   "source": "own",
+   "said": "Se llena de gente, joven, y con los días de muertos se ve mucha flor de cempasúchil y pan de muerto por todos lados."
+  },
+  {
+   "word": "pan de muerto",
+   "source": "own",
+   "said": "Se llena de gente, joven, y con los días de muertos se ve mucha flor de cempasúchil y pan de muerto por todos lados."
+  },
+  {
+   "word": "Pásele",
+   "source": "own",
+   "said": "¡Buenas tardes, joven! Pásele, pásele."
+  },
+  {
+   "word": "Ahorita",
+   "source": "own",
+   "said": "¡Claro que sí! Ahorita se la pongo en el carbón."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "tlayuda",
+   "source": "line",
+   "said": "Pues una tlayuda con tasajo, sin duda."
+  },
+  {
+   "word": "comal",
+   "source": "line",
+   "said": "Aquí estoy en el comal, con el humo y todo."
+  },
+  {
+   "word": "asiento",
+   "source": "line",
+   "said": "La carne la asamos aquí mismo en el carbón, y con el asiento, los frijoles y el quesillo queda bien crujiente."
+  },
+  {
+   "word": "quesillo",
+   "source": "line",
+   "said": "La carne la asamos aquí mismo en el carbón, y con el asiento, los frijoles y el quesillo queda bien crujiente."
+  },
+  {
+   "word": "tasajo",
+   "source": "line",
+   "said": "Pues una tlayuda con tasajo, sin duda."
+  },
+  {
+   "word": "pasilla",
+   "source": "own",
+   "said": "Entonces le pongo la salsa de chile pasilla, que pica poquito y sabe a humo, como el tasajo."
+  },
+  {
+   "word": "cempasúchil",
+   "source": "own",
+   "said": "Se llena de gente, joven, y con los días de muertos se ve mucha flor de cempasúchil y pan de muerto por todos lados."
+  },
+  {
+   "word": "pan de muerto",
+   "source": "own",
+   "said": "Se llena de gente, joven, y con los días de muertos se ve mucha flor de cempasúchil y pan de muerto por todos lados."
+  },
+  {
+   "word": "días de muertos",
+   "source": "own",
+   "said": "Se llena de gente, joven, y con los días de muertos se ve mucha flor de cempasúchil y pan de muerto por todos lados."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "¡Claro que sí! Ahorita se la pongo en el carbón."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "¡Buenas tardes, joven! Pásele, pásele."
+  }
+ ]
+}

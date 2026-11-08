@@ -7,7 +7,9 @@
       "Bash(railway status)",
       "Bash(railway status *)",
       "Bash(railway logs)",
-      "Bash(railway logs *)"
+      "Bash(railway logs *)",
+      "Bash(npm run -s test:cards)",
+      "Bash(npm run -s test:real-play-scores)"
     ],
     "deny": [
       "Bash(git commit --amend*)",

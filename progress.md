@@ -66,6 +66,15 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-08 (afternoon): here-line test C12 run, testing map, test cards locked (Mac mini session, "testing-map")
+
+- **C12 (here line: today's, short, one-rule) ran in Mexico: "can't decide".** Place vocabulary (her own words) and repeats, Intermediate, memory on, 10 characters × 3 visits, judge twice per conversation. By the card's rule the floor is 2.5 (2 or more = can't decide); A's own-word count for the same character moves up to 10 between runs (Doña Rosa 3.5 → 13.5); the tags fail the pilot's bar (4-5 of 20 wrong per run). Holistic read: the short line is not thin (Doña Rosa still has cempasúchil for the altar, Padre Tomás the Capilla del Rosario); the rule-written line is more conversational but loses the place anchor for characters with no craft and glosses like a teacher. **Decision: no change, today's lines stay**; no further refinement test (Josh). Logged in `docs/prompt-trials.md` → C12; the 10 rule lines are `tests/conversations/variants/rule-here-mx.json`, the rule `here-rule.md`.
+- **Test cards are locked to their review** (`npm run card:review`, `npm run test:cards`, `docs/prompt-testing.md` → The card): startTest refuses a card changed after its review; a run needs the designer's read afterwards. The test-designer agent now reads the last three cards and asks new question or refinement.
+- **Real play fills reply time and level** (5e8989c): reply time is the server's time per reply saved with each turn, level is a sample of 3 lines; both appear after the next release. Real-play findings: only 37 place conversations with 3+ learner turns, 12 on the current Beginner prompt; the "sameness across places" you noticed (Tommaso) was not what C3–C11 measured.
+- **Commerce curbs: leave as is** (Josh, 2026-11-08: "adding those curbs did improve things"); no `kind` flag from the cloud session's note. The idea of one shared curb across levels needs a three-arm test (C13); Josh skipped it, and the cost of testing is noted as a tension with one model for culture (`docs/prompt-testing.md`). Whether a standardizing edit can ship on Josh's word alone is open.
+- **Not released:** everything above, plus the 11-07/08 prompt changes (memory.md, character.md 2026-11-08a, here lines) and the scorecard rows. Production still runs b7166ff.
+- **Mistakes to know:** three of my commits carry a wrong or made-up `Claude-Session` trailer (a3975f0, 16d659a, f7c2437); pushed, not amended. The test-designer's hash lock is mechanical: it proves the card didn't change, not that the review was good.
+
 ## 2026-11-08: memory guardrail, here-line tests, the conversation test rebuilt on the scorecard (laptop session fuori-a4)
 
 **Done**

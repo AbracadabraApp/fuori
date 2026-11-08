@@ -1,0 +1,286 @@
+{
+ "run": "2026-11-08-21-51-42-c12-rule",
+ "at": "2026-11-08T21:51:42.874Z",
+ "label": "c12-rule",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "memo-tejuino",
+  "name": "Memo Orozco",
+  "role": "tejuinero",
+  "city": "Guadalajara",
+  "place": "Carrito de tejuino junto al Mercado San Juan de Dios"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You ladle tejuino, your drink of fermented corn masa and piloncillo, into a cup over ice, then squeeze in lime and add a pinch of salt. Many customers ask for a scoop of lime nieve on top, so you add it for them. Then you take their money and hand over the cup.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pásele, pásele. ¿Qué le sirvo?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... buenas tardes. Yo... ehm... no sé. ¿Qué es... lo que tiene?"
+   },
+   {
+    "who": "npc",
+    "text": "Aquí vendo tejuino, es una bebida de maíz fermentado con piloncillo, bien fresca, con hielo, limón y sal. ¿Ya lo probó alguna vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no. Yo... no lo probé. Más despacio, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Es una bebida. De maíz. Fría, con hielo y limón. ¿Quiere probarla?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Un... tejuino, por favor. ¿Cuánto es?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí. Son cuarenta pesos el vaso. Se lo preparo ahorita, con hielo, limón y sal. ¿Le pongo una bolita de nieve de limón arriba?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, con nieve, por favor. Gracias. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto. ¡Adiós, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Ya regresó, ¿verdad? Pásele, pásele. ¿Otro tejuino hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Otro tejuino, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro que sí! Ya se lo preparo. ¿Le pongo su bolita de nieve de limón, como la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, con nieve, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien. Aquí tiene, ya con su nieve encima. Son cuarenta pesos."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Cuarenta pesos. Aquí... tiene. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted. Que lo disfrute mucho. Con este calorcito de la tarde sabe bien, ¿no?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, está muy rico. Hace... calor. Gracias. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós! Que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Qué bueno verte otra vez. ¿Lo mismo de siempre, tejuino con nieve de limón?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Lo mismo, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro que sí! Ya te lo preparo con su limoncito, su sal y su bolita de nieve. Son cuarenta pesos."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Cuarenta pesos. Aquí tiene. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a ti. Aquí tienes, bien fresquecito. ¿Cómo te ha tratado Guadalajara esta semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... perdón. No entiendo. ¿Repite, por favor? Más lento."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. ¿Te gusta... Guadalajara?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Me gusta Guadalajara. Es... bonito. Gracias, tejuino muy rico. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! Adiós, que te vaya muy bien. Hasta pronto."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 7,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 15.4,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 9.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 12,
+    "wordsAvg": 12.6,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 6.8
+   },
+   "repeats": [
+    {
+     "said": "¿Le pongo su bolita de nieve de limón, como la otra vez?",
+     "earlier": "¿Le pongo una bolita de nieve de limón arriba?"
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 12.8,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 8.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 13,
+  "openerWords": 10,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.32666666666666666,
+  "learnerWords": 8.266666666666667,
+  "repeats": 0.5
+ },
+ "vocab": [
+  {
+   "word": "tejuino",
+   "source": "line",
+   "said": "Aquí vendo tejuino, es una bebida de maíz fermentado con piloncillo, bien fresca, con hielo, limón y sal."
+  },
+  {
+   "word": "piloncillo",
+   "source": "line",
+   "said": "Aquí vendo tejuino, es una bebida de maíz fermentado con piloncillo, bien fresca, con hielo, limón y sal."
+  },
+  {
+   "word": "limón",
+   "source": "line",
+   "said": "Aquí vendo tejuino, es una bebida de maíz fermentado con piloncillo, bien fresca, con hielo, limón y sal."
+  },
+  {
+   "word": "Pásele",
+   "source": "own",
+   "said": "¡Buenas tardes! Pásele, pásele."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Se lo preparo ahorita, con hielo, limón y sal."
+  },
+  {
+   "word": "bolita",
+   "source": "line",
+   "said": "¿Le pongo una bolita de nieve de limón arriba?"
+  },
+  {
+   "word": "nieve",
+   "source": "line",
+   "said": "¿Le pongo una bolita de nieve de limón arriba?"
+  },
+  {
+   "word": "limoncito",
+   "source": "line",
+   "said": "Ya te lo preparo con su limoncito, su sal y su bolita de nieve."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "tejuino",
+   "source": "line",
+   "said": "Aquí vendo tejuino, es una bebida de maíz fermentado con piloncillo, bien fresca, con hielo, limón y sal."
+  },
+  {
+   "word": "piloncillo",
+   "source": "line",
+   "said": "Aquí vendo tejuino, es una bebida de maíz fermentado con piloncillo, bien fresca, con hielo, limón y sal."
+  },
+  {
+   "word": "limón",
+   "source": "line",
+   "said": "Aquí vendo tejuino, es una bebida de maíz fermentado con piloncillo, bien fresca, con hielo, limón y sal."
+  },
+  {
+   "word": "nieve",
+   "source": "line",
+   "said": "¿Le pongo una bolita de nieve de limón arriba?"
+  },
+  {
+   "word": "bolita",
+   "source": "own",
+   "said": "¿Le pongo una bolita de nieve de limón arriba?"
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Se lo preparo ahorita, con hielo, limón y sal."
+  },
+  {
+   "word": "Pásele",
+   "source": "own",
+   "said": "¡Buenas tardes! Pásele, pásele."
+  }
+ ]
+}

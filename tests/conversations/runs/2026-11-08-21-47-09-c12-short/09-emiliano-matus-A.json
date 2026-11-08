@@ -1,0 +1,313 @@
+{
+ "run": "2026-11-08-21-47-09-c12-short",
+ "at": "2026-11-08T21:47:09.640Z",
+ "label": "c12-short",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "emiliano-los-amantes",
+  "name": "Emiliano Matus",
+  "role": "cantinero",
+  "city": "Oaxaca",
+  "place": "Mezcalería Los Amantes"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Bienvenido a Los Amantes. Pásale, siéntate donde gustes. ¿Es tu primera vez probando mezcal por acá?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. No, es mi segundo vez. Me gusta el mezcal."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! Entonces ya sabes que aquí el mezcal se toma despacito, en copita, con naranja y sal de gusano. Hoy tenemos espadín, que es el que más sirvo, y también tobalá, que es silvestre y más raro. ¿Cuál te late?"
+   },
+   {
+    "who": "learner",
+    "text": "Espadín, por favor. ¿Es más fuerte el tobalá?"
+   },
+   {
+    "who": "npc",
+    "text": "No necesariamente, la fuerza casi siempre es parecida. Lo que cambia es el sabor: el tobalá es más complejo, más floral y frutal, y el espadín es más clásico, con ese humito de siempre. Ahorita te sirvo tu copita de espadín con su naranja y su sal de gusano. ¿De dónde eres?"
+   },
+   {
+    "who": "learner",
+    "text": "Soy de Estados Unidos, de Texas."
+   },
+   {
+    "who": "npc",
+    "text": "¡Texas! Pues aquí te quedan muy cerquita los vecinos, ¿no? Ten, tu espadín. Prueba primero un poquito del mezcal, y luego la naranja con la sal, así se siente mejor. ¿Y cuánto tiempo te quedas en Oaxaca?"
+   },
+   {
+    "who": "learner",
+    "text": "Vivo aquí en Oaxaca, no soy turista. Vivo aquí un año. Gracias por el mezcal. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien, bienvenido a Oaxaca entonces! Provecho con tu mezcal, y aquí te espero cuando quieras. ¡Adiós, cuídate mucho!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, bienvenido! Qué bueno verte otra vez. Pasa, pasa, ¿qué te sirvo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola. Quiero el espadín otra vez, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro que sí! Ahorita te lo sirvo, con su naranja y su sal de gusano. ¿Hoy sí quieres probar un poquito de tobalá después?"
+   },
+   {
+    "who": "learner",
+    "text": "Hoy no, gracias. Solo el espadín."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, ya te lo sirvo. Aquí tienes tu copita de espadín, con su naranja y su sal. ¿Y cómo va todo por Oaxaca esta semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Todo va bien, gracias. Mucho trabajo esta semana."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que todo va bien, aunque el trabajo cansa. Aquí puedes descansar un rato. ¿Trabajas aquí en el Centro?"
+   },
+   {
+    "who": "learner",
+    "text": "No, trabajo en mi casa. Es trabajo en la computadora. Bueno, gracias por el mezcal. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Cuídate mucho y que descanses."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas tardes! Bienvenido, pásale. ¿Qué te sirvo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Un espadín, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, ahorita te lo sirvo. ¿Te lo traigo con naranja y sal de gusano otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, con naranja y sal, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, aquí tienes tu copita con la naranja y la sal. Ya sabes, con calma. Dime, ¿cómo estuvo tu domingo hasta ahorita?"
+   },
+   {
+    "who": "learner",
+    "text": "Mi domingo es tranquilo. Yo descansé en mi casa."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, después de una semana tan movida te lo merecías. Aquí también está tranquilo hoy, la gente llega más tarde en noviembre."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, aquí es muy tranquilo. Me gusta. Gracias por el mezcal. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Con gusto! Hasta luego, que descanses."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 37,
+    "wordsAvg": 33.4,
+    "wordsMax": 52,
+    "longShare": 0.6,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.2,
+    "wordsPerLine": 10.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 17.8,
+    "wordsMax": 25,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 9.8
+   },
+   "repeats": [
+    {
+     "said": "Ahorita te lo sirvo, con su naranja y su sal de gusano.",
+     "earlier": "Ahorita te sirvo tu copita de espadín con su naranja y su sal de gusano."
+    },
+    {
+     "said": "Aquí tienes tu copita de espadín, con su naranja y su sal.",
+     "earlier": "Ahorita te sirvo tu copita de espadín con su naranja y su sal de gusano."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 9,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 15.6,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 9
+   },
+   "repeats": [
+    {
+     "said": "¿Te lo traigo con naranja y sal de gusano otra vez?",
+     "earlier": "Ahorita te lo sirvo, con su naranja y su sal de gusano."
+    },
+    {
+     "said": "Perfecto, aquí tienes tu copita con la naranja y la sal.",
+     "earlier": "Aquí tienes tu copita de espadín, con su naranja y su sal."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 20,
+  "openerWords": 13,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.2733333333333334,
+  "learnerWords": 9.700000000000001,
+  "repeats": 2
+ },
+ "vocab": [
+  {
+   "word": "mezcal",
+   "source": "line",
+   "said": "Entonces ya sabes que aquí el mezcal se toma despacito, en copita, con naranja y sal de gusano."
+  },
+  {
+   "word": "copita",
+   "source": "line",
+   "said": "Entonces ya sabes que aquí el mezcal se toma despacito, en copita, con naranja y sal de gusano."
+  },
+  {
+   "word": "sal de gusano",
+   "source": "line",
+   "said": "Entonces ya sabes que aquí el mezcal se toma despacito, en copita, con naranja y sal de gusano."
+  },
+  {
+   "word": "espadín",
+   "source": "line",
+   "said": "Hoy tenemos espadín, que es el que más sirvo, y también tobalá, que es silvestre y más raro."
+  },
+  {
+   "word": "tobalá",
+   "source": "line",
+   "said": "Hoy tenemos espadín, que es el que más sirvo, y también tobalá, que es silvestre y más raro."
+  },
+  {
+   "word": "silvestre",
+   "source": "line",
+   "said": "Hoy tenemos espadín, que es el que más sirvo, y también tobalá, que es silvestre y más raro."
+  },
+  {
+   "word": "Pásale",
+   "source": "own",
+   "said": "Pásale, siéntate donde gustes."
+  },
+  {
+   "word": "te late",
+   "source": "own",
+   "said": "¿Cuál te late?"
+  },
+  {
+   "word": "Ahorita",
+   "source": "own",
+   "said": "Ahorita te sirvo tu copita de espadín con su naranja y su sal de gusano."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "mezcal",
+   "source": "line",
+   "said": "¿Es tu primera vez probando mezcal por acá?"
+  },
+  {
+   "word": "copita",
+   "source": "line",
+   "said": "Entonces ya sabes que aquí el mezcal se toma despacito, en copita, con naranja y sal de gusano."
+  },
+  {
+   "word": "sal de gusano",
+   "source": "line",
+   "said": "Entonces ya sabes que aquí el mezcal se toma despacito, en copita, con naranja y sal de gusano."
+  },
+  {
+   "word": "espadín",
+   "source": "line",
+   "said": "Hoy tenemos espadín, que es el que más sirvo, y también tobalá, que es silvestre y más raro."
+  },
+  {
+   "word": "tobalá",
+   "source": "line",
+   "said": "Hoy tenemos espadín, que es el que más sirvo, y también tobalá, que es silvestre y más raro."
+  },
+  {
+   "word": "silvestre",
+   "source": "line",
+   "said": "Hoy tenemos espadín, que es el que más sirvo, y también tobalá, que es silvestre y más raro."
+  },
+  {
+   "word": "pásale",
+   "source": "own",
+   "said": "¡Buenas tardes! Bienvenido a Los Amantes. Pásale, siéntate donde gustes."
+  },
+  {
+   "word": "te late",
+   "source": "own",
+   "said": "¿Cuál te late?"
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita te sirvo tu copita de espadín con su naranja y su sal de gusano."
+  }
+ ]
+}

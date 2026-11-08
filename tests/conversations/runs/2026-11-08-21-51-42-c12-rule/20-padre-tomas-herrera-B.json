@@ -1,0 +1,266 @@
+{
+ "run": "2026-11-08-21-51-42-c12-rule",
+ "at": "2026-11-08T21:51:42.874Z",
+ "label": "c12-rule",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "padre-tomas-santo-domingo",
+  "name": "Padre Tomás Herrera",
+  "role": "sacerdote",
+  "city": "Puebla",
+  "place": "Templo de Santo Domingo"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You say Mass for the families who come together while the bells ring across the center, and you hear confessions. Between services you greet people at the door and answer their questions. Visitors often ask you about the Capilla del Rosario.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenos días, bienvenido al Templo de Santo Domingo. ¿Es la primera vez que nos visita?"
+   },
+   {
+    "who": "learner",
+    "text": "No, no es la primera vez. Yo vivo en Puebla."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, entonces ya es de los nuestros. Y dígame, ¿hace mucho que vive en Puebla?"
+   },
+   {
+    "who": "learner",
+    "text": "Vivo aquí... um, ocho meses. No, ocho mes. Perdón."
+   },
+   {
+    "who": "npc",
+    "text": "No se preocupe, ocho meses ya es buen tiempo para conocer la ciudad. En noviembre además se siente el ambiente de las ofrendas por todo el Centro. ¿Ya vino antes a alguna misa aquí?"
+   },
+   {
+    "who": "learner",
+    "text": "No, no misa. Solo visito la iglesia. Es muy bonita."
+   },
+   {
+    "who": "npc",
+    "text": "Me alegra que le guste. Aquí las misas son para las familias del barrio, pero la puerta siempre está abierta para quien quiera pasar a ver. ¿Ya conoció la Capilla del Rosario?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, conozco la Capilla del Rosario. Es muy, muy bonito... bonita. Bueno, gracias, Padre. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted por la visita. Que Dios lo bendiga, y hasta pronto."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, qué gusto verlo de nuevo por aquí. ¿Cómo ha estado esta semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Padre. Estoy bien, gracias. ¿Y usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Bien, gracias a Dios, aunque con mucho trabajo en estos días de noviembre. Hay muchas familias que vienen a rezar por sus difuntos."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, mucho trabajo. Um... \"difuntos\"? No entiendo, Padre."
+   },
+   {
+    "who": "npc",
+    "text": "Los difuntos son las personas que ya fallecieron, que ya murieron: los abuelos, los papás, los seres queridos. En noviembre los recordamos de manera especial."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ya entiendo. Las personas muertas. Es... muy triste, Padre."
+   },
+   {
+    "who": "npc",
+    "text": "No tanto, hijo; para nosotros es más bien un recuerdo lleno de cariño y de esperanza. ¿En su país también recuerda usted a sus seres queridos que ya no están?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, Padre. Mi abuelo está muerto. Yo pienso en él... um, mucho. Bueno, gracias, Padre. Hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Que Dios lo tenga en su gloria, y a usted lo bendiga. Hasta luego, hijo, que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buenos días, bienvenido otra vez. Qué gusto verlo por aquí en domingo."
+   },
+   {
+    "who": "learner",
+    "text": "Buenos días, Padre. Sí, hoy es domingo. Yo... um, visito la iglesia."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, hijo. Hoy hay misa pronto, y las campanas ya van a sonar. ¿Se va a quedar a la misa?"
+   },
+   {
+    "who": "learner",
+    "text": "Um... no, Padre. No me quedo. Solo visito, un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Está bien, hijo, sin prisa. Mire todo lo que quiera; la Capilla del Rosario le va a gustar con la luz de la mañana. ¿Cómo ha estado usted esta semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Estoy bien, gracias, Padre. Um, mucho trabajo esta semana."
+   },
+   {
+    "who": "npc",
+    "text": "Me alegra que esté bien, hijo. Entonces un rato de silencio aquí le hará bien. ¿Y en qué trabaja usted?"
+   },
+   {
+    "who": "learner",
+    "text": "Trabajo en una oficina, Padre. Um... es trabajo con computadoras. Bueno, gracias. Adiós, Padre."
+   },
+   {
+    "who": "npc",
+    "text": "Adiós, hijo. Que Dios lo bendiga y que tenga buen domingo."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 22,
+    "wordsMax": 34,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 11
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 22.4,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 10.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 18.8,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 11.3
+   },
+   "repeats": [
+    {
+     "said": "Que Dios lo bendiga y que tenga buen domingo.",
+     "earlier": "Que Dios lo tenga en su gloria, y a usted lo bendiga."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 20,
+  "openerWords": 14,
+  "multiQuestion": 0,
+  "learnerShare": 0.2966666666666667,
+  "learnerWords": 11.033333333333333,
+  "repeats": 0.5
+ },
+ "vocab": [
+  {
+   "word": "misa",
+   "source": "line",
+   "said": "Qué bueno, hijo. Hoy hay misa pronto, y las campanas ya van a sonar."
+  },
+  {
+   "word": "campanas",
+   "source": "line",
+   "said": "Qué bueno, hijo. Hoy hay misa pronto, y las campanas ya van a sonar."
+  },
+  {
+   "word": "ofrendas",
+   "source": "own",
+   "said": "En noviembre además se siente el ambiente de las ofrendas por todo el Centro."
+  },
+  {
+   "word": "difuntos",
+   "source": "own",
+   "said": "Hay muchas familias que vienen a rezar por sus difuntos."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "misa",
+   "source": "line",
+   "said": "Hoy hay misa pronto, y las campanas ya van a sonar."
+  },
+  {
+   "word": "campanas",
+   "source": "line",
+   "said": "Hoy hay misa pronto, y las campanas ya van a sonar."
+  },
+  {
+   "word": "capilla",
+   "source": "line",
+   "said": "Mire todo lo que quiera; la Capilla del Rosario le va a gustar con la luz de la mañana."
+  },
+  {
+   "word": "difuntos",
+   "source": "own",
+   "said": "Hay muchas familias que vienen a rezar por sus difuntos."
+  },
+  {
+   "word": "rezar",
+   "source": "own",
+   "said": "Hay muchas familias que vienen a rezar por sus difuntos."
+  },
+  {
+   "word": "ofrendas",
+   "source": "own",
+   "said": "En noviembre además se siente el ambiente de las ofrendas por todo el Centro."
+  },
+  {
+   "word": "bendiga",
+   "source": "own",
+   "said": "Gracias a usted por la visita. Que Dios lo bendiga, y hasta pronto."
+  }
+ ]
+}

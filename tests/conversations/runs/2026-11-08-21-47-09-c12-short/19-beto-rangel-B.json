@@ -1,0 +1,236 @@
+{
+ "run": "2026-11-08-21-47-09-c12-short",
+ "at": "2026-11-08T21:47:09.640Z",
+ "label": "c12-short",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "beto-taxi",
+  "name": "Beto Rangel",
+  "role": "taxista",
+  "city": "San Miguel de Allende",
+  "place": "Jardín Allende y sitio de taxis"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You wait at the taxi stand by the Jardín Allende, taking people up and down the cobbled streets.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! ¿Necesita un taxi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Buenas tardes. Yo... necesito un taxi, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, con gusto. Suba, yo lo llevo. ¿A dónde va?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... a mi casa, por favor. ¿Cuánto es?"
+   },
+   {
+    "who": "npc",
+    "text": "Depende de la colonia, pero casi todo el Centro es rápido. ¿Por dónde queda su casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿cómo? Más lento, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. ¿Dónde está su casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... mi casa está en el Centro. Está cerca. Gracias, ¡adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós, que le vaya bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! ¿Qué onda, a dónde vamos hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... buenas tardes. Yo... a mi casa, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, con gusto. Súbase, ya sé que vive aquí cerca, en el Centro. ¿Por qué calle me va guiando?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿cómo? Más lento, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. ¿En qué calle vive?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... calle... no sé. Sorry, do you speak English?"
+   },
+   {
+    "who": "npc",
+    "text": "Un poquito, sí. Pero mejor en español, despacito. ¿Tiene la dirección en su celular?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, tengo... en mi celular. Un momento, por favor. Gracias, ¡adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Con calma! Adiós, que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! ¿Necesita un taxi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Buenas tardes. Un taxi, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, suba. ¿A dónde vamos hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... a mi casa, por favor. Está en el Centro."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, el Centro está cerquita. ¿Me dice la calle?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿cómo? Más lento, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, claro. ¿Cuál... es... su calle?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... mi calle... ehm... no sé. Está en mi celular. Un momento, por favor. Gracias, ¡adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "Con calma, aquí lo espero. ¡Hasta luego!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 5,
+    "replies": 5,
+    "wordsMedian": 5,
+    "wordsAvg": 8.2,
+    "wordsMax": 16,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.46,
+    "wordsPerLine": 8.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 8,
+    "replies": 5,
+    "wordsMedian": 8,
+    "wordsAvg": 10.8,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.4,
+    "wordsPerLine": 9
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 5,
+    "replies": 5,
+    "wordsMedian": 6,
+    "wordsAvg": 6.6,
+    "wordsMax": 9,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.55,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 6,
+  "openerWords": 5,
+  "multiQuestion": 0,
+  "learnerShare": 0.47000000000000003,
+  "learnerWords": 9.266666666666667,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "Depende de la colonia, pero casi todo el Centro es rápido. ¿Por dónde queda su casa?"
+  },
+  {
+   "word": "onda",
+   "source": "own",
+   "said": "¡Buenas tardes! ¿Qué onda, a dónde vamos hoy?"
+  },
+  {
+   "word": "celular",
+   "source": "own",
+   "said": "Un poquito, sí. Pero mejor en español, despacito. ¿Tiene la dirección en su celular?"
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "Depende de la colonia, pero casi todo el Centro es rápido."
+  },
+  {
+   "word": "onda",
+   "source": "own",
+   "said": "¿Qué onda, a dónde vamos hoy?"
+  },
+  {
+   "word": "celular",
+   "source": "own",
+   "said": "¿Tiene la dirección en su celular?"
+  }
+ ]
+}

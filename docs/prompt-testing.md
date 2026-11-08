@@ -196,6 +196,10 @@ The dialogue prompts (`beginner.md`, `character.md` with `levels.md` and its var
 3. **Today's prompts are frozen as the control** (Josh, 2026-11-07: "why not leave beginner prompts alone and measure the new prompts against it"). No more tuning `beginner.md` or the other dialogue prompts: the examples and the five "stay in role" sentences stay as they are, so every result is measured against the same thing. A problem from play becomes a stored moment the new prompt has to pass, not a patch; the frozen prompt is patched only for something broken in play. C1's "cut the examples" is therefore not applied.
 4. **Today's prompt is the control in every test.** The new core replaces a type's prompt only when it does at least as well on that type's stored moments; a rule from the old prompt comes back only when a test shows it's missed (the floor method below). The old prompts and their changelogs are the list of problems to check, not the text.
 
+## A known tension: test overhead against one model for culture (Josh, 2026-11-08)
+
+The plan is one shared character core for culture, with each level adding only what differs (above; `dialogue-model.md` → Decided: content and display separate). The test rule works against it. Standardizing a rule across levels is a prompt change, so each one needs a card, a review, a run and a read. The commerce curbs are the case: five split rules, the Beginner prompt carrying the errand cap and the Intermediate prompt only "stay within your job". Merging them into one shared rule needs a three-arm test (no curb, today's, one rule: C13) of about a day's work, so it stays split and the levels keep drifting apart. Josh's call (2026-11-08): skip that test; the cost of testing is itself a reason prompts stay different by level, which contradicts the goal. Whether a standardizing edit may ship on Josh's word alone, as the `here` edits did ("Here is fine"), or needs a lighter check than a card, is his to decide; until then the commerce curbs stay as they are and C13 is not run.
+
 ## Taking a grown prompt back down
 
 For a prompt that doubled and got worse, in this order:

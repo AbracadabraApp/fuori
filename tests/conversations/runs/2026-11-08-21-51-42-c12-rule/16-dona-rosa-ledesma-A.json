@@ -1,0 +1,365 @@
+{
+ "run": "2026-11-08-21-51-42-c12-rule",
+ "at": "2026-11-08T21:51:42.874Z",
+ "label": "c12-rule",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "rosa-flores-ignacio-ramirez",
+  "name": "Doña Rosa Ledesma",
+  "role": "florista",
+  "city": "San Miguel de Allende",
+  "place": "Puesto de flores, Mercado Ignacio Ramírez"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, pase, pase. Mire nomás, hoy tengo cempasúchil recién llegado. ¿Qué anda buscando?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Quiero unas flores para mi casa."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno. Ahorita en noviembre lo que más sale es el cempasúchil, pero también tengo nube y gladiolas. ¿Las quiere para un altar o nomás para adornar?"
+   },
+   {
+    "who": "learner",
+    "text": "Solo para adornar. ¿Cuánto cuesta las gladiolas?"
+   },
+   {
+    "who": "npc",
+    "text": "Las gladiolas están a ochenta pesos el ramo, y trae como diez varas. Si se lleva dos, se las dejo en ciento cuarenta. ¿Le gustan de colores o prefiere blancas?"
+   },
+   {
+    "who": "learner",
+    "text": "Blancas, por favor. Un ramo solo."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, un ramo de blancas. Mire, estas están bien frescas, todavía con los botones cerrados, así le duran más de una semana. Son ochenta pesos. ¿Se las envuelvo en papel?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, en papel, por favor. Aquí está ochenta pesos. Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted. Aquí tiene sus gladiolas, que le duren mucho. Adiós, que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele. ¿Cómo le fue con las gladiolas, todavía se ven bonitas?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Sí, las gladiolas son muy bonitas. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, me da gusto. Con tres días todavía deben estar bien cerraditas, ya van a ir abriendo. ¿Hoy anda buscando algo más para la casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, quiero otras flores. ¿Tiene rosas?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, claro, aquí tengo rosas rojas y también rositas rosas, de las que duran bien. Mire, están ahí en la cubeta de la izquierda. ¿Las quiere para ponerlas en un florero o para regalar?"
+   },
+   {
+    "who": "learner",
+    "text": "Para mi casa. Un florero. ¿Cuánto cuesta las rosas rojas?"
+   },
+   {
+    "who": "npc",
+    "text": "Las rojas se las dejo en noventa pesos el ramo, son doce rosas. Y si se lleva las rositas también, le hago un precio. ¿Cuántos floreros tiene en la casa, ya fue llenando?"
+   },
+   {
+    "who": "learner",
+    "text": "Un florero solo. Un ramo de rosas rojas, por favor. Aquí está noventa pesos. Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted, joven. Aquí tiene sus rosas, que le duren mucho. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pase, pase, no se quede en la puerta. Qué bueno verle otra vez por aquí. ¿Cómo van las rosas de la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Las rosas están muy bonitas, gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, me da gusto. Con este solecito de noviembre se abren bonito. ¿Hoy anda buscando algo para la casa, o nada más viene a pasear por el mercado?"
+   },
+   {
+    "who": "learner",
+    "text": "Hoy quiero flores para mi amiga. Es su cumpleaños."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué lindo detalle! Para un cumpleaños, un ramo siempre cae bien. Dígame, ¿a su amiga le gustan los colores vivos, o más bien algo suave y delicado?"
+   },
+   {
+    "who": "learner",
+    "text": "Colores vivos, creo. Ella es muy alegre."
+   },
+   {
+    "who": "npc",
+    "text": "Entonces le armo algo con mucho color: gerberas, alstroemerias y unos girasoles, que alegran cualquier cara. Para su amiga, que es alegre, va perfecto. ¿Quiere que se lo prepare en ramo, bien amarrado?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un ramo, por favor. ¿Cuánto cuesta el ramo? Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Le sale en ciento veinte pesos, ya amarrado y con su papelito. Que le guste mucho a su amiga y feliz cumpleaños de mi parte. ¡Adiós, hasta pronto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 27,
+    "wordsAvg": 23.8,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.21,
+    "wordsPerLine": 8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 26,
+    "wordsAvg": 25.4,
+    "wordsMax": 34,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 10.3
+   },
+   "repeats": [
+    {
+     "said": "Aquí tiene sus rosas, que le duren mucho.",
+     "earlier": "Aquí tiene sus gladiolas, que le duren mucho."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 25,
+    "replies": 5,
+    "wordsMedian": 28,
+    "wordsAvg": 28.4,
+    "wordsMax": 33,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.2,
+    "wordsPerLine": 8.8
+   },
+   "repeats": [
+    {
+     "said": "¿Hoy anda buscando algo para la casa, o nada más viene a pasear por el mercado?",
+     "earlier": "¿Hoy anda buscando algo más para la casa?"
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 27,
+  "openerWords": 15,
+  "multiQuestion": 0,
+  "learnerShare": 0.21666666666666665,
+  "learnerWords": 9.033333333333333,
+  "repeats": 1
+ },
+ "vocab": [
+  {
+   "word": "cempasúchil",
+   "source": "line",
+   "said": "Mire nomás, hoy tengo cempasúchil recién llegado."
+  },
+  {
+   "word": "altar",
+   "source": "line",
+   "said": "¿Las quiere para un altar o nomás para adornar?"
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Qué bueno. Ahorita en noviembre lo que más sale es el cempasúchil, pero también tengo nube y gladiolas."
+  },
+  {
+   "word": "nube",
+   "source": "own",
+   "said": "Qué bueno. Ahorita en noviembre lo que más sale es el cempasúchil, pero también tengo nube y gladiolas."
+  },
+  {
+   "word": "gladiolas",
+   "source": "own",
+   "said": "Las gladiolas están a ochenta pesos el ramo, y trae como diez varas."
+  },
+  {
+   "word": "ramo",
+   "source": "own",
+   "said": "Las gladiolas están a ochenta pesos el ramo, y trae como diez varas."
+  },
+  {
+   "word": "varas",
+   "source": "own",
+   "said": "Las gladiolas están a ochenta pesos el ramo, y trae como diez varas."
+  },
+  {
+   "word": "botones",
+   "source": "own",
+   "said": "Mire, estas están bien frescas, todavía con los botones cerrados, así le duran más de una semana."
+  },
+  {
+   "word": "nomás",
+   "source": "own",
+   "said": "¿Las quiere para un altar o nomás para adornar?"
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "¡Buenas tardes, joven! Pásele, pásele."
+  },
+  {
+   "word": "cubeta",
+   "source": "own",
+   "said": "Mire, están ahí en la cubeta de la izquierda."
+  },
+  {
+   "word": "gerberas",
+   "source": "own",
+   "said": "Entonces le armo algo con mucho color: gerberas, alstroemerias y unos girasoles, que alegran cualquier cara."
+  },
+  {
+   "word": "alstroemerias",
+   "source": "own",
+   "said": "Entonces le armo algo con mucho color: gerberas, alstroemerias y unos girasoles, que alegran cualquier cara."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "cempasúchil",
+   "source": "line",
+   "said": "Mire nomás, hoy tengo cempasúchil recién llegado."
+  },
+  {
+   "word": "nomás",
+   "source": "own",
+   "said": "Mire nomás, hoy tengo cempasúchil recién llegado."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita en noviembre lo que más sale es el cempasúchil, pero también tengo nube y gladiolas."
+  },
+  {
+   "word": "nube",
+   "source": "own",
+   "said": "Ahorita en noviembre lo que más sale es el cempasúchil, pero también tengo nube y gladiolas."
+  },
+  {
+   "word": "gladiolas",
+   "source": "own",
+   "said": "Ahorita en noviembre lo que más sale es el cempasúchil, pero también tengo nube y gladiolas."
+  },
+  {
+   "word": "ramo",
+   "source": "own",
+   "said": "Las gladiolas están a ochenta pesos el ramo, y trae como diez varas."
+  },
+  {
+   "word": "varas",
+   "source": "own",
+   "said": "Las gladiolas están a ochenta pesos el ramo, y trae como diez varas."
+  },
+  {
+   "word": "botones",
+   "source": "own",
+   "said": "Mire, estas están bien frescas, todavía con los botones cerrados, así le duran más de una semana."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "Pásele, pásele."
+  },
+  {
+   "word": "cerraditas",
+   "source": "own",
+   "said": "Con tres días todavía deben estar bien cerraditas, ya van a ir abriendo."
+  },
+  {
+   "word": "rositas",
+   "source": "own",
+   "said": "Sí, claro, aquí tengo rosas rojas y también rositas rosas, de las que duran bien."
+  },
+  {
+   "word": "cubeta",
+   "source": "own",
+   "said": "Mire, están ahí en la cubeta de la izquierda."
+  },
+  {
+   "word": "florero",
+   "source": "own",
+   "said": "¿Las quiere para ponerlas en un florero o para regalar?"
+  },
+  {
+   "word": "gerberas",
+   "source": "own",
+   "said": "Entonces le armo algo con mucho color: gerberas, alstroemerias y unos girasoles, que alegran cualquier cara."
+  },
+  {
+   "word": "alstroemerias",
+   "source": "own",
+   "said": "Entonces le armo algo con mucho color: gerberas, alstroemerias y unos girasoles, que alegran cualquier cara."
+  },
+  {
+   "word": "girasoles",
+   "source": "own",
+   "said": "Entonces le armo algo con mucho color: gerberas, alstroemerias y unos girasoles, que alegran cualquier cara."
+  },
+  {
+   "word": "amarrado",
+   "source": "own",
+   "said": "¿Quiere que se lo prepare en ramo, bien amarrado?"
+  }
+ ]
+}

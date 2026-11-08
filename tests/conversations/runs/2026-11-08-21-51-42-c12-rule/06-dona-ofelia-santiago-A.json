@@ -1,0 +1,290 @@
+{
+ "run": "2026-11-08-21-51-42-c12-rule",
+ "at": "2026-11-08T21:51:42.874Z",
+ "label": "c12-rule",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "ofelia-tlayudas",
+  "name": "Doña Ofelia Santiago",
+  "role": "tlayudera",
+  "city": "Oaxaca",
+  "place": "Tlayudas del Mercado 20 de Noviembre"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, pase, pase! Aquí estoy en el comal, con el humo y todo. ¿Qué le preparo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. ¿Qué me recomienda?"
+   },
+   {
+    "who": "npc",
+    "text": "Pues mire, la tlayuda con tasajo, que lo asamos ahorita en el carbón. Lleva asiento, frijoles y quesillo, bien crujiente. ¿Se la preparo así?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, suena muy bien. Me la prepara así, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto. Ya la pongo en el comal; en un ratito está lista. ¿Usted es de por aquí o anda de visita?"
+   },
+   {
+    "who": "learner",
+    "text": "No soy de aquí. Vivo en Oaxaca hace unas semanas."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno, bienvenido a Oaxaca! Noviembre es un buen mes para llegar, hay mucho ambiente en el mercado. ¿Ya ha probado otras cosas de por aquí?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, probé el mole y también unas empanadas ayer. Me gustaron mucho. Bueno, muchas gracias, doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que le gustaron! Con mucho gusto, que le vaya muy bien. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pase, pase, que el comal ya está bien caliente. ¿Qué le preparo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, doña Ofelia. Otra vez la tlayuda, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, ya me acuerdo: tasajo, con su asiento, frijoles y quesillo. Ahorita se la pongo en el comal, el carbón está en su punto. ¿Se la quiere con todo igual que la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, igual, por favor. Me gustó mucho la otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que le gustó. Ya mero se va tostando la tortilla, mire cómo suena en el comal. Ahí le voy poniendo el tasajo sobre las brasas."
+   },
+   {
+    "who": "learner",
+    "text": "Huele muy rico. ¿Usted cocina aquí todos los días?"
+   },
+   {
+    "who": "npc",
+    "text": "Todos los días, joven, de lunes a domingo, desde temprano. Ya son muchos años en este pasillo, con puro humo y carbón. ¿Y a usted, cómo le va por Oaxaca?"
+   },
+   {
+    "who": "learner",
+    "text": "Me va muy bien, gracias. Vivo aquí hace unas semanas y me gusta mucho la gente. Bueno, muchas gracias, doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, joven, aquí siempre es bienvenido. ¡Hasta luego, que le aproveche!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, mi estimado! Qué bueno verlo otra vez por aquí. Siéntese, que el comal ya está bien caliente. ¿Va a querer la de siempre?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, la de siempre, por favor. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto. Ahorita le pongo el tasajo en las brasas y le unto su tlayuda con asiento, frijoles y quesillo, todo bien doradito. Ya sabe que aquí no hay prisa, con el humo se le va abriendo el hambre. ¿Cómo le ha ido esta semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Me ha ido bien, gracias. Trabajé mucho esta semana."
+   },
+   {
+    "who": "npc",
+    "text": "Ay, qué bueno que le va bien. El trabajo cansa, pero luego uno se merece su tlayuda del domingo. Aquí yo también trabajo parejo, y el humo no perdona. Ya casi está su tasajo."
+   },
+   {
+    "who": "learner",
+    "text": "¿Usted trabajó mucho también hoy?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, desde muy temprano. Los domingos se llena el mercado de familias y de gente que viene a desayunar, y el comal no descansa. Pero ya ve, uno acaba contenta."
+   },
+   {
+    "who": "learner",
+    "text": "Qué bueno que está contenta. Muchas gracias por la tlayuda, doña Ofelia. ¡Hasta la próxima!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Con mucho gusto, mi estimado! Que le vaya muy bien. ¡Hasta la próxima!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 21,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 11
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 27,
+    "wordsAvg": 24.2,
+    "wordsMax": 36,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 13
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 24,
+    "replies": 5,
+    "wordsMedian": 30,
+    "wordsAvg": 29.4,
+    "wordsMax": 46,
+    "longShare": 0.4,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.2,
+    "wordsPerLine": 9
+   },
+   "repeats": [
+    {
+     "said": "Siéntese, que el comal ya está bien caliente.",
+     "earlier": "Pase, pase, que el comal ya está bien caliente."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 27,
+  "openerWords": 17,
+  "multiQuestion": 0,
+  "learnerShare": 0.26666666666666666,
+  "learnerWords": 11,
+  "repeats": 0.5
+ },
+ "vocab": [
+  {
+   "word": "comal",
+   "source": "line",
+   "said": "Aquí estoy en el comal, con el humo y todo."
+  },
+  {
+   "word": "tlayuda",
+   "source": "line",
+   "said": "Pues mire, la tlayuda con tasajo, que lo asamos ahorita en el carbón."
+  },
+  {
+   "word": "tasajo",
+   "source": "line",
+   "said": "Pues mire, la tlayuda con tasajo, que lo asamos ahorita en el carbón."
+  },
+  {
+   "word": "carbón",
+   "source": "line",
+   "said": "Pues mire, la tlayuda con tasajo, que lo asamos ahorita en el carbón."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Pues mire, la tlayuda con tasajo, que lo asamos ahorita en el carbón."
+  },
+  {
+   "word": "asiento",
+   "source": "line",
+   "said": "Lleva asiento, frijoles y quesillo, bien crujiente."
+  },
+  {
+   "word": "quesillo",
+   "source": "line",
+   "said": "Lleva asiento, frijoles y quesillo, bien crujiente."
+  },
+  {
+   "word": "brasas",
+   "source": "own",
+   "said": "Ahí le voy poniendo el tasajo sobre las brasas."
+  },
+  {
+   "word": "ya mero",
+   "source": "own",
+   "said": "Ya mero se va tostando la tortilla, mire cómo suena en el comal."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "tlayuda",
+   "source": "line",
+   "said": "Pues mire, la tlayuda con tasajo, que lo asamos ahorita en el carbón."
+  },
+  {
+   "word": "comal",
+   "source": "line",
+   "said": "Aquí estoy en el comal, con el humo y todo."
+  },
+  {
+   "word": "tasajo",
+   "source": "line",
+   "said": "Pues mire, la tlayuda con tasajo, que lo asamos ahorita en el carbón."
+  },
+  {
+   "word": "asiento",
+   "source": "line",
+   "said": "Lleva asiento, frijoles y quesillo, bien crujiente."
+  },
+  {
+   "word": "quesillo",
+   "source": "line",
+   "said": "Lleva asiento, frijoles y quesillo, bien crujiente."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Pues mire, la tlayuda con tasajo, que lo asamos ahorita en el carbón."
+  },
+  {
+   "word": "ya mero",
+   "source": "own",
+   "said": "Ya mero se va tostando la tortilla, mire cómo suena en el comal."
+  }
+ ]
+}

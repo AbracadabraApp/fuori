@@ -1,0 +1,226 @@
+{
+ "run": "2026-11-08-21-51-42-c12-rule",
+ "at": "2026-11-08T21:51:42.874Z",
+ "label": "c12-rule",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "beto-taxi",
+  "name": "Beto Rangel",
+  "role": "taxista",
+  "city": "San Miguel de Allende",
+  "place": "Jardín Allende y sitio de taxis"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You wait your turn in line at the taxi stand by the Jardín Allende, then take people up and down the cobbled streets of the Centro. You ask where they're headed, agree on the fare before pulling away, and drop them as close to the door as the street allows.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Suba, suba. ¿A dónde va?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... buenas tardes. Yo... a mi casa, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí. ¿Y dónde queda su casa? ¿Cuál es la colonia o la calle?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿colonia? No entiendo. Más despacio, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, perdón. Colonia es el barrio. ¿En qué barrio vive usted?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... barrio... no sé el nombre. Perdón. ¿Mapa en mi teléfono?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, claro, enséñeme el mapa en su teléfono. Yo lo veo y le digo cuánto cuesta."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, aquí, mi teléfono. Gracias, señor. Ehm... adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto. Adiós, que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Buenas tardes. Ya vi el mapa de su casa. ¿Va para allá otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. A mi casa, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien. Son noventa pesos hasta su casa. ¿Está bien?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... noventa... sí, está bien. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, suba, por favor. Yo lo llevo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gracias, señor. ¿Pago... al final?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, al final, cuando lleguemos a su casa. Con efectivo, por favor."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, efectivo. Está bien. Gracias, señor. Hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego. Que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes. ¿A dónde va hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... buenas tardes. A mi casa, otra vez, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, suba. Ya sé dónde es. Es el mismo precio de la otra vez."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, noventa pesos. Está bien. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, vámonos. Hoy domingo hay mucha gente en el Jardín, pero salimos rápido."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... mucha gente... sí. ¿Repite, por favor? Más lento."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Hoy es domingo. Hay mucha gente en el Jardín. Pero salimos rápido."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sí, domingo. Mucha gente. Entiendo, gracias, señor. Ehm... adiós."
+   },
+   {
+    "who": "npc",
+    "text": "De nada. Ahorita llegamos."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 7,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 11.4,
+    "wordsMax": 16,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.39,
+    "wordsPerLine": 9.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 10,
+    "wordsAvg": 10.2,
+    "wordsMax": 15,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 7
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 6,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 10,
+    "wordsMax": 14,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.42,
+    "wordsPerLine": 9
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 11,
+  "openerWords": 7,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.38666666666666666,
+  "learnerWords": 8.433333333333334,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "¿Cuál es la colonia o la calle?"
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita llegamos."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "¿Cuál es la colonia o la calle?"
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita llegamos."
+  }
+ ]
+}

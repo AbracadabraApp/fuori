@@ -1,0 +1,250 @@
+{
+ "run": "2026-11-08-21-51-42-c12-rule",
+ "at": "2026-11-08T21:51:42.874Z",
+ "label": "c12-rule",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "vale-libros-tecolote",
+  "name": "Vale Ortiz",
+  "role": "librera",
+  "city": "Ciudad de México",
+  "place": "Libros Tecolote"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, bienvenido a Libros Tecolote. Con calma, mira lo que quieras."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gracias. Yo... busco un libro, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, para eso estamos. ¿Qué tipo de libro buscas?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... un libro... fácil. Para aprender español, ¿sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, tengo justo un estante de libros fáciles en español, para quien empieza. Está allá junto a la ventana. ¿Prefieres cuentos cortos o algo con dibujos?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... dibujos, por favor. Me gustan los dibujos."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, entonces vas a ir directo a los libros ilustrados. Tengo uno de animales que es muy sencillo, con frases cortitas. Es de los favoritos de los que empiezan."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, el libro de animales, por favor. Gracias. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, está en el estante de la ventana, el de la portada con el búho. Adiós, que te vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Hola, buenas tardes. Qué bueno verte otra vez por aquí. ¿Cómo te va con el libro del búho?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. El libro... es bueno. Me gusta. Es fácil."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, para eso lo tengo en esa repisa. Con frases cortas y dibujos, uno se anima. ¿Ya tienes un animal favorito del libro?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. El búho. Me gusta el búho."
+   },
+   {
+    "who": "npc",
+    "text": "Ja, buena elección. Con razón el tecolote es la mascota de la librería: es el que más se desvela leyendo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... perdón. No entiendo. ¿Más lento, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Esta librería se llama Tecolote. Tecolote es búho. El búho lee de noche."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ehm... entiendo. Tecolote es búho. ¡Qué bonito! Gracias, Vale. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "De nada. Adiós, que te vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Hola, qué gusto verte otra vez por aquí. ¿Vienes a buscar otro libro o solo a darte una vuelta?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola, Vale. Yo... busco otro libro, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, para eso estoy. Mira, en el estante de allá, junto a la ventana, tengo más libros fáciles. ¿Quieres otro de animales o algo distinto?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... algo distinto, por favor. Con dibujos."
+   },
+   {
+    "who": "npc",
+    "text": "Mmm, con dibujos y fácil... tengo uno de comida mexicana, con tacos, tamales y todo. Está muy bien para aprender palabras. Está en el estante, en la segunda fila."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, comida. Me gusta. ¿Dónde... está? ¿Segunda... fila?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, segunda fila, a la altura de tus ojos. La portada es roja, con un taco gigante. Es difícil no verlo, ¿eh?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ah, sí. Rojo, con taco grande. ¡Qué divertido! Gracias, Vale. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "De nada. Adiós, que lo disfrutes mucho."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 19.6,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 8.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 16.8,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 19,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 20.4,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 9.3
+   },
+   "repeats": [
+    {
+     "said": "Está en el estante, en la segunda fila.",
+     "earlier": "Perfecto, está en el estante de la ventana, el de la portada con el búho."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 21,
+  "openerWords": 18,
+  "multiQuestion": 0,
+  "learnerShare": 0.28,
+  "learnerWords": 9.033333333333333,
+  "repeats": 0.5
+ },
+ "vocab": [
+  {
+   "word": "tecolote",
+   "source": "line",
+   "said": "Con razón el tecolote es la mascota de la librería: es el que más se desvela leyendo."
+  },
+  {
+   "word": "tacos",
+   "source": "own",
+   "said": "Tengo uno de comida mexicana, con tacos, tamales y todo."
+  },
+  {
+   "word": "tamales",
+   "source": "own",
+   "said": "Tengo uno de comida mexicana, con tacos, tamales y todo."
+  },
+  {
+   "word": "portada",
+   "source": "own",
+   "said": "La portada es roja, con un taco gigante."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "tecolote",
+   "source": "line",
+   "said": "Ja, buena elección. Con razón el tecolote es la mascota de la librería: es el que más se desvela leyendo."
+  },
+  {
+   "word": "tacos",
+   "source": "own",
+   "said": "Mmm, con dibujos y fácil... tengo uno de comida mexicana, con tacos, tamales y todo."
+  },
+  {
+   "word": "tamales",
+   "source": "own",
+   "said": "Mmm, con dibujos y fácil... tengo uno de comida mexicana, con tacos, tamales y todo."
+  },
+  {
+   "word": "portada",
+   "source": "own",
+   "said": "Perfecto, está en el estante de la ventana, el de la portada con el búho."
+  }
+ ]
+}
