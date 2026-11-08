@@ -276,6 +276,13 @@ async function main() {
     return gaps.length ? gaps.reduce((a, b) => a + b, 0) / gaps.length : null;
   };
   const versionsSeen = ['A', 'B', 'A2'].filter((v) => of(v).length);
+  /** Per character, B against A, each gap read against the noise: "A" when A is better by more than it, "B" the other way, "same" otherwise */
+  const better = (k: Col, a: number, b: number) => { const d = (k === 'repeats' ? a - b : b - a); const n = noise(k) ?? 0; return d > n ? 'B' : d < -n ? 'A' : 'same'; };
+  const perCharacter = variant && of('B').length ? [
+    `| Character | ${cols.map((k) => `${label(k)}: A → B`).join(' | ')} |`, `|---|${cols.map(() => '---').join('|')}|`,
+    ...of('B').map((rb) => { const ra = of('A').find((r) => r.character.id === rb.character.id); return `| ${rb.character.name} | ${cols.map((k) => { const a = ra && one(ra, k), b = one(rb, k); return typeof a === 'number' && typeof b === 'number' ? `${show(k, a)} → ${show(k, b)} (${better(k, a, b)})` : '–'; }).join(' | ')} |`; }),
+    '', `Better by more than the noise, per character: ${cols.map((k) => { const w = of('B').map((rb) => { const ra = of('A').find((r) => r.character.id === rb.character.id); const a = ra && one(ra, k), b = one(rb, k); return typeof a === 'number' && typeof b === 'number' ? better(k, a, b) : null; }).filter(Boolean); return `${label(k)}: A ${w.filter((x) => x === 'A').length}, B ${w.filter((x) => x === 'B').length}, same ${w.filter((x) => x === 'same').length}`; }).join(' · ')}`,
+  ] : [];
   const summary = [
     `| | ${cols.map(label).join(' | ')} |`, `|---|${cols.map(() => '---').join('|')}|`,
     ...versionsSeen.map((v) => `| ${v === 'A' ? 'A (as is)' : v === 'B' ? `B (${variant?.name})` : 'A again'} (${of(v).length}) | ${cols.map((k) => show(k, versionValue(of(v), k))).join(' | ')} |`),
@@ -286,6 +293,7 @@ async function main() {
     `# Conversation test: ${LABEL}`, '',
     `${at.slice(0, 16).replace('T', ' ')} UTC · ${Object.entries(versions()).map(([k, v]) => `${k} ${v}`).join(' · ')} · learner ${LEARNER} · ${VISITS} visit(s) × ${TURNS} turns${CARD ? ` · card ${CARD}` : ''}`, '',
     ...summary, '',
+    ...(perCharacter.length ? ['## B against A, per character', '', ...perCharacter, ''] : []),
     AUDIT ? `Grok's read-through: ${audits.size - disagree.length} of ${audits.size} characters bear out the numbers${disagree.length ? `; not: ${disagree.map(([n]) => n).join(', ')}` : ''}.` : 'Grok\'s read-through: not run.', '',
     '## By character', '',
     `| Character | Version | ${cols.map(label).join(' | ')} |`, `|---|---|${cols.map(() => '---').join('|')}|`,
@@ -294,7 +302,7 @@ async function main() {
     '## Transcripts', '', `Each conversation is saved whole in \`${run.dir.replace(process.cwd() + '/', '')}/\`, with its versions, each visit's score (repeated sentences included) and the culture list.`,
   ].join('\n');
   writeFileSync(join(run.dir, 'report.md'), md);
-  console.log(['', ...summary, '', AUDIT ? `Grok: ${audits.size - disagree.length} of ${audits.size} bear out the numbers` : 'Grok: not run', `Time: ${((Date.now() - T0) / 1000).toFixed(0)} s`, `→ ${run.dir.replace(process.cwd() + '/', '')}/report.md`].join('\n'));
+  console.log(['', ...summary, '', ...(perCharacter.length ? [perCharacter[perCharacter.length - 1], ''] : []), AUDIT ? `Grok: ${audits.size - disagree.length} of ${audits.size} bear out the numbers` : 'Grok: not run', `Time: ${((Date.now() - T0) / 1000).toFixed(0)} s`, `→ ${run.dir.replace(process.cwd() + '/', '')}/report.md`].join('\n'));
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

@@ -86,6 +86,7 @@ export function startTest(title: string) {
   const missing = ['Serves', 'Type', 'Unit', 'Variable', 'Held constant', 'Measure', 'Fact or judgment', 'Hypothesis', 'Other outcomes', 'Size', 'Time', 'Reviewed']
     .filter((k) => !new RegExp(`^-? ?${k}: *\\S`, 'm').test(at!));
   if (missing.length) stop(`card missing ${missing.join(', ')}`);
+  if (/^-? ?Reviewed: *pending/im.test(at!)) stop('card not reviewed yet (Reviewed: pending)');
   const minutes = Number(at!.match(/^-? ?Time:\D*(\d+)/m)?.[1] ?? 0);
   if (minutes > 5 && !/Josh: yes/.test(at!)) stop(`${minutes} min needs Josh: yes on the card`);
 }
