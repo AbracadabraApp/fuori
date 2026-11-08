@@ -572,3 +572,19 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Reviewed: test designer, 2026-11-07: the guard made a decision rule (any invented job or contradicting past with the scene alone means A); both repeating names the cause as elsewhere, next C5; Sam's own repeats not counted. All taken
 - Script: tests/experiments/here-drafting.mts
 - Deferred (Josh, 2026-11-07): runs after the here lines are trimmed (roadmap N6 item 12)
+
+### C7 (2026-11-07): the character's payload, as is against stripped
+- Serves: 3 (local and tipico), 4 (in character)
+- Type: visit (multi-turn, rule 5c)
+- Unit: everything the game hands Claude about the character (Josh, 2026-11-07: "a test of 2 payloads. As is vs. Radically simpler"; "more stripped down"; "something to encourage local knowledge"). Only the text sent to Claude changes, inside the test; no game code or prompt file changes
+- Variable: A: as is, the game's Intermediate prompt unchanged (who line with age, place, the here line as written, today and weather; relationship and memory; reply format). B: stripped, the same prompt with its who line replaced by "You are Don Ramón Ledesma, jubilado, at El Mirador (landmark), in San Miguel de Allende. You were born here."; everything after it (turns, the learner, relationship and memory, reply format) the game's own
+- Held constant: the game's turn code (lib/turn.ts, B through its replacement-prompt parameter), memory.md 2026-11-07a between visits, Sam on Grok (fast model, living in Mexico for a while, in San Miguel today, never the first to name a local thing), 3 visits 3 days apart, model and settings
+- Place: Don Ramón at El Mirador (Mexico); other characters by CITY and PLACE on the command line (Josh: "we could pick a different character"), each read the same way
+- Measure: **not clearly worse** (Josh, 2026-11-07): Claude and Grok each read the two conversations, in random order, labelled only X and Y, and say which is clearly better or that they're about the same, against the goal: talks like a local, not a guidebook; a return visit carries on, never replays an earlier one (a question asked again after it was answered, something told again as new). Plus a guard on B alone: does he stay a 74-year-old retired man from San Miguel (no invented job, age or manner)?
+- Fact or judgment: judgment (both judges, rule 5d; uncalibrated, so both conversations are read in full)
+- Hypothesis: B is not clearly worse: not both judges calling A clearly better, and B keeps who he is
+- Other outcomes: both judges call A clearly better, or B loses who he is: the payload's extra content is doing something; read which visit shows it. Otherwise: the stripped payload is enough, and simplifying the game's payload is the next decision (Josh's)
+- Size: 1 conversation of 3 visits per version, side by side (Josh: "2.5 is good"); a failure seen once is real
+- Time: about 3 minutes
+- Reviewed: test designer, 2026-11-07: pass, on condition that B renders the game's own prompt every turn (memory, relationship, rules) and swaps only the who line, so B keeps its memory; the script does (strippedSystem)
+- Script: tests/experiments/stripped-payload.mts
