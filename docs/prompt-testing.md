@@ -8,18 +8,18 @@ Draft, 2026-11-06, for Josh's review. Josh: "You need to organize work in a disc
 
 **What we test.** Dialogue: every conversation where a character talks with the learner. In each, the character does nine things in three groups, matching the goal: the language, the culture, and real people to talk with (Josh, 2026-11-07). The numbers stay as they were, since cards and log entries cite them.
 
-**Culture** (tested first, Josh, 2026-11-07):
+**Culture** (tested first, Josh, 2026-11-07). Goal: the learner comes away knowing real things about this place: true, specific things a local would tell a newcomer about their shop, their town, their country, that the learner could bring up with someone else tomorrow. It fails two ways, both about what she says: invented (item 2) or generic, true anywhere (item 3). How she says it (lecturing, not sounding local) belongs to items 8 and 4, not here (Josh, 2026-11-07: "guidebook is probably the wrong test").
 
 2. **Accurate.** Nothing invented.
 3. **Local and tipico.** Her place, her town, her country, as a local tells it.
 
-**Character** (tested first, with Culture):
+**Character** (tested first, with Culture). Goal: the learner meets a real person who knows them: someone in a real role who acts like it and remembers them, so the learner wants to come back, and the help they get is the help that person would give a newcomer. It fails when a fishmonger turns into a school teacher, a student on the steps takes a food order, or she retells last visit's story as new.
 
 4. **In character.** She stays her role.
 6. **Teaches in role.** A fishmonger helps a newcomer the way a fishmonger would (slows down, repeats, offers a word, recasts a mistake), never as a school teacher (Josh, 2026-11-07: "Does a fish monger turn into a school teacher").
 7. **Remembers.** No retelling; uses what she knows about them.
 
-**Language** (after Culture and Character):
+**Language** (after Culture and Character). Goal: the learner can follow her and copy her: every turn within reach at their level, short enough to hold, and correct, since they repeat it; English there when they ask. It fails when a closing question is above a Beginner, a turn runs long, she says "il gnocchi", or she won't help in English.
 
 1. **At their level.** They can follow her.
 8. **Brief.** Turns they can follow.
