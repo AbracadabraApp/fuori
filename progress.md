@@ -66,6 +66,22 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-08: memory guardrail, here-line tests, the conversation test rebuilt on the scorecard (laptop session fuori-a4)
+
+**Done**
+- **C5b applied:** "Don't tell them again what you've already told them." after the remembered notes, both countries (character.md 2026-11-08a; Beginner reads the same block). Mexico: the replay gone; Italy: no harm.
+- **Here lines:** H2 (interviews: Claude fills in the same person for everyone), C8 (one sentence over visits), C9 (edited from the character's own point of view, interviewed, both countries) and C10 (current against edited over visits). The shorter line wins by Josh's rule in each, at or near the limit; the current line's real wins are on festival and food meanings; noise is as big as the effect, and the simulated learner swayed C10. **Not applied**; the edited lines are in `tests/conversations/variants/edited-here-{mx,it}.json`.
+- **`npm run test:conversations` rebuilt** (Josh: improve it rather than build new): counts, not grades; every run kept whole (`tests/conversations/runs/`, `runs/log.jsonl`); A/B variants, return visits with real memory, A-against-A noise pairs, learner Claude/Grok/tap, `--card`; Grok reads every transcript afterwards. Its learner matches real place-character learners (8.7 vs 8.5 words per line, share 0.21 vs 0.21) after being told to talk like them.
+- **One set of measures (Josh's yes):** the scorecard defines them; the test uses the same code. The scorecard gains "Learner's share of words", "Learner words per line" (no targets yet) and "Repeats from earlier visits" (target 0; sentences of 8+ words said again from the learner's last 3 conversations with that character). Server change, **not released**.
+- **Testing map** updated (Josh gave it to this session): tests vs experiments, the experiment path card → run → log → real-play check.
+- Never test or measure Magda, lessons or onboarding without Josh's approval (memory saved).
+
+**Open**
+- Decide the here lines (edited, current, or a version keeping the trade meaning). Proposed next: a `test:conversations` run of current vs edited, 10 characters × 3 visits with A-against-A pairs.
+- Targets for the two learner rows (Josh's).
+- Garbled letters seen in C9 replies ("¥Hola", "dÃas"); `tests/check-mojibake.ts` exists.
+- Not released: memory.md and character.md 2026-11-07a/08a, beginner.md 2026-11-07a, the description cut, the scorecard rows.
+
 ## 2026-11-07 (late night): C4 and C5 done; memory notes hold what he told (laptop session)
 
 - **C4 done:** here lines without their facts give the same amount of local talk, a local's instead of a guidebook's (Mexico, confirmed in Siena). The trim is roadmap N6 item 10, not started (Josh: not now); a sample of ~10 lines to Josh first.
