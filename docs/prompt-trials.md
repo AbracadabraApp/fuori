@@ -611,3 +611,19 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Script: tests/experiments/memory-line.mts
 - Run (2026-11-08, Mac mini, one 3-visit conversation each, side by side): **Mexico, Don Ramón (62 s): hypothesis met.** A replayed once, both judges: on visit 3 "Yo nací en este pueblo y subo aquí casi cada tarde…", told as new although his notes held "Told them I was born in San Miguel". B: none (Grok listed two, both read as not replays: a callback, "La otra vez usted se fue de repente…", and "¿cómo ha estado?"). B's visits built on Sam's walks (the street to the market, a quiet corner) and still repeated the words Sam hears every visit (atardecer, la Parroquia, rosada). **Italy, Karim (56 s): neither replayed**, so Italy can't show the gain; B wasn't worse: each visit brought something new (the shell and the Palio, covering the piazza, the Torre del Mangia), where A's visit 3 was all arranging tomorrow's tour. Files: `tests/experiments/results/c5b-san-miguel-de-allende-el-mirador-san-miguel-2026-11-08T1746.md`, `c5b-siena-piazza-del-campo-2026-11-08T1747.md`
 - Decision: pending Josh (Mexico shows the gain, Italy no harm)
+
+### H2 (2026-11-08): interview the characters: what do we learn about them?
+- Serves: 3 (local and tipico), 4 (in character)
+- Type: interview (Josh, 2026-11-08: "Interview people directly before putting in conversation"; "10 people. 10 here. 3–5 questions: what do we learn about them. Pilot first"): one first meeting per character, the learner's lines fixed questions, no simulated learner, no visits
+- Unit: the here line as it is (the game's Intermediate prompt unchanged, first meeting)
+- Variable: none; a look at what today's here lines give, before C6 or the trim (item 10) drafts new ones
+- Held constant: the game's turn code and prompt, first meeting, the same 5 questions for everyone in the country's language (his name; what he does here; where he's from; what he likes about the town; what he does in his free time), model and settings
+- Place: Mexico, the first 2 characters with a here line in each of the 5 cities (10); Italy the same way only if Josh asks
+- Measure: what we learn: one Claude call reads each interview with the here line beside it and lists what we learned about him as a person (his life, habits, family, opinions) and about the place, each marked whether it's in the here line, and anything that contradicts his role or the line; printed with every answer, all read
+- Fact or judgment: judgment (one reader listing, every line printed and read by Claude and Josh; no score)
+- Hypothesis: most of what we learn is the here line's facts about the place, retold; little about the person beyond his job
+- Other outcomes: a lot about the person, not from the here line: the person is already there, and the trim can cut facts without losing him. Answers that invent a different job or past: the line isn't holding him (read which)
+- Size: pilot 2 (does it run, are the questions right), then 10 (Josh: "Pilot first")
+- Time: pilot under 1 minute, 10 about 1 minute on the Mac mini
+- Reviewed: test designer, 2026-11-08: pass with three fixes, all taken: pick the person the place actually shows (characterId), not just the first listed there; "what is this place like?" led to place facts, swapped for "where are you from?"; a contradicts field for the invented job or past
+- Script: tests/experiments/interview.mts
