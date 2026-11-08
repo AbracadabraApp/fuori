@@ -1,15 +1,13 @@
-// C4 (docs/prompt-trials.md → C4): does a short here line (the scene and
-// himself) spread local talk over visits instead of unloading it on the first?
-// A: the line as written; B: its first two sentences (run twice, the noise
-// check); C: no line, the place's name only; D: B plus one sentence saying he
-// knows his town. No level: his prompt is only who and where, that the
-// person lives here, the game's relationship line and a line-and-English reply.
-// Mexico for direction (rule 6); three visits a set, memory written between
-// them by the game's own summariser; Grok plays Sam, the learner. Counted in
-// code from the card's lists, only in his lines and their English, and only
-// what he names before Sam does. Every visit, every hit, the local things no
-// list caught and the invented-job verdicts are saved.
-//   COUNTRY=es-mx STEP=pilot|run npx tsx --env-file=.env.local tests/experiments/short-here.mts
+// C4 (docs/prompt-trials.md → C4): with the facts taken out of the here line
+// (B: its first two sentences, the scene and himself) against the line as
+// written (A), does he bring up more new local things on the second visit?
+// No level: his prompt is only who and where, that the person lives here, the
+// game's relationship line and a line-and-English reply. Mexico (rule 6); two
+// visits a set, memory written between them by the game's own summariser; Grok
+// plays Sam, the learner. The measure: Claude and Grok each list the local
+// things he brought up himself on each visit. Every visit, both lists and the
+// invented-job verdicts are saved.
+//   COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/short-here.mts
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { cities, language } from '@/content';
@@ -23,8 +21,9 @@ import { ask, askGrok, pool, startTest } from './common.mjs';
 
 startTest('C4 (2026-11-07)');
 
-const STEP = process.env.STEP ?? 'pilot';
+const STEP = 'run'; // no further pilot (the card)
 const SAM_TURNS = 4;
+const VISITS = 2; // Josh: "any test at 10 minutes is too long"
 
 // The card's lists, written before the run; the scene's own words (the Parroquia, Monte Albán) left out
 const PLACES = [
@@ -58,7 +57,7 @@ const PLACES = [
   },
 ];
 type Place = typeof PLACES[number];
-type Version = 'A' | 'B' | 'C' | 'D';
+type Version = 'A' | 'B';
 
 /** B: the line's first two sentences, the scene and himself, nothing rewritten */
 const short = (here: string) => here.split(/(?<=[.!?])\s+/).slice(0, 2).join(' ');
@@ -69,13 +68,12 @@ function sheet(p: Place, v: Version): CharacterSheet {
   const here = city.characters!.find((c) => c.placeId === p.place)!.here!;
   if (!base.appearance.setting.endsWith(`. ${here}`)) throw new Error(`${p.name}: here line not at the end of the setting`);
   const where = base.appearance.setting.slice(0, -(here.length + 2));
-  const line = { A: here, B: short(here), C: '', D: `${short(here)} ${p.knows}` }[v];
+  const line = { A: here, B: short(here) }[v];
   // C keeps the role (in the sheet and the description); only the line goes
   return { ...base, appearance: { ...base.appearance, setting: line ? `${where}. ${line}` : where } };
 }
 
 const JOB = { type: 'object', properties: { invented: { type: 'boolean' }, reason: { type: 'string' } }, required: ['invented', 'reason'], additionalProperties: false };
-const LOCAL = { type: 'object', properties: { things: { type: 'array', items: { type: 'string' } } }, required: ['things'], additionalProperties: false };
 type Verdict = { invented: boolean; reason: string };
 type Visit = { transcript: string; hits: { item: string; text: string }[]; samHits: { item: string; text: string }[]; samTurns: number; unlisted: string[]; claude: Verdict; grok: Verdict; words: number[]; ms: number[] };
 
@@ -90,11 +88,6 @@ async function judgeJob(p: Place, name: string, transcript: string) {
   return { claude, grok };
 }
 
-/** The local things he names, for the unlisted section: what no pattern caught is read, not counted */
-async function localThings(said: string): Promise<string[]> {
-  const q = `Below is what a character in Mexico said. List each specific local thing he names: a place, building, street, dish, drink, craft, custom, festival, historical person or event. Short names only, in the words he used. Empty if none.\n\n${said}`;
-  return (JSON.parse(await ask(q, { schema: LOCAL, max: 800 })) as { things: string[] }).things;
-}
 
 type Line = { who: 'npc' | 'learner'; text: string; en?: string };
 const SAY = { type: 'object', properties: { line: { type: 'string' }, en: { type: 'string' } }, required: ['line', 'en'], additionalProperties: false };
@@ -147,8 +140,8 @@ async function set(p: Place, v: Version): Promise<Visit[]> {
   const visits: Visit[] = [];
   const earlier: string[] = [];
   const samFirst = new Set<string>(), npcSaid = new Set<string>();
-  for (let k = 0; k < 3; k++) {
-    const now = new Date(Date.now() - 86_400_000 * 3 * (2 - k));
+  for (let k = 0; k < VISITS; k++) {
+    const now = new Date(Date.now() - 86_400_000 * 3 * (VISITS - 1 - k));
     const memory = k ? { visits: k, lastVisit: new Date(now.getTime() - 3 * 86_400_000).toISOString(), notes } : undefined;
     const lines: Line[] = [];
     const hits: Hit[] = [], samHits: Hit[] = [];
@@ -176,52 +169,60 @@ async function set(p: Place, v: Version): Promise<Visit[]> {
     }
     const transcript = lines.map((x) => `${x.who === 'npc' ? character.name : 'Sam'}: ${x.text}`).join('\n');
     earlier.push(`(visit ${k + 1}) ${lines.map((x) => `${x.who === 'npc' ? character.name : 'Sam'}: ${x.text}`).join(' / ')}`);
-    const [job, things] = await Promise.all([judgeJob(p, character.name, transcript), localThings(saidAll.filter(Boolean).join('\n'))]);
-    const unlisted = things.filter((th) => !Object.values(p.items).some((re) => re.test(th)) && !/parroquia|monte alb[áa]n|mirador|san miguel|oaxaca/i.test(th));
-    visits.push({ transcript, hits, samHits, samTurns: SAM_TURNS, unlisted, ...job, words, ms });
+    const job = await judgeJob(p, character.name, transcript);
+    visits.push({ transcript, hits, samHits, samTurns: SAM_TURNS, unlisted: [], ...job, words, ms });
     notes = (await summarizeWithClaude({ character: { name: character.name, age: character.age, role: character.role, city: character.city }, notes, turns: lines.map((x) => ({ who: x.who, text: x.text })) })).notes;
   }
   return visits;
 }
 
-const labels: { label: string; version: Version }[] = STEP === 'pilot'
-  ? [{ label: 'A', version: 'A' }, { label: 'B', version: 'B' }, { label: 'C', version: 'C' }, { label: 'D', version: 'D' }]
-  : [{ label: 'A', version: 'A' }, { label: 'B1', version: 'B' }, { label: 'B2', version: 'B' }, { label: 'C', version: 'C' }, { label: 'D', version: 'D' }];
-const places = STEP === 'pilot' ? PLACES.slice(0, 1) : PLACES;
-// Real run in two waves, so it can stop early: 2 sets each, then 1 more (the card's stop rule)
-const waves = STEP === 'pilot' ? [1] : [2, 1];
+const labels: { label: string; version: Version }[] = [{ label: 'A', version: 'A' }, { label: 'B', version: 'B' }];
+const SETS = 3;
+const NAMES: Record<string, string> = { A: "Today's line", B: 'Short' };
 
-type Done = { place: string; label: string; visits: Visit[] };
-const done: Done[] = [];
-const itemsOn = (v: Visit) => new Set(v.hits.map((h) => h.item));
-const firstVisit = (d: Done) => itemsOn(d.visits[0]).size;
-const newLater = (d: Done) => { const seen = new Set(itemsOn(d.visits[0])); let n = 0; for (const v of d.visits.slice(1)) for (const i of itemsOn(v)) if (!seen.has(i)) { n++; seen.add(i); } return n; };
-const toldAgain = (d: Done) => [...new Set(d.visits.flatMap((v) => [...itemsOn(v)]))].filter((i) => d.visits.filter((v) => itemsOn(v).has(i)).length >= 2);
-const mean = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0);
-const of = (label: string, place?: string) => done.filter((d) => d.label === label && (!place || d.place === place));
-const m = (label: string, f: (d: Done) => number, place?: string) => mean(of(label, place).map(f));
-
-let stopped = '';
-for (const [w, n] of waves.entries()) {
-  const jobs = places.flatMap((p) => labels.flatMap(({ label, version }) => Array.from({ length: n }, () => async () => ({ place: p.name, label, visits: await set(p, version) }))));
-  done.push(...await pool(jobs, 6));
-  if (STEP !== 'pilot' && w === 0 && ['B1', 'B2', 'C', 'D'].every((l) => m(l, newLater) < 0.5)) { stopped = 'Stopped after the first wave: both B runs, C and D all under 0.5 on new later'; break; }
+/** The measure: two judges list the local things he brought up himself on each visit, the same name for the same thing */
+const THINGS = { type: 'object', properties: { visit1: { type: 'array', items: { type: 'string' } }, visit2: { type: 'array', items: { type: 'string' } } }, required: ['visit1', 'visit2'], additionalProperties: false };
+type Things = { visit1: string[]; visit2: string[] };
+async function judgeThings(p: Place, visits: Visit[]) {
+  const where = p.place === 'monte-alban' ? 'Monte Albán' : 'El Mirador and the Parroquia he looks at';
+  const q = [
+    'Below are two visits, three days apart, between a local character in Mexico and Sam, a learner who lives there.',
+    ...visits.flatMap((v, i) => ['', `Visit ${i + 1}:`, v.transcript]), '',
+    `For each visit, list each specific local thing the character brings up himself: a place, street, building, dish, drink, craft, custom, festival, historical person or event. Use the same short name for the same thing on both visits. Leave out ${where} (where he is standing), and anything Sam named before he did. Empty if none.`,
+    'Reply with JSON: visit1, visit2.',
+  ].join('\n');
+  const [claude, grok] = await Promise.all([ask(q, { schema: THINGS, max: 1500 }).then((s) => JSON.parse(s) as Things), askGrok<Things>(q, THINGS)]);
+  return { claude, grok };
 }
 
+type Done = { place: string; label: string; visits: Visit[]; things: { claude: Things; grok: Things } };
+const norm = (x: string) => x.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+const newLater = (t: Things) => { const v1 = new Set(t.visit1.map(norm)); return new Set(t.visit2.map(norm).filter((x) => !v1.has(x))).size; };
+const toldAgain = (t: Things) => { const v1 = new Set(t.visit1.map(norm)); return [...new Set(t.visit2.map(norm).filter((x) => v1.has(x)))]; };
+const mean = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0);
+
+const jobs = PLACES.flatMap((p) => labels.flatMap(({ label, version }) => Array.from({ length: SETS }, () => async (): Promise<Done> => {
+  const visits = await set(p, version);
+  return { place: p.name, label, visits, things: await judgeThings(p, visits) };
+})));
+const done = await pool(jobs, jobs.length);
+
+const of = (label: string, place?: string) => done.filter((d) => d.label === label && (!place || d.place === place));
+const both = (f: (t: Things) => number) => (d: Done) => (f(d.things.claude) + f(d.things.grok)) / 2;
+const m = (label: string, f: (d: Done) => number, place?: string) => mean(of(label, place).map(f));
 const row = (title: string, f: (label: string) => string) => `| ${title} | ${labels.map(({ label }) => f(label)).join(' | ')} |`;
-const NAMES: Record<string, string> = { A: "Today's line", B: 'Short', B1: 'Short (1)', B2: 'Short (2)', C: 'No line', D: 'Short + knows town' };
-const jobCount = (label: string) => { const vs = of(label).flatMap((d) => d.visits); return `${vs.filter((v) => v.claude.invented && v.grok.invented).length}/${vs.length} (${vs.filter((v) => v.claude.invented !== v.grok.invented).length} split)`; };
+const kwNew = (d: Done) => { const v1 = new Set(d.visits[0].hits.map((h) => h.item)); return new Set(d.visits[1].hits.map((h) => h.item).filter((i) => !v1.has(i))).size; };
 const summary = [
   `| | ${labels.map(({ label }) => NAMES[label]).join(' | ')} |`, `|---|${labels.map(() => '---').join('|')}|`,
-  row('**New later** (per set)', (l) => m(l, newLater).toFixed(2)),
-  ...places.map((p) => row(`  ${p.name}`, (l) => m(l, newLater, p.name).toFixed(2))),
-  row('First visit', (l) => m(l, firstVisit).toFixed(2)),
-  row('Told again (read: callback or retelling)', (l) => m(l, (d) => toldAgain(d).length).toFixed(2)),
-  row('Unlisted local things per set (read)', (l) => m(l, (d) => d.visits.reduce((a, v) => a + v.unlisted.length, 0)).toFixed(2)),
-  row('Invented a job (both judges)', jobCount),
-  row('Sets', (l) => `${of(l).length}`),
-  row('Words per turn', (l) => mean(of(l).flatMap((d) => d.visits.flatMap((v) => v.words))).toFixed(1)),
+  row('**New later** (per set, mean of judges)', (l) => m(l, both(newLater)).toFixed(2)),
+  row('  Claude · Grok', (l) => `${m(l, (d) => newLater(d.things.claude)).toFixed(2)} · ${m(l, (d) => newLater(d.things.grok)).toFixed(2)}`),
+  ...PLACES.map((p) => row(`  ${p.name}`, (l) => m(l, both(newLater), p.name).toFixed(2))),
+  row('First visit', (l) => m(l, both((t) => new Set(t.visit1.map(norm)).size)).toFixed(2)),
+  row('Told again (read)', (l) => m(l, both((t) => toldAgain(t).length)).toFixed(2)),
+  row('New later by keyword list (cross-check)', (l) => m(l, kwNew).toFixed(2)),
+  row('Invented a job (both judges)', (l) => { const vs = of(l).flatMap((d) => d.visits); return `${vs.filter((v) => v.claude.invented && v.grok.invented).length}/${vs.length}`; }),
   row('Sam named a listed thing first (turns)', (l) => { const vs = of(l).flatMap((d) => d.visits); return `${vs.reduce((a, v) => a + new Set(v.samHits.map((h) => h.text)).size, 0)}/${vs.reduce((a, v) => a + v.samTurns, 0)}`; }),
+  row('Words per turn', (l) => mean(of(l).flatMap((d) => d.visits.flatMap((v) => v.words))).toFixed(1)),
   row('Reply time', (l) => `${(mean(of(l).flatMap((d) => d.visits.flatMap((v) => v.ms))) / 1000).toFixed(1)} s`),
 ];
 
@@ -230,11 +231,9 @@ mkdirSync(dir, { recursive: true });
 const file = join(dir, `c4-${STEP}-${new Date().toISOString().slice(0, 16).replace(':', '')}`);
 writeFileSync(`${file}.json`, JSON.stringify(done, null, 1));
 writeFileSync(`${file}.md`, [
-  `# C4 ${STEP}: a short here line, local talk spread over visits?`, '', ...(stopped ? [`**${stopped}**`, ''] : []), ...summary, '',
-  '## Told again (mark each: callback or retelling)', '', ...done.flatMap((d, k) => toldAgain(d).map((i) => `- ${NAMES[d.label]} · ${d.place} · set ${k + 1} · **${i}**: ${d.visits.map((v, j) => (itemsOn(v).has(i) ? `visit ${j + 1}: ${v.hits.find((h) => h.item === i)!.text}` : '')).filter(Boolean).join(' / ')}`)), '',
-  '## Local things no list caught', '', ...done.flatMap((d, k) => d.visits.flatMap((v, j) => (v.unlisted.length ? [`- ${NAMES[d.label]} · ${d.place} · set ${k + 1} visit ${j + 1}: ${v.unlisted.join(', ')}`] : []))), '',
-  '## Sam named first (not counted for him)', '', ...done.flatMap((d, k) => d.visits.flatMap((v, j) => v.samHits.map((h) => `- ${NAMES[d.label]} · ${d.place} · set ${k + 1} visit ${j + 1} · **${h.item}**: ${h.text}`))), '',
-  '## Invented-job verdicts that split or said yes', '', ...done.flatMap((d, k) => d.visits.flatMap((v, j) => (v.claude.invented || v.grok.invented ? [`- ${NAMES[d.label]} · ${d.place} · set ${k + 1} visit ${j + 1}: Claude ${v.claude.invented ? 'yes' : 'no'} (${v.claude.reason}) · Grok ${v.grok.invented ? 'yes' : 'no'} (${v.grok.reason})`] : []))), '',
-  '## Every visit', '', ...done.flatMap((d, k) => d.visits.map((v, j) => `### ${NAMES[d.label]} · ${d.place} · set ${k + 1}, visit ${j + 1} · ${[...itemsOn(v)].join(', ') || 'nothing counted'}\n\n${v.transcript}\n`)),
+  `# C4 ${STEP}: the here line's facts out, more new local talk on the second visit?`, '', ...summary, '',
+  '## What the judges listed', '', ...done.map((d, k) => `- ${NAMES[d.label]} · ${d.place} · set ${k + 1}\n  - Claude: visit 1: ${d.things.claude.visit1.join(', ') || '—'} · visit 2: ${d.things.claude.visit2.join(', ') || '—'}\n  - Grok: visit 1: ${d.things.grok.visit1.join(', ') || '—'} · visit 2: ${d.things.grok.visit2.join(', ') || '—'}`), '',
+  '## Invented-job verdicts that said yes', '', ...done.flatMap((d, k) => d.visits.flatMap((v, j) => (v.claude.invented || v.grok.invented ? [`- ${NAMES[d.label]} · ${d.place} · set ${k + 1} visit ${j + 1}: Claude ${v.claude.invented ? 'yes' : 'no'} (${v.claude.reason}) · Grok ${v.grok.invented ? 'yes' : 'no'} (${v.grok.reason})`] : []))), '',
+  '## Every visit', '', ...done.flatMap((d, k) => d.visits.map((v, j) => `### ${NAMES[d.label]} · ${d.place} · set ${k + 1}, visit ${j + 1}\n\n${v.transcript}\n`)),
 ].join('\n'));
-console.log([stopped, ...summary].filter(Boolean).join('\n') + `\n→ ${file.replace(process.cwd() + '/', '')}.md`);
+console.log(summary.join('\n') + `\n→ ${file.replace(process.cwd() + '/', '')}.md`);
