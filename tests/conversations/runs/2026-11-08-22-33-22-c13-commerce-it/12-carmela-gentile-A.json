@@ -1,0 +1,207 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "carmela-gentile",
+  "name": "Carmela Gentile",
+  "role": "venditrice",
+  "city": "Matera",
+  "place": "Mercato di Piccianello"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Venga, venga, guardi che belle cime di rapa fresche stamattina. Cosa le serve?"
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal! Cime di rapa... non capisco. Voglio... frutta? Per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, la frutta non la vendo, io ho solo verdure. Ci sono i banchi di frutta in fondo al mercato, in fondo a destra. Ma le cime di rapa, sono verdure verdi, buone con la pasta: le ha mai assaggiate?"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, okay. No, non... assaggiate. Sono verdi? Con la pasta?"
+   },
+   {
+    "who": "npc",
+    "text": "Sì, sì, verdi! Si cuociono un poco, poi si saltano in padella con aglio e peperoncino, e si mettono sulle orecchiette. Qui a Matera si mangiano così. Sono un po' amare, ma buonissime. Le piacerebbe provarle?"
+   },
+   {
+    "who": "learner",
+    "text": "Amare... come? Non capisco. Quanto costa, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Amare vuol dire che hanno un sapore forte, un po' come il caffè senza zucchero. Costano due euro al chilo, oggi. Quanto ne vuole?"
+   },
+   {
+    "who": "learner",
+    "text": "Due euro... okay. Un chilo, per favore. Grazie! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Ecco a lei, un chilo di cime di rapa, sono due euro. Grazie a lei, buona giornata e arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Oh, ciao! Siete tornato! Allora, com'erano le cime di rapa? Le avete provate?"
+   },
+   {
+    "who": "learner",
+    "text": "Ciao! Sì, io... provato. Sono amare, ma buone! Con la pasta."
+   },
+   {
+    "who": "npc",
+    "text": "Bravo! Vedete? L'amaro conquista, dopo un po'. Oggi ho anche i peperoni cruschi, croccanti, ottimi con la pasta. Li conoscete?"
+   },
+   {
+    "who": "learner",
+    "text": "Peperoni... cruschi? No, non conosco. Cosa sono?"
+   },
+   {
+    "who": "npc",
+    "text": "Sono peperoni rossi, li facciamo seccare al sole. Poi si friggono pochi secondi nell'olio e diventano croccanti come patatine. Si sbriciolano sopra la pasta, o anche sul pane. Sono dolci, un po' affumicati."
+   },
+   {
+    "who": "learner",
+    "text": "Croccanti... come patatine? Ah, okay. Dolci... e affumicati? Non capisco \"affumicati\"."
+   },
+   {
+    "who": "npc",
+    "text": "Affumicato: sa di fumo, come la carne alla brace, il camino acceso. Un sapore profondo, ma delicato. Volete assaggiarne uno? Ve ne do un pezzetto."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie! Voglio assaggiare. Mmm... buono! Dolce e... fumo. Okay, un po' per favore. Grazie! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Ecco, tenete, un bel sacchetto. Buona giornata e arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ma guarda chi si rivede! Come stanno i peperoni cruschi, sono finiti già?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! I peperoni cruschi... molto buoni! Non finiti."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, lo sapevo che ti sarebbero piaciuti! Oggi cosa ti serve, altre cime di rapa o qualcosa di diverso?"
+   },
+   {
+    "who": "learner",
+    "text": "Oggi... voglio cime di rapa, per favore. Un chilo."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, un chilo di cime di rapa! Sono fresche, belle verdi, le ho portate stamattina. Ecco qua, ti metto tutto nel sacchetto. Le fai di nuovo con le orecchiette?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, con le orecchiette! Grazie. Quanto costa?"
+   },
+   {
+    "who": "npc",
+    "text": "Un chilo di cime di rapa sono tre euro. Ecco il sacchetto, tienilo pure per le orecchiette!"
+   },
+   {
+    "who": "learner",
+    "text": "Tre euro, okay. Ecco, per favore. Grazie per il sacchetto! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Arrivederci, buona domenica e buon appetito!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 24,
+    "wordsAvg": 26.6,
+    "wordsMax": 40,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 9.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 20,
+    "wordsMax": 33,
+    "longShare": 0.2,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.4
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 11.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 17.6,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 8.8
+   },
+   "repeats": [
+    {
+     "said": "Un chilo di cime di rapa sono tre euro.",
+     "earlier": "Ecco a lei, un chilo di cime di rapa, sono due euro."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 20,
+  "openerWords": 14,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.27,
+  "learnerWords": 9.866666666666667,
+  "repeats": 0.5
+ },
+ "sale": 9
+}

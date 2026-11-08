@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "antonio-florian",
+  "name": "Nusrat Rahman",
+  "role": "cameriera",
+  "city": "Venezia",
+  "place": "Caffè Florian"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Benvenuto al Caffè Florian. Prego, si accomodi pure: preferisce un tavolino sotto i portici?"
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal! Sì, grazie. Il tavolino sotto... portici, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, venga pure, le porto subito il menù. Questo qui è libero, con la vista sulla piazza. Cosa le porto da bere?"
+   },
+   {
+    "who": "learner",
+    "text": "Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, un caffè al tavolo. Le dico solo che qui costa di più che al banco, e se suona l'orchestra in piazza si aggiunge il supplemento musica. Va bene lo stesso?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi... non capisco. Più piano, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo. Al tavolo, il caffè costa di più. E se c'è la musica, si paga un extra. Va bene?"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ho capito. Sì, va bene. Grazie! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, a presto! Buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao! Bentornato al Florian. Vuole sedersi di nuovo sotto i portici?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie. Sotto i portici, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, si accomodi pure a questo tavolino. Che cosa le porto oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Voglio un caffè, per favore. Come ieri."
+   },
+   {
+    "who": "npc",
+    "text": "Subito, un caffè al tavolo. Il tempo è freddo oggi, novembre a Venezia! Lei abita qui vicino?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, io abito qui... vicino. Un appartamento piccolo."
+   },
+   {
+    "who": "npc",
+    "text": "Che bello, un appartamentino a Venezia! Io sono nata qui, ma i miei genitori vengono dal Bangladesh."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, interessante! Bangladesh... che bello. Grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei, arrivederci e buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno, bentornato! Con l'acqua alta oggi i tavoli sotto i portici sono un po' bagnati, ma ce n'è uno asciutto per lei. Che bella sorpresa rivederla!"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi... acqua alta? Non capisco. Più piano, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, piano. Acqua alta: l'acqua del mare sale e invade la piazza. Oggi in piazza c'è l'acqua. Lei è passato con gli stivali?"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ho capito. No, io non ho... stivali. Scarpe normali. Sono bagnate!"
+   },
+   {
+    "who": "npc",
+    "text": "Poverino! Si sieda qui, sotto il portico, è asciutto. Le porto subito qualcosa di caldo: un caffè, un tè?"
+   },
+   {
+    "who": "learner",
+    "text": "Un caffè, per favore. Voglio... qualcosa di caldo. Grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Subito, un caffè caldo per i suoi piedi bagnati! Intanto, sa che gli stivali di gomma li vendono nei negozietti qui intorno? Nei giorni di acqua alta ne vanno a ruba."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sì? Grazie! Domani compro gli stivali. Ora... arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Stia al caldo e al asciutto."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 18.4,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 7.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 12,
+    "wordsAvg": 12.8,
+    "wordsMax": 17,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 7.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 26,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 21.6,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 9.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 19,
+  "openerWords": 15,
+  "multiQuestion": 0,
+  "learnerShare": 0.27666666666666667,
+  "learnerWords": 8.200000000000001,
+  "repeats": 0
+ },
+ "sale": 7
+}

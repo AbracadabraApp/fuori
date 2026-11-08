@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "nino-garbatella",
+  "name": "Nino Ferretti",
+  "role": "oste",
+  "city": "Roma",
+  "place": "Osteria da Nino"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Venga, venga, si sieda un momento con me. La cucina ora è chiusa, ma qui si parla di cibo tutto il giorno. Guardi la lavagna: carciofi, cacio e pepe, gricia, amatriciana, carbonara. Lei, a Roma, ha già mangiato qualcosa di buono?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì. Io... mangio la carbonara. Buona!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, brava la carbonara! Ma attenzione: quella vera ha solo guanciale, uova, pecorino e pepe. Se c'è la panna, non è carbonara, è un'altra cosa. Lei dov'è che l'ha mangiata?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... scusi, non capisco. Più lentamente, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, piano piano. La carbonara vera: guanciale, uova, pecorino, pepe. Niente panna! Dove l'ha mangiata?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... io mangio... al ristorante. Vicino casa mia."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, bene, un ristorante vicino a casa. E nella carbonara c'era la panna, secondo lei, o no?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no, non c'è la panna. Io... non so bene. Ma era buona! Grazie, Nino. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego, e a presto! Arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, ma guarda chi si rivede! Siediti, siediti. Oggi è giovedì, sai? Sulla lavagna ci sono anche gli gnocchi, come da tradizione romana. Ne hai mai mangiati, qui a Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gnocchi? Sì... no. Non so. Io... non mangio gnocchi qui."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, allora ti spiego io. Il giovedì gnocchi, è un'abitudine vecchia di Roma: si facevano così, con le patate, e la domenica toccava ai fettuccine. Mia madre li faceva a mano, il giovedì mattina, e la casa sapeva di burro e salvia. Ma sai quanto costa farli bene? Pazienza e mani leggere. E tu, cosa hai mangiato di buono da quando sei a Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... scusi, troppo veloce. Ripeti, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, piano piano. Il giovedì, qui a Roma, si mangiano gli gnocchi. È un'usanza antica. Mia madre li faceva a mano, con le patate. Tu, a Roma, cosa hai mangiato di buono?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... io mangio la pizza. E... la pasta. Buona."
+   },
+   {
+    "who": "npc",
+    "text": "Bene, bene, pizza e pasta, quelle non sbagli mai. Qui da me la pasta è romana: cacio e pepe, gricia, amatriciana. Sono sulla lavagna, vedi? La gricia è la più antica: guanciale e pecorino, niente altro. Stasera la cucina riapre alle sette e mezza, se hai fame."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, grazie. Io... torno stasera, forse. Grazie, Nino. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Buona giornata."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, buonasera, eccoti qui! Siediti, siediti, il caffè è ancora caldo. Dimmi, l'hai poi trovata una carbonara come si deve, senza panna?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... scusi, non capisco. Più lentamente, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, piano piano. Hai mangiato una carbonara buona? Senza panna?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì. Io mangio carbonara... senza panna. Buona!"
+   },
+   {
+    "who": "npc",
+    "text": "Bravo! Così si fa. Solo uova, guanciale e pecorino, niente altro. Qui la fa Marco, mio figlio, e la fa come la faceva mia madre. Dove l'hai mangiata, la tua?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... al ristorante. Vicino... casa mia. Non qui. Scusi."
+   },
+   {
+    "who": "npc",
+    "text": "Non ti scusare, niente di male! Un ristorante vicino a casa va benissimo. Il guanciale però è il segreto: se c'è la pancetta, non è la stessa cosa. Tu lo sai che cos'è il guanciale?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... guanciale? No, non so. Scusi. Ehm... è carne? Grazie, Nino. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Sì, è carne, la guancia del maiuale! Grazie a te. Arrivederci, a presto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 42,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 21.8,
+    "wordsMax": 42,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 9.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 30,
+    "replies": 5,
+    "wordsMedian": 32,
+    "wordsAvg": 35.6,
+    "wordsMax": 64,
+    "longShare": 0.6,
+    "questionsAvg": 1.2,
+    "multiQuestionShare": 0.4
+   },
+   "learner": {
+    "share": 0.17,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 22,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 22,
+    "wordsMax": 35,
+    "longShare": 0.2,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 22,
+  "openerWords": 30,
+  "multiQuestion": 0.2,
+  "learnerShare": 0.22666666666666668,
+  "learnerWords": 9.466666666666667,
+  "repeats": 0
+ },
+ "sale": 0
+}

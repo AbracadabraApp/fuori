@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "matteo-orafo",
+  "name": "Matteo Pagliai",
+  "role": "gioielliere",
+  "city": "Firenze",
+  "place": "Ponte Vecchio"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Entri pure, entri. Scusi se non alzo lo sguardo, sto sistemando un anello."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... buongiorno. Io... guardo solo, grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Ma certo, guardi con calma, nessuna fretta. Qui in bottega siamo in pochi e il tempo ce l'abbiamo."
+   },
+   {
+    "who": "learner",
+    "text": "Scusi... più lentamente, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo. Guardi pure... con calma. Io lavoro qui."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok... grazie. Ehm... bello qui."
+   },
+   {
+    "who": "npc",
+    "text": "Grazie! È la bottega della mia famiglia. Siamo qui da tanti anni. Lei è in vacanza a Firenze?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no, no vacanza. Io abito qui, a Firenze... da un anno. Ehm... grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Ah, abita qui, che bello! Arrivederci, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, buongiorno! Ma guarda chi si rivede. Venga, venga, entri pure."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno... ehm... io... guardo ancora, grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Faccia pure con calma, io intanto finisco di stringere questo anello. Se vede qualcosa che le piace, me lo dica."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, grazie. Io... guardo."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, certo. Oggi c'è poca gente sul ponte, con questo freddo di novembre. Le piace Firenze d'inverno?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, mi piace. Ma... freddo!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, il freddo di Firenze entra nelle ossa! Qui in bottega teniamo la stufetta accesa tutto il giorno, per fortuna."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, la stufetta... bene. Ehm... grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto, e stia al caldo!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, buongiorno! Entri pure, entri pure. Sono qui al banco, sto sistemando un anello."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno... ehm... io guardo, grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Ma certo, guardi con calma, la domenica non c'√® fretta. Questo anello √® una misura da stringere, un lavoretto semplice. Lei √® gi√† passato da noi, vero?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì... ehm... io passo prima. Due volte."
+   },
+   {
+    "who": "npc",
+    "text": "Esatto, due volte, me lo ricordo. Questa √® la terza, allora! Le piace qualcosa in particolare in vetrina?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, questo... l'anello. Bello."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, ha buon occhio! √à un lavoro fatto a mano, qui in bottega. Il filo d'oro √® intrecciato, ci vuole pazienza."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, bello. Molto... paziente. Ehm... grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Buona domenica."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 13.2,
+    "wordsMax": 18,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 15,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 6.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 16.2,
+    "wordsMax": 25,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 6.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 17,
+  "openerWords": 14,
+  "multiQuestion": 0,
+  "learnerShare": 0.2733333333333334,
+  "learnerWords": 6.866666666666667,
+  "repeats": 0
+ },
+ "sale": 2
+}

@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "giulia-neri",
+  "name": "Giulia Neri",
+  "role": "barista",
+  "city": "Siena",
+  "place": "Bar Il Palio"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Dimmi pure, cosa ti preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal! Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un caffè bello caldo per questo novembre. Lo bevi qui al banco, vero?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, qui. Al banco, okay."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, ecco il tuo caffè! Qui al Palio lo facciamo forte, come piace a noi senesi. Sei di passaggio a Siena o rimani per un po'?"
+   },
+   {
+    "who": "learner",
+    "text": "Rimango per un po'. Io abito qui, a Siena."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, che bello, allora diventi un cliente di casa! Vedi le bandiere qui intorno? Siamo nel Terzo di San Martino, e a luglio e ad agosto qui si vive solo per il Palio. Lo conosci già?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un po'. Il Palio, la corsa, sì? Non so molto. Okay, grazie, il caffè è buono! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te, a presto! Arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ehi, ciao! Bentornato! Il solito caffè oggi, o ti sei stancato del mio?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, il solito. Un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Arriva subito! Intanto dimmi, hai già deciso per chi tifare al prossimo Palio?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi... non capisco. Più piano, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, scusa! Per quale contrada tifi? Hai già scelto?"
+   },
+   {
+    "who": "learner",
+    "text": "Contrada? Non so. Non ho scelto. Io sono nuovo qui."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, non c'è fretta! Qui di solito la contrada non si sceglie, ci si nasce. Ecco il tuo caffè."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, okay. Grazie per il caffè! Bevo qui... è buono. Arrivederci, Giulia, a presto!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao! Eccoti di nuovo, il solito caffè?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, il solito. Un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Arriva subito! Domenica mattina, il bar è tranquillo, ma a luglio qui dentro non si respira."
+   },
+   {
+    "who": "learner",
+    "text": "Scusi... luglio? Non capisco. Più piano, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, scusa! Dico: a luglio c'è il Palio, e il bar è pieno di gente."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, okay. Il Palio, sì. Molta gente. Capisco, grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Ecco il tuo caffè, bello caldo. Tu, a Siena, lavori o studi?"
+   },
+   {
+    "who": "learner",
+    "text": "Io lavoro. Lavoro in un ufficio, qui a Siena. Grazie per il caffè, Giulia! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Di niente! Buona domenica e a presto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 6,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 17.6,
+    "wordsMax": 36,
+    "longShare": 0.2,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 9.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 11.8,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.39,
+    "wordsPerLine": 9.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 7,
+    "replies": 5,
+    "wordsMedian": 12,
+    "wordsAvg": 11.4,
+    "wordsMax": 16,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.41,
+    "wordsPerLine": 9.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 13,
+  "openerWords": 7,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.36999999999999994,
+  "learnerWords": 9.700000000000001,
+  "repeats": 0
+ },
+ "sale": 6
+}

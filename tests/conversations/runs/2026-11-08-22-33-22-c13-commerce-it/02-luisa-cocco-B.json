@@ -1,0 +1,203 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "luisa-cocco-nuova",
+  "name": "Luisa Cocco",
+  "role": "barista",
+  "city": "Roma",
+  "place": "Bar Mattina"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Dimmi pure."
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal. Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Eccolo, un caffè! Sei di passaggio a Roma o ti fermi per un po'?"
+   },
+   {
+    "who": "learner",
+    "text": "Grazie. Io... vivo qui. Un anno."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, un anno a Roma, bello! Allora Testaccio la conoscerai presto, qui siamo tutti di casa. Di dove sei?"
+   },
+   {
+    "who": "learner",
+    "text": "Sono di... Stati Uniti. Di Chicago."
+   },
+   {
+    "who": "npc",
+    "text": "Chicago! Fa freddo là, vero? Qui a novembre è molto più dolce. Come mai a Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Io... lavoro qui. Il mio lavoro è a Roma. Ok, grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, buona giornata e buon lavoro!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Bentornato. Dimmi, cosa ti preparo oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Voglio un cappuccino, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Hai lo scontrino? Dammelo pure, e te lo preparo."
+   },
+   {
+    "who": "learner",
+    "text": "Scusi... scontrino? Non capisco. Cosa è?"
+   },
+   {
+    "who": "npc",
+    "text": "Ah, scusa! Lo scontrino è il foglietto che ti dà la cassiera quando paghi alla cassa. Qui si paga prima, poi lo porti a me e io faccio il cappuccino."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok. Pago... alla cassa? Poi vengo qui?"
+   },
+   {
+    "who": "npc",
+    "text": "Esatto! La cassa è lì, a sinistra. Paghi, prendi lo scontrino e torni da me. Io intanto ti aspetto qui."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, capisco! Vado alla cassa. Grazie mille! Poi... arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "A tra poco!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Che pioggia stamattina, eh? Entra, entra, vieni al caldo. Dimmi pure."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, piove. Voglio un cappuccino, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Hai già lo scontrino? Dammelo pure, che te lo preparo."
+   },
+   {
+    "who": "learner",
+    "text": "Sì! Ho lo scontrino. Ecco, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, grazie! Ecco il cappuccino, caldo caldo. Ti ricordavo, sai? Sei quello di Chicago. Come va con questa pioggia domenicale, esci o te ne stai in casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Sì, io sono... di Chicago. Oggi esco poco. Piove molto."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, fai bene, con questo diluvio meglio stare al riparo. Di domenica qui è tranquillo, la gente arriva più tardi. Tu lavori anche la domenica, o oggi hai il giorno libero?"
+   },
+   {
+    "who": "learner",
+    "text": "Oggi no, non lavoro. Ho il giorno libero. Ok, grazie mille! Arrivederci, buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, buona domenica anche a te! Stai al caldo!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 3,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 11.6,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 7.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 7,
+    "replies": 5,
+    "wordsMedian": 10,
+    "wordsAvg": 14,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 7.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 12,
+    "wordsAvg": 18,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 12,
+  "openerWords": 7,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.31666666666666665,
+  "learnerWords": 8.366666666666667,
+  "repeats": 0
+ },
+ "sale": 9
+}

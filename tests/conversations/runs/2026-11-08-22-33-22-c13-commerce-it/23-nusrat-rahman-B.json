@@ -1,0 +1,203 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "antonio-florian",
+  "name": "Nusrat Rahman",
+  "role": "cameriera",
+  "city": "Venezia",
+  "place": "Caffè Florian"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Benvenuto da Florian. Si accomodi pure dove preferisce, arrivo subito da lei."
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal! Grazie. Io... mi siedo qui?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, quel tavolino va benissimo. Da lì ha una bella vista sulla piazza. Cosa le porto?"
+   },
+   {
+    "who": "learner",
+    "text": "Um... il menu, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Ecco il menu, con calma. Oggi, di lunedì, c'è poca gente, la piazza è tranquilla."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie. Um... la piazza è bella."
+   },
+   {
+    "who": "npc",
+    "text": "Sì, è bellissima, soprattutto a novembre, quando c'è meno confusione. Io ci lavoro da tre anni e non mi stanco mai di guardarla."
+   },
+   {
+    "who": "learner",
+    "text": "Tre anni! Che bello. Um... grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei, arrivederci e buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno, bentornato! Si accomodi pure al tavolino con la vista, se le va. Oggi com'è, con questo tempo di novembre?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Um... fa freddo oggi. Grazie, mi siedo qui."
+   },
+   {
+    "who": "npc",
+    "text": "Sì, oggi fa proprio freddo, c'è anche un po' di umidità. Ecco il menù, così sceglie con calma. Cosa le porto da bere?"
+   },
+   {
+    "who": "learner",
+    "text": "Um... un caffè, per favore. Voglio un caffè caldo."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, subito un caffè bello caldo. Lo porto al tavolo."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie mille! Um... quanto costa?"
+   },
+   {
+    "who": "npc",
+    "text": "Al tavolo un caffè costa nove euro. Se suona l'orchestra in piazza, si aggiunge il supplemento musica, ma adesso non sta suonando."
+   },
+   {
+    "who": "learner",
+    "text": "Nove euro! Um... va bene. Grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ah, sei tornato. Oggi c'è l'acqua alta, vedi? Se vuoi, c'è un tavolino all'asciutto sotto i portici."
+   },
+   {
+    "who": "learner",
+    "text": "Acqua alta... ah, sì. Um, sì, il tavolino, grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, vieni, ti accompagno io. Con l'acqua alta la piazza oggi è quasi vuota, si sta tranquilli. Cosa ti porto?"
+   },
+   {
+    "who": "learner",
+    "text": "Um... un caffè, per favore. Voglio un caffè caldo."
+   },
+   {
+    "who": "npc",
+    "text": "Subito, un caffè caldo. Con questo freddo e l'acqua alta ci vuole proprio. Ti porto anche un bicchiere d'acqua?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie. Um... l'acqua, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Va bene, caffè e acqua, arrivano subito. Intanto tu mettiti comodo."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie, sono comodo. Um... gratsie mille! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego, a presto! Arrivederci!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 14.8,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 6.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 15.6,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 7.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 14.4,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 7.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 18,
+  "openerWords": 18,
+  "multiQuestion": 0,
+  "learnerShare": 0.27666666666666667,
+  "learnerWords": 7.2,
+  "repeats": 0
+ },
+ "sale": 8
+}

@@ -1,0 +1,203 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "giulia-neri",
+  "name": "Giulia Neri",
+  "role": "barista",
+  "city": "Siena",
+  "place": "Bar Il Palio"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Dimmi pure, cosa ti preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal! Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un caffè in arrivo. Ecco qua, bello caldo. Sei di passaggio a Siena, o ti fermi un po'?"
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Io... abito qui. Un anno."
+   },
+   {
+    "who": "npc",
+    "text": "Un anno a Siena, che bello! Allora ti tocca imparare il Palio. Hai già scelto una contrada da tifare?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, non capisco. Cosa è... contrada?"
+   },
+   {
+    "who": "npc",
+    "text": "Ah, scusa! La contrada è il quartiere di Siena: ce ne sono diciassette, ognuna con la sua bandiera e i suoi colori. Qui siamo nel Terzo di San Martino, e le bandiere appese sono delle contrade."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, capisco. No, io non ho una contrada. Grazie, Giulia! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao! Bentornato! Cosa ti preparo oggi, il solito caffè?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un caffè, per favore. Gratsie!"
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Ecco il tuo caffè, bello caldo. Fa freddo oggi, eh? Novembre a Siena ti entra nelle ossa."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, fa freddo. Io... non piace il freddo."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, ti capisco! Per fortuna qui dentro si sta bene. E tra poco a Siena arriva il Natale, con le luci in piazza. Da dove vieni tu, fa più caldo?"
+   },
+   {
+    "who": "learner",
+    "text": "Io vengo da... Texas. Là fa più caldo, sì."
+   },
+   {
+    "who": "npc",
+    "text": "Il Texas! Che differenza con Siena! Qui d'estate fa caldo, ma in Campo, il giorno del Palio, con tutta quella gente, si sta benissimo lo stesso. Hai mai visto una corsa?"
+   },
+   {
+    "who": "learner",
+    "text": "No, io non ho visto una corsa. Grazie, Giulia! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Stai al caldo!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao! Bentornata... o bentornato, scusa! Il solito caffè, immagino? Con questo freddo di novembre ti ci vuole proprio."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, bentornato... io sono uomo. Un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Ma certo, scusami tanto, bentornato! Ecco il tuo caffè, caldo caldo. Sai, da queste parti la domenica mattina il bar si riempie dopo la messa, ma adesso c'è ancora un po' di calma."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Scusi, non capisco... più piano, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, piano piano! Il bar si riempie dopo la messa. Adesso è tranquillo."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, tranquillo, sì. Cosa è... messa?"
+   },
+   {
+    "who": "npc",
+    "text": "La messa è la funzione in chiesa, la domenica mattina. La gente va in chiesa, poi viene qui a prendere un caffè."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, capisco! La gente va in chiesa, poi un caffè. Grazie, Giulia! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego! Arrivederci, a presto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 6,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 17,
+    "wordsMax": 36,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 7.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 9,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 18.8,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 8.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 18,
+    "wordsMax": 33,
+    "longShare": 0.2,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 9
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 18,
+  "openerWords": 9,
+  "multiQuestion": 0,
+  "learnerShare": 0.27,
+  "learnerWords": 8.266666666666667,
+  "repeats": 0
+ },
+ "sale": 6
+}

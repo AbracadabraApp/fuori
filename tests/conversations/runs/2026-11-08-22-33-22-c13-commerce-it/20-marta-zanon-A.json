@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "marco-timon",
+  "name": "Marta Zanon",
+  "role": "proprietaria del bar",
+  "city": "Venezia",
+  "place": "Al Timon"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Bundì! Vegni pure, se sé lì... col fogo che ghe xe incoi, el canal se vede apena. Cossa ve porto?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, non capisco bene. Parla veneziano? Più piano, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, scusi, mi è scappato il veneziano! Dicevo: benvenuto, entri pure. Con questa nebbia il canale quasi non si vede. Cosa le porto?"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok, grazie. Un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, un caffè! Arriva subito. Se vuole, lo beva pure qui fuori, ai tavoli lungo il canale, anche se oggi c'è la nebbia."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie, ma preferisco stare dentro. Fa freddo."
+   },
+   {
+    "who": "npc",
+    "text": "Ha ragione, oggi l'umidità entra nelle ossa. Si sieda dove preferisce, dentro si sta bene. Ecco il suo caffè."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie mille! Il caffè è buono. Io abito qui da poche settimane, e questo bar mi piace. Adesso devo andare. Arrivederci e buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei, e benvenuto a Venezia! Arrivederci, buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Oh, ciao! Sei tornato. Con questa pioggia, vieni dentro, che qui si sta all'asciutto."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie! Oggi piove tanto."
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, a novembre qui è sempre così, l'acqua non finisce mai. Ti va un'ombra de vin e qualche cicheto per scaldarti?"
+   },
+   {
+    "who": "learner",
+    "text": "Un'ombra? Scusi, cosa significa? È un bicchiere di vino?"
+   },
+   {
+    "who": "npc",
+    "text": "Esatto, un'ombra è un piccolo bicchiere di vino, a Venezia si chiama così. Si beve in piedi o al tavolo, con due cicheti accanto, polpette, baccalà, quello che c'è oggi."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, capisco! Sì, prendo un'ombra, grazie. E cosa sono i cicheti?"
+   },
+   {
+    "who": "npc",
+    "text": "I cicheti sono stuzzichini, piccoli assaggi da mangiare in due bocconi: crostini, polpette, sarde in saor, baccalà mantecato. Oggi ho tutto questo. Intanto ti porto l'ombra, rosso o bianco?"
+   },
+   {
+    "who": "learner",
+    "text": "Rosso, per favore. Prendo due cicheti: una polpetta e il baccalà, grazie! Poi devo andare, ma il bar è molto bello. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, rosso con polpetta e baccalà, te li porto subito. Grazie a te, torna presto e arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao, bentornato! Che bello rivederti. Siediti pure dove vuoi, c'è ancora un po' di sole sul canale."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Oggi c'è il sole, che bello. Mi siedo fuori."
+   },
+   {
+    "who": "npc",
+    "text": "Fai bene, di novembre il sole è un regalo. Oggi cosa ti porto, un'altra ombra?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un'ombra, ma bianco oggi, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, un'ombra di bianco. Ti metto anche qualche cicheto, o per ora solo il vino?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un cicheto, per favore. Il baccalà, come l'altra volta."
+   },
+   {
+    "who": "npc",
+    "text": "Il baccalà mantecato, ottima scelta. Arriva subito, intanto goditi il sole."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie mille, Marta! Il sole è bellissimo oggi. Adesso devo andare, ma torno presto. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Buona domenica!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 19,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.34,
+    "wordsPerLine": 12
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 22.4,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 11.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 12.6,
+    "wordsMax": 17,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.4,
+    "wordsPerLine": 10.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 20,
+  "openerWords": 17,
+  "multiQuestion": 0,
+  "learnerShare": 0.3466666666666667,
+  "learnerWords": 11.433333333333332,
+  "repeats": 0
+ },
+ "sale": 9
+}

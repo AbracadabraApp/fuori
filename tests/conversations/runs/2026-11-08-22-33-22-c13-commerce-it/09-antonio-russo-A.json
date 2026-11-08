@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "antonio-russo",
+  "name": "Antonio Russo",
+  "role": "proprietario",
+  "city": "Matera",
+  "place": "Caffè Schiuma"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Entri pure, il caffè qui si beve al banco. Che cosa le preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Un caffè, per favore. Sono nuovo qui, vivo a Matera da poche settimane."
+   },
+   {
+    "who": "npc",
+    "text": "Ecco il suo caffè, caldo caldo. Benvenuto a Matera! Poche settimane, eh? E come si trova nei Sassi?"
+   },
+   {
+    "who": "learner",
+    "text": "Mi piace molto! Ma ci sono tante scale."
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, le scale sono la nostra palestra, qui! Dopo un po' ci si abitua, e le gambe ringraziano. Io le faccio da una vita, ogni mattina per aprire il bar."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ogni mattina! Lei abita vicino al bar?"
+   },
+   {
+    "who": "npc",
+    "text": "Abito un po' più su, nel Sasso Barisano, a cinque minuti a piedi. Salita all'andata, discesa al ritorno... o forse il contrario! Lei invece dove abita?"
+   },
+   {
+    "who": "learner",
+    "text": "Io abito in una casa piccola vicino a Piazza Vittorio Veneto, con un amico. Anch'io faccio tante scale ogni giorno! Va bene, grazie per il caffè, arrivederci e buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei! Arrivederci e buona giornata, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ah, ma guarda chi si rivede. Come va oggi, tutto bene?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, tutto bene, grazie. E Lei?"
+   },
+   {
+    "who": "npc",
+    "text": "Bene, bene, grazie. Oggi c'è un bel sole, per novembre. Il solito caffè?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un caffè, per favore. Sì, oggi c'è bel sole!"
+   },
+   {
+    "who": "npc",
+    "text": "Eccolo, caldo caldo. Lo beve qui al banco o preferisce uscire fuori a guardare il burrone?"
+   },
+   {
+    "who": "learner",
+    "text": "Qui al banco, grazie. Fuori fa un po' freddo."
+   },
+   {
+    "who": "npc",
+    "text": "Fa bene, di mattina l'aria nei Sassi è fresca. Qui al banco si sta caldi."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, è vero, qui si sta bene! Il caffè è buonissimo. Grazie mille, Antonio! Arrivederci e buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a Lei! Arrivederci e buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ah, sei tu, bentornato. Il solito caffè?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno, Antonio! Sì, il solito, grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un caffè, ecco qua, caldo caldo. Di domenica c'è più calma, si sta bene."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, oggi è tranquillo. Ieri sono andato a camminare, ma c'era tanta gente."
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, il sabato arrivano i turisti, soprattutto con il bel tempo. Dove sei andato a camminare?"
+   },
+   {
+    "who": "learner",
+    "text": "Vicino a casa mia, e poi in centro."
+   },
+   {
+    "who": "npc",
+    "text": "Bene, il centro di sabato è sempre pieno. Qui da me, invece, la gente viene presto e se ne va presto: un caffè al banco e via."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, capisco! Io invece oggi non ho fretta. Grazie del caffè, Antonio. Arrivederci e buona domenica!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Arrivederci e buona domenica anche a te!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 19.6,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.38,
+    "wordsPerLine": 15
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 12.6,
+    "wordsMax": 16,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.41,
+    "wordsPerLine": 11
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 8,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 15.4,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 10.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 15,
+  "openerWords": 12,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.3833333333333333,
+  "learnerWords": 12.266666666666666,
+  "repeats": 0
+ },
+ "sale": 4
+}

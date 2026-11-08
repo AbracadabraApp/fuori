@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "lucia-bini",
+  "name": "Lucia Bini",
+  "role": "pasticciera",
+  "city": "Siena",
+  "place": "Pasticceria Bini"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Benvenuta, benvenuto... dimmi pure. Hai già assaggiato i ricciarelli?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ricciarelli? Ripeti, per favore... più lentamente."
+   },
+   {
+    "who": "npc",
+    "text": "Certo. Ric-ciar-elli. Sono biscotti morbidi alle mandorle, con lo zucchero a velo sopra. Sono di Siena, si mangiano a Natale."
+   },
+   {
+    "who": "learner",
+    "text": "Ah... ricciarelli. No, io... non ho assaggiato. Mandorle... sì, mi piace."
+   },
+   {
+    "who": "npc",
+    "text": "Allora ti piaceranno! Sono morbidi, molto di mandorla. Vuoi assaggiarne uno?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie! Ehm... un ricciarello, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Ecco, tieni! È ancora morbido, come deve essere. Dimmi, che ne pensi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... è buono! Molto buono, mi piace. Grazie mille! Arrivederci, buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Arrivederci, buona giornata anche a te!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Che brutta giornata, eh? Venga, venga, qui si sta all'asciutto. Ci siamo già visti, vero? Il ricciarello di qualche giorno fa!"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sì! Ehm... il ricciarello. Buono! Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Mi fa piacere! Oggi ne abbiamo fatti di freschi, e ci sono anche i cavallucci qui accanto. Cosa le serve?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... due ricciarelli, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, due ricciarelli. Li metto in un sacchettino, così non si rovinano con la pioggia. Sono quattro euro. Le serve altro?"
+   },
+   {
+    "who": "learner",
+    "text": "No, grazie... ehm... solo questo. Ecco, quattro euro."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, grazie a lei. Ecco i suoi ricciarelli, con la polvere di zucchero ancora fresca. Stia attento con l'ombrello, che oggi il vento è dispettoso!"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, sì, grazie! Attento... ombrello. Ehm... arrivederci, buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, buona giornata anche a lei!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Bentornato, vuole qualcos'altro oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Ehm... sì, io... due ricciarelli, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, due ricciarelli! Glieli metto nel sacchetto. Sono quattro euro, come l'altra volta."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, quattro euro. Ecco, grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei! Ecco i suoi ricciarelli. Le piacciono proprio, eh? Sono quelli di mandorle che preferisce?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, sì... mi piacciono. Mandorle... molto buone!"
+   },
+   {
+    "who": "npc",
+    "text": "Allora la prossima volta provi anche il panforte, ha mandorle e frutta candita. Lo faccio io, qui in laboratorio."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... panforte? Ah, sì, va bene... la prossima volta. Grazie! Arrivederci, buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, buona domenica!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 12.4,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.37,
+    "wordsPerLine": 9.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 22,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 18.8,
+    "wordsMax": 25,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 7.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 5,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 11.4,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.37,
+    "wordsPerLine": 8.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 13,
+  "openerWords": 10,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.32666666666666666,
+  "learnerWords": 8.433333333333334,
+  "repeats": 0
+ },
+ "sale": 7
+}

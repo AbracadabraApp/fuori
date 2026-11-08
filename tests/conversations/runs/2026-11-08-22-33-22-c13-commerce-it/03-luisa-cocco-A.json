@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "luisa-cocco-nuova",
+  "name": "Luisa Cocco",
+  "role": "barista",
+  "city": "Roma",
+  "place": "Bar Mattina"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Dimmi pure."
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal. Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, un caffè. Hai lo scontrino?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, non capisco. Scontrino?"
+   },
+   {
+    "who": "npc",
+    "text": "Il foglietto della cassa, quello che ti dà chi ha incassato. Quando ce l'hai, me lo dai e ti faccio il caffè."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, no. Non ho il... foglietto. Dove? La cassa?"
+   },
+   {
+    "who": "npc",
+    "text": "Sì, la cassa è lì, all'ingresso, a sinistra. Paghi il caffè e poi torni da me con lo scontrino."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok! La cassa, a sinistra. Grazie! A dopo."
+   },
+   {
+    "who": "npc",
+    "text": "Prego, a dopo!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ah, ti ricordo, sei quello del caffè di qualche giorno fa. Dimmi pure."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, io... uh, ricordo. Voglio un caffè, per favore. Ho lo scontrino!"
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, bravo! Dammi pure lo scontrino. Intanto ti faccio il caffè, un attimo."
+   },
+   {
+    "who": "learner",
+    "text": "Ecco! Lo scontrino. Grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Ecco il caffè, caldo caldo. Stai ancora in zona qui a Testaccio?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, io abito qui. Testaccio, è molto bello!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, è un bel quartiere, anche se un po' vecchio stile. Io ci lavoro da anni e non lo cambierei. Da quanto sei a Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Io sono a Roma... tre mesi. Non capisco tutto, ma imparo! Grazie per il caffè. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Bravo, vedrai che migliori in fretta! Arrivederci, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Che tempaccio oggi, eh? Dimmi pure, cosa ti preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, brutto tempo. Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Hai lo scontrino, o prima vuoi un cornetto per accompagnare?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, ho lo scontrino. No cornetto, grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, allora un caffè in arrivo. Con questa pioggia ci vuole proprio qualcosa di caldo. Anche oggi sei venuto da solo, senza ombrello?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, solo. No ombrello. Sono bagnato!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, si vede! Ecco il tuo caffè, bello caldo. Bevilo piano e scaldati un po'."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie mille! Sì, caldo. Molto buono. Arrivederci, buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Arrivederci, buona domenica!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 3,
+    "replies": 5,
+    "wordsMedian": 6,
+    "wordsAvg": 10.6,
+    "wordsMax": 22,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 7.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 15.4,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 13,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 7.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 11,
+  "openerWords": 10,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.34,
+  "learnerWords": 8.466666666666667,
+  "repeats": 0
+ },
+ "sale": 9
+}

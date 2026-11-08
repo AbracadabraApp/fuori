@@ -1,0 +1,203 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "lucia-bini",
+  "name": "Lucia Bini",
+  "role": "pasticciera",
+  "city": "Siena",
+  "place": "Pasticceria Bini"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Benvenuto da Bini. Dimmi pure."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno... ehm... io... vorrei... ehm... un caffè? Per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, il caffè qui da noi non lo facciamo, siamo solo pasticceria. Il bar qui all'angolo lo fa buonissimo, a due passi. Ma dimmi, sei di passaggio a Siena?"
+   },
+   {
+    "who": "learner",
+    "text": "No... ehm... io abito qui, a Siena."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, abiti qui! Bene, allora siamo quasi vicini. In questo periodo i ricciarelli e il panforte vanno a ruba, è tutto un profumo di mandorle qui dentro."
+   },
+   {
+    "who": "learner",
+    "text": "Scusi... ehm... più lentamente, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, scusa. Qui dentro... profumo di mandorle. Sono i ricciarelli. Li fanno a Natale."
+   },
+   {
+    "who": "learner",
+    "text": "Ah... ehm... ricciarelli. Ho capito, grazie. Allora... arrivederci, buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, buona giornata anche a te!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Che brutta giornata oggi, eh? Entri pure, si sta all'asciutto qui dentro."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno... ehm... sì, piove. Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, a novembre a Siena piove spesso. Ma con questo tempo, i dolci hanno ancora più gusto. Ha già in mente qualcosa?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì... io vorrei... ehm... i ricciarelli, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Ricciarelli, perfetto! Eccoli qui, li ho fatti stamattina. Quanti ne vuole, una scatola piccola o più grande?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... una scatola... piccola, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Ecco la scatola piccola, con un bel nastro. Sono sei ricciarelli, sono morbidi e con tanta mandorla. Sono otto euro."
+   },
+   {
+    "who": "learner",
+    "text": "Otto euro... ecco, per favore. Grazie mille! Arrivederci, buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei! Arrivederci, buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ah, ma guarda chi si rivede! Come va questa domenica?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno... ehm... io... bene, grazie. E lei?"
+   },
+   {
+    "who": "npc",
+    "text": "Bene, bene, grazie. Domenica mattina qui è sempre un viavai, ma mi piace. Oggi vuole dare un'occhiata ai dolci?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì... ehm... vorrei... il panforte, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo! Ecco il panforte, lo faccio con tanta frutta candita e le spezie. Lo vuole intero o una fetta?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... una fetta, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, ecco la sua fetta, gliela incarto subito. Si sta sistemando bene a Siena, vero?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, sì, grazie. Mi piace Siena. Quanto costa, per favore? ... Grazie, arrivederci, buona domenica!"
+   },
+   {
+    "who": "npc",
+    "text": "La fetta fa quattro euro, grazie a lei! Arrivederci, buona domenica anche a lei!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 6,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 16.4,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 15.8,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 7.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 15.6,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 8.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 15,
+  "openerWords": 11,
+  "multiQuestion": 0,
+  "learnerShare": 0.2866666666666667,
+  "learnerWords": 8,
+  "repeats": 0
+ },
+ "sale": 8
+}

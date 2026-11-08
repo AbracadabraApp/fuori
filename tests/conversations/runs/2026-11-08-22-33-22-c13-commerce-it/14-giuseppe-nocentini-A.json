@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "giuseppe-giardiniere",
+  "name": "Giuseppe Nocentini",
+  "role": "capo giardiniere",
+  "city": "Firenze",
+  "place": "Giardino di Boboli"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Il giardino oggi è tranquillo, a novembre c'è poca gente. Posso aiutarla in qualcosa?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, è molto bello qui. Lei lavora nel giardino?"
+   },
+   {
+    "who": "npc",
+    "text": "Sì, sono il capo giardiniere, qui da tanti anni. In questa stagione si potano le siepi e si raccolgono le foglie. E lei, è di passaggio a Firenze?"
+   },
+   {
+    "who": "learner",
+    "text": "No, abito a Firenze da poche settimane."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, allora è nuovo di Firenze! Bene, il Boboli è un buon posto per cominciare. Lei è già salito fino al Forte di Belvedere, in cima al giardino?"
+   },
+   {
+    "who": "learner",
+    "text": "No, non ancora. È lontano?"
+   },
+   {
+    "who": "npc",
+    "text": "No, non è lontano, ma è tutta salita! Da qui sono circa quindici minuti a passo tranquillo, e dall'alto si vede tutta Firenze. Vale la fatica."
+   },
+   {
+    "who": "learner",
+    "text": "Quindici minuti, va bene! Allora oggi salgo fino in cima, voglio vedere tutta la città. Grazie mille per le informazioni e buon lavoro! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Con piacere, buona passeggiata! Arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, buongiorno! Ci siamo già visti l'altro giorno qui nel giardino, vero? Allora, è salito al Forte di Belvedere?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, sono salito! Era molto bello, ho visto tutta la città."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, lo sapevo! Da lassù si vede il Duomo, l'Arno, tutto. E con la luce di novembre è ancora più bella. Lei è stato fortunato col tempo, oggi."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, il tempo era bello! Lei lavora qui ogni giorno?"
+   },
+   {
+    "who": "npc",
+    "text": "Ogni giorno, sì, anche la domenica quando serve. Sono il capo giardiniere, e dopo tanti anni questo giardino è un po' casa mia. Oggi con la squadra sistemiamo le foglie sotto i cipressi."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, capisco. Ha una squadra grande?"
+   },
+   {
+    "who": "npc",
+    "text": "Mah, non tanto grande per un giardino così: siamo una dozzina, tra giardinieri e operai. Il Boboli è enorme, ogni giorno c'è da fare qualcosa."
+   },
+   {
+    "who": "learner",
+    "text": "Una dozzina, capisco! È un lavoro grande. Grazie per le informazioni, Signor Nocentini, e buon lavoro! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei! Arrivederci, e buona passeggiata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, buongiorno! Ci rivediamo, con questa pioggia. Come va, ha trovato un buon riparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, sono sotto un albero. Ma sono un po' bagnato!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, in novembre capita! Questi lecci sono bravi, ma la pioggia passa lo stesso. Almeno il giardino ringrazia, ne aveva bisogno."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, il giardino ha bisogno di acqua? Perché?"
+   },
+   {
+    "who": "npc",
+    "text": "Perché l'estate qui è lunga e secca, e la terra dei viali e delle aiuole resta asciutta per mesi. Con la pioggia d'autunno le radici bevono, e le piante arrivano meglio all'inverno."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, capisco! Allora la pioggia è buona per le piante."
+   },
+   {
+    "who": "npc",
+    "text": "Esatto, per le piante è una benedizione. Per noi giardinieri, un po' meno: il fango sui viali non finisce mai!"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sì, il fango! Capisco, è un lavoro difficile con la pioggia. Allora non la disturbo più. Grazie, Signor Nocentini, e buon lavoro! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei! Arrivederci, e stia al caldo!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 26,
+    "wordsAvg": 20.4,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 11.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 19,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 22.4,
+    "wordsMax": 33,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 11
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 19,
+    "wordsMax": 32,
+    "longShare": 0.2,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 13.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 25,
+  "openerWords": 15,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.3166666666666667,
+  "learnerWords": 11.933333333333332,
+  "repeats": 0
+ },
+ "sale": 0
+}

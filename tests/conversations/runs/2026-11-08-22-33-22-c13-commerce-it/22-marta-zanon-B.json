@@ -1,0 +1,203 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "marco-timon",
+  "name": "Marta Zanon",
+  "role": "proprietaria del bar",
+  "city": "Venezia",
+  "place": "Al Timon"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Bondì! Vien pure, vien pure. Con sta nebia no se vede gnanca el canal, ma qua dentro se sta ben. Cossa te porto?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Scusi, non capisco bene... Può parlare più piano? Un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, piano piano. Un caffè, subito. Si sieda pure dove vuole."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie mille! Mi siedo qui, va bene?"
+   },
+   {
+    "who": "npc",
+    "text": "Va benissimo, quel tavolo è il più tranquillo. Ecco il suo caffè, caldo caldo."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Che buono. Fa freddo oggi, vero?"
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, novembre qui è così: freddo e umido, con la nebbia che entra nelle ossa. Io ci sono nata, in Cannaregio, e ci sono abituata."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sei nata a Cannaregio? Che bello! Io sono arrivato poche settimane fa. Ora devo andare, grazie per il caffè. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, e buona giornata! A presto."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, ecco qua il nostro nuovo arrivato! Sedete pure, con questa pioggia il tavolo sotto il telo sul canale è il più tranquillo. Cosa vi porto oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Un caffè e un cornetto, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Il caffè ve lo faccio adesso, e i cornetti arrivano freschi ogni mattina dal forno qui dietro, in calle. Intanto mettetevi comodo, che fuori diluvia."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Il forno è vicino? Io non conosco ancora la zona."
+   },
+   {
+    "who": "npc",
+    "text": "Sì, a due passi: uscite dal bar, girate a sinistra e in calle è la seconda porta, la riconoscete dal profumo. Venite da lontano, voi, o state da queste parti?"
+   },
+   {
+    "who": "learner",
+    "text": "Sto qui da poche settimane. Abito vicino, in una piccola casa."
+   },
+   {
+    "who": "npc",
+    "text": "Ma che bello, allora siamo quasi vicini di casa! Cannaregio è un bel posto per cominciare, più tranquillo del centro. E vi trovate bene, con questa umidità?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, mi trovo bene, ma l'umidità è un po' forte per me! Ieri sono uscito senza ombrello e sono tornato a casa tutto bagnato. Ora devo andare, grazie per il cornetto! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, e prendete l'ombrello! A presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao, bentornato! Xe domenica, el canal xe calmo... vuto sentarte al solito tavolo soto el tendon?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie! Mi siedo qui."
+   },
+   {
+    "who": "npc",
+    "text": "Perfeto! Con 'sto fredo, magari un'ombra de vin bon e do cicchetti ghe sta ben, ah. Cosa te porto?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, cosa sono i cicchetti?"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, i xe i nostri stuzzichini, picoli bocconi: baccalà mantecato sora el pan, polpetine, sarde in saor, cose cussì. Se magna in do bocconi con el vin."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, capisco! Prendo un cicchetto con il baccalà, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Bon, un baccalà mantecato, subito! L'ho fato stamattina mi, co 'l late e l'ojo, come che se usa qua. E da bévar, un'ombra?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un'ombra, per favore. Grazie mille! Poi devo andare, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Ecco subito, un'ombra! Ciao ciao, bona domenica, a presto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 23,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 16,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.38,
+    "wordsPerLine": 12
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 27,
+    "replies": 5,
+    "wordsMedian": 27,
+    "wordsAvg": 23.2,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 15.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 18.8,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 7.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 19,
+  "openerWords": 23,
+  "multiQuestion": 0,
+  "learnerShare": 0.3233333333333333,
+  "learnerWords": 11.666666666666666,
+  "repeats": 0
+ },
+ "sale": 7
+}

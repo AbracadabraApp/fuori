@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "luisa-cocco-nuova",
+  "name": "Luisa Cocco",
+  "role": "barista",
+  "city": "Roma",
+  "place": "Bar Mattina"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Dimmi pure, dimmi."
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal! Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, subito. Hai lo scontrino?"
+   },
+   {
+    "who": "learner",
+    "text": "No, non ho scontrino. Scusi."
+   },
+   {
+    "who": "npc",
+    "text": "Nessun problema. Ma qui si paga prima alla cassa: il caffè costa un euro e dieci. Poi mi porti lo scontrino e te lo faccio subito."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, okay. Un euro e dieci. Grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego! La cassa è lì, a sinistra. Ti aspetto qui al banco."
+   },
+   {
+    "who": "learner",
+    "text": "Okay, vado alla cassa. Grazie, Luisa! Arrivederci... no, a dopo!"
+   },
+   {
+    "who": "npc",
+    "text": "A dopo!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ah, bentornato! Ti ricordo, sei quello del caffè di qualche giorno fa. Dimmi, cosa prendi oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno, Luisa! Voglio un cappuccino, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, un cappuccino. Hai lo scontrino? Dammelo e te lo preparo subito."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, ecco lo scontrino. Grazie, Luisa!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Ecco qua, un cappuccino caldo. Con questo tempo grigio ci vuole proprio. Ti stai abituando a Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un poco. Roma è molto bella. Ma il tempo... no good."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, a novembre è così, grigio ma mite. Dài, meglio del freddo! E tu, di dove sei?"
+   },
+   {
+    "who": "learner",
+    "text": "Sono americano, di Chicago. Grazie per il cappuccino, Luisa! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Di Chicago, che bello! Prego, a presto e buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Vieni, vieni, c'è un bel diluvio là fuori. Dimmi, cosa ti preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno, Luisa! Voglio un cappuccino, per favore. Fuori... molta acqua!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, oggi è proprio tanta acqua! Hai già lo scontrino? Dammelo pure, intanto ti faccio il cappuccino."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, ecco lo scontrino. Grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Ecco, un attimo e il cappuccino è pronto. Con questa pioggia ci vuole proprio qualcosa di caldo, no?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, sì! Molto caldo. Grazie, Luisa!"
+   },
+   {
+    "who": "npc",
+    "text": "Ecco il tuo cappuccino, caldo caldo! Se vuoi, c'è anche un cornetto fresco qui sul banco. Buona domenica!"
+   },
+   {
+    "who": "learner",
+    "text": "Grazie, Luisa! No, il cornetto no, grazie. Solo il cappuccino. Buona domenica! A presto!"
+   },
+   {
+    "who": "npc",
+    "text": "Va bene, a presto! Buona domenica anche a te, e stai al caldo!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 4,
+    "replies": 5,
+    "wordsMedian": 5,
+    "wordsAvg": 9.8,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.37,
+    "wordsPerLine": 7.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 15.2,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 8.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 16.6,
+    "wordsMax": 21,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 8.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 17,
+  "openerWords": 13,
+  "multiQuestion": 0,
+  "learnerShare": 0.33,
+  "learnerWords": 8.3,
+  "repeats": 0
+ },
+ "sale": 9
+}

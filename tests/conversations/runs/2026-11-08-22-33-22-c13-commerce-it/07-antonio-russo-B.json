@@ -1,0 +1,203 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "antonio-russo",
+  "name": "Antonio Russo",
+  "role": "proprietario",
+  "city": "Matera",
+  "place": "Caffè Schiuma"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Benvenuto al Caffè Schiuma. Dica pure, cosa le preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Un cappuccino, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un cappuccino, ecco qua, caldo caldo. Qui da noi si beve al banco, ma se vuole, dopo può portarlo fuori e guardare il burrone. Con questo sole di novembre si sta bene."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Il burrone? Cosa è?"
+   },
+   {
+    "who": "npc",
+    "text": "Il burrone è quella valle profonda, proprio là davanti, scavata nella roccia. Si chiama la Gravina. Da qui si vedono le grotte dall'altra parte, dove una volta viveva la gente. Il mio bar è dentro il tufo, sa? Fa fresco d'estate e caldo d'inverno."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, interessante! Le grotte... la gente viveva là?"
+   },
+   {
+    "who": "npc",
+    "text": "Sì, sì, per secoli. Famiglie intere, con gli animali, in una sola stanza scavata nella roccia. Anche i miei nonni sono nati in una grotta qui nei Sassi. Poi negli anni Cinquanta il governo ha mandato via tutti, e per tanto tempo questo posto è rimasto vuoto. Adesso, per fortuna, è tornato a vivere."
+   },
+   {
+    "who": "learner",
+    "text": "Che storia interessante! Grazie mille. Adesso porto il cappuccino fuori a guardare le grotte. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego, si goda il sole e la vista! Arrivederci, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, buongiorno! Ma guarda chi si rivede, il cappuccino di tre giorni fa! Come va, tutto bene?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, tutto bene, grazie. E lei?"
+   },
+   {
+    "who": "npc",
+    "text": "Bene, bene, grazie! Oggi in novembre c'è poca gente, la mattina è tranquilla. Cosa le preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Un caffè, per favore. Oggi sono andato a vedere le grotte."
+   },
+   {
+    "who": "npc",
+    "text": "Subito, un caffè! Ah, bravo, le grotte... e che ne pensa? Qual è quella che le è piaciuta di più?"
+   },
+   {
+    "who": "learner",
+    "text": "Mi è piaciuta la grotta con i mobili vecchi. Molto interessante!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, quella è la casa-grotta, la mia preferita! Lì viveva tutta la famiglia, con gli animali, nella stessa stanza. Ecco il suo caffè, è caldo."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie mille! Che bel caffè. Sì, è incredibile, vivevano tutti insieme in una stanza sola! Adesso devo andare. Arrivederci e buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei! Arrivederci e buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ah, sei tornato anche oggi, di domenica. Che bello. Cosa ti preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Un cappuccino, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un cappuccino per te. Ecco, la schiuma di oggi è venuta proprio bene. Da dove guardi il burrone, stamattina, dentro o fuori?"
+   },
+   {
+    "who": "learner",
+    "text": "Fuori, oggi c'è il sole. Grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, a novembre il sole sul burrone è il regalo più bello. Prendi pure il tavolo vicino alla ringhiera, si vede tutto. Dopo, dimmi cosa ne pensi della vista!"
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Sì, bellissima vista. Anche oggi ci sono poche persone qui?"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, a novembre è tranquillo, la gente viene soprattutto d'estate e a Pasqua. Ma di domenica qualcuno arriva sempre, e a me questa calma piace. Tu, cosa fai di bello oggi, dopo il cappuccino?"
+   },
+   {
+    "who": "learner",
+    "text": "Dopo vado a camminare vicino alle grotte e poi torno a casa a mangiare. Grazie per il cappuccino, è molto buono! Arrivederci e buona domenica!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Buona passeggiata, buon pranzo e buona domenica. Arrivederci!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 33,
+    "wordsAvg": 30.4,
+    "wordsMax": 54,
+    "longShare": 0.6,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.18,
+    "wordsPerLine": 8.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 17,
+    "wordsMax": 25,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.38,
+    "wordsPerLine": 12.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 22,
+    "wordsMax": 34,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 11.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 23,
+  "openerWords": 13,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.2866666666666667,
+  "learnerWords": 10.966666666666669,
+  "repeats": 0
+ },
+ "sale": 7
+}

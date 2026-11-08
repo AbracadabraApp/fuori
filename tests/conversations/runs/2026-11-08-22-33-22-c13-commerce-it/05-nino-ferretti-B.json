@@ -1,0 +1,203 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "nino-garbatella",
+  "name": "Nino Ferretti",
+  "role": "oste",
+  "city": "Roma",
+  "place": "Osteria da Nino"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Venga, venga, si sieda un momento. La cucina riapre alle sette e mezza, ma io sono qui con il mio caffè e la lavagna. Ha mai mangiato una vera carbonara a Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì. Io... mangiato carbonara. Molto buona."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, bene, bene! Ma dipende dove, sa? Qui la facciamo con guanciale, pecorino e tuorli d'uovo, e basta. Mai la panna, mai! Dove l'ha mangiata, in centro?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no. Io... vicino casa. Ripeti per favore, \"centro\"?"
+   },
+   {
+    "who": "npc",
+    "text": "Centro. Il centro, la parte vecchia della città, dove vanno tutti i turisti. Allora vicino a casa: bene! Nei posti vicino casa si mangia spesso meglio. E dove abita, qui a Garbatella?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì... io abito qui. Vicino. Ehm... Garbatella, sì."
+   },
+   {
+    "who": "npc",
+    "text": "Ma che bello, siamo vicini allora! Garbatella è il quartiere più bello di Roma, secondo me. Allora deve provare la nostra gricia: guanciale e pecorino, niente altro. È la mamma della carbonara e dell'amatriciana. Ha già mangiato la gricia?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no. Gricia, no. Non ancora. Grazie, Nino. Ehm... arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, il vicino! Vieni, siediti un momento, il caffè è ancora caldo. Oggi è giovedì, sai? Su alla lavagna ci sono gli gnocchi, come vuole l'usanza romana. Li hai mai assaggiati?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gnocchi... sì. Io... mangiato. Una volta."
+   },
+   {
+    "who": "npc",
+    "text": "Una volta soltanto? Allora non li conosci ancora! I nostri si fanno con la semola, al forno, con burro e pecorino. La ricetta è quella di mia madre. Dove li hai mangiati, quella volta?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... non so. Ripeti per favore? Più lentamente."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, piano piano. Dove... hai mangiato... gli gnocchi? In un ristorante? A casa di qualcuno?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... in un ristorante. Sì. Non ricordo... ehm... dove."
+   },
+   {
+    "who": "npc",
+    "text": "Non importa, succede! Ma stasera puoi mangiarli qui, i veri gnocchi alla romana, con un po' di burro e tanto pecorino. La cucina riapre alle sette e mezza. Sono più morbidi di quelli che pensi tu, vedrai."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, grazie, Nino. Forse... stasera. Ehm... io non so. Va bene. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, vicino! A presto."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, il vicino della Garbatella! Vieni, vieni, siediti un attimo. Il caffè è ancora caldo, e io sono qui che guardo la lavagna. Dimmi, hai già pensato a stasera?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... stasera? Scusi... non capisco. Ripeti, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, piano piano. Stasera, la cena. La cucina riapre alle sette e mezza. Ti ricordi? Ti ho parlato degli gnocchi di mia madre. Pensi di venire?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, forse. Io... non so. Ho... lavoro. Ehm... domani?"
+   },
+   {
+    "who": "npc",
+    "text": "Domani, va bene, il lavoro viene prima. Ma ti dico, gli gnocchi alla romana li facciamo di giovedì, non di lunedì. Domani c'è la gricia, quella che non hai ancora assaggiato: guanciale e pecorino, niente altro. Che lavoro fai, tu?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... io lavoro... in ufficio. Ehm... un ufficio."
+   },
+   {
+    "who": "npc",
+    "text": "In ufficio, eh. Allora la pausa pranzo ti serve lunga e buona! Qui vicino, in Garbatella, o lavori lontano?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... lavoro... lontano. Sì. Ehm... metro. Scusi, devo andare. Grazie, Nino. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Buona serata."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 33,
+    "replies": 5,
+    "wordsMedian": 32,
+    "wordsAvg": 27.2,
+    "wordsMax": 39,
+    "longShare": 0.6,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.2,
+    "wordsPerLine": 8.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 31,
+    "replies": 5,
+    "wordsMedian": 31,
+    "wordsAvg": 24.2,
+    "wordsMax": 37,
+    "longShare": 0.6,
+    "questionsAvg": 1.4,
+    "multiQuestionShare": 0.6
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 29,
+    "replies": 5,
+    "wordsMedian": 26,
+    "wordsAvg": 23.8,
+    "wordsMax": 40,
+    "longShare": 0.2,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 9.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 31,
+  "openerWords": 31,
+  "multiQuestion": 0.33,
+  "learnerShare": 0.22333333333333336,
+  "learnerWords": 9.1,
+  "repeats": 0
+ },
+ "sale": 2
+}

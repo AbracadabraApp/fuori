@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "antonio-russo",
+  "name": "Antonio Russo",
+  "role": "proprietario",
+  "city": "Matera",
+  "place": "Caffè Schiuma"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Prego, si accomodi al banco. Cosa le preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un caffè, forte e veloce, come si fa qui. Ecco a lei."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Mmm, buono. Lei lavora qui da molto tempo?"
+   },
+   {
+    "who": "npc",
+    "text": "Da vent'anni, ormai. Il bar è mio, l'ho aperto io. E lei, è di passaggio a Matera?"
+   },
+   {
+    "who": "learner",
+    "text": "No, non sono turista. Abito qui da poche settimane."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, allora benvenuto a Matera! Novembre è il mese giusto, c'è più calma. Come si trova finora?"
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Mi trovo bene, la gente è molto gentile e la città è bellissima. Ieri sono camminato per le strade vicino a casa e ho visto tante cose. Adesso devo andare. Arrivederci e buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei, arrivederci e buona giornata! Ci vediamo presto."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, buongiorno! Bentornato. Il solito caffè, oppure oggi provi qualcosa di diverso?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, il solito caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un caffè in arrivo. Lo prendi qui al banco, come si fa da noi?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, qui al banco, grazie. Mi piace stare qui."
+   },
+   {
+    "who": "npc",
+    "text": "Ecco il tuo caffè, caldo caldo. Ti piace stare qui, mi fa piacere. Hai già visto il burrone da fuori, dai tavolini?"
+   },
+   {
+    "who": "learner",
+    "text": "Burrone? Scusi, non conosco questa parola."
+   },
+   {
+    "who": "npc",
+    "text": "Burrone, la gola profonda qui fuori, con le grotte sulle pareti. Quella che si vede dai tavolini, con tutta la roccia intorno."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ho capito! No, non l'ho visto dai tavolini, ma voglio guardare dopo il caffè. Grazie mille, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego, buona vista! Arrivederci, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ah, sei tornato. Il solito caffè al banco?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, il solito, grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, te lo preparo subito. Oggi è domenica, c'è più calma."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, mi piace la domenica. Ieri sono andato a vedere il burrone, è molto bello!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, hai visto? Con la luce di novembre è ancora più bello. Ecco il tuo caffè, ben caldo."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Sì, la luce è bellissima. Lei vive qui vicino?"
+   },
+   {
+    "who": "npc",
+    "text": "Sì, abito a due passi, nel Sasso Barisano. Dalla finestra vedo i tetti delle case scavate. E tu, dove abiti?"
+   },
+   {
+    "who": "learner",
+    "text": "Io abito in un appartamento vicino al centro, con un amico. Che bello, la sua finestra! Adesso devo andare. Grazie per il caffè, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te, a presto! Buona domenica!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 9,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 13.2,
+    "wordsMax": 17,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.47,
+    "wordsPerLine": 14.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 15.4,
+    "wordsMax": 22,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.34,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 9,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 13,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.45,
+    "wordsPerLine": 13.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 13,
+  "openerWords": 9,
+  "multiQuestion": 0,
+  "learnerShare": 0.42,
+  "learnerWords": 12.666666666666666,
+  "repeats": 0
+ },
+ "sale": 8
+}

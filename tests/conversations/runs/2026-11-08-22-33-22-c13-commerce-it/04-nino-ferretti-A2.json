@@ -1,0 +1,211 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "nino-garbatella",
+  "name": "Nino Ferretti",
+  "role": "oste",
+  "city": "Roma",
+  "place": "Osteria da Nino"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Venga, venga, si sieda un attimo. La cucina è chiusa fino alle sette e mezza, ma io qui sto con il mio caffè e la lavagna dei piatti. Lei è di passaggio, o abita qui a Garbatella?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... io... abito qui. Da due anni."
+   },
+   {
+    "who": "npc",
+    "text": "Due anni, bene! Allora ormai la conosce, Roma. E a tavola, che cosa ha mangiato in questi due anni? Ha assaggiato una vera carbonara?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì... carbonara, sì. Ehm... mi piace."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, bravo, ma attenzione: la vera carbonara è guanciale, pecorino e tuorli d'uovo, punto. Mai la panna, mai! I turisti sbagliano sempre su questo. Qui la fa mio figlio Marco, in cucina, come la faceva mia madre. Lei com'è che la mangia, in genere, con la panna o senza?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... senza panna. Senza, sì."
+   },
+   {
+    "who": "npc",
+    "text": "Ecco, bravo, senza panna! Così si fa. E guardi, la carbonara è parente stretta della gricia: guanciale e pecorino. Se ci metti il pomodoro diventa amatriciana, se ci metti i tuorli diventa carbonara. Una famiglia sola! La gricia l'ha mai assaggiata?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gricia? No... non so. Non ho assaggiato. Grazie, Nino. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, e a presto! Buona giornata."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, eccoti di nuovo! Siediti un momento, il caffè è ancora caldo. Oggi è giovedì, sai cosa vuol dire, no?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... giovedì... no, non so. Scusi?"
+   },
+   {
+    "who": "npc",
+    "text": "Giovedì gnocchi, ragazzo mio! A Roma si fa così da sempre, e sulla lavagna qui vicino alla porta c'è scritto. Mia madre li faceva di patate, morbidi, con un buon sugo di pomodoro. Ne hai mai mangiati, qui a Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gnocchi... sì. Ho mangiato. Ma non... qui. Ripeti, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, ripeto piano. Il giovedì, a Roma, si mangiano gli gnocchi. È un'abitudine antica. Tu li hai mangiati, ma non qui da me. Allora stasera li provi: la cucina apre alle sette e mezza."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... stasera... non so. Forse. Grazie, Nino."
+   },
+   {
+    "who": "npc",
+    "text": "Va bene, nessun obbligo! Quando vuoi, la porta è aperta. Ciao, a presto!"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, grazie. Ciao, Nino! A presto, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Ciao, ciao! Buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, ciao! Vieni, vieni, siediti un attimo. La cucina è chiusa, ma io il caffè lo bevo sempre. Dimmi, hai già mangiato qualcosa oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì. Ho mangiato... un panino. Sì."
+   },
+   {
+    "who": "npc",
+    "text": "Un panino, eh? Va bene, capita. Ma stasera la cucina riapre, e con questo freddo di novembre un buon piatto caldo fa un altro effetto. Mio figlio Marco prepara la gricia che sembra quella di mia madre. L'hai mai assaggiata?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gricia... no. Non ho assaggiato. Ripeti, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo! La gricia: guanciale e pecorino, e basta. È la pasta romana più antica, la madre di tutte. Se aggiungi il pomodoro, diventa amatriciana; se aggiungi i tuorli d'uovo, diventa carbonara."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... carbonara, sì. Gricia... no. Più lentamente, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Va bene, piano. Gricia: guanciale, pecorino. Basta. Con le uova: carbonara. Con il pomodoro: amatriciana."
+   },
+   {
+    "who": "learner",
+    "text": "Ah... ok, capisco. Grazie, Nino. Ehm... forse stasera. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Buona domenica."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 38,
+    "replies": 5,
+    "wordsMedian": 38,
+    "wordsAvg": 31.6,
+    "wordsMax": 49,
+    "longShare": 0.6,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.16,
+    "wordsPerLine": 7.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 22.2,
+    "wordsMax": 40,
+    "longShare": 0.4,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 24,
+    "replies": 5,
+    "wordsMedian": 24,
+    "wordsAvg": 23,
+    "wordsMax": 40,
+    "longShare": 0.4,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 8.5
+   },
+   "repeats": [
+    {
+     "said": "La cucina è chiusa, ma io il caffè lo bevo sempre.",
+     "earlier": "La cucina è chiusa fino alle sette e mezza, ma io qui sto con il mio caffè e la lavagna dei piatti."
+    },
+    {
+     "said": "Se aggiungi il pomodoro, diventa amatriciana; se aggiungi i tuorli d'uovo, diventa carbonara.",
+     "earlier": "Se ci metti il pomodoro diventa amatriciana, se ci metti i tuorli diventa carbonara."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 24,
+  "openerWords": 24,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.20333333333333334,
+  "learnerWords": 7.933333333333334,
+  "repeats": 1
+ },
+ "sale": 2
+}

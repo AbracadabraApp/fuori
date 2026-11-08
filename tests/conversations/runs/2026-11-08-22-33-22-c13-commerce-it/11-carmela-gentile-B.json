@@ -1,0 +1,203 @@
+{
+ "run": "2026-11-08-22-33-22-c13-commerce-it",
+ "at": "2026-11-08T22:33:22.955Z",
+ "label": "c13-commerce-it",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "carmela-gentile",
+  "name": "Carmela Gentile",
+  "role": "venditrice",
+  "city": "Matera",
+  "place": "Mercato di Piccianello"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Venga, venga, guardi che belle cime di rapa stamattina, appena arrivate. E i peperoni cruschi, li ha mai provati?"
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal. Peperoni cruschi? Non capisco. Più piano, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, certo, piano piano! Sono peperoni secchi, rossi. Li friggo, e diventano croccanti, croccanti. Qui a Matera li mangiamo tutti."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, secchi... rossi. Croccanti? Come chips?"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, sì, proprio come le patatine, ma più buoni! Li mangia da soli, oppure li sbriciola sulla pasta. Se vuole, ne assaggia uno."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie! Voglio assaggiare un peperone."
+   },
+   {
+    "who": "npc",
+    "text": "Ecco, tenga, uno croccante, già fritto stamattina. Piano, è leggero ma ha un po' di piccante!"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm, è buono! Un po' piccante, ma buono. Grazie mille! Arrivederci, signora!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, signora! Buona giornata e a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Oh, ma guarda chi si rivede! Buongiorno! Eccoti qua, i peperoni cruschi ti hanno richiamato, eh?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, peperoni cruschi... voglio un peperone, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, bello mio! Ecco qua, te ne do uno bello croccante, appena fritto. Oggi ho anche le cime di rapa freschissime, con questo freddo di novembre sono dolcissime. Le conosci?"
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Cime di rapa... no, non conosco. Cosa sono?"
+   },
+   {
+    "who": "npc",
+    "text": "Sono verdure di campo, con le foglie verdi e dei piccoli fiorellini. Un po' amarognole, ma buonissime. Qui a Matera le mettiamo nelle orecchiette, con un filo d'olio e il peperone crusco sopra. Le fai mai le orecchiette a casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Orecchiette? No, non faccio. Io... compro la pasta al supermercato."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, il supermercato va bene per la pasta, ma le orecchiette fresche le trovi dal pastificio, qui vicino, o dalle signore che le fanno a mano. Io le cime di rapa le raccolgo con mio marito, la mattina presto, in campagna. Tu da dove vieni?"
+   },
+   {
+    "who": "learner",
+    "text": "Io vengo dall'America, da Chicago. Abito a Matera adesso. Grazie mille, signora! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, bello mio, a presto! Buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, ma guarda chi si rivede! Buongiorno! Come va oggi, tutto bene?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno, signora! Sì, tutto bene, grazie. E lei?"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, bene, bene, grazie! Fa un po' freddino stamattina, è novembre, ma il mercato è sempre bello. Oggi ho le cime di rapa freschissime, le abbiamo raccolte alle cinque. Le vuoi vedere?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie. Voglio vedere le cime di rapa."
+   },
+   {
+    "who": "npc",
+    "text": "Ecco, guarda qui, sono belle verdi, vedi? Tenere, con le foglie piccole e i fiorellini. Sono appena arrivate dal campo, ancora con la terra sulle mani! Toccale pure."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sono belle! Quanto costa, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Due euro e cinquanta al chilo, sono un prezzo onesto per questa qualità. Quanto ne vuoi, un chilo?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un chilo, per favore. Ecco, due euro e cinquanta... grazie mille, signora! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te, ecco il chilo! Arrivederci, buona domenica e buon appetito!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 17.2,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 8.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 30,
+    "wordsAvg": 27.6,
+    "wordsMax": 45,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 20.4,
+    "wordsMax": 32,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 20,
+  "openerWords": 16,
+  "multiQuestion": 0,
+  "learnerShare": 0.26,
+  "learnerWords": 9.366666666666667,
+  "repeats": 0
+ },
+ "sale": 5
+}
