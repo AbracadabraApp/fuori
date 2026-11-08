@@ -1,6 +1,6 @@
 # Memory prompt (end of conversation)
 
-version: 2026-10-14a
+version: 2026-11-07a
 
 When a conversation ends, one Claude call reads the transcript and writes two
 things: the character's notes about the person (they come back in the
@@ -23,7 +23,7 @@ Below is a spoken conversation between {name}, a {age}-year-old {role} in {city}
 
 Write two things.
 
-notes: what {name} will remember about this person next time they meet, as short lines in English. The kind of thing a real {role} would remember: their name if they gave it, where they're from, what they ordered, bought or asked about, plans they mentioned, anything promised on either side, something personal they shared. Start from what {name} already remembers: keep what still matters, update what changed, drop small talk. At most 10 lines, each under 15 words. Only what was actually said. Not their mistakes or their level.
+notes: what {name} will remember about this person next time they meet, and what {name} told them, as short lines in English. The kind of thing a real {role} would remember: their name if they gave it, where they're from, what they ordered, bought or asked about, plans they mentioned, anything promised on either side, something personal they shared. Start from what {name} already remembers: keep what still matters, update what changed, drop small talk. At most 10 lines, each under 15 words. Only what was actually said. Not their mistakes or their level.
 
 review: the learning notes, for the learner's teacher. Quote the person's own words exactly.
 - items: the 2 or 3 things from {name}'s {language} most worth learning for this person: useful or recurring words, phrases or structures that look just beyond what they can say, judging by their own lines. "phrase" is the word or short phrase as {name} used it, "en" its meaning, "why" one short line on why it's worth having. Fewer if nothing stands out.
@@ -49,6 +49,11 @@ The conversation:
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-11-07a: the notes also hold what the character told them
+- **Changed:** "what {name} will remember about this person" became "…, and what {name} told them".
+- **Why:** the notes recorded only the learner, so on a return visit the character didn't know what they'd already said and replayed the earlier visit: the same story told as new, the same question asked again after it was answered (test C5, docs/prompt-trials.md: with today's notes Don Ramón asked "¿Ya fue al Jardín?" on all three visits and retold his quiet-town childhood each time; with the clause he carried a thread instead: the churros promised, the churro lady, "¿fuiste por fin…?").
+- **Prompted by:** C4 and C5, 2026-11-07; Josh: repeating topics helps learning, "groundhog day conversations feel broken", and a failure seen in a small test is enough.
 
 ### 2026-10-14a: learning notes for Magda's study file
 - **Added** two fields to the review (now called the learning notes): `missed` (words the person didn't understand, with meaning) and `english` (moments they fell back on English). Mistakes must quote what they actually said.

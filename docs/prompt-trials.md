@@ -552,6 +552,8 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Run 2 (2026-11-07, one 3-visit conversation each, A then B, turns shown live): **both had repeats** (1/1 · 1/1 sets); repeats per set Claude 6 · 3, Grok 8 · 6; callbacks Claude 2 · 1, Grok 9 · 7 (the judges disagree on what's a callback); words per turn 67.5 · 58.1. The variable took effect: B's notes record what he told ("I told them about the old-style churro lady…", "I shared that my mother sent me for churros on Sundays"). Read: A retold the quiet-town childhood on every visit, the Jardín question on all three, "el Jardín no se va a ningún lado" and the paseo; B built a thread across visits (the churros promised, the churro lady, "¿fuiste por fin…?") but still retold his mother's churros story on visit 3 although his notes held it. Sam looped too ("Buenas tardes, Don Ramón" every turn, "mi español va poco a poco" three times), which pulls repeats out of him
 - Decision: hypothesis not met (B wasn't free of repeats); one conversation each is direction only: fewer repeats with B, not none. Notes alone don't stop him retelling what they hold. Not applied
 
+- Applied (2026-11-07, Josh: "If a small test shows repetition you'll see more"): with today's notes the replays are real (one conversation shows them); the clause carried the thread instead. memory.md 2026-11-07a in both countries. Not released; goes with the next build
+
 ### C6 (2026-11-07): drafting the trimmed here line: the scene alone, or the scene and himself?
 - Serves: 3 (local and tipico), 4 (in character)
 - Type: visit (multi-turn, rule 5c)
