@@ -1,5 +1,6 @@
 // C5b (docs/prompt-trials.md → C5b): the met-before line as it is (A) against
-// the same with "Don't repeat yourself." after the notes (B). Only the text sent to Claude changes, inside this
+// the same with "Don't tell them again what you've already told
+// them." after the notes (B). Only the text sent to Claude changes, inside this
 // script: both go through the game's own turn code (B by its replacement-prompt
 // parameter). Don Ramón, one 3-visit conversation each, side by side; Grok plays
 // Sam; the game's memory between visits. The measure: groundhog repeats on
@@ -30,7 +31,7 @@ if (!foundCity || !foundPlace) throw new Error(`no place ${CITY}/${PLACE} in ${l
 const city = foundCity, place = foundPlace;
 const him = characterForPlace(city, place)!;
 if (!him) throw new Error(`nobody at ${CITY}/${PLACE}`);
-const ADDED = "Don't repeat yourself."; // Josh, 2026-11-08: a guardrail, not a steer
+const ADDED = "Don't tell them again what you've already told them."; // Josh, 2026-11-08: a guardrail, not a steer, only on the fault
 
 type Memory = { visits: number; lastVisit: string; notes: string[] } | undefined;
 /** B: the game's own prompt for this turn, with the sentence after the notes line */
