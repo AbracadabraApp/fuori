@@ -66,6 +66,10 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-08: here-line edits cleared (cloud session)
+
+- The cloud session's two `here`-line commits (0684816: 12 planted lines restated as facts and generic filler removed; e124a13: Roma nuova's seven topic-and-example lines as facts) were made a couple of hours before "no prompt change without a test" (e508be2). Josh: "Here is fine": they go out with the next release without a test. Logged in prompt-trials.md.
+
 ## 2026-11-07 (evening): testing, a poor day; handoff for a fresh session (laptop session)
 
 **Josh: "This is appalling lack of test methodology."** He's right. Read this before running any test.
