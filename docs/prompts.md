@@ -37,7 +37,36 @@ Moved out of `content/*/prompts/` on 2026-11-08 to `tests/archive/prompts/<count
 
 Moved out of the live files on 2026-11-08 to `content/<country>/prompts/changelog/<name>.md` (44 files, about 23,900 words). A prompt file now holds only its version and what Claude can be sent. The checks that look for the newest changelog entry read it through `tests/prompt-files.ts`. Verified: for all 44 files the headings, fenced blocks and version line are identical before and after, so what Claude is sent did not change.
 
+## Italy against Mexico (2026-11-08)
+
+Compared part by part: the same 22 files in both countries, 113 named parts, paired in order. **107 of 113 parts are at least 90% the same words**; the differences are the language's own examples. The six that differ more:
+
+- `beginner.md` › English: brief: 85% the same (100 words Italy, 104 words Mexico)
+- `beginner.md` › Voice: no narration: 73% the same (47 words Italy, 49 words Mexico)
+- `beginner.md` › Answers: as a local says them: 70% the same (66 words Italy, 69 words Mexico)
+- `beginner.md` › Answers: one idea: 66% the same (76 words Italy, 78 words Mexico)
+- `lesson-steps.md` › System prompt: 86% the same (709 words Italy, 580 words Mexico)
+- `leveling.md` › Speaking examples: 54% the same (119 words Italy, 120 words Mexico)
+
+`lesson-steps.md` is the only file with a clearly different size (709 live words Italy, 580 Mexico). Nothing here looks like drift; the Mexican files follow the Italian ones, with Spanish examples.
+
+## Rules written more than once (2026-11-08)
+
+Checked the files that are combined into one conversation prompt (`beginner`, `character`, `dialogue`, `levels`, `leveling`, `magda-teaching`, Italy's wording). **No sentence is repeated word for word**: the only close pair is the reply-format line in `beginner` and `character`. The repetition is in the ideas, each written in different words in several parts:
+
+| Topic | Parts that mention it | Files |
+|---|---|---|
+| Brevity (short, brief, at most N sentences) | 26 | beginner, dialogue, leveling, levels, magda-teaching |
+| English (when to speak it, helping in English) | 24 | beginner, character, leveling, levels, magda-teaching |
+| One question | 18 | beginner, character, dialogue, leveling, levels, magda-teaching |
+| Commerce (job, errand, sell, serve, order) | 5 | beginner (Flow, Facts, Who: the learner, Reply format), dialogue |
+| Corrections (never point out, recast) | 5 | beginner (Mistakes), character (Talk), dialogue (two parts), magda-teaching |
+| Stay in role, not a teacher | 5 | beginner, dialogue, leveling, levels, magda-teaching |
+| Goodbye and ending | 4 | beginner, dialogue, magda-teaching |
+| Facts: only what you're sure of | 3 | beginner (two parts), dialogue |
+
+Merging any of these is a change to what Claude is sent, not a tidy-up, so nothing was merged on 2026-11-08. The candidates, in the order I'd take them: commerce (the shared rule drafted in the conversation of 2026-11-08, Beginner's two sentences replaced by it), corrections, then brevity. Each needs Josh's wording first.
+
 ## Not yet done
 
-- Whether the same rule sits in two files (commerce curbs in `dialogue.md` and `beginner.md`; `levels.md` and `leveling.md`) is not checked here.
-- Italy against Mexico: the file sets are the same apart from the archived `lesson.md`; their wording was not compared.
+- Merging the repeated rules above, topic by topic, each with Josh's wording.
