@@ -34,7 +34,8 @@ export function cityCharacterToSheet(
       formality: 'formal', // a newcomer is a stranger at first
       pace: 'normal',
       regionalisms: [],
-      description: `${person.role} at ${where}`,
+      // Empty: it only repeated the role and place the prompt already says (Josh, 2026-11-07: "cut description seems like commonsense")
+      description: '',
     },
     appearance: { description: '', setting },
     portrait: { kind: 'illustrated', prompt: person.portraitPrompt },

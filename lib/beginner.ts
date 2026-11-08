@@ -217,7 +217,7 @@ export function buildBeginnerPrompt(p: {
   const place = city?.places.find((pl) => pl.id === character.placeId);
   const t = loadTemplate();
   const about = [
-    `${character.age} years old. ${character.personality.traits.join(', ')}. ${character.speech.description}`,
+    [`${character.age} years old.`, `${character.personality.traits.join(', ')}.`, character.speech.description].filter(Boolean).join(' '),
     personLine(p.addressedAs),
     relationshipLine(t, p.memory, p.now ?? new Date()),
   ].filter(Boolean).join(' ');
