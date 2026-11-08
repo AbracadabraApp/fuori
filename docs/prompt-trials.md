@@ -648,3 +648,19 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Script: tests/experiments/here-visits.mts
 - Run (2026-11-08, Mac mini, 10 characters, 57 s): **shorter wins by the card's rule**: both judges picked the long line for 4 of 10 (Emiliano, Doña Rosa, Beto, Padre Tomás), the short for 2 (Vale, Ximena), split or same for 4. Words per line A 19.6 · B 18.1, so not a pick on length. Read: the long line's wins are on culture and words (mezcal served with orange and sal de gusano, joven against ahumado; nubes, gladiolas, nardos for altars); the short line's on talk about Sam's own life (Vale's Poniatowska, Ximena's questions answered). Claude alone leaned long (7 of 10). Sam's forced goodbye on the 4th turn cuts across his questions in both versions, and both judges noted it. File: `tests/experiments/results/c8-es-mx-2026-11-08T1809.md`
 - Decision: pending Josh
+
+### C9 (2026-11-08): here lines edited from their own point of view, interviewed
+- Serves: 3 (local and tipico), 4 (in character)
+- Type: interview (H2's: first meeting, fixed questions, no simulated learner; Josh, 2026-11-08: "I had imagined we could test this outside of conversation")
+- Unit: the here line. From C8: the one-sentence line won by the rule but lost cultural material (how mezcal is drunk, flowers for altars); the facts that weren't missed were the encyclopedia ones
+- Variable: A: the here line as it is. B: edited by one rule (Josh, 2026-11-08: "Remove guidebook facts. Apply what we know about avoiding scripts/repeats. Audit all words that could have bad outcome"; "allows for trade, but not exclusive"; "Edit all 10"): keep what he does and how, from his own point of view; cut encyclopedia facts and definitions, the place and neighbourhood the prompt already gives, times ("Sundays", "today", "in the evening"), steering ("for people just starting out", "gifts", "pricier") and traits he already has. Nothing added except a trade action for Vale and Doña Rosa, whose lines had nothing left (Josh: "Ok")
+- Held constant: H2's 10 Mexico characters, the game's turn code and prompt, first meeting, the same 5 questions (what do you do here; what would you recommend; what should someone new here know; where are you from; what do you do in your free time), model and settings
+- Place: Mexico, H2's 10; Italy only if Mexico passes (rule 6)
+- Measure: **shorter wins unless longer clearly wins** (Josh's rule from C8): per character, Claude and Grok each read the two interviews, random order, labelled X and Y, and say which is clearly better for a newcomer learning the country (its people, culture and language), or about the same (C8's wording; "more real things to learn" would reward the version with more facts, which is what B cut). A wins a character when both pick it. Read beside it: what each interview teaches, listed by one reader, so a recited list or a lecture shows (read only, not the decision). Guard: words per reply and per line for A and B, so a pick on length shows
+- Fact or judgment: judgment (both judges, rule 5d, uncalibrated; reasons printed and read)
+- Hypothesis: A wins at most half the characters (5 of 10), so B, the shorter, wins
+- Other outcomes: A wins 6 or more: the cut facts were doing work; read which. One interview per version can't tell a small difference from run-to-run noise; the rule decides, the read says how close. B reciting its kept list as a menu, or lecturing, is read and reported either way
+- Size: 10 characters, one interview per version
+- Time: about 1 minute on the Mac mini
+- Reviewed: test designer, 2026-11-08: pass with three fixes, all taken: C8's judge wording (the first leaned to the version with more facts), the words guard, a note that one interview each can't separate a small difference from noise
+- Script: tests/experiments/interview-here.mts
