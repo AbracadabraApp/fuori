@@ -18,6 +18,7 @@ import { runBeginnerTurn } from '@/lib/beginner';
 import { STAGES } from '@/lib/path';
 import { ask, askGrok, pool, startTest } from './common.mjs';
 import { loadMoments, replay, asTurns, type Moment } from './moments.mjs';
+import { FLOOR, noRules } from './floor-prompt.mjs';
 
 startTest('C2 (2026-11-07)');
 
@@ -27,25 +28,6 @@ const PILOT = ['it-giorgia-opening-return', 'mx-beto-hungry'];
 const RUNS = STEP === 'pilot' ? 2 : 10;
 const NAMES: Record<string, string> = { 'it-giorgia-opening-return': 'Giorgia, her first line', 'it-giorgia-pizza-offer': 'Giorgia, later', 'it-carla-likes-siena': 'Carla, in the park', 'mx-beto-hungry': 'Beto, hungry' };
 const DIR = join(process.cwd(), 'tests', 'experiments', 'results');
-
-/** The floor (the card's text): the game's own first line, then the reply format */
-const FLOOR = `version: floor
-
-## System prompt
-
-\`\`\`
-You are {name}, {role}, in {city}. You're at {setting} {character}
-
-Reply with JSON: parts, in the order you say them. Each part is { kind, text, en, gloss }.
-- english: what you say in English (en and gloss empty).
-- word: something you say in {language}, with its English in en.
-- question: your question in {language}, with its English in en.
-- answer: something they could say back, in {language}, with its English in en; shown to them, not said by you.
-- gloss: empty.
-\`\`\`
-`;
-/** dialogue.md with its every-conversation rules emptied; its Heard blocks (data about what they said) stay */
-const noRules = (md: string) => md.replace(/(^## Every conversation\s*\n+```\n)[\s\S]*?(\n```)/m, '$1$2');
 
 const SCHEMA = { type: 'object', properties: { offers: { type: 'boolean' }, reason: { type: 'string' } }, required: ['offers', 'reason'], additionalProperties: false };
 type Verdict = { offers: boolean; reason: string };
