@@ -1,0 +1,220 @@
+{
+ "run": "2026-11-08-21-32-33-c12-pilot2",
+ "at": "2026-11-08T21:32:33.449Z",
+ "label": "c12-pilot2",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, joven. Pase, pase, siéntese en la silla y le doy una boleada a esos zapatos que se la merecen."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Sí, gracias. Mis zapatos es muy sucio."
+   },
+   {
+    "who": "npc",
+    "text": "Ja, no se preocupe, he visto zapatos mucho peores. Con un poco de grasa y cepillo quedan como nuevos. ¿Son de piel, verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son de piel. Gracias, señor."
+   },
+   {
+    "who": "npc",
+    "text": "De nada, joven. La piel agradece que la cuiden. Ahorita le quito el polvo con el cepillo y luego le pongo la grasa. ¿Usted es de por aquí, de la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, soy de Estados Unidos. Vivo aquí... un año."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bien, joven, un año ya es tiempo para sentirse en casa. Y la Roma es buena colonia para vivir, con sus árboles y sus cafés. ¿Y le gusta la ciudad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gusta la ciudad. Es muy grande, pero me gusta mucho. Bueno, gracias, señor. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven, que le vaya muy bien. Aquí lo espero cuando quiera otra boleada."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Qué gusto verlo otra vez por aquí. Pásele, pásele, suba a la silla, que esos zapatos ya querrán su boleada, ¿verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, mis zapatos están sucios otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Ya lo veo, joven, el polvo de la calle no perdona. Póngalos aquí en el descanso, que yo les saco brillo. ¿Le doy el mismo betún de la otra vez, el café oscuro?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, el café oscuro, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, joven. Primero les paso el cepillo para quitar la tierra, y luego el betún con calma. Un buen brillo no se hace con prisa. ¿Y qué tal su domingo por la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Mi domingo fue bien. Yo... caminé mucho en el parque."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, joven, el parque es lo mejor de la Roma en domingo. Con tanto caminar, por eso los zapatos andan así de polvosos. Ya casi quedan, mire cómo les va saliendo el brillo."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, se ven muy bien. Gracias, señor. ¿Cuánto es, por favor? Y... hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Son sesenta pesos, joven. Gracias a usted, que le vaya muy bien. ¡Hasta luego!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 21,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 24.2,
+    "wordsMax": 31,
+    "longShare": 0.4,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 10.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 24,
+    "replies": 5,
+    "wordsMedian": 33,
+    "wordsAvg": 27.8,
+    "wordsMax": 34,
+    "longShare": 0.6,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 28,
+  "openerWords": 22.5,
+  "multiQuestion": 0,
+  "learnerShare": 0.235,
+  "learnerWords": 10.15,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "Pase, pase, siéntese en la silla y le doy una boleada a esos zapatos que se la merecen."
+  },
+  {
+   "word": "grasa",
+   "source": "line",
+   "said": "Ahorita le quito el polvo con el cepillo y luego le pongo la grasa."
+  },
+  {
+   "word": "betún",
+   "source": "line",
+   "said": "¿Le doy el mismo betún de la otra vez, el café oscuro?"
+  },
+  {
+   "word": "descanso",
+   "source": "own",
+   "said": "Póngalos aquí en el descanso, que yo les saco brillo."
+  },
+  {
+   "word": "Ahorita",
+   "source": "own",
+   "said": "Ahorita le quito el polvo con el cepillo y luego le pongo la grasa."
+  },
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "Y la Roma es buena colonia para vivir, con sus árboles y sus cafés."
+  },
+  {
+   "word": "Pásele",
+   "source": "own",
+   "said": "Pásele, pásele, suba a la silla, que esos zapatos ya querrán su boleada, ¿verdad?"
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "Buenas tardes, joven. Pase, pase, siéntese en la silla y le doy una boleada a esos zapatos que se la merecen."
+  },
+  {
+   "word": "grasa",
+   "source": "line",
+   "said": "Con un poco de grasa y cepillo quedan como nuevos."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita le quito el polvo con el cepillo y luego le pongo la grasa."
+  },
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "Y la Roma es buena colonia para vivir, con sus árboles y sus cafés."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "Pásele, pásele, suba a la silla, que esos zapatos ya querrán su boleada, ¿verdad?"
+  },
+  {
+   "word": "betún",
+   "source": "line",
+   "said": "¿Le doy el mismo betún de la otra vez, el café oscuro?"
+  },
+  {
+   "word": "descanso",
+   "source": "own",
+   "said": "Póngalos aquí en el descanso, que yo les saco brillo."
+  }
+ ]
+}

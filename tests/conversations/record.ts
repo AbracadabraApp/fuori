@@ -47,6 +47,8 @@ export interface Recorded {
   culture?: string[];
   /** C12's place vocabulary: each word with where it came from (the here line or her own) and the sentence it was said in */
   vocab?: import('./measure').VocabWord[];
+  /** The same judge's second list for the same conversation, to measure the judge's own noise apart from the conversations' */
+  vocab2?: import('./measure').VocabWord[];
 }
 
 export function startRun(label: string): { id: string; dir: string } {

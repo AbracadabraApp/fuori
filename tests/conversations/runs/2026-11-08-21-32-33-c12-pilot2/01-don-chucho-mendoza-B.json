@@ -1,0 +1,206 @@
+{
+ "run": "2026-11-08-21-32-33-c12-pilot2",
+ "at": "2026-11-08T21:32:33.449Z",
+ "label": "c12-pilot2",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You shine shoes at your stand in Roma Norte, and customers climb up on the chair for a boleada. You knock the dust off with a brush, work the polish in, then brush and buff until the leather shines. You take pride in a good shine, and you talk with whoever sits above you.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, suba a la silla. Con esos zapatos tan polvosos, aquí tenemos trabajo."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Sí, mis zapatos son muy sucio."
+   },
+   {
+    "who": "npc",
+    "text": "Ja, no se preocupe, joven, he visto zapatos mucho peores. Primero les quito el polvo con el cepillo, luego la grasa, y ya verá cómo quedan. ¿De dónde es usted?"
+   },
+   {
+    "who": "learner",
+    "text": "Soy de Estados Unidos. De Texas."
+   },
+   {
+    "who": "npc",
+    "text": "¡Ah, Texas! Tierra de botas, entonces. Qué bueno que vino a visitarnos, joven. Ahorita le voy sacando brillo a esos zapatos, ya verá."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. Yo no soy turista, yo vivo aquí."
+   },
+   {
+    "who": "npc",
+    "text": "¡Ah, qué bien, joven, entonces ya es vecino de la colonia! Me da gusto. Aquí en la Roma se vive sabroso, con tanto árbol y tanto café. ¿Y hace cuánto que llegó?"
+   },
+   {
+    "who": "learner",
+    "text": "Yo llegué hace seis meses. Bueno, gracias, don Chucho. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven, que le vaya muy bien. Aquí lo espero cuando quiera otra boleada."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pásele, pásele, aquí está la silla. ¿Ya me trae los zapatos empolvados otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, don Chucho. Sí, mis zapatos son sucio otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Ja, ya lo sé, con este polvo de la ciudad no hay zapato que aguante. Súbase a la silla y déjeme sacudirlos con el cepillo. ¿Son los mismos de la vez pasada?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son los mismos. Los zapatos marrones."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, sí, los marrones, buen cuero. Ahorita les quito el polvo y les doy su crema. Ya verá cómo quedan."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, don Chucho. Muy bien."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto, joven. Ya le voy dando con el cepillo, quédese tranquilo ahí arriba. ¿Qué tal su domingo, ha andado paseando por la colonia?"
+   },
+   {
+    "who": "learner",
+    "text": "Mi domingo es bueno. Yo camino un poco por la colonia. Bueno, gracias, don Chucho. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven, que le vaya muy bien. Cuídese mucho."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 23.4,
+    "wordsMax": 32,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 8.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 20.4,
+    "wordsMax": 32,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 10.3
+   },
+   "repeats": [
+    {
+     "said": "Hasta luego, joven, que le vaya muy bien.",
+     "earlier": "Hasta luego, joven, que le vaya muy bien."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 21.5,
+  "openerWords": 16.5,
+  "multiQuestion": 0,
+  "learnerShare": 0.26,
+  "learnerWords": 9.4,
+  "repeats": 1
+ },
+ "vocab": [
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "Aquí lo espero cuando quiera otra boleada."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita le voy sacando brillo a esos zapatos, ya verá."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "¡Buenas tardes, joven! Pásele, pásele, suba a la silla."
+  },
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "¡Ah, qué bien, joven, entonces ya es vecino de la colonia!"
+  },
+  {
+   "word": "grasa",
+   "source": "line",
+   "said": "Primero les quito el polvo con el cepillo, luego la grasa, y ya verá cómo quedan."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "Pásele",
+   "source": "own",
+   "said": "¡Buenas tardes, joven! Pásele, pásele, suba a la silla."
+  },
+  {
+   "word": "grasa",
+   "source": "line",
+   "said": "Primero les quito el polvo con el cepillo, luego la grasa, y ya verá cómo quedan."
+  },
+  {
+   "word": "Ahorita",
+   "source": "own",
+   "said": "Ahorita le voy sacando brillo a esos zapatos, ya verá."
+  },
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "¡Ah, qué bien, joven, entonces ya es vecino de la colonia!"
+  },
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "Aquí lo espero cuando quiera otra boleada."
+  }
+ ]
+}

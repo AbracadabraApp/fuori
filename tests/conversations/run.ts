@@ -46,7 +46,7 @@ import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { cities, language, country } from '@/content';
 import type { CharacterSheet, Place, Turn } from '@/lib/types';
 import { learners, type Learner } from './learners';
-import { scoreVisits, values, cultureCount, vocabCount, vocabCounts, KEYS, label, show, type Key, type Extra, type VisitScore, type Visits, type Line } from './measure';
+import { scoreVisits, values, cultureCount, vocabCount, vocabCounts, vocabMean, vocabFlips, KEYS, label, show, type Key, type Extra, type VisitScore, type Visits, type Line } from './measure';
 import { startRun, record, versions, type Recorded } from './record';
 import { askGrok, startTest } from '../experiments/common.mjs';
 
@@ -245,13 +245,13 @@ async function main() {
         const scores = scoreVisits(visits);
         const culture = CULTURE ? await cultureCount(visits, c.character.name) : undefined;
         const hereLine = (version === 'B' ? variant?.here?.[c.character.name] : undefined) ?? c.here ?? '';
-        const vocab = VOCAB ? await vocabCount(visits, c.character.name, hereLine) : undefined;
+        const [vocab, vocab2] = VOCAB ? await Promise.all([vocabCount(visits, c.character.name, hereLine), vocabCount(visits, c.character.name, hereLine)]) : [undefined, undefined];
         const r: Recorded = {
           run: run.id, at, label: LABEL, card: CARD, versions: versions(), version,
           character: { id: c.character.id, name: c.character.name, role: c.character.role, city: c.city.name, place: c.place.name },
           learner: { type: c.learner.id, model: LEARNER === 'grok' ? GROK : LEARNER === 'tap' ? 'tap' : CLAUDE_MODEL },
           change: version === 'B' ? JSON.stringify({ here: variant?.here?.[c.character.name], system: variant?.system }) : undefined,
-          visits, scores, values: values(scores), ...(culture ? { culture } : {}), ...(vocab ? { vocab } : {}),
+          visits, scores, values: values(scores), ...(culture ? { culture } : {}), ...(vocab ? { vocab, vocab2 } : {}),
         };
         record(run.dir, ++n, r);
         done.set(c.character.name, [...(done.get(c.character.name) ?? []), r]);
@@ -276,10 +276,10 @@ async function main() {
   /** A version's value: the scorecard over all its visits, as real play adds up conversations; culture averaged per conversation */
   const versionValue = (rs: Recorded[], k: Col) => {
     if (k === 'culture') { const xs = rs.flatMap((r) => (r.culture ? [r.culture.length] : [])); return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null; }
-    if (k === 'vocabOwn' || k === 'vocabLine') { const xs = rs.flatMap((r) => (r.vocab ? [vocabCounts(r.vocab)[k === 'vocabOwn' ? 'own' : 'line']] : [])); return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null; }
+    if (k === 'vocabOwn' || k === 'vocabLine') { const xs = rs.flatMap((r) => (r.vocab ? [vocabMean(r.vocab, r.vocab2)[k === 'vocabOwn' ? 'own' : 'line']] : [])); return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null; }
     return values(rs.flatMap((r) => r.scores as VisitScore[]))[k];
   };
-  const one = (r: Recorded, k: Col): number | null => k === 'culture' ? r.culture?.length ?? null : k === 'vocabOwn' || k === 'vocabLine' ? (r.vocab ? vocabCounts(r.vocab)[k === 'vocabOwn' ? 'own' : 'line'] : null) : r.values[k];
+  const one = (r: Recorded, k: Col): number | null => k === 'culture' ? r.culture?.length ?? null : k === 'vocabOwn' || k === 'vocabLine' ? (r.vocab ? vocabMean(r.vocab, r.vocab2)[k === 'vocabOwn' ? 'own' : 'line'] : null) : r.values[k];
   /** How far the numbers move with nothing changed: the average gap between A and its copy */
   const noise = (k: Col) => {
     const gaps = of('A2').flatMap((r2) => { const r1 = of('A').find((r) => r.character.id === r2.character.id); const a = r1 && one(r1, k), b = one(r2, k); return typeof a === 'number' && typeof b === 'number' ? [Math.abs(a - b)] : []; });
@@ -298,6 +298,11 @@ async function main() {
     ...versionsSeen.map((v) => `| ${v === 'A' ? 'A (as is)' : v === 'B' ? `B (${variant?.name})` : 'A again'} (${of(v).length}) | ${cols.map((k) => show(k, versionValue(of(v), k))).join(' | ')} |`),
     ...(of('A2').length ? [`| Noise: A against A again | ${cols.map((k) => show(k, noise(k))).join(' | ')} |`] : []),
   ];
+  // The judge's own noise: the same judge on the same conversation twice, so it can be told from the conversations' noise
+  const judgeGap = (k: 'own' | 'line') => { const g = rows.flatMap((r) => (r.vocab && r.vocab2 ? [Math.abs(vocabCounts(r.vocab)[k] - vocabCounts(r.vocab2)[k])] : [])); return g.length ? g.reduce((a, b) => a + b, 0) / g.length : null; };
+  const flipTotals = rows.reduce((t, r) => { if (r.vocab && r.vocab2) { const f = vocabFlips(r.vocab, r.vocab2); t.flips += f.flips; t.once += f.once; t.n += new Set([...r.vocab, ...r.vocab2].map((w) => w.word.toLowerCase())).size; } return t; }, { flips: 0, once: 0, n: 0 });
+  if (VOCAB) summary.push(`| Judge, same conversation twice: words tagged differently / listed by one run only (of ${flipTotals.n} distinct words) | ${flipTotals.flips} / ${flipTotals.once} |`);
+  if (VOCAB) summary.push(`| Judge noise: the same judge twice, same conversation | ${cols.map((k) => (k === 'vocabOwn' ? show(k, judgeGap('own')) : k === 'vocabLine' ? show(k, judgeGap('line')) : '')).join(' | ')} |`);
   const disagree = [...audits].filter(([, a]) => !a.agrees);
   const md = [
     `# Conversation test: ${LABEL}`, '',

@@ -78,7 +78,7 @@ export async function vocabCount(visits: Visits, who: string, hereLine: string):
   const r = await anthropic.messages.create({
     model: CLAUDE_MODEL,
     max_tokens: 4000,
-    messages: [{ role: 'user', content: `The game told ${who} this about themselves (the "here line"):\n${hereLine}\n\nConversations with ${who}.\n\n${text}\n\nList the ${language.name} words ${who} says that a newcomer learns and that are specific to this place, trade or ${language.card.country}: names of foods, things, crafts and customs, and uncommon words for them. Leave out proper names (people, places, brands) and words any beginner already has (greetings, numbers, colours, everyday verbs). Each word once, in the form said. For each word give source: "line" if the word is in the here line or is another form of a word in it, otherwise "own"; and said: the sentence ${who} said it in. Reply with JSON: words.` }],
+    messages: [{ role: 'user', content: `The game told ${who} this about themselves (the "here line"):\n${hereLine}\n\nConversations with ${who}.\n\n${text}\n\nList the ${language.name} words ${who} says that a newcomer learns and that are specific to this place, trade or ${language.card.country}. Keep: regionalisms (words used in this country or region), terms of ${who}'s own trade, and names of local foods, drinks, crafts, customs and festivals. The test for every word: would a learner not meet it in a standard course, or is it a ${language.card.country} word or custom? Leave out: proper names (people, places, brands); common words any intermediate learner already has (everyday nouns and verbs, greetings, numbers, colours); the fixtures and tools of a shop or stall (shelf, box, brush, cream), which are common words unless they are regionalisms; and payment and shop words (price, pay, card, cash, change, receipt, till). Each word once, in the form said. For each word give source: "line" if the word is in the here line, is another form of a word in it, or is the ${language.name} word for an English word in it (the line was the source); otherwise "own"; and said: the sentence ${who} said it in. Reply with JSON: words.` }],
     output_config: { format: { type: 'json_schema', schema: VOCAB } },
   } as Parameters<typeof anthropic.messages.create>[0]);
   return (JSON.parse(replyText(r as Parameters<typeof replyText>[0])) as { words: VocabWord[] }).words;
@@ -94,4 +94,22 @@ export function vocabCounts(words: VocabWord[]): { own: number; line: number } {
   }
   const all = [...seen.values()];
   return { own: all.filter((x) => x === 'own').length, line: all.filter((x) => x === 'line').length };
+}
+
+/** The mean of the judge's two lists for one conversation (a single list when there is no second) */
+export function vocabMean(a: VocabWord[], b?: VocabWord[]): { own: number; line: number } {
+  const x = vocabCounts(a);
+  if (!b) return x;
+  const y = vocabCounts(b);
+  return { own: (x.own + y.own) / 2, line: (x.line + y.line) / 2 };
+}
+
+/** Between the judge's two lists: words tagged differently (the tag inconsistency the pilot found), and words only one list has */
+export function vocabFlips(a: VocabWord[], b: VocabWord[]): { flips: number; once: number } {
+  const tag = (ws: VocabWord[]) => { const m = new Map<string, 'line' | 'own'>(); for (const w of ws) { const k = plain(w.word); if (k) m.set(k, m.get(k) === 'line' || w.source === 'line' ? 'line' : 'own'); } return m; };
+  const x = tag(a), y = tag(b);
+  let flips = 0, once = 0;
+  for (const [k, t] of x) { if (!y.has(k)) once++; else if (y.get(k) !== t) flips++; }
+  for (const k of y.keys()) if (!x.has(k)) once++;
+  return { flips, once };
 }

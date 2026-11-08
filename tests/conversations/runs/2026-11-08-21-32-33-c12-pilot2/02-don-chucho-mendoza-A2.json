@@ -1,0 +1,190 @@
+{
+ "run": "2026-11-08-21-32-33-c12-pilot2",
+ "at": "2026-11-08T21:32:33.449Z",
+ "label": "c12-pilot2",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, suba a la silla y le dejo esos zapatos como espejo."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Sí, gracias. Yo sentar aquí?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, sí, siéntese ahí, póngase cómodo y apoye los pies aquí en los descansos. Ahorita le empiezo con el cepillo. ¿De dónde es usted?"
+   },
+   {
+    "who": "learner",
+    "text": "Yo soy de Estados Unidos. De Texas."
+   },
+   {
+    "who": "npc",
+    "text": "¡Ah, Texas! Tierra de botas, entonces. Aquí en mi silla han subido muchos paisanos suyos. ¿Y usted cuánto tiempo lleva en la ciudad?"
+   },
+   {
+    "who": "learner",
+    "text": "Yo vivo aquí... um, dos años. Dos años y medio."
+   },
+   {
+    "who": "npc",
+    "text": "¡Vaya, dos años y medio! Ya casi es chilango, joven. Entonces ya conoce bien la Roma. Mire, estos zapatos tienen buen cuero, les va a quedar un brillo bonito. ¿Los usa mucho para el trabajo?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo uso los zapatos mucho para el trabajo. Gracias, señor. ¡Adiós, hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Con mucho gusto, joven! Hasta luego, que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, aquí hay silla para usted. ¿Cómo andan esos zapatos hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Los zapatos... um, están sucios hoy."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, pues para eso estamos. Suba a la silla, que les voy a dar una buena boleada. ¿Son los mismos de la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "No, son zapatos diferentes. Estos son... marrón. Los otros son negros."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, café, entonces. Muy bien, esos piden cera con color, para que revivan. Póngase cómodo."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, gracias. Yo sentar aquí otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Eso es, ahí está bien. Ahorita les quito el polvo con el cepillo y luego les pongo la cera. ¿Anda de paseo por la Roma hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "No, no paseo. Yo trabajo cerca de aquí. Gracias, señor. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven, que le vaya muy bien. Aquí lo espero cuando quiera."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 21.8,
+    "wordsMax": 35,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 9.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 18.6,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 9.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 19,
+  "openerWords": 15.5,
+  "multiQuestion": 0,
+  "learnerShare": 0.275,
+  "learnerWords": 9.5,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "Ah, pues para eso estamos. Suba a la silla, que les voy a dar una buena boleada."
+  },
+  {
+   "word": "chilango",
+   "source": "own",
+   "said": "¡Vaya, dos años y medio! Ya casi es chilango, joven."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Sí, sí, siéntese ahí, póngase cómodo y apoye los pies aquí en los descansos. Ahorita le empiezo con el cepillo."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "¡Buenas tardes, joven! Pásele, pásele, suba a la silla y le dejo esos zapatos como espejo."
+  }
+ ],
+ "vocab2": [
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "Ah, pues para eso estamos. Suba a la silla, que les voy a dar una buena boleada."
+  },
+  {
+   "word": "chilango",
+   "source": "own",
+   "said": "¡Vaya, dos años y medio! Ya casi es chilango, joven."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Sí, sí, siéntese ahí, póngase cómodo y apoye los pies aquí en los descansos. Ahorita le empiezo con el cepillo."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "¡Buenas tardes, joven! Pásele, pásele, suba a la silla y le dejo esos zapatos como espejo."
+  }
+ ]
+}
