@@ -1,0 +1,74 @@
+{
+ "run": "2026-11-08-19-01-51-learner-check",
+ "at": "2026-11-08T19:01:51.375Z",
+ "label": "learner-check",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "memo-tejuino",
+  "name": "Memo Orozco",
+  "role": "tejuinero",
+  "city": "Guadalajara",
+  "place": "Carrito de tejuino junto al Mercado San Juan de Dios"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pásele, pásele. Aquí tiene su tejuino bien frío, ¿con nieve de limón o solito?"
+   },
+   {
+    "who": "learner",
+    "text": "Con nieve de limón, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy buena elección, así lo piden casi todos. Aquí tiene, con su limón y su sal. ¿Es la primera vez que prueba el tejuino?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, es la primera vez. Se ve muy rico."
+   },
+   {
+    "who": "npc",
+    "text": "Ya verá que sí, es dulcecito, fresco y con ese toque ácido del limón. Se hace con masa de maíz fermentada y piloncillo, y yo la preparo aquí mismo cada mañana."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ¿usted lo prepara cada mañana? Qué bueno."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, desde muy temprano, antes de que abra el mercado. La masa necesita su tiempo para fermentar, y así sale fresquecito para la tarde. ¿Usted es de visita por Guadalajara?"
+   },
+   {
+    "who": "learner",
+    "text": "No, no soy turista. Vivo aquí desde hace unas semanas."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien, bienvenido a Guadalajara! Y qué buen lugar para empezar, aquí junto al mercado hay de todo. Ya se va a hacer cliente del tejuino, ya verá."
+   }
+  ]
+ ],
+ "measures": {
+  "visits": 1,
+  "npcLines": 5,
+  "wordsPerLine": 25.8,
+  "questionsPerLine": 0.6,
+  "learnerShare": 0.2,
+  "learnerWordsPerLine": 8.25,
+  "repeats": 0,
+  "repeated": []
+ }
+}

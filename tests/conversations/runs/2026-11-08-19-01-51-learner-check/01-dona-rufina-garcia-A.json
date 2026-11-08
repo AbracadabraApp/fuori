@@ -1,0 +1,74 @@
+{
+ "run": "2026-11-08-19-01-51-learner-check",
+ "at": "2026-11-08T19:01:51.375Z",
+ "label": "learner-check",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "rufina-molinera",
+  "name": "Doña Rufina García",
+  "role": "molinera de chocolate",
+  "city": "Oaxaca",
+  "place": "Chocolate Mayordomo, Calle Mina"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, pase, pase! Bienvenido al molino. ¿Qué se le antoja hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... buenas tardes. Yo... ehm... no entiendo. ¿Más lento, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, con calma. Aquí molemos el chocolate. ¿Quiere probar uno?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Un chocolate, por favor. ¿Cuánto es?"
+   },
+   {
+    "who": "npc",
+    "text": "Mire, la taza de chocolate son treinta y cinco pesos. ¿Lo quiere con agua o con leche?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... con leche, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, con leche. Ahorita se lo sirvo bien caliente. Aquí también tenemos pan de yema para mojar, ¿se lo pongo?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿pan de... yema? Sí, ehm... sí, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Aquí tiene, su chocolate con leche y su pan de yema. Es un pan de huevo, dulce y suavecito, hágale así, mójelo en el chocolate. Cuidado, que está bien caliente. ¿Usted de dónde es?"
+   }
+  ]
+ ],
+ "measures": {
+  "visits": 1,
+  "npcLines": 5,
+  "wordsPerLine": 19.2,
+  "questionsPerLine": 1,
+  "learnerShare": 0.26,
+  "learnerWordsPerLine": 8.25,
+  "repeats": 0,
+  "repeated": []
+ }
+}

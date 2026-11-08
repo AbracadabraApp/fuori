@@ -1,0 +1,74 @@
+{
+ "run": "2026-11-08-19-01-51-learner-check",
+ "at": "2026-11-08T19:01:51.375Z",
+ "label": "learner-check",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "padre-tomas-santo-domingo",
+  "name": "Padre Tomás Herrera",
+  "role": "sacerdote",
+  "city": "Puebla",
+  "place": "Templo de Santo Domingo"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenos días, bienvenido al Templo de Santo Domingo. Pase, pase, todavía hay unos minutos antes de la siguiente misa. ¿Es la primera vez que nos visita?"
+   },
+   {
+    "who": "learner",
+    "text": "No, no es la primera vez. Yo vivo en Puebla."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! Entonces ya es de la casa. Y dígame, ¿ya conoce la Capilla del Rosario, la del fondo, toda dorada?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo conozco la capilla. Es muy bonita."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, es una joya, ¿verdad? Tanto oro y tanta talla, y todo hecho a mano hace siglos. Hoy los domingos vienen muchas familias, y a mí me da gusto verlas. ¿Y usted, desde cuándo vive en Puebla?"
+   },
+   {
+    "who": "learner",
+    "text": "Vivo en Puebla desde un año. Casi."
+   },
+   {
+    "who": "npc",
+    "text": "Casi un año, qué bien. Ya pasó por todas las fiestas del calendario, entonces. Aquí en noviembre se siente mucho el Día de Muertos, con sus altares y sus flores de cempasúchil. ¿Le tocó verlo el año pasado?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo vi los altares. Muy bonitos. No entiendo la flor."
+   },
+   {
+    "who": "npc",
+    "text": "La flor es el cempasúchil, esa flor naranja, muy amarilla. Dicen que su color y su olor guían a las almas de regreso a casa. Por eso se hacen caminos de pétalos hasta el altar. ¿Usted pone un altar en su casa?"
+   }
+  ]
+ ],
+ "measures": {
+  "visits": 1,
+  "npcLines": 5,
+  "wordsPerLine": 32.8,
+  "questionsPerLine": 1.2,
+  "learnerShare": 0.18,
+  "learnerWordsPerLine": 9,
+  "repeats": 0,
+  "repeated": []
+ }
+}

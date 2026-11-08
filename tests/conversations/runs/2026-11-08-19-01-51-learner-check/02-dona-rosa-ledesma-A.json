@@ -1,0 +1,74 @@
+{
+ "run": "2026-11-08-19-01-51-learner-check",
+ "at": "2026-11-08T19:01:51.375Z",
+ "label": "learner-check",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "rosa-flores-ignacio-ramirez",
+  "name": "Doña Rosa Ledesma",
+  "role": "florista",
+  "city": "San Miguel de Allende",
+  "place": "Puesto de flores, Mercado Ignacio Ramírez"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, bienvenido. Mire nomás qué cempasúchil tan bonito me llegó hoy, ideal para el altar. ¿Busca flores para su casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Sí, flores para mi casa. Es el flores bonitas."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, pues aquí hay de las bonitas. Para la casa le recomiendo el cempasúchil, porque en noviembre es el que más se lleva, y huele rico. ¿Es para un altar de Día de Muertos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, es para el altar. Es mi primero vez."
+   },
+   {
+    "who": "npc",
+    "text": "Ay, qué bonito, su primera vez. Mire, el cempasúchil va primero en el altar, porque dicen que su color y su olor guían a los difuntos de regreso a casa. Yo le armo un buen ramo con él. ¿Para quién va a poner el altar?"
+   },
+   {
+    "who": "learner",
+    "text": "Para mi abuelo. Él es muerto... no, murió el año pasado."
+   },
+   {
+    "who": "npc",
+    "text": "Lo siento mucho por su abuelito. Qué bonito que le ponga su altar, seguro va a venir contento a visitarlo. Con el cempasúchil le va a encontrar el camino derechito. ¿Cuántos ramos quiere llevarse?"
+   },
+   {
+    "who": "learner",
+    "text": "Dos ramos, por favor. ¿Cuánto es?"
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto. Dos ramos de cempasúchil son sesenta pesos, y se los dejo bien bonitos. Ahorita se los preparo. ¿Ya tiene el papel picado y las velas, o eso lo va a buscar?"
+   }
+  ]
+ ],
+ "measures": {
+  "visits": 1,
+  "npcLines": 5,
+  "wordsPerLine": 33.6,
+  "questionsPerLine": 1,
+  "learnerShare": 0.18,
+  "learnerWordsPerLine": 9.25,
+  "repeats": 0,
+  "repeated": []
+ }
+}
