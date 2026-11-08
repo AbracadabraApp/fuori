@@ -13,6 +13,8 @@
  *   npm run test:conversations -- --card="C11 (2026-11-08)"   # a test run: refuses without the reviewed card
  *   npm run test:conversations -- --audit              # Grok reads every transcript afterwards (off by default)
  *   npm run test:conversations -- --no-culture --dry
+ *   npm run test:conversations -- --vocab              # also count place vocabulary per conversation (C12): her own words and words from the here line; 20 tags written to vocab-tags.md to read
+
  *   npm run test:conversations -- --level="Beginner: shape"   # experimental level block (content/<country>/prompts/levels.md)
  *
  * Josh, 2026-11-08: counts, not grades ("Prefer clear output measures over
@@ -44,7 +46,7 @@ import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { cities, language, country } from '@/content';
 import type { CharacterSheet, Place, Turn } from '@/lib/types';
 import { learners, type Learner } from './learners';
-import { scoreVisits, values, cultureCount, KEYS, label, show, type Key, type VisitScore, type Visits, type Line } from './measure';
+import { scoreVisits, values, cultureCount, vocabCount, vocabCounts, KEYS, label, show, type Key, type Extra, type VisitScore, type Visits, type Line } from './measure';
 import { startRun, record, versions, type Recorded } from './record';
 import { askGrok, startTest } from '../experiments/common.mjs';
 
@@ -64,6 +66,7 @@ const LEVEL = flag('level');
 const LEVEL_AT = flag('level-at') as 'system' | 'last' | undefined;
 const DRY = has('dry');
 const CULTURE = !has('no-culture');
+const VOCAB = has('vocab');
 // Off by default (Josh, 2026-11-08: "I am skeptical of grok"): uncalibrated, it misread facts (called a bookshop an invented job) and its verdicts swung between runs
 const AUDIT = has('audit') && !!process.env.XAI_API_KEY;
 const GROK = 'grok-4.20-0309-non-reasoning'; // fast; grok-4.7 took up to a minute a call under load (C4)
@@ -241,12 +244,14 @@ async function main() {
         const visits = await conversation(c, version);
         const scores = scoreVisits(visits);
         const culture = CULTURE ? await cultureCount(visits, c.character.name) : undefined;
+        const hereLine = (version === 'B' ? variant?.here?.[c.character.name] : undefined) ?? c.here ?? '';
+        const vocab = VOCAB ? await vocabCount(visits, c.character.name, hereLine) : undefined;
         const r: Recorded = {
           run: run.id, at, label: LABEL, card: CARD, versions: versions(), version,
           character: { id: c.character.id, name: c.character.name, role: c.character.role, city: c.city.name, place: c.place.name },
           learner: { type: c.learner.id, model: LEARNER === 'grok' ? GROK : LEARNER === 'tap' ? 'tap' : CLAUDE_MODEL },
           change: version === 'B' ? JSON.stringify({ here: variant?.here?.[c.character.name], system: variant?.system }) : undefined,
-          visits, scores, values: values(scores), ...(culture ? { culture } : {}),
+          visits, scores, values: values(scores), ...(culture ? { culture } : {}), ...(vocab ? { vocab } : {}),
         };
         record(run.dir, ++n, r);
         done.set(c.character.name, [...(done.get(c.character.name) ?? []), r]);
@@ -266,14 +271,15 @@ async function main() {
   // ---------- Report ----------
   const rows = [...done.values()].flat();
   const of = (v: string) => rows.filter((r) => r.version === v);
-  type Col = Key | 'culture';
-  const cols: Col[] = [...KEYS, ...(CULTURE ? ['culture' as const] : [])];
+  type Col = Key | Extra;
+  const cols: Col[] = [...KEYS, ...(CULTURE ? ['culture' as const] : []), ...(VOCAB ? ['vocabOwn' as const, 'vocabLine' as const] : [])];
   /** A version's value: the scorecard over all its visits, as real play adds up conversations; culture averaged per conversation */
   const versionValue = (rs: Recorded[], k: Col) => {
     if (k === 'culture') { const xs = rs.flatMap((r) => (r.culture ? [r.culture.length] : [])); return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null; }
+    if (k === 'vocabOwn' || k === 'vocabLine') { const xs = rs.flatMap((r) => (r.vocab ? [vocabCounts(r.vocab)[k === 'vocabOwn' ? 'own' : 'line']] : [])); return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null; }
     return values(rs.flatMap((r) => r.scores as VisitScore[]))[k];
   };
-  const one = (r: Recorded, k: Col) => (k === 'culture' ? r.culture?.length ?? null : r.values[k]);
+  const one = (r: Recorded, k: Col): number | null => k === 'culture' ? r.culture?.length ?? null : k === 'vocabOwn' || k === 'vocabLine' ? (r.vocab ? vocabCounts(r.vocab)[k === 'vocabOwn' ? 'own' : 'line'] : null) : r.values[k];
   /** How far the numbers move with nothing changed: the average gap between A and its copy */
   const noise = (k: Col) => {
     const gaps = of('A2').flatMap((r2) => { const r1 = of('A').find((r) => r.character.id === r2.character.id); const a = r1 && one(r1, k), b = one(r2, k); return typeof a === 'number' && typeof b === 'number' ? [Math.abs(a - b)] : []; });
@@ -306,6 +312,12 @@ async function main() {
     '## Transcripts', '', `Each conversation is saved whole in \`${run.dir.replace(process.cwd() + '/', '')}/\`, with its versions, each visit's score (repeated sentences included) and the culture list.`,
   ].join('\n');
   writeFileSync(join(run.dir, 'report.md'), md);
+  if (VOCAB) {
+    // 20 tags to read by hand before the count is believed: the word, its tag, the here line it was tagged against, the sentence
+    const tags = rows.flatMap((r) => (r.vocab ?? []).map((w) => ({ r, w })));
+    const pick = tags.map((t, i) => ({ t, k: (i * 2654435761) % 1000 })).sort((a, b) => a.k - b.k).slice(0, 20).map((x) => x.t);
+    writeFileSync(join(run.dir, 'vocab-tags.md'), ['# Place vocabulary tags to read (20 of ' + tags.length + ')', '', 'Is each word place-specific, and is its tag right (line = in or an inflection of a word in the here line; own = she brought it)?', '', ...pick.map(({ r, w }) => `- **${w.word}** [${w.source}] · ${r.character.name} ${r.version} · "${w.said}"`), ''].join('\n'));
+  }
   console.log(['', ...summary, '', ...(perCharacter.length ? [perCharacter[perCharacter.length - 1], ''] : []), AUDIT ? `Grok: ${audits.size - disagree.length} of ${audits.size} bear out the numbers` : 'Grok: not run', `Time: ${((Date.now() - T0) / 1000).toFixed(0)} s`, `→ ${run.dir.replace(process.cwd() + '/', '')}/report.md`].join('\n'));
 }
 

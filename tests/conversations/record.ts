@@ -45,6 +45,8 @@ export interface Recorded {
   values: Record<Key, number | null>;
   /** The test's own culture count (one reader's list), when run */
   culture?: string[];
+  /** C12's place vocabulary: each word with where it came from (the here line or her own) and the sentence it was said in */
+  vocab?: import('./measure').VocabWord[];
 }
 
 export function startRun(label: string): { id: string; dir: string } {

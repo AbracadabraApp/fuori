@@ -1,0 +1,208 @@
+{
+ "run": "2026-11-08-21-27-31-c12-pilot",
+ "at": "2026-11-08T21:27:31.179Z",
+ "label": "c12-pilot",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pase, pase, suba a la silla. ¿Le doy una boleadita a esos zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Los zapatos es sucio."
+   },
+   {
+    "who": "npc",
+    "text": "Uy, sí, traen su polvito de la calle, pero eso se arregla con un buen cepillado. Póngase cómodo, que ya empiezo. ¿Usted es de por aquí, de la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, yo soy de Estados Unidos. Yo vivo aquí, en la Roma."
+   },
+   {
+    "who": "npc",
+    "text": "¡Ah, qué bueno, un vecino entonces! La Roma es bonita, ya ve, con sus árboles y sus casonas. Yo llevo muchos años con mi puesto aquí. ¿Y ya lleva mucho tiempo viviendo por acá?"
+   },
+   {
+    "who": "learner",
+    "text": "Yo vivo aquí... un año. No, dos años. Perdón."
+   },
+   {
+    "who": "npc",
+    "text": "No se preocupe, joven, dos años ya son harto tiempo. Ya casi es de la colonia, hasta los perros lo conocen. Mire, ya le di la primera capa de grasa a los zapatos, ahorita les saco brillo con el cepillo. ¿Y en qué trabaja usted por aquí?"
+   },
+   {
+    "who": "learner",
+    "text": "Yo trabajo en una oficina. Es trabajo de computadoras. Bueno, gracias, Don Chucho. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Con mucho gusto, joven! Que le vaya muy bien y aquí tiene su casa para otra boleadita. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, joven! Qué bueno verlo otra vez por aquí. Pásele, pásele, suba a la silla."
+   },
+   {
+    "who": "learner",
+    "text": "Hola, Don Chucho. Sí, otra vez. Mis zapatos son sucios."
+   },
+   {
+    "who": "npc",
+    "text": "Ya los veo, joven, con tanto polvo de la calle. No se preocupe, aquí les damos su buena boleada. Ponga el pie aquí en el descanso."
+   },
+   {
+    "who": "learner",
+    "text": "Aquí? Okay. Gracias, Don Chucho."
+   },
+   {
+    "who": "npc",
+    "text": "Ahí mero, así está bien. Primero les quito el polvo con el cepillo, luego les pongo la grasa. ¿Hoy trae los mismos zapatos de la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "No, hoy yo tengo zapatos nuevo. Los otros... están en casa."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bien, zapatos nuevos. Pues vamos a cuidarlos desde el principio, que así duran más. Mire, ya les estoy pasando el cepillo."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, Don Chucho. Están muy bien los zapatos ahora. Bueno, adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto, joven. Que le vaya muy bien, hasta luego."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 29,
+    "wordsAvg": 29,
+    "wordsMax": 47,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 10.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 20.2,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 9.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 26,
+  "openerWords": 15.5,
+  "multiQuestion": 0,
+  "learnerShare": 0.25,
+  "learnerWords": 10.15,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "boleadita",
+   "source": "line",
+   "said": "¿Le doy una boleadita a esos zapatos?"
+  },
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "No se preocupe, aquí les damos su buena boleada."
+  },
+  {
+   "word": "puesto",
+   "source": "own",
+   "said": "Yo llevo muchos años con mi puesto aquí."
+  },
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "Ya casi es de la colonia, hasta los perros lo conocen."
+  },
+  {
+   "word": "harto",
+   "source": "own",
+   "said": "No se preocupe, joven, dos años ya son harto tiempo."
+  },
+  {
+   "word": "grasa",
+   "source": "own",
+   "said": "Mire, ya le di la primera capa de grasa a los zapatos, ahorita les saco brillo con el cepillo."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Mire, ya le di la primera capa de grasa a los zapatos, ahorita les saco brillo con el cepillo."
+  },
+  {
+   "word": "cepillo",
+   "source": "own",
+   "said": "Mire, ya le di la primera capa de grasa a los zapatos, ahorita les saco brillo con el cepillo."
+  },
+  {
+   "word": "descanso",
+   "source": "own",
+   "said": "Ponga el pie aquí en el descanso."
+  },
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "Qué bueno verlo otra vez por aquí. Pásele, pásele, suba a la silla."
+  },
+  {
+   "word": "ahí mero",
+   "source": "own",
+   "said": "Ahí mero, así está bien."
+  },
+  {
+   "word": "casonas",
+   "source": "own",
+   "said": "La Roma es bonita, ya ve, con sus árboles y sus casonas."
+  }
+ ]
+}

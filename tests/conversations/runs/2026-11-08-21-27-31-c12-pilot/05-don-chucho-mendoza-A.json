@@ -1,0 +1,198 @@
+{
+ "run": "2026-11-08-21-27-31-c12-pilot",
+ "at": "2026-11-08T21:27:31.179Z",
+ "label": "c12-pilot",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pase, pase, siéntese en la silla. ¿Le doy una boleadita a esos zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Mis zapatos son muy sucio."
+   },
+   {
+    "who": "npc",
+    "text": "No se preocupe, joven, para eso estoy yo. Con el cepillo y la grasa le quedan como nuevos. Ahorita los dejo bien limpios. ¿Qué color de zapatos son, cafés o negros?"
+   },
+   {
+    "who": "learner",
+    "text": "Son cafés. Los zapatos es café."
+   },
+   {
+    "who": "npc",
+    "text": "Cafés, muy bien. Esos zapatos son de buen cuero, se ve. Primero les paso el cepillo para quitar el polvo, y luego la grasa color café. ¿Usted es de por aquí, de la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, yo soy de Estados Unidos. Pero vivo en la Roma."
+   },
+   {
+    "who": "npc",
+    "text": "¡Ah, mire nomás! De Estados Unidos y viviendo en la Roma, muy buena colonia para vivir. Yo aquí llevo años con mi puestecito, y ya conozco a medio barrio. ¿Y hace mucho que llegó a la ciudad?"
+   },
+   {
+    "who": "learner",
+    "text": "Hace seis meses. Es mi tiempo aquí... eh, vivo aquí seis meses. Bueno, gracias, Don Chucho. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Seis meses ya, qué bueno, joven. Que le vaya muy bien, y aquí lo espero cuando quiera otra boleada. ¡Adiós!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, aquí tiene su silla. ¿Qué tal los zapatos de hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, Don Chucho. Hoy mis zapatos son negros. Y un poco sucio."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, negros, qué bueno, esos se lucen mucho con un buen brillo. Suba el pie aquí, que le quito el polvo primero y luego le doy su boleada. ¿Los trae mucho por la calle?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo camino mucho. Todos los día."
+   },
+   {
+    "who": "npc",
+    "text": "Pues con tanta caminata, el calzado sufre, y más con el polvo de la Roma. Pero ya verá cómo le quedan, como nuevos. Deme el otro pie ahora."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sí. El otro pie. Aquí, Don Chucho."
+   },
+   {
+    "who": "npc",
+    "text": "Eso es, ahí está. Ahorita le doy el cepillado y la grasa, y le va a quedar un brillo que se ve hasta en la esquina. ¿Usted por dónde camina más, joven?"
+   },
+   {
+    "who": "learner",
+    "text": "Yo camino mucho en la Roma, cerca de mi casa. Bueno, gracias, Don Chucho. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto, joven. Que le vaya muy bien, y aquí lo espero. Hasta luego."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 31,
+    "wordsAvg": 27.6,
+    "wordsMax": 37,
+    "longShare": 0.6,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 10.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 28,
+    "wordsAvg": 24.6,
+    "wordsMax": 34,
+    "longShare": 0.4,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 10.5
+   },
+   "repeats": [
+    {
+     "said": "Que le vaya muy bien, y aquí lo espero.",
+     "earlier": "Que le vaya muy bien, y aquí lo espero cuando quiera otra boleada."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 29.5,
+  "openerWords": 15.5,
+  "multiQuestion": 0,
+  "learnerShare": 0.24,
+  "learnerWords": 10.5,
+  "repeats": 1
+ },
+ "vocab": [
+  {
+   "word": "boleadita",
+   "source": "line",
+   "said": "¿Le doy una boleadita a esos zapatos?"
+  },
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "Suba el pie aquí, que le quito el polvo primero y luego le doy su boleada."
+  },
+  {
+   "word": "cepillo",
+   "source": "own",
+   "said": "Con el cepillo y la grasa le quedan como nuevos."
+  },
+  {
+   "word": "grasa",
+   "source": "own",
+   "said": "Con el cepillo y la grasa le quedan como nuevos."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita los dejo bien limpios."
+  },
+  {
+   "word": "nomás",
+   "source": "own",
+   "said": "¡Ah, mire nomás!"
+  },
+  {
+   "word": "colonia",
+   "source": "own",
+   "said": "De Estados Unidos y viviendo en la Roma, muy buena colonia para vivir."
+  },
+  {
+   "word": "puestecito",
+   "source": "own",
+   "said": "Yo aquí llevo años con mi puestecito, y ya conozco a medio barrio."
+  },
+  {
+   "word": "cepillado",
+   "source": "own",
+   "said": "Ahorita le doy el cepillado y la grasa, y le va a quedar un brillo que se ve hasta en la esquina."
+  }
+ ]
+}

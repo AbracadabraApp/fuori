@@ -1,0 +1,209 @@
+{
+ "run": "2026-11-08-21-27-31-c12-pilot",
+ "at": "2026-11-08T21:27:31.179Z",
+ "label": "c12-pilot",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You shine shoes at your stand in Roma Norte, and customers climb up on the chair for a boleada. You knock the dust off with a brush, work the polish in, then brush and buff until the leather shines. You take pride in a good shine, and you talk with whoever sits above you.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, joven, pásele, pásele. Suba a la silla y póngase cómodo, que aquí le dejo los zapatos como espejo."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Eh... ¿subo en la silla? Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, joven, súbase, ahí en los descansapiés ponga los pies. Ahorita le quito el polvo con el cepillo y le voy dando el color. Está bonito el cuero de sus zapatos, ¿de qué color los trae?"
+   },
+   {
+    "who": "learner",
+    "text": "Mis zapatos son café. Eh... marrón? Sí, marrón."
+   },
+   {
+    "who": "npc",
+    "text": "Café, marrón, es lo mismo, joven, aquí le decimos café. Ya con el cepillo les saqué el polvo, ahorita les voy metiendo la grasa. ¿Y usted no es de por aquí, verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "No, soy de Estados Unidos. Eh... de Texas."
+   },
+   {
+    "who": "npc",
+    "text": "¡Ah, Texas! Pues mire nomás, de buenas botas, ¿no? Ya les di la primera mano de grasa y ahorita las cepillo para sacarles el brillo. ¿Y se queda mucho tiempo por acá en México?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, vivo aquí en México... eh, un año. Me gusta mucho. Bueno, gracias, señor. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, joven, un año es buen tiempo para conocer. Que le vaya muy bien, adiós, y aquí me tiene cuando quiera otra boleada."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Joven, qué gusto verlo otra vez por aquí! Suba, suba a la silla, que hoy está el sol bueno. ¿Otra vez los cafés?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, señor. Los zapatos café, por favor. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, joven. Primero les quito el polvo con el cepillo, ahorita los dejo como espejo. Ponga los pies aquí, en los descansos. ¿Cómo le fue en la semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Eh... bien, gracias. Trabajo mucho. ¿Y usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Ay, joven, aquí andamos, gracias a Dios. Los domingos hay buena gente en la Roma, y eso se agradece. Ya les puse la crema, ahorita le doy con el cepillo."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, la Roma. Sí, muy bonito. Eh... ¿usted trabaja todos los días?"
+   },
+   {
+    "who": "npc",
+    "text": "Casi todos, joven, de lunes a domingo, aunque ya me canso más rápido que antes. Pero estar aquí me gusta, platico con la gente y el tiempo se va solo. Ahorita le doy el último pulido a este pie."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sí, es bueno. Eh... usted trabaja mucho. Bueno, gracias, señor. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted, joven. Que le vaya muy bien, y cuídese mucho. Hasta luego."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 32,
+    "wordsAvg": 29.2,
+    "wordsMax": 36,
+    "longShare": 0.6,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 10
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 23,
+    "replies": 5,
+    "wordsMedian": 30,
+    "wordsAvg": 27.2,
+    "wordsMax": 39,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 10.3
+   },
+   "repeats": [
+    {
+     "said": "Que le vaya muy bien, y cuídese mucho.",
+     "earlier": "Que le vaya muy bien, adiós, y aquí me tiene cuando quiera otra boleada."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 31,
+  "openerWords": 21.5,
+  "multiQuestion": 0.1,
+  "learnerShare": 0.225,
+  "learnerWords": 10.15,
+  "repeats": 1
+ },
+ "vocab": [
+  {
+   "word": "pásele",
+   "source": "own",
+   "said": "Buenas tardes, joven, pásele, pásele."
+  },
+  {
+   "word": "boleada",
+   "source": "line",
+   "said": "Que le vaya muy bien, adiós, y aquí me tiene cuando quiera otra boleada."
+  },
+  {
+   "word": "descansapiés",
+   "source": "own",
+   "said": "Sí, joven, súbase, ahí en los descansapiés ponga los pies."
+  },
+  {
+   "word": "descansos",
+   "source": "own",
+   "said": "Ponga los pies aquí, en los descansos."
+  },
+  {
+   "word": "cepillo",
+   "source": "own",
+   "said": "Ahorita le quito el polvo con el cepillo y le voy dando el color."
+  },
+  {
+   "word": "ahorita",
+   "source": "own",
+   "said": "Ahorita le quito el polvo con el cepillo y le voy dando el color."
+  },
+  {
+   "word": "cuero",
+   "source": "own",
+   "said": "Está bonito el cuero de sus zapatos, ¿de qué color los trae?"
+  },
+  {
+   "word": "grasa",
+   "source": "own",
+   "said": "Ya con el cepillo les saqué el polvo, ahorita les voy metiendo la grasa."
+  },
+  {
+   "word": "crema",
+   "source": "own",
+   "said": "Ya les puse la crema, ahorita le doy con el cepillo."
+  },
+  {
+   "word": "nomás",
+   "source": "own",
+   "said": "Pues mire nomás, de buenas botas, ¿no?"
+  },
+  {
+   "word": "pulido",
+   "source": "own",
+   "said": "Ahorita le doy el último pulido a este pie."
+  }
+ ]
+}

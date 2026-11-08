@@ -1,0 +1,173 @@
+{
+ "run": "2026-11-08-21-27-31-c12-pilot",
+ "at": "2026-11-08T21:27:31.179Z",
+ "label": "c12-pilot",
+ "card": "C12 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "vale-libros-tecolote",
+  "name": "Vale Ortiz",
+  "role": "librera",
+  "city": "Ciudad de México",
+  "place": "Libros Tecolote"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, bienvenida o bienvenido a Libros Tecolote. Si buscas algo, aquí estoy."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Yo... busco un libro. Para aprender español."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, estás en el lugar correcto. Tengo un estante con libros fáciles, hechos justo para empezar. ¿Qué tanto español sabes ya?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... poco. Muy poco. Soy... principiante."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, entonces el estante es para ti. Tiene cuentos cortos, con frases sencillas y dibujos. Está allá, junto a la ventana. ¿Vives aquí en Coyoacán?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Yo vivo aquí... en México. Ehm... no en Coyoacán. Cerca."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, cerca, qué bien. Entonces puedes venir seguido a ver qué libros nuevos llegan. Los jueves es tranquilo, así que con calma puedes mirar el estante."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, gracias. Voy a mirar el estante. Ehm... adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, que disfrutes los libros. Aquí estaré."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué bueno verte otra vez. ¿Cómo te fue con la repisa de la ventana?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Ehm... la repisa... ¿cómo? Más lento, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Hola. ¿Compraste un libro? ¿El de la ventana?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Compré un libro. Es... para principiantes."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien! Es buen comienzo. ¿Ya lo empezaste a leer?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Un poco. Es... difícil, pero me gusta."
+   },
+   {
+    "who": "npc",
+    "text": "Es normal, al principio cuesta. Poco a poco se va haciendo más fácil. ¿Cuál es la parte más difícil?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... las palabras. Son muchas palabras nuevas. Ehm... bueno, gracias. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto. ¡Adiós, hasta luego!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 18.8,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 9.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 10,
+    "wordsAvg": 11.6,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.41,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 16,
+  "openerWords": 14,
+  "multiQuestion": 0.1,
+  "learnerShare": 0.35,
+  "learnerWords": 9.9,
+  "repeats": 0
+ },
+ "vocab": [
+  {
+   "word": "estante",
+   "source": "line",
+   "said": "Tengo un estante con libros fáciles, hechos justo para empezar."
+  },
+  {
+   "word": "repisa",
+   "source": "own",
+   "said": "¿Cómo te fue con la repisa de la ventana?"
+  },
+  {
+   "word": "cuentos",
+   "source": "own",
+   "said": "Tiene cuentos cortos, con frases sencillas y dibujos."
+  },
+  {
+   "word": "frases",
+   "source": "own",
+   "said": "Tiene cuentos cortos, con frases sencillas y dibujos."
+  },
+  {
+   "word": "dibujos",
+   "source": "own",
+   "said": "Tiene cuentos cortos, con frases sencillas y dibujos."
+  }
+ ]
+}
