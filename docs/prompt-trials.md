@@ -668,3 +668,19 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Decision: pending Josh
 - Run, Italy to confirm (2026-11-08, Mac mini, 10 characters, 25 s): **shorter wins by the rule, at the limit**: both judges picked the current line for 5 of 10 (Giorgia, Carmela, Giulia, Marta, Nusrat), the edited for 3 (Lucia's Grok only; Andrea, Luisa, Tommaso), split or same for 2. Things taught A 123 · B 133; words per reply A 29.0 · B 26.8. Read: **the noise is as big as the effect.** Antonio's line is the same in A and B and the judges split; Carmela's lost only a few words and both judges picked A (on things neither line holds: bread selling out by noon, thirty years at the stall). Of the real wins for the current line, Giorgia (the 1943 bombing) and Giulia (the Palio dates) were on cut facts: the judges count a date as cultural content. No garbled characters this run. File: `tests/experiments/results/c9-it-2026-11-08T1831.md`
 - Decision: pending Josh. Both countries pass by the rule (Mexico 4, Italy 5 of 10 for the current line); one interview per character can't separate a small difference from noise (Antonio, Carmela)
+
+### C10 (2026-11-08): the current here line against the edited one, over return visits
+- Serves: 3 (local and tipico), 4 (in character)
+- Type: visit (multi-turn, rule 5c)
+- Unit: the here line, with memory improved (C5, C5b). Josh, 2026-11-08: "My current opinion (untested) is current here + improved memory would beat short + memory". C8 had the current line against one sentence (current 4 clear wins, short 2); C9 had current against edited in a single interview (edited passed in both countries, within noise); the edited line over visits is untested
+- Variable: A: the here line as it is. B: C9's edited line (what he does and how, from his own point of view; no encyclopedia facts, repeated place names, times, steering or repeated traits)
+- Held constant: C8's setup and script (tests/experiments/here-visits.mts with B=edited): today's game with both memory fixes, memory written by the game between visits, Sam on Grok, 3 visits 3 days apart, 4 Sam turns, H2's 10 Mexico characters, model and settings
+- Place: Mexico, H2's 10; Italy only if Josh asks
+- Measure: C8's: per character, Claude and Grok read the two 3-visit conversations blind (X/Y, order written to the file) and say which is clearly better for a newcomer learning the country (its people, culture and language), or about the same; A wins a character when both pick it. Josh's rule: shorter wins unless longer clearly wins (6 or more of 10)
+- Fact or judgment: judgment (both judges, uncalibrated; reasons printed and read; words per line guard)
+- Hypothesis: (Josh's) the current line wins: both judges pick A for 6 or more of 10
+- Other outcomes: A wins 5 or fewer: by the rule the edited line wins; read whether the current line's wins are on facts used well or on noise (C9: identical lines split). Read the current line's conversations for facts replayed despite memory
+- Size: 10 characters, one 3-visit conversation per version, side by side
+- Time: about 1 minute on the Mac mini
+- Reviewed: test designer, 2026-11-08: pass (B=edited takes C9's Mexico lines word for word and the C10 card; only the here line differs); one fix taken: the result file is labelled C10 and edited, not C8 and short
+- Script: tests/experiments/here-visits.mts (B=edited)

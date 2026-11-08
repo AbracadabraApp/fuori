@@ -14,7 +14,9 @@ import { summarizeWithClaude } from '@/lib/remember';
 import type { CharacterSheet, Turn } from '@/lib/types';
 import { ask, askGrok, startTest } from './common.mjs';
 
-startTest('C8 (2026-11-08)');
+// B=edited: C10, the C9 edited lines in place of the one sentence
+const B_LINES = process.env.B ?? 'short';
+startTest(B_LINES === 'edited' ? 'C10 (2026-11-08)' : 'C8 (2026-11-08)');
 
 const FAST_GROK = 'grok-4.20-0309-non-reasoning';
 const VISITS = 3, SAM_TURNS = 4;
@@ -33,12 +35,26 @@ const SHORT: Record<string, string> = {
   'Padre Tomás Herrera': 'You greet people at the Templo de Santo Domingo between services.',
 };
 
+const EDITED: Record<string, string> = {
+  'Don Chucho Mendoza': 'You spend your day at your stand, shining shoes with polish and a brush for customers who climb up on the chair for a boleada.',
+  'Vale Ortiz': 'You work at Libros Tecolote, finding people the book they didn\'t know they wanted.',
+  'Doña Ofelia Santiago': 'You make tlayudas on the comal, spread with asiento, beans and quesillo, while tasajo and cecina enchilada grill over charcoal and smoke fills the aisle.',
+  'Emiliano Matus': 'You tend the bar at Mezcalería Los Amantes, serving mezcal in small copitas, sipped slowly with orange slices and sal de gusano. Espadín is what you pour most often.',
+  'Memo Orozco': 'You run a tejuino cart next to the Mercado San Juan de Dios, serving it with lime, salt and ice, and a scoop of lime nieve on top for those who want it.',
+  'Ximena Godínez': 'You shape clay and paint your pieces in your workshop: cazuelas, jarros and plates, some polished by hand with a smooth stone.',
+  'Doña Rosa Ledesma': 'You sell flowers at your stall, wrapping them in paper for people who want them for the church or for the altar at home.',
+  'Beto Rangel': 'You wait at the taxi stand by the Jardín Allende, taking people up and down the cobbled streets.',
+  'Sofía Quintero': 'You help out in your family\'s dulcería on the Calle de los Dulces, selling camote, tortitas de Santa Clara, muéganos and jamoncillo.',
+  'Padre Tomás Herrera': 'You are the priest at the Templo de Santo Domingo, and you greet people between services.',
+};
+const B_SET = B_LINES === 'edited' ? EDITED : SHORT;
+
 const people = cities.filter((c) => !c.hidden).flatMap((c) =>
   (c.characters ?? []).filter((p) => p.here && c.places.some((x) => x.id === p.placeId && !x.hidden && x.characterId === p.id)).slice(0, 2).map((p) => ({ city: c, place: c.places.find((x) => x.id === p.placeId)!, here: p.here! }))).slice(0, 10);
 
 function sheets(p: typeof people[number]): { A: CharacterSheet; B: CharacterSheet } {
   const A = characterForPlace(p.city, p.place)!;
-  const short = SHORT[A.name];
+  const short = B_SET[A.name];
   if (!short) throw new Error(`no short line for ${A.name}`);
   if (!A.appearance.setting.endsWith(p.here)) throw new Error(`${A.name}: here line not at the end of the setting`);
   return { A, B: { ...A, appearance: { ...A.appearance, setting: A.appearance.setting.slice(0, -p.here.length) + short } } };
@@ -107,7 +123,7 @@ async function one(p: typeof people[number]) {
   const name = (v: V['better']) => (v === 'same' ? 'same' : (v === 'X') === !flip ? 'A' : 'B');
   const c = name(vc.better), g = name(vg.better);
   console.log(`${A.name}: Claude ${c} · Grok ${g}  (${((Date.now() - T0) / 1000).toFixed(0)} s)`);
-  return { name: A.name, here: p.here, short: SHORT[A.name], a, b, claude: { pick: c, reason: vc.reason }, grok: { pick: g, reason: vg.reason }, order: flip ? 'X = B, Y = A' : 'X = A, Y = B', aWins: c === 'A' && g === 'A', bWins: c === 'B' && g === 'B', words: { a: wpl(a), b: wpl(b) } };
+  return { name: A.name, here: p.here, short: B_SET[A.name], a, b, claude: { pick: c, reason: vc.reason }, grok: { pick: g, reason: vg.reason }, order: flip ? 'X = B, Y = A' : 'X = A, Y = B', aWins: c === 'A' && g === 'A', bWins: c === 'B' && g === 'B', words: { a: wpl(a), b: wpl(b) } };
 }
 
 const settled = await Promise.allSettled(people.map(one));
@@ -115,12 +131,12 @@ for (const r of settled) if (r.status === 'rejected') console.error(`failed: ${r
 const out = settled.flatMap((r) => (r.status === 'fulfilled' ? [r.value] : []));
 const avg = (k: 'a' | 'b') => (out.reduce((n, o) => n + o.words[k], 0) / out.length).toFixed(1);
 const aWins = out.filter((o) => o.aWins).length, bWins = out.filter((o) => o.bWins).length;
-const result = `Long (A) wins ${aWins} of ${out.length} (both judges), short (B) ${bWins}, the rest split or same. ${aWins > out.length / 2 ? 'LONGER WINS: we don\'t know a better here line yet' : 'SHORTER WINS'}. Words per line: A ${avg('a')} · B ${avg('b')}`;
-const md = ['# C8: the one-sentence here line, over return visits', '', result, '', ...out.flatMap((o) => [
-  `## ${o.name}: Claude ${o.claude.pick}, Grok ${o.grok.pick} (words per line A ${o.words.a.toFixed(1)} · B ${o.words.b.toFixed(1)})`, '', `Shown to the judges as: ${o.order}`, `- Claude: ${o.claude.reason}`, `- Grok: ${o.grok.reason}`, '', `A (as is): "${o.here}"`, '', show(o.a), '', `B (short): "${o.short}"`, '', show(o.b), '']),
+const result = `Long (A) wins ${aWins} of ${out.length} (both judges), ${B_LINES} (B) ${bWins}, the rest split or same. ${aWins > out.length / 2 ? 'LONGER WINS: we don\'t know a better here line yet' : 'SHORTER WINS'}. Words per line: A ${avg('a')} · B ${avg('b')}`;
+const md = [B_LINES === 'edited' ? '# C10: the current here line against the edited one, over return visits' : '# C8: the one-sentence here line, over return visits', '', result, '', ...out.flatMap((o) => [
+  `## ${o.name}: Claude ${o.claude.pick}, Grok ${o.grok.pick} (words per line A ${o.words.a.toFixed(1)} · B ${o.words.b.toFixed(1)})`, '', `Shown to the judges as: ${o.order}`, `- Claude: ${o.claude.reason}`, `- Grok: ${o.grok.reason}`, '', `A (as is): "${o.here}"`, '', show(o.a), '', `B (${B_LINES}): "${o.short}"`, '', show(o.b), '']),
 ].join('\n');
 const dir = join(process.cwd(), 'tests', 'experiments', 'results');
 mkdirSync(dir, { recursive: true });
-const file = join(dir, `c8-es-mx-${new Date().toISOString().slice(0, 16).replace(':', '')}.md`);
+const file = join(dir, `${B_LINES === 'edited' ? 'c10' : 'c8'}-es-mx-${new Date().toISOString().slice(0, 16).replace(':', '')}.md`);
 writeFileSync(file, md);
 console.log(`${result}\nTime: ${((Date.now() - T0) / 1000).toFixed(0)} s\n→ ${file.replace(process.cwd() + '/', '')}`);
