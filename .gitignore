@@ -21,3 +21,6 @@ tests/experiments/out/
 # Picture masters: in R2 at masters/ (scripts/image-masters.mjs), not in git (docs/12-native-app.md → Content and images). The web icons in stamps/ stay.
 public/images/*
 !public/images/stamps/
+
+# Numbers from real play (measure-real.ts): the family's conversations, kept on this machine
+tests/conversations/runs/real.jsonl

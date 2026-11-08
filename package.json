@@ -12,6 +12,7 @@
     "test:pack": "tsx tests/check-pack.ts",
     "test:schema": "node --experimental-strip-types tests/check-turn-schema.mjs",
     "test:conversations": "tsx --env-file-if-exists=.env.local tests/conversations/run.ts",
+    "measure:real": "tsx --env-file-if-exists=.env.local tests/conversations/measure-real.ts",
     "test:replay": "tsx --env-file-if-exists=.env.local tests/conversations/replay.ts",
     "test:prompt": "tsx tests/check-prompt.ts",
     "test:level-prompt": "tsx tests/check-level-prompt.ts",

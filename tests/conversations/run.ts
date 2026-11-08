@@ -1,47 +1,75 @@
 /**
- * Grade and recommend: simulated conversations with a sample of existing characters.
+ * The conversation test: simulated conversations with characters the game
+ * shows, through the game's own turn code, measured by counts.
  *
- *   npm run test:conversations                 # default sample
- *   npm run test:conversations -- --count=10   # characters in the sample
- *   npm run test:conversations -- --turns=8    # learner turns per conversation
- *   npm run test:conversations -- --dry        # show the sample and prompts, no API calls
- *   npm run test:conversations -- --seed=7     # same sample every time: use for before-and-after
+ *   npm run test:conversations                         # 6 characters, one per city, one conversation each
+ *   npm run test:conversations -- --count=10 --seed=7  # same sample every time
+ *   npm run test:conversations -- --visits=3           # return visits, the game's memory written between them
+ *   npm run test:conversations -- --turns=4            # learner turns per visit
+ *   npm run test:conversations -- --learner=grok       # who plays the learner: claude (default), grok, or tap (taps a reply button)
+ *   npm run test:conversations -- --variant=tests/conversations/variants/<name>.json   # A (as is) against B (the variant)
+ *   npm run test:conversations -- --null=3             # also run A twice for 3 characters: how much the numbers move on their own
+ *   npm run test:conversations -- --pick=variant       # the characters the variant names (or first2: the first 2 in each city)
+ *   npm run test:conversations -- --card="C11 (2026-11-08)"   # a test run: refuses without the reviewed card
+ *   npm run test:conversations -- --no-culture --no-audit --dry
  *   npm run test:conversations -- --level="Beginner: shape"   # experimental level block (content/<country>/prompts/levels.md)
- *   npm run test:conversations -- --learner=tap   # the learner only taps one of two reply buttons (lib/replies.ts; beginner levels 1–3)
  *
- * Reports reply length as numbers (opener words, median and longest reply, share
- * of long replies, questions per reply) next to the grades, and saves a .json
- * summary beside each .md report so runs can be compared.
+ * Josh, 2026-11-08: counts, not grades ("Prefer clear output measures over
+ * judgement"); every run measures everything and keeps every transcript
+ * (record.ts); Claude plays the learner by default, with Grok as a switch ("1
+ * is a choice"); Grok reads every transcript afterwards and says whether they
+ * bear out the numbers ("best as a check ... than inline tester").
  *
- * Character replies go through lib/turn.ts, the same code /api/turn uses.
- * Nothing is edited automatically: the report recommends, you decide.
+ * Measures (measure.ts): words and questions per character line, the learner's
+ * share of words, sentences repeated from an earlier visit, and one reader's
+ * count of real things about the country learned.
+ *
+ * A variant file: { "name": "...", "here": { "<character name>": "<line>" },
+ * "system": [{ "find": "<text in the rendered prompt>", "replace": "<text>" }] }.
+ * B is A with those swaps; nothing on disk changes.
  */
-
-import { mkdirSync, writeFileSync } from 'fs';
-import { join } from 'path';
-import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
+import { writeFileSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { runTurn } from '@/lib/turn';
-import { writeReplies, repliesPromptVersion } from '@/lib/replies';
-import { judgeWithClaude, qualityPromptVersion } from '@/lib/quality';
-import { levelOfConversation, levelPromptVersion } from '@/lib/level';
-import { BEGINNER_FOLLOWS } from '@/lib/scorecard';
-import { buildTurnPrompt, promptVersion } from '@/lib/prompts/build-turn-prompt';
+import { writeReplies } from '@/lib/replies';
+import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
+import { withDialogueRules } from '@/lib/dialogue/rules';
+import { summarizeWithClaude } from '@/lib/remember';
 import { characterForPlace } from '@/lib/characters/for-place';
+import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { cities, language, country } from '@/content';
 import type { CharacterSheet, Place, Turn } from '@/lib/types';
 import { learners, type Learner } from './learners';
-import { turnStats, summarize, LONG_TURN_WORDS, TYPICAL_TURN_WORDS, type TurnStats } from '@/lib/dialogue-stats';
+import { measure, cultureCount, COLUMNS, type Measures, type Visits, type Line } from './measure';
+import { startRun, record, versions, type Recorded } from './record';
+import { askGrok, startTest } from '../experiments/common.mjs';
 
-const arg = (name: string, fallback: number) =>
-  Number(process.argv.find((a) => a.startsWith(`--${name}=`))?.split('=')[1] ?? fallback);
-const COUNT = arg('count', 6);
-const TURNS = arg('turns', 6);
-const DRY = process.argv.includes('--dry');
-const SEED = process.argv.find((a) => a.startsWith('--seed='))?.split('=')[1];
-const LEVEL = process.argv.find((a) => a.startsWith('--level='))?.split('=').slice(1).join('=');
-const LABEL = process.argv.find((a) => a.startsWith('--label='))?.split('=')[1];
-const LEVEL_AT = process.argv.find((a) => a.startsWith('--level-at='))?.split('=')[1] as 'system' | 'last' | undefined;
-const TAP = process.argv.includes('--learner=tap');
+const flag = (name: string) => process.argv.find((a) => a.startsWith(`--${name}=`))?.split('=').slice(1).join('=');
+const has = (name: string) => process.argv.includes(`--${name}`);
+const COUNT = Number(flag('count') ?? 6);
+const TURNS = Number(flag('turns') ?? 6);
+const VISITS = Number(flag('visits') ?? 1);
+const NULLS = Number(flag('null') ?? 0);
+const SEED = flag('seed');
+const LEARNER = (flag('learner') ?? 'claude') as 'claude' | 'grok' | 'tap';
+const VARIANT = flag('variant');
+const PICK = flag('pick') ?? (VARIANT ? 'variant' : 'random');
+const CARD = flag('card');
+const LABEL = flag('label') ?? (VARIANT ? VARIANT.split('/').pop()!.replace(/\.json$/, '') : 'run');
+const LEVEL = flag('level');
+const LEVEL_AT = flag('level-at') as 'system' | 'last' | undefined;
+const DRY = has('dry');
+const CULTURE = !has('no-culture');
+const AUDIT = !has('no-audit') && !!process.env.XAI_API_KEY;
+const GROK = 'grok-4.20-0309-non-reasoning'; // fast; grok-4.7 took up to a minute a call under load (C4)
+const T0 = Date.now();
+
+if (CARD) startTest(CARD);
+if (!['claude', 'grok', 'tap'].includes(LEARNER)) throw new Error(`--learner is claude, grok or tap, not ${LEARNER}`);
+
+type Variant = { name: string; here?: Record<string, string>; system?: { find: string; replace: string }[] };
+const variant: Variant | undefined = VARIANT ? JSON.parse(readFileSync(VARIANT, 'utf8')) : undefined;
+if (variant?.system?.length && LEVEL) throw new Error('--level and a variant with system edits can\'t run together (a replaced prompt gets no level block)');
 
 // Seeded random numbers, so --seed gives the same sample on every run
 function seeded(seed: number) {
@@ -54,405 +82,212 @@ function seeded(seed: number) {
   };
 }
 const random = SEED !== undefined ? seeded(Number(SEED) || 0) : Math.random;
-
-function buildCriteria() {
-  const langName = language.name;
-  const base = {
-    language: `Speaks ${langName}. Uses English when the learner asks for help (in English or in ${langName}), as much as the help takes, then returns to ${langName}; no English nobody asked for.`,
-    understands: 'Understands imperfect speech. Reads garbled speech-to-text and learner errors as what they meant, without commenting on them.',
-    // Whether lines are at the learner's level is measured, not graded ("Lines a beginner can follow", lib/level.ts;
-    // Josh, 2026-10-18). This used to say complex language was fine, which rewarded talking above the learner.
-    adapts: `Adapts when the learner is lost: when the learner signals confusion the character slows down and rephrases, and when they ask to repeat, repeats.`,
-    // Scored by the replay's judge (lib/quality.ts, quality.md), not by this grader, so both tests
-    // measure liveliness the same way (Josh, 2026-10-17). It no longer covers recasting.
-    alive: 'Feels like a real person in that place. Scored by the judge that scores real conversations (quality.md), not by this grader.',
-  };
-
-  // Mexico-specific: check for Spain Spanish instead of Mexican Spanish
-  if (country === 'es-mx') {
-    return {
-      ...base,
-      regional: 'Uses Mexican Spanish. Avoids Spain Spanish markers like vosotros, vale, coger (for "take"), ordenador, zumo. Uses Mexican vocabulary and expressions.',
-    };
-  }
-
-  return base;
-}
-
-const CRITERIA = buildCriteria();
-type Criterion = keyof typeof CRITERIA;
-/** What this test's own grader scores; alive comes from the quality judge */
-const GRADED = (Object.keys(CRITERIA) as Criterion[]).filter((k) => k !== 'alive');
-
-interface Case {
-  character: CharacterSheet;
-  place: Place;
-  cityName: string;
-  learner: Learner;
-}
-
-interface Graded extends Case {
-  transcript: Turn[];
-  scores: Record<Criterion, number>;
-  overall: number;
-  problem: string;
-  quote: string;
-  stats?: TurnStats;
-  /** Per character line: the share of its words a beginner knows (lib/level.ts) */
-  beginnerKnows?: number[];
-  error?: string;
+function shuffle<T>(items: T[]): T[] {
+  const a = [...items];
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
 }
 
 // ---------- Sample ----------
 
-function shuffle<T>(items: T[]): T[] {
-  const a = [...items];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
+interface Case { character: CharacterSheet; place: Place; city: (typeof cities)[number]; here?: string; learner: Learner }
 
 function pickSample(): Case[] {
-  // Only people the game shows (hidden places and cities left out, as in the replay)
+  // Only people the game shows, each the person their place names
   const all = cities.filter((city) => !city.hidden).flatMap((city) =>
-    city.places
-      .filter((place) => !place.hidden)
-      .map((place) => ({ place, city, character: characterForPlace(city, place) }))
-      .filter((x): x is { place: Place; city: typeof city; character: CharacterSheet } => !!x.character)
-  );
-  // At most one character per city, so the sample spreads across the country
-  const seen = new Set<string>();
-  const others = shuffle(all).filter((x) => {
-    if (seen.has(x.city.id)) return false;
-    seen.add(x.city.id);
-    return true;
-  });
-  const picked = others.slice(0, COUNT);
-  return picked.map((x, i) => ({
-    character: x.character,
-    place: x.place,
-    cityName: x.city.name,
-    learner: learners[i % learners.length],
-  }));
+    city.places.filter((place) => !place.hidden).flatMap((place) => {
+      const character = characterForPlace(city, place);
+      const here = city.characters?.find((p) => p.id === place.characterId)?.here;
+      return character ? [{ place, city, character, here }] : [];
+    }));
+  let picked: typeof all;
+  if (PICK === 'variant') {
+    const names = Object.keys(variant?.here ?? {});
+    if (!names.length) throw new Error('--pick=variant needs a variant with here lines');
+    picked = names.map((n) => { const x = all.find((y) => y.character.name === n); if (!x) throw new Error(`${n}: not shown in ${country}`); return x; }).slice(0, flag('count') ? COUNT : undefined);
+  } else if (PICK === 'first2') {
+    const per = new Map<string, number>();
+    picked = all.filter((x) => x.here && (per.set(x.city.id, (per.get(x.city.id) ?? 0) + 1).get(x.city.id)! <= 2)).slice(0, COUNT);
+  } else {
+    // One per city, so the sample spreads across the country
+    const seen = new Set<string>();
+    picked = shuffle(all).filter((x) => !seen.has(x.city.id) && !!seen.add(x.city.id)).slice(0, COUNT);
+  }
+  return picked.map((x, i) => ({ ...x, learner: learners[i % learners.length] }));
 }
 
-// ---------- Claude helpers ----------
+// ---------- Versions ----------
 
-// Limits leave room for the model's thinking, which counts toward them
-async function ask(system: string, user: string, maxTokens = 2000): Promise<string> {
-  const res = await anthropic.messages.create({
-    model: CLAUDE_MODEL,
-    max_tokens: maxTokens,
-    system,
-    messages: [{ role: 'user', content: user }],
-  });
-  return replyText(res).trim();
+/** B: the same character with the variant's here line, if it names one */
+function sheetFor(c: Case, version: string): CharacterSheet {
+  const line = version === 'B' ? variant?.here?.[c.character.name] : undefined;
+  if (!line) return c.character;
+  if (!c.here || !c.character.appearance.setting.endsWith(c.here)) throw new Error(`${c.character.name}: here line not at the end of the setting`);
+  return { ...c.character, appearance: { ...c.character.appearance, setting: c.character.appearance.setting.slice(0, -c.here.length) + line } };
 }
 
-async function askJson<T>(system: string, user: string, schema: Record<string, unknown>, maxTokens = 4000): Promise<T> {
-  const res = await anthropic.messages.create({
-    model: CLAUDE_MODEL,
-    max_tokens: maxTokens,
-    system,
-    messages: [{ role: 'user', content: user }],
-    output_config: { format: { type: 'json_schema', schema } },
-  });
-  return JSON.parse(replyText(res)) as T;
+type Memory = { visits: number; lastVisit: string; notes: string[] } | undefined;
+/** B: the game's own prompt for this turn with the variant's text swaps (the turn code adds the shared rules again, so its copy comes off) */
+function systemFor(version: string, c: CharacterSheet, transcript: Turn[], memory: Memory, now: Date): string | undefined {
+  if (version !== 'B' || !variant?.system?.length) return undefined;
+  let full = (buildTurnPrompt({ character: c, transcript, memory: memory as never, now } as never) as { system: string }).system;
+  const rules = withDialogueRules('');
+  if (!full.endsWith(rules)) throw new Error('rules block not at the end of the prompt');
+  full = full.slice(0, -rules.length);
+  for (const e of variant.system) {
+    // An edit on a line that only exists on return visits (the notes) is skipped on a first meeting
+    if (full.includes(e.find)) full = full.replace(e.find, e.replace);
+    else if (memory) throw new Error(`variant text not found in the prompt: "${e.find}"`);
+  }
+  return full;
 }
 
-const show = (t: Turn[], c: CharacterSheet) =>
-  t.map((x) => `${x.who === 'npc' ? c.name : 'Learner'}: ${x.transcript}`).join('\n');
+// ---------- The learner ----------
 
-// ---------- Simulate ----------
+const say = (t: Turn[], name: string) => t.map((x) => `${x.who === 'npc' ? name : 'Learner'}: ${x.transcript}`).join('\n');
+const SAY = { type: 'object', properties: { say: { type: 'string' } }, required: ['say'], additionalProperties: false };
 
-async function learnerLine(c: Case, transcript: Turn[]): Promise<string> {
-  const langLearner = country === 'es-mx'
-    ? `a ${language.name} learner`
-    : 'an Italian learner';
-  const helpPhrases = country === 'es-mx'
+async function learnerLine(c: Case, earlier: string[], t: Turn[], last: boolean): Promise<string> {
+  if (LEARNER === 'tap') return (await writeReplies(c.character, t)).replies[Math.floor(random() * 2)].line;
+  const help = country === 'es-mx'
     ? '"Perdón, no entiendo", "¿Cómo?", "Más despacio, por favor", "¿Repite?", or in English'
     : '"Scusi, non capisco", "Come?", "Più piano, per favore", "Ripeti?", or in English';
-
-  return ask(
-    `You are role-playing ${langLearner} in a test. ${c.learner.description}
-You are at ${c.place.name} in ${c.cityName}, talking to ${c.character.name} (${c.character.role}).
-Be honest about comprehension: understand only what someone at your level really would. If the character's last line was too fast, long or complex for you, say so the way a real learner would (${helpPhrases}). Don't pretend to follow.
-Write ONLY what the learner says next, as speech-to-text would capture it. One or two short sentences. No quotes, no stage directions.`,
-    `Conversation so far:\n${show(transcript, c.character)}\n\nWhat do you say next?`,
-    2000 // was 150: the model's thinking used it up and the line came back empty
-  );
+  const q = [
+    `You are role-playing a ${language.name} learner in a test: someone living in ${language.card.country} for a while, not a tourist. ${c.learner.description}`,
+    `You are at ${c.place.name} in ${c.city.name}, talking to ${c.character.name} (${c.character.role}).`,
+    'Answer what they just asked, truthfully and in a way someone at your level could; make up ordinary details about yourself if needed, and keep them across visits.',
+    'Never be the first to name a local place, food, drink, custom, festival or person; you may repeat one they named. Don\'t steer to topics of your own.',
+    `Be honest about comprehension: understand only what someone at your level really would. If their last line was too fast, long or complex, say so the way a real learner would (${help}).`,
+    'Don\'t repeat your own earlier lines or greetings.',
+    ...(earlier.length ? ['', 'Your earlier visits with them:', ...earlier] : []),
+    '', 'This conversation so far:', say(t, c.character.name), '',
+    last ? 'Answer what they asked if they asked something, then say goodbye, in one or two short sentences.' : 'What you say next: one or two short sentences, as speech-to-text would capture it. No quotes, no stage directions.',
+    'Reply with JSON: say.',
+  ].join('\n');
+  if (LEARNER === 'grok') return (await askGrok<{ say: string }>(q, SAY, GROK)).say;
+  const r = await anthropic.messages.create({ model: CLAUDE_MODEL, max_tokens: 2000, messages: [{ role: 'user', content: q }], output_config: { format: { type: 'json_schema', schema: SAY } } } as Parameters<typeof anthropic.messages.create>[0]);
+  return (JSON.parse(replyText(r as Parameters<typeof replyText>[0])) as { say: string }).say;
 }
 
-async function simulate(c: Case): Promise<Turn[]> {
-  const transcript: Turn[] = [];
-  const opening = await runTurn({ character: c.character, transcript: [], level: LEVEL, levelAt: LEVEL_AT });
-  transcript.push({ who: 'npc', transcript: opening.line, translation: opening.en });
+// ---------- One conversation ----------
 
-  for (let i = 0; i < TURNS; i++) {
-    // --learner=tap: the learner picks one of the two reply buttons at random
-    const said = TAP
-      ? (await writeReplies(c.character, transcript)).replies[Math.floor(random() * 2)].line
-      : await learnerLine(c, transcript);
-    const reply = await runTurn({ character: c.character, transcript, learnerSaid: said, level: LEVEL, levelAt: LEVEL_AT });
-    transcript.push({ who: 'learner', transcript: said });
-    transcript.push({ who: 'npc', transcript: reply.line, translation: reply.en });
+async function conversation(c: Case, version: string): Promise<Visits> {
+  const him = sheetFor(c, version);
+  let notes: string[] = [];
+  const earlier: string[] = [];
+  const visits: Visits = [];
+  for (let k = 0; k < VISITS; k++) {
+    // Visits 3 days apart, the last one today
+    const now = new Date(Date.now() - 86_400_000 * 3 * (VISITS - 1 - k));
+    const memory: Memory = k ? { visits: k, lastVisit: new Date(now.getTime() - 3 * 86_400_000).toISOString(), notes } : undefined;
+    const t: Turn[] = [];
+    const npc = async (learnerSaid?: string) => {
+      const system = systemFor(version, him, t, memory, now);
+      const r = await runTurn({ character: him, transcript: [...t], learnerSaid, memory: memory as never, now, level: LEVEL, levelAt: LEVEL_AT, ...(system ? { system } : {}) });
+      if (learnerSaid) t.push({ who: 'learner', transcript: learnerSaid });
+      t.push({ who: 'npc', transcript: r.line, translation: r.en });
+    };
+    await npc();
+    for (let i = 0; i < TURNS; i++) await npc(await learnerLine(c, earlier, t, i === TURNS - 1 && VISITS > 1));
+    visits.push(t.map((x): Line => ({ who: x.who, text: x.transcript })));
+    earlier.push(`(visit ${k + 1}) ${say(t, him.name).replace(/\n/g, ' / ')}`);
+    if (k < VISITS - 1) notes = (await summarizeWithClaude({ character: { name: him.name, age: him.age, role: him.role, city: him.city }, notes, turns: t.map((x) => ({ who: x.who, text: x.transcript })) })).notes;
   }
-  return transcript;
+  return visits;
 }
 
-// ---------- Grade ----------
+// ---------- Grok's read-through ----------
 
-const gradeSchema = {
-  type: 'object',
-  additionalProperties: false,
-  properties: {
-    ...Object.fromEntries(GRADED.map((k) => [k, { type: 'integer', description: '1-10' }])),
-    problem: { type: 'string', description: 'The single biggest problem, one sentence. "None" if none.' },
-    quote: { type: 'string', description: 'The character line that best shows the problem, verbatim. Empty if none.' },
-  },
-  required: [...GRADED, 'problem', 'quote'],
-};
+const AUDITED = { type: 'object', properties: { agrees: { type: 'boolean' }, note: { type: 'string' } }, required: ['agrees', 'note'], additionalProperties: false };
+const fmt = (m: Measures) => COLUMNS.filter(([k]) => m[k] !== undefined).map(([k, l]) => `${l} ${m[k]}`).join(', ');
+const showVisits = (v: Visits, name: string) => v.map((x, i) => `Visit ${i + 1}:\n${x.map((l) => `${l.who === 'npc' ? name : 'Learner'}: ${l.text}`).join('\n')}`).join('\n\n');
 
-async function grade(c: Case, transcript: Turn[]): Promise<Omit<Graded, keyof Case | 'transcript'>> {
-  const english =
-    c.character.englishAbility ? `The character's English: ${c.character.englishAbility}.` : 'The character\'s English ability is unspecified.';
-  const appDesc = country === 'es-mx'
-    ? `an app where learners practise ${language.name} by talking with characters in Mexico`
-    : `an app where learners practise Italian by talking with characters in Italy`;
-
-  const judged = judgeWithClaude(
-    { name: c.character.name, age: c.character.age, role: c.character.role, city: c.cityName },
-    transcript.map((t) => ({ who: t.who, text: t.transcript }))
-  );
-  const result = await askJson<Record<string, unknown>>(
-    `You grade conversations from Fuori, ${appDesc}. The goal is natural conversation, not teaching. Be honest and specific; 10 means a native speaker would find it entirely natural.`,
-    `Character: ${c.character.name}, ${c.character.role} at ${c.place.name}, ${c.cityName}. ${english}
-Learner type: ${c.learner.description}
-
-Grade the CHARACTER (not the learner) from 1 to 10 on the criteria below.
-${GRADED.map((k) => `- ${k}: ${CRITERIA[k]}`).join('\n')}
-
-Transcript:
-${show(transcript, c.character)}`,
-    gradeSchema
-  );
-  const judgement = await judged;
-  if (judgement.alive === undefined) throw new Error('Quality judge gave no alive score');
-  const scores = Object.fromEntries([
-    ...GRADED.map((k) => [k, Math.max(1, Math.min(10, Number(result[k]) || 1))]),
-    ['alive', judgement.alive],
-  ]) as Record<Criterion, number>;
-  const overall = Object.values(scores).reduce((a, b) => a + b, 0) / Object.keys(scores).length;
-  return { scores, overall, problem: String(result.problem ?? ''), quote: String(result.quote ?? '') };
-}
-
-// ---------- Recommend ----------
-
-async function recommend(results: Graded[]): Promise<string> {
-  const summary = results
-    .filter((r) => !r.error)
-    .map(
-      (r) =>
-        `${r.character.name} (${r.character.role}, ${r.cityName}) with ${r.learner.id}: ` +
-        `${Object.entries(r.scores).map(([k, v]) => `${k} ${v}`).join(', ')}. ` +
-        (r.stats ? `Length: opener ${r.stats.openerWords} words, median reply ${r.stats.wordsMedian}, longest ${r.stats.wordsMax}, ${Math.round(r.stats.longShare * 100)}% over ${LONG_TURN_WORDS}. ` : '') +
-        (r.beginnerKnows?.length ? `Beginner can follow ${Math.round(100 * followShare([r]))}% of lines. ` : '') +
-        `Problem: ${r.problem}${r.quote ? ` Quote: "${r.quote}"` : ''}`
-    )
-    .join('\n');
-  const appDesc = country === 'es-mx'
-    ? `a voice-first ${language.name} conversation app for learning in Mexico`
-    : `a voice-first Italian conversation app`;
-  const promptPath = `content/${country}/prompts/character.md`;
-
-  return ask(
-    `You advise the builder of Fuori, ${appDesc}. The character prompt (${promptPath}) is deliberately minimal: it describes the situation, not how to talk, and sets no length rules. The product direction is natural conversation, not rules. For reference, real conversational turns run about ${TYPICAL_TURN_WORDS} words or fewer; replies far longer than that leave the learner no room to answer. The level goal: 90% of a character's lines are ones these learners (A1–A2) can follow, shown as "beginner can follow" below. Recommend small, high-leverage changes in that spirit. Plain language, no preamble.`,
-    `Graded test conversations:\n${summary}\n\nWrite markdown with exactly two sections:
-## Top problems
-Up to 3, most common first. One line each, with a short real quote from above.
-## Recommendations
-Up to 3 specific changes (to the character prompt in ${promptPath}, to how turns are sent in lib/prompts/build-turn-prompt.ts, or to character data). Say what to change and why, one or two lines each. If things look good, say so and recommend fewer.`,
-    4096 // Increased from 900 for Sonnet 5.5 with thinking
-  );
-}
-
-// ---------- Report ----------
-
-const followShare = (rs: Graded[]) => {
-  const k = rs.flatMap((r) => r.beginnerKnows ?? []);
-  return k.length ? k.filter((x) => x >= BEGINNER_FOLLOWS).length / k.length : 0;
-};
-
-function lengthSection(ok: Graded[]): string[] {
-  const sum = summarize(ok.flatMap((r) => (r.stats ? [r.stats] : [])));
-  const pct = (x: number) => `${Math.round(x * 100)}%`;
-  return [
-    `## Length`,
-    ``,
-    `| Measure | Value |`,
-    `|---|---|`,
-    `| Opener (median words) | ${sum.openerWords} |`,
-    `| Reply (median words) | ${sum.wordsMedian} |`,
-    `| Reply (average words) | ${sum.wordsAvg} |`,
-    `| Longest reply (words) | ${sum.wordsMax} |`,
-    `| Replies over ${LONG_TURN_WORDS} words | ${pct(sum.longShare)} |`,
-    `| Questions per reply | ${sum.questionsAvg} |`,
-    `| Replies asking 2+ questions | ${pct(sum.multiQuestionShare)} |`,
-    `| Lines a beginner can follow (90%+ of words known; target 90%) | ${pct(followShare(ok))} |`,
-    ``,
-    `_Yardstick: a typical conversational turn is about 5–${TYPICAL_TURN_WORDS} words._`,
-  ];
-}
-
-function report(results: Graded[], recs: string): string {
-  const ok = results.filter((r) => !r.error);
-  const avg = (f: (r: Graded) => number) => (ok.length ? ok.reduce((a, r) => a + f(r), 0) / ok.length : 0);
-  const crit = Object.keys(CRITERIA) as Criterion[];
-  const lines = [
-    `# Conversation test`,
-    ``,
-    `${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC · model ${CLAUDE_MODEL} · prompt ${promptVersion()} · alive judged by quality.md ${qualityPromptVersion()} · level by level.md ${levelPromptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''}${TAP ? ` · learner taps reply buttons (replies ${repliesPromptVersion()})` : ''} · ${ok.length} conversations · ${TURNS} learner turns each`,
-    ``,
-    `## Grade: ${avg((r) => r.overall).toFixed(1)} / 10`,
-    ``,
-    `| Criterion | Average |`,
-    `|---|---|`,
-    ...crit.map((k) => `| ${k} | ${avg((r) => r.scores[k]).toFixed(1)} |`),
-    ``,
-    ...lengthSection(ok),
-    ``,
-    recs,
-    ``,
-    `## By character (weakest first)`,
-    ``,
-    `| Character | Place | Learner | ${crit.join(' | ')} | Overall | Opener words | Median reply |`,
-    `|---|---|---|${crit.map(() => '---').join('|')}|---|---|---|`,
-    ...[...ok]
-      .sort((a, b) => a.overall - b.overall)
-      .map(
-        (r) =>
-          `| ${r.character.name} (${r.character.role}) | ${r.place.name}, ${r.cityName} | ${r.learner.id} | ${crit.map((k) => r.scores[k]).join(' | ')} | ${r.overall.toFixed(1)} | ${r.stats?.openerWords ?? ''} | ${r.stats?.wordsMedian ?? ''} |`
-      ),
-    ``,
-    ...results.filter((r) => r.error).map((r) => `- **Failed:** ${r.character.name}: ${r.error}`),
-    ``,
-    `## How this test works`,
-    ``,
-    `1. **Sample.** Random characters from the city files (one per city), each at their own place.`,
-    `2. **Simulate.** Claude plays a learner for ${TURNS} turn${TURNS === 1 ? "" : "s"}. The character's replies come from \`lib/turn.ts\`, the same code the app uses, so this is the real prompt.`,
-    `3. **Grade.** A separate Claude call reads each transcript and scores the character 1–10 (10 = a native speaker would find it entirely natural):`,
-    ...crit.map((k) => `   - **${k}**: ${CRITERIA[k]}`),
-    `4. **Measure length.** Counted, not graded: words in the opener, median and longest reply, share of replies over ${LONG_TURN_WORDS} words, questions per reply, and share asking more than one question (several threads at once). Yardstick: real conversational turns run about 1–2 seconds, roughly 5–${TYPICAL_TURN_WORDS} words (Heldner & Edlund 2015; Stivers et al. 2009). These are measurements only; nothing is sent to the characters.`,
-    `5. **Recommend.** One more call reads all the grades and lengths and suggests up to 3 changes. Nothing is changed automatically.`,
-    ``,
-    `**Learner types**`,
-    ``,
-    ...learners.map((l) => `- **${l.id}**: ${l.description}`),
-    `- All learners are told to be honest: when a line is too fast or complex for their level, they say so instead of pretending to follow.`,
-    ``,
-    `**Reading the results**`,
-    ``,
-    `- The sample is small and the conversations are random, so expect grades to move by about half a point between runs with no changes. Look for problems that repeat, not single scores.`,
-    `- The learner is simulated. It catches clear failures (switching to English, correcting speech-to-text noise, never recovering when the learner is lost) but is no substitute for talking to the characters yourself.`,
-    `- To compare before and after a change, run both with the same \`--seed\` (same characters and learners) and compare the grades and length numbers. The learner's lines still vary between runs, so look at clear differences, not small ones.`,
-    ``,
-    `## Transcripts`,
-    ``,
-    ...results.flatMap((r) => [
-      `### ${r.character.name}, ${r.place.name} (${r.cityName}) · ${r.learner.id}${r.error ? '' : ` · ${r.overall.toFixed(1)}`}`,
-      r.problem && r.problem !== 'None' ? `\n_Problem: ${r.problem}_\n` : '',
-      '```',
-      show(r.transcript, r.character),
-      '```',
-      '',
-    ]),
-  ];
-  return lines.join('\n');
+async function audit(name: string, runs: { version: string; visits: Visits; measures: Measures }[]) {
+  const q = [
+    `Below are simulated conversations with ${name}, a character in a ${language.name}-learning game, each with the numbers counted from it. Repeats are sentences the character said again from an earlier visit; Culture is how many real things about ${language.card.country} a reader listed.`,
+    ...runs.flatMap((r) => ['', `Version ${r.version} (${fmt(r.measures)}):`, showVisits(r.visits, name)]),
+    '', 'Read every line. Do the conversations bear out the numbers, and any difference between versions? Say what the numbers miss or get wrong: a replay they didn\'t count, a learner who sounds nothing like a real learner, an invented job, anything a newcomer would notice.',
+    'Reply with JSON: agrees (true if the numbers are a fair account), note (two sentences).',
+  ].join('\n');
+  return askGrok<{ agrees: boolean; note: string }>(q, AUDITED, GROK);
 }
 
 // ---------- Main ----------
 
 async function main() {
   const sample = pickSample();
-  console.log(`Prompt version: ${promptVersion()}${LEVEL ? ` + level "${LEVEL}"` : ''} (content/${country}/prompts/character.md)${SEED !== undefined ? ` · seed ${SEED}` : ''}`);
-  console.log(`Sample (${sample.length}):`);
-  sample.forEach((c) =>
-    console.log(`  ${c.character.name} — ${c.character.role}, ${c.place.name}, ${c.cityName} · learner: ${c.learner.id}`)
-  );
-
+  const plan = sample.flatMap((c, i) => [{ c, version: 'A' }, ...(variant ? [{ c, version: 'B' }] : []), ...(i < NULLS ? [{ c, version: 'A2' }] : [])]);
+  console.log(`${country} · character prompt ${versions().character} · learner ${LEARNER} · ${VISITS} visit(s) × ${TURNS} turns${variant ? ` · B: ${variant.name}` : ''}${NULLS ? ` · A twice for ${NULLS}` : ''}${SEED !== undefined ? ` · seed ${SEED}` : ''}`);
+  sample.forEach((c) => console.log(`  ${c.character.name}, ${c.character.role}, ${c.place.name}, ${c.city.name} · ${c.learner.id}`));
   if (DRY) {
-    const first = sample[sample.length - 1];
-    console.log(`\nSystem prompt for ${first.character.name}:\n`);
-    console.log(buildTurnPrompt({ character: first.character, transcript: [] }).system);
-    console.log(`\nDry run: no API calls. About ${sample.length * (TURNS * 2 + 2) + 1} calls in a real run.`);
+    console.log(`\nDry run: ${plan.length} conversations, about ${plan.length * VISITS * (TURNS * 2 + 2)} calls.`);
     return;
   }
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('ANTHROPIC_API_KEY is not set (put it in .env.local).');
-    process.exit(1);
-  }
 
-  // Run conversations in parallel, a few at a time
-  const results: Graded[] = [];
-  const queue = [...sample];
+  const run = startRun(LABEL);
+  const at = new Date().toISOString();
+  const done = new Map<string, Recorded[]>();
+  const queue = [...plan];
+  let n = 0;
   const worker = async () => {
-    for (let c = queue.shift(); c; c = queue.shift()) {
+    for (let job = queue.shift(); job; job = queue.shift()) {
+      const { c, version } = job;
       try {
-        const transcript = await simulate(c);
-        const [g, level] = await Promise.all([grade(c, transcript), levelOfConversation(transcript.map((t) => ({ who: t.who, text: t.transcript })))]);
-        const stats = turnStats(transcript.filter((t) => t.who === 'npc').map((t) => t.transcript));
-        results.push({ ...c, transcript, ...g, stats, beginnerKnows: level.beginnerKnows });
-        console.log(`  ✓ ${c.character.name} (${c.cityName}): ${g.overall.toFixed(1)}`);
+        const visits = await conversation(c, version);
+        const measures = measure(visits);
+        if (CULTURE) { measures.cultureList = await cultureCount(visits, c.character.name); measures.culture = measures.cultureList.length; }
+        const r: Recorded = {
+          run: run.id, at, label: LABEL, card: CARD, versions: versions(), version,
+          character: { id: c.character.id, name: c.character.name, role: c.character.role, city: c.city.name, place: c.place.name },
+          learner: { type: c.learner.id, model: LEARNER === 'grok' ? GROK : LEARNER === 'tap' ? 'tap' : CLAUDE_MODEL },
+          change: version === 'B' ? JSON.stringify({ here: variant?.here?.[c.character.name], system: variant?.system }) : undefined,
+          visits, measures,
+        };
+        record(run.dir, ++n, r);
+        done.set(c.character.name, [...(done.get(c.character.name) ?? []), r]);
+        console.log(`  ✓ ${c.character.name} ${version}: ${fmt(measures)}  (${((Date.now() - T0) / 1000).toFixed(0)} s)`);
       } catch (e) {
-        const msg = e instanceof Error ? e.message : String(e);
-        results.push({ ...c, transcript: [], scores: {} as Graded['scores'], overall: 0, problem: '', quote: '', error: msg });
-        console.log(`  ✗ ${c.character.name}: ${msg}`);
+        console.log(`  ✗ ${c.character.name} ${version}: ${e instanceof Error ? e.message : e}`);
       }
     }
   };
-  await Promise.all([worker(), worker(), worker()]);
+  await Promise.all(Array.from({ length: 6 }, worker));
 
-  const recs = results.some((r) => !r.error) ? await recommend(results) : '_No conversations completed._';
-  const dir = join(process.cwd(), 'tests', 'conversations', 'reports');
-  mkdirSync(dir, { recursive: true });
-  // Seconds and the level in the name, so runs started together don't overwrite each other
-  const file = join(dir, `${new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-')}${LEVEL ? `-${LEVEL.replace(/\W+/g, '-').toLowerCase()}` : ''}${LEVEL_AT === 'last' ? '-last' : ''}${TAP ? '-tap' : ''}${process.env.TURN_MODEL ? `-${process.env.TURN_MODEL}` : ''}${LABEL ? `-${LABEL}` : ''}.md`);
-  writeFileSync(file, report(results, recs));
-  // Machine-readable summary, for comparing runs before and after a change
-  const okRuns = results.filter((r) => !r.error);
-  writeFileSync(
-    file.replace(/\.md$/, '.json'),
-    JSON.stringify(
-      {
-        at: new Date().toISOString(),
-        model: CLAUDE_MODEL,
-        promptVersion: promptVersion(),
-        repliesVersion: TAP ? repliesPromptVersion() : null,
-        level: LEVEL ?? null,
-        seed: SEED ?? null,
-        turns: TURNS,
-        conversations: okRuns.length,
-        grades: Object.fromEntries(
-          (Object.keys(CRITERIA) as Criterion[]).map((k) => [k, okRuns.reduce((a, r) => a + r.scores[k], 0) / (okRuns.length || 1)])
-        ),
-        length: summarize(okRuns.flatMap((r) => (r.stats ? [r.stats] : []))),
-        byCharacter: okRuns.map((r) => ({ id: r.character.id, learner: r.learner.id, overall: r.overall, stats: r.stats })),
-      },
-      null,
-      2
-    )
-  );
+  const audits = new Map<string, { agrees: boolean; note: string }>();
+  if (AUDIT) await Promise.all([...done].map(async ([name, rs]) => {
+    try { audits.set(name, await audit(name, rs.sort((a, b) => a.version.localeCompare(b.version)))); } catch (e) { console.log(`  ✗ audit ${name}: ${e instanceof Error ? e.message : e}`); }
+  }));
 
-  const ok = results.filter((r) => !r.error);
-  const avg = ok.reduce((a, r) => a + r.overall, 0) / (ok.length || 1);
-  const len = summarize(ok.flatMap((r) => (r.stats ? [r.stats] : [])));
-  console.log(`\nGrade: ${avg.toFixed(1)}/10 · opener ${len.openerWords} words · median reply ${len.wordsMedian} · ${Math.round(len.longShare * 100)}% over ${LONG_TURN_WORDS} words`);
-  console.log(`Report: ${file.replace(process.cwd() + '/', '')} (+ .json)`);
+  // ---------- Report ----------
+  const rows = [...done.values()].flat();
+  const of = (v: string) => rows.filter((r) => r.version === v);
+  const avg = (rs: Recorded[], k: keyof Measures) => { const xs = rs.map((r) => r.measures[k]).filter((x): x is number => typeof x === 'number'); return xs.length ? (xs.reduce((a, b) => a + b, 0) / xs.length).toFixed(2) : '–'; };
+  /** How far the numbers move with nothing changed: the average gap between A and its copy */
+  const noise = (k: keyof Measures) => {
+    const gaps = of('A2').map((r2) => { const r1 = of('A').find((r) => r.character.id === r2.character.id); const a = r1?.measures[k], b = r2.measures[k]; return typeof a === 'number' && typeof b === 'number' ? Math.abs(a - b) : undefined; }).filter((x): x is number => x !== undefined);
+    return gaps.length ? (gaps.reduce((a, b) => a + b, 0) / gaps.length).toFixed(2) : '–';
+  };
+  const cols = COLUMNS.filter(([k]) => k !== 'culture' || CULTURE);
+  const versionsSeen = ['A', 'B', 'A2'].filter((v) => of(v).length);
+  const summary = [
+    `| | ${cols.map(([, l]) => l).join(' | ')} |`, `|---|${cols.map(() => '---').join('|')}|`,
+    ...versionsSeen.map((v) => `| ${v === 'A' ? 'A (as is)' : v === 'B' ? `B (${variant?.name})` : 'A again'} (${of(v).length}) | ${cols.map(([k]) => avg(of(v), k)).join(' | ')} |`),
+    ...(of('A2').length ? [`| Noise: A against A again | ${cols.map(([k]) => noise(k)).join(' | ')} |`] : []),
+  ];
+  const disagree = [...audits].filter(([, a]) => !a.agrees);
+  const md = [
+    `# Conversation test: ${LABEL}`, '',
+    `${at.slice(0, 16).replace('T', ' ')} UTC · ${Object.entries(versions()).map(([k, v]) => `${k} ${v}`).join(' · ')} · learner ${LEARNER} · ${VISITS} visit(s) × ${TURNS} turns${CARD ? ` · card ${CARD}` : ''}`, '',
+    ...summary, '',
+    AUDIT ? `Grok's read-through: ${audits.size - disagree.length} of ${audits.size} characters bear out the numbers${disagree.length ? `; not: ${disagree.map(([n]) => n).join(', ')}` : ''}.` : 'Grok\'s read-through: not run.', '',
+    '## By character', '',
+    `| Character | Version | ${cols.map(([, l]) => l).join(' | ')} |`, `|---|---|${cols.map(() => '---').join('|')}|`,
+    ...rows.sort((a, b) => a.character.name.localeCompare(b.character.name) || a.version.localeCompare(b.version)).map((r) => `| ${r.character.name} | ${r.version} | ${cols.map(([k]) => r.measures[k] ?? '–').join(' | ')} |`), '',
+    ...(AUDIT ? ['## Grok\'s read-through', '', ...[...audits].map(([name, a]) => `- **${name}** (${a.agrees ? 'bears out' : 'doesn\'t bear out'}): ${a.note}`), ''] : []),
+    '## Transcripts', '', `Each conversation is saved whole in \`${run.dir.replace(process.cwd() + '/', '')}/\`, with its versions, measures, repeated sentences and culture list.`,
+  ].join('\n');
+  writeFileSync(join(run.dir, 'report.md'), md);
+  console.log(['', ...summary, '', AUDIT ? `Grok: ${audits.size - disagree.length} of ${audits.size} bear out the numbers` : 'Grok: not run', `Time: ${((Date.now() - T0) / 1000).toFixed(0)} s`, `→ ${run.dir.replace(process.cwd() + '/', '')}/report.md`].join('\n'));
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+main().catch((e) => { console.error(e); process.exit(1); });

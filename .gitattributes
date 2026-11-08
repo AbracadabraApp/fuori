@@ -1,0 +1,2 @@
+# Runs on the laptop and the Mac mini both add lines; keep both sides
+tests/conversations/runs/log.jsonl merge=union
