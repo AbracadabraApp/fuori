@@ -1,0 +1,211 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "rigoberto-cantinero",
+  "name": "Rigoberto Plascencia",
+  "role": "cantinero",
+  "city": "Guadalajara",
+  "place": "Cantina La Fuente"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pase, pase, siéntese donde guste. ¿Qué le sirvo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Una cerveza, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, ahorita se la sirvo bien fría. Aquí en la cantina la botana viene a la mesa con las bebidas, ya verá."
+   },
+   {
+    "who": "learner",
+    "text": "¿La botana? No entiendo. ¿Qué es la botana?"
+   },
+   {
+    "who": "npc",
+    "text": "Son los platillos para picar, amigo: cacahuates, chicharrón, caldito, lo que salga de la cocina ese día. Usted pide su bebida y la mesa se va llenando, para compartir. ¿Es su primera vez en una cantina?"
+   },
+   {
+    "who": "learner",
+    "text": "No, ya fui una vez con un amigo, pero fue en otro barrio."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bien, entonces ya sabe cómo es el ambiente. Aquí estamos en el Centro, y hoy lunes está tranquilo, se puede platicar a gusto. Aquí tiene su cerveza, bien fría."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, se ve muy buena. No me preguntó nada, pero fue un placer. Ahora me voy, ¡hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego, amigo! Que le vaya muy bien, y aquí lo esperamos cuando quiera."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pase, pase, siéntese donde quiera. Qué bueno verlo otra vez por aquí. ¿Qué le sirvo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Otra cerveza, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, ahorita se la sirvo bien fría. Aquí también le traen su botana con la cerveza, para que vaya picando algo. ¿Ya había probado el tequila con sangrita?"
+   },
+   {
+    "who": "learner",
+    "text": "No, nunca probé la sangrita. ¿Qué es?"
+   },
+   {
+    "who": "npc",
+    "text": "Es una bebida que se inventó aquí en Jalisco. Es roja, de sabor picosito y un poco ácido, y se toma en un vasito aparte, entre sorbo y sorbo de tequila. Se la preparo si quiere probarla. ¿Usted prefiere lo picante o lo suave?"
+   },
+   {
+    "who": "learner",
+    "text": "Me gusta un poco picante, pero no mucho."
+   },
+   {
+    "who": "npc",
+    "text": "Entonces le va a gustar, la mía tiene su piquito pero no le quema. Mire, le traigo su cerveza y también un caballito de tequila con su sangrita para que la pruebe. ¿Le parece?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me parece bien, gracias. Quiero probarla. Pero ahora tengo que irme pronto. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Que le vaya muy bien, aquí lo esperamos."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, bienvenido otra vez! Pase, pase, ya conoce la casa. ¿Qué le sirvo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Hoy quiero un tequila con sangrita, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, un caballito con su sangrita, como la vez pasada. Ya se la preparo, mild-ish como le gusta. ¿Es blanco o reposado el tequila que prefiere?"
+   },
+   {
+    "who": "learner",
+    "text": "Reposado, por favor. No sé la diferencia, pero me gusta el nombre."
+   },
+   {
+    "who": "npc",
+    "text": "Buena elección, el reposado es de los que se toman despacito. Estuvo descansando unos meses en barrica, por eso es más suave y de color doradito. El blanco, en cambio, sale directo, más fuerte y más agavero. Aquí tiene su caballito, y la sangrita al ladito."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. Se ve muy bonito, el color."
+   },
+   {
+    "who": "npc",
+    "text": "Verdad que sí. Pruébelo primero solito, un traguito chiquito, y luego se refresca con la sangrita. ¿Qué tal, cómo va su domingo?"
+   },
+   {
+    "who": "learner",
+    "text": "Mi domingo va muy bien, gracias. Hoy caminé mucho por el Centro y ahora estoy cansado, pero contento. Probé el tequila y está muy rico. Bueno, tengo que irme. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que le gustó. ¡Hasta luego, amigo, aquí lo esperamos!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 24,
+    "wordsAvg": 23,
+    "wordsMax": 36,
+    "longShare": 0.4,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 11.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 30,
+    "wordsAvg": 27.2,
+    "wordsMax": 44,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.21,
+    "wordsPerLine": 9
+   },
+   "repeats": [
+    {
+     "said": "Claro que sí, ahorita se la sirvo bien fría.",
+     "earlier": "Claro que sí, ahorita se la sirvo bien fría."
+    },
+    {
+     "said": "Que le vaya muy bien, aquí lo esperamos.",
+     "earlier": "Que le vaya muy bien, y aquí lo esperamos cuando quiera."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 24.2,
+    "wordsMax": 46,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 15
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 24,
+  "openerWords": 15,
+  "multiQuestion": 0,
+  "learnerShare": 0.2733333333333334,
+  "learnerWords": 11.766666666666666,
+  "repeats": 1
+ },
+ "sale": 8
+}

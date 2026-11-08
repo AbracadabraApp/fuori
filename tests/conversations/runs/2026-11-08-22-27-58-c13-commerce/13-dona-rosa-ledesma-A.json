@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "rosa-flores-ignacio-ramirez",
+  "name": "Doña Rosa Ledesma",
+  "role": "florista",
+  "city": "San Miguel de Allende",
+  "place": "Puesto de flores, Mercado Ignacio Ramírez"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenos días, joven, pase, pase. Mire qué bonito está el cempasúchil esta semana. ¿Busca flores para algún altar?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, para la altar en mi casa."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, el altar de su casa. Para eso el cempasúchil es lo primero, su color y su olor guían a los difuntos de regreso. Aquí tengo manojos grandes y frescos. ¿Es la primera vez que arma un altar?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, es la primera vez. Yo no sé mucho."
+   },
+   {
+    "who": "npc",
+    "text": "No se preocupe, todos empezamos así. Lleve el cempasúchil, que es lo principal, y si quiere, unas flores blancas, como nube o alhelí, para acompañarlo. Con eso su altar ya se ve muy bonito. ¿Cuántos manojos cree que va a necesitar?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm... dos manojos, por favor. ¿Cuánto es?"
+   },
+   {
+    "who": "npc",
+    "text": "Dos manojos, muy bien. Son cien pesos, cincuenta cada uno. Aquí se los envuelvo en papel de periódico para que no se maltraten en el camino."
+   },
+   {
+    "who": "learner",
+    "text": "Está bien, cien pesos. Aquí está. Muchas gracias, señora. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted, joven. Que le quede muy bonito su altar. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Ay, qué gusto verle otra vez por aquí. ¿Cómo va su altar?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, señora. Mi altar está muy bien, gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, me da mucho gusto. Con ese cempasúchil debe estar precioso. ¿Ya le puso las flores blancas, o todavía le falta algo?"
+   },
+   {
+    "who": "learner",
+    "text": "No, todavía no tengo las flores blancas. Necesito más, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Ándele, para eso estoy. Aquí tengo nube y alhelí bien frescos de hoy. ¿Cuál se lleva, la nube o el alhelí?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm... la nube, por favor. ¿Cuánto es?"
+   },
+   {
+    "who": "npc",
+    "text": "Muy buena elección, la nube se ve preciosa junto al cempasúchil. El ramo son cincuenta pesos. ¿Con uno le alcanza, o quiere llevarse dos?"
+   },
+   {
+    "who": "learner",
+    "text": "Uno, por favor. Cincuenta pesos, aquí está. Gracias, señora. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted. Que le quede muy bonito su altar. ¡Adiós, que le vaya bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenos días, joven! Qué bueno verle otra vez por aquí. Hoy hay un sol precioso, ¿verdad? ¿Qué se le ofrece?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenos días, señora. Sí, hace mucho sol. Quiero flores, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, con gusto. Aquí tengo cempasúchil, nube, gladiolas y unas rosas bonitas. ¿Qué flores busca hoy, para el altar otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, para el altar. Quiero... las rosas, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien. Estas rosas rojas están recién cortadas, a ver cuál le gusta. Se las vendo a sesenta pesos el ramo. ¿Cuántos ramos quiere?"
+   },
+   {
+    "who": "learner",
+    "text": "Un ramo, por favor. Sesenta pesos, ¿sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, sesenta pesos el ramo. Aquí tiene, bien frescas. Con el naranja del cempasúchil y el blanco de la nube, ese rojo va a lucir muy bonito en su altar."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, gracias, señora. Aquí está, sesenta pesos. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted, joven. ¡Adiós y que le vaya muy bien!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 26,
+    "wordsAvg": 27.4,
+    "wordsMax": 41,
+    "longShare": 0.4,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.19,
+    "wordsPerLine": 8.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 19.4,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 9
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 21.6,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 8.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 23,
+  "openerWords": 18,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.2333333333333333,
+  "learnerWords": 8.700000000000001,
+  "repeats": 0
+ },
+ "sale": 11
+}

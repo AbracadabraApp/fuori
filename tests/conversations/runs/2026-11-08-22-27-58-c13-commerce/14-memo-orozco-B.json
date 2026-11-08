@@ -1,0 +1,203 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "memo-tejuino",
+  "name": "Memo Orozco",
+  "role": "tejuinero",
+  "city": "Guadalajara",
+  "place": "Carrito de tejuino junto al Mercado San Juan de Dios"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pásele, pásele. ¿Ya probó el tejuino alguna vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no. Yo... no he probado. ¿Qué es?"
+   },
+   {
+    "who": "npc",
+    "text": "Es una bebida fría de masa de maíz fermentada con piloncillo, y le pongo limón, sal y hielo. Es bien de aquí, de Jalisco. Mucha gente le pide también una bolita de nieve de limón encima."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... más lento, por favor. No entiendo."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Es una bebida fría. Es de maíz. Lleva limón, sal y hielo. Es típica de Jalisco."
+   },
+   {
+    "who": "learner",
+    "text": "Ah... bebida fría, de maíz. Ehm... ¿cuánto cuesta?"
+   },
+   {
+    "who": "npc",
+    "text": "El vaso chico cuesta treinta pesos y el grande cuarenta y cinco. Con la nieve de limón son diez pesos más."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gracias. Hoy no. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Está bien, no hay problema. ¡Adiós, que le vaya bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Qué bueno verte otra vez por aquí. Ya está bien frío el tejuino hoy, ¿eh?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Sí... ehm... quiero probar. Un vaso chico, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro que sí! Ahorita te lo preparo, con limón y sal. Mira, aquí lo hago todo en el momento, con hielo bien picado. Aquí tienes, un chico. ¿Cómo te llamas?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... me llamo Sam. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Mucho gusto, Sam, yo soy Memo. Pruébalo con calma, que es la primera vez. Aquí llevo años con mi carrito, junto al mercado. ¿Y tú, de dónde eres?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... yo soy de... Canadá."
+   },
+   {
+    "who": "npc",
+    "text": "¡Ah, Canadá! Qué lejos, y con frío, ¿no? Aquí en noviembre está más rico, ya no hace tanto calor. ¿Y qué tal el tejuino, Sam?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... está... frío. Y... ehm... rico. Un poco... diferente. Gracias, Memo. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Me alegra, Sam! Gracias a ti. Cuídate mucho y adiós."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, Sam! Qué bueno verte otra vez. ¿Otro tejuino hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Un vaso chico, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, ahorita te lo preparo. Con limón y sal, como la otra vez, ¿verdad? Aquí tienes, bien frío. Hoy hay mucha gente en el mercado, es domingo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, gracias. Con limón y sal... está bien."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, que lo disfrutes. Los domingos son los días más movidos aquí en el Centro. ¿Ya conociste el mercado por dentro?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿el mercado? Sí... un poco. Es... muy grande."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, es enorme, hay tres pisos y se pierde uno fácil. Yo llevo años aquí y todavía descubro puestos nuevos. ¿Qué te gustó más de lo que viste?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... me gustó... los colores. Muy bonito. Gracias, Memo. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "De nada, Sam. ¡Adiós, cuídate mucho!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 18.8,
+    "wordsMax": 36,
+    "longShare": 0.2,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 7
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 22,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 8.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 18.8,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 8.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 21,
+  "openerWords": 10,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.24333333333333332,
+  "learnerWords": 8.033333333333333,
+  "repeats": 0
+ },
+ "sale": 4
+}

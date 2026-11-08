@@ -1,0 +1,211 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, siéntese en la silla, que esos zapatos piden una buena boleada. ¿Qué color de grasa les pongo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Eh... negro, por favor. Mis zapatos son negro."
+   },
+   {
+    "who": "npc",
+    "text": "Negro, muy bien. Ahora sí, súbase el pie aquí en el descanso y yo me encargo. Le va a quedar como espejo."
+   },
+   {
+    "who": "learner",
+    "text": "Ok... eh, el pie aquí? Gracias, señor."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, ahí mero, joven. Con calma, que yo le voy limpiando primero el polvo con el cepillo. ¿Usted vive por aquí, por la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo vivo aquí. Eh... cerca, en la Roma."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, entonces ya es vecino mío. Yo aquí llevo años, desde que esta calle era otra cosa. Ahorita le pongo la grasa, ya verá cómo le saco el brillo."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, señor. Sí, yo soy su vecino. Eh... muchas gracias por el trabajo. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, vecino. Que le vaya muy bien, y hasta luego."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, vecino! Qué gusto verlo otra vez. ¿Otra boleadita hoy, o nomás de paso por la calle?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, otra boleada, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro que sí, con mucho gusto! Suba a la silla, póngase cómodo. ¿Son los mismos zapatos negros de la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son los mismos zapatos. Negro, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, negro entonces. Primero les quito el polvo con el cepillo, y luego la crema. Ya verá cómo quedan, como espejo."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, gracias, señor. Muy bien."
+   },
+   {
+    "who": "npc",
+    "text": "Ya le estoy dando el cepillado, tranquilo. Dígame, ¿usted trabaja por aquí cerca, en la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, yo no trabajo en la Roma. Eh... yo trabajo en casa, con la computadora. Bueno, gracias, señor. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, así trabaja a gusto, en su casita. Adiós, vecino, que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, vecino! Pásele, pásele, aquí tiene su silla. ¿Otra vez los zapatos negros?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, los zapatos negro, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, vecino. Suba el pie aquí, que primero les quito el polvo con el cepillo y luego les pongo la crema. ¿Hoy sí le va a tocar un domingo tranquilo en la casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un domingo tranquilo. Eh... yo descanso en la casa."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, el domingo es para eso. Mire, ya le quité el polvo y ahora le doy la crema negra, con calma, para que quede bien parejo. ¿Y se acostumbra ya a la colonia?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gusta la colonia. Eh... es muy bonito."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, ¿verdad? La Roma es bonita, y más en noviembre, que ya baja el calor y da gusto caminar. Yo aquí llevo años con mi puesto. Ahorita le doy brillo con el trapo, ya casi terminamos con este zapato. ¿Y por dónde le gusta caminar a usted?"
+   },
+   {
+    "who": "learner",
+    "text": "Eh... yo camino en la calle, cerca de mi casa. No sé el nombre. Bueno, muchas gracias, señor. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, vecino. Que le vaya muy bien y hasta luego."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 22,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 22,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 10.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 18.4,
+    "wordsMax": 21,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 34,
+    "wordsAvg": 28.2,
+    "wordsMax": 47,
+    "longShare": 0.6,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 12.3
+   },
+   "repeats": [
+    {
+     "said": "Suba el pie aquí, que primero les quito el polvo con el cepillo y luego les pongo la crema.",
+     "earlier": "Primero les quito el polvo con el cepillo, y luego la crema."
+    },
+    {
+     "said": "Que le vaya muy bien y hasta luego.",
+     "earlier": "Que le vaya muy bien, y hasta luego."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 22,
+  "openerWords": 18,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.28,
+  "learnerWords": 10.933333333333332,
+  "repeats": 1
+ },
+ "sale": 6
+}

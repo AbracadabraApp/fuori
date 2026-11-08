@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "ofelia-tlayudas",
+  "name": "Doña Ofelia Santiago",
+  "role": "tlayudera",
+  "city": "Oaxaca",
+  "place": "Tlayudas del Mercado 20 de Noviembre"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, pase, pase! Aquí está la tlayuda calientita, con el humo del carbón. ¿Qué se le antoja?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Huele muy rico. ¿Qué me recomienda?"
+   },
+   {
+    "who": "npc",
+    "text": "Gracias, es el carbón. Yo le recomiendo la tlayuda con tasajo, es lo que más sale. Lleva asiento, frijoles y quesillo, y la carne va asada ahí mismo. ¿Es la primera vez que viene al mercado?"
+   },
+   {
+    "who": "learner",
+    "text": "No, ya vine una vez con una amiga. Pero es mi primera tlayuda con tasajo."
+   },
+   {
+    "who": "npc",
+    "text": "Pues qué bueno que hoy se anima. El tasajo se asa al momento, así que le va a llegar bien caliente. Se la preparo en lo que usted se sienta ahí."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, muy amable. ¿Usted trabaja aquí todos los días?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, todos los días, desde muy temprano. Prendo el carbón y el comal antes de que llegue la gente. Ya son muchos años aquí en el pasillo. ¿Y usted, está de visita o vive en Oaxaca?"
+   },
+   {
+    "who": "learner",
+    "text": "Vivo aquí en Oaxaca desde hace unas semanas. Trabajo en casa y me gusta mucho la ciudad. Bueno, voy a sentarme. ¡Gracias y hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que le gusta la ciudad. Siéntese, ahorita le llevo su tlayuda. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pásele, pásele. Ya tengo el comal bien caliente."
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Otra vez vine a comer su tlayuda."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué gusto verla otra vez! Siéntese, ahorita le preparo su tlayuda. ¿Se le antojó el tasajo de nuevo?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, otra vez el tasajo, por favor. Estuvo muy rico la última vez."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que le gustó. Ahorita lo pongo en las brasas, para que le salga bien calientito."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. ¿Usted cocina todo sola?"
+   },
+   {
+    "who": "npc",
+    "text": "Casi todo, sí. A veces mi hija me ayuda con las tortillas cuando hay mucha gente, pero el comal y las brasas son cosa mía."
+   },
+   {
+    "who": "learner",
+    "text": "Qué bien que su hija le ayuda. Muchas gracias, Doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego, mija! Que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, joven! Pásele, pásele. Ya está caliente el comal. ¿Qué le preparo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Hoy quiero una tlayuda con tasajo, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro que sí! Otra de tasajo, ya se hizo cliente. Ahorita le pongo el tasajo en las brasas, está recién cortado."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gusta mucho. Gracias, Doña Ofelia."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, joven. Mientras se asa, le unto el asiento y los frijoles. Huele rico el humo, ¿verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, huele muy rico. Me gusta el humo."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, hay quienes se quejan del humo, pero así es el mercado, ¡y así sabe el tasajo! Ya casi está su tlayuda, joven."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, es verdad, el humo es parte del mercado. Muchas gracias, Doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego, joven! Que le aproveche y cuídese mucho."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 31,
+    "wordsAvg": 27,
+    "wordsMax": 36,
+    "longShare": 0.6,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 14.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 15.6,
+    "wordsMax": 25,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.34,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 17.2,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 19,
+  "openerWords": 13,
+  "multiQuestion": 0,
+  "learnerShare": 0.32,
+  "learnerWords": 11.700000000000001,
+  "repeats": 0
+ },
+ "sale": 7
+}

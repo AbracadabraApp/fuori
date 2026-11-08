@@ -1,0 +1,203 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "vale-libros-tecolote",
+  "name": "Vale Ortiz",
+  "role": "librera",
+  "city": "Ciudad de México",
+  "place": "Libros Tecolote"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, bienvenido a Libros Tecolote. Con calma, mira lo que quieras."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gracias. Yo... busco un libro. Para aprender español."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bien, justo para eso tengo un estante. Son libros fáciles, con frases cortas. ¿Ya hablas algo de español?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... un poco. Muy poco. Soy... principiante."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, entonces el estante es para ti. Está allí, junto a la ventana, con los libros de letra grande. Hay cuentos cortos y uno de dibujos que me gusta mucho. ¿Vives aquí en Coyoacán?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Vivo aquí. Un poco... tiempo."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, entonces ya conoces un poco el barrio. Los domingos esto se llena de carriolas, pero hoy, lunes, está tranquilo. Ve a mirar el estante, y si algo te llama la atención, me dices."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, gracias. Voy a mirar. Muchas gracias. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "De nada, que te vaya muy bien. Adiós."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué bueno verte otra vez. ¿Cómo te fue con la estantería de la ventana?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Bien, gracias. Yo... compré un libro."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien! ¿Y ya lo empezaste a leer?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Un poco. Es... difícil, pero... bueno."
+   },
+   {
+    "who": "npc",
+    "text": "Así empieza todo, con un poco de dificultad. Con calma, que no hay prisa. ¿Qué tal tus primeros días en Coyoacán?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... bien. Es bonito. Me gusta mucho."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, es un barrio muy bonito. Yo trabajo aquí todos los días y todavía me gusta. ¿Ya caminaste por el centro?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Un poco. Camino... mucho. Es bonito. Bueno, gracias. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós! Que te vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué bueno verte otra vez. ¿Cómo va el libro?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. El libro... ehm... bien. Un poco difícil. Pero me gusta."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bien que te gusta. Lo difícil se va haciendo fácil, ya verás. ¿Hoy buscas otro libro, o solo vienes a pasear?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... solo... paseo. Un poco. Me gusta... la librería."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias, a mí también me gusta. Tiene su magia. Mira todo con calma, hay una mesa cerca de la ventana con libros muy fáciles. ¿Tú lees mucho, en tu idioma?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Yo leo... mucho. En inglés."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, entonces ya tienes el hábito, solo falta el idioma. Aquí también tenemos una repisa con libros en inglés, por si algún día quieres cambiar. ¿Y qué te gusta leer?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... me gustan... las novelas. Y... historia. Un poco. Bueno... gracias. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós! Que tengas un lindo domingo, y vuelve cuando quieras."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 21.8,
+    "wordsMax": 35,
+    "longShare": 0.4,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 14.2,
+    "wordsMax": 21,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 8.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 20.6,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 20,
+  "openerWords": 12,
+  "multiQuestion": 0,
+  "learnerShare": 0.27666666666666667,
+  "learnerWords": 8.833333333333334,
+  "repeats": 0
+ },
+ "sale": 6
+}

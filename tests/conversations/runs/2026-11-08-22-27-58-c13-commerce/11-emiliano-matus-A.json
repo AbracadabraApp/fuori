@@ -1,0 +1,220 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "emiliano-los-amantes",
+  "name": "Emiliano Matus",
+  "role": "cantinero",
+  "city": "Oaxaca",
+  "place": "Mezcalería Los Amantes"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas noches! Bienvenido a Los Amantes. ¿Es tu primera vez probando mezcal por aquí?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas noches. No, es mi segunda vez aquí."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que regresas! Entonces ya conoces la mecánica: copita chiquita, naranja y sal de gusano. ¿Qué probaste la primera vez?"
+   },
+   {
+    "who": "learner",
+    "text": "No recuerdo el nombre. Era muy fuerte, un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Ja, no te preocupes, pasa seguido. Si fue el que sirvo más, seguro era un espadín, que tiene su fuerza. Si quieres algo más suave o con más carácter, te muestro otro. ¿Prefieres que te recomiende uno?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Uno más suave, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Te sirvo un espadín joven, de los más suaves que tengo, con su naranja y su sal de gusano. Tómalo despacito, a traguitos. ¿Algo más que quieras probar con él?"
+   },
+   {
+    "who": "learner",
+    "text": "No, gracias, es todo por ahora. Muchas gracias. ¡Adiós, hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Que disfrutes tu mezcal y cuídate mucho."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Qué gusto verte otra vez por aquí. Pásale, hoy está seco y rico para un mezcalito. ¿Qué se te antoja?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Un mezcal suave, por favor. Como la otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, el espadín joven otra vez. Ahorita te lo sirvo con su naranja y su sal de gusano. ¿Tienes planes para el fin de semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, el sábado yo voy a un mercado con mi amigo."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! Los mercados aquí en Oaxaca son bien bonitos. Aquí tienes tu copita, con su naranja y su sal. Ya sabes, despacito."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. Salud. Está muy rico."
+   },
+   {
+    "who": "npc",
+    "text": "¡Salud! Me da gusto que te guste. Ese espadín es de los más suaves que tengo. ¿Y a qué mercado van el sábado?"
+   },
+   {
+    "who": "learner",
+    "text": "No sé el nombre, perdón. Mi amigo sabe. Bueno, muchas gracias. ¡Adiós, hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡No hay problema! Que la pases muy bien el sábado. ¡Adiós, hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Bienvenido otra vez! Qué bueno verte por aquí. Siéntate donde quieras, ahorita te atiendo."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. Buenas noches. Yo quiero el mezcal suave, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, el espadín joven, con su naranja y su sal de gusano. Ya te lo preparo. ¿Cómo te fue en el mercado el sábado?"
+   },
+   {
+    "who": "learner",
+    "text": "Fue muy bonito. Yo compré un... una bolsa. Mucha gente."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bien, los sábados se llenan de gente. Aquí tienes tu copita, con su naranja y su sal. ¿Qué tipo de bolsa compraste?"
+   },
+   {
+    "who": "learner",
+    "text": "Es una bolsa... de tela. Es azul y roja."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bonita, esos colores se ven mucho en los textiles de acá. Seguro te va a servir un montón. Y a todo esto, ¿cómo te llamas? Todavía no me has dicho tu nombre."
+   },
+   {
+    "who": "learner",
+    "text": "Me llamo Jake. Mucho gusto. Bueno, muchas gracias por el mezcal. ¡Adiós, hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Mucho gusto, Jake. ¡Hasta luego, cuídate mucho!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 22.4,
+    "wordsMax": 37,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 9
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 22,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 21.2,
+    "wordsMax": 25,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 10.3
+   },
+   "repeats": [
+    {
+     "said": "Ahorita te lo sirvo con su naranja y su sal de gusano.",
+     "earlier": "Te sirvo un espadín joven, de los más suaves que tengo, con su naranja y su sal de gusano."
+    },
+    {
+     "said": "Ese espadín es de los más suaves que tengo.",
+     "earlier": "Te sirvo un espadín joven, de los más suaves que tengo, con su naranja y su sal de gusano."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 20.2,
+    "wordsMax": 33,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 10.8
+   },
+   "repeats": [
+    {
+     "said": "Claro, el espadín joven, con su naranja y su sal de gusano.",
+     "earlier": "Te sirvo un espadín joven, de los más suaves que tengo, con su naranja y su sal de gusano."
+    },
+    {
+     "said": "Aquí tienes tu copita, con su naranja y su sal.",
+     "earlier": "Aquí tienes tu copita, con su naranja y su sal."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 23,
+  "openerWords": 14,
+  "multiQuestion": 0,
+  "learnerShare": 0.2733333333333334,
+  "learnerWords": 10.033333333333333,
+  "repeats": 2
+ },
+ "sale": 5
+}

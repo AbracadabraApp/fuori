@@ -1,0 +1,9 @@
+{
+  "name": "commerce: the Beginner errand rule added to the shared rules (Intermediate)",
+  "system": [
+    {
+      "find": "Take turns. No more words after a question mark.",
+      "replace": "Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask."
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "rigoberto-cantinero",
+  "name": "Rigoberto Plascencia",
+  "role": "cantinero",
+  "city": "Guadalajara",
+  "place": "Cantina La Fuente"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, bienvenido a La Fuente. Pásale, pásale, ahí en la barra hay lugar."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, gracias. ¿Aquí puedo sentarme?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, siéntate donde gustes. ¿Qué te sirvo, un tequilita?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un tequila, por favor. Es mi primera vez aquí."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que vienes! Aquí te lo sirvo en caballito, con su sangrita a un lado, como se hace en Jalisco. Y ya ves, los lunes la cantina está tranquila, se oye uno platicar."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, qué bien. ¿Qué es una sangrita?"
+   },
+   {
+    "who": "npc",
+    "text": "Es una bebida picosita que se inventó aquí en Jalisco: lleva jugo de naranja, limón, granada y un poco de chile. Se toma en traguitos, uno de tequila y otro de sangrita, para que se acompañen. ¿Ya habías probado el tequila blanco?"
+   },
+   {
+    "who": "learner",
+    "text": "No, nunca probé el tequila blanco. Solo probé uno en un restaurante la semana pasada. Bueno, gracias por todo, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto, aquí estamos cuando quieras volver. Hasta luego, que te vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Qué bueno verlo otra vez por aquí. Pásele, pásele, siéntese en la barra."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, gracias. Hoy vine otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Y qué bueno que vino, aquí siempre hay lugar para usted. Hoy está seco el día, de esos que piden un tequilita. ¿Ya sabe qué se va a tomar?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, otro tequila, por favor. Con la sangrita."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, ya se lo sirvo. Aquí le va su caballito con su sangrita al lado, como se debe. Salud."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. Salud. Mmm, la sangrita está muy rica."
+   },
+   {
+    "who": "npc",
+    "text": "Me da gusto que le guste. La preparamos aquí mismo en la cantina, con receta de la casa, y la verdad es de lo que más me enorgullece de la barra. ¿Y usted, cómo va en Guadalajara, ya se acostumbra?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, ya me acostumbré un poco. Llegué hace unas semanas y todavía hablo poco español. Bueno, muchas gracias por todo, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, aquí lo espero cuando quiera. Hasta luego, que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, bienvenido otra vez! Qué bueno verlo de nuevo por aquí. ¿Se sienta en la barra como siempre?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, en la barra, gracias. Hoy vine con más tiempo."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, así se disfruta mejor. Los domingos aquí se alargan la tarde y la botana. Siéntese, que ya le acomodo un lugar. ¿Qué le sirvo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Un tequila otra vez, por favor. Con sangrita."
+   },
+   {
+    "who": "npc",
+    "text": "Cómo no. Ahorita se lo sirvo en su caballito, con su vasito de sangrita al lado. Hoy la sangrita quedó muy buena, la preparé yo mismo esta mañana."
+   },
+   {
+    "who": "learner",
+    "text": "Qué bien, gracias. ¿Usted prepara todo aquí?"
+   },
+   {
+    "who": "npc",
+    "text": "Casi todo lo de la barra, sí. La sangrita es de la casa, y las botanas salen de la cocina de doña Chuy, que lleva aquí años. Yo me encargo de que a nadie le falte su caballito."
+   },
+   {
+    "who": "learner",
+    "text": "Qué bien. Gracias por todo, Rigoberto. Hoy tomé mi tequila y ahora me voy. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto, amigo. Que le vaya muy bien, ¡hasta luego!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 23,
+    "wordsMax": 42,
+    "longShare": 0.4,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 11
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 24,
+    "wordsMax": 40,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 11.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 19,
+    "replies": 5,
+    "wordsMedian": 27,
+    "wordsAvg": 24.4,
+    "wordsMax": 38,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 21,
+  "openerWords": 15,
+  "multiQuestion": 0,
+  "learnerShare": 0.26666666666666666,
+  "learnerWords": 10.866666666666667,
+  "repeats": 0
+ },
+ "sale": 6
+}

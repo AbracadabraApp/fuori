@@ -23,8 +23,8 @@ export type Visits = Line[][];
 /** The scorecard rows the test fills: counted, not judged */
 export const KEYS = ['replyWords', 'openerWords', 'multiQuestion', 'learnerShare', 'learnerWords', 'repeats'] as const;
 export type Key = (typeof KEYS)[number];
-export type Extra = 'culture' | 'vocabOwn' | 'vocabLine';
-const EXTRA_LABEL: Record<Extra, string> = { culture: 'Culture (one reader)', vocabOwn: 'Place words, her own', vocabLine: 'Place words, from the line' };
+export type Extra = 'culture' | 'vocabOwn' | 'vocabLine' | 'sale';
+const EXTRA_LABEL: Record<Extra, string> = { culture: 'Culture (one reader)', vocabOwn: 'Place words, her own', vocabLine: 'Place words, from the line', sale: 'Lines about the sale' };
 export const label = (k: Key | Extra) => (k in EXTRA_LABEL ? EXTRA_LABEL[k as Extra] : MEASURES.find((m) => m.key === k)!.label);
 export const show = (k: Key | Extra, v: number | null | undefined) => (v === null || v === undefined ? '–' : k in EXTRA_LABEL ? String(Math.round(v * 10) / 10) : formatValue(k as Key, v));
 
@@ -112,4 +112,37 @@ export function vocabFlips(a: VocabWord[], b: VocabWord[]): { flips: number; onc
   for (const [k, t] of x) { if (!y.has(k)) once++; else if (y.get(k) !== t) flips++; }
   for (const k of y.keys()) if (!x.has(k)) once++;
   return { flips, once };
+}
+
+// ---------- Lines about the sale (the commerce test) ----------
+
+const SALE = { type: 'object', properties: { sale: { type: 'array', items: { type: 'boolean' } } }, required: ['sale'], additionalProperties: false };
+/**
+ * One reader (Claude) says, for each of the character's lines, whether it is about the sale: an order, a price, a
+ * payment, or offering something to buy. A judgment (flagged on the card), counted per conversation. The count is
+ * judge-based on purpose: no keyword list (CLAUDE.md: no phrase lists or keyword filters).
+ */
+export async function saleLines(visits: Visits, who: string): Promise<number> {
+  // Each of the character's lines with the learner's line before it, so "sí, ahorita" or a learner who asks to buy is judged in context
+  const lines: string[] = [];
+  const shown: string[] = [];
+  for (const v of visits) {
+    let before = '';
+    for (const l of v) {
+      if (l.who === 'learner') { before = l.text; continue; }
+      lines.push(l.text);
+      shown.push(`${lines.length}. ${before ? `(the learner had said: "${before}") ` : ''}${l.text}`);
+      before = '';
+    }
+  }
+  if (!lines.length) return 0;
+  const numbered = shown.join('\n');
+  const r = await anthropic.messages.create({
+    model: CLAUDE_MODEL,
+    max_tokens: 4000,
+    messages: [{ role: 'user', content: `Lines said by ${who}, in order (some with what the learner had just said):\n${numbered}\n\nFor each line, true if it is about the sale: taking or offering to take an order, offering something to buy, a price, or a payment (paying, change, a receipt). False otherwise, including talk about the food, the craft or the place. Reply with JSON: sale, an array of exactly ${lines.length} booleans in the same order.` }],
+    output_config: { format: { type: 'json_schema', schema: SALE } },
+  } as Parameters<typeof anthropic.messages.create>[0]);
+  const sale = (JSON.parse(replyText(r as Parameters<typeof replyText>[0])) as { sale: boolean[] }).sale;
+  return sale.filter(Boolean).length;
 }

@@ -1,0 +1,207 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "ofelia-tlayudas",
+  "name": "Doña Ofelia Santiago",
+  "role": "tlayudera",
+  "city": "Oaxaca",
+  "place": "Tlayudas del Mercado 20 de Noviembre"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, pase, pase! Aquí estamos con las tlayudas en el comal. ¿Es la primera vez que viene al mercado?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. No, ya vine una vez la semana pasada."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bueno, entonces ya conoce el humito de este pasillo. Hoy la brasa está bien buena, el tasajo ya está soltando su olor. ¿Ya probó una tlayuda la vez pasada?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, probé una tlayuda. Me gustó mucho, pero era muy grande."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, ¡son grandes! Por eso aquí muchos la comparten, o se llevan lo que sobra doblado en una bolsita. Y cuando la tlayuda es tan grande, hay que comerla con las manos, doblada como una media luna. ¿Qué le había puesto la vez pasada?"
+   },
+   {
+    "who": "learner",
+    "text": "Le puse queso y frijoles... y carne también. No recuerdo el nombre."
+   },
+   {
+    "who": "npc",
+    "text": "Seguro fue tasajo o cecina enchilada, son las dos carnes que asamos aquí en la brasa. El tasajo es la tira delgada de res, y la cecina es de cerdo con chile, más rojita. Si quiere, le puedo hacer una más chiquita hoy. ¿Cuál de las dos se le hace que fue?"
+   },
+   {
+    "who": "learner",
+    "text": "Creo que fue la cecina, porque era roja. Sí, una más chiquita, por favor. Gracias por todo, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, que le vaya muy bien. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pásele, pásele. Ah, ya lo conozco, usted es el de la tlayuda grande. ¿Hoy sí le hago la chiquita?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, buenas tardes. Sí, la chiquita, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto. Ahorita se la pongo en el comal, ya sabe, lleva asiento, frijoles y quesillo. ¿Y de carne, qué se le antoja?"
+   },
+   {
+    "who": "learner",
+    "text": "Cecina otra vez, por favor. Me gustó mucho."
+   },
+   {
+    "who": "npc",
+    "text": "Cecina, pues, entonces. Ya la tengo sobre las brasas, en un ratito está lista su tlayuda."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. Huele muy rico aquí."
+   },
+   {
+    "who": "npc",
+    "text": "Ay, qué bueno que le guste. Es el humo del carbón, ya ni lo noto de tanto que llevo aquí. ¿Y usted cómo ha estado por Oaxaca, ya se va acomodando?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, estoy bien, gracias. Ya me estoy acostumbrando poco a poco. Vivo aquí desde hace unas semanas. Bueno, muchas gracias, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, ya verá que cada día se siente más como en casa. Hasta luego, que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, bienvenido! Pásele, pásele, aquí está el comal bien caliente. ¿Qué se le antoja hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Una tlayuda chiquita con cecina, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro que sí! Chiquita con cecina, ahorita se la preparo. Ya la voy poniendo en el comal con su asiento, sus frijoles y su quesillo."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. ¿Usted trabaja aquí todos los días?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, aquí estoy casi todos los días, desde muy temprano, prendiendo el carbón. Los domingos hay más gente, ¿verdad? Mire, ya se está dorando su tlayuda."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, hay mucha gente. ¿Usted vive cerca de aquí?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, vivo a unas cuadras, en el Centro. Me vengo caminando todas las mañanas, con mi bolsa de quesillo. ¿Y usted, ya se va acostumbrando a Oaxaca?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, ya me estoy acostumbrando. Ayer caminé por el centro y me gustó mucho. La gente es muy amable. Bueno, muchas gracias, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que le gustó. Gracias a usted, que le vaya muy bien. ¡Hasta luego!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 31,
+    "wordsAvg": 31.4,
+    "wordsMax": 52,
+    "longShare": 0.6,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 13
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 21,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 22.4,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 10.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 21.6,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 12.3
+   },
+   "repeats": [
+    {
+     "said": "¿Y usted, ya se va acostumbrando a Oaxaca?",
+     "earlier": "¿Y usted cómo ha estado por Oaxaca, ya se va acomodando?"
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 25,
+  "openerWords": 20,
+  "multiQuestion": 0,
+  "learnerShare": 0.28,
+  "learnerWords": 12.033333333333333,
+  "repeats": 0.5
+ },
+ "sale": 6
+}

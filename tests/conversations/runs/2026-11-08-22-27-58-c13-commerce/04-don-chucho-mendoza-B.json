@@ -1,0 +1,208 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, suba a la silla. ¿Le doy una boleadita a esos zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Mis zapatos están muy sucio."
+   },
+   {
+    "who": "npc",
+    "text": "Ándele, siéntese cómodo y ponga el pie aquí en el descanso. Sí se ven bien polvosos, pero con grasa y cepillo quedan como nuevos. Ya verá. ¿Son de piel, verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son de piel. Eh... son nuevo? No, son viejo."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, viejitos pero buenos, ¿verdad? La piel vieja es la que mejor agarra el brillo, ya tiene su carácter. Mire, primero les quito el polvo con el cepillo y luego les doy su grasa, ya verá cómo se despiertan. ¿Y usted, es nuevo por aquí en la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, no soy nuevo. Vivo aquí un año... uno año."
+   },
+   {
+    "who": "npc",
+    "text": "¡Un año ya! Pues entonces ya casi es un roma-norteño de a de veras. Yo aquí tengo mi puesto desde hace más de cuarenta años, he visto cambiar toda la colonia. Ya casi termino con este pie, joven, ahorita pasamos al otro. ¿Qué es lo que más le gusta de vivir en la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Me gusta... los parques y la gente es muy amable. Gracias, señor. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Muchas gracias a usted, joven, que le vaya muy bien. Hasta luego, aquí lo espero cuando quiera otra boleada."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Joven, qué gusto verlo otra vez! Suba, suba a la silla, que esos zapatos ya me están llamando."
+   },
+   {
+    "who": "learner",
+    "text": "Hola, Don Chucho. Sí, mis zapatos está sucio otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Ja, con este polvo de la Roma se ensucian rapidito, joven. Póngase cómodo y deme el pie, que le voy a dejar un brillo que se va a ver en el espejo."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, Don Chucho. Aquí está el pie."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, ya estamos en confianza. Primero le quito el polvo con el cepillo, y luego viene la grasa y el brillo. Estos zapatos de piel viejita agradecen el cariño, ¿verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son viejo, pero me gustan mucho."
+   },
+   {
+    "who": "npc",
+    "text": "Así son los buenos zapatos, joven, entre más viejos, mejor se acomodan al pie. Mire, con un poco de grasa y trabajo, quedan como nuevos. ¿Dónde los compró, si se puede saber?"
+   },
+   {
+    "who": "learner",
+    "text": "Los compré en una tienda en Estados Unidos. Hace tres años. Gracias, Don Chucho. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Pues buenas compras, joven, le han durado bien. Que le vaya muy bien, y aquí lo espero cuando quiera. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Qué bueno verlo otra vez por aquí. Suba a la silla, que esos zapatos ya andan pidiendo su boleada con el polvo de la Roma. ¿Café o negro hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Don Chucho. Café, por favor. Mis zapatos son café."
+   },
+   {
+    "who": "npc",
+    "text": "Café, muy bien, ya los voy limpiando primero con el cepillo. Ahorita le dejo esa piel como espejo. Y cuénteme, ¿cómo le fue este domingo, salió a pasear por el parque?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo salí al parque. Fue muy bonito."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, joven, en noviembre da gusto andar por el parque, ya no hace tanto calor. Mire, ya le puse la grasa a este zapato, ahora le paso el cepillo fuerte para que saque brillo. Con la piel buena se nota luego luego."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, mucho brillo. Gracias, Don Chucho."
+   },
+   {
+    "who": "npc",
+    "text": "Para servirle, joven. Ya casi acabo con el otro zapato, nomás le doy el último pulido con el trapo. ¿Y usted va a seguir un rato por la Roma hoy, o ya se va para su casa a descansar?"
+   },
+   {
+    "who": "learner",
+    "text": "Voy a mi casa ahora. Estoy un poco cansado. Gracias, Don Chucho. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Descanse, joven, que se lo ganó. Hasta luego, aquí lo espero cuando quiera."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 30,
+    "wordsAvg": 33.4,
+    "wordsMax": 54,
+    "longShare": 0.4,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.2,
+    "wordsPerLine": 10.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 31,
+    "wordsAvg": 26.8,
+    "wordsMax": 32,
+    "longShare": 0.6,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 32,
+    "replies": 5,
+    "wordsMedian": 32,
+    "wordsAvg": 31.6,
+    "wordsMax": 43,
+    "longShare": 0.8,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.2,
+    "wordsPerLine": 10
+   },
+   "repeats": [
+    {
+     "said": "Suba a la silla, que esos zapatos ya andan pidiendo su boleada con el polvo de la Roma.",
+     "earlier": "Suba, suba a la silla, que esos zapatos ya me están llamando."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 31,
+  "openerWords": 18,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.21000000000000005,
+  "learnerWords": 10.366666666666667,
+  "repeats": 0.5
+ },
+ "sale": 3
+}

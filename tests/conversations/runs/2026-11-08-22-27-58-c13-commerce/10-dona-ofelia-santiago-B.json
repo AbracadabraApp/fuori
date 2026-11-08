@@ -1,0 +1,208 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "ofelia-tlayudas",
+  "name": "Doña Ofelia Santiago",
+  "role": "tlayudera",
+  "city": "Oaxaca",
+  "place": "Tlayudas del Mercado 20 de Noviembre"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"system\":[{\"find\":\"Take turns. No more words after a question mark.\",\"replace\":\"Take turns. No more words after a question mark. If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask.\"}]}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, pase, pase! Aquí se está haciendo la tlayuda en el comal. ¿Qué le sirvo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Quiero una tlayuda, por favor. ¿Qué me recomienda?"
+   },
+   {
+    "who": "npc",
+    "text": "Buenas tardes. Pues si es la primera vez, la de tasajo, que se asa en el carbón y sale bien ahumadita. Lleva asiento, frijol y quesillo, todo encima de la tortilla bien doradita. ¿Se la preparo así?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Tasajo, sí. Suena muy rico."
+   },
+   {
+    "who": "npc",
+    "text": "Ahorita se la preparo. Primero va la tortilla al comal, y mientras se dora le unto el asiento y el frijol. El tasajo ya está en las brasas, mire cómo humea."
+   },
+   {
+    "who": "learner",
+    "text": "Wow, huele muy bien. ¿Usted cocinó aquí todos los días?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, todos los días, desde muy temprano. Ya son muchos años en este pasillo del mercado. ¿Usted es de por aquí o anda de visita?"
+   },
+   {
+    "who": "learner",
+    "text": "No soy de aquí. Vivo en Oaxaca desde hace unas semanas. Soy de Canadá. Me gusta mucho el mercado. Bueno, muchas gracias, doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que le gusta, bienvenido a Oaxaca. Aquí tiene su tlayuda, que le aproveche. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pásele, pásele. Ya volvió, ¿verdad? Qué bueno verle otra vez por aquí. ¿Qué se le antoja hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, doña Ofelia. Hoy quiero otra tlayuda, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, con gusto. Ya se la voy poniendo en el comal. Mire, hoy el carbón está bien prendido y la cecina enchilada huele riquísimo. ¿La quiere con tasajo otra vez o prefiere probar la cecina?"
+   },
+   {
+    "who": "learner",
+    "text": "Quiero probar la cecina, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, cecina será. Ahorita le doy la vuelta a la carne sobre las brasas. Esa cecina viene bien enchilada, así que si le pica, avíseme y le pongo un poquito más de quesillo para calmarla. Dígame, ¿ya conoció otras partes del mercado en estos días?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un poco. Fui a ver las frutas y los chocolates."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, los chocolates de aquí son famosos; huele rico todo ese pasillo, ¿verdad? Aquí en mi lado es puro humo y carbón, pero así es el mercado, cada pasillo con su olor. Mire, su tlayuda ya casi está. ¿Y de dónde me dijo que viene usted?"
+   },
+   {
+    "who": "learner",
+    "text": "Vengo de Canadá. Vivo aquí desde hace unas semanas. Gracias, doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Ay, de nada. Aquí tiene su tlayuda, calientita. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pásele, pásele. Qué bueno verle otra vez por aquí. ¿Va a querer su tlayuda hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, doña Ofelia. Sí, quiero una tlayuda, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto. Ya le pongo su tlayuda en el comal. ¿Con tasajo, con cecina o con otra cosa?"
+   },
+   {
+    "who": "learner",
+    "text": "Con tasajo, por favor. Me gustó mucho la primera vez."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que le gustó. Ahorita le caliento el tasajo en las brasas y se lo pongo bien doradito. Ya casi está."
+   },
+   {
+    "who": "learner",
+    "text": "Muchas gracias. Huele muy rico aquí."
+   },
+   {
+    "who": "npc",
+    "text": "Ay, gracias. Es el humo del carbón, ¿verdá? Así huele el pasillo todos los domingos. Aquí tiene su tlayuda, bien calientita. ¿Y ya se acomodó en Oaxaca?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, doña Ofelia, un poco. Vivo cerca del centro y mis vecinos son muy amables. Todavía estudio español. Gracias por la tlayuda. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, me da gusto. Que le aproveche su tlayuda. ¡Hasta luego, vuelva pronto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 25,
+    "wordsMax": 37,
+    "longShare": 0.4,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 13.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 19,
+    "replies": 5,
+    "wordsMedian": 37,
+    "wordsAvg": 32.8,
+    "wordsMax": 47,
+    "longShare": 0.6,
+    "questionsAvg": 1.2,
+    "multiQuestionShare": 0.4
+   },
+   "learner": {
+    "share": 0.2,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 19.8,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.34,
+    "wordsPerLine": 12.5
+   },
+   "repeats": [
+    {
+     "said": "¿Con tasajo, con cecina o con otra cosa?",
+     "earlier": "¿La quiere con tasajo otra vez o prefiere probar la cecina?"
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 25,
+  "openerWords": 17,
+  "multiQuestion": 0.2,
+  "learnerShare": 0.28,
+  "learnerWords": 12.1,
+  "repeats": 0.5
+ },
+ "sale": 7
+}

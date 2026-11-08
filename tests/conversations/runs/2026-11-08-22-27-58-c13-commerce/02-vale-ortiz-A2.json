@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "vale-libros-tecolote",
+  "name": "Vale Ortiz",
+  "role": "librera",
+  "city": "Ciudad de México",
+  "place": "Libros Tecolote"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas! Bienvenida, bienvenido, pásale. ¿Buscas algo en especial, o nada más vienes a curiosear?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Yo... busco... un libro. Para aprender español."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! Mira, tengo un estante con libros fáciles para quien apenas empieza, justo aquí a la izquierda. ¿Ya has leído algo en español?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no. Yo... no leo español. Todavía no."
+   },
+   {
+    "who": "npc",
+    "text": "Pues para eso es el estante, para el todavía. Los libros de ahí tienen frases cortas y letra grande, nada de dramas. Ve y échales un ojo, con calma."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿más lento, por favor? No entiendo... \"échales un ojo\"."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Mira los libros. Con calma."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok. Gracias. Yo... miro los libros. Ehm... adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Que te diviertas."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola otra vez! Qué bueno verte. ¿Ya hojeaste los libros del estante de la izquierda?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. ¿Repite, por favor? No entiendo \"hojeaste\"."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. ¿Ya miraste los libros del estante? Solo mirar, sin leer todo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Yo miré... un libro. Ehm... es pequeño."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, los pequeños son los mejores para empezar. ¿Y te gustó?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Me gusta. Las palabras... son fáciles."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, para eso están. Si quieres, te lo cobro ahora mismo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, por favor. Yo compro el libro. Gracias. Ehm... adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Que disfrutes el libro."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Hola, buenas tardes. Pasa, pasa. ¿Cómo va el librito que te llevaste?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Ehm... el libro... bien. Yo leo... poco, poco."
+   },
+   {
+    "who": "npc",
+    "text": "Poco a poco, así se empieza. Ya es más que ayer. ¿Y qué tal el domingo, mucha gente por Coyoacán?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... perdón. ¿Más lento, por favor? No entiendo \"domingo\"... ehm, \"gente\"."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Hoy es domingo. Hay muchas personas en la calle. Mira, ahí van con sus carriolas."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ah, sí. Muchas personas. Ehm... ¿qué es \"carriolas\"?"
+   },
+   {
+    "who": "npc",
+    "text": "Son para los bebés. Los papás las empujan. Hoy hay muchas aquí afuera."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok. Para los bebés. Gracias. Ehm... sí, hay muchas. Ehm... yo... voy. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Adiós, hasta luego. Que tengas buena tarde."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 15.8,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 9.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 12,
+    "wordsAvg": 11.2,
+    "wordsMax": 15,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.4,
+    "wordsPerLine": 9.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 13.6,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.4,
+    "wordsPerLine": 11.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 13,
+  "openerWords": 15,
+  "multiQuestion": 0,
+  "learnerShare": 0.37333333333333335,
+  "learnerWords": 10.166666666666666,
+  "repeats": 0
+ },
+ "sale": 2
+}

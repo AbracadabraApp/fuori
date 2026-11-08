@@ -1,0 +1,207 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "sofia-dulces-la-gloria",
+  "name": "Sofía Quintero",
+  "role": "ayuda en la dulcería de su familia",
+  "city": "Puebla",
+  "place": "Dulces Típicos La Gloria"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas tardes! Bienvenido a Dulces Típicos La Gloria. ¿Ya conoce nuestros dulces poblanos?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Un poco, pero no todos. Vivo aquí desde hace unas semanas."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien, bienvenido a Puebla! Aquí tenemos camote, tortitas de Santa Clara, muéganos y jamoncillo. ¿Qué le gustaría probar primero?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm, no sé. ¿Qué es el muégano?"
+   },
+   {
+    "who": "npc",
+    "text": "Son trocitos de masa frita, bien crujientes, y los pegamos con miel de piloncillo. Son dulces y se pegan un poquito en los dedos. ¿Quiere que le dé uno para probar?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Quiero probar uno."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro! Aquí tiene, es de los que acabamos de sacar. Cuidado, que se pega."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, Sofía. Mmm, está muy rico y muy dulce. Ayer probé otro dulce, pero me gusta más este. Bueno, tengo que irme ahora. ¡Hasta luego y gracias!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué gusto que le gustó! Gracias a usted, ¡hasta luego y que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué bueno verte otra vez. ¿Cómo estás?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, Sofía. Estoy bien, gracias. ¿Y tú?"
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, gracias. Hoy hay bastante gente en la calle, ¿verdad? ¿Vienes a buscar algo para llevar a casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, quiero comprar muéganos para mi casa."
+   },
+   {
+    "who": "npc",
+    "text": "¡Perfecto! Tenemos muéganos recién hechos. ¿Cuántos quieres llevar?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm, quiero seis, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, aquí están tus seis muéganos. Son noventa pesos, por favor."
+   },
+   {
+    "who": "learner",
+    "text": "Aquí tienes, noventa pesos. Gracias, Sofía. Ayer caminé mucho por el centro y hoy tengo hambre. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Gracias a ti! Que disfrutes tus muéganos. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Bienvenido a Dulces Típicos La Gloria. ¿En qué te puedo ayudar hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, Sofía. Quiero comprar otro dulce hoy."
+   },
+   {
+    "who": "npc",
+    "text": "¡Hola otra vez! Qué bueno que regresaste. Tenemos camote, tortitas de Santa Clara, muéganos y jamoncillo. ¿Cuál se te antoja hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm, ya probé el muégano. ¿Qué es el camote?"
+   },
+   {
+    "who": "npc",
+    "text": "El camote poblano es un dulce de camote, o sea, de papa dulce. Aquí lo vendemos de sabores de fruta, como fresa, piña o limón. Es suave y no tan duro como el muégano."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, es de papa dulce. Quiero probar el de fresa, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro! Aquí tienes uno de fresa para probar. ¿Quieres llevarte algunos a casa, o primero lo pruebas?"
+   },
+   {
+    "who": "learner",
+    "text": "Primero lo pruebo, por favor. Mmm, está muy rico y suave. Quiero llevar cuatro a mi casa. Gracias, Sofía. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que te gustó! Ahorita te preparo tus cuatro de fresa. ¡Hasta luego, que disfrutes tus camotes!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 19,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 13.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 8,
+    "replies": 5,
+    "wordsMedian": 9,
+    "wordsAvg": 11,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.4,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 20.6,
+    "wordsMax": 34,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 12.3
+   },
+   "repeats": [
+    {
+     "said": "Tenemos camote, tortitas de Santa Clara, muéganos y jamoncillo.",
+     "earlier": "Aquí tenemos camote, tortitas de Santa Clara, muéganos y jamoncillo."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 16,
+  "openerWords": 13,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.36000000000000004,
+  "learnerWords": 11.700000000000001,
+  "repeats": 0.5
+ },
+ "sale": 7
+}

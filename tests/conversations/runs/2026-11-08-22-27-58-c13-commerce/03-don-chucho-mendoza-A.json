@@ -1,0 +1,211 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, joven. Suba, suba a la silla, que esos zapatos ya piden una buena boleada."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, mis zapatos son muy sucio."
+   },
+   {
+    "who": "npc",
+    "text": "Ja, no se apure, joven, para eso estoy yo. Con un poco de grasa y cepillo quedan como nuevos. ¿De qué color es la grasa que le pongo, negra o café?"
+   },
+   {
+    "who": "learner",
+    "text": "Mis zapatos son café, por favor. Café."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, café entonces. Ponga el pie aquí en el descanso, y yo me encargo del resto."
+   },
+   {
+    "who": "learner",
+    "text": "Okay... aquí? Gracias, señor."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, ahí mero, joven, así está bien. Primero le quito el polvo con el cepillo, y luego le aplico la grasa. ¿Hace mucho que anda por la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo vivo en la Roma un año. Okay, gracias, señor. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Adiós, joven, que le vaya muy bien. Aquí lo espero cuando necesite otra boleada."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Qué bueno verlo otra vez por aquí. Pásele, pásele, suba a la silla."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Gracias. Otra vez, mis zapatos sucio."
+   },
+   {
+    "who": "npc",
+    "text": "Ja, no se preocupe, para eso estoy aquí. Con un buen cepillado quedan como nuevos. ¿Ahora también café, o le toca otro color?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, café otra vez, por favor. Mis zapatos son café."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, joven, café entonces. Deje le quito primero el polvo con el cepillo y ya luego le doy la grasa."
+   },
+   {
+    "who": "learner",
+    "text": "Okay, gracias, señor. Está bien."
+   },
+   {
+    "who": "npc",
+    "text": "Ya ve, con estos cepillos de crin se va todo el polvo de la calle. Esta tarde está fresquecito, ¿verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, está un poco frío. Okay, gracias, señor. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Que le vaya muy bien, joven. Aquí lo espero cuando quiera. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele. Siéntese en la silla, que ya se ve que esos zapatos andan pidiendo una boleada."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, mis zapatos es sucios otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Ja, es la ciudad, joven, el polvo no perdona a nadie. Ya me los quito de encima con la brocha, y los dejo como nuevos. ¿Y hoy también café, o se anima a otro color?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, café otra vez, por favor. Mi zapatos son café."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, café entonces. Ya le voy pasando la brocha para quitar el polvo. ¿Y cómo le ha ido por la Roma esta semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Muy bien, señor. Yo trabajo mucho esta semana."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, joven, el trabajo es bendición. Mire, ya les quité el polvo, ahora les pongo la crema café con el dedo. ¿En qué trabaja usted?"
+   },
+   {
+    "who": "learner",
+    "text": "Yo trabajo en una oficina, señor. Es un trabajo de computadoras. Okay, gracias. Adiós, señor."
+   },
+   {
+    "who": "npc",
+    "text": "Adiós, joven, que le vaya muy bien. Aquí lo espero cuando quiera."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 21.2,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 18.4,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 8.3
+   },
+   "repeats": [
+    {
+     "said": "Ja, no se preocupe, para eso estoy aquí.",
+     "earlier": "Ja, no se apure, joven, para eso estoy yo."
+    },
+    {
+     "said": "Deje le quito primero el polvo con el cepillo y ya luego le doy la grasa.",
+     "earlier": "Primero le quito el polvo con el cepillo, y luego le aplico la grasa."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 24,
+    "wordsAvg": 23.4,
+    "wordsMax": 35,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 10.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 20,
+  "openerWords": 16,
+  "multiQuestion": 0,
+  "learnerShare": 0.25333333333333335,
+  "learnerWords": 9.033333333333333,
+  "repeats": 1
+ },
+ "sale": 8
+}

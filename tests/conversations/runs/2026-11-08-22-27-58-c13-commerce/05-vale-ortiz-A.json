@@ -1,0 +1,202 @@
+{
+ "run": "2026-11-08-22-27-58-c13-commerce",
+ "at": "2026-11-08T22:27:58.660Z",
+ "label": "c13-commerce",
+ "card": "C13 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "vale-libros-tecolote",
+  "name": "Vale Ortiz",
+  "role": "librera",
+  "city": "Ciudad de México",
+  "place": "Libros Tecolote"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas tardes! Bienvenido a Libros Tecolote. Si buscas algo, aquí estoy."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Yo... busco... un libro. Para aprender español."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien! Tengo un estante con libros fáciles justo para eso. ¿Cuánto español sabes ya?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... poco. Yo... soy principiante. Un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, entonces el estante es para ti. Los libros de ahí tienen frases cortas y mucho dibujo. ¿Prefieres cuentos o algo con ejercicios?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ejercicios, por favor. Creo. Sí, ejercicios."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, ejercicios. Tengo un par de cuadernos buenos, con las respuestas atrás para que revises solo. El estante está allá, junto a la ventana. ¿Es tu primera vez en México?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no. Yo vivo aquí... un año. Ehm... gracias. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós, que te vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, hola otra vez. Qué bueno que volviste. Pasa, mira con calma."
+   },
+   {
+    "who": "learner",
+    "text": "Hola... ehm... gracias. Yo... compré el cuaderno. Ahora... busco otro libro."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bien, ya avanzaste. Entonces ahora toca algo para leer, ¿no? Hay una repisa junto a la ventana con libros fáciles. ¿Quieres cuentos o algo más corto?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... cuentos. Sí. Cuentos, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto. Mira, aquí tengo uno de cuentos cortos con frases sencillas, se lee en una tarde. Hojéalo y me dices si te late."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... perdón. ¿Qué es... \"te late\"? Más despacio, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. \"Te late\" es: si te gusta, si te convence. Hojéalo, y me dices si te gusta."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ya entiendo. Ehm... sí, me gusta. Creo. Gracias. Voy a comprar este libro. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno. Pásalo a la caja y que lo disfrutes. Adiós, nos vemos pronto."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Hola, buenas tardes. Qué bueno verte otra vez por aquí. ¿Cómo te fue con el cuento?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. El cuento... bien. Un poco difícil. Pero me gusta."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que te gusta. Un poco difícil es normal, sobre todo al principio. ¿Ya llegaste a la mitad o vas apenas empezando?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... perdón. ¿Mitad? Más despacio, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, con calma. ¿Ya casi terminas el libro? ¿O apenas empiezas?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... apenas... empiezo. Ehm... página diez. Creo."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, perfecto, apenas empiezas. Entonces te falta lo bueno. Tómalo con calma, un cuento por día."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, un cuento por día. Buena idea. Gracias. Ehm... adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Adiós, que lo disfrutes. Aquí estoy cuando quieras volver."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 17.4,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 8.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 18.8,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 10.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 15,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 9
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 16,
+  "openerWords": 12,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.3033333333333334,
+  "learnerWords": 9.266666666666667,
+  "repeats": 0
+ },
+ "sale": 6
+}

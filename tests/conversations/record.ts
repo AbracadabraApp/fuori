@@ -49,6 +49,8 @@ export interface Recorded {
   vocab?: import('./measure').VocabWord[];
   /** The same judge's second list for the same conversation, to measure the judge's own noise apart from the conversations' */
   vocab2?: import('./measure').VocabWord[];
+  /** The commerce test's count: character lines about the sale, over all the conversation's visits */
+  sale?: number;
 }
 
 export function startRun(label: string): { id: string; dir: string } {
