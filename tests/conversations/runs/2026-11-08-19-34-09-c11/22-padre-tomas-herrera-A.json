@@ -1,0 +1,220 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "padre-tomas-santo-domingo",
+  "name": "Padre Tomás Herrera",
+  "role": "sacerdote",
+  "city": "Puebla",
+  "place": "Templo de Santo Domingo"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, bienvenido al Templo de Santo Domingo. ¿Es su primera vez por aquí?"
+   },
+   {
+    "who": "learner",
+    "text": "No, no es mi primera vez. Yo vivo en Puebla."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, entonces ya es casi vecino del templo. A mí me da gusto verlo por aquí. ¿Ya conoce la Capilla del Rosario?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo conozco la capilla. Es muy bonita."
+   },
+   {
+    "who": "npc",
+    "text": "Me alegra que le guste. Tiene mucho oro y mucho trabajo de artesanos, y a mí todavía me sorprende cada mañana. ¿Qué es lo que más le gusta de ella?"
+   },
+   {
+    "who": "learner",
+    "text": "Me gusta el oro. Es muy brillante."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, con la luz de la tarde brilla todavía más, parece que toda la capilla se enciende. Mucha gente se queda callada al entrar, y eso también me gusta a mí."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo también. Es muy tranquilo. Bueno, tengo que ir. Gracias, padre. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, que Dios lo bendiga. Aquí lo espero cuando quiera volver."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Qué gusto verle otra vez por aquí. Pase, pase, con confianza."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, padre. Gracias. Yo quiero ver la capilla otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, con mucho gusto. Hoy el templo está tranquilo, es buen momento para verla con calma. ¿Hay algo de la capilla que le llame más la atención?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm... no entiendo \"llame la atención\". ¿Más despacio, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Le pregunto: ¿qué le gusta más de la capilla? ¿El oro, las figuras, las pinturas?"
+   },
+   {
+    "who": "learner",
+    "text": "Me gusta el oro otra vez. Y las figuras, también."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno. Las figuras son ángeles y santos, y hay muchos escondidos entre las flores doradas. Mire con calma y encontrará más."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ángeles y santos. Qué bonito. Gracias, padre. Ahora yo miro con calma. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto. Que Dios lo acompañe. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenos días! Qué gusto verle de nuevo por aquí. Pase, pase, que todavía hay un ratito antes de la próxima misa. ¿Cómo ha estado esta semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenos días, padre. Estoy bien, gracias. ¿Y usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, gracias a Dios. Hoy hay mucha gente, es domingo y las campanas no han parado. ¿Viene hoy a la misa?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, padre. Yo vengo a la misa hoy."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, me alegra mucho. Las familias ya van llegando, así que conviene buscar un buen lugar pronto. ¿Viene solo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, padre, yo vengo solo hoy."
+   },
+   {
+    "who": "npc",
+    "text": "Pues no se preocupe, aquí nadie se queda solo en misa. Siéntese donde guste, que siempre hay una banca con lugar. Y después, si quiere, pase a saludar la capilla otra vez."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, padre. Sí, yo voy a la capilla después. Ahora busco una banca. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Que Dios lo bendiga y que tenga una bonita misa."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 22,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 9.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 17.8,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.34,
+    "wordsPerLine": 11.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 26,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 22.6,
+    "wordsMax": 32,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 22,
+  "openerWords": 14,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.2833333333333334,
+  "learnerWords": 10.200000000000001,
+  "repeats": 0
+ },
+ "culture": [
+  "Puebla is a city in Mexico with a famous historic center",
+  "The Templo de Santo Domingo is a church in Puebla",
+  "The Capilla del Rosario is a famous chapel inside the Santo Domingo church",
+  "The chapel is richly decorated with gold and the work of skilled artisans",
+  "The chapel's gold glows especially in the afternoon light",
+  "Visitors often fall silent when entering the chapel as a sign of reverence",
+  "Priests commonly bless people when saying goodbye, with phrases like \"Que Dios lo bendiga\" and \"Que Dios lo acompañe\"",
+  "Mexicans commonly say \"gracias a Dios\" (thank God) when answering how they are",
+  "\"Pase, pase, con confianza\" is a warm, welcoming way to invite someone in",
+  "Mexican churches have many angels and saints hidden among golden floral carvings",
+  "Sunday Mass is a major event, with church bells ringing and families arriving",
+  "Families attend Mass together, and no one is left alone at Mass",
+  "Churchgoers may sit wherever they like in the pews",
+  "Visitors often greet the chapel after Mass",
+  "Usted is the respectful form of address used with strangers and elders",
+  "\"Me da gusto\" and \"Qué gusto verle\" are friendly expressions of pleasure at seeing someone",
+  "\"Llamar la atención\" is a common expression meaning to catch someone's interest"
+ ]
+}

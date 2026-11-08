@@ -1,0 +1,216 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "padre-tomas-santo-domingo",
+  "name": "Padre Tomás Herrera",
+  "role": "sacerdote",
+  "city": "Puebla",
+  "place": "Templo de Santo Domingo"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You are the priest at the Templo de Santo Domingo, and you greet people between services.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, bienvenido al Templo de Santo Domingo. Pase, pase, con confianza. Soy el Padre Tomás."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Padre. Mucho gusto. Yo soy... me llamo Jake."
+   },
+   {
+    "who": "npc",
+    "text": "Mucho gusto, Jake. Qué bueno que viene a visitarnos. ¿Es la primera vez que entra a este templo?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, es la primera vez. Es muy bonito, Padre."
+   },
+   {
+    "who": "npc",
+    "text": "Me alegra que le guste, Jake. Es del siglo dieciséis, la construyeron los frailes dominicos. Y no deje de ver la Capilla del Rosario, aquí a la derecha, toda cubierta de oro."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, la capilla... a la derecha? Gracias, Padre. Yo voy a ver."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, a la derecha, junto al altar principal. Tómese su tiempo, Jake. ¿Cuánto tiempo va a estar en Puebla?"
+   },
+   {
+    "who": "learner",
+    "text": "Yo vivo en México ahora, Padre. Vivo aquí en Puebla un año. Bueno, ahora voy a ver la capilla. Gracias y adiós, Padre."
+   },
+   {
+    "who": "npc",
+    "text": "Que Dios lo bendiga, Jake. Adiós, y que disfrute la capilla."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, Jake! Qué gusto verlo de nuevo por aquí. ¿Pudo conocer la capilla?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, Padre. La capilla es muy bonito. Mucho oro."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, es una joya, ¿verdad? Todo ese oro es un homenaje a la Virgen. Me alegra que le gustara."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, es muy... bonita. Gracias, Padre."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, Jake. Esta tarde hay misa a las seis, por si desea acompañarnos. ¿Ya conoce el ambiente de una misa aquí?"
+   },
+   {
+    "who": "learner",
+    "text": "No, Padre. Yo no conozco. Es en español, ¿sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, Jake, es toda en español. Pero no se preocupe: las oraciones se repiten y muchos fieles siguen el misal. Se entiende bastante con solo observar."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, okay. Gracias, Padre. Yo voy a... pensar. Hoy no puedo, pero quizás otro día. Adiós, Padre."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto, Jake. Aquí lo esperamos cuando guste. Que Dios lo bendiga. Adiós."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, Jake! Qué gusto verlo otra vez por aquí. ¿Cómo ha estado?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Padre. Yo estoy bien, gracias. ¿Y usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, gracias a Dios. Hoy hay mucha gente en el templo, es domingo y el día está hermoso. ¿Vino a pasear por el centro?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo paseo un poco. Hoy es un día muy bonito."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, noviembre en Puebla es muy agradable, con el cielo tan limpio. Y en estos días se ven las ofrendas por todas partes, por el Día de Muertos. ¿Ya vio alguna?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, Padre. Yo vi una ofrenda. Es muy bonita."
+   },
+   {
+    "who": "npc",
+    "text": "Me alegra. Las ofrendas son una forma muy hermosa de recordar a quienes ya partieron. Aquí en el templo también rezamos por nuestros difuntos estos días. ¿En su país se recuerda a los difuntos de alguna manera?"
+   },
+   {
+    "who": "learner",
+    "text": "En mi país... sí, un poco. Nosotros visitamos el cementerio, con flores. Bueno, Padre, gracias. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bonita costumbre, Jake. Gracias a usted. Que Dios lo bendiga. Adiós."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 19.2,
+    "wordsMax": 32,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 13.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 19,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 23.6,
+    "wordsMax": 37,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 11.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 19,
+  "openerWords": 14,
+  "multiQuestion": 0,
+  "learnerShare": 0.3133333333333333,
+  "learnerWords": 11.700000000000001,
+  "repeats": 0
+ },
+ "culture": [
+  "Santo Domingo Temple in Puebla dates from the 16th century and was built by Dominican friars",
+  "The Rosary Chapel (Capilla del Rosario) is covered in gold and is a famous sight in Puebla",
+  "The gold in the chapel is a tribute to the Virgin Mary",
+  "Mass is held in Spanish, with a service at six in the evening",
+  "Congregants often follow along with a missal, and prayers repeat, so mass is easy to follow",
+  "Priests bless people with the phrase 'Que Dios lo bendiga'",
+  "Priests and older people commonly use formal 'usted' to address others",
+  "November in Puebla is pleasant with clear skies",
+  "Ofrendas (altars) for Día de Muertos appear all over the city in November",
+  "Ofrendas are a way to remember loved ones who have died",
+  "Churches hold prayers for the dead (difuntos) during Día de Muertos",
+  "Sunday is a busy day at the church and people stroll through the city center"
+ ]
+}

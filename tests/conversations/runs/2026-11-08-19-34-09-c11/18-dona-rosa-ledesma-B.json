@@ -1,0 +1,226 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "rosa-flores-ignacio-ramirez",
+  "name": "Doña Rosa Ledesma",
+  "role": "florista",
+  "city": "San Miguel de Allende",
+  "place": "Puesto de flores, Mercado Ignacio Ramírez"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You sell flowers at your stall, wrapping them in paper for people who want them for the church or for the altar at home.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenos días! Pásele, pásele. Hoy tengo cempasúchil muy fresco, de ese que huele a noviembre. ¿Qué anda buscando?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenos días. Quiero flores para el casa."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, para la casa. Mire, el cempasúchil es el que más se lleva en estas fechas, y también tengo gladiolas y nube blanca. ¿Son para un altar o nomás para adornar?"
+   },
+   {
+    "who": "learner",
+    "text": "Um... solo para adornar. Las flores amarillas, cuánto cuesta?"
+   },
+   {
+    "who": "npc",
+    "text": "Las amarillas son el cempasúchil, ¿verdad? Ese lo vendo en manojo, a treinta pesos el manojo grande. Y si se lleva dos, se los dejo en cincuenta. ¿Cuántos quiere llevarse?"
+   },
+   {
+    "who": "learner",
+    "text": "Dos, por favor. Cincuenta pesos, sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, cincuenta pesos los dos. Ahorita se los envuelvo en su papelito. ¿Los quiere para ponerlos en un florero, o los va a dejar así, en manojo?"
+   },
+   {
+    "who": "learner",
+    "text": "En un florero, creo. Um... aquí está cincuenta pesos. Gracias, adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted. Ahí tiene sus flores. ¡Adiós, que le dure mucho el cempasúchil!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Qué gusto verla otra vez. ¿Cómo le fue con el cempasúchil en su casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Las flores es muy bonito. Mi casa huele bien, gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que le gustaron. Ese olor del cempasúchil es muy especial, ¿verdad? Hoy me llegaron unas flores nuevas por la mañana."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sí? Qué flores nuevas?"
+   },
+   {
+    "who": "npc",
+    "text": "Me llegaron unos alcatraces blancos y unas rosas rojas, bien frescas. Los alcatraces están muy bonitos para un florero."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, los alcatraces. Cuánto cuesta, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Los alcatraces los vendo a veinte pesos cada uno. Si se lleva cinco, se los dejo en noventa."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, veinte pesos. Hoy no, gracias. Muy caro para yo. Adiós, hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Está bien, no se preocupe. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, bienvenido otra vez. ¿Cómo le va con las flores en su casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Las flores está bien, gracias. Um... ya están secas un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Ay, sí, el cempasúchil dura unos días no más. Si quiere, hoy tengo gladiolas y nube blanca, que aguantan más tiempo. ¿Le llevo unas?"
+   },
+   {
+    "who": "learner",
+    "text": "Gladiolas... cuánto cuesta, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "La gladiola está a quince pesos la vara. Con cinco le hago el precio en sesenta."
+   },
+   {
+    "who": "learner",
+    "text": "Sesenta pesos... cinco flores, sí? Um, es mucho para yo hoy. Tres, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, tres gladiolas son cuarenta y cinco pesos. ¿De qué color las quiere, blancas o rosas?"
+   },
+   {
+    "who": "learner",
+    "text": "Rosas, por favor. Um... aquí está cuarenta y cinco pesos. Gracias, adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted. Aquí tiene sus gladiolas rosas, bien envueltitas. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 27,
+    "wordsAvg": 24.4,
+    "wordsMax": 33,
+    "longShare": 0.2,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.21,
+    "wordsPerLine": 8.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 17.4,
+    "wordsMax": 22,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 9.3
+   },
+   "repeats": [
+    {
+     "said": "Si se lleva cinco, se los dejo en noventa.",
+     "earlier": "Y si se lleva dos, se los dejo en cincuenta."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 17.8,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 11
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 18,
+  "openerWords": 16,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.28,
+  "learnerWords": 9.533333333333333,
+  "repeats": 0.5
+ },
+ "culture": [
+  "Cempasúchil (Mexican marigold) is the traditional flower of the Day of the Dead and is sold in abundance around November",
+  "Cempasúchil has a strong scent that is associated with the November season",
+  "Flowers like gladiolas and nube blanca (baby's breath) are also common at flower stalls",
+  "Flowers are bought for altars (ofrendas) or simply for decoration",
+  "Cempasúchil is sold in manojos (bunches), with a discount for buying two",
+  "Vendors commonly offer bulk discounts, e.g. a lower price if you buy more",
+  "Vendors wrap flowers in paper (papelito) for customers",
+  "Alcatraces (calla lilies) and red roses are common flowers sold in Mexico",
+  "Alcatraces are sold individually by the piece with a discount for buying five",
+  "Cempasúchil lasts only a few days, while gladiolas and nube blanca last longer",
+  "Gladiolas are sold by the vara (stem)",
+  "Mexican sellers use polite formal address (usted, pásele, se los dejo en) and warm farewells like 'que le vaya muy bien'",
+  "Diminutives like ahorita, papelito and envueltitas are typical of friendly Mexican Spanish",
+  "Vendors remember regular customers and ask how the flowers turned out, which reflects friendly marketplace relationships",
+  "'Ahorita' means right now or in a moment in Mexican Spanish",
+  "'Nomás' (no más) is a colloquial Mexican word meaning 'just' or 'only'",
+  "Prices are in Mexican pesos"
+ ]
+}

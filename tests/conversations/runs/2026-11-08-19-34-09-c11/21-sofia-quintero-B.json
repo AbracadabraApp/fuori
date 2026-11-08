@@ -1,0 +1,224 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "sofia-dulces-la-gloria",
+  "name": "Sofía Quintero",
+  "role": "ayuda en la dulcería de su familia",
+  "city": "Puebla",
+  "place": "Dulces Típicos La Gloria"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You help out in your family's dulcería on the Calle de los Dulces, selling camote, tortitas de Santa Clara, muéganos and jamoncillo.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas tardes! Bienvenido a Dulces Típicos La Gloria. ¿Qué se te antoja hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Quiero algo dulce, pero no sé qué."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! Aquí tenemos camote, tortitas de Santa Clara, muéganos y jamoncillo. El camote es el más típico de Puebla, y las tortitas de Santa Clara son de pepita, muy ricas. ¿Te gustan más los dulces suaves o los crujientes?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm, me gustan los dulces suaves, creo."
+   },
+   {
+    "who": "npc",
+    "text": "Entonces te recomiendo el camote o el jamoncillo. El camote es suavecito, de sabores como fresa, piña o limón, y el jamoncillo es una pasta cremosa de pepita. Aquí los puedes probar con calma. ¿Cuál te late más?"
+   },
+   {
+    "who": "learner",
+    "text": "Quiero probar el camote, por favor. ¿Cuál sabor es mejor?"
+   },
+   {
+    "who": "npc",
+    "text": "Mi favorito es el de piña, es dulce pero con un toque fresquito. El de fresa también le gusta mucho a la gente. Ahorita te lo preparo, ¿sí? ¿Cuántos quieres?"
+   },
+   {
+    "who": "learner",
+    "text": "Quiero dos, por favor, uno de piña y uno de fresa. Muchas gracias por la ayuda, Sofía. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Con gusto! Aquí tienes tus dos camotes, el de piña y el de fresa. ¡Hasta luego, que los disfrutes!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué gusto verte otra vez por aquí. ¿Cómo te fue con los camotes?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, Sofía. Los camotes estaban muy ricos. Me gustó el de piña."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! Ya ves, el de piña es mi favorito. Hoy también tenemos muéganos y jamoncillo, por si quieres probar algo nuevo. ¿Se te antoja algo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm, ¿qué es el jamoncillo? No recuerdo."
+   },
+   {
+    "who": "npc",
+    "text": "Es un dulce suavecito hecho de pepita de calabaza molida con azúcar y leche. Es cremoso y se deshace en la boca, creo que te va a gustar."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sí, pepita. Quiero probar uno, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro! Aquí tienes uno, pruébalo con calma. ¿Quieres que te lo ponga en una bolsita o te lo comes aquí?"
+   },
+   {
+    "who": "learner",
+    "text": "Me lo como aquí, por favor. Muchas gracias, Sofía. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Con gusto! Hasta luego, que te vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué gusto verte otra vez. ¿Cómo estás hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, Sofía. Estoy bien, gracias. ¿Y tú?"
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, gracias. Hoy hay mucha gente en la calle porque es domingo. ¿Quieres probar los muéganos hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, quiero probar. ¿Qué es un muégano?"
+   },
+   {
+    "who": "npc",
+    "text": "Es un dulce de Puebla hecho con trocitos de masa de harina que se fríen y se pegan con miel. Son crujientes y dulces, y se comen en bolitas."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, es crujiente. Quiero uno, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro! Aquí tienes uno. Son diez pesos. Pruébalo con cuidado, está bien duro por fuera."
+   },
+   {
+    "who": "learner",
+    "text": "Aquí tienes los diez pesos. Gracias, Sofía. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Gracias a ti! Hasta luego, que te vaya muy bien."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 30,
+    "wordsAvg": 28.2,
+    "wordsMax": 40,
+    "longShare": 0.4,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 11.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 19.6,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 9.5
+   },
+   "repeats": [
+    {
+     "said": "Ya ves, el de piña es mi favorito.",
+     "earlier": "Mi favorito es el de piña, es dulce pero con un toque fresquito."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 9,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 16.2,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 7.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 20,
+  "openerWords": 14,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.26666666666666666,
+  "learnerWords": 9.5,
+  "repeats": 0.5
+ },
+ "culture": [
+  "Dulces típicos (traditional sweets) shops sell regional candies in Mexico",
+  "Puebla is famous for its traditional sweets",
+  "Camote is a soft sweet potato candy from Puebla, in flavors like pineapple, strawberry and lemon",
+  "Tortitas de Santa Clara are pumpkin-seed (pepita) sweets",
+  "Jamoncillo is a creamy, soft sweet made of ground pumpkin seeds, sugar and milk",
+  "Muéganos are crunchy Puebla sweets made of fried flour dough pieces stuck together with honey, eaten in balls",
+  "Pepita means pumpkin seed and is a common sweet ingredient",
+  "'¿Qué se te antoja?' means 'What are you craving?'",
+  "'¿Cuál te late más?' is a colloquial way to ask which one appeals to you",
+  "'Ahorita' means 'right now' or 'in a moment' and is used informally",
+  "Diminutives like 'suavecito' and 'bolsita' are common, friendly speech",
+  "Sweets are sold in pesos, e.g. a muégano costs ten pesos",
+  "Vendors let you taste and eat sweets on the spot or take them in a little bag",
+  "Sundays bring crowds to the streets",
+  "Common polite farewells: 'Con gusto' and 'que te vaya muy bien'"
+ ]
+}

@@ -1,0 +1,219 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "sofia-dulces-la-gloria",
+  "name": "Sofía Quintero",
+  "role": "ayuda en la dulcería de su familia",
+  "city": "Puebla",
+  "place": "Dulces Típicos La Gloria"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas tardes! Bienvenido a Dulces Típicos La Gloria. ¿Ya había probado los dulces de Puebla?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Sí, probé unos dulces la semana pasada, pero no sé los nombres."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bien. Aquí tenemos camote poblano, tortitas de Santa Clara, muéganos y jamoncillo. Seguro uno de esos era el que probó. ¿Cómo era, se acuerda?"
+   },
+   {
+    "who": "learner",
+    "text": "Era dulce y un poco suave, y de color amarillo, creo."
+   },
+   {
+    "who": "npc",
+    "text": "Mmm, amarillo y suave... entonces seguro era camote, el de piña o el de limón. Son de camote, o sea, de papa dulce, y vienen en sabores de fruta. ¿Era como una barrita, o más bien redondo?"
+   },
+   {
+    "who": "learner",
+    "text": "Era como una barrita, creo. Pequeña."
+   },
+   {
+    "who": "npc",
+    "text": "Entonces sí, fue camote, casi seguro. Aquí los tenemos en barrita, de piña, de limón y de otros sabores. Puede probar uno si quiere, para ver si es ese."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, quiero probar uno, por favor. Gracias, eres muy amable. Bueno, después compro unos y me voy. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Con gusto! Hasta luego, que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas tardes! Bienvenido otra vez a La Gloria. ¿Cómo le fue con el camote?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Me gustó mucho, era el que probé. ¡Muy rico!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que le gustó! Entonces ya sabe cuál se llevaba. ¿Cuántos quiere?"
+   },
+   {
+    "who": "learner",
+    "text": "Quiero cuatro, por favor. ¿Cuánto cuesta?"
+   },
+   {
+    "who": "npc",
+    "text": "Cada camote cuesta quince pesos, así que cuatro son sesenta pesos. ¿Los quiere de piña o de limón?"
+   },
+   {
+    "who": "learner",
+    "text": "Dos de piña y dos de limón, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, dos de piña y dos de limón. Aquí tiene, son sesenta pesos. ¿Los quiere en una bolsita?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, en una bolsita, por favor. Aquí tiene, sesenta pesos. Muchas gracias, Sofía. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Bienvenido otra vez a La Gloria. ¿Qué se te antoja hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, Sofía. Hoy quiero otros camotes, por favor. ¿Tienes de otro sabor?"
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro que sí! Tenemos de fresa, de coco, de guayaba y de naranja, además de los que ya probaste. ¿Cuáles quieres?"
+   },
+   {
+    "who": "learner",
+    "text": "Quiero uno de fresa y uno de coco, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Muy bien! Aquí tienes uno de fresa y uno de coco. Son treinta pesos. ¿Quieres que te los ponga en una bolsita?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, en una bolsita, por favor. Aquí tiene."
+   },
+   {
+    "who": "npc",
+    "text": "¡Gracias! Ya están en su bolsita. Que los disfrutes mucho. Oye, ¿ya probaste las tortitas de Santa Clara?"
+   },
+   {
+    "who": "learner",
+    "text": "No, todavía no probé las tortitas de Santa Clara. Quizás la próxima vez. Gracias, Sofía. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Aquí te esperamos. Cuídate mucho."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 26,
+    "wordsAvg": 23.4,
+    "wordsMax": 37,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 12.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 14.8,
+    "wordsMax": 18,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 10.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 16,
+    "wordsMax": 22,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.37,
+    "wordsPerLine": 11.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 18,
+  "openerWords": 15,
+  "multiQuestion": 0,
+  "learnerShare": 0.34333333333333327,
+  "learnerWords": 11.700000000000001,
+  "repeats": 0
+ },
+ "culture": [
+  "Puebla is known for its traditional sweets (dulces típicos)",
+  "Camote poblano is a traditional Puebla sweet made from sweet potato",
+  "Camote comes in fruit flavors such as pineapple, lemon, strawberry, coconut, guava and orange",
+  "Camote poblano is sold as small bars",
+  "Tortitas de Santa Clara are a traditional Puebla sweet",
+  "Muéganos are a traditional Puebla sweet",
+  "Jamoncillo is a traditional Puebla sweet",
+  "Camote means sweet potato in Mexican Spanish",
+  "Sweets are sold individually, about 15 pesos each, and put in a small bag (bolsita)",
+  "Mexican currency is the peso",
+  "Shopkeepers offer free samples so you can try a sweet before buying",
+  "Sellers use polite usted with customers at first and move to informal tú once familiar",
+  "'¿Qué se te antoja?' is a common phrase meaning 'What do you feel like having?'",
+  "'Que le vaya muy bien' is a polite Mexican farewell wish",
+  "'Con gusto' is a courteous way of saying 'my pleasure'",
+  "'Cuídate mucho' is a warm, friendly goodbye"
+ ]
+}

@@ -1,0 +1,228 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "memo-tejuino",
+  "name": "Memo Orozco",
+  "role": "tejuinero",
+  "city": "Guadalajara",
+  "place": "Carrito de tejuino junto al Mercado San Juan de Dios"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You run a tejuino cart next to the Mercado San Juan de Dios, serving it with lime, salt and ice, and a scoop of lime nieve on top for those who want it.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas! Bienvenido, pásele. ¿Ya conoce el tejuino o es la primera vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... primera vez. Sí, primera vez."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! Es una bebida de maíz fermentado, bien fría. Yo se lo sirvo con limón, sal y hielo, y si quiere, con una bolita de nieve de limón encima. ¿Se anima?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... más despacio, por favor. No entiendo."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, con calma. Es una bebida fría, de maíz. Le pongo limón, sal y hielo. ¿Quiere probarla?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Sí, quiero probar, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Muy bien! Ahorita se lo preparo. ¿Le pongo también la bolita de nieve de limón?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, con la nieve, por favor. Gracias. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Con gusto! Aquí tiene su tejuino con nieve. Que le vaya muy bien, hasta luego."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas tardes! ¿Qué onda, otra vez por aquí? ¿Le preparo un tejuino igual que el otro día?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Sí, por favor. Igual, con nieve."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, ahorita se lo preparo con su limón, su sal, su hielo y su bolita de nieve de limón. Aquí tiene, bien frío. ¿Cómo le ha ido en Guadalajara estos días?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... bien. Yo... bien, gracias. Me gusta."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, me da gusto. En noviembre el clima está muy bonito por acá, ni frío ni mucho calor. ¿Ya anduvo por el Centro o por el mercado?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... el mercado, sí. Aquí, el mercado. Un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bien, el San Juan de Dios es enorme, tiene de todo. Yo aquí paso el día entero junto a él, con mi carrito. ¿Y qué es lo que más le ha gustado ahí?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... la gente. Es muy amable. Y... el tejuino, está rico. Bueno, gracias. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Muchas gracias a usted! Que le vaya muy bien, hasta luego."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas! Ya volviste, ¿verdad? ¿Lo mismo de la otra vez, con limón, sal, hielo y su bolita de nieve de limón?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Lo mismo, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro que sí! Ahorita te lo preparo. Ahí va el vaso con su hielo y su sal... ¿Y cómo vas con la mudanza, ya te sientes más en casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... perdón, ¿mudanza? No entiendo. ¿Repite, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Mudanza es cuando te cambias de ciudad, como tú, que llegaste hace poco a Guadalajara. Pregunto si ya te sientes a gusto aquí."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Un poco. Me gusta Guadalajara."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, eso me da gusto. Ten, aquí está tu tejuino, bien frío, con su nieve arriba. ¿Y ya conoces los tacos de por aquí, o todavía no?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... todavía no. Los tacos, todavía no. Gracias por el tejuino. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós, hasta luego! Cuídate mucho."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 18.2,
+    "wordsMax": 32,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 7.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 28,
+    "wordsAvg": 24.6,
+    "wordsMax": 35,
+    "longShare": 0.4,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 10
+   },
+   "repeats": [
+    {
+     "said": "Perfecto, ahorita se lo preparo con su limón, su sal, su hielo y su bolita de nieve de limón.",
+     "earlier": "Yo se lo sirvo con limón, sal y hielo, y si quiere, con una bolita de nieve de limón encima."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 21,
+    "replies": 5,
+    "wordsMedian": 24,
+    "wordsAvg": 21.4,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 8.8
+   },
+   "repeats": [
+    {
+     "said": "¿Lo mismo de la otra vez, con limón, sal, hielo y su bolita de nieve de limón?",
+     "earlier": "Perfecto, ahorita se lo preparo con su limón, su sal, su hielo y su bolita de nieve de limón."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 24,
+  "openerWords": 18,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.25,
+  "learnerWords": 8.866666666666667,
+  "repeats": 1
+ },
+ "culture": [
+  "Tejuino is a cold drink made from fermented corn",
+  "Tejuino is served with lime, salt and ice, often topped with a scoop of lime sorbet (nieve de limón)",
+  "Tejuino is a traditional drink of Jalisco and Guadalajara, sold from street carts",
+  "\"Nieve\" in Mexico means sorbet or ice cream",
+  "\"Ahorita\" means right now or in a moment, a very common Mexican word",
+  "\"Pásele\" is a friendly Mexican invitation to come in",
+  "\"¿Qué onda?\" is a casual Mexican greeting meaning \"what's up?\"",
+  "\"Mudanza\" means a move to a new city or home",
+  "Street vendors often work all day beside markets, and chat warmly with regular customers",
+  "November weather in Guadalajara is pleasant, neither cold nor very hot",
+  "Guadalajara's historic Centro is a place to visit",
+  "The San Juan de Dios market in Guadalajara is huge and sells everything",
+  "Tacos are a food to try in Guadalajara",
+  "Vendors switch from formal \"usted\" to friendly informal \"tú\" as they get to know you"
+ ]
+}

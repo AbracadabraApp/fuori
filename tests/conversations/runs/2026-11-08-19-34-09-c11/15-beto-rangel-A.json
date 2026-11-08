@@ -1,0 +1,215 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "beto-taxi",
+  "name": "Beto Rangel",
+  "role": "taxista",
+  "city": "San Miguel de Allende",
+  "place": "Jardín Allende y sitio de taxis"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas noches! Aquí estoy en el sitio, ¿a dónde lo llevo?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... buenas noches. Yo... quiero ir a... mi casa, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, con gusto. Dígame la colonia o la calle, y yo lo llevo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... la calle... ehm... no sé. Sorry, ¿más lento, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, claro, más despacio. ¿Cómo se llama la calle o la colonia de su casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... la calle se llama... ehm... no recuerdo. Perdón."
+   },
+   {
+    "who": "npc",
+    "text": "No se preocupe. ¿Tiene la dirección en el celular? Puede enseñármela."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, sí. Tengo la dirección en el celular. Un momento, por favor... Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "De nada, aquí lo espero. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! ¿Adónde va hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... buenas tardes. Yo... voy a... mi casa, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, con gusto. ¿Ya tiene la dirección en su teléfono?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Tengo... la dirección. Un momento, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Sin prisa, aquí lo espero."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gracias. Aquí está... la dirección."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, déjeme verla. Ah, sí, esa calle la conozco. Suba, nos vamos."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gracias. Muy bien. Gracias, señor. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "A usted, que le vaya muy bien. ¡Adiós!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Buenas tardes. ¿Va para su casa hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Buenas tardes. Voy a mi casa, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, ya conozco la calle. Suba, por favor, y nos vamos."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gracias, señor. Muy bien."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto. Está bonito el Jardín hoy, con tanta gente en el paseo. ¿Usted sale mucho los domingos?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... perdón, ¿más lento, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro, más despacio. ¿Usted sale los domingos? ¿Al Jardín?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, un poco. Me gusta el Jardín. Ehm... gracias, señor. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto. Adiós, que le vaya bien."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 11.4,
+    "wordsMax": 15,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.45,
+    "wordsPerLine": 11.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 5,
+    "replies": 5,
+    "wordsMedian": 8,
+    "wordsAvg": 8,
+    "wordsMax": 12,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.44,
+    "wordsPerLine": 8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 8,
+    "replies": 5,
+    "wordsMedian": 9,
+    "wordsAvg": 11,
+    "wordsMax": 18,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.38,
+    "wordsPerLine": 8.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 9,
+  "openerWords": 8,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.42333333333333334,
+  "learnerWords": 9.266666666666667,
+  "repeats": 0
+ },
+ "culture": [
+  "A \"sitio\" is a taxi stand where drivers wait for passengers",
+  "A \"colonia\" is a neighborhood, and addresses are often given by colonia and street",
+  "Drivers may ask for the colonia or street to know where to take you",
+  "Showing the address on your phone is a normal way to give directions",
+  "\"Con gusto\" is a common polite way to say \"my pleasure\" or \"gladly\"",
+  "\"Usted\" is the formal way of addressing a customer or stranger",
+  "\"Sin prisa\" (no rush) reflects a patient, relaxed way of serving people",
+  "Drivers may remember regular passengers and their streets",
+  "\"Que le vaya bien\" is a warm, common goodbye",
+  "The \"Jardín\" is a town's central garden or plaza, a main place to gather",
+  "Sundays bring crowds of people strolling in the Jardín (el paseo)",
+  "Small talk with your driver about local life, like weekend outings, is common"
+ ]
+}

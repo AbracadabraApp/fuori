@@ -1,0 +1,217 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "rosa-flores-ignacio-ramirez",
+  "name": "Doña Rosa Ledesma",
+  "role": "florista",
+  "city": "San Miguel de Allende",
+  "place": "Puesto de flores, Mercado Ignacio Ramírez"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, bienvenido! Pase, pase, mire nomás qué cempasúchil tan bonito me llegó hoy. ¿Anda buscando flores para su altar?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, yo busco flores para el altar. Usted tiene cempasúchil?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, joven, aquí tengo el cempasúchil, bien fresquecito, y también terciopelo y nube para acompañarlo. ¿Cuántos manojos va a querer?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm... ¿cuánto manojos? No entiendo, perdón."
+   },
+   {
+    "who": "npc",
+    "text": "No se preocupe. Un manojo es un ramito, así, atado con un cordel, como lo que tengo aquí. Con dos o tres le alcanza para un altar chiquito. ¿Qué tan grande es su altar?"
+   },
+   {
+    "who": "learner",
+    "text": "Mi altar es pequeño. Una mesa pequeña."
+   },
+   {
+    "who": "npc",
+    "text": "Entonces con dos manojos le sobra, joven. Mire, le ato estos dos, bien llenitos, y se los pongo en papel para que no se maltraten en el camino. Son cuarenta pesos los dos. ¿Para quién es su altar, si no es indiscreción?"
+   },
+   {
+    "who": "learner",
+    "text": "Es para mi abuela. Ella murió el año pasado. Aquí tiene cuarenta pesos. Gracias, Doña Rosa, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Lo siento mucho, joven, que Dios la tenga en su gloria. Aquí tiene sus flores, que el color la guíe a casa. Adiós, que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pásele, pásele. Qué bueno verla de nuevo por aquí. ¿Cómo va el altar de su abuelita?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, Doña Rosa. El altar está bien. Mi abuela, ella... le gusta las flores."
+   },
+   {
+    "who": "npc",
+    "text": "Ay, qué bonito. Entonces seguro le va a encantar verlas en su altar. Mire, hoy me llegaron unas rosas blancas muy frescas, y la nube también está bien bonita. ¿Qué le hace falta?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm... las rosas blancas, por favor. ¿Cuánto cuesta?"
+   },
+   {
+    "who": "npc",
+    "text": "Las rosas blancas están a veinte pesos la pieza. ¿Cuántas quiere llevar?"
+   },
+   {
+    "who": "learner",
+    "text": "Tres rosas, por favor. Son... sesenta pesos?"
+   },
+   {
+    "who": "npc",
+    "text": "Así es, son sesenta pesos. Aquí tiene sus tres rosas, bien frescas. Le quedan hermosas junto al cempasúchil."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, Doña Rosa. Aquí está sesenta pesos. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted. Hasta luego, que Dios la bendiga, y que le quede muy bonito su altar."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pásele, pásele. Hoy está bonito el día, ¿verdad? ¿Qué flores anda buscando?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Sí, el día es muy bonito. Yo busco... flores amarillas?"
+   },
+   {
+    "who": "npc",
+    "text": "Amarillas, claro. Tengo cempasúchil, que es la flor amarilla y naranja de la temporada. ¿Es para el altar otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "No, no es para el altar. Es para mi casa."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, para la casa, qué bien. Entonces le puedo dar girasoles, que están bonitos hoy, o crisantemos amarillos, que le duran bastante en el florero. ¿Cuál le gusta más?"
+   },
+   {
+    "who": "learner",
+    "text": "Los girasoles, por favor. ¿Cuánto cuesta?"
+   },
+   {
+    "who": "npc",
+    "text": "El girasol está a 25 pesos la pieza. ¿Cuántos le pongo?"
+   },
+   {
+    "who": "learner",
+    "text": "Dos girasoles, por favor. Son... cincuenta pesos? Aquí está. Gracias, Doña Rosa. Adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, son cincuenta pesos, gracias. Que le duren muchos días. ¡Hasta luego, que le vaya bien!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 20,
+    "replies": 5,
+    "wordsMedian": 28,
+    "wordsAvg": 29.2,
+    "wordsMax": 42,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 10
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 19.6,
+    "wordsMax": 33,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 9.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 18,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 18,
+  "openerWords": 18,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.27,
+  "learnerWords": 10.033333333333333,
+  "repeats": 0
+ },
+ "culture": [
+  "Cempasúchil (marigold) is the traditional flower of the Day of the Dead altar",
+  "Terciopelo (cockscomb) and nube (baby's breath) are flowers that traditionally accompany cempasúchil",
+  "Flowers are sold in a manojo, a small bunch tied with string",
+  "Flower sellers wrap flowers in paper so they don't get damaged on the way",
+  "Prices are in Mexican pesos",
+  "Altars (altares) are made for deceased relatives, such as a grandmother, and can be small, on a little table",
+  "Condolence phrases like \"que Dios la tenga en su gloria\" are common",
+  "Farewell blessings like \"que Dios la bendiga\" are common",
+  "Cempasúchil is the yellow-orange flower of the season (Day of the Dead)",
+  "Sellers use friendly, polite phrases like \"pásele, pásele\" and \"mire nomás\" to welcome customers",
+  "Diminutives like \"fresquecito\", \"chiquito\", \"llenitos\" and \"abuelita\" are common, warm speech",
+  "Sunflowers (girasoles) and yellow chrysanthemums are sold as decorative flowers for the home",
+  "Flowers are priced per piece (la pieza)",
+  "The marigold's color is believed to guide the dead home to the altar"
+ ]
+}

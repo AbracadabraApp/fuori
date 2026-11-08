@@ -1,0 +1,224 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "ofelia-tlayudas",
+  "name": "Doña Ofelia Santiago",
+  "role": "tlayudera",
+  "city": "Oaxaca",
+  "place": "Tlayudas del Mercado 20 de Noviembre"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You make tlayudas on the comal, spread with asiento, beans and quesillo, while tasajo and cecina enchilada grill over charcoal and smoke fills the aisle.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, pase, pase! Ahorita estoy sacando unas tlayudas del comal. ¿Qué se le antoja?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Quiero una tlayuda, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, ahorita se la preparo. Aquí la hacemos con asiento, frijoles y quesillo. ¿Con tasajo, con cecina o con las dos carnes?"
+   },
+   {
+    "who": "learner",
+    "text": "Con cecina, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, cecina enchilada. Ya la voy poniendo en la parrilla, en un momento le queda. ¿Va a comer aquí o se la lleva?"
+   },
+   {
+    "who": "learner",
+    "text": "Aquí, por favor. Voy a comer aquí."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, siéntese donde guste, ahí en la banca está bien. Ya casi se está asando su cecina."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, Doña Ofelia. Está bien aquí. Huele muy rico. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted, que le vaya muy bien. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Qué bueno verlo otra vez por aquí. Pase, pase, siéntese en la banca, que el comal ya está bien caliente."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Doña Ofelia. Gracias, me gustó mucho la tlayuda."
+   },
+   {
+    "who": "npc",
+    "text": "Ay, qué gusto me da, joven. Es que la hago con cariño y con buen carbón. ¿Hoy se va por la cecina otra vez o le damos al tasajo?"
+   },
+   {
+    "who": "learner",
+    "text": "Hoy quiero el tasajo, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, joven, tasajo entonces. Ya mismo lo pongo en las brasas y le unto su tlayuda en el comal. Ahorita se lo traigo."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. Doña Ofelia, ¿usted trabaja aquí todos los días?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, joven, todos los días, desde muy temprano, porque el carbón hay que prender antes de que llegue la gente. Solo descanso cuando el cuerpo ya no me da. ¿Y usted, ya lleva mucho tiempo en Oaxaca?"
+   },
+   {
+    "who": "learner",
+    "text": "No mucho, Doña Ofelia. Llevo tres semanas en Oaxaca. Vivo aquí ahora, no soy turista. Me gusta mucho la ciudad. Bueno, gracias por todo. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, joven, bienvenido a Oaxaca. Hasta luego, que le vaya muy bien y aquí lo espero."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, bienvenido otra vez! Siéntese en la banca, que ya va saliendo humo del carbón. ¿Lo de siempre hoy, el tasajo?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, el tasajo, por favor. Hoy tengo mucha hambre."
+   },
+   {
+    "who": "npc",
+    "text": "Ay, qué bueno, entonces le pongo bastante tasajo y su tlayuda bien crujiente. Ahorita se la preparo. ¿Ya anduvo paseando por el mercado esta mañana?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un poco. Caminé por el mercado y vi muchas cosas."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, aquí hay de todo, ¿verdad? Mire, ya le voy poniendo su tlayuda en el comal, con su asiento y su frijolito. ¿Le gusta con harto quesillo?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, mucho quesillo, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, se lo pongo bien generoso. Ya casi está, huele rico el tasajo en el carbón, ¿verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, huele muy rico. Tengo mucha hambre. Muchas gracias, Doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Que le aproveche mucho, aquí lo espero."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 18,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 7.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 23,
+    "replies": 5,
+    "wordsMedian": 24,
+    "wordsAvg": 26,
+    "wordsMax": 37,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 12.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 21,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 20.4,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 9.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 21,
+  "openerWords": 21,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.26333333333333336,
+  "learnerWords": 9.866666666666667,
+  "repeats": 0
+ },
+ "culture": [
+  "Tlayudas are a Oaxacan specialty: a large, crisp tortilla grilled on a comal",
+  "Tlayudas are made with asiento (unrefined pork lard), beans, and quesillo (Oaxaca string cheese)",
+  "Common tlayuda meats are tasajo (thin-sliced beef), cecina (chile-marinated pork), or both",
+  "Cecina enchilada is pork marinated in chile",
+  "Tlayudas are cooked over charcoal embers and a comal, with meat on the grill",
+  "Street food stalls often let you eat there on a bench or take it to go (¿Va a comer aquí o se la lleva?)",
+  "Vendors say 'ahorita' meaning 'in a little while/right now' (soon)",
+  "'Pase, pase' is a warm invitation to come in",
+  "'Siéntese donde guste' is a polite, hospitable phrase for 'sit wherever you like'",
+  "'Joven' is a friendly way to address a young person",
+  "'Doña' is a respectful title for an older woman",
+  "Diminutives like 'frijolito' express warmth and friendliness",
+  "'Harto' is colloquial for 'a lot'",
+  "Sellers often learn customers' regular orders ('lo de siempre') and greet returning customers warmly",
+  "'Que le aproveche' is said to wish someone enjoy their meal",
+  "'Que le vaya muy bien' is a polite goodbye wish",
+  "Street vendors work long days starting early, such as lighting charcoal before customers arrive",
+  "Oaxaca's markets are full of variety ('aquí hay de todo')",
+  "Oaxacans welcome newcomers ('bienvenido a Oaxaca')",
+  "'Usted' is the polite form used with customers and strangers"
+ ]
+}

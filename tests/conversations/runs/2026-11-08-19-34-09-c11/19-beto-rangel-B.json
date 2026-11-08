@@ -1,0 +1,217 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "beto-taxi",
+  "name": "Beto Rangel",
+  "role": "taxista",
+  "city": "San Miguel de Allende",
+  "place": "Jardín Allende y sitio de taxis"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You wait at the taxi stand by the Jardín Allende, taking people up and down the cobbled streets.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! ¿Necesita un taxi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Buenas tardes. Yo... necesito un taxi, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, con gusto. Suba, yo lo llevo. ¿A dónde va?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... a mi casa, por favor. Es... ehm... no sé... ¿cómo se dice? Address?"
+   },
+   {
+    "who": "npc",
+    "text": "Se dice \"dirección\". ¿Cuál es su dirección, o el nombre de la colonia?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... dirección... sí. Ehm... no recuerdo. Perdón. ¿Más lento, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "No se preocupe. Despacio: ¿en qué colonia vive, o cerca de qué lugar?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no sé la colonia. Está en mi teléfono... ¿sí? Perdón. Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Está bien, no hay problema. Cuando la encuentre, aquí estoy. ¡Adiós, que le vaya bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Qué onda! ¿Ya encontraste la dirección?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Está en mi teléfono. Mire, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Perfecto! A ver, déjame verla. Sí, ya la vi, esa colonia me queda cerca. Sube, yo te llevo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gracias. ¿Cuánto es, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Son ochenta pesos hasta allá. ¿Te late?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ochenta pesos... ¿sí? Ok. Perdón, ¿\"te late\"?"
+   },
+   {
+    "who": "npc",
+    "text": "Quiere decir si te parece bien, si te gusta. Entonces, ¿nos vamos?"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok... sí, me parece bien. Vamos. Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Va! Sube, ya nos vamos."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! ¿A dónde vamos hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... buenas tardes. A mi casa, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro, con gusto! Ya conozco el camino. Súbete, que nos vamos por la calle de abajo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ok. Gracias. ¿Cuánto es, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Son ochenta pesos, igual que la otra vez. ¿Te late?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, ok. Ochenta pesos. Me parece bien. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "¡Perfecto! Ya arrancamos entonces. Cuidado con el escalón al subir."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ok, gracias. Cuidado, sí. Bueno... adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Que te vaya muy bien."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 5,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 11.2,
+    "wordsMax": 15,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.46,
+    "wordsPerLine": 12
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 6,
+    "replies": 5,
+    "wordsMedian": 7,
+    "wordsAvg": 9.6,
+    "wordsMax": 18,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.4,
+    "wordsPerLine": 8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 6,
+    "replies": 5,
+    "wordsMedian": 10,
+    "wordsAvg": 9.8,
+    "wordsMax": 16,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.39,
+    "wordsPerLine": 7.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 10,
+  "openerWords": 6,
+  "multiQuestion": 0,
+  "learnerShare": 0.4166666666666667,
+  "learnerWords": 9.266666666666667,
+  "repeats": 0
+ },
+ "culture": [
+  "Taxi drivers greet passengers politely and offer rides with 'con gusto' (gladly)",
+  "'Dirección' is the Spanish word for address",
+  "Mexican addresses are often given by colonia (neighborhood), or by a nearby landmark",
+  "'Qué onda' is a casual Mexican greeting meaning 'what's up'",
+  "Switching from formal 'usted' to informal 'tú' (sube, te llevo) shows growing familiarity and friendliness",
+  "'¿Te late?' is a colloquial Mexican phrase meaning 'does that suit you?' or 'do you like it?'",
+  "'¡Va!' is a casual Mexican way of saying 'okay' or 'deal'",
+  "Taxi fares are often agreed on as a flat price before the ride (e.g., eighty pesos)",
+  "'Que le/te vaya bien' is a common friendly farewell wishing someone well",
+  "Drivers often know the local routes and shortcuts through neighborhood streets",
+  "'Súbete' and 'sube' are the usual ways to invite someone into a car",
+  "'Hasta luego' is a common goodbye",
+  "Mexicans commonly warn you kindly about hazards, such as 'cuidado con el escalón' (watch the step)"
+ ]
+}

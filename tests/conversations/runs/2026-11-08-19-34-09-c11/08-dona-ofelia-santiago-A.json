@@ -1,0 +1,222 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "ofelia-tlayudas",
+  "name": "Doña Ofelia Santiago",
+  "role": "tlayudera",
+  "city": "Oaxaca",
+  "place": "Tlayudas del Mercado 20 de Noviembre"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, pase, pase! Ahorita le atiendo, nomás deje que se me acomode el humo. ¿Qué se le antoja hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Mmm, ¿qué me recomienda usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Pues una tlayuda con tasajo, que es lo que más sale aquí. La preparo en el comal con su asiento, sus frijoles y su quesillo, y la carne va directo al carbón. ¿Le gusta el picante?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gusta un poco el picante."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno. Entonces le pongo una salsita de chile pasilla, que pica poquito y sabe bien ahumada. ¿Es la primera vez que prueba una tlayuda?"
+   },
+   {
+    "who": "learner",
+    "text": "No, ya probé una la semana pasada, pero con pollo."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bueno, ya sabe cómo es. Pero aquí pollo no le hago, nomás tasajo, cecina y chorizo, todo al carbón. ¿Le voy preparando entonces la de tasajo?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor, la de tasajo. Muchas gracias, Doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, joven. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, pase, pase! Qué gusto verle otra vez por aquí. ¿Va a querer su tlayuda de tasajo, como la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Estuvo muy rica la otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Ay, qué bueno que le gustó. Ahorita se la preparo, el comal ya está bien caliente. ¿Le pongo otra vez la salsa de chile pasilla?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor, la salsa de chile pasilla."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, ya se la pongo. Mientras se asa el tasajo, vaya buscando dónde sentarse; hoy el pasillo está lleno de humo."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. ¿Usted trabaja aquí todos los días?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, aquí estoy casi todos los días, desde muy temprano. Yo empiezo a prender el carbón antes de que llegue la gente. ¿Usted ya conoce otras partes del mercado?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un poco. Ayer caminé por el mercado y vi muchas cosas, pero no conozco todo todavía. Bueno, gracias, Doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto. ¡Hasta luego, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ay, mire quién llegó. ¡Buenas tardes! Pase, pase, que el comal ya está bien caliente hoy."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Doña Ofelia. Hoy tengo mucha hambre."
+   },
+   {
+    "who": "npc",
+    "text": "Pues qué bueno, aquí no se queda nadie con hambre. Ya tengo el tasajo en las brasas, y también hay cecina y chorizo. ¿Qué se le antoja hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm, quiero la cecina hoy, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Muy bien! Cecina enchilada, entonces. Ya le pongo el asiento a la tortilla y la dejo en el comal para que se ponga bien crujiente. Con la cecina sobre las brasas, el humo ya va a andar por todo el pasillo, ¿verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, huele muy rico. ¿Usted prepara todo sola?"
+   },
+   {
+    "who": "npc",
+    "text": "Casi todo, sí. Mi hija a veces me echa la mano los domingos, pero hoy anda en otra cosa. Yo prendo el carbón, unto el asiento, pongo el frijol y el quesillo, y volteo la carne. Ya llevo muchos años así. ¿Y usted cocina en su casa?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, cocino un poco en mi casa, pero cocino cosas muy simples. Ayer preparé pasta con pollo. Bueno, muchas gracias, Doña Ofelia. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que cocina, eso siempre ayuda. Gracias a usted, que le vaya muy bien. ¡Hasta luego!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 19,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 23.8,
+    "wordsMax": 36,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 9
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 22,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 21.6,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 11.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 28,
+    "wordsAvg": 30,
+    "wordsMax": 47,
+    "longShare": 0.4,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 11.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 25,
+  "openerWords": 19,
+  "multiQuestion": 0,
+  "learnerShare": 0.25666666666666665,
+  "learnerWords": 10.866666666666667,
+  "repeats": 0
+ },
+ "culture": [
+  "Tlayuda is a large, crisp Oaxacan tortilla cooked on a comal and topped with asiento, beans, and quesillo",
+  "Tasajo is thin-cut beef grilled over charcoal",
+  "Cecina enchilada is chile-marinated thin pork grilled over charcoal",
+  "Chorizo is also grilled over charcoal and served on tlayudas",
+  "Asiento is unrefined pork lard paste spread on the tortilla",
+  "Quesillo is Oaxacan stringy string cheese",
+  "A comal is a flat griddle used to cook tortillas",
+  "Chile pasilla salsa is mildly spicy and smoky",
+  "Market food stalls fill the aisles with charcoal smoke",
+  "Vendors often start lighting charcoal early, before customers arrive",
+  "Family members, like a daughter, often help at the family food stall, especially on Sundays",
+  "Greetings like '¡Pase, pase!' warmly welcome customers",
+  "'¿Qué se le antoja?' means 'What are you craving?'",
+  "'Ahorita' means 'right away/in a little bit'",
+  "'Nomás' is a colloquial Mexican word meaning 'just/only'",
+  "'Echar la mano' means to lend a hand",
+  "Using polite 'usted' and 'Doña' shows respect to elders",
+  "'Joven' is a common polite way to address a younger customer",
+  "Vendors typically farewell customers with 'que le vaya muy bien'"
+ ]
+}

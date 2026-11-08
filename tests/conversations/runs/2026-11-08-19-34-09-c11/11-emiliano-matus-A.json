@@ -1,0 +1,232 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "emiliano-los-amantes",
+  "name": "Emiliano Matus",
+  "role": "cantinero",
+  "city": "Oaxaca",
+  "place": "Mezcalería Los Amantes"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Bienvenido a Los Amantes. Pasa, pasa, siéntate donde gustes. ¿Es tu primera vez por aquí?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, buenas tardes. Sí, es mi primera vez aquí."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno! Aquí el mezcal se toma despacito, en copita, con naranja y sal de gusano. Hoy tengo espadín, que es el que más sirvo, y también un poquito de tobalá, que es silvestre y más raro. ¿Cuál te late?"
+   },
+   {
+    "who": "learner",
+    "text": "Espadín, por favor. Es... más normal, ¿sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, es el más común, el que más se toma en Oaxaca. Muy bueno para empezar. Ahorita te lo sirvo con su naranja y su sal de gusano."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. Mmm, ¿sal de gusano? ¿Qué es?"
+   },
+   {
+    "who": "npc",
+    "text": "Es sal molida con chile y gusano de maguey, que se seca y se muele. Se moja la naranja en la sal y se muerde entre trago y trago. Es un sabor ahumado, un poquito picoso. ¿Te animas a probarla?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me animo. Un poquito picoso está bien. Gracias por todo, Emiliano. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Con gusto! Disfruta tu mezcal. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, qué gusto verte de nuevo! Pasa, siéntate donde quieras. ¿Cómo te fue estos días en Oaxaca?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, Emiliano. Muy bien, gracias. Mucho trabajo, pero bien."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, ya te mereces un mezcalito después de tanto trabajo. Hoy tengo el espadín como el otro día, y también tobalá, por si te animas."
+   },
+   {
+    "who": "learner",
+    "text": "Hoy, tobalá, por favor. Es... diferente, ¿sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, es muy distinto: más herbal, con notas de fruta y de tierra, y más suave en la boca. Ahorita te lo sirvo con su naranja y su sal de gusano. ¿Qué tipo de sabores te gustan más, los dulces o los más ahumados?"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm... ahumados, creo. Me gusta el ahumado."
+   },
+   {
+    "who": "npc",
+    "text": "Entonces este tobalá te va a gustar: tiene su toque ahumado, pero redondito. Aquí tienes tu copita con la naranja y la sal."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, Emiliano. Mmm, está muy rico. Bueno, tengo que ir a la casa. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno que te gustó! Hasta luego, cuídate mucho."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué bueno verte otra vez por aquí. ¿Qué te sirvo hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola, Emiliano. Hoy... tobalá otra vez, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro! Tobalá otra vez, ya le agarraste el gusto. Te lo sirvo con su naranja y su sal de gusano. ¿Hoy sí te quedas a tomar con calma?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, hoy tengo tiempo. No trabajo mañana."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien! Entonces puedes disfrutarlo con calma. Aquí tienes tu copita de tobalá, con su naranja y su sal. ¿Qué vas a hacer con tu día libre?"
+   },
+   {
+    "who": "learner",
+    "text": "Mañana... no sé. Descansar en la casa, tal vez."
+   },
+   {
+    "who": "npc",
+    "text": "Eso también hace falta, con tanto trabajo que me contaste. Un día en casa, sin prisa, sienta muy bien. Y por acá, cuando quieras otra copita, me avisas."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, gracias, Emiliano. Está muy rico. Bueno, es tarde. Tengo que ir a la casa. ¡Hasta luego!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Que descanses mucho y que tengas un buen día libre. Aquí te esperamos."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 28,
+    "wordsAvg": 26.4,
+    "wordsMax": 40,
+    "longShare": 0.4,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 9.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 23.8,
+    "wordsMax": 44,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 9.5
+   },
+   "repeats": [
+    {
+     "said": "Ahorita te lo sirvo con su naranja y su sal de gusano.",
+     "earlier": "Ahorita te lo sirvo con su naranja y su sal de gusano."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 27,
+    "wordsAvg": 22,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 10.3
+   },
+   "repeats": [
+    {
+     "said": "Te lo sirvo con su naranja y su sal de gusano.",
+     "earlier": "Ahorita te lo sirvo con su naranja y su sal de gusano."
+    },
+    {
+     "said": "Aquí tienes tu copita de tobalá, con su naranja y su sal.",
+     "earlier": "Aquí tienes tu copita con la naranja y la sal."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 27,
+  "openerWords": 17,
+  "multiQuestion": 0,
+  "learnerShare": 0.24333333333333332,
+  "learnerWords": 9.700000000000001,
+  "repeats": 1.5
+ },
+ "culture": [
+  "Mezcal is sipped slowly from a small cup (copita), not taken as a shot",
+  "Mezcal is traditionally served with orange slices and sal de gusano",
+  "Espadín is the most common mezcal agave variety and the one most drunk in Oaxaca",
+  "Tobalá is a rarer, wild-growing agave used for mezcal",
+  "Tobalá mezcal tastes more herbal, with fruit and earth notes, and is smoother in the mouth",
+  "Sal de gusano is salt ground with chili and dried maguey worm",
+  "You dip the orange in the salt and bite it between sips of mezcal",
+  "Sal de gusano tastes smoky and slightly spicy",
+  "\"¿Cuál te late?\" is a Mexican colloquial way of asking which one appeals to you",
+  "\"Ahorita\" means right now or in a moment, often used loosely in Mexico",
+  "Diminutives like \"despacito\", \"mezcalito\", \"poquito\" and \"redondito\" are common in friendly Mexican speech",
+  "\"Ya le agarraste el gusto\" means you've gotten a taste for it",
+  "\"Sienta muy bien\" means something feels good or does you good",
+  "Oaxaca is a famous mezcal-producing region where bars serve several mezcal types",
+  "Mezcal is made from agave (maguey)"
+ ]
+}

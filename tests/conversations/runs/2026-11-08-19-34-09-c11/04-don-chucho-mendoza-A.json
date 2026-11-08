@@ -1,0 +1,225 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, joven. Pase, pase, siéntese en la silla. Ahorita le dejo esos zapatos como espejo."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Gracias. Eh... ¿cuánto cuesta?"
+   },
+   {
+    "who": "npc",
+    "text": "Son sesenta pesos la boleada, joven. Con grasa, cepillo y trapo, bien hecha. ¿De qué color son los zapatos, café?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, los zapatos son café. Está bien, sesenta pesos."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, joven. Café entonces, con su grasa café oscuro. Ponga los pies aquí en los estribos y relájese, que esto va a quedar como nuevo."
+   },
+   {
+    "who": "learner",
+    "text": "Okay... los pies aquí? Gracias, señor."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, joven, ahí mero, uno en cada estribo. Así, muy bien. Ahorita empiezo con el cepillo para quitarle el polvo."
+   },
+   {
+    "who": "learner",
+    "text": "Okay, gracias, señor. Eh... muy bien. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven. Que le vaya muy bien, y vuelva cuando quiera."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pase, pase, suba a la silla. ¿Otra vez los zapatos cafés, o hoy traen algo distinto?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, los zapatos son cafés otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, ahorita se los dejo como espejo. Ponga el pie aquí, en el descanso. Mientras trabajo, platíqueme: ¿ya se acostumbró a andar por la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un poco. Me gusta la Roma, es muy bonito."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, joven, es una colonia con mucha vida. Yo aquí llevo años, y todavía me gusta ver pasar a la gente. A ver, ahora el otro pie."
+   },
+   {
+    "who": "learner",
+    "text": "Okay... el otro pie. Aquí, ¿sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, ahí mero, así está bien. Ahorita le doy la última pasada con el cepillo y queda listo."
+   },
+   {
+    "who": "learner",
+    "text": "Okay, gracias, señor. Muy bien. ¿Cuánto es? Son sesenta pesos, ¿sí? Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, joven, son sesenta. Que le vaya muy bien, hasta luego."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Qué bueno verlo otra vez por la Roma. Suba, suba a la silla, que sus zapatos se ven con ganas de una buena boleada."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, los zapatos están muy sucios hoy."
+   },
+   {
+    "who": "npc",
+    "text": "Ya los veo, ya los veo, traen el polvo de toda la semana. Deje que les pase el cepillo primero y verá cómo quedan. ¿Son los cafés otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son los cafés otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Pues a ellos les va muy bien el betún café, se ponen bien bonitos. Usted nomás póngase cómodo y tantito se los dejo como espejo."
+   },
+   {
+    "who": "learner",
+    "text": "Okay, gracias. Estoy cómodo, señor."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, qué bueno. Ahorita le doy primero con el cepillo para quitar el polvo, y luego ya le pongo el betún con calma. ¿Anduvo caminando mucho por la Roma esta semana?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, un poco. Yo camino mucho a mi trabajo. Okay, gracias, señor. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Adiós, joven, que le vaya muy bien. Aquí lo espero cuando quiera."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 18.6,
+    "wordsMax": 25,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 7.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 19,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 20.4,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 27,
+    "replies": 5,
+    "wordsMedian": 27,
+    "wordsAvg": 25,
+    "wordsMax": 32,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 9
+   },
+   "repeats": [
+    {
+     "said": "Ahorita le doy primero con el cepillo para quitar el polvo, y luego ya le pongo el betún con calma.",
+     "earlier": "Ahorita empiezo con el cepillo para quitarle el polvo."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 20,
+  "openerWords": 19,
+  "multiQuestion": 0,
+  "learnerShare": 0.25,
+  "learnerWords": 8.933333333333334,
+  "repeats": 0.5
+ },
+ "culture": [
+  "Shoe shiners (boleros) work in Mexico, and a shoeshine is called a \"boleada\"",
+  "A shoeshine costs around sixty pesos in Mexico City, including grease, brush and cloth",
+  "Shoe shiners work on a raised chair where customers rest their feet on footrests (\"estribos\")",
+  "\"Ahorita\" means right now, in a moment, or soon, and is used very commonly",
+  "\"Ahí mero\" means right there, exactly there",
+  "Polite address: \"joven\" for a young man and \"usted\" for formal speech",
+  "\"Pase, pase\" is a warm, repeated invitation to come in",
+  "Betún or grasa is the shoe polish used in Mexico",
+  "\"Dejar como espejo\" means leaving shoes shining like a mirror",
+  "\"Tantito\" means a little bit or a moment",
+  "\"Nomás\" is a colloquial word meaning just or only",
+  "\"Que le vaya muy bien\" is a courteous Mexican farewell",
+  "\"Vuelva cuando quiera\" and \"Aquí lo espero\" are friendly invitations to return",
+  "Chatting with customers is a regular part of the shoe shiner's service",
+  "La Roma is a lively, popular neighborhood (colonia) in Mexico City",
+  "Mexico City neighborhoods are called \"colonias\"",
+  "People often walk a lot around the city, and street vendors enjoy watching people pass by"
+ ]
+}

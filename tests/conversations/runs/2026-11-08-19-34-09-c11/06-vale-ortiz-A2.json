@@ -1,0 +1,211 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "vale-libros-tecolote",
+  "name": "Vale Ortiz",
+  "role": "librera",
+  "city": "Ciudad de México",
+  "place": "Libros Tecolote"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, bienvenido a Libros Tecolote. Pasa, pasa, mira con calma."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gracias. Yo... solo mirar, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, sin prisa. Si buscas algo fåcil para leer en espaùol, tengo un estante cerca de la ventana."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, gracias. Un libro fácil... sí, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, es ese estante de allí, junto a la ventana. Hay cuentos cortos y novelas con letra grande. ¿Ya has leído algo en español?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no. Un poco... no mucho. Solo... libro de niños."
+   },
+   {
+    "who": "npc",
+    "text": "Los libros de niños son un buen comienzo, no te rías. Empieza por los cuentos cortos del estante, son más tranquilos."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, gracias. Voy a mirar los cuentos cortos. Ehm... adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, que te vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola otra vez! Qué bueno verte de nuevo. ¿Pudiste mirar los cuentos cortos?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Yo miré... un cuento. Es... difícil un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, un poco difícil. Es normal al principio. Tenemos otros más sencillos, con frases cortas y mucho dibujo. ¿Quieres que te enseñe uno?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, por favor. Un libro con... dibujos. Sí."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, ven conmigo. Tengo uno de un zorro que se pierde en el bosque. Pocas palabras, buenos dibujos, y no se necesita un diccionario."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, un zorro. Me gusta. ¿Cuánto cuesta, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Cuesta ciento veinte pesos. Es baratito, y el zorro lo vale. ¿Lo quieres llevar?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, lo quiero llevar. Ciento veinte pesos, ok. Gracias por su ayuda. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Con gusto! Que disfrutes al zorro. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué bueno verte otra vez. ¿Cómo te fue con el zorro?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Me gusta... el zorro. Es fácil. Yo leí... todo."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien, todo el libro en tres días! Ya te mereces otro. ¿Buscas uno parecido o algo un poquito más difícil?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... un poquito más difícil, por favor. Ehm... no mucho."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, tengo justo un estante para eso. Hay unos cuentos cortos con frases sencillas, y casi todos caben en una tarde de domingo. Ven, te los enseño."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, gracias. Voy... con usted."
+   },
+   {
+    "who": "npc",
+    "text": "Ándale, por aquí. Y tutéame, por favor, que \"usted\" me hace sentir como mi abuela. Mira, este de aquí es muy bueno para empezar."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ok, perdón. Tú. Sí, me gusta este libro. Gracias. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Que disfrutes el libro."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 16.2,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 9.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 16.4,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 11.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 18,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 18,
+  "openerWords": 12,
+  "multiQuestion": 0,
+  "learnerShare": 0.33,
+  "learnerWords": 10.366666666666667,
+  "repeats": 0
+ },
+ "culture": [
+  "Mexico's currency is the peso (the book cost 120 pesos)",
+  "\"Tecolote\" is the Mexican Spanish word for owl, from Nahuatl, used in the shop name",
+  "\"Ándale\" is a Mexican expression meaning \"come on\", \"right this way\" or \"okay\"",
+  "Diminutives like \"baratito\" and \"poquito\" are common and friendly in Mexican speech",
+  "Repeating \"Pasa, pasa\" is a warm, welcoming way to invite someone in",
+  "Mexicans often ask people to switch from formal \"usted\" to casual \"tú\" (\"tutéame\")",
+  "\"Con gusto\" is a common way to say \"you're welcome\"",
+  "\"Que te vaya muy bien\" is a warm, typical farewell"
+ ]
+}

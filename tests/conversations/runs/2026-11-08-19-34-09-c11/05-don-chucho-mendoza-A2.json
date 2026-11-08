@@ -1,0 +1,223 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele. Suba a la silla, que esos zapatos ya piden una buena boleada."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Sí, mis zapatos... sucios. ¿Cuánto cuesta, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Cuarenta pesos, joven, y se los dejo como espejo. Con cuidado, que la silla es alta. ¿Son de piel o de gamuza?"
+   },
+   {
+    "who": "learner",
+    "text": "Son de piel, creo. Está bien, cuarenta pesos."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, piel buena se ve que es. Ahorita le pongo el betún y le saco brillo con el cepillo. ¿Es usted de por aquí o anda de paso?"
+   },
+   {
+    "who": "learner",
+    "text": "Vivo aquí, en la ciudad. No soy de aquí... soy de Estados Unidos."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, de Estados Unidos, qué bueno. Pues bienvenido a la Roma, joven. Aquí llevo cuarenta años con mi puesto. ¿Y le gusta la ciudad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gusta mucho la ciudad. Es grande, pero muy bonita. Gracias, señor, y adiós. Hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted, joven. Que le vaya muy bien. Hasta luego."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pase, pase, aquí tiene su silla. ¿Otra boleadita hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Don Chucho. Sí, otra vez, por favor. Mis zapatos están sucios otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, joven, súbase a la silla. Con este polvo de noviembre, los zapatos no duran limpios ni un día. ¿Son los mismos de cuero de la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son los mismos. Los zapatos de piel."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, buen cuero aguanta mucho. Ahorita les paso el cepillo y les doy su pulidita. Los hombres de la Roma siempre traen los zapatos hechos polvo, ¿eh?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, mucho polvo. La ciudad es... muy sucia."
+   },
+   {
+    "who": "npc",
+    "text": "Ja, un poquito sí, joven, pero para eso estoy yo. Mientras haya polvo, hay trabajo. Y con esta pomada le va a quedar como espejo. ¿Usted camina mucho por la ciudad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, camino mucho. Voy al trabajo a pie. Bueno, gracias, Don Chucho. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, joven. Que le vaya muy bien, hasta luego."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pase, pase, suba a la silla. ¿Otra boleadita hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Don Chucho. Sí, por favor. Los zapatos sucios otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Ándele, ponga el pie aquí en la caja. Ya con este polvo de noviembre, a los tres días otra vez los trae grises. ¿Los de piel café o los negros?"
+   },
+   {
+    "who": "learner",
+    "text": "Los café, por favor. Son los zapatos de piel."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, café. Primero les paso el cepillo para quitar el polvo y luego les doy la grasa y el brillo. Ya verá cómo quedan. ¿Hoy salió a caminar por la Roma o anda de descanso?"
+   },
+   {
+    "who": "learner",
+    "text": "Hoy... no trabajo. Es descanso. Camino un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, joven, el domingo es para eso. Mire, ya le quité el polvo al derecho. Ahorita le doy la grasa. ¿Y por dónde le gusta caminar, por el parque o por las calles?"
+   },
+   {
+    "who": "learner",
+    "text": "Me gusta el parque. Es muy bonito y tranquilo. Bueno, gracias, Don Chucho. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, joven. Que le vaya muy bien, y hasta luego."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 20.6,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 12
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 28,
+    "wordsAvg": 22.4,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 11.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 30,
+    "wordsAvg": 24.8,
+    "wordsMax": 36,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 11.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 28,
+  "openerWords": 12,
+  "multiQuestion": 0,
+  "learnerShare": 0.29333333333333333,
+  "learnerWords": 11.6,
+  "repeats": 0
+ },
+ "culture": [
+  "Shoe shining (boleada) is a traditional street trade in Mexico City, with shiners working from small stands",
+  "A shoeshine costs about 40 pesos",
+  "Boleada is the Mexican word for a shoe shine, and boleadita is the friendly diminutive",
+  "Shiners use betún or pomada (polish), a brush, and grease to make shoes shine like a mirror",
+  "Ahorita is a Mexican word meaning right now or in a moment, and is often vague",
+  "Joven is a common polite way to address a younger man",
+  "Ándele is a Mexican expression meaning go ahead or that's right",
+  "Pásele is a friendly Mexican invitation to come in",
+  "Piel and cuero both mean leather, and gamuza means suede",
+  "La Roma is a well-known neighborhood (colonia) in Mexico City",
+  "Many vendors keep a fixed street stand for decades",
+  "Mexico City gets dusty in the dry season, around November, so shoes get dirty quickly",
+  "Many people walk around the city, including to work",
+  "Sunday is a day of rest and for walking around the city",
+  "Parks are popular places to stroll",
+  "Locals greet newcomers warmly, saying bienvenido",
+  "Que le vaya muy bien is a common polite Mexican farewell",
+  "Usted is used as a polite form of address with strangers and elders",
+  "Con mucho gusto is a polite phrase used to say you're welcome",
+  "Buenas tardes is the standard afternoon greeting"
+ ]
+}

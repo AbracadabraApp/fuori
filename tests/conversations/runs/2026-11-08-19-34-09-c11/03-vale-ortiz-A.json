@@ -1,0 +1,209 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "vale-libros-tecolote",
+  "name": "Vale Ortiz",
+  "role": "librera",
+  "city": "Ciudad de México",
+  "place": "Libros Tecolote"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas! Bienvenido a Libros Tecolote. Si buscas algo, aquí estoy."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Yo... busco... un libro. Para aprender español."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bien, justo para eso tengo un estante con libros fáciles, para empezar. Está al fondo, a la izquierda. ¿Ya has leído algo en español?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no. Un poco... no. Soy principiante."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, entonces ese estante es para ti. Hay cuentos cortos y libros con dibujos, nada de frases larguísimas. Tómate tu tiempo para ver cuál te late."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gracias. ¿Qué es... \"te late\"? No entiendo."
+   },
+   {
+    "who": "npc",
+    "text": "Es una expresión mexicana: \"cuál te late\" es \"cuál te gusta\", cuál te llama la atención. Es muy de aquí. ¿Ya llevas mucho tiempo en México?"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok... \"te gusta\". Gracias. Ehm... yo vivo aquí... ehm... seis meses. Un poco. Bueno, tengo que ir. Adiós, gracias."
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós, que te vaya muy bien! Aquí estamos cuando quieras volver."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué bueno verte otra vez. ¿Cómo has estado?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Yo... bien, gracias. ¿Y tú?"
+   },
+   {
+    "who": "npc",
+    "text": "Bien, aquí con los libros, que es lo mío. Qué bueno que volviste."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Yo... quiero... un libro. Ehm... fácil, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, para eso estamos. ¿Prefieres una novela cortita o cuentos?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... cuentos. Cuentos, por favor. Más cortos."
+   },
+   {
+    "who": "npc",
+    "text": "Buena elección. Cuentos cortos son ideales para empezar, terminas uno en una sentada. Hay varios en el estante de atrás, a la izquierda. ¿Quieres que te traiga uno?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, por favor. Gracias. Ehm... yo... tengo que ir después. Adiós, gracias."
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós! Cuídate mucho y vuelve cuando quieras."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola otra vez! Qué bueno verte. Oye, ya tengo apartado un cuentito para ti. ¿Quieres verlo?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, por favor. ¿Un cuentito? Ehm... gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, aquí lo tengo. Es un libro de cuentos cortos, con letra grande y palabras sencillas. Échale un ojo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... \"échale un ojo\"... no entiendo. ¿Repite, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Es que significa 'mira'. Tú ábrelo y míralo con calma, no hay prisa."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ok. Ah... sí. Es bonito. ¿Cuánto... cuesta?"
+   },
+   {
+    "who": "npc",
+    "text": "Son ciento ochenta pesos. Es un buen precio para un libro tan bonito."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ciento ochenta. Ok, sí... lo compro. Gracias. Ehm... adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Perfecto, gracias a ti! Disfruta el libro. ¡Adiós, nos vemos pronto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 19.8,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 11
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 9,
+    "replies": 5,
+    "wordsMedian": 10,
+    "wordsAvg": 13.4,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 14.4,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 8.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 13,
+  "openerWords": 11,
+  "multiQuestion": 0,
+  "learnerShare": 0.3333333333333333,
+  "learnerWords": 9.700000000000001,
+  "repeats": 0
+ },
+ "culture": [
+  "\"Cuál te late\" is a Mexican expression meaning \"which one do you like\" or which catches your attention",
+  "\"Échale un ojo\" is an expression meaning \"take a look\"",
+  "\"Cuentito\" and \"cortita\" show the common Mexican habit of using diminutives (-ito/-ita) to sound friendly and soft",
+  "Mexican shopkeepers greet customers warmly and say \"que te vaya muy bien\" or \"cuídate mucho\" when they leave",
+  "Prices are in Mexican pesos (a book here costs 180 pesos)",
+  "\"Oye\" is a casual way to get someone's attention in conversation"
+ ]
+}

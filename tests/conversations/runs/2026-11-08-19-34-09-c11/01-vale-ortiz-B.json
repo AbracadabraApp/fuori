@@ -1,0 +1,206 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "vale-libros-tecolote",
+  "name": "Vale Ortiz",
+  "role": "librera",
+  "city": "Ciudad de México",
+  "place": "Libros Tecolote"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You work at Libros Tecolote, finding people the book they didn't know they wanted.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas! Bienvenida, bienvenido, pásale. ¿Buscas algo en especial o nada más vienes a curiosear?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... yo... busco un libro. Para aprender español."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bien, para eso estamos. Tengo varios, de gramática y también unos cuentos cortos que son muy buenos para empezar. ¿Ya hablas un poquito o estás empezando de cero?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... un poquito. Estoy... empezando."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, entonces te va a servir algo sencillo. Mira, tengo unos cuentos cortos con frases claras y un cuaderno de ejercicios que casi todos mis clientes extranjeros se llevan. Vente por aquí, te los enseño."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, gracias. Más despacio, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, sin prisa. Mira, estos son los cuentos. Son cortitos y fáciles. Y este es el cuaderno. Tómate tu tiempo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gracias. Me llevo los cuentos. Ehm... adiós, buen día."
+   },
+   {
+    "who": "npc",
+    "text": "¡Muy bien! Que disfrutes los cuentos. Adiós, buen día."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué bueno verte otra vez. ¿Cómo te fue con los cuentos?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Los cuentos... ehm... difíciles. Un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Normal, apenas estás empezando. Poco a poco se va soltando. ¿Has podido leer alguno completo?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no. Solo... una página. Ehm... más o menos."
+   },
+   {
+    "who": "npc",
+    "text": "Una página ya es un buen comienzo. Lo importante es no rendirse. ¿Y qué te pareció esa página?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no entiendo mucho. Muchas palabras... nuevas. Pero... bonita."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno que te gustó. Con tantas palabras nuevas, es normal que cueste. ¿Cómo te llamas, por cierto? Aún no me lo has dicho."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... me llamo Sam. Mucho gusto. Ehm... gracias, Vale. Adiós, buen día."
+   },
+   {
+    "who": "npc",
+    "text": "¡Mucho gusto, Sam! Adiós, que tengas buen día."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, Sam! Qué gusto verte otra vez. ¿Cómo va la lectura?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola, Vale. La lectura... ehm... un poco mejor. Dos páginas."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien, Sam! Dos páginas ya son un avance. Poco a poco se va armando."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, gracias. Ehm... poco a poco."
+   },
+   {
+    "who": "npc",
+    "text": "Eso es, poco a poco. Aquí en la librería hoy está tranquilo, es domingo. Si quieres, echa un ojo a las mesas; hay libros nuevos en la de la entrada."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿mesas? Perdón... más despacio, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Mira los libros. Hay una mesa. Está en la entrada."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ah, sí, la mesa. Gracias, Vale. Ehm... yo miro. Adiós, buen día."
+   },
+   {
+    "who": "npc",
+    "text": "Adiós, Sam. ¡Buen día!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 21.8,
+    "wordsMax": 35,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.22,
+    "wordsPerLine": 7.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 15.4,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 9.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 14.2,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 9.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 15,
+  "openerWords": 12,
+  "multiQuestion": 0,
+  "learnerShare": 0.3,
+  "learnerWords": 8.833333333333334,
+  "repeats": 0
+ },
+ "culture": [
+  "'Pásale' is a friendly Mexican way to say 'come on in'",
+  "Mexican Spanish likes diminutives for a warm, soft tone, like 'poquito' and 'cortitos'"
+ ]
+}

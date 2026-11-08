@@ -1,0 +1,225 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You spend your day at your stand, shining shoes with polish and a brush for customers who climb up on the chair for a boleada.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, siéntese en la silla. ¿Le doy una boleadita a esos zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Gracias. ¿Cuánto cuesta?"
+   },
+   {
+    "who": "npc",
+    "text": "Cuarenta pesos, joven, con grasa y cepillo. Ahorita le dejo los zapatos como espejo. ¿Son de piel?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son de piel. Gracias, señor."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, la piel agradece la grasa. Usted póngase cómodo, apoye el pie aquí en el cajón."
+   },
+   {
+    "who": "learner",
+    "text": "Ok... el pie aquí? Así?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, así está perfecto, joven. Deje el talón bien apoyado y yo me encargo del resto. ¿Usted es de por aquí, de la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, yo soy de Estados Unidos. Pero vivo en la Roma, un año. Gracias, señor. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Ándele, joven, bienvenido a la Roma! Que le vaya muy bien, adiós."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Qué bueno verlo otra vez por aquí. ¿Le doy otra boleadita a esos zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. ¿Cuánto cuesta otra vez?"
+   },
+   {
+    "who": "npc",
+    "text": "Son cuarenta pesos, igual que la vez pasada. Suba el pie aquí, en la cajita, y póngalo bien firme."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, el pie aquí. ¿Está bien así?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, así está muy bien, joven. Ahorita le pongo el betún y le saco brillo con el cepillo."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, gracias. Es muy rápido, ¿no?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, joven, son unos minutitos nada más. Pero el secreto es no tener prisa, ¿verdad? ¿Usted trabaja por aquí en la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, trabajo en mi casa. Con la computadora. Ok, gracias, señor. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego, joven! Que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Qué bueno verlo de nuevo por aquí. Pase, pase, ponga el pie en la caja."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, el pie aquí. ¿Cuánto cuesta?"
+   },
+   {
+    "who": "npc",
+    "text": "Cuarenta pesos, igual que siempre, joven. Ya sabe, aquí no se apura el trabajo."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, cuarenta pesos. Está bien, señor. No prisa."
+   },
+   {
+    "who": "npc",
+    "text": "Eso es, así me gusta. Mire, ya le estoy untando la grasa, y con el cepillo le saco el brillo. ¿Cómo le fue en la semana, trabajó mucho en la computadora?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, trabajo mucho. La semana fue muy ocupado."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, pues entonces nada mejor que sentarse un ratito y dejar que uno le trabaje los zapatos. Ahorita se le quita el cansancio. Ya casi acabo con este, ahora sigue el otro pie."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, gracias, señor. Los zapatos están muy bonitos. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven. Que le vaya muy bien y vuelva pronto."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 17.2,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 8.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 16.8,
+    "wordsMax": 22,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 21.4,
+    "wordsMax": 33,
+    "longShare": 0.4,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 8.5
+   },
+   "repeats": [
+    {
+     "said": "Mire, ya le estoy untando la grasa, y con el cepillo le saco el brillo.",
+     "earlier": "Ahorita le pongo el betún y le saco brillo con el cepillo."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 18,
+  "openerWords": 17,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.26666666666666666,
+  "learnerWords": 8.266666666666667,
+  "repeats": 0.5
+ },
+ "culture": [
+  "Shoe shiners (boleros) work in Mexico City, and a shine is called a \"boleada\" (\"boleadita\" in the friendly diminutive)",
+  "A shoeshine costs around 40 pesos, including polish/grease and brush",
+  "Mexican Spanish uses \"ahorita\" for \"right now / in a moment\"",
+  "\"Ándele\" is a friendly expression of encouragement or agreement",
+  "People address a young man politely as \"joven\"",
+  "The polite \"usted\" form is used with strangers and customers",
+  "Greetings like \"¡Buenas tardes!\" are used in the afternoon, and \"Pásele, pásele\" is a warm invitation to come in",
+  "Diminutives (-ito/-ita) like \"cajita\", \"minutitos\", \"ratito\" soften speech and are very common",
+  "\"La Roma\" (Colonia Roma) is a neighborhood in Mexico City where locals and foreigners live",
+  "Shoe shiners use a wooden box (cajón) on which the customer rests a foot",
+  "Leather shoes are polished with grease or \"betún\" and brushed to a mirror-like shine",
+  "Mexican hospitality: vendors chat, welcome newcomers and ask where you are from",
+  "A calm, unhurried pace of work is valued (\"aquí no se apura el trabajo\")",
+  "Customers are warmly farewelled with \"Que le vaya muy bien\" and \"Hasta luego\"",
+  "Regulars are recognized and greeted warmly when they come back",
+  "Shoeshine is a relaxing break that relieves tiredness"
+ ]
+}

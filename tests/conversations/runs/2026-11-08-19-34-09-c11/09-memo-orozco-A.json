@@ -1,0 +1,227 @@
+{
+ "run": "2026-11-08-19-34-09-c11",
+ "at": "2026-11-08T19:34:09.882Z",
+ "label": "c11",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "memo-tejuino",
+  "name": "Memo Orozco",
+  "role": "tejuinero",
+  "city": "Guadalajara",
+  "place": "Carrito de tejuino junto al Mercado San Juan de Dios"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Pásele, pásele. ¿Quiere un tejuino bien fríoo?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, un tejuino, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Claro que sí! Aquí lo preparo con su limón, su sal y su hielo. Ya sabe, es bien de Jalisco. ¿Le pongo una bolita de nieve de limón encima?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿nieve? Perdón... más despacio, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Sí, claro. La nieve es helado. Una bolita de helado de limón, encima del tejuino. Mucha gente lo pide así."
+   },
+   {
+    "who": "learner",
+    "text": "Ah... helado. Ehm... sí, con helado, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "¡Perfecto! Ahorita se lo preparo. Es de maíz con piloncillo, bien fresquito. ¿Es su primera vez probando tejuino?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, es mi primera vez. Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Hasta luego! Que le vaya muy bien y que disfrute su tejuino."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Qué bueno verlo por aquí otra vez. ¿Otro tejuino hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, otro tejuino, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, ya se lo preparo con su limón y su sal. ¿Quiere que le ponga otra vez la nieve encima?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, con helado, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, aquí tiene su tejuino con su bolita de nieve de limón, bien fría. ¿Cómo va su día por el Centro?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... bien, gracias. Mi día... bien."
+   },
+   {
+    "who": "npc",
+    "text": "Me da gusto. Hoy el mercado está tranquilo, con el fresco de noviembre la gente viene más tarde por su tejuino. ¿Y usted ya conoce el mercado por dentro?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no, el mercado... no por dentro. Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós, que le vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Qué bueno verlo otra vez. ¿Le preparo un tejuino, con nieve de limón?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, un tejuino con helado, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, ya se lo preparo. Con su limón y su sal, como la vez pasada. Son cuarenta pesos."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... cuarenta... ¿sí? Aquí tiene, gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted. Aquí tiene su tejuino, bien frío, con su nieve encima. ¿Y no me ha dicho cómo se llama?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... me llamo... David. ¿Y usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Mucho gusto, David. Yo soy Memo. ¿De dónde es usted?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... soy de Canadá. Mucho gusto, Memo. Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Adiós, David, que le vaya muy bien. Aquí lo espero."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 9,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 17.6,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 7.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 18,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.23,
+    "wordsPerLine": 6.8
+   },
+   "repeats": [
+    {
+     "said": "Claro que sí, ya se lo preparo con su limón y su sal.",
+     "earlier": "Aquí lo preparo con su limón, su sal y su hielo."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 15.2,
+    "wordsMax": 21,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 7.3
+   },
+   "repeats": [
+    {
+     "said": "Aquí tiene su tejuino, bien frío, con su nieve encima.",
+     "earlier": "Perfecto, aquí tiene su tejuino con su bolita de nieve de limón, bien fría."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 18,
+  "openerWords": 12,
+  "multiQuestion": 0,
+  "learnerShare": 0.25333333333333335,
+  "learnerWords": 7.133333333333333,
+  "repeats": 1
+ },
+ "culture": [
+  "Tejuino is a cold Jalisco drink made from fermented corn and piloncillo (unrefined cane sugar)",
+  "Tejuino is served with lime, salt and ice",
+  "Tejuino is often topped with a scoop of lime sorbet or ice cream",
+  "In Mexico, 'nieve' can mean ice cream or sorbet, not just snow",
+  "Piloncillo is unrefined cane sugar used in Mexican drinks and sweets",
+  "Vendors say 'Pásele, pásele' to invite customers in",
+  "'Ahorita' means right now or in a moment, and is commonly used in Mexico",
+  "Mexican vendors use polite 'usted' forms and friendly expressions like 'Que le vaya muy bien'",
+  "Markets in the Centro are a common place to buy local food and drinks",
+  "Tejuino costs about forty pesos at this stall",
+  "People in Guadalajara/Jalisco take pride in tejuino as a regional specialty",
+  "Mexican vendors often get to know regular customers and ask their name and where they are from",
+  "Diminutives like 'bolita' and 'fresquito' are common in Mexican Spanish",
+  "November is cooler, so fewer people come for cold drinks until later in the day"
+ ]
+}
