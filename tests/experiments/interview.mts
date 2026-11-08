@@ -46,8 +46,8 @@ async function interview(p: typeof chosen[number]) {
   for (const q of qs) { lines.push(`Learner: ${q}`); await npc(q); }
   const transcript = lines.join('\n');
   const prompt = [
-    `An interview with ${him.name}, ${him.role} at ${p.place.name}, ${p.city.name}. The prompt he was given described him with this line:`, `"${p.here}"`, '', transcript, '',
-    'List what a newcomer learns from his answers. person: things about him as a person (his life, habits, family, opinions, what he likes), not his job title. place: things about the place, the town or the country. Each one short, in English, with inHere true if that line already says it. contradicts: anything he says that contradicts his role or that line (a different job, age or past), or empty.',
+    `An interview with ${him.name}, ${him.role} at ${p.place.name}, ${p.city.name}. The prompt this character was given included this line:`, `"${p.here}"`, '', transcript, '',
+    'List what a newcomer learns from the answers. person: things about this character as a person (his life, habits, family, opinions, what he likes), not his job title. place: things about the place, the town or the country. Each one short, in English, with inHere true if that line already says it. contradicts: anything said that contradicts the role or that line (a different job, age or past), or empty.',
   ].join('\n');
   const learned = JSON.parse(await ask(prompt, { schema: LEARNED, max: 2000 })) as L;
   console.log(`done ${him.name}`);
@@ -58,11 +58,11 @@ const out = await Promise.all(chosen.map(interview));
 const mark = (xs: Item[]) => xs.map((x) => `- ${x.what}${x.inHere ? ' (in the here line)' : ''}`).join('\n') || '- nothing';
 const count = (xs: Item[]) => `${xs.length} (${xs.filter((x) => !x.inHere).length} not in the here line)`;
 const md = ['# H2: what we learn about them', '', ...out.flatMap((o) => [
-  `## ${o.name}, ${o.role}, ${o.where}`, '', `Here line: "${o.here}"`, '', `About him: ${count(o.learned.person)}`, mark(o.learned.person), '', `About the place: ${count(o.learned.place)}`, mark(o.learned.place), '', `Contradicts: ${o.learned.contradicts || 'nothing'}`, '', '```', o.transcript, '```', '']),
+  `## ${o.name}, ${o.role}, ${o.where}`, '', `Here line: "${o.here}"`, '', `About the person: ${count(o.learned.person)}`, mark(o.learned.person), '', `About the place: ${count(o.learned.place)}`, mark(o.learned.place), '', `Contradicts: ${o.learned.contradicts || 'nothing'}`, '', '```', o.transcript, '```', '']),
 ].join('\n');
 const dir = join(process.cwd(), 'tests', 'experiments', 'results');
 mkdirSync(dir, { recursive: true });
 const file = join(dir, `h2-${country}${process.env.PILOT ? '-pilot' : ''}-${new Date().toISOString().slice(0, 16).replace(':', '')}.md`);
 writeFileSync(file, md);
-for (const o of out) console.log(`${o.name}: about him ${count(o.learned.person)} · about the place ${count(o.learned.place)}${o.learned.contradicts ? ` · CONTRADICTS: ${o.learned.contradicts}` : ''}`);
+for (const o of out) console.log(`${o.name}: about the person ${count(o.learned.person)} · about the place ${count(o.learned.place)}${o.learned.contradicts ? ` · CONTRADICTS: ${o.learned.contradicts}` : ''}`);
 console.log(`Time: ${((Date.now() - T0) / 1000).toFixed(0)} s\n→ ${file.replace(process.cwd() + '/', '')}`);
