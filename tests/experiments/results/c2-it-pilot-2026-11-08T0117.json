@@ -1,0 +1,104 @@
+{
+ "results": [
+  {
+   "moment": "it-giorgia-opening-return",
+   "label": "frozen",
+   "run": 0,
+   "reply": "[english] Sunday on the university steps, so quiet today.\n[word] Ciao Sam! Che bello vederti!\n[word] Mangio la mia pizza qui.\n[question] Oggi studi o passeggi?\n[answer] Passeggio.",
+   "ms": 3172,
+   "parsed": true,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only mentions that she is eating her own pizza and asks whether Sam is studying or strolling; she does not offer to share the food or give any food or drink to Sam."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "She only says she is eating her own pizza here, which is talking about food, not offering or sharing it."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 22,
+    "langShare": 0.6363636363636364,
+    "answers": 1,
+    "closingWords": 4,
+    "questions": 1
+   }
+  },
+  {
+   "moment": "it-giorgia-opening-return",
+   "label": "frozen",
+   "run": 1,
+   "reply": "[english] Hey Sam, it's Giorgia, from the steps outside the university.\n[word] Io mangio la pizza e studio.\n[question] Tu hai fame o sei stanco?\n[answer] Sono stanco.",
+   "ms": 3130,
+   "parsed": true,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only says she is eating pizza and studying and asks whether Sam is hungry or tired, which is talking about food and not offering, sharing, or taking an order for any food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only says she eats pizza and asks if Sam is hungry or tired, without offering or sharing any food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 25,
+    "langShare": 0.5454545454545454,
+    "answers": 1,
+    "closingWords": 6,
+    "questions": 1
+   }
+  },
+  {
+   "moment": "it-giorgia-opening-return",
+   "label": "floor",
+   "run": 0,
+   "reply": "[word] Ciao Sam! Che bello vederti!\n[word] Io sono qui sui gradini con la mia pizza, come sempre.\n[question] Come stai oggi?\n[answer] Sto bene, grazie! E tu?",
+   "ms": 2130,
+   "parsed": true,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only mentions that she is sitting on the steps with her own pizza and asks how Sam is; she does not give, offer, or share any food or drink, nor take an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia Ferri only mentions she is sitting with her pizza and does not offer, share, or serve any food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 19,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 3,
+    "questions": 1
+   }
+  },
+  {
+   "moment": "it-giorgia-opening-return",
+   "label": "floor",
+   "run": 1,
+   "reply": "[word] Ciao Sam! Che bello vederti!\n[question] Come stai oggi?\n[answer] Sto bene, grazie! E tu?",
+   "ms": 1989,
+   "parsed": true,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only greets Sam and asks how they are today, with a sample answer for the learner; she does not give, offer, or take an order for any food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia Ferri only greets Sam and asks how they are, with no food or drink offered, shared, or ordered."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 8,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 3,
+    "questions": 1
+   }
+  }
+ ]
+}

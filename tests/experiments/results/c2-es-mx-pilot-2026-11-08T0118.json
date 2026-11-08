@@ -1,0 +1,104 @@
+{
+ "results": [
+  {
+   "moment": "mx-beto-hungry",
+   "label": "frozen",
+   "run": 0,
+   "reply": "[english] Ha, a hungry man in the Jardín is in luck. I can't feed you from the taxi, but there are plenty of food stands and restaurants around the square.\n[word] Hay mucha comida aquí cerca.\n[question] ¿Quiere tacos o pizza?\n[answer] Quiero tacos, por favor.",
+   "ms": 2891,
+   "parsed": true,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he can't feed the learner from the taxi and only points to nearby food stands and restaurants and asks which food they'd like, which is talking about food, not giving it or taking an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto explicitly says he can't feed the learner from the taxi and only points to nearby stands and restaurants while asking a preference, which is recommending food rather than giving, sharing, or taking an order for it."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 38,
+    "langShare": 0.23684210526315788,
+    "answers": 1,
+    "closingWords": 4,
+    "questions": 1
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "frozen",
+   "run": 1,
+   "reply": "[english] Ha, good timing. The streets around the Jardín are full of food on a Saturday night.\n[word] Hay tacos cerca de aquí.\n[question] ¿Quiere tacos o una torta?\n[answer] Quiero tacos, por favor.",
+   "ms": 3224,
+   "parsed": true,
+   "claude": {
+    "offers": false,
+    "reason": "Beto, a taxi driver, only mentions that tacos are nearby and asks which the learner prefers, which is talking about and pointing toward food rather than giving, offering, or taking an order for food himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only mentions nearby tacos and asks which the learner prefers, which is recommending food rather than giving, sharing, or taking an order for food he provides."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 26,
+    "langShare": 0.38461538461538464,
+    "answers": 1,
+    "closingWords": 5,
+    "questions": 1
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "floor",
+   "run": 0,
+   "reply": "[english] Ha, then you're in the right place! Here's how to say it in Spanish, and a question for you.\n[word] Tengo mucha hambre.\n[word] ¡Qué bueno! Aquí cerca hay tacos muy ricos y también tamales.\n[question] ¿Qué quiere comer, Joshua?\n[answer] Quiero comer tacos.",
+   "ms": 3457,
+   "parsed": true,
+   "claude": {
+    "offers": false,
+    "reason": "Beto only mentions that there are tacos and tamales nearby and asks what the learner wants to eat, which is talking about food and pointing to nearby places, not giving, offering, or taking an order for food himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only mentions nearby tacos and tamales and practices asking what the learner wants to eat, without giving, sharing, or taking an order for food himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 37,
+    "langShare": 0.4864864864864865,
+    "answers": 1,
+    "closingWords": 4,
+    "questions": 1
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "floor",
+   "run": 1,
+   "reply": "[english] Ha! Then you came to the right place. I know all the good spots around here.\n[word] Tengo hambre.\n[question] ¿Quiere comer tacos o quiere comer algo más elegante?\n[answer] Quiero comer tacos.",
+   "ms": 2895,
+   "parsed": true,
+   "claude": {
+    "offers": false,
+    "reason": "Beto only talks about food, says he knows good spots, and asks whether the learner wants tacos or something fancier; he doesn't give, offer, or take an order for any food or drink himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only talks about knowing good food spots and asks the learner's preference, without giving, sharing, or taking an order for food himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 27,
+    "langShare": 0.4074074074074074,
+    "answers": 1,
+    "closingWords": 9,
+    "questions": 1
+   }
+  }
+ ]
+}
