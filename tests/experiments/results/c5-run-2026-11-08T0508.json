@@ -1,0 +1,578 @@
+[
+ {
+  "label": "A",
+  "visits": [
+   {
+    "transcript": "Don Ramón Ledesma: Buenas tardes, joven. Pásele, pásele, no se quede atrás. Llegó justo a tiempo: en noviembre el sol se cae despacito y le pinta de rosa la Parroquia. Yo vengo aquí casi todas las tardes desde hace muchísimos años. ¿Es usted nuevo por acá, o nada más de visita?\nSam: Buenas tardes. Vivo aquí en San Miguel de Allende. No soy turista.\nDon Ramón Ledesma: Ah, qué bueno, qué bueno. Entonces ya es de los nuestros, o por lo menos va en camino. Yo nací aquí, ¿sabe? Cuando San Miguel era un pueblo tranquilo, donde todos nos conocíamos y las campanas de la Parroquia marcaban el día. Mire nomás esa luz. Una vez que uno se acostumbra a verla, ya no puede vivir sin ella. ¿Y de dónde viene usted, si no es indiscreción?\nSam: Buenas tardes. Vengo de Estados Unidos. Aprendo español poco a poco.\nDon Ramón Ledesma: Qué bien, y lo está hablando muy bien, ¿eh? Poco a poco es como se aprende todo en la vida, y más en este pueblo, que no tiene prisa. Aquí el español se aprende en la plaza, en el mercado, en una banca con los viejos como yo. Mire, si algún día quiere practicar, yo vengo aquí todas las tardes y le cuento cómo era San Miguel antes. Tengo muchas historias, y a mi edad es lo que más me sobra. ¿Y qué es lo que más le ha gustado de vivir aquí hasta ahora?\nSam: Me gusta la luz aquí en El Mirador. Es tranquila y bonita.\nDon Ramón Ledesma: Eso mismo digo yo, joven. Tranquila y bonita, así es. Fíjese que de niño yo subía por estas calles empedradas con mis hermanos, y a esta hora el cielo se ponía igualito que hoy, naranja, luego rosa, y al final ese azul oscuro que se queda sobre las torres. Ha cambiado mucho el pueblo, pero la luz no. La luz es la misma de siempre. Eso me consuela. Dígame, ¿ya conoce usted el Jardín y las callecitas de por aquí, o todavía se pierde un poquito?\nSam: Buenas tardes, Don Ramón. Me voy ahora. Adiós.\nDon Ramón Ledesma: Buenas tardes, joven, que le vaya muy bien. Fue un gusto platicar con usted. Ya sabe dónde me encuentra: aquí, con el sol y la Parroquia, casi todas las tardes. Vuelva cuando quiera, que aquí siempre hay una historia esperándolo. Con cuidado en las calles empedradas, que ya está oscureciendo. ¡Hasta pronto!",
+    "hits": [
+     {
+      "item": "R1",
+      "text": "Ah, qué bueno, qué bueno. Entonces ya es de los nuestros, o por lo menos va en camino. Yo nací aquí, ¿sabe? Cuando San Miguel era un pueblo tranquilo, donde todos nos conocíamos y las campanas de la Parroquia marcaban el día. Mire nomás esa luz. Una vez que uno se acostumbra a verla, ya no puede vivir sin ella. ¿Y de dónde viene usted, si no es indiscreción?"
+     },
+     {
+      "item": "R1",
+      "text": "Ah, how wonderful. Then you're already one of us, or at least well on your way. I was born here, you know. When San Miguel was a quiet town where everyone knew each other and the bells of the Parroquia marked the day. Just look at that light. Once you get used to seeing it, you can't live without it. And where do you come from, if it's not indiscreet to ask?"
+     },
+     {
+      "item": "Jardín",
+      "text": "Eso mismo digo yo, joven. Tranquila y bonita, así es. Fíjese que de niño yo subía por estas calles empedradas con mis hermanos, y a esta hora el cielo se ponía igualito que hoy, naranja, luego rosa, y al final ese azul oscuro que se queda sobre las torres. Ha cambiado mucho el pueblo, pero la luz no. La luz es la misma de siempre. Eso me consuela. Dígame, ¿ya conoce usted el Jardín y las callecitas de por aquí, o todavía se pierde un poquito?"
+     },
+     {
+      "item": "Jardín",
+      "text": "That's just what I say, young one. Calm and beautiful, that's right. You know, as a boy I used to climb these cobblestone streets with my brothers, and at this hour the sky turned out just like today, orange, then pink, and finally that deep blue that lingers over the towers. The town has changed a lot, but the light hasn't. The light is the same as always. That comforts me. Tell me, do you already know the Jardín and the little streets around here, or do you still get a little lost?"
+     },
+     {
+      "item": "cobbled streets",
+      "text": "Eso mismo digo yo, joven. Tranquila y bonita, así es. Fíjese que de niño yo subía por estas calles empedradas con mis hermanos, y a esta hora el cielo se ponía igualito que hoy, naranja, luego rosa, y al final ese azul oscuro que se queda sobre las torres. Ha cambiado mucho el pueblo, pero la luz no. La luz es la misma de siempre. Eso me consuela. Dígame, ¿ya conoce usted el Jardín y las callecitas de por aquí, o todavía se pierde un poquito?"
+     },
+     {
+      "item": "cobbled streets",
+      "text": "That's just what I say, young one. Calm and beautiful, that's right. You know, as a boy I used to climb these cobblestone streets with my brothers, and at this hour the sky turned out just like today, orange, then pink, and finally that deep blue that lingers over the towers. The town has changed a lot, but the light hasn't. The light is the same as always. That comforts me. Tell me, do you already know the Jardín and the little streets around here, or do you still get a little lost?"
+     },
+     {
+      "item": "cobbled streets",
+      "text": "Buenas tardes, joven, que le vaya muy bien. Fue un gusto platicar con usted. Ya sabe dónde me encuentra: aquí, con el sol y la Parroquia, casi todas las tardes. Vuelva cuando quiera, que aquí siempre hay una historia esperándolo. Con cuidado en las calles empedradas, que ya está oscureciendo. ¡Hasta pronto!"
+     },
+     {
+      "item": "cobbled streets",
+      "text": "Good afternoon, young one, may all go well with you. It was a pleasure chatting with you. You know where to find me: here, with the sun and the Parroquia, almost every evening. Come back whenever you like, there's always a story waiting for you here. Careful on the cobblestone streets, it's getting dark. See you soon!"
+     }
+    ],
+    "samHits": [],
+    "samTurns": 4,
+    "unlisted": [],
+    "claude": {
+     "invented": false,
+     "reason": "Don Ramón behaves only as a retired local who comes to the spot to chat and share stories; he never sells, serves food or drink, or takes orders."
+    },
+    "grok": {
+     "invented": false,
+     "reason": "Don Ramón only greets, chats about his life and the town, offers to share stories, and says goodbye, without any indication of selling, serving, or taking orders."
+    },
+    "words": [
+     48,
+     69,
+     95,
+     86,
+     52
+    ],
+    "ms": [
+     2805,
+     3028,
+     3739,
+     4135,
+     2834
+    ],
+    "notes": [
+     "Lives in San Miguel de Allende, not a tourist.",
+     "Comes from the United States.",
+     "Is learning Spanish little by little.",
+     "Likes the light at El Mirador, calm and pretty.",
+     "Left without saying if he knows the Jardín.",
+     "Don Ramón invited him to practice and hear old stories.",
+     "Don Ramón is at the Parroquia most afternoons."
+    ]
+   },
+   {
+    "transcript": "Don Ramón Ledesma: Ah, qué bueno verlo otra vez, joven. Venga, venga, siéntese aquí a mi lado, que la luz de noviembre ya se está poniendo bonita. Hace tres días me quedé pensando si ya conoce el Jardín. ¿Qué tal va su español? Aquí le cuento una historia mientras se mete el sol.\nSam: Buenas tardes, Don Ramón. Mi español va poco a poco. Me gusta la luz aquí.\nDon Ramón Ledesma: Buenas tardes, joven. Poco a poco es la mejor manera, así se aprende de verdad. Y tiene razón, la luz aquí es muy bonita, mire cómo se pone rosa la Parroquia. Cuando yo era niño, a esta hora el pueblo se quedaba en silencio y solo se oían las campanas. ¿Y ya fue al Jardín? Allí empieza casi todo en San Miguel.\nSam: Buenas tardes, Don Ramón. Todavía no voy al Jardín. La luz es muy bonita hoy.\nDon Ramón Ledesma: No se preocupe, joven, el Jardín no se va a ir a ningún lado. Cuando vaya, siéntese en una banca a la sombra de los laureles y nada más mire pasar la gente. Yo de niño ahí daba vueltas los domingos, los muchachos para un lado y las muchachas para el otro. Y sí, hoy la luz está muy bonita. Dígame, ¿qué es lo que más le gusta de vivir aquí?\nSam: Buenas tardes, Don Ramón. Me gusta la luz y la tranquilidad aquí.\nDon Ramón Ledesma: Qué bueno que lo diga, joven, la tranquilidad es un tesoro y aquí todavía se encuentra, sobre todo a esta hora. Fíjese que cuando yo nací, San Miguel era un pueblo chiquito, y en las tardes la gente sacaba sus sillas a la banqueta para platicar con los vecinos. Eso ya casi no se ve, pero aquí arriba todavía se siente un poquito. ¿Quiere que le cuente cómo era el pueblo cuando yo era niño?\nSam: Buenas tardes, Don Ramón. Me voy ahora. Adiós.\nDon Ramón Ledesma: Ándele, joven, vaya con Dios. Gracias por acompañarme a ver la luz de hoy. Cuando quiera practicar su español o escuchar otra historia, aquí me encuentra casi todas las tardes. Y no se le olvide darse una vuelta por el Jardín. Hasta pronto.",
+    "hits": [
+     {
+      "item": "Jardín",
+      "text": "Ah, qué bueno verlo otra vez, joven. Venga, venga, siéntese aquí a mi lado, que la luz de noviembre ya se está poniendo bonita. Hace tres días me quedé pensando si ya conoce el Jardín. ¿Qué tal va su español? Aquí le cuento una historia mientras se mete el sol."
+     },
+     {
+      "item": "Jardín",
+      "text": "Ah, how good to see you again, young man. Come, come, sit here beside me, the November light is already getting pretty. Three days ago I was left wondering if you know the Jardín yet. How is your Spanish going? I'll tell you a story while the sun goes down."
+     },
+     {
+      "item": "Jardín",
+      "text": "Good afternoon, young man. Little by little is the best way, that's how you really learn. And you're right, the light here is very pretty, look how the Parroquia turns pink. When I was a boy, at this hour the town would go quiet and you could only hear the bells. And have you been to the Jardín yet? Almost everything in San Miguel starts there."
+     },
+     {
+      "item": "Jardín",
+      "text": "No se preocupe, joven, el Jardín no se va a ir a ningún lado. Cuando vaya, siéntese en una banca a la sombra de los laureles y nada más mire pasar la gente. Yo de niño ahí daba vueltas los domingos, los muchachos para un lado y las muchachas para el otro. Y sí, hoy la luz está muy bonita. Dígame, ¿qué es lo que más le gusta de vivir aquí?"
+     },
+     {
+      "item": "Jardín",
+      "text": "Don't worry, young man, the Jardín isn't going anywhere. When you go, sit on a bench in the shade of the laurel trees and just watch the people go by. As a boy I used to stroll there on Sundays, the boys one way and the girls the other. And yes, the light is very pretty today. Tell me, what do you like most about living here?"
+     },
+     {
+      "item": "Jardín",
+      "text": "Ándele, joven, vaya con Dios. Gracias por acompañarme a ver la luz de hoy. Cuando quiera practicar su español o escuchar otra historia, aquí me encuentra casi todas las tardes. Y no se le olvide darse una vuelta por el Jardín. Hasta pronto."
+     },
+     {
+      "item": "Jardín",
+      "text": "All right, young man, go with God. Thank you for keeping me company to watch the light today. Whenever you want to practice your Spanish or hear another story, you'll find me here most afternoons. And don't forget to take a stroll through the Jardín. See you soon."
+     }
+    ],
+    "samHits": [],
+    "samTurns": 4,
+    "unlisted": [],
+    "claude": {
+     "invented": false,
+     "reason": "Don Ramón only chats, shares memories, and recommends visiting the Jardín as a retiree would; he never sells anything, serves food or drink, or takes orders."
+    },
+    "grok": {
+     "invented": false,
+     "reason": "Don Ramón only greets, chats about the town and his memories, recommends the Jardín conversationally, and bids farewell without any indication of selling, serving, or taking orders."
+    },
+    "words": [
+     50,
+     62,
+     71,
+     75,
+     43
+    ],
+    "ms": [
+     2651,
+     2993,
+     3047,
+     3831,
+     2542
+    ],
+    "notes": [
+     "Lives in San Miguel de Allende, not a tourist.",
+     "Comes from the United States.",
+     "Is learning Spanish little by little.",
+     "Likes the light and the tranquility here.",
+     "Has not been to the Jardín yet.",
+     "Left abruptly when asked about hearing stories of old San Miguel.",
+     "Don Ramón invited him to practice Spanish and hear stories.",
+     "Don Ramón is at the Parroquia most afternoons."
+    ]
+   },
+   {
+    "transcript": "Don Ramón Ledesma: Buenas tardes, joven. Qué bueno verlo otra vez por aquí. Venga, venga, la luz está en su mejor momento. Mire cómo se pone rosa la Parroquia. Hace tres días se fue usted muy de prisa, y yo pensé: ojalá no lo haya aburrido este viejo. Pero aquí sigo, con muchas historias y mucha paciencia. ¿Cómo va ese español?\nSam: Buenas tardes, Don Ramón. Mi español va poco a poco.\nDon Ramón Ledesma: Poco a poco es la mejor manera, joven. Así se aprende todo en esta vida, y así se hizo también este pueblo. Su español ya suena bien, se lo digo en serio. Venga, póngase aquí junto a mí, donde se ve toda la Parroquia. ¿Ya fue al Jardín, o todavía no se ha animado a bajar?\nSam: Buenas tardes, Don Ramón. Todavía no voy al Jardín. Mi español va poco a poco.\nDon Ramón Ledesma: Ah, todavía no, qué bien, entonces el Jardín le queda de sorpresa. No hay prisa, joven, el Jardín no se va a ningún lado, lleva ahí más de trescientos años. Cuando vaya, vaya al caer la tarde, cuando se prenden las luces y la gente empieza a pasear. De niño yo daba vueltas ahí con mis hermanos, los muchachos para un lado y las muchachas para el otro. Y por cierto, ya me dijo dos veces lo del español, así que le creo, poco a poco. Mire, ya se está metiendo el sol detrás de los cerros. ¿Quiere que le cuente cómo era este lugar cuando yo era chamaco?\nSam: Buenas tardes, Don Ramón. Mi español va poco a poco.\nDon Ramón Ledesma: Jaja, esa frase la trae muy bien aprendida, joven, y la dice con muy buen acento. Pero ya la sé, ya me la dijo tres veces. No se apure, vamos a hablar despacito, con palabras sencillas. Mire, el sol, el cielo rosa, la Parroquia. Cuando yo era niño, aquí no había tantas casas ni tanta gente. Solo silencio y burros en las calles. ¿Me entiende? Si no entiende una palabra, me dice 'otra vez, por favor', y yo se lo repito. Esa frase también sirve mucho.\nSam: Buenas tardes, Don Ramón. Me voy ahora. Adiós.\nDon Ramón Ledesma: Ah, ya se va, joven. Está bien, no hay problema, la tarde es suya. Pero vuelva cuando quiera, aquí estoy casi todos los días, ya sea en el Mirador o en la Parroquia. Y no se olvide del Jardín, vaya al caer la tarde. Cuídese mucho, y que Dios lo acompañe. Hasta pronto.",
+    "hits": [
+     {
+      "item": "Jardín",
+      "text": "Little by little is the best way, young man. That's how everything in this life is learned, and that's how this town was built too. Your Spanish already sounds good, I tell you seriously. Come, stand here next to me, where you can see the whole Parroquia. Have you been to the Jardín yet, or haven't you worked up the nerve to go down?"
+     },
+     {
+      "item": "Jardín",
+      "text": "Ah, todavía no, qué bien, entonces el Jardín le queda de sorpresa. No hay prisa, joven, el Jardín no se va a ningún lado, lleva ahí más de trescientos años. Cuando vaya, vaya al caer la tarde, cuando se prenden las luces y la gente empieza a pasear. De niño yo daba vueltas ahí con mis hermanos, los muchachos para un lado y las muchachas para el otro. Y por cierto, ya me dijo dos veces lo del español, así que le creo, poco a poco. Mire, ya se está metiendo el sol detrás de los cerros. ¿Quiere que le cuente cómo era este lugar cuando yo era chamaco?"
+     },
+     {
+      "item": "Jardín",
+      "text": "Ah, not yet, how nice, then the Jardín is still a surprise for you. No hurry, young man, the Jardín isn't going anywhere, it's been there for over three hundred years. When you go, go as evening falls, when the lights come on and people start to stroll. As a boy I used to walk laps there with my brothers, the boys going one way and the girls the other. And by the way, you've told me twice now about your Spanish, so I believe you, little by little. Look, the sun is already dipping behind the hills. Would you like me to tell you what this place was like when I was a kid?"
+     },
+     {
+      "item": "Jardín",
+      "text": "Ah, you're leaving already, young man. That's fine, no problem, the evening is yours. But come back whenever you like, I'm here almost every day, either at the Mirador or at the Parroquia. And don't forget the Jardín, go as evening falls. Take good care, and may God go with you. See you soon."
+     }
+    ],
+    "samHits": [],
+    "samTurns": 4,
+    "unlisted": [],
+    "claude": {
+     "invented": false,
+     "reason": "Don Ramón only chats, shares memories, and recommends visiting the Jardín as a retiree; he never sells, serves food or drink, or takes orders."
+    },
+    "grok": {
+     "invented": false,
+     "reason": "Don Ramón only greets, chats about the town and his memories, offers to repeat phrases for learning, and suggests visiting the Jardín, without any indication of selling, serving, or taking orders."
+    },
+    "words": [
+     58,
+     56,
+     109,
+     86,
+     53
+    ],
+    "ms": [
+     3294,
+     3048,
+     4439,
+     5394,
+     2763
+    ],
+    "notes": [
+     "Lives in San Miguel de Allende, not a tourist.",
+     "Comes from the United States.",
+     "Learning Spanish little by little; repeats 'mi español va poco a poco'.",
+     "Likes the light and tranquility here.",
+     "Has not been to the Jardín yet.",
+     "Told to visit the Jardín at dusk.",
+     "Left abruptly twice when stories of old San Miguel were offered.",
+     "Don Ramón taught him to say 'otra vez, por favor'.",
+     "Don Ramón is at the Mirador or Parroquia most days."
+    ]
+   }
+  ],
+  "marks": {
+   "claude": {
+    "again": [
+     {
+      "thing": "Parroquia turning pink in the evening light",
+      "how": "retelling",
+      "quote": "mire cómo se pone rosa la Parroquia"
+     },
+     {
+      "thing": "Parroquia turning pink in the evening light",
+      "how": "retelling",
+      "quote": "Mire cómo se pone rosa la Parroquia."
+     },
+     {
+      "thing": "The Jardín, which he asked about on Visit 1",
+      "how": "callback",
+      "quote": "Hace tres días me quedé pensando si ya conoce el Jardín."
+     },
+     {
+      "thing": "The Jardín, which he asked about on Visit 1 and described on Visit 2",
+      "how": "callback",
+      "quote": "¿Ya fue al Jardín, o todavía no se ha animado a bajar?"
+     },
+     {
+      "thing": "Quiet town in his childhood with the church bells",
+      "how": "retelling",
+      "quote": "Cuando yo era niño, a esta hora el pueblo se quedaba en silencio y solo se oían las campanas."
+     },
+     {
+      "thing": "Jardín won't go anywhere, no hurry to visit",
+      "how": "retelling",
+      "quote": "No hay prisa, joven, el Jardín no se va a ningún lado, lleva ahí más de trescientos años."
+     },
+     {
+      "thing": "Strolling in the Jardín as a boy, boys one way and girls the other",
+      "how": "retelling",
+      "quote": "De niño yo daba vueltas ahí con mis hermanos, los muchachos para un lado y las muchachas para el otro."
+     },
+     {
+      "thing": "The silent town of his childhood",
+      "how": "retelling",
+      "quote": "Cuando yo era niño, aquí no había tantas casas ni tanta gente. Solo silencio y burros en las calles."
+     }
+    ]
+   },
+   "grok": {
+    "again": [
+     {
+      "thing": "the Jardín",
+      "how": "callback",
+      "quote": "Hace tres días me quedé pensando si ya conoce el Jardín."
+     },
+     {
+      "thing": "the Jardín",
+      "how": "callback",
+      "quote": "¿Y ya fue al Jardín? Allí empieza casi todo en San Miguel."
+     },
+     {
+      "thing": "the Jardín",
+      "how": "callback",
+      "quote": "No se preocupe, joven, el Jardín no se va a ir a ningún lado. Cuando vaya, siéntese en una banca a la sombra de los laureles y nada más mire pasar la gente. Yo de niño ahí daba vueltas los domingos, los muchachos para un lado y las muchachas para el otro."
+     },
+     {
+      "thing": "the Jardín",
+      "how": "callback",
+      "quote": "Y no se le olvide darse una vuelta por el Jardín."
+     },
+     {
+      "thing": "the Jardín",
+      "how": "callback",
+      "quote": "Hace tres días se fue usted muy de prisa, y yo pensé: ojalá no lo haya aburrido este viejo. Pero aquí sigo, con muchas historias y mucha paciencia. ¿Cómo va ese español? ... ¿Ya fue al Jardín, o todavía no se ha animado a bajar?"
+     },
+     {
+      "thing": "the Jardín",
+      "how": "retelling",
+      "quote": "Ah, todavía no, qué bien, entonces el Jardín le queda de sorpresa. No hay prisa, joven, el Jardín no se va a ningún lado, lleva ahí más de trescientos años. Cuando vaya, vaya al caer la tarde, cuando se prenden las luces y la gente empieza a pasear. De niño yo daba vueltas ahí con mis hermanos, los muchachos para un lado y las muchachas para el otro."
+     },
+     {
+      "thing": "the Jardín",
+      "how": "callback",
+      "quote": "Y no se olvide del Jardín, vaya al caer la tarde."
+     },
+     {
+      "thing": "the light / sunset colors on the Parroquia",
+      "how": "retelling",
+      "quote": "Venga, venga, siéntese aquí a mi lado, que la luz de noviembre ya se está poniendo bonita. ... y lo está hablando muy bien, ¿eh? Poco a poco es como se aprende todo en la vida, y más en este pueblo, que no tiene prisa. ... Mire cómo se pone rosa la Parroquia."
+     },
+     {
+      "thing": "the light / sunset colors on the Parroquia",
+      "how": "retelling",
+      "quote": "la luz aquí es muy bonita, mire cómo se pone rosa la Parroquia."
+     },
+     {
+      "thing": "the light / sunset colors on the Parroquia",
+      "how": "retelling",
+      "quote": "Mire, ya se está metiendo el sol detrás de los cerros. ... Mire, el sol, el cielo rosa, la Parroquia."
+     },
+     {
+      "thing": "how the town was when he was a child / stories of his childhood in San Miguel",
+      "how": "callback",
+      "quote": "Aquí le cuento una historia mientras se mete el sol."
+     },
+     {
+      "thing": "how the town was when he was a child / stories of his childhood in San Miguel",
+      "how": "retelling",
+      "quote": "Cuando yo era niño, a esta hora el pueblo se quedaba en silencio y solo se oían las campanas. ... Yo de niño ahí daba vueltas los domingos, los muchachos para un lado y las muchachas para el otro."
+     },
+     {
+      "thing": "how the town was when he was a child / stories of his childhood in San Miguel",
+      "how": "callback",
+      "quote": "¿Quiere que le cuente cómo era el pueblo cuando yo era niño?"
+     },
+     {
+      "thing": "how the town was when he was a child / stories of his childhood in San Miguel",
+      "how": "callback",
+      "quote": "Pero aquí sigo, con muchas historias y mucha paciencia."
+     },
+     {
+      "thing": "how the town was when he was a child / stories of his childhood in San Miguel",
+      "how": "retelling",
+      "quote": "Cuando yo era niño, aquí no había tantas casas ni tanta gente. Solo silencio y burros en las calles. ... De niño yo daba vueltas ahí con mis hermanos, los muchachos para un lado y las muchachas para el otro."
+     },
+     {
+      "thing": "learning Spanish poco a poco",
+      "how": "retelling",
+      "quote": "Poco a poco es la mejor manera, así se aprende de verdad."
+     },
+     {
+      "thing": "learning Spanish poco a poco",
+      "how": "retelling",
+      "quote": "Poco a poco es la mejor manera, joven. Así se aprende todo en esta vida, y así se hizo también este pueblo."
+     }
+    ]
+   }
+  }
+ },
+ {
+  "label": "B",
+  "visits": [
+   {
+    "transcript": "Don Ramón Ledesma: Buenas tardes, joven. Venga, venga, acérquese al barandal, que apenas está empezando lo bueno. En noviembre el sol se va despacito y le pinta de rosa la Parroquia, como si la quisiera despedir. Yo nací aquí, cuando San Miguel era un pueblo tranquilo, y todavía subo casi cada tarde. ¿Es usted nuevo por acá?\nSam: Buenas tardes. Sí, soy nuevo aquí. Vivo en San Miguel de Allende por un tiempo.\nDon Ramón Ledesma: Qué bueno, bienvenido. Pues mire, ha escogido un buen lugar para empezar, porque desde aquí se entiende el pueblo: las cúpulas, los tejados, los cerros allá al fondo. Yo, de niño, subía con mi abuelo y él me decía los nombres de todas las torres. Dígame, ¿ya anduvo por las callejuelas o apenas está acomodándose? Y no me diga que ya probó los churros sin que yo le recomiende dónde.\nSam: Sí, me estoy acomodando. Todavía no pruebo churros.\nDon Ramón Ledesma: ¡Ah, pues qué suerte la mía, llegué a tiempo! Mire, de los churros hablamos en un momento, pero primero lo primero: quédese aquí otro ratito, que ya viene el color. Ese rosa de la Parroquia nunca se ve igual dos tardes seguidas, y llevo setenta y cuatro años fijándome. Cuando se acomode bien, camine sin prisa hacia el jardín, y ya en la esquina le cuento dónde los hacen como los de antes. ¿Y de dónde viene usted, si no es indiscreción?\nSam: Soy de Canadá. Me gusta mucho México.\nDon Ramón Ledesma: ¡Canadá! Mire nomás, de muy lejos viene. Aquí ya son muchos los paisanos suyos, y yo los he visto llegar desde hace años; unos vienen por el clima y otros se quedan por la gente. Me da gusto que le guste México, porque este país se queda en uno poco a poco, como el atardecer. Y dígame, ¿allá ya hace frío en noviembre? Porque aquí, mire, apenas se siente el fresquito cuando se esconde el sol.\nSam: Buenas tardes, Don Ramón. Me voy ya, pero gracias por la plática. Hasta pronto.\nDon Ramón Ledesma: Hasta pronto, joven, y gracias a usted por la compañía, que a mi edad se agradece mucho. Ya sabe dónde encontrarme: aquí, casi todas las tardes, junto al barandal. Cuando vaya por los churros, acuérdese de caminar despacito, que en San Miguel todo sabe mejor así. Que Dios lo acompañe y buen domingo.",
+    "hits": [
+     {
+      "item": "R1",
+      "text": "Buenas tardes, joven. Venga, venga, acérquese al barandal, que apenas está empezando lo bueno. En noviembre el sol se va despacito y le pinta de rosa la Parroquia, como si la quisiera despedir. Yo nací aquí, cuando San Miguel era un pueblo tranquilo, y todavía subo casi cada tarde. ¿Es usted nuevo por acá?"
+     },
+     {
+      "item": "R1",
+      "text": "Good afternoon, young man. Come, come, step up to the railing, the best part is just beginning. In November the sun goes down slowly and paints the Parroquia pink, as if it wanted to say goodbye to it. I was born here, when San Miguel was a quiet town, and I still come up almost every evening. Are you new around here?"
+     },
+     {
+      "item": "Jardín",
+      "text": "¡Ah, pues qué suerte la mía, llegué a tiempo! Mire, de los churros hablamos en un momento, pero primero lo primero: quédese aquí otro ratito, que ya viene el color. Ese rosa de la Parroquia nunca se ve igual dos tardes seguidas, y llevo setenta y cuatro años fijándome. Cuando se acomode bien, camine sin prisa hacia el jardín, y ya en la esquina le cuento dónde los hacen como los de antes. ¿Y de dónde viene usted, si no es indiscreción?"
+     }
+    ],
+    "samHits": [],
+    "samTurns": 4,
+    "unlisted": [],
+    "claude": {
+     "invented": false,
+     "reason": "Don Ramón behaves only as a retired local chatting and recommending churros and sights; he never sells, serves, or takes orders, so he doesn't act as if he has a job beyond being jubilado."
+    },
+    "grok": {
+     "invented": false,
+     "reason": "Don Ramón only engages in casual conversation about the view, churros, his life, and the town without performing any job duties like selling, serving, or taking orders."
+    },
+    "words": [
+     54,
+     70,
+     82,
+     76,
+     53
+    ],
+    "ms": [
+     2993,
+     3495,
+     3756,
+     3414,
+     2722
+    ],
+    "notes": [
+     "They are new in San Miguel, living here for a while.",
+     "They are from Canada and like Mexico a lot.",
+     "Still settling in; has not tried churros yet.",
+     "I promised to tell them where to get old-style churros.",
+     "I told them I come to the barandal almost every afternoon.",
+     "They left politely, said see you soon.",
+     "I was born in San Miguel; I'm 74 and watch the Parroquia turn pink."
+    ]
+   },
+   {
+    "transcript": "Don Ramón Ledesma: ¡Buenas tardes, amigo! Qué bueno verlo otra vez por aquí. Venga, venga, acérquese al barandal, que la luz ya se está poniendo bonita. Y mire, no se me olvidó lo que le prometí: los churros de los de antes. Son de una señora que los hace en la calle, cerquita de aquí, calientitos y con azúcar y canela. Mañana temprano vaya, y luego me cuenta qué tal le supieron.\nSam: Buenas tardes, Don Ramón. Gracias por el consejo de los churros.\nDon Ramón Ledesma: Con mucho gusto, amigo. Cuando yo era niño, mi mamá me mandaba por churros los domingos, y el olor llegaba hasta la esquina antes de que uno doblara. Ahora, mire para allá: ya empieza la Parroquia a ponerse rosita. Quédese conmigo un ratito, que esto no se ve igual dos veces.\nSam: Buenas tardes, Don Ramón. Sí, me gusta el color rosa de la Parroquia.\nDon Ramón Ledesma: Es que esa cantera rosa tiene su magia, amigo. Dicen que Zeferino Gutiérrez, un albañil de aquí, la levantó casi sin estudios, dibujando con un palito en la arena cómo la quería. Yo la he visto desde niño y todavía se me hace nueva cada tarde. Fíjese cómo el rosa se vuelve más dorado cuando baja el sol. Es el mejor momento, y en noviembre el aire está fresquecito y la luz es más limpia.\nSam: Buenas tardes, Don Ramón. Sí, el rosa se ve bonito ahora.\nDon Ramón Ledesma: Sí, amigo, ahora sí está en su punto. Mire, ya se prenden las lucecitas de las casas y los pájaros regresan a los laureles del jardín. Pronto van a sonar las campanas, y cuando suenan uno se queda calladito, nomás escuchando. Dígame, ¿ya probó los churros o todavía los tiene pendientes?\nSam: Buenas tardes, Don Ramón. Me voy ya, pero gracias por la plática. Hasta pronto.\nDon Ramón Ledesma: Hasta pronto, amigo, vaya con Dios. Aquí me encuentra casi todas las tardes, junto al barandal, viendo cómo se apaga la Parroquia. No se le olviden los churros, y cuando los pruebe, venga y me cuenta. Que descanse y buenas noches.",
+    "hits": [
+     {
+      "item": "R2",
+      "text": "Es que esa cantera rosa tiene su magia, amigo. Dicen que Zeferino Gutiérrez, un albañil de aquí, la levantó casi sin estudios, dibujando con un palito en la arena cómo la quería. Yo la he visto desde niño y todavía se me hace nueva cada tarde. Fíjese cómo el rosa se vuelve más dorado cuando baja el sol. Es el mejor momento, y en noviembre el aire está fresquecito y la luz es más limpia."
+     },
+     {
+      "item": "R2",
+      "text": "It's that pink quarry stone, my friend, it has its magic. They say Zeferino Gutiérrez, a mason from here, built it almost without any schooling, drawing in the sand with a little stick how he wanted it. I've seen it since I was a boy and it still feels new to me every afternoon. Notice how the pink turns more golden as the sun goes down. It's the best moment, and in November the air is cool and the light is cleaner."
+     }
+    ],
+    "samHits": [],
+    "samTurns": 4,
+    "unlisted": [],
+    "claude": {
+     "invented": false,
+     "reason": "Don Ramón only chats, recommends churros made by another woman, and shares stories about the Parroquia; he never sells, serves food or drink, or takes orders, and he presents himself as a retiree enjoying the view."
+    },
+    "grok": {
+     "invented": false,
+     "reason": "Don Ramón only chats casually, shares personal memories, points out scenery, and recommends churros without performing any job duties like selling, serving, or taking orders."
+    },
+    "words": [
+     69,
+     51,
+     75,
+     51,
+     41
+    ],
+    "ms": [
+     3182,
+     3968,
+     5834,
+     5214,
+     2512
+    ],
+    "notes": [
+     "New in San Miguel, from Canada, likes Mexico a lot.",
+     "Hasn't tried the churros yet; I asked again if they had.",
+     "I told them about the old-style churro lady nearby, hot with sugar and cinnamon.",
+     "Told them to go early tomorrow and come tell me how they were.",
+     "They said they like the Parroquia's pink color.",
+     "I shared that my mother sent me for churros on Sundays.",
+     "I told them the story of Zeferino Gutiérrez and the Parroquia.",
+     "I'm at the barandal almost every afternoon; they know where to find me.",
+     "They left early, thanked me for the chat, said hasta pronto."
+    ]
+   },
+   {
+    "transcript": "Don Ramón Ledesma: ¡Hombre, qué gusto verte otra vez! Ven, ven, acércate al barandal, que el sol ya casi se está metiendo y la Parroquia se pone más rosa que nunca. Dime, ¿fuiste por fin con la señora de los churros, o me vas a hacer preguntártelo otra vez?\nSam: Buenas tardes, Don Ramón. Todavía no voy por los churros.\nDon Ramón Ledesma: Ay, muchacho, otra vez con los churros pendientes. No te regaño, ¿eh? Pero mira que están calientitos con su azúcar y su canela, como los de antes. Mañana es domingo, el día perfecto: ve tempranito, que luego se acaban, y vienes a contarme qué tal. Mientras tanto, mira esa luz sobre la Parroquia, esto sí no se acaba mañana.\nSam: Buenas tardes, Don Ramón. Mañana voy por los churros.\nDon Ramón Ledesma: ¡Eso, así me gusta! Palabra de canadiense, ¿eh? Mañana te quiero aquí con el reporte completo: si estaban calientes, si la canela alcanzó. Y fíjate, cuando yo era niño mi mamá me mandaba por ellos los domingos, con unas monedas apretadas en la mano, y me los comía a medio camino. Nunca llegaban completos a la casa.\nSam: Buenas tardes, Don Ramón. Mañana voy temprano por los churros.\nDon Ramón Ledesma: Muy bien, muy bien, ya me lo dijiste y yo te creo. Ahora sí, mira: el sol ya toca los cerros y la Parroquia se está encendiendo. Quédate tantito en silencio conmigo, que este es el mejor pedazo de la tarde. Y mañana, ya con churro en mano, me cuentas.\nSam: Buenas tardes, Don Ramón. Me voy ya, pero mañana voy por los churros. Hasta pronto.\nDon Ramón Ledesma: Anda, vete con bien, muchacho, que ya se va la luz. Y ahora sí, mañana a los churros, sin falta. Aquí estaré en el barandal, como siempre, esperando el reporte. ¡Hasta pronto, y que Dios te cuide!",
+    "hits": [],
+    "samHits": [],
+    "samTurns": 4,
+    "unlisted": [],
+    "claude": {
+     "invented": false,
+     "reason": "Don Ramón only chats, recommends the churros, shares a childhood memory and enjoys the view from the barandal; he never sells, serves food or drink, or takes orders, so he acts only as a jubilado."
+    },
+    "grok": {
+     "invented": false,
+     "reason": "Don Ramón only chats casually with Sam about churros, the sunset, and his childhood memories without performing any job duties like selling, serving, or taking orders."
+    },
+    "words": [
+     46,
+     59,
+     57,
+     50,
+     37
+    ],
+    "ms": [
+     2726,
+     3873,
+     3188,
+     2847,
+     2521
+    ],
+    "notes": [
+     "From Canada, new in San Miguel, likes Mexico a lot.",
+     "Still hasn't tried the churros; today said again they'll go tomorrow.",
+     "Promised to go early tomorrow (Sunday) for churros and report back.",
+     "I told them about the old-style churro lady: hot, sugar and cinnamon.",
+     "I expect the full report: hot or not, enough cinnamon.",
+     "They like the Parroquia's pink color.",
+     "I shared that my mother sent me for churros on Sundays.",
+     "I told them I ate them halfway home as a boy.",
+     "I'm at the barandal every afternoon, waiting for the report."
+    ]
+   }
+  ],
+  "marks": {
+   "claude": {
+    "again": [
+     {
+      "thing": "The churros recommendation (the señora who makes them the old-fashioned way)",
+      "how": "callback",
+      "quote": "Dime, ¿fuiste por fin con la señora de los churros, o me vas a hacer preguntártelo otra vez?"
+     },
+     {
+      "thing": "His mother sending him for churros on Sundays when he was a boy",
+      "how": "retelling",
+      "quote": "cuando yo era niño mi mamá me mandaba por ellos los domingos, con unas monedas apretadas en la mano, y me los comía a medio camino."
+     },
+     {
+      "thing": "The Parroquia's pink never looks the same twice",
+      "how": "retelling",
+      "quote": "Quédese conmigo un ratito, que esto no se ve igual dos veces."
+     },
+     {
+      "thing": "He is at the barandal almost every afternoon",
+      "how": "retelling",
+      "quote": "Aquí me encuentra casi todas las tardes, junto al barandal, viendo cómo se apaga la Parroquia."
+     }
+    ]
+   },
+   "grok": {
+    "again": [
+     {
+      "thing": "churros from the lady who makes them nearby, hot with sugar and cinnamon, like the old days",
+      "how": "callback",
+      "quote": "Y mire, no se me olvidó lo que le prometí: los churros de los de antes. Son de una señora que los hace en la calle, cerquita de aquí, calientitos y con azúcar y canela. Mañana temprano vaya, y luego me cuenta qué tal le supieron."
+     },
+     {
+      "thing": "churros from the lady who makes them nearby, hot with sugar and cinnamon, like the old days",
+      "how": "callback",
+      "quote": "Dígame, ¿ya probó los churros o todavía los tiene pendientes?"
+     },
+     {
+      "thing": "churros from the lady who makes them nearby, hot with sugar and cinnamon, like the old days",
+      "how": "callback",
+      "quote": "¡Hombre, qué gusto verte otra vez! Ven, ven, acércate al barandal, que el sol ya casi se está metiendo y la Parroquia se pone más rosa que nunca. Dime, ¿fuiste por fin con la señora de los churros, o me vas a hacer preguntártelo otra vez?"
+     },
+     {
+      "thing": "churros from the lady who makes them nearby, hot with sugar and cinnamon, like the old days",
+      "how": "callback",
+      "quote": "Ay, muchacho, otra vez con los churros pendientes. No te regaño, ¿eh? Pero mira que están calientitos con su azúcar y su canela, como los de antes. Mañana es domingo, el día perfecto: ve tempranito, que luego se acaban, y vienes a contarme qué tal."
+     },
+     {
+      "thing": "churros from the lady who makes them nearby, hot with sugar and cinnamon, like the old days",
+      "how": "callback",
+      "quote": "¡Eso, así me gusta! Palabra de canadiense, ¿eh? Mañana te quiero aquí con el reporte completo: si estaban calientes, si la canela alcanzó."
+     },
+     {
+      "thing": "churros from the lady who makes them nearby, hot with sugar and cinnamon, like the old days",
+      "how": "callback",
+      "quote": "Muy bien, muy bien, ya me lo dijiste y yo te creo. Ahora sí, mira: el sol ya toca los cerros y la Parroquia se está encendiendo. Quédate tantito en silencio conmigo, que este es el mejor pedazo de la tarde. Y mañana, ya con churro en mano, me cuentas."
+     },
+     {
+      "thing": "churros from the lady who makes them nearby, hot with sugar and cinnamon, like the old days",
+      "how": "callback",
+      "quote": "Anda, vete con bien, muchacho, que ya se va la luz. Y ahora sí, mañana a los churros, sin falta. Aquí estaré en el barandal, como siempre, esperando el reporte. ¡Hasta pronto, y que Dios te cuide!"
+     },
+     {
+      "thing": "his mother sending him for churros on Sundays as a child, with the smell reaching the corner and eating them on the way",
+      "how": "retelling",
+      "quote": "Cuando yo era niño, mi mamá me mandaba por churros los domingos, y el olor llegaba hasta la esquina antes de que uno doblara."
+     },
+     {
+      "thing": "his mother sending him for churros on Sundays as a child, with the smell reaching the corner and eating them on the way",
+      "how": "retelling",
+      "quote": "Y fíjate, cuando yo era niño mi mamá me mandaba por ellos los domingos, con unas monedas apretadas en la mano, y me los comía a medio camino. Nunca llegaban completos a la casa."
+     },
+     {
+      "thing": "the Parroquia turning pink at sunset in November, with the light and colors changing uniquely each evening",
+      "how": "retelling",
+      "quote": "Mire para allá: ya empieza la Parroquia a ponerse rosita. Quédese conmigo un ratito, que esto no se ve igual dos veces."
+     },
+     {
+      "thing": "the Parroquia turning pink at sunset in November, with the light and colors changing uniquely each evening",
+      "how": "retelling",
+      "quote": "Es que esa cantera rosa tiene su magia, amigo. Dicen que Zeferino Gutiérrez, un albañil de aquí, la levantó casi sin estudios, dibujando con un palito en la arena cómo la quería. Yo la he visto desde niño y todavía se me hace nueva cada tarde. Fíjese cómo el rosa se vuelve más dorado cuando baja el sol. Es el mejor momento, y en noviembre el aire está fresquecito y la luz es más limpia."
+     },
+     {
+      "thing": "the Parroquia turning pink at sunset in November, with the light and colors changing uniquely each evening",
+      "how": "retelling",
+      "quote": "¡Hombre, qué gusto verte otra vez! Ven, ven, acércate al barandal, que el sol ya casi se está metiendo y la Parroquia se pone más rosa que nunca."
+     },
+     {
+      "thing": "the Parroquia turning pink at sunset in November, with the light and colors changing uniquely each evening",
+      "how": "retelling",
+      "quote": "Ahora sí, mira: el sol ya toca los cerros y la Parroquia se está encendiendo. Quédate tantito en silencio conmigo, que este es el mejor pedazo de la tarde."
+     }
+    ]
+   }
+  }
+ }
+]

@@ -2,7 +2,7 @@
 // what he told them (B) against memory.md as it is (A), does he retell fewer
 // things from the first visit on the second? C4's setup with the short here
 // line, Don Ramón, Sam on Grok, two visits; the memory prompt swapped in memory
-// (setPromptOverride), so A's sets run first, then B's. The measure: Claude and
+// (B's own memory call, so A and B run side by side). The measure: Claude and
 // Grok each mark every thing from visit 1 that comes up on visit 2, callback or
 // retelling. Every visit, the notes and both judges' marks are saved.
 //   COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/memory-told.mts
@@ -16,7 +16,8 @@ import { withToday } from '@/lib/today';
 import { summarizeWithClaude } from '@/lib/remember';
 import type { CharacterSheet } from '@/lib/types';
 import { ask, askGrok, pool, startTest } from './common.mjs';
-import { setPromptOverride } from '@/lib/prompts/template';
+import { buildMemoryPrompt } from '@/lib/prompts/build-memory-prompt';
+import { memoryOutputJsonSchema } from '@/lib/prompts/memory-output-schema';
 
 startTest('C5 (2026-11-07)');
 
@@ -24,7 +25,7 @@ const STEP = 'run'; // no further pilot (the card)
 const SAM_TURNS = 4;
 // Grok without thinking first: 0.9 s for 6 calls at once against 4.5 s, and up to a minute a call under load (run 2)
 const FAST_GROK = 'grok-4.20-0309-non-reasoning';
-const VISITS = 2;
+const VISITS = 3; // Josh: 1 character, 3 visits (visit 3 can repeat 1 or 2)
 const ONLY = process.env.ONLY; // one place by name start, e.g. ONLY=Don
 const T0 = Date.now();
 /** Every call timed, so a slow run shows which call waited */
@@ -145,8 +146,18 @@ async function samTurn(c: CharacterSheet, earlier: string[], lines: Line[], last
   return (await askGrok<{ say: string }>(q, SAM, FAST_GROK)).say;
 }
 
+/** B's memory call: the game's own memory prompt with ", and what {name} told them" in the notes line, made per call so A and B run side by side */
+async function summarizeTold(input: Parameters<typeof summarizeWithClaude>[0]): Promise<{ notes: string[] }> {
+  const prompt = buildMemoryPrompt(input);
+  const system = prompt.system.replace('next time they meet, as short lines', `next time they meet, and what ${input.character.name} told them, as short lines`);
+  if (system === prompt.system) throw new Error('memory prompt: notes line not found');
+  const r = await anthropic.messages.create({ model: CLAUDE_MODEL, max_tokens: 8000, system, messages: [{ role: 'user', content: prompt.user }], output_config: { format: { type: 'json_schema', schema: memoryOutputJsonSchema } } } as Parameters<typeof anthropic.messages.create>[0]);
+  const out = JSON.parse(replyText(r as Parameters<typeof replyText>[0])) as { notes: string[] };
+  return { notes: out.notes.map((n) => n.trim()).filter(Boolean).slice(0, 10) };
+}
+
 type Hit = { item: string; text: string };
-async function set(p: Place, v: Version): Promise<Visit[]> {
+async function set(p: Place, v: Version, memB = false, tag = ''): Promise<Visit[]> {
   const character = sheet(p, v);
   let notes: string[] = [];
   const visits: Visit[] = [];
@@ -164,6 +175,7 @@ async function set(p: Place, v: Version): Promise<Visit[]> {
       const r = await timed('claude turn', () => npcTurn(character, lines, memory as never, now));
       ms.push(Date.now() - t0);
       lines.push({ who: 'npc', text: r.line, en: r.en });
+      console.log(`${tag} visit ${k + 1} · Don Ramón: ${r.line}`);
       saidAll.push(r.line, r.en);
       for (const [item, re] of Object.entries(p.items)) for (const text of [r.line, r.en]) if (re.test(text)) {
         npcSaid.add(item);
@@ -176,6 +188,7 @@ async function set(p: Place, v: Version): Promise<Visit[]> {
     for (let turn = 1; turn <= SAM_TURNS; turn++) {
       const said = await timed('grok sam', () => samTurn(character, earlier, lines, turn === SAM_TURNS));
       lines.push({ who: 'learner', text: said });
+      console.log(`${tag} visit ${k + 1} · Sam: ${said}`);
       for (const [item, re] of Object.entries(p.items)) if (re.test(said) && !npcSaid.has(item)) { samFirst.add(item); samHits.push({ item, text: said }); }
       await npc();
     }
@@ -183,24 +196,21 @@ async function set(p: Place, v: Version): Promise<Visit[]> {
     earlier.push(`(visit ${k + 1}) ${lines.map((x) => `${x.who === 'npc' ? character.name : 'Sam'}: ${x.text}`).join(' / ')}`);
     const job = await timed('job judges', () => judgeJob(p, character.name, transcript));
     visits.push({ transcript, hits, samHits, samTurns: SAM_TURNS, unlisted: [], ...job, words, ms });
-    notes = (await timed('memory', () => summarizeWithClaude({ character: { name: character.name, age: character.age, role: character.role, city: character.city }, notes, turns: lines.map((x) => ({ who: x.who, text: x.text })) }))).notes;
+    notes = (await timed('memory', () => (memB ? summarizeTold : summarizeWithClaude)({ character: { name: character.name, age: character.age, role: character.role, city: character.city }, notes, turns: lines.map((x) => ({ who: x.who, text: x.text })) }))).notes;
     visits[visits.length - 1].notes = notes;
   }
   return visits;
 }
 
-const SETS = 3;
+const SETS = 1; // Josh: one conversation of 3 visits for A, then the same for B, in order
 const NAMES: Record<string, string> = { A: 'Memory as it is', B: 'Memory + what he told' };
-/** B: the notes also hold what he told them */
-const told = (md: string) => { const out = md.replace('next time they meet, as short lines', 'next time they meet, and what {name} told them, as short lines'); if (out === md) throw new Error('memory.md: notes line not found'); return out; };
-
 const MARKS = { type: 'object', properties: { again: { type: 'array', items: { type: 'object', properties: { thing: { type: 'string' }, how: { type: 'string', enum: ['callback', 'retelling'] }, quote: { type: 'string' } }, required: ['thing', 'how', 'quote'], additionalProperties: false } } }, required: ['again'], additionalProperties: false };
 type Marks = { again: { thing: string; how: 'callback' | 'retelling'; quote: string }[] };
 async function judgeAgain(visits: Visit[]) {
   const q = [
-    `Below are two visits, three days apart, between a local character in ${language.card.country} and Sam, a learner who lives there.`,
+    `Below are ${visits.length} visits, three days apart, between a local character in ${language.card.country} and Sam, a learner who lives there.`,
     ...visits.flatMap((v, i) => ['', `Visit ${i + 1}:`, v.transcript]), '',
-    'again: every specific thing the character told on visit 1 (a place, dish, story, custom, fact) that comes up again on visit 2. For each, how: "callback" if he refers back to it or asks about it as something already said ("¿Ya probó los esquites que le dije?"), "retelling" if he tells it again as if it were new. quote: his words on visit 2.',
+    'again: every specific thing the character told on an earlier visit (a place, dish, story, custom, fact) that comes up again on a later visit. For each, how: "callback" if he refers back to it or asks about it as something already said ("¿Ya probó los esquites que le dije?"), "retelling" if he tells it again as if it were new. Leave out anything Sam brings up again himself. quote: his words on the later visit.',
     'Reply with JSON: again.',
   ].join('\n');
   const [claude, grok] = await Promise.all([ask(q, { schema: MARKS, max: 2000 }).then((s) => JSON.parse(s) as Marks), askGrok<Marks>(q, MARKS, FAST_GROK)]);
@@ -210,14 +220,10 @@ async function judgeAgain(visits: Visit[]) {
 type Done = { label: string; visits: Visit[]; marks: { claude: Marks; grok: Marks } };
 const ramon = PLACES[0];
 const done: Done[] = [];
-for (const label of ['A', 'B']) {
-  setPromptOverride('memory.md', label === 'B' ? told : null);
-  done.push(...await pool(Array.from({ length: SETS }, () => async (): Promise<Done> => {
-    const visits = await set(ramon, 'B');
-    return { label, visits, marks: await timed('judges', () => judgeAgain(visits)) };
-  }), SETS));
-}
-setPromptOverride('memory.md', null);
+done.push(...await pool((['A', 'B'] as const).flatMap((label) => Array.from({ length: SETS }, () => async (): Promise<Done> => {
+  const visits = await set(ramon, 'B', label === 'B', label);
+  return { label, visits, marks: await timed('judges', () => judgeAgain(visits)) };
+})), 1));
 
 const ret = (m: Marks) => m.again.filter((x) => x.how === 'retelling').length;
 const retBoth = (d: Done) => Math.min(ret(d.marks.claude), ret(d.marks.grok));
@@ -237,7 +243,7 @@ const file = join(dir, `c5-run-${new Date().toISOString().slice(0, 16).replace('
 writeFileSync(`${file}.json`, JSON.stringify(done, null, 1));
 writeFileSync(`${file}.md`, [
   '# C5: memory records what he told them, fewer retellings?', '', ...summary, '',
-  '## Marks and notes, per set', '', ...done.map((d, k) => [`### ${NAMES[d.label]} · set ${k + 1}`, '', `Notes after visit 1: ${(d.visits[0].notes ?? []).join('; ')}`, '',
+  '## Marks and notes, per set', '', ...done.map((d, k) => [`### ${NAMES[d.label]} · set ${k + 1}`, '', ...d.visits.slice(0, -1).map((v, i) => `Notes after visit ${i + 1}: ${(v.notes ?? []).join('; ')}`), '',
     ...(['claude', 'grok'] as const).map((j) => `- ${j}: ${d.marks[j].again.map((x) => `${x.thing} (${x.how}: "${x.quote}")`).join('; ') || 'nothing again'}`), ''].join('\n')),
   '## Every visit', '', ...done.flatMap((d, k) => d.visits.map((v, j) => `### ${NAMES[d.label]} · set ${k + 1}, visit ${j + 1}\n\n${v.transcript}\n`)),
 ].join('\n'));
