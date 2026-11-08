@@ -23,7 +23,15 @@ startTest('C4 (2026-11-07)');
 
 const STEP = 'run'; // no further pilot (the card)
 const SAM_TURNS = 4;
-const VISITS = 2; // Josh: "any test at 10 minutes is too long"
+// Grok without thinking first: 0.9 s for 6 calls at once against 4.5 s, and up to a minute a call under load (run 2)
+const FAST_GROK = 'grok-4.20-0309-non-reasoning';
+const VISITS = 2;
+const ONLY = process.env.ONLY; // one place by name start, e.g. ONLY=Don
+const T0 = Date.now();
+/** Every call timed, so a slow run shows which call waited */
+async function timed<T>(what: string, f: () => Promise<T>): Promise<T> {
+  const t = Date.now(); try { return await f(); } finally { console.error(`${((Date.now() - T0) / 1000).toFixed(0)}s ${what} ${((Date.now() - t) / 1000).toFixed(1)}s`); }
+} // Josh: "any test at 10 minutes is too long"
 
 // The card's lists, written before the run; the scene's own words (the Parroquia, Monte Albán) left out
 const PLACES = [
@@ -84,7 +92,7 @@ async function judgeJob(p: Place, name: string, transcript: string) {
     `Question: does ${name} act as if he has a job at this place other than ${p.role}: selling, serving food or drink, or taking orders? Talking about the place, recommending things, or walking someone around as part of his role does not count.`,
     'Answer invented true or false, with a one-sentence reason.',
   ].join('\n');
-  const [claude, grok] = await Promise.all([ask(q, { schema: JOB, max: 600 }).then((s) => JSON.parse(s) as Verdict), askGrok<Verdict>(q, JOB)]);
+  const [claude, grok] = await Promise.all([ask(q, { schema: JOB, max: 600 }).then((s) => JSON.parse(s) as Verdict), askGrok<Verdict>(q, JOB, FAST_GROK)]);
   return { claude, grok };
 }
 
@@ -130,7 +138,7 @@ async function samTurn(c: CharacterSheet, earlier: string[], lines: Line[], last
     last ? `Say goodbye now, in ${language.name}, in a sentence or two.` : `Your reply, in ${language.name}: one or two short sentences.`,
     'Reply with JSON: say.',
   ].join('\n');
-  return (await askGrok<{ say: string }>(q, SAM)).say;
+  return (await askGrok<{ say: string }>(q, SAM, FAST_GROK)).say;
 }
 
 type Hit = { item: string; text: string };
@@ -149,7 +157,7 @@ async function set(p: Place, v: Version): Promise<Visit[]> {
     const words: number[] = [], ms: number[] = [];
     const npc = async () => {
       const t0 = Date.now();
-      const r = await npcTurn(character, lines, memory as never, now);
+      const r = await timed('claude turn', () => npcTurn(character, lines, memory as never, now));
       ms.push(Date.now() - t0);
       lines.push({ who: 'npc', text: r.line, en: r.en });
       saidAll.push(r.line, r.en);
@@ -162,16 +170,16 @@ async function set(p: Place, v: Version): Promise<Visit[]> {
     };
     await npc();
     for (let turn = 1; turn <= SAM_TURNS; turn++) {
-      const said = await samTurn(character, earlier, lines, turn === SAM_TURNS);
+      const said = await timed('grok sam', () => samTurn(character, earlier, lines, turn === SAM_TURNS));
       lines.push({ who: 'learner', text: said });
       for (const [item, re] of Object.entries(p.items)) if (re.test(said) && !npcSaid.has(item)) { samFirst.add(item); samHits.push({ item, text: said }); }
       await npc();
     }
     const transcript = lines.map((x) => `${x.who === 'npc' ? character.name : 'Sam'}: ${x.text}`).join('\n');
     earlier.push(`(visit ${k + 1}) ${lines.map((x) => `${x.who === 'npc' ? character.name : 'Sam'}: ${x.text}`).join(' / ')}`);
-    const job = await judgeJob(p, character.name, transcript);
+    const job = await timed('job judges', () => judgeJob(p, character.name, transcript));
     visits.push({ transcript, hits, samHits, samTurns: SAM_TURNS, unlisted: [], ...job, words, ms });
-    notes = (await summarizeWithClaude({ character: { name: character.name, age: character.age, role: character.role, city: character.city }, notes, turns: lines.map((x) => ({ who: x.who, text: x.text })) })).notes;
+    notes = (await timed('memory', () => summarizeWithClaude({ character: { name: character.name, age: character.age, role: character.role, city: character.city }, notes, turns: lines.map((x) => ({ who: x.who, text: x.text })) }))).notes;
   }
   return visits;
 }
@@ -191,7 +199,7 @@ async function judgeThings(p: Place, visits: Visit[]) {
     `For each visit, list each specific local thing the character brings up himself: a place, street, building, dish, drink, craft, custom, festival, historical person or event. Use the same short name for the same thing on both visits. Leave out ${where} (where he is standing), and anything Sam named before he did. Empty if none.`,
     'Reply with JSON: visit1, visit2.',
   ].join('\n');
-  const [claude, grok] = await Promise.all([ask(q, { schema: THINGS, max: 1500 }).then((s) => JSON.parse(s) as Things), askGrok<Things>(q, THINGS)]);
+  const [claude, grok] = await Promise.all([ask(q, { schema: THINGS, max: 1500 }).then((s) => JSON.parse(s) as Things), askGrok<Things>(q, THINGS, FAST_GROK)]);
   return { claude, grok };
 }
 
@@ -201,9 +209,9 @@ const newLater = (t: Things) => { const v1 = new Set(t.visit1.map(norm)); return
 const toldAgain = (t: Things) => { const v1 = new Set(t.visit1.map(norm)); return [...new Set(t.visit2.map(norm).filter((x) => v1.has(x)))]; };
 const mean = (xs: number[]) => (xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0);
 
-const jobs = PLACES.flatMap((p) => labels.flatMap(({ label, version }) => Array.from({ length: SETS }, () => async (): Promise<Done> => {
+const jobs = PLACES.filter((p) => !ONLY || p.name.startsWith(ONLY)).flatMap((p) => labels.flatMap(({ label, version }) => Array.from({ length: SETS }, () => async (): Promise<Done> => {
   const visits = await set(p, version);
-  return { place: p.name, label, visits, things: await judgeThings(p, visits) };
+  return { place: p.name, label, visits, things: await timed('things judges', () => judgeThings(p, visits)) };
 })));
 const done = await pool(jobs, jobs.length);
 
@@ -216,7 +224,7 @@ const summary = [
   `| | ${labels.map(({ label }) => NAMES[label]).join(' | ')} |`, `|---|${labels.map(() => '---').join('|')}|`,
   row('**New later** (per set, mean of judges)', (l) => m(l, both(newLater)).toFixed(2)),
   row('  Claude · Grok', (l) => `${m(l, (d) => newLater(d.things.claude)).toFixed(2)} · ${m(l, (d) => newLater(d.things.grok)).toFixed(2)}`),
-  ...PLACES.map((p) => row(`  ${p.name}`, (l) => m(l, both(newLater), p.name).toFixed(2))),
+  ...PLACES.filter((p) => !ONLY || p.name.startsWith(ONLY)).map((p) => row(`  ${p.name}`, (l) => m(l, both(newLater), p.name).toFixed(2))),
   row('First visit', (l) => m(l, both((t) => new Set(t.visit1.map(norm)).size)).toFixed(2)),
   row('Told again (read)', (l) => m(l, both((t) => toldAgain(t).length)).toFixed(2)),
   row('New later by keyword list (cross-check)', (l) => m(l, kwNew).toFixed(2)),
