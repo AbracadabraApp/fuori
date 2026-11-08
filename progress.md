@@ -66,6 +66,23 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-07 (evening): testing, a poor day; handoff for a fresh session (laptop session)
+
+**Josh: "This is appalling lack of test methodology."** He's right. Read this before running any test.
+
+What went wrong: tests started before their cards, one test reported as answering a question it never asked (staying in role), judge checks called tests, the question switched midway (difficulty → grammar → judges → role), a hypothesis made up after seeing the data, Josh's remarks turned straight into runs.
+
+**Settled today (process only):**
+- `startTest(<card title>)` in `tests/experiments/common.mts`: every test script calls it first; it refuses to run without the card in `docs/prompt-trials.md`, every line filled, a `Reviewed:` line, and `Josh: yes` over 5 minutes.
+- CLAUDE.md: no prompt change without a test.
+- Rule 7b (prompt-testing.md): a fact (counted in code) or a JUDGMENT (flagged). Difficulty is counted in words in the language per turn, not judged. Grammar is a separate proposed item (proposal 23), not part of other tests.
+
+**Results:** nothing is settled about the game. The one real test, moments vs conversations using role slips, was **inconclusive**: vague threshold, 5 cases, uncalibrated judges (log corrected). Judge checks (Claude vs Grok, `judge-small.mts`) are tool checks: Grok stricter on planted faults (13/14 vs 7/14), not proven right. The earlier V2/V2b used difficulty and grammar by judge, which Josh has since ruled out. Role slips are **not** shown to be rare or fixed: recent conversations were short and the slips came after pushing (turns 8–20).
+
+**Every next test:** one question about the game, named the same before and after; a numeric threshold and a minimum sample written in advance; a judge only if checked first; the result reports only what was asked, anything else "not tested"; a check of a tool is called a tool check.
+
+**Next:** Josh picks the next test. Proposed: the floor (smallest Beginner prompt vs today's on the stored moments; facts counted in code), as a card only. `tests/experiments/push-role.mts` (simulated learner pushing Giorgia and Beto) is parked behind the gate, no card.
+
 ## 2026-11-07 (afternoon): the testing plan, for the laptop to run (cloud session)
 
 **Start here:** `docs/prompt-testing.md` (goal, the eight things a character must do, the rules, the card, the queue), `docs/dialogue-model.md` (Decided), the test designer agent (`.claude/agents/test-designer.md`; every card goes through it), `tests/experiments/moments.json`.
