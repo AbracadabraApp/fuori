@@ -6,13 +6,19 @@ Draft, 2026-11-06, for Josh's review. Josh: "You need to organize work in a disc
 
 **Goal.** Cultural fluency: talking with local people about their place, in their language. Tipico, local and accurate.
 
-**What we test.** Dialogue: every conversation where a character talks with the learner. In each, the character:
+**What we test.** Dialogue: every conversation where a character talks with the learner. In each, the character does nine things in two groups (Josh, 2026-11-07: level and English help go with grammar). The numbers stay as they were, since cards and log entries cite them.
+
+**Language:**
 
 1. **At their level.** They can follow her.
+5. **Responds to English.** She helps when they need it.
+9. **Grammatical.** Her own language is correct, since the learner copies it.
+
+**Culture and character:**
+
 2. **Accurate.** Nothing invented.
 3. **Local and tipico.** Her place, her town, her country, as a local tells it.
 4. **In character.** She stays her role.
-5. **Responds to English.** She helps when they need it.
 6. **Teaches in role.** Recasts, usable answers, no lectures.
 7. **Remembers.** No retelling; uses what she knows about them.
 8. **Brief.** Turns they can follow.
@@ -65,7 +71,7 @@ Six changes to the rules above, from a cloud-session review. None is in force un
 21. **A category can be one variable.** "All examples out" or "the whole opener recipe out" is one variable: the kind of thing. Test the category first and split it only if it loses, instead of about 25 one-unit cuts that interact.
 22. **Rerun the control when the model changes.** Every card records the model id and settings; after a model change, old results are not trusted until the control has been run again on the new model.
 
-23. **Grammatical: a proposed ninth item** (Josh, 2026-11-07: "grammar would be proposed new variable"). The character's own language is correct, since the learner copies it. Prompted by V2: a character said "il gnocchi" (gli gnocchi), and no item covered it; item 2 (accurate) is about facts. Not in the eight until Josh says so; a card that tests it names it as item 9 (proposed).
+23. **Grammatical: the ninth item, now in force** (Josh, 2026-11-07: "grammar would be proposed new variable", then put in the Language group with items 1 and 5). Prompted by V2: a character said "il gnocchi" (gli gnocchi), and no item covered it; item 2 (accurate) is about facts. Now item 9 under "Our pedagogy and what we test".
 
 Smaller: a kept change gets a small check in the other country before it ships ("fixes are global"); the welcome counts as a kind of conversation and gets cards like the rest.
 
@@ -73,7 +79,7 @@ Smaller: a kept change gets a small check in the other country before it ships (
 
 **Time box: 1 to 3 days** (Josh, 2026-11-07: "I'm more inclined for a 1 to 3 day time box"). The first real results (V2, then A1) come within 1 to 3 days, with only the judges those tests need. If the process hasn't produced decisions by then, cut the process back rather than add to it. Suggested days (Claude): day 1, V2 on real conversations with a level count from word lists and Claude judges for the other items; day 2, a second model's judge where Claude's answers look shaky, and Josh marks the disagreements; day 3, decide what the results say and plan the next round.
 
-**Risks named (Claude's assessment, 2026-11-07):** judges are the weak link (Claude judging Claude, on soft items like local and native); process can outrun results; the prompt may not be the biggest lever (the kind of place, `here` lines, memory and the model are test variables too); the eight items stand in for learning, checked only by a few players; few runs means noise, so thresholds must be respected.
+**Risks named (Claude's assessment, 2026-11-07):** judges are the weak link (Claude judging Claude, on soft items like local and native); process can outrun results; the prompt may not be the biggest lever (the kind of place, `here` lines, memory and the model are test variables too); the nine items stand in for learning, checked only by a few players; few runs means noise, so thresholds must be respected.
 
 **Proposals for better judges, for Josh's decision:**
 - **A second judge from another company's model** for the subjective items (sounds native, local and tipico, in character): agreement strengthens a verdict; disagreement marks the line for a human. Needs that provider's key, in test scripts only. The roadmap already allows it when a shared blind spot shows up.
@@ -117,7 +123,7 @@ Every test starts as this card, shown to Josh in this form and pasted into the l
 
 ```
 Test T<n>: <the question in one line>
-Serves: <item 1–8 from "What the character must do">
+Serves: <item 1–9 from "Our pedagogy and what we test">
 Type: moment / visit
 Unit: <part name(s), e.g. "English: brief", and file>
 Variable: <the one thing that changes> (A: …, B: …)
