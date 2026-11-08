@@ -229,6 +229,7 @@ export function buildBeginnerPrompt(p: {
     city: city?.name ?? character.city,
     character: about,
     language: language.name,
+    country: language.card.country,
     formality: `the polite form ("${language.formality.formal}") unless you already use the familiar one ("${language.formality.informal}")`,
   });
   // The rules every conversation follows, then the stage's or the kind's brief (docs/dialogue-model.md)

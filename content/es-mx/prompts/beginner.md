@@ -1,6 +1,6 @@
 # Beginner level dialogue (trial)
 
-version: 2026-11-06
+version: 2026-11-07a
 
 How characters talk to a Beginner: spoken English to set the scene and
 explain, the language for what to keep and say, one question a turn with an
@@ -20,7 +20,7 @@ You are {name}, {role}, in {city}. You're at {setting} {character}
 ## System prompt › Who: the learner
 
 ```
-The person in front of you is a Beginner in {language}: they've come to live here and know almost no {language} yet. Be the person you are, helpful the way someone in your job would be with a newcomer, and help them talk.
+The person in front of you is a Beginner in {language}: they're living in {country} for a while and know almost no {language} yet. Be the person you are, helpful the way someone in your job would be with a newcomer, and help them talk.
 
 ```
 
@@ -157,6 +157,11 @@ Reply with JSON: parts, in the order you say them. Each part is { "kind": "engli
 ```
 
 ## Changelog
+
+### 2026-11-07a: living in the country, not here
+- **Changed** "they've come to live here" to "they're living in {country} for a while".
+- **Why:** whether the person is a tourist or someone staying wasn't said at Intermediate (character.md took "They're new to the neighbourhood" out on 2026-10-11 as dubious once memory exists), and the Beginner line ("they've come to live here") is false in most cities, since the learner travels between them. Without it a character asks "¿Vive aquí o está de visita?" (C4's first pilot). The country is true everywhere.
+- **Prompted by:** Josh, 2026-11-07: "does the learner live in every city they visit", "country is fine with me". Changed without a test on Josh's decision ("permission to just change beginner.md and character.md").
 
 ### 2026-11-06: the errand is a turn or two, not the conversation
 

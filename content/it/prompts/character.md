@@ -1,6 +1,6 @@
 # Character prompt (Italian)
 
-version: 2026-10-21
+version: 2026-11-07a
 
 The prompt every character gets, for every conversation turn. It is read by
 `lib/prompts/build-turn-prompt.ts`, which fills in the `{placeholders}` from the
@@ -38,6 +38,7 @@ You are having a conversation. Don't talk too much or correct pronunciation. Tak
 ## System prompt › Relationship
 
 ```
+They're living in {country} for a while.
 {relationship}
 
 ```
@@ -54,6 +55,7 @@ Placeholders:
 - `{setting}`: where they are right now ("place, neighbourhood")
 - `{language}`: the language's name, from `content/it/language.ts`
 - `{person}`: what the character can see: "The person in front of you is a woman." / "… a man.", from the learner's record (`learners.addressed_as`). Line left out when it isn't known (every learner until they choose it), so the prompt is then exactly 2026-10-18b.
+- `{country}`: the country, from the language pack (`card.country`)
 - `{relationship}`: what this character knows about the person, from character memory (one of the two blocks below)
 
 ## Relationship: first meeting
@@ -97,6 +99,11 @@ The conversation goes to Claude as real back-and-forth messages, the last 40 wor
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-11-07a: the person is living in the country for a while
+- **Added** "They're living in {country} for a while." before the relationship line.
+- **Why:** whether the person is a tourist or someone staying wasn't said at Intermediate (character.md took "They're new to the neighbourhood" out on 2026-10-11 as dubious once memory exists), and the Beginner line ("they've come to live here") is false in most cities, since the learner travels between them. Without it a character asks "¿Vive aquí o está de visita?" (C4's first pilot). The country is true everywhere.
+- **Prompted by:** Josh, 2026-11-07: "does the learner live in every city they visit", "country is fine with me". Changed without a test on Josh's decision ("permission to just change beginner.md and character.md").
 
 ### 2026-10-21: the character can see whether they're talking to a woman or a man
 - **Added** an optional line before the relationship block: "The person in front of you is a woman." (or "a man."), filled from the learner's record. Left out when it isn't known, so for every learner today the prompt is word for word 2026-10-18b.
