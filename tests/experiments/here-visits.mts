@@ -107,7 +107,7 @@ async function one(p: typeof people[number]) {
   const name = (v: V['better']) => (v === 'same' ? 'same' : (v === 'X') === !flip ? 'A' : 'B');
   const c = name(vc.better), g = name(vg.better);
   console.log(`${A.name}: Claude ${c} · Grok ${g}  (${((Date.now() - T0) / 1000).toFixed(0)} s)`);
-  return { name: A.name, here: p.here, short: SHORT[A.name], a, b, claude: { pick: c, reason: vc.reason }, grok: { pick: g, reason: vg.reason }, aWins: c === 'A' && g === 'A', bWins: c === 'B' && g === 'B', words: { a: wpl(a), b: wpl(b) } };
+  return { name: A.name, here: p.here, short: SHORT[A.name], a, b, claude: { pick: c, reason: vc.reason }, grok: { pick: g, reason: vg.reason }, order: flip ? 'X = B, Y = A' : 'X = A, Y = B', aWins: c === 'A' && g === 'A', bWins: c === 'B' && g === 'B', words: { a: wpl(a), b: wpl(b) } };
 }
 
 const settled = await Promise.allSettled(people.map(one));
@@ -117,7 +117,7 @@ const avg = (k: 'a' | 'b') => (out.reduce((n, o) => n + o.words[k], 0) / out.len
 const aWins = out.filter((o) => o.aWins).length, bWins = out.filter((o) => o.bWins).length;
 const result = `Long (A) wins ${aWins} of ${out.length} (both judges), short (B) ${bWins}, the rest split or same. ${aWins > out.length / 2 ? 'LONGER WINS: we don\'t know a better here line yet' : 'SHORTER WINS'}. Words per line: A ${avg('a')} · B ${avg('b')}`;
 const md = ['# C8: the one-sentence here line, over return visits', '', result, '', ...out.flatMap((o) => [
-  `## ${o.name}: Claude ${o.claude.pick}, Grok ${o.grok.pick} (words per line A ${o.words.a.toFixed(1)} · B ${o.words.b.toFixed(1)})`, '', `- Claude: ${o.claude.reason}`, `- Grok: ${o.grok.reason}`, '', `A (as is): "${o.here}"`, '', show(o.a), '', `B (short): "${o.short}"`, '', show(o.b), '']),
+  `## ${o.name}: Claude ${o.claude.pick}, Grok ${o.grok.pick} (words per line A ${o.words.a.toFixed(1)} · B ${o.words.b.toFixed(1)})`, '', `Shown to the judges as: ${o.order}`, `- Claude: ${o.claude.reason}`, `- Grok: ${o.grok.reason}`, '', `A (as is): "${o.here}"`, '', show(o.a), '', `B (short): "${o.short}"`, '', show(o.b), '']),
 ].join('\n');
 const dir = join(process.cwd(), 'tests', 'experiments', 'results');
 mkdirSync(dir, { recursive: true });

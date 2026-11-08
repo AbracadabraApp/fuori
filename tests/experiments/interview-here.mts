@@ -93,7 +93,7 @@ async function one(p: typeof people[number]) {
   const c = name(vc.better), g = name(vg.better);
   const words = { a: wpl(a), b: wpl(b), lineA: p.here.split(/\s+/).length, lineB: EDITED[A.name].split(/\s+/).length };
   console.log(`${A.name}: Claude ${c} · Grok ${g} · taught A ${ta.length} B ${tb.length} · words per reply A ${words.a.toFixed(1)} B ${words.b.toFixed(1)} · line A ${words.lineA} B ${words.lineB}`);
-  return { name: A.name, here: p.here, edited: EDITED[A.name], a, b, ta, tb, claude: { pick: c, reason: vc.reason }, grok: { pick: g, reason: vg.reason }, aWins: c === 'A' && g === 'A', bWins: c === 'B' && g === 'B', words };
+  return { name: A.name, here: p.here, edited: EDITED[A.name], a, b, ta, tb, claude: { pick: c, reason: vc.reason }, grok: { pick: g, reason: vg.reason }, order: flip ? 'X = B, Y = A' : 'X = A, Y = B', aWins: c === 'A' && g === 'A', bWins: c === 'B' && g === 'B', words };
 }
 
 const settled = await Promise.allSettled(people.map(one));
@@ -105,7 +105,7 @@ const avg = (k: 'a' | 'b') => (out.reduce((n, o) => n + o.words[k], 0) / out.len
 const result = `Long (A) wins ${aWins} of ${out.length} (both judges), edited (B) ${bWins}, the rest split or same. ${aWins > out.length / 2 ? 'LONGER WINS: the cut facts did work' : 'SHORTER WINS'}. Things taught: A ${sum('ta')} · B ${sum('tb')}. Words per reply: A ${avg('a')} · B ${avg('b')}`;
 const list = (xs: string[]) => xs.map((x) => `- ${x}`).join('\n') || '- nothing';
 const md = ['# C9: here lines edited from their own point of view, interviewed', '', result, '', ...out.flatMap((o) => [
-  `## ${o.name}: Claude ${o.claude.pick}, Grok ${o.grok.pick} (words per reply A ${o.words.a.toFixed(1)} · B ${o.words.b.toFixed(1)}; line A ${o.words.lineA} · B ${o.words.lineB} words)`, '', `- Claude: ${o.claude.reason}`, `- Grok: ${o.grok.reason}`, '',
+  `## ${o.name}: Claude ${o.claude.pick}, Grok ${o.grok.pick} (words per reply A ${o.words.a.toFixed(1)} · B ${o.words.b.toFixed(1)}; line A ${o.words.lineA} · B ${o.words.lineB} words)`, '', `Shown to the judges as: ${o.order}`, `- Claude: ${o.claude.reason}`, `- Grok: ${o.grok.reason}`, '',
   `A (as is): "${o.here}"`, '', `Taught (${o.ta.length}):`, list(o.ta), '', '```', o.a, '```', '',
   `B (edited): "${o.edited}"`, '', `Taught (${o.tb.length}):`, list(o.tb), '', '```', o.b, '```', '']),
 ].join('\n');
