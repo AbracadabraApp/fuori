@@ -77,7 +77,8 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 - Never test or measure Magda, lessons or onboarding without Josh's approval (memory saved).
 
 **Open**
-- Decide the here lines (edited, current, or a version keeping the trade meaning). Proposed next: a `test:conversations` run of current vs edited, 10 characters × 3 visits with A-against-A pairs.
+- Here lines: C11 ran current vs edited in both countries (edited wins by Josh's rule; culture dipped a little in both, most where a line was thin). Agreed with Josh: cut encyclopedia facts, times, steering and repeated traits, but every line keeps something specific about how the person's work goes. **Next step:** write that rule as a prompt (the here-line instruction is in `scripts/generate-city-content.mjs`), run it unchanged on the same 10 characters, show Josh the lines, and only then, on his OK, compare on culture with C11's saved runs. Not hand-edited lines (Josh: "you are selectively changing 3 inputs"). Also: give each character the same learner type every run (today it follows sample order), so runs compare.
+- Grok's read-through in `test:conversations` is off by default (Josh skeptical; it misread facts).
 - Targets for the two learner rows (Josh's).
 - Garbled letters seen in C9 replies ("¥Hola", "dÃas"); `tests/check-mojibake.ts` exists.
 - Not released: memory.md and character.md 2026-11-07a/08a, beginner.md 2026-11-07a, the description cut, the scorecard rows.
