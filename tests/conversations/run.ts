@@ -20,9 +20,10 @@
  * is a choice"); Grok reads every transcript afterwards and says whether they
  * bear out the numbers ("best as a check ... than inline tester").
  *
- * Measures (measure.ts): words and questions per character line, the learner's
- * share of words, sentences repeated from an earlier visit, and one reader's
- * count of real things about the country learned.
+ * Measures (measure.ts): real play's scorecard rows that are counted, with the
+ * scorecard's own code (reply length, opener, replies with 2+ questions, the
+ * learner's share of words and words per line, repeats from earlier visits),
+ * plus one reader's count of real things about the country learned.
  *
  * A variant file: { "name": "...", "here": { "<character name>": "<line>" },
  * "system": [{ "find": "<text in the rendered prompt>", "replace": "<text>" }] }.
@@ -40,7 +41,7 @@ import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { cities, language, country } from '@/content';
 import type { CharacterSheet, Place, Turn } from '@/lib/types';
 import { learners, type Learner } from './learners';
-import { measure, cultureCount, COLUMNS, type Measures, type Visits, type Line } from './measure';
+import { scoreVisits, values, cultureCount, KEYS, label, show, type Key, type VisitScore, type Visits, type Line } from './measure';
 import { startRun, record, versions, type Recorded } from './record';
 import { askGrok, startTest } from '../experiments/common.mjs';
 
@@ -199,13 +200,13 @@ async function conversation(c: Case, version: string): Promise<Visits> {
 // ---------- Grok's read-through ----------
 
 const AUDITED = { type: 'object', properties: { agrees: { type: 'boolean' }, note: { type: 'string' } }, required: ['agrees', 'note'], additionalProperties: false };
-const fmt = (m: Measures) => COLUMNS.filter(([k]) => m[k] !== undefined).map(([k, l]) => `${l} ${m[k]}`).join(', ');
+const fmt = (r: { values: Record<Key, number | null>; culture?: string[] }) => [...KEYS.map((k) => `${label(k)} ${show(k, r.values[k])}`), ...(r.culture ? [`${label('culture')} ${r.culture.length}`] : [])].join(', ');
 const showVisits = (v: Visits, name: string) => v.map((x, i) => `Visit ${i + 1}:\n${x.map((l) => `${l.who === 'npc' ? name : 'Learner'}: ${l.text}`).join('\n')}`).join('\n\n');
 
-async function audit(name: string, runs: { version: string; visits: Visits; measures: Measures }[]) {
+async function audit(name: string, runs: { version: string; visits: Visits; values: Record<Key, number | null>; culture?: string[] }[]) {
   const q = [
-    `Below are simulated conversations with ${name}, a character in a ${language.name}-learning game, each with the numbers counted from it. Each version is a separate run from scratch, not a continuation: A is the game as it is, B the same with one change, and "A again" a second run of A, there to show how much the numbers move by chance. Within a version, the visits are the same learner coming back. Repeats are sentences the character said again from an earlier visit of the same version; Culture is how many real things about ${language.card.country} a reader listed.`,
-    ...runs.flatMap((r) => ['', `Version ${r.version === 'A2' ? 'A again' : r.version} (${fmt(r.measures)}):`, showVisits(r.visits, name)]),
+    `Below are simulated conversations with ${name}, a character in a ${language.name}-learning game, each with the numbers counted from it. Each version is a separate run from scratch, not a continuation: A is the game as it is, B the same with one change, and "A again" a second run of A, there to show how much the numbers move by chance. Within a version, the visits are the same learner coming back. "Repeats from earlier visits" counts the character's sentences said again, nearly word for word, from an earlier visit of the same version; Culture is how many real things about ${language.card.country} a reader listed.`,
+    ...runs.flatMap((r) => ['', `Version ${r.version === 'A2' ? 'A again' : r.version} (${fmt(r)}):`, showVisits(r.visits, name)]),
     '', 'Read every line. Do the conversations bear out the numbers, and any difference between versions? Say what the numbers miss or get wrong: a replay they didn\'t count, a learner who sounds nothing like a real learner, an invented job, anything a newcomer would notice.',
     'Reply with JSON: agrees (true if the numbers are a fair account), note (two sentences).',
   ].join('\n');
@@ -234,18 +235,18 @@ async function main() {
       const { c, version } = job;
       try {
         const visits = await conversation(c, version);
-        const measures = measure(visits);
-        if (CULTURE) { measures.cultureList = await cultureCount(visits, c.character.name); measures.culture = measures.cultureList.length; }
+        const scores = scoreVisits(visits);
+        const culture = CULTURE ? await cultureCount(visits, c.character.name) : undefined;
         const r: Recorded = {
           run: run.id, at, label: LABEL, card: CARD, versions: versions(), version,
           character: { id: c.character.id, name: c.character.name, role: c.character.role, city: c.city.name, place: c.place.name },
           learner: { type: c.learner.id, model: LEARNER === 'grok' ? GROK : LEARNER === 'tap' ? 'tap' : CLAUDE_MODEL },
           change: version === 'B' ? JSON.stringify({ here: variant?.here?.[c.character.name], system: variant?.system }) : undefined,
-          visits, measures,
+          visits, scores, values: values(scores), ...(culture ? { culture } : {}),
         };
         record(run.dir, ++n, r);
         done.set(c.character.name, [...(done.get(c.character.name) ?? []), r]);
-        console.log(`  ✓ ${c.character.name} ${version}: ${fmt(measures)}  (${((Date.now() - T0) / 1000).toFixed(0)} s)`);
+        console.log(`  ✓ ${c.character.name} ${version}: ${fmt(r)}  (${((Date.now() - T0) / 1000).toFixed(0)} s)`);
       } catch (e) {
         console.log(`  ✗ ${c.character.name} ${version}: ${e instanceof Error ? e.message : e}`);
       }
@@ -261,18 +262,24 @@ async function main() {
   // ---------- Report ----------
   const rows = [...done.values()].flat();
   const of = (v: string) => rows.filter((r) => r.version === v);
-  const avg = (rs: Recorded[], k: keyof Measures) => { const xs = rs.map((r) => r.measures[k]).filter((x): x is number => typeof x === 'number'); return xs.length ? (xs.reduce((a, b) => a + b, 0) / xs.length).toFixed(2) : '–'; };
-  /** How far the numbers move with nothing changed: the average gap between A and its copy */
-  const noise = (k: keyof Measures) => {
-    const gaps = of('A2').map((r2) => { const r1 = of('A').find((r) => r.character.id === r2.character.id); const a = r1?.measures[k], b = r2.measures[k]; return typeof a === 'number' && typeof b === 'number' ? Math.abs(a - b) : undefined; }).filter((x): x is number => x !== undefined);
-    return gaps.length ? (gaps.reduce((a, b) => a + b, 0) / gaps.length).toFixed(2) : '–';
+  type Col = Key | 'culture';
+  const cols: Col[] = [...KEYS, ...(CULTURE ? ['culture' as const] : [])];
+  /** A version's value: the scorecard over all its visits, as real play adds up conversations; culture averaged per conversation */
+  const versionValue = (rs: Recorded[], k: Col) => {
+    if (k === 'culture') { const xs = rs.flatMap((r) => (r.culture ? [r.culture.length] : [])); return xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null; }
+    return values(rs.flatMap((r) => r.scores as VisitScore[]))[k];
   };
-  const cols = COLUMNS.filter(([k]) => k !== 'culture' || CULTURE);
+  const one = (r: Recorded, k: Col) => (k === 'culture' ? r.culture?.length ?? null : r.values[k]);
+  /** How far the numbers move with nothing changed: the average gap between A and its copy */
+  const noise = (k: Col) => {
+    const gaps = of('A2').flatMap((r2) => { const r1 = of('A').find((r) => r.character.id === r2.character.id); const a = r1 && one(r1, k), b = one(r2, k); return typeof a === 'number' && typeof b === 'number' ? [Math.abs(a - b)] : []; });
+    return gaps.length ? gaps.reduce((a, b) => a + b, 0) / gaps.length : null;
+  };
   const versionsSeen = ['A', 'B', 'A2'].filter((v) => of(v).length);
   const summary = [
-    `| | ${cols.map(([, l]) => l).join(' | ')} |`, `|---|${cols.map(() => '---').join('|')}|`,
-    ...versionsSeen.map((v) => `| ${v === 'A' ? 'A (as is)' : v === 'B' ? `B (${variant?.name})` : 'A again'} (${of(v).length}) | ${cols.map(([k]) => avg(of(v), k)).join(' | ')} |`),
-    ...(of('A2').length ? [`| Noise: A against A again | ${cols.map(([k]) => noise(k)).join(' | ')} |`] : []),
+    `| | ${cols.map(label).join(' | ')} |`, `|---|${cols.map(() => '---').join('|')}|`,
+    ...versionsSeen.map((v) => `| ${v === 'A' ? 'A (as is)' : v === 'B' ? `B (${variant?.name})` : 'A again'} (${of(v).length}) | ${cols.map((k) => show(k, versionValue(of(v), k))).join(' | ')} |`),
+    ...(of('A2').length ? [`| Noise: A against A again | ${cols.map((k) => show(k, noise(k))).join(' | ')} |`] : []),
   ];
   const disagree = [...audits].filter(([, a]) => !a.agrees);
   const md = [
@@ -281,10 +288,10 @@ async function main() {
     ...summary, '',
     AUDIT ? `Grok's read-through: ${audits.size - disagree.length} of ${audits.size} characters bear out the numbers${disagree.length ? `; not: ${disagree.map(([n]) => n).join(', ')}` : ''}.` : 'Grok\'s read-through: not run.', '',
     '## By character', '',
-    `| Character | Version | ${cols.map(([, l]) => l).join(' | ')} |`, `|---|---|${cols.map(() => '---').join('|')}|`,
-    ...rows.sort((a, b) => a.character.name.localeCompare(b.character.name) || a.version.localeCompare(b.version)).map((r) => `| ${r.character.name} | ${r.version} | ${cols.map(([k]) => r.measures[k] ?? '–').join(' | ')} |`), '',
+    `| Character | Version | ${cols.map(label).join(' | ')} |`, `|---|---|${cols.map(() => '---').join('|')}|`,
+    ...rows.sort((a, b) => a.character.name.localeCompare(b.character.name) || a.version.localeCompare(b.version)).map((r) => `| ${r.character.name} | ${r.version} | ${cols.map((k) => show(k, one(r, k))).join(' | ')} |`), '',
     ...(AUDIT ? ['## Grok\'s read-through', '', ...[...audits].map(([name, a]) => `- **${name}** (${a.agrees ? 'bears out' : 'doesn\'t bear out'}): ${a.note}`), ''] : []),
-    '## Transcripts', '', `Each conversation is saved whole in \`${run.dir.replace(process.cwd() + '/', '')}/\`, with its versions, measures, repeated sentences and culture list.`,
+    '## Transcripts', '', `Each conversation is saved whole in \`${run.dir.replace(process.cwd() + '/', '')}/\`, with its versions, each visit's score (repeated sentences included) and the culture list.`,
   ].join('\n');
   writeFileSync(join(run.dir, 'report.md'), md);
   console.log(['', ...summary, '', AUDIT ? `Grok: ${audits.size - disagree.length} of ${audits.size} bear out the numbers` : 'Grok: not run', `Time: ${((Date.now() - T0) / 1000).toFixed(0)} s`, `→ ${run.dir.replace(process.cwd() + '/', '')}/report.md`].join('\n'));

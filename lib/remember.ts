@@ -19,7 +19,7 @@ import { anthropic, CLAUDE_MODEL, replyText } from './claude';
 import { buildMemoryPrompt, memoryPromptVersion, type MemoryPromptInput } from './prompts/build-memory-prompt';
 import { memoryOutputJsonSchema } from './prompts/memory-output-schema';
 import { claimForMemory, releaseMemoryClaim, saveConversationMemory, loadCharacterMemory } from './memory';
-import { recordingEnabled } from './recording';
+import { recordingEnabled, earlierCharacterLines } from './recording';
 import { characterForPlace } from './characters/for-place';
 import { cities, tutor } from '@/content';
 import { writeStudyFileWithClaude, saveStudyFile, trackStudyFileWrite, type StudyFileWriter } from './study-file';
@@ -92,7 +92,9 @@ export async function rememberConversation(
    *  it they run before returning, as the tests expect */
   later?: (work: () => Promise<void>) => void,
   /** Judges a sample of the character's lines for level (lib/level.ts); a fake in tests */
-  lineJudge: LineJudge = beginnerKnows
+  lineJudge: LineJudge = beginnerKnows,
+  /** The character's lines from this learner's earlier conversations with him, for the repeats count; a fake in tests */
+  earlierLines: (conversationId: string, learnerId: string, characterId: string) => Promise<string[]> = earlierCharacterLines
 ): Promise<RememberResult> {
   if (!recordingEnabled()) return 'nothing new';
   let claim: Awaited<ReturnType<typeof claimForMemory>> = null;
@@ -156,7 +158,15 @@ export async function rememberConversation(
       // a scoring problem is logged and memory stays saved.
       try {
         // Beginner dialogue (lib/beginner.ts) speaks English by design; its turns carry a beginner- prompt version
-        const score = await scoreConversation(character, claim.turns, judge, { beginner: !!claim.promptVersion?.startsWith('beginner-') });
+        // Repeats across visits need his earlier lines with this learner; a problem reading them
+        // is logged and the score is saved without the count
+        let earlier: string[] = [];
+        try {
+          earlier = await earlierLines(conversationId, learnerId, claim.characterId);
+        } catch (err) {
+          logError('earlier lines', err, conversationId);
+        }
+        const score = await scoreConversation(character, claim.turns, judge, { beginner: !!claim.promptVersion?.startsWith('beginner-'), earlier });
         // "Lines a beginner can follow" in real play: a sample of lines, one call each. A problem
         // here is logged and the score is saved without it.
         try {
@@ -165,7 +175,7 @@ export async function rememberConversation(
           logError('level sample', err, conversationId);
         }
         await saveConversationScore(conversationId, score);
-        console.log(JSON.stringify({ level: 'info', event: 'quality', conversationId, character: claim.characterId, median: score.stats.wordsMedian, unprompted: score.judge.correctionsUnprompted, pronunciation: score.judge.pronunciationCorrections, words: score.judge.words }));
+        console.log(JSON.stringify({ level: 'info', event: 'quality', conversationId, character: claim.characterId, median: score.stats.wordsMedian, repeats: score.repeats?.length ?? null, learnerShare: score.learner?.share, unprompted: score.judge.correctionsUnprompted, pronunciation: score.judge.pronunciationCorrections, words: score.judge.words }));
       } catch (err) {
         logError('quality', err, conversationId);
       }

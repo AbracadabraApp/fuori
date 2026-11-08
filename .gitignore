@@ -22,5 +22,3 @@ tests/experiments/out/
 public/images/*
 !public/images/stamps/
 
-# Numbers from real play (measure-real.ts): the family's conversations, kept on this machine
-tests/conversations/runs/real.jsonl

@@ -14,7 +14,7 @@
 import { query } from './db';
 import { startConversation, addConversationTurn, type CharacterMemory, type ReviewLog } from './memory';
 import type { CharacterSheet, Turn } from './types';
-import { turnStats, wordCount } from './dialogue-stats';
+import { turnStats, wordCount, REPEATS_LOOKBACK } from './dialogue-stats';
 import type { ConversationScore } from './quality';
 
 export function recordingEnabled(): boolean {
@@ -127,6 +127,22 @@ export async function loadConversationTurns(conversationId: string, learnerId: s
     const offered = (t.parts ?? []).filter((x) => x.kind === 'answer').map((x) => x.text);
     return { who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}), ...(offered.length ? { offered } : {}) };
   });
+}
+
+/**
+ * The character's lines from this learner's last few conversations with him
+ * before this one (oldest first), for the scorecard's repeats count
+ * (lib/dialogue-stats.ts repeatsFromEarlier). Empty when there were none.
+ */
+export async function earlierCharacterLines(conversationId: string, learnerId: string, characterId: string, lookback = REPEATS_LOOKBACK): Promise<string[]> {
+  const result = await query<{ turns: { who: 'npc' | 'learner'; text: string }[] }>(
+    `SELECT turns FROM conversations
+      WHERE learner_id = $1 AND character_id = $2 AND id <> $3
+        AND started_at < (SELECT started_at FROM conversations WHERE id = $3)
+      ORDER BY started_at DESC LIMIT $4`,
+    [learnerId, characterId, conversationId, lookback]
+  );
+  return result.rows.reverse().flatMap((r) => r.turns.filter((t) => t.who === 'npc').map((t) => t.text));
 }
 
 /** Mark a conversation as ended (the learner left the screen). Never throws. */

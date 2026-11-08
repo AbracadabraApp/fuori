@@ -7,8 +7,8 @@
  *   tests/conversations/runs/<stamp>-<label>/<n>-<character>-<version>.json
  *   tests/conversations/runs/log.jsonl
  *
- * Real play (measure-real.ts) writes numbers only, to runs/real.jsonl, which
- * git ignores: they come from the family's own conversations.
+ * Real play's numbers are the scorecard's (lib/scorecard.ts, saved with each
+ * conversation on the server); nothing from real play is written here.
  */
 import { appendFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -17,7 +17,7 @@ import { promptVersion } from '@/lib/prompts/build-turn-prompt';
 import { memoryPromptVersion } from '@/lib/prompts/build-memory-prompt';
 import { dialogueVersion } from '@/lib/dialogue/rules';
 import { country } from '@/content';
-import type { Measures, Visits } from './measure';
+import type { Key, VisitScore, Visits } from './measure';
 
 export const RUNS = join(process.cwd(), 'tests', 'conversations', 'runs');
 
@@ -39,7 +39,12 @@ export interface Recorded {
   /** What B changed, as text, when version is B */
   change?: string;
   visits: Visits;
-  measures: Measures;
+  /** Each visit's counted score, as real play's scorecard keeps it */
+  scores: VisitScore[];
+  /** The scorecard's counted rows over this conversation's visits */
+  values: Record<Key, number | null>;
+  /** The test's own culture count (one reader's list), when run */
+  culture?: string[];
 }
 
 export function startRun(label: string): { id: string; dir: string } {
@@ -55,7 +60,7 @@ const slug = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/
 export function record(dir: string, n: number, r: Recorded): string {
   const file = join(dir, `${String(n).padStart(2, '0')}-${slug(r.character.name)}-${r.version}.json`);
   writeFileSync(file, JSON.stringify(r, null, 1));
-  logLine({ run: r.run, at: r.at, label: r.label, card: r.card, versions: r.versions, version: r.version, character: r.character.id, learner: r.learner, measures: { ...r.measures, repeated: undefined, cultureList: undefined } });
+  logLine({ run: r.run, at: r.at, label: r.label, card: r.card, versions: r.versions, version: r.version, character: r.character.id, learner: r.learner, visits: r.visits.length, values: r.values, culture: r.culture?.length });
   return file;
 }
 

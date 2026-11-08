@@ -17,8 +17,8 @@ interface Measure {
   label: string;
   /** Which way is better */
   better: Direction;
-  /** Target, inclusive */
-  target: number;
+  /** Target, inclusive; null while there isn't one yet (the value is shown, never marked met or missed) */
+  target: number | null;
   /** How the value is shown */
   format: 'words' | 'percent' | 'perConversation' | 'seconds' | 'rating';
   /** A change this small is noise, not a regression (same units as the value) */
@@ -97,13 +97,29 @@ export const MEASURES: Measure[] = [
     key: 'englishUnasked', label: 'English nobody asked for', better: 'lower', target: 0, format: 'perConversation', tolerance: 0.1,
     value: (s) => avg(s.map((x) => x.judge.englishUnasked)),
   },
+  // Josh, 2026-11-08: one set of measures for real play and the conversation test
+  // (tests/conversations/run.ts). Counted, not judged (lib/dialogue-stats.ts).
+  {
+    // Room the learner gets; no target until Josh sets one (real place characters: about 0.21)
+    key: 'learnerShare', label: 'Learner\'s share of words', better: 'higher', target: null, format: 'percent', tolerance: 0.03,
+    value: (s) => avgOf(s, (x) => x.learner?.share),
+  },
+  {
+    key: 'learnerWords', label: 'Learner words per line', better: 'higher', target: null, format: 'words', tolerance: 1,
+    value: (s) => avgOf(s, (x) => x.learner?.wordsPerLine),
+  },
+  {
+    // Groundhog day: sentences said again from an earlier visit; only conversations that had one
+    key: 'repeats', label: 'Repeats from earlier visits', better: 'lower', target: 0, format: 'perConversation', tolerance: 0.3,
+    value: (s) => avgOf(s, (x) => x.repeats?.length),
+  },
 ];
 
 export interface ScorecardRow {
   key: string;
   label: string;
   value: number | null;
-  target: number;
+  target: number | null;
   better: Direction;
   /** Null when there's nothing to measure (no "lost" lines, no garbled lines) */
   ok: boolean | null;
@@ -116,7 +132,7 @@ export interface Scorecard {
   rows: ScorecardRow[];
 }
 
-const meets = (m: Measure, v: number) => (m.better === 'lower' ? v <= m.target : v >= m.target);
+const meets = (m: Measure, v: number) => (m.target === null ? null : m.better === 'lower' ? v <= m.target : v >= m.target);
 
 export function scorecard(scores: ConversationScore[], broken = 0): Scorecard {
   return {
@@ -140,6 +156,7 @@ export function formatValue(key: string, v: number | null): string {
 
 export function formatTarget(key: string): string {
   const m = MEASURES.find((x) => x.key === key)!;
+  if (m.target === null) return 'none yet';
   const sign = m.better === 'lower' ? '≤' : '≥';
   return m.target === 0 && m.better === 'lower' ? '0' : `${sign} ${formatValue(key, m.target).replace(' per conversation', '')}`;
 }

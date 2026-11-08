@@ -19,7 +19,7 @@ import { z } from 'zod';
 import { anthropic, CLAUDE_MODEL, replyText } from './claude';
 import { readPromptFile, fill } from './prompts/template';
 import { qualityOutputJsonSchema } from './prompts/quality-output-schema';
-import { turnStats, wordCount, type TurnStats } from './dialogue-stats';
+import { turnStats, wordCount, learnerStats, repeatsFromEarlier, type TurnStats } from './dialogue-stats';
 import { query } from './db';
 import { language } from '@/content';
 import type { LevelScore } from './level';
@@ -104,6 +104,10 @@ export interface ConversationScore {
   replyMs?: number[];
   /** Level of the character's lines (lib/level.ts; the replay scores every line, real play a sample of them) */
   level?: LevelScore;
+  /** How much room the learner got: share of all words, words per line (from 2026-11-08) */
+  learner?: { share: number; wordsPerLine: number };
+  /** The character's sentences said again from an earlier conversation with this learner; only when there was one (from 2026-11-08) */
+  repeats?: { said: string; earlier: string }[];
 }
 
 export function qualityPromptVersion(): string {
@@ -166,7 +170,7 @@ export async function scoreConversation(
   character: ScoredCharacter,
   turns: ScoredTurn[],
   judge: Judge = judgeWithClaude,
-  opts: { beginner?: boolean } = {}
+  opts: { beginner?: boolean; earlier?: string[] } = {}
 ): Promise<ConversationScore> {
   const j = await judge(character, turns, opts);
   const shorter = shorterAfterLost(turns, j.lost.map((l) => l.line));
@@ -181,6 +185,9 @@ export async function scoreConversation(
     judge: j,
     ...(phraseStats(turns) ? { phrases: phraseStats(turns) } : {}),
     ...(replyMs.length ? { replyMs } : {}),
+    learner: learnerStats(turns),
+    // opts.earlier: the character's lines from this learner's earlier conversations with him
+    ...(opts.earlier?.length ? { repeats: repeatsFromEarlier(opts.earlier, turns.filter((t) => t.who === 'npc').map((t) => t.text)) } : {}),
   };
 }
 

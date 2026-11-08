@@ -38,8 +38,18 @@ const g = gate(before, brokenRun, 'replyWords');
 check(!g.pass && g.regressions.some((r) => r.includes('2 broken')), 'two broken conversations fail the gate');
 check(scorecardAsText('Scorecard', brokenRun).includes('2 broken'), 'the scorecard text says how many broke');
 
+// Learner share, learner words and repeats (2026-11-08): counted, averaged over the scores that have them
+const withNew = { ...base, learner: { share: 0.2, wordsPerLine: 8 }, repeats: [{ said: 'a', earlier: 'b' }] };
+const card2 = scorecard([withNew, { ...base, learner: { share: 0.4, wordsPerLine: 6 }, repeats: [] }, base]);
+check(Math.abs((row(card2, 'learnerShare').value ?? 0) - 0.3) < 1e-9, `learner share averages over scores that have it (got ${row(card2, 'learnerShare').value})`);
+check(row(card2, 'learnerWords').value === 7, 'learner words per line averaged');
+check(row(card2, 'repeats').value === 0.5, `repeats averaged over conversations that had an earlier visit (got ${row(card2, 'repeats').value})`);
+check(row(card2, 'learnerShare').ok === null && row(card2, 'learnerShare').target === null, 'no target yet: shown, never marked met or missed');
+check(scorecardAsText('S', card2).includes('none yet'), 'the scorecard text says there is no target yet');
+check(row(card2, 'repeats').ok === false, 'a repeat misses the target of 0');
+
 if (problems.length) {
   console.error(problems.join('\n'));
   process.exit(1);
 }
-console.log('OK: reply time, coherence and alive are measured, and a broken conversation fails the gate');
+console.log('OK: reply time, coherence, alive, learner share, learner words and repeats are measured, and a broken conversation fails the gate');

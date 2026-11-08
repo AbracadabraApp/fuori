@@ -84,3 +84,50 @@ export function summarize(all: TurnStats[]): TurnStats {
     multiQuestionShare: round2(pooled('multiQuestionShare')),
   };
 }
+
+/**
+ * How much room the learner gets (Josh, 2026-11-08: one set of measures for
+ * real play and the conversation test): the learner's share of all words, and
+ * how many words they say at a time.
+ */
+export function learnerStats(turns: { who: 'npc' | 'learner'; text: string }[]): { share: number; wordsPerLine: number } {
+  const mine = turns.filter((t) => t.who === 'learner');
+  const learnerWords = mine.reduce((n, t) => n + wordCount(t.text), 0);
+  const npcWords = turns.filter((t) => t.who === 'npc').reduce((n, t) => n + wordCount(t.text), 0);
+  return { share: round2(learnerWords / (learnerWords + npcWords || 1)), wordsPerLine: round1(learnerWords / (mine.length || 1)) };
+}
+
+/** Earlier conversations with the same character looked back over for repeats */
+export const REPEATS_LOOKBACK = 3;
+/** Share of the shorter sentence's words found in the other at which it reads as said again */
+export const SAME_SENTENCE = 0.7;
+
+/** Sentences of five or more words: shorter ones ("Buenas tardes") repeat in any real conversation */
+function longSentences(text: string): string[] {
+  return text.split(/(?<=[.!?…])\s+/).map((s) => s.trim()).filter((s) => wordCount(s) >= 5);
+}
+const wordSet = (s: string) => new Set(s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').match(/[\p{L}\p{N}]+/gu) ?? []);
+/** Share of the shorter sentence's words that are in the other: a shorter retelling of a story still counts */
+export function sentenceOverlap(a: string, b: string): number {
+  const x = wordSet(a), y = wordSet(b);
+  const shared = [...x].filter((w) => y.has(w)).length;
+  return shared / (Math.min(x.size, y.size) || 1);
+}
+
+/**
+ * The groundhog-day count (Josh, 2026-11-07: "groundhog day conversations feel
+ * broken"): the character's sentences in this conversation that closely match
+ * one he said in an earlier conversation with the same learner. Word overlap,
+ * so it works in any language; coming back to a topic in new words isn't
+ * counted, and neither is the same story fully reworded (Grok's read-through
+ * in the conversation test is there for those).
+ */
+export function repeatsFromEarlier(earlierCharacterLines: string[], characterLines: string[]): { said: string; earlier: string }[] {
+  const earlier = earlierCharacterLines.flatMap(longSentences);
+  const out: { said: string; earlier: string }[] = [];
+  for (const s of characterLines.flatMap(longSentences)) {
+    const match = earlier.find((e) => sentenceOverlap(s, e) >= SAME_SENTENCE);
+    if (match) out.push({ said: s, earlier: match });
+  }
+  return out;
+}
