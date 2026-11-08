@@ -594,17 +594,17 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Decision: the payload's extra content does something; stripping to name, role and place goes too far. Not applied. Which part matters (age, the day and weather, the here line's scene) isn't shown by a whole-payload test
 
 
-### C5b (2026-11-08): a memory line that carries on from last time
+### C5b (2026-11-08): a guardrail after the memory line, "Don't repeat yourself"
 - Serves: 7 (remembers)
 - Type: visit (multi-turn, rule 5c)
 - Unit: the met-before line in character.md ("You've met them {visits}. The last time was {lastSeen}.\nYou remember: {notes}"). From C5: with memory.md 2026-11-07a his notes held what he told ("I shared that my mother sent me for churros on Sundays") and he still told it again as new on visit 3; the notes reach him, the line doesn't say what they're for
-- Variable: A: the line as it is. B: the same with one sentence after the notes: "Pick up where you left off; they already know what you told them." (in the test only, through the turn code's replacement-prompt parameter; nothing on disk)
+- Variable: A: the line as it is. B: the same with one sentence after the notes: "Don't repeat yourself." (Josh, 2026-11-08: "more of a guardrail", "don't repeat yourself"; first drafted as "Pick up where you left off; they already know what you told them.", dropped: Josh, "will encourage same topic"; in the test only, through the turn code's replacement-prompt parameter; nothing on disk)
 - Held constant: the game's Intermediate prompt and turn code (lib/turn.ts), memory.md 2026-11-07a between visits, the here line as it is, Sam on Grok (fast model, living in Mexico for a while, never the first to name a local thing, and now told not to repeat his own earlier lines, the loop that pulled replays out of him in C5), 3 visits 3 days apart, model and settings
 - Place: Don Ramón at El Mirador (Mexico); Italy (Karim, Piazza del Campo) only if Mexico passes (rule 6)
 - Measure: **groundhog repeats** (Josh, 2026-11-07: "Repetition of topics is not bad… groundhog day conversations feel broken"): on visits 2 and 3, each thing he tells as if Sam had never heard it although he told it on an earlier visit, or each question he asks again that Sam already answered. Coming back to a topic, referring back to it ("¿fuiste por fin…?") or building on it doesn't count. Claude and Grok each read one conversation (blind to version and notes) and list them; a repeat counts when both list it
 - Fact or judgment: judgment (both judges, rule 5d; every listed repeat printed and read)
 - Hypothesis: A has at least one repeat that both judges list, and B none
-- Other outcomes: A has none: today's memory already stops the replays; nothing to change. Both have repeats: the line isn't the cause; read where the repeat comes from (the here line's facts, C4, are the next suspect). B has repeats and A none: the sentence makes it worse; not applied. A visit where B leans on the past so hard it stops talking about anything new is read and reported
+- Other outcomes: A has none: today's memory already stops the replays; nothing to change. Both have repeats: the line isn't the cause; read where the repeat comes from (the here line's facts, C4, are the next suspect). B has repeats and A none: the sentence makes it worse; not applied. B's turns are read for lost useful repetition (a word or phrase Sam needs said again, dropped) and reported
 - Size: 1 conversation of 3 visits per version, side by side (C5, C7: a failure seen once is real; Josh: "If a small test shows repetition you'll see more")
 - Time: about 3 minutes on the laptop, about 1 on the Mac mini
 - Reviewed: test designer, 2026-11-08: pass, with one fix: the turn code adds the shared dialogue rules to a replacement prompt too, so B got them twice; B now takes off the copy already in the game's prompt, and a check showed B's prompt is A's plus the one sentence, one copy of the rules. Taken
