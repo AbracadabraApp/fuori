@@ -4,7 +4,7 @@
 // no English nobody asked for. Each probe: the character opens (a real first
 // turn), the learner says one line, the character answers; a judge reads it.
 // Arms: thinking off (production) and on (TURN_THINKING=on); or, with
-// PROMPTS=character.md,character-english.md, one arm per prompt file, thinking off.
+// PROMPTS=character.md,character-english.md, one arm per prompt file, thinking off (the trial copies are archived in tests/archive/prompts/<country>/: copy one back into content/<country>/prompts/ first).
 //   npx tsx --env-file=.env.local tests/experiments/core-behaviours.mts [characters] [runs]   (COUNTRY as needed)
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';

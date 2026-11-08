@@ -3,7 +3,7 @@
 // Josh, 2026-10-19, before dropping the English translation line: "the majority
 // of the time they do" help). A judge reads each conversation and lists every
 // learner turn that asks for help, and how the next character line answered.
-// With PROMPTS=character.md,character-english.md it also replays each ask:
+// With PROMPTS=character.md,character-english.md (archived in tests/archive/prompts/<country>/: copy back first) it also replays each ask:
 // the character's reply is made again from the real conversation up to the
 // ask, once per prompt file, and judged the same way.
 //   npx tsx --env-file=.env.local tests/experiments/help-asks.mts tests/experiments/out/admin.json   (COUNTRY as needed)
