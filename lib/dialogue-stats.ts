@@ -102,9 +102,11 @@ export const REPEATS_LOOKBACK = 3;
 /** Share of the shorter sentence's words found in the other at which it reads as said again */
 export const SAME_SENTENCE = 0.7;
 
-/** Sentences of five or more words: shorter ones ("Buenas tardes") repeat in any real conversation */
+/** Sentences of eight or more words: shorter ones are the routine a real shopkeeper repeats every day
+ *  ("Que le vaya muy bien", "Suba a la silla"; counted as repeats in the 2026-11-08 pilot at five words) */
+export const REPEAT_MIN_WORDS = 8;
 function longSentences(text: string): string[] {
-  return text.split(/(?<=[.!?…])\s+/).map((s) => s.trim()).filter((s) => wordCount(s) >= 5);
+  return text.split(/(?<=[.!?…])\s+/).map((s) => s.trim()).filter((s) => wordCount(s) >= REPEAT_MIN_WORDS);
 }
 const wordSet = (s: string) => new Set(s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').match(/[\p{L}\p{N}]+/gu) ?? []);
 /** Share of the shorter sentence's words that are in the other: a shorter retelling of a story still counts */

@@ -16,6 +16,8 @@ const replay = repeatsFromEarlier(earlier, ['¡Buenas tardes! Yo nací aquí, cu
 check(replay.length === 1, `the same story told again counts (got ${replay.length})`);
 check(repeatsFromEarlier(earlier, ['¡Buenas tardes! ¿Fue por fin a ver los churros que le dije la otra vez?']).length === 0, 'a greeting and a new sentence on an old topic don\'t count');
 check(repeatsFromEarlier([], ['Yo nací aquí, cuando San Miguel era un pueblito tranquilo.']).length === 0, 'no earlier visit, nothing to repeat');
+// The routine a shopkeeper says every day isn't groundhog day (the 2026-11-08 pilot counted these at five words)
+check(repeatsFromEarlier(['Adiós, joven, que le vaya muy bien.', 'Pásele, pásele, suba a la silla.'], ['Hasta luego, joven, que le vaya muy bien.', 'Suba a la silla, que ahorita se los dejo como nuevos.']).length === 0, 'routine phrases don\'t count');
 
 const judge: Judge = async () => ({ pronunciationCorrections: 0, correctionsAsked: 0, correctionsUnprompted: 0, garbled: 0, garbledMissed: 0, lost: [], englishUnasked: 0, incoherent: 0, alive: 7, note: 'None' });
 const character = { name: 'Don Ramón', age: 74, role: 'jubilado', city: 'San Miguel de Allende' };
