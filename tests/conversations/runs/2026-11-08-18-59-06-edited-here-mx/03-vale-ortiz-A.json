@@ -1,0 +1,103 @@
+{
+ "run": "2026-11-08-18-59-06-edited-here-mx",
+ "at": "2026-11-08T18:59:06.987Z",
+ "label": "edited-here-mx",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "vale-libros-tecolote",
+  "name": "Vale Ortiz",
+  "role": "librera",
+  "city": "Ciudad de México",
+  "place": "Libros Tecolote"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Hola, buenas tardes. Bienvenido a Libros Tecolote. Si buscas algo, aquí estoy."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Yo... busco un libro. Para aprender español. Es... muy difícil para mí."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, pues llegaste al lugar correcto. Tengo un estante con libros fáciles, justo para empezar. ¿Qué tipo de historias te gustan?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... historias... ¿repite por favor? Más lento."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. ¿Qué... libros... te gustan? ¿De misterio? ¿De amor? ¿De aventura?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... me gustan... los libros de aventura. Gracias por su ayuda. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "De nada. Adiós, hasta luego. Que te vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué bueno verte otra vez. Ya regresaste, ¿eh?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Sí... yo regreso. Busco... el libro de aventura."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, aquí tengo uno que te va a gustar. Es una aventura sencilla, con frases cortas. ¿Quieres verlo?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Ehm... ¿cuánto cuesta el libro?"
+   },
+   {
+    "who": "npc",
+    "text": "Cuesta doscientos cincuenta pesos. No es caro, y es un libro delgado, no te vas a cansar."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... doscientos cincuenta pesos. Está bien, yo compro el libro. Gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien! Aquí tienes tu libro. Gracias a ti, ¡adiós y que lo disfrutes!"
+   }
+  ]
+ ],
+ "measures": {
+  "visits": 2,
+  "npcLines": 8,
+  "wordsPerLine": 14,
+  "questionsPerLine": 0.88,
+  "learnerShare": 0.37,
+  "repeats": 0,
+  "repeated": [],
+  "cultureList": [
+   "Mexico's currency is the peso; a thin book costing 250 pesos is described as not expensive",
+   "\"Tecolote\" (owl) in the shop name is a Mexican Spanish word that comes from Nahuatl",
+   "\"Que te vaya muy bien\" is a warm, common Mexican way to say goodbye",
+   "Shopkeepers greet customers warmly and chat casually, e.g. \"Ya regresaste, ¿eh?\"",
+   "\"Buenas tardes\" is the standard afternoon greeting"
+  ],
+  "culture": 5
+ }
+}

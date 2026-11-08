@@ -1,0 +1,122 @@
+{
+ "run": "2026-11-08-18-59-06-edited-here-mx",
+ "at": "2026-11-08T18:59:06.987Z",
+ "label": "edited-here-mx",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, joven. Pásele, pásele, aquí tiene su silla. ¿Le doy una boleadita a esos zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Mis zapatos están muy sucio. ¿Cuánto cuesta, usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Cuarenta pesos, joven, y le dejo los zapatos como espejo. Suba el pie aquí, en el cajón. ¿Son de piel, verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son de piel. Ok, cuarenta pesos está bien. Gracias, señor."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, joven, de nada. Ahorita le quito el polvo con el cepillo y luego le pongo la grasa. ¿Usted es de por aquí, de la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, no soy de aquí. Soy de Estados Unidos, pero vivo en la Roma ahora. Gracias, señor, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bueno, joven, bienvenido a la Roma. Que le vaya muy bien, hasta luego."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Qué gusto verlo otra vez por la Roma. Pásele, siéntese en la silla, que hoy es domingo y los zapatos andan pidiendo una boleada. ¿Trae los mismos de cuero?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Don Chucho. Sí, tengo los mismos zapatos. Están muy sucios otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Ándele, súbase aquí y me los deja como nuevos. Con este polvo de la calle, el cuero sufre mucho. Ahorita les echo su buena grasa y los cepillo bien. ¿Quiere el mismo precio de la vez pasada?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, el mismo precio, por favor. Cuarenta pesos, ¿correcto?"
+   },
+   {
+    "who": "npc",
+    "text": "Correcto, cuarenta pesos, igualito que la otra vez. Ya mero empiezo, usted nomás póngase cómodo y deje los pies quietos en los estribos."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, está bien, Don Chucho. Muchas gracias, y hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven, que le vaya muy bien y cuídese mucho."
+   }
+  ]
+ ],
+ "measures": {
+  "visits": 2,
+  "npcLines": 8,
+  "wordsPerLine": 22.5,
+  "questionsPerLine": 0.63,
+  "learnerShare": 0.29,
+  "repeats": 1,
+  "repeated": [
+   {
+    "visit": 2,
+    "said": "Hasta luego, joven, que le vaya muy bien y cuídese mucho.",
+    "earlier": "Que le vaya muy bien, hasta luego."
+   }
+  ],
+  "cultureList": [
+   "Shoe shiners (boleros) work on the street in Mexico, offering a shine called a 'boleada' or 'boleadita'",
+   "Customers sit on a chair and rest their foot on the shiner's wooden box (cajón) or footrests (estribos)",
+   "A shoeshine costs around 40 pesos (in this example)",
+   "Mexican Spanish diminutives like 'boleadita' and 'ahorita' give a friendly, polite tone",
+   "'Ahorita' means 'right now' or 'in a little while' and is not precise",
+   "'Pásele' is a polite, warm invitation to come in or sit down",
+   "'Ándele' is a friendly expression meaning 'go ahead' or 'that's right'",
+   "'Ya mero' means 'almost' or 'about to'",
+   "'Nomás' means 'just' or 'only'",
+   "Leather shoes (piel/cuero) are cleaned by brushing off dust, then applying polish or grease and buffing",
+   "Shiners promise to leave shoes shining 'como espejo' (like a mirror) or 'como nuevos'",
+   "La Roma is a well-known neighborhood (colonia) in Mexico City",
+   "Streets in the city are dusty, which is hard on leather shoes",
+   "Sunday is a day when people go out and get their shoes shined",
+   "Mexicans commonly address young men as 'joven' as a polite form",
+   "Locals warmly welcome newcomers ('bienvenido a la Roma')",
+   "Farewells like 'que le vaya muy bien' and 'cuídese mucho' are common courtesies",
+   "Regular customers are greeted warmly and remembered, with repeat prices kept the same"
+  ],
+  "culture": 18
+ }
+}

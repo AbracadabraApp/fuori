@@ -1,0 +1,112 @@
+{
+ "run": "2026-11-08-18-59-06-edited-here-mx",
+ "at": "2026-11-08T18:59:06.987Z",
+ "label": "edited-here-mx",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, siéntese en la silla. ¿Le doy una boleadita a esos zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes. Sí, por favor. Cuánto cuesta la boleada?"
+   },
+   {
+    "who": "npc",
+    "text": "Son sesenta pesos, joven, con grasa, cepillo y trapo hasta que queden como espejo. Ándele, ponga el pie aquí en el cajón. ¿Y usted es de por aquí, de la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, yo soy de Estados Unidos. Pero vivo en la Roma un año."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno, joven! Un año en la Roma ya es casi ser vecino. Mire, yo aquí llevo más de cincuenta años con mi cajón, y la colonia ha cambiado un montón. ¿Y qué es lo que más le gusta de vivir por acá?"
+   },
+   {
+    "who": "learner",
+    "text": "Me gusta la comida y la gente es muy amable. Bueno, gracias, Don Chucho. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a usted, joven. Que le vaya muy bien, y aquí lo espero cuando quiera otra boleada. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, aquí hay lugar. ¿Se le ofrece una boleada hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, Don Chucho. Sí, otra vez, por favor. Los zapatos están sucio."
+   },
+   {
+    "who": "npc",
+    "text": "¡Con mucho gusto! Súbase a la silla, que ya se los dejo como nuevos. Con este polvo de la calle, se ensucian rápido, ¿verdad? ¿Son los mismos zapatos de la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son los mismos zapatos. Yo tengo solo un zapatos negro."
+   },
+   {
+    "who": "npc",
+    "text": "Pues qué bueno, entonces ya los conozco. Con un solo par de zapatos negros hay que cuidarlos bien, y para eso estoy yo. Ahorita les doy su buen cepillado y su lustre."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, gracias, Don Chucho. Bueno, ya me voy. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Adiós, joven, que le vaya muy bien. Hasta luego."
+   }
+  ]
+ ],
+ "measures": {
+  "visits": 2,
+  "npcLines": 8,
+  "wordsPerLine": 24.5,
+  "questionsPerLine": 0.75,
+  "learnerShare": 0.27,
+  "repeats": 0,
+  "repeated": [],
+  "cultureList": [
+   "Shoe shiners (boleros) work on the street with a portable wooden box (cajón), and a shine is called a \"boleada\" or \"boleadita\"",
+   "A shoe shine costs about 60 pesos and includes polish, brush, and cloth until the shoes shine like a mirror",
+   "\"Pásele\" and \"ándele\" are friendly, typical Mexican expressions of invitation and encouragement",
+   "\"Joven\" is a common polite way to address a young man",
+   "Using the diminutive (boleadita, ahorita) is typical of friendly, warm Mexican speech",
+   "\"La Roma\" is a well-known neighborhood (colonia) in Mexico City",
+   "Longtime street vendors and craftspeople like boleros can work in the same spot for decades and have seen the neighborhood change",
+   "Mexicans commonly chat and make small talk with customers, asking where you are from and what you like about the area",
+   "\"Ahorita\" means right now/in a little while, a typical Mexican diminutive of time",
+   "\"Que le vaya muy bien\" is a common polite farewell",
+   "\"Un montón\" is a colloquial way of saying a lot",
+   "Street dust makes shoes get dirty quickly in the city",
+   "\"Se le ofrece...?\" is a polite way for a vendor to ask if you need something",
+   "Using \"usted\" is customary to show respect when speaking with strangers and elders"
+  ],
+  "culture": 14
+ }
+}

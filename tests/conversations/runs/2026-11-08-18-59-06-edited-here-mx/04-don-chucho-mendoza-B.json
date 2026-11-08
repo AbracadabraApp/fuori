@@ -1,0 +1,112 @@
+{
+ "run": "2026-11-08-18-59-06-edited-here-mx",
+ "at": "2026-11-08T18:59:06.987Z",
+ "label": "edited-here-mx",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You spend your day at your stand, shining shoes with polish and a brush for customers who climb up on the chair for a boleada.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, joven, pase, pase. Aquí tiene su silla. ¿Unos zapatos para dejar como espejo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, por favor. Mis zapatos son muy sucios."
+   },
+   {
+    "who": "npc",
+    "text": "Ay, no se preocupe, joven, para eso estoy yo. Suba el pie aquí, que ya los vamos a dejar bonitos. ¿Y de qué color es su calzado, café o negro?"
+   },
+   {
+    "who": "learner",
+    "text": "Mis zapatos son café. Es el color café, no negro."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, café entonces. Voy a empezar con el cepillo para quitarle todo el polvo, y luego le pongo la grasa. Usted nomás relájese."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias, señor. Está bien, yo me relajo. Muchas gracias por su ayuda, y adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, joven. Que le vaya muy bien, adiós."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, aquí tiene su silla. ¿Otra boleadita hoy?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, otra vez, por favor. Mis zapatos son sucios otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Ándele, súbase a la silla. Con este polvo de la Roma, los zapatos se ensucian rapidito. ¿Los mismos cafés de la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, señor, los mismos zapatos cafés. Yo no tengo otros zapatos."
+   },
+   {
+    "who": "npc",
+    "text": "Pues entonces hay que cuidarlos mucho, son su único par. Ya les quito el polvo con el cepillo y luego les pongo la grasa. ¿Usted camina mucho por la colonia?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, señor, yo camino mucho. Es bueno para mí. Gracias por su ayuda, y adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, joven. Que le vaya muy bien, y aquí lo espero cuando quiera. ¡Adiós!"
+   }
+  ]
+ ],
+ "measures": {
+  "visits": 2,
+  "npcLines": 8,
+  "wordsPerLine": 19.88,
+  "questionsPerLine": 0.63,
+  "learnerShare": 0.32,
+  "repeats": 0,
+  "repeated": [],
+  "cultureList": [
+   "Shoeshiners (boleros) work in Mexico, cleaning and polishing shoes for customers seated in a chair",
+   "Shoeshine is called 'bolear', and 'boleadita' is an affectionate diminutive for a shine",
+   "Mexican Spanish uses diminutives like 'rapidito' and 'boleadita' to sound friendly",
+   "Polite, warm treatment of customers: 'joven', 'pase, pase', 'pásele', and 'ándele' are common Mexican expressions of welcome and encouragement",
+   "'Nomás' is a Mexican word meaning 'just' or 'only'",
+   "Shoes in Mexico are described as 'café' for brown",
+   "Shoeshiners clean shoes with a brush to remove dust and then apply polish or grease",
+   "'Que le vaya muy bien' is a courteous Mexican farewell",
+   "'Con mucho gusto' is a polite way to say 'you're welcome'",
+   "La Roma is a well-known neighborhood (colonia) in Mexico City, and its streets are dusty",
+   "Mexico City neighborhoods are called 'colonias', and people often walk around them",
+   "Using 'usted' is the polite form used with customers and strangers",
+   "Shoeshiners build regular relationships with customers, inviting them back anytime"
+  ],
+  "culture": 13
+ }
+}
