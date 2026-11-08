@@ -13,10 +13,9 @@ Draft, 2026-11-06, for Josh's review. Josh: "You need to organize work in a disc
 2. **Accurate.** Nothing invented.
 3. **Local and tipico.** Her place, her town, her country, as a local tells it.
 
-**Character** (tested first, with Culture). Goal: the learner meets a real person who knows them: someone in a real role who acts like it and remembers them, so the learner wants to come back, and the help they get is the help that person would give a newcomer. It fails when a fishmonger turns into a school teacher, a student on the steps takes a food order, or she retells last visit's story as new.
+**Character** (tested first, with Culture). Goal: the learner meets a real person who knows them: someone in a real role who acts like it and remembers them, so the learner wants to come back. It fails when a student on the steps takes a food order, or she retells last visit's story as new. How she helps them learn is the teaching, tested with Language.
 
 4. **In character.** She stays her role.
-6. **Teaches in role.** A fishmonger helps a newcomer the way a fishmonger would (slows down, repeats, offers a word, recasts a mistake), never as a school teacher (Josh, 2026-11-07: "Does a fish monger turn into a school teacher").
 7. **Remembers.** No retelling; uses what she knows about them.
 
 **Language** (after Culture and Character; to be rethought before it's tested, Josh, 2026-11-07: "not a very well thought through structure, it's been jerry-rigged into the prompt; it's important but we are right to tackle it after other dialogue"). Working goal: the learner can follow her and copy her: every turn within reach at their level, short enough to hold, and correct, since they repeat it; English there when they ask. It fails when a closing question is above a Beginner, a turn runs long, she says "il gnocchi", or she won't help in English.
@@ -25,6 +24,7 @@ Draft, 2026-11-06, for Josh's review. Josh: "You need to organize work in a disc
 8. **Brief.** Turns they can follow.
 9. **Grammatical.** Her own language is correct, since the learner copies it.
 5. **Responds to English.** She helps when they need it.
+6. **Teaches in role.** A fishmonger helps a newcomer the way a fishmonger would (slows down, repeats, offers a word, recasts a mistake), never as a school teacher (Josh, 2026-11-07: "Does a fish monger turn into a school teacher"). Tested with the teaching, not with Character (Josh, 2026-11-07: "the teaching issue belongs in the teaching tests"): C2 showed the teacher talk comes with the teaching format (answers to say back), so it's tested when that part is built.
 
 Each test card names the item it serves; how it's judged goes on the card. Measuring the learner's learning is a separate doc (to come).
 
@@ -109,7 +109,7 @@ Smaller: a kept change gets a small check in the other country before it ships (
 
 Tests to run, in order, each to become a full card before it runs. The tools come first: rules 5, 7 and 8 work around a simulated learner that steers and judges that were lenient or literal; F1 and F2 fix the tools themselves. Who decides what: design questions are Josh's (rule 16).
 
-**First: Culture and Character** (items 2, 3, 4, 6, 7; Josh, 2026-11-07). The judges and moments built here serve these items first: F1 and Q2 start with judges for accurate, local and tipico, in character, teaches in role, and remembers; A1 judges each part on these items first.
+**First: Culture and Character** (items 2, 3, 4, 7; Josh, 2026-11-07). The judges and moments built here serve these items first: F1 and Q2 start with judges for accurate, local and tipico, in character, and remembers; A1 judges each part on these items first.
 
 | # | Question | Type | Unit | Waits on |
 |---|---|---|---|---|
@@ -124,7 +124,7 @@ Tests to run, in order, each to become a full card before it runs. The tools com
 | A1 | **Does each part do something?** Leave-one-out (Josh, 2026-11-07: "part vs no part for each part … a baseline for the value of including a part before tweaking it"): the Beginner moments with all parts, then with each named part switched off in turn (`setPartsOff`), single parts only. Each removal is judged on the items its part claims to serve, plus the guards. Who: you, Who: the learner, How you talk and Reply: parts format stay in. About 20 parts × moments × 5 runs; a part showing no effect gets a rerun before it's called dead. Output: a value for every part, the baseline before any part is changed. Script: `tests/experiments/ablate.mts` | moment | every part of beginner.md | F1, Q1 |
 | A1b | **Do parts cover for each other?** A hypothesis, not an assumption (Josh, 2026-11-07): run only if A1 shows a part with no effect where it should matter. Switch off that part and the one the inventory guesses overlaps it, together (`PAIRS=1`), on the same moments; if the pair loses what neither did alone, they cover for each other: keep one, not both | moment | the pairs A1 points to | A1 |
 
-**Then: Language** (items 1, 5, 8, 9), and the whole-prompt cuts.
+**Then: Language** (items 1, 5, 6, 8, 9), and the whole-prompt cuts.
 
 | # | Question | Type | Unit | Waits on |
 |---|---|---|---|---|
