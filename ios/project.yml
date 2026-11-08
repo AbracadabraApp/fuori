@@ -55,7 +55,8 @@ targets:
         UILaunchScreen:
           UIColorName: LaunchBackground
           UIImageName: LaunchArt
-        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        # All three so iOS can rotate; the app delegate keeps every screen portrait except the trailer (OrientationLock)
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
         # Light only until the "night paper" palette exists (docs/13-ios-conventions.md A1, D1):
         # otherwise system bars turn white on the light paper in Dark Mode
         UIUserInterfaceStyle: Light

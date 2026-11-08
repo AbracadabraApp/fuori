@@ -87,64 +87,133 @@ private struct PosterCard: View {
     }
 }
 
-/// A film's videos, as in MovieGenius: the first (the official trailer) plays
-/// at the top; tapping another below plays it instead
+/// A film's videos (Josh, 2026-11-08, from a mockup he approved): the first (the
+/// official trailer) plays in the middle of a dark screen, with the others folded
+/// into one "More videos" row at the bottom; opened, they list under the player
+/// and tapping one plays it. Turned sideways, the video fills the screen (this is
+/// the only screen allowed to rotate: OrientationLock)
 struct TrailerView: View {
     let film: Film
     @State private var playing: Film.Video?
     @State private var ready = false
     @State private var problem: String?
+    @State private var showAll = false
+    #if os(iOS)
+    @Environment(\.verticalSizeClass) private var verticalSize
+    private var sideways: Bool { verticalSize == .compact }
+    #else
+    private var sideways: Bool { false }
+    #endif
+
+    private var current: Film.Video? { playing ?? film.videos.first }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                if let video = playing ?? film.videos.first {
-                    ZStack {
-                        Color.black
-                        YouTubePlayerView(videoId: video.youtube, captions: video.language, onReady: { ready = true }, onError: { problem = $0 })
-                            .id(video.youtube)
-                            // Its web view is white until YouTube is ready: black and the spinner show instead
-                            .opacity(ready ? 1 : 0)
-                        if let problem {
-                            Text(problem)
-                                .typeface(.label, 17, relativeTo: .body)
-                                .foregroundStyle(.white)
-                                .multilineTextAlignment(.center)
-                                .padding()
-                        } else if !ready {
-                            ProgressView().tint(.white)
+        Group {
+            if sideways {
+                // Full screen: nothing but the video
+                player.ignoresSafeArea()
+            } else {
+                GeometryReader { geo in
+                    ScrollView {
+                        VStack(spacing: 0) {
+                            if !showAll { Spacer(minLength: 0) }
+                            player
+                            if showAll { list }
+                            if !showAll { Spacer(minLength: 0) }
                         }
+                        // Centred in the screen while the list is folded
+                        .frame(minHeight: showAll ? nil : geo.size.height)
                     }
-                    .aspectRatio(16 / 9, contentMode: .fit)
-                    .accessibilityElement(children: .contain)
-                    .accessibilityLabel(video.name)
+                    .scrollDisabled(!showAll)
                 }
-                if film.videos.count > 1 {
-                    VStack(spacing: 8) {
-                        ForEach(film.videos) { video in
-                            VideoRow(video: video, playing: video == (playing ?? film.videos.first)) {
-                                guard video != (playing ?? film.videos.first) else { return }
-                                ready = false
-                                problem = nil
-                                playing = video
-                            }
-                        }
-                    }
-                    .padding(.horizontal, Tokens.Space.gutter)
-                    .padding(.vertical, 16)
+                .safeAreaInset(edge: .bottom) {
+                    if !showAll, film.videos.count > 1 { moreButton }
                 }
             }
         }
         // Dark, as a cinema (and MovieGenius's trailer screen): the video is the light
-        .background(Tokens.Colors.ink)
-        // The title once, in the bar (Josh, 2026-11-05); the videos start under the player
+        .background(sideways ? Color.black : Tokens.Colors.ink)
+        // The title once, in the bar (Josh, 2026-11-05)
         .navigationTitle(film.title)
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Tokens.Colors.ink, for: .navigationBar)
         .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbar(sideways ? .hidden : .visible, for: .navigationBar)
+        .statusBarHidden(sideways)
+        .onAppear { OrientationLock.allow(.allButUpsideDown) }
+        .onDisappear { OrientationLock.allow(.portrait) }
         #endif
         .settingsToolbar()
+    }
+
+    @ViewBuilder private var player: some View {
+        if let video = current {
+            ZStack {
+                Color.black
+                YouTubePlayerView(videoId: video.youtube, captions: video.language, onReady: { ready = true }, onError: { problem = $0 })
+                    .id(video.youtube)
+                    // Its web view is white until YouTube is ready: black and the spinner show instead
+                    .opacity(ready ? 1 : 0)
+                if let problem {
+                    Text(problem)
+                        .typeface(.label, 17, relativeTo: .body)
+                        .foregroundStyle(.white)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                } else if !ready {
+                    ProgressView().tint(.white)
+                }
+            }
+            .aspectRatio(16 / 9, contentMode: .fit)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .accessibilityElement(children: .contain)
+            .accessibilityLabel(video.name)
+        }
+    }
+
+    /// The folded list: one row, "More videos (n)"
+    private var moreButton: some View {
+        Button { showAll = true } label: {
+            HStack {
+                Text("More videos (\(film.videos.count - 1))")
+                    .typeface(.label, Tokens.Size.personRole, relativeTo: .title3, weight: .bold)
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.down").accessibilityHidden(true)
+            }
+            .foregroundStyle(Tokens.Colors.flapInk)
+            .padding(.horizontal, 16)
+            .frame(minHeight: 52)
+            .background(Tokens.Colors.flapTile, in: RoundedRectangle(cornerRadius: Tokens.Radius.card))
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(PressableStyle())
+        .padding(.horizontal, Tokens.Space.gutter)
+        .padding(.bottom, 12)
+    }
+
+    /// Every video, the one playing marked; "Less" folds them again
+    private var list: some View {
+        VStack(spacing: 8) {
+            ForEach(film.videos) { video in
+                VideoRow(video: video, playing: video == current) {
+                    guard video != current else { return }
+                    ready = false
+                    problem = nil
+                    playing = video
+                }
+            }
+            Button { showAll = false } label: {
+                Label("Less", systemImage: "chevron.up")
+                    .typeface(.label, Tokens.Size.body, relativeTo: .body)
+                    .foregroundStyle(Tokens.Colors.sand)
+                    .frame(minHeight: 44)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(PressableStyle())
+        }
+        .padding(.horizontal, Tokens.Space.gutter)
+        .padding(.vertical, 16)
     }
 }
 

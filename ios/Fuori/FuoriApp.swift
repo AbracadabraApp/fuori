@@ -4,6 +4,7 @@ import FuoriNetworking
 
 @main
 struct FuoriApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @State private var model: AppModel
 
     init() {
@@ -21,6 +22,14 @@ struct FuoriApp: App {
             RootView()
                 .environment(model)
         }
+    }
+}
+
+/// Only to say which way the app may turn: portrait, except the trailer screen
+/// (OrientationLock in FuoriFeatures)
+final class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        OrientationLock.mask
     }
 }
 
