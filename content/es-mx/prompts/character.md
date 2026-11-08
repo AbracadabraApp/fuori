@@ -2,7 +2,7 @@
 
 > Copied from `content/it/prompts/character.md` on 2026-10-12 for the Mexico pack. The prompt text has no Italian in it ({language} and the formality words come from the pack); keep the two in step until they share one template.
 
-version: 2026-11-07a
+version: 2026-11-08a
 
 The prompt every character gets, for every conversation turn. It is read by
 `lib/prompts/build-turn-prompt.ts`, which fills in the `{placeholders}` from the
@@ -71,11 +71,12 @@ You haven't met them before.
 ```
 You've met them {visits}. The last time was {lastSeen}.
 You remember: {notes}
+Don't tell them again what you've already told them.
 ```
 
 - `{visits}`: "once", "twice", "3 times" (conversations that reached a few exchanges)
 - `{lastSeen}`: "earlier today", "yesterday", "5 days ago", "about 3 weeks ago"
-- `{notes}`: the character's notes about the person, joined with "; ". Written by the end-of-conversation call (`content/it/prompts/memory.md`). Line left out if there are none.
+- `{notes}`: the character's notes about the person, joined with "; ". The line after it is the guardrail from test C5b. Written by the end-of-conversation call (`content/it/prompts/memory.md`). Line left out if there are none.
 
 ## First turn
 
@@ -101,6 +102,11 @@ The conversation goes to Claude as real back-and-forth messages, the last 40 wor
 ## Changelog
 
 Newest first. Each entry: what changed, why, and what prompted it.
+
+### 2026-11-08a: don't tell them again what you've already told them
+- **Added** "Don't tell them again what you've already told them." on its own line after "You remember: {notes}" (met before only; first meetings unchanged). Beginner reads the same block (`lib/beginner.ts`), so it has it too.
+- **Why:** since memory.md 2026-11-07a the notes hold what the character told the person, but nothing said what that's for, and he still told it again as new: in C5b (docs/prompt-trials.md) Don Ramón said "Yo nací en este pueblo…" on visit 3 as if for the first time, with "Told them I was born in San Miguel" in his notes. With the sentence: no replays, and his visits built on what Sam had said; in Italy (Karim) neither version replayed and the sentence did no harm. Topics and words still come back (atardecer, la Parroquia), which helps learning; only the replay is named.
+- **Prompted by:** C5 and C5b, 2026-11-07/08. Josh: "groundhog day conversations feel broken"; asked for a guardrail, not a steer ("Pick up where you left off…" would "encourage same topic"; "Don't repeat yourself" was too broad); "C5b yes".
 
 ### 2026-11-07a: the person is living in the country for a while
 - **Added** "They're living in {country} for a while." before the relationship line.

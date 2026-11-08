@@ -610,7 +610,7 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Reviewed: test designer, 2026-11-08: pass, with one fix: the turn code adds the shared dialogue rules to a replacement prompt too, so B got them twice; B now takes off the copy already in the game's prompt, and a check showed B's prompt is A's plus the one sentence, one copy of the rules. Taken
 - Script: tests/experiments/memory-line.mts
 - Run (2026-11-08, Mac mini, one 3-visit conversation each, side by side): **Mexico, Don Ramón (62 s): hypothesis met.** A replayed once, both judges: on visit 3 "Yo nací en este pueblo y subo aquí casi cada tarde…", told as new although his notes held "Told them I was born in San Miguel". B: none (Grok listed two, both read as not replays: a callback, "La otra vez usted se fue de repente…", and "¿cómo ha estado?"). B's visits built on Sam's walks (the street to the market, a quiet corner) and still repeated the words Sam hears every visit (atardecer, la Parroquia, rosada). **Italy, Karim (56 s): neither replayed**, so Italy can't show the gain; B wasn't worse: each visit brought something new (the shell and the Palio, covering the piazza, the Torre del Mangia), where A's visit 3 was all arranging tomorrow's tour. Files: `tests/experiments/results/c5b-san-miguel-de-allende-el-mirador-san-miguel-2026-11-08T1746.md`, `c5b-siena-piazza-del-campo-2026-11-08T1747.md`
-- Decision: pending Josh (Mexico shows the gain, Italy no harm)
+- Decision: applied (Josh, 2026-11-08: "C5b yes"): character.md 2026-11-08a in both countries; Beginner reads the same block. Not released; goes with the next build
 
 ### H2 (2026-11-08): interview the characters: what do we learn about them?
 - Serves: 3 (local and tipico), 4 (in character)
