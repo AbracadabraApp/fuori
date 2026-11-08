@@ -1,0 +1,227 @@
+{
+ "run": "2026-11-08-19-28-19-pilot-scorecard",
+ "at": "2026-11-08T19:28:19.893Z",
+ "label": "pilot-scorecard",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "vale-libros-tecolote",
+  "name": "Vale Ortiz",
+  "role": "librera",
+  "city": "Ciudad de México",
+  "place": "Libros Tecolote"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes! Bienvenido a Libros Tecolote. Si buscas algo, aquí estoy."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Yo... busco un libro. Para... aprender español."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bien, pues llegaste al lugar correcto. Tengo un estante con libros fáciles, justo para empezar. ¿Cuánto español sabes ya?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... poco. Muy poco. Soy... principiante."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, entonces el estante es para ti. Está allá junto a la ventana, con libros cortos y muy sencillos. ¿Prefieres historias o algo con ejercicios?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ejercicios, por favor. Es más... fácil para mí."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, entonces mira los cuadernos de la izquierda, ahí están los de ejercicios. Tómate tu tiempo, y si dudas, me preguntas."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, gracias. Voy a... mirar. Ehm... adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, que te vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Hola, ¡qué gusto verte otra vez! ¿Cómo te fue con los cuadernos de ejercicios?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Los cuadernos... son buenos. Yo... estudio un poco cada día."
+   },
+   {
+    "who": "npc",
+    "text": "Qué bien, poco a poco se llega lejos. Y si ya te decidiste por uno, yo te lo cobro aquí con gusto."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí. Quiero este. ¿Cuánto... cuesta?"
+   },
+   {
+    "who": "npc",
+    "text": "A ver, déjame verlo... Este cuesta ciento ochenta pesos. ¿Te lo envuelvo o así lo llevas?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ¿envuelvo? Perdón... repite, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Te pregunto si quieres que lo envuelva en papel, o si te lo doy tal cual, sin envolver."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sin papel, por favor. Así... está bien. Aquí está el dinero. Gracias. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Gracias a ti. ¡Hasta luego, que te vaya muy bien!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Hola, buenas tardes. Pasa, pasa, estás en tu casa. Cualquier cosa me dices."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... hola. Gracias. Yo... solo miro, ehm... un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, mira con calma. Los domingos esto se llena de carriolas y aquí adentro es como una pequeña isla. ¿Buscas algo en especial, o solo vienes a curiosear?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... perdón. ¿Carriolas? Más despacio, por favor."
+   },
+   {
+    "who": "npc",
+    "text": "Claro. Carriolas son los carritos de bebé. Los domingos hay muchos bebés en la calle."
+   },
+   {
+    "who": "learner",
+    "text": "Ah... ya entiendo. Bebés. Ehm... busco un libro. Fácil."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, tengo un estante con libros fáciles, justo aquí a la izquierda. Son para empezar con el español. ¿Prefieres libros con ejercicios, o con historias?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... historias, por favor. Ejercicios... ya tengo uno. Gracias. Ehm... adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Claro, con gusto. Hasta luego, que te vaya muy bien."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 17.2,
+    "wordsMax": 25,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 8.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 16.2,
+    "wordsMax": 22,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 10
+   },
+   "repeats": [
+    {
+     "said": "¡Hasta luego, que te vaya muy bien!",
+     "earlier": "Hasta luego, que te vaya muy bien."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 18.2,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 9.5
+   },
+   "repeats": [
+    {
+     "said": "Perfecto, tengo un estante con libros fáciles, justo aquí a la izquierda.",
+     "earlier": "Tengo un estante con libros fáciles, justo para empezar."
+    },
+    {
+     "said": "¿Prefieres libros con ejercicios, o con historias?",
+     "earlier": "¿Prefieres historias o algo con ejercicios?"
+    },
+    {
+     "said": "Hasta luego, que te vaya muy bien.",
+     "earlier": "Hasta luego, que te vaya muy bien."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 16,
+  "openerWords": 13,
+  "multiQuestion": 0,
+  "learnerShare": 0.30000000000000004,
+  "learnerWords": 9.333333333333334,
+  "repeats": 2
+ },
+ "culture": [
+  "Mexican shops greet customers with warm, polite phrases like \"Bienvenido\" and \"Que te vaya muy bien\" when they leave",
+  "The Mexican peso is the currency (a workbook costing 180 pesos)",
+  "In shops, staff often offer to wrap your purchase in paper (\"¿Te lo envuelvo?\")",
+  "\"Carriolas\" is the Mexican Spanish word for baby strollers",
+  "Families with babies and strollers crowd the streets on Sundays, making it a busy family day out",
+  "\"Estás en tu casa\" is a hospitable expression meaning make yourself at home",
+  "Bookshops like Libros Tecolote use the owl (tecolote, from Nahuatl \"tecolotl\") as a name, a Nahuatl-derived word in Mexican Spanish"
+ ]
+}

@@ -1,0 +1,214 @@
+{
+ "run": "2026-11-08-19-28-19-pilot-scorecard",
+ "at": "2026-11-08T19:28:19.893Z",
+ "label": "pilot-scorecard",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "vale-libros-tecolote",
+  "name": "Vale Ortiz",
+  "role": "librera",
+  "city": "Ciudad de México",
+  "place": "Libros Tecolote"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You work at Libros Tecolote, finding people the book they didn't know they wanted.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola, buenas tardes! Bienvenida a Libros Tecolote. Si buscas algo en especial, aquí estoy."
+   },
+   {
+    "who": "learner",
+    "text": "Hola... ehm... yo busco... un libro. Para aprender español."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, qué bien. Tengo algunos libros para eso, de gramática y también unos cuentos sencillos. ¿Ya hablas un poquito o estás empezando?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... estoy empezando. Un poquito."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, entonces te va a servir algo muy claro y sin tanta vuelta. Te traigo un par de opciones, ven por aquí. ¿Prefieres ejercicios o historias cortas?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... historias cortas, por favor. Ejercicios... difícil."
+   },
+   {
+    "who": "npc",
+    "text": "Entonces historias cortas. Tengo uno con cuentos de Coyoacán, con frases cortas y un vocabulario muy cotidiano, y otro con cuentos para principiantes y un glosario al final. Aquí los tienes, échales un ojo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... gracias. Yo quiero el libro... con glosario. Es más fácil. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Muy buena elección! Adiós, hasta luego, que te vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué gusto verte otra vez. ¿Cómo va el libro de cuentos?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola... ehm... el libro es... bien. Un poquito difícil."
+   },
+   {
+    "who": "npc",
+    "text": "Es normal al principio, y para eso está el glosario del final. Con calma, un cuento a la vez."
+   },
+   {
+    "who": "learner",
+    "text": "Sí... gracias. Ehm... yo leo... un cuento... por día."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien! Un cuento por día es un ritmo perfecto. ¿Cuál te ha gustado más hasta ahora?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... el cuento... del gato. Es corto. Me gusta."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, el del gato, qué bueno. Los cuentos cortos son ideales para empezar."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, gracias... ehm... es verdad. Bueno, yo... tengo que ir. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós! Que tengas un lindo día, hasta luego."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Hola! Qué gusto verte otra vez. ¿Cómo va el libro del gato y compañía?"
+   },
+   {
+    "who": "learner",
+    "text": "Hola... ehm... el libro... bien. Ya casi... termino."
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bien, ya casi lo terminas! Seguro ya te sientes más segura con el español. ¿Cuál fue el último cuento que leíste?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... el último cuento... es de una niña y un perro. Me gusta."
+   },
+   {
+    "who": "npc",
+    "text": "Ay, qué bonito, un cuento de una niña y un perro. Después del gato, otro animalito. Cuando termines el libro, tengo otros cuentos cortitos que te pueden gustar. ¿Quieres que te enseñe algunos?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sí, por favor. Pero... más fáciles, ¿sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Claro que sí, te traigo unos más fáciles, con letra grande y frases cortas. Ven, están en esta mesa de aquí. ¿Te gustan más las historias de animales o las de gente?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... animales, por favor. Me gustan los animales. Gracias... ehm... adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós, hasta luego! Que tengas un lindo domingo."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 21.6,
+    "wordsMax": 34,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 8.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 13.8,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.37,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 21.8,
+    "wordsMax": 33,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 10.5
+   },
+   "repeats": [
+    {
+     "said": "Qué gusto verte otra vez.",
+     "earlier": "Qué gusto verte otra vez."
+    },
+    {
+     "said": "Que tengas un lindo domingo.",
+     "earlier": "Que tengas un lindo día, hasta luego."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 22,
+  "openerWords": 14,
+  "multiQuestion": 0,
+  "learnerShare": 0.2966666666666667,
+  "learnerWords": 9.766666666666667,
+  "repeats": 1
+ },
+ "culture": [
+  "Coyoacán is a well-known historic neighborhood in Mexico City",
+  "\"Tecolote\" is the Mexican Spanish word for owl, from Nahuatl, used here in a bookshop name"
+ ]
+}

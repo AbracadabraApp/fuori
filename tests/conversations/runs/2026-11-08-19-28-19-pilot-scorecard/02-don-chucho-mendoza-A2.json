@@ -1,0 +1,235 @@
+{
+ "run": "2026-11-08-19-28-19-pilot-scorecard",
+ "at": "2026-11-08T19:28:19.893Z",
+ "label": "pilot-scorecard",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, suba a la silla. Ahorita le dejo esos zapatos como espejo."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Gracias. ¿Cuánto es, por favor?"
+   },
+   {
+    "who": "npc",
+    "text": "Aquí la boleada son cincuenta pesos, joven, con cera y cepillo, bien hecha. Deme su pie, a ver, ¿de qué color son esos zapatos, café oscuro?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son café. Café oscuro, sí."
+   },
+   {
+    "who": "npc",
+    "text": "Muy bien, entonces uso la cera café, la buena. Primero les quito el polvo con el cepillo y luego le doy la cera con calma. Los buenos zapatos piden paciencia, joven."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sí, sí. Más despacio, por favor. ¿Paciencia?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, paciencia, joven, es esperar con calma. Yo le explico: el zapato no se bolea con prisa. Poquita cera, mucho cepillo, y así brilla. ¿Usted es de aquí, de la ciudad?"
+   },
+   {
+    "who": "learner",
+    "text": "No, no soy de aquí. Soy de Estados Unidos, pero vivo aquí en la ciudad. Gracias, señor. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Qué bueno, joven, bienvenido a la ciudad! Cuídese mucho y vuelva cuando quiera. ¡Adiós!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pase, pase, aquí tiene su silla. ¿Qué tal, otra vez por acá?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, otra vez. Mis zapatos están sucios."
+   },
+   {
+    "who": "npc",
+    "text": "Ya lo veo, joven, esos zapatos piden a gritos una buena boleada. Suba, suba a la silla, que yo me encargo. ¿Los mismos de la vez pasada?"
+   },
+   {
+    "who": "learner",
+    "text": "No, son zapatos negros. Los otros son café."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, negros, muy bien. Esos se lucen bonito con un buen brillo. Deme un momento, que primero les quito el polvo con el cepillo."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, gracias. ¿Cuánto es, usted?"
+   },
+   {
+    "who": "npc",
+    "text": "Son cincuenta pesos, joven, igual que la vez pasada. Ahorita se los dejo como espejo."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, cincuenta pesos, está bien. Gracias, señor. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "¡Adiós, joven! Que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Qué gusto verlo otra vez por aquí. Suba a la silla, que ya le tengo el cepillo listo."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, otra vez. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, joven. Póngase cómodo, que ahorita le saco brillo a esos zapatos. ¿Hoy traen los cafés, verdad?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, hoy son los zapatos café. Los negros no."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, joven, los cafés son bien agradecidos, con la crema correcta quedan como espejo. Ya me pongo a trabajar."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sí, gracias. ¿Cuánto es, señor?"
+   },
+   {
+    "who": "npc",
+    "text": "Son cincuenta pesos, joven, igual que la vez pasada. Me los paga cuando termine, sin prisa."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, está bien, cincuenta pesos. Gracias, señor. ¡Adiós!"
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven. Que le vaya muy bien y cuídese mucho."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 26,
+    "wordsAvg": 23.6,
+    "wordsMax": 31,
+    "longShare": 0.4,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.25,
+    "wordsPerLine": 10
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 17.6,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 7.8
+   },
+   "repeats": [
+    {
+     "said": "Suba, suba a la silla, que yo me encargo.",
+     "earlier": "Pásele, pásele, suba a la silla."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 21,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 17.2,
+    "wordsMax": 21,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 7.5
+   },
+   "repeats": [
+    {
+     "said": "Suba a la silla, que ya le tengo el cepillo listo.",
+     "earlier": "Pásele, pásele, suba a la silla."
+    },
+    {
+     "said": "Son cincuenta pesos, joven, igual que la vez pasada.",
+     "earlier": "Son cincuenta pesos, joven, igual que la vez pasada."
+    },
+    {
+     "said": "Que le vaya muy bien y cuídese mucho.",
+     "earlier": "Que le vaya muy bien."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 19,
+  "openerWords": 16,
+  "multiQuestion": 0,
+  "learnerShare": 0.25666666666666665,
+  "learnerWords": 8.433333333333334,
+  "repeats": 2
+ },
+ "culture": [
+  "Shoe shiners (boleros) work on the street or in plazas, and getting a shoeshine is called a \"boleada\"",
+  "\"Bolear\" means to shine shoes in Mexican Spanish",
+  "A shoeshine costs about 50 pesos in this city, with wax and brush",
+  "Shoe shiners use wax and brushes, working carefully until the shoes shine \"like a mirror\"",
+  "Customers sit up on the shiner's chair (\"suba a la silla\")",
+  "\"Ahorita\" means right now, in a little bit, or soon, and is a common Mexican diminutive of time",
+  "Polite address: strangers are addressed as \"joven\" (young man) and \"usted\"",
+  "Greetings with \"Pásele, pásele\" are a friendly Mexican way to invite someone in",
+  "\"Buenas tardes\" is the greeting used in the afternoon",
+  "Common friendly farewells are \"Cuídese mucho\" and \"Que le vaya muy bien\"",
+  "Payment can be made after the service is finished, with no rush (\"sin prisa\")",
+  "Patience and taking time (\"paciencia\", \"con calma\") are valued in craftsmanship",
+  "Regular customers are welcomed warmly, and vendors remember them and their shoes",
+  "Mexicans often welcome foreigners warmly (\"bienvenido a la ciudad\")",
+  "Diminutives like \"poquita\" are commonly used in Mexican speech"
+ ]
+}

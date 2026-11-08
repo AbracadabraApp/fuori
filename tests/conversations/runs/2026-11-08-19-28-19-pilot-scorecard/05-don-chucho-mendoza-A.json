@@ -1,0 +1,240 @@
+{
+ "run": "2026-11-08-19-28-19-pilot-scorecard",
+ "at": "2026-11-08T19:28:19.893Z",
+ "label": "pilot-scorecard",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pásele, pásele, suba a la silla. Aquí se deja el zapato como espejo. ¿Cómo ve esos zapatos, necesitan una buena boleada?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, mis zapatos están muy sucio. ¿Cuánto cuesta?"
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto, joven. La boleada completa son sesenta pesos, y le queda como nuevo. Ándele, suba el pie derecho aquí en el cajón. ¿Son de piel sus zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son de piel. Son nuevo... no, viejo."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, viejitos pero buenos, ¿verdad? La piel vieja es la que mejor agarra el brillo, ya verá. Voy a empezar con el cepillo para quitarle el polvo. ¿Hace mucho que los tiene?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, dos años. Los tengo dos años."
+   },
+   {
+    "who": "npc",
+    "text": "Dos años, pues están en buena edad todavía. Mire, ya les saqué el polvo, ahora les pongo la grasa para que la piel se suavice. Aquí en mi puesto la grasa se deja reposar un ratito antes del lustre. ¿Usted vive por aquí, en la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, vivo cerca de aquí, en la Roma. Bueno, gracias, don Chucho. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Adiós, joven, que le vaya muy bien. Aquí lo espero cuando quiera otra boleada. ¡Hasta luego!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Ya volvió por acá. ¿Cómo andan esos zapatos de piel?"
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, don Chucho. Mis zapatos están bien, pero sucio otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, pues con estas calles de la Roma se ensucian rápido, ni modo. Súbase a la silla y le echo otra boleada."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. ¿Cuánto cuesta otra vez?"
+   },
+   {
+    "who": "npc",
+    "text": "Sesenta pesos, igual que la vez pasada. Para usted no cambia el precio, joven."
+   },
+   {
+    "who": "learner",
+    "text": "Okay, sesenta pesos. Está bien. Gracias, don Chucho."
+   },
+   {
+    "who": "npc",
+    "text": "Ándele, joven, ya me pongo con el cepillo. ¿Y usted cómo le hace para caminar tanto por la Roma sin que se le gasten los zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Perdón, no entiendo todo. Yo camino mucho, sí. Los zapatos son viejos. Gracias, don Chucho, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto, joven. Que le vaya muy bien, y aquí lo espero otra vez."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas, joven! Pase, pase, aquí hay lugar. Hoy es domingo y el zapato se lo agradece."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, don Chucho. Mis zapatos están sucio otra vez."
+   },
+   {
+    "who": "npc",
+    "text": "Ya lo vi, joven, con tanto caminar por la Roma se ensucian rápido. Suba a la silla, que ahorita se los dejo como nuevos."
+   },
+   {
+    "who": "learner",
+    "text": "Gracias. ¿Cuánto cuesta hoy? Sesenta pesos otra vez?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, joven, sesenta pesos, igual que la otra vez. A usted no le subo el precio."
+   },
+   {
+    "who": "learner",
+    "text": "Okay, está bien. Gracias, don Chucho."
+   },
+   {
+    "who": "npc",
+    "text": "De nada, joven. Ya con el cepillo les quito el polvo primero, y luego la grasa y el brillo. ¿Usted camina mucho por aquí los domingos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, camino mucho los domingos. Me gusta caminar. Bueno, gracias, don Chucho. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven, que le vaya muy bien. Aquí lo espero cuando quiera."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 24,
+    "replies": 5,
+    "wordsMedian": 28,
+    "wordsAvg": 29.2,
+    "wordsMax": 46,
+    "longShare": 0.4,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.21,
+    "wordsPerLine": 9.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 17.8,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 10.3
+   },
+   "repeats": [
+    {
+     "said": "Que le vaya muy bien, y aquí lo espero otra vez.",
+     "earlier": "Adiós, joven, que le vaya muy bien."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 19,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 9.8
+   },
+   "repeats": [
+    {
+     "said": "Suba a la silla, que ahorita se los dejo como nuevos.",
+     "earlier": "Pásele, pásele, suba a la silla."
+    },
+    {
+     "said": "Sí, joven, sesenta pesos, igual que la otra vez.",
+     "earlier": "Sesenta pesos, igual que la vez pasada."
+    },
+    {
+     "said": "Hasta luego, joven, que le vaya muy bien.",
+     "earlier": "Adiós, joven, que le vaya muy bien."
+    },
+    {
+     "said": "Aquí lo espero cuando quiera.",
+     "earlier": "Aquí lo espero cuando quiera otra boleada."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 16,
+  "openerWords": 16,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.2733333333333334,
+  "learnerWords": 9.866666666666667,
+  "repeats": 2.5
+ },
+ "culture": [
+  "Shoeshiners (boleros) work at street stands in Mexico, and a shoeshine is called a \"boleada\"",
+  "Shoeshiners are traditionally addressed respectfully as \"don\" plus first name, like Don Chucho",
+  "Mexican vendors commonly call customers \"joven\" as a friendly, polite term",
+  "\"Pásele, pásele\" is a common Mexican invitation to come in or step up",
+  "\"Ándele\" is a Mexican expression of encouragement or agreement meaning \"go ahead\" or \"that's right\"",
+  "Mexican Spanish often uses the diminutive, as in \"viejitos\", \"ahorita\", and \"ratito\", to sound friendly and soft",
+  "\"Ahorita\" means right now, in a little while, or very soon",
+  "\"Ni modo\" is a Mexican phrase meaning \"oh well\" or \"can't be helped\"",
+  "\"Que le vaya muy bien\" is a warm, polite Mexican farewell",
+  "Colonia Roma (la Roma) is a well-known, walkable Mexico City neighborhood",
+  "Street stands (puestos) are a common way of doing business in Mexican cities",
+  "Prices for services like a shoeshine are usually quoted in pesos, with 60 pesos charged here",
+  "Mexican shoeshiners clean the shoes with a brush, apply grease, then polish them to a shine",
+  "Leather shoes are valued, and old leather is said to take a shine best",
+  "Shoes get dirty quickly on the streets of Mexico City",
+  "Many Mexicans spend Sundays out walking in the city"
+ ]
+}

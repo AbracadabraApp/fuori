@@ -1,0 +1,243 @@
+{
+ "run": "2026-11-08-19-28-19-pilot-scorecard",
+ "at": "2026-11-08T19:28:19.893Z",
+ "label": "pilot-scorecard",
+ "versions": {
+  "country": "es-mx",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "chucho-lustrabotas",
+  "name": "Don Chucho Mendoza",
+  "role": "bolero",
+  "city": "Ciudad de México",
+  "place": "Puesto de boleo de Don Chucho"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You spend your day at your stand, shining shoes with polish and a brush for customers who climb up on the chair for a boleada.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Pase, pase, aquí tiene su silla. ¿Le doy una boleada a esos zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, por favor. Mis zapatos son muy sucio."
+   },
+   {
+    "who": "npc",
+    "text": "Ándele, suba, suba. Estos zapatos están bien sucios, sí, pero con un buen cepillado y su grasita quedan como nuevos. ¿De qué color es la grasa que usamos, café o negra? Digo, ¿de qué color son sus zapatos?"
+   },
+   {
+    "who": "learner",
+    "text": "Mis zapatos son café. Um, marrón."
+   },
+   {
+    "who": "npc",
+    "text": "Café, muy bien. Entonces le voy a poner grasa café, que les va a dar un color bonito. Primero les quito el polvo con el cepillo, así."
+   },
+   {
+    "who": "learner",
+    "text": "Okay, gracias. Usted es muy amable."
+   },
+   {
+    "who": "npc",
+    "text": "Para servirle, joven. Llevo más de cincuenta años en esto, y a mí me gusta que el cliente se vaya contento. ¿Usted es de por aquí, de la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "No, yo soy de Estados Unidos. Pero vivo aquí en la Roma ahora. Bueno, tengo que ir. Muchas gracias, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Con mucho gusto, joven. Que le vaya muy bien, y aquí lo espero cuando quiera. ¡Adiós!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buenas tardes, joven. ¥Pase, pase! ¿Viene a que le dé una boleadita?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, otra vez. Mis zapatos son sucio hoy."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, ya lo conozco, usted vino hace unos días. Súbase a la silla, que ya le pongo la grasa. ¿Son los cafés otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, son los cafés. Gracias, señor."
+   },
+   {
+    "who": "npc",
+    "text": "Con gusto, joven. Ya les quito el polvo primero con el cepillo, y luego les doy su grasita. Estos cafés se ven bien con un buen brillo."
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gusta mucho el brillo. Gracias."
+   },
+   {
+    "who": "npc",
+    "text": "Pues aquí se lo vamos a dejar bien parejito. Con la grasa y el cepillo, quedan como espejo. ¿Y ya se acomodó en la Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, me gusta la Roma. Es muy bonito. Bueno, tengo que ir. Gracias, señor, adiós."
+   },
+   {
+    "who": "npc",
+    "text": "Hasta luego, joven. Que le vaya muy bien."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "¡Buenas tardes, joven! Qué gusto verlo otra vez por aquí. Pase, pase, siéntese en la silla."
+   },
+   {
+    "who": "learner",
+    "text": "Buenas tardes, señor. Sí, otra vez. Mis zapatos son sucio."
+   },
+   {
+    "who": "npc",
+    "text": "Ya veo, ya veo, están bien sucios. No se preocupe, con la grasa y el cepillo quedan como nuevos. ¿Los mismos zapatos cafés de la otra vez?"
+   },
+   {
+    "who": "learner",
+    "text": "Sí, los mismos. Son los zapatos cafés."
+   },
+   {
+    "who": "npc",
+    "text": "Perfecto, entonces vamos a darles su buena boleada. Ponga los pies aquí en los descansos, joven. Este café con una buena grasa se ve muy elegante."
+   },
+   {
+    "who": "learner",
+    "text": "Okay, gracias. Los pies aquí, sí?"
+   },
+   {
+    "who": "npc",
+    "text": "Sí, así mero, muy bien. Ahorita empiezo con el cepillo para quitar el polvo. Usted tranquilo, relájese."
+   },
+   {
+    "who": "learner",
+    "text": "Okay, gracias, señor. Estoy tranquilo. Um, bueno, tengo que ir ahora. Adiós, hasta luego."
+   },
+   {
+    "who": "npc",
+    "text": "Está bien, joven, que le vaya muy bien. Aquí lo espero cuando quiera. Hasta luego."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 27,
+    "wordsAvg": 25.2,
+    "wordsMax": 38,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 10
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 24,
+    "wordsAvg": 19.2,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 9
+   },
+   "repeats": [
+    {
+     "said": "Ya les quito el polvo primero con el cepillo, y luego les doy su grasita.",
+     "earlier": "Primero les quito el polvo con el cepillo, así."
+    },
+    {
+     "said": "Que le vaya muy bien.",
+     "earlier": "Que le vaya muy bien, y aquí lo espero cuando quiera."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 20.2,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 9.3
+   },
+   "repeats": [
+    {
+     "said": "No se preocupe, con la grasa y el cepillo quedan como nuevos.",
+     "earlier": "Con la grasa y el cepillo, quedan como espejo."
+    },
+    {
+     "said": "¿Los mismos zapatos cafés de la otra vez?",
+     "earlier": "¿Son los cafés otra vez?"
+    },
+    {
+     "said": "Está bien, joven, que le vaya muy bien.",
+     "earlier": "Que le vaya muy bien, y aquí lo espero cuando quiera."
+    },
+    {
+     "said": "Aquí lo espero cuando quiera.",
+     "earlier": "Que le vaya muy bien, y aquí lo espero cuando quiera."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 24,
+  "openerWords": 16,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.26,
+  "learnerWords": 9.433333333333334,
+  "repeats": 3
+ },
+ "culture": [
+  "Shoeshiners (boleros) work in Mexico, giving a 'boleada' (shoeshine), often as a lifelong trade",
+  "'Boleada' and 'boleadita' are Mexican words for a shoeshine",
+  "Shoes are polished with brush, polish ('grasa'), and a final shine",
+  "'Café' is used for the color brown, and 'grasa' for shoe polish",
+  "'Ándele' and 'pase, pase' are friendly Mexican expressions of encouragement and welcome",
+  "'Joven' is a polite way to address a younger man",
+  "'Ahorita' means right now or in a little while, and diminutives like 'grasita' and 'parejito' are common and friendly",
+  "'Así mero' is a colloquial Mexican phrase meaning 'exactly like that'",
+  "'Bien sucios' uses 'bien' as an intensifier, common in Mexican Spanish",
+  "Service workers use polite 'usted' and courteous phrases like 'Para servirle' and 'Que le vaya muy bien'",
+  "Customers are welcomed back warmly and recognized as regulars",
+  "La Roma (Colonia Roma) is a well-known Mexico City neighborhood where foreigners often live",
+  "Shoeshiners work from a chair with footrests ('descansos'), where clients sit while their shoes are shined",
+  "Clean, shiny shoes are valued as elegant"
+ ]
+}
