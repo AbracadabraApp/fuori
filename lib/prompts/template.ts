@@ -28,10 +28,23 @@ export function setPartsOff(file: string, names: string[]): void {
   else partsOff.delete(file);
 }
 
+/**
+ * A prompt file's text replaced, for experiments only (a variant tested against
+ * today's, docs/prompt-testing.md): "beginner.md" → a function from the file's
+ * text to the variant's. Nothing in lib or app sets it; null puts it back.
+ */
+const overrides = new Map<string, (md: string) => string>();
+export function setPromptOverride(file: string, edit: ((md: string) => string) | null): void {
+  if (edit) overrides.set(file, edit);
+  else overrides.delete(file);
+  cache.delete(file);
+}
+
 export function readPromptFile(name: string): PromptFile {
   const hit = cache.get(name);
   if (hit) return hit;
-  const md = readFileSync(join(process.cwd(), 'content', pack.id, 'prompts', name), 'utf8');
+  const raw = readFileSync(join(process.cwd(), 'content', pack.id, 'prompts', name), 'utf8');
+  const md = overrides.get(name)?.(raw) ?? raw;
   const version = md.match(/^version:\s*(\S+)/m)?.[1];
   if (!version) throw new Error(`${name}: missing "version:" line`);
   // A block can be written as named parts, "## <heading> › <part>", one fenced

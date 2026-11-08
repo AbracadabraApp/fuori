@@ -1,0 +1,695 @@
+{
+ "removed": [],
+ "results": [
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A1",
+   "run": 0,
+   "reply": "[english] Ha, a hungry man on a Saturday night is in the right place. For food, walk around the Jardín to the street stands and restaurants.\n[word] Hay tacos cerca del Jardín.\n[question] ¿Qué quiere comer, Joshua?\n[answer] Quiero tacos, por favor.",
+   "ms": 2947,
+   "claude": {
+    "offers": false,
+    "reason": "Beto only points Joshua toward street stands and restaurants near the Jardín, mentions that tacos are nearby, and asks what he wants to eat, but he never offers, shares, or takes an order for food himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only points the learner toward nearby stands and restaurants and talks about food, which does not count as offering it himself or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 34,
+    "langShare": 0.2647058823529412,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A1",
+   "run": 1,
+   "reply": "[word] Ah, tiene hambre.\n[english] I only drive taxis, but there are plenty of food stands right around the Jardín.\n[question] ¿Quiere comer tacos o una torta?\n[answer] Quiero tacos, por favor.",
+   "ms": 2576,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he only drives taxis and points the learner to nearby food stands, and his question about tacos or a torta is just a suggestion of what to get there, not an offer or order-taking from him."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only points the learner to nearby food stands and asks which food they prefer, which is talking about food rather than offering, sharing, inviting, or taking an order himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 24,
+    "langShare": 0.375,
+    "answers": 1,
+    "closingWords": 6
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A1",
+   "run": 2,
+   "reply": "[word] Ah, tiene hambre.\n[english] I can't feed you, but there are food stands and restaurants all around the Jardín.\n[word] Hay tacos muy buenos aquí cerca.\n[question] ¿Le gustan los tacos?\n[answer] Sí, me gustan los tacos.",
+   "ms": 2769,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he can't feed the learner and only points to nearby food stands and restaurants and mentions good tacos nearby, which is a recommendation and not an offer of his own food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto explicitly says he can't feed the learner and only points them to nearby stands and restaurants, which does not count."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 28,
+    "langShare": 0.4642857142857143,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A1",
+   "run": 3,
+   "reply": "[english] Ha, then you're in luck. Plenty of food stands and restaurants are right around the Jardín, and I don't sell any, I just drive.\n[word] Hay restaurantes cerca del Jardín.\n[question] ¿Qué quiere comer?\n[answer] Quiero tacos, por favor.",
+   "ms": 2757,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he doesn't sell food, only points the learner to restaurants and food stands near the Jardín, and asks what they'd like to eat as conversation, without offering, sharing, or taking an order for food himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only points the learner to nearby restaurants and asks what they want to eat while stating he does not sell food, which is talking about food rather than offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 32,
+    "langShare": 0.25,
+    "answers": 1,
+    "closingWords": 3
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A1",
+   "run": 4,
+   "reply": "[english] Ha, then you're in the right place for the evening: lots of food around the Jardín, though I only drive taxis.\n[word] Tengo hambre también.\n[question] ¿Qué le gusta comer?\n[answer] Me gustan los tacos.",
+   "ms": 2720,
+   "claude": {
+    "offers": false,
+    "reason": "Beto only mentions that there is lots of food around the Jardín, says he is hungry too, and asks what the learner likes to eat, without offering, sharing, inviting the learner to eat with him, or taking an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only notes that food is available around the Jardín, says he is hungry too, and asks what the learner likes to eat, without offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 28,
+    "langShare": 0.25,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A1",
+   "run": 5,
+   "reply": "[english] Ha, then you're in the right place. I only drive, but the Jardín has food everywhere around it.\n[word] Hay tacos y esquites aquí cerca.\n[question] ¿Qué quiere comer, Joshua?\n[answer] Quiero unos tacos, por favor.",
+   "ms": 2773,
+   "claude": {
+    "offers": false,
+    "reason": "Beto, a taxi driver, only says he just drives and points out that tacos and esquites are available nearby, then asks what the learner wants to eat; he does not offer, share, or take an order for food himself, and the 'Quiero unos tacos' line is just a suggested learner reply."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only notes that food is nearby and asks what Joshua wants to eat; he does not offer, share, invite, or take an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 28,
+    "langShare": 0.35714285714285715,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A1",
+   "run": 6,
+   "reply": "[english] Ha, a taxi driver knows where to eat. Right around the Jardín there are plenty of places and little street stands.\n[word] Tengo hambre también.\n[question] ¿Qué quiere comer: tacos o pizza?\n[answer] Quiero tacos, por favor.",
+   "ms": 2618,
+   "claude": {
+    "offers": false,
+    "reason": "Beto only talks about nearby places to eat, says he is hungry too, and asks whether the learner wants tacos or pizza, which is a recommendation-style question and not an offer of his own food or an order being taken."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only says he is hungry too and asks whether the learner prefers tacos or pizza while pointing to places around the Jardín, which is talking about food rather than offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 30,
+    "langShare": 0.3,
+    "answers": 1,
+    "closingWords": 6
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A1",
+   "run": 7,
+   "reply": "[word] Ah, tiene hambre.\n[english] I can't feed you, but there are plenty of food stands and restaurants right around the Jardín.\n[word] Hay tacos muy buenos aquí cerca.\n[question] ¿Quiere tacos o quiere pizza?\n[answer] Quiero tacos, por favor.",
+   "ms": 2648,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he can't feed the learner and only points to nearby food stands and restaurants, recommending tacos and asking a preference question, which is talk about food rather than offering, sharing, or taking an order for food himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto says he cannot feed the learner and only points to nearby stands/restaurants and recommends tacos, which does not count as offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 31,
+    "langShare": 0.45161290322580644,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A1",
+   "run": 8,
+   "reply": "[english] Ah, hungry! I'm just a taxi driver, but the streets around the Jardín are full of food.\n[word] Hay mucha comida cerca del Jardín.\n[question] ¿Quiere tacos o quiere pizza?\n[answer] Quiero tacos, por favor.",
+   "ms": 2592,
+   "claude": {
+    "offers": false,
+    "reason": "Beto only says he is just a taxi driver and that there is plenty of food near the Jardín, then asks whether the learner wants tacos or pizza, which is talk about food and a way to point toward options, not Beto giving, sharing, inviting, or taking an order himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only notes that food is available nearby and asks which option the learner prefers, without offering, sharing, inviting, or taking any order himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 28,
+    "langShare": 0.39285714285714285,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A1",
+   "run": 9,
+   "reply": "[english] Ha, good timing. The Jardín is full of food tonight, and I only drive taxis, so I can't feed you.\n[word] Hay restaurantes alrededor del Jardín.\n[question] ¿Quiere comer tacos o pizza?\n[answer] Quiero tacos, por favor.",
+   "ms": 2560,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he only drives taxis and can't feed the learner, and he only points out restaurants around the Jardín and asks which food the learner would like, without offering, sharing, inviting, or taking an order himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto explicitly says he cannot feed the learner and only points to nearby restaurants while asking a food-preference question, which does not count as offering, sharing, inviting, or taking an order himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 30,
+    "langShare": 0.3333333333333333,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "mx-beto-torta",
+   "label": "A1",
+   "run": 0,
+   "reply": "[english] I'm just the taxi driver, so no tortas from me, but there are stalls right around the Jardín.\n[word] Hay puestos en la calle Canal.\n[question] ¿Vive usted en San Miguel?\n[answer] Sí, vivo aquí. Soy de …",
+   "ms": 2661,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he is just the taxi driver and provides no tortas himself; he only points the learner to street stalls near the Jardín and asks where they live, which is not offering food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto explicitly says he is only the taxi driver and will not provide tortas, merely directing the learner to nearby stalls."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 29,
+    "langShare": 0.3793103448275862,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "mx-beto-torta",
+   "label": "A1",
+   "run": 1,
+   "reply": "[word] Buena idea, Joshua.\n[english] I'm a taxi driver, so I can't make you a torta, but there are good ones on the streets just off the Jardín.\n[word] Las tortas están cerca de aquí.\n[question] ¿Vive usted aquí en San Miguel?\n[answer] Sí, vivo aquí. Soy de …",
+   "ms": 2642,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he can't make a torta and only points the learner to good places near the Jardín, which is a recommendation, not an offer or order-taking of food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto explicitly says he cannot make a torta and only points the learner to nearby street stands."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 38,
+    "langShare": 0.39473684210526316,
+    "answers": 1,
+    "closingWords": 6
+   }
+  },
+  {
+   "moment": "mx-beto-torta",
+   "label": "A1",
+   "run": 2,
+   "reply": "[english] I'm just a taxi driver, so no tortas here, but the streets around the Jardín have plenty of stands.\n[word] Una torta es una buena idea.\n[question] ¿Le gusta la torta con carne o con queso?\n[answer] Me gusta con queso.",
+   "ms": 2781,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he's just a taxi driver with no tortas, only points to stands around the Jardín, and asks about the learner's food preferences, without offering, sharing, inviting, or taking an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto explicitly says he has no tortas as a taxi driver and only directs the learner to nearby stands, which does not count as offering food himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 34,
+    "langShare": 0.4411764705882353,
+    "answers": 1,
+    "closingWords": 9
+   }
+  },
+  {
+   "moment": "mx-beto-torta",
+   "label": "A1",
+   "run": 3,
+   "reply": "[english] I'm a taxi driver, so no tortas here, but the stalls are all around the Jardín.\n[word] Hay puestos en la calle Canal.\n[question] ¿Quiere ir a pie o en taxi?\n[answer] Voy a pie, gracias.",
+   "ms": 2536,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he has no tortas as a taxi driver and only points the learner to stalls on calle Canal and asks whether they want to go on foot or by taxi, without offering, sharing, inviting, or taking an order for food."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only directs the learner to nearby food stalls and asks whether to walk or take a taxi, without offering, sharing, or taking an order for food himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 29,
+    "langShare": 0.4482758620689655,
+    "answers": 1,
+    "closingWords": 7
+   }
+  },
+  {
+   "moment": "mx-beto-torta",
+   "label": "A1",
+   "run": 4,
+   "reply": "[english] I don't sell food, I only drive a taxi. But the tortas are right around the plaza, a minute's walk.\n[word] Hay tortas muy buenas aquí cerca.\n[question] ¿Le gusta la torta con carne o con queso?\n[answer] Me gusta con queso.",
+   "ms": 2723,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he doesn't sell food, only points the learner to nearby tortas, and asks a preference question about fillings, which is recommending/talking about food rather than offering, sharing, inviting, or taking an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto explicitly says he only drives a taxi and merely points the learner to nearby tortas, which does not count as offering food himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 35,
+    "langShare": 0.42857142857142855,
+    "answers": 1,
+    "closingWords": 9
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A2",
+   "run": 0,
+   "reply": "[english] Ha, then you're in the right place for dinner.\n[word] Hay tacos cerca del Jardín.\n[question] ¿Quiere tacos o pizza?\n[answer] Tacos, por favor.",
+   "ms": 2476,
+   "claude": {
+    "offers": false,
+    "reason": "Beto only mentions that there are tacos near the Jardín and asks which the learner prefers, which points them to nearby food rather than offering, sharing, or taking an order for food himself."
+   },
+   "grok": {
+    "offers": true,
+    "reason": "Beto asks “¿Quiere tacos o pizza?” so the learner can place a food order (“Tacos, por favor”), which is more than pointing out or recommending a place."
+   },
+   "counts": false,
+   "disagree": true,
+   "guards": {
+    "words": 18,
+    "langShare": 0.5,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A2",
+   "run": 1,
+   "reply": "[english] Ah, hungry! I'm just a taxi driver, but there are plenty of places to eat around the Jardín.\n[word] Hay restaurantes cerca del Jardín.\n[question] ¿Quiere tacos o pizza?\n[answer] Quiero tacos, por favor.",
+   "ms": 2775,
+   "claude": {
+    "offers": false,
+    "reason": "Beto only points the learner to nearby restaurants and asks whether they'd like tacos or pizza as a way to guide them, without offering, sharing, inviting them to eat with him, or taking an order himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only points the learner toward nearby restaurants and asks which food they prefer, which is talking about food rather than offering, sharing, inviting, or taking an order himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 27,
+    "langShare": 0.3333333333333333,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A2",
+   "run": 2,
+   "reply": "[english] Ha, good timing. The Jardín is full of food tonight, and I know the best spots.\n[word] Hay tacos cerca de aquí.\n[question] ¿Quiere tacos o una torta?\n[answer] Tacos, por favor.",
+   "ms": 2825,
+   "claude": {
+    "offers": false,
+    "reason": "Beto, a taxista, only recommends nearby tacos and asks which the learner prefers (tacos or a torta) as guidance to where to eat, without giving, sharing, inviting the learner to eat with him, or taking an order himself."
+   },
+   "grok": {
+    "offers": true,
+    "reason": "Beto asks whether the learner wants tacos or a torta and cues an order-style reply, which is taking a food order rather than merely recommending a place."
+   },
+   "counts": false,
+   "disagree": true,
+   "guards": {
+    "words": 26,
+    "langShare": 0.38461538461538464,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A2",
+   "run": 3,
+   "reply": "[english] Ha, then you're in the right place. Food is all around the Jardín.\n[word] Hay tacos cerca de aquí.\n[question] ¿Quiere tacos o una torta?\n[answer] Tacos, por favor.",
+   "ms": 2767,
+   "claude": {
+    "offers": false,
+    "reason": "Beto, a taxi driver, only says there are tacos nearby and asks whether the learner wants tacos or a torta, which points toward food options in the area rather than offering, sharing, or taking an order for food himself."
+   },
+   "grok": {
+    "offers": true,
+    "reason": "Beto asks \"¿Quiere tacos o una torta?\" in the manner of soliciting an order for food he does not provide."
+   },
+   "counts": false,
+   "disagree": true,
+   "guards": {
+    "words": 23,
+    "langShare": 0.43478260869565216,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A2",
+   "run": 4,
+   "reply": "[word] ¡Qué bueno! Yo también tengo hambre.\n[english] There are food stands and restaurants all around the Jardín, just a few steps from here.\n[question] ¿Qué quiere comer, Joshua?\n[answer] Quiero tacos, por favor.",
+   "ms": 2954,
+   "claude": {
+    "offers": false,
+    "reason": "Beto only says he is hungry too, points out that food stands and restaurants are near the Jardín, and asks what the learner wants to eat; he doesn't offer, share, or serve any food himself, and the 'Quiero tacos' line is just a suggested learner reply."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only notes his own hunger, points the learner to nearby stands and restaurants, and asks what they want to eat, which is talking about food and directing them elsewhere rather than offering, sharing, inviting, or taking an order himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 26,
+    "langShare": 0.38461538461538464,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A2",
+   "run": 5,
+   "reply": "[english] Ah, then you're in luck: tacos and street food are all around the Jardín. I only drive taxis, so ask at the stalls.\n[word] Tengo hambre también. Es la hora de cenar.\n[question] ¿Quiere comer tacos o una torta?\n[answer] Quiero tacos, por favor.",
+   "ms": 2875,
+   "claude": {
+    "offers": false,
+    "reason": "Beto only points the learner to the stalls around the Jardín, says he's hungry too, and asks which food they'd like (tacos or a torta) without offering, sharing, or taking an order for any food himself, and he explicitly says he only drives taxis."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only points the learner to stalls and says he just drives taxis, so he neither offers food nor takes an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 37,
+    "langShare": 0.3783783783783784,
+    "answers": 1,
+    "closingWords": 6
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A2",
+   "run": 6,
+   "reply": "[english] Ah, then you're in the right place. I only drive, but the streets around the Jardín are full of food.\n[word] Hay mucha comida cerca del Jardín.\n[question] ¿Quiere comer tacos o algo dulce?\n[answer] Quiero comer tacos, por favor.",
+   "ms": 2765,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he only drives and just points out that the streets near the Jardín are full of food, asking what the learner would like to eat, which is talking about food and not offering, sharing, or taking an order for it himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto says he only drives and points the learner to food near the Jardín, so asking about tacos or something sweet is recommending nearby food, not offering, sharing, or taking an order himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 32,
+    "langShare": 0.375,
+    "answers": 1,
+    "closingWords": 6
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A2",
+   "run": 7,
+   "reply": "[english] Ha, a hungry man on a Saturday night. The Jardín is full of food, you're in the right place.\n[word] Hay tacos cerca de aquí.\n[question] ¿Quiere tacos o quiere pizza?\n[answer] Quiero tacos, por favor.",
+   "ms": 2805,
+   "claude": {
+    "offers": false,
+    "reason": "Beto only mentions that there are tacos nearby and asks whether the learner wants tacos or pizza, which is talking about and pointing toward food, not giving, sharing, inviting the learner to eat with him, or taking an order himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only mentions nearby tacos and asks the learner's preference, which is pointing/recommending rather than offering, sharing, inviting, or taking an order himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 29,
+    "langShare": 0.3448275862068966,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A2",
+   "run": 8,
+   "reply": "[english] Ha, me too. For food, walk to the restaurants and food stalls around the Jardín, I only drive.\n[word] Hay tacos cerca de aquí.\n[question] ¿Quiere comer tacos o quesadillas?\n[answer] Quiero tacos, por favor.",
+   "ms": 2656,
+   "claude": {
+    "offers": false,
+    "reason": "Beto only points the learner to nearby restaurants and food stalls, says there are tacos nearby, and asks which they prefer, but he explicitly says he only drives and does not offer, share, or take an order for food himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only points the learner to nearby restaurants and stalls and asks which food they prefer, while stating he only drives."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 28,
+    "langShare": 0.35714285714285715,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "mx-beto-hungry",
+   "label": "A2",
+   "run": 9,
+   "reply": "[word] Ah, tiene hambre.\n[english] I only drive taxis, but there are food stalls and restaurants all around the Jardín.\n[word] Hay muchos restaurantes cerca de aquí.\n[question] ¿Quiere comer tacos o pizza?\n[answer] Quiero tacos, por favor.",
+   "ms": 2560,
+   "claude": {
+    "offers": false,
+    "reason": "Beto clarifies he only drives taxis and merely points to nearby food stalls and restaurants, asking whether the learner wants tacos or pizza as a conversation question, without offering, sharing, inviting, or taking an order for food himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only points the learner toward nearby restaurants and food stalls and talks about food options, which does not count as personally offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 29,
+    "langShare": 0.4827586206896552,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "mx-beto-torta",
+   "label": "A2",
+   "run": 0,
+   "reply": "[english] I can't make you a torta myself, I only drive, but there are plenty of stands around the Jardín.\n[word] Hay tortas muy buenas aquí cerca.\n[question] Joshua, ¿tiene hambre ahora o más tarde?\n[answer] Tengo hambre ahora.",
+   "ms": 2383,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he can't make a torta himself and only points the learner to stands near the Jardín, recommending tortas and asking about hunger without offering, sharing, inviting, or taking an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto explicitly says he cannot make a torta and only points the learner to nearby stands, which does not count as offering food himself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 32,
+    "langShare": 0.40625,
+    "answers": 1,
+    "closingWords": 7
+   }
+  },
+  {
+   "moment": "mx-beto-torta",
+   "label": "A2",
+   "run": 1,
+   "reply": "[english] I'm a taxi driver, so I can't make you a torta, but a few streets from here you'll find plenty.\n[word] Hay tortas cerca del Jardín.\n[question] ¿Vive usted aquí en San Miguel?\n[answer] Sí, vivo aquí en el Centro.",
+   "ms": 2633,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he can't make a torta and only points the learner to places nearby that sell them, which is a recommendation and not an offer, shared food, invitation, or order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto explicitly says he cannot make a torta as a taxi driver and only points the learner to tortas near the Jardín."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 31,
+    "langShare": 0.3548387096774194,
+    "answers": 1,
+    "closingWords": 6
+   }
+  },
+  {
+   "moment": "mx-beto-torta",
+   "label": "A2",
+   "run": 2,
+   "reply": "[english] I'm just a taxi driver, so I can't make you a torta, but there are stalls on the streets around the Jardín.\n[word] Una torta es buena idea.\n[question] ¿Quiere ir en taxi o caminar?\n[answer] Quiero caminar, gracias.",
+   "ms": 2485,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he can't make a torta, only points the learner to street stalls near the Jardín, and asks whether they want to go by taxi or walk, so he never offers, shares, or takes an order for food himself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only says he cannot make a torta and points the learner to street stalls, which does not count as offering food."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 33,
+    "langShare": 0.3333333333333333,
+    "answers": 1,
+    "closingWords": 6
+   }
+  },
+  {
+   "moment": "mx-beto-torta",
+   "label": "A2",
+   "run": 3,
+   "reply": "[word] Muy bien, una torta.\n[english] I'm a taxi driver, so I can't make you one, but there are torta stands right around the plaza.\n[word] Pregunte a una persona en el Jardín.\n[question] Joshua, ¿dónde vive usted en San Miguel?\n[answer] Vivo en …",
+   "ms": 2881,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he can't make a torta because he's a taxi driver and only points the learner toward torta stands near the plaza, without offering, sharing, inviting, or taking an order for food."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto explicitly says he cannot make a torta because he is a taxi driver and only points the learner to stands around the plaza."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 37,
+    "langShare": 0.4864864864864865,
+    "answers": 1,
+    "closingWords": 7
+   }
+  },
+  {
+   "moment": "mx-beto-torta",
+   "label": "A2",
+   "run": 4,
+   "reply": "[word] Buena idea, Joshua.\n[english] I'm a taxi driver, so I can't make you a torta, but the food stalls around the Jardín can.\n[word] Camine una calle por aquí.\n[question] ¿Es usted de Estados Unidos?\n[answer] No, soy de …",
+   "ms": 2768,
+   "claude": {
+    "offers": false,
+    "reason": "Beto explicitly says he can't make a torta and only directs the learner to food stalls around the Jardín, which is pointing to a place rather than offering, sharing, inviting, or taking an order for food."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Beto only says he cannot make a torta and points the learner toward food stalls, which is a recommendation rather than offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 35,
+    "langShare": 0.40625,
+    "answers": 1,
+    "closingWords": 5
+   }
+  }
+ ]
+}

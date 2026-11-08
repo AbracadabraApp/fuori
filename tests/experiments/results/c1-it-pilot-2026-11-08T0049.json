@@ -1,0 +1,110 @@
+{
+ "removed": [
+  "(not the recipe, the kinds of bread)",
+  "(not \"Here you pay at the till first\" then \"Prima la cassa\")",
+  "(not \"Welcome to my bar!\" then \"Buongiorno, benvenuto!\")",
+  "(\"She slides the cornetto onto a plate\", \"Luisa wipes the counter\")",
+  "(\"Here's your cappuccino, nice and hot\")",
+  "(\"let me ask you\", \"let's start with a simple question\", \"let's keep it simple\")",
+  "(\"that's how we ask it here\", \"here's a nice way to say goodbye\")",
+  "(\"Un cornetto, per favore.\", not \"Vorrei mangiare un cornetto, per favore.\")",
+  "(\"Sono stanco\", not \"Sono un po' stanco, ma contento\"; \"Sì, mi piace.\", not \"Sì, mi piace molto, soprattutto la mattina con un cornetto.\")",
+  "(\"Vuole zucchero o panna?\" → \"sugar or cream?\")",
+  "(\"Vuole un caffè o un cappuccino?\" needs no \"coffee or cappuccino?\")",
+  "(\"Un cornetto, per favore.\" → \"A cornetto (a sweet croissant), please.\")"
+ ],
+ "results": [
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A",
+   "run": 0,
+   "reply": "[word] Ah, Campo dei Fiori! Che buono!\n[english] I think you're right about the carbonara, it's the classic. The osteria sounds like a good find.\n[word] Io mangio sempre la pizza qui.\n[question] Domani lavora o studia?\n[answer] Domani lavoro.",
+   "ms": 3548,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on Campo dei Fiori, agrees about carbonara, mentions that she always eats pizza there, and asks a work/study question; she never offers, shares, invites the learner to have, or takes an order for food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only comments on the food and says she always eats pizza there; she does not offer, share, invite the learner, or take an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 33,
+    "langShare": 0.48484848484848486,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A",
+   "run": 1,
+   "reply": "[word] Campo de' Fiori, che bella zona!\n[english] Good to know there's a spot for cacio e pepe, I'll remember it. And yes, carbonara is the classic one for me too.\n[word] Adesso torno a lezione.\n[question] Anche Lei ha lezione oggi?\n[answer] No, oggi non ho lezione.",
+   "ms": 3649,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on the Campo de' Fiori area, says she'll remember the osteria, agrees carbonara is the classic, and mentions going back to class; she never offers, shares, or invites the learner to have food or drink, or takes an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only talks about food preferences and a restaurant the learner already found, without offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 38,
+    "langShare": 0.39473684210526316,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "B",
+   "run": 0,
+   "reply": "[word] Ah, vicino a Campo de' Fiori!\n[word] Anche io mangio bene qui fuori.\n[english] Ha, so you're a carbonara man too, I think. Time for me to get back to my books soon.\n[question] Va a Campo de' Fiori oggi?\n[answer] Sì, vado a Campo de' Fiori.",
+   "ms": 3154,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on Campo de' Fiori, mentions eating well out, jokes about carbonara, and asks if the learner is going there today; she never offers, shares, invites the learner to eat or drink with her, or takes an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only talks about food and plans near Campo de' Fiori and does not offer, share, invite the learner to consume, or take an order for food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 37,
+    "langShare": 0.4864864864864865,
+    "answers": 1,
+    "closingWords": 6
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "B",
+   "run": 1,
+   "reply": "[word] Ah, lo conosco, è buono!\n[word] Allora la carbonara è la prima.\n[english] Campo dei Fiori is lovely in the morning, when the market is on.\n[question] Vuole un pezzo della mia pizza?\n[answer] Sì, grazie, volentieri!",
+   "ms": 2641,
+   "claude": {
+    "offers": true,
+    "reason": "Giorgia asks \"Vuole un pezzo della mia pizza?\" which offers to share her own food with the learner, and she even answers \"Sì, grazie, volentieri!\" herself, though as a student she would not normally provide food."
+   },
+   "grok": {
+    "offers": true,
+    "reason": "Giorgia asks the learner if they want a piece of her own pizza, which is a direct offer to share her food."
+   },
+   "counts": true,
+   "disagree": false,
+   "guards": {
+    "words": 30,
+    "langShare": 0.5666666666666667,
+    "answers": 1,
+    "closingWords": 6
+   }
+  }
+ ]
+}

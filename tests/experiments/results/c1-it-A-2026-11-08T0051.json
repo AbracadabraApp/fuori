@@ -1,0 +1,925 @@
+{
+ "removed": [],
+ "results": [
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A1",
+   "run": 0,
+   "reply": "[word] Non è vero, parla bene!\n[word] Anche io amo Siena.\n[question] Da dove viene, Sam?\n[answer] Vengo da …",
+   "ms": 2451,
+   "claude": {
+    "offers": false,
+    "reason": "Carla Nesti only compliments Sam's Italian, says she loves Siena, and asks where he is from; she offers no food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments the learner's Italian, says she loves Siena, and asks where Sam is from, with no food or drink offer."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 13,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A1",
+   "run": 1,
+   "reply": "[word] Ma parla già molto bene!\n[word] Io sono di Siena, della contrada.\n[question] Di dov'è Lei?\n[answer] Sono di …",
+   "ms": 2592,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only compliments the learner's Italian, mentions she is from Siena's contrada, and asks where the learner is from; she makes no offer, invitation, or order-taking involving food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments the learner's Italian, says she is from Siena, and asks where the learner is from, with no food or drink offer."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 14,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 3
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A1",
+   "run": 2,
+   "reply": "[word] Ma parla bene, Sam!\n[word] Io sono di Siena, della contrada.\n[question] E Lei, di dov'è?\n[answer] Sono di …",
+   "ms": 2732,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only compliments Sam's Italian, says she is from Siena's contrada, and asks where Sam is from; she makes no offer, invitation, or order involving food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla Nesti only compliments the learner, says she is from Siena, and asks where they are from, with no food or drink offer."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 18,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A1",
+   "run": 3,
+   "reply": "[word] Ma parla benissimo, davvero!\n[word] Io sono di Siena, della contrada.\n[question] Di dov'è Lei?\n[answer] Sono di …",
+   "ms": 2557,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only compliments the learner's Italian, says she is from Siena's contrada, and asks where the learner is from; she makes no offer, invitation, or order involving food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments the learner's Italian, says she is from Siena, and asks where the learner is from, with no offer of food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 15,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 3
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A1",
+   "run": 4,
+   "reply": "[word] Ma Lei parla già bene!\n[word] Io sono di Siena, della contrada.\n[question] Di dov'è Lei?\n[answer] Sono di …",
+   "ms": 2565,
+   "claude": {
+    "offers": false,
+    "reason": "Carla Nesti only compliments the learner's Italian, says she is from Siena's contrada, and asks where the learner is from, without offering, sharing, or inviting the learner to have any food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments the learner’s Italian, says she is from Siena, and asks where the learner is from, with no offer of food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 14,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 3
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A1",
+   "run": 5,
+   "reply": "[word] Ma parla bene, Sam!\n[word] Io sono di Siena, da sempre.\n[question] Di dov'è Lei?\n[answer] Sono di …",
+   "ms": 2570,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only compliments Sam's Italian, says she is from Siena, and asks where he is from, with no offer, sharing, invitation, or order involving food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments the learner's Italian, says she is from Siena, and asks where the learner is from, with no food or drink offer."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 13,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 3
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A1",
+   "run": 6,
+   "reply": "[word] Ma parla benissimo, davvero!\n[word] Siena è la mia città.\n[question] Di dove è Lei, Sam?\n[answer] Sono di …",
+   "ms": 2049,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only compliments Sam's Italian, says Siena is her city, and asks where he is from; she makes no offer, sharing, invitation, or order of food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments the learner's Italian, says Siena is her city, and asks where Sam is from, with no offer of food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 14,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A1",
+   "run": 7,
+   "reply": "[word] Ma Lei parla già bene!\n[word] Io sono di Siena, della contrada.\n[question] Di dov'è Lei?\n[answer] Sono di …",
+   "ms": 2420,
+   "claude": {
+    "offers": false,
+    "reason": "Carla Nesti only compliments Sam's Italian, says she is from Siena's contrada, and asks where Sam is from, with no offer, sharing, invitation, or order of food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla Nesti only compliments the learner's Italian, says she is from Siena, and asks where the learner is from, with no food or drink offer."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 16,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 3
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A1",
+   "run": 8,
+   "reply": "[word] Ma parla bene, Sam! Siena è la mia città.\n[english] My family has belonged to the same contrada here for generations.\n[question] Di dov'è Lei, Sam?\n[answer] Sono di …",
+   "ms": 2473,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only compliments Sam's Italian, mentions Siena and her family's contrada, and asks where Sam is from, with no offer, sharing, invitation, or order of food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments Sam’s Italian, mentions her city and family contrada, and asks where Sam is from, with no offer of food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 24,
+    "langShare": 0.5416666666666666,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A1",
+   "run": 9,
+   "reply": "[word] Ma parla bene, Sam!\n[word] Io sono di Siena, della contrada.\n[question] Di dov'è Lei?\n[answer] Sono di …",
+   "ms": 2159,
+   "claude": {
+    "offers": false,
+    "reason": "Carla Nesti only compliments Sam's Italian, says she is from Siena's contrada, and asks where Sam is from; she does not offer, share, or invite Sam to have any food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments the learner’s Italian, says she is from Siena, and asks where they are from, with no offer of food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 13,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 3
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A1",
+   "run": 0,
+   "reply": "[word] Campo dei Fiori, che bella zona!\n[word] Per la carbonara, vado a Testaccio.\n[question] Conosce San Lorenzo? Mangia qui qualche volta?\n[answer] No, non conosco San Lorenzo.",
+   "ms": 2441,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on the area, mentions where she goes for carbonara, and asks whether the learner knows San Lorenzo or eats there; she never offers, shares, invites the learner to eat, or takes an order, and the [answer] line is just a suggested learner reply."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "She only recommends areas and restaurants for pasta and asks if the learner knows or eats in San Lorenzo, without offering, sharing, or ordering any food or drink herself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 19,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 7
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A1",
+   "run": 1,
+   "reply": "[word] Vicino a Campo dei Fiori, che bello!\n[english] Yes, carbonara is the classic, and a good osteria is worth keeping secret.\n[word] Io mangio sempre la pizza qui.\n[question] Le piace mangiare la pizza a Roma?\n[answer] Sì, mi piace molto la pizza.",
+   "ms": 3015,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on the osteria, says she always eats pizza there, and asks if the learner likes pizza in Rome, which is talking about food and not offering, sharing, inviting, or taking an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only discusses food preferences and asks whether the learner likes pizza, without offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 34,
+    "langShare": 0.6060606060606061,
+    "answers": 1,
+    "closingWords": 7
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A1",
+   "run": 2,
+   "reply": "[word] Ah, Campo dei Fiori! Che buono!\n[english] Maybe next time you can try the carbonara there too.\n[word] Adesso torno a studiare, purtroppo.\n[question] Va bene, Joshua? Ci vediamo?\n[answer] Sì, ciao! A presto!",
+   "ms": 2666,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on Campo dei Fiori, suggests trying the carbonara there next time (a recommendation), and says goodbye to go study, without offering, sharing, inviting the learner to have, or taking an order for food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only recommends trying carbonara at the restaurant near Campo dei Fiori and says goodbye to study; she does not offer, share, invite, or take an order for food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 29,
+    "langShare": 0.6153846153846154,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A1",
+   "run": 3,
+   "reply": "[word] Vicino a Campo dei Fiori? Bello!\n[word] Anche la carbonara è molto buona.\n[question] Studia anche Lei, o lavora?\n[answer] Lavoro come …",
+   "ms": 2508,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on Campo dei Fiori and carbonara and asks whether the learner studies or works; she offers, shares, or invites nothing food-related, and the \"Lavoro come …\" line is just a suggested answer for the learner."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia Ferri only comments that carbonara is good and asks whether the learner studies or works, without offering, sharing, or ordering any food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 17,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A1",
+   "run": 4,
+   "reply": "[word] Campo de' Fiori, che bella zona!\n[english] Here in San Lorenzo, students eat cheap and well, so you'd like it too.\n[word] Anche qui si mangia bene.\n[question] Viene spesso a San Lorenzo?\n[answer] Sì, vengo spesso.",
+   "ms": 2542,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on Campo de' Fiori, mentions that students eat cheap and well in San Lorenzo, and asks whether the learner visits often; she doesn't offer, share, invite the learner to eat or drink, or take an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only talks about food and recommends eating cheaply and well in San Lorenzo, without offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 30,
+    "langShare": 0.5333333333333333,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A1",
+   "run": 5,
+   "reply": "[word] Ah, vicino a Campo de' Fiori!\n[english] I'd love to try it. Do you want to come to San Lorenzo another day? The trattorie here are cheap and very good.\n[question] Le piace la pizza o preferisce la pasta?\n[answer] Preferisco la pasta.",
+   "ms": 2435,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only invites the learner to visit San Lorenzo another day and recommends its cheap, good trattorie, and asks whether they prefer pizza or pasta, which is talk about food and a restaurant recommendation, not offering, sharing, or serving food herself."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only recommends trattorie in San Lorenzo and invites the learner to visit that area, which is pointing to restaurants rather than offering food herself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 37,
+    "langShare": 0.3783783783783784,
+    "answers": 1,
+    "closingWords": 8
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A1",
+   "run": 6,
+   "reply": "[word] Campo de' Fiori, certo, lo conosco!\n[english] I think you're saying carbonara comes first there, and I'd agree. Now I need to get back to my books soon.\n[question] Quando ha un po' di tempo libero?\n[answer] Ho tempo libero la sera.",
+   "ms": 2576,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only acknowledges Campo de' Fiori, agrees that carbonara comes first, and asks when the learner has free time; she offers, shares, or takes an order for no food or drink and invites the learner to have nothing."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia Ferri only discusses food preferences and a known location and does not offer, share, invite the learner to, or take an order for any food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 34,
+    "langShare": 0.38235294117647056,
+    "answers": 1,
+    "closingWords": 7
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A1",
+   "run": 7,
+   "reply": "[word] Campo de' Fiori è sempre pieno di gente.\n[english] Next time, try the carbonara there and tell me if it's better than the cacio e pepe.\n[question] Lei cucina a casa o mangia fuori?\n[answer] Mangio fuori.",
+   "ms": 2761,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on Campo de' Fiori, suggests the learner try the carbonara there, and asks whether they cook at home or eat out, which is talking about and recommending food, not offering, sharing, inviting or taking an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only recommends trying carbonara at the restaurant and asks whether the learner cooks or eats out, which does not count as offering, sharing, or ordering food herself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 32,
+    "langShare": 0.46875,
+    "answers": 1,
+    "closingWords": 7
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A1",
+   "run": 8,
+   "reply": "[word] Ah, Campo de' Fiori! Bella zona.\n[word] Anche la carbonara è molto buona.\n[question] Mangia spesso fuori, o cucina a casa?\n[answer] Mangio spesso fuori.",
+   "ms": 2511,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on the neighborhood and the carbonara and asks whether the learner eats out or cooks at home; she doesn't offer, share, invite, or take an order for food or drink, and the [answer] line is just a suggested learner reply."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only comments on the area and carbonara and asks whether the learner eats out or cooks at home, without offering food or drink, sharing any, inviting them, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 19,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 7
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A1",
+   "run": 9,
+   "reply": "[word] Vicino a Campo dei Fiori? Bello!\n[word] Anche la carbonara è molto buona.\n[english] I'd love to try that osteria sometime.\n[question] Mangia spesso fuori, o cucina a casa?\n[answer] Mangio spesso fuori.",
+   "ms": 2653,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on the learner's restaurant, says she'd like to try the osteria, and asks whether they eat out or cook at home, which is talking about food and not offering, sharing, inviting, or taking an order for any food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia Ferri only comments on the food and osteria and asks about eating habits, without offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 26,
+    "langShare": 0.7307692307692307,
+    "answers": 1,
+    "closingWords": 7
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A2",
+   "run": 0,
+   "reply": "[word] Non è vero, parla bene!\n[word] Anche io amo Siena. La mia famiglia è di qui.\n[question] Di dove è Lei, Sam?\n[answer] Sono di …",
+   "ms": 2533,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only reassures Sam about his Italian, mentions her love of Siena and her family, and asks where he is from, with no offer, sharing, invitation, or order of food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments the learner's Italian, says she loves Siena and her family is from there, and asks where Sam is from, with no offer of food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 20,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A2",
+   "run": 1,
+   "reply": "[word] Ma parla bene, Sam!\n[word] Io sono di Siena, della contrada.\n[question] E Lei, di dov'è?\n[answer] Sono di …",
+   "ms": 2405,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only compliments Sam's Italian, says she is from Siena's contrada, and asks where Sam is from; she makes no offer or mention of food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments Sam's Italian, says she is from Siena, and asks where Sam is from, with no offer of food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 14,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A2",
+   "run": 2,
+   "reply": "[word] Ma parla benissimo!\n[word] Siena è la mia città.\n[question] Di dov'è Lei, Sam?\n[answer] Sono di …",
+   "ms": 2337,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only compliments Sam's Italian, says Siena is her city, and asks where Sam is from; she does not offer, share, or invite him to have any food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla Nesti only compliments the learner's Italian, says Siena is her city, and asks where they are from, with no food or drink offer."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 12,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A2",
+   "run": 3,
+   "reply": "[word] Ma parla benissimo, Sam!\n[word] Siena è la mia città.\n[question] Di dov'è Lei?\n[answer] Sono di …",
+   "ms": 2236,
+   "claude": {
+    "offers": false,
+    "reason": "Carla Nesti only compliments Sam's Italian, says Siena is her city, and asks where Sam is from, without offering, sharing, or inviting Sam to have any food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla Nesti only compliments the learner's Italian, says Siena is her city, and asks where they are from, with no food or drink offer."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 12,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 3
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A2",
+   "run": 4,
+   "reply": "[word] Ma va bene, parla già!\n[word] Io sono di Siena, della contrada.\n[question] E Lei, di dov'è?\n[answer] Sono di …",
+   "ms": 2441,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only encourages the learner, says she is from Siena's contrada, and asks where the learner is from; she offers no food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla Nesti only encourages the learner's Italian and asks where they are from, with no mention of food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 15,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A2",
+   "run": 5,
+   "reply": "[word] Ma parla benissimo, Sam!\n[word] Io sono di Siena, della contrada.\n[question] Di dove è Lei?\n[answer] Sono di …",
+   "ms": 1942,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only compliments Sam's Italian, says she is from Siena's contrada, and asks where Sam is from, with no mention of offering, sharing, or ordering food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments the learner's Italian, says she is from Siena, and asks where they are from, with no offer of food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 14,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A2",
+   "run": 6,
+   "reply": "[word] Ma parla benissimo!\n[word] Anche la mia famiglia ama Siena.\n[question] Da quanto tempo abita qui?\n[answer] Abito qui da … mesi.",
+   "ms": 2393,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only compliments Sam's Italian, mentions her family loving Siena, and asks how long he has lived there; she offers no food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments the learner’s Italian, says her family loves Siena, and asks how long they have lived there—no food or drink is offered."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 14,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A2",
+   "run": 7,
+   "reply": "[word] Ma parla già molto bene!\n[word] Io sono di Siena, della contrada.\n[question] Di dove è Lei?\n[answer] Sono di …",
+   "ms": 2290,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only compliments the learner's Italian, says she is from Siena's contrada, and asks where the learner is from; she offers, shares, or invites nothing related to food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments the learner’s Italian, says she is from Siena, and asks where the learner is from, with no offer of food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 15,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A2",
+   "run": 8,
+   "reply": "[word] Ma va bene! Parla già un po'.\n[word] Io sono di Siena, della contrada.\n[question] Lei di dov'è?\n[answer] Sono di …",
+   "ms": 2125,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only reassures the learner about their Italian, says she is from Siena's contrada, and asks where the learner is from; she mentions no food or drink and offers none."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla Nesti only comments on the learner's Italian and asks where they are from, with no offer of food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 16,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 3
+   }
+  },
+  {
+   "moment": "it-carla-likes-siena",
+   "label": "A2",
+   "run": 9,
+   "reply": "[word] Non è vero, parla bene!\n[word] Io sono di Siena, della contrada.\n[question] Di dove è Lei?\n[answer] Sono di …",
+   "ms": 2006,
+   "claude": {
+    "offers": false,
+    "reason": "Carla only reassures the learner about their Italian, says she is from Siena's contrada, and asks where the learner is from; she offers, shares, or takes orders for no food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Carla only compliments the learner's Italian, says she is from Siena, and asks where the learner is from, with no offer of food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 15,
+    "langShare": 1,
+    "answers": 1,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A2",
+   "run": 0,
+   "reply": "[word] Campo de' Fiori, che bella zona!\n[english] Ha, you are right about the carbonara, I'm with you there.\n[word] Anche io mangio spesso fuori.\n[question] Mangia volentieri anche la pizza?\n[answer] Sì, mi piace la pizza.",
+   "ms": 2557,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on the neighborhood and carbonara, says she often eats out, and asks whether the learner likes pizza, which is talking about food without offering, sharing, inviting, or taking an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only comments on the area and carbonara, says she often eats out, and asks whether the learner likes pizza, which is talk about food rather than an offer, share, invitation, or order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 27,
+    "langShare": 0.5925925925925926,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A2",
+   "run": 1,
+   "reply": "[word] Campo de' Fiori è sempre pieno di gente.\n[word] Anch'io mangio la carbonara lì.\n[english] Now I need to finish this slice before my next lecture.\n[question] Domani lavora o studia?",
+   "ms": 2738,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only mentions finishing her own slice before a lecture and asks about tomorrow's plans; she doesn't offer, share, or invite the learner to have any food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "She only mentions finishing her own slice and talks about eating carbonara, without offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 31,
+    "langShare": 0.6071428571428571,
+    "answers": 0,
+    "closingWords": 4
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A2",
+   "run": 2,
+   "reply": "[word] Ah, sì, conosco quella zona!\n[word] Allora la carbonara è la Sua prima.\n[english] Next time, try carbonara at that same place.\n[question] Vuole la carbonara o la cacio e pepe?\n[answer] La carbonara, grazie.",
+   "ms": 2506,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on the learner's restaurant and suggests trying carbonara there next time; her question \"Vuole la carbonara o la cacio e pepe?\" is a language-practice prompt about choices, not an actual offer or order-taking, and the answer is only a sample reply for the learner."
+   },
+   "grok": {
+    "offers": true,
+    "reason": "Giorgia asks “Vuole la carbonara o la cacio e pepe?” and the prompted reply “La carbonara, grazie” is an order, so she is taking a food order her student role does not provide."
+   },
+   "counts": false,
+   "disagree": true,
+   "guards": {
+    "words": 28,
+    "langShare": 0.7142857142857143,
+    "answers": 1,
+    "closingWords": 8
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A2",
+   "run": 3,
+   "reply": "[word] Campo dei Fiori, che bella zona!\n[english] Fair enough. Here, between lectures, I just eat a slice of pizza.\n[question] Le piace la pizza al taglio?\n[answer] Sì, mi piace molto.",
+   "ms": 2748,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on Campo dei Fiori, mentions that she eats pizza by the slice between lectures, and asks whether the learner likes pizza al taglio, which is talking about food and not offering, sharing, inviting, or taking an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only comments on the area, mentions she eats pizza between lectures, and asks if the learner likes pizza al taglio, without offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 24,
+    "langShare": 0.5,
+    "answers": 1,
+    "closingWords": 6
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A2",
+   "run": 4,
+   "reply": "[word] Campo dei Fiori, che bella zona!\n[english] Maybe you'll try my carbonara one day too. I need to get back to my books soon.\n[word] Adesso devo studiare un po'.\n[question] Anche Lei studia, o lavora a Roma?\n[answer] Lavoro a Roma.",
+   "ms": 2770,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on Campo dei Fiori, mentions maybe trying her carbonara someday (vague talk about food, not an actual offer or invitation), and asks whether the learner studies or works, so she does not offer, share, or serve food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only remarks that the learner might try carbonara someday and then returns to studying, which is talk about food rather than an offer, share, invitation, or order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 35,
+    "langShare": 0.5142857142857142,
+    "answers": 1,
+    "closingWords": 7
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A2",
+   "run": 5,
+   "reply": "[word] Ah, Campo de' Fiori! Bella zona.\n[english] Carbonara is the first one everyone orders, you're right.\n[word] Ora devo tornare a lezione.\n[question] Ci vediamo ancora a San Lorenzo?\n[answer] Sì, a presto!",
+   "ms": 2762,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on Campo de' Fiori and carbonara, says she must return to class, and asks if they'll meet again at San Lorenzo, without offering, sharing, or inviting the learner to have any food or drink."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia Ferri only chats about pasta preferences and Campo de' Fiori before leaving for class, without offering, sharing, or inviting the learner to any food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 26,
+    "langShare": 0.6538461538461539,
+    "answers": 1,
+    "closingWords": 6
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A2",
+   "run": 6,
+   "reply": "[word] Campo de' Fiori, che bella zona!\n[word] Allora la carbonara è la sua prima.\n[english] Ha ragione, it's a classic. But be careful, the places right on the piazza can be pricey.\n[question] Va spesso a Campo de' Fiori?\n[answer] Sì, vado spesso.",
+   "ms": 2779,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on Campo de' Fiori, agrees that carbonara is a classic, warns that piazza restaurants can be pricey, and asks if the learner goes there often; she offers, shares, or invites nothing and takes no order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only comments on the area and restaurants and asks a question, without offering, sharing, or inviting the learner to food or drink."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 36,
+    "langShare": 0.5277777777777778,
+    "answers": 1,
+    "closingWords": 6
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A2",
+   "run": 7,
+   "reply": "[word] Campo dei Fiori, che bella zona!\n[word] Allora il prossimo piatto è la carbonara.\n[english] Yes, you can say that: try the carbonara next time.\n[question] Ha tempo oggi, o studia anche Lei?",
+   "ms": 3081,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on Campo dei Fiori, suggests trying the carbonara next time, and asks whether the learner has time or is studying; she never offers, shares, or invites the learner to have food or drink with her, or takes an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "She only recommends trying carbonara next and talks about food, without offering, sharing, or ordering any herself."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 34,
+    "langShare": 0.6666666666666666,
+    "answers": 0,
+    "closingWords": 7
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A2",
+   "run": 8,
+   "reply": "[word] Ah, Campo dei Fiori! Un bel posto.\n[english] I'm glad you found a good osteria, and yes, carbonara is a classic.\n[word] Io mangio la pizza oggi.\n[question] Le piace la pizza romana?\n[answer] Sì, mi piace molto.",
+   "ms": 2617,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on Campo dei Fiori, says she is eating pizza today, and asks whether the learner likes Roman pizza; she does not offer, share, invite the learner to eat, or take an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only says she is eating pizza today and asks if the learner likes Roman pizza, without offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 30,
+    "langShare": 0.5666666666666667,
+    "answers": 1,
+    "closingWords": 5
+   }
+  },
+  {
+   "moment": "it-giorgia-pizza-offer",
+   "label": "A2",
+   "run": 9,
+   "reply": "[word] Ah, vicino a Campo dei Fiori!\n[word] Allora mangia bene, vedo.\n[english] I'm a student, so I mostly eat my pizza on these steps.\n[question] Le piace la pizza romana?\n[answer] Sì, mi piace molto.",
+   "ms": 2614,
+   "claude": {
+    "offers": false,
+    "reason": "Giorgia only comments on the learner's restaurant, mentions that she eats pizza on the steps, and asks if the learner likes Roman pizza, which is talking about food and not offering, sharing, inviting, or taking an order."
+   },
+   "grok": {
+    "offers": false,
+    "reason": "Giorgia only mentions eating pizza on the steps and asks whether the learner likes Roman pizza, without offering, sharing, inviting, or taking an order."
+   },
+   "counts": false,
+   "disagree": false,
+   "guards": {
+    "words": 27,
+    "langShare": 0.5555555555555556,
+    "answers": 1,
+    "closingWords": 5
+   }
+  }
+ ]
+}
