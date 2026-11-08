@@ -1,0 +1,218 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "andrea-becattini",
+  "name": "Andrea Becattini",
+  "role": "tassista",
+  "city": "Firenze",
+  "place": "Lampredotto da Pollini"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Che giornataccia grigia, eh? Io sono Andrea, sto mangiando il mio solito panino col lampredotto. Lei è di queste parti?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno, Andrea! No, sono qui da poche settimane. Sono americano. Il panino sembra buono!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, è il migliore di Firenze, parola di tassista! Bagnato nel brodo e con la salsa verde sopra. Benvenuto, americano! Ha già assaggiato il lampredotto?"
+   },
+   {
+    "who": "learner",
+    "text": "No, non ancora. Che cosa è esattamente?"
+   },
+   {
+    "who": "npc",
+    "text": "È il quarto stomaco della mucca, cotto piano piano per ore in un brodo con pomodoro, cipolla e sedano. Poi lo mettono dentro un panino e lo inzuppano nel brodo. Roba povera, ma per noi fiorentini è una religione."
+   },
+   {
+    "who": "learner",
+    "text": "Il quarto stomaco? Ah, interessante! È difficile da mangiare?"
+   },
+   {
+    "who": "npc",
+    "text": "Ma no, niente di difficile! È morbido, saporito, sa di brodo e di spezie. L'importante è non pensarci troppo e dare un morso. Il pane inzuppato fa mezza magia, poi la salsa verde ci dà il tocco in più."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ho capito! Forse lo provo oggi, con la salsa verde. Grazie, Andrea, mi hai aiutato molto. Buona giornata e buon lavoro! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Di niente, ci mancherebbe! Buon appetito e buona giornata anche a lei. Arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ehi, ma guarda chi si vede! L'americano del lampredotto. Allora, l'hai poi provato o ti sei tirato indietro?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, l'ho provato! Era molto buono, con la salsa verde."
+   },
+   {
+    "who": "npc",
+    "text": "Bravo! Lo sapevo che ti sarebbe piaciuto. Adesso sei un vero fiorentino, o quasi. Ci sei andato proprio qui da Pollini?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, sono venuto qui il giorno dopo. Il panino era grande!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, qui non si scherza con le dimensioni! E il pane inzuppato nel brodo, te l'hanno fatto? Quello è il bello."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, inzuppato! Era un po' bagnato, ma buono."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, ma è proprio così che dev'essere, bagnato! Se è asciutto, non è lampredotto. Io lo prendo sempre tutto inzuppato, anche oggi."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, capisco! Allora io ho fatto bene. Grazie per tutto, Andrea. Devo andare adesso. Buon appetito e buon lavoro! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie, a te! Buona giornata e a presto, eh. Arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ehi, ciao! Sei tu, l'americano! Ci rivediamo, eh. Oggi c'è un freddo che taglia, il panino con il brodo è proprio quello che ci vuole."
+   },
+   {
+    "who": "learner",
+    "text": "Ciao, Andrea! Sì, oggi fa molto freddo!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, novembre a Firenze è così, umido e freddo. Io oggi sono in pausa, ma il taxi domenica gira poco. E tu, che fai di bello oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Oggi niente di speciale. Ho camminato un po' in centro, ma fa troppo freddo!"
+   },
+   {
+    "who": "npc",
+    "text": "Hai ragione, il freddo qui entra nelle ossa. Allora ti ci vuole qualcosa di caldo: qua c'è il lampredotto che ti scalda subito."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, hai ragione! Prendo un altro panino oggi. E tu, mangi sempre qui?"
+   },
+   {
+    "who": "npc",
+    "text": "Quasi sempre, sì. Sono anni che mi fermo qui con il taxi, è la mia pausa di sempre. Vai, ordina, che il brodo è caldo."
+   },
+   {
+    "who": "learner",
+    "text": "Va bene, ordino subito! Grazie, Andrea. Ora vado a prendere il panino. Buon appetito e a presto!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie, buon appetito anche a te! A presto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 21,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 27.4,
+    "wordsMax": 39,
+    "longShare": 0.4,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 13.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 18,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 18.6,
+    "wordsMax": 22,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 12.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 25,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 21.8,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 12.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 25,
+  "openerWords": 21,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.31666666666666665,
+  "learnerWords": 12.800000000000002,
+  "repeats": 0
+ },
+ "culture": [
+  "Lampredotto is a Florentine street food made from the cow's fourth stomach",
+  "It is slow-cooked for hours in a broth of tomato, onion and celery",
+  "It is served in a bread roll dipped in the broth",
+  "The roll is meant to be soaked (inzuppato); a dry sandwich is not proper lampredotto",
+  "Salsa verde (green sauce) is the typical topping",
+  "It is humble, working-class food, yet almost a religion for Florentines",
+  "Pollini is a well-known lampredotto stand in Florence where locals eat",
+  "Taxi drivers like Andrea take their lunch break at lampredotto stands",
+  "Portions there are generous",
+  "Florence in November is damp and cold, and hot lampredotto warms you up",
+  "Taxi work is slower on Sundays",
+  "Italians use formal Lei with strangers and switch to informal tu once familiar",
+  "Greeting phrases: Buongiorno, Buon appetito, Buona giornata, A presto, Arrivederci",
+  "Polite reply 'Di niente, ci mancherebbe' means 'you're welcome, of course'",
+  "Colloquial expressions like 'giornataccia', 'Ehi, guarda chi si vede!' and 'parola di tassista' are everyday talk"
+ ]
+}

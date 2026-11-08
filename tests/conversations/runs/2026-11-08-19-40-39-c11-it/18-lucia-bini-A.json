@@ -1,0 +1,214 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "lucia-bini",
+  "name": "Lucia Bini",
+  "role": "pasticciera",
+  "city": "Siena",
+  "place": "Pasticceria Bini"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Benvenuto da Bini. Dimmi pure, cosa ti preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno... ehm... io... un caffè, per favore. E... ehm... un cornetto?"
+   },
+   {
+    "who": "npc",
+    "text": "Ah, il caffè e il cornetto vai a prenderli al bar qui accanto, io faccio solo dolci tipici, come ricciarelli e panforte. Sei qui da poco a Siena?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no. Io... abito qui... un anno. Un anno a Siena."
+   },
+   {
+    "who": "npc",
+    "text": "Un anno, bene! Allora i nostri dolci di Natale li conosci già. A novembre qui iniziamo a prepararli, il forno non si ferma più."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... scusi... più lentamente, per favore? Non capisco."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, piano. A novembre facciamo i dolci di Natale. Ricciarelli, panforte. Il forno lavora tutto il giorno."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok... capisco. Grazie, signora. Ehm... arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Che brutto tempo oggi, eh? Entri pure, qui almeno si sta all'asciutto."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno... ehm... sì, brutto tempo. Piove... molto."
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, piove da stamattina. Ma con la pioggia la gente ha più voglia di dolci! Cosa le serve oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... io... vorrei... ricciarelli? Un... un po', per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Ma certo! Quanti ne vuole, uno o due etti? Oppure preferisce una scatola?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... scusi... \"etti\"? Non capisco. Ripeti, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, piano. Un etto sono cento grammi, circa cinque o sei ricciarelli. Oppure una scatola, già pronta. Quale preferisce?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... un etto, per favore. Sì... un etto va bene. Grazie, signora! Ehm... arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Ecco a lei, un etto di ricciarelli! Grazie a lei, arrivederci e buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ah, ci siamo rivisti. Come posso aiutarla?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno... ehm... io vorrei... il panforte, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo! Ne abbiamo di due tipi: quello classico, scuro, con le spezie, e quello bianco, più delicato. Quale preferisce?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... scusi... più lentamente, per favore? Non capisco."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, scusi. Abbiamo il panforte scuro, con le spezie. E il panforte bianco, più dolce. Quale vuole?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... il panforte... bianco, per favore. Più dolce."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto. Lo vuole intero o a fette? Come preferisce?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... a fette, per favore. Due fette... va bene? Grazie, signora. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Va benissimo, due fette. Grazie a lei, arrivederci e buona domenica!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 9,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 16.2,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 9.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 15.8,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 9.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 8,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 12.8,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 9
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 14,
+  "openerWords": 9,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.33,
+  "learnerWords": 9.266666666666667,
+  "repeats": 0
+ },
+ "culture": [
+  "Italian shops commonly greet with \"Buongiorno\" and say \"Arrivederci\" when you leave",
+  "Bars in Italy sell coffee and cornetti (Italian croissants), while specialty shops sell other items",
+  "Ricciarelli are a typical Sienese sweet (soft almond cookies)",
+  "Panforte is a typical Sienese sweet, a dense cake with spices, nuts and candied fruit",
+  "Siena is known for its traditional Christmas sweets, which bakers start preparing in November",
+  "An \"etto\" is 100 grams, a common unit for buying food in Italy",
+  "Ricciarelli can be bought by weight (etti) or in a ready-made box",
+  "Panforte comes in two types: dark (classic, spiced) and white (milder, sweeter)",
+  "Panforte can be bought whole or by the slice",
+  "Italians use formal \"lei\" with customers and strangers",
+  "\"Buona giornata\" and \"buona domenica\" are polite farewell wishes"
+ ]
+}

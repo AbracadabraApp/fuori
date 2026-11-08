@@ -1,0 +1,213 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "luisa-cocco-nuova",
+  "name": "Luisa Cocco",
+  "role": "barista",
+  "city": "Roma",
+  "place": "Bar Mattina"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Dimmi pure, dimmi."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Hai già lo scontrino? Passamelo e te lo faccio."
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, non capisco. Scontrino? Ripeti, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Lo scontrino, il foglietto della cassa, quello che ti dà la cassiera quando paghi. Qui si paga prima alla cassa, poi lo porti a me e io ti faccio il caffè."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok. Pago alla cassa. Poi io vengo qui. Grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Esatto, bravo! La cassa è lì a sinistra, ti aspetto qui."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, grazie! A sinistra. Vado alla cassa. Arrivederci... no, a dopo!"
+   },
+   {
+    "who": "npc",
+    "text": "A dopo!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Bentornato. Dimmi pure, cosa ti preparo oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Voglio un cappuccino, per favore. Ho già lo scontrino."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, vedo che hai imparato in fretta! Dammi pure lo scontrino, te lo preparo subito."
+   },
+   {
+    "who": "learner",
+    "text": "Ecco lo scontrino! Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Un attimo e arriva. Ti stai ambientando a Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, ambientando? Non capisco. Ripeti, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo! Ti stai trovando bene qui a Roma? Ti stai abituando?"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sì! Roma è bella. Io sto bene qui. Un po' difficile l'italiano, ma imparo. Grazie, cappuccino! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego, buona giornata e arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Dimmi pure, che c'è questa pioggia che non smette."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, piove tanto. Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo! Hai già lo scontrino? Dammelo pure, intanto preparo la macchina."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, ecco lo scontrino! Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, grazie a te! Un caffè in arrivo. Ti piace forte o più lungo?"
+   },
+   {
+    "who": "learner",
+    "text": "Forte, per favore. Grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Ecco il tuo caffè, bello forte! Attento che è caldo. Con questa pioggia ci vuole proprio."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Sì, è buono. Fa freddo oggi. Arrivederci, buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, buona domenica e a presto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 4,
+    "replies": 5,
+    "wordsMedian": 10,
+    "wordsAvg": 11.6,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.37,
+    "wordsPerLine": 8.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 8,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 10.2,
+    "wordsMax": 15,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.43,
+    "wordsPerLine": 9.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 11.4,
+    "wordsMax": 16,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 7
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 11,
+  "openerWords": 8,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.3766666666666667,
+  "learnerWords": 8.433333333333334,
+  "repeats": 0
+ },
+ "culture": [
+  "In Italian bars you usually pay first at the cash register (la cassa) and then hand the receipt to the barista",
+  "Lo scontrino is the receipt from the cash register that you give the barista to get your coffee",
+  "Ambientarsi means to settle in or adapt to a new place (explained as trovarsi bene, abituarsi)",
+  "Baristas often chat in a friendly way and ask newcomers if they are settling in",
+  "Italian coffee (caffè) is a small espresso that can be made strong (forte) or longer (lungo)",
+  "'A dopo' is an informal way to say see you later",
+  "'Dimmi pure' is a friendly phrase baristas use to invite you to order",
+  "Italians often use 'Buongiorno' as a greeting and 'Buona giornata' or 'Buona domenica' as a friendly goodbye",
+  "Italians commonly chat about the weather, such as rain, as small talk",
+  "Italians say 'a presto' to mean see you soon"
+ ]
+}

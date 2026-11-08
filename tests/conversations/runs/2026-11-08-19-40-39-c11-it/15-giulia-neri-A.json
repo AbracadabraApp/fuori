@@ -1,0 +1,218 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "giulia-neri",
+  "name": "Giulia Neri",
+  "role": "barista",
+  "city": "Siena",
+  "place": "Bar Il Palio"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Benvenuto al Bar Il Palio. Cosa ti preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal. Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un caffè in arrivo. Qui da noi lo facciamo corto e forte, come piace ai senesi. Tu sei in vacanza o ti fermi un po' a Siena?"
+   },
+   {
+    "who": "learner",
+    "text": "Non sono in vacanza. Io vivo qui, un po'."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, vivi qui per un po', che bello! Allora devi sapere che questo bar è nel Terzo di San Martino, e qui si parla solo del Palio. Hai già visto una corsa in Piazza del Campo?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, non capisco. Più piano, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo! Scusa. Hai visto il Palio? La corsa dei cavalli, in piazza."
+   },
+   {
+    "who": "learner",
+    "text": "No, non ho visto il Palio. Forse l'anno prossimo. Grazie per il caffè! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego! Arrivederci, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao, bentornato! Ti vedo bene oggi. Il solito caffè?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un caffè, per favore. Gratsie!"
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Ecco il tuo caffè, ancora caldo. Qui a Siena d'inverno ci vuole proprio."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, fa freddo oggi. Grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, novembre è così. Ma almeno in bar si sta bene. Tu come ti trovi a Siena, con questo freddo?"
+   },
+   {
+    "who": "learner",
+    "text": "Mi piace Siena. Ma io non piace il freddo."
+   },
+   {
+    "who": "npc",
+    "text": "Ti capisco, a me non piace il freddo neanche un po'! Ma a Siena il vero caldo arriva a luglio, con il Palio."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, il Palio a luglio! Forse io vedo il Palio. Ora devo andare. Grazie, ciao!"
+   },
+   {
+    "who": "npc",
+    "text": "Ciao, a presto! Buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao! Eccoti di nuovo, il solito caffè? Fa freddo oggi, eh!"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un caffè, per favore. Sì, fa molto freddo!"
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Eccolo, caldo caldo. Dai, almeno qui dentro si sta bene. Hai già visto le bandiere nuove in sala?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, non capisco. Bandiere? Più piano, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, piano. Le bandiere. Guarda, sono lì, sul muro."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, sì. Le bandiere. Sono belle! Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Vero? Sono le bandiere delle contrade. Io tifo per la mia, naturalmente!"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, le contrade! Interessante. Ora io devo andare. Grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego, a presto! Arrivederci e stai al caldo!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 9,
+    "replies": 5,
+    "wordsMedian": 12,
+    "wordsAvg": 17.8,
+    "wordsMax": 36,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 9.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 9,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 14.4,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 8.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 11.8,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.37,
+    "wordsPerLine": 8.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 12,
+  "openerWords": 9,
+  "multiQuestion": 0,
+  "learnerShare": 0.33,
+  "learnerWords": 8.866666666666667,
+  "repeats": 0
+ },
+ "culture": [
+  "Italian cafés serve coffee short and strong (espresso), as Sienese people like it",
+  "Siena is a city in Tuscany",
+  "Siena is divided into Terzi (thirds), such as the Terzo di San Martino",
+  "The Palio is a horse race held in Piazza del Campo in Siena",
+  "The Palio takes place in July",
+  "Locals in Siena talk about the Palio constantly",
+  "Siena's neighborhoods are called contrade, each with its own flag",
+  "Sienese people passionately support their own contrada",
+  "Contrada flags decorate the walls of bars",
+  "Winters in Siena are cold, and November is chilly",
+  "Italian bars are cozy places where regulars get \"il solito\" (the usual) coffee",
+  "Italians greet with Buongiorno, Ciao, and Arrivederci, and say \"a presto\" (see you soon)",
+  "Italian uses informal tu and formal Lei, and \"Scusa\" is the informal way to say sorry",
+  "Bentornato means welcome back",
+  "Prego means you're welcome"
+ ]
+}

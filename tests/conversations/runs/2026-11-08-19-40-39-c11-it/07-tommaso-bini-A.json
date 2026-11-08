@@ -1,0 +1,215 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "tommaso-bini",
+  "name": "Tommaso Bini",
+  "role": "barista",
+  "city": "Firenze",
+  "place": "Ditta Artigianale"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Dimmi pure."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno... ehm... io vorrei... un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo! Qui facciamo l'espresso con chicchi monorigine, tostati più chiari: ha un sapore diverso dal solito. Ti piace provarlo?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi... ehm... più lentamente, per favore? Non capisco."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, scusa! Il nostro caffè è diverso. Più delicato, un po' fruttato. Lo vuoi provare?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, va bene. Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, te lo preparo subito. Sei in vacanza o abiti qui a Firenze?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... abito qui. Da sei mesi. Ok... grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te, arrivederci! Buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao! Bentornato! Come va oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ciao... ehm... bene, grazie. E tu?"
+   },
+   {
+    "who": "npc",
+    "text": "Bene, bene! Oggi c'è tanta gente al mercato. Vuoi un altro espresso, come l'altra volta?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì... ehm... un espresso, per favore. Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, subito. Oggi ho un caffè dell'Etiopia, ha un sapore di frutta. Come ti chiami, scusa?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... io mi chiamo... Marco. E tu?"
+   },
+   {
+    "who": "npc",
+    "text": "Piacere, Marco! Io sono Tommaso. Ecco il tuo espresso, ancora caldo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... piacere, Tommaso. Grazie! Ehm... buona giornata, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te, Marco! Buona giornata, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao Marco! Ancora un espresso? Oggi il mercato è pieno di gente."
+   },
+   {
+    "who": "learner",
+    "text": "Ciao Tommaso... ehm... sì, un espresso, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, arriva subito. Oggi ho un caffè nuovo dal Kenya, vuoi provarlo?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, va bene. Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Ottimo. Il Kenya ha un sapore di frutti rossi, molto vivace. Ecco a te."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... grazie, Tommaso. Ehm... quanto costa?"
+   },
+   {
+    "who": "npc",
+    "text": "Sono due euro e cinquanta. Puoi pagare alla cassa, qui accanto."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ok, alla cassa. Grazie mille, Tommaso! Ehm... arrivederci, a presto!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, Marco! A presto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 3,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 11.2,
+    "wordsMax": 19,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 7.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 5,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 11,
+    "wordsMax": 16,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.34,
+    "wordsPerLine": 7
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 12,
+    "wordsAvg": 10.6,
+    "wordsMax": 14,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 7.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 12,
+  "openerWords": 5,
+  "multiQuestion": 0,
+  "learnerShare": 0.3499999999999999,
+  "learnerWords": 7.333333333333333,
+  "repeats": 0
+ },
+ "culture": [
+  "Italians commonly greet with \"Buongiorno\" and say goodbye with \"Arrivederci\" and \"Buona giornata\"",
+  "\"Ciao\" is a casual greeting used for both hello and goodbye",
+  "Espresso is the standard coffee served in Italian cafés",
+  "Some cafés serve single-origin, lighter-roasted espresso with fruity flavors (e.g., Ethiopian, Kenyan beans)",
+  "Florence (Firenze) is a city with a market where people go for coffee",
+  "Italians often chat and ask friendly personal questions, like whether you're on holiday or live there",
+  "Tu/informal speech is common in casual cafés; \"Piacere\" is used when meeting someone",
+  "\"A presto\" means \"see you soon\"",
+  "In some Italian cafés you pay at the cashier (la cassa) separately",
+  "An espresso costs around two to three euros here (€2.50 in this market café)",
+  "Baristas often ask about your preferences and let you try new coffees",
+  "\"Bentornato\" is a warm way to welcome someone back"
+ ]
+}

@@ -1,0 +1,217 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "antonio-florian",
+  "name": "Nusrat Rahman",
+  "role": "cameriera",
+  "city": "Venezia",
+  "place": "Caffè Florian"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You wait on tables at Caffè Florian, under the arcades of Piazza San Marco. A coffee at a table costs far more than at the bar, and when the orchestra plays, a music charge goes on the bill. Your background: born in Venice to Bangladeshi parents.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Benvenuto al Florian. Si accomodi pure, c'è posto sotto i portici."
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal! Grazie. Un tavolo per uno, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, la porto subito a un tavolino qui fuori, vicino alle colonne. Ecco, si sieda pure. Le porto il menù?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie. Il menù, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Ecco il menù. Qui al tavolo il caffè costa più che al banco, e quando suona l'orchestra si aggiunge il supplemento musica sul conto. Prenda pure il suo tempo."
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, non capisco. Più piano, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo. Al tavolo il caffè costa di più. Quando c'è la musica, si paga anche un extra. Va bene?"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok. Sì, va bene. Capisco. Grazie! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ci siamo già visti, vero? Era qualche giorno fa, sotto i portici. Vuole sedersi, oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, buongiorno! Sì, io... voglio sedere. Un tavolo per uno, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, benvenuto! Si accomodi pure qui, vicino alle colonne, come l'altra volta. Le porto subito il menù."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie. Il menù, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Ecco il menù, prego. Prenda pure il tempo che vuole. Le serve qualcosa da bere mentre sceglie?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un caffè in arrivo. Le porto anche un bicchiere d'acqua?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un bicchiere d'acqua, grazie. Poi... arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno, bentornato! Si accomodi pure alle colonne, oggi c'è l'acqua alta, ma sotto i portici siamo all'asciutto."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie. Scusi, acqua alta? Non capisco."
+   },
+   {
+    "who": "npc",
+    "text": "Quando la marea sale, l'acqua della laguna esce dai canali e allaga la piazza. Succede spesso in autunno, qui a Venezia."
+   },
+   {
+    "who": "learner",
+    "text": "Ah... l'acqua è nella piazza? Scusi, più piano, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Sì. L'acqua è nella piazza. Ma qui, sotto i portici, no. Qui è asciutto."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok. Capisco. Un tavolo, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo. Quello vicino alla colonna è libero, come l'altra volta. Quanti siete?"
+   },
+   {
+    "who": "learner",
+    "text": "Uno, solo io. Una persona. Grazie! Poi... arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego, si sieda pure. A dopo, buona giornata!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 16.6,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 7.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 16,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 13.2,
+    "wordsMax": 17,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 7.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 14.4,
+    "wordsMax": 21,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 7.8
+   },
+   "repeats": [
+    {
+     "said": "Si accomodi pure alle colonne, oggi c'è l'acqua alta, ma sotto i portici siamo all'asciutto.",
+     "earlier": "Si accomodi pure, c'è posto sotto i portici."
+    }
+   ]
+  }
+ ],
+ "values": {
+  "replyWords": 16,
+  "openerWords": 16,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.2966666666666667,
+  "learnerWords": 7.7,
+  "repeats": 0.5
+ },
+ "culture": [
+  "Caffè Florian is a café in Venice with tables under the arcades of St Mark's Square",
+  "Italian cafés often charge more for coffee at a table than standing at the bar",
+  "Cafés with live orchestras may add a music surcharge to the bill",
+  "Acqua alta is the high water that floods Venice's squares when the tide rises",
+  "Acqua alta happens often in autumn, when lagoon water overflows the canals",
+  "Italian has formal and informal address; staff use polite 'Lei' forms such as 'Si accomodi' and 'Le porto'",
+  "Italian cafés commonly serve a glass of water with coffee",
+  "Useful Italian phrases: Buongiorno (good morning/day), Benvenuto (welcome), Bentornato (welcome back), Si accomodi (make yourself comfortable), Si sieda (sit down), Prego (you're welcome), A presto (see you soon), A dopo (see you later), Buona giornata (have a good day), Arrivederci (goodbye)"
+ ]
+}

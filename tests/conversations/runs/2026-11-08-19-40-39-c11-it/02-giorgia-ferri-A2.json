@@ -1,0 +1,219 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "giorgia-ferri",
+  "name": "Giorgia Ferri",
+  "role": "studentessa",
+  "city": "Roma",
+  "place": "La Sapienza"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Ciao! Siediti pure, c'è posto sui gradini. Io sono Giorgia, e tu?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ciao. Io... mi chiamo Daniel. Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Piacere, Daniel! Sei qui per l'università o sei di passaggio?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... io... abito qui. A Roma. Non sono... studente. Ripeti per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo! Ti ho chiesto: sei qui per l'università o sei solo di passaggio? Ah, abiti a Roma, bello! Da quanto tempo?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... da... sei mesi. Sei mesi."
+   },
+   {
+    "who": "npc",
+    "text": "Sei mesi, quindi sei arrivato a primavera. Ti piace Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, mi piace... molto. Ehm... è bella. Ora devo andare. Arrivederci, Giorgia! Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, Daniel! Buona giornata e a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ehi, ma guarda un po' chi si rivede! Daniel, giusto? Siediti pure, qui sui gradini c'è posto."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, Daniel. Ciao, Giorgia. Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Figurati! Oggi c'è un grigio che non finisce più, però almeno non fa freddo. Come va la tua giornata finora?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... come? Più lentamente, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo! Come va oggi? Tutto bene?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, tutto bene. Grazie. E... tu?"
+   },
+   {
+    "who": "npc",
+    "text": "Bene, bene, solo un po' stanca. Ho lezione tra poco, quindi mangio la pizza e ripasso."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok... buona lezione, Giorgia! Ehm... io devo andare. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie, Daniel! Arrivederci, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao Daniel! Ancora tu! Siediti pure, oggi la pizza è buona."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ciao, Giorgia. Sì, grazie. Ehm... ancora io."
+   },
+   {
+    "who": "npc",
+    "text": "Dai, non ti preoccupare, mi fa piacere. Domenica a San Lorenzo è molto tranquilla. Che fai di bello oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... oggi... io... niente. Riposo. Ehm... e tu?"
+   },
+   {
+    "who": "npc",
+    "text": "Anch'io niente di speciale, ripasso un po' e mangio la pizza. Domani ho un esame, quindi niente riposo per me."
+   },
+   {
+    "who": "learner",
+    "text": "Ah... un esame. Ehm... buona fortuna, Giorgia!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie mille, Daniel! Ne ho bisogno. Tu hai mai fatto un esame in italiano?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no. Io non... ho fatto un esame in italiano. Troppo difficile! Ehm... ora devo andare. Arrivederci, Giorgia! In bocca al lupo!"
+   },
+   {
+    "who": "npc",
+    "text": "Crepi! Arrivederci Daniel, a presto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 10,
+    "wordsAvg": 12,
+    "wordsMax": 21,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.39,
+    "wordsPerLine": 9.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 12.8,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 7.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 13.8,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.39,
+    "wordsPerLine": 11.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 14,
+  "openerWords": 12,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.3633333333333333,
+  "learnerWords": 9.366666666666667,
+  "repeats": 0
+ },
+ "culture": [
+  "Italians often invite strangers to sit and chat casually, e.g. on steps in a public square",
+  "Piacere is the polite 'nice to meet you' reply after introductions",
+  "Pizza is an everyday casual food, eaten outdoors or as a quick meal (pizza al taglio)",
+  "San Lorenzo is a student neighborhood in Rome near the university",
+  "San Lorenzo is quiet on Sundays",
+  "Rome in spring and grey days: weather small talk is a common conversation opener",
+  "Ciao is a casual greeting; Arrivederci and a presto are common goodbyes",
+  "Buona giornata is a standard way to wish someone a good day",
+  "Figurati is an informal 'you're welcome / no problem'",
+  "Ma guarda un po' chi si rivede! is a friendly phrase for meeting someone again",
+  "In bocca al lupo is the traditional good-luck wish, answered with Crepi!",
+  "Italians say Buona fortuna and Buona lezione to wish people well",
+  "Dai is used to encourage or reassure someone",
+  "University students in Italy take exams (esame) and study/review (ripassare) beforehand",
+  "Che fai di bello? is a friendly way to ask what someone is up to",
+  "Mi fa piacere means 'I'm glad / it's my pleasure'"
+ ]
+}

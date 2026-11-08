@@ -1,0 +1,226 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "carmela-gentile",
+  "name": "Carmela Gentile",
+  "role": "venditrice",
+  "city": "Matera",
+  "place": "Mercato di Piccianello"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Venga, venga, guardi che belle cime di rapa fresche stamattina. Cerca qualcosa in particolare?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno. Cime di rapa? Non capisco. Cosa è?"
+   },
+   {
+    "who": "npc",
+    "text": "Sono verdure di campo, un po' amarognole, con foglie scure e dei piccoli fiori verdi. Qui le mettiamo nelle orecchiette, con un filo d'olio e un po' di peperoncino. Non le ha mai mangiate?"
+   },
+   {
+    "who": "learner",
+    "text": "No, mai. Orecchiette? Cosa è?"
+   },
+   {
+    "who": "npc",
+    "text": "Le orecchiette sono la pasta di qui, piccole e rotonde, come delle orecchie. Le fanno a mano le donne, anche nel centro di Matera. Con le cime di rapa sono il piatto più tipico di tutta la Puglia e della Basilicata. Ne vuole un mazzetto da provare?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un mazzetto, per favore. Quanto costa?"
+   },
+   {
+    "who": "npc",
+    "text": "Un mazzetto fa due euro. Ecco qua, belle fresche, le ho appena sistemate. Vuole che le metta in un sacchetto?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un sacchetto, per favore. Ecco due euro. Gratsie! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei! Arrivederci, buona giornata e buon appetito!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, buongiorno! Ci siamo rivisti! Come state?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Io sto bene, grazie. E lei?"
+   },
+   {
+    "who": "npc",
+    "text": "Bene, bene, grazie! Un po' di freddo stamattina, ma il mercato è sempre bello. Allora, le sono piaciute le cime di rapa?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, molto buone! Io ho mangiato con la pasta."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, lo sapevo io! Con le orecchiette, vero? Oggi ho anche i peperoni cruschi, croccanti, buonissimi: li friggiamo un attimo e si mangiano così, come patatine. Vuole assaggiarne uno?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie! Io voglio assaggiare. Cosa è... peperoni cruschi?"
+   },
+   {
+    "who": "npc",
+    "text": "Sono peperoni rossi, dolci, che si fanno seccare al sole. Poi si friggono nell'olio, un secondo solo, e diventano croccanti come una sfoglia. Tenga, ne ho uno già pronto: provi!"
+   },
+   {
+    "who": "learner",
+    "text": "Mmm, grazie! È molto buono, croccante! Quanto costa un sacchetto? Ah, scusi... adesso devo andare. Grazie mille! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Di niente, torni quando vuole! Arrivederci, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, ma guarda chi si rivede! Buongiorno! Bentornato al mercato. Com'è andata la settimana?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Io sto bene. La settimana... bene, grazie. E lei?"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, non mi lamento! Con questo fresco di novembre i banchi sono pieni di verdure buone. Oggi hai voglia di cime di rapa, o vuoi portarti i peperoni cruschi?"
+   },
+   {
+    "who": "learner",
+    "text": "Oggi... i peperoni cruschi, per favore. Quanto costa un sacchetto?"
+   },
+   {
+    "who": "npc",
+    "text": "Bravo! Un sacchetto costa quattro euro. Sono i peperoni di Senise, tutti sceltI uno per uno. Ne vuoi uno?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un sacchetto, per favore. Ecco quattro euro."
+   },
+   {
+    "who": "npc",
+    "text": "Grazie! Ecco il tuo sacchetto, tienilo ben chiuso e al fresco. Poi me lo dici se ti piacciono anche a casa."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, va bene! Grazie mille! Adesso devo andare. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Buona domenica!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 20,
+    "wordsAvg": 25,
+    "wordsMax": 47,
+    "longShare": 0.4,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.19,
+    "wordsPerLine": 7.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 7,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 19.2,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 10.8
+   },
+   "repeats": [
+    {
+     "said": "Allora, le sono piaciute le cime di rapa?",
+     "earlier": "Con le cime di rapa sono il piatto più tipico di tutta la Puglia e della Basilicata."
+    }
+   ]
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 17.6,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 20,
+  "openerWords": 14,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.26666666666666666,
+  "learnerWords": 9.200000000000001,
+  "repeats": 0.5
+ },
+ "culture": [
+  "Cime di rapa are bitter field greens with dark leaves and small green flowers",
+  "Cime di rapa are cooked with orecchiette, olive oil and chili pepper",
+  "Orecchiette are small, round, ear-shaped pasta, typical of Puglia and Basilicata",
+  "Orecchiette are handmade by local women, even in the center of Matera",
+  "Orecchiette with cime di rapa is the most typical dish of Puglia and Basilicata",
+  "Market vendors sell fresh produce in bunches (mazzetto) and put it in a bag",
+  "Peperoni cruschi are sweet red peppers dried in the sun",
+  "Peperoni cruschi are fried in oil for a second and become crunchy like potato chips",
+  "Peperoni cruschi come from Senise and are hand-selected one by one",
+  "Vendors let customers taste samples at the market",
+  "Italians say 'Buon appetito' and 'Buona giornata' as friendly farewells",
+  "Italian vendors use formal 'lei' with strangers and switch to informal 'tu' with familiar regulars",
+  "Fresh vegetables are abundant at markets in November's cool weather",
+  "Peperoni cruschi should be stored closed tightly and in a cool place",
+  "Vendors greet returning customers warmly with phrases like 'Bentornato' and 'Ma guarda chi si rivede'",
+  "Italians wish 'Buona domenica' as a farewell on Sunday",
+  "'Torni quando vuole' and 'A presto' are common friendly goodbyes",
+  "'Di niente' is a polite reply to thanks"
+ ]
+}

@@ -1,0 +1,215 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "antonio-florian",
+  "name": "Nusrat Rahman",
+  "role": "cameriera",
+  "city": "Venezia",
+  "place": "Caffè Florian"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno, benvenuto al Florian! Si accomodi pure, dove preferisce sedersi?"
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal. Um... qui, per favore. Il tavolo, la finestra?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, quel tavolo vicino alla finestra è libero, prego. Le porto subito il menù. Le dico solo che al tavolo il caffè costa più che al banco, e quando suona l'orchestra in piazza si aggiunge un supplemento musica."
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, non capisco. Più piano, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, scusi. Il caffè al tavolo costa di più. E se in piazza suona l'orchestra, c'è un extra per la musica."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok. Costa di più. Va bene, grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto. Si sieda pure, le porto il menù. Oggi in piazza non c'è molta gente, è novembre."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, grazie. Sì, novembre, poca gente. Um... arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno, bentornato! Si accomodi pure, le porto subito il menù che le avevo promesso."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Grazie. Um... il menù, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Ecco, il menù. Prenda tutto il tempo che vuole. Oggi con questo freddo molti scelgono la cioccolata calda."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, la cioccolata calda. Sì, voglio una cioccolata, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, una cioccolata calda. Gliela porto subito. Ha una giornata libera oggi, o ha qualcosa da fare in città?"
+   },
+   {
+    "who": "learner",
+    "text": "Oggi libero. Um... giornata libera. Io vivo qui."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, vive qui a Venezia! Che bello. Allora ha tutto il tempo per godersi la piazza, d'inverno è molto più tranquilla."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, tranquilla. Mi piace. Grazie mille! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego, a presto! Buona giornata e arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Benvenuto di nuovo da Florian. Con l'acqua alta oggi la piazza è quasi vuota, ma qui dentro siamo all'asciutto. Si accomodi pure dove preferisce."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Um... acqua alta? Non capisco. Grazie, qui va bene."
+   },
+   {
+    "who": "npc",
+    "text": "Acqua alta vuol dire che l'acqua della laguna sale e invade le strade. Oggi la piazza è già un po' sommersa, per questo ci sono le passerelle di legno. Ma qui dentro non entra."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok. L'acqua sale... nella piazza. Capisco un poco. Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Esatto, proprio così! Succede spesso in autunno e in inverno. Per fortuna dura solo qualche ora. Come è arrivato qui, con gli stivali?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, io ho... stivali. Stivali di gomma. Um, a casa."
+   },
+   {
+    "who": "npc",
+    "text": "Bravo, gli stivali di gomma sono fondamentali a Venezia! Io li tengo sempre in bar, sotto il bancone. Adesso le porto il menu?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, il menù, per favore. Grazie mille! Um... arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Buona giornata."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 17.8,
+    "wordsMax": 38,
+    "longShare": 0.2,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 8.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 15.8,
+    "wordsMax": 21,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.29,
+    "wordsPerLine": 8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 25,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 22,
+    "wordsMax": 34,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.26,
+    "wordsPerLine": 9.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 18,
+  "openerWords": 14,
+  "multiQuestion": 0,
+  "learnerShare": 0.2733333333333334,
+  "learnerWords": 8.700000000000001,
+  "repeats": 0
+ },
+ "culture": [
+  "Florian is a café on Piazza San Marco in Venice",
+  "In Italian cafés, coffee costs more at a table than at the bar",
+  "Cafés may add a music surcharge when an orchestra plays in the square",
+  "Hot chocolate is a popular choice in cold weather",
+  "Venice's piazza is much quieter in winter",
+  "Acqua alta means high water: lagoon water rises and floods the streets",
+  "Acqua alta happens often in autumn and winter and lasts only a few hours",
+  "Wooden walkways (passerelle) are set up in flooded areas",
+  "Rubber boots are essential in Venice during acqua alta",
+  "Italian formal greetings: Buongiorno, Arrivederci, Si accomodi (please sit)",
+  "Italian has formal address (Lei) for customers",
+  "Menù is the Italian word for menu"
+ ]
+}

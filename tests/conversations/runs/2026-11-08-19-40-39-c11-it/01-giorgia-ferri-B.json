@@ -1,0 +1,216 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "giorgia-ferri",
+  "name": "Giorgia Ferri",
+  "role": "studentessa",
+  "city": "Roma",
+  "place": "La Sapienza"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You study at La Sapienza and sit on the steps of the Rettorato between lectures, with a slice of pizza and your books.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Ciao! Ti siedi? C'è posto qui sui gradini, tanto ho ancora una mezz'ora prima della prossima lezione."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, grazie. Io... mi siedo qui."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, spostati pure un po' di qua, c'è più sole. Io sono Giorgia, comunque. Tu sei di Roma o sei qui da poco?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... io sono... Marco. Non sono di Roma. Sono qui... da un anno."
+   },
+   {
+    "who": "npc",
+    "text": "Piacere, Marco! Un anno, allora ormai conosci un po' la città. Io studio qui a La Sapienza, lettere, e passo quasi tutte le pause su questi gradini."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, un poco. Io... non studio qui."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, ho capito! E allora cosa fai a Roma? Lavori qui in zona?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, io lavoro... in un ristorante. Non qui, ehm... lontano. Adesso devo andare, scusa. Arrivederci, Giorgia!"
+   },
+   {
+    "who": "npc",
+    "text": "Va bene, Marco! Arrivederci, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ehi, ciao Marco! Sei tornato sulle scale, eh? Siediti pure, c'è posto."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, grazie. Io... mi siedo."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto. Io sono qui da stamattina, tra una lezione e l'altra. Oggi che giornata grigia, vero? Tu invece oggi lavori?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no. Oggi... no lavoro. Io... riposo."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, che bello, ogni tanto ci vuole! E cosa fai di bello quando riposi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... io... dormo. E... cammino. Un poco."
+   },
+   {
+    "who": "npc",
+    "text": "Dormire e camminare, la ricetta giusta! Io oggi invece ho la testa piena di libri, tra poco ho un esame di letteratura. Ti piace camminare per Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, mi piace. Roma è... bella. Buona fortuna per l'esame, Giorgia! Adesso devo andare. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie mille, Marco! Arrivederci, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ehi, Marco! Siediti pure qui, c'è posto. Oggi la pizza è buonissima."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, grazie. Io... mi siedo. La pizza... ehm... buona?"
+   },
+   {
+    "who": "npc",
+    "text": "Sì, molto buona! Quella al taglio qui vicino, con le patate. Ne vuoi un pezzo? Io ho già finito il mio, purtroppo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no, grazie. Io... ho mangiato. Ehm... a casa."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, perfetto allora! Io invece avevo una fame... tra una lezione e l'altra mangio sempre qui sui gradini. E tu, oggi sei in giro senza lavoro?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì. Oggi... no lavoro. Io... sono libero."
+   },
+   {
+    "who": "npc",
+    "text": "Che bello, una domenica libera! Allora ti godi un po' di sole, anche se è novembre. Io invece tra poco devo tornare a studiare per l'esame."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, un poco di sole... bello. Buono studio, Giorgia! Adesso devo andare. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie, Marco! Arrivederci, a presto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 17.2,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.34,
+    "wordsPerLine": 11.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 15.8,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 9
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 12,
+    "replies": 5,
+    "wordsMedian": 22,
+    "wordsAvg": 18.2,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 17,
+  "openerWords": 12,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.32,
+  "learnerWords": 10.200000000000001,
+  "repeats": 0
+ },
+ "culture": [
+  "La Sapienza is a university in Rome where students study subjects like literature (lettere)",
+  "Students often spend breaks between classes sitting and chatting on outdoor steps",
+  "Pizza al taglio (pizza by the slice) is sold at nearby shops and eaten as a quick snack",
+  "Potato pizza (pizza con le patate) is a popular topping for pizza al taglio",
+  "Italians greet with \"Ciao\" and part with \"Arrivederci, a presto!\" (see you soon)",
+  "Italians reply \"Piacere\" when meeting someone for the first time",
+  "University students take exams, such as one in literature (letteratura)",
+  "Rome can have sunny weather even in November",
+  "Sunday is a typical day off from work",
+  "Ti siedi? / Siediti pure is a friendly way to invite someone to sit down",
+  "Useful words: grazie mille (thanks a lot), che bello (how nice), buona fortuna (good luck)",
+  "Walking around Rome (camminare per Roma) is a pleasant way to spend free time"
+ ]
+}

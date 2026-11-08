@@ -1,0 +1,215 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "luisa-cocco-nuova",
+  "name": "Luisa Cocco",
+  "role": "barista",
+  "city": "Roma",
+  "place": "Bar Mattina"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You run the counter of a corner bar, where regulars stand at the zinc for cappuccino and cornetto in the morning and switch to caffè after 11. Customers pay at the cassa first and hand you the scontrino, and you make what they paid for.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Dimmi pure."
+   },
+   {
+    "who": "learner",
+    "text": "Bone journal. Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo! Prima passa alla cassa, fai lo scontrino e poi portamelo qui al banco."
+   },
+   {
+    "who": "learner",
+    "text": "Scusi... non capisco. Più piano, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Va bene, piano. Vai alla cassa, paghi il caffè. Ti danno un foglietto, lo scontrino. Poi me lo porti qui."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok. Cassa... pago, poi vengo qui. Grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Esatto, bravo! Ti aspetto qui al banco."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, ok! Grazie mille. Arrivederci... no, a dopo!"
+   },
+   {
+    "who": "npc",
+    "text": "A dopo!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ah, ti ricordo, sei tornato. Dimmi, cosa ti preparo oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Volentieri! Hai già lo scontrino? Se me lo dai, te lo faccio subito."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, ho lo scontrino. Ecco!"
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, grazie! Un caffè in arrivo. Intanto, come va a Roma? Ti stai ambientando?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi... \"ambientando\"? Non capisco. Roma è bella!"
+   },
+   {
+    "who": "npc",
+    "text": "Ambientarsi vuol dire sentirsi a casa in un posto nuovo. Sono contenta che Roma ti piace! Ecco il tuo caffè."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok! Sì, io mi sento a casa. Grazie per il caffè! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Di niente! Arrivederci, a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Che acqua oggi, eh? Entra pure, mettiti al caldo. Dimmi, cosa ti preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Voglio un cappuccino, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, un cappuccino. Hai già fatto lo scontrino alla cassa?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, ho lo scontrino. Ecco!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie! Te lo preparo subito. Con questa pioggia ci vuole proprio qualcosa di caldo. Vuoi anche un cornetto, o solo il cappuccino?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un cornetto, per favore. Grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Ecco il cornetto, caldo caldo. Ma il cornetto va pagato alla cassa, non ce l'hai nello scontrino. Vai pure, io intanto ti faccio il cappuccino."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, scusi! Non ho pagato il cornetto. Vado alla cassa. Grazie! A dopo!"
+   },
+   {
+    "who": "npc",
+    "text": "Figurati, vai pure! A dopo!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 3,
+    "replies": 5,
+    "wordsMedian": 7,
+    "wordsAvg": 9.2,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.39,
+    "wordsPerLine": 7.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 12.6,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 7.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 14,
+    "wordsAvg": 15.2,
+    "wordsMax": 25,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 7.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 13,
+  "openerWords": 11,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.3333333333333333,
+  "learnerWords": 7.6000000000000005,
+  "repeats": 0
+ },
+ "culture": [
+  "In many Italian bars you first pay at the cashier (la cassa) and get a receipt (lo scontrino)",
+  "You then hand the receipt to the barista at the counter (il banco) to get your order",
+  "Scontrino means receipt",
+  "Ambientarsi means to settle in and feel at home in a new place",
+  "Cappuccino and cornetto (Italian croissant) are a typical bar breakfast",
+  "Each item must be paid for at the cashier before ordering, including extra items like a cornetto",
+  "Italians commonly say 'A dopo' (see you later) and 'A presto' (see you soon) when parting",
+  "Buongiorno is the standard daytime greeting",
+  "'Figurati' and 'Di niente' are casual ways to say you're welcome or no problem",
+  "Volentieri means gladly or with pleasure",
+  "Warm drinks and pastries are a comforting choice on rainy days"
+ ]
+}

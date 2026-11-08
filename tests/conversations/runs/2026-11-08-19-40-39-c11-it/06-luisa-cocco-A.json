@@ -1,0 +1,219 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "luisa-cocco-nuova",
+  "name": "Luisa Cocco",
+  "role": "barista",
+  "city": "Roma",
+  "place": "Bar Mattina"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Dimmi pure, dimmi."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno. Voglio un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito. Hai lo scontrino?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, non capisco. Scontrino? Cosa è?"
+   },
+   {
+    "who": "npc",
+    "text": "Lo scontrino è il foglietto che ti danno alla cassa, quando paghi. Qui si paga prima, poi lo porti a me e io ti faccio il caffè."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ok. Pago alla cassa... poi io porto a lei? Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Esatto, hai capito benissimo. La cassa è lì, a sinistra. Io intanto sono qui."
+   },
+   {
+    "who": "learner",
+    "text": "Ok, vado alla cassa. Grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "A dopo!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao, bentornato! Dimmi, cosa ti preparo oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ciao! Voglio un cappuccino, per favore. Ho lo scontrino."
+   },
+   {
+    "who": "npc",
+    "text": "Bravo, hai già pagato! Dammi pure lo scontrino, te lo faccio subito. Con un cornetto, magari?"
+   },
+   {
+    "who": "learner",
+    "text": "Ecco lo scontrino. No cornetto, grazie. Solo cappuccino."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, solo cappuccino allora. Arriva subito. Com'è andata questa settimana, ti stai ambientando a Testaccio?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, non capisco. Più piano, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo! Ti piace Testaccio? Ti trovi bene?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, mi piace Testaccio. Io sono bene qui. Grazie per il cappuccino! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego, a presto! Arrivederci e buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Che pioggia stamattina, eh? Dimmi pure, cosa ti preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, molto pioggia. Voglio un caffè, per favore. Ho lo scontrino."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, dammi pure lo scontrino. Te lo faccio subito, un caffè bello caldo con questo tempo!"
+   },
+   {
+    "who": "learner",
+    "text": "Ecco lo scontrino. Grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Ecco il caffè, attento che è caldo. Oggi la domenica è tranquilla, con tutta questa pioggia c'è poca gente. Di solito la domenica fai colazione fuori?"
+   },
+   {
+    "who": "learner",
+    "text": "Scusi, non capisco. Più piano, per favore?"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, scusa! Di domenica, fai colazione al bar?"
+   },
+   {
+    "who": "learner",
+    "text": "No, di solito colazione a casa. Oggi vengo qui per il caffè. Grazie! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 4,
+    "replies": 5,
+    "wordsMedian": 4,
+    "wordsAvg": 10.2,
+    "wordsMax": 27,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 7.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 7,
+    "replies": 5,
+    "wordsMedian": 7,
+    "wordsAvg": 10.4,
+    "wordsMax": 16,
+    "longShare": 0,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.42,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 10,
+    "wordsAvg": 13.2,
+    "wordsMax": 29,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.36,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 7,
+  "openerWords": 7,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.38000000000000006,
+  "learnerWords": 8.633333333333335,
+  "repeats": 0
+ },
+ "culture": [
+  "Italians greet with \"Buongiorno\" in the morning and \"Ciao\" with familiar people",
+  "\"Dimmi pure\" is a friendly way for a barista to ask what you want",
+  "In many Italian bars you pay first at the cassa (cash desk) and get a receipt called a \"scontrino\"",
+  "You hand the scontrino to the barista, who then makes your coffee",
+  "\"Scontrino\" means the receipt or slip you get when you pay",
+  "Cornetto (Italian croissant) is a common breakfast pastry to have with coffee",
+  "Cappuccino and caffè (espresso) are typical bar orders",
+  "Baristas are chatty and friendly with regulars and ask about your life and neighborhood",
+  "Testaccio is a neighborhood in Rome",
+  "Italians often have breakfast (colazione) at a bar, especially coffee and a pastry",
+  "\"A dopo\", \"A presto\" and \"Arrivederci\" are common goodbyes",
+  "\"Buona giornata\" is a polite way to wish someone a good day",
+  "\"Bentornato\" means welcome back",
+  "\"Ti trovi bene?\" is a common way to ask if you feel comfortable somewhere",
+  "Small talk about the weather, like the rain, is common",
+  "Coffee is enjoyed hot and bars are quieter on rainy Sundays"
+ ]
+}

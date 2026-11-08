@@ -1,0 +1,218 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "andrea-becattini",
+  "name": "Andrea Becattini",
+  "role": "tassista",
+  "city": "Firenze",
+  "place": "Lampredotto da Pollini"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You stop your taxi at the lampredotto stall for a quick lunch: a roll of lampredotto dipped in its broth and topped with green sauce.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Eh, che tempo grigio oggi, vero? Io mi fermo un attimo per il pranzo, il lampredotto qui è il migliore."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, oggi è molto grigio. Lei mangia sempre qui?"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, quasi sempre, il lunedì sicuro! Faccio il tassista da trent'anni e questo panino è il mio rito. Pane inzuppato nel brodo, con la salsa verde sopra."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, trent'anni! Molto tempo. Io sono qui da poche settimane."
+   },
+   {
+    "who": "npc",
+    "text": "Poche settimane, allora Firenze è ancora tutta da scoprire! Benvenuto. Il lampredotto l'ha già assaggiato?"
+   },
+   {
+    "who": "learner",
+    "text": "No, non ancora. Che cosa è esattamente?"
+   },
+   {
+    "who": "npc",
+    "text": "È il quarto stomaco della mucca, cotto piano piano nel brodo con pomodoro, cipolla e prezzemolo. Qui lo mettono nel panino, morbido e saporito. Lo senta, è un vero piatto fiorentino, di strada!"
+   },
+   {
+    "who": "learner",
+    "text": "Il quarto stomaco della mucca? Ah, interessante! Non so se mi piace, ma voglio provare. Grazie per la spiegazione, signor Andrea. Adesso ordino un panino. Buon pranzo e arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Bravo, provi senza paura! Buon pranzo a lei, e arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Oh, ma guarda chi si rivede! Il nostro fiorentino nuovo. Allora, com'è andata con quel lampredotto, ti è piaciuto?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, mi è piaciuto! Ho mangiato un panino con la salsa verde."
+   },
+   {
+    "who": "npc",
+    "text": "Bravo! Vedi che avevo ragione? La salsa verde ci vuole, è lei che fa il panino. E poi bagnato nel brodo, come si deve. Io oggi ne prendo uno così, bello bagnato."
+   },
+   {
+    "who": "learner",
+    "text": "Bagnato? Ah sì, anch'io ho chiesto il pane bagnato. Era molto buono!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh, ecco, allora hai capito come si mangia! Qui i panini li facciamo così, col pane che sta un attimo nel brodo. Un bel passo da fiorentino, davvero. Lo riprendi anche oggi, o provi qualcos'altro?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, lo prendo ancora oggi. Lei, cosa prende?"
+   },
+   {
+    "who": "npc",
+    "text": "Io il solito: un lampredotto bagnato con la salsa verde, e basta. Alla mia età non si cambia, e poi qui è sempre una garanzia."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, il solito! Va bene, anch'io. Non ho altre domande oggi, ma grazie della compagnia, signor Andrea. Buon pranzo e a presto!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Buon pranzo anche a te, e a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, ecco il mio nuovo amico! Buongiorno! Anche oggi lampredotto, eh? Io ho appena ordinato il solito."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno, signor Andrea! Sì, anche oggi. Mi piace molto!"
+   },
+   {
+    "who": "npc",
+    "text": "Bravo! Quando uno comincia, poi non smette più. Ma oggi è domenica, io di solito vengo il lunedì, sa? Oggi ho fatto un'eccezione!"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, un'eccezione! Perché oggi? Lei lavora anche la domenica?"
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, il tassista lavora quando c'è gente. La domenica di novembre ho avuto una corsa all'aeroporto e passando di qui, mi è venuta fame. E Lei, oggi cosa fa di bello?"
+   },
+   {
+    "who": "learner",
+    "text": "Oggi non lavoro. Dopo mangio, faccio una passeggiata."
+   },
+   {
+    "who": "npc",
+    "text": "Bella idea, con questo fresco di novembre si cammina bene. Io invece torno in taxi, il lavoro non aspetta!"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, capisco! Buon lavoro, signor Andrea. Io non ho altre domande oggi. Grazie, e arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a Lei, buona passeggiata! Arrivederci!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 21,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 21.2,
+    "wordsMax": 33,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 14
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 19,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 24.4,
+    "wordsMax": 35,
+    "longShare": 0.4,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 13.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 19.4,
+    "wordsMax": 32,
+    "longShare": 0.2,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.3,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 21,
+  "openerWords": 19,
+  "multiQuestion": 0,
+  "learnerShare": 0.32,
+  "learnerWords": 12.700000000000001,
+  "repeats": 0
+ },
+ "culture": [
+  "Lampredotto is a Florentine street food made from the fourth stomach of the cow",
+  "Lampredotto is slow-cooked in broth with tomato, onion and parsley",
+  "It is served in a soft bread roll, often with salsa verde (green sauce) on top",
+  "The bread can be dipped in the broth, ordered as \"bagnato\" (wet)",
+  "Salsa verde is considered essential to the sandwich",
+  "Lampredotto is typical Florentine street food and a local ritual for many, such as taxi drivers",
+  "Italians use formal \"Lei\" with people they have just met and switch to informal \"tu\" as familiarity grows",
+  "\"Il solito\" means \"the usual\", the regular order you always have",
+  "Taxi drivers work whenever there are customers, including Sundays, with airport rides common",
+  "Locals call a newcomer \"fiorentino\" as a friendly welcome once they embrace local food",
+  "Florence in November is grey and cool, good for walking",
+  "\"Buon pranzo\" is a common wish to say to someone about to eat lunch",
+  "\"Benvenuto\" is the word for welcoming someone",
+  "Italians commonly encourage newcomers to try local food without fear (\"provi senza paura\")"
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "marco-timon",
+  "name": "Marta Zanon",
+  "role": "proprietaria del bar",
+  "city": "Venezia",
+  "place": "Al Timon"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buonasera! Vieni, vieni, entra pure fuori dalla nebbia. Sono Marta, questo è Al Timon."
+   },
+   {
+    "who": "learner",
+    "text": "Buonasera, Marta! Grazie. Piacere, io sono Tom."
+   },
+   {
+    "who": "npc",
+    "text": "Piacere, Tom! Con questa nebbia, un'ombra di vino ci vuole proprio. Sei qui da poco a Venezia?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, sono qui da tre settimane."
+   },
+   {
+    "who": "npc",
+    "text": "Tre settimane, allora sei ancora fresco fresco! Novembre qui è così, nebbia e acqua alta, ma a me piace tanto."
+   },
+   {
+    "who": "learner",
+    "text": "Acqua alta? Ho visto l'acqua in piazza ieri. Era strano!"
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, in piazza San Marco l'acqua sale per prima, è il punto più basso. Qui a Cannaregio un po' meno, ma gli stivali stanno sempre dietro la porta. Ti sei bagnato i piedi?"
+   },
+   {
+    "who": "learner",
+    "text": "No, non mi sono bagnato i piedi, ho camminato sulle passerelle. Ma devo comprare gli stivali! Adesso devo andare, grazie Marta. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, Tom! Stammi bene e torna a trovarmi."
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Oh, ciao Tom! Sei tornato, bravo! Con questa pioggia ti vedo un po' bagnato, vieni dentro, vieni."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, ciao Marta! Sono molto bagnato, non ho l'ombrello."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, a Venezia con questa pioggia l'ombrello serve, ma intanto siediti qui al coperto. Ti porto un'ombra de vin caldo? Oggi ci sta proprio bene."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie! Un vin caldo è perfetto."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, te lo preparo subito. Lo faccio con un po' di cannella e un pezzetto d'arancia, come si fa qui da noi. Ti metto anche qualche cicchetto, così ti scaldi bene."
+   },
+   {
+    "who": "learner",
+    "text": "Cicchetti? Cosa sono, scusi?"
+   },
+   {
+    "who": "npc",
+    "text": "Sono i nostri stuzzichini: piccoli bocconi, una fetta di pane con il baccalà mantecato, una polpetta, un'acciuga con il carciofo. Si mangiano in due bocconi, con il vino. Oggi ho il baccalà, è fresco di stamattina."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, ho capito, grazie! Voglio il baccalà, sembra buono. Ora devo andare, ma torno presto. Arrivederci, Marta!"
+   },
+   {
+    "who": "npc",
+    "text": "A presto, Tom! Stai attento con la pioggia, e arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao Tom! Ben tornato. Hai trovato gli stivali, alla fine, o sei ancora con le scarpe bagnate?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, ho comprato gli stivali sabato! Sono neri."
+   },
+   {
+    "who": "npc",
+    "text": "Bravo, adesso puoi camminare in tutta la città senza paura! Cosa ti porto oggi, un'ombra di vino?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, un'ombra, grazie! Un vino bianco, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Te lo porto al tavolo, vai pure a sederti qui vicino al canale."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Che bello, vedo il canale."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, è il posto migliore all'ora dell'aperitivo, quando passano le barche. Ecco il tuo bianco, Tom."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie mille, Marta! Il vino è buono. Adesso devo andare, ma sono stato molto contento di stare qui. Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te, Tom! Arrivederci, a presto!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 14,
+    "replies": 5,
+    "wordsMedian": 17,
+    "wordsAvg": 18.6,
+    "wordsMax": 34,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.33,
+    "wordsPerLine": 11.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 25,
+    "wordsAvg": 23.8,
+    "wordsMax": 36,
+    "longShare": 0.4,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 9.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 14.2,
+    "wordsMax": 17,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.37,
+    "wordsPerLine": 10.3
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 17,
+  "openerWords": 17,
+  "multiQuestion": 0,
+  "learnerShare": 0.31333333333333335,
+  "learnerWords": 10.3,
+  "repeats": 0
+ },
+ "culture": [
+  "Venice's acqua alta (high water) happens in the foggy, rainy season around November",
+  "Piazza San Marco is the lowest point in Venice, so it floods first",
+  "Cannaregio is a Venice neighborhood that floods a bit less",
+  "Venetians keep rubber boots (stivali) by the door during acqua alta",
+  "Raised walkways (passerelle) are used to walk through flooded streets",
+  "An 'ombra' (ombra de vin) is a small glass of wine in Venetian bacari",
+  "Vin caldo (mulled wine) is made with cinnamon and orange",
+  "Cicchetti are small Venetian snacks eaten with wine",
+  "Cicchetti include bread with baccalà mantecato, meatballs (polpette), and anchovy with artichoke",
+  "Baccalà mantecato is creamed salt cod, a Venetian specialty",
+  "Al Timon is a bar by a canal where you can sit watching boats at aperitivo time",
+  "Aperitivo hour is when people gather for drinks and snacks, with boats passing on the canal",
+  "Italians say 'Stammi bene' as a warm goodbye wish",
+  "Italians say 'Ben tornato' to welcome someone back",
+  "An umbrella is useful in Venice's rain"
+ ]
+}

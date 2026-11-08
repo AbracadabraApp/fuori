@@ -1,0 +1,215 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "carmela-gentile",
+  "name": "Carmela Gentile",
+  "role": "venditrice",
+  "city": "Matera",
+  "place": "Mercato di Piccianello"
+ },
+ "learner": {
+  "type": "english-beginner",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You sell vegetables at the market and you push the peperoni cruschi, fried until crisp, and wild greens like cime di rapa for orecchiette.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Venga, venga, guardi che belle cime di rapa fresche stamattina. Cerca qualcosa di particolare?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno. Cime di rapa... cosa è? Non so."
+   },
+   {
+    "who": "npc",
+    "text": "Sono verdure di campo, un po' amarognole, molto buone. Qui a Matera le cuociamo e le mettiamo sulle orecchiette, con un po' d'aglio e olio. Le ha mai assaggiate?"
+   },
+   {
+    "who": "learner",
+    "text": "No, mai. Orecchiette... è pasta? Io non capisco tutto."
+   },
+   {
+    "who": "npc",
+    "text": "Sì, esatto, è pasta, piccola e tonda, come un orecchio. Le cime di rapa sono perfette con quella. Ha già assaggiato i peperoni cruschi?"
+   },
+   {
+    "who": "learner",
+    "text": "Peperoni... cruschi? Non so. Cosa è?"
+   },
+   {
+    "who": "npc",
+    "text": "Sono peperoni rossi seccati e poi fritti, diventano croccanti, come delle patatine, ma sono dolci e un po' piccanti. Si mangiano da soli o sulla pasta. Guardi, ne ho qui, vuole sentire il profumo?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie. Mmm, buono profumo! Io voglio comprare un po'. Quanto costa? Grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Sono contenta che le piace! Costano quattro euro l'etto, e gliene preparo un sacchetto subito. Arrivederci, buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, bentornato! Il sacchettino dei peperoni cruschi è pronto, l'ho preparato apposta per lei. Come va, si trova bene a Matera?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, grazie. Io sto bene a Matera."
+   },
+   {
+    "who": "npc",
+    "text": "Che bello! Qui la gente è accogliente, vedrà. Allora, vuole prendere i peperoni cruschi? Sono quattro euro per ogni etto, e io gliene ho messo un bel po'."
+   },
+   {
+    "who": "learner",
+    "text": "Sì, voglio i peperoni cruschi. Quanto costa tutto?"
+   },
+   {
+    "who": "npc",
+    "text": "Allora, nel sacchettino ci sono due etti, quindi fanno otto euro. Li ho fritti stamattina, sono ancora belli croccanti."
+   },
+   {
+    "who": "learner",
+    "text": "Okay, otto euro. Ecco, grazie! Sono... croccanti? Mmm, buono."
+   },
+   {
+    "who": "npc",
+    "text": "Sì, croccanti, proprio così! Grazie a lei. Li mangi pure da soli, come uno snack. Ha già pensato a cosa fare con le cime di rapa?"
+   },
+   {
+    "who": "learner",
+    "text": "Cime di rapa... sì, le orecchiette! Non so cucinare. Forse la prossima volta. Grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Certo, la prossima volta! Arrivederci, buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ah, buongiorno! Bentornato! Come va questa domenica? Oggi le cime di rapa sono freschissime, guardi che belle."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Io sto bene, grazie. E lei?"
+   },
+   {
+    "who": "npc",
+    "text": "Bene, bene, grazie! Un po' di freddo stamattina, ma il mercato è pieno di gente. Ha pensato di provare le cime di rapa per le orecchiette?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, forse. Ma io non so cucinare. È difficile?"
+   },
+   {
+    "who": "npc",
+    "text": "Ma no, non è difficile! Si lessano le cime pochi minuti, poi si saltano in padella con aglio, olio e un po' di peperoncino. Facilissimo!"
+   },
+   {
+    "who": "learner",
+    "text": "Lessano... cosa è? Non capisco. Più piano, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Lessare vuol dire cuocere nell'acqua che bolle. Metti le cime nella pentola con l'acqua calda, e aspetti pochi minuti. Tutto qui!"
+   },
+   {
+    "who": "learner",
+    "text": "Ah, okay! Acqua calda, pochi minuti. Sì, capisco. Forse io provo. Grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Bravo, vedrà che le viene bene! Arrivederci e buona domenica!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 24,
+    "wordsAvg": 24,
+    "wordsMax": 34,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.24,
+    "wordsPerLine": 9.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 21,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 20.2,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 10
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 17,
+    "replies": 5,
+    "wordsMedian": 21,
+    "wordsAvg": 19.8,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.28,
+    "wordsPerLine": 9.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 21,
+  "openerWords": 17,
+  "multiQuestion": 0,
+  "learnerShare": 0.26666666666666666,
+  "learnerWords": 9.6,
+  "repeats": 0
+ },
+ "culture": [
+  "Cime di rapa are bitter-ish field greens (turnip tops), sold fresh at the market",
+  "In Matera, cime di rapa are cooked and served on orecchiette with garlic and olive oil",
+  "Orecchiette are small, round pasta shaped like little ears",
+  "Peperoni cruschi are red peppers dried and then fried until crunchy, sweet and slightly spicy",
+  "Peperoni cruschi are eaten on their own as a snack or on pasta",
+  "Market produce is sold by the etto (100 grams); peperoni cruschi cost about four euros per etto",
+  "Lessare means to cook in boiling water",
+  "Cime di rapa are boiled a few minutes, then sautéed in a pan with garlic, olive oil and a bit of chili pepper",
+  "People in Matera are welcoming",
+  "Shopkeepers use formal address (Lei) with customers and greet them warmly, e.g. Buongiorno, Arrivederci, buona giornata",
+  "Markets are held and busy on Sundays, with people wishing each other buona domenica"
+ ]
+}

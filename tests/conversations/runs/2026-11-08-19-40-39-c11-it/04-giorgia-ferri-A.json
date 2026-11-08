@@ -1,0 +1,213 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "giorgia-ferri",
+  "name": "Giorgia Ferri",
+  "role": "studentessa",
+  "city": "Roma",
+  "place": "La Sapienza"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Ciao! Siediti pure, c'è posto qui sui gradini. Io sono Giorgia."
+   },
+   {
+    "who": "learner",
+    "text": "Ciao, Giorgia... ehm... grazie. Io sono Sam."
+   },
+   {
+    "who": "npc",
+    "text": "Piacere, Sam! Io mangio la pizza tra una lezione e l'altra, qui sulle scale. Tu sei uno studente?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì. Io sono studente... qui. Un po'."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, un po'! Va bene, capita. Io studio lettere, e tra poco ho lezione di letteratura latina. Tu cosa studi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... io studio... italiano. Solo italiano."
+   },
+   {
+    "who": "npc",
+    "text": "Solo italiano? Che bello! Allora stai già facendo benissimo, parli senza problemi. Da quanto tempo sei a Roma?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... grazie. Io sono a Roma... ehm... otto mesi. Ora devo andare. Ciao, Giorgia!"
+   },
+   {
+    "who": "npc",
+    "text": "Ciao, Sam! Buona giornata e a presto!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ehi, ciao Sam! Sei tornato sulle scale! Com'è andata la settimana?"
+   },
+   {
+    "who": "learner",
+    "text": "Ciao, Giorgia... ehm... bene. La settimana... bene, grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Bene, dai, mi fa piacere! Io sono un po' stanca, oggi ho avuto la lezione di letteratura latina e adesso mi mangio questa pizza in pace. Tu, di cosa hai voglia oggi, un caffè?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, un caffè. Va bene... grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, il caffè lo trovi al bar qui di fronte, fanno un espresso buonissimo. Io intanto finisco la pizza. Di solito, tra una lezione e l'altra, tu dove ti siedi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ripeti per favore? Più lentamente."
+   },
+   {
+    "who": "npc",
+    "text": "Certo! Tra una lezione e l'altra... tu... dove ti siedi? Qui, sulle scale?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, qui... sulle scale. Mi piace. Ora devo andare. Ciao, Giorgia, a presto!"
+   },
+   {
+    "who": "npc",
+    "text": "Ciao Sam, a presto! Buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ehi, Sam! Sei tornato anche di domenica. Siediti, c'è posto qui sui gradini."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... ciao, Giorgia. Sì, grazie. Io... sì, sono qui."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, si vede! Oggi qui è tranquillissimo, la domenica quasi nessuno. Io sto ripassando Latino, ma senza molta voglia. E tu, che hai fatto stamattina?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... stamattina... io... ho studiato. Un po'. Italiano."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, bravo, anche di domenica! Io invece ho dormito fino a tardi, poi pizza e libri. Vita dura da studentessa."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì. Io... non dormo tanto. Troppo studio."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, ti capisco, a volte anch'io dormo poco prima degli esami. Ma lo studio dell'italiano come va, ti piace?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, mi piace. È difficile, ma... mi piace. Ora devo andare. Ciao, Giorgia!"
+   },
+   {
+    "who": "npc",
+    "text": "Ciao, Sam! A presto, buono studio!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 18,
+    "wordsAvg": 14.8,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 8.8
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 11,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 18.8,
+    "wordsMax": 34,
+    "longShare": 0.2,
+    "questionsAvg": 1,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 8.8
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 13,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 16.6,
+    "wordsMax": 25,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 9.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 18,
+  "openerWords": 11,
+  "multiQuestion": 0.13,
+  "learnerShare": 0.3033333333333334,
+  "learnerWords": 9.133333333333335,
+  "repeats": 0
+ },
+ "culture": [
+  "Italians greet with \"Ciao\" and say \"Piacere\" when meeting someone",
+  "Students often eat pizza on the stairs or steps between classes",
+  "Italian students study lettere (humanities/literature), including Latin literature",
+  "\"Buona giornata\" and \"A presto\" are common friendly goodbyes",
+  "Roman bars serve excellent espresso, and people go to the bar for coffee",
+  "Italians commonly say \"Buono studio\" to wish someone well with studying",
+  "University campuses are quiet on Sundays",
+  "Students often sleep late on weekends and sleep little before exams",
+  "Useful phrases: \"tra una lezione e l'altra\" (between classes) and \"ho voglia di\" (I feel like)",
+  "Italian verb forms: \"mi mangio la pizza\" shows the reflexive for enjoying food, and \"ti capisco\" means I understand you"
+ ]
+}

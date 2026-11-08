@@ -1,0 +1,218 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "antonio-russo",
+  "name": "Antonio Russo",
+  "role": "proprietario",
+  "city": "Matera",
+  "place": "Caffè Schiuma"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You run this bar carved into the tufa of the Sassi, where people drink their coffee standing at the counter, quick and strong, before looking out over the ravine from the outside tables.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Prego, mi dica, cosa le preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Vorrei un cappuccino, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, subito. Lo beve qui al banco o preferisce uscire fuori, con la vista sul burrone?"
+   },
+   {
+    "who": "learner",
+    "text": "Qui al banco, grazie. Fa freddo fuori oggi."
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, a novembre qui nei Sassi l'aria è fresca, soprattutto la mattina. Ecco il suo cappuccino, caldo caldo. Abita qui a Matera?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, abito qui da tre settimane."
+   },
+   {
+    "who": "npc",
+    "text": "Tre settimane, quindi è ancora nuovo! Benvenuto a Matera. Le piace, finora?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, mi piace molto! Sono arrivato tre settimane fa e ho già visto tante cose belle. Grazie per il cappuccino, è buonissimo. Arrivederci e buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei! Arrivederci e buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ah, ma guarda chi si rivede. Bentornato al Caffè Schiuma. Cosa le preparo oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un caffè, bello forte, come si deve. Glielo preparo adesso."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Oggi fa meno freddo, vero?"
+   },
+   {
+    "who": "npc",
+    "text": "Sì, oggi si sta meglio, c'è un po' di sole. A novembre qui a Matera cambia tutto da un giorno all'altro. Ecco il suo caffè! Lei, come sta trovando la vita nei Sassi?"
+   },
+   {
+    "who": "learner",
+    "text": "Mi piace molto! Le persone sono gentili, ma le strade sono difficili, sempre su e giù."
+   },
+   {
+    "who": "npc",
+    "text": "Eh, è vero, qui si cammina sempre su e giù, tra scale e vicoli! Ma dopo qualche settimana le gambe si abituano, vedrà. E intanto si fa un bell'allenamento gratis."
+   },
+   {
+    "who": "learner",
+    "text": "Ah sì, un allenamento gratis! Spero di avere gambe forti presto. Grazie per il caffè, è molto buono. Arrivederci e buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei! Arrivederci e buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Eccoti di nuovo. Dimmi pure, cosa ti preparo oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Un cappuccino e un cornetto, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Il cappuccino te lo faccio ora, e il cornetto è fresco di stamattina. Lo vuoi semplice o con la crema?"
+   },
+   {
+    "who": "learner",
+    "text": "Con la crema, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, con la crema. Ecco qua, il cappuccino è caldo e il cornetto pure. Sono tre euro e cinquanta."
+   },
+   {
+    "who": "learner",
+    "text": "Ecco tre euro e cinquanta. Grazie!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Oggi è domenica, c'è un bel sole sul burrone. Quest'anno novembre è clemente. Ti fermi al bancone o ti siedi fuori?"
+   },
+   {
+    "who": "learner",
+    "text": "Mi siedo fuori, grazie! Voglio guardare il sole. Arrivederci e buona domenica!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci e buona domenica a te! Goditi il sole."
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 7,
+    "replies": 5,
+    "wordsMedian": 12,
+    "wordsAvg": 13,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.41,
+    "wordsPerLine": 11.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 15,
+    "replies": 5,
+    "wordsMedian": 15,
+    "wordsAvg": 19.2,
+    "wordsMax": 33,
+    "longShare": 0.2,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.34,
+    "wordsPerLine": 12.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 19,
+    "wordsAvg": 16.6,
+    "wordsMax": 24,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.27,
+    "wordsPerLine": 7.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 15,
+  "openerWords": 10,
+  "multiQuestion": 0,
+  "learnerShare": 0.34,
+  "learnerWords": 10.533333333333333,
+  "repeats": 0
+ },
+ "culture": [
+  "Italians greet with \"Buongiorno\" in the morning and say \"Arrivederci e buona giornata\" when leaving",
+  "Cafés in Italy have a banco (bar counter) where people drink coffee standing up, often cheaper than sitting down",
+  "Cappuccino and a cornetto (Italian croissant) are a typical breakfast, and a cornetto can be filled with crema (custard)",
+  "Italians use formal \"Lei\" with strangers and switch to informal \"tu\" once familiar, as Antonio does on the third visit",
+  "A caffè in Italy means a small, strong espresso",
+  "Matera's Sassi are ancient cave dwellings carved into the rock, with steep stairs and narrow alleys",
+  "Matera sits beside a ravine (burrone) with scenic views",
+  "Cafés often have outdoor seating where you can enjoy the sun",
+  "Regulars are welcomed warmly with \"Bentornato\" and small talk",
+  "\"Buona domenica\" is a common Sunday greeting",
+  "Weather, especially changing weather, is a common topic of small talk",
+  "Locals joke that walking up and down Matera's stairs is a free workout",
+  "Prices are paid at the café, e.g. three euros fifty for a cappuccino and cornetto",
+  "Prego, mi dica is a polite phrase used by shopkeepers meaning \"please, tell me what you'd like\""
+ ]
+}

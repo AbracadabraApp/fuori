@@ -1,0 +1,216 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "B",
+ "character": {
+  "id": "tommaso-bini",
+  "name": "Tommaso Bini",
+  "role": "barista",
+  "city": "Firenze",
+  "place": "Ditta Artigianale"
+ },
+ "learner": {
+  "type": "hesitant",
+  "model": "claude-sonnet-5-5"
+ },
+ "change": "{\"here\":\"You make coffee at Ditta Artigianale: single-origin beans, roasted lighter, made slowly as an espresso or a filter coffee. You buy your vegetables at the Sant'Ambrogio market nearby.\"}",
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Benvenuto da Ditta Artigianale. Dimmi pure."
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno... ehm... io vorrei un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo! Qui lo facciamo con chicchi monorigine, tostati chiari: lo vuoi come espresso o come caffè filtro?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... scusi... più lentamente, per favore? Non capisco."
+   },
+   {
+    "who": "npc",
+    "text": "Va bene, piano. Espresso, corto e veloce. Oppure filtro, più lungo e leggero. Quale preferisci?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... espresso, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, un espresso. Lo preparo subito. Sei in vacanza a Firenze?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... no, non sono in vacanza. Io abito qui... da sei mesi. Grazie, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Ah, da sei mesi! Bene. Grazie a te, arrivederci e buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao! Bentornato. Dimmi pure, cosa ti preparo oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno... ehm... un espresso, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, un espresso. Arriva subito. Oggi ho un caffè dell'Etiopia, leggero e un po' fruttato."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... scusi... più lentamente, per favore? Non capisco."
+   },
+   {
+    "who": "npc",
+    "text": "Va bene, piano. Un espresso. Il caffè è dell'Etiopia. È leggero. Sa un po' di frutta."
+   },
+   {
+    "who": "learner",
+    "text": "Ah... ehm... sì, va bene. Un espresso. Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto. Ecco qua, l'espresso. Attento, è caldo!"
+   },
+   {
+    "who": "learner",
+    "text": "Ah... sì, grazie! Ehm... arrivederci, buona giornata!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te, arrivederci e buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Ciao! Bentornato. Dimmi pure, cosa ti preparo oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ciao... ehm... un cappuccino, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Certo, un cappuccino. Arriva subito. Lo vuoi qui al bancone o ti siedi?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... qui... al bancone, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, al bancone. Intanto preparo il latte, ci metto un attimo."
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, va bene. Grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Ecco il tuo cappuccino, ancora caldo. Con questo caffè etiope viene fuori una nota di frutta, provalo piano. Di solito prendi il latte anche a casa, la mattina?"
+   },
+   {
+    "who": "learner",
+    "text": "Ehm... sì, a casa... un po' di latte, la mattina. Grazie mille, arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te, arrivederci! Buona domenica!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 7,
+    "replies": 5,
+    "wordsMedian": 12,
+    "wordsAvg": 12.4,
+    "wordsMax": 17,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 8.5
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 8,
+    "replies": 5,
+    "wordsMedian": 8,
+    "wordsAvg": 10.6,
+    "wordsMax": 16,
+    "longShare": 0,
+    "questionsAvg": 0.2,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.35,
+    "wordsPerLine": 7.3
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 8,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 13.2,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.31,
+    "wordsPerLine": 7.5
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 11,
+  "openerWords": 8,
+  "multiQuestion": 0,
+  "learnerShare": 0.33666666666666667,
+  "learnerWords": 7.766666666666667,
+  "repeats": 0
+ },
+ "culture": [
+  "Ditta Artigianale is a specialty coffee shop in Florence",
+  "Specialty cafés in Italy serve single-origin, light-roasted beans",
+  "Espresso is short and quick, while filter coffee is longer and lighter",
+  "Italians use \"Dimmi pure\" (go ahead, tell me) to invite you to order",
+  "You can ask for a coffee at the bar counter (al bancone) or sit down at a table",
+  "Cappuccino is a milky coffee, typically a morning drink in Italy",
+  "Ethiopian coffee tastes light and fruity",
+  "Italians use \"Buona giornata\" and \"Buona domenica\" as friendly farewells",
+  "Italians use \"Attento, è caldo!\" to warn that a drink is hot",
+  "Informal tu is used among peers in casual cafés",
+  "Baristas often chat with customers, asking if they are on vacation or about their habits",
+  "Florence (Firenze) is a tourist destination people visit on vacation"
+ ]
+}

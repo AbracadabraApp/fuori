@@ -1,0 +1,217 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A2",
+ "character": {
+  "id": "antonio-russo",
+  "name": "Antonio Russo",
+  "role": "proprietario",
+  "city": "Matera",
+  "place": "Caffè Schiuma"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Prego, mi dica. Cosa le preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un caffè in arrivo. Lo beve qui al banco, come si fa da noi, oppure si siede fuori a guardare il burrone?"
+   },
+   {
+    "who": "learner",
+    "text": "Qui al banco, grazie. Mi piace guardare."
+   },
+   {
+    "who": "npc",
+    "text": "Ecco il suo caffè, caldo caldo. Dal banco si vede un pezzetto di Sasso, ma il bello vero è là fuori. Lei è di passaggio o abita qui a Matera?"
+   },
+   {
+    "who": "learner",
+    "text": "Abito qui, da poche settimane."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, ma allora è un vicino nuovo! Benvenuto a Matera. Novembre è un bel momento per cominciare: poca gente, tanta pace nei Sassi. Il bar le piace già?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, mi piace molto! Il caffè è buonissimo e lei è molto gentile. Sono venuto qui ieri e anche oggi. Ora devo andare a casa. Grazie e arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei! Buona giornata e a presto, arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Eccolo di nuovo. Il solito caffè?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, il solito, grazie."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un caffè, forte e veloce, come piace a noi. Ecco qua, tenga."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie mille! Oggi c'è poca gente, vero?"
+   },
+   {
+    "who": "npc",
+    "text": "Eh sì, di giovedì è sempre così, a quest'ora i turisti dormono ancora. Meglio, no? Più spazio per lei al banco. Ha già deciso cosa fa oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Non so ancora. Forse vado a camminare un po'."
+   },
+   {
+    "who": "npc",
+    "text": "Buona idea! Con questa luce di novembre le pietre sono bellissime. Se ha voglia, finisca il caffè e poi si faccia il giro dalla parte del Sasso Caveoso."
+   },
+   {
+    "who": "learner",
+    "text": "Ah, grazie per il consiglio! Sì, vado a vedere il Sasso Caveoso dopo il caffè. Grazie mille e arrivederci, a domani!"
+   },
+   {
+    "who": "npc",
+    "text": "Prego, buona passeggiata! Arrivederci, a domani!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Il solito caffè, o oggi proviamo qualcosa di diverso?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, il solito, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, arriva subito. Oggi c'è un bel sole sul burrone, vero?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, c'è un bel sole! Ieri ho camminato nei Sassi e ho visto il burrone."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, bravo! Hai fatto bene a camminare, di domenica ci si gode meglio il silenzio. Ecco il tuo caffè, ancora caldo."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Lei abita qui vicino, a Matera?"
+   },
+   {
+    "who": "npc",
+    "text": "Sì, abito poco lontano, a dieci minuti a piedi. Ma il bar è quasi la mia seconda casa: ci passo più ore qui che a casa!"
+   },
+   {
+    "who": "learner",
+    "text": "Che bello! Anch'io abito vicino, ma da poco. Ora devo andare, il caffè è ottimo come sempre. Grazie e arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a te! Arrivederci, buona domenica!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 7,
+    "replies": 5,
+    "wordsMedian": 23,
+    "wordsAvg": 19.4,
+    "wordsMax": 30,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.32,
+    "wordsPerLine": 11.3
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 7,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 16.2,
+    "wordsMax": 28,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0.2
+   },
+   "learner": {
+    "share": 0.34,
+    "wordsPerLine": 10.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 11,
+    "wordsAvg": 14.8,
+    "wordsMax": 26,
+    "longShare": 0,
+    "questionsAvg": 0.4,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.39,
+    "wordsPerLine": 12
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 13,
+  "openerWords": 7,
+  "multiQuestion": 0.07,
+  "learnerShare": 0.35000000000000003,
+  "learnerWords": 11.266666666666666,
+  "repeats": 0
+ },
+ "culture": [
+  "Italians commonly drink coffee standing at the bar counter (al banco), and it is the usual local custom",
+  "Matera is a town in southern Italy (Basilicata) famous for the Sassi, ancient cave dwellings carved into stone",
+  "The Sassi are the historic districts of Matera, and Sasso Caveoso is one of the two main ones",
+  "Matera's Sassi overlook a ravine or gorge (burrone)",
+  "November is a quiet, low-season month in Matera with few tourists and a peaceful atmosphere",
+  "Mornings are quiet in Matera because tourists tend to sleep late",
+  "Locals suggest walking around the Sassi to enjoy the stone buildings in the autumn light",
+  "Italian bars are social places where regulars become familiar and bartenders greet them with 'il solito' (the usual)",
+  "Italian coffee (caffè) is typically a strong, quick espresso",
+  "Italian uses formal 'lei' with strangers and switches to informal 'tu' as people become familiar",
+  "Useful words: Buongiorno (good morning/day), Prego (please/you're welcome), Subito (right away), Benvenuto (welcome), Arrivederci (goodbye), A presto (see you soon), A domani (see you tomorrow)",
+  "Buona giornata, buona passeggiata and buona domenica are common ways to wish someone a good day, walk or Sunday",
+  "Sunday is a quiet day in the Sassi, good for enjoying the silence",
+  "Bar owners often spend long hours at the bar, making it like a second home"
+ ]
+}

@@ -1,0 +1,220 @@
+{
+ "run": "2026-11-08-19-40-39-c11-it",
+ "at": "2026-11-08T19:40:39.453Z",
+ "label": "c11-it",
+ "card": "C11 (2026-11-08)",
+ "versions": {
+  "country": "it",
+  "model": "claude-sonnet-5-5",
+  "character": "2026-11-08a",
+  "memory": "2026-11-07a",
+  "dialogue": "2026-11-06b"
+ },
+ "version": "A",
+ "character": {
+  "id": "antonio-russo",
+  "name": "Antonio Russo",
+  "role": "proprietario",
+  "city": "Matera",
+  "place": "Caffè Schiuma"
+ },
+ "learner": {
+  "type": "improving",
+  "model": "claude-sonnet-5-5"
+ },
+ "visits": [
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Prego, si accomodi al banco. Cosa le preparo?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Un caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Un caffè, forte e veloce, come si fa qui. Ecco a lei."
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! Il caffè è molto buono. Lei lavora qui ogni giorno?"
+   },
+   {
+    "who": "npc",
+    "text": "Ogni giorno, sì, anche la domenica. Il bar è mio, quindi non ho scelta! Lei è in vacanza a Matera?"
+   },
+   {
+    "who": "learner",
+    "text": "No, non sono in vacanza. Abito qui da tre settimane."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, allora è quasi un materano! Tre settimane e già beve il caffè al banco, bravo. Le piacciono i Sassi?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, i Sassi mi piacciono molto! Ieri ho camminato per due ore e ho fatto tante foto. Sono bellissimi. Bene, adesso devo andare. Grazie e arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Che bello! Grazie a lei, arrivederci e buona giornata!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Ci si rivede. Come va oggi, tutto bene?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, tutto bene, grazie. E lei?"
+   },
+   {
+    "who": "npc",
+    "text": "Bene, bene, grazie. Oggi c'è un bel sole, anche se è novembre. Vuole il solito caffè?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, grazie, il solito caffè. Oggi io voglio anche un cornetto, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Perfetto, un caffè e un cornetto subito. Il cornetto le piace semplice o con la crema?"
+   },
+   {
+    "who": "learner",
+    "text": "Con la crema, per favore. Il cornetto con la crema è buono?"
+   },
+   {
+    "who": "npc",
+    "text": "Buonissimo! Lo prendo ogni mattina dal forno qui vicino, è sempre fresco. Ecco a lei, caffè e cornetto. Che programmi ha per oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Oggi vado a fare la spesa e poi studio un po' di italiano a casa. Grazie mille, il cornetto è buonissimo! Arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Grazie a lei! Buona spesa e buono studio. Arrivederci!"
+   }
+  ],
+  [
+   {
+    "who": "npc",
+    "text": "Buongiorno! Entri, entri. Ben tornato, il solito caffè al banco?"
+   },
+   {
+    "who": "learner",
+    "text": "Buongiorno! Sì, il solito caffè, per favore."
+   },
+   {
+    "who": "npc",
+    "text": "Subito! Ecco il suo caffè, caldo caldo. Com'è la sua domenica, oggi?"
+   },
+   {
+    "who": "learner",
+    "text": "Grazie! La domenica è tranquilla. Ieri sono andato al mercato."
+   },
+   {
+    "who": "npc",
+    "text": "Ah, il mercato! Bene, bene. Qui da noi la domenica è calma, la gente viene con calma a bere il caffè e a guardare la gravina. Ha comprato qualcosa di buono?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, ho comprato le pomodori e il pane."
+   },
+   {
+    "who": "npc",
+    "text": "Ottimo! I pomodori e il pane, non serve altro. Il pane di Matera è speciale, con quella crosta croccante. Lo conosce già?"
+   },
+   {
+    "who": "learner",
+    "text": "Sì, il pane di Matera è molto buono! Ho mangiato il pane con i pomodori ieri. Adesso devo andare. Grazie e arrivederci!"
+   },
+   {
+    "who": "npc",
+    "text": "Arrivederci, a presto! Buona domenica!"
+   }
+  ]
+ ],
+ "scores": [
+  {
+   "stats": {
+    "openerWords": 9,
+    "replies": 5,
+    "wordsMedian": 13,
+    "wordsAvg": 14.2,
+    "wordsMax": 20,
+    "longShare": 0,
+    "questionsAvg": 0.6,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.42,
+    "wordsPerLine": 13
+   }
+  },
+  {
+   "stats": {
+    "openerWords": 9,
+    "replies": 5,
+    "wordsMedian": 16,
+    "wordsAvg": 14.6,
+    "wordsMax": 23,
+    "longShare": 0,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.43,
+    "wordsPerLine": 13.5
+   },
+   "repeats": []
+  },
+  {
+   "stats": {
+    "openerWords": 10,
+    "replies": 5,
+    "wordsMedian": 12,
+    "wordsAvg": 16,
+    "wordsMax": 31,
+    "longShare": 0.2,
+    "questionsAvg": 0.8,
+    "multiQuestionShare": 0
+   },
+   "learner": {
+    "share": 0.37,
+    "wordsPerLine": 11.8
+   },
+   "repeats": []
+  }
+ ],
+ "values": {
+  "replyWords": 13,
+  "openerWords": 9,
+  "multiQuestion": 0,
+  "learnerShare": 0.4066666666666667,
+  "learnerWords": 12.766666666666666,
+  "repeats": 0
+ },
+ "culture": [
+  "Italians greet with 'Buongiorno' in the morning and say 'arrivederci' when leaving",
+  "Italian cafés serve coffee quickly at the counter (al banco), and drinking it standing there is the local custom",
+  "Espresso is the default 'caffè': strong, small and quick",
+  "Many Italian bars are family-owned and the owner works there every day, even Sundays",
+  "Matera is famous for the Sassi, its ancient cave-dwelling districts",
+  "Someone who lives in Matera is called a 'materano'",
+  "The formal 'lei' is used to address people politely, as in 'Cosa le preparo?'",
+  "Having 'il solito' (the usual) is a regular's custom at a local bar",
+  "A cornetto is the Italian breakfast pastry, eaten plain (semplice) or filled with cream (crema)",
+  "Bars often get fresh cornetti every morning from a nearby bakery (forno)",
+  "Sundays in Matera are calm and people take their time over coffee",
+  "The gravina, the ravine beside Matera, is a local landmark people like to look at",
+  "Matera bread is a speciality known for its crunchy crust",
+  "Locals wish you 'Buona giornata', 'Buona spesa', 'Buono studio' and 'Buona domenica'",
+  "Markets are a place to buy fresh produce like tomatoes (pomodori) and bread (pane)",
+  "'I pomodori' is the correct plural form: 'le pomodori' was wrong",
+  "'A presto' means 'see you soon'"
+ ]
+}
