@@ -569,4 +569,4 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Time: about 2 minutes
 - Reviewed: test designer, 2026-11-07: the guard made a decision rule (any invented job or contradicting past with the scene alone means A); both repeating names the cause as elsewhere, next C5; Sam's own repeats not counted. All taken
 - Script: tests/experiments/here-drafting.mts
-- Skipped (Josh, 2026-11-07: "you skipped C5b, so we skip C6 for same reason"): C4's short line, the scene and the person, already works; the retelling it would look at is what memory.md 2026-11-07a addresses. The trim uses the scene and the person
+- Deferred (Josh, 2026-11-07): runs after the here lines are trimmed (roadmap N6 item 12)
