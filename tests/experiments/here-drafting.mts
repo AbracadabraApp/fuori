@@ -107,7 +107,7 @@ const SAM = { type: 'object', properties: { say: { type: 'string' } }, required:
 async function npcTurn(c: CharacterSheet, lines: Line[], memory: Parameters<typeof relationshipLine>[1], now: Date): Promise<{ line: string; en: string }> {
   const system = [
     `You are ${c.name}, ${c.role}, in ${c.city}. You're at ${withToday(c.appearance.setting, now, cities.find((x) => x.name === c.city)?.id, c.id)} ${c.age} years old. ${c.personality.traits.join(', ')}.`,
-    `The person in front of you has come to live in ${c.city}. ${relationshipLine(loadTemplate(), memory, now)}`,
+    `The person in front of you is living in ${language.card.country} for a while. ${relationshipLine(loadTemplate(), memory, now)}`,
     '', `Reply with JSON: line, what you say, in ${language.name}; en, its English.`,
   ].join('\n');
   const messages: { role: 'user' | 'assistant'; content: string }[] = [{ role: 'user', content: '(The person has just come in.)' }];
@@ -131,7 +131,7 @@ async function npcTurn(c: CharacterSheet, lines: Line[], memory: Parameters<type
 /** Sam, on Grok: the game's persona and nothing more; sees his earlier visits so he stays consistent */
 async function samTurn(c: CharacterSheet, earlier: string[], lines: Line[], last: boolean): Promise<string> {
   const q = [
-    `You are Sam, someone who loves ${language.card.country} and has come to live in ${c.city} for a while, not a tourist. You are learning ${language.name} and speak it simply, in short sentences.`,
+    `You are Sam, someone who loves ${language.card.country} and is living in ${language.card.country} for a while, not a tourist, and is in ${c.city} today. You are learning ${language.name} and speak it simply, in short sentences.`,
     `You are talking with ${c.name}, ${c.role}, at ${c.appearance.setting.split('.')[0]}.`,
     'Answer what he asks truthfully, and stay consistent with anything you said before. Make up ordinary details about yourself if asked, and keep them.',
     'Never be the first to name a local place, food, drink, custom, festival or person; you may repeat something he named. Don\'t ask him about the town\'s culture or history.',
