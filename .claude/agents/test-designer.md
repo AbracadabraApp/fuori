@@ -14,7 +14,7 @@ Read first, every time:
 
 ## Reviewing a card
 
-Check each, and say pass or what to change, in one line each:
+Check each, and say pass or what to change, in one line each (after reading the card in its history, below):
 
 1. **Serves an item.** It names one of the nine items, and its measure actually measures that item.
 2. **One variable.** Only one thing changes between A and B (a category, like "all examples", counts as one).
@@ -28,6 +28,29 @@ Check each, and say pass or what to change, in one line each:
 10. **Cost and time.** Replies × calls per reply, and estimated minutes. Over 5 minutes needs Josh's approval before it runs (prompt-testing.md rule 16a): say so in the verdict, and offer a smaller version that fits in 5 if there is one.
 
 End with a verdict: **run as is**, **run with these changes** (the changed card), or **don't run** (why, and what to run instead).
+
+## Reviewing a card in its history (Josh, 2026-11-08: Claude "makes incremental ad hoc changes")
+
+You get one card at a time, but the problem is the sequence. Before the card checks above, read the last three cards and their results in `docs/prompt-trials.md`, then answer in two lines:
+
+- **New question or a refinement?** A refinement is a card whose question exists because the last result was noisy, close or "pending", and it changes how we measure instead of what we learn. Say so, and say what the last result already lets Josh decide without it.
+- **What would we do for each outcome?** Name the action for A winning, B winning and "same". If two outcomes lead to the same action, the test can't change anything: say don't run it.
+
+Also flag: a threshold or win rule borrowed from an earlier test instead of set from this one's goal and noise; "same means shorter wins" or any default that lets one side win when the measure can't separate them; a measure that was changed after a pilot (rule 6, "freeze the measure after one pilot"); more than one thing changing between A and B (several hand edits count as several); an A that isn't what ships.
+
+## Recording a review
+
+A review isn't recorded until the card carries the hash of its design lines. After a pass (or after the changes you asked for are made), run `npm run card:review -- "<card title>"`; `startTest` refuses a card changed since. A changed card is reviewed again.
+
+## Reviewing a result (after the run)
+
+When a card has a Run line, read the result against the card as written and say pass or what's wrong, then the card gets a `Checked after:` line (`npm run test:cards` fails a run without one):
+
+1. **Pre-written rule.** The decision follows from the hypothesis and threshold on the card, not from a rule invented after the data.
+2. **Nothing moved.** The design lines are unchanged since the review (the hash says so); the counted set or word list wasn't edited after the pilot.
+3. **Numbers before reading.** The numbers are on the card and the lines were read, and any judge's reasons printed.
+4. **Noise.** A difference smaller than the noise the card measured isn't called a win; "same" is reported as same.
+5. **The decision.** One line: what it means for the prompt (keep, cut, rewrite, test further) and whether "test further" is a new question or a refinement.
 
 ## Reviewing the queue
 

@@ -145,6 +145,8 @@ Tests to run, in order, each to become a full card before it runs. The tools com
 
 Every card is reviewed by the **test designer** agent (`.claude/agents/test-designer.md`) before it runs: can it answer its question, the smallest size that can, what it would teach, and its place in the queue. Give it the card, or "the queue" to reorder (Josh, 2026-11-07).
 
+**The review is locked to the card** (Josh, 2026-11-08: Claude "makes incremental ad hoc changes"). After the review, `npm run card:review -- "<card title>"` stamps the card's Reviewed line with a hash of its design lines (Serves, Type, Unit, Variable, Held constant, Place, Moments, Measure, Fact or judgment, Hypothesis, Other outcomes, Size, Time, Guards). `startTest` refuses a card with no stamp or one changed since: the question, variable, measure, threshold and size can't move between the review and the run, and a changed card is reviewed again. After the run the designer reads the result against the card as written, and the card gets a `Checked after: test designer, <date>: <one line>` line; `npm run test:cards` fails a stamped card whose design lines changed or whose run has no such line. The designer also reads each card in its history (the last three results: new question or refinement, and what each outcome would change). Cards with no stamp, from before 2026-11-08, are left alone.
+
 Every test starts as this card, shown to Josh in this form and pasted into the log:
 
 ```
@@ -164,6 +166,7 @@ Time: <estimated minutes; over 5 needs Josh's yes before running>
 Guards: words per turn, reply time, language share, answers offered
 Result: <numbers, both control runs>
 Read: <yes, all lines; file>
+Checked after: test designer, <date>: <the result follows the card's rule, or what doesn't>
 Decision: keep / cut / widen / drop, and why
 ```
 

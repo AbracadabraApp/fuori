@@ -69,6 +69,8 @@
     "test:quality": "tsx tests/check-quality.ts",
     "test:level": "tsx --env-file-if-exists=.env.local tests/check-level.ts",
     "test:learner-level": "tsx --env-file-if-exists=.env.local tests/check-learner-level.ts",
+    "test:cards": "tsx tests/check-cards.mts",
+    "card:review": "tsx tests/experiments/card-review.mts",
     "test:scorecard": "tsx tests/check-scorecard.ts",
     "test:real-play-scores": "tsx tests/check-real-play-scores.ts",
     "test:repeats": "tsx tests/check-repeats.ts",
