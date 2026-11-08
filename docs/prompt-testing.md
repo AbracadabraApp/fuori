@@ -16,6 +16,7 @@ Draft, 2026-11-06, for Josh's review. Josh: "You need to organize work in a disc
 **Character** (tested first, with Culture):
 
 4. **In character.** She stays her role.
+6. **Teaches in role.** A fishmonger helps a newcomer the way a fishmonger would (slows down, repeats, offers a word, recasts a mistake), never as a school teacher (Josh, 2026-11-07: "Does a fish monger turn into a school teacher").
 7. **Remembers.** No retelling; uses what she knows about them.
 
 **Language** (after Culture and Character):
@@ -24,7 +25,6 @@ Draft, 2026-11-06, for Josh's review. Josh: "You need to organize work in a disc
 8. **Brief.** Turns they can follow.
 9. **Grammatical.** Her own language is correct, since the learner copies it.
 5. **Responds to English.** She helps when they need it.
-6. **Teaches in role.** Recasts, usable answers, no lectures.
 
 Each test card names the item it serves; how it's judged goes on the card. Measuring the learner's learning is a separate doc (to come).
 
@@ -97,7 +97,7 @@ Smaller: a kept change gets a small check in the other country before it ships (
 
 Tests to run, in order, each to become a full card before it runs. The tools come first: rules 5, 7 and 8 work around a simulated learner that steers and judges that were lenient or literal; F1 and F2 fix the tools themselves. Who decides what: design questions are Josh's (rule 16).
 
-**First: Culture and Character** (items 2, 3, 4, 7; Josh, 2026-11-07). The judges and moments built here serve these items first: F1 and Q2 start with judges for accurate, local and tipico, in character, and remembers; A1 judges each part on these items first.
+**First: Culture and Character** (items 2, 3, 4, 6, 7; Josh, 2026-11-07). The judges and moments built here serve these items first: F1 and Q2 start with judges for accurate, local and tipico, in character, teaches in role, and remembers; A1 judges each part on these items first.
 
 | # | Question | Type | Unit | Waits on |
 |---|---|---|---|---|
@@ -105,14 +105,14 @@ Tests to run, in order, each to become a full card before it runs. The tools com
 | F2 | **Fix the simulated learner.** A learner at a set level who only responds to what the character says, never brings up a topic of their own, and makes realistic mistakes and mishearings. It passes when Josh would believe its lines came from a real learner at that level, and it brings up the measured topic itself in under 1 in 20 conversations. With F1 and F2 passing, whole dialogues become usable for items 3, 4 and 7, not only moments. | tool | method | Josh reads a sample of its lines |
 | V2 | **Moments vs conversations, the problem side** (rewritten with Josh, 2026-11-07): can a character falling out of role (Beto taking a food order, Carla inventing an errand, Giorgia offering pizza from the steps), seen in a real conversation, also be seen and recreated in a moment, or does it need the conversation? **Part 1:** Claude and Grok read whole real conversations and mark every out-of-role reply; each mark is checked again with only the moment (the reply and the line before it): still seen? **Part 2:** each marked moment replayed 5× with today's prompt: does it fall out of role again (≥ 2 of 5)? Most pass both: moments are enough for role problems; fail part 1: the problem needs the conversation; fail part 2: the moment doesn't recreate it. JUDGMENT (flagged, rule 7b): both judges, every line read. Script `tests/experiments/v2-role.mts`. The first run (difficulty and grammar, V2 and V2b in the log) wasn't a fair test of this (Josh: "testing difficulty and grammar are poor ways to compare testability of moments") | dialogue, then moment | method | — |
 | Q1 | Build `moments.json`: the real turns behind recent complaints. **Started 2026-11-07:** 10 moments gathered from the experiments that held them inline (Luisa and Doña Chela's openings, Carla's invented errand, Beto's torta, Ardit's ribollita, Magda's joven and cansado, Efrén's return visit); `tests/experiments/moments.mts` replays one through the server's turn code; `npm run test:moments` checks they still point at real places. Four complaints still need their real turns from the admin export (listed in the file: Don Nacho's long answer, the cornetto at a pharmacy, Luisa's cappuccino line, Giorgia's pizzeria), and Italy has only 3 | setup | — | the laptop, for the four turns |
-| Q2 | Calibrate the judges the queue needs: first accurate, local and tipico, in character, and remembers; later native-sounding, recast correct, at the learner's level | setup | — | Josh marks ~20 replies each |
+| Q2 | Calibrate the judges the queue needs: first accurate, local and tipico, in character, teaches in role (recast correct), and remembers; later native-sounding, at the learner's level | setup | — | Josh marks ~20 replies each |
 | H2 | **Do product lists in a shop's `here` line keep every visit on buying?** Salumeria Simoni's line lists what it sells and buying stayed at 83–100% (283bdb6's guard). The same shops with the product list as one plain sentence vs as now. Serves item 4 (in character) | visit | `here` lines of shops | F1, Q1 |
 | H1 | **How many facts should a `here` line hold?** 283bdb6 promised two to four plain facts per line; many Mexican lines carry five or six (median 62 words, Italy 36). Do 5–6 facts make her lecture or recite, against 2–4? T5 found a fuller line helped her bring something new, so it could go either way. Visit test, 2–3 places per country, the same line cut to 4 facts vs kept at 6. Serves items 3 (local and tipico) and 8 (brief) | visit | `here` lines | F1, Q1 |
 | V1 | Does a gain on a moment show up in whole conversations? One change known to move a moment, measured on its moments and on whole dialogues (5 places × 2 visits, fixed learner lines). If moments win and dialogues don't, that item needs dialogue tests (Josh, 2026-11-07: "the implication is tune moments, trust conversation improves") | moment, then dialogue | method | Q1 |
 | A1 | **Does each part do something?** Leave-one-out (Josh, 2026-11-07: "part vs no part for each part … a baseline for the value of including a part before tweaking it"): the Beginner moments with all parts, then with each named part switched off in turn (`setPartsOff`), single parts only. Each removal is judged on the items its part claims to serve, plus the guards. Who: you, Who: the learner, How you talk and Reply: parts format stay in. About 20 parts × moments × 5 runs; a part showing no effect gets a rerun before it's called dead. Output: a value for every part, the baseline before any part is changed. Script: `tests/experiments/ablate.mts` | moment | every part of beginner.md | F1, Q1 |
 | A1b | **Do parts cover for each other?** A hypothesis, not an assumption (Josh, 2026-11-07): run only if A1 shows a part with no effect where it should matter. Switch off that part and the one the inventory guesses overlaps it, together (`PAIRS=1`), on the same moments; if the pair loses what neither did alone, they cover for each other: keep one, not both | moment | the pairs A1 points to | A1 |
 
-**Then: Language** (items 1, 5, 6, 8, 9), and the whole-prompt cuts.
+**Then: Language** (items 1, 5, 8, 9), and the whole-prompt cuts.
 
 | # | Question | Type | Unit | Waits on |
 |---|---|---|---|---|
