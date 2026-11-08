@@ -684,3 +684,5 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Time: about 1 minute on the Mac mini
 - Reviewed: test designer, 2026-11-08: pass (B=edited takes C9's Mexico lines word for word and the C10 card; only the here line differs); one fix taken: the result file is labelled C10 and edited, not C8 and short
 - Script: tests/experiments/here-visits.mts (B=edited)
+- Run (2026-11-08, Mac mini, 10 characters, 68 s): **the edited line wins by the rule, at the limit; the hypothesis (Josh's) not met**: both judges picked the current line for 5 of 10 (Vale, Ximena, Doña Rosa, Beto, Padre Tomás), the edited for 3 (Sofía, Emiliano, Don Chucho), split for 2. Words per line A 20.5 · B 19.4. Read: the current line's wins are mostly on how the conversation went, not on the line's facts: in Ximena, Beto and Padre Tomás the losing side has "Sam ignores his questions and leaves"; Doña Rosa's is real (the Día de Muertos altar for Sam's grandmother, from the cut cempasúchil sentence). Sam on Grok is the biggest source of difference between the two sides. File: `tests/experiments/results/c10-es-mx-2026-11-08T1837.md`
+- Decision: pending Josh
