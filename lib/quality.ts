@@ -29,6 +29,8 @@ export interface ScoredTurn {
   text: string;
   /** Beginner replies saved with their parts (from 2026-10-27) */
   parts?: { kind: string; text: string }[];
+  /** A reply's server time in ms, kept with real turns (lib/memory.ts ConversationTurn) */
+  ms?: number;
 }
 
 /**
@@ -100,7 +102,7 @@ export interface ConversationScore {
   phrases?: ReturnType<typeof phraseStats>;
   /** How long each character reply took, in ms (the replay test times them; real play doesn't yet) */
   replyMs?: number[];
-  /** Level of the character's lines (lib/level.ts; the replay test scores it, real play doesn't yet) */
+  /** Level of the character's lines (lib/level.ts; the replay scores every line, real play a sample of them) */
   level?: LevelScore;
 }
 
@@ -168,6 +170,8 @@ export async function scoreConversation(
 ): Promise<ConversationScore> {
   const j = await judge(character, turns, opts);
   const shorter = shorterAfterLost(turns, j.lost.map((l) => l.line));
+  // Real play: the server's time per reply, saved with each turn; the replay test fills this itself
+  const replyMs = turns.filter((t) => t.who === 'npc' && typeof t.ms === 'number').map((t) => t.ms as number);
   return {
     judgeVersion: qualityPromptVersion(),
     ...(opts.beginner ? { beginner: true } : {}),
@@ -176,6 +180,7 @@ export async function scoreConversation(
     lost: j.lost.map((l) => ({ line: l.line, shorter: shorter.get(l.line) ?? false, pulledBack: l.pulledBack })),
     judge: j,
     ...(phraseStats(turns) ? { phrases: phraseStats(turns) } : {}),
+    ...(replyMs.length ? { replyMs } : {}),
   };
 }
 

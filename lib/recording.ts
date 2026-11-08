@@ -58,8 +58,25 @@ interface RecordTurnParams {
   /** What Whisper heard; absent on the opening line */
   learnerSaid?: string;
   reply: { line: string; en: string; parts?: { kind: string; text: string }[] };
+  /** The server's time to the whole reply, in ms; saved with a reply (not an opening) for the scorecard */
+  replyMs?: number;
   /** What the character remembered at the start, kept with a new conversation */
   memory?: CharacterMemory;
+}
+
+/** The turns saved for one exchange: the learner's line if any, then the character's reply with its time */
+export function exchangeTurns(p: Pick<RecordTurnParams, 'learnerSaid' | 'reply' | 'replyMs'>, at: string) {
+  return [
+    ...(p.learnerSaid ? [{ who: 'learner' as const, text: p.learnerSaid, at }] : []),
+    {
+      who: 'npc' as const,
+      text: p.reply.line,
+      en: p.reply.en,
+      at,
+      ...(p.reply.parts ? { parts: p.reply.parts.map((x) => ({ kind: x.kind, text: x.text })) } : {}),
+      ...(p.learnerSaid && typeof p.replyMs === 'number' ? { ms: p.replyMs } : {}),
+    },
+  ];
 }
 
 /**
@@ -72,10 +89,7 @@ export async function recordTurn(p: RecordTurnParams): Promise<string | null> {
   try {
     const at = new Date().toISOString();
     let id = p.conversationId;
-    const turns = [
-      ...(p.learnerSaid ? [{ who: 'learner' as const, text: p.learnerSaid, at }] : []),
-      { who: 'npc' as const, text: p.reply.line, en: p.reply.en, at, ...(p.reply.parts ? { parts: p.reply.parts.map((x) => ({ kind: x.kind, text: x.text })) } : {}) },
-    ];
+    const turns = exchangeTurns(p, at);
 
     if (id) {
       const ok = await addConversationTurn(id, p.learnerId, turns[0]);

@@ -70,6 +70,7 @@ export interface TakeTurnResult {
 
 export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const { learnerId, character, transcript, learnerSaid, conversationId } = p;
+  const started = performance.now(); // the reply's server time, kept for the scorecard
 
   // What this character remembers about them (fills the prompt's
   // {relationship} line). Never blocks the reply: without it the character
@@ -169,6 +170,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     withDone: true,
   });
   p.laps?.lap('claude');
+  const replyMs = Math.round(performance.now() - started);
 
   // One line per turn so any reply can be traced to the prompt version that produced it
   const version = lessonBriefed && p.lesson
@@ -202,6 +204,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         promptVersion: version,
         learnerSaid: transcript.length ? learnerSaid : undefined,
         reply,
+        replyMs,
         memory,
       }).catch((err) => {
         p.onSoftError('recording', err);

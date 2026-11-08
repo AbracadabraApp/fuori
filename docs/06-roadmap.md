@@ -146,7 +146,7 @@ Goal: 90% of the character's words at the learner's level (Josh; the [research](
 - [x] **Claude** The `test:conversations` grader no longer says complex language is fine; it reports "Lines a beginner can follow" instead (Josh's OK, 2026-10-18). Baseline: 10% Italy, 11% Mexico
 - [ ] **Claude** Level in the character prompt for every learner, every turn, in role, once the learner's level exists (below). The Beginner block ("still you, sometimes ask") is picked and on trial for Josh. Beginners: characters teach key phrases in role, such as how to ask "Come si dice …?", instead of a button (Josh, 2026-10-16; asking it by voice already works)
 - [ ] **Claude** Question ladder for Intermediate and Advanced (one fact, then anything), measured with the question-kind count
-- [ ] **Claude** Level of real play on the scorecard (a call per line, so decide the cost first)
+- [x] **Claude** Level of real play on the scorecard: a sample of 3 lines per conversation (Josh, 2026-11-08: "sample"); reply time in real play is the server's time per reply, saved with each turn. Both fill from the next release
 - [ ] **Josh + Claude** More dialect as you level up (the dialect setting is greyed out today)
 
 ### Conversation library — N6 (Josh, 2026-10-23)

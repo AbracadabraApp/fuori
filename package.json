@@ -71,6 +71,7 @@
     "test:level": "tsx --env-file-if-exists=.env.local tests/check-level.ts",
     "test:learner-level": "tsx --env-file-if-exists=.env.local tests/check-learner-level.ts",
     "test:scorecard": "tsx tests/check-scorecard.ts",
+    "test:real-play-scores": "tsx tests/check-real-play-scores.ts",
     "test:voice-outcomes": "tsx tests/check-voice-outcomes.ts",
     "test:history": "tsx tests/check-history.ts",
     "test:study-export": "tsx tests/check-study-export.ts",

@@ -2,8 +2,8 @@
  * The level of what a character says (content/<country>/prompts/level.md):
  * for each character line, which of four listeners knows each word. Listener
  * 1–2 is a beginner, so a line a beginner can follow has at least 90% of its
- * words known by listener 1 or 2. The replay test scores it; real play doesn't
- * yet (one call per line).
+ * words known by listener 1 or 2. The replay test scores every line; real play
+ * scores a sample (one call per line, Josh 2026-11-08: "sample").
  */
 
 import { z } from 'zod';
@@ -48,7 +48,18 @@ export async function beginnerKnows(line: string): Promise<number> {
 
 export type LineJudge = (line: string) => Promise<number>;
 
-export async function levelOfConversation(turns: ScoredTurn[], judge: LineJudge = beginnerKnows): Promise<LevelScore> {
-  const lines = turns.filter((t) => t.who === 'npc').map((t) => t.text);
+/** How many of a real conversation's lines are scored for level (the replay scores all of them) */
+export const REAL_PLAY_LEVEL_SAMPLE = 3;
+
+/** `n` lines spread evenly over the list, first and last included; all of them when there are no more than `n` */
+export function sampleLines<T>(lines: T[], n: number): T[] {
+  if (lines.length <= n) return lines;
+  if (n <= 1) return lines.slice(0, 1);
+  return Array.from({ length: n }, (_, i) => lines[Math.round((i * (lines.length - 1)) / (n - 1))]);
+}
+
+export async function levelOfConversation(turns: ScoredTurn[], judge: LineJudge = beginnerKnows, sample?: number): Promise<LevelScore> {
+  const all = turns.filter((t) => t.who === 'npc').map((t) => t.text);
+  const lines = sample ? sampleLines(all, sample) : all;
   return { judgeVersion: levelPromptVersion(), beginnerKnows: await Promise.all(lines.map(judge)) };
 }

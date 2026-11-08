@@ -27,6 +27,8 @@ export interface ConversationTurn {
   at: string; // ISO timestamp
   /** Beginner level dialogue: the reply in parts, kept so its phrases can be counted exactly (lib/quality.ts) */
   parts?: { kind: string; text: string }[];
+  /** A character reply: the server's time to the whole reply, in ms (lib/conversation/take-turn.ts); the scorecard's "reply time" in real play. Absent on openings and on turns saved before 2026-11-08 */
+  ms?: number;
 }
 
 /**

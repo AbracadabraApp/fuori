@@ -26,6 +26,7 @@ import { writeStudyFileWithClaude, saveStudyFile, trackStudyFileWrite, type Stud
 import type { CharacterSheet } from './types';
 import { scoreConversation, saveConversationScore, judgeWithClaude, type Judge } from './quality';
 import { checkLearnerLevel } from './learner-level';
+import { levelOfConversation, beginnerKnows, REAL_PLAY_LEVEL_SAMPLE, type LineJudge } from './level';
 
 /** "A few exchanges": shorter conversations aren't worth remembering */
 export const MIN_LEARNER_LINES = 2;
@@ -89,7 +90,9 @@ export async function rememberConversation(
    *  caller has answered, e.g. Next's after(): the app waited for all four
    *  calls in a row, a minute or more (whole-app scan, 2026-10-29). Without
    *  it they run before returning, as the tests expect */
-  later?: (work: () => Promise<void>) => void
+  later?: (work: () => Promise<void>) => void,
+  /** Judges a sample of the character's lines for level (lib/level.ts); a fake in tests */
+  lineJudge: LineJudge = beginnerKnows
 ): Promise<RememberResult> {
   if (!recordingEnabled()) return 'nothing new';
   let claim: Awaited<ReturnType<typeof claimForMemory>> = null;
@@ -154,6 +157,13 @@ export async function rememberConversation(
       try {
         // Beginner dialogue (lib/beginner.ts) speaks English by design; its turns carry a beginner- prompt version
         const score = await scoreConversation(character, claim.turns, judge, { beginner: !!claim.promptVersion?.startsWith('beginner-') });
+        // "Lines a beginner can follow" in real play: a sample of lines, one call each. A problem
+        // here is logged and the score is saved without it.
+        try {
+          score.level = await levelOfConversation(claim.turns, lineJudge, REAL_PLAY_LEVEL_SAMPLE);
+        } catch (err) {
+          logError('level sample', err, conversationId);
+        }
         await saveConversationScore(conversationId, score);
         console.log(JSON.stringify({ level: 'info', event: 'quality', conversationId, character: claim.characterId, median: score.stats.wordsMedian, unprompted: score.judge.correctionsUnprompted, pronunciation: score.judge.pronunciationCorrections, words: score.judge.words }));
       } catch (err) {
