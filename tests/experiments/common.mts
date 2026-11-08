@@ -1,7 +1,7 @@
 // Shared by the experiment scripts in this folder (README.md): one Claude call
 // with retries, reading the conversations out of a test report, and where
 // outputs go (out/, gitignored: several quote Josh's real lines).
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 
@@ -73,4 +73,19 @@ export async function askGrok<T>(content: string, schema: object, model = proces
     if (attempt >= 3 || (r.status !== 429 && r.status < 500)) throw new Error(`grok ${r.status}: ${await r.text()}`);
     await new Promise((res) => setTimeout(res, 3000 * (attempt + 1)));
   }
+}
+
+/** The methodology gate (docs/prompt-testing.md → The card; Josh, 2026-11-07: "We need a strict methodology for testing").
+ *  A test script calls this first; it stops unless the card is in docs/prompt-trials.md under a heading with this title,
+ *  with every card line filled and a "Reviewed:" line, and "Josh: yes" when its time is over 5 minutes. */
+export function startTest(title: string) {
+  const log = readFileSync(join(process.cwd(), 'docs', 'prompt-trials.md'), 'utf8');
+  const at = log.split('\n### ').find((s) => s.startsWith(title));
+  const stop = (why: string) => { console.error(`Not run: ${why} (card "${title}", docs/prompt-testing.md → The card)`); process.exit(1); };
+  if (!at) stop('no card in docs/prompt-trials.md');
+  const missing = ['Serves', 'Type', 'Unit', 'Variable', 'Held constant', 'Measure', 'Fact or judgment', 'Hypothesis', 'Other outcomes', 'Size', 'Time', 'Reviewed']
+    .filter((k) => !new RegExp(`^-? ?${k}: *\\S`, 'm').test(at!));
+  if (missing.length) stop(`card missing ${missing.join(', ')}`);
+  const minutes = Number(at!.match(/^-? ?Time:\D*(\d+)/m)?.[1] ?? 0);
+  if (minutes > 5 && !/Josh: yes/.test(at!)) stop(`${minutes} min needs Josh: yes on the card`);
 }
