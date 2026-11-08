@@ -186,7 +186,8 @@ The dialogue prompts (`beginner.md`, `character.md` with `levels.md` and its var
 
 1. **One shared character core, written new and short:** who you are, your place, your role, only what you know, what you remember about them. The Culture and Character tests run on it, once, for every type.
 2. **Each type adds only what differs:** the Beginner format, the level, a lesson's steps. That's the Language work, after Culture and Character.
-3. **Today's prompt is the control in every test.** The new core replaces a type's prompt only when it does at least as well on that type's stored moments; a rule from the old prompt comes back only when a test shows it's missed (the floor method below). The old prompts and their changelogs are the list of problems to check, not the text.
+3. **Today's prompts are frozen as the control** (Josh, 2026-11-07: "why not leave beginner prompts alone and measure the new prompts against it"). No more tuning `beginner.md` or the other dialogue prompts: the examples and the five "stay in role" sentences stay as they are, so every result is measured against the same thing. A problem from play becomes a stored moment the new prompt has to pass, not a patch; the frozen prompt is patched only for something broken in play. C1's "cut the examples" is therefore not applied.
+4. **Today's prompt is the control in every test.** The new core replaces a type's prompt only when it does at least as well on that type's stored moments; a rule from the old prompt comes back only when a test shows it's missed (the floor method below). The old prompts and their changelogs are the list of problems to check, not the text.
 
 ## Taking a grown prompt back down
 
