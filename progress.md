@@ -66,6 +66,13 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-07 (late night): C4 and C5 done; memory notes hold what he told (laptop session)
+
+- **C4 done:** here lines without their facts give the same amount of local talk, a local's instead of a guidebook's (Mexico, confirmed in Siena). The trim is roadmap N6 item 10, not started (Josh: not now); a sample of ~10 lines to Josh first.
+- **C5 applied:** `memory.md` 2026-11-07a, both countries: the notes also hold what the character told them. With today's notes Don Ramón replayed visit 1 on visits 2 and 3; with the clause he carried a thread. Not released.
+- **To-do added:** a better memory test (item 11: measure replayed visits, not repeated topics; Sam on Grok loops; the judges disagree on callbacks), C6 after the trim (item 12).
+- **Testing lessons from Josh today:** repeated topics help learning, groundhog-day visits are the fault; a failure in a small test is enough to act on, don't scale up to confirm it; no test over 5 minutes; one variable; measures from the goal; Grok's non-reasoning model for the simulated learner (grok-4.7 was the slowness).
+
 ## 2026-11-07 (night): C3 run, C4 built but not run (laptop session)
 
 - **C3:** a here line's five facts are all the local talk a character gives, told on the first visit (5 facts 4.0 local things per 3 visits, 3 facts 2.3, outside the line 1 in 18 sets). Not applied. Results in `docs/prompt-trials.md` → C3.
