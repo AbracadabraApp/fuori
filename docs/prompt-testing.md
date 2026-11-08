@@ -180,6 +180,14 @@ How the first tests went wrong, each now a rule above:
 - Results came without the decision they implied (rule 12).
 - The tests before these were too large (12 places × 3 visits × 2 levels) with a lenient judge (rule 6, rule 7).
 
+## New prompts, today's as the control (Josh, 2026-11-07)
+
+The dialogue prompts (`beginner.md`, `character.md` with `levels.md` and its variants, `culture.md`, `welcome.md`, the lesson files) each grew their own words for the same things. Josh: rebuild rather than tune them one by one, "with an existing prompt as control".
+
+1. **One shared character core, written new and short:** who you are, your place, your role, only what you know, what you remember about them. The Culture and Character tests run on it, once, for every type.
+2. **Each type adds only what differs:** the Beginner format, the level, a lesson's steps. That's the Language work, after Culture and Character.
+3. **Today's prompt is the control in every test.** The new core replaces a type's prompt only when it does at least as well on that type's stored moments; a rule from the old prompt comes back only when a test shows it's missed (the floor method below). The old prompts and their changelogs are the list of problems to check, not the text.
+
 ## Taking a grown prompt back down
 
 For a prompt that doubled and got worse, in this order:
