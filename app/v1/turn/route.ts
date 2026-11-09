@@ -87,10 +87,26 @@ const inFlight = new Map<string, Promise<Settled>>();
  * `offered` holds each conversation's answers (learner|conversation); a reply
  * nobody claims in 2 minutes is logged and never saved (lib/draft-turns.ts).
  */
-const drafts = new DraftStore<Settled>(120_000, (key, entry) => {
+const AHEAD_MS = 120_000;
+const drafts = new DraftStore<Settled>(AHEAD_MS, (key, entry) => {
   console.log(JSON.stringify({ level: 'info', event: 'draft-wasted', learner: key.split('|')[0].slice(0, 8), written: entry.settledAt !== undefined, writeMs: entry.settledAt !== undefined ? entry.settledAt - entry.startedAt : null }));
 });
-const offered = new Map<string, string[]>();
+// Expires with the drafts, so a conversation that ends after offering answers leaves nothing behind
+const offered = new Map<string, { answers: string[]; timer: ReturnType<typeof setTimeout> }>();
+const offer = (key: string, answers: string[]) => {
+  const before = offered.get(key);
+  if (before) clearTimeout(before.timer);
+  const timer = setTimeout(() => offered.delete(key), AHEAD_MS);
+  timer.unref?.();
+  offered.set(key, { answers, timer });
+};
+const takeOffered = (key: string): string[] | undefined => {
+  const held = offered.get(key);
+  if (!held) return undefined;
+  clearTimeout(held.timer);
+  offered.delete(key);
+  return held.answers;
+};
 // An answer with a blank ("Sono di …") is finished in their own words, so its reply can't be written ahead
 const answersIn = (body: object): string[] =>
   ((body as { parts?: Part[] }).parts ?? []).filter((p) => p.kind === 'answer').map((p) => p.text).filter((t) => t && !/…|\.\.\./.test(t));
@@ -267,7 +283,7 @@ export async function POST(request: Request) {
         ...(saidNow ? [{ who: 'learner' as const, transcript: saidNow }] : []),
         { who: 'npc' as const, transcript: line.line, translation: line.en },
       ]);
-      offered.set(`${learnerId}|${conv}`, answers);
+      offer(`${learnerId}|${conv}`, answers);
       for (const a of answers) drafts.start(`${learnerId}|${conv}|${a}`, (emit) => settle((first, parts) => emit({ first, parts }), { said: a, transcript: after, conversationId: conv }));
     };
 
@@ -276,8 +292,7 @@ export async function POST(request: Request) {
     const claimAhead = (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> | undefined => {
       if (!conversationId || !learnerSaid) return undefined;
       const claimedAt = performance.now();
-      const answers = offered.get(`${learnerId}|${conversationId}`);
-      offered.delete(`${learnerId}|${conversationId}`);
+      const answers = takeOffered(`${learnerId}|${conversationId}`);
       const hit = answers?.find((a) => isSaidBack(learnerSaid, [a]));
       const draft = hit ? drafts.claim(`${learnerId}|${conversationId}|${hit}`, onFirst ? (e) => { const { first, parts } = e as { first: string; parts?: Part[] }; startVoice(first); onFirst(first, parts); } : undefined) : undefined;
       if (!draft) return undefined;

@@ -69,6 +69,9 @@ async function main() {
   check(/laps\.log\('turn-timing'/.test(claim) && /facts\.draft = 'used'/.test(claim), 'a claimed turn logs turn-timing, marked as a used draft');
   check(/r\.after\?\.\(learnerSaid, waitMs\)/.test(claim) && /performance\.now\(\) - claimedAt/.test(claim), 'a claimed turn saves what the learner waited as its reply time');
   check(/commit = \(said\?: string, ms\?: number\)/.test(take) && /replyMs: ms/.test(take), 'takeTurn saves the reply time it is given on commit');
+  // The offered answers expire with the drafts (2026-11-09 review: a conversation that ended after offering answers kept them until a restart)
+  check(/offered\.delete\(key\), AHEAD_MS\)/.test(route) && /new DraftStore<Settled>\(AHEAD_MS/.test(route), 'offered answers expire on the drafts\' timer');
+  check(!/offered\.set\(`/.test(route) && /takeOffered\(`/.test(route), 'offered answers are only set and taken through offer() and takeOffered()');
 }
 
 main().then(() => {
