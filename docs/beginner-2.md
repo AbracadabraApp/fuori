@@ -11,16 +11,16 @@
 
 ## What Beginner 2 is
 
-- **The goal is communication.** Both sides talk like bilingual people and use both languages.
-- **The characters are interesting locals, not friends** (Josh, 2026-11-09): bilingual, helpful the way a local is to a newcomer, but there to be met, not befriended.
-- **The character is themselves** (Nino stays Nino), a bilingual local. English is used freely and in every way, at every point. How much English is used is not the level.
+- **The goal is communication.** She speaks the language; English is there to help the learner follow and reply.
+- **The characters are interesting locals, not friends** (Josh, 2026-11-09): helpful the way a local is to a newcomer, but there to be met, not befriended.
+- **The character is themselves** (Nino stays Nino): **a local who knows enough English to help explain** (Josh, 2026-11-09). She speaks the language, as a local does, and reaches for English when it helps the newcomer: to explain, to give a word, to rescue them when they're lost. How much English that takes is not the level.
 - **The learner may reply in either language.** If they're unclear, the character encourages an English reply.
 - **The gain:** the character asks in the language and the learner understands, whatever language they answer in.
 - **Errors are signal, not failure.** A corrected error (uptake, self-correction) is a strong gain. Mistakes are never pointed out.
 
-## What a bilingual local does
+## What a local who knows some English does
 
-Real moves, each a different kind of turn, and the source of variety (Josh: the problem is too few shapes; the character is bilingual):
+Real moves, each a different kind of turn, and the source of variety (Josh: the problem is too few shapes; the character knows enough English to help):
 
 - explains in English, the way a helpful local would (why you pay at the cassa first; cavolo nero is kale);
 - gives the word, then uses it ("Here we call it *il coperto*. Il coperto è due euro.");
@@ -74,7 +74,7 @@ Within a conversation and across conversations. What exactly changes is open. A 
 
 ## Beginner 1 rules Beginner 2 breaks
 
-1. **English: brief** (`beginner.md`: at most two short sentences) → English is used freely, in every way.
+1. **English: brief** (`beginner.md`: at most two short sentences) → English whenever it helps the newcomer (explaining, a word, a rescue); she still speaks the language.
 2. **English only when asked** → the character invites an English reply when the learner is unclear.
 3. **English reply = lost** (`conversation-record.ts` `feltOf`: lost on 40% or more of turns = hard) → an English reply is communication (+2).
 4. **Said back doesn't count** (`RULES.countedOwnTurns`: 3 own-words turns) → every reply counts, reading included (+1).
@@ -87,5 +87,5 @@ The earlier spec's section-by-section list is in [beginner-plan.md](beginner-pla
 
 In the `../fuori-beginner-shapes` worktree, uncommitted:
 - **The heard-note fix and its test** (offered answers kept through `/v1/turn`), for Beginner 2 only.
-- **A turn-shape picker** (`lib/beginner-shape.ts`) and a short prompt (`beginner-shapes.md`). They came before the decisions above. Decided for it so far: a new pick every turn, seeded by conversation and turn number, the opening by learner, place and day. Its six mid-conversation shapes, five ending in a question, are too few; shapes should come from the bilingual moves above.
+- **A turn-shape picker** (`lib/beginner-shape.ts`) and a short prompt (`beginner-shapes.md`). They came before the decisions above. Decided for it so far: a new pick every turn, seeded by conversation and turn number, the opening by learner, place and day. Its six mid-conversation shapes, five ending in a question, are too few; shapes should come from the moves above.
 - **Card B1** (Reviewed: pending); the test designer asked for changes.
