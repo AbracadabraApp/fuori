@@ -37,10 +37,7 @@ Doable, but the outcome depends on a test, a decision or a plan not yet made.
 ### Least confident
 Open-ended, waiting on ideas or decisions, or far off.
 - [ ] **D1, questions as dialogue structure**: characters ask poor questions; learners are rarely invited to ask. Queued in `docs/prompt-testing.md`. Done when: it reaches the top of the queue as a card.
-- [ ] **Adventures** ([adventures.md](adventures.md)). Waits on: Josh playing the current places. Done when: Josh has a direction.
-- [ ] **Missions prototype P1–P3 and card maker v2** ([diario.md](diario.md); the Diario isn't built). Waits on: Josh's go.
 - [ ] **Conversation library and turn timings beyond the family.** Waits on: Josh's privacy decision.
-- [ ] **Night-paper palette for Dark Mode.** Deferred; light only until then.
 - [ ] **The App Store (later):** "Report this line"; screenshots, description, age rating, review notes; storefronts outside the EU.
 
 ### Done 2026-11-08 (night)
