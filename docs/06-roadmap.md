@@ -42,7 +42,6 @@ The open to-do list, reorganized 2026-11-08 at Josh's request: only what's still
 - [ ] Visit stamps redesigned as a scontrino (design locked 2026-10-29, [visited-badge.md](visited-badge.md)); not built.
 - [ ] **Josh:** say what's wrong with the city picker; then Claude improves it.
 - [ ] Adventures ([adventures.md](adventures.md)): ideas forming; Josh plays the current places first.
-- [x] Cities and places in a new order each day (b31c916, 2026-11-08).
 - [ ] Missions prototype P1–P3 and card maker v2 ([diario.md](diario.md); the Diario isn't built).
 - [ ] Night-paper palette for Dark Mode (deferred; light only until then).
 
