@@ -66,6 +66,12 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-08 (evening): trailer screen on Josh's phone (laptop session)
+
+- **Trailer screen** (4715712, from Josh: "could table be collapsed click for more video centered. Can tilt go full screen"; mockup approved): the trailer plays centred on the dark screen; the other videos fold into one "More videos (n)" row ("Less" folds them); sideways the video fills the screen (no bar, list or status bar). Only this screen rotates (`OrientationLock`, an app delegate, landscape allowed in Info.plist); leaving it turns the app upright.
+- **On Josh's phone:** Debug build of main at a36899d installed on his iPhone 16 Pro ("iPhone (7)") with his yes ("update and build to phone"). Not yet checked by Josh.
+- **Release:** due with this build (production still on b7166ff; everything listed below as not released goes with it); waiting on the laptop's network.
+
 ## 2026-11-08 (afternoon): here-line test C12 run, testing map, test cards locked (Mac mini session, "testing-map")
 
 - **C12 (here line: today's, short, one-rule) ran in Mexico: "can't decide".** Place vocabulary (her own words) and repeats, Intermediate, memory on, 10 characters × 3 visits, judge twice per conversation. By the card's rule the floor is 2.5 (2 or more = can't decide); A's own-word count for the same character moves up to 10 between runs (Doña Rosa 3.5 → 13.5); the tags fail the pilot's bar (4-5 of 20 wrong per run). Holistic read: the short line is not thin (Doña Rosa still has cempasúchil for the altar, Padre Tomás the Capilla del Rosario); the rule-written line is more conversational but loses the place anchor for characters with no craft and glosses like a teacher. **Decision: no change, today's lines stay**; no further refinement test (Josh). Logged in `docs/prompt-trials.md` → C12; the 10 rule lines are `tests/conversations/variants/rule-here-mx.json`, the rule `here-rule.md`.
