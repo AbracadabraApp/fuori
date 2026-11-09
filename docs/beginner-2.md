@@ -86,17 +86,26 @@ How the learner's reply is set up, ordered by how much of the language it takes 
 
 Unsure: 3 against 4, and 5 against 6 (is hearing harder than reading for a beginner? the order assumes it is).
 
+**Clusters, not single rungs** (Josh, 2026-11-09: "the rungs might be more like which cluster of turns are in play. they may overlap"). A learner is never on one setup: a few neighbouring setups are in play together, and neighbouring clusters overlap. A first sketch (to settle):
+
+| Cluster | Setups in play |
+|---|---|
+| A | 1 · 2 · 3 |
+| B | 2 · 3 · 4 · 5 |
+| C | 4 · 5 · 6 · 7 |
+| D | 6 · 7 · 8 · 9 |
+
 **One ladder, three uses** (Josh):
-- **Measure:** a reply counts by the rung it was given on and how they answered it, so progress is climbing, within a visit and across visits.
-- **Taking scaffolding away:** each progression offer is the next rung up, so the ladder is the order of the offers.
-- **Choosing each turn's setup:** the code picks the reply setup around the learner's rung (mostly at it, now and then one above; one below after a breakdown), which settles who chooses: code chooses the reply setup, she chooses her move.
+- **Measure:** a reply counts by the setup it was given on and how they answered it; progress shows as handling the higher setups in the cluster.
+- **Taking scaffolding away:** each progression offer moves to the next cluster: the lowest setups drop out, the next ones come in, so the change is gradual and some turns still feel familiar.
+- **Choosing each turn's setup:** the code picks from the current cluster, mixed and seeded (more of the higher setups as the visit goes well, the lower ones after a breakdown). Code chooses the reply setup; she chooses her move.
 
 ## Progression
 
 **Offer, and the learner decides** (Josh, 2026-11-09: "the simplest is after 3-5 conversations, propose taking away scaffolding and let the user decide"). Beginner 1 has a fixed playlist of stages and a moving-up rule that has fired once in 185 records; Beginner 2 replaces both with this.
 
 - **When:** after every 3–5 conversations at the current setting, asked once, at the end of a conversation.
-- **What:** the next rung of the reply ladder (above), named plainly; past the top, the full conversation (Intermediate).
+- **What:** the next cluster of the reply ladder (above), named by what drops out ("no more English under the answers?"); past the last, the full conversation (Intermediate).
 - **Yes:** the next conversation plays that way. **No:** asked again after another 3–5.
 - **No going back for now.** A learner who needs more help asks for it in the conversation, and she gives it, as Beginner 1 characters already do.
 - **The reply table and counts** are for looking at (does it rise, do the players differ), not a gate.
