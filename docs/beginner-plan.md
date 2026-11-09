@@ -10,16 +10,15 @@
 
 **A Beginner visit is a short roleplay lesson with a real person in a real place.**
 - **English carries the learner:** the character sets the scene, explains, and tells them what to say, warmly, like a friend who lives there.
-- **Stage directions** say what's happening: where they are, what the character does, what's in front of them ("He taps the first line on the board").
+- **Stage directions are for the character, not the learner** (Josh: "why does user need stage directions"): each turn the code gives the character its beat, like a director's note: set the scene, teach the phrase this place needs, let them try it, react and explain, offer the goodbye. The learner never sees them; this is the deterministic part ("more deterministic, but varied"): the code sets the beat, the character fills it with this person, this place.
 - **One predictable shape, varied by place and person:** the scene → a phrase or two this place needs → they try it → react and explain → maybe one more → goodbye.
 - **The scaffolding leads:** answers to say back every time, the echo, help in English whenever asked.
 
 **Changes this means** (Josh decides each):
-- Three Beginner rules turn around: *English: brief* (at most two sentences), *Role: not a teacher* (never explain how people talk), *Voice: no narration* (no stage directions).
+- Two Beginner rules turn around: *English: brief* (at most two sentences) and *Role: not a teacher* (never explain how people talk). *Voice: no narration* stays: nothing the learner hears is narration.
 - CLAUDE.md's Beginner teaching rule changes to match: Beginner visits teach openly, in role.
-- How stage directions reach the learner: shown as text, said by a narrator voice, or said by the character in English.
 
-**Sketch: Nino's visit (2026-11-09) as a roleplay lesson.** Same person, place and facts as the real conversation; *directions in italics*, answers to say back after each turn.
+**Sketch: Nino's visit (2026-11-09) as a roleplay lesson.** Same person, place and facts as the real conversation; answers to say back after each turn. *The italic lines here only help the reader picture it; they aren't said or shown.* The beat the code would give him each turn: scene and name → teach "Cosa mi consiglia?" → a choice with "Vorrei…" → teach "Torno…" → goodbye.
 
 > *Garbatella, after lunch. The osteria's kitchen is closed. Nino sits by the door with his coffee, next to the chalk menu board.*
 >
