@@ -17,7 +17,7 @@ import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion } from '@/lib/beginner';
-import { BEGINNER_2_FILE, pickSetup, setupText, shownParts, beginner2Version, type Setup } from '@/lib/beginner-2';
+import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, setupText, shownParts, beginner2Version, type Setup } from '@/lib/beginner-2';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
 import { pathState } from '@/lib/conversation-record';
 import { welcomeContent, welcomed, welcomeVersion, welcomeStep, welcomeBrief, learnerLines, addressAnswers, welcomeTurnFlags } from '@/lib/welcome';
@@ -200,7 +200,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     : welcome
     ? welcomeVersion()
     : setup
-    ? beginner2Version(setup)
+    ? beginner2Version(p.beginnerCluster ?? CLUSTER_1)
     : `${beginner ? beginnerPromptVersion() : promptVersion(pathLevel ?? level)}${onPath ? stageTag(onPath.stage, onPath.supportBack) : ''}`;
   console.log(
     JSON.stringify({
@@ -210,6 +210,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       character: character.id,
       turn: transcript.length === 0 ? 'opening' : 'reply',
       promptVersion: version,
+      // Beginner 2: this turn's rung of the reply ladder (lib/beginner-2.ts)
+      ...(setup ? { setup: setup.id } : {}),
     })
   );
 

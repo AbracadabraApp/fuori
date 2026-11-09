@@ -103,7 +103,7 @@ export function shownParts(parts: Part[], setup: Setup): Part[] {
   return setup.english ? parts : parts.map((x) => (x.kind === 'answer' ? { ...x, en: '' } : x));
 }
 
-/** The version recorded with each turn: "beginner-2-<version>:<setup>", no stage tag, so the path doesn't count it */
-export function beginner2Version(setup: Setup): string {
-  return `beginner-2-${readPromptFile(BEGINNER_2_FILE).version}:${setup.id}`;
+/** The version recorded with each turn: "beginner-2-<version>+C<cluster>", no stage tag, so the path doesn't count it; the scorecard and records group by it */
+export function beginner2Version(cluster: Setup[]): string {
+  return `beginner-2-${readPromptFile(BEGINNER_2_FILE).version}+C${Math.max(1, CLUSTERS.indexOf(cluster) + 1)}`;
 }

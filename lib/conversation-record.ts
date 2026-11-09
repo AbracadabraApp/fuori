@@ -56,6 +56,8 @@ async function ensureTable() {
     state           jsonb
   )`);
   await query('CREATE INDEX IF NOT EXISTS idx_conversation_records_learner ON conversation_records(learner_id, at DESC)');
+  // The reply table's ranks (2026-11-09), added here so it ships without a manual migration
+  await query('ALTER TABLE conversation_records ADD COLUMN IF NOT EXISTS reply_ranks jsonb');
   tableReady = true;
 }
 
@@ -104,6 +106,8 @@ export interface LabelledLine {
   help: 'word' | 'whole' | 'none';
   /** The answers shown before it (the character's last reply) */
   offered: string[];
+  /** What her last reply asked in: her question in the language, or only in English; null when she asked nothing */
+  askedIn?: 'language' | 'english' | null;
 }
 
 export interface Counts {
@@ -116,13 +120,30 @@ export interface Counts {
   english: number;
   helpWord: number;
   helpWhole: number;
+  /** The reply table (docs/beginner-2.md → Measuring): replies at each rank, 1 to 3 (4, uptake, needs a judge: not counted yet) */
+  ranks: { 1: number; 2: number; 3: number };
+}
+
+/**
+ * A reply's rank in the reply table, from what's already labelled (Josh's
+ * Nunzio table, 2026-11-09): 1 an offered answer said back, or English to a
+ * question asked in English; 2 English to her question in the language, or
+ * help asked for (they understood enough to ask); 3 their own words in the
+ * language. Silence leaves no line; a garbled try reads as own words here.
+ */
+export function replyRank(l: LabelledLine): 1 | 2 | 3 {
+  if (l.help !== 'none') return 2;
+  if (l.lang === 'english') return l.askedIn === 'english' ? 1 : 2;
+  if (isSaidBack(l.said, l.offered)) return 1;
+  return 3;
 }
 
 const wordCount = (s: string) => s.split(/\s+/).filter(Boolean).length;
 
 export function countsOf(lines: LabelledLine[]): Counts {
-  const c: Counts = { learnerTurns: lines.length, words: 0, wordsLanguage: 0, wordsOwn: 0, ownTurns: 0, saidBack: 0, english: 0, helpWord: 0, helpWhole: 0 };
+  const c: Counts = { learnerTurns: lines.length, words: 0, wordsLanguage: 0, wordsOwn: 0, ownTurns: 0, saidBack: 0, english: 0, helpWord: 0, helpWhole: 0, ranks: { 1: 0, 2: 0, 3: 0 } };
   for (const l of lines) {
+    c.ranks[replyRank(l)]++;
     const n = wordCount(l.said);
     c.words += n;
     if (l.lang !== 'english') c.wordsLanguage += l.lang === 'mixed' ? Math.round(n / 2) : n;
@@ -167,6 +188,14 @@ const labelsJsonSchema = {
 
 type StoredTurn = { who: 'npc' | 'learner'; text: string; parts?: { kind: string; text: string }[] };
 
+/** What her reply asked in, from its parts (punctuation, any language): a question in the language, only in English, or nothing */
+export function askedInOf(t: StoredTurn): LabelledLine['askedIn'] {
+  const asks = (x: string) => /\?["'»”’)]*\s*$/.test(x.trim()) || /\?\s/.test(x);
+  if (!t.parts?.length) return asks(t.text) ? 'language' : null;
+  if (t.parts.some((p) => p.kind === 'question' || (p.kind === 'word' && asks(p.text)))) return 'language';
+  return t.parts.some((p) => p.kind === 'english' && asks(p.text)) ? 'english' : null;
+}
+
 /** The learner's lines with the answers shown before each, labelled by one call */
 export async function labelLines(turns: StoredTurn[], name: string): Promise<LabelledLine[]> {
   let k = 0;
@@ -185,12 +214,17 @@ export async function labelLines(turns: StoredTurn[], name: string): Promise<Lab
   const labels = Labels.parse(JSON.parse(replyText(response as Parameters<typeof replyText>[0]))).lines;
   const out: LabelledLine[] = [];
   let offered: string[] = [];
+  let askedIn: LabelledLine['askedIn'] = null;
   let n = 0;
   for (const t of turns) {
-    if (t.who === 'npc') { offered = (t.parts ?? []).filter((p) => p.kind === 'answer').map((p) => p.text); continue; }
+    if (t.who === 'npc') {
+      offered = (t.parts ?? []).filter((p) => p.kind === 'answer').map((p) => p.text);
+      askedIn = askedInOf(t);
+      continue;
+    }
     n++;
     const l = labels.find((x) => x.n === n);
-    out.push({ said: t.text, lang: l?.lang ?? 'language', help: l?.help ?? 'none', offered });
+    out.push({ said: t.text, lang: l?.lang ?? 'language', help: l?.help ?? 'none', offered, askedIn });
   }
   return out;
 }
@@ -303,12 +337,12 @@ export async function recordConversation(conversationId: string, learnerId: stri
   }
 
   const inserted = await query(
-    `INSERT INTO conversation_records (conversation_id, learner_id, country, character_id, prompt_version, learner_turns, words, words_language, words_own, own_turns, said_back, english, help_word, help_whole, step, stage, felt, felt_why, moved, state)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)
-     ON CONFLICT (conversation_id) DO UPDATE SET prompt_version = EXCLUDED.prompt_version, learner_turns = EXCLUDED.learner_turns, words = EXCLUDED.words, words_language = EXCLUDED.words_language, words_own = EXCLUDED.words_own, own_turns = EXCLUDED.own_turns, said_back = EXCLUDED.said_back, english = EXCLUDED.english, help_word = EXCLUDED.help_word, help_whole = EXCLUDED.help_whole, step = EXCLUDED.step, stage = EXCLUDED.stage, felt = EXCLUDED.felt, felt_why = EXCLUDED.felt_why, moved = EXCLUDED.moved, state = EXCLUDED.state
+    `INSERT INTO conversation_records (conversation_id, learner_id, country, character_id, prompt_version, learner_turns, words, words_language, words_own, own_turns, said_back, english, help_word, help_whole, step, stage, felt, felt_why, moved, state, reply_ranks)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21)
+     ON CONFLICT (conversation_id) DO UPDATE SET prompt_version = EXCLUDED.prompt_version, learner_turns = EXCLUDED.learner_turns, words = EXCLUDED.words, words_language = EXCLUDED.words_language, words_own = EXCLUDED.words_own, own_turns = EXCLUDED.own_turns, said_back = EXCLUDED.said_back, english = EXCLUDED.english, help_word = EXCLUDED.help_word, help_whole = EXCLUDED.help_whole, step = EXCLUDED.step, stage = EXCLUDED.stage, felt = EXCLUDED.felt, felt_why = EXCLUDED.felt_why, moved = EXCLUDED.moved, state = EXCLUDED.state, reply_ranks = EXCLUDED.reply_ranks
        WHERE conversation_records.learner_turns < EXCLUDED.learner_turns AND NOT COALESCE(conversation_records.moved, false)`,
     [conversationId, learnerId, country, row.character_id, row.prompt_version, counts.learnerTurns, counts.words, counts.wordsLanguage, counts.wordsOwn, counts.ownTurns, counts.saidBack, counts.english, counts.helpWord, counts.helpWhole,
-      path?.step ?? null, played ? `${played.stage}${played.supportBack ? '+back' : ''}` : null, path?.felt ?? null, path?.why ?? null, path?.moved ?? null, path ? JSON.stringify(path.state) : null]
+      path?.step ?? null, played ? `${played.stage}${played.supportBack ? '+back' : ''}` : null, path?.felt ?? null, path?.why ?? null, path?.moved ?? null, path ? JSON.stringify(path.state) : null, JSON.stringify(counts.ranks)]
   );
   // Past the last step: Intermediate, the character prompt as it is; back from it: Beginner, on the path's last step
   if (inserted.rowCount && path?.moved && path.state.step === INTERMEDIATE_STEP) await setLevel(learnerId, 'intermediate');
@@ -343,10 +377,25 @@ export async function recordsByWeek(weeks = 8): Promise<string> {
     )
   ).rows;
   const pct = (a: number, b: number) => (b ? `${Math.round((100 * a) / b)}%` : '–');
-  return rows
+  // The reply table by version (Beginner 1 without its stage tag, Beginner 2 by cluster): replies at each rank
+  const byVersion = (
+    await query<{ version: string; n: number; r1: number; r2: number; r3: number }>(
+      `SELECT regexp_replace(coalesce(prompt_version, '?'), '\\+S[0-9].*$', '') AS version, count(*)::int AS n,
+         sum((reply_ranks->>'1')::int)::int AS r1, sum((reply_ranks->>'2')::int)::int AS r2, sum((reply_ranks->>'3')::int)::int AS r3
+       FROM conversation_records r
+       WHERE reply_ranks IS NOT NULL AND at > now() - make_interval(weeks => $1) AND EXISTS (SELECT 1 FROM learners l WHERE l.id = r.learner_id)
+       GROUP BY 1 ORDER BY 1`,
+      [weeks]
+    )
+  ).rows;
+  const ranks = byVersion.map((v) => {
+    const all = v.r1 + v.r2 + v.r3;
+    return `${v.version} · ${v.n} conversations, ${all} replies · read back or English to English ${pct(v.r1, all)} · English to the language or help ${pct(v.r2, all)} · own words in the language ${pct(v.r3, all)} · mean rank ${all ? ((v.r1 + 2 * v.r2 + 3 * v.r3) / all).toFixed(2) : '–'}`;
+  });
+  return [...rows
     .map((r) => {
       const path = r.steps?.length ? ` · step ${r.steps.sort().join(', ')}, easy ${r.easy}, hard ${r.hard}${r.moved ? `, moved up ${r.moved}` : ''}` : '';
       return `${new Date(r.week).toISOString().slice(0, 10)} · ${r.country} · ${r.learner_id.slice(0, 8)} · ${r.n} conversations · ${Math.round(r.words / r.n)} words each · ${pct(r.lang, r.words)} in the language · ${pct(r.own, r.words)} own${path}`;
-    })
+    }), ...(ranks.length ? ['', 'Replies by version (the reply table, docs/beginner-2.md → Measuring):', ...ranks] : [])]
     .join('\n');
 }

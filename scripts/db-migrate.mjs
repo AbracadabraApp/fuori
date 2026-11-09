@@ -96,6 +96,7 @@ ALTER TABLE learners ADD COLUMN IF NOT EXISTS addressed_from text;
 -- null counts them all. Set to restart the reply buttons without deleting
 -- conversations (Josh, 2026-10-22, for his own learners).
 ALTER TABLE learners ADD COLUMN IF NOT EXISTS scaffold_from timestamptz;
+ALTER TABLE IF EXISTS conversation_records ADD COLUMN IF NOT EXISTS reply_ranks jsonb;
 -- Errors from the iPhone app (/v1/log), kept because Railway's log goes with
 -- each deploy (lib/app-errors.ts, 2026-10-22). Every country's server writes here.
 CREATE TABLE IF NOT EXISTS app_errors (

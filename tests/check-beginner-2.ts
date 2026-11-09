@@ -37,7 +37,8 @@ const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
 check(!inside.some((x) => x.kind === 'answer') && inside.some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && x.gloss === 'Yes, thanks.'), 'rung 4: the answer is in her speech with its English heard, no bubble');
 check(shownParts(parts, RUNGS.find((r) => r.id === 'inside')!).some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && !x.gloss), 'rung 6: the answer in her speech, no English');
 check(inside.some((x) => x.kind === 'english' && x.text.length > 0), 'the lead line before the answer comes from beginner-2.md');
-const v = beginner2Version(CLUSTER_1[0]);
+const v = beginner2Version(CLUSTERS[2]);
+check(v.endsWith('+C3'), `the version names the cluster (${v})`);
 check(v.startsWith('beginner-2-') && !stageInVersion(v), `Beginner 2 turns carry no stage tag, so the Beginner 1 path doesn't count them (${v})`);
 
 const route = readFileSync('app/v1/turn/route.ts', 'utf8');

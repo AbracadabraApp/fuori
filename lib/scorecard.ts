@@ -109,6 +109,17 @@ export const MEASURES: Measure[] = [
     value: (s) => avgOf(s, (x) => x.learner?.wordsPerLine),
   },
   {
+    // How much of the language she says a reply, counted from Beginner parts (words and questions,
+    // not her English or the answers): the difficulty to compare Beginner 1 with Beginner 2's clusters
+    // (Josh, 2026-11-09: "length of italian has been a better measure of level"); no target yet
+    key: 'herLanguageWords', label: 'Her words in the language per reply', better: 'lower', target: null, format: 'words', tolerance: 1,
+    value: (s) => {
+      const p = s.map((x) => x.phrases).filter((x): x is NonNullable<typeof x> => !!x);
+      const replies = p.reduce((n, x) => n + x.replies, 0);
+      return replies ? p.reduce((n, x) => n + x.words, 0) / replies : null;
+    },
+  },
+  {
     // Groundhog day: sentences said again from an earlier visit; only conversations that had one
     key: 'repeats', label: 'Repeats from earlier visits', better: 'lower', target: 0, format: 'perConversation', tolerance: 0.3,
     value: (s) => avgOf(s, (x) => x.repeats?.length),
