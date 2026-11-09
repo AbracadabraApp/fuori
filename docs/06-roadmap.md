@@ -6,7 +6,66 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-The one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases** (reorganized 2026-10-30 at Josh's request into done, next, and what to skip or move; the skip-or-move list is Claude's proposal until Josh decides each line):
+The open to-do list, reorganized 2026-11-08 at Josh's request: only what's still to do, grouped by area, next steps first. Everything that was here before (done items, decisions, history) is unchanged below under [The old Now list](#the-old-now-list-history-to-2026-11-08).
+
+### Next up
+1. **Josh:** play the build on the phone (dbc036c, live and installed 2026-11-08): the screen stays on in conversations, the trailer screen, and the prompt changes released with it (memory, commerce, here lines).
+2. **Dialogue: the top 10 problems** from 20 days of real conversations (an agent reading transcripts only, 2026-11-08) → `docs/dialogue-ideas.md`; then choose what to test from the queue (`docs/prompt-testing.md`). Seen in tonight's review: every Beginner turn the same shape (English aside, then "X or Y?"); characters forgetting the scene (Nino's coffee at a closed bar).
+3. **Faster replies:** the server reply is 2.5–3 s in real play (2026-11-08), over the 2 s target.
+   - [ ] The reply prepared during the silence (Josh: go, 2026-11-03), up to ~1 s off most turns.
+   - [ ] Prompt caching for the character and Beginner prompts (measure before and after).
+   - [ ] The 0.4 s lost since 10-26: measure with and without the path's stage blocks.
+
+### Dialogue and characters
+- [ ] Characters keep their own details across visits (Ettore's job changed every visit; Serena's neighbourhood).
+- [ ] D1: questions as dialogue structure (characters need help asking questions; learners could be encouraged to ask). Queued.
+- [ ] A better memory test: measure replayed visits, not repeated topics (C5b applied; the test itself still to build).
+- [ ] Question ladder for Intermediate and Advanced (one fact, then anything).
+- [ ] More dialect as you level up (the setting is greyed out).
+- [ ] Garbled letters in replies ("¥Hola", "dÃas"; `tests/check-mojibake.ts` exists).
+- [ ] **Josh:** targets for the scorecard's two learner rows (share of words, words per line).
+
+### Leveling
+- [ ] **Josh and Sophia** play the path; words spoken per week in the admin (`format=records`) shows whether it works.
+
+### Lessons
+- [ ] Lesson checking: 7 teaching failures left in Italy's Beginner lessons; 50 lines to fix in the Intermediate draft (`content/it/lessons-b1.json`, not read by the app).
+- [ ] **Josh:** review the Intermediate lesson proposal (in the old list below, item 4).
+
+### App
+- [ ] Visit stamps redesigned as a scontrino (design locked 2026-10-29, [visited-badge.md](visited-badge.md)); not built.
+- [ ] **Josh:** say what's wrong with the city picker; then Claude improves it.
+- [ ] Adventures ([adventures.md](adventures.md)): ideas forming; Josh plays the current places first.
+- [ ] Missions prototype P1–P3 and card maker v2 ([diario.md](diario.md); the Diario isn't built).
+- [ ] Night-paper palette for Dark Mode (deferred; light only until then).
+
+### Speech and services
+- [ ] Recordings: keep what happened next (sent, say it in English, "didn't catch that") beside each kept recording; replay tools for another speech-to-text, the routing or the end-of-turn silence.
+- [ ] The conversation library and turn-timings log beyond the family: a privacy decision first.
+- [ ] Test outside services one at a time (ElevenLabs model and quota, server region, R2 load times) and speech-to-text alternatives on the kept recordings.
+
+### Before testers outside the family
+- [ ] App Attest when a device registers.
+- [ ] A per-learner daily budget that survives deploys (`usage_daily`; today's caps reset on every deploy).
+- [ ] R2 custom domain for images (**Josh** picks the domain).
+- [ ] Privacy policy at a public URL naming Groq, Anthropic and ElevenLabs (**Josh** approves), and one line about it at the microphone step.
+- [ ] **Josh:** App Privacy label; beta description, feedback email, reviewer notes (Claude drafts).
+- [ ] **Josh:** approve the tester questions, updated first: the wait is ~3 s, the Beginner level exists, it's hands-free.
+
+### The App Store (later)
+- [ ] "Report this line"; screenshots, description, age rating, review notes.
+- [ ] Storefronts outside the EU.
+
+### Possibly done or overtaken: Josh to close
+- **Trim the here lines** and **C6, a better here line** (old N6 items 10 and 12): C12 decided today's lines stay (Josh, 2026-11-08).
+- **The learner level check** (`LEVEL_CHECK`, off) and **moving up at 90%**: the path (`lib/path.ts`) now places and moves learners.
+- **The word for leaving** ("Esci" or "Fuori"): the goodbye now closes the screen by itself (7cde7df).
+- **Stations and ticket**: the iPhone station is built (fd82b3c).
+- **Premade place notes** "if the openers drift": no sign they drift.
+
+## The old Now list (history, to 2026-11-08)
+
+Until 2026-11-08 this was the one to-do list, by feature area (reorganized 2026-10-18 at Josh's request). **Releases** (reorganized 2026-10-30 at Josh's request into done, next, and what to skip or move; the skip-or-move list is Claude's proposal until Josh decides each line):
 
 **Done**
 - **N4** (Josh, 2026-10-25): TestFlight 0.1.0 (5): scaffolding, say it in English, one tap per turn, the bottom bar, the launch screen and country choice, faster replies, Learn in both countries.
