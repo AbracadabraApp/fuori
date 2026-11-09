@@ -28,7 +28,6 @@ The open to-do list (reorganized 2026-11-08; made specific the same night at Jos
 Problems seen in real play; each needs examples logged in `docs/dialogue-ideas.md` before any fix, and any prompt change needs a test card.
 - [ ] **Beginner turns all have one shape** (an English aside, then "X or Y?"). Josh's theory: `content/it/prompts/beginner.md` (1,550 words, 23 sections) over-determines the conversation. Next: a card testing a much shorter Beginner prompt against today's, judged on whether turns vary. Done when: the test answers whether shorter reads less formulaic.
 - [ ] **Characters forget the scene or the visitor**: Nino offered coffee at a closed bar; Nunzio missed that the visitor's grandfather had died. Next: collect 5+ examples from real play. Done when: logged with examples, then a card.
-- [ ] **Characters change their own facts across visits**: Ettore's job changed every visit; Serena's neighbourhood. Next: check whether these facts are in the character file or invented each visit. Done when: the cause is known and written here.
 - [ ] **D1, questions as dialogue structure**: characters ask poor questions; learners are rarely invited to ask. Queued in `docs/prompt-testing.md`. Done when: it reaches the top of the queue as a card.
 - [ ] **A better memory test**: today's test counts repeated topics; the real fault is a visit that replays an earlier one as if new (Groundhog day). Next: write the measure (does a return visit treat earlier talk as known?). Done when: a script reports it for 10 return visits.
 - [ ] **Question ladder for Intermediate and Advanced** (one fact, then anything). Next: Claude writes a one-paragraph proposal for Josh. Done when: Josh says yes or no.
@@ -72,6 +71,7 @@ Problems seen in real play; each needs examples logged in `docs/dialogue-ideas.m
 - Keep-awake in conversations (dbc036c). Records rewritten when a conversation goes on after an early end (bb0b6e6). Daily order of cities and places (b31c916). Jennifer reset to Beginner step 1.
 
 ### Possibly done or overtaken: Josh to close
+- **Characters change their own facts across visits** (Ettore's job, Serena's neighbourhood): likely fixed by 95bcd93 (2026-11-07, live): memory notes now keep what the character told them, not only the learner. Serena's job is also fixed in her `here` line; Ettore's former job still isn't, so he invents it once and memory keeps it. Not re-run over 3 visits since.
 - **Garbled letters in replies** ("¥Hola", "dÃas"): none in 14 days of replies (checked 2026-11-08), and `npm run test:mojibake` passes.
 - **Trim the here lines** and **C6, a better here line** (old N6 items 10 and 12): C12 decided today's lines stay (Josh, 2026-11-08).
 - **The learner level check** (`LEVEL_CHECK`, off) and **moving up at 90%**: the path (`lib/path.ts`) now places and moves learners.
