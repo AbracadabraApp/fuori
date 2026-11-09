@@ -39,6 +39,17 @@ Her words in the language show in one bubble as she says them; no taps anywhere.
 
 **Rules:** every Beginner turn has at least one job with spoken English in it (English under the answers doesn't count); Recast only after their own words; the first turn sets the scene; the goodbye is offered after about 8 turns or when they say it.
 
+**Where more shapes come from: what a bilingual local does** (Josh, 2026-11-09: too few shapes is the problem, and the character is bilingual). Real moves, each a different turn:
+- explains in English, the way a local friend would (why you pay at the cassa first; cavolo nero is kale);
+- gives the word, then uses it ("Here we call it *il coperto*. Il coperto è due euro.");
+- switches mid-sentence ("Allora, the best thing here is *la gricia*. Sai cos'è?");
+- asks about English ("How do you say *cornetto* in America?");
+- checks they followed ("Did you get that? *Chiusa*, closed.");
+- tells something short in English with the key words in the language (the festival, her nonna's recipe);
+- slows down or rephrases when they're lost.
+
+Also real: a turn with no question (a remark they react to), the learner leading (they ask or comment, she answers), a short turn (a reaction and one answer). **Most replies stay as today** (Josh: "most replies still need to be read in italian, answered in english - or set up the bubbles in the characters dialogue"): answers in the language to say back with English under them, or set up in her speech.
+
 **Varied, but predictable:** a seeded pick among the shapes the rules allow, never repeating either of the last two turns' shapes. A new pick every turn, seeded by the conversation and the turn's number, so a conversation replays with the same shapes (for side-by-side tests and Records); the opening, before there's a conversation, by learner, place and day, so tomorrow's opener differs (Josh, 2026-11-09).
 
 ## How the learner replies
@@ -48,7 +59,7 @@ Her words in the language show in one bubble as she says them; no taps anywhere.
 - Answer in English, offered on purpose; the line in the language comes back to say (How do I say it).
 - Answers offered in her speech ("…just say *Vorrei la carbonara*, I'd like the carbonara"): spoken only, or spoken and shown.
 
-Out: three or more answers (crowds the screen); one word missing with words to choose (a puzzle); answer then "E lei?" (the same as one or two answers). Not yet judged: repeat after her; a sentence start to finish; build it from two pieces; a key word only; a hint in English only; free; a listening turn; catch her out.
+Out: three or more answers (crowds the screen); one word missing with words to choose (a puzzle); answer then "E lei?" (the same as one or two answers). Out as unrealistic, classroom exercises no one does in a bar (Josh, 2026-11-09): repeat after her; a sentence start to finish; a key word only; a hint in English only; a listening turn; catch her out. Not yet judged: build it from two pieces; free.
 
 ## Across Beginner
 
