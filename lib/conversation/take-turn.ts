@@ -17,6 +17,7 @@ import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion } from '@/lib/beginner';
+import { BEGINNER_2_FILE, pickSetup, setupText, shownParts, beginner2Version } from '@/lib/beginner-2';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
 import { pathState } from '@/lib/conversation-record';
 import { welcomeContent, welcomed, welcomeVersion, welcomeStep, welcomeBrief, learnerLines, addressAnswers, welcomeTurnFlags } from '@/lib/welcome';
@@ -64,6 +65,8 @@ export interface TakeTurnParams {
   welcome?: boolean;
   /** A lesson's turn (lib/lesson.ts): Magda teaching or reviewing, or a practice dialogue */
   lesson?: LessonTurn;
+  /** Beginner 2 (lib/beginner-2.ts), from the app's hidden switch; Beginner 1 otherwise */
+  beginnerVersion?: 1 | 2;
 }
 
 export interface TakeTurnResult {
@@ -138,6 +141,10 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     }
   }
   const beginner = !welcome && onPath?.stage.path === 'beginner';
+  // Beginner 2's reply setup this turn (docs/beginner-2.md), when the app switched it on
+  const setup = beginner && !p.lesson && p.beginnerVersion === 2
+    ? pickSetup({ conversationId, turn: transcript.filter((t) => t.who === 'npc').length, learnerId, characterId: character.id })
+    : null;
   const pathLevel = !welcome && onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
 
   // A lesson (lib/lesson.ts): every part in the Beginner format with its brief, Magda included;
@@ -161,6 +168,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         const parts = step === 'opening' ? [...r.parts, ...addressAnswers()] : r.parts;
         return { ...r, parts, done: step === 'answers' && r.done === true, ...welcomeTurnFlags(step) };
       })()
+    : beginner && onPath && setup
+    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: setupText(setup), maxAnswers: setup.maxAnswers, withDone: true }).then((r) => ({ ...r, parts: shownParts(r.parts, setup) }))
     : beginner && onPath
     ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: stageText(onPath.stage, character.role), maxAnswers: onPath.stage.answers, withDone: true })
     : await runTurn({
@@ -188,6 +197,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     ? `magda-${tutorPrompt.version}`
     : welcome
     ? welcomeVersion()
+    : setup
+    ? beginner2Version(setup)
     : `${beginner ? beginnerPromptVersion() : promptVersion(pathLevel ?? level)}${onPath ? stageTag(onPath.stage, onPath.supportBack) : ''}`;
   console.log(
     JSON.stringify({

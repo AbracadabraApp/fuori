@@ -1,5 +1,6 @@
 import SwiftUI
 import FuoriDesign
+import FuoriNetworking
 #if canImport(UIKit)
 import UIKit
 #endif
@@ -101,6 +102,7 @@ struct SettingsSheet: View {
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.dialect) private var dialect = false
     @AppStorage(SettingsKey.debug) private var debug = false
+    @AppStorage(APIClient.beginnerVersionKey) private var beginnerVersion = 1
     @Environment(\.dismiss) private var dismiss
     @State private var confirmingRestart = false
     private static let showsSubtitles = false
@@ -227,6 +229,16 @@ struct SettingsSheet: View {
                         LabeledContent("Server", value: model.server?.host() ?? "—")
                         LabeledContent("Learner", value: model.learnerId ?? "—")
                             .textSelection(.enabled)
+                        // Beginner 1 (today's) or Beginner 2 (docs/beginner-2.md), played side by side; the next turn uses it
+                        LabeledContent("Beginner") {
+                            Picker("Beginner", selection: $beginnerVersion) {
+                                Text("1").tag(1)
+                                Text("2").tag(2)
+                            }
+                            .pickerStyle(.segmented)
+                            .labelsHidden()
+                            .fixedSize()
+                        }
                         // Back to the country choice, as on first launch (applied once the sheet has closed)
                         Button("Restart onboarding") {
                             model.pendingRestart = true

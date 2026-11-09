@@ -1,0 +1,74 @@
+/**
+ * Beginner 2 (docs/beginner-2.md): one shared prompt (content/<country>/prompts/
+ * beginner-2.md) with the reply setup picked here each turn from the learner's
+ * cluster of the reply ladder. Played only when the app sends
+ * `x-fuori-beginner: 2` (Settings → touch and hold Version → Beginner), so
+ * Josh can play it against Beginner 1, which stays as it is (Josh, 2026-11-09).
+ *
+ * Only cluster 1 for now (rungs 1–3: one answer with English, two answers with
+ * English, one answer in the language only); the offers to move up a cluster
+ * aren't built yet. With or without English under the answers is display: the
+ * prompt asks for the answers' English either way, and it's left out here.
+ */
+import { readPromptFile } from '@/lib/prompts/template';
+import type { Part } from '@/lib/beginner';
+
+export const BEGINNER_2_FILE = 'beginner-2.md';
+
+/** The app's switch: header `x-fuori-beginner: 2` */
+export function beginnerVersionFrom(headers: Headers): 1 | 2 {
+  return headers.get('x-fuori-beginner')?.trim() === '2' ? 2 : 1;
+}
+
+export interface Setup {
+  id: string;
+  /** The block in beginner-2.md the character gets this turn */
+  block: string;
+  /** Answers kept, at most (code trims extras) */
+  maxAnswers: number;
+  /** The English under each answer shown */
+  english: boolean;
+}
+
+/** The reply ladder's rungs that cluster 1 plays (docs/beginner-2.md → The reply ladder) */
+export const CLUSTER_1: Setup[] = [
+  { id: 'one-en', block: 'Setup: one answer', maxAnswers: 1, english: true },
+  { id: 'two-en', block: 'Setup: two answers', maxAnswers: 2, english: true },
+  { id: 'one', block: 'Setup: one answer', maxAnswers: 1, english: false },
+];
+
+/** A stable number from a string (FNV-1a), so a conversation replays with the same setups */
+function seedOf(s: string): number {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return h >>> 0;
+}
+
+/**
+ * This turn's setup: a new pick every turn, seeded by the conversation and the
+ * turn's number; the opening (no conversation yet) by learner, place and day,
+ * so the next day's opener differs (Josh, 2026-11-09)
+ */
+export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date }, cluster: Setup[] = CLUSTER_1): Setup {
+  const day = (p.now ?? new Date()).toISOString().slice(0, 10);
+  const key = p.conversationId ? `${p.conversationId}|${p.turn}` : `${p.learnerId ?? ''}|${p.characterId}|${day}`;
+  return cluster[seedOf(key) % cluster.length];
+}
+
+/** The setup's line for the character, from the prompt file (a misspelt block fails loudly) */
+export function setupText(setup: Setup): string {
+  return readPromptFile(BEGINNER_2_FILE).block(setup.block).trim();
+}
+
+/** Display: the answers' English left out on a language-only rung */
+export function shownParts(parts: Part[], setup: Setup): Part[] {
+  return setup.english ? parts : parts.map((x) => (x.kind === 'answer' ? { ...x, en: '' } : x));
+}
+
+/** The version recorded with each turn: "beginner-2-<version>:<setup>", no stage tag, so the path doesn't count it */
+export function beginner2Version(setup: Setup): string {
+  return `beginner-2-${readPromptFile(BEGINNER_2_FILE).version}:${setup.id}`;
+}
