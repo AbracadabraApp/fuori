@@ -2,6 +2,20 @@
 
 **Status:** draft for Josh (Claude, 2026-11-08). How the Beginner level runs today, the baseline: [beginner-as-live.md](beginner-as-live.md). Everything below the goal is a proposal; the decisions are Josh's and marked as such. Nothing is built until he approves; prompt changes then go through a test card.
 
+## Where it stands (2026-11-09)
+
+**Decided (Josh):**
+- A Beginner visit is a roleplay lesson; lean on scaffolding; English makes beginners comfortable.
+- The scaffolding parts stay as they are.
+- S1's spoken English stays as it is: spoken, not shown ("not a reading game").
+- Stage directions are for the character (the code's beat each turn), never shown or said to the learner.
+- Mechanics before dialogue.
+
+**Open (Claude's proposals, Josh to decide):**
+1. **Narrator lines:** the character speaks as themselves ("Come in! The kitchen's closed till tonight…"), never describes the scene in the third person.
+2. **The shape of a turn:** set by code, 4 shapes (she asks, she tells, you ask, goodbye), instead of the prompt's 23 rules.
+3. **Levels and progress:** 2 Beginner levels (say it back; finish it yourself), 5 good visits to move up.
+
 ## Direction (Josh, 2026-11-08)
 
 "I'd lean on scaffolding. Think of beginner as roleplay lessons not conversation. English makes beginners comfortable." Then: "Yes but needs stage directions." Earlier the same night: "Making beginner more deterministic (but varied) seems better", and of adaptive support and the stage changes: "too complicated, too optimistic".
