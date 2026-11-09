@@ -20,7 +20,6 @@ Clear next step, known how, small; several only wait on Josh's word.
 - [ ] **Question ladder for Intermediate and Advanced** (one fact, then anything). Next: Claude writes a one-paragraph proposal for Josh. Done when: Josh says yes or no.
 - [ ] **Josh: App Privacy label, beta description, feedback email, reviewer notes** (Claude drafts each).
 - [ ] **Josh: approve the tester questions**, updated first (the wait is ~3 s, there's a Beginner level, it's hands-free).
-- [ ] **R2 custom domain for images.** Waits on: Josh picking the domain.
 - [ ] **More dialect as you level up** (the setting in Settings is greyed out). Next: Josh decides whether it's wanted now. Done when: decided.
 
 ### Fairly confident
@@ -37,6 +36,9 @@ Doable, but the outcome depends on a test, a decision or a plan not yet made.
 - Visit stamps as a scontrino: done (Josh, 2026-11-08).
 - **Decided (Josh):** keep all transcripts, only approved recordings. Already how the server works (every conversation's turns saved; recordings only for `KEEP_RECORDINGS_FOR`), so the conversation library beyond the family needs no change.
 - Prompt caching measured, not shipped (5409204). The silence draft removed; its server half reused for replies written ahead (1c87680). Keep-awake in conversations (dbc036c). Records rewritten when a conversation goes on after an early end (bb0b6e6). Daily order of cities and places (b31c916). Jennifer reset to Beginner step 1.
+
+### Parked until outside testers
+- **A web address for the pictures** (today Cloudflare's development `r2.dev` address, fine at family scale). When needed: `images.fuori.com`; Josh owns fuori.com (at Joker), so its name servers move to Cloudflare first.
 
 ### Possibly done or overtaken: Josh to close
 - **A better memory test** (Groundhog day visits): built 2026-11-08 as the scorecard's "Repeats from earlier visits" (c47864e), and C5b (a92a5b8, live) stopped the replay in Mexico with no harm in Italy. Gap: the count misses short replays, such as a question asked again on every visit (a1fc797). Close, or keep for the gap.
