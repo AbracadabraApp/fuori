@@ -183,6 +183,8 @@ The same item is served twice, a price is quoted before the order is made, a cho
   - 23 → 24 · 2026-10-23 · luisa-cocco-nuova. In 23: "Piacere, Joshua! Io sono Luisa. Domani mattina il tuo caffè ti aspetta qui al banco." Same day, 24: "Buongiorno! Dica pure, cosa le preparo?", as to a stranger. 63 · 2026-11-07 · memo-tejuino remembers the order ("Last time you had it cold, with lemon and salt") but then asks "¿Cómo se llama usted?"
 - **Instead:** keep track of what is already on the counter and who is standing at it.
 
+- **Note (2026-11-08):** Josh: inaccurate but in role, a lighter problem than breaking role (Nino's "un altro caffè?" at a closed bar, which he turned into a joke when asked). Not on the to-do list until there's enough dialogue to show it needs a fix. Observation only: in the three examples the slip sits in the turn's "X or Y?" question (sugar after serving, flavour after opening, another coffee at a closed bar).
+
 ### 8. Dragging the talk back to the sale
 
 When the visitor opens a real topic (children, the character's job, a question), the character gives it one line and pulls back to the order: "but you haven't picked a drink yet."
