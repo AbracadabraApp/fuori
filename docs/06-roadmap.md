@@ -26,7 +26,7 @@ The open to-do list (reorganized 2026-11-08; made specific the same night at Jos
 
 ### Dialogue and characters
 Problems seen in real play; each needs examples logged in `docs/dialogue-ideas.md` before any fix, and any prompt change needs a test card.
-- [ ] **Characters forget the scene or the visitor**: Nino offered coffee at a closed bar; Nunzio missed that the visitor's grandfather had died. Next: collect 5+ examples from real play. Done when: logged with examples, then a card.
+- [ ] **Characters lose the scene**: the same coffee served twice (Antonio, 11-06), a choice offered after it was handed over, coffee offered at a closed bar (Nino, 11-09). 12 of 67 Beginner conversations over 20 days; examples already in `docs/dialogue-ideas.md` (Beginner top 10, #7). Forgetting the visitor is mostly gone (no bad case after 10-24; memory fix 95bcd93). Next: a test card on keeping track of what's on the counter. Done when: the card is reviewed and in the queue.
 - [ ] **D1, questions as dialogue structure**: characters ask poor questions; learners are rarely invited to ask. Queued in `docs/prompt-testing.md`. Done when: it reaches the top of the queue as a card.
 - [ ] **A better memory test**: today's test counts repeated topics; the real fault is a visit that replays an earlier one as if new (Groundhog day). Next: write the measure (does a return visit treat earlier talk as known?). Done when: a script reports it for 10 return visits.
 - [ ] **Question ladder for Intermediate and Advanced** (one fact, then anything). Next: Claude writes a one-paragraph proposal for Josh. Done when: Josh says yes or no.
