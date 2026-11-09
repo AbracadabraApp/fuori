@@ -58,16 +58,16 @@ Phrases practised: *Mi chiamo…, Piacere, Cosa mi consiglia?, Vorrei…, Torno 
 
 ## Mechanics: scaffolding is the key (Josh, 2026-11-08)
 
-Josh: "The scaffolding is key mechanic." "In production S1 English is good." The levels are settings of the same supports, set by code, not asked of the model:
+Josh: "The scaffolding is key mechanic." Scaffolding is how the learner takes part; the level is how the character talks (`docs/glossary.md`). An earlier table here mixed the two (Josh: "I don't agree with table").
 
-| Support | Level 1: say it back | Level 2: finish it yourself | Intermediate |
-|---|---|---|---|
-| English to set the scene (spoken, not shown) | yes: **today's S1 English, kept as is** (Josh: good) | yes | no |
-| The echo: short English after each phrase | yes | new words only | no |
-| Bubbles in the language, English a tap away | yes | yes | yes |
-| Lines to say back | whole answers (two when the question is a choice) | the start of a sentence | none |
-| Say it in English | yes | yes | yes |
-| Help when asked | yes | yes | yes |
+**The scaffolding in the app today** (how the learner takes part):
+1. Lines to say back: whole answers, or the start of a sentence to finish.
+2. The reply panel: read one aloud, or choose the one that fits (`lib/scaffold.ts`; first turns for new learners outside the Beginner format).
+3. Say it in English: say it in English, get the line back in the language, read it aloud.
+4. Help when asked: in English, a word, a phrase or an explanation.
+5. The mic's patience: a Beginner's turn ends after a longer silence (2.5 s).
+
+**How the character talks at Beginner (the level, not scaffolding):** today's S1 English is right (Josh: "In production S1 English is good"; "English works. Well spoken. It's not a reading game"): up to two short spoken sentences to set the scene or explain, the short English echo after a phrase, nothing extra on screen. One fix: the character speaks as themselves, never as a narrator. Nino's opening "The kitchen is closed after lunch, but the owner is sitting by the door…" said in his own voice before "Mi chiamo Nino" (Josh: "weird with narrator and same voice") becomes his own words: "Come in! The kitchen's closed till tonight, but sit with me. I'm Nino…". The cause is the opener rule plus a setting written as a scene description.
 
 - **Two Beginner levels, then Intermediate** (Josh asked why levels 1 and 2 of a three-level draft differed: two answers against one is a difference in the question, not in help).
 - **Progress (proposal):** 5 good visits at a level move you up; good = at least 3 of 4 questions answered in the language, an offered answer said back counts; English or asking for the whole line again doesn't. No automatic move down; the level can always be chosen in Settings.
