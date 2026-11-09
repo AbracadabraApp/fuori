@@ -86,14 +86,19 @@ How the learner's reply is set up, ordered by how much of the language it takes 
 
 Unsure: 3 against 4, and 5 against 6 (is hearing harder than reading for a beginner? the order assumes it is).
 
-**Clusters, not single rungs** (Josh, 2026-11-09: "the rungs might be more like which cluster of turns are in play. they may overlap"). A learner is never on one setup: a few neighbouring setups are in play together, and neighbouring clusters overlap. A first sketch (to settle):
+**Clusters, not single rungs** (Josh, 2026-11-09: "the rungs might be more like which cluster of turns are in play. they may overlap"). A learner is never on one setup: a few neighbouring setups are in play together, and neighbouring clusters overlap. Seven clusters, each three neighbouring setups, sliding one setup at a time (Josh: four clusters would be too fast; stretch to 6–8):
 
 | Cluster | Setups in play |
 |---|---|
-| A | 1 · 2 · 3 |
-| B | 2 · 3 · 4 · 5 |
-| C | 4 · 5 · 6 · 7 |
-| D | 6 · 7 · 8 · 9 |
+| 1 | 1 · 2 · 3 |
+| 2 | 2 · 3 · 4 |
+| 3 | 3 · 4 · 5 |
+| 4 | 4 · 5 · 6 |
+| 5 | 5 · 6 · 7 |
+| 6 | 6 · 7 · 8 |
+| 7 | 7 · 8 · 9 |
+
+At an offer every 3–5 conversations that count (3 or more replies from the learner; opener-only visits don't), Beginner runs about 21–35 conversations before Intermediate if every offer is taken.
 
 **One ladder, three uses** (Josh):
 - **Measure:** a reply counts by the setup it was given on and how they answered it; progress shows as handling the higher setups in the cluster.
