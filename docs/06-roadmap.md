@@ -14,7 +14,7 @@ The open to-do list (reorganized 2026-11-08; made specific the same night at Jos
    - Listen for: the screen never locks mid-conversation; the first three place cards include a piazza, church, park or similar; the order changes the next day, unvisited places first.
    - Done when: Josh says it works or names what doesn't.
 2. **Claude (mini session `replies`): faster replies.** Today 2.5–3 s per reply in real play (first token ~0.7 s; most of it is writing the reply); target 2 s.
-   - [ ] Prompt caching in `lib/turn.ts` and `lib/beginner.ts` only. Next: 20 turns before and after on the Beginner call. Done when: shipped if first token drops ≥150 ms, otherwise dropped with one line here.
+   - [x] Prompt caching: measured, not shipped (5409204): first token 823 → 813 ms over 20 turns, under the 150 ms gate.
    - [ ] The reply prepared during the silence (Josh: go, 2026-11-03; design in `docs/12-native-app.md` item 5). Done when: built, tests pass, and Josh hears faster replies on the phone with no reply to a half sentence.
    - [ ] Then, Beginner only: replies written in advance for the 2–3 offered answers, used when the learner says one back (Josh's idea, 2026-11-08). Real play says an answer back word for word on ~40% of S1 turns (Josh) and 60% of S2 turns (Jennifer). Done when: those turns' replies start without the Claude wait, and the extra calls per turn are measured.
 3. **Claude: log tonight's findings in `docs/dialogue-ideas.md`.**
