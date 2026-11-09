@@ -26,7 +26,6 @@ The open to-do list (reorganized 2026-11-08; made specific the same night at Jos
 
 ### Dialogue and characters
 Problems seen in real play; each needs examples logged in `docs/dialogue-ideas.md` before any fix, and any prompt change needs a test card.
-- [ ] **Beginner turns all have one shape** (an English aside, then "X or Y?"). Josh's theory: `content/it/prompts/beginner.md` (1,550 words, 23 sections) over-determines the conversation. Next: a card testing a much shorter Beginner prompt against today's, judged on whether turns vary. Done when: the test answers whether shorter reads less formulaic.
 - [ ] **Characters forget the scene or the visitor**: Nino offered coffee at a closed bar; Nunzio missed that the visitor's grandfather had died. Next: collect 5+ examples from real play. Done when: logged with examples, then a card.
 - [ ] **D1, questions as dialogue structure**: characters ask poor questions; learners are rarely invited to ask. Queued in `docs/prompt-testing.md`. Done when: it reaches the top of the queue as a card.
 - [ ] **A better memory test**: today's test counts repeated topics; the real fault is a visit that replays an earlier one as if new (Groundhog day). Next: write the measure (does a return visit treat earlier talk as known?). Done when: a script reports it for 10 return visits.
@@ -35,11 +34,12 @@ Problems seen in real play; each needs examples logged in `docs/dialogue-ideas.m
 - [ ] **Josh: targets for the scorecard's two learner rows** (share of words in the language, words per line; `format=scorecard`). Done when: two numbers written here.
 
 ### Leveling
-- [ ] **Josh: should said-back answers count toward moving up?** Today a conversation counts only with 3 turns in the learner's own words, so at S1, where answers are offered to say back, the learner who says them back never moves up (Josh at step 1: 2 easy counted conversations in 3 days). Options: count said-back turns as half, or count any turn in the language. Done when: Josh picks, then Claude changes `lib/path.ts` with a test.
 - [ ] **Josh and Sophia play the path.** Next: play as usual. Done when: two weeks of words spoken per week in `format=records` show whether learners move up.
 
 ### Deferred to a master Beginner plan (Josh, 2026-11-08)
 To be decided together in one plan for the Beginner level, not item by item.
+- **Beginner turns all have one shape** (an English aside, then "X or Y?"). Josh's theory: `content/it/prompts/beginner.md` (1,550 words, 23 sections) over-determines the conversation. Next: a card testing a much shorter Beginner prompt against today's, judged on whether turns vary. Done when: the test answers whether shorter reads less formulaic.
+- **Josh: should said-back answers count toward moving up?** Today a conversation counts only with 3 turns in the learner's own words, so at S1, where answers are offered to say back, the learner who says them back never moves up (Josh at step 1: 2 easy counted conversations in 3 days). Options: count said-back turns as half, or count any turn in the language. Done when: Josh picks, then Claude changes `lib/path.ts` with a test.
 - **Placement:** onboarding's "own words" answer puts a learner at step 3 (S2, little English); Jennifer couldn't follow and was reset to step 1 (2026-11-08).
 
 ### Lessons
