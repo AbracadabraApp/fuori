@@ -30,8 +30,6 @@ Problems seen in real play; each needs examples logged in `docs/dialogue-ideas.m
 - [ ] **D1, questions as dialogue structure**: characters ask poor questions; learners are rarely invited to ask. Queued in `docs/prompt-testing.md`. Done when: it reaches the top of the queue as a card.
 - [ ] **Question ladder for Intermediate and Advanced** (one fact, then anything). Next: Claude writes a one-paragraph proposal for Josh. Done when: Josh says yes or no.
 - [ ] **More dialect as you level up** (the setting in Settings is greyed out). Next: Josh decides whether it's wanted now. Done when: decided.
-- [ ] **Josh: targets for the scorecard's two learner rows** (share of words in the language, words per line; `format=scorecard`). Today in real play: ~0.21 and ~8.5 (`docs/testing-map.md`); repeats from earlier visits has target 0. Done when: two numbers written here.
-- [ ] **Josh: the testing map's 6 open decisions** (`docs/testing-map.md` → Open decisions, 2026-11-08): whether real conversations check a kept prompt change; which doc is the source of truth for testing; rules 17 and 20 into force; how learning gets measured; the scorecard targets (above); the tests/experiments split. Done when: each answered in that doc.
 
 ### Leveling
 - [ ] **Josh and Sophia play the path.** Next: play as usual. Done when: two weeks of words spoken per week in `format=records` show whether learners move up.
