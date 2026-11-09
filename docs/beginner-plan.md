@@ -56,6 +56,56 @@ Out: three or more answers (crowds the screen); one word missing with words to c
 - **Ask before removing scaffolding.** When the record says a learner looks ready, they're asked, and they decide. Each ask names the one part that changes ("Want to hear the Italian first, with the English after?"), never "less English".
 - **Open:** what the record counts as ready, and how far apart the asks are.
 
+## Production rules this overrides
+
+Checked against the live files (`content/it/prompts/beginner.md` 2026-11-07a, `leveling.md`, `lib/path.ts`, CLAUDE.md). **Kept** = unchanged; **Changed** = rewritten; **To code** = the shape picker does it, so the prompt rule goes; **Removed** = goes with nothing in its place.
+
+**The Beginner prompt's 23 sections**
+
+| Section | Now says | Here |
+|---|---|---|
+| Who: you | name, role, city, setting, character | **Kept**; the setting line said as the character's own, never narrated |
+| Who: the learner | a Beginner living here; help them talk | **Kept** |
+| How you talk | (heading) | **Kept** |
+| English: brief | at most two short sentences; never say in English what the language then says | **Changed**: the two sentences stay; the "never say it twice" clause goes (English then the language's echo is a form) |
+| Language: what to keep | what to keep or say is in the language, each its own part | **Kept** |
+| Language: phrases | one or two 4–8-word phrases most turns | **To code** (forms and length) |
+| Opener: the place | first turn opens with a varied English line about the place, sometimes names | **To code** (Set the scene, first turn); the varied-opener instruction goes |
+| Flow: react, then move on | react, then move on; an errand is a turn or two; no invented errand | **To code** (React); the errand sentences **kept** |
+| Variety: not the same shape | don't build every turn the same way; sometimes no English | **Removed** (the code varies the shape; "no English" breaks the Beginner definition) |
+| Voice: no narration | no stage directions | **Kept** |
+| Role: not a teacher | never announce what you're doing or explain how people talk | **Changed**: setting up the learner's line in her speech is allowed ("…just say *Vorrei…*"); announcing ("let me ask you") still not |
+| Question: one | one question a turn, in the language, as a question part | **Changed / to code** (Ask: either language; one a turn kept) |
+| Answers: as a local says them | | **Kept** |
+| Answers: one idea | | **Kept** |
+| Answers: their facts left blank | | **Kept** |
+| Words: reuse | use a few words again | **Kept** (the underline then the Ask is one way) |
+| Language: easy | short, common words, present tense, polite form | **Kept** |
+| Facts: only what you're sure of | | **Kept** |
+| Goodbye: offer it | when it winds down | **To code** (after about 8 turns, or their goodbye) |
+| Lead: follow theirs | | **Kept** |
+| Mistakes: never point out | never praise or point out | **Kept** (Recast is the shared rule's "use the right words yourself", not pointing out) |
+| English: help when asked | | **Kept** |
+| Reply: parts format | english, word, question, answer, gloss | **Kept**; the gloss is the language-then-English echo; the underline is an `english` part then a `word` part (to check) |
+
+**The stage system**
+
+| Production | Here |
+|---|---|
+| `leveling.md` blocks: Talk stage 1/2/3, Language 2/4, Answers two/one/frame, Echo: new words, Talk: support back | **Removed**, replaced by the shape line through `stageText` |
+| `lib/path.ts` stages S1–S4 and steps (1,1,1,1,1 · 1,2,1,1,2 · 2,2,2,3,3) | **Replaced later** by the ramp and the asks (step 5 of Next); the prototype runs at the start of the ramp |
+| Moving up: 3 own-word turns to count, 4 easy of 5 | **Open** (what counts as ready); unchanged until then |
+| Placement: "own words" → step 3 | **Open**, with the ramp |
+
+**Elsewhere**
+
+| Production | Here |
+|---|---|
+| CLAUDE.md, Beginner: "a sentence or two of spoken English…, then in the language the words that matter, one question, and whole-sentence answers to say back" | **Changed** (Josh decides the wording): the Ask in either language; answers in the forms above, including in her speech |
+| CLAUDE.md: "none steps out of role to sound like a language teacher" | **Changed for Beginner**: a roleplay lesson in role, setting up the learner's lines |
+| `docs/beginner-scaffolding.md` Goals 4: "Every question comes in English first, then in the language" | **Changed**: one form among five, picked by the code |
+| Shared rules (`dialogue.md`: mishearings, stay in your job, order of events, your place's ways, goodbye) | **Kept**, all |
+
 ## Built from production
 
 The turn stays `runBeginnerTurn` / `buildBeginnerPrompt` with the parts format (english, word, question, answer, gloss), `tidyParts`, the shared dialogue rules, the said-back note, memory and the setting line; the app side doesn't change for the core mechanic. **New:** a shape picker in code; its line goes in through the existing `stageText` hook in place of the stage blocks; the Beginner prompt shrinks to who and where. To check: Ask in English and the underline as an `english` part followed by a `word` part, with no schema change. Tested with `npm run test:conversations` (A/B variants, simulated learner, kept transcripts).
