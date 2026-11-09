@@ -70,19 +70,37 @@ Why reading back scores below an English answer (Josh, 2026-11-09): reading a bu
 
 **Next experiment:** compute both over all real conversations. Do they rise across visits? Do they tell the players apart (Josh, Jennifer)?
 
+## The reply ladder
+
+How the learner's reply is set up, ordered by how much of the language it takes (ordinal, not weights; Josh, 2026-11-09):
+
+1. one bubble, with English;
+2. two bubbles, with English (they choose, by the English);
+3. one bubble, the language only;
+4. in her dialogue, glossed (caught by ear, meaning given);
+5. two bubbles, the language only (choosing means understanding both);
+6. in her dialogue, the language only;
+7. an English answer she invites (they understood her);
+8. built from her glossed words (their own sentence);
+9. free.
+
+Unsure: 3 against 4, and 5 against 6 (is hearing harder than reading for a beginner? the order assumes it is).
+
+**One ladder, three uses** (Josh):
+- **Measure:** a reply counts by the rung it was given on and how they answered it, so progress is climbing, within a visit and across visits.
+- **Taking scaffolding away:** each progression offer is the next rung up, so the ladder is the order of the offers.
+- **Choosing each turn's setup:** the code picks the reply setup around the learner's rung (mostly at it, now and then one above; one below after a breakdown), which settles who chooses: code chooses the reply setup, she chooses her move.
+
 ## Progression
 
 **Offer, and the learner decides** (Josh, 2026-11-09: "the simplest is after 3-5 conversations, propose taking away scaffolding and let the user decide"). Beginner 1 has a fixed playlist of stages and a moving-up rule that has fired once in 185 records; Beginner 2 replaces both with this.
 
 - **When:** after every 3–5 conversations at the current setting, asked once, at the end of a conversation.
-- **What:** one change, named plainly. A first order, following the reply types (to settle):
-  1. no answers to read, she gives the words (bubbles → her glossed words);
-  2. less explaining in English (English comes in to rescue, not to lead);
-  3. the full conversation (Intermediate).
+- **What:** the next rung of the reply ladder (above), named plainly; past the top, the full conversation (Intermediate).
 - **Yes:** the next conversation plays that way. **No:** asked again after another 3–5.
 - **No going back for now.** A learner who needs more help asks for it in the conversation, and she gives it, as Beginner 1 characters already do.
 - **The reply table and counts** are for looking at (does it rise, do the players differ), not a gate.
-- **Open:** the list of changes and their order; who asks (her, in role, or a plain screen at the end: a new screen, so a mockup first).
+- **Open:** who asks (her, in role, or a plain screen at the end: a new screen, so a mockup first).
 
 ## Beginner 1 rules Beginner 2 breaks
 
