@@ -622,11 +622,6 @@ public final class ConversationModel {
         } else if early == nil {
             startEarly()
         }
-        // The silence is holding and the turn has time left: her reply is
-        // written now, saved only if this turn is sent as it stands
-        if !drafted, EndOfTurn.shouldDraft(silence: snapshot.silence, endsAt: silenceTarget), let heard = earlyHeard {
-            startDraft(heard)
-        }
         ring = min(1, snapshot.silence / silenceTarget)
         return ring >= 1
     }
@@ -648,31 +643,10 @@ public final class ConversationModel {
     /// Shorter for Intermediate and Advanced (EndOfTurn.speaking)
     private var waits: EndOfTurn.Waits { EndOfTurn.waits(beginner: beginner) }
 
-    /// The reply asked for during the silence (docs/12-native-app.md item 5).
-    /// Speaking again drops it here; the server never saves a draft that isn't
-    /// sent as a turn, and logs it as wasted
-    private var drafted = false
-    private var draftTask: Task<Void, Never>?
-
-    private func startDraft(_ heard: APIClient.Heard) {
-        // Ordinary conversation turns in the learned language only: not the
-        // opening, a lesson, the welcome, a line said in English (it goes to
-        // say-it) or a line being read out
-        guard let conversationId, lesson == nil, !welcome, sayIt == nil, heard.language != "en", Heard.hasWords(heard.text) else { return }
-        drafted = true
-        let city = city.id, place = place.id, trip = trip?.to.id, speed = speed, said = heard.text
-        // A failure costs nothing: the turn is asked as usual when it ends
-        draftTask = Task { [api] in
-            try? await api.draftTurn(cityId: city, placeId: place, tripTo: trip, conversationId: conversationId, learnerSaid: said, speed: speed)
-        }
-    }
-
     private func resetEarly() {
         early?.cancel()
         early = nil
         earlyHeard = nil
-        drafted = false
-        draftTask = nil
         silenceTarget = waits.usual
     }
 

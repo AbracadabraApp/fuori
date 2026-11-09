@@ -48,9 +48,10 @@ export interface TakeTurnParams {
    */
   saveAfterReply?: boolean;
   /**
-   * A draft (docs/12-native-app.md item 5): don't save yet. The result carries
-   * `commit`, which saves the exchange when the learner's turn is confirmed;
-   * never called for a draft they spoke over. Needs saveAfterReply.
+   * A reply written ahead (an offered answer's reply, /v1/turn): don't save
+   * yet. The result carries `commit`, which saves the exchange when the
+   * learner says that answer, with what they actually said; never called for
+   * an answer they didn't say. Needs saveAfterReply.
    */
   deferSave?: boolean;
   /** The reply written so far, on every streamed chunk (runTurn's onText) */
@@ -72,8 +73,8 @@ export interface TakeTurnResult {
   conversationId: string | null;
   memory?: CharacterMemory;
   isTutor: boolean;
-  /** Only for a deferred save: saves the exchange (once) */
-  commit?: () => void;
+  /** Only for a deferred save: saves the exchange (once), with the learner's own words when given */
+  commit?: (learnerSaid?: string) => void;
 }
 
 export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
@@ -202,16 +203,16 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // Save the exchange so conversations can be reviewed later. Never blocks the
   // reply: recording problems are reported and the conversation carries on.
   let savedId: string | null = null;
-  let commit: (() => void) | undefined;
+  let commit: ((said?: string) => void) | undefined;
   if (learnerId) {
-    const save = () =>
+    const save = (said = learnerSaid) =>
       recordTurn({
         learnerId,
         conversationId: conversationId ?? null,
         character,
         cityId: p.cityId,
         promptVersion: version,
-        learnerSaid: transcript.length ? learnerSaid : undefined,
+        learnerSaid: transcript.length ? said : undefined,
         reply,
         replyMs,
         memory,
@@ -221,10 +222,10 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       });
     if (conversationId && p.saveAfterReply && p.deferSave) {
       let committed = false;
-      commit = () => {
+      commit = (said?: string) => {
         if (committed) return;
         committed = true;
-        void saveLater(conversationId, save);
+        void saveLater(conversationId, () => save(said ?? learnerSaid));
       };
       savedId = conversationId;
     } else if (conversationId && p.saveAfterReply) {

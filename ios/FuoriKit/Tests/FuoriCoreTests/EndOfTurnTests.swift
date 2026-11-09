@@ -31,18 +31,4 @@ import Testing
         #expect(EndOfTurn.silence(after: "Vorrei un…", waits: speaking) < EndOfTurn.trailing)
         #expect(EndOfTurn.silence(after: "Vorrei un…", waits: speaking) > EndOfTurn.silence(after: "Vorrei un caffè.", waits: speaking))
     }
-
-    /// A draft of her reply (docs/12-native-app.md item 5) only while the turn still has time left
-    @Test func draftsOnlyWhileTheTurnWaits() {
-        // Not yet 1.5 s of silence
-        #expect(!EndOfTurn.shouldDraft(silence: 1.2, endsAt: 3.5))
-        // Trailing off: 3.5 s to wait, so her reply can be ready when it ends
-        #expect(EndOfTurn.shouldDraft(silence: 1.5, endsAt: 3.5))
-        #expect(EndOfTurn.shouldDraft(silence: 2.0, endsAt: 2.5))
-        // The turn is ending now (a finished sentence's wait has passed): nothing to gain
-        #expect(!EndOfTurn.shouldDraft(silence: 1.6, endsAt: 1.2))
-        #expect(!EndOfTurn.shouldDraft(silence: 2.5, endsAt: 2.5))
-        // The draft wait is after the early transcript is asked for
-        #expect(EndOfTurn.draftAfter > 1.0)
-    }
 }

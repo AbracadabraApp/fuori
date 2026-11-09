@@ -41,6 +41,7 @@ import { writeLearnAhead } from '@/lib/learn-ahead';
 import { startEarlyVoice, DEFAULT_APP_SPEED, LineWatcher } from '@/lib/voice/early-voice';
 import { PartsWatcher, type Part } from '@/lib/beginner';
 import { DraftStore } from '@/lib/draft-turns';
+import { isSaidBack } from '@/lib/conversation-record';
 
 /** Asked for in Accept, the reply streams: { first }, then { reply } or { error } */
 const NDJSON = 'application/x-ndjson';
@@ -58,12 +59,6 @@ const Body = z.object({
   /** This conversation is the welcome (lib/welcome.ts; apps from build 10) */
   welcome: z.boolean().optional(),
   /** A lesson's turn (lib/lesson.ts) */
-  /**
-   * The reply prepared during the learner's silence (docs/12-native-app.md
-   * item 5): written but not saved, and answered at once when the same turn
-   * is sent for real. Not for openings, lessons or the welcome.
-   */
-  draft: z.boolean().optional(),
   lesson: z.object({
     stepId: z.string().max(80),
     part: z.enum(['teach', 'practice', 'review', 'story']),
@@ -80,16 +75,25 @@ const Body = z.object({
  * waits for it and gets the same reply. One server process per country
  * (Railway), so memory covers every request.
  */
-type Settled = { body: object; headers: Record<string, string>; after?: () => void } | { status: number; error: object };
+type Settled = { body: object; headers: Record<string, string>; after?: (said?: string) => void } | { status: number; error: object };
 const inFlight = new Map<string, Promise<Settled>>();
 
 /**
- * Drafts waiting for their turn to be confirmed (lib/draft-turns.ts). One
- * nobody claims in 60 s was spoken over: logged, and never saved.
+ * Replies written ahead (Josh, 2026-11-08): a Beginner line offers 2-3
+ * answers to say back, so her reply to each is written as soon as her line
+ * is, while she speaks and they answer. Saying one back (isSaidBack) claims
+ * its reply, saved then with what they actually said; the others are dropped
+ * unsaved. Real play says an offered answer back on ~40% of S1 turns.
+ * `offered` holds each conversation's answers (learner|conversation); a reply
+ * nobody claims in 2 minutes is logged and never saved (lib/draft-turns.ts).
  */
-const drafts = new DraftStore<Settled>(60_000, (key, entry) => {
+const drafts = new DraftStore<Settled>(120_000, (key, entry) => {
   console.log(JSON.stringify({ level: 'info', event: 'draft-wasted', learner: key.split('|')[0].slice(0, 8), written: entry.settledAt !== undefined, writeMs: entry.settledAt !== undefined ? entry.settledAt - entry.startedAt : null }));
 });
+const offered = new Map<string, string[]>();
+// An answer with a blank ("Sono di …") is finished in their own words, so its reply can't be written ahead
+const answersIn = (body: object): string[] =>
+  ((body as { parts?: Part[] }).parts ?? []).filter((p) => p.kind === 'answer').map((p) => p.text).filter((t) => t && !/…|\.\.\./.test(t));
 
 export async function POST(request: Request) {
   const laps = new Laps();
@@ -100,9 +104,7 @@ export async function POST(request: Request) {
     // A ceiling per device (whole-app scan, 2026-10-29: turns had none):
     // hands-free at full speed is about one every 8 s, so real play stays far below
     // A draft has its own ceiling, so spoken-over drafts don't use up the turns' share
-    if (body.data.draft) {
-      if (!allow(`draft:${learnerId}`, 90, 10 * 60 * 1000)) return apiError('rate_limited', 'Too many turns; wait a minute', 60_000);
-    } else if (!allow(`turn:${learnerId}`, 90, 10 * 60 * 1000) || !allow(`turn-day:${learnerId}`, 1500, 24 * 60 * 60 * 1000)) {
+    if (!allow(`turn:${learnerId}`, 90, 10 * 60 * 1000) || !allow(`turn-day:${learnerId}`, 1500, 24 * 60 * 60 * 1000)) {
       return apiError('rate_limited', 'Too many turns; wait a minute', 60_000);
     }
     const { conversationId, learnerSaid } = body.data;
@@ -123,7 +125,7 @@ export async function POST(request: Request) {
 
     const speed = body.data.speed ?? DEFAULT_APP_SPEED;
     // Start the voice while the rest is still being written; /v1/speak takes it
-    const voice = (text: string, previousText?: string) =>
+    const startVoice = (text: string, previousText?: string) =>
       startEarlyVoice({
         learnerId,
         characterId: parsed.character.id,
@@ -134,7 +136,14 @@ export async function POST(request: Request) {
       });
 
     /** The turn; onFirst, when streaming, gets the first sentence as soon as more follows it */
-    const run = async (onFirst?: (first: string, parts?: Part[]) => void, draft = false): Promise<{ body: object; headers: Record<string, string>; after?: () => void } | { error: Response }> => {
+    /** A reply written ahead: this answer said back, after this transcript, in this conversation; no voice until it's claimed */
+    type Ahead = { said: string; transcript: typeof parsed.transcript; conversationId: string };
+    const run = async (onFirst?: (first: string, parts?: Part[]) => void, ahead?: Ahead): Promise<{ body: object; headers: Record<string, string>; after?: (said?: string) => void } | { error: Response }> => {
+      const draft = !!ahead;
+      const said = ahead ? ahead.said : parsed.learnerSaid;
+      const transcriptNow = ahead ? ahead.transcript : parsed.transcript;
+      const conversationNow = ahead ? ahead.conversationId : conversationId;
+      const voice = (text: string, previousText?: string) => { if (!draft) startVoice(text, previousText); };
       // Once the first sentence has gone to the app, a retried reply couldn't follow it
       let firstSent = false;
       const watcher = new LineWatcher({
@@ -161,9 +170,9 @@ export async function POST(request: Request) {
           learnerId,
           character: parsed.character,
           cityId: parsed.cityId,
-          transcript: parsed.transcript,
-          learnerSaid: parsed.learnerSaid,
-          conversationId,
+          transcript: transcriptNow,
+          learnerSaid: said,
+          conversationId: conversationNow,
           requestId: request.headers.get('x-fuori-id') ?? undefined,
           onSoftError: (where, err) => logServerError(request, where, err),
           laps,
@@ -185,7 +194,7 @@ export async function POST(request: Request) {
           else voice(result.reply.line);
         }
         const facts = await scaffoldFacts(learnerId, result.conversationId ?? null, tutor.id);
-        const learnerTurns = parsed.transcript.filter((t) => t.who === 'learner').length + (learnerSaid ? 1 : 0);
+        const learnerTurns = transcriptNow.filter((t) => t.who === 'learner').length + (said ? 1 : 0);
         // Beginner level dialogue offers its own answers to say back: no answer panel with it
         // A lesson's parts end on their own button; the speaking mode's practice is in their own words (no panel)
         const stage = result.reply.parts || body.data.lesson ? null : scaffoldStage({ ...facts, learnerTurns, isTutor: result.isTutor });
@@ -193,15 +202,15 @@ export async function POST(request: Request) {
         laps.lap('scaffold');
         // The Learn page for the conversation as it now stands, written while
         // the learner reads and answers (lib/learn-ahead.ts)
-        const learnAhead = () => {
+        const learnAhead = (saidNow = said) => {
           if (!result.conversationId || result.isTutor) return;
           writeLearnAhead({
             conversationId: result.conversationId,
             character: parsed.character,
             city: cities.find((c) => c.id === parsed.cityId)?.name ?? parsed.cityId,
             transcript: [
-              ...parsed.transcript,
-              ...(parsed.learnerSaid ? [{ who: 'learner' as const, transcript: parsed.learnerSaid }] : []),
+              ...transcriptNow,
+              ...(saidNow ? [{ who: 'learner' as const, transcript: saidNow }] : []),
               { who: 'npc' as const, transcript: result.reply.line, translation: result.reply.en },
             ],
             onError: (err) => logServerError(request, 'v1 turn learn ahead', err),
@@ -224,7 +233,7 @@ export async function POST(request: Request) {
         return {
           body: { ...result.reply, conversationId: result.conversationId, promptVersion: result.promptVersion, replies, stage },
           headers,
-          ...(draft ? { after: () => { result.commit?.(); learnAhead(); } } : {}),
+          ...(draft ? { after: (saidNow?: string) => { result.commit?.(saidNow); learnAhead(saidNow); } } : {}),
         };
       } catch (err) {
         logServerError(request, 'v1 turn', err);
@@ -239,34 +248,54 @@ export async function POST(request: Request) {
 
     // The same turn already being answered: wait for it and send the same reply
     const key = conversationId && learnerSaid ? `${learnerId}|${conversationId}|${learnerSaid}` : null;
-    const settle = async (onFirst?: (first: string, parts?: Part[]) => void, draft = false): Promise<Settled> => {
-      const r = await run(onFirst, draft);
+    const settle = async (onFirst?: (first: string, parts?: Part[]) => void, ahead?: Ahead): Promise<Settled> => {
+      const r = await run(onFirst, ahead);
       return 'error' in r ? { status: r.error.status, error: await r.error.json() } : r;
     };
 
-    // A draft: write the reply now, save nothing, and answer 'started' at once.
-    // Only for an ordinary turn with something said (never an opening, a lesson or the welcome)
-    if (body.data.draft) {
-      if (!key || body.data.lesson || body.data.welcome) return apiError('bad_request', 'A draft needs conversationId and learnerSaid, and is not for lessons or the welcome');
-      const started = drafts.start(key, (emit) => settle((first, parts) => emit({ first, parts }), true));
-      return apiJson({ draft: started ? 'started' : 'already' });
-    }
+    // Her reply to each answer she offered, written now (not for lessons, the welcome or Magda)
+    const writeAhead = (r: Settled, saidNow: string | undefined) => {
+      if ('error' in r || body.data.lesson || body.data.welcome || parsed.character.id === tutor.id) return;
+      const conv = (r.body as { conversationId?: string | null }).conversationId;
+      const answers = answersIn(r.body);
+      if (!conv || !answers.length) return;
+      const line = (r.body as { line: string; en?: string });
+      const after = fitStoredTranscript([
+        ...parsed.transcript,
+        ...(saidNow ? [{ who: 'learner' as const, transcript: saidNow }] : []),
+        { who: 'npc' as const, transcript: line.line, translation: line.en },
+      ]);
+      offered.set(`${learnerId}|${conv}`, answers);
+      for (const a of answers) drafts.start(`${learnerId}|${conv}|${a}`, (emit) => settle((first, parts) => emit({ first, parts }), { said: a, transcript: after, conversationId: conv }));
+    };
 
-    // The same turn drafted during the silence: take the draft (its first
-    // sentence goes out as it did, or as it comes), save the turn now
-    const claimDraft = (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> | undefined => {
-      const draft = key ? drafts.claim(key, onFirst ? (e) => { const { first, parts } = e as { first: string; parts?: Part[] }; onFirst(first, parts); } : undefined) : undefined;
+    // They said one of her answers back: her reply is already written (its
+    // first sentence goes out as it was, or as it comes); saved now with their words
+    const claimAhead = (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> | undefined => {
+      if (!conversationId || !learnerSaid) return undefined;
+      const answers = offered.get(`${learnerId}|${conversationId}`);
+      offered.delete(`${learnerId}|${conversationId}`);
+      const hit = answers?.find((a) => isSaidBack(learnerSaid, [a]));
+      const draft = hit ? drafts.claim(`${learnerId}|${conversationId}|${hit}`, onFirst ? (e) => { const { first, parts } = e as { first: string; parts?: Part[] }; startVoice(first); onFirst(first, parts); } : undefined) : undefined;
       if (!draft) return undefined;
       return draft.done.then((r) => {
-        // Failed before anything was said: ask again, as if there were no draft
+        // Failed before anything was said: answer as if there were nothing written ahead
         if ('error' in r) return draft.events.length ? r : settle(onFirst);
-        r.after?.();
-        console.log(JSON.stringify({ level: 'info', event: 'draft-used', written: draft.settledAt !== undefined && draft.settledAt <= Date.now(), headStartMs: Date.now() - draft.startedAt, writeMs: (draft.settledAt ?? Date.now()) - draft.startedAt }));
+        r.after?.(learnerSaid);
+        // The voice: written ahead without one; started now, split as the app will ask for it
+        const lineNow = (r.body as { line: string }).line;
+        const first = (draft.events[0] as { first?: string } | undefined)?.first;
+        if (onFirst && first && lineNow.startsWith(first)) startVoice(lineNow.slice(first.length), first);
+        else startVoice(lineNow);
+        console.log(JSON.stringify({ level: 'info', event: 'draft-used', written: draft.settledAt !== undefined, headStartMs: Date.now() - draft.startedAt, writeMs: (draft.settledAt ?? Date.now()) - draft.startedAt }));
         return r;
       });
     };
-    const answer = (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> =>
-      sharedWhileRunning(inFlight, key, () => claimDraft(onFirst) ?? settle(onFirst));
+    const answer = async (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> => {
+      const r = await sharedWhileRunning(inFlight, key, () => claimAhead(onFirst) ?? settle(onFirst));
+      writeAhead(r, learnerSaid);
+      return r;
+    };
 
     if (!request.headers.get('accept')?.includes(NDJSON)) {
       const r = await answer();

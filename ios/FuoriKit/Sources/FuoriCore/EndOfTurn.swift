@@ -30,20 +30,6 @@ public enum EndOfTurn {
     /// Intermediate and Advanced
     public static let speaking = Waits(usual: 2.0, finished: 0.9, trailing: 2.8)
 
-    /// After this much silence, once the words so far are back, her reply is
-    /// asked for in the background (a draft: docs/12-native-app.md item 5).
-    /// A finished sentence ends the turn about 1.4 s in (the transcript's
-    /// arrival after earlyAfter), before this, so only turns still waiting
-    /// (trailing off, no mark at the end) draft: those are the ones with
-    /// seconds left to use
-    public static let draftAfter: TimeInterval = 1.5
-
-    /// Whether to ask for a draft now: past the draft wait, and the turn isn't
-    /// about to end anyway
-    public static func shouldDraft(silence: TimeInterval, endsAt target: TimeInterval) -> Bool {
-        silence >= draftAfter && silence < target
-    }
-
     public static func waits(beginner: Bool) -> Waits { beginner ? Self.beginner : speaking }
 
     public static func silence(after heard: String, waits: Waits = beginner) -> TimeInterval {

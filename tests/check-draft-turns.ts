@@ -1,7 +1,8 @@
-// Replies prepared during the silence (lib/draft-turns.ts, /v1/turn `draft`):
-// the store hands a draft over once, with the first sentence it already sent;
-// a draft nobody claims is dropped and reported (and, in the route, never
-// saved); the route only saves through the confirmed turn.
+// Replies written ahead for a Beginner's offered answers (lib/draft-turns.ts,
+// /v1/turn): the store hands a reply over once, with the first sentence it
+// already wrote; one nobody claims is dropped and reported (and, in the
+// route, never saved); the route saves only the answer they said back, with
+// their own words.
 import { readFileSync } from 'fs';
 import { DraftStore, type DraftEntry } from '@/lib/draft-turns';
 
@@ -51,7 +52,10 @@ async function main() {
   const take = readFileSync('lib/conversation/take-turn.ts', 'utf8');
   check(/deferSave:\s*draft/.test(route), 'a draft runs takeTurn with deferSave');
   check(/if \(!draft\)[\s\S]{0,80}learnAhead\(\)/.test(route), 'the Learn page is not written for a draft');
-  check(/after:\s*\(\)\s*=>\s*\{\s*result\.commit\?\.\(\);\s*learnAhead\(\)/.test(route), 'a confirmed draft saves and writes the Learn page');
+  check(/after:\s*\(saidNow\?: string\)\s*=>\s*\{\s*result\.commit\?\.\(saidNow\);\s*learnAhead\(saidNow\)/.test(route), 'a claimed reply saves with what they said and writes the Learn page');
+  check(/isSaidBack\(learnerSaid, \[a\]\)/.test(route), 'a reply is claimed only when they said its answer back');
+  check(/if \(!draft\) startVoice/.test(route), 'no voice is made for a reply written ahead until it is claimed');
+  check(!/draft: z\.boolean/.test(route), 'the app can no longer ask for a draft itself (the silence trigger is gone)');
   check(/draft-wasted/.test(route) && /draft-used/.test(route), 'wasted and used drafts are logged');
   check(!/\bdraft\b[^\n]*lesson/.test(route.replace(/body\.data\.draft/g, '')) || /lesson \|\| body\.data\.welcome/.test(route), 'a draft is refused for lessons and the welcome');
   check(/p\.deferSave/.test(take) && /committed/.test(take), 'takeTurn defers the save and commits it once');

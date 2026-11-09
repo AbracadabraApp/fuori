@@ -168,16 +168,6 @@ public actor APIClient {
         return try await send(post("v1/turn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed)), signedIn: true)
     }
 
-    /// POST /v1/turn as a draft (docs/12-native-app.md item 5): the server
-    /// writes her reply to this line now but saves nothing; sending the same
-    /// line as a turn afterwards gets that reply at once. Nothing comes back
-    /// but "started"; a failure costs nothing (the real turn is asked as usual)
-    public func draftTurn(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String, learnerSaid: String, speed: Double? = nil) async throws {
-        struct Body: Encodable { let cityId: String; let placeId: String; let tripTo: String?; let conversationId: String; let learnerSaid: String; let speed: Double?; let draft = true }
-        struct Started: Decodable { let draft: String }
-        let _: Started = try await send(post("v1/turn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed)), signedIn: true)
-    }
-
     /// POST /v1/turn, streamed: `onFirst` gets the line's first sentence as
     /// soon as it's written (exactly as the line starts; its voice is already
     /// being made), while the rest is still being written; then the whole
