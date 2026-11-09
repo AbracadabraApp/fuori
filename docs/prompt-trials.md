@@ -748,29 +748,29 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Run, Italy to confirm (2026-11-08, Mac mini, 10 characters × 3 visits, Intermediate, A twice for 3, 255 s; `tests/conversations/runs/2026-11-08-22-33-22-c13-commerce-it/`): **B is not worse: lines about the sale over all 10, A 53, B 53.** A-against-A gaps 0, 2, 4, so the threshold is again 8. Per character (A → B): Luisa 9 → 9, Nino 0 → 2 (A twice: 0, 2), Antonio 4 → 7 (A twice: 4, 8), Matteo 2 → 1, Carmela 9 → 5, Giuseppe 0 → 0, Giulia 6 → 6, Lucia 7 → 8, Marta 9 → 7, Nusrat 7 → 8. Guards: reply words A 17.5, B 20.1; repeats A 0.05, B 0. Italy shows no effect either way (the totals are equal), where Mexico's total was 9 lower; the rule does no harm in either country. Judge uncalibrated; transcripts not read for Italy
 
 
-### B2-S (2026-11-09): does Beginner 2's character follow each reply setup line? (runs before B2-P)
+### B2-S (2026-11-09): does Beginner 2's character follow each reply setup line? (runs with B2-P)
 - Serves: 1 (at their level: the reply ladder only works if she sets up the reply as asked; docs/beginner-2.md → The reply ladder)
 - Type: moment (one turn, the conversation before it, rule 5)
 - Unit: Beginner 2's prompt (the shared character prompt + the level line + the answer rules + the parts format, as in B2-P's B) with the reply setup line; Beginner 1 has no setup lines, so no comparison with it
-- Variable: the setup line, six values: two answers · one answer · the answer inside what you say · gloss the words that matter and give no answers · invite an English answer · give no answers
+- Variable: the setup line. Run here: the answer inside what you say · gloss the words that matter and give no answers · invite an English answer · give no answers (the control for the soft three). "Two answers" is B2-P's B arm (same prompt, moments, settings), its turns reused. "One answer" isn't run: the code trims answers past the count asked for (`lib/beginner.ts`, `maxAnswers`), so it can only fail by too few, which "two answers" shows
 - Held constant: the rest of the prompt, model and settings, the moments, memory notes, the learner's gender line
 - Place: Italy; Mexico only if Italy passes
-- Moments: the same 7 as B2-P (the 5 stored Italian Beginner moments, plus the caffè echo and benvenuto turns if found)
-- Measure: counted in code from the parts, per turn, "followed" when:
-  - two answers: exactly 2 answer parts;
-  - one answer: exactly 1;
-  - inside what you say: 0 answer parts, and a sentence in the language inside her line that could be said back (5+ words in a word or question part after a colon or quotation, counted by code; the turns are also read);
-  - gloss, no answers: 0 answer parts and at least one English gloss or English part naming a word from her language parts;
-  - invite English: 0 answer parts and an English part ending in a question (read as well: whether it invites an English answer);
-  - no answers: 0 answer parts.
-  Also per turn: valid parts, questions, her words in the language, English sentences (as guards)
-- Fact or judgment: FACT (code) for the answer counts and valid parts; "inside what you say" and "invite English" are counted by code and then READ (flagged as partly judgment, rule 7b)
-- Hypothesis: she follows the counted setups (two, one, no answers) on ≥ 90% of turns each, and the softer three (inside, gloss, invite English) on ≥ 70%. **Rule, written before the run:** a setup passes at those thresholds; a setup that fails gets its line rewritten (a new card) or moves to code (e.g. the code removes answer parts for "no answers")
-- Other outcomes: (a) all pass: B2-P runs next. (b) only the soft three fail: build Beginner 2 with the three counted setups first; the soft ones get their own card. (c) the counted ones fail too: the model ignores the setup line; enforce the answer count in code (tidyParts) and rerun once
-- Size: pilot 2 moments × 6 setups × 1 run (12 turns, about 1 minute). Real run 7 moments × 6 setups × 3 runs = 126 turns
-- Time: about 3 minutes on the Mac mini
-- Guards: valid parts, words per turn, reply time (read)
-- Reviewed: pending
+- Moments: the same 7 as B2-P (the 5 stored Italian Beginner moments, plus the caffè echo and benvenuto turns if found). 3 are openers: "invite English" may be unnatural there, so those turns are read before a setup is called a fail
+- Measure, per turn:
+  - two answers (B2-P's B turns): at least 2 answer parts (counted; extras are trimmed by code, so only too few is a failure);
+  - gloss, no answers: 0 answer parts and at least one word or question part with a non-empty `gloss` (counted);
+  - inside what you say: READ yes/no: she says, in the language, a sentence the learner could say back, and invites them to say it;
+  - invite English: READ yes/no: she asks for the answer in English, or asks something only in English;
+  - each soft setup's same measure also counted on the "no answers" turns, as its baseline.
+  Guards: valid parts, words per turn, the language's share of words (invite English may tip her into all-English turns), reply time
+- Fact or judgment: FACT (code) for two answers and gloss; JUDGMENT (flagged, rule 7b) for inside what you say and invite English, read by Claude, no judge model
+- Hypothesis and **rule, written before the run:** two answers passes with at least 2 answers on ≥ 19 of 21 turns (B2-P's 7 × 3 first runs; 90%: the question is absolute). Each soft setup passes with ≥ 15 of 21 followed (70%) **and** at least 9 more than its own count under "no answers" (noise at 21 turns ≈ 9), so a high rate that comes without the line doesn't pass
+- Other outcomes: (a) all pass: build all six setups. (b) only the soft ones fail: build Beginner 2 with the counted setups first; each failing soft setup gets a new line and a new card. (c) two answers fails (too few): read the turns; a new line, a new card
+- Size: pilot 2 moments × 4 setups × 1 run = 8 turns (about 1 minute). Real run 4 setups × 7 moments × 3 runs = 84 turns. Stop rule: a soft setup at 5 of 7 or worse after the first run of 7 moments is stopped and called failed
+- Time: about 2 minutes on the Mac mini (pilot about 1)
+- Guards: as in Measure
+- Order: runs with B2-P (B2-S doesn't decide whether B2-P is needed); B2-P's B turns serve as the "two answers" cell
+- Reviewed: test designer, 2026-11-09: ready with six changes (counted setups measure only too few, one answer dropped, no rerun; two answers reuses B2-P's B; inside and invite English read and flagged; gloss counted from the gloss field; soft setups must beat their own rate under no answers; 84 turns, stop rule, language share guard); all applied · card 57160098
 ### B2-P (2026-11-09): Beginner 2's prompt (one prompt, the level and reply setup filled in) against today's Beginner, on stored moments
 - Serves: 1 (at their level), 8 (brief), 4 (in character: each moment's own failure), and the English and gloss failures Josh named (docs/beginner-2.md → The prompt, item 6)
 - Type: moment (one turn, the conversation before it, rule 5)
