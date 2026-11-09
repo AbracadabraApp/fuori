@@ -66,6 +66,12 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-08 (night): keep-awake, real-play review, release (laptop session)
+
+- **Screen stays on during conversations** (dbc036c, Josh: "the app as is is not staying awake"; never seen it lock before today). The app never disabled the idle timer; hands-free means no taps, so the phone auto-locked mid-conversation. Likely trigger on the phone's side (Low Power Mode forces 30 s Auto-Lock), not a code change. PersonView holds `isIdleTimerDisabled` while open (counted, for lesson part swaps). Installed on Josh's iPhone with his yes.
+- **Real-play review, Italy** (Josh's four tonight vs four of his Beginner ones from 10-26/28; quality judge + scorecard + Railway `turn-timing` logs): server reply 2.5–3 s median (Claude; transcribe 0.5 s, voice 0.13 s), one 10 s opening (Claude first token 8.3 s). Better than a week ago: one question per turn (was up to 100% two), no echo translations, more local culture, alive 5–6 (was 3–4). Still: every Beginner turn is the same shape (English aside + "X or Y?"), and scene slips (Nino offering coffee at a closed bar; Giorgia offering water as a student, 10-28). Lucia was on the Intermediate prompt because Josh switched level. Not yet logged in `docs/dialogue-ideas.md` (asked Josh).
+- **Release:** `npm run release` started (Josh: "release the new build"), taking main live with everything listed below as not released.
+
 ## 2026-11-08 (evening): trailer screen on Josh's phone (laptop session)
 
 - **Trailer screen** (4715712, from Josh: "could table be collapsed click for more video centered. Can tilt go full screen"; mockup approved): the trailer plays centred on the dark screen; the other videos fold into one "More videos (n)" row ("Less" folds them); sideways the video fills the screen (no bar, list or status bar). Only this screen rotates (`OrientationLock`, an app delegate, landscape allowed in Info.plist); leaving it turns the app upright.
