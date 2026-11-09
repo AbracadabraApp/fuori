@@ -1,6 +1,9 @@
 import SwiftUI
 import FuoriCore
 import FuoriDesign
+#if canImport(UIKit)
+import UIKit
+#endif
 
 /// The person screen (Josh's approved "name on a band", 2026-10-13, in iOS
 /// form; docs/13-ios-conventions.md R2, R14): the standard navigation bar with
@@ -56,8 +59,11 @@ struct PersonView: View {
         }
         .settingsToolbar()
         .task { await model.start() }
+        // Hands-free means no taps, so without this the phone auto-locks
+        // mid-conversation and backgrounding ends the learner's turn
+        .onAppear { KeepAwake.hold() }
         // Every way out (back button, edge swipe) saves through leave()
-        .onDisappear { model.leave() }
+        .onDisappear { model.leave(); KeepAwake.release() }
         .onChange(of: scenePhase) { _, phase in
             if phase == .background { model.backgrounded() }
         }
@@ -194,5 +200,29 @@ private struct DebugPanel: View {
 
     private func row(_ label: String, _ value: String?) -> Text {
         Text("\(Text("\(label):").bold()) \(value ?? "—")")
+    }
+}
+
+/// Keeps the screen on while any conversation screen is open. Counted, since a
+/// lesson swaps one conversation screen for the next and the old one's
+/// onDisappear can come after the new one's onAppear.
+@MainActor
+enum KeepAwake {
+    private static var holders = 0
+
+    static func hold() {
+        holders += 1
+        update()
+    }
+
+    static func release() {
+        holders = max(0, holders - 1)
+        update()
+    }
+
+    private static func update() {
+        #if canImport(UIKit)
+        UIApplication.shared.isIdleTimerDisabled = holders > 0
+        #endif
     }
 }
