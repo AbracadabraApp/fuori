@@ -52,13 +52,23 @@ async function main() {
   const take = readFileSync('lib/conversation/take-turn.ts', 'utf8');
   check(/deferSave:\s*draft/.test(route), 'a draft runs takeTurn with deferSave');
   check(/if \(!draft\)[\s\S]{0,80}learnAhead\(\)/.test(route), 'the Learn page is not written for a draft');
-  check(/after:\s*\(saidNow\?: string\)\s*=>\s*\{\s*result\.commit\?\.\(saidNow\);\s*learnAhead\(saidNow\)/.test(route), 'a claimed reply saves with what they said and writes the Learn page');
+  check(/after:\s*\(saidNow\?: string, replyMs\?: number\)\s*=>\s*\{\s*result\.commit\?\.\(saidNow, replyMs\);\s*learnAhead\(saidNow\)/.test(route), 'a claimed reply saves with what they said (and what they waited) and writes the Learn page');
   check(/isSaidBack\(learnerSaid, \[a\]\)/.test(route), 'a reply is claimed only when they said its answer back');
   check(/if \(!draft\) startVoice/.test(route), 'no voice is made for a reply written ahead until it is claimed');
   check(!/draft: z\.boolean/.test(route), 'the app can no longer ask for a draft itself (the silence trigger is gone)');
   check(/draft-wasted/.test(route) && /draft-used/.test(route), 'wasted and used drafts are logged');
   check(!/\bdraft\b[^\n]*lesson/.test(route.replace(/body\.data\.draft/g, '')) || /lesson \|\| body\.data\.welcome/.test(route), 'a draft is refused for lessons and the welcome');
   check(/p\.deferSave/.test(take) && /committed/.test(take), 'takeTurn defers the save and commits it once');
+
+  // Timing (2026-11-09 review): replies written ahead used this request's timer, so they logged
+  // turn-timing lines timed from the earlier request, and a claimed turn logged none and saved
+  // the writing time as its reply time; the logs and scorecard would have shown no gain
+  check(/const l = draft \? new Laps\(\) : laps/.test(route) && /laps: l,/.test(route), 'a reply written ahead has its own timer');
+  check(/l\.log\(draft \? 'draft-timing' : 'turn-timing'/.test(route), 'a reply written ahead logs draft-timing, not turn-timing');
+  const claim = route.slice(route.indexOf('const claimAhead'), route.indexOf('const answer = async'));
+  check(/laps\.log\('turn-timing'/.test(claim) && /facts\.draft = 'used'/.test(claim), 'a claimed turn logs turn-timing, marked as a used draft');
+  check(/r\.after\?\.\(learnerSaid, waitMs\)/.test(claim) && /performance\.now\(\) - claimedAt/.test(claim), 'a claimed turn saves what the learner waited as its reply time');
+  check(/commit = \(said\?: string, ms\?: number\)/.test(take) && /replyMs: ms/.test(take), 'takeTurn saves the reply time it is given on commit');
 }
 
 main().then(() => {

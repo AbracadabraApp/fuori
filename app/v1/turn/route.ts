@@ -75,7 +75,7 @@ const Body = z.object({
  * waits for it and gets the same reply. One server process per country
  * (Railway), so memory covers every request.
  */
-type Settled = { body: object; headers: Record<string, string>; after?: (said?: string) => void } | { status: number; error: object };
+type Settled = { body: object; headers: Record<string, string>; after?: (said?: string, replyMs?: number) => void } | { status: number; error: object };
 const inFlight = new Map<string, Promise<Settled>>();
 
 /**
@@ -138,8 +138,10 @@ export async function POST(request: Request) {
     /** The turn; onFirst, when streaming, gets the first sentence as soon as more follows it */
     /** A reply written ahead: this answer said back, after this transcript, in this conversation; no voice until it's claimed */
     type Ahead = { said: string; transcript: typeof parsed.transcript; conversationId: string };
-    const run = async (onFirst?: (first: string, parts?: Part[]) => void, ahead?: Ahead): Promise<{ body: object; headers: Record<string, string>; after?: (said?: string) => void } | { error: Response }> => {
+    const run = async (onFirst?: (first: string, parts?: Part[]) => void, ahead?: Ahead): Promise<{ body: object; headers: Record<string, string>; after?: (said?: string, replyMs?: number) => void } | { error: Response }> => {
       const draft = !!ahead;
+      // A reply written ahead is timed on its own: it runs after this request's turn, sometimes two at once
+      const l = draft ? new Laps() : laps;
       const said = ahead ? ahead.said : parsed.learnerSaid;
       const transcriptNow = ahead ? ahead.transcript : parsed.transcript;
       const conversationNow = ahead ? ahead.conversationId : conversationId;
@@ -175,7 +177,7 @@ export async function POST(request: Request) {
           conversationId: conversationNow,
           requestId: request.headers.get('x-fuori-id') ?? undefined,
           onSoftError: (where, err) => logServerError(request, where, err),
-          laps,
+          laps: l,
           // The conversation was loaded above as this learner's
           saveAfterReply: true,
           deferSave: draft,
@@ -199,7 +201,7 @@ export async function POST(request: Request) {
         // A lesson's parts end on their own button; the speaking mode's practice is in their own words (no panel)
         const stage = result.reply.parts || body.data.lesson ? null : scaffoldStage({ ...facts, learnerTurns, isTutor: result.isTutor });
         const replies = stage !== null;
-        laps.lap('scaffold');
+        l.lap('scaffold');
         // The Learn page for the conversation as it now stands, written while
         // the learner reads and answers (lib/learn-ahead.ts)
         const learnAhead = (saidNow = said) => {
@@ -221,19 +223,19 @@ export async function POST(request: Request) {
           result.commit?.();
           learnAhead();
         }
-        laps.facts.turn = conversationId ? 'reply' : 'opening';
-        laps.facts.replies = stage ?? 'no';
-        laps.facts.streamed = onFirst ? 'yes' : 'no';
-        if (draft) laps.facts.draft = 'yes';
-        laps.log('turn-timing', request.headers.get('x-fuori-id'));
-        const headers: Record<string, string> = { 'server-timing': laps.header() };
+        l.facts.turn = draft ? 'reply' : conversationId ? 'reply' : 'opening';
+        l.facts.replies = stage ?? 'no';
+        l.facts.streamed = onFirst ? 'yes' : 'no';
+        // turn-timing is what a learner waited; a reply written ahead is logged apart (its wait is logged when it's claimed)
+        l.log(draft ? 'draft-timing' : 'turn-timing', request.headers.get('x-fuori-id'));
+        const headers: Record<string, string> = { 'server-timing': l.header() };
         // Read by scripts/smoke-live.ts
         if (result.memory) headers['x-memory'] = `${result.memory.visits} visits, ${result.memory.notes.length} notes`;
         if (result.isTutor) headers['x-study-file'] = `${result.memory?.notes.length ?? 0} lines, ${result.memory?.visits ?? 0} lessons`;
         return {
           body: { ...result.reply, conversationId: result.conversationId, promptVersion: result.promptVersion, replies, stage },
           headers,
-          ...(draft ? { after: (saidNow?: string) => { result.commit?.(saidNow); learnAhead(saidNow); } } : {}),
+          ...(draft ? { after: (saidNow?: string, replyMs?: number) => { result.commit?.(saidNow, replyMs); learnAhead(saidNow); } } : {}),
         };
       } catch (err) {
         logServerError(request, 'v1 turn', err);
@@ -273,6 +275,7 @@ export async function POST(request: Request) {
     // first sentence goes out as it was, or as it comes); saved now with their words
     const claimAhead = (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> | undefined => {
       if (!conversationId || !learnerSaid) return undefined;
+      const claimedAt = performance.now();
       const answers = offered.get(`${learnerId}|${conversationId}`);
       offered.delete(`${learnerId}|${conversationId}`);
       const hit = answers?.find((a) => isSaidBack(learnerSaid, [a]));
@@ -281,7 +284,16 @@ export async function POST(request: Request) {
       return draft.done.then((r) => {
         // Failed before anything was said: answer as if there were nothing written ahead
         if ('error' in r) return draft.events.length ? r : settle(onFirst);
-        r.after?.(learnerSaid);
+        // What the learner waited, not how long it took to write ahead: saved with the turn (the scorecard's reply time) and logged as the turn
+        const waitMs = Math.round(performance.now() - claimedAt);
+        r.after?.(learnerSaid, waitMs);
+        laps.lap('draft-wait');
+        laps.facts.turn = 'reply';
+        laps.facts.replies = 'no';
+        laps.facts.streamed = onFirst ? 'yes' : 'no';
+        laps.facts.draft = 'used';
+        laps.log('turn-timing', request.headers.get('x-fuori-id'));
+        r = { ...r, headers: { ...r.headers, 'server-timing': laps.header() } };
         // The voice: written ahead without one; started now, split as the app will ask for it
         const lineNow = (r.body as { line: string }).line;
         const first = (draft.events[0] as { first?: string } | undefined)?.first;

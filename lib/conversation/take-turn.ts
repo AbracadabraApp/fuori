@@ -73,8 +73,8 @@ export interface TakeTurnResult {
   conversationId: string | null;
   memory?: CharacterMemory;
   isTutor: boolean;
-  /** Only for a deferred save: saves the exchange (once), with the learner's own words when given */
-  commit?: (learnerSaid?: string) => void;
+  /** Only for a deferred save: saves the exchange (once), with the learner's own words when given, and what they waited for the reply (replyMs) when given */
+  commit?: (learnerSaid?: string, replyMs?: number) => void;
 }
 
 export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
@@ -205,7 +205,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   let savedId: string | null = null;
   let commit: ((said?: string) => void) | undefined;
   if (learnerId) {
-    const save = (said = learnerSaid) =>
+    const save = (said = learnerSaid, ms = replyMs) =>
       recordTurn({
         learnerId,
         conversationId: conversationId ?? null,
@@ -214,7 +214,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         promptVersion: version,
         learnerSaid: transcript.length ? said : undefined,
         reply,
-        replyMs,
+        replyMs: ms,
         memory,
       }).catch((err) => {
         p.onSoftError('recording', err);
@@ -222,10 +222,10 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       });
     if (conversationId && p.saveAfterReply && p.deferSave) {
       let committed = false;
-      commit = (said?: string) => {
+      commit = (said?: string, ms?: number) => {
         if (committed) return;
         committed = true;
-        void saveLater(conversationId, () => save(said ?? learnerSaid));
+        void saveLater(conversationId, () => save(said ?? learnerSaid, ms ?? replyMs));
       };
       savedId = conversationId;
     } else if (conversationId && p.saveAfterReply) {
