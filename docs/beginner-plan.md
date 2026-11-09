@@ -101,6 +101,7 @@ Built from Josh's points in one pass (he found the piece-by-piece questions tedi
 
 **What the echo is for** (Josh, 2026-11-09): "Echo should let the speaker safely speak Italian and not lose the learner." The safety net that lets the character say real sentences in the language.
 It works wherever she speaks (Josh: "in a setting, in a dialogue, in queueing up answers without bubbles"): setting the scene, the dialogue itself (React, Say, Ask), and an answer offered in her speech ("…just say *Vorrei la carbonara*, I'd like the carbonara"), which is what makes answers without bubbles safe.
+In either direction it can be a phrase or a restatement, the meaning in other words, never a literal translation (Josh: "It also works in phrases or restatements. Not meant as literal translation").
 
 **The echo does both, by direction** (Josh, 2026-11-09: "Things are spicy or sweet (echo); do you like spicy or do you like sweet (no echo)"; "More like Italian underline"; "It should do both"):
 - **The language, then the English echo:** helps them understand what was just said: today's echo, **kept as it is** (Josh: "Italian then English is fine").
