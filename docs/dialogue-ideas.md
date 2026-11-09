@@ -95,3 +95,131 @@ Josh: "The Palio guy is a good bad example. Check Jenn's transcript"; "Cultural 
 - The same tips at every bar. Josh: "Sì, ma perché ogni bar ha detto le stesse cose? In genere è cappuccino solo in mattina o paga a casa."
 - Fixed on the shared layer: dialogue.md 2026-11-06b (what happens follows what you've said; tell how it works at your place, not the customs every bar repeats). Josh: "We should have cashiers or customers with receipts"; one conversation per person, so receipts: five busy counter bars say the customer has already paid.
 - Not fixed: a mishearing ("Grazie a tutti!" for what Josh said was "al banco, grazie") answered by asking again; fine as it is.
+
+## Top 10 problems in 20 days of real conversations (agent read, 2026-11-08)
+
+Josh, 2026-11-08: "would an agent be able to read through all the transcripts for 20 days and rank the top 10 problems in character dialogue"; read as natural conversation ("something more literary"), from the conversations alone ("knowing prompts or judge results supplies extra info"). Method: 67 conversations from Oct 19 to Nov 9, both countries, 3 or more learner lines, Magda, lessons and the welcome left out; one agent read only the transcripts (CHARACTER / VISITOR, conversation numbers in date order), no prompts, versions or scores. Counts are rough, from one read. Nothing here is decided.
+
+
+A reader's view, from the transcripts only. Counts are rough, from one careful read.
+
+The big shift: the early conversations (1–29, Oct 19–24) are mostly in the language alone and read like people talking. From about conversation 30 (Oct 26) on, a different turn shape takes over: a line of English narration, a short phrase in the language, a gloss, and an either/or question. Most of the problems below come in with that shape.
+
+### 1. Interviewing by multiple choice
+
+Nearly every character turn ends in a question, usually a binary "X or Y?", even when the choice is meaningless. The visitor never gets to lead, and the character never just reacts, tells a story or lets a moment sit. A real person would leave half these turns as plain statements.
+
+- **How often:** about 33 of 67. Heavy and nearly constant from Oct 26 to Nov 9 (30–66). Lighter earlier (Chucho's "¿sí o no?" in 5, 8, 11; Rosa in 25).
+- **Examples:**
+  - 40 · 2026-10-28 · beatrice-salvi. On a walk to see a fresco, every turn is a quiz: "Quando vuole andare, oggi o domani?" / "Vuoi andare a piedi o in autobus?" / "Quale pittore preferisci, antico o moderno?" / "Ti piace la folla o preferisci la calma?" / "Vuoi vedere prima l'affresco o il Campo?"
+  - 64 · 2026-11-09 · nino-garbatella. VISITOR: "Tutte due" → "Le piace di più il pepe o il pecorino?" → VISITOR: "...anche mi piace grigia." → "Le piace di più la gricia o l'amatriciana?" → VISITOR: "Oh ancora tutte due." Nobody asks whether you prefer pepper or cheese in cacio e pepe.
+  - 65 · 2026-11-09 · giulia-neri. "Le piace il Palio, o preferisce i cavalli?", and after "Sì, varo in piazza oggi": "Va a piedi o in autobus?" for a few minutes' walk.
+- **Instead:** react to the answer, add something of your own, and ask only when you actually want to know.
+
+### 2. The same script in every shop
+
+Every commerce visit runs the same steps in the same order: option A or B, "anything else?", "pay now?", "card or cash?", receipt. The same few cultural facts get repeated in every bar and trattoria. The visitor notices out loud.
+
+- **How often:** about 20 of 67. The payment question alone appears in about 15 (24, 32, 35, 37, 38, 40, 41, 43, 45, 46, 51, 52, 54, 55, 62). The repeated facts are carbonara without cream (7, 53, 56, 58, 59, 64), cappuccino only in the morning (44, 51, 62), pay at the till first (51, 62) and "per favore, not por favore" (30, 51). Mostly Oct 23 to Nov 9.
+- **Examples:**
+  - 62 · 2026-11-06 · tommaso-bini. "Here's a little tip: you pay at the till first, then bring the receipt to the counter. Vuole pagare adesso?" VISITOR: "Sì, ma perché ogni bar ha detto le stesse cose? In genere è cappuccino solo in mattina o paga a casa."
+  - 35 · 2026-10-26 · ofelia-tlayudas. A street-food stall: "¿Va a pagar ahora? pay now?" → "Son ciento diez pesos... ¿Quiere pagar con billete o con monedas? bills or coins?" Nobody at a market stall asks bills or coins.
+  - 43 · 2026-10-29 · marisol-cafe-pocito, and 46 · 2026-11-04 · valeria-barista, in two cities, the same line: "¿Va a pagar con efectivo o con tarjeta? cash or card?"
+- **Instead:** name the price and hold out a hand; the visitor's money says how they pay.
+
+### 3. Stepping out of the scene to manage the lesson
+
+Characters narrate the conversation's structure ("let me ask your name", "now it's time to settle up") and cue the visitor to perform ("you can say goodbye like this"), often without then saying anything. It turns a person into a tutor running an exercise.
+
+- **How often:** about 13 of 67 (30, 31, 33, 37, 38, 40, 41, 42, 45, 51, 52, 61, 65). All from Oct 26 to Nov 9.
+- **Examples:**
+  - 33 · 2026-10-26 · luisa-cocco-nuova. "Fatto, pagamento riuscito! all paid Enjoy it while it's warm. Then, when you're ready to head out, you can say goodbye like this." No goodbye follows; the line ends.
+  - 42 · 2026-10-28 · giorgia-ferri. VISITOR: "Adesso vado a casa a chastivare. Ciao, Georgia." → "Buona giornata, Joshua! A presto! Say goodbye to me too." The visitor had just said goodbye.
+  - 30 · 2026-10-26 · chiara-russo. "Let me ask your name." / "Let's start with a simple question about where you're from." 31 · francesca-clemente: "I'll ask how many of you there are." 38 · giorgia-ferri: "Still or sparkling is how we ask it here, and it's the usual next question."
+- **Instead:** just say goodbye, and the visitor hears how it's done.
+
+### 4. A narrator and a tour guide instead of a person
+
+Late conversations open with a guidebook sentence or a stage direction instead of a greeting. Some turns describe the character in the third person or spell out her actions as if reading a script aloud. Facts get delivered whether or not anyone asked.
+
+- **How often:** about 27 of 67. Guidebook openings in 30–32, 34–36, 38–40, 43, 45, 46, 50–58, 61, 62, 64–66; stage directions in 35, 36, 37, 41, 56, 64. All from Oct 26 to Nov 9.
+- **Examples:**
+  - 35 · 2026-10-26 · ofelia-tlayudas. "The smoky smell of the grill hits you as soon as you reach her stall, and she waves you over like an old friend." / "She slaps the tortilla on the grill with a grin." / "She pops the cap off a bottle of orange soda and sets it next to your plate..." Ofelia is narrating herself.
+  - 56 · 2026-11-06 · nino-garbatella. VISITOR: "Il conto, per favore" → "Already the bill? Nino laughs, you have not even eaten yet!" The character says "Nino laughs" about himself.
+  - 54 · 2026-11-06 · pietro-termini-nuova. The opening line, before the visitor speaks: "Matera is a long trip, and the rain today is heavy. You change trains in Bari. Buongiorno. Matera, va bene." He answers a question nobody asked.
+  - 39 · 2026-10-28 · salvatore-di-maio. "Welcome to the Pignasecca, the oldest street market in Naples, where everybody shouts and nobody is angry."
+- **Instead:** a market seller shouts about his oranges; the history comes out later, if anyone asks.
+
+### 5. Not listening
+
+Characters repeat a question word for word after it's been answered, skip a question the visitor asked, or offer something and never follow through. The visitor is talking to a form, not a person.
+
+- **How often:** about 12 of 67 (3, 36, 40, 46, 55, 57, 58, 62, 64, 65 and others). Across the whole period, more often late.
+- **Examples:**
+  - 62 · 2026-11-06 · tommaso-bini. "Lo beve al banco o al tavolo?" VISITOR: "Grazie a tutti!" → "Preparo il suo caffè adesso. Lo beve al banco o al tavolo?" VISITOR: "O rispondete prima non ascoltami o detto al banco grazie."
+  - 40 · 2026-10-28 · beatrice-salvi. VISITOR: "puoi spiegare la mura per me?" → "Le mura sono molto antiche. Passiamo davanti a una porta." Later, VISITOR: "conosce la storia del diavolo a Siena?" → "Quale storia del diavolo conosci tu?" → "Il tiranno è molto brutto. Vuoi sentire la storia?" VISITOR: "Si, grazie." → "Il diavolo è dietro il tiranno." The story is never told.
+  - 65 · 2026-11-09 · giulia-neri. "Abita qui a Siena?" VISITOR: "No ho visitato Roma" → "Roma, che bella! ... Abita qui a Siena adesso?"
+- **Instead:** take the answer you got, and when you offer a story, tell it.
+
+### 6. Characters serving when it isn't their job
+
+Students, a taxi driver and a closed trattoria's owner start taking food and drink orders they can't fill. Each time the visitor calls it out, and the character apologises and goes on.
+
+- **How often:** about 5 of 67 (30, 40, 42, 61, 64). Oct 26 to Nov 9. Rare, but it breaks the scene completely each time.
+- **Examples:**
+  - 61 · 2026-11-06 · beto-taxi. "¿Quiere la torta con queso o con jamón?" VISITOR: "Con jamón, por favor. ¿Por qué estás tomando mi orden?" → "Ha, fair question! I'm a taxi driver, not the torta guy, I got carried away."
+  - 42 · 2026-10-28 · giorgia-ferri, a student on the university steps. "Beve acqua frizzante o naturale?" VISITOR: "Perché tua domanda è strana? Perché è una studentessa in piazza, non è una cameriera?" → "Scusa, Joshua. Sono solo una studentessa."
+  - 30 · 2026-10-26 · chiara-russo. "Vuole un caffè?" … VISITOR: "Non capisco perché mi offre un caffè." → "You're right, sorry! I got carried away and ordered for you. I'm only a student here, so I can't make coffee."
+- **Instead:** a student offers to walk you to a bar; a taxi driver names his cousin's torta stand and asks if you want a ride.
+
+### 7. Losing track of the scene and of the visitor
+
+The same item is served twice, a price is quoted before the order is made, a choice is offered after the thing has been handed over, a remembered regular is asked his name, and a just-met neighbour is greeted as a stranger.
+
+- **How often:** about 12 of 67 (17, 20, 23/24, 26, 33, 35, 36, 46, 55, 56, 63). Across the whole period.
+- **Examples:**
+  - 55 · 2026-11-06 · antonio-russo. "Ecco il suo caffè, caldo! ... Vuole zucchero o no?" then the next turn: "Va bene, niente zucchero. ... Ecco il suo caffè, signora." The same coffee is served twice.
+  - 36 · 2026-10-26 · tere-fonda. "Aquí tiene su refresco. I'm opening the bottle and setting it next to your plate. ... ¿Lo quiere de naranja o de limón?" She has already opened it.
+  - 23 → 24 · 2026-10-23 · luisa-cocco-nuova. In 23: "Piacere, Joshua! Io sono Luisa. Domani mattina il tuo caffè ti aspetta qui al banco." Same day, 24: "Buongiorno! Dica pure, cosa le preparo?", as to a stranger. 63 · 2026-11-07 · memo-tejuino remembers the order ("Last time you had it cold, with lemon and salt") but then asks "¿Cómo se llama usted?"
+- **Instead:** keep track of what is already on the counter and who is standing at it.
+
+### 8. Dragging the talk back to the sale
+
+When the visitor opens a real topic (children, the character's job, a question), the character gives it one line and pulls back to the order: "but you haven't picked a drink yet."
+
+- **How often:** about 9 of 67 (7, 14, 30, 32, 38, 42, 53, 56, 57). Across the period, more often late.
+- **Examples:**
+  - 7 · 2026-10-20 · franco-ortolano. VISITOR: "tre figli un figlio e poi due file" → "Tre figli, che bella famiglia! ... Le preparo un po' di pesche per loro?"
+  - 32 · 2026-10-26 · sofia-esposito. VISITOR asks if she likes her work → "Sì, mi piace molto qui. ... And the sfogliatella is still waiting for you, crisp and warm. Vuole una sfogliatella, sì o no?"
+  - 38 · 2026-10-27 · giorgia-ferri. VISITOR: "Si, mi piace moto Roma" → "Anch'io amo Roma! Now, your margherita is on its way, but you haven't picked a drink yet."
+- **Instead:** stay on the children or the job for a few lines; the drink can wait.
+
+### 9. Characters lose their own voice
+
+In the early, language-only turns, characters have humour, a way of speaking and opinions. In the late, scaffolded turns the same people speak in the same neutral English ("Perfect", "Good choice", "Here you go") and could be swapped for each other.
+
+- **How often:** most of the scaffolded conversations, about 20 (Oct 26 to Nov 9), and the clearest in characters who appear in both periods (Chucho, Memo, Valeria, Nino).
+- **Examples:**
+  - Chucho, 5 · 2026-10-19: "¿Cinco años? ¡Entonces usted es un niño, y yo un bebé de 74!" vs 41 · 2026-10-28: "Now I buff the leather with a soft cloth until it glows softly. Ahora saco brillo, pero poquito. a little shine ¿Le gusta vivir en la Ciudad de México?"
+  - Memo, 16 · 2026-10-23: "¡Jaja! Eso es italiano, joven. En español decimos «poco a poco»." vs 45 · 2026-11-04: "Tejuino is a Jalisco classic: fermented corn, lime, salt and ice. ... Now it's time to settle up, it's just a small price."
+  - Nino, 59 · 2026-11-06 (in Italian): "Ah, la gricia! È la madre di tutte, mi creda. ... Mai la panna, mai!" vs 53 · 2026-11-06: "Marco, my son, makes it in the kitchen and takes your order. Today it's Friday, so no gnocchi..."
+- **Instead:** keep the character's own words and jokes even in the English parts.
+
+### 10. Reflex praise
+
+"Parli benissimo", "Ottima scelta", "Bravo/Brava", "¡Muy bien dicho!" go out for anything, including halting sentences and plain choices. Praise that automatic stops meaning anything and sounds like a script.
+
+- **How often:** about 18 of 67 (2, 4, 6, 7, 9, 17, 20, 21, 27, 32, 48, 49, 52, 53, 56, 57, 61, 64). The whole period.
+- **Examples:**
+  - 2 · 2026-10-19 · alberto-galli. VISITOR: "...non parlo italiano bene, mi scusi se farei un sbagliato. Vorrei un ciabatta, un peso, un po'" → "Ma no, non ti preoccupare, parli benissimo!"
+  - 17 · 2026-10-23 · valeria-barista. The visitor parrots her line back: "A negro, café negro, sin azúcar, muy bien, ya casi está." → "¡Eso! Lo dijiste perfecto."
+  - 53 · 2026-11-06 · nino-garbatella. "si ho mangiato la carbonara" → "Bene, brava!" → "Mi piace la carbonara" → "Bravissima!" → "I cao ciò per favore" → "Ottima scelta, signora!" And 64: liking both pastas earns "Ah, sei un vero romano!"
+- **Instead:** take the order without comment, and save praise for something that earns it.
+
+### What the dialogue does well
+
+- **Humour that comes from the character.** 12 · 2026-10-21 · dario-fornaio. VISITOR: "Chiacchieri molto per essere un fornaio." → "Ah, hai ragione! Ma il pane lievita da solo, io intanto faccio due chiacchiere." And VISITOR: "Una bistecca." → "Qui siamo un forno, mica una macelleria!"
+- **Recasting a mistake in character.** 11 · 2026-10-21 · chucho-lustrabotas. VISITOR: "Canto Pesame Mucho" → "Pero se dice 'Bésame', no 'Pésame'... Con 'pésame' mejor llora el cielo."
+- **Following the visitor somewhere real.** 49 · 2026-11-05 · lorenzo-marchi. VISITOR: "Tu conosci la età della Dante quando scrive queste parole?" → "Dante aveva trentacinque anni, o giù di lì. ... Quindi lei, a cinquantacinque, ha ancora un bel pezzo di strada! Io invece, a settantasei, sono già oltre il cammin, ma il cane mi tiene in forma."
+- **Warmth, and a reply to an odd turn.** 60 · 2026-11-06 · nonna-gina. The visitor asks if his Madonna tattoo is fine in church → "Ma certo che va bene, figliolo! La Madonna Addolorata sul braccio, che bellezza: Dio guarda il cuore, mica la pelle. ... Fattelo vedere, quel tatuaggio!"
+- **Memory that makes the visitor feel known.** 14 · 2026-10-21 · franco-ortolano. "Eccolo qua, Giosuè! Il trasteverino d'adozione! Allora, com'è andata l'amatriciana? Senza cipolla, spero! ... I tuoi figli hanno mangiato tutto, eh?"
