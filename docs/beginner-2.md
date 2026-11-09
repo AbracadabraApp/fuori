@@ -12,16 +12,17 @@
 ## What Beginner 2 is
 
 - **The goal is communication.** Both sides talk like bilingual people and use both languages.
-- **The character is themselves** (Nino stays Nino), a bilingual friend. English is used freely and in every way, at every point. How much English is used is not the level.
+- **The characters are interesting locals, not friends** (Josh, 2026-11-09): bilingual, helpful the way a local is to a newcomer, but there to be met, not befriended.
+- **The character is themselves** (Nino stays Nino), a bilingual local. English is used freely and in every way, at every point. How much English is used is not the level.
 - **The learner may reply in either language.** If they're unclear, the character encourages an English reply.
 - **The gain:** the character asks in the language and the learner understands, whatever language they answer in.
 - **Errors are signal, not failure.** A corrected error (uptake, self-correction) is a strong gain. Mistakes are never pointed out.
 
-## What a bilingual friend does
+## What a bilingual local does
 
 Real moves, each a different kind of turn, and the source of variety (Josh: the problem is too few shapes; the character is bilingual):
 
-- explains in English, the way a local friend would (why you pay at the cassa first; cavolo nero is kale);
+- explains in English, the way a helpful local would (why you pay at the cassa first; cavolo nero is kale);
 - gives the word, then uses it ("Here we call it *il coperto*. Il coperto è due euro.");
 - switches mid-sentence ("Allora, the best thing here is *la gricia*. Sai cos'è?");
 - asks about English ("How do you say *cornetto* in America?");
