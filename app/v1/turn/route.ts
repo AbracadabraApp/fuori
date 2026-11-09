@@ -41,7 +41,7 @@ import { writeLearnAhead } from '@/lib/learn-ahead';
 import { startEarlyVoice, DEFAULT_APP_SPEED, LineWatcher } from '@/lib/voice/early-voice';
 import { PartsWatcher, type Part } from '@/lib/beginner';
 import { DraftStore } from '@/lib/draft-turns';
-import { beginnerVersionFrom } from '@/lib/beginner-2';
+import { beginnerVersionFrom, clusterFrom } from '@/lib/beginner-2';
 import { isSaidBack } from '@/lib/conversation-record';
 
 /** Asked for in Accept, the reply streams: { first }, then { reply } or { error } */
@@ -206,6 +206,7 @@ export async function POST(request: Request) {
           micOff: body.data.micOff,
           // Beginner 2 when the app's hidden switch is on (lib/beginner-2.ts)
           beginnerVersion: beginnerVersionFrom(request.headers),
+          beginnerCluster: clusterFrom(request.headers),
           welcome: body.data.welcome,
           lesson: body.data.lesson,
         });

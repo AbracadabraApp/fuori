@@ -5,12 +5,15 @@
  * `x-fuori-beginner: 2` (Settings → touch and hold Version → Beginner), so
  * Josh can play it against Beginner 1, which stays as it is (Josh, 2026-11-09).
  *
- * Only cluster 1 for now (rungs 1–3: one answer with English, two answers with
- * English, one answer in the language only); the offers to move up a cluster
- * aren't built yet. With or without English under the answers is display: the
- * prompt asks for the answers' English either way, and it's left out here.
+ * The reply ladder (docs/beginner-2.md): eight rungs by how much of the
+ * language a reply takes, played in six overlapping clusters of three. The
+ * learner's cluster comes from the app's hidden picker for now
+ * (`x-fuori-cluster`); the offers to move up aren't built yet. With or without
+ * English under the answers is display: the prompt asks for the answers'
+ * English either way, and it's left out here.
  */
-import { readPromptFile } from '@/lib/prompts/template';
+import { fill, readPromptFile } from '@/lib/prompts/template';
+import { language } from '@/content';
 import type { Part } from '@/lib/beginner';
 
 export const BEGINNER_2_FILE = 'beginner-2.md';
@@ -26,16 +29,33 @@ export interface Setup {
   block: string;
   /** Answers kept, at most (code trims extras) */
   maxAnswers: number;
-  /** The English under each answer shown */
+  /** The English under each answer shown (on an inside rung: heard after it) */
   english: boolean;
+  /** The answer said inside her line by the code, not shown as a bubble (insideSpeech) */
+  inside?: boolean;
 }
 
-/** The reply ladder's rungs that cluster 1 plays (docs/beginner-2.md → The reply ladder) */
-export const CLUSTER_1: Setup[] = [
+/** The reply ladder's rungs, least of the language first (docs/beginner-2.md → The reply ladder) */
+export const RUNGS: Setup[] = [
   { id: 'one-en', block: 'Setup: one answer', maxAnswers: 1, english: true },
   { id: 'two-en', block: 'Setup: two answers', maxAnswers: 2, english: true },
   { id: 'one', block: 'Setup: one answer', maxAnswers: 1, english: false },
+  { id: 'inside-en', block: 'Setup: one answer', maxAnswers: 1, english: true, inside: true },
+  { id: 'two', block: 'Setup: two answers', maxAnswers: 2, english: false },
+  { id: 'inside', block: 'Setup: one answer', maxAnswers: 1, english: false, inside: true },
+  { id: 'invite-en', block: 'Setup: invite English', maxAnswers: 0, english: false },
+  { id: 'free', block: 'Setup: no answers', maxAnswers: 0, english: false },
 ];
+
+/** Six clusters of three neighbouring rungs, each step dropping the lowest and adding the next (Josh: 6–8 clusters) */
+export const CLUSTERS: Setup[][] = Array.from({ length: RUNGS.length - 2 }, (_, i) => RUNGS.slice(i, i + 3));
+export const CLUSTER_1 = CLUSTERS[0];
+
+/** The app's hidden cluster picker: header `x-fuori-cluster: 1`–`6`; cluster 1 otherwise */
+export function clusterFrom(headers: Headers): Setup[] {
+  const n = Number(headers.get('x-fuori-cluster'));
+  return Number.isInteger(n) && n >= 1 && n <= CLUSTERS.length ? CLUSTERS[n - 1] : CLUSTER_1;
+}
 
 /** A stable number from a string (FNV-1a), so a conversation replays with the same setups */
 function seedOf(s: string): number {
@@ -60,11 +80,26 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
 
 /** The setup's line for the character, from the prompt file (a misspelt block fails loudly) */
 export function setupText(setup: Setup): string {
-  return readPromptFile(BEGINNER_2_FILE).block(setup.block).trim();
+  return fill(readPromptFile(BEGINNER_2_FILE).block(setup.block), { language: language.name }).trim();
 }
 
-/** Display: the answers' English left out on a language-only rung */
+/**
+ * The answer said inside her line (rungs 4 and 6): her one answer becomes her
+ * own words, after the "Line: answer inside" block ("You could answer me
+ * with:"), its English heard after it on rung 4. Done in code: asked of the
+ * prompt it held 3 of 15 times (card B2-S) and dropped the English (2026-11-09)
+ */
+export function insideSpeech(parts: Part[], setup: Setup): Part[] {
+  const answer = parts.find((x) => x.kind === 'answer' && x.text.trim());
+  const rest = parts.filter((x) => x.kind !== 'answer');
+  if (!answer) return rest;
+  const lead = readPromptFile(BEGINNER_2_FILE).block('Line: answer inside').trim();
+  return [...rest, { kind: 'english', text: lead, en: '', gloss: '' }, { kind: 'word', text: answer.text, en: answer.en, gloss: setup.english ? answer.en : '' }];
+}
+
+/** Display: the answers' English left out on a language-only rung; an inside rung's answer said by her */
 export function shownParts(parts: Part[], setup: Setup): Part[] {
+  if (setup.inside) return insideSpeech(parts, setup);
   return setup.english ? parts : parts.map((x) => (x.kind === 'answer' ? { ...x, en: '' } : x));
 }
 

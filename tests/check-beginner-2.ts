@@ -4,7 +4,7 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, shownParts, beginner2Version, CLUSTER_1 } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, setupText, shownParts, beginner2Version, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import type { Part } from '@/lib/beginner';
 
@@ -21,19 +21,28 @@ check(seen.size === CLUSTER_1.length, `over 40 turns every setup of cluster 1 co
 const day = new Date('2026-11-09T10:00:00Z');
 check(pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id === pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id, 'an opening is seeded by learner, place and day');
 
-for (const setup of CLUSTER_1) check(setupText(setup).startsWith('This turn,'), `${setup.block}: its line is read from beginner-2.md`);
+for (const setup of RUNGS) check(setupText(setup).startsWith('This turn,') && !/\{\w+\}/.test(setupText(setup)), `${setup.block}: its line is read from beginner-2.md, filled`);
+check(CLUSTERS.length === 6 && CLUSTERS.every((c) => c.length === 3), 'six clusters of three rungs');
+check(CLUSTERS.every((c, i) => i === 0 || c[0] === CLUSTERS[i - 1][1]), 'each cluster drops the lowest rung and adds the next');
+check(clusterFrom(new Headers({ 'x-fuori-cluster': '4' })) === CLUSTERS[3] && clusterFrom(new Headers()) === CLUSTER_1 && clusterFrom(new Headers({ 'x-fuori-cluster': '9' })) === CLUSTER_1, 'the cluster header picks clusters 1-6, cluster 1 otherwise');
+const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: 'c', turn: i, characterId: 'x' }, CLUSTERS[5]).id));
+check(seen6.size === 3 && seen6.has('free'), `cluster 6 plays its own three rungs (got ${[...seen6].join(', ')})`);
 
 const parts: Part[] = [{ kind: 'question', text: 'Un caffè?', en: 'A coffee?', gloss: '' }, { kind: 'answer', text: 'Sì, grazie.', en: 'Yes, thanks.', gloss: '' }];
 check(shownParts(parts, CLUSTER_1.find((s) => !s.english)!)[1].en === '', 'the language-only rung hides the answers\' English');
 check(shownParts(parts, CLUSTER_1.find((s) => s.english)!)[1].en === 'Yes, thanks.', 'the English rungs keep it');
 check(shownParts(parts, CLUSTER_1.find((s) => !s.english)!)[0].en === 'A coffee?', 'her own parts are untouched');
 
+const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
+check(!inside.some((x) => x.kind === 'answer') && inside.some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && x.gloss === 'Yes, thanks.'), 'rung 4: the answer is in her speech with its English heard, no bubble');
+check(shownParts(parts, RUNGS.find((r) => r.id === 'inside')!).some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && !x.gloss), 'rung 6: the answer in her speech, no English');
+check(inside.some((x) => x.kind === 'english' && x.text.length > 0), 'the lead line before the answer comes from beginner-2.md');
 const v = beginner2Version(CLUSTER_1[0]);
 check(v.startsWith('beginner-2-') && !stageInVersion(v), `Beginner 2 turns carry no stage tag, so the Beginner 1 path doesn't count them (${v})`);
 
 const route = readFileSync('app/v1/turn/route.ts', 'utf8');
 const take = readFileSync('lib/conversation/take-turn.ts', 'utf8');
-check(/beginnerVersion: beginnerVersionFrom\(request\.headers\)/.test(route), 'the route passes the switch to the turn');
+check(/beginnerVersion: beginnerVersionFrom\(request\.headers\)/.test(route) && /beginnerCluster: clusterFrom\(request\.headers\)/.test(route), 'the route passes the switch and the cluster to the turn');
 check(/p\.beginnerVersion === 2/.test(take) && /promptFile: BEGINNER_2_FILE/.test(take), 'the turn plays beginner-2.md only when the switch is on');
 check(/: beginner && onPath\n\s+\? await runBeginnerTurn\(\{ character, transcript, learnerSaid, memory, addressedAs, laps: p\.laps, onText: p\.onText, canRetry: p\.canRetry, stageText: stageText\(onPath\.stage/.test(take), 'Beginner 1\'s turn is unchanged');
 

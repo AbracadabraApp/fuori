@@ -17,7 +17,7 @@ import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion } from '@/lib/beginner';
-import { BEGINNER_2_FILE, pickSetup, setupText, shownParts, beginner2Version } from '@/lib/beginner-2';
+import { BEGINNER_2_FILE, pickSetup, setupText, shownParts, beginner2Version, type Setup } from '@/lib/beginner-2';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
 import { pathState } from '@/lib/conversation-record';
 import { welcomeContent, welcomed, welcomeVersion, welcomeStep, welcomeBrief, learnerLines, addressAnswers, welcomeTurnFlags } from '@/lib/welcome';
@@ -67,6 +67,8 @@ export interface TakeTurnParams {
   lesson?: LessonTurn;
   /** Beginner 2 (lib/beginner-2.ts), from the app's hidden switch; Beginner 1 otherwise */
   beginnerVersion?: 1 | 2;
+  /** Beginner 2's cluster of the reply ladder (lib/beginner-2.ts → clusterFrom) */
+  beginnerCluster?: Setup[];
 }
 
 export interface TakeTurnResult {
@@ -143,7 +145,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const beginner = !welcome && onPath?.stage.path === 'beginner';
   // Beginner 2's reply setup this turn (docs/beginner-2.md), when the app switched it on
   const setup = beginner && !p.lesson && p.beginnerVersion === 2
-    ? pickSetup({ conversationId, turn: transcript.filter((t) => t.who === 'npc').length, learnerId, characterId: character.id })
+    ? pickSetup({ conversationId, turn: transcript.filter((t) => t.who === 'npc').length, learnerId, characterId: character.id }, p.beginnerCluster)
     : null;
   const pathLevel = !welcome && onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
 

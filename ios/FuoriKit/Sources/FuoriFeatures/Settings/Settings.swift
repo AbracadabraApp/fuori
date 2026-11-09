@@ -103,6 +103,7 @@ struct SettingsSheet: View {
     @AppStorage(SettingsKey.dialect) private var dialect = false
     @AppStorage(SettingsKey.debug) private var debug = false
     @AppStorage(APIClient.beginnerVersionKey) private var beginnerVersion = 1
+    @AppStorage(APIClient.beginnerClusterKey) private var beginnerCluster = 1
     @Environment(\.dismiss) private var dismiss
     @State private var confirmingRestart = false
     private static let showsSubtitles = false
@@ -238,6 +239,10 @@ struct SettingsSheet: View {
                             .pickerStyle(.segmented)
                             .labelsHidden()
                             .fixedSize()
+                        }
+                        // Beginner 2's cluster of the reply ladder (docs/beginner-2.md), until the offers to move up are built
+                        if beginnerVersion == 2 {
+                            Stepper("Cluster \(beginnerCluster)", value: $beginnerCluster, in: 1...6)
                         }
                         // Back to the country choice, as on first launch (applied once the sheet has closed)
                         Button("Restart onboarding") {

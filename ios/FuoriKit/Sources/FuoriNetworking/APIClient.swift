@@ -598,12 +598,19 @@ public actor APIClient {
         // Lets the server turn away builds that are too old (426, lib/app-version.ts)
         if let version = Self.appVersion { req.setValue(version, forHTTPHeaderField: "X-App-Version") }
         // Beginner 2 when switched on in the hidden Settings rows (lib/beginner-2.ts); Beginner 1 otherwise
-        if UserDefaults.standard.integer(forKey: Self.beginnerVersionKey) == 2 { req.setValue("2", forHTTPHeaderField: "x-fuori-beginner") }
+        if UserDefaults.standard.integer(forKey: Self.beginnerVersionKey) == 2 {
+            req.setValue("2", forHTTPHeaderField: "x-fuori-beginner")
+            // Its cluster of the reply ladder, 1–6 (lib/beginner-2.ts), until the offers to move up are built
+            let cluster = UserDefaults.standard.integer(forKey: Self.beginnerClusterKey)
+            if cluster > 1 { req.setValue(String(cluster), forHTTPHeaderField: "x-fuori-cluster") }
+        }
         return req
     }
 
     /// Settings → touch and hold Version → Beginner: 1 (today's) or 2 (docs/beginner-2.md), played side by side (Josh, 2026-11-09)
     public static let beginnerVersionKey = "settings.beginnerVersion"
+    /// Settings → touch and hold Version → Cluster: Beginner 2's cluster of the reply ladder, 1–6
+    public static let beginnerClusterKey = "settings.beginnerCluster"
 
     /// The app's version (CFBundleShortVersionString); nil when not running in the app (tests)
     static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String

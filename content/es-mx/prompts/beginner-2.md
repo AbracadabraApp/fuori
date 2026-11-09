@@ -1,6 +1,6 @@
 # Beginner 2 (trial)
 
-version: 2026-11-09b
+version: 2026-11-09c
 
 Beginner 2's prompt (docs/beginner-2.md → The prompt): the shared character
 prompt's parts, the Beginner level line, the rules that only bite when answers
@@ -72,6 +72,12 @@ This turn, give no answers.
 
 ```
 This turn, ask what they think, and invite them to answer in English.
+```
+
+## Line: answer inside
+
+```
+You could answer me with:
 ```
 
 The changelog is in `changelog/beginner-2.md`.
