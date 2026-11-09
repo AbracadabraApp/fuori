@@ -66,6 +66,13 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-09: Beginner plan and deep dive; heard-note fix (laptop session)
+
+- **Beginner plan** (`docs/beginner-plan.md`): a spec from Josh's decisions of 11-08/09: code picks each turn's shape (jobs, order, form, length, answers), English on every Beginner turn, a ramp that changes what the English does, ask before removing scaffolding. Nothing built; a prompt change needs a reviewed card first.
+- **Deep dive** (`docs/beginner-deep-dive.md`): code, plan, real play, dependencies, history. Nobody has moved up; Jennifer raised to S3 with 0 own-words turns; 19 of 38 openers ask the name; `beginner-as-live.md` wrong in three places.
+- **Heard-note fix (7f765b3):** the "said back / own words" note never reached the character in the app (route and schema dropped `offered`). Kept now; test fails on the old code. **Not released, not played.** Taken alone from the `beginner-shapes` worktree, whose uncommitted turn-shapes trial is unchanged and unbuilt (it still holds the same fix; expect a trivial overlap when merged).
+- **Open:** the two Nov 9 conversations recorded at 5 and 4 turns (12 and 18 in the transcripts): check whether they predate the bb0b6e6 records fix. Before building the plan: the seed, what "same shape" compares, what "ready" means, step 4. Live trial needs Josh's OK (learner list vs the hidden Version panel).
+
 ## 2026-11-08 (mini): faster replies: caching measured and dropped, the draft built
 
 - **Prompt caching: not shipped** (`tests/experiments/cache-timing.mts`, Beginner call, 20 turns each, interleaved, this mini). It hits (53,328 tokens read from cache; 3.4k uncached input down to 17) but median first token 823 → 813 ms (p90 1407 → 963), total 2664 → 2507 ms (noise). Josh's bar was 150 ms. Nothing changed in `lib/`. The Intermediate call wasn't measured. The 0.4 s hunt dropped (Josh).
