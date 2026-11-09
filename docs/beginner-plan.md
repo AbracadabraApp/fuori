@@ -33,7 +33,7 @@
 > **You:** Cosa mi consiglia?
 >
 > *He taps the first line.*
-> **Nino:** La carbonara! Egg, never cream. If you want it, you say *Vorrei la carbonara.* Or the cacio e pepe: only cheese and pepper. *Carbonara o cacio e pepe?*
+> **Nino:** La carbonara! My mother's recipe; my son Marco makes it now. If you want it, you say *Vorrei la carbonara.* Or the cacio e pepe. *Carbonara o cacio e pepe?*
 > → *Vorrei la carbonara.* / *Vorrei la cacio e pepe.*
 >
 > **You:** Vorrei la cacio e pepe.
@@ -46,6 +46,8 @@
 >
 > **Nino:** *Perfetto!* Then it's *a giovedì*, "see you Thursday": *a* and the day.
 > → *A giovedì, Nino!*
+
+The details are his own (his mother's recipes, Marco in the kitchen, Thursday gnocchi), not the facts every character repeats (Josh caught "Egg, never cream" in the first sketch: carbonara without cream is in 6 real conversations). A roleplay-lesson prompt has to keep it that way.
 
 Phrases practised: *Mi chiamo…, Piacere, Cosa mi consiglia?, Vorrei…, Torno giovedì, A giovedì.* The real conversation had six "X or Y?" questions and taught no phrase outright.
 
