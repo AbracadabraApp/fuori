@@ -223,3 +223,39 @@ In the early, language-only turns, characters have humour, a way of speaking and
 - **Following the visitor somewhere real.** 49 · 2026-11-05 · lorenzo-marchi. VISITOR: "Tu conosci la età della Dante quando scrive queste parole?" → "Dante aveva trentacinque anni, o giù di lì. ... Quindi lei, a cinquantacinque, ha ancora un bel pezzo di strada! Io invece, a settantasei, sono già oltre il cammin, ma il cane mi tiene in forma."
 - **Warmth, and a reply to an odd turn.** 60 · 2026-11-06 · nonna-gina. The visitor asks if his Madonna tattoo is fine in church → "Ma certo che va bene, figliolo! La Madonna Addolorata sul braccio, che bellezza: Dio guarda il cuore, mica la pelle. ... Fattelo vedere, quel tatuaggio!"
 - **Memory that makes the visitor feel known.** 14 · 2026-10-21 · franco-ortolano. "Eccolo qua, Giosuè! Il trasteverino d'adozione! Allora, com'è andata l'amatriciana? Senza cipolla, spero! ... I tuoi figli hanno mangiato tutto, eh?"
+
+## Why Beginner conversations read flat: two readings (2026-11-08)
+
+Prompted by the top 10 above and Josh: "Here line might be the most important thing in the game, but tests (or test methodologies) failed to do anything to improve it." Claude then put each character's here line, as it was on the day, beside the conversations the top 10 called alive and flat.
+
+### Josh's theory
+
+Josh, 2026-11-08: "My theory is that Beginner is overbuilt. It over determines the shape of conversation. Characters are repetitive, In intermediate things are more open ended. I also think Kind is an important hint to lively."
+
+Evidence that fits it (Claude):
+- `beginner.md` is 1,550 words in 23 sections; the Intermediate character prompt is 534 words with 9 rules.
+- Every Beginner reply is parts (English, word, question, answer): a question slot every turn, which is problem 1 above (interviewing by multiple choice), set before the character says anything.
+- The prompt already has "Variety: not the same shape", "Voice: no narration", "Role: not a teacher", "Lead: follow theirs": problems 1, 3, 4 and 5 above, still happening. Each was a patch for a problem that stayed.
+- Kind: the place's kind already sets the scene (a bar is coffee at a counter, a piazza is time to talk, a shoeshine stand is a man who has seen everyone's shoes). The flat moments come when something is laid over the kind: the same shop script on every commerce kind, Giorgia on the university steps taking a drink order.
+
+### Claude's reading
+
+From the here lines on the day of each conversation (git history of the city files):
+
+| Character | Here line then | Level | Read |
+|---|---|---|---|
+| Chucho, 10-19 | none (name, 74, bolero, "dignified, proud of his craft") | Intermediate | alive |
+| Chucho, 10-28 | same data | Beginner | flat |
+| Franco, Dario, 10-21 | none (role, three personality words) | Intermediate | alive |
+| Nino, 11-06 | the long menu line | Intermediate | alive |
+| Nino, 11-06 (×3), 11-09 | same line | Beginner | flat |
+| Nonna Gina, Lorenzo | the person's life and what they love | Intermediate | alive |
+| Ofelia, Beto, Tommaso, Giorgia, Beatrice | various | Beginner | flat |
+
+- Every alive conversation was Intermediate; every flat one Beginner. The livest had no here line at all (here lines began 10-30).
+- Same character data, different level, opposite result (Chucho; Nino the same day). So in real play the Beginner format, not the here line, separates alive from flat.
+- The here line still steers what's talked about: Nino's line says to tell "what the tourists get wrong", and at Beginner he did, with carbonara, every time. Lines about the person (Gina, Lorenzo) read better than lines about the business (Tommaso's speciality coffee, Beatrice's bank facts).
+- Why the here-line tests found nothing: C12 ran at Intermediate, where characters are alive anyway; at Beginner the format drowns the line.
+- Part of it is the learner: a Beginner says less, so the character has less to react to.
+
+The two readings agree that the Beginner prompt shapes every turn; they differ on how much the here line matters. Nothing decided.
