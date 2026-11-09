@@ -41,7 +41,7 @@ What Beginner level dialogue is for. The trial prompt is written against these, 
 
 **How it changes over time**
 10. **The English fades:** a lot in the first conversations, then less, then only when asked; decided by counting, not a judge.
-11. **Help still works:** asking in English still gets help (the character, or say it in English).
+11. **Help still works:** asking in English still gets help (the character, or "How do I say it").
 11b. **Help to close (Josh, 2026-10-25):** when the errand is done, the character offers the goodbye as a phrase to reuse (*Grazie, arrivederci!*), so a beginner can end the conversation properly; their goodbye ends it (the goodbye rule, N5).
 
 **How we'd know it works**
@@ -65,10 +65,10 @@ Josh: a lot of beginners walk into a place with no sense of where they are or wh
 - **Teach like a good teacher (Josh, 2026-10-24):** the answers it offers are whole sentences that reuse the question's words, so the learner practises the verb and the structure: *Sì, ho mangiato le seppie* / *No, non ho mai mangiato le seppie*, not *sì* / *no, mai*. The same for every question: *Le piace il pesce?* → *Sì, mi piace il pesce*.
 - **Sketches:** canvas "Learn area", row E (E1 while he speaks, E2 your turn with a bubble tapped).
 - **Against today's rules:** CLAUDE.md says characters teach only in role and avoid English nobody asked for, with explicit lessons in Magda or Learn. This would change that for Beginners only; CLAUDE.md stays as it is until Josh decides.
-- **Open:** whether the answers are bubbles or only said by the character; how the English fades (counted, like the stages: mostly English in the first conversations, then less, then only when asked); the reply shape (spoken text plus the bubbles, instead of `{ line, en }`); the voice (ElevenLabs can speak English with the character's accent; the phone's fallback voice speaks one language); how it sits with the reply panel and say it in English.
+- **Open:** whether the answers are bubbles or only said by the character; how the English fades (counted, like the stages: mostly English in the first conversations, then less, then only when asked); the reply shape (spoken text plus the bubbles, instead of `{ line, en }`); the voice (ElevenLabs can speak English with the character's accent; the phone's fallback voice speaks one language); how it sits with the reply panel and "How do I say it".
 - **To try first (Claude's suggestion):** a Beginner block in `levels.md` for each country, replayed on real Beginner conversations against today (how much is English, is the question clear, could a beginner answer, does the character still feel alive), a row in prompt-trials.md, then Josh reads a handful side by side.
 
-## Say it in English: the one scaffold in the game (Josh, 2026-10-23; direction, to test)
+## How do I say it: the one scaffold in the game (Josh, 2026-10-23; direction, to test)
 
 **Decided with Josh, 2026-10-23 (conference), built the same day:**
 - **For everyone,** every level: English help isn't only for Beginners.
@@ -91,7 +91,7 @@ Josh: a lot of beginners walk into a place with no sense of where they are or wh
   - *Whether to tell the character the line was read:* she hears it as an ordinary line, or knows it was the game's line read aloud (no recasting it; maybe a word of praise).
 
 Josh: "inside the game we can simplify all the scaffolding to just be say it, get this language back, read it." Onboarding is separate and keeps its buttons ("treat onboarding different in every way").
-- **The direction:** in conversations, scaffolding is only "say it in English" (below): say what you mean in English, get one line back in the language at your level, read it out loud. The two answer bubbles, the stages and the read-aloud panel built 2026-10-22 ([reply-panel.md](reply-panel.md)) would go. The panel stays until the new loop has been played.
+- **The direction:** in conversations, scaffolding is only "How do I say it" (below): say what you mean in English, get one line back in the language at your level, read it out loud. The two answer bubbles, the stages and the read-aloud panel built 2026-10-22 ([reply-panel.md](reply-panel.md)) would go. The panel stays until the new loop has been played.
 - **The mechanic (Josh):** speak English into the mic → a line in the language comes back to read aloud. **Where it shows is open:** a bubble in the conversation, or a sheet (Josh: "or we could redesign to use sheet"). Claude's view: the sheet, i.e. the reply panel built 2026-10-22 with one line instead of two. The instruction sits by the mic, a "hear it" control fits there, and a sheet reads as "to say" while bubbles read as "said".
   **Josh prefers the bubble (G2), 2026-10-23,** with what you said in English in its own grey bubble, and the Italian bubble to read below it with no English repeated in it (Josh: "It showed English in own bubble. Good. It doesn't repeat in the bubble to read."). With the one-tap turn the mic has already reopened for the reading (the hands-free ring). Words (Josh, 2026-10-23): the grey bubble reads "*Come si dice:* I'd like…", the Italian bubble "Say this: *Vorrei…*", the two labels styled the same (inline, muted, same size) so the pair reads as English → Italian; nothing sits above the mic. The hint moves into her bubble (Josh, 2026-10-23): for Beginners, her opener in every conversation ends with a line under her English, a small mic and "Answer in Italian or English" (G1); her later lines don't. The words are interface text, with the language name from content. His concern: how often the English is transcribed wrong. Plan: measure it (below) before building.
   **Spoken Italian gets a bubble: try it (Josh, 2026-10-23).** "Cleaned up Italian is good. Garbled no. Key would be show Claude's take, not Whisper's." The bubble shows what Claude understands the learner meant, in clean Italian at their level, not Whisper's raw text and not word for word (Josh: "Not sure about keep words. Someone could babble or complicate."): rambling or over-complicated speech comes back as the gist, said simply. When Claude can't tell what was meant, no bubble. Test before building: run logged learner turns (Josh's family, from the database) through a short prompt that writes the take, and Josh reads Whisper's text and Claude's take side by side. If it holds, build it as a small call running beside the turn, so her voice isn't delayed. Row in `docs/prompt-trials.md` when it's run.
@@ -119,7 +119,7 @@ Josh: "inside the game we can simplify all the scaffolding to just be say it, ge
 | **2 · Two bubbles, Italian only** | The same, without the English | Offered: "You can read a line or answer on your own" |
 | **3 · Bubbles as a suggestion** | The bubbles stay; the mic takes anything said | Offered: "Ready to go all in?" |
 | **4 · The mic alone** | Today's game | A learner can step back down (Settings) |
-| **Any time · Say it in English** | Say it in English → it comes back as an Italian bubble with the English → say it in Italian | Always available, at every step |
+| **Any time · How do I say it** | How do I say it → it comes back as an Italian bubble with the English → say it in Italian | Always available, at every step |
 
 Decided in conversation (Josh):
 - **Offer at the end of a conversation**, not mid-turn. There's no great measure of the end yet; the reliable signal is leaving (every exit goes through one leave function), so the offer can come as they leave or as the next conversation opens.
@@ -128,13 +128,13 @@ Decided in conversation (Josh):
 Open:
 - **Listening still has to count.** With two good answers a learner can read the bubbles and skip her line. Keep a step where only one answer fits (the old choose stage), so they must understand her to pick.
 - **What earns an offer:** turns at a step, or evidence (answers read aloud smoothly several times running). The logs from the first family testers should show where people start to cope.
-- **Say it in English** can become a crutch (say it in English, read the Italian back). Still better than picking from two, since the learner decides what to say.
+- **How do I say it** can become a crutch ("How do I say it", read the Italian back). Still better than picking from two, since the learner decides what to say.
 - **Explain screens get skipped:** the first real turn should still make the mic obvious.
 - Replaces the fixed schedule in `lib/scaffold.ts` and the read-aloud panel built 2026-10-22 ([reply-panel.md](reply-panel.md)) once decided.
 
-### Say it in English: maybe the main beginner loop (Josh, 2026-10-22; an idea to test)
+### How do I say it: maybe the main beginner loop (Josh, 2026-10-22; an idea to test)
 
-Josh: "the say it in English to generate the Italian bubble, that you have to read, could change the game play quite a bit."
+Josh: "the "How do I say it" to generate the Italian bubble, that you have to read, could change the game play quite a bit."
 - **How it works:** the learner says what they want in English; it comes back as one Italian bubble (with the English) at their level; they read it aloud and that's what she hears. If they speak Italian, the turn goes straight to her as now. Whisper reports each recording's language, so no phrase lists.
 - **Why it could change the game:** the learner leads the conversation instead of picking from two lines; the words are ones they wanted, so they stick, and they feed Learn and the flashcards; the characters stay fully Italian, since the translating moves out of the character into the interface. It may replace the two bubbles after the first turns: two bubbles are the training wheels, "say it your way" the game.
 - **Care:** the Italian must be what a learner at their level can say, not a literal translation (a prompt job; the level judge can check it). English-first can become a habit; the end-of-conversation offers move them on.

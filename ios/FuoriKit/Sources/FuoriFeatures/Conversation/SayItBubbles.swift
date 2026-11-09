@@ -1,7 +1,7 @@
 import SwiftUI
 import FuoriDesign
 
-/// Say it in English (docs/beginner-scaffolding.md, canvas row G2; Josh,
+/// How do I say it (docs/beginner-scaffolding.md, canvas row G2; Josh,
 /// 2026-10-23): what the learner said in English, then the line in the
 /// language to read out loud, both in the learner's bubble on the right
 /// (SpeechBubble; docs/dialogue-model.md → Who is talking). The English is

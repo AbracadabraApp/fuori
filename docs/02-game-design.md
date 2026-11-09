@@ -126,7 +126,7 @@ Levels follow the **CEFR** (A1, A2, B1…), with Italian specifics from the *Pro
 Help comes in layers, starting with the conversation itself:
 
 1. **Natural character help** (always): characters offer options ("Un caffè? O un cappuccino?"), rephrase, simplify.
-2. **"Come si dice…?"** (you ask): say it in English, get the Italian to repeat, without leaving the scene.
+2. **"Come si dice…?"** (you ask): "How do I say it", get the Italian to repeat, without leaving the scene.
 3. **Hints** (rare): only when the character is genuinely confused or you're stuck twice in a row.
 
 Always available: **Ripeti / Piano** (replay slower), an **English toggle** (on by default at A1), and **graceful exits** (any scene can end; the character closes naturally).

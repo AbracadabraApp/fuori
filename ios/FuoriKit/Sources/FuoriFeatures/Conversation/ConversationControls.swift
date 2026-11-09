@@ -31,7 +31,7 @@ struct ConversationControls: View {
                     .transition(.opacity)
             } else {
                 VStack(spacing: 12) {
-                    // Say it in English: what they said and the line to read
+                    // How do I say it: what they said and the line to read
                     if let sayIt = model.sayIt {
                         SayItBubbles(model: model, sayIt: sayIt)
                             .transition(.opacity)

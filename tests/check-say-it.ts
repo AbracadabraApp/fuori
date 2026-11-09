@@ -1,4 +1,4 @@
-// Say it in English (lib/say-it.ts, app/v1/transcribe mode "turn"): which
+// How do I say it (lib/say-it.ts, app/v1/transcribe mode "turn"): which
 // language a turn was spoken in, and the prompt fills every placeholder
 import { readPromptWithChangelog } from './prompt-files';
 import { readFileSync } from 'node:fs';
@@ -39,4 +39,4 @@ if (sameWords('I want a paper, please.', 'Quiero papel, por favor.')) failures.p
 if (sameWords('', '')) failures.push('sameWords: empty');
 
 if (failures.length) { console.error(failures.join('\n')); process.exit(1); }
-console.log(`OK: say it in English: languages told apart, say-it.md ${sayItPromptVersion()} fills its placeholders (${pack.id})`);
+console.log(`OK: "How do I say it": languages told apart, say-it.md ${sayItPromptVersion()} fills its placeholders (${pack.id})`);

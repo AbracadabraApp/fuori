@@ -6,7 +6,7 @@
  * the default), "en" (asking how to say something) or "any" (onboarding
  * answers, which can be in either: Whisper detects the language and `language`
  * says which it heard) or "turn" (a conversation turn, which may be the
- * language being learned or English for "say it in English": `language` is
+ * language being learned or English for "How do I say it": `language` is
  * "en" for English, otherwise the learned language's code; anything Whisper
  * names as a third language is transcribed again as the learned language, since
  * beginners' accents get misnamed). An empty `text` means

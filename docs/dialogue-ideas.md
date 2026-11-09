@@ -31,7 +31,7 @@ Josh, 2026-11-04: "Lorenzo's voice seemed to shift between two people". Each lin
 
 ## "Say this" adds things the learner didn't say
 
-Josh, 2026-11-04: "with Lorenzo corrected to say something I didn't want to say - that this was my first time in Italy"; earlier, "when that correction line comes up it doesn't always hear well". The line is "say it in English"'s *say this* (`format=sayit` in the admin route).
+Josh, 2026-11-04: "with Lorenzo corrected to say something I didn't want to say - that this was my first time in Italy"; earlier, "when that correction line comes up it doesn't always hear well". The line is "How do I say it"'s *say this* (`format=sayit` in the admin route).
 
 Two examples from his Florence evening (learner 3c544022):
 - 04:30 UTC, Lorenzo had asked "è la prima volta in Italia?". Josh answered in Italian (roughly "Piove come Londra… molto per qualche mese, ma non per un anno"); the English hearing came back as "The city is a little bit like London…". Shown: "Sì, è la prima volta. Seattle è un po' come Londra: piove molto, ma qui c'è il sole!": it answered Lorenzo's question for him, wrongly.

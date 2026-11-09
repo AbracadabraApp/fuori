@@ -1,4 +1,4 @@
-// Say it in English (lib/say-it.ts, say-it.md): for character lines from the
+// How do I say it (lib/say-it.ts, say-it.md): for character lines from the
 // committed synthetic conversations, a set of English requests a learner
 // might make (simple, complicated, rambling, "I didn't understand", a
 // mixed sentence) become the line to read, judged by a second model. Say-it

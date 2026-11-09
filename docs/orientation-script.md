@@ -5,7 +5,7 @@
 **The idea:**
 - **An English introduction.** She explains in English, as a friendly guide would before you go out.
 - **The dialogue style (Josh, 2026-10-23):** she says in English how Italians say it, asks the question in Italian, you answer with the microphone, and she replies in Italian. "In Italian, you ask someone their name by saying *Come ti chiami?*" → *Come ti chiami?* → your name → *Piacere!* Each set-up question teaches a phrase you'll hear again.
-- **Onboarding is its own thing** (Josh, 2026-10-23: "treat onboarding different in every way"). Buttons are fine for set-up choices: masculine or feminine, and the level. The name is said with the mic, so the mic is tried first. "Say it in English", the loop the game uses ([beginner-scaffolding.md](beginner-scaffolding.md)), is tried once in beat 9.
+- **Onboarding is its own thing** (Josh, 2026-10-23: "treat onboarding different in every way"). Buttons are fine for set-up choices: masculine or feminine, and the level. The name is said with the mic, so the mic is tried first. "How do I say it", the loop the game uses ([beginner-scaffolding.md](beginner-scaffolding.md)), is tried once in beat 9.
 - **It covers, in Josh's order:** your level, the gender rules, how the game works, cities, places, the microphone, talking with characters, what to do when you don't know how to reply, and Learn. The microphone comes first in practice, since every answer needs it.
 - **About two to three minutes. Skippable at every step, replayable from Settings → How Fuori works.** Explanation beats move on with **Next**; that's navigation, not an answer.
 - **The game's rules don't apply here** (Josh, 2026-10-23). The immersion rules (Italian only, English only when asked, no AI notes) are for conversations in the world. This is set-up: she speaks English, talks about the app and names its parts.
@@ -60,10 +60,10 @@ Each beat: what's on screen · what she says · what the learner does · what it
 
 **She:** "Fuori is a trip to Italy. You stay a while, go out and talk to people. There are no lessons and no scores: you learn by talking, and people help you the way they'd help any newcomer."
 
-## 5 · Say it in English
+## 5 · How do I say it
 
 Kept (Josh, 2026-10-23: "H9 was good"), shown as an example, not tried ("better without 'try it', that gets confusing"). Her picture, the G2 bubbles.
-**She:** *Non sai come si dice?* "Don't know how to say it? Say it in English, and it comes back in Italian for you to read out loud. Like this:"
+**She:** *Non sai come si dice?* "Don't know how to say it? How do I say it, and it comes back in Italian for you to read out loud. Like this:"
 **Shown:** the grey bubble *Come si dice:* I'm here for a few months to learn Italian, and the "Say this:" bubble *Sono qui per qualche mese per imparare l'italiano.*
 **Learner:** **Avanti**.
 
@@ -83,10 +83,10 @@ Josh, 2026-10-23: no beats explaining the buttons (the circle, talking with char
 
 ## Notes for the build (when decided)
 
-- **Fixed lines,** except the Italian bubble in 9 (the "say it in English" call).
+- **Fixed lines,** except the Italian bubble in 9 (the "How do I say it" call).
 - **Her English** is spoken in an English voice for the tour, or her own voice if it handles English well.
 - **Skip** at any step goes to the city list with what's been set; anything unset falls back as today.
 - **Replay** from Settings → How Fuori works runs 4–7 (no name, level or address again).
 - **Mexico:** the same beats; *contento / contenta*, *bienvenido / bienvenida* (the same Masculine and Feminine buttons), *el café*, *la tortilla*; the cities and places from its content; *¡Vámonos!*
 - **Words in the learned language** (examples, sample places) come from country content, not Swift (CLAUDE.md).
-- **Depends on** "say it in English" being built: the tour is made of it.
+- **Depends on** "How do I say it" being built: the tour is made of it.

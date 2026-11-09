@@ -77,7 +77,7 @@ Josh: "The scaffolding is key mechanic." Scaffolding is how the learner takes pa
 **The scaffolding in the app today** (how the learner takes part). **Leave as is** (Josh, 2026-11-09: "We should leave scaffolding parts"):
 1. Lines to say back: whole answers, or the start of a sentence to finish.
 2. The reply panel: read one aloud, or choose the one that fits (`lib/scaffold.ts`; first turns for new learners outside the Beginner format).
-3. Say it in English: say it in English, get the line back in the language, read it aloud.
+3. How do I say it: "How do I say it", get the line back in the language, read it aloud.
 4. Help when asked: in English, a word, a phrase or an explanation.
 5. The mic's patience: a Beginner's turn ends after a longer silence (2.5 s).
 
@@ -129,7 +129,7 @@ A change to `lib/path.ts` with a test; no prompt involved.
 - **How much a beginner can follow:** the goal is 90% of the character's words at the learner's level; on the last measure a beginner could follow about 25% of lines (old list → Language level of the dialogue).
 - **Teaching in role at Beginner:** characters teach key phrases such as "Come si dice …?" in role, instead of a button (Josh, 2026-10-16; old list → Language level, first item).
 - **Josh: settle CLAUDE.md's teaching rules by level** once the Beginner level is kept (old list → Beginner level dialogue).
-- **Say it in English, the scaffolding loop** (say it in English → a line in the language → read it out loud): measuring English transcription on recordings, and the tabled help with the learner's own language (old list → Scaffolding).
+- **How do I say it, the scaffolding loop** ("How do I say it" → a line in the language → read it out loud): measuring English transcription on recordings, and the tabled help with the learner's own language (old list → Scaffolding).
 - **Replies written in advance for the offered answers** stays under Faster replies (it's speed), but its numbers (~40% of S1 turns said back) belong to this plan too.
 - **Tester question:** can beginners follow at their level? (old list → Release, Stage 2, question 3.)
 - **The learner asks too** (from D1, Josh, 2026-11-07: "encouraging learners to ask questions may also help"): some of the answers to say back could be questions ("¿Usted qué me recomienda?", "Cuénteme más"). In test C4 the learner's own questions were what brought out local talk. D1 itself is off the to-do list (2026-11-08); the character's side (one answerable question, not the same one every visit) is in the dialogue top 10.

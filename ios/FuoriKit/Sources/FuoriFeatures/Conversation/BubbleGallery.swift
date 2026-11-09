@@ -49,7 +49,7 @@ struct BubbleGallery: View {
     @ViewBuilder private var you: some View {
         caption("3. Your answers to say")
         AnswersToSay(answers: Self.parts(#"[{"kind":"answer","text":"Un caffè, per favore.","en":"A coffee, please."},{"kind":"answer","text":"Un cappuccino, per favore.","en":"A cappuccino, please."}]"#), speechLanguage: language)
-        caption("4. Say it in English")
+        caption("4. How do I say it")
         SayItBubbles(model: model, sayIt: .init(english: "A coffee, please", line: "Un caffè, per favore.", en: "A coffee, please."))
         caption("5. Suggested replies")
         ReplyPanel(model: model) {

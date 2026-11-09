@@ -95,7 +95,7 @@ public final class ConversationModel {
     private let language: Language
     /// For VoiceOver: words in the language being learned are read in it
     public var speechLanguage: String { language.speechLang }
-    /// Say it in English: the label on what the learner said, in the language ("Come si dice:")
+    /// How do I say it: the label on what the learner said, in the language ("Come si dice:")
     public var howToSay: String? { language.ui.howToSay }
     private let api: APIClient
     private let onSave: (String) -> Void
@@ -118,7 +118,7 @@ public final class ConversationModel {
     /// opens by itself when she has finished and silence sends the turn (a tap
     /// still sends early). 5 s for the first word, then the mic closes and it's
     /// still their turn, a tap away, so walking off never leaves it open (20 s
-    /// before reading a line from say it in English, which takes a moment);
+    /// before reading a line from "How do I say it", which takes a moment);
     /// then 2.5 s of silence ends the turn (Josh: 2 s agreed, then 2.5 s, 2026-10-23).
     /// No "more time to answer" setting (Josh, 2026-10-16: confusing), and no
     /// Hands-free switch (hidden 2026-10-23; a stored value is ignored).
@@ -150,7 +150,7 @@ public final class ConversationModel {
     public enum Stage: String, Sendable { case read, choose }
     public private(set) var stage: Stage?
 
-    /// Say it in English (docs/beginner-scaffolding.md; Josh, 2026-10-23): what
+    /// How do I say it (docs/beginner-scaffolding.md; Josh, 2026-10-23): what
     /// the learner said in English and the line to read out loud. Shown from
     /// the moment it comes back until she answers
     public struct SayIt: Equatable, Sendable {
@@ -757,7 +757,7 @@ public final class ConversationModel {
                 await openTurn()
                 return
             }
-            // English: say it in English. The line in the language comes back
+            // English: "How do I say it". The line in the language comes back
             // to read out loud, and the mic reopens for the reading
             if !reading, heard.language == "en" {
                 step = "say-it"
@@ -783,7 +783,7 @@ public final class ConversationModel {
         await present(reply, generation: generation)
     }
 
-    // MARK: - Say it in English (docs/beginner-scaffolding.md)
+    // MARK: - How do I say it (docs/beginner-scaffolding.md)
 
     /// The learner said it in English: show what they said and the line to
     /// read, then open the mic for the reading by itself (Josh, 2026-10-23:

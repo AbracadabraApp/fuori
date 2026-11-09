@@ -75,7 +75,7 @@ some principles of dialogue we've learned"). Results are in
 ## What there is
 
 - **Four kinds of conversation:** town, the welcome, Magda's lessons, cultural
-  stories. *Say it in English* is a tool inside any of them, not a kind.
+  stories. *How do I say it* is a tool inside any of them, not a kind.
 - **Six levels:** Beginner stages S1, S2, S3, S4 (lib/path.ts), then
   Intermediate, then Advanced. The welcome is the one exception: it comes
   before there's a level.
@@ -101,7 +101,7 @@ some principles of dialogue we've learned"). Results are in
   2. Corrections: a recast, only when the words were clearly heard, not every
      time, never pronunciation.
   3. Mishearings handled once, in the shared turn, not in each prompt.
-  4. *Say it in English* only puts the learner's own words into the language:
+  4. *How do I say it* only puts the learner's own words into the language:
      never answers the character's question for them (cause: say-it.md, "it
      answers or follows {name}'s last line"; Lorenzo, 2026-11-05).
 

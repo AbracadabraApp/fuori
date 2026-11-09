@@ -1,5 +1,5 @@
 /**
- * Say it in English (docs/beginner-scaffolding.md; Josh, 2026-10-23): the
+ * How do I say it (docs/beginner-scaffolding.md; Josh, 2026-10-23): the
  * learner says in English what they want to say; this writes the one line in
  * the language they read out loud to the character, at their level (the gist,
  * not word for word). Prompt in content/<country>/prompts/say-it.md. Used by

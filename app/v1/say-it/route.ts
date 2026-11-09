@@ -2,7 +2,7 @@
  * POST /v1/say-it { cityId, placeId, tripTo?, conversationId?, heard }
  *   → { sendAsSaid, line, en, promptVersion }
  *
- * Say it in English (docs/beginner-scaffolding.md; Josh, 2026-10-23): the
+ * How do I say it (docs/beginner-scaffolding.md; Josh, 2026-10-23): the
  * learner said `heard` in English on their turn; this returns the one line in
  * the language they read out loud to the character, at their level. The app
  * shows what they said and the line, then opens the mic for the reading,

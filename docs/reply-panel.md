@@ -2,7 +2,7 @@
 
 2026-10-22 · Josh · Decided with the cloud session on the design canvas ("Reply buttons", row E: https://claude.ai/artifact/X2FsYUrGWzXzf2tJxBALBV). **Built 2026-10-22 (laptop)**: server `lib/scaffold.ts` (stages read, choose), app `ReplyPanel.swift` (replaces `ReplyButtons.swift`). Not yet played on Josh's iPhone; see Done means. Replaces the reply buttons in scaffolding ([beginner-scaffolding.md](beginner-scaffolding.md)).
 
-**2026-10-23:** Josh's direction is to make "say it in English" the only scaffold in conversations ([beginner-scaffolding.md](beginner-scaffolding.md#say-it-in-english-the-one-scaffold-in-the-game-josh-2026-10-23-direction-to-test)). This panel stays until that's built and played.
+**2026-10-23:** Josh's direction is to make "How do I say it" the only scaffold in conversations ([beginner-scaffolding.md](beginner-scaffolding.md#say-it-in-english-the-one-scaffold-in-the-game-josh-2026-10-23-direction-to-test)). This panel stays until that's built and played.
 
 ## What Josh decided
 

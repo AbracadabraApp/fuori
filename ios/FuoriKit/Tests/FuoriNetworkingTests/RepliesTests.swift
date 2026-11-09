@@ -36,7 +36,7 @@ import Testing
         #expect(try JSONDecoder().decode(APIClient.Replies.self, from: plain).fits == nil)
     }
 
-    /// Say it in English (app/v1/say-it): the line to read and its English
+    /// How do I say it (app/v1/say-it): the line to read and its English
     @Test func readsSayItLine() throws {
         let body = Data(#"{"line":"Vorrei un caffè.","en":"I'd like a coffee.","promptVersion":"v"}"#.utf8)
         let line = try JSONDecoder().decode(APIClient.SayItLine.self, from: body)

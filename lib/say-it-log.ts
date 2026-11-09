@@ -1,5 +1,5 @@
 /**
- * Every "say it in English" decision, kept so routing can be measured on real
+ * Every "How do I say it" decision, kept so routing can be measured on real
  * play (Josh, 2026-10-23: his Italian was labelled English in 4 of 5 turns,
  * and nothing but screenshots showed it). A row per turn Whisper labelled
  * English: what it heard, whether it went to the character as said or came

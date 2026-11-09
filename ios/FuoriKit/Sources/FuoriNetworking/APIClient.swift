@@ -300,7 +300,7 @@ public actor APIClient {
     /// it (onboarding answers can be either)
     /// target: the learned language; en: English; any: either, detected
     /// (onboarding); turn: a conversation turn, the learned language or
-    /// English for say it in English (`language` is "en" or the learned code)
+    /// English for "How do I say it" (`language` is "en" or the learned code)
     public enum TranscribeMode: String, Sendable { case target, en, any, turn }
 
     /// What speech to text heard, and in which language (as Whisper names it)
@@ -365,7 +365,7 @@ public actor APIClient {
         public let name: String?
     }
 
-    /// Say it in English: the line in the language to read out loud, and its English
+    /// How do I say it: the line in the language to read out loud, and its English
     public struct SayItLine: Codable, Sendable, Equatable {
         /// No line to read: it was already in the language (speech to text
         /// mislabels learners' speech as English) or too unclear to tell, so

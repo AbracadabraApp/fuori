@@ -18,7 +18,7 @@ export interface Rates {
   silence: number;
   /** Answers in English */
   english: number;
-  /** Asks for help: to repeat, slower, what a word means, say it in English */
+  /** Asks for help: to repeat, slower, what a word means, "How do I say it" */
   help: number;
   /** Says back one of the offered answers, when there are any */
   sayBack: number;

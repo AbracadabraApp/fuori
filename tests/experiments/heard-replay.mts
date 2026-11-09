@@ -76,7 +76,7 @@ if (pack.id === 'es-mx') {
   } });
 }
 
-// Say it in English, Lorenzo, 2026-11-05 (as a Beginner would get it): does the line answer his question for them?
+// How do I say it, Lorenzo, 2026-11-05 (as a Beginner would get it): does the line answer his question for them?
 const lorenzoQ: Turn[] = [{ who: 'npc', transcript: 'Ah, Seattle! Lontano, lontano. Piove sempre, no? Qui a Firenze almeno c\'è il sole. Ma è la prima volta in Italia?' }];
 let sayItAnswers = 0;
 let sayItRuns = 0;

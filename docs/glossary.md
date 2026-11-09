@@ -23,3 +23,4 @@
 - **World**: cities, places, the pantry, the day's suggestions.
 - **Learner**: who you are, your level, your history.
 - **Judge**: a call that measures instead of talking (level, quality).
+- **How do I say it** (renamed 2026-11-09 from "Say it in English", a name Claude used from 2026-10-18; Josh: "odd name"): the learner says in English what they want to say, and gets the line in the language back to read out loud (`lib/say-it.ts`, `/v1/say-it`). Prompt files and the onboarding line keep their wording until a prompt change.

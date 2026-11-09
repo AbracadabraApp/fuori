@@ -1,6 +1,6 @@
 // The per-conversation speaking record (05-designs.md → Shared pieces; 04 §3):
 // counts only, no extra Claude call. In the app these come from Whisper's
-// detected language (English share), the help taps (say it in English, Learn),
+// detected language (English share), the help taps ("How do I say it", Learn),
 // recording length (silence), and comparing what was heard with the answers
 // the character offered (own words vs saying back). The simulator reports
 // language and help the way those signals would; the say-back comparison is
@@ -14,7 +14,7 @@ export interface LearnerTurn {
   lang: 'target' | 'english' | 'none';
   /** They asked for help (a help tap, or asking to repeat or for English) */
   help: boolean;
-  /** What the help was for: one word (what's *panna*?, how do I say…) or the whole line (repeat, slower, didn't understand). In the app: a tap on a bubble vs "say it in English" */
+  /** What the help was for: one word (what's *panna*?, how do I say…) or the whole line (repeat, slower, didn't understand). In the app: a tap on a bubble vs "How do I say it" */
   helpKind?: 'word' | 'whole';
   /** The answers to say back shown on this turn (from the character's last reply) */
   offered: string[];

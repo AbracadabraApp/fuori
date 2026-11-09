@@ -14,7 +14,7 @@
  * learner ids by number of conversations, to find whose export to make.
  * format=errors&since=…&limit=50 lists the iPhone app's error reports, every
  * country, newest first (lib/app-errors.ts). format=sayit&since=… lists every
- * say it in English decision (lib/say-it-log.ts). format=records gives
+ * "How do I say it" decision (lib/say-it-log.ts). format=records gives
  * words spoken per learner per week, every country, with the path's steps
  * (lib/conversation-record.ts).
  */
