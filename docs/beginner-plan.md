@@ -74,12 +74,21 @@ Phrases practised: *Mi chiamo…, Piacere, Cosa mi consiglia?, Vorrei…, Torno 
 
 Josh: "The scaffolding is key mechanic." Scaffolding is how the learner takes part; the level is how the character talks (`docs/glossary.md`). An earlier table here mixed the two (Josh: "I don't agree with table").
 
-**The scaffolding in the app today** (how the learner takes part). **Leave as is** (Josh, 2026-11-09: "We should leave scaffolding parts"):
+**The scaffolding in the app today. Leave as is** (Josh, 2026-11-09: "We should leave scaffolding parts"; "I think you are missing English parts"):
+
+*Help to answer*
 1. Lines to say back: whole answers, or the start of a sentence to finish.
-2. The reply panel: read one aloud, or choose the one that fits (`lib/scaffold.ts`; first turns for new learners outside the Beginner format).
-3. How do I say it: "How do I say it", get the line back in the language, read it aloud.
-4. Help when asked: in English, a word, a phrase or an explanation.
-5. The mic's patience: a Beginner's turn ends after a longer silence (2.5 s).
+2. How do I say it: say it in English, get the line back in the language, read it aloud.
+3. Help when asked: in English, a word, a phrase or an explanation.
+4. The mic's patience: a Beginner's turn ends after a longer silence (2.5 s; Intermediate 2.0 s).
+
+*English to follow along*
+5. Spoken English to set the scene: up to two short sentences a turn, heard, not shown.
+6. The echo: short spoken English right after a phrase or question in the language.
+7. The English of each bubble, a tap away; answers show theirs.
+8. The translation of her line, shown once she's finished speaking.
+
+Dormant: the reply panel (read one aloud, or choose; `lib/scaffold.ts`). It shows only on turns without Beginner parts in a new learner's first 3 conversations, which the path never produces; every turn since the 2026-11-08 release logged `replies="no"`.
 
 **How the character talks at Beginner (the level, not scaffolding):** today's S1 English is right (Josh: "In production S1 English is good"; "English works. Well spoken. It's not a reading game"): up to two short spoken sentences to set the scene or explain, the short English echo after a phrase, nothing extra on screen. One fix: the character speaks as themselves, never as a narrator. Nino's opening "The kitchen is closed after lunch, but the owner is sitting by the door…" said in his own voice before "Mi chiamo Nino" (Josh: "weird with narrator and same voice") becomes his own words: "Come in! The kitchen's closed till tonight, but sit with me. I'm Nino…". The cause is the opener rule plus a setting written as a scene description.
 
