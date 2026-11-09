@@ -6,7 +6,7 @@
 // leveling.md blocks must exist in both).
 import { pack } from '@/content';
 import { decide, INTERMEDIATE_STEP, placement, STAGES, STEPS, stageFor, stageTag, stageText, startAt, type PathState } from '@/lib/path';
-import { countsOf, feltOf, isSaidBack, stageInVersion, type LabelledLine } from '@/lib/conversation-record';
+import { countsOf, feltOf, isSaidBack, recordAction, stageInVersion, type LabelledLine } from '@/lib/conversation-record';
 
 const failures: string[] = [];
 const expect = (what: string, got: unknown, want: unknown) => { if (JSON.stringify(got) !== JSON.stringify(want)) failures.push(`${what}: expected ${JSON.stringify(want)}, got ${JSON.stringify(got)}`); };
@@ -35,6 +35,14 @@ expect('the support goes after 2 not hard', play(back, ['neither', 'neither']).s
 expect('fairly well', placement({ speaks: true, ownWords: true }), { level: 'intermediate', startStep: 5 });
 expect('not yet, said back', placement({ speaks: false, ownWords: false }), { level: 'beginner', startStep: 1 });
 expect('not yet, own words', placement({ speaks: false, ownWords: true }), { level: 'beginner', startStep: 3 });
+
+// A conversation ended early (phone locked) and went on: its record is rewritten, once per
+// conversation on the path (Josh's Elira, 2026-11-08: 18 turns, recorded at 4 and never counted)
+expect('no record yet: write', recordAction(null, 4), 'write');
+expect('went on after an early end: rewrite', recordAction({ learnerTurns: 4, moved: false, latest: true }, 18), 'rewrite');
+expect('ended again, nothing new: keep', recordAction({ learnerTurns: 18, moved: false, latest: true }, 18), 'keep');
+expect('the first record moved the level: keep', recordAction({ learnerTurns: 4, moved: true, latest: true }, 18), 'keep');
+expect('a later conversation built on it: keep', recordAction({ learnerTurns: 4, moved: false, latest: false }, 18), 'keep');
 
 // The stage in the prompt version, both ways
 expect('stage tag read back', stageInVersion(`beginner-2026-10-29${stageTag(STAGES.S2, true)}`), { stage: 'S2', supportBack: true });

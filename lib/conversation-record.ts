@@ -1,8 +1,9 @@
 /**
  * The record of each conversation (Josh, 2026-11-02: yes to the table; N6
- * item 2): numbers only, no words or audio. Written once when a conversation
+ * item 2): numbers only, no words or audio. Written when a conversation
  * ends (lib/remember.ts, after the answer), for every learner and every
- * character but Magda:
+ * character but Magda, and rewritten if it goes on after an early end (see
+ * recordAction):
  *
  * - words spoken, in the language, in their own words (Josh: words spoken is
  *   the main engagement signal; the shares show progress over weeks)
@@ -207,14 +208,16 @@ export function stageInVersion(version: string | null): { stage: string; support
  * conversation on it, or the first step. A learner who chose Beginner again
  * after reaching Intermediate starts at the first step.
  */
-export async function pathState(learnerId: string): Promise<PathState> {
+export async function pathState(learnerId: string, leaveOut: string | null = null): Promise<PathState> {
   await ensureTable();
-  // Records from before the welcome placed them (lib/welcome.ts → placedAt) don't count
+  // Records from before the welcome placed them (lib/welcome.ts → placedAt) don't count;
+  // nor does the record being rewritten (recordConversation), so it isn't counted twice
   const r = await query<{ state: PathState }>(
     `SELECT state FROM conversation_records r WHERE learner_id = $1 AND state IS NOT NULL
        AND at > COALESCE((SELECT (onboarding->>'placedAt')::timestamptz FROM learners WHERE id = $1), 'epoch')
+       AND conversation_id IS DISTINCT FROM $2
      ORDER BY at DESC LIMIT 1`,
-    [learnerId]
+    [learnerId, leaveOut]
   );
   const s = r.rows[0]?.state;
   if (s) return s.step < INTERMEDIATE_STEP ? s : startAt(1);
@@ -225,32 +228,56 @@ export async function pathState(learnerId: string): Promise<PathState> {
 }
 
 /** An Intermediate learner's run of hard conversations, from their last record */
-async function intermediateState(learnerId: string): Promise<PathState> {
+async function intermediateState(learnerId: string, leaveOut: string | null = null): Promise<PathState> {
   const r = await query<{ state: PathState }>(
-    'SELECT state FROM conversation_records WHERE learner_id = $1 AND state IS NOT NULL ORDER BY at DESC LIMIT 1',
-    [learnerId]
+    'SELECT state FROM conversation_records WHERE learner_id = $1 AND state IS NOT NULL AND conversation_id IS DISTINCT FROM $2 ORDER BY at DESC LIMIT 1',
+    [learnerId, leaveOut]
   );
   const s = r.rows[0]?.state;
   return s && s.step === INTERMEDIATE_STEP ? s : startAt(INTERMEDIATE_STEP);
 }
 
+/** The record a conversation already has, as far as rewriting it goes */
+export interface ExistingRecord { learnerTurns: number; moved: boolean; latest: boolean }
+
 /**
- * Write the record of an ended conversation, once (a conversation ended
- * again keeps its first record, so the path moves once per conversation).
- * Magda's lessons and the onboarding conversation have none; one left
- * without a word has a record of zeros.
+ * Write, rewrite or keep a conversation's record. A conversation can end
+ * early and go on: backgrounding or a locked phone ends it (the app's one
+ * leave function), and coming back continues the same conversation (Josh's
+ * Giulia and Elira, 2026-11-08: 12 and 18 turns, recorded at 5 and 4, so
+ * neither counted on the path). It's rewritten when it has more learner
+ * turns than its record, unless that record already moved the learner (the
+ * level has changed on it) or a later conversation's record was built on
+ * it (not the learner's latest). The path still moves once per conversation.
+ */
+export function recordAction(existing: ExistingRecord | null, learnerTurns: number): 'write' | 'rewrite' | 'keep' {
+  if (!existing) return 'write';
+  if (learnerTurns <= existing.learnerTurns || existing.moved || !existing.latest) return 'keep';
+  return 'rewrite';
+}
+
+/**
+ * Write the record of an ended conversation (recordAction: once, or again if
+ * it went on after an early end). Magda's lessons and the onboarding
+ * conversation have none; one left without a word has a record of zeros.
  */
 export async function recordConversation(conversationId: string, learnerId: string): Promise<'saved' | 'none'> {
   await ensureTable();
-  const r = await query<{ character_id: string; prompt_version: string | null; turns: StoredTurn[]; level: Level | null; has: boolean }>(
+  const r = await query<{ character_id: string; prompt_version: string | null; turns: StoredTurn[]; level: Level | null; existing: ExistingRecord | null }>(
     `SELECT c.character_id, c.prompt_version, c.turns, l.level,
-       EXISTS (SELECT 1 FROM conversation_records r WHERE r.conversation_id = c.id) AS has
+       (SELECT json_build_object('learnerTurns', r.learner_turns, 'moved', COALESCE(r.moved, false),
+          'latest', NOT EXISTS (SELECT 1 FROM conversation_records o WHERE o.learner_id = r.learner_id AND o.at > r.at))
+        FROM conversation_records r WHERE r.conversation_id = c.id) AS existing
      FROM conversations c JOIN learners l ON l.id = c.learner_id WHERE c.id = $1 AND c.learner_id = $2`,
     [conversationId, learnerId]
   );
   const row = r.rows[0];
   // Magda's lessons and the onboarding conversation aren't play: no record
-  if (!row || row.has || row.character_id === tutor?.id || row.prompt_version?.startsWith('onboarding')) return 'none';
+  if (!row || row.character_id === tutor?.id || row.prompt_version?.startsWith('onboarding')) return 'none';
+  const action = recordAction(row.existing, row.turns.filter((t) => t.who === 'learner').length);
+  if (action === 'keep') return 'none';
+  // Rewriting: the path state from before this conversation, not its own first record
+  const leaveOut = action === 'rewrite' ? conversationId : null;
 
   const name = cities.flatMap((c) => c.characters ?? []).find((c) => c.id === row.character_id)?.name ?? 'Them';
   // Left without a word: a record of zeros, no call (for an Intermediate learner it counts as hard)
@@ -262,13 +289,13 @@ export async function recordConversation(conversationId: string, learnerId: stri
   const onPath = played && (row.level === 'beginner' || row.level === null);
   let path: { step: number; felt: Felt; why: string; moved: boolean; state: PathState } | null = null;
   if (onPath && !silent) {
-    const before = await pathState(learnerId);
+    const before = await pathState(learnerId, leaveOut);
     const { felt, why, counted } = feltOf(counts);
     const { next, moved } = decide(before, felt, counted);
     path = { step: before.step, felt, why, moved, state: next };
   } else if (row.level === 'intermediate' && !played && !row.prompt_version?.startsWith('lesson-')) {
     // Intermediate: back to the path's last step after RULES.backFromIntermediate hard conversations in a row
-    const before = await intermediateState(learnerId);
+    const before = await intermediateState(learnerId, leaveOut);
     const { felt, why } = silent ? { felt: 'hard' as const, why: 'left without a word' } : feltOf(counts);
     const hardRun = felt === 'hard' ? before.hardRun + 1 : 0;
     const back = hardRun >= RULES.backFromIntermediate;
@@ -278,14 +305,15 @@ export async function recordConversation(conversationId: string, learnerId: stri
   const inserted = await query(
     `INSERT INTO conversation_records (conversation_id, learner_id, country, character_id, prompt_version, learner_turns, words, words_language, words_own, own_turns, said_back, english, help_word, help_whole, step, stage, felt, felt_why, moved, state)
      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)
-     ON CONFLICT (conversation_id) DO NOTHING`,
+     ON CONFLICT (conversation_id) DO UPDATE SET prompt_version = EXCLUDED.prompt_version, learner_turns = EXCLUDED.learner_turns, words = EXCLUDED.words, words_language = EXCLUDED.words_language, words_own = EXCLUDED.words_own, own_turns = EXCLUDED.own_turns, said_back = EXCLUDED.said_back, english = EXCLUDED.english, help_word = EXCLUDED.help_word, help_whole = EXCLUDED.help_whole, step = EXCLUDED.step, stage = EXCLUDED.stage, felt = EXCLUDED.felt, felt_why = EXCLUDED.felt_why, moved = EXCLUDED.moved, state = EXCLUDED.state
+       WHERE conversation_records.learner_turns < EXCLUDED.learner_turns AND NOT COALESCE(conversation_records.moved, false)`,
     [conversationId, learnerId, country, row.character_id, row.prompt_version, counts.learnerTurns, counts.words, counts.wordsLanguage, counts.wordsOwn, counts.ownTurns, counts.saidBack, counts.english, counts.helpWord, counts.helpWhole,
       path?.step ?? null, played ? `${played.stage}${played.supportBack ? '+back' : ''}` : null, path?.felt ?? null, path?.why ?? null, path?.moved ?? null, path ? JSON.stringify(path.state) : null]
   );
   // Past the last step: Intermediate, the character prompt as it is; back from it: Beginner, on the path's last step
   if (inserted.rowCount && path?.moved && path.state.step === INTERMEDIATE_STEP) await setLevel(learnerId, 'intermediate');
   if (inserted.rowCount && path?.moved && path.step === INTERMEDIATE_STEP) await setLevel(learnerId, 'beginner');
-  console.log(JSON.stringify({ level: 'info', event: 'record', conversationId, words: counts.words, wordsLanguage: counts.wordsLanguage, wordsOwn: counts.wordsOwn, ...(path ? { step: path.step, felt: path.felt, why: path.why, moved: path.moved, stepAfter: path.state.step } : {}) }));
+  console.log(JSON.stringify({ level: 'info', event: 'record', conversationId, ...(leaveOut ? { rewritten: true } : {}), words: counts.words, wordsLanguage: counts.wordsLanguage, wordsOwn: counts.wordsOwn, ...(path ? { step: path.step, felt: path.felt, why: path.why, moved: path.moved, stepAfter: path.state.step } : {}) }));
   return 'saved';
 }
 
