@@ -73,6 +73,18 @@ for (const city of cities) for (const place of city.places) {
   if (served) check(JSON.stringify(served.menu ?? []) === JSON.stringify(place.menu ?? []), `${place.id}: menu not served as written`);
 }
 
+// Open spaces (Josh, 2026-11-08): the app puts one in the first few cards of a
+// city's daily order, so each flag follows the pack's openKinds, every listed
+// kind exists (a typo would silently flag nothing), and each first-screen city has one
+{
+  const allKinds = new Set(cities.flatMap((x) => x.places.map((p) => p.kind)));
+  for (const k of pack.openKinds) check(allKinds.has(k), `openKinds lists "${k}", which no place has`);
+  for (const city of c.cities) {
+    for (const p of city.places) check(p.open === pack.openKinds.includes(p.kind), `${p.id}: open is ${p.open} but its kind is "${p.kind}"`);
+    if (!city.more) check(city.places.some((p) => p.open), `${city.id} has no open space or landmark for the first cards`);
+  }
+}
+
 if (problems.length) {
   console.error(`FAIL (${country}): ${problems.length} problem(s)\n- ${problems.slice(0, 30).join('\n- ')}`);
   process.exit(1);

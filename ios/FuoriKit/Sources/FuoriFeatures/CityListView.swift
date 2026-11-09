@@ -2,8 +2,9 @@ import SwiftUI
 import FuoriCore
 import FuoriDesign
 
-/// The first screen: every city as a Polaroid card, the first-screen cities
-/// on top in the curated order (Josh, D4: no "show more" on this list).
+/// The first screen: every city as a Polaroid card, the first-screen cities on
+/// top (Josh, D4: no "show more" on this list), each group in today's order
+/// (DailyOrder: cities not visited yet first, new each day; Josh, 2026-11-08).
 struct CityListView: View {
     let content: Content
     @Environment(AppModel.self) private var model
@@ -11,7 +12,8 @@ struct CityListView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: Tokens.Space.cardGap) {
-                ForEach(content.firstScreenCities + content.moreCities) { city in
+                ForEach(DailyOrder.cities(content.firstScreenCities, visits: model.visits, day: DailyOrder.today())
+                        + DailyOrder.cities(content.moreCities, visits: model.visits, day: DailyOrder.today())) { city in
                     NavigationLink(value: city) {
                         PolaroidCard(image: city.image, title: city.name, subtitle: city.region)
                             .overlay(alignment: .topTrailing) { visitBadge(city) }

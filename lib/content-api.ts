@@ -30,6 +30,9 @@ export interface ContentPlace {
   neighbourhood: string;
   /** Opens the departures board instead of a conversation */
   station: boolean;
+  /** An open space or landmark (the pack's openKinds): the app puts one in the
+   *  first few cards of a city's daily order (Josh, 2026-11-08) */
+  open: boolean;
   /** Who you meet here; absent when nobody is there yet */
   characterId?: string;
   image: string | null;
@@ -137,6 +140,7 @@ export function buildContent(): Content {
         kind: place.kind,
         neighbourhood: place.neighbourhood,
         station: isStation(place.id),
+        open: pack.openKinds.includes(place.kind),
         ...(person ? { characterId: person.id } : {}),
         image: image(`places/${place.id}`),
         ...(place.menu?.length ? { menu: place.menu } : {}),

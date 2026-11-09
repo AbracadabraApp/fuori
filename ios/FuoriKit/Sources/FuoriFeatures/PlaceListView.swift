@@ -15,7 +15,8 @@ struct TripRoute: Hashable {
     let trip: Trip
 }
 
-/// A city's places in the server's feed order, each with who you meet there.
+/// A city's places in today's order (DailyOrder: unvisited first, new each day,
+/// an open space near the top), each with who you meet there.
 /// A card opens the person screen; a cinema's card opens its films; the station's card opens the departures
 /// board, and picking a city there opens the ticket seller with that ticket.
 struct PlaceListView: View {
@@ -31,7 +32,7 @@ struct PlaceListView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: Tokens.Space.cardGap) {
-                ForEach(city.places) { place in
+                ForEach(DailyOrder.places(city.places, visits: model.visits, day: DailyOrder.today(), cityId: city.id)) { place in
                     if place.films?.isEmpty == false {
                         NavigationLink(value: CinemaRoute(place: place)) { card(place) }
                             .buttonStyle(PressableStyle())

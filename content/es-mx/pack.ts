@@ -22,6 +22,10 @@ export const pack = {
   tutorStudio: magdaStudio,
   /** Colours of the terminal ticket: deep red band, cobalt accent, pale red security stripes */
   ticketTheme: { band: '#a3182b', bandInk: '#ffffff', stripe: 'rgba(163, 24, 43, 0.08)', accent: '#1f4fa3' },
+  /** Kinds of place that are open spaces or landmarks, where nobody is
+   *  selling and there's time to talk: the app puts one in the first few cards
+   *  of a city's daily order (Josh, 2026-11-08) */
+  openKinds: ['plaza', 'church', 'landmark', 'museum', 'botanical garden', 'art centre', 'street'],
   /** The greeter's fixed lines, voice and framing (docs/onboarding-design.md) */
   onboarding,
   voices,

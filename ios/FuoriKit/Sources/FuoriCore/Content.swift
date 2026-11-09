@@ -141,6 +141,9 @@ public struct Place: Codable, Sendable, Equatable, Identifiable, Hashable {
     public let neighbourhood: String
     /// Opens the departures board instead of a conversation
     public let station: Bool
+    /// An open space or landmark (the country's openKinds): the daily order
+    /// puts one in the first few cards; nil from servers before 2026-11-08
+    public let open: Bool?
     /// Who you meet here; nil when nobody is there yet
     public let characterId: String?
     public let image: URL?

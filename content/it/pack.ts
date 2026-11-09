@@ -42,6 +42,10 @@ export const pack = {
   tutorStudio: magdaStudio,
   /** Colours of the station ticket: Italian rail green, red accent, pale green security stripes */
   ticketTheme: { band: '#1d5c3a', bandInk: '#ffffff', stripe: 'rgba(29, 92, 58, 0.09)', accent: '#b8252f' },
+  /** Kinds of place that are open spaces or landmarks, where nobody is
+   *  selling and there's time to talk: the app puts one in the first few cards
+   *  of a city's daily order (Josh, 2026-11-08) */
+  openKinds: ['piazza', 'park', 'garden', 'church', 'chiesa', 'chapel', 'landmark', 'viewpoint', 'museum', 'catacombs', 'cultural site', 'university', 'street'],
   /** The greeter's fixed lines, voice and framing (docs/onboarding-design.md) */
   onboarding,
   voices,
