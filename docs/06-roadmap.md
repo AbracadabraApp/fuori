@@ -16,7 +16,7 @@ Clear next step, known how, small; several only wait on Josh's word.
 - [ ] **Recordings: keep what happened next** (sent, said in English, "didn't catch that") beside each kept recording, so another speech-to-text or end-of-turn silence can be replayed against them. Next: Claude adds the outcome to each kept recording. Done when: `npm run replay:recordings` reports outcomes.
 - [ ] **A daily budget per learner that survives deploys** (`usage_daily`; today's caps reset on every deploy). Done when: a cap holds across a release.
 - [ ] **App Attest** when a device registers. Done when: a device without it can't get a learner id.
-- [ ] **Privacy policy** at a public URL naming Groq, Anthropic and ElevenLabs, plus one line at the microphone step. Next: Claude drafts; Josh approves.
+- [ ] **Privacy policy** at a public URL naming Groq, Anthropic and ElevenLabs, plus one line at the microphone step. It says what's kept (Josh, 2026-11-08: "keep all transcripts, only approved recordings"): the words of every conversation for every learner; voice recordings only for learners approved one by one (`KEEP_RECORDINGS_FOR`). Next: Claude drafts; Josh approves.
 - [ ] **Question ladder for Intermediate and Advanced** (one fact, then anything). Next: Claude writes a one-paragraph proposal for Josh. Done when: Josh says yes or no.
 - [ ] **Josh: App Privacy label, beta description, feedback email, reviewer notes** (Claude drafts each).
 - [ ] **Josh: approve the tester questions**, updated first (the wait is ~3 s, there's a Beginner level, it's hands-free).
@@ -37,10 +37,10 @@ Doable, but the outcome depends on a test, a decision or a plan not yet made.
 ### Least confident
 Open-ended, waiting on ideas or decisions, or far off.
 - [ ] **D1, questions as dialogue structure**: characters ask poor questions; learners are rarely invited to ask. Queued in `docs/prompt-testing.md`. Done when: it reaches the top of the queue as a card.
-- [ ] **Conversation library and turn timings beyond the family.** Waits on: Josh's privacy decision.
 - [ ] **The App Store (later):** "Report this line"; screenshots, description, age rating, review notes; storefronts outside the EU.
 
 ### Done 2026-11-08 (night)
+- **Decided (Josh):** keep all transcripts, only approved recordings. Already how the server works (every conversation's turns saved; recordings only for `KEEP_RECORDINGS_FOR`), so the conversation library beyond the family needs no change.
 - Prompt caching measured, not shipped (5409204). The silence draft removed; its server half reused for replies written ahead (1c87680). Keep-awake in conversations (dbc036c). Records rewritten when a conversation goes on after an early end (bb0b6e6). Daily order of cities and places (b31c916). Jennifer reset to Beginner step 1.
 
 ### Possibly done or overtaken: Josh to close
