@@ -211,6 +211,8 @@ export function buildBeginnerPrompt(p: {
   now?: Date;
   /** The path's stage (lib/path.ts → stageText): leveling.md blocks added after the system prompt */
   stageText?: string;
+  /** The prompt file; beginner.md unless given (Beginner 2's trial: beginner-2.md, docs/beginner-2.md) */
+  promptFile?: string;
 }): { system: string; messages: { role: 'user' | 'assistant'; content: string }[] } {
   const { character } = p;
   const city = cities.find((c) => c.places.some((pl) => pl.id === character.placeId));
@@ -221,7 +223,7 @@ export function buildBeginnerPrompt(p: {
     personLine(p.addressedAs),
     relationshipLine(t, p.memory, p.now ?? new Date()),
   ].filter(Boolean).join(' ');
-  const base = fill(readPromptFile('beginner.md').block('System prompt'), {
+  const base = fill(readPromptFile(p.promptFile ?? 'beginner.md').block('System prompt'), {
     name: character.name,
     role: character.role,
     // The place with its kind and neighbourhood, and why they're there (lib/characters/for-place.ts)
