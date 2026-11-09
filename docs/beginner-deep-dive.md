@@ -1,10 +1,10 @@
 # Beginner deep dive (2026-11-09)
 
-Five read-only reports put together: production code (origin/live bb0b6e6), proposed changes (beginner-plan.md), real play (last 14 days, production DB), dependencies, and history (git and changelogs). Facts unless marked *opinion*. Baseline: [beginner-as-live.md](beginner-as-live.md); spec: [beginner-plan.md](beginner-plan.md).
+Five read-only reports put together: production code (origin/live bb0b6e6), proposed changes (beginner-plan.md), real play (last 14 days, production DB), dependencies, and history (git and changelogs). Facts unless marked *opinion*. Baseline: [beginner-as-live.md](beginner-as-live.md); spec then: [beginner-plan.md](beginner-plan.md); the plan now: [beginner-2.md](beginner-2.md).
 
 ## 1. Production: what the code check found
 
-- **Bug: the heard note never reaches the character in the app.** `app/v1/turn/route.ts:121` rebuilds the transcript as `{who, transcript, translation}`, and the turn schema (`lib/turn-request.ts`) drops unknown keys, so `offered` is lost and `readHeard` always returns null. The "they said back your answer / their own words" note (dialogue.md, 2026-11-05) has only ever run in unit tests. A fix sits in the `beginner-shapes` worktree, uncommitted.
+- **Bug: the heard note never reaches the character in the app.** `app/v1/turn/route.ts:121` rebuilds the transcript as `{who, transcript, translation}`, and the turn schema (`lib/turn-request.ts`) drops unknown keys, so `offered` is lost and `readHeard` always returns null. The "they said back your answer / their own words" note (dialogue.md, 2026-11-05) has only ever run in unit tests. A fix sits in the `beginner-shapes` worktree, uncommitted; it goes in Beginner 2 only (production untouched, Josh).
 - **Records undercount turns.** Two Nov 9 conversations recorded 5 and 4 learner turns where the transcripts have 12 and 18, so neither counted toward moving up. Not yet checked whether these predate the record rewrite released Nov 8 (bb0b6e6).
 - **beginner-as-live.md is wrong in three places:**
   - The welcome places everyone at step 1. `placement()` (step 3 for own words) is only on the older send-off path.

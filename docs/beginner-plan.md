@@ -1,6 +1,6 @@
 # The Beginner plan
 
-**Status (2026-11-09):** a spec from Josh's decisions of 2026-11-08/09, ready to prototype. How the Beginner level runs today, the baseline: [beginner-as-live.md](beginner-as-live.md). Nothing is built; a prompt change ships only after a reviewed test card. The discussion that led here is kept below, under [How we got here](#how-we-got-here).
+**Status (2026-11-09, later):** superseded in direction by [beginner-2.md](beginner-2.md) (Beginner 2: communication between bilingual friends, built beside production, the reply table). Kept as the record of the turn-shape spec; its decisions carried into Beginner 2 are listed there. a spec from Josh's decisions of 2026-11-08/09, ready to prototype. How the Beginner level runs today, the baseline: [beginner-as-live.md](beginner-as-live.md). Nothing is built; a prompt change ships only after a reviewed test card. The discussion that led here is kept below, under [How we got here](#how-we-got-here).
 
 ## What a Beginner visit is
 
