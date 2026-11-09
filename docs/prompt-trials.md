@@ -747,6 +747,30 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Decision: keep (pending Josh's wording and a release): the shared rule goes into `dialogue.md` and Beginner's duplicate sentence comes out (same words for Beginner). Rule 6: one cheap Italy confirmation before release (below)
 - Run, Italy to confirm (2026-11-08, Mac mini, 10 characters × 3 visits, Intermediate, A twice for 3, 255 s; `tests/conversations/runs/2026-11-08-22-33-22-c13-commerce-it/`): **B is not worse: lines about the sale over all 10, A 53, B 53.** A-against-A gaps 0, 2, 4, so the threshold is again 8. Per character (A → B): Luisa 9 → 9, Nino 0 → 2 (A twice: 0, 2), Antonio 4 → 7 (A twice: 4, 8), Matteo 2 → 1, Carmela 9 → 5, Giuseppe 0 → 0, Giulia 6 → 6, Lucia 7 → 8, Marta 9 → 7, Nusrat 7 → 8. Guards: reply words A 17.5, B 20.1; repeats A 0.05, B 0. Italy shows no effect either way (the totals are equal), where Mexico's total was 9 lower; the rule does no harm in either country. Judge uncalibrated; transcripts not read for Italy
 
+
+### B2-S (2026-11-09): does Beginner 2's character follow each reply setup line? (runs before B2-P)
+- Serves: 1 (at their level: the reply ladder only works if she sets up the reply as asked; docs/beginner-2.md → The reply ladder)
+- Type: moment (one turn, the conversation before it, rule 5)
+- Unit: Beginner 2's prompt (the shared character prompt + the level line + the answer rules + the parts format, as in B2-P's B) with the reply setup line; Beginner 1 has no setup lines, so no comparison with it
+- Variable: the setup line, six values: two answers · one answer · the answer inside what you say · gloss the words that matter and give no answers · invite an English answer · give no answers
+- Held constant: the rest of the prompt, model and settings, the moments, memory notes, the learner's gender line
+- Place: Italy; Mexico only if Italy passes
+- Moments: the same 7 as B2-P (the 5 stored Italian Beginner moments, plus the caffè echo and benvenuto turns if found)
+- Measure: counted in code from the parts, per turn, "followed" when:
+  - two answers: exactly 2 answer parts;
+  - one answer: exactly 1;
+  - inside what you say: 0 answer parts, and a sentence in the language inside her line that could be said back (5+ words in a word or question part after a colon or quotation, counted by code; the turns are also read);
+  - gloss, no answers: 0 answer parts and at least one English gloss or English part naming a word from her language parts;
+  - invite English: 0 answer parts and an English part ending in a question (read as well: whether it invites an English answer);
+  - no answers: 0 answer parts.
+  Also per turn: valid parts, questions, her words in the language, English sentences (as guards)
+- Fact or judgment: FACT (code) for the answer counts and valid parts; "inside what you say" and "invite English" are counted by code and then READ (flagged as partly judgment, rule 7b)
+- Hypothesis: she follows the counted setups (two, one, no answers) on ≥ 90% of turns each, and the softer three (inside, gloss, invite English) on ≥ 70%. **Rule, written before the run:** a setup passes at those thresholds; a setup that fails gets its line rewritten (a new card) or moves to code (e.g. the code removes answer parts for "no answers")
+- Other outcomes: (a) all pass: B2-P runs next. (b) only the soft three fail: build Beginner 2 with the three counted setups first; the soft ones get their own card. (c) the counted ones fail too: the model ignores the setup line; enforce the answer count in code (tidyParts) and rerun once
+- Size: pilot 2 moments × 6 setups × 1 run (12 turns, about 1 minute). Real run 7 moments × 6 setups × 3 runs = 126 turns
+- Time: about 3 minutes on the Mac mini
+- Guards: valid parts, words per turn, reply time (read)
+- Reviewed: pending
 ### B2-P (2026-11-09): Beginner 2's prompt (one prompt, the level and reply setup filled in) against today's Beginner, on stored moments
 - Serves: 1 (at their level), 8 (brief), and the English and gloss failures Josh named (docs/beginner-2.md → The prompt, item 6)
 - Type: moment (one turn, the conversation before it, rule 5)
