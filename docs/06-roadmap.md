@@ -21,7 +21,6 @@ Clear next step, known how, small; several only wait on Josh's word.
 - [ ] **Josh: App Privacy label, beta description, feedback email, reviewer notes** (Claude drafts each).
 - [ ] **Josh: approve the tester questions**, updated first (the wait is ~3 s, there's a Beginner level, it's hands-free).
 - [ ] **R2 custom domain for images.** Waits on: Josh picking the domain.
-- [ ] **Visit stamps as a scontrino** (design locked 2026-10-29, [visited-badge.md](visited-badge.md)). Next: Josh says when to build it. Done when: on the phone and Josh approves the look.
 - [ ] **More dialect as you level up** (the setting in Settings is greyed out). Next: Josh decides whether it's wanted now. Done when: decided.
 
 ### Fairly confident
@@ -35,6 +34,7 @@ Doable, but the outcome depends on a test, a decision or a plan not yet made.
 - [ ] **Josh and Sophia play the path.** Next: play as usual. Done when: two weeks of words spoken per week in `format=records` show whether learners move up.
 
 ### Done 2026-11-08 (night)
+- Visit stamps as a scontrino: done (Josh, 2026-11-08).
 - **Decided (Josh):** keep all transcripts, only approved recordings. Already how the server works (every conversation's turns saved; recordings only for `KEEP_RECORDINGS_FOR`), so the conversation library beyond the family needs no change.
 - Prompt caching measured, not shipped (5409204). The silence draft removed; its server half reused for replies written ahead (1c87680). Keep-awake in conversations (dbc036c). Records rewritten when a conversation goes on after an early end (bb0b6e6). Daily order of cities and places (b31c916). Jennifer reset to Beginner step 1.
 
