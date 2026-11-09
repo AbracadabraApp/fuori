@@ -58,7 +58,7 @@ Also real: a turn with no question (a remark they react to), the learner leading
 
 - Two answers to choose from; one answer (today).
 - A question for them to ask her.
-- Answer in English, offered on purpose; the line in the language comes back to say (How do I say it).
+- Answer in English, invited: she says something in the language, glosses it and asks what they think, in English ("*Il Palio è una follia*, it's madness. What do you think?"). Their English answer stands; nothing comes back to say. She can turn it later, with more of the language (Josh, 2026-11-09). An invited English answer mustn't count as lost (today it does); how it counts is open.
 - Built from her glossed words, no bubbles: she glosses the key words as she asks (*piccante o dolce*, spicy or sweet; *quale ti piace*, which do you like) and they make their own answer from them.
 - Answers offered in her speech ("…just say *Vorrei la carbonara*, I'd like the carbonara"): spoken only, or spoken and shown.
 
