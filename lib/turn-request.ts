@@ -30,6 +30,9 @@ const TurnRequestSchema = z.object({
         who: z.enum(['npc', 'learner']),
         transcript: z.string().max(MAX_LINE_CHARS),
         translation: z.string().max(MAX_LINE_CHARS).optional(),
+        // The answers she offered (lib/recording.ts → loadConversationTurns), so the next turn's
+        // heard note works (lib/dialogue/heard.ts); without it zod dropped them
+        offered: z.array(z.string().max(MAX_LINE_CHARS)).max(4).optional(),
       })
     )
     .max(MAX_TURNS)
