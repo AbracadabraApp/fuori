@@ -788,3 +788,20 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Guards: words per turn, reply time, the language's share of words, answers offered per turn (read, not pass rules)
 - Prompt sizes recorded: A and B system prompt words at S1
 - Reviewed: test designer, 2026-11-09: ready with six changes (echo check per part with a length-scaled distance; both forms narrowed and read; each moment's own failure read; counts relative to A's runs with margins; measures 1–2 reported, not decided, without the real turns, gender setting as in play; S2 moments noted); all applied · card acf89922
+
+### B2-V (2026-11-09): does a Beginner 2 visit vary in shape more than today's? (runs after B2-S and B2-P)
+- Serves: 1 and 4 (Beginner 1's turns nearly all have the same shape: English, a phrase, an either/or question, answers; Josh: "shape should be the test here", 2026-11-09)
+- Type: visit (several turns, rule 5b) with fixed learner lines, no simulated learner: where answers are offered the learner says back the first; where none are, a short fixed line that fits after almost any reply, in the language ("Sì, mi piace.", "Non lo so.", "E Lei?", "Interessante!"), the same lines in the same order for A and B; a goodbye offered is said back and ends the visit
+- Unit: the whole Beginner turn as one variable (rule 21): A: today's S1 (beginner.md 2026-11-07a + S1 blocks, 2 answers every turn). B: Beginner 2 (the shared prompt, the level line, the answer rules, the parts format) with the reply setup picked by code from cluster 1 (two answers with English · one with English · one, language only), seeded by conversation and turn number
+- Variable: A against B as wholes
+- Held constant: model and settings, characters, first meeting (no memory), the learner's lines and order, 8 character turns at most, the seed
+- Place: Italy; Mexico only if Italy passes
+- Moments: 8 Italian characters at their places (two bars, a market, a restaurant, a piazza, a shop, a museum or church, Nino), one visit each
+- Measure: counted in code per conversation: (1) same shape as the turn before, where a turn's shape is its part kinds in order with answers counted (e.g. english·word·question·answer×2), as a share of turns 2–8; (2) distinct shapes per visit; (3) turns ending in an either/or question (two options joined by the language's "or" before the question mark); (4) English position: first part English, as a share of turns; guards: words per turn, her words in the language, answers offered, valid parts
+- Fact or judgment: FACT (code) for all; the turns are also read for what the counts miss (her moves: explaining, giving a word then using it, switching, telling)
+- Hypothesis: B's same-shape share is at most half of A's, with more distinct shapes per visit and fewer either/or endings. **Rule, to be written before the run** (with the pilot's A numbers in hand, A twice for 3 characters as the noise)
+- Other outcomes: (a) B passes: Josh plays it. (b) B varies no more than A: the variety has to come from her moves, which the prompt isn't drawing out; read the turns, a new card on the level line. (c) B varies but a guard breaks (longer, harder): fix that first
+- Size: pilot 2 characters × A and B; real run 8 × A and B, A twice for 3: 19 visits of up to 8 turns
+- Time: about 5 minutes on the Mac mini (pilot about 1)
+- Guards: as in Measure
+- Reviewed: pending (after B2-S and B2-P; needs its rule written first)
