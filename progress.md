@@ -66,6 +66,17 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-08 (late night): records fix, daily order, release, replies sent to the mini (laptop session)
+
+- **Records fix (bb0b6e6):** a conversation ended early (phone locked, backgrounded) and continued kept its first record, so Josh's Giulia (12 turns) and Elira (18) were recorded at 5 and 4 and never counted on the path. Now rewritten when it has more learner turns, counted once (`recordAction` in `lib/conversation-record.ts`; tests in `tests/check-path.ts`; SQL checked on local `fuori_test`). Kept: a record that moved the level, or one with a later record after it.
+- **Daily order (b31c916):** cities and places in a new order each day, unvisited first, an open space (`openKinds` in each pack) in the first three. Prompted by Josh's picks matching the first cards in the fixed order.
+- **Released** bb0b6e6 (smoke Italy and Mexico OK; `open` flag served) and **installed on Josh's phone** (his yes: "Release to phone").
+- **Jennifer** (Mexico) reset to Beginner step 1 without wiping anything: onboarding `startStep:1`, new `placedAt`, the old values kept in `resetFrom`. Onboarding's "own words" placed her at step 3 with no English; other learners not yet checked.
+- **Josh's path:** placed Intermediate Nov 3, chose Beginner (restarts at step 1), 2 easy counted conversations by tonight; said-back answers don't count as own turns, so S1 holds you at S1. Josh to decide if that's a rule to change.
+- **Faster replies** sent to a Claude session on the mini (`mini replies`): caching only in the two turn calls and only if first token drops ≥150 ms (Josh: not where benefit is near 0; live logs: first token ~0.7 s of 2–3 s), then the reply prepared during the silence. Its plan is waiting for Josh's approval. Dropped: the 0.4 s since Oct 26 (Josh: not really traceable).
+- **Laptop network:** DNS failures fixed by turning Wi-Fi off and on; Wi-Fi DNS is now set to 1.1.1.1, 1.0.0.1, 8.8.8.8 (`networksetup -setdnsservers Wi-Fi empty` undoes it).
+- Open: log the Intermediate top 10, the kind deep dive and place-type history in `docs/dialogue-ideas.md`; `npm run test:language` fails on a fixture from 9f0bb85 (ContentTests.swift:104), not tonight's work.
+
 ## 2026-11-08 (night): keep-awake, real-play review, release (laptop session)
 
 - **Screen stays on during conversations** (dbc036c, Josh: "the app as is is not staying awake"; never seen it lock before today). The app never disabled the idle timer; hands-free means no taps, so the phone auto-locked mid-conversation. Likely trigger on the phone's side (Low Power Mode forces 30 s Auto-Lock), not a code change. PersonView holds `isIdleTimerDisabled` while open (counted, for lesson part swaps). Installed on Josh's iPhone with his yes.
