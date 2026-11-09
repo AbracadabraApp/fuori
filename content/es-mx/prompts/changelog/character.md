@@ -4,6 +4,11 @@ Newest first. One entry per version: what changed, why, what prompted it. The pr
 
 Newest first. Each entry: what changed, why, and what prompted it.
 
+### 2026-11-08b: a sale is a turn or two of the visit
+- **Added** to "Take turns. No more words after a question mark.": "If your job has a sale, it's a turn or two of the visit, not the whole of it: serve them when they ask, then talk about your place, your work and them, not the price or how they'll pay unless they ask." Same curb Beginner already has, now at Intermediate and Advanced. `dialogue.md` and Beginner's wording unchanged.
+- **Why:** about half of seller lines at Intermediate were sale talk (C13 judge). With the sentence the learner's visits were not worse in Mexico or Italy (C13, docs/prompt-trials.md); only Intermediate was tested.
+- **Prompted by:** Josh, 2026-11-08: no issue standardizing the commerce curbs across language levels.
+
 ### 2026-11-08a: don't tell them again what you've already told them
 - **Added** "Don't tell them again what you've already told them." on its own line after "You remember: {notes}" (met before only; first meetings unchanged). Beginner reads the same block (`lib/beginner.ts`), so it has it too.
 - **Why:** since memory.md 2026-11-07a the notes hold what the character told the person, but nothing said what that's for, and he still told it again as new: in C5b (docs/prompt-trials.md) Don Ramón said "Yo nací en este pueblo…" on visit 3 as if for the first time, with "Told them I was born in San Miguel" in his notes. With the sentence: no replays, and his visits built on what Sam had said; in Italy (Karim) neither version replayed and the sentence did no harm. Topics and words still come back (atardecer, la Parroquia), which helps learning; only the replay is named.
