@@ -5,6 +5,7 @@
 ## Where it stands (2026-11-09)
 
 **Decided (Josh):**
+- **English on every turn defines Beginner** (Josh, 2026-11-09: "English on every turn should define beginner"); no English is Intermediate. In production this conflicts with the Beginner prompt's *Variety* rule ("sometimes no English at all") and with stages S2 and S3, which cut the English; under this definition both go.
 - A Beginner visit is a roleplay lesson; lean on scaffolding; English makes beginners comfortable.
 - The scaffolding parts stay as they are.
 - S1's spoken English stays as it is: spoken, not shown ("not a reading game").
