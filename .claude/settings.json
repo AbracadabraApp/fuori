@@ -9,7 +9,18 @@
       "Bash(railway logs)",
       "Bash(railway logs *)",
       "Bash(npm run -s test:cards)",
-      "Bash(npm run -s test:real-play-scores)"
+      "Bash(npm run -s test:real-play-scores)",
+      "Bash(railway deployment list *)",
+      "Bash(git merge-base *)",
+      "Bash(xcrun devicectl list *)",
+      "Bash(xcrun simctl list *)",
+      "Bash(ffprobe *)",
+      "Bash(npm run test:prompt)",
+      "Bash(npm run -s test:prompt)",
+      "mcp__XcodeBuildMCP__screenshot",
+      "mcp__XcodeBuildMCP__session_show_defaults",
+      "mcp__XcodeBuildMCP__snapshot_ui",
+      "mcp__XcodeBuildMCP__list_sims"
     ],
     "deny": [
       "Bash(git commit --amend*)",
