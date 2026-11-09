@@ -25,18 +25,16 @@ Because the learner only says what she offered, whatever local talk, drift or re
 
 **Where it runs.** A test script, through the server's own turn code (as `tests/experiments/moments.mts` and the variety gate do), against the test database, so memory is written between visits by the real summariser. Not in the app for now; a later option is a hidden "automated replies" switch in the Version panel to watch a conversation play on the phone.
 
-**The learner's turn**, each picked at seeded rates:
-- **Say an offered answer back:** the first, the second, or the one that fits a persona.
-- **Edits to her answer** (utility behaviours, each known exactly, so no judge is needed to know what the learner did):
-  - one word swapped, or a gender or verb mistake;
-  - spelling mangled the way speech-to-text does;
-  - the English under the bubble said instead;
-  - a word dropped, or the sentence left unfinished;
-  - silence;
-  - a push: an off-topic request (for drift; real slips came after pushing).
-- **Goodbye** when she offers it, or after a set number of turns.
+**The learner's turn.** Offered answers aren't enough (Josh, 2026-11-09: "the automated reply would need to generate replies beyond offered replies"): real learners answer in their own words, ask her things, answer in English, get stuck. So each turn has two steps, and only the second may write anything:
 
-**Persona mixes from real play** (the rates, not believability, make it realistic; the deep dive's counts):
+1. **Code picks the kind of reply**, at seeded rates (the persona below): say an offered answer back; an edit of one; own words; a question to her; English; help ("how do you say…?"); silence; a push off the topic; goodbye.
+2. **The line:**
+   - *Said back and edits:* from her offered answer, by code, so exactly what was done is known (one word swapped, a gender or verb mistake, spelling mangled the way speech-to-text does, the English under the bubble said instead, a word dropped or the sentence left unfinished).
+   - *Own words, a question, English, help, a push:* one small generation call writes a line **of that kind only**, answering her last line, at the persona's length (words per line from real play) and level (mostly words she has just used, plus a few). It never brings up a topic of its own, except for a push. Then, at the persona's rate, a mistake is added by code, so mistakes are known too.
+
+The difference from the simulated learner that failed (F2): code decides what kind of reply comes and when, so a run is controlled and repeatable; the generation only fills in one line of a set kind. Realism is checked by numbers against real play, never by believability.
+
+**Persona mixes from real play** (the rates of each kind, not believability, make it realistic; the deep dive's counts):
 
 | Persona | Said back | Own words | English or help |
 |---|---|---|---|
@@ -52,13 +50,14 @@ Checked against real play by numbers (words per line, share of English, said bac
 ## What it is and isn't
 
 - **A tool, not a test of a change.** In the testing method's terms it's the free-play check after a change is kept, and a drift check between releases. Testing a unit stays with fixed moments (rule 5).
-- **It tests the most obedient learner unless edits are mixed in.** Conversations are smoother than real ones; the edits and the push fill that in.
+- **Smoother than real play** at first: real learners are messier than any mix. The rates and the generated kinds narrow the gap; play shows what's left.
 - **Josh's playing stays the test of realism** (does a conversation flow, is it alive).
 - **Judged measures are flagged** (rule 7b); the code counts come first.
 
 ## Build steps (when it's picked up)
 
-1. The script: one place, one visit, say-back only, through the turn code; save every turn.
+1. The script: one place, one visit, said back only, through the turn code; save every turn.
+1b. The generated kinds (own words, question, English, help), one call each, of a set kind and length.
 2. Visits with memory between them; the repeat counts (exact and content-word overlap).
 3. The edits and the push; the two persona mixes; the check against real play's numbers.
 4. Length and goodbye counts; then the flagged judges (role, particular to the town) from the variety gate.
