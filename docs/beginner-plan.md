@@ -85,8 +85,9 @@ Josh: "The scaffolding is key mechanic." Scaffolding is how the learner takes pa
 *English to follow along*
 5. Spoken English to set the scene: up to two short sentences a turn, heard, not shown.
 6. The echo: short spoken English right after a phrase or question in the language.
-7. The English of each bubble, a tap away; answers show theirs.
-8. The translation of her line, shown once she's finished speaking.
+7. The English under each answer to say back, always shown.
+
+Her words in the language show in one bubble as she says them (her question in bold), with no English shown and nothing on a tap: her English is only heard (Josh, 2026-11-05). The translation shown after she finishes is the Intermediate screen (with the English setting on), not Beginner. (Corrected 2026-11-09: an earlier list here had "English a tap away" and "the translation once she's finished" for Beginner; neither is in the code.)
 
 Dormant: the reply panel (read one aloud, or choose; `lib/scaffold.ts`). It shows only on turns without Beginner parts in a new learner's first 3 conversations, which the path never produces; every turn since the 2026-11-08 release logged `replies="no"`.
 
