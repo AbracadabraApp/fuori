@@ -116,6 +116,19 @@ At an offer every 3–5 conversations that count (3 or more replies from the lea
 - **The reply table and counts** are for looking at (does it rise, do the players differ), not a gate.
 - **Open:** who asks (her, in role, or a plain screen at the end: a new screen, so a mockup first).
 
+## The prompt
+
+**History** (2026-11-09): `beginner.md` grew from 502 to 1,245 words in two weeks over 19 versions, each fixing what the last one showed and none removed; with the shared `dialogue.md` and the stage blocks a Beginner turn gets 1,559–1,730 words before the conversation (the Intermediate character prompt is 534). Of its 31 units (`docs/beginner-prompt-inventory.md`) 9 were ever measured; the stage blocks measured no change. The same characters come alive at Intermediate.
+
+**Approach** (Josh: "mostly sounds right"):
+1. **The Intermediate character prompt plus a short Beginner block** (about 150–250 words), not a separate long prompt: she's a local who knows enough English to help the newcomer follow, gives the word then uses it, sets up the reply the way the code says this turn, keeps her lines in the language short. Fixes to the character prompt then help both levels.
+2. **Structure in code and the output format, not prose:** the parts, the reply setup from the cluster, one question a turn.
+3. **Back in only what earned it:** the measured units (the learner's facts left blank, one idea per answer, say each thing once, answers as a local says them).
+4. **Patches that memory now covers stay out** (Josh): repeats across visits and things told again are `memory.md`'s job since 2026-11-07a/08a.
+5. **No de-scripting by instruction** (Josh: attempts to de-script mostly failed): variety comes from the code's reply setups and her moves, not from "vary your turns".
+6. **The English and gloss failures are real and make the app feel broken** (Josh): an echo that repeats the same word (*caffè*, "coffee"; a name glossed as itself), and both forms then English (*benvenuto, benvenuta*… "welcome"). These need a fix that holds: in code where it can be (drop an echo that is nearly the same word as what it glosses, by spelling, any language), and the learner's gender in the setting so she uses one form.
+7. **The safety net:** each dropped unit's original moment goes into `tests/experiments/moments.json`; the new prompt is run on them against Beginner 1's. That is the test card.
+
 ## Beginner 1 rules Beginner 2 breaks
 
 1. **English: brief** (`beginner.md`: at most two short sentences) → English whenever it helps the newcomer (explaining, a word, a rescue); she still speaks the language.
