@@ -14,12 +14,7 @@ Clear next step, known how, small; several only wait on Josh's word.
 - [ ] **Josh: play the build on the phone** (bb0b6e6, installed 2026-11-08): the screen never locks mid-conversation; an open space in the first three place cards; a new order the next day, unvisited first. Done when: Josh says it works or names what doesn't.
 - [ ] **Claude: log tonight's findings in `docs/dialogue-ideas.md`**: the Intermediate top 10 (6 of the Beginner problems don't appear there), the kind deep dive, and the place types over time, from the agent reports of 2026-11-08. Done when: committed, with examples quoted from the conversations.
 - [ ] **Recordings: keep what happened next** (sent, said in English, "didn't catch that") beside each kept recording, so another speech-to-text or end-of-turn silence can be replayed against them. Next: Claude adds the outcome to each kept recording. Done when: `npm run replay:recordings` reports outcomes.
-- [ ] **A daily budget per learner that survives deploys** (`usage_daily`; today's caps reset on every deploy). Done when: a cap holds across a release.
-- [ ] **App Attest** when a device registers. Done when: a device without it can't get a learner id.
-- [ ] **Privacy policy at a public URL** (Apple asks for one before outside testers). The text already exists in the app (Settings → Privacy: Groq, Anthropic, ElevenLabs; conversations saved); only the public page is missing, and it says what's kept (Josh, 2026-11-08: "keep all transcripts, only approved recordings").
 - [ ] **Question ladder for Intermediate and Advanced** (one fact, then anything). Next: Claude writes a one-paragraph proposal for Josh. Done when: Josh says yes or no.
-- [ ] **Josh: App Privacy label, beta description, feedback email, reviewer notes** (Claude drafts each).
-- [ ] **Josh: approve the tester questions**, updated first (the wait is ~3 s, there's a Beginner level, it's hands-free).
 - [ ] **More dialect as you level up** (the setting in Settings is greyed out). Next: Josh decides whether it's wanted now. Done when: decided.
 
 ### Fairly confident
@@ -38,6 +33,11 @@ Doable, but the outcome depends on a test, a decision or a plan not yet made.
 - Prompt caching measured, not shipped (5409204). The silence draft removed; its server half reused for replies written ahead (1c87680). Keep-awake in conversations (dbc036c). Records rewritten when a conversation goes on after an early end (bb0b6e6). Daily order of cities and places (b31c916). Jennifer reset to Beginner step 1.
 
 ### Parked until outside testers
+- **A daily budget per learner that survives deploys** (`usage_daily`; today's caps reset on every deploy). Done when: a cap holds across a release.
+- **App Attest** when a device registers. Done when: a device without it can't get a learner id.
+- **Privacy policy at a public URL** (Apple asks for one before outside testers). The text already exists in the app (Settings → Privacy: Groq, Anthropic, ElevenLabs; conversations saved); only the public page is missing, and it says what's kept (Josh, 2026-11-08: "keep all transcripts, only approved recordings").
+- **Josh: App Privacy label, beta description, feedback email, reviewer notes** (Claude drafts each).
+- **Josh: approve the tester questions**, updated first (the wait is ~3 s, there's a Beginner level, it's hands-free).
 - **A web address for the pictures** (today Cloudflare's development `r2.dev` address, fine at family scale). When needed: `images.fuori.com`; Josh owns fuori.com (at Joker), so its name servers move to Cloudflare first.
 
 ### Possibly done or overtaken: Josh to close
