@@ -39,7 +39,7 @@ Her words in the language show in one bubble as she says them; no taps anywhere.
 
 **Rules:** every Beginner turn has at least one job with spoken English in it (English under the answers doesn't count); Recast only after their own words; the first turn sets the scene; the goodbye is offered after about 8 turns or when they say it.
 
-**Varied, but predictable:** a seeded pick among the shapes the rules allow, never repeating either of the last two turns' shapes.
+**Varied, but predictable:** a seeded pick among the shapes the rules allow, never repeating either of the last two turns' shapes. A new pick every turn, seeded by the conversation and the turn's number, so a conversation replays with the same shapes (for side-by-side tests and Records); the opening, before there's a conversation, by learner, place and day, so tomorrow's opener differs (Josh, 2026-11-09).
 
 ## How the learner replies
 

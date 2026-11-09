@@ -65,7 +65,7 @@ Five read-only reports put together: production code (origin/live bb0b6e6), prop
 - Allowing "just say …" relaxes two earlier teacher-talk fixes. Watch for "let me ask"-style announcing.
 
 **Undefined before code can rely on it:**
-- The seed: per conversation, per turn?
+- ~~The seed: per conversation, per turn?~~ Decided 2026-11-09: per turn, seeded by conversation and turn number; the opening by learner, place and day (beginner-plan.md → Varied, but predictable).
 - What "the same shape" compares: jobs only, or forms too?
 - How long a job can be.
 - What "ready" means on the ramp.
