@@ -1,6 +1,79 @@
 # The Beginner plan
 
-**Status:** draft for Josh (Claude, 2026-11-08). How the Beginner level runs today, the baseline: [beginner-as-live.md](beginner-as-live.md). Everything below the goal is a proposal; the decisions are Josh's and marked as such. Nothing is built until he approves; prompt changes then go through a test card.
+**Status (2026-11-09):** a spec from Josh's decisions of 2026-11-08/09, ready to prototype. How the Beginner level runs today, the baseline: [beginner-as-live.md](beginner-as-live.md). Nothing is built; a prompt change ships only after a reviewed test card. The discussion that led here is kept below, under [How we got here](#how-we-got-here).
+
+## What a Beginner visit is
+
+- **A roleplay lesson with a real person in a real place**, not a free conversation. Lean on scaffolding; English makes beginners comfortable.
+- **English on every turn defines Beginner**; no English is Intermediate. English is scaffolding.
+- **Spoken, not read.** It's not a reading game: the character's English is heard; nothing extra goes on screen.
+- **The character speaks as themselves**, never as a narrator (no "the owner is sitting by the door…" in their own voice).
+- **Mechanics before dialogue:** this plan sets structure; what characters say goes to `docs/dialogue-ideas.md`.
+
+## The scaffolding (as in production; leave as is)
+
+Help to answer: lines to say back (whole answers, or a sentence start); How do I say it; help when asked; the mic's patience (2.5 s).
+English to follow along: spoken English to set the scene; the echo; English under each answer, always shown.
+Her words in the language show in one bubble as she says them; no taps anywhere. Dormant: the reply panel (`lib/scaffold.ts`), which the path never shows.
+
+## The shape of a turn
+
+**Jobs** (the code chooses which are in a turn):
+
+| Job | What it does |
+|---|---|
+| React | responds to what they just said; the usual opening after the first turn |
+| Recast | a React that says their line back right: only after their own words, only for a real mistake; the code allows it, the character decides |
+| Set the scene | where we are, what's going on; the first turn |
+| Say | something of the character's own |
+| Ask | asks for their reply, in either language (defined by asking, not by language) |
+| Offer answers | the learner's reply, set up (below); always last |
+
+**Forms:** each job is said as English · the language · mixed (part each, one sentence) · English then the language's echo · the language then the English echo.
+
+**The echo** lets the character speak the language safely without losing the learner. It works in the setting, in the dialogue, and when an answer is offered in her speech. Either direction can be a phrase or a restatement, never a literal translation:
+- the language, then English: helps them understand (today's echo, kept as it is);
+- English, then the language: underlines the words worth keeping (*piccante o dolce*); the Ask after it can use those words with no echo.
+
+**Five settings the code picks each turn:** which jobs, their order (React/Recast and Set the scene first, answers last), the form of each, the length of each (a word to a sentence), and the answers' form. The character gets one line ("This turn: React · Say (the language, English echo) · Ask (the language) · Answers (2)") and fills it as this person in this place.
+
+**Rules:** every Beginner turn has at least one job with spoken English in it (English under the answers doesn't count); Recast only after their own words; the first turn sets the scene; the goodbye is offered after about 8 turns or when they say it.
+
+**Varied, but predictable:** a seeded pick among the shapes the rules allow, never repeating either of the last two turns' shapes.
+
+## How the learner replies
+
+- Two answers to choose from; one answer (today).
+- A question for them to ask her.
+- Answer in English, offered on purpose; the line in the language comes back to say (How do I say it).
+- Answers offered in her speech ("…just say *Vorrei la carbonara*, I'd like the carbonara"): spoken only, or spoken and shown.
+
+Out: three or more answers (crowds the screen); one word missing with words to choose (a puzzle); answer then "E lei?" (the same as one or two answers). Not yet judged: repeat after her; a sentence start to finish; build it from two pieces; a key word only; a hint in English only; free; a listening turn; catch her out.
+
+## Across Beginner
+
+- **A ramp, English as the floor.** What changes is what the English does, not how much: English leads, the language echoes it → the language leads, English echoes it → English only sets the scene. Not "harder" or "less".
+- **Ask before removing scaffolding.** When the record says a learner looks ready, they're asked, and they decide. Each ask names the one part that changes ("Want to hear the Italian first, with the English after?"), never "less English".
+- **Open:** what the record counts as ready, and how far apart the asks are.
+
+## Built from production
+
+The turn stays `runBeginnerTurn` / `buildBeginnerPrompt` with the parts format (english, word, question, answer, gloss), `tidyParts`, the shared dialogue rules, the said-back note, memory and the setting line; the app side doesn't change for the core mechanic. **New:** a shape picker in code; its line goes in through the existing `stageText` hook in place of the stage blocks; the Beginner prompt shrinks to who and where. To check: Ask in English and the underline as an `english` part followed by a `word` part, with no schema change. Tested with `npm run test:conversations` (A/B variants, simulated learner, kept transcripts).
+
+## Next
+
+1. ~~This spec~~ (2026-11-09).
+2. The shape picker and a short Beginner prompt, offline; a test card first (reviewed), then real places (Nino, Antonio, Tere and others) played today's way and the new way.
+3. Josh reads them side by side.
+4. If better: into the game, then his phone.
+5. Then, one at a time: answers in her speech, the question for them to ask, answer in English on purpose, the ramp and the asks.
+
+---
+
+## How we got here
+
+The discussion of 2026-11-08/09, kept as it was written; where it disagrees with the spec above, the spec wins.
+
 
 ## Where it stands (2026-11-09)
 
