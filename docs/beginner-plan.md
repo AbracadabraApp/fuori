@@ -11,7 +11,15 @@
 **A Beginner visit is a short roleplay lesson with a real person in a real place.**
 - **English carries the learner:** the character sets the scene, explains, and tells them what to say, warmly, like a friend who lives there.
 - **Stage directions are for the character, not the learner** (Josh: "why does user need stage directions"): each turn the code gives the character its beat, like a director's note: the scene and hello; a moment that needs a line, with the line offered to say back; react, then the next moment; the goodbye offered to say back. Not "teach a phrase" (Josh: "heavy"): the English sets up the moment and the answer to say back does the teaching; nobody explains how to say it. The learner never sees them; this is the deterministic part ("more deterministic, but varied"): the code sets the beat, the character fills it with this person, this place.
-- **One predictable shape, varied by place and person:** the scene → a moment that needs a line (offered to say back) → react → the next moment → goodbye.
+- **One predictable shape, varied by place and person, 6–8 moments a visit** (Josh: four beats "too short"; real visits run 8–10 turns). Hello first, goodbye last; the code draws the middle from a set, fitted to the kind of place (a bench has no menu), so each visit has a different mix. Each moment is one beat with a line offered to say back:
+  - hello and names (*Mi chiamo…*)
+  - where you're from, how long you've been here (*Sono di… / Sono qui da…*)
+  - what the place offers, a choice (*Vorrei…*)
+  - the learner asks them something (*Cosa mi consiglia? / Lei è di qui?*)
+  - something about the place or their life, told in English with a little of the language, and a reaction (*Che bello! / Davvero?*)
+  - what you like (*Mi piace… / Preferisco…*)
+  - plans, coming back (*Torno giovedì / Stasera vado a…*)
+  - thanks and goodbye (*Grazie, a giovedì!*)
 - **The scaffolding leads:** answers to say back every time, the echo, help in English whenever asked.
 
 **Changes this means** (Josh decides each):
