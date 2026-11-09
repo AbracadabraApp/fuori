@@ -1,6 +1,6 @@
 # Beginner 2
 
-**Status (2026-11-09):** the plan, from Josh's decisions of 2026-11-09 (the handoff `~/.claude/plans/graceful-stirring-rossum.md`, and the session after it). Nothing is built. Supersedes the direction of [beginner-plan.md](beginner-plan.md) (the turn-shape spec, kept as the record); the facts behind it are in [beginner-deep-dive.md](beginner-deep-dive.md).
+**Status (2026-11-09):** playable behind a hidden switch (Settings → touch and hold Version → Beginner 1 · 2; 86cc802), cluster 1 only, the offers to move up not built; Josh plays it against Beginner 1. The plan, from Josh's decisions of 2026-11-09 (the handoff `~/.claude/plans/graceful-stirring-rossum.md`, and the session after it). Nothing is built. Supersedes the direction of [beginner-plan.md](beginner-plan.md) (the turn-shape spec, kept as the record); the facts behind it are in [beginner-deep-dive.md](beginner-deep-dive.md).
 
 ## Rules for the work
 
