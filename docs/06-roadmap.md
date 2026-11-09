@@ -15,7 +15,7 @@ The open to-do list (reorganized 2026-11-08; made specific the same night at Jos
    - Done when: Josh says it works or names what doesn't.
 2. **Claude (mini session `replies`): faster replies.** Today 2.5–3 s per reply in real play (first token ~0.7 s; most of it is writing the reply); target 2 s.
    - [x] Prompt caching: measured, not shipped (5409204): first token 823 → 813 ms over 20 turns, under the 150 ms gate.
-   - [ ] The reply prepared during the silence (Josh: go, 2026-11-03; design in `docs/12-native-app.md` item 5). Done when: built, tests pass, and Josh hears faster replies on the phone with no reply to a half sentence.
+   - [ ] The reply prepared during the silence (Josh: go, 2026-11-03; design in `docs/12-native-app.md` item 5). Built: server 67d7b8f, app 28ce630 (2026-11-08); needs a release and an install. Done when: built, tests pass, and Josh hears faster replies on the phone with no reply to a half sentence.
    - [ ] Then, Beginner only: replies written in advance for the 2–3 offered answers, used when the learner says one back (Josh's idea, 2026-11-08). Real play says an answer back word for word on ~40% of S1 turns (Josh) and 60% of S2 turns (Jennifer). Done when: those turns' replies start without the Claude wait, and the extra calls per turn are measured.
 3. **Claude: log tonight's findings in `docs/dialogue-ideas.md`.**
    - Next: add the Intermediate top 10 (6 of the Beginner problems don't appear there), the kind deep dive, and the place types over time, from the agent reports of 2026-11-08.
@@ -30,7 +30,8 @@ Problems seen in real play; each needs examples logged in `docs/dialogue-ideas.m
 - [ ] **D1, questions as dialogue structure**: characters ask poor questions; learners are rarely invited to ask. Queued in `docs/prompt-testing.md`. Done when: it reaches the top of the queue as a card.
 - [ ] **Question ladder for Intermediate and Advanced** (one fact, then anything). Next: Claude writes a one-paragraph proposal for Josh. Done when: Josh says yes or no.
 - [ ] **More dialect as you level up** (the setting in Settings is greyed out). Next: Josh decides whether it's wanted now. Done when: decided.
-- [ ] **Josh: targets for the scorecard's two learner rows** (share of words in the language, words per line; `format=scorecard`). Done when: two numbers written here.
+- [ ] **Josh: targets for the scorecard's two learner rows** (share of words in the language, words per line; `format=scorecard`). Today in real play: ~0.21 and ~8.5 (`docs/testing-map.md`); repeats from earlier visits has target 0. Done when: two numbers written here.
+- [ ] **Josh: the testing map's 6 open decisions** (`docs/testing-map.md` → Open decisions, 2026-11-08): whether real conversations check a kept prompt change; which doc is the source of truth for testing; rules 17 and 20 into force; how learning gets measured; the scorecard targets (above); the tests/experiments split. Done when: each answered in that doc.
 
 ### Leveling
 - [ ] **Josh and Sophia play the path.** Next: play as usual. Done when: two weeks of words spoken per week in `format=records` show whether learners move up.
@@ -69,9 +70,9 @@ Problems seen in real play; each needs examples logged in `docs/dialogue-ideas.m
 - Keep-awake in conversations (dbc036c). Records rewritten when a conversation goes on after an early end (bb0b6e6). Daily order of cities and places (b31c916). Jennifer reset to Beginner step 1.
 
 ### Possibly done or overtaken: Josh to close
-- **A better memory test** (Groundhog day visits): built 2026-11-08 as the scorecard's "Repeats from earlier visits" (real play and the conversation test; sentences of 8+ words, c47864e). Gap: it misses short replays, such as a question asked again on every visit (a1fc797). Close, or keep for the gap.
+- **A better memory test** (Groundhog day visits): built 2026-11-08 as the scorecard's "Repeats from earlier visits" (c47864e), and C5b (a92a5b8, live) stopped the replay in Mexico with no harm in Italy. Gap: the count misses short replays, such as a question asked again on every visit (a1fc797). Close, or keep for the gap.
 - **The Beginner lessons rewrite** (Italy's 21 lessons into 14 chips): merged 2026-11-03 (8da32a0, 375d1a8); the old list still shows it open.
-- **Characters change their own facts across visits** (Ettore's job, Serena's neighbourhood): likely fixed by 95bcd93 (2026-11-07, live): memory notes now keep what the character told them, not only the learner. Serena's job is also fixed in her `here` line; Ettore's former job still isn't, so he invents it once and memory keeps it. Not re-run over 3 visits since.
+- **Characters change their own facts across visits** (Ettore's job, Serena's neighbourhood): likely fixed. Memory notes keep what the character told them (95bcd93, 11-07, live); H2 (7e54a33, 11-08) interviewed 10 characters, 5 questions each: 63 of 85 facts about them not in the here line, no contradictions. Not re-run over 3 visits. H2 also found all 10 Mexico characters alike (born here, family, soccer): sameness, a separate problem.
 - **Garbled letters in replies** ("¥Hola", "dÃas"): none in 14 days of replies (checked 2026-11-08), and `npm run test:mojibake` passes.
 - **Trim the here lines** and **C6, a better here line** (old N6 items 10 and 12): C12 decided today's lines stay (Josh, 2026-11-08).
 - **The learner level check** (`LEVEL_CHECK`, off) and **moving up at 90%**: the path (`lib/path.ts`) now places and moves learners.
