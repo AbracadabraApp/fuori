@@ -1,6 +1,6 @@
 # The Beginner plan
 
-**Status:** draft for Josh (Claude, 2026-11-08). Everything below the goal is a proposal; the decisions are Josh's and marked as such. Nothing is built until he approves; prompt changes then go through a test card.
+**Status:** draft for Josh (Claude, 2026-11-08). How the Beginner level runs today, the baseline: [beginner-as-live.md](beginner-as-live.md). Everything below the goal is a proposal; the decisions are Josh's and marked as such. Nothing is built until he approves; prompt changes then go through a test card.
 
 ## The goal
 
