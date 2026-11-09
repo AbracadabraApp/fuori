@@ -29,7 +29,7 @@ Doable, but the outcome depends on a test, a decision or a plan not yet made.
   4. Learners on the old path placed into a cluster (Josh, Jennifer, Sophia).
   5. Replies written ahead for every setup, if turns carry likely answers.
   6. Docs: `beginner-as-live.md` retired, CLAUDE.md's Beginner paragraph, `progress.md`.
-  Done when: one Beginner in the code, Intermediate on the shared prompt, and the docs say so.
+  Done when: there is one prompt for every level, the level, reply setup and rules filled in per turn, no prompt or code special to one level left that hasn't been argued for, and the docs say so.
 - [ ] **Josh and Sophia play the path.** Next: play as usual. Done when: two weeks of words spoken per week in `format=records` show whether learners move up.
 
 ### Done 2026-11-08 (night)
