@@ -48,7 +48,9 @@ Her words in the language show in one bubble as she says them; no taps anywhere.
 - tells something short in English with the key words in the language (the festival, her nonna's recipe);
 - slows down or rephrases when they're lost.
 
-Also real: a turn with no question (a remark they react to), the learner leading (they ask or comment, she answers), a short turn (a reaction and one answer). **Most replies stay as today** (Josh: "most replies still need to be read in italian, answered in english - or set up the bubbles in the characters dialogue"): answers in the language to say back with English under them, or set up in her speech.
+Also real: a turn with no question (a remark they react to), the learner leading (they ask or comment, she answers), a short turn (a reaction and one answer). **Two ways to set up the reply** (Josh, 2026-11-09): she asks, and either
+- **the bubbles:** two answers to say back (Beginner 1 today), or
+- **the gloss in her speech, no bubbles:** she glosses the words that matter as she asks, and the learner builds the answer from them ("Piccante o dolce? Spicy or sweet, quale ti piace? which do you like?" → "Piccante" or "Mi piace dolce").
 
 **Varied, but predictable:** a seeded pick among the shapes the rules allow, never repeating either of the last two turns' shapes. A new pick every turn, seeded by the conversation and the turn's number, so a conversation replays with the same shapes (for side-by-side tests and Records); the opening, before there's a conversation, by learner, place and day, so tomorrow's opener differs (Josh, 2026-11-09).
 
@@ -57,6 +59,7 @@ Also real: a turn with no question (a remark they react to), the learner leading
 - Two answers to choose from; one answer (today).
 - A question for them to ask her.
 - Answer in English, offered on purpose; the line in the language comes back to say (How do I say it).
+- Built from her glossed words, no bubbles: she glosses the key words as she asks (*piccante o dolce*, spicy or sweet; *quale ti piace*, which do you like) and they make their own answer from them.
 - Answers offered in her speech ("…just say *Vorrei la carbonara*, I'd like the carbonara"): spoken only, or spoken and shown.
 
 Out: three or more answers (crowds the screen); one word missing with words to choose (a puzzle); answer then "E lei?" (the same as one or two answers). Out as unrealistic, classroom exercises no one does in a bar (Josh, 2026-11-09): repeat after her; a sentence start to finish; a key word only; a hint in English only; a listening turn; catch her out. Not yet judged: build it from two pieces; free.
