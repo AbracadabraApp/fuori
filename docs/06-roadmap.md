@@ -6,66 +6,45 @@ This file is the one place for **what's in each milestone** and **what to do nex
 
 ## Now
 
-The open to-do list (reorganized 2026-11-08; made specific the same night at Josh's request: "much of todo doesn't seem specific enough"). Each item says **who**, the **next step**, and **done when**. Everything that was here before is unchanged below under [The old Now list](#the-old-now-list-history-to-2026-11-08).
+The open to-do list (reorganized 2026-11-08; made specific the same night at Josh's request: "much of todo doesn't seem specific enough"; ordered from most to least confident it's achievable, Josh). Each item says **who**, the **next step**, and **done when**. Everything that was here before is unchanged below under [The old Now list](#the-old-now-list-history-to-2026-11-08).
 
-### Next up
-1. **Josh: play the build on the phone** (bb0b6e6, installed 2026-11-08).
-   - Next: play two or three places in Italy; open the city and place lists on two different days.
-   - Listen for: the screen never locks mid-conversation; the first three place cards include a piazza, church, park or similar; the order changes the next day, unvisited places first.
-   - Done when: Josh says it works or names what doesn't.
-2. **Claude (mini session `replies`): faster replies.** Today 2.5–3 s per reply in real play (first token ~0.7 s; most of it is writing the reply); target 2 s.
-   - [x] Prompt caching: measured, not shipped (5409204): first token 823 → 813 ms over 20 turns, under the 150 ms gate.
-   - [ ] The reply prepared during the silence (Josh: go, 2026-11-03; design in `docs/12-native-app.md` item 5). Built: server 67d7b8f, app 28ce630 (2026-11-08); needs a release and an install. Done when: built, tests pass, and Josh hears faster replies on the phone with no reply to a half sentence.
-   - [ ] Then, Beginner only: replies written in advance for the 2–3 offered answers, used when the learner says one back (Josh's idea, 2026-11-08). Real play says an answer back word for word on ~40% of S1 turns (Josh) and 60% of S2 turns (Jennifer). Done when: those turns' replies start without the Claude wait, and the extra calls per turn are measured.
-3. **Claude: log tonight's findings in `docs/dialogue-ideas.md`.**
-   - Next: add the Intermediate top 10 (6 of the Beginner problems don't appear there), the kind deep dive, and the place types over time, from the agent reports of 2026-11-08.
-   - Done when: committed, with examples quoted from the conversations.
-4. **Josh, then Claude: choose the next dialogue test.**
-   - Next: Claude proposes 2–3 tests from the queue (`docs/prompt-testing.md` → The queue: F1 judges, F2 simulated learner, V2 moments, H2 shop here lines) matched to the top problems; Josh picks one.
-   - Done when: a reviewed card is at the top of the queue (rule: no test without a card).
-
-### Dialogue and characters
-Problems seen in real play; each needs examples logged in `docs/dialogue-ideas.md` before any fix, and any prompt change needs a test card.
-- [ ] **Characters lose the scene**: the same coffee served twice (Antonio, 11-06), a choice offered after it was handed over, coffee offered at a closed bar (Nino, 11-09). 12 of 67 Beginner conversations over 20 days; examples already in `docs/dialogue-ideas.md` (Beginner top 10, #7). Forgetting the visitor is mostly gone (no bad case after 10-24; memory fix 95bcd93). Next: a test card on keeping track of what's on the counter. Done when: the card is reviewed and in the queue.
-- [ ] **D1, questions as dialogue structure**: characters ask poor questions; learners are rarely invited to ask. Queued in `docs/prompt-testing.md`. Done when: it reaches the top of the queue as a card.
-- [ ] **Question ladder for Intermediate and Advanced** (one fact, then anything). Next: Claude writes a one-paragraph proposal for Josh. Done when: Josh says yes or no.
-- [ ] **More dialect as you level up** (the setting in Settings is greyed out). Next: Josh decides whether it's wanted now. Done when: decided.
-
-### Leveling
-- [ ] **Josh and Sophia play the path.** Next: play as usual. Done when: two weeks of words spoken per week in `format=records` show whether learners move up.
-
-### The Beginner plan
-- [ ] **One plan for the Beginner level** ([beginner-plan.md](beginner-plan.md): the shape of turns, what counts toward moving up, placement, the path's fading, and the other Beginner items). Next: Claude drafts it from the goal, for Josh. Done when: Josh approves it.
-
-### Lessons
-- [ ] **Intermediate lessons draft: 50 lines to fix** (`content/it/lessons-b1.json`, not read by the app). Waits on: Josh's review of the proposal (old list below, item 4). Done when: Josh says yes, then the lines are fixed and the app reads the file.
-
-### App
-- [ ] **Visit stamps as a scontrino** (design locked 2026-10-29, [visited-badge.md](visited-badge.md)). Next: Josh says when to build it. Done when: on the phone and Josh approves the look.
-- [ ] **City picker.** Next: Josh names what's wrong with it. Done when: Claude has fixed that and Josh approves.
-- [ ] **Adventures** ([adventures.md](adventures.md)). Waits on: Josh playing the current places. Done when: Josh has a direction.
-- [ ] **Missions prototype P1–P3 and card maker v2** ([diario.md](diario.md); the Diario isn't built). Waits on: Josh's go.
-- [ ] **Night-paper palette for Dark Mode.** Deferred; light only until then.
-
-### Speech and services
+### Most confident it's achievable
+Clear next step, known how, small; several only wait on Josh's word.
+- [ ] **Release the replies written ahead and play them** (1c87680, built and tested 2026-11-08): a Beginner's answers said back are answered in ~0.1 s instead of ~2.5 s (local end-to-end, Italy). Next: release and install (Josh's word), then Josh plays a Beginner conversation and says answers back. Done when: Josh hears the quick replies; `draft-used` / `draft-wasted` in the logs show the share used and the extra calls.
+- [ ] **Josh: play the build on the phone** (bb0b6e6, installed 2026-11-08): the screen never locks mid-conversation; an open space in the first three place cards; a new order the next day, unvisited first. Done when: Josh says it works or names what doesn't.
+- [ ] **Claude: log tonight's findings in `docs/dialogue-ideas.md`**: the Intermediate top 10 (6 of the Beginner problems don't appear there), the kind deep dive, and the place types over time, from the agent reports of 2026-11-08. Done when: committed, with examples quoted from the conversations.
 - [ ] **Recordings: keep what happened next** (sent, said in English, "didn't catch that") beside each kept recording, so another speech-to-text or end-of-turn silence can be replayed against them. Next: Claude adds the outcome to each kept recording. Done when: `npm run replay:recordings` reports outcomes.
-- [ ] **Conversation library and turn timings beyond the family.** Waits on: Josh's privacy decision.
-- [ ] **Test outside services one at a time:** ElevenLabs model and quota, server region, R2 image load times, speech-to-text alternatives on the kept recordings. Next: Claude picks the one with the most time to win (likely server region). Done when: each has one measured number here.
-
-### Before testers outside the family
-- [ ] **App Attest** when a device registers. Done when: a device without it can't get a learner id.
 - [ ] **A daily budget per learner that survives deploys** (`usage_daily`; today's caps reset on every deploy). Done when: a cap holds across a release.
-- [ ] **R2 custom domain for images.** Waits on: Josh picking the domain.
+- [ ] **App Attest** when a device registers. Done when: a device without it can't get a learner id.
 - [ ] **Privacy policy** at a public URL naming Groq, Anthropic and ElevenLabs, plus one line at the microphone step. Next: Claude drafts; Josh approves.
+- [ ] **Question ladder for Intermediate and Advanced** (one fact, then anything). Next: Claude writes a one-paragraph proposal for Josh. Done when: Josh says yes or no.
 - [ ] **Josh: App Privacy label, beta description, feedback email, reviewer notes** (Claude drafts each).
 - [ ] **Josh: approve the tester questions**, updated first (the wait is ~3 s, there's a Beginner level, it's hands-free).
+- [ ] **R2 custom domain for images.** Waits on: Josh picking the domain.
+- [ ] **Visit stamps as a scontrino** (design locked 2026-10-29, [visited-badge.md](visited-badge.md)). Next: Josh says when to build it. Done when: on the phone and Josh approves the look.
+- [ ] **More dialect as you level up** (the setting in Settings is greyed out). Next: Josh decides whether it's wanted now. Done when: decided.
 
-### The App Store (later)
-- [ ] "Report this line"; screenshots, description, age rating, review notes.
-- [ ] Storefronts outside the EU.
+### Fairly confident
+Doable, but the outcome depends on a test, a decision or a plan not yet made.
+- [ ] **Josh, then Claude: choose the next dialogue test.** Next: Claude proposes 2–3 tests from the queue (`docs/prompt-testing.md` → The queue) matched to the top problems; Josh picks one. Done when: a reviewed card is at the top of the queue.
+- [ ] **Characters lose the scene**: the same coffee served twice (Antonio, 11-06), a choice offered after it was handed over, coffee offered at a closed bar (Nino, 11-09). 12 of 67 Beginner conversations over 20 days; examples already in `docs/dialogue-ideas.md` (Beginner top 10, #7). Forgetting the visitor is mostly gone (no bad case after 10-24; memory fix 95bcd93). Next: a test card on keeping track of what's on the counter. Done when: the card is reviewed and in the queue.
+- [ ] **Test outside services one at a time:** ElevenLabs model and quota, server region, R2 image load times, speech-to-text alternatives on the kept recordings. Next: Claude picks the one with the most time to win (likely server region). Done when: each has one measured number here.
+- [ ] **City picker.** Next: Josh names what's wrong with it. Done when: Claude has fixed that and Josh approves.
+- [ ] **Intermediate lessons draft: 50 lines to fix** (`content/it/lessons-b1.json`, not read by the app). Waits on: Josh's review of the proposal (old list below, item 4). Done when: Josh says yes, then the lines are fixed and the app reads the file.
+- [ ] **One plan for the Beginner level** ([beginner-plan.md](beginner-plan.md): the shape of turns, what counts toward moving up, placement, the path's fading, and the other Beginner items). Next: Claude drafts it from the goal, for Josh. Done when: Josh approves it.
+- [ ] **Josh and Sophia play the path.** Next: play as usual. Done when: two weeks of words spoken per week in `format=records` show whether learners move up.
+
+### Least confident
+Open-ended, waiting on ideas or decisions, or far off.
+- [ ] **D1, questions as dialogue structure**: characters ask poor questions; learners are rarely invited to ask. Queued in `docs/prompt-testing.md`. Done when: it reaches the top of the queue as a card.
+- [ ] **Adventures** ([adventures.md](adventures.md)). Waits on: Josh playing the current places. Done when: Josh has a direction.
+- [ ] **Missions prototype P1–P3 and card maker v2** ([diario.md](diario.md); the Diario isn't built). Waits on: Josh's go.
+- [ ] **Conversation library and turn timings beyond the family.** Waits on: Josh's privacy decision.
+- [ ] **Night-paper palette for Dark Mode.** Deferred; light only until then.
+- [ ] **The App Store (later):** "Report this line"; screenshots, description, age rating, review notes; storefronts outside the EU.
 
 ### Done 2026-11-08 (night)
-- Keep-awake in conversations (dbc036c). Records rewritten when a conversation goes on after an early end (bb0b6e6). Daily order of cities and places (b31c916). Jennifer reset to Beginner step 1.
+- Prompt caching measured, not shipped (5409204). The silence draft removed; its server half reused for replies written ahead (1c87680). Keep-awake in conversations (dbc036c). Records rewritten when a conversation goes on after an early end (bb0b6e6). Daily order of cities and places (b31c916). Jennifer reset to Beginner step 1.
 
 ### Possibly done or overtaken: Josh to close
 - **A better memory test** (Groundhog day visits): built 2026-11-08 as the scorecard's "Repeats from earlier visits" (c47864e), and C5b (a92a5b8, live) stopped the replay in Mexico with no harm in Italy. Gap: the count misses short replays, such as a question asked again on every visit (a1fc797). Close, or keep for the gap.
