@@ -34,10 +34,6 @@ Doable, but the outcome depends on a test, a decision or a plan not yet made.
 - [ ] **One plan for the Beginner level** ([beginner-plan.md](beginner-plan.md): the shape of turns, what counts toward moving up, placement, the path's fading, and the other Beginner items). Next: Claude drafts it from the goal, for Josh. Done when: Josh approves it.
 - [ ] **Josh and Sophia play the path.** Next: play as usual. Done when: two weeks of words spoken per week in `format=records` show whether learners move up.
 
-### Least confident
-Open-ended, waiting on ideas or decisions, or far off.
-- [ ] **D1, questions as dialogue structure**: characters ask poor questions; learners are rarely invited to ask. Queued in `docs/prompt-testing.md`. Done when: it reaches the top of the queue as a card.
-
 ### Done 2026-11-08 (night)
 - **Decided (Josh):** keep all transcripts, only approved recordings. Already how the server works (every conversation's turns saved; recordings only for `KEEP_RECORDINGS_FOR`), so the conversation library beyond the family needs no change.
 - Prompt caching measured, not shipped (5409204). The silence draft removed; its server half reused for replies written ahead (1c87680). Keep-awake in conversations (dbc036c). Records rewritten when a conversation goes on after an early end (bb0b6e6). Daily order of cities and places (b31c916). Jennifer reset to Beginner step 1.

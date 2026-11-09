@@ -15,3 +15,4 @@
 - **Say it in English, the scaffolding loop** (say it in English → a line in the language → read it out loud): measuring English transcription on recordings, and the tabled help with the learner's own language (old list → Scaffolding).
 - **Replies written in advance for the offered answers** stays under Faster replies (it's speed), but its numbers (~40% of S1 turns said back) belong to this plan too.
 - **Tester question:** can beginners follow at their level? (old list → Release, Stage 2, question 3.)
+- **The learner asks too** (from D1, Josh, 2026-11-07: "encouraging learners to ask questions may also help"): some of the answers to say back could be questions ("¿Usted qué me recomienda?", "Cuénteme más"). In test C4 the learner's own questions were what brought out local talk. D1 itself is off the to-do list (2026-11-08); the character's side (one answerable question, not the same one every visit) is in the dialogue top 10.
