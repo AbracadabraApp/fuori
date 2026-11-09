@@ -9,14 +9,18 @@ This file is the one place for **what's in each milestone** and **what to do nex
 The open to-do list, reorganized 2026-11-08 at Josh's request: only what's still to do, grouped by area, next steps first. Everything that was here before (done items, decisions, history) is unchanged below under [The old Now list](#the-old-now-list-history-to-2026-11-08).
 
 ### Next up
-1. **Josh:** play the build on the phone (dbc036c, live and installed 2026-11-08): the screen stays on in conversations, the trailer screen, and the prompt changes released with it (memory, commerce, here lines).
-2. **Dialogue: the top 10 problems** from 20 days of real conversations (an agent reading transcripts only, 2026-11-08) → `docs/dialogue-ideas.md`; then choose what to test from the queue (`docs/prompt-testing.md`). Seen in tonight's review: every Beginner turn the same shape (English aside, then "X or Y?"); characters forgetting the scene (Nino's coffee at a closed bar).
-3. **Faster replies:** the server reply is 2.5–3 s in real play (2026-11-08), over the 2 s target.
-   - [ ] The reply prepared during the silence (Josh: go, 2026-11-03), up to ~1 s off most turns.
-   - [ ] Prompt caching for the character and Beginner prompts (measure before and after).
-   - [ ] The 0.4 s lost since 10-26: measure with and without the path's stage blocks.
+1. **Josh:** play the build on the phone (bb0b6e6, live and installed 2026-11-08): places and cities in a new order each day (unvisited first, an open space in the first three), the screen staying on, and the record fix (a locked phone no longer cuts a conversation's count short).
+2. **Faster replies** (2.5–3 s in real play, target 2 s; first token ~0.7 s, the rest is writing the reply). Running on the mini (`mini replies`, approved 2026-11-08):
+   - [ ] Prompt caching, only in the two turn calls and only if first token drops ≥150 ms (Josh: not where the benefit is near 0).
+   - [ ] The reply prepared during the silence (Josh: go, 2026-11-03).
+   - [ ] Later, Beginner only: replies written in advance for the offered answers (Josh's idea, 2026-11-08); worth it only if real beginners say them back (13% of S1 turns in the last 14 days, mostly family who already speak).
+   - Dropped: the 0.4 s lost since Oct 26 (Josh: not really traceable).
+3. **Dialogue:** choose what to test from the queue (`docs/prompt-testing.md`), using the top 10 lists in `docs/dialogue-ideas.md`.
+   - [ ] Log there too: the Intermediate top 10 (6 of the Beginner problems don't appear at Intermediate), the kind deep dive and the place-type history (agent reports, 2026-11-08).
 
 ### Dialogue and characters
+- [ ] Beginner reads flat: every turn the same shape (English aside, then "X or Y?"); Josh's theory is that the Beginner prompt is overbuilt (`docs/dialogue-ideas.md`, 2026-11-08).
+- [ ] Characters forget the scene (Nino's coffee at a closed bar) and the visitor (Nunzio missed that the grandfather had died).
 - [ ] Characters keep their own details across visits (Ettore's job changed every visit; Serena's neighbourhood).
 - [ ] D1: questions as dialogue structure (characters need help asking questions; learners could be encouraged to ask). Queued.
 - [ ] A better memory test: measure replayed visits, not repeated topics (C5b applied; the test itself still to build).
@@ -26,6 +30,8 @@ The open to-do list, reorganized 2026-11-08 at Josh's request: only what's still
 - [ ] **Josh:** targets for the scorecard's two learner rows (share of words, words per line).
 
 ### Leveling
+- [ ] **Josh:** said-back answers don't count as own turns, so S1 holds a learner at S1 (Josh's own path: 2 easy counted conversations in 3 days). Change the rule?
+- [ ] Placement: onboarding's "own words" answer put Jennifer at step 3 with no English (reset to step 1, 2026-11-08). Check other learners; is step 3 too far for that answer?
 - [ ] **Josh and Sophia** play the path; words spoken per week in the admin (`format=records`) shows whether it works.
 
 ### Lessons
@@ -36,6 +42,7 @@ The open to-do list, reorganized 2026-11-08 at Josh's request: only what's still
 - [ ] Visit stamps redesigned as a scontrino (design locked 2026-10-29, [visited-badge.md](visited-badge.md)); not built.
 - [ ] **Josh:** say what's wrong with the city picker; then Claude improves it.
 - [ ] Adventures ([adventures.md](adventures.md)): ideas forming; Josh plays the current places first.
+- [x] Cities and places in a new order each day (b31c916, 2026-11-08).
 - [ ] Missions prototype P1–P3 and card maker v2 ([diario.md](diario.md); the Diario isn't built).
 - [ ] Night-paper palette for Dark Mode (deferred; light only until then).
 
@@ -55,6 +62,9 @@ The open to-do list, reorganized 2026-11-08 at Josh's request: only what's still
 ### The App Store (later)
 - [ ] "Report this line"; screenshots, description, age rating, review notes.
 - [ ] Storefronts outside the EU.
+
+### Done 2026-11-08 (night)
+- Keep-awake in conversations (dbc036c). Records rewritten when a conversation goes on after an early end (bb0b6e6). Daily order of cities and places (b31c916). Jennifer reset to Beginner step 1.
 
 ### Possibly done or overtaken: Josh to close
 - **Trim the here lines** and **C6, a better here line** (old N6 items 10 and 12): C12 decided today's lines stay (Josh, 2026-11-08).
