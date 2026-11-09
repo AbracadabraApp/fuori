@@ -81,6 +81,7 @@
     "test:study-export": "tsx tests/check-study-export.ts",
     "smoke:live": "tsx scripts/smoke-live.ts",
     "measure:turn": "tsx scripts/measure-turn.ts",
+    "bench": "tsx scripts/measure-turn.ts --stream --turns=6 --log && COUNTRY=es-mx tsx scripts/measure-turn.ts --stream --turns=6 --log",
     "replay:recordings": "tsx --env-file=.env.local scripts/replay-recordings.mts",
     "test:keep-recording": "tsx tests/check-keep-recording.mts",
     "test:leave": "tsx tests/check-leave.ts",

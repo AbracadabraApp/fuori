@@ -12,6 +12,7 @@
  *   npm run measure:turn -- --url=http://localhost:3000 --keep
  *   npm run measure:turn -- --no-early   # the voice made only when asked, as before 2026-10-22
  *   npm run measure:turn -- --stream     # streamed, as the app asks: the voice from the first sentence
+ *   npm run bench                        # streamed, both countries, a row each in docs/benchmarks.md (--log)
  *
  * The learner's recordings are made once with the greeter's hosted voice
  * (through /v1/speak) and converted to m4a with afconvert, like the app's.
@@ -41,6 +42,8 @@ const turnSpeed = process.argv.includes('--no-early') ? 0.7 : SPEED;
 // --stream: the turn streamed as the app asks for it (Accept: application/x-ndjson):
 // the voice starts with the first sentence when the line has more than one
 const stream = process.argv.includes('--stream');
+// --log: add the medians as a row to docs/benchmarks.md (streamed runs; Josh, 2026-11-08: track per-service times when time seems off)
+const logRow = process.argv.includes('--log');
 
 /** A streamed /v1/turn: ms to the first sentence (if any), ms to the reply, the reply */
 async function streamedTurn(base: string, headers: Record<string, string>, body: unknown) {
@@ -142,7 +145,7 @@ async function main() {
     if (stream) {
       // Tap to the first sound: transcribe, then the first sentence (or the whole
       // reply when it's one sentence), then its voice
-      const rows: { wait: number; split: boolean; firstMs: number; replyMs: number; voiceMs: number; words: number }[] = [];
+      const rows: { wait: number; split: boolean; trMs: number; firstMs: number; replyMs: number; voiceMs: number; words: number }[] = [];
       for (let i = 0; i < turns; i++) {
         const form = new FormData();
         form.append('audio', new Blob([new Uint8Array(recordings[i % recordings.length])], { type: 'audio/m4a' }), 'speech.m4a');
@@ -155,7 +158,7 @@ async function main() {
         if (tu.first) await timed(json('/v1/speak', { text: tu.reply.line.slice(tu.first.text.length).trim(), characterId: person.id, speed: SPEED }));
         const toVoice = tu.first ? tu.first.ms : tu.ms;
         const wait = tr.step.client + toVoice + sp.step.client;
-        rows.push({ wait, split: !!tu.first, firstMs: toVoice, replyMs: tu.ms, voiceMs: sp.step.client, words: tu.reply.line.split(/\s+/).length });
+        rows.push({ wait, split: !!tu.first, trMs: tr.step.client, firstMs: toVoice, replyMs: tu.ms, voiceMs: sp.step.client, words: tu.reply.line.split(/\s+/).length });
         console.log(`turn ${i + 1}: ${wait} ms = transcribe ${tr.step.client} + ${tu.first ? `first sentence ${tu.first.ms} (whole reply ${tu.ms})` : `reply ${tu.ms} (one sentence)`} + voice ${sp.step.client}   → "${tu.reply.line}"`);
       }
       const m = (f: (r: (typeof rows)[number]) => number) => median(rows.map(f));
@@ -164,6 +167,16 @@ async function main() {
       console.log(`  to the first words  ${m((r) => r.firstMs)}   (whole reply ${m((r) => r.replyMs)}; split ${rows.filter((r) => r.split).length} of ${rows.length})`);
       console.log(`  voice               ${m((r) => r.voiceMs)}`);
       console.log(`  reply length        ${m((r) => r.words)} words`);
+      if (logRow) {
+        const live = (() => { try { return execFileSync('git', ['rev-parse', '--short', 'origin/live'], { encoding: 'utf8' }).trim(); } catch { return '?'; } })();
+        const ms = (n: number) => `${n.toLocaleString('en-US')} ms`;
+        const row = `| ${new Date().toISOString().slice(0, 10)} | ${live} | ${country === 'es-mx' ? 'Mexico' : 'Italy'} | ${ms(m((r) => r.trMs))} | ${ms(m((r) => r.firstMs))} | ${ms(m((r) => r.replyMs))} | ${ms(m((r) => r.voiceMs))} | **${ms(m((r) => r.wait))}** |`;
+        const file = 'docs/benchmarks.md';
+        const doc = readFileSync(file, 'utf8');
+        const marker = '<!-- rows above -->';
+        writeFileSync(file, doc.includes(marker) ? doc.replace(marker, `${row}\n${marker}`) : `${doc.trimEnd()}\n${row}\n`);
+        console.log(`Logged to ${file}`);
+      }
       return;
     }
 
