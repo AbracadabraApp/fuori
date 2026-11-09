@@ -10,15 +10,15 @@
 
 **A Beginner visit is a short roleplay lesson with a real person in a real place.**
 - **English carries the learner:** the character sets the scene, explains, and tells them what to say, warmly, like a friend who lives there.
-- **Stage directions are for the character, not the learner** (Josh: "why does user need stage directions"): each turn the code gives the character its beat, like a director's note: set the scene, teach the phrase this place needs, let them try it, react and explain, offer the goodbye. The learner never sees them; this is the deterministic part ("more deterministic, but varied"): the code sets the beat, the character fills it with this person, this place.
-- **One predictable shape, varied by place and person:** the scene → a phrase or two this place needs → they try it → react and explain → maybe one more → goodbye.
+- **Stage directions are for the character, not the learner** (Josh: "why does user need stage directions"): each turn the code gives the character its beat, like a director's note: the scene and hello; a moment that needs a line, with the line offered to say back; react, then the next moment; the goodbye offered to say back. Not "teach a phrase" (Josh: "heavy"): the English sets up the moment and the answer to say back does the teaching; nobody explains how to say it. The learner never sees them; this is the deterministic part ("more deterministic, but varied"): the code sets the beat, the character fills it with this person, this place.
+- **One predictable shape, varied by place and person:** the scene → a moment that needs a line (offered to say back) → react → the next moment → goodbye.
 - **The scaffolding leads:** answers to say back every time, the echo, help in English whenever asked.
 
 **Changes this means** (Josh decides each):
 - Two Beginner rules turn around: *English: brief* (at most two sentences) and *Role: not a teacher* (never explain how people talk). *Voice: no narration* stays: nothing the learner hears is narration.
 - CLAUDE.md's Beginner teaching rule changes to match: Beginner visits teach openly, in role.
 
-**Sketch: Nino's visit (2026-11-09) as a roleplay lesson.** Same person, place and facts as the real conversation; answers to say back after each turn. *The italic lines here only help the reader picture it; they aren't said or shown.* The beat the code would give him each turn: scene and name → teach "Cosa mi consiglia?" → a choice with "Vorrei…" → teach "Torno…" → goodbye.
+**Sketch: Nino's visit (2026-11-09) as a roleplay lesson.** Same person, place and facts as the real conversation; answers to say back after each turn. *The italic lines here only help the reader picture it; they aren't said or shown.* The beat the code would give him each turn: scene and name → a moment needing "Cosa mi consiglia?" → a choice with "Vorrei…" → coming back ("Torno…") → goodbye. The sketch still has him explaining phrases ("Here you say…", "Try it"); with the lighter beats he'd only set up the moment and offer the line.
 
 > *Garbatella, after lunch. The osteria's kitchen is closed. Nino sits by the door with his coffee, next to the chalk menu board.*
 >
