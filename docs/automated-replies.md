@@ -1,12 +1,12 @@
-# Auto mode: conversations that play themselves
+# Automated replies: conversations that play themselves
 
-**Status (2026-11-09):** notes and a design from a conversation with Josh. Nothing built. On the to-do list (`docs/06-roadmap.md` → Now).
+**Status (2026-11-09):** named automated replies (Josh); notes and a design from a conversation with Josh. Nothing built. On the to-do list (`docs/06-roadmap.md` → Now).
 
 ## Why
 
 A simulated learner would be a big gain for development, but we've never had a good one (`docs/prompt-testing.md` → F2). Josh: the mistake may have been mixing **quality** with **utility**. F2 asked for both at once: lines Josh would believe came from a real learner (quality), and a learner that never brings up what's measured (utility). A believable learner wanders; a controllable one is a bit artificial. Nothing passed, and everything that waited on it stalled.
 
-Josh's idea (2026-11-09): **an auto response mode, the character's own offered answers sent back as the learner's reply.** Every Beginner turn already carries answers to say back, so a conversation can play itself with no learner model at all.
+Josh's idea (2026-11-09): **automated replies, the character's own offered answers sent back as the learner's reply.** Every Beginner turn already carries answers to say back, so a conversation can play itself with no learner model at all.
 
 ## What it's for
 
@@ -23,7 +23,7 @@ Because the learner only says what she offered, whatever local talk, drift or re
 
 ## Design
 
-**Where it runs.** A test script, through the server's own turn code (as `tests/experiments/moments.mts` and the variety gate do), against the test database, so memory is written between visits by the real summariser. Not in the app for now; a later option is a hidden "auto" switch in the Version panel to watch a conversation play on the phone.
+**Where it runs.** A test script, through the server's own turn code (as `tests/experiments/moments.mts` and the variety gate do), against the test database, so memory is written between visits by the real summariser. Not in the app for now; a later option is a hidden "automated replies" switch in the Version panel to watch a conversation play on the phone.
 
 **The learner's turn**, each picked at seeded rates:
 - **Say an offered answer back:** the first, the second, or the one that fits a persona.
@@ -45,7 +45,7 @@ Because the learner only says what she offered, whatever local talk, drift or re
 
 Checked against real play by numbers (words per line, share of English, said back against own words), never by "would Josh believe it". The Nov 8 test learner already matched real learners on words per line (8.7 against 8.5).
 
-**Turns with no bubbles** (Beginner 2's glossed words, free replies, Intermediate): nothing to pick. The turn could also carry likely answers that aren't shown. That would serve three things: auto mode on every setup, replies written ahead on every setup, and the record telling said back from own words without bubbles. A Beginner 2 decision, not built.
+**Turns with no bubbles** (Beginner 2's glossed words, free replies, Intermediate): nothing to pick. The turn could also carry likely answers that aren't shown. That would serve three things: automated replies on every setup, replies written ahead on every setup, and the record telling said back from own words without bubbles. A Beginner 2 decision, not built.
 
 **Runs.** A set of places × visits × persona, both prompt versions when comparing; every turn saved to a file and read before any number is reported (`docs/prompt-testing.md` rule 8). Italy first, Mexico to confirm.
 
