@@ -13,7 +13,7 @@ The open to-do list, reorganized 2026-11-08 at Josh's request: only what's still
 2. **Faster replies** (2.5–3 s in real play, target 2 s; first token ~0.7 s, the rest is writing the reply). Running on the mini (`mini replies`, approved 2026-11-08):
    - [ ] Prompt caching, only in the two turn calls and only if first token drops ≥150 ms (Josh: not where the benefit is near 0).
    - [ ] The reply prepared during the silence (Josh: go, 2026-11-03).
-   - [ ] Later, Beginner only: replies written in advance for the offered answers (Josh's idea, 2026-11-08); worth it only if real beginners say them back (13% of S1 turns in the last 14 days, mostly family who already speak).
+   - [ ] Later, Beginner only: replies written in advance for the offered answers (Josh's idea, 2026-11-08); real play in the last 14 days says an offered answer back word for word on ~40% of S1 turns and 60% of Jennifer's S2 turns (from transcripts; an earlier 13% was wrong, skewed by smoke-test learners and records cut short), so an instant reply on roughly every other Beginner turn, for 2–3 extra calls per turn.
    - Dropped: the 0.4 s lost since Oct 26 (Josh: not really traceable).
 3. **Dialogue:** choose what to test from the queue (`docs/prompt-testing.md`), using the top 10 lists in `docs/dialogue-ideas.md`.
    - [ ] Log there too: the Intermediate top 10 (6 of the Beginner problems don't appear at Intermediate), the kind deep dive and the place-type history (agent reports, 2026-11-08).
