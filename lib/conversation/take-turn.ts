@@ -47,6 +47,12 @@ export interface TakeTurnParams {
    * needs the new id.
    */
   saveAfterReply?: boolean;
+  /**
+   * A draft (docs/12-native-app.md item 5): don't save yet. The result carries
+   * `commit`, which saves the exchange when the learner's turn is confirmed;
+   * never called for a draft they spoke over. Needs saveAfterReply.
+   */
+  deferSave?: boolean;
   /** The reply written so far, on every streamed chunk (runTurn's onText) */
   onText?: (snapshot: string) => void;
   /** False once part of the reply was sent on (its first sentence): a stall then fails instead of retrying */
@@ -66,6 +72,8 @@ export interface TakeTurnResult {
   conversationId: string | null;
   memory?: CharacterMemory;
   isTutor: boolean;
+  /** Only for a deferred save: saves the exchange (once) */
+  commit?: () => void;
 }
 
 export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
@@ -194,6 +202,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // Save the exchange so conversations can be reviewed later. Never blocks the
   // reply: recording problems are reported and the conversation carries on.
   let savedId: string | null = null;
+  let commit: (() => void) | undefined;
   if (learnerId) {
     const save = () =>
       recordTurn({
@@ -210,7 +219,15 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         p.onSoftError('recording', err);
         return null;
       });
-    if (conversationId && p.saveAfterReply) {
+    if (conversationId && p.saveAfterReply && p.deferSave) {
+      let committed = false;
+      commit = () => {
+        if (committed) return;
+        committed = true;
+        void saveLater(conversationId, save);
+      };
+      savedId = conversationId;
+    } else if (conversationId && p.saveAfterReply) {
       // Readers of this conversation wait for it (lib/recording.ts → saveLater)
       void saveLater(conversationId, save);
       savedId = conversationId;
@@ -220,5 +237,5 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   }
   p.laps?.lap('record');
 
-  return { reply, promptVersion: version, conversationId: savedId, memory, isTutor };
+  return { reply, promptVersion: version, conversationId: savedId, memory, isTutor, ...(commit ? { commit } : {}) };
 }

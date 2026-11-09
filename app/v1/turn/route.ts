@@ -40,6 +40,7 @@ import { cities, tutor } from '@/content';
 import { writeLearnAhead } from '@/lib/learn-ahead';
 import { startEarlyVoice, DEFAULT_APP_SPEED, LineWatcher } from '@/lib/voice/early-voice';
 import { PartsWatcher, type Part } from '@/lib/beginner';
+import { DraftStore } from '@/lib/draft-turns';
 
 /** Asked for in Accept, the reply streams: { first }, then { reply } or { error } */
 const NDJSON = 'application/x-ndjson';
@@ -57,6 +58,12 @@ const Body = z.object({
   /** This conversation is the welcome (lib/welcome.ts; apps from build 10) */
   welcome: z.boolean().optional(),
   /** A lesson's turn (lib/lesson.ts) */
+  /**
+   * The reply prepared during the learner's silence (docs/12-native-app.md
+   * item 5): written but not saved, and answered at once when the same turn
+   * is sent for real. Not for openings, lessons or the welcome.
+   */
+  draft: z.boolean().optional(),
   lesson: z.object({
     stepId: z.string().max(80),
     part: z.enum(['teach', 'practice', 'review', 'story']),
@@ -73,8 +80,16 @@ const Body = z.object({
  * waits for it and gets the same reply. One server process per country
  * (Railway), so memory covers every request.
  */
-type Settled = { body: object; headers: Record<string, string> } | { status: number; error: object };
+type Settled = { body: object; headers: Record<string, string>; after?: () => void } | { status: number; error: object };
 const inFlight = new Map<string, Promise<Settled>>();
+
+/**
+ * Drafts waiting for their turn to be confirmed (lib/draft-turns.ts). One
+ * nobody claims in 60 s was spoken over: logged, and never saved.
+ */
+const drafts = new DraftStore<Settled>(60_000, (key, entry) => {
+  console.log(JSON.stringify({ level: 'info', event: 'draft-wasted', learner: key.split('|')[0].slice(0, 8), written: entry.settledAt !== undefined, writeMs: entry.settledAt !== undefined ? entry.settledAt - entry.startedAt : null }));
+});
 
 export async function POST(request: Request) {
   const laps = new Laps();
@@ -84,7 +99,10 @@ export async function POST(request: Request) {
     if (!body.success) return apiError('bad_request', body.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; '));
     // A ceiling per device (whole-app scan, 2026-10-29: turns had none):
     // hands-free at full speed is about one every 8 s, so real play stays far below
-    if (!allow(`turn:${learnerId}`, 90, 10 * 60 * 1000) || !allow(`turn-day:${learnerId}`, 1500, 24 * 60 * 60 * 1000)) {
+    // A draft has its own ceiling, so spoken-over drafts don't use up the turns' share
+    if (body.data.draft) {
+      if (!allow(`draft:${learnerId}`, 90, 10 * 60 * 1000)) return apiError('rate_limited', 'Too many turns; wait a minute', 60_000);
+    } else if (!allow(`turn:${learnerId}`, 90, 10 * 60 * 1000) || !allow(`turn-day:${learnerId}`, 1500, 24 * 60 * 60 * 1000)) {
       return apiError('rate_limited', 'Too many turns; wait a minute', 60_000);
     }
     const { conversationId, learnerSaid } = body.data;
@@ -116,7 +134,7 @@ export async function POST(request: Request) {
       });
 
     /** The turn; onFirst, when streaming, gets the first sentence as soon as more follows it */
-    const run = async (onFirst?: (first: string, parts?: Part[]) => void): Promise<{ body: object; headers: Record<string, string> } | { error: Response }> => {
+    const run = async (onFirst?: (first: string, parts?: Part[]) => void, draft = false): Promise<{ body: object; headers: Record<string, string>; after?: () => void } | { error: Response }> => {
       // Once the first sentence has gone to the app, a retried reply couldn't follow it
       let firstSent = false;
       const watcher = new LineWatcher({
@@ -151,6 +169,7 @@ export async function POST(request: Request) {
           laps,
           // The conversation was loaded above as this learner's
           saveAfterReply: true,
+          deferSave: draft,
           onText: (snapshot) => {
             watcher.feed(snapshot);
             partsWatcher.feed(snapshot);
@@ -174,7 +193,8 @@ export async function POST(request: Request) {
         laps.lap('scaffold');
         // The Learn page for the conversation as it now stands, written while
         // the learner reads and answers (lib/learn-ahead.ts)
-        if (result.conversationId && !result.isTutor) {
+        const learnAhead = () => {
+          if (!result.conversationId || result.isTutor) return;
           writeLearnAhead({
             conversationId: result.conversationId,
             character: parsed.character,
@@ -186,16 +206,26 @@ export async function POST(request: Request) {
             ],
             onError: (err) => logServerError(request, 'v1 turn learn ahead', err),
           });
+        };
+        // A draft saves and writes the Learn page only when its turn is confirmed
+        if (!draft) {
+          result.commit?.();
+          learnAhead();
         }
         laps.facts.turn = conversationId ? 'reply' : 'opening';
         laps.facts.replies = stage ?? 'no';
         laps.facts.streamed = onFirst ? 'yes' : 'no';
+        if (draft) laps.facts.draft = 'yes';
         laps.log('turn-timing', request.headers.get('x-fuori-id'));
         const headers: Record<string, string> = { 'server-timing': laps.header() };
         // Read by scripts/smoke-live.ts
         if (result.memory) headers['x-memory'] = `${result.memory.visits} visits, ${result.memory.notes.length} notes`;
         if (result.isTutor) headers['x-study-file'] = `${result.memory?.notes.length ?? 0} lines, ${result.memory?.visits ?? 0} lessons`;
-        return { body: { ...result.reply, conversationId: result.conversationId, promptVersion: result.promptVersion, replies, stage }, headers };
+        return {
+          body: { ...result.reply, conversationId: result.conversationId, promptVersion: result.promptVersion, replies, stage },
+          headers,
+          ...(draft ? { after: () => { result.commit?.(); learnAhead(); } } : {}),
+        };
       } catch (err) {
         logServerError(request, 'v1 turn', err);
         // Claude busy or down: worth retrying; anything else isn't
@@ -209,11 +239,34 @@ export async function POST(request: Request) {
 
     // The same turn already being answered: wait for it and send the same reply
     const key = conversationId && learnerSaid ? `${learnerId}|${conversationId}|${learnerSaid}` : null;
-    const settle = async (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> => {
-      const r = await run(onFirst);
+    const settle = async (onFirst?: (first: string, parts?: Part[]) => void, draft = false): Promise<Settled> => {
+      const r = await run(onFirst, draft);
       return 'error' in r ? { status: r.error.status, error: await r.error.json() } : r;
     };
-    const answer = (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> => sharedWhileRunning(inFlight, key, () => settle(onFirst));
+
+    // A draft: write the reply now, save nothing, and answer 'started' at once.
+    // Only for an ordinary turn with something said (never an opening, a lesson or the welcome)
+    if (body.data.draft) {
+      if (!key || body.data.lesson || body.data.welcome) return apiError('bad_request', 'A draft needs conversationId and learnerSaid, and is not for lessons or the welcome');
+      const started = drafts.start(key, (emit) => settle((first, parts) => emit({ first, parts }), true));
+      return apiJson({ draft: started ? 'started' : 'already' });
+    }
+
+    // The same turn drafted during the silence: take the draft (its first
+    // sentence goes out as it did, or as it comes), save the turn now
+    const claimDraft = (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> | undefined => {
+      const draft = key ? drafts.claim(key, onFirst ? (e) => { const { first, parts } = e as { first: string; parts?: Part[] }; onFirst(first, parts); } : undefined) : undefined;
+      if (!draft) return undefined;
+      return draft.done.then((r) => {
+        // Failed before anything was said: ask again, as if there were no draft
+        if ('error' in r) return draft.events.length ? r : settle(onFirst);
+        r.after?.();
+        console.log(JSON.stringify({ level: 'info', event: 'draft-used', written: draft.settledAt !== undefined && draft.settledAt <= Date.now(), headStartMs: Date.now() - draft.startedAt, writeMs: (draft.settledAt ?? Date.now()) - draft.startedAt }));
+        return r;
+      });
+    };
+    const answer = (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> =>
+      sharedWhileRunning(inFlight, key, () => claimDraft(onFirst) ?? settle(onFirst));
 
     if (!request.headers.get('accept')?.includes(NDJSON)) {
       const r = await answer();
