@@ -22,6 +22,14 @@ Doable, but the outcome depends on a test, a decision or a plan not yet made.
 - [ ] **Intermediate lessons draft: 50 lines to fix** (`content/it/lessons-b1.json`, not read by the app). Waits on: Josh's review of the proposal (old list below, item 4). Done when: Josh says yes, then the lines are fixed and the app reads the file.
 - [ ] **One plan for the Beginner level** ([beginner-plan.md](beginner-plan.md): the shape of turns, what counts toward moving up, placement, the path's fading, and the other Beginner items). Next: Claude drafts it from the goal, for Josh. Done when: Josh approves it.
 - [ ] **Automated replies: conversations that play themselves** (Josh, 2026-11-09: "write up notes and design for auto mode and add to todo list", then "maybe automated replies?" as the name; [automated-replies.md](automated-replies.md)). Code picks the kind of learner reply at rates from real play (an offered answer said back, an edit of one, own words, a question, English, help, silence, a push); said-back lines and edits by code, the rest one small generated line of that kind, over long conversations and visits with memory. For drift, length, cultural content and stories retold across visits. Who: Claude, when Josh picks it up ("not for now"). Next: build step 1 (one place, one visit, say-back only, every turn saved). Done when: a run over several places and visits produces the code counts, checked against lines read by hand.
+- [ ] **If Beginner 2 replaces Beginner 1: the changes after** (Josh, 2026-11-09: "add post test changes if beginner 2 replace 1 in todo"; [beginner-2.md](beginner-2.md)). Waits on: Beginner 2 winning on Josh's phone. Then, each its own step:
+  1. Beginner 2 the default; Beginner 1 kept a week behind the Version panel, then its code removed (`beginner.md`, the stage blocks in `leveling.md`, the playlist in `lib/path.ts`) and the panel switch with it.
+  2. Intermediate onto the shared prompt (the "give no answers" setup line, the parts format), tested on its own.
+  3. Records and moving up on the reply ladder and clusters (the offer every 3–5 counted conversations) instead of the own-words count; the heard note with them.
+  4. Learners on the old path placed into a cluster (Josh, Jennifer, Sophia).
+  5. Replies written ahead for every setup, if turns carry likely answers.
+  6. Docs: `beginner-as-live.md` retired, CLAUDE.md's Beginner paragraph, `progress.md`.
+  Done when: one Beginner in the code, Intermediate on the shared prompt, and the docs say so.
 - [ ] **Josh and Sophia play the path.** Next: play as usual. Done when: two weeks of words spoken per week in `format=records` show whether learners move up.
 
 ### Done 2026-11-08 (night)
