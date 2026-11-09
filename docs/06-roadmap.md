@@ -37,7 +37,6 @@ Doable, but the outcome depends on a test, a decision or a plan not yet made.
 ### Least confident
 Open-ended, waiting on ideas or decisions, or far off.
 - [ ] **D1, questions as dialogue structure**: characters ask poor questions; learners are rarely invited to ask. Queued in `docs/prompt-testing.md`. Done when: it reaches the top of the queue as a card.
-- [ ] **The App Store (later):** "Report this line"; screenshots, description, age rating, review notes; storefronts outside the EU.
 
 ### Done 2026-11-08 (night)
 - **Decided (Josh):** keep all transcripts, only approved recordings. Already how the server works (every conversation's turns saved; recordings only for `KEEP_RECORDINGS_FOR`), so the conversation library beyond the family needs no change.
