@@ -18,7 +18,6 @@ Clear next step, known how, small; several only wait on Josh's word.
 ### Fairly confident
 Doable, but the outcome depends on a test, a decision or a plan not yet made.
 - [ ] **Josh, then Claude: choose the next dialogue test.** Next: Claude proposes 2–3 tests from the queue (`docs/prompt-testing.md` → The queue) matched to the top problems; Josh picks one. Done when: a reviewed card is at the top of the queue.
-- [ ] **Test outside services one at a time:** ElevenLabs model and quota, server region, R2 image load times, speech-to-text alternatives on the kept recordings. Next: Claude picks the one with the most time to win (likely server region). Done when: each has one measured number here.
 - [ ] **City picker.** Next: Josh names what's wrong with it. Done when: Claude has fixed that and Josh approves.
 - [ ] **Intermediate lessons draft: 50 lines to fix** (`content/it/lessons-b1.json`, not read by the app). Waits on: Josh's review of the proposal (old list below, item 4). Done when: Josh says yes, then the lines are fixed and the app reads the file.
 - [ ] **One plan for the Beginner level** ([beginner-plan.md](beginner-plan.md): the shape of turns, what counts toward moving up, placement, the path's fading, and the other Beginner items). Next: Claude drafts it from the goal, for Josh. Done when: Josh approves it.
