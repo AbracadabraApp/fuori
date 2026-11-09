@@ -68,6 +68,7 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 ## 2026-11-09: Beginner plan and deep dive; heard-note fix (laptop session)
 
+- **Read first: the Beginner 2 handoff** (`~/.claude/plans/graceful-stirring-rossum.md`, from the earlier session today): Beginner 2 beside Beginner 1 (hidden Version panel), communication between bilingual friends, the reply table (+1 read back … +4 uptake) and code-counted content (words per turn, unique words, turns) from the Nunzio visit, and six Beginner 1 rules it breaks. Missed at the start of the next session; linked here so it isn't again.
 - **Beginner plan** (`docs/beginner-plan.md`): a spec from Josh's decisions of 11-08/09: code picks each turn's shape (jobs, order, form, length, answers), English on every Beginner turn, a ramp that changes what the English does, ask before removing scaffolding. Nothing built; a prompt change needs a reviewed card first.
 - **Deep dive** (`docs/beginner-deep-dive.md`): code, plan, real play, dependencies, history. Nobody has moved up; Jennifer raised to S3 with 0 own-words turns; 19 of 38 openers ask the name; `beginner-as-live.md` wrong in three places.
 - **Heard-note fix (7f765b3):** the "said back / own words" note never reached the character in the app (route and schema dropped `offered`). Kept now; test fails on the old code. **Not released, not played.** Taken alone from the `beginner-shapes` worktree, whose uncommitted turn-shapes trial is unchanged and unbuilt (it still holds the same fix; expect a trivial overlap when merged).
