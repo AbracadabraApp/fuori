@@ -60,7 +60,7 @@ Phrases practised: *Mi chiamo…, Piacere, Cosa mi consiglia?, Vorrei…, Torno 
 
 Josh: "The scaffolding is key mechanic." Scaffolding is how the learner takes part; the level is how the character talks (`docs/glossary.md`). An earlier table here mixed the two (Josh: "I don't agree with table").
 
-**The scaffolding in the app today** (how the learner takes part):
+**The scaffolding in the app today** (how the learner takes part). **Leave as is** (Josh, 2026-11-09: "We should leave scaffolding parts"):
 1. Lines to say back: whole answers, or the start of a sentence to finish.
 2. The reply panel: read one aloud, or choose the one that fits (`lib/scaffold.ts`; first turns for new learners outside the Beginner format).
 3. Say it in English: say it in English, get the line back in the language, read it aloud.
