@@ -64,6 +64,8 @@ Out: three or more answers (crowds the screen); one word missing with words to c
 
 Nunzio visit: 40 over 13 replies.
 
+Why reading back scores below an English answer (Josh, 2026-11-09): reading a bubble takes less of the language than answering her in English, because the bubble's English is under it and the learner can pick and read without understanding her; an English answer to her question shows they understood her.
+
 **Content, counted in code** (no judge, any language): words per turn, unique words per conversation, number of turns. Nunzio: 14 turns, 31.4 words a turn, 229 unique; Josh: 13 turns, 14.8 words a turn, 108 unique (1,038 bytes against 2,475).
 
 **Next experiment:** compute both over all real conversations. Do they rise across visits? Do they tell the players apart (Josh, Jennifer)?
