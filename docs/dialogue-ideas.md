@@ -261,3 +261,182 @@ From the here lines on the day of each conversation (git history of the city fil
 - Part of it is the learner: a Beginner says less, so the character has less to react to.
 
 The two readings agree that the Beginner prompt shapes every turn; they differ on how much the here line matters. Nothing decided.
+
+
+## Top 10 problems at Intermediate: 48 real conversations (agent read, 2026-11-08)
+
+The same reader as the Beginner top 10 above (transcripts only, read as natural conversation; no prompts or judge results), on every Intermediate conversation from 2026-10-12 to 2026-11-09. Six of the Beginner problems don't appear here at all, and several of these (1, 5) are early, from before 10-24. Agent report, unchanged:
+
+A reader's view, from the transcripts alone.
+
+#### 1. Forgetting the visitor and the conversation
+Characters lose track of who the visitor is, what they have already said, or that the conversation has started. At its worst a character asks the same question again and again while the visitor points it out. Across visits, a regular gets treated as a stranger by someone they have seen several times.
+- **How often:** about 9 conversations, 2026-10-13 to 10-24. It is clustered around repeat visits (Franco, Luisa, Ettore). Nothing this bad shows up after 10-24, but there are also few repeat visits after that.
+- **Examples:**
+  - Conv 4, 2026-10-13, giulia-rossi. She asks where he's from five times and re-introduces herself:
+    > VISITOR: Scusi Giulia, tu detto tuo nome ancora e anche ho detto di dove sei. Tu non ricordi?
+    > CHARACTER: Ah, scusami, forse mi sono ripetuta! Oggi ho proprio la testa tra le nuvole. Di dove sei tu?
+    > …
+    > CHARACTER: …Che bello, sei qui per visitare la Basilica di San Francesco! Io sono Giulia, piacere! Di dove sei?
+    > VISITOR: No me ali.
+    > CHARACTER: Ciao, benvenuto al Bar Senso! Scusa, non ho capito bene, puoi ripetere?
+  - Conv 28, 2026-10-20, franco-ortolano, after three visits on 10-15 that covered carbonara, his children and Seattle:
+    > VISITOR: Franco, non ricorda me?
+    > CHARACTER: Mi scusi, signore, ma non mi pare di averla mai vista qui al banco.
+
+    In conv 31 he remembers him again ("Eccolo qua, Giosuè!"). In conv 35 (10-23) he is back to "Buongiorno! Dica pure, cosa le servo oggi?"
+  - Conv 38 → 39, 2026-10-23, luisa-cocco-nuova. In 38 she learns his name and says "Domani mattina il tuo caffè ti aspetta qui al banco." In 39, the same day, she opens with "Buongiorno! Dica pure, cosa le preparo?" as if to a stranger. In 41 she remembers his order but has lost his name and introduces herself again: "Ah, forse Gabriele? Piacere, io sono Luisa!"
+- **A real person would:** recognise a face they had chatted with twice, and never ask "di dove sei?" a third time in one conversation.
+
+#### 2. Every turn ends with a question (interviewing, not talking)
+Almost every character line ends by handing the visitor a new question, usually on a new subject. The character rarely just reacts, shares something and lets the visitor pick the thread. The conversation turns into an intake interview, and the visitor is never the one asking.
+- **How often:** about two thirds of all character lines end in "?", more if you count lines that end "…?" followed by "!". It shows up in nearly every conversation (about 40 of 48) across the whole period. The worst are conv 4, 12, 23, 26 and 46, where almost every line ends in a question.
+- **Examples:**
+  - Conv 23, 2026-10-19, simona-moro. Every reply is a follow-up question about the friend:
+    > CHARACTER: Etone, che bel nome, non è molto comune! Da dove viene, Etone?
+    > VISITOR: De Roma
+    > CHARACTER: Romano, quindi! Allora vi siete conosciuti a Roma, o in un altro posto?
+    > VISITOR: Si, ho contratto Ettone alla Borghese Giardini
+    > CHARACTER: Che bello, Villa Borghese è un posto stupendo per conoscere qualcuno! Passeggiavate o eravate seduti sull'erba?
+  - Conv 8, 2026-10-13, nonno-ettore. Each turn is reaction + memory + new question ("Da dove viene lei?", "Le piace il clima di qui rispetto a Seattle?", "Ha già visto il laghetto…?", "Che cosa le piace di più di questi giardini?", "Cosa ti piacerebbe vedere a Roma?").
+  - Conv 2, 2026-10-12, rita, two questions stacked in one turn:
+    > CHARACTER: …Ecco, il tuo caffè è pronto, attento che è caldo. Dimmi, Josué, ti manca un po' casa? E che cosa ti piace di Seattle?
+- **A real person would:** often just answer, react or tell something of their own, and leave a silence for the other person to fill.
+
+#### 3. The same intake script with every stranger
+New characters run the same checklist: name, where are you from, are you on holiday, how long have you been here, do you like the city. Seattle always gets the same answer: rain, and good coffee. The visitor is a long-stay resident, but characters keep calling him a tourist, and he keeps having to correct them.
+- **How often:** about 20 conversations, the whole period (10-12 to 11-06). The Seattle-rain line alone comes up in about 9 (conv 2, 6, 8, 12, 16, 17, 32, 45, and as coffee in 4).
+- **Examples:**
+  - Conv 25, 2026-10-19, elena-gelataia:
+    > CHARACTER: …Sei in vacanza a Firenze?
+    > VISITOR: Non in vacanza, solo a visitare per due o tre giorni. Perché tu pensi io a turista se non domande male?
+  - Conv 45, 2026-11-05, lorenzo-marchi; Conv 16, 2026-10-15, franco-ortolano; Conv 6, 2026-10-13, sandro-bar-angolo:
+    > (45) CHARACTER: Ah, Seattle! Lontano, lontano. Piove sempre, no? Qui a Firenze almeno c'è il sole. Ma è la prima volta in Italia?
+    > (16) CHARACTER: Seattle! Lontano, eh! Lì piove sempre, qui invece c'è il sole…
+    > (6) CHARACTER: Seattle, certo che la conosco: pioggia e tanto caffè.
+  - Conv 33, 2026-10-23, matteo-rinaldi: "Tu sei turista?" Conv 4, giulia-rossi: "Sei qui in vacanza?" asked twice, after he has said he lives in Italy.
+- **A real person would:** ask about whatever is in front of them (the order, the weather, the dog) and let personal questions come up naturally, each person in their own way.
+
+#### 4. Going along with garbled or misunderstood lines
+When the visitor's line is garbled or ambiguous, the character often acts as if it made sense, or confidently picks a wrong meaning and runs with it. A real listener would hesitate. The result is answers that don't connect, or that contradict what the visitor clearly meant.
+- **How often:** about 10 conversations, the whole period (10-13 to 11-06).
+- **Examples:**
+  - Conv 4, 2026-10-13, giulia-rossi. He says he lives in Rome; she answers as if he had asked about her:
+    > VISITOR: Adesso sta a Roma, ma di dove si è, gli Stati Uniti?
+    > CHARACTER: Ah, ma io sto qui ad Assisi, non a Roma!
+  - Conv 40, 2026-10-24, andrea-brivido; Conv 25, 2026-10-19, elena-gelataia:
+    > (40) CHARACTER: …Cosa le posso preparare?
+    > VISITOR: Sì, è vero!
+    > CHARACTER: Ah, sì? Perfetto! Allora, che gusto prende…
+    > (25) VISITOR: Non una pensione.
+    > CHARACTER: Ah, capisco, non sei in pensione! Allora sei qui per lavoro?
+  - Conv 22, 2026-10-17, nonno-ettore. The visitor is lost and asks for one word in English; Ettore asks which word, then repeats the same Italian:
+    > VISITOR: Non capisco. Posso solo una parola in inglese? Se va bene? No.
+    > CHARACTER: Certo che va bene, Giosue! Una parola in inglese non è un problema, anzi, aiuta. Quale parola ti serve?
+    > …
+    > CHARACTER: …Ripeto piano: i panni bagnati si asciugano al sole. Va bene così?
+- **A real person would:** say "Scusa, come?" or check ("Vuoi dire che abiti a Roma?") before answering, and just say "hanging out the washing" to someone plainly lost.
+
+#### 5. Teacher mode: drills, graded praise and corrections at the goodbye
+Some characters drop their role and run a lesson: "Ripeta con me", syllable splitting, and "Bravo!" in the same breath, praising a repetition the visitor hasn't made yet. Corrections get labelled as corrections, even as the visitor says goodbye and thank you.
+- **How often:** about 7 conversations, mostly early (10-12 to 10-17); rare after that.
+- **Examples:**
+  - Conv 1, 2026-10-12, rosa-fruttivendola:
+    > CHARACTER: Esatto, apricot! Albicocca, in italiano. Ripeta con me: al-bi-coc-ca. Bravo!
+    > …
+    > VISITOR: Perfetto. Pago. E grazie per aiutami, Rosa, e grazie per tanto tempo parlare con me.
+    > CHARACTER: Ma s'figuri, è stato un piacere! … Piccola correzione, così impara: si dice "grazie per avermi aiutato" e "per aver parlato con me".
+  - Conv 1 again: "Ora ripeta con me: "assaggio, assaggi, assaggia". E mi dica: com'è la ciliegia, dolce o aspra?" (a conjugation drill from a fruit seller).
+  - Conv 2, 2026-10-12, rita: "Bene, si dice così: "Piove molto, come a Londra, ma ha anche una bella estate". Hai detto quasi tutto giusto, bravo!"
+- **A real person would:** use the right form back in passing ("Ah, ti ho aiutato volentieri!") and leave the drilling to teachers.
+
+#### 6. Overstuffed monologue turns
+In the early conversations especially, one turn packs in four moves at once: react, explain, tell an anecdote, ask one or two questions. The pace is wrong for a market stall or a doorway, and it buries the one thing the visitor could answer.
+- **How often:** about 10 conversations, heavily early (10-12 to 10-17: conv 1, 2, 8, 11, 21, 22), with some later (45, 46, 47).
+- **Examples:**
+  - Conv 1, 2026-10-12, rosa-fruttivendola: a six-sentence turn explaining "assaggiare", "assaggiando", a drill and a question, in reply to a simple request.
+  - Conv 21, 2026-10-17, vale-libros-tecolote, recommending two books with blurbs and then a question, to a visitor who said four words:
+    > CHARACTER: Ah, entonces sí eres de los que vienen con rumbo. Perfecto, el rincón en inglés está al fondo… busca 'The Broken Spears' de Miguel León-Portilla… Y si quieres algo más amplio, 'Mexico: Biography of Power' de Enrique Krauze es un ladrillo, pero un ladrillo con buena prosa. ¿Te interesa más la historia de México o de otro lugar?
+  - Conv 2, 2026-10-12, rita: "Perfetto, allora il caffè lo faccio subito, ho la moka già pronta. Intanto lascia pure la valigia… Siediti dove vuoi, la casa è tua. Hai fame, per caso? Ho fatto una crostata ieri sera…"
+- **A real person would:** say one thing and wait, especially to someone visibly struggling with the language.
+
+#### 7. Formulaic openings with name and shop sign
+Many conversations open the same way: "Buongiorno! Benvenuto al [full shop name]. Sono [name]." Few shopkeepers greet a walk-in by announcing the shop's name and their own. When they don't do that, the opening is the same stock greeting: "Buongiorno! Dica pure, cosa le preparo?"
+- **How often:** about 14 conversations, the whole period.
+- **Examples:**
+  - Conv 14, 2026-10-14, angela-volpe: "Buongiorno! Benvenuto al Panificio Volpe. Sono Angela. Il pane è appena uscito dal forno, ancora caldo."
+  - Conv 13, 2026-10-14, roberto-nardella: "Buongiorno! Benvenuto alla stazione di Matera Centrale. Sono Roberto, il capostazione."
+  - Conv 40, 2026-10-24, andrea-brivido: "Buongiorno! Benvenuto alla Gelateria Brivido." Conv 48, 2026-11-09, lucia-bini: "Buongiorno! Benvenuto alla Pasticceria Bini." Conv 36, 38, 39 (luisa-cocco-nuova) all open with nearly the same "Buongiorno! (Dica pure,) cosa le preparo?"
+- **A real person would:** open with something tied to the moment ("Prego?", "Ditemi", a remark about the rain) and give their name only once there's a reason to.
+
+#### 8. Loops: the same line or offer, turn after turn
+Inside one conversation, a character keeps coming back to the same point: the food is coming, the kitchen is closed, mole or enchiladas. The scene stalls, as if the character can only move on once their own line has landed.
+- **How often:** about 7 conversations, the whole period (10-12 to 11-06).
+- **Examples:**
+  - Conv 44, 2026-11-05, ardit-hoxha. The water and bread are "coming" for six turns:
+    > CHARACTER: …Intanto le porto l'acqua. / Prego, a subito! / …le porto subito l'acqua e il pane. / Di niente! Torno subito. / …Ecco, l'acqua e il pane. La ribollita è quasi pronta. / …Ancora un minuto e le porto la ribollita calda calda. / …Arrivo subito con la ribollita.
+  - Conv 46, 2026-11-06, nino-garbatella. "Kitchen's closed, come back at half seven" in four turns running, and the blackboard menu recited twice:
+    > CHARACTER: …la cucina riapre stasera alle sette e mezza… / …la cucina è chiusa fino alle sette e mezza… / …la cucina è chiusa, mio figlio Marco la prepara stasera, dalle sette e mezza… / …torni stasera alle sette e mezza…
+  - Conv 12, 2026-10-14, cuca-cocinera: "¿el mole o el caldito?" → "¿Cuál le traigo primero?" → "¿le traigo el mole o las enchiladas?" → "un poquito de cada uno"; the agua de jamaica is promised three times.
+- **A real person would:** say it once, then move on, bring the thing, or change the subject.
+
+#### 9. Stock reactions and blanket reassurance
+A small set of phrases does most of the reacting, whoever is speaking: "Ottima scelta!", "Perfetto!", "Che bello!", "Che bel nome!", and above all "parli benissimo", said even right after the visitor has plainly struggled. Goodbyes are the same ritual ("Buona giornata e a presto!"), and they get traded back and forth for several turns.
+- **How often:** in about 30 conversations, the whole period. The "you speak very well" reassurance comes up in about 10.
+- **Examples:**
+  - Conv 12, 2026-10-14, cuca-cocinera:
+    > VISITOR: Oh my gusta too.
+    > CHARACTER: …¿Le parece bien?
+    > VISITOR: Lo siento.
+    > CHARACTER: ¡Ay, no se disculpe, mija! Aquí nadie se enoja, y usted habla muy bien.
+  - Conv 24, 2026-10-19, alberto-galli: "Ma no, non ti preoccupare, parli benissimo!" Conv 28, franco-ortolano: "Ma no, si figuri, parla benissimo!" Conv 6, sandro-bar-angolo: "Il tuo italiano va benissimo…"
+  - Conv 27, 2026-10-19, vale-libros-tecolote. The goodbye runs for five exchanges: "¡Igualmente, que tengas una linda tarde! Hasta luego." / "¡Con mucho gusto! Cuídate mucho." / "¡Qué bueno, aquí te esperamos!…" / "¡Súper, me va a dar mucho gusto saberlo! Hasta pronto."
+- **A real person would:** react in their own words to the specific thing said, and let a goodbye end with one "ciao".
+
+#### 10. Slips a native speaker wouldn't make
+Register flips between tu and lei inside one line, the visitor's gender changes, and there are small grammar errors. Each is minor, but they break the sense that this is a local speaking.
+- **How often:** about 8 conversations, the whole period.
+- **Examples:**
+  - Conv 38, 2026-10-23, luisa-cocco-nuova: "Ecco a lei, un euro. Non ti ho mai visto qui, sei di passaggio?"
+  - Conv 32, 2026-10-22, nonno-ettore, to Giosuè, whom he treated as a man in conv 11 and 22: "Dimmi, Giosue, sei venuta a piedi fin qui? … Brava!"
+  - Conv 36, 2026-10-23, luisa-cocco-nuova: "Gliela porto subito" (for a caffè) and "uno caffè e un cornetto alla crema". Conv 46, nino-garbatella: "il gnocchi", and "Lei il guanciale lo conosce?" right after "se ci metti il pomodoro". Conv 1, rosa-fruttivendola: "un'ciliegia", "s'figuri".
+- **A real person would:** keep one register and one gender for the person in front of them, and not make beginner grammar mistakes in their own language.
+
+---
+
+#### What the dialogue does well
+
+- **Distinct, funny voices when a character has one.** Conv 6, 2026-10-13, sandro-bar-angolo: "Ecco il caffè, un euro e venti. La compagnia è gratis." … "Io sono qui dietro al banco dalle cinque del mattino e la pensione la vedo col binocolo."
+- **Handling odd input with wit, in character.** Conv 29, 2026-10-21, dario-fornaio: "Una bistecca? Qui siamo un forno, mica una macelleria! Però ti posso dare una pizza bianca con la mortadella, che ne dici?" Conv 12, cuca-cocinera: "¿Jonathan? Ja, ese no está en mi menú, mija, pero si viene con usted, que pase y se siente."
+- **Callbacks that make the visitor feel known, when memory works.** Conv 31, 2026-10-21, franco-ortolano: "Eccolo qua, Giosuè! Il trasteverino d'adozione! Allora, com'è andata l'amatriciana? Senza cipolla, spero!"
+- **Culture woven into the talk, not bolted on.** Conv 46, 2026-11-06, nino-garbatella: "Ah, la gricia! È la madre di tutte, mi creda. Guanciale e pecorino, basta… Se ci metti il pomodoro diventa amatriciana, se ci metti i tuorli d'uovo diventa carbonara." Conv 45, lorenzo-marchi, works out Dante's age from the visitor's quote.
+- **Help in role, in plain terms, when asked.** Conv 48, 2026-11-09, lucia-bini: "Morbido è il contrario di duro: quando lo tocca, è tenero, cede sotto le dita, come un cuscino. Il ricciarello è così, morbido dentro."
+
+#### Overall feel
+
+Taken one turn at a time, these conversations mostly read as warm and plausible, and the best of them (Sandro, Franco on a good day, Nino, Gina, Lorenzo) have real voice and local colour. What gives them away is the pattern across turns and visits: a question at the end of nearly every line, the same where-are-you-from script, lines that loop, and memory that comes and goes. The result is a friendly interviewer more than two people talking. The early conversations (mid-October) are wordier and more like a lesson. The later ones are shorter and more natural, but still run on questions.
+
+## Kind: how it's used, and what makes a place lively (2026-11-08)
+
+**How kind is used today** (read from the code):
+1. **In the prompt it's one word in brackets.** The character's setting reads "Pizzeria Da Gigi (pizza al taglio), Testaccio", then the here line (`lib/characters/for-place.ts`; added 10-29 so nobody gets an invented job). No rule depends on it and nothing describes what goes on at a bar as opposed to a piazza; the commerce rules leave the model to work out from the role and that word whether anything is sold.
+2. **Elsewhere it's mechanical:** the place feed avoids two of the same kind in a row; lessons pick practice partners by matching kind text; the app gets it with each place.
+3. **Kinds are free text from the generator, and messy.** Italy: 654 places, 78 kinds, with duplicates (wine bar, wine_bar, enoteca; station, train-station; restaurant, ristorante) and generic ones (bar 119, bakery 62, market 59). Mexico: 75 places, 28 kinds, specific (shoe-shine stand, tlayuda grill, chocolate-mill, ceramics workshop).
+4. **Real play is nearly all commerce:** of 89 real conversations, about 75 at a bar, bakery, market stall, café, osteria or shoeshine stand; about 12 at a piazza, park, church, university or landmark.
+5. **The Beginner prompt adds a place opener; Intermediate doesn't** ("Open with one line in English about the place… sometimes a bit of its history"), which is where the guidebook openings in the Beginner top 10 come from.
+
+**Josh's hypothesis:** "I don't know what kind does, but I bet church steps are more lively conversation than a bar. A salumeria more than a pharmacy." What might make one kind livelier than another (Claude, building on it): time to stay (no queue behind you); something to show or taste; a craft the person is proud of; the place's own story; a talker by nature. Roughly: liveliest steps, piazza, park, market stall, salumeria, shoeshine stand, osteria in the quiet hour; in between bakery, gelateria, café, bookshop; flattest bar at the counter, pharmacy, tabaccheria, ticket office. Fits the lively ones seen (Nonna Gina on the steps, Lorenzo with his dog, Chucho at his stand, Franco at his stall, Nunzio in the park). A hypothesis, not known: too few real conversations away from commerce.
+
+**Place types shown in Italy over time** (`content/it/showcase.ts`). Josh had said the easiest way to reduce boring talk was to remove boring places; it was done:
+
+| Date | Shown | Everyday business (bar, pharmacy, bakery, gelateria…) | Open space or landmark | City's own (market, deli, workshop) | Restaurant |
+|---|---|---|---|---|---|
+| Oct 14 | 230 | **56%** (40 bars, 18 enotecas, 13 pharmacies) | 13% | 21% | 9% |
+| Oct 27 | 207 | 48% (bakeries and wine bars hidden) | 15% | 25% | 10% |
+| Nov 5 | 212 | 46% | 18% | 25% | 9% |
+| **Nov 6** | 226 | **27%** | **38%** | 24% | 9% |
+| Nov 8 | 218 | 28% | 39% | 22% | 9% |
+
+The big change was Nov 6 (a431cd9, Josh's approved list in `docs/conversation-variety.md`). Real visits since then are too few to tell whether it worked (4 by 11-08, all Josh's: a bar, a pastry shop, a market, an osteria), and both top 10s come from before it.
+
+**Display order.** Josh's picks matched the first cards in a fixed feed order (11-08: "I think it probably says more about display order"), so what gets played says as much about order as about appeal. Since b31c916 cities and places come in a new order each day, unvisited first, with an open space in the first three.
