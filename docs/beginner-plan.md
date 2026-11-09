@@ -101,6 +101,22 @@ Built from Josh's points in one pass (he found the piece-by-piece questions tedi
 
 **Varied, but predictable:** among the shapes the rules allow, a seeded pick that never repeats either of the last two turns' shapes. Where they are on the Beginner ramp sets which language leads: English leads with the language echoing → the language leads with English echoing → English only sets the scene.
 
+## Mechanics: how the learner can reply (Josh's picks, 2026-11-09)
+
+Beyond today's two answers and one answer ("We should try to think of responses beyond 2 answers and one answer"). From a list of 14:
+
+**Kept:**
+- **A question for them to ask her** (the line offered is a question).
+- **Answer in English**, offered on purpose as the turn's reply: the line in the language comes back to say (How do I say it).
+- **Answers offered in her speech** ("…just say *Vorrei la carbonara*"): heard, not read; spoken only, or spoken and shown.
+- Today's **two answers** and **one answer** stay.
+
+**Out:** three or more answers (crowds the screen, as three bubbles did on 11-05); one word missing with words to choose (a puzzle); answer then "E lei?" (the same as one or two answers).
+
+**Not yet judged:** repeat after her; a sentence start to finish; build it from two pieces; a key word only; a hint in English only; free; a listening turn; catch her out.
+
+**Ask before removing scaffolding:** when the record says a learner looks ready, they're asked, and they decide. Each ask names the one part that changes, in plain words ("Want to hear the Italian first, with the English after?"; "Want to try answering without the lines to say back?"), never "less English" (Josh: wrong measure).
+
 ## Mechanics: scaffolding is the key (Josh, 2026-11-08)
 
 Josh: "The scaffolding is key mechanic." Scaffolding is how the learner takes part; the level is how the character talks (`docs/glossary.md`). An earlier table here mixed the two (Josh: "I don't agree with table").
