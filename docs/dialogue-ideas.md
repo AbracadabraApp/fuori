@@ -2,6 +2,14 @@
 
 Ideas about how conversations with characters should go: what they say, when the learner speaks, how the scene moves. Started by Josh on 2026-11-04, after playing Florence (Ardit at Trattoria Mario, Lorenzo in Piazza Santa Croce). Nothing here is scheduled. An idea moves to the roadmap once Josh decides it. Josh's words are quoted; anything else is marked as Claude's proposal.
 
+## Beginner S2 is too much: little English, Italian back to back (Josh, 2026-11-09; noted, not to fix)
+
+Josh played Hugo, the muralist in Puebla (Mexico, Beginner 1 at stage S2, `beginner-2026-11-07a+S2`, 2026-11-09 23:51 UTC): "not enough english and speed feels fast"; "it was too much - just to note - not fix". Per turn: about 4 words of English and 16 in Spanish, against 14–17 English and 8–11 in the language in his S1 conversations in Italy the night before (Paolo, Giulia, Nino). With English cut, her Spanish sentences come one after another with nothing between them, which is what reads as fast:
+- Hugo: "These walls are the neighbours' own house fronts, painted together with them. | Hola, buenos días. Bienvenido a Xanenetla. | Me llamo Hugo. Soy muralista. | ¿Cómo se llama usted?"
+- then "Mucho gusto, Joshua. | Aquí pinto todos los días. | Es mi barrio, mi casa. | ¿De dónde es usted, Joshua?" (no English at all)
+
+The cause is Beginner 1's stages turning English down on a schedule (`leveling.md` S2: about half in the language, English one sentence), one of the rules Beginner 2 breaks (docs/beginner-2.md → Beginner 1 rules Beginner 2 breaks, 5). Left as is in Beginner 1 (production untouched); the comparison is Beginner 2 on the same place.
+
 ## A character who steps away comes back
 
 Josh, 2026-11-04: "when the conversation is open ended like Lorenzo - no questions is fine - but when the waiter says your soup will be ready soon - you imagine he's coming back - not waiting for chitchat". Before that: "so many waits with no reason to say anything".
