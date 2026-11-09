@@ -99,7 +99,7 @@ Built from Josh's points in one pass (he found the piece-by-piece questions tedi
 - Recast only after their own words.
 - First turn: Set the scene. Last: the goodbye offered (after about 8 turns, or when they say it).
 
-**Echo on new words, none on words just heard** (Josh, 2026-11-09: "Things are spicy or sweet (echo); do you like spicy or do you like sweet (no echo)"). A Say with the echo brings the words in; the Ask after it reuses them without one; the answer reuses them again. This gives the code a reason to order jobs: introduce, then use.
+**The echo underlines the language that matters** (Josh, 2026-11-09: "Things are spicy or sweet (echo); do you like spicy or do you like sweet (no echo)"; "Echo should not be first time. More like Italian underline"). After something said in English, the echo picks out the key words in the language (*piccante o dolce*), not a whole translation and not tied to whether words are new. The Ask after it uses those words with no echo; the answer reuses them.
 
 **Varied, but predictable:** among the shapes the rules allow, a seeded pick that never repeats either of the last two turns' shapes. Where they are on the Beginner ramp sets which language leads: English leads with the language echoing → the language leads with English echoing → English only sets the scene.
 
