@@ -440,3 +440,8 @@ Taken one turn at a time, these conversations mostly read as warm and plausible,
 The big change was Nov 6 (a431cd9, Josh's approved list in `docs/conversation-variety.md`). Real visits since then are too few to tell whether it worked (4 by 11-08, all Josh's: a bar, a pastry shop, a market, an osteria), and both top 10s come from before it.
 
 **Display order.** Josh's picks matched the first cards in a fixed feed order (11-08: "I think it probably says more about display order"), so what gets played says as much about order as about appeal. Since b31c916 cities and places come in a new order each day, unvisited first, with an open space in the first three.
+
+## Carbonara without cream: one character's here line (2026-11-08)
+
+Of 6 conversations with "carbonara, never cream", 5 are Nino (trattoria-garbatella, 11-06 to 11-09), every visit; the other is Franco (10-20). Nino's here line asks him to tell a newcomer about his menu "dish by dish… what the tourists get wrong", and carbonara is his dish. Not a habit of every character; one line pointing him at it. Logged only (Josh: mechanics before dialogue).
+

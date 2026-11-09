@@ -6,6 +6,8 @@
 
 "I'd lean on scaffolding. Think of beginner as roleplay lessons not conversation. English makes beginners comfortable." Then: "Yes but needs stage directions." Earlier the same night: "Making beginner more deterministic (but varied) seems better", and of adaptive support and the stage changes: "too complicated, too optimistic".
 
+**Mechanics before dialogue** (Josh, 2026-11-08: "I'd focus on mechanics more than dialogue"): the plan works on the structure (the lesson's shape, answers, English, stage directions, how a visit ends, what counts); what characters say goes to `docs/dialogue-ideas.md` and waits.
+
 **A Beginner visit is a short roleplay lesson with a real person in a real place.**
 - **English carries the learner:** the character sets the scene, explains, and tells them what to say, warmly, like a friend who lives there.
 - **Stage directions** say what's happening: where they are, what the character does, what's in front of them ("He taps the first line on the board").
