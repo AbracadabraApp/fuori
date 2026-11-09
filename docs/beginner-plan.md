@@ -99,7 +99,10 @@ Built from Josh's points in one pass (he found the piece-by-piece questions tedi
 - Recast only after their own words.
 - First turn: Set the scene. Last: the goodbye offered (after about 8 turns, or when they say it).
 
-**The echo underlines the language that matters** (Josh, 2026-11-09: "Things are spicy or sweet (echo); do you like spicy or do you like sweet (no echo)"; "Echo should not be first time. More like Italian underline"). After something said in English, the echo picks out the key words in the language (*piccante o dolce*), not a whole translation and not tied to whether words are new. The Ask after it uses those words with no echo; the answer reuses them.
+**The echo does both, by direction** (Josh, 2026-11-09: "Things are spicy or sweet (echo); do you like spicy or do you like sweet (no echo)"; "More like Italian underline"; "It should do both"):
+- **The language, then the English echo:** helps them understand what was just said (today's echo, the key words, not word for word).
+- **English, then the language's echo:** underlines the words worth keeping (*piccante o dolce*), not a whole translation.
+The Ask after an underline can use those words with no echo; the answer reuses them.
 
 **Varied, but predictable:** among the shapes the rules allow, a seeded pick that never repeats either of the last two turns' shapes. Where they are on the Beginner ramp sets which language leads: English leads with the language echoing → the language leads with English echoing → English only sets the scene.
 
