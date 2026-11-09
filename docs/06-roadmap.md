@@ -16,7 +16,7 @@ Clear next step, known how, small; several only wait on Josh's word.
 - [ ] **Recordings: keep what happened next** (sent, said in English, "didn't catch that") beside each kept recording, so another speech-to-text or end-of-turn silence can be replayed against them. Next: Claude adds the outcome to each kept recording. Done when: `npm run replay:recordings` reports outcomes.
 - [ ] **A daily budget per learner that survives deploys** (`usage_daily`; today's caps reset on every deploy). Done when: a cap holds across a release.
 - [ ] **App Attest** when a device registers. Done when: a device without it can't get a learner id.
-- [ ] **Privacy policy** at a public URL naming Groq, Anthropic and ElevenLabs, plus one line at the microphone step. It says what's kept (Josh, 2026-11-08: "keep all transcripts, only approved recordings"): the words of every conversation for every learner; voice recordings only for learners approved one by one (`KEEP_RECORDINGS_FOR`). Next: Claude drafts; Josh approves.
+- [ ] **Privacy policy at a public URL** (Apple asks for one before outside testers). The text already exists in the app (Settings → Privacy: Groq, Anthropic, ElevenLabs; conversations saved); only the public page is missing, and it says what's kept (Josh, 2026-11-08: "keep all transcripts, only approved recordings").
 - [ ] **Question ladder for Intermediate and Advanced** (one fact, then anything). Next: Claude writes a one-paragraph proposal for Josh. Done when: Josh says yes or no.
 - [ ] **Josh: App Privacy label, beta description, feedback email, reviewer notes** (Claude drafts each).
 - [ ] **Josh: approve the tester questions**, updated first (the wait is ~3 s, there's a Beginner level, it's hands-free).
