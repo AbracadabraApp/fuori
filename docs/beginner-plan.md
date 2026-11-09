@@ -2,6 +2,57 @@
 
 **Status:** draft for Josh (Claude, 2026-11-08). How the Beginner level runs today, the baseline: [beginner-as-live.md](beginner-as-live.md). Everything below the goal is a proposal; the decisions are Josh's and marked as such. Nothing is built until he approves; prompt changes then go through a test card.
 
+## Direction (Josh, 2026-11-08)
+
+"I'd lean on scaffolding. Think of beginner as roleplay lessons not conversation. English makes beginners comfortable." Then: "Yes but needs stage directions." Earlier the same night: "Making beginner more deterministic (but varied) seems better", and of adaptive support and the stage changes: "too complicated, too optimistic".
+
+**A Beginner visit is a short roleplay lesson with a real person in a real place.**
+- **English carries the learner:** the character sets the scene, explains, and tells them what to say, warmly, like a friend who lives there.
+- **Stage directions** say what's happening: where they are, what the character does, what's in front of them ("He taps the first line on the board").
+- **One predictable shape, varied by place and person:** the scene → a phrase or two this place needs → they try it → react and explain → maybe one more → goodbye.
+- **The scaffolding leads:** answers to say back every time, the echo, help in English whenever asked.
+
+**Changes this means** (Josh decides each):
+- Three Beginner rules turn around: *English: brief* (at most two sentences), *Role: not a teacher* (never explain how people talk), *Voice: no narration* (no stage directions).
+- CLAUDE.md's Beginner teaching rule changes to match: Beginner visits teach openly, in role.
+- How stage directions reach the learner: shown as text, said by a narrator voice, or said by the character in English.
+
+**Sketch: Nino's visit (2026-11-09) as a roleplay lesson.** Same person, place and facts as the real conversation; *directions in italics*, answers to say back after each turn.
+
+> *Garbatella, after lunch. The osteria's kitchen is closed. Nino sits by the door with his coffee, next to the chalk menu board.*
+>
+> **Nino:** Ah, a new face! Come in. I'm Nino, this is my osteria. Here you say your name like this: *Mi chiamo Nino.* Now you. *Come si chiama?*
+> → *Mi chiamo …*
+>
+> **You:** Mi chiamo Joshua.
+>
+> *He shakes your hand and points at the board.*
+> **Nino:** *Piacere*, Joshua: nice to meet you. This board has everything we cook. To ask what's good, Romans say *Cosa mi consiglia?*, "what do you recommend?" Try it.
+> → *Cosa mi consiglia?*
+>
+> **You:** Cosa mi consiglia?
+>
+> *He taps the first line.*
+> **Nino:** La carbonara! Egg, never cream. If you want it, you say *Vorrei la carbonara.* Or the cacio e pepe: only cheese and pepper. *Carbonara o cacio e pepe?*
+> → *Vorrei la carbonara.* / *Vorrei la cacio e pepe.*
+>
+> **You:** Vorrei la cacio e pepe.
+>
+> *He laughs and nods toward the dark kitchen.*
+> **Nino:** Good choice, but the kitchen opens tonight: *La cucina apre stasera.* On Thursdays we make gnocchi. To say you'll come back: *Torno giovedì.*
+> → *Torno giovedì.* / *Torno stasera.*
+>
+> **You:** Torno giovedì.
+>
+> **Nino:** *Perfetto!* Then it's *a giovedì*, "see you Thursday": *a* and the day.
+> → *A giovedì, Nino!*
+
+Phrases practised: *Mi chiamo…, Piacere, Cosa mi consiglia?, Vorrei…, Torno giovedì, A giovedì.* The real conversation had six "X or Y?" questions and taught no phrase outright.
+
+**Next:** Josh reads the sketch. If it's right, a test card: replay real Beginner visits with a roleplay-lesson prompt against today's, read side by side.
+
+## Earlier draft (before the direction)
+
 ## The goal
 
 From the Beginner goals (Josh, 2026-10-25, `docs/beginner-scaffolding.md` → Goals) and CLAUDE.md: in each conversation a Beginner **understands what's going on, says whole sentences in the language, and leaves with a word or two that matter**, with a real person in a real place in the country. Over the level, they move from saying back offered answers to answering in their own words, and then on to Intermediate.
