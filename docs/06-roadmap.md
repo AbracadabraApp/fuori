@@ -41,9 +41,16 @@ To be decided together in one plan for the Beginner level, not item by item.
 - **Beginner turns all have one shape** (an English aside, then "X or Y?"). Josh's theory: `content/it/prompts/beginner.md` (1,550 words, 23 sections) over-determines the conversation. Next: a card testing a much shorter Beginner prompt against today's, judged on whether turns vary. Done when: the test answers whether shorter reads less formulaic.
 - **Josh: should said-back answers count toward moving up?** Today a conversation counts only with 3 turns in the learner's own words, so at S1, where answers are offered to say back, the learner who says them back never moves up (Josh at step 1: 2 easy counted conversations in 3 days). Options: count said-back turns as half, or count any turn in the language. Done when: Josh picks, then Claude changes `lib/path.ts` with a test.
 - **Placement:** onboarding's "own words" answer puts a learner at step 3 (S2, little English); Jennifer couldn't follow and was reset to step 1 (2026-11-08).
+- **Italy's Beginner lessons: 7 teaching failures left** (five judges on 21 lessons; `tests/experiments/lesson-judges/README.md`). Next: Claude lists the 7 with the lines for Josh. Done when: fixed or accepted by Josh.
+- **How much a beginner can follow:** the goal is 90% of the character's words at the learner's level; on the last measure a beginner could follow about 25% of lines (old list → Language level of the dialogue).
+- **Teaching in role at Beginner:** characters teach key phrases such as "Come si dice …?" in role, instead of a button (Josh, 2026-10-16; old list → Language level, first item).
+- **The path itself** (`lib/path.ts`, built 2026-11-02 from Josh's plan of 2026-10-25): stages per step 1,1,1,1,1 · 1,2,1,1,2 · 2,2,2,3,3, then Intermediate; English, answers to say back and question kind fade by stage. The old list still says "not built"; the plan reviews whether the fading works in play (old list → Beginner level dialogue).
+- **Josh: settle CLAUDE.md's teaching rules by level** once the Beginner level is kept (old list → Beginner level dialogue).
+- **Say it in English, the scaffolding loop** (say it in English → a line in the language → read it out loud): measuring English transcription on recordings, and the tabled help with the learner's own language (old list → Scaffolding).
+- **Replies written in advance for the offered answers** stays under Faster replies (it's speed), but its numbers (~40% of S1 turns said back) belong to this plan too.
+- **Tester question:** can beginners follow at their level? (old list → Release, Stage 2, question 3.)
 
 ### Lessons
-- [ ] **Italy's Beginner lessons: 7 teaching failures left** (five judges on 21 lessons; `tests/experiments/lesson-judges/README.md`). Next: Claude lists the 7 with the lines for Josh. Done when: fixed or accepted by Josh.
 - [ ] **Intermediate lessons draft: 50 lines to fix** (`content/it/lessons-b1.json`, not read by the app). Waits on: Josh's review of the proposal (old list below, item 4). Done when: Josh says yes, then the lines are fixed and the app reads the file.
 
 ### App
@@ -74,6 +81,7 @@ To be decided together in one plan for the Beginner level, not item by item.
 - Keep-awake in conversations (dbc036c). Records rewritten when a conversation goes on after an early end (bb0b6e6). Daily order of cities and places (b31c916). Jennifer reset to Beginner step 1.
 
 ### Possibly done or overtaken: Josh to close
+- **The Beginner lessons rewrite** (Italy's 21 lessons into 14 chips): merged 2026-11-03 (8da32a0, 375d1a8); the old list still shows it open.
 - **Characters change their own facts across visits** (Ettore's job, Serena's neighbourhood): likely fixed by 95bcd93 (2026-11-07, live): memory notes now keep what the character told them, not only the learner. Serena's job is also fixed in her `here` line; Ettore's former job still isn't, so he invents it once and memory keeps it. Not re-run over 3 visits since.
 - **Garbled letters in replies** ("¥Hola", "dÃas"): none in 14 days of replies (checked 2026-11-08), and `npm run test:mojibake` passes.
 - **Trim the here lines** and **C6, a better here line** (old N6 items 10 and 12): C12 decided today's lines stay (Josh, 2026-11-08).
