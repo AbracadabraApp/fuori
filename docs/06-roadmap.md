@@ -28,7 +28,6 @@ The open to-do list (reorganized 2026-11-08; made specific the same night at Jos
 Problems seen in real play; each needs examples logged in `docs/dialogue-ideas.md` before any fix, and any prompt change needs a test card.
 - [ ] **Characters lose the scene**: the same coffee served twice (Antonio, 11-06), a choice offered after it was handed over, coffee offered at a closed bar (Nino, 11-09). 12 of 67 Beginner conversations over 20 days; examples already in `docs/dialogue-ideas.md` (Beginner top 10, #7). Forgetting the visitor is mostly gone (no bad case after 10-24; memory fix 95bcd93). Next: a test card on keeping track of what's on the counter. Done when: the card is reviewed and in the queue.
 - [ ] **D1, questions as dialogue structure**: characters ask poor questions; learners are rarely invited to ask. Queued in `docs/prompt-testing.md`. Done when: it reaches the top of the queue as a card.
-- [ ] **A better memory test**: today's test counts repeated topics; the real fault is a visit that replays an earlier one as if new (Groundhog day). Next: write the measure (does a return visit treat earlier talk as known?). Done when: a script reports it for 10 return visits.
 - [ ] **Question ladder for Intermediate and Advanced** (one fact, then anything). Next: Claude writes a one-paragraph proposal for Josh. Done when: Josh says yes or no.
 - [ ] **More dialect as you level up** (the setting in Settings is greyed out). Next: Josh decides whether it's wanted now. Done when: decided.
 - [ ] **Josh: targets for the scorecard's two learner rows** (share of words in the language, words per line; `format=scorecard`). Done when: two numbers written here.
@@ -70,6 +69,7 @@ Problems seen in real play; each needs examples logged in `docs/dialogue-ideas.m
 - Keep-awake in conversations (dbc036c). Records rewritten when a conversation goes on after an early end (bb0b6e6). Daily order of cities and places (b31c916). Jennifer reset to Beginner step 1.
 
 ### Possibly done or overtaken: Josh to close
+- **A better memory test** (Groundhog day visits): built 2026-11-08 as the scorecard's "Repeats from earlier visits" (real play and the conversation test; sentences of 8+ words, c47864e). Gap: it misses short replays, such as a question asked again on every visit (a1fc797). Close, or keep for the gap.
 - **The Beginner lessons rewrite** (Italy's 21 lessons into 14 chips): merged 2026-11-03 (8da32a0, 375d1a8); the old list still shows it open.
 - **Characters change their own facts across visits** (Ettore's job, Serena's neighbourhood): likely fixed by 95bcd93 (2026-11-07, live): memory notes now keep what the character told them, not only the learner. Serena's job is also fixed in her `here` line; Ettore's former job still isn't, so he invents it once and memory keeps it. Not re-run over 3 visits since.
 - **Garbled letters in replies** ("¥Hola", "dÃas"): none in 14 days of replies (checked 2026-11-08), and `npm run test:mojibake` passes.
