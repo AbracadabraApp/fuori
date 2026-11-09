@@ -56,6 +56,23 @@ Phrases practised: *Mi chiamo…, Piacere, Cosa mi consiglia?, Vorrei…, Torno 
 
 ## Earlier draft (before the direction)
 
+## Mechanics: scaffolding is the key (Josh, 2026-11-08)
+
+Josh: "The scaffolding is key mechanic." "In production S1 English is good." The levels are settings of the same supports, set by code, not asked of the model:
+
+| Support | Level 1: say it back | Level 2: finish it yourself | Intermediate |
+|---|---|---|---|
+| English to set the scene (spoken, not shown) | yes: **today's S1 English, kept as is** (Josh: good) | yes | no |
+| The echo: short English after each phrase | yes | new words only | no |
+| Bubbles in the language, English a tap away | yes | yes | yes |
+| Lines to say back | whole answers (two when the question is a choice) | the start of a sentence | none |
+| Say it in English | yes | yes | yes |
+| Help when asked | yes | yes | yes |
+
+- **Two Beginner levels, then Intermediate** (Josh asked why levels 1 and 2 of a three-level draft differed: two answers against one is a difference in the question, not in help).
+- **Progress (proposal):** 5 good visits at a level move you up; good = at least 3 of 4 questions answered in the language, an offered answer said back counts; English or asking for the whole line again doesn't. No automatic move down; the level can always be chosen in Settings.
+- **Shapes (proposal):** 4, chosen by code each turn: she asks (answers offered); she tells (a reaction line offered); you ask (the line offered is a question); goodbye (after about 8 turns). Claude writes only the words inside the shape.
+
 ## The goal
 
 From the Beginner goals (Josh, 2026-10-25, `docs/beginner-scaffolding.md` → Goals) and CLAUDE.md: in each conversation a Beginner **understands what's going on, says whole sentences in the language, and leaves with a word or two that matter**, with a real person in a real place in the country. Over the level, they move from saying back offered answers to answering in their own words, and then on to Intermediate.
