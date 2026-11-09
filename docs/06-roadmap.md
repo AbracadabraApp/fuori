@@ -36,8 +36,11 @@ Problems seen in real play; each needs examples logged in `docs/dialogue-ideas.m
 
 ### Leveling
 - [ ] **Josh: should said-back answers count toward moving up?** Today a conversation counts only with 3 turns in the learner's own words, so at S1, where answers are offered to say back, the learner who says them back never moves up (Josh at step 1: 2 easy counted conversations in 3 days). Options: count said-back turns as half, or count any turn in the language. Done when: Josh picks, then Claude changes `lib/path.ts` with a test.
-- [ ] **Placement: is step 3 too far for "own words"?** Onboarding put Jennifer at step 3 (S2, little English) because she answered in her own words; she couldn't follow and was reset to step 1. Next: Claude lists every learner placed at step 3 and how their first conversations went. Done when: Josh decides whether "own words" places at step 2 or 3.
 - [ ] **Josh and Sophia play the path.** Next: play as usual. Done when: two weeks of words spoken per week in `format=records` show whether learners move up.
+
+### Deferred to a master Beginner plan (Josh, 2026-11-08)
+To be decided together in one plan for the Beginner level, not item by item.
+- **Placement:** onboarding's "own words" answer puts a learner at step 3 (S2, little English); Jennifer couldn't follow and was reset to step 1 (2026-11-08).
 
 ### Lessons
 - [ ] **Italy's Beginner lessons: 7 teaching failures left** (five judges on 21 lessons; `tests/experiments/lesson-judges/README.md`). Next: Claude lists the 7 with the lines for Josh. Done when: fixed or accepted by Josh.
