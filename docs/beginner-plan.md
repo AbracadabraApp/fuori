@@ -72,6 +72,36 @@ Phrases practised: *Mi chiamo…, Piacere, Cosa mi consiglia?, Vorrei…, Torno 
 
 ## Earlier draft (before the direction)
 
+## Mechanics: the shape of a turn (draft, 2026-11-09)
+
+Built from Josh's points in one pass (he found the piece-by-piece questions tedious). For him to react to as a whole.
+
+**A turn is made of jobs.** Each job has a language (English or the language).
+
+| Job | What it does | Notes |
+|---|---|---|
+| React | responds to what they just said | the usual opening after the first turn |
+| Recast | a React that says their line back right | only after their own words, and only for a real mistake; the code allows it, the character decides (the shared rule: not every time; mishearings make bad corrections) |
+| Set the scene | where we are, what's going on | first turn; the character speaks as themselves, never as a narrator |
+| Say | something of the character's own | |
+| Echo | the same thing in the other language | English after the language, or the language after English |
+| Ask | asks for their reply | either language; defined by asking, not by language |
+| Offer answers | lines to say back, English under each | always last |
+
+**The code sets each turn's shape with five settings** and tells the character in one line ("This turn: React · Say (the language, English echo) · Ask (the language) · Answers (2)"); the character fills it:
+1. which jobs are in it
+2. their order (React/Recast and Set the scene first, Answers last; Say, Echo and Ask in between)
+3. the language of each
+4. the length of each (a word to a sentence)
+5. the answers' form (two, one, a sentence start, or a question for them to ask)
+
+**Rules every Beginner turn keeps:**
+- At least one **spoken** English part (setting, Say in English, an echo, or the Ask in English); English under the answers doesn't count, it's read.
+- Recast only after their own words.
+- First turn: Set the scene. Last: the goodbye offered (after about 8 turns, or when they say it).
+
+**Varied, but predictable:** among the shapes the rules allow, a seeded pick that never repeats either of the last two turns' shapes. Where they are on the Beginner ramp sets which language leads: English leads with the language echoing → the language leads with English echoing → English only sets the scene.
+
 ## Mechanics: scaffolding is the key (Josh, 2026-11-08)
 
 Josh: "The scaffolding is key mechanic." Scaffolding is how the learner takes part; the level is how the character talks (`docs/glossary.md`). An earlier table here mixed the two (Josh: "I don't agree with table").
