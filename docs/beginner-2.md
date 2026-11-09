@@ -72,7 +72,17 @@ Why reading back scores below an English answer (Josh, 2026-11-09): reading a bu
 
 ## Progression
 
-Within a conversation and across conversations. What exactly changes is open. A loose TCP picture: start small, grow while exchanges land, back off on a breakdown, remember the level across visits. The reply table is the candidate measure. Ask before removing scaffolding: the learner decides, and each ask names the one part that changes.
+**Offer, and the learner decides** (Josh, 2026-11-09: "the simplest is after 3-5 conversations, propose taking away scaffolding and let the user decide"). Beginner 1 has a fixed playlist of stages and a moving-up rule that has fired once in 185 records; Beginner 2 replaces both with this.
+
+- **When:** after every 3–5 conversations at the current setting, asked once, at the end of a conversation.
+- **What:** one change, named plainly. A first order, following the reply types (to settle):
+  1. no answers to read, she gives the words (bubbles → her glossed words);
+  2. less explaining in English (English comes in to rescue, not to lead);
+  3. the full conversation (Intermediate).
+- **Yes:** the next conversation plays that way. **No:** asked again after another 3–5.
+- **No going back for now.** A learner who needs more help asks for it in the conversation, and she gives it, as Beginner 1 characters already do.
+- **The reply table and counts** are for looking at (does it rise, do the players differ), not a gate.
+- **Open:** the list of changes and their order; who asks (her, in role, or a plain screen at the end: a new screen, so a mockup first).
 
 ## Beginner 1 rules Beginner 2 breaks
 
