@@ -99,6 +99,8 @@ Built from Josh's points in one pass (he found the piece-by-piece questions tedi
 - Recast only after their own words.
 - First turn: Set the scene. Last: the goodbye offered (after about 8 turns, or when they say it).
 
+**What the echo is for** (Josh, 2026-11-09): "Echo should let the speaker safely speak Italian and not lose the learner." The safety net that lets the character say real sentences in the language.
+
 **The echo does both, by direction** (Josh, 2026-11-09: "Things are spicy or sweet (echo); do you like spicy or do you like sweet (no echo)"; "More like Italian underline"; "It should do both"):
 - **The language, then the English echo:** helps them understand what was just said: today's echo, **kept as it is** (Josh: "Italian then English is fine").
 - **English, then the language's echo (new):** underlines the words worth keeping (*piccante o dolce*), not a whole translation.
