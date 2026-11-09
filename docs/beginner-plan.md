@@ -1,6 +1,38 @@
 # The Beginner plan
 
-**Status:** to write (Josh, 2026-11-08). One plan for the Beginner level, decided together rather than item by item. On the to-do list as one line (`docs/06-roadmap.md` → Now). The details gathered so far, unchanged from the list:
+**Status:** draft for Josh (Claude, 2026-11-08). Everything below the goal is a proposal; the decisions are Josh's and marked as such. Nothing is built until he approves; prompt changes then go through a test card.
+
+## The goal
+
+From the Beginner goals (Josh, 2026-10-25, `docs/beginner-scaffolding.md` → Goals) and CLAUDE.md: in each conversation a Beginner **understands what's going on, says whole sentences in the language, and leaves with a word or two that matter**, with a real person in a real place in the country. Over the level, they move from saying back offered answers to answering in their own words, and then on to Intermediate.
+
+## What real play shows (14–20 days of transcripts)
+
+- **Every turn has one shape:** an English aside, then "X or Y?", then two answers to say back. Nino tonight: carbonara or cacio e pepe, pepper or pecorino, gricia or amatriciana, tonight or Thursday, lunch or dinner, coffee or leave.
+- **Six of the Beginner top-10 problems don't appear at Intermediate** (interviewing by multiple choice, the same shop script, stepping out to manage the lesson, narrator and tour guide…). The same characters in the same places come alive at Intermediate, so the difference is the Beginner format, not the cast.
+- **Facts go wrong inside the forced choice** (sugar offered after the coffee is served; another coffee at a closed bar).
+- **Learners do say the answers back:** about 40% of Josh's S1 turns word for word and 60% of Jennifer's S2 turns, about 70% on or close to an offered answer.
+- **Saying back never moves you up:** a conversation counts only with 3 turns in your own words, so S1 holds the learner who uses it as intended (Josh: 2 counted conversations in 3 days at step 1).
+- **Placement can overshoot:** "own words" in onboarding put Jennifer at step 3 (S2, little English); she couldn't follow.
+
+## The proposal (four parts)
+
+**1. Fewer rules for the shape of a turn (Josh's "overbuilt" theory).** The Beginner prompt is 1,550 words in 23 sections; the character prompt that works at Intermediate is 534. Keep what the goals need: the parts format (English, the words, a question, answers to say back), easy language, English when asked, no corrections pointed out. Cut the sections that prescribe shape: the place opener (the source of the guidebook openings), "Variety: not the same shape" (an instruction about variety tends to cause its own repetition), the flow rule, and the question rule's "this or that". A turn may end without a question; a question may be one of two, one fact, or open, at the stage's level. Some answers to say back may be questions the learner asks (from D1: "¿Usted qué me recomienda?"). **Test (a card first):** replay real Beginner conversations with today's prompt and the short one; count one-shape turns, fact slips, lines a beginner can follow (the 90% goal), and the share said back.
+
+**2. What counts toward moving up. Josh decides.** Options:
+- (a) At steps 1–2, a turn answered in the language counts, said back or in their own words; from step 3, own words only. *Claude's recommendation: S1's job is saying whole sentences (goal 3), and saying back is exactly that.*
+- (b) Any turn in the language counts at every step.
+- (c) Keep the rule, but step 1 ends after a set number of conversations.
+
+A change to `lib/path.ts` with a test; no prompt involved.
+
+**3. Placement. Josh decides.** "Own words" in onboarding places at step 2 (S1 and S2 mixed, English support kept) instead of step 3. One example so far (Jennifer). A one-line change in `lib/path.ts → placement`, with its test.
+
+**4. The fading itself: watch, don't change.** Keep the stages (1,1,1,1,1 · 1,2,1,1,2 · 2,2,2,3,3, then Intermediate). After 1–3, check in the records: does a learner's share of turns in their own words rise across conversations, and does someone playing most days reach step 3 in about two weeks?
+
+**Order:** 2 and 3 first (small, code only, need only Josh's choice); then 1 (a test card, then the run); 4 is watching the records afterwards.
+
+## Gathered items, and where each fits
 
 - **The Beginner plan, one item** (Josh, 2026-11-08: "these are all one item"). One plan for how a Beginner conversation goes and how a learner moves through the level, covering together:
   - *The shape of turns:* every turn the same shape (an English aside, then "X or Y?"); Josh's theory is that `content/it/prompts/beginner.md` (1,550 words, 23 sections) over-determines the conversation.
