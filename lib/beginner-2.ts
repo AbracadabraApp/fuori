@@ -34,6 +34,8 @@ export interface Setup {
   english: boolean;
   /** The answer said inside her line by the code, not shown as a bubble (insideSpeech) */
   inside?: boolean;
+  /** An invited English answer: the code adds the invitation and the question's English (invited) */
+  invite?: boolean;
 }
 
 /**
@@ -46,7 +48,7 @@ export const RUNGS: Setup[] = [
   { id: 'two-en', block: 'Setup: two answers', maxAnswers: 2, english: true },
   { id: 'inside-en', block: 'Setup: one answer', maxAnswers: 1, english: true, inside: true },
   { id: 'ask-en', block: 'Setup: two questions to ask', maxAnswers: 2, english: true },
-  { id: 'invite-en', block: 'Setup: invite English', maxAnswers: 0, english: false },
+  { id: 'invite-en', block: 'Setup: invite English', maxAnswers: 0, english: false, invite: true },
   { id: 'inside', block: 'Setup: one answer', maxAnswers: 1, english: false, inside: true },
   { id: 'free', block: 'Setup: no answers', maxAnswers: 0, english: false },
 ];
@@ -152,10 +154,24 @@ export function withEnglish(parts: Part[]): Part[] {
   return target ? parts.map((x) => (x === target ? { ...x, gloss: x.en } : x)) : parts;
 }
 
+/**
+ * An invited English answer, made sure of in code: twice live (Doña Chayo, 2026-11-09) the character asked a
+ * plain yes/no question in the language instead. Her question gets its English spoken, and the "Line: invite
+ * English" block is said after it, unless the turn already says English answers are fine
+ */
+export function invited(parts: Part[]): Part[] {
+  const lead = readPromptFile(SCAFFOLDING_FILE).block('Line: invite English').trim();
+  const english = parts.filter((x) => x.kind === 'english').map((x) => x.text).join(' ').toLowerCase();
+  const already = english.includes(lead.toLowerCase().replace(/[.!]$/, '').split(' ').slice(-2).join(' '));
+  const out = parts.map((x) => (x.kind === 'question' && !x.gloss?.trim() && x.en.trim() ? { ...x, gloss: x.en } : x));
+  return already ? out : [...out.filter((x) => x.kind !== 'answer'), { kind: 'english', text: lead, en: '', gloss: '' }];
+}
+
 /** Display: every phrase glossed in clusters 1–2; English on every turn; an inside rung's answer said by the character */
 export function shownParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER_1): Part[] {
   const parts = withEnglish(GLOSS_ALL[Math.max(0, CLUSTERS.indexOf(cluster))] ? glossAll(raw) : raw);
   if (setup.inside) return insideSpeech(parts, setup);
+  if (setup.invite) return invited(parts);
   return setup.english ? parts : parts.map((x) => (x.kind === 'answer' ? { ...x, en: '' } : x));
 }
 

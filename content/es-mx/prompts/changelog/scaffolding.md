@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10e: Level 1 is English with echoes in the language
+- **Changed:** "Level: 1" (clusters 1–2) is now English-led: the character speaks English and puts the language right after the English that says it (the words worth keeping, a short phrase, the question), an echo, so the learner always knows what it means. Replaces S1's text, including its "your English never says what your {language} then says".
+- **Why:** Josh played Doña Chayo (Puebla, cluster 1, 2026-11-09): every turn was an English block, then a block in the language that said something else, no glosses ("English intro - all Spanish… had to look to answers for context… this is not bilingual helper"); "English with Spanish gloss might be a better beginner approach than all Spanish a little English". That's the ramp from the plan (English leads → the language leads → English only sets the scene). The rule against saying the same thing in both languages was written for "cafe, coffee, cafe", which Josh says was the voice reading something meant only for the screen; the code fixed that on 2026-11-05, so the rule only kept the two languages apart.
+- **Added:** "Line: invite English" ("You can answer me in English."), added by the code on an invited-English turn (lib/beginner-2.ts → invited), with the question's English: twice live the character asked a plain yes/no question instead.
+
 ### 2026-11-10d: two questions to ask, as a reply setup
 - **Added:** "Setup: two questions to ask": two short questions the learner could ask the character, shown as answer bubbles with their English.
 - **Why:** Josh, 2026-11-09: "I'm not fine with a cluster 1 surrender". Play feedback had left cluster 1 one reply type (two answers), the same shape every turn. Cluster 1 now mixes two answers, two questions to ask the character and an invited English answer, the three where the learner always knows what they're saying.

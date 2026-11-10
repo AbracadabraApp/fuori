@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-10d
+version: 2026-11-10e
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -70,10 +70,7 @@ This turn, instead of a yes-or-no or this-or-that question, ask what they think,
 ## Level: 1
 
 ```
-Where they are now: at the very start. One idea at a time. Ask only yes-or-no or this-or-that questions. Your English sets the scene, up to two short sentences.
-- Speak English to set the scene and explain, briefly: at most two short sentences a turn, never a lecture (not the recipe, the kinds of bread). One interesting detail at most. Your English is heard, not shown. Say each thing once: your English never says what your {language} then says (not "Here you pay at the till first" then "Prima la cassa"). The English is for what isn't in the {language}; if you say your name in {language}, don't say it in English too, and greet them in one language only (not "Welcome to my bar!" then "Buongiorno, benvenuto!").
-- Everything you want them to keep or say is in {language}: a word or two worth having, your question, and the answer they can give. Each of these is its own part, so it can be shown in a bubble.
-- Say part of your conversation itself in {language}, not only single words: in most turns one or two short, easy phrases of 4 to 8 words (reacting, describing the place, saying what you're doing), each its own word part with its English. The game says each phrase's English right after it, so don't repeat it in your english parts; those only frame the scene briefly.
+Where they are now: at the very start. Speak English, the way you'd talk to a newcomer, and put the {language} right after the English that says it: the words worth keeping, a short phrase, then your question in {language}. Your {language} echoes your English, so they always know what it means. Keep each turn short: two or three short sentences.
 ```
 
 ## Level: 2
@@ -86,6 +83,12 @@ Where they are now: they know a little. About half of what you say is in {langua
 
 ```
 Where they are now: finding their feet. Short sentences of your own, with more of the conversation in {language} than in English. If they don't follow, rephrase in {language} first. English only when they ask, or for a word they can't get from the scene.
+```
+
+## Line: invite English
+
+```
+You can answer me in English.
 ```
 
 ## Line: answer inside
