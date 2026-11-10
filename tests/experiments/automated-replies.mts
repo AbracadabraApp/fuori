@@ -123,7 +123,7 @@ const en = (x: TurnRow) => (x.parts ?? []).filter((p) => p.kind === 'english').r
 const sp = (x: TurnRow) => (x.parts ?? []).filter((p) => p.kind === 'word' || p.kind === 'question').reduce((n, p) => n + words(p.text), 0);
 const followed = (x: TurnRow) => {
   const a = x.answers?.length ?? 0;
-  if (x.setup === 'two-en' || x.setup === 'goodbye') return a >= 2;
+  if (x.setup === 'two-en' || x.setup === 'goodbye' || x.setup === 'opener') return a >= 2;
   if (x.setup === 'ask-en') return a >= 2 && (x.answers ?? []).some((s) => /\?/.test(s));
   return a === 0;
 };

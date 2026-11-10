@@ -58,19 +58,22 @@ const R = (id: string) => RUNGS.find((r) => r.id === id)!;
 export const GOODBYE: Setup = { id: 'goodbye', block: 'Setup: goodbye', maxAnswers: 2, english: true };
 export const GOODBYE_AFTER = 8;
 
+/** The first turn: the place, not the person (Doña Carmen, 2026-11-10: "¿Usted es de aquí?… ¿Es porque veo africano?") */
+export const OPENER: Setup = { id: 'opener', block: 'Setup: opener', maxAnswers: 2, english: true };
+
 /**
  * Six clusters: the setups in play, the level text and whether every phrase is glossed move
  * together (Josh: 6–8 clusters; progression is also how much English is spoken)
  */
 export const CLUSTERS: Setup[][] = [
-  // Cluster 1 keeps the plan's variety (Josh: "not fine with a cluster 1 surrender"): the three where you always
-  // know what you're saying: two answers, two questions to ask the character, an invited English answer
-  [R('two-en'), R('ask-en'), R('invite-en')],
-  [R('two-en'), R('ask-en'), R('invite-en')],
-  [R('two-en'), R('ask-en'), R('invite-en'), R('free')],
-  [R('ask-en'), R('invite-en'), R('free')],
-  [R('invite-en'), R('free')],
-  [R('invite-en'), R('free')],
+  // No invitation to ask ("Is there anything you'd like to know…?"): Josh, 2026-11-10, after Renata and Doña Carmen
+  // asked it again and again: "you can just remove the ask question". Questions to ask stay, as bubbles only
+  [R('two-en'), R('ask-en')],
+  [R('two-en'), R('ask-en')],
+  [R('two-en'), R('ask-en'), R('free')],
+  [R('ask-en'), R('free')],
+  [R('two-en'), R('free')],
+  [R('free')],
 ];
 // The answer set up inside the character's line (rungs inside-en and inside) is out of every cluster until it
 // has a screen design (Josh, 2026-11-09: "I can't tell what the dialogue is that goes with 'You could answer me
@@ -116,7 +119,7 @@ function weighted(cluster: Setup[], key: string): Setup {
 export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date; /** what the learner just said: after their own question, no invitation (the character follows it up) */ learnerSaid?: string }, cluster: Setup[] = CLUSTER_1): Setup {
   if (p.turn >= GOODBYE_AFTER) return GOODBYE;
   // The opener is two answers to read when the cluster has them (Arturo, 2026-11-09: an invited-English opener set a pattern the character copied all visit)
-  if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return R('two-en');
+  if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return OPENER;
   const day = (p.now ?? new Date()).toISOString().slice(0, 10);
   const key = (turn: number) => (p.conversationId ? `${p.conversationId}|${turn}` : `${p.learnerId ?? ''}|${p.characterId}|${day}|${turn}`);
   const pick = weighted(cluster, key(p.turn));

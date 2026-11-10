@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10m: the opener asks about the place, not the person; the invitation to ask removed
+- **Removed:** the invitation to ask ("Is there anything you'd like to know about…?") from every cluster, and the invitation sentence from questions to ask, which now just carries on and offers two questions as bubbles. Josh, 2026-11-10, after Renata and Doña Carmen asked it again and again (Carmen four times; Josh: "is it because you have Alzheimer's"): "you can just remove the ask question".
+- **Added:** "Setup: opener", the code's setup for the first turn: open with your place or what you're doing right now, and ask about that, not about them; two answers to say back.
+- **Why:** almost every opener asked whether the learner is from here or new ("¿Usted es de aquí?", "¿Es su primera vez aquí?"); Josh in play, Doña Carmen (Alameda, 2026-11-10): "todos me preguntan la misma pregunta… ¿Es porque veo africano?" Asked by nearly everyone, the question singles the learner out. Taking "newcomer" out of the scaffolding (10k) left it at 3 in 10 openers.
+
 ### 2026-11-10l: the two invitation lines without their list
 - **Changed:** "Setup: two questions to ask" and "Setup: invite English" no longer name "your place, your work or the town"; the character invites "in your own words".
 - **Why:** Josh played Renata (Palacio Nacional, 2026-11-10): "Is there anything you'd like to know about my work, this palace, or the town?" on 5 of 9 turns, in the same words ("Usted me hizo esa pregunta tres veces"). With the code's new setup mix (lib/beginner-2.ts: two answers three times as often, no invitation twice running or right after the learner's own question) the list was the remaining refrain.

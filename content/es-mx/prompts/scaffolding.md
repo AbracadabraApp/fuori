@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-10l
+version: 2026-11-10m
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -38,6 +38,12 @@ Reply with JSON: parts, in the order you say them. Each part is { "kind": "engli
 - answer: what they can say back, in {language}, with its English. When it names a local thing with no English word (a dish, a drink, a food), the English says what it is in a few words ("El quesillo, por favor." → "The quesillo (Oaxacan string cheese), please."). It's shown to them, not said by you: don't repeat it in your other parts
 ```
 
+## Setup: opener
+
+```
+This is your first turn: open with your place or what you're doing right now, and ask them about that, not about them. Give them two short answers they could say back.
+```
+
 ## Setup: two answers
 
 ```
@@ -53,7 +59,7 @@ This turn, give them one short answer they could say back.
 ## Setup: two questions to ask
 
 ```
-This turn, invite their curiosity the way a local would, in your own words, in English. Their answers are two short questions they could ask you.
+This turn, don't ask them anything: carry on with what you're saying, and give them two short questions they could ask you, as their answers.
 ```
 
 ## Setup: goodbye

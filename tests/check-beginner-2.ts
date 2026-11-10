@@ -4,7 +4,7 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, beginner2Version, glossAll, questionEcho, GOODBYE, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
@@ -21,7 +21,7 @@ check(beginnerVersionFrom(new Headers()) === 1 && beginnerVersionFrom(new Header
 
 const a = pickSetup({ conversationId: 'conv-1', turn: 3, characterId: 'luisa' });
 check(pickSetup({ conversationId: 'conv-1', turn: 3, characterId: 'luisa' }).id === a.id, 'the same conversation and turn get the same setup');
-const seen = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `conv-${i}`, turn: i % 8, characterId: 'luisa' }).id));
+const seen = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `conv-${i}`, turn: 1 + (i % 7), characterId: 'luisa' }).id));
 check(seen.size === CLUSTER_1.length && [...seen].every((id) => CLUSTER_1.some((s) => s.id === id)), `over 40 turns every setup of cluster 1 comes up (got ${[...seen].join(', ')})`);
 const day = new Date('2026-11-09T10:00:00Z');
 check(pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id === pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id, 'an opening is seeded by learner, place and day');
@@ -31,11 +31,11 @@ check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith("They're at the very start")
 check(!/Every turn has some English|When you first see them|explain something in English when it helps/.test(readFileSync(`content/${process.env.COUNTRY ?? 'it'}/prompts/scaffolding.md`, 'utf8')), 'the English lines added one per play are gone from the prompt');
 check(CLUSTERS.length === 6, 'six clusters');
 check(CLUSTERS.flat().filter((r) => !r.inside).every((r) => r.maxAnswers === 0 || (r.maxAnswers === 2 && r.english)), 'bubbles are two, always with English (Josh: reading Spanish you don\'t understand is coercive; one answer feels weird)');
-check(['two-en', 'ask-en', 'invite-en'].every((id) => CLUSTER_1.some((r) => r.id === id)), 'cluster 1 mixes two answers, two questions to ask and an invited English answer (Josh: no cluster 1 surrender)');
+check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && !CLUSTERS.flat().some((r) => r.id === 'invite-en'), 'cluster 1 mixes two answers and questions to ask; no cluster invites a question (Josh: remove the ask question)');
 check(!CLUSTERS.flat().some((r) => r.inside), 'no cluster plays the answer inside the character\'s line until it has a screen design');
 check(clusterFrom(new Headers({ 'x-fuori-cluster': '4' })) === CLUSTERS[3] && clusterFrom(new Headers()) === CLUSTER_1 && clusterFrom(new Headers({ 'x-fuori-cluster': '9' })) === CLUSTER_1, 'the cluster header picks clusters 1-6, cluster 1 otherwise');
-const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `c-${i}`, turn: i % 8, characterId: 'x' }, CLUSTERS[5]).id));
-check(seen6.size === 2 && seen6.has('free') && seen6.has('invite-en'), `cluster 6 plays its own three rungs (got ${[...seen6].join(', ')})`);
+const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `c-${i}`, turn: 1 + (i % 7), characterId: 'x' }, CLUSTERS[5]).id));
+check(seen6.size === 1 && seen6.has('free'), `cluster 6 plays its own three rungs (got ${[...seen6].join(', ')})`);
 
 const parts: Part[] = [{ kind: 'question', text: 'Un caffè?', en: 'A coffee?', gloss: '' }, { kind: 'answer', text: 'Sì, grazie.', en: 'Yes, thanks.', gloss: '' }];
 check(shownParts(parts, RUNGS.find((r) => r.id === 'two-en')!).find((x) => x.kind === 'answer')!.en === 'Yes, thanks.', 'bubbles keep their English');
@@ -72,7 +72,7 @@ check(setupText(GOODBYE).includes('goodbye'), 'the goodbye setup line comes from
 const noAsk = shownParts([{ kind: 'question', text: '¿De dónde es usted?', en: 'Where are you from?', gloss: '' }], RUNGS.find((r) => r.id === 'ask-en')!, CLUSTER_1);
 check(noAsk.some((x) => x.kind === 'english' && /ask me in English or/.test(x.text)), 'questions to ask with none given becomes an invitation to ask');
 // The four of 2026-11-09 evening
-check(pickSetup({ conversationId: null, turn: 0, learnerId: 'L', characterId: 'x' }, CLUSTER_1).id === 'two-en', 'the opener is two answers to read');
+check(pickSetup({ conversationId: null, turn: 0, learnerId: 'L', characterId: 'x' }, CLUSTER_1).id === 'opener' && setupLine(OPENER).includes('not about them'), 'the opener: two answers, about the place, not the person');
 const thin: Part[] = [{ kind: 'word', text: 'Estoy preparando las velas.', en: "I'm preparing the candles.", gloss: 'candles' }, { kind: 'word', text: 'La iglesia.', en: 'The church.', gloss: 'church' }];
 const fuller = fullerGlosses(thin);
 check(fuller[0].gloss === "I'm preparing the candles." && fuller[1].gloss === 'church', 'Level 1: a one-word gloss on a longer phrase becomes its English; a short phrase keeps its word (Lupita)');
@@ -92,7 +92,7 @@ check(glossAll([{ kind: 'word', text: 'Buenas tardes.', en: 'Good afternoon.', g
 {
   const picks = Array.from({ length: 400 }, (_, i) => pickSetup({ conversationId: `mix-${i}`, turn: 1 + (i % 7), characterId: 'x' }, CLUSTER_1).id);
   const share = (id: string) => picks.filter((x) => x === id).length / picks.length;
-  check(share('two-en') > 0.5 && share('ask-en') < 0.25 && share('invite-en') < 0.25, `two answers most of the time, invitations now and then (two ${share('two-en').toFixed(2)}, ask ${share('ask-en').toFixed(2)}, invite ${share('invite-en').toFixed(2)})`);
+  check(share('two-en') > 0.5 && share('ask-en') < 0.35, `two answers most of the time, invitations now and then (two ${share('two-en').toFixed(2)}, ask ${share('ask-en').toFixed(2)}, invite ${share('invite-en').toFixed(2)})`);
   let twice = 0;
   for (let c = 0; c < 200; c++) for (let t = 2; t < 8; t++) {
     const a = pickSetup({ conversationId: `run-${c}`, turn: t - 1, characterId: 'x' }, CLUSTER_1).id, b = pickSetup({ conversationId: `run-${c}`, turn: t, characterId: 'x' }, CLUSTER_1).id;
