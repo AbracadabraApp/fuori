@@ -145,7 +145,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const beginner = !welcome && onPath?.stage.path === 'beginner';
   // Beginner 2's reply setup this turn (docs/beginner-2.md), when the app switched it on
   const setup = beginner && !p.lesson && p.beginnerVersion === 2
-    ? pickSetup({ conversationId, turn: transcript.filter((t) => t.who === 'npc').length, learnerId, characterId: character.id }, p.beginnerCluster)
+    ? pickSetup({ conversationId, turn: transcript.filter((t) => t.who === 'npc').length, learnerId, characterId: character.id, learnerSaid }, p.beginnerCluster)
     : null;
   const pathLevel = !welcome && onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
 

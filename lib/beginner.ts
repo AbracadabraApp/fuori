@@ -316,7 +316,7 @@ export class PartsWatcher {
 }
 
 /** One Beginner turn: the parts, and the line and English derived from them */
-export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { laps?: Laps; onText?: (snapshot: string) => void; canRetry?: () => boolean; /** The stage's answers to say back, at most (lib/path.ts) */ maxAnswers?: number; /** The reply also says whether this is its last turn (the welcome; an ordinary conversation, on their goodbye) */ withDone?: boolean }): Promise<{ line: string; en: string; parts: Part[]; done?: boolean }> {
+export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { /** internal: the one retry after a reply that ran past the limit */ retried?: boolean; laps?: Laps; onText?: (snapshot: string) => void; canRetry?: () => boolean; /** The stage's answers to say back, at most (lib/path.ts) */ maxAnswers?: number; /** The reply also says whether this is its last turn (the welcome; an ordinary conversation, on their goodbye) */ withDone?: boolean }): Promise<{ line: string; en: string; parts: Part[]; done?: boolean }> {
   const prompt = buildBeginnerPrompt(p);
   const started = performance.now();
   // A deadline and one retry (lib/claude.ts): a stalled reply hung Doña Rosa
@@ -336,7 +336,12 @@ export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[
   if (p.onText) stream.on('text', (_delta, snapshot) => p.onText!(fixMojibake(snapshot)));
   return stream;
   }, undefined, undefined, { canRetry: p.canRetry });
-  if (response.stop_reason === 'max_tokens') throw new Error(`Beginner turn hit max_tokens (${response.usage.output_tokens} tokens)`);
+  if (response.stop_reason === 'max_tokens') {
+    // Beginner 2: a reply that runs past the limit (about 3% of turns in automated runs, 2026-11-10; intermittent:
+    // the same turn replayed came back at 137 tokens) is written once more instead of failing. Beginner 1 unchanged
+    if (p.promptFile === SCAFFOLDING_FILE && !p.retried) return runBeginnerTurn({ ...p, retried: true });
+    throw new Error(`Beginner turn hit max_tokens (${response.usage.output_tokens} tokens)`);
+  }
   const json = JSON.parse(replyText(response));
   let answers = 0;
   const parts = tidyParts(PartsSchema.parse(json).parts).filter((x) => x.kind !== 'answer' || p.maxAnswers === undefined || ++answers <= p.maxAnswers);

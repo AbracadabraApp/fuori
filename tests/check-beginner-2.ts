@@ -88,6 +88,23 @@ const stored = exchangeTurns({ reply: { line: 'x', en: 'y', parts: [{ kind: 'wor
 check((stored[0] as { parts?: { gloss?: string; en?: string }[] }).parts?.[0].gloss === 'preparing the candles' && (stored[0] as { parts?: { en?: string }[] }).parts?.[0].en === 'I prepare the candles.', 'stored parts keep their gloss and English');
 check(glossAll([{ kind: 'word', text: 'Vengo al Zócalo cada tarde.', en: 'I come to the Zócalo every afternoon.', gloss: 'every afternoon' }])[0].gloss === 'I come to the Zócalo every afternoon.', 'pattern B: a clipped gloss becomes the full English');
 check(glossAll([{ kind: 'word', text: 'Buenas tardes.', en: 'Good afternoon.', gloss: 'Good afternoon.' }])[0].gloss === 'Good afternoon.', 'pattern B: a full gloss is kept');
+// The setup mix (Renata, 2026-11-10)
+{
+  const picks = Array.from({ length: 400 }, (_, i) => pickSetup({ conversationId: `mix-${i}`, turn: 1 + (i % 7), characterId: 'x' }, CLUSTER_1).id);
+  const share = (id: string) => picks.filter((x) => x === id).length / picks.length;
+  check(share('two-en') > 0.5 && share('ask-en') < 0.25 && share('invite-en') < 0.25, `two answers most of the time, invitations now and then (two ${share('two-en').toFixed(2)}, ask ${share('ask-en').toFixed(2)}, invite ${share('invite-en').toFixed(2)})`);
+  let twice = 0;
+  for (let c = 0; c < 200; c++) for (let t = 2; t < 8; t++) {
+    const a = pickSetup({ conversationId: `run-${c}`, turn: t - 1, characterId: 'x' }, CLUSTER_1).id, b = pickSetup({ conversationId: `run-${c}`, turn: t, characterId: 'x' }, CLUSTER_1).id;
+    if (['ask-en', 'invite-en'].includes(a) && ['ask-en', 'invite-en'].includes(b)) twice++;
+  }
+  check(twice === 0, `never an invitation twice running (got ${twice})`);
+  const afterQ = Array.from({ length: 100 }, (_, i) => pickSetup({ conversationId: `q-${i}`, turn: 3, characterId: 'x', learnerSaid: '¿Cuántos años lleva aquí?' }, CLUSTER_1).id);
+  check(!afterQ.some((x) => ['ask-en', 'invite-en'].includes(x)), 'no invitation right after the learner\'s own question');
+}
+const ann = shownParts([{ kind: 'english', text: 'Great question. You could ask me one of these:', en: '', gloss: '' }, { kind: 'answer', text: '¿Qué pinta?', en: 'What do you paint?', gloss: '' }, { kind: 'answer', text: '¿Desde cuándo?', en: 'Since when?', gloss: '' }], RUNGS.find((r) => r.id === 'ask-en')!, CLUSTERS[3]);
+check(ann[0].kind === 'english' && ann[0].text === 'Great question.', 'an announcing sentence ending in a colon before the bubbles is dropped');
+check(/p\.promptFile === SCAFFOLDING_FILE && !p\.retried/.test(readFileSync('lib/beginner.ts', 'utf8')), 'Beginner 2 retries once when a reply runs past the limit (Beginner 1 unchanged)');
 const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
 check(!inside.some((x) => x.kind === 'answer') && inside.some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && x.gloss === 'Yes, thanks.'), 'rung 4: the answer is in her speech with its English heard, no bubble');
 check(shownParts(parts, RUNGS.find((r) => r.id === 'inside')!).some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && !x.gloss), 'rung 6: the answer in her speech, no English');

@@ -100,13 +100,33 @@ function seedOf(s: string): number {
  * turn's number; the opening (no conversation yet) by learner, place and day,
  * so the next day's opener differs (Josh, 2026-11-09)
  */
-export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date }, cluster: Setup[] = CLUSTER_1): Setup {
+/** Invitations to be curious (questions to ask, an invitation to ask): rarer than answers, never twice running (Renata, 2026-11-10) */
+const INVITES = new Set(['ask-en', 'invite-en']);
+/** How often each setup comes up in its cluster: two answers three times as often as either invitation */
+const WEIGHT: Record<string, number> = { 'two-en': 3, 'ask-en': 1, 'invite-en': 1, inside: 1, 'inside-en': 1, free: 2 };
+
+/** The seeded pick by weight, before the rules about the turn before */
+function weighted(cluster: Setup[], key: string): Setup {
+  const total = cluster.reduce((n, s) => n + (WEIGHT[s.id] ?? 1), 0);
+  let x = seedOf(key) % total;
+  for (const s of cluster) if ((x -= WEIGHT[s.id] ?? 1) < 0) return s;
+  return cluster[0];
+}
+
+export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date; /** what the learner just said: after their own question, no invitation (the character follows it up) */ learnerSaid?: string }, cluster: Setup[] = CLUSTER_1): Setup {
   if (p.turn >= GOODBYE_AFTER) return GOODBYE;
   // The opener is two answers to read when the cluster has them (Arturo, 2026-11-09: an invited-English opener set a pattern the character copied all visit)
   if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return R('two-en');
   const day = (p.now ?? new Date()).toISOString().slice(0, 10);
-  const key = p.conversationId ? `${p.conversationId}|${p.turn}` : `${p.learnerId ?? ''}|${p.characterId}|${day}`;
-  return cluster[seedOf(key) % cluster.length];
+  const key = (turn: number) => (p.conversationId ? `${p.conversationId}|${turn}` : `${p.learnerId ?? ''}|${p.characterId}|${day}|${turn}`);
+  const pick = weighted(cluster, key(p.turn));
+  if (!INVITES.has(pick.id)) return pick;
+  // Renata (2026-11-10): the same invitation every other turn, and none of the learner's questions followed up.
+  // An invitation never follows an invitation, nor the learner's own question (punctuation, any language)
+  const before = p.turn > 1 ? weighted(cluster, key(p.turn - 1)) : null;
+  const askedSomething = /[?¿]/.test(p.learnerSaid ?? '');
+  if ((before && INVITES.has(before.id)) || askedSomething) return cluster.find((s) => !INVITES.has(s.id)) ?? pick;
+  return pick;
 }
 
 /** The level text per cluster (scaffolding.md "Level: 1–3", from Beginner 1's stages S1–S3): clusters 1–2 S1, 3–4 S2, 5–6 S3 */
@@ -222,9 +242,27 @@ export function questionEcho(parts: Part[]): Part[] {
   return [...parts.slice(0, i), { ...q, gloss: '' }, { kind: 'english', text: en, en: '', gloss: '' }, ...parts.slice(i + 1)];
 }
 
+/**
+ * The character announcing the answers ("You could ask me one of these:", "Here are two things you can say:"):
+ * a closing English sentence that ends on a colon, just before the bubbles, is dropped; the bubbles speak for
+ * themselves (automated runs, 2026-11-10: 36 of 42 announcements on questions-to-ask turns; Josh: "a teacher
+ * managing the lesson"). By punctuation, so any language
+ */
+export function withoutAnnouncing(parts: Part[]): Part[] {
+  if (!parts.some((x) => x.kind === 'answer')) return parts;
+  return parts
+    .map((x) => {
+      if (x.kind !== 'english') return x;
+      const sentences = x.text.split(/(?<=[.!?:])\s+/);
+      const kept = sentences.filter((s) => !/:\s*$/.test(s.trim()));
+      return kept.length === sentences.length ? x : { ...x, text: kept.join(' ').trim() };
+    })
+    .filter((x) => x.kind !== 'english' || x.text);
+}
+
 /** Display: every phrase glossed in clusters 1–2; English on every turn; an inside rung's answer said by the character */
 export function shownParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER_1): Part[] {
-  const parts = withEnglish(GLOSS_ALL[Math.max(0, CLUSTERS.indexOf(cluster))] ? glossAll(raw) : raw);
+  const parts = withoutAnnouncing(withEnglish(GLOSS_ALL[Math.max(0, CLUSTERS.indexOf(cluster))] ? glossAll(raw) : raw));
   const at = Math.max(0, CLUSTERS.indexOf(cluster));
   if (setup.inside) return insideSpeech(parts, setup);
   if (setup.invite) return invited(QUESTION_ECHO[at] ? questionEcho(fullerGlosses(parts)) : parts);

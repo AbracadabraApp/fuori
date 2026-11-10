@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-10k
+version: 2026-11-10l
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -53,7 +53,7 @@ This turn, give them one short answer they could say back.
 ## Setup: two questions to ask
 
 ```
-This turn, invite their curiosity the way a local would: ask, in English, whether they're wondering about your place, your work or the town. Their answers are two short questions they could ask you.
+This turn, invite their curiosity the way a local would, in your own words, in English. Their answers are two short questions they could ask you.
 ```
 
 ## Setup: goodbye
@@ -71,7 +71,7 @@ This turn, give no answers.
 ## Setup: invite English
 
 ```
-This turn, instead of a question of your own, ask in English whether there's anything they'd like to know about your place, your work or the town.
+This turn, instead of a question of your own, ask in English, in your own words, whether there's anything they'd like to know.
 ```
 
 ## Level: 1

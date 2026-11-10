@@ -86,7 +86,7 @@ await pool(chosen.flatMap(({ city, place }) => Array.from({ length: visits }, (_
   let kind: TurnRow['kind'];
   let how: string | undefined;
   for (let turn = 0; turn < maxTurns; turn++) {
-    const setup = pickSetup({ conversationId: turn === 0 ? null : conversationId, turn, learnerId: `auto-${v}`, characterId: character.id }, cluster);
+    const setup = pickSetup({ conversationId: turn === 0 ? null : conversationId, turn, learnerId: `auto-${v}`, characterId: character.id, learnerSaid: said }, cluster);
     const started = performance.now();
     try {
       const reply = await runBeginnerTurn({ character, transcript: transcript as never, learnerSaid: said, promptFile: SCAFFOLDING_FILE, stageText: levelText(cluster), turnNote: setupLine(setup), maxAnswers: setup.maxAnswers, withDone: true });

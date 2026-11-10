@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10l: the two invitation lines without their list
+- **Changed:** "Setup: two questions to ask" and "Setup: invite English" no longer name "your place, your work or the town"; the character invites "in your own words".
+- **Why:** Josh played Renata (Palacio Nacional, 2026-11-10): "Is there anything you'd like to know about my work, this palace, or the town?" on 5 of 9 turns, in the same words ("Usted me hizo esa pregunta tres veces"). With the code's new setup mix (lib/beginner-2.ts: two answers three times as often, no invitation twice running or right after the learner's own question) the list was the remaining refrain.
+
 ### 2026-11-10k: "newcomer" out of the learner line
 - **Changed:** "You know enough English to help a newcomer." → "You know enough English to help them follow."
 - **Why:** Josh, 2026-11-09: "want to address newcomer". "Is it your first time here? / Are you new?" came up in almost every opener (Lupita, Chayo, Arturo, Chuy; Josh in play: "Everyone asks if you're new", "I tell everyone yes because everyone asks"), and Chuy even said "A newcomer gets asked everything". Naming the learner a newcomer invites the question. The dialogue's own cue (character.md: "They're living in {country} for a while" with "You haven't met them before") is shared with Intermediate and left as is, logged in docs/dialogue-ideas.md.
