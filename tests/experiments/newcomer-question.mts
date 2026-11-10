@@ -1,9 +1,9 @@
 // How often does a character still ask the learner where they're from, whether they're new, or how
 // long they're here? (Josh, 2026-11-09: "this makes the app look broken"; fixed in 0b7cbfa.) A count,
-// not a test of a change: plays Intermediate openings (opener, a learner reply, the next turn) for
+// not a test of a change: plays Intermediate visits (up to --turns character lines, a learner reply written for each) for
 // characters spread over every city, and reads Beginner 2 visits saved by automated-replies.mts.
 // A judge reads every character line; no phrase list, so it works in any language.
-//   COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/newcomer-question.mts [--characters=48] [--label=name] [b2-file.json ...]
+//   COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/newcomer-question.mts [--characters=48] [--turns=10] [--label=name] [b2-file.json ...]
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { cities, language } from '@/content';
@@ -13,6 +13,7 @@ import { ask, pool, OUT } from './common.mjs';
 
 const arg = (n: string, d: string) => process.argv.find((a) => a.startsWith(`--${n}=`))?.split('=')[1] ?? d;
 const howMany = Number(arg('characters', '48'));
+const turns = Number(arg('turns', '10'));
 const label = arg('label', 'newcomer');
 const b2Files = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 
@@ -26,17 +27,23 @@ const judge = async (line: string) => JSON.parse(await ask(`${JUDGE}\n\nLine: ${
 type Seen = { who: string; kind: string; line: string; asks: boolean; quote: string };
 const seen: Seen[] = [];
 
-// Intermediate: the first two character turns
+// Intermediate: whole visits, a learner line written for each turn
 const people = cities.flatMap((c) => c.places.filter((p) => p.characterId).map((p) => ({ city: c.id, place: p.id })));
 const step = Math.max(1, Math.floor(people.length / howMany));
 const chosen = Array.from({ length: howMany }, (_, i) => people[i * step]).filter(Boolean);
 await pool(chosen.map(({ city, place }) => async () => {
   const ch = characterForVisit(city, place);
   if (!ch) return;
-  const a = await runTurn({ character: ch, transcript: [], withDone: true } as never);
-  const said = await ask(`You're learning ${language.name}. A person said to you: "${a.line}". Reply in one short, simple ${language.name} sentence a learner might say. Only the sentence.`, { max: 100 });
-  const b = await runTurn({ character: ch, transcript: [{ who: 'npc', transcript: a.line, translation: a.en }] as never, learnerSaid: said, withDone: true } as never);
-  for (const line of [a.line, b.line]) seen.push({ who: `${ch.name} (${city})`, kind: 'intermediate', line, ...(await judge(line)) });
+  const transcript: { who: string; transcript: string; translation?: string }[] = [];
+  let said: string | undefined;
+  for (let turn = 0; turn < turns; turn++) {
+    const r = await runTurn({ character: ch, transcript, ...(said ? { learnerSaid: said } : {}), withDone: true } as never);
+    seen.push({ who: `${ch.name} (${city})`, kind: 'intermediate', line: r.line, ...(await judge(r.line)) });
+    if (said) transcript.push({ who: 'learner', transcript: said });
+    transcript.push({ who: 'npc', transcript: r.line, translation: r.en });
+    if (r.done) break;
+    said = await ask(`You're learning ${language.name} and talking with someone. They just said: "${r.line}". Reply as a learner might: one or two short, simple ${language.name} sentences, sometimes a question back. Only what you say.`, { max: 150 });
+  }
 }), 6);
 
 // Beginner 2: every character line of the saved visits
