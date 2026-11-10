@@ -72,7 +72,11 @@
     34207,
     52629,
     186976,
-    126315
+    126315,
+    114896,
+    43459,
+    426426,
+    29871
    ]
   },
   {
@@ -109,7 +113,9 @@
     37628,
     49971,
     34207,
-    126315
+    126315,
+    55,
+    426426
    ]
   },
   {
@@ -142,7 +148,9 @@
     43338,
     44804,
     123793,
-    120301
+    120301,
+    114896,
+    43459
    ]
   },
   {
@@ -170,7 +178,9 @@
     37221,
     120301,
     49971,
-    52629
+    52629,
+    41311,
+    29871
    ]
   },
   {
@@ -195,7 +205,9 @@
     154629,
     118010,
     44804,
-    18183
+    18183,
+    43459,
+    1069387
    ]
   },
   {
@@ -212,7 +224,9 @@
     47007,
     43344,
     772515,
-    123793
+    123793,
+    28968,
+    29871
    ]
   },
   {
@@ -234,7 +248,11 @@
     44804,
     43338,
     182207,
-    701524
+    701524,
+    55,
+    1391,
+    426426,
+    1069387
    ]
   },
   {
@@ -256,7 +274,13 @@
     34207,
     52629,
     186976,
-    126315
+    126315,
+    55,
+    1391,
+    426426,
+    582927,
+    1069387,
+    77635
    ]
   }
  ],
@@ -1527,68 +1551,220 @@
     "title": "Después de lucia"
    },
    "original": "es"
-  }
- ],
- "excluded": [
-  {
-   "tmdbId": 41311,
-   "title": "El analfabeto",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 120303,
-   "title": "El vampiro",
-   "why": "its only full upload is a different film (El vampiro sangriento, 1962), and no video was heard in Spanish"
-  },
-  {
-   "tmdbId": 55,
-   "title": "Amores perros",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 1391,
-   "title": "Y tu mamá también",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 582927,
-   "title": "Ya no estoy aquí",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 1069387,
-   "title": "Pedro Páramo",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 77635,
-   "title": "Miss Bala",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 28968,
-   "title": "Veneno para las hadas",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
   },
   {
    "tmdbId": 426426,
    "title": "Roma",
-   "why": "no video heard in the learned language (es)"
+   "year": 2018,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/veWGVw33lnifG10fpkz3QmimVaI.jpg",
+   "videos": [
+    {
+     "youtube": "IzqcQrFit24",
+     "type": "Trailer",
+     "name": "Roma - Trailer español (HD)",
+     "language": "es"
+    },
+    {
+     "youtube": "6BS27ngZtxg",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "6UlmQDB3vqQ",
+     "type": "Teaser",
+     "name": "Teaser",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "evf5cS9_YEk",
+    "language": null
+   },
+   "original": "es"
   },
   {
    "tmdbId": 114896,
    "title": "Aventurera",
-   "why": "no video heard in the learned language (es)"
+   "year": 1950,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/kgPbBocMNaVbkoDza49MZUyUenr.jpg",
+   "videos": [
+    {
+     "youtube": "nmJVyecb_JY",
+     "type": "Trailer",
+     "name": "Aventurera Ninón Sevilla Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "pGBDfAWExAw",
+    "language": "es",
+    "title": "Película Aventurera completa"
+   },
+   "original": "es"
   },
   {
    "tmdbId": 43459,
    "title": "La perla",
-   "why": "no video heard in the learned language (es)"
+   "year": 1947,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3Dtb5ZFhilHETAUSfg6BCdrc0Vl.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "v14E2zBWbFA",
+    "language": "es",
+    "title": "Peliculas Clasicas en Espanol- La Perla (1947)"
+   },
+   "original": "es"
   },
   {
    "tmdbId": 29871,
    "title": "Santo contra las mujeres vampiro",
-   "why": "no video heard in the learned language (es)"
+   "year": 1962,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3l4qmh2LhQEhpW4AqKsRIQgQ7dd.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "u8_ZMPjYdes",
+    "language": "es",
+    "title": "Santo vs las mujeres Vampiro"
+   },
+   "original": "es"
+  },
+  {
+   "tmdbId": 55,
+   "title": "Amores perros",
+   "year": 2000,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/uoObXx53SjSLLtAavMSIe02zizs.jpg",
+   "videos": [
+    {
+     "youtube": "nXftxeXPwKQ",
+     "type": "Teaser",
+     "name": "AMORES PERROS is a timeless mosaic of Mexico City in the year 2000. [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "_P29GF_NbDc",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "A5HTBYR7m0o",
+     "type": "Trailer",
+     "name": "AMORES PERROS - HQ  Trailer ( 2000 )",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null,
+   "original": "es"
+  },
+  {
+   "tmdbId": 1391,
+   "title": "Y tu mamá también",
+   "year": 2001,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/oLl2f0r3c6WMhXv6hYOyjQj4LGU.jpg",
+   "videos": [
+    {
+     "youtube": "inc0vS58ZKg",
+     "type": "Trailer",
+     "name": "Original Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null,
+   "original": "es"
+  },
+  {
+   "tmdbId": 582927,
+   "title": "Ya no estoy aquí",
+   "year": 2019,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/min2PJ67s9HUD5ZeCSKTfSgniSC.jpg",
+   "videos": [
+    {
+     "youtube": "ieeZ0mviFKc",
+     "type": "Trailer",
+     "name": "I'm No Longer Here | Official Trailer | Netflix",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null,
+   "original": "es"
+  },
+  {
+   "tmdbId": 1069387,
+   "title": "Pedro Páramo",
+   "year": 2024,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/lpl7d2ALW2TkPt7ziXPGxGJrU0h.jpg",
+   "videos": [
+    {
+     "youtube": "nRq7niwEgSM",
+     "type": "Trailer",
+     "name": "Official Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "bbsz-ip1GAI",
+     "type": "Teaser",
+     "name": "Official Teaser [Subtitled]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null,
+   "original": "es"
+  },
+  {
+   "tmdbId": 77635,
+   "title": "Miss Bala",
+   "year": 2011,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/b3sSssMYkOoCghxOFxYPm58kdfJ.jpg",
+   "videos": [
+    {
+     "youtube": "ifgdRVfoYeM",
+     "type": "Trailer",
+     "name": "Official UK Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null,
+   "original": "es"
+  },
+  {
+   "tmdbId": 41311,
+   "title": "El analfabeto",
+   "year": 1961,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/sooOWMEc2YxZmYiMfRLifHhefy4.jpg",
+   "videos": [
+    {
+     "youtube": "7neRc0katgc",
+     "type": "Teaser",
+     "name": "El analfabeto 1",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null,
+   "original": "es"
+  },
+  {
+   "tmdbId": 28968,
+   "title": "Veneno para las hadas",
+   "year": 1984,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/b4bOVSACDvRxfXYWI7bCtLqm51g.jpg",
+   "videos": [
+    {
+     "youtube": "IAWOBQ9wt9E",
+     "type": "Trailer",
+     "name": "Veneno para las hadas (1984) Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null,
+   "original": "es"
+  }
+ ],
+ "excluded": [
+  {
+   "tmdbId": 120303,
+   "title": "El vampiro",
+   "why": "its only full upload is a different film (El vampiro sangriento, 1962), and no video was heard in Spanish"
   }
  ]
 }

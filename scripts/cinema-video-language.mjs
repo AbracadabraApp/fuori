@@ -7,8 +7,12 @@
  *
  * For each YouTube video it reads the language of YouTube's automatic captions
  * (made from the audio). When there are none and yt-dlp is installed, it takes
- * the first 45 seconds of audio and asks Whisper on Groq for the language
- * (GROQ_API_KEY from .env.local). Writes content/<country>/cinema-video-language.json,
+ * a minute of audio from inside the video (ten minutes into a full film, from
+ * 15 seconds into a trailer) and asks Whisper on Groq for the language
+ * (GROQ_API_KEY from .env.local). A clip with too little speech is left unknown
+ * rather than guessed: the first 45 seconds, used until 2026-11-09, are logos,
+ * music and credits, and Whisper called Roma's Spanish trailer and La perla's
+ * Spanish upload English. `--recheck` hears again everything Whisper heard. Writes content/<country>/cinema-video-language.json,
  * { "<youtube id>": "it" | "en" | … | null, with how it was found }, for the
  * cloud session to relabel the library, put Italian first and re-apply the rule.
  * Run from the laptop: YouTube refuses the caption page to the cloud session.
@@ -28,6 +32,9 @@ const done = fs.existsSync(out) ? JSON.parse(fs.readFileSync(out, 'utf8')) : {};
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const ids = [...new Set(library.films.flatMap((f) => [...f.videos.map((v) => v.youtube), ...(f.fullFilm ? [f.fullFilm.youtube] : [])]))];
+const fullFilms = new Set(library.films.filter((f) => f.fullFilm).map((f) => f.fullFilm.youtube));
+const recheck = process.argv.includes('--recheck');
+const lang = country.slice(0, 2);
 let ytdlp = true;
 try { execFileSync('yt-dlp', ['--version'], { stdio: 'ignore' }); } catch { ytdlp = false; }
 console.log(`${ids.length} videos; ${Object.keys(done).length} already done; Whisper fallback ${ytdlp && process.env.GROQ_API_KEY ? 'on' : 'off (needs yt-dlp and GROQ_API_KEY)'}`);
@@ -43,8 +50,10 @@ async function captionLanguage(id) {
 async function whisperLanguage(id) {
   if (!ytdlp || !process.env.GROQ_API_KEY) return {};
   const file = path.join(os.tmpdir(), `fuori-${id}.m4a`);
+  // Inside the video, past the logos and credits
+  const section = fullFilms.has(id) ? '*600-660' : '*15-60';
   try {
-    execFileSync('yt-dlp', ['-q', '-f', 'bestaudio[ext=m4a]/bestaudio', '--download-sections', '*0-45', '-o', file, `https://www.youtube.com/watch?v=${id}`], { stdio: 'ignore', timeout: 120000 });
+    execFileSync('yt-dlp', ['-q', '-f', 'bestaudio[ext=m4a]/bestaudio', '--download-sections', section, '-o', file, `https://www.youtube.com/watch?v=${id}`], { stdio: 'ignore', timeout: 180000 });
     const form = new FormData();
     form.append('file', new Blob([fs.readFileSync(file)]), 'clip.m4a');
     form.append('model', 'whisper-large-v3-turbo');
@@ -52,6 +61,10 @@ async function whisperLanguage(id) {
     const res = await fetch('https://api.groq.com/openai/v1/audio/transcriptions', { method: 'POST', headers: { Authorization: `Bearer ${process.env.GROQ_API_KEY}` }, body: form });
     if (!res.ok) return { error: `whisper ${res.status}` };
     const j = await res.json();
+    // Too little speech to tell (music, silence): unknown, never a guess. Whisper's own no-speech signal and the length of what it heard
+    const segments = j.segments ?? [];
+    const noSpeech = segments.length ? segments.reduce((a, g) => a + (g.no_speech_prob ?? 0), 0) / segments.length : 1;
+    if ((j.text ?? '').trim().length < 40 || noSpeech > 0.5) return { language: null, how: 'whisper', note: 'too little speech' };
     // Whisper names the language in English ("italian"); keep the two-letter code
     const names = { italian: 'it', english: 'en', french: 'fr', spanish: 'es', german: 'de', portuguese: 'pt' };
     return { language: names[(j.language || '').toLowerCase()] ?? (j.language || null), how: 'whisper' };
@@ -64,14 +77,14 @@ async function whisperLanguage(id) {
 
 let n = 0;
 for (const id of ids) {
-  if (done[id]?.language) continue;
+  if (done[id]?.language && !(recheck && done[id].how === 'whisper')) continue;
   let r = await captionLanguage(id).catch((e) => ({ error: String(e.message || e) }));
   r = r.language ? { ...r, how: 'captions' } : { ...(await whisperLanguage(id)), ...(r.error ? { captionError: r.error } : {}) };
-  done[id] = { language: r.language ?? null, how: r.how ?? null, ...(r.error ? { error: r.error } : {}) };
+  done[id] = { language: r.language ?? null, how: r.how ?? null, ...(r.note ? { note: r.note } : {}), ...(r.error ? { error: r.error } : {}) };
   if (++n % 20 === 0) { fs.writeFileSync(out, JSON.stringify(done, null, 1)); process.stdout.write(`\r${n} checked`); }
   await sleep(800);
 }
 fs.writeFileSync(out, JSON.stringify(done, null, 1));
 const values = Object.values(done);
 const count = (k) => values.filter((v) => v.language === k).length;
-console.log(`\n${values.length} videos: ${count('it')} Italian, ${count('en')} English, ${values.filter((v) => v.language && !['it', 'en'].includes(v.language)).length} other, ${values.filter((v) => !v.language).length} unknown. Written to ${path.relative(process.cwd(), out)}`);
+console.log(`\n${values.length} videos: ${count(lang)} in the learned language (${lang}), ${count('en')} English, ${values.filter((v) => v.language && ![lang, 'en'].includes(v.language)).length} other, ${values.filter((v) => !v.language).length} unknown. Written to ${path.relative(process.cwd(), out)}`);

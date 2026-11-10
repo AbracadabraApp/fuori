@@ -66,6 +66,13 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-09 (later): the hearing step misheard; eleven films back for a recheck (cloud session)
+
+- The mini's rerun (3051feb, ffmpeg installed) dropped Roma, Aventurera, La perla and Santo as English. Their videos say Spanish in their titles ("Roma - Trailer español", "Películas Clásicas en Español - La Perla"): Whisper was hearing the first 45 seconds, which are logos, music and credits, and guessed English.
+- **Fixed** `scripts/cinema-video-language.mjs`: it hears a minute from inside the video (ten minutes into a full film, from 15 s into a trailer), and leaves a clip with too little speech unknown (Whisper's no-speech signal, or under 40 characters heard) instead of guessing; `--recheck` hears again everything Whisper heard; the summary counts the learned language instead of Italian.
+- The apply step can only judge films still in the library, so the eleven left out (those four, and Amores perros, Y tu mamá también, Ya no estoy aquí, Pedro Páramo, Miss Bala, El analfabeto, Veneno para las hadas, never heard because yt-dlp had failed) are back in it with `original: "es"`, for the recheck to decide. 85 films; El vampiro stays out (its upload is another film).
+- **For the mini:** `git pull`, then `COUNTRY=es-mx node --env-file=.env.local scripts/cinema-video-language.mjs --recheck`, then `COUNTRY=es-mx node scripts/cinema-apply-language.mjs`, then posters for whatever was kept (`COUNTRY=es-mx node --env-file=.env.local scripts/cinema-posters.mjs && COUNTRY=es-mx npm run images:upload && node --env-file=.env.local scripts/image-masters.mjs --untrack`). Commit and push; report kept and left out, and which films Whisper still left unknown.
+
 ## 2026-11-09 (late): Mexico's cinema after the mini's run; rule 3 (cloud session)
 
 - The mini heard the videos, cut the library to 68, put the posters on R2 and ran the fact judge (c19925c). The cloud session corrected the pages (bcbbbf3: 35 edits at Josh's "medium to low bar").
