@@ -1,0 +1,97 @@
+# Beginner English: summary and mixed
+
+2026-11-10 · Josh and the cloud session, from a phone conversation · Notes, a design sketch and the smallest test (card B2-E5 in [prompt-trials.md](prompt-trials.md), script `tests/experiments/summary-mixed.mts`). Nothing in the game changed. Follows [beginner-2.md](beginner-2.md) → "a folksy echo" and cards B2-E to B2-E4.
+
+## The problem
+
+Today each Spanish sentence is followed by its English, sentence by sentence. The prompt writes the Spanish; code writes the English (`glossAll`, `questionEcho`). Josh: better than a few words, but too structured; "not great but it's coherent". The goal is more bilingual mixing or summarizing.
+
+## What the trials already showed
+
+- **B2-E (short glosses):** the mirror fell from about 93% to 8%, but Josh preferred the full echo 7 to 3. The difference was comprehension.
+- **B2-E2 (Josh's four woven examples):** woven English on 0 of 12 turns. Her English went into the gloss field as key words.
+- **B2-E3 (the sign-language device):** "bad" (as B2-E4's card records it).
+- **B2-E4 (a separate echo writer that rewrites the whole spoken line):** stopped at its pilot: the Spanish was kept 10 of 10 and the style was the closest yet, but it wasn't briefer (1.21 English words per Spanish word against 1.22), 3 of 10 turns added a claim she hadn't made, and the call took a median 4.9 s (p90 28 s with 6 at once). Because the English was woven through the line, her voice couldn't start until the writer returned.
+- **Reading of these (Claude):** the parts format gives every phrase its own English slot, so any instruction to mix lands back in the slots. B2-E's English was about 55% of the Spanish over the whole turn, but most of it was the question echo; her statements got roughly 25–30%, mostly noun labels.
+
+## Josh's hunches (2026-11-10, "these are just hunches")
+
+- Two short-to-medium sentences need a summary to be understood, or one sentence mixed.
+- English needs to be about 50–70% of the Spanish.
+- Coherence can only drop so far: under about 30% it's just Spanish to a learner.
+- If the final phrase is a question, translate the whole thing.
+- A bonus of getting it right: character talk can be longer or more complicated.
+- The summary call should be able to start while she talks.
+- The mixed sentence could be part of the lead prompt if massaged: clauses that are parenthetical, idiomatic and so on.
+- The summary gets the vocabulary.
+- Some number of Spanish words, across up to two sentences, can be summarized by a phrase or sentence of English. Too many words in one sentence and it needs its summary before the next sentence.
+- "A total guess": more than 20 words needs a summary; no more than 2 sentences.
+- Counting only the hard words is true but too fancy: count every Spanish word.
+- The first version doesn't need levels.
+- Talk then question is not a bad format. But her response should move forward from what the learner said, not go back to her previous story: no narration that ignores the response.
+- Reading is probably 20% the fidelity of hearing; hearing probably 80% of playing. So a test is heard, not read.
+
+## Mixed: a thought, not a label (Josh)
+
+- Good: "Mi abuelo, he was a stubborn man, boleaba aquí." and "El Andador es el corazón de la ciudad, the heart of the city…". The English says something: an assertion of her own, or the point of the sentence.
+- Bad: "Esto es el comal, the griddle." The griddle has no independent clause. It's vocabulary.
+- Reading (Claude): the short glosses that lost in B2-E were nearly all labels ("clay pot", "cinnamon coffee", "two blocks"). You knew the objects but not what she said about them.
+
+## The design in mind (Claude's sketch from the above; nothing built)
+
+**Her turn**
+- The Intermediate prompt, whose reply is already one string (`{ line, en }`). No parts, so no English slot per phrase.
+- Second step, not the first: one line describing her as someone with some English, which surfaces as a thought of her own (an aside, the point of a sentence, an idiom). No noun labels, no rate.
+- She starts from what the learner just said. Intermediate says only "Take turns"; Beginner 1's "first react to what they just said, then move on" and "follow their lead" were left behind in Beginner 2. Renata's runs (2026-11-10) showed none of the learner's questions followed up.
+
+**The summary**
+- Code walks her line sentence by sentence, counting Spanish words. A stretch ends when it passes 20 words or reaches 2 sentences, whichever comes first (Josh's guess; Claude's reading of it). So a sentence over 20 words gets its own summary before the next one.
+- One side call, started as soon as her text exists, like the replies written ahead. It gets who she is and her line in stretches. For each stretch: one English remark, shorter than the Spanish, keeping one or two of her words with their meaning (the vocabulary), adding nothing, skipping anything she already said in English.
+- **How this differs from B2-E4:** the Spanish is never rewritten, and the English comes after a stretch, not woven through it. So her voice starts at once and the summary has the length of her first stretch to arrive (about 8 s for 20 words), where B2-E4's writer had to finish before she could speak. B2-E4's two other failures are addressed in the prompt ("clearly shorter", "add nothing") and counted.
+- A closing question gets its full English, as today.
+- Late or failed: code speaks the literal English, and the turn logs it.
+- Open (Claude): whether a single short sentence, well under 20 words, gets a summary or is left alone.
+
+**Counted, not asked for**
+- English against Spanish on her statements, apart from the question. 50–70% watched; under 30% falls back to the literal English.
+
+**Left for later**
+- The word limit as the level dial per cluster.
+- What the screen shows (a mockup first).
+- Vocabulary picks feeding Learn and the Diario.
+
+**Worries (Claude)**
+- Seams: each switch of language is its own audio, and a mid-turn summary has little time to arrive.
+- Longer talk invites stories that continue across turns.
+
+## The smallest test (card B2-E5)
+
+Two questions, one small run, heard by Josh. Josh has no Spanish, so his ear in Mexico is a real beginner's.
+
+**Question 1, mixed:** asked in a one-string reply, does she write an English thought inside her Spanish, and does it sound right in her voice? (B2-E2: 0 of 12 in the parts format.)
+
+**Question 2, summary:** with the same Spanish, does a summary let Josh follow as well as today's sentence-by-sentence English, and does he prefer it?
+
+**Setup**
+- Mexico. 4 places, 2 turns each (the opener and her reply to one short learner line), so 8 turns an arm.
+- **Arm S (summary):** the Intermediate prompt exactly as it is. Code ends a stretch past 20 Spanish words or at 2 sentences. The new summary prompt writes one remark per stretch. The question's English comes from her `en`.
+- **Arm M (mixed):** the Intermediate prompt plus one level block describing her English as a thought of her own, with Josh's two good examples. No summary.
+- **Audio:** every clip is spoken by the game's own voice provider in her voice.
+- No game code, no app, no parts format: one script.
+
+**What Josh hears (about 8 minutes, up to 24 short clips, no text shown)**
+- **Summary:** each Arm S turn as two clips, sides shuffled, the key held back: her Spanish with the literal English after every sentence (today's shape), and the same Spanish with the summaries. The Spanish is identical, so the only difference is the English. Per pair: could you follow each? Which would you rather hear?
+- **Mixed:** the Arm M turns, one clip each. Per clip: is there a thought of hers in English, or only a label? Does the switch of language inside a sentence sound like a person?
+
+**Counted in code**
+- Summary: English against Spanish on her statements; stretches a turn, and how many closed on the 20 words, the 2 sentences or the end of her talk; summaries longer than their stretch; her words kept in the summary; the summary call's time against how long her first stretch takes to say (an estimate, 2.3 words a second).
+- Mixed: words a line against Arm S; the copy guard (an example line repeated).
+- Read by Claude, flagged as a read: added claims in the summaries (B2-E4's failure); whether her second turn picks up the learner's reply.
+
+**What would answer it**
+- Mixed works if Josh hears a thought, not a label, on about half the clips or more, and the switch sounds like a person. Under a quarter: the one-string format isn't enough either.
+- Summary works if Josh follows it on at least as many pairs as the literal English and prefers it on most.
+
+**What it won't answer**
+- Playing: the wait before a live summary, replying under time, a whole visit's rhythm. That's a phone build, after this.
+- Levels, the screen, Italy.

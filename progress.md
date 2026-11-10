@@ -1,5 +1,14 @@
 # Fuori Development Progress
 
+## 2026-11-10: summary and mixed, notes and the smallest test (cloud session)
+
+Josh, on the phone, on the Beginner echo ("Spanish is followed by English sentence by sentence… too structured"): the goal is "more bilingual mixing or summarizing". His hunches and the sketch that came out of them are in [docs/summary-and-mixed.md](docs/summary-and-mixed.md).
+- **Summary:** her line stays one string of Spanish (the Intermediate reply); code ends a stretch past 20 words or at 2 sentences (Josh: "a total guess"); a separate call writes one English remark per stretch, shorter than the Spanish, carrying the vocabulary; a closing question keeps its full English. Unlike B2-E4 the Spanish isn't rewritten and the English follows a stretch, so her voice needn't wait.
+- **Mixed:** an English thought of her own inside a sentence ("Mi abuelo, he was a stubborn man, boleaba aquí."), never a label ("el comal, the griddle": "It's vocabulary").
+- **Also from Josh:** no levels in a first version; count every Spanish word; her response moves forward from what the learner said, not back to her own story; a test is heard, not read.
+- **Written, not run:** card B2-E5 in `docs/prompt-trials.md` (`Reviewed: pending`) and `tests/experiments/summary-mixed.mts` (type-checks; never run: the cloud session has no keys). 4 places × 2 turns an arm in Mexico, up to 24 clips for Josh to listen to.
+- **Next:** the test designer's review of B2-E5, `npm run card:review`, then on the mini `COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/summary-mixed.mts`, and the clips to Josh (`listen.md` in the output folder names them; `text.md` and `key.json` are held back until he has listened).
+
 ## 2026-11-10 (mini): the one grade per conversation, and keeping every conversation
 
 - **What Josh asked:** a scorecard that scores every conversation on several variables and one total grade, 1–10, not an average, weighted ("all variables are important but not equal"), to watch overall progress; quality is about the character and the conversation, never the learner; instrument readings are reported accurately and never graded; everything is kept ("we shouldn't delete"). Prompted by the Plaza de los Mariachis conversation (Chuy, 2026-11-10 17:40 UTC) that ended inside five minutes: the scorecard saw 33.5-word replies and no problems.
