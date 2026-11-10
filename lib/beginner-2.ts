@@ -45,6 +45,7 @@ export interface Setup {
 export const RUNGS: Setup[] = [
   { id: 'two-en', block: 'Setup: two answers', maxAnswers: 2, english: true },
   { id: 'inside-en', block: 'Setup: one answer', maxAnswers: 1, english: true, inside: true },
+  { id: 'ask-en', block: 'Setup: two questions to ask', maxAnswers: 2, english: true },
   { id: 'invite-en', block: 'Setup: invite English', maxAnswers: 0, english: false },
   { id: 'inside', block: 'Setup: one answer', maxAnswers: 1, english: false, inside: true },
   { id: 'free', block: 'Setup: no answers', maxAnswers: 0, english: false },
@@ -56,10 +57,12 @@ const R = (id: string) => RUNGS.find((r) => r.id === id)!;
  * together (Josh: 6–8 clusters; progression is also how much English is spoken)
  */
 export const CLUSTERS: Setup[][] = [
-  [R('two-en')],
-  [R('two-en'), R('invite-en')],
-  [R('two-en'), R('invite-en')],
-  [R('two-en'), R('invite-en'), R('free')],
+  // Cluster 1 keeps the plan's variety (Josh: "not fine with a cluster 1 surrender"): the three where you always
+  // know what you're saying: two answers, two questions to ask the character, an invited English answer
+  [R('two-en'), R('ask-en'), R('invite-en')],
+  [R('two-en'), R('ask-en'), R('invite-en')],
+  [R('two-en'), R('ask-en'), R('invite-en'), R('free')],
+  [R('ask-en'), R('invite-en'), R('free')],
   [R('invite-en'), R('free')],
   [R('invite-en'), R('free')],
 ];

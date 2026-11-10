@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-10c
+version: 2026-11-10d
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -49,6 +49,12 @@ This turn, give them two short answers they could say back.
 This turn, give them one short answer they could say back.
 ```
 
+## Setup: two questions to ask
+
+```
+This turn, don't ask them anything: give them two short questions they could ask you, as their answers.
+```
+
 ## Setup: no answers
 
 ```
@@ -58,7 +64,7 @@ This turn, give no answers.
 ## Setup: invite English
 
 ```
-This turn, ask what they think, and invite them to answer in English.
+This turn, instead of a yes-or-no or this-or-that question, ask what they think, and say they can answer in English.
 ```
 
 ## Level: 1

@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10d: two questions to ask, as a reply setup
+- **Added:** "Setup: two questions to ask": two short questions the learner could ask the character, shown as answer bubbles with their English.
+- **Why:** Josh, 2026-11-09: "I'm not fine with a cluster 1 surrender". Play feedback had left cluster 1 one reply type (two answers), the same shape every turn. Cluster 1 now mixes two answers, two questions to ask the character and an invited English answer, the three where the learner always knows what they're saying.
+- **Also:** the two setup lines say this turn is different from the usual question ("don't ask them anything"; "instead of a yes-or-no or this-or-that question"): with Level 1 being S1 word for word ("ask only yes-or-no or this-or-that questions"), a first look had the questions to ask half right and the invitation to answer in English not happening; after the change, 3 of 3 each (Hugo, Mexico).
+
 ### 2026-11-10c: Level 1 is Beginner 1's S1 word for word
 - **Changed:** "Level: 1" (clusters 1–2) is now Beginner 1's S1 blocks unedited: leveling.md "Talk: stage 1" (with its "yes-or-no or this-or-that questions") and beginner.md "English: brief", "Language: what to keep" and "Language: phrases". The 2026-11-10a edits to them (question rule cut, examples cut, merged) are undone.
 - **Why:** Josh, 2026-11-09: "Beginner 1 has English and glossing working near perfect for S1". The this-or-that question is where the glossing works (the options glossed in the question, the answers mirroring them: "Do you like blue (piace blu) or yellow (piace giallo)?" → "Mi piace blu / Mi piace giallo"); cutting it, and the edits, made S1 worse. The code's whole-phrase glossing (glossAll, Claude's idea) is removed with it.

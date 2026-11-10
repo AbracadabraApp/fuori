@@ -30,7 +30,7 @@ check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith('Where they are now: at the 
 check(!/Every turn has some English|When you first see them|explain something in English when it helps/.test(readFileSync(`content/${process.env.COUNTRY ?? 'it'}/prompts/scaffolding.md`, 'utf8')), 'the English lines added one per play are gone from the prompt');
 check(CLUSTERS.length === 6, 'six clusters');
 check(CLUSTERS.flat().filter((r) => !r.inside).every((r) => r.maxAnswers === 0 || (r.maxAnswers === 2 && r.english)), 'bubbles are two, always with English (Josh: reading Spanish you don\'t understand is coercive; one answer feels weird)');
-check(CLUSTER_1.length === 1 && CLUSTER_1[0].id === 'two-en', 'cluster 1 is Beginner 1\'s S1: two answers with English, every turn');
+check(['two-en', 'ask-en', 'invite-en'].every((id) => CLUSTER_1.some((r) => r.id === id)), 'cluster 1 mixes two answers, two questions to ask and an invited English answer (Josh: no cluster 1 surrender)');
 check(!CLUSTERS.flat().some((r) => r.inside), 'no cluster plays the answer inside the character\'s line until it has a screen design');
 check(clusterFrom(new Headers({ 'x-fuori-cluster': '4' })) === CLUSTERS[3] && clusterFrom(new Headers()) === CLUSTER_1 && clusterFrom(new Headers({ 'x-fuori-cluster': '9' })) === CLUSTER_1, 'the cluster header picks clusters 1-6, cluster 1 otherwise');
 const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: 'c', turn: i, characterId: 'x' }, CLUSTERS[5]).id));
